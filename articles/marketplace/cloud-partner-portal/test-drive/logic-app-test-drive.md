@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
 ms.openlocfilehash: 3dc5642541f411acc93301f6bb9828e901aba449
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64940016"
 ---
 <a name="logic-app-test-drive"></a>Test Drive de Aplicativo Lógico
@@ -61,11 +61,11 @@ A próxima seção a ser preenchida é onde você pode configurar o Aplicativo L
 
 ![Configuração de técnicas de Test Drive](./media/azure-resource-manager-test-drive/howtopub5_logicapp.png)
 
-- **Região** - *[Campo Obrigatório]* Na região selecionada, você escolhe onde os recursos de Aplicativo Lógico de Test Drive são implantados.
+- **Região** -  *[Campo Obrigatório]* Na região selecionada, você escolhe onde os recursos de Aplicativo Lógico de Test Drive são implantados.
 
     *Observação:* se o Aplicativo Lógico tiver recursos personalizados armazenados em uma região, verifique se essa região está selecionada aqui. A melhor maneira de fazer isso é **implantar de forma integral o Aplicativo Lógico localmente em sua assinatura do Azure no portal e verificar se ele funciona** antes de gravá-lo aqui.
 
-- **Máximo de Test Drives Simultâneos** - *[Campo Obrigatório]* Número de instâncias do Test Drive que já foram implantadas e estão aguardando acesso por região selecionada. Os clientes podem acessar esses Test Drives instantaneamente em vez de ter que esperar por uma implantação.
+- **Máximo de Test Drives Simultâneos** -  *[Campo Obrigatório]* Número de instâncias do Test Drive que já foram implantadas e estão aguardando acesso por região selecionada. Os clientes podem acessar esses Test Drives instantaneamente em vez de ter que esperar por uma implantação.
 
     *Observação:* se você estiver executando um webinar/aula em que deseje que todos os seus N alunos façam um test drive, será recomendado publicar com um número N de instâncias de acesso frequente e, quando a aula terminar, republicar novamente para o número normal de instâncias de acesso frequente.
 
@@ -77,7 +77,7 @@ A próxima seção a ser preenchida é onde você pode configurar o Aplicativo L
 
 - **Desprovisionar o Nome do Aplicativo Lógico ‒** *[Campo Obrigatório]* Grave o nome do Aplicativo Lógico para o desprovisionamento de todos os recursos criados no Test Drive. Verifique se esse arquivo foi salvo no Grupo de Recursos acima.
 
-- **Informações de acesso ‒** *[Campo Obrigatório]* Depois que um cliente obtém seu Test Drive, as informações de acesso são apresentadas a ele. Essas instruções servem para compartilhar os parâmetros de saída úteis do seu modelo do Resource Manager para Test Drive. Para incluir parâmetros de saída, utilize chaves duplas (por exemplo, **{{outputname}}**); eles serão inseridos corretamente no local. A formatação da cadeia de caracteres HTML é recomendada aqui para renderizar no front-end.
+- **Informações de acesso ‒** *[Campo Obrigatório]* Depois que um cliente obtém seu Test Drive, as informações de acesso são apresentadas a ele. Essas instruções servem para compartilhar os parâmetros de saída úteis do seu modelo do Resource Manager para Test Drive. Para incluir parâmetros de saída, utilize chaves duplas (por exemplo, **{{outputname}}** ); eles serão inseridos corretamente no local. A formatação da cadeia de caracteres HTML é recomendada aqui para renderizar no front-end.
 
 ### <a name="test-drive-deployment-subscription-details"></a>Detalhes da assinatura para implantação do Test Drive
 
@@ -119,7 +119,7 @@ Clique em Salvar. O último passo é pegar o ID do aplicativo para esse aplicati
 Como estamos usando o aplicativo para implantar a assinatura, precisamos adicionar o aplicativo como colaborador na assinatura. Estas são as instruções:
 
 1. Navegue até a folha Assinaturas e selecione a assinatura adequada que você usa apenas para o Test Drive.
-1. Clique em **Controle de acesso (IAM)**.
+1. Clique em **Controle de acesso (IAM)** .
 1. Clique na guia **Atribuições de função**.  ![Azure Active Directory, adicionando uma nova entidade de controle de acesso](./media/azure-resource-manager-test-drive/SetupSub7_1.jpg)
 1. Clique em **Adicionar atribuição de função**.
 1. Defina a função como **Colaborador**.

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/29/2019
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 74eee3d164e7ee3831f292568da9cf0620e576e5
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: 23273084826775b47170753dff3e5cf5ed8ae45f
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66399295"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67063572"
 ---
 # <a name="high-availability-with-azure-cosmos-db"></a>Alta disponibilidade com o Azure Cosmos DB
 
@@ -76,7 +76,7 @@ Esse recurso está disponível nas seguintes regiões do Azure:
 
 A tabela a seguir resume a capacidade de alta disponibilidade de várias configurações de conta: 
 
-|KPI  |Região única sem zonas de disponibilidade (não AZ)  |Única região com zonas de disponibilidade (AZ)  |Várias regiões com zonas de disponibilidade (AZ, 2 regiões) – mais a configuração recomendada |
+|KPI  |Região única sem zonas de disponibilidade (Non-AZ)  |Única região com zonas de disponibilidade (AZ)  |Grava de várias regiões com zonas de disponibilidade (2 regiões, AZ) – a configuração recomendada de maioria |
 |---------|---------|---------|---------|
 |SLA de disponibilidade de gravação     |   99,99%      |    99,99%     |  99,999%  |
 |Leia o SLA de disponibilidade   |   99,99%      |   99,99%      |  99,999%       |

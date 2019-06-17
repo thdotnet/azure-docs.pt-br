@@ -3,20 +3,20 @@ title: Configure os contêineres - Pesquisa Visual Computacional
 titlesuffix: Azure Cognitive Services
 description: Defina várias configurações para contêineres de Reconhecimento de Texto na Pesquisa Visual Computacional.
 services: cognitive-services
-author: diberry
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 04/16/2019
-ms.author: diberry
+ms.date: 06/10/2019
+ms.author: dapine
 ms.custom: seodec18
-ms.openlocfilehash: 42c08864c6908e92a7ecea336f8b1bd0606760db
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1fa6f04f28da2613f8b78e8885515ac40fa5961e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60203458"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67071301"
 ---
 # <a name="configure-recognize-text-docker-containers"></a>Configurar os contêineres do Docker de Reconhecimento de Texto
 
@@ -51,7 +51,7 @@ Essa configuração pode ser localizada no seguinte local:
 
 Lembre-se de adicionar o `vision/v1.0` roteamento para o URI do ponto de extremidade, conforme mostrado na tabela a seguir. 
 
-|Necessário| NOME | Tipo de dados | DESCRIÇÃO |
+|Obrigatório| NOME | Tipo de dados | DESCRIÇÃO |
 |--|------|-----------|-------------|
 |Sim| `Billing` | Cadeia de caracteres | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westcentralus.api.cognitive.microsoft.com/vision/v1.0` |
 
@@ -129,6 +129,6 @@ Os seguintes exemplos do Docker são para o contêiner de Reconhecimento de Text
   Logging:Console:LogLevel:Default=Information
   ```
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * Reveja [Como instalar e executar contêineres](computer-vision-how-to-install-containers.md)

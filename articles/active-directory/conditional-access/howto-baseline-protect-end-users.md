@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 104665774eee885cc2f562e9813cffcf23aa943e
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: e5b72be0dbe35cf95eed404c7c1407c53f5f2ecb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66235498"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112344"
 ---
 # <a name="baseline-policy-end-user-protection-preview"></a>Política de linha de base: Proteção do usuário final (visualização)
 
@@ -90,4 +90,4 @@ Para obter mais informações, consulte:
 
 * [Políticas de proteção de linha de base de acesso condicional](concept-baseline-protection.md)
 * [Cinco etapas para proteger a infraestrutura de identidade](../../security/azure-ad-secure-steps.md)
-* [O que é o acesso condicional no Azure Active Directory?](overview.md)
+* [O que é acesso condicional no Azure Active Directory?](overview.md)

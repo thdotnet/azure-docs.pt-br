@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 05/24/2019
 ms.author: jingwang
 ms.openlocfilehash: 3a7cc1ac3940104993e6643e92da923ad1c6a14a
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66248793"
 ---
 | Categoria | Armazenamento de dados | Com suporte como uma [atividade de cópia](../articles/data-factory/copy-activity-overview.md) fonte | Com suporte como uma [atividade de cópia](../articles/data-factory/copy-activity-overview.md) coletor | Suporte do [IR do Azure](../articles/data-factory/concepts-integration-runtime.md#azure-integration-runtime) | Suporte do [IR auto-hospedado](../articles/data-factory/concepts-integration-runtime.md#self-hosted-integration-runtime) | Com suporte pelo [fluxo de dados](../articles/data-factory/concepts-data-flow-overview.md)

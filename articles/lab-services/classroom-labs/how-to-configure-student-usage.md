@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/28/2019
+ms.date: 06/11/2019
 ms.author: spelluru
-ms.openlocfilehash: 494c285f1c096a84925d9d9a4fb98409960e5230
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 67faf268d265fd045c21b75b6f64840511a371d3
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60703618"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67067281"
 ---
 # <a name="configure-usage-settings-and-policies"></a>Configurar políticas e configurações de uso
 Este artigo descreve como adicionar usuários ao laboratório, registrá-los no laboratório, controlar o número de horas que eles podem usar a VM, entre outros. 
@@ -80,19 +80,24 @@ Selecione **usuários** no menu à esquerda para ver a lista de usuários regist
 Defina cotas por usuário usando as seguintes etapas: 
 
 1. Selecione **Usuários** no menu à esquerda.
-2. Selecione **Cota por usuário: ilimitado** na barra de ferramentas. 
-3. Na página **Cota por usuário**, selecione uma das seguintes opções: 
-    1. **None**. Os usuários podem usar as máquinas virtuais apenas durante o horário agendado ou quando um proprietário de laboratório ativa máquinas virtuais por eles.
-    2. **Ilimitado (padrão)**. Os usuários podem usar suas máquinas virtuais sem nenhuma restrição de horário.
-    3. **Especifique o número de horas por usuário**. Os usuários podem usar suas máquinas virtuais durante o número definido de horas (especificado abaixo), além do horário agendado. Se você selecionar essa opção, insira o **número de horas** na caixa de texto. 
+2. Selecione **cota por usuário:** na barra de ferramentas. 
+3. Sobre o **cota por usuário** , especifique o número de horas que você deseja dar a cada usuário (aluno): 
+    1. **0 horas (agenda)** . Os usuários podem usar suas VMs somente durante o horário agendado ou quando você, como o proprietário de laboratório são transformados em máquinas virtuais para eles.
+
+        ![Horas de zero - somente horário agendado](../media/how-to-configure-student-usage/zero-hours.png)
+    1. **Número total de horas de laboratório por usuário**. Os usuários podem usar suas VMs para o número de horas (especificado para esse campo) **além da hora agendada**. Se você selecionar essa opção, insira o **número de horas** na caixa de texto. 
 
         ![Número de horas por usuário](../media/how-to-configure-student-usage/number-of-hours-per-user.png)
     4. Clique em **Salvar**. 
-5. Agora você vê os valores alterados na barra de ferramentas: **Cota por usuário: &lt;número de horas&gt;**. 
+5. Agora você vê os valores alterados na barra de ferramentas: **Cota por usuário: &lt;número de horas&gt;** . 
 
     ![Cota por usuário](../media/how-to-configure-student-usage/quota-per-user.png)
 
+
+
 > [!IMPORTANT]
+> Antes de enviar o link de registro para os alunos, professores devem definir a agenda para a classe se eles escolher 0 horas de cota ou especificam as horas de cota para o laboratório.
+>
 > O [tempo de execução agendado de VMs](how-to-create-schedules.md) não conta com a cota alocada a um usuário. A cota é para o tempo fora dos horários agendados que um aluno passa em VMs. 
 
 ### <a name="add-users-by-uploading-a-csv-file"></a>Adicionar usuários ao carregar um arquivo CSV

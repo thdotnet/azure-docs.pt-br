@@ -11,18 +11,21 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5f37873b51d6257ffec3ada10be886995f7f5d5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4b38918dc6b80539ef8852aa408cda501958c9b1
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60358819"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67057434"
 ---
 # <a name="configure-azure-multi-factor-authentication-server-to-work-with-ad-fs-in-windows-server"></a>Configurar o Servidor de Autenticação Multifator do Azure para trabalhar com o AD FS no Windows Server
 
 Se você usa o AD FS (Serviços de Federação do Active Directory) e deseja proteger recursos na nuvem ou locais, pode configurar o servidor de Autenticação Multifator do Azure para trabalhar com o AD FS. Essa configuração dispara a verificação em duas etapas para pontos de extremidade de alto valor.
 
 Neste artigo, discutimos o uso do Servidor de Autenticação Multifator do Azure com o AD FS no Windows Server 2012 R2 ou no Windows Server 2016. Para saber mais, leia sobre como [proteger recursos de nuvem e locais usando o Servidor de Autenticação Multifator do Azure com o AD FS 2.0](howto-mfaserver-adfs-2.md).
+
+> [!IMPORTANT]
+> A partir de 1 de julho de 2019, Microsoft não oferecerá o servidor MFA para novas implantações. Novos clientes que gostariam de exigir a autenticação multifator de seus usuários devem usar a autenticação de multifator do Azure baseado em nuvem. Os clientes existentes que ativaram o servidor de MFA antes de 1 de julho será capazes de baixar a versão mais recente, as atualizações futuras e gerar credenciais de ativação como de costume.
 
 ## <a name="secure-windows-server-ad-fs-with-azure-multi-factor-authentication-server"></a>Proteger o AD FS do Windows Server com o Servidor de Autenticação Multifator do Azure
 
@@ -105,7 +108,7 @@ Se você não quiser usar um nome de usuário e senha, execute estas etapas para
 8. Defina habilitado como **true**.  
 9. Defina oneToOneCertificateMappingsEnabled como **true**.  
 10. Clique no botão **...** próximo a oneToOneMappings e clique no link **Adicionar**.  
-11. Abra o arquivo .cer de Base64 exportado anteriormente. Remova *-----BEGIN CERTIFICATE-----*, *-----END CERTIFICATE-----* e todas as quebras de linha. Copie a cadeia de caracteres resultante.  
+11. Abra o arquivo .cer de Base64 exportado anteriormente. Remova *-----BEGIN CERTIFICATE-----* , *-----END CERTIFICATE-----* e todas as quebras de linha. Copie a cadeia de caracteres resultante.  
 12. Defina o certificado para a cadeia de caracteres copiada na etapa anterior.  
 13. Defina habilitado como **true**.  
 14. Defina userName para uma conta que seja membro do grupo de segurança PhoneFactor Admins. Use o formato &lt;domínio&gt;&#92;&lt;nome de usuário&gt;.  

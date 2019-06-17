@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 06/29/2018
 ms.author: rkarlin
 ms.openlocfilehash: a5deee4209001d8c2212033c2d547d7c4199bd25
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65192616"
 ---
 # <a name="custom-alert-rules-in-azure-security-center-preview"></a>Regras de alerta personalizadas na Central de Segurança do Azure (versão prévia)
@@ -58,8 +58,8 @@ As regras de alerta personalizadas na Central de Segurança permitem que você d
 
 Abra o painel **Central de Segurança** e execute as seguintes etapas para criar uma regra de alerta personalizada:
 
-1.  No painel esquerdo, em **Detecção** clique em **Regras de alerta personalizados (Versão prévia)**.
-2.  Na página **Central de Segurança – Regras de alerta personalizadas (Versão prévia)**, clique em **Nova regra de alerta personalizada**.
+1.  No painel esquerdo, em **Detecção** clique em **Regras de alerta personalizados (Versão prévia)** .
+2.  Na página **Central de Segurança – Regras de alerta personalizadas (Versão prévia)** , clique em **Nova regra de alerta personalizada**.
 
     ![Alerta personalizado](./media/security-center-custom-alert/security-center-custom-alert-fig1.png)
 
@@ -80,7 +80,7 @@ Abra o painel **Central de Segurança** e execute as seguintes etapas para criar
 
     O resultado da consulta dispara o alerta. Observe que, quando você digita uma consulta válida, a marca de seleção verde é exibida no canto direito deste campo:
 
-    ![Consultar](./media/security-center-custom-alert/security-center-custom-alert-fig3.png)
+    ![Consulta](./media/security-center-custom-alert/security-center-custom-alert-fig3.png)
 
 10. Selecione o período de tempo em que a consulta acima será executada no campo **Período**. Observe que o resultado de pesquisa na parte inferior do campo será alterado de acordo com o período de tempo que você selecionar.
 

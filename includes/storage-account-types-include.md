@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/23/2019
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: d4f57eca89cbb68d61546c6d5ce5bcd04f9256e7
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: d96e69fb526cff633c78e9ac8a1679762014cd4b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66114932"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67133278"
 ---
 O armazenamento do Azure oferece vários tipos de contas de armazenamento. Cada tipo é compatível com recursos diferentes e tem um modelo de preços próprio. Considere essas diferenças antes de criar uma conta de armazenamento para determinar o melhor tipo de conta para seus aplicativos. Os tipos de conta de armazenamento são:
 
@@ -25,20 +25,20 @@ O armazenamento do Azure oferece vários tipos de contas de armazenamento. Cada 
 
 A tabela a seguir descreve os tipos de conta de armazenamento e suas funcionalidades:
 
-| Tipo de conta de armazenamento | Serviços com suporte                       | Níveis de desempenho compatíveis      | Camadas de acesso compatíveis         | Opções de replicação               | Modelo de implantação<sup>1</sup> | Criptografia<sup>2</sup> |
+| Tipo de conta de armazenamento | Serviços com suporte                       | Níveis de desempenho compatíveis      | Camadas de acesso compatíveis         | Opções de replicação               | Modelo de implantação<div role="complementary" aria-labelledby="deployment-model"><sup>1</sup></div> | Criptografia<div role="complementary" aria-labelledby="encryption"><sup>2</sup></div> |
 |----------------------|------------------------------------------|-----------------------------|--------------------------------|-----------------------------------|------------------------------|------------------------|
-| Uso geral V2   | Blob, arquivo, fila, tabela e disco       | Standard, Premium<sup>5</sup> | Quente, frio, de arquivos<sup>3</sup> | LRS, ZRS<sup>4</sup>, GRS, RA-GRS | Gerenciador de Recursos             | Criptografado              |
-| Uso geral V1   | Blob, arquivo, fila, tabela e disco       | Standard, Premium<sup>5</sup> | N/D                            | LRS, GRS, RA-GRS                  | Resource Manager, Clássico    | Criptografado              |
+| Uso geral V2   | Blob, arquivo, fila, tabela e disco       | Standard, Premium<div role="complementary" aria-labelledby="premium-performance"><sup>5</sup></div> | Frequente, esporádico, arquivo morto<div role="complementary" aria-labelledby="archive"><sup>3</sup></div> | LRS, GRS, RA-GRS, ZRS<div role="complementary" aria-labelledby="zone-redundant-storage"><sup>4</sup></div> | Gerenciador de Recursos             | Criptografado              |
+| Uso geral V1   | Blob, arquivo, fila, tabela e disco       | Standard, Premium<div role="complementary" aria-labelledby="premium-performance"><sup>5</sup></div> | N/D                            | LRS, GRS, RA-GRS                  | Resource Manager, Clássico    | Criptografado              |
 | Armazenamento de blobs de bloco   | Blob (somente blobs de blocos e blobs de acréscimo) | Premium                       | N/D                            | LRS                               | Gerenciador de Recursos             | Criptografado              |
 | FileStorage (visualização)   | Somente arquivos | Premium                       | N/D                            | LRS                               | Gerenciador de Recursos             | Criptografado              |
-| Armazenamento de blob         | Blob (somente blobs de blocos e blobs de acréscimo) | Standard                      | Quente, frio, de arquivos<sup>3</sup> | LRS, GRS, RA-GRS                  | Gerenciador de Recursos             | Criptografado              |
+| Armazenamento de blob         | Blob (somente blobs de blocos e blobs de acréscimo) | Standard                      | Frequente, esporádico, arquivo morto<div role="complementary" aria-labelledby="archive"><sup>3</sup></div> | LRS, GRS, RA-GRS                  | Gerenciador de Recursos             | Criptografado              |
 
-<sup>1</sup>É recomendável usar o modelo de implantação do Azure Resource Manager. Ainda é possível criar contas de armazenamento que usam o modelo de implantação clássico em alguns locais, e as contas clássicas existentes ainda têm suporte. Para obter mais informações, consulte [Azure Resource Manager vs implantação clássica: compreenda os modelos de implantação e o estado de seus recursos](../articles/azure-resource-manager/resource-manager-deployment-model.md).
+<div id="deployment-model"><sup>1</sup>É recomendável usar o modelo de implantação do Azure Resource Manager. Ainda é possível criar contas de armazenamento que usam o modelo de implantação clássico em alguns locais, e as contas clássicas existentes ainda têm suporte. Para obter mais informações, consulte <a href="https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-model">Azure Resource Manager vs implantação clássica: compreenda os modelos de implantação e o estado de seus recursos</a>.</div>
 
-<sup>2</sup>Todas as contas de armazenamento são criptografadas usando a SSE (Criptografia do Serviço de Armazenamento) para dados em repouso. Para obter mais informações, consulte [Criptografia de serviço do Armazenamento do Azure para dados em repouso](../articles/storage/common/storage-service-encryption.md).
+<div id="encryption"><sup>2</sup>Todas as contas de armazenamento são criptografadas usando a SSE (Criptografia do Serviço de Armazenamento) para dados em repouso. Para obter mais informações, consulte <a href="https://docs.microsoft.com/azure/storage/common/storage-service-encryption">Criptografia de serviço do Armazenamento do Azure para dados em repouso</a>.</div>
 
-<sup>3</sup>A camada de acesso aos arquivos está disponível somente no nível de blob individual, e não no nível da conta de armazenamento. Somente os blobs de bloco e de acréscimo podem ser arquivados. Para obter mais informações, consulte [Armazenamento de Blobs do Azure: camadas de armazenamento de Arquivos, Frequente e Esporádico](../articles/storage/blobs/storage-blob-storage-tiers.md).
+<div id="archive"><sup>3</sup>A camada de acesso aos arquivos está disponível somente no nível de blob individual, e não no nível da conta de armazenamento. Somente os blobs de bloco e de acréscimo podem ser arquivados. Para obter mais informações, consulte <a href="https://docs.microsoft.com/azure/storage/blobs/storage-blob-storage-tiers">Armazenamento de Blobs do Azure: camadas de armazenamento de Arquivos, Frequente e Esporádico</a>.</div>
 
-<sup>4</sup>O ZRS (armazenamento com redundância de zona) só está disponível para as contas de armazenamento padrão para uso geral v2. Para obter mais informações sobre o ZRS, consulte [Armazenamento com redundância de zona (ZRS): aplicativos de Armazenamento do Azure altamente disponíveis](../articles/storage/common/storage-redundancy-zrs.md). Para saber mais sobre outras opções de replicação, confira [Replicação do Armazenamento do Azure](../articles/storage/common/storage-redundancy.md).
+<div id="zone-redundant-storage"><sup>4</sup>O ZRS (armazenamento com redundância de zona) só está disponível para as contas de armazenamento padrão para uso geral v2. Para obter mais informações sobre o ZRS, consulte <a href="https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs">Armazenamento com redundância de zona (ZRS): aplicativos de Armazenamento do Azure altamente disponíveis</a>. Para saber mais sobre outras opções de replicação, confira <a href="https://docs.microsoft.com/azure/storage/common/storage-redundancy">Replicação do Armazenamento do Azure</a>.</div>
 
-<sup>5</sup> desempenho premium para uso geral v2 e contas de uso geral v1 está disponível para blobs de página e de disco somente.
+<div id="premium-performance"><sup>5</sup>desempenho premium para uso geral v2 e contas de uso geral v1 está disponível para blobs de página e de disco somente.</div>

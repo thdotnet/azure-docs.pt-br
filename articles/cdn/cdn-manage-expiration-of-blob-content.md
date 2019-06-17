@@ -14,12 +14,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 02/1/2018
 ms.author: mazha
-ms.openlocfilehash: a6dcd57591dcc6aa09ae2cb62f4b6dfe964c979f
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 89f821398f2bccf19a8be090de0e8788090670fb
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65191131"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67080828"
 ---
 # <a name="manage-expiration-of-azure-blob-storage-in-azure-cdn"></a>Gerenciar a expiração do armazenamento de Blobs do Azure na CDN do Azure
 > [!div class="op_single_selector"]
@@ -92,7 +92,7 @@ O método preferido para configuração do cabeçalho `Cache-Control` do blob é
 
 [Azure PowerShell](/powershell/azure/overview) é uma das maneiras mais rápidas e eficientes de administrar os serviços do Azure. Use o cmdlet `Get-AzStorageBlob` para obter uma referência para o blob, em seguida, defina a propriedade `.ICloudBlob.Properties.CacheControl`. 
 
-Por exemplo: 
+Por exemplo:
 
 ```powershell
 # Create a storage context
@@ -114,9 +114,9 @@ $blob.ICloudBlob.SetProperties()
 >
 
 ## <a name="setting-cache-control-headers-by-using-net"></a>Configurando cabeçalhos de Cache-Control usando .NET
-Para especificar o cabeçalho `Cache-Control` de um blob usando o código .NET, use a [Biblioteca de Cliente de Armazenamento do Microsoft Azure para .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md) a fim de definir a propriedade [CloudBlob.Properties.CacheControl](/dotnet/api/microsoft.azure.storage.blob.blobproperties.cachecontrol#Microsoft_WindowsAzure_Storage_Blob_BlobProperties_CacheControl).
+Para especificar o cabeçalho `Cache-Control` de um blob usando o código .NET, use a [Biblioteca de Cliente de Armazenamento do Microsoft Azure para .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md) a fim de definir a propriedade [CloudBlob.Properties.CacheControl](/dotnet/api/microsoft.azure.storage.blob.blobproperties.cachecontrol).
 
-Por exemplo: 
+Por exemplo:
 
 ```csharp
 class Program

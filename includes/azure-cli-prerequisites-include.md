@@ -1,21 +1,20 @@
 ---
-author: genlin
-ms.service: virtual-network
+author: sptramer
 ms.topic: include
-ms.date: 11/09/2018
-ms.author: genli
-ms.openlocfilehash: 147eb5321853706b59fac7d3d49a761a251987fa
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.date: 05/31/2019
+ms.author: sttramer
+ms.openlocfilehash: 4152d2da91d70533801304c15345600bd625b9a6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66170893"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66814770"
 ---
 ## <a name="prerequisite-install-the-azure-cli"></a>Pré-requisito: Instalar a CLI do Azure
-Para executar as etapas deste artigo, será necessário [instalar a Interface de Linha de Comando do Azure para Mac, Linux e Windows (CLI do Azure)](../articles/cli-install-nodejs.md) e você precisará [entrar no Microsoft Azure](/cli/azure/authenticate-azure-cli). 
+
+Para executar as etapas neste artigo [instalar a CLI do Azure](/cli/azure/install-azure-cli) e [entrar no Azure](/cli/azure/authenticate-azure-cli). 
 
 > [!NOTE]
-> Se você não tiver uma conta do Azure, crie uma. Inscreva-se em uma [avaliação gratuita aqui](../articles/active-directory/fundamentals/sign-up-organization.md). Além disso, para conseguir acompanhar totalmente, você precisará ter o [jq](https://stedolan.github.io/jq/) ou alguma outra ferramenta de análise ou biblioteca JSON instalada.
-> 
-> 
+> Se você não tiver uma conta do Azure, crie uma. Inscreva-se um [avaliação gratuita aqui](../articles/active-directory/fundamentals/sign-up-organization.md).
+> Além disso acompanhar você precisa ter [jq](https://stedolan.github.io/jq/) ou alguns outro JSON ferramenta de análise ou biblioteca instalada.
 

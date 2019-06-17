@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: juliako
 ms.openlocfilehash: 930420240d7b0f116f72056404e809ca94820f11
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65991443"
 ---
 # <a name="scenarios-and-availability-of-media-services-features-across-datacenters"></a>Cenários e disponibilidade de recursos dos Serviços de Mídia em datacenters
@@ -196,8 +196,8 @@ A AMS oferece dois codificadores de sob demanda **Media Encoder Standard** e **F
 
 |Nome do processador de mídia|Status|Datacenters
 |---|---|---|
-|Codificador de Mídia Padrão|GA|Todos|
-|Media Encoder Premium Workflow|GA|Todos, exceto China|
+|Media Encoder Standard|GA|Todos|
+|Fluxo de trabalho do Media Encoder Premium|GA|Todos, exceto China|
 
 ### <a name="analytics-media-processors"></a>Processadores de mídia da Análise
 

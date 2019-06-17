@@ -10,14 +10,13 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-origin.date: 04/23/2018
-ms.date: 04/17/2019
-ms.author: v-junlch
+ms.date: 4/23/2018
+ms.author: victorh
 ms.openlocfilehash: ee0267146140d095487b293331a7de493ba151c6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61361936"
 ---
 # <a name="azure-application-gateway-url-path-based-routing-overview"></a>Visão geral do roteamento baseado do caminho da URL de Gateway de Aplicativo do Azure
@@ -101,5 +100,3 @@ snippet de código da regra de PathBasedRouting:
 ## <a name="next-steps"></a>Próximas etapas
 
 Depois de conhecer o roteamento de conteúdo baseado em URL, acesse [criar um application gateway usando o roteamento baseado em URL](tutorial-url-route-powershell.md) para criar um application gateway com as regras de roteamento de URL.
-
-<!-- Update_Description: update metedata properties -->

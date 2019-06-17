@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: babanisa
 ms.openlocfilehash: 87cfce6045ce84f83ca651472635227547c26ee9
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66117018"
 ---
 # <a name="event-grid-security-and-authentication"></a>Segurança e autenticação da Grade de Eventos 
@@ -35,9 +35,9 @@ Como muitos outros serviços que dão suporte a webhooks, a Grade de Eventos do 
 
 Se você estiver usando qualquer outro tipo de ponto de extremidade, como uma função do Azure baseada no gatilho HTTP, o código do ponto de extremidade precisará participar de um handshake de validação com o EventGrid. A Grade de Eventos dá suporte a duas maneiras de validar a assinatura.
 
-1. **Handshake de ValidationCode (programático)**: Se você controlar o código-fonte para o ponto de extremidade, esse método é recomendado. No momento da criação da assinatura, a Grade de Eventos posta um Evento de Validação de Assinatura para o ponto de extremidade de destino. O esquema desse evento é semelhante a qualquer outro evento da Grade de Eventos. A parte de dados desse evento inclui um `validationCode` propriedade. Seu aplicativo verifica se a solicitação de validação é para uma assinatura de evento esperado e retorna o código de validação à Grade de Eventos. Esse mecanismo de handshake é compatível com todas as versões da Grade de Eventos.
+1. **Handshake de ValidationCode (programático)** : Se você controlar o código-fonte para o ponto de extremidade, esse método é recomendado. No momento da criação da assinatura, a Grade de Eventos posta um Evento de Validação de Assinatura para o ponto de extremidade de destino. O esquema desse evento é semelhante a qualquer outro evento da Grade de Eventos. A parte de dados desse evento inclui um `validationCode` propriedade. Seu aplicativo verifica se a solicitação de validação é para uma assinatura de evento esperado e retorna o código de validação à Grade de Eventos. Esse mecanismo de handshake é compatível com todas as versões da Grade de Eventos.
 
-2. **Handshake ValidationURL (manual)**: Em alguns casos, você não pode acessar o código-fonte do ponto de extremidade para implementar o handshake ValidationCode. Por exemplo, se você usar um serviço de terceiros (como [Zapier](https://zapier.com) ou [IFTTT](https://ifttt.com/)), não será possível responder de volta programaticamente com o código de validação.
+2. **Handshake ValidationURL (manual)** : Em alguns casos, você não pode acessar o código-fonte do ponto de extremidade para implementar o handshake ValidationCode. Por exemplo, se você usar um serviço de terceiros (como [Zapier](https://zapier.com) ou [IFTTT](https://ifttt.com/)), não será possível responder de volta programaticamente com o código de validação.
 
    A partir da versão 2018-05-01-preview, a Grade de Eventos dá suporte a um handshake de validação manual. Se você estiver criando uma inscrição de evento com um SDK ou ferramenta que usa a versão da API 2018-05-01-preview ou posterior, a Grade de Eventos envia uma propriedade `validationUrl` na parte de dados do evento de validação da assinatura. Para concluir o handshake, encontre essa URL nos dados do evento e manualmente enviar uma solicitação GET para ela. Você pode usar um cliente REST ou o navegador da web.
 
@@ -204,7 +204,7 @@ Grade de eventos fornece duas funções internas para gerenciar assinaturas de e
 
 Você pode [atribua essas funções para um usuário ou grupo](../role-based-access-control/quickstart-assign-role-user-portal.md).
 
-**Grade de Eventos do Azure EventSubscription colaborador (visualização)**: gerenciar operações de assinatura de grade de eventos
+**Grade de Eventos do Azure EventSubscription colaborador (visualização)** : gerenciar operações de assinatura de grade de eventos
 
 ```json
 [
@@ -240,7 +240,7 @@ Você pode [atribua essas funções para um usuário ou grupo](../role-based-acc
 ]
 ```
 
-**Grade de Eventos do Azure EventSubscription Reader (versão prévia)**: ler assinaturas de grade de eventos
+**Grade de Eventos do Azure EventSubscription Reader (versão prévia)** : ler assinaturas de grade de eventos
 
 ```json
 [

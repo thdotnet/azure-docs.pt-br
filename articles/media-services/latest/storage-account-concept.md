@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 05/11/2019
 ms.author: juliako
 ms.openlocfilehash: 9cbb995eb3310a2263185d6fd6dba20efce37f38
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65550160"
 ---
 # <a name="cloud-upload-and-storage"></a>Upload e armazenamento na nuvem
@@ -44,7 +44,7 @@ Em serviços de mídia v3, as APIs de armazenamento são usadas para carregar ar
 
 Para proteger os Ativos em repouso, os ativos devem ser criptografados pela criptografia do armazenamento. A tabela a seguir mostra como a criptografia do armazenamento funciona nos Serviços de Mídia v3:
 
-|Opção de criptografia|Descrição|Serviços de Mídia v3|
+|Opção de criptografia|DESCRIÇÃO|Serviços de Mídia v3|
 |---|---|---|
 |Criptografia do Armazenamento dos Serviços de Mídia| Criptografia AES-256, chave gerenciada pelos Serviços de Mídia|Não é compatível<sup>(1)</sup>|
 |[Criptografia do Serviço de Armazenamento para dados em repouso](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)|Criptografia do servidor oferecida pelo Armazenamento do Microsoft Azure, chave gerenciada pelo Azure ou pelo cliente|Com suporte|
@@ -54,14 +54,14 @@ Para proteger os Ativos em repouso, os ativos devem ser criptografados pela crip
 
 ## <a name="storage-account-errors"></a>Erros de conta de armazenamento
 
-O estado de "Desconectado" para uma conta de serviços de mídia indica que a conta não tem mais acesso a um ou mais contas de armazenamento anexado devido a uma alteração nas chaves de acesso de armazenamento. Chaves de acesso de armazenamento atualizado são necessárias pelos serviços de mídia para executar muitas tarefas na conta.
+O estado "Desconectado" de uma conta de Serviços de Mídia indica que a conta não tem mais acesso a uma ou mais contas de armazenamento anexadas, devido a uma alteração nas chaves de acesso de armazenamento. Os Serviços de Mídia exigem chaves de acesso de armazenamento atualizadas para realizar várias tarefas na conta.
 
-A seguir estão os principais cenários que resultariam em uma conta de serviços de mídia não ter acesso às contas de armazenamento anexado. 
+Veja a seguir os principais cenários que fariam com que a conta de Serviços de Mídia não tivesse acesso às contas de armazenamento anexadas. 
 
 |Problema|Solução|
 |---|---|
-|A conta de serviços de mídia ou a conta de armazenamento anexado (s) foram migrados para separar as assinaturas. |Migre a conta de serviços de mídia ou contas de armazenamento para que eles estejam todos na mesma assinatura. |
-|A conta de serviços de mídia está usando uma conta de armazenamento anexado em uma assinatura diferente, como ele era uma conta de serviços de mídia antecipada em que isso tinha suporte. Todas as contas de serviços de mídia iniciais foram convertidas em contas de Gerenciador de recursos da Azure (ARM) com base em modernos e terão um estado desconectado. |Migre a conta de armazenamento ou a conta de serviços de mídia para que eles estejam todos na mesma assinatura.|
+|A conta de Serviços de Mídia ou as contas de armazenamento anexadas foram migradas para assinaturas separadas. |Migre as contas de armazenamento ou a conta de Serviços de Mídia de modo que elas fiquem na mesma assinatura. |
+|A conta de Serviços de Mídia está usando uma conta de armazenamento anexada em uma assinatura diferente, já que ela era uma conta Serviços de Mídia inicial compatível com este cenário. Todas as contas de Serviços de Mídia iniciais foram convertidas em contas modernas baseadas no Azure Resource Manager e terão o estado de Desconectadas. |Migre a conta de armazenamento ou a conta de Serviços de Mídia de modo que elas fiquem na mesma assinatura.|
 
 ## <a name="next-steps"></a>Próximas etapas
 

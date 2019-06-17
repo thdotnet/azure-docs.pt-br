@@ -7,10 +7,10 @@ ms.date: 4/9/2019
 ms.topic: article
 ms.service: security
 ms.openlocfilehash: 017a26d5672f666d4d8eaf629a0f53fe0cfe517f
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65963237"
 ---
 # <a name="secure-azure-computing-architecture"></a>Proteger arquitetura de computação do Azure
@@ -157,7 +157,7 @@ Recomendamos essa arquitetura porque ele atende aos requisitos de SCCA. É altam
             - Essa sub-rede é onde as VMs e serviços usados para VDMS são implantados.
         - Subredes não confiáveis e confiáveis
             - Essas sub-redes são em que os dispositivos virtuais são implantados.
-        - Sub-rede de gateway
+        - Gateway de sub-rede
             - Essa sub-rede é onde o Gateway de ExpressRoute é implantado.
 - Máquinas de virtuais de caixa de salto de gerenciamento
     - Eles são usados para gerenciamento fora de banda do ambiente.
@@ -165,7 +165,7 @@ Recomendamos essa arquitetura porque ele atende aos requisitos de SCCA. É altam
     - Você usa o Citrix ou F5 com base em modelo que você implanta.
 - IPs Públicos
     - Eles são usados para front-end até que o ExpressRoute é colocado online. Esses IPs traduzir para o espaço de endereço privado do Azure de back-end.
-- Tabelas de rota 
+- Tabelas de rotas 
     - Aplicado durante a automação, esses roteiam tabelas túnel à força todo o tráfego por meio do dispositivo virtual.
 - Balanceadores de carga do Azure - SKU Standard
     - Eles são usados para balancear carga de tráfego entre os dispositivos.

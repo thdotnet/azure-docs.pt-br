@@ -13,10 +13,10 @@ ms.workload: na
 ms.date: 04/08/2019
 ms.author: tomfitz
 ms.openlocfilehash: 82b9403a3d5a5b6938f5b95bbfce888d1e70e451
-ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66431219"
 ---
 # <a name="string-functions-for-azure-resource-manager-templates"></a>Funções de cadeia de caracteres para modelos do Azure Resource Manager
@@ -430,7 +430,7 @@ Converte um valor em um URI de dados.
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| stringToConvert |Sim |string |O valor a ser convertido em um URI de dados. |
+| stringToConvert |Sim |cadeia de caracteres |O valor a ser convertido em um URI de dados. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -485,7 +485,7 @@ Converte um valor formatado como um URI de dados em uma cadeia de caracteres.
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| dataUriToConvert |Sim |string |Os valor de URI de dados a ser convertido. |
+| dataUriToConvert |Sim |cadeia de caracteres |Os valor de URI de dados a ser convertido. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -780,7 +780,7 @@ Cria um valor no formato de um identificador global exclusivo com base nos valor
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| baseString |Sim |string |O valor usado na função de hash para criar o GUID. |
+| baseString |Sim |cadeia de caracteres |O valor usado na função de hash para criar o GUID. |
 | parâmetros extras conforme necessário |Não |cadeia de caracteres |Você pode adicionar quantas cadeias de caracteres forem necessárias para criar o valor que especifica o nível de exclusividade. |
 
 ### <a name="remarks"></a>Comentários
@@ -1231,8 +1231,8 @@ Retorna uma nova cadeia de caracteres com todas as instâncias de uma cadeia de 
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| originalString |Sim |string |O valor que tem todas as instâncias de uma cadeia de caracteres substituídas por outra cadeia de caracteres. |
-| oldString |Sim |string |A cadeia de caractere a ser removida da cadeia de caracteres original. |
+| originalString |Sim |cadeia de caracteres |O valor que tem todas as instâncias de uma cadeia de caracteres substituídas por outra cadeia de caracteres. |
+| oldString |Sim |cadeia de caracteres |A cadeia de caractere a ser removida da cadeia de caracteres original. |
 | newString |Sim |cadeia de caracteres |A cadeia de caracteres a ser adicionada no lugar da cadeia removida. |
 
 ### <a name="return-value"></a>Valor de retorno
@@ -1411,8 +1411,8 @@ Determina se uma cadeia de caracteres começa com um valor. A comparação não 
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| stringToSearch |Sim |string |O valor que contém o item a ser encontrado. |
-| stringToFind |Sim |string |O valor a ser encontrado. |
+| stringToSearch |Sim |cadeia de caracteres |O valor que contém o item a ser encontrado. |
+| stringToFind |Sim |cadeia de caracteres |O valor a ser encontrado. |
 
 ### <a name="return-value"></a>Valor de retorno
 
@@ -1825,8 +1825,8 @@ Cria uma cadeia de caracteres de hash determinístico com base nos valores forne
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| baseString |Sim |string |O valor usado na função de hash para criar uma cadeia de caracteres exclusiva. |
-| parâmetros extras conforme necessário |Não |string |Você pode adicionar quantas cadeias de caracteres forem necessárias para criar o valor que especifica o nível de exclusividade. |
+| baseString |Sim |cadeia de caracteres |O valor usado na função de hash para criar uma cadeia de caracteres exclusiva. |
+| parâmetros extras conforme necessário |Não |cadeia de caracteres |Você pode adicionar quantas cadeias de caracteres forem necessárias para criar o valor que especifica o nível de exclusividade. |
 
 ### <a name="remarks"></a>Comentários
 
@@ -1903,8 +1903,8 @@ Cria um URI absoluto, combinando o baseUri e a cadeia de caracteres relativeUri.
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| baseUri |Sim |string |Cadeia de caracteres do URI de base. |
-| relativeUri |Sim |string |Cadeia de caracteres de uri relativo para adicionar a cadeia de caracteres do uri de base. |
+| baseUri |Sim |cadeia de caracteres |Cadeia de caracteres do URI de base. |
+| relativeUri |Sim |cadeia de caracteres |Cadeia de caracteres de uri relativo para adicionar a cadeia de caracteres do uri de base. |
 
 O valor para o parâmetro **baseUri** pode incluir um arquivo específico, mas apenas o caminho base é usado ao construir a URI. Por exemplo, transmitir `http://contoso.com/resources/azuredeploy.json` como parâmetro baseUri resultará em uma URI base de `http://contoso.com/resources/`.
 
@@ -2077,7 +2077,7 @@ Retorna o valor de data e hora (UTC) atual no formato especificado. Se nenhum fo
 
 | Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| format |Não |string |O valor codificado em URI a ser convertido em uma cadeia de caracteres. Use um [cadeias de caracteres de formato padrão](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) ou [cadeias de caracteres de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). |
+| format |Não |cadeia de caracteres |O valor codificado em URI a ser convertido em uma cadeia de caracteres. Use um [cadeias de caracteres de formato padrão](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) ou [cadeias de caracteres de formato personalizado](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). |
 
 ### <a name="remarks"></a>Comentários
 

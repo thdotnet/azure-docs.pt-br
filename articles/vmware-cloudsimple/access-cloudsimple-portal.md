@@ -8,16 +8,20 @@ ms.topic: article
 ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 30882899e5be4101ae3d77f9840d8bdef567e53f
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
-ms.translationtype: MT
+ms.openlocfilehash: 8c7bb080b350742d0722cdb4e07b82a6881ba05b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66676977"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67073661"
 ---
 # <a name="accessing-the-vmware-solution-by-cloudsimple-portal-from-azure-portal"></a>Acessando a solução VMware CloudSimple portal do portal do Azure
 
 O logon único é compatível com acesso ao portal do CloudSimple. Depois de entrar no portal do Azure, você pode acessar o portal de CloudSimple sem precisar entrar novamente. A primeira vez que acessar o portal de CloudSimple você será solicitado a autorizar o [autorização do serviço CloudSimple](#consent-to-cloudsimple-service-authorization-application) aplicativo.  A autorização é uma ação única.
+
+## <a name="before-you-begin"></a>Antes de começar
+
+Somente os usuários com builtin **proprietário** e **Colaborador** funções podem acessar o portal de CloudSimple.  As funções devem ser configuradas na assinatura.  Para obter mais informações sobre a verificação da sua função, consulte [exibir atribuições de função](https://docs.microsoft.com/azure/role-based-access-control/check-access) artigo.
 
 ## <a name="sign-in-to-azure"></a>Entrar no Azure
 

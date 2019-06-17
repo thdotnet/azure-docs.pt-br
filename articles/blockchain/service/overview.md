@@ -11,10 +11,10 @@ ms.service: azure-blockchain
 ms.reviewer: janders
 manager: femila
 ms.openlocfilehash: e370916d420a7bc4cd16d021c69a2f8609093d30
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65544712"
 ---
 # <a name="what-is-azure-blockchain-service"></a>O que é o serviço do Azure Blockchain?
@@ -51,7 +51,7 @@ Como um serviço gerenciado, o serviço de Blockchain do Azure garante que nós 
 
 Além disso, o serviço de Blockchain do Azure fornece métricas avançadas por meio do serviço do Azure Monitor fornecendo percepções de nós de CPU, memória e utilização de armazenamento, bem como informações úteis sobre atividade de rede de blockchain como transações e os blocos podem ser extraídos, profundidade da fila de transações, bem como as conexões ativas.  As métricas podem ser personalizadas para fornecer modos de exibição para as informações que são importantes para seu aplicativo de blockchain.  Além disso, os limites podem ser definidos por meio de alertas, permitindo que os usuários disparar ações como enviar uma mensagem de email ou texto, executando um aplicativo lógico, a função do Azure ou o envio para um webhook personalizado.
 
-![Métricas](./media/overview/metrics.png)
+![metrics](./media/overview/metrics.png)
 
 Por meio do Azure Log Analytics, os usuários podem exibir logs relacionados a razão de Quorum ou outras conexões de informações importantes, como tentativas para os nós de transação.
 

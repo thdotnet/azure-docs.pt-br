@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 04/22/2019
-ms.openlocfilehash: 15aedaa7eedad4940945e9b1e7eff0e1780da796
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: ca29bfdb381c5cab0625a320679331c82f63c887
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65790395"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67118064"
 ---
 # <a name="resource-limits-for-single-databases-using-the-vcore-based-purchasing-model"></a>Limites de recursos para bancos de dados individuais usando o modelo de compra baseado em vCore
 
@@ -51,7 +51,7 @@ Para limites do modelo de compra baseado em DTU para bancos de dados individuais
 |Latência de E/S (aproximada)|5-7 ms (gravação)<br>5-10 ms (leitura)|5-7 ms (gravação)<br>5-10 ms (leitura)|5-7 ms (gravação)<br>5-10 ms (leitura)|5-7 ms (gravação)<br>5-10 ms (leitura)|5-7 ms (gravação)<br>5-10 ms (leitura)|5-7 ms (gravação)<br>5-10 ms (leitura)|
 |IOPS de destino (64 KB)|500|1000|1500|2000|2500|3000|
 |Limites de taxa de log (MBps)|3,75|7.5|11,25|15|18.75|22,5|
-|Máximo de trabalhos simultâneos (solicitações)|200|400|600|800|1000|1.200|
+|Máximo de trabalhos simultâneos (solicitações)|200|400|600|800|1000|1\.200|
 |Máximo permitido de sessões|30000|30000|30000|30000|30000|30000|
 |Número de réplicas|1|1|1|1|1|1|
 |Multi-AZ|N/D|N/D|N/D|N/D|N/D|N/D|
@@ -72,9 +72,9 @@ Para limites do modelo de compra baseado em DTU para bancos de dados individuais
 |Tamanho de TempDB (GB)|224|256|288|320|384|384|
 |Tipo de armazenamento|Armazenamento Premium (remoto)|Armazenamento Premium (remoto)|Armazenamento Premium (remoto)|Armazenamento Premium (remoto)|Armazenamento Premium (remoto)|Armazenamento Premium (remoto)|
 |Latência de E/S (aproximada)|5-7 ms (gravação)<br>5-10 ms (leitura)|5-7 ms (gravação)<br>5-10 ms (leitura)|5-7 ms (gravação)<br>5-10 ms (leitura)|5-7 ms (gravação)<br>5-10 ms (leitura)|5-7 ms (gravação)<br>5-10 ms (leitura)|5-7 ms (gravação)<br>5-10 ms (leitura)
-|IOPS de destino (64 KB)|3500|4000|4500|5.000|7000|7000|
+|IOPS de destino (64 KB)|3500|4000|4500|5\.000|7000|7000|
 |Limites de taxa de log (MBps)|26.25|30|30|30|30|30|
-|Máximo de trabalhos simultâneos (solicitações)|1.400|1600|1800|2000|3200|4800|
+|Máximo de trabalhos simultâneos (solicitações)|1\.400|1600|1800|2000|3200|4800|
 |Máximo permitido de sessões|30000|30000|30000|30000|30000|30000|
 |Número de réplicas|1|1|1|1|1|1|
 |Multi-AZ|N/D|N/D|N/D|N/D|N/D|N/D|
@@ -95,9 +95,9 @@ Para limites do modelo de compra baseado em DTU para bancos de dados individuais
 |Tamanho de TempDB (GB)|64|128|192|256|320|384|384|
 |Tipo de armazenamento|Armazenamento Premium (remoto)|Armazenamento Premium (remoto)|Armazenamento Premium (remoto)|Armazenamento Premium (remoto)|Armazenamento Premium (remoto)|Armazenamento Premium (remoto)|Armazenamento Premium (remoto)|
 |Latência de E/S (aproximada)|5-7 ms (gravação)<br>5-10 ms (leitura)|5-7 ms (gravação)<br>5-10 ms (leitura)|5-7 ms (gravação)<br>5-10 ms (leitura)|5-7 ms (gravação)<br>5-10 ms (leitura)|5-7 ms (gravação)<br>5-10 ms (leitura)|5-7 ms (gravação)<br>5-10 ms (leitura)|5-7 ms (gravação)<br>5-10 ms (leitura)|
-|IOPS de destino (64 KB)|1000|2000|3000|4000|5.000|6000|7000|
+|IOPS de destino (64 KB)|1000|2000|3000|4000|5\.000|6000|7000|
 |Limites de taxa de log (MBps)|3,75|7.5|11,25|15|18.75|22,5|26.25|
-|Máximo de trabalhos simultâneos (solicitações)|200|400|600|800|1000|1.200|1.400|
+|Máximo de trabalhos simultâneos (solicitações)|200|400|600|800|1000|1\.200|1\.400|
 |Máximo permitido de sessões|30000|30000|30000|30000|30000|30000|30000|
 |Número de réplicas|1|1|1|1|1|1|1|
 |Multi-AZ|N/D|N/D|N/D|N/D|N/D|N/D|N/D|
@@ -146,7 +146,7 @@ O [camada de computação sem servidor](sql-database-serverless.md) está em vis
 |Tamanho de TempDB (GB)|32|64|128|
 |Tipo de armazenamento|Armazenamento Premium (remoto)|Armazenamento Premium (remoto)|Armazenamento Premium (remoto)|
 |Latência de E/S (aproximada)|5-7 ms (gravação)<br>5-10 ms (leitura)|5-7 ms (gravação)<br>5-10 ms (leitura)|5-7 ms (gravação)<br>5-10 ms (leitura)|
-|IOPS de destino (64 KB)|250|500|1000|
+|IOPS de destino (64 KB)|500|1000|2000|
 |Limites de taxa de log (MBps)|2.5|5.6|10|
 |Máximo de trabalhos simultâneos (solicitações)|75|150|300|
 |Máximo permitido de sessões|30000|30000|30000|
@@ -171,10 +171,10 @@ O [camada de computação sem servidor](sql-database-serverless.md) está em vis
 |Tamanho máximo de log (GB)|195|195|195|195|195|195|
 |Tamanho de TempDB (GB)|32|64|96|128|160|192|
 |Latência de E/S (aproximada)|1-2 ms (gravação)<br>1-2 ms (leitura)|1-2 ms (gravação)<br>1-2 ms (leitura)|1-2 ms (gravação)<br>1-2 ms (leitura)|1-2 ms (gravação)<br>1-2 ms (leitura)|1-2 ms (gravação)<br>1-2 ms (leitura)|1-2 ms (gravação)<br>1-2 ms (leitura)|
-|IOPS de destino (64 KB)|5.000|10000|15000|20000|25000|30000|
+|IOPS de destino (64 KB)|5\.000|10000|15000|20000|25000|30000|
 |Limites de taxa de log (MBps)|8|16|24|32|40|48|
-|Máximo de trabalhos simultâneos (solicitações)|200|400|600|800|1000|1.200|
-|Máximo de logons simultâneos|200|400|600|800|1000|1.200|
+|Máximo de trabalhos simultâneos (solicitações)|200|400|600|800|1000|1\.200|
+|Máximo de logons simultâneos|200|400|600|800|1000|1\.200|
 |Máximo permitido de sessões|30000|30000|30000|30000|30000|30000|
 |Número de réplicas|4|4|4|4|4|4|
 |Multi-AZ|Sim|sim|sim|sim|sim|Sim|
@@ -195,10 +195,10 @@ O [camada de computação sem servidor](sql-database-serverless.md) está em vis
 |Tamanho máximo de log (GB)|195|195|195|195|307|307|
 |Tamanho de TempDB (GB)|224|256|288|320|384|384|
 |Latência de E/S (aproximada)|1-2 ms (gravação)<br>1-2 ms (leitura)|1-2 ms (gravação)<br>1-2 ms (leitura)|1-2 ms (gravação)<br>1-2 ms (leitura)|1-2 ms (gravação)<br>1-2 ms (leitura)|1-2 ms (gravação)<br>1-2 ms (leitura)|1-2 ms (gravação)<br>1-2 ms (leitura)|
-|IOPS de destino (64 KB)|35.000|40000|45000|50000|80000|120000|
+|IOPS de destino (64 KB)|35\.000|40000|45000|50000|80000|120000|
 |Limites de taxa de log (MBps)|56|64|64|64|64|64|
-|Máximo de trabalhos simultâneos (solicitações)|1.400|1600|1800|2000|3200|4800|
-|Máximo de logons simultâneos (solicitações)|1.400|1600|1800|2000|3200|4800|
+|Máximo de trabalhos simultâneos (solicitações)|1\.400|1600|1800|2000|3200|4800|
+|Máximo de logons simultâneos (solicitações)|1\.400|1600|1800|2000|3200|4800|
 |Máximo permitido de sessões|30000|30000|30000|30000|30000|30000|
 |Número de réplicas|4|4|4|4|4|4|
 |Multi-AZ|Sim|sim|sim|sim|sim|Sim|
@@ -221,8 +221,8 @@ O [camada de computação sem servidor](sql-database-serverless.md) está em vis
 |Latência de E/S (aproximada)|1-2 ms (gravação)<br>1-2 ms (leitura)|1-2 ms (gravação)<br>1-2 ms (leitura)|1-2 ms (gravação)<br>1-2 ms (leitura)|1-2 ms (gravação)<br>1-2 ms (leitura)|1-2 ms (gravação)<br>1-2 ms (leitura)|1-2 ms (gravação)<br>1-2 ms (leitura)|1-2 ms (gravação)<br>1-2 ms (leitura)|
 |IOPS de destino (64 KB)|8000|16000|24000|32000|40000|48000|56000|
 |Limites de taxa de log (MBps)|12|24|36|48|60|72|84|
-|Máximo de trabalhos simultâneos (solicitações)|200|400|600|800|1000|1.200|1.400|
-|Máximo de logons simultâneos|200|400|600|800|1000|1.200|1.400|
+|Máximo de trabalhos simultâneos (solicitações)|200|400|600|800|1000|1\.200|1\.400|
+|Máximo de logons simultâneos|200|400|600|800|1000|1\.200|1\.400|
 |Máximo permitido de sessões|30000|30000|30000|30000|30000|30000|30000|
 |Número de réplicas|4|4|4|4|4|4|4|
 |Multi-AZ|Sim|sim|sim|sim|sim|sim|Sim|

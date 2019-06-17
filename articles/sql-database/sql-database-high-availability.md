@@ -11,13 +11,13 @@ author: jovanpop-msft
 ms.author: sashan
 ms.reviewer: carlrab, sashan
 manager: craigg
-ms.date: 04/17/2019
-ms.openlocfilehash: ec9f5aa8163ea9bb838b1a95ab8ad49233a72643
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 06/10/2019
+ms.openlocfilehash: a88842802759a5c3ae7af7334bbe125344c978ea
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60392598"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67066908"
 ---
 # <a name="high-availability-and-azure-sql-database"></a>Banco de dados SQL do Microsoft Azure e de alta disponibilidade
 
@@ -62,7 +62,7 @@ Por padrão, o cluster de nós para o modelo de disponibilidade premium é criad
 Como os bancos de dados com redundância de zona tem réplicas em diferentes datacenters com alguma distância entre eles, a latência de rede aumentada pode aumentar o tempo de confirmação e, portanto, afetar o desempenho de algumas cargas de trabalho OLTP. Sempre será possível retornar à configuração de única zona, desabilitando a configuração com redundância de zona. Esse processo é uma operação online semelhante para a atualização da camada de serviço normal. No final do processo, o pool ou banco de dados será migrado de um anel com redundância de zona para um anel de única zona ou vice-versa.
 
 > [!IMPORTANT]
-> Pools Elásticos e bancos de dados com redundância de zona estão atualmente só tem suporte nas camadas de serviço Premium e comercialmente crítico. Por padrão, os backups e os registros de auditoria são armazenados no armazenamento do RA-GRS e, portanto, podem não estar disponíveis automaticamente no caso de uma indisponibilidade em toda a zona. 
+> Pools Elásticos e bancos de dados com redundância de zona estão atualmente só tem suporte nas camadas de serviço Premium e comercialmente crítico em regiões selecionadas. Ao usar a camada comercialmente crítico, configuração com redundância de zona está disponível apenas quando o hardware de computação Gen5 está selecionado. Para obter informações atualizadas sobre as regiões que dão suporte a bancos de dados com redundância de zona, consulte [dar suporte a serviços por região](../availability-zones/az-overview.md#services-support-by-region).  
 
 A versão com redundância de zona da arquitetura de alta disponibilidade é ilustrada pelo diagrama a seguir:
 

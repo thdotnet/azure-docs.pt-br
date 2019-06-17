@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.reviewer: mbullwin
 ms.author: cithomas
-ms.openlocfilehash: fd5a16334fff0319d7993fb2403a48d1777f6bce
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 0691c35661a6d185a6aa5ed3383ad600653359d3
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65955328"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67058604"
 ---
 # <a name="applicationinsightsloggerprovider-for-net-core-ilogger-logs"></a>ApplicationInsightsLoggerProvider para logs de ILogger do .NET Core
 
@@ -106,6 +106,9 @@ public class ValuesController : ControllerBase
 ```
 
 ### <a name="capture-ilogger-logs-from-startupcs-and-programcs-in-aspnet-core-apps"></a>Capturar logs de ILogger dos Startup.cs e Program.cs em aplicativos ASP.NET Core
+
+> [!NOTE]
+> No ASP.NET Core 3.0 e posterior, não é possível injetar `ILogger` no Startup.cs e Program.cs. Consulte https://github.com/aspnet/Announcements/issues/353 para obter mais detalhes.
 
 O novo ApplicationInsightsLoggerProvider pode capturar logs de no início do pipeline de inicialização do aplicativo. Embora ApplicationInsightsLoggerProvider é habilitada automaticamente no Application Insights (começando com a versão 2.7.0-beta3), ele não tem uma chave de instrumentação configurada até que mais tarde no pipeline. Portanto, somente os logs do **controlador**/ outras classes serão capturados. Para capturar cada log começando com **Program.cs** e **Startup.cs** em si, você deve habilitar explicitamente uma chave de instrumentação para ApplicationInsightsLoggerProvider. Além disso, *TelemetryConfiguration* não está totalmente configurado quando você efetuar **Program.cs** ou **Startup.cs** em si. Portanto, esses logs terá uma configuração mínima InMemoryChannel, nenhuma amostragem e não usa os inicializadores de telemetria padrão ou de processadores.
 
@@ -450,7 +453,7 @@ Se você preferir enviar sempre TraceTelemetry, use este trecho de código: ```b
 
 A extensão do Application Insights em aplicativos Web do Azure usa o provedor antigo. Você pode modificar as regras de filtragem a *appSettings. JSON* arquivo para seu aplicativo. Para tirar proveito do novo provedor, use a instrumentação de tempo de compilação, assumir uma dependência NuGet do SDK. Este artigo será atualizado quando a extensão para usar o novo provedor.
 
-### <a name="im-using-the-standalone-package-microsoftextensionsloggingapplicationinsights-and-enabling-application-insights-provider-by-calling-builderaddapplicationinsightsikey-is-there-an-option-to-get-an-instrumentation-key-from-configuration"></a>Estou usando o pacote autônomo Microsoft.Extensions.Logging.ApplicationInsights e habilitando o provedor do Application Insights chamando **builder. AddApplicationInsights("ikey")**. Há uma opção para obter uma chave de instrumentação da configuração?
+### <a name="im-using-the-standalone-package-microsoftextensionsloggingapplicationinsights-and-enabling-application-insights-provider-by-calling-builderaddapplicationinsightsikey-is-there-an-option-to-get-an-instrumentation-key-from-configuration"></a>Estou usando o pacote autônomo Microsoft.Extensions.Logging.ApplicationInsights e habilitando o provedor do Application Insights chamando **builder. AddApplicationInsights("ikey")** . Há uma opção para obter uma chave de instrumentação da configuração?
 
 
 Modifique Program.cs e appSettings. JSON da seguinte maneira:

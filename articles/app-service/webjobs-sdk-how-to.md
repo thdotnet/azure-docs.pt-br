@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
 ms.openlocfilehash: 38d8bdfcba48d2080b434ebec192b41f3663ae6a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60831785"
 ---
 # <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Como usar o SDK do Azure WebJobs para o processamento em segundo plano controlado por evento
@@ -130,7 +130,7 @@ static void Main()
 
 Na versão 3. *x*, o limite de conexão padrão é infinitas conexões. Se por algum motivo você precisar alterar esse limite, você pode usar o [ `MaxConnectionsPerServer` ](/dotnet/api/system.net.http.winhttphandler.maxconnectionsperserver) propriedade o [ `WinHttpHandler` ](/dotnet/api/system.net.http.winhttphandler) classe.
 
-Na versão 2. *x*, você controlar o número de conexões simultâneas com um host usando o [Defaultconnectionlimit](/dotnet/api/system.net.servicepointmanager.defaultconnectionlimit#System_Net_ServicePointManager_DefaultConnectionLimit) API. 2. *x*, você deve aumentar esse valor do padrão de 2 antes de iniciar o host de trabalhos Web.
+Na versão 2. *x*, você controlar o número de conexões simultâneas com um host usando o [Defaultconnectionlimit](/dotnet/api/system.net.servicepointmanager.defaultconnectionlimit#System_Net_ServicePointManager_DefaultConnectionLimit) API. 2\. *x*, você deve aumentar esse valor do padrão de 2 antes de iniciar o host de trabalhos Web.
 
 Saída de todas as solicitações HTTP feitas por meio de uma função `HttpClient` fluir por meio de `ServicePointManager`. Depois de atingir o valor definido em `DefaultConnectionLimit`, `ServicePointManager` começa da fila as solicitações antes de enviá-los. Suponha que seu `DefaultConnectionLimit` seja definido como 2 e seu código faça 1.000 solicitações HTTP. Inicialmente, apenas duas solicitações são permitidas por meio do sistema operacional. As outras 998 são colocadas na fila até que haja espaço para elas. Isso significa que seu `HttpClient` pode atingir o tempo limite, porque parece que fez a solicitação, mas a solicitação nunca foi enviada pelo sistema operacional para o servidor de destino. Para que você possa ver o comportamento que não faz sentido: o `HttpClient` local está demorando 10 segundos para concluir uma solicitação, mas o serviço está retornando cada solicitação em 200 ms. 
 

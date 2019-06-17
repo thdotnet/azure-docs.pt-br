@@ -17,10 +17,10 @@ ms.date: 10/04/2018
 ms.author: cynthn
 ms.custom: mvc
 ms.openlocfilehash: 604a47ef73d50a2d127d1569b0b6a240a7a27d73
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65506835"
 ---
 # <a name="overview-of-windows-virtual-machines-in-azure"></a>Visão geral das máquinas virtuais do Windows no Azure
@@ -58,7 +58,7 @@ Todos os recursos criados no Azure são distribuídos entre várias [regiões ge
 
 Esta tabela mostra algumas das maneiras de obter uma lista dos locais disponíveis.
 
-| Método | Descrição |
+| Método | DESCRIÇÃO |
 | --- | --- |
 | Portal do Azure |Selecione um local na lista quando você criar uma VM. |
 | Azure PowerShell |Use o comando [Get-AzLocation](https://docs.microsoft.com/powershell/module/az.resources/get-azlocation). |
@@ -80,7 +80,7 @@ O Azure fornece muitas [imagens do marketplace](https://azure.microsoft.com/mark
 
 Esta tabela mostra algumas maneiras de encontrar as informações de uma imagem.
 
-| Método | Descrição |
+| Método | DESCRIÇÃO |
 | --- | --- |
 | Portal do Azure |Os valores são especificados automaticamente quando você seleciona uma imagem a ser usada. |
 | Azure PowerShell |[Get-AzVMImagePublisher](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimagepublisher) -Location *location*<BR>[Get-AzVMImageOffer](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimageoffer) -Location *location* -Publisher *publisherName*<BR>[Get-AzVMImageSku](https://docs.microsoft.com/powershell/module/az.compute/get-azvmimagesku) -Location *location* -Publisher *publisherName* -Offer *offerName* |
@@ -101,7 +101,7 @@ Estas tarefas comuns podem ser realizadas usando extensões:
 ### <a name="related-resources"></a>Recursos relacionados
 Os recursos nesta tabela são usados por VM e precisam existir ou ser criados quando a VM é criada.
 
-| Resource | Obrigatório | Descrição |
+| Resource | Obrigatório | DESCRIÇÃO |
 | --- | --- | --- |
 | [Grupo de recursos](../../azure-resource-manager/resource-group-overview.md) |Sim |A VM deve estar contida em um grupo de recursos. |
 | [Conta de armazenamento](../../storage/common/storage-create-storage-account.md) |Sim |A VM precisa da conta de armazenamento para armazenar seus discos rígidos virtuais. |
@@ -132,7 +132,7 @@ As VMs podem ser gerenciadas usando um portal baseado em navegador, ferramentas 
 ### <a name="get-information-about-a-vm"></a>Obter informações sobre uma VM
 Esta tabela mostra algumas das maneiras de obter informações sobre uma VM.
 
-| Método | Descrição |
+| Método | DESCRIÇÃO |
 | --- | --- |
 | Portal do Azure |No menu de hub, clique em **Máquinas Virtuais** e, em seguida, selecione a VM na lista. Na folha da VM, você tem acesso a informações de visão geral, define valores e métricas de monitoramento. |
 | Azure PowerShell |Para obter informações sobre como usar o PowerShell para gerenciar VMs, consulte [Criar e gerenciar máquinas virtuais do Windows com o módulo do Azure PowerShell](tutorial-manage-vm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). |

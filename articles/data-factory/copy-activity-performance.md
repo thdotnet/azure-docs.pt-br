@@ -10,17 +10,17 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 01/28/2019
+ms.date: 06/10/2019
 ms.author: jingwang
-ms.openlocfilehash: 81a5f99b0babd79af0034f684c45bfcf1bb25bd8
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
+ms.openlocfilehash: 3ae6966ed3fa8ee57e0ac85fe34866dcbde0fb9e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66425614"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67077263"
 ---
 # <a name="copy-activity-performance-and-tuning-guide"></a>Guia Desempenho e ajuste da Atividade de Cópia
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](v1/data-factory-copy-activity-performance.md)
 > * [Versão atual](copy-activity-performance.md)
 
@@ -306,7 +306,7 @@ Verifique se o armazenamento de dados subjacente não está sobrecarregado por o
 
 Para os armazenamentos de dados da Microsoft, consulte os [tópicos de monitoramento e ajuste](#performance-reference) específicos dos armazenamentos de dados. Esses tópicos o ajudarão a entender as características de desempenho do armazenamento de dados, minimizar os tempos de resposta e maximizar a taxa de transferência.
 
-* Se você copiar os dados **do armazenamento de Blobs para o SQL Data Warehouse**, considere o uso do **PolyBase** para melhorar o desempenho. Veja [Usar o PolyBase para carregar dados para o Azure SQL Data Warehouse](connector-azure-sql-data-warehouse.md#use-polybase-to-load-data-into-azure-sql-data-warehouse) para ver mais detalhes.
+* Se você copiar dados **de quaisquer dados armazenar no Azure SQL Data Warehouse**, considere o uso **PolyBase** para melhorar o desempenho. Veja [Usar o PolyBase para carregar dados para o Azure SQL Data Warehouse](connector-azure-sql-data-warehouse.md#use-polybase-to-load-data-into-azure-sql-data-warehouse) para ver mais detalhes.
 * Se você copiar dados **do HDFS para o Blob do Azure/Azure Data Lake Store**, considere usar **DistCp** para melhorar o desempenho. Consulte [Usar DistCp para copiar dados do HDFS](connector-hdfs.md#use-distcp-to-copy-data-from-hdfs) para obter detalhes.
 * Se você copiar dados **do Redshift para o SQL Data Warehouse do Azure/Blob do Azure/Azure Data Lake Store**, considere usar **UNLOAD** para melhorar o desempenho. Consulte [Usar UNLOAD para copiar dados do Amazon Redshift](connector-amazon-redshift.md#use-unload-to-copy-data-from-amazon-redshift) para obter detalhes.
 
@@ -317,10 +317,8 @@ Para os armazenamentos de dados da Microsoft, consulte os [tópicos de monitoram
 
 ### <a name="relational-data-stores"></a>Armazenamentos de dados relacionais
 
-* **Comportamento da cópia**: dependendo das propriedades configuradas para **sqlSink**, a Atividade de Cópia gravará os dados no banco de dados de destino de maneiras diferentes.
-  * Por padrão, o serviço de movimentação de dados usa a API de Cópia em Massa para inserir dados no modo de anexação, o que fornece o melhor desempenho.
-  * Se você configurar um procedimento armazenado no coletor, o banco de dados aplicará os dados uma linha por vez, em vez de um carregamento em massa. O desempenho cai significativamente. Se o conjunto de dados for grande, quando aplicável, considere trocar para usar a propriedade **preCopyScript**.
-  * Se você configurar a propriedade **preCopyScript** para cada execução da atividade de cópia, o serviço disparará o script, então, usará a API de Cópia em Massa para inserir os dados. Por exemplo, para substituir a tabela inteira pelos dados mais recentes, você pode especificar um script para excluir primeiro todos os registros, antes de carregar em massa os novos dados da origem.
+* **Copie a implicação de desempenho e comportamento de**: Há diferentes maneiras de gravar dados no coletor do SQL, saiba mais sobre [práticas recomendadas para carregar dados no banco de dados SQL](connector-azure-sql-database.md#best-practice-for-loading-data-into-azure-sql-database).
+
 * **Padrão de dados e tamanho do lote**:
   * O esquema da tabela afeta a taxa de transferência da cópia. Para copiar a mesma quantidade de dados, um tamanho de linha grande fornece um desempenho melhor do que um tamanho de linha pequeno, pois o banco de dados poderá confirmar com mais eficiência menos lotes de dados.
   * A Atividade de Cópia insere dados em uma série de lotes. Você pode definir o número de linhas em um lote usando a propriedade **writeBatchSize** . Se os dados tiverem linhas pequenas, você poderá definir a propriedade **writeBatchSize** com um valor mais alto para aproveitar uma sobrecarga de lote menor e uma taxa de transferência maior. Se o tamanho da linha de dados for grande, tenha cuidado ao aumentar **writeBatchSize**. Um valor alto pode levar a uma falha de cópia causada pela sobrecarga do banco de dados.

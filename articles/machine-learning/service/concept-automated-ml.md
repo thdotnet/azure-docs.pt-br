@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 author: nacharya1
 ms.author: nilesha
-ms.date: 05/21/2019
+ms.date: 06/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 93eb0fba91ce5064d04a340e8b3e5b984ee73081
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.openlocfilehash: 1dcdbbf0a2a71fa38b6eacd6a8d179cdad979937
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66515561"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67059301"
 ---
 # <a name="what-is-automated-machine-learning"></a>O que é o aprendizado de máquina automatizado?
 
@@ -62,6 +62,19 @@ Enquanto a criação de modelo é automatizada, você também pode [Aprenda a us
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2Xc9t]
 
 <a name="preprocess"></a>
+
+## <a name="time-series-forecasting"></a>Previsão da série temporal
+Criação de previsões é parte integrante de qualquer empresa, seja por demanda de receita, estoque, vendas ou cliente. Automatizada ml usa um número combinado de técnicas e abordagens para recomendar uma série de tempo de alta qualidade de previsão. Experimentos de série temporal no ml automatizado são tratados como um problema de regressão multivariada. Após a série temporal valores são "dinâmicos" para se tornar dimensões adicionais para o regressor junto com outros indicadores. 
+
+Essa abordagem, ao contrário dos métodos de série de tempo clássico, tem uma vantagem de incorporar naturalmente diversas variáveis contextuais e suas relações uns aos outros durante o treinamento. Em aplicativos de previsão do mundo real, vários fatores podem influenciar uma previsão. Por exemplo, quando a previsão de vendas, interações de tendências históricas, taxa de câmbio e preço de unidade em conjunto o resultado de vendas. Um benefício adicional é que todas as recentes inovações em modelos de regressão se aplicam imediatamente à previsão.
+
+Até que ponto no futuro, a previsão deve estender (o horizonte de previsão) faz parte da especificação de previsão básica. Definindo o parâmetro obrigatório do `max_horizon` no teste define quantos períodos de unidade (com base no intervalo de tempo de seus dados de treinamento, por exemplo, mensais, semanais o forecaster deve prever out. 
+
+ML automatizado aprende um modelo único, mas geralmente internamente ramificado para todos os itens no horizontes conjunto de dados e previsão. Assim, há mais dados disponíveis para estimar os parâmetros de modelo e generalização a série não visto torna-se possível. 
+
+Recursos extraídos dos dados de treinamento desempenham um papel fundamental. ML automatizado executa as etapas de pré-processamento padrão e gera recursos adicionais da série temporal (por exemplo, ano, mês, dia da semana etc.) para capturar efeitos sazonais e maximizar a precisão da previsão. 
+
+Se apropriado para seu cenário, você pode direcionar ML automatizada para criar retardos (`target_lags`) ou agregação de janela rolante de dados (`target_rolling_window_size`) do seu destino (`y_value`) após valores. 
 
 ## <a name="preprocessing"></a>Pré-processamento
 
@@ -160,6 +173,7 @@ ML automatizado também está disponível em outras soluções da Microsoft, com
 |[ML.NET](https://docs.microsoft.com/dotnet/machine-learning/automl-overview)|Seleção automática de modelos e treinamento em aplicativos .NET usando o Visual Studio e Visual Studio Code do ML.NET automatizadas ML (visualização).|
 |[HDIsnight](../../hdinsight/spark/apache-spark-run-machine-learning-automl.md)|Escalar horizontalmente seus trabalhos de treinamento de AM automatizados no Spark em clusters do HDInsight em paralelo.|
 |[PowerBI](https://docs.microsoft.com/power-bi/service-machine-learning-automated)|Chame modelos do machine learning diretamente no Power BI (visualização).|
+|[SQL Server](https://cloudblogs.microsoft.com/sqlserver/2019/01/09/how-to-automate-machine-learning-on-sql-server-2019-big-data-clusters/)|Crie novos modelos de machine learning sobre seus dados em clusters do SQL Server 2019 big data.|
 
 ## <a name="next-steps"></a>Próximas etapas
 

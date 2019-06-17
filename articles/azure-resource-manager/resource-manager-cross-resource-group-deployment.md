@@ -14,10 +14,10 @@ ms.workload: na
 ms.date: 06/02/2018
 ms.author: tomfitz
 ms.openlocfilehash: 3641833f0b55f20066302de350bfab17adfade0e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66128537"
 ---
 # <a name="deploy-azure-resources-to-more-than-one-subscription-or-resource-group"></a>Implantar recursos do Azure em mais de uma assinatura ou grupo de recursos
@@ -169,7 +169,7 @@ Se você vincular a um modelo separado, as funções no modelo vinculado resolve
 
 Os modelos a seguir demonstram várias implantações de grupo de recursos. Scripts para implantar os modelos são mostrados após a tabela.
 
-|Modelo  |Descrição  |
+|Modelo  |DESCRIÇÃO  |
 |---------|---------|
 |[Modelo entre assinaturas](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/crosssubscription.json) |Implanta uma conta de armazenamento para um grupo de recursos e uma conta de armazenamento a um segundo grupo de recursos. Inclua um valor para a ID de assinatura quando o segundo grupo de recursos está em uma assinatura diferente. |
 |[Modelo de propriedades entre grupos de recursos](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/crossresourcegroupproperties.json) |Demonstra como a função `resourceGroup()` resolve. Ele não implanta nenhum recurso. |

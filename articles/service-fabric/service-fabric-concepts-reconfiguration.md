@@ -15,16 +15,16 @@ ms.workload: NA
 ms.date: 01/10/2018
 ms.author: aprameyr
 ms.openlocfilehash: a24aa6aa1695a3d1166816b7960bdd7b551e1a37
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60882190"
 ---
 # <a name="reconfiguration-in-azure-service-fabric"></a>Reconfiguração no Azure Service Fabric
 Uma *configuração* é definida como as réplicas e suas funções para uma partição de um serviço com estado.
 
-Uma *reconfiguração* é o processo de mover uma configuração para outra configuração. Ela faz uma alteração no conjunto de réplicas para uma partição de um serviço com estado. A configuração antiga é chamada de *PC (configuração anterior)* e a nova configuração é chamada de *CC (configuração atual)*. O protocolo de reconfiguração no Azure Service Fabric preserva a consistência e mantém a disponibilidade durante alterações no conjunto de réplicas.
+Uma *reconfiguração* é o processo de mover uma configuração para outra configuração. Ela faz uma alteração no conjunto de réplicas para uma partição de um serviço com estado. A configuração antiga é chamada de *PC (configuração anterior)* e a nova configuração é chamada de *CC (configuração atual)* . O protocolo de reconfiguração no Azure Service Fabric preserva a consistência e mantém a disponibilidade durante alterações no conjunto de réplicas.
 
 O Gerenciador de Failover inicia as reconfigurações em resposta a diferentes eventos no sistema. Por exemplo, se a principal falhar, uma reconfiguração será iniciada para promover uma secundária ativa para primária. Outro exemplo é em resposta às atualizações de aplicativo quando talvez seja necessário mover a primária para outro nó a fim de atualizá-lo.
 

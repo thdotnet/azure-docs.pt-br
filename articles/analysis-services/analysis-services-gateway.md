@@ -8,19 +8,19 @@ ms.topic: conceptual
 ms.date: 04/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: b35977061b7e5806d15f4b7b0087fcafa4f291ef
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 190394481f17310784f87c9e2f642eeea0b2597f
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65141167"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67062227"
 ---
 # <a name="connecting-to-on-premises-data-sources-with-on-premises-data-gateway"></a>Conectar-se a fontes de dados locais com o Gateway de Dados Local
 O gateway de dados local fornece transferência de dados segura entre fontes de dados locais e seus servidores do Azure Analysis Services na nuvem. Além de trabalhar com diversos servidores do Azure Analysis Services na mesma região, a versão mais recente do gateway também funciona com os Aplicativos Lógicos do Azure, o Power BI, o Power Apps e o Microsoft Flow. É possível associar vários serviços na mesma assinatura e mesma região com um único gateway. 
 
 Instalar o gateway pela primeira vez é um processo de quatro partes:
 
-- **Baixar e executar a instalação** – esta etapa instala um serviço de gateway em um computador em sua organização. Você também pode entrar no Azure usando uma conta no Azure AD do seu [locatário](/previous-versions/azure/azure-services/jj573650(v=azure.100)#BKMK_WhatIsAnAzureADTenant). Não há suporte para contas B2B (convidadas) do Azure.
+- **Baixar e executar a instalação** – esta etapa instala um serviço de gateway em um computador em sua organização. Você também pode entrar no Azure usando uma conta no Azure AD do seu [locatário](/previous-versions/azure/azure-services/jj573650(v=azure.100)#what-is-an-azure-ad-tenant). Não há suporte para contas B2B (convidadas) do Azure.
 
 - **Registrar seu gateway** – nesta etapa, você especifica um nome e uma chave de recuperação para o gateway e seleciona uma região, registrando o gateway no Serviço de Nuvem do Gateway. O recurso de gateway pode ser registrado em qualquer região, mas recomendamos que seja na mesma região que os seus servidores do Analysis Services. 
 
@@ -67,8 +67,8 @@ Veja a seguir os nomes de domínio totalmente qualificados usados pelo gateway.
 | *.powerbi.com |443 |HTTPS |
 | *.analysis.windows.net |443 |HTTPS |
 | *.login.windows.net |443 |HTTPS |
-| * .servicebus.windows.net |5671-5672 |Advanced Message Queuing Protocol (AMQP) |
-| * .servicebus.windows.net |443, 9350-9354 |Ouvintes de Retransmissão do Barramento de Serviço por meio de TCP (requer 443 para aquisição de token de Controle de Acesso) |
+| *.servicebus.windows.net |5671-5672 |Advanced Message Queuing Protocol (AMQP) |
+| *.servicebus.windows.net |443, 9350-9354 |Ouvintes de Retransmissão do Barramento de Serviço por meio de TCP (requer 443 para aquisição de token de Controle de Acesso) |
 | *.frontend.clouddatahub.net |443 |HTTPS |
 | *.core.windows.net |443 |HTTPS |
 | login.microsoftonline.com |443 |HTTPS |
@@ -94,10 +94,10 @@ Não há nenhum único local onde os administradores de locatários possam geren
 ### <a name="general"></a>Geral
 
 **P**: Preciso de um gateway para fontes de dados na nuvem, como o Banco de Dados SQL do Azure? <br/>
-**R**: Não. Um gateway é necessário para se conectar a fontes de dados locais apenas.
+**R**:  Não. Um gateway é necessário para se conectar a fontes de dados locais apenas.
 
 **P**: O gateway precisa ser instalado no mesmo computador que a fonte de dados? <br/>
-**R**: Não. O gateway precisa apenas da capacidade de se conectar ao servidor, geralmente na mesma rede.
+**R**:  Não. O gateway precisa apenas da capacidade de se conectar ao servidor, geralmente na mesma rede.
 
 <a name="why-azure-work-school-account"></a>
 
@@ -118,7 +118,7 @@ Você pode usar um aplicativo de Teste de Velocidade do Azure de terceiros para 
 **R**: Os resultados são enviados por meio do Barramento de Serviço do Azure.
 
 **P**: Existem conexões de entrada para o gateway da nuvem? <br/>
-**R**: Não. O gateway usa conexões de saída para o Barramento de Serviço do Azure.
+**R**:  Não. O gateway usa conexões de saída para o Barramento de Serviço do Azure.
 
 **P**: O que acontecerá se eu bloquear conexões de saída? O que preciso abrir? <br/>
 **R**: Verifique as portas e os hosts que o gateway usa.
@@ -127,7 +127,7 @@ Você pode usar um aplicativo de Teste de Velocidade do Azure de terceiros para 
 **R**: Em Serviços, o gateway é chamado de Serviço de gateway de dados local.
 
 **P**: O serviço Windows do gateway pode ser executado com uma conta do Azure Active Directory? <br/>
-**R**: Não. O serviço do Windows deve ter uma conta válida do Windows. Por padrão, o serviço é executado com o SID de Serviço, NT SERVICE\PBIEgwService.
+**R**:  Não. O serviço do Windows deve ter uma conta válida do Windows. Por padrão, o serviço é executado com o SID de Serviço, NT SERVICE\PBIEgwService.
 
 **P**: Como faço para controlar um gateway? <br/>
 **R**: Para controlar um gateway (ao executar Instalar/Alterar no Painel de Controle > Programas), você precisa ser um Proprietário do recurso do gateway no Azure e ter a chave de recuperação. Os Proprietários de recursos do gateway são configuráveis no Controle de Acesso.

@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 05/07/2019
 ms.author: spelluru
 ms.openlocfilehash: ba469c038f04a31a57e798b97b5120bec573feae
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65414051"
 ---
 # <a name="configure-lab-accounts-in-azure-lab-services"></a>Configurar contas de laboratório no Azure Lab Services 
@@ -59,7 +59,7 @@ Aqui estão algumas restrições ao especificar o intervalo de endereços que vo
 - Se uma rede virtual é emparelhada para a conta de laboratório, o intervalo de endereço fornecido não coincide com o intervalo de endereços de rede virtual emparelhada.
 
 1. Sobre o **conta de laboratório** página, selecione **configuração Labs** no menu à esquerda.
-2. Para o **intervalo de endereços** , especifique o intervalo de endereços para VMs que serão criadas no laboratório. O intervalo de endereços deve estar na notação CIDR (CIDR) (exemplo: 10.20.0.0/23). Máquinas virtuais no laboratório serão criadas nesse intervalo de endereço.
+2. Para o **intervalo de endereços** , especifique o intervalo de endereços para VMs que serão criadas no laboratório. O intervalo de endereços deve estar na notação CIDR (Roteamento entre Domínios sem Classificação) (exemplo: 10.20.0.0/23). As máquinas virtuais do laboratório serão criadas nesse intervalo de endereços.
 3. Selecione **Salvar** na barra de ferramentas. 
 
     ![Configurar o intervalo de endereços](../media/how-to-manage-lab-accounts/labs-configuration-page-address-range.png)

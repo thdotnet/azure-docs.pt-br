@@ -10,10 +10,10 @@ ms.assetid: 63be271e-7c44-4d19-9897-c2913ee9599d
 ms.topic: conceptual
 ms.date: 06/30/2017
 ms.openlocfilehash: d1b230b40d1f880787334ebfd39e704e3a650baa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60811605"
 ---
 # <a name="u-sql-programmability-guide"></a>Guia de programação do U-SQL
@@ -949,7 +949,7 @@ public abstract class IAggregate<T1, T2, TResult> : IAggregate
 * T2: Segundo parâmetro para accumulate
 * TResult: Tipo de retorno de terminate
 
-Por exemplo: 
+Por exemplo:
 
 ```
 public class GuidAggregate : IAggregate<string, int, int>
@@ -1067,11 +1067,11 @@ Geralmente, o UDO é chamado explicitamente no script U-SQL como parte das segui
 ## <a name="use-user-defined-extractors"></a>Usar extratores definidos pelo usuário
 O U-SQL permite importar dados externos usando uma instrução EXTRACT. Uma instrução EXTRACT pode usar extratores de UDO internos:  
 
-* *Extractors.Text()*: Fornece a extração de arquivos de texto delimitados de diferentes codificações.
+* *Extractors.Text()* : Fornece a extração de arquivos de texto delimitados de diferentes codificações.
 
-* *Extractors.Csv()*: Fornece a extração de arquivos CSV (valores separados por vírgula) de diferentes codificações.
+* *Extractors.Csv()* : Fornece a extração de arquivos CSV (valores separados por vírgula) de diferentes codificações.
 
-* *Extractors.Tsv()*: Fornece a extração de arquivos TSV (Valores Separados por Tabulação) de diferentes codificações.
+* *Extractors.Tsv()* : Fornece a extração de arquivos TSV (Valores Separados por Tabulação) de diferentes codificações.
 
 Pode ser útil desenvolver um extrator personalizado. Isso pode ser útil durante a importação de dados para executar uma das seguintes tarefas:
 
@@ -1219,9 +1219,9 @@ OUTPUT @rs0 TO @output_file USING Outputters.Text();
 ## <a name="use-user-defined-outputters"></a>Usar outputters definidos pelo usuário
 O outputter definido pelo usuário é outro UDO do U-SQL que permite estender uma funcionalidade interna do U-SQL. Assim como o extrator, há vários outputters internos.
 
-* *Outputters.Text()*: Grava dados em arquivos de texto delimitados de diferentes codificações.
-* *Outputters.Csv()*: Grava dados em arquivos CSV (valores separados por vírgula) de diferentes codificações.
-* *Outputters.Tsv()*: Grava dados em arquivos TSV (Valores Separados por Tabulação) de diferentes codificações.
+* *Outputters.Text()* : Grava dados em arquivos de texto delimitados de diferentes codificações.
+* *Outputters.Csv()* : Grava dados em arquivos CSV (valores separados por vírgula) de diferentes codificações.
+* *Outputters.Tsv()* : Grava dados em arquivos TSV (Valores Separados por Tabulação) de diferentes codificações.
 
 O outputter personalizado permite gravar dados em um formato definido personalizado. Isso pode ser útil para as seguintes tarefas:
 

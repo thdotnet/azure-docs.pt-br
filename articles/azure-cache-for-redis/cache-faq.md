@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/29/2019
 ms.author: yegu
-ms.openlocfilehash: cdf0ce26ab3a8056fb40bc54ba6336b7cfd69ec0
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 6b27b27fedf622908fa5c06bd2562d9049a4366b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65230106"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67052062"
 ---
 # <a name="azure-cache-for-redis-faq"></a>Perguntas frequentes sobre o Cache Redis do Azure
 Conheça as respostas a perguntas, padrões e práticas recomendadas comuns do Cache do Azure para Redis.
@@ -136,19 +136,19 @@ Podemos tirar as seguintes conclusões desta tabela:
 | Tipo de preço | Tamanho | Núcleos de CPU | Largura de banda disponível | Tamanho do valor de 1 KB | Tamanho do valor de 1 KB |
 | --- | --- | --- | --- | --- | --- |
 | **Tamanhos de cache padrão** | | |**Megabits por segundo (Mb/s) / Megabytes por segundo (MB/s)** |**RPS (solicitações por segundo) não SSL** |**RPS (solicitações por segundo) SSL** |
-| C0 | 250 MB | Compartilhado | 100 / 12,5  |  15.000 |   7.500 |
-| C1 |   1 GB | 1      | 500 / 62,5  |  38.000 |  20,720 |
-| C2 | 2,5 GB | 2      | 500 / 62,5  |  41.000 |  37.000 |
-| C3 |   6 GB | 4      | 1000 / 125  | 100.000 |  90.000 |
-| C4 |  13 GB | 2      | 500 / 62,5  |  60.000 |  55.000 |
-| C5 |  26 GB | 4      | 1.000 / 125 | 102.000 |  93.000 |
-| C6 |  53 GB | 8      | 2.000 / 250 | 126.000 | 120.000 |
+| C0 | 250 MB | Compartilhado | 100 / 12,5  |  15\.000 |   7\.500 |
+| C1 |   1 GB | 1      | 500 / 62,5  |  38\.000 |  20,720 |
+| C2 | 2,5 GB | 2      | 500 / 62,5  |  41\.000 |  37\.000 |
+| C3 |   6 GB | 4      | 1000 / 125  | 100\.000 |  90\.000 |
+| C4 |  13 GB | 2      | 500 / 62,5  |  60\.000 |  55\.000 |
+| C5 |  26 GB | 4      | 1\.000 / 125 | 102\.000 |  93\.000 |
+| C6 |  53 GB | 8      | 2\.000 / 250 | 126\.000 | 120\.000 |
 | **Tamanhos de cache Premium** | |**Núcleos de CPU por fragmento** | **Megabits por segundo (Mb/s) / Megabytes por segundo (MB/s)** |**RPS (solicitações por segundo) não SSL, por fragmento** |**RPS (solicitações por segundo) SSL, por fragmento** |
-| P1 |   6 GB |  2 | 1.500 / 187.5 | 180,000 | 172.000 |
-| P2 |  13 GB |  4 | 3.000 / 375   | 350.000 | 341.000 |
-| P3 |  26 GB |  4 | 3.000 / 375   | 350.000 | 341.000 |
-| P4 |  53 GB |  8 | 6.000 / 750   | 400,000 | 373.000 |
-| P5 | 120 GB | 20 | 6.000 / 750   | 400,000 | 373.000 |
+| P1 |   6 GB |  2 | 1\.500 / 187.5 | 180,000 | 172\.000 |
+| P2 |  13 GB |  4 | 3\.000 / 375   | 350\.000 | 341\.000 |
+| P3 |  26 GB |  4 | 3\.000 / 375   | 350\.000 | 341\.000 |
+| P4 |  53 GB |  8 | 6\.000 / 750   | 400,000 | 373\.000 |
+| P5 | 120 GB | 20 | 6\.000 / 750   | 400,000 | 373\.000 |
 
 Para obter instruções sobre como configurar stunnel ou baixar as ferramentas do Redis como `redis-benchmark.exe`, consulte a seção [Como posso executar comandos do Redis?](#cache-commands)
 
@@ -185,7 +185,7 @@ Para obter informações sobre como usar o Cache do Azure para Redis com o Power
 ### <a name="what-do-the-stackexchangeredis-configuration-options-do"></a>O que as opções de configuração do StackExchange.Redis fazem?
 O StackExchange.Redis tem muitas opções. Esta seção fala sobre algumas das configurações comuns. Para obter mais informações sobre opções do StackExchange.Redis, consulte [configuração do StackExchange.Redis](https://stackexchange.github.io/StackExchange.Redis/Configuration).
 
-| ConfigurationOptions | Descrição | Recomendações |
+| ConfigurationOptions | DESCRIÇÃO | Recomendações |
 | --- | --- | --- |
 | AbortOnConnectFail |Quando definido como true, a conexão não reconectará após uma falha de rede. |Defina como false e deixe o StackExchange.Redis reconectar-se automaticamente. |
 | ConnectRetry |O número de vezes para repetir tentativas de conexão durante a conexão inicial. |Consulte as observações a seguir para se orientar. |
@@ -251,7 +251,7 @@ Você pode usar qualquer comando listado em [Comandos do Redis](https://redis.io
 * `redis-cli -h <Azure Cache for Redis name>.redis.cache.windows.net -a <key>`
 
 > [!NOTE]
-> As ferramentas de linha de comando do Redis não funcionam com a porta SSL, mas você pode usar um utilitário como `stunnel` para conectar as ferramentas com segurança à porta SSL seguindo as instruções na postagem de blog [Anunciando o provedor de estado de sessão ASP.NET para versão de visualização do Redis](https://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx) .
+> As ferramentas de linha de comando do Redis não funcionam com a porta SSL, mas você pode usar um utilitário, como `stunnel` para conectar com segurança as ferramentas para a porta SSL seguindo as instruções no [como usar a ferramenta de linha de comando do Redis cache do Azure para Redis ](https://docs.microsoft.com/azure/azure-cache-for-redis/cache-how-to-redis-cli-tool) artigo.
 >
 >
 
@@ -350,7 +350,7 @@ Os comandos a seguir fornecem um exemplo de uso benchmark.exe redis. Para obter 
 
   `redis-benchmark.exe -h **yourcache**.redis.cache.windows.net -a **yourAccesskey** -t SET -n 1000000 -d 1024 -P 50`
 * Solicitações GET de Pipelined usando uma conteúdo de 1k.
-  OBSERVAÇÃO: primeiro execute o teste SET abaixo para popular o cache
+  OBSERVAÇÃO:  primeiro execute o teste SET abaixo para popular o cache
 
   `redis-benchmark.exe -h **yourcache**.redis.cache.windows.net -a **yourAccesskey** -t GET -n 1000000 -d 1024 -P 50`
 
@@ -403,7 +403,7 @@ void Application_Start(object sender, EventArgs e)
 ```
 
   > [!NOTE]
-  > O valor especificado por esse método é uma configuração global, que afetam todo o AppDomain. Por exemplo, se você tiver uma máquina com 4 núcleos e desejar definir *minWorkerThreads* e *minIoThreads* 50 por CPU durante o tempo de execução, você usaria **Setminthreads (200, 200)**.
+  > O valor especificado por esse método é uma configuração global, que afetam todo o AppDomain. Por exemplo, se você tiver uma máquina com 4 núcleos e desejar definir *minWorkerThreads* e *minIoThreads* 50 por CPU durante o tempo de execução, você usaria **Setminthreads (200, 200)** .
 
 * Também é possível especificar o mínimo de threads usando a [ *minIoThreads* ou *minWorkerThreads* definição de configuração](https://msdn.microsoft.com/library/vstudio/7w2sway1(v=vs.100).aspx) sob o `<processModel>` elemento de configuração no `Machine.config`, geralmente localizado em `%SystemRoot%\Microsoft.NET\Framework\[versionNumber]\CONFIG\`. **Definindo o número de threads mínimo dessa maneira geralmente não é recomendado, porque ela é uma configuração de todo o sistema.**
 

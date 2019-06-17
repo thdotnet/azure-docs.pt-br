@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 10/30/2018
 ms.author: aagup
 ms.openlocfilehash: e4ada412547360f97e869d3312b65d869fa3df48
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65413724"
 ---
 # <a name="restoring-backup-in-azure-service-fabric"></a>Backup de restauração no Azure Service Fabric
@@ -161,7 +161,7 @@ Para a API de restauração, é necessário fornecer os detalhes _BackupId_ e _B
 
 Você também precisa escolher uma partição de destino no cluster alternativo conforme detalhado no [esquema de partição](service-fabric-concepts-partitioning.md#get-started-with-partitioning). O backup de cluster alternativo é restaurado para a partição especificada no esquema de partição do cluster perdido original.
 
-Se a ID da partição no cluster alternativo for `1c42c47f-439e-4e09-98b9-88b8f60800c6`, você poderá mapeá-la para a ID de partição do cluster original `974bd92a-b395-4631-8a7f-53bd4ae9cf22` comparando a chave alta e baixa para _Particionamento por Intervalos (UniformInt64Partition)_.
+Se a ID da partição no cluster alternativo for `1c42c47f-439e-4e09-98b9-88b8f60800c6`, você poderá mapeá-la para a ID de partição do cluster original `974bd92a-b395-4631-8a7f-53bd4ae9cf22` comparando a chave alta e baixa para _Particionamento por Intervalos (UniformInt64Partition)_ .
 
 Para _Particionamento Nomeado_, o valor do nome é comparado para identificar a partição de destino em cluster alternativo.
 

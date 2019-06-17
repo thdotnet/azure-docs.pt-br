@@ -10,10 +10,10 @@ ms.author: mhopkins
 ms.reviewer: yzheng
 ms.subservice: common
 ms.openlocfilehash: ce2559f62d29c7b062cfd1ad1dcb61146adfd91c
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66001749"
 ---
 # <a name="manage-the-azure-blob-storage-lifecycle"></a>Gerenciar o ciclo de vida de armazenamento de BLOBs do Azure
@@ -199,7 +199,7 @@ Cada regra na política tem vários parâmetros:
 
 | Nome do parâmetro | Tipo de parâmetro | Observações | Obrigatório |
 |----------------|----------------|-------|----------|
-| `name`         | String |Um nome de regra pode incluir até 256 caracteres alfanuméricos. A regra de nome diferencia maiúsculas de minúsculas.  Ela deve ser exclusiva em uma política. | True |
+| `name`         | Cadeia de caracteres |Um nome de regra pode incluir até 256 caracteres alfanuméricos. A regra de nome diferencia maiúsculas de minúsculas.  Ela deve ser exclusiva em uma política. | True |
 | `enabled`      | Boolean | Um booliano opcional para permitir que uma regra para ser temporário desabilitado. Valor padrão é true se não for definido. | Falso | 
 | `type`         | Um valor de enumeração | O tipo atual de válido é `Lifecycle`. | True |
 | `definition`   | Um objeto que define a regra de ciclo de vida | Cada definição é composta por um conjunto de filtros e um conjunto de ações. | True |
@@ -251,7 +251,7 @@ Os filtros limitam as ações de regra a um subconjunto de blobs na conta de arm
 
 Filtros incluem:
 
-| Nome do filtro | Tipo de filtro | Observações | É Necessário |
+| Nome do filtro | Tipo do filtro | Observações | Obrigatório |
 |-------------|-------------|-------|-------------|
 | blobTypes   | Uma matriz de valores de enumeração predefinidos. | A versão atual dá suporte a `blockBlob`. | Sim |
 | prefixMatch | Uma matriz de cadeias de caracteres para prefixos a serem correspondidos. Cada regra pode definir até 10 prefixos. Uma cadeia de caracteres de prefixo deve começar com um nome de contêiner. Por exemplo, se você deseja correspondência com todos os blobs sob `https://myaccount.blob.core.windows.net/container1/foo/...` uma regra, o prefixMatch é `container1/foo`. | Se você não definir prefixMatch, a regra se aplica a todos os blobs na conta de armazenamento.  | Não |
@@ -266,14 +266,14 @@ Gerenciamento de ciclo de vida dá suporte a disposição em camadas e exclusão
 |---------------|---------------------------------------------|---------------|
 | tierToCool    | Dá suporte aos blobs atualmente presentes na camada frequente         | Sem suporte |
 | tierToArchive | Dá suporte aos blobs atualmente presentes na camada frequente ou esporádica | Sem suporte |
-| excluir        | Com suporte                                   | Com suporte     |
+| delete        | Com suporte                                   | Com suporte     |
 
 >[!NOTE]
 >Se você definir mais de uma ação no mesmo blob, o gerenciamento do ciclo de vida aplicará a ação mais barata ao blob. Por exemplo, a ação `delete` é mais barata do que a ação `tierToArchive`. A ação `tierToArchive` é mais barata do que a ação `tierToCool`.
 
 As condições de execução são com base na idade. Os blobs base usam a hora da última modificação para acompanhar a idade, enquanto os instantâneos de blob usam a hora de criação do instantâneo para executar a mesma tarefa.
 
-| Executar a condição de ação             | Valor de condição                          | Descrição                             |
+| Executar a condição de ação             | Valor de condição                          | DESCRIÇÃO                             |
 |----------------------------------|------------------------------------------|-----------------------------------------|
 | daysAfterModificationGreaterThan | Valor inteiro que indica a idade em dias | A condição para ações de blob de base     |
 | daysAfterCreationGreaterThan     | Valor inteiro que indica a idade em dias | A condição para ações de instantâneo de blob |

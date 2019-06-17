@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: justhu
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8db590c8c79db9bc47edbbef69a11d3b0e4b51f6
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 9035cc629a11c125c1b6351bd4bff9f5576f7baf
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65540359"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67111080"
 ---
 # <a name="tenancy-in-azure-active-directory"></a>Locatários no Azure Active Directory
 
@@ -36,10 +36,10 @@ Quando se trata de desenvolvimento de aplicativos, os desenvolvedores podem opta
 
 No portal do Azure, você pode configurar seu aplicativo como de locatário único ou multilocatário, definindo a audiência da seguinte maneira.
 
-| Audiência | Locatário único/multilocatário | Quem pode entrar | 
+| Público-alvo | Locatário único/multilocatário | Quem pode entrar | 
 |----------|--------| ---------|
-| Somente contas neste diretório | Locatário único | Todas as contas de usuário e convidado em seu diretório podem usar seu aplicativo ou API.<br>*Use essa opção se sua audiência for interna na organização.* |
-| Contas em qualquer diretório do Azure AD | Multilocatário | Todos os usuários e convidados com uma conta corporativa ou de estudante da Microsoft podem usar o aplicativo ou a API. Isso inclui as escolas e as empresas que usam o Office 365.<br>*Use essa opção se sua audiência for de clientes empresariais ou educacionais.* |
+| Somente contas neste diretório | Locatário único | Todas as contas de usuário e de convidado em seu diretório podem usar o aplicativo ou a API.<br>*Use essa opção se sua audiência for interna na organização.* |
+| Contas de qualquer diretório do Azure AD | Multilocatário | Todos os usuários e convidados com uma conta corporativa ou de estudante da Microsoft podem usar o aplicativo ou a API. Isso inclui as escolas e as empresas que usam o Office 365.<br>*Use essa opção se sua audiência for de clientes empresariais ou educacionais.* |
 | Contas em qualquer diretório do Azure AD e contas pessoais da Microsoft (como Skype, Xbox, Outlook.com) | Multilocatário | Todos os usuários com uma conta Microsoft corporativa, de estudante ou pessoal podem usar o aplicativo ou a API. Isso inclui escolas e empresas que usam o Office 365, bem como contas pessoais que são usadas para entrar em serviços como o Xbox e o Skype.<br>*Use essa opção para direcionar ao conjunto mais amplo de contas da Microsoft.* | 
 
 ## <a name="best-practices-for-multi-tenant-apps"></a>Práticas recomendadas para aplicativos multilocatário

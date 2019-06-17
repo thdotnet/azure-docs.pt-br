@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 03/23/2018
 ms.author: aljo
 ms.openlocfilehash: 4cc2d6355a0147c33048f1c2c27a3648b9223db4
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62110916"
 ---
 # <a name="remote-connect-to-a-virtual-machine-scale-set-instance-or-a-cluster-node"></a>Conectar remotamente a uma instância do conjunto de dimensionamento de máquinas virtuais ou a um nó de cluster
@@ -28,7 +28,7 @@ Para localizar um endereço IP e porta que você pode usar para se conectar remo
 
 1. Obter regras NAT de entrada para o protocolo RDP (Remote Desktop).
 
-    Normalmente, cada tipo de nó definido em seu cluster tem seu próprio endereço IP virtual e um balanceador de carga dedicado. Por padrão, o balanceador de carga para um tipo de nó é chamado com o seguinte formato: *Balanceamento de carga-{nome do cluster}-{tipo de nó}*; por exemplo, *mycluster-LB-FrontEnd*. 
+    Normalmente, cada tipo de nó definido em seu cluster tem seu próprio endereço IP virtual e um balanceador de carga dedicado. Por padrão, o balanceador de carga para um tipo de nó é chamado com o seguinte formato: *Balanceamento de carga-{nome do cluster}-{tipo de nó}* ; por exemplo, *mycluster-LB-FrontEnd*. 
     
     Na página do balanceador de carga no portal do Azure, selecione **Configurações** > **Regras NAT de entrada**: 
 

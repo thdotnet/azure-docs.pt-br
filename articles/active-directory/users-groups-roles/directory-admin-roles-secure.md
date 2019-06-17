@@ -14,12 +14,12 @@ ms.subservice: users-groups-roles
 ms.custom: it-pro
 ms.reviewer: martincoetzer; MarkMorow
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f4b61b661d9da0748bc354b8defa4e6d67a047a2
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 7e61207ea23b9b9560668b58b33e3f32f5f70ab2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64920475"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67083937"
 ---
 # <a name="securing-privileged-access-for-hybrid-and-cloud-deployments-in-azure-ad"></a>Proteger o acesso privilegiado para implantações de nuvem híbrida no Azure AD
 
@@ -213,12 +213,12 @@ O Log de Atividades do Azure fornece um histórico de eventos no nível da assin
 
 ### <a name="additional-steps-for-organizations-managing-access-to-other-cloud-apps-via-azure-ad"></a>Etapas adicionais para as organizações a gerenciar o acesso do Azure
 
-#### <a name="configure-conditional-access-policies"></a>Configure as políticas de acesso condicional
+#### <a name="configure-conditional-access-policies"></a>Configurar políticas de acesso condicional
 
-Prepare as políticas de acesso condicional para o local e os aplicativos hospedados em nuvem. Se você tiver os dispositivos no local de trabalho dos usuários, obtenha mais informações de [Configurar acesso condicional local usando o registro do dispositivo Azure Active Directory](../active-directory-device-registration-on-premises-setup.md).
+Prepare as políticas de acesso condicional para local e aplicativos hospedados na nuvem. Se você tiver dispositivos ingressados no local de usuários, obter mais informações no [configurando local acesso condicional usando o registro de dispositivo do Azure Active Directory](../active-directory-device-registration-on-premises-setup.md).
 
 
-## <a name="stage-3-build-visibility-and-take-full-control-of-admin-activity"></a>Estágio 3: Criar visibilidade e controle total da atividade do administrador
+## <a name="stage-3-build-visibility-and-take-full-control-of-admin-activity"></a>Etapa 3: Criar visibilidade e controle total da atividade do administrador
 
 ![Estágio 3 assumir o controle de atividade do administrador](./media/directory-admin-roles-secure/stage-three.png)
 
@@ -261,7 +261,7 @@ Se você já estiver usando o Azure AD Privileged Identity Management, ajuste in
 
 #### <a name="determine-exposure-to-password-based-sign-in-protocols-if-using-exchange-online"></a>Determine a exposição a protocolos com senha (se estiver usando o Exchange Online)
 
-No passado, protocolos pressupõe-se presumiam que as combinações de nome de usuário/senha foram inseridas em dispositivos, contas de email, telefones e assim por diante. Mas agora com o risco de ataques cibernéticos na nuvem, recomendamos que você identifique todos os usuários possíveis que, se suas credenciais foram comprometidas, pode ser catastrófico para a organização e excluí-los de conseguirem entrar no seu email através do nome de usuário / senha com a implementação de autenticação forte e acesso condicional. Você pode bloquear [usando o acesso condicional de autenticação herdados](https://docs.microsoft.com/azure/active-directory/conditional-access/block-legacy-authentication). Verifique os detalhes sobre [como autenticação básica de bloquear](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online) por meio do Exchange online. 
+No passado, protocolos pressupõe-se presumiam que as combinações de nome de usuário/senha foram inseridas em dispositivos, contas de email, telefones e assim por diante. Mas agora com o risco de ataques cibernéticos na nuvem, recomendamos que você identifique todos os usuários possíveis que, se suas credenciais foram comprometidas, podem ser catastrófico para a organização e excluí-los seja capaz de entrar no seu email através do nome de usuário / senha com a implementação de requisitos de autenticação forte e acesso condicional. Você pode bloquear [usando o acesso condicional de autenticação herdados](https://docs.microsoft.com/azure/active-directory/conditional-access/block-legacy-authentication). Verifique os detalhes sobre [como autenticação básica de bloquear](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online) por meio do Exchange online. 
 
 #### <a name="complete-a-roles-review-assessment-for-office-365-roles-if-using-office-365"></a>Conclua uma avaliação de revisão de funções para as funções do Office 365 (se estiver usando o Office 365)
 
@@ -304,9 +304,9 @@ O Azure AD permite que você automatize a criação, a manutenção e a remoçã
 
 O MCAS permite que você investigue arquivos e defina políticas com base em rótulos de classificação da Proteção de Informações do Microsoft Azure permitindo maior visibilidade e controle de seus dados na nuvem. Verifique e classifique arquivos na nuvem e aplique rótulos de proteção de informações do Azure. Para obter mais informações, consulte [integração da Proteção de Informações do Microsoft Azure](https://docs.microsoft.com/cloud-app-security/azip-integration).
 
-#### <a name="configure-conditional-access"></a>Configurar acesso condicional
+#### <a name="configure-conditional-access"></a>Configurar o acesso condicional
 
-Configure o acesso condicional com base em grupo, localização e sensibilidade de aplicativo para [aplicativos SaaS](https://azure.microsoft.com/overview/what-is-saas/) e aplicativos conectados Azure AD. 
+Configurar o acesso condicional com base em um grupo, localização e sensibilidade de aplicativo para [aplicativos SaaS](https://azure.microsoft.com/overview/what-is-saas/) e aplicativos conectados Azure AD. 
 
 #### <a name="monitor-activity-in-connected-cloud-apps"></a>Monitorar a atividade de aplicativos de nuvem conectados
 

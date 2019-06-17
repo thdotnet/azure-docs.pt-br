@@ -16,10 +16,10 @@ ms.date: 10/16/2018
 ms.author: apurvajo;cephalin
 ms.custom: seodec18
 ms.openlocfilehash: 0febb8fadd973b67ed232d6094d85894fb383d14
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65955715"
 ---
 # <a name="buy-and-configure-an-ssl-certificate-for-azure-app-service"></a>Comprar e configurar um certificado SSL para o Serviço de Aplicativo do Azure
@@ -53,7 +53,7 @@ Use a tabela a seguir para ajudá-lo a configurar o certificado. Ao terminar, cl
 | Nome do Host do Domínio Raiz | Se você especificar o domínio raiz aqui, você obtém um certificado que protege *os dois*: o domínio raiz e o subdomínio `www`. Para proteger apenas um subdomínio qualquer, especifique aqui o nome de domínio totalmente qualificado do subdomínio (por exemplo, `mysubdomain.contoso.com`). |
 | Assinatura | O datacenter onde o aplicativo Web está hospedado. |
 | Grupo de recursos | O grupo de recursos que contém o certificado. Você pode usar um novo grupo de recursos ou selecionar o mesmo grupo de recursos que seu aplicativo de Serviço de Aplicativo, por exemplo. |
-| SKU do Certificado | Determina o tipo de certificado para criar, se um certificado padrão ou uma [certificado curinga](https://wikipedia.org/wiki/Wildcard_certificate). |
+| Certificado SKU | Determina o tipo de certificado para criar, se um certificado padrão ou uma [certificado curinga](https://wikipedia.org/wiki/Wildcard_certificate). |
 | Termos legais | Clique para confirmar que você concorda com os termos legais. Os certificados são obtidos do GoDaddy. |
 
 ## <a name="store-in-azure-key-vault"></a>Armazenar no Azure Key Vault
@@ -97,9 +97,9 @@ Selecione **Verificação do Serviço de Aplicativo**. Uma vez que você já map
 
 ## <a name="bind-certificate-to-app"></a>Associar certificado ao aplicativo
 
-No **[portal do Azure](https://portal.azure.com/)**, no menu à esquerda, selecione **Serviços de Aplicativos** > **\<seu_aplicativo >**.
+No **[portal do Azure](https://portal.azure.com/)** , no menu à esquerda, selecione **Serviços de Aplicativos** >  **\<seu_aplicativo >** .
 
-No painel de navegação à esquerda de seu aplicativo, selecione **Configurações de SSL** > **Certificados Particulares (.pfx)** > **Importar Certificado do Serviço de Aplicativo**.
+No painel de navegação à esquerda de seu aplicativo, selecione **Configurações de SSL** > **Certificados Particulares (.pfx)**  > **Importar Certificado do Serviço de Aplicativo**.
 
 ![inserir imagem de Importar Certificado](./media/app-service-web-purchase-ssl-web-site/ImportCertificate.png)
 
@@ -111,7 +111,7 @@ Agora que o certificado foi importado, você precisa associá-lo a um nome de do
 
 Use a tabela a seguir para ajudá-lo a configurar a associação na caixa de diálogo **Associações SSL** e, em seguida, clique em **Adicionar Associação**.
 
-| Configuração | Descrição |
+| Configuração | DESCRIÇÃO |
 |-|-|
 | Nome do host | O nome de domínio ao qual adicionar a associação SSL. |
 | Impressão Digital do Certificado Privado | O certificado a ser associado. |

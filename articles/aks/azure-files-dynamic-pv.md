@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 03/01/2019
 ms.author: iainfou
-ms.openlocfilehash: 9771c110e277d67bee329fe62434b18a01189476
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: ed9be9f3ecc7a14a0aa0210ee34f9323126be085
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "65072216"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67061088"
 ---
 # <a name="dynamically-create-and-use-a-persistent-volume-with-azure-files-in-azure-kubernetes-service-aks"></a>Crie e use, dinamicamente, um volume persistente com Arquivos do Azure no AKS (Serviço de Kubernetes do Azure)
 
@@ -35,7 +35,7 @@ Uma classe de armazenamento é usada para definir como um compartilhamento de ar
 * *Standard_RAGRS*: armazenamento com redundância geográfica e acesso de leitura padrão (RA-GRS)
 
 > [!NOTE]
-> Os arquivos do Azure atualmente funciona somente com o armazenamento padrão. Se você usar o armazenamento Premium, o volume falhará para provisionar.
+> Arquivos do Azure dão suporte a armazenamento premium em clusters AKS que executam o Kubernetes 1,13 ou superior.
 
 Para obter mais informações sobre classes de armazenamento do Kubernetes para arquivos do Azure, consulte [Classes de armazenamento Kubernetes][kubernetes-storage-classes].
 

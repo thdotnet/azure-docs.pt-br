@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 05/17/2019
 ms.author: spelluru
 ms.openlocfilehash: 9adf8dd4a5a3c469ed130b29308a0d828aee40bf
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65873984"
 ---
 # <a name="manage-autoshutdown-policies-for-a-lab-in-azure-devtest-labs"></a>Gerenciar políticas de autoshutdown para um laboratório no Azure DevTest Labs
@@ -166,7 +166,7 @@ Para começar, crie um aplicativo lógico em sua assinatura do Azure usando as s
     }
     ```
     
-    ![Esquema JSON do Corpo da Solicitação](./media/devtest-lab-auto-shutdown/request-json.png)
+    ![Esquema JSON do corpo de solicitação](./media/devtest-lab-auto-shutdown/request-json.png)
 7. Selecione **+ nova etapa** no designer e siga estas etapas:
     1. Pesquise **Office 365 Outlook – enviar um email**. 
     2. Selecione **enviar um email** partir **ações**. 
@@ -174,10 +174,10 @@ Para começar, crie um aplicativo lógico em sua assinatura do Azure usando as s
         ![Enviar email de opção](./media/devtest-lab-auto-shutdown/select-send-email.png)
     3. Selecione **entrar** para entrar em sua conta de email. 
     4. Selecione **TO** campo e, em seguida, escolha o proprietário.
-    5. Selecione **assunto**e um assunto do email de notificação de entrada. Por exemplo: "Desligamento de máquina vmName de laboratório: labName."
+    5. Selecione **assunto**e um assunto do email de notificação de entrada. Por exemplo:  "Desligamento de máquina vmName de laboratório: labName."
     6. Selecione **corpo**e definir o conteúdo do corpo de notificação por email. Por exemplo: "vmName está programado para desligar em 15 minutos. Ignore esse desligamento, clicando em: URL. Desligamento de atraso para uma hora: delayUrl60. Desligamento de atraso de 2 horas: delayUrl120. "
 
-        ![Esquema JSON do Corpo da Solicitação](./media/devtest-lab-auto-shutdown/email-options.png)
+        ![Esquema JSON do corpo de solicitação](./media/devtest-lab-auto-shutdown/email-options.png)
 1. Selecione **Salvar** na barra de ferramentas. Agora, você pode copiar o **URL de HTTP POST**. Selecione o botão de cópia para copiar a URL para a área de transferência. 
 
     ![URL do WebHook](./media/devtest-lab-auto-shutdown/webhook-url.png)

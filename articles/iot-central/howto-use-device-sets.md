@@ -3,17 +3,17 @@ title: Usar conjuntos de dispositivos no aplicativo Azure IoT Central | Microsof
 description: Como um operador, saiba como usar conjuntos de dispositivos no aplicativo Azure IoT Central.
 author: ellenfosborne
 ms.author: elfarber
-ms.date: 02/05/2019
+ms.date: 06/09/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpfr
-ms.openlocfilehash: a28cf68eb449b563d93a139b830752748c448dd6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 68599a539b3d79b759142d2178aa753f895ea37f
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60517423"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67052948"
 ---
 # <a name="use-device-sets-in-your-azure-iot-central-application"></a>Usar conjuntos de dispositivos no aplicativo Azure IoT Central
 
@@ -121,7 +121,7 @@ Após criar o conjunto de dispositivos, será possível configurar uma **Lista**
 
 A análise em conjuntos de dispositivos é igual à guia de análise principal no menu de navegação esquerdo. É possível saber mais sobre análise, consultando o artigo sobre [como criar análises](howto-use-device-sets.md).
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Agora que você aprendeu como usar conjuntos de dispositivos no aplicativo Azure IoT Central, a próxima etapa sugerida é apresentada:
 

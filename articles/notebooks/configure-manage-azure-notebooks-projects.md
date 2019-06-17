@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 05/13/2019
 ms.author: kraigb
 ms.openlocfilehash: 0440e498451ee141fa03851b78418caf911d0e32
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65596748"
 ---
 # <a name="manage-and-configure-projects"></a>Gerenciar e configurar projetos
@@ -46,7 +46,7 @@ No painel do projeto, selecione **Configurações do Projeto** e, em seguida, se
 | Configuração | DESCRIÇÃO |
 | --- | --- |
 | Nome do projeto | Um nome amigável para seu projeto que usa o Azure Notebooks para fins de exibição. Por exemplo, "Olá, Mundo no Python". |
-| ID do Projeto | Um identificador personalizado que se torna parte da URL que você usa para compartilhar um projeto. Essa ID pode usar apenas letras, números e hifens, é limitada a 30 caracteres e não pode ser um [reservado da ID do projeto](create-clone-jupyter-notebooks.md#reserved-project-ids). Se você não tiver certeza sobre o que usar, uma convenção comum é usar uma versão em letras minúsculas do nome do seu projeto, na qual espaços são transformados em hifens, por exemplo “projeto-meu-notebook” (truncado se necessário para encaixar o limite de comprimento). |
+| ID do projeto | Um identificador personalizado que se torna parte da URL que você usa para compartilhar um projeto. Essa ID pode usar apenas letras, números e hifens, é limitada a 30 caracteres e não pode ser um [reservado da ID do projeto](create-clone-jupyter-notebooks.md#reserved-project-ids). Se você não tiver certeza sobre o que usar, uma convenção comum é usar uma versão em letras minúsculas do nome do seu projeto, na qual espaços são transformados em hifens, por exemplo “projeto-meu-notebook” (truncado se necessário para encaixar o limite de comprimento). |
 | Projeto público | Se definido, permite que qualquer pessoa com o link acesse o projeto. Ao criar um projeto privado, desmarque essa opção. |
 | Ocultar clones | Se definido, outros usuários não poderão ver uma lista de clones que foram feitos para este projeto. Ocultar clones é útil para projetos que são compartilhados com muitas pessoas que não fazem parte da mesma organização, como ao usar um notebook para dar uma aula. |
 

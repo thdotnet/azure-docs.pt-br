@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e7eebc68ae8a55d636f3bc85e179bd7d6813be8d
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: e55bf4a66dcd8c1c7cfbc881d6f93c3a12f5dc00
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66235550"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67112311"
 ---
 # <a name="baseline-policy-block-legacy-authentication-preview"></a>Política de linha de base: Autenticação herdada do bloco (visualização)
 
@@ -120,4 +120,4 @@ Para obter mais informações, consulte:
 
 * [Políticas de proteção de linha de base de acesso condicional](concept-baseline-protection.md)
 * [Cinco etapas para proteger a infraestrutura de identidade](../../security/azure-ad-secure-steps.md)
-* [O que é o acesso condicional no Azure Active Directory?](overview.md)
+* [O que é acesso condicional no Azure Active Directory?](overview.md)

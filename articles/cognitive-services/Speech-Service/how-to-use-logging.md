@@ -10,19 +10,19 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: amishu
-ms.openlocfilehash: e8f470647c218188705cfa65cba7077e62d1b2ac
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 4573ff14c5326a47cf7b15ae2660614661d45d80
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65148020"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67073081"
 ---
 # <a name="enable-logging-in-the-speech-sdk"></a>Habilitar o registro no SDK de fala
 
 Log de arquivo é um recurso opcional para o SDK de fala. Durante o desenvolvimento de registro em log fornece informações adicionais e diagnósticos de componentes de núcleo do SDK de fala. Ele pode ser habilitado configurando a propriedade `Speech_LogFilename` em um objeto de configuração de fala para o local e o nome do arquivo de log. Registro em log será ativado globalmente depois que um reconhecedor é criado a partir dessa configuração e não pode ser desabilitado posteriormente. Você não pode alterar o nome de um arquivo de log durante um sessão de log de execução.
 
 > [!NOTE]
-> Registro em log está disponível em todas as linguagens de programação, com exceção de JavaScript de SDK com suporte do fala.
+> Registro em log está disponível como Speech SDK versão 1.4.0 em todos os suporte para o SDK de fala, linguagens de programação, com exceção de JavaScript.
 
 ## <a name="sample"></a>Amostra
 

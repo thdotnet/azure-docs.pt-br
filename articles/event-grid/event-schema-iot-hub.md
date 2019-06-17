@@ -10,12 +10,12 @@ ms.service: event-grid
 ms.topic: reference
 ms.date: 01/17/2019
 ms.author: kgremban
-ms.openlocfilehash: e770beb0470b54d8e13493bca4790323b2e96ce1
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.openlocfilehash: 4e96276a862844cea1d0800eafb952d4a0df97ab
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66393196"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67076346"
 ---
 # <a name="azure-event-grid-event-schema-for-iot-hub"></a>Esquema de eventos da Grade de Eventos do Azure para Hub IoT
 
@@ -35,7 +35,7 @@ Hub IoT do Azure emite os seguintes tipos de evento:
 | Microsoft.Devices.DeviceDisconnected | Publicado quando um dispositivo é desconectado de um Hub IoT. | 
 | Microsoft.Devices.DeviceTelemetry | Publicado quando uma mensagem de telemetria é enviada a um hub IoT. |
 
-Todos os eventos de dispositivo, exceto os eventos de telemetria do dispositivo estão geralmente disponíveis em todas as regiões com suporte pela grade de eventos. Evento de telemetria do dispositivo está em visualização pública e está disponível em todas as regiões, exceto o Leste dos EUA, oeste dos EUA, Europa Ocidental, [do Azure governamental](/azure-government/documentation-government-welcome.md), [do Azure na China 21Vianet](/azure/china/china-welcome.md), e [Azure Alemanha](https://azure.microsoft.com/global-infrastructure/germany/).
+Todos os eventos de dispositivo, exceto os eventos de telemetria do dispositivo estão geralmente disponíveis em todas as regiões com suporte pela grade de eventos. Evento de telemetria do dispositivo está em visualização pública e está disponível em todas as regiões, exceto o Leste dos EUA, oeste dos EUA, Europa Ocidental, [do Azure governamental](../azure-government/documentation-government-welcome.md), [do Azure na China 21Vianet](/azure/china/china-welcome), e [Azure Alemanha](https://azure.microsoft.com/global-infrastructure/germany/).
 
 ## <a name="example-event"></a>Exemplo de evento
 

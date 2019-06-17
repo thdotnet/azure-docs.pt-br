@@ -17,10 +17,10 @@ ms.date: 12/21/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: edf5f2b681123243f55b1c2bf19a500e68171c0e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66165745"
 ---
 # <a name="how-to-provision-sql-server-virtual-machines-with-azure-powershell"></a>Como provisionar máquinas virtuais do SQL Server com o Azure PowerShell
@@ -64,10 +64,10 @@ $StorageName = $ResourceGroupName + "storage"
 $StorageSku = "Premium_LRS"
 ```
 
-### <a name="network-properties"></a>Propriedades de rede
+### <a name="network-properties"></a>Propriedades da rede
 Defina as propriedades a usadas pela rede na máquina virtual. 
 
-- Interface de rede
+- interface de rede
 - Método de alocação de TCP/IP
 - Nome da rede virtual
 - Nome da sub-rede virtual

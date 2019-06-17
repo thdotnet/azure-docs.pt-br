@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: jeconnoc
-ms.openlocfilehash: 0a2e2a3d817140a6ab15dab0093b4025a3bfd76c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1d78ab917589af0eae72eb70e3cdc2cc751072eb
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60406388"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67076437"
 ---
 # <a name="common-cloud-service-startup-tasks"></a>Tarefas de inicialização comuns do Serviço de Nuvem
 Este artigo oferece alguns exemplos de tarefas de inicialização comuns que talvez você queira executar no serviço de nuvem. Você pode usar as tarefas de inicialização para executar operações antes do início de uma função. As operações que talvez você queira executar incluem a instalação de um componente, o registro de componentes COM, a configuração de chaves do registro ou o início de um processo de longa duração. 
@@ -73,7 +73,7 @@ O errorlevel retornado por *AppCmd.exe* é listado no arquivo winerror.h e tamb�
 ### <a name="example-of-managing-the-error-level"></a>Exemplo de gerenciamento de nível de erro
 Este exemplo adiciona uma seção e uma entrada de compactação para JSON para o arquivo *Web.config* , com tratamento de erros e registro em log.
 
-As seções relevantes do arquivo [ServiceDefinition.csdef] são mostradas aqui, o que inclui a definição do atributo [executionContext](/previous-versions/azure/reference/gg557552(v=azure.100)#Task) como `elevated` para dar a *AppCmd.exe* permissões suficientes para alterar as configurações no arquivo *Web.config*:
+As seções relevantes do arquivo [ServiceDefinition.csdef] são mostradas aqui, o que inclui a definição do atributo [executionContext](/previous-versions/azure/reference/gg557552(v=azure.100)#task) como `elevated` para dar a *AppCmd.exe* permissões suficientes para alterar as configurações no arquivo *Web.config*:
 
 ```xml
 <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
@@ -383,7 +383,7 @@ EXIT /B 0
 A seguir, algumas práticas recomendadas que você deve seguir ao configurar a tarefa para sua função Web ou de trabalho.
 
 ### <a name="always-log-startup-activities"></a>Sempre registrar em log as atividades de inicialização
-O Visual Studio não fornece um depurador para percorrer arquivos em lotes e, portanto, será bom ter tantos dados sobre a operação de arquivos em lotes quanto possível. O registro em log da saída de arquivos em lotes, **stdout** e **stderr**, pode fornecer informações importantes ao tentar depurar e corrigir arquivos em lotes. Para registrar em log **stdout** e **stderr** para o arquivo StartupLog.txt no diretório apontado pela variável de ambiente **%TEMP%**, adicione o texto `>>  "%TEMP%\\StartupLog.txt" 2>&1` ao final de linhas específicas que deseja registrar em log. Por exemplo, para executar setup.exe no diretório **%PathToApp1Install%** :
+O Visual Studio não fornece um depurador para percorrer arquivos em lotes e, portanto, será bom ter tantos dados sobre a operação de arquivos em lotes quanto possível. O registro em log da saída de arquivos em lotes, **stdout** e **stderr**, pode fornecer informações importantes ao tentar depurar e corrigir arquivos em lotes. Para registrar em log **stdout** e **stderr** para o arquivo StartupLog.txt no diretório apontado pela variável de ambiente **%TEMP%** , adicione o texto `>>  "%TEMP%\\StartupLog.txt" 2>&1` ao final de linhas específicas que deseja registrar em log. Por exemplo, para executar setup.exe no diretório **%PathToApp1Install%** :
 
     "%PathToApp1Install%\setup.exe" >> "%TEMP%\StartupLog.txt" 2>&1
 
