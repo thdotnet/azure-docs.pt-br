@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 05/31/2019
 ms.author: kumud;tyao
 ms.openlocfilehash: 15a80dac0e0601480e22ad960f2827f3d8f290c0
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66479077"
 ---
 # <a name="create-a-waf-policy-for-azure-front-door-by-using-the-azure-portal"></a>Criar uma política de WAF para frente do Azure usando o portal do Azure
@@ -77,5 +77,5 @@ Conjunto de regras de padrão gerenciados do Azure é habilitado por padrão. Pa
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Saiba mais sobre [firewall do aplicativo web do Azure](waf-overview.md).
+- Saiba mais sobre o [Firewall do aplicativo Web do Azure](waf-overview.md).
 - Saiba mais sobre [do Azure da frente](front-door-overview.md).

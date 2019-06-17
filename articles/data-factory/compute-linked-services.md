@@ -12,10 +12,10 @@ author: nabhishek
 ms.author: abnarain
 manager: craigg
 ms.openlocfilehash: 0e7405e48307091ff5df12096d49a00c011e2de3
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66480439"
 ---
 # <a name="compute-environments-supported-by-azure-data-factory"></a>Ambientes de computação com suporte do Azure Data Factory
@@ -388,7 +388,7 @@ Criar um serviço vinculado de Machine Learning do Azure para registrar um ponto
 | updateResourceEndpoint | A URL do recurso de atualização para um ponto de extremidade de serviço Web do Azure ML usado para atualizar o serviço Web preditivo com o arquivo de modelo treinado | Não                                       |
 | servicePrincipalId     | Especifique a ID do cliente do aplicativo.     | Necessária se a updateResourceEndpoint for especificada |
 | servicePrincipalKey    | Especifique a chave do aplicativo.           | Necessária se a updateResourceEndpoint for especificada |
-| locatário                 | Especifique as informações de locatário (domínio nome ou ID do Locatário) em que o aplicativo reside. É possível recuperá-las focalizando o mouse no canto superior direito do Portal do Azure. | Necessária se a updateResourceEndpoint for especificada |
+| tenant                 | Especifique as informações de locatário (domínio nome ou ID do Locatário) em que o aplicativo reside. É possível recuperá-las focalizando o mouse no canto superior direito do Portal do Azure. | Necessária se a updateResourceEndpoint for especificada |
 | connectVia             | O Integration Runtime a ser usado para distribuir as atividades a esse serviço vinculado. Você pode usar o Integration Runtime do Azure ou Integration Runtime auto-hospedado. Se não for especificado, ele usa o Integration Runtime padrão do Azure. | Não                                       |
 
 ## <a name="azure-data-lake-analytics-linked-service"></a>Serviço vinculado do Azure Data Lake Analytics

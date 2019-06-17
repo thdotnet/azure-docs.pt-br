@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 05/20/2019
 ms.author: danlep
 ms.openlocfilehash: cc182743c3879ab2748f92022437bc23c26c371c
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
-ms.translationtype: MT
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65977211"
 ---
 # <a name="automate-os-and-framework-patching-with-acr-tasks"></a>Automatizar a aplicação de patches no sistema operacional e na estrutura com as Tarefas de ACR
@@ -41,7 +41,7 @@ Para obter uma introdução, consulte o guia de início rápido para [compilar e
 
 A tabela a seguir mostra alguns exemplos de locais de contexto com suporte para as Tarefas do ACR:
 
-| Local do contexto | Descrição | Exemplo |
+| Local do contexto | DESCRIÇÃO | Exemplo |
 | ---------------- | ----------- | ------- |
 | Sistema de arquivos local | Arquivos dentro de um diretório no sistema de arquivos local. | `/home/user/projects/myapp` |
 | Branch mestre do GitHub | Arquivos dentro da ramificação principal (ou outro padrão) de um repositório GitHub.  | `https://github.com/gituser/myapp-repo.git` |

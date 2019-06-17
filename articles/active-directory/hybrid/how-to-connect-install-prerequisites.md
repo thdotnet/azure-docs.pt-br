@@ -16,12 +16,12 @@ ms.date: 05/08/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f7219578932a259f48b0109d433dcba9ff28d1f
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 1d17823c4ef4917f9f312b8f2f327e2b0395cfa3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65508066"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67109428"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Pré-requisitos do Azure AD Connect
 Este tópico descreve os pré-requisitos e requisitos de hardware para o Azure AD Connect.
@@ -29,7 +29,7 @@ Este tópico descreve os pré-requisitos e requisitos de hardware para o Azure A
 ## <a name="before-you-install-azure-ad-connect"></a>Antes de instalar o Azure AD Connect
 Antes de instalar o Azure AD Connect, aqui estão algumas coisas de que você precisará.
 
-### <a name="azure-ad"></a>Azure AD
+### <a name="azure-ad"></a>AD do Azure
 * Um locatário do Azure AD. Você recebe uma [avaliação gratuita do Azure](https://azure.microsoft.com/pricing/free-trial/). Você pode usar um dos seguintes portais para gerenciar o Azure AD Connect:
   * O [Portal do Azure](https://portal.azure.com).
   * O [portal do Office](https://portal.office.com).  
@@ -48,6 +48,9 @@ Antes de instalar o Azure AD Connect, aqui estão algumas coisas de que você pr
 * É recomendável [habilitar a lixeira do Active Directory](how-to-connect-sync-recycle-bin.md).
 
 ### <a name="azure-ad-connect-server"></a>Servidor do Azure AD Connect
+>[!IMPORTANT]
+>O servidor do Azure AD Connect contém dados de identidade crítica e deve ser tratado como um componente de camada 0, conforme documentado no [o modelo de camadas administrativas do Active Directory](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material#ADATM_BM)
+
 * O Azure AD Connect não pode ser instalado no Small Business Server ou no Windows Server Essentials anteriores a 2019 (o Windows Server Essentials 2019 é compatível). O servidor deve estar usando o Windows Server standard ou superior.
 * Instalando o Azure AD Connect em um controlador de domínio não é recomendado devido a configurações mais restritivas que podem impedir a instalação correta do Azure AD Connect e práticas de segurança
 * O servidor do Azure AD Connect deve ter uma GUI completa instalada. **Não há suporte** para a instalação no núcleo do servidor.
@@ -130,7 +133,7 @@ Para obter mais informações, consulte:
 Para obter mais informações, consulte o MSDN sobre o [Elemento proxy padrão](https://msdn.microsoft.com/library/kd3cf2ex.aspx).  
 Para obter mais informações quando você tiver problemas de conectividade, consulte [Solucionar problemas de conectividade](tshoot-connect-connectivity.md).
 
-### <a name="other"></a>Outro
+### <a name="other"></a>Outros
 * Opcional: Uma conta de usuário de teste para verificar a sincronização.
 
 ## <a name="component-prerequisites"></a>Pré-requisitos do componente
@@ -211,11 +214,11 @@ A tabela a seguir mostra os requisitos mínimos para o computador de sincroniza�
 | Número de objetos no Active Directory | CPU | Memória | Tamanho do disco rígido |
 | --- | --- | --- | --- |
 | Menos de 10.000 |1,6 GHz |4 GB |70 GB |
-| 10.000–50.000 |1,6 GHz |4 GB |70 GB |
-| 50.000–100.000 |1,6 GHz |16 GB |100 GB |
+| 10\.000–50.000 |1,6 GHz |4 GB |70 GB |
+| 50\.000–100.000 |1,6 GHz |16 GB |100 GB |
 | Para 100.000 ou mais objetos, é necessária a versão completa do SQL Server | | | |
-| 100.000–300.000 |1,6 GHz |32 GB |300 GB |
-| 300.000–600.000 |1,6 GHz |32 GB |450 GB |
+| 100\.000–300.000 |1,6 GHz |32 GB |300 GB |
+| 300\.000–600.000 |1,6 GHz |32 GB |450 GB |
 | Mais de 600.000 |1,6 GHz |32 GB |500 GB |
 
 Os requisitos mínimos para computadores que executam o AD FS ou servidores de aplicativos Web são os seguintes:

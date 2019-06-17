@@ -11,10 +11,10 @@ ms.service: cost-management
 manager: micflan
 ms.custom: ''
 ms.openlocfilehash: c3fb1f430076b26f7b5dd83e167371ac6d957ac4
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65967227"
 ---
 # <a name="migrate-from-enterprise-agreement-to-microsoft-customer-agreement-apis"></a>Migrar do Enterprise Agreement para APIs de contrato do cliente da Microsoft
@@ -91,7 +91,7 @@ O [obter o resumo do saldo](/rest/api/billing/enterprise/billing-enterprise-api-
 - Novas compras
 - Encargos de serviço do Azure Marketplace
 - Ajustes
-- Encargos excedentes do serviço
+- Encargos de excedente de serviço
 
 Todas as APIs de consumo são substituídas por APIs nativas do Azure que usam o Azure AD para autenticação e autorização. Para obter mais informações sobre como chamar as APIs REST do Azure, consulte [Introdução ao REST](/rest/api/azure/#create-the-request).
 
@@ -129,7 +129,7 @@ A API de detalhes de uso, assim como acontece com todas as APIs de gerenciamento
 | Type | Formato de ID |
 | --- | --- |
 | Conta de cobrança | `/Microsoft.Billing/billingAccounts/{billingAccountId}` |
-| Perfil de cobrança | `/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}` |
+| Perfil de faturamento | `/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}` |
 | Assinatura | `/subscriptions/{subscriptionId}` |
 | Grupo de recursos | `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}` |
 
@@ -172,52 +172,52 @@ O nome da propriedade que contém a matriz de registros de uso é alterado de da
 
 | Propriedade antiga | Nova propriedade | Observações |
 | --- | --- | --- |
-| Id da Conta | N/D | O criador da assinatura não controlado. Use invoiceSectionId (mesmo que a ID do departamento). |
+| AccountId | N/D | O criador da assinatura não controlado. Use invoiceSectionId (mesmo que a ID do departamento). |
 | AccountNameAccountOwnerId e AccountOwnerEmail | N/D | O criador da assinatura não controlado. Use invoiceSectionName (mesmo que departmentName). |
-| Informações Adicionais | additionalInfo | &nbsp;  |
+| AdditionalInfo | additionalInfo | &nbsp;  |
 | ChargesBilledSeparately | isAzureCreditEligible | Observe que essas propriedades são opostos. Se isAzureCreditEnabled for true, ChargesBilledSeparately será false. |
-| Quantidade Consumida | quantidade | &nbsp; |
-| Serviço Consumido | consumedService | Valores de cadeia de caracteres podem ser diferentes. |
-| Id do Serviço Consumido | Nenhum | &nbsp; |
-| Centro de Custo | costCenter | &nbsp; |
+| ConsumedQuantity | quantidade | &nbsp; |
+| ConsumedService | consumedService | Valores de cadeia de caracteres podem ser diferentes. |
+| ConsumedServiceId | Nenhum | &nbsp; |
+| CostCenter | costCenter | &nbsp; |
 | Data e usageStartDate | date | &nbsp;  |
 | Dia | Nenhum | Analisa o dia da data. |
-| Id do Departamento | invoiceSectionId | Os valores exatos são diferentes. |
-| Nome do Departamento | invoiceSectionName | Valores de cadeia de caracteres podem ser diferentes. Configure as seções de nota fiscal de acordo com os departamentos, se necessário. |
+| DepartmentId | invoiceSectionId | Os valores exatos são diferentes. |
+| DepartmentName | invoiceSectionName | Valores de cadeia de caracteres podem ser diferentes. Configure as seções de nota fiscal de acordo com os departamentos, se necessário. |
 | ExtendedCost e custo | costInBillingCurrency | &nbsp;  |
-| Id da Instância | resourceId | &nbsp;  |
-| É Cobrança Recorrente | Nenhum | &nbsp;  |
+| InstanceId | ResourceId | &nbsp;  |
+| Encargos recorrentes | Nenhum | &nbsp;  |
 | Local padrão | location | &nbsp;  |
-| Categoria do Medidor | meterCategory | Valores de cadeia de caracteres podem ser diferentes. |
-| Id do Medidor | meterId | Valores de cadeia de caracteres são diferentes. |
-| Nome do Medidor | meterName | Valores de cadeia de caracteres podem ser diferentes. |
-| Região do Medidor | meterRegion | Valores de cadeia de caracteres podem ser diferentes. |
-| Sub-categoria do Medidor | meterSubCategory | Valores de cadeia de caracteres podem ser diferentes. |
+| MeterCategory | meterCategory | Valores de cadeia de caracteres podem ser diferentes. |
+| MeterId | meterId | Valores de cadeia de caracteres são diferentes. |
+| MeterName | meterName | Valores de cadeia de caracteres podem ser diferentes. |
+| MeterRegion | meterRegion | Valores de cadeia de caracteres podem ser diferentes. |
+| MeterSubCategory | meterSubCategory | Valores de cadeia de caracteres podem ser diferentes. |
 | Mês | Nenhum | Analisa o mês da data. |
-| Nome da Oferta | Nenhum | Use publisherName e productOrderName. |
+| Nome da oferta | Nenhum | Use publisherName e productOrderName. |
 | OfferId | Nenhum | &nbsp;  |
-| Número do Pedido | Nenhum | &nbsp;  |
+| Número do pedido | Nenhum | &nbsp;  |
 | PartNumber | Nenhum | Use meterId e productOrderName para identificar exclusivamente os preços. |
-| Nome do Plano | productOrderName | &nbsp;  |
+| Nome do plano | productOrderName | &nbsp;  |
 | Produto | Produto |   |
-| Id do Produto | productId | Valores de cadeia de caracteres são diferentes. |
-| Nome do Editor | publisherName | &nbsp;  |
+| ProductId | productId | Valores de cadeia de caracteres são diferentes. |
+| Nome do editor | publisherName | &nbsp;  |
 | ResourceGroup | resourceGroupName | &nbsp;  |
 | ResourceGuid | meterId | Valores de cadeia de caracteres são diferentes. |
-| Localização do Recurso | resourceLocation | &nbsp;  |
-| Id da Localização do Recurso | Nenhum | &nbsp;  |
-| Taxa de Recursos | effectivePrice | &nbsp;  |
-| Id de Administrador de Serviço | N/D | &nbsp;  |
-| Informações de Serviço 1 | serviceInfo1 | &nbsp;  |
-| Informações de Serviço 2 | serviceInfo2 | &nbsp;  |
+| ResourceLocation | resourceLocation | &nbsp;  |
+| ResourceLocationId | Nenhum | &nbsp;  |
+| ResourceRate | effectivePrice | &nbsp;  |
+| ServiceAdministratorId | N/D | &nbsp;  |
+| ServiceInfo1 | serviceInfo1 | &nbsp;  |
+| ServiceInfo2 | serviceInfo2 | &nbsp;  |
 | ServiceName | meterCategory | Valores de cadeia de caracteres podem ser diferentes. |
 | ServiceTier | meterSubCategory | Valores de cadeia de caracteres podem ser diferentes. |
-| Identificador de Serviço da Loja | N/D | &nbsp;  |
-| Guid de Assinatura | subscriptionId | &nbsp;  |
+| StoreServiceIdentifier | N/D | &nbsp;  |
+| SubscriptionGuid | subscriptionId | &nbsp;  |
 | SubscriptionId | subscriptionId | &nbsp;  |
-| Nome da Assinatura | subscriptionName | &nbsp;  |
+| SubscriptionName | subscriptionName | &nbsp;  |
 | tags | marcas | A propriedade tags se aplica a raiz do objeto, não para a propriedade de propriedades aninhadas. |
-| Unidade de Medida | unitOfMeasure | Valores de cadeia de caracteres são diferentes. |
+| UnitOfMeasure | unitOfMeasure | Valores de cadeia de caracteres são diferentes. |
 | usageEndDate | date | &nbsp;  |
 | Ano | Nenhum | Analisa o ano da data. |
 | (novo) | billingCurrency | Moeda usada para a cobrança. |
@@ -428,20 +428,20 @@ No escopo de registro do EA, a resposta da API e as propriedades são idênticas
 
 As propriedades mais antigas [APIs de folha de preço do Azure Resource Manager](/rest/api/consumption/pricesheet) e as mesmas propriedades novas estão na tabela a seguir.
 
-| Propriedade do antigo do Azure Resource Manager preço folha API  | Nova propriedade de API de tabela de preços de contrato do Microsoft Customer   | Descrição |
+| Propriedade do antigo do Azure Resource Manager preço folha API  | Nova propriedade de API de tabela de preços de contrato do Microsoft Customer   | DESCRIÇÃO |
 | --- | --- | --- |
-| ID de Medição | _meterId_ | Identificador exclusivo para o medidor. Mesmo que meterId. |
-| Medir nome | meterName | Nome do medidor. Medidor representa o recurso implantável do serviço do Azure. |
-| Medir categoria  | serviço | Nome da categoria de classificação para o medidor. Mesmo que o serviço na tabela de preços do contrato Microsoft Customer. Valores de cadeia de caracteres são diferentes. |
-| Medidor de subcategoria | meterSubCategory | Nome da categoria subclassificação medidor. Com base na classificação de diferenciação de conjunto de recursos de alto nível no serviço. Por exemplo, banco de dados SQL básico versus banco de dados SQL Standard |
-| Região de medição | meterRegion | &nbsp;  |
+| ID de medidor | _meterId_ | Identificador exclusivo para o medidor. Mesmo que meterId. |
+| Nome do medidor | meterName | Nome do medidor. Medidor representa o recurso implantável do serviço do Azure. |
+| Categoria do medidor  | propriedade serviço | Nome da categoria de classificação para o medidor. Mesmo que o serviço na tabela de preços do contrato Microsoft Customer. Valores de cadeia de caracteres são diferentes. |
+| Subcategoria do medidor | meterSubCategory | Nome da categoria subclassificação medidor. Com base na classificação de diferenciação de conjunto de recursos de alto nível no serviço. Por exemplo, banco de dados SQL básico versus banco de dados SQL Standard |
+| Região do medidor | meterRegion | &nbsp;  |
 | Unidade | _Não aplicável_ | Pode ser analisado do unitOfMeasure. |
 | Unidade de medida | unitOfMeasure | &nbsp;  |
 | Número da peça | _Não aplicável_ | Em vez de partNumber, use productOrderName e MeterId para identificar exclusivamente o preço de um perfil de cobrança. Os campos são listados na fatura em vez do partNumber em faturas MCA MCA. |
 | Preço unitário | unitPrice | Preço da unidade de contrato de cliente da Microsoft. |
 | Código de moeda | pricingCurrency | Contratos de clientes da Microsoft representam os preços na moeda de preços e cobrança de moeda. Código de moeda é o mesmo que o pricingCurrency em contratos de clientes da Microsoft. |
 | Quantidade incluída | includedQuantity | Não é aplicável aos serviços em contratos de clientes da Microsoft. Mostrar com valores de zero. |
-|  ID da Oferta  | productOrderName | Em vez de OfferId, use productOrderName. Não é igual ao OfferId, no entanto o medidor e productOrderName determinam um preço de contratos de clientes da Microsoft. Relacionados a meterId e Offerid em registros herdados. |
+|  Id da oferta  | productOrderName | Em vez de OfferId, use productOrderName. Não é igual ao OfferId, no entanto o medidor e productOrderName determinam um preço de contratos de clientes da Microsoft. Relacionados a meterId e Offerid em registros herdados. |
 
 O preço para contratos de clientes da Microsoft é definido diferente dos contratos Enterprise. O preço para serviços no registro Enterprise é exclusivo para o produto, PartNumber, medidor e oferta. O PartNumber não é usado em contratos de clientes da Microsoft.
 
@@ -457,12 +457,12 @@ A tabela de preços inclui os preços para os serviços cujo preço é baseado e
 
 Os seguintes campos são não está disponível nas APIs de folha de preço do Microsoft cliente contrato ou ter os mesmos campos.
 
-|Campo obsoleto| Descrição|
+|Campo obsoleto| DESCRIÇÃO|
 |---|---|
 | billingPeriodId | Não aplicável. Corresponde a InvoiceId para MCA. |
 | offerId | Não aplicável. Corresponde a productOrderName em MCA. |
 | meterCategory  | Não aplicável. Corresponde ao serviço no MCA. |
-| unidade | Não aplicável. Pode ser analisado do unitOfMeasure. |
+| unit | Não aplicável. Pode ser analisado do unitOfMeasure. |
 | currencyCode | Mesmo que o pricingCurrency em MCA. |
 | meterLocation | Mesmo que o meterRegion em MCA. |
 | partNumber partnumber | Não aplicável porque o número de peça não está listado no MCA faturas. Em vez de partnumber, use a combinação de meterId e productOrderName para identificar exclusivamente os preços. |

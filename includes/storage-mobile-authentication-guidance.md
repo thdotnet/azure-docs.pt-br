@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: tamram
 ms.openlocfilehash: 6911e06dc023027ab32b99387b9f7d3f5e708f86
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66158598"
 ---
 ## <a name="configure-your-application-to-access-azure-storage"></a>Configurar seu aplicativo para acessar o Armazenamento de Blob
@@ -17,7 +17,7 @@ Há duas maneiras de autenticar o aplicativo para acessar os serviços de Armaze
 * Chave compartilhada: Usar a chave compartilhada somente para testes
 * Assinatura de acesso compartilhado (SAS): Use a SAS para aplicativos de produção
 
-### <a name="shared-key"></a>Chave Compartilhada
+### <a name="shared-key"></a>Chave compartilhada
 A autenticação de Chave Compartilhada significa que o aplicativo usará seu nome da conta e chave de conta para acessar os serviços de Armazenamento. Para mostrar rapidamente como usar essa biblioteca, vamos usar a autenticação de Chave Compartilhada nesta introdução.
 
 > [!WARNING] 

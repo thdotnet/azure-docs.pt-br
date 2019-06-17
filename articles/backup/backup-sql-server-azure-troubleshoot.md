@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 05/27/2019
 ms.author: anuragm
 ms.openlocfilehash: 8459bb451c4ff462ee816b986cafdbf776603917
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66306962"
 ---
 # <a name="troubleshoot-back-up-sql-server-on-azure"></a>Solucionar problemas de backup do SQL Server no Azure
@@ -94,7 +94,7 @@ Para configurar a proteção de um banco de dados do SQL Server em uma máquina 
 
 | Mensagem de erro | Possíveis causas | Ação recomendada |
 |---|---|---|
-| O backup de log usado para a recuperação contém alterações bulk-logged. Ele não pode ser usado para parar em um ponto arbitrário no tempo de acordo com as diretrizes do SQL. | Quando um banco de dados está no modo de recuperação registradas em massa, os dados entre uma transação de bulk-logged e a próxima transação de log não podem ser recuperados. | Escolha um ponto diferente no tempo de recuperação. [Saiba mais](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms186229(v=sql.105))
+| O backup de log usado para a recuperação contém alterações bulk-logged. Ele não pode ser usado para parar em um ponto arbitrário de acordo com as diretrizes do SQL. | Quando um banco de dados está no modo de recuperação registradas em massa, os dados entre uma transação de bulk-logged e a próxima transação de log não podem ser recuperados. | Escolha um ponto diferente no tempo de recuperação. [Saiba mais](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms186229(v=sql.105))
 
 
 ## <a name="fabricsvcbackuppreferencecheckfailedusererror"></a>FabricSvcBackupPreferenceCheckFailedUserError

@@ -9,10 +9,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/31/2019
 ms.openlocfilehash: b29f3168b7ecc1ec8f783a7ce7a6dea83318fa14
-ms.sourcegitcommit: ec7b0bf593645c0d1ef401a3350f162e02c7e9b8
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/01/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66455703"
 ---
 # <a name="understand-outputs-from-azure-stream-analytics"></a>Entender as saídas do Azure Stream Analytics
@@ -316,7 +316,7 @@ A tabela a seguir explica algumas das considerações para o envio em lote de sa
 | Tipo de saída | Tamanho máximo de mensagem | Otimização de tamanho de lote |
 | :--- | :--- | :--- |
 | Repositório Azure Data Lake | Ver [limites de armazenamento do Data Lake](../azure-subscription-service-limits.md#data-lake-store-limits). | Use até 4 MB por operação de gravação. |
-| Banco de Dados SQL do Azure | 10.000 máximo de linhas por único bulk insert.<br />mínimo 100 linhas por único bulk insert. <br />Ver [SQL Azure limita](../sql-database/sql-database-resource-limits.md). |  Cada lote é inicialmente em massa inserida com tamanho máximo de lote. Você pode dividir o lote em metade (até que o tamanho mínimo do lote) com base em erros com nova tentativa do SQL. |
+| Banco de Dados SQL do Azure | 10\.000 máximo de linhas por único bulk insert.<br />mínimo 100 linhas por único bulk insert. <br />Ver [SQL Azure limita](../sql-database/sql-database-resource-limits.md). |  Cada lote é inicialmente em massa inserida com tamanho máximo de lote. Você pode dividir o lote em metade (até que o tamanho mínimo do lote) com base em erros com nova tentativa do SQL. |
 | Armazenamento de Blobs do Azure | Ver [limites de armazenamento do Azure](../azure-subscription-service-limits.md#storage-limits). | O tamanho máximo do blob do bloco é 4 MB.<br />A contagem do máximo do blob bock é 50.000. |
 | Hubs de eventos do Azure  | 256 KB por mensagem. <br />Ver [limita os Hubs de eventos](../event-hubs/event-hubs-quotas.md). |  Quando o particionamento de entrada/saída não está alinhado, cada evento é fornecido individualmente nas **EventData** e enviadas em um lote de até o tamanho máximo da mensagem (1 MB para o SKU Premium). <br /><br />  Quando o particionamento de entrada/saída é aligned, vários eventos são incluídos em uma única **EventData** da instância, até o tamanho máximo da mensagem e enviada.  |
 | Power BI | Ver [limita a API Rest do Power BI](https://msdn.microsoft.com/library/dn950053.aspx). |
