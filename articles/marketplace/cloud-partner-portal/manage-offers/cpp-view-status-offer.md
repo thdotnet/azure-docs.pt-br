@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 01/11/2019
 ms.author: pabutler
-ms.openlocfilehash: b8113552edf9dd2f886b5752b2ebc69afc0fda08
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: fff89dd8a17aaf6d45462edeaa22f1d2efc8d02b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64942361"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67064315"
 ---
 # <a name="view-the-publishing-status-of-azure-marketplace-and-appsource-offers"></a>Exibir o status de publicação de ofertas do Azure Marketplace e do AppSource
 
@@ -39,7 +39,7 @@ O exemplo a seguir mostra a guia **Status** para um serviço de consultoria, mos
 
 ![Guia de Status para consultar o erro de exibição do serviço](./media/consulting-service-error.png)
 
-O status final de exemplo de um aplicativo do Azure mostra um problema crítico de revisão da Microsoft.  Ele contém um hot link para o item do VSTS que contém informações detalhadas sobre esse problema de revisão.  Para obter mais informações, confira [Publicar oferta de aplicativo do Azure](cpp-publish-offer.md).
+O status final de exemplo de um aplicativo do Azure mostra um problema crítico de revisão da Microsoft.  Ele contém um link ativo para o item de DevOps do Azure que contém informações detalhadas sobre esse problema de revisão.  Para obter mais informações, confira [Publicar oferta de aplicativo do Azure](cpp-publish-offer.md).
 
 ![Guia de Status para um aplicativo do Azure mostrando o problema de revisão](../azure-applications/media/status-tab-ms-review.png)
 

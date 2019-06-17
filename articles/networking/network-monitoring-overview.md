@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2018
 ms.author: ajaycode
 ms.openlocfilehash: b112771e8c0f08e6b9a02c2fc5b7e1887b3f2588
-ms.sourcegitcommit: 3675daec6c6efa3f2d2bf65279e36ca06ecefb41
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65620422"
 ---
 # <a name="network-monitoring-solutions"></a>Soluções de monitoramento de rede 
@@ -41,7 +41,7 @@ O Monitor de Desempenho, Monitor do ExpressRoute e Monitor da Conectividade de S
 
 Monitor de Desempenho é parte do NPM e está monitorando a rede para ambientes locais, híbridos e na nuvem. Você pode monitorar a conectividade de rede em escritórios e filiais remotas, locais de armazenamento, data centers e nuvens. Você pode detectar problemas de rede antes de seus usuários reclamarem. As principais vantagens são:
 
-* Monitorar a perda e latência em várias sub-redes e definir alertas
+* Monitorar perda e latência entre várias sub-redes e definir alertas
 * Monitorar todos os caminhos (incluindo caminhos redundantes) na rede
 * Solucionar problemas de rede transitórios e pontuais, que são difíceis de replicar
 * Determinar um segmento específico na rede, que é responsável pelo desempenho degradado

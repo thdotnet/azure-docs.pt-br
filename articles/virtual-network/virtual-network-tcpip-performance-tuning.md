@@ -29,10 +29,10 @@ ms.author:
 - btalb
 - prachank
 ms.openlocfilehash: ad1a5b69e4ec7b44c0e61a5ddd2c06633464d31a
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66234993"
 ---
 # <a name="tcpip-performance-tuning-for-azure-vms"></a>TCP/IP ajuste de desempenho para VMs do Azure
@@ -178,11 +178,11 @@ Esta tabela mostra o máximo em megabytes por segundo taxa de transferência de 
 | | | | |
 |-|-|-|-|
 |**Tamanho de janela TCP (bytes)**|**Latência RTT (ms)**|**Máximo em megabytes por segundo de taxa de transferência**|**Máximo megabits/segundo de taxa de transferência**|
-|65.535|1|65.54|524.29|
-|65.535|30|2.18|17.48|
-|65.535|60|1.09|8.74|
-|65.535|90|.73|5.83|
-|65.535|120|.55|4.37|
+|65\.535|1|65.54|524.29|
+|65\.535|30|2.18|17.48|
+|65\.535|60|1.09|8.74|
+|65\.535|90|.73|5.83|
+|65\.535|120|.55|4.37|
 
 Se os pacotes forem perdidos, a taxa de transferência máxima de uma conexão TCP será reduzida enquanto o remetente retransmite dados que já foram enviados.
 
@@ -195,7 +195,7 @@ Esta tabela ilustra essas relações:
 | | | | |
 |-|-|-|-|
 |**Tamanho de janela TCP (bytes)**|**Latência RTT (ms)**|**Máximo em megabytes por segundo de taxa de transferência**|**Máximo megabits/segundo de taxa de transferência**|
-|65.535|30|2.18|17.48|
+|65\.535|30|2.18|17.48|
 |131,070|30|4.37|34.95|
 |262,140|30|8.74|69.91|
 |524,280|30|17.48|139.81|

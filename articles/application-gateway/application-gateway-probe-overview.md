@@ -6,14 +6,13 @@ author: vhorne
 manager: jpconnock
 ms.service: application-gateway
 ms.topic: article
-origin.date: 08/06/2018
-ms.date: 04/16/2019
-ms.author: v-junlch
+ms.date: 8/6/2018
+ms.author: victorh
 ms.openlocfilehash: d0c425bcb9961fde9fb319991148c18c6a9ff57b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66135214"
 ---
 # <a name="application-gateway-health-monitoring-overview"></a>Visão geral do monitoramento de integridade do Gateway de Aplicativo
@@ -30,7 +29,7 @@ Além de usar o monitoramento da investigação de integridade padrão, você ta
 
 Um Application Gateway configura automaticamente uma investigação de integridade padrão quando você não define nenhuma configuração de investigação personalizada. O comportamento de monitoramento funciona fazendo uma solicitação HTTP para os endereços IP configurados para o pool de back-end. Para investigações padrão, se as configurações de HTTP de back-end estão configuradas para HTTPS, a investigação também usa HTTPS para testar a integridade dos back-ends.
 
-Por exemplo: Configure seu Application Gateway para usar os servidores de back-end A, B e C para receber o tráfego de rede HTTP na porta 80. O monitoramento de integridade padrão testa os três servidores a cada 30 segundos para receber uma de HTTP íntegra. Uma resposta de HTTP íntegra tem um [código de status](https://msdn.microsoft.com/library/aa287675.aspx) entre 200 e 399.
+Por exemplo:  Configure seu Application Gateway para usar os servidores de back-end A, B e C para receber o tráfego de rede HTTP na porta 80. O monitoramento de integridade padrão testa os três servidores a cada 30 segundos para receber uma de HTTP íntegra. Uma resposta de HTTP íntegra tem um [código de status](https://msdn.microsoft.com/library/aa287675.aspx) entre 200 e 399.
 
 Se a verificação de investigação padrão falhar para o servidor A, o Application Gateway o remove do seu pool de back-end e o tráfego de rede para de fluir para este servidor. A investigação padrão ainda continua a verificar o servidor A a cada 30 segundos. Quando o Servidor A responde com êxito a uma solicitação de uma investigação de integridade, ela é adicionada de volta como íntegro ao pool de back-end e o tráfego começa a fluir para esse servidor novamente.
 
@@ -55,9 +54,9 @@ Depois que os critérios de correspondência forem especificados, ele poderá se
 
 ### <a name="default-health-probe-settings"></a>Configurações da investigação de integridade padrão
 
-| Propriedades da investigação | Value | Descrição |
+| Propriedades da investigação | Value | DESCRIÇÃO |
 | --- | --- | --- |
-| URL de Investigação |http://127.0.0.1:\<port\>/ |Caminho da URL |
+| URL de investigação |http://127.0.0.1:\<port\>/ |Caminho da URL |
 | Interval |30 |A quantidade de tempo em segundos a esperar antes da próxima investigação de integridade é enviada.|
 | Tempo limite |30 |A quantidade de tempo em segundos o gateway de aplicativo aguarda uma resposta de investigação antes da marcação da investigação como não íntegro. Se uma investigação é retornada como íntegra, o back-end correspondente será imediatamente marcado como íntegro.|
 | Limite não íntegro |3 |Controla quantas investigações para enviar o caso ocorra uma falha da investigação de integridade regular. Essas investigações de integridade adicionais são enviadas em sucessão rápida para determinar a integridade do back-end rapidamente e não preciso esperar para que o intervalo de investigação. O servidor de back-end é marcado após a contagem de falhas de investigação consecutivas atingir o limite de não íntegro. |
@@ -81,12 +80,12 @@ Investigações personalizadas permitem que você tenha um controle mais granula
 
 A tabela a seguir fornece definições para as propriedades de uma investigação de integridade personalizada.
 
-| Propriedades da investigação | Descrição |
+| Propriedades da investigação | DESCRIÇÃO |
 | --- | --- |
 | NOME |O nome da investigação. Este é o nome usado para se referir à investigação nas configurações de HTTP de back-end. |
 | Protocol |O protocolo usado para enviar a investigação. A investigação usa o protocolo definido nas configurações de HTTP do back-end |
 | Host |O nome do host para enviar a investigação. Aplicável somente quando vários sites são configurados no Gateway de Aplicativo; do contrário, use '127.0.0.1'. Este valor é diferente do nome do host de VM. |
-| `Path` |O caminho relativo da investigação. Um caminho válido começa com '/'. |
+| Caminho |O caminho relativo da investigação. Um caminho válido começa com '/'. |
 | Interval |Intervalo de investigação em segundos. Este valor é o intervalo de tempo entre duas investigações consecutivas. |
 | Tempo limite |Tempo limite da investigação em segundos. Se uma resposta válida não for recebida dentro desse período de tempo limite, a investigação será marcada como com falha.  |
 | Limite não íntegro |Contagem de repetições da investigação. O servidor de back-end é marcado após a contagem de falhas de investigação consecutivas atingir o limite de não íntegro. |
@@ -105,5 +104,3 @@ Além disso, a conectividade de Internet de saída não pode ser bloqueada, e o 
 Depois de aprender sobre o monitoramento de integridade do Gateway de Aplicativo, você poderá configurar uma [investigação de integridade personalizada](application-gateway-create-probe-portal.md) no portal do Azure ou uma [investigação de integridade personalizada](application-gateway-create-probe-ps.md) usando o PowerShell e o modelo de implantação do Azure Resource Manager.
 
 [1]: ./media/application-gateway-probe-overview/appgatewayprobe.png
-
-<!-- Update_Description: wording update -->

@@ -13,10 +13,10 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 02/13/2019
 ms.openlocfilehash: 73bc2d9889727a1633986e12642bd06cf2714632
-ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66357323"
 ---
 # <a name="new-dba-in-the-cloud--managing-your-single-and-pooled-databases-in-azure-sql-database"></a>DBA novo na nuvem – gerenciamento de bancos de dados individuais e em pool no Banco de Dados SQL do Azure
@@ -172,7 +172,7 @@ Para proteger dados confidenciais em trânsito e em repouso, o Banco de Dados SQ
 |**Características**|**Always Encrypted**|**Transparent Data Encryption**|
 |---|---|---|
 |**Expansão de criptografia**|Ponta a ponta|Dados em repouso|
-|**O servidor de banco de dados pode acessar dados confidenciais**|Não |Sim, desde que a criptografia seja para os dados em repouso|
+|**O servidor de banco de dados pode acessar dados confidenciais**|Não|Sim, desde que a criptografia seja para os dados em repouso|
 |**Operações de T-SQL permitidas**|Comparação de igualdade|Toda a área de superfície do T-SQL está disponível|
 |**Alterações de aplicativo necessárias para usar o recurso**|Mínimo|Muito Mínimo|
 |**Granularidade de criptografia**|Nível de coluna|Nível de banco de dados|

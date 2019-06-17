@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/26/2018
 ms.author: wolfma
-ms.openlocfilehash: fc03db268ab05c6718fb323bc30574a36d0ca092
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 4099bc7bfce6de620504e03be3afc5392281d8d8
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65138150"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072369"
 ---
 # <a name="support-and-help-options"></a>Opções de Ajuda e suporte
 
@@ -83,9 +83,9 @@ Se não conseguir encontrar uma resposta para seu problema por meio da pesquisa,
 Normalmente, os exemplos são lançados como código-fonte aberto. Para perguntas e problemas, crie uma *problema* no respectivo repositório do GitHub. Você pode enviar uma solicitação de pull, também. A lista a seguir contém links para os repositórios de exemplo:
 
 * [SDK da fala](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues)
-* [SDK de dispositivos](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK/issues)
+* [SDK de Dispositivos de Fala](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK/issues)
 
-Você pode criar um relatório de bug, solicitação de recurso, ou fazer uma pergunta geral e compartilhar as melhores práticas. Para relatórios de bugs, siga o modelo fornecido:
+Você pode criar um relatório de bug, solicitação de recurso, ou faça uma pergunta geral e compartilhar as melhores práticas. Para relatórios de bugs, siga o modelo fornecido:
 
 **Descrever o bug**
 

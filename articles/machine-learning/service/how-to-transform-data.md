@@ -13,10 +13,10 @@ ms.reviewer: jmartens
 ms.date: 05/02/2019
 ms.custom: seodec18
 ms.openlocfilehash: db23c8af7eaa4a86691ccb0bb831ce2cc28d635c
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65471829"
 ---
 # <a name="transform-data-with-the-azure-machine-learning-data-prep-sdk"></a>Transformar dados com o SDK de preparação de dados do Azure Machine Learning
@@ -46,7 +46,7 @@ dflow = dprep.read_csv(path=r'data\crime0-10.csv')
 dflow.head(3)
 ```
 
-||ID|Número do Caso|Data|Bloquear|IUCR|Texto Primário|Descrição|Descrição do Local|Detenção|Nacional|...|Ward|Área da Comunidade|Código do FBI|Coordenada X|Coordenada Y|Ano|Atualizado Em|Latitude|Longitude|Local padrão|
+||ID|Número do Caso|Data|Bloco|IUCR|Texto Primário|DESCRIÇÃO|Descrição do Local|Detenção|Nacional|...|Ward|Área da Comunidade|Código do FBI|Coordenada X|Coordenada Y|Ano|Atualizado Em|Latitude|Longitude|Local padrão|
 |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
 |0|10140490|HY329907|05/07/2015 11:50:00 pm|050XX N NEWLAND AVE|0820|ROUBO|US $500 E ABAIXO DE|RUA|falso|falso|...|41|10|06|1129230|1933315|2015|12/07/2015 12:42:46 pm|41,973309466|-87,800174996|(41,973309466, -87,800174996)|
 |1|10139776|HY329265|05/07/2015 11:30:00 pm|011XX W MORSE AVE|0460|BATERIA|SIMPLES|RUA|falso|verdadeiro|...|49|1|08B|1167370|1946271|2015|12/07/2015 12:42:46 pm|42,008124017|-87,65955018|(42,008124017, -87,65955018)|
@@ -63,7 +63,7 @@ case_category = dflow.add_column(new_column_name='Case Category',
 case_category.head(3)
 ```
 
-||ID|Número do Caso|Categoria do Caso|Data|Bloquear|IUCR|Texto Primário|Descrição|Descrição do Local|Detenção|Nacional|...|Ward|Área da Comunidade|Código do FBI|Coordenada X|Coordenada Y|Ano|Atualizado Em|Latitude|Longitude|Local padrão|
+||ID|Número do Caso|Categoria do Caso|Data|Bloco|IUCR|Texto Primário|DESCRIÇÃO|Descrição do Local|Detenção|Nacional|...|Ward|Área da Comunidade|Código do FBI|Coordenada X|Coordenada Y|Ano|Atualizado Em|Latitude|Longitude|Local padrão|
 |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|------|
 |0|10140490|HY329907|HY|05/07/2015 11:50:00 pm|050XX N NEWLAND AVE|0820|ROUBO|US $500 E ABAIXO DE|RUA|falso|falso|...|41|10|06|1129230|1933315|2015|12/07/2015 12:42:46 pm|41,973309466|-87,800174996|(41,973309466, -87,800174996)|
 |1|10139776|HY329265|HY|05/07/2015 11:30:00 pm|011XX W MORSE AVE|0460|BATERIA|SIMPLES|RUA|falso|verdadeiro|...|49|1|08B|1167370|1946271|2015|12/07/2015 12:42:46 pm|42,008124017|-87,65955018|(42,008124017, -87,65955018)|
@@ -270,7 +270,7 @@ dflow = builder.to_dataflow()
 df = dflow.to_pandas_dataframe()
 ```
 
-## <a name="filtering"></a>Filtrando
+## <a name="filtering"></a>Filtragem
 
 O SDK inclui os métodos [ `drop_columns()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#drop-columns-columns--multicolumnselection-----azureml-dataprep-api-dataflow-dataflow) e [ `filter()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py) para permitir que você filtre colunas ou linhas.
 
@@ -387,7 +387,7 @@ dflow.head(2)
 ||lpep_pickup_datetime|Lpep_dropoff_datetime|Passenger_count|Trip_distance|Tip_amount|Tolls_amount|Total_amount|
 |-----|-----|-----|-----|-----|-----|-----|-----|
 |0|13-08-2013 06:11:06+00:00|13-08-2013 06:30:28+00:00|1.0|9.57|7.47|5.33|44.80|
-|1|23-08-2013 06:30:28+00:00|23-08-2013 12:50:28+00:00|2.0|8.22|8.08|5.33|40.41|
+|1|23-08-2013 06:30:28+00:00|23-08-2013 12:50:28+00:00|2,0|8.22|8.08|5.33|40.41|
 
 ## <a name="custom-python-transforms"></a>Transformações personalizadas de Python
 

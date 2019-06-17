@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 01/03/2019
 ms.openlocfilehash: 8a62ec95c715c08a8fddc09f0c8e5f5bba368556
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66241767"
 ---
 # <a name="credentials-used-to-access-the-elastic-database-client-library"></a>Credenciais usadas para acessar a biblioteca de cliente do Banco de Dados Elástico
@@ -73,7 +73,7 @@ Neste exemplo, **smmUserConnectionString** contém a cadeia de conexão para as 
 
 Assim como acontece com as credenciais de administrador, não é possível valores no formato "username@server". Em vez disso, use "username".  Observe que a cadeia de conexão não contém um nome do servidor e banco de dados. Isso ocorre porque a chamada **OpenConnectionForKey** redireciona automaticamente a conexão para o fragmento correto com base na chave. Portanto, o nome do banco de dados e o nome do servidor não são fornecidos.
 
-## <a name="see-also"></a>Consulte 
+## <a name="see-also"></a>Consulte
 
 [Gerenciamento de bancos de dados e logons no Banco de Dados SQL do Azure](sql-database-manage-logins.md)
 

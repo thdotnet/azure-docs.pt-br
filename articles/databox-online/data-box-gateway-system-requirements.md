@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 05/08/2019
 ms.author: alkohli
 ms.openlocfilehash: e8932097bcdef782b1a551d386c2872e02d8abfd
-ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65442390"
 ---
 # <a name="azure-data-box-gateway-system-requirements"></a>Requisitos de sistema de Gateway da caixa de dados do Azure
@@ -29,7 +29,7 @@ Os requisitos de sistema para o dispositivo virtual Data Box Gateway incluem:
 
 O sistema host subjacente para o Data Box Gateway é capaz de dedicar os seguintes recursos para provisionar seu dispositivo virtual:
 
-| Especificações                                          | Descrição              |
+| Especificações                                          | DESCRIÇÃO              |
 |---------------------------------------------------------|--------------------------|
 | Processadores virtuais (núcleos)   | Mínimo de 4 |
 | Memória  | Mínimo de 8 GB|

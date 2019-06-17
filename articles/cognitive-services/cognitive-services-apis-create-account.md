@@ -7,14 +7,14 @@ author: garyericson
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
-ms.date: 03/26/2019
+ms.date: 06/11/2019
 ms.author: garye
-ms.openlocfilehash: 831f1d22c4da215bed3ed55b659332aa3b57472b
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 1149cc6bd4fa41514056342a06d31016123eb88c
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66145935"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67062148"
 ---
 # <a name="quickstart-create-a-cognitive-services-account-in-the-azure-portal"></a>Início Rápido: Criar uma conta de Serviços Cognitivos no portal do Azure
 
@@ -105,4 +105,4 @@ Anote o local e as chaves. Você pode obter as chaves, selecionando **teclas** s
 * [Início Rápido: Extrair texto manuscrito de uma imagem](https://docs.microsoft.com/azure/cognitive-services/computer-vision/quickstarts/csharp-hand-text)
 * [Tutorial: Criar um aplicativo para detectar e enquadrar faces em uma imagem](https://docs.microsoft.com/azure/cognitive-services/Face/Tutorials/FaceAPIinCSharpTutorial)
 * [Criar uma página da Web de pesquisa personalizada](https://docs.microsoft.com/azure/cognitive-services/bing-custom-search/tutorials/custom-search-web-page)
-* [Integrar Luis (reconhecimento vocal a linguagem) com um bot usando a estrutura do Bot](https://docs.microsoft.com/azure/cognitive-services/luis/luis-nodejs-tutorial-build-bot-framework-sample)
+* [Integrar Luis (reconhecimento vocal a linguagem) com um bot usando a estrutura do Bot](https://docs.microsoft.com/azure/cognitive-services/luis/luis-nodejs-tutorial-bf-v4)

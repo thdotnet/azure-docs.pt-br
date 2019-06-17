@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 988e8982b6f06fb1210330c5cafdb696892794fe
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: a9cf0b848e551d3c0e7d7275af9eb2c8e970dbd9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66235524"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67113392"
 ---
 # <a name="reports-in-azure-multi-factor-authentication"></a>Relatórios na Autenticação Multifator do Azure
 
@@ -59,7 +59,7 @@ Esses dados estão disponíveis por meio do [Portal do Azure](https://portal.azu
 
 Os relatórios de atividade de entrada para MFA fornecem acesso às seguintes informações:
 
-**MFA obrigatório:** Indica se o MFA é ou não obrigatório para as credenciais. O MFA pode ser necessário devido ao MFA por usuário, acesso condicional ou outros motivos. Os valores possíveis são **Sim** ou **Não**.
+**MFA obrigatório:** Indica se o MFA é ou não obrigatório para as credenciais. MFA pode ser exigida devido a MFA por usuário, acesso condicional ou por outros motivos. Os valores possíveis são **Sim** ou **Não**.
 
 **Resultado do MFA:** Mais informações sobre se o MFA foi atendido ou negado:
 
@@ -115,7 +115,7 @@ Os relatórios de atividade de entrada para MFA fornecem acesso às seguintes in
 
 **Detalhes de autenticação do MFA:** Versão limpa do número de telefone, por exemplo: + X XXXXXXXX64.
 
-**Acesso condicional** Encontre informações sobre as políticas de acesso condicional que afetaram a tentativa de login, incluindo:
+**Acesso condicional** encontrar informações sobre as políticas de acesso condicional que afetava o tentativa de logon, incluindo:
 
 - Nome da política
 - Controles de concessão

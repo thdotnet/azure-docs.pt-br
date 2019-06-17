@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: hrasheed
 ms.openlocfilehash: 6b9577bcf8b527abb0cb7b8720ed83ec8321655b
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64724471"
 ---
 # <a name="add-additional-storage-accounts-to-hdinsight"></a>Adicionar outras contas de armazenamento ao HDInsight
@@ -23,7 +23,7 @@ Saiba como usar ações de script para adicionar mais armazenamento do Azure *co
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Um cluster de Hadoop no HDInsight. Ver [Introdução ao HDInsight no Linux](./hadoop/apache-hadoop-linux-tutorial-get-started.md).
+* Um cluster de Hadoop no HDInsight. Consulte [Introdução ao HDInsight no Linux](./hadoop/apache-hadoop-linux-tutorial-get-started.md).
 * Nome da conta de armazenamento e a chave. Ver [gerenciar configurações de conta de armazenamento no portal do Azure](../storage/common/storage-account-manage.md).
 * [Nome do cluster com maiusculas e minúsculas corretamente](hdinsight-hadoop-manage-ambari-rest-api.md#identify-correctly-cased-cluster-name).
 * Se estiver usando o PowerShell, você precisará do módulo do AZ.  Ver [visão geral do Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).
@@ -203,7 +203,7 @@ Para contornar esse problema, remova a entrada existente da conta de armazenamen
 
 2. Na lista de serviços à esquerda da página, selecione __HDFS__. Em seguida, selecione a guia __Configurações__ no centro da página.
 
-3. No campo __Filtrar...__, insira um valor de __fs.azure.account__. Isso retorna entradas para quaisquer outras contas de armazenamento que foram adicionadas ao cluster. Há dois tipos de entradas; __keyprovider__ e __key__. Ambas contêm o nome da conta de armazenamento como parte do nome da chave.
+3. No campo __Filtrar...__ , insira um valor de __fs.azure.account__. Isso retorna entradas para quaisquer outras contas de armazenamento que foram adicionadas ao cluster. Há dois tipos de entradas; __keyprovider__ e __key__. Ambas contêm o nome da conta de armazenamento como parte do nome da chave.
 
     Veja a seguir exemplos de entradas para uma conta de armazenamento chamada __mystorage__:
 

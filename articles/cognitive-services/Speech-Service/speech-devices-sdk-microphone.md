@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: erhopf
 ms.openlocfilehash: 63dd64e900cf68e708032569ca75ac2e8b221491
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65236995"
 ---
 # <a name="speech-devices-sdk-microphone-array-recommendations"></a>Recomendações de matriz do microfone do SDK de dispositivos de fala
@@ -31,7 +31,7 @@ As geometrias de matriz a seguir são recomendadas para uso com a pilha de áudi
 |----------|-------------------|-------------------|----------------|----------------|
 |          |<img src="media/speech-devices-sdk/7-mic-c.png" alt="7 mic circular array" width="150"/>|<img src="media/speech-devices-sdk/4-mic-c.png" alt="4 mic circular array" width="150"/>|<img src="media/speech-devices-sdk/4-mic-l.png" alt="4 mic linear array" width="150"/>|<img src="media/speech-devices-sdk/2-mic-l.png" alt="2 mic linear array" width="150"/>|
 | \# Microfones  | 7                 | 4                 | 4              | 2              |
-| Geometria | 6 1 externa, Center, o raio = 42.5 mm, com espaçamento uniforme| 3 1 externa, Center, o raio = 42.5 mm, com espaçamento uniforme | Comprimento = 120 mm, espaçamento = 40 mm | Espaçamento = 40 mm |
+| geometria | 6 1 externa, Center, o raio = 42.5 mm, com espaçamento uniforme| 3 1 externa, Center, o raio = 42.5 mm, com espaçamento uniforme | Comprimento = 120 mm, espaçamento = 40 mm | Espaçamento = 40 mm |
 
 Canais de microfone devem ser ordenados de acordo com a numeração descrito para cada acima array, aumentando de 0.  A pilha de áudio Microsoft exigirá um fluxo de referência adicional de reprodução de áudio para executar o cancelamento de eco.
 
@@ -61,7 +61,7 @@ Seleção de componente boa deve ser emparelhada com boa integração electroaco
 
 O desempenho das matrizes quando integrado em um dispositivo e depois de qualquer ganho fixo ou EQ deve atender as recomendações a seguir:
 
-|  Parâmetro        |    Recomendado |
+|  Parâmetro        |    Recomendadas |
 |--------------------|----------------------------------------------------|
 |  SNR                 | \> 65 dB (1 kHz sinal 94 dBSPL, ponderados de um ruído) |
 |  Sensibilidade de saída  | -26 dBFS/Pa @ 1 kHz (recomendado) |
@@ -76,7 +76,7 @@ O desempenho das matrizes quando integrado em um dispositivo e depois de qualque
 
 Conforme necessário, para dispositivos de reconhecimento de fala que contêm os alto-falantes cancelamento de eco, recomendações adicionais são fornecidas para integração e a seleção de alto-falante.
 
-| Parâmetro                         | Recomendado                       |
+| Parâmetro                         | Recomendadas                       |
 |-----------------------------------|-----------------------------------|
 | Considerações de linearidade          | Nenhum processamento não-linear após a referência de alto-falante, caso contrário, um fluxo de referência de loopback com base em hardware é necessário  |
 | Loopback de alto-falante                  | Fornecido por meio de WASAPI, APIs privadas, personalizado ALSA plug-in (Linux) ou fornecidos por meio do canal de firmware      |

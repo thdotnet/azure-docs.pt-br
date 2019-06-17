@@ -17,12 +17,12 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f7f91e6ab1fb12132068b839e66fafd3ab1bc73
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 061b8a9f16396841c3f0d650ccc2f2c4a907aab3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65543951"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67111317"
 ---
 # <a name="using-web-browsers-in-msalnet"></a>Usando navegadores da web em MSAL.NET
 Navegadores da Web são necessários para a autenticação interativa. Por padrão, MSAL.NET suporta o [navegador da web de sistema](#system-web-browser-on-xamarinios-and-xamarinandroid) no xamarin. IOS e [xamarin. Android](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/system-browser). Mas [você também pode habilitar o navegador da Web incorporado](#enable-embedded-webviews) dependendo dos requisitos de (necessidade de logon único (SSO), segurança UX) em [xamarin. IOS](#choosing-between-embedded-web-browser-or-system-browser-on-xamarinios) e [xamarin. Android](#choosing-between-embedded-web-browser-or-system-browser-on-xamarinandroid) aplicativos. E você pode até mesmo [escolha dinamicamente](#detecting-the-presence-of-custom-tabs-on-xamarinandroid) qual navegador da web para usar com base na presença de Chrome ou um navegador que dão suporte a guias personalizadas do Chrome no Android.

@@ -1,6 +1,6 @@
 ---
-title: Exibir atribuições de negação para recursos do Azure usando o portal do Azure | Microsoft Docs
-description: Saiba como exibir usuários, grupos, entidades de serviço e identidades gerenciadas que tiveram acesso negado a ações específicas de recursos do Azure em determinado escopo usando o portal do Azure.
+title: Lista Negar as atribuições de recursos do Azure usando o portal do Azure | Microsoft Docs
+description: Saiba como listar os usuários, grupos, entidades de serviço e identidades gerenciadas negou acesso a ações específicas de recursos do Azure em escopos específicos usando o portal do Azure.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -11,22 +11,22 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 03/13/2019
+ms.date: 06/10/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 2dcbcbec9054b31312043ef6642f59fa64728b30
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: HT
+ms.openlocfilehash: 21ffb1a2539a2e724a91dd3b2818270a5e573ef8
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 06/13/2019
-ms.locfileid: "60194289"
+ms.locfileid: "67127481"
 ---
-# <a name="view-deny-assignments-for-azure-resources-using-the-azure-portal"></a>Exibir atribuições de negação para recursos do Azure usando o portal do Azure
+# <a name="list-deny-assignments-for-azure-resources-using-the-azure-portal"></a>Lista Negar as atribuições de recursos do Azure usando o portal do Azure
 
-As [atribuições de negação](deny-assignments.md) impedem que os usuários executem ações específicas, mesmo que uma atribuição de função conceda o acesso a elas. Este artigo descreve como usar o portal do Azure para exibir atribuições de negação.
+As [atribuições de negação](deny-assignments.md) impedem que os usuários executem ações específicas, mesmo que uma atribuição de função conceda o acesso a elas. Este artigo descreve como listar negar atribuições usando o portal do Azure.
 
 > [!NOTE]
-> Neste momento, a única maneira de adicionar suas próprias atribuições de negação é usando o Azure Blueprints. Para obter mais informações, consulte [Proteger novos recursos com bloqueios de recurso do Azure Blueprints](../governance/blueprints/tutorials/protect-new-resources.md).
+> Você não pode criar diretamente seus próprios negar atribuições. Para obter informações sobre como negar as atribuições são criadas, consulte [negar atribuições](deny-assignments.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -34,15 +34,15 @@ Para obter informações sobre uma atribuição de deny, você deve ter:
 
 - `Microsoft.Authorization/denyAssignments/read` permissão, que está incluído na maioria [funções internas para recursos do Azure](built-in-roles.md).
 
-## <a name="view-deny-assignments"></a>Modo de exibição negar atribuições
+## <a name="list-deny-assignments"></a>Lista as atribuições de negação
 
-Siga estas etapas para visualizar as atribuições de negação no escopo da assinatura ou do grupo de gerenciamento.
+Siga estas etapas para listar as atribuições no escopo do grupo de gerenciamento ou da assinatura de negação.
 
 1. No portal do Azure, clique em **Todos os serviços** e, em seguida, em **Grupos de gerenciamento** ou **Assinaturas**.
 
-1. Clique no grupo de gerenciamento ou na assinatura que você deseja visualizar.
+1. Clique no grupo de gerenciamento ou a assinatura que você deseja listar.
 
-1. Clique em **controle de acesso (IAM)** .
+1. Clique em **Controle de acesso (IAM)** .
 
 1. Clique na guia **Negar atribuições** (ou clique no botão **Visualizar** na peça Visualizar negar atribuições).
 
@@ -67,9 +67,9 @@ Siga estas etapas para visualizar as atribuições de negação no escopo da ass
 
 1. Adicione uma marca de seleção a qualquer um dos itens ativados e clique em **OK** para exibir as colunas selecionadas.
 
-## <a name="view-details-about-a-deny-assignment"></a>Visualizar detalhes sobre uma atribuição de negação
+## <a name="list-details-about-a-deny-assignment"></a>Lista detalhes sobre uma atribuição de negação
 
-Siga estas etapas para visualizar detalhes adicionais sobre uma atribuição de negação.
+Siga estas etapas para listar detalhes adicionais sobre uma atribuição de negação.
 
 1. Abra o painel **Negar atribuições** conforme descrito na seção anterior.
 
@@ -110,4 +110,4 @@ Siga estas etapas para visualizar detalhes adicionais sobre uma atribuição de 
 ## <a name="next-steps"></a>Próximas etapas
 
 * [Compreender atribuições de negação dos recursos do Azure](deny-assignments.md)
-* [Listar atribuições de negação para recursos do Azure usando a API REST](deny-assignments-rest.md)
+* [Lista Negar as atribuições de recursos do Azure usando o Azure PowerShell](deny-assignments-powershell.md)

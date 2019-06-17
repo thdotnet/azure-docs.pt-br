@@ -9,10 +9,10 @@ ms.date: 05/22/2018
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 416040d91da2f6346027f738de507777f804fd1f
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66237726"
 ---
 # <a name="how-to-deploy-azure-files"></a>Como implantar Arquivos do Azure
@@ -129,7 +129,7 @@ Para substituir um compartilhamento de arquivos local, vale a pena montar previa
 > [!Note]  
 > Montar um compartilhamento de Arquivos do Azure requer o uso da chave de conta de armazenamento como a senha, portanto, recomendamos a montagem apenas em ambientes confiáveis. 
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 O PowerShell pode ser usado para executar o comando de montagem em vários computadores. No exemplo a seguir, `$computers` é populado manualmente, mas você pode gerar a lista de computadores para montagem automática. Por exemplo, você pode popular essa variável com resultados do Active Directory.
 
 ```powershell

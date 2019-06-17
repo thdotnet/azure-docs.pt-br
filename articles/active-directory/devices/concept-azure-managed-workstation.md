@@ -11,18 +11,21 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: frasim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7e9ca9fa26e9744eb0a9bfafe692a096825b0b5
-ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
+ms.openlocfilehash: 05d21910d1b3601346fbd038cbc25f8f2be61f99
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66357044"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67110694"
 ---
 # <a name="building-secure-workstations"></a>Criação de estações de trabalho protegidas
 
 Estações de trabalho isoladas seguras são extremamente importantes para a segurança das funções confidenciais, como administradores, desenvolvedores e operadores de serviços essenciais. Muitos outros controles de segurança e garantias irá falhar ou não têm nenhum efeito se a segurança de estação de trabalho de cliente subjacente foi comprometida.
 
 Este documento explica o que é necessário para criar uma estação de trabalho de cliente segura com instruções passo a passo detalhadas, incluindo como configurar a partir de controles de segurança. Esse tipo de estações de trabalho às vezes é chamado de uma estação de trabalho com acesso privilegiado (PAW), que essa referência é usada e compilada em cima. No entanto, a orientação se parece a tecnologia baseada em nuvem para gerenciar o serviço e apresenta os recursos de segurança introduzidos a partir do Windows 10RS5, Microsoft Defender ATP, Azure Active Directory e do Intune.
+
+> [!NOTE]
+> Este artigo explica o conceito de estação de trabalho segura e sua importância. Se você já estiver familiarizado com o conceito e quiser ignorar a implantação, leia [como implantar uma estação de trabalho segura](https://docs.microsoft.com/azure/active-directory/devices/howto-azure-managed-workstation).
 
 ## <a name="why-securing-workstation-access-is-important"></a>Por que é importante proteger o acesso de estação de trabalho
 

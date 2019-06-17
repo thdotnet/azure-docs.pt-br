@@ -6,15 +6,15 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: article
-ms.date: 12/27/2018
+ms.date: 06/06/2019
 ms.author: alinast
 ms.custom: seodec18
-ms.openlocfilehash: d309765e6c4b0b0cc8a7e92977134d4135a69a13
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: be05cec8e3d755f1b04e5ecc5ec7c740053a74d4
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60535574"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67073046"
 ---
 # <a name="user-defined-functions-client-library-reference"></a>Biblioteca de clientes com funções definidas pelo usuário
 
@@ -32,7 +32,7 @@ Dado um identificador de espaço, essa função recupera o espaço do grafo.
 
 | Parâmetro  | Type                | DESCRIÇÃO  |
 | ---------- | ------------------- | ------------ |
-| *ID*  | `guid` | Identificador de espaço |
+| *id*  | `guid` | Identificador de espaço |
 
 ### <a name="getsensormetadataid--sensor"></a>getSensorMetadata(id) ⇒ `sensor`
 
@@ -42,7 +42,7 @@ Dado um identificador de sensor, essa função recupera o sensor do grafo.
 
 | Parâmetro  | Type                | DESCRIÇÃO  |
 | ---------- | ------------------- | ------------ |
-| *ID*  | `guid` | Identificador de sensor |
+| *id*  | `guid` | Identificador de sensor |
 
 ### <a name="getdevicemetadataid--device"></a>getDeviceMetadata(id) ⇒ `device`
 
@@ -52,7 +52,7 @@ Dado um identificador de dispositivo, essa função recupera o dispositivo do gr
 
 | Parâmetro  | Type                | DESCRIÇÃO  |
 | ------ | ------------------- | ------------ |
-| *ID* | `guid` | Identificador de dispositivo |
+| *id* | `guid` | Identificador de dispositivo |
 
 ### <a name="getsensorvaluesensorid-datatype--value"></a>getSensorValue(sensorId, dataType) ⇒ `value`
 
@@ -439,7 +439,7 @@ Essa função envia uma notificação com a carga especificada.
 }
 ```
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - Aprenda sobre as [funções definidas pelo usuário em Gêmeos Digitais do Azure](./concepts-user-defined-functions.md).
 

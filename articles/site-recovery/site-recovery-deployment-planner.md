@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: mayg
 ms.openlocfilehash: 42ef6087663c48cad965be768f14920efa777a62
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66244319"
 ---
 # <a name="about-the-azure-site-recovery-deployment-planner-for-vmware-to-azure"></a>Sobre o Planejador de Implantação do Azure Site Recovery para VMware para o Azure
@@ -65,7 +65,7 @@ A ferramenta fornece os seguintes detalhes:
 
 | | **VMware no Azure** |**Hyper-V para Azure**|**Azure para Azure**|**Hyper-V para site secundário**|**VMware para o site secundário**
 --|--|--|--|--|--
-Cenários com suporte |Sim|sim|Não |Sim*|Não
+Cenários com suporte |Sim|sim|Não|Sim*|Não
 Versão com suporte | vCenter 6.7, 6.5, 6.0 ou 5.5| Windows Server 2016, Windows Server 2012 R2 | ND |Windows Server 2016, Windows Server 2012 R2|ND
 Configuração com suporte|vCenter, ESXi| cluster do Hyper-V, host do Hyper-V|ND|cluster do Hyper-V, host do Hyper-V|ND|
 Número de servidores que podem ser analisados por instância em execução do Planejador de Implantações do Site Recovery |Único (máquinas virtuais que pertencem a um vCenter Server ou um servidor ESXi podem ser criados em um momento)|Vários (VMs em vários hosts ou clusters de hosts podem ter o perfil criado de uma vez)| ND |Vários (VMs em vários hosts ou clusters de hosts podem ter o perfil criado de uma vez)| ND

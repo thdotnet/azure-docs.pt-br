@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 256215b1976598b961ada7210e5ee92c9f72d440
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 4c22c9c202e6de3b31b99803dce4a07d38287a92
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65506865"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67057291"
 ---
 # <a name="deploy-azure-ad-password-protection"></a>Implantar proteção de senha do Azure AD
 
@@ -36,6 +36,7 @@ Depois que o recurso tiver sido executado em modo de auditoria por um período r
 
 ## <a name="deployment-requirements"></a>Requisitos de implantação
 
+* Requisitos de licenciamento para a proteção por senha do Azure AD pode ser encontrada no artigo [eliminar senhas incorretas em sua organização](concept-password-ban-bad.md#license-requirements).
 * Todos os controladores de domínio que obtém o agente de controlador de domínio de serviço para a proteção de senha do AD do Azure instalada deve executar o Windows Server 2012 ou posterior. Esse requisito não implica que a floresta ou domínio do Active Directory também deve estar no nível funcional domínio ou floresta de Windows Server 2012. Conforme mencionado na [princípios de Design](concept-password-ban-bad-on-premises.md#design-principles), nenhum mínimo DFL ou FFL necessários para o controlador de domínio proxy ou agente de software ser executado.
 * Todas as máquinas que obtêm o serviço de agente de controlador de domínio instalado devem ter o .NET 4.5 instalado.
 * Todas as máquinas que obtêm o proxy do serviço de proteção por senha do Azure AD instalada deve executar o Windows Server 2012 R2 ou posterior.

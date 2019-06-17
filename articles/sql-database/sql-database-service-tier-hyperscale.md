@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 05/06/2019
-ms.openlocfilehash: 0fe098bd644762fb291eb623a7b41cd987c7fa26
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: a953af3d9cd5a6748b79465a59b4a4284e58714c
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65779181"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67070140"
 ---
 # <a name="hyperscale-service-tier-for-up-to-100-tb"></a>Camada de serviço em hiperescala para até 100 TB
 
@@ -111,7 +111,7 @@ Com a capacidade de criar rapidamente nós de computação adicionais de somente
 
 Um banco de dados em Hiperescala pode ser criado usando o [portal do Azure](https://portal.azure.com), o [T-SQL](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current), o [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.sql/new-azurermsqldatabase) ou a [CLI](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-create). Bancos de dados em Hiperescala estão disponíveis somente usando o [Modelo de compra baseado em vCore](sql-database-service-tiers-vcore.md).
 
-O comando T-SQL a seguir cria um banco de dados em Hiperescala. Você deve especificar tanto o objetivo do serviço quanto a edição na instrução `CREATE DATABASE`.
+O comando T-SQL a seguir cria um banco de dados em Hiperescala. Você deve especificar tanto o objetivo do serviço quanto a edição na instrução `CREATE DATABASE`. Consulte a [limites de recursos](https://docs.microsoft.com/azure/sql-database/sql-database-vcore-resource-limits-single-databases#hyperscale-service-tier) para obter uma lista de objetivos de serviço válido.
 
 ```sql
 -- Create a HyperScale Database
@@ -146,8 +146,8 @@ Se você precisar restaurar um BD de hiperescala do banco de dados de SQL do Azu
 1. Crie um servidor de banco de dados SQL na região de destino se você ainda não tiver um servidor apropriado lá.  Esse servidor deve pertencer a mesma assinatura que o servidor original (origem).
 2. Siga as instruções de [restauração geográfica](https://docs.microsoft.com/azure/sql-database/sql-database-recovery-using-backups#geo-restore) tópico da página sobre como restaurar bancos de dados SQL do Azure de backups automáticos.
 
-#### <a name="notes-on-geo-restores-of-a-hyperscale-database"></a>Observações sobre as restaurações geográficas de um banco de dados em hiperescala
-Como a origem e destino estão em regiões separadas, o banco de dados não pode compartilhar o armazenamento de instantâneos com o banco de dados de origem como restaurações não geográfica, as quais concluir muito rapidamente.  No caso de uma restauração geográfica de um banco de dados em hiperescala, ele será uma operação de tamanho de dados, mesmo se o destino está na região emparelhada do armazenamento replicado geograficamente.  Isso significa que a fazer uma restauração geográfica levará tempo proporcional ao tamanho do banco de dados que está sendo restaurado.  Se o destino estiver na região emparelhada, a cópia será em um datacenter, que será consideravelmente mais rápido que uma cópia de longa distância através da internet, mas ele ainda copiará todos os bits.
+> [!NOTE]
+> Como a origem e destino estão em regiões separadas, o banco de dados não pode compartilhar o armazenamento de instantâneos com o banco de dados de origem como restaurações não geográfica, as quais concluir muito rapidamente.  No caso de uma restauração geográfica de um banco de dados em hiperescala, ele será uma operação de tamanho de dados, mesmo se o destino está na região emparelhada do armazenamento replicado geograficamente.  Isso significa que a fazer uma restauração geográfica levará tempo proporcional ao tamanho do banco de dados que está sendo restaurado.  Se o destino estiver na região emparelhada, a cópia será em um datacenter, que será consideravelmente mais rápido que uma cópia de longa distância através da internet, mas ele ainda copiará todos os bits.
 
 ## <a name=regions></a>Regiões disponíveis
 
@@ -223,14 +223,14 @@ Para solicitar a capacidade de criar bancos de dados de hiperescala em regiões 
 ## <a name="known-limitations"></a>Limitações conhecidas
 Estas são as limitações atuais para a camada de serviço em hiperescala a partir de GA.  Estamos trabalhando ativamente para remover como muitas dessas limitações quanto possível.
 
-| Problema | Descrição |
+| Problema | DESCRIÇÃO |
 | :---- | :--------- |
-| O painel Gerenciar Backups para um servidor lógico não mostra se bancos de dados em Hiperescala serão filtrados do SQL Server ->  | Hiperescala tem um método separado para gerenciar backups e, como tal, as configurações de Retenção de backup de Ponto no Tempo e Retenção de Longo Prazo não se aplicam são invalidadas. Da mesma forma, os bancos de dados da Hiperescala não aparecem no painel Gerenciar Backup. |
-| Restauração pontual | Depois que um banco de dados é migrado para a camada de serviço da Hiperescala, não há suporte para a restauração pontual antes da migração.|
+| O painel de gerenciar Backups para um servidor lógico não mostra serão filtrados em hiperescala bancos de dados do SQL server  | Hiperescala tem um método separado para gerenciar backups e, como tal, as configurações de Retenção de backup de Ponto no Tempo e Retenção de Longo Prazo não se aplicam são invalidadas. Da mesma forma, os bancos de dados da Hiperescala não aparecem no painel Gerenciar Backup. |
+| Restauração pontual | Depois que um banco de dados é migrado para a camada de serviço em hiperescala, não há suporte para a restauração para um ponto no tempo antes da migração.|
 | Restauração de não - hiperescala DB para Hypserscale e vice-versa | Não é possível restaurar um banco de dados de hiperescala em um banco de dados não estão em hiperescala, nem é possível restaurar um banco de dados não estão em hiperescala para um banco de dados em hiperescala.|
 | Se um arquivo de banco de dados aumentar durante a migração devido a uma carga de trabalho ativa e ultrapassar 1 TB por limite de arquivo, a migração falhará | Atenuações: <br> – Se possível, migre o banco de dados quando não houver nenhuma carga de trabalho de atualização em execução.<br> – Tente novamente a migração, ela terá êxito desde que o limite de 1 TB não seja ultrapassado durante a migração.|
 | Instância Gerenciada | Instância de gerenciada do banco de dados de SQL do Azure não é suportada atualmente com bancos de dados em hiperescala. |
-| Pools Elásticos |  Pools Elásticos atualmente não têm suporte com em hiperescala do banco de dados SQL.|
+| Pools elásticos |  Pools Elásticos atualmente não têm suporte com em hiperescala do banco de dados SQL.|
 | Migração para Hiperescala é, no momento, uma operação unidirecional | Depois que um banco de dados é migrado para Hiperescala, ele não pode ser migrado diretamente para uma camada de serviço que não esteja em Hiperescala. No momento, a única maneira de migrar um banco de dados em Hiperescala para não Hiperescala é importar/exportar usando um arquivo BACPAC.|
 | Migração de bancos de dados com objetos na memória | Objetos na memória devem ser descartados e recriados como objetos não na memória antes da migração de um banco de dados para a camada de serviço em Hiperescala.|
 | Controle de alterações de dados | Você não poderá usar o controle de alterações de dados com bancos de dados em hiperescala. |

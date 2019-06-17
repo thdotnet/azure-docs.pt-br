@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 01/08/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 629a97048ceba4ac02e3aa1dd59310980e5a0c95
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 55f68d777d291c7d12fcbae93884a5596b84c8ca
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60327452"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67062256"
 ---
 # <a name="install-and-configure-an-on-premises-data-gateway"></a>Instalar e configurar um gateway de dados local
 
@@ -40,7 +40,7 @@ Um gateway de dados local é necessário quando um ou mais servidores do Azure A
 * Instale o gateway em um computador que permanece ligado e não entra em suspensão.
 * Não instale o gateway em um computador sem fio conectado à rede. O desempenho pode ser prejudicado.
 * Ao instalar o gateway, a conta de usuário com a qual você está conectado ao computador precisa ter privilégios de Fazer logon como um serviço. Quando a instalação é concluída, o serviço de gateway de dados local usa a conta NT SERVICE\PBIEgwService para fazer logon como um serviço. Uma conta diferente pode ser especificada durante a instalação ou nos Serviços após a instalação ser concluída. Assegure-se que as configurações de Política de Grupo permitam que tanto a conta com a qual você está conectado ao instalar quanto a conta de serviço escolhida tenham privilégios de Fazer logon como um serviço.
-* Entre no Azure com uma conta do Azure AD que seja do mesmo [locatário](/previous-versions/azure/azure-services/jj573650(v=azure.100)#BKMK_WhatIsAnAzureADTenant) que a assinatura que você está usando para registrar o gateway. Contas B2B (de convidado) do Azure não têm suporte durante a instalação e registro do gateway.
+* Entre no Azure com uma conta do Azure AD que seja do mesmo [locatário](/previous-versions/azure/azure-services/jj573650(v=azure.100)#what-is-an-azure-ad-tenant) que a assinatura que você está usando para registrar o gateway. Contas B2B (de convidado) do Azure não têm suporte durante a instalação e registro do gateway.
 * Se a fontes de dados estiverem em uma Rede Virtual (VNet) do Azure, você deverá configurar a propriedade de servidor [AlwaysUseGateway](analysis-services-vnet-gateway.md).
 * O gateway (unificado) descrito aqui não tem suporte nas regiões da Alemanha do Microsoft Azure. Em vez disso, use o **Gateway local dedicado para Azure Analysis Services**, instalado a partir do **Início Rápido** no portal. 
 
@@ -70,14 +70,14 @@ Para criar um recurso de gateway no Azure, você precisa registrar a instância 
 
 1.  Selecione **Registrar um novo gateway neste computador**.
 
-    ![Registrar ](media/analysis-services-gateway-install/aas-gateway-register-new.png)
+    ![Registrar](media/analysis-services-gateway-install/aas-gateway-register-new.png)
 
 2. Digite um nome e uma chave de recuperação para o gateway. Por padrão, o gateway usa a região padrão de sua assinatura. Se precisar selecionar uma região diferente, selecione **Alterar Região**.
 
     > [!IMPORTANT]
     > Salve sua chave de recuperação em um local seguro. A chave de recuperação é necessária para controlar, migrar ou restaurar um gateway. 
 
-   ![Registrar ](media/analysis-services-gateway-install/aas-gateway-register-name.png)
+   ![Registrar](media/analysis-services-gateway-install/aas-gateway-register-name.png)
 
 
 ## <a name="create-resource"></a>Criar um recurso de gateway do Azure

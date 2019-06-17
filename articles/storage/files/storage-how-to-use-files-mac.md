@@ -9,10 +9,10 @@ ms.date: 09/19/2017
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 7f2abbb355513c175329d01b9d5ed8884f2c27ef
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64715958"
 ---
 # <a name="mount-azure-file-share-over-smb-with-macos"></a>Montagem do compartilhamento de arquivos do Azure no SMB com macOS
@@ -38,7 +38,7 @@ ms.locfileid: "64715958"
 1. **Abrir o Localizador**: o Localizador é aberto no macOS por padrão, mas você pode garantir que ele seja o aplicativo selecionado clicando no "ícone de rosto do macOS" no encaixe:  
     ![O ícone de rosto do macOS](./media/storage-how-to-use-files-mac/mount-via-finder-1.png)
 
-2. **Selecione "Conectar ao Servidor" no Menu "Go"**: Usando o caminho UNC dos pré-requisitos, converta a barra invertida dupla de início (`\\`) em `smb://` e todas as outras barras invertidas (`\`) em barras "/" (`/`). Seu link deverá ter a seguinte aparência: ![A caixa de diálogo "Conectar ao Servidor"](./media/storage-how-to-use-files-mac/mount-via-finder-2.png)
+2. **Selecione "Conectar ao Servidor" no Menu "Go"** : Usando o caminho UNC dos pré-requisitos, converta a barra invertida dupla de início (`\\`) em `smb://` e todas as outras barras invertidas (`\`) em barras "/" (`/`). Seu link deverá ter a seguinte aparência: ![A caixa de diálogo "Conectar ao Servidor"](./media/storage-how-to-use-files-mac/mount-via-finder-2.png)
 
 3. **Use o nome da conta de armazenamento e a chave de conta de armazenamento quando for solicitado a fornecer um nome de usuário e senha**: ao clicar em "Conectar" na caixa de diálogo "Conectar ao Servidor", você será solicitado a fornecer o nome de usuário e senha (ele será preenchido automaticamente com seu nome de usuário do macOS). Você tem a opção de colocar a chave da conta de armazenamento/nome da conta de armazenamento em seu conjunto de chaves do macOS.
 

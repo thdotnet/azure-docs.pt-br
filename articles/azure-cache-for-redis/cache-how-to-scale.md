@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/11/2017
 ms.author: yegu
 ms.openlocfilehash: 495fc031150d04f253279606baebb5d64d52bce7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66132956"
 ---
 # <a name="how-to-scale-azure-cache-for-redis"></a>Como dimensionar o Cache Redis do Azure
@@ -29,7 +29,7 @@ Você pode usar os recursos de [monitoramento](cache-how-to-monitor.md) do Cache
 
 Você pode monitorar as métricas a seguir para ajudá-lo a determinar se é preciso dimensionar.
 
-* Carga do Servidor de Redis
+* Carga do Servidor Redis
 * Uso de Memória
 * Largura de Banda de Rede
 * Uso da CPU
@@ -57,7 +57,7 @@ Você pode dimensionar para um tipo de preço diferente com as restrições a se
  
 Enquanto o cache é dimensionado para a nova camada de preços, é exibido um status **Dimensionando** na folha do **Cache Redis do Azure**.
 
-![Escala][redis-cache-scaling]
+![Dimensionamento][redis-cache-scaling]
 
 Quando o dimensionamento for concluído, o status será alterado de **Dimensionando** para **Executando**.
 
