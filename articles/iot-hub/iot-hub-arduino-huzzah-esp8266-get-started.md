@@ -10,10 +10,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 04/11/2018
 ms.author: wesmc
 ms.openlocfilehash: 00d0e3a749c4af8faacfed5f725ce16e0492c399
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65409072"
 ---
 # <a name="connect-adafruit-feather-huzzah-esp8266-to-azure-iot-hub-in-the-cloud"></a>Conectar-se o Adafruit Feather HUZZAH ESP8266 ao Hub IoT do Azure na nuvem
@@ -186,7 +186,7 @@ O aplicativo de exemplo está hospedado no GitHub. Clone o repositório de exemp
 
 13. Insira `F1`, em seguida, digite **Arduino** e selecione **Arduino: Configuração de placa**.
 
-14. Clique na caixa para **Placa Selecionada:** e digite **esp8266**, em seguida, selecione **Adafruit HUZZAH ESP8266 (esp8266)**.
+14. Clique na caixa para **Placa Selecionada:** e digite **esp8266**, em seguida, selecione **Adafruit HUZZAH ESP8266 (esp8266)** .
 
     ![Selecione a placa esp8266](media/iot-hub-arduino-huzzah-esp8266-get-started/14_vscode-select-esp8266.png)
 
@@ -224,7 +224,7 @@ O aplicativo de exemplo pode simular a temperatura e umidade dados caso você n�
 
 2. Insira `F1`, em seguida, digite **Arduino** e selecione **Arduino: Carregar** para compilar e implantar o aplicativo de exemplo para Feather HUZZAH ESP8266.
 
-### <a name="enter-your-credentials"></a>Insira suas credenciais
+### <a name="enter-your-credentials"></a>Inserir suas credenciais
 
 Depois que o upload for concluído com êxito, siga estas etapas para inserir suas credenciais:
 

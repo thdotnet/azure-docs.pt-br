@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: bwren
 ms.openlocfilehash: dead1fae9bc3287ed0fc80c6120914e965ef96dd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61341796"
 ---
 # <a name="reference-guide-to-view-designer-visualization-parts-in-azure-monitor"></a>Guia de referência para partes de visualização do Designer de exibição no Azure Monitor
@@ -78,10 +78,10 @@ O cabeçalho exibe um único número que mostra uma contagem de registros de uma
 | Usar Ícone |Selecione este link para exibir o ícone. |
 | **Título** | |
 | Legenda |O texto que é exibido na parte superior do cabeçalho. |
-| Consultar |A consulta a ser executada para o cabeçalho. A contagem de registros que são retornados pela consulta é exibida. |
+| Consulta |A consulta a ser executada para o cabeçalho. A contagem de registros que são retornados pela consulta é exibida. |
 | Navegação clickthrough | Ação executada quando você clica no cabeçalho.  Para saber mais, veja [Configurações comuns](#click-through-navigation). |
 | **Lista** | |
-| Consultar |A consulta a ser executada para a lista. As duas primeiras propriedades para os dez primeiros registros nos resultados são exibidas. A primeira propriedade é um valor de texto e a segunda é um valor numérico. As barras são criadas automaticamente com base no valor relativo da coluna numérica.<br><br>Use o comando `Sort` na consulta para classificar os registros na lista. Para executar a consulta e retornar todos os registros você pode selecionar **Ver tudo**. |
+| Consulta |A consulta a ser executada para a lista. As duas primeiras propriedades para os dez primeiros registros nos resultados são exibidas. A primeira propriedade é um valor de texto e a segunda é um valor numérico. As barras são criadas automaticamente com base no valor relativo da coluna numérica.<br><br>Use o comando `Sort` na consulta para classificar os registros na lista. Para executar a consulta e retornar todos os registros você pode selecionar **Ver tudo**. |
 | Ocultar grafo |Selecione este link para desabilitar o grafo à direita da coluna numérica. |
 | Habilitar minigráficos |Selecione este link para exibir um minigráfico em vez de uma barra horizontal. Para saber mais, veja [Configurações comuns](#sparklines). |
 | Cor |A cor das barras ou minigráficos. |
@@ -109,9 +109,9 @@ O cabeçalho tem dois números que exibem uma contagem de registros de consultas
 | Navegação clickthrough | Ação executada quando você clica no cabeçalho.  Para saber mais, veja [Configurações comuns](#click-through-navigation). |
 | **Título** | |
 | Legenda |O texto que é exibido na parte superior do cabeçalho. |
-| Consultar |A consulta a ser executada para o cabeçalho. A contagem de registros que são retornados pela consulta é exibida. |
+| Consulta |A consulta a ser executada para o cabeçalho. A contagem de registros que são retornados pela consulta é exibida. |
 | **Lista** | |
-| Consultar |A consulta a ser executada para a lista. As duas primeiras propriedades para os dez primeiros registros nos resultados são exibidas. A primeira propriedade é um valor de texto e a segunda é um valor numérico. As barras são criadas automaticamente com base no valor relativo da coluna numérica.<br><br>Use o comando `Sort` na consulta para classificar os registros na lista. Para executar a consulta e retornar todos os registros você pode selecionar **Ver tudo**. |
+| Consulta |A consulta a ser executada para a lista. As duas primeiras propriedades para os dez primeiros registros nos resultados são exibidas. A primeira propriedade é um valor de texto e a segunda é um valor numérico. As barras são criadas automaticamente com base no valor relativo da coluna numérica.<br><br>Use o comando `Sort` na consulta para classificar os registros na lista. Para executar a consulta e retornar todos os registros você pode selecionar **Ver tudo**. |
 | Ocultar grafo |Selecione este link para desabilitar o grafo à direita da coluna numérica. |
 | Habilitar minigráficos |Selecione este link para exibir um minigráfico em vez de uma barra horizontal. Para saber mais, veja [Configurações comuns](#sparklines). |
 | Cor |A cor das barras ou minigráficos. |
@@ -140,7 +140,7 @@ O cabeçalho exibe um único número que resume uma coluna de valor em uma consu
 | Title |O texto que é exibido na parte superior do cabeçalho. |
 | Subtítulo |O texto que é exibido sob o título na parte superior do cabeçalho. |
 | **Rosca** | |
-| Consultar |A consulta a ser executada para a rosca. A primeira propriedade é um valor de texto e a segunda é um valor numérico. |
+| Consulta |A consulta a ser executada para a rosca. A primeira propriedade é um valor de texto e a segunda é um valor numérico. |
 | Navegação clickthrough | Ação executada quando você clica no cabeçalho.  Para saber mais, veja [Configurações comuns](#click-through-navigation). |
 | **Rosca** |**> Centro** |
 | Text |O texto que é exibido sob o valor dentro da rosca. |
@@ -152,7 +152,7 @@ O cabeçalho exibe um único número que resume uma coluna de valor em uma consu
 | Valor do campo |Digite o nome de um campo para exibi-lo como uma cor diferente se ele estiver incluído na rosca. |
 | Cor |Selecione a cor do campo exclusivo. |
 | **Lista** | |
-| Consultar |A consulta a ser executada para a lista. A contagem de registros que são retornados pela consulta é exibida. |
+| Consulta |A consulta a ser executada para a lista. A contagem de registros que são retornados pela consulta é exibida. |
 | Ocultar grafo |Selecione este link para desabilitar o grafo à direita da coluna numérica. |
 | Habilitar minigráficos |Selecione este link para exibir um minigráfico em vez de uma barra horizontal. Para saber mais, veja [Configurações comuns](#sparklines). |
 | Cor |A cor das barras ou minigráficos. |
@@ -182,10 +182,10 @@ O cabeçalho exibe os resultados de duas consultas de log ao longo do tempo como
 | **Primeiro gráfico<br>Segundo gráfico** | |
 | Legenda |O texto que é exibido sob o balão para a primeira série. |
 | Cor |A cor a ser usada para as colunas na série. |
-| Consultar |A consulta a executar para a primeira série. A contagem de registros em cada intervalo de tempo são representada pelas colunas do gráfico. |
+| Consulta |A consulta a executar para a primeira série. A contagem de registros em cada intervalo de tempo são representada pelas colunas do gráfico. |
 | Operação |A operação a executar na propriedade de valor a resumir como um único valor para o balão.<ul><li>Soma: a soma dos valores de todos os registros.</li><li>Média: a média do valor de todos os registros.</li><li>Última amostra: o valor do último intervalo que é incluído no gráfico.</li><li>Primeira amostra: o valor do primeiro intervalo que é incluído no gráfico.</li><li>Contagem: a contagem de registros que são retornados pela consulta.</li></ul> |
 | **Lista** | |
-| Consultar |A consulta a ser executada para a lista. A contagem de registros que são retornados pela consulta é exibida. |
+| Consulta |A consulta a ser executada para a lista. A contagem de registros que são retornados pela consulta é exibida. |
 | Ocultar grafo |Selecione este link para desabilitar o grafo à direita da coluna numérica. |
 | Habilitar minigráficos |Selecione este link para exibir um minigráfico em vez de uma barra horizontal. Para saber mais, veja [Configurações comuns](#sparklines). |
 | Cor |A cor das barras ou minigráficos. |
@@ -210,9 +210,9 @@ O cabeçalho exibe texto estático e um link opcional. A lista exibe um ou mais 
 | Cor |A cor da tela de fundo do cabeçalho. |
 | **Cabeçalho** | |
 | Image |O arquivo de imagem que é exibido no cabeçalho. |
-| Rótulo |O texto que é exibido no cabeçalho. |
+| Rotular |O texto que é exibido no cabeçalho. |
 | **Cabeçalho** |**> Link** |
-| Rótulo |O texto do link. |
+| Rotular |O texto do link. |
 | Url |A URL para o link. |
 | **Itens de informações** | |
 | Title |O texto que é exibido para o título de cada item. |
@@ -234,7 +234,7 @@ O cabeçalho exibe um gráfico de linhas com várias séries de uma consulta de 
 | Title |O texto que é exibido na parte superior do cabeçalho. |
 | Subtítulo |O texto que é exibido sob o título na parte superior do cabeçalho. |
 | **Gráfico de linhas** | |
-| Consultar |A consulta a executar para o gráfico de linhas. A primeira propriedade é um valor de texto e a segunda é um valor numérico. Essa consulta normalmente usa a palavra-chave *medida* para resumir resultados. Se a consulta usar a palavra-chave *intervalo*, o eixo X do gráfico usará esse intervalo de tempo. Se a consulta não inlcui a palavra-chave *intervalo*, o eixo x usará intervalos de horas. |
+| Consulta |A consulta a executar para o gráfico de linhas. A primeira propriedade é um valor de texto e a segunda é um valor numérico. Essa consulta normalmente usa a palavra-chave *medida* para resumir resultados. Se a consulta usar a palavra-chave *intervalo*, o eixo X do gráfico usará esse intervalo de tempo. Se a consulta não inlcui a palavra-chave *intervalo*, o eixo x usará intervalos de horas. |
 | Navegação clickthrough | Ação executada quando você clica no cabeçalho.  Para saber mais, veja [Configurações comuns](#click-through-navigation). |
 | **Gráfico de linhas** |**> Balão** |
 | Título do balão |O texto que é exibido acima do valor do balão. |
@@ -245,7 +245,7 @@ O cabeçalho exibe um gráfico de linhas com várias séries de uma consulta de 
 | Unidades |Especifique as unidades para os valores a serem retornados pela consulta. Essas informações são usadas para exibir rótulos do gráfico que indicam os tipos de valor e, opcionalmente, para converter os valores. O tipo *Unidade* especifica a categoria da unidade e define os valores que estão disponíveis para os valores do tipo *Unidade Atual* disponíveis. Se você selecionar um valor em *Converter para*, os valores numéricos serão convertidos do tipo *Unidade Atual* para o tipo *Converter para*. |
 | Rótulo personalizado |O texto que é exibido para o eixo y ao lado do rótulo para o tipo *Unidade*. Se nenhum rótulo for especificado, somente o tipo *Unidade* será exibido. |
 | **Lista** | |
-| Consultar |A consulta a ser executada para a lista. A contagem de registros que são retornados pela consulta é exibida. |
+| Consulta |A consulta a ser executada para a lista. A contagem de registros que são retornados pela consulta é exibida. |
 | Ocultar grafo |Selecione este link para desabilitar o grafo à direita da coluna numérica. |
 | Habilitar minigráficos |Selecione este link para exibir um minigráfico em vez de uma barra horizontal. Para saber mais, veja [Configurações comuns](#sparklines). |
 | Cor |A cor das barras ou minigráficos. |
@@ -274,14 +274,14 @@ O cabeçalho exibe um gráfico de linhas com várias séries de uma consulta de 
 | Title |O texto que é exibido na parte superior do cabeçalho. |
 | Subtítulo |O texto que é exibido sob o título na parte superior do cabeçalho. |
 | **Gráfico de linhas** | |
-| Consultar |A consulta a executar para o gráfico de linhas. A primeira propriedade é um valor de texto e a segunda é um valor numérico. Essa consulta normalmente usa a palavra-chave *medida* para resumir resultados. Se a consulta usar a palavra-chave *intervalo*, o eixo X do gráfico usará esse intervalo de tempo. Se a consulta não inlcui a palavra-chave *intervalo*, o eixo x usará intervalos de horas. |
+| Consulta |A consulta a executar para o gráfico de linhas. A primeira propriedade é um valor de texto e a segunda é um valor numérico. Essa consulta normalmente usa a palavra-chave *medida* para resumir resultados. Se a consulta usar a palavra-chave *intervalo*, o eixo X do gráfico usará esse intervalo de tempo. Se a consulta não inlcui a palavra-chave *intervalo*, o eixo x usará intervalos de horas. |
 | Navegação clickthrough | Ação executada quando você clica no cabeçalho.  Para saber mais, veja [Configurações comuns](#click-through-navigation). |
 | **Gráfico de linhas** |**> Eixo Y** |
 | Usar Escala Logarítmica |Selecione este link para usar uma escala logarítmica para o eixo y. |
 | Unidades |Especifique as unidades para os valores a serem retornados pela consulta. Essas informações são usadas para exibir rótulos do gráfico que indicam os tipos de valor e, opcionalmente, para converter os valores. O tipo *Unidade* especifica a categoria da unidade e define os valores que estão disponíveis para os valores do tipo *Unidade Atual* disponíveis. Se você selecionar um valor em *Converter para*, os valores numéricos serão convertidos do tipo *Unidade Atual* para o tipo *Converter para*. |
 | Rótulo personalizado |O texto que é exibido para o eixo y ao lado do rótulo para o tipo *Unidade*. Se nenhum rótulo for especificado, somente o tipo *Unidade* será exibido. |
 | **Lista** | |
-| Consultar |A consulta a ser executada para a lista. A contagem de registros que são retornados pela consulta é exibida. |
+| Consulta |A consulta a ser executada para a lista. A contagem de registros que são retornados pela consulta é exibida. |
 | Ocultar grafo |Selecione este link para desabilitar o grafo à direita da coluna numérica. |
 | Habilitar minigráficos |Selecione este link para exibir um minigráfico em vez de uma barra horizontal. Para saber mais, veja [Configurações comuns](#sparklines). |
 | Cor |A cor das barras ou minigráficos. |
@@ -309,7 +309,7 @@ A pilha de gráficos de linha exibe três gráficos de linhas separados com vár
 | Title |O texto que é exibido na parte superior do gráfico. |
 | Subtítulo |O texto que é exibido sob o título na parte superior do gráfico. |
 | **Gráfico 1<br>Gráfico 2<br>Gráfico 3** |**Gráfico de linhas** |
-| Consultar |A consulta a executar para o gráfico de linhas. A primeira propriedade é um valor de texto e a segunda é um valor numérico. Essa consulta normalmente usa a palavra-chave *medida* para resumir resultados. Se a consulta usar a palavra-chave *intervalo*, o eixo X do gráfico usará esse intervalo de tempo. Se a consulta não inlcui a palavra-chave *intervalo*, o eixo x usará intervalos de horas. |
+| Consulta |A consulta a executar para o gráfico de linhas. A primeira propriedade é um valor de texto e a segunda é um valor numérico. Essa consulta normalmente usa a palavra-chave *medida* para resumir resultados. Se a consulta usar a palavra-chave *intervalo*, o eixo X do gráfico usará esse intervalo de tempo. Se a consulta não inlcui a palavra-chave *intervalo*, o eixo x usará intervalos de horas. |
 | Navegação clickthrough | Ação executada quando você clica no cabeçalho.  Para saber mais, veja [Configurações comuns](#click-through-navigation). |
 | **Gráfico** |**> Eixo Y** |
 | Usar Escala Logarítmica |Selecione este link para usar uma escala logarítmica para o eixo y. |
@@ -332,7 +332,7 @@ A tabela a seguir descreve as configurações de navegação clickthrough.
 | Configuração           | DESCRIÇÃO |
 |:--|:--|
 | Pesquisa de Logs (Automática) | Consulta de log para ser executado quando você seleciona um item de cabeçalho.  Isso é a mesma consulta de log que o item se baseia.
-| Pesquisa de Log        | Consulta de log para ser executado quando você seleciona um item em uma lista.  Digite a consulta na caixa **Consulta de navegação**.   Use *{selected item}* para incluir a sintaxe para o item selecionado pelo usuário.  Por exemplo, se a consulta tiver uma coluna denominada *Computer* e a consulta de navegação for *{selected item}*, uma consulta como *Computer="MyComputer"* é executada quando você seleciona um computador. Se a consulta de navegação for do tipo *Type=Event {selected item}*, a consulta *Type=Event Computer="MyComputer"* é executada. |
+| Pesquisa de Log        | Consulta de log para ser executado quando você seleciona um item em uma lista.  Digite a consulta na caixa **Consulta de navegação**.   Use *{selected item}* para incluir a sintaxe para o item selecionado pelo usuário.  Por exemplo, se a consulta tiver uma coluna denominada *Computer* e a consulta de navegação for *{selected item}* , uma consulta como *Computer="MyComputer"* é executada quando você seleciona um computador. Se a consulta de navegação for do tipo *Type=Event {selected item}* , a consulta *Type=Event Computer="MyComputer"* é executada. |
 | Visualizar              | Modo de exibição para abrir quando você seleciona um item de cabeçalho ou um item em uma lista.  Selecione o nome de uma exibição no seu workspace na caixa **Nome de exibição**. |
 
 

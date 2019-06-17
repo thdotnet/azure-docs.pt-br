@@ -15,15 +15,15 @@ ms.topic: article
 ms.date: 04/16/2019
 ms.author: willzhan, dwgeo
 ms.openlocfilehash: bc939011f87f03ef1de7e728fc52fc0c9887dd31
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64935399"
 ---
 # <a name="offline-fairplay-streaming-for-ios"></a>Streaming de FairPlay Offline para iOS 
 
-> [!div class="op_single_selector" title1="Select the version of Media Services that you are using:"]
+> [!div class="op_single_selector" title1="Selecione a versão dos serviços de mídia que você está usando:"]
 > * [Versão 3](../latest/offline-fairplay-for-ios.md)
 > * [Versão 2](media-services-protect-hls-with-offline-fairplay.md)
 
@@ -207,7 +207,7 @@ As perguntas frequentes a seguir fornecem assistência com a solução de proble
 - **Por que ela ainda toca áudio somente sem vídeo durante o modo offline após eu adicionar audio-only=false?** Dependendo do design da chave do cache de rede de distribuição de conteúdo (CDN), o conteúdo pode ser armazenado em cache. Limpe o cache.
 - **O modo de FPS offline também tem suporte em iOS 11 além do iOS 10?** Sim. O modo offline de FPS tem suporte para iOS 10 e iOS 11.
 - **Por que eu não consigo encontrar o documento “Reprodução Offline com o Streaming de FairPlay e HTTP Live Streaming no SDK do Servidor de FPS”?** Desde a versão 4 do SDK do Servidor de FPS, este documento foi mesclado no “Guia de Programação de Streaming de FairPlay”.
-- **O que o último parâmetro significa na seguinte API para o modo de FPS offline?**
+- **O que o último parâmetro significa na seguinte API para o modo de FPS offline?** 
 `Microsoft.WindowsAzure.MediaServices.Client.FairPlay.FairPlayConfiguration.CreateSerializedFairPlayOptionConfiguration(objX509Certificate2, pfxPassword, pfxPasswordId, askId, iv, RentalAndLeaseKeyType.PersistentUnlimited, 0x9999);`
 
     Para obter a documentação para essa API, consulte [FairPlayConfiguration.CreateSerializedFairPlayOptionConfiguration Method](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.mediaservices.client.FairPlay.FairPlayconfiguration.createserializedFairPlayoptionconfiguration?view=azure-dotnet). O parâmetro representa a duração do aluguel offline com hora como a unidade.

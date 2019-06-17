@@ -18,10 +18,10 @@ ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: ae3d1b36b89bb1bce1ff384bfa12a1bf643614fd
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65408767"
 ---
 # <a name="prepare-the-azure-infrastructure-for-sap-ha-by-using-a-windows-failover-cluster-and-shared-disk-for-sap-ascsscs"></a>Prepare a infraestrutura do Azure para alta disponibilidade do SAP usando o cluster de failover do Windows e o disco compartilhado para a instância SAP ASCS/SCS
@@ -160,7 +160,7 @@ ms.locfileid: "65408767"
 [virtual-machines-manage-availability]:../../virtual-machines-windows-manage-availability.md
 
 
-> ![ Windows][Logo_Windows]  Windows
+> ![Windows][Logo_Windows] Windows
 >
 
 Este artigo descreve as etapas para preparar a infraestrutura do Azure para instalar e configurar um sistema SAP de alta disponibilidade em um cluster de failover do Windows usando um *disco compartilhado de cluster* como uma opção para clustering de um Instância SAP ASCS.
@@ -204,7 +204,7 @@ _**Figura 1:** Definir os parâmetros de SAP de alta disponibilidade do Azure Re
     * \<SAPSystemSID\>- nic-ascs -\<número\>
     * \<SAPSystemSID\>- nic-db -\<número\>
 
-  * **Contas de armazenamento do Azure (apenas discos não gerenciados)**:
+  * **Contas de armazenamento do Azure (apenas discos não gerenciados)** :
 
   * **Grupos de Disponibilidade** para:
     * Máquinas virtuais do Servidor de Aplicativos SAP: \<SAPSystemSID\>-avset-di
@@ -481,7 +481,7 @@ Para criar os pontos de extremidade de balanceamento interno de carga, crie esse
 | Nome da regra do balanceamento de carga/serviço | Números de porta padrão | Portas concretas para (instância do ASCS com número de instância 00) (ERS com 10) |
 | --- | --- | --- |
 | Enfileirar Servidor / *lbrule3200* |32\<InstanceNumber\> |3200 |
-| Servidor de Mensagens ABAP / *lbrule3600* |36\<InstanceNumber\> |3.600 |
+| Servidor de Mensagens ABAP / *lbrule3600* |36\<InstanceNumber\> |3600 |
 | Mensagem interna ABAP / *lbrule3900* |39\<InstanceNumber\> |3900 |
 | HTTP do Servidor de Mensagens / *Lbrule8100* |81\<InstanceNumber\> |8100 |
 | HTTP do SAP para Iniciar Serviço ASCS / *Lbrule50013* |5\<InstanceNumber\>13 |50013 |
@@ -551,7 +551,7 @@ O Azure Load Balancer tem um balanceador de carga interno que fecha conexões qu
 
 Para adicionar entradas de Registro em ambos os nós de cluster da instância SAP ASCS/SCS, primeiro adicione essas entradas de Registro do Windows a ambos os nós de cluster do Windows para SAP ASCS/SCS:
 
-| `Path` | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
+| Caminho | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
 | --- | --- |
 | Nome da variável |`KeepAliveTime` |
 | Tipo de variável |REG_DWORD (Decimal) |
@@ -562,7 +562,7 @@ Para adicionar entradas de Registro em ambos os nós de cluster da instância SA
 
 Em seguida, adicione as seguintes entradas de Registro em nós de cluster do Windows para SAP ASCS/SCS:
 
-| `Path` | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
+| Caminho | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
 | --- | --- |
 | Nome da variável |`KeepAliveInterval` |
 | Tipo de variável |REG_DWORD (Decimal) |

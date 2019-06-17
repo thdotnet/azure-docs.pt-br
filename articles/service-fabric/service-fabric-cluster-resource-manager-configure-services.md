@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
 ms.openlocfilehash: 21fcac62c9335652d0c682a6ac889be82e649464
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60844135"
 ---
 # <a name="configuring-cluster-resource-manager-settings-for-service-fabric-services"></a>Configurando as definições do gerenciador de recursos de cluster para serviços do Service Fabric
@@ -31,7 +31,7 @@ O Gerenciador de Recursos de Cluster do Service Fabric permite obter um controle
 ## <a name="placement-constraints"></a>Restrições de posicionamento
 As restrições de posicionamento são usadas para controlar em quais nós no cluster um serviço pode, na verdade, ser executado. Normalmente, uma instância de serviço nomeada específica ou todos os serviços de um determinado tipo restrito para ser executado em um determinado tipo de nó. Restrições de posicionamento são extensíveis. É possível definir qualquer conjunto de propriedades por tipo de nó e, em seguida, selecioná-los com restrições durante a criação de serviços. Também é possível alterar as restrições de posicionamento do serviço enquanto ele está em execução. Isso permite responder a mudanças no cluster ou nos requisitos do serviço. As propriedades de um determinado nó também podem ser atualizadas dinamicamente no cluster. Para obter mais informações sobre as restrições de posicionamento e como configurá-los podem ser encontradas [neste artigo](service-fabric-cluster-resource-manager-cluster-description.md#node-properties-and-placement-constraints)
 
-## <a name="metrics"></a>Métricas
+## <a name="metrics"></a>metrics
 Métricas são o conjunto de recursos de que um determinado serviço nomeado precisa. Uma configuração do serviço métrica inclui a quantidade do recurso consome cada instância sem monitoração de estado de serviço ou réplica com monitoração de estado por padrão. As métricas também incluem um peso que indica até que ponto o balanceamento dessa métrica é importante para o serviço, caso as compensações sejam necessárias.
 
 ## <a name="advanced-placement-rules"></a>Regras de posicionamento avançadas

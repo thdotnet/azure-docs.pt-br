@@ -14,13 +14,13 @@ ms.date: 04/12/2019
 ms.author: spelluru
 ms.reviewer: christianreddington,anthdela,juselph
 ms.openlocfilehash: 32e828f420d41d7a67e4f41ac8a4a0698711ce2f
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64916401"
 ---
-# <a name="devtest-labs-in-the-enterprise"></a>Laboratórios de desenvolvimento/teste na empresa
+# <a name="devtest-labs-in-the-enterprise"></a>DevTest Labs na empresa
 As empresas estão rapidamente adotando a nuvem devido [benefícios](/azure/architecture/cloud-adoption/business-strategy/cloud-migration-business-case) que incluem a agilidade, flexibilidade e economia. As primeiras etapas que geralmente são desenvolvimento e teste cargas de trabalho. Fornece o Azure DevTest Labs [recursos](devtest-lab-concepts.md) que se beneficiam empresarial e suporte [principais cenários de desenvolvimento/teste](devtest-lab-guidance-get-started.md).
 
 Preocupações comuns para empresas que migrar cargas de trabalho para a nuvem incluem:

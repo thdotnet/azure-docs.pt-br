@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: ashishth
 ms.openlocfilehash: 4fc4d1843ddb8d007ca062d928ebbddf90909583
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64690041"
 ---
 # <a name="apache-phoenix-performance-best-practices"></a>Práticas recomendadas de desempenho do Apache Phoenix
@@ -52,7 +52,7 @@ Com essa nova chave primária, chaves de linhas geradas pelo Phoenix seriam:
 
 Na primeira linha acima, os dados para o rowkey são representados conforme mostrado:
 
-|rowkey|       key|   value| 
+|rowkey|       chave|   value| 
 |------|--------------------|---|
 |  Dole-John-111|endereço |1111 San Gabriel Dr.|  
 |  Dole-John-111|phone |1-425-000-0002|  
