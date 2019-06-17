@@ -18,19 +18,19 @@ ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: eb7919c6f4ff1b3cf2480333273a98f2cca9a223
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65204932"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver"></a>Alta disponibilidade de Máquinas Virtuais do Azure para SAP NetWeaver
 
-[1928533]:https://launchpad.support.sap.com/#/notes/1928533
-[1999351]:https://launchpad.support.sap.com/#/notes/1999351
-[2015553]:https://launchpad.support.sap.com/#/notes/2015553
-[2178632]:https://launchpad.support.sap.com/#/notes/2178632
-[2243692]:https://launchpad.support.sap.com/#/notes/2243692
+[1928533]: https://launchpad.support.sap.com/#/notes/1928533
+[1999351]: https://launchpad.support.sap.com/#/notes/1999351
+[2015553]: https://launchpad.support.sap.com/#/notes/2015553
+[2178632]: https://launchpad.support.sap.com/#/notes/2178632
+[2243692]: https://launchpad.support.sap.com/#/notes/2243692
 
 [sap-installation-guides]:http://service.sap.com/instguides
 
@@ -742,7 +742,7 @@ Se você quiser usar números diferentes para as instâncias SAP ASCS ou SCS, pr
 2. Para todas as regras de balanceamento de carga que pertencem à instância do SAP ASCS ou SCS, altere estes valores:
 
    * NOME
-   * Porta
+   * Port
    * Porta de back-end
 
    Por exemplo, se você quer alterar o número de instância do ASCS padrão de 00 para 31, precisa fazer as alterações em todas as portas listadas na Tabela 1.
@@ -767,7 +767,7 @@ O Azure Load Balancer tem um balanceador de carga interno que fecha conexões qu
 
 Para adicionar entradas de Registro em ambos os nós de cluster da instância SAP ASCS/SCS, primeiro adicione essas entradas de Registro do Windows a ambos os nós de cluster do Windows para SAP ASCS/SCS:
 
-| `Path` | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
+| Caminho | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
 | --- | --- |
 | Nome da variável |`KeepAliveTime` |
 | Tipo de variável |REG_DWORD (Decimal) |
@@ -778,7 +778,7 @@ _**Tabela 3:** Alterar o primeiro parâmetro de TCP/IP_
 
 Em seguida, adicione as seguintes entradas de Registro em nós de cluster do Windows para SAP ASCS/SCS:
 
-| `Path` | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
+| Caminho | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
 | --- | --- |
 | Nome da variável |`KeepAliveInterval` |
 | Tipo de variável |REG_DWORD (Decimal) |
@@ -901,7 +901,7 @@ Configurar a testemunha de compartilhamento de arquivos do cluster envolve as se
 
    _**Figura 30:** Atribuir as permissões no compartilhamento para o objeto de nome do cluster_
 
-   Verifique se as permissões incluem o poder de alterar dados no compartilhamento para o objeto de nome de cluster (em nosso exemplo **pr1-ascs-vir$**).
+   Verifique se as permissões incluem o poder de alterar dados no compartilhamento para o objeto de nome de cluster (em nosso exemplo **pr1-ascs-vir$** ).
 
 3. Para adicionar o objeto de nome do cluster à lista, selecione **Adicionar**. Altere o filtro para procurar objetos de computador além daqueles mostrados na Figura 31.
 
@@ -1133,7 +1133,7 @@ Instalar o SAP com uma instância ASCS/SCS de alta disponibilidade envolve as se
 1. No Gerenciador de DNS do Windows, crie uma entrada DNS para o nome de host virtual da instância ASCS/SCS.
 
    > [!IMPORTANT]
-   > O endereço IP atribuído ao nome do host virtual da instância do ASCS/SCS deve ser o mesmo que o endereço IP atribuído ao Azure Load Balancer (**<*SID*>-lb-ascs**).  
+   > O endereço IP atribuído ao nome do host virtual da instância do ASCS/SCS deve ser o mesmo que o endereço IP atribuído ao Azure Load Balancer ( **<*SID*>-lb-ascs**).  
    >
    >
 
@@ -1335,7 +1335,7 @@ O grupo de clusters **SAP PR1** está em execução no nó A do cluster. Por exe
 
 _**Figura 61:** Gerenciador de Cluster de Failover: O grupo de clusters SAP <*SID*> está em execução no nó de cluster A_
 
-Na ferramenta de Gerenciamento e Configuração do DataKeeper SIOS, você pode ver que os dados do disco compartilhado são replicados de modo síncrono da unidade do volume de origem S em um nó A de cluster para a unidade do volume de destino S no nó B de cluster. Por exemplo, é replicado de **pr1-ascs-0 [10.0.0.40]** a **pr1-ascs-1 [10.0.0.41]**.
+Na ferramenta de Gerenciamento e Configuração do DataKeeper SIOS, você pode ver que os dados do disco compartilhado são replicados de modo síncrono da unidade do volume de origem S em um nó A de cluster para a unidade do volume de destino S no nó B de cluster. Por exemplo, é replicado de **pr1-ascs-0 [10.0.0.40]** a **pr1-ascs-1 [10.0.0.41]** .
 
 ![Figura 62: No SIOS DataKeeper, replique o volume local do nó de cluster A para o nó de cluster B][sap-ha-guide-figure-5001]
 
@@ -1364,7 +1364,7 @@ _**Figura 62:** No SIOS DataKeeper, replique o volume local do nó de cluster A 
 
    _**Figura 63**: No Gerenciador de Cluster de Failover, o grupo de clusters SAP <*SID*> está em execução no nó de cluster B_
 
-   O disco compartilhado agora é montado no nó de cluster B. O SIOS DataKeeper está replicando dados da unidade do volume de origem S no nó de cluster B para a unidade do volume de destino S no nó de cluster A. Por exemplo, ele está replicando **pr1-ascs-1 [10.0.0.41]** a **pr1-ascs-0 [10.0.0.40]**.
+   O disco compartilhado agora é montado no nó de cluster B. O SIOS DataKeeper está replicando dados da unidade do volume de origem S no nó de cluster B para a unidade do volume de destino S no nó de cluster A. Por exemplo, ele está replicando **pr1-ascs-1 [10.0.0.41]** a **pr1-ascs-0 [10.0.0.40]** .
 
    ![Figura 64: O SIOS DataKeeper replica o volume local do nó de cluster B para o nó de cluster A][sap-ha-guide-figure-5003]
 

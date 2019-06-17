@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
 ms.openlocfilehash: 92c55c7f15b3f350ad802157bf401f3e75983789
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65606444"
 ---
 # <a name="azure-resource-manager-test-drive"></a>Test Drive do Azure Resource Manager
@@ -82,12 +82,12 @@ Também é importante observar que **todos os parâmetros são opcionais**. Port
 
 ### <a name="accepted-parameter-metadata-types"></a>Tipos de metadados de parâmetros aceitos
 
-| Tipo de metadados   | Tipo de Parâmetro  | Descrição     | Valor de exemplo    |
+| Tipo de metadados   | Tipo de Parâmetro  | DESCRIÇÃO     | Valor de exemplo    |
 |---|---|---|---|
-| **baseuri**     | string          | URI base do seu pacote de implantação| https:\//\<\..\>.blob.core.windows.net/\<\..\> |
-| **username**    | string          | Novo nome de usuário aleatório.| admin68876      |
+| **baseuri**     | cadeia de caracteres          | URI base do seu pacote de implantação| https:\//\<\..\>.blob.core.windows.net/\<\..\> |
+| **username**    | cadeia de caracteres          | Novo nome de usuário aleatório.| admin68876      |
 | **password**    | cadeia de caracteres segura    | Nova senha aleatória | Lp!ACS\^2kh     |
-| **ID da sessão**   | string          | ID da sessão exclusiva do Test Drive (GUID)    | b8c8693e-5673-449c-badd-257a405a6dee |
+| **ID da sessão**   | cadeia de caracteres          | ID da sessão exclusiva do Test Drive (GUID)    | b8c8693e-5673-449c-badd-257a405a6dee |
 
 #### <a name="username"></a>username
 
@@ -257,7 +257,7 @@ E, em seguida, usar esse local para todos os recursos para uma instância de lab
 
 Você precisa certificar-se de que sua assinatura tem permissão para implantar todos os recursos que deseja implantar em cada uma das regiões que está selecionando. Além disso, precisa certificar-se de que suas imagens de máquina virtual estão disponíveis em todas as regiões que pretende habilitar; caso contrário, seu modelo de implantação não funcionará para algumas regiões.
 
-### <a name="outputs"></a>Saídas
+### <a name="outputs"></a>outputs
 
 Normalmente, com modelos do Resource Manager, é possível implantar sem produzir nenhuma saída. Isso acontece porque você conhece todos os valores que usa para preencher parâmetros do modelo e pode sempre inspecionar manualmente as propriedades de qualquer recurso.
 
@@ -362,7 +362,7 @@ Neste momento, calcula-se o número total de possíveis Test Drives simultâneos
 
 **Modelo do Resource Manager para Test Drive -** *Obrigatório* Faça upload do seu modelo do Resource Manager aqui. É o arquivo que você compilou na seção anterior acima. Nomeie o arquivo de modelo principal como "main-Template. JSON" e certifique-se de que seu modelo do Resource Manager contém parâmetros de saída para as principais variáveis que são necessárias. (Deve ser um arquivo. zip)
 
-**Informações de acesso -** *Obrigatório* Depois que um cliente obtém seu Test Drive, as informações de acesso são apresentadas a ele. Essas instruções servem para compartilhar os parâmetros de saída úteis do seu modelo do Resource Manager para Test Drive. Para incluir parâmetros de saída, utilize chaves duplas (por exemplo, **{{outputname}}**); eles serão inseridos corretamente no local. A formatação da cadeia de caracteres HTML é recomendada aqui para renderizar no front-end.
+**Informações de acesso -** *Obrigatório* Depois que um cliente obtém seu Test Drive, as informações de acesso são apresentadas a ele. Essas instruções servem para compartilhar os parâmetros de saída úteis do seu modelo do Resource Manager para Test Drive. Para incluir parâmetros de saída, utilize chaves duplas (por exemplo, **{{outputname}}** ); eles serão inseridos corretamente no local. A formatação da cadeia de caracteres HTML é recomendada aqui para renderizar no front-end.
 
 ### <a name="test-drive-deployment-subscription-details"></a>Detalhes da assinatura para implantação do Test Drive
 
@@ -403,7 +403,7 @@ Clique em Salvar. O último passo é pegar o ID do aplicativo para esse aplicati
 Como estamos usando o aplicativo para implantar a assinatura, precisamos adicionar o aplicativo como colaborador na assinatura. Estas são as instruções:
 
 1. Navegue até a folha Assinaturas e selecione a assinatura adequada que você usa apenas para o Test Drive.
-1. Clique em **Controle de acesso (IAM)**.
+1. Clique em **Controle de acesso (IAM)** .
 1. Clique na guia **Atribuições de função**.  ![Adicionar uma nova entidade de segurança para Controle de Acesso](./media/azure-resource-manager-test-drive/SetupSub7_1.jpg)
 1. Clique em **Adicionar atribuição de função**.
 1. Defina a função como **Colaborador**.
