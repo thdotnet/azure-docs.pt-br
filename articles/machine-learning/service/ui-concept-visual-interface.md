@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 05/15/2019
-ms.openlocfilehash: 0b158a1d713e0de8f3d1b2672aed442fce66e724
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: be07e0f3438ea93312d4eb440e7e63b8f98e11b8
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65917154"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67077369"
 ---
 # <a name="what-is-the-visual-interface-for-azure-machine-learning-service"></a>O que é a interface visual para o serviço de Azure Machine Learning? 
 
@@ -27,12 +27,12 @@ A interface visual usa o serviço de Azure Machine Learning [espaço de trabalho
 + Gravar artefatos da [experimentar](#experiment) é executado no espaço de trabalho.
 + Acesso [conjuntos de dados](#dataset).
 + Use o [recursos de computação](#compute) no espaço de trabalho para executar o experimento. 
-+ Registre [modelos](concept-azure-machine-learning-architecture.md#model).
++ Registre [modelos](concept-azure-machine-learning-architecture.md#models).
 + [Implantar](#deployment) modelos como serviços da web em recursos de computação no espaço de trabalho.
 
 ![Visão geral da interface visual](media/ui-concept-visual-interface/overview.png)
 
-## <a name="workflow"></a>Fluxo de Trabalho
+## <a name="workflow"></a>Fluxo de trabalho
 
 A interface visual fornece uma tela visual, interativa para rapidamente criar, testar e iterar em um modelo. 
 

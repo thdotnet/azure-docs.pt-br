@@ -12,12 +12,12 @@ ms.author: bonova
 ms.reviewer: sstein, carlrab, vanto
 manager: craigg
 ms.date: 04/16/2019
-ms.openlocfilehash: 46c6972e20df69da236c151516d7d889f9db6084
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: c09dd990bb377672cb34ebd73a5aa9e59bbc067f
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62098518"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67070383"
 ---
 # <a name="use-sql-database-advanced-data-security-with-virtual-networks-and-near-100-compatibility"></a>Usar segurança de dados avançada do Banco de Dados SQL com as redes virtuais e compatibilidade de quase 100%
 
@@ -64,7 +64,7 @@ Os principais recursos de instâncias gerenciadas são mostrados na tabela a seg
 | Número de arquivos de dados (LINHAS) por banco de dados | Vários |
 | Número de arquivos de log (LOG) por banco de dados | 1 |
 | VNet - Implantação do Azure Resource Manager | Sim |
-| VNet - Modelo de implantação clássico | Não  |
+| VNet - Modelo de implantação clássico | Não |
 | Suporte do Portal | Sim|
 | Serviço de Integração Integrado (SSIS) | Não - o SSIS faz parte da [PaaS do Azure Data Factory](https://docs.microsoft.com/azure/data-factory/tutorial-deploy-ssis-packages-azure) |
 | Serviço de análise interna (SSAS) | Não - SSAS é separado [PaaS](https://docs.microsoft.com/azure/analysis-services/analysis-services-overview) |
@@ -78,7 +78,7 @@ O [modelo de compra baseado em vCore](sql-database-service-tiers-vcore.md) para 
 No modelo vCore, você pode escolher entre gerações de hardware.
 
 - As CPUs lógicas **Gen4** são baseadas nos processadores Intel E5-2673 v3(Haswell) de 2,4 GHz, SSD conectado, núcleos físicos, 7 GB de RAM por núcleo e tamanhos de computação entre 8 e 24 vCores.
-- As CPUs lógicas **Gen5** são baseadas nos processadores Intel E5-2673 v4 (Broadwell) 2,3 GHz, no rápido NVMe SSD, no núcleo lógico de hyper-threaded e nos tamanhos de computação entre 8 e 80 núcleos.
+- **Gen5** CPUs lógicas são baseados em Intel E5-2673 v4 (Broadwell) 2,3 GHz, rápidas NVMe SSD, hyper-threading núcleo lógico e tamanhos entre 4 e 80 núcleos de computação.
 
 Encontre mais informações sobre a diferença entre gerações de hardware em [limites de recursos da instância gerenciada](sql-database-managed-instance-resource-limits.md#hardware-generation-characteristics).
 
@@ -240,5 +240,5 @@ A tabela a seguir mostra várias propriedades, acessíveis por meio do Transact-
 - Para saber mais sobre a configuração de rede virtual, confira [Configuração de VNet de instância gerenciada](sql-database-managed-instance-connectivity-architecture.md).
 - Para obter um início rápido que cria uma Instância Gerenciada e restaura um banco de dados de um arquivo de backup, veja [Criar uma instância gerenciada](sql-database-managed-instance-get-started.md).
 - Para obter um tutorial usando o DMS (Serviço de Migração de Banco de Dados do Azure) para a migração, confira [Migração de instância gerenciada usando DMS](../dms/tutorial-sql-server-to-managed-instance.md).
-- Para monitoramento avançado do desempenho de banco de dados de instância gerenciada com inteligência de solução de problemas, confira [Monitorar Banco de Dados SQL do Azure usando a Análise de SQL do Azure](../azure-monitor/insights/azure-sql.md)
+- Para avançados de monitoramento de desempenho do banco de dados de instância gerenciada com inteligência interna de solução de problemas, consulte [Monitor de banco de dados SQL usando o Azure SQL Analytics](../azure-monitor/insights/azure-sql.md).
 - Para saber mais sobre preços, veja [Preços de instância gerenciada do Banco de Dados SQL](https://azure.microsoft.com/pricing/details/sql-database/managed/).

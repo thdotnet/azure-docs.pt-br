@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/19/2019
 ms.author: bwren
 ms.subservice: logs
-ms.openlocfilehash: 34857108cf7f0580c380ffbd4bbcedb5cd5a807a
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 6fc00bf0dfb83f349da91989a579f31be2027ff0
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66245016"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67071680"
 ---
 # <a name="overview-of-azure-activity-log"></a>Visão geral do log de atividades do Azure
 
@@ -30,10 +30,10 @@ Há um único Log de atividade para cada assinatura do Azure. Ele fornece dados 
 
 
 > [!NOTE]
-> O Log de Atividades do Azure é usado principalmente para atividades que ocorrem no Azure Resource Manager. Ele não rastreia ugresources usando o modelo clássico/RDFE. Alguns tipos de recursos Clássicos têm um provedor de recursos de proxy no Azure Resource Manager (por exemplo, Microsoft.ClassicCompute). Se você interagir com um tipo de recurso Clássico por meio do Azure Resource Manager usando esses provedores de recursos de proxy, as operações aparecerão no Log de Atividades. Se você interagir com um tipo de recurso clássico fora dos proxies do Azure Resource Manager, suas ações somente serão registradas no Log de Operação. O Log de Operação pode ser pesquisado em uma seção separada do portal.
+> O Log de Atividades do Azure é usado principalmente para atividades que ocorrem no Azure Resource Manager. Ele não controla os recursos usando o modelo Clássico/RDFE. Alguns tipos de recursos Clássicos têm um provedor de recursos de proxy no Azure Resource Manager (por exemplo, Microsoft.ClassicCompute). Se você interagir com um tipo de recurso Clássico por meio do Azure Resource Manager usando esses provedores de recursos de proxy, as operações aparecerão no Log de Atividades. Se você interagir com um tipo de recurso clássico fora dos proxies do Azure Resource Manager, suas ações somente serão registradas no Log de Operação. O Log de Operação pode ser pesquisado em uma seção separada do portal.
 
 ## <a name="activity-log-retention"></a>Retenção de Log de atividade
-Eventos do Log de atividades são armazenados por 90 dias. Para armazenar esses dados por períodos mais longos, [coletá-los no Azure Monitor](activity-log-collect.md) ou [exportá-lo para o armazenamento ou Hubs de eventos](activity-log-export.md).
+Depois de criar, entradas de Log de atividades não modificadas ou excluídas pelo sistema. Além disso, você não pode alterá-los na interface ou programaticamente. Eventos do Log de atividades são armazenados por 90 dias. Para armazenar esses dados por períodos mais longos, [coletá-los no Azure Monitor](activity-log-collect.md) ou [exportá-lo para o armazenamento ou Hubs de eventos](activity-log-export.md).
 
 ## <a name="view-the-activity-log"></a>Exibir o Log de atividades
 Exibir o Log de atividades para todos os recursos do **Monitor** menu no portal do Azure. Exibir o Log de atividades para um recurso específico do **Log de atividades** opção no menu daquele recurso. Você também pode recuperar os registros de Log de atividades com o PowerShell, CLI ou API REST.  Ver [modo de exibição e como recuperar a atividade do Azure registrar eventos](activity-log-view.md).

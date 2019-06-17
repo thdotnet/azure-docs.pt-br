@@ -9,10 +9,10 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 08/17/2018
 ms.openlocfilehash: db7cc556525ab57f14984232bf1797764865fca3
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65606236"
 ---
 # <a name="azure-cosmos-db-table-net-api-download-and-release-notes"></a>API .NET de Tabela do Azure Cosmos DB: Downloads e notas sobre a versão
@@ -33,7 +33,7 @@ ms.locfileid: "65606236"
 |**Framework atualmente com suporte**|[Microsoft .NET Framework 4.5.1](https://www.microsoft.com/en-us/download/details.aspx?id=40779)|
 
 > [!IMPORTANT]
-> O SDK do .NET Framework [cosmosdb](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table) é na manutenção do modo e ele serão preteridos em breve. Atualize para a nova biblioteca .NET Standard [Microsoft.Azure.Cosmos.Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table) continuar a obter os recursos mais recentes com suporte na API de tabela.
+> O SDK [Microsoft.Azure.CosmosDB.Table](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table) do .NET Framework está no modo de manutenção e será preterido em breve. Atualize para [Microsoft.Azure.Cosmos.Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table) da nova biblioteca do .NET Standard para continuar a obter os recursos mais recentes com suporte na API de Tabela.
 
 > Se você criou uma conta da API de Tabela durante a versão prévia, crie uma [nova conta da API de Tabela](create-table-dotnet.md#create-a-database-account) para trabalhar com os SDKs da API de Tabela disponíveis para o público em geral.
 >

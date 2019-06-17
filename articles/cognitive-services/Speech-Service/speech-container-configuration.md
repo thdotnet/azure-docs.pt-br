@@ -3,19 +3,19 @@ title: Configurar os contêineres de fala
 titleSuffix: Azure Cognitive Services
 description: O contêiner de fala
 services: cognitive-services
-author: diberry
+author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 05/15/2019
-ms.author: diberry
-ms.openlocfilehash: e2ed29bb61f553f68b9f9802884169361d5d983f
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.date: 06/11/2019
+ms.author: dapine
+ms.openlocfilehash: 2dd1769d2d0a940176fb51954f44859cb42f30d9
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65797921"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072432"
 ---
 # <a name="configure-speech-service-containers"></a>Configurar os contêineres do serviço de fala
 
@@ -23,7 +23,7 @@ Contêineres de fala permitem que os clientes criar uma arquitetura de aplicativ
 
 O **fala** ambiente de tempo de execução do contêiner é configurado usando o `docker run` argumentos do comando. Esse contêiner tem várias configurações obrigatórias e outras configurações opcionais. Há vários [exemplos](#example-docker-run-commands) do comando disponíveis. As configurações específicas do contêiner são as configurações de cobrança. 
 
-# <a name="configuration-settings"></a>Parâmetros de configuração
+# <a name="configuration-settings"></a>Definições de configuração
 
 [!INCLUDE [Container shared configuration settings table](../../../includes/cognitive-services-containers-configuration-shared-settings-table.md)]
 
@@ -50,9 +50,9 @@ Essa configuração pode ser localizada no seguinte local:
 
 * Portal do Azure: **Do conversão de fala** visão geral, rotulado `Endpoint`
 
-|Obrigatório| NOME | Tipo de dados | Descrição |
+|Obrigatório| NOME | Tipo de dados | DESCRIÇÃO |
 |--|------|-----------|-------------|
-|Sim| `Billing` | String | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westus.api.cognitive.microsoft.com/sts/v1.0` |
+|Sim| `Billing` | Cadeia de caracteres | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westus.api.cognitive.microsoft.com/sts/v1.0` |
 
 ## <a name="eula-setting"></a>Configuração de EULA
 
@@ -78,10 +78,10 @@ Os contêineres de fala não usam a entrada ou saída monta para armazenar dados
 
 A sintaxe exata do local da montagem do host varia de acordo com o sistema operacional do host. Além disso, o local de montagem do [computador host](speech-container-howto.md#the-host-computer) pode não estar acessível devido a um conflito entre as permissões usadas pela conta de serviço do Docker e as permissões do local de montagem do host. 
 
-|Opcional| NOME | Tipo de dados | Descrição |
+|Opcional| NOME | Tipo de dados | DESCRIÇÃO |
 |-------|------|-----------|-------------|
-|Não permitido| `Input` | String | Contêineres de fala não usam isso.|
-|Opcional| `Output` | String | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Não permitido| `Input` | Cadeia de caracteres | Contêineres de fala não usam isso.|
+|Opcional| `Output` | Cadeia de caracteres | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Comandos docker run de exemplo 
 
@@ -92,7 +92,7 @@ Os exemplos a seguir usam as definições de configuração para ilustrar como e
 
 Substitua {_argument_name_} pelos seus próprios valores:
 
-| Espaço reservado | Value | Formato ou exemplo |
+| Placeholder | Value | Formato ou exemplo |
 |-------------|-------|---|
 |{BILLING_KEY} | A chave do ponto de extremidade do recurso de fala. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
 |{BILLING_ENDPOINT_URI} | O valor de ponto de extremidade cobrança, incluindo a região.|`https://westus.api.cognitive.microsoft.com/sts/v1.0`|

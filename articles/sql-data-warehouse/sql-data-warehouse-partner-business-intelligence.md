@@ -11,17 +11,17 @@ ms.date: 03/27/2019
 ms.author: mabasile
 ms.reviewer: igorstan
 ms.openlocfilehash: 87379631cc7f7b9e31def157ba38336e41b693d8
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65873808"
 ---
 # <a name="sql-data-warehouse-business-intelligence-partners"></a>Parceiros de business intelligence do SQL Data Warehouse
 Para criar uma solução completa de data warehouse, você pode escolher dentre uma ampla variedade de ferramentas líderes do setor.  Este artigo destaca empresas parceiras da Microsoft com suporte ao Azure SQL Data Warehouse de soluções do oficial de business intelligence (BI).
 
 ## <a name="our-business-intelligence-partners"></a>Nossos parceiros de business intelligence
-| Parceiro | Descrição | Link do produto do site |
+| Parceiro | DESCRIÇÃO | Link do produto do site |
 | ------- | ----------- | -------------------- |
 | ![Birst][1] |**Birst**<br>Birst se conecta a toda a organização por meio de uma rede de interligado virtualizado BI instâncias-visível de uma malha de analítica comuns compartilhada|[Página do produto][birst_website]<br>[Azure Marketplace][birst_marketplace]<br> |
 | ![ClearStory Data][2] |**A clearStory Data (informações de negócios contínuos)**<br>A ClearStory Data permite análise de ciclo rápido entre dados distintos armazenados no SQL Data Warehouse. A plataforma integrada baseada em Spark e o aplicativo de análise da ClearStory aceleram o acesso a dados e a harmonização de conjuntos de dados díspares. Eles permitem exploração colaborativa rápida, que proporciona autoconfiança aos usuários corporativos no ganho de percepções. |[Página do produto][clearstory_website]<br> |

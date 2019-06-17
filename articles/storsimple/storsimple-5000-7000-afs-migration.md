@@ -14,10 +14,10 @@ ms.workload: NA
 ms.date: 04/19/2019
 ms.author: alkohli
 ms.openlocfilehash: b46e9ee8fc3e14981a01cc2425a8ce55d06c5a9a
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65150748"
 ---
 # <a name="migrate-data-from-storsimple-5000-7000-series-to-azure-file-sync"></a>Migrar dados do StorSimple séries 5000-7000 para a Sincronização de Arquivos do Azure
@@ -56,7 +56,7 @@ Aqui, você encontrará os pré-requisitos de migração para o dispositivo herd
 - Volumes do StorSimple são montados no host e contêm compartilhamentos de arquivos.
 - O host tem armazenamento local suficiente para armazenar os dados armazenados em cache localmente.
 - Acesso de nível de proprietário à assinatura do Azure que será usada para implantar a Sincronização de Arquivos do Azure. Se você não tiver permissões de nível de proprietário ou administrador, talvez tenha problemas ao criar um ponto de extremidade da nuvem para o grupo de sincronização.
-- Acesso a uma [conta de armazenamento v2 de uso geral](https://docs.microsoft.com/azure/storage/common/storage-account-overview) com um compartilhamento de arquivos do Azure ao qual você deseja sincronizar. Para obter mais informações, consulte [Criar uma conta de armazenamento](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
+- Acesso a uma [conta de armazenamento v2 de uso geral](https://docs.microsoft.com/azure/storage/common/storage-account-overview) com um compartilhamento de arquivos do Azure ao qual você deseja sincronizar. Para obter mais informações, consulte [criar uma conta de armazenamento](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
   - Como [Criar um Compartilhamento de Arquivos do Azure](https://docs.microsoft.com/azure/storage/files/storage-how-to-create-file-share).
 
 ## <a name="migration-process"></a>Processo de migração

@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/10/2018
 ms.author: hrasheed
-ms.openlocfilehash: 3448a5e89f6930a5bdcb7d0d77b92576e58fc90b
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 5eac6cd60b9e58dea8901fad076bb481d5f2eb06
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64687290"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67078311"
 ---
 # <a name="use-mapreduce-with-apache-hadoop-on-hdinsight-with-ssh"></a>Use o MapReduce com o Apache Hadoop no HDInsight com SSH
 
@@ -27,9 +27,6 @@ Saiba como enviar trabalhos MapReduce de uma conexão SSH (Secure Shell) para o 
 ## <a id="prereq"></a>Pré-requisitos
 
 * Um cluster do HDInsight baseado em Linux (Hadoop no HDInsight)
-
-  > [!IMPORTANT]
-  > O Linux é o único sistema operacional usado no HDInsight versão 3.4 ou superior. Para obter mais informações, confira [baixa do HDInsight no Windows](../hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
 * Um cliente SSH. Para obter mais informações, confira [Usar SSH com HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md)
 

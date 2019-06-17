@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/31/2019
 ms.author: TomSh
-ms.openlocfilehash: 2dad1caeba8a0417b7ac16ebaa45f4f291f54495
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: c28c87339bbfda7cc47e329c8fe6cebdee4a7843
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66480737"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67127185"
 ---
 # <a name="azure-security-technical-capabilities"></a>Funcionalidades técnicas de segurança do Azure
 Este artigo fornece uma introdução à segurança serviços do Azure que ajudam você a protegê-lo a dados, recursos e aplicativos na nuvem em atender às necessidades de segurança da sua empresa.
@@ -52,7 +52,7 @@ O Azure ajuda a proteger informações pessoais e de negócios, permitindo que v
 
 ### <a name="azure-active-directory"></a>Azure Active Directory
 
-As soluções de gerenciamento de acesso e identidade da Microsoft ajudam a TI a proteger o acesso a aplicativos e recursos no datacenter corporativo e na nuvem, permitindo níveis de validação adicionais, como Autenticação Multifator e políticas de acesso condicional. O monitoramento de atividade suspeita por meio de alertas, auditoria e relatórios de segurança avançados ajuda a reduzir potenciais problemas de segurança. [Azure Active Directory Premium](https://docs.microsoft.com/azure/active-directory/active-directory-editions) fornece logon único para milhares de aplicativos de nuvem e acesso a aplicativos web executados no local.
+Microsoft acesso e identidade gerenciamento soluções ajudam a TI proteger o acesso a aplicativos e recursos no datacenter corporativo e na nuvem, permitindo níveis adicionais de validação, como a autenticação multifator e acesso condicional políticas. O monitoramento de atividade suspeita por meio de alertas, auditoria e relatórios de segurança avançados ajuda a reduzir potenciais problemas de segurança. [Azure Active Directory Premium](https://docs.microsoft.com/azure/active-directory/active-directory-editions) fornece logon único para milhares de aplicativos de nuvem e acesso a aplicativos web executados no local.
 
 Os benefícios de segurança do Microsoft Azure AD (Azure Active Directory) incluem a capacidade de:
 
@@ -124,9 +124,9 @@ Quando você usa o Azure Active Directory B2C, os consumidores poderão se inscr
 
 #### <a name="device-registration"></a>Registro de dispositivos
 
-O [registro do dispositivo do Microsoft Azure AD](https://docs.microsoft.com/azure/active-directory/device-management-introduction) é a base para cenários de [acesso condicional](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup) baseado em dispositivo. Quando um dispositivo é registrado, o registro do dispositivo do Microsoft Azure AD fornece ao dispositivo uma identidade que será usada para autenticar o dispositivo quando o usuário entrar no Microsoft Azure AD. O dispositivo autenticado e os atributos desse dispositivo podem, em seguida, ser usados para impor políticas de acesso condicional para aplicativos locais e hospedados em nuvem.
+[Registro de dispositivo do Azure AD](https://docs.microsoft.com/azure/active-directory/device-management-introduction) é a base para baseado em dispositivo [acesso condicional](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup) cenários. Quando um dispositivo é registrado, o registro do dispositivo do Microsoft Azure AD fornece ao dispositivo uma identidade que será usada para autenticar o dispositivo quando o usuário entrar no Microsoft Azure AD. O dispositivo autenticado e os atributos do dispositivo, podem ser usados para impor políticas de acesso condicional para aplicativos que são hospedados na nuvem e locais.
 
-Quando combinados com uma solução de [MDM (gerenciamento de dispositivo móvel)](https://www.microsoft.com/itshowcase/Article/Content/588/Mobile-device-management-at-Microsoft), como o Intune, os atributos do dispositivo no Azure Active Directory são atualizados com informações adicionais sobre o dispositivo. Isso permite que você crie regras de acesso condicional que imponham que o acesso dos dispositivos atendam aos padrões de segurança e conformidade.
+Quando combinados com uma solução de [MDM (gerenciamento de dispositivo móvel)](https://www.microsoft.com/itshowcase/Article/Content/588/Mobile-device-management-at-Microsoft), como o Intune, os atributos do dispositivo no Azure Active Directory são atualizados com informações adicionais sobre o dispositivo. Isso permite que você crie regras de acesso condicional que impõe o acesso de dispositivos para atender aos padrões de segurança e conformidade.
 
 #### <a name="privileged-identity-management"></a>Privileged Identity Management
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/29/2019
 ms.author: magoedte
-ms.openlocfilehash: 2cdde2f9dbba9676ba8a4d35ed6b79940668d684
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: 34dd872db199a4c10e9f321457188b7f7642944d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65521785"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67120217"
 ---
 # <a name="azure-monitor-dependency-virtual-machine-extension-for-windows"></a>Extensão de máquina virtual de dependência do Monitor do Azure para Windows
 
@@ -36,7 +36,7 @@ A extensão do agente de dependência de VM do Azure para Windows pode ser execu
 
 ## <a name="extension-schema"></a>Esquema de extensão
 
-O JSON a seguir mostra o esquema para a extensão do agente de dependência de VM do Azure em uma VM do Windows Azure. 
+O JSON a seguir mostra o esquema para a extensão do agente de dependência de VM do Azure em uma VM do Windows Azure.
 
 ```json
 {
@@ -76,20 +76,20 @@ O JSON a seguir mostra o esquema para a extensão do agente de dependência de V
 
 ### <a name="property-values"></a>Valores de propriedade
 
-| Nome | Valor/Exemplo |
+| NOME | Valor/exemplo |
 | ---- | ---- |
 | apiVersion | 2015-01-01 |
-| publisher | Microsoft.Azure.Monitoring.DependencyAgent |
+| publicador | Microsoft.Azure.Monitoring.DependencyAgent |
 | type | DependencyAgentWindows |
-| typeHandlerVersion | 9.5 |
+| typeHandlerVersion | 9,5 |
 
 ## <a name="template-deployment"></a>Implantação de modelo
 
-Extensões de VM do Azure podem ser implantadas com modelos do Azure Resource Manager. O esquema JSON detalhado na seção anterior pode ser usado em um modelo do Azure Resource Manager para executar a extensão do agente de dependência de VM do Azure durante uma implantação de modelo do Azure Resource Manager. 
+Você pode implantar as extensões de VM do Azure com modelos do Azure Resource Manager. Você pode usar o esquema JSON detalhado na seção anterior em um modelo do Azure Resource Manager para executar a extensão do agente de dependência de VM do Azure durante uma implantação de modelo do Azure Resource Manager.
 
-O JSON para uma extensão da máquina virtual pode ser aninhado dentro do recurso de máquina virtual ou localizado no nível de raiz ou superior de um modelo JSON do Resource Manager. O posicionamento do JSON afeta o valor do tipo e nome do recurso. Para obter mais informações, consulte [Definir o nome e o tipo de recursos filho](../../azure-resource-manager/resource-group-authoring-templates.md#child-resources). 
+O JSON para uma extensão da máquina virtual pode ser aninhado dentro do recurso de máquina virtual. Ou, você pode colocá-lo na raiz ou de nível superior de um modelo JSON do Resource Manager. O posicionamento do JSON afeta o valor do tipo e nome do recurso. Para obter mais informações, consulte [Definir o nome e o tipo de recursos filho](../../azure-resource-manager/resource-group-authoring-templates.md#child-resources).
 
-O exemplo a seguir pressupõe que a extensão do agente de dependência é aninhada dentro do recurso de máquina virtual. Ao aninhar o recurso de extensão, o JSON é colocado no objeto `"resources": []` da máquina virtual.
+O exemplo a seguir pressupõe que a extensão do agente de dependência é aninhada dentro do recurso de máquina virtual. Quando você aninhar o recurso de extensão, o JSON é colocado no `"resources": []` objeto da máquina virtual.
 
 
 ```json
@@ -110,7 +110,7 @@ O exemplo a seguir pressupõe que a extensão do agente de dependência é aninh
 }
 ```
 
-Ao inserir o JSON da extensão na raiz do modelo, o nome do recurso inclui uma referência na máquina virtual pai e o tipo reflete a configuração aninhada. 
+Quando você coloca a extensão JSON na raiz do modelo, o nome do recurso inclui uma referência à máquina virtual pai. O tipo reflete a configuração aninhada.
 
 ```json
 {
@@ -132,7 +132,7 @@ Ao inserir o JSON da extensão na raiz do modelo, o nome do recurso inclui uma r
 
 ## <a name="powershell-deployment"></a>Implantação do PowerShell
 
-O `Set-AzVMExtension` comando pode ser usado para implantar a extensão de máquina virtual do agente de dependência em uma máquina virtual existente. Antes de executar o comando, as configurações públicas e privadas precisam ser armazenadas em uma tabela de hash do PowerShell. 
+Você pode usar o `Set-AzVMExtension` comando para implantar a extensão de máquina virtual do agente de dependência em uma máquina virtual existente. Antes de executar o comando, as configurações públicas e privadas precisam ser armazenados em uma tabela de hash do PowerShell.
 
 ```powershell
 
@@ -147,9 +147,9 @@ Set-AzVMExtension -ExtensionName "Microsoft.Azure.Monitoring.DependencyAgent" `
 
 ## <a name="troubleshoot-and-support"></a>Solução de problemas e suporte
 
-### <a name="troubleshoot"></a>Solucionar problemas
+### <a name="troubleshoot"></a>Solução de problemas
 
-Os dados sobre o estado das implantações de extensão podem ser recuperados no Portal do Azure usando o módulo do Azure PowerShell. Para ver o estado da implantação das extensões de uma determinada VM, execute o comando a seguir usando o módulo do Azure PowerShell.
+Dados sobre o estado das implantações de extensão podem ser recuperados do portal do Azure usando o módulo PowerShell do Azure. Para ver o estado de implantação das extensões de uma determinada VM, execute o comando a seguir usando o módulo PowerShell do Azure:
 
 ```powershell
 Get-AzVMExtension -ResourceGroupName myResourceGroup -VMName myVM -Name myExtensionName
@@ -163,4 +163,4 @@ C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Monitoring.DependencyAgent\
 
 ### <a name="support"></a>Suporte
 
-Caso precise de mais ajuda em qualquer ponto deste artigo, entre em contato com os especialistas do Azure nos [fóruns do Azure e do Stack Overflow no MSDN](https://azure.microsoft.com/support/forums/). Como alternativa, você pode registrar um incidente de suporte do Azure. Vá para o [site de suporte do Azure](https://azure.microsoft.com/support/options/) e selecione Obter suporte. Para saber mais sobre como usar o suporte do Azure, leia as [Perguntas frequentes sobre o suporte do Microsoft Azure](https://azure.microsoft.com/support/faq/).
+Caso precise de mais ajuda em qualquer ponto deste artigo, entre em contato com os especialistas do Azure nos [fóruns do Azure e do Stack Overflow no MSDN](https://azure.microsoft.com/support/forums/). Ou, você pode registrar um incidente de suporte do Azure. Vá para o [site de suporte do Azure](https://azure.microsoft.com/support/options/) e selecione **Obter suporte**. Para obter informações sobre como usar o suporte do Azure, leia as [perguntas Frequentes de suporte do Microsoft Azure](https://azure.microsoft.com/support/faq/).

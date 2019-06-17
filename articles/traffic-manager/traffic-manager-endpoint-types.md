@@ -3,7 +3,7 @@ title: Tipos de Ponto de Extremidade do Gerenciador de Tráfego | Microsoft Docs
 description: Este artigo explica os diferentes tipos de pontos de extremidade que podem ser usados com o Gerenciador de Tráfego do Azure
 services: traffic-manager
 documentationcenter: ''
-author: kumudd
+author: asudbring
 manager: twooley
 ms.service: traffic-manager
 ms.devlang: na
@@ -11,18 +11,20 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/29/2017
-ms.author: kumud
-ms.openlocfilehash: dc76f56b6c05f22a380ff33715fe22e8c72e4891
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.author: allensu
+ms.openlocfilehash: 469b6543b380cb6b3b10c3def8484bed944f8556
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65508426"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67071199"
 ---
 # <a name="traffic-manager-endpoints"></a>Pontos de extremidade do Gerenciador de Tráfego
+
 O Gerenciador de Tráfego do Microsoft Azure permite controlar como o tráfego de rede é distribuído para implantações de aplicativos executados em diferentes datacenters. Você configurar cada implantação de aplicativo como um “ponto de extremidade” no Gerenciador de Tráfego. Quando o Gerenciador de Tráfego recebe uma solicitação DNS, ele escolhe um ponto de extremidade disponível para retornar na resposta DNS. O Gerenciador de Tráfego baseia a escolha no status atual do ponto de extremidade e o método de roteamento de tráfego. Para obter mais informações, consulte [Como o Gerenciador de Tráfego Funciona](traffic-manager-how-it-works.md).
 
 Há três tipos de ponto de extremidade suportados pelo Gerenciador de Tráfego:
+
 * **pontos de extremidade do Azure** são usados para os serviços hospedados no Azure.
 * **Pontos de extremidade externos** são usados para endereços IPv4/IPv6, FQDNs, ou para serviços hospedados fora do Azure que pode ser local ou com um provedor de hospedagem diferente.
 * **pontos de extremidade aninhados** são usados para combinar os perfis do Gerenciador de Tráfego para criar esquemas de roteamento de tráfego mais flexíveis para suportar as necessidades de implantações maiores e mais complexas.
@@ -42,14 +44,14 @@ Os pontos de extremidade do Azure são usados para serviços baseados no Azure n
 
 Os recursos de PublicIPAddress são recursos do Azure Resource Manager. Eles não existem no modelo de implantação clássico. Assim, eles têm suporte apenas em experiências do Azure Resource Manager do Gerenciador de Tráfego. Os outros tipos de ponto de extremidade têm suporte por meio do Gerenciador de Recursos e o modelo de implantação clássico.
 
-Ao usar os pontos de extremidade do Azure, o Gerenciador de Tráfego detecta quando uma VM IaaS “Clássica”, serviço de nuvem ou Aplicativo Web é interrompido e iniciado. Esse status é refletido no status de ponto de extremidade. Consulte detalhes em [Monitoramento do ponto de extremidade do Gerenciador de Tráfego](traffic-manager-monitoring.md#endpoint-and-profile-status). Quando o serviço subjacente é interrompido, o Gerenciador de Tráfego não executa verificações de integridade do ponto de extremidade nem direciona o tráfego para o ponto de extremidade. Nenhum evento de cobrança do Gerenciador de Tráfego ocorre para a instância parada. Quando o serviço é reiniciado, a cobrança é retomada e o ponto de extremidade está qualificado para receber tráfego. Essa detecção não se aplica aos pontos de extremidade PublicIpAddress.
+Ao usar pontos de extremidade do Azure, o Gerenciador de tráfego detecta quando um aplicativo Web é interrompido e iniciado. Esse status é refletido no status de ponto de extremidade. Consulte detalhes em [Monitoramento do ponto de extremidade do Gerenciador de Tráfego](traffic-manager-monitoring.md#endpoint-and-profile-status). Quando o serviço subjacente é interrompido, o Gerenciador de Tráfego não executa verificações de integridade do ponto de extremidade nem direciona o tráfego para o ponto de extremidade. Nenhum evento de cobrança do Gerenciador de Tráfego ocorre para a instância parada. Quando o serviço é reiniciado, a cobrança é retomada e o ponto de extremidade está qualificado para receber tráfego. Essa detecção não se aplica aos pontos de extremidade PublicIpAddress.
 
 ## <a name="external-endpoints"></a>pontos de extremidade externos
 
 Pontos de extremidade externos são usados para qualquer um dos endereços IPv4/IPv6, FQDNs, ou para serviços fora do Azure. O uso dos pontos de extremidade nos endereços IPv4/IPv6 permite que o gerenciador de tráfego verifique a integridade dos pontos de extremidade, sem exigir um nome DNS para eles. Como resultado, o Gerenciador de Tráfego pode responder a consultas com registros A/AAAA ao retornar o ponto de extremidade em uma resposta. Os serviços fora do Azure podem incluir um serviço hospedado localmente ou em um provedor diferente. Os pontos de extremidade externos podem ser usados individualmente ou combinados com os Pontos de Extremidade do Azure no mesmo perfil do Gerenciador de Tráfego, exceto para os pontos de extremidade especificados como endereços IPv4 ou IPv6, que só podem ser pontos de extremidade externos. Combinar pontos de extremidade do Azure com pontos de extremidade Externos permite vários cenários:
 
 * Fornecer redundância aumentada para um aplicativo local existente, em um modelo de failover ativo-ativo ou ativo-passivo usando o Azure. 
-* Rotear o tráfego para os pontos de extremidade que não tenham um nome DNS associado a eles. Além disso, diminuir a latência geral da pesquisa de DNS, removendo a necessidade de executar uma segunda consulta DNS para obter um endereço IP de um nome DNS retornado. 
+* Rotear o tráfego para os pontos de extremidade que não tenham um nome DNS associado a eles. Além disso, diminuir a latência geral da pesquisa de DNS, removendo a necessidade de executar uma segunda consulta DNS para obter um endereço IP de um nome DNS retornado.
 * Reduzir a latência de aplicativo para os usuários em todo o mundo, estendendo um aplicativo local existente para locais geográficos adicionais no Azure. Para obter mais informações, consulte [Roteamento de tráfego por “Desempenho” do Gerenciador de Tráfego](traffic-manager-routing-methods.md#performance).
 * Fornecer capacidade adicional para um aplicativo local existente, seja continuamente ou como uma solução de “intermitência para a nuvem”, com o intuito de atender um pico de demanda usando o Azure.
 

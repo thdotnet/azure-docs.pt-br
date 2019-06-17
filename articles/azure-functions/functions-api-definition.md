@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alkarche
 ms.openlocfilehash: 6d11961f06a75341e633c7a8963e6b83ed37cf13
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61341615"
 ---
 # <a name="openapi-20-metadata-support-in-azure-functions-preview"></a>Suporte aos metadados de OpenAPI 2.0 no Azure Functions (versão prévia)
@@ -36,7 +36,7 @@ Você pode definir todas as configurações de OpenAPI na página **Definição 
 > [!NOTE]
 > O recurso de definição de API de função não tem suporte no tempo de execução beta no momento.
 
-Para habilitar a geração de uma definição de OpenAPI hospedada e uma definição de início rápido, defina **Origem de definição da API** para **Função (Versão prévia)**. **URL Externa** permite que sua função use uma definição de OpenAPI que é hospedada em outro lugar.
+Para habilitar a geração de uma definição de OpenAPI hospedada e uma definição de início rápido, defina **Origem de definição da API** para **Função (Versão prévia)** . **URL Externa** permite que sua função use uma definição de OpenAPI que é hospedada em outro lugar.
 
 ## <a name="generate-definition"></a>Gerar um esqueleto de Swagger dos metadados de sua função
 Um modelo pode ajudar você a começar a gravar sua primeira definição de OpenAPI. O recurso de modelo de definição cria uma definição de OpenAPI esparsa usando todos os metadados no arquivo function.json para cada uma de suas funções de gatilho HTTP. Você precisará preencher mais informações sobre sua API na [especificação de OpenAPI](https://swagger.io/specification/), como modelos de solicitação e resposta.

@@ -17,12 +17,12 @@ ms.date: 10/03/2018
 ms.author: joflore
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37c63e32f1ee9c404e8b84a6eb17bc6eec30a761
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 2b4f8caf03aad339cea3c3fcc732fc1af6086ea7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65956940"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67108895"
 ---
 # <a name="what-is-azure-active-directory-identity-protection-refreshed"></a>O que é Azure Active Directory Identity Protection (atualizado)?
 
@@ -56,7 +56,7 @@ Para responder a essas ameaças, o Azure AD Identity Protection capacita você p
 
  
 
-O Azure AD Identity Protection é um recurso do Azure Active Directory Premium P2 que permite que você configure políticas para responder automaticamente quando a identidade de um usuário é comprometida ou quando alguém diferente do proprietário da conta está tentando entrar usando sua identidade. Essas políticas, entre outros controles de acesso condicional fornecidos pelo Azure AD, podem bloquear o acesso ou iniciar automaticamente as ações de mitigação, como a redefinição de senha ou a imposição da autenticação multifator. Além disso, o Identity Protection fornece recursos de monitoramento e relatórios para obter insights mais aprofundados sobre o risco e possíveis comprometimentos na sua organização. 
+O Azure AD Identity Protection é um recurso do Azure Active Directory Premium P2 que permite que você configure políticas para responder automaticamente quando a identidade de um usuário é comprometida ou quando alguém diferente do proprietário da conta está tentando entrar usando sua identidade. Essas políticas, além de outros controles de acesso condicional fornecidos pelo Azure AD, ou podem bloquear automaticamente o acesso ou ações de mitigação Iniciar, como a redefinição de senha ou a imposição de autenticação multifator. Além disso, o Identity Protection fornece recursos de monitoramento e relatórios para obter insights mais aprofundados sobre o risco e possíveis comprometimentos na sua organização. 
 
 >[!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RWsS6Q]
 
@@ -67,7 +67,7 @@ O Azure AD Identity Protection detecta os seguintes eventos de risco:
 
  
 
-| Tipo de evento de risco | Descrição | Tipo de detecção |
+| Tipo de evento de risco | DESCRIÇÃO | Tipo de detecção |
 | ---             | ---         | ---            |
 | Viagem atípica | Entrada de uma localização atípica com base nas entradas recentes do usuário. | Off-line |
 | Endereço IP anônimo | Entrada de um endereço IP anônimo (por exemplo: navegador Tor, VPNs para anonimato). | Tempo real |
@@ -85,7 +85,7 @@ A Proteção de identidade se baseia em dois tipos de risco:
 
 - Risco de entrada
 
-- Risco de usuário
+- Risco do usuário
 
 ### <a name="sign-in-risk"></a>Risco de entrada
 
@@ -93,9 +93,9 @@ Um risco de entrada representa a probabilidade de uma determinada solicitação 
 
 Há duas avaliações do risco de entrada: 
 
-- **Risco de entrada (em tempo real)**: o risco de entrada (em tempo real) se baseia em todas as detecções em tempo real que disparam durante o processamento da entrada.  
+- **Risco de entrada (em tempo real)** : o risco de entrada (em tempo real) se baseia em todas as detecções em tempo real que disparam durante o processamento da entrada.  
 
-- **Risco de entrada (agregação)**: o risco de entrada (agregação) é o risco total de uma entrada. Ele é calculado por um modelo de machine learning que considera:
+- **Risco de entrada (agregação)** : o risco de entrada (agregação) é o risco total de uma entrada. Ele é calculado por um modelo de machine learning que considera:
 
     - Detecções em tempo real (descritas acima)
     
@@ -104,7 +104,7 @@ Há duas avaliações do risco de entrada:
     - Todos os outros recursos de entrada
 
 
-### <a name="user-risk"></a>Risco de usuário
+### <a name="user-risk"></a>Risco do usuário
 
 Um risco do usuário representa a probabilidade de uma determinada identidade estar comprometida. 
 
@@ -153,7 +153,7 @@ Vamos ver um exemplo de um funcionário da Contoso.
 
 2. Azure AD detecta que o funcionário está se conectando de um endereço IP anônimo, Disparando um nível de risco de entrada médio. 
 
-3. O funcionário é desafiado por um prompt de MFA, porque o administrador de TI da Contoso configurou a política de acesso condicional de risco de entrada de proteção de identidade. A política exige o MFA para um risco de entrada médio ou mais alto. 
+3. O funcionário é desafiado por um prompt de MFA, porque o administrador de TI da Contoso configurou o risco de entrada o Identity Protection política de acesso condicional. A política exige o MFA para um risco de entrada médio ou mais alto. 
 
 4. O funcionário passa o prompt de MFA e acessa o Exchange Online, e seu nível de risco do usuário não é alterado. 
 

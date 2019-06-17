@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 08/17/2017
 ms.author: jeconnoc
 ms.openlocfilehash: cd0bceae770182e778410d8065d34dfeed055acc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61433046"
 ---
 # <a name="build-a-nodejs-chat-application-with-socketio-on-an-azure-cloud-service"></a>Criar um aplicativo de bate-papo Node.js com Socket.IO em um serviço de nuvem do Azure
@@ -74,7 +74,7 @@ Para este projeto, usaremos o exemplo de chat do repositório [repositório Sock
 Antes de testar o aplicativo no emulador do Microsoft Azure, é necessário fazer algumas modificações secundárias. Execute as seguintes etapas para o arquivo server.js:
 
 1. Abra o arquivo **server.js** no Visual Studio ou em qualquer editor de texto.
-2. Encontre a seção **Module dependencies** no início do server.js e altere a linha que contém **sio = require('..//..//lib//socket.io')** para **sio = require('socket.io')**, como mostrado abaixo:
+2. Encontre a seção **Module dependencies** no início do server.js e altere a linha que contém **sio = require('..//..//lib//socket.io')** para **sio = require('socket.io')** , como mostrado abaixo:
    
        var express = require('express')
          , stylus = require('stylus')
@@ -113,7 +113,7 @@ Depois de salvar as alterações no **server.js**, use as seguintes etapas para 
    > 
    > Reinstale o AzureAuthoringTools v 2.7.1 e o AzureComputeEmulator v 2.7 – Verifique se a que versão corresponde.
 
-2. Abra um navegador e navegue até **http://127.0.0.1**.
+2. Abra um navegador e navegue até **http://127.0.0.1** .
 3. Quando a janela do navegador for aberta, digite um apelido e, em seguida, pressione enter.
    Isso permitirá que você poste mensagens usando um apelido específico. Para testar a funcionalidade de vários usuários, abra janelas adicionais do navegador usando a mesma URL e digite apelidos diferentes.
    
@@ -121,7 +121,7 @@ Depois de salvar as alterações no **server.js**, use as seguintes etapas para 
 4. Depois de testar o aplicativo, pare o emulador, emitindo o comando a seguir:
    
        PS C:\node\chatapp\WorkerRole1> Stop-AzureEmulator
-5. Para implantar o aplicativo no Azure, use o cmdlet **Publish-AzureServiceProject** . Por exemplo: 
+5. Para implantar o aplicativo no Azure, use o cmdlet **Publish-AzureServiceProject** . Por exemplo:
    
        PS C:\node\chatapp\WorkerRole1> Publish-AzureServiceProject -ServiceName mychatapp -Location "East US" -Launch
    

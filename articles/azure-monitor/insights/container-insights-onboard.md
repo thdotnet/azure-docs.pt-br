@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 04/25/2019
 ms.author: magoedte
 ms.openlocfilehash: 5e149fa96e0a62656804906b52adf10273321d17
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65521909"
 ---
 # <a name="how-to-enable-azure-monitor-for-containers"></a>Como habilitar o Azure Monitor para contêineres  
@@ -55,7 +55,7 @@ Quando uma nova versão do agente é lançada, ele é atualizado automaticamente
 
 Habilitar o Azure Monitor para contêineres usando um dos métodos a seguir, descritos na tabela a seguir.
 
-| Estado de implantação | Método | Descrição | 
+| Estado de implantação | Método | DESCRIÇÃO | 
 |------------------|--------|-------------| 
 | Novo cluster do AKS | [Criar um cluster usando a CLI do Azure](../../aks/kubernetes-walkthrough.md#create-aks-cluster)| Você pode habilitar o monitoramento de um novo cluster AKS que você cria com a CLI do Azure. | 
 | | [Criar o cluster usando o Terraform](container-insights-enable-new-cluster.md#enable-using-terraform)| Você pode habilitar o monitoramento de um novo cluster AKS que você cria usando a ferramenta de código-fonte aberto Terraform. | 

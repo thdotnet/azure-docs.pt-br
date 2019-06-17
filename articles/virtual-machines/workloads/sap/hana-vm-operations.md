@@ -13,15 +13,15 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 06/05/2019
+ms.date: 06/10/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 156bb4cbf43dc71627f9db785dba574f25139285
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.openlocfilehash: b1591f4f1e96bbb2bffb80a2c652963faa5dca5b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66733837"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67077652"
 ---
 # <a name="sap-hana-infrastructure-configurations-and-operations-on-azure"></a>Configurações e operações de infraestrutura do SAP HANA no Azure
 Este documento fornece orientação para configurar a infraestrutura do Azure e operar sistemas SAP HANA que são implantados em máquinas virtuais nativas (VMs) do Azure. O documento também inclui informações de configuração de expansão para a SKU de VM M128s do SAP HANA. Este documento não pretende substituir a documentação padrão do SAP, que inclui o seguinte conteúdo:
@@ -66,6 +66,11 @@ Implante as VMs no Azure usando:
 - A CLI do Azure.
 
 Você também pode implantar uma plataforma completa de SAP HANA instalada nos serviços de VM do Azure por meio da [plataforma SAP Cloud](https://cal.sap.com/). O processo de instalação está descrito em [Implantar SAP S/4HANA ou BW/4HANA no Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/cal-s4h) ou com a automação liberada [aqui](https://github.com/AzureCAT-GSI/SAP-HANA-ARM).
+
+>[!IMPORTANT]
+> Para usar M208xx_v2 VMs, você precisa ter cuidado para selecionar a imagem do SUSE Linux na Galeria de imagens de VM do Azure. Para ler os detalhes, leia o artigo [tamanhos de máquina virtual com otimização de memória](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-memory#mv2-series). Red Hat ainda não é suportado para o uso do HANA em VMs da família Mv2. Planejamento atual é fornecer suporte para versões do Red Hat executar HANA na família VM Mv2 em Q4/CY2019 
+> 
+
 
 ### <a name="storage-configuration-for-sap-hana"></a>Configuração de armazenamento para SAP HANA
 Para configurações de armazenamento e tipos de armazenamento a ser usado com o SAP HANA no Azure, leia o documento [configurações de armazenamento de máquina virtual do Azure do SAP HANA](./hana-vm-operations-storage.md)

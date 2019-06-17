@@ -11,10 +11,10 @@ ms.custom: vs-azure
 ms.topic: article
 ms.date: 04/25/2019
 ms.openlocfilehash: fb071ac056355a056e5333284808417a258515de
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65467444"
 ---
 # <a name="build-your-first-serverless-app-with-azure-logic-apps-and-azure-functions---visual-studio"></a>Construir seu primeiro aplicativo sem servidor com os Aplicativos Lógicos do Azure e o Azure Functions - Visual Studio
@@ -88,7 +88,7 @@ Para começar, crie um [projeto do Grupo de Recursos do Azure](../azure-resource
    > [!TIP]
    > Em cenários em que você não deseja pré-implantar sua solução em um grupo de recursos do Azure, você pode usar o espaço em branco **aplicativo lógico** modelo, que simplesmente cria um aplicativo lógico vazio.
 
-1. Dos **Mostrar modelos deste local** lista, selecione **guia de início rápido do Azure (github.com/Azure/azure-quickstart-templates)**.
+1. Dos **Mostrar modelos deste local** lista, selecione **guia de início rápido do Azure (github.com/Azure/azure-quickstart-templates)** .
 
 1. Na caixa de pesquisa, digite "aplicativo lógico" como filtro. Nos resultados, selecione esse modelo: **101-logic-app-and-function-app**
 
@@ -111,7 +111,7 @@ Antes de abrir o aplicativo lógico com o Designer do Aplicativo Lógico no Visu
 
 1. Se ainda não estiver selecionado, selecione sua assinatura do Azure e o grupo de recursos para o qual você quer implantar. Escolha **Implantar**.
 
-   ![Configurações da Implantação](./media/logic-apps-serverless-get-started-vs/deploy-to-resource-group.png)
+   ![Configurações de implantação](./media/logic-apps-serverless-get-started-vs/deploy-to-resource-group.png)
 
 1. Se a caixa **Editar Parâmetros** for exibida, forneça o nome do recurso a ser usado para o aplicativo lógico e o aplicativo de funções do Azure e depois salve as configurações. Use um nome globalmente exclusivo para o aplicativo de funções.
 

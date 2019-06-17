@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 1/18/2019
 ms.author: victorh
 ms.openlocfilehash: 5c098c6c22b079d586c0bd808df9af4a737c17a8
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62096226"
 ---
 # <a name="use-azure-dns-to-provide-custom-domain-settings-for-an-azure-service"></a>Usar o DNS do Azure para fornecer as configurações de domínio personalizadas para um serviço do Azure
@@ -66,7 +66,7 @@ Navegue para a sua zona DNS e clique em **+ Conjunto de registros**. Preencha as
 |Propriedade  |Valor  |DESCRIÇÃO  |
 |---------|---------|---------|
 |NOME     | mywebserver        | Esse valor junto com o rótulo de nome de domínio é o FQDN para o nome de domínio personalizado.        |
-|Type     | O         | Use um registro A, uma vez que o recurso é um endereço IP.        |
+|Type     | O        | Use um registro A, uma vez que o recurso é um endereço IP.        |
 |TTL     | 1        | 1 é usado por 1 hora        |
 |Unidade de TTL     | Horas        | Horas são usadas como a medida de tempo         |
 |Endereço IP     | `<your ip address>`       | O endereço IP público.|

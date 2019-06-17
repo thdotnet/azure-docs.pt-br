@@ -11,17 +11,17 @@ ms.date: 10/08/2018
 ms.author: anjangsh
 ms.reviewer: jrasnick
 ms.openlocfilehash: 5041458fdc3c6a49c59f2c4c476db71098531419
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65912162"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-september-2018"></a>O que há de novo no SQL Data Warehouse do Azure? Setembro de 2018
 O SQL Data Warehouse do Azure recebe melhorias continuamente. Este artigo descreve os novos recursos e alterações que foram introduzidos em setembro de 2018.
 
 ## <a name="new-lower-entry-point-for-sql-data-warehouse-gen2"></a>Novo ponto de entrada inferior para o SQL Data Warehouse Gen2
-Em abril de 2018, a [Microsoft anunciou](https://azure.microsoft.com/blog/turbocharge-cloud-analytics-with-azure-sql-data-warehouse/) o SQL Data Warehouse do Azure Gen2 que oferece 5x o desempenho, 5x a escala de computação, 4x a simultaneidade e armazenamento ilimitado. Conforme observado no [Data Warehouse no Benchmark da nuvem](https://gigaom.com/report/data-warehouse-in-the-cloud-benchmark/) da Gigaom, o SQL Data Warehouse Gen2 **supera o Amazon Redshift em 42%**.
+Em abril de 2018, a [Microsoft anunciou](https://azure.microsoft.com/blog/turbocharge-cloud-analytics-with-azure-sql-data-warehouse/) o SQL Data Warehouse do Azure Gen2 que oferece 5x o desempenho, 5x a escala de computação, 4x a simultaneidade e armazenamento ilimitado. Conforme observado no [Data Warehouse no Benchmark da nuvem](https://gigaom.com/report/data-warehouse-in-the-cloud-benchmark/) da Gigaom, o SQL Data Warehouse Gen2 **supera o Amazon Redshift em 42%** .
 
 A Gen2 agora está geralmente disponível em um ponto de entrada mais baixo do DWU500c, permitindo que você execute um data warehouse ou ambientes de teste / teste menores com todas as melhorias de serviço mais recentes. O novo ponto de entrada mantém todos os recursos da Gen2, incluindo [Cache adaptável](https://azure.microsoft.com/blog/adaptive-caching-powers-azure-sql-data-warehouse-performance-gains/), [Lighting Fast Data Shuffling](https://azure.microsoft.com/blog/lightning-fast-query-performance-with-azure-sql-data-warehouse/) e suporte a [data warehouse em tempo real](https://azure.microsoft.com/blog/enabling-real-time-data-warehousing-with-azure-sql-data-warehouse/).
 
@@ -99,7 +99,7 @@ Finalmente, a melhoria reduz a execução geral de instruções que são executa
 
 ## <a name="bug-fixes"></a>Correções de bug
 
-| Title | Descrição |
+| Title | DESCRIÇÃO |
 |:---|:---|
 | **Corrigir ao criar estatísticas sobre distribuições para restrições exclusivas** | Esta correção aborda um erro que os usuários encontram ao executar UPDATE STATISTICS com apenas a Tabela especificada, quando a tabela possui uma restrição exclusiva definida. |
 | **Corrigir ao compilar consultas em tabelas externas** | Essa correção resolve um defeito que afetou o tempo de compilação para consultas envolvendo tabelas externas.|

@@ -8,10 +8,10 @@ ms.author: mbaldwin
 ms.date: 03/12/2019
 ms.custom: seodec18
 ms.openlocfilehash: 376df206d75780a4b814873d72d9c56554f6b0b8
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65956604"
 ---
 # <a name="enable-azure-disk-encryption-for-windows-iaas-vms"></a>Habilitar Azure Disk Encryption para VMs de IaaS do Windows
@@ -128,7 +128,7 @@ Use o comando [az vm encryption enable](/cli/azure/vm/encryption#az-vm-encryptio
 
 A tabela a seguir lista os parâmetros de modelo do Resource Manager existentes para as VMs em execução ou existentes:
 
-| Parâmetro | Descrição |
+| Parâmetro | DESCRIÇÃO |
 | --- | --- |
 | vmName | Nome da VM para executar a operação de criptografia. |
 | keyVaultName | Nome do cofre de chaves no qual a chave do BitLocker deve ser carregada. É possível obtê-lo, usando o cmdlet `(Get-AzKeyVault -ResourceGroupName <MyKeyVaultResourceGroupName>). Vaultname` ou o comando `az keyvault list --resource-group "MyKeyVaultResourceGroup"` da CLI do Azure|

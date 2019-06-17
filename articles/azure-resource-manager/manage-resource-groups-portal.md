@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: jgao
 ms.openlocfilehash: 559c1874c119eabef2c35a954961c1e669df3c06
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65507222"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-the-azure-portal"></a>Gerenciar grupos de recursos do Azure Resource Manager usando o portal do Azure
@@ -31,7 +31,7 @@ Outros artigos sobre como gerenciar grupos de recursos:
 
 ## <a name="what-is-a-resource-group"></a>O que é um grupo de recursos
 
-Um grupo de recursos é um contêiner que armazena recursos relacionados para uma solução do Azure. O grupo de recursos pode incluir todos os recursos para a solução ou apenas os recursos que você deseja gerenciar como um grupo. Você decide como deseja alocar recursos para grupos de recursos com base no que faz mais sentido para sua organização. Em geral, adicione recursos que compartilham o mesmo ciclo de vida no mesmo grupo de recursos, para que você possa implantar, atualizar e excluí-los como um grupo facilmente.
+Um grupo de recursos é um contêiner que mantém os recursos relacionados a uma solução do Azure. O grupo de recursos pode incluir todos os recursos para a solução ou apenas os recursos que você deseja gerenciar como um grupo. Você decide como deseja alocar recursos para grupos de recursos com base no que faz mais sentido para sua organização. Em geral, adicione recursos que compartilham o mesmo ciclo de vida no mesmo grupo de recursos, para que você possa implantar, atualizar e excluí-los como um grupo facilmente.
 
 O grupo de recursos armazena metadados sobre os recursos. Portanto, quando você especifica um local para o grupo de recursos, especifica onde os metadados são armazenados. Por motivos de conformidade, você precisa fazer com que os dados sejam armazenados em determinada região.
 
@@ -57,7 +57,7 @@ O grupo de recursos armazena metadados sobre os recursos. Quando você especific
 
     ![Vá para o grupo de recursos](./media/manage-resource-groups-portal/manage-resource-groups-add-group-go-to-resource-group.png)
 
-## <a name="list-resource-groups"></a>Listar grupos de recursos
+## <a name="list-resource-groups"></a>Listar os grupos de recursos
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
 2. Para listar os grupos de recursos, selecione **grupos de recursos**

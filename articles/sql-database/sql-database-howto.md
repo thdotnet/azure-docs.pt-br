@@ -12,12 +12,12 @@ ms.author: jovanpop
 ms.reviewer: sstein
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 7db9c6400ac7d235153a59965e34e30d9b809a81
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: cd2406bb4825ac295a6f9a3a18ba466cdc20c55d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60338800"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67120865"
 ---
 # <a name="how-to-use-azure-sql-database"></a>Como usar o Banco de Dados SQL do Azure
 
@@ -58,7 +58,7 @@ Nesta seção, é possível encontrar vários guias, scripts e explicações que
 ## <a name="configure-features"></a>Configurar recursos
 
 - [Configurar a autenticação do Azure AD](sql-database-aad-authentication-configure.md)
-- [Configurar acesso condicional](sql-database-conditional-access.md)
+- [Configurar o acesso condicional](sql-database-conditional-access.md)
 - [Autenticação multifator do AAD](sql-database-ssms-mfa-authentication.md)
 - [Configurar autenticação multifator](sql-database-ssms-mfa-authentication-configure.md)
 - [Configurar a política de retenção temporal](sql-database-temporal-tables-retention-policy.md)
@@ -94,7 +94,7 @@ Nesta seção, é possível encontrar vários guias, scripts e explicações que
 - [Video Indexer de SaaS](saas-tenancy-video-index-wingtip-brk3120-20171011.md)
 - [Segurança de aplicativo SaaS](saas-tenancy-elastic-tools-multi-tenant-row-level-security.md)
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - Saiba mais sobre [Guias de instruções para Instâncias Gerenciadas](sql-database-howto-managed-instance.md).
 - Saiba mais sobre [Guias de instruções para bancos de dados individuais](sql-database-howto-single-database.md).

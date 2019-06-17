@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
 ms.openlocfilehash: fd8e886a78d0689ca60d8ea7c4d16639c81d5733
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65602737"
 ---
 # <a name="aggregations-in-azure-monitor-log-queries"></a>Agregações nas consultas de log do Azure Monitor
@@ -29,10 +29,10 @@ ms.locfileid: "65602737"
 
 Este artigo descreve as funções de agregação nas consultas de log do Azure Monitor que oferecem maneiras úteis de analisar seus dados. These functions all work with the `summarize` operator that produces a  table with aggregated results of the input table.
 
-## <a name="counts"></a>Contagens
+## <a name="counts"></a>Counts
 
-### <a name="count"></a>Contagem
-Conte o número de linhas no conjunto de resultados depois que os filtros forem aplicados. O exemplo a seguir retorna o número total de linhas na tabela _Perf_ dos últimos 30 minutos. O resultado é retornado em uma coluna chamada *count_*, a menos que você atribua um nome específico a ele:
+### <a name="count"></a>count
+Conte o número de linhas no conjunto de resultados depois que os filtros forem aplicados. O exemplo a seguir retorna o número total de linhas na tabela _Perf_ dos últimos 30 minutos. O resultado é retornado em uma coluna chamada *count_* , a menos que você atribua um nome específico a ele:
 
 
 ```Kusto

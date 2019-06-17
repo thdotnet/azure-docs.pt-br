@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 03/26/2019
 ms.author: mlottner
 ms.openlocfilehash: 311a867c863cbd72292d8e34b4f7abdb949b12c6
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65198453"
 ---
 # <a name="tutorial-configure-security-agents"></a>Tutorial: Configurar agentes de segurança
@@ -112,7 +112,7 @@ Valores padrão estão disponíveis no esquema adequado no [Github](https://aka.
 |highPriorityMessageFrequency|Obrigatório: false |Valores válidos:  Duração em formato ISO 8601 |Valor padrão: PT7M |Tempo máximo antes das mensagens de alta prioridade são enviados.|
 |lowPriorityMessageFrequency |Obrigatório: false|Valores válidos:  Duração em formato ISO 8601 |Valor padrão: PT5H |Tempo máximo antes das mensagens de baixa prioridade são enviados.| 
 |snapshotFrequency |Exigir: false|Valores: duração válido no formato ISO 8601 |Valor padrão PT13H |Intervalo de tempo para a criação de instantâneos de status do dispositivo.| 
-|maxLocalCacheSizeInBytes |Obrigatório: false |Valores válidos:  |Valor padrão: 2560000, maior que 8192 | Armazenamento máximo (em bytes) permitido para o cache de mensagens de um agente. Quantidade máxima de espaço permitido para armazenar mensagens do dispositivo antes que as mensagens são enviadas.| 
+|maxLocalCacheSizeInBytes |Obrigatório: false |Valores válidos: |Valor padrão: 2560000, maior que 8192 | Armazenamento máximo (em bytes) permitido para o cache de mensagens de um agente. Quantidade máxima de espaço permitido para armazenar mensagens do dispositivo antes que as mensagens são enviadas.| 
 |maxMessageSizeInBytes |Obrigatório: false |Valores válidos:  Um número positivo maior que 8192, menos 262144 |Valor padrão: 204800 |Máximo tamanho permitido de um agente de mensagem de nuvem. Essa configuração controla a quantidade máxima de dados enviada em cada mensagem. |
 |eventPriority${EventName} |Obrigatório: false |Valores válidos:  Alta, baixa, desativado |Valores padrão: |Prioridade de cada agente gerou o evento | 
 

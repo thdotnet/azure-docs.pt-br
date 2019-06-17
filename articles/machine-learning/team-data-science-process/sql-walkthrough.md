@@ -12,10 +12,10 @@ ms.date: 01/29/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 578f7a01c22bd5aafd4e4ac08c9f5ab78e340a34
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65606522"
 ---
 # <a name="the-team-data-science-process-in-action-using-sql-server"></a>O Processo de Ciência de Dados de Equipe em ação: usando o SQL Server
@@ -376,7 +376,7 @@ Da mesma forma, é possível verificar a relação entre **rate\_code** e **trip
 ![Plotar nº 8][8]
 
 ### <a name="sub-sampling-the-data-in-sql"></a>Redução de amostragem dos dados no SQL
-Ao preparar os dados para a criação de modelo no [Azure Machine Learning Studio](https://studio.azureml.net), você pode decidir se a **consulta SQL deve ser usada diretamente no módulo Importar Dados** ou se mantém os dados de exemplo projetados em uma nova tabela, que pode se usada no módulo [Importar Dados][import-data] com um simples **SELECT * FROM <nome\_da\_nova\_tabela>**.
+Ao preparar os dados para a criação de modelo no [Azure Machine Learning Studio](https://studio.azureml.net), você pode decidir se a **consulta SQL deve ser usada diretamente no módulo Importar Dados** ou se mantém os dados de exemplo projetados em uma nova tabela, que pode se usada no módulo [Importar Dados][import-data] com um simples **SELECT * FROM <nome\_da\_nova\_tabela>** .
 
 Nesta seção, criaremos uma nova tabela para armazenar os dados amostrados e engenhados. Um exemplo de uma consulta direta de SQL para criação de modelos é fornecido na seção [Exploração de dados e engenharia de recursos no SQL Server](#dbexplore) .
 

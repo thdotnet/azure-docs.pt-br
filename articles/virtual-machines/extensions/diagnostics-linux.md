@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 12/13/2018
 ms.author: agaiha
 ms.openlocfilehash: e43ba83581b6ce012c619036317361a7c1c0bf4f
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64710400"
 ---
 # <a name="use-linux-diagnostic-extension-to-monitor-metrics-and-logs"></a>Use a Extensão de Diagnóstico Linux para monitorar as métricas e os logs
@@ -169,8 +169,8 @@ Esta seção opcional define os destinos adicionais para os quais a extensão en
 
 Elemento | Value
 ------- | -----
-Nome | Uma cadeia de caracteres usada para se referir a esse coletor em outro lugar na configuração da extensão.
-Tipo | O tipo de coletor que está sendo definido. Determina os outros valores (se houver) em instâncias desse tipo.
+name | Uma cadeia de caracteres usada para se referir a esse coletor em outro lugar na configuração da extensão.
+type | O tipo de coletor que está sendo definido. Determina os outros valores (se houver) em instâncias desse tipo.
 
 A versão 3.0 da Extensão de Diagnóstico do Linux dá suporte a dois tipos de coletores: EventHub e JsonBlob.
 
@@ -257,7 +257,7 @@ Elemento | Value
 eventVolume | (opcional) Controla o número de partições criadas dentro da tabela de armazenamento. Pode ser `"Large"`, `"Medium"` ou `"Small"`. Se esse campo não for especificado, o valor padrão será `"Medium"`.
 sampleRateInSeconds | (opcional) O intervalo padrão entre a coleta de métricas brutas (não agregadas). A menor taxa de amostra com suporte é de 15 segundos. Se esse campo não for especificado, o valor padrão será `15`.
 
-#### <a name="metrics"></a>Métricas
+#### <a name="metrics"></a>metrics
 
 ```json
 "metrics": {
@@ -271,7 +271,7 @@ sampleRateInSeconds | (opcional) O intervalo padrão entre a coleta de métricas
 
 Elemento | Value
 ------- | -----
-resourceId | A ID de recurso do Azure Resource Manager da VM ou conjunto de dimensionamento de máquinas virtuais à qual pertence a VM. Essa configuração também deverá ser especificada se algum coletor JsonBlob for usado na configuração.
+ResourceId | A ID de recurso do Azure Resource Manager da VM ou conjunto de dimensionamento de máquinas virtuais à qual pertence a VM. Essa configuração também deverá ser especificada se algum coletor JsonBlob for usado na configuração.
 scheduledTransferPeriod | A frequência na qual as métricas agregadas serão computadas e transferidas para as Métricas do Azure, expressas como um intervalo de tempo de IS 8601. O menor período de transferência é 60 segundos, ou seja, PT1M. Você deve especificar pelo menos um scheduledTransferPeriod.
 
 As amostras de métricas especificados na seção performanceCounters são coletados a cada 15 segundos ou na taxa de amostra explicitamente definidas para o contador. Se várias frequências scheduledTransferPeriod aparecerem (como no exemplo), cada agregação será calculada independentemente.
@@ -312,7 +312,7 @@ Essa seção opcional controla a coleção de métricas. As amostras brutas são
 Elemento | Value
 ------- | -----
 coletores | (opcional) Uma lista separada por vírgulas de nomes de coletores para os quais o LAD envia resultados de métricas agregadas. Todas as métricas agregadas são publicadas em cada coletor listado. Veja [sinksConfig](#sinksconfig). Exemplo: `"EHsink1, myjsonsink"`.
-tipo | Identifica o provedor real da métrica.
+type | Identifica o provedor real da métrica.
 class | Junto com "counter", identifica a métrica específica dentro do namespace do provedor.
 contador | Junto com "class", identifica a métrica específica dentro do namespace do provedor.
 counterSpecifier | Identifica a métrica específica dentro do namespace de Métricas do Azure.
@@ -388,7 +388,7 @@ Elemento | Value
 ------- | -----
 namespace | (opcional) O namespace OMI dentro do qual a consulta deve ser executada. Se não for especificado, o valor padrão será "root/scx", implementado pelos [Provedores de várias plataformas do System Center](https://scx.codeplex.com/wikipage?title=xplatproviders&referringTitle=Documentation).
 query | A consulta OMI a ser executada.
-tabela | (opcional) A tabela de armazenamento do Azure, na conta de armazenamento designada (veja [Configurações protegidas](#protected-settings)).
+table | (opcional) A tabela de armazenamento do Azure, na conta de armazenamento designada (veja [Configurações protegidas](#protected-settings)).
 frequência | (opcional) O número de segundos entre a execução da consulta. O valor padrão é 300 (5 minutos); o valor mínimo é de 15 segundos.
 coletores | (opcional) Uma lista separada por vírgulas de nomes de coletores adicionais para os quais os resultados brutos de métricas de amostras devem ser publicados. Nenhuma agregação desses exemplos brutos é calculada pela extensão ou Métricas do Azure.
 
@@ -411,7 +411,7 @@ Controla a captura de arquivos de log. O LAD captura novas linhas de texto, como
 Elemento | Value
 ------- | -----
 file | O nome de caminho completo do arquivo de log a ser observado e capturado. O nome do caminho deve nomear um único arquivo; ele não pode nomear um diretório ou conter curingas.
-tabela | (opcional) A tabela de armazenamento do Azure, na conta de armazenamento designada (conforme especificado na configuração protegida), na qual novas linhas depois do "final" do arquivo são gravadas.
+table | (opcional) A tabela de armazenamento do Azure, na conta de armazenamento designada (conforme especificado na configuração protegida), na qual novas linhas depois do "final" do arquivo são gravadas.
 coletores | (opcional) Uma lista separada por vírgulas de nomes de coletores adicionais para os quais as linhas de log são enviadas.
 
 As informações de "tabela" ou "coletores" ou de ambos devem ser especificadas.

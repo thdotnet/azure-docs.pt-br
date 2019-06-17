@@ -13,12 +13,12 @@ ms.topic: reference
 ms.date: 09/08/2018
 ms.author: cshoe
 ms.custom: ''
-ms.openlocfilehash: 3b4ed6d1ba83e2adb96bcfac986381dccbbef56f
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: 0a202621a9da031815ebbff3b121ea7f5e1eccfe
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65416176"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67062178"
 ---
 # <a name="timer-trigger-for-azure-functions"></a>Gatilho de temporizador para o Azure Functions 
 
@@ -45,8 +45,9 @@ Consulte o exemplo específico a um idioma:
 * [C#](#c-example)
 * [Script do C# (.csx)](#c-script-example)
 * [F#](#f-example)
-* [JavaScript](#javascript-example)
 * [Java](#java-example)
+* [JavaScript](#javascript-example)
+* [Python](#python-example)
 
 ### <a name="c-example"></a>Exemplo de C#
 
@@ -117,6 +118,21 @@ let Run(myTimer: TimerInfo, log: ILogger ) =
     log.LogInformation(sprintf "F# function executed at %s!" now)
 ```
 
+### <a name="java-example"></a>Exemplo do Java
+
+A função de exemplo a seguir é disparada e executada a cada cinco minutos. A anotação `@TimerTrigger` na função define o agendamento usando o mesmo formato de cadeia de caracteres que as [expressões CRON](https://en.wikipedia.org/wiki/Cron#CRON_expression).
+
+```java
+@FunctionName("keepAlive")
+public void keepAlive(
+  @TimerTrigger(name = "keepAliveTrigger", schedule = "0 *&#47;5 * * * *") String timerInfo,
+      ExecutionContext context
+ ) {
+     // timeInfo is a JSON string, you can deserialize it to an object using your favorite JSON library
+     context.getLogger().info("Timer is triggered: " + timerInfo);
+}
+```
+
 ### <a name="javascript-example"></a>Exemplo de JavaScript
 
 O exemplo a seguir mostra uma associação de gatilho de temporizador em um arquivo *function.json* e uma [função JavaScript](functions-reference-node.md) que usa a associação. A função grava um log que indica se esta chamada de função deve-se a uma ocorrência de agendamento ausente. Um [objeto timer](#usage) é passado para a função.
@@ -148,19 +164,37 @@ module.exports = function (context, myTimer) {
 };
 ```
 
-### <a name="java-example"></a>Exemplo do Java
+### <a name="python-example"></a>Exemplo de Python
 
-A função de exemplo a seguir é disparada e executada a cada cinco minutos. A anotação `@TimerTrigger` na função define o agendamento usando o mesmo formato de cadeia de caracteres que as [expressões CRON](https://en.wikipedia.org/wiki/Cron#CRON_expression).
+O exemplo a seguir usa um gatilho de temporizador associação cuja configuração é descrita a *Function. JSON* arquivo. O valor real [função Python](functions-reference-python.md) que usa a associação é descrita no  *__init__. py* arquivo. O objeto passado para a função é do tipo [azure.functions.TimerRequest objeto](/python/api/azure-functions/azure.functions.timerrequest). A lógica da função grava os logs que indica se a invocação da atual é devido a uma ocorrência de agendamento ausente. 
 
-```java
-@FunctionName("keepAlive")
-public void keepAlive(
-  @TimerTrigger(name = "keepAliveTrigger", schedule = "0 *&#47;5 * * * *") String timerInfo,
-      ExecutionContext context
- ) {
-     // timeInfo is a JSON string, you can deserialize it to an object using your favorite JSON library
-     context.getLogger().info("Timer is triggered: " + timerInfo);
+Aqui estão os dados de associação no arquivo *function.json*:
+
+```json
+{
+    "name": "mytimer",
+    "type": "timerTrigger",
+    "direction": "in",
+    "schedule": "0 */5 * * * *"
 }
+```
+
+Aqui está o código Python:
+
+```python
+import datetime
+import logging
+
+import azure.functions as func
+
+def main(mytimer: func.TimerRequest) -> None:
+    utc_timestamp = datetime.datetime.utcnow().replace(
+        tzinfo=datetime.timezone.utc).isoformat()
+
+    if mytimer.past_due:
+        logging.info('The timer is past due!')
+
+    logging.info('Python timer trigger function ran at %s', utc_timestamp)
 ```
 
 ## <a name="attributes"></a>Atributos
@@ -190,7 +224,7 @@ A tabela a seguir explica as propriedades de configuração de associação que 
 |**type** | n/d | Deve ser definido como "timerTrigger". Essa propriedade é definida automaticamente quando você cria o gatilho no portal do Azure.|
 |**direction** | n/d | Deve ser definido como "in". Essa propriedade é definida automaticamente quando você cria o gatilho no portal do Azure. |
 |**name** | n/d | O nome da variável que representa o objeto de temporizador no código de função. | 
-|**schedule**|**ScheduleExpression**|Um [expressão CRON](#cron-expressions) ou um valor [TimeSpan](#timespan). É possível usar um `TimeSpan` somente para um aplicativo de função executado em um Plano do Serviço de Aplicativo. Você pode colocar a expressão de agendamento em uma configuração de aplicativo e definir essa propriedade como o nome da configuração do aplicativo envolvido em sinais **%**, como neste exemplo: "%ScheduleAppSetting%". |
+|**schedule**|**ScheduleExpression**|Um [expressão CRON](#cron-expressions) ou um valor [TimeSpan](#timespan). É possível usar um `TimeSpan` somente para um aplicativo de função executado em um Plano do Serviço de Aplicativo. Você pode colocar a expressão de agendamento em uma configuração de aplicativo e definir essa propriedade como o nome da configuração do aplicativo envolvido em sinais **%** , como neste exemplo: "%ScheduleAppSetting%". |
 |**runOnStartup**|**runOnStartup**|Se `true`, a função será invocada quando o tempo de execução for iniciado. Por exemplo, o tempo de execução inicia quando o aplicativo de função desperta depois de ficar ocioso devido à inatividade. Quando o aplicativo de função reinicia devido a alterações de função e quando o aplicativo de função é escalado horizontalmente. Portanto, **runOnStartup** deve raramente ou nunca ser definido como `true`, especialmente em produção. |
 |**useMonitor**|**UseMonitor**|Definido como `true` ou `false` para indicar se o agendamento deve ser monitorado. Agendar o monitoramento persiste as ocorrências de agendamento para ajudar a garantir que o agendamento seja mantido corretamente mesmo quando instâncias do aplicativo de função forem reiniciadas. Se não for definido explicitamente, o padrão será `true` para agendamentos que têm um intervalo de recorrência maior que 1 minuto. Para agendamentos que disparam mais de uma vez por minuto, o padrão é `false`.
 

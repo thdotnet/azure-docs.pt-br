@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 04/26/2019
 ms.openlocfilehash: 057c764a46508804bee6aa8f9912fdedc69e811f
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65762709"
 ---
 # <a name="azure-sql-database-glossary-of-terms"></a>Glossário de termos do Banco de Dados SQL do Azure
@@ -26,12 +26,12 @@ ms.locfileid: "65762709"
 |Nome do serviço do Azure|Banco de Dados SQL do Azure ou Banco de Dados SQL|[O serviço de Banco de Dados SQL do Azure](sql-database-technical-overview.md)|
 |Camada de computação|Serverless (visualização)|[Camada de computação sem servidor](sql-database-serverless.md)
 ||Provisionado|[Camada de computação sem servidor](sql-database-serverless.md)
-|Opções de Implantação |Banco de dados individual|[Bancos de dados únicos](sql-database-single-database.md)|
+|Opções de implantação |Banco de dados individual|[Bancos de dados únicos](sql-database-single-database.md)|
 ||Pool elástico|[Pool elástico](sql-database-elastic-pool.md)|
 ||Instância gerenciada|[Instância gerenciada](sql-database-managed-instance.md)|
 |Objetos do servidor|Servidor de Banco de Dados SQL ou o servidor do banco de dados|[Servidor de banco de dados](sql-database-servers.md)|
 ||Servidor de instância gerenciada do Banco de Dados SQL, servidor de instância gerenciada ou servidor de instância|[Instância gerenciada](sql-database-managed-instance.md)|
-Objetos do banco de dados|Banco de Dados SQL do Azure|Qualquer banco de dados no Banco de Dados SQL do Azure|
+Objetos de banco de dados|Banco de Dados SQL do Azure|Qualquer banco de dados no Banco de Dados SQL do Azure|
 ||Banco de dados individual|Um banco de dados criado usando a opção de implantação do banco de dados individual|
 ||Banco de dados em pool|Um banco de dados criado ou movido para um pool elástico|
 ||Banco de dados de instância|Um banco de dados criado em uma instância gerenciada|

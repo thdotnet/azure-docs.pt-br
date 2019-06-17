@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 09/22/2018
 ms.author: glenga
 ms.openlocfilehash: 02becd787fcc5f82efff7ef21feaf336fba3a26f
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65967595"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Referência de configurações de aplicativo para Azure Functions
@@ -177,7 +177,7 @@ Os valores válidos são `1` ou uma URL que resolve para o local de um arquivo d
 
 Por padrão, os proxies de funções utilizarão um atalho para enviar chamadas à API de proxies diretamente para funções no mesmo aplicativo de funções, em vez de criar uma nova solicitação HTTP. Essa configuração permite que você desabilite esse comportamento.
 
-|Chave|Value|Descrição|
+|Chave|Value|DESCRIÇÃO|
 |-|-|-|
 |AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|verdadeiro|Chamadas com uma URL de back-end apontando para uma função no Aplicativo de funções local não serão mais enviadas diretamente à função e, em vez disso, serão direcionadas de volta para o front-end HTTP para o Aplicativo de funções|
 |AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|falso|Esse é o valor padrão. Chamadas com uma URL de back-end apontando para uma função no Aplicativo de Funções local serão encaminhadas diretamente para essa Função|
@@ -187,7 +187,7 @@ Por padrão, os proxies de funções utilizarão um atalho para enviar chamadas 
 
 Essa configuração controla se %2F é decodificado como barras nos parâmetros de rota quando inseridos na URL de back-end. 
 
-|Chave|Value|Descrição|
+|Chave|Value|DESCRIÇÃO|
 |-|-|-|
 |AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|verdadeiro|Os parâmetros de rota com barras codificadas os terão decodificados. `example.com/api%2ftest` se tornará `example.com/api/test`|
 |AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|falso|Esse é o comportamento padrão. Todos os parâmetros de rota serão passados inalterados|

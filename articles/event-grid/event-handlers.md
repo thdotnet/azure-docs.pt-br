@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 01/21/2019
 ms.author: spelluru
-ms.openlocfilehash: 915d1284d66438219fc9aba893512e5f6a5b02b3
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 6093e1017af2fb8c54eaf1c3192f937172567982
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66305038"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67080549"
 ---
 # <a name="event-handlers-in-azure-event-grid"></a>Manipuladores de eventos na Grade de Eventos do Azure
 
@@ -78,9 +78,45 @@ Use o barramento de serviço como um manipulador de eventos para encaminhar os e
 
 Observe que, ao barramento de serviço como um manipulador está em visualização pública, você deve instalar a extensão CLI ou o PowerShell quando usando essas credenciais para criar assinaturas de eventos.
 
-### <a name="using-cli"></a>Usando a CLI
+### <a name="install-extension-for-azure-cli"></a>Instalar extensão para CLI do Azure
 
-CLI do Azure, o exemplo a seguir assina um se conecta e o tópico de grade de eventos para uma fila do barramento de serviço:
+Para Azure CLI, é necessária a [extensão da Grade de Eventos](/cli/azure/azure-cli-extensions-list).
+
+No [CloudShell](/azure/cloud-shell/quickstart):
+
+* Se você tiver instalado a extensão anteriormente, atualize-o com `az extension update -n eventgrid`.
+* Se você ainda não instalou a extensão anteriormente, instalá-lo usando `az extension add -n eventgrid`.
+
+Para uma instalação local:
+
+1. [Instale a CLI do Azure](/cli/azure/install-azure-cli). Certifique-se de que você tenha a versão mais recente, verificando com `az --version`.
+1. Desinstalar as versões anteriores da extensão com `az extension remove -n eventgrid`.
+1. Instalar o `eventgrid` extensão com `az extension add -n eventgrid`.
+
+### <a name="install-module-for-powershell"></a>Instale o módulo para PowerShell
+
+Para PowerShell, é necessário o [módulo AzureRM.EventGrid](https://www.powershellgallery.com/packages/AzureRM.EventGrid/0.4.1-preview).
+
+No [CloudShell](/azure/cloud-shell/quickstart-powershell):
+
+* Instalar o módulo com `Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery`.
+
+Para uma instalação local:
+
+1. Abra o console do PowerShell como administrador.
+1. Instalar o módulo com `Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery`.
+
+Se o parâmetro `-AllowPrerelease` não estiver disponível, use as seguintes etapas:
+
+1. Execute `Install-Module PowerShellGet -Force`.
+1. Execute `Update-Module PowerShellGet`.
+1. Feche o console do PowerShell.
+1. Reinicie o PowerShell como administrador.
+1. Instalar o módulo `Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery`.
+
+### <a name="using-cli-to-add-a-service-bus-handler"></a>Usando a CLI para adicionar um manipulador de barramento de serviço
+
+CLI do Azure, o exemplo a seguir assina e se conecta a um tópico de grade de eventos para uma fila do barramento de serviço:
 
 ```azurecli-interactive
 # If you haven't already installed the extension, do it now.

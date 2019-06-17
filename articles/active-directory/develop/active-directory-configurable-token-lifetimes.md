@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.custom: aaddev, annaba
 ms.reviewer: hirsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cc81f0a5c75d9aeee39f0633521d692c8d30c474
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 4b1c68d9254b0da2e5296c83d8dd4c95091fde1b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65823461"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67111800"
 ---
 # <a name="configurable-token-lifetimes-in-azure-active-directory-preview"></a>Tempos de vida de token configuráveis no Azure Active Directory (versão prévia)
 
@@ -380,7 +380,7 @@ Cria uma nova política.
 New-AzureADPolicy -Definition <Array of Rules> -DisplayName <Name of Policy> -IsOrganizationDefault <boolean> -Type <Policy Type>
 ```
 
-| parâmetros | Descrição | Exemplo |
+| parâmetros | DESCRIÇÃO | Exemplo |
 | --- | --- | --- |
 | <code>&#8209;Definition</code> |Matriz de JSON em representação textual que contém todas as regras da política. | `-Definition @('{"TokenLifetimePolicy":{"Version":1,"MaxInactiveTime":"20:00:00"}}')` |
 | <code>&#8209;DisplayName</code> |Cadeia de caracteres do nome da política. |`-DisplayName "MyTokenPolicy"` |
@@ -397,7 +397,7 @@ Obtém todas as políticas do Azure AD ou a política especificada.
 Get-AzureADPolicy
 ```
 
-| parâmetros | Descrição | Exemplo |
+| parâmetros | DESCRIÇÃO | Exemplo |
 | --- | --- | --- |
 | <code>&#8209;Id</code> [Opcional] |**ObjectId (ID)** da política desejada. |`-Id <ObjectId of Policy>` |
 
@@ -410,7 +410,7 @@ Obtém todos os aplicativos e entidades de serviço vinculados a uma política.
 Get-AzureADPolicyAppliedObject -Id <ObjectId of Policy>
 ```
 
-| parâmetros | Descrição | Exemplo |
+| parâmetros | DESCRIÇÃO | Exemplo |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectId (ID)** da política desejada. |`-Id <ObjectId of Policy>` |
 
@@ -423,7 +423,7 @@ Atualiza uma política existente.
 Set-AzureADPolicy -Id <ObjectId of Policy> -DisplayName <string>
 ```
 
-| parâmetros | Descrição | Exemplo |
+| parâmetros | DESCRIÇÃO | Exemplo |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectId (ID)** da política desejada. |`-Id <ObjectId of Policy>` |
 | <code>&#8209;DisplayName</code> |Cadeia de caracteres do nome da política. |`-DisplayName "MyTokenPolicy"` |
@@ -441,7 +441,7 @@ Exclui a política especificada.
  Remove-AzureADPolicy -Id <ObjectId of Policy>
 ```
 
-| parâmetros | Descrição | Exemplo |
+| parâmetros | DESCRIÇÃO | Exemplo |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectId (ID)** da política desejada. | `-Id <ObjectId of Policy>` |
 
@@ -457,7 +457,7 @@ Vincula a política especificada a um aplicativo.
 Add-AzureADApplicationPolicy -Id <ObjectId of Application> -RefObjectId <ObjectId of Policy>
 ```
 
-| parâmetros | Descrição | Exemplo |
+| parâmetros | DESCRIÇÃO | Exemplo |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectId (ID)** do aplicativo. | `-Id <ObjectId of Application>` |
 | <code>&#8209;RefObjectId</code> |**ObjectId** da política. | `-RefObjectId <ObjectId of Policy>` |
@@ -471,7 +471,7 @@ Obtém a política atribuída a um aplicativo.
 Get-AzureADApplicationPolicy -Id <ObjectId of Application>
 ```
 
-| parâmetros | Descrição | Exemplo |
+| parâmetros | DESCRIÇÃO | Exemplo |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectId (ID)** do aplicativo. | `-Id <ObjectId of Application>` |
 
@@ -484,7 +484,7 @@ Remove uma política de um aplicativo.
 Remove-AzureADApplicationPolicy -Id <ObjectId of Application> -PolicyId <ObjectId of Policy>
 ```
 
-| parâmetros | Descrição | Exemplo |
+| parâmetros | DESCRIÇÃO | Exemplo |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectId (ID)** do aplicativo. | `-Id <ObjectId of Application>` |
 | <code>&#8209;PolicyId</code> |**ObjectId** da política. | `-PolicyId <ObjectId of Policy>` |
@@ -501,7 +501,7 @@ Vincula a política especificada a uma entidade de serviço.
 Add-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal> -RefObjectId <ObjectId of Policy>
 ```
 
-| parâmetros | Descrição | Exemplo |
+| parâmetros | DESCRIÇÃO | Exemplo |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectId (ID)** do aplicativo. | `-Id <ObjectId of Application>` |
 | <code>&#8209;RefObjectId</code> |**ObjectId** da política. | `-RefObjectId <ObjectId of Policy>` |
@@ -515,7 +515,7 @@ Obtém qualquer política vinculada à entidade de serviço especificada.
 Get-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal>
 ```
 
-| parâmetros | Descrição | Exemplo |
+| parâmetros | DESCRIÇÃO | Exemplo |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectId (ID)** do aplicativo. | `-Id <ObjectId of Application>` |
 
@@ -528,7 +528,7 @@ Remove a política da entidade da entidade de serviço especificada.
 Remove-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal>  -PolicyId <ObjectId of Policy>
 ```
 
-| parâmetros | Descrição | Exemplo |
+| parâmetros | DESCRIÇÃO | Exemplo |
 | --- | --- | --- |
 | <code>&#8209;Id</code> |**ObjectId (ID)** do aplicativo. | `-Id <ObjectId of Application>` |
 | <code>&#8209;PolicyId</code> |**ObjectId** da política. | `-PolicyId <ObjectId of Policy>` |

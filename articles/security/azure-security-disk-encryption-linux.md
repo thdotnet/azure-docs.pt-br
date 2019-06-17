@@ -8,10 +8,10 @@ ms.author: mbaldwin
 ms.date: 04/05/2019
 ms.custom: seodec18
 ms.openlocfilehash: db289e5b5be23176e8589f408a86734181129ebe
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65978501"
 ---
 # <a name="enable-azure-disk-encryption-for-linux-iaas-vms"></a>Habilitar o Azure Disk Encryption para VMs de IaaS do Linux 
@@ -130,7 +130,7 @@ Você pode habilitar a criptografia de disco em uma VM Linux IaaS existente ou e
 
 A tabela a seguir lista os parâmetros de modelo do Resource Manager existente para VMs em execução ou existentes:
 
-| Parâmetro | Descrição |
+| Parâmetro | DESCRIÇÃO |
 | --- | --- |
 | vmName | Nome da VM para executar a operação de criptografia. |
 | keyVaultName | Nome do cofre de chaves no qual a chave do BitLocker deve ser carregada. É possível obtê-lo, usando o cmdlet `(Get-AzKeyVault -ResourceGroupName <MyKeyVaultResourceGroupName>). Vaultname` ou o comando `az keyvault list --resource-group "MyKeyVaultResourceGroupName"` da CLI do Azure|

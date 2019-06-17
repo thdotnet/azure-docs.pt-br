@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: robinsh
 ms.openlocfilehash: 9d5d5bdc569fec1df20c7729285cc462d5af4ffb
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65873230"
 ---
 # <a name="get-started-with-device-twins-netnet"></a>Introdução aos dispositivos gêmeos (.NET/.NET)
@@ -56,7 +56,7 @@ Nesta seção, você cria um aplicativo de console do .NET (usando C#) que adici
    
     ![Novo projeto da Área de Trabalho Clássica do Windows no Visual C#](./media/iot-hub-csharp-csharp-twin-getstarted/createnetapp.png)
 
-2. No Gerenciador de Soluções, clique com o botão direito do mouse no projeto **AddTagsAndQuery** e, em seguida, clique em **Gerenciar Pacotes NuGet...**.
+2. No Gerenciador de Soluções, clique com o botão direito do mouse no projeto **AddTagsAndQuery** e, em seguida, clique em **Gerenciar Pacotes NuGet...** .
 
 3. Na janela **Gerenciador de Pacotes NuGet**, selecione **Procurar** e pesquise por **Microsoft.Azure.Devices**. Selecione **Instalar** para instalar o pacote **Microsoft.Azure.Devices** e aceite os termos de uso. Este procedimento baixa, instala e adiciona uma referência ao pacote NuGet do [SDK do Serviço IoT do Azure](https://www.nuget.org/packages/Microsoft.Azure.Devices/) e suas dependências.
    
@@ -136,7 +136,7 @@ Nesta seção, você cria um aplicativo de console do .NET que se conecta ao seu
    
     ![Novo aplicativo de dispositivo Visual C# Windows clássico](./media/iot-hub-csharp-csharp-twin-getstarted/createdeviceapp.png)
     
-2. No Gerenciador de Soluções, clique com o botão direito do mouse no projeto **ReportConnectivity** e clique em **Gerenciar Pacotes NuGet...**.
+2. No Gerenciador de Soluções, clique com o botão direito do mouse no projeto **ReportConnectivity** e clique em **Gerenciar Pacotes NuGet...** .
 
 3. Na janela **Gerenciador de Pacotes NuGet**, selecione **Procurar** e pesquise por **Microsoft.Azure.Devices.Client**. Selecione **Instalar** para instalar o pacote **Microsoft.Azure.Devices.Client** e aceite os termos de uso. O procedimento baixa, instala e adiciona uma referência ao pacote NuGet do [SDK do Dispositivo IoT do Azure](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/) e suas dependências.
    

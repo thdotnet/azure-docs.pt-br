@@ -7,10 +7,10 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/19/2019
 ms.openlocfilehash: 0086327661df637dc0ae60208ed9424b4610ef0e
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65969486"
 ---
 # <a name="limits-in-azure-cosmos-db"></a>Limites no Azure Cosmos DB
@@ -23,9 +23,9 @@ Depois de criar uma conta de Cosmos do Azure em sua assinatura, você pode geren
 
 | Resource | Limite padrão |
 | --- | --- |
-| RUs máximo por contêiner ([modo de taxa de transferência dedicada provisionado](databases-containers-items.md#azure-cosmos-containers)) | 1.000.000 por padrão. Você pode aumentá-lo por [preenchendo um tíquete de suporte do Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request) nem entrar em contato conosco por meio de [pergunte o Cosmos DB](mailto:askcosmosdb@microsoft.com) |
-| RUs máximo por banco de dados ([modo de taxa de transferência compartilhada provisionado](databases-containers-items.md#azure-cosmos-containers)) | 1.000.000 por padrão. Você pode aumentá-lo por [preenchendo um tíquete de suporte do Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request) nem entrar em contato conosco por meio de [pergunte o Cosmos DB](mailto:askcosmosdb@microsoft.com) |
-| RUs máximo por chave de partição (lógico) | 10.000 |
+| RUs máximo por contêiner ([modo de taxa de transferência dedicada provisionado](databases-containers-items.md#azure-cosmos-containers)) | 1\.000.000 por padrão. Você pode aumentá-lo por [preenchendo um tíquete de suporte do Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request) nem entrar em contato conosco por meio de [pergunte o Cosmos DB](mailto:askcosmosdb@microsoft.com) |
+| RUs máximo por banco de dados ([modo de taxa de transferência compartilhada provisionado](databases-containers-items.md#azure-cosmos-containers)) | 1\.000.000 por padrão. Você pode aumentá-lo por [preenchendo um tíquete de suporte do Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request) nem entrar em contato conosco por meio de [pergunte o Cosmos DB](mailto:askcosmosdb@microsoft.com) |
+| RUs máximo por chave de partição (lógico) | 10\.000 |
 | Armazenamento máximo entre todos os itens por chave de partição (lógico)| 10 GB |
 | Número máximo de chaves de partição distinta de (lógico) | Ilimitado |
 | Armazenamento máximo por contêiner | Ilimitado |
@@ -158,7 +158,7 @@ A tabela a seguir lista os limites para o [Experimente gratuitamente o Azure Cos
 | Duração do período de avaliação | 30 dias (pode ser renovado a qualquer número de vezes) |
 | Máximo de contêiners por assinatura (API de tabela do SQL, Gremlin) | 1 |
 | Máximo de contêiners por assinatura (API do MongoDB) | 3 |
-| Taxa de transferência máxima por contêiner | 5.000 |
+| Taxa de transferência máxima por contêiner | 5\.000 |
 | Taxa de transferência máxima por banco de dados de taxa de transferência compartilhada | 20000 |
 | Máximo de armazenamento total por conta | 10 GB |
 

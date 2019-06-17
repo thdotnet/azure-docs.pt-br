@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b9a3468d720cb04e73cb284abb20c7bcf6a392dd
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: 4790dc7ebeeee3407e89bcf38d7e3f25699ed328
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65859517"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67108418"
 ---
 # <a name="compare-remote-access-solutions"></a>Comparar as soluções de acesso remoto
 
@@ -46,7 +46,7 @@ Use essa tabela para entender a comparação entre o Threat Management Gateway (
 | Conversão de link de corpo de resposta | Sim | sim | - | Sim | 
 | Autenticação com cabeçalhos | - | Sim | - | Sim, com PingAccess | 
 | Segurança em escala de nuvem | - | - | - | Sim | 
-| Acesso condicional | - | Sim | - | Sim |
+| Acesso Condicional | - | Sim | - | Sim |
 | Nenhum componente na zona desmilitarizada (DMZ) | - | - | - | Sim |
 | Nenhuma conexão de entrada | - | - | - | Sim |
 
@@ -56,7 +56,7 @@ O Proxy de Aplicativo do Azure AD oferece benefícios exclusivos quando comparad
 
 - Extensão do AD do Azure para recursos locais
    - Proteção e segurança em escala de nuvem
-   - Os recursos como acesso condicional e a Autenticação Multifator são fáceis de habilitar
+   - Recursos como acesso condicional e autenticação multifator são fáceis de habilitar
 - Nenhum componente na zona desmilitarizada
 - Nenhuma conexão de entrada necessária
 - Um painel de acesso em que os usuários poderão procurar todos os aplicativos, incluindo o O365, os aplicativos SaaS integrados do Azure AD e seus aplicativos Web locais. 

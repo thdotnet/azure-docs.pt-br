@@ -16,12 +16,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4afcbffa778c902c1b32979c69ca91ab0955f739
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: e50cc4ca9c98cb6a8e0f19cfcf6c1f86f1949beb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64682939"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67107692"
 ---
 # <a name="azure-active-directory-risk-events"></a>Eventos de risco do Azure Active Directory
 
@@ -54,7 +54,7 @@ O insight obtido para um evento de risco detectado está vinculado à sua assina
 * Com o **Azure AD Premium P2 Edition**, você obtém as informações mais detalhadas sobre todas as detecções subjacentes. 
 * Com o **edição do Azure AD Premium P1**avançado detecções (como propriedades de entrada desconhecidas) não são cobertas por sua licença e aparecerá sob o nome **entrar com risco adicional detectado** . Além disso, o nível de risco e campos de detalhes do risco estão ocultos.
 
-Embora a detecção de eventos de risco já represente um aspecto importante da proteção de suas identidades, você também tem a opção de solucioná-los manualmente ou implementar respostas automatizadas por meio da configuração de políticas de acesso condicional. Para obter mais informações, consulte [Azure Active Directory Identity Protection](../active-directory-identityprotection.md).
+Embora a detecção de eventos de risco já represente um aspecto importante da proteção de suas identidades, você também tem a opção para resolvê-los ou implementar respostas automatizadas por meio da configuração de políticas de acesso condicional manualmente. Para obter mais informações, consulte [Azure Active Directory Identity Protection](../active-directory-identityprotection.md).
 
 ## <a name="risk-event-types"></a>Tipos de evento de risco
 

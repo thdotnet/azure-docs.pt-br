@@ -10,10 +10,10 @@ ms.topic: troubleshooting
 ms.date: 12/03/2018
 ms.author: genli
 ms.openlocfilehash: 826a38dd80db7cd0e6e500949d2c259c3808c0a9
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64914939"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Solucionar problemas de falha de Backup do Azure: Problemas com o agente ou extensão
@@ -30,9 +30,9 @@ Este artigo fornece etapas de solução de problemas que podem ajudar você a re
 **Mensagem de erro**: Agente de VM não consegue se comunicar com o Backup do Azure<br>
 
 Depois de registrar e agendar uma VM para o serviço de Backup, o Backup iniciará o trabalho comunicando-se com o agente de VM para obter um instantâneo pontual. Qualquer uma das condições a seguir pode impedir que o instantâneo seja disparado. Quando um instantâneo não é disparado, o backup pode falhar. Conclua as seguintes etapas de solução de problemas na ordem listada e, depois, repita a operação:<br>
-**Causa 1: [O agente está instalado na VM, mas sem resposta (para VMs do Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**    
+**Causa 1: [O agente está instalado na VM, mas sem resposta (para VMs do Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**     
 **Causa 2: [O agente instalado na VM está desatualizado (para VMs do Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**  
-**Causa 3: [O status do instantâneo não pode ser recuperado, ou não é possível obter um instantâneo](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)**    
+**Causa 3: [O status do instantâneo não pode ser recuperado, ou não é possível obter um instantâneo](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)**     
 **Causa 4: [A extensão de backup falha ao atualizar ou carregar](#the-backup-extension-fails-to-update-or-load)**  
 **Causa 5: [A VM não tem acesso à internet](#the-vm-has-no-internet-access)**
 

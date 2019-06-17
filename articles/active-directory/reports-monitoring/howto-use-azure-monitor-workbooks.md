@@ -14,12 +14,12 @@ ms.subservice: report-monitor
 ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 6ae14ec152975717af5d55780bcc39aa87c4b01a
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 6d461725d0d4c86ee7aa5b450d42c01ca77ffb16
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65406604"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67107672"
 ---
 # <a name="how-to-use-azure-monitor-workbooks-for-azure-active-directory-reports"></a>Como usar pastas de trabalho do Azure Monitor para relatórios do Active Directory do Azure
 
@@ -74,11 +74,11 @@ Esta pasta de trabalho mostra as seguintes tendências de entrada:
 
 - Todas as entradas
 
-- Sucesso
+- Êxito
 
-- Ação do usuário pendente
+- Ação de usuário pendentes
 
-- Falha
+- Failure
 
 Você pode filtrar cada tendência por categorias a seguir:
 
@@ -97,7 +97,7 @@ Para cada tendência, você pode obter uma análise nas categorias seguintes:
 
     ![Entradas por local](./media/howto-use-azure-monitor-workbooks/45.png)
 
-- Dispositivos
+- Dispositivo
 
     ![Entradas por dispositivo](./media/howto-use-azure-monitor-workbooks/46.png)
 
@@ -111,7 +111,7 @@ Esta pasta de trabalho mostra as seguintes tendências de entrada:
 
 - Todas as entradas
 
-- Sucesso
+- Êxito
 
 
 Você pode filtrar cada tendência por categorias a seguir:
@@ -168,11 +168,11 @@ Esta pasta de trabalho mostra as seguintes desabilitadas entrar tendências:
 
 - Exigir MFA
  
-- Exigir termos de uso
+- Requerer termos de uso
 
 - Exigir a declaração de privacidade
 
-- Outro
+- Outros
 
 
 Você pode filtrar cada tendência por categorias a seguir:
@@ -208,11 +208,11 @@ Esta pasta de trabalho mostra as seguintes tendências de entrada:
 
 - Todas as entradas
 
-- Sucesso
+- Êxito
 
 - Ação pendente
 
-- Falha
+- Failure
 
 
 Você pode filtrar cada tendência por categorias a seguir:

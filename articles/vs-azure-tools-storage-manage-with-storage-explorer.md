@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/22/2019
 ms.author: cawa
 ms.openlocfilehash: 4ee91a91a20cbffebf7453ba573266962aa35806
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64924730"
 ---
 # <a name="get-started-with-storage-explorer"></a>Introdução ao Gerenciador de Armazenamento
@@ -93,7 +93,7 @@ Além disso, você pode trabalhar com contas nacionais e internacionais de armaz
 
 2. Agora o painel à esquerda exibe todas as contas do Azure em que você se conectou. Para conectar-se a outra conta, selecione **Adicionar uma conta**
 
-3. Se você quiser entrar em uma nuvem nacional ou no Azure Stack, clique na lista suspensa **Ambiente do Azure** para selecionar qual nuvem do Azure você deseja usar. Depois de escolher o ambiente, clique no botão **Entrar...**. Se você estiver entrando no Azure Stack, consulte [Conectar o Gerenciador de Armazenamento a uma assinatura do Azure Stack](/azure-stack/user/azure-stack-storage-connect-se) para obter mais informações.
+3. Se você quiser entrar em uma nuvem nacional ou no Azure Stack, clique na lista suspensa **Ambiente do Azure** para selecionar qual nuvem do Azure você deseja usar. Depois de escolher o ambiente, clique no botão **Entrar...** . Se você estiver entrando no Azure Stack, consulte [Conectar o Gerenciador de Armazenamento a uma assinatura do Azure Stack](/azure-stack/user/azure-stack-storage-connect-se) para obter mais informações.
 
     ![Opção de conexão][2]
 
@@ -214,7 +214,7 @@ Para ilustrar isso, vamos supor que o UsuárioA é um administrador de uma assin
 
 ### <a name="generate-a-sas-query-string-for-the-account-you-want-to-share"></a>Gerar uma cadeia de caracteres de consulta de SAS para a conta que você deseja compartilhar
 
-1. No Gerenciador de Armazenamento, clique com o botão direito do mouse na conta de armazenamento que você deseja compartilhar e, em seguida, selecione **Obter Assinatura de Acesso Compartilhado...**.
+1. No Gerenciador de Armazenamento, clique com o botão direito do mouse na conta de armazenamento que você deseja compartilhar e, em seguida, selecione **Obter Assinatura de Acesso Compartilhado...** .
 
     ![Opção do menu de contexto Obter SAS][14]
 
@@ -234,7 +234,7 @@ Para ilustrar isso, vamos supor que o UsuárioA é um administrador de uma assin
 
     ![Caixa de diálogo Conectar ao Armazenamento do Azure][16]
 
-3. Escolha **Usar uma cadeia de conexão** e cole a cadeia de conexão no campo **Cadeia de conexão:**. Clique no botão **Avançar**.
+3. Escolha **Usar uma cadeia de conexão** e cole a cadeia de conexão no campo **Cadeia de conexão:** . Clique no botão **Avançar**.
 
     ![Caixa de diálogo Conectar ao Armazenamento do Azure][17]
 
@@ -266,7 +266,7 @@ Nesse contexto, um serviço pode ser um contêiner de blobs, uma fila, uma tabel
 
     ![Caixa de diálogo Conectar ao Armazenamento do Azure][16]
 
-3. Escolha **Usar um URI de SAS** e cole o URI no campo **URI:**. Clique no botão **Avançar**.
+3. Escolha **Usar um URI de SAS** e cole o URI no campo **URI:** . Clique no botão **Avançar**.
 
     ![Caixa de diálogo Conectar ao Armazenamento do Azure][19]
 
@@ -274,7 +274,7 @@ Nesse contexto, um serviço pode ser um contêiner de blobs, uma fila, uma tabel
 
 5. Selecione **Conectar**.
 
-6. Depois que o serviço é anexado com êxito, ele será exibido sob o nó **(Serviços Anexados por SAS)**.
+6. Depois que o serviço é anexado com êxito, ele será exibido sob o nó **(Serviços Anexados por SAS)** .
 
     ![Resultado da anexação a um serviço compartilhado usando SAS][20]
 
@@ -296,7 +296,7 @@ Se você deseja obter acesso aos recursos que não existem na sua assinatura. Ma
 
 1. Abra o Explorer do Armazenamento.
 2. No painel esquerdo, expanda **Local e Conectado**.
-3. Clique com o botão direito do mouse em **Data Lake Store**e, no menu de contexto, selecione **Conectar-se ao Data Lake Store...**.
+3. Clique com o botão direito do mouse em **Data Lake Store**e, no menu de contexto, selecione **Conectar-se ao Data Lake Store...** .
 
     ![Menu de contexto Conectar-se ao Data Lake Store](./media/vs-azure-tools-storage-manage-with-storage-explorer/storageexplorer-adls-uri-attach.png)
 

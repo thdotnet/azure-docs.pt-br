@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 080a37a88e46117a9963f07c14d64f00c6bae6d5
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 19bcac68084c4817e0dc0e67f31ab62244db5a2a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64570482"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67113414"
 ---
 # <a name="integrate-your-existing-nps-infrastructure-with-azure-multi-factor-authentication"></a>Integrar sua infraestrutura do NPS existente à Autenticação Multifator do Azure
 
@@ -134,7 +134,7 @@ Antes de implantar e usar a extensão do NPS, os usuários que são necessários
 Use estas etapas para iniciar uma conta de teste:
 1. Entre em [https://aka.ms/mfasetup](https://aka.ms/mfasetup) com uma conta de teste. 
 2. Siga os prompts para configurar um método de verificação.
-3. Crie uma política de acesso condicional ou [altere o estado do usuário](howto-mfa-userstates.md) para exigir verificação em duas etapas para a conta de teste. 
+3. Crie uma política de acesso condicional ou [alterar o estado do usuário](howto-mfa-userstates.md) Exigir verificação em duas etapas para a conta de teste. 
 
 Os usuários também precisam seguir estas etapas para se autenticar com a extensão NPS.
 

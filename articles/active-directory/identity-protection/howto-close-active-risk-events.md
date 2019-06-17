@@ -17,12 +17,12 @@ ms.date: 09/24/2018
 ms.author: joflore
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2e003aec8fa5aeab587fa07acdae3a13b370a535
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 55c56674b04c4359fba741d10176fc91e3a991eb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60453416"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67109023"
 ---
 # <a name="how-to-close-active-risk-events"></a>Como: Fechar eventos de risco ativos
 
@@ -48,7 +48,7 @@ Para fechar eventos de risco ativos, você tem as seguintes opções:
 
 ## <a name="require-password-reset-with-a-user-risk-policy"></a>Exigir redefinição de senha com uma política de risco do usuário
 
-Ao configurar a [política de acesso condicional de risco do usuário](howto-user-risk-policy.md), você poderá exigir uma alteração de senha se um nível de risco do usuário especificado tiver sido detectado automaticamente. 
+Configurando o [política de acesso condicional de risco do usuário](howto-user-risk-policy.md), você pode exigir uma alteração de senha, se um nível de risco do usuário especificado tiver sido detectado automaticamente. 
 
 ![Redefinir senha](./media/howto-close-active-risk-events/13.png)
 

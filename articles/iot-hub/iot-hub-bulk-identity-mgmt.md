@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/11/2019
 ms.author: robinsh
 ms.openlocfilehash: 5dd93af7deec2b0c8c90f6a8586de905207ad0a6
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65796353"
 ---
 # <a name="import-and-export-iot-hub-device-identities-in-bulk"></a>Importar e exportar identidades de dispositivo do IoT Hub em massa
@@ -257,7 +257,7 @@ Se o arquivo de importação incluir metadados gêmeos, esses metadados substitu
 
 Use a propriedade opcional **importMode** nos dados de serialização de importação para cada dispositivo para controlar o processo de importação por dispositivo. A propriedade **importMode** tem as seguintes opções:
 
-| importMode | Descrição |
+| importMode | DESCRIÇÃO |
 | --- | --- |
 | **createOrUpdate** |Se não existir um dispositivo com a especificada **ID**, foi registrado recentemente. <br/>Se o dispositivo já existir, as informações existentes serão substituídas pelos dados de entrada fornecidos sem considerar o valor de **ETag** . <br> Opcionalmente, o usuário pode especificar dados gêmeos junto com os dados do dispositivo. A etag do gêmeo, se especificada, será processada independentemente da etag do dispositivo. Se houver uma incompatibilidade com a etag do gêmeo existente, um erro será registrado no arquivo de log. |
 | **create** |Se não existir um dispositivo com a especificada **ID**, foi registrado recentemente. <br/>Se o dispositivo já existir, um erro será gravado no arquivo de log. <br> Opcionalmente, o usuário pode especificar dados gêmeos junto com os dados do dispositivo. A etag do gêmeo, se especificada, será processada independentemente da etag do dispositivo. Se houver uma incompatibilidade com a etag do gêmeo existente, um erro será registrado no arquivo de log. |
