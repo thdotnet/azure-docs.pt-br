@@ -101,31 +101,31 @@ O JSON a seguir mostra o esquema que serve para a parte das configurações da e
 | Nome | Valor/Exemplo | Tipo de Dados |
 | ---- | ---- | ---- |
 | apiVersion | 01-10-2018 | date |
-| publicador | Microsoft.Powershell.DSC | cadeia de caracteres |
-| type | DSC | cadeia de caracteres |
+| publicador | Microsoft.Powershell.DSC | string |
+| type | DSC | string |
 | typeHandlerVersion | 2.77 | int |
 
 ### <a name="settings-property-values"></a>Valores da Propriedade de Configurações
 
 | NOME | Tipo de Dados | DESCRIÇÃO
 | ---- | ---- | ---- |
-| settings.wmfVersion | cadeia de caracteres | Especifica a versão do Windows Management Framework que deve ser instalada em sua VM. Configurar essa propriedade como 'latest' instalará a versão mais atualizada do WMF. Os únicos valores possíveis atualmente para essa propriedade são ‘4.0’, ‘5.0’, e a mais recente. Esses valores possíveis estão sujeitos a atualizações. O valor padrão é ‘latest’. |
-| settings.configuration.url | cadeia de caracteres | Especifica o local da URL de onde baixar o arquivo zip configuração DSC. Se a URL fornecida exigir um token SAS para acesso, será necessário definir a propriedade protectedSettings.configurationUrlSasToken como o valor do token de SAS. Esta propriedade será necessária se settings.configuration.script e/ou settings.configuration.function estiverem definidas.
-| settings.configuration.script | cadeia de caracteres | Especifica o nome do arquivo do script que contém a definição de sua configuração DSC. Esse script deve estar na pasta raiz do arquivo zip baixado da URL especificada pela propriedade configuration.url. Esta propriedade é necessária se settings.configuration.url e/ou settings.configuration.script estiverem definidas.
-| settings.configuration.function | cadeia de caracteres | Especifica o nome da configuração DSC. A configuração denominada deve estar contida no script definido por configuration.script. Esta propriedade será necessária se settings.configuration.script.url e/ou settings.configuration.function estiverem definidas.
-| settings.configurationArguments | Coleção | Define os parâmetros que você deseja passar para a configuração de DSC. Esta propriedade não será criptografada.
-| settings.configurationData.url | cadeia de caracteres | Especifica a URL de onde baixar o arquivo de dados de configuração (.pds1) para usar como entrada para a sua configuração de DSC. Se a URL fornecida exigir um token SAS para acesso, será necessário definir a propriedade protectedSettings.configurationDataUrlSasToken como o valor do token de SAS.
-| settings.privacy.dataEnabled | cadeia de caracteres | Habilita ou desabilita a coleta de telemetria. Os únicos valores possíveis para essa propriedade são ‘Enable’, ‘Disable’, ”, ou $null. Deixar esta propriedade em branco ou nulo permitirá telemetria
+| settings.wmfVersion | string | Especifica a versão do Windows Management Framework que deve ser instalada em sua VM. Configurar essa propriedade como 'latest' instalará a versão mais atualizada do WMF. Os únicos valores possíveis atualmente para essa propriedade são ‘4.0’, ‘5.0’, e a mais recente. Esses valores possíveis estão sujeitos a atualizações. O valor padrão é ‘latest’. |
+| settings.configuration.url | string | Especifica o local da URL de onde baixar o arquivo zip configuração DSC. Se a URL fornecida exigir um token SAS para acesso, será necessário definir a propriedade protectedSettings.configurationUrlSasToken como o valor do token de SAS. Esta propriedade será necessária se settings.configuration.script e/ou settings.configuration.function estiverem definidas.
+| settings.configuration.script | string | Especifica o nome do arquivo do script que contém a definição de sua configuração DSC. Esse script deve estar na pasta raiz do arquivo zip baixado da URL especificada pela propriedade configuration.url. Esta propriedade é necessária se settings.configuration.url e/ou settings.configuration.script estiverem definidas.
+| settings.configuration.function | string | Especifica o nome da configuração DSC. A configuração denominada deve estar contida no script definido por configuration.script. Esta propriedade será necessária se settings.configuration.script.url e/ou settings.configuration.function estiverem definidas.
+| settings.configurationArguments | Collection | Define os parâmetros que você deseja passar para a configuração de DSC. Esta propriedade não será criptografada.
+| settings.configurationData.url | string | Especifica a URL de onde baixar o arquivo de dados de configuração (.pds1) para usar como entrada para a sua configuração de DSC. Se a URL fornecida exigir um token SAS para acesso, será necessário definir a propriedade protectedSettings.configurationDataUrlSasToken como o valor do token de SAS.
+| settings.privacy.dataEnabled | string | Habilita ou desabilita a coleta de telemetria. Os únicos valores possíveis para essa propriedade são ‘Enable’, ‘Disable’, ”, ou $null. Deixar esta propriedade em branco ou nulo permitirá telemetria
 | settings.advancedOptions.forcePullAndApply | Bool | Esta configuração é projetada para aprimorar a experiência de trabalhar com a extensão para registrar os nós com o DSC de automação do Azure.  Se o valor for `$true`, aguardará a extensão para a primeira execução da configuração extraída do serviço antes de retornar êxito/falha.  Se o valor é definido como $false, o status retornado pela extensão só fará referência a se o nó foi registrado com a configuração de estado de automação do Azure com êxito e a configuração de nó não será executada durante o registro.
-| settings.advancedOptions.downloadMappings | Coleção | Define locais alternativos para fazer o download de dependências como WMF e .NET
+| settings.advancedOptions.downloadMappings | Collection | Define locais alternativos para fazer o download de dependências como WMF e .NET
 
 ### <a name="protected-settings-property-values"></a>Valores da Propriedade de Configurações Protegidos
 
 | NOME | Tipo de Dados | DESCRIÇÃO
 | ---- | ---- | ---- |
-| protectedSettings.configurationArguments | cadeia de caracteres | Define os parâmetros que você deseja passar para a configuração de DSC. Esta propriedade será criptografada. |
-| protectedSettings.configurationUrlSasToken | cadeia de caracteres | Especifica o token SAS para acessar a URL definida por configuration.url. Esta propriedade será criptografada. |
-| protectedSettings.configurationDataUrlSasToken | cadeia de caracteres | Especifica o token SAS para acessar a URL definida por configurationData.url. Esta propriedade será criptografada. |
+| protectedSettings.configurationArguments | string | Define os parâmetros que você deseja passar para a configuração de DSC. Esta propriedade será criptografada. |
+| protectedSettings.configurationUrlSasToken | string | Especifica o token SAS para acessar a URL definida por configuration.url. Esta propriedade será criptografada. |
+| protectedSettings.configurationDataUrlSasToken | string | Especifica o token SAS para acessar a URL definida por configurationData.url. Esta propriedade será criptografada. |
 
 
 ## <a name="template-deployment"></a>Implantação de modelo
