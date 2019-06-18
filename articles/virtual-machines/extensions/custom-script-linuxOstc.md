@@ -122,14 +122,14 @@ Esses itens devem ser tratados como dados confidenciais e especificados na confi
 | Nome | Valor/Exemplo | Tipo de Dados |
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
-| publicador | Microsoft.OSTCExtensions | cadeia de caracteres |
-| type | CustomScriptForLinux | cadeia de caracteres |
+| publicador | Microsoft.OSTCExtensions | string |
+| type | CustomScriptForLinux | string |
 | typeHandlerVersion | 1.5 | int |
-| fileUris (por exemplo) | https://github.com/MyProject/Archive/MyPythonScript.py | matriz |
-| commandToExecute (por exemplo) | python MyPythonScript.py \<my-param1\> | cadeia de caracteres |
+| fileUris (por exemplo) | https://github.com/MyProject/Archive/MyPythonScript.py | array |
+| commandToExecute (por exemplo) | python MyPythonScript.py \<my-param1\> | string |
 | enableInternalDNSCheck | verdadeiro | boolean |
-| storageAccountName (por exemplo) | examplestorageacct | cadeia de caracteres |
-| storageAccountKey (por exemplo) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | cadeia de caracteres |
+| storageAccountName (por exemplo) | examplestorageacct | string |
+| storageAccountKey (por exemplo) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | string |
 
 ### <a name="property-value-details"></a>Detalhes de valor de propriedade
 
