@@ -74,8 +74,8 @@ O JSON a seguir mostra o esquema para a extensão.
 | NOME | Valor/Exemplo | Tipo de Dados |
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
-| publicador | Microsoft.HpcCompute | cadeia de caracteres |
-| type | NvidiaGpuDriverLinux | cadeia de caracteres |
+| publicador | Microsoft.HpcCompute | string |
+| type | NvidiaGpuDriverLinux | string |
 | typeHandlerVersion | 1.2 | int |
 
 ### <a name="settings"></a>Configurações
@@ -84,9 +84,9 @@ Todas as configurações são opcionais. O comportamento padrão é não atualiz
 
 | NOME | DESCRIÇÃO | Valor Padrão | Valores Válidos | Tipo de Dados |
 | ---- | ---- | ---- | ---- | ---- |
-| updateOS | Atualize o kernel, mesmo que não seja necessário para instalação do driver | falso | verdadeiro, falso | boolean |
-| driverVersion | NV: versão do driver GRID<br> NC/ND: versão do Kit de ferramentas CUDA. Os drivers mais recentes para o CUDA escolhido são instalados automaticamente. | mais recente | GRID: "418.70", "410.92", "410.71", "390.75", "390.57", "390.42"<br> CUDA: "10.0.130", "9.2.88", "9.1.85" | cadeia de caracteres |
-| installCUDA | Instale o kit de ferramentas CUDA. Só é relevante para as VMs da série NC/ND. | verdadeiro | verdadeiro, falso | boolean |
+| updateOS | Atualize o kernel, mesmo que não seja necessário para instalação do driver | false | true, false | boolean |
+| driverVersion | NV: versão do driver GRID<br> NC/ND: versão do Kit de ferramentas CUDA. Os drivers mais recentes para o CUDA escolhido são instalados automaticamente. | latest | GRID: "418.70", "410.92", "410.71", "390.75", "390.57", "390.42"<br> CUDA: "10.0.130", "9.2.88", "9.1.85" | string |
+| installCUDA | Instale o kit de ferramentas CUDA. Só é relevante para as VMs da série NC/ND. | true | true, false | boolean |
 
 
 ## <a name="deployment"></a>Implantação
