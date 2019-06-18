@@ -14,10 +14,10 @@ ms.workload: infrastructure
 ms.date: 03/15/2019
 ms.author: sedusch
 ms.openlocfilehash: 3d59fc48f1f6f6931ca18e09a420fdbccc7d53dc
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64922280"
 ---
 # <a name="high-availability-of-sap-hana-on-azure-vms-on-suse-linux-enterprise-server"></a>Alta disponibilidade do SAP HANA nas VMs do Azure no SUSE Linux Enterprise Server
@@ -26,17 +26,17 @@ ms.locfileid: "64922280"
 [deployment-guide]:deployment-guide.md
 [planning-guide]:planning-guide.md
 
-[2205917]:https://launchpad.support.sap.com/#/notes/2205917
-[1944799]:https://launchpad.support.sap.com/#/notes/1944799
-[1928533]:https://launchpad.support.sap.com/#/notes/1928533
-[2015553]:https://launchpad.support.sap.com/#/notes/2015553
-[2178632]:https://launchpad.support.sap.com/#/notes/2178632
-[2191498]:https://launchpad.support.sap.com/#/notes/2191498
-[2243692]:https://launchpad.support.sap.com/#/notes/2243692
-[1984787]:https://launchpad.support.sap.com/#/notes/1984787
-[1999351]:https://launchpad.support.sap.com/#/notes/1999351
+[2205917]: https://launchpad.support.sap.com/#/notes/2205917
+[1944799]: https://launchpad.support.sap.com/#/notes/1944799
+[1928533]: https://launchpad.support.sap.com/#/notes/1928533
+[2015553]: https://launchpad.support.sap.com/#/notes/2015553
+[2178632]: https://launchpad.support.sap.com/#/notes/2178632
+[2191498]: https://launchpad.support.sap.com/#/notes/2191498
+[2243692]: https://launchpad.support.sap.com/#/notes/2243692
+[1984787]: https://launchpad.support.sap.com/#/notes/1984787
+[1999351]: https://launchpad.support.sap.com/#/notes/1999351
 [2388694]:https://launchpad.support.sap.com/#/notes/2388694
-[401162]:https://launchpad.support.sap.com/#/notes/401162
+[401162]: https://launchpad.support.sap.com/#/notes/401162
 
 [hana-ha-guide-replication]:sap-hana-high-availability.md#14c19f65-b5aa-4856-9594-b81c7e4df73d
 [hana-ha-guide-shared-storage]:sap-hana-high-availability.md#498de331-fa04-490b-997c-b078de457c9d
@@ -113,7 +113,7 @@ Para implantar o modelo, siga estas etapas:
     - **Disponibilidade do Sistema**: Selecione **HA**.
     - **Nome de Usuário do Administrador e Senha de Administrador**: Um novo usuário é criado que pode ser usado para fazer logon máquina.
     - **Sub-rede nova ou existente**: Determina se uma nova rede virtual e uma sub-rede devem ser criadas ou se uma sub-rede existente é usada. Se já tiver uma rede virtual conectada à rede local, selecione **Existente**.
-    - **ID da Sub-rede**: Se você deseja implantar a VM em uma rede virtual existente em que você tem uma sub-rede definida para a qual a VM deve ser designada, nomeie a identificação dessa sub-rede específica. Geralmente, a ID é semelhante a **/subscriptions/\<ID da assinatura ID>/resourceGroups/\<nome do grupo de recursos>/providers/Microsoft.Network/virtualNetworks/\<nome da rede virtual>/subnets/\<nome da sub-rede>**.
+    - **ID da Sub-rede**: Se você deseja implantar a VM em uma rede virtual existente em que você tem uma sub-rede definida para a qual a VM deve ser designada, nomeie a identificação dessa sub-rede específica. Geralmente, a ID é semelhante a **/subscriptions/\<ID da assinatura ID>/resourceGroups/\<nome do grupo de recursos>/providers/Microsoft.Network/virtualNetworks/\<nome da rede virtual>/subnets/\<nome da sub-rede>** .
 
 ### <a name="manual-deployment"></a>Implantação manual
 
@@ -204,11 +204,11 @@ Siga as etapas em [Configurar Pacemaker no SUSE Linux Enterprise Server no Azure
 ## <a name="install-sap-hana"></a>Instalar SAP HANA
 
 As etapas nesta seção usam os seguintes prefixos:
-- **[A]**: A etapa se aplica a todos os nós.
-- **[1]**: A etapa se aplica apenas ao nó 1.
-- **[2]**: A etapa se aplica ao nó 2 do cluster do Pacemaker apenas.
+- **[A]** : A etapa se aplica a todos os nós.
+- **[1]** : A etapa se aplica apenas ao nó 1.
+- **[2]** : A etapa se aplica ao nó 2 do cluster do Pacemaker apenas.
 
-1. **[A]** Configurar o layout de disco: discos sem formatação: **Gerenciamento de volumes lógicos (LVM)**.
+1. **[A]** Configurar o layout de disco: discos sem formatação: **Gerenciamento de volumes lógicos (LVM)** .
 
    É recomendável que você use o LVM para volumes que armazenam dados e arquivos de log. O exemplo a seguir assume que as máquinas virtuais tenham quatro discos de dados anexados que são usados para criar dois volumes.
 
@@ -356,9 +356,9 @@ Para instalar a Replicação de Sistema do SAP HANA, siga o capítulo 4 do [guia
 
 As etapas nesta seção usam os seguintes prefixos:
 
-* **[A]**: A etapa se aplica a todos os nós.
-* **[1]**: A etapa se aplica apenas ao nó 1.
-* **[2]**: A etapa se aplica ao nó 2 do cluster do Pacemaker apenas.
+* **[A]** : A etapa se aplica a todos os nós.
+* **[1]** : A etapa se aplica apenas ao nó 1.
+* **[2]** : A etapa se aplica ao nó 2 do cluster do Pacemaker apenas.
 
 1. **[1]** Crie o banco de dados de locatário.
 
@@ -401,9 +401,9 @@ As etapas nesta seção usam os seguintes prefixos:
 
 As etapas nesta seção usam os seguintes prefixos:
 
-* **[A]**: A etapa se aplica a todos os nós.
-* **[1]**: A etapa se aplica apenas ao nó 1.
-* **[2]**: A etapa se aplica ao nó 2 do cluster do Pacemaker apenas.
+* **[A]** : A etapa se aplica a todos os nós.
+* **[1]** : A etapa se aplica apenas ao nó 1.
+* **[2]** : A etapa se aplica ao nó 2 do cluster do Pacemaker apenas.
 
 1. **[1]** Crie os usuários necessários.
 

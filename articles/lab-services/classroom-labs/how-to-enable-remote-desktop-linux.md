@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 05/24/2019
 ms.author: spelluru
 ms.openlocfilehash: 389d467bd9672743d4a086e8a1c505fb0366dba7
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66237096"
 ---
 # <a name="enable-and-use-remote-desktop-for-linux-virtual-machines-in-a-lab-in-azure-lab-services"></a>Habilitar e usar a área de trabalho remota para máquinas virtuais do Linux em um laboratório no Azure Lab Services
@@ -43,7 +43,7 @@ Sobre o **habilitando a Conexão de área de trabalho remota** caixa de mensagem
 Atualmente, a conexão de área de trabalho remota tem suporte para os seguintes sistemas operacionais:
 
 - openSUSE Leap 42.3
-- 7.5 baseado em centOS
+- 7\.5 baseado em centOS
 - Debian 9 "Stretch"
 - Ubuntu Server 16.04 LTS
 
