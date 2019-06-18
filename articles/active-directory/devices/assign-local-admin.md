@@ -17,12 +17,12 @@ ms.date: 01/08/2019
 ms.author: joflore
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da55370df55bcd9122bf87c561b00f3106cc6c58
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f19a9dfe683ab1c58d373cb8ba88b6523d43623e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60296752"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67110742"
 ---
 # <a name="how-to-manage-the-local-administrators-group-on-azure-ad-joined-devices"></a>Como gerenciar o grupo de administradores locais nos dispositivos do Microsoft Azure Active Directory
 
@@ -111,10 +111,10 @@ Quando você remove os usuários da função de administrador do dispositivo, el
 
 
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - Para obter uma visão geral de como gerenciar dispositivos no portal do Azure, consulte [Gerenciar dispositivos usando o portal do Azure](device-management-azure-portal.md)
 
-- Para saber mais sobre o acesso condicional baseado em dispositivo, confira [Configurar as políticas de acesso condicional com base em dispositivo do Azure Active Directory](../conditional-access/require-managed-devices.md).
+- Para saber mais sobre o acesso condicional baseado em dispositivo, consulte [configurar políticas de acesso condicional baseado em dispositivo do Azure Active Directory](../conditional-access/require-managed-devices.md).
 
 

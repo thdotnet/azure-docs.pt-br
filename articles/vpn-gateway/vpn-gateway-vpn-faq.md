@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/14/2019
 ms.author: yushwang
 ms.openlocfilehash: 23dc017b6ffcca8761966a10bd5cb45b32c7a602
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65786708"
 ---
 # <a name="vpn-gateway-faq"></a>Perguntas frequentes de gateway de VPN
@@ -186,7 +186,7 @@ Esta seção se aplica ao modelo de implantação do Resource Manager.
 Sim. Veja a seção [BGP](#bgp) para saber mais.
 
 **Modelo de implantação clássica**<br>
- O tráfego via Gateway de VPN do Azure é possível usando o modelo de implantação clássica, mas se baseia em espaços de endereço estaticamente definidos no arquivo de configuração de rede. Ainda não há suporte a BGP com Redes Virtuais do Azure e Gateways de VPN usando o modelo de implantação clássica. Sem BGP, a definição manual de espaços de endereço de trânsito é muito propensa a erros e não é recomendada.
+O tráfego via Gateway de VPN do Azure é possível usando o modelo de implantação clássica, mas se baseia em espaços de endereço estaticamente definidos no arquivo de configuração de rede. Ainda não há suporte a BGP com Redes Virtuais do Azure e Gateways de VPN usando o modelo de implantação clássica. Sem BGP, a definição manual de espaços de endereço de trânsito é muito propensa a erros e não é recomendada.
 
 ### <a name="does-azure-generate-the-same-ipsecike-pre-shared-key-for-all-my-vpn-connections-for-the-same-virtual-network"></a>O Azure gera a mesma chave pré-compartilhada IPsec/IKE para todas as minhas conexões VPN para a mesma rede virtual?
 

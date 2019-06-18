@@ -9,10 +9,10 @@ ms.date: 04/01/2019
 ms.author: jehollan, glenga
 ms.custom: include file
 ms.openlocfilehash: 0f3303e7bc87ca0bd29f367405372568ed6da7a7
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: MT
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66131552"
 ---
 1. Vá para o [Portal do Azure](https://portal.azure.com).
@@ -35,12 +35,12 @@ ms.locfileid: "66131552"
 
     ![Plano do serviço de aplicativo concluído](./media/functions-premium-create/create-function-app.png)  
 
-    | Configuração      | Valor sugerido  | Descrição                                        |
+    | Configuração      | Valor sugerido  | DESCRIÇÃO                                        |
     | ------------ |  ------- | -------------------------------------------------- |
     | **Nome do aplicativo** | Nome globalmente exclusivo | Nome que identifica seu novo aplicativo de funções. Os caracteres válidos são `a-z`, `0-9` e `-`.  | 
     | **Assinatura** | Sua assinatura | A assinatura na qual este novo aplicativo de funções será criado. |
     | **[Grupo de Recursos](../articles/azure-resource-manager/resource-group-overview.md)** |  myResourceGroup | Nome do novo grupo de recursos no qual criar o seu aplicativo de funções. Você também pode usar o valor sugerido. |
-    | **OS** |  Windows | Linux não tem suporte atualmente no plano Premium. |
+    | **OS** | Windows | Linux não tem suporte atualmente no plano Premium. |
     | **Pilha de tempo de execução** | Linguagem preferencial | Escolha um tempo de execução compatível com sua linguagem de programação de funções favorita. Escolha **.NET** para funções C# e F#. Somente os idiomas com suporte no escolhido **SO** são exibidos. |
     | **[Armazenamento](../articles/storage/common/storage-quickstart-create-account.md)** |  Nome globalmente exclusivo |  Crie uma conta de armazenamento usada pelo seu aplicativo de funções. Os nomes da conta de armazenamento devem ter entre 3 e 24 caracteres e podem conter apenas números e letras minúsculas. Você também pode usar uma conta existente, mas ela precisa atender aos [requisitos da conta de armazenamento](../articles/azure-functions/functions-scale.md#storage-account-requirements). |
     | **[Application Insights](../articles/azure-functions/functions-monitoring.md)** | Padrão | Cria um recurso do Application Insights do mesmo *nome do aplicativo* na região com suporte mais próxima. Ao expandir essa configuração, você pode alterar o **Novo nome do recurso** ou escolher um **Local** diferente em uma [geografia do Azure](https://azure.microsoft.com/global-infrastructure/geographies/) onde deseja armazenar seus dados. |

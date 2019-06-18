@@ -10,10 +10,10 @@ ms.author: mhopkins
 ms.reviewer: clausjor
 ms.subservice: blobs
 ms.openlocfilehash: 8e9e27f14c4ccd6f5822033baa21aaafcf96c428
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65148506"
 ---
 # <a name="azure-blob-storage-hot-cool-and-archive-access-tiers"></a>O armazenamento de BLOBs do Azure: quente, frio e arquivar as camadas de acesso
@@ -73,7 +73,7 @@ Embora seja um blob no armazenamento de arquivos, os dados de blob está offline
 
 Cenários de uso de exemplo para a camada de acesso de arquivo morto incluem:
 
-- Backup de longo prazo, backup secundário e conjuntos de dados de arquivamento 
+- Backup de longo prazo, backup secundário e conjuntos de dados de arquivamento
 - Dados originais (brutos) que devem ser preservados, mesmo após serem processados em formato utilizável final. (*por exemplo*, arquivos de mídia brutos após transcodificação em outros formatos)
 - Dados de conformidade e arquivamento que precisam ser armazenados por um longo tempo e quase nunca são acessados. (*Por exemplo*, filmagens de câmeras de segurança, X raios/ressonâncias magnéticas para as organizações de saúde, gravações de áudio e transcrições de cliente chamadas para serviços financeiros)
 
@@ -89,7 +89,7 @@ As camadas no nível do blob permitem que você altere a camada de seus dados no
 
 A hora da última alteração na camada de blob é exposta por meio da propriedade do blob **Acessar Hora de Alteração da Camada**. Se um blob estiver na camada de arquivo, ele não pode ser substituído, portanto, o carregamento do mesmo blob não é permitido neste cenário. Você pode substituir um blob em uma camada quente ou fria, nesse caso o novo blob herda a camada do blob que foi substituído.
 
-Blobs em todas as camadas de acesso três podem coexistir na mesma conta. Qualquer blob que não tenha uma camada atribuída explicitamente herda a camada da configuração de nível de acesso da conta. Se a camada de acesso for inferida da conta, você verá a propriedade de blob **Camada de Acesso Inferida** definida como "true", e a propriedade de blob **Camada de Acesso** corresponde à camada da conta. No portal do Azure, a camada de acesso inferida a propriedade é exibida com a camada de acesso de blob (por exemplo, **frequente (inferido)** ou **esporádico (inferido)**).
+Blobs em todas as camadas de acesso três podem coexistir na mesma conta. Qualquer blob que não tenha uma camada atribuída explicitamente herda a camada da configuração de nível de acesso da conta. Se a camada de acesso for inferida da conta, você verá a propriedade de blob **Camada de Acesso Inferida** definida como "true", e a propriedade de blob **Camada de Acesso** corresponde à camada da conta. No portal do Azure, a camada de acesso inferida a propriedade é exibida com a camada de acesso de blob (por exemplo, **frequente (inferido)** ou **esporádico (inferido)** ).
 
 > [!NOTE]
 > O armazenamento de arquivos e as camadas no nível do blob só oferecem suporte aos blobs de bloco. Também não é possível alterar a camada de um blob de blocos que tenha instantâneos.

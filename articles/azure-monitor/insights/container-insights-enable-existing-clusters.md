@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 04/25/2019
 ms.author: magoedte
 ms.openlocfilehash: ae340fb11d422b7516cc315e78be974d22239503
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65074674"
 ---
 # <a name="enable-monitoring-of-azure-kubernetes-service-aks-cluster-already-deployed"></a>Habilitar o monitoramento de cluster do serviço de Kubernetes do Azure (AKS) já implantado
@@ -37,7 +37,7 @@ Entre no [Portal do Azure](https://portal.azure.com).
 
 ## <a name="enable-using-azure-cli"></a>Habilitar usando a CLI do Azure
 
-A etapa a seguir permite o monitoramento do cluster do AKS usando a CLI do Azure. Neste exemplo, não é necessário criar ou especificar um workspace existente. Esse comando simplificará o processo, criando um workspace padrão no grupo de recursos padrão da assinatura do cluster do AKS, se ainda não existir um na região.  O workspace padrão criado é semelhante ao formato do *DefaultWorkspace-\<GUID>-\<Region>*.  
+A etapa a seguir permite o monitoramento do cluster do AKS usando a CLI do Azure. Neste exemplo, não é necessário criar ou especificar um workspace existente. Esse comando simplificará o processo, criando um workspace padrão no grupo de recursos padrão da assinatura do cluster do AKS, se ainda não existir um na região.  O workspace padrão criado é semelhante ao formato do *DefaultWorkspace-\<GUID>-\<Region>* .  
 
 ```azurecli
 az aks enable-addons -a monitoring -n MyExistingManagedCluster -g MyExistingManagedClusterRG  

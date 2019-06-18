@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin, justhu
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 287e4ee53a108d1e2b83d4a8b11a98a2c7727721
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 10ac2f4ac83240acf644fc1529c9c14f5e9631a1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65545583"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67111298"
 ---
 # <a name="authentication-and-authorization-error-codes"></a>Códigos de erro de autenticação e autorização
 
@@ -35,7 +35,7 @@ Procurando informações sobre os códigos de erro AADSTS que são retornados do
 
 ## <a name="aadsts-error-codes"></a>Códigos de erro AADSTS
 
-| Erro | Descrição |
+| Erro | DESCRIÇÃO |
 |---|---|
 | AADSTS16000 | SelectUserAccount - Esta é uma interrupção lançada pelo Azure AD, que resulta na interface do usuário que permite ao usuário selecionar entre várias sessões válidas do SSO. Esse erro é bastante comum e pode ser retornado ao aplicativo se `prompt=none` for especificado. |
 | AADSTS16001 | UserAccountSelectionInvalid - Você verá esse erro se o usuário clicar em um bloco que a lógica de seleção da sessão rejeitou. Quando acionado, esse erro permite que o usuário recupere escolhendo de uma lista atualizada de blocos / sessões ou escolhendo outra conta. Este erro pode ocorrer devido a um defeito de código ou condição de corrida. |
@@ -53,7 +53,7 @@ Procurando informações sobre os códigos de erro AADSTS que são retornados do
 | AADSTS50001 | InvalidResource - O recurso está desabilitado ou não existe. Verifique o código do seu aplicativo para garantir que você especificou o URL exato do recurso que você está tentando acessar.  |
 | AADSTS50002 | NotAllowedTenant - O login falhou devido a um acesso de proxy restrito no locatário. Se for sua própria política de inquilino, você poderá alterar suas configurações de inquilino restrito para corrigir esse problema. |
 | AADSTS50003 | MissingSigningKey - O logon falhou devido a uma chave de assinatura ou certificado ausente. Isso pode ter ocorrido porque não havia uma chave de assinatura configurada no aplicativo. Confira as resoluções descritas em [https://docs.microsoft.com/azure/active-directory/application-sign-in-problem-federated-sso-gallery#certificate-or-key-not-configured](https://docs.microsoft.com/azure/active-directory/application-sign-in-problem-federated-sso-gallery#certificate-or-key-not-configured). Se você ainda encontrar problemas, entre em contato com o proprietário do aplicativo ou com um administrador do aplicativo. |
-| AADSTS50005 | DevicePolicyError - O usuário tentou efetuar login em um dispositivo a partir de uma plataforma que atualmente não é suportada pela política de acesso condicional. |
+| AADSTS50005 | DevicePolicyError - o usuário tentou fazer logon um dispositivo de uma plataforma que não é suportada atualmente por meio da política de acesso condicional. |
 | AADSTS50006 | InvalidSignature - Falha na verificação da assinatura devido a uma assinatura inválida. |
 | AADSTS50007 | PartnerEncryptionCertificateMissing - O certificado de criptografia de parceiro não foi encontrado para este aplicativo. [Abra um tíquete de suporte](../fundamentals/active-directory-troubleshooting-support-howto.md) com a Microsoft para obter esse fixo. |
 | AADSTS50008 | InvalidSamlToken - A asserção SAML está ausente ou está mal configurada no token. Entre em contato com seu provedor de federação. |
@@ -105,7 +105,7 @@ Procurando informações sobre os códigos de erro AADSTS que são retornados do
 | AADSTS50127 | BrokerAppNotInstalled - O usuário precisa instalar um aplicativo do broker para obter acesso a esse conteúdo. |
 | AADSTS50128 | Nome de domínio inválido - Nenhuma informação de identificação de inquilino encontrada na solicitação ou implícita por qualquer credencial fornecida. |
 | AADSTS50129 | DeviceIsNotWorkplaceJoined - A junção no local de trabalho é necessária para registrar o dispositivo. |
-| AADSTS50131 | ConditionalAccessFailed - Indica vários erros de acesso condicional, como estado de dispositivo ruim do Windows, solicitação bloqueada devido a atividades suspeitas, política de acesso ou decisões de política de segurança. |
+| AADSTS50131 | ConditionalAccessFailed - indica vários erros de acesso condicional, como estado de dispositivo Windows inválido, solicitação bloqueada devido a atividades suspeitas, política de acesso ou decisões de política de segurança. |
 | AADSTS50132 | SsoArtifactInvalidOrExpired - A sessão não é válida devido à expiração da senha ou alteração recente de senha. |
 | AADSTS50133 | SsoArtifactRevoked - A sessão não é válida devido à expiração da senha ou alteração recente de senha. |
 | AADSTS50134 | DeviceFlowAuthorizeWrongDatacenter - Centro de dados errado. Para autorizar uma solicitação que foi iniciada por um aplicativo no fluxo de dispositivos do OAuth 2.0, a parte de autorização deve estar no mesmo datacenter no qual a solicitação original reside. |
@@ -134,10 +134,10 @@ Procurando informações sobre os códigos de erro AADSTS que são retornados do
 | AADSTS51005 | TemporaryRedirect - Equivalente ao status HTTP 307, que indica que as informações solicitadas estão localizadas no URI especificado no cabeçalho do local. Quando você receber esse status, siga o cabeçalho de local associado à resposta. Quando o método de solicitação original era POST, a solicitação redirecionada também usa o método POST. |
 | AADSTS51006 | ForceReauthDueToInsufficientAuth - a autenticação integrada do Windows é necessária. Usuário que efetuou login usando um token de sessão que não possui a declaração de autenticação integrada do Windows. Solicite ao usuário que efetue login novamente. |
 | AADSTS52004 | DelegationDoesNotExistForLinkedIn - O usuário não forneceu consentimento para acessar recursos do LinkedIn. |
-| AADSTS53000 | DeviceNotCompliant - A política de acesso condicional requer um dispositivo compatível e o dispositivo não é compatível. O usuário deve inscrever seu dispositivo em um provedor de MDM aprovado, como o Intune. |
-| AADSTS53001 | DeviceNotDomainJoined - A política de acesso condicional requer um dispositivo associado ao domínio e o dispositivo não é associado ao domínio. O usuário use um domínio tenha ingressado no dispositivo. |
-| AADSTS53002 | ApplicationUsedIsNotAnApprovedApp - O aplicativo usado não é um aplicativo aprovado para acesso condicional. O usuário precisa usar um dos aplicativos da lista de aplicativos aprovados para usar a fim de obter acesso. |
-| AADSTS53003 | BlockedByConditionalAccess - O acesso foi bloqueado por políticas de acesso condicional. A política de acesso não permite a emissão de token. |
+| AADSTS53000 | DeviceNotCompliant - política de acesso condicional requer um dispositivo em conformidade e o dispositivo não está em conformidade. O usuário deve inscrever seu dispositivo em um provedor de MDM aprovado, como o Intune. |
+| AADSTS53001 | DeviceNotDomainJoined - política de acesso condicional requer um dispositivo ingressado do domínio e o dispositivo não estiver ingressado no domínio. O usuário use um domínio tenha ingressado no dispositivo. |
+| AADSTS53002 | ApplicationUsedIsNotAnApprovedApp - o aplicativo usado não é um aplicativo aprovado para acesso condicional. O usuário precisa usar um dos aplicativos da lista de aplicativos aprovados para usar a fim de obter acesso. |
+| AADSTS53003 | BlockedByConditionalAccess - acesso foi bloqueado pelas políticas de acesso condicional. A política de acesso não permite a emissão de token. |
 | AADSTS53004 | ProofUpBlockedDueToRisk - O usuário precisa concluir o processo de registro de autenticação multifator antes de acessar este conteúdo. O usuário deve se registrar para a autenticação multifator. |
 | AADSTS54000 | MinorUserBlockedLegalAgeGroupRule |
 | AADSTS65001 | DelegationDoesNotExist - O usuário ou administrador não consentiu em usar o aplicativo com o ID X. Envie uma solicitação de autorização interativa para esse usuário e recurso. |

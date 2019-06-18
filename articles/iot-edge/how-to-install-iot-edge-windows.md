@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: kgremban
 ms.custom: seodec18
-ms.openlocfilehash: 8907ae61fb03b417a74eb32e1fd09aece75d5e2c
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: f67f24cab907c3fe9998704e0a0a85d5b29f60a7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66151711"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66808854"
 ---
 # <a name="install-the-azure-iot-edge-runtime-on-windows"></a>Instalar o tempo de execução do IoT Edge no Windows
 
@@ -77,7 +77,7 @@ Este exemplo demonstra uma instalação manual com contêineres do Windows:
 2. Execute o PowerShell como administrador.
 
    >[!NOTE]
-   >Use uma sessão de AMD64 do PowerShell para instalar o IoT Edge, PowerShell (x86). Se você não tiver certeza de qual tipo de sessão que você está usando, execute o seguinte comando:
+   >Use uma sessão do AMD64 do PowerShell para instalar o IoT Edge e não o PowerShell (x86). Se não tiver certeza de qual tipo de sessão você está usando, execute o seguinte comando:
    >
    >```powershell
    >(Get-Process -Id $PID).StartInfo.EnvironmentVariables["PROCESSOR_ARCHITECTURE"]
@@ -86,7 +86,7 @@ Este exemplo demonstra uma instalação manual com contêineres do Windows:
 3. O **IoTEdge implantar** comando verifica seu computador Windows está em uma versão com suporte, ativa o recurso de contêineres e, em seguida, baixa o tempo de execução moby e o tempo de execução do IoT Edge. O comando assumirá como padrão o uso de contêineres do Windows. 
 
    ```powershell
-   . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
+   . {Invoke-WebRequest -useb https://aka.ms/iotedge-win} | Invoke-Expression; `
    Deploy-IoTEdge
    ```
 
@@ -95,7 +95,7 @@ Este exemplo demonstra uma instalação manual com contêineres do Windows:
 5. O comando **Initialize-IoTEdge** configura o tempo de execução do IoT Edge em seu computador. O comando assumirá como padrão o provisionamento manual com contêineres do Windows. 
 
    ```powershell
-   . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
+   . {Invoke-WebRequest -useb https://aka.ms/iotedge-win} | Invoke-Expression; `
    Initialize-IoTEdge
    ```
 
@@ -126,7 +126,7 @@ O exemplo a seguir demonstra uma instalação automática com contêineres do Wi
 2. Execute o PowerShell como administrador.
 
    >[!NOTE]
-   >Use uma sessão de AMD64 do PowerShell para instalar o IoT Edge, PowerShell (x86). Se você não tiver certeza de qual tipo de sessão que você está usando, execute o seguinte comando:
+   >Use uma sessão do AMD64 do PowerShell para instalar o IoT Edge e não o PowerShell (x86). Se não tiver certeza de qual tipo de sessão você está usando, execute o seguinte comando:
    >
    >```powershell
    >(Get-Process -Id $PID).StartInfo.EnvironmentVariables["PROCESSOR_ARCHITECTURE"]
@@ -135,7 +135,7 @@ O exemplo a seguir demonstra uma instalação automática com contêineres do Wi
 3. O **IoTEdge implantar** comando verifica seu computador Windows está em uma versão com suporte, ativa o recurso de contêineres e, em seguida, baixa o tempo de execução moby e o tempo de execução do IoT Edge. O comando assumirá como padrão o uso de contêineres do Windows. 
 
    ```powershell
-   . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
+   . {Invoke-WebRequest -useb https://aka.ms/iotedge-win} | Invoke-Expression; `
    Deploy-IoTEdge
    ```
 
@@ -144,7 +144,7 @@ O exemplo a seguir demonstra uma instalação automática com contêineres do Wi
 6. O comando **Initialize-IoTEdge** configura o tempo de execução do IoT Edge em seu computador. O comando assumirá como padrão o provisionamento manual com contêineres do Windows. Use o `-Dps` sinalizador para usar o serviço de provisionamento de dispositivos em vez de provisionamento manual.
 
    ```powershell
-   . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
+   . {Invoke-WebRequest -useb https://aka.ms/iotedge-win} | Invoke-Expression; `
    Initialize-IoTEdge -Dps
    ```
 
@@ -172,7 +172,7 @@ Para os arquivos de instalação mais recente do IoT Edge, juntamente com versõ
 Para instalar com componentes offline, use o `-OfflineInstallationPath` parâmetro como parte da implantação-IoTEdge de comando e forneça o caminho absoluto para o diretório de arquivos. Por exemplo,
 
 ```powershell
-. {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
+. {Invoke-WebRequest -useb https://aka.ms/iotedge-win} | Invoke-Expression; `
 Deploy-IoTEdge -OfflineInstallationPath C:\Downloads\iotedgeoffline
 ```
 
@@ -189,7 +189,7 @@ Get-Service iotedge
 Examine os logs de serviço pelos últimos 5 minutos usando. Se você acabou de instalar o tempo de execução do IoT Edge, você poderá ver uma lista de erros do que o tempo entre execução **Deploy IoTEdge** e **Initialize IoTEdge**. Esses erros são esperados, como o serviço está tentando iniciar antes que está sendo configurado. 
 
 ```powershell
-. {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; Get-IoTEdgeLog
+. {Invoke-WebRequest -useb https://aka.ms/iotedge-win} | Invoke-Expression; Get-IoTEdgeLog
 ```
 
 Módulos de execução da lista. Após uma nova instalação, o único módulo que você verá é a execução **edgeAgent**. Depois que você [implantar módulos do IoT Edge](how-to-deploy-modules-portal.md), você verá que outras pessoas. 
@@ -233,7 +233,7 @@ Para obter mais informações, consulte [Atualize o daemon de segurança e o tem
 Este exemplo mostra uma instalação que aponta para um arquivo de configuração existente e usa contêineres do Windows: 
 
 ```powershell
-. {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
+. {Invoke-WebRequest -useb https://aka.ms/iotedge-win} | Invoke-Expression; `
 Update-IoTEdge
 ```
 

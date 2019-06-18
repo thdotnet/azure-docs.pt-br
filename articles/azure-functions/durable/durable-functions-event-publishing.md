@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: glenga
 ms.openlocfilehash: c07a42349fbd81a46b1b7cd9bcad1978f891a6b2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60733689"
 ---
 # <a name="durable-functions-publishing-to-azure-event-grid-preview"></a>Publicação de Funções Duráveis para a Grade de Eventos do Azure (visualização)
@@ -250,19 +250,19 @@ Consulte os logs da função que você criou no portal do Azure.
 
 A lista a seguir explica o esquema de eventos de ciclo de vida:
 
-* **`id`**: Identificador exclusivo para o evento de grade de eventos.
-* **`subject`**: Caminho para o assunto do evento. `durable/orchestrator/{orchestrationRuntimeStatus}`. `{orchestrationRuntimeStatus}` será `Running`, `Completed`, `Failed` e `Terminated`.  
-* **`data`**: Parâmetros Específicos de Durable Functions.
-  * **`hubName`**: Nome de TaskHub](durable-functions-task-hubs.md).
-  * **`functionName`**: Nome de função do Orchestrator.
-  * **`instanceId`**: instanceId de Durable Functions.
-  * **`reason`**: dados adicionais associados ao evento de acompanhamento. Para obter mais informações, consulte [Diagnóstico nas Funções Duráveis (Azure Functions)](durable-functions-diagnostics.md)
-  * **`runtimeStatus`**: Status de Tempo de Execução de Orquestração. Em Execução, Concluído, Falha, Cancelado.
-* **`eventType`**: "orchestratorEvent"
-* **`eventTime`**: Hora do Evento (UTC).
-* **`dataVersion`**: Versão do esquema de evento do ciclo de vida.
-* **`metadataVersion`**:  Valor dos metadados.
-* **`topic`**: Recurso do tópico de grade de eventos.
+* **`id`** : Identificador exclusivo para o evento de grade de eventos.
+* **`subject`** : Caminho para o assunto do evento. `durable/orchestrator/{orchestrationRuntimeStatus}`. `{orchestrationRuntimeStatus}` será `Running`, `Completed`, `Failed` e `Terminated`.  
+* **`data`** : Parâmetros Específicos de Durable Functions.
+  * **`hubName`** : Nome de TaskHub](durable-functions-task-hubs.md).
+  * **`functionName`** : Nome de função do Orchestrator.
+  * **`instanceId`** : instanceId de Durable Functions.
+  * **`reason`** : dados adicionais associados ao evento de acompanhamento. Para obter mais informações, consulte [Diagnóstico nas Funções Duráveis (Azure Functions)](durable-functions-diagnostics.md)
+  * **`runtimeStatus`** : Status de Tempo de Execução de Orquestração. Em Execução, Concluído, Falha, Cancelado.
+* **`eventType`** : "orchestratorEvent"
+* **`eventTime`** : Hora do Evento (UTC).
+* **`dataVersion`** : Versão do esquema de evento do ciclo de vida.
+* **`metadataVersion`** :  Valor dos metadados.
+* **`topic`** : Recurso do tópico de grade de eventos.
 
 ## <a name="how-to-test-locally"></a>Como testar localmente
 

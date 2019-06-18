@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 4/18/2019
 ms.author: mayg
 ms.openlocfilehash: a793de302eb0833c959f2486fc2cda1f2eec4674
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65149119"
 ---
 # <a name="about-the-azure-site-recovery-deployment-planner-for-hyper-v-disaster-recovery-to-azure"></a>Saiba mais sobre o Planejador de Implantações do Azure Site Recovery para recuperação de desastre do Hyper-V para o Azure
@@ -72,7 +72,7 @@ A ferramenta fornece os seguintes detalhes:
 
 | | **VMware no Azure** |**Hyper-V para Azure**|**Azure para Azure**|**Hyper-V para site secundário**|**VMware para o site secundário**
 --|--|--|--|--|--
-Cenários com suporte |Sim|sim|Não |Sim*|Não 
+Cenários com suporte |Sim|sim|Não|Sim*|Não
 Versão com suporte | vCenter 6.7, 6.5, 6.0 ou 5.5| Windows Server 2016, Windows Server 2012 R2 | ND |Windows Server 2016, Windows Server 2012 R2|ND
 Configuração com suporte|vCenter, ESXi| cluster do Hyper-V, host do Hyper-V|ND|cluster do Hyper-V, host do Hyper-V|ND|
 Número de servidores que podem ser analisados por instância em execução do Planejador de Implantações do Azure Site Recovery |Único (máquinas virtuais que pertencem a um vCenter Server ou um servidor ESXi podem ser criados em um momento)|Vários (as máquinas virtuais em vários hosts ou clusters de hosts podem ser analisadas de cada vez)| ND |Vários (as máquinas virtuais em vários hosts ou clusters de hosts podem ser analisadas de cada vez)| ND
@@ -96,7 +96,7 @@ A ferramenta tem três fases principais para o Hyper-v: obter lista de VMs, aná
 
 1.  Cada host do Hyper-V a ser analisado deve ter:
 
-     a. A máquina virtual na qual a ferramenta vai ser executado em sua lista TrustedHosts. Execute o comando a seguir em uma sessão do PowerShell com privilégios elevados no host do Hyper-V.
+    a. A máquina virtual na qual a ferramenta vai ser executado em sua lista TrustedHosts. Execute o comando a seguir em uma sessão do PowerShell com privilégios elevados no host do Hyper-V.
 
             set-item wsman:\localhost\Client\TrustedHosts -value '<ComputerName>[,<ComputerName>]' -Concatenate
 

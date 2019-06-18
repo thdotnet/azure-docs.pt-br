@@ -14,10 +14,10 @@ ms.date: 01/22/2019
 ms.reviewer: sdash
 ms.author: lagayhar
 ms.openlocfilehash: 76bbcd6fa400111514ec3496005a28ec28ae6ab7
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65977892"
 ---
 # <a name="monitor-availability-and-responsiveness-of-any-web-site"></a>Monitorar a disponibilidade e a capacidade de resposta de qualquer site
@@ -71,7 +71,7 @@ Abra a folha Disponibilidade e adicione um teste.
 
 * **Limite de alerta de localização**: é recomendável um mínimo de 3/5 locais. É a relação ideal entre o limite de alerta local e o número de locais de teste **limite de alerta local** = **número de locais teste** - 2, com um mínimo de cinco de teste locais.
 
-## <a name="multi-step-web-tests"></a>Testes da Web de várias etapas
+## <a name="multi-step-web-tests"></a>Testes na Web com diversas etapas
 Você pode monitorar um cenário que envolve uma sequência de URLs. Por exemplo, se estiver monitorando um site de vendas, você poderá testar se adicionar itens ao carrinho de compras funciona corretamente.
 
 > [!NOTE]

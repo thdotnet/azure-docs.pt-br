@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 03/24/2019
 ms.author: mlottner
 ms.openlocfilehash: 122a1585abf43d1aedc7f329cd7e41a6228f8c3e
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65200662"
 ---
 # <a name="security-recommendations"></a>Recomendações de segurança
@@ -37,7 +37,7 @@ Recomendações do dispositivo fornecem ideias e sugestões para melhorar a post
 
 | Severity | NOME                                                      | Fonte de dados | DESCRIÇÃO                                                                                                                                                                                           |
 |----------|-----------------------------------------------------------|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Média   | Abrir portas no dispositivo                                      | Agente       | Foi encontrado um ponto de extremidade de escuta no dispositivo                                                                                                                                                          |
+| Média   | Abrir portas no dispositivo                                      | Agente       | Um ponto de extremidade de escutando foi encontrado no dispositivo                                                                                                                                                          |
 | Média   | Política de firewall permissivo encontrada em uma das cadeias de. | Agente       | Permitido encontrada (entrada/saída) de diretiva de firewall. Política de firewall deve negar todo o tráfego por padrão e definem regras para permitir a comunicação necessária de/para o dispositivo.                               |
 | Média   | Regra de firewall permissivas na cadeia de entrada foi encontrada     | Agente       | Foi encontrada uma regra de firewall que contém um padrão de permissivo para uma ampla variedade de portas ou endereços IP.                                                                                    |
 | Média   | Regra de firewall permissivas na cadeia de saída foi encontrada    | Agente       | Foi encontrada uma regra de firewall que contém um padrão de permissivo para uma ampla variedade de portas ou endereços IP.                                                                                   |
@@ -63,5 +63,5 @@ Os alertas de recomendação fornecem informações e sugestões de ações para
 | Alto     | Credenciais de autenticação idêntica usadas por vários dispositivos | Hub IoT     | As credenciais de autenticação do IoT Hub são usadas por vários dispositivos. Isso pode indicar um dispositivo ilegítimos representando um dispositivo legítimos. Uso da credencial duplicados aumenta o risco de representação do dispositivo por um ator mal-intencionado. |
 | Média   | Política de filtro IP padrão deve negar                  | Hub IoT     | Configuração de filtro IP deve ter regras definidas para o tráfego permitido e deve, por padrão, negam o tráfego de todos os outros por padrão.                                                                                                     |
 | Média   | Regra de filtro IP inclui grandes intervalos IP                   | Hub IoT     | Um intervalo IP de origem permitir IP filtro regra é muito grande. Regras excessivamente permissivas podem expor seu hub IoT para atores mal-intencionados.                                                                                       |
-| Baixo      | Habilitar os logs de diagnóstico no Hub IoT                       | Hub IoT     | Habilite os logs e retenha-os por até um ano. Mantendo logs permite que você recrie trilhas de atividades para fins de investigação quando ocorre um incidente de segurança ou sua rede está comprometido.                                       |
+| Baixo      | Habilitar logs de diagnóstico no IoT Hub                       | Hub IoT     | Habilite os logs e retenha-os por até um ano. Mantendo logs permite que você recrie trilhas de atividades para fins de investigação quando ocorre um incidente de segurança ou sua rede está comprometido.                                       |
 |

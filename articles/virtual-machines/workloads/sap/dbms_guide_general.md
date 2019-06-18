@@ -17,28 +17,28 @@ ms.date: 12/04/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 8b19c0fd8af2792a4ffb877e5c6a7fc6b3f94511
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60836104"
 ---
 # <a name="considerations-for-azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Considerações para Implantação do DBMS de Máquinas de Virtuais do Azure para carga de trabalho do SAP
-[1114181]:https://launchpad.support.sap.com/#/notes/1114181
-[1409604]:https://launchpad.support.sap.com/#/notes/1409604
-[1597355]:https://launchpad.support.sap.com/#/notes/1597355
-[1928533]:https://launchpad.support.sap.com/#/notes/1928533
-[1984787]:https://launchpad.support.sap.com/#/notes/1984787
-[1999351]:https://launchpad.support.sap.com/#/notes/1999351
-[2002167]:https://launchpad.support.sap.com/#/notes/2002167
-[2015553]:https://launchpad.support.sap.com/#/notes/2015553
-[2039619]:https://launchpad.support.sap.com/#/notes/2039619
-[2069760]:https://launchpad.support.sap.com/#/notes/2069760
-[2171857]:https://launchpad.support.sap.com/#/notes/2171857
-[2178632]:https://launchpad.support.sap.com/#/notes/2178632
-[2191498]:https://launchpad.support.sap.com/#/notes/2191498
-[2233094]:https://launchpad.support.sap.com/#/notes/2233094
-[2243692]:https://launchpad.support.sap.com/#/notes/2243692
+[1114181]: https://launchpad.support.sap.com/#/notes/1114181
+[1409604]: https://launchpad.support.sap.com/#/notes/1409604
+[1597355]: https://launchpad.support.sap.com/#/notes/1597355
+[1928533]: https://launchpad.support.sap.com/#/notes/1928533
+[1984787]: https://launchpad.support.sap.com/#/notes/1984787
+[1999351]: https://launchpad.support.sap.com/#/notes/1999351
+[2002167]: https://launchpad.support.sap.com/#/notes/2002167
+[2015553]: https://launchpad.support.sap.com/#/notes/2015553
+[2039619]: https://launchpad.support.sap.com/#/notes/2039619
+[2069760]: https://launchpad.support.sap.com/#/notes/2069760
+[2171857]: https://launchpad.support.sap.com/#/notes/2171857
+[2178632]: https://launchpad.support.sap.com/#/notes/2178632
+[2191498]: https://launchpad.support.sap.com/#/notes/2191498
+[2233094]: https://launchpad.support.sap.com/#/notes/2233094
+[2243692]: https://launchpad.support.sap.com/#/notes/2243692
 [deployment-guide]:deployment-guide.md
 [deployment-guide-3]:deployment-guide.md#b3253ee3-d63b-4d74-a49b-185e76c4088e
 [planning-guide]:planning-guide.md
@@ -151,7 +151,7 @@ Como já foi mencionado, se o requisito do seu IOPS exceder o que pode fornecer 
 
 
 - - -
-> ![ Windows][Logo_Windows]  Windows
+> ![Windows][Logo_Windows] Windows
 >
 > É recomendável que você usa espaços de armazenamento do Windows para criar conjuntos de distribuição entre vários VHDs do Azure. Use pelo menos Windows Server 2012 R2 ou Windows Server 2016.
 >
@@ -231,7 +231,7 @@ As VMs do Azure oferecem discos persistentes depois que uma VM é implantada. No
 Para obter mais informações, consulte [entender a unidade temporária em VMs do Windows no Azure](https://blogs.msdn.microsoft.com/mast/2013/12/06/understanding-the-temporary-drive-on-windows-azure-virtual-machines/).
 
 - - -
-> ![ Windows][Logo_Windows]  Windows
+> ![Windows][Logo_Windows] Windows
 >
 > A unidade D em uma VM do Azure é uma unidade não persistente, que é apoiada por alguns discos locais no nó de computação do Azure. Porque ele é não persistente, todas as alterações feitas ao conteúdo na unidade D são perdidas quando a VM é reinicializada. As alterações incluem os arquivos que foram armazenados, diretórios que foram criados e aplicativos que foram instalados.
 >
@@ -340,7 +340,7 @@ Para reduzir ainda mais a latência de rede entre VMs do Azure, recomendamos que
 >
 
 - - -
-> ![ Windows][Logo_Windows]  Windows
+> ![Windows][Logo_Windows] Windows
 >
 > Para saber como implantar VMs com Accelerated Networking para Windows, consulte [criar uma máquina virtual do Windows com rede acelerada](https://docs.microsoft.com/azure/virtual-network/create-vm-accelerated-networking-powershell).
 >

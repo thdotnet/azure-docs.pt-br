@@ -11,10 +11,10 @@ ms.service: azure-blockchain
 ms.reviewer: seal
 manager: femila
 ms.openlocfilehash: 616e342f1d52179c40c225c5dafc9de13ce85e06
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65028209"
 ---
 # <a name="how-to-configure-azure-active-directory-access"></a>Como configurar o acesso do Active Directory do Azure
@@ -66,7 +66,7 @@ O acompanhamento de seção do guia de início rápido a **Leiame** para criar o
 
 ### <a name="connect-using-an-azure-ad-user-account"></a>Conectar-se usando uma conta de usuário do AD do Azure
 
-1. Execute o seguinte comando para se autenticar usando uma conta de usuário do AD do Azure. Substitua \<myAADDirectory\> com um domínio do AD do Azure. Por exemplo, `yourdomain.onmicrosoft.com`.
+1. Execute o seguinte comando para se autenticar usando uma conta de usuário do AD do Azure. Substitua \<myAADDirectory\> com um domínio do AD do Azure. Por exemplo: `yourdomain.onmicrosoft.com`.
 
     ```
     connector.exe -remote <myMemberName>.blockchain.azure.com:3200 -method aadauthcode -tenant-id <myAADDirectory> 
@@ -102,7 +102,7 @@ Para obter mais informações sobre como registrar um aplicativo no Azure AD, co
 
 Para um dispositivo móvel ou navegador baseado em texto, em que a exibição de pop-up de autenticação do AD do Azure não é possível, o AD do Azure gera uma senha única. Você pode copiar a senha e prosseguir com a autenticação do Azure AD em outro ambiente.
 
-Para gerar a senha, substitua **aadauthcode** com **aaddevice**. Substitua \<myAADDirectory\> com um domínio do AD do Azure. Por exemplo, `yourdomain.onmicrosoft.com`.
+Para gerar a senha, substitua **aadauthcode** com **aaddevice**. Substitua \<myAADDirectory\> com um domínio do AD do Azure. Por exemplo: `yourdomain.onmicrosoft.com`.
 
 ```
 connector.exe -remote <myBlockchainEndpoint>  -method aaddevice -tenant-id <myAADDirectory>

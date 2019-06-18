@@ -16,12 +16,12 @@ ms.date: 05/08/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 977b599c26e8bb586cc47bd2f0aac80034f22834
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 632f6f80184c6ba3409bd30ae070cbaefc77f036
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65785723"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67109494"
 ---
 # <a name="azure-ad-connect-enabling-device-writeback"></a>Azure AD Connect: Habilitando o write-back de dispositivo
 > [!NOTE]
@@ -32,9 +32,9 @@ ms.locfileid: "65785723"
 A documentação a seguir fornece informações sobre como habilitar o recurso de write-back do dispositivo no Azure AD Connect. Write-back de dispositivo é usado nas seguintes situações:
 
 * Habilitar [Windows Hello para empresas usando implantação híbrida de confiança do certificado](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-hybrid-cert-trust-prereqs#device-registration)
-* Habilitar acesso condicional com base em dispositivos aos aplicativos protegidos por ADFS (2012 R2 ou superior) (terceira parte confiável).
+* Habilitar o acesso condicional com base em dispositivos ao ADFS (2012 R2 ou superior) (terceira parte) de aplicativos protegidos.
 
-Isso fornece segurança adicional e a garantia de que o acesso aos aplicativos é concedido somente a dispositivos confiáveis. Para saber mais sobre acesso condicional, consulte [Gerenciando risco com acesso condicional](../active-directory-conditional-access-azure-portal.md) e [Configurando o acesso condicional no local usando o registro do dispositivo do Azure Active Directory](../../active-directory/active-directory-device-registration-on-premises-setup.md).
+Isso fornece segurança adicional e a garantia de que o acesso aos aplicativos é concedido somente a dispositivos confiáveis. Para obter mais informações sobre o acesso condicional, consulte [gerenciamento de riscos com acesso condicional](../active-directory-conditional-access-azure-portal.md) e [Configurando o acesso condicional no local, usando o registro de dispositivo do Active Directory do Azure](../../active-directory/active-directory-device-registration-on-premises-setup.md).
 
 > [!IMPORTANT]
 > <li>Os dispositivos devem estar localizados na mesma floresta que os usuários. Como o write-back dos dispositivos deve ser feito em uma única floresta, esse recurso não é compatível com uma implantação com várias florestas de usuário.</li>
@@ -59,7 +59,7 @@ Instale o Azure AD Connect usando configurações expressas ou personalizadas. A
 
 4. A página **Contêiner de dispositivo** fornece a opção de preparação do active directory, usando uma das duas opções disponíveis:
 
-     a. **Fornecer credenciais de administrador corporativo**: Se as credenciais de administrador corporativo forem fornecidas para a floresta em que é necessário fazer o write-back dos dispositivos, o Azure AD Connect preparará a floresta automaticamente durante a configuração do write-back de dispositivo.
+    a. **Fornecer credenciais de administrador corporativo**: Se as credenciais de administrador corporativo forem fornecidas para a floresta em que é necessário fazer o write-back dos dispositivos, o Azure AD Connect preparará a floresta automaticamente durante a configuração do write-back de dispositivo.
 
     b. **Baixar o script do PowerShell**: O Azure AD Connect gera automaticamente um script do PowerShell que pode preparar o Active Directory para o write-back de dispositivo. As credenciais de administrador corporativo não podem ser fornecidas no Azure AD Connect, recomenda-se realizar o download do script do PowerShell. Forneça o script PowerShell baixado **CreateDeviceContainer.psq** para o administrador da empresa da floresta onde os dispositivos serão gravados de volta.
     ![Preparar a floresta do Active Directory](./media/how-to-connect-device-writeback/devicecontainercreds.png)

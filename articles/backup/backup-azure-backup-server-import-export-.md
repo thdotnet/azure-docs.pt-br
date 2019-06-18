@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 5/8/2018
 ms.author: saurse
 ms.openlocfilehash: 18f84062bcaf2766ee0abd5248f876c3d8acef3f
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66304031"
 ---
 # <a name="offline-backup-workflow-for-dpm-and-azure-backup-server"></a>Fluxo de trabalho do backup offline do DPM e do Servidor de Backup do Azure
@@ -69,7 +69,7 @@ As informações desta seção ajudam você a concluir o fluxo de trabalho de ba
 
     ![Tela de importação](./media/backup-azure-backup-import-export/offlineBackupscreenInputs.png)
 
-    Esta é a tela correspondente no System Center Data Protection Manager:  <br/>
+    Esta é a tela correspondente no System Center Data Protection Manager: <br/>
     ![Tela de importação do SC DPM e do servidor de Backup do Azure](./media/backup-azure-backup-import-export/dpmoffline.png)
 
     A descrição das entradas é a seguinte:

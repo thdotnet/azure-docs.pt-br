@@ -11,10 +11,10 @@ ms.date: 03/15/2019
 ms.author: rortloff
 ms.reviewer: igorstan
 ms.openlocfilehash: 3bc1fef1842911e9b2cfb65b3c8cc72e4b615010
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66241263"
 ---
 # <a name="memory-and-concurrency-limits-for-azure-sql-data-warehouse"></a>Memória e limites simultâneos para SQL Data Warehouse do Azure
@@ -38,7 +38,7 @@ Gen2 fornece 2,5 vezes mais memória por consulta que o Gen1. Essa memória extr
 | DW500c            | 1             | 60                             |   300                          |
 | DW1000c           | 2             | 30                             |   600                          |
 | DW1500c           | 3             | 20                             |   900                          |
-| DW2000c           | 4             | 15                             |  1.200                          |
+| DW2000c           | 4             | 15                             |  1\.200                          |
 | DW2500c           | 5             | 12                             |  1500                          |
 | DW3000c           | 6             | 10                             |  1800                          |
 | DW5000c           | 10            | 6                              |  3000                          |
@@ -95,7 +95,7 @@ A tabela a seguir mostra o número máximo de consultas simultâneas e slots de 
 | DW7500c       | 128                        |  300                        | 1         | 2          | 4          | 8          | 16         | 32         | 64         | 128        |
 | DW10000c      | 128                        |  400                        | 1         | 2          | 4          | 8          | 16         | 32         | 64         | 128        |
 | DW15000c      | 128                        |  600                        | 1         | 2          | 4          | 8          | 16         | 32         | 64         | 128        |
-| DW30000c      | 128                        | 1.200                        | 1         | 2          | 4          | 8          | 16         | 32         | 64         | 128        |
+| DW30000c      | 128                        | 1\.200                        | 1         | 2          | 4          | 8          | 16         | 32         | 64         | 128        |
 
 **Classes de recursos dinâmicos**
 
@@ -123,7 +123,7 @@ A tabela a seguir mostra o número máximo de consultas simultâneas e slots de 
 | DW7500c       | 32                         |  300                        | 9                     | 30                     |  66                   | 210                    |
 | DW10000c      | 32                         |  400                        | 12                    | 40                     |  88                   | 280                    |
 | DW15000c      | 32                         |  600                        | 18                    | 60                     | 132                   | 420                    |
-| DW30000c      | 32                         | 1.200                        | 36                    | 120                    | 264                   | 840                    |
+| DW30000c      | 32                         | 1\.200                        | 36                    | 120                    | 264                   | 840                    |
 
 
 

@@ -3,7 +3,7 @@ title: Medidas Reais de Usuário para o Gerenciador de Tráfego do Azure com pá
 description: Configurar suas páginas da Web para enviar as Medidas Reais de Usuário para o Gerenciador de Tráfego
 services: traffic-manager
 documentationcenter: traffic-manager
-author: KumudD
+author: asudbring
 manager: twooley
 ms.service: traffic-manager
 ms.devlang: na
@@ -11,14 +11,14 @@ ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 03/16/2018
-ms.author: kumud
+ms.author: allensu
 ms.custom: ''
-ms.openlocfilehash: d6b669f5baae13f9fb57c5c58060e70a8f871e17
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2d044457df80f16a6e8073e7f3253a611f74d8a8
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60884068"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67071228"
 ---
 # <a name="how-to-send-real-user-measurements-to-azure-traffic-manager-using-web-pages"></a>Como enviar as Medidas Reais de Usuário para o Gerenciador de Tráfego do Azure usando páginas da Web
 
@@ -26,7 +26,7 @@ Você pode configurar suas páginas da Web para enviar as Medidas Reais de Usuá
 
 ## <a name="obtain-a-real-user-measurements-key"></a>Obter uma chave de Medidas Reais de Usuário
 
-As medidas obtidas e enviadas para o Gerenciador de Tráfego do aplicativo cliente são identificadas pelo serviço usando uma cadeia de caracteres exclusiva, chamada de **Chave de RUM (Medidas Reais de Usuário)**. Você pode obter uma chave de RUM usando o portal do Azure, uma API REST ou a CLI do Azure ou do PowerShell.
+As medidas obtidas e enviadas para o Gerenciador de Tráfego do aplicativo cliente são identificadas pelo serviço usando uma cadeia de caracteres exclusiva, chamada de **Chave de RUM (Medidas Reais de Usuário)** . Você pode obter uma chave de RUM usando o portal do Azure, uma API REST ou a CLI do Azure ou do PowerShell.
 
 Para obter a chave de RUM usando o portal do Azure:
 1. Em um navegador, entre no portal do Azure. Se você ainda não tiver uma conta, inscreva-se para uma avaliação gratuita de um mês.

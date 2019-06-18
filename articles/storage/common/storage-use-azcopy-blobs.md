@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/14/2019
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 140f2ec6252eac2958f236b2ffb48225fa16fe2b
-ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
+ms.openlocfilehash: fea9e79986e45127ad4918ed62bd8bf8dc782133
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66688064"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67125799"
 ---
 # <a name="transfer-data-with-azcopy-and-blob-storage"></a>Transferir dados com o armazenamento de BLOBs e AzCopy
 
@@ -191,10 +191,10 @@ Esta seção contém os seguintes exemplos:
 
 ## <a name="synchronize-files"></a>Sincronizar arquivos
 
-Você pode sincronizar o conteúdo de um sistema de arquivos local para um contêiner de blob. Você também pode sincronizar um contêiner de blob para um sistema de arquivos local em seu computador. A sincronização é unidirecional. Em outras palavras, você escolhe qual dos dois pontos de extremidade é a origem e qual é o destino.
+Você pode sincronizar o conteúdo de um sistema de arquivos local com um contêiner de blob. A sincronização é unidirecional. Em outras palavras, você escolhe qual dos dois pontos de extremidade é a origem e qual é o destino.
 
 > [!NOTE]
-> A versão atual do AzCopy não sincronizar entre outras origens e destinos (por exemplo: O armazenamento de arquivos ou recipientes do Amazon Web Services (AWS) S3).
+> Atualmente, esse cenário tem suporte apenas para contas que não têm um namespace hierárquico. A versão atual do AzCopy não sincronizar entre outras origens e destinos (por exemplo: O armazenamento de arquivos ou recipientes do Amazon Web Services (AWS) S3).
 
 O `sync` comando compara nomes de arquivo e carimbos de hora da última modificação. Defina as `--delete-destination` sinalizador opcional para um valor de `true` ou `prompt` excluir arquivos no diretório de destino se esses arquivos deixará de existir no diretório de origem.
 
@@ -203,26 +203,24 @@ Se você definir a `--delete-destination` sinalizador como `true` AzCopy exclui 
 > [!NOTE]
 > Para impedir exclusões acidentais, certifique-se de habilitar o [exclusão reversível](https://docs.microsoft.com/azure/storage/blobs/storage-blob-soft-delete) recurso antes de usar o `--delete-destination=prompt|true` sinalizador.
 
-### <a name="synchronize-a-container-to-a-local-file-system"></a>Sincronizar um contêiner para um sistema de arquivos local
+### <a name="update-a-container-with-changes-to-a-local-file-system"></a>Atualizar um contêiner com as alterações para um sistema de arquivos local
 
-Nesse caso, o sistema de arquivos local se torna a origem e o contêiner é o destino.
+Nesse caso, o contêiner é o destino e o sistema de arquivos local é a origem.
 
 |    |     |
 |--------|-----------|
 | **Sintaxe** | `azcopy sync "<local-directory-path>" "https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>" --recursive` |
 | **Exemplo** | `azcopy sync "C:\myDirectory" "https://mystorageaccount.blob.core.windows.net/mycontainer" --recursive` |
-| **Exemplo** (namespace hierárquico) | `azcopy sync "C:\myDirectory" "https://<storage-account-name>.dfs.core.windows.net/mycontainer" --recursive` |
 
+### <a name="update-a-local-file-system-with-changes-to-a-container"></a>Atualizar um sistema de arquivos local com alterações a um contêiner
 
-### <a name="synchronize-a-local-file-system-to-a-container"></a>Sincronizar um sistema de arquivos local para um contêiner
-
-Nesse caso, o contêiner se torna a origem e o sistema de arquivos local é o destino.
+Nesse caso, o sistema de arquivos local é o destino e o contêiner é a origem.
 
 |    |     |
 |--------|-----------|
 | **Sintaxe** | `azcopy sync "https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>" "C:\myDirectory" --recursive` |
 | **Exemplo** | `azcopy sync "https://mystorageaccount.blob.core.windows.net/mycontainer" "C:\myDirectory" --recursive` |
-| **Exemplo** (namespace hierárquico) | `azcopy sync "https://mystorageaccount.dfs.core.windows.net/mycontainer" "C:\myDirectory" --recursive` |
+|
 
 ## <a name="next-steps"></a>Próximas etapas
 

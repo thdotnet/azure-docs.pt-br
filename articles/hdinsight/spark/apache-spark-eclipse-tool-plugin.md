@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/30/2017
 ms.author: hrasheed
-ms.openlocfilehash: 1ae585322316a9c215fc32cc2f8ffba2f332ff61
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: cd5839520a5b85f31cbe677ad6691a3d6bacd0b0
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64704859"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67066297"
 ---
 # <a name="use-azure-toolkit-for-eclipse-to-create-apache-spark-applications-for-an-hdinsight-cluster"></a>Use o Azure Toolkit for Eclipse para criar aplicativos do Apache Spark para um cluster do HDInsight
 
@@ -137,7 +137,7 @@ Você pode vincular um cluster normal usando o nome de usuário gerenciado do Am
         }
 1. Execute o aplicativo em um cluster HDInsight Spark:
    
-    a. No Explorador de Pacotes, clique com o botão direito do mouse no nome do projeto e escolha **Enviar Aplicativo Spark para HDInsight**.        
+   a. No Explorador de Pacotes, clique com o botão direito do mouse no nome do projeto e escolha **Enviar Aplicativo Spark para HDInsight**.        
    b. Na caixa de diálogo **Envio do Spark**, forneça os valores a seguir e selecione **Enviar**:
       
    * Para **Nome do Cluster**, selecione o cluster HDInsight Spark no qual você deseja executar o aplicativo.
@@ -191,7 +191,7 @@ Você pode executar várias operações usando as Ferramentas do HDInsight, incl
 1. No painel do Servidor de Histórico do Spark, procure o aplicativo que você acabou de executar usando o nome do aplicativo. No código anterior, você definiu o nome do aplicativo usando `val conf = new SparkConf().setAppName("MyClusterApp")`. Dessa forma, o nome do aplicativo Spark era **MyClusterApp**.
 
 ### <a name="start-the-apache-ambari-portal"></a>Iniciar o portal do Apache Ambari
-1. No Azure Explorer, clique com o botão direito do mouse no nome do cluster Spark e escolha **Abrir o Portal de Gerenciamento do Cluster (Ambari)**. 
+1. No Azure Explorer, clique com o botão direito do mouse no nome do cluster Spark e escolha **Abrir o Portal de Gerenciamento do Cluster (Ambari)** . 
 1. Quando solicitado, insira as credenciais de administrador para o cluster. Elas foram especificadas no provisionamento do cluster.
 
 ### <a name="manage-azure-subscriptions"></a>Gerenciar assinaturas do Azure
@@ -212,7 +212,7 @@ Para resolver esse erro, você deve [baixar o executável](https://public-repo-1
 1. Inicie o Eclipse e crie um projeto. Na caixa de diálogo **Novo Projeto**, faça as opções a seguir e selecione **Avançar**.
    
    * No painel esquerdo, escolha **HDInsight**.
-   * No painel direito, selecione **Exemplo de Execução Local do Spark no HDInsight (Scala)**.
+   * No painel direito, selecione **Exemplo de Execução Local do Spark no HDInsight (Scala)** .
 
    ![Caixa de diálogo Novo Projeto](./media/apache-spark-eclipse-tool-plugin/hdi-spark-app-local-run.png)
    
@@ -226,6 +226,60 @@ Para resolver esse erro, você deve [baixar o executável](https://public-repo-1
    
    ![Resultado da execução local do aplicativo Spark](./media/apache-spark-eclipse-tool-plugin/hdi-spark-app-local-run-result.png)
 
+## <a name="reader-only-role"></a>Função de leitor
+Ao enviar os usuários do trabalho a um cluster com permissão de função de leitor somente, as credenciais do Ambari é necessária.
+
+### <a name="link-cluster-from-context-menu"></a>Cluster de link do menu de contexto
+
+1. Entrar com conta com função de leitor somente.
+       
+2. Partir **Azure Explorer**, expanda **HDInsight** para exibir os clusters de HDInsight que estão em sua assinatura. Os clusters marcado **"Leitor: função"** só tem permissão de função somente leitor.
+
+    ![Clusters Spark do HDInsight no Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-6.png)
+
+3. Clique com botão direito no cluster com permissão de função de leitor somente. Selecione **vincular este cluster** no menu de contexto para vincular cluster. Insira o nome de usuário do Ambari e a senha.
+
+    ![Clusters Spark do HDInsight no Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-7.png)
+
+4. Se o cluster é vinculado com êxito, o HDInsight será atualizada.
+   O estágio do cluster será se tornam vinculado.
+  
+    ![Clusters Spark do HDInsight no Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-8.png)
+
+
+
+### <a name="link-cluster-by-expanding-jobs-node"></a>Cluster de link, expandindo o nó trabalhos
+
+1. Clique em **trabalhos** nó **Cluster trabalho acesso negado** janela aparece.
+   
+2. Clique em **vincular este cluster** para vincular o cluster.
+   
+    ![Clusters Spark do HDInsight no Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-9.png)
+
+### <a name="link-cluster-from-spark-submission-window"></a>Cluster de link da janela de envio do Spark
+
+1. Crie um projeto do HDInsight.
+
+2. Clique com botão direito do pacote. Em seguida, selecione **enviar aplicativo Spark para HDInsight**.
+   
+   ![Clusters Spark do HDInsight no Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-11.png)
+
+3. Selecione um cluster que tem a permissão da função Leitor somente para **nome do Cluster**. Mensagem de aviso mostra-out. Você pode clicar em **vincular este cluster** para vincular o cluster.
+   
+   ![Clusters Spark do HDInsight no Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-15.png)
+   
+### <a name="view-storage-accounts"></a>Exibir contas de armazenamento
+
+* Para clusters com permissão de função de leitor somente, clique em **contas de armazenamento** nó **armazenamento de acesso negado** janela aparece. 
+     
+   ![Clusters Spark do HDInsight no Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-13.png)
+
+   ![Clusters Spark do HDInsight no Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-12.png)
+
+* Para clusters vinculados, clique em **contas de armazenamento** nó **armazenamento de acesso negado** janela aparece. 
+     
+   ![Clusters Spark do HDInsight no Azure Explorer](./media/apache-spark-eclipse-tool-plugin/view-explorer-14.png)
+
 ## <a name="known-problems"></a>Problemas conhecidos
 Ao vincular um cluster, sugiro que você forneça credenciais de armazenamento.
 
@@ -236,9 +290,6 @@ Há dois modos para enviar os trabalhos. Se a credencial de armazenamento for fo
 ![eclipse recebe um erro quando o cluster estiver ocupado](./media/apache-spark-eclipse-tool-plugin/eclipse-interactive-cluster-busy-upload.png)
 
 ![eclipse recebe um erro quando o cluster estiver ocupado](./media/apache-spark-eclipse-tool-plugin/eclipse-interactive-cluster-busy-submit.png)
-
-## <a name="feedback"></a>Comentários
-Se você tiver comentários ou se encontrar problemas ao usar essa ferramenta, fique à vontade para enviar um email para hdivstool@microsoft.com.
 
 ## <a name="seealso"></a>Consulte também
 * [Visão geral: Apache Spark no Azure HDInsight](apache-spark-overview.md)
@@ -256,8 +307,7 @@ Se você tiver comentários ou se encontrar problemas ao usar essa ferramenta, f
 ### <a name="tools-and-extensions"></a>Ferramentas e extensões
 * [Usar o Kit de Ferramentas do Azure para IntelliJ para criar e enviar aplicativos Spark Scala](apache-spark-intellij-tool-plugin.md)
 * [Use o Azure Toolkit for IntelliJ para depurar aplicativos Apache Spark remotamente por meio de VPN](../hdinsight-apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
-* [ Use o Azure Toolkit for IntelliJ para depurar os aplicativos do Apache Spark remotamente por meio do SSH ](../hdinsight-apache-spark-intellij-tool-debug-remotely-through-ssh.md)
-* [Usar ferramentas do HDInsight para IntelliJ com a área restrita do Hortonworks](../hadoop/hdinsight-tools-for-intellij-with-hortonworks-sandbox.md)
+* [Use o Azure Toolkit for IntelliJ para depurar os aplicativos do Apache Spark remotamente por meio do SSH](../hdinsight-apache-spark-intellij-tool-debug-remotely-through-ssh.md)
 * [Use os blocos de anotações do Apache Zeppelin com um cluster do Apache Spark no HDInsight](apache-spark-zeppelin-notebook.md)
 * [Kernels disponíveis para o notebook Jupyter no cluster do Apache Spark para HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Usar pacotes externos com blocos de notas Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 749216d3fe9164857bd4abce7ba7c766e466e7d3
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 2dbf27301e738978e7f03d2423a4d23fd63c97b5
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65823290"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67113491"
 ---
 # <a name="what-is-password-writeback"></a>O que é write-back de senha?
 
@@ -152,7 +152,6 @@ O tamanho de cada mensagem descrita anteriormente normalmente é inferior a 1 KB
    * Qualquer operação para forçar o autoatendimento de alteração de senha do administrador, por exemplo, expiração de senha
    * Qualquer redefinição de senha de autoatendimento do administrador originada do [portal de redefinição de senha](https://passwordreset.microsoftonline.com)
    * Qualquer redefinição de senha do usuário final iniciada pelo administrador no [portal do Azure](https://portal.azure.com)
-   * Qualquer do usuário final iniciada pelo administrador de redefinição de senha das [Centro de administração do Microsoft 365](https://admin.microsoft.com)
 
 ## <a name="unsupported-writeback-operations"></a>Operações de write-back sem suporte
 
@@ -162,6 +161,7 @@ O tamanho de cada mensagem descrita anteriormente normalmente é inferior a 1 KB
    * Qualquer usuário final que redefine sua própria senha usando o PowerShell versão 1, versão 2 ou a API do Graph do Azure AD
 * **Operações do administrador sem suporte**
    * Qualquer redefinição de senha do usuário final iniciada pelo administrador do PowerShell versão 1, versão 2 ou da API do Graph do Azure AD
+   * Qualquer do usuário final iniciada pelo administrador de redefinição de senha das [Centro de administração do Microsoft 365](https://admin.microsoft.com)
 
 > [!WARNING]
 > Não há suporte para o uso da caixa de seleção "usuário deve alterar a senha no próximo logon" em Ferramentas administrativas do Active Directory local, como usuários do Active Directory e computadores ou o Centro Administrativo do Active Directory. Ao alterar uma senha local não marque esta opção.

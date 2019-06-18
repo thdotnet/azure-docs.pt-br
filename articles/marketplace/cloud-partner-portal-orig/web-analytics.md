@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
 ms.openlocfilehash: 4b75b2cbd629204e7edbf1196eec9b03cb7a6736
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64943151"
 ---
 <a name="web-analytics"></a>Web Analytics
@@ -54,7 +54,7 @@ Por exemplo, você pode usar: <https://appsource.microsoft.com/product/dynamics-
 
 Você pode optar por ter uma combinação de várias destas identificações de campanha para identificar melhor várias fontes conduzindo tráfego para a campanha, por exemplo, a proveniência do cliente (email, blog, fonte de mídia social, etc.).
 
-Por exemplo: 
+Por exemplo:
 
 1. Referenciador do boletim informativo: <https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign&src=newsletter>
 2. Referenciador do LinkedIn: <https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign&src=LinkedIn>
@@ -71,7 +71,7 @@ Veja um exemplo:
     2.  URL da página de aterrissagem = <https://contoso.com/?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName>
 3. O usuário clica em no link \"experimente meu produto\" e entra no AppSource.
     1. URL de referência = <https://contoso.com/?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName>
-    2. URL da página de aterrissagem (**Verifique se esta URL tem utm\_campaign e utm\_source adicionados a ela**) = [https://appsource.microsoft.com/en-us/product/dynamics-365/contoso.offername?**utm\_campaign=MyCampaignAdName&utm\_source=MySourceAdName**](https://appsource.microsoft.com/en-us/product/dynamics-365/contoso.offername?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName)
+    2. URL da página de aterrissagem (**Verifique se esta URL tem utm\_campaign e utm\_source adicionados a ela**) = [https://appsource.microsoft.com/en-us/product/dynamics-365/contoso.offername?**utm\_ campaign=MyCampaignAdName&utm\_ source=MySourceAdName**](https://appsource.microsoft.com/en-us/product/dynamics-365/contoso.offername?utm_campaign=MyCampaignAdName&utm_source=MySourceAdName)
 
 <a name="how-to-evaluate-the-success-of-a-campaign"></a>Como avaliar o sucesso de uma campanha
 -----------------------------------------

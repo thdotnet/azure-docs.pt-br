@@ -16,17 +16,17 @@ ms.author: mimart
 ms.reviewer: harshja
 ms.custom: H1Hack27Feb2017; it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dbdccf3b7a3ba1b8e55befa0fdc24eeff3e403da
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 315aba8ac8617f8bf2db71784ec0f9a8dec66cf7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782931"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67108360"
 ---
 # <a name="troubleshoot-application-proxy-problems-and-error-messages"></a>Solucionar problemas e mensagens de erro do Proxy do Aplicativo
 Se ocorrerem erros ao acessar um aplicativo publicado ou em aplicativos de publicação, verifique as seguintes opções para ver se o Proxy de Aplicativo do AD do Microsoft Azure está funcionando corretamente:
 
-* Abra o console de serviços do Windows e verifique se o serviço de **Conector de Proxy de Aplicativo do Microsoft AAD** está habilitado e em execução. Também convém examinar a página de propriedades do serviço de Proxy de Aplicativo, conforme mostrado na imagem a seguir:   
+* Abra o console de serviços do Windows e verifique se o serviço de **Conector de Proxy de Aplicativo do Microsoft AAD** está habilitado e em execução. Também convém examinar a página de propriedades do serviço de Proxy de Aplicativo, conforme mostrado na imagem a seguir:  
   ![Captura de tela da janela Propriedades do Conector de Proxy de Aplicativo do Microsoft AAD](./media/application-proxy-troubleshoot/connectorproperties.png)
 * Abra o Visualizador de Eventos e procure eventos de conector do Proxy de Aplicativo em **Logs de Aplicativos e Serviços**  > **Microsoft** > **AadApplicationProxy** > **Connector** > **Admin**.
 * Se necessário, logs mais detalhados estão disponíveis via [ativação dos logs de sessão do conector do Proxy de Aplicativo](application-proxy-connectors.md#under-the-hood).
@@ -77,7 +77,7 @@ Esta lista cobre os erros que os usuários finais podem encontrar quando tentam 
 | Erro | Etapas recomendadas |
 | ----- | ----------------- |
 | O site não pode exibir a página. | O usuário poderá receber esse erro ao tentar acessar o aplicativo publicado se o aplicativo for um aplicativo IWA. O SPN definido para esse aplicativo pode estar incorreto. Para aplicativos IWA, certifique-se de que o SPN configurado para este aplicativo esteja correto. |
-| O site não pode exibir a página. | O usuário poderá ver esse erro ao tentar acessar o aplicativo publicado se o aplicativo for um aplicativo OWA. Isso pode ser causado por um dos seguintes motivos: <br><li>O SPN definido para este aplicativo está incorreto. Certifique-se de que o SPN configurado para este aplicativo esteja correto.</li><li>O usuário que tentou acessar o aplicativo está usando uma conta da Microsoft em vez da conta corporativa apropriada para entrar, ou o usuário é um usuário convidado. Verifique se o usuário faz logon usando sua conta corporativa correspondente ao domínio do aplicativo publicado. Convidados e usuários de Conta da Microsoft não podem acessar aplicativos IWA.</li><li>O usuário que tentou acessar o aplicativo não está definido corretamente para esse aplicativo no lado do local no. Certifique-se de que esse usuário tem as permissões apropriadas, conforme definido para este aplicativo de back-end no computador local no. |
+| O site não pode exibir a página. | O usuário poderá ver esse erro ao tentar acessar o aplicativo publicado se o aplicativo for um aplicativo OWA. Isso pode ser causado por um dos seguintes motivos:<br><li>O SPN definido para este aplicativo está incorreto. Certifique-se de que o SPN configurado para este aplicativo esteja correto.</li><li>O usuário que tentou acessar o aplicativo está usando uma conta da Microsoft em vez da conta corporativa apropriada para entrar, ou o usuário é um usuário convidado. Verifique se o usuário faz logon usando sua conta corporativa correspondente ao domínio do aplicativo publicado. Convidados e usuários de Conta da Microsoft não podem acessar aplicativos IWA.</li><li>O usuário que tentou acessar o aplicativo não está definido corretamente para esse aplicativo no lado do local no. Certifique-se de que esse usuário tem as permissões apropriadas, conforme definido para este aplicativo de back-end no computador local no. |
 | Não foi possível acessar este aplicativo corporativo. Você não está autorizado a acessar este aplicativo. Falha na autorização. Certifique-se de atribuir o acesso a este aplicativo ao usuário. | O usuário pode receber esse erro ao tentar acessar o aplicativo publicado se eles usarem contas da Microsoft, em vez de sua conta corporativa para entrar. Os usuários convidados também podem receber esse erro. Convidados e usuários de Conta da Microsoft não podem acessar aplicativos IWA. Verifique se o usuário faz logon usando sua conta corporativa correspondente ao domínio do aplicativo publicado.<br><br>Você pode não ter atribuído o usuário para esse aplicativo. Vá para a guia **Aplicativo** e, em **Usuários e Grupos**, atribua esse usuário ou grupo de usuários a esse aplicativo. |
 | Não foi possível acessar esse aplicativo corporativo no momento. Tente novamente mais tarde... O conector atingiu o tempo limite. | O usuário pode receber esse erro ao tentar acessar o aplicativo publicado se eles não estão definidos corretamente para esse aplicativo no lado do local. Certifique-se de que os usuários tenham as permissões apropriadas, conforme definido para este aplicativo de back-end no computador no local. |
 | Não foi possível acessar este aplicativo corporativo. Você não está autorizado a acessar este aplicativo. Falha na autorização. Certifique-se de que o usuário tenha licença para Azure Active Directory Premium ou Basic. | O usuário pode receber esse erro ao tentar acessar o aplicativo publicado se eles não foram explicitamente atribuídos com uma licença Premium/Basic pelo administrador do assinante. Acesse a guia **Licenças** do Active Directory do assinante e certifique-se de que esse usuário ou grupo tenha uma licença Premium ou Basic atribuída. |

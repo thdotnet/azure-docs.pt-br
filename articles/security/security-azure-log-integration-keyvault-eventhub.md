@@ -12,10 +12,10 @@ ms.date: 05/28/2019
 ms.author: Barclayn
 ms.custom: AzLog
 ms.openlocfilehash: 5614cc6fa01ddd10d670fdf429051a8e024550fc
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66298197"
 ---
 # <a name="azure-log-integration-tutorial-process-azure-key-vault-events-by-using-event-hubs"></a>Tutorial de Integração de Logs do Azure: Processar eventos do Azure Key Vault usando Hubs de Eventos
@@ -60,7 +60,7 @@ Antes de concluir as etapas neste artigo, você precisará do seguinte:
 
 * Integração de Logs do Azure instalada. Para instalá-la:
 
-    a. Use a Área de Trabalho Remota para conectar-se ao sistema mencionado na etapa 2.   
+   a. Use a Área de Trabalho Remota para conectar-se ao sistema mencionado na etapa 2.   
    b. Copie o instalador da integração de log do Azure no sistema. c. Inicie o instalador e aceite os Termos de Licença para Software Microsoft.
 
 * Se você vai fornecer informações de telemetria, deixe a caixa de seleção marcada. Se você preferir não enviar informações de uso à Microsoft, desmarque a caixa de seleção.
@@ -117,7 +117,7 @@ Antes de concluir as etapas neste artigo, você precisará do seguinte:
     ```$sbruleid = $eventHubNameSpace.Id +'/authorizationrules/RootManageSharedAccessKey'```
 1. Obtenha todos os possíveis locais do Azure e adicione os nomes a uma variável que possa ser usada em uma etapa posterior:
     
-     a. ```$locationObjects = Get-AzLocation```    
+    a. ```$locationObjects = Get-AzLocation```    
     b. ```$locations = @('global') + $locationobjects.location```
     
     Se você inserir `$locations` neste ponto, você verá os nomes de local sem as informações adicionais retornadas pelo Get-AzLocation.
@@ -157,7 +157,7 @@ As solicitações precisam ser enviados para o Key Vault para gerar a atividade 
    ```Get-AzStorageAccountKey -Name $storagename -ResourceGroupName $rgname  | ft -a```
 1. Definir e ler um segredo para gerar entradas de log adicionais:
     
-    a. ```Set-AzKeyVaultSecret -VaultName $name -Name TestSecret -SecretValue (ConvertTo-SecureString -String 'Hi There!' -AsPlainText -Force)``` b. ```(Get-AzKeyVaultSecret -VaultName $name -Name TestSecret).SecretValueText```
+   a. ```Set-AzKeyVaultSecret -VaultName $name -Name TestSecret -SecretValue (ConvertTo-SecureString -String 'Hi There!' -AsPlainText -Force)``` b. ```(Get-AzKeyVaultSecret -VaultName $name -Name TestSecret).SecretValueText```
 
    ![Segredo retornado](./media/security-azure-log-integration-keyvault-eventhub/keyvaultsecret.png)
 

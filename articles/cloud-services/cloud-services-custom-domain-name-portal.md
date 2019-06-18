@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: jeconnoc
-ms.openlocfilehash: 2255004ae8cd92473b5fe71b44cccb79021a8bf7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e210882cb773718f68e9178cbbce6874c2729744
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60337437"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67063607"
 ---
 # <a name="configuring-a-custom-domain-name-for-an-azure-cloud-service"></a>Configurando um nome de domínio personalizado para um serviço de nuvem do Azure
-Quando você cria um Serviço de Nuvem, o Azure o atribui a um subdomínio do **cloudapp.net**. Por exemplo, se o Serviço de Nuvem for nomeado "contoso", os usuários poderão acessar o aplicativo usando uma URL como http://contoso.cloudapp.net. O Azure também fornece um endereço IP virtual.
+Quando você cria um Serviço de Nuvem, o Azure o atribui a um subdomínio do **cloudapp.net**. Por exemplo, se o Serviço de Nuvem for nomeado "contoso", os usuários poderão acessar o aplicativo usando uma URL como `http://contoso.cloudapp.net`. O Azure também fornece um endereço IP virtual.
 
 No entanto, você também pode expor seu aplicativo em seu próprio nome de domínio, como **contoso.com**. Este artigo explica como reservar ou configurar um nome de domínio personalizado para funções Web do Serviço de Nuvem.
 
@@ -78,7 +78,7 @@ Para criar um registro CNAME, você deve adicionar uma nova entrada na tabela DN
      Salve o nome de domínio usado na URL retornada por qualquer método, pois você precisará dele durante a criação de um registro CNAME.
 2. Faça logon no site do registrador de DNS e acesse a página de gerenciamento de DNS. Procure links ou áreas do site rotuladas como **Nome de Domínio**, **DNS** ou **Gerenciamento do Servidor de Nome**.
 3. Agora, encontre onde você pode selecionar ou inserir registros CNAME. Você pode ter que selecionar o tipo de registro de uma lista suspensa ou acessar uma página de configurações avançadas. Você deve procurar as palavras **CNAME**, **Alias** ou **Subdomínios**.
-4. Você deve também fornecer o domínio ou subdomínio alias para o CNAME, como **www** se você quiser criar um alias para **www\.customdomain.com**. Se você deseja criar um alias para o domínio raiz, ele pode estar listado como o símbolo '**\@**' nas ferramentas de DNS do registrador.
+4. Você deve também fornecer o domínio ou subdomínio alias para o CNAME, como **www** se você quiser criar um alias para **www\.customdomain.com**. Se você deseja criar um alias para o domínio raiz, ele pode estar listado como o símbolo ' **\@** ' nas ferramentas de DNS do registrador.
 5. Em seguida, você deve fornecer um nome do host canônico, que, neste caso, é o domínio **cloudapp.net** do seu aplicativo.
 
 Por exemplo, o seguinte registro CNAME encaminha todo o tráfego de **www\.contoso.com** à **contoso.cloudapp.net**, o nome de domínio personalizado do seu aplicativo implantado:
@@ -113,7 +113,7 @@ Para criar um registro, primeiro você deve encontrar o endereço IP do seu serv
 3. Agora, encontre onde você pode selecionar ou inserir registros A. Você pode ter que selecionar o tipo de registro de uma lista suspensa ou acessar uma página de configurações avançadas.
 4. Selecione ou digite o domínio ou subdomínio que usará este registro A. Por exemplo, selecione **www** se você quiser criar um alias para **www\.customdomain.com**. Se você quiser criar uma entrada curinga para todos os subdomínios, digite '*****'. Isso cobrirá todos os subdomínios, como **mail.customdomain.com**, **login.customdomain.com**, e **www\.customdomain.com**.
 
-    Se você deseja criar um registro A para o domínio raiz, ele pode estar listado como o símbolo '**\@**' nas ferramentas de DNS do registrador.
+    Se você deseja criar um registro A para o domínio raiz, ele pode estar listado como o símbolo ' **\@** ' nas ferramentas de DNS do registrador.
 5. Digite o endereço IP do seu serviço de nuvem no campo fornecido. Isto associa a entrada de domínio usada no registro A com o endereço IP da sua implantação do serviço de nuvem.
 
 Por exemplo, o seguinte registro A encaminha todo o tráfego de **contoso.com** para **137.135.70.239**, o endereço IP do seu aplicativo implantado:

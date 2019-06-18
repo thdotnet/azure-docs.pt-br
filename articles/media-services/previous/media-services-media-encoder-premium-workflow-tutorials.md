@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: christoc;xpouyat;juliako
 ms.openlocfilehash: d227e3618c138e6661cc4be7caa2b9a3ba1af3f1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61240396"
 ---
 # <a name="advanced-media-encoder-premium-workflow-tutorials"></a>Tutoriais avançados do fluxo de trabalho do Codificador de Mídia Premium
@@ -600,7 +600,7 @@ Agora, realize um teste local. Após essa execução, inspecione a propriedade L
 
 O objeto do nó no qual chamamos o método faz referência ao nosso "nó" atual, ou ao componente no qual estivermos gerando o script. Assim, cada componente tem a capacidade de gerar dados de log, disponíveis na guia Sistema. Nesse caso, mostramos a cadeia de caracteres literal "hello world". É importante entender aqui que essa pode ser uma ferramenta de depuração valiosa, fornecendo informações sobre o que o script está realmente fazendo.
 
-De dentro de nosso ambiente de script, também temos acesso às propriedades de outros componentes. Tente o seguinte:
+De dentro de nosso ambiente de script, também temos acesso às propriedades de outros componentes. Experimente isto:
 
 ```java
     //inspect current node:

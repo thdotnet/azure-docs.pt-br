@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 2/20/2019
 ms.author: panosper
 ms.custom: seodec18
-ms.openlocfilehash: 2148d1bd79a858bec37e6c574c2a6b6e2009fe46
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 1828cdce66104424cc7845fea89127219e6b77a0
+ms.sourcegitcommit: e5dcf12763af358f24e73b9f89ff4088ac63c6cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65190407"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67137262"
 ---
 # <a name="why-use-batch-transcription"></a>Por que usar a transcrição do lote?
 
@@ -66,8 +66,8 @@ Parâmetros de configuração são fornecidos como JSON:
 {
   "recordingsUrl": "<URL to the Azure blob to transcribe>",
   "models": [{"Id":"<optional acoustic model ID>"},{"Id":"<optional language model ID>"}],
-  "locale": "<local to us, for example en-US>",
-  "name": "<user define name of the transcription batch>",
+  "locale": "<locale to us, for example en-US>",
+  "name": "<user defined name of the transcription batch>",
   "description": "<optional description of the transcription>",
   "properties": {
     "ProfanityFilterMode": "Masked",
@@ -83,12 +83,14 @@ Parâmetros de configuração são fornecidos como JSON:
 
 ### <a name="configuration-properties"></a>Propriedades de configuração
 
-| Parâmetro | Descrição | Obrigatório/Opcional |
-|-----------|-------------|---------------------|
-| `ProfanityFilterMode` | Especifica como lidar com conteúdo ofensivo nos resultados do reconhecimento. Os valores aceitos são `none`, o que desativa a filtragem de profanação, `masked` que substitui a profanidade por asteriscos, `removed` que remove todos os palavrões do resultado ou `tags`, que adiciona tags de "profanidade". A configuração padrão é `masked`. | Opcional |
-| `PunctuationMode` | Especifica como manipular a pontuação nos resultados do reconhecimento. Os valores aceitos são `none`, o que desativa a pontuação, `dictated` que implica pontuação explícita, `automatic` que permite ao decodificador lidar com pontuação ou `dictatedandautomatic`, o que implica em sinais de pontuação ditados ou automáticos. | Opcional |
- | `AddWordLevelTimestamps` | Especifica se os carimbos de data/hora no nível da palavra devem ser adicionados à saída. Os valores aceitos são `true`, o que habilita os carimbos de data/hora no nível da palavra e `false` (o valor padrão) para desabilitá-los. | Opcional |
- | `AddSentiment` | Especifica o sentimento deve ser adicionado à declaração. Os valores aceitos são `true` que permite que o sentimento por expressão e `false` (o valor padrão) para desabilitá-lo. | Opcional |
+Use essas propriedades opcionais para configurar a transcrição:
+
+| Parâmetro | DESCRIÇÃO |
+|-----------|-------------|
+| `ProfanityFilterMode` | Especifica como lidar com palavrões em resultados de reconhecimento. Os valores aceitos são `none`, o que desativa a filtragem de profanação, `masked` que substitui a profanidade por asteriscos, `removed` que remove todos os palavrões do resultado ou `tags`, que adiciona tags de "profanidade". A configuração padrão é `masked`. |
+| `PunctuationMode` | Especifica como manipular a pontuação nos resultados do reconhecimento. Os valores aceitos são `none`, o que desativa a pontuação, `dictated` que implica pontuação explícita, `automatic` que permite ao decodificador lidar com pontuação ou `dictatedandautomatic`, o que implica em sinais de pontuação ditados ou automáticos. |
+ | `AddWordLevelTimestamps` | Especifica se os carimbos de data/hora no nível da palavra devem ser adicionados à saída. Os valores aceitos são `true`, o que habilita os carimbos de data/hora no nível da palavra e `false` (o valor padrão) para desabilitá-los. |
+ | `AddSentiment` | Especifica o sentimento deve ser adicionado à declaração. Os valores aceitos são `true` que permite que o sentimento por expressão e `false` (o valor padrão) para desabilitá-lo. |
 
 ### <a name="storage"></a>Armazenamento
 
@@ -100,6 +102,40 @@ Sondagem de status de transcrição pode não tenha o melhor desempenho, ou forn
 
 Para obter mais detalhes, consulte [Webhooks](webhooks.md).
 
+## <a name="speaker-separation-diarization"></a>Separação de alto-falante (Diarization)
+
+Diarization é o processo de separar os alto-falantes em uma parte de áudio. Nosso pipeline de lote dá suporte a Diarization e é capaz de reconhecer dois alto-falantes em gravações de canal mono.
+
+Para solicitar que a sua solicitação de transcrição de áudio é processada para diarization, você simplesmente precisa adicionar o parâmetro relevante na solicitação HTTP, conforme mostrado abaixo.
+
+ ```json
+{
+  "recordingsUrl": "<URL to the Azure blob to transcribe>",
+  "models": [{"Id":"<optional acoustic model ID>"},{"Id":"<optional language model ID>"}],
+  "locale": "<locale to us, for example en-US>",
+  "name": "<user defined name of the transcription batch>",
+  "description": "<optional description of the transcription>",
+  "properties": {
+    "AddWordLevelTimestamps" : "True",
+    "AddDiarization" : "True"
+  }
+}
+```
+
+Carimbos de hora de nível do Word também teria que ser ' Ativado ' pois indicam os parâmetros na solicitação acima. 
+
+O áudio correspondente conterá os alto-falantes identificados por um número (atualmente, damos suporte a apenas duas vozes, para que os alto-falantes serão identificados como ' 1 de alto-falante ' e 'Alto-falante 2') seguido pela saída de transcrição.
+
+Observe também que Diarization não está disponível em gravações em estéreo. Além disso, todos os JSON saída conterá a marca de alto-falante. Se diarization não for usado, ele mostrará ' alto-falante: Nulo ' na saída JSON.
+
+Localidades com suporte estão listadas abaixo.
+
+| Linguagem | localidade |
+|--------|-------|
+| Inglês | en-US |
+| Chinês | zh-CN |
+| Deutsch | de-DE |
+
 ## <a name="sentiment"></a>Sentimento
 
 Sentimento é um novo recurso na API de transcrição de lote e é um recurso importante no domínio do Centro de chamada. Os clientes podem usar o `AddSentiment` parâmetros às suas solicitações para 
@@ -110,7 +146,7 @@ Sentimento é um novo recurso na API de transcrição de lote e é um recurso im
 4.  Identificar o que deu bem ao transformar chamadas negativas positivo
 5.  Identificar clientes como e quais não gosto sobre um produto ou um serviço
 
-Sentimento foi classificado por segmento de áudio, onde um segmento de áudio é definido como a janela de tempo entre o início da declaração (deslocamento) e a latência de detecção do final do fluxo de bytes. Todo o texto dentro desse segmento é usado para calcular o sentimento. Nós não calculará nenhum valor de sentimento agregado para a chamada inteira ou a fala inteira de cada canal. Esses são deixadas para o proprietário do domínio ainda mais se aplicam.
+Sentimento foi classificado por segmento de áudio, onde um segmento de áudio é definido como a janela de tempo entre o início da declaração (deslocamento) e a latência de detecção do final do fluxo de bytes. Todo o texto dentro desse segmento é usado para calcular o sentimento. Nós não calculará nenhum valor de sentimento agregado para a chamada inteira ou a fala inteira de cada canal. Essas agregações são deixadas para o proprietário do domínio ainda mais se aplicam.
 
 Sentimento foi aplicado a forma léxica.
 
@@ -149,11 +185,11 @@ Um exemplo de saída JSON é semelhante a abaixo:
   ]
 }
 ```
-Os recursos usa um modelo de sentimento, que está atualmente em versão Beta.
+O recurso usa um modelo de sentimento, que está atualmente em versão Beta.
 
-## <a name="sample-code"></a>Código de exemplo
+## <a name="sample-code"></a>Exemplo de código
 
-O exemplo completo está disponível no [repositório de exemplo do GitHub](https://aka.ms/csspeech/samples) dentro do subdiretório `samples/batch`.
+Exemplos completos estão disponíveis na [repositório de exemplo do GitHub](https://aka.ms/csspeech/samples) dentro de `samples/batch` subdiretório.
 
 Você precisa personalizar o código de exemplo com as informações de assinatura, a região de serviço, o URI de SAS que aponta para o arquivo de áudio a transcrever e IDs de modelo caso deseje usar um modelo de linguagem ou acústico personalizado. 
 

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/26/2017
 ms.author: maxluk
 ms.openlocfilehash: 69ae1bd05b64912b3d53ca88b468a72a90ff5a74
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64718321"
 ---
 # <a name="authorize-users-for-apache-ambari-views"></a>Autorizar usuários para o Apache Ambari Views
@@ -28,7 +28,7 @@ Se você ainda não fez isso, siga [estas instruções](./domain-joined/apache-d
 
 ## <a name="access-the-ambari-management-page"></a>Acessar a página de gerenciamento do Ambari
 
-Para obter o **página de gerenciamento do Ambari** na [IU da Web do Apache Ambari](hdinsight-hadoop-manage-ambari.md), navegue até **`https://<YOUR CLUSTER NAME>.azurehdinsight.net`**. Insira o nome de usuário e a senha do administrador de cluster que você definiu ao criar o cluster. Em seguida, no painel do Ambari, selecione **Gerenciar Ambari** abaixo do menu **admin**:
+Para obter o **página de gerenciamento do Ambari** na [IU da Web do Apache Ambari](hdinsight-hadoop-manage-ambari.md), navegue até **`https://<YOUR CLUSTER NAME>.azurehdinsight.net`** . Insira o nome de usuário e a senha do administrador de cluster que você definiu ao criar o cluster. Em seguida, no painel do Ambari, selecione **Gerenciar Ambari** abaixo do menu **admin**:
 
 ![Gerenciar Ambari](./media/hdinsight-authorize-users-to-ambari/manage-ambari.png)
 

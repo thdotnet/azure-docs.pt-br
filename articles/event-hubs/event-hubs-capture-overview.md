@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 12/06/2018
 ms.author: shvija
 ms.openlocfilehash: ee64d25afcb2be73bed26c6c4dec87f216a0fd82
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66383880"
 ---
 # <a name="capture-events-through-azure-event-hubs-in-azure-blob-storage-or-azure-data-lake-storage"></a>Capture eventos por meio dos Hubs de Eventos do Azure no Armazenamento de Blobs do Azure ou no Azure Data Lake Storage
@@ -162,4 +162,4 @@ Você pode saber mais sobre Hubs de Eventos visitando os links abaixo:
 [HDInsight: Address files in Azure storage]:https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-blob-storage#address-files-in-azure-storage
 [Azure Databricks: Azure Blob Storage]:https://docs.databricks.com/spark/latest/data-sources/azure/azure-storage.html
 [Apache Drill: Azure Blob Storage Plugin]:https://drill.apache.org/docs/azure-blob-storage-plugin/
-[Streaming em escala: captura dos Hubs de Eventos]:https://github.com/yorek/streaming-at-scale/tree/master/event-hubs-capture
+[Streaming em escala: captura dos Hubs de Eventos]: https://github.com/yorek/streaming-at-scale/tree/master/event-hubs-capture

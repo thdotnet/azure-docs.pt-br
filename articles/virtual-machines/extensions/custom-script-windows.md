@@ -11,10 +11,10 @@ ms.workload: infrastructure-services
 ms.date: 05/02/2019
 ms.author: gwallace
 ms.openlocfilehash: b71ba69bcf4965ea607e097c392573e77aab6865
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65408282"
 ---
 # <a name="custom-script-extension-for-windows"></a>Extensão de script personalizado para o Windows
@@ -105,14 +105,14 @@ Esses itens devem ser tratados como dados confidenciais e especificados na confi
 | Nome | Valor/Exemplo | Tipo de Dados |
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
-| publicador | Microsoft.Compute | string |
-| tipo | CustomScriptExtension | string |
+| publicador | Microsoft.Compute | cadeia de caracteres |
+| type | CustomScriptExtension | cadeia de caracteres |
 | typeHandlerVersion | 1.9 | int |
-| fileUris (por exemplo) | https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-windows/scripts/configure-music-app.ps1 | matriz |
-| carimbo de data/hora (exemplo) | 123456789 | Inteiro de 32 bits |
-| commandToExecute (por exemplo) | powershell -ExecutionPolicy Unrestricted -File configure-music-app.ps1 | string |
+| fileUris (por exemplo) | https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-windows/scripts/configure-music-app.ps1 | array |
+| timestamp (exemplo) | 123456789 | Inteiro de 32 bits |
+| commandToExecute (por exemplo) | powershell -ExecutionPolicy Unrestricted -File configure-music-app.ps1 | cadeia de caracteres |
 | storageAccountName (por exemplo) | examplestorageacct | string |
-| storageAccountKey (por exemplo) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | string |
+| storageAccountKey (por exemplo) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | cadeia de caracteres |
 
 >[!NOTE]
 >Esses nomes de propriedade diferenciam maiúsculas de minúsculas. Para evitar problemas de implantação, use os nomes conforme mostrado aqui.

@@ -11,10 +11,10 @@ ms.author: amlstudiodocs
 ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/20/2017
 ms.openlocfilehash: 37ab56c377bc53a7300b51ffc709ea8d1b9d6f9b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60750317"
 ---
 # <a name="how-to-evaluate-model-performance-in-azure-machine-learning-studio"></a>Como avaliar o desempenho do modelo no Azure Machine Learning Studio
@@ -115,11 +115,11 @@ Voltando ao problema de classificação de renda, queremos fazer várias pergunt
 
 ![Resultados da avaliação de classificação binária](./media/evaluate-model-performance/7.png)
 
- Figura 7. Resultados da avaliação de classificação binária.
+Figura 7. Resultados da avaliação de classificação binária.
 
 Outra métrica relacionada usada com frequência é a **Pontuação F1**, que usa a precisão e a recuperação em consideração. É a média harmônica dessas 2 métricas e é calculada como tal: F1 = 2 (precisão x recall) / (precisão + recall). A pontuação F1 é uma boa maneira de resumir a avaliação de um único número, mas é sempre uma boa prática examinar a precisão e a recuperação para entender melhor como um classificador se comporta.
 
-Além disso, é possível inspecionar a taxa de positivos verdadeiros versus a taxa de falsos positivos na curva **ROC (Característica de Operação do Receptor)** e o valor correspondente de **AUC (Área sob a Curva)**. Quanto mais próxima essa curva estiver do canto superior esquerdo, melhor estará o desempenho do classificador (que é maximizar a taxa de positivos verdadeiros enquanto minimiza os falsos positivos). As curvas que estão próximas à diagonal do gráfico, o resultado dos classificadores que tendem a fazer previsões próximas à previsão aleatória.
+Além disso, é possível inspecionar a taxa de positivos verdadeiros versus a taxa de falsos positivos na curva **ROC (Característica de Operação do Receptor)** e o valor correspondente de **AUC (Área sob a Curva)** . Quanto mais próxima essa curva estiver do canto superior esquerdo, melhor estará o desempenho do classificador (que é maximizar a taxa de positivos verdadeiros enquanto minimiza os falsos positivos). As curvas que estão próximas à diagonal do gráfico, o resultado dos classificadores que tendem a fazer previsões próximas à previsão aleatória.
 
 ### <a name="using-cross-validation"></a>Usando Validação Cruzada
 Como no exemplo de regressão, podemos executar validação cruzada para treinar repetidamente, classificar e avaliar os diferentes subconjuntos de dados automaticamente. Da mesma forma, podemos usar o módulo [Modelo de Validação Cruzada][cross-validate-model], um modelo de regressão logística não treinado e um conjunto de dados. A coluna de rótulo deve ser definida como *renda* nas propriedades do módulo [Modelo de Validação Cruzada][cross-validate-model]. Após executar o experimento e clicar na porta de saída à direita do módulo [Modelo de Validação Cruzada][cross-validate-model], podemos ver os valores de métrica de classificação binária para cada partição, além da média e do desvio padrão de cada um. 

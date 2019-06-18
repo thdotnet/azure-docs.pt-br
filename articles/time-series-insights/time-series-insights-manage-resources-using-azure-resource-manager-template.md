@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 05/08/2019
 ms.custom: seodec18
 ms.openlocfilehash: ba7d412e9bfc29a53cd0aa47a926f60580b45490
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66237646"
 ---
 # <a name="create-time-series-insights-resources-using-azure-resource-manager-templates"></a>Criar recursos do Time Series Insights usando modelos do Azure Resource Manager
@@ -148,7 +148,7 @@ O procedimento a seguir descreve como usar o PowerShell para implantar um modelo
 
 1. Crie um novo grupo de recursos se já não tiver um.
 
-   * Se você não tiver um recurso existente do grupo, crie um novo grupo de recursos com o **New-AzResourceGroup** comando. Forneça o nome do grupo de recursos e local que você deseja usar. Por exemplo: 
+   * Se você não tiver um recurso existente do grupo, crie um novo grupo de recursos com o **New-AzResourceGroup** comando. Forneça o nome do grupo de recursos e local que você deseja usar. Por exemplo:
 
      ```powershell
      New-AzResourceGroup -Name MyDemoRG -Location "West US"

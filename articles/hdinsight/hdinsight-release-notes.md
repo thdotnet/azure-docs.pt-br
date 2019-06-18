@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/15/2019
-ms.openlocfilehash: 0beac64ceb0bbf729d2f6d0f6a0ca8d5af499f42
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 1c8bdd0ca715b6dfd00dc9876a074c61711990af
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64725419"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67117817"
 ---
 # <a name="release-notes-for-azure-hdinsight"></a>Notas da versão mais recente do Microsoft Azure HDInsight
 
@@ -45,7 +45,7 @@ As versões do Apache oficiais de todos os componentes do HDInsight 4.0 são for
 - Apache Pig 0.16.0
 - Apache Ranger 0.7.0
 - Apache Slider 0.92.0
-- Apache Spark 2.3.1
+- Apache Spark 2.3.2
 - Apache Sqoop 1.4.7
 - Apache TEZ 0.9.1
 - Apache Zeppelin 0.8.0
@@ -105,7 +105,7 @@ Para o HDInsight 3.6, faça o seguinte:
     sudo wget https://raw.githubusercontent.com/Azure/hbase-utils/master/replication/hdi_enable_replication.sh
     ```
 1. Digite o comando `sudo kinit -k -t /etc/security/keytabs/hbase.service.keytab hbase/<FQDN>@<DOMAIN>`.
-1. Digite o seguinte comando: 
+1. Digite o seguinte comando:
 
     ```bash
     sudo bash hdi_enable_replication.sh -s <srclusterdns> -d <dstclusterdns> -sp <srcclusterpasswd> -dp <dstclusterpasswd> -copydata

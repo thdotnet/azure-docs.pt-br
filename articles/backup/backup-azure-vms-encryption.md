@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 4/3/2019
 ms.author: geetha
 ms.openlocfilehash: 893a22fb9f325625707869c8f6571d572b8f6b33
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61216880"
 ---
 # <a name="back-up-and-restore-encrypted-azure-vm"></a>Fazer backup e restaurar a VM do Azure criptografada
@@ -134,7 +134,7 @@ Para definir permissões:
 
     ![Seleção de serviço de backup](./media/backup-azure-vms-encryption/select-backup-service.png)
 
-6. Na **adicionar política de acesso** > **configurar usando o modelo (opcional)**, selecione **Backup do Azure**.
+6. Na **adicionar política de acesso** > **configurar usando o modelo (opcional)** , selecione **Backup do Azure**.
     - As permissões necessárias para **Permissões de chave** e **Permissões de segredo** são preenchidas.
     - Se sua VM é criptografada usando **somente BEK**, remova a seleção para **permissões de chave** , pois você só precisa de permissões para segredos.
 

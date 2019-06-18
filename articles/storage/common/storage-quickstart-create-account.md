@@ -10,10 +10,10 @@ ms.date: 05/06/2019
 ms.author: tamram
 ms.subservice: common
 ms.openlocfilehash: 8375f4c54dc436ecf0694ec5f629c81d3591594d
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65234151"
 ---
 # <a name="create-a-storage-account"></a>Criar uma conta de armazenamento
@@ -137,9 +137,9 @@ Para criar uma conta de armazenamento de uso geral v2 com uma opção de replica
 
 |Opção de replicação  |Parâmetro SkuName  |
 |---------|---------|
-|Armazenamento com redundância local (LRS)     |LRS_Padrão         |
-|ZRS (armazenamento com redundância de zona)     |Standard_ZRS         |
-|GRS (armazenamento com redundância geográfica)     |Standard_GRS         |
+|Armazenamento com redundância local (LRS)     |Standard_LRS         |
+|Armazenamento com redundância de zona (ZRS)     |Standard_ZRS         |
+|Armazenamento com redundância geográfica (GRS)     |Standard_GRS         |
 |Armazenamento com redundância geográfica com acesso de leitura (GRS)     |Standard_RAGRS         |
 
 # <a name="azure-clitabazure-cli"></a>[CLI do Azure](#tab/azure-cli)
@@ -175,9 +175,9 @@ Para criar uma conta de armazenamento de uso geral v2 com uma opção de replica
 
 |Opção de replicação  |Parâmetro sku  |
 |---------|---------|
-|Armazenamento com redundância local (LRS)     |LRS_Padrão         |
-|ZRS (armazenamento com redundância de zona)     |Standard_ZRS         |
-|GRS (armazenamento com redundância geográfica)     |Standard_GRS         |
+|Armazenamento com redundância local (LRS)     |Standard_LRS         |
+|Armazenamento com redundância de zona (ZRS)     |Standard_ZRS         |
+|Armazenamento com redundância geográfica (GRS)     |Standard_GRS         |
 |Armazenamento com redundância geográfica com acesso de leitura (GRS)     |Standard_RAGRS         |
 
 # <a name="templatetabtemplate"></a>[Modelo](#tab/template)
@@ -220,7 +220,7 @@ Se você quiser limpar todos os recursos criados por este artigo de instruções
 Para remover um grupo de recursos usando o portal do Azure:
 
 1. No portal do Azure, expanda o menu à esquerda para abrir o menu de serviços e escolha **Grupo de Recursos** para exibir a lista dos seus grupos de recursos.
-2. Localize o grupo de recursos a ser excluído e clique com o botão direito do mouse no botão **Mais** (**...**) do lado direito da lista.
+2. Localize o grupo de recursos a ser excluído e clique com o botão direito do mouse no botão **Mais** ( **...** ) do lado direito da lista.
 3. Selecione **Excluir grupo de recursos** e confirme.
 
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)

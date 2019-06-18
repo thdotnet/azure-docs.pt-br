@@ -13,10 +13,10 @@ ms.workload: NA
 ms.date: 07/31/2018
 ms.author: saysa
 ms.openlocfilehash: 3b1e6f769d5c65065d95ac96c4ab4ed10702e5cf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61038641"
 ---
 # <a name="use-jenkins-to-build-and-deploy-your-linux-applications"></a>Usar o Jenkins para criar e implantar seus aplicativos do Linux
@@ -218,7 +218,7 @@ As etapas nesta seção mostram como configurar um trabalho do Jenkins para resp
 1. Na guia **Gerenciamento de Código-Fonte**, selecione **Git**. Especifique a URL do repositório que hospeda o aplicativo Java do Service Fabric que você deseja integrar ao fluxo CI/CD do Jenkins (por exemplo, `https://github.com/{your-github-account}/service-fabric-java-getting-started`). Você também pode especificar qual ramificação criar (por exemplo, `/master`).
 1. Configure o repositório *GitHub* para falar com o Jenkins:
 
-    a. Na página repositório GitHub, vá para **Configurações** > **Integrações e Serviços**.
+   a. Na página repositório GitHub, vá para **Configurações** > **Integrações e Serviços**.
 
    b. Selecione **Adicionar Serviço**, digite **Jenkins** e selecione o **plug-in Jenkins-Github**.
 
@@ -259,7 +259,7 @@ As etapas nesta seção mostram como configurar um trabalho do Jenkins para resp
         openssl pkcs12 -in clustercert.pfx -out clustercert.pem -nodes -passin pass:
         ``` 
 
-        Se o arquivo PFX estiver protegido por senha, inclua a senha no parâmetro `-passin`. Por exemplo: 
+        Se o arquivo PFX estiver protegido por senha, inclua a senha no parâmetro `-passin`. Por exemplo:
 
         ```sh
         openssl pkcs12 -in clustercert.pfx -out clustercert.pem -nodes -passin pass:MyPassword1234!

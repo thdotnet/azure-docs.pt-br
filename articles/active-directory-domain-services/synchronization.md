@@ -16,10 +16,10 @@ ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: mstephen
 ms.openlocfilehash: 295a991e610e76971413a2abdba1e2fcc5f9eba6
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66246683"
 ---
 # <a name="synchronization-in-an-azure-ad-domain-services-managed-domain"></a>Sincronização em um domínio gerenciado dos Serviços de Domínio do Azure AD
@@ -60,7 +60,7 @@ Os seguintes atributos ou objetos não são sincronizados para seu locatário do
 ## <a name="how-specific-attributes-are-synchronized-to-your-managed-domain"></a>Como os atributos específicos são sincronizados com o domínio gerenciado
 A tabela a seguir lista alguns atributos comuns e descreve como eles serão sincronizados com o domínio gerenciado.
 
-| O atributo em seu domínio gerenciado | `Source` | Observações |
+| O atributo em seu domínio gerenciado | source | Observações |
 |:--- |:--- |:--- |
 | UPN |Atributo UPN do usuário no seu locatário do Azure AD |O atributo UPN do seu locatário do Azure AD é sincronizado como ele está para o domínio gerenciado. Portanto, a maneira mais confiável para entrar no seu domínio gerenciado é usando seu UPN. |
 | SAMAccountName |O atributo mailNickname do usuário no seu locatário do Azure AD ou gerado automaticamente |O atributo SAMAccountName é originado do atributo mailNickname no seu locatário do Azure AD. Se várias contas de usuário tiverem o mesmo atributo mailNickname, SAMAccountName será gerado automaticamente. Se o mailNickname ou o prefixo UPN do usuário tiver mais de 20 caracteres, o SAMAccountName será gerado automaticamente para satisfazer o limite de 20 caracteres em atributos SAMAccountName. |
@@ -94,7 +94,7 @@ A tabela a seguir ilustra como os atributos específicos de objetos de usuário 
 | physicalDeliveryOfficeName |physicalDeliveryOfficeName |
 | postalCode |postalCode |
 | preferredLanguage |preferredLanguage |
-| state |st |
+| estado |st |
 | streetAddress |streetAddress |
 | sobrenome |sn |
 | telephoneNumber |telephoneNumber |

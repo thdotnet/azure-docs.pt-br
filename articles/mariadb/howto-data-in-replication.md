@@ -6,16 +6,16 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 3897c402e45962836880ccebbeb252d189188d3c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 39c5efee0958fdfc8fa647f5acaf929f559f7bf7
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61038531"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67065658"
 ---
 # <a name="how-to-configure-azure-database-for-mariadb-data-in-replication"></a>Como configurar o banco de dados do Azure para replicação de entrada de dados do MariaDB
 
-Neste artigo, você aprenderá como configurar a Replicação de Dados no banco de dados do Azure para o serviço MariaDB, configurando os servidores mestre e de réplica. A Replicação de Entrada de Dados permite sincronizar dados de um servidor MariaDB mestre em execução no local, em máquinas virtuais ou serviços de banco de dados hospedados por outros provedores de nuvem em uma réplica no serviço Banco de Dados do Azure para MariaDB. 
+Neste artigo, você aprenderá como configurar a Replicação de Dados no banco de dados do Azure para o serviço MariaDB, configurando os servidores mestre e de réplica. A Replicação de Entrada de Dados permite sincronizar dados de um servidor MariaDB mestre em execução no local, em máquinas virtuais ou serviços de banco de dados hospedados por outros provedores de nuvem em uma réplica no serviço Banco de Dados do Azure para MariaDB. Podemos recommanded você configurar a replicação de dados com o [ID de transação Global](https://mariadb.com/kb/en/library/gtid/) quando a versão do seu servidor mestre é 10.2 ou acima.
 
 Este artigo pressupõe que você tenha pelo menos alguma experiência anterior com servidores e bancos de dados MariaDB.
 
@@ -116,7 +116,16 @@ As etapas a seguir preparam e configuram o servidor MariaDB hospedado no local, 
    Os resultados devem ser assim. Anote o nome de arquivo binário, pois ele será usado em etapas posteriores.
 
    ![Resultados de status do mestre](./media/howto-data-in-replication/masterstatus.png)
+   
+6. Obtenha a posição de GTID (opcional, necessário para replicação com GTID)
+
+   Executar a função [ `BINLOG_GTID_POS` ](https://mariadb.com/kb/en/library/binlog_gtid_pos/) comando para obter a posição de GTID para o nome de arquivo binlog correspondente e o deslocamento.
+  
+    ```sql
+    select BINLOG_GTID_POS('<binlog file name>', <binlog offset>);
+    ```
  
+
 ## <a name="dump-and-restore-master-server"></a>Despejar e restaurar o servidor principal
 
 1. Descarregar todos os bancos de dados do servidor mestre
@@ -142,10 +151,16 @@ As etapas a seguir preparam e configuram o servidor MariaDB hospedado no local, 
 
    Todas as funções de replicação nos dados são feitas por procedimentos armazenados. Você pode encontrar todos os procedimentos em [Procedimentos armazenados de replicação nos dados](reference-data-in-stored-procedures.md). Os procedimentos armazenados podem ser executados no shell do MySQL ou no Workbench do MySQL.
 
-   Para vincular dois servidores e iniciar a replicação, faça logon no servidor de réplica de destino no DB do Azure para o serviço MariaDB e defina a instância externa como o servidor mestre. Isso é feito usando o `mysql.az_replication_change_master` procedimento armazenado no BD do Azure para servidor MariaDB.
+   Para vincular dois servidores e iniciar a replicação, faça logon no servidor de réplica de destino no DB do Azure para o serviço MariaDB e defina a instância externa como o servidor mestre. Isso é feito usando o `mysql.az_replication_change_master` ou `mysql.az_replication_change_master_with_gtid` procedimento armazenado no BD do Azure para servidor MariaDB.
 
    ```sql
    CALL mysql.az_replication_change_master('<master_host>', '<master_user>', '<master_password>', 3306, '<master_log_file>', <master_log_pos>, '<master_ssl_ca>');
+   ```
+   
+   ou o
+   
+   ```sql
+   CALL mysql.az_replication_change_master_with_gtid('<master_host>', '<master_user>', '<master_password>', 3306, '<master_gtid_pos>', '<master_ssl_ca>');
    ```
 
    - master_host: nome do host do servidor mestre
@@ -153,6 +168,7 @@ As etapas a seguir preparam e configuram o servidor MariaDB hospedado no local, 
    - master_password: a senha para o servidor mestre
    - master_log_file: nome de arquivo de log binário de `show master status` em execução
    - master_log_pos: posição de log binário de `show master status` em execução
+   - master_gtid_pos: Posição GTID execução `select BINLOG_GTID_POS('<binlog file name>', <binlog offset>);`
    - master_ssl_ca: Contexto do Certificado de Autoridade de Certificação. Se não estiver usando SSL, passe em uma cadeia de caracteres vazia.
        - É recomendável passar esse parâmetro como uma variável. Confira os exemplos a seguir para obter mais informações.
 
@@ -199,6 +215,10 @@ As etapas a seguir preparam e configuram o servidor MariaDB hospedado no local, 
 
    Se os estados de `Slave_IO_Running` e `Slave_SQL_Running` são "yes" e o valor de `Seconds_Behind_Master` é "0", a replicação está funcionando bem. `Seconds_Behind_Master` indica o atraso da réplica. Se o valor não é "0", isso significa que a réplica está processando as atualizações. 
 
+4. Atualização correspondem a variáveis de servidor para tornar os dados de replicação mais segura (necessária apenas para replicação sem GTID)
+    
+    Devido a uma limitação de replicação nativa do MariaDB, será necessário instalar [ `sync_master_info` ](https://mariadb.com/kb/en/library/replication-and-binary-log-system-variables/#sync_master_info) e [ `sync_relay_log_info` ](https://mariadb.com/kb/en/library/replication-and-binary-log-system-variables/#sync_relay_log_info) variáveis em replicação sem o cenário de GTID. Podemos recommand você verificar do seu servidor subordinado `sync_master_info` e `sync_relay_log_info` variáveis e alterá-los ot `1` para certificar-se de que a replicação de dados é estável.
+    
 ## <a name="other-stored-procedures"></a>Outros procedimentos armazenados
 
 ### <a name="stop-replication"></a>Parar replicação

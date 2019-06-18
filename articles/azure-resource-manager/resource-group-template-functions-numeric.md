@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/08/2017
 ms.author: tomfitz
 ms.openlocfilehash: 5ed3a0a57dad61a5fe783790eba4cb89ce19c660
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66128658"
 ---
 # <a name="numeric-functions-for-azure-resource-manager-templates"></a>Funções numéricas para modelos do Azure Resource Manager
@@ -47,7 +47,7 @@ Retorna a soma dos dois inteiros fornecidos.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- | 
 |operand1 |Sim |int |Primeiro número a ser adicionado. |
 |operand2 |Sim |int |Segundo número a ser adicionado. |
@@ -118,9 +118,9 @@ Retorna o índice de um loop de iteração.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
-| loopName | Não | string | O nome do loop para obter a iteração. |
+| loopName | Não | cadeia de caracteres | O nome do loop para obter a iteração. |
 | deslocamento |Não |int |O número a ser adicionado ao valor de iteração com base em zero. |
 
 ### <a name="remarks"></a>Comentários
@@ -164,7 +164,7 @@ Retorna a divisão de inteiros dos dois inteiros fornecidos.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | operand1 |Sim |int |O número que está sendo dividido. |
 | operand2 |Sim |int |O número usado para dividir. Não pode ser 0. |
@@ -228,14 +228,14 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 <a id="float" />
 
-## <a name="float"></a>flutuante
+## <a name="float"></a>float
 `float(arg1)`
 
 Converte o valor em um número de ponto flutuante. Você só usa essa função ao passar parâmetros personalizados para um aplicativo, como um aplicativo lógico.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |cadeia de caracteres ou inteiro |O valor a ser convertido em um número de ponto flutuante. |
 
@@ -269,7 +269,7 @@ Converte o valor especificado em um inteiro.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | valueToConvert |Sim |string ou int |O valor a ser convertido em um inteiro. |
 
@@ -322,14 +322,14 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 <a id="max" />
 
-## <a name="max"></a>máx.
+## <a name="max"></a>max
 `max (arg1)`
 
 Retorna o valor máximo de uma matriz de inteiros ou uma lista de inteiros separados por vírgulas.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |matriz de inteiros ou lista de inteiros separados por vírgulas |A coleção para obtenção do valor máximo. |
 
@@ -386,14 +386,14 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 <a id="min" />
 
-## <a name="min"></a>min
+## <a name="min"></a>Min
 `min (arg1)`
 
 Retorna o valor mínimo de uma matriz de inteiros ou uma lista de inteiros separados por vírgulas.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | arg1 |Sim |matriz de inteiros ou lista de inteiros separados por vírgulas |A coleção para obtenção do valor mínimo. |
 
@@ -457,7 +457,7 @@ Retorna o restante da divisão de inteiros usando os dois inteiros fornecidos.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | operand1 |Sim |int |O número que está sendo dividido. |
 | operand2 |Sim |int |O número usado para dividir. Não pode ser 0. |
@@ -527,7 +527,7 @@ Retorna a multiplicação de dois inteiros fornecidos.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | operand1 |Sim |int |Primeiro número a ser multiplicado. |
 | operand2 |Sim |int |Segundo número a ser multiplicado. |
@@ -598,7 +598,7 @@ Retorna a subtração dos dois inteiros fornecidos.
 
 ### <a name="parameters"></a>parâmetros
 
-| Parâmetro | Obrigatório | Type | Descrição |
+| Parâmetro | Obrigatório | Type | DESCRIÇÃO |
 |:--- |:--- |:--- |:--- |
 | operand1 |Sim |int |O número do qual é subtraído. |
 | operand2 |Sim |int |O número subtraído. |

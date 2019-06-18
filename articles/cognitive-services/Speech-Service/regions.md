@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/12/2019
 ms.author: panosper
 ms.custom: seodec18
-ms.openlocfilehash: 83cea56cecf9792c829e062965fe39b63201af3e
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 518f1048224a97943756c5b51b83cd509f82e11e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65020658"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67072507"
 ---
 # <a name="speech-service-supported-regions"></a>Regiões com suporte do Serviço de Fala
 
@@ -80,12 +80,12 @@ O serviço de fala também expõe pontos de extremidade REST para solicitações
 
 ### <a name="speech-to-text"></a>Conversão de fala em texto
 
-Para obter a documentação de referência de fala em texto, consulte [APIs REST](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis).
+Para obter a documentação de referência de fala em texto, consulte [API REST de fala em texto](rest-speech-to-text.md).
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-endpoints-speech-to-text.md)]
 
 ### <a name="text-to-speech"></a>Conversão de texto em fala
 
-Para obter a documentação de referência de texto em fala, consulte [APIs REST](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis).
+Para obter a documentação de referência de texto em fala, consulte [API REST do texto em fala](rest-text-to-speech.md).
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-endpoints-text-to-speech.md)]

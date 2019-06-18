@@ -18,10 +18,10 @@ ms.date: 08/03/2016
 ms.author: cephalin
 ms.custom: seodec18
 ms.openlocfilehash: 2d17991854f13f889c4e8c3a8c6f18e933655546
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62128442"
 ---
 # <a name="troubleshoot-slow-app-performance-issues-in-azure-app-service"></a>Solucionar problemas de desempenho de aplicativo lento no Serviço de Aplicativo do Azure
@@ -136,7 +136,7 @@ Para acessar o diagnóstico do Serviço de Aplicativo, navegue até seu aplicati
 #### <a name="use-the-kudu-debug-console"></a>Usar o Console de Depuração Kudu
 O Serviço de Aplicativo vem com um console de depuração que você pode usar para depurar, explorar e carregar arquivos, incluindo pontos de extremidade JSON para obter informações sobre o ambiente. Esse console chama o *Console Kudu* ou o *Painel SCM* do seu aplicativo.
 
-Você pode acessar este painel acessando o link **https://&lt;Nome do aplicativo>.scm.azurewebsites.net/**.
+Você pode acessar este painel acessando o link **https://&lt;Nome do aplicativo>.scm.azurewebsites.net/** .
 
 Estas são algumas das coisas que o Kudu fornece:
 

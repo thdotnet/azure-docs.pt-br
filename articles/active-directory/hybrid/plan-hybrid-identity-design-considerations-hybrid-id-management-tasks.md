@@ -1,6 +1,6 @@
 ---
 title: Design de identidade híbrida - tarefas de gerenciamento do Azure | Microsoft Docs
-description: Com o controle de acesso condicional, o Active Directory do Azure verifica as condições específicas que você escolhe para autenticar o usuário e antes de permitir o acesso ao aplicativo. Quando essas condições forem atendidas, o usuário é autenticado e autorizado a acessar o aplicativo.
+description: Com o controle de acesso condicional, o Azure Active Directory verifica as condições específicas que você escolhe ao autenticar o usuário e antes de permitir o acesso ao aplicativo. Quando essas condições forem atendidas, o usuário é autenticado e autorizado a acessar o aplicativo.
 documentationcenter: ''
 services: active-directory
 author: billmath
@@ -17,12 +17,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cb3f7baa38305215a8b8383d25132327327d182
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: 8a829d39ff21a1abeafd3b4362747894d196d9d4
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66472958"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67109380"
 ---
 # <a name="plan-for-hybrid-identity-lifecycle"></a>Plano para o ciclo de vida de identidade híbrida
 Identidade é um dos pilares da mobilidade da sua empresa e da estratégia de acesso de aplicativo. Se você estiver entrando em seu dispositivo móvel ou em um aplicativo SaaS, sua identidade é a chave para ganhar acesso a tudo. Em seu nível mais alto, uma solução de gerenciamento de identidades abrange a unificação e a sincronização entre os repositórios de identidades, o que inclui automação e centralização do processo de provisionamento de recursos. A solução de identidade deve ser uma identidade centralizada no local e na nuvem e também usar alguma forma de federação de identidades para manter a autenticação centralizada e compartilhar e colaborar de forma segura com empresas e usuários externos. Os recursos variam de sistemas operacionais e aplicativos a pessoas associada ou pertencentes a uma organização. A estrutura organizacional pode ser alterada para acomodar as políticas e procedimentos de provisionamento.

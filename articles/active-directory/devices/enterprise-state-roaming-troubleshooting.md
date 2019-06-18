@@ -19,12 +19,12 @@ ms.author: joflore
 ms.reviewer: tanning
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cce60769ffae399062a50e1b2c28c1cd6e49a47e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0b74be0dda8e5c79987479393ad0d8ef5c3bdd16
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60353169"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67110659"
 ---
 # <a name="troubleshooting-enterprise-state-roaming-settings-in-azure-active-directory"></a>Solucionando problemas de configurações do Enterprise State Roaming no Azure Active Directory
 
@@ -85,7 +85,7 @@ Em determinadas condições, o Roaming de Estado de Empresa poderá não sincron
 
 **Problema em potencial**: Se o dispositivo está configurado para exigir Autenticação Multifator no portal do Azure Active Directory, você pode não conseguir sincronizar configurações ao entrar em um dispositivo Windows 10 usando uma senha. Esse tipo de configuração de Autenticação Multifator destina-se a proteger uma conta de administrador do Azure. Os usuários administradores talvez ainda possam executar a sincronização entrando em seus dispositivos Windows 10 com o PIN do Microsoft Passport for Work ou concluindo a Autenticação Multifator durante o acesso a outros serviços do Azure, como o Office 365.
 
-**Problema em potencial**: A sincronização poderá falhar se o administrador configurar a política de acesso condicional da Autenticação Multifator dos Serviços de Federação do Active Directory (AD FS) e o token de acesso do dispositivo expirará. Certifique-se de entrar e sair usando o PIN do Microsoft Passport for Work ou conclua a Autenticação Multifator durante o acesso a outros serviços do Azure, como o Office 365.
+**Problema em potencial**: Sincronização poderá falhar se o administrador configurar a política de acesso do Active Directory Federation Services multi-factor autenticação condicional e o token de acesso do dispositivo expira. Certifique-se de entrar e sair usando o PIN do Microsoft Passport for Work ou conclua a Autenticação Multifator durante o acesso a outros serviços do Azure, como o Office 365.
 
 ### <a name="event-viewer"></a>Visualizador de Eventos
 
@@ -185,6 +185,6 @@ No Visualizador de Eventos em AAD/logs operacionais, esse erro pode ser visto co
 **Ação recomendada**  
 Prossiga com as etapas listadas em [KB3196528](https://support.microsoft.com/kb/3196528).  
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Para obter uma visão geral, confira [visão geral do Enterprise State Roaming](enterprise-state-roaming-overview.md).

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 10/05/2018
 ms.author: ellacroi
 ms.openlocfilehash: 6ba008ffdf0fe00d6720b0968dc42bfcfc651c9c
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66258963"
 ---
 # <a name="register-in-dev-center"></a>Registrar no Centro de Desenvolvimento  
@@ -182,7 +182,7 @@ As informações bancárias e fiscais são necessárias para todas as ofertas co
   > Você não poderá publicar ofertas de transação sem preencher as informações fiscais e bancárias em sua conta do Centro de Desenvolvimento.  Para saber mais sobre como adicionar informações de conta, visite [Como adicionar informações bancárias e fiscais](https://docs.microsoft.com/azure/marketplace/register-dev-center).
 
 * **Posso alterar a conta de logon da Microsoft do Centro de Desenvolvimento?**
-  >  Não. Depois de criar um Centro de Desenvolvimento, a conta do proprietário não pode ser alterada. Você teria que começar com uma conta totalmente nova do Centro de Desenvolvimento com a conta da Microsoft desejada.
+  > Não. Depois de criar um Centro de Desenvolvimento, a conta do proprietário não pode ser alterada. Você teria que começar com uma conta totalmente nova do Centro de Desenvolvimento com a conta da Microsoft desejada.
 
 * **Onde devo contatar o suporte sobre problemas com relação ao registro do Centro de Desenvolvimento?**
   Para acessar o suporte, visite a página de suporte de desenvolvedor do Windows localizada em [developer.microsoft.com/windows/support](https://developer.microsoft.com/windows/support). 

@@ -12,7 +12,7 @@
       items:
         - name: Linux
           href: 'https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-portal'
-        - name: ' Windows'
+        - name: Windows
           href: 'https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal'
     - name: Sem servidor
       href: 'https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function'
@@ -38,7 +38,7 @@
       items:
         - name: Linux
           href: 'https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-vm'
-        - name: ' Windows'
+        - name: Windows
           href: 'https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-manage-vm'
     - name: Criar uma função conectada do Azure
       href: 'https://docs.microsoft.com/azure/azure-functions/functions-create-an-azure-connected-function'
@@ -83,7 +83,7 @@
     - name: Plano
       items:
         - name: Arquiteturas de aplicativo Web
-          href: 'https://docs.microsoft.com/azure/architecture/reference-architectures/managed-web-app/'
+          href: 'https://docs.microsoft.com/azure/architecture/reference-architectures/app-service-web-app/basic-web-app'
         - name: Arquiteturas da VM
           href: 'https://docs.microsoft.com/azure/architecture/reference-architectures/virtual-machines-windows/'
         - name: Conectar-se a redes locais

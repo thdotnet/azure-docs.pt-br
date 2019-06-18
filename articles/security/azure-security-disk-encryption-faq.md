@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 06/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 149452bd7d43ce46f320b9bae63a6f9cd48d98d4
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
-ms.translationtype: MT
+ms.openlocfilehash: e1583ccf04b68f81a71bd2f63779680427ce3362
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66730692"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67068774"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Perguntas frequentes do Azure Disk Encryption para VMs de IaaS
 
@@ -33,7 +33,7 @@ Não há nenhum encargo para criptografar discos de VM com o Azure Disk Encrypti
 
 ## <a name="which-virtual-machine-tiers-does-azure-disk-encryption-support"></a>A quais camadas de máquina virtual o Azure Disk Encryption dá suporte?
 
-O Azure Disk Encryption está disponível nas VMs da camada padrão, incluindo as VMs IaaS da série [A, D, DS, G, GS e F](https://azure.microsoft.com/pricing/details/virtual-machines/). Ele também está disponível para VMs com armazenamento premium. Ele não está disponível em VMs da camada básica.
+O Azure Disk Encryption está disponível nas VMs de camada standard, incluindo [A, D, DS, E, G, GS e F](https://azure.microsoft.com/pricing/details/virtual-machines/) VMs IaaS das séries. Ele também está disponível para VMs com armazenamento premium. Ele não está disponível em VMs da camada básica.
 
 ## <a name="bkmk_LinuxOSSupport"></a> Azure Disk Encryption dá suporte a quais distribuições do Linux?
 
@@ -121,7 +121,9 @@ Sim. Ainda há suporte para criptografia de disco usando um aplicativo do Azure 
 Use a versão mais recente do SDK do Azure PowerShell para configurar o Azure Disk Encryption. Baixe a última versão do [Azure PowerShell](https://github.com/Azure/azure-powershell/releases). O Azure Disk Encryption *não* é suportado pela versão 1.1.0 do SDK do Azure.
 
 > [!NOTE]
-> A extensão de versão prévia do Azure Disk Encryption foi preterida. Para obter detalhes, confira [Deprecating Azure disk encryption preview extension for Linux IaaS VMs](https://blogs.msdn.microsoft.com/azuresecurity/2017/07/12/deprecating-azure-disk-encryption-preview-extension-for-linux-iaas-vms/) (Substituindo a versão prévia da extensão de criptografia para VMs IaaS Linux).
+> A extensão de visualização de criptografia de disco Linux do Azure "Microsoft.OSTCExtension.AzureDiskEncryptionForLinux" foi preterida. Essa extensão foi publicada para versão de visualização do Azure disk encryption. Você não deve usar a versão prévia da extensão em sua implantação de teste ou produção.
+
+> Para cenários de implantação, como do Azure Resource Manager (ARM), em que você tiver uma necessidade de implantar a extensão de criptografia de disco do Azure para VM do Linux habilitar a criptografia na VM de IaaS do Linux, você deve usar a extensão de produção com suporte de criptografia de disco do Azure" Microsoft.Azure.Security.AzureDiskEncryptionForLinux".
 
 ## <a name="can-i-apply-azure-disk-encryption-on-my-custom-linux-image"></a>Posso aplicar o Azure Disk Encryption à minha imagem personalizada do Linux?
 

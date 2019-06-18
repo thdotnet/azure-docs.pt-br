@@ -8,12 +8,12 @@ ms.author: pmorgan
 ms.date: 05/28/2019
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: e641025d49dd42125aa692925c0697235489b1db
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 2b3f4cf4099459b655fc0e370935ddc8079de810
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66307146"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67073935"
 ---
 # <a name="authentication-and-authorization-to-azure-spatial-anchors"></a>Autenticação e autorização para âncoras espacial do Azure
 
@@ -56,7 +56,7 @@ Depois disso, o SDK tratará a troca da chave de conta para um token de acesso e
 
 ## <a name="azure-ad-user-authentication"></a>Autenticação de usuário do Azure AD
 
-Para aplicativos destinados a usuários do Active Directory do Azure, a abordagem recomendada é usar um token do AD do Azure para o usuário, que pode ser obtido usando a biblioteca ADAL, conforme descrito na documentação a seguir: https://docs.microsoft.com/azure/active-directory/develop/v1-overview; você deve seguir as etapas listadas em "Inícios rápidos", que incluem:
+Para aplicativos destinados a usuários do Active Directory do Azure, a abordagem recomendada é usar um token do AD do Azure para o usuário, que pode ser obtido usando a biblioteca ADAL, conforme descrito na documentação a seguir: [ https://docs.microsoft.com/azure/active-directory/develop/v1-overview ](../../active-directory/develop/v1-overview.md); você deve seguir as etapas listadas em "Inícios rápidos", que incluem:
 
 1. Configuração no portal do Azure
     1.  Registre seu aplicativo no Azure AD como sendo **aplicativo nativo**. Como parte do registro, você precisará determinar se seu aplicativo deve ser multilocatário ou não e fornecer o redirecionamento de URLs permitidas para o seu aplicativo.  
@@ -89,7 +89,7 @@ A opção recomendada para implantar aplicativos, aproveitando as âncoras espac
 
 Aqui, supõe-se que seu aplicativo usa seu próprio mecanismo (por exemplo: Conta da Microsoft, o PlayFab, Facebook, Google ID, nome de usuário e senha personalizada, etc.) para autenticar seu serviço back-end. Depois que os usuários são autenticados para seu serviço de back-end, que o serviço pode recuperar um token do AD do Azure, trocá-lo por um token de acesso para âncoras espacial do Azure e retorná-la ao aplicativo cliente.
 
-O token de acesso do AD do Azure é recuperado usando a biblioteca ADAL, conforme descrito na documentação a seguir: https://docs.microsoft.com/azure/active-directory/develop/v1-overview; você deve seguir as etapas listadas em "Inícios rápidos", que incluem:
+O token de acesso do AD do Azure é recuperado usando a biblioteca ADAL, conforme descrito na documentação a seguir: [ https://docs.microsoft.com/azure/active-directory/develop/v1-overview ](../../active-directory/develop/v1-overview.md); você deve seguir as etapas listadas em "Inícios rápidos", que incluem:
 
 1.  Configuração no portal do Azure:
     1.  Registre seu aplicativo no Azure AD:

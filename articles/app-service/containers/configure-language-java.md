@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: routlaw
 ms.custom: seodec18
-ms.openlocfilehash: cf9356c2792781558c4403608ff5de0e3aaddb6a
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 9339d891e8fe895f598e1a2615fcfa66b053b3e0
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66254459"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67063848"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Configurar um aplicativo Linux Java para o serviço de aplicativo do Azure
 
@@ -480,9 +480,7 @@ O Serviço de Aplicativo para Linux dá suporte a dois tempos de execução para
 
 ### <a name="jdk-versions-and-maintenance"></a>Versões e manutenção do JDK
 
-O JDK (Java Development Kit) com suporte do Azure é o [Zulu](https://www.azul.com/downloads/azure-only/zulu/) fornecido pela [Azul Systems](https://www.azul.com/).
-
-Atualizações de versão principal serão fornecidas por meio de novas opções de tempo de execução no Serviço de Aplicativo do Azure para Linux. Os clientes podem atualizar para essas versões mais recentes do Java configurando a implantação do Serviço de Aplicativo. Além disso, são responsáveis por testar e garantir que a atualização da versão principal atenda às suas necessidades.
+Builds do Azul Zulu Enterprise do OpenJDK são uma distribuição sem custo, multiplataforma e pronta para produção do OpenJDK para Azure e Azure Stack da Microsoft e da Azul Systems. Eles contêm todos os componentes para criar e executar aplicativos Java SE. Você pode instalar o JDK [instalação do JDK Java](https://aka.ms/azure-jdks).
 
 Os JDKs com suporte são corrigidos automaticamente a cada trimestre em janeiro, abril, julho e outubro de cada ano.
 
@@ -493,18 +491,6 @@ Os patches e as correções para grandes vulnerabilidades de segurança serão l
 ### <a name="deprecation-and-retirement"></a>Reprovação e desativação
 
 Se um tempo de execução do Java com suporte for desativado, os desenvolvedores do Azure que usam o tempo de execução afetado receberão um aviso de reprovação pelo menos seis meses antes de o tempo de execução ser desativado.
-
-### <a name="local-development"></a>Desenvolvimento local
-
-Os desenvolvedores podem baixar a Production Edition do Azul Zulu Enterprise JDK para desenvolvimento local do [site de download da Azul](https://www.azul.com/downloads/azure-only/zulu/).
-
-### <a name="development-support"></a>Suporte ao desenvolvimento
-
-O suporte ao produto do [Azul Zulu JDK com suporte do Azure](https://www.azul.com/downloads/azure-only/zulu/) está disponível durante o desenvolvimento para Azure ou [Microsoft Azure Stack](https://azure.microsoft.com/overview/azure-stack/) com um [plano de suporte qualificado do Azure](https://azure.microsoft.com/support/plans/).
-
-### <a name="runtime-support"></a>Suporte de tempo de execução
-
-Os desenvolvedores podem [abrir um problema](/azure/azure-supportability/how-to-create-azure-support-request) com o Azul Zulu JDK por meio do Suporte do Azure se tiverem um [plano de suporte qualificado](https://azure.microsoft.com/support/plans/).
 
 ## <a name="next-steps"></a>Próximas etapas
 

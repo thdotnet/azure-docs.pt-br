@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: sedusch
 ms.openlocfilehash: 484a0043b9b5eefa5491dee75e87244d1c001620
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60711220"
 ---
 # <a name="glusterfs-on-azure-vms-on-red-hat-enterprise-linux-for-sap-netweaver"></a>GlusterFS em VMs do Azure no Red Hat Enterprise Linux para SAP NetWeaver
@@ -28,14 +28,14 @@ ms.locfileid: "60711220"
 [deployment-guide]:deployment-guide.md
 [planning-guide]:planning-guide.md
 
-[2002167]:https://launchpad.support.sap.com/#/notes/2002167
-[2009879]:https://launchpad.support.sap.com/#/notes/2009879
-[1928533]:https://launchpad.support.sap.com/#/notes/1928533
-[2015553]:https://launchpad.support.sap.com/#/notes/2015553
-[2178632]:https://launchpad.support.sap.com/#/notes/2178632
-[2191498]:https://launchpad.support.sap.com/#/notes/2191498
-[2243692]:https://launchpad.support.sap.com/#/notes/2243692
-[1999351]:https://launchpad.support.sap.com/#/notes/1999351
+[2002167]: https://launchpad.support.sap.com/#/notes/2002167
+[2009879]: https://launchpad.support.sap.com/#/notes/2009879
+[1928533]: https://launchpad.support.sap.com/#/notes/1928533
+[2015553]: https://launchpad.support.sap.com/#/notes/2015553
+[2178632]: https://launchpad.support.sap.com/#/notes/2178632
+[2191498]: https://launchpad.support.sap.com/#/notes/2191498
+[2243692]: https://launchpad.support.sap.com/#/notes/2243692
+[1999351]: https://launchpad.support.sap.com/#/notes/1999351
 
 [sap-swcenter]:https://support.sap.com/en/my-support/software-downloads.html
 
@@ -99,7 +99,7 @@ Você pode usar um dos modelos de início rápido no github para implantar todos
    4. Chave de Admin Username, a senha de administrador ou SSH  
       É criado um novo usuário que pode ser usado para fazer logon no computador.
    5. ID da Sub-rede  
-      Se você deseja implantar a VM em uma rede virtual existente em que você tem uma sub-rede definida para a qual a VM deve ser designada, nomeie a identificação dessa sub-rede específica. A ID geralmente tem esta aparência: /subscriptions/**&lt;ID da assinatura&gt;**/resourceGroups/**&lt;nome do grupo de recursos&gt;**/providers/Microsoft.Network/virtualNetworks/**&lt;nome de rede virtual&gt;**/subnets/**&lt;nome da sub-rede&gt;**
+      Se você deseja implantar a VM em uma rede virtual existente em que você tem uma sub-rede definida para a qual a VM deve ser designada, nomeie a identificação dessa sub-rede específica. A ID geralmente tem esta aparência: /subscriptions/ **&lt;ID da assinatura&gt;** /resourceGroups/ **&lt;nome do grupo de recursos&gt;** /providers/Microsoft.Network/virtualNetworks/ **&lt;nome de rede virtual&gt;** /subnets/ **&lt;nome da sub-rede&gt;**
 
 ### <a name="deploy-linux-manually-via-azure-portal"></a>Implantar o Linux manualmente por meio do portal do Azure
 

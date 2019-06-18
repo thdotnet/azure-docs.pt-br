@@ -7,12 +7,12 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 06/09/2018
 ms.author: shtabriz
-ms.openlocfilehash: 3b3c967cd43745a4ae87fefc578282f5427a5f79
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 3157cef6952f01d689d3cb4a30c9d7c843095809
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65405691"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67071688"
 ---
 # <a name="create-activity-log-alerts-on-service-notifications"></a>Criar alertas do log de atividades em notificações de serviço
 ## <a name="overview"></a>Visão geral
@@ -73,7 +73,7 @@ Para saber mais sobre como configurar alertas de notificação de integridade do
 
 1. Defina uma lista de destinatários fornecendo os seguintes itens do destinatário:
 
-     a. **Nome**: Digite o nome, alias ou identificador do destinatário.
+    a. **Nome**: Digite o nome, alias ou identificador do destinatário.
 
     b. **Tipo de ação**: Selecione SMS, email, webhook, aplicativo do Azure, e muito mais.
 
@@ -92,7 +92,7 @@ Saiba como [Configurar notificações de webhook para sistemas de gerenciamento 
 
 ## <a name="alert-with-existing-action-group-using-azure-portal"></a>Alerta com o grupo de ações existente usando o portal do Azure
 
-1. Siga as etapas 1 a 7 na seção anterior para criar a notificação de integridade do serviço. 
+1. Siga as etapas 1 a 6 na seção anterior para criar a notificação de integridade do serviço. 
 
 1. Em **Definir grupo de ação**, clique no botão **Selecionar grupo de ação**. Selecione o grupo de ação apropriado.
 

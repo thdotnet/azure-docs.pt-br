@@ -10,10 +10,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 04/17/2019
 ms.author: wesmc
 ms.openlocfilehash: 2f86b74299b5d47a87ed0b8e89a992f0f91a84be
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64924639"
 ---
 # <a name="connect-iot-devkit-az3166-to-azure-iot-hub"></a>Como conectar o IoT DevKit AZ3166 ao Hub IoT do Azure
@@ -219,7 +219,7 @@ O IoT DevKit contém uma sofisticada Galeria de exemplos que você pode usar par
 
 1. Verifique se o kit de desenvolvimento de IoT **não está conectado** ao computador. Inicie o VS Code primeiro e, em seguida, conecte o kit de desenvolvimento ao computador.
 
-1. Clique em `F1` para abrir a paleta de comandos, digite e selecione **Workbench dos Dispositivos de IoT do Azure: Abrir Exemplos...**. Em seguida, selecione **Kit de Desenvolvimento de IoT** como placa.
+1. Clique em `F1` para abrir a paleta de comandos, digite e selecione **Workbench dos Dispositivos de IoT do Azure: Abrir Exemplos...** . Em seguida, selecione **Kit de Desenvolvimento de IoT** como placa.
 
 1. Na página de Exemplos do IoT Workbench, localize **Introdução** e clique em **Abrir Exemplo**. Em seguida, selecione o caminho padrão para baixar o código de exemplo.
     ![Abrir exemplo](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/open-sample.png)
@@ -228,7 +228,7 @@ O IoT DevKit contém uma sofisticada Galeria de exemplos que você pode usar par
 
 Em vez de provisionamento o IoT Hub do Azure e o dispositivo do portal do Azure, você pode fazer isso no VS Code sem deixar o ambiente de desenvolvimento.
 
-1. Na nova janela de projeto aberta, clique em `F1` para abrir a paleta de comandos, digite e selecione **Workbench dos Dispositivos de IoT do Azure: Provisionar Serviços do Azure...**. Siga o guia passo a passo para concluir o provisionamento do Hub IoT do Azure e criar o dispositivo no Hub IoT.
+1. Na nova janela de projeto aberta, clique em `F1` para abrir a paleta de comandos, digite e selecione **Workbench dos Dispositivos de IoT do Azure: Provisionar Serviços do Azure...** . Siga o guia passo a passo para concluir o provisionamento do Hub IoT do Azure e criar o dispositivo no Hub IoT.
     ![Comando de provisão](media/iot-hub-arduino-devkit-az3166-get-started/getting-started/provision.png)
 
     > [!NOTE]

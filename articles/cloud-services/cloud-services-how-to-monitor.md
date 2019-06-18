@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/29/2018
 ms.author: jeconnoc
 ms.openlocfilehash: 844fef9a87c1db06c6415c59d4be26caf928382b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61432885"
 ---
 # <a name="introduction-to-cloud-service-monitoring"></a>Introdução ao Monitoramento de Serviço de Nuvem
@@ -60,7 +60,7 @@ O monitoramento avançado envolve o uso da extensão **Diagnóstico do Azure** (
 
 Primeiro, se você não tiver uma conta de armazenamento **clássica**, [crie uma](../storage/common/storage-quickstart-create-account.md). Crie a conta de armazenamento com o **Modelo de implantação clássico** especificado.
 
-Em seguida, navegue até o recurso **Conta de armazenamento (clássico)**. Selecione **Configurações** > **Chaves de Acesso** e copie o valor de **Cadeia de conexão primária**. Você precisa desse valor para o serviço de nuvem. 
+Em seguida, navegue até o recurso **Conta de armazenamento (clássico)** . Selecione **Configurações** > **Chaves de Acesso** e copie o valor de **Cadeia de conexão primária**. Você precisa desse valor para o serviço de nuvem. 
 
 Você precisa alterar dois arquivos de configuração para habilitar o diagnóstico avançado, **ServiceDefinition.csdef** e **ServiceConfiguration.cscfg**.
 

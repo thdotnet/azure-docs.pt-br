@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 01/29/2019
 ms.author: kasparks
 ms.openlocfilehash: 8fdae1e12e56dcbcb56941726b0c089ad59b8fc8
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66254661"
 ---
 # <a name="improve-performance-of-azure-applications-with-azure-advisor"></a>Melhorar o desempenho de aplicativos do Azure com o Assistente do Azure
@@ -106,7 +106,7 @@ Advisor detectará contas do Azure Cosmos DB que têm o tráfego de uma região 
 
 O Azure Advisor identificará os contêineres do Cosmos DB que estão usando a política de indexação padrão, mas poderia se beneficiar de uma política de indexação personalizada com base no padrão de carga de trabalho. A política de indexação padrão indexa todas as propriedades, mas usando uma política de indexação personalizada com caminhos explícitos de incluídos ou excluídos, usados em filtros de consulta pode reduzir o RUs e armazenamento consumido para indexação. [Saiba mais sobre como modificar políticas de índice](https://aka.ms/cosmosdb/modify-index-policy)
 
-## <a name="configure-your-azure-cosmos-db-query-page-size-maxitemcount-to--1"></a>Configurar seu tamanho de página de consulta (MaxItemCount) do Azure Cosmos DB como -1 
+## <a name="configure-your-azure-cosmos-db-query-page-size-maxitemcount-to--1"></a>Configurar o tamanho da página de consulta do Azure Cosmos DB (MaxItemCount) como -1 
 
 O Azure Advisor identificará os contêineres do Azure Cosmos DB que estão usando o tamanho da página consulta de 100 e recomendam usar um tamanho de página de -1 para verificações mais rápidas. [Saiba mais sobre a contagem máxima de Item](https://aka.ms/cosmosdb/sql-api-query-metrics-max-item-count)
 

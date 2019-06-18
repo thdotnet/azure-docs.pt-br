@@ -16,10 +16,10 @@ ms.date: 08/29/2016
 ms.author: cephalin
 ms.custom: seodec18
 ms.openlocfilehash: cbf6a44f1a3210906ec7ab0d04eecb997bc2c470
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65412823"
 ---
 # <a name="troubleshoot-an-app-in-azure-app-service-using-visual-studio"></a>Solucionar problemas de um aplicativo no Serviço de Aplicativo do Azure usando o Visual Studio
@@ -264,7 +264,7 @@ Um aplicativo ASP.NET executado em um aplicativo do Serviço de Aplicativo pode 
 * **Logs de mensagens de erro detalhadas**<br/>
   O servidor Web cria uma página HTML com algumas informações adicionais para solicitações HTTP com falha (solicitações que resultam em um código de status 400 ou superior).
 * **Logs de rastreamento de solicitações com falha**<br/>
-   O servidor Web cria um arquivo XML com informações de rastreamento detalhadas para solicitações HTTP com falha. O servidor Web também fornece um arquivo XSL para formatar o XML em um navegador.
+  O servidor Web cria um arquivo XML com informações de rastreamento detalhadas para solicitações HTTP com falha. O servidor Web também fornece um arquivo XSL para formatar o XML em um navegador.
 
 Como o registro em log afeta o desempenho do aplicativo, o Azure oferece a possibilidade de habilitar ou desabilitar cada tipo de log conforme necessário. Para logs de aplicativo, você pode especificar que apenas os logs acima de um determinado nível de gravidade devem ser gravados. Por padrão, quando você cria um novo aplicativo, todo o registro em log está desabilitado.
 
@@ -649,15 +649,15 @@ Se o aplicativo usar uma API Web do Azure ou um back-end de Serviços Móveis e 
 Não existem introduções completas e atualizadas para rastreamento do ASP.NET disponíveis na Internet. O melhor a fazer é começar com materiais introdutórios antigos escritos para formulários da Web porque o MVC ainda não existia e complementar isso com postagens em blog mais recentes focalizadas em problemas específicas. Alguns bons locais para começar são os seguintes recursos:
 
 * [Monitoramento e telemetria (Compilando aplicativos de nuvem do mundo real com o Azure)](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry).<br>
-   Capítulo do livro eletrônico com recomendações para rastreamento em aplicativos de nuvem do Azure.
+  Capítulo do livro eletrônico com recomendações para rastreamento em aplicativos de nuvem do Azure.
 * [Rastreamento do ASP.NET](/previous-versions/dotnet/articles/ms972204(v=msdn.10))<br/>
-   Antigo, mas ainda é um bom recurso para obter uma introdução básica sobre o assunto.
+  Antigo, mas ainda é um bom recurso para obter uma introdução básica sobre o assunto.
 * [Ouvintes de rastreamento](/dotnet/framework/debug-trace-profile/trace-listeners)<br/>
   Informações sobre ouvintes de rastreamento, mas não menciona o [WebPageTraceListener](/dotnet/api/system.web.webpagetracelistener).
 * [Passo a passo: integrando o rastreamento do ASP.NET com rastreamento do System.Diagnostics](/previous-versions/b0ectfxd(v=vs.140))<br/>
   Esse artigo também é antigo, mas inclui algumas informações adicionais que o artigo introdutório não cobre.
 * [Rastreamento em exibições do Razor do ASP.NET MVC](https://blogs.msdn.com/b/webdev/archive/2013/07/16/tracing-in-asp-net-mvc-razor-views.aspx)<br/>
-   Além do rastreamento em exibições do Razor, a postagem também explica como criar um filtro de erros para registrar em log todas as exceções não tratadas em um aplicativo MVC. Para obter informações sobre como registrar em log exceções não tratadas em um aplicativo de formulários da Web, consulte o exemplo do Global.asax em [Concluir exemplo para manipuladores de erro](/previous-versions/bb397417(v=vs.140)) no MSDN. No MVC ou em Formulários da Web, para registrar certas exceções em log, mas deixar o tratamento da estrutura padrão cuidar deles, você poderá capturar e relançar como no exemplo a seguir:
+  Além do rastreamento em exibições do Razor, a postagem também explica como criar um filtro de erros para registrar em log todas as exceções não tratadas em um aplicativo MVC. Para obter informações sobre como registrar em log exceções não tratadas em um aplicativo de formulários da Web, consulte o exemplo do Global.asax em [Concluir exemplo para manipuladores de erro](/previous-versions/bb397417(v=vs.140)) no MSDN. No MVC ou em Formulários da Web, para registrar certas exceções em log, mas deixar o tratamento da estrutura padrão cuidar deles, você poderá capturar e relançar como no exemplo a seguir:
 
 ``` c#
 try
@@ -672,9 +672,9 @@ catch (Exception ex)
 ```
 
 * [Registro em log de rastreamento do diagnóstico de streaming na linha de comando do Azure (mais Glimpse!)](https://www.hanselman.com/blog/StreamingDiagnosticsTraceLoggingFromTheAzureCommandLinePlusGlimpse.aspx)<br/>
-   Como usar a linha de comando para fazer o que este tutorial mostra no Visual Studio. [Glimpse (a página pode estar em inglês)](https://www.hanselman.com/blog/IfYoureNotUsingGlimpseWithASPNETForDebuggingAndProfilingYoureMissingOut.aspx) é uma ferramenta para depuração de aplicativos ASP.NET.
+  Como usar a linha de comando para fazer o que este tutorial mostra no Visual Studio. [Glimpse (a página pode estar em inglês)](https://www.hanselman.com/blog/IfYoureNotUsingGlimpseWithASPNETForDebuggingAndProfilingYoureMissingOut.aspx) é uma ferramenta para depuração de aplicativos ASP.NET.
 * [Usando diagnóstico e registro em log de Aplicativos Web – com David Ebbo](https://azure.microsoft.com/documentation/videos/azure-web-site-logging-and-diagnostics/) e [Logs de streaming dos Aplicativos Web – com David Ebbo](https://azure.microsoft.com/documentation/videos/log-streaming-with-azure-web-sites/)<br>
-   Vídeos de Scott Hanselman e David Ebbo.
+  Vídeos de Scott Hanselman e David Ebbo.
 
 Para o registro em log de erros, uma alternativa para escrever seu próprio código de rastreamento é usar uma estrutura de registros em log de software livre, como o [ELMAH](https://nuget.org/packages/elmah/). Para obter mais informações, consulte as [postagens no blog de Scott Hanselman sobre o ELMAH](https://www.hanselman.com/blog/NuGetPackageOfTheWeek7ELMAHErrorLoggingModulesAndHandlersWithSQLServerCompact.aspx).
 
@@ -686,7 +686,7 @@ Para obter mais informações sobre como analisar logs de servidor web, consulte
 * [LogParser](https://www.microsoft.com/download/details.aspx?id=24659)<br/>
   Uma ferramenta para exibir dados em logs de servidor Web (arquivos *.log* ).
 * [Solucionando problemas de desempenho do IIS ou erros de aplicativo usando o LogParser](https://www.iis.net/learn/troubleshoot/performance-issues/troubleshooting-iis-performance-issues-or-application-errors-using-logparser)<br/>
-   Uma introdução à ferramenta LogParser que pode ser usada para analisar logs de servidor web.
+  Uma introdução à ferramenta LogParser que pode ser usada para analisar logs de servidor web.
 * [Postagens no blog por Robert McMurray sobre como usar o LogParser](https://blogs.msdn.com/b/robert_mcmurray/archive/tags/logparser/)<br/>
 * [O código de status HTTP no IIS 7.0, IIS 7.5 e IIS 8.0](https://support.microsoft.com/kb/943891)
 

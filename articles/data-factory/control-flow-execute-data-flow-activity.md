@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/22/2019
 ms.author: makromer
-ms.openlocfilehash: c33219eacb1d3bada5630a7792f98ba33dba824e
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: e75c6290474d876ca22b5888d06b1fc0e4c8cd05
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66235853"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67077318"
 ---
 # <a name="execute-data-flow-activity-in-azure-data-factory"></a>Executar a atividade de fluxo de dados no Azure Data Factory
 Use a atividade de fluxo de dados execute para executar seu fluxo de dados ADF em execuções de depuração (área restrita) do pipeline em execuções de pipeline disparada.
@@ -72,7 +72,7 @@ Você tem controle sobre o ambiente de execução do Spark para suas atividades 
 
 ### <a name="staging-area"></a>Área de preparação
 
-Se você está afundando seus dados no Data Warehouse do Azure, você deve escolher um local de preparo para sua carga de lote do Polybase.
+Se você está afundando seus dados no Data Warehouse do Azure, você deve escolher um local de preparo para sua carga de lote do Polybase. As configurações de preparo só são aplicáveis a cargas de trabalho de Data Warehouse do Azure.
 
 ## <a name="parameterized-datasets"></a>Conjuntos de dados com parâmetros
 

@@ -16,21 +16,21 @@ ms.workload: infrastructure
 ms.date: 04/10/2019
 ms.author: juergent
 ms.openlocfilehash: a74dd1a932cac41081786f76938a5b35de62d878
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64689707"
 ---
-[1928533]:https://launchpad.support.sap.com/#/notes/1928533
-[2015553]:https://launchpad.support.sap.com/#/notes/2015553
-[2178632]:https://launchpad.support.sap.com/#/notes/2178632
-[2191498]:https://launchpad.support.sap.com/#/notes/2191498
-[2243692]:https://launchpad.support.sap.com/#/notes/2243692
-[1984787]:https://launchpad.support.sap.com/#/notes/1984787
-[1999351]:https://launchpad.support.sap.com/#/notes/1999351
-[2233094]:https://launchpad.support.sap.com/#/notes/2233094
-[1612105]:https://launchpad.support.sap.com/#/notes/1612105
+[1928533]: https://launchpad.support.sap.com/#/notes/1928533
+[2015553]: https://launchpad.support.sap.com/#/notes/2015553
+[2178632]: https://launchpad.support.sap.com/#/notes/2178632
+[2191498]: https://launchpad.support.sap.com/#/notes/2191498
+[2243692]: https://launchpad.support.sap.com/#/notes/2243692
+[1984787]: https://launchpad.support.sap.com/#/notes/1984787
+[1999351]: https://launchpad.support.sap.com/#/notes/1999351
+[2233094]: https://launchpad.support.sap.com/#/notes/2233094
+[1612105]: https://launchpad.support.sap.com/#/notes/1612105
 
 [sles-for-sap-bp]:https://www.suse.com/documentation/sles-for-sap-12/
 [db2-hadr-11.1]:https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.admin.ha.doc/doc/c0011267.html
@@ -337,13 +337,13 @@ Quando você usa o Pacemaker para failover automático no caso de falha de nó, 
 
 Os itens a seguir são prefixados com:
 
-- **[A]**: Aplicável a todos os nós
-- **[1]**: Aplicável somente ao nó 1 
-- **[2]**: Aplicável somente ao nó 2
+- **[A]** : Aplicável a todos os nós
+- **[1]** : Aplicável somente ao nó 1 
+- **[2]** : Aplicável somente ao nó 2
 
 **[A]**  Pré-requisitos para configuração do Pacemaker:
 1. Desligar de ambos os servidores de banco de dados com o usuário db2\<sid > com db2stop.
-1. Alterar o ambiente de shell para db2\<sid > usuário *ksh/bin/*. É recomendável que você use a ferramenta Yast. 
+1. Alterar o ambiente de shell para db2\<sid > usuário *ksh/bin/* . É recomendável que você use a ferramenta Yast. 
 
 
 ### <a name="pacemaker-configuration"></a>Configuração do pacemaker
@@ -421,7 +421,7 @@ Para configurar o balanceador de carga do Azure, recomendamos que você use o [S
 
 1. Crie um pool IP de front-end:
 
-    a. No portal do Azure, abra o balanceador de carga do Azure, selecione **pool IP de front-end**e, em seguida, selecione **Add**.
+   a. No portal do Azure, abra o balanceador de carga do Azure, selecione **pool IP de front-end**e, em seguida, selecione **Add**.
 
    b. Insira o nome do novo pool de IPS de front-end (por exemplo, **conexão Db2**).
 
@@ -433,7 +433,7 @@ Para configurar o balanceador de carga do Azure, recomendamos que você use o [S
 
 1. Crie um pool de back-end:
 
-    a. No portal do Azure, abra o balanceador de carga do Azure, selecione **pools de back-end**e, em seguida, selecione **Add**.
+   a. No portal do Azure, abra o balanceador de carga do Azure, selecione **pools de back-end**e, em seguida, selecione **Add**.
 
    b. Insira o nome do novo pool de back-end (por exemplo, **back-end do Db2**).
 
@@ -447,7 +447,7 @@ Para configurar o balanceador de carga do Azure, recomendamos que você use o [S
 
 1. Crie uma investigação de integridade:
 
-    a. No portal do Azure, abra o balanceador de carga do Azure, selecione **investigações de integridade**e selecione **Add**.
+   a. No portal do Azure, abra o balanceador de carga do Azure, selecione **investigações de integridade**e selecione **Add**.
 
    b. Insira o nome da nova investigação de integridade (por exemplo, **Db2-hp**).
 
@@ -457,7 +457,7 @@ Para configurar o balanceador de carga do Azure, recomendamos que você use o [S
 
 1. Crie as regras de balanceamento de carga:
 
-    a. No portal do Azure, abra o balanceador de carga do Azure, selecione **regras de balanceamento de carga**e, em seguida, selecione **Add**.
+   a. No portal do Azure, abra o balanceador de carga do Azure, selecione **regras de balanceamento de carga**e, em seguida, selecione **Add**.
 
    b. Insira o nome da nova regra de Balanceador de carga (por exemplo, **Db2 SID**).
 
@@ -595,8 +595,8 @@ crm resource clear msl_<b>Db2_db2ptr_PTR</b>
 </code></pre>
 
 - **migrar recursos de CRM \<res_name > <host>:** Cria restrições de local e pode causar problemas com a tomada de controle
-- **recursos de CRM claro \<res_name >**: Limpa as restrições de local
-- **Limpeza de recursos do CRM \<res_name >**: Limpa todos os erros do recurso
+- **recursos de CRM claro \<res_name >** : Limpa as restrições de local
+- **Limpeza de recursos do CRM \<res_name >** : Limpa todos os erros do recurso
 
 ### <a name="test-the-fencing-agent"></a>O agente de isolamento de teste
 

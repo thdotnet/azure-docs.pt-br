@@ -11,10 +11,10 @@ ms.topic: conceptual
 manager: carmonm
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 4f917c45030ad70a2ab76fed877bd822d1902f82
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64927276"
 ---
 # <a name="track-changes-in-your-environment-with-the-change-tracking-solution"></a>Controlar alterações no ambiente com a solução Controle de Alterações
@@ -271,7 +271,7 @@ Além dos detalhes fornecidos no portal, é possível fazer as pesquisas nos log
 
 A tabela a seguir fornece pesquisas de logs de exemplo para os registros de alterações coletados por essa solução:
 
-|Consultar  |DESCRIÇÃO  |
+|Consulta  |DESCRIÇÃO  |
 |---------|---------|
 |ConfigurationData<br>&#124; onde   ConfigDataType == "WindowsServices" e SvcStartupType == "Auto"<br>&#124; onde SvcState == "Stopped"<br>&#124; summarize arg_max(TimeGenerated, *) por SoftwareName, Computer         | Mostra os registros de inventário mais recentes para os Serviços do Windows que foram configurados para Automático, mas foram relatados como Parados<br>Os resultados estão limitados ao registro mais recente desse SoftwareName e Computador      |
 |ConfigurationChange<br>&#124; onde ConfigChangeType == "Software" e ChangeCategory == "Removed"<br>&#124; ordenar por TimeGenerated desc|Mostra os registros de alterações do software removido|
@@ -300,7 +300,7 @@ Após configurar os parâmetros e a lógica, podemos aplicar o alerta ao ambient
 
 Embora os alertas sobre alterações ao arquivo de Hosts sejam uma boa aplicação de alertas para Controle de Alterações ou dados de Inventário, há muitos outros cenários para alertas, incluindo casos definidos juntamente com suas consultas de exemplo na seção a seguir.
 
-|Consultar  |DESCRIÇÃO  |
+|Consulta  |DESCRIÇÃO  |
 |---------|---------|
 |ConfigurationChange <br>&#124; em que ConfigChangeType == "Files" e FileSystemPath contêm " c:\\windows\\system32\\drivers\\"|Útil para controlar alterações a arquivos críticos do sistema|
 |ConfigurationChange <br>&#124; em que FieldsChanged contém "FileContentChecksum" e FileSystemPath == "c:\\windows\\system32\\drivers\\etc\\hosts"|Útil para controlar modificações a arquivos de configuração chave|

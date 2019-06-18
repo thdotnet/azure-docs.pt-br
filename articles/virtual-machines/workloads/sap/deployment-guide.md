@@ -17,10 +17,10 @@ ms.workload: infrastructure-services
 ms.date: 09/26/2018
 ms.author: sedusch
 ms.openlocfilehash: c93bca14d9385eaf9f79f69d76e9e704796da7a9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66154006"
 ---
 # <a name="azure-virtual-machines-deployment-for-sap-netweaver"></a>Implantação de Máquinas Virtuais do Azure para SAP NetWeaver
@@ -29,18 +29,18 @@ ms.locfileid: "66154006"
 [773830]:https://launchpad.support.sap.com/#/notes/773830
 [826037]:https://launchpad.support.sap.com/#/notes/826037
 [965908]:https://launchpad.support.sap.com/#/notes/965908
-[1031096]:https://launchpad.support.sap.com/#/notes/1031096
+[1031096]: https://launchpad.support.sap.com/#/notes/1031096
 [1139904]:https://launchpad.support.sap.com/#/notes/1139904
 [1173395]:https://launchpad.support.sap.com/#/notes/1173395
 [1245200]:https://launchpad.support.sap.com/#/notes/1245200
-[1409604]:https://launchpad.support.sap.com/#/notes/1409604
+[1409604]: https://launchpad.support.sap.com/#/notes/1409604
 [1558958]:https://launchpad.support.sap.com/#/notes/1558958
 [1585981]:https://launchpad.support.sap.com/#/notes/1585981
 [1588316]:https://launchpad.support.sap.com/#/notes/1588316
 [1590719]:https://launchpad.support.sap.com/#/notes/1590719
-[1597355]:https://launchpad.support.sap.com/#/notes/1597355
+[1597355]: https://launchpad.support.sap.com/#/notes/1597355
 [1605680]:https://launchpad.support.sap.com/#/notes/1605680
-[1619720]:https://launchpad.support.sap.com/#/notes/1619720
+[1619720]: https://launchpad.support.sap.com/#/notes/1619720
 [1619726]:https://launchpad.support.sap.com/#/notes/1619726
 [1619967]:https://launchpad.support.sap.com/#/notes/1619967
 [1750510]:https://launchpad.support.sap.com/#/notes/1750510
@@ -54,22 +54,22 @@ ms.locfileid: "66154006"
 [1882376]:https://launchpad.support.sap.com/#/notes/1882376
 [1909114]:https://launchpad.support.sap.com/#/notes/1909114
 [1922555]:https://launchpad.support.sap.com/#/notes/1922555
-[1928533]:https://launchpad.support.sap.com/#/notes/1928533
+[1928533]: https://launchpad.support.sap.com/#/notes/1928533
 [1941500]:https://launchpad.support.sap.com/#/notes/1941500
 [1956005]:https://launchpad.support.sap.com/#/notes/1956005
 [1973241]:https://launchpad.support.sap.com/#/notes/1973241
-[1984787]:https://launchpad.support.sap.com/#/notes/1984787
-[1999351]:https://launchpad.support.sap.com/#/notes/1999351
-[2002167]:https://launchpad.support.sap.com/#/notes/2002167
-[2015553]:https://launchpad.support.sap.com/#/notes/2015553
+[1984787]: https://launchpad.support.sap.com/#/notes/1984787
+[1999351]: https://launchpad.support.sap.com/#/notes/1999351
+[2002167]: https://launchpad.support.sap.com/#/notes/2002167
+[2015553]: https://launchpad.support.sap.com/#/notes/2015553
 [2039619]:https://launchpad.support.sap.com/#/notes/2039619
-[2069760]:https://launchpad.support.sap.com/#/notes/2069760
+[2069760]: https://launchpad.support.sap.com/#/notes/2069760
 [2121797]:https://launchpad.support.sap.com/#/notes/2121797
 [2134316]:https://launchpad.support.sap.com/#/notes/2134316
-[2178632]:https://launchpad.support.sap.com/#/notes/2178632
-[2191498]:https://launchpad.support.sap.com/#/notes/2191498
+[2178632]: https://launchpad.support.sap.com/#/notes/2178632
+[2191498]: https://launchpad.support.sap.com/#/notes/2191498
 [2233094]:https://launchpad.support.sap.com/#/notes/2233094
-[2243692]:https://launchpad.support.sap.com/#/notes/2243692
+[2243692]: https://launchpad.support.sap.com/#/notes/2243692
 [2367194]:https://launchpad.support.sap.com/#/notes/2367194
 
 [azure-cli]:../../../cli-install-nodejs.md
@@ -237,7 +237,7 @@ ms.locfileid: "66154006"
 [resource-group-authoring-templates]:../../../resource-group-authoring-templates.md
 [resource-group-overview]:../../../azure-resource-manager/resource-group-overview.md
 [resource-groups-networking]:../../../networking/network-overview.md
-[sap-pam]:https://support.sap.com/pam (Matriz de Disponibilidade de Produto SAP)
+[sap-pam]: https://support.sap.com/pam (Matriz de Disponibilidade de Produto SAP)
 [sap-templates-2-tier-marketplace-image]:https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsap-2-tier-marketplace-image%2Fazuredeploy.json
 [sap-templates-2-tier-marketplace-image-md]:https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsap-2-tier-marketplace-image-md%2Fazuredeploy.json
 [sap-templates-2-tier-os-disk]:https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsap-2-tier-user-disk%2Fazuredeploy.json
@@ -535,7 +535,7 @@ Como diferentes versões de um sistema operacional ou DBMS têm requisitos de pa
 Você usa diferentes etapas para criar uma imagem privada para Linux em vez de criar uma para o Windows.
 
 - - -
-> ![ Windows][Logo_Windows]  Windows
+> ![Windows][Logo_Windows] Windows
 >
 > Para preparar uma imagem do Windows que você pode usar para implantar várias máquinas virtuais, as configurações do Windows (como o nome de host e SID do Windows) devem ser abstraídas ou generalizadas na VM local. Você pode usar [sysprep](https://msdn.microsoft.com/library/hh825084.aspx) para fazer isso.
 >
@@ -675,7 +675,7 @@ Nesse cenário, o Agente de VM **não** é instalado automaticamente durante a i
 Para obter mais informações sobre o Agente de VM do Azure, confira os recursos a seguir.
 
 - - -
-> ![ Windows][Logo_Windows]  Windows
+> ![Windows][Logo_Windows] Windows
 >
 > [Visão geral do Agente de Máquina Virtual do Azure][virtual-machines-windows-agent-user-guide]
 >
@@ -872,7 +872,7 @@ Se o agente já estiver instalado, para atualizar o agente Linux do Azure, siga 
 
 As etapas para configurar o proxy do Windows são diferentes da maneira como você configura o proxy no Linux.
 
-#### <a name="windows"></a> Windows
+#### <a name="windows"></a>Windows
 
 As configurações de proxy devem ser definidas corretamente para que a conta do Sistema Local acesse a Internet. Se as configurações de proxy não forem definidas pela Política de Grupo, você poderá configurá-las para a conta LocalSystem.
 
@@ -1082,7 +1082,7 @@ Se o valor de **Status de integridade** não for **OK**, siga as instruções em
 
 1. Verifique a saída da Extensão de Monitoramento Avançado do Azure.
 
-    a.  Execute `more /var/lib/AzureEnhancedMonitor/PerfCounters`
+   a.  Execute `more /var/lib/AzureEnhancedMonitor/PerfCounters`
 
    **Resultado esperado**: Retorna a lista dos contadores de desempenho. O arquivo não deve estar vazio.
 
@@ -1098,7 +1098,7 @@ Se a verificação anterior não for bem-sucedida, execute estas verificações 
 
 1. Verifique se waagent está instalado e habilitado.
 
-    a.  Execute `sudo ls -al /var/lib/waagent/`
+   a.  Execute `sudo ls -al /var/lib/waagent/`
 
      **Resultado esperado**: Lista o conteúdo do diretório waagent.
 
@@ -1108,7 +1108,7 @@ Se a verificação anterior não for bem-sucedida, execute estas verificações 
 
 1. Verifique se a Extensão de Monitoramento Avançado do Azure está instalada e em execução.
 
-    a.  Execute `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux-*/'`
+   a.  Execute `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux-*/'`
 
    **Resultado esperado**: Lista o conteúdo do diretório da Extensão de Monitoramento Avançado do Azure.
 
@@ -1118,7 +1118,7 @@ Se a verificação anterior não for bem-sucedida, execute estas verificações 
 
 1. Instale o Agente de Host do SAP conforme descrito na Nota SAP [1031096] e verifique a saída de `saposcol`.
 
-    a.  Execute `/usr/sap/hostctrl/exe/saposcol -d`
+   a.  Execute `/usr/sap/hostctrl/exe/saposcol -d`
 
    b.  Execute `dump ccm`
 
@@ -1157,7 +1157,7 @@ Verifique se cada resultado da verificação de integridade é **OK**. Se alguma
 
 ### <a name="fe25a7da-4e4e-4388-8907-8abc2d33cfd8"></a>Solucionando problemas de infraestrutura de monitoramento do Azure para SAP
 
-#### <a name="windowslogowindows-azure-performance-counters-do-not-show-up-at-all"></a>![ Windows][Logo_Windows]  Os contadores de desempenho do Azure não aparecem
+#### <a name="windowslogowindows-azure-performance-counters-do-not-show-up-at-all"></a>![Windows][Logo_Windows] Os contadores de desempenho do Azure não aparecem
 
 O serviço AzureEnhancedMonitoring Windows coleta métricas de desempenho no Azure. Se o serviço não tiver sido instalado corretamente ou não estiver em execução na VM, nenhuma métrica de desempenho poderá ser coletada.
 
@@ -1198,13 +1198,13 @@ O serviço Windows AzureEnhancedMonitoring existe e está habilitado, mas não �
 
 A configuração está incorreta. Reinicie a extensão de monitoramento para a VM, conforme descrito em [Configurar a Extensão de Monitoramento Avançado do Azure para SAP][deployment-guide-4.5].
 
-#### <a name="windowslogowindows-some-azure-performance-counters-are-missing"></a>![ Windows][Logo_Windows]  Faltam alguns contadores de desempenho do Azure
+#### <a name="windowslogowindows-some-azure-performance-counters-are-missing"></a>![Windows][Logo_Windows] Faltam alguns contadores de desempenho do Azure
 
 O serviço AzureEnhancedMonitoring Windows coleta métricas de desempenho no Azure. O serviço obtém dados de várias fontes. Alguns dados de configuração são coletados localmente e algumas métricas de desempenho são lidas do Diagnóstico do Azure. Contadores de armazenamento são utilizados de seu logon no nível de assinatura de armazenamento.
 
 Se estiver solucionando problemas usando a Nota SAP [1999351] e isso não resolver o problema, execute novamente o script de configuração `Set-AzVMAEMExtension`. Talvez você precise esperar por uma hora porque os contadores de diagnóstico ou análise de armazenamento podem não ser criados imediatamente depois de terem sido habilitados. Se o problema persistir, abra uma mensagem de suporte ao cliente SAP no componente BC-OP-NT-AZR para Windows ou BC-OP-LNX-AZR para uma máquina virtual Linux.
 
-#### <a name="linuxlogolinux-azure-performance-counters-do-not-show-up-at-all"></a>![Linux][Logo_Linux]  Os contadores de desempenho do Azure não aparecem
+#### <a name="linuxlogolinux-azure-performance-counters-do-not-show-up-at-all"></a>![Linux][Logo_Linux] Os contadores de desempenho do Azure não aparecem
 
 Métricas de desempenho no Azure são coletadas por um daemon. Se o daemon não estiver em execução, nenhuma métrica de desempenho poderá ser coletada.
 
@@ -1237,7 +1237,7 @@ Ao executar o azperfli.exe como descrito anteriormente, você pode obter um resu
 As mensagens são causadas pelo fato de que os Discos Gerenciados Standard não estão fornecendo as APIs usadas pela extensão de monitoramento para verificar as estatísticas das Contas de Armazenamento do Azure Standard. Isso não é motivo de preocupação. O motivo para introduzir o monitoramento para contas de Armazenamento em Disco Standard foi a limitação de E/S que ocorria com frequência. Os discos gerenciados evitarão essa limitação limitando o número de discos em uma conta de armazenamento. Portanto, não ter esse tipo de dados de monitoramento não é crítico.
 
 
-#### <a name="linuxlogolinux-some-azure-performance-counters-are-missing"></a>![Linux][Logo_Linux]  Faltam alguns contadores de desempenho do Azure
+#### <a name="linuxlogolinux-some-azure-performance-counters-are-missing"></a>![Linux][Logo_Linux] Faltam alguns contadores de desempenho do Azure
 
 Métricas de desempenho no Azure são coletadas por um daemon, que obtém os dados de várias fontes. Alguns dados de configuração são coletados localmente e algumas métricas de desempenho são lidas do Diagnóstico do Azure. Contadores de armazenamento vêm dos logs em sua assinatura de armazenamento.
 

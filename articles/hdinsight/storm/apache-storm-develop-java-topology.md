@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: 43f68908c8549c2f1d8322b5c4ad3985618cfe6e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 89cee70c9d7c5dffdb3078756cf4fa94d7cd1a9a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64695654"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67078218"
 ---
 # <a name="create-an-apache-storm-topology-in-java"></a>Criar uma topologia Apache Storm em Java
 
-Aprenda a criar uma topologia baseada em Java para o [Apache Storm](https://storm.apache.org/). Aqui, você pode criar uma topologia Storm que implementa um aplicativo de contagem de palavras. Use o [Apache Maven](https://maven.apache.org/) para compilar e empacotar o projeto. Em seguida, você aprenderá a definir a topologia usando o [Flux do Apache Storm](https://storm.apache.org/releases/2.0.0-SNAPSHOT/flux.html) framework.
+Aprenda a criar uma topologia baseada em Java para o [Apache Storm](https://storm.apache.org/). Aqui, você pode criar uma topologia Storm que implementa um aplicativo de contagem de palavras. Use o [Apache Maven](https://maven.apache.org/) para compilar e empacotar o projeto. Em seguida, você aprenderá a definir a topologia usando o [Flux do Apache Storm](https://storm.apache.org/releases/2.0.0/flux.html) framework.
 
 Depois de concluir as etapas neste documento, você pode implantar a topologia para o Apache Storm no HDInsight.
 
@@ -621,7 +621,7 @@ Há um intervalo de cinco segundos entre a emissão de palavras e as contagens. 
 
 ## <a name="convert-the-topology-to-flux"></a>Converter a topologia para Flux
 
-[Flux](https://storm.apache.org/releases/2.0.0-SNAPSHOT/flux.html) é uma nova estrutura disponível com o Storm 0.10.0 e superior, que permite que você separe a configuração da implementação. Os componentes ainda são definidos em Java, mas a topologia é definida usando um arquivo YAML. Você pode empacotar uma definição de topologia padrão com seu projeto, ou usar um arquivo autônomo ao enviar a topologia. Ao enviar a topologia para o Storm, você pode usar variáveis de ambiente ou arquivos de configuração para preencher os valores na definição de topologia YAML.
+[Flux](https://storm.apache.org/releases/2.0.0/flux.html) é uma nova estrutura disponível com o Storm 0.10.0 e superior, que permite que você separe a configuração da implementação. Os componentes ainda são definidos em Java, mas a topologia é definida usando um arquivo YAML. Você pode empacotar uma definição de topologia padrão com seu projeto, ou usar um arquivo autônomo ao enviar a topologia. Ao enviar a topologia para o Storm, você pode usar variáveis de ambiente ou arquivos de configuração para preencher os valores na definição de topologia YAML.
 
 O arquivo YAML define os componentes a serem usados para a topologia, e o fluxo de os dados entre eles. Você pode incluir um arquivo YAML como parte do arquivo jar ou usar um arquivo YAML externo.
 
@@ -780,7 +780,7 @@ Para obter mais informações sobre Flux, consulte [Estrutura do Flux (https://s
 
 2. Crie um novo yaml de topologia do projeto.
  
-     a. Insira o comando a seguir para abrir `topology.xml`:
+    a. Insira o comando a seguir para abrir `topology.xml`:
 
     ```cmd
     notepad resources\topology.yaml

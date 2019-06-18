@@ -9,10 +9,10 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/21/2019
 ms.openlocfilehash: 3812cf55a26a12ef110b8acf14edd0e8bfd36851
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66236527"
 ---
 # <a name="use-hdinsight-spark-cluster-to-read-and-write-data-to-azure-sql-database"></a>Usar o cluster do Azure HDInsight Spark para leitura e gravação dos dados no Banco de Dados SQL do Azure
@@ -146,7 +146,7 @@ Nesta seção, usamos um exemplo CSV de arquivo disponível no cluster para cria
 
 1. Conecte-se ao Banco de Dados SQL do Azure usando SSMS e verifique se há um `dbo.hvactable`.
 
-     a. Inicie o SSMS e conecte-se ao Banco de Dados SQL do Azure, fornecendo os detalhes de conexão como mostrado na captura de tela abaixo.
+    a. Inicie o SSMS e conecte-se ao Banco de Dados SQL do Azure, fornecendo os detalhes de conexão como mostrado na captura de tela abaixo.
 
     ![Conectar-se ao Banco de Dados SQL usando SSMS](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms.png "Conectar-se ao Banco de Dados SQL SSMS")
 
