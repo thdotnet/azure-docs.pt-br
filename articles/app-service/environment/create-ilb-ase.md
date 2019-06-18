@@ -14,12 +14,12 @@ ms.topic: quickstart
 ms.date: 05/28/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 6f571342b02084ceb8d67fbb889e030194663489
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.openlocfilehash: 5b05755502ad5836a21080a122d2e1721825f10c
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66493834"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66734682"
 ---
 # <a name="create-and-use-an-internal-load-balancer-app-service-environment"></a>Criar e usar um Ambiente do Serviço de Aplicativo de Balanceador de Carga Interno 
 
@@ -109,7 +109,7 @@ Para configurar seu DNS:
 
 - crie uma zona para *&lt;nome do ASE&gt;.appserviceenvironment.net*
 - crie um registro A nessa zona que aponte * para o endereço IP do ILB 
-- crie uma zona em *&lt;nome do ASE&gt;.appserviceenvironment.net* chamada scm
+- crie uma zona em *&lt;nome do ASE&gt;.scm.appserviceenvironment.net* chamada scm
 - crie um registro A na zona scm que aponte para o endereço IP do ILB
 
 ## <a name="publish-with-an-ilb-ase"></a>Publicação com um ASE ILB

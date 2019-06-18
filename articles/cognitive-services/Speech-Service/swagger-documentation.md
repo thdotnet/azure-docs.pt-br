@@ -1,7 +1,7 @@
 ---
 title: Documentação do Swagger – Serviços de Fala
 titleSuffix: Azure Cognitive Services
-description: A documentação do Swagger pode ser usada para gerar SDKs para várias linguagens de programação. Todas as operações em nosso serviço são compatíveis com o Swagger
+description: A documentação do Swagger pode ser usada para gerar SDKs automaticamente para várias linguagens de programação. Todas as operações em nosso serviço são compatíveis com o Swagger
 services: cognitive-services
 author: PanosPeriorellis
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: overview
 ms.date: 04/12/2019
 ms.author: erhopf
-ms.openlocfilehash: 29fcbd058651c428b488f5ce1c767105cb7921a6
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.openlocfilehash: 6cf3ab6480900aa763598120e6ff7e308f5044e1
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59580981"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66743215"
 ---
 # <a name="swagger-documentation"></a>Documentação do Swagger
 

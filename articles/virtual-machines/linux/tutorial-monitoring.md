@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 01/26/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: fba54fa1d2ca6675b41728b460a07515b05758f8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 921505e7f470d337d9e9e491c6db79930d487eb5
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66169584"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754396"
 ---
 # <a name="tutorial-monitor-and-update-a-linux-virtual-machine-in-azure"></a>Tutorial: monitorar e atualizar uma máquina virtual do Linux no Azure
 
@@ -50,7 +50,7 @@ Para ver os diagnósticos e as métricas em ação, você precisa de uma VM. Pri
 az group create --name myResourceGroupMonitor --location eastus
 ```
 
-Agora, crie uma VM com [az vm create](/cli/azure/vm#az-vm-create). O seguinte exemplo cria uma VM chamada *myVM* e gera as chaves SSH, caso ainda não existam em *~/.ssh/*:
+Agora, crie uma VM com [az vm create](/cli/azure/vm#az-vm-create). O seguinte exemplo cria uma VM chamada *myVM* e gera as chaves SSH, caso ainda não existam em *~/.ssh/* :
 
 ```azurecli-interactive
 az vm create \
@@ -147,7 +147,7 @@ Você pode criar alertas com base em métricas de desempenho específicas. Alert
 O exemplo a seguir cria um alerta para uso médio da CPU.
 
 1. No portal do Azure, selecione **Grupos de Recursos**, selecione **myResourceGroupMonitor** e, em seguida, selecione **myVM** na lista de recursos.
-2. Selecione **Alertas (clássico)**, em seguida, escolha **Adicionar alerta de métrica (clássico)** na parte superior da janela de alertas.
+2. Selecione **Alertas (clássico)** , em seguida, escolha **Adicionar alerta de métrica (clássico)** na parte superior da janela de alertas.
 3. Forneça um **Nome** para o alerta, como *myAlertRule*
 4. Para disparar um alerta quando o percentual de CPU excede 1.0 por cinco minutos, deixe todos os outros padrões selecionados.
 5. Opcionalmente, marque a caixa de *Proprietários, colaboradores e leitores de email* para enviar uma notificação por email. A ação padrão é apresentar uma notificação no portal.
@@ -201,28 +201,27 @@ Depois que o **Gerenciamento de Atualizações** for habilitado, a tela **Gerenc
 
 Para instalar atualizações, agende uma implantação que siga o agendamento de versão e o período de serviço. Você pode escolher quais tipos de atualização deseja incluir na implantação. Por exemplo, você pode incluir atualizações críticas ou de segurança e excluir pacotes cumulativos de atualizações.
 
-Para agendar uma nova Implantação de atualização para a VM selecione **Agendar implantação de atualização** na parte superior da tela **Gerenciamento de atualizações**. Na tela **Nova implantação de atualização**, especifique as seguintes informações:
+Agende uma nova implantação de atualização para a VM clicando em **Agendar implantação de atualização** na parte superior da tela **Gerenciamento de Atualizações**. Na tela **Nova implantação de atualização**, especifique as seguintes informações:
 
-* **Nome** – forneça um nome exclusivo para identificar a Implantação de atualizações.
-* **Classificação de atualização** – selecione os tipos de software que a implantação de atualização incluiu na implantação. Os tipos de classificação são:
-  * Atualizações críticas ou de segurança
-  * Outras atualizações
-* **Atualizações a serem excluídas** – você pode fornecer uma lista de nomes de pacote que devem ser ignorados durante a implantação da atualização. Os nomes de pacote dão suporte a curingas (como \*kernel\*).
+Para criar uma nova implantação de atualização, selecione **Agendar implantação de atualização**. A página **Nova implantação de atualizações** será aberta. Insira valores para as propriedades descritas na tabela a seguir e clique em **Criar**:
 
-  ![Tela de configurações de agenda de atualização](./media/tutorial-monitoring/manage-updates-exclude-linux.png)
+| Propriedade | Descrição |
+| --- | --- |
+| Nome |Nome exclusivo para identificar a Implantação de Atualizações. |
+|Sistema operacional| Linux ou Windows|
+| Grupos a serem atualizados |Para computadores do Azure, defina uma consulta com base em uma combinação de assinatura, grupos de recursos, localizações e marcas para criar um grupo dinâmico de VMs do Azure a ser incluído na implantação. </br></br>Para computadores que não são Azure, selecione uma pesquisa salva existente para selecionar um grupo de computadores que não são Azure a serem incluídos na implantação. </br></br>Para obter mais informações, consulte [grupos dinâmicos](../../automation/automation-update-management.md#using-dynamic-groups)|
+| Computadores para atualizar |Selecione uma pesquisa salva, um grupo importado ou selecione a máquina na lista suspensa e selecione máquinas individuais. Se você escolher **Machines**, a prontidão da máquina é mostrada na coluna **UPDATE AGENT READINESS**.</br> Para saber mais sobre os diferentes métodos de criação de grupos de computadores nos logs do Azure Monitor, veja [Grupos de computadores nos logs do Azure Monitor](../../azure-monitor/platform/computer-groups.md) |
+|Classificações de origem|Selecione todas as classificações de atualização necessárias|
+|Incluir/excluir atualizações|Isso abre o **incluir/excluir** página. As atualizações a serem incluídas ou excluídas estão em guias separadas. Para mais informações sobre como a inclusão é tratada, consulte o [comportamento de inclusão](../../automation/automation-update-management.md#inclusion-behavior) |
+|Configurações de agendamento|Selecione o tempo para iniciar e selecione Uma Vez ou recorrente para a recorrência|
+| Pré-scripts + pós-scripts|Selecione os scripts sejam executados antes e após sua implantação|
+| Janela de manutenção |Número de minutos definido para atualizações. O valor não pode ser inferior a 30 minutos e não superior a 6 horas |
+| Reinicialize o controle| Determina como as reinicializações devem ser tratadas. As opções disponíveis são:</br>Reinicialização, se necessário (Padrão)</br>Sempre reinicializar</br>Nunca reinicializar</br>Somente reinicialização - não instalará as atualizações|
 
-* **Configurações de agenda** – você pode aceitar a data e hora padrão, que é de 30 minutos após a hora atual ou especificar um horário diferente.
-  Você também pode especificar se a implantação ocorre uma única vez ou configurar um agendamento recorrente. Selecione a opção Recorrente em Recorrência para configurar um agendamento recorrente.
+As implantações de atualização também podem ser criadas programaticamente. Para aprender a criar uma Implantação de atualização com a API REST, consulte [Configurações de atualização de software - Criar](/rest/api/automation/softwareupdateconfigurations/create). Também é um exemplo de runbook que pode ser usado para criar uma implantação de atualização semanal. Para saber mais sobre este runbook, consulte [Criar uma implantação de atualização semanal para uma ou mais VMs em um grupo de recursos](https://gallery.technet.microsoft.com/scriptcenter/Create-a-weekly-update-2ad359a1).
 
-  ![Tela de configurações de agenda de atualização](./media/tutorial-monitoring/manage-updates-schedule-linux.png)
-
-* **Janela de manutenção (minutos)** – especifique o período de tempo em que deseja que a implantação de atualização ocorra. Isso ajuda a garantir que as alterações sejam executadas dentro das janelas de serviço definidas.
-
-Depois de concluir a configuração da agenda, selecione o botão **Criar** e retorne ao painel de status.
+Depois de concluir a configuração da agenda, clique no botão **Criar** e retorne ao painel de status.
 Observe que a tabela **Agendado** mostra a agenda de implantação criada.
-
-> [!WARNING]
-> Para atualizações que exigem uma reinicialização, a VM será reiniciada automaticamente.
 
 ### <a name="view-results-of-an-update-deployment"></a>Exibir resultados de uma implantação de atualização
 

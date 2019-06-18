@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0e600204479bc54a590df6bf1bbcd634eaac7fc
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: b17ef24d753041934f68f3daee950aaa0bec46ba
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65605629"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66734726"
 ---
 # <a name="quickstart-naming-policy-for-groups-in-azure-active-directory"></a>Início Rápido: política de nomenclatura para grupos no Azure Active Directory
 
@@ -31,12 +31,12 @@ Neste início rápido, você configurará a política de nomenclatura em seu loc
 
 Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://azure.microsoft.com/free/) antes de começar.
 
-## <a name="configure-the-group-naming-policy-for-a-tenant-using-azure-portal-preview"></a>Configurar a política de nomenclatura de grupos para um locatário no portal do Azure (versão prévia)
+## <a name="configure-the-group-naming-policy-for-a-tenant-using-azure-portal"></a>Configurar a política de nomenclatura de grupos para um locatário usando o portal do Azure
 
 1. Entre no [Centro de administração do Azure Active Directory](https://aad.portal.azure.com) com uma conta de administrador.
 1. Para abrir a página da política de nomenclatura, escolha **Grupos** e **Política de nomenclatura**.
 
-    ![Abrir a página da política de nomenclatura no centro de administração](./media/groups-naming-policy/policy-preview.png)
+    ![Abrir a página da política de nomenclatura no centro de administração](./media/groups-naming-policy/policy.png)
 
 ### <a name="view-or-edit-the-prefix-suffix-naming-policy"></a>Exibir ou editar a política de nomenclatura de prefixo/sufixo
 
@@ -49,7 +49,7 @@ Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://a
 
 1. Na página **Política de nomenclatura**, escolha **Palavras bloqueadas**.
 
-    ![Editar e carregar uma lista de palavras bloqueadas da política de nomenclatura](./media/groups-naming-policy/blockedwords-preview.png)
+    ![Editar e carregar uma lista de palavras bloqueadas da política de nomenclatura](./media/groups-naming-policy/blockedwords.png)
 
 1. Para exibir ou editar a lista atual de palavras bloqueadas personalizadas, escolha **Baixar**.
 1. Carregue a nova lista de palavras bloqueadas personalizadas escolhendo o ícone de arquivo.
@@ -59,7 +59,7 @@ Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://a
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-### <a name="remove-the-naming-policy-using-azure-portal-preview"></a>Remover a política de nomenclatura usando o portal do Azure (versão prévia)
+### <a name="remove-the-naming-policy-using-azure-portal"></a>Remover a política de nomenclatura usando o portal do Azure
 
 1. Na página **Política de nomenclatura**, escolha **Excluir Política**.
 1. Depois de confirmar a exclusão, a política de nomenclatura será removida, incluindo toda a política de nomenclatura de prefixo-sufixo e palavras bloqueadas personalizadas.

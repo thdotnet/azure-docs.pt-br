@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda, sureshja, hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c0be7a8b756ee3d1d71b15e10797176e50037a47
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: b35d2e21de3da184496da53fdf46d865fdfdf5c7
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65540172"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66734477"
 ---
 # <a name="what-is-authentication"></a>O que é a autenticação?
 
@@ -85,14 +85,11 @@ O diagrama a seguir mostra um fluxo de provisionamento simplificado da plataform
 
 Neste fluxo de provisionamento:
 
-|   |   |
-|---|---|
-| 1 | Um usuário do locatário B tenta entrar com o aplicativo |
-| 2 | As credenciais do usuário são obtidas e verificadas |
-| 3 | O usuário deve fornecer consentimento ao aplicativo para obter acesso ao locatário B |
-| 4 | A plataforma de identidade da Microsoft usa o objeto de aplicativo em A como um blueprint para criar uma entidade de serviço no locatário B |
-| 5 | O usuário recebe o token solicitado |
-|   |   |
+1. Um usuário do locatário B tenta entrar com o aplicativo; o ponto de extremidade da autorização solicita um token para o aplicativo.
+1. As credenciais do usuário são adquiridas e verificadas quanto à autenticação
+1. O usuário deve fornecer consentimento ao aplicativo para obter acesso ao locatário B
+1. A plataforma de identidade da Microsoft usa o objeto de aplicativo no locatário A como um blueprint para criar uma entidade de serviço no locatário B
+1. O usuário recebe o token solicitado
 
 Você pode repetir esse processo quantas vezes desejar para outros locatários (C, D e assim por diante). O locatário A mantém o blueprint para o aplicativo (objeto de aplicativo). Os usuários e os administradores de todos os outros locatários nos quais o aplicativo recebe consentimento retêm o controle sobre o que o aplicativo pode fazer por meio do objeto de entidade de serviço correspondente em cada locatário. Para obter mais informações, confira [Objetos de entidade de serviço e aplicativo na plataforma de identidade da Microsoft](app-objects-and-service-principals.md).
 
