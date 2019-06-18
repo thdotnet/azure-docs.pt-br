@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/24/2019
 ms.author: spelluru
 ms.openlocfilehash: 5b5c973a8daa8776efb0909092c569ea46902265
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66307311"
 ---
 # <a name="server-side-geo-disaster-recovery-in-azure-event-grid"></a>Recuperação de desastres geográfica do lado do servidor na grade de eventos do Azure
@@ -26,7 +26,7 @@ O failover automático da grade de eventos tem diferentes RPOs e RTOs para seus 
 
 ## <a name="recovery-point-objective-rpo"></a>RPO (Objetivo de Ponto de Recuperação)
 - **RPO Metadata**: zero minutos. Sempre que um recurso é criado na grade de eventos, ele instantaneamente é replicado entre regiões. Quando ocorre um failover, nenhum metadado é perdido.
-- **Dados RPO**: Se o sistema está íntegro e atualizado em relação ao tráfego existente no momento do failover regional, o RPO para eventos é de cerca de 5 minutos.
+- **Dados RPO**: se o sistema estiver íntegro e atualizado quanto ao tráfego existente no momento do failover regional, o RPO para os eventos será de cerca de cinco minutos.
 
 ## <a name="recovery-time-objective-rto"></a>RTO (Objetivo de Tempo de Recuperação)
 - **Metadados RTO**: Embora geralmente muito mais rapidamente, acontece dentro de 60 minutos, a grade de eventos será iniciado aceitar chamadas de criar/atualizar/excluir para tópicos e assinaturas.

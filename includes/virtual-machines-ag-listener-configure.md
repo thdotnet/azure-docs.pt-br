@@ -5,17 +5,17 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 276ddf0a70fa450451cd3ddc78c7610c4ab1edc1
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: MT
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66165822"
 ---
 O ouvinte do grupo de disponibilidade é um nome de rede e endereço IP que o grupo de disponibilidade do SQL Server escuta. Para criar o ouvinte do grupo de disponibilidade, faça o seguinte:
 
 1. <a name="getnet"></a>Obtenha o nome do recurso de rede de cluster.
 
-     a. Use o RDP para se conectar à máquina virtual do Azure que hospeda a réplica primária. 
+    a. Use o RDP para se conectar à máquina virtual do Azure que hospeda a réplica primária. 
 
     b. Abra o Gerenciador de Cluster de Failover.
 
@@ -26,7 +26,7 @@ O ouvinte do grupo de disponibilidade é um nome de rede e endereço IP que o gr
 1. <a name="addcap"></a>Adicionar o ponto de acesso para cliente.  
     O ponto de acesso do cliente é o nome da rede que os aplicativos usam para se conectar aos bancos de dados em um grupo de disponibilidade. Crie o ponto de acesso de cliente no Gerenciador de Cluster de Failover.
 
-     a. Expanda o nome do cluster e, em seguida, clique em **Funções**.
+    a. Expanda o nome do cluster e, em seguida, clique em **Funções**.
 
     b. No painel **Funções**, clique com o botão direito do mouse no nome do grupo de disponibilidade e, em seguida, selecione **Adicionar recurso** > **Ponto de acesso para o cliente**.
 
@@ -41,7 +41,7 @@ O ouvinte do grupo de disponibilidade é um nome de rede e endereço IP que o gr
 
 1. <a name="congroup"></a>Configurar o recurso de IP do grupo de disponibilidade.
 
-     a. Clique na guia **Recursos**e expanda o ponto de acesso para cliente que você acabou de criar.  
+    a. Clique na guia **Recursos**e expanda o ponto de acesso para cliente que você acabou de criar.  
     O ponto de acesso para cliente está offline.
 
    ![Ponto de acesso para cliente](./media/virtual-machines-ag-listener-configure/94-newclientaccesspoint.png) 
@@ -58,7 +58,7 @@ O ouvinte do grupo de disponibilidade é um nome de rede e endereço IP que o gr
 
 1. <a name = "dependencyGroup"></a>Torne o recurso de grupo de disponibilidade do SQL Server dependente do ponto de acesso para cliente.
 
-     a. No Gerenciador de Cluster de Failover, clique em **Funções** e em seu grupo de disponibilidade.
+    a. No Gerenciador de Cluster de Failover, clique em **Funções** e em seu grupo de disponibilidade.
 
     b. Na guia **Recursos** em **Outros Recursos**, com o botão direito do mouse no grupo de recursos de disponibilidade e clique em **Propriedades**. 
 
@@ -70,7 +70,7 @@ O ouvinte do grupo de disponibilidade é um nome de rede e endereço IP que o gr
 
 1. <a name="listname"></a>Torne o recurso de ponto de acesso de cliente dependente do endereço IP.
 
-     a. No Gerenciador de Cluster de Failover, clique em **Funções** e em seu grupo de disponibilidade. 
+    a. No Gerenciador de Cluster de Failover, clique em **Funções** e em seu grupo de disponibilidade. 
 
     b. Na guia **Recursos**, clique com o botão direito do mouse no recurso do ponto de acesso no **Nome do Servidor** e clique em **Propriedades**. 
 
@@ -86,7 +86,7 @@ O ouvinte do grupo de disponibilidade é um nome de rede e endereço IP que o gr
 
 1. <a name="setparam"></a>Definir os parâmetros do cluster no PowerShell.
 
-    a. Copie o script do PowerShell a seguir em uma de suas instâncias do SQL Server. Atualize as variáveis para o seu ambiente.
+   a. Copie o script do PowerShell a seguir em uma de suas instâncias do SQL Server. Atualize as variáveis para o seu ambiente.
 
    - `$ListenerILBIP` é o endereço IP que você criou no balanceador de carga do Azure para o ouvinte do grupo de disponibilidade.
     
@@ -120,7 +120,7 @@ Se necessário, repita as etapas acima para definir os parâmetros do cluster pa
 
 1. <a name="setwsfcparam"></a>Definir os parâmetros do cluster no PowerShell.
   
-    a. Copie o script do PowerShell a seguir em uma de suas instâncias do SQL Server. Atualize as variáveis para o seu ambiente.
+   a. Copie o script do PowerShell a seguir em uma de suas instâncias do SQL Server. Atualize as variáveis para o seu ambiente.
 
    - `$ClusterCoreIP` é o endereço IP que você criou no balanceador de carga do Azure para o recurso de cluster principal do WSFC. É diferente do endereço IP do ouvinte do grupo de disponibilidade.
 

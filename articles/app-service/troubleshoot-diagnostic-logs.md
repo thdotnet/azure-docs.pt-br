@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 06/06/2016
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 37455c278d665d05636ec120ca91b76153e53d16
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c21a923f06a768c0a9a0f2843a24583df7a7821d
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60835680"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67059654"
 ---
 # <a name="enable-diagnostics-logging-for-apps-in-azure-app-service"></a>Habilitar log de diagnósticos para aplicativos no Serviço de Aplicativo do Azure
 ## <a name="overview"></a>Visão geral
@@ -39,7 +39,7 @@ Você pode habilitar ou desabilitar os seguintes tipos de logs:
 * **Registro em Log de Servidor Web** - informações sobre transações HTTP usando o [formato de arquivo de log estendido W3C](/windows/desktop/Http/w3c-logging). É útil para determinar as métricas gerais do site, como o número de solicitações manipuladas e quantas solicitações existem vindas de um endereço IP específico.
 
 ### <a name="application-diagnostics"></a>Diagnóstico de aplicativo
-O diagnóstico de aplicativo permite que você capture informações produzidas por um aplicativo da Web. Os aplicativos ASP.NET podem usar a classe [Rastreamento.de.Diagnóstico.de.Sistema](/dotnet/api/system.diagnostics.trace) para registrar informações no log de diagnóstico do aplicativo. Por exemplo: 
+O diagnóstico de aplicativo permite que você capture informações produzidas por um aplicativo da Web. Os aplicativos ASP.NET podem usar a classe [Rastreamento.de.Diagnóstico.de.Sistema](/dotnet/api/system.diagnostics.trace) para registrar informações no log de diagnóstico do aplicativo. Por exemplo:
 
     System.Diagnostics.Trace.TraceError("If you're seeing this, something bad happened");
 
@@ -75,7 +75,7 @@ Para **Log do servidor Web**, você pode selecionar **armazenamento** ou **siste
 
 Se você armazenar logs no sistema de arquivos, os arquivos poderão ser acessados por FTP ou baixados como um arquivo Zip usando a CLI do Azure.
 
-Por padrão, os logs não são excluídos automaticamente (com exceção do **Log do aplicativo (Filesystem)**). Para excluir automaticamente os logs, defina o campo **Período de retenção (dias)**.
+Por padrão, os logs não são excluídos automaticamente (com exceção do **Log do aplicativo (Filesystem)** ). Para excluir automaticamente os logs, defina o campo **Período de retenção (dias)** .
 
 > [!NOTE]
 > Se você [regenerar as chaves de acesso de sua conta de armazenamento](../storage/common/storage-create-storage-account.md), será necessário redefinir a respectiva configuração de log para usar as chaves atualizadas. Para fazer isso:
@@ -141,7 +141,7 @@ Ao desenvolver um aplicativo, é sempre útil visualizar informações de regist
 > Alguns tipos de buffer de log gravam no arquivo de log, o que pode resultar em eventos com problemas na transmissão. Por exemplo, uma entrada para log de aplicativo, que ocorre quando um usuário visita uma página, pode ser exibida durante a transmissão antes da entrada de log HTTP correspondente para a solicitação da página.
 >
 > [!NOTE]
-> O streaming de log também transmitirá informações gravadas em qualquer arquivo de texto armazenado na pasta **D:\\home\\LogFiles\\**.
+> O streaming de log também transmitirá informações gravadas em qualquer arquivo de texto armazenado na pasta **D:\\home\\LogFiles\\** .
 >
 >
 
@@ -152,11 +152,11 @@ Para transmitir informações de log, abra uma nova sessão de prompt de comando
 
 Esse comando conecta o aplicativo nomeado 'appname' e começa a transmitir informações para a janela à medida que os eventos de log ocorrem no aplicativo. Qualquer informação escrita para os arquivos com terminação .txt ou .htm que sejam armazenadas no diretório /LogFiles (d:/home/LogFiles) será transmitida à console local.
 
-Para filtrar eventos específicos como erros, use o parâmetro **-Filtro** . Por exemplo: 
+Para filtrar eventos específicos como erros, use o parâmetro **-Filtro** . Por exemplo:
 
     az webapp log tail --name appname --resource-group myResourceGroup --filter Error
 
-Para filtrar tipos específicos de log como HTTP, use o parâmetro **-Caminho** . Por exemplo: 
+Para filtrar tipos específicos de log como HTTP, use o parâmetro **-Caminho** . Por exemplo:
 
     az webapp log tail --name appname --resource-group myResourceGroup --path http
 
@@ -197,7 +197,7 @@ Ao registrar o log no armazenamento de blob, os dados serão armazenados em um f
 | EventId |A ID deste evento<p><p>terá como padrão 0 caso nenhuma seja especificada |
 | Pid |ID do Processo |
 | Tid |A ID do thread que produziu o evento |
-| Mensagem |A mensagem com detalhes do evento |
+| Message |A mensagem com detalhes do evento |
 
 Os dados armazenados em um blob deverão ser semelhantes ao seguinte exemplo:
 
@@ -205,7 +205,7 @@ Os dados armazenados em um blob deverão ser semelhantes ao seguinte exemplo:
     2014-01-30T16:36:52,Error,mywebapp,6ee38a,635266966128818593,0,3096,9,An error occurred
 
 > [!NOTE]
-> Para o ASP.NET Core, o registro é realizado usando o provedor [Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices) e esse provedor deposita arquivos de log adicionais no contêiner de blob. Para obter mais informações, consulte [Registro do ASP.NET Core no Azure](/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#logging-in-azure).
+> Para o ASP.NET Core, o registro é realizado usando o provedor [Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices) e esse provedor deposita arquivos de log adicionais no contêiner de blob. Para obter mais informações, consulte [Registro do ASP.NET Core no Azure](/aspnet/core/fundamentals/logging).
 >
 >
 

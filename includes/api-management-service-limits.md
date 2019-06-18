@@ -10,17 +10,17 @@ ms.date: 03/22/2018
 ms.author: vlvinogr
 ms.custom: include file
 ms.openlocfilehash: fc945a7e9389c8aec48a6a1dba969fbf92002d3a
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: MT
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66238639"
 ---
 | Resource | Limite |
 | --- | --- |
 | Número máximo de unidades de escala | 10 por região<sup>1</sup> |
 | Tamanho do cache | 5 GB por unidade<sup>2</sup> |
-| Conexões simultâneas de back-end<sup>3</sup> por autoridade HTTP | 2.048 por unidade<sup>4</sup> |
+| Conexões simultâneas de back-end<sup>3</sup> por autoridade HTTP | 2\.048 por unidade<sup>4</sup> |
 | Tamanho máximo de resposta em cache | 2 MB |
 | Tamanho máximo do documento da política | 256 KB<sup>5</sup> | 
 | Domínios de gateway personalizado máximo por instância de serviço<sup>6</sup> | 20 |
@@ -29,7 +29,7 @@ ms.locfileid: "66238639"
 | Número máximo de assinaturas por instância de serviço <sup>7</sup> | 500 |
 | Número máximo de certificados de cliente por instância de serviço <sup>7</sup> | 50 | 
 | Número máximo de APIs por instância de serviço <sup>7</sup> | 50 | 
-| Número máximo de operações de API por instância de serviço <sup>7</sup> | 1.000 | 
+| Número máximo de operações de API por instância de serviço <sup>7</sup> | 1\.000 | 
 | Duração de solicitação total máxima<sup>7</sup> | 30 segundos | 
 | Tamanho máximo de carga útil do buffer <sup>7</sup> | 2 MB | 
 

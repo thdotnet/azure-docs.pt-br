@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
 ms.openlocfilehash: 5b23a5e93dcbb9c13243240bda760a16d108d731
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64938470"
 ---
 <a name="what-is-test-drive"></a>O que é test drive?
@@ -47,8 +47,8 @@ E aqui há um exemplo da aparência de uma oferta quando ela precisa de tempo pa
 
 Independentemente do grau de complexidade do seu aplicativo, o test drive da Microsoft ajudará a dar vida ao produto para o cliente. No momento, oferecemos três tipos diferentes de test drive com base no tipo de produto, no cenário e no marketplace que você está usando.
 
-- **[Azure Resource Manager](./azure-resource-manager-test-drive.md)**: Um test drive do Azure Resource Manager é um modelo de implantação que contém todos os recursos do Azure que compõem a solução que o publicador está construindo. Os produtos adequados a esse cenário são os que usam somente os recursos do Azure.
-- **[Aplicativo lógico](./logic-app-test-drive.md)**: Uma unidade de teste do aplicativo lógico é um modelo de implantação que destina-se para abranger todas as arquiteturas de solução complexa. Todos os aplicativos ou produtos personalizados do Dynamics devem usar esse tipo de Test Drive.
+- **[Azure Resource Manager](./azure-resource-manager-test-drive.md)** : Um test drive do Azure Resource Manager é um modelo de implantação que contém todos os recursos do Azure que compõem a solução que o publicador está construindo. Os produtos adequados a esse cenário são os que usam somente os recursos do Azure.
+- **[Aplicativo lógico](./logic-app-test-drive.md)** : Uma unidade de teste do aplicativo lógico é um modelo de implantação que destina-se para abranger todas as arquiteturas de solução complexa. Todos os aplicativos ou produtos personalizados do Dynamics devem usar esse tipo de Test Drive.
 - **Power BI**: Uma unidade de teste de BI de Power é simplesmente um link incorporado a um painel personalizado criado. Esse tipo de test drive deve ser usado para qualquer produto para o qual se deseje demonstrar um visual interativo do Power BI.
     Aqui, basta fazer upload da URL do Power BI Embedded.
 
