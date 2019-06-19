@@ -1,6 +1,6 @@
 ---
 title: Authentication
-titleSuffix: Cognitive Services - Azure
+titleSuffix: Azure Cognitive Services
 description: 'Há três maneiras de autenticar uma solicitação para um recurso dos Serviços Cognitivos do Azure: uma chave de assinatura, um token de portador ou uma assinatura de vários serviços. Neste artigo, você saberá mais sobre cada método e como fazer uma solicitação.'
 services: cognitive-services
 author: erhopf
@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: erhopf
-ms.openlocfilehash: 90bc2bf4c207f3bb2727d76c2e6b4fd5597539b1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 06cc5509598cb6227a64e2cf375a5686c89312eb
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60336756"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67163672"
 ---
 # <a name="authenticate-requests-to-azure-cognitive-services"></a>Autenticar solicitações para os Serviços Cognitivos do Azure
 
@@ -29,7 +29,7 @@ Cada solicitação para um Serviço Cognitivo do Azure deve incluir um cabeçalh
 Antes de fazer uma solicitação, você precisará de uma conta do Azure e uma assinatura dos Serviços Cognitivos do Azure. Se você já tiver uma conta, pule para a próxima seção. Se você não tiver uma conta, temos um guia para ajudá-lo a configurá-la em minutos: [Criar uma conta dos Serviços Cognitivos para o Azure](cognitive-services-apis-create-account.md).
 
 Você pode obter sua chave de assinatura do [portal do Azure](cognitive-services-apis-create-account.md#access-your-resource) depois de criar sua conta, ou ativar um [avaliação gratuita](https://azure.microsoft.com/try/cognitive-services/my-apis).
- 
+
 ## <a name="authentication-headers"></a>Cabeçalhos de autenticação
 
 Vamos analisar rapidamente os cabeçalhos de autenticação disponíveis para uso com os Serviços Cognitivos do Azure.

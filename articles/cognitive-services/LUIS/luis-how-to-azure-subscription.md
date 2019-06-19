@@ -9,29 +9,28 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 03/01/2019
+ms.date: 06/18/2019
 ms.author: diberry
-ms.openlocfilehash: 7315c80ad74eae07e41577fb2ac13742002e729e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7f82bf5a40df0554d4f98b2d835fcbd69279be43
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60198506"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67204151"
 ---
 # <a name="using-subscription-keys-with-your-luis-app"></a>Usando chaves de assinatura com seu aplicativo LUIS
 
-Você não precisa criar chaves de assinatura para usar suas primeiras 1.000 consultas de ponto de extremidade gratuitas. Depois que essas consultas de ponto de extremidade forem usadas, crie um recurso do Azure no [portal do Azure](https://portal.azure.com) e, em seguida, atribua esse recurso a um aplicativo do LUIS no [portal do LUIS](https://www.luis.ai).
-
-Se receber um erro _fora da cota_ na forma de um erro HTTP 403 ou 429, você precisará criar uma chave e atribuí-la a seu aplicativo. 
+Quando você usa primeiro o Luis (reconhecimento vocal a linguagem), você não precisará criar chaves de assinatura. Para começar, você tem consultas de ponto de extremidade de 1000. 
 
 Para testar e protótipo apenas, use a camada gratuita (F0). Para sistemas de produção, use uma camada [paga](https://aka.ms/luis-price-tier). Não use a [chave de criação](luis-concept-keys.md#authoring-key) para consultas de ponto de extremidade em produção.
+
 
 <a name="create-luis-service"></a>
 <a name="create-language-understanding-endpoint-key-in-the-azure-portal"/>
 
 ## <a name="create-prediction-endpoint-runtime-resource-in-the-azure-portal"></a>Criar o recurso de tempo de execução do ponto de extremidade de previsão no portal do Azure
 
-Saiba mais com o [compilar um aplicativo](get-started-portal-build-app.md) guia de início rápido.
+Você cria o [recurso de ponto de extremidade de previsão](get-started-portal-deploy-app.md#create-the-endpoint-resource) no portal do Azure. Esse recurso deve ser usado somente para consultas de previsão de ponto de extremidade. Não use esse recurso para criação de alterações para o aplicativo.
 
 <a name="programmatic-key" ></a>
 <a name="authoring-key" ></a>
@@ -49,7 +48,7 @@ Saiba mais com o [compilar um aplicativo](get-started-portal-build-app.md) guia 
 
 ## <a name="assign-resource-key-to-luis-app-in-luis-portal"></a>Atribuir chave de recurso ao aplicativo do LUIS no Portal do LUIS
 
-Saiba mais com o [implantação](get-started-portal-deploy-app.md) guia de início rápido.
+Sempre que você cria um novo recurso para LUIS, você precisará [atribuir o recurso para o aplicativo LUIS](get-started-portal-deploy-app.md#assign-the-resource-key-to-the-luis-app-in-the-luis-portal). Após a atribuição, você não precisará realizar esta etapa novamente, a menos que crie um novo recurso. Você pode criar um novo recurso para expandir as regiões do seu aplicativo ou para dar suporte a um número maior de consultas de previsão.
 
 <!-- content moved to luis-reference-regions.md, need replacement links-->
 <a name="regions-and-keys"></a>
@@ -155,10 +154,30 @@ Para fins de automação, como um pipeline de CI/CD, você talvez queira automat
     ![Verifique sua camada de pagamento do LUIS](./media/luis-usage-tiers/updated.png)
 1. Lembre-se de [atribuir essa chave do ponto de extremidade](#assign-endpoint-key) na página **Publicar** e usá-la em todas as consultas de ponto de extremidade. 
 
-## <a name="how-to-fix-out-of-quota-errors-when-the-key-exceeds-pricing-tier-usage"></a>Como corrigir erros de limite de cota quando a chave ultrapassa o uso do tipo de preço
-Cada camada permite solicitações de ponto de extremidade para sua conta do LUIS em uma taxa específica. Se a taxa de solicitações for maior do que a taxa permitida de sua conta limitada por minuto ou por mês, as solicitações receberão um erro HTTP de "429: muitas solicitações".
+## <a name="fix-http-status-code-403-and-429"></a>Corrigir o código de status HTTP 403 e 429
 
-Cada camada permite solicitações cumulativas por mês. Se o total de solicitações for maior do que a taxa permitida, as solicitações receberão um erro HTTP de "403: proibido".  
+Você receberá o erro 403 e 429 códigos de status quando exceder as transações por segundo ou transações por mês para o tipo de preço.
+
+### <a name="when-you-receive-an-http-403-error-status-code"></a>Quando você receber um código de status de erro HTTP 403
+
+Quando você usa todas essas livre 1000 ponto de extremidade consultas ou você exceder a cota mensal de transações do tipo de preço, você receberá um código de status de erro HTTP 403. 
+
+Para corrigir esse erro, será necessário [alterar o tipo de preço](luis-how-to-azure-subscription.md#change-pricing-tier) para uma camada superior ou [criar um novo recurso](get-started-portal-deploy-app.md#create-the-endpoint-resource) e [atribuí-lo ao seu aplicativo](get-started-portal-deploy-app.md#assign-the-resource-key-to-the-luis-app-in-the-luis-portal).
+
+As soluções para esse erro incluem:
+
+* No [portal do Azure](https://portal.azure.com), em seu idioma Noções básicas sobre o recurso, no **gerenciamento de recursos -> tipo de preço**, alterar seu tipo de preço para uma camada TPS mais alta. Você não precisa fazer nada no portal do reconhecimento vocal se seu recurso já está atribuído ao seu aplicativo de reconhecimento vocal.
+*  Se o seu uso excede o tipo de preço mais alto, adicione mais recursos de reconhecimento vocal com um balanceador de carga na frente delas. O [contêiner de reconhecimento vocal](luis-container-howto.md) com Kubernetes ou o Docker Compose pode ajudar com isso.
+
+### <a name="when-you-receive-an-http-429-error-status-code"></a>Quando você receber um código de status de erro HTTP 429
+
+Esse código de status é retornado quando as transações por segundo excede seu tipo de preço.  
+
+As soluções incluem:
+
+* Você pode [aumentar o tipo de preço](#change-pricing-tier), se você não estiver no nível mais elevado.
+* Se o seu uso excede o tipo de preço mais alto, adicione mais recursos de reconhecimento vocal com um balanceador de carga na frente delas. O [contêiner de reconhecimento vocal](luis-container-howto.md) com Kubernetes ou o Docker Compose pode ajudar com isso.
+* Você pode portão solicitações do aplicativo cliente com um [política de repetição](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults#general-guidelines) implementar por conta própria quando você receber esse código de status. 
 
 ## <a name="viewing-summary-usage"></a>Exibindo uso de resumo
 Você pode exibir informações de uso do LUIS no Azure. A página **Visão geral** mostra as informações de resumidas recentes, incluindo chamadas e erros. Se você fizer uma solicitação de ponto de extremidade do LUIS, acompanhe na **página Visão geral** e aguarde até cinco minutos para o uso ser exibido.
