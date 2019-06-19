@@ -2,11 +2,8 @@
   href: /azure/hdinsight
 - name: Visão geral
   items:
-    - name: Componentes do Apache Hadoop no HDInsight
-      href: ../hdinsight-component-versioning.md
-      maintainContext: true
-    - name: HDInsight 4.0
-      href: ../hdinsight-version-release.md
+    - name: O que é a Consulta Interativa no HDInsight?
+      href: ./apache-interactive-query-get-started.md
       maintainContext: true
 - name: Guia de início rápido
   items:
@@ -14,8 +11,6 @@
       href: ./hdinsight-connect-hive-zeppelin.md
 - name: Introdução
   items:
-    - name: Iniciar com Consulta Interativa
-      href: ./apache-interactive-query-get-started.md
     - name: Instalar aplicativos HDInsight
       href: ../hdinsight-apps-install-applications.md
       maintainContext: true

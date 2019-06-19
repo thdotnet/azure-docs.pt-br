@@ -7,11 +7,11 @@
 - name: Guia de início rápido
   expanded: true
   items:
-    - name: Criar um cluster do Apache Kafka - Portal
+    - name: Criar o cluster do Apache Kafka – Portal
       href: apache-kafka-get-started.md
-    - name: Criar um cluster do Apache Kafka - PowerShell
+    - name: Criar o cluster do Apache Kafka – PowerShell
       href: apache-kafka-quickstart-powershell.md
-    - name: Criar um cluster do Apache Kafka – modelo do Resource Manager
+    - name: Criar o cluster do Apache Kafka – Modelo
       displayName: 'resource manager template, arm template, resource manager group'
       href: apache-kafka-quickstart-resource-manager-template.md
 - name: Tutoriais

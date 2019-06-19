@@ -7,13 +7,13 @@
 - name: Guia de início rápido
   expanded: true
   items:
-    - name: Criar um cluster Apache Spark - Portal
+    - name: Criar o cluster do Apache Spark – Portal
       href: apache-spark-jupyter-spark-sql-use-portal.md
-    - name: Criar um cluster Apache Spark - PowerShell
+    - name: Criar o cluster do Apache Spark – PowerShell
       href: apache-spark-jupyter-spark-sql-use-powershell.md
-    - name: Criar um cluster Apache Spark – CLI do Azure
+    - name: Criar o cluster do Apache Spark – CLI do Azure
       href: apache-spark-create-cluster-cli.md
-    - name: Criar um cluster do Apache Spark – modelo do Resource Manager
+    - name: Criar o cluster do Apache Spark – Modelo
       displayName: 'resource manager template, arm template, resource manager group'
       href: apache-spark-jupyter-spark-sql.md
 - name: Tutoriais

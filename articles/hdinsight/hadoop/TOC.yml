@@ -2,23 +2,14 @@
   href: /azure/hdinsight
 - name: Visão geral
   items:
-    - name: Sobre o Apache Hadoop no HDInsight
+    - name: O que é o Apache Hadoop no HDInsight?
       href: apache-hadoop-introduction.md
-      maintainContext: true
-    - name: Arquitetura do Apache Hadoop no HDInsight
-      href: ../hdinsight-hadoop-architecture.md
-      maintainContext: true
-    - name: Componentes do Apache Hadoop no HDInsight
-      href: ../hdinsight-component-versioning.md
-      maintainContext: true
-    - name: HDInsight 4.0
-      href: ../hdinsight-version-release.md
       maintainContext: true
 - name: Guia de início rápido
   items:
     - name: Criar o cluster do Apache Hadoop - Portal
       href: apache-hadoop-linux-create-cluster-get-started-portal.md
-    - name: Criar um cluster do Apache Hadoop – modelo do Resource Manager
+    - name: Criar o cluster do Apache Hadoop – Modelo
       displayName: 'resource manager template, arm template, resource manager group'
       href: apache-hadoop-linux-tutorial-get-started.md
 - name: Tutoriais
@@ -45,6 +36,15 @@
       maintainContext: true
 - name: Conceitos
   items:
+    - name: HDInsight 4.0
+      href: ../hdinsight-version-release.md
+      maintainContext: true
+    - name: Arquitetura do Apache Hadoop no HDInsight
+      href: ../hdinsight-hadoop-architecture.md
+      maintainContext: true
+    - name: Os componentes do Apache Hadoop no HDInsight
+      href: ../hdinsight-component-versioning.md
+      maintainContext: true
     - name: Planejamento de capacidade de cluster
       href: ../hdinsight-capacity-planning.md
       maintainContext: true
@@ -471,9 +471,6 @@
   items:
     - name: Clusters do Windows
       items:
-        - name: Migrar clusters do Windows para clusters do Linux
-          href: ../hdinsight-migrate-from-windows-to-linux.md
-          maintainContext: true
         - name: Migrar soluções .NET para os clusters do Linux
           href: ../hdinsight-hadoop-migrate-dotnet-to-linux.md
           maintainContext: true
