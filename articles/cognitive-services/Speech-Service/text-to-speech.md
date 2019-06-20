@@ -8,15 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 04/04/2019
+ms.date: 06/14/2019
 ms.author: erhopf
-ms.custom: seodec18
-ms.openlocfilehash: 84e8eedfb206e28f245128a4e30aba44e96277ab
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a3469e4f7fe1c234a6df694d7bdd6d9e2c46407a
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67072428"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67204883"
 ---
 # <a name="what-is-text-to-speech"></a>O que é o texto em fala?
 
@@ -26,13 +25,13 @@ Tecnologia de texto para fala permite que os criadores de conteúdo interagir co
 
 ### <a name="standard-voices"></a>Vozes padrão
 
-Vozes padrão são criadas usando técnicas de síntese paramétrica estatísticos e/ou síntese de concatenação. Esses vozes são altamente inteligível e parecer bastante naturais. Você pode habilitar facilmente seus aplicativos falar em mais de 45 idiomas, com uma ampla variedade de opções de voz. Esses vozes fornecem precisão pronúncia alta, incluindo suporte para abreviações, expansões de acrônimos, interpretações de data/hora, polyphones e muito mais. Use voz padrão para melhorar a acessibilidade de seus aplicativos e serviços, permitindo que os usuários interajam com seu conteúdo de forma audível.
+Vozes padrão são criadas usando técnicas de síntese paramétrica estatísticos e/ou síntese de concatenação. Esses vozes são altamente inteligível e som natural. Você pode habilitar facilmente seus aplicativos falar em mais de 45 idiomas, com uma ampla variedade de opções de voz. Esses vozes fornecem precisão pronúncia alta, incluindo suporte para abreviações, expansões de acrônimos, interpretações de data/hora, polyphones e muito mais. Use voz padrão para melhorar a acessibilidade de seus aplicativos e serviços, permitindo que os usuários interajam com seu conteúdo de forma audível.
 
 ### <a name="neural-voices"></a>Vozes neurais
 
-Vozes neurais usam redes neurais profundas para superar os limites dos sistemas tradicionais de texto em fala na correspondência de padrões de estresse e entonação no idioma falado e resumir as unidades de conversão de fala em uma voz de computador. Texto em fala padrão divide-se a métrica em análise linguística separado e etapas de previsão acústico controladas por modelos independentes. Isso pode resultar na síntese de voz muffled, buzzy. Nossa funcionalidade neural faz síntese de voz e previsão de métrica simultaneamente, o que resulta em uma voz mais fluida e alarme natural.
+Vozes neurais usam redes neurais profundas para superar os limites dos sistemas tradicionais de texto em fala na correspondência de padrões de estresse e entonação no idioma falado e resumir as unidades de conversão de fala em uma voz de computador. Texto em fala padrão divide-se a métrica em análise linguística separado e etapas de previsão acústico controladas por modelos independentes, que podem resultar em síntese de voz muffled. Nossa funcionalidade neural faz síntese de voz e previsão de métrica simultaneamente, o que resulta em uma voz mais fluida e alarme natural.
 
-Vozes neurais podem ser usadas para interagir com chatbots e assistentes virtuais de forma mais natural e participativa para converter textos digitais, como livros eletrônicos, em audiolivros, e aprimorar sistemas de navegação de carros. Com a métrica de natural humana e clara Articulação das palavras, vozes neurais reduzem significativamente fadiga escuta ao interagir com sistemas de inteligência Artificial. 
+Vozes neurais podem ser usadas para interagir com chatbots e assistentes virtuais de forma mais natural e participativa para converter textos digitais, como livros eletrônicos, em audiolivros, e aprimorar sistemas de navegação de carros. Com a métrica de natural humana e clara Articulação das palavras, vozes neurais reduzem significativamente fadiga escuta ao interagir com sistemas de inteligência Artificial.
 
 Vozes neurais dão suporte a estilos diferentes, como neutra e alegre. Por exemplo, a voz Jessa (en-US) pode falar cheerfully, que é otimizado para conversas de passiva, feliz. Você pode ajustar a saída de voz, como tom, tom e acelere o aprendizado usando [linguagem de marcação de síntese de fala](speech-synthesis-markup.md). Para obter uma lista completa das vozes disponíveis, consulte [idiomas com suporte](language-support.md#text-to-speech).
 
@@ -41,6 +40,26 @@ Para saber mais sobre os benefícios de vozes neurais, consulte [novo serviço t
 ### <a name="custom-voices"></a>Vozes personalizadas
 
 Personalização de voz lhe permite criar uma voz reconhecível, um de tipo para sua marca. Para criar sua fonte de voz personalizada, você fazer uma gravação studio e carrega os scripts associados como os dados de treinamento. Em seguida, o serviço cria um modelo de voz exclusivo ajustado para a gravação. Você pode usar essa fonte de voz personalizadas para sintetizador de fala. Para obter mais informações, consulte [vozes personalizadas](how-to-customize-voice-font.md).
+
+## <a name="speech-synthesis-markup-language-ssml"></a>Linguagem de marcação de síntese de fala (SSML)
+
+Speech Synthesis Markup Language (SSML) é uma linguagem de marcação baseada em XML que permite aos desenvolvedores especificar o texto como entrado é convertida em voz sintetizada usando o serviço de texto em fala. SSML em comparação com texto sem formatação, permite aos desenvolvedores ajustar o tom, a pronúncia, a velocidade da fala, volume e muito mais do que a saída de texto em fala. Pontuação normal, como pausa após um período, ou usando a entonação correta quando uma frase termina com um ponto de interrogação são manipulados automaticamente.
+
+Todas as entradas de texto enviadas para o serviço de texto em fala devem ser estruturadas como SSML. Para obter mais informações, consulte [linguagem de marcação de síntese de fala](speech-synthesis-markup.md).
+
+### <a name="pricing-note"></a>Observação de preços
+
+Ao usar o serviço de texto em fala, você será cobrado para cada caractere que é convertido em fala, incluindo a pontuação. Embora o próprio documento SSML não seja faturável, elementos opcionais que são usados para ajustar como o texto é convertido em fala, como fonemas e tom, são contados como caracteres faturáveis. Aqui está uma lista do que é cobrável:
+
+* Texto passado para o serviço de texto em fala no corpo da solicitação SSML
+* Todas as marcações dentro do campo de texto do corpo da solicitação no formato SSML, exceto para `<speak>` e `<voice>` marcas
+* Letras, pontuação, espaços, tabulações, marcação e todos os caracteres de espaço em branco
+* Cada ponto de código definido no Unicode
+
+Para obter informações detalhadas, consulte [preços](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/).
+
+> [!IMPORTANT]
+> Cada caractere de idioma chinês, japonês e coreano é contado como dois caracteres para cobrança.
 
 ## <a name="core-features"></a>Principais recursos
 
