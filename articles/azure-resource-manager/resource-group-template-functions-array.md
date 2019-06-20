@@ -49,7 +49,7 @@ Para obter uma matriz de valores de cadeia de caracteres delimitada por um valor
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="array"></a>matriz
+## <a name="array"></a>Array
 `array(convertToArray)`
 
 Converte o valor em uma matriz.
