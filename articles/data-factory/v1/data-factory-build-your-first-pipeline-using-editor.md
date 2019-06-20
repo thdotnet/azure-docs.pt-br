@@ -24,11 +24,11 @@ ms.locfileid: "64573830"
 # <a name="tutorial-build-your-first-data-factory-by-using-the-azure-portal"></a>Tutorial: Criar seu primeiro data factory usando o portal do Azure
 > [!div class="op_single_selector"]
 > * [Visão geral e pré-requisitos](data-factory-build-your-first-pipeline.md)
-> * [Portal do Azure](data-factory-build-your-first-pipeline-using-editor.md)
+> * [Azure portal](data-factory-build-your-first-pipeline-using-editor.md)
 > * [Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
 > * [PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
 > * [Modelo do Azure Resource Manager](data-factory-build-your-first-pipeline-using-arm.md)
-> * [API REST](data-factory-build-your-first-pipeline-using-rest-api.md)
+> * [REST API](data-factory-build-your-first-pipeline-using-rest-api.md)
 
 
 > [!NOTE]
@@ -212,12 +212,12 @@ Nesta etapa, você cria conjuntos de dados para representar dados de entrada e d
    | Propriedade | Aninhado em | DESCRIÇÃO |
    |:--- |:--- |:--- |
    | type | properties |A propriedade type é definida como **AzureBlob** porque os dados residem no armazenamento de blobs. |
-   | linkedServiceName | formato |Refere-se ao AzureStorageLinkedService que você criou anteriormente. |
+   | linkedServiceName | format |Refere-se ao AzureStorageLinkedService que você criou anteriormente. |
    | folderPath | typeProperties | Especifica o contêiner de blobs e a pasta que contém blobs de entrada. | 
    | fileName | typeProperties |Essa propriedade é opcional. Se você omitir essa propriedade, todos os arquivos de folderPath serão selecionados. Neste tutorial, somente o arquivo input.log é processado. |
-   | type | formato |Os arquivos de log estão em formato de texto. Utilize **TextFormat**. |
-   | columnDelimiter | formato |As colunas nos arquivos de log são delimitadas pelo caractere de vírgula (`,`). |
-   | frequency/interval | disponibilidade |A frequência é definida como **Mês** e o intervalo como **1**, o que significa que as fatias de entrada estão disponíveis mensalmente. |
+   | type | format |Os arquivos de log estão em formato de texto. Utilize **TextFormat**. |
+   | columnDelimiter | format |As colunas nos arquivos de log são delimitadas pelo caractere de vírgula (`,`). |
+   | frequency/interval | availability |A frequência é definida como **Mês** e o intervalo como **1**, o que significa que as fatias de entrada estão disponíveis mensalmente. |
    | external | properties | Essa propriedade será definida como **true** se os dados de entrada não forem gerados por esse pipeline. Neste tutorial, o arquivo input.log não é gerado por esse pipeline, portanto, definimos a propriedade como **true**. |
 
     Para saber mais informações sobre essas propriedades JSON, confira [Conector do Blob do Azure](data-factory-azure-blob-connector.md#dataset-properties).
