@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.author: makromer
 ms.service: data-factory
 ms.date: 05/16/2019
-ms.openlocfilehash: d4acc620fb2a4c41615c745516e5ccfafd59d848
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: bbbc2bc5c47821469ecf15a27195b1bf0c12e6e5
+ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67057968"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67190612"
 ---
 # <a name="mapping-data-flows-performance-and-tuning-guide"></a>Desempenho de fluxos de dados de mapeamento e guia de ajuste
 
@@ -59,6 +59,12 @@ Clicar nesse ícone exibirá o plano de execução e o perfil de desempenho subs
 * Definindo o tamanho de lote instruirá o ADF para armazenar dados em conjuntos de na memória em vez de linha por linha. É uma configuração opcional e você poderá ficar sem recursos em nós de computação se eles não são dimensionados corretamente.
 * Definir uma consulta pode permitirá que você filtre direita de linhas na origem antes que ainda chegam para o fluxo de dados para processamento, o que pode tornar a aquisição de dados inicial mais rápida.
 * Se você usar uma consulta, você pode adicionar dicas de consulta opcional para o BD SQL do Azure, ou seja, READ UNCOMMITTED
+
+### <a name="set-isolation-level-on-source-transformation-settings-for-sql-datasets"></a>Definir o nível de isolamento nas configurações de transformação de origem para conjuntos de dados SQL
+
+* Leitura não confirmada fornecem resultados mais rápidos de consulta sobre a transformação de origem
+
+![Nível de isolamento](media/data-flow/isolationlevel.png "nível de isolamento")
 
 ### <a name="set-sink-batch-size"></a>Definir tamanho do lote de coletor
 

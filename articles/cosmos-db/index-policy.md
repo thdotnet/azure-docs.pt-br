@@ -4,20 +4,23 @@ description: Saiba como configurar e alterar a política para a indexação auto
 author: ThomasWeiss
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/20/2019
+ms.date: 06/14/2019
 ms.author: thweiss
-ms.openlocfilehash: 4206fba8297672a1a24415169cfd19ff89344038
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3f19668cc4fb4f4f4a900c157aa79de83ad1b79b
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66431190"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67163717"
 ---
 # <a name="indexing-policies-in-azure-cosmos-db"></a>Políticas de indexação no Azure Cosmos DB
 
 No Azure Cosmos DB, cada contêiner tem uma política de indexação que determina como os itens de contêiner devem ser indexados. O padrão de política para a indexação recentemente criados índices de contêineres todas as propriedades de cada item, imposição de índices de intervalo para qualquer cadeia de caracteres ou número, e índices espaciais para qualquer objeto GeoJSON de tipo de ponto. Isso permite que você obtenha o alto desempenho de consulta sem precisar pensar sobre a indexação e o gerenciamento de índice com antecedência.
 
 Em algumas situações, talvez você queira substituir esse comportamento automático para atender melhor às suas necessidades. Você pode personalizar a política de indexação de um contêiner, definindo sua *modo de indexação*e inclua ou exclua *caminhos da propriedade*.
+
+> [!NOTE]
+> O método de atualização de políticas de indexação descritas neste artigo se aplica somente ao SQL do Azure Cosmos DB API (principal).
 
 ## <a name="indexing-mode"></a>Modo de indexação
 

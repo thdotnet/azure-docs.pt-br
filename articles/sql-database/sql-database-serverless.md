@@ -12,12 +12,12 @@ ms.author: moslake
 ms.reviewer: sstein, carlrab
 manager: craigg
 ms.date: 06/12/2019
-ms.openlocfilehash: b740b49e2decabd5f104d1db5d38b48f2bc2111c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: afa575c9015cbb21386d23101b74456822dfa33c
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67116196"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67275473"
 ---
 # <a name="azure-sql-database-serverless-preview"></a>Azure SQL Database sem servidor (visualização)
 
@@ -253,6 +253,8 @@ O pool de recursos do usuário é o limite interno de gerenciamento de recursos 
 
 ### <a name="metrics"></a>metrics
 
+As métricas para monitorar o uso de recursos do pool de usuário e o pacote de aplicativos de banco de dados sem servidor estão listadas na tabela a seguir:
+
 |Entidade|Métrica|DESCRIÇÃO|Unidades|
 |---|---|---|---|
 |Pacote do Aplicativo|app_cpu_percent|Percentual de vCores usados pelo aplicativo em relação ao máximo de vCores permitido para o aplicativo.|Percentual|
@@ -263,10 +265,6 @@ O pool de recursos do usuário é o limite interno de gerenciamento de recursos 
 |Pool de usuários|log_IO_percent|Percentual de MB/s de log usados pela carga de trabalho do usuário em relação ao máximo de MB/s de log permitido para a carga de trabalho do usuário.|Percentual|
 |Pool de usuários|workers_percent|Percentual de funções de trabalho usadas pela carga de trabalho do usuário em relação ao máximo de funções de trabalho permitidas para a carga de trabalho do usuário.|Percentual|
 |Pool de usuários|sessions_percent|Percentual de sessões usadas pela carga de trabalho do usuário em relação ao máximo de sessões permitidas para a carga de trabalho do usuário.|Percentual|
-____
-
-> [!NOTE]
-> As métricas no portal do Azure estão disponíveis no painel de banco de dados para um banco de dados individual em **Monitoramento**.
 
 ### <a name="pause-and-resume-status"></a>Pausar e retomar status
 

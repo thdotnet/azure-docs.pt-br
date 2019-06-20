@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: article
 ms.date: 6/7/2019
 ms.author: victorh
-ms.openlocfilehash: 0d52e84ba027f902cebf543ae019b5e4b53400b7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5dfc00b1193117c22ba1c763bb0e75d9c4712222
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67059689"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67275747"
 ---
 # <a name="azure-dns-alias-records-overview"></a>Visão geral dos registros de alias do DNS do Azure
 
@@ -29,7 +29,7 @@ Um conjunto de registros de alias é suportado para os seguintes tipos de regist
 
 ## <a name="capabilities"></a>Funcionalidades
 
-- **Aponte para um recurso IP público de um conjunto de registros DNS A / AAAA.** Você pode criar um conjunto de registros A / AAAA e torná-lo um conjunto de registros de alias para apontar para um recurso IP público. O conjunto de registros de DNS é automático se o endereço IP público é alterado ou é excluído. Registros DNS pendentes que apontem para endereços IP incorretos são evitados.
+- **Aponte para um recurso IP público de um conjunto de registros DNS A / AAAA.** Você pode criar um conjunto de registros A / AAAA e torná-lo um conjunto de registros de alias para apontar para um recurso IP público. O registro DNS conjunto de alterações automaticamente se o endereço IP público é alterado ou é excluído. Registros DNS pendentes que apontem para endereços IP incorretos são evitados.
 
 - **Aponte para um perfil do Gerenciador de Tráfego de um conjunto de registros DNS A / AAAA / CNAME.** Você pode criar um conjunto de registros CNAME ou A/AAAA e usar registros de alias para apontar para um perfil do Gerenciador de Tráfego. Ele é especialmente útil quando você precisa rotear o tráfego no ápice de uma zona, conforme os registros CNAME tradicionais não são compatíveis com um apex da zona. Por exemplo, digamos que seu perfil do Gerenciador de Tráfego seja myprofile.trafficmanager.net e sua zona DNS empresarial seja contoso.com. Você poderá criar um conjunto de registros de alias do tipo um/AAAA para contoso.com (apex da zona) e apontar para myprofile.trafficmanager.net.
 - **Aponte para um ponto de extremidade do Azure Content Delivery Network (CDN)** . Isso é útil quando você cria sites estático usando o armazenamento do Azure e CDN do Azure.

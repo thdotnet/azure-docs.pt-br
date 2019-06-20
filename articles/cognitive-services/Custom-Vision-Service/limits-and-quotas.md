@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: anroth
-ms.openlocfilehash: 85abc4a50710629d3485d05115698e59a93fc96e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9cff5fdac39be2338305cd37a4b2328a28a48255
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60995589"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67269268"
 ---
 # <a name="limits-and-quotas"></a>Limites e cotas
 
@@ -26,8 +26,8 @@ Espera-se que o número de imagens de treinamento por projeto e tags por projeto
 ||**F0**|**S0**|
 |-----|-----|-----|
 |Projetos|2|100|
-|Imagens de treinamento por projeto |5\.000|100\.000|
-|Previsões/mês|10\.000 |Ilimitado|
+|Imagens de treinamento por projeto |5\.000|100.000|
+|Previsões/mês|10.000 |Ilimitado|
 |Marcas/projeto|50|500|
 |Iterações |10|10|
 |Min rotulado imagens por marca, classificação (mais de 50 recomendado) |5|5|
@@ -39,3 +39,5 @@ Espera-se que o número de imagens de treinamento por projeto e tags por projeto
 |[Outras chamadas à API](https://go.microsoft.com/fwlink/?linkid=865446) (Transações por Segundo)|10|10|
 |Tamanho máximo da imagem (upload da imagem de treinamento) |6 MB|6 MB|
 |Tamanho máximo da imagem (previsão)|4 MB|4 MB|
+|Regiões máx por imagem de treinamento de detecção de objeto|200|200|
+|Máximo de marcas por imagem de classificação|30|30|

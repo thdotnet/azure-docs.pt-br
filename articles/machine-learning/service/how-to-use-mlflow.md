@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.topic: conceptual
 ms.date: 06/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 934e9b705ab5f399d29f24c915b4c60a3b06138b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: HT
+ms.openlocfilehash: b64051a4ef7b6a816b03562fef0452cbe9ce949a
+ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67082567"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67144019"
 ---
 # <a name="how-to-use-mlflow-with-azure-machine-learning-service-preview"></a>Como usar MLflow com o serviço de Azure Machine Learning (versão prévia)
 
@@ -145,7 +145,7 @@ Se você não planeja usar as métricas registradas em log e os artefatos em seu
 
 ## <a name="example-notebooks"></a>Blocos de anotações de exemplo
 
-O [MLflow com blocos de anotações do AM do Azure](https://github.com/Azure/MachineLearningNotebooks/blob/master/contrib/mlflow) demonstra conceitos neste artigo.
+O [MLflow com blocos de anotações do AM do Azure](https://aka.ms/azureml-mlflow-examples) demonstra conceitos neste artigo.
 
 ## <a name="next-steps"></a>Próximas etapas
 

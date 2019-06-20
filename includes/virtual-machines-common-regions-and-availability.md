@@ -9,11 +9,11 @@ ms.date: 03/27/2018
 ms.author: zarhoads
 ms.custom: include file
 ms.openlocfilehash: 7f33312d0a5fbe383d438408d471dd9ae09d0332
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66156238"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67171889"
 ---
 # <a name="regions-and-availability-for-virtual-machines-in-azure"></a>Regiões e disponibilidade para máquinas virtuais do Azure
 O Azure opera em vários datacenters no mundo inteiro. Esses datacenters estão agrupados em regiões geográficas, oferecendo a você a flexibilidade de escolher onde compilar seus aplicativos. É importante entender como e onde as VMs (máquinas virtuais) operam no Azure, juntamente com suas opções para maximizar o desempenho, a disponibilidade e a redundância. Este artigo fornece uma visão geral dos recursos de redundância e disponibilidade do Azure.

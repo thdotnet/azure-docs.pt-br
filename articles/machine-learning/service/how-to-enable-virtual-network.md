@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 ms.author: aashishb
 author: aashishb
 ms.date: 01/08/2019
-ms.openlocfilehash: 48c59ddc1e203030bd967911d536930cb94761d3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f1cb7c9aa0844c82acd333c4f9dd87a4dda013e7
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66356191"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67165342"
 ---
 # <a name="securely-run-experiments-and-inference-inside-an-azure-virtual-network"></a>Executar com segurança experimentos e Inferência de tipos dentro de uma rede virtual do Azure
 
@@ -35,9 +35,13 @@ Este documento presume que você esteja familiarizado com redes virtuais do Azur
 ## <a name="storage-account-for-your-workspace"></a>Conta de armazenamento para o seu espaço de trabalho
 
 > [!IMPORTANT]
-> Você pode colocar a conta de armazenamento que está associada ao espaço de trabalho de serviço de Azure Machine Learning por trás da rede virtual somente enquanto faz a experimentação. Inferência de tipos exige acesso irrestrito à conta de armazenamento. Se você não tiver certeza se modificou essas configurações, consulte __Alterar a regra de acesso de rede padrão__ em [Configurar redes virtuais e firewalls do Armazenamento do Microsoft Azure](https://docs.microsoft.com/azure/storage/common/storage-network-security). Use as etapas para permitir o acesso de todas as redes durante a inferência ou modelo de pontuação.
+> O __conta de armazenamento padrão__ para o Azure Machine Learning serviço pode ser colocado em uma rede virtual __somente enquanto faz a experimentação__.
+>
+> Para __contas de armazenamento não padrão para experimentação__, ou se você estiver usando uma conta de armazenamento __inferência__, você deve ter __acesso irrestrito à conta de armazenamento__.
+> 
+> Se você não tiver certeza se modificou essas configurações, consulte __Alterar a regra de acesso de rede padrão__ em [Configurar redes virtuais e firewalls do Armazenamento do Microsoft Azure](https://docs.microsoft.com/azure/storage/common/storage-network-security). Use as etapas para permitir o acesso de todas as redes durante a inferência ou modelo de pontuação.
 
-Para usar recursos de experimentação do Machine Learning com o armazenamento do Azure por trás de uma rede virtual, siga as etapas abaixo:
+Para usar um único lugar, a conta de armazenamento do Azure padrão para o espaço de trabalho em uma rede virtual, use as seguintes etapas:
 
 1. Crie uma computação de experimentação, ex. Computação de aprendizado de máquina por trás de uma rede virtual ou anexar uma computação de experimentação no espaço de trabalho, ex. Máquina virtual ou cluster do HDInsight. Para obter mais informações, consulte [usar computação de aprendizado de máquina](#use-machine-learning-compute) e [usar uma máquina virtual ou cluster de HDInsight](#use-a-virtual-machine-or-hdinsight-cluster) seções neste documento
 2. Vá para o armazenamento conectado ao espaço de trabalho. ![Imagem do portal do Azure mostrando o armazenamento do Azure que está associada ao espaço de trabalho de serviço do Azure Machine Learning](./media/how-to-enable-virtual-network/workspace-storage.png)
@@ -275,7 +279,7 @@ Para adicionar o Serviço de Kubernetes do Azure em uma rede virtual do workspac
 
     - __Endereço IP do serviço DNS do Kubernetes__: selecione o endereço IP do serviço DNS do Kubernetes. Esse endereço IP é atribuído ao serviço DNS do Kubernetes. É necessário estar dentro do intervalo de endereços de serviço do Kubernetes. Por exemplo: 10.0.0.10.
 
-    - __Endereço da ponte Docker__: selecione o endereço da ponte Docker. Esse endereço IP é atribuído à ponte Docker. Não deverá estar em nenhum intervalo de IP de sub-rede ou intervalo de endereços de serviço do Kubernetes. Por exemplo: 172.17.0.1/16.
+    - __Endereço da ponte Docker__: selecione o endereço da ponte Docker. Esse endereço IP é atribuído à ponte Docker. Não deverá estar em nenhum intervalo de IP de sub-rede ou intervalo de endereços de serviço do Kubernetes. Por exemplo:  172.17.0.1/16.
 
    ![Serviço do Azure Machine Learning: Configurações de rede virtual de Computação do Machine Learning](./media/how-to-enable-virtual-network/aks-virtual-network-screen.png)
 

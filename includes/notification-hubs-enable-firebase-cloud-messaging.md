@@ -9,11 +9,11 @@ ms.date: 02/05/2019
 ms.author: spelluru
 ms.custom: include file
 ms.openlocfilehash: 5f919a04b47aa6fdef9500f3d7e6bef4ddaa239e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66140208"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67172174"
 ---
 1. Faça logon no [console do Firebase](https://firebase.google.com/console/). Crie um novo projeto do Firebase se você ainda não tiver um.
 2. Depois de criar seu projeto, selecione **Adicionar Firebase ao seu aplicativo Android**. 

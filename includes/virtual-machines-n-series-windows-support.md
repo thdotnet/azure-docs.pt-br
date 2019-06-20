@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/11/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 0dda467c3906c217c18e1340f7dc2a464dcbccae
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 12f053d7255c21441d78dab8c7937bcf45ec48c2
+ms.sourcegitcommit: 6e6813f8e5fa1f6f4661a640a49dc4c864f8a6cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66154844"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67151809"
 ---
 ## <a name="supported-operating-systems-and-drivers"></a>Sistemas operacionais e drivers com suporte
 
@@ -36,5 +36,5 @@ A Microsoft redistribui os instaladores do driver NVIDIA GRID para VMs das séri
 
 | SO | Driver |
 | -------- |------------- |
-| Windows Server 2016<br/><br/>Windows 10 (até a versão 1803) | [GRADE 8.0 (425.31)](https://go.microsoft.com/fwlink/?linkid=874181) (.exe) |
+| Windows Server 2019<br/><br/>Windows Server 2016<br/><br/>Windows 10 (até a versão 1809. Sem patch/não há suporte para o nível do patch 0 de 1809). | [GRADE 8.0 (425.31)](https://go.microsoft.com/fwlink/?linkid=874181) (.exe) |
 | Windows Server 2012 R2 | [GRADE 8.0 (425.31)](https://go.microsoft.com/fwlink/?linkid=874184) (.exe)  |
