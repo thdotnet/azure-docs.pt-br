@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/25/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 9144165a3ce593dce11b5e50ce5f0af9f0afa480
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0672f25b30bfb34a6ee99b0f4710d01cf0871300
+ms.sourcegitcommit: 6e6813f8e5fa1f6f4661a640a49dc4c864f8a6cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66237667"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67150335"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Planejando uma implantação de Arquivos do Azure
 
@@ -76,8 +76,23 @@ Se você estiver usando a Sincronização de Arquivos do Azure para acessar o co
 
 Arquivos do Azure oferece dois níveis de desempenho: standard e premium.
 
-* Os **compartilhamentos de arquivos padrão** contam com HDDs (unidades de disco rígido) rotacionais que fornecem um desempenho confiável para as cargas de trabalho de E/S que são menos sensíveis à variabilidade de desempenho, como os compartilhamentos de arquivos de finalidade geral e os ambientes de desenvolvimento/teste. Os compartilhamentos de arquivos padrão estão disponíveis apenas em um modelo de cobrança pago conforme o uso.
-* Os **compartilhamentos de arquivos Premium (versão prévia)** contam com SSDs (discos de estado sólido) que fornecem alto desempenho consistente e baixa latência, em milissegundos de dígito único para a maioria das operações de E/S e para as cargas de E/S mais intensivas. Isso os torna adequados para uma ampla variedade de cargas de trabalho, como bancos de dados, hospedagem de websites, ambientes de desenvolvimento, etc. Os compartilhamentos de arquivos Premium estão disponíveis em um modelo de cobrança provisionado. Compartilhamentos de arquivos do Premium usam um modelo de implantação separado de compartilhamentos de arquivos padrão.
+### <a name="standard-file-shares"></a>Compartilhamentos de arquivos padrão
+
+Compartilhamentos de arquivos padrão são apoiados por unidades de disco rígido (HDDs). Compartilhamentos de arquivos padrão oferecem um desempenho confiável para cargas de trabalho de e/s que são menos sensíveis à variabilidade de desempenho, como compartilhamentos de arquivos de finalidade geral e ambientes de desenvolvimento/teste. Os compartilhamentos de arquivos padrão estão disponíveis apenas em um modelo de cobrança pago conforme o uso.
+
+Compartilhamentos de arquivo padrão até 5 TiB de tamanho estão disponíveis como uma oferta de GA. Embora os compartilhamentos de arquivos maiores, que são qualquer compartilhamento maior do que 5 TiB, até um máximo de 100 TiB, estão disponíveis atualmente como uma oferta de visualização.
+
+> [!IMPORTANT]
+> - Exige que você crie uma nova conta de armazenamento de finalidade geral (não é possível expandir as contas de armazenamento existentes).
+> - Só estão disponíveis com o LRS.
+> - Disponível em três regiões: Regiões do Sudeste da Ásia, Europa Ocidental e Oeste dos EUA 2.
+> - LRS para a conversão de conta GRS não será possível em qualquer nova conta de armazenamento criada depois que a assinatura é aceito para a visualização de compartilhamentos de arquivos maior.
+
+Se você quiser integrar a visualização desses tamanhos maiores de compartilhamento de arquivos, enviar isso [formulário](https://aka.ms/azurefilesatscalesurvey). 
+
+### <a name="premium-file-shares-preview"></a>Compartilhamentos de arquivos Premium (versão prévia)
+
+Os compartilhamentos de arquivos (versão prévia) Premium são apoiados por discos de estado sólido (SSDs). Compartilhamentos de arquivos do Premium oferecem alto desempenho consistente e baixa latência, em milissegundos de dígito único para a maioria das operações de e/s, para cargas de trabalho de e/s intensiva. Isso os torna adequados para uma ampla variedade de cargas de trabalho, como bancos de dados, hospedagem de websites, ambientes de desenvolvimento, etc. Os compartilhamentos de arquivos Premium estão disponíveis em um modelo de cobrança provisionado. Compartilhamentos de arquivos do Premium usam um modelo de implantação separado de compartilhamentos de arquivos padrão.
 
 O Backup do Azure está disponível para os compartilhamentos de arquivos premium e o serviço Kubernetes do Azure dá suporte a compartilhamentos de arquivos do premium na versão 1.13 e posterior.
 
@@ -120,7 +135,7 @@ A tabela a seguir ilustra alguns exemplos dessas fórmulas para os tamanhos do c
 |10,240      | 10,240  | Até 30.720  | 675 | 450   |
 |33,792      | 33,792  | Até 100.000 | 2,088 | 1,392   |
 |51,200      | 51,200  | Até 100.000 | 3\.132 | 2,088   |
-|102,400     | 100\.000 | Até 100.000 | 6,204 | 4,136   |
+|102,400     | 100.000 | Até 100.000 | 6,204 | 4,136   |
 
 ### <a name="bursting"></a>Intermitência
 
@@ -180,7 +195,7 @@ Lembre-se esses pontos ao decidir qual opção de replicação para usar:
 
 ## <a name="data-growth-pattern"></a>Padrão de crescimento de dados
 
-Hoje, o tamanho máximo para um compartilhamento de arquivos do Azure é 5 TiB (100 TiB para os compartilhamentos de arquivos de premium, que estão em visualização pública). Devido a essa limitação atual, você deve considerar o crescimento esperado dos dados durante a implantação de um compartilhamento de Arquivos do Azure.
+Hoje, o tamanho máximo para um compartilhamento de arquivos do Azure é 5 TiB (100 TiB na versão prévia). Devido a essa limitação atual, você deve considerar o crescimento esperado dos dados durante a implantação de um compartilhamento de Arquivos do Azure.
 
 É possível sincronizar vários compartilhamentos de arquivos do Azure em um único Servidor de Arquivos do Windows com a Sincronização de Arquivos do Azure. Isso lhe assegura que os compartilhamentos de arquivos mais antigos e maiores, que talvez você tenha localmente, poderão ser transferidos para a Sincronização de Arquivos do Azure. Para obter mais informações, veja [Planejando uma implantação da Sincronização de Arquivos do Azure](storage-files-planning.md).
 

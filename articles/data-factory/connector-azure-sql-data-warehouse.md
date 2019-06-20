@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 05/24/2019
 ms.author: jingwang
-ms.openlocfilehash: bd02a95f485f45c223fce4c24a72251481c2aa7e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 68d2f126ee32f61d13d170712bf58581101036e8
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66427888"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67206063"
 ---
 # <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Copiar dados de e para o SQL Data Warehouse do Azure usando o Azure Data Factory 
 > [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
@@ -426,7 +426,7 @@ Se os requisitos não forem atendidos, o Azure Data Factory verificará as confi
     | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage.md) | Autenticação de chave de conta, autenticação de identidade gerenciada |
 
     >[!IMPORTANT]
-    >Se o armazenamento do Azure é configurado com o ponto de extremidade de serviço de rede virtual, você deve usar a autenticação de identidade gerenciada. Consulte [impacto do uso de pontos de extremidade de serviço de rede virtual com armazenamento do Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage)
+    >Se o armazenamento do Azure é configurado com o ponto de extremidade de serviço de rede virtual, você deve usar a autenticação de identidade gerenciada - consulte [impacto do uso de pontos de extremidade de serviço de rede virtual com armazenamento do Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). Saiba as configurações necessárias no Data Factory do [BLOBs do Azure - autenticação de identidade gerenciada](connector-azure-blob-storage.md#managed-identity) e [Gen2 de armazenamento do Azure Data Lake - autenticação de identidade gerenciada](connector-azure-data-lake-storage.md#managed-identity) seção respectivamente.
 
 2. O **formato de dados de origem** é do **Parquet**, **ORC**, ou **texto delimitado por**, com as seguintes configurações:
 
@@ -542,7 +542,7 @@ A solução é desmarcar "**padrão de tipo de uso**" opção (como false) no co
 
 **Outros**
 
-Para mais problemas do PolyBase knonw, consulte [carga de solução de problemas do Azure SQL Data Warehouse PolyBase](../sql-data-warehouse/sql-data-warehouse-troubleshoot.md#polybase).
+Para problemas mais conhecidos do PolyBase, consulte [carga de solução de problemas do Azure SQL Data Warehouse PolyBase](../sql-data-warehouse/sql-data-warehouse-troubleshoot.md#polybase).
 
 ### <a name="sql-data-warehouse-resource-class"></a>Classe de recursos do SQL Data Warehouse
 

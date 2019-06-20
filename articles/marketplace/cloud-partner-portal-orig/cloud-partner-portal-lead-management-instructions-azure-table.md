@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: pabutler
-ms.openlocfilehash: a1bcab9816627b453ba8b20b7bcd9402c2dfd151
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: 08f9d794822dfd7879efc7c4813ecc46f92f6a45
+ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66240653"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67147892"
 ---
 # <a name="lead-management-instructions-for-azure-table"></a>Instruções de gerenciamento de leads para tabelas do Azure
 
@@ -97,7 +97,7 @@ No próximo conjunto de etapas, você vai se conectar à sua tabela do Azure e c
 
      ![Escolha um valor personalizado para o nome da tabela do Azure](./media/cloud-partner-portal-lead-management-instructions-azure-table/msflow-getentities-table-name.png)
 
-   - **Consulta de filtro** – clicar neste campo e o **obter horário passado** ícone é exibido em uma janela pop-up. Selecione **Horário passado** upara sá-lo como o carimbo de hora para filtrar a consulta. Como alternativa, você pode colar a seguinte função para o campo: CreatedTime `gt datetime'@{body('Get_past_time')}'` 
+   - **Consulta de filtro** – clicar neste campo e o **obter horário passado** ícone é exibido em uma janela pop-up. Selecione **Horário passado** upara sá-lo como o carimbo de hora para filtrar a consulta. Como alternativa, você pode colar a seguinte função para o campo: CreatedTime `Timestamp gt datetime'@{body('Get_past_time')}'` 
 
      ![Configurar a função de filtro de consulta](./media/cloud-partner-portal-lead-management-instructions-azure-table/msflow-getentities-filterquery.png)
 
@@ -127,7 +127,7 @@ No próximo conjunto de etapas, você vai se conectar à sua tabela do Azure e c
 12. Na janela **Enviar um email**, forneça informações para os seguintes campos:
 
     - **Para** -Insira um endereço de email para todos que obterão essa notificação.
-    - **Assunto** – Indique o assunto do email. Por exemplo: Novos clientes potenciais!
+    - **Assunto** – Indique o assunto do email. Por exemplo:  Novos clientes potenciais!
     - **Corpo**:   Adicione o texto que você deseja incluir em cada email (opcional) e, em seguida, cole no corpo `body('Get_entities')?['value']` como uma função para inserir informações de cliente potencial.
 
       >[!NOTE] 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: b-juche
-ms.openlocfilehash: fa2de14ada5d24531dfecc7f2f709a87f39ea6cb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bf2262d8a222cec6c5d0d7e53ded7b2994481656
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65826475"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67205687"
 ---
 # <a name="guidelines-for-azure-netapp-files-network-planning"></a>Diretrizes para planejamento de rede do Azure NetApp Files
 
@@ -42,7 +42,7 @@ Os recursos a seguir atualmente não há suportados para arquivos do NetApp do A
 
 As restrições de rede a seguir se aplicam aos arquivos do NetApp do Azure:
 
-* O número de VMs que podem se conectar a um volume (com uma rede virtual ou em VNets emparelhadas) não pode exceder 1000.
+* O número de IPs em uso em uma rede virtual com arquivos do Azure NetApp (incluindo VNets emparelhadas) não pode exceder 1000.
 * Em cada VNet (Rede virtual do Azure), apenas uma sub-rede pode ser delegada para o Azure NetApp Files.
 
 
@@ -103,13 +103,13 @@ Considere a rede virtual 2 e 3 de rede virtual no diagrama acima. Se VM 1 precis
 
 Além disso, considere um cenário em que 1 rede virtual está emparelhada com vnet2 e vnet2 é emparelhada com a rede virtual 3 na mesma região. Os recursos de rede virtual 1 podem se conectar aos recursos na rede virtual 2, mas ele não pode se conectar aos recursos na rede virtual 3, a menos que a rede virtual 1 e 3 de rede virtual estejam emparelhadas. 
 
-No diagrama acima, embora 3 VM pode se conectar ao Volume 1, 4 de VM não pode se conectar ao Volume 2.  O motivo é que as redes virtuais spoke não emparelhadas, e _não há suporte para roteamento de tráfego por meio do emparelhamento de VNet_.
+No diagrama acima, embora 3 VM pode se conectar ao Volume 1, 4 de VM não pode se conectar ao Volume 2.  A razão para isso é que as redes virtuais spoke não emparelhadas, e _não há suporte para roteamento de tráfego por meio do emparelhamento de VNet_.
 
 ## <a name="hybrid-environments"></a>Ambientes híbridos
 
 O diagrama a seguir ilustra um ambiente híbrido: 
 
-![Ambiente de rede híbrida](../media/azure-netapp-files/azure-netapp-files-networ-hybrid-environment.png)
+![Ambiente de rede híbrida](../media/azure-netapp-files/azure-netapp-files-network-hybrid-environment.png)
 
 No cenário híbrido, aplicativos de locais de data centers precisam acessar os recursos no Azure.  Esse é o caso se você deseja estender seu data center do Azure, ou você deseja usar serviços nativos do Azure ou recuperação de desastres. Ver [opções de planejamento do Gateway de VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%2fazure%2fvirtual-network%2ftoc.json#planningtable) sobre como conectar vários recursos locais para recursos no Azure por meio de uma VPN site a site ou ExpressRoute.
 
@@ -117,10 +117,10 @@ Em uma topologia hub-spoke híbrida, o hub de rede virtual no Azure atua como um
 
 Dependendo da configuração. Você pode conectar recursos do local a recursos no hub quanto nos spokes.
 
-Na topologia ilustrada acima, a rede local está conectada a um hub de rede virtual no Azure, e há spoke 2 redes virtuais emparelhadas com a VNet do hub.  Nesse cenário, as opções de conectividade com suporte para volumes de arquivos do Azure NetApp são da seguinte maneira:
+Na topologia ilustrada acima, a rede local está conectada a um hub de rede virtual no Azure e há spoke 2 redes virtuais na mesma região é emparelhada com a VNet do hub.  Nesse cenário, as opções de conectividade com suporte para volumes de arquivos do Azure NetApp são da seguinte maneira:
 
-* Com recursos locais VM 1 e 2 da VM podem se conectar para Volume 1 no hub ao longo de uma VPN site a site ou ExpressRoute. 
-* Recursos locais VM 1 e 2 da VM podem se conectar ao Volume 2 ou 3 de Volume.
+* Recursos de local VM 1 e 2 da VM pode se conectar para Volume 1 no hub usando uma VPN de site a site ou rota expressa. 
+* Recursos locais VM 1 e 2 da VM podem se conectar como Volume 2 ou 3 de Volume ao longo de uma VPN site a site e o emparelhamento de Vnet regional.
 * VM 3 no hub de rede virtual pode se conectar ao volume 2 no spoke 1 rede virtual e o Volume 3 no spoke 2 da rede virtual.
 * 4 de VM de spoke 1 rede virtual e 5 de VM de spoke 2 da rede virtual podem se conectar ao Volume 1 na VNet do hub.
 

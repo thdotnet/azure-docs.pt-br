@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 04/17/2019
 ms.author: mbaldwin
 ms.openlocfilehash: cd0ab47a46e452701307986d3fbfc7cdfe040c58
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66114721"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67171640"
 ---
 Um atributo de segurança é um recurso de um serviço do Azure que contribui para a capacidade do serviço para impedir, detectar e responder a vulnerabilidades de segurança ou de qualidade.
 

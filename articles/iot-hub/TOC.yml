@@ -438,7 +438,7 @@
     - name: Exemplos de IoT do Azure para a plataforma iOS
       href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-ios/'
     - name: Catálogo de dispositivos Azure Certified para IoT
-      href: 'https://catalog.azurazureiotsolutionseiotsuite.com/'
+      href: 'https://catalog.azureiotsolutions.com/'
     - name: Centro de Desenvolvedores do IoT do Azure
       href: 'https://azure.microsoft.com/develop/iot/'
     - name: Solicitações de dados do cliente

@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/31/2019
-ms.openlocfilehash: b29f3168b7ecc1ec8f783a7ce7a6dea83318fa14
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ba803c493fd85a7be7bc6c5922171678cc6e0df0
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66455703"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67164458"
 ---
 # <a name="understand-outputs-from-azure-stream-analytics"></a>Entender as saídas do Azure Stream Analytics
 
@@ -247,8 +247,7 @@ A tabela a seguir descreve as propriedades para a criação de uma saída do Azu
 | ID da Conta | O nome ou o URI do ponto de extremidade da conta do Azure Cosmos DB. |
 | Chave de conta | A chave de acesso compartilhado da conta do Azure Cosmos DB. |
 | Banco de dados | O nome do banco de dados do Azure Cosmos DB. |
-| Padrão de nome da coleção | O nome da coleção ou o padrão para as coleções a serem usados. <br />Você pode construir o formato de nome de coleção usando o token opcional {partition}, onde as partições iniciam em 0. Dois exemplos:  <br /><ul><li> _MyCollection_: Uma coleção denominada "MyCollection" deve existir.</li>  <li> _A MyCollection {partition}_ : Com base na coluna de particionamento.</li></ul> Coleções de colunas de particionamento devem existir: "MyCollection0," "MyCollection1", "MyCollection2" e assim por diante. |
-| Chave de partição | Opcional. Você precisa apenas se você estiver usando um token {partition} no seu padrão de nome de coleção.<br /> A chave de partição é o nome do campo nos eventos de saída que é usado para especificar a chave de particionamento de saída em várias coleções.<br /> Para saída de coleção única, você pode usar qualquer coluna de saída arbitrária. Um exemplo é PartitionId. |
+| Nome da coleção | Nome da coleção no Azure Cosmos DB. O Azure Cosmos DB contêineres ilimitados são a abordagem recomendada para particionar seus dados, como o Azure Cosmos DB automaticamente dimensiona partições com base em sua carga de trabalho. |
 | ID do documento |Opcional. O nome do campo nos eventos de saída que é usado para especificar a chave primária na qual inserir ou atualizar operações se baseiam.
 
 ## <a name="azure-functions"></a>Funções do Azure
@@ -316,7 +315,7 @@ A tabela a seguir explica algumas das considerações para o envio em lote de sa
 | Tipo de saída | Tamanho máximo de mensagem | Otimização de tamanho de lote |
 | :--- | :--- | :--- |
 | Repositório Azure Data Lake | Ver [limites de armazenamento do Data Lake](../azure-subscription-service-limits.md#data-lake-store-limits). | Use até 4 MB por operação de gravação. |
-| Banco de Dados SQL do Azure | 10\.000 máximo de linhas por único bulk insert.<br />mínimo 100 linhas por único bulk insert. <br />Ver [SQL Azure limita](../sql-database/sql-database-resource-limits.md). |  Cada lote é inicialmente em massa inserida com tamanho máximo de lote. Você pode dividir o lote em metade (até que o tamanho mínimo do lote) com base em erros com nova tentativa do SQL. |
+| Banco de Dados SQL do Azure | 10.000 máximo de linhas por único bulk insert.<br />mínimo 100 linhas por único bulk insert. <br />Ver [SQL Azure limita](../sql-database/sql-database-resource-limits.md). |  Cada lote é inicialmente em massa inserida com tamanho máximo de lote. Você pode dividir o lote em metade (até que o tamanho mínimo do lote) com base em erros com nova tentativa do SQL. |
 | Armazenamento de Blobs do Azure | Ver [limites de armazenamento do Azure](../azure-subscription-service-limits.md#storage-limits). | O tamanho máximo do blob do bloco é 4 MB.<br />A contagem do máximo do blob bock é 50.000. |
 | Hubs de eventos do Azure  | 256 KB por mensagem. <br />Ver [limita os Hubs de eventos](../event-hubs/event-hubs-quotas.md). |  Quando o particionamento de entrada/saída não está alinhado, cada evento é fornecido individualmente nas **EventData** e enviadas em um lote de até o tamanho máximo da mensagem (1 MB para o SKU Premium). <br /><br />  Quando o particionamento de entrada/saída é aligned, vários eventos são incluídos em uma única **EventData** da instância, até o tamanho máximo da mensagem e enviada.  |
 | Power BI | Ver [limita a API Rest do Power BI](https://msdn.microsoft.com/library/dn950053.aspx). |

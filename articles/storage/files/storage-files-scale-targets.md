@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 5/5/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: c765c3e29166358f3504949136a67d8d0db96be8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5e2f7b52ca3cb8a4d472b353e844bdad3aa1b0c1
+ms.sourcegitcommit: 6e6813f8e5fa1f6f4661a640a49dc4c864f8a6cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67078159"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67150470"
 ---
 # <a name="azure-files-scalability-and-performance-targets"></a>Metas de desempenho e escalabilidade do Arquivos do Azure
 
@@ -38,14 +38,20 @@ O recurso pai de um compartilhamento de arquivo do Azure é uma conta de armazen
 
 Há três categorias de limitações a serem consideradas para compartilhamentos de arquivos do premium: contas de armazenamento, compartilhamentos e arquivos.
 
-Por exemplo:  Um único compartilhamento pode alcançar a 100.000 IOPS e um único arquivo pode ser dimensionada até 5.000 IOPS. Portanto, por exemplo, se você tiver três arquivos em um compartilhamento, o IOPS máximo que você pode obter a partir desse compartilhamento é 15.000.
+Por exemplo: Um único compartilhamento pode alcançar a 100.000 IOPS e um único arquivo pode ser dimensionada até 5.000 IOPS. Portanto, por exemplo, se você tiver três arquivos em um compartilhamento, o IOPS máximo que você pode obter a partir desse compartilhamento é 15.000.
 
 ### <a name="premium-filestorage-account-limits"></a>Limites de conta FileStorage Premium
 
 Compartilhamentos de arquivos do Premium são provisionados em uma conta de armazenamento especial chamada **filestorage (visualização)** . Essa conta tem destinos de escala ligeiramente diferente da conta de armazenamento usada para compartilhamentos de arquivos padrão. Para os destinos de escala de conta de armazenamento, consulte a tabela na [destinos de escala de conta de armazenamento do Azure](#azure-storage-account-scale-targets) seção.
 
 > [!IMPORTANT]
-> Limites da conta de armazenamento se aplicam a todos os compartilhamentos. Expandindo para o máximo de contas de armazenamento só é possível se houver apenas um compartilhamento por conta de armazenamento.
+> Limites da conta de armazenamento se aplicam a todos os compartilhamentos. Expandindo para o máximo de contas FileStorage somente é possível se houver apenas um compartilhamento por conta FileStorage.
+
+### <a name="file-share-and-file-scale-targets"></a>Compartilhamento de arquivos e destinos de escala de arquivo
+
+> [!NOTE]
+> Maior que 5 TiB de compartilhamentos de arquivos padrão estão em visualização e possuem certas limitações.
+> Para obter uma lista de limitações e integrar a visualização desses tamanhos maiores de compartilhamento de arquivo, consulte o [compartilhamentos de arquivos padrão](storage-files-planning.md#standard-file-shares) seção do guia de planejamento.
 
 [!INCLUDE [storage-files-scale-targets](../../../includes/storage-files-scale-targets.md)]
 
@@ -88,7 +94,7 @@ Para ajudá-lo a planejar a implantação para cada um dos estágios, abaixo sã
 
 | Sincronização contínua  |   |
 |-|--|
-| Número de objetos sincronizados| 125\.000 objetos (aproximadamente 1% rotatividade) |
+| Número de objetos sincronizados| 125.000 objetos (aproximadamente 1% rotatividade) |
 | Tamanho do conjunto de dados| 50 GiB |
 | Tamanho médio de arquivo | ~500 KiB |
 | Carregue a taxa de transferência | 30 objetos por segundo |
