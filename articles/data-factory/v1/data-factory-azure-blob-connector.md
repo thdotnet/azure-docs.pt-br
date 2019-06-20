@@ -130,7 +130,7 @@ O **BlobSource** dá suporte às seguintes propriedades na seção **typePropert
 
 | Propriedade | DESCRIÇÃO | Valores permitidos | Obrigatório |
 | --- | --- | --- | --- |
-| recursiva |Indica se os dados são lidos recursivamente por meio de subpastas ou somente da pasta especificada. |True (valor padrão), False |Não |
+| recursive |Indica se os dados são lidos recursivamente por meio de subpastas ou somente da pasta especificada. |True (valor padrão), False |Não |
 
 O **BlobSink** dá suporte às seguintes propriedades na seção **typeProperties**:
 
