@@ -20,9 +20,6 @@
     - name: Criar clusters sob demanda
       href: ../hdinsight-hadoop-create-linux-clusters-adf.md
       maintainContext: true
-    - name: Monitorar a disponibilidade do cluster com os logs do Ambari e do Azure Monitor
-      href: ../hdinsight-cluster-availability.md
-      maintainContext: true
 - name: Exemplos
   items:
     - name: Amostras do .NET
@@ -36,6 +33,9 @@
       maintainContext: true
 - name: Conceitos
   items:
+    - name: Monitorar a disponibilidade do cluster com os logs do Ambari e do Azure Monitor
+      href: ../hdinsight-cluster-availability.md
+      maintainContext: true
     - name: HDInsight 4.0
       href: ../hdinsight-version-release.md
       maintainContext: true
