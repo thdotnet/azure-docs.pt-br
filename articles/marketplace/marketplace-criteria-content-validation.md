@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 10/05/2018
 ms.author: yijenj
-ms.openlocfilehash: 3345dd82a1de4f9144cdeb5acd5d3e506dc55de8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 97fb4dc37f3c9f776e4abf433f916ceaf177a70b
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64937839"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67202675"
 ---
 # <a name="azure-marketplace-listing-guidelines"></a>Diretrizes de listagem do Azure Marketplace
 
@@ -39,14 +39,14 @@ Todas as ofertas precisam cumprir [Todos os requisitos de listagem](https://docs
 | 11 | Suporte e ajuda da solução | Link para pelo menos uma das opções a seguir: <br>o   Números de telefone <br>o Suporte por email <br>o Agentes de chat <br>o   Fóruns comunitários |<br>• Todos os métodos de suporte listados: suporte por telefone e email. <br>•    Suporte pago oferecido gratuitamente durante o período da avaliação gratuita ou do test drive | 
 | 12 | Legal | Políticas ou termos disponíveis por meio de uma URL pública |  | 
 
-----
+---
 ## <a name="trial-offer-requirements"></a>Requisitos da oferta de avaliação gratuita
 
 |  | Elemento de listagem | Requisitos básicos | Requisitos ideais | 
 |:--- |:--- |:--- |:--- |
 |  | Listar status | O link deve levar à experiência de avaliação gratuita conduzida pelo cliente | Outros CTAs (por exemplo, comprar agora) também estão disponíveis | 
 
-----
+---
 ## <a name="saas-apps-requirements"></a>Requisitos de aplicativos SaaS
 
 |  | Elemento de listagem | Requisitos básicos | Requisitos ideais | 
@@ -63,7 +63,7 @@ Todas as ofertas precisam cumprir [Todos os requisitos de listagem](https://docs
 | 10 | Contatos: Suporte e ajuda da solução | <br>•    Nome do contato de engenharia: Insira o nome do contato de engenharia do aplicativo. Esse contato receberá comunicações técnicas da Microsoft.<br>•   Email de contato de engenharia:  Insira o endereço de email do contato de engenharia.<br>•   Telefone de contato de engenharia: Insira o número de telefone do contato de engenharia. Há suporte para notações de número de telefone ISO; para saber mais, veja https://en.wikipedia.org/wiki/E.123.<br>• Nome do contato de suporte: Insira o nome do contato de suporte do aplicativo. Esse contato receberá comunicações relacionadas a suporte da Microsoft.<br>• Email do contato de suporte: Insira o endereço de email do contato de suporte do aplicativo. <br>• Telefone do contato de suporte: Insira o número de telefone do contato de suporte. Há suporte para notações de número de telefone ISO; para saber mais, veja https://en.wikipedia.org/wiki/E.123. <br>• URL do suporte: Insira a URL da sua página de suporte. | <br>•    Todos os métodos de suporte listados: suporte por telefone e email. <br>•    Suporte pago oferecido gratuitamente durante o período da avaliação gratuita ou do test drive |
 | 11 | Legal |<br>• URL da política de privacidade: Insira a URL da política de privacidade do aplicativo no campo URL da Política de Privacidade no CPP. <br>•    Termos de uso: Insira os termos de uso do aplicativo. Os clientes precisam aceitar esses termos antes de poderem testar o aplicativo. |  Políticas ou termos disponíveis por meio de um site com URL pública |
 
-----
+---
 
 ## <a name="container-offer-requirements"></a>Requisitos da oferta de contêiner
 
@@ -74,7 +74,7 @@ Todas as ofertas precisam cumprir [Todos os requisitos de listagem](https://docs
 | 3 | Artefatos do Marketplace | Logotipos exibidos corretamente |<br>• O logotipo inclui a “imagem hero”, que é a imagem em formato grande no Portal do Azure <br>• Logos: Pequeno (48x48) e grande (216x216) são requisitos <br>• Requisitos da imagem hero: https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-solution-template-offer-publish<br>• Captura de tela (máx. 5):  O CPP requer uma imagem .png com resolução 1280 x 720.|
 | 4 | Gerenciamento de leads |<br>•    Gerenciamento de clientes potenciais: Selecione o sistema no qual seus clientes potenciais serão armazenados. <br>•   Saiba como conectar seu sistema CRM [aqui](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads) | |
 
-----
+---
 
 ## <a name="consulting-offer-requirements"></a>Requisitos da oferta de consultoria
 
@@ -97,6 +97,3 @@ Todas as ofertas precisam cumprir [Todos os requisitos de listagem](https://docs
 ## <a name="next-steps"></a>Próximas etapas
 * Saiba mais sobre os diferentes tipos de oferta no Marketplace. <br>[Aplicativos SaaS](https://docs.microsoft.com/azure/marketplace/marketplace-saas-applications-technical-publishing-guide) <br>[Contêineres](https://docs.microsoft.com/azure/marketplace/marketplace-containers) <br>[Serviços de consultoria](https://docs.microsoft.com/azure/marketplace/consulting-services)
 *   [Determinar o tipo de listagem para sua solução](https://docs.microsoft.com/azure/marketplace/determine-your-listing-type).
-
- 
----

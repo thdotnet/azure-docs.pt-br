@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/17/2019
-ms.openlocfilehash: 60cddf15ee8a93aa01a72fdc124fa27e68184e04
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: acafd6d8f37edd3e16561a4e588556bb771619f8
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65916032"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67206704"
 ---
 # <a name="understand-and-adjust-streaming-units"></a>Compreender e ajustar as Unidades de Streaming
 
@@ -59,7 +59,7 @@ Elementos de consulta temporal (orientados ao tempo) são o conjunto principal d
 
 Observe que um trabalho com lógica de consulta complexa pode ter alta utilização de % de SU mesmo quando não estiver recebendo eventos de entrada continuamente. Isso pode acontecer após um aumento repentino nos eventos de entrada e saída. Se a consulta for complexa, o trabalho poderá continuar a manter o estado na memória.
 
-A utilização percentual da UA pode cair repentinamente para 0 por um curto período antes de voltar aos níveis esperados. Isso ocorre devido a erros transitórios ou atualizações iniciadas pelo sistema.
+A utilização percentual da UA pode cair repentinamente para 0 por um curto período antes de voltar aos níveis esperados. Isso ocorre devido a erros transitórios ou atualizações iniciadas pelo sistema. Aumentar o número de unidades de streaming para um trabalho poderá não reduzir SU % utilização se sua consulta não for [totalmente paralelo](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-parallelization).
 
 ## <a name="stateful-query-logicin-temporal-elements"></a>Lógica de consulta com estado em elementos temporais
 Um dos recursos exclusivos do trabalho do Azure Stream Analytics é a execução do processamento com estado, como funções de análise temporal, de junções temporais e de agregações em janela. Cada um desses operadores mantém as informações de estados. O tamanho máximo da janela para esses elementos de consulta é sete dias. 
