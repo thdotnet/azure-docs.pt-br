@@ -2,18 +2,18 @@
 title: Backup do Azure - Perguntas frequentes
 description: 'Respostas a perguntas comuns sobre: recursos do Backup do Azure incluindo cofres dos Serviços de Recuperação, do que ele pode fazer backup, como ele funciona, criptografia e limites. '
 services: backup
-author: rayne-wiselman
+author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 01/08/2019
-ms.author: raynew
-ms.openlocfilehash: a0a2bc58603a81ba23ff3f1feb05f4d2350cfe72
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: dacurwin
+ms.openlocfilehash: c4e79d166d92a88934e5c5330ca852da8900c6f3
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66688735"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67275555"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Backup do Azure — Perguntas frequentes
 Este artigo responde às perguntas frequentes sobre o serviço de Backup do Azure.
@@ -119,9 +119,9 @@ Os limites de tamanho são os seguintes:
 
 Sistema operacional/computador | Limite de tamanho da fonte de dados
 --- | --- 
-Windows 8 ou superior | 54\.400 GB
+Windows 8 ou superior | 54.400 GB
 Windows 7 |1700 GB
-Windows Server 2012 ou posterior | 54\.400 GB
+Windows Server 2012 ou posterior | 54.400 GB
 Windows Server 2008, Windows Server 2008 R2 | 1700 GB
 VM do Azure | 16 discos de dados<br/><br/> Disco de dados de até 4095 GB
 

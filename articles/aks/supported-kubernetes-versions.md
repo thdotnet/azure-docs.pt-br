@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/20/2019
 ms.author: saudas
-ms.openlocfilehash: 2d555908007f4e43a38b6d0eff909ef5050878ea
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: HT
+ms.openlocfilehash: b7910ee6f58c582b824cec834d92a24c0e184bfb
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67069668"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67205285"
 ---
 # <a name="supported-kubernetes-versions-in-azure-kubernetes-service-aks"></a>Versões do Kubernetes com suporte no AKS (Serviço de Kubernetes do Azure)
 
@@ -52,9 +52,9 @@ Isso é conhecido como "N-3"-(N (versão mais recente) - 3 (as versões secundá
 
 Por exemplo, se apresenta AKS *1.13.x* hoje em dia, o suporte é fornecido para as seguintes versões:
 
-Nova lista de versões com suporte de versão secundária
------------------        ----------------------
-1.13.x                   1.12.a, 1.12.b, 1.11.a, 1.11.b, 1.10.a, 1.10.b
+Nova versão secundária    |    Lista de versões com suporte
+-----------------    |    ----------------------
+1.13.x               |    1.12.a, 1.12.b, 1.11.a, 1.11.b, 1.10.a, 1.10.b
 
 Em que "x" e "1).a" e "1).b" são versões de patch representativo.
 
@@ -84,11 +84,15 @@ Se Kubernetes upstream lançado 1.12.3 e 1.11.6 e AKS libera as versões de patc
 ----------------------
 1.12.*2*, 1.12.*3*, 1.11.*5*, 1.11.*6*
 
+> [!NOTE]
+> Os clientes não devem fixar a criação do cluster, CI ou outras tarefas automatizadas para as versões de patch específicos. 
+
 ### <a name="communications"></a>Comunicações
 
 * Para o novo **secundárias** versões do Kubernetes
-  * Todos os usuários são notificados sobre a nova versão e qual versão será removida.
-  * Os clientes que executam a versão **a ser removido** será notificado de que eles têm **60 dias** para atualizar para uma versão com suporte (por exemplo, versão secundária).
+  * Todos os usuários são notificados publicamente sobre a nova versão e qual versão será removida.
+  * Quando uma nova versão de patch é liberada, a versão de patch mais antiga é removida ao mesmo tempo.
+  * Os clientes têm **60 dias** partir da data de notificação pública para atualizar para uma versão com suporte de versão secundária.
 * Para o novo **patch** versões do Kubernetes
   * Todos os usuários são notificados da nova versão do patch que está sendo lançado e a atualização para a versão de patch mais recente.
   * Os usuários têm **30 dias** para atualizar para uma versão de patch mais recente, com suporte. Os usuários têm **30 dias** para atualizar para uma versão de patch com suporte antes do mais antigo é removido.

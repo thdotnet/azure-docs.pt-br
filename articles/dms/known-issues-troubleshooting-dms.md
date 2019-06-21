@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 05/22/2019
-ms.openlocfilehash: 5a7c6c4553f46e8a7308995e05d6c06c0eb10f27
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/18/2019
+ms.openlocfilehash: 1d639a8b1d5c7a5dd2b7bac7c5e020be7c8b1c50
+ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66002203"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67190954"
 ---
 # <a name="troubleshoot-common-azure-database-migration-service-issues-and-errors"></a>Solucionar problemas do serviço de migração de banco de dados do Azure e erros comuns
 
@@ -59,6 +59,16 @@ Receber erro a seguir ao interromper a instância do serviço de migração de b
 | Causa         | Resolução |
 | ------------- | ------------- |
 | Esse erro é exibida quando a instância de serviço que você está tentando parar inclui atividades que ainda estão em execução ou presentes em projetos de migração. <br><br><br><br><br><br> | Certifique-se de que não há nenhuma atividade em execução na instância do serviço de migração de banco de dados do Azure você está tentando parar. Você também pode excluir as atividades ou projetos antes de tentar parar o serviço. As etapas a seguir ilustram como remover projetos para limpar a instância do serviço de migração, excluindo todas as tarefas em execução:<br>1. Install-Module-nome datamigration <br>2. Login-AzureRmAccount <br>3. Select-AzureRmSubscription - SubscriptionName "<subName>" <br> 4. Remover AzureRmDataMigrationProject-nome <projectName> - ResourceGroupName <rgName> - ServiceName <serviceName> - DeleteRunningTask |
+
+## <a name="error-when-attempting-to-start-azure-database-migration-service"></a>Erro ao tentar iniciar o serviço de migração de banco de dados do Azure
+
+Receber erro a seguir ao iniciar a instância do serviço de migração de banco de dados do Azure:
+
+* **Erro**: Serviço não conseguir iniciar. Erro: {'errorDetail': 'o serviço falhou ao iniciar, entre em contato com o suporte da Microsoft'}
+
+| Causa         | Resolução |
+| ------------- | ------------- |
+| Esse erro será exibido quando a instância anterior falhou internamente. Esse erro ocorre raramente e a equipe de engenharia está ciente dele. <br> | Exclua a instância do serviço que você não pode iniciar e, em seguida, provisionar um novo para substituí-lo. |
 
 ## <a name="error-restoring-database-while-migrating-sql-to-azure-sql-db-managed-instance"></a>Erro ao restaurar o banco de dados enquanto a instância gerenciada SQL migrando para o Azure SQL DB
 

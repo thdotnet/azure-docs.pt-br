@@ -1,10 +1,15 @@
 ---
+author: ecfan
+ms.service: logic-apps
+ms.topic: include
+ms.date: 11/03/2016
+ms.author: estfan
 ms.openlocfilehash: 70ca28fbcd6feea75788cd58677ca44080e47ae5
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62130038"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67202772"
 ---
 ### <a name="prerequisites"></a>Pré-requisitos
 * Uma conta do [Salesforce](https://salesforce.com)  
@@ -13,7 +18,7 @@ Para poder usar sua conta do Salesforce em um aplicativo lógico, você deve aut
 
 Aqui estão as etapas para autorizar seu aplicativo lógico a se conectar à sua conta do Salesforce:  
 
-1. Para criar uma conexão com o Salesforce, no designer do aplicativo lógico, selecione **Mostrar APIs gerenciadas da Microsoft** na lista suspensa e digite *Salesforce* na caixa de pesquisa. Selecione o gatilho ou ação que gostaria de usar:   
+1. Para criar uma conexão com o Salesforce, no designer do aplicativo lógico, selecione **Mostrar APIs gerenciadas da Microsoft** na lista suspensa e digite *Salesforce* na caixa de pesquisa. Selecione o gatilho ou ação que gostaria de usar:  
    ![Imagem de conexão do Salesforce 1](./media/connectors-create-api-salesforce/salesforce-1.png)  
 2. Se você não tiver criado quaisquer conexões com o Salesforce antes, suas credenciais do Salesforce serão solicitadas. Essas credenciais serão usadas para autorizar seu aplicativo lógico a se conectar aos dados da sua conta do Salesforce e usá-los:  
    ![Imagem de conexão do Salesforce 2](./media/connectors-create-api-salesforce/salesforce-2.png)  

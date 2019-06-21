@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 05/06/2019
-ms.openlocfilehash: 38d9ad007b67756bdca0c6f98267aa16ba38ee9d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 535ae91abc04b2fdcebb6a2083db95ec50f61798
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65791422"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67275595"
 ---
 # <a name="faq-about-azure-sql-hyperscale-databases"></a>Perguntas frequentes sobre bancos de dados SQL do Azure da Hiperescala
 
@@ -79,7 +79,7 @@ A camada de hiperescala de banco de dados SQL do Azure está atualmente disponí
 
 Sim. Para obter mais informações e limites sobre o número de bancos de dados Hiperescala por servidor lógico, consulte [Limites de recursos do Banco de Dados SQL para bancos de dados únicos e agrupados em um servidor lógico](sql-database-resource-limits-logical-server.md).
 
-### <a name="what-are-the-performance-characteristic-of-a-hyperscale-database"></a>Quais são as características de desempenho de um banco de dados Hiperescala?
+### <a name="what-are-the-performance-characteristics-of-a-hyperscale-database"></a>Quais são as características de desempenho de um banco de dados em hiperescala
 
 A arquitetura Hiperescala do Banco de Dados SQL oferece alto desempenho e rendimento, suportando grandes tamanhos de banco de dados. 
 
@@ -94,7 +94,7 @@ O Banco de Dados SQL da Hiperescala fornece escalabilidade rápida com base na s
 
   Com a Hiperescala, você também tem a capacidade de provisionar um ou mais nós de computação adicionais que você pode usar para atender às suas solicitações de leitura. Isso significa que você pode usar esses nós de computação adicionais como nós somente leitura para descarregar sua carga de trabalho de leitura da computação primária. Além de somente leitura, esses nós também servem como hot-standby no caso de um failover do principal.
 
-  O provisionamento de cada um desses nós de computação adicionais pode ser feito em tempo constante e é uma operação on-line. Você pode conectar-se a esses nós de computação adicionais somente leitura configurando o argumento `ApplicationIntent` na cadeia de conexão para `read_only`. Todas as conexões marcadas com `read-only` são roteadas automaticamente para um dos nós de computação adicionais somente leitura.
+  O provisionamento de cada um desses nós de computação adicionais pode ser feito em tempo constante e é uma operação on-line. Você pode conectar-se a esses nós de computação adicionais somente leitura configurando o argumento `ApplicationIntent` na cadeia de conexão para `readonly`. Todas as conexões marcadas com `readonly` são roteadas automaticamente para um dos nós de computação adicionais somente leitura.
 
 ## <a name="deep-dive-questions"></a>Perguntas de aprofundamento
 
@@ -140,7 +140,7 @@ Não.
 
 ### <a name="how-many-read-scale-replicas-are-supported"></a>Quantas réplicas de escala de leitura são suportadas
 
-Por padrão, os bancos de dados em hiperescala são criados com uma réplica de escala de leitura (duas réplicas no total). Você pode dimensionar o número de réplicas somente leitura entre 0 e 4 usando o [portal do Azure](https://portal.azure.com), [T-SQL](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current), [Powershell](https://docs.microsoft.com/powershell/module/azurerm.sql/set-azurermsqldatabase) ou [CLI](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-update)...
+Por padrão, os bancos de dados em hiperescala são criados com uma réplica de escala de leitura (duas réplicas no total). Você pode dimensionar o número de réplicas somente leitura entre 0 e 4 usando o [portal do Azure](https://portal.azure.com), [T-SQL](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current), [Powershell](https://docs.microsoft.com/powershell/module/azurerm.sql/set-azurermsqldatabase) ou [CLI](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-update).
 
 ### <a name="for-high-availability-do-i-need-to-provision-additional-compute-nodes"></a>Para alta disponibilidade, preciso provisionar nós de computação adicionais
 
@@ -361,7 +361,7 @@ Por padrão, criamos 2 réplicas para bancos de dados em hiperescala. Se você q
 
 ### <a name="how-do-i-connect-to-these-secondary-compute-nodes"></a>Como eu me conecto a esses nós de computação secundários?
 
-Você pode conectar-se a esses nós de computação adicionais somente leitura configurando o argumento `ApplicationIntent` na cadeia de conexão para `read_only`. Todas as conexões marcadas com `read-only` são roteadas automaticamente para um dos nós de computação adicionais somente leitura.  
+Você pode conectar-se a esses nós de computação adicionais somente leitura configurando o argumento `ApplicationIntent` na cadeia de conexão para `readonly`. Todas as conexões marcadas com `readonly` são roteadas automaticamente para um dos nós de computação adicionais somente leitura.  
 
 ### <a name="can-i-create-a-dedicated-endpoint-for-the-read-scale-replica"></a>Posso criar um endpoint dedicado para a réplica em escala de leitura
 
