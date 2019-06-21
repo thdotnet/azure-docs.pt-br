@@ -124,9 +124,10 @@
               href: resource-manager-powershell-sas-token.md
         - name: Implantar vários grupos de recursos ou assinaturas
           href: resource-manager-cross-resource-group-deployment.md
-        - name: Integração contínua com o Azure DevOps Services
-          href: ../vs-azure-tools-resource-groups-ci-in-vsts.md
-          maintainContext: true
+    - name: CI/CD
+      items:
+        - name: Projeto do VS com pipelines
+          href: vs-resource-groups-project-devops-pipelines.md
     - name: Exportar modelo
       href: export-template-portal.md
     - name: Gerenciar
