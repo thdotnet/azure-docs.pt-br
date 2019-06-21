@@ -109,11 +109,11 @@ Alguns exemplos de recuperação de dados das _myTemplateArtifact_ exemplo são:
 
 | Expression | Type | Value |
 |:---|:---|:---|
-|`[artifacts("myTemplateArtifact").outputs.myArray]` | Array | \["first", "second"\] |
-|`[artifacts("myTemplateArtifact").outputs.myArray[0]]` | String | "first" |
-|`[artifacts("myTemplateArtifact").outputs.myString]` | String | "meu valor de cadeia de caracteres" |
+|`[artifacts("myTemplateArtifact").outputs.myArray]` | Matriz | \["first", "second"\] |
+|`[artifacts("myTemplateArtifact").outputs.myArray[0]]` | Cadeia de caracteres | "first" |
+|`[artifacts("myTemplateArtifact").outputs.myString]` | Cadeia de caracteres | "meu valor de cadeia de caracteres" |
 |`[artifacts("myTemplateArtifact").outputs.myObject]` | Object | { "myproperty": "my value", "anotherProperty": true } |
-|`[artifacts("myTemplateArtifact").outputs.myObject.myProperty]` | String | "meu valor" |
+|`[artifacts("myTemplateArtifact").outputs.myObject.myProperty]` | Cadeia de caracteres | "meu valor" |
 |`[artifacts("myTemplateArtifact").outputs.myObject.anotherProperty]` | Bool | True |
 
 ## <a name="concat"></a>concat

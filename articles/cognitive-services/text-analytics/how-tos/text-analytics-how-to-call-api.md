@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 02/26/2019
 ms.author: aahi
-ms.openlocfilehash: 720a6c57d4f1a6079f78244559a25018349bd378
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e98979ac43945ebc9af82d5f89db01855429ca70
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60831379"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67304197"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>Como chamar a API REST de Análise de Texto
 
@@ -87,7 +87,7 @@ O serviço aceita solicitações de até 1 MB de tamanho. Se você estiver usand
   + [Reconhecimento de entidade](text-analytics-how-to-entity-linking.md)  
 
 
-6. Clique em **Enviar** para enviar a solicitação. Você pode enviar até 100 solicitações por minuto. 
+6. Clique em **Enviar** para enviar a solicitação. Consulte a [limites de dados](../overview.md#data-limits) seção na visão geral para obter informações sobre o número de solicitações, você pode enviar por minuto e segundo.
 
    No Postman, a resposta é exibida na próxima janela, como um único documento JSON, com um item para cada ID do documento fornecido na solicitação.
 

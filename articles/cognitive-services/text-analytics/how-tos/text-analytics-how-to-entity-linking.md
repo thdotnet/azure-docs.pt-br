@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 04/16/2019
 ms.author: aahi
-ms.openlocfilehash: 881c829424124cca843beb7005306edd53be2673
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: ff4f9af82024e9d39ad89a39bcb2fe4130de9101
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67203984"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67304189"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Como usar o reconhecimento de entidade nomeada na análise de texto
 
@@ -39,7 +39,7 @@ O uso da vinculação de entidade em vários idiomas exige o uso de uma base de 
 
 ## <a name="supported-types-for-named-entity-recognition"></a>Tipos com Suporte para Reconhecimento de Entidade Nomeada
 
-| Type  | SubType | Exemplo |
+| Tipo  | SubType | Exemplo |
 |:-----------   |:------------- |:---------|
 | Pessoa        | N/D\*         | "João", "Bill Gates"     |
 | Local padrão      | N/D\*         | "Redmond, Washington", "Paris"  |
@@ -105,7 +105,7 @@ Detalhes sobre a definição de solicitação podem ser encontrados em [Como cha
 
 ## <a name="step-2-post-the-request"></a>Etapa 2: Postar a solicitação
 
-A análise é executada após o recebimento da solicitação. O serviço aceita até 100 solicitações por segunda e 1000 solicitações por minuto. Cada solicitação pode ter um máximo de 1 MB.
+A análise é executada após o recebimento da solicitação. Consulte a [limites de dados](../overview.md#data-limits) seção na visão geral para obter informações sobre o tamanho e o número de solicitações, você pode enviar por minuto e segundo.
 
 Lembre-se de que o serviço é sem estado. Nenhum dado é armazenado em sua conta. Os resultados são retornados imediatamente na resposta.
 

@@ -9,12 +9,12 @@ ms.subservice: immersive-reader
 ms.topic: reference
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: bf337f8d4eac859dc39a36ba12dd9645aa23fe41
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: c128608b3c4a8e1155c3ac962bcfd07f589fbf23
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67297039"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67311792"
 ---
 # <a name="immersive-reader-sdk-reference"></a>Referência de SDK do leitor de imersão
 
@@ -22,7 +22,7 @@ O SDK do leitor de imersão é uma biblioteca JavaScript que permite que você i
 
 ## <a name="functions"></a>Funções
 
-O SDK do expõe uma única função, `ImmersiveReader.launchAsync(token, data, options)`.
+O SDK do expõe uma única função, `ImmersiveReader.launchAsync(token, resourceName, content, options)`.
 
 ### <a name="launchasync"></a>launchAsync
 
@@ -36,8 +36,8 @@ launchAsync(token: string, resourceName: string, content: Content, options?: Opt
 
 | NOME | Type | DESCRIÇÃO |
 | ---- | ---- |------------ |
-| `token` | cadeia de caracteres | O token de acesso adquirido da chamada para o `issueToken` ponto de extremidade. |
-| `resourceName` | cadeia de caracteres | Reservado. Deve ser definido como `null`. |
+| `token` | string | O token de acesso adquirido da chamada para o `issueToken` ponto de extremidade. |
+| `resourceName` | string | Reservado. Deve ser definido como `null`. |
 | `content` | [Conteúdo](#content) | Um objeto que contém o conteúdo a ser mostrado no leitor de imersão. |
 | `options` | [Opções](#options) | Opções de configuração de determinados comportamentos do leitor de imersão. Opcional. |
 

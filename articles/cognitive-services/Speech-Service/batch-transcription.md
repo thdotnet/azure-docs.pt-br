@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 2/20/2019
 ms.author: panosper
 ms.custom: seodec18
-ms.openlocfilehash: 1828cdce66104424cc7845fea89127219e6b77a0
-ms.sourcegitcommit: e5dcf12763af358f24e73b9f89ff4088ac63c6cb
+ms.openlocfilehash: 45ed0167f5a83fa843a224ada35e96672a6752a1
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67137262"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67311836"
 ---
 # <a name="why-use-batch-transcription"></a>Por que usar a transcrição do lote?
 
@@ -91,6 +91,7 @@ Use essas propriedades opcionais para configurar a transcrição:
 | `PunctuationMode` | Especifica como manipular a pontuação nos resultados do reconhecimento. Os valores aceitos são `none`, o que desativa a pontuação, `dictated` que implica pontuação explícita, `automatic` que permite ao decodificador lidar com pontuação ou `dictatedandautomatic`, o que implica em sinais de pontuação ditados ou automáticos. |
  | `AddWordLevelTimestamps` | Especifica se os carimbos de data/hora no nível da palavra devem ser adicionados à saída. Os valores aceitos são `true`, o que habilita os carimbos de data/hora no nível da palavra e `false` (o valor padrão) para desabilitá-los. |
  | `AddSentiment` | Especifica o sentimento deve ser adicionado à declaração. Os valores aceitos são `true` que permite que o sentimento por expressão e `false` (o valor padrão) para desabilitá-lo. |
+ | `AddDiarization` | Especifica que alalysis diarization deve ser executada na entrada que deve ser contendo duas vozes de canal mono. Os valores aceitos são `true` que permite que diarization e `false` (o valor padrão) para desabilitá-lo. Ele também requer `AddWordLevelTimestamps` a ser definido como true.|
 
 ### <a name="storage"></a>Armazenamento
 
@@ -128,13 +129,8 @@ O áudio correspondente conterá os alto-falantes identificados por um número (
 
 Observe também que Diarization não está disponível em gravações em estéreo. Além disso, todos os JSON saída conterá a marca de alto-falante. Se diarization não for usado, ele mostrará ' alto-falante: Nulo ' na saída JSON.
 
-Localidades com suporte estão listadas abaixo.
-
-| Linguagem | localidade |
-|--------|-------|
-| Inglês | en-US |
-| Chinês | zh-CN |
-| Deutsch | de-DE |
+> [!NOTE]
+> Diarization está disponível em todas as regiões e para todas as localidades!
 
 ## <a name="sentiment"></a>Sentimento
 
