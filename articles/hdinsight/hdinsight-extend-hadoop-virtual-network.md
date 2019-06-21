@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 06/04/2019
-ms.openlocfilehash: 4bfbce7dd985f3ebf67fde671d83acf30623b641
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 06/17/2019
+ms.openlocfilehash: 0dbcc99850d0a8b3b7306fac2bd8f89e6c941e4c
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67055400"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67163654"
 ---
 # <a name="extend-azure-hdinsight-using-an-azure-virtual-network"></a>Estender o Azure HDInsight usando uma Rede Virtual do Azure
 
@@ -211,13 +211,13 @@ Para se conectar ao Apache Ambari e outras páginas da Web por meio da rede virt
 
 ## <a id="networktraffic"></a> Controlando o tráfego de rede
 
-### <a name="controlling-inbound-traffic-to-hdinsight-clusters"></a>Controlando o tráfego de entrada para clusters do HDInsight
+### <a name="techniques-for-controlling-inbound-and-outbound-traffic-to-hdinsight-clusters"></a>Técnicas para controlar o tráfego de entrada e saído para clusters do HDInsight
 
 O tráfego de rede em Redes Virtuais do Azure pode ser controlado com os seguintes métodos:
 
 * Os **NSGs** (grupos de segurança de rede) permitem filtrar o tráfego de entrada e de saída para a rede. Para obter mais informações, consulte o documento [Filtrar o tráfego de rede com grupos de segurança de rede](../virtual-network/security-overview.md).
 
-* As **soluções de virtualização de rede** replicam a funcionalidade de dispositivos, como firewalls e roteadores. Para obter mais informações, consulte o documento [Dispositivos de rede](https://azure.microsoft.com/solutions/network-appliances).
+* **Soluções de virtualização de rede** (NVA) pode ser usado com apenas o tráfego de saída. NVAs replicam a funcionalidade de dispositivos, como roteadores e firewalls.  Para obter mais informações, consulte o documento [Dispositivos de rede](https://azure.microsoft.com/solutions/network-appliances).
 
 Como um serviço gerenciado, o HDInsight exige acesso irrestrito para a integridade do HDInsight e gerenciamento de serviços para tráfego de entrada e saída da rede virtual. Ao usar NSGs, você deve garantir que esses serviços podem se comunicar com o cluster HDInsight.
 

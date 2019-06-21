@@ -12,12 +12,12 @@ ms.date: 05/22/2019
 ms.author: baselden
 ms.reviewer: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd8cebbd7c60715bc90412d9f53458edfee6c56d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e5278d504c43688bf064b869982938db52b1b1bf
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67108196"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67164950"
 ---
 # <a name="plan-a-single-sign-on-deployment"></a>Planejar uma implantação de logon única
 
@@ -61,9 +61,9 @@ Há duas maneiras principais no qual você pode habilitar seus usuários para lo
 
 Usando o Azure AD para SSO baseado em senha exige a implantação de uma extensão de navegador que irá recuperar as credenciais com segurança e preencher os formulários de logon. Definir um mecanismo para implantar a extensão em escala com [navegadores com suporte](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction). As opções incluem:
 
-- [Política de grupo para o Internet Explorer ](https://azure.microsoft.com/documentation/articles/active-directory-saas-ie-group-policy/)
-- [System Center Configuration Manager (SCCM) para o Internet Explorer ](https://docs.microsoft.com/sccm/core/clients/deploy/deploy-clients-to-windows-computers)
-- [Usuário controlado por download e configuração para o IE, Firefox, Microsoft Edge ou Chrome ](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+- [Política de grupo para o Internet Explorer](https://azure.microsoft.com/documentation/articles/active-directory-saas-ie-group-policy/)
+- [System Center Configuration Manager (SCCM) para o Internet Explorer](https://docs.microsoft.com/sccm/core/clients/deploy/deploy-clients-to-windows-computers)
+- [Usuário controlado por download e configuração para o IE, Firefox, Microsoft Edge ou Chrome](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 Para obter mais informações, consulte [como configurar senha logon único](https://docs.microsoft.com/azure/active-directory/application-config-sso-how-to-configure-password-sso-non-gallery).
 

@@ -3,16 +3,15 @@ title: Configurar uma transformação de origem no recurso de mapeamento de flux
 description: Saiba como configurar uma transformação de origem no fluxo de dados de mapeamento.
 author: kromerm
 ms.author: makromer
-ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/12/2019
-ms.openlocfilehash: 5b53819c1d30f6cd62c5941d4b44d70a4996daad
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 86e30c465a605681519565261beec75d88ccd472
+ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67117889"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67190794"
 ---
 # <a name="source-transformation-for-mapping-data-flow"></a>Transformação de origem para o mapeamento de fluxo de dados 
 
@@ -124,6 +123,14 @@ Se for sua origem no banco de dados SQL ou SQL Data Warehouse, você tem opçõe
 
 * **Consulta**: Insira uma consulta SQL para sua fonte. Essa configuração substitui qualquer tabela que você escolheu no conjunto de dados. Observe que **Order By** cláusulas não são suportadas aqui, mas você pode definir uma instrução SELECT FROM completa. Você também pode usar funções de tabela definido pelo usuário. **Selecione * de udfGetData()** é um UDF em SQL que retorna uma tabela. Essa consulta produzirá uma tabela de origem que você pode usar em seu fluxo de dados.
 * **Tamanho do lote**: Insira um tamanho de lote para dividir dados grandes em leituras.
+* **Nível de isolamento**: Padrão para fontes de SQL no ADF mapeando os dados fluem é Read Uncommitted. Você pode alterar o nível de isolamento para um destes valores:
+* Leitura confirmada
+* Leitura não confirmada
+* Leitura repetida
+* Serializável
+* Nenhum (ignorar o nível de isolamento)
+
+![Nível de isolamento](media/data-flow/isolationlevel.png "nível de isolamento")
 
 > [!NOTE]
 > Operações de arquivo executado somente quando você inicia o fluxo de dados de um pipeline executado (uma depuração de pipeline ou execução executar) que usa a atividade de fluxo de dados executado em um pipeline. As operações de arquivo *não* executar no modo de depuração de fluxo de dados.

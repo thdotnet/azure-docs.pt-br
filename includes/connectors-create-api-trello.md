@@ -1,10 +1,15 @@
 ---
+author: ecfan
+ms.service: logic-apps
+ms.topic: include
+ms.date: 11/03/2016
+ms.author: estfan
 ms.openlocfilehash: 5ac2b6972c224f5e987bbd2b0e667a26d2edea1c
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62129976"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67205754"
 ---
 ### <a name="prerequisites"></a>Pré-requisitos
 * Uma conta do [Trello](http://trello.com) 
@@ -13,7 +18,7 @@ Antes de usar sua conta do Trello em um aplicativo lógico, você deve autorizar
 
 Aqui estão as etapas para autorizar seu aplicativo lógico a se conectar à sua conta do Trello:
 
-1. Para criar uma conexão com o Trello, no designer do Aplicativo lógico, selecione **Mostrar APIs gerenciadas da Microsoft** na lista suspensa e, em seguida, digite *Trello* na caixa de pesquisa. Selecione o gatilho ou ação que gostaria de usar:   
+1. Para criar uma conexão com o Trello, no designer do Aplicativo lógico, selecione **Mostrar APIs gerenciadas da Microsoft** na lista suspensa e, em seguida, digite *Trello* na caixa de pesquisa. Selecione o gatilho ou ação que gostaria de usar:  
    ![](./media/connectors-create-api-trello/trello-1.png)
 2. Se você não tiver criado quaisquer conexões Trello antes, será solicitado a fornecer suas credenciais do Trello. Essas credenciais serão usadas para autorizar seu Aplicativo lógico a se conectar e acessar os dados da sua conta do Trello:  
    ![](./media/connectors-create-api-trello/trello-2.png) 
@@ -21,6 +26,6 @@ Aqui estão as etapas para autorizar seu aplicativo lógico a se conectar à sua
    ![](./media/connectors-create-api-trello/trello-3.png)   
 4. Forneça seu nome de usuário do Trello e a senha para autorizar seu Aplicativo lógico:  
    ![](./media/connectors-create-api-trello/trello-4.png)  
-5. Observe que a conexão foi criada e agora você pode continuar com as outras etapas no seu aplicativo lógico:   
+5. Observe que a conexão foi criada e agora você pode continuar com as outras etapas no seu aplicativo lógico:  
    ![](./media/connectors-create-api-trello/trello-5.png)
 

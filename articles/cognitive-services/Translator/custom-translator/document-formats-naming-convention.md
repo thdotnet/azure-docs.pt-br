@@ -9,12 +9,12 @@ ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: v-pawal
 ms.topic: conceptual
-ms.openlocfilehash: 29b74aeaaae0bcfd5f6ae4a3c38cc00176292899
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0959be545f541da2f0efd5bd1e8cc209ab5a0996
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66386925"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67275421"
 ---
 # <a name="document-formats-and-naming-convention-guidance"></a>Formatos de documentos e diretrizes de convenção de nomenclatura
 
@@ -37,7 +37,7 @@ Essa tabela inclui todos os formatos de arquivos com suporte que podem ser utili
 
 ## <a name="dictionary-formats"></a>Formatos de dicionário
 
-Para dicionários, o Tradutor Personalizado dá suporte a todos os formatos de arquivos com suporte para conjunto de treinamento. Se você estiver usando o dicionário do Excel, certifique-se de que a primeira linha/linha da planilha deverá ser códigos de idiomas.
+Dicionários de conversor personalizado dá suporte a todos os formatos de arquivo com suporte para conjuntos de treinamento. Se você estiver usando um dicionário de Excel, a primeira linha / linha da planilha deve ser códigos de idioma.
 
 ## <a name="zip-file-formats"></a>Formatos de arquivo zip
 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f8b7f281ad5ed8424110696544ffdb49e50ce59
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9b2ffd2949c2540265539a743cb41d8070d7ba2a
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67112436"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67204630"
 ---
 # <a name="baseline-policy-require-mfa-for-admins"></a>Política de linha de base: Exigir MFA para administradores
 
@@ -71,6 +71,9 @@ Para habilitar essa política e proteger seus administradores:
 1. Definir **habilitar política** à **usar a política imediatamente**.
 1. Adicionar exclusões usuário clicando em **os usuários** > **selecionar usuários excluídos** e escolhendo os usuários que precisam ser excluídas. Clique em **selecionar** , em seguida, **feito**.
 1. Clique em **salvar**.
+
+> [!WARNING]
+> Houve uma opção **habilitar a política automaticamente no futuro** quando essa política estava em versão prévia. Removemos esta opção para minimizar o impacto do usuário repentina. Se você selecionou essa opção quando ele estava disponível, **não usar a política** é automaticamente selecionado agora. Se eles desejam usar essa política de linha de base, consulte as etapas acima para habilitá-lo.
 
 ## <a name="next-steps"></a>Próximas etapas
 

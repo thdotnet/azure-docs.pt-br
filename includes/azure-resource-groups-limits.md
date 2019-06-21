@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 04/19/2019
 ms.author: tomfitz
 ms.openlocfilehash: 8bd16378e9c82a011309c12cf241b59d03405a77
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66238354"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67172288"
 ---
 | Resource | Limite padrão | Limite máximo |
 | --- | --- | --- |
@@ -31,7 +31,7 @@ ms.locfileid: "66238354"
 | variáveis |256 |256 |
 | Recursos (incluindo a contagem de cópias) |800 |800 |
 | outputs |64 |64 |
-| Expressão de modelo |24\.576 caracteres |24\.576 caracteres |
+| Expressão de modelo |24.576 caracteres |24.576 caracteres |
 | Recursos em modelos exportados |200 |200 | 
 | Tamanho do modelo |1 MB |1 MB |
 | Tamanho do arquivo de parâmetro |64 KB |64 KB |

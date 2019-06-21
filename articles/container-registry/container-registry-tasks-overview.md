@@ -1,22 +1,22 @@
 ---
-title: Automatizar a aplicação de patches no o sistema operacional e na estrutura com as Tarefas do ACR (Tarefas do Registro de Contêiner do Azure)
-description: Uma introdução às Tarefas do ACR, um pacote de recursos no Registro de Contêiner do Azure que fornece aplicação de patches e build de imagem de contêiner automatizados e seguros na nuvem.
+title: Automatizar a criação e aplicação de patch imagens de contêiner com tarefas de registro de contêiner do Azure (ACR tarefas)
+description: Uma introdução ao ACR tarefas, um pacote de recursos no registro de contêiner do Azure que fornece o build de imagem de contêiner segura e automatizada, gerenciamento e aplicação de patch na nuvem.
 services: container-registry
 author: dlepow
 ms.service: container-registry
 ms.topic: article
-ms.date: 05/20/2019
+ms.date: 06/12/2019
 ms.author: danlep
-ms.openlocfilehash: cc182743c3879ab2748f92022437bc23c26c371c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: 5089650996693b81e548bba8d89c0de29a8afd93
+ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65977211"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67147976"
 ---
-# <a name="automate-os-and-framework-patching-with-acr-tasks"></a>Automatizar a aplicação de patches no sistema operacional e na estrutura com as Tarefas de ACR
+# <a name="automate-container-image-builds-and-maintenance-with-acr-tasks"></a>Automatizar compilações de imagem de contêiner e a manutenção com tarefas de ACR
 
-Os contêineres fornecem novos níveis de virtualização, isolando as dependências de aplicativo e desenvolvedor dos requisitos de infraestrutura e operacionais. No entanto, o que sobra é a necessidade para tratar como a virtualização de aplicativos é corrigida.
+Os contêineres fornecem novos níveis de virtualização, isolando as dependências de aplicativo e desenvolvedor dos requisitos de infraestrutura e operacionais. No entanto, o que permanece, é preciso abordar como a virtualização de aplicativos é gerenciada e corrigida durante o ciclo de vida do contêiner.
 
 ## <a name="what-is-acr-tasks"></a>O que são as Tarefas do ACR?
 
@@ -46,8 +46,7 @@ A tabela a seguir mostra alguns exemplos de locais de contexto com suporte para 
 | Sistema de arquivos local | Arquivos dentro de um diretório no sistema de arquivos local. | `/home/user/projects/myapp` |
 | Branch mestre do GitHub | Arquivos dentro da ramificação principal (ou outro padrão) de um repositório GitHub.  | `https://github.com/gituser/myapp-repo.git` |
 | Ramificação GitHub | Filial específica de um repositório GitHub.| `https://github.com/gituser/myapp-repo.git#mybranch` |
-| Solicitação de pull do GitHub | Solicitação de pull em um repositório GitHub. | `https://github.com/gituser/myapp-repo.git#pull/23/head` |
-| Subpasta do GitHub | Arquivos dentro de uma subpasta em um repositório do GitHub. Exemplo mostra a combinação de especificação de PR e subpasta. | `https://github.com/gituser/myapp-repo.git#pull/24/head:myfolder` |
+| Subpasta do GitHub | Arquivos dentro de uma subpasta em um repositório do GitHub. Exemplo mostra uma combinação de uma especificação de ramificação e a subpasta. | `https://github.com/gituser/myapp-repo.git#mybranch:myfolder` |
 | Tarball remoto | Arquivos em um arquivo compactado em um servidor remoto. | `http://remoteserver/myapp.tar.gz` |
 
 O recurso Tarefas de ACR foi projetado como uma primitiva do ciclo de vida do contêiner. Por exemplo, é possível integrar as Tarefas do ACR à sua solução de CI/CD. Executando [az login][az-login] com uma [entidade de serviço][az-login-service-principal], sua solução CI/CD pode enviar os comandos [az acr build] [ az-acr-build] para iniciar compilações da imagem.
@@ -65,7 +64,7 @@ Saiba como disparar builds na confirmação do código-fonte no segundo tutorial
 
 ## <a name="automate-os-and-framework-patching"></a>Automatizar sistema operacional e aplicação de patch de estrutura
 
-O poder das Tarefas do ACR de realmente aprimorar seu fluxo de trabalho de build de contêiner vem da capacidade de detectar uma atualização para uma imagem de base. Quando a imagem base atualizada é enviada por push para o Registro, as Tarefas do ACR podem compilar automaticamente as imagens do aplicativo com base nela.
+O poder das Tarefas do ACR de realmente aprimorar seu fluxo de trabalho de build de contêiner vem da capacidade de detectar uma atualização para uma imagem de base. Quando a imagem base atualizada é enviado por push para seu registro ou uma imagem base é atualizada em um repositório público, como no Hub do Docker, tarefas de ACR pode automaticamente criar as imagens de aplicativo com base nele.
 
 As imagens de contêiner podem ser amplamente categorizadas em imagens de *base* e imagens de *aplicativo*. Suas imagens de base normalmente incluem o sistema operacional e estruturas de aplicativo com base nos quais seu aplicativo é criado, em conjunto com outras personalizações. Essas imagens de base são normalmente baseadas em imagens públicas de upstream, por exemplo: [Alpine Linux][base-alpine], [Windows][base-windows], [.NET][base-dotnet] ou [Node.js][base-node]. Várias das suas imagens de aplicativo podem compartilhar uma imagem de base comum.
 
@@ -76,7 +75,7 @@ Como as Tarefas do ACR descobrem dinamicamente as dependências da imagem base q
 Saiba mais sobre a aplicação de patch no sistema operacional e na estrutura no terceiro tutorial das Tarefas do ACR, [Automatizar builds de imagem na atualização da imagem de base com as Tarefas do Registro de Contêiner do Azure](container-registry-tutorial-base-image-update.md).
 
 > [!NOTE]
-> As atualizações da imagem base disparam builds somente quando tanto as imagens base e do aplicativo residem no mesmo Registro de Contêiner do Azure ou quando a base reside em um repositório público do Docker Hub.
+> No momento, a imagem base atualiza compilações de gatilho somente quando tanto as imagens de base e de aplicativo residir no mesmo registro de contêiner do Azure ou a base de reside em um repositório público do Hub do Docker ou registro de contêiner do Microsoft.
 
 ## <a name="multi-step-tasks"></a>Tarefas de várias etapas
 

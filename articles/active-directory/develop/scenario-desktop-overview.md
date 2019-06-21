@@ -15,12 +15,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 97b32fff931c1c0f5e19a269afec5094cae3d40e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 204e230f7ff0897d2ba97213ebc836aff9d0324b
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67111205"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67204643"
 ---
 # <a name="scenario-desktop-app-that-calls-web-apis"></a>Cenário: Aplicativo da área de trabalho que chama APIs Web
 
@@ -53,7 +53,7 @@ Você escreve um aplicativo da área de trabalho, e você deseja conectar usuár
 
   ![Aplicativo da área de trabalho](media/scenarios/desktop-app.svg)
 
-- Se você estiver escrevendo uma ferramenta de linha de comando portátil - provavelmente um aplicativo .NET Core em execução no Linux ou Mac, você não poderá usar a autenticação não interativa (como .NET Core não fornece um [navegador da Web](https://aka.ms/msal-net-uses-web-browser)), nem integrado Autenticação do Windows. Nesse caso, a melhor opção é usar o fluxo de código do dispositivo. Esse fluxo também é usado para aplicativos sem um navegador, como aplicativos de iOT
+- Se você estiver escrevendo uma ferramenta de linha de comando portátil - provavelmente um aplicativo .NET Core em execução no Linux ou Mac, você não poderá usar a autenticação de interativa (como .NET Core não fornece um [navegador da Web](https://aka.ms/msal-net-uses-web-browser)), ou integrado Autenticação do Windows. Nesse caso, a melhor opção é usar o fluxo de código do dispositivo. Esse fluxo também é usado para aplicativos sem um navegador, como aplicativos de IoT
 
   ![Aplicativo browserless](media/scenarios/device-code-flow-app.svg)
 

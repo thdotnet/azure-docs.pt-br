@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/24/2019
 ms.author: banders
-ms.openlocfilehash: 9ff9b6b5313026d2102b98659183fa97c6a5ef84
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2eb9f8e19be2a7b6220bc34bf4ce0c72c4ac0b4f
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64683998"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67275060"
 ---
 # <a name="understand-the-terms-in-your-azure-usage-and-charges-file"></a>Compreender os termos em seu arquivo de uso e os encargos do Azure
 
@@ -72,6 +72,7 @@ InvoiceSection | MCA | Consulte InvoiceSectionName.
 InvoiceSectionId | EA, MCA | Identificador exclusivo para o departamento de EA ou a seção de nota fiscal MCA.
 InvoiceSectionName | EA, MCA | Nome do departamento de EA ou seção de nota fiscal MCA.
 IsAzureCreditEligible | EA, MCA | Indica se o custo é elegível para ser pago para usar os créditos do Azure (valores: True, False).
+IsEstimated | Todos | Indica se o período de cobrança é fechado/finalizado. Dados de uso podem ser alterados durante o período de cobrança até que a fatura é gerada. Esses registros são marcados como "estimados".
 Local padrão | EA, MCA | Local do Datacenter onde o recurso está em execução.
 MeterCategory | Todos | Nome da categoria de classificação para o medidor. Por exemplo, *serviços de nuvem* e *Networking*.
 MeterId | Todos | O identificador exclusivo para o medidor.
@@ -79,7 +80,7 @@ MeterName | Todos | O nome do medidor.
 MeterRegion | Todos | Nome do data center local para serviços com preços estipulados com base no local. Veja a localização.
 MeterSubCategory | Todos | Nome da categoria subclassificação medidor.
 OfferId | EA, MCA | Nome da oferta adquirida.
-partNumber | EA | Identificador usado para obter preços específico medidor.
+PartNumber | EA | Identificador usado para obter preços específico medidor.
 PlanName | EA | Nome do plano do Marketplace.
 PreviousInvoiceId | MCA | Referência a uma fatura original se este item de linha é um reembolso.
 pricingCurrency | MCA | Moeda usada quando a classificação com base nos preços negociados.

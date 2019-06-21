@@ -7,19 +7,19 @@ ms.author: jeanb
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 03/28/2017
-ms.openlocfilehash: f11034a4970e3fb95333310af82a6b2a2551f1eb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/11/2019
+ms.openlocfilehash: db14f8240dea95eb073a0a653c2798f02fbb7c35
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61479095"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67162581"
 ---
-# <a name="scale-your-stream-analytics-job-with-azure-machine-learning-functions"></a>Dimensionar seu trabalho do Stream Analytics com funções do Azure Machine Learning
+# <a name="scale-your-stream-analytics-job-with-azure-machine-learning-studio-functions"></a>Dimensionar seu trabalho de Stream Analytics com funções do Azure Machine Learning Studio
 É simples configurar um trabalho do Stream Analytics e executar alguns dados de exemplo por meio dele. O que podemos fazer quando precisamos executar o mesmo trabalho com um volume de dados maior? Precisamos entender como configurar o trabalho do Stream Analytics para que ele possa ser escalado. Neste documento, nos concentraremos nos aspectos especiais do dimensionamento de trabalhos do Stream Analytics com funções do Machine Learning. Para saber mais sobre como dimensionar trabalhos do Stream Analytics em geral, confira o artigo [Dimensionar os trabalhos do Stream Analytics](stream-analytics-scale-jobs.md).
 
 ## <a name="what-is-an-azure-machine-learning-function-in-stream-analytics"></a>O que é uma função do Azure Machine Learning no Stream Analytics?
-Uma função do Machine Learning no Stream Analytics pode ser usada como uma chamada de função normal na linguagem de consulta do Stream Analytics. No entanto, nos bastidores, as chamadas de função são, na verdade, solicitações de Serviço Web do Azure Machine Learning. Os serviços Web do Machine Learning dão suporte a várias linhas de "lotes", chamadas de minilotes, na mesma chamada à API do serviço Web para melhorar a taxa de transferência geral. Para obter mais informações, consulte [serviços da Web do Azure Machine Learning](../machine-learning/studio/consume-web-services.md).
+Uma função do Machine Learning no Stream Analytics pode ser usada como uma chamada de função normal na linguagem de consulta do Stream Analytics. No entanto, nos bastidores, as chamadas de função são, na verdade, as solicitações de serviço Web do Azure Machine Learning Studio. Os serviços Web do Machine Learning dão suporte a várias linhas de "lotes", chamadas de minilotes, na mesma chamada à API do serviço Web para melhorar a taxa de transferência geral. Para obter mais informações, consulte [serviços Web do Azure Machine Learning Studio](../machine-learning/studio/consume-web-services.md). Suporte para o estúdio de Azure Machine Learning no Stream Analytics está em visualização.
 
 ## <a name="configure-a-stream-analytics-job-with-machine-learning-functions"></a>Configurar seu trabalho do Stream Analytics com funções de Machine Learning
 Ao configurar uma função do Machine Learning para um trabalho do Stream Analytics, há dois parâmetros a serem considerados, o tamanho do lote das chamadas de função do Machine Learning e as SUs (unidades de streaming) provisionadas para o trabalho do Stream Analytics. Para determinar os valores apropriados para UAs, primeiro, é necessário tomar uma decisão entre latência e taxa de transferência, ou seja, latência do trabalho do Stream Analytics e taxa de transferência de cada UA. As SUs podem ser adicionadas sempre a um trabalho a fim de aumentar a produtividade de uma consulta do Stream Analytics bem particionada, embora SUs adicionais aumentem o custo da execução do trabalho.
@@ -72,16 +72,16 @@ Vamos supor que a latência do serviço Web do Machine Learning de análise de s
 
 Veja abaixo uma tabela sobre a produtividade do trabalho do Stream Analytics para SUs e tamanhos de lote diferentes (em número de eventos por segundo).
 
-| tamanho do lote (latência de AM) | 500 (200 ms) | 1\.000 (200 ms) | 5\.000 (250 ms) | 10\.000 (300 ms) | 25\.000 (500 ms) |
+| tamanho do lote (latência de AM) | 500 (200 ms) | 1\.000 (200 ms) | 5\.000 (250 ms) | 10.000 (300 ms) | 25.000 (500 ms) |
 | --- | --- | --- | --- | --- | --- |
-| **1 SU** |2\.500 |5\.000 |20\.000 |30\.000 |50\.000 |
-| **3 SUs** |2\.500 |5\.000 |20\.000 |30\.000 |50\.000 |
-| **6 SUs** |2\.500 |5\.000 |20\.000 |30\.000 |50\.000 |
-| **12 SUs** |5\.000 |10\.000 |40\.000 |60\.000 |100\.000 |
-| **18 SUs** |7\.500 |15\.000 |60\.000 |90\.000 |150\.000 |
-| **24 SUs** |10\.000 |20\.000 |80\.000 |120\.000 |200\.000 |
+| **1 SU** |2\.500 |5\.000 |20.000 |30.000 |50.000 |
+| **3 SUs** |2\.500 |5\.000 |20.000 |30.000 |50.000 |
+| **6 SUs** |2\.500 |5\.000 |20.000 |30.000 |50.000 |
+| **12 SUs** |5\.000 |10.000 |40.000 |60.000 |100.000 |
+| **18 SUs** |7\.500 |15.000 |60.000 |90.000 |150.000 |
+| **24 SUs** |10.000 |20.000 |80.000 |120.000 |200.000 |
 | **…** |… |… |… |… |… |
-| **60 SUs** |25\.000 |50\.000 |200,000 |300\.000 |500,000 |
+| **60 SUs** |25.000 |50.000 |200,000 |300.000 |500,000 |
 
 Agora, você já deve ter uma boa compreensão de como as funções do Machine Learning funcionam no Stream Analytics. É provável que você também entenda que os jobs do Stream Analytics "extraem" dados de fontes de dados e cada "pull" retorna um lote de eventos para o trabalho do Stream Analytics processar. Como esse modelo de obtenção afeta as solicitações de serviço Web do Machine Learning?
 

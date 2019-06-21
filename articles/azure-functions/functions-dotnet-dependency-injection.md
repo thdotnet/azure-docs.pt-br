@@ -10,19 +10,21 @@ ms.service: azure-functions
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 05/28/2019
-ms.author: jehollan, glenga, cshoe
-ms.openlocfilehash: b1a6751f0d788c26af60b28eee994dc9b3877f00
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.author: jehollan, cshoe
+ms.openlocfilehash: 9f932bf92cb3871af7f0eb294ac15dec82cdc8ba
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66693256"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67274253"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Usar injeção de dependência no .NET do Azure Functions
 
 O Azure Functions dá suporte ao padrão de design a dependência DI (injeção) software, que é uma técnica para alcançar [inversão de controle (IoC)](https://docs.microsoft.com/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) entre classes e suas dependências.
 
 O Azure Functions se baseia nos recursos de injeção de dependência do ASP.NET Core. Esteja ciente de que os serviços, tempos de vida e padrões de design de [injeção de dependência do ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection) antes de usar recursos de injeção de dependência em um Azure Functions é recomendável o aplicativo.
+
+O suporte para injeção de dependência começa com o Azure Functions 2.x.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -32,13 +34,22 @@ Antes de poder usar injeção de dependência, você deve instalar os seguintes 
 
 - [Pacote de microsoftnetsdkfunctions](https://www.nuget.org/packages/Microsoft.NET.Sdk.Functions/) versão 1.0.28 ou posterior
 
+- Opcional: [Microsoft.Extensions.Http](https://www.nuget.org/packages/Microsoft.Extensions.Http/) necessário apenas para o registro de HttpClient na inicialização
+
 ## <a name="register-services"></a>Serviços de registro
 
 Para registrar os serviços, você pode criar um método para configurar e adicionar componentes a um `IFunctionsHostBuilder` instância.  O host do Azure Functions cria uma instância de `IFunctionsHostBuilder` e passá-lo diretamente em seu método.
 
-Para registrar o método, adicione o `FunctionsStartup` atributo de assembly que especifica o nome do tipo usado durante a inicialização.
+Para registrar o método, adicione o `FunctionsStartup` atributo de assembly que especifica o nome do tipo usado durante a inicialização. Também código está fazendo referência a uma versão de pré-lançamento do [Microsoft.Azure.Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) no Nuget.
 
 ```csharp
+using System;
+using Microsoft.Azure.Functions.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Http;
+using Microsoft.Extensions.Logging;
+using Microsoft.Azure.Cosmos;
+
 [assembly: FunctionsStartup(typeof(MyNamespace.Startup))]
 
 namespace MyNamespace
@@ -62,6 +73,16 @@ namespace MyNamespace
 O ASP.NET Core usa a injeção de construtor para disponibilizar suas dependências para sua função. O exemplo a seguir demonstra como o `IMyService` e `HttpClient` dependências são injetadas em uma função disparada por HTTP.
 
 ```csharp
+using System;
+using System.IO;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.Http;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+
 namespace MyNamespace
 {
     public class HttpTrigger

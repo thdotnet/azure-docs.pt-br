@@ -9,11 +9,11 @@ ms.date: 09/25/2018
 ms.author: cshoe
 ms.custom: include file
 ms.openlocfilehash: fc5b43dcdee394fea023124171fb42c1a18224dc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66131427"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67171688"
 ---
 Pacotes de extensão fazer todas as associações, publicadas pela equipe do Azure Functions disponível por meio de uma configuração na *host. JSON* arquivo. Para o desenvolvimento local, verifique se você tem a versão mais recente do [as ferramentas básicas do Azure Functions](../articles/azure-functions/functions-run-local.md#install-the-azure-functions-core-tools).
 
@@ -36,7 +36,7 @@ Incremento de versões do pacote como pacotes in das alterações do pacote. Alt
 
 Depois de fazer referência os pacotes de extensão em seu projeto, em seguida, todas as associações padrão estão disponíveis para suas funções. As associações disponíveis na [pacote de extensão](https://github.com/Azure/azure-functions-extension-bundles/blob/master/src/Microsoft.Azure.Functions.ExtensionBundle/extensions.json) são:
 
-|Pacote  |Version  |
+|Pacote  |Versão  |
 |---------|---------|
 |Microsoft.Azure.WebJobs.Extensions.CosmosDB|3.0.3|
 |Microsoft.Azure.WebJobs.Extensions.DurableTask|1.8.0|

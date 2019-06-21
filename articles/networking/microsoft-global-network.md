@@ -10,14 +10,14 @@ ms.devlang: ''
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 05/24/2019
+ms.date: 06/13/2019
 ms.author: ypitsch,kumud
-ms.openlocfilehash: 99650577b17874e61d1cede979d7ef2f4bfd491b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: ecce41878f7579862bba083f8cecf5db3cbde3e6
+ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66247283"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67144150"
 ---
 # <a name="microsoft-global-network"></a>Rede global da Microsoft
 
@@ -33,8 +33,10 @@ O [a rede global Microsoft](https://azure.microsoft.com/global-infrastructure/gl
  
 Aceitar para o [melhor experiência possível](https://www.sdxcentral.com/articles/news/azure-tops-aws-gcp-in-cloud-performance-says-thousandeyes/2018/11/) é fácil quando você usa a nuvem da Microsoft. A partir do momento quando o tráfego de cliente entra em nossa rede global por meio de nosso estrategicamente posicionados nós de borda, seus dados são transferidos através de rotas otimizadas no próximo a velocidade da luz. Isso garante a latência ideal para melhor desempenho. Esses nós do edge, todos interconectados para mais de 3500 exclusivo Internet parceiros (pares) por meio de milhares de conexões em mais de 145 locais, fornecem a base de nossa estratégia de interconexão. 
  
-Se conectando de Londres para Tóquio ou de Washington, D.C. a Los Angeles, desempenho de rede é quantificado e afetado por fatores como latência, tremulação, perda de pacotes e taxa de transferência.  Na Microsoft, Preferimos e uso direto interconexões em vez de links de trânsito, isso mantém o tráfego de resposta simétrica e ajuda a manter os saltos, emparelhamento de duas partes e caminhos mais curto e simples possível. Essa abordagem premium, também conhecido como [frio Batata roteamento](https://en.wikipedia.org/wiki/Hot-potato_and_cold-potato_routing), garante que os clientes de rede permanece tráfego na rede da Microsoft quanto a possíveis antes, podemos transferi-lo.  
- 
+Se conectando de Londres para Tóquio ou de Washington, D.C. a Los Angeles, desempenho de rede é quantificado e afetado por fatores como latência, tremulação, perda de pacotes e taxa de transferência.  Na Microsoft, Preferimos e uso direto interconexões em vez de links de trânsito, isso mantém o tráfego de resposta simétrica e ajuda a manter os saltos, emparelhamento de duas partes e caminhos mais curto e simples possível. 
+
+Por exemplo, se um usuário em Londres tenta acessar um serviço em Tóquio, em seguida, o tráfego de Internet entra em um de nossos bordas em Londres, vai por WAN da Microsoft por meio da França, nossos caminhos Trans Saudita entre a Europa e na Índia e, em seguida, para o Japão, onde o serviço está hospedado. O tráfego de resposta é simétrico. Isso às vezes é conhecido como [frio Batata roteamento](https://en.wikipedia.org/wiki/Hot-potato_and_cold-potato_routing) que significa que o tráfego de permanece na Microsoft de rede maior tempo possível antes, podemos transferi-lo.  
+  
 Portanto, isso significa que toda e qualquer tráfego ao usar os serviços da Microsoft? Sim, qualquer tráfego entre data centers, dentro do Microsoft Azure ou entre serviços da Microsoft, como máquinas virtuais, Office 365, XBox, bancos de dados SQL, armazenamento, e redes virtuais são roteadas dentro de nossa rede global e nunca na Internet pública, para garantir que o ideal desempenho e integridade.  
  
 Grandes investimentos em capacidade de fibra e diversidade em caminhos de terrestre e submarino metro, são essenciais para que possamos manter consistente e de alto nível de serviço ao mesmo tempo que impulsiona o crescimento extremo de nossa nuvem e serviços online. Adições recentes para nossa rede global são nossos [MAREA](https://www.submarinecablemap.com/#/submarine-cable/marea) submarino cabo, primeiro abrir linha sistema (ferramentas do setor) sobre subsea entre Bilbao, Espanha e Virginia Beach, Virgínia, EUA, bem como o [AEC](https://www.submarinecablemap.com/#/submarine-cable/aeconnect-1)entre Nova York, EUA e Dublin, Irlanda e [cruzada novo do Pacífico (NCP)](https://www.submarinecablemap.com/#/submarine-cable/new-cross-pacific-ncp-cable-system) entre Tóquio, Japão e Portland, Oregon, EUA. 

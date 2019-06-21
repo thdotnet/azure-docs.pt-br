@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 11/21/2017
 ms.author: terrylan
 ms.openlocfilehash: 05a7c52dca420f97252c68445398fb3959be8804
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60445695"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "64711284"
 ---
 # <a name="a-practical-guide-to-designing-secure-health-care-solutions-in-azure"></a>Um guia prático para projetar soluções de serviços de saúde seguras no Azure
 Novas empresas do setor de saúde, SIs (integradores de sistemas), ISVs (fornecedores independentes de software) e organizações de serviços de saúde que estão considerando a migração para o Azure buscam orientação para incorporar controles de segurança a fim de atender às suas obrigações de conformidade.

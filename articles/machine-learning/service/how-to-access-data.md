@@ -11,12 +11,12 @@ author: mx-iao
 ms.reviewer: sgilley
 ms.date: 05/24/2019
 ms.custom: seodec18
-ms.openlocfilehash: 93fc9a4e9e44bd7e8db3d49fe390ebe273c45ce9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 638d7bfb0e396874415c1055c4b707a65caffa4e
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66239041"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67269291"
 ---
 # <a name="access-data-from-your-datastores"></a>Acessar dados de seus repositórios de dados
 
@@ -59,7 +59,19 @@ ds = ws.get_default_datastore()
 
 ### <a name="register-your-own-datastore-with-the-workspace"></a>Registrar seu próprio repositório de dados com o espaço de trabalho
 
-Se você tiver o Armazenamento do Microsoft Azure existente, poderá registrá-lo como um armazenamento de dados em sua área de trabalho.   Todos os métodos de registro são sobre o [ `Datastore` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py) de classe e ter o formulário register_azure_ *. 
+Se você tiver o Armazenamento do Microsoft Azure existente, poderá registrá-lo como um armazenamento de dados em sua área de trabalho. 
+
+<a name="store"></a>
+
+####  <a name="storage-guidance"></a>Orientação de armazenamento
+
+Recomendamos que os armazenamentos de dados blob e armazenamento de blob. Armazenamento standard e premium estão disponíveis para blobs. Embora mais caros, sugerimos o armazenamento premium devido a velocidades de taxa de transferência que pode melhorar a velocidade de treinamento é executado, particlularly se você treinar em relação a um grande conjunto de dados. Consulte a [Calculadora de preços do Azure](https://azure.microsoft.com/pricing/calculator/?service=machine-learning-service) para informações de custo de conta de armazenamento.
+
+>[!NOTE]
+> O serviço do Azure Machine Learning dá suporte a outros tipos de armazenamentos de dados, que pode ser útil para cenários específicos. Por exemplo, se você precisar treinar usando dados armazenados em um banco de dados, você pode usar o AzureSQLDatabaseDatastore ou AzurePostgreSqlDatastore. Ver [nesta tabela](#matrix) para os tipos de armazenamento de dados disponíveis.
+
+#### <a name="register-your-datastore"></a>Registrar seu armazenamento de dados
+Todos os métodos de registro são sobre o [ `Datastore` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py) de classe e ter o formulário register_azure_ *.
 
 Os exemplos a seguir mostram a você registrar um contêiner de Blob do Azure ou um compartilhamento de arquivos do Azure como um repositório de dados.
 
@@ -178,6 +190,7 @@ ds.path('./bar').as_download()
 > [!NOTE]
 > Qualquer `ds` ou `ds.path` objeto é resolvido para um nome de variável de ambiente do formato `"$AZUREML_DATAREFERENCE_XXXX"` cujo valor representa o caminho de montagem/download na computação de destino. O caminho do repositório de dados na computação de destino não pode ser o mesmo que o caminho de execução do script de treinamento.
 
+<a name="matrix"></a>
 ### <a name="training-compute-and-datastore-matrix"></a>Matriz de computação e armazenamento de dados de treinamento
 
 A matriz a seguir exibe as funcionalidades de acesso de dados disponíveis para os cenários de armazenamento de dados e destinos de computação de treinamento diferentes. Saiba mais sobre o [destinos de computação de treinamento para o Azure Machine Learning](how-to-set-up-training-targets.md#compute-targets-for-training).
@@ -194,7 +207,7 @@ A matriz a seguir exibe as funcionalidades de acesso de dados disponíveis para 
 | Azure DataLake Analytics       |N/D                                           |N/D                                           |[ML&nbsp;pipelines](concept-ml-pipelines.md)             |N/D                                                                         |
 
 > [!NOTE]
-> Pode haver situações em que altamente iterativo, dados grandes processos são executados mais rapidamente usando [`as_download()`], em vez de [`as_mount()`]; isso pode ser validado Experimentalmente.
+> Pode haver situações em que altamente iterativo, dados grandes processos são executados mais rapidamente usando `as_download()` em vez de `as_mount()`; isso pode ser validado Experimentalmente.
 
 ### <a name="examples"></a>Exemplos 
 

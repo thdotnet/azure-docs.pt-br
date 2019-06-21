@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 01/11/2018
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: ee9b70827c19236287f81f66f4b9c6e1004a54fd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e3cff54f49d40fb7da99dcafa9535349ccb70e09
+ms.sourcegitcommit: 6e6813f8e5fa1f6f4661a640a49dc4c864f8a6cb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66114534"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67150466"
 ---
 A tabela a seguir descreve os limites padrão para o Azure uso geral v1, v2 e contas de armazenamento de Blob. O *ingresso* limite refere-se a todos os dados de solicitações que são enviadas para uma conta de armazenamento. O *egresso* limite refere-se a todos os dados de respostas são recebidas de uma conta de armazenamento.
 
@@ -32,15 +32,15 @@ A tabela a seguir descreve os limites padrão para o Azure uso geral v1, v2 e co
 <sup>1</sup>contas de armazenamento Standard do azure dar suporte a limites mais altos para a entrada por solicitação. Para solicitar um aumento nos limites de conta para a entrada, entre em contato com [suporte do Azure](https://azure.microsoft.com/support/faq/).
 
 <sup>2</sup> As opções de [replicação do Armazenamento do Microsoft Azure](https://docs.microsoft.com/azure/storage/common/storage-redundancy) incluem:
-* **RA-GRS**: armazenamento com redundância geográfica com acesso de leitura. Se o RA-GRS estiver habilitado, os destinos de saída para o local secundário serão idênticos àqueles para o local principal.
-* **GRS**: armazenamento com redundância geográfica. 
-* **ZRS**: armazenamento com redundância de zona.
-* **LRS**: armazenamento com redundância local. 
+- **RA-GRS**: armazenamento com redundância geográfica com acesso de leitura. Se o RA-GRS estiver habilitado, os destinos de saída para o local secundário serão idênticos àqueles para o local principal.
+- **GRS**: armazenamento com redundância geográfica.
+- **ZRS**: armazenamento com redundância de zona.
+- **LRS**: armazenamento com redundância local.
 
 > [!NOTE]
 > É recomendável que você use uma conta de armazenamento de uso geral v2 para a maioria dos cenários. Você pode atualizar facilmente um v1 de uso geral ou uma conta de armazenamento de BLOBs do Azure para uma conta sem tempo de inatividade e sem a necessidade de copiar dados de uso geral v2.
 >
-> Para obter mais informações sobre contas de armazenamento do Azure, consulte [visão geral da conta de armazenamento](../articles/storage/common/storage-account-overview.md). 
+> Para obter mais informações sobre contas de armazenamento do Azure, consulte [visão geral da conta de armazenamento](../articles/storage/common/storage-account-overview.md).
 
 Se as necessidades do seu aplicativo excederem as metas de escalabilidade de uma conta única de armazenamento, você pode preparar seu aplicativo para usar várias contas de armazenamento. Em seguida, particione seus objetos de dados nessas contas de armazenamento. Para obter informações sobre preço por volume, consulte [preços de armazenamento do Azure](https://azure.microsoft.com/pricing/details/storage/).
 

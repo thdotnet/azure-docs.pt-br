@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 05/30/2019
+ms.date: 06/05/2019
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: efd3ff8a6e7ddf2aa6242cc322d8a6536a6bd26b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fbb4001e9496d31d9c2879721f8cf8e26b74ddf3
+ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66474056"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67204548"
 ---
 # <a name="what-is-azure-ad-entitlement-management-preview"></a>O que é gerenciamento de direitos do AD do Azure? (Visualização)
 
@@ -129,41 +129,6 @@ Para entender melhor o gerenciamento de direitos e sua documentação, você dev
 | diretório de recursos | Um diretório que tem um ou mais recursos para compartilhar. |
 | usuários atribuídos | Uma atribuição de um pacote de acesso para um usuário ou grupo. |
 | enable | O processo de disponibilizar um pacote de acesso para que os usuários solicitem. |
-
-## <a name="roles-and-permissions"></a>Funções e permissões
-
-Gerenciamento de direitos tem funções diferentes com base em função de trabalho.
-
-| Função | DESCRIÇÃO |
-| --- | --- |
-| [Usuário administrador](../users-groups-roles/directory-assign-admin-roles.md#user-administrator) | Gerencie todos os aspectos do gerenciamento de direitos.<br/>Crie usuários e grupos. |
-| Criador de catálogo | Criar e gerenciar catálogos. Normalmente, um administrador de TI ou o proprietário do recurso. A pessoa que cria um catálogo automaticamente se torna o proprietário do catálogo primeiro do catálogo. |
-| Proprietário do catálogo | Editar e gerenciar catálogos existentes. Normalmente, um administrador de TI ou o proprietário do recurso. |
-| Gerenciador de pacotes de acesso | Editar e gerenciar todos os pacotes de acesso existentes dentro de um catálogo. |
-| Aprovador | Aprove solicitações para acessar os pacotes. |
-| Solicitante | Solicite acesso de pacotes. |
-
-A tabela a seguir lista as permissões para cada uma dessas funções.
-
-| Tarefa | Usuário administrador | Criador de catálogo | Proprietário do catálogo | Gerenciador de pacotes de acesso | Aprovador |
-| --- | :---: | :---: | :---: | :---: | :---: |
-| [Criar um novo pacote de acesso no catálogo geral](entitlement-management-access-package-create.md) | :heavy_check_mark: |  :heavy_check_mark: |  |  |  |
-| [Criar um novo pacote de acesso em um catálogo](entitlement-management-access-package-create.md) | :heavy_check_mark: |   | :heavy_check_mark: |  |  |
-| [Adicionar ou remover funções de recurso de/para um pacote de acesso](entitlement-management-access-package-edit.md) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Especifique quem pode solicitar um pacote de acesso](entitlement-management-access-package-edit.md#add-a-new-policy) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Atribuir diretamente um usuário a um pacote de acesso](entitlement-management-access-package-edit.md#directly-assign-a-user) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Modo de exibição que tem uma atribuição a um pacote de acesso](entitlement-management-access-package-edit.md#view-who-has-an-assignment) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Exibir solicitações de um pacote acesso](entitlement-management-access-package-edit.md#view-requests) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Exibir erros de entrega da solicitação](entitlement-management-access-package-edit.md#view-a-requests-delivery-errors) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Cancelar uma solicitação pendente](entitlement-management-access-package-edit.md#cancel-a-pending-request) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Ocultar um pacote de acesso](entitlement-management-access-package-edit.md#change-the-hidden-setting) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Excluir um pacote de acesso](entitlement-management-access-package-edit.md#delete) | :heavy_check_mark: |  | :heavy_check_mark: | :heavy_check_mark: |  |
-| [Aprovar uma solicitação de acesso](entitlement-management-request-approve.md) |  |  |  |  | :heavy_check_mark: |
-| [Criar um catálogo](entitlement-management-catalog-create.md) | :heavy_check_mark: | :heavy_check_mark: |  |  |  |
-| [Adicionar ou remover recursos de/para o catálogo geral](entitlement-management-catalog-create.md#add-resources-to-a-catalog) | :heavy_check_mark: |  |  |  |  |
-| [Adicionar ou remover recursos de/para um catálogo](entitlement-management-catalog-create.md#add-resources-to-a-catalog) | :heavy_check_mark: |  | :heavy_check_mark: |  |  |
-| [Adicionar proprietários de catálogo ou acessar gerenciadores de pacotes](entitlement-management-catalog-create.md#add-catalog-owners-or-access-package-managers) | :heavy_check_mark: |  | :heavy_check_mark: |  |  |
-| [Editar/Excluir um catálogo](entitlement-management-catalog-create.md#edit-a-catalog) | :heavy_check_mark: |  | :heavy_check_mark: |  |  |
 
 ## <a name="license-requirements"></a>Requisitos de licença
 

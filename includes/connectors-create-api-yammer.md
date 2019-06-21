@@ -1,10 +1,15 @@
 ---
+author: ecfan
+ms.service: logic-apps
+ms.topic: include
+ms.date: 11/03/2016
+ms.author: estfan
 ms.openlocfilehash: 00358e5164e492030c3c58e1c544a2fee3f775e8
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62129916"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67205739"
 ---
 ### <a name="prerequisites"></a>Pré-requisitos
 * Uma conta do [Yammer](https://www.yammer.com/) 
@@ -13,12 +18,12 @@ Antes de usar sua conta do Yammer em um aplicativo lógico, você deve autorizar
 
 Aqui estão as etapas para autorizar seu aplicativo lógico a se conectar à sua conta do Yammer:
 
-1. Para criar uma conexão com o Yammer, no designer do aplicativo lógico, selecione **Mostrar APIs gerenciadas da Microsoft** na lista suspensa, em seguida, digite *Yammer* na caixa de pesquisa. Selecione o gatilho ou ação que gostaria de usar:   
+1. Para criar uma conexão com o Yammer, no designer do aplicativo lógico, selecione **Mostrar APIs gerenciadas da Microsoft** na lista suspensa, em seguida, digite *Yammer* na caixa de pesquisa. Selecione o gatilho ou ação que gostaria de usar:  
    ![](./media/connectors-create-api-yammer/yammer-1.png)
 2. Se você não tiver criado quaisquer conexões Yammer antes, será solicitado a fornecer suas credenciais do Yammer. Essas credenciais serão usadas para autorizar seu aplicativo lógico a se conectar aos dados da sua conta do Yammer e usá-los:  
    ![](./media/connectors-create-api-yammer/yammer-2.png)
 3. Forneça seu nome de usuário do Yammer e a senha para autorizar seu aplicativo lógico:  
    ![](./media/connectors-create-api-yammer/yammer-3.png)   
-4. Observe que a conexão foi criada e agora você pode continuar com as outras etapas no seu aplicativo lógico:   
+4. Observe que a conexão foi criada e agora você pode continuar com as outras etapas no seu aplicativo lógico:  
    ![](./media/connectors-create-api-yammer/yammer-4.png)   
 
