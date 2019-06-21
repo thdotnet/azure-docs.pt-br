@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: raynew
 ms.openlocfilehash: 5ba55e339db4c33d1b0d759e4682481e20318938
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62122837"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67203738"
 ---
 ### <a name="prepare-for-a-push-installation-on-a-linux-server"></a>Preparação para uma instalação por push em um servidor Linux
 
@@ -20,7 +20,7 @@ ms.locfileid: "62122837"
 1. Verifique se o Secure Shell (SSH) está habilitado e em execução na porta 22.
 1. Habilitar a autenticação de senha e subsistema SFTP no arquivo sshd_config. Siga estas etapas:
 
-     a. Conecte-se como **raiz**.
+    a. Conecte-se como **raiz**.
 
     b. No arquivo **/etc/ssh/sshd_config**, localize a linha que começa com **PasswordAuthentication**.
 
@@ -34,7 +34,7 @@ ms.locfileid: "62122837"
 
 1. Adicione a conta criada em CSPSConfigtool. Siga estas etapas:
 
-     a. Conecte-se ao servidor de configuração.
+    a. Conecte-se ao servidor de configuração.
 
     b. Abra **cspsconfigtool.exe**. Ele está disponível como atalho na área de trabalho e na pasta %ProgramData%\home\svsystems\bin.
 
