@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 04/27/2019
 ms.author: juliako
-ms.openlocfilehash: 3e1a5d8ba8b6d0ec8e3ec1ba9506a88ee87d8ed1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ab74b778757aefc22f66e8b52d1f1d922526f14a
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66515737"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67296144"
 ---
 # <a name="streaming-endpoints"></a>Ponto de extremidade de streaming 
 
@@ -27,7 +27,7 @@ Quando você cria uma conta de Serviços de Mídia, um Ponto de Extremidade de S
 > [!NOTE]
 > Para começar a transmitir vídeos, é necessário iniciar o **Ponto de extremidade de streaming** do qual deseja transmitir o vídeo. 
 >  
-> Você será cobrado apenas quando seu ponto de extremidade de streaming estiver em estado de execução.
+> Você será cobrado apenas quando seu ponto de extremidade de Streaming está no estado de execução.
 
 ## <a name="naming-convention"></a>Convenção de nomenclatura
 
@@ -41,7 +41,7 @@ Há dois tipos de **Ponto de extremidade de streaming**: **Standard** (visualiza
 
 A tabela descreve os tipos:  
 
-|Type|Unidades de escala|DESCRIÇÃO|
+|Tipo|Unidades de escala|DESCRIÇÃO|
 |--------|--------|--------|  
 |**Standard**|0|O padrão de ponto de extremidade de Streaming é uma **Standard** de tipo, pode ser alterado para o tipo Premium, ajustando `scaleUnits`.|
 |**Premium**|>0|**Premium** pontos de extremidade de Streaming são adequados para cargas de trabalho avançadas, fornecendo a capacidade de largura de banda dimensionável e dedicada. Mover para um **Premium** tipo ajustando `scaleUnits` (unidades de streaming). `scaleUnits` fornece capacidade de saída dedicada que pode ser comprada em incrementos de 200 Mbps. Ao usar o tipo **Premium**, cada unidade habilitada fornece capacidade adicional de largura de banda ao aplicativo. |
@@ -143,7 +143,7 @@ Também é necessário considerar como o streaming adaptável funciona. Cada fra
 
 Após o provisionamento de um ponto de extremidade de Streaming com o CDN habilitado lá é um tempo de espera definido nos serviços de mídia antes de atualização de DNS é feita para mapear o ponto de extremidade de Streaming para o ponto de extremidade CDN.
 
-Se quiser desabilitar/habilitar a CDN depois, o ponto de extremidade de streaming deverá estar no estado **interrompido**. Para que a integração da CDN do Azure seja habilitada e as alterações estejam ativas em todos os POPs da CDN talvez sejam necessárias até duas horas. No entanto, é possível iniciar o ponto de extremidade de streaming e o fluxo sem interrupções do ponto de extremidade de streaming e, assim que a integração estiver concluída, o fluxo é fornecido a partir da CDN. Durante o período de provisionamento seu ponto de extremidade de streaming estará no estado **iniciando** e você pode observar a degradação do desempenho.
+Se quiser desabilitar/habilitar a CDN depois, o ponto de extremidade de streaming deverá estar no estado **interrompido**. Para que a integração da CDN do Azure seja habilitada e as alterações estejam ativas em todos os POPs da CDN talvez sejam necessárias até duas horas. No entanto, é possível iniciar o ponto de extremidade de streaming e o fluxo sem interrupções do ponto de extremidade de streaming e, assim que a integração estiver concluída, o fluxo é fornecido a partir da CDN. Durante o período de provisionamento seu ponto de extremidade de streaming estará na **iniciando** estado e você pode observar degradação do desempenho.
 
 Quando o ponto de extremidade de streaming padrão é criado, ele é configurado por padrão com Verizon Standard. Você pode configurar provedores de Verizon Premium ou Standard da Akamai usando APIs REST. 
 

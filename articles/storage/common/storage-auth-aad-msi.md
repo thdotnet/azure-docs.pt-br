@@ -1,6 +1,6 @@
 ---
-title: Autenticar o acesso a blobs e filas com identidades gerenciadas para recursos do Azure - armazenamento do Azure | Microsoft Docs
-description: Armazenamento de Blob e fila do Azure dão suporte a autenticação do Active Directory com identidades gerenciadas para recursos do Azure. Você pode usar identidades gerenciadas para recursos do Azure para autenticar o acesso a blobs e filas de aplicativos em execução em máquinas virtuais do Azure, aplicativos de função, conjuntos de dimensionamento de máquinas virtuais e outros.
+title: Autorizar o acesso a blobs e filas com o Azure Active Directory e identidades gerenciadas para recursos do Azure - armazenamento do Azure
+description: Suporte do Azure Blob e fila de armazenamento autorizar o acesso a recursos com o Azure Active Directory e identidades gerenciadas para recursos do Azure. Você pode usar identidades gerenciadas para recursos do Azure para autorizar o acesso a blobs e filas de aplicativos em execução em máquinas virtuais do Azure, aplicativos de função, conjuntos de dimensionamento de máquina virtual e outros.
 services: storage
 author: tamram
 ms.service: storage
@@ -9,14 +9,14 @@ ms.date: 04/21/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: f7525c3e125010bb4db9655bc214861e22dc8875
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 23e1171a8757d021b8c6d38f90bdbf720014045f
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65787972"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67303429"
 ---
-# <a name="authenticate-access-to-blobs-and-queues-with-azure-active-directory-and-managed-identities-for-azure-resources"></a>Autenticar o acesso a blobs e filas com o Azure Active Directory e identidades gerenciadas para recursos do Azure
+# <a name="authorize-access-to-blobs-and-queues-with-azure-active-directory-and-managed-identities-for-azure-resources"></a>Autorizar o acesso a blobs e filas com o Azure Active Directory e identidades gerenciadas para recursos do Azure
 
 Os armazenamentos de blobs e de filas do Azure dão suporte à autenticação do Azure AD (Active Directory) com [identidades gerenciadas para recursos do Azure](../../active-directory/managed-identities-azure-resources/overview.md). Identidades gerenciadas para recursos do Azure podem autorizar o acesso ao blob e os dados da fila usando credenciais do AD do Azure em aplicativos executados em máquinas virtuais (VMs), aplicativos de função, conjuntos de dimensionamento de máquina virtual e outros serviços. Usando identidades gerenciadas para recursos do Azure junto com a autenticação do Azure AD, você pode evitar o armazenamento de credenciais com os aplicativos que são executados na nuvem.  
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/23/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 8c23e429966cf9a1e93ac46ea3ecd11744761872
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f1c6f8074dab19b18f695763b160e4aeffe3ac44
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65148629"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67204843"
 ---
 # <a name="soft-delete-for-azure-storage-blobs"></a>Exclusão reversível para blobs do Armazenamento do Azure
 O Armazenamento do Azure agora oferece a exclusão reversível para objetos de blob para que você possa recuperar os dados mais facilmente quando eles forem modificados ou excluídos erroneamente por outro usuário de conta de armazenamento ou um aplicativo.
@@ -274,13 +274,10 @@ CloudBlockBlob copySource = allBlobVersions.First(version => ((CloudBlockBlob)ve
 blockBlob.StartCopy(copySource);
 ```
 
-## <a name="should-i-use-soft-delete"></a>Devo usar a exclusão reversível?
-Se houver uma possibilidade de que seus dados sejam acidentalmente modificados ou excluídos por outro usuário de conta de armazenamento ou um aplicativo, é recomendável ativar a exclusão reversível. A exclusão reversível é uma parte de uma estratégia de proteção de dados e pode ajudar a evitar a perda acidental de dados.
+## <a name="are-there-any-special-considerations-for-using-soft-delete"></a>Existem considerações especiais para usar a exclusão reversível?
+Se houver uma possibilidade de que seus dados sejam acidentalmente modificados ou excluídos por outro usuário de conta de armazenamento ou um aplicativo, é recomendável ativar a exclusão reversível. Habilitando exclusão reversível para dados substituídos com frequência pode resultar em encargos de capacidade de armazenamento maior e aumento da latência ao listar blobs. Você pode mitigar isso ao armazenar dados substituídos com frequência em uma conta de armazenamento separada com exclusão reversível desabilitado. 
 
 ## <a name="faq"></a>Perguntas frequentes
-**Existem considerações especiais para usar a exclusão reversível?**  
-Habilitando exclusão reversível para dados substituídos com frequência pode resultar em encargos de capacidade de armazenamento maior e aumento da latência ao listar blobs. Você pode mitigar isso ao armazenar dados substituídos com frequência em uma conta de armazenamento separada com exclusão reversível desabilitado. 
-
 **Para quais tipos de armazenamento posso utilizar a exclusão reversível?**  
 Atualmente, a exclusão reversível só está disponível para armazenamento de blob (objeto).
 

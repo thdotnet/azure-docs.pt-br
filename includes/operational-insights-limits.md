@@ -9,11 +9,11 @@ ms.date: 06/10/2019
 ms.author: magoedte
 ms.custom: include file
 ms.openlocfilehash: c5fedc59c80c68fc222693a67664ef60ddd210a9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67133185"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67293460"
 ---
 Os seguintes limites se aplicam a cada espaço de trabalho do Log Analytics no atual com base no consumo de tipo de preço introduzido em abril de 2018:
 
@@ -56,5 +56,5 @@ Os seguintes limites se aplicam para as APIs de análise de Log:
 | Categoria | limites | Comentários
 | --- | --- | --- |
 | API do Coletor de Dados | Tamanho máximo para uma única postagem é de 30 MB.<br>Tamanho máximo para valores de campo é 32 KB. | Dividir volumes maiores em várias postagens.<br>Campos com mais de 32 KB são truncados. |
-| API de Pesquisa | 5\.000 registros retornados para dados não agregados.<br>500\.000 registros para os dados agregados. | Os dados agregados são uma pesquisa que inclui o `summarize` comando.
+| API de Pesquisa | 5\.000 registros retornados para dados não agregados.<br>500.000 registros para os dados agregados. | Os dados agregados são uma pesquisa que inclui o `summarize` comando.
  

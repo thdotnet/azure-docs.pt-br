@@ -9,13 +9,13 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.custom: vs-azure
 ms.topic: article
-ms.date: 04/25/2019
-ms.openlocfilehash: fb071ac056355a056e5333284808417a258515de
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/20/2019
+ms.openlocfilehash: e51a3f9971006a0b50cec1abdc5e955d06c23466
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65467444"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67295845"
 ---
 # <a name="build-your-first-serverless-app-with-azure-logic-apps-and-azure-functions---visual-studio"></a>Construir seu primeiro aplicativo sem servidor com os Aplicativos Lógicos do Azure e o Azure Functions - Visual Studio
 
@@ -34,7 +34,6 @@ Para construir um aplicativo sem servidor no Visual Studio, serão necessários 
 
     > [!IMPORTANT]
     > Ao instalar o Visual Studio 2019 ou 2017, selecione a carga de trabalho **Desenvolvimento do Azure**.
-    > Para o Visual Studio 2019, o Cloud Explorer pode abrir o Designer de Aplicativo Lógico no portal do Azure, mas ainda não pode abrir o Designer de Aplicativo Lógico inserido.
 
   * O [SDK do Microsoft Azure para .NET (2.9.1 ou posterior)](https://azure.microsoft.com/downloads/). 
   Saiba mais sobre o [SDK do Azure para .NET](https://docs.microsoft.com/dotnet/azure/dotnet-tools?view=azure-dotnet).
@@ -128,6 +127,9 @@ Agora que sua solução é implantada no seu grupo de recursos, abra o aplicativ
 
    ![Abrir "azuredeploy.json" no Designer do Aplicativo Lógico](./media/logic-apps-serverless-get-started-vs/open-logic-app-designer.png)
 
+   > [!TIP]
+   > Se você não tiver esse comando no Visual Studio de 2019, verifique que você tenha as atualizações mais recentes para o Visual Studio.
+
 1. Depois que a caixa **Propriedades do Aplicativo Lógico** for exibida e, se ainda não estiver selecionada, em **Assinatura**, selecione a sua assinatura do Azure. Em **Grupo de Recursos**, selecione o grupo de recursos e o local onde você implantou a solução e, em seguida, escolha **OK**.
 
    ![Propriedades do aplicativo lógico](./media/logic-apps-serverless-get-started-vs/logic-app-properties.png)
@@ -153,6 +155,9 @@ Para aplicativos lógicos já implantados no Azure, ainda é possível editar, g
 1. Em **Todas as assinaturas**, selecione a assinatura do Azure associada aos aplicativos lógicos que você quer gerenciar e, em seguida, escolha **Aplicar**.
 
 1. Em **Aplicativos Lógicos**, selecione o aplicativo lógico. No menu de atalho desse aplicativo, selecione **Abrir com o Editor do Aplicativo Lógico**.
+
+   > [!TIP]
+   > Se você não tiver esse comando no Visual Studio de 2019, verifique que você tenha as atualizações mais recentes para o Visual Studio.
 
 Agora você pode baixar o aplicativo lógico já publicado no projeto do grupo de recursos. Assim, mesmo que você tenha iniciado um aplicativo lógico no portal do Azure, ainda é possível importar e gerenciar esse aplicativo no Visual Studio. Para obter mais informações, consulte [Gerenciar aplicativos lógicos com o Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md).
 

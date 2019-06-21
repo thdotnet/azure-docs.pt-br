@@ -12,12 +12,12 @@ ms.date: 02/08/2019
 ms.author: lizross
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5c761cad49ad42bd592b1fd8105052b39ef1177
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f59cae87af5f29d900159639798f9cd031f3d765
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67110446"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67302379"
 ---
 # <a name="azure-active-directory-deployment-plans"></a>Planos de implantação do Azure Active Directory
 Procurando orientação de ponta a ponta sobre como implantar alguns recursos do Azure AD (Azure Active Directory)? Os planos de implantação a seguir explicam o valor comercial, as considerações de planejamento, o design e os procedimentos operacionais necessários para implantar com êxito alguns dos recursos mais comuns do Azure AD. 
@@ -60,7 +60,7 @@ As funções podem incluir o seguinte
 |[Autenticação Multifator](../authentication/howto-mfa-getstarted.md)|A Autenticação Multifator do Azure é uma solução de verificação em duas etapas da Microsoft. Usando métodos de autenticação aprovados pelo administrador, o Azure MFA ajuda a proteger o acesso a dados e a aplicativos, ao mesmo tempo que atende à demanda por um processo de logon simples.|
 |[Acesso condicional](https://aka.ms/deploymentplans/ca)|Com acesso condicional, você pode implementar as decisões de controle de acesso automatizado para quem pode acessar seus aplicativos de nuvem, com base em condições.|
 |[Redefinição de senha de autoatendimento](https://aka.ms/SSPRDPDownload)|A redefinição de senha de autoatendimento fornece aos usuários a capacidade de redefinir sua senha, sem nenhuma intervenção do administrador, quando e onde eles precisarem.|
-|[Privileged Identity Management](../privileged-identity-management/pim-deployment-plan.md)|O Azure AD Privileged Identity Management (PIM) ajuda você a gerenciar funções administrativas com privilégios entre o Azure AD, recursos do Azure e outros Serviços Online da Microsoft. O PIM fornece soluções como acesso just-in-time, solicitação de fluxos de trabalho de aprovação e revisões de acesso totalmente integradas para que você possa identificar, descobrir e impedir atividades maliciosas de funções com privilégios em tempo real.|
+|[Privileged Identity Management](https://aka.ms/deploymentplans/pim)|O Azure AD Privileged Identity Management (PIM) ajuda você a gerenciar funções administrativas com privilégios entre o Azure AD, recursos do Azure e outros Serviços Online da Microsoft. O PIM fornece soluções como acesso just-in-time, solicitação de fluxos de trabalho de aprovação e revisões de acesso totalmente integradas para que você possa identificar, descobrir e impedir atividades maliciosas de funções com privilégios em tempo real.|
 |[Logon Único](https://aka.ms/SSODPDownload)|O logon único o ajuda a acessar todos os aplicativos e recursos necessários para fazer negócios fazendo logon uma única vez, usando uma conta de usuário única. Depois de entrar, você pode ir do Microsoft Office para o SalesForce e para o Box sem a exigência de autenticação (por exemplo, digitar uma senha) uma segunda vez.|
 |[SSO contínuo](https://aka.ms/SeamlessSSODPDownload)|O SSO Contínuo do Azure AD (Logon Único Contínuo do Azure Active Directory) conecta usuários automaticamente quando estiverem nos respectivos dispositivos corporativos conectados à sua rede corporativa. Depois de ativar esse recurso, os usuários não precisarão digitar suas senhas para entrar no Azure AD e, normalmente, não precisarão nem mesmo digitar os nomes de usuário. Esse recurso fornece aos usuários acesso fácil a seus aplicativos baseados em nuvem sem a necessidade de nenhum componente local adicional.|
 |[Painel de Acesso](https://aka.ms/AccessPanelDPDownload)|Oferece a seus usuários um hub simples para descobrir e acessar todos os seus aplicativos. Capacita-os para serem mais produtivos com recursos de autoatendimento, como a capacidade de solicitar acesso a novos aplicativos e grupos ou gerenciar o acesso a esses recursos em nome de outras pessoas.|

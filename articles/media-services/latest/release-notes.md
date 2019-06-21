@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 06/04/2019
+ms.date: 06/07/2019
 ms.author: juliako
-ms.openlocfilehash: e34e0f9fee1d09e66dcdd5069e800dc1f3f750cb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: aa4e37e3b360727feb998ef5e9ca9b776c4b0e53
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66688655"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67303942"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Notas de versão dos Serviços de Mídia do Azure v3
 
@@ -33,6 +33,19 @@ Para se manter atualizado com os desenvolvimentos mais recentes, este artigo for
 > Atualmente, você não pode usar o portal do Azure para gerenciar recursos da v3. Use a [API REST](https://aka.ms/ams-v3-rest-sdk), CLI ou um dos SDKs suportados.
 
 Para obter mais informações, consulte [Guia de migração para migrar do Serviços de Mídia v2 para v3](migrate-from-v2-to-v3.md#known-issues).
+
+## <a name="june-2019"></a>Junho de 2019
+
+### <a name="video-subclipping"></a>Vídeo subclipping
+
+Agora você pode cortar ou subclipe um vídeo quando estiver codificando-o usando um [trabalho](https://docs.microsoft.com/rest/api/media/jobs). 
+
+Essa funcionalidade funciona com qualquer [transformar](https://docs.microsoft.com/rest/api/media/transforms) que é criado usando o [BuiltInStandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) predefinições, ou o [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset) predefinições. 
+
+Consulte exemplos:
+
+* [Subclipe um vídeo com .NET](subclip-video-dotnet-howto.md)
+* [Um vídeo com o restante do subclipe](subclip-video-rest-howto.md)
 
 ## <a name="may-2019"></a>Maio de 2019
 

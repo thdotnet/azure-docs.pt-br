@@ -8,12 +8,12 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 5/13/2019
 ms.author: sajaya
-ms.openlocfilehash: 1400c023e43179a9c8490334e262711486c75a2d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: beeb4986750e398071e3afb6c1f04663f858cec1
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66417931"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67303567"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Perguntas frequentes sobre o registro de contêiner do Azure
 
@@ -440,6 +440,85 @@ Essa configuração também se aplica a `az acr run` comando.
 - [CircleCI](https://github.com/Azure/acr/blob/master/docs/integration/CircleCI.md)
 - [Ações do GitHub](https://github.com/Azure/acr/blob/master/docs/integration/github-actions/github-actions.md)
 
+## <a name="error-references-for-az-acr-check-health"></a>Referências de erro para `az acr check-health`
+
+### <a name="dockercommanderror"></a>DOCKER_COMMAND_ERROR
+
+Esse erro significa que o cliente docker para a CLI não pôde ser encontrado, que impede o localizar a versão do docker, avaliar o status do daemon de docker e garantir que o comando docker pull pode ser executado.
+
+*Possíveis soluções*: Instalando o cliente de docker; Adicionar caminho de docker para as variáveis do sistema.
+
+### <a name="dockerdaemonerror"></a>DOCKER_DAEMON_ERROR
+
+Esse erro significa que o status do daemon de docker não está disponível ou que ele não pôde ser acessado usando a CLI. Isso significa que as operações de docker (por exemplo, "logon", "pull") não estará disponíveis por meio da CLI.
+
+*Possíveis soluções*: Reinicie o daemon do docker ou validar que ele está instalado corretamente.
+
+### <a name="dockerversionerror"></a>DOCKER_VERSION_ERROR
+
+Esse erro significa que a CLI não foi capaz de executar o comando `docker --version`.
+
+*Possíveis soluções*: tente executar o comando manualmente, verifique se você tiver a versão mais recente da CLI e investigar a mensagem de erro.
+
+### <a name="dockerpullerror"></a>DOCKER_PULL_ERROR
+
+Esse erro significa que a CLI não pôde efetuar pull em uma imagem de exemplo para seu ambiente.
+
+*Possíveis soluções*: validar se todos os componentes necessários para efetuar pull de uma imagem estiverem sendo executado corretamente.
+
+### <a name="helmcommanderror"></a>HELM_COMMAND_ERROR
+
+Esse erro significa que o cliente helm não foi possível encontrar pela CLI, que impede outras operações do helm.
+
+*Possíveis soluções*: Verifique se que o helm é instalado e seu caminho é adicionado às variáveis de ambiente do sistema.
+
+### <a name="helmversionerror"></a>HELM_VERSION_ERROR
+
+Esse erro significa que a CLI não pôde determinar a versão do Helm instalada. Isso pode acontecer se a versão da CLI do Azure (ou, se a versão do helm) que está sendo usada está obsoleta.
+
+*Possíveis soluções*: atualizar para a versão mais recente da CLI do Azure ou para a versão recomendada do helm; execute o comando manualmente e investigar a mensagem de erro.
+
+### <a name="connectivitydnserror"></a>CONNECTIVITY_DNS_ERROR
+
+Esse erro significa que o DNS para o servidor de logon do registro específica foi um ping, mas não respondeu a ele, que significa que ele não estiver disponível. Isso pode indicar alguns problemas de conectividade. Isso também pode significar que o registro não existir, o usuário não tem as permissões do registro (para recuperar seu servidor de logon corretamente), ou que o registro de destino é em uma nuvem diferente daquele que está sendo usado na CLI do Azure.
+
+*Possíveis soluções*: validar a conectividade; Verifique a ortografia do registro, e que o registro existe; Verifique se que o usuário tem as permissões corretas nele e que a nuvem do registro é o mesmo que está sendo usado na CLI do Azure.
+
+### <a name="connectivityforbiddenerror"></a>CONNECTIVITY_FORBIDDEN_ERROR
+
+Isso significa que o ponto de extremidade de desafio para o registro de determinado respondeu com o status 403 Proibido HTTP. Isso significa que os usuários não têm acesso ao registro, provavelmente devido a uma configuração de rede virtual.
+
+*Possíveis soluções*: remover as regras de rede virtual ou adicionar o IP do cliente atual à lista de permissões.
+
+### <a name="connectivitychallengeerror"></a>CONNECTIVITY_CHALLENGE_ERROR
+
+Esse erro significa que o ponto de extremidade do desafio de registro de destino não emitiu um desafio.
+
+*Possíveis soluções*: tente novamente após algum tempo. Se o erro persistir, abra o problema de am no https://aka.ms/acr/issues.
+
+### <a name="connectivityaadloginerror"></a>CONNECTIVITY_AAD_LOGIN_ERROR
+
+Esse erro significa que o ponto de extremidade do desafio de registro de destino emitiu um desafio, mas o registro não oferece suporte a logon do AAD.
+
+*Possíveis soluções*: tente outra maneira de log em, por exemplo, as credenciais de administrador. Caso o usuário deseja fazer logon com suporte do AAD, abra o problema de am no https://aka.ms/acr/issues.
+
+### <a name="connectivityrefreshtokenerror"></a>CONNECTIVITY_REFRESH_TOKEN_ERROR
+
+Isso significa que o servidor de logon do registro não respondeu com um token de atualização, o que significa que o acesso ao registro de destino foi negado. Isso pode acontecer se o usuário não tem as permissões corretas no registro ou se as credenciais do usuário para a CLI do Azure estão obsoletas.
+
+*Soluções potenciais*: Verifique se o usuário tem as permissões corretas no registro; executar `az login` para atualizar as permissões, tokens e credenciais.
+
+### <a name="connectivityaccesstokenerror"></a>CONNECTIVITY_ACCESS_TOKEN_ERROR
+
+Isso significa que o servidor de logon do registro não respondeu com um token de acesso, o que significa que o acesso ao registro de destino foi negado. Isso pode acontecer se o usuário não tem as permissões corretas no registro ou se as credenciais do usuário para a CLI do Azure estão obsoletas.
+
+*Soluções potenciais*: Verifique se o usuário tem as permissões corretas no registro; executar `az login` para atualizar as permissões, tokens e credenciais.
+
+### <a name="loginservererror"></a>LOGIN_SERVER_ERROR
+
+Isso significa que a CLI não foi possível localizar o servidor de logon do registro especificado e nenhum sufixo padrão foi encontrado para a nuvem atual. Isso pode acontecer se o registro não existir, se o usuário não tem as permissões corretas no registro, se a nuvem do registro e a nuvem atual da CLI do Azure não correspondem, ou se a versão da CLI do Azure está obsoleta.
+
+*Possíveis soluções*: verificar se a ortografia está correta e que o registro existe; Verifique se o usuário tem as permissões corretas no registro e que as nuvens do registro e do ambiente de CLI corresponderem, atualize a CLI do Azure para a versão mais recente.
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/31/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: c0f19e3ea4f5952ac96b589fa267a2136c85e4f3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: abf48f3edc090550647b6865e96afeabe3727cf5
+ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64711660"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67190524"
 ---
 # <a name="monitor-azure-file-sync"></a>Monitorar a Sincronização de Arquivos do Azure
 
@@ -69,11 +69,14 @@ As métricas a seguir para a Sincronização de Arquivos do Azure estão dispon�
 | Nome da métrica | DESCRIÇÃO |
 |-|-|
 | Bytes sincronizados | Tamanho dos dados transferidos (upload e download).<br><br>Unidade: Bytes<br>Tipo de agregação: Sum<br>Dimensões aplicáveis: Nome do ponto de extremidade do servidor, direção da sincronização, nome de grupo de sincronização |
-| Recall da camada de nuvem | Tamanho dos dados em recall.<br><br>Unidade: Bytes<br>Tipo de agregação: Sum<br>Dimensão aplicável: Nome do Servidor |
+| Recall da camada de nuvem | Tamanho dos dados em recall.<br><br>Observação: Essa métrica será removida no futuro. Use a métrica de tamanho de recall em camadas da nuvem para monitorar o tamanho dos dados recuperados.<br><br>Unidade: Bytes<br>Tipo de agregação: Sum<br>Dimensão aplicável: Nome do Servidor |
+| Tamanho de recall em camadas na nuvem | Tamanho dos dados em recall.<br><br>Unidade: Bytes<br>Tipo de agregação: Sum<br>Dimensão aplicável: Nome do nome de servidor, grupo de sincronização |
+| Tamanho de recall em camadas na nuvem por aplicativo | Tamanho dos dados recuperados pelo aplicativo.<br><br>Unidade: Bytes<br>Tipo de agregação: Sum<br>Dimensão aplicável: Nome do aplicativo nome, servidor nome, grupo de sincronização |
+| Taxa de transferência de recall em camadas na nuvem | Tamanho da taxa de transferência de recolhimento de dados.<br><br>Unidade: Bytes<br>Tipo de agregação: Sum<br>Dimensão aplicável: Nome do nome de servidor, grupo de sincronização |
 | Arquivos não sincronizando | Contagem de arquivos que estão falhando em sincronizar.<br><br>Unidade: Count<br>Tipo de agregação: Sum<br>Dimensões aplicáveis: Nome do ponto de extremidade do servidor, direção da sincronização, nome de grupo de sincronização |
-| Arquivos sincronizados | Contagem dos arquivos transferidos (upload e download).<br><br>Unidade: Contagem<br>Tipo de agregação: Sum<br>Dimensões aplicáveis: Nome do ponto de extremidade do servidor, direção da sincronização, nome de grupo de sincronização |
+| Arquivos sincronizados | Contagem dos arquivos transferidos (upload e download).<br><br>Unidade: Count<br>Tipo de agregação: Sum<br>Dimensões aplicáveis: Nome do ponto de extremidade do servidor, direção da sincronização, nome de grupo de sincronização |
 | Status online do servidor | Contagem de pulsações recebidas do servidor.<br><br>Unidade: Count<br>Tipo de agregação: Máximo<br>Dimensão aplicável: Nome do Servidor |
-| Resultado da sessão de sincronização | Resultado da sessão de sincronização (1 = sessão de sincronização bem-sucedida; 0 = sessão de sincronização com falha)<br><br>Unidade: Count<br>Tipos de agregação: Máximo<br>Dimensões aplicáveis: Nome do ponto de extremidade do servidor, direção da sincronização, nome de grupo de sincronização |
+| Resultado da sessão de sincronização | Resultado da sessão de sincronização (1 = sessão de sincronização bem-sucedida; 0 = sessão de sincronização com falha)<br><br>Unidade: Contagem<br>Tipos de agregação: Máximo<br>Dimensões aplicáveis: Nome do ponto de extremidade do servidor, direção da sincronização, nome de grupo de sincronização |
 
 ## <a name="windows-server"></a>Windows Server
 
@@ -107,8 +110,8 @@ Integridade de camadas de nuvem:
 - Para monitorar a atividade de recuperação em um servidor, use o evento ID 9005, 9006, 9009 e 9059 no log de eventos de telemetria, que está localizado no Visualizador de eventos em *aplicativos e services\microsoft\filesync\agent.* .
 
   - A ID de evento 9005 fornece confiabilidade de recall para um ponto de extremidade do servidor. Por exemplo:  Total de arquivos exclusivos acessados e Total de arquivos exclusivos com falhas de acesso.
-  - ID do evento 9006 fornece Lembre-se a distribuição de erro para um ponto de extremidade do servidor. Por exemplo: Total de solicitações com falha e o código de erro. Um evento é registrado por código de erro.
-  - A ID do evento 9009 fornece informações de sessão de recall para um ponto de extremidade de servidor. Por exemplo: DurationSeconds, CountFilesRecallSucceeded e CountFilesRecallFailed.
+  - ID do evento 9006 fornece Lembre-se a distribuição de erro para um ponto de extremidade do servidor. Por exemplo:  Total de solicitações com falha e o código de erro. Um evento é registrado por código de erro.
+  - A ID do evento 9009 fornece informações de sessão de recall para um ponto de extremidade de servidor. Por exemplo:  DurationSeconds, CountFilesRecallSucceeded e CountFilesRecallFailed.
   - A ID do evento 9059 fornece distribuição de recall do aplicativo para um ponto de extremidade de servidor. Por exemplo: ShareId, nome do aplicativo e TotalEgressNetworkBytes.
 
 ### <a name="performance-counters"></a>contadores de desempenho
