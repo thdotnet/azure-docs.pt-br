@@ -96,10 +96,10 @@ Veja como um pipeline é definido no formato JSON:
 
 Marca | DESCRIÇÃO | Type | Obrigatório
 --- | ----------- | ---- | --------
-name | Nome do pipeline. Especifique um nome que represente a ação executada pelo pipeline. <br/><ul><li>Número máximo de caracteres: 140</li><li>Deve começar com uma letra, um número ou um sublinhado (\_)</li><li>Os seguintes caracteres não são permitidos: “.”, “+”, “?”, “/”, “<”,”>”,”*”,”%”,”&”,”:”,”\”</li></ul> | Cadeia de caracteres | Sim
-description | Especifique o texto descrevendo para que o pipeline é usado. | Cadeia de caracteres | Não
-activities | A seção **Atividades** pode ter uma ou mais atividades definidas dentro dela. Confira a seção [Atividade JSON](#activity-json) para obter detalhes sobre o elemento das atividades JSON. | Matriz | Sim
-parameters | A seção **parâmetros** pode ter um ou mais parâmetros definidos no pipeline, tornando seu pipeline flexível para reutilização. | Listar | Não
+name | Nome do pipeline. Especifique um nome que represente a ação executada pelo pipeline. <br/><ul><li>Número máximo de caracteres: 140</li><li>Deve começar com uma letra, um número ou um sublinhado (\_)</li><li>Os seguintes caracteres não são permitidos: “.”, “+”, “?”, “/”, “<”,”>”,”*”,”%”,”&”,”:”,”\”</li></ul> | String | Sim
+description | Especifique o texto descrevendo para que o pipeline é usado. | String | Não
+activities | A seção **Atividades** pode ter uma ou mais atividades definidas dentro dela. Confira a seção [Atividade JSON](#activity-json) para obter detalhes sobre o elemento das atividades JSON. | Array | Sim
+parameters | A seção **parâmetros** pode ter um ou mais parâmetros definidos no pipeline, tornando seu pipeline flexível para reutilização. | List | Não
 
 ## <a name="activity-json"></a>Atividade JSON
 A seção **Atividades** pode ter uma ou mais atividades definidas dentro dela. Há dois principais tipos de atividades: atividades de execução e controle.
@@ -171,7 +171,7 @@ Políticas afetam o comportamento de tempo de execução de uma atividade, ofere
 Nome JSON | DESCRIÇÃO | Valores Permitidos | Obrigatório
 --------- | ----------- | -------------- | --------
 timeout | Especifica o tempo limite para a atividade ser executada. | Timespan | Não. O tempo limite padrão é 7 dias.
-retry novamente | Número máximo de novas tentativas | Número inteiro | Não. O padrão é 0
+retry | Número máximo de novas tentativas | Número inteiro | Não. O padrão é 0
 retryIntervalInSeconds | O intervalo entre tentativas de repetição em segundos | Número inteiro | Não. O padrão é de 30 segundos
 secureOutput | Quando definido como true, a saída da atividade é considerada segura e não será registrada em log para monitoramento. | Boolean | Não. O padrão é falso.
 
