@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: sogup
-ms.openlocfilehash: 9d4d1db808446cb010e6551bdcec514fc550d802
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5fdf8e6c19711f6ce38d430a9dffab185cad961b
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65966310"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67296182"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Perguntas frequentes perguntas-fazer backup de VMs do Azure
 
@@ -89,6 +89,9 @@ Os instantâneos não podem ser criados no disco habilitado pelo Acelerador de G
 O Backup do Azure não pode fazer backup do disco habilitado pelo Acelerador de Gravação, mas pode excluí-lo do backup. No entanto, o backup não fornecerá a consistência do banco de dados porque não são feitos backups de informações do disco habilitado pelo Acelerador de Gravação. Você pode fazer backup de discos com essa configuração se desejar o backup em disco do sistema operacional e o backup dos discos que não são habilitados pelo Acelerador de Gravação.
 
 Estamos executando versão prévia privada para um backup do SAP HANA com um RPO de 15 minutos. Ele é criado de maneira semelhante ao backup do Banco de Dados do SQL e usa a interface backInt para soluções de terceiros certificadas pelo SAP HANA. Se você estiver interessado, envie um email `AskAzureBackupTeam@microsoft.com` com o assunto **Inscreva-se para visualização privada para o backup do SAP HANA em VMs do Azure**.
+
+### <a name="what-is-the-maximum-delay-i-can-expect-in-backup-start-time-from-the-scheduled-backup-time-i-have-set-in-my-vm-backup-policy"></a>O que é o atraso máximo que pode esperar na hora de início do backup do horário de backup agendado que defini na minha política de backup de VM?
+O backup agendado será acionado em até 2 horas do horário de backup agendado. Para ex. Se 100 VMs tiverem a hora de início de backup agendada às 2 horas, em seguida, por max 4:00, todos os 100VMs terá trabalho de backup em andamento. Se os backups agendados estão em pausa devido a interrupção e retomado/repetida backup pode iniciar fora essa janela de 2 horas agendadas.
 
 
 ## <a name="restore"></a>Restaurar

@@ -9,17 +9,17 @@ ms.date: 08/10/2018
 ms.author: kgremban
 ms.custom: include file
 ms.openlocfilehash: 2b61cc8c5c448c28e96b06afa3556688a82567ed
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64866820"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67202693"
 ---
 ### <a name="delete-local-resources"></a>Excluir recursos locais
 
 Se você quiser remover o tempo de execução do IoT Edge e os recursos relacionados do dispositivo, use os comandos pertinentes do sistema operacional do dispositivo. 
 
-#### <a name="windows"></a> Windows
+#### <a name="windows"></a>Windows
 
 Desinstale o tempo de execução do IoT Edge.
 

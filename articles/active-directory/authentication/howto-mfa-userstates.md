@@ -11,19 +11,19 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6cd26f7bdf928dcbd2cf841526857dc44623f133
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3a2c036265049bf4b87435e96f779482da404caa
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67057432"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67164808"
 ---
 # <a name="how-to-require-two-step-verification-for-a-user"></a>Como exigir a verificação em duas etapas para um usuário
 
 Você pode adotar uma das duas abordagens para solicitar a verificação em duas etapas, sendo que ambas exigem o uso de uma conta de administrador global. A primeira opção é habilitar cada usuário para a Autenticação Multifator do Azure (MFA). Quando os usuários são habilitados individualmente, eles executam a verificação em duas etapas em cada entrada (com algumas exceções, como ao entrarem a partir de endereços IP confiáveis, ou quando o recurso de _dispositivos lembrados_ estiver ativado). A segunda opção é configurar uma política de acesso condicional que exige a verificação em duas etapas sob determinadas condições.
 
 > [!TIP]
-> Escolha um destes métodos para exigir a verificação em duas etapas, não ambos. A habilitação de um usuário para autenticação multifator do Azure substitui quaisquer políticas de acesso condicional.
+> Habilitar autenticação multifator do Azure usando políticas de acesso condicional é a abordagem recomendada. Alteração de estados do usuário não é mais recomendado, a menos que suas licenças não incluem o acesso condicional conforme ele exigirá que os usuários realizem a MFA toda vez que entrar.
 
 ## <a name="choose-how-to-enable"></a>Escolha como habilitar
 

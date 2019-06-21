@@ -7,16 +7,16 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 01/15/2019
+ms.date: 06/18/2019
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: 90e43ab0448646650067dbf151702132f434c01e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ec6177bb353602f20040f05215678e3a8a161ebc
+ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65967951"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67190832"
 ---
 # <a name="create-and-configure-a-self-hosted-integration-runtime"></a>Criar e configurar um tempo de execução da integração auto-hospedada
 O IR (Integration Runtime) é a infraestrutura de computação usada pelo Azure Data Factory para fornecer funcionalidades de integração de dados entre diferentes ambientes de rede. Para obter detalhes sobre o IR, confira [Visão geral do Integration Runtime](concepts-integration-runtime.md).
@@ -44,7 +44,7 @@ Este documento descreve como você pode criar e configurar o IR auto-hospedado.
 
     ```
 
-## <a name="setting-up-a-self-hosted-ir-on-an-azure-vm-by-using-an-azure-resource-manager-template-automation"></a>Configurar um IR auto-hospedado em uma VM do Azure usando modelo do Azure Resource Manager (automação)
+## <a name="setting-up-a-self-hosted-ir-on-an-azure-vm-by-using-an-azure-resource-manager-template"></a>Como configurar um IR auto-hospedado em uma VM do Azure usando um modelo do Azure Resource Manager 
 É possível automatizar a configuração do IR auto-hospedado em uma máquina virtual do Azure usando [este modelo do Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vms-with-selfhost-integration-runtime). O modelo fornece uma maneira fácil de ter um IR auto-hospedado totalmente funcional dentro da rede virtual do Azure com recursos de alta disponibilidade e escalabilidade (contanto que você defina a contagem de nós como 2 ou superior).
 
 ## <a name="command-flow-and-data-flow"></a>Fluxo de comando e fluxo de dados
@@ -86,6 +86,7 @@ Aqui está o fluxo de dados de alto nível para e o resumo das etapas para a có
 
 - Configure um plano de energia no computador host para o tempo de execução da integração auto-hospedada para que o computador não hiberne. Se o computador host hibernar, o tempo de execução da integração auto-hospedada ficará offline.
 - Faça backup das credenciais associadas ao Integration Runtime auto-hospedado regularmente.
+- Para automatizar o IR auto-hospedado operações de configuração, consulte [abaixo da seção](#automation-support-for-self-hosted-ir-function).  
 
 ## <a name="install-and-register-self-hosted-ir-from-the-download-center"></a>Instalar e registrar o IR auto-hospedado no Centro de Download
 
@@ -109,6 +110,45 @@ Aqui está o fluxo de dados de alto nível para e o resumo das etapas para a có
     b. Opcionalmente, selecione **Mostrar chave de autenticação** para ver o texto da chave.
 
     c. Selecione **Registrar**.
+
+## <a name="automation-support-for-self-hosted-ir-function"></a>Função IR auto-hospedado do suporte de automação para
+
+
+> [!NOTE]
+> Se você estiver planejando configurar o IR auto-hospedado em uma máquina Virtual do Azure e deseja automatizar a instalação usando modelos do Azure Resource Manager, consulte [seção](#setting-up-a-self-hosted-ir-on-an-azure-vm-by-using-an-azure-resource-manager-template).
+
+Você pode usar a linha de comando para configurar ou gerenciar um ir auto-hospedado existente. Isso pode ser usado principalmente para automatizar a instalação, registro de nós de IR auto-hospedado. 
+
+**Dmgcmd.exe** está incluído na instalação do auto-hospedado, geralmente localizada: C:\Program Files\Microsoft Integration Runtime\3.0\Shared\ folder. Isso dá suporte a vários parâmetros e pode ser invocado por meio do prompt de comando usando scripts em lotes para a automação. 
+
+*Uso:* 
+
+```powershell
+dmgcmd [ -RegisterNewNode "<AuthenticationKey>" -EnableRemoteAccess "<port>" ["<thumbprint>"] -EnableRemoteAccessInContainer "<port>" ["<thumbprint>"] -DisableRemoteAccess -Key "<AuthenticationKey>" -GenerateBackupFile "<filePath>" "<password>" -ImportBackupFile "<filePath>" "<password>" -Restart -Start -Stop -StartUpgradeService -StopUpgradeService -TurnOnAutoUpdate -TurnOffAutoUpdate -SwitchServiceAccount "<domain\user>" ["password"] -Loglevel <logLevel> ] 
+```
+
+ *Detalhes (parâmetros / propriedade):* 
+
+| Propriedade                                                    | DESCRIÇÃO                                                  | Obrigatório |
+| ----------------------------------------------------------- | ------------------------------------------------------------ | -------- |
+| RegisterNewNode "`<AuthenticationKey>`"                     | Registrar o nó do Integration Runtime (auto-hospedado) com a chave de autenticação especificado | Não       |
+| EnableRemoteAccess "`<port>`" ["`<thumbprint>`"]            | Habilitar o acesso remoto no nó atual para configurar um Cluster de alta disponibilidade e/ou habilitando a configuração de credenciais diretamente contra o IV (sem passar pelo serviço do AAD) auto-hospedado usando  **Novo AzDataFactoryV2LinkedServiceEncryptedCredential** cmdlet de um computador remoto na mesma rede. | Não       |
+| EnableRemoteAccessInContainer "`<port>`" ["`<thumbprint>`"] | Habilitar acesso remoto ao nó atual quando o nó está em execução no contêiner | Não       |
+| DisableRemoteAccess                                         | Desabilite o acesso remoto ao nó atual. Acesso remoto é necessária para a instalação de vários nó. O New -**AzDataFactoryV2LinkedServiceEncryptedCredential** cmdlet do PowerShell ainda funciona até mesmo quando o acesso remoto está desabilitado enquanto ele é executado no mesmo computador que o nó do IR auto-hospedado. | Não       |
+| Chave de "`<AuthenticationKey>`"                                 | Substituir / atualizar a chave de autenticação anterior. Ser cuidadoso, pois isso pode resultar em seu nó do IR auto-hospedado anterior ficar offline, se a chave é de um novo tempo de execução de integração. | Não       |
+| GenerateBackupFile "`<filePath>`" "`<password>`"            | Gerar arquivo de backup para o nó atual, o arquivo de backup inclui as credenciais de repositório de chave e os dados do nó | Não       |
+| ImportBackupFile "`<filePath>`" "`<password>`"              | Restaurar o nó de um arquivo de backup                          | Não       |
+| Reiniciar                                                     | Reinicie o serviço do Integration Runtime (auto-hospedado) de Host   | Não       |
+| Iniciar                                                       | Iniciar o serviço do Integration Runtime (auto-hospedado) de Host     | Não       |
+| Stop                                                        | Parar o serviço do Integration Runtime (auto-hospedado) de atualização        | Não       |
+| StartUpgradeService                                         | Iniciar o serviço do Integration Runtime (auto-hospedado) de atualização       | Não       |
+| StopUpgradeService                                          | Parar o serviço do Integration Runtime (auto-hospedado) de atualização        | Não       |
+| TurnOnAutoUpdate                                            | Ativar atualização do Integration Runtime (auto-hospedado) automática        | Não       |
+| TurnOffAutoUpdate                                           | Desativar a atualização do Integration Runtime (auto-hospedado) automática       | Não       |
+| SwitchServiceAccount "<domain\user>" ["password"]           | Defina DIAHostService para ser executado como uma nova conta. Use a senha vazia ("") para a conta do sistema ou conta virtual | Não       |
+| Loglevel `<logLevel>`                                       | Definir o nível de log do ETW (desativado, erro, detalhado ou todos). Geralmente usado pelo suporte da Microsoft durante a depuração. | Não       |
+
+   
 
 
 ## <a name="high-availability-and-scalability"></a>Alta disponibilidade e escalabilidade
@@ -341,7 +381,7 @@ Se estiver usando um firewall de terceiros, poderá abrir manualmente a porta 80
 
 ```
 msiexec /q /i IntegrationRuntime.msi NOFIREWALL=1
-``` 
+```
 
 Se optar por não abrir a porta 8060 no computador do tempo de execução da integração auto-hospedada, use mecanismos diferentes do aplicativo Definindo Credenciais para configurar as credenciais do armazenamento de dados. Por exemplo, você pode usar o **New-AzDataFactoryV2LinkedServiceEncryptCredential** cmdlet do PowerShell.
 

@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 05/22/2019
+ms.date: 06/19/2019
 ms.author: magoedte
-ms.openlocfilehash: 3f93318dedb8a4667d32bcc97eb6a697ccebfcc4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2d4e49b4f7c1aa244b59ef17716c90369a0d3339
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67122573"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67273384"
 ---
 # <a name="enable-azure-monitor-for-vms-preview-overview"></a>Habilitar o Azure Monitor para visão geral de máquinas virtuais (versão prévia)
 
@@ -42,10 +42,10 @@ O Azure Monitor para VMs oferece suporte a um espaço de trabalho do Log Analyti
 - Centro-Oeste dos EUA
 - Oeste dos EUA 2<sup>1</sup>
 - Leste dos EUA
-- Canada Central<sup>1</sup>
-- Sul do Reino Unido<sup>1</sup>
+- Canadá Central
+- Sul do Reino Unido
 - Europa Ocidental
-- Sudeste Asiático<sup>1</sup>
+- Sudeste Asiático
 
 <sup>1</sup> Atualmente, essa região não dá suporte ao recurso Integridade do Azure Monitor para VMs.
 
@@ -90,6 +90,10 @@ A tabela a seguir lista os sistemas operacionais Windows e Linux que dá suporte
 |Debian 8, 9.4 | X<sup>1</sup> | | X |
 
 <sup>1</sup> O recurso Desempenho do Azure Monitor para VMs está disponível somente no Azure Monitor. Ele não está disponível diretamente no painel esquerdo da VM do Azure.
+
+>[!NOTE]
+>O recurso de integridade do Monitor do Azure para VMs não suporta [virtualização aninhada](../../virtual-machines/windows/nested-virtualization.md) em uma VM do Azure.
+>
 
 >[!NOTE]
 >No sistema operacional Linux:

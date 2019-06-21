@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 06/13/2019
 ms.author: jingwang
-ms.openlocfilehash: e68b522d5a0fe7c359d83fc436aa7a1fd2159198
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9208ceeb760bba97c12b23a1b6e5bdff7efc9020
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67048583"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67274827"
 ---
 # <a name="copy-data-to-and-from-azure-sql-database-managed-instance-by-using-azure-data-factory"></a>Copiar dados para e da Instância Gerenciada do Banco de Dados SQL do Azure usando o Azure Data Factory
 
@@ -33,7 +33,11 @@ Especificamente, este conector da Instância Gerenciada do Banco de Dados SQL do
 - Como uma origem, recuperar dados usando uma consulta SQL ou procedimento armazenado.
 - Como o coletor, acrescentar dados a uma tabela de destino ou à invocação de um procedimento armazenado com lógica personalizada durante a cópia.
 
-O [Always Encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=sql-server-2017) do SQL Server não tem suporte agora. 
+>[!NOTE]
+>Instância de gerenciada do banco de dados de SQL do Azure **[Always Encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine?view=azuresqldb-mi-current)** não tem suporte por este conector agora. Solução alternativa, você pode usar [conector ODBC genérico](connector-odbc.md) e o driver ODBC do SQL Server por meio do Integration Runtime auto-hospedado. Siga [neste guia](https://docs.microsoft.com/sql/connect/odbc/using-always-encrypted-with-the-odbc-driver?view=azuresqldb-mi-current) com configurações de cadeia de caracteres ODBC driver download e a conexão.
+
+>[!NOTE]
+>Autenticações de identidade gerenciada e entidade de serviço no momento, não são suportadas por este conector e sobre o plano para habilitar o logo depois. Por enquanto, para solucionar esse problema, você pode escolher manualmente e Azure SQL Database connector especificam o servidor de sua instância gerenciada.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -57,7 +61,7 @@ As propriedades a seguir têm suporte no serviço vinculado da Instância Gerenc
 | connectionString |Essa propriedade especifica as informações de connectionString necessárias para conectar-se à instância gerenciada usando a autenticação do SQL. Para obter mais informações, confira os exemplos a seguir. <br/>Marque esse campo como SecureString para armazená-lo com segurança no Data Factory. Você também pode colocar uma senha no Azure Key Vault, e se a autenticação for SQL, extraia a `password`configuração da cadeia de conexão. Veja o exemplo de JSON abaixo da tabela e o artigo [Armazenar credenciais no Azure Key Vault](store-credentials-in-key-vault.md) com mais detalhes. |Sim. |
 | connectVia | Esse [Integration Runtime](concepts-integration-runtime.md) é usado para se conectar ao armazenamento de dados. Você pode usar o Integration Runtime auto-hospedado ou o Integration Runtime do Azure (se sua instância gerenciada tem o ponto de extremidade público e permitir que o ADF acessar). Se não for especificado, ele usa o Integration Runtime padrão do Azure. |Sim. |
 
-**Exemplo 1: Usar autenticação do SQL**
+**Exemplo 1: Usar autenticação do SQL** porta padrão é 1433. Se você estiver usando a instância gerenciada do SQL com o ponto de extremidade público, especifica explicitamente a porta 3342.
 
 ```json
 {
@@ -67,7 +71,7 @@ As propriedades a seguir têm suporte no serviço vinculado da Instância Gerenc
         "typeProperties": {
             "connectionString": {
                 "type": "SecureString",
-                "value": "Data Source=<servername:port>;Initial Catalog=<databasename>;Integrated Security=False;User ID=<username>;Password=<password>;"
+                "value": "Data Source=<hostname,port>;Initial Catalog=<databasename>;Integrated Security=False;User ID=<username>;Password=<password>;"
             }
         },
         "connectVia": {
@@ -78,7 +82,7 @@ As propriedades a seguir têm suporte no serviço vinculado da Instância Gerenc
 }
 ```
 
-**Exemplo 2: Use a autenticação SQL com senha no Azure Key Vault**
+**Exemplo 2: Usar autenticação do SQL com senha no Azure Key Vault** porta padrão é 1433. Se você estiver usando a instância gerenciada do SQL com o ponto de extremidade público, especifica explicitamente a porta 3342.
 
 ```json
 {
@@ -88,7 +92,7 @@ As propriedades a seguir têm suporte no serviço vinculado da Instância Gerenc
         "typeProperties": {
             "connectionString": {
                 "type": "SecureString",
-                "value": "Data Source=<servername>\\<instance name if using named instance>;Initial Catalog=<databasename>;Integrated Security=False;User ID=<username>;"
+                "value": "Data Source=<hostname,port>;Initial Catalog=<databasename>;Integrated Security=False;User ID=<username>;"
             },
             "password": { 
                 "type": "AzureKeyVaultSecret", 

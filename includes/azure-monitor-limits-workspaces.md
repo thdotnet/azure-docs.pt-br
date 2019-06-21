@@ -8,19 +8,19 @@ ms.topic: include
 ms.date: 02/07/2019
 ms.author: robb
 ms.custom: include file
-ms.openlocfilehash: dfcf47a95d1dbff34ff322768fc4ac6c9674cff4
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
-ms.translationtype: HT
+ms.openlocfilehash: 21e2d3f75028d239175effa7a3608cc18ccfc95c
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 06/20/2019
-ms.locfileid: "67296004"
+ms.locfileid: "67305247"
 ---
 **Retenção e volume de coleta de dados** 
 
 | Camada | Limitar por dia | Retenção de dados | Comentário |
 |:---|:---|:---|:---|
 | Tipo de preço por GB atual<br>(apresentados de abril de 2018) | Sem limite | 30 - 730 dias | Retenção de dados além dos 31 dias está disponível para encargos adicionais. Saiba mais sobre os preços do Azure Monitor. |
-| Camadas gratuitas herdadas<br>(apresentados de abril de 2016) | 500 MB | 7 dias | Quando o seu espaço de trabalho atinge o limite de transferência de dados diário 500 MB, a análise de dados será interrompida e reiniciada no início do dia seguinte. Um dia é baseado em UTC. |
+| Camadas gratuitas herdadas<br>(apresentados de abril de 2016) | 500 MB | 7 dias | Quando seu espaço de trabalho atinge o limite diário de 500 MB, o ingestão de dados será interrompida e reiniciada no início do dia seguinte. Um dia é baseado em UTC. Observe que os dados coletados pela Central de segurança do Azure não estão incluído nesse 500 MB, limite diário e continuará a ser coletado acima desse limite.  |
 | Camada de autônomo por GB herdada<br>(apresentados de abril de 2016) | Sem limite | 30 a 730 dias | Retenção de dados além dos 31 dias está disponível para encargos adicionais. Saiba mais sobre os preços do Azure Monitor. |
 | Herdado por nó (OMS)<br>(apresentados de abril de 2016) | Sem limite | 30 a 730 dias | Retenção de dados além dos 31 dias está disponível para encargos adicionais. Saiba mais sobre os preços do Azure Monitor. |
 | Camada Standard herdada | Sem limite | 30 dias  | Retenção não pode ser ajustada. |

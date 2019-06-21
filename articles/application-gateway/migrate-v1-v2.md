@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-ms.date: 6/12/2019
+ms.date: 6/18/2019
 ms.author: victorh
-ms.openlocfilehash: 2387f2546afa9d5af2cb909a1e6a2179548e3b5a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f55beca65a19ee9e47708000976dd42a6f252e2e
+ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67053334"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67154160"
 ---
 # <a name="migrate-azure-application-gateway-and-web-application-firewall-from-v1-to-v2"></a>Migrar o Gateway de aplicativo do Azure e o Firewall do aplicativo de v1 para v2 Web
 
@@ -96,7 +96,7 @@ Para executar o script:
      $appgw.Id
      ```
 
-   * **subnetAddressRange: [String]:  Necessário** -isso é o espaço de endereço IP que você alocou (ou deseja alocar) para uma nova sub-rede que contém seu novo gateway v2. Isso deve ser especificado na notação CIDR. Por exemplo:  10.0.0.0/24. Você não precisará criar essa sub-rede com antecedência. O script cria para você se ele não existir.
+   * **subnetAddressRange: [String]:  Necessário** -isso é o espaço de endereço IP que você alocou (ou deseja alocar) para uma nova sub-rede que contém seu novo gateway v2. Isso deve ser especificado na notação CIDR. Por exemplo: 10.0.0.0/24. Você não precisará criar essa sub-rede com antecedência. O script cria para você se ele não existir.
    * **appgwName: [String]: Opcional**. Isso é uma cadeia de caracteres que você especificar para usar como o nome do novo gateway Standard_v2 ou WAF_v2. Se esse parâmetro não for fornecido, o nome do seu gateway v1 existente será usado com o sufixo *_v2* acrescentado.
    * **sslCertificates: [PSApplicationGatewaySslCertificate]: Opcional**.  Uma lista separada por vírgulas de objetos de PSApplicationGatewaySslCertificate que você cria para representar os certificados SSL em seu gateway v1 deve ser carregada para o novo gateway v2. Para cada um dos seus certificados SSL configurados para seu padrão v1 ou gateway do WAF v1, você pode criar um novo objeto PSApplicationGatewaySslCertificate por meio de `New-AzApplicationGatewaySslCertificate` os comandos mostrados aqui. É necessário o caminho do arquivo de certificado SSL e a senha.
 
@@ -133,7 +133,7 @@ Para executar o script:
       -sslCertificates $Certs `
       -trustedRootCertificates $trustedCert `
       -privateIpAddress "10.0.0.1" `
-      -publicIpResourceName "MyPublicIP" `
+      -publicIpResourceId "MyPublicIP" `
       -validateMigration -enableAutoScale
    ```
 
