@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 11/15/2018
 ms.author: genli
-ms.openlocfilehash: 18cd5a86cc2f52567c5f320719d1a9f21b377ed4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bc058cb3f27545b9e4ad8ef1062ca4d2fa4c9fa8
+ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60921263"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67155156"
 ---
 # <a name="troubleshoot-azure-windows-virtual-machine-activation-problems"></a>Solucionar problemas de ativação de máquina virtual do Windows Azure
 
@@ -51,11 +51,9 @@ Em geral, problemas de ativação da VM do Azure ocorrem se a VM do Windows não
 >
 >Se você estiver usando o ExpressRoute e você tiver uma rota padrão publicada, consulte [A VM do Azure pode falhar ao ser ativada pela ExpressRoute](https://blogs.msdn.com/b/mast/archive/2015/12/01/azure-vm-may-fail-to-activate-over-expressroute.aspx).
 
-### <a name="step-1-configure-the-appropriate-kms-client-setup-key-for-windows-server-2016-and-windows-server-2012-r2"></a>Etapa 1 Configurar a chave de instalação de cliente KMS adequada (para Windows Server 2016 e Windows Server 2012 R2)
+### <a name="step-1-configure-the-appropriate-kms-client-setup-key"></a>Etapa 1: configurar a chave de instalação de cliente KMS adequada
 
-Para a VM que é criada a partir de uma imagem personalizada do Windows Server 2016 ou Windows Server 2012 R2, você deve configurar a chave de instalação de cliente KMS adequada para a VM.
-
-Esta etapa não é aplicável ao Windows 2012 ou Windows 2008 R2. Ela usa o recurso de Ativação de Máquina Virtual de Automação (AVMA), que é suportado apenas pelo Windows Server 2016 e Windows Server 2012 R2.
+Para a VM é criada a partir de uma imagem personalizada, você deve configurar a chave de instalação de cliente KMS adequada para a VM.
 
 1. Execute **slmgr.vbs /dlv** em um prompt de comando elevado. Verifique o valor de descrição na saída e, em seguida, determine se ele foi criado a partir da mídia de licença de varejo (canal RETAIL) ou de volume (VOLUME_KMSCLIENT):
   

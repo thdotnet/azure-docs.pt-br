@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 06/04/2019
 ms.author: pullabhk
 ms.assetid: 01169af5-7eb0-4cb0-bbdb-c58ac71bf48b
-ms.openlocfilehash: 1e85b633024b5a3e85874707ae9a1f068e7a328d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: 7c53d8fe0ee5bbfdbe180aa4d18d8c7b7fab29c2
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66808513"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67295288"
 ---
 # <a name="monitoring-at-scale-using-azure-monitor"></a>Monitoramento em escala usando o Azure Monitor
 
@@ -29,7 +29,7 @@ O [internos de monitoramento e alerta artigo](backup-azure-monitoring-built-in-m
 ## <a name="using-log-analytics-workspace"></a>Usando o espaço de trabalho do Log Analytics
 
 > [!NOTE]
-> Dados de backups de VM do Azure, o agente MAB, System Center DPM (SC DPM), backups do SQL em VMs do Azure estão sendo sejam enviados ao espaço de trabalho do Log Analytics por meio de configurações de diagnóstico. Suporte para backups de compartilhamento de arquivos do Azure, servidor de Backup do Microsoft Azure (MABS) está disponível em breve.
+> Dados de backups de VM do Azure, o agente MAB, System Center DPM (SC DPM), backups do SQL em VMs do Azure e backups de compartilhamento de arquivos do Azure estão sendo sejam enviados para o espaço de trabalho do Log Analytics por meio de configurações de diagnóstico. Suporte para servidor de Backup do Microsoft Azure (MABS) está disponível em breve.
 
 Estamos aproveitando os recursos de dois serviços do Azure - **configurações de diagnóstico** (para enviar dados de vários recursos do Azure Resource Manager para outro recurso) e **Log Analytics** (LA - gerar onde é possível definir outros canais de notificação usando grupos de ações de alertas personalizados) para monitorar em escala. A seções a seguir detalham como usá-la para monitorar o Backup do Azure em grande escala.
 
@@ -47,6 +47,9 @@ Você pode selecionar um espaço de trabalho de LA de outra assinatura, como o d
 ### <a name="deploying-solution-to-log-analytics-workspace"></a>Implantar a solução ao espaço de trabalho do Log Analytics
 
 Quando os dados estiverem dentro do espaço de trabalho de LA [implantar um modelo do GitHub](https://azure.microsoft.com/resources/templates/101-backup-oms-monitoring/) em LA para visualizar os dados. Certifique-se de que fornecer o mesmo grupo de recursos, o nome do espaço de trabalho e o local do espaço de trabalho para identificar corretamente o espaço de trabalho e, em seguida, instalar esse modelo nele.
+
+> [!NOTE]
+> Os usuários que não têm alertas ou trabalhos de backup/restauração no seu espaço de trabalho de LA poderá ver um erro com o código de "BadArgumentError" no portal. Os usuários podem ignorar esse erro e continuar a usar a solução. Depois que os dados do tipo relevante começam a fluir para o espaço de trabalho, as visualizações refletirá que o mesmo e os usuários não verão esse erro mais.
 
 ### <a name="view-azure-backup-data-using-log-analytics-la"></a>Exibir dados de Backup do Azure usando o Log Analytics (LA)
 
@@ -109,7 +112,7 @@ O principal aspecto é a condição de disparo do alerta. Clicar em 'Condição'
 
 ![LAAzureBackupAlertCondition](media/backup-azure-monitoring-laworkspace/la-azurebackup-alertlogic.png)
 
-Editar a consulta do Kusto, se necessário, selecione o limite direito (que será decidir quando o alerta será acionado), o ponto à direita (janela de tempo para o qual a consulta é executada) e a frequência. Por exemplo:  Se o limite for maior que 0, o período é de 5 minutos e a frequência é de 5 minutos, em seguida, a regra é traduzida como "Executa a consulta a cada 5 minutos para os últimos 5 minutos e se o número de resultados for maior que 0, notifique-me via o grupo de ação selecionada"
+Editar a consulta do Kusto, se necessário, selecione o limite direito (que será decidir quando o alerta será acionado), o ponto à direita (janela de tempo para o qual a consulta é executada) e a frequência. Por exemplo: Se o limite for maior que 0, o período é de 5 minutos e a frequência é de 5 minutos, em seguida, a regra é traduzida como "Executa a consulta a cada 5 minutos para os últimos 5 minutos e se o número de resultados for maior que 0, notifique-me via o grupo de ação selecionada"
 
 #### <a name="action-group-integration"></a>Integração do grupo de ação
 

@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5eff7925599931104440213112ce288fd521b61
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d15bb4a1cd19af70b29d1d74f43e137cf884c4db
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66473766"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67164106"
 ---
 # <a name="enable-remote-access-to-sharepoint-with-azure-ad-application-proxy"></a>Habilitar acesso remoto ao SharePoint com o Proxy de Aplicativo do Azure AD
 
@@ -129,7 +129,7 @@ Agora que você configurou a KCD, está pronto para configurar o Proxy de Aplica
    1. Na página de aplicativo no portal, selecione **Logon único**.
    2. Para o modo de logon único, selecione **Autenticação Integrada do Windows**.
    3. Defina o SPN do Aplicativo Interno para o valor que você definiu anteriormente. Neste exemplo, isso seria **HTTP/SharePoint**.
-   4. Em "Identidade de Logon Delegada", selecione **Nome da conta SAM local**.
+   4. Em "Identidade de logon delegada", selecione a opção mais adequada para a sua configuração de floresta do Active Directory. Por exemplo, se você tiver um único domínio do AD em sua floresta, selecione **nome da conta SAM local** (como mostrado abaixo), mas, se os usuários não estão no mesmo domínio que o SharePoint e, em seguida, selecione os servidores de conector de Proxy de aplicativo  **Nome principal de usuário local** (não mostrado).
 
    ![Configurar a Autenticação Integrada do Windows para SSO](./media/application-proxy-integrate-with-sharepoint-server/configure-iwa.png)
 

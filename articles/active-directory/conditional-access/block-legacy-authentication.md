@@ -2,37 +2,27 @@
 title: Como bloquear autenticação herdados para o Azure Active Directory (Azure AD) com acesso condicional | Microsoft Docs
 description: Saiba como melhorar sua postura de segurança bloqueando autenticação herdados usando o acesso condicional do Azure AD.
 services: active-directory
-keywords: Acesso condicional para aplicativos, acesso condicional com o Azure AD, acesso seguro aos recursos da empresa, políticas de acesso condicional
-documentationcenter: ''
+ms.service: active-directory
+ms.subservice: conditional-access
+ms.topic: conceptual
+ms.date: 06/17/2019
+ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
-editor: ''
-ms.subservice: conditional-access
-ms.assetid: 8c1d978f-e80b-420e-853a-8bbddc4bcdad
-ms.service: active-directory
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: identity
-ms.date: 03/25/2019
-ms.author: joflore
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a638b501ea04db787ca366aa015850d94eb475ee
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9b2120466652db363206ec20c2303ad56670228c
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67112699"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67164796"
 ---
 # <a name="how-to-block-legacy-authentication-to-azure-ad-with-conditional-access"></a>Como: Autenticação herdados do bloco para o Azure AD com acesso condicional   
 
 Para fornecer aos usuários acesso fácil aos aplicativos na nuvem, o Azure AD (Azure Active Directory) dá suporte a uma ampla variedade de protocolos de autenticação, incluindo a autenticação herdada. No entanto, protocolos herdados não dão suporte para MFA (autenticação multifator). Em muitos ambientes, a MFA é um requisito comum para lidar com roubo de identidade. 
 
-
 Se seu ambiente está preparado para o bloco de autenticação herdados para melhorar a proteção do seu locatário, você pode atingir essa meta com acesso condicional. Este artigo explica como você pode configurar políticas de acesso condicional que bloqueiam autenticação herdados para seu locatário.
-
-
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -40,8 +30,6 @@ Este artigo pressupõe que você esteja familiarizado com:
 
 - O [conceitos básicos](overview.md) de acesso condicional do Azure AD 
 - O [práticas recomendadas](best-practices.md) para configurar políticas de acesso condicional no portal do Azure
-
-
 
 ## <a name="scenario-description"></a>Descrição do cenário
 
@@ -57,12 +45,21 @@ Como é possível impedir que aplicativos usando autenticação herdada acessem 
 
 Políticas de acesso condicional são impostas após a autenticação multifator primeiro ter sido concluída. Portanto, o acesso condicional não serve como uma primeira linha de defesa para cenários como negação de serviço (DoS) ataques, mas podem utilizar os sinais desses eventos (por exemplo, o nível de risco de entrada, o local da solicitação e assim por diante) para determinar o acesso.
 
-
-
-
 ## <a name="implementation"></a>Implementação
 
 Esta seção explica como configurar uma política de acesso condicional para o bloco de autenticação herdados. 
+
+### <a name="identify-legacy-authentication-use"></a>Identificar o uso de autenticação herdados
+
+Antes de você pode bloquear autenticação herdados em seu diretório, você precisa primeiro entender se os usuários têm aplicativos que usam autenticação herdados e como ela afeta seu diretório geral. Logs de entrada do AD do Azure podem ser usados para entender se você estiver usando autenticação herdados.
+
+1. Navegue até a **portal do Azure** > **do Azure Active Directory** > **entradas**.
+1. Adicionar a coluna de aplicativo cliente se ele não for exibido ao clicar no **colunas** > **aplicativo cliente**.
+1. Filtrar por **aplicativo cliente** > **outros clientes** e clique em **aplicar**.
+
+Filtragem somente para mostrar a você entrar tentativas feitas por protocolos de autenticação herdados. Clicar em cada tentativa de logon individual mostrará detalhes adicionais. O **aplicativo cliente** campo sob o **informações básicas de** guia indicará qual protocolo de autenticação herdada foi usado.
+
+Esses logs indica que os usuários ainda dependem de autenticação herdados e quais aplicativos estão usando os protocolos herdados para fazer solicitações de autenticação. Para usuários que não aparecem nesses logs e confirmados que não esteja usando autenticação herdados, implemente uma política de acesso condicional para apenas esses usuários.
 
 ### <a name="block-legacy-authentication"></a>Bloquear a autenticação herdada 
 

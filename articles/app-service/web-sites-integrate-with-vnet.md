@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/06/2019
+ms.date: 06/14/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: a5187ed299f77c11892c6e34c8dfd3f904c7e075
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: HT
+ms.openlocfilehash: b269c75be7fec55fb77afecc6d04b86266c74a6f
+ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67067705"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67147300"
 ---
 # <a name="integrate-your-app-with-an-azure-virtual-network"></a>Integrar seu aplicativo Web a uma Rede Virtual do Azure
 Este documento descreve o recurso de integração de rede virtual do serviço de aplicativo do Azure e como configurá-lo com os aplicativos na [serviço de aplicativo do Azure](https://go.microsoft.com/fwlink/?LinkId=529714). As VNets ([Redes Virtuais do Azure][VNETOverview]) permitem que você coloque qualquer um dos recursos do Azure em uma rede não roteável para a Internet com acesso controlado.  
@@ -102,6 +102,10 @@ Depois que seu aplicativo é integrado com sua rede virtual, ele usará o mesmo 
 Para desconectar o aplicativo da VNet, selecione **Desconectar**. Isso reiniciará o aplicativo Web. 
 
 O novo recurso de integração de VNet permite que você use pontos de extremidade de serviço.  Para usar pontos de extremidade de serviço com seu aplicativo, use a nova Integração VNet para se conectar a uma VNet selecionada e, em seguida, configure pontos de extremidade de serviço na sub-rede que você usou para a integração. 
+
+#### <a name="web-app-for-containers"></a>Aplicativo Web para Contêineres
+
+Se você usar o serviço de aplicativo no Linux com imagens internas, o recurso de integração de rede virtual regional funciona sem alterações adicionais. Se você usar o aplicativo Web para contêineres, você precisa modificar sua imagem do docker para usar a integração de rede virtual. Em sua imagem do docker, use a variável de ambiente de porta como porta de escuta do servidor web principal, em vez de usar um número de porta embutidos em código. A variável de ambiente PORT é definido automaticamente pela plataforma de serviço de aplicativo no tempo de inicialização do contêiner.
 
 ### <a name="how-vnet-integration-works"></a>Como a Integração VNet funciona
 

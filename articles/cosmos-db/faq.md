@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 4935e06389266f049b8f7f79ca6fb9380f33c864
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: 47b1d9720a23c1dbfdee8c2e4cba95ff998a4cc0
+ms.sourcegitcommit: e5dcf12763af358f24e73b9f89ff4088ac63c6cb
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65954139"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67137749"
 ---
 # <a name="frequently-asked-questions-about-different-apis-in-azure-cosmos-db"></a>Perguntas frequentes sobre diferentes APIs no Azure Cosmos DB
 
@@ -744,11 +744,11 @@ Sim, é possível usar a sintaxe regular para criar uma chave de partição de c
 
 ### <a name="can-i-use-stable-loader-for-data-loading"></a>Posso usar o carregador estável para carregamento de dados?
 
-Não, durante a visualização o carregador estável não é compatível.
+Não, não há suporte para o carregador estável.
 
 ### <a name="can-an-on-premises-apache-cassandra-cluster-be-paired-with-azure-cosmos-dbs-cassandra-api"></a>Um cluster do Apache Cassandra local pode ser emparelhado com a API do Cassandra do Azure Cosmos DB?
 
-No momento, o Azure Cosmos DB tem uma experiência otimizada para o ambiente em nuvem sem a sobrecarga de operações. Se você precisar de emparelhamento, envie um email para [askcosmosdbcassandra@microsoft.com](mailto:askcosmosdbcassandra@microsoft.com) com uma descrição do seu cenário.
+No momento, o Azure Cosmos DB tem uma experiência otimizada para o ambiente em nuvem sem a sobrecarga de operações. Se você precisar de emparelhamento, envie um email para [askcosmosdbcassandra@microsoft.com](mailto:askcosmosdbcassandra@microsoft.com) com uma descrição do seu cenário. Estamos trabalhando na oferta de nuvem Cassandra em-local/diferente do cluster à API Cassandra do DB Cosomos de par de Ajuda.
 
 ### <a name="does-cassandra-api-provide-full-backups"></a>A API do Cassandra fornece backups completos?
 
@@ -763,15 +763,12 @@ Você pode adicionar quantas regiões quiser para a conta e controlar para onde 
 
 ### <a name="does-the-apache-cassandra-api-index-all-attributes-of-an-entity-by-default"></a>A API Cassandra indexa todos os atributos de uma entidade por padrão?
 
-Sim, todos os atributos de uma entidade são indexados por padrão pelo Azure Cosmos DB. Para obter mais informações, veja [Azure Cosmos DB: políticas de indexação](index-policy.md). Você sempre obtém os benefícios do desempenho garantido com indexação consistente e gravações confirmadas de quorum duráveis.
+A API do Cassandra está planejando dar suporte à indexação secundária para ajudar a criar o índice seletivo em determinados atributos. 
 
-### <a name="does-this-mean-i-dont-have-to-create-more-than-one-index-to-satisfy-the-queries"></a>Isso significa que não é necessário criar mais de um índice para atender às consultas?
-
-Sim, o Azure Cosmos DB fornece a indexação automática de todos os atributos sem nenhuma definição de esquema. Essa automação libera os desenvolvedores para se concentrarem no aplicativo, em vez de na criação e no gerenciamento de índices. Para obter mais informações, veja [Azure Cosmos DB: políticas de indexação](index-policy.md).
 
 ### <a name="can-i-use-the-new-cassandra-api-sdk-locally-with-the-emulator"></a>Posso usar o novo SDK da API Cassandra localmente com o emulador?
 
-Planejamos oferecer suporte a esse recurso no futuro.
+Isso é suportado Sim.
 
 ### <a name="azure-cosmos-db-as-a-platform-seems-to-have-lot-of-capabilities-such-as-change-feed-and-other-functionality-will-these-capabilities-be-added-to-the-cassandra-api"></a>O Azure Cosmos DB como plataforma parece ter muitas funcionalidades, como feed de alterações e outras funcionalidades. Esses recursos serão adicionados à API do Cassandra?
 

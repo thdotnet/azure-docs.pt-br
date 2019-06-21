@@ -4,14 +4,14 @@ description: Saiba como definir a taxa de transferência provisionada para os co
 author: rimman
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/28/2019
+ms.date: 06/14/2019
 ms.author: rimman
-ms.openlocfilehash: ce059e542ee7bfa67e899b4923e3410e13e4930e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 61f8e93fd82f7da632e0ab7e16ad6fbf4ca25646
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67067514"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67165017"
 ---
 # <a name="provision-throughput-on-containers-and-databases"></a>Aprovisionar a taxa de transferência para contêineres e bancos de dados
 
@@ -72,6 +72,9 @@ A imagem a seguir mostra como uma partição física pode hospedar uma ou mais p
 
 * Você pode criar um banco de dados Cosmos do Azure denominado *Z* com produtividade provisionada da *"K"* RUs. 
 * Em seguida, cria cinco contêineres nomeados *um*, *B*, *C*, *1!d*, e *E* no banco de dados. Ao criar o contêiner B, verifique se você habilitou **taxa de transferência dedicada para esse contêiner provisionar** opção e configurar explicitamente *"P"* RUs da produtividade provisionada neste contêiner. Observe que você pode configurar a taxa de transferência compartilhada e dedicada somente ao criar o banco de dados e o contêiner. 
+
+   ![Definir a taxa de transferência no nível do contêiner](./media/set-throughput/coll-level-throughput.png)
+
 * O *"K"* RUs taxa de transferência é compartilhada entre os contêineres de quatro *um*, *C*, *1!d*, e *E*. A quantidade exata produtividade disponível para *um*, *C*, *1!d*, ou *E* varia de acordo. Não há SLAs para taxa de transferência de cada contêiner individual.
 * O contêiner nomeado *B* é garantia de obter o *"P"* taxa de transferência de RUs o tempo todo. É respaldado por SLAs.
 

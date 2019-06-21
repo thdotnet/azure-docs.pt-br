@@ -4,15 +4,15 @@ description: Este artigo apresenta conceitos, como procedimentos armazenados, ga
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/21/2019
+ms.date: 06/14/2019
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 40d120fe5fcc79721923d3493e74b5195ecc129c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 529c536d9ea3b898745f03c80b63702b2af485da
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65965709"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67165572"
 ---
 # <a name="stored-procedures-triggers-and-user-defined-functions"></a>Procedimentos armazenados, gatilhos e funções definidas pelo usuário
 
@@ -75,7 +75,7 @@ As funções do JavaScript também estão sujeitas à [capacidade de taxa de tra
 
 ## <a name="triggers"></a>Gatilhos
 
-Esta seção descreve os dois tipos de gatilhos:
+O Azure Cosmos DB dá suporte a dois tipos de gatilhos:
 
 ### <a name="pre-triggers"></a>Pré-gatilhos
 
@@ -84,6 +84,9 @@ O Azure Cosmos DB fornece gatilhos que podem ser invocados com a execução de u
 ### <a name="post-triggers"></a>Pós-gatilhos
 
 Assim como os pré-gatilhos, os pós-gatilhos também estão associados a uma operação em um item do Azure Cosmos DB e não exigem nenhum parâmetro de entrada. Eles são executados *após* a conclusão da operação e têm acesso à mensagem de resposta enviada ao cliente. Para obter exemplos, confira o artigo [Como escrever gatilhos](how-to-write-stored-procedures-triggers-udfs.md#triggers).
+
+> [!NOTE]
+> Registrado gatilhos não são executados automaticamente quando as operações correspondentes (Criar / excluir / substituir / atualizar) ocorrer. Eles precisarão ser chamado explicitamente ao executar essas operações. Para obter mais informações, consulte [como executar gatilhos](how-to-use-stored-procedures-triggers-udfs.md#pre-triggers) artigo.
 
 ## <a id="udfs"></a>Funções definidas pelo usuário
 

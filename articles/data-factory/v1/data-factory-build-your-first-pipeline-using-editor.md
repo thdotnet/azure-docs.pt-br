@@ -156,7 +156,7 @@ Nesta etapa, você vincula um cluster do HDInsight sob demanda ao seu data facto
 
     Observe os seguintes pontos:
 
-      a. O data factory cria um cluster do HDInsight baseado no Linux para você com as propriedades do JSON. Para obter mais informações, confira [Serviço vinculado do HDInsight sob demanda](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service).
+     a. O data factory cria um cluster do HDInsight baseado no Linux para você com as propriedades do JSON. Para obter mais informações, confira [Serviço vinculado do HDInsight sob demanda](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service).
 
      b. Você usa seu próprio cluster do HDInsight em vez de usar um cluster do HDInsight sob demanda. Para obter mais informações, confira [Serviço vinculado do HDInsight](data-factory-compute-linked-services.md#azure-hdinsight-linked-service).
 
@@ -334,7 +334,7 @@ Nesta etapa, você cria seu primeiro pipeline com a atividade de Hive do HDInsig
    >
 1. Confirme o seguinte:
 
-    a. O arquivo **input.log** existe na pasta **inputdata** do contêiner **adfgetstarted** no armazenamento de blobs.
+   a. O arquivo **input.log** existe na pasta **inputdata** do contêiner **adfgetstarted** no armazenamento de blobs.
 
    b. O arquivo **partitionweblogs.hql** existe na pasta **script** do contêiner **adfgetstarted** no armazenamento de blobs. Se não encontrar esses arquivos, siga as etapas na seção "Pré-requisitos" [Visão geral do Tutorial](data-factory-build-your-first-pipeline.md).
 

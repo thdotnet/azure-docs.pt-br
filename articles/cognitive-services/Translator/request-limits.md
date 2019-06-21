@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 06/04/2019
 ms.author: erhopf
-ms.openlocfilehash: c19e39918aa64730a35a27fcdadd70800f47f4fa
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d04677362e0ba3ace59d55ede9bd6241f17130e9
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66514650"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67269236"
 ---
 # <a name="request-limits-for-translator-text"></a>Limites de solicitação para a Tradução de Texto
 
@@ -31,14 +31,14 @@ As seguinte tabela listas matriz elemento e o caractere de limites para cada ope
 |:----|:----|:----|:----|
 | Translate | 5\.000 | 100   | 5\.000 |
 | Transliterate | 5\.000 | 10    | 5\.000 |
-| Detect | 10\.000 | 100 |   50\.000 |
-| BreakSentence | 10\.000    | 100 | 5,0000 |
+| Detect | 10.000 | 100 |   50.000 |
+| BreakSentence | 10.000    | 100 | 5,0000 |
 | Pesquisa no dicionário| 100 |  10  | 1\.000 |
 | Exemplos de dicionário | 100 para texto e 100 para tradução (total de 200)| 10|   2\.000 |
 
 ## <a name="character-limits-per-hour"></a>Limites de caractere por hora
 
-Seu limite de caractere por hora baseia-se em sua camada de assinatura de Tradução de Texto. A cota por hora deve ser consumida uniformemente ao longo da hora. Se você atinge ou ultrapassar esses limites ou envia muito grande de uma parte da cota em um curto período de tempo, você provavelmente receberá uma falta de resposta de cota.
+Seu limite de caractere por hora baseia-se em sua camada de assinatura de Tradução de Texto. A cota por hora deve ser consumida uniformemente ao longo da hora. Se você atinge ou ultrapassar esses limites ou envia muito grande de uma parte da cota em um curto período de tempo, você provavelmente receberá uma falta de resposta de cota. Não há nenhum limite nas solicitações simultâneas.
 
 | Camada | Limite de caracteres |
 |------|-----------------|

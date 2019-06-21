@@ -1,5 +1,5 @@
 ---
-title: Azure Application Insights para ASP.NET Core | Microsoft Docs
+title: O Azure Application Insights para aplicativos ASP.NET Core | Microsoft Docs
 description: Monitorar aplicativos web ASP.NET Core de disponibilidade, desempenho e uso.
 services: application-insights
 documentationcenter: .net
@@ -12,58 +12,66 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: mbullwin
-ms.openlocfilehash: cb7ace20fd0a59dafff3d7f8240f54c3c8e12492
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7fe5a4f5a5d1d254918f1b4f997acfb9cf67a75b
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66226406"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67272447"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights para aplicativos ASP.NET Core
 
-Este artigo descreve como habilitar o Application Insights para um [ASP.NET Core](https://docs.microsoft.com/aspnet/core) aplicativo. Quando você concluir as instruções neste artigo, o Application Insights iniciará a coleta de solicitações, dependências, exceções, contadores de desempenho, as pulsações e logs de seu aplicativo ASP.NET Core. O aplicativo de exemplo é um [aplicativo MVC](https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app) direcionamento `netcoreapp2.2`, mas essas instruções são aplicáveis a todos os aplicativos ASP.NET Core.
+Este artigo descreve como habilitar o Application Insights para um [ASP.NET Core](https://docs.microsoft.com/aspnet/core) aplicativo. Quando você concluir as instruções neste artigo, o Application Insights coletará solicitações, dependências, exceções, contadores de desempenho, as pulsações e logs de seu aplicativo ASP.NET Core. 
+
+O exemplo, usaremos aqui é um [aplicativo MVC](https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app) que tem como destino `netcoreapp2.2`. Você pode aplicar estas instruções para todos os aplicativos ASP.NET Core.
 
 ## <a name="supported-scenarios"></a>Cenários com suporte
 
-O [Application Insights SDK (Software Development Kit) para o ASP.NET Core](https://nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore) pode monitorar seus aplicativos, independentemente de onde ou como o aplicativo é executado. Se seu aplicativo está em execução e tem conectividade de rede para o Azure, a telemetria pode ser coletada. Isso significa que monitoramento do Application Insights tem suporte em qualquer lugar, há suporte para .NET Core. Esse suporte inclui qualquer sistema operacional (Windows, Linux, Mac), o método de hospedagem (em processo versus fora do processo), o método de implantação dependente de estrutura vs (independentes), servidor Web (IIS, o Kestrel), plataforma de hospedagem (aplicativos Web do Azure, VM do Azure, Docker, Serviço de Kubernetes do Azure (AKS) e assim por diante.) ou IDE (linha de comando do Visual Studio, VS Code).
+O [SDK do Application Insights para ASP.NET Core](https://nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore) pode monitorar seus aplicativos, independentemente de onde ou como executarem. Se seu aplicativo está em execução e tem conectividade de rede para o Azure, a telemetria pode ser coletada. Monitoramento do Application Insights tem suporte em qualquer lugar, há suporte para .NET Core. O suporte abrange:
+* **Sistema operacional**: Windows, Linux ou Mac.
+* **Método de hospedagem**: No processo ou fora do processo. 
+* **Método de implantação**: Estrutura dependente ou autocontida.
+* **Servidor Web**: O IIS (Internet Information Server) ou o Kestrel. 
+* **Plataforma de hospedagem**: O recurso de aplicativos Web do serviço de aplicativo do Azure, VM do Azure, Docker, serviço de Kubernetes do Azure (AKS) e assim por diante.
+* **IDE**: Visual Studio, VS Code ou linha de comando.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Um aplicativo do ASP.NET Core está funcionando. Siga as [guia de Introdução ao ASP.NET Core obtendo](https://docs.microsoft.com/aspnet/core/getting-started/) para criar um aplicativo ASP.NET Core, se necessário.
-- Uma válido Application Insights chave de instrumentação, que é necessário para enviar qualquer telemetria ao serviço Application Insights. Siga as [criar um recurso instruções](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource) para criar um novo recurso do Application Insights, se necessário e obter uma chave de instrumentação.
+- Um aplicativo ASP.NET Core funcional. Se você precisar criar um aplicativo ASP.NET Core, siga este [tutorial do ASP.NET Core](https://docs.microsoft.com/aspnet/core/getting-started/).
+- Uma chave de instrumentação do Application Insights válida. Essa chave é necessária para enviar qualquer telemetria ao Application Insights. Se você precisar criar um novo recurso do Application Insights para obter uma chave, consulte de instrumentação [criar um recurso do Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/create-new-resource).
 
 ## <a name="enable-application-insights-server-side-telemetry-visual-studio"></a>Habilitar a telemetria do lado do servidor do Application Insights (Visual Studio)
 
 1. Abra o projeto no Visual Studio.
 
     > [!TIP]
-    > Enquanto não é uma etapa obrigatória, pode ser útil configurar o controle de origem para o seu projeto para que você possa acompanhar todas as alterações feitas pelo Application Insights. Para habilitar a seleção do controle de fonte de **arquivo** > **adicionar ao controle do código-fonte**.
+    > Se você quiser, você pode definir o controle de origem para o seu projeto para que você possa acompanhar todas as alterações que torna o Application Insights. Para habilitar o controle do código-fonte, selecione **arquivo** > **adicionar ao controle do código-fonte**.
 
 2. Selecione **Projeto** > **Adicionar Application Insights Telemetry**.
 
-3. Selecione **Introdução**. (Dependendo de sua versão do Visual Studio, o texto pode variar um pouco. Algumas versões mais antigas têm um botão **Iniciar gratuitamente**.)
+3. Selecione **Introdução**. Texto da seleção, este pode variar, dependendo da sua versão do Visual Studio. Algumas versões anteriores usam um **iniciar gratuitamente** botão em vez disso.
 
-4. Selecione sua assinatura e, em seguida, selecione **Recurso** > **Registrar**.
+4. Selecione sua assinatura. Em seguida, selecione **Resource** > **registrar**.
 
-5. Depois de adicionar o Application Insights ao seu projeto, verifique para confirmar que você está usando a versão estável mais recente do SDK. Vá para **Project** > **Manage NuGet Packages** > **aspnetcore** > Se for necessário escolher **Atualização**.
+5. Depois de adicionar o Application Insights ao seu projeto, verifique para confirmar que você está usando a versão estável mais recente do SDK. Vá para **Project** > **gerenciar pacotes NuGet** > **aspnetcore**. Se for necessário, escolha **atualização**.
 
-     ![Captura de tela de gerenciar a tela de pacote do NuGet com selecionados para atualização de pacote do Application Insights](./media/asp-net-core/update-nuget-package.png)
+     ![Captura de tela mostrando onde selecionar o pacote do Application Insights para atualização](./media/asp-net-core/update-nuget-package.png)
 
-6. Se você seguido a dica opcional e adicionados a seu projeto ao controle de origem, em seguida, você pode ir para **modo de exibição** > **Team Explorer** > **alterações** e Selecione cada arquivo individual para um modo de exibição de comparação das alterações feitas da adição de telemetria do Application Insights.
+6. Se você seguido a dica opcional e adicionados a seu projeto ao controle de origem, acesse **modo de exibição** > **Team Explorer** > **alterações**. Em seguida, selecione cada arquivo para ver uma exibição de comparação das alterações feitas por telemetria do Application Insights.
 
-## <a name="enable-application-insights-server-side-telemetry-without-visual-studio"></a>Habilitar a telemetria do Application Insights do lado do servidor (sem o Visual Studio)
+## <a name="enable-application-insights-server-side-telemetry-no-visual-studio"></a>Habilitar a telemetria do Application Insights do lado do servidor (sem o Visual Studio)
 
-1. Instalar o [pacote do NuGet do SDK do Application Insights para ASP.NET Core](https://nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore). É recomendável usar sempre a versão estável mais recente. Notas de versão completo para o SDK podem ser encontradas na [abrir repositório GitHub de código-fonte](https://github.com/Microsoft/ApplicationInsights-aspnetcore/releases).
+1. Instalar o [pacote do NuGet do SDK do Application Insights para ASP.NET Core](https://nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore). É recomendável que você sempre use a versão estável mais recente. Encontra as notas de versão completa para o SDK na [repositório GitHub de código-fonte aberto](https://github.com/Microsoft/ApplicationInsights-aspnetcore/releases).
 
-    O trecho a seguir mostra as alterações a serem adicionados ao seu projeto `.csproj` arquivo.
+    O exemplo de código a seguir mostra as alterações a serem adicionados ao seu projeto `.csproj` arquivo.
 
     ```xml
         <ItemGroup>
-          <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.6.1" />
+          <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.7.0" />
         </ItemGroup>
     ```
 
-2. Adicione `services.AddApplicationInsightsTelemetry();` para o `ConfigureServices()` método na sua `Startup` classe. Exemplo completo abaixo.
+2. Adicione `services.AddApplicationInsightsTelemetry();` para o `ConfigureServices()` método na sua `Startup` classe, como neste exemplo:
 
     ```csharp
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -72,14 +80,14 @@ O [Application Insights SDK (Software Development Kit) para o ASP.NET Core](http
             // The following line enables Application Insights telemetry collection.
             services.AddApplicationInsightsTelemetry();
     
-            // code adding other services for your application
+            // This code adds other services for your application.
             services.AddMvc();
         }
     ```
 
 3. Configure a chave de instrumentação.
 
-    Embora seja possível fornecer a chave de instrumentação como um argumento para `AddApplicationInsightsTelemetry`, recomendamos que você especifique a chave de instrumentação na configuração. A seguir mostra como especificar uma chave de instrumentação em `appsettings.json`. Certifique-se de `appsettings.json` é copiado para a pasta raiz de aplicativo durante a publicação.
+    Embora você possa fornecer a chave de instrumentação como um argumento para `AddApplicationInsightsTelemetry`, recomendamos que você especifique a chave de instrumentação na configuração. O exemplo de código a seguir mostra como especificar uma chave de instrumentação em `appsettings.json`. Certifique-se de `appsettings.json` é copiado para a pasta raiz do aplicativo durante a publicação.
 
     ```json
         {
@@ -94,57 +102,58 @@ O [Application Insights SDK (Software Development Kit) para o ASP.NET Core](http
         }
     ```
 
-    Como alternativa, a chave de instrumentação também pode ser especificada em qualquer uma das seguintes variáveis de ambiente.
+    Como alternativa, especifique a chave de instrumentação em qualquer uma das seguintes variáveis de ambiente:
 
-    APPINSIGHTS_INSTRUMENTATIONKEY
+    * `APPINSIGHTS_INSTRUMENTATIONKEY`
 
-    ApplicationInsights:InstrumentationKey
+    * `ApplicationInsights:InstrumentationKey`
 
-    Exemplo:
+    Por exemplo:
 
-    `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
+    * `SET ApplicationInsights:InstrumentationKey=putinstrumentationkeyhere`
 
-    `SET APPINSIGHTS_INSTRUMENTATIONKEY=putinstrumentationkeyhere`
+    * `SET APPINSIGHTS_INSTRUMENTATIONKEY=putinstrumentationkeyhere`
 
-    `APPINSIGHTS_INSTRUMENTATIONKEY` normalmente é usado para especificar a chave de instrumentação para aplicativos implantados para aplicativos Web do Azure.
+    Normalmente, `APPINSIGHTS_INSTRUMENTATIONKEY` Especifica a chave de instrumentação para aplicativos implantados para os aplicativos Web.
 
     > [!NOTE]
-    > Uma chave de instrumentação especificada no código wins pela variável de ambiente `APPINSIGHTS_INSTRUMENTATIONKEY`, qual vence sobre outras opções.
+    > Uma chave de instrumentação especificada no código wins sobre a variável de ambiente `APPINSIGHTS_INSTRUMENTATIONKEY`, qual vence sobre outras opções.
 
 ## <a name="run-your-application"></a>Execute seu aplicativo.
 
- Executar o aplicativo e fazer solicitações a ele. Telemetria agora deve começar a fluir para o Application Insights. A telemetria a seguir é coletada automaticamente pelo SDK do Application Insights.
+Executar o aplicativo e fazer solicitações a ele. Telemetria agora deve fluir para o Application Insights. SDK do Application Insights coleta automaticamente a telemetria a seguir.
 
 |Solicitações/dependências |Detalhes|
 |---------------|-------|
 |Requests | Solicitações de entrada da web ao seu aplicativo. |
-|Http/Https | Chamadas feitas com `HttpClient`. |
+|HTTP ou HTTPS | Chamadas feitas com `HttpClient`. |
 |SQL | Chamadas feitas com `SqlClient`. |
 |[Armazenamento do Azure](https://www.nuget.org/packages/WindowsAzure.Storage/) | Chamadas feitas com o cliente de armazenamento do Azure. |
-|[SDK do cliente do hub de eventos](https://www.nuget.org/packages/Microsoft.Azure.EventHubs) | Versão 1.1.0 e superior. |
-|[SDK do Cliente do Barramento de Serviço](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus)| Versão 3.0.0 e superior. |
-|Azure Cosmos DB | Acompanhada automaticamente somente se o HTTP/HTTPS é usado. O modo TCP não será capturado pelo Application Insights. |
+|[SDK do cliente de hubs de eventos](https://www.nuget.org/packages/Microsoft.Azure.EventHubs) | Versão 1.1.0 e versões posteriores. |
+|[SDK do cliente do barramento de serviço](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus)| Versão 3.0.0 e posterior. |
+|Azure Cosmos DB | Acompanhada automaticamente somente se o HTTP/HTTPS é usado. Application Insights não captura o modo TCP. |
 
-### <a name="performance-counters"></a>Contadores de desempenho
+### <a name="performance-counters"></a>contadores de desempenho
 
-Suporte para [contadores de desempenho](https://azure.microsoft.com/documentation/articles/app-insights-web-monitor-performance/) no ASP.NET Core é limitado ao seguinte
+Suporte para [contadores de desempenho](https://azure.microsoft.com/documentation/articles/app-insights-web-monitor-performance/) no ASP.NET Core é limitada:
 
-   * O SDK versão 2.4.1 e acima coleta contadores de desempenho se o aplicativo estiver em execução no Azure Web App (Windows)
-   * SDK versão 2.7.0-beta3 e acima coleta contadores de desempenho se o aplicativo está em execução no Windows e direcionamento `NETSTANDARD2.0` ou superior.
-   * Para aplicativos destinados ao .NET Framework, os contadores de desempenho têm suporte em todas as versões do SDK.
-   * Este artigo será atualizado quando o suporte de contador de desempenho no Linux é adicionado.
+   * Versões do SDK 2.4.1 e posteriormente coletar contadores se o aplicativo estiver em execução nos aplicativos Web (Windows).
+   * 2\.7.0-beta3 de versões do SDK e posterior desempenho coletar contadores de se o aplicativo estiver em execução no Windows e destinos `NETSTANDARD2.0` ou posterior.
+   * Para aplicativos destinados ao .NET Framework, todas as versões do SDK oferece suporte a contadores de desempenho.
+ 
+Este artigo será atualizado quando o suporte de contador de desempenho no Linux é adicionado.
 
 ### <a name="ilogger-logs"></a>Logs de ILogger
 
-[Logs de ILogger](https://docs.microsoft.com/azure/azure-monitor/app/ilogger) de gravidade `Warning` ou acima são automaticamente capturados do SDK versão 2.7.0-beta3 ou superior.
+[Logs de ILogger](https://docs.microsoft.com/azure/azure-monitor/app/ilogger) de gravidade `Warning` ou superior são automaticamente capturados no SDK versões 2.7.0-beta3 e versões posteriores.
 
 ### <a name="live-metrics"></a>Métricas em tempo real
 
-Ele pode levar alguns minutos para que a telemetria começar a aparecer no portal. Para verificar rapidamente se tudo está funcionando, é melhor usar [Live Metrics](https://docs.microsoft.com/azure/application-insights/app-insights-live-stream), enquanto a tomada de solicitações para o aplicativo em execução.
+Pode levar alguns minutos antes do início de telemetria que aparecem no portal. Para fazer rapidamente se tudo está funcionando, é melhor usar [Live Metrics](https://docs.microsoft.com/azure/application-insights/app-insights-live-stream) quando você faz solicitações para o aplicativo em execução.
 
-## <a name="enable-client-side-telemetry-for-web-applications"></a>Habilitar a telemetria do lado do cliente para aplicativos Web
+## <a name="enable-client-side-telemetry-for-web-applications"></a>Habilitar a telemetria do lado do cliente para aplicativos da web
 
-As etapas acima são suficientes para iniciar a coleta de telemetria do lado do servidor. Se seu aplicativo tiver componentes do lado do cliente, siga as etapas abaixo para iniciar a coleta [telemetria de uso](https://docs.microsoft.com/azure/azure-monitor/app/usage-overview) a partir daí.
+As etapas anteriores são suficientes para ajudar você a começar a coleta de telemetria do lado do servidor. Se seu aplicativo tiver componentes do lado do cliente, siga as próximas etapas para iniciar a coleta [telemetria de uso](https://docs.microsoft.com/azure/azure-monitor/app/usage-overview).
 
 1. No `_ViewImports.cshtml`, injeção de adicionar:
 
@@ -152,25 +161,27 @@ As etapas acima são suficientes para iniciar a coleta de telemetria do lado do 
         @inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
     ```
 
-2. Na `_Layout.cshtml`, insira HtmlHelper ao final da `<head>` seção, mas antes de qualquer outro script. Qualquer telemetria JavaScript personalizada que você deseja relatar a partir da página deve ser inserida após este trecho de código:
+2. Na `_Layout.cshtml`, insira `HtmlHelper` no final do `<head>` seção, mas antes de qualquer outro script. Se você desejar relatar qualquer telemetria personalizada do JavaScript na página, injetá-la após este trecho de código:
 
     ```cshtml
         @Html.Raw(JavaScriptSnippet.FullScript)
         </head>
     ```
 
-O `.cshtml` nomes de arquivos mencionados acima são de um modelo de aplicativo do MVC padrão. Por fim, para habilitar o monitoramento do lado do cliente para seu aplicativo corretamente, você precisa o trecho de JavaScript estejam presentes no `<head>` seção de cada página do seu aplicativo que você deseja monitorar. Para este modelo de aplicativo adicionando o trecho de Javascript `_Layout.cshtml` será efetivamente atingir essa meta. Se seu projeto não tiver esse arquivo específico, ainda, você pode adicionar [monitoramento do lado do cliente](https://docs.microsoft.com/azure/azure-monitor/app/website-monitoring). Você apenas precisa como adicionaria o JavaScript para um arquivo equivalente que controla o `<head>` de todas as páginas dentro de seu aplicativo, ou como alternativa, você pode adicionar o trecho de código, a pessoa várias páginas, embora isso seria difícil de manter e geralmente não é recomendado.
+O `.cshtml` nomes de arquivo mencionados anteriormente são de um modelo de aplicativo do MVC padrão. Por fim, se você quiser habilitar o monitoramento do lado do cliente para seu aplicativo corretamente, o trecho de JavaScript deve aparecer no `<head>` seção de cada página do seu aplicativo que você deseja monitorar. Você pode atingir essa meta para este modelo de aplicativo adicionando o trecho de JavaScript para `_Layout.cshtml`. 
 
-## <a name="configuring-application-insights-sdk"></a>Configurando o SDK do Application Insights
+Se seu projeto não inclua `_Layout.cshtml`, você pode adicionar ainda [monitoramento do lado do cliente](https://docs.microsoft.com/azure/azure-monitor/app/website-monitoring). Você pode fazer isso adicionando o trecho de JavaScript para um arquivo equivalente que controla o `<head>` de todas as páginas dentro de seu aplicativo. Ou você pode adicionar o trecho de código para várias páginas, mas essa solução é difícil de manter e geralmente não é recomendável.
 
-SDK do Application Insights para ASP.NET Core pode ser personalizado para alterar a configuração padrão. Os usuários do SDK do ASP.NET do Application Insights podem estar familiarizados com a configuração usando `ApplicationInsights.config`, ou modificando `TelemetryConfiguration.Active`. Para o ASP.NET Core, configuração é feita de forma diferente. O SDK do ASP.NET Core é adicionado ao aplicativo e configurado usando internos do ASP.NET Core [injeção de dependência](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection). Quase todas as alterações são feitas na `ConfigureServices()` método de sua `Startup.cs` de classe, a menos que indicado de outra forma. Siga as seções abaixo para saber mais.
+## <a name="configure-the-application-insights-sdk"></a>Configurar o SDK do Application Insights
+
+Você pode personalizar o SDK do Application Insights para ASP.NET Core alterar a configuração padrão. Os usuários do SDK do Application Insights ASP.NET podem estar familiarizados com a alteração de configuração por meio `ApplicationInsights.config` ou modificando `TelemetryConfiguration.Active`. Você alterar a configuração de forma diferente para o ASP.NET Core. Adicionar o SDK do ASP.NET Core para o aplicativo e configurá-lo usando o ASP.NET Core internos [injeção de dependência](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection). Fazer quase todas as alterações de configuração na `ConfigureServices()` método de sua `Startup.cs` de classe, a menos que você está direcionado de outra forma. As seções a seguir oferecem mais informações.
 
 > [!NOTE]
->  Alterando a configuração modificando `TelemetryConfiguration.Active` não é recomendado em aplicativos ASP.NET Core.
+> Em aplicativos ASP.NET Core, alterando a configuração modificando `TelemetryConfiguration.Active` não é recomendado.
 
-### <a name="configuring-using-applicationinsightsserviceoptions"></a>Configurar usando ApplicationInsightsServiceOptions
+### <a name="using-applicationinsightsserviceoptions"></a>Usando ApplicationInsightsServiceOptions
 
-É possível modificar algumas configurações comuns, passando `ApplicationInsightsServiceOptions` para `AddApplicationInsightsTelemetry`. Um exemplo é mostrado abaixo.
+Você pode modificar algumas configurações comuns, passando `ApplicationInsightsServiceOptions` para `AddApplicationInsightsTelemetry`, como neste exemplo:
 
 ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -186,17 +197,19 @@ SDK do Application Insights para ASP.NET Core pode ser personalizado para altera
     }
 ```
 
-A lista exata de definições configuráveis na `ApplicationInsightsServiceOptions` pode ser encontrado [aqui](https://github.com/microsoft/ApplicationInsights-aspnetcore/blob/develop/src/Microsoft.ApplicationInsights.AspNetCore/Extensions/ApplicationInsightsServiceOptions.cs).
+Para obter mais informações, consulte o [definições configuráveis na `ApplicationInsightsServiceOptions` ](https://github.com/microsoft/ApplicationInsights-aspnetcore/blob/develop/src/Microsoft.ApplicationInsights.AspNetCore/Extensions/ApplicationInsightsServiceOptions.cs).
 
 ### <a name="sampling"></a>amostragem
 
-SDK do Application Insights para ASP.NET Core dá suporte a FixedRate e amostragem adaptável. Amostragem adaptável está habilitada por padrão. Siga nossos [orientações sobre a amostragem adaptável](../../azure-monitor/app/sampling.md#configuring-adaptive-sampling-for-aspnet-core-applications), para aprender a configurar a amostragem para aplicativos ASP.NET Core.
+SDK do Application Insights para ASP.NET Core dá suporte a taxa fixa e a amostragem adaptável. Amostragem adaptável está habilitada por padrão. 
+
+Para obter mais informações, consulte [configurar a amostragem adaptável para aplicativos ASP.NET Core](../../azure-monitor/app/sampling.md#configuring-adaptive-sampling-for-aspnet-core-applications).
 
 ### <a name="adding-telemetryinitializers"></a>Adicionando TelemetryInitializers
 
-[Inicializadores de telemetria](https://docs.microsoft.com/azure/azure-monitor/app/api-filtering-sampling#add-properties-itelemetryinitializer) são usadas quando você deseja definir propriedades globais que são enviadas com toda a telemetria.
+Use [inicializadores de telemetria](https://docs.microsoft.com/azure/azure-monitor/app/api-filtering-sampling#add-properties-itelemetryinitializer) quando você deseja definir propriedades globais que são enviadas com toda a telemetria.
 
-Para adicionar uma nova `TelemetryInitializer`, adicioná-lo no contêiner DependencyInjection, conforme mostrado abaixo. `TelemetryInitializer`s adicionado ao contêiner DependencyInjection será captado pelo SDK automaticamente.
+Adicionar qualquer nova `TelemetryInitializer` para o `DependencyInjection` contêiner conforme mostrado no código a seguir. O SDK escolherá automaticamente qualquer `TelemetryInitializer` que é adicionado para o `DependencyInjection` contêiner.
 
 ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -207,14 +220,14 @@ Para adicionar uma nova `TelemetryInitializer`, adicioná-lo no contêiner Depen
 
 ### <a name="removing-telemetryinitializers"></a>Removendo TelemetryInitializers
 
-Para remover todos os ou TelemetryInitializers específicos, que estão presentes por padrão, use o seguinte código de exemplo **após** chamar `AddApplicationInsightsTelemetry()`.
+Inicializadores de telemetria estão presentes por padrão. Para remover todos os ou inicializadores de telemetria específico, use o seguinte código de exemplo *após* chamar `AddApplicationInsightsTelemetry()`.
 
 ```csharp
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddApplicationInsightsTelemetry();
 
-        // Remove a specific built-in TelemetryInitializer
+        // Remove a specific built-in telemetry initializer
         var tiToRemove = services.FirstOrDefault<ServiceDescriptor>
                          (t => t.ImplementationType == typeof(AspNetCoreEnvironmentTelemetryInitializer));
         if (tiToRemove != null)
@@ -223,14 +236,14 @@ Para remover todos os ou TelemetryInitializers específicos, que estão presente
         }
 
         // Remove all initializers
-        // This requires importing namespace using Microsoft.Extensions.DependencyInjection.Extensions;
+        // This requires importing namespace by using Microsoft.Extensions.DependencyInjection.Extensions;
         services.RemoveAll(typeof(ITelemetryInitializer));
     }
 ```
 
-### <a name="adding-telemetryprocessors"></a>Adicionando TelemetryProcessors
+### <a name="adding-telemetry-processors"></a>Adição de processadores de telemetria
 
-Processadores de telemetria personalizada podem ser adicionados para o `TelemetryConfiguration` usando o método de extensão `AddApplicationInsightsTelemetryProcessor` em `IServiceCollection`. Processadores de telemetria são usados em [cenários de filtragem avançada](https://docs.microsoft.com/azure/azure-monitor/app/api-filtering-sampling#filtering-itelemetryprocessor) para permitir o controle mais direto sobre o que é incluído ou excluído da telemetria que você envia para o serviço do Application Insights. Use o exemplo a seguir.
+Você pode adicionar processadores de telemetria personalizada para `TelemetryConfiguration` usando o método de extensão `AddApplicationInsightsTelemetryProcessor` em `IServiceCollection`. Você usa os processadores de telemetria no [cenários de filtragem avançada](https://docs.microsoft.com/azure/azure-monitor/app/api-filtering-sampling#filtering-itelemetryprocessor) para permitir o controle mais direto sobre o que tem incluídos ou excluídos da telemetria que você envia para o serviço do Application Insights. Use o exemplo a seguir.
 
 ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -246,9 +259,9 @@ Processadores de telemetria personalizada podem ser adicionados para o `Telemetr
 
 ### <a name="configuring-or-removing-default-telemetrymodules"></a>Configuração ou remoção de padrão TelemetryModules
 
-O Application Insights usa módulos de telemetria como uma forma de [-coleta automaticamente informações úteis](https://docs.microsoft.com/azure/azure-monitor/app/auto-collect-dependencies) sobre cargas de trabalho específicas sem a necessidade de configuração adicional.
+O Application Insights usa módulos de telemetria [coletar automaticamente informações úteis](https://docs.microsoft.com/azure/azure-monitor/app/auto-collect-dependencies) sobre cargas de trabalho específicas sem a necessidade de configuração adicional.
 
-Os seguintes módulos de coleta automática são habilitados por padrão e são responsáveis por coletar automaticamente a telemetria. Pode ser desabilitados e configurados para alterar o comportamento padrão.
+Os seguintes módulos de coleção automáticas são habilitados por padrão. Esses módulos são responsáveis por coletar automaticamente a telemetria. Você pode desabilitar ou configurá-los para alterar seu comportamento padrão.
 
 * `RequestTrackingTelemetryModule`
 * `DependencyTrackingTelemetryModule`
@@ -257,7 +270,7 @@ Os seguintes módulos de coleta automática são habilitados por padrão e são 
 * `AppServicesHeartbeatTelemetryModule`
 * `AzureInstanceMetadataTelemetryModule`
 
-Para configurar qualquer padrão `TelemetryModule`, use o método de extensão `ConfigureTelemetryModule<T>` em `IServiceCollection` conforme mostrado no exemplo a seguir.
+Para configurar qualquer padrão `TelemetryModule`, use o método de extensão `ConfigureTelemetryModule<T>` em `IServiceCollection`, conforme mostrado no exemplo a seguir.
 
 ```csharp
 using Microsoft.ApplicationInsights.DependencyCollector;
@@ -284,17 +297,17 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector;
     }
 ```
 
-### <a name="configuring-telemetry-channel"></a>Configurando o canal de telemetria
+### <a name="configuring-a-telemetry-channel"></a>Configurar um canal de telemetria
 
-O canal padrão usado é o `ServerTelemetryChannel`. Ele pode ser substituído pelo exemplo a seguir.
+O canal padrão é `ServerTelemetryChannel`. Você pode substituí-la como mostra o exemplo a seguir.
 
 ```csharp
 using Microsoft.ApplicationInsights.Channel;
 
     public void ConfigureServices(IServiceCollection services)
     {
-        // use the following to replace the default channel with InMemoryChannel.
-        // this can also be applied to ServerTelemetryChannel as well.
+        // Use the following to replace the default channel with InMemoryChannel.
+        // This can also be applied to ServerTelemetryChannel.
         services.AddSingleton(typeof(ITelemetryChannel), new InMemoryChannel() {MaxTelemetryBufferCapacity = 19898 });
 
         services.AddApplicationInsightsTelemetry();
@@ -303,9 +316,11 @@ using Microsoft.ApplicationInsights.Channel;
 
 ## <a name="frequently-asked-questions"></a>Perguntas frequentes
 
-### <a name="i-want-to-track-additional-telemetry-other-than-the-auto-collected-telemetry-how-do-i-do-it"></a>Eu quero acompanhar telemetria adicional que não seja a telemetria coletado automaticamente. Como fazer isso?
+### <a name="how-can-i-track-telemetry-thats-not-automatically-collected"></a>Como posso acompanhar telemetria coletada automaticamente?
 
-Obtenha uma instância de `TelemetryClient` usando a injeção de construtor e chamar o necessária `TrackXXX()` método nele. Não é recomendável criar um novo `TelemetryClient` instâncias do aplicativo do ASP.NET Core, como uma instância singleton da `TelemetryClient` já está registrado no contêiner de DI compartilha `TelemetryConfiguration` com o restante da telemetria. Criando um novo `TelemetryClient` instância é recomendada somente se ele deve ter uma configuração separada do restante da telemetria. O exemplo a seguir mostra como acompanhar a telemetria adicional de um controlador.
+Obtenha uma instância de `TelemetryClient` usando a injeção de construtor e chamar o necessária `TrackXXX()` método nele. Não recomendamos criar novos `TelemetryClient` instâncias em um aplicativo ASP.NET Core. Uma instância singleton da `TelemetryClient` já está registrado na `DependencyInjection` contêiner, que compartilha `TelemetryConfiguration` com o restante da telemetria. Criando um novo `TelemetryClient` instância é recomendada somente se precisar de uma configuração que é separada do restante da telemetria. 
+
+O exemplo a seguir mostra como acompanhar a telemetria adicional de um controlador.
 
 ```csharp
 using Microsoft.ApplicationInsights;
@@ -314,7 +329,7 @@ public class HomeController : Controller
 {
     private TelemetryClient telemetry;
 
-    // use constructor injection to get TelemetryClient instance
+    // Use constructor injection to get a TelemetryClient instance.
     public HomeController(TelemetryClient telemetry)
     {
         this.telemetry = telemetry;
@@ -322,44 +337,45 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        // call required TrackXXX method.
+        // Call the required TrackXXX method.
         this.telemetry.TrackEvent("HomePageRequested");
         return View();
     }
 ```
 
- Consulte a [métricas personalizadas do Application Insights referência da API](https://docs.microsoft.com/azure/azure-monitor/app/api-custom-events-metrics/) para obter uma descrição de relatórios do Application Insights de dados personalizados.
+Para obter mais informações sobre relatórios do Application Insights de dados personalizados, consulte [métricas personalizadas do Application Insights referência da API](https://docs.microsoft.com/azure/azure-monitor/app/api-custom-events-metrics/).
 
-### <a name="some-visual-studio-templates-used-useapplicationinsights-extension-method-on-iwebhostbuilder-to-enable-application-insights-is-this-usage-still-valid"></a>Alguns modelos do Visual Studio usado o método de extensão UseApplicationInsights() no IWebHostBuilder para habilitar o Application Insights. Esse uso ainda é válida?
+### <a name="some-visual-studio-templates-used-the-useapplicationinsights-extension-method-on-iwebhostbuilder-to-enable-application-insights-is-this-usage-still-valid"></a>Alguns modelos do Visual Studio usado o método de extensão UseApplicationInsights() no IWebHostBuilder para habilitar o Application Insights. Esse uso ainda é válida?
 
-Habilitar o Application Insights com esse método é válido e é usado na integração do Visual Studio e nas extensões do aplicativo Web do Azure. No entanto, é recomendável usar `services.AddApplicationInsightsTelemetry()` pois ele fornece sobrecargas para controlar algumas configurações. Ambos os métodos internamente fazem a mesma coisa, portanto, se não há nenhuma configuração personalizada a ser aplicado, chamar qualquer uma serve.
+Sim, habilitar o Application Insights com esse método é válido. Essa técnica é usada na integração do Visual Studio e nas extensões de aplicativos Web. No entanto, é recomendável usar `services.AddApplicationInsightsTelemetry()` porque ele fornece sobrecargas para controlar algumas configurações. Ambos os métodos de fazem a mesma coisa internamente, portanto, se você não precisa aplicar a configuração personalizada, você pode chamar qualquer um dos métodos.
 
-### <a name="i-am-deploying-my-aspnet-core-application-to-azure-web-apps-should-i-still-enable-the-application-insights-extension-from-web-apps"></a>Eu estou implantando meu aplicativo ASP.NET Core, aplicativos Web do Azure. Devo habilitar a extensão do Application Insights de aplicativos Web ainda?
+### <a name="im-deploying-my-aspnet-core-application-to-web-apps-should-i-still-enable-the-application-insights-extension-from-web-apps"></a>Eu estou implantando meu aplicativo ASP.NET Core nos aplicativos Web. Devo habilitar a extensão do Application Insights de aplicativos Web ainda?
 
-Se o SDK está instalado no momento da compilação, conforme mostrado neste artigo, não é necessário para habilitar a extensão do Application Insights do portal do serviço de aplicativo. Mesmo se a extensão é instalada, fará logoff quando detecta que o SDK já foi adicionado ao aplicativo. Habilitar o Application Insights da extensão libera você da instalação e atualização do SDK. No entanto, habilitar o Application Insights, de acordo com este artigo é mais flexível para motivos abaixo.
+Se o SDK está instalado no momento da compilação, conforme mostrado neste artigo, você não precisa habilitar a extensão do Application Insights do portal do serviço de aplicativo. Mesmo se a extensão é instalada, fará logoff quando detecta que o SDK já foi adicionado ao aplicativo. Se você habilitar o Application Insights a extensão, você não precisa instalar e atualizar o SDK. Mas se você habilitar o Application Insights seguindo as instruções neste artigo, você tem mais flexibilidade porque:
+
    * Telemetria do Application Insights continuarão funcionando:
-       * Todos os sistemas operacionais - Mac Windows, Linux.
-       * Todos os modos de - de publicação independente ou dependente do Framework.
+       * Todos os sistemas operacionais, incluindo Windows, Linux e Mac.
+       * Todos os modos, de publicação incluindo independente ou dependente do framework.
        * Todas as estruturas de destino, incluindo o .NET Framework completo.
-       * Todas as opções de hospedagem - aplicativo Web do Azure, VMs, Linux, contêineres, AKS, não do Azure.
-   * Telemetria pode ser vista localmente, durante a depuração do Visual Studio.
-   * Permite o uso do acompanhamento de telemetria personalizada adicional `TrackXXX()` API.
+       * Todas as opções de hospedagem, incluindo aplicativos Web, máquinas virtuais, Linux, contêineres, serviço Kubernetes do Azure e não Azure hospeda.
+   * Você pode ver a telemetria localmente quando você estiver depurando no Visual Studio.
+   * Você pode acompanhar a telemetria personalizada adicional usando o `TrackXXX()` API.
    * Você tem controle total sobre a configuração.
 
-### <a name="can-i-enable-application-insights-monitoring-using-tools-like-status-monitor"></a>Posso habilitar o monitoramento do Application Insights usando ferramentas como o Monitor de Status?
+### <a name="can-i-enable-application-insights-monitoring-by-using-tools-like-status-monitor"></a>Posso habilitar o monitoramento do Application Insights usando ferramentas como o Monitor de Status?
 
-Não. [Monitor de status](https://docs.microsoft.com/azure/azure-monitor/app/monitor-performance-live-website-now) e sua substituição futura [v2 do Monitor de Status](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview) atualmente dá suporte a ASP.NET 4. x somente.
+Não. [Monitor de status](https://docs.microsoft.com/azure/azure-monitor/app/monitor-performance-live-website-now) e [v2 do Monitor de Status](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview) atualmente dão suporte ao ASP.NET 4. x somente.
 
-### <a name="i-have-an-aspnet-core-20-application-isnt-application-insights-automatically-enabled-without-me-doing-anything"></a>Eu tenho um aplicativo do ASP.NET Core 2.0. Application Insights não está automaticamente habilitada sem eu fazer nada?
+### <a name="is-application-insights-automatically-enabled-for-my-aspnet-core-20-application"></a>Application Insights é habilitado automaticamente para o meu aplicativo ASP.NET Core 2.0?
 
-`Microsoft.AspNetCore.All` metapacote 2.0 incluído o SDK do Application Insights (versão 2.1.0) e se você executar o aplicativo no depurador do Visual Studio, Visual Studio permite que o Application Insights e mostra a telemetria localmente no próprio IDE. Telemetria não foi enviada para o serviço do Application Insights, a menos que uma chave de instrumentação é especificada explicitamente. É recomendável seguir as instruções neste artigo para habilitar o Application Insights, mesmo para 2.0 aplicativos.
+O `Microsoft.AspNetCore.All` metapacote 2.0 incluídos SDK do Application Insights (versão 2.1.0). Se você executar o aplicativo no depurador do Visual Studio, o Visual Studio permite que o Application Insights e mostra a telemetria localmente no próprio IDE. A telemetria não foi enviada para o serviço do Application Insights, a menos que uma chave de instrumentação foi especificada. É recomendável seguir as instruções neste artigo para habilitar o Application Insights, mesmo para 2.0 aplicativos.
 
-### <a name="i-run-my-application-in-linux-are-all-features-supported-in-linux-as-well"></a>Executo meu aplicativo no Linux. Todos os recursos também têm suporte no Linux?
+### <a name="if-i-run-my-application-in-linux-are-all-features-supported"></a>Se eu executar meu aplicativo no Linux, todos os recursos têm suporte?
 
-* Sim. Suporte de recurso para o SDK é o mesmo em todas as plataformas, com as seguintes exceções:
+Sim. Suporte de recurso para o SDK é a mesma em todas as plataformas, com as seguintes exceções:
 
-    * Contadores de desempenho ainda não têm suporte no Windows não.
-    * Embora `ServerTelemetryChannel` está habilitado por padrão, se o aplicativo estiver em execução no Linux ou MacOS, o canal não cria automaticamente uma pasta de armazenamento local para manter a telemetria temporariamente se houver problemas de rede. Essa limitação faz com que a telemetria serão perdidos se houver problemas de servidor ou de rede temporária. A solução alternativa para esse problema é para o usuário configure uma pasta local para o canal, conforme mostrado abaixo.
+* Contadores de desempenho têm suporte apenas no Windows.
+* Embora `ServerTelemetryChannel` está habilitado por padrão, se o aplicativo estiver em execução no Linux ou MacOS, o canal não cria automaticamente uma pasta de armazenamento local para manter a telemetria temporariamente se houver problemas de rede. Devido a essa limitação, a telemetria é perdida quando há problemas temporários de rede ou servidor. Para contornar esse problema, configure uma pasta local para o canal:
 
 ```csharp
 using Microsoft.ApplicationInsights.Channel;
@@ -367,10 +383,10 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 
     public void ConfigureServices(IServiceCollection services)
     {
-        // The following will configure channel to use the given folder to temporarily
-        // store telemetry items during network or application insights server issues.
-        // User should ensure that the given folder already exists,
-        // and that application has read/write permissions.
+        // The following will configure the channel to use the given folder to temporarily
+        // store telemetry items during network or Application Insights server issues.
+        // User should ensure that the given folder already exists
+        // and that the application has read/write permissions.
         services.AddSingleton(typeof(ITelemetryChannel),
                                 new ServerTelemetryChannel () {StorageFolder = "/tmp/myfolder"});
         services.AddApplicationInsightsTelemetry();
@@ -378,15 +394,17 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 ```
 
 ## <a name="open-source-sdk"></a>SDK do código-fonte aberto
+
 [Ler e contribuir para o código](https://github.com/Microsoft/ApplicationInsights-aspnetcore#recent-updates).
 
 ## <a name="video"></a>Vídeo
 
-- Vídeo externo de passo a passo sobre [configuração do Application Insights com um .NET Core e Visual Studio](https://www.youtube.com/watch?v=NoS9UhcR4gA&t) a partir do zero.
-- Vídeo externo de passo a passo sobre [configuração do Application Insights com um .NET Core e Visual Studio Code](https://youtu.be/ygGt84GDync) a partir do zero.
+- Confira este vídeo passo a passo externo para [configurar o Application Insights com o .NET Core e o Visual Studio](https://www.youtube.com/watch?v=NoS9UhcR4gA&t) do zero.
+- Confira este vídeo passo a passo externo para [configurar o Application Insights com o .NET Core e o Visual Studio Code](https://youtu.be/ygGt84GDync) do zero.
 
 ## <a name="next-steps"></a>Próximas etapas
-* [Explorar os Fluxos dos Usuários](../../azure-monitor/app/usage-flows.md) para entender como os usuários navegam por meio de seu aplicativo.
-* [Configure a Coleção de Instantâneos](https://docs.microsoft.com/azure/application-insights/app-insights-snapshot-debugger) para ver o estado do código-fonte e as variáveis no momento em que uma exceção é lançada.
-* [Use a API](../../azure-monitor/app/api-custom-events-metrics.md) para enviar seus próprios eventos e métricas para uma exibição mais detalhada do desempenho e do uso do aplicativo.
+
+* [Explore os fluxos de usuário](../../azure-monitor/app/usage-flows.md) para entender como os usuários navegam por meio de seu aplicativo.
+* [Configurar uma coleção de instantâneo](https://docs.microsoft.com/azure/application-insights/app-insights-snapshot-debugger) para ver o estado do código-fonte e variáveis no momento em que uma exceção será lançada.
+* [Usar a API](../../azure-monitor/app/api-custom-events-metrics.md) para enviar seus próprios eventos e métricas para uma exibição detalhada do desempenho e uso de seu aplicativo.
 * Use os [Testes de disponibilidade](../../azure-monitor/app/monitor-web-app-availability.md) para verificar seu aplicativo constante em todo o mundo.

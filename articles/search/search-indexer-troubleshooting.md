@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: magottei
 ms.custom: seodec2018
-ms.openlocfilehash: 256a38320c9b3ca826ee9c12ac0a437957f988e2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4ed18b5f83bdb052f2db6847a320c26a8e49f83e
+ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65539273"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67147541"
 ---
 # <a name="troubleshooting-common-indexer-issues-in-azure-search"></a>Solução de problemas comuns no Azure Search
 
@@ -35,14 +35,11 @@ O Armazenamento do Microsoft Azure fornece um firewall configurável. Por padrã
 
 Não há nenhuma mensagem de erro específica quando o firewall estiver habilitado. Normalmente, os erros de firewall são semelhantes a `The remote server returned an error: (403) Forbidden`.
 
-Você pode verificar se o firewall está habilitado no [portal](https://docs.microsoft.com/azure/storage/common/storage-network-security#azure-portal). Se o firewall estiver habilitado, você tem duas opções para contornar esse problema:
+Você pode verificar se o firewall está habilitado no [portal](https://docs.microsoft.com/azure/storage/common/storage-network-security#azure-portal). A única solução com suporte é desabilitar o firewall ao optar por permitir o acesso de ['Todas as redes'](https://docs.microsoft.com/azure/storage/common/storage-network-security#azure-portal).
 
-1. Desabilitar o firewall ao optar por permitir o acesso de ['Todas as redes'](https://docs.microsoft.com/azure/storage/common/storage-network-security#azure-portal)
-1. [Adicionar uma exceção](https://docs.microsoft.com/azure/storage/common/storage-network-security#managing-ip-network-rules) para o endereço IP do seu serviço de pesquisa. Para localizar esse endereço IP, use o seguinte comando:
+Se o indexador não tiver um conjunto de qualificações anexado, você _talvez_ tentar [adicionar uma exceção](https://docs.microsoft.com/azure/storage/common/storage-network-security#managing-ip-network-rules) para os endereços IP do seu serviço de pesquisa. No entanto, esse cenário não tem suporte e não tem garantia de funcionar.
 
-`nslookup <service name>.search.windows.net`
-
-Exceções não funcionam com [pesquisa cognitiva](cognitive-search-concept-intro.md). A única solução alternativa é desabilitar o firewall.
+Você pode descobrir o endereço IP do seu serviço de pesquisa ao executar o ping de seu FQDN (`<your-search-service-name>.search.windows.net`).
 
 ### <a name="cosmos-db"></a>Cosmos DB
 

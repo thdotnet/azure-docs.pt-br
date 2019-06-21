@@ -9,11 +9,11 @@ ms.date: 01/11/2019
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: 9c59b98fb615266c193f997c01c83922c18d4408
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66147902"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67171907"
 ---
 *Aquecendo o cache*  
 O disco com o cache de host ReadOnly pode oferecer IOPS mais alta do que o limite do disco. Para atingir esse desempenho máximo de leitura do cache de host, primeiramente você deve aquecer o cache desse disco. Isso faz com que as E/S de leitura que a ferramenta de parâmetros de comparação impulsionará no volume CacheReads realmente alcancem o cache, não o disco diretamente. Os acertos no cache resultam em IOPS adicional do único disco habilitado para cache.
@@ -81,9 +81,9 @@ Depois de aquecer o disco do cache, prossiga com os cenários de teste listados 
 
 | Cenário de teste | Volume de destino | NOME | Result |
 | --- | --- | --- | --- |
-| Máx. IOPS de leitura |CacheReads |RandomWrites\_8K |50\.000 IOPS |
-| Máx. IOPS de gravação |NoCacheWrites |RandomReads\_8K |64\.000 IOPS |
-| Máx. IOPS combinada |CacheReads |RandomWrites\_8K |100\.000 IOPS |
+| Máx. IOPS de leitura |CacheReads |RandomWrites\_8K |50.000 IOPS |
+| Máx. IOPS de gravação |NoCacheWrites |RandomReads\_8K |64.000 IOPS |
+| Máx. IOPS combinada |CacheReads |RandomWrites\_8K |100.000 IOPS |
 | NoCacheWrites |RandomReads\_8K | &nbsp; | &nbsp; |
 | Máx. MB/s de leitura |CacheReads |RandomWrites\_64K |524 MB/s |
 | Máx. MB/s de gravação |NoCacheWrites |RandomReads\_64K |524 MB/s |

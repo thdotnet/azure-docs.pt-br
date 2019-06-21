@@ -10,12 +10,13 @@ ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 85639e2648131f9475ad2ae77f31d43e64bf82e7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.custom: fasttrack-edit
+ms.openlocfilehash: 0c855a3e0280e1fadf2362f2d8959beff2f5d00a
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66509216"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67271976"
 ---
 # <a name="web-sign-in-with-openid-connect-in-azure-active-directory-b2c"></a>Entrada na Web com o OpenID Connect no Azure Active Directory B2C
 
@@ -152,7 +153,9 @@ Depois de validar o token de ID, você poderá iniciar uma sessão com o usuári
 
 Se você precisar que seu aplicativo web para executar apenas fluxos de usuário, você pode ignorar as próximas seções. Essas seções são aplicáveis somente a web, aplicativos que precisam fazer chamadas autenticadas para uma API da web e também sejam protegidos pelo Azure AD B2C.
 
-Você pode resgatar o código de autorização adquirido (usando `response_type=code+id_token`) para um token do recurso desejado enviando uma solicitação `POST` ao ponto de extremidade `/token`. Atualmente, o único recurso que você pode solicitar um token é sua API de web de back-end do aplicativo. A convenção para solicitar um token para si mesmo é usar a ID do aplicativo cliente como o escopo:
+Você pode resgatar o código de autorização adquirido (usando `response_type=code+id_token`) para um token do recurso desejado enviando uma solicitação `POST` ao ponto de extremidade `/token`. B2C do Azure AD, você pode [solicitar tokens de acesso para outra API](active-directory-b2c-access-tokens.md#request-a-token) como de costume, especificando seus escopos na solicitação.
+
+Você também pode solicitar um token de acesso para a API de Web de back-end do aplicativo, por convenção de usar a ID do aplicativo cliente como o escopo solicitado (o que resultará em um token de acesso com essa ID de cliente como o "público"):
 
 ```
 POST fabrikamb2c.onmicrosoft.com/oauth2/v2.0/token?p=b2c_1_sign_in HTTP/1.1

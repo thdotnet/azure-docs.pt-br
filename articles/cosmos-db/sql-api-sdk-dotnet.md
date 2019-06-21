@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/09/2018
 ms.author: sngun
-ms.openlocfilehash: 3c420882b734883039ec95d609c155617359fa25
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 865fb2ebf0d02c40a8f7c9e9c818e26432e5734a
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65510713"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67272359"
 ---
 # <a name="azure-cosmos-db-net-sdk-for-sql-api-download-and-release-notes"></a>SDK do .NET do Azure Cosmos DB para a API do SQL: Downloads e notas sobre a versão
 > [!div class="op_single_selector"]
@@ -47,6 +47,12 @@ ms.locfileid: "65510713"
 * Novo modelo de objeto, com CosmosClient de nível superior e métodos divididos entre as classes CosmosDatabases, CosmosContainers e CosmosItems. 
 * Suporte para fluxos. 
 * Atualizado CosmosResponseMessage do servidor para retornar o código de status e somente gerar exceção quando nenhuma resposta for retornada. 
+
+### <a name="a-name250250"></a><a name="2.5.0"/>2.5.0
+
+* Permitir solicitações de gravação para o fallback para uma região diferente se o original um falhar
+* Adicionar política de repetição de sessão para a solicitação de gravação
+* Correções de rastreamento de condição de corrida para consultas que fazia com que páginas vazias
 
 ### <a name="a-name240240"></a><a name="2.4.0"/>2.4.0
 
@@ -373,8 +379,9 @@ Qualquer solicitação feita ao BD Cosmos do Azure usando um SDK obsoleto é rej
 
 <br/>
 
-| Version | Data do lançamento | Data de desativação |
+| Versão | Data do lançamento | Data de desativação |
 | --- | --- | --- |
+| [2.5.0](#2.5.0) |18 de junho de 2019 |--- |
 | [2.4.0](#2.4.0) |05 de maio de 2019 |--- |
 | [2.3.0](#2.3.0) |04 de abril de 2019 |--- |
 | [2.2.3](#2.2.3) |11 de fevereiro de 2019 |--- |

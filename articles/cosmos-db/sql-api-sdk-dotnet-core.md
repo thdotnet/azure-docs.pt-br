@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/22/2018
 ms.author: sngun
-ms.openlocfilehash: 4ec9d5e605a2319a04dac4cb52dbe49c77354479
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 91f15f9c19b480d950b2c715e6d9290e01184cf7
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65510631"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67272384"
 ---
 # <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>SDK do .NET Core do Azure Cosmos DB para API do SQL: Notas sobre a versão e recursos
 > [!div class="op_single_selector"]
@@ -49,6 +49,12 @@ O SDK do .NET Core do Azure Cosmos DB tem paridade de recurso com a versão mais
 * Novo modelo de objeto, com CosmosClient de nível superior e métodos divididos entre as classes CosmosDatabases, CosmosContainers e CosmosItems.
 * Suporte para fluxos.
 * Atualizado CosmosResponseMessage do servidor para retornar o código de status e somente gerar exceção quando nenhuma resposta for retornada.
+
+### <a name="a-name250250"></a><a name="2.5.0"/>2.5.0
+
+* Permitir solicitações de gravação para o fallback para uma região diferente se o original um falhar
+* Adicionar política de repetição de sessão para a solicitação de gravação
+* Correções de rastreamento de condição de corrida para consultas que fazia com que páginas vazias
 
 ### <a name="a-name240240"></a><a name="2.4.0"/>2.4.0
 
@@ -249,8 +255,9 @@ Se você tiver dúvidas relacionadas a esse SDK, poste no [StackOverflow](https:
 
 ## <a name="release--retirement-dates"></a>Datas de lançamento e desativação
 
-| Version | Data do lançamento | Data de desativação |
+| Versão | Data do lançamento | Data de desativação |
 | --- | --- | --- |
+| [2.5.0](#2.5.0) |18 de junho de 2019 |--- |
 | [2.4.0](#2.4.0) |05 de maio de 2019 |--- |
 | [2.3.0](#2.3.0) |04 de abril de 2019 |--- |
 | [2.2.3](#2.2.3) |11 de março de 2019 |--- |

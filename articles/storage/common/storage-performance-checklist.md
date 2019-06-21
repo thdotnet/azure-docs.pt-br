@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/07/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 83f202f087d51b7742a74cf5ee5db8bd5fee5385
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c5bbd19969349965ea20fa4cfc09e10119a9a86c
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67073716"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67295744"
 ---
 # <a name="microsoft-azure-storage-performance-and-scalability-checklist"></a>Lista de verificação de desempenho e escalabilidade do armazenamento do Microsoft Azure
 
@@ -109,7 +109,7 @@ Se você estiver se aproximando do limite de contas de armazenamento, poderá te
 Se seu aplicativo estiver lidando com metas de escalabilidade de uma única conta de armazenamento, você pode adotar uma destas abordagens:  
 
 * Repensar a carga de trabalho que faz com que o aplicativo se aproxime da meta de escalabilidade ou a ultrapasse. Você pode alterar o aplicativo para que ele use menos largura de banda, menos capacidade ou menos transações?
-* Se o aplicativo ultrapassar uma das metas de escalabilidade propositalmente, você deve criar diversas contas de armazenamento e particionar os dados do seu aplicativo nessas contas. Se você usar esse padrão, crie o aplicativo de forma que seja possível adicionar mais contas de armazenamento posteriormente, para balancear a carga. No momento da edição, cada assinatura do Azure pode ter até 100 contas de armazenamento.  O único custo das contas de armazenamento é o uso dos dados armazenados, das transações feitas ou dos dados transferidos.
+* Se o aplicativo ultrapassar uma das metas de escalabilidade propositalmente, você deve criar diversas contas de armazenamento e particionar os dados do seu aplicativo nessas contas. Se você usar esse padrão, crie o aplicativo de forma que seja possível adicionar mais contas de armazenamento posteriormente, para balancear a carga. No momento da escrita, cada assinatura do Azure pode ter até 250 contas de armazenamento por região (quando implantado com o modelo do Azure Resource Manager).  O único custo das contas de armazenamento é o uso dos dados armazenados, das transações feitas ou dos dados transferidos.
 * Se o aplicativo alcançar as metas de largura de banda, você pode compactar os dados no cliente para reduzir a largura de banda necessária para enviar os dados ao serviço de armazenamento.  Apesar de economizar a largura de banda e melhorar o desempenho da rede, isso também pode ter impactos negativos.  Você deve avaliar o impacto no desempenho causado por essa alteração, devido aos requisitos de processamento adicionais para compactar e descompactar dados no cliente. Além disso, o armazenamento de dados compactados pode dificultar a solução de problemas, pois pode ser mais difícil visualizar os dados armazenados por meio de ferramentas padrão.
 * Se seu aplicativo alcançar as metas de escalabilidade, você deve usar a retirada exponencial para novas tentativas (confira [Novas tentativas](#subheading14)).  O mais recomendado é nunca alcançar as metas de escalabilidade, o que é possível garantir por meio de um dos métodos acima. Porém, isso garante que o aplicativo não faça novas tentativas rapidamente, piorando o problema de limitação.  
 

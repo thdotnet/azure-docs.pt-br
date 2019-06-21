@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 06/12/2019
+ms.date: 06/19/2019
 ms.author: magoedte
-ms.openlocfilehash: 71c6f1936f8cbc700a24d0ffb497947c8c8d3a50
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7fd9248fd38054b7f0e1fad2888d8b0d4cf2e60c
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67075244"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67274230"
 ---
 # <a name="how-to-view-logs-and-events-in-real-time-preview"></a>Como exibir logs e eventos em tempo real (versão prévia)
 O Azure Monitor para contêineres inclui um recurso, que está atualmente em versão prévia, que fornece uma exibição em tempo real em seus logs de contêiner do serviço de Kubernetes do Azure (AKS) (stdout/stderr) e eventos sem ter de executar comandos kubectl. Quando você seleciona uma dessas opções, um novo painel é exibida abaixo da tabela de dados de desempenho sobre o **nós**, **controladores**, e **contêineres** exibição. Ele mostra eventos gerados pelo mecanismo de contêiner para ajudá-lo ainda mais na solução de problemas em tempo real e registro em log em tempo real.
@@ -77,6 +77,9 @@ O AKS pode ser configurado para usar o Azure AD (Active Directory) na autentica�
 
 >[!NOTE]
 >Configuração de autenticação com o Azure Active Directory para logon único só pode ser feito durante a implantação inicial de um novo cluster do AKS. Não é possível configurar o logon único em um cluster do AKS já implantado.
+  
+>[!IMPORTANT]
+>Se você reconfigurou o Azure AD para autenticação de usuário usando o URI de atualizado, limpe o cache do navegador para garantir que o token de autenticação atualizada é baixado e aplicado.   
 
 ## <a name="view-live-logs-and-events"></a>Exibir logs em tempo real e eventos
 

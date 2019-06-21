@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: 56ba2dfebeb47f7e12a2693eae443e3c31e2a4dd
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
-ms.translationtype: HT
+ms.openlocfilehash: 982c5dcc052f92afe381235db0bf066262fd82c6
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67203096"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67304295"
 ---
 # <a name="migrate-to-granular-role-based-access-for-cluster-configurations"></a>Migrar para acesso baseado em função granular para configurações de cluster
 
@@ -20,7 +20,7 @@ Estamos introduzindo algumas alterações importantes para dar suporte a mais ac
 
 ## <a name="what-is-changing"></a>O que está mudando?
 
-Anteriormente, os segredos pôde ser obtidos por meio da API do HDInsight por usuários de cluster que possui o proprietário, colaborador ou leitor [funções RBAC](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles), conforme eles estavam disponíveis para qualquer pessoa com o `*/read` permissão era necessária.
+Anteriormente, os segredos pôde ser obtidos por meio da API do HDInsight por usuários de cluster que possui o proprietário, colaborador ou leitor [funções RBAC](https://docs.microsoft.com/azure/role-based-access-control/rbac-and-directory-admin-roles), conforme eles estavam disponíveis para qualquer pessoa com o `*/read` permissão.
 No futuro, acessar esses segredos exigirá o `Microsoft.HDInsight/clusters/configurations/*` permissão, o que significa que eles não podem ser acessados por usuários com a função de leitor. Segredos são definidos como valores que poderiam ser usados para obter acesso mais elevado do que uma função de usuário devem permitir. Eles incluem valores como credenciais HTTP de gateway do cluster, as chaves de conta de armazenamento e as credenciais de banco de dados.
 
 Também estamos introduzindo uma nova [operador do Cluster HDInsight](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#hdinsight-cluster-operator) função que será capaz de recuperar segredos sem receber permissões administrativas do Colaborador ou proprietário. Resumidamente:

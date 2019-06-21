@@ -7,16 +7,18 @@ ms.service: vpn-gateway
 ms.topic: conceptional
 ms.date: 06/12/2019
 ms.author: alzam
-ms.openlocfilehash: 48725ed8cdf3df30f8df31966aa632bfb2a4ef1f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6c85f47a2e3691306d59c5c44856fd08c07f2d36
+ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67066902"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67202887"
 ---
 # <a name="set-up-alerts-on-diagnostic-log-events-from-vpn-gateway"></a>Configurar alertas em eventos de log de diagnóstico do Gateway de VPN
 
-Este artigo ajuda você a configurar alertas com base em eventos de log de diagnóstico do Gateway de VPN do Azure. Os logs a seguir estão disponíveis.
+Este artigo ajuda você a configurar alertas com base em eventos de log de diagnóstico do Gateway de VPN do Azure usando o Azure Log Analytics. 
+
+Os logs a seguir estão disponíveis no Azure:
 
 |***Nome*** | ***Descrição*** |
 |---        | ---               |

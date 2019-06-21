@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.date: 04/22/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: bc85de0c8ec89ea88d2bae8e3f226da7d3163f53
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 607da7983cabe4c36c01171ba8d88c752b99ce3d
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64721080"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67303807"
 ---
 # <a name="live-metrics-stream-monitor--diagnose-with-1-second-latency"></a>Live Metrics Stream: Monitorar e diagnosticar com latência de um segundo
 
-Teste a pulsação do aplicativo Web ao vivo em produção usando o Live Metrics Stream do [Application Insights](../../azure-monitor/app/app-insights-overview.md). Selecione e filtre os contadores de desempenho e as métricas para observar em tempo real, sem qualquer perturbação para o serviço. Inspecione os rastreamentos de pilha de exceções e solicitações de amostra com falha. Juntamente com [Criador de perfil](../../azure-monitor/app/profiler.md), [Depurador de instantâneo](../../azure-monitor/app/snapshot-debugger.md) e [testes de desempenho](../../azure-monitor/app/monitor-web-app-availability.md#performance-tests), o Live Metrics Stream fornece uma ferramenta de diagnóstico poderosa e não invasiva para seu site ao vivo.
+Teste a pulsação do aplicativo Web ao vivo em produção usando o Live Metrics Stream do [Application Insights](../../azure-monitor/app/app-insights-overview.md). Selecione e filtre os contadores de desempenho e as métricas para observar em tempo real, sem qualquer perturbação para o serviço. Inspecione os rastreamentos de pilha de exceções e solicitações de amostra com falha. Junto com [Profiler](../../azure-monitor/app/profiler.md), [depurador de instantâneo](../../azure-monitor/app/snapshot-debugger.md). Stream de métricas ao vivo fornece uma ferramenta de diagnóstico poderosa e não invasiva para seu site ao vivo.
 
 Com o Live Metrics Stream, você pode:
 
@@ -192,15 +192,6 @@ No entanto, caso reconheça e confie em todos os servidores conectados, você po
 >[!NOTE]
 >É altamente recomendável que você configure o canal autenticado antes de inserir informações potencialmente confidenciais, como CustomerIDs, nos critérios de filtro.
 >
-
-## <a name="generating-a-performance-test-load"></a>Geração de uma carga de teste de desempenho
-
-Se você quiser observar o efeito de um aumento de carga, use a folha de Teste de Desempenho. Ele simula solicitações de vários usuários simultâneos. Ele pode executar "testes manuais" (testes de ping) de uma única URL ou pode executar um [teste de desempenho da Web de várias etapas](../../azure-monitor/app/monitor-web-app-availability.md#multi-step-web-tests) que você carrega (da mesma forma como um teste de disponibilidade).
-
-> [!TIP]
-> Depois de criar o teste de desempenho, abra o teste e a folha do Live Stream em janelas separadas. Você pode ver quando o teste de desempenho na fila é iniciado e assistir à transmissão ao vivo ao mesmo tempo.
->
-
 
 ## <a name="troubleshooting"></a>solução de problemas
 
