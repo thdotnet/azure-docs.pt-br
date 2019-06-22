@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 03/29/2018
 ms.author: v-pawal
-ms.openlocfilehash: f58ff566ebb83ed6163637aa3899a925ed06242a
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 4133cec401723ab103b0b3bfff62eee21b653e2b
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67269207"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67331817"
 ---
 # <a name="translator-text-api-v30"></a>API de Tradução de Texto v3.0
 
@@ -31,20 +31,20 @@ A versão 3 do API de tradução de texto fornece uma API de Web modernos basead
 
 ## <a name="base-urls"></a>URLs base
 
-O Microsoft Translator é distribuído a partir de vários locais de datacenter. No momento estão localizados em 6 [regiões do Azure](https://azure.microsoft.com/global-infrastructure/regions):
+O Microsoft Translator é distribuído a partir de vários locais de datacenter. No momento estão localizados em 6 [regiões geográficas do Azure](https://azure.microsoft.com/global-infrastructure/regions):
 
 * **Américas:** Oeste dos EUA 2 e Centro-Oeste dos EUA 
 * **Pacífico Asiático:** Sudeste Asiático e Sul da Coreia
 * **Europa:** Europa Setentrional e Europa Ocidental
 
-As solicitações para a API de Tradução de Texto da Microsoft são na maioria dos casos, tratadas pelo datacenter mais próximo que originou a solicitação. Em caso de falha de um datacenter, a solicitação pode ser roteada para fora da região.
+As solicitações para a API de Tradução de Texto da Microsoft são na maioria dos casos, tratadas pelo datacenter mais próximo que originou a solicitação. Em caso de falha do datacenter, a solicitação pode ser roteada fora da geografia do Azure.
 
-Para forçar a solicitação para ser manipulada por um datacenter específico, altere o ponto de extremidade Global na solicitação de API para o ponto de extremidade regional desejado:
+Para forçar a solicitação para ser manipulada por uma Geografia do Azure específica, altere o ponto de extremidade Global na solicitação de API para o ponto de extremidade regional desejado:
 
-|DESCRIÇÃO|Região|URL base|
+|DESCRIÇÃO|Geografia do Azure|URL base|
 |:--|:--|:--|
-|Azure|Global|  api.cognitive.microsofttranslator.com|
-|Azure|América do Norte|   api-nam.cognitive.microsofttranslator.com|
+|Azure|Global (não regional)|   api.cognitive.microsofttranslator.com|
+|Azure|Estados Unidos|   api-nam.cognitive.microsofttranslator.com|
 |Azure|Europa|  api-eur.cognitive.microsofttranslator.com|
 |Azure|Pacífico Asiático|    api-apc.cognitive.microsofttranslator.com|
 
