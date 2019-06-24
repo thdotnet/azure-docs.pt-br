@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: wolfma
-ms.openlocfilehash: 2bfe111cbe1e352c16c9cbdd6d2ecc999bbe444f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b4092cfb11fc37b9a4d145c3a2994138e5ae6dbf
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66003002"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67331901"
 ---
 # <a name="about-the-speech-sdk"></a>Sobre o SDK de Fala
 
-Fala Software Development Kit (SDK) fornece o acesso de aplicativos para as funções dos serviços de fala, tornando mais fácil de desenvolver software habilitado para fala. Atualmente, os SDKs fornecem acesso aos **fala em texto**, **texto em fala**, **tradução de fala**, e **reconhecimento de intenção de**. Uma visão geral sobre os recursos e as plataformas com suporte pode ser encontrada na documentação do [página de entrada](https://aka.ms/csspeech).
+Fala Software Development Kit (SDK) fornece o acesso de aplicativos para as funções dos serviços de fala, tornando mais fácil de desenvolver software habilitado para fala. Atualmente, os SDKs fornecem acesso aos **fala em texto**, **texto em fala**, **tradução de fala**, **reconhecimento de intenção de**, e **Canal de fala de linha direta do bot Framework**. Uma visão geral sobre os recursos e as plataformas com suporte pode ser encontrada na documentação do [página de entrada](https://aka.ms/csspeech).
 
 [!INCLUDE [Speech SDK Platforms](../../../includes/cognitive-services-speech-service-speech-sdk-platforms.md)]
 
