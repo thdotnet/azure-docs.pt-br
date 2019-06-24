@@ -11,18 +11,18 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: diberry
-ms.openlocfilehash: badf351f8336e501b3ee1c035fcb389a570750c0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8c7476a82df75d8ba653a2a8e6c0f9f557b53c42
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65072848"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341869"
 ---
 # <a name="add-an-entity-to-example-utterances"></a>Adicionar uma entidade a enunciados de exemplo 
 
 Enunciados de exemplo são exemplos de texto de comandos ou perguntas do usuário. Para ensinar o LUIS (Serviço Inteligente de Reconhecimento Vocal), você precisa adicionar [enunciados de exemplo](luis-concept-utterance.md) a uma [intenção](luis-concept-intent.md).
 
-Geralmente, adicione um enunciado de exemplo a uma intenção primeiro, então crie entidades e rotule enunciados na página de intenção. Se você preferir criar entidades primeiro, veja [Adicionar entidades](luis-how-to-add-entities.md).
+Normalmente, você adicionar uma expressão de exemplo para um propósito de primeiro e, em seguida, você pode cria entidades e declarações na página de intenção de rótulo. Se você preferir criar entidades primeiro, veja [Adicionar entidades](luis-how-to-add-entities.md).
 
 ## <a name="marking-entities-in-example-utterances"></a>Marcar entidades em enunciados de exemplo
 

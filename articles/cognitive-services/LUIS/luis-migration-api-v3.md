@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 05/22/2019
+ms.date: 06/24/2019
 ms.author: diberry
-ms.openlocfilehash: b7b4e25c78ef08bdf9a7c2f3faf96725fc5f5fc8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fb4cf119195b3be23dc8f2cb98bd019769583473
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66123879"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341849"
 ---
 # <a name="preview-migrate-to-api-version-3x--for-luis-apps"></a>Visualização: Migrar para a versão de API 3.x para aplicativos do LUIS
 
@@ -54,11 +54,14 @@ As alterações de objeto de resposta V3 incluem [as entidades predefinidas](lui
 
 A API de V3 tem parâmetros de cadeia de caracteres de consulta diferentes.
 
-|Nome do parâmetro|Type|Version|Finalidade|
-|--|--|--|--|
-|`query`|cadeia de caracteres|Somente V3|**Na V2**, a expressão a ser previsto é no `q` parâmetro. <br><br>**Na V3**, a funcionalidade é passada a `query` parâmetro.|
-|`show-all-intents`|boolean|Somente V3|Retornar todas as intenções com a pontuação correspondente na **prediction.intents** objeto. Tentativas são retornadas como objetos em uma pasta pai `intents` objeto. Isso permite o acesso programático sem a necessidade de localizar a intenção em uma matriz: `prediction.intents.give`. Na versão 2, eles foram retornados em uma matriz. |
-|`verbose`|boolean|V2 E V3|**Na V2**, quando definido como true, previstos todas as intenções foram retornados. Se você precisar previstas todas as intenções, use o param V3 de `show-all-intents`.<br><br>**Na V3**, esse parâmetro só fornece entidade detalhes de metadados de previsão de entidade.  |
+|Nome do parâmetro|Type|Versão|Padrão|Finalidade|
+|--|--|--|--|--|
+|`log`|boolean|V2 E V3|falso|Consulta de Store no arquivo de log.| 
+|`query`|string|Somente V3|Nenhum padrão - é necessário na solicitação GET|**Na V2**, a expressão a ser previsto é no `q` parâmetro. <br><br>**Na V3**, a funcionalidade é passada a `query` parâmetro.|
+|`show-all-intents`|boolean|Somente V3|falso|Retornar todas as intenções com a pontuação correspondente na **prediction.intents** objeto. Tentativas são retornadas como objetos em uma pasta pai `intents` objeto. Isso permite o acesso programático sem a necessidade de localizar a intenção em uma matriz: `prediction.intents.give`. Na versão 2, eles foram retornados em uma matriz. |
+|`verbose`|boolean|V2 E V3|falso|**Na V2**, quando definido como true, previstos todas as intenções foram retornados. Se você precisar previstas todas as intenções, use o param V3 de `show-all-intents`.<br><br>**Na V3**, esse parâmetro só fornece entidade detalhes de metadados de previsão de entidade.  |
+
+
 
 <!--
 |`multiple-segments`|boolean|V3 only|Break utterance into segments and predict each segment for intents and entities.|
@@ -71,12 +74,23 @@ A API de V3 tem parâmetros de cadeia de caracteres de consulta diferentes.
 {
     "query":"your utterance here",
     "options":{
-        "timezoneOffset": "-8:00"
+        "datetimeReference": "2019-05-05T12:00:00",
+        "overridePredictions": true
     },
     "externalEntities":[],
     "dynamicLists":[]
 }
 ```
+
+|Propriedade|Type|Versão|Padrão|Finalidade|
+|--|--|--|--|--|
+|`dynamicLists`|Array|Somente V3|Não obrigatório.|[As listas dinâmicas](#dynamic-lists-passed-in-at-prediction-time) permitem que você estender uma entidade existente da lista treinado e publicado, já no aplicativo LUIS.|
+|`externalEntities`|Array|Somente V3|Não obrigatório.|[Entidades externas](#external-entities-passed-in-at-prediction-time) permitem que seu aplicativo LUIS para identificar e rotular entidades durante o tempo de execução, que pode ser usado como recursos para entidades existentes. |
+|`options.datetimeReference`|string|Somente V3|Nenhum padrão|Usado para determinar [datetimeV2 deslocamento](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity).|
+|`options.overridePredictions`|boolean|Somente V3|falso|Especifica se do usuário [entidade externa (com o mesmo nome de entidade existente)](#override-existing-model-predictions) é usado ou a entidade existente no modelo é usada para previsão. |
+|`query`|string|Somente V3|Obrigatório.|**Na V2**, a expressão a ser previsto é no `q` parâmetro. <br><br>**Na V3**, a funcionalidade é passada a `query` parâmetro.|
+
+
 
 ## <a name="response-changes"></a>Alterações de resposta
 
@@ -275,6 +289,67 @@ Na declaração anterior, a expressão usa `him` como uma referência para `Haze
 
 A resposta de previsão inclui a entidade externa, com todas as outras previstas entidades, porque ele está definido na solicitação.  
 
+### <a name="override-existing-model-predictions"></a>Substituir as previsões do modelo existente
+
+O `overridePredictions` propriedade options Especifica que, se o usuário envia uma entidade externa que se sobrepõe com uma entidade prevista com o mesmo nome, o LUIS escolhe a entidade passada ou a entidade existente no modelo. 
+
+Por exemplo, considere a consulta `today I'm free`. LUIS detecta `today` como um datetimeV2 com a seguinte resposta:
+
+```JSON
+"datetimeV2": [
+    {
+        "type": "date",
+        "values": [
+            {
+                "timex": "2019-06-21",
+                "value": "2019-06-21"
+            }
+        ]
+    }
+]
+```
+
+Se o usuário envia a entidade externa:
+
+```JSON
+{
+    "entityName": "datetimeV2",
+    "startIndex": 0,
+    "entityLength": 5,
+    "resolution": {
+        "date": "2019-06-21"
+    }
+}
+```
+
+Se o `overridePredictions` é definido como `false`, LUIS retorna uma resposta como se a entidade externa não foram enviada. 
+
+```JSON
+"datetimeV2": [
+    {
+        "type": "date",
+        "values": [
+            {
+                "timex": "2019-06-21",
+                "value": "2019-06-21"
+            }
+        ]
+    }
+]
+```
+
+Se o `overridePredictions` é definido como `true`, LUIS retorna uma resposta, incluindo:
+
+```JSON
+"datetimeV2": [
+    {
+        "date": "2019-06-21"
+    }
+]
+```
+
+
+
 #### <a name="resolution"></a>Resolução
 
 O _opcional_ `resolution` propriedade retorna na resposta da previsão, permitindo que você passe os metadados associados com a entidade externa e, em seguida, recebê-la de volta na resposta. 
@@ -287,6 +362,7 @@ O `resolution` propriedade pode ser um número, uma cadeia de caracteres, um obj
 * {"text": "value"}
 * 12345 
 * ["a", "b", "c"]
+
 
 
 ## <a name="dynamic-lists-passed-in-at-prediction-time"></a>As listas dinâmicas passado em tempo de previsão

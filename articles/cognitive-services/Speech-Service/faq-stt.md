@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/11/2018
 ms.author: panosper
-ms.openlocfilehash: 29ec50a1d2e0aebb1aeb73b38c662f4a18624754
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6cc530d2680c0410081ad3ad3e573cd59d5583d6
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60539053"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341952"
 ---
 # <a name="speech-to-text-frequently-asked-questions"></a>Perguntas frequentes sobre Conversão de Fala em Texto
 
@@ -33,7 +33,7 @@ Se você não encontrar respostas para suas perguntas nas perguntas frequentes, 
 
 **P: Preciso sempre criar um modelo de fala personalizada?**
 
-**R**:  Não. Se o aplicativo usa linguagem genérica diária, você não precisa personalizar um modelo. Se o aplicativo é usado em um ambiente em que há pouco ou nenhum ruído de fundo, você não precisa personalizar um modelo.
+**R**: Não. Se o aplicativo usa linguagem genérica diária, você não precisa personalizar um modelo. Se o aplicativo é usado em um ambiente em que há pouco ou nenhum ruído de fundo, você não precisa personalizar um modelo.
 
 Você pode implantar modelos personalizados e de linha de base no portal e, em seguida, executar testes de precisão neles. Você pode usar esse recurso para medir a precisão de um modelo de linha de base em comparação com um modelo personalizado.
 
@@ -69,7 +69,7 @@ Se você tiver adaptado e implantado um modelo com a linha de base V1.0, essa im
 
 **R**: Você pode aumentar o modelo em incrementos de 20 solicitações simultâneas.
 
-Entre em contato conosco se você precisar de maior escala.
+Entre em contato com [suporte de fala](mailto:speechsupport@microsoft.com?subject=Request%20for%20higher%20concurrency%20for%20Speech-to-text) se você precisar de uma escala maior.
 
 **P: Posso baixar meu modelo e executá-lo localmente?**
 
@@ -93,7 +93,7 @@ Se você tiver mais problemas de privacidade que o impeçam de usar o serviço d
 
 **P: Posso compactar meus arquivos de texto para carregar um arquivo de texto maior?** 
 
-**R**:  Não. No momento são permitidos apenas os arquivos de texto não compactados.
+**R**: Não. No momento são permitidos apenas os arquivos de texto não compactados.
 
 **P: O relatório de dados indica que houve enunciados com falha. Qual é o problema?**
 

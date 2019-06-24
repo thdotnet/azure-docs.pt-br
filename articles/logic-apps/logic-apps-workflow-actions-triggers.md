@@ -53,10 +53,10 @@ Os gatilhos têm esses elementos de nível superior, embora alguns sejam opciona
 | Value | Type | DESCRIÇÃO | 
 |-------|------|-------------| 
 | <*trigger-name*> | Cadeia de caracteres | O nome do gatilho | 
-| <*trigger-type*> | Cadeia de caracteres | O tipo de gatilho como "Http" ou "ApiConnection" | 
+| <*tipo de gatilho*> | Cadeia de caracteres | O tipo de gatilho como "Http" ou "ApiConnection" | 
 | <*trigger-inputs*> | Objeto JSON | As entradas que definem o comportamento do gatilho | 
-| <*time-unit*> | Cadeia de caracteres | A unidade de tempo que descreve a frequência com que o gatilho é acionado: "Segundo", "Minuto", "Hora", "Dia", "Semana", "Mês" | 
-| <*number-of-time-units*> | Número inteiro | Um valor que especifica com que frequência o acionador é disparado com base na frequência, que é o número de unidades de tempo a aguardar até que o acionador seja acionado novamente <p>Aqui estão os intervalos mínimos e máximos: <p>- Mês: 1 a 16 meses </br>- Dia: 1 a 500 dias </br>- Hora: 1 a 12.000 horas </br>- Minuto: 1 a 72.000 minutos </br>- Segundo: 1 a 9.999.999 segundos<p>Por exemplo, se o intervalo for 6, e a frequência for "Mês", a recorrência será a cada 6 meses. | 
+| <*unidade de tempo*> | Cadeia de caracteres | A unidade de tempo que descreve a frequência com que o gatilho é acionado: "Segundo", "Minuto", "Hora", "Dia", "Semana", "Mês" | 
+| <*número de unidades de tempo*> | Número inteiro | Um valor que especifica com que frequência o acionador é disparado com base na frequência, que é o número de unidades de tempo a aguardar até que o acionador seja acionado novamente <p>Aqui estão os intervalos mínimos e máximos: <p>- Mês: 1 a 16 meses </br>- Dia: 1 a 500 dias </br>- Hora: 1 a 12.000 horas </br>- Minuto: 1 a 72.000 minutos </br>- Segundo: 1 a 9.999.999 segundos<p>Por exemplo, se o intervalo for 6, e a frequência for "Mês", a recorrência será a cada 6 meses. | 
 |||| 
 
 *Opcional*
@@ -1891,7 +1891,7 @@ O mecanismo do Logic Apps verifica o acesso ao acionador que você deseja chamar
 | Value | Type | DESCRIÇÃO | 
 |-------|------|-------------| 
 | <*Nested---nome do aplicativo lógico*> | Cadeia de caracteres | O nome do aplicativo lógico que você deseja chamar | 
-| <*nome do gatilho*> | Cadeia de caracteres | O nome do gatilho no aplicativo lógico aninhado que você deseja chamar | 
+| <*trigger-name*> | Cadeia de caracteres | O nome do gatilho no aplicativo lógico aninhado que você deseja chamar | 
 | <*ID da assinatura do Azure*> | Cadeia de caracteres | A ID de assinatura do Azure para o aplicativo lógico aninhado |
 | <*Azure-resource-group*> | Cadeia de caracteres | O nome do grupo de recursos do Azure para o aplicativo lógico aninhado |
 | <*Nested---nome do aplicativo lógico*> | Cadeia de caracteres | O nome do aplicativo lógico que você deseja chamar |
