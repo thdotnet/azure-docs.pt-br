@@ -142,7 +142,7 @@ A condição de repetição pode usar uma variável chamada $RetryData que forne
 | Propriedade | DESCRIÇÃO |
 |:--- |:--- |
 | NumberOfAttempts |Número de vezes que a atividade foi executada. |
-| Saída |Saída da última execução da atividade. |
+| Output |Saída da última execução da atividade. |
 | TotalDuration |Tempo decorrido desde que a atividade foi iniciada pela primeira vez. |
 | StartedAt |Hora no formato UTC em que a atividade foi iniciada pela primeira vez. |
 
@@ -324,11 +324,11 @@ Cada parâmetro de entrada é definido pelas propriedades na tabela a seguir:
 
 | Propriedade | Descrição |
 |:--- |:--- |
-| NOME |O nome exclusivo do parâmetro. Pode conter apenas caracteres alfanuméricos e não pode conter espaços. |
-| DESCRIÇÃO |Uma descrição opcional para o parâmetro de entrada. |
+| Name |O nome exclusivo do parâmetro. Pode conter apenas caracteres alfanuméricos e não pode conter espaços. |
+| Description |Uma descrição opcional para o parâmetro de entrada. |
 | Type |Tipo de dados esperado para o valor do parâmetro. O Portal do Azure fornece um controle apropriado para o tipo de dados para cada parâmetro quando a entrada for solicitada. |
-| Obrigatório |Especifica se deve ser fornecido um valor para o parâmetro. O runbook não poderá ser iniciado se você não fornecer um valor para cada parâmetro obrigatório que não tenha um valor padrão definido. |
-| Valor Padrão |Especifica o valor que será usado para o parâmetro, se nenhum for fornecido. Pode ser Nulo ou um valor específico. |
+| Mandatory |Especifica se deve ser fornecido um valor para o parâmetro. O runbook não poderá ser iniciado se você não fornecer um valor para cada parâmetro obrigatório que não tenha um valor padrão definido. |
+| Default Value |Especifica o valor que será usado para o parâmetro, se nenhum for fornecido. Pode ser Nulo ou um valor específico. |
 
 ### <a name="runbook-output"></a>Saída de runbook
 
