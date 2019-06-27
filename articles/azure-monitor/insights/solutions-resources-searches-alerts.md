@@ -79,7 +79,7 @@ Todas as propriedades de uma pesquisa salva são descritas na tabela a seguir.
 | Propriedade | DESCRIÇÃO |
 |:--- |:--- |
 | category | A categoria para a pesquisa salva.  As pesquisas salvas na mesma solução geralmente compartilham uma única categoria para que eles são agrupados juntos no console. |
-| displayname | Nome para exibição para a pesquisa salva no portal. |
+| displayName | Nome para exibição para a pesquisa salva no portal. |
 | query | Consulta a executar. |
 
 > [!NOTE]
@@ -176,10 +176,10 @@ As propriedades de Recursos de ação de alerta são descritas nas tabelas a seg
 
 | Nome do elemento | Obrigatório | DESCRIÇÃO |
 |:--|:--|:--|
-| Type | Sim | Tipo da ação.  Isso será **Alerta** para ações de alerta. |
-| NOME | Sim | Nome de exibição para o alerta.  Esse é o nome que é exibido no console para a regra de alerta. |
-| DESCRIÇÃO | Não | Descrição opcional do alerta. |
-| Severidade | Sim | Severidade do alerta registro dos seguintes valores:<br><br> **crítico**<br>**aviso**<br>**informativo**
+| type | Sim | Tipo da ação.  Isso será **Alerta** para ações de alerta. |
+| name | Sim | Nome de exibição para o alerta.  Esse é o nome que é exibido no console para a regra de alerta. |
+| description | Não | Descrição opcional do alerta. |
+| severity | Sim | Severidade do alerta registro dos seguintes valores:<br><br> **crítico**<br>**aviso**<br>**informativo**
 
 
 #### <a name="threshold"></a>Limite
