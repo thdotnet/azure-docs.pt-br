@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c22c9c202e6de3b31b99803dce4a07d38287a92
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 134ab2a5f0b1b1569cdf4747f5bbe3f895ba4e8f
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67057291"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67293028"
 ---
 # <a name="deploy-azure-ad-password-protection"></a>Implantar proteção de senha do Azure AD
 
@@ -145,7 +145,7 @@ Há dois instaladores necessários para a proteção de senha do AD do Azure. El
    > Pode haver um atraso considerável antes da conclusão na primeira vez que esse cmdlet é executado para um locatário do Azure específico. A menos que uma falha será relatada, não se preocupe com esse atraso.
 
 1. Registre a floresta.
-   * Você deve inicializar a floresta do Active Directory local com as credenciais necessárias para se comunicar com o Azure usando o `Register-AzureADPasswordProtectionForest` cmdlet do PowerShell. O cmdlet requer credenciais de administrador global para seu locatário do Azure. Ele também requer privilégios de administrador de domínio local do Active Directory no domínio raiz da floresta. Esta etapa é executada uma vez por floresta.
+   * Você deve inicializar a floresta do Active Directory local com as credenciais necessárias para se comunicar com o Azure usando o `Register-AzureADPasswordProtectionForest` cmdlet do PowerShell. O cmdlet requer credenciais de administrador global para seu locatário do Azure. Ele também requer privilégios de administrador de empresa do Active Directory local. Esta etapa é executada uma vez por floresta.
 
       O `Register-AzureADPasswordProtectionForest` cmdlet oferece suporte aos seguintes modos de autenticação de três.
 
@@ -219,7 +219,7 @@ Há dois instaladores necessários para a proteção de senha do AD do Azure. El
 
    Em ambos os casos, substitua `http://yourhttpproxy.com:8080` com o endereço e porta do servidor proxy HTTP específico.
 
-   Se seu proxy HTTP está configurado para nós uma política de autorização, você deve conceder acesso à conta de computador do Active Directory do computador que hospeda o serviço de proxy para a proteção por senha.
+   Se seu proxy HTTP está configurado para usar uma política de autorização, você deve conceder acesso à conta de computador do Active Directory do computador que hospeda o serviço de proxy para a proteção por senha.
 
    É recomendável que você para e reiniciar o serviço de proxy depois de criar ou atualizar o *AzureADPasswordProtectionProxy.exe.config* arquivo.
 

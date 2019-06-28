@@ -6,13 +6,13 @@ ms.service: security
 ms.topic: article
 ms.author: cabailey
 manager: barbkess
-ms.date: 05/07/2019
-ms.openlocfilehash: 468e392cd2c45d79cbb24f8d737a6e83fbcd2725
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/20/2019
+ms.openlocfilehash: 0ee2dde5a941d069f5b745eafb35df780f657a47
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65079264"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67312629"
 ---
 # <a name="customer-lockbox-for-microsoft-azure"></a>Cofre do cliente para o Microsoft Azure
 
@@ -97,7 +97,7 @@ Os serviços e os cenários a seguir estão atualmente em disponibilidade geral 
 ### <a name="remote-desktop-access-to-virtual-machines"></a>Acesso de área de trabalho remoto para máquinas virtuais
 
 Cofre do cliente está habilitada para solicitações de acesso de área de trabalho remota para máquinas virtuais. Há suporte para as cargas de trabalho a seguir:
-- Plataforma como serviço (PaaS) - versão 1
+- Plataforma como serviço (PaaS) - serviços de nuvem do Azure (função web e função de trabalho)
 - Infraestrutura como serviço (IaaS) - Windows e Linux (somente no Azure Resource Manager)
 - Conjunto de dimensionamento de máquinas virtuais – Windows e Linux
 

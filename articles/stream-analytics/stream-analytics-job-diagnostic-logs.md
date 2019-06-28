@@ -7,17 +7,19 @@ ms.author: jeanb
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 05/15/2019
-ms.openlocfilehash: ff2930fbe0e53c4b3c1223f87919c0913296d07c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/21/2019
+ms.openlocfilehash: a41c3f60d4b949f78c0755f97c9ef7e6302d78d8
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66515929"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67329996"
 ---
 # <a name="troubleshoot-azure-stream-analytics-by-using-diagnostics-logs"></a>Solucionar problemas do Stream Analytics do Azure usando logs de diagnóstico
 
 Ocasionalmente, um trabalho do Stream Analytics do Azure interrompe o processamento de forma inesperada. É importante conseguir resolver esse tipo de evento. As falhas podem ser causadas por um resultado de consulta inesperado, pela conexão com dispositivos ou por uma interrupção inesperada do serviço. Os logs de diagnóstico do Stream Analytics podem ajudá-lo a identificar a causa dos problemas assim que eles ocorrem e reduzir o tempo de recuperação.
+
+É altamente recomendável habilitar logs de diagnóstico para todos os trabalhos de produção.
 
 ## <a name="log-types"></a>Tipos de logs
 
@@ -62,7 +64,7 @@ Ativar os logs de diagnóstico e enviá-los aos logs do Azure Monitor é altamen
 
     ![Navegação na folha para os logs de diagnóstico](./media/stream-analytics-job-diagnostic-logs/diagnostic-logs-monitoring.png)  
 
-2.  Crie um **Nome** em **Configurações de diagnóstico** e marque a caixa ao lado de **Enviar para o Log Analytics**. Em seguida, adicione um **espaço de trabalho do Log Analytics** existente ou crie um. Marque as caixas de **Execução** e **Criação** em **LOG**, e **AllMetrics** em **MÉTRICA**. Clique em **Salvar**.
+2.  Crie um **Nome** em **Configurações de diagnóstico** e marque a caixa ao lado de **Enviar para o Log Analytics**. Em seguida, adicione um **espaço de trabalho do Log Analytics** existente ou crie um. Marque as caixas de **Execução** e **Criação** em **LOG**, e **AllMetrics** em **MÉTRICA**. Clique em **Salvar**. É recomendável usar um espaço de trabalho do Log Analytics na mesma região que o trabalho do Stream Analytics do Azure para evitar custos adicionais.
 
     ![Configurações para os logs de diagnóstico](./media/stream-analytics-job-diagnostic-logs/diagnostic-settings.png)
 
@@ -113,7 +115,7 @@ Os logs de execução trazem informações sobre eventos que ocorreram durante a
 
 ### <a name="data-errors"></a>Erros de dados
 
-Qualquer erro ocorrido enquanto o trabalho processa os dados está nessa categoria de logs. Esses logs costumam ser criados durante operações de leitura, serialização e gravação de dados. Esses logs não incluem erros de conectividade. Os erros de conectividade são tratados como eventos genéricos.
+Qualquer erro ocorrido enquanto o trabalho processa os dados está nessa categoria de logs. Esses logs costumam ser criados durante operações de leitura, serialização e gravação de dados. Esses logs não incluem erros de conectividade. Os erros de conectividade são tratados como eventos genéricos. Você pode aprender mais sobre a causa de vários diferentes [erros de dados de entrada e saída](https://docs.microsoft.com/azure/stream-analytics/data-errors).
 
 NOME | DESCRIÇÃO
 ------- | -------
@@ -149,4 +151,4 @@ ID de Correlação | [GUID](https://en.wikipedia.org/wiki/Universally_unique_ide
 * [Introdução ao Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Dimensionar trabalhos do Stream Analytics](stream-analytics-scale-jobs.md)
 * [Referência da linguagem de consulta do Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)
-* [Referência da API REST de gerenciamento do Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)
+* [Erros de dados do Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/data-errors)

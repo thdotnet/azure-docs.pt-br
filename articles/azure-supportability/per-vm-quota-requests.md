@@ -7,18 +7,27 @@ ms.date: 06/07/2019
 ms.topic: article
 ms.service: azure
 ms.assetid: ce37c848-ddd9-46ab-978e-6a1445728a3b
-ms.openlocfilehash: f921b4a95c1b0cfb29d84c0bacc17d268af6e6c5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 79879cd7f5ea5af1b794735f32e6e1367458e124
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67082814"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67310721"
 ---
-# <a name="vm-series-vcpu-limit-increase"></a>Aumento de limite de vCPU de VM série
+# <a name="vm-series-vcpu-limit-increase"></a>Aumento de limite de vCPU da série de VM
+
+Cotas de vCPU do Resource Manager para conjuntos de dimensionamento de máquinas virtuais e máquinas virtuais são aplicadas em duas camadas para cada assinatura, em cada região. 
+
+A primeira camada é a **limite de vCPUs regionais totais** (em todas as séries de VM), e a segunda camada é a **por VM série vCPUs limitar** (por exemplo, os vCPUs da série D). Sempre que uma nova VM deve ser implantada, a soma do uso de vCPUs novos e existentes para essa série de VM não deve exceder a cota de vCPU aprovada para essa série específica de VM. Além disso, a contagem de vCPU total de novas e existentes implantada em todas as séries de VM não deve exceder a cota de vCPUs regionais totais aprovada para a assinatura. Se qualquer uma das cotas é excedida, a implantação de VM não será permitida.
+Você pode solicitar um aumento de limite de cota de vCPUs para a série VM do portal do Azure. Um aumento na cota de séries de VM automaticamente aumenta o limite de vCPUs regionais totais no mesmo valor. 
+
+Quando uma nova assinatura é criada, os vCPUs regionais totais do padrão pode não ser iguais à soma das cotas de vCPU de padrão para todas as séries de VM individuais. Isso pode resultar em uma assinatura com a cota suficiente para cada série de VM individuais que você deseja implantar, mas não há cota suficiente de vCPUs regionais totais para todas as implantações. Nesse caso, você precisará enviar uma solicitação para aumentar o limite de vCPUs regionais totais explicitamente. Limite total de vCPUs regionais não pode exceder a soma da cota aprovada em todas as séries VM para a região.
+
+Saiba mais sobre cotas na [página de cotas de vCPU de máquina Virtual](https://docs.microsoft.com/azure/virtual-machines/windows/quotas) e [assinatura do Azure e limites de serviço](https://aka.ms/quotalimits) página. 
 
 Agora você pode solicitar um aumento pela **ajuda + suporte** folha ou o **usos + cota** folha no portal. 
 
-## <a name="request-per-vm-vcpu-quota-increase-at-subscription-level-using-the-help--support-blade"></a>Solicitar por aumento de cota de vCPU VM no nível de assinatura usando o **ajuda + suporte** folha
+## <a name="request-per-vm-series-vcpu-quota-increase-at-subscription-level-using-the-help--support-blade"></a>Solicitar por aumento de cota de vCPU de VM série no nível de assinatura usando o **ajuda + suporte** folha
 
 Siga as instruções abaixo para criar uma solicitação de suporte por meio da folha de 'Ajuda + suporte' do Azure disponível no portal do Azure. 
 
@@ -59,7 +68,7 @@ Siga as instruções abaixo para criar uma solicitação de suporte por meio da 
 ![Novos limites](./media/resource-manager-core-quotas-request/new-limits.png)
 
 
-## <a name="request-per-vm-vcpu-quota-increase-at-subscription-level-using-usages--quota-blade"></a>Solicitação por aumento de cota de vCPU VM no nível de assinatura usando **usos + cota** folha
+## <a name="request-per-vm-series-vcpu-quota-increase-at-subscription-level-using-usages--quota-blade"></a>Solicitação por aumento de cota de vCPU de VM série no nível de assinatura usando **usos + cota** folha
 
 Siga as instruções abaixo usar para criar uma solicitação de suporte por meio do Azure "uso + cota" folha disponível no portal do Azure. 
 

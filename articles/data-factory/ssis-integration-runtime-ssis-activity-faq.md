@@ -12,12 +12,12 @@ author: wenjiefu
 ms.author: wenjiefu
 ms.reviewer: sawinark
 manager: craigg
-ms.openlocfilehash: 7789970b47f0e55adee5bbe9da9f303aee6cdb25
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: a018a383de855a05b14aa6e1f1c465f8868f672d
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67190116"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67312162"
 ---
 # <a name="troubleshooting-package-execution-in-ssis-integration-runtime"></a>Solucionando problemas de execução de pacote SSIS integration Runtime
 
@@ -110,6 +110,11 @@ Este artigo inclui os erros mais comuns que podem ser acessados quando a execuç
   * Uma possível causa é o nome de usuário/senha com o MFA habilitado está configurada para autenticação do Azure Analysis Services, que ainda não é suportada no SSIS integration runtime. Tente usar a entidade de serviço para autenticação do serviço de análise do Azure:
     1. Preparar a entidade de serviço para AAS [https://docs.microsoft.com/azure/analysis-services/analysis-services-service-principal](https://docs.microsoft.com/azure/analysis-services/analysis-services-service-principal)
     2. No Gerenciador de conexão, definir "Usar um nome de usuário específico e uma senha": definir "AppID" como nome de usuário e "clientSecret" como senha
+
+### <a name="error-message-adonet-source-has-failed-to-acquire-the-connection-guid-with-the-following-error-message-login-failed-for-user-nt-authorityanonymous-logon-when-using-managed-identity"></a>Mensagem de erro: "Fonte ADONET não adquiriu a conexão {GUID} com a seguinte mensagem de erro: Falha no logon do usuário 'NT AUTHORITY\ANONYMOUS LOGON' "ao usar a identidade gerenciada
+
+* Possível causa & ação recomendada:
+  * Verifique se que você não configurar o método de autenticação do Gerenciador de conexão como "Autenticação de senha do Active Directory" quando o parâmetro "ConnectUsingManagedIdentity" é True. Você pode configurá-lo como "Autenticação do SQL" em vez disso, que seria ignorado se "ConnectUsingManagedIdentity" estiver definida
 
 ### <a name="package-takes-unexpected-long-time-to-execute"></a>Pacote terá inesperado muito tempo para executar
 

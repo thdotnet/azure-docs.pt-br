@@ -3746,7 +3746,7 @@ triggerOutputs()
 
 <a name="trim"></a>
 
-### <a name="trim"></a>cortar
+### <a name="trim"></a>trim
 
 Remover espaços em branco à esquerda e à direita de uma cadeia de caracteres e retornar a cadeia de caracteres atualizada.
 

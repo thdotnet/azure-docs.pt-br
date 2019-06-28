@@ -11,12 +11,12 @@ author: chris-lauren
 ms.author: clauren
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0eaf48f57c3011222b71a63d703e1ccec7aca001
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5cbb7f13214a86f528521fdeb1ffa1374ca813ef
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66692829"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67331699"
 ---
 # <a name="mlops-manage-deploy-and-monitor-models-with-azure-machine-learning-service"></a>MLOps: Gerenciar, implantar e monitorar modelos com os Serviços do Azure Machine Learning
 
@@ -54,11 +54,14 @@ Para obter mais informações sobre ONNX com o serviço Azure Machine Learning, 
 O registro de modelo permite que você armazene e controle a versão de seus modelos na nuvem do Azure em seu workspace. O registro de modelo torna mais fácil organizar e manter o controle de seus modelos treinados.
 
 > [!TIP]
-> Você também pode registrar os modelos treinados fora do serviço de Azure Machine Learning.
+> Um modelo registrado é um contêiner lógico para um ou mais arquivos que compõem seu modelo. Por exemplo, se você tiver um modelo que é armazenado em vários arquivos, você pode registrá-los como um único modelo em seu espaço de trabalho do Azure Machine Learning. Após o registro, você pode, em seguida, baixar ou implantar o modelo registrado e receba todos os arquivos que foram registrados.
  
 Modelos registrados são identificados por nome e versão. Cada vez que você registra um modelo com o mesmo nome de um já existente, o Registro incrementa a versão. Você também pode fornecer marcas de metadados adicionais durante o registro, que podem ser usadas ao pesquisar modelos. O serviço de Azure Machine Learning dá suporte a qualquer modelo que pode ser carregado usando o Python 3.5.2 ou superior.
 
-Você não pode excluir modelos que estão sendo usados em uma implantação ativa.
+> [!TIP]
+> Você também pode registrar os modelos treinados fora do serviço de Azure Machine Learning.
+
+Você não pode excluir um modelo registrado que está sendo usado em uma implantação ativa.
 
 Para obter mais informações, consulte a seção sobre registro de modelos em [Implantar modelos](how-to-deploy-and-where.md#registermodel).
 
