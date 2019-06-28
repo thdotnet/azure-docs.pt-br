@@ -3,19 +3,19 @@ title: O que é um espaço de trabalho e projeto? - Tradutor personalizado
 titleSuffix: Azure Cognitive Services
 description: Um espaço de trabalho é uma área de trabalho para compor e construir o sistema de tradução personalizado. Um espaço de trabalho pode conter vários projetos, modelos e documentos. Um projeto é um wrapper para um modelo, documentos e testes. Cada projeto inclui automaticamente todos os documentos que são carregados nesse espaço de trabalho que tenham o par de idiomas correto.
 services: cognitive-services
-author: rajdeep-in
+author: swmachan
 manager: christw
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 02/21/2019
-ms.author: v-pawal
+ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: 312688ddccd6a65745b919e4c396a95f40a58d3e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c35f3911b591a0d9adccdc48dbdc17f8afb5ea00
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66382328"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447351"
 ---
 # <a name="what-is-a-custom-translator-workspace"></a>O que é um espaço de trabalho do Tradutor Personalizado?
 

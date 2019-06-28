@@ -3,28 +3,36 @@ title: Melhores práticas – QnA Maker
 titlesuffix: Azure Cognitive Services
 description: Use essas melhores práticas para melhorar a base de dados de conhecimento e fornecer melhores resultados aos usuários finais do aplicativo/chat.
 services: cognitive-services
-author: tulasim88
+author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 05/10/2019
-ms.author: tulasim
+ms.date: 06/25/2019
+ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: b8507bdbf66dc003b6f54317eb526c0e468b9f2b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c796114d124c64ac1c373baacabe00c7dcd70aa7
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67064382"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447642"
 ---
 # <a name="best-practices-of-a-qna-maker-knowledge-base"></a>Melhores práticas de uma base de dados de conhecimento do QnA Maker
-O [ciclo de vida de desenvolvimento da base de dados de conhecimento](../Concepts/development-lifecycle-knowledge-base.md) informa como gerenciar a base de dados de conhecimento de ponta a ponta. Use essas melhores práticas para melhorar a base de dados de conhecimento e fornecer melhores resultados aos usuários finais do aplicativo/chat.
+
+O [ciclo de vida de desenvolvimento da base de dados de conhecimento](../Concepts/development-lifecycle-knowledge-base.md) informa como gerenciar a base de dados de conhecimento de ponta a ponta. Use essas melhores práticas para melhorar a sua base de dados de conhecimento e fornecem os melhores resultados ao aplicativo cliente ou bate-papo de usuários finais do bot.
 
 ## <a name="extraction"></a>Extração
+
 O serviço QnA Maker está melhorando continuamente os algoritmos que extraem perguntas e respostas do conteúdo e está expandindo a lista de formatos de arquivo e de HTML com suporte. Siga as [diretrizes](../Concepts/data-sources-supported.md) de extração de dados com base em seu tipo de documento. 
 
 Em geral, as páginas de perguntas frequentes devem ser independentes e não combinadas com outras informações. Manuais de produtos devem ter títulos claros e, de preferência, uma página de índice. 
+
+### <a name="configuring-multi-turn"></a>Configurando várias ativar
+
+Crie sua base de dados de conhecimento com a extração de turno várias habilitada. Se sua base de dados de conhecimento ou deve dar suporte a hierarquia de perguntas, essa hierarquia pode ser extraída do documento ou criada depois que o documento é extraído. 
+
+<!--is this a global setting that can only be configured at kb creation time? -->
 
 ## <a name="creating-good-questions-and-answers"></a>Criando boas perguntas e respostas
 
@@ -34,9 +42,14 @@ As melhores perguntas são simples. Considere a palavra-chave ou frase para cada
 
 Adicione quantas perguntas alternativas você precisa, mas mantenha as alterações simples. Adicionar mais palavras ou frases que não fazem parte da meta principal da pergunta não ajuda o QnA Maker a encontrar uma correspondência. 
 
+
+### <a name="add-relevant-alternative-questions"></a>Adicionar perguntas relevantes de alternativas
+
+O usuário poderá digitar perguntas com um estilo de conversa de texto, `How do I add a toner cartridge to my printer?` ou uma palavra-chave de pesquisa, como `toner cartridge`. A base de conhecimento deve ter os dois estilos de perguntas para não retornar a melhor resposta corretamente. Se você não tiver certeza sobre quais palavras-chave de inserção de um cliente, use dados do Application Insights para analisar consultas.
+
 ### <a name="good-answers"></a>Boas respostas
 
-As melhores respostas são simples, mas não simples demais como sim e não. Se sua resposta tiver que vincular outras fontes ou fornecer uma experiência avançada com mídia e links, use [marcação](../how-to/metadata-generateanswer-usage.md) para distinguir qual tipo de resposta que você espera, em seguida, envie essa marcação com a consulta para obter a versão de resposta correta.
+As respostas recomendadas são respostas simples, mas não muito simples. Não use, como respostas `yes` e `no`. Se sua resposta deve vincular a outras fontes ou fornecer uma experiência avançada com a mídia e links, use [metadados de marcação](./knowledge-base.md#key-knowledge-base-concepts) para distinguir as respostas, em seguida, [enviar a consulta](../how-to/metadata-generateanswer-usage.md#generateanswer-request-configuration) com marcas de metadados no `strictFilters` propriedade para obter a versão de resposta correta.
 
 ## <a name="chit-chat"></a>Bate-papo
 Adicione bate-papo ao seu bot para torná-lo mais conversacional e envolvente com pouco esforço. Você pode facilmente adicionar conjuntos de dados de bate-papo de chit da personalidades predefinidas ao criar seu KB e alterá-los a qualquer momento. Saiba como [adicionar bate-papo à base de dados de conhecimento](../How-To/chit-chat-knowledge-base.md). 
@@ -65,12 +78,26 @@ Recomendamos que você torne as seguintes perguntas e respostas do bate-papo mai
 * Quem criou você?
 * Olá
    
+### <a name="adding-custom-chit-chat-with-a-metadata-tag"></a>Adicionando chit-bate-papo personalizado com uma marca de metadados
+
+Se você adicionar seus próprios pares de QnA chit-bate-papo, certifique-se de adicionar metadados para que essas respostas são retornadas. O par de nome/valor de metadados é `editorial:chitchat`.
+
+## <a name="searching-for-answers"></a>Pesquisar por respostas
+
+API de GenerateAnswer usa perguntas e a resposta a ser pesquisado com melhores respostas a consultas de usuários.
+
+### <a name="searching-questions-only-when-answer-is-not-relevant"></a>Pesquisar perguntas somente quando a resposta não é relevante
+
+Use o [ `RankerType=QuestionOnly` ](#choosing-ranker-type) se você não desejar procurar respostas. 
+
+Um exemplo disso é quando a base de Conhecimento é um catálogo de acrônimos como perguntas com a forma como a resposta completa. O valor da resposta não ajudará para procurar a resposta apropriada.
 
 ## <a name="rankingscoring"></a>Classificação/pontuação
 Certifique-se de que você está utilizando da melhor forma os recursos de classificação com suporte do QnA Maker. Isso aumentará a probabilidade de que uma determinada consulta de usuário seja respondida com uma resposta apropriada.
 
 ### <a name="choosing-a-threshold"></a>Escolhendo um limite
-A pontuação de confiança padrão usada como limite é 50, no entanto, você pode alterá-la para sua base de dados de conhecimento dependendo das necessidades. Como cada base de dados de conhecimento é diferente, você precisa testar e escolher o limite mais adequado à sua. Leia mais sobre a [pontuação de confiança](../Concepts/confidence-score.md). 
+
+O padrão [pontuação de confiança](confidence-score.md#) que é usado como um limite é 50, no entanto, você pode [alterar o limite](confidence-score.md#set-threshold) para seu KB, com base em suas necessidades. Como cada base de dados de conhecimento é diferente, você precisa testar e escolher o limite mais adequado à sua. 
 
 ### <a name="choosing-ranker-type"></a>Escolhendo o tipo de classificador
 Por padrão, o QnA Maker pesquisa por meio de perguntas e respostas. Se você quiser pesquisar apenas perguntas, para gerar uma resposta, use o `RankerType=QuestionOnly` no corpo POST da solicitação GenerateAnswer.
@@ -87,14 +114,14 @@ Por padrão, o QnA Maker pesquisa por meio de perguntas e respostas. Se você qu
 
 ### <a name="use-metadata-tags-to-filter-questions-and-answers"></a>Use marcas de metadados para filtrar perguntas e respostas
 
-Os [Metadados](../How-To/edit-knowledge-base.md) adicionam a capacidade de restringir os resultados de uma consulta do usuário com base em marcas de metadados. A resposta da base de dados de conhecimento poderá variar com base na marca de metadados, mesmo se a consulta for a mesma. Por exemplo, *"onde o estacionamento está localizado"* poderá ter uma resposta diferente se a localização da filial do restaurante for diferente – ou seja, se os metadados forem *Localização: Seattle* versus *Localização: Redmond*.
+[Metadados](../How-To/edit-knowledge-base.md) adiciona a capacidade de um aplicativo cliente conhecê-la não deve executar todas as respostas, mas em vez disso, para restringir os resultados de uma consulta de usuário com base em marcas de metadados. A resposta da base de dados de conhecimento poderá variar com base na marca de metadados, mesmo se a consulta for a mesma. Por exemplo, *"onde o estacionamento está localizado"* poderá ter uma resposta diferente se a localização da filial do restaurante for diferente – ou seja, se os metadados forem *Localização: Seattle* versus *Localização: Redmond*.
 
 ### <a name="use-synonyms"></a>Usar sinônimos
-Embora haja algum suporte para sinônimos no idioma inglês, use [alterações de palavras](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/alterations/replace) que não diferenciem maiúsculas de minúsculas para adicionar sinônimos a palavras-chave que apresentem formas diferentes. Os sinônimos devem ser adicionados no nível de serviço do QnA Maker e compartilhados por todas as bases de dados de conhecimento no serviço.
+Enquanto há algum suporte para sinônimos em inglês, use as alterações de maiusculas e minúsculas de palavra por meio de [alterações de API](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/alterations/replace) para adicionar sinônimos para palavras-chave que assumem a forma diferente. Sinônimos são adicionados no nível de serviço do QnA Maker e compartilhados por todas as bases de Conhecimento no serviço.
 
 |Palavra original|Sinônimos|
 |--|--|
-|comprar|comprar<br>internetnetbanking<br>Internet banking|
+|comprar|comprar<br>NET bancário<br>Internet banking|
 
 ### <a name="use-distinct-words-to-differentiate-questions"></a>Use palavras distintas para diferenciar perguntas
 O algoritmo de classificação do QnA Maker, que corresponde uma consulta de usuário a uma pergunta na base de conhecimento, funciona melhor se cada pergunta atende a uma necessidade diferente. A repetição do mesmo conjunto de palavras entre as perguntas reduz a probabilidade da resposta correta ser escolhida para uma determinada consulta de usuário com essas palavras. 
@@ -110,6 +137,8 @@ Uma vez que essas perguntas e respostas são formuladas com palavras muito semel
 
 ## <a name="collaborate"></a>Colaborar
 O QnA Maker permite que os usuários [colaborem](../How-to/collaborate-knowledge-base.md) em uma base de dados de conhecimento. Os usuários precisam de acesso ao grupo de recursos do QnA Maker do Azure para acessar as bases de dados de conhecimento. Algumas organizações podem querer terceirizar a edição e manutenção da base de dados de conhecimento e ainda proteger o acesso aos recursos do Azure. Esse modelo de editor-aprovador é realizado configurando dois [serviços do QnA Maker](../How-to/set-up-qnamaker-service-azure.md) idênticos em assinaturas diferentes e designando um deles para o ciclo de teste e edição. Quando o teste estiver concluído, o conteúdo da base de dados de conhecimento será transferido com um processo de [importação-exportação](../Tutorials/migrate-knowledge-base.md) para o serviço do QnA Maker do aprovador que, por fim, publicará a base de dados de conhecimento e atualizará o ponto de extremidade.
+
+
 
 ## <a name="active-learning"></a>Aprendizado ativo
 
