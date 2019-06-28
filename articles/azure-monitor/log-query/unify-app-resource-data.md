@@ -109,11 +109,11 @@ A tabela a seguir mostra as diferenças de esquema entre o Log Analytics e o App
 | AvailabilityTestId | id |
 | AvailabilityTestName | name |
 | AvailabilityTimestamp | timestamp |
-| Navegador | client_browser |
+| Browser | client_browser |
 | City | client_city |
 | ClientIP | client_IP |
-| Computador | cloud_RoleInstance | 
-| País/Região | client_CountryOrRegion | 
+| Computer | cloud_RoleInstance | 
+| Country | client_CountryOrRegion | 
 | CustomEventCount | itemCount | 
 | CustomEventDimensions | customDimensions |
 | CustomEventName | name | 
@@ -125,7 +125,7 @@ A tabela a seguir mostra as diferenças de esquema entre o Log Analytics e o App
 | ExceptionType | type |
 | OperationID | operation_id |
 | OperationName | operation_Name | 
-| SO | client_OS | 
+| OS | client_OS | 
 | PageViewCount | itemCount |
 | PageViewDuration | duration | 
 | PageViewName | name | 
@@ -134,9 +134,9 @@ A tabela a seguir mostra as diferenças de esquema entre o Log Analytics e o App
 | RequestDuration | duration | 
 | RequestID | id | 
 | RequestName | name | 
-| RequestSuccess | sucesso | 
+| RequestSuccess | success | 
 | ResponseCode | resultCode | 
-| Função | cloud_RoleName |
+| Role | cloud_RoleName |
 | RoleInstance | cloud_RoleInstance |
 | SessionId | session_Id | 
 | SourceSystem | operation_SyntheticSource |
