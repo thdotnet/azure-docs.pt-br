@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 04/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 294b376665ba6b62f79f826520bc933543b38bda
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e0181eea2895dbc2b3db3367c850140e3fad21d4
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67059274"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67331715"
 ---
 # <a name="how-azure-machine-learning-service-works-architecture-and-concepts"></a>Como funciona o Serviço do Azure Machine Learning: Arquitetura e conceitos
 
@@ -97,7 +97,10 @@ Os modelos são identificados por nome e versão. Cada vez que você registra um
 
 Você pode fornecer as marcas de metadados adicionais quando registrar o modelo e, em seguida, usar essas marcas ao procurar pelos modelos.
 
-Você não pode excluir modelos que estão sendo usados por uma implantação ativa.
+> [!TIP]
+> Um modelo registrado é um contêiner lógico para um ou mais arquivos que compõem seu modelo. Por exemplo, se você tiver um modelo que é armazenado em vários arquivos, você pode registrá-los como um único modelo em seu espaço de trabalho do Azure Machine Learning. Após o registro, você pode, em seguida, baixar ou implantar o modelo registrado e receba todos os arquivos que foram registrados.
+
+Você não pode excluir um modelo registrado que está sendo usado por uma implantação ativa.
 
 Para obter um exemplo de registro de um modelo, consulte [Treinar um modelo de classificação de imagem com o Azure Machine Learning](tutorial-train-models-with-aml.md).
 
