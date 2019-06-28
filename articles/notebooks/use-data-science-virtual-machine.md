@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/13/2019
 ms.author: getroyer
-ms.openlocfilehash: 9b762f1b3f1c17e15b051e72f5d2cf98bef446bf
-ms.sourcegitcommit: e5dcf12763af358f24e73b9f89ff4088ac63c6cb
+ms.openlocfilehash: 0ac50a5f52682c4315b8d08cf5632c4a6fa5242f
+ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67137767"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357581"
 ---
 # <a name="use-azure-data-science-virtual-machines"></a>Use as máquinas virtuais de ciência de dados do Azure
 
@@ -51,9 +51,9 @@ Você pode obter esses valores da página de DSVM no portal do Azure.
 
 ## <a name="accessing-azure-notebooks-files-from-the-dsvm"></a>Acessar arquivos do Azure Notebooks do DSVM
 
-Para preservar a paridade de caminhos de arquivo com o **computação gratuita** camada, é possível apenas abrir um projeto ao mesmo tempo em uma DSVM. Para abrir um novo projeto, você deve desligar o projeto aberto pela primeira vez.
+Acesso de sistema de arquivos tem suporte para versões do DSVM 19.06.15 ou posterior. Para verificar a versão, primeiro conecte-se à sua DSVM via SSH (o endereço IP está disponível no portal do Azure). Em seguida, execute o seguinte comando usando seus `<ip_address>`: `curl -H Metadata:true "http://<ip_address>/metadata/instance?api-version=2018-10-01"`. O número de versão é mostrado na saída para "version".
 
-![Botão de desligamento em blocos de anotações do Azure](media/shutdown.png)
+Para preservar a paridade de caminhos de arquivo com o **computação gratuita** camada, é possível apenas abrir um projeto ao mesmo tempo em uma DSVM. Para abrir um novo projeto, você deve desligar o projeto aberto pela primeira vez.
 
 Quando um projeto é executado em uma máquina virtual, os arquivos são montados no diretório raiz do servidor do Jupyter (o diretório mostrado no JupyterHub), substituindo os arquivos de blocos de anotações do Azure padrão. Quando você desligar a VM usando o **desligamento** botão no bloco de anotações da interface do usuário, os blocos de anotações do Azure restaura os arquivos padrão.
 

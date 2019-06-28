@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: fb219316afa798dfda777c4d0d406d5b8cabf7f9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f9f43720ff36b6dfac51a1626413ff7c2e590cd0
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66472370"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67342252"
 ---
 # <a name="azure-functions-http-triggers-and-bindings"></a>Gatilhos e associações HTTP do Azure Functions
 
@@ -307,6 +307,7 @@ Aqui está o código Python:
 ```python
 import logging
 import azure.functions as func
+
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
@@ -792,7 +793,7 @@ O arquivo [host.json](functions-host-json.md) contém configurações que contro
 
 [!INCLUDE [functions-host-json-http](../../includes/functions-host-json-http.md)]
 
-## <a name="output"></a>Saída
+## <a name="output"></a>Output
 
 Use a associação de saída HTTP para responder ao remetente da solicitação HTTP. Essa associação requer um gatilho HTTP e permite que você personalize a resposta associada à solicitação do gatilho. Se uma saída HTTP vinculada não é fornecida, um gatilho HTTP retorna HTTP 200 OK com um corpo vazio em funções de 1. x ou HTTP 204 sem conteúdo com um corpo vazio em funções 2. x.
 

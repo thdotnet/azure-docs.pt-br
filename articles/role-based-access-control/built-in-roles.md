@@ -15,12 +15,12 @@ ms.date: 05/16/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: 427c4615fcbb036ffff56a8fc592f258fb98845e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5a63053cc7fa1c1c86669ce2cea56b68f1a7b4b6
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66755115"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341497"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Funções internas para recursos do Azure
 
@@ -98,8 +98,8 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 | [Criador de laboratório](#lab-creator) | Permite a você criar, gerenciar e excluir os laboratórios gerenciados nas contas de laboratório do Azure. |
 | [Colaborador do Log Analytics](#log-analytics-contributor) | O Colaborador do Log Analytics pode ler todos os dados de monitoramento e editar as configurações de monitoramento. A edição das configurações de monitoramento inclui a adição da extensão da VM às VMs, leitura das chaves da conta de armazenamento para poder configurar a coleção de logs do Armazenamento do Microsoft Azure, criação e configuração de contas de Automação, adição de soluções e configuração do diagnóstico do Azure em todos os recursos do Azure. |
 | [Leitor do Log Analytics](#log-analytics-reader) | Um Leitor do Log Analytics pode exibir e pesquisar todos os dados de monitoramento além de exibir as configurações de monitoramento, incluindo a exibição da configuração do diagnóstico do Azure em todos os recursos do Azure. |
-| [Colaborador de Aplicativo Lógico](#logic-app-contributor) | Permite gerenciar o aplicativo lógico, mas não o acesso a ele. |
-| [Operador de Aplicativo Lógico](#logic-app-operator) | Permite que você leia, habilite e desabilite o aplicativo lógico. |
+| [Colaborador de Aplicativo Lógico](#logic-app-contributor) | Permite que você gerencie aplicativos lógicos, mas não alterar o acesso a eles. |
+| [Operador de Aplicativo Lógico](#logic-app-operator) | Permite que você leia, ativar e desativar aplicativos lógicos, mas não editar ou atualizá-los. |
 | [Função do Operador de Aplicativos Gerenciado](#managed-application-operator-role) | Permite que você leia e execute as ações nos recursos de aplicativo gerenciado |
 | [Leitor de aplicativos gerenciados](#managed-applications-reader) | Permite ler os recursos de um aplicativo gerenciado e solicitar acesso JIT. |
 | [Colaborador de Identidade Gerenciada](#managed-identity-contributor) | Criar, ler, atualizar e excluir a identidade atribuída pelo usuário |
@@ -1620,7 +1620,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite gerenciar o aplicativo lógico, mas não o acesso a ele. |
+> | **Descrição** | Permite que você gerencie aplicativos lógicos, mas não alterar o acesso a eles. |
 > | **Id** | 87a39d53-fc1b-424a-814c-f7e04687dc9e |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -1654,7 +1654,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite que você leia, habilite e desabilite o aplicativo lógico. |
+> | **Descrição** | Permite que você leia, ativar e desativar aplicativos lógicos, mas não editar ou atualizá-los. |
 > | **Id** | 515c2055-d9d4-4321-b1b9-bd0c9a0f79fe |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
@@ -2494,7 +2494,7 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Descrição** | Permite um gerenciamento de contas de armazenamento. Não fornece acesso aos dados na conta de armazenamento. |
+> | **Descrição** | Permite um gerenciamento de contas de armazenamento. Fornece acesso à chave de conta, que pode ser usado para acessar dados por meio de autorização de chave compartilhada. |
 > | **Id** | 17d1049b-9a84-46fb-8f53-869881c3d3ab |
 > | **Ações** |  |
 > | Microsoft.Authorization/*/read | Ler todas as autorizações |

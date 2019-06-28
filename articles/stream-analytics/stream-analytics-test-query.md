@@ -7,18 +7,18 @@ ms.author: mamccrea
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 6/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: fca76b632e9bcc27ed762886eaea696a5696ad3f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c0a76ecd12143e0bbaa9997bfc6d7295df9c4ec7
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60761823"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67340873"
 ---
 # <a name="test-a-stream-analytics-query-with-sample-data"></a>Testar uma consulta do Stream Analytics com dados de exemplo
 
-Usando o Azure Stream Analytics, é possível carregar dados de exemplo e testar consultas no portal do Azure sem iniciar ou interromper um trabalho.
+Usando o Azure Stream Analytics, você pode amostras de dados de entradas ou carregar dados de exemplo para testar consultas no portal do Azure sem iniciar ou interromper um trabalho.
 
 ## <a name="upload-sample-data-and-test-the-query"></a>Carregar dados de exemplo e testar a consulta
 
@@ -28,11 +28,15 @@ Usando o Azure Stream Analytics, é possível carregar dados de exemplo e testar
 
 3. Na página de trabalho do Stream Analytics, sob o título **Topologia de Trabalho**, selecione **Consulta** para abrir a janela Editor de consultas. 
 
-4. Para testar a consulta com dados de entrada de exemplo, clique com o botão direito do mouse em qualquer uma das entradas.  Em seguida, selecione **Carregar dados de exemplo do arquivo**. Os dados devem ser serializados em JSON, CSV ou AVRO. A entrada de exemplo deve ser codificada em UTF-8 e não deve ser compactada. O delimitador somente de vírgula (,) dá suporte para teste da entrada do CSV no portal.
+4. Para testar sua consulta você pode, em seguida, ou dados de exemplo de uma entrada ao vivo ou carregamento de um arquivo. Os dados devem ser serializados em JSON, CSV ou AVRO. A entrada de exemplo deve ser codificada em UTF-8 e não deve ser compactada. O delimitador somente de vírgula (,) dá suporte para teste da entrada do CSV no portal.
+
+    1. Usando a entrada ao vivo: clique com botão direito em qualquer uma de suas entradas. Em seguida, selecione **dados de exemplo da entrada**. Na próxima tela, você pode definir a duração da amostra.
+
+    1. Usando o arquivo: clique com botão direito em qualquer uma de suas entradas. Em seguida, selecione **Carregar dados de exemplo do arquivo**. 
 
     ![consulta de teste do editor de consultas do stream analytics](media/stream-analytics-test-query/stream-analytics-test-query-editor-upload.png)
 
-5. Depois que o upload for concluído, selecione **Teste** para testar essa consulta em relação aos dados de exemplo que você forneceu.
+5. Depois que a amostragem ou o upload for concluído, selecione **testar** para testar essa consulta em relação as dados de exemplo que você forneceu.
 
     ![dados de exemplo de teste do editor de consultas do stream analytics](media/stream-analytics-test-query/stream-analytics-test-query-editor-test.png)
 

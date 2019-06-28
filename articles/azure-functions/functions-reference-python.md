@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 04/16/2018
 ms.author: glenga
-ms.openlocfilehash: d25082c429c58c074726c75f7ff6f248daee4151
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 249e5ac33b1420ada2cda45ea729471351f21adf
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67050610"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67342000"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Guia do desenvolvedor de Python para o Azure Functions
 
@@ -73,10 +73,11 @@ Opcionalmente, para aproveitar os recursos de intellisense e preenchimento autom
 ```python
 import azure.functions
 
+
 def main(req: azure.functions.HttpRequest) -> str:
     user = req.params.get('user')
     return f'Hello, {user}!'
-```  
+```
 
 Use as anotações do Python incluídas no pacote [azure.functions.*](/python/api/azure-functions/azure.functions?view=azure-python) para associar a entrada e as saídas a seus métodos.
 
@@ -154,6 +155,7 @@ Por exemplo, o código a seguir demonstra a diferença entre os dois:
 import azure.functions as func
 import logging
 
+
 def main(req: func.HttpRequest,
          obj: func.InputStream):
 
@@ -200,6 +202,7 @@ Para produzir várias saídas, use o método `set()` fornecido pela interface `a
 ```python
 import azure.functions as func
 
+
 def main(req: func.HttpRequest,
          msg: func.Out[func.QueueMessage]) -> str:
 
@@ -216,6 +219,7 @@ O exemplo a seguir registra uma mensagem de informações quando a função é i
 
 ```python
 import logging
+
 
 def main(req):
     logging.info('Python HTTP trigger function processed a request.')
@@ -237,6 +241,8 @@ Há outros métodos de registro em log disponíveis que permitem a gravação no
 
 ```python
 # Will be run with asyncio directly
+
+
 async def main():
     await some_nonblocking_socket_io_op()
 ```
@@ -245,6 +251,8 @@ Se a função Main () é síncrona (nenhuma `async` qualificador), executamos au
 
 ```python
 # Would be run in an asyncio thread-pool
+
+
 def main():
     some_blocking_socket_io()
 ```
@@ -258,8 +266,9 @@ Por exemplo:
 ```python
 import azure.functions
 
+
 def main(req: azure.functions.HttpRequest,
-            context: azure.functions.Context) -> str:
+         context: azure.functions.Context) -> str:
     return f'{context.invocation_id}'
 ```
 
@@ -280,6 +289,7 @@ Não há garantia de que o estado do aplicativo será preservado para execuçõe
 
 ```python
 CACHED_DATA = None
+
 
 def main(req):
     global CACHED_DATA
@@ -335,6 +345,7 @@ Por exemplo, o seguinte é um teste de simulação de uma função disparada por
 import azure.functions as func
 import logging
 
+
 def main(req: func.HttpRequest,
          obj: func.InputStream):
 
@@ -348,13 +359,14 @@ import unittest
 import azure.functions as func
 from . import my_function
 
+
 class TestFunction(unittest.TestCase):
     def test_my_function(self):
         # Construct a mock HTTP request.
         req = func.HttpRequest(
             method='GET',
             body=None,
-            url='/my_function', 
+            url='/my_function',
             params={'name': 'Test'})
 
         # Call the function.
@@ -362,7 +374,7 @@ class TestFunction(unittest.TestCase):
 
         # Check the output.
         self.assertEqual(
-            resp.get_body(), 
+            resp.get_body(),
             'Hello, Test!',
         )
 ```
@@ -372,6 +384,7 @@ Aqui está outro exemplo, com uma função disparada por fila:
 ```python
 # myapp/__init__.py
 import azure.functions as func
+
 
 def my_function(msg: func.QueueMessage) -> str:
     return f'msg body: {msg.get_body().decode()}'
@@ -384,6 +397,7 @@ import unittest
 import azure.functions as func
 from . import my_function
 
+
 class TestFunction(unittest.TestCase):
     def test_my_function(self):
         # Construct a mock Queue message.
@@ -395,10 +409,10 @@ class TestFunction(unittest.TestCase):
 
         # Check the output.
         self.assertEqual(
-            resp, 
+            resp,
             'msg body: test',
         )
-``` 
+```
 
 ## <a name="known-issues-and-faq"></a>Problemas conhecidos e perguntas frequentes
 

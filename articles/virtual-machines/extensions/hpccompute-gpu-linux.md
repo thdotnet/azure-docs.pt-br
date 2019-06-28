@@ -85,7 +85,7 @@ Todas as configurações são opcionais. O comportamento padrão é não atualiz
 | NOME | DESCRIÇÃO | Valor Padrão | Valores Válidos | Tipo de Dados |
 | ---- | ---- | ---- | ---- | ---- |
 | updateOS | Atualize o kernel, mesmo que não seja necessário para instalação do driver | false | true, false | boolean |
-| driverVersion | NV: versão do driver GRID<br> NC/ND: versão do Kit de ferramentas CUDA. Os drivers mais recentes para o CUDA escolhido são instalados automaticamente. | mais recente | GRID: "418.70", "410.92", "410.71", "390.75", "390.57", "390.42"<br> CUDA: "10.0.130", "9.2.88", "9.1.85" | string |
+| driverVersion | NV: versão do driver GRID<br> NC/ND: versão do Kit de ferramentas CUDA. Os drivers mais recentes para o CUDA escolhido são instalados automaticamente. | latest | GRID: "418.70", "410.92", "410.71", "390.75", "390.57", "390.42"<br> CUDA: "10.0.130", "9.2.88", "9.1.85" | string |
 | installCUDA | Instale o kit de ferramentas CUDA. Só é relevante para as VMs da série NC/ND. | verdadeiro | true, false | boolean |
 
 

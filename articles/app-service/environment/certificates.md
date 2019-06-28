@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 08/29/2018
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: bcb0c806d916b9dff4461cad829a1d75e8df7cf6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 35193380cc890a93d93c68bf5fc405572b5aa409
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60766260"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67339888"
 ---
 # <a name="certificates-and-the-app-service-environment"></a>Certificados e o Ambiente do Serviço de Aplicativo 
 
@@ -85,7 +85,9 @@ Para carregar o certificado em seu aplicativo no ASE:
 
     84EC242A4EC7957817B8E48913E50953552DAFA6,6A5C65DC9247F762FE17BF8D4906E04FE6B31819
 
-O certificado ficará disponível para todos os aplicativos no mesmo Plano do Serviço de Aplicativo que definiu essa configuração. Se você precisar que ele fique disponível para aplicativos de outro Plano do Serviço de Aplicativo, será necessário repetir a operação de Configuração de Aplicativo em um aplicativo desse Plano do Serviço de Aplicativo. Para verificar se o certificado está configurado, acesse o console do Kudu e emita o comando dir cert:\localmachine\root no console de depuração do PowerShell. 
+O certificado ficará disponível para todos os aplicativos no mesmo Plano do Serviço de Aplicativo que definiu essa configuração. Se você precisar que ele fique disponível para aplicativos de outro Plano do Serviço de Aplicativo, será necessário repetir a operação de Configuração de Aplicativo em um aplicativo desse Plano do Serviço de Aplicativo. Para verificar se o certificado está definido, vá para o console do Kudu e emita o seguinte comando no console de depuração do PowerShell:
+
+    dir cert:\localmachine\root
 
 Para executar testes, você pode criar um certificado autoassinado e gerar um arquivo *.cer* com o PowerShell a seguir: 
 

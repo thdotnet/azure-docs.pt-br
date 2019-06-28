@@ -6,12 +6,12 @@ ms.author: janeng
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: 42f290109ca380464cb07ac9f684cdde25b8fdcd
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a92017c462ef62cbfb1aa6c2613a502d1cc5ffc6
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67063762"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67340732"
 ---
 # <a name="pricing-tiers-in-azure-database-for-postgresql---single-server"></a>Tipos de preço no banco de dados do Azure para PostgreSQL – servidor único
 
@@ -64,10 +64,10 @@ Estamos aumentando os limites de armazenamento em camadas nosso uso geral e otim
 | Tipo de armazenamento | Armazenamento Premium do Azure | Armazenamento Premium do Azure |
 | Tamanho do armazenamento | 32 GB a 16 TB| 32 a 16 TB |
 | Tamanho do incremento de armazenamento | 1 GB | 1 GB |
-| IOPS | 3 IOPS/GB<br/>Mín 100 IOPS<br/>20\.000 IOPS máxima| 3 IOPS/GB<br/>Mín 100 IOPS<br/>20\.000 IOPS máxima |
+| IOPS | 3 IOPS/GB<br/>Mín 100 IOPS<br/>20.000 IOPS máxima| 3 IOPS/GB<br/>Mín 100 IOPS<br/>20.000 IOPS máxima |
 
 > [!IMPORTANT]
-> Armazenamento de grande está atualmente em visualização pública nas seguintes regiões: Leste dos EUA, Leste dos EUA 2, centro dos EUA, oeste dos EUA, oeste dos EUA 2, Europa Setentrional, Europa Ocidental, Sudeste Asiático, Leste do Japão, Coreia Central, Leste da Austrália.
+> Armazenamento de grande está atualmente em visualização pública nas seguintes regiões: Leste dos EUA, Leste dos EUA 2, centro dos EUA, oeste dos EUA, Europa Setentrional, Europa Ocidental, Sudeste Asiático, Leste do Japão, Coreia Central, Leste da Austrália.
 >
 >A visualização do armazenamento de grandes atualmente não dá suporte:
 >

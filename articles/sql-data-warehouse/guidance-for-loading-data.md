@@ -11,12 +11,12 @@ ms.date: 05/31/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seoapril2019
-ms.openlocfilehash: 1b5af710feb743a30ac4a2af94b6e7e8b6c56595
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3387f6df36e9f5d98606e33b60a7584ff591efd6
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66479884"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67340116"
 ---
 # <a name="best-practices-for-loading-data-into-azure-sql-data-warehouse"></a>Práticas recomendadas para carregar dados no SQL Data Warehouse do Azure
 
@@ -102,7 +102,7 @@ Se você tiver milhares ou mais de inserções únicas ao longo do dia, crie lot
 
 ## <a name="creating-statistics-after-the-load"></a>Criando estatísticas após o carregamento
 
-Para melhorar o desempenho de suas consultas, é importante que as estatísticas sejam criadas em todas as colunas de todas as tabelas após o primeiro carregamento ou ocorrem alterações significativas nos dados.  Isso pode ser feito manualmente, ou você pode habilitar [criação automática de statustics](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-statistics#automatic-creation-of-statistic).
+Para melhorar o desempenho de suas consultas, é importante que as estatísticas sejam criadas em todas as colunas de todas as tabelas após o primeiro carregamento ou ocorrem alterações significativas nos dados.  Isso pode ser feito manualmente, ou você pode habilitar [criação automática de estatísticas](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-statistics#automatic-creation-of-statistic).
 
 Para obter uma explicação detalhada das estatísticas, confira [Estatísticas](sql-data-warehouse-tables-statistics.md). O exemplo a seguir mostra como criar manualmente estatísticas em cinco colunas da tabela Customer_Speed.
 

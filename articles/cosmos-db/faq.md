@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 47b1d9720a23c1dbfdee8c2e4cba95ff998a4cc0
-ms.sourcegitcommit: e5dcf12763af358f24e73b9f89ff4088ac63c6cb
+ms.openlocfilehash: 89c04a55138d57fd2ff37a96f2bc92b12d1780d9
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67137749"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341228"
 ---
 # <a name="frequently-asked-questions-about-different-apis-in-azure-cosmos-db"></a>Perguntas frequentes sobre diferentes APIs no Azure Cosmos DB
 
@@ -99,7 +99,7 @@ O Azure Cosmos DB está disponível no Portal do Azure. Primeiro, inscreva-se pa
 
 ### <a name="what-is-a-master-key"></a>O que é uma chave mestra?
 
-Uma chave mestra é um token de segurança para acessar todos os recursos de uma conta. As pessoas que têm a chave têm acesso de leitura e gravação a todos os recursos na conta do banco de dados. Seja cauteloso ao distribuir chaves mestras. A chave mestra primária e a secundária estão disponíveis na folha **Chaves** do [Portal do Azure][azure-portal]. Para saber mais sobre as chaves, consulte [Exibir, copiar e regenerar chaves de acesso](manage-with-cli.md#list-account-keys).
+Uma chave mestra é um token de segurança para acessar todos os recursos de uma conta. As pessoas que têm a chave têm acesso de leitura e gravação a todos os recursos na conta do banco de dados. Seja cauteloso ao distribuir chaves mestras. A chave mestra primária e a secundária estão disponíveis na **teclas** folha da [portal do Azure][azure-portal]. Para saber mais sobre as chaves, consulte [Exibir, copiar e regenerar chaves de acesso](manage-with-cli.md#list-account-keys).
 
 ### <a name="what-are-the-regions-that-preferredlocations-can-be-set-to"></a>Quais são as regiões para as quais PreferredLocations pode ser definido?
 
@@ -159,11 +159,11 @@ Você pode criar usuários e permissões usando um dos [SDKs da API do Cosmos DB
 
 ### <a name="does-the-sql-api-support-sql"></a>A API do SQL dá suporta para SQL?
 
-A linguagem de consulta SQL com suporte nas contas da API do SQL é um subconjunto avançado da funcionalidade de consulta com suporte no SQL Server. A linguagem de consulta SQL do Azure Cosmos DB fornece operadores hierárquicos e relacionais avançados e extensibilidade por meio de UDFs (funções definidas pelo usuário) baseadas em JavaScript. A gramática JSON permite modelar documentos JSON como árvores com nós rotulados, que são usados pelas técnicas de indexação automática do Azure Cosmos DB e pelo dialeto de consulta SQL do Azure Cosmos DB. Para obter informações sobre como usar a gramática SQL, consulte o artigo [Consulta SQL][query].
+A linguagem de consulta SQL com suporte nas contas da API do SQL é um subconjunto avançado da funcionalidade de consulta com suporte no SQL Server. A linguagem de consulta SQL do Azure Cosmos DB fornece operadores hierárquicos e relacionais avançados e extensibilidade por meio de UDFs (funções definidas pelo usuário) baseadas em JavaScript. A gramática JSON permite modelar documentos JSON como árvores com nós rotulados, que são usados pelas técnicas de indexação automática do Azure Cosmos DB e pelo dialeto de consulta SQL do Azure Cosmos DB. Para obter informações sobre como usar a gramática SQL, consulte a [consulta SQL][query] artigo.
 
 ### <a name="does-the-sql-api-support-sql-aggregation-functions"></a>A API do SQL dá suporte para funções de agregação SQL?
 
-A API do SQL dá suporte à agregação de baixa latência em qualquer escala por meio das funções de agregação `COUNT`, `MIN`, `MAX`, `AVG` e `SUM` pela gramática SQL. Para saber mais, consulte [Funções de agregação](how-to-sql-query.md#Aggregates).
+A API do SQL dá suporte à agregação de baixa latência em qualquer escala por meio das funções de agregação `COUNT`, `MIN`, `MAX`, `AVG` e `SUM` pela gramática SQL. Para saber mais, consulte [Funções de agregação](sql-query-aggregates.md).
 
 ### <a name="how-does-the-sql-api-provide-concurrency"></a>Como a API do SQL fornece simultaneidade?
 
@@ -230,7 +230,7 @@ Sim, você pode usar o driver ODBC Mongo do Simba com a API do Azure Cosmos DB p
 
 ### <a name="how-can-i-use-the-table-api-offering"></a>Como posso usar a oferta da API de Tabela?
 
-A API de Tabela do Azure Cosmos DB está disponível no [Portal do Azure][azure-portal]. Primeiro você deve se inscrever para uma assinatura do Azure. Depois de se inscrever, você pode adicionar uma conta de API de Tabela do Azure Cosmos DB à sua assinatura e, em seguida, adicionar tabelas à conta.
+A API de tabela do Azure Cosmos DB está disponível na [portal do Azure][azure-portal]. Primeiro você deve se inscrever para uma assinatura do Azure. Depois de se inscrever, você pode adicionar uma conta de API de Tabela do Azure Cosmos DB à sua assinatura e, em seguida, adicionar tabelas à conta.
 
 Você pode encontrar linguagens com suporte e inícios rápidos associados na [Introdução à API de Tabela do Azure Cosmos DB](table-introduction.md).
 

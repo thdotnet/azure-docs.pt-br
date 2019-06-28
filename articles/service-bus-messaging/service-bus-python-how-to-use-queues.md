@@ -14,12 +14,12 @@ ms.devlang: python
 ms.topic: article
 ms.date: 04/10/2019
 ms.author: aschhab
-ms.openlocfilehash: 6d95e4a0a7aeedef2fc7e635d2e49ea68c3ba0ca
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b74238ee49fe0d96d218f1800a33a9d60badc6d5
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65992043"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341703"
 ---
 # <a name="how-to-use-service-bus-queues-with-python"></a>Como usar filas do Barramento de Serviço com Python
 
@@ -36,7 +36,7 @@ Neste tutorial, você aprenderá como criar aplicativos de Python para enviar e 
 
         > [!NOTE]
         > Você aprenderá a criar uma **fila** no namespace do barramento de serviço usando o Python neste tutorial. 
-1. Instalar o Python ou o [pacote de barramento de serviço do Azure Python][Python Azure Service Bus package], consulte a [guia de instalação do Python](../python-how-to-install.md). Consulte a documentação completa do SDK do Python de barramento de serviço [aqui](/python/api/overview/azure/servicebus?view=azure-python).
+1. Instalar o Python ou o [pacote de barramento de serviço do Azure Python][Python Azure Service Bus package], consulte o [guia de instalação do Python](../python-how-to-install.md). Consulte a documentação completa do SDK do Python de barramento de serviço [aqui](/python/api/overview/azure/servicebus?view=azure-python).
 
 ## <a name="create-a-queue"></a>Criar uma fila
 O **ServiceBusClient** objeto permite que você trabalhe com filas. Adicione o seguinte código próximo à parte superior de qualquer arquivo Python no qual você deseja acessar o Barramento de Serviço de forma programática:
@@ -45,13 +45,13 @@ O **ServiceBusClient** objeto permite que você trabalhe com filas. Adicione o s
 from azure.servicebus import ServiceBusClient
 ```
 
-O código a seguir cria uma **ServiceBusClient** objeto. Substitua `mynamespace`, `sharedaccesskeyname` e `sharedaccesskey` pelo namespace, nome da chave e valor da SAS (Assinatura de Acesso Compartilhado).
+O código a seguir cria uma **ServiceBusClient** objeto. Substitua `<CONNECTION STRING>` com connectionstring seu barramento de serviço.
 
 ```python
 sb_client = ServiceBusClient.from_connection_string('<CONNECTION STRING>')
 ```
 
-Os valores para o nome chave e valor da SAS podem ser encontrados na informação de conexão do [Portal do Azure][Azure portal] ou no painel das **Propriedades** do Visual Studio ao selecionar o namespace do Barramento de Serviço no Gerenciador de Servidores (conforme mostrado na seção anterior).
+Os valores para o nome da chave SAS e o valor podem ser encontrados na [portal do Azure][Azure portal] informações de conexão, ou no Visual Studio **propriedades** painel ao selecionar o namespace do barramento de serviço no Gerenciador de servidores (como mostrado na seção anterior).
 
 ```python
 sb_client.create_queue("taskqueue")
@@ -81,7 +81,7 @@ msg = Message(b'Test Message')
 queue_client.send(msg)
 ```
 
-As filas do Barramento de Serviço dão suporte ao tamanho máximo de mensagem de 256 KB na [camada Standard](service-bus-premium-messaging.md) e 1 MB na [camada Premium](service-bus-premium-messaging.md). O cabeçalho, que inclui as propriedades de aplicativo padrão e personalizadas, pode ter um tamanho máximo de 64 KB. Não há nenhum limite no número de mensagens mantidas em uma fila mas há uma capacidade do tamanho total das mensagens mantidas por uma fila. O tamanho da fila é definido no momento da criação, com um limite superior de 5 GB. Para saber mais sobre cotas, confira [Service Bus quotas][Service Bus quotas] (Cotas do Barramento de Serviço).
+As filas do Barramento de Serviço dão suporte ao tamanho máximo de mensagem de 256 KB na [camada Standard](service-bus-premium-messaging.md) e 1 MB na [camada Premium](service-bus-premium-messaging.md). O cabeçalho, que inclui as propriedades de aplicativo padrão e personalizadas, pode ter um tamanho máximo de 64 KB. Não há nenhum limite no número de mensagens mantidas em uma fila mas há uma capacidade do tamanho total das mensagens mantidas por uma fila. O tamanho da fila é definido no momento da criação, com um limite superior de 5 GB. Para saber mais sobre cotas, consulte [Cotas do Barramento de Serviço][Service Bus quotas].
 
 Para obter mais informações, consulte [documentação do barramento de serviço do Azure Python](/python/api/overview/azure/servicebus?view=azure-python).
 

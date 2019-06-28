@@ -11,13 +11,13 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
-ms.date: 03/26/2019
-ms.openlocfilehash: ca53f4bfa80d6fdead24dc7d562c2240bb3fa86d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 06/18/2019
+ms.openlocfilehash: 826944fd3713f5cc3e99f20cb140055bfdb11a14
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60387412"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341439"
 ---
 # <a name="creating-and-using-active-geo-replication"></a>Criando e usando a replicação geográfica ativa
 
@@ -100,9 +100,6 @@ Para garantir a continuidade de negócios real, a adição de redundância de ba
 
   Cada banco de dados secundário pode participar separadamente de um pool elástico ou não estar em nenhum pool elástico. A escolha de pool para cada banco de dados secundário é separada e não depende da configuração de nenhum outro banco de dados secundário (seja ele primário ou secundário). Cada pool elástico está dentro de uma única região, portanto, vários bancos de dados secundários na mesma topologia nunca podem compartilhar um pool elástico.
 
-- **Tamanho de computação configurável do banco de dados secundário**
-
-  Os bancos de dados primário e secundário devem ter a mesma camada de serviço. Também é altamente recomendável que o banco de dados secundário seja criado com o mesmo tamanho da computação (DTUs ou vCores) que o primário. Um banco de dados secundário com tamanho da computação inferior sofre o risco de ter um maior retardo de replicação, potencial indisponibilidade do secundário e, consequentemente, o risco de perda substancial de dados após um failover. Como resultado, o RPO publicado = 5 segundos não pode ser garantido. O outro risco é que, após failover, o desempenho do aplicativo será afetado devido à falta de capacidade de computação do novo primário até que seja atualizado para um tamanho da computação superior. A hora da atualização depende do tamanho do banco de dados. Além disso, no momento, essa atualização requer que os bancos de dados primário e secundário estejam online e, portanto, não poderá ser concluída até que a interrupção seja atenuada. Se você decidir criar o secundário com tamanho da computação inferior, o gráfico de percentual de E/S do log no portal do Azure fornecerá uma boa maneira de estimar o tamanho da computação mínimo do secundário necessário para sustentar a carga de replicação. Por exemplo, se o banco de dados Primário for P6 (1000 DTUS) e seu percentual de E/S de log for 50%, o secundário precisará ser pelo menos P4 (500 DTU). Você também pode recuperar os dados de E/S de log usando as exibições de banco de dados [sys.resource_stats](/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database) ou [sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database).  Para obter mais informações sobre os tamanhos da computação do Banco de Dados SQL, confira [Quais são as Camadas de Serviço do Banco de Dados SQL](sql-database-purchase-models.md).
 
 - **Failover e failback controlados pelo usuário**
 
@@ -112,7 +109,19 @@ Para garantir a continuidade de negócios real, a adição de redundância de ba
 
 É recomendável usar [regras de firewall IP de nível de banco de dados](sql-database-firewall-configure.md) para replicação geográfica bancos de dados para que essas regras podem ser replicadas com o banco de dados para garantir que todos os bancos de dados secundários tenham as mesmas regras de firewall IP que o primário. Essa abordagem elimina a necessidade de os clientes configurarem manualmente e manterem as regras de firewall nos servidores que hospedam os bancos de dados primários e secundários. Da mesma forma, usar [usuários de banco de dados independente](sql-database-manage-logins.md) para o acesso a dados garante que os bancos de dados primários e secundários sempre tenham as mesmas credenciais de usuário para que, durante failovers, não haja interrupções devido à incompatibilidade nos logons e senhas. Com a adição de [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md), os clientes podem gerenciar o acesso do usuário aos bancos de dados primários e secundários, eliminando a necessidade de gerenciamento de credenciais em todos os bancos de dados juntos.
 
-## <a name="upgrading-or-downgrading-a-primary-database"></a>Atualizar ou fazer downgrade de um banco de dados primário
+## <a name="configuring-secondary-database"></a>Configurando o banco de dados secundário
+
+Os bancos de dados primário e secundário devem ter a mesma camada de serviço. Também é altamente recomendável que o banco de dados secundário seja criado com o mesmo tamanho da computação (DTUs ou vCores) que o primário. Se o banco de dados primário está sofrendo uma carga de trabalho pesadas de gravação, um secundário com o menor tamanho de computação pode não ser capaz de manter-se com ele. Ele fará com que o retardo de refazer a indisponibilidade potencial, secundária e, consequentemente, correm o risco de perda de dados substancial após um failover. Como resultado, o RPO publicado = 5 segundos não pode ser garantido. Ele também pode resultar em falhas ou atraso das outras cargas de trabalho na réplica primária. 
+
+A outra consequência de uma configuração de secundário desequilibrada é que, após o failover, o desempenho do aplicativo sofrerá devido à capacidade de computação insuficiente do novo primário. Ela será necessária para atualizar para uma computação superior ao nível necessário, não será possível até que a interrupção for atenuada. 
+
+> [!NOTE]
+> Atualmente, o atualização do banco de dados primário não é possível se o secundário está offline. 
+
+
+Se você decidir criar o secundário com tamanho da computação inferior, o gráfico de percentual de E/S do log no portal do Azure fornecerá uma boa maneira de estimar o tamanho da computação mínimo do secundário necessário para sustentar a carga de replicação. Por exemplo, se o banco de dados Primário for P6 (1000 DTUS) e seu percentual de E/S de log for 50%, o secundário precisará ser pelo menos P4 (500 DTU). Você também pode recuperar os dados de E/S de log usando as exibições de banco de dados [sys.resource_stats](/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database) ou [sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database).  Para obter mais informações sobre os tamanhos da computação do Banco de Dados SQL, confira [Quais são as Camadas de Serviço do Banco de Dados SQL](sql-database-purchase-models.md).
+
+## <a name="upgrading-or-downgrading-primary-database"></a>Atualização ou o downgrade do banco de dados primário
 
 Você pode atualizar ou fazer downgrade de um banco de dados primário para um tamanho da computação diferente (dentro da mesma camada de serviço, não entre Uso Geral e Comercialmente Crítico) sem desconectar nenhum banco de dados secundário. Ao atualizar, recomendamos que você atualize primeiro o banco de dados secundário e, depois, atualize o primário. Ao fazer downgrade, inverta a ordem: faça primeiro o downgrade do banco de dados primário e, depois, faça do secundário. Quando você atualiza ou faz downgrade do banco de dados para uma camada de serviço diferente essa recomendação é imposta.
 
@@ -134,7 +143,7 @@ Devido à alta latência das redes de longa distância, a cópia contínua usa u
 
 ## <a name="monitoring-geo-replication-lag"></a>Monitoramento de latência de replicação geográfica
 
-Para monitorar a latência em relação ao RPO, use *replication_lag_sec* coluna da [DM geo_replication_link_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-geo-replication-link-status-azure-sql-database) no banco de dados primário. Ele mostra a latência em segundos entre as transações confirmadas no primário e persistidos no secundário. Por exemplo Se o valor da lentidão é 1 segundo, significa que se o primário for afetado por uma interrupção no momento e o failover é iniciada, 1 segundo de transtions o mais recente não serão salvas. 
+Para monitorar a latência em relação ao RPO, use *replication_lag_sec* coluna da [DM geo_replication_link_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-geo-replication-link-status-azure-sql-database) no banco de dados primário. Ele mostra a latência em segundos entre as transações confirmadas no primário e persistidos no secundário. Por exemplo Se o valor da lentidão é 1 segundo, isso significa que se o primário for afetado por uma interrupção no momento e failover é iniciado, 1 segundo das transições mais recentes não serão salvas. 
 
 Para medir a latência com relação às alterações no banco de dados primário que foram aplicados na réplica secundária, ou seja, disponível para leitura do secundário, comparar *last_commit* tempo no banco de dados secundário com o mesmo valor no primário banco de dados.
 

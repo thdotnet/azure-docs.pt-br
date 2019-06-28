@@ -2,29 +2,23 @@
 title: Como gerenciar dispositivos usando o portal do Azure | Microsoft Docs
 description: Saiba como usar o portal do Azure para gerenciar dispositivos.
 services: active-directory
-documentationcenter: ''
-author: MicrosoftGuyJFlo
-manager: daveba
-editor: ''
-ms.assetid: 54e1b01b-03ee-4c46-bcf0-e01affc0419d
 ms.service: active-directory
 ms.subservice: devices
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/04/2019
 ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 48f162e5e6eb29e4a658000826ccf25389086342
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a4a0037d46db67460d507c6e92ab550f7d9c2fbe
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66730448"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341422"
 ---
-# <a name="manage-device-identity-using-the-azure-portal"></a>Gerenciar a identidade do dispositivo usando o portal do Azure
+# <a name="manage-device-identities-using-the-azure-portal"></a>Gerenciar identidades de dispositivo usando o portal do Azure
 
 Com o gerenciamento de identidade do dispositivo no Azure Active Directory (Azure AD), você pode garantir que seus usuários estão acessando os recursos de dispositivos que atendam aos padrões de segurança e conformidade.
 
@@ -65,19 +59,19 @@ A página de configurações do dispositivo permite que você configure:
 
 - **Os usuários podem unir dispositivos ao Azure AD** -essa configuração permite que você selecione os usuários que podem registrar seus dispositivos como [dispositivos de junção do Azure AD](overview.md#azure-ad-joined-devices). O padrão é **Todos**.
 
->[!NOTE]
+> [!NOTE]
 > **Os usuários podem unir dispositivos ao Azure AD** configuração só é aplicável para ingresso no Azure AD no Windows 10.
 
 - **Outros administradores locais nos dispositivos associados ao Azure AD** – você pode selecionar os usuários que têm direitos de administrador local em um dispositivo. Os usuários adicionados aqui são adicionados à função *Administradores do dispositivo* no Azure AD. Os administradores globais no Azure AD e os proprietários do dispositivo recebem direitos de administrador local por padrão. Essa opção é uma funcionalidade Premium Edition disponível por meio de produtos como o Azure AD Premium ou o EMS (Enterprise Mobility Suite).
-- **Os usuários podem registrar seus dispositivos com o Azure AD** -você precisa definir essa configuração para permitir que dispositivos macOs, iOS, Android e pessoal do Windows 10 ser [registrado](overview.md#azure-ad-registered-devices) com o Azure AD. Se você selecionar **None**, dispositivos não têm permissão para registrar com o Azure AD. O registro com o Microsoft Intune ou o MDM (Gerenciamento de Dispositivo Móvel) para o Office 365 exige registro. Se você tiver configurado qualquer um desses serviços, a opção **TODOS** estará selecionada e **NENHUM** não estará disponível.
-- **Exigir autenticação multifator para associar dispositivos** – é possível definir se os usuários devem precisar fornecer um segundo fator de autenticação para [associar](overview.md#azure-ad-joined-devices) seu dispositivo ao Azure Active Directory. O padrão é **Não**. É recomendável exigir a autenticação multifator ao registrar um dispositivo. Antes de habilitar a autenticação multifator para este serviço, você deve garantir que a autenticação multifator esteja configurada para os usuários que registram seus dispositivos. Para saber mais sobre os diferentes serviços de autenticação multifator do Azure, consulte [Introdução à autenticação multifator do Azure](../authentication/concept-mfa-whichversion.md). 
+- **Os usuários podem registrar seus dispositivos com o Azure AD** -você precisa definir essa configuração para permitir que dispositivos macOs, iOS, Android e pessoal do Windows 10 ser [registrado](overview.md#azure-ad-registered-devices) com o Azure AD. Se você selecionar **None**, dispositivos não têm permissão para registrar com o Azure AD. O registro com o Microsoft Intune ou o MDM (Gerenciamento de Dispositivo Móvel) para o Office 365 exige registro. Se você tiver configurado qualquer um desses serviços, a opção **TODOS** estará selecionada e **NENHUM** não estará disponível. Se você tiver habilitado essa configuração do Intune, em seguida, as opções aqui ficará esmaecidas.
+- **Exigir autenticação multifator para associar dispositivos** – é possível definir se os usuários devem precisar fornecer um segundo fator de autenticação para [associar](overview.md#azure-ad-joined-devices) seu dispositivo ao Azure Active Directory. O padrão é **Não**. É recomendável exigir a autenticação multifator ao registrar um dispositivo. Antes de habilitar a autenticação multifator para este serviço, você deve garantir que a autenticação multifator do Azure está configurada para os usuários que registram seus dispositivos. Para obter mais informações, consulte o artigo [implantação de autenticação multifator do Azure](../authentication/howto-mfa-getstarted.md). 
 
->[!NOTE]
+> [!NOTE]
 > **Exigir multi-Factor Auth unir dispositivos** configuração não se aplica a dispositivos de ingressados no Azure AD híbrido.
 
 - **Número máximo de dispositivos** – essa configuração permite selecionar o número máximo de dispositivos que um usuário pode ter no Azure AD. Se um usuário atingir esta cota, ele não poderá adicionar mais dispositivos até que um ou mais dos seus dispositivos existentes sejam removidos. A cota de dispositivo é contada para todos os dispositivos que são adicionados ao Azure AD ou Azure AD registrados hoje mesmo. O valor padrão é **20**.
 
->[!NOTE]
+> [!NOTE]
 > **Número máximo de dispositivos** configuração não se aplica a dispositivos de ingressados no Azure AD híbrido.
 
 - **Os usuários podem sincronizar configurações e dados de aplicativo em dispositivos** – por padrão, essa configuração é definida como **NENHUM**. Selecionar usuários específicos ou grupos ou TODOS permite que as configurações do usuário e os dados de aplicativo sejam sincronizados em seus dispositivos Windows 10. Saiba mais sobre como a sincronização funciona no Windows 10.

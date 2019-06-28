@@ -5,12 +5,12 @@ ms.date: 04/30/2019
 ms.topic: include
 ms.service: virtual-machines-linux
 manager: jeconnoc
-ms.openlocfilehash: e1b3b5fe603072069cb3a19c7597fcc1872fefd7
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 5884bb5dc389e6abfd4fa23d28dd71ecd16ff423
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67171904"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67347106"
 ---
 Imagens padronizadas VM (máquina virtual) permitem que as organizações a migrar para a nuvem e garantir a consistência nas implantações. Imagens normalmente incluem configurações de segurança e configuração predefinidas e o software necessário. Configurar seu próprio pipeline da geração de imagens exige tempo, infraestrutura e configuração, mas com o construtor de imagem de VM do Azure, basta fornecer uma configuração simples que descreve sua imagem, enviá-lo para o serviço e a imagem é criada e distribuída.
  
@@ -33,7 +33,7 @@ Para a visualização, há suporte para esses recursos:
 - Criação de imagens no formato VHD.
  
 
-## <a name="regions"></a>Regiões
+## <a name="regions"></a>Regions
 O serviço de construtor de imagem do Azure estará disponível para visualização nessas regiões. Imagens podem ser distribuídas fora essas regiões.
 - Leste dos EUA
 - Leste dos EUA 2
@@ -65,9 +65,9 @@ O construtor de imagens do Azure é um serviço totalmente gerenciado que pode s
 ![Desenho conceitual do processo de construtor de imagens do Azure](./media/virtual-machines-image-builder-overview/image-builder-process.png)
 
 1. Crie o modelo de imagem como um arquivo. JSON. Esse arquivo. JSON contém informações sobre a origem da imagem, personalizações e distribuição. Há vários exemplos de [repositório GitHub de construtor de imagem do Azure](https://github.com/danielsollondon/azvmimagebuilder/tree/master/quickquickstarts).
-1. Envie-o para o serviço, isso criará um artefato de modelo de imagem no grupo de recursos que você especificar. Em segundo plano, o Image Builder baixará a imagem de origem ou ISO e scripts, conforme necessário. Eles são armazenados em um grupo de recursos separado é criado automaticamente em sua assinatura, no formato: IT_<DestinationResourceGroup>_<TemplateName>. 
-1. Depois de criar o modelo de imagem, você pode, em seguida, compile a imagem. Em segundo plano Image Builder usa arquivos de modelo e código-fonte para criar uma VM, rede e armazenamento no IT_<DestinationResourceGroup>_<TemplateName> grupo de recursos.
-1. Como parte da criação de imagem, o Image builder distribui a imagem de acordo com o modelo, em seguida, exclui os recursos adicionais no IT_<DestinationResourceGroup>_<TemplateName> grupo de recursos que foi criado para o processo.
+1. Envie-o para o serviço, isso criará um artefato de modelo de imagem no grupo de recursos que você especificar. Em segundo plano, o Image Builder baixará a imagem de origem ou ISO e scripts, conforme necessário. Eles são armazenados em um grupo de recursos separado é criado automaticamente em sua assinatura, no formato: IT_\<DestinationResourceGroup>_\<TemplateName>. 
+1. Depois de criar o modelo de imagem, você pode, em seguida, compile a imagem. Em segundo plano Image Builder usa arquivos de modelo e código-fonte para criar uma VM, rede e armazenamento no IT_\<DestinationResourceGroup > _\<TemplateName > grupo de recursos.
+1. Como parte da criação de imagem, o Image builder distribui a imagem de acordo com o modelo, em seguida, exclui os recursos adicionais no IT_\<DestinationResourceGroup > _\<TemplateName > grupo de recursos que foi criado para o processo.
 
 
 ## <a name="permissions"></a>Permissões

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/22/2019
 ms.author: apimpm
-ms.openlocfilehash: 9a19165f9ac15f7a40aea0501f960b06efbd63a3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6446919c80e7e3fd379e6e39eb51712f9736ea7e
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66304369"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341206"
 ---
 # <a name="api-management-policy-expressions"></a>Expressões de política de Gerenciamento de API
 Este artigo descreve a sintaxe das expressões de política C# 7. Cada expressão tem acesso à variável de [contexto](api-management-policy-expressions.md#ContextVariables) fornecida implicitamente e a um [subconjunto](api-management-policy-expressions.md#CLRTypes) permitido de tipos do .NET Framework.
@@ -94,19 +94,19 @@ A tabela a seguir lista os tipos do .NET Framework e seus membros permitidos em 
 |System.Byte|Todos|
 |System.Char|Todos|
 |System.Collections.Generic.Dictionary<TKey, TValue>|Todos|
-|System.Collections.Generic.HashSet<T>|Todos|
-|System.Collections.Generic.ICollection<T>|Todos|
+|System.Collections.Generic.HashSet\<T>|Todos|
+|System.Collections.Generic.ICollection\<T>|Todos|
 |System.Collections.Generic.IDictionary<TKey, TValue>|Todos|
-|System.Collections.Generic.IEnumerable<T>|Todos|
-|System.Collections.Generic.IEnumerator<T>|Todos|
-|System.Collections.Generic.IList<T>|Todos|
-|System.Collections.Generic.IReadOnlyCollection<T>|Todos|
+|System.Collections.Generic.IEnumerable\<T>|Todos|
+|System.Collections.Generic.IEnumerator\<T>|Todos|
+|System.Collections.Generic.IList\<T>|Todos|
+|System.Collections.Generic.IReadOnlyCollection\<T>|Todos|
 |System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>|Todos|
-|System.Collections.Generic.ISet<T>|Todos|
+|System.Collections.Generic.ISet\<T>|Todos|
 |System.Collections.Generic.KeyValuePair<TKey, TValue>|Todos|
-|System.Collections.Generic.List<T>|Todos|
-|System.Collections.Generic.Queue<T>|Todos|
-|System.Collections.Generic.Stack<T>|Todos|
+|System.Collections.Generic.List\<T>|Todos|
+|System.Collections.Generic.Queue\<T>|Todos|
+|System.Collections.Generic.Stack\<T>|Todos|
 |System.Convert|Todos|
 |System.DateTime|(Construtor), adicionar, AddDays, AddHours, AddMilliseconds, AddMinutes, AddMonths, AddSeconds, AddTicks, AddYears, data, dia, DayOfWeek, DayOfYear, DaysInMonth, hora, IsDaylightSavingTime, IsLeapYear, MaxValue, milissegundo, minuto, MinValue, mês, agora , Análise, em segundo lugar, subtrair, tiques, TimeOfDay, hoje, ToString, UtcNow, ano|
 |System.DateTimeKind|Utc|

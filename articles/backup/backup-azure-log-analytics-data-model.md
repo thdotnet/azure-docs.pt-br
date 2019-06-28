@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 02/26/2019
 ms.author: adigan
-ms.openlocfilehash: dd4dad2cc3e541d3b6866c02341161dc1d9e1e6c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 801516ae2cfad891098c16f8cd6e9a4c7f157a93
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61234906"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67342008"
 ---
 # <a name="log-analytics-data-model-for-azure-backup-data"></a>Modelo de dados do Log Analytics para dados de Backup do Azure
 
@@ -50,7 +50,7 @@ Essa tabela fornece detalhes sobre campos relacionados ao alerta.
 | OperationName |Text |Nome da operação atual, por exemplo, alerta |
 | Categoria |Text |Categoria de dados de diagnóstico enviados por push para os logs do Azure Monitor. Sempre AzureBackupReport |
 | Resource |Text |Este é o recurso para o qual os dados estão sendo coletados, ele mostra o nome do cofre dos Serviços de Recuperação |
-| ProtectedServerUniqueId_s |Text |Identificador exclusivo do item protegido associado ao alerta |
+| ProtectedContainerUniqueId_s |Text |Identificador exclusivo do servidor protegido associado ao alerta (era ProtectedServerUniqueId_s na V1)|
 | VaultUniqueId_s |Text |Identificador exclusivo do cofre protegido associado ao alerta |
 | SourceSystem |Text |Sistema de origem dos dados atuais - Azure |
 | ResourceId |Text |Identificador exclusivo para o recurso sobre quais dados são coletados. Por exemplo, id de recurso do Cofre de serviços de recuperação |
@@ -67,10 +67,12 @@ Esta tabela fornece detalhes sobre os campos relacionados ao item de backup.
 | --- | --- | --- |
 | EventName_s |Text |O nome do evento. Sempre AzureBackupCentralReport |  
 | BackupItemUniqueId_s |Text |Identificador único do item de backup |
-| BackupItemId_s |Text |Identificador do item de backup |
+| BackupItemId_s |Text |Identificador do item de backup (este campo é somente para esquema v1) |
 | BackupItemName_s |Text |ID do item de backup |
 | BackupItemFriendlyName_s |Text |Nome amigável do item de backup |
 | BackupItemType_s |Texto |Tipo de item de backup, por exemplo, VM, FileFolder |
+| BackupItemProtectionState_s |Text |Estado de proteção do Item de Backup |
+| BackupItemAppVersion_s |Text |Versão do aplicativo do que o item de backup |
 | ProtectionState_s |Text |Estado de proteção atual do item de backup, por exemplo, Protegido, ProtectionStopped |
 | ProtectionGroupName_s |Text | Nome do grupo de proteção do Item de Backup é protegido, do SC DPM e MABS, se aplicável|
 | SecondaryBackupProtectionState_s |Text |Se a proteção secundária está habilitada para o item de backup|
@@ -103,8 +105,7 @@ Esta tabela fornece detalhes sobre associações de itens de backup com várias 
 | Categoria |Text |Este campo representa a categoria dos dados de diagnóstico enviados por push para o Log Analytics, é AzureBackupReport |
 | OperationName |Text |Este campo representa o nome da operação atual - BackupItemAssociation |
 | Resource |Text |Este é o recurso para o qual os dados estão sendo coletados, ele mostra o nome do cofre dos Serviços de Recuperação |
-| PolicyUniqueId_g |Text |Identificador exclusivo para a política associada com o item de backup |
-| ProtectedServerUniqueId_s |Text |Identificador exclusivo do servidor protegido associado com o item de backup |
+| ProtectedContainerUniqueId_s |Text |Identificador exclusivo do servidor protegido associado ao item de backup (foi ProtectedServerUniqueId_s na V1) |
 | VaultUniqueId_s |Text |Identificador exclusivo do cofre que contém o item de backup |
 | SourceSystem |Text |Sistema de origem dos dados atuais - Azure |
 | ResourceId |Text |Identificador de recurso para os dados sendo coletados. Por exemplo, id de recurso do Cofre de serviços de recuperação |
@@ -249,13 +250,14 @@ Esta tabela fornece campos básicos sobre contêineres protegidos. (Era Protecte
 | ProtectedContainerOSType_s |Text |Tipo de sistema operacional do contêiner protegido |
 | ProtectedContainerOSVersion_s |Text |Versão do sistema operacional do contêiner protegido |
 | AgentVersion_s |Text |Número de versão do agente de Backup ou o agente de proteção (no caso do SC DPM e MABS) |
-| BackupManagementType_s |Text |Tipo de provedor para executar o backup, por exemplo, IaaSVM, FileFolder |
-| EntityState_s |Text |Estado atual do objeto de servidor protegido, por exemplo, ativo, excluído |
+| BackupManagementType_s |Text |Tipo de provedor para executar o backup. Por exemplo, IaaSVM, FileFolder |
+| EntityState_s |Text |Estado atual do objeto servidor protegido. Por exemplo, ativo, excluído |
 | ProtectedContainerFriendlyName_s |Text |Nome amigável do servidor protegido |
 | ProtectedContainerName_s |Text |Nome do contêiner protegido |
-| ProtectedContainerWorkloadType_s |Text |Tipo do contêiner protegido de backup, por exemplo, IaaSVMContainer |
+| ProtectedContainerWorkloadType_s |Text |Tipo do contêiner protegido de backup. Por exemplo, IaaSVMContainer |
 | ProtectedContainerLocation_s |Text |Se o contêiner protegido está localizada localmente ou no Azure |
 | ProtectedContainerType_s |Text |Se o contêiner protegido é um servidor ou em um contêiner |
+| ProtectedContainerProtectionState_s’  |Text |Estado de proteção do contêiner protegido |
 
 ### <a name="storage"></a>Armazenamento
 
@@ -263,7 +265,7 @@ Esta tabela fornece detalhes sobre campos relacionados ao armazenamento.
 
 | Campo | Tipo de Dados | DESCRIÇÃO |
 | --- | --- | --- |
-| CloudStorageInBytes_s |Número decimal |Armazenamento de backup na nuvem usado por backups, calculado baseado no valor mais recente |
+| CloudStorageInBytes_s |Número decimal |Armazenamento de backup de nuvem usado por backups, calculado com base no valor mais recente (esse campo é somente para esquema v1)|
 | ProtectedInstances_s |Número decimal |Número de instâncias protegidas utilizadas para calcular o armazenamento de front-end na cobrança, calculada baseada no valor mais recente |
 | EventName_s |Text |Este campo representa o nome desse evento, é sempre AzureBackupCentralReport |
 | SchemaVersion_s |Text |Este campo indica a versão atual do esquema, é **V2** |
@@ -280,6 +282,10 @@ Esta tabela fornece detalhes sobre campos relacionados ao armazenamento.
 | ResourceGroup |Text |grupo de Recursos do recurso (por exemplo Cofre dos serviços de recuperação) para o qual os dados são coletados |
 | ResourceProvider |Text |Provedor de recursos para o qual os dados são coletados. Por exemplo, Microsoft.RecoveryServices |
 | ResourceType |Text |Tipo de recursos para o qual os dados são coletados. Por exemplo, Cofres |
+| StorageUniqueId_s |Text |Id exclusiva usada para identificar a entidade de armazenamento |
+| StorageType_s |Text |Tipo de armazenamento, por exemplo, nuvem, Volume, disco |
+| StorageName_s |Text |Nome da entidade de armazenamento, por exemplo, E:\ |
+| StorageTotalSizeInGBs_s |Text |Tamanho total de armazenamento, em GB, consumido por entidade de armazenamento|
 
 ### <a name="storageassociation"></a>StorageAssociation
 
@@ -342,7 +348,7 @@ Esta tabela especifica um Volume está associado com as cargas de trabalho.
 
 ### <a name="protectedinstance"></a>ProtectedInstance
 
-Esta tabela fornece campos relacionados de instâncias protegidas básico.
+Esta tabela fornece básicos campos protegidos relacionados de instâncias.
 
 | Campo | Tipo de Dados |Versões aplicáveis | DESCRIÇÃO |
 | --- | --- | --- | --- |

@@ -12,12 +12,12 @@ ms.date: 11/15/2018
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51ad6ea2abcc18b985e9c45fbfb1ffba98fb2c1f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 674d055c40ff594f0e4e05ec512b9124b1d7ab77
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66113094"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341328"
 ---
 # <a name="understand-azure-ad-application-proxy-connectors"></a>Noções básicas sobre conectores de Proxy de Aplicativo Azure AD
 
@@ -34,7 +34,7 @@ Para implantar o Proxy de Aplicativo com êxito, você precisa de pelo menos um 
 ### <a name="windows-server"></a>Windows Server
 Você precisa de um servidor executando o Windows Server 2012 R2 ou posterior no qual possa instalar o conector do Proxy de Aplicativo. O servidor precisa se conectar aos serviços de Proxy de Aplicativo no Azure e aos aplicativos locais que você está publicando.
 
-O servidor do Windows precisa ter o TLS 1.2 ativado antes de instalar o conector do Proxy de Aplicativo. Os conectores existentes com versões abaixo de 1.5.612.0 continuarão funcionando nas versões anteriores do TLS até novo aviso. Para habilitar o TLS 1.2:
+O servidor do Windows precisa ter o TLS 1.2 ativado antes de instalar o conector do Proxy de Aplicativo. Para habilitar o TLS 1.2 no servidor:
 
 1. Defina as seguintes chaves do registro:
     

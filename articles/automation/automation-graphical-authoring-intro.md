@@ -44,7 +44,7 @@ Você pode usar os controles na parte inferior da tela para ampliar e reduzir.
 
 O controle de Biblioteca é onde você seleciona [atividades](#activities) para adicionar a seu runbook. Você pode adicioná-las à tela, onde as conecta a outras atividades. Ela inclui quatro seções, descritas na tabela a seguir:
 
-| `Section` | DESCRIÇÃO |
+| `Section` | Description |
 |:--- |:--- |
 | Cmdlets |Inclui todos os cmdlets que podem ser usados em seu runbook. Os cmdlets são organizados por módulo. Todos os módulos instalados em sua conta de automação estão disponíveis. |
 | Runbooks |Inclui os runbooks em sua conta de automação. Esses runbooks podem ser adicionados à tela para serem usados como runbooks-filhos. Somente os runbooks do mesmo tipo de núcleo do runbook sendo editado são mostrados; para os runbooks Gráficos, somente os runbooks baseados no PowerShell são mostrados, enquanto que para os runbooks do Fluxo de Trabalho do PowerShell Gráfico, apenas os runbooks baseados no Fluxo de Trabalho do PowerShell são mostrados. |
@@ -109,7 +109,7 @@ No exemplo a seguir, o cmdlet Get-AzureRmVM tem três conjuntos de parâmetros. 
 
 Ao especificar um valor para um parâmetro, você seleciona uma fonte de dados para determinar como o valor é especificado. As fontes de dados que estão disponíveis para determinado parâmetro dependem dos valores válidos para esse parâmetro. Por exemplo, Null não é uma opção disponível para um parâmetro que não permite valores nulos.
 
-| Fonte de dados | DESCRIÇÃO |
+| Fonte de dados | Description |
 |:--- |:--- |
 | Valor Constante |Digite um valor válido para o parâmetro. Isso só está disponível para os seguintes tipos de dados: Int32, Int64, String, Boolean, DateTime e Switch. |
 | Saída de Atividade |Saída de uma atividade que precede a atividade atual no fluxo de trabalho. Todas as atividades válidas estão listadas. Selecione apenas a atividade para usar sua saída para o valor do parâmetro. Se a atividade produzir um objeto com várias propriedades, você poderá digitar o nome da propriedade depois de selecioná-la. |
@@ -139,7 +139,7 @@ A condição de repetição é uma expressão do PowerShell avaliada sempre apó
 
 A condição de repetição pode usar uma variável chamada $RetryData que fornece acesso às informações sobre as repetições de atividade. Essa variável tem as propriedades na tabela a seguir:
 
-| Propriedade | DESCRIÇÃO |
+| Propriedade | Description |
 |:--- |:--- |
 | NumberOfAttempts |Número de vezes que a atividade foi executada. |
 | Output |Saída da última execução da atividade. |
@@ -191,7 +191,7 @@ Crie um link entre duas atividades selecionando a atividade de origem e clicando
 
 Selecione o link para configurar suas propriedades na folha Configuração. Isso inclui o tipo de link, que é descrito na tabela a seguir:
 
-| Tipo de link | DESCRIÇÃO |
+| Tipo de link | Description |
 |:--- |:--- |
 | Pipeline |A atividade de destino é executada uma vez para cada objeto de saída da atividade de origem. A atividade de destino não será executada se a atividade de origem não resultar em saída. A saída da atividade de origem está disponível como um objeto. |
 | Sequência |A atividade de destino é executada apenas uma vez. Ela recebe uma matriz de objetos da atividade de origem. A saída da atividade de origem está disponível como uma matriz de objetos. |

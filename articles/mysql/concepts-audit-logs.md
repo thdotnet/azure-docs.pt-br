@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 06/11/2019
-ms.openlocfilehash: 35cbe04380e2113f986d1e7adf3f7fdf89cb9326
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a82afe6f5299609fd6dd57a54f04f49fad5d2268
+ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67078866"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357638"
 ---
 # <a name="audit-logs-in-azure-database-for-mysql"></a>Logs de auditoria no banco de dados do Azure para MySQL
 
@@ -45,7 +45,7 @@ Outros parâmetros que você pode ajustar incluem:
 
 Os logs de auditoria são integrados com os Logs de diagnóstico do Azure Monitor. Depois de habilitar os logs de auditoria no servidor MySQL, você pode emitir os logs do Azure Monitor, os Hubs de eventos ou armazenamento do Azure. Para saber mais sobre como habilitar os logs de diagnóstico no portal do Azure, consulte a [artigo portal do log de auditoria](howto-configure-audit-logs-portal.md#set-up-diagnostic-logs).
 
-## <a name="schemas"></a>Esquemas
+## <a name="diagnostic-logs-schemas"></a>Esquemas de Logs de diagnóstico
 
 As seções a seguir descrevem o que é a saída de logs de auditoria do MySQL com base no tipo de evento. Dependendo do método de saída, os campos incluídos e a ordem em que aparecem podem variar.
 
