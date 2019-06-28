@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 06/13/2019
 ms.author: raynew
-ms.openlocfilehash: 8df4f17c9afbf10c6507e505c6540c3f66a42309
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 51de1c4ac17360282877f05d52c3ea8fa2c6d712
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67275647"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67310758"
 ---
 # <a name="delete-a-recovery-services-vault"></a>Excluir um cofre dos Serviços de Recuperação
 
@@ -114,7 +114,7 @@ Esse procedimento fornece um exemplo que mostra como remover dados de backup de 
 1. No menu do painel do cofre, clique em **infraestrutura de Backup**.
 2. Clique em **servidores de gerenciamento de Backup** para exibir os servidores.
 
-    ![selecione seu cofre para abrir o painel dele](./media/backup-azure-delete-vault/delete-backup-management-servers.png)
+    ![Selecione o cofre para abrir seu painel](./media/backup-azure-delete-vault/delete-backup-management-servers.png)
 
 3. Clique com o botão direito > **excluir**.
 4. Sobre o **exclua** menu, digite o nome do servidor e clique em **excluir**.
@@ -124,7 +124,7 @@ Esse procedimento fornece um exemplo que mostra como remover dados de backup de 
 
 > [!NOTE]
 > Para remover itens, no console do servidor de gerenciamento ou no console do MARS em um servidor protegido, interrompa a proteção e excluir os backups. Se os itens de backup permanecem, o seguinte erro será exibida quando você tenta excluir e cancelar o registro do servidor:
-> 
+>
 >![Falha na exclusão](./media/backup-azure-delete-vault/deletion-failed.png)
 
 6. Para verificar se o trabalho de exclusão é concluída, verifique as mensagens do Azure ![Excluir dados de backup](./media/backup-azure-delete-vault/messages.png).
@@ -159,8 +159,8 @@ Esse procedimento fornece um exemplo que mostra como remover dados de backup de 
 
 > [!NOTE]
 > Itens de backup associados a um servidor de Backup do servidor de gerenciamento ou agente de Backup do Azure devem ser excluídos antes dos registros do servidor, esses são excluídos. Para remover itens de Backup, navegue até o SC DPM, o MABS ou o console de gerenciamento de MARS no servidor conforme aplicável e selecione as opções relevantes para interromper a proteção e excluir os backups. Se quaisquer itens de backup ainda estão associados, você verá o seguinte erro:
-> 
-> 
+>
+>
 >![Falha na exclusão](./media/backup-azure-delete-vault/deletion-failed.png)
 
 8. Para verificar se o trabalho de exclusão é concluída, verifique as mensagens do Azure ![Excluir dados de backup](./media/backup-azure-delete-vault/messages.png).

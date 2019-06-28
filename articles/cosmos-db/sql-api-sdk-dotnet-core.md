@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/22/2018
 ms.author: sngun
-ms.openlocfilehash: 91f15f9c19b480d950b2c715e6d9290e01184cf7
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 14350125f88c315a813eb64e3ce2b88dbec2aa24
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67272384"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67340190"
 ---
 # <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>SDK do .NET Core do Azure Cosmos DB para API do SQL: Notas sobre a versão e recursos
 > [!div class="op_single_selector"]
@@ -50,10 +50,8 @@ O SDK do .NET Core do Azure Cosmos DB tem paridade de recurso com a versão mais
 * Suporte para fluxos.
 * Atualizado CosmosResponseMessage do servidor para retornar o código de status e somente gerar exceção quando nenhuma resposta for retornada.
 
-### <a name="a-name250250"></a><a name="2.5.0"/>2.5.0
+### <a name="a-name241241"></a><a name="2.4.1"/>2.4.1
 
-* Permitir solicitações de gravação para o fallback para uma região diferente se o original um falhar
-* Adicionar política de repetição de sessão para a solicitação de gravação
 * Correções de rastreamento de condição de corrida para consultas que fazia com que páginas vazias
 
 ### <a name="a-name240240"></a><a name="2.4.0"/>2.4.0
@@ -234,7 +232,7 @@ O SDK do .NET Core do Azure Cosmos DB tem paridade de recurso com a versão mais
 
 ### <a name="a-name110110"></a><a name="1.1.0"/>1.1.0
 
-* Suporte adicionado para consultas de agregação (COUNT, MIN, MAX, SUM e AVG). Veja [Suporte de agregação](how-to-sql-query.md#Aggregates).
+* Suporte adicionado para consultas de agregação (COUNT, MIN, MAX, SUM e AVG). Veja [Suporte de agregação](sql-query-aggregates.md).
 * Taxa de transferência mínima reduzida em coleções particionadas de 10.100 RU/s a 2500 RU/s.
 
 ### <a name="a-name100100"></a><a name="1.0.0"/>1.0.0
@@ -257,7 +255,7 @@ Se você tiver dúvidas relacionadas a esse SDK, poste no [StackOverflow](https:
 
 | Versão | Data do lançamento | Data de desativação |
 | --- | --- | --- |
-| [2.5.0](#2.5.0) |18 de junho de 2019 |--- |
+| [2.4.1](#2.4.1) |20 de junho de 2019 |--- |
 | [2.4.0](#2.4.0) |05 de maio de 2019 |--- |
 | [2.3.0](#2.3.0) |04 de abril de 2019 |--- |
 | [2.2.3](#2.2.3) |11 de março de 2019 |--- |

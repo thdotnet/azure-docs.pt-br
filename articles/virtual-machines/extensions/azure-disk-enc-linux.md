@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/10/2019
 ms.author: ejarvi
-ms.openlocfilehash: 4b5b1f24fb22ff0922c362bd9911ad5c42236ee6
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 05d20e75cf8f0c84936ff4e5dfa42d60678f6ffc
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67051722"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67295343"
 ---
 # <a name="azure-disk-encryption-for-linux-microsoftazuresecurityazurediskencryptionforlinux"></a>Azure Disk Encryption para Linux (Microsoft.Azure.Security.AzureDiskEncryptionForLinux)
 
@@ -34,7 +34,7 @@ Para obter uma lista completa dos pré-requisitos, consulte [Pré-requisitos do 
 
 ### <a name="operating-system"></a>Sistema operacional
 
-O Azure Disk Encryption tem suporte nas versões selecionadas do servidor Linux.  Consulte as [perguntas frequentes sobre o Azure Disk Encryption](../../security/azure-security-disk-encryption-faq.md#bkmk_LinuxOSSupport) para a lista de distribuições do Linux que têm suporte.
+O Azure Disk Encryption tem suporte nas versões selecionadas do servidor Linux.  Consulte o [sistemas operacionais com suporte do Azure Disk Encryption: Linux](../../security/azure-security-disk-encryption-prerequisites.md#linux) para a lista de distribuições do Linux que têm suporte.
 
 ### <a name="internet-connectivity"></a>Conectividade com a Internet
 
@@ -141,20 +141,20 @@ Usando `AADClientCertificate`:
 | Nome | Valor/Exemplo | Tipo de Dados |
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
-| publicador | Microsoft.Azure.Security | cadeia de caracteres |
-| type | AzureDiskEncryptionForLinux | cadeia de caracteres |
+| publicador | Microsoft.Azure.Security | string |
+| type | AzureDiskEncryptionForLinux | string |
 | typeHandlerVersion | 0.1, 1.1 | int |
 | (esquema de 0,1) AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | GUID | 
-| (esquema de 0,1) AADClientSecret | password | cadeia de caracteres |
-| (esquema de 0,1) AADClientCertificate | impressão digital | cadeia de caracteres |
+| (esquema de 0,1) AADClientSecret | password | string |
+| (esquema de 0,1) AADClientCertificate | impressão digital | string |
 | DiskFormatQuery | {"dev_path":"","name":"","file_system":""} | Dicionário JSON |
-| EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | cadeia de caracteres | 
-| KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | cadeia de caracteres |
+| EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | string | 
+| KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | string |
 | KeyEncryptionKeyURL | url | cadeia de caracteres |
 | (opcional) KeyVaultURL | url | cadeia de caracteres |
-| Senha | password | cadeia de caracteres | 
-| SequenceVersion | uniqueidentifier | cadeia de caracteres |
-| VolumeType | Sistema operacional, Dados, Tudo | cadeia de caracteres |
+| Senha | password | string | 
+| SequenceVersion | uniqueidentifier | string |
+| VolumeType | Sistema operacional, Dados, Tudo | string |
 
 ## <a name="template-deployment"></a>Implantação de modelo
 
@@ -166,7 +166,7 @@ As instruções podem ser encontradas na última [documentação da CLI do Azure
 
 ## <a name="troubleshoot-and-support"></a>Solução de problemas e suporte
 
-### <a name="troubleshoot"></a>Solução de problemas
+### <a name="troubleshoot"></a>Solucionar problemas
 
 Para solução de problemas, consulte o [Guia de solução de problemas do Azure Disk Encryption](../../security/azure-security-disk-encryption-tsg.md).
 

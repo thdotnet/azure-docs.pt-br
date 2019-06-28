@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: reference
 ms.date: 6/6/2019
 ms.author: tomfitz
-ms.openlocfilehash: 314b28edbd5770186d96fb2a2b203f26ff27bda0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9ab8fbd8fa0453ca6c89f3e7ad91bea95b0b9096
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66752362"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67331997"
 ---
 # <a name="move-operation-support-for-resources"></a>Mover o suporte de operação para recursos
 Este artigo lista se um tipo de recurso do Azure é compatível com a operação de movimentação. Embora um tipo de recurso seja compatível com a operação de movimentação, pode haver condições que impeçam que o recurso seja movido. Para obter detalhes sobre as condições que afetam as operações de movimentação, confira [Move resources to new resource group or subscription](resource-group-move-resources.md) (Mover recursos para um novo grupo de recursos ou assinatura).
@@ -564,8 +564,8 @@ Para obter os mesmos dados como um arquivo de valores separados por vírgula, ba
 | expressroutecrossconnections | Não | Não |
 | expressroutegateways | Não | Não |
 | expressrouteports | Não | Não |
-| frontdoors | Sim | Sim |
-| frontdoorwebapplicationfirewallpolicies | Sim | Sim |
+| frontdoors | Não | Não |
+| frontdoorwebapplicationfirewallpolicies | Não | Não |
 | loadbalancers | Sim | Sim |
 | localnetworkgateways | Sim | Sim |
 | natgateways | Sim | Sim |

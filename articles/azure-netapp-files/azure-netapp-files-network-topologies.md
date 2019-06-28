@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: b-juche
-ms.openlocfilehash: bf2262d8a222cec6c5d0d7e53ded7b2994481656
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 207fb003eb1fdaafe4f43f7cd41dd4b7662eddf9
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205687"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67331972"
 ---
 # <a name="guidelines-for-azure-netapp-files-network-planning"></a>Diretrizes para planejamento de rede do Azure NetApp Files
 
@@ -81,7 +81,7 @@ Se a rede virtual está emparelhada com outra rede virtual, você não pode expa
 
 ### <a name="udrs-and-nsgs"></a>UDRs e NSGs
 
-Grupos de segurança de rede (NSGs) com um próximo salto não podem ser usados como delegadas sub-redes para arquivos do Azure NetApp. Da mesma forma, as rotas definidas pelo usuário (UDRs) também não têm suporte. 
+Rotas definidas pelo usuário (UDRs) e grupos de segurança de rede (NSGs) não têm suporte em sub-redes delegadas para arquivos do Azure NetApp.
 
 Como alternativa, você pode aplicar NSGs para outras sub-redes que permitem ou negam o tráfego de e para a sub-rede de arquivos do Azure NetApp delegada.  
 

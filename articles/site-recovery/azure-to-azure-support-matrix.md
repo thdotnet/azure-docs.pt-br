@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 06/09/2019
 ms.author: raynew
-ms.openlocfilehash: 6a6db30bfe6e4dc1eed04d11b53113c90210a5cf
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 2cf9aee498c649cdbf973652a60fb2d1f3feb371
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67275210"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67312155"
 ---
 # <a name="support-matrix-for-replicating-azure-vms-from-one-region-to-another"></a>Matriz de suporte para replicação de VMs do Azure de uma região para outra
 
@@ -168,7 +168,7 @@ Extensões | Sem suporte | As extensões não são replicadas para o failover de
 **Ação** | **Detalhes**
 -- | ---
 Redimensionar o disco na VM replicada | Com suporte
-Adicionar um disco a uma VM replicada | Sem suporte.<br/><br/> Você precisa desabilitar a replicação para a VM, adicione o disco e, em seguida, habilite a replicação novamente.
+Adicionar um disco a uma VM replicada | Com suporte
 
 ## <a name="replicated-machines---storage"></a>Máquinas replicadas - armazenamento
 

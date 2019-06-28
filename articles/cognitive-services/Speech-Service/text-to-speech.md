@@ -8,20 +8,23 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 06/14/2019
+ms.date: 06/24/2019
 ms.author: erhopf
-ms.openlocfilehash: a3469e4f7fe1c234a6df694d7bdd6d9e2c46407a
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: c5f7b0b739e9311e2527e63db7279d2075f0f1ff
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204883"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341277"
 ---
 # <a name="what-is-text-to-speech"></a>O que é o texto em fala?
 
 Texto para fala a fala dos serviços do Azure é um serviço que permite que seus aplicativos, ferramentas ou dispositivos converter texto em fala natural de sintetizada humana. Escolher entre standard e neurais vozes ou criar sua própria voz personalizada exclusivos ao seu produto ou marca. 75 vozes padrão estão disponíveis em mais de 45 idiomas e localidades e vozes neurais 5 estão disponíveis em 4 de idiomas e localidades. Para obter uma lista completa, consulte [idiomas com suporte](language-support.md#text-to-speech).
 
 Tecnologia de texto para fala permite que os criadores de conteúdo interagir com seus usuários de diferentes maneiras. Texto para fala pode melhorar a acessibilidade, fornecendo aos usuários uma opção para interagir com o conteúdo de forma audível. Se o usuário tem uma deficiência visual, uma deficiência de aprendizagem, ou exige informações de navegação enquanto dirige, uma experiência existente pode melhorar o texto para fala. Texto em fala também é um complemento valioso para bots de voz e assistentes virtuais.
+
+
+Aproveitando o Speech Synthesis Markup Language (SSML), uma linguagem de marcação baseada em XML, os desenvolvedores que usam o serviço de texto em fala podem especificar o texto como entrado é convertida em voz sintetizada. Com SSML, você pode ajustar o tom, a pronúncia, velocidade da fala, volume e muito mais. Para obter mais informações, consulte [SSML](#speech-synthesis-markup-language-ssml).
 
 ### <a name="standard-voices"></a>Vozes padrão
 

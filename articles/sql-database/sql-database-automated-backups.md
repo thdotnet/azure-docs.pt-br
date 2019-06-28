@@ -12,12 +12,12 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 05/20/2019
-ms.openlocfilehash: 1c81f5748d1e3edff4902eb462b9beea78acd8bc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3e56244f074e31672cf77bc74998096e215a4db7
+ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65951676"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67357340"
 ---
 # <a name="automated-backups"></a>Backups automatizados
 
@@ -32,7 +32,7 @@ Banco de dados SQL usa a tecnologia do SQL Server para criar [backups completos]
 Use esses backups para:
 
 - **Restaurar um banco de dados existente para um point-in-time no passado** dentro do período de retenção usando o portal do Azure, Azure PowerShell, CLI do Azure ou API REST. No banco de dados individual e pools Elásticos, esta operação criará um novo banco de dados no mesmo servidor do banco de dados original. Na instância gerenciada, essa operação pode criar uma cópia do banco de dados ou na mesma ou em outra instância gerenciada na mesma assinatura.
-  - **[Alterar o período de retenção de Backup](#how-to-change-the-pitr-backup-retention-period)**  entre a 35 dias para configurar a política de backup.
+  - **[Alterar o período de retenção de Backup](#how-to-change-the-pitr-backup-retention-period)**  entre 7 e 35 dias para configurar a política de backup.
   - **Alterar a política de retenção de longo prazo para cima até 10 anos** no banco de dados individual e usando Pools Elásticos [portal do Azure](sql-database-long-term-backup-retention-configure.md#configure-long-term-retention-policies) ou [do Azure PowerShell](sql-database-long-term-backup-retention-configure.md#use-powershell-to-configure-long-term-retention-policies-and-restore-backups).
 - **Restaurar um banco de dados excluído para a hora em que ele foi excluído** ou a qualquer momento dentro do período de retenção. O banco de dados excluído só pode ser restaurado no mesmo servidor lógico ou instância gerenciada no qual o banco de dados original foi criado.
 - **Restaurar um banco de dados para outra região geográfica**. A restauração geográfica permite a recuperação de um desastre geográfico quando você não consegue acessar o servidor nem o banco de dados. Ele cria um novo banco de dados em qualquer servidor existente do mundo.

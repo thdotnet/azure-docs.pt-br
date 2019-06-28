@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/16/2019
-ms.openlocfilehash: f6971038be7404850d958de67eb4755ae7d21a29
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b0f513462f1e09718dc18e9ce454b82e8978961f
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65761963"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67329604"
 ---
 # <a name="query-examples-for-common-stream-analytics-usage-patterns"></a>Exemplos de consulta para padrões de uso do Stream Analytics
 
@@ -157,7 +157,7 @@ Por exemplo, verifique se o resultado retorna placas de licença que começam co
 
 **Saída2**:
 
-| Faça | Hora | Contagem |
+| Faça | Hora | Count |
 | --- | --- | --- |
 | Toyota |2015-01-01T00:00:10.0000000Z |3 |
 
@@ -424,7 +424,7 @@ Por exemplo, dois carros consecutivos da mesma marca entraram na rodovia nos úl
 
 | Usuário | Recurso | Evento | Hora |
 | --- | --- | --- | --- |
-| user@location.com |RightMenu |Iniciar |2015-01-01T00:00:01.0000000Z |
+| user@location.com |RightMenu |Start |2015-01-01T00:00:01.0000000Z |
 | user@location.com |RightMenu |End |2015-01-01T00:00:08.0000000Z |
 
 **Saída**:  
@@ -437,7 +437,12 @@ Por exemplo, dois carros consecutivos da mesma marca entraram na rodovia nos úl
 
 ```SQL
     SELECT
-        [user], feature, DATEDIFF(second, LAST(Time) OVER (PARTITION BY [user], feature LIMIT DURATION(hour, 1) WHEN Event = 'start'), Time) as duration
+        [user],
+    feature,
+    DATEDIFF(
+        second,
+        LAST(Time) OVER (PARTITION BY [user], feature LIMIT DURATION(hour, 1) WHEN Event = 'start'),
+        Time) as duration
     FROM input TIMESTAMP BY Time
     WHERE
         Event = 'end'
@@ -695,6 +700,15 @@ GROUP BY DeviceId,TumblingWindow(minute, 5)
 ```
 
 **Explicação**: [COUNT(DISTINCT Time)](/stream-analytics-query/count-azure-stream-analytics) retorna o número de valores distintos na coluna Time dentro de uma janela de tempo. Em seguida, você poderá usar a saída dessa etapa para computar a média por dispositivo, descartando duplicatas.
+
+## <a name="geofencing-and-geospatial-queries"></a>Consultas geoespaciais e de delimitação geográfica
+O Azure Stream Analytics fornece as funções geoespaciais internas que podem ser usadas para implementar cenários como o gerenciamento de frota, que pretendem ir de compartilhamento, carros conectados e acompanhamento de ativos. Os dados geoespaciais podem ser ingeridos nos formatos GeoJSON ou WKT como parte do fluxo de eventos ou dados de referência. Para obter mais informações, consulte o [cenários de agregação de delimitação geográfica e geoespaciais com o Azure Stream Analytics](geospatial-scenarios.md) artigo.
+
+## <a name="language-extensibility-through-javascript-and-c"></a>Extensibilidade de linguagem por meio de JavaScript eC#
+Langugae de consulta de Stream Ananlytics do Azure pode ser estendida com funções personalizadas escritas em JavaScript ou C# linguagens. Para obter mais informações, consulte os artigos de foolowing:
+* [Funções definidas pelo usuário de JavaScript do Stream Analytics do Azure](stream-analytics-javascript-user-defined-functions.md)
+* [Agregações definidas pelo usuário de JavaScript do Stream Analytics do Azure](stream-analytics-javascript-user-defined-aggregates.md)
+* [Desenvolver .NET Standard funções definidas pelo usuário para trabalhos de borda do Azure Stream Analytics](stream-analytics-edge-csharp-udf-methods.md)
 
 ## <a name="get-help"></a>Obter ajuda
 

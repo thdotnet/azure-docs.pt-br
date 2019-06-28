@@ -10,12 +10,12 @@ ms.reviewer: estfan, LADocs
 ms.assetid: d565873c-6b1b-4057-9250-cf81a96180ae
 ms.topic: article
 ms.date: 03/15/2018
-ms.openlocfilehash: 5dd9d8eac7d65815d7c98a28b0d5af55f19cec47
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 29d56e64f118fe36fb4905dca20d9fba2f210665
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65464425"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67295921"
 ---
 # <a name="create-streaming-customer-insights-dashboard-with-azure-logic-apps-and-azure-functions"></a>Criar um painel de informações do cliente em streaming com os Aplicativos Lógicos do Azure e o Azure Functions
 
@@ -99,8 +99,8 @@ Para exibir históricos de execução anteriores no Visual Studio ou no portal d
 
 * Abrir o Gerenciador de Nuvem do Visual Studio. Localizar seu aplicativo lógico, abra o menu de atalho do aplicativo. Selecione **Abrir histórico de execução**.
 
-  > [!NOTE]
-  > Para Visual Studio de 2019, Cloud Explorer pode abrir o Designer do aplicativo lógico no portal do Azure, mas não é possível ainda abrir Designer do aplicativo lógico incorporado ou histórico de execução.
+  > [!TIP]
+  > Se você não tiver esse comando no Visual Studio de 2019, verifique que você tenha as atualizações mais recentes para o Visual Studio.
 
 * No portal do Azure, localize o aplicativo lógico. No menu do aplicativo lógico, escolha **Visão geral**. 
 

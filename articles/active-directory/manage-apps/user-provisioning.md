@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/02/2019
+ms.date: 06/12/2019
 ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 086161b73e2a3e07df835394dc26082e12fbd434
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3a58d2b235757faf760539f514ea349e33e12b41
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65963991"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67310014"
 ---
 # <a name="automate-user-provisioning-and-deprovisioning-to-saas-applications-with-azure-active-directory"></a>Automatize o provisionamento e o desprovisionamento de usuários para aplicativos SaaS com o Azure Active Directory
 
@@ -190,46 +190,7 @@ O trabalho de provisionamento será removido da quarentena depois que todos os e
 
 ## <a name="how-long-will-it-take-to-provision-users"></a>Quanto tempo levará para provisionar os usuários?
 
-Desempenho depende se o trabalho de provisionamento está executando uma sincronização inicial ou uma sincronização incremental.
-
-Para **inicial sincronizações**, o tempo de trabalho depende de vários fatores, incluindo o número de usuários e grupos no escopo para provisionamento e o número total de usuários e grupos no sistema de origem. Confira posteriormente nesta seção uma lista abrangente dos fatores que afetam o desempenho da sincronização inicial.
-
-Para **sincronizações incrementais**, o tempo de trabalho depende do número de alterações detectadas nesse ciclo de sincronização. Se houver menos de 5.000 alterações de usuários ou de associação de grupo, o trabalho poderá terminar dentro de um único ciclo de sincronização incremental. 
-
-A tabela a seguir resume os tempos de sincronização para cenários comuns de provisionamento. Nesses cenários, o sistema de origem é o Azure AD e o sistema de destino é um aplicativo SaaS. Os tempos de sincronização são derivados de uma análise estatística dos trabalhos de sincronização para os aplicativos de SaaS G Suite, no local de trabalho, Salesforce e ServiceNow.
-
-
-| Configuração de escopo | Usuários, grupos e membros no escopo | Tempo de sincronização inicial | Tempo de sincronização incremental |
-| -------- | -------- | -------- | -------- |
-| Sincronizar somente usuários e grupos atribuídos |  Menos de 1.000 |  Menos de 30 minutos | Menos de 30 minutos |
-| Sincronizar somente usuários e grupos atribuídos |  1\.000 a 10.000 | 142 a 708 minutos | Menos de 30 minutos |
-| Sincronizar somente usuários e grupos atribuídos |   10\.000 a 100.000 | 1\.170 a 2.340 minutos | Menos de 30 minutos |
-| Sincronizar todos os usuários e grupos no Azure AD |  Menos de 1.000 | Menos de 30 minutos  | Menos de 30 minutos |
-| Sincronizar todos os usuários e grupos no Azure AD |  1\.000 a 10.000 | Menos de 30 minutos a 120 minutos | Menos de 30 minutos |
-| Sincronizar todos os usuários e grupos no Azure AD |  10\.000 a 100.000  | 713 minutos a 1.425 minutos | Menos de 30 minutos |
-| Sincronizar todos os usuários no Azure AD|  Menos de 1.000  | Menos de 30 minutos | Menos de 30 minutos |
-| Sincronizar todos os usuários no Azure AD | 1\.000 a 10.000  | 43 a 86 minutos | Menos de 30 minutos |
-
-
-Para a configuração **Sincronizar apenas usuários e grupos atribuídos**, use as fórmulas a seguir para determinar os valores mínimo e máximo aproximados esperados dos tempos de **sincronização inicial**:
-
-    Minimum minutes =  0.01 x [Number of assigned users, groups, and group members]
-    Maximum minutes = 0.08 x [Number of assigned users, groups, and group members] 
-    
-Resumo de fatores que influenciam o tempo necessário para concluir uma **sincronização inicial**:
-
-- O número total de usuários e grupos no escopo para provisionamento.
-
-- O número total de usuários, grupos e membros do grupo presentes no sistema de origem (Azure AD).
-
-- Se os usuários no escopo para provisionamento são correspondidos para os usuários existentes no aplicativo de destino ou precisam ser criadas pela primeira vez. Trabalhos de sincronização para o qual todos os usuários são criados pela primeira vez levar cerca *duas vezes desde* como sincronizar trabalhos para o qual todos os usuários são correspondidos para os usuários existentes.
-
-- Número de erros nos [logs de auditoria](check-status-user-account-provisioning.md). O desempenho será mais lento se houver muitos erros e o serviço de provisionamento tiver entrado em estado de quarentena.    
-
-- Limites de taxa de solicitação implementados pelo sistema de destino. Alguns sistemas de destino implementam limites de taxa de solicitação e a limitação, que pode afetar o desempenho durante grandes operações de sincronização. Sob essas condições, um aplicativo que recebe muitas solicitações de forma muito rápida pode reduzir sua taxa de resposta ou fechar a conexão. Para melhorar o desempenho, o conector precisa fazer ajustes para não enviar as solicitações de aplicativo mais rápido do que o aplicativo pode processá-las. Os conectores de provisionamento criados pela Microsoft fazem esse ajuste. 
-
-- O número e os tamanhos de grupos atribuídos. A sincronização de grupos atribuídos demora mais do que a sincronização de usuários. O número e os tamanhos dos grupos atribuídos afetam o desempenho. Se um aplicativo tiver [mapeamentos habilitados para sincronização de objeto de grupo](customize-application-attributes.md#editing-group-attribute-mappings), propriedades de grupo como nomes de grupo e associações serão sincronizadas, além dos usuários. Essas sincronizações adicionais tomarão mais tempo do que apenas sincronizar os objetos de usuário.
-
+Desempenho depende se o trabalho de provisionamento está executando um ciclo de provisionamento inicial ou um ciclo incremental. Para obter detalhes sobre o provisionamento quanto tempo leva e como monitorar o status do serviço de provisionamento, consulte [verificar o status de provisionamento do usuário](application-provisioning-when-will-provisioning-finish-specific-user.md). 
 
 ## <a name="how-can-i-tell-if-users-are-being-provisioned-properly"></a>Como eu posso saber se os usuários estão sendo provisionados corretamente?
 
@@ -255,7 +216,7 @@ Para um plano de implantação passo a passo de exemplo para provisionamento de 
 
 Sim, é possível usar o provisionamento de usuários do serviço para provisionar B2B (ou convidado) no Azure AD para aplicativos SaaS de usuário do Azure AD.
 
-No entanto, para usuários B2B entrar no aplicativo SaaS usando o Azure AD, o aplicativo de SaaS deve ter seu baseado em SAML único recurso de logon configurado de forma específica. Para obter mais informações sobre como configurar aplicativos SaaS para dar suporte a entradas de usuários de B2B, consulte [aplicativos configurar SaaS para colaboração B2B]( https://docs.microsoft.com/azure/active-directory/b2b/configure-saas-apps).
+No entanto, para usuários B2B entrar no aplicativo SaaS usando o Azure AD, o aplicativo de SaaS deve ter seu baseado em SAML único recurso de logon configurado de forma específica. Para obter mais informações sobre como configurar aplicativos SaaS para dar suporte a entradas de usuários de B2B, consulte [Configurar aplicativos SaaS para colaboração B2B]( https://docs.microsoft.com/azure/active-directory/b2b/configure-saas-apps).
 
 ### <a name="does-automatic-user-provisioning-to-saas-apps-work-with-dynamic-groups-in-azure-ad"></a>O provisionamento automático de usuário para o trabalho de aplicativos SaaS com grupos dinâmicos no Microsoft Azure Active Directory?
 

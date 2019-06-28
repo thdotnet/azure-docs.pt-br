@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: c9689a468e8784eb4ec3590011e02a37d92d6b9c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a91d0f75b7e27065bd2ee0ea430a859d265afacb
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67083394"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67332046"
 ---
 # <a name="vpn-gateways-overview"></a>Visão geral de gateways VPN
 
@@ -26,7 +26,7 @@ CloudSimple fornece dois tipos de gateways de VPN:
 
 ## <a name="site-to-site-vpn-gateway"></a>Gateway de VPN site a site
 
-Um gateway de VPN site a site é usado para enviar tráfego criptografado entre uma rede de região CloudSimple e um datacenter local. Use essa conexão para definir o intervalo de CIDR/sub-redes para tráfego de rede entre sua rede local e a rede da região CloudSimple.
+Um gateway de VPN site a site é usado para enviar tráfego criptografado entre uma rede de região CloudSimple e um datacenter local. Use essa conexão para definir o intervalo de CIDR/sub-redes para comunicação entre sua rede local e a rede da região CloudSimple.
 
 O gateway de VPN permite que você consuma serviços locais em sua nuvem privada e serviços em sua nuvem privada, da rede local.  CloudSimple fornece um servidor VPN baseado em políticas para estabelecer a conexão de sua rede local.
 
@@ -38,6 +38,9 @@ Casos de uso de VPN site a site incluem:
 * Acessibilidade de cargas de trabalho em execução em sua nuvem privada da sua rede local.
 
 ![Topologia de conexão de VPN site a Site](media/cloudsimple-site-to-site-vpn-connection.png)
+
+> [!IMPORTANT]
+> Você deve fixar MSS TCP em bytes 1078 ou inferior. Ou se os dispositivos VPN não derem suporte a fixação de MSS, como alternativa, definir a MTU na interface de túnel para 1118 bytes em vez disso. 
 
 ### <a name="cryptographic-parameters"></a>Parâmetros de criptografia
 
@@ -53,7 +56,7 @@ Uma conexão de VPN site a site usa os seguintes parâmetros de criptografia pad
 | Criptografia | AES 128 | AES 256 | AES 256 |
 | Algoritmo de hash| SHA 256 | SHA 256 | SHA 1 |
 | Grupo do Diffie Hellman (DH grupo) | 2 | 2 | 2 |
-| Tempo de vida | 28\.800 segundos | 28\.800 segundos | 28\.800 segundos |
+| Tempo de vida | 28.800 segundos | 28.800 segundos | 28.800 segundos |
 | Tamanho dos dados | 4 GB | 4 GB | 4 GB |
 
 

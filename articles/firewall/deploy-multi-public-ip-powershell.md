@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 06/15/2019
+ms.date: 06/21/2019
 ms.author: victorh
-ms.openlocfilehash: a7dd35212a573fc3e94dadea4365f150122e1b5a
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 9ec37197376c815c4fb9072164520a707b02be2b
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67276737"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67312733"
 ---
 # <a name="deploy-an-azure-firewall-with-multiple-public-ip-addresses-using-azure-powershell"></a>Implantar um Firewall do Azure com vários endereços IP públicos usando o Azure PowerShell
 
@@ -31,7 +31,7 @@ Esse recurso permite os seguintes cenários:
 Os exemplos do Azure PowerShell a seguir mostram como você pode adicionar, remover e configurar endereços IP públicos para o Firewall do Azure.
 
 > [!NOTE]
-> Se você adicionar ou remove um endereço IP público a um firewall em execução, a conectividade de entrada existente usando as regras de DNAT pode não funcionar por 120 40 segundos. Essa é uma limitação da visualização pública para esse recurso.
+> Durante a visualização pública, se você adicionar ou remove um endereço IP público a um firewall em execução, a conectividade de entrada existente usando as regras de DNAT pode não funcionar por 120 40 segundos. É possível remover o primeiro endereço IP público atribuído ao firewall, a menos que o firewall é desalocado ou excluído.
 
 ## <a name="add-a-public-ip-address-to-an-existing-firewall"></a>Adicionar um endereço IP público a um firewall existente
 

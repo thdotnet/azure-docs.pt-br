@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2019
 ms.author: sharadag
-ms.openlocfilehash: 256435dfd016ebbd86dbbe49f4abbb346fb1cd19
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b033f463722ddb3a0b7beabdf659900e7d7188df
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60736659"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67330877"
 ---
 # <a name="frequently-asked-questions-for-azure-front-door-service"></a>Perguntas frequentes sobre o serviço de porta da frente do Azure
 
@@ -75,11 +75,11 @@ Serviço de porta da frente do Azure tem a mesma lista de locais POP (ponto de p
 
 ### <a name="is-azure-front-door-service-a-dedicated-deployment-for-my-application-or-is-it-shared-across-customers"></a>É o serviço do Azure da frente uma implantação dedicada para o meu aplicativo ou é compartilhado entre os clientes?
 
-Serviço de porta da frente do Azure é um serviço multilocatário distribuído globalmente. Portanto, a infraestrutura para a porta da frente é compartilhada entre todos os seus clientes. No entanto, com a criação de uma porta da frente, você define a configuração específica necessária para seu aplicativo e 
+Serviço de porta da frente do Azure é um serviço multilocatário distribuído globalmente. Portanto, a infraestrutura para a porta da frente é compartilhada entre todos os seus clientes. No entanto, ao criar um perfil de porta da frente, você define a configuração específica necessária para seu aplicativo e nenhuma alteração feita à sua frente afeta outras configurações de porta da frente.
 
 ### <a name="is-http-https-redirection-supported"></a>O redirecionamento HTTP-> HTTPS é suportado?
 
-Porta da frente atualmente não dá suporte a redirecionamento de URL.
+Sim. Na verdade, o serviço de porta da frente do Azure dá suporte ao host, caminho e consulta de cadeia de redirecionamento, bem como parte do redirecionamento de URL. Saiba mais sobre [redirecionamento de URL](front-door-url-redirect.md). 
 
 ### <a name="in-what-order-are-routing-rules-processed"></a>Em que ordem as regras de roteamento são processadas?
 
@@ -141,6 +141,11 @@ Porta da frente dá suporte a TLS versões 1.0, 1.1 e 1.2. Ainda não há suport
 
 Para habilitar o protocolo HTTPS para o fornecimento seguro de conteúdo em um domínio personalizado da porta da frente, você pode optar por usar um certificado que é gerenciado pelo serviço de porta da frente do Azure ou usar seu próprio certificado.
 A porta de entrada gerenciado provisões de opção um certificado SSL padrão por meio do Digicert e armazenados na frente Key Vault da porta do. Se você optar por usar seu próprio certificado e, em seguida, você pode integrar um certificado de uma autoridade de certificação com suporte e pode ser um SSL padrão, o certificado de validação estendida ou até mesmo um certificado curinga. Os certificados autoassinados não são suportados. Saiba mais [como habilitar HTTPS para um domínio personalizado](https://aka.ms/FrontDoorCustomDomainHTTPS).
+
+### <a name="does-front-door-support-auto-rotation-of-certificates"></a>Porta da frente dá suporte a rotação automática de certificados?
+
+Para seu próprio certificado SSL personalizado, rotação automática não é compatível. Semelhante a como ele foi configurada na primeira vez para um determinado domínio personalizado, você precisará para frente do ponto a versão de certificado correta em seu Cofre de chaves e certifique-se de que a entidade de serviço para a porta da frente ainda tem acesso ao Cofre de chave. Esta operação de distribuição de certificado atualizado pela porta da frente é completamente atômica e não cause qualquer impacto na produção fornecido o nome da entidade ou SAN para o certificado não é alterado.
+</br>Para a opção de certificado de porta de entrada gerenciado, os certificados são girados automaticamente pela frente.
 
 ### <a name="what-are-the-current-cipher-suites-supported-by-azure-front-door-service"></a>Quais são os conjuntos de criptografia atuais com suporte pelo serviço de porta da frente do Azure?
 

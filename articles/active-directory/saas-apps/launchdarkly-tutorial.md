@@ -54,7 +54,7 @@ Para configurar a integração do LaunchDarkly ao Azure AD, você precisa adicio
 
 **Para adicionar o LaunchDarkly da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -106,7 +106,7 @@ Para configurar o logon único do AD do Azure com o [nome do aplicativo], execut
 
     ![Informações de logon único de Domínio e URLs do LaunchDarkly](common/idp-intiated.png)
 
-     a. Na caixa de texto **Identificador**, digite uma URL: `app.launchdarkly.com`
+    a. Na caixa de texto **Identificador**, digite uma URL: `app.launchdarkly.com`
 
     b. No **URL de resposta** caixa de texto, digite uma URL usando o seguinte padrão: `https://app.launchdarkly.com/trust/saml2/acs/<customers-unique-id>`
 
@@ -153,7 +153,7 @@ Para configurar o logon único do AD do Azure com o [nome do aplicativo], execut
 
     ![Configuração do LaunchDarkly](./media/launchdarkly-tutorial/configure4.png)
 
-     a. Copie a **URL de serviço do consumidor do SAML** para a sua instância e cole-a na caixa de texto URL de Resposta na seção **Domínio e URLs do LaunchDarkly** no portal do Azure.
+    a. Copie a **URL de serviço do consumidor do SAML** para a sua instância e cole-a na caixa de texto URL de Resposta na seção **Domínio e URLs do LaunchDarkly** no portal do Azure.
 
     b. Na caixa de texto **URL de Logon**, cole o valor da **URL de Logon** que você copiou do portal do Azure.
 

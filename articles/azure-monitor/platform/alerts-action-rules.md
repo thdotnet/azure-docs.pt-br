@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: anantr
 ms.component: alerts
-ms.openlocfilehash: 6e97826499842a257f6402bd5268edc4cd6a486e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 212e6b042caec5f24a620dc491dc674417816df7
+ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66734903"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67310373"
 ---
 # <a name="action-rules-preview"></a>Regras de ação (visualização)
 
@@ -30,6 +30,8 @@ Geralmente, há muitos cenários em que ele seria útil suprimir as notificaçõ
 
 Embora as regras de alerta permitem que você defina o grupo de ação que dispara quando o alerta é gerado, os clientes geralmente tendem tenha um grupo de ações comuns em seu escopo de operações. Por exemplo, uma equipe responsável por grupo de recursos 'ContosoRG' provavelmente definirá o mesmo grupo de ação para todas as regras de alerta definidas dentro de 'ContosoRG'. Regras de ação permitem simplificar esse processo, permitindo que você definir ações em grande escala, para que um grupo de ação pode ser disparado para qualquer alerta gerado em escopo configurado. Voltando ao exemplo anterior, a equipe agora pode definir uma regra de ação em 'ContosoRG' que irá disparar o mesmo grupo de ação para todos os alertas gerados dentro dele.
 
+> [!NOTE]
+> Regras de ação no momento, não se aplicam aos alertas de integridade do serviço.
 
 ## <a name="configuring-an-action-rule"></a>Configurar uma regra de ação
 

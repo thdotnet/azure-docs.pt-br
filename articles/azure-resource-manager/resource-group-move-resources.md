@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: tomfitz
-ms.openlocfilehash: 1cc2f3b1ee657706dba237c86552b1780bc9dd34
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: eb99bec74ae5444320b7098616d4bf2d81b90697
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295435"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67332025"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Mover recursos para um novo grupo de recursos ou uma nova assinatura
 
@@ -79,7 +79,6 @@ A lista a seguir fornece um resumo geral dos serviços do Azure que podem ser mo
 * DNS
 * Grade de Eventos
 * Hubs de Eventos
-* Front Door
 * Clusters HDInsight – veja [Limitações do HDInsight](#hdinsight-limitations)
 * Central de IoT
 * Hubs IoT
@@ -138,6 +137,7 @@ A lista a seguir fornece um resumo geral dos serviços do Azure que não podem s
 * Espaços de Desenvolvimento
 * Dynamics LCS
 * ExpressRoute
+* Front Door
 * Serviços de laboratório - laboratórios de sala de aula não podem ser movidos para um novo grupo de recursos ou assinatura. DevTest Labs podem ser movidos para um novo grupo de recursos na mesma assinatura, mas não entre assinaturas.
 * Aplicativos gerenciados
 * Identidade gerenciada - atribuída pelo usuário

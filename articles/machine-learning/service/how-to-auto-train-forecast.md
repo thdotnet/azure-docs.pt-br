@@ -9,13 +9,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.reviewer: trbye
 ms.topic: conceptual
-ms.date: 05/02/2019
-ms.openlocfilehash: c7f4b6d8aa614a460772fb7af11f9b83dc3fc979
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/20/2019
+ms.openlocfilehash: 4a3ab9094080ab257a885bb7a745fc83948327c2
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65800807"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67331694"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Autotreinar um modelo de previsão de série temporal
 
@@ -26,6 +26,14 @@ Neste artigo, você aprenderá a treinar um modelo de regressão previsão de s�
 * Executar previsões com dados de série temporal
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2X1GW]
+
+Você pode usar ML automatizado para combinar técnicas e abordagens e obter uma recomendado de alta qualidade-série de tempo de previsão. Um teste automatizado de série temporal é tratado como um problema de regressão multivariada. Últimos valores de série temporal são "dinâmicos" para se tornar dimensões adicionais para o regressor junto com outros indicadores. 
+
+Essa abordagem, ao contrário dos métodos de série de tempo clássico, tem uma vantagem de incorporar naturalmente diversas variáveis contextuais e suas relações uns aos outros durante o treinamento. Em aplicativos de previsão do mundo real, vários fatores podem influenciar uma previsão. Por exemplo, quando a previsão de vendas, interações de tendências históricas, taxa de câmbio e preço de unidade em conjunto o resultado de vendas. Um benefício adicional é que todas as recentes inovações em modelos de regressão se aplicam imediatamente à previsão.
+
+Você pode [configurar](#config) quanto no futuro a previsão deve estender (o horizonte de previsão), bem como retardos e muito mais. ML automatizado aprende um modelo único, mas geralmente internamente ramificado para todos os itens no horizontes conjunto de dados e previsão. Assim, há mais dados disponíveis para estimar os parâmetros de modelo e generalização a série não visto torna-se possível. 
+
+Recursos extraídos dos dados de treinamento desempenham um papel fundamental. E, automatizado ML executa as etapas de pré-processamento padrão e gera recursos adicionais de série temporal para capturar efeitos sazonais e maximizar a precisão da previsão. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -69,6 +77,7 @@ y_test = X_test.pop("sales_quantity").values
 > [!NOTE]
 > Ao treinar um modelo para prever valores futuros, verifique se todos os recursos usados no treinamento podem ser usados durante a execução de previsões para o horizonte pretendido. Por exemplo, ao criar uma previsão de demanda, incluindo um recurso para o preço da ação atual poderia massivamente aumentar a precisão de treinamento. No entanto, se você pretende com um longo horizonte de previsão, pode não ser capaz de prever com precisão valores futuros de estoque correspondente aos pontos de série temporal futuras e precisão do modelo pode ser afetado.
 
+<a name="config"></a>
 ## <a name="configure-and-run-experiment"></a>Configurar e executar o experimento
 
 Para tarefas de previsão, aprendizado de máquina automatizado usa as etapas de pré-processamento e a estimativa que são específicas para dados de série temporal. As seguintes etapas de pré-processamento serão executadas:
@@ -85,7 +94,7 @@ O `AutoMLConfig` objeto define as configurações e os dados necessários para q
 |-------|-------|-------|
 |`time_column_name`|Usado para especificar a coluna de data e hora nos dados de entrada usados para criar a série temporal e inferindo sua frequência.|✓|
 |`grain_column_names`|Nomes de definição de grupos de séries individuais nos dados de entrada. Se o detalhamento não estiver definido, o conjunto de dados é considerado uma série de tempo.||
-|`max_horizon`|Máximo desejado horizonte de previsão em unidades de frequência de série temporal.|✓|
+|`max_horizon`|Define o horizonte de previsão máximo desejado em unidades de frequência de série temporal. Unidades baseiam-se no intervalo de tempo de seus dados de treinamento, por exemplo, mensais, semanais que o forecaster deve prever.|✓|
 |`target_lags`|*n* valores antes do treinamento do modelo de destino de períodos de latência de encaminhamento.||
 |`target_rolling_window_size`|*n* períodos históricos a serem usados para gerar valores previstos, < = tamanho do conjunto de treinamento. Se omitido, *n* é o treinamento completo Definir tamanho.||
 
