@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 06/12/2019
+ms.date: 06/26/2019
 ms.author: diberry
-ms.openlocfilehash: 1e46c935d298f2fe7ebfa4bce471288c9ab8a606
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: a126456159776254408df8325f97fcee967835e2
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67271957"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442731"
 ---
 # <a name="use-follow-up-prompts-to-create-multiple-turns-of-a-conversation"></a>Prompts de acompanhamento de uso para criar várias sequências de uma conversa
 
@@ -229,33 +229,14 @@ A seção anterior solicitou uma resposta e os prompts de acompanhamento para `A
             "metadata": [],
             "context": {
                 "isContextOnly": true,
-                "promptsToAdd": [
+                "prompts": [
                     {
                         "displayOrder": 0,
                         "qnaId": 16,
                         "qna": null,
                         "displayText": "Use the sign-in screen"
-                    },
-                    {
-                        "displayOrder": 1,
-                        "qnaId": 17,
-                        "qna": null,
-                        "displayText": "Use Windows Hello to sign in"
-                    },
-                    {
-                        "displayOrder": 2,
-                        "qnaId": 18,
-                        "qna": null,
-                        "displayText": "Sign out"
-                    },
-                    {
-                        "displayOrder": 0,
-                        "qnaId": 79,
-                        "qna": null,
-                        "displayText": "Create a Windows Account"
                     }
-                ],
-                "promptsToDelete":[]
+                ]
             }
         },
         {
@@ -269,15 +250,14 @@ A seção anterior solicitou uma resposta e os prompts de acompanhamento para `A
             "metadata": [],
             "context": {
                 "isContextOnly": true,
-                "promptsToAdd": [
+                "prompts": [
                     {
                         "displayOrder": 0,
                         "qnaId": 16,
                         "qna": null,
                         "displayText": "Turn off the device"
                     }
-                ],
-                "promptsToDelete":[]
+                ]
             }
         },
         {
@@ -291,15 +271,14 @@ A seção anterior solicitou uma resposta e os prompts de acompanhamento para `A
             "metadata": [],
             "context": {
                 "isContextOnly": true,
-                "promptsToAdd": [],
-                "promptsToDelete":[]
+                "prompts": []
             }
         }
     ]
 }
 ```
 
-O `promptsToAdd` matriz fornece o texto em de `displayText` propriedade e o `qnaId` fluxo de valor, portanto, você pode mostrar essas respostas como as opções exibidas Avançar na conversa, enviar, em seguida, o valor selecionado para o QnA Maker na solicitação a seguir. 
+O `prompts` matriz fornece o texto em de `displayText` propriedade e o `qnaId` fluxo de valor, portanto, você pode mostrar essas respostas como as opções exibidas Avançar na conversa, enviar, em seguida, selecionado `qnaId` volta para o QnA Maker na solicitação a seguir . 
 
 <!--
 
@@ -345,8 +324,7 @@ O QnA Maker _GenerateAnswer_ resposta JSON inclui os prompts de acompanhamento n
             "metadata": [],
             "context": {
                 "isContextOnly": true,
-                "promptsToAdd": [],
-                "promptsToDelete":[]
+                "prompts": []
             }
         },
         {
@@ -360,15 +338,14 @@ O QnA Maker _GenerateAnswer_ resposta JSON inclui os prompts de acompanhamento n
             "metadata": [],
             "context": {
                 "isContextOnly": true,
-                "promptsToAdd": [
+                "prompts": [
                     {
                         "displayOrder": 0,
                         "qnaId": 4,
                         "qna": null,
                         "displayText": "Ports and connectors"
                     }
-                ],
-                "promptsToDelete":[]
+                ]
             }
         },
         {
@@ -382,8 +359,7 @@ O QnA Maker _GenerateAnswer_ resposta JSON inclui os prompts de acompanhamento n
             "metadata": [],
             "context": {
                 "isContextOnly": true,
-                "promptsToAdd": [],
-                "promptsToDelete":[]
+                "prompts": []
             }
         }
     ]
@@ -407,6 +383,16 @@ O [exibir o texto e a ordem de exibição](https://docs.microsoft.com/rest/api/c
 FIX - Need to go to parent, then answer column, then edit answer. 
 
 -->
+
+## <a name="create-knowledge-base-with-multi-turn-prompts-with-the-create-api"></a>Criar a base de conhecimento com ativar vários prompts com a API de criação
+
+Você pode criar um caso de dados de conhecimento com prompts de turno multi usando o [criar API do QnA Maker](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create). Adicionando os prompts na `context` da propriedade `prompts` matriz. 
+
+
+## <a name="add-or-delete-multi-turn-prompts-with-the-update-api"></a>Adicionar ou excluir ativar vários prompts com a API de atualização
+
+Você pode adicionar ou excluir os prompts de turno multi usando o [API do QnA Maker atualização](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update).  Adicionando os prompts na `context` da propriedade `promptsToAdd` matriz e o `promptsToDelete` matriz. 
+
 
 ## <a name="next-steps"></a>Próximas etapas
 

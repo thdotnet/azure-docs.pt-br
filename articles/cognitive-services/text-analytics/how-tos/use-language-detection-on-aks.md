@@ -1,6 +1,6 @@
 ---
 title: Executar o Serviço de Kubernetes
-titleSuffix: Text Analytics -  Azure Cognitive Services
+titleSuffix: Text Analytics - Azure Cognitive Services
 description: Implante o contêiner de detecção de idioma, com o exemplo em execução, no Serviço de Kubernetes do Azure e teste-o em um navegador da Web.
 services: cognitive-services
 author: IEvangelist
@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 06/26/2019
+ms.date: 06/21/2019
 ms.author: dapine
-ms.openlocfilehash: 5b406f9c7f8c16038561853170896d2cd95dc383
+ms.openlocfilehash: 5486cfc376447549cd8a9f91743e2d930fc2b4c6
 ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 06/28/2019
-ms.locfileid: "67444856"
+ms.locfileid: "67454989"
 ---
 # <a name="deploy-the-language-detection-container-to-azure-kubernetes-service"></a>Implantar o contêiner de detecção de idioma no Serviço de Kubernetes do Azure
 
-Saiba como implantar o contêiner de detecção de idioma. Este procedimento mostra como criar os contêineres locais do Docker, efetuar push dos contêineres para seu próprio registro de contêiner privado, executar o contêiner no cluster de Kubernetes e testá-lo em um navegador da Web.
+Saiba como implantar o contêiner de detecção de idioma. Este procedimento mostra como criar os contêineres do Docker locais, enviar por push os contêineres para seu próprio registro de contêiner privado, execute o contêiner em um cluster Kubernetes e testá-lo em um navegador da web. Usando contêineres pode mudar a atenção dos desenvolvedores para longe de gerenciar a infraestrutura para em vez disso, com foco no desenvolvimento de aplicativos.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -31,14 +31,14 @@ Este procedimento requer várias ferramentas que devem ser instaladas e executad
 * [Mecanismo do Docker](https://www.docker.com/products/docker-engine) e valide se a CLI do Docker funciona em uma janela do console.
 * [kubectl](https://storage.googleapis.com/kubernetes-release/release/v1.13.1/bin/windows/amd64/kubectl.exe).
 * Um recurso do Azure com o tipo de preço correto. Nem todos os tipos de preços funcionam com esse contêiner:
-  * O recurso **Análise de Texto** com F0 ou somente os tipos de preço da camada Standard.
-  * O recurso **Serviços Cognitivos** com o tipo de preço S0.
+    * O recurso **Análise de Texto** com F0 ou somente os tipos de preço da camada Standard.
+    * O recurso **Serviços Cognitivos** com o tipo de preço S0.
 
 ## <a name="running-the-sample"></a>Executando o exemplo
 
 Este procedimento carrega e executa o exemplo de Contêiner de Serviços Cognitivos para detecção de idioma. O exemplo tem dois contêineres, um para o aplicativo cliente e outro para o contêiner de Serviços Cognitivos. Você precisa enviar essas imagens por push para seu próprio Registro de Contêiner do Azure. Depois que elas estiverem em seu próprio registro, crie um Serviço de Kubernetes do Azure para acessar essas imagens e executar os contêineres. Quando os contêineres estiverem em execução, use a CLI **kubectl** para observar o desempenho dos contêineres. Acesse o aplicativo cliente com uma solicitação HTTP e veja os resultados.
 
-![Ideia conceitual da execução de contêineres de amostra](../text-analytics/media/how-tos/container-instance-sample/containers.png)
+![Ideia conceitual da execução de contêineres de amostra](../media/how-tos/container-instance-sample/containers.png)
 
 ## <a name="the-sample-containers"></a>Os contêineres de exemplo
 
@@ -124,9 +124,9 @@ Para implantar o contêiner no Serviço de Kubernetes do Azure, as imagens do co
     docker build -t language-frontend -t pattiyregistry.azurecr.io/language-frontend:v1 .
     ```
 
-    Para controlar a versão no registro de contêiner, adicione a marca com um formato de versão, como `v1`.
+    Para controlar a versão no registro de contêiner, adicione a marca com um formato de versão, como `v1`. 
 
-1. Enviar a imagem para o eu registro de contêiner. Isso pode levar alguns minutos.
+1. Enviar a imagem para o eu registro de contêiner. Isso pode levar alguns minutos. 
 
     ```console
     docker push pattyregistry.azurecr.io/language-frontend:v1
@@ -148,9 +148,9 @@ Para implantar o contêiner no Serviço de Kubernetes do Azure, as imagens do co
     v1: digest: sha256:31930445deee181605c0cde53dab5a104528dc1ff57e5b3b34324f0d8a0eb286 size: 1580
     ```
 
-## <a name="get-language-detection-docker-image"></a>Obter a imagem do Docker de detecção de idioma
+## <a name="get-language-detection-docker-image"></a>Obter a imagem do Docker de detecção de idioma 
 
-1. Obtenha a versão mais recente da imagem do Docker no computador local. Isso pode levar alguns minutos. Se houver uma versão mais recente desse contêiner, altere o valor de `1.1.006770001-amd64-preview` para a versão mais recente.
+1. Obtenha a versão mais recente da imagem do Docker no computador local. Isso pode levar alguns minutos. Se houver uma versão mais recente desse contêiner, altere o valor de `1.1.006770001-amd64-preview` para a versão mais recente. 
 
     ```console
     docker pull mcr.microsoft.com/azure-cognitive-services/language:1.1.006770001-amd64-preview
@@ -162,7 +162,7 @@ Para implantar o contêiner no Serviço de Kubernetes do Azure, as imagens do co
     docker tag mcr.microsoft.com/azure-cognitive-services/language pattiyregistry.azurecr.io/language:1.1.006770001-amd64-preview
     ```
 
-1. Enviar a imagem para o eu registro de contêiner. Isso pode levar alguns minutos.
+1. Enviar a imagem para o eu registro de contêiner. Isso pode levar alguns minutos. 
 
     ```console
     docker push pattyregistry.azurecr.io/language:1.1.006770001-amd64-preview
@@ -204,7 +204,7 @@ As etapas a seguir são necessárias para obter as informações necessárias pa
     /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/cogserv-container-rg/providers/Microsoft.ContainerRegistry/registries/pattyregistry
     ```
 
-    Salve o valor total para a etapa 3 nesta seção.
+    Salve o valor total para a etapa 3 nesta seção. 
 
 1. Para conceder o acesso correto para que o cluster do AKS use as imagens armazenadas no registro de contêiner, crie uma atribuição de função. Substitua `<appId>` e `<acrId>` pelos valores coletados nas duas etapas anteriores.
 
@@ -214,13 +214,13 @@ As etapas a seguir são necessárias para obter as informações necessárias pa
 
 ## <a name="create-azure-kubernetes-service"></a>Criar o Serviço de Kubernetes do Azure
 
-1. Crie o cluster de Kubernetes. Todos os valores de parâmetro são das seções anteriores, exceto o parâmetro name. Escolha um nome que indique quem criou e sua finalidade, como `patty-kube`.
+1. Crie o cluster de Kubernetes. Todos os valores de parâmetro são das seções anteriores, exceto o parâmetro name. Escolha um nome que indique quem criou e sua finalidade, como `patty-kube`. 
 
     ```azurecli
     az aks create --resource-group cogserv-container-rg --name patty-kube --node-count 2  --service-principal <appId>  --client-secret <client-secret>  --generate-ssh-keys
     ```
 
-    Esta etapa pode levar alguns minutos. O resultado é:
+    Esta etapa pode levar alguns minutos. O resultado é: 
 
     ```console
     > az aks create --resource-group cogserv-container-rg --name patty-kube --node-count 2  --service-principal <appId>  --client-secret <client-secret>  --generate-ssh-keys
@@ -282,7 +282,7 @@ As etapas a seguir são necessárias para obter as informações necessárias pa
 
     O serviço é criado, mas ele ainda não tem o contêiner de site ou um contêiner de detecção de idioma.  
 
-1. Obtenha as credenciais do cluster de Kubernetes.
+1. Obtenha as credenciais do cluster de Kubernetes. 
 
     ```azurecli
     az aks get-credentials --resource-group cogserv-container-rg --name patty-kube
@@ -290,7 +290,7 @@ As etapas a seguir são necessárias para obter as informações necessárias pa
 
 ## <a name="load-the-orchestration-definition-into-your-kubernetes-service"></a>Carregar a definição de orquestração no serviço de Kubernetes
 
-Esta seção usa a CLI **kubectl** para se comunicar com o Serviço de Kubernetes do Azure.
+Esta seção usa a CLI **kubectl** para se comunicar com o Serviço de Kubernetes do Azure. 
 
 1. Antes de carregar a definição de orquestração, verifique se **kubectl** tem acesso aos nós.
 
@@ -307,7 +307,7 @@ Esta seção usa a CLI **kubectl** para se comunicar com o Serviço de Kubernete
     aks-nodepool1-13756812-1   Ready     agent     6m        v1.9.11
     ```
 
-1. Copie o arquivo a seguir e nomeie-o `language.yml`. O arquivo tem uma seção `service` e uma seção `deployment` cada para os dois tipos de contêineres, o contêiner de site `language-frontend` e o contêiner de detecção `language`.
+1. Copie o arquivo a seguir e nomeie-o `language.yml`. O arquivo tem uma seção `service` e uma seção `deployment` cada para os dois tipos de contêineres, o contêiner de site `language-frontend` e o contêiner de detecção `language`. 
 
     [!code-yml[Kubernetes orchestration file for the Cognitive Services containers sample](~/samples-cogserv-containers/Kubernetes/language/language.yml "Kubernetes orchestration file for the Cognitive Services containers sample")]
 
@@ -327,9 +327,9 @@ Esta seção usa a CLI **kubectl** para se comunicar com o Serviço de Kubernete
     |Linha 91<br> Propriedade `apiKey`|Sua chave de recurso de análise de texto|
     |Linha 92<br> Propriedade `billing`|O ponto de extremidade de cobrança para o recurso de análise de texto.<br>`https://westus.api.cognitive.microsoft.com/text/analytics/v2.1`|
 
-    Porque o **apiKey** e o **ponto de extremidade de cobrança** são configurados como parte da definição de orquestração do Kubernetes, o contêiner de site não precisa saber sobre eles ou passá-los como parte da solicitação. O contêiner do site refere-se ao contêiner de detecção de idioma por seu nome de orquestração `language`.
+    Porque o **apiKey** e o **ponto de extremidade de cobrança** são configurados como parte da definição de orquestração do Kubernetes, o contêiner de site não precisa saber sobre eles ou passá-los como parte da solicitação. O contêiner do site refere-se ao contêiner de detecção de idioma por seu nome de orquestração `language`. 
 
-1. Carregue o arquivo de definição de orquestração para este exemplo a partir da pasta na qual você criou e salvou o `language.yml`.
+1. Carregue o arquivo de definição de orquestração para este exemplo a partir da pasta na qual você criou e salvou o `language.yml`. 
 
     ```console
     kubectl apply -f language.yml
@@ -347,7 +347,7 @@ Esta seção usa a CLI **kubectl** para se comunicar com o Serviço de Kubernete
 
 ## <a name="get-external-ips-of-containers"></a>Obter IPs externos de contêineres
 
-Para os dois contêineres, verifique se os serviços `language-frontend` e `language` estão em execução e obtenha o endereço IP externo.
+Para os dois contêineres, verifique se os serviços `language-frontend` e `language` estão em execução e obtenha o endereço IP externo. 
 
 ```console
 kubectl get all
@@ -381,13 +381,13 @@ replicaset.apps/language-586849d8dc            1         1         1         13h
 replicaset.apps/language-frontend-68b9969969   1         1         1         13h
 ```
 
-Se o `EXTERNAL-IP` do serviço for mostrado como pendente, execute novamente o comando até que o endereço IP seja exibido antes de passar para a próxima etapa.
+Se o `EXTERNAL-IP` do serviço for mostrado como pendente, execute novamente o comando até que o endereço IP seja exibido antes de passar para a próxima etapa. 
 
 ## <a name="test-the-language-detection-container"></a>Testar o contêiner de detecção de idioma
 
-Abra um navegador e navegue até o IP externo do contêiner `language` da seção anterior: `http://<external-ip>:5000/swagger/index.html`. Você pode usar o recurso `Try it` da API para testar o ponto de extremidade de detecção de idioma.
+Abra um navegador e navegue até o IP externo do contêiner `language` da seção anterior: `http://<external-ip>:5000/swagger/index.html`. Você pode usar o recurso `Try it` da API para testar o ponto de extremidade de detecção de idioma. 
 
-![Exibir a documentação do swagger do contêiner](../text-analytics/media/how-tos/container-instance-sample/language-detection-container-swagger-documentation.png)
+![Exibir a documentação do swagger do contêiner](../media/how-tos/container-instance-sample/language-detection-container-swagger-documentation.png)
 
 ## <a name="test-the-client-application-container"></a>Testar o contêiner da aplicação do cliente
 
@@ -395,7 +395,7 @@ Altere a URL no navegador para o IP externo do contêiner `language-frontend` us
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Quando você concluir o cluster, exclua o grupo de recursos do Azure.
+Quando você concluir o cluster, exclua o grupo de recursos do Azure. 
 
 ```azure-cli
 az group delete --name cogserv-container-rg
@@ -405,10 +405,11 @@ az group delete --name cogserv-container-rg
 
 * [kubectl para usuários do Docker](https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/)
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>Próximas etapas 
 
-> [!div class="nextstepaction"]
-> [Contêineres de serviços cognitivos](../cognitive-services-container-support.md)
+* Use mais [Contêineres de Serviços Cognitivos](../../cognitive-services-container-support.md)
+* Use o [serviço conectado de análise de texto](../vs-text-connected-service.md)
+
 
 <!--
 kubectl get secrets

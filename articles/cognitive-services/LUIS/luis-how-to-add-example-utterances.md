@@ -11,18 +11,18 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: diberry
-ms.openlocfilehash: 8c7476a82df75d8ba653a2a8e6c0f9f557b53c42
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: dd8ed146c507d8d39ba99c6573321ee80bc891c9
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341869"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442572"
 ---
 # <a name="add-an-entity-to-example-utterances"></a>Adicionar uma entidade a enunciados de exemplo 
 
 Enunciados de exemplo são exemplos de texto de comandos ou perguntas do usuário. Para ensinar o LUIS (Serviço Inteligente de Reconhecimento Vocal), você precisa adicionar [enunciados de exemplo](luis-concept-utterance.md) a uma [intenção](luis-concept-intent.md).
 
-Normalmente, você adicionar uma expressão de exemplo para um propósito de primeiro e, em seguida, você pode cria entidades e declarações na página de intenção de rótulo. Se você preferir criar entidades primeiro, veja [Adicionar entidades](luis-how-to-add-entities.md).
+Geralmente, adicionar uma expressão de exemplo para uma primeira tentativa, e, em seguida, você pode cria entidades e declarações de rótulo a **intenções** página. Se você preferir criar entidades primeiro, veja [Adicionar entidades](luis-how-to-add-entities.md).
 
 ## <a name="marking-entities-in-example-utterances"></a>Marcar entidades em enunciados de exemplo
 
@@ -32,7 +32,7 @@ Certos tipos de entidade, como as entidades predefinidas e entidades de express�
 
 ## <a name="add-a-simple-entity"></a>Adicionar uma entidade simples
 
-No procedimento a seguir, você cria e marca uma entidade personalizada dentro do enunciado a seguir na página de intenção:
+O procedimento a seguir, você criará e uma entidade personalizada dentro a seguinte expressão de marca a **intenções** página:
 
 ```text
 Are there any SQL server jobs?
@@ -65,9 +65,9 @@ Para obter lista de departamentos da empresa, você pode ter valores normalizado
 
     Você pode adicionar mais itens de lista ou mais sinônimos de item ao rotular outros enunciados ou editar a entidade em **Entidades** no painel de navegação esquerdo. [Editar](luis-how-to-add-entities.md#add-list-entities) as entidades dá as opções de inserir itens adicionais com sinônimos correspondentes ou importar uma lista. 
 
-## <a name="add-composite-entity"></a>Adicionar entidade composta
+## <a name="add-a-composite-entity"></a>Adicionar uma entidade de composição
 
-Entidades compostas são criadas de **Entidades** existentes em uma entidade pai. 
+Entidades compostas são criadas de existente **entidades** para formar uma entidade pai. 
 
 Supondo que a declaração `Does John Smith work in Seattle?`, uma declaração composta pode retornar informações de entidade do nome do funcionário `John Smith`e o local `Seattle` em uma entidade de composição. As entidades filho já devem existir no aplicativo e ser marcadas na declaração de exemplo antes de criar a entidade composta.
 
@@ -131,15 +131,15 @@ Você pode executar ações em enunciados de exemplo como um grupo selecionado o
 
 ### <a name="remove-entity-labels-from-utterances"></a>Remover rótulos de entidade de enunciados
 
-Você pode remover rótulos de entidade de aprendizado de máquina de um enunciado na página Intenção. Se a entidade não for de aprendizado de máquina, ela não poderá ser removida de um enunciado. Se você precisar remover uma entidade que não seja de aprendizado de máquina do enunciado, precisará excluir a entidade de todo o aplicativo. 
+Você pode remover rótulos de computador aprendeu entidade de uma expressão na página intenções. Se a entidade não for de aprendizado de máquina, ela não poderá ser removida de um enunciado. Se você precisar remover uma entidade que não seja de aprendizado de máquina do enunciado, precisará excluir a entidade de todo o aplicativo. 
 
 Para remover um rótulo de entidade de aprendizado de máquina de um enunciado, selecione a entidade no enunciado. Em seguida, selecione **Remover Rótulo** na caixa suspensa da entidade que é exibida.
 
-### <a name="add-prebuilt-entity-label"></a>Adicionar um rótulo de entidade predefinida
+### <a name="add-a-prebuilt-entity-label"></a>Adicione um rótulo de entidade predefinidas
 
 Quando adicionar as entidades predefinidas ao seu aplicativo de LUIS, você não precisará marcar enunciados com essas entidades. Para saber mais sobre entidades predefinidas e como adicioná-las, veja [Adicionar entidades](luis-how-to-add-entities.md#add-a-prebuilt-entity-to-your-app).
 
-### <a name="add-regular-expression-entity-label"></a>Adicionar rótulo de entidade de expressão regular
+### <a name="add-a-regular-expression-entity-label"></a>Adicione um rótulo da entidade de expressão regular
 
 Se você adicionar as entidades de expressão regular ao seu aplicativo de LUIS, não precisará marcar enunciados com essas entidades. Para saber mais sobre entidades de expressão regular e como adicioná-las, veja [Adicionar entidades](luis-how-to-add-entities.md#add-regular-expression-entities-for-highly-structured-concepts).
 
@@ -149,7 +149,7 @@ Se você adicionar as entidades de expressão regular ao seu aplicativo de LUIS,
 Veja [Adicionar padrão de enunciado existente na página de intenção ou de entidade](luis-how-to-model-intent-pattern.md#add-pattern-from-existing-utterance-on-intent-or-entity-page).
 
 
-### <a name="add-patternany-entity"></a>Adicionar entidade pattern.any
+### <a name="add-a-patternany-entity"></a>Adicionar uma entidade pattern.any
 
 Se você adicionar entidades pattern.any ao seu aplicativo de LUIS, não será possível rotular enunciados com essas entidades. Elas só são válidas em padrões. Para saber mais sobre entidades pattern.any e como adicioná-las, veja [Adicionar entidades](luis-how-to-add-entities.md#add-patternany-entities-to-capture-free-form-entities).
 
@@ -159,4 +159,4 @@ Depois de adicionar, editar ou remover enunciados, [treine](luis-how-to-train.md
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Depois de rotular enunciados em suas intenções, você pode criar uma [entidade composta](luis-how-to-add-entities.md).
+Após identificando declarações em seu **intenções**, agora você pode criar um [entidade composta](luis-how-to-add-entities.md).

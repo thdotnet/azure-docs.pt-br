@@ -11,14 +11,14 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 06/24/2019
 ms.author: diberry
-ms.openlocfilehash: fb4cf119195b3be23dc8f2cb98bd019769583473
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 4c08c95a05d4f22e2338a7264409aec0f64a4755
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341849"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442513"
 ---
-# <a name="preview-migrate-to-api-version-3x--for-luis-apps"></a>Visualização: Migrar para a versão de API 3.x para aplicativos do LUIS
+# <a name="preview-migrate-to-api-version-3x-for-luis-apps"></a>Visualização: Migrar para a versão de API 3.x para aplicativos do LUIS
 
 O ponto de extremidade de previsão de consulta APIs foram alterados. Use este guia para entender como migrar para o ponto de extremidade da versão 3 APIs. 
 
@@ -43,6 +43,27 @@ São os seguintes recursos de LUIS **não tem suporte** na API V3:
 * V7 de verificação ortográfica do Bing
 
 [Documentação de referência](https://aka.ms/luis-api-v3) está disponível para a V3.
+
+## <a name="endpoint-url-changes-by-slot-name"></a>Alterações de URL de ponto de extremidade por nome do slot
+
+O formato da chamada de ponto de extremidade HTTP V3 foi alterado.
+
+|MÉTODO|URL|
+|--|--|
+|GET|https://<b>{REGION}</b>.api.cognitive.microsoft.com/luis/<b>v3.0-preview</b>/apps/<b>{APP-ID}</b>/slots/<b>{SLOT-NAME}</b>/predict?query=<b>{QUERY}</b>|
+|POST|https://<b>{REGION}</b>.api.cognitive.microsoft.com/luis/<b>v3.0-preview</b>/apps/<b>{APP-ID}</b>/slots/<b>{SLOT-NAME}</b>/predict|
+|||
+
+## <a name="endpoint-url-changes-by-version-id"></a>Alterações de URL de ponto de extremidade por ID de versão
+
+Se você deseja consultar por versão, você primeiro precisará [publicar por meio da API](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c3b) com o `"directVersionPublish":true`. O ponto de extremidade referenciando a ID da versão em vez do nome do slot de consulta.
+
+
+|MÉTODO|URL|
+|--|--|
+|GET|https://<b>{REGION}</b>.api.cognitive.microsoft.com/luis/<b>v3.0-preview</b>/apps/<b>{APP-ID}</b>/versions/<b>{VERSION-ID}</b>/predict?query=<b>{QUERY}</b>|
+|POST|https://<b>{REGION}</b>.api.cognitive.microsoft.com/luis/<b>v3.0-preview</b>/apps/<b>{APP-ID}</b>/versions/<b>{VERSION-ID}</b>/predict|
+|||
 
 ## <a name="prebuilt-entities-with-new-json"></a>Entidades predefinidas com o novo JSON
 

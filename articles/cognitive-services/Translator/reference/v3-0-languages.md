@@ -3,19 +3,19 @@ title: Método de idiomas de API de Tradução de Texto
 titlesuffix: Azure Cognitive Services
 description: Use o método Idiomas de API de Tradução de Texto.
 services: cognitive-services
-author: rajdeep-in
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
-ms.author: v-pawal
-ms.openlocfilehash: 415093610bfbc314e569eeeb658508bdfb021d9c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: swmachan
+ms.openlocfilehash: 7bac97b7edbfa0f7a03a65e462106b33160c6d1a
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66389723"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67435075"
 ---
 # <a name="translator-text-api-30-languages"></a>API de Tradução de Texto 3.0: Languages
 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: 0fe30bc6bdd1bba03df349305d8846e78063bd26
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 6df40909e2072ac2126344ba5b696c9e520e9955
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67342203"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67434137"
 ---
 # <a name="install-and-run-speech-service-containers"></a>Instalar e executar contêineres do serviço de fala
 
@@ -25,7 +25,7 @@ São os contêineres de duas fala **fala em texto** e **texto em fala**.
 
 |Função|Recursos|mais recente|
 |-|-|--|
-|Conversão de fala em texto| <li>Transcreve contínua em tempo real de fala ou lote gravações de áudio em texto com os resultados intermediários.|1.1.1|
+|Conversão de fala em texto| <li>Transcreve contínua em tempo real de fala ou lote gravações de áudio em texto com os resultados intermediários.|1.1.2|
 |Conversão de texto em fala| <li>Converte o texto em fala que soa natural. com a entrada de texto sem formatação ou Speech Synthesis Markup Language (SSML). |1.1.0|
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
@@ -101,10 +101,10 @@ Todas as marcas, exceto para `latest` estão no formato a seguir, onde o `<cultu
 Marca a seguir está um exemplo do formato:
 
 ```
-1.0.0-amd64-en-us-preview
+1.1.2-amd64-en-us-preview
 ```
 
-A tabela a seguir lista as localidades com suporte para **fala em texto** na 1.1.1 versão do contêiner:
+A tabela a seguir lista as localidades com suporte para **fala em texto** no 1.1.2 versão do contêiner:
 
 |Localidade do idioma|tags|
 |--|--|
@@ -129,7 +129,7 @@ Todas as marcas, exceto para `latest` estão no formato a seguir, onde o `<cultu
 Marca a seguir está um exemplo do formato:
 
 ```
-1.0.0-amd64-en-us-jessarus-preview
+1.1.0-amd64-en-us-jessarus-preview
 ```
 
 A tabela a seguir lista as localidades com suporte para **fala** no 1.1.0 versão do contêiner:

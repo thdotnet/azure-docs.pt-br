@@ -9,18 +9,18 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 06/20/2019
+ms.date: 06/21/2019
 ms.author: dapine
-ms.openlocfilehash: 061d335767b7b1b61973c28861759d4d12c6c476
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: c4ef58f35b3d038f360ff962c70e92711bc205ce
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295653"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67446518"
 ---
 # <a name="install-and-run-text-analytics-containers"></a>Instalar e executar contêineres da Análise de Texto
 
-Os contêineres da Análise de Texto fornecem processamento avançado em idioma natural sobre texto bruto e incluem três funções principais: análise de sentimento, extração de frases-chave e detecção de idioma. Atualmente, não há suporte para vinculação de entidade em um contêiner. 
+Os contêineres da Análise de Texto fornecem processamento avançado em idioma natural sobre texto bruto e incluem três funções principais: análise de sentimento, extração de frases-chave e detecção de idioma. Atualmente, não há suporte para vinculação de entidade em um contêiner.
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
@@ -46,7 +46,7 @@ Você deve cumprir os seguintes pré-requisitos antes de usar os contêineres de
 
 A tabela a seguir descreve os núcleos de CPU mínimos e recomendados, pelo menos 2,6 gigahertz (GHz) ou mais rápidos, bem como a memória, em gigabytes (GB), para alocar para cada contêiner de Análise de Texto.
 
-| Contêiner | Mínimo | Recomendadas | TPS<br>(No mínimo, máximo)|
+| Contêiner | Mínimo | Recomendado | TPS<br>(No mínimo, máximo)|
 |-----------|---------|-------------|--|
 |Extração de Frases-Chave | 1 núcleo, 2 GB de memória | 1 núcleo, 4 GB de memória |15, 30|
 |Detecção de Idioma | 1 núcleo, 2 GB de memória | 1 núcleo, 4 GB de memória |15, 30|

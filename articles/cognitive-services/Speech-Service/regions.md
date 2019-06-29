@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/12/2019
 ms.author: panosper
 ms.custom: seodec18
-ms.openlocfilehash: 518f1048224a97943756c5b51b83cd509f82e11e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1ad618e9eb70fd75f433030584c0f6538532928f
+ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67072507"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67466983"
 ---
 # <a name="speech-service-supported-regions"></a>Regiões com suporte do Serviço de Fala
 
@@ -43,7 +43,7 @@ O Speech SDK está disponível nessas regiões para **reconhecimento de fala**, 
  Centro-Sul dos Estados Unidos | `southcentralus` | https://southcentralus.cris.ai
  Índia Central | `centralindia` | https://centralindia.cris.ai
  Ásia Oriental | `eastasia` | https://eastasia.cris.ai
- Sudeste da Ásia | `southeastasia` | https://southeastasia.cris.ai
+ Sudeste Asiático | `southeastasia` | https://southeastasia.cris.ai
  Leste do Japão | `japaneast` | https://japaneast.cris.ai
  Coreia Central | `koreacentral` | https://koreacentral.cris.ai
  Leste da Austrália | `australiaeast` | https://australiaeast.cris.ai
@@ -73,6 +73,20 @@ As regiões disponíveis para **reconhecimento de intenção** por meio do SDK d
  América do Sul | Sul do Brasil | `brazilsouth`
 
 Este é um subconjunto das regiões de publicação compatíveis com o [LUIS (Serviço Inteligente de Reconhecimento Vocal)](/azure/cognitive-services/luis/luis-reference-regions).
+
+### <a name="voice-first-virtual-assistants"></a>Assistentes virtuais que têm como prioridade o uso de voz
+
+O [SDK de fala](speech-sdk.md) dá suporte a **Assistente de voz-first virtual** recursos nessas regiões:
+
+Região | Parâmetro do SDK de Fala
+-------|---------------------
+Oeste dos EUA | `westus`
+Oeste dos EUA 2 | `westus2`
+Leste dos EUA | `eastus`
+Leste dos EUA 2 | `eastus2`
+Europa Ocidental | `westeurope`
+Norte da Europa | `northeurope`
+Sudeste Asiático | `southeastasia`
 
 ## <a name="rest-apis"></a>APIs REST
 
