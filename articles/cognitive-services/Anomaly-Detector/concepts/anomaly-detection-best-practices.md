@@ -9,12 +9,12 @@ ms.subservice: anomaly-detector
 ms.topic: article
 ms.date: 03/26/2019
 ms.author: aahi
-ms.openlocfilehash: 766d009be3cd664d928a3c12f5fea38c26bbbdde
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1ad4a67d7737733e4c910d3495be29860769f27e
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64692208"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67477805"
 ---
 # <a name="best-practices-for-using-the-anomaly-detector-api"></a>Práticas recomendadas para usar a API do Detector de anomalias
 
@@ -51,7 +51,7 @@ Abaixo está o mesmo conjunto de dados usando a detecção de anomalias de lote.
 
 ## <a name="data-preparation"></a>Preparação dos dados
 
-A API do Detector de anomalias aceita a série temporal dados formatados em um objeto de solicitação JSON. Uma série de tempo pode ser qualquer dados numéricos registrados ao longo do tempo, em ordem sequencial. Você pode enviar o windows de seus dados de série temporal para o ponto de extremidade de API do Detector de anomalias para melhorar o desempenho da API. O número mínimo de pontos de dados, que você pode enviar é 12, e o máximo é 8640 pontos. 
+A API do Detector de anomalias aceita a série temporal dados formatados em um objeto de solicitação JSON. Uma série de tempo pode ser qualquer dados numéricos registrados ao longo do tempo, em ordem sequencial. Você pode enviar o windows de seus dados de série temporal para o ponto de extremidade de API do Detector de anomalias para melhorar o desempenho da API. O número mínimo de pontos de dados, que você pode enviar é 12, e o máximo é 8640 pontos. [Granularidade](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.anomalydetector.models.granularity?view=azure-dotnet-preview) é definida como a taxa de amostragem em seus dados. 
 
 Pontos de dados enviados para a API do Detector de anomalias devem ter um carimbo de hora válidos Tempo Universal Coordenado (UTC) e valor numérico. 
 
@@ -68,6 +68,15 @@ Pontos de dados enviados para a API do Detector de anomalias devem ter um carimb
         "value": 29615278
       },
     ]
+}
+```
+
+Se seus dados são amostrados a um intervalo de tempo não padrão, você pode especificá-lo adicionando o `customInterval` atributo em sua solicitação. Por exemplo, se a série é amostrada a cada 5 minutos, você pode adicionar o seguinte à sua solicitação JSON:
+
+```json
+{
+    "granularity" : "minutely", 
+    "customInterval" : 5
 }
 ```
 
