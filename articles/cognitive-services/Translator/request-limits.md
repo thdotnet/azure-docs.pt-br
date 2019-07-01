@@ -3,19 +3,19 @@ title: Solicitar limites – API de Tradução de Texto
 titleSuffix: Azure Cognitive Services
 description: Este artigo lista os limites de solicitação para a API de Tradução de Texto. Cobranças são incorridas com base na contagem de caracteres, não a frequência de solicitação com um limite de 5.000 caracteres por solicitação. Limites de caractere são assinatura com base com F0 limitado a 2 milhões de caracteres por hora.
 services: cognitive-services
-author: erhopf
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 06/04/2019
-ms.author: erhopf
-ms.openlocfilehash: d04677362e0ba3ace59d55ede9bd6241f17130e9
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.author: swmachan
+ms.openlocfilehash: a7621cc80a38d9a07872a94d8e5221dc04023b86
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67269236"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67435023"
 ---
 # <a name="request-limits-for-translator-text"></a>Limites de solicitação para a Tradução de Texto
 
@@ -38,7 +38,11 @@ As seguinte tabela listas matriz elemento e o caractere de limites para cada ope
 
 ## <a name="character-limits-per-hour"></a>Limites de caractere por hora
 
-Seu limite de caractere por hora baseia-se em sua camada de assinatura de Tradução de Texto. A cota por hora deve ser consumida uniformemente ao longo da hora. Se você atinge ou ultrapassar esses limites ou envia muito grande de uma parte da cota em um curto período de tempo, você provavelmente receberá uma falta de resposta de cota. Não há nenhum limite nas solicitações simultâneas.
+Seu limite de caractere por hora baseia-se em sua camada de assinatura de Tradução de Texto. 
+
+A cota por hora deve ser consumida uniformemente ao longo da hora. Por exemplo, no limite da camada F0 2 milhões de caracteres por hora, caracteres devem ser consumidos não mais rápido do que aproximadamente 33,300 caracteres por minuto (2 milhões de caracteres divididos por 60 minutos) de janela deslizante.
+
+Se você atinge ou ultrapassar esses limites ou envia muito grande de uma parte da cota em um curto período de tempo, você provavelmente receberá uma falta de resposta de cota. Não há nenhum limite nas solicitações simultâneas.
 
 | Camada | Limite de caracteres |
 |------|-----------------|

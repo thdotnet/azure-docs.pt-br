@@ -4,16 +4,16 @@ ms.service: azure
 ms.topic: include
 ms.date: 05/31/2019
 ms.author: sttramer
-ms.openlocfilehash: 4a52041f773529c2a72c8019da27d56f98b6b53d
-ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.openlocfilehash: 977caddde316384815c8248dffe243d2a7817226
+ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67147454"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67341536"
 ---
 ## <a name="open-azure-cloud-shell"></a>Abrir o Azure Cloud Shell
 
-O Azure Cloud Shell é um ambiente de shell interativo hospedado no Azure e usado no seu navegador. O Azure Cloud Shell permite que você use os shells `bash` ou `PowerShell` para executar várias ferramentas para trabalhar com os serviços do Azure. O Azure Cloud Shell vem pré-instalado com os comandos para permitir que você execute o conteúdo deste artigo, sem precisar instalar nada em seu ambiente local.
+Azure Cloud Shell é um ambiente de shell hospedado no Azure e usado por meio de navegador. O Azure Cloud Shell permite que você use os shells `bash` ou `PowerShell` para executar várias ferramentas para trabalhar com os serviços do Azure. O Azure Cloud Shell vem pré-instalado com os comandos para permitir que você execute o conteúdo deste artigo, sem precisar instalar nada em seu ambiente local.
 
 Para executar qualquer código contido neste artigo no Azure Cloud Shell, abra uma sessão do Cloud Shell, use o botão **Copiar** em um bloco de códigos para copiar o código e colá-lo na sessão do Cloud Shell com __Ctrl+Shift+V__ no Windows e no Linux ou __Cmd+Shift+V__ no macOS. O texto colado não é executado automaticamente; portanto, pressione **Enter** para executar o código.
 
