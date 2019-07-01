@@ -11,16 +11,17 @@ ms.topic: conceptual
 ms.date: 06/26/2019
 ms.author: wolfma
 ms.custom: seodec18
-ms.openlocfilehash: 09296585ab0ab61f39c18cae6c533c0bbd91926a
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 609443a4926fabd991846faee4a0a7dffe3a696b
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67449254"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67490187"
 ---
 # <a name="release-notes"></a>Notas de versão
 
 ## <a name="speech-sdk-160-2019-june-release"></a>Fala do SDK 1.6.0: Versão de junho de 2019
+
 **Exemplos**
 *   Exemplos de início rápido para texto em fala no UWP e no Unity
 *   Exemplo de início rápido para Swift no iOS
@@ -35,6 +36,9 @@ ms.locfileid: "67449254"
     * Todos os clientes existentes de fala de linha direta continuarão a ter suporte após a renomeação
 * Atualizar o adaptador de TTS REST para dar suporte ao proxy, conexão persistente
 * Melhorar a mensagem de erro quando uma região inválida for passada
+* SWIFT/Objective-c:
+    * Relatórios de erros aprimorados: Métodos que podem resultar em um erro agora estão presentes em duas versões: Um que expõe um `NSError` objeto para o tratamento de erros e outro que gera uma exceção. O primeiro é exposto ao Swift. Essa alteração exige adaptações no código Swift existente.
+    * Manipulação de eventos aprimorado
 
 **Correções de bug**
 *   Correção de TTS: em que o futuro SpeakTextAsync retornado sem esperar até que o áudio foi concluída de renderização
@@ -43,6 +47,8 @@ ms.locfileid: "67449254"
 *   Correção para problemas ocasionais implantar bibliotecas nativas para a pasta de saída nas amostras de
 *   Correção para o soquete da web confiável de fechamento.
 *   Correção possível falha ao abrir uma conexão sob uma carga muito pesada no Linux
+*   Correção para metadados ausentes no pacote framework para macOS
+*   Correção de problemas com `pip install --user` no Windows
 
 
 ## <a name="speech-sdk-151"></a>1\.5.1 do SDK da fala

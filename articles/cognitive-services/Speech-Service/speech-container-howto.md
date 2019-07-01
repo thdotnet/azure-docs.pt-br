@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: 6df40909e2072ac2126344ba5b696c9e520e9955
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 8f395788d4dd3c845155a52bd6b4666998838fcd
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67434137"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67490229"
 ---
 # <a name="install-and-run-speech-service-containers"></a>Instalar e executar contêineres do serviço de fala
 
@@ -25,7 +25,7 @@ São os contêineres de duas fala **fala em texto** e **texto em fala**.
 
 |Função|Recursos|mais recente|
 |-|-|--|
-|Conversão de fala em texto| <li>Transcreve contínua em tempo real de fala ou lote gravações de áudio em texto com os resultados intermediários.|1.1.2|
+|Conversão de fala em texto| <li>Transcreve contínua em tempo real de fala ou lote gravações de áudio em texto com os resultados intermediários.|1.1.3|
 |Conversão de texto em fala| <li>Converte o texto em fala que soa natural. com a entrada de texto sem formatação ou Speech Synthesis Markup Language (SSML). |1.1.0|
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
@@ -64,7 +64,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 A tabela a seguir descreve os núcleos de CPU e memória para alocar para cada contêiner fala mínimos e recomendados.
 
-| Contêiner | Mínimo | Recomendado |
+| Contêiner | Mínimo | Recomendadas |
 |-----------|---------|-------------|
 |cognitive-services-speech-to-text | Dois núcleos<br>2 GB de memória  | Quatro núcleos<br>4 GB de memória  |
 |cognitive-services-text-to-speech | 1 núcleo, 0,5 GB de memória| 2 núcleos, 1 GB de memória |
@@ -101,10 +101,10 @@ Todas as marcas, exceto para `latest` estão no formato a seguir, onde o `<cultu
 Marca a seguir está um exemplo do formato:
 
 ```
-1.1.2-amd64-en-us-preview
+1.1.3-amd64-en-us-preview
 ```
 
-A tabela a seguir lista as localidades com suporte para **fala em texto** no 1.1.2 versão do contêiner:
+A tabela a seguir lista as localidades com suporte para **fala em texto** no 1.1.3 versão do contêiner:
 
 |Localidade do idioma|tags|
 |--|--|
