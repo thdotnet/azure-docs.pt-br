@@ -66,7 +66,7 @@ Ao usar o modelo da API REST ou do Gerenciador de Recursos, inclua o elemento de
 | sendToSubscriptionAdministrator |Sim |o valor deve ser "true" ou "false" |
 | sendToSubscriptionCoAdministrators |Sim |o valor deve ser "true" ou "false" |
 | customEmails |Sim |o valor pode ser null [] ou uma matriz da cadeia de caracteres de emails |
-| Webhooks |Sim |o valor pode ser um Uri válido ou nulo |
+| webhooks |Sim |o valor pode ser um Uri válido ou nulo |
 | serviceUri |Sim |um Uri de https válido |
 | propriedades |Sim |o valor deve ser vazio {} ou pode conter pares chave-valor |
 
@@ -111,12 +111,12 @@ Quando a notificação de escala automática é gerada, os metadados a seguir s�
 | timestamp |Sim |Carimbo de data/hora de quando a ação de escala automática foi disparada |
 | id |Sim |ID do Gerenciador de Recursos da configuração de autoescala |
 | name |Sim |O nome da configuração de escala automática |
-| detalhes |Sim |Explicação da ação que o serviço de escala automática realizada a alteração na contagem da instância |
+| details |Sim |Explicação da ação que o serviço de escala automática realizada a alteração na contagem da instância |
 | subscriptionId |Sim |ID da assinatura do recurso de destino que está sendo escalado |
 | resourceGroupName |Sim |Nome do Grupo de Recursos do recurso de destino que está sendo escalado |
 | resourceName |Sim |Nome do recurso de destino que está sendo escalado |
 | resourceType |Sim |Os três valores com suporte: "microsoft.classiccompute/domainnames/slots/roles" - funções de Serviço de Nuvem, "microsoft.compute/virtualmachinescalesets" - Conjuntos de Escala de Máquina Virtual e "Microsoft.Web/serverfarms" - Aplicativo Web |
-| ResourceId |Sim |ID do Gerenciador de Recursos do recurso de destino que está sendo dimensionado |
+| resourceId |Sim |ID do Gerenciador de Recursos do recurso de destino que está sendo dimensionado |
 | portalLink |Sim |Link do portal do Azure para a página de resumo do recurso de destino |
 | oldCapacity |Sim |A atual (antiga) contagem de instância quando Escala Automática adotou uma ação de escala |
 | newCapacity |Sim |A nova contagem de instância para a qual a Escala Automática escalou o recurso |
