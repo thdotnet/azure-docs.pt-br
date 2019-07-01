@@ -223,6 +223,14 @@
             - name: Com REST
               displayName: 'encode, encoding, custom, transform'
               href: custom-preset-rest-howto.md
+        - name: Sub-recortar um vídeo
+          items:
+            - name: Com .NET
+              href: subclip-video-dotnet-howto.md
+              displayName: 'subclipping, clip, edit, trim, clipping'
+            - name: Com REST
+              href: subclip-video-rest-howto.md
+              displayName: 'subclipping, clip, edit, trim, clipping'
     - name: Usar a Grade de Eventos
       items:
         - name: Monitorar eventos - Portal

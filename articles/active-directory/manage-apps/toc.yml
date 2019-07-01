@@ -45,24 +45,22 @@
           href: application-proxy-network-topology.md
         - name: Comparação de soluções de acesso remoto
           href: application-proxy-migration.md
+    - name: Logon único
+      items:
+        - name: O que é logon único?
+          href: what-is-single-sign-on.md
+        - name: Planejamento de uma implantação de logon único
+          href: plan-sso-deployment.md
+    - name: SSO de um clique
+      items:
+        - name: O que é o SSO de um clique
+          href: one-click-sso-tutorial.md
     - name: Provisionamento de usuários e grupos
       items:
         - name: Provisionamento automático do usuário
-          href: configure-automatic-user-provisioning-portal.md
-        - name: Aplicativos SaaS
           href: user-provisioning.md
-        - name: Aplicativos habilitados para SCIM
+        - name: Provisionamento automático de aplicativos habilitados para SCIM
           href: use-scim-to-provision-users-and-groups.md
-        - name: Personalizar atributos de aplicativo
-          href: Customize-application-attributes.md
-        - name: Escrever expressões para mapeamentos de atributo
-          href: functions-for-customizing-application-data.md
-        - name: Filtros de escopo
-          href: define-conditional-rules-for-provisioning-user-accounts.md
-        - name: Relatório sobre provisionamento automático do usuário
-          href: check-status-user-account-provisioning.md
-        - name: Solucionar problemas de provisionamento do usuário
-          href: application-provisioning-config-problem.md
     - name: Segurança de aplicativo
       items:
         - name: Opções de acesso do aplicativo
@@ -75,18 +73,8 @@
           href: tenant-restrictions.md
         - name: Configurar a criptografia de token SAML (versão prévia)
           href: howto-saml-token-encryption.md
-    - name: Logon único
-      items:
-        - name: O que é logon único?
-          href: what-is-single-sign-on.md
-        - name: Planejamento de uma implantação de logon único
-          href: plan-sso-deployment.md
     - name: Portais do usuário final
       href: end-user-experiences.md
-    - name: SSO de um clique
-      items:
-        - name: O que é o SSO de um clique
-          href: one-click-sso-tutorial.md
 - name: Guias de instruções
   items:
     - name: Adicionar um aplicativo de nuvem
@@ -157,12 +145,20 @@
               href: application-proxy-configure-single-sign-on-on-premises-apps.md
     - name: Configurar provisionamento do usuário
       items:
-        - name: Quanto tempo demora o provisionamento
-          href: application-provisioning-when-will-provisioning-finish-specific-user.md
-        - name: Configurar provisionamento de usuário - aplicativo da galeria
+        - name: Provisionamento de usuário para aplicativos da galeria
           href: application-provisioning-config-how-to.md
-        - name: Sincronizar um atributo para mapeamento – aplicativo de galeria
-          href: user-provisioning-sync-attributes-for-mapping.md
+        - name: Configurar o provisionamento automático de usuário
+          href: configure-automatic-user-provisioning-portal.md
+        - name: Personalizar atributos de aplicativo
+          href: Customize-application-attributes.md
+        - name: Escrever expressões para mapeamentos de atributo
+          href: functions-for-customizing-application-data.md
+        - name: Filtros de escopo
+          href: define-conditional-rules-for-provisioning-user-accounts.md
+        - name: Verificar status do provisionamento
+          href: application-provisioning-when-will-provisioning-finish-specific-user.md
+        - name: Relatório sobre provisionamento automático do usuário
+          href: check-status-user-account-provisioning.md
     - name: Atribuir usuários e gerenciar o acesso aos aplicativos
       items:
         - name: Configurar consentimento do usuário
@@ -235,10 +231,12 @@
               href: configure-password-single-sign-on-non-gallery-applications-problems.md
         - name: Solucionar problemas de provisionamento do usuário
           items:
+            - name: Solucionar problemas de provisionamento do usuário
+              href: application-provisioning-config-problem.md
+            - name: Sincronizar um atributo para mapeamento – aplicativo de galeria
+              href: user-provisioning-sync-attributes-for-mapping.md
             - name: Demorando horas - aplicativo da galeria
               href: application-provisioning-when-will-provisioning-finish.md
-            - name: Problema ao configurar provisionamento de usuário - aplicativo da galeria
-              href: application-provisioning-config-problem.md
             - name: Problema ao salvar credenciais do administrador ao configurar o aplicativo da galeria de aprovisionamento de usuário
               href: application-provisioning-config-problem-storage-limit.md
             - name: Os usuários não são provisionados - aplicativo da galeria

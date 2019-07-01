@@ -27,6 +27,8 @@
       href: tutorial-rendering-batchexplorer-blender.md
     - name: Simulação R paralela
       href: tutorial-r-doazureparallel.md
+    - name: OCR com o Lote e o Azure Functions
+      href: tutorial-batch-functions.md
 - name: Exemplos
   items:
     - name: Exemplos de código

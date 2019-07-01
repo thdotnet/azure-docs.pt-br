@@ -30,6 +30,8 @@
   items:
     - name: Atalhos do teclado
       href: azure-portal-keyboard-shortcuts.md
+    - name: Coloque as URLs do portal do Azure em uma lista segura
+      href: azure-portal-safelist-urls.md
     - name: Estrutura de painéis do Azure
       href: azure-portal-dashboards-structure.md
 - name: Recursos

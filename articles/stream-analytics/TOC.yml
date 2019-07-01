@@ -88,7 +88,7 @@
           href: stream-analytics-test-query.md
         - name: Exibir resultados em um painel
           href: stream-analytics-power-bi-dashboard.md
-        - name: Limpar um trabalho
+        - name: Interromper ou excluir um trabalho
           href: stream-analytics-clean-up-your-job.md
         - name: Emparelhar trabalhos para confiabilidade
           href: stream-analytics-job-reliability.md
