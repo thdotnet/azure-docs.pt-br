@@ -74,7 +74,7 @@ A seguir está um trecho de código de extensão da máquina de Virtual de malha
 
 A seguir estão as descrições de propriedade:
 
-| **Nome** | **Valores permitidos** | ** --- ** | **Diretrizes ou descrição resumida** |
+| **Name** | **Valores permitidos** | ** --- ** | **Diretrizes ou descrição resumida** |
 | --- | --- | --- | --- |
 | name | cadeia de caracteres | --- | nome exclusivo para a extensão |
 | type | "ServiceFabricLinuxNode" or "ServiceFabricWindowsNode | --- | Identifica malha de serviço do sistema operacional estiver inicializando para |

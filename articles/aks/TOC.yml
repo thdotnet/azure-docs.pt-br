@@ -1,4 +1,4 @@
-- name: AKS (Serviço do Kubernetes do Azure)
+- name: AKS (Serviço de Kubernetes do Azure)
   href: ./index.yml
 - name: Visão geral
   items:
@@ -19,6 +19,8 @@
     - name: Desenvolver aplicativos
       expanded: true
       items:
+        - name: Usar o rascunho
+          href: kubernetes-draft.md
         - name: Usar Java (VS Code e CLI)
           href: ../dev-spaces/quickstart-java.md
           maintainContext: true
@@ -153,6 +155,8 @@
               href: configure-azure-cni.md
         - name: Criar um balanceador de carga interno
           href: internal-lb.md
+        - name: Usar um balanceador de carga padrão (visualização)
+          href: load-balancer-standard.md
         - name: Usar um endereço IP estático
           href: static-ip.md
         - name: Entrada
@@ -187,6 +191,8 @@
           href: use-pod-security-policies.md
         - name: Definir intervalos de IP autorizados do servidor de API (versão prévia)
           href: api-server-authorized-ip-ranges.md
+        - name: Controlar implantações com a política do Azure (visualização)
+          href: ../governance/policy/concepts/rego-for-aks.md?toc=/azure/aks/toc.json
         - name: Atualizar as credenciais da entidade de serviço de cluster
           href: update-credentials.md
         - name: Restringir e controlar o tráfego de saída do cluster (versão prévia)
@@ -280,8 +286,6 @@
                   maintainContext: true
         - name: Executar aplicativos com Helm
           href: kubernetes-helm.md
-        - name: Desenvolver aplicativos com Draft
-          href: kubernetes-draft.md
         - name: Usar o Service Broker Aberto para Azure
           href: integrate-azure.md
         - name: Usar a API do Cosmos DB para MongoDB com o OSBA

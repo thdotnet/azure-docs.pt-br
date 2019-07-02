@@ -274,13 +274,13 @@
           items:
             - name: Visão geral
               href: image-builder-overview.md
-            - name: Usar a CLI
+            - name: Usar a CLI do Azure
               href: image-builder.md
             - name: Referência de modelo
               href: image-builder-json.md
-            - name: Usar com galerias
+            - name: Criar para galerias de imagens
               href: image-builder-gallery.md
-            - name: Atualizar uma versão de imagem
+            - name: Atualizar uma imagem existente
               href: image-builder-gallery-update-image-version.md
             - name: Solucionar problemas
               href: 'https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md'
