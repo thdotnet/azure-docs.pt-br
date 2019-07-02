@@ -5,19 +5,19 @@ services: app-service
 author: cephalin
 ms.service: app-service
 ms.topic: include
-ms.date: 02/02/2018
+ms.date: 06/14/2019
 ms.author: cephalin
 ms.custom: include file
-ms.openlocfilehash: cd7fc7487a41979f37c9a55baeb0b8e172e808c4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ebea8bfd69a4df605142ab82f3efbc7d97d34529
+ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66133158"
+ms.lasthandoff: 06/14/2019
+ms.locfileid: "67143961"
 ---
-No Azure Cloud Shell, configure credenciais de implantação com o comando [`az webapp deployment user set`](/cli/azure/webapp/deployment/user?view=azure-cli-latest#az-webapp-deployment-user-set). Esse usuário de implantação é necessário para a implantação do FTP e do Git local em um aplicativo Web. O nome de usuário e senha são o nível de conta. _São diferentes das credenciais da sua assinatura do Azure._
+No Azure Cloud Shell, configure credenciais de implantação com o comando [`az webapp deployment user set`](/cli/azure/webapp/deployment/user?view=azure-cli-latest#az-webapp-deployment-user-set). Esse usuário de implantação é usado para implantação do FTP e do Git local em um aplicativo Web. O nome de usuário e senha são o nível de conta. _São diferentes das credenciais da sua assinatura do Azure._
 
-No exemplo a seguir, substitua *\<nome de usuário>* e *\<senha>* (incluindo os colchetes) por um novo nome de usuário e senha. O nome do usuário deve ser exclusivo no Azure. A senha deve ter pelo menos oito caracteres, com dois destes três elementos: letras, números, símbolos. 
+No exemplo a seguir, substitua *\<nome de usuário>* e *\<senha>* (incluindo os colchetes) por um novo nome de usuário e senha. O nome do usuário deve ser exclusivo no Azure. A senha deve ter pelo menos oito caracteres, com dois destes três elementos: letras, números, símbolos.
 
 ```azurecli-interactive
 az webapp deployment user set --user-name <username> --password <password>

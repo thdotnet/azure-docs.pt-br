@@ -1,6 +1,6 @@
 ---
 title: 'Tutorial: Processar dados dos Hubs de Eventos do Azure com Apache Spark no Azure HDInsight '
-description: Conectar-se ao Apache Spark no HDInsight do Azure para Hubs de Eventos do Azure e processar dados de fluxo.
+description: Tutorial – Conectar-se ao Apache Spark no Azure HDInsight para Hubs de Eventos do Azure e processar dados de streaming.
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
 ms.date: 05/24/2019
-ms.openlocfilehash: bf6a728f66f5eeaf5983ecd50d65326a59cc3267
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: c8c99d976f416d0c1d07fb3a266d37ecd6235fdb
+ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67066191"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67295365"
 ---
 # <a name="tutorial-process-tweets-using-azure-event-hubs-and-apache-spark-in-hdinsight"></a>Tutorial: Processar tweets usando Hubs de Eventos do Azure e Apache Spark no HDInsight
 
