@@ -95,7 +95,7 @@ A tabela a seguir descreve os elementos do arquivo JSON de saída:
 | Elemento | DESCRIÇÃO |
 | --- | --- |
 | Version |Refere-se à versão da API de Vídeo. A versão atual é 2. |
-| Escala de tempo |"Tiques" por segundo do vídeo. |
+| Timescale |"Tiques" por segundo do vídeo. |
 | Offset |A diferença de horário para carimbos de data/hora em "tiques." Na versão 1.0 das APIs de Vídeo, sempre será 0. Em cenários futuro para os quais oferecemos suporte, esse valor poderá ser alterado. |
 | Framerate |Quadros por segundo do vídeo. |
 | Width, Height |Refere-se à largura e à altura do vídeo em pixels. |
