@@ -9,16 +9,16 @@ ms.subservice: form-recognizer
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: pafarley
-ms.openlocfilehash: 611d5f7983c61fab12c55a46fedf35a3c420c4c8
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: ad9bba53390e3c4262f999ebcc57ab354f1e3d69
+ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67454813"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67537626"
 ---
 # <a name="build-a-training-data-set-for-a-custom-model"></a>Criar um conjunto de dados de treinamento para um modelo personalizado
 
-Quando você usa o modelo de formulário reconhecedor personalizado, você fornecer seus próprios dados de treinamento para que o modelo poderá fazê-lo aos seus formulários específicos do setor. Você pode treinar um modelo com cinco formulários preenchidos ou um formulário vazio (incluir a palavra "empty" no nome do arquivo) além de dois formulários preenchidos. Mesmo se você tiver suficiente formulários preenchidos para treinar com, a adição de um formulário vazio ao seu conjunto de dados de treinamento pode melhorar a precisão do modelo.
+Quando você usa o modelo de formulário reconhecedor personalizado, você fornecer seus próprios dados de treinamento para que o modelo poderá fazê-lo aos seus formulários específicos do setor. Você pode treinar um modelo com cinco formulários preenchidos ou um formulário vazio (você deve incluir o palavra "vazio" no nome do arquivo) além de dois formulários preenchidos. Mesmo se você tiver suficiente formulários preenchidos para treinar com, a adição de um formulário vazio ao seu conjunto de dados de treinamento pode melhorar a precisão do modelo.
 
 ## <a name="training-data-tips"></a>Dicas de dados de treinamento
 
@@ -32,8 +32,35 @@ Quando você usa o modelo de formulário reconhecedor personalizado, você forne
 
 ## <a name="general-input-requirements"></a>Requisitos gerais de entrada
 
-Verifique se que seu conjunto de dados de treinamento também segue os requisitos de entrada para todo o conteúdo do reconhecedor de formulário.
+Verifique se que seu conjunto de dados de treinamento também segue os requisitos de entrada para todo o conteúdo do reconhecedor de formulário. 
+
 [!INCLUDE [input requirements](./includes/input-requirements.md)]
+
+## <a name="upload-your-training-data"></a>Carregar seus dados de treinamento
+
+Quando você reunimos o conjunto de documentos de forma que você usará para treinamento, você precisa carregá-lo em um contêiner de armazenamento de BLOBs do Azure. Se você não souber como criar uma conta de armazenamento do Azure com um contêiner, seguindo a [início rápido do armazenamento do Azure para o portal do Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal).
+
+### <a name="organize-your-data-in-subfolders-optional"></a>Organizar seus dados em subpastas (opcionais)
+
+Por padrão, o [modelo de treinamento](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api/operations/TrainCustomModel) API usará apenas os documentos de forma que estão localizados na raiz do seu contêiner de armazenamento. No entanto, você pode treinar com os dados em subpastas, se você especificá-lo na chamada à API. Normalmente, o corpo dos [modelo de treinamento](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api/operations/TrainCustomModel) chamada tem o seguinte formato, onde `<SAS URL>` é a URL de assinatura de acesso compartilhado do seu contêiner:
+
+```json
+{
+  "source":"<SAS URL>"
+}
+```
+
+Se você adicionar o conteúdo a seguir ao corpo da solicitação, a API treinada com documentos localizados em subpastas. O `"prefix"` campo é opcional e limitará o conjunto de dados de treinamento para arquivos cujos caminhos começam com a cadeia de caracteres fornecida. Portanto, um valor de `"Test"`, por exemplo, fará com que a API para examinar apenas os arquivos ou pastas que começam com a palavra "Test".
+
+```json
+{
+  "source": "<SAS URL>",
+  "sourceFilter": {
+    "prefix": "<prefix string>",
+    "includeSubFolders": true
+  }
+}
+```
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 06/25/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: c796114d124c64ac1c373baacabe00c7dcd70aa7
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: dd4f85822a5e6615e7ea6e31b4231c04c9d4e88c
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67447642"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67542845"
 ---
 # <a name="best-practices-of-a-qna-maker-knowledge-base"></a>Melhores práticas de uma base de dados de conhecimento do QnA Maker
 
@@ -97,7 +97,7 @@ Certifique-se de que você está utilizando da melhor forma os recursos de class
 
 ### <a name="choosing-a-threshold"></a>Escolhendo um limite
 
-O padrão [pontuação de confiança](confidence-score.md#) que é usado como um limite é 50, no entanto, você pode [alterar o limite](confidence-score.md#set-threshold) para seu KB, com base em suas necessidades. Como cada base de dados de conhecimento é diferente, você precisa testar e escolher o limite mais adequado à sua. 
+O padrão [pontuação de confiança](confidence-score.md) que é usado como um limite é 50, no entanto, você pode [alterar o limite](confidence-score.md#set-threshold) para seu KB, com base em suas necessidades. Como cada base de dados de conhecimento é diferente, você precisa testar e escolher o limite mais adequado à sua. 
 
 ### <a name="choosing-ranker-type"></a>Escolhendo o tipo de classificador
 Por padrão, o QnA Maker pesquisa por meio de perguntas e respostas. Se você quiser pesquisar apenas perguntas, para gerar uma resposta, use o `RankerType=QuestionOnly` no corpo POST da solicitação GenerateAnswer.
