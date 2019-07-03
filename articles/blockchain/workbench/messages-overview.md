@@ -40,7 +40,7 @@ A solicitação exige os seguintes campos:
 | lastName             | Sobrenome do usuário                               |
 | emailAddress         | Endereço de email do usuário                           |
 | externalId           | Microsoft Azure Active Directory do usuário                      |
-| ConnectionId         | Identificador exclusivo para a conexão blockchain |
+| connectionId         | Identificador exclusivo para a conexão blockchain |
 | messageSchemaVersion | Versão do esquema de mensagens                            |
 | messageName          | **CreateUserRequest**                               |
 
@@ -66,7 +66,7 @@ Blockchain Workbench retorna uma resposta com os seguintes campos:
 | requestId             | GUID do cliente fornecido |
 | userId                | ID do usuário que foi criado |
 | userChainIdentifier   | Endereço do usuário que foi criado na rede blockchain. No Ethereum, o endereço é o endereço  **on-chain**  do usuário. |
-| ConnectionId          | Identificador exclusivo para a conexão blockchain|
+| connectionId          | Identificador exclusivo para a conexão blockchain|
 | messageSchemaVersion  | Versão do esquema de mensagens |
 | messageName           | **CreateUserUpdate** |
 | status                | Status da solicitação de criação do usuário.  Se bem sucedido, o valor é **Sucesso**. Em caso de falha, o valor é **falha**.     |
@@ -119,7 +119,7 @@ A solicitação exige os seguintes campos:
 | version              | Versão do aplicativo. Necessário se você tiver várias versões do aplicativo habilitadas. Caso contrário, a versão é opcional. Para obter mais informações sobre o controle de versão do aplicativo, confira [Controle de versão do aplicativo do Azure Blockchain Workbench](version-app.md). |
 | workflowName         | Nome do fluxo de trabalho |
 | parameters           | Parâmetros de entrada para criação de contrato |
-| ConnectionId         | Identificador exclusivo para a conexão blockchain |
+| connectionId         | Identificador exclusivo para a conexão blockchain |
 | messageSchemaVersion | Versão do esquema de mensagens |
 | messageName          | **CreateContractRequest** |
 
@@ -155,7 +155,7 @@ Blockchain Workbench retorna uma resposta com os seguintes campos:
 | requestId                | GUID do cliente fornecido                                                             |
 | contractId               | Identificador exclusivo para o contrato dentro do Azure Blockchain Workbench |
 | contractLedgerIdentifier | Endereço do contrato no razão                                            |
-| ConnectionId             | Identificador exclusivo para a conexão blockchain                               |
+| connectionId             | Identificador exclusivo para a conexão blockchain                               |
 | messageSchemaVersion     | Versão do esquema de mensagens                                                         |
 | messageName              | **CreateContractUpdate**                                                      |
 | status                   | Status da solicitação de criação do contrato.  Valores possíveis: **Enviado**, **Confirmado**, **Falha**.  |
@@ -223,7 +223,7 @@ A solicitação exige os seguintes campos:
 | version                  | Versão do aplicativo. Necessário se você tiver várias versões do aplicativo habilitadas. Caso contrário, a versão é opcional. Para obter mais informações sobre o controle de versão do aplicativo, confira [Controle de versão do aplicativo do Azure Blockchain Workbench](version-app.md). |
 | WorkflowFunctionName     | Nome da função de fluxo de trabalho |
 | parameters               | Parâmetros de entrada para criação de contrato |
-| ConnectionId             | Identificador exclusivo para a conexão blockchain |
+| connectionId             | Identificador exclusivo para a conexão blockchain |
 | messageSchemaVersion     | Versão do esquema de mensagens |
 | messageName              | **CreateContractActionRequest** |
 
@@ -258,7 +258,7 @@ Blockchain Workbench retorna uma resposta com os seguintes campos:
 |-----------------------|-----------------------------------------------------------------------------------|
 | requestId             | GUID do cliente fornecido|
 | contractId            | Identificador exclusivo para o contrato dentro do Azure Blockchain Workbench |
-| ConnectionId          | Identificador exclusivo para a conexão blockchain |
+| connectionId          | Identificador exclusivo para a conexão blockchain |
 | messageSchemaVersion  | Versão do esquema de mensagens |
 | messageName           | **CreateContractActionUpdate** |
 | status                | Status da solicitação de ação do contrato. Valores possíveis: **Enviado**, **Confirmado**, **Falha**.                         |
@@ -385,7 +385,7 @@ Contém informações sobre blocos individuais. A *BlockMessage* inclui uma seç
 |------|-------------|
 | block | Contém [informações sobre o bloco](#block-information) |
 | transactions | Contém [informações sobre a transação](#transaction-information) de uma coleção para o bloco |
-| ConnectionId | Identificador exclusivo para a conexão |
+| connectionId | Identificador exclusivo para a conexão |
 | messageSchemaVersion | Versão do esquema de mensagens |
 | messageName | **BlockMessage** |
 | additionalInformation | Informações adicionais fornecidas |
@@ -457,7 +457,7 @@ Contém informações sobre um contrato. A mensagem inclui uma seção com propr
 | contractLedgerIdentifier | Identificador exclusivo do contrato no razão |
 | contractProperties | [Propriedades do contrato](#contract-properties) |
 | isNewContract | Indica se esse contrato foi ou não criado recentemente. Os valores possíveis são: true: esse contrato foi um novo contrato criado. false: esse contrato é uma atualização de contrato. |
-| ConnectionId | Identificador exclusivo para a conexão |
+| connectionId | Identificador exclusivo para a conexão |
 | messageSchemaVersion | Versão do esquema de mensagens |
 | messageName | **ContractMessage** |
 | additionalInformation | Informações adicionais fornecidas |
@@ -570,7 +570,7 @@ Contém informações sobre quando uma função de contrato é invocada, como o 
 | parameters                  | [Informações sobre parâmetros](#parameter-information) |
 | transaction                 | Informações sobre a transação |
 | inTransactionSequenceNumber | O número de sequência da transação no bloco |
-| ConnectionId                | Identificador exclusivo para a conexão |
+| connectionId                | Identificador exclusivo para a conexão |
 | messageSchemaVersion        | Versão do esquema de mensagens |
 | messageName                 | **EventMessage** |
 | additionalInformation       | Informações adicionais fornecidas |
@@ -651,7 +651,7 @@ Contém informações sobre quando um aplicativo é carregado no Workbench, como
 | contractCodes | Coleção de [códigos de contrato](#contract-code-information) para o aplicativo |
 | applicationRoles | Coleção de [funções de aplicativo](#application-role-information) para o aplicativo |
 | applicationWorkflows | Coleção de [fluxos de trabalho de aplicativo](#application-workflow-information) para o aplicativo |
-| ConnectionId | Identificador exclusivo para a conexão |
+| connectionId | Identificador exclusivo para a conexão |
 | messageSchemaVersion | Versão do esquema de mensagens |
 | messageName | **EventMessage** |
 | additionalInformation | As informações adicionais fornecidas aqui incluem os estados do fluxo de trabalho do aplicativo e informações sobre a transição. |
@@ -844,7 +844,7 @@ Contém informações sobre quando um usuário recebe uma função no Workbench,
 | applicationRole        | Informações sobre a [função de aplicativo](#roleassignment-application-role) |
 | assigner               | Informações sobre o [atribuidor](#roleassignment-assigner) |
 | assignee               | Informações sobre o [destinatário](#roleassignment-assignee) |
-| ConnectionId           | Identificador exclusivo para a conexão |
+| connectionId           | Identificador exclusivo para a conexão |
 | messageSchemaVersion   | Versão do esquema de mensagens |
 | messageName            | **EventMessage** |
 | additionalInformation  | Informações adicionais fornecidas |
