@@ -117,7 +117,7 @@ As seções a seguir descrevem como implantar grupos de contêineres em uma rede
 
 Primeiramente, implante um grupo de contêineres e especifique os parâmetros para uma nova rede virtual e sub-rede. Quando você especifica esses parâmetros, o Azure cria a rede virtual e a sub-rede, delega a sub-rede para Instâncias de Contêiner do Azure e também cria um perfil de rede. Depois que esses recursos são criados, seu grupo de contêineres é implantado na sub-rede.
 
-Execute o comando [az container create][az-container-create], que especifica as configurações para uma nova rede virtual e sub-rede. Você precisa fornecer o nome de um grupo de recursos que foi criado em uma região que [suporta](#preview-limitations) grupos de contêineres em uma rede virtual. Esse comando implanta o Microsoft público [aci-helloworld] [ aci-helloworld] contêiner que executa um servidor de Web Node. js pequeno que atende a uma página web estática. Na próxima seção, você implantará um segundo grupo de contêineres na mesma sub-rede e testará a comunicação entre as duas instâncias de contêiner.
+Execute o comando [az container create][az-container-create], que especifica as configurações para uma nova rede virtual e sub-rede. Você precisa fornecer o nome de um grupo de recursos que foi criado em uma região que [suporta](#preview-limitations) grupos de contêineres em uma rede virtual. Esse comando implanta o Microsoft público [aci-helloworld][aci-helloworld] contêiner que executa um servidor de Web Node. js pequeno que atende a uma página web estática. Na próxima seção, você implantará um segundo grupo de contêineres na mesma sub-rede e testará a comunicação entre as duas instâncias de contêiner.
 
 ```azurecli
 az container create \

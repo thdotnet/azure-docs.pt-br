@@ -63,14 +63,16 @@
       href: event-hubs-availability-and-consistency.md
     - name: Escalabilidade
       href: event-hubs-scalability.md
+    - name: Recuperação de desastre geográfico
+      items:
+        - name: Recuperação de desastre geográfico e replicação geográfica
+          href: event-hubs-geo-dr.md
     - name: Segurança
       items:
         - name: Identidade gerenciada para recursos do Azure
           href: event-hubs-managed-service-identity.md
         - name: Controle de Acesso Baseado em Função (versão prévia)
           href: event-hubs-role-based-access-control.md
-        - name: Recuperação de desastre geográfico e replicação geográfica
-          href: event-hubs-geo-dr.md
         - name: Visão geral do modelo de segurança e autenticação
           href: event-hubs-authentication-and-security-model-overview.md
         - name: Atributos de segurança
