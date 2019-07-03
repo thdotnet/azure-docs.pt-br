@@ -221,8 +221,8 @@ Obtenha a chave pública da lista de nós de transação. Copie a chave pública
 
     | Valor | DESCRIÇÃO
     |-------|-------------
-    | \<chave pública do nó alfa\> | Chave pública do nó alfa
-    | \<Endereço da conta do Ethereum\> | Endereço da conta do Ethereum criado no nó de transação padrão
+    | \<alpha node public key\> | Chave pública do nó alfa
+    | \<Ethereum account address\> | Endereço da conta do Ethereum criado no nó de transação padrão
 
     Neste exemplo, o valor inicial do valor **storeData** é definido como 42.
 
@@ -392,8 +392,8 @@ Como não declaramos a chave pública do nó **beta** em **privateFor**, não po
 
     | Valor | DESCRIÇÃO
     |-------|-------------
-    | \<chave pública do nó alfa\> | Chave pública do nó alfa
-    | \<Endereço da conta do Ethereum\> | Endereço da conta do Ethereum criado no nó de transação padrão.
+    | \<alpha node public key\> | Chave pública do nó alfa
+    | \<Ethereum account address\> | Endereço da conta do Ethereum criado no nó de transação padrão.
 
     **privateFor** define os nós para os quais a transação está disponível. Neste exemplo, a conta do nó de transação padrão pode converter transações particulares para o nó **alfa**. Você precisa adicionar as chaves públicas para todos os participantes da transação particular.
 
