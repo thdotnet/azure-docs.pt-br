@@ -152,8 +152,8 @@ Os cabeçalhos a seguir são necessários para todas as mensagens de origem de c
 
 | Cabeçalho | Value |
 |----|----|
-| Caminho | Caminho da mensagem conforme especificado neste documento |
-| X-RequestId | UUID no formato de "não-traço" |
+| Path | Caminho da mensagem conforme especificado neste documento |
+| X-RequestId | UUID no formato de "no-dash" |
 | X-Timestamp | Carimbo de hora do relógio cliente UTC no formato ISO 8601 |
 
 #### <a name="x-requestid-header"></a>Cabeçalho X-RequestId
@@ -181,9 +181,9 @@ Os clientes *devem* enviar uma `speech.config` mensagem imediatamente depois de 
 
 | Nome do cabeçalho | Value |
 |----|----|
-| Caminho | `speech.config` |
+| Path | `speech.config` |
 | X-Timestamp | Carimbo de hora do relógio cliente UTC no formato ISO 8601 |
-| Tipo de conteúdo | application/json; charset=utf-8 |
+| Content-Type | application/json; charset=utf-8 |
 
 Assim como acontece com todas as mensagens originadas pelo cliente no protocolo de Serviço de Fala, a `speech.config` mensagem *deve* incluir um cabeçalho *X-Timestamp* que registra a hora do relógio cliente UTC quando a mensagem for enviada para o serviço. A `speech.config` mensagem *não* exigem um cabeçalho *X RequestId* porque esta mensagem não está associada uma solicitação de fala em particular.
 
@@ -252,10 +252,10 @@ Os cabeçalhos a seguir são necessários `audio` para todas as mensagens.
 
 | Cabeçalho         |  Value     |
 | ------------- | ---------------- |
-| Caminho | `audio` |
+| Path | `audio` |
 | X-RequestId | UUID no formato de "não-traço" |
 | X-Timestamp | Carimbo de hora do relógio cliente UTC no formato ISO 8601 |
-| Tipo de conteúdo | O tipo de conteúdo de áudio. O tipo deve ser *áudio/x-wav* (PCM) ou *áudio/silk* (SILK). |
+| Content-Type | O tipo de conteúdo de áudio. O tipo deve ser *áudio/x-wav* (PCM) ou *áudio/silk* (SILK). |
 
 #### <a name="supported-audio-encodings"></a>Codificações com suporte de áudio
 
