@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-custom-search
 ms.topic: overview
-ms.date: 03/4/2019
+ms.date: 06/27/2019
 ms.author: aahi
-ms.openlocfilehash: 93af1cce37c69691fb39f62270f4de6c9c73cf32
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 067693c3c02d19f3bdab77f315c920b25078e7f5
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66388597"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67542705"
 ---
 # <a name="what-is-the-bing-custom-search-api"></a>O que é API de Pesquisa Personalizada do Bing?
 
@@ -48,6 +48,8 @@ Para detalhes sobre como personalizar sua instância de pesquisa, consulte [Defi
 Leia os [Requisitos de uso e exibição do Bing](./use-and-display-requirements.md) para usar os resultados da pesquisa em seus serviços e seus aplicativos.
 
 Familiarize-se com o conteúdo de referência para cada um dos pontos de extremidade de pesquisa personalizados. A referência contém os pontos finais, cabeçalhos e parâmetros de consulta que você usaria para solicitar resultados de pesquisa. Ela também inclui as definições dos objetos de resposta.
+
+[!INCLUDE [cognitive-services-bing-url-note](../../../includes/cognitive-services-bing-url-note.md)]
 
 - [API de pesquisa personalizada](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference)
 - [API de imagem personalizada](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-images-api-v7-reference)

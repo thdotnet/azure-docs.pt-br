@@ -9,13 +9,13 @@ services: iot-hub
 ms.devlang: python
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 03/26/2019
-ms.openlocfilehash: 74146242ef4084e5990027117689bb1371c3f272
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.date: 06/21/2019
+ms.openlocfilehash: 9c9b892f7d1f992210a18f2290bb199d12aeaf49
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65832175"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67330504"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-python"></a>Início Rápido: Controlar um dispositivo conectado a um hub IoT (Python)
 
@@ -102,12 +102,13 @@ Um dispositivo deve ser registrado no hub IoT antes de poder se conectar. Neste 
     ```azurecli-interactive
     az iot hub show-connection-string \
       --name YourIoTHubName \
+      --policy-name service \
       --output table
     ```
 
     Tome nota da cadeia de conexão de serviço, que se parece com:
 
-   `HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey={YourSharedAccessKey}`
+   `HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey={YourSharedAccessKey}`
 
     Você usará esse valor posteriormente no início rápido. A cadeia de conexão do serviço é diferente da cadeia de conexão do dispositivo.
 

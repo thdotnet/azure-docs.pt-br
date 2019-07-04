@@ -2,20 +2,19 @@
 title: Restaurar arquivos para uma VM com o Backup do Azure
 description: Saiba como executar restaurações em nível de arquivo em uma VM do Azure com os serviços de backup e recuperação.
 services: backup
-author: rayne-wiselman
+author: dcurwin
 manager: carmonm
-tags: azure-resource-manager, virtual-machine-backup
 ms.service: backup
 ms.topic: tutorial
 ms.date: 01/31/2019
-ms.author: raynew
+ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: 905fce2be5de2fff371272efa79bdec5b3bef112
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 801d812f44eacb4953ca3df942d65bd77f210478
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66127619"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67273916"
 ---
 # <a name="restore-files-to-a-virtual-machine-in-azure"></a>Restaurar arquivos para uma máquina virtual no Azure
 O Backup do Azure cria pontos de recuperação que são armazenados em cofres de recuperação com redundância geográfica. Ao restaurar de um ponto de recuperação, você pode restaurar a VM inteira ou arquivos individuais. Este artigo fornece detalhes de como restaurar arquivos individuais. Neste tutorial, você aprenderá a:
