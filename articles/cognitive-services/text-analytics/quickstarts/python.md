@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 05/09/2019
+ms.date: 06/28/2019
 ms.author: aahi
-ms.openlocfilehash: 9ae894bee803c60b56a1bfacd5667f355aa44d2b
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 835dc8d25ad1d6a30020408636b556c3f247200d
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65799993"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67478370"
 ---
 # <a name="quickstart-using-the-python-rest-api-to-call-the-text-analytics-cognitive-service"></a>Início Rápido: Uso da API REST do Python para chamar o Serviço Cognitivo de Análise de Texto 
 <a name="HOLTop"></a>
@@ -49,7 +49,6 @@ Crie um novo aplicativo Python em seu editor favorito ou IDE. Adicione as seguin
 import requests
 # pprint is used to format the JSON response
 from pprint import pprint
-from IPython.display import HTML
 ```
 
 Crie variáveis para sua chave de assinatura e o ponto de extremidade para a API REST de Análise de Texto. Verifique se a região no ponto de extremidade corresponde àquela usada quando você se inscreveu (por exemplo, `westcentralus`). Se você estiver usando uma chave de avaliação gratuita, não será necessário fazer alterações.

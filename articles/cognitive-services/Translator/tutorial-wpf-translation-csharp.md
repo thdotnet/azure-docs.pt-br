@@ -3,19 +3,19 @@ title: 'Tutorial: Criar um aplicativo de tradução com o WPF em C# – API de T
 titleSuffix: Azure Cognitive Services
 description: Neste tutorial, você criará um aplicativo do WPF (Windows Presentation Foundation) que usa APIs dos Serviços Cognitivos para tradução de texto, detecção de idioma e verificação ortográfica com uma chave de assinatura única. Este exercício mostrará como usar recursos da API de Tradução de Texto e a API de Verificação Ortográfica do Bing.
 services: cognitive-services
-author: erhopf
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: tutorial
 ms.date: 06/04/2019
-ms.author: erhopf
-ms.openlocfilehash: 2deaa0ed8b21d5e091fe5d3b3e6986eaf2340281
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.author: swmachan
+ms.openlocfilehash: b300c40b4a9c832a0df87f7cfc6e6a9558d766f6
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66514723"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448223"
 ---
 # <a name="tutorial-create-a-translation-app-with-wpf"></a>Tutorial: Criar um aplicativo de tradução com o WPF
 
@@ -370,7 +370,7 @@ Agora, vamos criar um método para detectar o idioma do texto de origem (texto i
        HttpWebRequest detectLanguageWebRequest = (HttpWebRequest)WebRequest.Create(detectUri);
        detectLanguageWebRequest.Headers.Add("Ocp-Apim-Subscription-Key", COGNITIVE_SERVICES_KEY);
        detectLanguageWebRequest.Headers.Add("Ocp-Apim-Subscription-Region", "westus");
-       detectLanguageWebRequest.ContentType = "app/json; charset=utf-8";
+       detectLanguageWebRequest.ContentType = "application/json; charset=utf-8";
        detectLanguageWebRequest.Method = "POST";
 
        // Send request
@@ -427,7 +427,7 @@ private string CorrectSpelling(string text)
     HttpWebRequest spellCheckWebRequest = (HttpWebRequest)WebRequest.Create(uri);
     spellCheckWebRequest.Headers.Add("Ocp-Apim-Subscription-Key", COGNITIVE_SERVICES_KEY);
     spellCheckWebRequest.Method = "POST";
-    spellCheckWebRequest.ContentType = "app/x-www-form-urlencoded"; // doesn't work without this
+    spellCheckWebRequest.ContentType = "application/x-www-form-urlencoded"; // doesn't work without this
 
     // Create and send the request
     string body = "text=" + System.Web.HttpUtility.UrlEncode(text);

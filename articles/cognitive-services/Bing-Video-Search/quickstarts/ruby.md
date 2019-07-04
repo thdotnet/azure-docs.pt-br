@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: quickstart
-ms.date: 01/31/2019
+ms.date: 06/26/2019
 ms.author: aahi
-ms.openlocfilehash: 837a47b0eb1eff37eeafc1cdaad6370b8abc595f
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 2abab9db46c9ca5bf52ed613b28d698550adaf6a
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55860197"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447023"
 ---
-# <a name="quickstart-search-for-videos-using-the-bing-video-search-rest-api-and-ruby"></a>Início rápido: Pesquisar vídeos usando a API de Pesquisa de Vídeo do Bing e Ruby
+# <a name="quickstart-search-for-videos-using-the-bing-video-search-rest-api-and-ruby"></a>Início Rápido: Pesquisar vídeos usando a API de Pesquisa de Vídeo do Bing e Ruby
 
-Use este início rápido para fazer sua primeira chamada à API de Pesquisa de Vídeo do Bing e exibir um resultado de pesquisa da resposta JSON. Este aplicativo Ruby simples envia uma consulta de pesquisa de vídeo HTTP para a API e exibe a resposta. Embora esse aplicativo seja escrito em Python, a API é um serviço Web RESTful compatível com a maioria das linguagens de programação. 
+Use este início rápido para fazer sua primeira chamada à API de Pesquisa de Vídeo do Bing e exibir um resultado de pesquisa da resposta JSON. Este aplicativo Ruby simples envia uma consulta de pesquisa de vídeo HTTP para a API e exibe a resposta. Embora esse aplicativo seja escrito em Python, a API é um serviço Web RESTful compatível com a maioria das linguagens de programação. O código-fonte para esse exemplo está disponível [no GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/ruby/Search/BingVideoSearchv7.rb) com anotações de código e tratamentos de erro adicionais.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

@@ -10,14 +10,16 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 2/20/2019
 ms.author: wolfma
-ms.openlocfilehash: 3cedfaf1ae16c17026314fc24dbdc7bb11494caf
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: dd8e760e658715b89bf45718ac571ccaeb5ade96
+ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65020950"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67465553"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-unity-beta"></a>Início Rápido: Reconhecer fala com o SDK de Fala para Unity (Beta)
+
+Guias de início rápido também estão disponíveis para [conversão de texto em fala](quickstart-text-to-speech-csharp-unity.md).
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
@@ -79,7 +81,7 @@ Quando você terminar, a interface do usuário deverá ser semelhante a esta cap
 
 ## <a name="add-the-sample-code"></a>Adicione o código de amostra
 
-1. Na [Janela Projeto](https://docs.unity3d.com/Manual/ProjectView.html) (por padrão, no canto inferior esquerdo), clique no botão **Criar** e, em seguida, selecione **Script C#**. Nomeie o script `HelloWorld`.
+1. Na [Janela Projeto](https://docs.unity3d.com/Manual/ProjectView.html) (por padrão, no canto inferior esquerdo), clique no botão **Criar** e, em seguida, selecione **Script C#** . Nomeie o script `HelloWorld`.
 
 1. Edite o script clicando duas vezes nele.
 
