@@ -11,13 +11,13 @@ author: stevestein
 manager: craigg
 ms.author: sstein
 ms.reviewer: ''
-ms.date: 02/08/2019
-ms.openlocfilehash: 4c02ab45cd6e10b86681aae41cbb4bd99e6e0d6d
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.date: 06/25/2019
+ms.openlocfilehash: 2a5fb6fcd9b1f0c327df23741284ec0d5fc26c71
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65832566"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447869"
 ---
 # <a name="use-cli-to-create-a-single-azure-sql-database-and-configure-a-firewall-rule"></a>Use a CLI para criar um banco de dados SQL do Azure individual e configurar uma regra de firewall
 
@@ -31,14 +31,14 @@ Se você optar por instalar e usar a CLI localmente, este tópico exigirá que v
 
 ## <a name="sample-script"></a>Script de exemplo
 
-[!code-azurecli-interactive[main](../../../cli_scripts/sql-database/create-and-configure-database/create-and-configure-database.sh?highlight=9-10 "Create SQL Database")]
+[!code-azurecli-interactive[main](../../../cli_scripts/sql-database/create-and-configure-database/create-and-configure-database.sh "Create SQL Database")]
 
 ## <a name="clean-up-deployment"></a>Limpar a implantação
 
 Use o comando a seguir para remover o grupo de recursos e todos os recursos associados a ele.
 
 ```azurecli-interactive
-az group delete --name myResourceGroup
+az group delete --name $resourceGroupName
 ```
 
 ## <a name="script-explanation"></a>Explicação sobre o script

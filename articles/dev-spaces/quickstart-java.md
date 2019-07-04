@@ -11,12 +11,12 @@ ms.topic: quickstart
 description: Desenvolvimento rápido de Kubernetes com contêineres, microsserviços e Java no Azure
 keywords: Docker, Kubernetes, Azure, AKS, Serviço de Kubernetes do Azure, contêineres, Java, Helm, malha de serviço, roteamento de malha de serviço, kubectl, k8s
 manager: jeconnoc
-ms.openlocfilehash: 2a7ff71a8143883226c10754afc9757aea310c63
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.openlocfilehash: b3074fc280098d0aa55292c48a1562b8dfeb3cc0
+ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66393471"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67503088"
 ---
 # <a name="quickstart-develop-with-java-on-kubernetes-using-azure-dev-spaces"></a>Início Rápido: Desenvolver com Java no Kubernetes usando o Azure Dev Spaces
 
@@ -195,7 +195,7 @@ return "Hello from webfrontend in Azure while debugging!";
 
 Salve o arquivo. Clique em *Depurar* e, em seguida, *Reiniciar Depuração* ou, na *barra de ferramentas Depurar*, clique no botão *Reiniciar Depuração*.
 
-![Atualizar a Depuração](media/get-started-java/debug-action-refresh.png)
+![Atualizar a Depuração](media/common/debug-action-refresh.png)
 
 Abra o serviço em um navegador e observe a mensagem atualizada exibida.
 

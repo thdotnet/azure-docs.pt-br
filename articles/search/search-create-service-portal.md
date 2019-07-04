@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 05/29/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 650dfa7284b41407e9b128a2096548d7acfc1567
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.openlocfilehash: fd81115f4e811366b6b115d1c73a9be7ca26698b
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66393789"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67485632"
 ---
 # <a name="create-an-azure-search-service-in-the-portal"></a>Criar um serviço de Azure Search no portal
 
@@ -94,7 +94,7 @@ Lembre-se de fixar o seu serviço no painel para acesso fácil sempre que você 
 
 ## <a name="get-a-key-and-url-endpoint"></a>Obter uma chave e um ponto de extremidade de URL
 
-Com poucas exceções, o uso do novo serviço requer que você forneça o ponto de extremidade de URL e uma chave de API de autorização. Guias de início rápido, tutoriais como [Explorar APIs REST do Azure Search (Postman)](search-fiddler.md) e [Como usar o Azure Search do .NET](search-howto-dotnet-sdk.md), exemplos e um código personalizado precisam de um ponto de extremidade e de uma chave para serem executados no recurso específico.
+Com poucas exceções, o uso do novo serviço requer que você forneça o ponto de extremidade de URL e uma chave de API de autorização. Guias de início rápido, tutoriais como [Explorar APIs REST do Azure Search (Postman)](search-get-started-postman.md) e [Como usar o Azure Search do .NET](search-howto-dotnet-sdk.md), exemplos e um código personalizado precisam de um ponto de extremidade e de uma chave para serem executados no recurso específico.
 
 1. Na página de visão geral do serviço, localize e copie o ponto de extremidade de URL do lado direito da página.
 
