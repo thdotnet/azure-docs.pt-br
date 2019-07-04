@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 06/03/2019
+ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 8937f4c47f0fa84d4ec371e951cff8a2fdaa8481
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2426ecd9c480b0cc236295384ae04c60051f37ce
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66476910"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442962"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-data-box-edge"></a>Gerenciar o acesso, a potência e o modo de conectividade para a borda da caixa de dados do Azure
 
@@ -66,7 +66,7 @@ Ao gerar a chave de ativação para o dispositivo de borda da caixa de dados ou 
 -  Criando um compartilhamento com uma conta de armazenamento associada.
 -  Criando um usuário de quem pode acessar os compartilhamentos no dispositivo.
 
-Você deve ter uma `User` acessar no locatário do Active Directory, pois você precisa ser capaz de `Read all directory objects`. Você não pode ser um usuário convidado já que não têm permissões para `Read all directory objects`. Se você for um convidado e, em seguida, as operações como geração de uma chave de ativação, a criação de um compartilhamento em seu dispositivo de borda da caixa de dados, criação de um usuário todos falhará.
+Você deve ter uma `User` acessar no locatário do Active Directory, pois você precisa ser capaz de `Read all directory objects`. Você não pode ser um usuário convidado já que não têm permissões para `Read all directory objects`. Se você for um convidado, em seguida, as operações como geração de uma ativação chave, a criação de um compartilhamento em seu dispositivo de borda da caixa de dados, a criação de um usuário, a configuração da borda da função de computação, a redefinição de senha do dispositivo todos falhará.
 
 Para obter mais informações sobre como fornecer acesso aos usuários para a API do Graph do Azure Active Directory, consulte [padrão de acesso para os administradores, usuários e usuários convidados](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-).
 

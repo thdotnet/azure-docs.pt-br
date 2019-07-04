@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 91dd1ebc457bfeed5c9e8d0d62ecc23740ca5d8d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 398efd36e6c8d82a5090b7446c95abb2d1bfbca1
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65979542"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67428753"
 ---
 # <a name="azure-policy-definition-structure"></a>Estrutura de definição da Política do Azure
 
@@ -72,6 +72,10 @@ Todos os exemplos do Azure Policy estão em [exemplos do Azure Policy](../sample
 
 ## <a name="mode"></a>Modo
 
+**Modo** é configurado, dependendo se a política está definindo como destino uma propriedade do Azure Resource Manager ou uma propriedade de provedor de recursos.
+
+### <a name="resource-manager-modes"></a>Modos de Gerenciador de recursos
+
 O **modo** determina quais tipos de recursos serão avaliados para uma política. Os modos suportados são:
 
 - `all`: avaliar grupos de recursos e todos os tipos de recursos
@@ -80,6 +84,13 @@ O **modo** determina quais tipos de recursos serão avaliados para uma política
 É recomendável definir o **modo** como `all` na maioria dos casos. Todas as definições de políticas criadas através do portal usam o modo `all`. Se você usar a CLI do Azure ou PowerShell, será necessário especificar o modo **parâmetro** manualmente. Se a definição de política não incluir um valor **modo**, ela usará como padrão `all` no Azure PowerShell e `null` na CLI do Azure. Um modo `null` é o mesmo que usar `indexed` para dar suporte à compatibilidade com versões anteriores.
 
 `indexed` deve ser usado ao criar políticas que vão impor marcas ou locais. Embora não seja obrigatório, impedirá que recursos que não oferecem suporte a marcas nem locais apareçam como não compatíveis nos resultados de conformidade. A exceção são **grupos de recursos**. As políticas que impõem local ou marcas em um grupo de recursos devem definir **mode** como `all` e direcionar especificamente o tipo `Microsoft.Resources/subscriptions/resourceGroups`. Para obter um exemplo, consulte [Impor marcas do grupo de recursos](../samples/enforce-tag-rg.md). Para obter uma lista de recursos que oferecem suporte a marcas, consulte [suporte para recursos do Azure de marcação](../../../azure-resource-manager/tag-support.md).
+
+### <a name="resource-provider-modes"></a>Modos de provedor de recursos
+
+É o único modo de provedor de recursos com suporte no momento `Microsoft.ContainerService.Data` para gerenciar regras de controlador de admissão na [serviço Kubernetes do Azure](../../../aks/intro-kubernetes.md).
+
+> [!NOTE]
+> [A política do Azure para Kubernetes](rego-for-aks.md) está em visualização pública e dá suporte apenas a definições de políticas internas.
 
 ## <a name="parameters"></a>parâmetros
 
@@ -389,6 +400,7 @@ A política do Azure dá suporte aos seguintes tipos de efeito:
 - **AuditIfNotExists**: habilitará a auditoria se um recurso não existir
 - **DeployIfNotExists**: implanta um recurso caso ele ainda não exista
 - **Desabilitado**: não avalia os recursos de conformidade para a regra de política
+- **EnforceRegoPolicy**: configura o controlador de entrada acumulados por abrir agente de política no serviço de Kubernetes do Azure (visualização)
 
 Para **acrescentar**, você precisa fornecer os detalhes abaixo:
 

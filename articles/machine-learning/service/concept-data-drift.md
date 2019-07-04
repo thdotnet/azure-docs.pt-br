@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 author: cody-dkdc
 ms.author: copeters
 ms.date: 06/20/2019
-ms.openlocfilehash: 56761c32484d4f5b27800e56143c62d3731da852
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: a03e3124647869e7148f271810bb523986a851c6
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67333137"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442375"
 ---
 # <a name="what-is-data-drift-monitoring-preview"></a>O que são dados descompasso monitoramento (versão prévia)?
 
@@ -37,7 +37,7 @@ Se você acha que os dados de entrada para seu modelo implantado podem mudar, co
 
 ## <a name="how-data-drift-is-monitored-in-azure-machine-learning-service"></a>Como os descompassos de dados é monitorado no serviço do Azure Machine Learning
 
-Usando o **serviço do Azure Machine Learning**, descompasso de dados é monitorado por meio de conjuntos de dados ou implantações. Para monitorar os descompassos de dados, um conjunto de dados de linha de base - geralmente treinamento conjunto de dados para um modelo – é especificado. Um segundo conjunto de dados – geralmente os dados de entrada do modelo são coletados de uma implantação - é testado com o conjunto de dados de linha de base. Ambos os conjuntos de dados são [perfilados](how-to-create-dataset-snapshots.md) e o serviço de monitoramento de descompasso de entrada para os dados. Um modelo de aprendizado de máquina é treinado para detectar diferenças entre dois conjuntos de dados. O desempenho do modelo é convertido para o coeficiente de descompasso, que mede a magnitude do descompasso entre dois conjuntos de dados. Usando o [possibilidade de interpretação de modelo](machine-learning-interpretability-explainability.md) os recursos que contribuíram para o coeficiente de descompasso são computados. O perfil de conjunto de dados, informações estatísticas sobre cada recurso são controladas. 
+Usando o **serviço do Azure Machine Learning**, descompasso de dados é monitorado por meio de conjuntos de dados ou implantações. Para monitorar os descompassos de dados, um conjunto de dados de linha de base - geralmente treinamento conjunto de dados para um modelo – é especificado. Um segundo conjunto de dados – geralmente os dados de entrada do modelo são coletados de uma implantação - é testado com o conjunto de dados de linha de base. Ambos os conjuntos de dados são [perfilados](how-to-explore-prepare-data.md#explore-with-summary-statistics) e o serviço de monitoramento de descompasso de entrada para os dados. Um modelo de aprendizado de máquina é treinado para detectar diferenças entre dois conjuntos de dados. O desempenho do modelo é convertido para o coeficiente de descompasso, que mede a magnitude do descompasso entre dois conjuntos de dados. Usando o [possibilidade de interpretação de modelo](machine-learning-interpretability-explainability.md) os recursos que contribuíram para o coeficiente de descompasso são computados. O perfil de conjunto de dados, informações estatísticas sobre cada recurso são controladas. 
 
 ## <a name="data-drift-metric-output"></a>Saída da métrica dados descompasso
 

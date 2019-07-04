@@ -8,12 +8,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 06/13/2019
 ms.author: hrasheed
-ms.openlocfilehash: ee9b5b651f440bc7d179b1a06c7ddbd3f9137a0d
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 41313c7d484df5568fbf729b683a0e9df5325abc
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165895"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67433745"
 ---
 # <a name="use-empty-edge-nodes-on-apache-hadoop-clusters-in-hdinsight"></a>Usar nós de borda vazios em clusters do Apache Hadoop no HDInsight
 
@@ -108,7 +108,7 @@ Nesta seção, você pode usar um modelo do Resource Manager para criar um clust
    * **Senha de Logon do Cluster**: insira a senha do usuário HTTP do Hadoop.
    * **Nome de Usuário SSH**: insira o nome de usuário SSH. O nome padrão é **sshuser**.
    * **Senha SSH**: insira a senha de usuário SSH.
-   * **Instalar a ação do script**: manter o valor padrão para percorrer este tutorial.
+   * **Instalar a ação do script**: Mantenha o valor padrão para prosseguir com este artigo.
      
      Algumas propriedades foram inseridas no código do modelo: tipo de Cluster, contagem de nós de trabalho do Cluster, tamanho do nó de borda e nome do nó de borda.
 4. Selecione **Concordo com os termos e condições declarados acima** e clique em **Comprar** para criar um cluster com nó de borda.

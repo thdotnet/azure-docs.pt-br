@@ -5,15 +5,15 @@ services: storage
 author: wmgries
 ms.service: storage
 ms.topic: article
-ms.date: 6/13/2019
+ms.date: 6/27/2019
 ms.author: wgries
 ms.subservice: files
-ms.openlocfilehash: d9bbc76fe60a5d363cd05b75df33f6fce00d7e9a
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: 2399fcaa683e5807d2a5cd69d3dd3357d804fd28
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67303396"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449963"
 ---
 # <a name="release-notes-for-the-azure-file-sync-agent"></a>Notas de versão para o agente de Sincronização de Arquivos do Azure
 A Sincronização de Arquivos do Azure permite que você centralize os compartilhamentos de arquivos da sua organização em Arquivos do Azure sem abrir mão da flexibilidade, do desempenho e da compatibilidade de um servidor de arquivos local. As instalações do Windows Server são transformadas em um cache rápido do seu compartilhamento de arquivos do Azure. Use qualquer protocolo disponível no Windows Server para acessar seus dados localmente (incluindo SMB, NFS e FTPS). Você pode ter tantos caches quantos precisar em todo o mundo.
@@ -26,7 +26,8 @@ As seguintes versões têm suporte pela Sincronização de arquivos do Azure:
 | Marco | Número de versão do agente | Data de liberação | Status |
 |----|----------------------|--------------|------------------|
 | V7 Versão - [KB4490495](https://support.microsoft.com/help/4490495)| 7.0.0.0 | 19 de junho de 2019 | [Flighting](https://docs.microsoft.com/azure/storage/files/storage-files-release-notes#automatic-agent-lifecycle-management) |
-| Junho de 2019 cumulativo de atualizações - [KB4489738](https://support.microsoft.com/help/4489738)| 6.2.0.0 | 13 de junho de 2019 | Com suporte (versão recomendada) |
+| Junho de 2019 cumulativo de atualizações - [KB4489739](https://support.microsoft.com/help/4489739)| 6.3.0.0 | 27 de junho de 2019 | Com suporte (versão recomendada) |
+| Junho de 2019 cumulativo de atualizações - [KB4489738](https://support.microsoft.com/help/4489738)| 6.2.0.0 | 13 de junho de 2019 | Com suporte |
 | Maio de 2019 cumulativo de atualizações - [KB4489737](https://support.microsoft.com/help/4489737)| 6.1.0.0 | 7 de maio de 2019 | Com suporte |
 | V6 Versão - [KB4489736](https://support.microsoft.com/help/4489736)| 6.0.0.0 | 21 de abril de 2019 | Com suporte |
 | Abril de 2019 cumulativo de atualizações - [KB4481061](https://support.microsoft.com/help/4481061)| 5.2.0.0 | 4 de abril de 2019 | Com suporte |
@@ -113,6 +114,14 @@ Os seguintes itens não são sincronizados, mas o restante do sistema continua a
 ### <a name="cloud-tiering"></a>Disposição em camadas de nuvem
 - Se um arquivo em camadas é copiado em outro local usando o Robocopy, o arquivo resultante não fica em camadas. O atributo offline pode ser definido porque o Robocopy inclui esse atributo nas operações de cópia incorretamente.
 - Ao copiar arquivos usando robocopy, use a opção /MIR para preservar os carimbos de data/hora dos arquivos. Isso garantirá que os arquivos mais antigos sejam colocados em camadas antes dos arquivos acessados recentemente.
+
+## <a name="agent-version-6300"></a>Versão do agente 6.3.0.0
+As notas de versão a seguir são para a versão 6.3.0.0 do agente de sincronização de arquivo do Azure lançada em 27 de junho de 2019. Estas notas se complementam as notas de versão listadas para a versão 6.0.0.0.
+
+Lista dos problemas corrigidos nesta versão:  
+- Acessando ou procurar um local de ponto de extremidade de servidor via SMB é lento no Windows Server 2012 R2 
+- Aumento da utilização da CPU depois de instalar o agente de sincronização de arquivos do Azure v6
+- Melhorias de telemetria em camadas na nuvem
 
 ## <a name="agent-version-6200"></a>Versão do agente 6.2.0.0
 As notas de versão a seguir são para a versão 6.2.0.0 do agente de sincronização de arquivo do Azure lançada em 13 de junho de 2019. Estas notas se complementam as notas de versão listadas para a versão 6.0.0.0.

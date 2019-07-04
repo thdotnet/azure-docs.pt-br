@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 05/16/2019
+ms.date: 06/24/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: 5a63053cc7fa1c1c86669ce2cea56b68f1a7b4b6
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: b92bc0a6c5d51ad26e069a363619edbdf0daa7c0
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341497"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442885"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Funções internas para recursos do Azure
 
@@ -54,11 +54,17 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 | [Operador de runbook de Automação](#automation-runbook-operator) | Ler propriedades do Runbook - para poder criar Trabalhos do runbook. |
 | [Colaborador de Avere](#avere-contributor) | Pode criar e gerenciar um cluster de vFXT Avere. |
 | [Operador Avere](#avere-operator) | Usado pelo cluster vFXT Avere para gerenciar o cluster |
+| [Proprietário de dados de Hubs de eventos do Azure (visualização)](#azure-event-hubs-data-owner-preview) | Permite acesso completo aos recursos de Hubs de eventos do Azure. |
+| [Receptor de dados de Hubs de eventos do Azure (visualização)](#azure-event-hubs-data-receiver-preview) | Permite receber acesso aos recursos de Hubs de eventos do Azure. |
+| [Remetente de dados de Hubs de eventos do Azure (visualização)](#azure-event-hubs-data-sender-preview) | Permite enviar o acesso aos recursos de Hubs de eventos do Azure. |
 | [Função de Administrador do Cluster do Serviço de Kubernetes do Azure](#azure-kubernetes-service-cluster-admin-role) | Liste a ação de credencial de administrador de cluster. |
 | [Função de Usuário do Cluster do Serviço de Kubernetes do Azure](#azure-kubernetes-service-cluster-user-role) | Liste a ação de credencial de usuário de cluster. |
 | [Leitor de dados de mapas do Azure (visualização)](#azure-maps-data-reader-preview) | Concede acesso para ler dados relacionados de uma conta do Azure mapas do mapa. |
+| [Proprietário de dados do barramento de serviço do Azure (visualização)](#azure-service-bus-data-owner-preview) | Permite acesso completo aos recursos do barramento de serviço do Azure. |
+| [Receptor de dados do barramento de serviço do Azure (visualização)](#azure-service-bus-data-receiver-preview) | Permite receber acesso aos recursos do barramento de serviço do Azure. |
+| [Remetente de dados do barramento de serviço do Azure (visualização)](#azure-service-bus-data-sender-preview) | Permite enviar acesso aos recursos do barramento de serviço do Azure. |
 | [Proprietário de registro do Microsoft Azure Stack](#azure-stack-registration-owner) | Permite que você gerencie registros do Microsoft Azure Stack. |
-| [Colaborador de Backup](#backup-contributor) | Permite que você gerencie o serviço de backup, mas não pode criar cofres e fornecer acesso a outras pessoas |
+| [Colaborador de Backup](#backup-contributor) | Permite que você gerencie serviço de backup, mas não é possível criar cofres e fornecer acesso a outras pessoas |
 | [Operador de Backup](#backup-operator) | Permite que você gerencie serviços de backup, exceto a remoção de backup, a criação de cofres e o fornecimento de acesso a outras pessoas |
 | [Leitor de Backup](#backup-reader) | Pode exibir serviços de backup, mas não pode fazer alterações |
 | [Leitor de cobrança](#billing-reader) | Permite o acesso de leitura aos dados de cobrança |
@@ -88,7 +94,6 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 | [Usuário do DevTest Labs](#devtest-labs-user) | Permite conectar, iniciar, reiniciar e encerrar as máquinas virtuais no Azure DevTest Labs. |
 | [Colaborador de zona DNS](#dns-zone-contributor) | Permite gerenciar zonas DNS e conjuntos de registros no DNS do Azure, mas não permite controlar quem tem acesso a eles. |
 | [Colaborador de Conta do DocumentDB](#documentdb-account-contributor) | Pode gerenciar contas do Azure Cosmos DB. O Azure Cosmos DB era anteriormente conhecido como DocumentDB. |
-| [Proprietário de dados de Hubs de eventos](#event-hubs-data-owner) | Permite acesso completo aos recursos de Hubs de eventos do Azure | 
 | [Colaborador de EventGrid EventSubscription](#eventgrid-eventsubscription-contributor) | Permite que você gerencie operações de assinatura de evento EventGrid. |
 | [Leitor de EventGrid EventSubscription](#eventgrid-eventsubscription-reader) | Permite que você gerencie operações de assinatura de evento EventGrid. |
 | [Operador de Cluster do HDInsight](#hdinsight-cluster-operator) | Permite que você ler e modificar configurações de cluster do HDInsight. |
@@ -119,7 +124,6 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 | [Administrador de Segurança](#security-admin) | Somente na Central de Segurança: Pode exibir políticas de segurança, exibir estados de segurança, editar políticas de segurança, exibir alertas e recomendações, ignorar alertas e recomendações |
 | [Gerenciador de Segurança (Herdado)](#security-manager-legacy) | Esta é uma função herdada. Em vez disso, use o Administrador de Segurança |
 | [Leitor de Segurança](#security-reader) | Somente na Central de Segurança: Pode exibir recomendações e alertas, exibir políticas de segurança, exibir estados de segurança, mas não pode fazer alterações |
-| [Proprietário de dados do barramento de serviço](#service-bus-data-owner) | Permite acesso completo aos recursos do barramento de serviço do Azure |
 | [Colaborador do Site Recovery](#site-recovery-contributor) | Permite gerenciar o serviço do Azure Site Recovery, exceto a criação de cofre e atribuição de função |
 | [Operador do Site Recovery](#site-recovery-operator) | Permite failover e failback, mas não executa outras operações de gerenciamento do Azure Site Recovery |
 | [Leitor do Site Recovery](#site-recovery-reader) | Permite visualizar o status do Azure Site Recovery, mas não executar outras operações de gerenciamento |
@@ -130,15 +134,15 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 | [Colaborador de instância gerenciada do SQL](#sql-managed-instance-contributor) | Permite gerenciar instâncias gerenciadas do SQL e necessária configuração de rede, mas não pode fornecer acesso a outras pessoas. |
 | [Gerenciador de Segurança do SQL](#sql-security-manager) | Permite você gerenciar as políticas relacionadas à segurança de servidores e bancos de dados SQL, mas não acessá-los. |
 | [Colaborador do SQL Server](#sql-server-contributor) | Permite gerenciar servidores e Bancos de Dados SQL, mas não acessá-los, nem as políticas relacionadas à segurança. |
-| [Colaborador da Conta de Armazenamento](#storage-account-contributor) | Permite gerenciar contas de armazenamento, mas não acessá-las. |
-| [Função do Serviço de Operador da Chave da Conta de Armazenamento](#storage-account-key-operator-service-role) | Os operadores da Chave da Conta de Armazenamento podem listar e regenerar chaves em contas de armazenamento |
-| [Colaborador de dados de blob de armazenamento](#storage-blob-data-contributor) | Permite o acesso de leitura, gravação e exclusão aos dados e aos contêineres do Azure Storage Blob |
-| [Proprietário de Dados do Blob de Armazenamento](#storage-blob-data-owner) | Permite acesso completo aos dados e aos contêineres de blob do Armazenamento do Microsoft Azure, incluindo a atribuição de controle de acesso POSIX. |
-| [Leitor de Dados do Blob de Armazenamento](#storage-blob-data-reader) | Permite o acesso de leitura aos dados e aos contêineres do Azure Storage Blob |
-| [Colaborador de dados da fila de armazenamento](#storage-queue-data-contributor) | Permite o acesso de leitura, gravação e exclusão às filas e mensagens da fila do Armazenamento do Azure |
-| [Processador de mensagens de dados de fila de armazenamento](#storage-queue-data-message-processor) | Permite para espiar, receber e excluir o acesso às mensagens de fila de armazenamento do Azure |
-| [Remetente de mensagem de dados de fila de armazenamento](#storage-queue-data-message-sender) | Permitir o envio de mensagens da fila de armazenamento do Azure |
-| [Leitor de dados da fila de armazenamento](#storage-queue-data-reader) | Permite o acesso de leitura às filas e mensagens da fila do Armazenamento do Azure |
+| [Colaborador da Conta de Armazenamento](#storage-account-contributor) | Permite um gerenciamento de contas de armazenamento. Não fornece acesso aos dados na conta de armazenamento. |
+| [Função do Serviço de Operador da Chave da Conta de Armazenamento](#storage-account-key-operator-service-role) | Permite listar e regenerar chaves de acesso da conta de armazenamento. |
+| [Colaborador de dados de blob de armazenamento](#storage-blob-data-contributor) | Ler, gravar e excluir blobs e contêineres de armazenamento do Azure. Para saber quais ações são necessárias para uma operação de dados específico, consulte [permissões para chamar o blob e fila de operações de dados](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
+| [Proprietário de Dados do Blob de Armazenamento](#storage-blob-data-owner) | Fornece acesso completo aos dados, incluindo a atribuição de controle de acesso do POSIX e contêineres de blob de armazenamento do Azure. Para saber quais ações são necessárias para uma operação de dados específico, consulte [permissões para chamar o blob e fila de operações de dados](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
+| [Leitor de Dados do Blob de Armazenamento](#storage-blob-data-reader) | Ler e listar blobs e contêineres de armazenamento do Azure. Para saber quais ações são necessárias para uma operação de dados específico, consulte [permissões para chamar o blob e fila de operações de dados](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
+| [Colaborador de dados da fila de armazenamento](#storage-queue-data-contributor) | Ler, gravar e excluir filas de armazenamento do Azure e mensagens da fila. Para saber quais ações são necessárias para uma operação de dados específico, consulte [permissões para chamar o blob e fila de operações de dados](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
+| [Processador de mensagens de dados de fila de armazenamento](#storage-queue-data-message-processor) | Inspecionar, recuperar e excluir uma mensagem de uma fila do armazenamento do Azure. Para saber quais ações são necessárias para uma operação de dados específico, consulte [permissões para chamar o blob e fila de operações de dados](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
+| [Remetente de mensagem de dados de fila de armazenamento](#storage-queue-data-message-sender) | Adicione mensagens a uma fila do armazenamento do Azure. Para saber quais ações são necessárias para uma operação de dados específico, consulte [permissões para chamar o blob e fila de operações de dados](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
+| [Leitor de dados da fila de armazenamento](#storage-queue-data-reader) | Ler e listar as filas do armazenamento do Azure e mensagens da fila. Para saber quais ações são necessárias para uma operação de dados específico, consulte [permissões para chamar o blob e fila de operações de dados](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
 | [Colaborador de solicitação de suporte](#support-request-contributor) | Permite criar e gerenciar Solicitações de Suporte |
 | [Colaborador do Gerenciador de Tráfego](#traffic-manager-contributor) | Permite gerenciar perfis do Gerenciador de Tráfego, mas não permite controlar quem tem acesso a eles. |
 | [Administrador de Acesso do Usuário](#user-access-administrator) | Permite que você gerencie o acesso do usuário aos recursos do Azure. |
@@ -548,6 +552,51 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
+## <a name="azure-event-hubs-data-owner-preview"></a>Proprietário de dados de Hubs de eventos do Azure (visualização)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Descrição** | Permite acesso completo aos recursos de Hubs de eventos do Azure. |
+> | **Id** | f526a384-b230-433a-b45c-95f59c4a2dec |
+> | **Ações** |  |
+> | Microsoft.EventHub/* |  |
+> | **NotActions** |  |
+> | *nenhum* |  |
+> | **DataActions** |  |
+> | Microsoft.EventHub/* |  |
+> | **NotDataActions** |  |
+> | *nenhum* |  |
+
+## <a name="azure-event-hubs-data-receiver-preview"></a>Receptor de dados de Hubs de eventos do Azure (visualização)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Descrição** | Permite receber acesso aos recursos de Hubs de eventos do Azure. |
+> | **Id** | a638d3c7-ab3a-418d-83e6-5f17a39d4fde |
+> | **Ações** |  |
+> | Microsoft.EventHub/*/eventhubs/consumergroups/read |  |
+> | **NotActions** |  |
+> | *nenhum* |  |
+> | **DataActions** |  |
+> | Microsoft.EventHub/*/receive/action |  |
+> | **NotDataActions** |  |
+> | *nenhum* |  |
+
+## <a name="azure-event-hubs-data-sender-preview"></a>Remetente de dados de Hubs de eventos do Azure (visualização)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Descrição** | Permite enviar o acesso aos recursos de Hubs de eventos do Azure. |
+> | **Id** | 2b629674-e913-4c01-ae53-ef4638d8f975 |
+> | **Ações** |  |
+> | Microsoft.EventHub/*/eventhubs/read |  |
+> | **NotActions** |  |
+> | *nenhum* |  |
+> | **DataActions** |  |
+> | Microsoft.EventHub/*/send/action |  |
+> | **NotDataActions** |  |
+> | *nenhum* |  |
+
 ## <a name="azure-kubernetes-service-cluster-admin-role"></a>Função de Administrador do Cluster do Serviço de Kubernetes do Azure
 > [!div class="mx-tableFixed"]
 > | | |
@@ -593,6 +642,55 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
+## <a name="azure-service-bus-data-owner-preview"></a>Proprietário de dados do barramento de serviço do Azure (visualização)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Descrição** | Permite acesso completo aos recursos do barramento de serviço do Azure. |
+> | **Id** | 090c5cfd-751d-490a-894a-3ce6f1109419 |
+> | **Ações** |  |
+> | Microsoft.ServiceBus/* |  |
+> | **NotActions** |  |
+> | *nenhum* |  |
+> | **DataActions** |  |
+> | Microsoft.ServiceBus/* |  |
+> | **NotDataActions** |  |
+> | *nenhum* |  |
+
+## <a name="azure-service-bus-data-receiver-preview"></a>Receptor de dados do barramento de serviço do Azure (visualização)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Descrição** | Permite receber acesso aos recursos do barramento de serviço do Azure. |
+> | **Id** | 4f6d3b9b-027b-4f4c-9142-0e5a2a2247e0 |
+> | **Ações** |  |
+> | Microsoft.ServiceBus/*/queues/read |  |
+> | Microsoft.ServiceBus/*/topics/read |  |
+> | Microsoft.ServiceBus/*/topics/subscriptions/read |  |
+> | **NotActions** |  |
+> | *nenhum* |  |
+> | **DataActions** |  |
+> | Microsoft.ServiceBus/*/receive/action |  |
+> | **NotDataActions** |  |
+> | *nenhum* |  |
+
+## <a name="azure-service-bus-data-sender-preview"></a>Remetente de dados do barramento de serviço do Azure (visualização)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Descrição** | Permite enviar acesso aos recursos do barramento de serviço do Azure. |
+> | **Id** | 69a216fc-b8fb-44d8-bc22-1f3c2cd27a39 |
+> | **Ações** |  |
+> | Microsoft.ServiceBus/*/queues/read |  |
+> | Microsoft.ServiceBus/*/topics/read |  |
+> | Microsoft.ServiceBus/*/topics/subscriptions/read |  |
+> | **NotActions** |  |
+> | *nenhum* |  |
+> | **DataActions** |  |
+> | Microsoft.ServiceBus/*/send/action |  |
+> | **NotDataActions** |  |
+> | *nenhum* |  |
+
 ## <a name="azure-stack-registration-owner"></a>Proprietário de registro do Azure Stack
 > [!div class="mx-tableFixed"]
 > | | |
@@ -625,7 +723,6 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | Microsoft.RecoveryServices/Vaults/backupFabrics/refreshContainers/action | Atualizar a lista de contêineres |
 > | Microsoft.RecoveryServices/Vaults/backupJobs/* | Criar e gerenciar trabalhos de backup |
 > | Microsoft.RecoveryServices/Vaults/backupJobsExport/action | Exportar trabalhos |
-> | Microsoft.RecoveryServices/Vaults/backupJobsExport/operationResults/read |  |
 > | Microsoft.RecoveryServices/Vaults/backupManagementMetaData/* | Criar e gerenciar metadados relacionados ao gerenciamento de backup |
 > | Microsoft.RecoveryServices/Vaults/backupOperationResults/* | Criar e gerenciar os Resultados das operações de gerenciamento de backup |
 > | Microsoft.RecoveryServices/Vaults/backupPolicies/* | Criar e gerenciar políticas de backup |
@@ -691,7 +788,6 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | Microsoft.RecoveryServices/Vaults/backupFabrics/refreshContainers/action | Atualizar a lista de contêineres |
 > | Microsoft.RecoveryServices/Vaults/backupJobs/* | Criar e gerenciar trabalhos de backup |
 > | Microsoft.RecoveryServices/Vaults/backupJobsExport/action | Exportar trabalhos |
-> | Microsoft.RecoveryServices/Vaults/backupJobsExport/operationResults/read |  |
 > | Microsoft.RecoveryServices/Vaults/backupManagementMetaData/read |  |
 > | Microsoft.RecoveryServices/Vaults/backupOperationResults/* | Criar e gerenciar os Resultados das operações de gerenciamento de backup |
 > | Microsoft.RecoveryServices/Vaults/backupPolicies/operationResults/read | Obter os resultados da operação de política. |
@@ -758,7 +854,6 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | Microsoft.RecoveryServices/Vaults/backupJobs/operationResults/read | Retornar o resultado da operação do trabalho. |
 > | Microsoft.RecoveryServices/Vaults/backupJobs/read | Retornar todos os objetos de trabalho |
 > | Microsoft.RecoveryServices/Vaults/backupJobsExport/action | Exportar trabalhos |
-> | Microsoft.RecoveryServices/Vaults/backupJobsExport/operationResults/read |  |
 > | Microsoft.RecoveryServices/Vaults/backupManagementMetaData/read |  |
 > | Microsoft.RecoveryServices/Vaults/backupOperationResults/read | Retornar o resultado da operação de backup para o cofre dos Serviços de Recuperação. |
 > | Microsoft.RecoveryServices/Vaults/backupPolicies/operationResults/read | Obter os resultados da operação de política. |
@@ -1409,22 +1504,6 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 
-## <a name="event-hubs-data-owner"></a>Proprietário de dados de Hubs de eventos
-
-> [!div class="mx-tableFixed"]
-> | | |
-> | --- | --- |
-> | **Descrição** | Permite acesso completo aos recursos de Hubs de eventos do Azure. |
-> | **Id** | f526a384-b230-433a-b45c-95f59c4a2dec |
-> | **Ações** |  |
-> | Microsoft.EventHubs/* | Permite o acesso de gerenciamento completo para o namespace de Hubs de eventos |
-> | **NotActions** |  |
-> | *nenhum* |  |
-> | **DataActions** |  |
-> | Microsoft.EventHubs/* | Permite o acesso a dados completo para o namespace de Hubs de eventos |
-> | **NotDataActions** |  |
-> | *nenhum* |  |
-
 ## <a name="eventgrid-eventsubscription-contributor"></a>Colaborador de EventGrid EventSubscription
 > [!div class="mx-tableFixed"]
 > | | |
@@ -1721,9 +1800,9 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | **Descrição** | Criar, ler, atualizar e excluir a identidade atribuída pelo usuário |
 > | **Id** | e40ec5ca-96e0-45a2-b4ff-59039f2c2b59 |
 > | **Ações** |  |
-> | Microsoft.ManagedIdentity/userAssignedIdentities/*/read |  |
-> | Microsoft.ManagedIdentity/userAssignedIdentities/*/write |  |
-> | Microsoft.ManagedIdentity/userAssignedIdentities/*/delete |  |
+> | Microsoft.ManagedIdentity/userAssignedIdentities/read | Obter uma identidade atribuída ao usuário existente |
+> | Microsoft.ManagedIdentity/userAssignedIdentities/write | Criar uma nova identidade atribuída ao usuário ou atualizar as marcas associadas a uma identidade atribuída a um usuário existente |
+> | Microsoft.ManagedIdentity/userAssignedIdentities/delete | Excluir uma identidade atribuída ao usuário existente |
 > | Microsoft.Authorization/*/read | Ler funções e atribuições de função |
 > | Microsoft.Insights/alertRules/* | Criar e gerenciar regras de alerta do Insights |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Obter ou listar de grupos de recursos. |
@@ -2073,22 +2152,6 @@ A tabela a seguir fornece uma breve descrição de cada função interna. Clique
 > | *nenhum* |  |
 > | **DataActions** |  |
 > | *nenhum* |  |
-> | **NotDataActions** |  |
-> | *nenhum* |  |
-
-## <a name="service-bus-data-owner"></a>Proprietário de dados do barramento de serviço
-
-> [!div class="mx-tableFixed"]
-> | | |
-> | --- | --- |
-> | **Descrição** | Permite acesso completo aos recursos do barramento de serviço do Azure. |
-> | **Id** | 090c5cfd-751d-490a-894a-3ce6f1109419 |
-> | **Ações** |  |
-> | Microsoft.ServiceBus/* | Permite o acesso de gerenciamento completo para o namespace do barramento de serviço |
-> | **NotActions** |  |
-> | *nenhum* |  |
-> | **DataActions** |  |
-> | Microsoft.ServiceBus/* | Permite o acesso a dados completo para o namespace do barramento de serviço |
 > | **NotDataActions** |  |
 > | *nenhum* |  |
 

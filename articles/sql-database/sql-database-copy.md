@@ -12,16 +12,16 @@ ms.author: sahsan
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 06/03/2019
-ms.openlocfilehash: ba787ccd51bf5ea9ec8e06e341a0f698afb5a7e2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6a4d3fd0f7b670bbb0b01385252b405829a91baa
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66688078"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442306"
 ---
 # <a name="copy-a-transactionally-consistent-copy-of-an-azure-sql-database"></a>Fazer uma cópia consistente transicionalmente de um banco de dados SQL do Azure
 
-O Banco de Dados SQL do Azure fornece vários métodos para criar uma cópia transacionalmente consistente do Banco de Dados SQL do Azure existente no mesmo servidor ou em um servidor diferente. Você pode copiar um Banco de Dados SQL usando o Portal do Azure, o PowerShell ou o T-SQL. 
+Banco de dados SQL do Azure fornece vários métodos para criar uma cópia transacionalmente consistente do banco de dados SQL do Azure existente ([banco de dados único](sql-database-single-database.md)) no mesmo servidor ou em um servidor diferente. Você pode copiar um Banco de Dados SQL usando o Portal do Azure, o PowerShell ou o T-SQL. 
 
 ## <a name="overview"></a>Visão geral
 
@@ -94,7 +94,7 @@ Esse comando copia o Database1 no servidor 1- para um novo banco de dados chamad
 
 ### <a name="copy-a-sql-database-to-a-different-subscription"></a>Copiar um banco de dados SQL para uma assinatura diferente
 
-Você pode usar o descrbed etapas na seção anterior para copiar seu banco de dados para um servidor de banco de dados SQL em uma assinatura diferente. Verifique se você usar um logon que tem o mesmo nome e senha como o proprietário do banco de dados do banco de dados de origem e é um membro da função dbmanager ou é o logon principal no nível do servidor. 
+Você pode usar as etapas descritas na seção anterior para copiar seu banco de dados para um servidor de banco de dados SQL em uma assinatura diferente. Verifique se você usar um logon que tem o mesmo nome e senha como o proprietário do banco de dados do banco de dados de origem e é um membro da função dbmanager ou é o logon principal no nível do servidor. 
 
 > [!NOTE]
 > O [portal do Azure](https://portal.azure.com) não oferece suporte de cópia para uma assinatura diferente, pois o Portal chama a API do ARM e usa os certificados de assinatura para ambos os servidores envolvidos na replicação geográfica de acesso.  
