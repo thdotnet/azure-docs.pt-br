@@ -2,20 +2,20 @@
 title: Fazer backup do Windows Server para o Azure
 description: Este tutorial oferece detalhes de como fazer backups do Windows Server local para um Cofre dos Serviços de Recuperação.
 services: backup
-author: saurabhsensharma
-manager: shivamg
+author: dcurwin
+manager: carmonm
 keywords: backup do windows server; fazer backup do windows server; backup e recuperação de desastre
 ms.service: backup
 ms.topic: tutorial
 ms.date: 8/22/2018
-ms.author: saurse
+ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: f5cfa3de962c51ac7ff43d9b83bdea9f408f5bcf
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 907a10314f27428d4d4b867abb71e2046208650b
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58097416"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67273950"
 ---
 # <a name="back-up-windows-server-to-azure"></a>Fazer backup do Windows Server para o Azure
 
@@ -67,8 +67,8 @@ O Agente MARS (Serviços de Recuperação do Microsoft Azure) cria uma associaç
 
 3. No menu **Meta de Backup**:
 
-   * em **Onde sua carga de trabalho é executada?**, selecione **Localmente**, 
-   * Em **Do que você deseja fazer backup?**, selecione **Arquivos e pastas** e **Estado do Sistema**
+   * em **Onde sua carga de trabalho é executada?** , selecione **Localmente**, 
+   * Em **Do que você deseja fazer backup?** , selecione **Arquivos e pastas** e **Estado do Sistema**
 
    ![Forneça informações para o cofre](./media/tutorial-backup-windows-server-to-azure/backup-goal.png)
 
@@ -116,9 +116,9 @@ Você pode usar o Agente de Serviços de Recuperação do Microsoft Azure para a
 
 5. Clique em **Próximo**.
 
-6. Na página **Especificar Agendamento de Backup (Estado do Sistema)**, especifique a hora do dia ou da semana e que os backups precisam ser disparados para o Estado do Sistema e clique em **Avançar**.
+6. Na página **Especificar Agendamento de Backup (Estado do Sistema)** , especifique a hora do dia ou da semana e que os backups precisam ser disparados para o Estado do Sistema e clique em **Avançar**.
 
-7. Na página **Selecionar Política de Retenção (Estado do Sistema)**, selecione a Política de Retenção para a cópia de backup do Estado do Sistema e clique em **Avançar**.
+7. Na página **Selecionar Política de Retenção (Estado do Sistema)** , selecione a Política de Retenção para a cópia de backup do Estado do Sistema e clique em **Avançar**.
 
 8. Da mesma forma, selecione o agendamento de backup e a política de retenção para as pastas e os arquivos selecionados. 
 
