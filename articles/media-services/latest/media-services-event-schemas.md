@@ -13,7 +13,7 @@ ms.date: 02/13/2019
 ms.author: juliako
 ms.openlocfilehash: f9fe689e6911c5e9497ee82132e8b70bd9aada7e
 ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 06/13/2019
 ms.locfileid: "60322226"
@@ -131,7 +131,7 @@ O objeto de dados tem as seguintes propriedades:
 | Propriedade | Type | DESCRIÇÃO |
 | -------- | ---- | ----------- |
 | previousState | string | O estado do trabalho antes do evento. |
-| estado | string | O novo estado do trabalho que está sendo notificado nesse evento. Por exemplo, "Agendado: O trabalho está pronto para iniciar " ou "Concluído: O trabalho está concluído".|
+| state | string | O novo estado do trabalho que está sendo notificado nesse evento. Por exemplo, "Agendado: O trabalho está pronto para iniciar " ou "Concluído: O trabalho está concluído".|
 
 Onde o estado do trabalho pode ser um dos valores: *Em fila*, *Agendado*, *Processando*, *Concluído*, *Erro*, *Cancelado*, *Cancelando*
 
