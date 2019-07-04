@@ -484,7 +484,7 @@ Quando dados forem movidos para e da Tabela do Azure, os seguintes [mapeamentos 
 | Edm.Guid |Guid |Um identificador global exclusivo de 128 bits. |
 | Edm.Int32 |Int32 |Um inteiro de 32 bits. |
 | Edm.Int64 |Int64 |Um inteiro de 64 bits. |
-| Edm.String |Cadeia de caracteres |Um valor codificado em UTF-16. Valores de cadeia de caracteres podem ter até 64 KB. |
+| Edm.String |String |Um valor codificado em UTF-16. Valores de cadeia de caracteres podem ter até 64 KB. |
 
 ### <a name="type-conversion-sample"></a>Exemplo de conversão de tipo
 O exemplo a seguir é para copiar dados de um Blob do Azure para Tabela do Azure com conversões de tipo.
@@ -538,7 +538,7 @@ Dado o mapeamento de tipo OData da Tabela do Azure para o tipo .NET, você defin
 | Nome da coluna | Type |
 | --- | --- |
 | userid |Edm.Int64 |
-| Nome |Edm.String |
+| name |Edm.String |
 | lastlogindate |Edm.DateTime |
 
 Em seguida, defina o conjunto de dados de Tabela do Azure conforme demonstrado a seguir. Você não precisa especificar a seção "estrutura" com as informações de tipo, pois o tipo de informação já está especificado no armazenamento de dados subjacente.
