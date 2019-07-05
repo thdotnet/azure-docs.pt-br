@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4a0037d46db67460d507c6e92ab550f7d9c2fbe
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 6f33b52255b1401e3595687612610a4688ad026d
+ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341422"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67461450"
 ---
 # <a name="manage-device-identities-using-the-azure-portal"></a>Gerenciar identidades de dispositivo usando o portal do Azure
 
@@ -57,14 +57,14 @@ A página de configurações do dispositivo permite que você configure:
 
 ![Gerenciar um dispositivo do Intune](./media/device-management-azure-portal/21.png)
 
-- **Os usuários podem unir dispositivos ao Azure AD** -essa configuração permite que você selecione os usuários que podem registrar seus dispositivos como [dispositivos de junção do Azure AD](overview.md#azure-ad-joined-devices). O padrão é **Todos**.
+- **Os usuários podem unir dispositivos ao Azure AD** -essa configuração permite que você selecione os usuários que podem registrar seus dispositivos como dispositivos adicionados ao Azure AD. O padrão é **Todos**.
 
 > [!NOTE]
 > **Os usuários podem unir dispositivos ao Azure AD** configuração só é aplicável para ingresso no Azure AD no Windows 10.
 
 - **Outros administradores locais nos dispositivos associados ao Azure AD** – você pode selecionar os usuários que têm direitos de administrador local em um dispositivo. Os usuários adicionados aqui são adicionados à função *Administradores do dispositivo* no Azure AD. Os administradores globais no Azure AD e os proprietários do dispositivo recebem direitos de administrador local por padrão. Essa opção é uma funcionalidade Premium Edition disponível por meio de produtos como o Azure AD Premium ou o EMS (Enterprise Mobility Suite).
-- **Os usuários podem registrar seus dispositivos com o Azure AD** -você precisa definir essa configuração para permitir que dispositivos macOs, iOS, Android e pessoal do Windows 10 ser [registrado](overview.md#azure-ad-registered-devices) com o Azure AD. Se você selecionar **None**, dispositivos não têm permissão para registrar com o Azure AD. O registro com o Microsoft Intune ou o MDM (Gerenciamento de Dispositivo Móvel) para o Office 365 exige registro. Se você tiver configurado qualquer um desses serviços, a opção **TODOS** estará selecionada e **NENHUM** não estará disponível. Se você tiver habilitado essa configuração do Intune, em seguida, as opções aqui ficará esmaecidas.
-- **Exigir autenticação multifator para associar dispositivos** – é possível definir se os usuários devem precisar fornecer um segundo fator de autenticação para [associar](overview.md#azure-ad-joined-devices) seu dispositivo ao Azure Active Directory. O padrão é **Não**. É recomendável exigir a autenticação multifator ao registrar um dispositivo. Antes de habilitar a autenticação multifator para este serviço, você deve garantir que a autenticação multifator do Azure está configurada para os usuários que registram seus dispositivos. Para obter mais informações, consulte o artigo [implantação de autenticação multifator do Azure](../authentication/howto-mfa-getstarted.md). 
+- **Os usuários podem registrar seus dispositivos com o Azure AD** -você precisa definir essa configuração para permitir que o Windows 10 pessoal, iOS, Android e macOs dispositivos sejam registrados com o Azure AD. Se você selecionar **None**, dispositivos não têm permissão para registrar com o Azure AD. O registro com o Microsoft Intune ou o MDM (Gerenciamento de Dispositivo Móvel) para o Office 365 exige registro. Se você tiver configurado qualquer um desses serviços, a opção **TODOS** estará selecionada e **NENHUM** não estará disponível.
+- **Exigir multi-Factor Auth unir dispositivos** -você pode escolher se os usuários devem fornecer um fator de autenticação adicionais para associar seu dispositivo para o Azure AD. O padrão é **Não**. É recomendável exigir a autenticação multifator ao registrar um dispositivo. Antes de habilitar a autenticação multifator para este serviço, você deve garantir que a autenticação multifator esteja configurada para os usuários que registram seus dispositivos. Para saber mais sobre os diferentes serviços de autenticação multifator do Azure, consulte [Introdução à autenticação multifator do Azure](../authentication/concept-mfa-whichversion.md). 
 
 > [!NOTE]
 > **Exigir multi-Factor Auth unir dispositivos** configuração não se aplica a dispositivos de ingressados no Azure AD híbrido.
@@ -203,7 +203,7 @@ Você pode personalizar o modo de exibição de lista clicando em **Colunas** na
 
 Para restringir os dados relatados a um nível que funciona para você, filtre os dados de auditoria usando os seguintes campos:
 
-- Categoria
+- Category
 - Tipo de recurso de atividade
 - Atividade
 - Intervalo de datas

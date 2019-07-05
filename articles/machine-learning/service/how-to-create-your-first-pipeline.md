@@ -11,12 +11,12 @@ ms.author: sanpil
 author: sanpil
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: c87685673052d2cfbc961d3bb717c9cd274872af
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 948594a43cec92aa62386b041ce8c96a0558995e
+ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67059250"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67466928"
 ---
 # <a name="create-and-run-a-machine-learning-pipeline-by-using-azure-machine-learning-sdk"></a>Criar e executar um pipeline de aprendizado de máquina usando o SDK do Azure Machine Learning
 
@@ -58,7 +58,7 @@ Crie os recursos necessários para executar um pipeline:
 ### <a name="set-up-a-datastore"></a>Configurar um repositório de dados
 Um repositório de dados armazena os dados para o pipeline acessar. Cada workspace tem um repositório de dados padrão. Você pode registrar armazenamentos de dados adicionais. 
 
-Quando você cria seu workspace, [Arquivos do Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) e [Armazenamento de Blobs do Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction) são conectados ao workspace por padrão. Arquivos do Azure é o armazenamento de dados padrão para um workspace, mas também é possível usar o armazenamento de Blob como um armazenamento de dados. Para saber mais, consulte [Decidindo quando usar Arquivos do Azure, Blobs do Azure ou Discos do Azure](https://docs.microsoft.com/azure/storage/common/storage-decide-blobs-files-disks). 
+Quando você cria seu workspace, [Arquivos do Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) e [Armazenamento de Blobs do Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction) são conectados ao workspace por padrão. O armazenamento de BLOBs do Azure é o repositório de dados padrão para um espaço de trabalho, mas você também pode usar o armazenamento de BLOBs como um repositório de dados. Para saber mais, consulte [Decidindo quando usar Arquivos do Azure, Blobs do Azure ou Discos do Azure](https://docs.microsoft.com/azure/storage/common/storage-decide-blobs-files-disks). 
 
 ```python
 # Default datastore (Azure file storage)

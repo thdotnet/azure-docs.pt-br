@@ -6,12 +6,12 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/12/2019
-ms.openlocfilehash: 86e30c465a605681519565261beec75d88ccd472
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: 4f77eafd3309d7c1d679c126b1a5eb1ff0e9a28d
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67190794"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67490104"
 ---
 # <a name="source-transformation-for-mapping-data-flow"></a>Transformação de origem para o mapeamento de fluxo de dados 
 
@@ -146,6 +146,12 @@ Se seu arquivo de texto não tiver nenhum esquema definido, selecione **detectar
 Você pode modificar os tipos de dados de coluna em uma transformação de coluna derivada mais tarde. Use uma transformação de select para modificar os nomes de coluna.
 
 ![As configurações padrão para formatos de dados](media/data-flow/source2.png "formatos padrão")
+
+### <a name="add-dynamic-content"></a>Adicionar conteúdo dinâmico
+
+Quando você clica dentro de campos no painel de configuração, você verá um hiperlink para "Adicionar conteúdo dinâmico". Quando você clicar aqui, você iniciará o construtor de expressões. Isso é onde você pode definir valores para as configurações de dinamicamente usando expressões, valores literais estáticos ou parâmetros.
+
+![Parâmetros](media/data-flow/params6.png "parâmetros")
 
 ## <a name="next-steps"></a>Próximas etapas
 
