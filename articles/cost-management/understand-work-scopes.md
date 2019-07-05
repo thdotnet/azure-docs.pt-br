@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 05/20/2019
+ms.date: 07/01/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: micflan
 ms.custom: ''
-ms.openlocfilehash: 717c0f110ebbeee53e2c9b9207350385288d57c3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 699707953ae06afa9cbf3cc7286f94917ba0efca
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65991391"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67490119"
 ---
 # <a name="understand-and-work-with-scopes"></a>Entender e trabalhar com escopos
 
@@ -100,19 +100,19 @@ As assinaturas do Azure são aninhadas sob contas de registro. Os usuários de c
 
 Os usuários de cobrança não tem acesso a grupos de gerenciamento, porque eles não se enquadram explicitamente em uma conta de cobrança específica. Acesso deve ser concedido explicitamente a grupos de gerenciamento. Os custos de Rollup de todas as assinaturas de grupos de gerenciamento. No entanto, eles incluem apenas com base no uso de compras. Elas não incluem compras, como as reservas e ofertas do Marketplace de terceiros. Para exibir esses custos, use a conta de cobrança EA.
 
-## <a name="individual-agreement-pay-as-you-go-scopes"></a>Escopos de contrato individuais (pré-pago)
+## <a name="individual-agreement-scopes"></a>Escopos de contrato individuais
 
-Assinaturas pré-pagas (PAYG), incluindo tipos relacionados como gratuita ou de avaliação e ofertas de desenvolvimento/teste, não tem um escopo explícito de conta de cobrança. Em vez disso, cada assinatura tem um proprietário de conta ou o administrador da conta, como o proprietário da conta do EA.
+As assinaturas do Azure criadas a partir de ofertas individuais como tipos pré-pago e relacionados, como avaliação gratuita e ofertas de desenvolvimento/teste, não tem um escopo explícito de conta de cobrança. Em vez disso, cada assinatura tem um proprietário de conta ou o administrador da conta, como o proprietário da conta do EA.
 
 - [**Conta de cobrança** ](../billing/billing-view-all-accounts.md) -representa um único proprietário da conta para uma ou mais assinaturas do Azure. Ele atualmente não dá suporte a concessão de acesso a várias pessoas ou acesso a modos de exibição de custo agregado.
 
     Tipo de recurso: Não aplicável
 
-Os administradores de conta de assinatura PAYG podem exibir e gerenciar dados de cobrança, como notas fiscais e pagamentos, do [Centro de contas do Azure](https://account.azure.com/subscriptions). No entanto, eles não podem exibir dados de custo ou gerenciar recursos no portal do Azure. Para conceder acesso para o administrador da conta, use as funções de gerenciamento de custos mencionadas anteriormente.
+Administradores de contas de assinatura individual do Azure podem exibir e gerenciar dados de cobrança, como notas fiscais e pagamentos, a partir de [Centro de contas do Azure](https://account.azure.com/subscriptions). No entanto, eles não podem exibir dados de custo ou gerenciar recursos no portal do Azure. Para conceder acesso para o administrador da conta, use as funções de gerenciamento de custos mencionadas anteriormente.
 
-Ao contrário do EA, os administradores de conta de assinatura PAYG podem ver suas notas fiscais no portal do Azure. Tenha em mente que as funções de leitor de gerenciamento de custo e colaborador de gerenciamento de custo não fornecem acesso a faturas. Para obter mais informações, consulte [como conceder acesso a faturas PAYG](../billing/billing-manage-access.md#give-access-to-billing).
+Ao contrário do EA, os administradores de contas de assinatura individual do Azure podem ver suas notas fiscais no portal do Azure. Tenha em mente que as funções de leitor de gerenciamento de custo e colaborador de gerenciamento de custo não fornecem acesso a faturas. Para obter mais informações, consulte [como conceder acesso a faturas](../billing/billing-manage-access.md##give-read-only-access-to-billing).
 
-## <a name="customer-agreement-scopes"></a>Escopos de contrato do cliente
+## <a name="microsoft-customer-agreement-scopes"></a>Escopos de contrato de cliente da Microsoft
 
 Contas de cobrança do contrato de cliente da Microsoft têm os seguintes escopos:
 
@@ -148,7 +148,7 @@ Parceiros de solução CSP (provedor) de nuvem não são suportados atualmente n
 
 ## <a name="switch-between-scopes-in-cost-management"></a>Alternar entre escopos no gerenciamento de custos
 
-Todos os modos de exibição de gerenciamento de custos no portal do Azure incluem uma **escopo** com conteúdo malicioso no canto superior esquerdo do modo de exibição. Usá-lo para alterar rapidamente o escopo. Clique o **escopo** com conteúdo malicioso para abrir o seletor de escopo. Ele mostra as contas de cobrança, o grupo de gerenciamento raiz e todas as assinaturas que não estão aninhadas sob o grupo de gerenciamento raiz. Para selecionar um escopo, clique em segundo plano para realçá-lo e, em seguida, clique em **selecionar** na parte inferior. Para fazer drill-in para escopos aninhados, como grupos de recursos em uma assinatura, clique no link do nome de escopo. Para selecionar o escopo pai em qualquer nível aninhado, clique em **Selecione esta &lt;escopo&gt;**  na parte superior do seletor de escopo.
+Todos os modos de exibição de gerenciamento de custos no portal do Azure incluem uma **escopo** com conteúdo malicioso de seleção no canto superior esquerdo do modo de exibição. Usá-lo para alterar rapidamente o escopo. Clique o **escopo** com conteúdo malicioso para abrir o seletor de escopo. Ele mostra as contas de cobrança, o grupo de gerenciamento raiz e todas as assinaturas que não estão aninhadas sob o grupo de gerenciamento raiz. Para selecionar um escopo, clique em segundo plano para realçá-lo e, em seguida, clique em **selecionar** na parte inferior. Para fazer drill-in para escopos aninhados, como grupos de recursos em uma assinatura, clique no link do nome de escopo. Para selecionar o escopo pai em qualquer nível aninhado, clique em **Selecione esta &lt;escopo&gt;**  na parte superior do seletor de escopo.
 
 ## <a name="identify-the-resource-id-for-a-scope"></a>Identificar a ID de recurso para um escopo
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 12/11/2018
 ms.author: shlo
-ms.openlocfilehash: e96e462709ab0c715c831bd10c628869d5c617fe
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 722d77bf27e3cd7eb921b09e0a1d4732a5b5f874
+ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60319033"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67514421"
 ---
 # <a name="alert-and-monitor-data-factories-using-azure-monitor"></a>Monitorar e alertar data factories usando o Azure Monitor
 Os aplicativos em nuvem são complexos com muitas partes móveis. O monitoramento fornece dados para garantir que seu aplicativo permaneça ativo e em execução em um estado íntegro. Ele também ajuda a afastar os problemas potenciais ou solucionar problemas antigos. Além disso, você pode usar os dados de monitoramento para obter mais informações sobre seu aplicativo. Esse conhecimento pode ajudá-lo a melhorar o desempenho ou a capacidade de manutenção do aplicativo ou automatizar ações que normalmente exigiriam intervenção manual.
@@ -387,7 +387,7 @@ O ADFV2 emite as seguintes métricas
 
 | **Métrica**           | **Nome de exibição da métrica**         | **Unidade** | **Tipo de agregação** | **Descrição**                                       |
 |----------------------|---------------------------------|----------|----------------------|-------------------------------------------------------|
-| PipelineSucceededRun | Métricas de execução do pipeline bem-sucedido | Contagem    | Total                | Execuções totais dos pipelines bem-sucedidas em uma janela de um minuto |
+| PipelineSucceededRuns | Métricas de execução do pipeline bem-sucedido | Contagem    | Total                | Execuções totais dos pipelines bem-sucedidas em uma janela de um minuto |
 | PipelineFailedRuns   | Métricas de execução do pipeline com falha    | Contagem    | Total                | Execuções totais dos pipelines que falharam em uma janela de um minuto    |
 | ActivitySucceededRuns | Métricas de execução de atividades bem-sucedidas | Contagem    | Total                | Execuções totais da atividade bem-sucedidas em uma janela de um minuto  |
 | ActivityFailedRuns   | Métricas de execução de atividades com falha    | Contagem    | Total                | Execuções totais da atividade com falha em uma janela de um minuto     |

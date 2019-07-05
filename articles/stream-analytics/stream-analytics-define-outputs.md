@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/31/2019
-ms.openlocfilehash: 4e62ae47de95f95600faa3dc27f6867b065e117b
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: 17214bb4904cc540de0a7d6f753b7e70abfa564c
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67329971"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443637"
 ---
 # <a name="understand-outputs-from-azure-stream-analytics"></a>Entender as saídas do Azure Stream Analytics
 
@@ -229,7 +229,7 @@ A tabela a seguir lista os nomes de propriedade e suas descrições para a cria�
 O número de partições baseia-se [no tamanho e SKU do Barramento de Serviço](../service-bus-messaging/service-bus-partitioning.md). A chave de partição é um valor inteiro exclusivo para cada partição.
 
 ## <a name="azure-cosmos-db"></a>Azure Cosmos DB
-[O Azure Cosmos DB](https://azure.microsoft.com/services/documentdb/) é um serviço de banco de dados distribuído globalmente que oferece dimensionamento Elástico ilimitado ao redor do mundo, consulta avançada e indexação automática em modelos de dados independente de esquema. Para saber mais sobre as opções de coleção do Azure Cosmos DB para Stream Analytics, consulte o [Stream Analytics com o Azure Cosmos DB como saída](stream-analytics-documentdb-output.md) artigo.
+[O Azure Cosmos DB](https://azure.microsoft.com/services/documentdb/) é um serviço de banco de dados distribuído globalmente que oferece dimensionamento Elástico ilimitado ao redor do mundo, consulta avançada e indexação automática em modelos de dados independente de esquema. Para saber mais sobre as opções de contêiner do Azure Cosmos DB para Stream Analytics, consulte o [Stream Analytics com o Azure Cosmos DB como saída](stream-analytics-documentdb-output.md) artigo.
 
 Saída do Stream Analytics do Azure Cosmos DB não está disponível nas regiões do Azure Alemanha (T-Systems International) e Azure China 21Vianet atualmente.
 
@@ -247,7 +247,7 @@ A tabela a seguir descreve as propriedades para a criação de uma saída do Azu
 | ID da Conta | O nome ou o URI do ponto de extremidade da conta do Azure Cosmos DB. |
 | Chave de conta | A chave de acesso compartilhado da conta do Azure Cosmos DB. |
 | Banco de dados | O nome do banco de dados do Azure Cosmos DB. |
-| Nome da coleção | Nome da coleção no Azure Cosmos DB. O Azure Cosmos DB contêineres ilimitados são a abordagem recomendada para particionar seus dados, como o Azure Cosmos DB automaticamente dimensiona partições com base em sua carga de trabalho. |
+| Nome do contêiner | O nome do contêiner a ser usada, que deve existir no Cosmos DB. Exemplo:  <br /><ul><li> _MyContainer_: Um contêiner denominado "MyContainer" deve existir.</li>|
 | ID do documento |Opcional. O nome do campo nos eventos de saída que é usado para especificar a chave primária na qual inserir ou atualizar operações se baseiam.
 
 ## <a name="azure-functions"></a>Funções do Azure
@@ -302,10 +302,10 @@ A tabela a seguir resume o suporte de partição e o número de gravadores de sa
 | Armazenamento da tabela do Azure | Sim | Qualquer coluna de saída.  | Segue o particionamento de entrada para as [consultas totalmente paralelizadas](stream-analytics-scale-jobs.md). |
 | Tópico do Barramento de Serviço do Azure | Sim | Escolhido automaticamente. O número de partições baseia-se no [tamanho e SKU do Barramento de Serviço](../service-bus-messaging/service-bus-partitioning.md). A chave de partição é um valor inteiro exclusivo para cada partição.| Mesmo que o número de partições no tópico de saída.  |
 | Fila do Barramento de Serviço do Azure | Sim | Escolhido automaticamente. O número de partições baseia-se no [tamanho e SKU do Barramento de Serviço](../service-bus-messaging/service-bus-partitioning.md). A chave de partição é um valor inteiro exclusivo para cada partição.| Mesmo que o número de partições na fila de saída. |
-| Azure Cosmos DB | Sim | Use o token {partition} no padrão de nome de coleção. O valor de {partition} baseia-se a cláusula PARTITION BY na consulta. | Segue o particionamento de entrada para as [consultas totalmente paralelizadas](stream-analytics-scale-jobs.md). |
+| Azure Cosmos DB | Sim | Com base na cláusula PARTITION BY na consulta. | Segue o particionamento de entrada para as [consultas totalmente paralelizadas](stream-analytics-scale-jobs.md). |
 | Funções do Azure | Não | Nenhum | Não aplicável. |
 
-Se o seu adaptador de saída não estiver particionado, a falta de dados em uma partição de entrada causará um atraso até a quantidade de tempo de chegada tardia. Nesses casos, a saída será mesclada a um único gravador, que pode causar gargalos em seu pipeline. Para saber mais sobre a política de entrada tardia, consulte [considerações sobre ordem de eventos do Azure Stream Analytics](stream-analytics-out-of-order-and-late-events.md).
+O número de gravadores de saída também pode ser controlado usando `INTO <partition count>` (consulte [INTO](https://docs.microsoft.com/stream-analytics-query/into-azure-stream-analytics#into-shard-count)) cláusula em sua consulta, que pode ser útil para alcançar uma topologia do trabalho desejado. Se o seu adaptador de saída não estiver particionado, a falta de dados em uma partição de entrada causará um atraso até a quantidade de tempo de chegada tardia. Nesses casos, a saída será mesclada a um único gravador, que pode causar gargalos em seu pipeline. Para saber mais sobre a política de entrada tardia, consulte [considerações sobre ordem de eventos do Azure Stream Analytics](stream-analytics-out-of-order-and-late-events.md).
 
 ## <a name="output-batch-size"></a>Tamanho do lote de saída
 O Azure Stream Analytics usa lotes de tamanho variável para processar eventos e gravar em saídas. Normalmente o mecanismo de análise de Stream não grava uma mensagem por vez e usa os lotes para maior eficiência. Quando a taxa de ambos os eventos de entrada e de saída for alta, o Stream Analytics usa lotes maiores. Quando a taxa de saída é baixa, ele usa lotes menores para manter a latência baixa.

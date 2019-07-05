@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 06/06/2019
 ms.author: iainfou
-ms.openlocfilehash: 43ba7593336372bbbd7a3a4bb9821665a42bbf29
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 52a9ba20b60e8ef6cdb743546cd842e4ee24b3fd
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66752184"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67441917"
 ---
 # <a name="preview---limit-egress-traffic-for-cluster-nodes-and-control-access-to-required-ports-and-services-in-azure-kubernetes-service-aks"></a>Visualização – tráfego de saída de limite para nós de cluster e controlar o acesso a portas e os serviços no serviço de Kubernetes do Azure (AKS)
 
@@ -24,25 +24,28 @@ Este artigo fornece detalhes sobre quais portas de rede e os nomes de domínio t
 > Recursos de visualização do AKS são Self-service, inscreva-se no. Eles são fornecidos para reunir opiniões e bugs de nossa comunidade. Na visualização, esses recursos não são destinados ao uso em produção. Recursos em visualização pública se encaixam em suporte "melhor esforço". Assistência de AKS equipes de suporte técnico está disponível durante o horário comercial do Pacífico (PST) apenas timezone. Para obter mais informações, consulte as seguintes artigos de suporte:
 >
 > * [Políticas de suporte do AKS][aks-support-policies]
-> * [Perguntas frequentes sobre o suporte do Azure][aks-faq]
+> * [Perguntas frequentes sobre o suporte do Azure.][aks-faq]
 
 ## <a name="before-you-begin"></a>Antes de começar
 
-Você precisa da CLI do Azure versão 2.0.66 ou posterior instalado e configurado. Execute `az --version` para encontrar a versão. Se precisar instalar ou atualizar, consulte [Instalar a CLI do Azure][install-azure-cli].
+Você precisa da CLI do Azure versão 2.0.66 ou posterior instalado e configurado. Execute `az --version` para encontrar a versão. Se você precisa instalar ou atualizar, consulte [Instalar a CLI do Azure][install-azure-cli].
 
-Para criar um cluster do AKS que pode limitar o tráfego de saída, primeiro habilite um sinalizador de recursos em sua assinatura. Esse registro de recurso configura qualquer cluster do AKS criar para usar imagens de contêiner do sistema de base da MCR ou ACR. Para registrar o *AKSLockingDownEgressPreview* sinalizador de recursos, use o [registro de recurso az] [ az-feature-register] comando conforme mostrado no exemplo a seguir:
+Para criar um cluster do AKS que pode limitar o tráfego de saída, primeiro habilite um sinalizador de recursos em sua assinatura. Esse registro de recurso configura qualquer cluster do AKS criar para usar imagens de contêiner do sistema de base da MCR ou ACR. Para registrar o *AKSLockingDownEgressPreview* sinalizador de recursos, use o [registro de recurso az][az-feature-register] comando conforme mostrado no exemplo a seguir:
+
+> [!CAUTION]
+> Quando você registra um recurso em uma assinatura, você não pode atualmente cancelar o registro desse recurso. Depois de habilitar alguns recursos de visualização, os padrões podem ser usados para todos os clusters AKS, em seguida, é criados na assinatura. Não habilite os recursos de visualização em assinaturas de produção. Use uma assinatura separada para testar recursos de visualização e Reúna comentários.
 
 ```azurecli-interactive
 az feature register --name AKSLockingDownEgressPreview --namespace Microsoft.ContainerService
 ```
 
-Demora alguns minutos para o status exibir *Registrado*. Você pode verificar o status de registro usando o [lista de recursos az] [ az-feature-list] comando:
+Demora alguns minutos para o status exibir *Registrado*. Você pode verificar o status de registro usando o [lista de recursos az][az-feature-list] comando:
 
 ```azurecli-interactive
 az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/AKSLockingDownEgressPreview')].{Name:name,State:properties.state}"
 ```
 
-Quando estiver pronto, atualize o registro do *containerservice* provedor de recursos usando o [registro de provedor az] [ az-provider-register] comando:
+Quando estiver pronto, atualize o registro do *containerservice* provedor de recursos usando o [registro de provedor az][az-provider-register] comando:
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerService
@@ -54,7 +57,7 @@ Para fins operacionais e de gerenciamento, nós em um cluster AKS é necessário
 
 Para aumentar a segurança de cluster do AKS, talvez você queira restringir o tráfego de saída. O cluster está configurado para efetuar pull de imagens de contêiner do ACR ou MCR base do sistema. Se você bloquear o tráfego de saída dessa maneira, você deve definir as portas específicas e FQDNs para permitir que os nós do AKS para se comunicar corretamente com serviços externos necessários. Sem essas portas autorizadas e FQDNs, seus nós AKS não podem se comunicar com o servidor de API ou instalar os componentes principais.
 
-Você pode usar [Firewall do Azure] [ azure-firewall] ou um dispositivo de firewall de terceiros 3º para proteger o tráfego de saída e defini-los necessárias portas e endereços. AKS não criar essas regras automaticamente para você. As seguintes portas e endereços são para referência, conforme você cria as regras apropriadas em seu firewall de rede.
+Você pode usar [Firewall do Azure][azure-firewall] ou um dispositivo de firewall de terceiros 3º para proteger o tráfego de saída e defini-los necessárias portas e endereços. AKS não criar essas regras automaticamente para você. As seguintes portas e endereços são para referência, conforme você cria as regras apropriadas em seu firewall de rede.
 
 No AKS, há dois conjuntos de portas e endereços:
 
@@ -62,7 +65,7 @@ No AKS, há dois conjuntos de portas e endereços:
 * O [opcional recomendado endereços e portas para clusters AKS](#optional-recommended-addresses-and-ports-for-aks-clusters) não são necessárias para todos os cenários, mas a integração com outros serviços, como o Azure Monitor não funcionará corretamente. Examine esta lista de portas opcionais e FQDNs e autorizar qualquer um dos serviços e componentes usados em seu cluster do AKS.
 
 > [!NOTE]
-> Limitar o tráfego de saída só funciona em novos clusters AKS criados depois de habilitar o registro do sinalizador de recurso. Para clusters existentes, [executar uma operação de atualização de cluster] [ aks-upgrade] usando o `az aks upgrade` antes de você limitar o tráfego de saída de comando.
+> Limitar o tráfego de saída só funciona em novos clusters AKS criados depois de habilitar o registro do sinalizador de recurso. Para clusters existentes, [executar uma operação de atualização de cluster][aks-upgrade] usando o `az aks upgrade` antes de você limitar o tráfego de saída de comando.
 
 ## <a name="required-ports-and-addresses-for-aks-clusters"></a>Portas e os endereços para clusters AKS
 

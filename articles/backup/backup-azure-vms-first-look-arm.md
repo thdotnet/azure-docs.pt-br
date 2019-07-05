@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 06/13/2019
 ms.author: raynew
-ms.openlocfilehash: 906024ecb3e95c75c45efddafbbf76944c6aea29
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 80739fac8317014c74c6a86cef9aa23696cfb42e
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67058072"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442990"
 ---
 # <a name="back-up-an-azure-vm-from-the-vm-settings"></a>Fazer backup de uma VM do Azure usando as configurações da VM
 
@@ -72,7 +72,8 @@ Para fazer backup de VMs do Azure, o Backup do Azure instala uma extensão no ag
 
 
 > [!NOTE]
-> Serviço de Backup do Azure cria um grupo de recursos separado (que não seja o grupo de recursos VM) para armazenar o instantâneo, com o formato de nomenclatura **AzureBackupRG_geography_number** (exemplo: AzureBackupRG_northeurope_1). Os dados nesse grupo de recursos serão mantidos para a duração em dias, conforme especificado na seção de "Instantâneo de recuperação instantânea de reter" da política de Backup de máquinas virtuais do Azure. Aplicar um bloqueio para esse grupo de recursos pode causar falhas de backup.
+> Serviço de Backup do Azure cria um grupo de recursos separado (que não seja o grupo de recursos VM) para armazenar o instantâneo, com o formato de nomenclatura **AzureBackupRG_geography_number** (exemplo: AzureBackupRG_northeurope_1). Os dados nesse grupo de recursos serão mantidos para a duração em dias, conforme especificado na seção de "Instantâneo de recuperação instantânea de reter" da política de Backup de máquinas virtuais do Azure. Aplicar um bloqueio para esse grupo de recursos pode causar falhas de backup.<br>
+Esse grupo de recursos também deve ser excluído da quaisquer restrições de nome/marca como uma diretiva de restrição bloquearia a criação de coleções de recursos ponto nele novamente, causando falhas de backup.
 
 
 ## <a name="run-a-backup-immediately"></a>Executar um backup imediatamente

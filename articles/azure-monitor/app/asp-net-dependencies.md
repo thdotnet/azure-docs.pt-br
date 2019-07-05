@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 12/06/2018
+ms.date: 06/25/2019
 ms.author: mbullwin
-ms.openlocfilehash: 479b810c5a66917bde5754d32991fb489ea26c9b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d8ba5b19ad5d8f03203e9a028fbc5aec84e5ec06
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66299285"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67565381"
 ---
 # <a name="dependency-tracking-in-azure-application-insights"></a>Acompanhamento de dependência no Azure Application Insights 
 
@@ -104,7 +104,7 @@ Para aplicativos ASP.NET, a consulta SQL completa é coletada com a Ajuda da ins
 | --- | --- |
 | Aplicativo Web do Azure |No painel de controle de aplicativo web, [abra a folha Application Insights](../../azure-monitor/app/azure-web-apps.md) e habilitar os comandos SQL no .NET |
 | Servidor IIS (VM do Azure, locais e assim por diante). | [Instalar o Status Monitor no servidor onde o aplicativo está sendo executado](../../azure-monitor/app/monitor-performance-live-website-now.md) e reinicie o IIS.
-| Serviço de Nuvem do Azure |[Usar tarefa de inicialização](../../azure-monitor/app/cloudservices.md) para [instale o Monitor de Status](monitor-performance-live-website-now.md#download) |
+| Serviço de Nuvem do Azure | Adicionar [tarefa de inicialização para instalar StatusMonitor](../../azure-monitor/app/cloudservices.md#set-up-status-monitor-to-collect-full-sql-queries-optional) <br> Seu aplicativo deve ser integrado ao SDK do ApplicationInsights no momento da compilação instalando pacotes NuGet para [ASP.NET](https://docs.microsoft.com/azure/azure-monitor/app/asp-net) ou [aplicativos ASP.NET Core](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core) |
 | IIS Express | Sem suporte
 
 Nos casos acima, a maneira correta de validar que o mecanismo de instrumentação é instalado corretamente é por meio da validação de que a versão do SDK do coletados `DependencyTelemetry` é 'rddp'. 'rdddsd' ou 'rddf' indica que as dependências são coletadas por meio de retornos de chamada DiagnosticSource ou EventSource e, portanto, a consulta SQL completa não ser capturada.
@@ -113,47 +113,25 @@ Nos casos acima, a maneira correta de validar que o mecanismo de instrumentaçã
 
 * O [Mapa do Aplicativo](app-map.md) visualiza as dependências entre seu aplicativo e os componentes de vizinhança.
 * [Diagnóstico de transação](transaction-diagnostics.md) mostra unificada, correlacionada dados do servidor.
-* A [folha de navegadores](javascript.md#ajax-performance) mostra chamadas AJAX de navegadores dos usuários.
+* [Guia navegadores](javascript.md#ajax-performance) mostra chamadas AJAX de navegadores dos usuários.
 * Clique pelas solicitações com falha ou lentas para verificar a dependência de chamadas.
-* O [Analytics](#analytics) pode ser usado para consultar dados de dependência.
+* O [Analytics](#logs-analytics) pode ser usado para consultar dados de dependência.
 
 ## <a name="diagnosis"></a> Diagnosticar solicitações lentas
 
-Cada evento de solicitação está associado às chamadas de dependência, exceções e outros eventos que são rastreados enquanto seu aplicativo está processando a solicitação. Portanto, se algumas solicitações estão fazendo mal, você pode descobrir seja devido à lentidão nas respostas de uma dependência.
-
-Vamos examinar um exemplo disso.
+Cada evento de solicitação está associado com as chamadas de dependência, exceções e outros eventos que são rastreados enquanto seu aplicativo está processando a solicitação. Portanto, se algumas solicitações estão fazendo mal, você pode descobrir seja devido à lentidão nas respostas de uma dependência.
 
 ### <a name="tracing-from-requests-to-dependencies"></a>Rastreamento de solicitações de dependências
 
-Abra a folha Desempenho e examine a grade de solicitações:
+Abra o **desempenho** guia e navegue até a **dependências** guia na parte superior, ao lado de operações.
 
-![Lista de solicitações com contagens e médias](./media/asp-net-dependencies/02-reqs.png)
+Clique em uma **nome da dependência** em geral. Depois de selecionar uma dependência de um gráfico de distribuição dessa dependência de durações aparecerá à direita.
 
-A solicitação superior está demorando muito. Vamos ver se conseguimos descobrir onde o tempo é gasto.
+![No desempenho do guia, clique na guia na parte superior, em seguida, um nome de dependência no gráfico de dependência](./media/asp-net-dependencies/2-perf-dependencies.png)
 
-Clique nesta linha para ver os eventos de solicitação individuais:
+Clique em azul **exemplos** botão no canto inferior direito e, em seguida, em uma amostra para ver os detalhes de transação de ponta a ponta.
 
-![Lista de ocorrências de solicitação](./media/asp-net-dependencies/03-instances.png)
-
-Clique em qualquer instância de execução longa para inspecioná-la ainda mais e role para baixo até as chamadas de dependência remotas relacionadas a essa solicitação:
-
-![Localizar as chamadas para dependências remotas, identificar duração incomum](./media/asp-net-dependencies/04-dependencies.png)
-
-Parece a maior parte do tempo atendendo a solicitação foi gasto em uma chamada para um serviço local.
-
-Selecione a linha para obter mais informações:
-
-![Clique nessa dependência remota para identificar o culpado](./media/asp-net-dependencies/05-detail.png)
-
-Parece que essa dependência é onde está o problema. Nós já identificamos o problema, então agora simplesmente precisamos descobrir por que essa chamada está demorando tanto.
-
-### <a name="request-timeline"></a>Linha do tempo da solicitação
-
-Em outro caso, não há nenhuma chamada de dependência que seja tão longa. Mas, ao alternar para o modo de exibição de linha do tempo, podemos ver onde está o atraso durante nosso processamento interno:
-
-![Localizar as chamadas para dependências remotas, identificar duração incomum](./media/asp-net-dependencies/04-1.png)
-
-Parece haver uma grande lacuna após a primeira chamada de dependência e, portanto, devemos examinar nosso código para ver o motivo disso.
+![Clique em uma amostra para ver os detalhes de transação de ponta a ponta](./media/asp-net-dependencies/3-end-to-end.png)
 
 ### <a name="profile-your-live-site"></a>Perfil de seu site ativo
 
@@ -161,35 +139,35 @@ Não sabe para onde o tempo vai? O [Application Insights profiler](../../azure-m
 
 ## <a name="failed-requests"></a>Solicitações falhas
 
-As solicitações com falha também podem ser associadas a chamadas com falha para as dependências. Novamente, podemos fazer um clickthrough para rastrear o problema.
+As solicitações com falha também podem ser associadas a chamadas com falha para as dependências.
 
-![Clique no gráfico de solicitações com falha](./media/asp-net-dependencies/06-fail.png)
+Podemos ir para o **falhas** guia à esquerda e, em seguida, clique no **dependências** guia na parte superior.
 
-Clique para uma ocorrência de uma solicitação com falha e examine os eventos associados.
+![Clique no gráfico de solicitações com falha](./media/asp-net-dependencies/4-fail.png)
 
-![Clique em um tipo de solicitação e na instância para obter uma exibição diferente da mesma instância, clique nele para obter detalhes da exceção.](./media/asp-net-dependencies/07-faildetail.png)
+Aqui, você poderá ver a contagem de dependência com falha. Para obter mais detalhes sobre uma falha na ocorrência tentar clicar em um nome de dependência na tabela a parte inferior. Você pode clicar em azul **dependências** botão no canto inferior direito para obter os detalhes de transação de ponta a ponta.
 
-## <a name="analytics"></a>Análise
+## <a name="logs-analytics"></a>Logs (análise)
 
 Você pode rastrear dependências na [linguagem de consulta Kusto](/azure/kusto/query/). Veja alguns exemplos.
 
 * Localize todas as chamadas com falha de dependência:
 
-```
+``` Kusto
 
     dependencies | where success != "True" | take 10
 ```
 
 * Localize as chamadas AJAX:
 
-```
+``` Kusto
 
     dependencies | where client_Type == "Browser" | take 10
 ```
 
 * Localize as chamadas de dependência associadas a solicitações:
 
-```
+``` Kusto
 
     dependencies
     | where timestamp > ago(1d) and  client_Type != "Browser"
@@ -200,17 +178,13 @@ Você pode rastrear dependências na [linguagem de consulta Kusto](/azure/kusto/
 
 * Localize as chamadas do AJAX associadas a exibições de página:
 
-```
+``` Kusto 
 
     dependencies
     | where timestamp > ago(1d) and  client_Type == "Browser"
     | join (browserTimings | where timestamp > ago(1d))
       on operation_Id
 ```
-
-## <a name="video"></a>Vídeo
-
-> [!VIDEO https://channel9.msdn.com/events/Connect/2016/112/player]
 
 ## <a name="frequently-asked-questions"></a>Perguntas frequentes
 
@@ -220,7 +194,6 @@ Você pode rastrear dependências na [linguagem de consulta Kusto](/azure/kusto/
 
 ## <a name="open-source-sdk"></a>SDK do código-fonte aberto
 Como cada SDK do Application Insights, o módulo de coleta de dependência também é um software livre. Ler e contribuir para o código ou relatar problemas na [repositório GitHub oficial](https://github.com/Microsoft/ApplicationInsights-dotnet-server).
-
 
 ## <a name="next-steps"></a>Próximas etapas
 

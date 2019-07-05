@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/27/2018
 ms.author: monhaber
-ms.openlocfilehash: d42b929807bf67b73d0587232608efc0cea6d717
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1737856067b2490db4a993b4383b320cb13a7774
+ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66752580"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551754"
 ---
 # <a name="windows-defender-advanced-threat-protection-with-azure-security-center"></a>Proteção Avançada contra Ameaças do Windows Defender com a Central de Segurança do Azure
 
@@ -71,7 +71,7 @@ Para a integração de servidores à Central de segurança, clique em **Ir para 
 
 ## <a name="enable-windows-defender-atp-integration"></a>Integração habilitada com o Windows Defender ATP
 
-Para exibir se a integração ao Windows Defender ATP está habilitada, selecione **Central de Segurança** > **política de segurança** > **Assinatura** > **Editar configurações**.
+Para exibir se a integração do Windows Defender ATP estiver habilitada, selecione **Central de segurança** > **preço & configurações** > clique em sua assinatura.
 
   ![Gerenciamento de Política da Central de Segurança do Azure](media/security-center-wdatp/policy-management.png)
 

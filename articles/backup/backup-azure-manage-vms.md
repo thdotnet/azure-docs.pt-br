@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: sogup
-ms.openlocfilehash: aa953440f03137f3359276bc9e06cb0c73f0ab4a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: add2c72535b5be0edcbc00c077dfe20a6deaa3e0
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61218968"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67434222"
 ---
 # <a name="manage-azure-vm-backups"></a>Gerenciar backups de VM do Azure
 
@@ -103,25 +103,36 @@ Para acompanhar o progresso do trabalho, no painel do cofre, selecione a **traba
 
 Há duas maneiras de interromper a proteção de uma VM:
 
-- Interromper todos os trabalhos de backup futuros e excluir todos os pontos de recuperação. Nesse caso, você não poderá restaurar a VM.
-- Parar todos os trabalhos de backup futuros e manter os pontos de recuperação. Embora você precisará pagar manter os pontos de recuperação no cofre, você poderá restaurar a VM, se necessário. Para obter mais informações, consulte [preços de Backup do Azure](https://azure.microsoft.com/pricing/details/backup/).
+* **Interrompa a proteção e reter dados de backup**. Esta opção irá interromper todos os trabalhos de backup futuros de proteger sua VM; No entanto, o serviço Backup do Azure manterá os pontos de recuperação que foi feitos backup.  Você precisará pagar para manter os pontos de recuperação no cofre (consulte [preços de Backup do Azure](https://azure.microsoft.com/pricing/details/backup/) para obter detalhes). Você poderá restaurar a VM, se necessário. Se você decidir parar a proteção de VM, você pode usar *retomar backup* opção.
+* **Interrompa a proteção e excluir dados de backup**. Esta opção interromperá todos os trabalhos de backup futuros de proteger sua VM e excluir todos os pontos de recuperação. Você não poderá restaurar a VM nem usar *retomar backup* opção.
 
 >[!NOTE]
 >Se você excluir uma fonte de dados sem interromper os backups, novos backups falhará. Pontos de recuperação antigos irá expirar de acordo com a política, mas um último ponto de recuperação sempre será mantido até você interrompê-los e excluir os dados.
 >
 
-Para interromper a proteção para uma VM:
+### <a name="stop-protection-and-retain-backup-data"></a>Interrompa a proteção e reter dados de backup
+
+Para interromper a proteção e manter os dados de uma VM:
 
 1. Sobre o [painel do item do cofre](#view-vms-on-the-dashboard), selecione **parar backup**.
-2. Escolha se deseja reter ou excluir os dados de backup e confirme sua seleção, conforme necessário. Se desejar, adicione um comentário. Se você não tiver certeza do nome do item, passe o mouse sobre o ponto de exclamação para exibir o nome.
+2. Escolher **reter dados de Backup**e confirme sua seleção, conforme necessário. Se desejar, adicione um comentário. Se você não tiver certeza do nome do item, passe o mouse sobre o ponto de exclamação para exibir o nome.
 
-    ![Parar a proteção](./media/backup-azure-manage-vms/retain-or-delete-option.png)
+    ![Manter os dados de Backup](./media/backup-azure-manage-vms/retain-backup-data.png)
 
-     Uma notificação permite que você saiba o que os trabalhos de backup foram interrompidos.
+Uma notificação permite que você saiba o que os trabalhos de backup foram interrompidos.
+
+### <a name="stop-protection-and-delete-backup-data"></a>Interrompa a proteção e excluir dados de backup
+
+Para interromper a proteção e excluir dados de uma VM:
+
+1. Sobre o [painel do item do cofre](#view-vms-on-the-dashboard), selecione **parar backup**.
+2. Escolher **excluir dados de Backup**e confirme sua seleção, conforme necessário. Insira o nome do item de backup e adicionar um comentário, se desejar.
+
+    ![Excluir dados de backup](./media/backup-azure-manage-vms/delete-backup-data1.png)
 
 ## <a name="resume-protection-of-a-vm"></a>Retomar a proteção de uma VM
 
-Se você mantiver os dados de backup quando você interromper a VM, você pode retomar a proteção mais tarde. Se você excluir os dados de backup, não é possível retomar a proteção.
+Se você escolheu [interrompa a proteção e reter dados de backup](#stop-protection-and-retain-backup-data) opção durante a parar a proteção de VM, em seguida, você pode usar **retomar backup**. Essa opção não estará disponível se você escolher [interrompa a proteção e excluir dados de backup](#stop-protection-and-delete-backup-data) opção ou [excluir dados de backup](#delete-backup-data).
 
 Para retomar a proteção para uma VM:
 
@@ -134,23 +145,25 @@ Para retomar a proteção para uma VM:
 
 ## <a name="delete-backup-data"></a>Excluir dados de backup
 
-Você pode excluir dados de backup da VM durante o **parar backup** trabalho ou após a conclusão do trabalho de backup. Antes de excluir dados de backup, tenha esses detalhes em mente:
+Há duas maneiras de excluir dados de backup da VM:
 
-- Ele pode ser uma boa ideia aguardar dias ou semanas antes de excluir os pontos de recuperação.
-- Ao contrário do processo de restauração de pontos de recuperação, quando você exclui dados de backup, você não pode escolher pontos de recuperação específicos para excluir. Se você excluir os dados de backup, você pode excluir todos os pontos de recuperação associados.
+- O item do painel do cofre, selecione Parar backup e siga as instruções para [interrompa a proteção e excluir dados de backup](#stop-protection-and-delete-backup-data) opção.
 
-Depois que você pare ou desabilite o trabalho de backup da VM, você pode excluir os dados de backup:
+  ![Selecionar Parar Backup](./media/backup-azure-manage-vms/stop-backup-buttom.png)
 
+- O item do painel do cofre, selecione Excluir dados de backup. Essa opção estará habilitada se você escolheu [interrompa a proteção e reter dados de backup](#stop-protection-and-retain-backup-data) opção durante a proteção da VM parada
 
-1. Sobre o [painel do item do cofre](#view-vms-on-the-dashboard), selecione **excluir dados de backup**.
+  ![Selecione Excluir backup](./media/backup-azure-manage-vms/delete-backup-buttom.png)
 
-    ![Selecione Excluir backup](./media/backup-azure-manage-vms/delete-backup-buttom.png)
+  - Sobre o [painel do item do cofre](#view-vms-on-the-dashboard), selecione **excluir dados de backup**.
+  - Digite o nome do item backup para confirmar que você deseja excluir os pontos de recuperação.
 
-1. Digite o nome do item backup para confirmar que você deseja excluir os pontos de recuperação.
+    ![Excluir dados de backup](./media/backup-azure-manage-vms/delete-backup-data1.png)
 
-    ![Confirme que você deseja excluir os pontos de recuperação](./media/backup-azure-manage-vms/item-verification-box.png)
+  - Para excluir os dados de backup para o item, selecione **excluir**. Uma mensagem de notificação permite que você saiba o que os dados de backup foi excluídos.
 
-1. Para excluir os dados de backup para o item, selecione **excluir**. Uma mensagem de notificação permite que você saiba o que os dados de backup foi excluídos.
+  > [!NOTE]
+  > Quando você excluir dados de backup exclui todos os pontos de recuperação associados. Você não pode escolher pontos de recuperação específicos para excluir.
 
 ## <a name="next-steps"></a>Próximas etapas
 - Saiba como [fazer backup de VMs do Azure de configurações da VM](backup-azure-vms-first-look-arm.md).

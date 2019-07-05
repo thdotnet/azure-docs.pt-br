@@ -1,19 +1,19 @@
 ---
-title: Pagar antecipadamente por encargos de SQL Data Warehouse com capacidade reservada do Azure | Microsoft Docs
+title: Pagar antecipadamente por encargos de SQL Data Warehouse com capacidade reservada do Azure
 description: Saiba como você pode pagar antecipadamente pelas tarifas do SQL Data Warehouse com capacidade reservada para economizar dinheiro.
 services: billing
 author: yashesvi
 manager: yashar
 ms.service: billing
 ms.topic: conceptual
-ms.date: 04/13/2019
+ms.date: 07/03/2019
 ms.author: banders
-ms.openlocfilehash: 3d56ee99f8056139a234477b6eed93d9fcbe2bbb
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: cea2c8e6d476c3ea2799337ab2da1f9406731814
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60371182"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67565353"
 ---
 # <a name="prepay-for-sql-data-warehouse-charges-with-reserved-capacity"></a>Pagar antecipadamente por encargos de SQL Data Warehouse com capacidade reservada
 
@@ -43,14 +43,15 @@ Por exemplo, suponha que seu consumo total do SQL Data Warehouse é DW3000c. Voc
 
 ## <a name="buy-sql-data-warehouse-reserved-capacity"></a>Comprar capacidade reservada do SQL Data Warehouse
 
-1. Entre no [portal do Azure](https://portal.azure.com/).
+1. Entre no [Portal do Azure](https://portal.azure.com/).
 2. Selecione **Todos os serviços** > **Reservas**.
 3. Selecione uma assinatura. Use a lista de assinaturas para escolher a assinatura que é usada para pagar pela capacidade reservada. O método de pagamento da assinatura é cobrado os custos iniciais para a capacidade reservada. O tipo de assinatura deve ser um contrato empresarial (números da oferta: MS-AZR-0017P ou MS-AZR-0148P) ou Pagamento Conforme o Uso (números da oferta: MS-AZR-0003P ou MS-AZR-0023P).
   - Para uma assinatura de empresa, os encargos são deduzidos do saldo do compromisso monetário do registro ou cobrados como média.
   - Para a assinatura de Pagamento Conforme o Uso, as cobranças são feitas ao cartão de crédito ou à forma de pagamento de faturas na assinatura.
 4. Selecione um escopo. Use a lista de escopo para escolher um escopo de assinatura.
-  - Com o **único** opção, o desconto de reserva é aplicada ao SQL Data Warehouse implantadas na assinatura selecionada.
-  - Com o **compartilhado** opção, o desconto de reserva é aplicada às instâncias em execução em todas as assinaturas dentro de seu contexto de cobrança.
+  - **Um único escopo de grupo de recursos** — se aplica o desconto de reserva para os recursos correspondentes no somente o grupo de recursos selecionado.
+  - **Um único escopo de assinatura** — se aplica o desconto de reserva para os recursos correspondentes na assinatura selecionada.
+  - **Escopo compartilhado** — se aplica o desconto de reserva a correspondência de recursos em assinaturas qualificadas que estão no contexto de cobrança. Para clientes do Enterprise Agreement, o contexto de cobrança é o registro. Para assinaturas individuais com taxas pagas conforme o uso, o escopo de cobrança é todas as assinaturas qualificadas criadas pelo administrador da conta.
     - Para clientes empresariais, o contexto de cobrança é o registro de EA.
     - Para clientes de Pagamento Conforme o Uso, o escopo compartilhado consiste em todas as assinaturas de Pagamento Conforme o Uso criadas pelo administrador da conta.
 5. Selecione uma região para escolher uma região do Azure que é coberta pela capacidade reservada.

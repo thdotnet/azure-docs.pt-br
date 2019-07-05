@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 06/10/2019
+ms.date: 07/02/2019
 ms.author: jingwang
-ms.openlocfilehash: 3ea89e9f6a6bb8a4c377c70bbe1b5540d3b74d44
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: face3719f32ccb44e7479150e94417496141f90b
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341241"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67509569"
 ---
 # <a name="copy-activity-performance-and-tuning-guide"></a>Guia ajuste e desempenho da atividade de cópia
 > [!div class="op_single_selector" title1="Selecione a versão do Azure Data Factory que você está usando:"]
@@ -86,6 +86,7 @@ Os mínimo DIUs para capacitar a execução de uma atividade de cópia é dois. 
 | Copiar cenário | DIUs padrão determinadas pelo serviço |
 |:--- |:--- |
 | Copiar dados entre repositórios baseados em arquivo | Entre 4 e 32, dependendo do número e tamanho dos arquivos |
+| Copiar dados para o banco de dados SQL ou o Azure Cosmos DB |Entre 4 e 16 dependendo do coletor de camada do banco de dados SQL ou do Cosmos DB (número de DTUs/RUs) |
 | Todos os outros cenários de cópia | 4 |
 
 Para substituir esse padrão, especifique um valor para a propriedade **dataIntegrationUnits** da seguinte maneira. O *valores permitidos* para o **dataIntegrationUnits** propriedade é até 256. O *número real de DIUs* que a operação de cópia usa na execução é igual ou menor que o valor configurado, dependendo do seu padrão de dados. Para obter informações sobre o nível de ganho de desempenho que você pode obter ao configurar mais unidades para uma origem e coletor de cópia específicos, consulte a [referência de desempenho](#performance-reference).
@@ -131,11 +132,11 @@ Para cada execução de atividade de cópia, o Azure Data Factory determina o n�
 | Copiar cenário | Contagem de cópia paralela padrão determinada pelo serviço |
 | --- | --- |
 | Copiar dados entre repositórios baseados em arquivo |Depende do tamanho dos arquivos e o número de DIUs usadas para copiar dados entre dois armazenamentos de dados de nuvem ou da configuração física da máquina de tempo de execução de integração auto-hospedado. |
-| Copiar dados de qualquer armazenamento de dados de origem para o armazenamento de Tabelas do Azure |4 |
+| Copiar dados de qualquer armazenamento de origem para o armazenamento de tabelas do Azure |4 |
 | Todos os outros cenários de cópia |1 |
 
 > [!TIP]
-> Quando você copia dados entre repositórios baseados em arquivo, o comportamento padrão normalmente fornece melhor taxa de transferência. O comportamento padrão é determinado automaticamente.
+> Quando você copia dados entre repositórios baseados em arquivo, o comportamento padrão normalmente fornece melhor taxa de transferência. O comportamento padrão é determinado automaticamente com base no seu padrão de arquivo de origem.
 
 Para controlar a carga em computadores que hospedam seus dados de armazenamentos de ou para ajustar o desempenho da cópia, você pode substituir o valor padrão e especificar um valor para o **parallelCopies** propriedade. O valor deve ser um inteiro maior ou igual a 1. Em tempo de execução para o melhor desempenho, a atividade de cópia usa um valor que é menor que ou igual ao valor que você definir.
 
@@ -162,9 +163,9 @@ Para controlar a carga em computadores que hospedam seus dados de armazenamentos
 **Pontos a serem observados:**
 
 * Quando você copia dados entre repositórios baseados em arquivo, **parallelCopies** determina o paralelismo no nível de arquivo. O agrupamento em um único arquivo acontece nos bastidores, automática e transparente. Ele foi projetado para usar a melhor parte adequada tamanho para um tipo de repositório de dados de origem especificado carregar dados em paralelo e ortogonal para **parallelCopies**. O número real de cópias paralelas que o serviço de movimentação de dados usa para a operação de cópia no tempo de execução não é superior ao número de arquivos existentes. Se o comportamento de cópia **mergeFile**, a atividade de cópia não pode tirar proveito do paralelismo em nível de arquivo.
-* Quando você especifica um valor para o **parallelCopies** propriedade, considere o aumento de carga em sua fonte e armazenamentos de dados de coletor. Além disso, considere o aumento de carga para o tempo de execução de integração auto-hospedado se a atividade de cópia for capacitada por ele, por exemplo, para a cópia híbrida. Esse aumento de carga ocorre especialmente quando você tiver várias atividades ou execuções simultâneas das mesmas atividades que são executados no mesmo repositório de dados. Se você perceber que o armazenamento de dados ou o tempo de execução de integração auto-hospedado está sobrecarregado com a carga, diminua a **parallelCopies** valor para aliviar a carga.
-* Quando você copia dados de armazenamentos que não são baseados em arquivo para os armazenamentos que são baseados em arquivo, o serviço de movimentação de dados ignora a **parallelCopies** propriedade. Mesmo se o paralelismo for especificado, ele não será aplicado neste caso.
+* Quando você copia dados de armazenamentos que não são baseados em arquivo (exceto o banco de dados Oracle como fonte com o particionamento de dados habilitado) para as lojas que são baseados em arquivo, o serviço de movimentação de dados ignora a **parallelCopies** propriedade. Mesmo se o paralelismo for especificado, ele não será aplicado neste caso.
 * O **parallelCopies** propriedade é ortogonal ao **dataIntegrationUnits**. O primeiro é contado em todas as unidades de integração de dados.
+* Quando você especifica um valor para o **parallelCopies** propriedade, considere o aumento de carga em sua fonte e armazenamentos de dados de coletor. Além disso, considere o aumento de carga para o tempo de execução de integração auto-hospedado se a atividade de cópia for capacitada por ele, por exemplo, para a cópia híbrida. Esse aumento de carga ocorre especialmente quando você tiver várias atividades ou execuções simultâneas das mesmas atividades que são executados no mesmo repositório de dados. Se você perceber que o armazenamento de dados ou o tempo de execução de integração auto-hospedado está sobrecarregado com a carga, diminua a **parallelCopies** valor para aliviar a carga.
 
 ## <a name="staged-copy"></a>Cópia em etapas
 
@@ -182,7 +183,7 @@ Quando você ativa o recurso de preparo, primeiro os dados são copiados do arma
 
 Quando você ativa a movimentação de dados usando um armazenamento de preparo, você pode especificar se deseja no repositório de dados a serem compactados antes de mover dados dos dados de origem para um provisório ou armazenamento de dados de preparo e, em seguida, descompactados antes de mover dados de um preparo ou provisório dat um repositório para o armazenamento de dados de coletor.
 
-Atualmente, não é possível copiar dados entre dois armazenamentos de dados locais usando um armazenamento de preparo.
+Atualmente, é possível copiar dados entre dois armazenamentos de dados que estão conectados por meio de diferentes IRs auto-hospedado, nem com sem cópia em etapas. Para esse cenário, você pode configurar duas atividades de cópia explicitamente encadeadas para copiar da fonte para o preparo e de preparo para o coletor.
 
 ### <a name="configuration"></a>Configuração
 

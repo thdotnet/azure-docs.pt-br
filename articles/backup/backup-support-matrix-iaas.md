@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
-ms.date: 05/08/2019
+ms.date: 07/02/2019
 ms.author: raynew
-ms.openlocfilehash: ef522785d5074187871c25c54deae84b156d69b1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e395b10d9a99fdb454f3f02c7027e7acff64b434
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66743172"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508188"
 ---
 # <a name="support-matrix-for-azure-vm-backup"></a>Matriz de suporte para backup de VM do Azure
 Você pode usar o [serviço de Backup do Azure](backup-overview.md) para fazer backup de máquinas locais e cargas de trabalho e máquinas virtuais (VMs). Este artigo resume as configurações de suporte e limitações quando você faz backup de VMs do Azure com o Backup do Azure.
@@ -164,7 +164,7 @@ Tamanho do disco de dados | O disco individual pode ter até 4.095 GB.<br/><br/>
 Tipo de armazenamento | Premium HDD, SSD standard, Standard SSD. <br/><br/> SSD Standard tem suporte se os cofres são atualizados para a versão mais recente do backup de VM do Azure (conhecido como a restauração instantânea). [Saiba mais](backup-instant-restore-capability.md).
 Discos gerenciados | Com suporte.
 Discos criptografados | Com suporte.<br/><br/> As VMs do Azure habilitadas com o Azure Disk Encryption podem ser feitas (com ou sem o aplicativo do Azure AD).<br/><br/> As VMs criptografadas não podem ser recuperadas no nível de arquivo/pasta. Você deve recuperar toda a VM.<br/><br/> Você pode habilitar a criptografia em VMs que já estão protegidos pelo Backup do Azure.
-Discos com o Acelerador de Gravação habilitado | Sem suporte.<br/><br/> Se você estiver executando a versão mais recente do backup de VM do Azure (conhecido como [Restauração Instantânea](backup-instant-restore-capability.md)), pode excluir discos com o Acelerador de Gravação habilitado a partir do backup.
+Discos com o Acelerador de Gravação habilitado | Sem suporte.<br/><br/> O backup do Azure exclui automaticamente os discos com o Acelerador de gravação habilitado durante o backup. Uma vez que eles não passam por backup, não poderá restaurar esses discos de pontos de recuperação da VM.
 Fazer backup de discos com eliminação de duplicação | Sem suporte.
 Adicionar o disco à VM protegida | Com suporte.
 Redimensionar o disco em uma VM protegida | Com suporte.

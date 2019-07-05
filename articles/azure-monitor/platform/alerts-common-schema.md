@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: anantr
 ms.component: alerts
-ms.openlocfilehash: c18227a491478d0d8010761440a54fd088344b39
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: be38f5d3bbf4fe3d90fc78feab8774595b5338f2
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60776567"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447664"
 ---
 # <a name="common-alert-schema"></a>Esquema comum de alertas
 
@@ -125,6 +125,7 @@ Por exemplo, a solicitação a seguir corpo feito para o [criar ou atualizar](ht
 ## <a name="next-steps"></a>Próximas etapas
 
 - [Definições de alerta de esquema comuns para Runbooks de automação de funções/aplicativos/Azure Webhooks/lógica.](https://aka.ms/commonAlertSchemaDefinitions)
+- [Saiba como criar um aplicativo lógico que utiliza o esquema de alerta comum para lidar com todos os alertas.](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-integrations) 
 
 
 

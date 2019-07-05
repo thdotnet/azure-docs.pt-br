@@ -11,16 +11,16 @@ author: mx-iao
 ms.reviewer: peterlu
 ms.date: 06/18/2019
 ms.custom: seodec18
-ms.openlocfilehash: fc80fcde8de3fb2d6dd6f59804f6019b76aa8727
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 8def58eb003fcc817c21151416744cf391b5f38f
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295591"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443938"
 ---
 # <a name="train-and-register-pytorch-models-at-scale-with-azure-machine-learning-service"></a>Treinar e registrar o PyTorch modelos em escala com serviço de Azure Machine Learning
 
-Este artigo mostra como treinar e registrar um modelo de PyTorch usando o serviço de Azure Machine Learning. Ele se baseia [tutorial de aprendizado de transferência de PyTorch](https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html) que cria um classificador de rede neural profunda (DNN) para imagens de formigas e abelhas.
+Este artigo mostra como treinar e registrar um modelo de PyTorch usando o serviço de Azure Machine Learning. Ele se baseia [tutorial de aprendizado de transferência de PyTorch](https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html) que cria um classificador de rede neural profunda (DNN) para imagens de chickens e turkeys.
 
 [PyTorch](https://pytorch.org/) é uma estrutura de código-fonte aberto computacional comumente usada para criar redes neurais profundas (DNN). Com o serviço de Azure Machine Learning, você pode expandir rapidamente os trabalhos de treinamento do código-fonte aberto usando recursos de computação de nuvem elásticos. Você também pode acompanhar suas execuções de treinamento, modelos de versão, implante modelos e muito mais.
 
@@ -75,19 +75,19 @@ ws = Workspace.from_config()
 
 ### <a name="create-an-experiment"></a>Criar uma experiência
 
-Crie um experimento e uma pasta para armazenar seus scripts de treinamento. Neste exemplo, crie um teste chamado "pytorch hymenoptera".
+Crie um experimento e uma pasta para armazenar seus scripts de treinamento. Neste exemplo, crie um teste chamado "pássaros pytorch".
 
 ```Python
-project_folder = './pytorch-hymenoptera'
+project_folder = './pytorch-birds'
 os.makedirs(project_folder, exist_ok=True)
 
-experiment_name = 'pytorch-hymenoptera'
+experiment_name = 'pytorch-birds'
 experiment = Experiment(ws, name=experiment_name)
 ```
 
 ### <a name="get-the-data"></a>Obter os dados
 
-O conjunto de dados consiste em cerca de 120 treinamento imagens cada ants para e de abelhas, com 75 imagens de validação para cada classe. Hymenoptera é a ordem dos insetos que inclui o ants e abelhas. Baixe e extraia o conjunto de dados como parte do nosso script de treinamento `pytorch_train.py`.
+O conjunto de dados consiste em cerca de 120 imagens de treinamento cada para turkeys e chickens, com 100 imagens de validação para cada classe. Podemos irá baixar e extrair o conjunto de dados como parte do nosso script de treinamento `pytorch_train.py`. As imagens são um subconjunto do [abrir imagens v5 Dataset](https://storage.googleapis.com/openimages/web/index.html).
 
 ### <a name="prepare-training-scripts"></a>Preparar scripts de treinamento
 

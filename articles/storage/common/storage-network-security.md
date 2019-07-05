@@ -9,12 +9,12 @@ ms.date: 03/21/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 56a25c95d9bc01078b3eff3729a8a693ee3cf510
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f6422bf2ccc42c12d8f2d20a5a7ece8d37e8b48e
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65520248"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449719"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Configurar redes virtuais e firewalls do Armazenamento do Microsoft Azure
 
@@ -23,6 +23,8 @@ O Armazenamento do Microsoft Azure fornece um modelo de segurança em camadas. E
 Um aplicativo que acessa uma conta de armazenamento quando as regras de rede estão em vigor requer autorização adequada na solicitação. Autorização tem suporte com as credenciais do Azure Active Directory (Azure AD) para blobs e filas, com uma chave de acesso de conta válida ou com um token SAS.
 
 > [!IMPORTANT]
+> A sincronização de arquivos do Azure ainda não dá suporte a redes virtuais e firewalls. Se você estiver usando a sincronização de arquivos do Azure em sua conta de armazenamento e habilite-os, sincronização de arquivos do Azure não serão sincronizados.
+>
 > Ativar regras de firewall para sua conta de armazenamento bloqueia solicitações de entrada para os dados por padrão, a menos que as solicitações sejam provenientes de um serviço que está operando em uma Rede Virtual do Microsoft Azure (VNet). Solicitações que estão bloqueadas incluem as de outros serviços do Azure, do portal do Azure, de registro em log e serviços de métricas e assim por diante.
 >
 > Você pode conceder acesso aos serviços do Azure que operam de dentro de uma rede virtual, permitindo a sub-rede da instância do serviço. Um número limitado de cenários pode ser habilitado por meio do mecanismo [Exceções](#exceptions) descrito na seção abaixo. Para acessar o portal do Azure, é necessário fazer isso partir de um computador dentro do limite confiável (IP ou VNet) que você configurou.

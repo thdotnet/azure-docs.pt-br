@@ -10,14 +10,14 @@ ms.service: operations-management-suite
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 05/29/2019
+ms.date: 07/01/2019
 ms.author: bwren
-ms.openlocfilehash: 4c7e1225a8da1e20bc90986d1530b781f7f2c11a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 34c7ecbf235bed838af9ed2f848ca492916583f6
+ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66357572"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67514205"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Solução de gerenciamento do Office 365 no Microsoft Azure | (Versão prévia)
 
@@ -25,7 +25,7 @@ ms.locfileid: "66357572"
 
 
 > [!NOTE]
-> O método recomendado para instalar e configurar a solução do Office 365 é a habilitação de [conector do Office 365](../../sentinel/connect-office-365.md) na [Azure Sentinel](../../sentinel/overview.md) em vez de usar as etapas neste artigo. Isso é uma versão atualizada da solução do Office 365 com uma experiência aprimorada de configuração. Para conectar os logs do Azure AD, use o [conector do Azure Sentinel Azure AD](../../sentinel/connect-azure-active-directory.md), que fornece dados de log mais avançados que os logs de gerenciamento do Office 365. 
+> O método recomendado para instalar e configurar a solução do Office 365 é a habilitação de [conector do Office 365](../../sentinel/connect-office-365.md) na [Azure Sentinel](../../sentinel/overview.md) em vez de usar as etapas neste artigo. Isso é uma versão atualizada da solução do Office 365 com uma experiência aprimorada de configuração. Para conectar os logs do Azure AD, você pode usar o [Sentinela do Azure do Azure AD connector](../../sentinel/connect-azure-active-directory.md) ou [definir configurações de diagnóstico do Azure AD](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md), que fornece dados de log avançados que os logs de gerenciamento do Office 365. 
 >
 > Quando você [Sentinel integrados do Azure](../../sentinel/quickstart-onboard.md), especifique o espaço de trabalho do Log Analytics que você deseja que a solução do Office 365 instalada no. Depois de habilitar o conector, a solução estará disponível no espaço de trabalho e usado exatamente como outras soluções de monitoramento que você instalou.
 >

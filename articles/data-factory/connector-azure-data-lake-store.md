@@ -10,14 +10,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 05/13/2019
+ms.date: 07/02/2019
 ms.author: jingwang
-ms.openlocfilehash: aedfa381f6520a5295467821097b38dd28dcd60c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: df88c3e2e07165182c917eaf30a5f37451fbd073
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67057919"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67509589"
 ---
 # <a name="copy-data-to-or-from-azure-data-lake-storage-gen1-using-azure-data-factory"></a>Copiar dados para ou de Gen1 de armazenamento do Azure Data Lake usando o Azure Data Factory
 > [!div class="op_single_selector" title1="Selecione a versão do Azure Data Factory que você está usando:"]
@@ -81,7 +81,7 @@ Para usar a autenticação de entidade de serviço, registre uma entidade de apl
 >Para listar as pastas começando na raiz, você deve definir a permissão da entidade de serviço que está sendo concedida **no nível raiz com a permissão "Executar"** . Isso é verdadeiro quando você usa o:
 >- **A ferramenta Copiar dados** para pipeline de cópia do autor.
 >- **Interface do Usuário do Data Factory** para testar a conexão e navegar por pastas durante a criação.
->Se você tiver dúvidas sobre como conceder permissão no nível raiz, ignorar o teste de conexão e o caminho de entrada manualmente durante a criação. A atividade de cópia funciona contanto que a entidade de serviço é concedido com a permissão apropriada, os arquivos a serem copiados.
+>Se você tiver dúvidas sobre como conceder permissão no nível raiz, durante a criação, ignore o teste conexão e um caminho de paraent com permissão concedida, em seguida, optar por navegar a partir de entrada que especificou o caminho. Copie atividade funciona como a entidade de serviço é concedida com a permissão adequada os arquivos a serem copiados.
 
 Há suporte para as seguintes propriedades:
 
@@ -135,7 +135,7 @@ Para usar identidades gerenciadas para autenticação de recursos do Azure:
 >A lista de pastas começando na raiz, você deve definir a permissão de identidade gerenciada que está sendo concedida a **no nível raiz com a permissão "Execute"** . Isso é verdadeiro quando você usa o:
 >- **A ferramenta Copiar dados** para pipeline de cópia do autor.
 >- **Interface do Usuário do Data Factory** para testar a conexão e navegar por pastas durante a criação.
->Se você tiver dúvidas sobre como conceder permissão no nível raiz, ignorar o teste de conexão e o caminho de entrada manualmente durante a criação. A atividade de cópia funciona como a identidade gerenciada é concedida com a permissão adequada os arquivos a serem copiados.
+>Se você tiver dúvidas sobre como conceder permissão no nível raiz, durante a criação, ignore a conexão e teste um caminho pai com permissão concedida, em seguida, optar por navegar a partir de entrada que especificou o caminho. Copie atividade funciona como a entidade de serviço é concedida com a permissão adequada os arquivos a serem copiados.
 
 No Azure Data Factory, você não precisa especificar nenhuma propriedade além das informações do Data Lake Store gerais no serviço vinculado.
 

@@ -8,14 +8,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 06/10/2019
+ms.date: 07/02/2019
 ms.author: jingwang
-ms.openlocfilehash: 536d7a572eddc2cf75f6ce135c3cd4f4f2635416
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 9f60c6258da77c0aaa99d16e178f4b3531ce90d9
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67203293"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67509243"
 ---
 # <a name="copy-data-to-or-from-azure-data-lake-storage-gen2-using-azure-data-factory"></a>Copiar dados de/para o Azure Data Lake Storage Gen2 usando o Azure Data Factory
 
@@ -115,7 +115,7 @@ Para usar a autenticação de entidade de serviço, siga estas etapas.
 >A lista de pastas a partir do nível da conta ou para testar a conexão, você precisa definir a permissão da entidade de serviço que está sendo concedida a **conta de armazenamento com permissão de "Leitor de dados de Blob de armazenamento" no IAM**. Isso é verdadeiro quando você usa o:
 >- **A ferramenta Copiar dados** para pipeline de cópia do autor.
 >- **Interface do Usuário do Data Factory** para testar a conexão e navegar por pastas durante a criação. 
->Se você tiver dúvidas sobre como conceder permissão no nível da conta, você pode ignorar manualmente conexão de teste e o caminho de entrada durante a criação. Atividade de cópia ainda funciona como a entidade de serviço é concedida com a permissão adequada os arquivos a serem copiados.
+>Se você tiver dúvidas sobre como conceder permissão no nível da conta, durante a criação, ignore a conexão e teste um caminho pai com permissão concedida, em seguida, optar por navegar a partir de entrada que especificou o caminho. Copie atividade funciona como a entidade de serviço é concedida com a permissão adequada os arquivos a serem copiados.
 
 Essas propriedades têm suporte para o serviço vinculado:
 
@@ -169,7 +169,7 @@ Para usar identidades gerenciadas para autenticação de recursos do Azure, siga
 >A lista de pastas a partir do nível da conta ou para testar a conexão, você precisa definir a permissão de identidade gerenciada que está sendo concedida a **conta de armazenamento com permissão de "Leitor de dados de Blob de armazenamento" no IAM**. Isso é verdadeiro quando você usa o:
 >- **A ferramenta Copiar dados** para pipeline de cópia do autor.
 >- **Interface do Usuário do Data Factory** para testar a conexão e navegar por pastas durante a criação. 
->Se você tiver dúvidas sobre como conceder permissão no nível da conta, você pode ignorar manualmente conexão de teste e o caminho de entrada durante a criação. Atividade de cópia ainda funciona como a identidade gerenciada é concedida com a permissão adequada os arquivos a serem copiados.
+>Se você tiver dúvidas sobre como conceder permissão no nível da conta, durante a criação, ignore a conexão e teste um caminho pai com permissão concedida, em seguida, optar por navegar a partir de entrada que especificou o caminho. Copie atividade funciona como a entidade de serviço é concedida com a permissão adequada os arquivos a serem copiados.
 
 >[!IMPORTANT]
 >Se você usar o PolyBase para carregar dados do Data Lake armazenamento Gen2 no SQL Data Warehouse, ao usar a autenticação de identidade gerenciada para o Data Lake armazenamento Gen2, certifique-se de também você seguir as etapas 1 e 2 na [neste guia](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage) como 1) registre seu SQL Servidor de banco de dados com o Azure Active Directory (Azure AD) e 2) atribuir a função de Colaborador de dados de Blob de armazenamento ao seu servidor de banco de dados SQL; o restante são manipuladas pelo Data Factory. Se seu Data Lake armazenamento Gen2 é configurado com um ponto de extremidade de rede Virtual do Azure, para usar o PolyBase para carregar dados do, você deve usar a autenticação de identidade gerenciada conforme exigido pelo PolyBase.

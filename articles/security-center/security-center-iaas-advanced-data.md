@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/29/2019
 ms.author: monhaber
-ms.openlocfilehash: 76e691df0a026802682b57ff78496f6b66d7ff79
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: ed94b92a34e2989c9f2226c344ac4d34a279eeac
+ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67154833"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67551827"
 ---
 # <a name="advanced-data-security-for-sql-servers-on-azure-virtual-machines-public-preview"></a>Segurança de dados avançada para SQL servers em máquinas virtuais do Azure (visualização pública)
 Segurança de dados avançada para SQL Servers em máquinas virtuais do Azure é um pacote unificado para recursos de segurança avançados do SQL. Ele atualmente (em visualização pública) inclui a funcionalidade para faceando e atenuar as vulnerabilidades potenciais de banco de dados e detectar atividades anormais que podem indicar uma ameaça para seu banco de dados. 
@@ -27,7 +27,7 @@ Segurança de dados avançada para SQL Servers em máquinas virtuais do Azure é
 Essa oferta para VMs SQL servers do Azure é baseada na mesma tecnologia fundamental usada na [pacote de segurança de dados avançada do Azure SQL banco de dados](https://docs.microsoft.com/azure/sql-database/sql-database-advanced-data-security).
 
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 
 Segurança avançada de dados fornece um conjunto de recursos avançados de segurança SQL, consistindo de avaliação de vulnerabilidade e proteção avançada contra ameaças.
 
@@ -95,7 +95,7 @@ Você pode exibir e gerenciar seus alertas de segurança atual.
 
 Você pode definir uma lista de destinatários para receber uma notificação por email quando alertas do ASC são geradas. O email contém um link direto para o alerta na Central de segurança do Azure com todos os detalhes relevantes. 
 
-1. Vá para **Central de segurança** > **política de segurança** e, na linha do assinatura relevante, clique em **Editar Configurações >** .
+1. Vá para **Central de segurança** > **preço & configurações** e clique na assinatura relevante
 
     ![Configurações de assinatura](./media/security-center-advanced-iaas-data/subscription-settings.png)
 

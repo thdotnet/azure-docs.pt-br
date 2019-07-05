@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/25/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 0672f25b30bfb34a6ee99b0f4710d01cf0871300
-ms.sourcegitcommit: 6e6813f8e5fa1f6f4661a640a49dc4c864f8a6cb
+ms.openlocfilehash: 6506a93914cfbc10f37980c4b916a93aa9aad75d
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67150335"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67564411"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Planejando uma implantação de Arquivos do Azure
 
@@ -83,29 +83,24 @@ Compartilhamentos de arquivos padrão são apoiados por unidades de disco rígid
 Compartilhamentos de arquivo padrão até 5 TiB de tamanho estão disponíveis como uma oferta de GA. Embora os compartilhamentos de arquivos maiores, que são qualquer compartilhamento maior do que 5 TiB, até um máximo de 100 TiB, estão disponíveis atualmente como uma oferta de visualização.
 
 > [!IMPORTANT]
-> - Exige que você crie uma nova conta de armazenamento de finalidade geral (não é possível expandir as contas de armazenamento existentes).
-> - Só estão disponíveis com o LRS.
-> - Disponível em três regiões: Regiões do Sudeste da Ásia, Europa Ocidental e Oeste dos EUA 2.
-> - LRS para a conversão de conta GRS não será possível em qualquer nova conta de armazenamento criada depois que a assinatura é aceito para a visualização de compartilhamentos de arquivos maior.
+> Consulte a [Onboard para compartilhamentos de arquivos maiores (camada standard)](#onboard-to-larger-file-shares-standard-tier) seção para obter as etapas para integrar, bem como o escopo e restrições da visualização.
 
-Se você quiser integrar a visualização desses tamanhos maiores de compartilhamento de arquivos, enviar isso [formulário](https://aka.ms/azurefilesatscalesurvey). 
+### <a name="premium-file-shares"></a>Compartilhamentos de arquivos do Premium
 
-### <a name="premium-file-shares-preview"></a>Compartilhamentos de arquivos Premium (versão prévia)
-
-Os compartilhamentos de arquivos (versão prévia) Premium são apoiados por discos de estado sólido (SSDs). Compartilhamentos de arquivos do Premium oferecem alto desempenho consistente e baixa latência, em milissegundos de dígito único para a maioria das operações de e/s, para cargas de trabalho de e/s intensiva. Isso os torna adequados para uma ampla variedade de cargas de trabalho, como bancos de dados, hospedagem de websites, ambientes de desenvolvimento, etc. Os compartilhamentos de arquivos Premium estão disponíveis em um modelo de cobrança provisionado. Compartilhamentos de arquivos do Premium usam um modelo de implantação separado de compartilhamentos de arquivos padrão.
+Compartilhamentos de arquivos do Premium são apoiados por unidades de estado sólido (SSDs). Compartilhamentos de arquivos do Premium oferecem alto desempenho consistente e baixa latência, em milissegundos de dígito único para a maioria das operações de e/s, para cargas de trabalho de e/s intensiva. Isso os torna adequados para uma ampla variedade de cargas de trabalho como ambientes de desenvolvimento, hospedagem de sites da web e bancos de dados. Os compartilhamentos de arquivos Premium estão disponíveis em um modelo de cobrança provisionado. Compartilhamentos de arquivos do Premium usam um modelo de implantação separado de compartilhamentos de arquivos padrão.
 
 O Backup do Azure está disponível para os compartilhamentos de arquivos premium e o serviço Kubernetes do Azure dá suporte a compartilhamentos de arquivos do premium na versão 1.13 e posterior.
 
 Se você quiser saber como criar um compartilhamento de arquivos do premium, consulte nosso artigo sobre o assunto: [Como criar uma conta de armazenamento de arquivos do Azure premium](storage-how-to-create-premium-fileshare.md).
 
-Atualmente, é possível converter diretamente entre um compartilhamento de arquivos padrão e um compartilhamento de arquivos de premium. Se você quiser alternar para a camada, você deve criar um novo compartilhamento de arquivo nessa camada e copiar manualmente os dados do seu compartilhamento original para o novo compartilhamento que você criou. Você pode fazer isso usando as ferramentas de cópia de arquivos do Azure com suporte, como o AzCopy.
+Atualmente, é possível converter diretamente entre um compartilhamento de arquivos padrão e um compartilhamento de arquivos de premium. Se você quiser alternar para a camada, você deve criar um novo compartilhamento de arquivo nessa camada e copiar manualmente os dados do seu compartilhamento original para o novo compartilhamento que você criou. Você pode fazer isso usando as ferramentas de cópia de arquivos do Azure com suporte, como o Robocopy ou AzCopy.
 
 > [!IMPORTANT]
-> Compartilhamentos de arquivos do Premium ainda estão em visualização, estão disponíveis apenas com LRS e estão disponíveis na maioria das regiões que oferecem as contas de armazenamento. Para descobrir se os compartilhamentos de arquivos do premium estão disponíveis no momento em sua região, consulte o [produtos disponíveis por região](https://azure.microsoft.com/global-infrastructure/services/?products=storage) página para o Azure.
+> Compartilhamentos de arquivos do Premium estão disponíveis apenas com LRS e estão disponíveis na maioria das regiões que oferecem as contas de armazenamento. Para descobrir se os compartilhamentos de arquivos do premium estão disponíveis no momento em sua região, consulte o [produtos disponíveis por região](https://azure.microsoft.com/global-infrastructure/services/?products=storage) página para o Azure.
 
 ### <a name="provisioned-shares"></a>Compartilhamentos provisionados
 
-Os compartilhamentos de arquivos (versão prévia) Premium são provisionados com base em uma taxa fixa de GiB/IOPS/taxa de transferência. Para cada GiB provisionado, o compartilhamento emitirá um IOPS e uma taxa de transferência de 0,1 MiB/s até os limites máximos por compartilhamento. O provisionamento mínimo permitido é de 100 GiB, com um IOPS e uma taxa de transferência mínimos.
+Os compartilhamentos de arquivos Premium são provisionados com base em uma taxa de GiB/IOPS/transferência fixa. Para cada GiB provisionado, o compartilhamento emitirá um IOPS e uma taxa de transferência de 0,1 MiB/s até os limites máximos por compartilhamento. O provisionamento mínimo permitido é de 100 GiB, com um IOPS e uma taxa de transferência mínimos.
 
 Com base no melhor esforço, todos os compartilhamentos poderão acumular até três IOPS por GiB de armazenamento provisionado por 60 minutos ou mais, dependendo do tamanho do compartilhamento. Os novos compartilhamentos começam com o crédito de intermitência completa com base na capacidade provisionada.
 
@@ -137,6 +132,9 @@ A tabela a seguir ilustra alguns exemplos dessas fórmulas para os tamanhos do c
 |51,200      | 51,200  | Até 100.000 | 3\.132 | 2,088   |
 |102,400     | 100.000 | Até 100.000 | 6,204 | 4,136   |
 
+> [!NOTE]
+> Desempenho de compartilhamentos de arquivos está sujeito aos limites de rede da máquina, largura de banda disponível, tamanhos de e/s, o paralelismo, entre muitos outros fatores. Para obter uma escala máximo desempenho, distribuir a carga entre várias VMs. Consulte [guia de solução](storage-troubleshooting-files-performance.md) para alguns problemas comuns de desempenho e soluções alternativas.
+
 ### <a name="bursting"></a>Intermitência
 
 Compartilhamentos de arquivos do Premium podem estourar seu IOPS até um fator de três. Intermitência é automatizado e opera com base em um sistema de crédito. Intermitência funciona em uma base de melhor esforço e o limite de intermitência não é uma garantia, compartilhamentos de arquivos podem estourar *até* o limite.
@@ -158,9 +156,9 @@ Início de compartilhamentos de arquivo novo com o número total de créditos em
 
 ## <a name="file-share-redundancy"></a>Redundância de compartilhamento de arquivo
 
-Compartilhamentos de padrão de arquivos do Azure dá suporte a três opções de redundância de dados: armazenamento localmente redundante (LRS), o armazenamento com redundância de zona (ZRS) e o armazenamento com redundância geográfica (GRS).
+Compartilhamentos de padrão de arquivos do Azure dão suporte a três opções de redundância de dados: armazenamento localmente redundante (LRS), o armazenamento com redundância de zona (ZRS) e o armazenamento com redundância geográfica (GRS).
 
-Premium de arquivos do Azure compartilha só dá suporte a armazenamento localmente redundante (LRS).
+Os compartilhamentos de premium de arquivos do Azure só dão suporte a armazenamento localmente redundante (LRS).
 
 As seções a seguir descrevem as diferenças entre as opções de redundância diferentes:
 
@@ -192,6 +190,48 @@ Lembre-se esses pontos ao decidir qual opção de replicação para usar:
 * Armazenamento com redundância de zona (ZRS) fornece alta disponibilidade com replicação síncrona e pode ser uma escolha melhor em alguns cenários que GRS. Para obter mais informações sobre o ZRS, consulte [ZRS](../common/storage-redundancy-zrs.md).
 * A replicação assíncrona envolve um atraso entre a hora em que dados são gravados na região primária e quando são replicados na região secundária. Caso ocorra um desastre na região, as alterações que ainda não foram replicadas para a região secundária poderão ser pedidas se os dados não puderem ser recuperados na região primária.
 * Com o GRS, a réplica não está disponível para acesso de leitura ou gravação, a menos que a Microsoft inicie um failover na região secundária. Em caso de failover, você terá acesso de leitura e gravação aos dados após o failover ter sido concluído. Para obter mais informações, confira [Guia de recuperação de desastre](../common/storage-disaster-recovery-guidance.md).
+
+## <a name="onboard-to-larger-file-shares-standard-tier"></a>Compartilhamentos de arquivos integrados para maior (camada standard)
+
+Esta seção se aplica somente aos compartilhamentos de arquivos padrão. Todos os compartilhamentos de arquivos do premium estão disponíveis com 100 TiB como uma oferta de GA.
+
+### <a name="restrictions"></a>Restrições
+
+- Exige que você crie uma nova conta de armazenamento de finalidade geral (não é possível expandir as contas de armazenamento existentes).
+- LRS para a conversão de conta GRS não será possível em qualquer nova conta de armazenamento criada depois que a assinatura é aceito para a visualização de compartilhamentos de arquivos maior.
+
+### <a name="regional-availability"></a>Disponibilidade regional
+
+Compartilhamentos de arquivos padrão estão disponíveis em todas as regiões até 5 TiB. Em determinadas regiões, ele está disponível com um limite de 100 TiB, essas regiões estão listadas na tabela a seguir:
+
+|Região  |Redundância com suporte  |Dá suporte a contas de armazenamento existentes  |
+|---------|---------|---------|
+|Região do Sudeste Asiático     |LRS|Não         |
+|Europa Ocidental     |LRS|Não         |
+|Oeste dos EUA 2     |LRS, ZRS|Não         |
+
+
+### <a name="steps-to-onboard"></a>Etapas para integrar
+
+Para registrar sua assinatura para a visualização de compartilhamentos de arquivos maior, execute os seguintes comandos do PowerShell:
+
+```powershell
+Register-AzProviderFeature -FeatureName AllowLargeFileShares -ProviderNamespace Microsoft.Storage
+Register-AzResourceProvider -ProviderNamespace Microsoft.Storage
+```
+Sua assinatura é aprovada automaticamente depois que os dois comandos são executados.
+
+Para verificar o status do registro, você pode executar o comando a seguir:
+
+```powershell
+Get-AzProviderFeature -FeatureName AllowLargeFileShares -ProviderNamespace Microsoft.Storage
+```
+
+Pode levar até 15 minutos para que seu status seja atualizado para **registrado**. Depois que seu status for **registrado**, você poderá usar o recurso.
+
+### <a name="use-larger-file-shares"></a>Usar compartilhamentos de arquivos maiores
+
+Para começar a usar compartilhamentos de arquivos maiores, crie uma nova conta de armazenamento v2 de uso geral e um novo compartilhamento de arquivos.
 
 ## <a name="data-growth-pattern"></a>Padrão de crescimento de dados
 

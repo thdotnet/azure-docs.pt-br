@@ -7,12 +7,12 @@ ms.service: cdn
 ms.topic: article
 ms.date: 05/31/2019
 ms.author: magattus
-ms.openlocfilehash: 3dcce64d86574a3e898531b2e2587b81d04f098d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7e75a6ffe28aa74ea2fad30bbe2728317712d86b
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67080780"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443486"
 ---
 # <a name="azure-cdn-from-verizon-premium-rules-engine-features"></a>CDN do Azure de recursos do mecanismo de regras de Verizon Premium
 
@@ -1128,7 +1128,7 @@ Esse recurso permite que um servidor de origem de cliente obtenha endereços IP 
 
 Certifique-se de que o nome do cabeçalho especificado não corresponde a nenhum um dos seguintes nomes:
 
-- Nomes de cabeçalho de solicitação padrão. Uma lista de nomes de cabeçalho padrão pode ser encontrada em [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
+- Nomes de cabeçalho de solicitação padrão. Uma lista de nomes de cabeçalho padrão pode ser encontrada em [RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
 - Nomes de cabeçalho reservados:
     - forwarded-for
     - host

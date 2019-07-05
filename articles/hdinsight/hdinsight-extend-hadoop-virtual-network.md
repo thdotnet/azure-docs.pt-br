@@ -7,12 +7,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/17/2019
-ms.openlocfilehash: 0dbcc99850d0a8b3b7306fac2bd8f89e6c941e4c
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 61a208f3e84125acc2a3cb22d3abccf16587e581
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67163654"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67543690"
 ---
 # <a name="extend-azure-hdinsight-using-an-azure-virtual-network"></a>Estender o Azure HDInsight usando uma Rede Virtual do Azure
 
@@ -67,9 +67,7 @@ Use as etapas descritas nesta seção para descobrir como adicionar um novo HDIn
 
     Depois de ingressar, o HDInsight instalado na rede do Resource Manager pode interagir com os recursos da rede clássica.
 
-2. Você usa o túnel forçado? O túnel forçado é uma configuração de sub-rede que força o tráfego da Internet de saída para um dispositivo para inspeção e log. O HDInsight não dá suporte ao túnel forçado. Remova o encapsulamento forçado antes de implantar o HDInsight em uma sub-rede existente ou crie uma nova sub-rede sem tunelamento forçado para o HDInsight.
-
-3. Você usa grupos de segurança de rede, rotas definidas pelo usuário ou Soluções de Virtualização de Rede para restringir o tráfego para dentro ou fora da rede virtual?
+2. Você usa grupos de segurança de rede, rotas definidas pelo usuário ou Soluções de Virtualização de Rede para restringir o tráfego para dentro ou fora da rede virtual?
 
     Como um serviço gerenciado, o HDInsight exige acesso irrestrito a vários endereços IP no data center do Azure. Para permitir a comunicação com esses endereços IP, atualize os grupos de segurança de rede ou as rotas definidas pelo usuário existentes.
     
@@ -108,7 +106,7 @@ Use as etapas descritas nesta seção para descobrir como adicionar um novo HDIn
 
         Para obter mais informações, consulte o documento [Solução de problemas de rotas](../virtual-network/diagnose-network-routing-problem.md).
 
-4. Crie um cluster HDInsight e selecione a Rede Virtual do Azure durante a configuração. Use as etapas nos documentos a seguir para entender o processo de criação de cluster:
+3. Crie um cluster HDInsight e selecione a Rede Virtual do Azure durante a configuração. Use as etapas nos documentos a seguir para entender o processo de criação de cluster:
 
     * [Criar o HDInsight usando o portal do Azure](hdinsight-hadoop-create-linux-clusters-portal.md)
     * [Criar o HDInsight usando o Azure PowerShell](hdinsight-hadoop-create-linux-clusters-azure-powershell.md)
@@ -247,14 +245,14 @@ O túnel forçado é uma configuração de roteamento definido pelo usuário em 
 
 ## <a id="hdinsight-ip"></a> Endereços IP obrigatórios
 
-> [!IMPORTANT]  
-> Os serviços de integridade e gerenciamento do Azure devem ser capazes de se comunicar com o HDInsight. Se você usar grupos de segurança de rede ou rotas definidas pelo usuário, permita o tráfego de endereços IP para que esses serviços acessem o HDInsight.
->
+Se você usar grupos de segurança de rede ou rotas definidas pelo usuário para controlar o tráfego, você deve permitir o tráfego de endereços IP para os serviços de integridade e gerenciamento do Azure para que eles podem se comunicar com o cluster HDInsight. Alguns dos endereços IP específicos por região e alguns deles se aplicam a todas as regiões do Azure. Você também precisará permitir o tráfego de serviço DNS do Azure se você não estiver usando o DNS personalizado. Você também deve permitir o tráfego entre as VMs dentro da sub-rede. Use as seguintes etapas para encontrar os endereços IP que devem ser permitidos:
+
+> [!Note]  
 > Se você não usar grupos de segurança de rede ou rotas definidas pelo usuário para controlar o tráfego, ignore esta seção.
 
-Se você usar grupos de segurança de rede, deverá permitir o tráfego dos serviços de integridade e gerenciamento do Azure para acessar os clusters do HDInsight na porta 443. Você também deve permitir o tráfego entre as VMs dentro da sub-rede. Use as seguintes etapas para encontrar os endereços IP que devem ser permitidos:
+1. Se você estiver usando o serviço DNS fornecido pelo Azure, permitir o acesso de __168.63.129.16__ na porta 53. Para obter mais informações, consulte o documento [Resolução de nomes para VMs e instâncias de função](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md). Se você estiver usando o DNS personalizado, ignore esta etapa.
 
-1. Você sempre deve permitir o tráfego dos seguintes endereços IP:
+2. Permitir o tráfego dos seguintes endereços IP dos serviços de integridade e gerenciamento do Azure que se aplicam a todas as regiões do Azure:
 
     | Endereço IP de origem | Destino  | Direction |
     | ---- | ----- | ----- |
@@ -263,7 +261,7 @@ Se você usar grupos de segurança de rede, deverá permitir o tráfego dos serv
     | 168.61.48.131 | \*:443 | Entrada |
     | 138.91.141.162 | \*:443 | Entrada |
 
-2. Se o cluster HDInsight estiver em uma das seguintes regiões, você deverá permitir o tráfego dos endereços IP listados para a região:
+3. Permitir o tráfego de endereços IP listados para os serviços de integridade e gerenciamento do Azure na região específica onde se encontram seus recursos:
 
     > [!IMPORTANT]  
     > Se a região do Azure que você está usando não estiver listada, use apenas os quatro endereços IP da etapa 1.
@@ -296,15 +294,13 @@ Se você usar grupos de segurança de rede, deverá permitir o tráfego dos serv
     | Reino Unido | Oeste do Reino Unido | 51.141.13.110</br>51.141.7.20 | \*:443 | Entrada |
     | &nbsp; | Sul do Reino Unido | 51.140.47.39</br>51.140.52.16 | \*:443 | Entrada |
     | Estados Unidos | Centro dos EUA | 13.89.171.122</br>13.89.171.124 | \*:443 | Entrada |
-    | &nbsp; | Leste dos EUA | 13.82.225.233</br>40.71.175.99 | \*:443 | Entrada |
+    | &nbsp; | East US | 13.82.225.233</br>40.71.175.99 | \*:443 | Entrada |
     | &nbsp; | Centro-Norte dos EUA | 157.56.8.38</br>157.55.213.99 | \*:443 | Entrada |
     | &nbsp; | Centro-Oeste dos EUA | 52.161.23.15</br>52.161.10.167 | \*:443 | Entrada |
     | &nbsp; | Oeste dos EUA | 13.64.254.98</br>23.101.196.19 | \*:443 | Entrada |
     | &nbsp; | Oeste dos EUA 2 | 52.175.211.210</br>52.175.222.222 | \*:443 | Entrada |
 
     Para obter informações sobre os endereços IP a serem usados para o Azure Governamental, consulte o documento [Inteligência + Análise do Azure Governamental](https://docs.microsoft.com/azure/azure-government/documentation-government-services-intelligenceandanalytics).
-
-3. Você também deve permitir o acesso de __168.63.129.16__. Esse endereço é o resolvedor recursivo do Azure. Para obter mais informações, consulte o documento [Resolução de nomes para VMs e instâncias de função](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 
 Para obter mais informações, consulte a seção [Controlando o tráfego de rede](#networktraffic).
 

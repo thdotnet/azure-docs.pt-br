@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 06/19/2019
-ms.openlocfilehash: efa4cc070f47174634c8dc67b37f10bc3d112d08
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.date: 06/26/2019
+ms.openlocfilehash: 412ce3c5245f3f22bfb03740a0451670dc6a90a7
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67293199"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448117"
 ---
 # <a name="postgresql-extensions-in-azure-database-for-postgresql---single-server"></a>Extensões de PostgreSQL no banco de dados do Azure para PostgreSQL – servidor único
 O PostgreSQL fornece a capacidade de estender a funcionalidade de seu banco de dados usando as extensões. As extensões permitem o agrupamento de vários objetos SQL relacionados em um único pacote que pode ser carregado ou removido de seu banco de dados com um único comando. Depois de ser carregada no banco de dados, as extensões podem funcionar como recursos internos. Para obter mais informações sobre extensões do PostgreSQL, consulte  [Empacotando Objetos Relacionados em uma Extensão](https://www.postgresql.org/docs/9.6/static/extend-extensions.html).
@@ -48,7 +48,7 @@ As tabelas a seguir listam as extensões PostgreSQL padrão que têm suporte atu
 > | [pg\_partman](https://pgxn.org/dist/pg_partman/doc/pg_partman.html) | Gerencia as tabelas de partição por hora ou ID. |
 > | [pg\_trgm](https://www.postgresql.org/docs/9.6/static/pgtrgm.html) | Fornece funções e operadores para determinar a semelhança de texto alfanumérico, com base na correspondência de trigram. |
 > | [tablefunc](https://www.postgresql.org/docs/9.6/static/tablefunc.html) | Fornece funções que manipulam tabelas inteiras, incluindo a tabela de referência cruzada. |
-> | [uuid-ossp](https://www.postgresql.org/docs/9.6/static/uuid-ossp.html) | Gera UUIDs (identificadores exclusivos universais). |
+> | [uuid-ossp](https://www.postgresql.org/docs/9.6/static/uuid-ossp.html) | Gera UUIDs (identificadores exclusivos universais). (Veja abaixo uma observação sobre essa extensão). |
 > | [orafce](https://github.com/orafce/orafce) | Fornece um subconjunto de funções e pacotes emulados de bancos de dados comerciais. |
 
 ### <a name="full-text-search-extensions"></a>Extensões de pesquisa de texto completo
@@ -118,6 +118,10 @@ Há um equilíbrio entre as informações de execução de consulta fornecida po
 dblink e postgres_fdw permitem que você se conecte de um servidor PostgreSQL a outro ou a outro banco de dados no mesmo servidor. O servidor de recebimento precisa permitir conexões do servidor de envio por meio de seu firewall. Ao usar essas extensões para conectar-se entre os servidores do Banco de Dados do Azure para PostgreSQL, isso pode ser feito definindo "Permitir acesso aos serviços do Azure" como LIGADO. Isso também será necessário se você quiser usar as extensões para executar um loop no mesmo servidor. A configuração "Permitir acesso aos serviços do Azure" pode ser encontrada na página do portal do Azure para o servidor Postgres em Segurança de Conexão. Ativar "Permitir acesso a serviços do Azure" coloca todos os IPs do Azure na lista de permissões.
 
 Atualmente, as conexões de saída do banco de dados do Azure para PostgreSQL não têm suporte, exceto para conexões de outro banco de dados do Azure para servidores PostgreSQL.
+
+## <a name="uuid"></a>uuid
+Se você estiver planejando usar `uuid_generate_v4()` da extensão de uuid ossp, considere comparando com `gen_random_uuid()` da extensão de pgcrypto para benefícios de desempenho.
+
 
 ## <a name="timescaledb"></a>TimescaleDB
 TimescaleDB é um banco de dados de série temporal é empacotado como uma extensão para PostgreSQL. TimescaleDB fornece orientados ao tempo funções analíticas, otimizações e pode ser dimensionado Postgres para cargas de trabalho de série temporal.

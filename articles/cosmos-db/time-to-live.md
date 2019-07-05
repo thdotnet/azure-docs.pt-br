@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: 692e0ec575904ff0a70b8c73268d2df62e776bb6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0b32665b09eb02c337a12ac3cfc2b474fa82711a
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65978785"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67447237"
 ---
 # <a name="time-to-live-ttl-in-azure-cosmos-db"></a>A vida útil (TTL) no Azure Cosmos DB 
 
@@ -45,6 +45,42 @@ O valor tempo de vida é definido em segundos, e ele será interpretado como um 
 * Se a TTL em um contêiner for definida como -1, um item nesse contêiner que tenha a vida útil definida como n expirará após n segundos, e os itens restantes não expirarão. 
 
 A exclusão de itens com base na TTL é gratuita. Não haverá custos adicionais (isto é, nenhuma RU adicional será consumida) quando o item for excluído como resultado da expiração de TTL.
+
+## <a name="examples"></a>Exemplos
+
+Esta seção mostra alguns exemplos com valores atribuídos a contêiner e itens de vida útil diferente:
+
+### <a name="example-1"></a>Exemplo 1
+
+TTL do contêiner é definido como null (DefaultTimeToLive = null)
+
+|TTL do item| Result|
+|---|---|
+|ttl = null|    TTL estiver desabilitada. O item nunca expirará (padrão).|
+|ttl = -1   |TTL estiver desabilitada. O item nunca expirará.|
+|ttl = 2000 |TTL estiver desabilitada. O item nunca expirará.|
+
+
+### <a name="example-2"></a>Exemplo 2
+
+TTL do contêiner é definido como -1 (DefaultTimeToLive = -1)
+
+|TTL do item| Result|
+|---|---|
+|ttl = null |TTL seja habilitada. O item nunca expirará (padrão).|
+|ttl = -1   |TTL seja habilitada. O item nunca expirará.|
+|ttl = 2000 |TTL seja habilitada. O item expirará após 2000 segundos.|
+
+
+### <a name="example-3"></a>Exemplo 3
+
+TTL do contêiner é definida como 1000 (DefaultTimeToLive = 1000)
+
+|TTL do item| Result|
+|---|---|
+|ttl = null|    TTL seja habilitada. O item expirará após 1000 segundos (padrão).|
+|ttl = -1   |TTL seja habilitada. O item nunca expirará.|
+|ttl = 2000 |TTL seja habilitada. O item expirará após 2000 segundos.|
 
 ## <a name="next-steps"></a>Próximas etapas
 

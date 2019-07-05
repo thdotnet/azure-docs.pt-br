@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39a591a335d022ef7b2b99fdec930ddf0496cd47
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 970fdaba1870097e253b51c70e523e399bc88dfc
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67112583"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67440800"
 ---
 # <a name="what-are-baseline-policies"></a>Quais são as políticas de linha de base?
 
@@ -30,18 +30,18 @@ Gerenciando políticas de acesso condicional personalizadas requer uma licença 
 
 Há quatro diretivas de linha de base que as organizações podem habilitar:
 
-* [Exigir MFA para administradores](howto-baseline-protect-administrators.md)
+* [Exigir MFA para os administradores (versão prévia)](howto-baseline-protect-administrators.md)
 * [Proteção do usuário final (visualização)](howto-baseline-protect-end-users.md)
 * [Autenticação herdada do bloco (visualização)](howto-baseline-protect-legacy-auth.md)
 * [Exigir MFA para gerenciamento de serviços (visualização)](howto-baseline-protect-azure.md)
 
 Todos os quatro dessas políticas terá impacto sobre os fluxos de autenticação herdados como POP, IMAP e clientes da área de trabalho mais antigos do Office.
 
-### <a name="require-mfa-for-admins"></a>Exigir MFA para administradores
+### <a name="require-mfa-for-admins-preview"></a>Exigir MFA para os administradores (versão prévia)
 
 Devido a potência e o acesso de contas de administrador, você deve tratá-las com cuidado especial. Um método comum para melhorar a proteção de contas privilegiadas é exigir uma forma mais forte de verificação da conta quando eles são usados para entrar. No Azure Active Directory, você pode obter uma verificação de conta mais forte exigindo que os administradores para se registrar e usar a autenticação multifator do Azure.
 
-[Exigir MFA para administradores](howto-baseline-protect-administrators.md) é uma política de linha de base que exige autenticação multifator (MFA) para as seguintes funções de diretório, consideradas as mais privilegiadas funções do Azure AD:
+[Exigir MFA para os administradores (versão prévia)](howto-baseline-protect-administrators.md) é uma política de linha de base que exige autenticação multifator (MFA) para as seguintes funções de diretório, consideradas as mais privilegiadas funções do Azure AD:
 
 * Administrador global
 * Administrador do SharePoint
@@ -52,7 +52,7 @@ Devido a potência e o acesso de contas de administrador, você deve tratá-las 
 * Administrador de cobrança
 * Administrador de usuários
 
-Se sua organização tiver essas contas em uso no código ou scripts, considere a possibilidade de substituí-los com [identidades gerenciadas](../managed-identities-azure-resources/overview.md). Como solução temporária, você pode excluir contas de usuários específicas da política de linha de base.
+Se sua organização tiver essas contas em uso no código ou scripts, considere a possibilidade de substituí-los com [identidades gerenciadas](../managed-identities-azure-resources/overview.md).
 
 ### <a name="end-user-protection-preview"></a>Proteção do usuário final (visualização)
 
@@ -96,7 +96,7 @@ Para obter mais informações, consulte:
 
 * [Cinco etapas para proteger a infraestrutura de identidade](../../security/azure-ad-secure-steps.md)
 * [O que é acesso condicional no Azure Active Directory?](overview.md)
-* [Exigir MFA para administradores](howto-baseline-protect-administrators.md)
+* [Exigir MFA para os administradores (versão prévia)](howto-baseline-protect-administrators.md)
 * [Proteção do usuário final (visualização)](howto-baseline-protect-end-users.md)
 * [Autenticação herdada do bloco (visualização)](howto-baseline-protect-legacy-auth.md)
 * [Exigir MFA para gerenciamento de serviços (visualização)](howto-baseline-protect-azure.md)

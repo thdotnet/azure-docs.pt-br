@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e55bf4a66dcd8c1c7cfbc881d6f93c3a12f5dc00
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b8e9ea8956d87e2ec47cc65495e81d8a0f0ad8cb
+ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67112311"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67560935"
 ---
 # <a name="baseline-policy-block-legacy-authentication-preview"></a>Política de linha de base: Autenticação herdada do bloco (visualização)
 
@@ -28,8 +28,6 @@ Para fornecer aos usuários acesso fácil aos aplicativos na nuvem, o Azure AD (
 Hoje, a maioria de todos os comprometer tentativas de entrada provenientes de autenticação herdados. Autenticação herdados não oferece suporte a autenticação multifator (MFA). Mesmo se você tiver uma política de MFA habilitada no seu diretório, um ator mal-intencionado pode autenticar usando um protocolo herdado e ignorar o MFA.
 
 A melhor maneira de proteger sua conta das solicitações de autenticação mal-intencionada feitas pelos protocolos herdados é bloquear essas tentativas de tudo isso. Para tornar mais fácil para você bloquear todas as solicitações de logon feitas por protocolos herdados, criamos uma política de linha de base que faz exatamente isso.
-
-![Autenticação de bloco existentes com acesso condicional](./media/howto-baseline-protect-legacy-auth/baseline-policy-block-legacy-authentication.png)
 
 **Autenticação herdados do bloco** está [política de linha de base](concept-baseline-protection.md) que bloqueia todas as solicitações de autenticação feitas de protocolos herdados. Autenticação moderna deve ser usada para entrar com êxito para todos os usuários. Usado em conjunto com outras políticas de linha de base, todas as solicitações provenientes de protocolos herdados serão bloqueadas e todos os usuários serão necessários para a MFA sempre que for necessário. Essa política não bloqueie o Exchange ActiveSync.
 
@@ -111,7 +109,6 @@ Para habilitar essa política e proteger sua organização:
 1. Navegue até **do Azure Active Directory** > **acesso condicional**.
 1. Na lista de políticas, selecione **política de linha de base: Autenticação herdada do bloco (visualização)** .
 1. Definir **habilitar política** à **usar a política imediatamente**.
-1. Adicionar exclusões usuário clicando em **os usuários** > **selecionar usuários excluídos** e escolhendo os usuários que precisam ser excluídas. Clique em **selecionar** , em seguida, **feito**.
 1. Clique em **salvar**.
 
 ## <a name="next-steps"></a>Próximas etapas

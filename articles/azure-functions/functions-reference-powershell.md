@@ -10,12 +10,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: tyleonha, glenga
-ms.openlocfilehash: fa82725174645a0e5f1d957d8423c97547682542
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 489c94f37b6c88db001dee437cc6ed89383e6053
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67065490"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442173"
 ---
 # <a name="azure-functions-powershell-developer-guide"></a>Guia do desenvolvedor do PowerShell de funções do Azure
 
@@ -58,7 +58,7 @@ PSFunctionApp
 
 Na raiz do projeto, há um compartilhado [ `host.json` ](functions-host-json.md) arquivo que pode ser usado para configurar o aplicativo de funções. Cada função tem uma pasta com seu próprio arquivo de código (. ps1) e o arquivo de configuração de associação (`function.json`). O nome da pasta pai do arquivo de Function. JSON é sempre o nome da sua função.
 
-Determinadas associações exigem a presença de um `extensions.csproj` arquivo. Associando extensões, necessárias no [versão 2. x](functions-versions.md) de tempo de execução de funções, são definidos na `extensions.csproj` arquivo, com os arquivos de biblioteca real no `bin` pasta. Ao desenvolver localmente, você precisa [registrar as extensões de associação](functions-bindings-register.md#local-development-with-azure-functions-core-tools-and-extension-bundles). Ao desenvolver funções no portal do Azure, esse registro é feito para você.
+Determinadas associações exigem a presença de um `extensions.csproj` arquivo. Associando extensões, necessárias no [versão 2. x](functions-versions.md) de tempo de execução de funções, são definidos na `extensions.csproj` arquivo, com os arquivos de biblioteca real no `bin` pasta. Ao desenvolver localmente, você precisa [registrar as extensões de associação](functions-bindings-register.md#extension-bundles). Ao desenvolver funções no portal do Azure, esse registro é feito para você.
 
 Em aplicativos de funções do PowerShell, você pode, opcionalmente, ter uma `profile.ps1` que é executado quando um aplicativo de função começa a ser executado (caso contrário, conhecido como um  *[inicialização a frio](#cold-start)* . Para obter mais informações, consulte [perfil do PowerShell](#powershell-profile).
 
@@ -84,8 +84,8 @@ $TriggerMetadata.sys
 | Propriedade   | Description                                     | Type     |
 |------------|-------------------------------------------------|----------|
 | UtcNow     | Quando, no UTC, a função foi disparada        | DateTime |
-| MethodName | O nome da função que foi disparado     | cadeia de caracteres   |
-| RandGuid   | um guid exclusivo para a execução da função | cadeia de caracteres   |
+| MethodName | O nome da função que foi disparado     | string   |
+| RandGuid   | um guid exclusivo para a execução da função | string   |
 
 Cada tipo de gatilho tem um conjunto diferente de metadados. Por exemplo, o `$TriggerMetadata` para `QueueTrigger` contém o `InsertionTime`, `Id`, `DequeueCount`, entre outras coisas. Para obter mais informações sobre os metadados do gatilho de fila, vá para o [documentação oficial para gatilhos de fila](functions-bindings-storage-queue.md#trigger---message-metadata). Verifique a documentação sobre o [gatilhos](functions-triggers-bindings.md) você está trabalhando para ver o que vem de dentro de metadados de gatilho.
 
@@ -135,7 +135,7 @@ Estes são os parâmetros válidos para a chamada `Push-OutputBinding`:
 
 | NOME | Type | Position | DESCRIÇÃO |
 | ---- | ---- |  -------- | ----------- |
-| **`-Name`** | Cadeia de caracteres | 1 | O nome da associação de saída que você deseja definir. |
+| **`-Name`** | String | 1 | O nome da associação de saída que você deseja definir. |
 | **`-Value`** | Object | 2 | O valor da associação de saída você deseja definir, que é aceito na pipeline ByValue. |
 | **`-Clobber`** | SwitchParameter | nomeado | (Opcional) Quando especificado, obrigará o valor a ser definido para uma associação de saída especificado. | 
 
@@ -283,7 +283,7 @@ Há um número de gatilhos e associações para usar com seu aplicativo de funç
 Todos os gatilhos e associações são representadas no código, como alguns tipos de dados real:
 
 * Tabela de hash
-* cadeia de caracteres
+* string
 * byte[]
 * int
 * double
@@ -304,12 +304,12 @@ O objeto de solicitação que é passado para o script é do tipo `HttpRequestCo
 
 | Propriedade  | Description                                                    | Type                      |
 |-----------|----------------------------------------------------------------|---------------------------|
-| **`Body`**    | Um objeto que contém o corpo da solicitação. `Body` é serializado no melhor tipo com base nos dados. Por exemplo, se os dados JSON, ele é passado como uma tabela de hash. Se os dados forem uma cadeia de caracteres, ele é passado como uma cadeia de caracteres. | objeto |
+| **`Body`**    | Um objeto que contém o corpo da solicitação. `Body` é serializado no melhor tipo com base nos dados. Por exemplo, se os dados JSON, ele é passado como uma tabela de hash. Se os dados forem uma cadeia de caracteres, ele é passado como uma cadeia de caracteres. | object |
 | **`Headers`** | Um dicionário que contém os cabeçalhos de solicitação.                | Dicionário < cadeia de caracteres, cadeia de caracteres ><sup>*</sup> |
-| **`Method`** | O método HTTP da solicitação.                                | cadeia de caracteres                    |
+| **`Method`** | O método HTTP da solicitação.                                | string                    |
 | **`Params`**  | Um objeto que contém os parâmetros de roteamento da solicitação. | Dicionário < cadeia de caracteres, cadeia de caracteres ><sup>*</sup> |
 | **`Query`** | Um objeto que contém os parâmetros da consulta.                  | Dicionário < cadeia de caracteres, cadeia de caracteres ><sup>*</sup> |
-| **`Url`** | A URL da solicitação.                                        | cadeia de caracteres                    |
+| **`Url`** | A URL da solicitação.                                        | string                    |
 
 <sup>*</sup> Todos os `Dictionary<string,string>` chaves diferenciam maiusculas de minúsculas.
 
@@ -319,8 +319,8 @@ O objeto de resposta que você deve enviar de volta é do tipo `HttpResponseCont
 
 | Propriedade      | Description                                                 | Type                      |
 |---------------|-------------------------------------------------------------|---------------------------|
-| **`Body`**  | Um objeto que contém o corpo da resposta.           | objeto                    |
-| **`ContentType`** | Uma mão curta para definir o tipo de conteúdo para a resposta. | cadeia de caracteres                    |
+| **`Body`**  | Um objeto que contém o corpo da resposta.           | object                    |
+| **`ContentType`** | Uma mão curta para definir o tipo de conteúdo para a resposta. | string                    |
 | **`Headers`** | Um objeto que contém os cabeçalhos da resposta.               | Dicionário ou tabela de hash   |
 | **`StatusCode`**  | O código de status HTTP da resposta.                       | cadeia de caracteres ou inteiro             |
 

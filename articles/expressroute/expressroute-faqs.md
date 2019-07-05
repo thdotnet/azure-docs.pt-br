@@ -5,15 +5,15 @@ services: expressroute
 author: jaredr80
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 06/06/2019
+ms.date: 06/28/2019
 ms.author: jaredro
 ms.custom: seodec18
-ms.openlocfilehash: adffb18272d10c579f8b28bef055813b1074a237
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 02f772d02f5cc6f188d69b5e79debc0013cf1faa
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66754750"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67488495"
 ---
 # <a name="expressroute-faq"></a>Perguntas Frequentes sobre ExpressRoute
 
@@ -123,9 +123,13 @@ Você não perderá conectividade se uma das conexões cruzadas falhar. Uma cone
 
 Vários circuitos do ExpressRoute de diferentes locais de emparelhamento podem estar conectados à mesma rede virtual para fornecer alta disponibilidade no caso de que um único circuito fica indisponível. Em seguida, você pode [atribuir pesos mais altos](https://docs.microsoft.com/azure/expressroute/expressroute-optimize-routing#solution-assign-a-high-weight-to-local-connection) para a conexão local a favorecer preferir um circuito específico. É altamente recomendável que os clientes pelo menos dois circuitos do ExpressRoute para evitar pontos únicos de falha de instalação. 
 
+Ver [aqui](https://docs.microsoft.com/azure/expressroute/designing-for-high-availability-with-expressroute) para projetar para alta disponibilidade e [aqui](https://docs.microsoft.com/azure/expressroute/designing-for-disaster-recovery-with-expressroute-privatepeering) para projetar para recuperação de desastres.  
+
 ### <a name="how-i-do-implement-redundancy-on-microsoft-peering"></a>Como posso implementar a redundância no emparelhamento da Microsoft?
 
 É altamente recomendável quando os clientes estão usando o emparelhamento da Microsoft para acessar serviços públicos do Azure, como o armazenamento do Azure ou SQL do Azure, bem como os clientes que estão usando o emparelhamento da Microsoft para que eles implementem vários circuitos em diferentes de emparelhamento do Office 365 locais para evitar pontos únicos de faiure. Os clientes podem anunciar o prefixo mesmo em ambos os circuitos e usar [prefixação das PATH](https://docs.microsoft.com/azure/expressroute/expressroute-optimize-routing#solution-use-as-path-prepending) ou anunciar prefixos diferentes para determinar o caminho do local.
+
+Ver [aqui](https://docs.microsoft.com/azure/expressroute/designing-for-high-availability-with-expressroute) para projetar para alta disponibilidade.
 
 ### <a name="how-do-i-ensure-high-availability-on-a-virtual-network-connected-to-expressroute"></a>Como posso garantir a alta disponibilidade em uma rede virtual conectada ao ExpressRoute?
 

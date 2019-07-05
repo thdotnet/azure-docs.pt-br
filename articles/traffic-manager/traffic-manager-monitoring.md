@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/04/2018
 ms.author: allensu
-ms.openlocfilehash: 7aee68ef41b696549aa1db4386d467b55cd2d981
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8df1c29bc5230e925d05be9fd356de050a9b0f06
+ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67071065"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67550371"
 ---
 # <a name="traffic-manager-endpoint-monitoring"></a>Monitoramento de ponto de extremidade do Gerenciador de Tráfego
 
@@ -102,7 +102,7 @@ Um ponto de extremidade não está íntegro quando qualquer um dos seguintes eve
 - Se o protocolo de monitoramento for HTTP ou HTTPS:
     - Uma resposta diferente de 200 ou que não inclua o intervalo de status especificado na configuração **Intervalos de código de status esperados** foi recebida (incluindo um código diferente de 2xx ou um redirecionamento 301/302).
 - Se o protocolo de monitoramento for TCP: 
-    - Uma resposta que não seja ACK ou SYN-ACK será recebida em resposta à solicitação de sincronização enviada pelo Gerenciador de Tráfego para tentar estabelecer uma conexão.
+    - Uma resposta que não seja ACK ou SYN-ACK for recebida em resposta à solicitação de SYN enviada pelo Gerenciador de tráfego para a tentativa de estabelecimento de uma conexão.
 - Tempo limite. 
 - Qualquer outro problema de conexão que resulte em o ponto de extremidade não estar acessível.
 

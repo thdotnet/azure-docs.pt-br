@@ -9,18 +9,18 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 6/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: c0a76ecd12143e0bbaa9997bfc6d7295df9c4ec7
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 1a9caf83c6f4cd4ed15290afc872043c11234552
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67340873"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508709"
 ---
 # <a name="test-a-stream-analytics-query-with-sample-data"></a>Testar uma consulta do Stream Analytics com dados de exemplo
 
 Usando o Azure Stream Analytics, você pode amostras de dados de entradas ou carregar dados de exemplo para testar consultas no portal do Azure sem iniciar ou interromper um trabalho.
 
-## <a name="upload-sample-data-and-test-the-query"></a>Carregar dados de exemplo e testar a consulta
+## <a name="upload-or-sample-data-from-a-live-source-to-test-the-query"></a>Carregar ou dados de exemplo de uma fonte ao vivo para testar a consulta
 
 1. Entre no Portal do Azure. 
 
@@ -30,7 +30,7 @@ Usando o Azure Stream Analytics, você pode amostras de dados de entradas ou car
 
 4. Para testar sua consulta você pode, em seguida, ou dados de exemplo de uma entrada ao vivo ou carregamento de um arquivo. Os dados devem ser serializados em JSON, CSV ou AVRO. A entrada de exemplo deve ser codificada em UTF-8 e não deve ser compactada. O delimitador somente de vírgula (,) dá suporte para teste da entrada do CSV no portal.
 
-    1. Usando a entrada ao vivo: clique com botão direito em qualquer uma de suas entradas. Em seguida, selecione **dados de exemplo da entrada**. Na próxima tela, você pode definir a duração da amostra.
+    1. Usando a entrada ao vivo: clique com botão direito em qualquer uma de suas entradas. Em seguida, selecione **dados de exemplo da entrada**. Na próxima tela, você pode definir a duração da amostra. Eventos de uma fonte ao vivo de amostragem recuperará até 1000 eventos ou 1 MB (o que vier primeiro), para que os dados amostrados podem não representar o intervalo de tempo integral especificado.
 
     1. Usando o arquivo: clique com botão direito em qualquer uma de suas entradas. Em seguida, selecione **Carregar dados de exemplo do arquivo**. 
 

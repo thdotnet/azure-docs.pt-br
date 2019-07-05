@@ -12,14 +12,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: e87bfad11eee5b86d35e6b4f2846b094c467e0ef
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e0d5363e253e89b32b5eca14366504f0ace39043
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66734178"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67479637"
 ---
-# <a name="status-monitor-v2-api-enable-applicationinsightsmonitoring-v021-alpha"></a>API de v2 do Monitor de status: Enable-ApplicationInsightsMonitoring (v0.2.1-alpha)
+# <a name="status-monitor-v2-api-enable-applicationinsightsmonitoring-v031-alpha"></a>API de v2 do Monitor de status: Enable-ApplicationInsightsMonitoring (v0.3.1-alpha)
 
 Este artigo descreve um cmdlet que é um membro do [módulo do Az.ApplicationMonitor PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
@@ -68,9 +68,9 @@ Neste exemplo:
 ```powershell
 PS C:\> Enable-ApplicationInsightsMonitoring -InstrumentationKeyMap 
     @(@{MachineFilter='.*';AppFilter='WebAppExclude'},
-      @{MachineFilter='.*';AppFilter='WebAppOne';InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx1'},
-      @{MachineFilter='.*';AppFilter='WebAppTwo';InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx2'},
-      @{MachineFilter='.*';AppFilter='.*';InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxdefault'})
+      @{MachineFilter='.*';AppFilter='WebAppOne';InstrumentationSettings=@{InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx1'}},
+      @{MachineFilter='.*';AppFilter='WebAppTwo';InstrumentationSettings=@{InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx2'}},
+      @{MachineFilter='.*';AppFilter='.*';InstrumentationSettings=@{InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxdefault'}})
 
 ```
 
@@ -88,7 +88,7 @@ Você pode criar um script de instalação única para vários computadores, def
 > Aplicativos corresponderá em relação às regras na ordem em que as regras são fornecidas. Portanto, você deve especificar as regras mais específicas primeiro e último as regras mais genéricas.
 
 #### <a name="schema"></a>Esquema
-`@(@{MachineFilter='.*';AppFilter='.*';InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'})`
+`@(@{MachineFilter='.*';AppFilter='.*';InstrumentationSettings=@{InstrumentationKey='xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'}})`
 
 - **MachineFilter** é um necessária C# regex do computador ou nome da VM.
     - '. *' corresponderá a todos
@@ -108,13 +108,19 @@ O mecanismo de instrumentação adiciona sobrecarga e é desativado por padrão.
 ### <a name="-acceptlicense"></a>-AcceptLicense
 **Opcional** Use essa opção para aceitar a declaração de licença e privacidade em instalações sem periféricos.
 
+### <a name="-ignoresharedconfig"></a>-IgnoreSharedConfig
+Quando você tiver um cluster de servidores web, talvez você esteja usando um [configuração compartilhada](https://docs.microsoft.com/iis/web-hosting/configuring-servers-in-the-windows-web-platform/shared-configuration_211).
+O HttpModule não pode ser injetado essa configuração compartilhada.
+Esse script falhará com a mensagem de que as etapas de instalação adicionais são necessárias.
+Use essa opção para ignorar essa verificação e continuar a instalação dos pré-requisitos. Para obter mais informações, consulte [conhecido conflito-com--configuração compartilhada de iis](status-monitor-v2-troubleshoot.md#conflict-with-iis-shared-configuration)
+
 ### <a name="-verbose"></a>-Verbose
 **Parâmetro comum.** Use essa opção para exibir os logs detalhados.
 
 ### <a name="-whatif"></a>-WhatIf 
 **Parâmetro comum.** Use essa opção para testar e validar seus parâmetros de entrada sem, na verdade, habilitando o monitoramento.
 
-## <a name="output"></a>Saída
+## <a name="output"></a>Output
 
 
 #### <a name="example-output-from-a-successful-enablement"></a>Exemplo de saída de uma ativação bem-sucedida

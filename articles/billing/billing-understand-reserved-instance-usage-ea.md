@@ -9,14 +9,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/07/2019
+ms.date: 07/01/2019
 ms.author: banders
-ms.openlocfilehash: b2452580eaecc0ab922f8e7db48676f70831a8ca
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 37d43dbdd8de66a10a94827e313679dc6ffd220d
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66126854"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67490393"
 ---
 # <a name="get-enterprise-agreement-reservation-costs-and-usage"></a>Obter o uso e custos de reserva do Enterprise Agreement
 
@@ -40,7 +40,7 @@ Dados são divididos em dois conjuntos de dados separados: _Custo real_ e _custo
 
 Comparação de dois conjuntos de dados:
 
-| Dados | Conjunto de dados de custo real | Conjunto de dados de custo amortizado |
+| Data | Conjunto de dados de custo real | Conjunto de dados de custo amortizado |
 | --- | --- | --- |
 | Compras de reserva | Disponíveis nessa exibição.<br><br>  Para obter esse filtro de dados em ChargeType = &quot;compra&quot;. <br><br> Consulte ReservationID ou ReservationName saber quais reserva o encargo é cobrado.  | Não aplicável a este modo de exibição. <br><br> Os custos de compra não são fornecidos nos dados amortizados. |
 | effectivePrice | O valor é zero para uso que obtém um desconto de reserva. | O valor é o custo é Rateado por hora da reserva para uso com o desconto de reserva. |

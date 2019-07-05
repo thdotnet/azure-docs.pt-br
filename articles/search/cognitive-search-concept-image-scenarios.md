@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: ca9b3607041f75b1c866aa2813308312ad5d1017
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8bea47467d141869b1a668668bc57451a882a54b
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65023759"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448442"
 ---
 #  <a name="how-to-process-and-extract-information-from-images-in-cognitive-search-scenarios"></a>Como processar e extrair informações de imagens em cenários da pesquisa cognitiva
 
@@ -30,7 +30,7 @@ Este artigo aborda o processamento de imagens em mais detalhes e fornece diretri
 
 Como parte da quebra do documento, há um novo conjunto de parâmetros de configuração do indexador para lidar com arquivos de imagem ou imagens incorporadas em arquivos. Esses parâmetros são usados para normalizar imagens para processamento downstream maior. Normalizar imagens as torna mais uniformes. Imagens grandes são redimensionadas para uma altura e largura máximas, para torná-las consumíveis. Para imagens que fornecem metadados na orientação, a rotação da imagem será ajustada para carregamento vertical. Ajustes de metadados são capturados em um tipo complexo criado para cada imagem. 
 
-Você não pode desativar a normalização de imagem. Habilidades que iteram sobre imagens esperam imagens normalizadas.
+Você não pode desativar a normalização de imagem. Habilidades que iteram sobre imagens esperam imagens normalizadas. A habilitação de normalização de imagem em um indexador requer que um conjunto de qualificações ser anexado ao indexador.
 
 | Parâmetro de configuração | DESCRIÇÃO |
 |--------------------|-------------|

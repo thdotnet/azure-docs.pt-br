@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/27/2018
 ms.author: kumud
-ms.openlocfilehash: 6f33be6e418366f57d243f578035b5c87079c99e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0820285555110e8e85bff814f4774d6da6443f69
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60734449"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67491978"
 ---
 # <a name="standard-load-balancer-and-availability-zones"></a>Load Balancer Standard e Zonas de Disponibilidade
 
@@ -186,7 +186,7 @@ O Load Balancer é propositadamente flexível no contexto de Zonas de Disponibil
 
 O Load Balancer torna simples ter um único IP como um front-end com redundância de zona. Um endereço IP com redundância de zona pode seguramente atender um recurso zonal em qualquer zona e sobreviver a uma ou mais falhas de zona, desde que uma zona permaneça íntegra dentro da região. Por outro lado, um front-end zonal é uma redução do serviço para uma única zona e compartilha o destino com a respectiva zona.
 
-Com redundância de zona não implica plano de controle ou caminho de dados sem ocorrência; é expressamente plano de dados. Fluxos com redundância de zona podem usar qualquer zona e os fluxos de um cliente usarão todas as zonas íntegras em uma região. No caso de falha de zona, os fluxos de tráfego usando zonas íntegras naquele momento não serão afetados.  Fluxos de tráfego usando uma zona no momento da falha de zona podem ser afetados, mas os aplicativos podem recuperar e esses fluxos continuarem nas zonas íntegras remanescentes na região após a retransmissão ou o reestabelecimento, uma vez que o Azure tenha convergido em torno da falha de zona.
+Com redundância de zona não implica plano de controle ou caminho de dados sem ocorrência; é expressamente plano de dados. Fluxos com redundância de zona podem usar qualquer zona e os fluxos de um cliente usarão todas as zonas íntegras em uma região. No caso de falha de zona, os fluxos de tráfego usando zonas íntegras naquele momento não serão afetados.  Fluxos de tráfego usando uma zona no momento da falha de zona podem ser afetados, mas os aplicativos podem recuperar. Esses fluxos continuarem nas zonas íntegras remanescentes na região após a retransmissão ou o reestabelecimento, depois que o Azure tenha convergido em torno da falha de zona.
 
 ### <a name="xzonedesign"></a> Limites entre zonas
 

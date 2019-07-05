@@ -15,12 +15,12 @@ ms.date: 05/21/2019
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6cd5bbba681acaa0c32e681f7cb4809142fe11f9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b6f73d3bf5e502a758dd46561059c15a2970d9b6
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66113233"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67471819"
 ---
 # <a name="review-access-to-groups-or-applications-in-azure-ad-access-reviews"></a>Examinar o acesso a grupos ou revisões de acesso de aplicativos no Azure AD
 
@@ -40,7 +40,7 @@ Para obter mais informações, consulte [quais usuários devem ter licenças?](a
 
 1. Procure um email da Microsoft solicitando que você revisar o acesso. Aqui está um email de exemplo para examinar o acesso de um grupo.
 
-    ![Email de acesso à revisão](./media/perform-access-review/access-review-email.png)
+    ![Email de exemplo da Microsoft para examinar o acesso a um grupo](./media/perform-access-review/access-review-email.png)
 
 1. Clique o **iniciar revisão** link para abrir a revisão de acesso.
 
@@ -48,7 +48,7 @@ Se você não tiver o email, você pode encontrar que seu acesso pendentes revis
 
 1. Entrar no portal do MyApps em [ https://myapps.microsoft.com ](https://myapps.microsoft.com).
 
-    ![Portal do MyApps](./media/perform-access-review/myapps-access-panel.png)
+    ![Aplicativos que você tem permissões para a listagem do portal MyApps](./media/perform-access-review/myapps-access-panel.png)
 
 1. No canto superior direito da página, clique no símbolo do usuário para exibir seu nome e a organização padrão. Se houver mais de uma organização listada, selecione a organização que solicitou uma análise de acesso.
 
@@ -56,7 +56,7 @@ Se você não tiver o email, você pode encontrar que seu acesso pendentes revis
 
     Se o bloco não estiver visível, não haverá revisões de acesso para executar nessa organização e nenhuma ação será necessária no momento.
 
-    ![Lista de revisões de acesso](./media/perform-access-review/access-reviews-list.png)
+    ![Lista de revisões de acesso pendente para aplicativos e grupos](./media/perform-access-review/access-reviews-list.png)
 
 1. Clique o **começar revisão** link para a revisão de acesso que você deseja executar.
 
@@ -66,7 +66,7 @@ Depois que você abriu a revisão de acesso, você verá os nomes de usuários q
 
 Se a solicitação for examinar seu próprio acesso, a página terá uma aparência diferente. Para obter mais informações, consulte [revisar o acesso a grupos ou aplicativos por conta própria](review-your-access.md).
 
-![Executar análise de acesso](./media/perform-access-review/perform-access-review.png)
+![Lista dos usuários que precisam ser revisados de revisão de acesso aberto](./media/perform-access-review/perform-access-review.png)
 
 Há duas maneiras que você pode aprovar ou negar o acesso:
 
@@ -81,7 +81,7 @@ Há duas maneiras que você pode aprovar ou negar o acesso:
 
 1. Clique em **aprovar** ou **negar**. Se você não tiver certeza, você poderá clicar **desconhece**. Isso resultará no usuário mantém o acesso, mas a seleção será refletida nos logs de auditoria.
 
-    ![Executar análise de acesso](./media/perform-access-review/approve-deny.png)
+    ![Janela de ação que inclui aprovar, Deny, e não souber opções](./media/perform-access-review/approve-deny.png)
 
 1. Se necessário, insira um motivo do **motivo** caixa.
 
@@ -102,11 +102,11 @@ Para tornar as revisões de acesso mais rápido e fácil para você, nós també
 
 1. Na barra azul na parte inferior da página, clique em **aceitar recomendações**.
 
-    ![Aceitar recomendações](./media/perform-access-review/accept-recommendations.png)
+    ![Revisão de acesso aberto listagem mostrando o botão de recomendações de aceitar](./media/perform-access-review/accept-recommendations.png)
 
     Você verá um resumo das ações recomendadas.
 
-    ![Aceitar recomendações resumidas](./media/perform-access-review/accept-recommendations-summary.png)
+    ![Janela que exibe um resumo das ações recomendadas](./media/perform-access-review/accept-recommendations-summary.png)
 
 1. Clique em **Okey** para aceitar as recomendações.
 

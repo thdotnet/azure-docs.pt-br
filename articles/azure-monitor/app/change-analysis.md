@@ -10,16 +10,16 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: cawa
-ms.openlocfilehash: 2a31131b662d01f9841a3f1c5b0a6c459a117e77
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 45df8f9e57223ea60a11c6af2187d362184cae2b
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67075375"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443369"
 ---
 # <a name="use-application-change-analysis-preview-in-azure-monitor"></a>Usar análise de alterações de aplicativo (visualização) no Azure Monitor
 
-Quando um problema de site ativo ou uma interrupção ocorre, é essencial determinar rapidamente a causa raiz. Soluções de monitoramento padrão podem alertá-lo a um problema. Eles ainda podem indicar qual componente está falhando. Mas esse alerta não ocorrem sempre imediatamente explica a causa da falha. Você sabe que seu site trabalhado há cinco minutos, e agora estiver quebrado. O que mudou nos últimos cinco minutos? Esta é a pergunta que a análise de alterações de aplicativo é projetado para responder no Azure Monitor. 
+Quando um problema de site ativo ou uma interrupção ocorre, é essencial determinar rapidamente a causa raiz. Soluções de monitoramento padrão podem alertá-lo a um problema. Eles ainda podem indicar qual componente está falhando. Mas esse alerta não ocorrem sempre imediatamente explica a causa da falha. Você sabe que seu site trabalhado há cinco minutos, e agora estiver quebrado. O que mudou nos últimos cinco minutos? Esta é a pergunta que a análise de alterações de aplicativo é projetado para responder no Azure Monitor.
 
 Criando o poder das [grafo de recursos do Azure](https://docs.microsoft.com/azure/governance/resource-graph/overview), análise de alterações fornece percepções sobre as alterações de aplicativo do Azure para aumentar a observação e reduzir o MTTR (tempo médio para reparo).
 
@@ -62,21 +62,18 @@ No Azure Monitor, a análise de alterações atualmente é integrado ao autoaten
 
     ![Captura de tela do "Disponibilidade e desempenho" opções de solução de problemas](./media/change-analysis/availability-and-performance.png)
 
-1. Selecione **falhas do aplicativo**.
+1. Selecione **alterações no aplicativo**. Não que o recurso também está disponível no **aplicativo travar**.
 
-   ![Captura de tela do botão "Falha de aplicativo"](./media/change-analysis/application-crashes-tile.png)
+   ![Captura de tela do botão "Falha de aplicativo"](./media/change-analysis/application-changes.png)
 
 1. Para habilitar a análise de alterações, selecione **habilitar agora**.
 
-   ![Captura de tela das opções de "Falha de aplicativo"](./media/change-analysis/application-crashes.png)
+   ![Captura de tela das opções de "Falha de aplicativo"](./media/change-analysis/enable-changeanalysis.png)
 
-1. Para aproveitar a funcionalidade de análise de alterações completa, ative **análise de alterações**, **examinar alterações de código de**, e **Always on**. Em seguida, selecione **Salvar**.
+1. Ative **análise de alterações** e selecione **salvar**.
 
     ![Captura de tela da interface do usuário "Habilitar análise de alterações"](./media/change-analysis/change-analysis-on.png)
 
-    - Habilitar **análise de alterações** para detectar alterações de nível de recurso. 
-    - Habilitar **examinar alterações de código de** para ver os arquivos de implantação e as alterações de configuração do site. 
-    - Habilitar **Always on** para otimizar o desempenho do exame de alteração. Mas tenha em mente que essa configuração pode resultar em cobranças adicionais.
 
 1. Para acessar a análise de alterações, selecione **diagnosticar e solucionar problemas** > **desempenho e disponibilidade** > **aplicativo travar**. Você verá um gráfico que resume o tipo de alterações ao longo do tempo, juntamente com detalhes sobre essas alterações:
 
@@ -106,7 +103,7 @@ Se sua assinatura inclui vários aplicativos web, permitindo que o serviço no n
         Get-AzureRmProviderFeature -ProviderNamespace "Microsoft.ChangeAnalysis" -ListAvailable #Check for feature flag availability
         Register-AzureRmProviderFeature -FeatureName PreviewAccess -ProviderNamespace Microsoft.ChangeAnalysis #Register feature flag
         ```
-    
+
 1. Registre o provedor de recursos de análise de alterações para a assinatura.
 
    - Vá para **assinaturas**e selecione a assinatura que você deseja habilitar no serviço de alteração. Em seguida, selecione os provedores de recursos:
@@ -121,12 +118,12 @@ Se sua assinatura inclui vários aplicativos web, permitindo que o serviço no n
 
         ```PowerShell
         Get-AzureRmResourceProvider -ListAvailable | Select-Object ProviderNamespace, RegistrationState #Check if RP is ready for registration
-    
+
         Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.ChangeAnalysis" #Register the Change Analysis RP
         ```
 
         Para usar o PowerShell para definir um marcador oculto em um aplicativo web, execute o seguinte comando:
-    
+
         ```powershell
         $webapp=Get-AzWebApp -Name <name_of_your_webapp>
         $tags = $webapp.Tags

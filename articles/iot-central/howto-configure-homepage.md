@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: b1edd4777839c947cf8f60bb6857f939553e2603
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e6947a4f15797028274d49069d9e2787b143860d
+ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65467590"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67503216"
 ---
 # <a name="configure-the-application-dashboard"></a>Configurar o painel do aplicativo
 
@@ -41,6 +41,8 @@ Agora, quando um operador exibe o painel do aplicativo padrão, eles veem o bloc
 ![Guia "Painel" com as configurações e propriedades exibidas para o bloco](media/howto-configure-homepage/image4a.png)
 
 Você pode explorar os outros tipos de bloco na biblioteca para descobrir como personalizar ainda mais o painel do aplicativo padrão.
+
+Para saber mais sobre como usar blocos no Azure IoT Central, consulte [usar blocos de dashboard](howto-use-tiles.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 

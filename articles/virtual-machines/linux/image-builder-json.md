@@ -7,12 +7,12 @@ ms.date: 05/10/2019
 ms.topic: article
 ms.service: virtual-machines-linux
 manager: jeconnoc
-ms.openlocfilehash: cf8264cbad3c5c88c58cff3b95cb5c68adf0686c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a577a2a2a3b21cb027ba699450631a627f4f7a39
+ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65538289"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67501880"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Visualização: Criar um modelo do construtor de imagens do Azure 
 
@@ -51,11 +51,11 @@ O `type` é o tipo de recurso, que deve ser `"Microsoft.VirtualMachineImages/ima
     "apiVersion": "2019-05-01-preview",
 ```
 
-## <a name="location"></a>Local padrão
+## <a name="location"></a>Location
 
 O local é a região onde a imagem personalizada será criada. Para a visualização do construtor de imagens, há suporte para as regiões a seguir:
 
-- Leste dos EUA
+- East US
 - Leste dos EUA 2
 - Centro-Oeste dos EUA
 - Oeste dos EUA
@@ -331,6 +331,8 @@ Isso é compatível com diretórios do Windows e caminhos de Linux, mas há algu
  
  
 Se houver um erro tentando baixar o arquivo ou colocá-lo em um diretório especificado, a etapa de personalizar falhará e isso terá o customization.log.
+
+>> Observação! Personalizador do arquivo só é adequado para downloads de arquivos pequenos, < 20MB. Para downloads de arquivos maiores, use um script embutido comando ou, o código de uso para baixar arquivos, como Linux `wget` ou `curl`, Windows, `Invoke-WebRequest`.
 
 Arquivos no personalizador do arquivo podem ser baixados do armazenamento do Azure usando o [MSI](https://github.com/danielsollondon/azvmimagebuilder/tree/master/quickquickstarts/7_Creating_Custom_Image_using_MSI_to_Access_Storage).
 

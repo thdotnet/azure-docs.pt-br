@@ -10,12 +10,12 @@ ms.assetid: 04b05dea-c066-44a0-9751-0774eb84c689
 ms.service: sql-data-warehouse
 ms.topic: article
 ms.date: 04/03/2019
-ms.openlocfilehash: 999c75d07ef7e24d4d75587b6b42a4ab1b2192cf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3141f3a1d6a9f09261dee4113276af72168e35e8
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65596120"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67444701"
 ---
 # <a name="upgrade-your-data-warehouse-to-gen2"></a>Atualizar o seu data warehouse para Gen2
 
@@ -43,7 +43,7 @@ A tabela a seguir resume por região quando a camada de computação inferior Ge
 | Norte da China |\* |\* |
 | Norte da China 2 |Disponível |Somente Gen2 |
 | Ásia Oriental |Disponível |1 de junho de 2019 |
-| Leste dos EUA |Disponível |1 de junho de 2019 |
+| East US |Disponível |1 de junho de 2019 |
 | Leste dos EUA 2 |Disponível |1 de junho de 2019 |
 | França Central |\* |1 de junho de 2019 |
 | Alemanha Central |\* |\* |
@@ -67,7 +67,7 @@ A tabela a seguir resume por região quando a camada de computação inferior Ge
 
 ## <a name="automatic-upgrade-process"></a>Processo de atualização automática
 
-Com base no gráfico de disponibilidade acima, podemos vai ser agendar atualizações automatizadas para suas instâncias Gen1. Para evitar interrupções inesperadas de disponibilidade do data warehouse, as atualizações automatizadas serão agendadas durante o seu agendamento de manutenção. A capacidade de criar uma nova instância de Gen1 será desativada em regiões em processo de atualização automática para Gen2. Para saber mais sobre agendamentos, consulte [Exibir um agendamento de manutenção](viewing-maintenance-schedule.md)
+Com base no gráfico de disponibilidade acima, podemos vai ser agendar atualizações automatizadas para suas instâncias Gen1. Para evitar interrupções inesperadas de disponibilidade do data warehouse, as atualizações automatizadas serão agendadas durante o seu agendamento de manutenção. A capacidade de criar uma nova instância de Gen1 será desativada em regiões em processo de atualização automática para Gen2. Gen1 será preterido após concluir as atualizações automáticas. Para saber mais sobre agendamentos, consulte [Exibir um agendamento de manutenção](viewing-maintenance-schedule.md)
 
 O processo de atualização envolverá uma breve queda na conectividade (aproximadamente 5 min) como podemos reiniciar seu data warehouse.  Depois que o data warehouse for reiniciado, ele estará totalmente disponível para uso. No entanto, você pode enfrentar uma degradação no desempenho durante o processo de atualização continua a atualizar os arquivos de dados em segundo plano. O tempo total para a degradação do desempenho varia de acordo com o tamanho dos seus arquivos de dados.
 
@@ -131,7 +131,7 @@ Para saber mais, confira [Atualizar para Gen2](upgrade-to-latest-generation.md).
 - R: Se você estiver executando um DW600 ou DW1200 em Gen1, é aconselhável usar DW500c ou DW1000c, respectivamente, pois Gen2 fornece mais memória e recursos, além de um desempenho mais alto do que Gen1.
 
 **P: Posso desabilitar o backup geográfico?**
-- R:  Não. O backup geográfico é um recurso corporativo para preservar a disponibilidade do seu data warehouse no caso de uma região se tornar indisponível. Abra uma [solicitação de suporte](sql-data-warehouse-get-started-create-support-ticket.md) em caso de outras dúvidas.
+- R: Não. O backup geográfico é um recurso corporativo para preservar a disponibilidade do seu data warehouse no caso de uma região se tornar indisponível. Abra uma [solicitação de suporte](sql-data-warehouse-get-started-create-support-ticket.md) em caso de outras dúvidas.
 
 **P: Há uma diferença na sintaxe do T-SQL entre Gen1 e Gen2?**
 
@@ -143,7 +143,7 @@ Para saber mais, confira [Atualizar para Gen2](upgrade-to-latest-generation.md).
 
 **P: Serei capaz de criar uma nova instância de Gen1 depois que minha região for atualizada?**
 
-- R:  Não. Depois que uma região for atualizada, a criação de novas instâncias de Gen1 será desabilitada.
+- R: Não. Depois que uma região for atualizada, a criação de novas instâncias de Gen1 será desabilitada.
 
 ## <a name="next-steps"></a>Próximas etapas
 

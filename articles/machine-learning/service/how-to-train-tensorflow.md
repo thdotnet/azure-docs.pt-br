@@ -10,12 +10,12 @@ ms.author: minxia
 author: mx-iao
 ms.date: 06/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: e1f587785b06f10bab42a425b0910d4f25fddf9f
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: a13afe56e007e2371b3193003ee95266b0750569
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165550"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67543787"
 ---
 # <a name="train-and-register-tensorflow-models-at-scale-with-azure-machine-learning-service"></a>Treinar e registrar os modelos de TensorFlow em escala com serviço de Azure Machine Learning
 
@@ -23,7 +23,7 @@ Este artigo mostra como treinar e registrar um modelo do TensorFlow usando o ser
 
 TensorFlow é uma estrutura de código-fonte aberto computacional comumente usada para criar redes neurais profundas (DNN). Com o serviço de Azure Machine Learning, você pode expandir rapidamente os trabalhos de treinamento do código-fonte aberto usando recursos de computação de nuvem elásticos. Você também pode acompanhar suas execuções de treinamento, modelos de versão, implante modelos e muito mais.
 
-Se você estiver desenvolvendo um modelo do TensorFlow desde o início ou está trazendo um modelo existente para a nuvem, o serviço Azure Machine Learning pode ajudá-lo a criar modelos prontos para produção.
+Se você estiver desenvolvendo um modelo do TensorFlow desde o início ou está trazendo uma [modelo existente](how-to-deploy-existing-model.md) para a nuvem, serviço de Azure Machine Learning pode ajudá-lo a criar modelos prontos para produção.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -290,7 +290,7 @@ cluster_spec = tf.train.ClusterSpec(cluster)
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste artigo, você treinado e registrou um modelo do TensorFlow no serviço do Azure Machine Learning. Para saber como implantar um modelo, continue com o nosso artigo de implantação de modelo.
+Neste artigo, você treinado e registrou um modelo do TensorFlow. Para saber como implantar um modelo em um cluster habilitado para GPU, continue com o nosso artigo de implantação de modelo GPU.
 
-> [!div class="nextstepaction"]
-> [Como e onde implantar modelos](how-to-deploy-and-where.md)
+[Como implantar para inferência com GPUs](how-to-deploy-inferencing-gpus.md)
+[como monitorar com Tensorboard](how-to-monitor-tensorboard.md)

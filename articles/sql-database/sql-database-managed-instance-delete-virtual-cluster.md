@@ -11,13 +11,13 @@ author: danimir
 ms.author: danil
 ms.reviewer: douglas, carlrab, sstein
 manager: craigg
-ms.date: 05/07/2019
-ms.openlocfilehash: ec5d99e160e739f59e2bf2ea369fe83e9900a1f1
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.date: 06/26/2019
+ms.openlocfilehash: 4679ecda210fa78aad4315bc6602b67dd1795ce9
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295308"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67427981"
 ---
 # <a name="delete-a-subnet-after-deleting-an-azure-sql-database-managed-instance"></a>Excluir uma sub-rede depois que a exclusão de um banco de dados do SQL Azure a instância gerenciada
 
@@ -41,6 +41,9 @@ Depois de localizar o cluster virtual que deseja excluir, selecione esse recurso
 ![Captura de tela do portal do Azure Virtual clusters do painel, com a opção de exclusão realçada](./media/sql-database-managed-instance-delete-virtual-cluster/virtual-clusters-delete.png)
 
 A área de notificações do portal do Azure mostra a confirmação de que o cluster virtual foi excluído. Exclusão bem-sucedida de cluster virtual libera imediatamente a sub-rede para reutilização.
+
+> [!TIP]
+> Se não há nenhuma instância gerenciada, mostrada no cluster virtual, e não é possível excluir o cluster virtual, certifique-se de que você não tiver uma implantação de instância contínuo em andamento. Isso inclui a implantações iniciadas e canceladas que ainda estão em andamento. Revisar as implantações do guia do grupo de recursos, a instância foi implantado para indicará que todas as implantações em andamento. Nesse caso, o await para a implantação concluir, exclua a instância gerenciada e, em seguida, o cluster virtual.
 
 ## <a name="delete-virtual-cluster-by-using-the-api"></a>Excluir o cluster virtual por meio da API
 

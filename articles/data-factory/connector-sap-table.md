@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 06/10/2018
+ms.date: 06/26/2018
 ms.author: jingwang
-ms.openlocfilehash: 49f07b4aaadfd45e9743bde58dc715230e5bc983
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e54a69b6c2b48e50c089f8b6b7458cf91133dd85
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67074060"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443294"
 ---
 # <a name="copy-data-from-sap-table-using-azure-data-factory"></a>Copiar dados da tabela de SAP usando o Azure Data Factory
 
@@ -206,16 +206,16 @@ Para copiar dados da tabela de SAP, há suporte para as propriedades a seguir.
 
 | Propriedade                         | DESCRIÇÃO                                                  | Obrigatório |
 | :------------------------------- | :----------------------------------------------------------- | :------- |
-| type                             | A propriedade type deve ser definida como **SapTableSource**.       | Sim      |
+| type                             | A propriedade type deve ser definida como **SapTableSource**.         | Sim      |
 | rowCount                         | Número de linhas a serem recuperadas.                              | Não       |
 | rfcTableFields                   | Campos a serem copiados da tabela de SAP. Por exemplo: `column0, column1`. | Não       |
 | rfcTableOptions                  | Opções para filtrar as linhas na tabela de SAP. Por exemplo: `COLUMN0 EQ 'SOMEVALUE'`. Consulte a descrição mais abaixo desta tabela. | Não       |
-| customRfcReadTableFunctionModule | Módulo personalizado de função RFC que pode ser usado para ler dados da tabela de SAP. | Não       |
+| customRfcReadTableFunctionModule | Módulo personalizado de função RFC que pode ser usado para ler dados da tabela de SAP.<br>Você pode usar o módulo de função RFC personalizado para definir como os dados são recuperados de seu sistema SAP e retornada ao ADF. Embora, observe que o módulo de função personalizada precisa ter semelhante interface implementada (importar, exportar, tabelas), semelhante a como/SAPDS/RFC_READ_TABLE2 por padrão usado pelo ADF. | Não       |
 | partitionOption                  | O mecanismo de partição para ler da tabela SAP. As opções com suporte incluem: <br/>- **None**<br/>- **PartitionOnInt** (inteiro normal ou valores inteiros com preenchimento de zero à esquerda, como 0000012345)<br/>- **PartitionOnCalendarYear** (4 dígitos no formato "Aaaa")<br/>- **PartitionOnCalendarMonth** (6 dígitos no formato "YYYYMM")<br/>- **PartitionOnCalendarDate** (8 dígitos no formato "AAAAMMDD") | Não       |
-| partitionColumnName              | O nome da coluna para particionar os dados. | Não       |
+| partitionColumnName              | O nome da coluna para particionar os dados.                | Não       |
 | partitionUpperBound              | O valor máximo da coluna especificada em `partitionColumnName` que será usado para o particionamento de continuar. | Não       |
 | partitionLowerBound              | O valor mínimo da coluna especificada em `partitionColumnName` que será usado para o particionamento de continuar. | Não       |
-| maxPartitionsNumber              | O número máximo de partições para dividir os dados. | Não       |
+| maxPartitionsNumber              | O número máximo de partições para dividir os dados.     | Não       |
 
 >[!TIP]
 >- Se sua tabela SAP tem um grande volume de dados, como vários bilhões de linhas, use `partitionOption` e `partitionSetting` para dividir os dados em partições pequenas, caso em que os dados são lidos por partições e cada partição de dados é recuperado do servidor SAP por meio de um único Chamada RFC.<br/>
@@ -278,7 +278,7 @@ Ao copiar dados da tabela de SAP, os seguintes mapeamentos são usados de tipos 
 
 | Tipo SAP ABAP | Tipo de dados provisório do Data Factory |
 |:--- |:--- |
-| C (Cadeia de caracteres) | Cadeia de caracteres |
+| C (Cadeia de caracteres) | String |
 | Eu (Integer) | Int32 |
 | F (Flutuante) | Double |
 | D (Data) | Cadeia de caracteres |

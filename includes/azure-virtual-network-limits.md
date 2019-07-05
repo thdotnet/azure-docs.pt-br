@@ -5,15 +5,15 @@ services: networking
 author: anavinahar
 ms.service: networking
 ms.topic: include
-ms.date: 06/13/2019
+ms.date: 06/25/2019
 ms.author: anavin
 ms.custom: include file
-ms.openlocfilehash: bb13ecb2d9014dbf56823734ac28703df9755b4b
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 3e66bf61caf786473d89eab9a6567bb05aff0d19
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277103"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67457213"
 ---
 <a name="azure-resource-manager-virtual-networking-limits"></a>Limites de rede - os limites a seguir aplicam-se apenas recursos gerenciados por meio de rede do Azure Resource Manager **do Azure Resource Manager** por região e assinatura. Saiba como [exibir seu uso de recursos atual em relação a seus limites de assinatura](../articles/networking/check-usage-against-limits.md).
 
@@ -75,7 +75,7 @@ Os limites a seguir aplicam-se apenas a recursos de rede gerenciados pelo Azure 
 
 | Resource | Limite padrão | Limite máximo |
 | --- | --- | --- |
-| Redes virtuais |50 |100 |
+| Redes virtuais |100 |100 |
 | Sites de redes locais |20 |Entre em contato com o suporte. |
 | Servidores DNS por rede virtual |20 |20 |
 | Endereços IP privados por rede virtual |4\.096 |4\.096 |
@@ -84,8 +84,8 @@ Os limites a seguir aplicam-se apenas a recursos de rede gerenciados pelo Azure 
 | Regras de NSG por NSG |1\.000 |1\.000 |
 | Tabelas de rotas definidas pelo usuário |200 |200 |
 | Rotas definidas pelo usuário por tabela de rotas |400 |400 |
-| Endereços IP públicos (dinâmicos) |5 |Contate o suporte |
-| Endereços IP públicos reservados |20 |Contate o suporte |
+| Endereços IP públicos (dinâmicos) |500 |500 |
+| Endereços IP públicos reservados |500 |500 |
 | VIP público por implantação |5 |Contate o suporte |
 | VIP privado (balanceamento de carga interno) por implantação |1 |1 |
 | Listas de controle de acesso do ponto de extremidade (ACLs) |50 |50 |

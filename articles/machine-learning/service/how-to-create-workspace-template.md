@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 04/16/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 2c5491bab9b45df11c2fe81aa933a1a34c49a41b
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 4e0af3b395ec640fd037a1e76365408c10613340
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205933"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67477008"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning-service"></a>Usar um modelo do Azure Resource Manager para criar um espaço de trabalho para o serviço de Azure Machine Learning
 
@@ -103,6 +103,19 @@ az group deployment create \
 ```
 
 Para obter mais informações, consulte [Implantar recursos com modelos do Resource Manager e da CLI do Azure](../../azure-resource-manager/resource-group-template-deploy-cli.md) e [implantar modelo do Resource Manager privado com o token SAS e a CLI do Azure](../../azure-resource-manager/resource-manager-cli-sas-token.md).
+
+## <a name="azure-key-vault-access-policy-and-azure-resource-manager-templates"></a>Política de acesso do Cofre de chaves do Azure e modelos do Azure Resource Manager
+
+Quando você usa um modelo do Azure Resource Manager para criar o espaço de trabalho e recursos associados (incluindo o Azure Key Vault), várias vezes. Por exemplo, usando o modelo várias vezes com os mesmos parâmetros como parte de um pipeline de implantação e integração contínua.
+
+A maioria das operações de criação de recursos por meio de modelos são idempotentes, mas o Cofre de chaves limpa as políticas de acesso de cada vez que o modelo é usado. Limpando o acesso de quebras políticas de acesso para o Cofre de chaves para qualquer espaço de trabalho existente que está sendo usado. Por exemplo, as funcionalidades de parada/criar blocos de anotações de VM do Azure podem falhar.  
+
+Para evitar esse problema, recomendamos que uma das seguintes abordagens:
+
+*  Não implante o modelo mais de uma vez para os mesmos parâmetros. Ou exclua os recursos existentes antes de usar o modelo para recriá-los.
+  
+* Examine as políticas de acesso do Cofre de chaves e, em seguida, usar essas políticas para definir a propriedade accessPolicies do modelo.
+* Verifique se o recurso de Cofre de chaves já existe. Se isso acontecer, não recriá-lo por meio do modelo. Por exemplo, adicione um parâmetro que permite que você desabilite a criação do recurso Cofre de chaves, se ele já existe.
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -13,15 +13,15 @@ ms.topic: conceptual
 ms.workload: tbd
 ms.date: 09/05/2018
 ms.author: mbullwin
-ms.openlocfilehash: eb7cbb80be12498242363eb8141a468e08cba73a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 64995ad0560efd06bfa0084c948527e8a01e1890
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66478317"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443328"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Application Insights para serviços de nuvem do Azure
-O [Application Insights][start] pode monitorar os [aplicativos de serviço de nuvem do Azure](https://azure.microsoft.com/services/cloud-services/) para analisar a disponibilidade, o desempenho, as falhas e o uso combinando os dados de SDKs do Application Insights com os dados do [Diagnóstico do Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) a partir de seus serviços de nuvem. Com os comentários que você obtiver sobre o desempenho e a eficiência de seu aplicativo em uso, você pode fazer escolhas informadas sobre a direção do projeto em cada ciclo de vida de desenvolvimento.
+[Application Insights][start] pode monitorar [aplicativos do serviço de nuvem do Azure](https://azure.microsoft.com/services/cloud-services/) de disponibilidade, desempenho, falhas e uso combinando os dados de SDKs do Application Insights com [diagnóstico do Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics)dados de seus serviços de nuvem. Com os comentários que você obtiver sobre o desempenho e a eficiência de seu aplicativo em uso, você pode fazer escolhas informadas sobre a direção do projeto em cada ciclo de vida de desenvolvimento.
 
 ![Visão geral do dashboard](./media/cloudservices/overview-graphs.png)
 
@@ -80,7 +80,7 @@ Para enviar a telemetria para os recursos apropriados, você pode configurar o S
 
 Se você decidiu criar um recurso separado para cada função (e talvez um conjunto separado para cada configuração de build), é mais fácil criar todos eles no portal do Application Insights. Se você cria muitos recursos, pode [automatizar o processo](../../azure-monitor/app/powershell.md).
 
-1. No [portal do Azure][portal], selecione **Novo** > **Serviços do desenvolvedor** > **Application Insights**.  
+1. No [portal do Azure][portal], selecione **New** > **serviços de desenvolvedor** > **Application Insights**.  
 
     ![Painel do Application Insights](./media/cloudservices/01-new.png)
 
@@ -91,7 +91,7 @@ Se você decidiu criar um recurso separado para cada função (e talvez um conju
 ## <a name="set-up-azure-diagnostics-for-each-role"></a>Configurar o diagnóstico do Azure para cada função
 Defina esta opção para monitorar seu aplicativo com o Application Insights. Para funções Web, esta opção fornece monitoramento de desempenho, alertas, diagnóstico e análise de uso. Para as demais funções, você pode pesquisar e monitorar o Diagnóstico do Azure, como reinicialização, contadores de desempenho e chamadas para System.Diagnostics.Trace. 
 
-1. No Gerenciador de Soluções do Visual Studio, em **\<SeuServiçoDeNuvem>**  > **Funções**, abra as propriedades de cada função.
+1. No Gerenciador de Soluções do Visual Studio, em **\<SeuServiçoDeNuvem>** > **Funções**, abra as propriedades de cada função.
 
 1. Em **Configuração**, marque a caixa de seleção **Enviar dados de diagnóstico para o Application Insights** e, então, selecione o recurso do Application Insights criado anteriormente.
 
@@ -112,7 +112,7 @@ No Visual Studio, configure o SDK do Application Insights para cada projeto de a
 
 1. Para configurar as **funções de trabalho**: 
 
-    a. Clique com o botão direito do mouse no projeto e selecione **Gerenciar Pacotes NuGet**.
+     a. Clique com o botão direito do mouse no projeto e selecione **Gerenciar Pacotes NuGet**.
 
     b. Adicione [Application Insights para Windows Servers](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/).
 
@@ -120,7 +120,7 @@ No Visual Studio, configure o SDK do Application Insights para cada projeto de a
 
 1. Para configurar o SDK para enviar dados ao recurso do Application Insights:
 
-    a. Em uma função de inicialização adequada, defina a chave de instrumentação na configuração no arquivo *.cscfg*:
+     a. Em uma função de inicialização adequada, defina a chave de instrumentação na configuração no arquivo *.cscfg*:
  
     ```csharp
    
@@ -136,7 +136,38 @@ No Visual Studio, configure o SDK do Application Insights para cada projeto de a
 1. Defina o arquivo *ApplicationInsights.config* para sempre ser copiado no diretório de saída.  
     Uma mensagem no arquivo *. config* solicitará que você coloque a chave de instrumentação lá. No entanto, para aplicativos de nuvem, é melhor defini-la no arquivo *.cscfg*. Essa abordagem garante que a função seja identificada corretamente no portal.
 
-#### <a name="run-and-publish-the-app"></a>Executar e publicar o aplicativo
+## <a name="set-up-status-monitor-to-collect-full-sql-queries-optional"></a>Configurar o Monitor de Status para coletar consultas completas do SQL (opcional)
+
+Esta etapa só é necessário se você deseja capturar consultas completas do SQL no .NET Framework. 
+
+1. Na `\*.csdef` adicionar de arquivo [tarefa de inicialização](https://docs.microsoft.com/azure/cloud-services/cloud-services-startup-tasks) para cada função semelhante a 
+
+    ```xml
+    <Startup>
+      <Task commandLine="AppInsightsAgent\InstallAgent.bat" executionContext="elevated" taskType="simple">
+        <Environment>
+          <Variable name="ApplicationInsightsAgent.DownloadLink" value="http://go.microsoft.com/fwlink/?LinkID=522371" />
+          <Variable name="RoleEnvironment.IsEmulated">
+            <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
+          </Variable>
+        </Environment>
+      </Task>
+    </Startup>
+    ```
+    
+2. Baixe [InstallAgent.bat](https://github.com/microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/AppInsightsAgent/InstallAgent.bat) e [InstallAgent.ps1](https://github.com/microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/AppInsightsAgent/InstallAgent.ps1), coloque-as no `AppInsightsAgent` pasta em cada projeto de função. Certifique-se de copiá-los para o diretório de saída por meio das propriedades de arquivo do Visual Studio ou scripts de compilação.
+
+3. Em todas as funções de trabalho, adicione variáveis de ambiente: 
+
+    ```xml
+      <Environment>
+        <Variable name="COR_ENABLE_PROFILING" value="1" />
+        <Variable name="COR_PROFILER" value="{324F817A-7420-4E6D-B3C1-143FBED6D855}" />
+        <Variable name="MicrosoftInstrumentationEngine_Host" value="{CA487940-57D2-10BF-11B2-A3AD5A13CBC0}" />
+      </Environment>
+    ```
+    
+## <a name="run-and-publish-the-app"></a>Executar e publicar o aplicativo
 
 1. Execute o aplicativo e entre no Azure. 
 
@@ -146,10 +177,10 @@ No Visual Studio, configure o SDK do Application Insights para cada projeto de a
 1. Adicione mais telemetria (consulte as próximas seções) e, em seguida, publique seu aplicativo para obter comentários em tempo real sobre o diagnóstico e o uso. 
 
 Se não houver nenhum dado, faça o seguinte:
-1. Para exibir eventos individuais, abra o bloco [Pesquisar][diagnostic].
+1. Para exibir os eventos individuais, abra o [pesquisa][diagnostic] lado a lado.
 1. No aplicativo, abra várias páginas para que ele gere alguma telemetria.
 1. Aguarde alguns segundos e, então, clique em **Atualizar**.  
-    Para saber mais, consulte a [Solução de problemas][qna].
+    Para saber mais, confira [Solução de problemas][qna].
 
 ## <a name="view-azure-diagnostics-events"></a>Exibir eventos do Diagnóstico do Azure
 É possível encontrar as informações do [Diagnóstico do Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) no Application Insights, nos seguintes locais:
@@ -223,10 +254,10 @@ Faça assim:
 * Adicione o inicializador de telemetria personalizado. Você pode fazer isso no arquivo *ApplicationInsights.config* ou no código, [conforme mostrado neste exemplo](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/WorkerRoleA.cs#L233).
 
 ## <a name="client-telemetry"></a>Telemetria do cliente
-Para obter a telemetria baseada em navegador, como contagens de exibição de página, tempos de carregamento de página ou exceções de script e para escrever a telemetria personalizada em seus scripts de página, consulte [Adicionar o SDK do JavaScript a suas páginas da Web][client].
+Para obter a telemetria baseada em navegador, como contagens de exibição de página, tempos de carregamento de página ou exceções de script e escreva telemetria personalizada em seus scripts de página, consulte [adicionar o SDK do JavaScript a suas páginas da Web][client].
 
 ## <a name="availability-tests"></a>Testes de disponibilidade
-Para certificar-se de que seu aplicativo permaneça operante e responsivo, [configure os testes da Web][availability].
+Para certificar-se de seu aplicativo permaneça responsivo e ao vivo [Configure testes da web][availability].
 
 ## <a name="display-everything-together"></a>Exibir tudo juntos
 Para obter uma visão geral do seu sistema, é possível exibir os gráficos de monitoramento da chave em um [dashboard](../../azure-monitor/app/overview-dashboard.md). Por exemplo, você pode fixar as contagens de solicitação e de falha de cada função. 

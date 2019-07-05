@@ -7,12 +7,12 @@ ms.service: storage
 ms.topic: article
 ms.author: normesta
 ms.date: 05/28/2019
-ms.openlocfilehash: 61477767c59dd521e3f46db4445238a5a1ea759e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5ab24a99b22fae172b5308ba7477953f27ecfd44
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67071447"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67435945"
 ---
 # <a name="host-a-static-website-in-azure-storage"></a>Hospedar um site estático no armazenamento do Azure
 
@@ -44,13 +44,7 @@ Você pode habilitar a hospedagem de site estático usando o [Interface de linha
 
 1. Primeiro, abra o [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview?view=azure-cli-latest), ou se você tiver [instalado](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) a CLI do Azure localmente, abra um aplicativo de console de comando, como o Windows PowerShell.
 
-2. Na janela de comandos que você já abriu, instale a extensão de visualização do armazenamento.
-
-   ```azurecli-interactive
-   az extension add --name storage-preview
-   ```
-
-3. Se sua identidade estiver associada a mais de uma assinatura, em seguida, defina seu ativo a assinatura da conta de armazenamento que irá hospedar seu site estático.
+2. Se sua identidade estiver associada a mais de uma assinatura, em seguida, defina seu ativo a assinatura da conta de armazenamento que irá hospedar seu site estático.
 
    ```azurecli-interactive
    az account set --subscription <subscription-id>
@@ -58,7 +52,7 @@ Você pode habilitar a hospedagem de site estático usando o [Interface de linha
 
    Substitua o `<subscription-id>` valor de espaço reservado com a ID da sua assinatura.
 
-4. Habilite a hospedagem de site estático.
+3. Habilite a hospedagem de site estático.
 
    ```azurecli-interactive
    az storage blob service-properties update --account-name <storage-account-name> --static-website --404-document <error-document-name> --index-document <index-document-name>
@@ -70,7 +64,7 @@ Você pode habilitar a hospedagem de site estático usando o [Interface de linha
 
    * Substitua o `<index-document-name>` espaço reservado com o nome do documento de índice. Este documento geralmente é "index. html".
 
-5. Carregar objetos para o contêiner *$web* de um diretório de origem.
+4. Carregar objetos para o contêiner *$web* de um diretório de origem.
 
    > [!NOTE]
    > Se você estiver usando o Azure Cloud Shell, certifique-se de adicionar um `\` caractere de escape para se referir ao `$web` contêiner (por exemplo: `\$web`). Se você estiver usando uma instalação local da CLI do Azure, em seguida, você não precisará usar o caractere de escape.

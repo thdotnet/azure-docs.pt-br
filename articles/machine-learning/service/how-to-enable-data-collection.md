@@ -11,19 +11,19 @@ ms.author: marthalc
 author: marthalc
 ms.date: 12/03/2018
 ms.custom: seodec18
-ms.openlocfilehash: df2f0731aff6c90ef83b26041a9d383ce14974c6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f596fb3a066017f0236de5b79586891dd21efb11
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65024239"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443988"
 ---
 # <a name="collect-data-for-models-in-production"></a>Coletar dados para modelos em produção
 
 Neste artigo, você pode aprender como coletar dados de modelo de entrada dos serviços de Aprendizado de Máquina do Azure que você implantou no Azure Kubernetes Cluster (AKS) em um armazenamento de Blob do Azure. 
 
 Depois de ativado, esses dados coletados ajudam você a:
-* Monitora os desvios de dados à medida que os dados de produção entram no seu modelo
+* [Monitorar dados canteiros](how-to-monitor-data-drift.md) como dados de produção entra em seu modelo
 
 * Tome melhores decisões sobre quando treinar ou otimizar seu modelo
 

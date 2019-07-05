@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 05/06/2019
 ms.author: cynthn
 ms.custom: ''
-ms.openlocfilehash: f63b705f7967eeddaf522941d6db9be5d9f2719d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 93734045cd06f279f37d7725aa573a59c4ec0be9
+ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66245012"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67465708"
 ---
 # <a name="create-a-shared-image-gallery-using-the-azure-portal"></a>Criar uma galeria de imagem compartilhada usando o portal do Azure
 
@@ -53,6 +53,9 @@ Ao trabalhar com este artigo, substitua o grupo de recursos e os nomes de VM qua
 ## <a name="create-vms-from-an-image"></a>Criar VMs de uma imagem
 
 Depois que a versão da imagem estiver completa, você poderá criar uma ou mais novas VMs. 
+
+> [!IMPORTANT]
+> Você não pode usar o portal para implantar uma VM de uma imagem em outro locatário do azure. Para criar uma VM de uma imagem compartilhada entre locatários, você deve usar o [CLI do Azure](../linux/shared-images.md#create-a-vm) ou [Powershell](shared-images.md#create-vms-from-an-image).
 
 Este exemplo cria uma VM chamada *myVMfromImage* no *myResourceGroup* no datacenter do *Leste dos EUA*.
 

@@ -9,12 +9,12 @@ ms.date: 11/13/2018
 ms.topic: conceptual
 ms.author: raynew
 manager: carmonm
-ms.openlocfilehash: 83cfd2b7ccdf8ec14e828baec1031e11b28c988c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 21c832235eeb86dcea94e70f34abaf4ec3489c3c
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66427371"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67509607"
 ---
 # <a name="azure-backup-server-protection-matrix"></a>Matriz de proteção do Servidor de Backup do Azure
 
@@ -22,7 +22,7 @@ Este artigo lista os vários servidores e as cargas de trabalho que você pode p
 
 ## <a name="protection-support-matrix"></a>Matriz de suporte de proteção
 
-|Carga de trabalho|Version|Servidor de Backup do Azure</br> instalação|Serviço de Backup do Azure</br> Servidor V3|Serviço de Backup do Azure</br> Servidor V2|Proteção e recuperação|
+|Carga de trabalho|Versão|Servidor de Backup do Azure</br> instalação|Serviço de Backup do Azure</br> Servidor V3|Serviço de Backup do Azure</br> Servidor V2|Proteção e recuperação|
 |------------|-----------|---------------|--------------|---------------|-----------------|
 |Computadores cliente (64 bits e 32 bits)|Windows 10|Servidor físico<br /><br />Máquina virtual do Hyper-V<br /><br />Máquinas Virtuais VMware|S|S|Volume, compartilhamento, pasta, arquivos, volumes com duplicados eliminados<br /><br />Os volumes protegidos devem ser NTFS. FAT e FAT32 não têm suporte.<br /><br />Os volumes devem ter no mínimo 1 GB. O DPM usa o Serviço de cópias de sombra de volume (VSS) para capturar o instantâneo de dados e o instantâneo só funcionará se o volume tiver pelo menos 1 GB.|
 |Computadores cliente (64 bits e 32 bits)|Windows 8.1|Servidor físico<br /><br />Máquina virtual do Hyper-V|S|S|Arquivos<br /><br />Os volumes protegidos devem ser NTFS. FAT e FAT32 não têm suporte.<br /><br />Os volumes devem ter no mínimo 1 GB. O DPM usa o Serviço de cópias de sombra de volume (VSS) para capturar o instantâneo de dados e o instantâneo só funcionará se o volume tiver pelo menos 1 GB.|
@@ -79,8 +79,8 @@ Este artigo lista os vários servidores e as cargas de trabalho que você pode p
 |Host do Hyper-V – agente de proteção do DPM no servidor host do Hyper-V, cluster ou VM|Windows Server 2012 – Datacenter e Standard|Servidor físico<br /><br />Máquina virtual local do Hyper-V|S|S|Proteger: Computadores do Hyper-V, CSVs (volumes compartilhados clusterizados)<br /><br />Recuperar: Máquina virtual, recuperação de arquivos e pastas em nível de item, volumes, discos rígidos virtuais|
 |Host do Hyper-V – agente de proteção do DPM no servidor host do Hyper-V, cluster ou VM|Windows Server 2008 R2 SP1 – Enterprise e Standard|Servidor físico<br /><br />Máquina virtual local do Hyper-V|S|S|Proteger: Computadores do Hyper-V, CSVs (volumes compartilhados clusterizados)<br /><br />Recuperar: Máquina virtual, recuperação de arquivos e pastas em nível de item, volumes, discos rígidos virtuais|
 |Host do Hyper-V – agente de proteção do DPM no servidor host do Hyper-V, cluster ou VM|Windows Server 2008 SP2|Servidor físico<br /><br />Máquina virtual local do Hyper-V|N|N|Proteger: Computadores do Hyper-V, CSVs (volumes compartilhados clusterizados)<br /><br />Recuperar: Máquina virtual, recuperação de arquivos e pastas em nível de item, volumes, discos rígidos virtuais|
-|VMs VMware|VMware vCenter/vSphere ESX/ESXi versão licenciada 5.5/6.0/6.5 |Servidor físico, <br/>VM do Hyper-V local, <br/> VM do Windows no VMWare|S|S|VMs do VMware em CSVs (volumes compartilhados de cluster), NFS e armazenamento SAN<br /> A recuperação no nível de item de arquivos e pastas está disponível somente para VMs do Windows; não há suporte para vApps do VMware.|
-|VMs VMware|[VMware vSphere 6.7](backup-azure-backup-server-vmware.md#vmware-vsphere-67) |Servidor físico, <br/>VM do Hyper-V local, <br/> VM do Windows no VMWare|S|N|VMs do VMware em CSVs (volumes compartilhados de cluster), NFS e armazenamento SAN<br /> A recuperação no nível de item de arquivos e pastas está disponível somente para VMs do Windows; não há suporte para vApps do VMware.|
+|VMs VMware|VMware vCenter/vSphere ESX/ESXi versão de licença 5.5/6.0/6.5 |Servidor físico, <br/>VM do Hyper-V local, <br/> VM do Windows no VMWare|S|S|VMs do VMware em CSVs (volumes compartilhados de cluster), NFS e armazenamento SAN<br /> A recuperação no nível de item de arquivos e pastas está disponível somente para VMs do Windows; não há suporte para vApps do VMware.|
+|VMs VMware|[VMware vSphere licenciado versão 6.7](backup-azure-backup-server-vmware.md#vmware-vsphere-67) |Servidor físico, <br/>VM do Hyper-V local, <br/> VM do Windows no VMWare|S|N|VMs do VMware em CSVs (volumes compartilhados de cluster), NFS e armazenamento SAN<br /> A recuperação no nível de item de arquivos e pastas está disponível somente para VMs do Windows; não há suporte para vApps do VMware.|
 |Linux|Linux em execução como convidado de Hyper-V ou VMware|Servidor físico, <br/>VM do Hyper-V local, <br/> VM do Windows no VMWare|S|S|O Hyper-V deve ser executado no Windows Server 2012 R2 ou Windows Server 2016. Proteger: Máquina virtual inteira<br /><br />Recuperar: Máquina virtual inteira <br/><br/> Para obter uma lista completa de versões e distribuições do Linux com suporte, consulte o artigo [Linux em distribuições aprovadas pelo Azure](../virtual-machines/linux/endorsed-distros.md).|
 
 ## <a name="azure-expressroute-support"></a>Suporte do Azure ExpressRoute

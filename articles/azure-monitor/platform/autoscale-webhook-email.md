@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/03/2017
 ms.author: ancav
 ms.subservice: autoscale
-ms.openlocfilehash: 25ef2541dfa0b4cbd6e11d64381da645acfe653a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: HT
+ms.openlocfilehash: c1386f4058f9490bad0161b680005db6031bace1
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60787285"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67491522"
 ---
 # <a name="use-autoscale-actions-to-send-email-and-webhook-alert-notifications-in-azure-monitor"></a>Use ações de dimensionamento automático para enviar notificações de alerta por email e webhook no Azure Monitor
 Este artigo mostra como configurar gatilhos para que você possa chamar URLs da web específicas ou enviar emails com base em ações de escala automática no Azure.  
@@ -116,7 +116,7 @@ Quando a notificação de escala automática é gerada, os metadados a seguir s�
 | resourceGroupName |Sim |Nome do Grupo de Recursos do recurso de destino que está sendo escalado |
 | resourceName |Sim |Nome do recurso de destino que está sendo escalado |
 | resourceType |Sim |Os três valores com suporte: "microsoft.classiccompute/domainnames/slots/roles" - funções de Serviço de Nuvem, "microsoft.compute/virtualmachinescalesets" - Conjuntos de Escala de Máquina Virtual e "Microsoft.Web/serverfarms" - Aplicativo Web |
-| resourceId |Sim |ID do Gerenciador de Recursos do recurso de destino que está sendo dimensionado |
+| ResourceId |Sim |ID do Gerenciador de Recursos do recurso de destino que está sendo dimensionado |
 | portalLink |Sim |Link do portal do Azure para a página de resumo do recurso de destino |
 | oldCapacity |Sim |A atual (antiga) contagem de instância quando Escala Automática adotou uma ação de escala |
 | newCapacity |Sim |A nova contagem de instância para a qual a Escala Automática escalou o recurso |
