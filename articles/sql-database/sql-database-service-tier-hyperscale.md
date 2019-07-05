@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 05/06/2019
-ms.openlocfilehash: a953af3d9cd5a6748b79465a59b4a4284e58714c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4aeda5612b2b3e9e2073a65320b238266c8bb33a
+ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67070140"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67537866"
 ---
 # <a name="hyperscale-service-tier-for-up-to-100-tb"></a>Camada de serviço em hiperescala para até 100 TB
 
@@ -38,7 +38,7 @@ A camada de serviço da Hiperescala no banco de dados SQL é a camada de serviç
 A camada de serviço da Hiperescala no Banco de Dados SQL do Azure fornece os seguintes recursos adicionais:
 
 - Suporte para até 100 TB de tamanho de banco de dados
-- Backups de banco de dados quase instantâneos (com base em instantâneos de arquivo armazenados no Armazenamento de Blobs do Azure), independentemente do tamanho sem nenhum impacto de E/S na Computação   
+- Quase instantânea (com base em instantâneos de arquivo armazenados no armazenamento de BLOBs do Azure) de backups de banco de dados, independentemente do tamanho sem nenhum impacto de e/s em recursos de computação  
 - Rápidas restaurações de banco de dados (com base em instantâneos de arquivo) em minutos, em vez de horas ou dias (não um tamanho de operação de dados)
 - Maior desempenho geral devido à maior taxa de transferência de log e tempos mais rápidos de confirmação de transação, independentemente dos volumes de dados
 - Rápida expansão - você pode provisionar uma ou mais somente leitura nós para o descarregamento de sua carga de trabalho de leitura e para uso como reserva quente
@@ -69,7 +69,7 @@ A camada de serviço em Hiperescala só está disponível no [modelo vCore](sql-
 
 - **Armazenamento**:
 
-  Você não precisa especificar o tamanho máximo de dados ao configurar um banco de dados da Hiperescala. Na camada de hiperescala, você é cobrado pelo armazenamento para seu banco de dados de acordo com o uso real. Armazenamento é alocado automaticamente entre 10 GB e 100 TB, em incrementos que são dinamicamente ajustados entre 10 e 40GB.  
+  Você não precisa especificar o tamanho máximo de dados ao configurar um banco de dados da Hiperescala. Na camada de hiperescala, você é cobrado pelo armazenamento para seu banco de dados de acordo com o uso real. Armazenamento é alocado automaticamente entre 10 GB e 100 TB, em incrementos que são dinamicamente ajustados entre 10 e 40 GB.  
 
 Para obter mais informações sobre os preços da Hiperescala, confira [Preços do Banco de Dados SQL do Azure](https://azure.microsoft.com/pricing/details/sql-database/single/)
 
@@ -161,7 +161,7 @@ A camada de hiperescala de banco de dados SQL do Azure está atualmente disponí
 - Leste da China 2
 - Norte da China 2
 - Ásia Oriental
-- Leste dos EUA
+- East US
 - East Us 2
 - França Central
 - Leste do Japão
@@ -225,7 +225,7 @@ Estas são as limitações atuais para a camada de serviço em hiperescala a par
 
 | Problema | DESCRIÇÃO |
 | :---- | :--------- |
-| O painel de gerenciar Backups para um servidor lógico não mostra serão filtrados em hiperescala bancos de dados do SQL server  | Hiperescala tem um método separado para gerenciar backups e, como tal, as configurações de Retenção de backup de Ponto no Tempo e Retenção de Longo Prazo não se aplicam são invalidadas. Da mesma forma, os bancos de dados da Hiperescala não aparecem no painel Gerenciar Backup. |
+| O painel de gerenciar Backups para um servidor lógico não mostra serão filtrados em hiperescala bancos de dados do SQL server  | Hiperescala tem um método separado para gerenciar backups e como tal, a retenção de longo prazo e um ponto nas configurações de retenção de backup de tempo não se aplicam / são invalidados. Da mesma forma, os bancos de dados da Hiperescala não aparecem no painel Gerenciar Backup. |
 | Restauração pontual | Depois que um banco de dados é migrado para a camada de serviço em hiperescala, não há suporte para a restauração para um ponto no tempo antes da migração.|
 | Restauração de não - hiperescala DB para Hypserscale e vice-versa | Não é possível restaurar um banco de dados de hiperescala em um banco de dados não estão em hiperescala, nem é possível restaurar um banco de dados não estão em hiperescala para um banco de dados em hiperescala.|
 | Se um arquivo de banco de dados aumentar durante a migração devido a uma carga de trabalho ativa e ultrapassar 1 TB por limite de arquivo, a migração falhará | Atenuações: <br> – Se possível, migre o banco de dados quando não houver nenhuma carga de trabalho de atualização em execução.<br> – Tente novamente a migração, ela terá êxito desde que o limite de 1 TB não seja ultrapassado durante a migração.|
