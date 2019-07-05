@@ -11,12 +11,12 @@ author: nacharya1
 ms.author: nilesha
 ms.date: 06/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: b9fe8ff710cbfe7fbb4a4d8bd351028bb50efcb0
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: 137ef1ad78548053f3c5b8f30b7d83f2370f62da
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67331732"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442428"
 ---
 # <a name="what-is-automated-machine-learning"></a>O que é o aprendizado de máquina automatizado?
 
@@ -120,7 +120,7 @@ ML automatizado também está disponível em outras soluções da Microsoft, com
 
 Consulte exemplos e saiba como criar modelos usando o aprendizado de máquina automatizado:
 
-+ Siga o [Tutorial: Treinar automaticamente um modelo de classificação com o Machine Learning Automatizado do Azure](tutorial-auto-train-models.md)
++ Siga o [Tutorial: Automaticamente treinar um modelo de regressão automatizada da Azure Machine Learning](tutorial-auto-train-models.md)
 
 + Defina as configurações de teste de treinamento automático:
   + Na interface do portal do Azure, [usar estas etapas](how-to-create-portal-experiments.md).

@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 06/06/2019
+ms.date: 07/03/2019
 ms.author: Kumud
-ms.openlocfilehash: ec68038a5b0fe7edca095e0d9b190d5da09c8e82
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 08670c8aa6d5c9830ab84bc848bac38063bd41c0
+ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66754673"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67550932"
 ---
 # <a name="metrics-and-health-diagnostics-for-standard-load-balancer"></a>Diagnóstico de métricas e integridade para o Load Balancer Standard
 
@@ -37,12 +37,12 @@ As várias configurações do Load Balancer Standard oferecem as seguintes métr
 
 | Métrica | Tipo de recurso | DESCRIÇÃO | Agregação recomendada |
 | --- | --- | --- | --- |
-| Disponibilidade de caminho de dados (disponibilidade de VIP)| Balanceador de carga público | O Load Balancer Standard usa continuamente o caminho de dados de dentro de uma região para o front-end do balanceador de carga e até a pilha do SDN compatível com a sua VM. Contanto que instâncias íntegras permaneçam, a medição seguirá o mesmo caminho que o tráfego com balanceamento de carga do seu aplicativo. O caminho de dados que seus clientes usam também é validado. A medição é invisível para seu aplicativo e não interfere com outras operações.| Média |
-| Status de investigação de integridade (disponibilidade DIP) |  Balanceador de carga público e interno | O Load Balancer Standard usa um serviço de investigação de integridade distribuído que monitora a integridade do ponto de extremidade do aplicativo de acordo com as definições de configuração. Essa métrica fornece uma exibição agregada ou por ponto de extremidade filtrado de cada ponto de extremidade de instância no pool do balanceador de carga. É possível ver como o Load Balancer exibe a integridade de seu aplicativo conforme indicado pela configuração de sua investigação de integridade. |  Média |
-| Pacotes SYN (sincronizar) |  Balanceador de carga público | O Load Balancer Standard não encerra conexões TCP nem interage com fluxos de pacote TCP ou UDP. Fluxos e seus handshakes estão sempre entre a origem e a instância VM. Para solucionar melhor os problemas dos cenários de protocolo TCP, é possível usar contadores de pacotes SYN para entender quantas tentativas de conexão TCP são feitas. A métrica informa o número de pacotes SYN do TCP que foram recebidos.| Média |
-| Conexões SNAT |  Balanceador de carga público |O Load Balancer Standard relata o número de fluxos de saída mascarados para o front-end do endereço IP Público. As portas SNAT (conversão de endereços de rede) de origem são um recurso esgotável. Essa métrica pode dar uma indicação do grau de dependência que seu aplicativo tem do SNAT para fluxos com origem externa. Contadores para fluxos SNAT de saída bem-sucedidos e com falha são relatados e podem ser usados para solucionar problemas e entender a integridade dos fluxos de saída.| Média |
-| Contadores de bytes |  Balanceador de carga público e interno | O Load Balancer Standard informa os dados processados por front-end.| Média |
-| Contadores de pacotes |  Balanceador de carga público e interno | O Load Balancer Standard relata os pacotes processados por front-end.| Média |
+| Disponibilidade de caminho de dados (disponibilidade de VIP)| Balanceador de carga público | O Load Balancer Standard usa continuamente o caminho de dados de dentro de uma região para o front-end do balanceador de carga e até a pilha do SDN compatível com a sua VM. Contanto que instâncias íntegras permaneçam, a medição seguirá o mesmo caminho que o tráfego com balanceamento de carga do seu aplicativo. O caminho de dados que seus clientes usam também é validado. A medição é invisível para seu aplicativo e não interfere com outras operações.| Average |
+| Status de investigação de integridade (disponibilidade DIP) |  Balanceador de carga público e interno | O Load Balancer Standard usa um serviço de investigação de integridade distribuído que monitora a integridade do ponto de extremidade do aplicativo de acordo com as definições de configuração. Essa métrica fornece uma exibição agregada ou por ponto de extremidade filtrado de cada ponto de extremidade de instância no pool do balanceador de carga. É possível ver como o Load Balancer exibe a integridade de seu aplicativo conforme indicado pela configuração de sua investigação de integridade. |  Average |
+| Pacotes SYN (sincronizar) |  Balanceador de carga público | O Load Balancer Standard não encerra conexões TCP nem interage com fluxos de pacote TCP ou UDP. Fluxos e seus handshakes estão sempre entre a origem e a instância VM. Para solucionar melhor os problemas dos cenários de protocolo TCP, é possível usar contadores de pacotes SYN para entender quantas tentativas de conexão TCP são feitas. A métrica informa o número de pacotes SYN do TCP que foram recebidos.| Average |
+| Conexões SNAT |  Balanceador de carga público |O Load Balancer Standard relata o número de fluxos de saída mascarados para o front-end do endereço IP Público. As portas SNAT (conversão de endereços de rede) de origem são um recurso esgotável. Essa métrica pode dar uma indicação do grau de dependência que seu aplicativo tem do SNAT para fluxos com origem externa. Contadores para fluxos SNAT de saída bem-sucedidos e com falha são relatados e podem ser usados para solucionar problemas e entender a integridade dos fluxos de saída.| Average |
+| Contadores de bytes |  Balanceador de carga público e interno | O Load Balancer Standard informa os dados processados por front-end.| Average |
+| Contadores de pacotes |  Balanceador de carga público e interno | O Load Balancer Standard relata os pacotes processados por front-end.| Average |
 
 ### <a name="view-your-load-balancer-metrics-in-the-azure-portal"></a>Exibir suas métricas do balanceador de carga no portal do Azure
 
@@ -85,7 +85,7 @@ Para obter a disponibilidade de caminho de dados para os seus recursos do balanc
 A métrica é gerada por uma medida de ativa e dentro da faixa. Um serviço de investigação dentro da região origina o tráfego da medida. O serviço é ativado assim que você cria uma implantação com um front-end público, e ele continua até que você remova o front-end. 
 
 >[!NOTE]
->Não há suporte para front-ends internos no momento. 
+>Disponibilidade de caminho de dados (disponibilidade de VIP) não está disponível para front-ends de Balanceador de carga interno. 
 
 Um pacote que corresponde ao front-end e a uma regra de sua implantação é gerado periodicamente. Ele atravessa a região da origem para o host no qual uma VM no pool de back-end está localizada. A infraestrutura do balanceador de carga executa as mesmas operações de balanceamento de carga e de translação, assim como faz para todos os outros tráfegos. Essa investigação é feita dentro da banda no seu ponto de extremidade com balanceamento de carga. Depois que a investigação chega no host de computação no qual uma VM íntegra no pool de back-end está localizada, o host de computação gera uma resposta para o serviço de investigação. A VM não vê esse tráfego.
 
@@ -208,6 +208,10 @@ Os vários status da integridade do recurso e suas descrições estão listadas 
 | Disponível | O recurso do balanceador de carga padrão público está íntegro e disponível. |
 | Indisponível | O recurso do balanceador de carga padrão público não está íntegro. Faça o diagnóstico da integridade selecionando **Azure Monitor** > **Métricas**.<br>(O status *Não disponível* também pode significar que o recurso não está conectado ao balanceador de carga padrão público.) |
 | Desconhecido | O status da integridade do recurso do seu recurso de balanceador de carga padrão público ainda não foi atualizado.<br>(O status *Desconhecido* também pode significar que o recurso não está conectado ao balanceador de carga padrão público.)  |
+
+## <a name="limitations"></a>Limitações 
+
+- Disponibilidade de caminho de dados (disponibilidade de VIP) não está disponível para front-ends de Balanceador de carga interno.
 
 ## <a name="next-steps"></a>Próximas etapas
 

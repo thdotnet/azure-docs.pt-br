@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/12/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: dd5f01c915c658903e87a91992753065c59dfa63
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6c475ab0a2e47cf654d1299a4c5638b34fb5e4b6
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67054259"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508541"
 ---
 # <a name="expressroute-routing-requirements"></a>Requisitos de roteamento da Rota Expressa
 Para se conectar aos serviços de nuvem da Microsoft usando a Rota Expressa, você precisará configurar e gerenciar o roteamento. Alguns provedores de conectividade oferecem a configuração e o gerenciamento de roteamento como um serviço gerenciado. Verifique se o seu provedor de conectividade oferece esse serviço. Se não oferecer, você deverá atender aos requisitos a seguir:
@@ -157,7 +157,7 @@ Você pode adquirir mais de um circuito da Rota Expressa por região geopolític
 | **Região do Microsoft Azure** | **Comunidade do BGP regional** | **Comunidade BGP de armazenamento** | **Comunidade do BGP SQL** | **Comunidade do BGP do BD cosmos** |
 | --- | --- | --- | --- | --- |
 | **América do Norte** | |
-| Leste dos EUA | 12076:51004 | 12076:52004 | 12076:53004 | 12076:54004 |
+| East US | 12076:51004 | 12076:52004 | 12076:53004 | 12076:54004 |
 | Leste dos EUA 2 | 12076:51005 | 12076:52005 | 12076:53005 | 12076:54005 |
 | Oeste dos EUA | 12076:51006 | 12076:52006 | 12076:53006 | 12076:54006 |
 | Oeste dos EUA 2 | 12076:51026 | 12076:52026 | 12076:53026 | 12076:54026 |
@@ -210,6 +210,7 @@ Todas as rotas anunciadas pela Microsoft serão marcadas com o valor de comunida
 > 
 > 
 
+### <a name="service-to-bgp-community-value"></a>Serviço para o valor de comunidade BGP
 Além disso, a Microsoft também marcará prefixos com base no serviço ao qual eles pertencem. Isso se aplica somente ao emparelhamento da Microsoft. A tabela a seguir fornece um mapeamento de serviço para o valor de comunidade BGP.
 
 | **Serviço** | **Valor de comunidade BGP** |

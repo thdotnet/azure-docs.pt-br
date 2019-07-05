@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 02/27/2019
 ms.author: billmath
 author: billmath
-ms.openlocfilehash: 19a8400a076825f17501fabdb3f38ea05915822e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e00e41a34bb28a2569d5922926a8f6c4fbe4bd57
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65138768"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67481414"
 ---
 # <a name="configure-group-claims-for-applications-with-azure-active-directory-public-preview"></a>Configurar as declarações de grupo para aplicativos com o Azure Active Directory (visualização pública)
 
@@ -137,7 +137,7 @@ Declarações de grupo também podem ser configuradas na [declarações opcionai
 
 3. Conjunto de declarações opcionais de configuração de nome de grupo.
 
-   Se você quiser grupos no token para conter os atributos de grupo do AD na seção de declarações opcionais especificam qual declaração opcional de tipo de token deve ser aplicada ao local, o nome da declaração opcional solicitado e outras propriedades desejadas.  Vários tipos de token podem ser listados:
+   Se você quiser que os grupos no token para conter os atributos de grupo do AD na seção de declarações opcionais especificam qual declaração opcional de tipo de token deve ser aplicada ao local, o nome da declaração opcional solicitado e outras propriedades desejadas.  Vários tipos de token podem ser listados:
 
    - Token para o token de ID de OIDC
    - accessToken para o token de acesso OAuth/OIDC

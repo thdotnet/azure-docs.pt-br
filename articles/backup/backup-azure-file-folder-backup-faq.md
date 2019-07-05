@@ -5,34 +5,30 @@ author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
-ms.date: 05/28/2019
+ms.date: 07/02/2019
 ms.author: dacurwin
-ms.openlocfilehash: 56dc87b1cdf36d761c46133004a05f8fa225a091
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d4d1044a30d4ebc551cf1305993aba2a201c4c94
+ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66808306"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67514457"
 ---
-# <a name="common-questions-about-backing-up-files-and-folders"></a>Perguntas comuns sobre como fazer backup de arquivos e pastas 
+# <a name="common-questions-about-backing-up-files-and-folders"></a>Perguntas comuns sobre como fazer backup de arquivos e pastas
 
 Este artigo possui respostas para perguntas comuns sobram fazendo backup de arquivos e pastas com o agente do Microsoft Azure Recovery Services (MARS) na [Backup do Azure](backup-overview.md) service.
 
 ## <a name="general"></a>Geral
 
-### <a name="why-does-the-mars-agent-need-net-framework-452-or-higher"></a>Por que o agente do MARS precisa do .NET framework 4.5.2 ou superior?
-
-Nova funcionalidade disponível em [restauração instantânea](backup-azure-restore-windows-server.md#use-instant-restore-to-recover-data-to-the-same-machine) precisa do .NET Framework 4.5.2 ou superior.
-
 ## <a name="configure-backups"></a>Configurar backups
 
-### <a name="where-can-i-download-the-latest-version-of-the-mars-agent"></a>Onde posso baixar a versão mais recente do agente MARS? 
-O agente de MARS mais recente usado ao fazer backup de máquinas do Windows Server, o System Center DPM e o servidor de Backup do Microsoft Azure está disponível para [baixar](https://aka.ms/azurebackup_agent). 
+### <a name="where-can-i-download-the-latest-version-of-the-mars-agent"></a>Onde posso baixar a versão mais recente do agente MARS?
+O agente de MARS mais recente usado ao fazer backup de máquinas do Windows Server, o System Center DPM e o servidor de Backup do Microsoft Azure está disponível para [baixar](https://aka.ms/azurebackup_agent).
 
 ### <a name="how-long-are-vault-credentials-valid"></a>Quanto tempo são as credenciais do cofre válido?
 As credenciais do cofre expiram após 48 horas. Se o arquivo de credenciais expirar, baixe o arquivo novamente do portal do Azure.
 
-### <a name="from-what-drives-can-i-back-up-files-and-folders"></a>De quais drives pode fazer backup de arquivos e pastas? 
+### <a name="from-what-drives-can-i-back-up-files-and-folders"></a>De quais drives pode fazer backup de arquivos e pastas?
 
 Você não pode fazer backup dos seguintes tipos de unidades e volumes:
 
@@ -45,29 +41,20 @@ Você não pode fazer backup dos seguintes tipos de unidades e volumes:
 
 ### <a name="what-file-and-folder-types-are-supported"></a>Há suporte para quais tipos de arquivo e pasta?
 
-Os seguintes tipos têm suporte:
-
-* Criptografado
-* Compactado
-* Esparsos
-* Compactado + esparso
-* Links físicos: Sem suporte, ignorado
-* Ponto de nova análise: Sem suporte, ignorado
-* Criptografado + esparso: Sem suporte, ignorado
-* Fluxo compactado: Sem suporte, ignorado
-* Pontos, incluindo links DFS e pontos de junção de nova análise
-
+[Saiba mais](backup-support-matrix-mars-agent.md#supported-file-types-for-backup) sobre os tipos de arquivos e pastas com suporte para backup.
 
 ### <a name="can-i-use-the-mars-agent-to-back-up-files-and-folders-on-an-azure-vm"></a>Pode usar o agente MARS para fazer backup de arquivos e pastas em uma VM do Azure?  
-Sim. O Backup do Azure fornece backup em nível de VM para VMs do Azure usando a extensão de VM para o agente de VM do Azure. Se você quiser fazer backup de arquivos e pastas no sistema operacional convidado Windows na VM, você pode instalar o agente MARS para fazer isso. 
+Sim. O Backup do Azure fornece backup em nível de VM para VMs do Azure usando a extensão de VM para o agente de VM do Azure. Se você quiser fazer backup de arquivos e pastas no sistema operacional convidado Windows na VM, você pode instalar o agente MARS para fazer isso.
 
-### <a name="can-i-use-the-mars-agent-to-back-up-files-and-folders-on-temporary-storage-for-the-azure-vm"></a>Pode usar o agente MARS para fazer backup de arquivos e pastas no armazenamento temporário para a VM do Azure? 
-Sim. Instale o agente MARS e fazer backup de arquivos e pastas no sistema operacional convidado Windows em um armazenamento temporário. -Falha em trabalhos de backup sobre o armazenamento temporário de dados forem apagados.
+### <a name="can-i-use-the-mars-agent-to-back-up-files-and-folders-on-temporary-storage-for-the-azure-vm"></a>Pode usar o agente MARS para fazer backup de arquivos e pastas no armazenamento temporário para a VM do Azure?
+Sim. Instale o agente MARS e fazer backup de arquivos e pastas no sistema operacional convidado Windows em um armazenamento temporário.
+
+- Trabalhos de backup falham quando os dados de armazenamento temporário forem apagados.
 - Se os dados de armazenamento temporário são excluídos, você só pode restaurar para o armazenamento não volátil.
 
 ### <a name="how-do-i-register-a-server-to-another-region"></a>Como registrar um servidor para outra região?
 
-Dados de backup são enviados para o datacenter do cofre no qual o servidor está registrado. A maneira mais fácil alterar o datacenter é desinstalar e reinstalar o agente e, em seguida, registre o computador para um novo cofre na região em que você precisa
+Dados de backup são enviados para o datacenter do cofre no qual o servidor está registrado. A maneira mais fácil alterar o datacenter é desinstalar e reinstalar o agente e, em seguida, registre o computador para um novo cofre na região em que você precisa.
 
 ### <a name="does-the-mars-agent-support-windows-server-2012-deduplication"></a>O Windows Server 2012 do suporte do agente de MARS de duplicação ocorre?
 Sim. O agente do MARS converte os dados com eliminação de duplicação em dados normais quando prepara a operação de backup. Ele, em seguida, otimiza os dados para backup, criptografa os dados e, em seguida, envia os dados criptografados no cofre.
@@ -80,7 +67,7 @@ Quando você renomeia uma máquina Windows, todos os backups atualmente configur
 
 - Você precisa registrar o novo nome de máquina com o Cofre de Backup.
 - Ao registrar o novo nome com o cofre, a primeira operação é uma *completo* backup.
-- Se você precisar recuperar dados de backup no cofre com o nome antigo do servidor, use a opção para restaurar para um local alternativo no Assistente para recuperar dados. [Saiba mais](backup-azure-restore-windows-server.md#use-instant-restore-to-restore-data-to-an-alternate-machine). 
+- Se você precisar recuperar dados de backup no cofre com o nome antigo do servidor, use a opção para restaurar para um local alternativo no Assistente para recuperar dados. [Saiba mais](backup-azure-restore-windows-server.md#use-instant-restore-to-restore-data-to-an-alternate-machine).
 
 ### <a name="what-is-the-maximum-file-path-length-for-backup"></a>O que é o comprimento do caminho de arquivo máximo para o backup?
 O agente do MARS se baseia em NTFS e usa a especificação de comprimento de caminho do arquivo limitada pela [API do Windows](/windows/desktop/FileIO/naming-a-file#fully-qualified-vs-relative-paths). Se os arquivos que você deseja proteger são maiores do que o valor permitido, faça backup da pasta pai ou a unidade de disco.  
@@ -143,8 +130,8 @@ Os atributos a seguir, ou suas combinações, não têm suporte para a pasta de 
 A pasta de cache e o VHD dos metadados não têm os atributos necessários para o agente de Backup do Azure.
 
 ### <a name="is-there-a-way-to-adjust-the-amount-of-bandwidth-used-for-backup"></a>Há uma maneira de ajustar a quantidade de largura de banda usada para o backup?
- 
-Sim, você pode usar o **alterar propriedades** opção no agente de MARS para ajustar a largura de banda e o intervalo. [Saiba mais](backup-configure-vault.md#enable-network-throttling)* *.
+
+Sim, você pode usar o **alterar propriedades** opção no agente de MARS para ajustar a largura de banda e o intervalo. [Saiba mais](backup-configure-vault.md#enable-network-throttling).
 
 ## <a name="restore"></a>Restaurar
 

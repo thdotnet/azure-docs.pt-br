@@ -4,7 +4,7 @@ description: Entenda como usar gatilhos de temporizador no Azure Functions.
 services: functions
 documentationcenter: na
 author: craigshoemaker
-manager: jeconnoc
+manager: gwallace
 keywords: azure functions, funções, processamento de eventos, computação dinâmica, arquitetura sem servidor
 ms.assetid: d2f013d1-f458-42ae-baf8-1810138118ac
 ms.service: azure-functions
@@ -13,12 +13,12 @@ ms.topic: reference
 ms.date: 09/08/2018
 ms.author: cshoe
 ms.custom: ''
-ms.openlocfilehash: db80155b39602ad5810c83e03913fb0f3ccb4281
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 1a26950f355fd10d9dd502851886a8b8101d4a83
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67342226"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508298"
 ---
 # <a name="timer-trigger-for-azure-functions"></a>Gatilho de temporizador para o Azure Functions 
 
@@ -269,12 +269,7 @@ Cada campo pode ter um dos seguintes tipos de valores:
 |Um conjunto de valores (`,` operador)|<nobr>"5,8,10 * * * * *"</nobr>|em hh:mm:05, hh:mm:08 e hh:mm:10, em que hh é cada minuto de cada hora (3 vezes por minuto)|
 |Um valor de intervalo (`/` operador)|<nobr>"0 */5 * * * *"</nobr>|em hh:05:00, hh:10:00, hh:15:00 e assim por diante por meio de hh:55:00, em que hh é cada hora (12 vezes por hora)|
 
-Para especificar meses ou dias, você pode usar valores numéricos, nomes ou abreviações de nomes:
-
-* Por dias, os valores numéricos são 0 a 6, onde 0 começa com o domingo.
-* Nomes estão em inglês. Por exemplo, `Monday`, `January`.
-* Os nomes não diferenciam maiúsculas de minúsculas.
-* Os nomes podem ser abreviados. Três letras é o comprimento de abreviação recomendada.  Por exemplo, `Mon`, `Jan`. 
+[!INCLUDE [functions-cron-expressions-months-days](../../includes/functions-cron-expressions-months-days.md)]
 
 ### <a name="cron-examples"></a>Exemplos de CRON
 

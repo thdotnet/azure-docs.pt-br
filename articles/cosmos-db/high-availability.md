@@ -4,15 +4,15 @@ description: Este artigo descreve como o Azure Cosmos DB fornece alta disponibil
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/29/2019
+ms.date: 06/28/2019
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 23273084826775b47170753dff3e5cf5ed8ae45f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 928c943e21e7d00b87ac1e506b98d47107ac4348
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67063572"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508559"
 ---
 # <a name="high-availability-with-azure-cosmos-db"></a>Alta disponibilidade com o Azure Cosmos DB
 
@@ -70,6 +70,9 @@ Esse recurso está disponível nas seguintes regiões do Azure:
 
 * Sul do Reino Unido
 * Sudeste Asiático 
+* East US
+* Leste dos EUA 2 
+* Centro dos EUA
 
 > [!NOTE] 
 > Habilitando as zonas de disponibilidade para uma conta do Azure Cosmos de região única resultará em encargos que são equivalentes à adição de uma região adicional à sua conta. Para obter detalhes sobre preços, consulte o [página de preços](https://azure.microsoft.com/pricing/details/cosmos-db/) e o [custos de várias regiões no Azure Cosmos DB](optimize-cost-regions.md) artigos. 
@@ -89,7 +92,10 @@ A tabela a seguir resume a capacidade de alta disponibilidade de várias configu
 |Interrupção regional – disponibilidade  |  Perda de disponibilidade       |  Perda de disponibilidade       |  Sem perda de disponibilidade  |
 |Produtividade    |  Taxa de transferência provisionada de X RU/s      |  Taxa de transferência provisionada de X RU/s       |  2 x taxa de transferência provisionada de RU/s <br/><br/> Esse modo de configuração requer o dobro da taxa de transferência em comparação com uma única região com zonas de disponibilidade porque há duas regiões.   |
 
-Ao adicionar uma região a contas do Cosmos do Azure novas ou existentes, você pode habilitar redundância de zona. Atualmente, só é possível habilitar redundância de zona usando modelos do PowerShell ou Azure Resource Manager. Para habilitar a redundância de zona em sua conta do Cosmos do Azure, você deve definir a `isZoneRedundant` sinalizador como `true` para um local específico. Você pode definir esse sinalizador dentro da propriedade locais. Por exemplo, o seguinte trecho do powershell permite a redundância de zona para a região de "Sudeste Asiático":
+> [!NOTE] 
+> Para habilitar o suporte de zona de disponibilidade, a conta do Azure Cosmos DB deve ter o multi-mestres/multirregião gravações habilitadas. 
+
+Ao adicionar uma região a contas do Cosmos do Azure novas ou existentes, você pode habilitar redundância de zona. Atualmente, só é possível habilitar a redundância de zona usando o Azure portal, PowerShell e o Azure Resource Manager de modelos. Para habilitar a redundância de zona em sua conta do Cosmos do Azure, você deve definir a `isZoneRedundant` sinalizador como `true` para um local específico. Você pode definir esse sinalizador dentro da propriedade locais. Por exemplo, o seguinte trecho do powershell permite a redundância de zona para a região de "Sudeste Asiático":
 
 ```powershell
 $locations = @( 
@@ -97,6 +103,10 @@ $locations = @(
     @{ "locationName"="East US"; "failoverPriority"=1 } 
 ) 
 ```
+
+Você pode habilitar as zonas de disponibilidade usando o portal do Azure ao criar uma conta do Cosmos do Azure. Quando você cria uma conta, certifique-se de habilitar o **redundância geográfica**, **grava em várias regiões**e escolha uma região onde as zonas de disponibilidade têm suporte: 
+
+![Habilitar as zonas de disponibilidade usando o portal do Azure](./media/high-availability/enable-availability-zones-using-portal.png) 
 
 ## <a name="building-highly-available-applications"></a>Criando aplicativos altamente disponíveis
 

@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 06/07/2019
 ms.author: juliako
-ms.openlocfilehash: aa4e37e3b360727feb998ef5e9ca9b776c4b0e53
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: b3e772ebb05f79abb70e58e63a93c3336a413e38
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67303942"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67542542"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Notas de versão dos Serviços de Mídia do Azure v3
 
@@ -84,7 +84,7 @@ Atualizações adicionadas que incluem melhorias de desempenho de serviços de m
 
 ## <a name="march-2019"></a>Março de 2019
 
-O empacotamento dinâmico agora dá suporte a Atmos Dolby. Para obter mais informações, consulte [codecs de áudio com suporte pelo empacotamento dinâmico](dynamic-packaging-overview.md#audio-codecs-supported-by-dynamic-packaging).
+O empacotamento dinâmico agora dá suporte a Atmos Dolby. Para obter mais informações, consulte [codecs de áudio com suporte pelo empacotamento dinâmico](dynamic-packaging-overview.md#audio-codecs).
 
 Agora você pode especificar uma lista de filtros de ativo ou conta, que se aplica a localizador de Streaming. Para obter mais informações, consulte [associar filtros de localizador de Streaming](filters-concept.md#associating-filters-with-streaming-locator).
 

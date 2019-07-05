@@ -6,13 +6,13 @@ ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
-ms.date: 04/05/2019
-ms.openlocfilehash: 24bbddd28943adc929fbaea456eeae8165db290c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 06/30/2019
+ms.openlocfilehash: 882f44683bbdc7f4eb49ff4912ca7a33187afbf8
+ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60758631"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67537896"
 ---
 # <a name="manage-cluster-scale-out-to-accommodate-changing-demand"></a>Gerenciar a expansão do cluster para acomodar as mudanças de demanda
 
@@ -76,10 +76,10 @@ O gráfico a seguir mostra o fluxo das próximas etapas. Mais detalhes o gráfic
 
 Agora, você configurou uma operação de expansão para o cluster do Azure Data Explorer. Adicione outra regra para uma operação de redução. Essa configuração permite que seu cluster para dimensionar dinamicamente com base nas métricas que você especificar.
 
-Você também pode [gerenciar o cluster de escala vertical](manage-cluster-scale-up.md) para o dimensionamento apropriado de um cluster.
-
 Se precisar de ajuda com problemas de dimensionamento de cluster [abrir uma solicitação de suporte](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) no portal do Azure.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-[Monitorar o desempenho, integridade e uso com métricas do Data Explorer do Azure](using-metrics.md)
+* [Monitorar o desempenho, integridade e uso com métricas do Data Explorer do Azure](using-metrics.md)
+
+* [Gerenciar o cluster de escala vertical](manage-cluster-scale-up.md) para o dimensionamento apropriado de um cluster.

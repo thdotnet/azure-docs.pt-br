@@ -1,19 +1,19 @@
 ---
-title: Script do PowerShell do Azure – prioridade de failover de alteração para uma conta do Azure Cosmos
-description: Exemplo de script do PowerShell do Azure - prioridade de failover de alteração para uma conta do Azure Cosmos
+title: Script do PowerShell do Azure – Azure Cosmos DB obter taxa de transferência (RU/s) para API do MongoDB
+description: Script do PowerShell do Azure – Azure Cosmos DB obter taxa de transferência (RU/s) para API do MongoDB
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: samples
-ms.date: 05/06/2019
+ms.date: 07/03/2019
 ms.author: mjbrown
-ms.openlocfilehash: 785ca8941c24014fd00d8135b66cefccd99d2951
-ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
+ms.openlocfilehash: 57a58ae278f3df81218e50c4bc4d8b8c40315fdf
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 07/04/2019
-ms.locfileid: "67561210"
+ms.locfileid: "67566824"
 ---
-# <a name="change-failover-priority-for-an-azure-cosmos-account-using-powershell"></a>Alterar a prioridade de failover para uma conta de Cosmos do Azure usando o PowerShell
+# <a name="get-throughput-rus-for-a-database-or-collection-for-azure-cosmos-db---mongodb-api"></a>Obter a taxa de transferência (RU/s) para um banco de dados ou uma coleção do Azure Cosmos DB – API do MongoDB
 
 [!INCLUDE [updated-for-az](../../../../../includes/updated-for-az.md)]
 
@@ -21,7 +21,7 @@ ms.locfileid: "67561210"
 
 ## <a name="sample-script"></a>Script de exemplo
 
-[!code-powershell[main](../../../../../powershell_scripts/cosmosdb/sql/ps-account-failover-priority-update.ps1 "Update failover priority for an Azure Cosmos account")]
+[!code-powershell[main](../../../../../powershell_scripts/cosmosdb/mongodb/ps-mongodb-ru-get.ps1 "Get throughput on a database or collection for MongoDB API")]
 
 ## <a name="clean-up-deployment"></a>Limpar a implantação
 
@@ -38,7 +38,7 @@ Este script usa os seguintes comandos. Cada comando da tabela é vinculado à do
 | Comando | Observações |
 |---|---|
 |**Recursos do Azure**| |
-| [Invoke-AzResourceAction](https://docs.microsoft.com/powershell/module/az.resources/invoke-azresourceaction) | Invoca uma ação em um recurso. |
+| [New-AzResource](https://docs.microsoft.com/powershell/module/az.resources/new-azresource) | Cria um recurso. |
 |**Grupos de recursos do Azure**| |
 | [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup) | Exclui um grupo de recursos, incluindo todos os recursos aninhados. |
 |||

@@ -2,18 +2,18 @@
 title: Configurar a replicação para VMs habilitadas para o Azure Disk Encryption no Azure Site Recovery | Microsoft Docs
 description: Este artigo descreve como configurar a replicação para VMs habilitadas para o Azure Disk Encryption, de uma região do Azure para outra usando o Site Recovery.
 services: site-recovery
-author: sujayt
+author: asgang
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
 ms.date: 04/08/2019
 ms.author: sutalasi
-ms.openlocfilehash: 4943b730bb46ee00200d84faf95a7ccb069d3aa8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b2e9bf7fbe7d5940b517d97dcc15d21c30835001
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60790959"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449211"
 ---
 # <a name="replicate-azure-disk-encryption-enabled-virtual-machines-to-another-azure-region"></a>Replicar máquinas virtuais habilitadas para criptografia de disco do Azure para outra região do Azure
 
@@ -22,23 +22,23 @@ Este artigo descreve como replicar VMs habilitadas para criptografia de disco do
 >[!NOTE]
 >O Azure Site Recovery atualmente dá suporte a apenas as VMs do Azure que executam um sistema de operacional do Windows e que são [habilitado para criptografia com o Azure Active Directory (Azure AD)](https://aka.ms/ade-aad-app).
 
-## <a name="required-user-permissions"></a>Permissões de usuário exigidas
+## <a id="required-user-permissions"></a> Permissões de usuário necessário
 Recuperação de site exige que o usuário tenha permissões para criar o Cofre de chaves nas chaves de região e a cópia do destino para a região.
 
 Para habilitar a replicação de VMs habilitadas para criptografia de disco do portal do Azure, o usuário precisa das seguintes permissões:
 
 - Permissões de cofre de chave
-    - Listar
+    - List
     - Criar
     - Obter
 
 -   Permissões secretas de cofre de chave
-    - Listar
+    - List
     - Criar
     - Obter
 
 - Permissões de chave de Cofre de chaves (necessárias apenas se as VMs usam a chave de criptografia de chave para criptografar chaves de criptografia de disco)
-    - Listar
+    - List
     - Obter
     - Criar
     - Criptografar
@@ -139,18 +139,25 @@ Você pode usar [um script](#copy-disk-encryption-keys-to-the-dr-region-by-using
 
 ## <a id="trusted-root-certificates-error-code-151066"></a>Solucionar problemas de permissões do Cofre de chaves durante a replicação de VM do Azure para o Azure
 
-**Causa 1:** Talvez você tenha selecionado da região de destino um cofre de chaves já criado que não tem as permissões necessárias em vez de deixar o Site Recovery crie um. Certifique-se de que o Cofre de chaves tem o exigem permissões, conforme descrito anteriormente.
+O Azure Site Recovery requer permissão de leitura de pelo menos no cofre de chaves de região de origem e a permissão de gravação no cofre de chaves de região de destino para ler o segredo e copie-o para o Cofre de chaves de região de destino. 
+
+**Causa 1:** Você não tem permissão de "GET" na **Cofre de chaves de região de origem** ler as chaves. </br>
+**Como corrigir:** Independentemente de você ser um administrador de assinatura ou não, é importante que você tenha permissão de obter no cofre de chaves.
+
+1. Vá para o Cofre de chaves de região de origem que neste exemplo é "ContososourceKeyvault" > **políticas de acesso** 
+2. Sob **selecionar entidade de segurança** adicionar seu nome de usuário por exemplo: "dradmin@contoso.com"
+3. Sob **permissões de chave** selecione obter 
+4. Sob **segredo permissão** selecione obter 
+5. Salvar a política de acesso
+
+**Causa 2:** Você não tem a permissão necessária na **Cofre de chaves de região de destino** para gravar as chaves. </br>
 
 *Por exemplo*: Tentar replicar uma VM que tenha um cofre de chaves *ContososourceKeyvault* em uma região de origem.
 Você tem todas as permissões no cofre de chaves de região de origem. Mas durante a proteção, você selecionar o Cofre de chaves já criado ContosotargetKeyvault, que não tem permissões. Ocorrerá um erro.
 
-**Como corrigir:** Vá para **página inicial** > **Keyvaults** > **ContososourceKeyvault** > **políticas de acesso** e adicione as permissões apropriadas.
+Permissão necessária no [Cofre de chaves de destino](#required-user-permissions)
 
-**Causa 2:** Talvez você tenha selecionado da região de destino um cofre de chaves já criado que não tenha criptografar decrypt de permissões em vez de deixar o Site Recovery crie um. Certifique-se de que você tenha Criptografar descriptografar as permissões se você também está criptografando a chave na região de origem.</br>
-
-*Por exemplo*: Tentar replicar uma VM que tenha um cofre de chaves *ContososourceKeyvault* na região de origem. Você tem a permissão necessária no cofre de chaves de região de origem. Mas durante a proteção, você selecionar o Cofre de chaves já criado ContosotargetKeyvault, que não tem permissões para descriptografar e criptografar. Ocorrerá um erro.</br>
-
-**Como corrigir:** Vá para **página inicial** > **Keyvaults** > **ContososourceKeyvault** > **políticas de acesso**. Adicionar permissões sob **permissões de chave** > **operações criptográficas**.
+**Como corrigir:** Vá para **página inicial** > **Keyvaults** > **ContosotargetKeyvault** > **políticas de acesso** e adicione as permissões apropriadas.
 
 ## <a name="next-steps"></a>Próximas etapas
 

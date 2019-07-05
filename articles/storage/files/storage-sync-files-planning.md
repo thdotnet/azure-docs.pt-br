@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 2/7/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 9bb33e7d2bb80bcb19087dca6bc21bafc791af2a
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: a745fefa5ceb0f81cf8d66e7af9e308c0ecb40b9
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67303908"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449863"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Planejando uma implantação da Sincronização de Arquivos do Azure
 Use a Sincronização de Arquivos do Azure para centralizar os compartilhamentos de arquivos da sua organização em Arquivos do Azure enquanto mantém a flexibilidade, o desempenho e a compatibilidade de um servidor de arquivos local. A Sincronização de arquivos do Azure transforma o Windows Server em um cache rápido do compartilhamento de arquivos do Azure. Use qualquer protocolo disponível no Windows Server para acessar seus dados localmente, incluindo SMB, NFS e FTPS. Você pode ter tantos caches quantos precisar em todo o mundo.
@@ -183,6 +183,12 @@ Para volumes que não têm a disposição em camadas de nuvem habilitada, a Sinc
 - Para trabalhos de otimização de eliminação de duplicação em andamento, as camadas com a política de data de nuvem obter atrasada pela eliminação de duplicação de dados [MinimumFileAgeDays](https://docs.microsoft.com/powershell/module/deduplication/set-dedupvolume?view=win10-ps) a configuração, se o arquivo já não está em camadas. 
     - Exemplo: Se a configuração MinimumFileAgeDays é de 7 dias e política de data de camadas de nuvem é de 30 dias, a política de data será camada arquivos depois de 37 dias.
     - Observação: Depois que um arquivo é hierárquico pela sincronização de arquivos do Azure, o trabalho de otimização da eliminação de duplicação irá ignorar o arquivo.
+- Se um servidor que executa o Windows Server 2012 R2 com o agente de sincronização de arquivos do Azure instalado for atualizado para o Windows Server 2016 ou Windows Server 2019, as etapas a seguir devem ser executadas para dar suporte à eliminação de duplicação de dados e camada de nuvem no mesmo volume:  
+    - Desinstale o agente de sincronização de arquivos do Azure para Windows Server 2012 R2 e reinicie o servidor.
+    - Baixe o agente de sincronização de arquivos do Azure para a nova versão do sistema operacional do servidor (Windows Server 2016 ou Windows Server 2019).
+    - Instalar o agente de sincronização de arquivos do Azure e reinicie o servidor.  
+    
+    Observação: As definições de configuração de sincronização de arquivos do Azure no servidor são mantidas quando o agente seja desinstalado e reinstalado.
 
 ### <a name="distributed-file-system-dfs"></a>DFS (Sistema de Arquivos Distribuído)
 A Sincronização de Arquivos do Azure fornece suporte para interoperabilidade com Namespaces de DFS (DFS-N) e Replicação do DFS (DFS-R).
@@ -255,7 +261,7 @@ A Sincronização de Arquivos do Azure está disponível apenas nas seguintes re
 | Índia Central | Pune |
 | Centro dos EUA | Iowa |
 | Ásia Oriental | RAE de Hong Kong |
-| Leste dos EUA | Virgínia |
+| East US | Virgínia |
 | Leste dos EUA 2 | Virgínia |
 | Coreia Central| Seul |
 | Sul da Coreia| Busan |
@@ -296,7 +302,7 @@ Para dar suporte à integração de failover entre o armazenamento com redundân
 | Índia Central       | Sul da Índia        |
 | Centro dos EUA          | Leste dos EUA 2          |
 | Ásia Oriental           | Sudeste Asiático     |
-| Leste dos EUA             | Oeste dos EUA            |
+| East US             | Oeste dos EUA            |
 | Leste dos EUA 2           | Centro dos EUA         |
 | Leste do Japão          | Oeste do Japão         |
 | Oeste do Japão          | Leste do Japão         |
@@ -314,7 +320,7 @@ Para dar suporte à integração de failover entre o armazenamento com redundân
 | Gov. dos EUA – Virgínia      | Governo dos EUA do Texas       |
 | Europa Ocidental         | Norte da Europa       |
 | Centro-Oeste dos EUA     | Oeste dos EUA 2          |
-| Oeste dos EUA             | Leste dos EUA            |
+| Oeste dos EUA             | East US            |
 | Oeste dos EUA 2           | Centro-Oeste dos EUA    |
 
 ## <a name="azure-file-sync-agent-update-policy"></a>Política de atualização do agente de Sincronização de Arquivo do Azure

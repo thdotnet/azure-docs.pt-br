@@ -3,7 +3,7 @@ title: 'Azure AD Domain Services: Habilitar a sincronização de senha | Microso
 description: Introdução aos Serviços de Domínio do Active Directory do Azure
 services: active-directory-ds
 documentationcenter: ''
-author: MikeStephens-MS
+author: iainfoulds
 manager: daveba
 editor: curtand
 ms.assetid: 8731f2b2-661c-4f3d-adba-2c9e06344537
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/10/2019
-ms.author: mstephen
-ms.openlocfilehash: 37bcdcd304f702f210e755f45af71b2da10bd6e1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: iainfou
+ms.openlocfilehash: e252774d99eecac3623fcbae4ce9fdc0e1591672
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66234877"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67474102"
 ---
 # <a name="enable-password-synchronization-to-azure-active-directory-domain-services"></a>Habilitar a sincronização de senhas para o Azure Active Directory Domain Services
 Nas tarefas anteriores, você habilitou o Azure Active Directory Domain Services para seu locatário do Azure AD (Azure Active Directory). A próxima tarefa é habilitar a sincronização de hashes de credencial necessários para a autenticação Kerberos e NTLM para o Azure AD Domain Services. Depois que a sincronização de credenciais é configurada, os usuários podem entrar no domínio gerenciado com suas credenciais corporativas.

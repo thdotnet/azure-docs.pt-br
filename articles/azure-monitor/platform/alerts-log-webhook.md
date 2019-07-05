@@ -5,15 +5,15 @@ author: msvijayn
 services: monitoring
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 05/01/2018
+ms.date: 06/25/2019
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: 809c98c1e2e51ae51d7fe03f2165a5d9eecb05cc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cad1b0ab484d172000bd62146a88a27bfab1e9f2
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64681811"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448780"
 ---
 # <a name="webhook-actions-for-log-alert-rules"></a>Ações de webhook para regras de alerta do log
 Quando um [alerta de log é criado no Azure](alerts-log.md), você tem a opção de [configurar usando grupos de ações](action-groups.md) para executar uma ou mais ações.  Este artigo descreve as diferentes ações do webhook que estão disponíveis e os detalhes sobre a configuração do webhook baseado em JSON personalizado.
@@ -51,9 +51,10 @@ Webhooks incluem uma URL e uma carga formatada em JSON, que são os dados enviad
 | Hora de início do intervalo de pesquisa |#searchintervalstarttimeutc |Hora de início para consultas em UTC, formato – dd/mm/aaaa hh:mm:ss AM/PM. 
 | SearchQuery |#searchquery |A consulta da pesquisa de log usada pela regra de alerta. |
 | SearchResults |"IncludeSearchResults": true|Registros retornados pela consulta como uma Tabela JSON, limitada aos primeiros 1.000 registros; se "IncludeSearchResults":true for adicionado na definição personalizada do webhook JSON como uma propriedade de nível superior. |
+| Tipo de alerta| #alerttype | O tipo de regra de alerta de log configurada - [medição métrica](alerts-unified-log.md#metric-measurement-alert-rules) ou [número de resultados](alerts-unified-log.md#number-of-results-alert-rules).|
 | WorkspaceID |#workspaceid |ID do seu espaço de trabalho do Log Analytics. |
 | ID do aplicativo |#applicationid |ID do seu aplicativo Application Insight. |
-| ID da assinatura |#subscriptionid |ID da sua assinatura do Azure usado com o Application Insights. 
+| ID da assinatura |#subscriptionid |ID da assinatura do Azure usada. 
 
 > [!NOTE]
 > O LinkToSearchResults passa parâmetros como os tempos de Search Interval StartTime & Search Interval End time na URL para o portal do Azure para visualização na seção de análise. Portal do Azure tem URI limite de cerca de 2000 caracteres de tamanho e serão *não* Abrir link fornecido nos alertas, se os valores de parâmetros excederem o limite ditas. Os usuários podem inserir manualmente os detalhes para exibir os resultados no portal de análise ou usar o [API REST do Application Insights Analytics](https://dev.applicationinsights.io/documentation/Using-the-API) ou [API REST do Log Analytics](/rest/api/loganalytics/) para recuperar os resultados por meio de programação 
@@ -88,8 +89,18 @@ A seguir, é apresentado uma carga de amostra para uma ação padrão do webhook
 
 ```json
 {
-    "WorkspaceId":"12345a-1234b-123c-123d-12345678e",
-    "AlertRuleName":"AcmeRule","SearchQuery":"search *",
+    "SubscriptionId":"12345a-1234b-123c-123d-12345678e",
+    "AlertRuleName":"AcmeRule",
+    "SearchQuery":"Perf | where ObjectName == \"Processor\" and CounterName == \"% Processor Time\" | summarize AggregatedValue = avg(CounterValue) by bin(TimeGenerated, 5m), Computer",
+    "SearchIntervalStartTimeUtc": "2018-03-26T08:10:40Z",
+    "SearchIntervalEndtimeUtc": "2018-03-26T09:10:40Z",
+    "AlertThresholdOperator": "Greater Than",
+    "AlertThresholdValue": 0,
+    "ResultCount": 2,
+    "SearchIntervalInSeconds": 3600,
+    "LinkToSearchResults": "https://portal.azure.com/#Analyticsblade/search/index?_timeInterval.intervalEnd=2018-03-26T09%3a10%3a40.0000000Z&_timeInterval.intervalDuration=3600&q=Usage",
+    "Description": "log alert rule",
+    "Severity": "Warning",
     "SearchResult":
         {
         "tables":[
@@ -107,15 +118,8 @@ A seguir, é apresentado uma carga de amostra para uma ação padrão do webhook
                     }
                 ]
         },
-    "SearchIntervalStartTimeUtc": "2018-03-26T08:10:40Z",
-    "SearchIntervalEndtimeUtc": "2018-03-26T09:10:40Z",
-    "AlertThresholdOperator": "Greater Than",
-    "AlertThresholdValue": 0,
-    "ResultCount": 2,
-    "SearchIntervalInSeconds": 3600,
-    "LinkToSearchResults": "https://workspaceID.portal.mms.microsoft.com/#Workspace/search/index?_timeInterval.intervalEnd=2018-03-26T09%3a10%3a40.0000000Z&_timeInterval.intervalDuration=3600&q=Usage",
-    "Description": null,
-    "Severity": "Warning"
+    "WorkspaceId":"12345a-1234b-123c-123d-12345678e",
+    "AlertType": "Metric measurement"
  }
  ```
 
@@ -131,7 +135,17 @@ A seguir, é apresentado uma carga de amostra para um padrão do webhook *sem a 
     "schemaId":"Microsoft.Insights/LogAlert","data":
     { 
     "SubscriptionId":"12345a-1234b-123c-123d-12345678e",
-    "AlertRuleName":"AcmeRule","SearchQuery":"search *",
+    "AlertRuleName":"AcmeRule",
+    "SearchQuery":"requests | where resultCode == \"500\"",
+    "SearchIntervalStartTimeUtc": "2018-03-26T08:10:40Z",
+    "SearchIntervalEndtimeUtc": "2018-03-26T09:10:40Z",
+    "AlertThresholdOperator": "Greater Than",
+    "AlertThresholdValue": 0,
+    "ResultCount": 2,
+    "SearchIntervalInSeconds": 3600,
+    "LinkToSearchResults": "https://portal.azure.com/AnalyticsBlade/subscriptions/12345a-1234b-123c-123d-12345678e/?query=search+*+&timeInterval.intervalEnd=2018-03-26T09%3a10%3a40.0000000Z&_timeInterval.intervalDuration=3600&q=Usage",
+    "Description": null,
+    "Severity": "3",
     "SearchResult":
         {
         "tables":[
@@ -149,16 +163,8 @@ A seguir, é apresentado uma carga de amostra para um padrão do webhook *sem a 
                     }
                 ]
         },
-    "SearchIntervalStartTimeUtc": "2018-03-26T08:10:40Z",
-    "SearchIntervalEndtimeUtc": "2018-03-26T09:10:40Z",
-    "AlertThresholdOperator": "Greater Than",
-    "AlertThresholdValue": 0,
-    "ResultCount": 2,
-    "SearchIntervalInSeconds": 3600,
-    "LinkToSearchResults": "https://analytics.applicationinsights.io/subscriptions/12345a-1234b-123c-123d-12345678e/?query=search+*+&timeInterval.intervalEnd=2018-03-26T09%3a10%3a40.0000000Z&_timeInterval.intervalDuration=3600&q=Usage",
-    "Description": null,
-    "Severity": "3",
-    "ApplicationId": "123123f0-01d3-12ab-123f-abc1ab01c0a1"
+    "ApplicationId": "123123f0-01d3-12ab-123f-abc1ab01c0a1",
+    "AlertType": "Number of results"
     }
 }
 ```

@@ -10,12 +10,12 @@ ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: cotresne
-ms.openlocfilehash: 10976c9cf16dfab4c31d0d77c519dc3277204a51
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 118daf02ab59646f2926071763aa4d7e97846e04
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67293057"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508227"
 ---
 # <a name="deployment-technologies-in-azure-functions"></a>Tecnologias de implantação no Azure Functions
 
@@ -50,16 +50,18 @@ Antes de continuar, é importante aprender alguns conceitos-chave que serão ess
 Quando você alterar qualquer um dos seus gatilhos, a infra-estrutura de funções precisa estar atento essas alterações. Esta sincronização ocorre automaticamente para muitas tecnologias de implantação. No entanto, em alguns casos você deverá sincronizar manualmente seus gatilhos. Quando você implanta as atualizações usando uma URL do pacote externo, local Git, sincronização de nuvem ou FTP, certifique-se de ter sincronizar manualmente seus gatilhos. Você pode sincronizar os gatilhos em uma das três maneiras:
 
 * Reinicie o aplicativo de função no portal do Azure
-* Envie uma solicitação HTTP POST para `https://www.{functionappname}.azurewebsites.net/admin/host/synctriggers?code=<API_KEY>` usando o [chave mestra](functions-bindings-http-webhook.md#authorization-keys).
+* Envie uma solicitação HTTP POST para `https://{functionappname}.azurewebsites.net/admin/host/synctriggers?code=<API_KEY>` usando o [chave mestra](functions-bindings-http-webhook.md#authorization-keys).
 * Envie uma solicitação HTTP POST para `https://management.azure.com/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP_NAME>/providers/Microsoft.Web/sites/<FUNCTION_APP_NAME>/syncfunctiontriggers?api-version=2016-08-01`. Substitua os espaços reservados com sua ID de assinatura, nome do grupo de recursos e o nome do seu aplicativo de funções.
 
 ## <a name="deployment-technology-details"></a>Detalhes da tecnologia de implantação  
+
+Esses métodos de implantação a seguir têm suporte pelo Azure Functions.
 
 ### <a name="external-package-url"></a>URL do pacote externo
 
 Permite que você faça referência a um arquivo de pacote remoto (. zip) que contém seu aplicativo de funções. O arquivo é baixado da URL fornecida e o aplicativo é executado [execução do pacote](run-functions-from-deployment-package.md) modo.
 
->__Como usá-lo:__ Adicionar `WEBSITE_RUN_FROM_PACKAGE` para as configurações do aplicativo. O valor dessa configuração deve ser uma URL - o local do arquivo de pacote específico que você deseja executar. Você pode adicionar configurações de qualquer um dos [no portal do](functions-how-to-use-azure-function-app-settings.md#settings) ou [usando a CLI do Azure](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set). Se usar o armazenamento de BLOBs do Azure, você deve usar um contêiner privado com um [assinatura de acesso compartilhado (SAS)](../vs-azure-tools-storage-manage-with-storage-explorer.md#attach-a-storage-account-by-using-a-shared-access-signature-sas) para conceder acesso de funções ao pacote. A qualquer momento o aplicativo ser reiniciado ele buscará uma cópia do conteúdo, o que significa que sua referência deve ser válida para o tempo de vida do aplicativo.
+>__Como usá-lo:__ Adicionar `WEBSITE_RUN_FROM_PACKAGE` para as configurações do aplicativo. O valor dessa configuração deve ser uma URL - o local do arquivo de pacote específico que você deseja executar. Você pode adicionar configurações de qualquer um dos [no portal do](functions-how-to-use-azure-function-app-settings.md#settings) ou [usando a CLI do Azure](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set). Se usar o armazenamento de BLOBs do Azure, você deve usar um contêiner privado com um [assinatura de acesso compartilhado (SAS)](../vs-azure-tools-storage-manage-with-storage-explorer.md#generate-a-sas-in-storage-explorer) para conceder acesso de funções ao pacote. A qualquer momento o aplicativo ser reiniciado ele buscará uma cópia do conteúdo, o que significa que sua referência deve ser válida para o tempo de vida do aplicativo.
 
 >__Quando usá-lo:__ Esse é o método de implantação somente tem suportado para funções do Azure em execução no Linux no plano de consumo (visualização). Ao atualizar o arquivo de pacote que faz referência a um aplicativo de funções, você deve [sincronizar manualmente os disparadores](#trigger-syncing) para informar ao Azure que seu aplicativo foi alterado.
 
@@ -88,11 +90,11 @@ Implante uma imagem de contêiner do Linux que contém seu aplicativo de funçõ
 
 ### <a name="web-deploy-msdeploy"></a>(MSDeploy) de implantação da Web
 
-Empacota e implanta os aplicativos do Windows para qualquer servidor do IIS, incluindo seus aplicativos de funções do Azure em execução no Windows.
+Empacota e implanta os aplicativos do Windows para qualquer servidor do IIS, incluindo seus aplicativos de funções em execução no Windows no Azure.
 
->__Como usá-lo:__ Use o [ferramentas do Visual Studio para o Azure Functions](functions-create-your-first-function-visual-studio.md), e não escala o `Run from package file (recommended)` caixa de seleção.
+>__Como usá-lo:__ Use o [ferramentas do Visual Studio para o Azure Functions](functions-create-your-first-function-visual-studio.md)e desmarque o `Run from package file (recommended)` caixa.
 >
->Como alternativa, chame `MSDeploy.exe` diretamente após o download [Web implantar 3.6](https://www.iis.net/downloads/microsoft/web-deploy).
+> Você também pode baixar [Web implantar 3.6](https://www.iis.net/downloads/microsoft/web-deploy) e chame `MSDeploy.exe` diretamente.
 
 >__Quando usá-lo:__ Essa tecnologia de implantação tem suporte e não tem nenhum problema, mas o mecanismo preferido é agora [Zip implantar com a execução do pacote habilitado](#zip-deploy). Para saber mais, visite o [guia de desenvolvimento do Visual Studio](functions-develop-vs.md#publish-to-azure).
 

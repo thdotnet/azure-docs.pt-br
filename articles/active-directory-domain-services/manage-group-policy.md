@@ -3,7 +3,7 @@ title: 'Azure Active Directory Domain Services: Administrar a Política de Grupo
 description: Administrar a política de grupo nos domínios gerenciados do Azure Active Directory Domain Services
 services: active-directory-ds
 documentationcenter: ''
-author: MikeStephens-MS
+author: iainfoulds
 manager: daveba
 editor: curtand
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/13/2019
-ms.author: mstephen
-ms.openlocfilehash: db5fd06bc4d9a923279095ab187d867a6624480a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: iainfou
+ms.openlocfilehash: 3776ec6fd60ad888102cbc4992572516386fede2
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66245843"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67473095"
 ---
 # <a name="administer-group-policy-on-an-azure-ad-domain-services-managed-domain"></a>Administrar a política de grupo em um domínio gerenciado do Azure AD Domain Services
 O Azure Active Directory Domain Services inclui GPOs (Objetos de Política de Grupo) internos para os contêineres "Usuários do AADDC" e "Computadores do AADDC". Você pode personalizar esses GPOs internos para configurar a Política de Grupo no domínio gerenciado. Além disso, os membros do grupo "Administradores do AAD DC" podem criar suas próprias UOs personalizadas no domínio gerenciado. Eles também podem criar GPOs personalizados e vinculá-los a essas UOs personalizadas. Os usuários que pertencem ao grupo "Administradores do AAD DC" recebem privilégios de administração da Política de Grupo no domínio gerenciado.
