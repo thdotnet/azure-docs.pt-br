@@ -8,13 +8,13 @@ manager: nitinme
 ms.service: cognitive-services
 ms.topic: article
 ms.date: 11/01/2018
-ms.author: rosh, v-gedod
-ms.openlocfilehash: 82b2f5ca70927856aeac889675b5ec4a54ae034f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: rosh
+ms.openlocfilehash: e96b1959d9e03273a9ca4c549c0f8b0bda6a708b
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65796756"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67592798"
 ---
 # <a name="bing-local-business-search-api-v7-reference"></a>Referência da API v7 da Pesquisa de empresa local do Bing
 
@@ -74,11 +74,11 @@ A solicitação pode incluir os parâmetros de consulta a seguir. Confira a colu
 |----------|-----------|----------|--------------|
 |<a name="count" />Contagem|O número de resultados a serem retornados, começando com o índice especificado pelo `offset` parâmetro.|Cadeia de caracteres|Não|   
 |<a name="localCategories" />localCategories|Lista de opções que definem a pesquisa por categoria de negócio.  Consulte [categorias de negócios locais de pesquisa](local-categories.md)|Cadeia de caracteres|Não|  
-|<a name="mkt" />mkt|O mercado do qual os resultados são obtidos. <br /><br />Para obter uma lista dos possíveis valores de mercado, confira Códigos de mercado.<br /><br /> **OBSERVAÇÃO:** Atualmente, a API de Pesquisa de Empresas Locais dá suporte apenas ao mercado e ao idioma en-us.<br /><br />|Cadeia de caracteres|Sim|
+|<a name="mkt" />mkt|O mercado do qual os resultados são obtidos. <br /><br />Para obter uma lista dos possíveis valores de mercado, confira Códigos de mercado.<br /><br /> **OBSERVAÇÃO:** Atualmente, a API de Pesquisa de Empresas Locais dá suporte apenas ao mercado e ao idioma en-us.<br /><br />|String|Sim|
 |<a name="offset"/>deslocamento|O índice para iniciar os resultados especificados pelo parâmetro `count`.|Número inteiro|Não|  
-|<a name="query" />q|Termo de pesquisa do usuário.|Cadeia de caracteres|Não|  
+|<a name="query" />q|Termo de pesquisa do usuário.|String|Não|  
 |<a name="responseformat" />responseFormat|O tipo de mídia a ser usado para a resposta. Veja a seguir os possíveis valores que não diferenciam maiúsculas de minúsculas.<br /><ul><li>JSON</li><li>JSONLD</li></ul><br /> O padrão é JSON. Para obter informações sobre os objetos JSON contidos na resposta, confira [Objetos de resposta](#response-objects).<br /><br />  Se você especificar JsonLd, o corpo da resposta incluirá objetos JSON-LD que contêm os resultados da pesquisa. Para obter informações sobre o JSON-LD, confira [JSON-LD](https://json-ld.org/).|Cadeia de caracteres|Não|  
-|<a name="safesearch" />Pesquisa Segura|Um filtro usado para filtrar o conteúdo para adulto. Veja a seguir os possíveis valores de filtro que não diferenciam maiúsculas de minúsculas.<br /><ul><li>Desativado – retorna páginas da Web com texto, imagens ou vídeos para adulto.<br /><br/></li><li>Moderado – retorna páginas da Web com texto para adulto, mas não imagens nem vídeos para adulto.<br /><br/></li><li>Estrito – não retorna páginas da Web com texto, imagens ou vídeos para adulto.</li></ul><br /> O padrão é Moderado.<br /><br /> **OBSERVAÇÃO:** Se a solicitação for proveniente de um mercado cuja política de conteúdo para adulto do Bing exija que `safeSearch` seja definido como Estrito, o Bing ignorará o valor `safeSearch` e usará Estrito.<br/><br/>**OBSERVAÇÃO:** Se você usar o operador de consulta `site:`, haverá a possibilidade da resposta poder conter conteúdo adulto, independentemente de como o parâmetro de consulta `safeSearch` está definido. Só use `site:` se estiver ciente do conteúdo do site e se o cenário der suporte à possibilidade de conteúdo para adulto. |Cadeia de caracteres|Não|  
+|<a name="safesearch" />Pesquisa Segura|Um filtro usado para filtrar o conteúdo para adulto. Veja a seguir os possíveis valores de filtro que não diferenciam maiúsculas de minúsculas.<br /><ul><li>Desativado – retorna páginas da Web com texto, imagens ou vídeos para adulto.<br /><br/></li><li>Moderado – retorna páginas da Web com texto para adulto, mas não imagens nem vídeos para adulto.<br /><br/></li><li>Estrito – não retorna páginas da Web com texto, imagens ou vídeos para adulto.</li></ul><br /> O padrão é Moderado.<br /><br /> **OBSERVAÇÃO:** Se a solicitação for proveniente de um mercado cuja política de conteúdo para adulto do Bing exija que `safeSearch` seja definido como Estrito, o Bing ignorará o valor `safeSearch` e usará Estrito.<br/><br/>**OBSERVAÇÃO:** Se você usar o operador de consulta `site:`, haverá a possibilidade da resposta poder conter conteúdo adulto, independentemente de como o parâmetro de consulta `safeSearch` está definido. Só use `site:` se estiver ciente do conteúdo do site e se o cenário der suporte à possibilidade de conteúdo para adulto. |String|Não|  
 |<a name="setlang" />setLang|O idioma a ser usado para cadeias de caracteres de interface do usuário. Especifique o idioma usando o código de idioma ISO 639-1 de 2 letras. Por exemplo, o código de idioma para o inglês é EN. O padrão é EN (inglês).<br /><br /> Embora isso seja opcional, você sempre deve especificar o idioma. Normalmente, você define `setLang` com o mesmo idioma especificado por `mkt`, a menos que o usuário deseje exibir as cadeias de caracteres de interface do usuário em outro idioma.<br /><br /> Esse parâmetro e o cabeçalho [Accept-Language](#acceptlanguage) são mutuamente exclusivos – não especifique ambos.<br /><br /> Uma cadeia de caracteres de interface do usuário é uma cadeia de caracteres que é usada como um rótulo em uma interface do usuário. Há poucas cadeias de caracteres de interface do usuário nos objetos de resposta JSON. Além disso, todos os links para as propriedades de Bing.com nos objetos de resposta aplicam o idioma especificado.|Cadeia de caracteres|Não| 
 
 
@@ -96,9 +96,9 @@ Define o erro ocorrido.
   
 |Elemento|DESCRIÇÃO|Type|  
 |-------------|-----------------|----------|  
-|<a name="error-code" />code|O código de erro que identifica a categoria de erro. Para obter uma lista dos possíveis códigos, confira [Códigos de erro](#error-codes).|Cadeia de caracteres|  
+|<a name="error-code" />code|O código de erro que identifica a categoria de erro. Para obter uma lista dos possíveis códigos, confira [Códigos de erro](#error-codes).|String|  
 |<a name="error-message" />message|Uma descrição do erro.|Cadeia de caracteres|  
-|<a name="error-moredetails" />moreDetails|Uma descrição que fornece informações adicionais sobre o erro.|Cadeia de caracteres|  
+|<a name="error-moredetails" />moreDetails|Uma descrição que fornece informações adicionais sobre o erro.|String|  
 |<a name="error-parameter" />parameter|O parâmetro de consulta na solicitação que causou o erro.|Cadeia de caracteres|  
 |<a name="error-subcode" />subCode|O código de erro que identifica o erro. Por exemplo, se `code` é InvalidRequest, `subCode` pode ser ParameterInvalid ou ParameterInvalidValue. |Cadeia de caracteres|  
 |<a name="error-value" />value|O valor do parâmetro de consulta inválido.|Cadeia de caracteres|  
@@ -120,7 +120,7 @@ Define a licença sob a qual a foto ou o texto pode ser usado.
 |NOME|Value|Type|  
 |----------|-----------|----------|  
 |name|O nome da licença.|Cadeia de caracteres|  
-|url|A URL para um site em que o usuário pode obter mais informações sobre a licença.<br /><br /> Use o nome e a URL para criar um hiperlink.|Cadeia de caracteres|  
+|url|A URL para um site em que o usuário pode obter mais informações sobre a licença.<br /><br /> Use o nome e a URL para criar um hiperlink.|String|  
 
 
 ### <a name="link"></a>Link  
@@ -129,7 +129,7 @@ Define os componentes de um hiperlink.
 |NOME|Value|Type|  
 |----------|-----------|----------|  
 |_type|Dica de tipo.|Cadeia de caracteres|  
-|text|O texto de exibição.|Cadeia de caracteres|  
+|text|O texto de exibição.|String|  
 |url|Uma URL. Use a URL e exiba o texto para criar um hiperlink.|Cadeia de caracteres|  
   
 
@@ -155,10 +155,10 @@ Define informações sobre uma empresa local, como um restaurante ou hotel.
 |_type|Digite hint, que pode ser definido como um dos seguintes:<br /><br /><ul><li>Hotel</li><li>LocalBusiness<br /></li><li>Restaurante</ul><li>|Cadeia de caracteres|  
 |endereço|O endereço postal em que a entidade está localizada.|PostalAddress|  
 |entityPresentationInfo|Informações adicionais sobre a entidade, como dicas que você pode usar para determinar o tipo da entidade. Por exemplo, seja um restaurante ou hotel. O campo `entityScenario` está definido como ListItem.|EntityPresentationInfo|  
-|name|O nome da entidade.|Cadeia de caracteres|  
-|telefone|Número de telefone da entidade.|Cadeia de caracteres|  
+|name|O nome da entidade.|String|  
+|telefone|Número de telefone da entidade.|String|  
 |url|A URL para o site da entidade.<br /><br /> Use este URL junto com o nome da entidade para criar um hiperlink que, quando clicado, leva o usuário ao site da entidade.|Cadeia de caracteres|  
-|webSearchUrl|A URL para o resultado da pesquisa do Bing para esse local.|Cadeia de caracteres| 
+|webSearchUrl|A URL para o resultado da pesquisa do Bing para esse local.|String| 
   
   
 ### <a name="querycontext"></a>QueryContext  

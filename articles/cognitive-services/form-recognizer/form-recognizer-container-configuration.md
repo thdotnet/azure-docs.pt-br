@@ -5,16 +5,16 @@ description: Saiba como configurar o contêiner do Reconhecimento de Formulário
 author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
-ms.subservice: form-recognizer
+ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: 7e8e7a13cd02a6f3b109a84829dba2a81fd36aaa
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: e4b6a852ece3060ecf866d66d32f213355d99950
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67296244"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67592656"
 ---
 # <a name="configure-form-recognizer-containers"></a>Configurar contêineres do Reconhecimento de Formulários
 
@@ -47,7 +47,7 @@ Você pode encontrar essa configuração no portal do Azure, em **Visão Geral d
 
 |Obrigatório| NOME | Tipo de dados | DESCRIÇÃO |
 |--|------|-----------|-------------|
-|Sim| `Billing` | string | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westus2.api.cognitive.microsoft.com/` |
+|Sim| `Billing` | Cadeia de caracteres | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westus2.api.cognitive.microsoft.com/` |
 
 ## <a name="eula-setting"></a>Configuração de EULA
 
@@ -76,8 +76,8 @@ A sintaxe exata do local da montagem do host varia de acordo com o sistema opera
 
 |Opcional| NOME | Tipo de dados | DESCRIÇÃO |
 |-------|------|-----------|-------------|
-|Obrigatório| `Input` | string | O destino de montagem de entrada. O valor padrão é `/input`.    <br><br>Exemplo:<br>`--mount type=bind,src=c:\input,target=/input`|
-|Obrigatório| `Output` | string | O destino de montagem de saída. O valor padrão é `/output`.  <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Obrigatório| `Input` | Cadeia de caracteres | O destino de montagem de entrada. O valor padrão é `/input`.    <br><br>Exemplo:<br>`--mount type=bind,src=c:\input,target=/input`|
+|Obrigatório| `Output` | Cadeia de caracteres | O destino de montagem de saída. O valor padrão é `/output`.  <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Comandos docker run de exemplo
 
@@ -88,7 +88,7 @@ Os exemplos a seguir usam as definições de configuração para ilustrar como e
 
 Substitua {_argument_name_} na tabela a seguir por seus próprios valores:
 
-| Placeholder | Valor |
+| Placeholder | Value |
 |-------------|-------|
 |{BILLING_KEY} | A chave usada para iniciar o contêiner. Ela está disponível na página Chaves de Reconhecimento de Formulários do portal do Azure.  |
 |{BILLING_ENDPOINT_URI} | O valor de URI do ponto de extremidade de cobrança está disponível na página Visão Geral do Reconhecimento de Formulários do portal do Azure.|

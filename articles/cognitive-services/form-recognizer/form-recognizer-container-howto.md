@@ -5,16 +5,16 @@ description: Saiba como usar o contêiner do Reconhecimento de Formulários para
 author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
-ms.subservice: form-recognizer
+ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: f38752928832b7dee6a7e55f1d25374a64391bbe
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: a3c7de8f5e86df749ec3b6d9e73e6f6299e94faf
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67441890"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67592674"
 ---
 # <a name="install-and-run-form-recognizer-containers"></a>Instalar e executar contêineres do Reconhecimento de Formulários
 O Reconhecimento de Formulários do Azure aplica tecnologia de aprendizado de máquina para identificar e extrair pares chave-valor e tabelas de formulários. Ele associa valores e entradas de tabelas a pares chave-valor e, em seguida, gera dados estruturados que incluem as relações no arquivo original. 
@@ -55,7 +55,7 @@ Primeiro, é necessário preencher e enviar o [formulário de solicitação de a
 
 Os núcleos de CPU e a memória mínimos e recomendados a serem alocados para cada contêiner do Reconhecimento de Formulários são descritos na tabela a seguir:
 
-| Contêiner | Mínimo | Recomendado |
+| Contêiner | Mínimo | Recomendadas |
 |-----------|---------|-------------|
 |cognitive-services-form-recognizer | 2 núcleos, 4 GB de memória | 4 núcleos, 8 GB de memória |
 

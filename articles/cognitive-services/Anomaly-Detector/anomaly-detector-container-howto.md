@@ -5,16 +5,16 @@ description: Use algoritmos avançados da API de Detector de anomalias para iden
 services: cognitive-services
 author: IEvangelist
 ms.service: cognitive-services
-ms.subservice: anomaly-detection
+ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: 704ea3ecbc309c2328e120d5b6776e659944d254
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 254173df33bdc82b7de87328a715954c1a6993d7
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67275034"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67593120"
 ---
 # <a name="install-and-run-anomaly-detector-containers"></a>Instalar e executar contêineres do Detector de anomalias
 
@@ -57,7 +57,7 @@ Você deve primeiro concluir e enviar o [formulário de solicitação de contêi
 
 A tabela a seguir descreve os núcleos de CPU e memória para alocar para o contêiner do Detector de anomalias mínimos e recomendados.
 
-| QPS (consultas por segundo) | Mínimo | Recomendadas |
+| QPS (consultas por segundo) | Mínimo | Recomendado |
 |-----------|---------|-------------|
 | 10 QPS | 4 núcleos, 1GB de memória | 2GB de memória de 8 núcleos |
 | 20 QPS | 8 núcleos, 2GB de memória | 4GB de memória de 16 núcleos |
