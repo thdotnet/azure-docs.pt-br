@@ -5,14 +5,14 @@ services: bastion
 author: cherylmc
 ms.service: bastion
 ms.topic: conceptual
-ms.date: 06/03/2019
+ms.date: 06/25/2019
 ms.author: cherylmc
-ms.openlocfilehash: 5fbd64d2f001a0fbe91de2d954889816a1819479
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 4a52383e6ab24c6ae1e2be0b67293d65dfa04466
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67339445"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67477875"
 ---
 # <a name="create-an-azure-bastion-host-preview"></a>Criar um host de bastiões do Azure (visualização)
 
@@ -33,15 +33,11 @@ A visualização pública é limitada a regiões pública do Azure a seguir:
 
 [!INCLUDE [available regions](../../includes/bastion-regions-include.md)]
 
-Para participar desta versão prévia, você precisa registrar. Use estas etapas para se registrar para a visualização:
-
-[!INCLUDE [register](../../includes/bastion-preview-register-include.md)]
-
 ## <a name="createhost"></a>Criar um host bastião
 
 Esta seção ajuda você a criar um novo recurso de bastiões do Azure do portal do Azure.
 
-1. Na home page na [ portal do Azure – versão prévia](https://aka.ms/BastionHost), clique em **+ criar um recurso**. Verifique se que você usa o link fornecido para acessar o portal para essa visualização, não o portal do Azure regular.
+1. Na home page na [portal do Azure – visualização de bastiões](https://aka.ms/BastionHost), clique em **+ criar um recurso**. Verifique se que você usa o link fornecido para acessar o portal para essa visualização, não o portal do Azure regular.
 
 1. No **New** página, no *pesquisar no Marketplace* , digite **bastiões**, em seguida, clique em **Enter** para obter os resultados da pesquisa.
 
@@ -72,7 +68,7 @@ Esta seção ajuda você a criar um novo recurso de bastiões do Azure do portal
 
 Se você criar um host bastião no portal usando uma VM existente, várias configurações automaticamente padrão serão correspondente à sua máquina virtual e/ou rede virtual.
 
-1. No [versão prévia do portal](https://aka.ms/BastionHost), navegue até sua máquina virtual e clique **Connect**.
+1. No [portal do Azure – visualização de bastiões](https://aka.ms/BastionHost), navegue até sua máquina virtual e clique **Connect**.
 
     ![Conectar-se de VM](./media/bastion-create-host-portal/vmsettings.png)
 

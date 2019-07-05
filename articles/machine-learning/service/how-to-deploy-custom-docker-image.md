@@ -10,12 +10,12 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 06/05/2019
-ms.openlocfilehash: bd0e8099be5422d561541aeb8911c9a1610befcb
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 29fdb200075a5b5843944a7a890cc2f8ad61f1ee
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67272771"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67543845"
 ---
 # <a name="deploy-a-model-using-a-custom-docker-image"></a>Implantar um modelo usando uma imagem personalizada do Docker
 
@@ -55,14 +55,14 @@ As informações nesta seção pressupõem que você está usando um registro de
 
     Quando usar imagens armazenados na __registro de contêiner para o espaço de trabalho__, você não precisa se autenticar no registro. Autenticação é manipulada pelo espaço de trabalho.
 
-    > [!TIP]
-    > O registro de contêiner para seu espaço de trabalho é criado na primeira vez, treinar ou implantar um modelo usando o espaço de trabalho. Se você tiver criado um novo espaço de trabalho, mas não treinado ou criou um modelo, nenhum registro de contêiner do Azure continuará a existir no espaço de trabalho.
+    > [!WARNING]
+    > É o Rzegistry de contêiner do Azure para seu espaço de trabalho __criado na primeira vez, treinar ou implantar um modelo__ usando o espaço de trabalho. Se você tiver criado um novo espaço de trabalho, mas não treinado ou criou um modelo, nenhum registro de contêiner do Azure continuará a existir no espaço de trabalho.
 
     Para obter informações sobre como recuperar o nome do registro de contêiner do Azure para seu espaço de trabalho, consulte o [nome do registro de contêiner Get](#getname) seção deste artigo.
 
     Quando usar imagens armazenados em uma __registro de contêiner autônoma__, você precisará configurar uma entidade de serviço que tem pelo menos acesso de leitura. Você, em seguida, forneça o ID da entidade de serviço (nome de usuário) e a senha para qualquer pessoa que usa imagens do registro. A exceção é se você tornar o registro de contêiner publicamente acessível.
 
-    Para obter informações sobre como criar um registro de contêiner privado do Azure, consulte [criar um registro de contêiner privado](/azure/container-registry/container-registery-get-started-azure-cli).
+    Para obter informações sobre como criar um registro de contêiner privado do Azure, consulte [criar um registro de contêiner privado](/azure/container-registry/container-registry-get-started-azure-cli).
 
     Para obter informações sobre como usar as entidades de serviço com o registro de contêiner do Azure, consulte [autenticação de registro de contêiner do Azure com entidades de serviço](/azure/container-registry/container-registry-auth-service-principal).
 
@@ -80,8 +80,8 @@ As informações nesta seção pressupõem que você está usando um registro de
 
 Nesta seção, saiba como obter o nome do registro de contêiner do Azure para seu espaço de trabalho do serviço de Azure Machine Learning.
 
-> [!TIP]
-> O registro de contêiner para seu espaço de trabalho é criado na primeira vez, treinar ou implantar um modelo usando o espaço de trabalho. Se você tiver criado um novo espaço de trabalho, mas não treinado ou criou um modelo, nenhum registro de contêiner do Azure continuará a existir no espaço de trabalho.
+> [!WARNING]
+> O registro de contêiner do Azure para seu espaço de trabalho é __criado na primeira vez, treinar ou implantar um modelo__ usando o espaço de trabalho. Se você tiver criado um novo espaço de trabalho, mas não treinado ou criou um modelo, nenhum registro de contêiner do Azure continuará a existir no espaço de trabalho.
 
 Se você já tiver treinado ou implantado modelos usando o serviço de Azure Machine Learning, um registro de contêiner foi criado para seu espaço de trabalho. Para localizar o nome deste registro de contêiner, use as seguintes etapas:
 
@@ -153,9 +153,9 @@ As etapas neste passo a passo de seção criar uma imagem personalizada do Docke
     Run ID: cda was successful after 2m56s
     ```
 
-Para obter mais informações sobre a criação de imagens com um registro de contêiner do Azure, consulte [compilar e executar uma imagem de contêiner usando as tarefas de registro de contêiner do Azure](/docs.microsoft.com/azure/container-registry/container-registry-quickstart-task-cli.md)
+Para obter mais informações sobre a criação de imagens com um registro de contêiner do Azure, consulte [compilar e executar uma imagem de contêiner usando as tarefas de registro de contêiner do Azure](https://docs.microsoft.com/azure/container-registry/container-registry-quickstart-task-cli)
 
-Para obter mais informações sobre como carregar imagens existentes para um registro de contêiner do Azure, consulte [envie sua primeira imagem para um registro de contêiner do Docker privado](/azure/container-registry/container-registry-get-started-docker-cli.md).
+Para obter mais informações sobre como carregar imagens existentes para um registro de contêiner do Azure, consulte [envie sua primeira imagem para um registro de contêiner do Docker privado](/azure/container-registry/container-registry-get-started-docker-cli).
 
 ## <a name="use-a-custom-image"></a>Usar uma imagem personalizada
 

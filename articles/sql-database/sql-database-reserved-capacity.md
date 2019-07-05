@@ -11,13 +11,13 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: sstein, carlrab
 manager: craigg
-ms.date: 04/26/2019
-ms.openlocfilehash: 74a52df4eab8a3e471e541889cde74846af00fb8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 07/01/2019
+ms.openlocfilehash: 8c4fd3d49b4df3b3d18802e49d51aa54c0b58333
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64574200"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67566179"
 ---
 # <a name="prepay-for-sql-database-compute-resources-with-azure-sql-database-reserved-capacity"></a>Pré-pagamento para recursos de computação do Banco de Dados SQL com capacidade reservada do Banco de Dados SQL do Azure
 
@@ -28,7 +28,7 @@ Você não precisa atribuir a reserva a instâncias específicas do Banco de Dad
 
 Você pode comprar capacidade reservada do Banco de Dados SQL do Azure na [portal do Azure](https://portal.azure.com). Capacidade reservada comprar o banco de dados SQL:
 
-- Você deve ser na função de proprietário para pelo menos uma assinatura Enterprise ou paga conforme o uso.
+- Você deve ser na função de proprietário para pelo menos uma Enterprise ou assinatura individual com tarifas pré-pagas.
 - Para as assinaturas Enterprise, a opção **Adicionar Instâncias Reservadas** deve estar habilitada no [Portal EA](https://ea.azure.com). Ou, se essa configuração estiver desabilitada, você deve ser um administrador de EA na assinatura.
 - Para o programa Provedor de Solução de Nuvem (CSP), apenas os agentes admin ou agentes de vendas podem adquirir a capacidade reservada do Banco de Dados SQL.
 
@@ -44,26 +44,25 @@ Por exemplo, vamos supor que você esteja executando uma finalidade geral, o poo
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
 2. Selecione **Todos os serviços** > **Reservas**.
-3. Selecione **Add** e, em seguida, no painel Selecionar tipo de produto, selecione **banco de dados SQL** para comprar uma nova reserva do banco de dados SQL.
+3. Selecione **Add** e, em seguida, no painel de reservas de compra, selecione **banco de dados SQL** para comprar uma nova reserva do banco de dados SQL.
 4. Preencha os campos obrigatórios. Bancos de dados individuais, pools elásticos ou instâncias gerenciadas novos ou existentes que correspondem aos atributos que você selecionou se qualificam para obter o desconto de capacidade reserva. O número real de suas instâncias do Banco de Dados SQL que recebem o desconto depende do escopo e da quantidade selecionada.
+    ![Captura de tela antes de enviar o banco de dados do SQL reservadas a compra de capacidade](./media/sql-database-reserved-vcores/sql-reserved-vcores-purchase.png)
 
-   ![Captura de tela antes de enviar a compra de capacidade reservada do Banco de Dados SQL](./media/sql-database-reserved-vcores/sql-reserved-vcores-purchase.png)
+A tabela a seguir descreve os campos obrigatórios.
 
-    | Campo      | DESCRIÇÃO|
-    |:------------|:--------------|
-    |NOME        |O nome dessa reserva.|
-    |Assinatura|A assinatura usada para pagar pela reserva de capacidade reservada do Banco de Dados SQL. O método de pagamento na assinatura é cobrado pelos custos iniciais da reserva de capacidade reservada do Banco de Dados SQL. O tipo de assinatura deve ser um contrato empresarial (números da oferta: MS-AZR-0017P ou MS-AZR-0148P) ou Pagamento Conforme o Uso (números da oferta: MS-AZR-0003P ou MS-AZR-0023P). Para uma assinatura de empresa, os encargos são deduzidos do saldo do compromisso monetário do registro ou cobrados como média. Para a assinatura de Pagamento Conforme o Uso, as cobranças são feitas ao cartão de crédito ou à forma de pagamento de faturas na assinatura.|
-    |Escopo       |O escopo da reserva vCore pode cobrir uma assinatura ou várias assinaturas (escopo compartilhado). Se você selecionar: <br/><br/>**Assinatura única** – o desconto de reserva vCore é aplicado às instâncias do Banco de Dados SQL nessa assinatura. <br/><br/>**Assinatura compartilhada** – o desconto de reserva de vCore é aplicado às instâncias de Banco de Dados SQL em execução em todas as assinaturas dentro de seu contexto de cobrança. Para clientes empresariais, o escopo compartilhado é o registro e inclui todas as assinaturas no registro. Para clientes de Pagamento Conforme o Uso, o escopo compartilhado consiste em todas as assinaturas de Pagamento Conforme o Uso criadas pelo administrador da conta.|
-    |Região      |A região do Azure abrangida pela reserva de capacidade reservada do Banco de Dados SQL.|
-    |Tipo de implantação|O tipo de recurso de SQL para o qual você deseja comprar a reserva.|
-    |Nível de desempenho|A camada de serviço para as instâncias do Banco de Dados SQL.
-    |Termo        |Um ano ou três anos.|
-    |Quantidade    |O número de instâncias que estão sendo compradas na reserva de capacidade reservada do Banco de Dados SQL. A quantidade é o número de instâncias do Banco de Dados SQL em execução que podem receber o desconto de faturamento. Por exemplo, se você estiver executando 10 instâncias do Banco de Dados SQL no Leste dos EUA, especifique a quantidade como 10 para maximizar o benefício de todos os computadores em execução. |
-    |||
+| Campo      | DESCRIÇÃO|
+|------------|--------------|
+|Assinatura|A assinatura usada para pagar pela reserva de capacidade reservada do Banco de Dados SQL. O método de pagamento na assinatura é cobrado pelos custos iniciais da reserva de capacidade reservada do Banco de Dados SQL. O tipo de assinatura deve ser um contrato empresarial (números da oferta: MS-AZR-0017P ou MS-AZR - 0148p) ou um contrato individual com o preço pago conforme o uso (números de oferta: MS-AZR-0003P ou MS-AZR-0023P). Para uma assinatura de empresa, os encargos são deduzidos do saldo do compromisso monetário do registro ou cobrados como média. Para uma assinatura individual com preço pré-pago, os encargos são cobrados para o método de pagamento do cartão de crédito ou fatura na assinatura.|
+|Scope       |O escopo da reserva vCore pode cobrir uma assinatura ou várias assinaturas (escopo compartilhado). Se você selecionar: <br/><br/>**Compartilhado**, o desconto de reserva de vCore é aplicado às instâncias de banco de dados SQL em execução em todas as assinaturas dentro de seu contexto de cobrança. Para clientes empresariais, o escopo compartilhado é o registro e inclui todas as assinaturas no registro. Para clientes de Pagamento Conforme o Uso, o escopo compartilhado consiste em todas as assinaturas de Pagamento Conforme o Uso criadas pelo administrador da conta.<br/><br/>**Assinatura única**, o desconto de reserva de vCore é aplicado às instâncias de banco de dados SQL nesta assinatura. <br/><br/>**Grupo de recursos único**, o desconto de reserva é aplicado às instâncias de banco de dados SQL na assinatura selecionada e o grupo de recursos selecionado dentro dessa assinatura.|
+|Região      |A região do Azure abrangida pela reserva de capacidade reservada do Banco de Dados SQL.|
+|Tipo de implantação|O tipo de recurso de SQL para o qual você deseja comprar a reserva.|
+|Nível de desempenho|A camada de serviço para as instâncias do Banco de Dados SQL.
+|Termo        |Um ano ou três anos.|
+|Quantidade    |O número de instâncias que estão sendo compradas na reserva de capacidade reservada do Banco de Dados SQL. A quantidade é o número de instâncias do Banco de Dados SQL em execução que podem receber o desconto de faturamento. Por exemplo, se você estiver executando 10 instâncias do Banco de Dados SQL no Leste dos EUA, especifique a quantidade como 10 para maximizar o benefício de todos os computadores em execução. |
 
-5. Examine o custo do banco de dados SQL reservadas reserva de capacidade na **custos** seção.
-6. Selecione **Comprar**.
-7. Selecione **Exibir essa Reserva** para ver o status de sua compra.
+1. Examine o custo do banco de dados SQL reservadas reserva de capacidade na **custos** seção.
+1. Selecione **Comprar**.
+1. Selecione **Exibir essa Reserva** para ver o status de sua compra.
 
 ## <a name="cancellations-and-exchanges"></a>Cancelamentos e trocas
 
@@ -77,7 +76,11 @@ Para obter mais informações sobre como as reservas do exchange ou o reembolso,
 
 A flexibilidade de tamanho do vCore ajuda você a aumentar ou diminuir dentro de uma região e nível de desempenho sem perder o benefício de capacidade reservada. A capacidade reservada do Banco de Dados SQL também lhe oferece a flexibilidade para transferir temporariamente seus bancos de dados frequentes entre pools e bancos de dados individuais como parte de suas operações normais (dentro da mesma região e nível de desempenho) sem perder o benefício de capacidade reservada. Ao manter um buffer não aplicado em sua reserva, é possível gerenciar com eficiência os picos de desempenho sem exceder o orçamento.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="need-help-contact-us"></a>Precisa de ajuda? Fale conosco
+
+Se você tiver dúvidas ou precisar de ajuda, [crie uma solicitação de suporte](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+
+## <a name="next-steps"></a>Próximas etapas
 
 O desconto de reserva vCore é aplicado automaticamente ao número de instâncias do Banco de Dados SQL que correspondem ao escopo e aos atributos de reserva de capacidade reservados do Banco de Dados SQL. Você pode atualizar o escopo da reserva de capacidade reservada do Banco de Dados SQL por meio do [Portal do Azure](https://portal.azure.com), PowerShell, CLI ou por meio da API.
 
@@ -91,7 +94,3 @@ Para saber mais sobre as Reservas do Azure, consulte os seguintes artigos:
 - [Entender o uso de reserva para a sua assinatura paga conforme o uso](../billing/billing-understand-reserved-instance-usage.md)
 - [Entender o uso de reserva para seu registro de empresa](../billing/billing-understand-reserved-instance-usage-ea.md)
 - [Reservas do Azure no programa de CSP (Provedor de Soluções na Nuvem) do Partner Center](https://docs.microsoft.com/partner-center/azure-reservations)
-
-## <a name="need-help-contact-us"></a>Precisa de ajuda? Fale conosco
-
-Se você tiver dúvidas ou precisar de ajuda, [crie uma solicitação de suporte](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).

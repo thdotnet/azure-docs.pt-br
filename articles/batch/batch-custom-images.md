@@ -8,12 +8,12 @@ ms.service: batch
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: lahugh
-ms.openlocfilehash: 886dea0e53519870aaa27dea721a9eb78515cf86
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 80cba5e1b5e38e31dea2272cc4e33b4a95940e41
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64706317"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67565604"
 ---
 # <a name="use-a-custom-image-to-create-a-pool-of-virtual-machines"></a>Usar uma imagem personalizada para criar um pool de máquinas virtuais 
 
@@ -49,7 +49,7 @@ No Azure, você pode preparar uma imagem gerenciada de instantâneos de discos d
 
 ### <a name="prepare-a-vm"></a>Preparar uma VM
 
-Se você estiver criando uma nova VM para a imagem, use uma primeira imagem do Azure Marketplace terceiros com suporte pelo lote, como a imagem base para sua imagem gerenciada. Somente imagens primárias podem ser usadas como uma imagem de base. Para obter uma lista completa das referências de imagem do Marketplace do Azure com suporte do lote do Azure, consulte a [SKUs do agente de nó lista](/rest/api/batchservice/account/listnodeagentskus) operação.
+Se você estiver criando uma nova VM para a imagem, use uma primeira imagem do Azure Marketplace terceiros com suporte pelo lote, como a imagem base para sua imagem gerenciada. Somente imagens primárias podem ser usadas como uma imagem de base. Para obter uma lista completa das referências de imagem do Marketplace do Azure com suporte do lote do Azure, consulte a [SKUs do agente de nó lista](/java/api/com.microsoft.azure.batch.protocol.accounts.listnodeagentskus) operação.
 
 > [!NOTE]
 > Você não pode usar uma imagem de terceiros que tenham licenças adicionais e termos de compra como sua imagem de base. Para obter informações sobre essas imagens do Marketplace, consulte as diretrizes par máquinas virtuais [Linux](../virtual-machines/linux/cli-ps-findimage.md#deploy-an-image-with-marketplace-terms

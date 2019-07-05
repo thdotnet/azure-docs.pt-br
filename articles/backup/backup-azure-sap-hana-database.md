@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: raynew
-ms.openlocfilehash: 5ed41013535e4591d88bff5c017c1fcf4c4053cc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a16ed7134fc9f3c159715f58f116de3fb30e8aca
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65237801"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67481134"
 ---
 # <a name="back-up-an-sap-hana-database"></a>Fazer backup de um banco de dados do SAP HANA
 
@@ -22,15 +22,13 @@ ms.locfileid: "65237801"
 > [!NOTE]
 > Esse recurso está atualmente em visualização pública. Ele atualmente não está pronto para produção e não tem uma garantia de SLA. 
 
-
 ## <a name="scenario-support"></a>Suporte ao cenário
 
 **Suporte** | **Detalhes**
 --- | ---
 **Áreas geográficas com suporte** | Sudeste da Austrália, Leste da Austrália <br> Sul do Brasil <br> No Canadá, Leste do Canadá <br> Sudeste Asiático, Ásia Oriental <br> Leste dos EUA, Leste dos EUA 2, oeste dos EUA, oeste dos EUA, oeste dos EUA 2, Centro-Norte dos EUA, centro dos EUA, Centro-Sul dos EUA<br> Índia Central, Sul da Índia <br> Leste do Japão, Oeste do Japão<br> Coreia Central, Sul da Coreia <br> Norte da Europa, Europa Ocidental <br> Sul do Reino Unido, oeste do Reino Unido
 **Sistemas operacionais VM** | SLES 12 com SP2 ou SP3.
-**Versões com suporte do HANA** | SSDC no HANA 1.x, MDC no HANA 2. x < = SPS03
-
+**Versões com suporte do HANA** | SDC no HANA 1.x, MDC no HANA 2. x < = SPS03
 
 ### <a name="current-limitations"></a>Limitações atuais
 
@@ -39,12 +37,9 @@ ms.locfileid: "65237801"
 - Você só pode fazer backup de bancos de dados no modo de escala vertical.
 - Você pode fazer backup de logs de banco de dados a cada 15 minutos. Backups de log somente começam a fluir depois que um backup completo com êxito para o banco de dados foi concluída.
 - Você pode fazer backups completos e diferenciais. Atualmente, não há suporte para backup incremental.
-- Você não pode modificar a política de backup depois de aplicá-la para backups do SAP HANA. Se você quiser fazer backup com configurações diferentes, crie uma nova política ou atribuir uma política diferente. 
-    - Para criar uma nova política, no cofre, clique **diretivas** > **políticas de Backup** >  **+ adicionar** > **SAP HANA em VM do Azure**e especifique as configurações de política.
-    - Para atribuir uma política diferente, nas propriedades da VM que executa o banco de dados, clique no nome de política atual. Em seguida, na **política de Backup** página você pode selecionar uma política diferente a ser usado para o backup.
-
-
-
+- Você não pode modificar a política de backup depois de aplicá-la para backups do SAP HANA. Se você quiser fazer backup com configurações diferentes, crie uma nova política ou atribuir uma política diferente.
+  - Para criar uma nova política, no cofre, clique **diretivas** > **políticas de Backup** >  **+ adicionar** > **SAP HANA em VM do Azure**e especifique as configurações de política.
+  - Para atribuir uma política diferente, nas propriedades da VM que executa o banco de dados, clique no nome de política atual. Em seguida, na **política de Backup** página você pode selecionar uma política diferente a ser usado para o backup.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -57,14 +52,16 @@ Certifique-se de que fazer o seguinte antes de configurar backups:
 
         ![Opção de instalação do pacote](./media/backup-azure-sap-hana-database/hana-package.png)
 
-2.  Na VM, instalar e habilitar os pacotes de driver ODBC da oficial SLES pacote/mídia usando o zypper, da seguinte maneira:
+2. Na VM, instalar e habilitar os pacotes de driver ODBC da oficial SLES pacote/mídia usando o zypper, da seguinte maneira:
 
-    ``` 
+    ```unix
     sudo zypper update
     sudo zypper install unixODBC
     ```
-4.  Permitir a conectividade da VM com a internet, para que ele pode acessar o Azure, conforme descrito no procedimento a seguir.
 
+3. Permitir a conectividade da VM com a internet, para que ele pode acessar o Azure, conforme descrito no procedimento [abaixo](#set-up-network-connectivity).
+
+4. Execute o script de pré-registro na máquina virtual em que o HANA é instalado como um usuário raiz. O script é fornecido [no portal do](#discover-the-databases) no fluxo e é necessário para configurar a [permissões com o botão direito](backup-azure-sap-hana-database-troubleshoot.md#setting-up-permissions).
 
 ### <a name="set-up-network-connectivity"></a>Configurar a conectividade de rede
 
@@ -80,7 +77,7 @@ Integrar a visualização pública da seguinte maneira:
 - No portal, registre sua ID de assinatura para o provedor de serviço dos serviços de recuperação por [seguindo este artigo](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-register-provider-errors#solution-3---azure-portal). 
 - Para o PowerShell, execute este cmdlet. Ele deverá ser concluída como "Registrado".
 
-    ```
+    ```powershell
     PS C:>  Register-AzProviderFeature -FeatureName "HanaBackup" –ProviderNamespace Microsoft.RecoveryServices
     ```
 
@@ -89,7 +86,6 @@ Integrar a visualização pública da seguinte maneira:
 [!INCLUDE [How to create a Recovery Services vault](../../includes/backup-create-rs-vault.md)]
 
 ## <a name="discover-the-databases"></a>Descobrir os bancos de dados
-
 
 1. No cofre, no **guia de Introdução**, clique em **Backup**. Na **onde sua carga de trabalho é executada?** , selecione **SAP HANA na VM do Azure**.
 2. Clique em **iniciar descoberta**. Isso inicia a descoberta de VMs do Linux desprotegidos na região do cofre.
@@ -104,7 +100,7 @@ Integrar a visualização pública da seguinte maneira:
 6. O Backup do Azure descobre todos os bancos de dados do SAP HANA na VM. Durante a descoberta, o Backup do Azure registra a VM com o cofre e instala uma extensão na VM. Nenhum agente é instalado no banco de dados.
 
     ![Descobrir bancos de dados do SAP HANA](./media/backup-azure-sap-hana-database/hana-discover.png)
-    
+
 ## <a name="configure-backup"></a>Configurar o backup  
 
 Habilite o backup.
@@ -116,6 +112,7 @@ Habilite o backup.
 5. Acompanhar o progresso de configuração de backup na **notificações** área do portal.
 
 ### <a name="create-a-backup-policy"></a>Criar uma política de backup
+
 Uma política de backup define quando são realizados backups e quanto tempo eles são mantidos.
 
 - Uma política é criada no nível do cofre.
@@ -189,6 +186,5 @@ Se você quiser executar um backup local (usando o HANA Studio) de um banco de d
 
 ## <a name="next-steps"></a>Próximas etapas
 
+[Saiba mais sobre](backup-azure-sap-hana-database-troubleshoot.md) como solucionar erros comuns ao usar o backup do SAP HANA em VMs do Azure.
 [Saiba mais sobre](backup-azure-arm-vms-prepare.md) fazendo backup de VMs do Azure.
-
-

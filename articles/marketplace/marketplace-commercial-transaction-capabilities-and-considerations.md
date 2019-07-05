@@ -8,16 +8,16 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 10/29/2018
 ms.author: yijenj
-ms.openlocfilehash: bd8cdbec42ea7df34ceee3ab82a1c6cac60ab59e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d266b314f19979578b7e7b8de4e7a7090200c9d2
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65849713"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67445447"
 ---
-# <a name="azure-marketplace-commercial-transaction-capabilities-and-considerations"></a>Recursos e considerações sobre transações comerciais do Azure Marketplace
+# <a name="commercial-marketplace-transaction-capabilities-and-considerations"></a>Considerações e recursos de transações comerciais do marketplace
 
-As opções de publicação do Azure Marketplace oferecem maneiras exclusivas de conectar o software e os provedores de serviços em nuvem aos clientes. Este artigo aborda os seguintes tópicos relacionados ao comércio no Azure Marketplace:
+Este artigo aborda os seguintes tópicos relacionados ao comércio para o marketplace comercial
 
 * Opções de publicação no marketplace
 * Visão geral de transações
@@ -26,21 +26,22 @@ As opções de publicação do Azure Marketplace oferecem maneiras exclusivas de
 
 ## <a name="marketplace-publishing-options"></a>Opções de publicação no marketplace
 
-As seguintes opções de publicação estão disponíveis para os editores do Azure Marketplace.
+As seguintes opções de publicação estão disponíveis para editores de marketplace comercial.
 
 ### <a name="list--trial-publishing-options"></a>Opções de publicação de lista e avaliação
 
-No Azure Marketplace, os editores podem aproveitar a lista e as opções de publicação de avaliação para fins promocionais e de aquisição de usuários. Com as opções de publicação de lista ou de avaliação, a Microsoft não participa diretamente das transações de licença de software do editor e não há valor de transação associada. Os editores são responsáveis por dar suporte a todos os aspectos da transação de licença de software, incluindo, entre outros: pedido, atendimento, medição, faturamento, faturamento, pagamento e cobrança. Com as opções de publicação de lista e avaliação, os editores mantêm 100% dos valores de licenciamento de software do editor coletadas do cliente. 
+Os editores podem aproveitar a lista, avaliação e BYOL opções de publicação do promocionais e fins de aquisição de usuário. Com essas opções, Microsoft não participa diretamente as transações de licença de software do Editor e não há nenhuma taxa de transação associado. Os editores são responsáveis por dar suporte a todos os aspectos da transação de licença de software, incluindo, entre outros: pedido, atendimento, medição, faturamento, faturamento, pagamento e cobrança. Com as opções de publicação de lista e avaliação, os editores mantêm 100% dos valores de licenciamento de software do editor coletadas do cliente. 
 
 ### <a name="transact-publishing-option"></a>Opção de publicação de transação
 
-Além das opções de publicação de lista e de avaliação, a opção de publicação de transações está disponível para os editores do Azure Marketplace.   Ele tira proveito dos recursos de comércio globalmente disponíveis da Microsoft. Essa opção permite que a Microsoft hospede transações do mercado de nuvem em nome do editor.
+Além da lista e avaliação opções de publicação, a opção de publicação transact está disponível para os editores. Isso tira proveito dos recursos de comércio disponível globalmente da Microsoft e permite que a Microsoft para transações de marketplace de nuvem do host em nome do Editor.
 
 ## <a name="transact-general-overview"></a>Visão geral de transações
 
-Ao usar a opção de publicação de transação, a Microsoft permite que a venda de software de terceiros e a implantação de alguns tipos de oferta para a assinatura do cliente do Azure. O editor deve considerar o faturamento de valores de infraestrutura do Azure e os próprios valores de licenciamento de software do editor ao selecionar um modelo de faturamento e um tipo de oferta no Azure Marketplace.
+Ao usar a opção de publicação de transação, a Microsoft permite que a venda de software de terceiros e a implantação de alguns tipos de oferta para a assinatura do cliente do Azure. O publicador deve considerar a cobrança das taxas de infraestrutura, e do publicador software taxas de licenciamento, ao selecionar uma cobrança de modelo e tipo de oferta.
 
-A opção de publicação Transact no Azure Marketplace é atualmente compatível com os seguintes tipos de oferta: Máquinas Virtuais, Aplicativos Azure ou Aplicativos SaaS.
+A opção de publicação Transact atualmente tem suporte para os seguintes tipos de oferta: Máquinas virtuais, aplicativos do Azure e aplicativos SaaS.
+
 
 ![[Transacionar Enterprise lida no Marketplace do Azure]](./media/marketplace-publishers-guide/Transact-enterprise-deals.png)
 
@@ -64,7 +65,7 @@ Dependendo da opção de transação usada, os valores de licença de software d
 
 * Pago conforme o uso: Os valores da licença de software são apresentadas como uma taxa de preços por hora, por núcleo (vCPU) com base na infraestrutura do Azure usada. Isso se aplica apenas a máquinas virtuais e aplicativos do Azure.
 
-* Preço da assinatura (baseado no site): Os valores de licença de software são apresentados como um valor mensal.  Isso se aplica somente a aplicativos SaaS e aplicativos gerenciados do Azure.
+* • Preço da assinatura: Taxas de licença de software são apresentadas como uma mensal ou anual, recorrente a tarifa cobrada como uma taxa fixa ou por estação. Isso se aplica somente a aplicativos SaaS e aplicativos gerenciados do Azure.
 
 * Avaliação de software gratuita: Sem cobrança de licenças de software por 30 dias ou 90 dias.
 
@@ -74,11 +75,10 @@ Ao publicar uma oferta de transação gratuita ou com licença própria, a Micro
 
 ### <a name="pay-as-you-go-and-subscription-site-based-pricing"></a>Preço pré-pago e assinatura (site-based)
 
-Ao publicar uma oferta de transação pré-paga ou assinatura, a Microsoft fornece a tecnologia e os serviços para processar compras, devoluções e estornos de licenças de software. Nesse cenário, o editor autoriza a Microsoft a agir como um agente para essas finalidades. A editora permite que a Microsoft facilite a transação de licenciamento de software, mantendo sua designação como vendedor, provedor, distribuidor e licenciador.
+WPay-como-você-go e quando publicar uma oferta de transação pagamento conforme o uso ou assinatura, a Microsoft fornece a tecnologia e serviços para processar a licença de software de compras, retorna o preço de assinatura e estornos. Nesse cenário, o editor autoriza a Microsoft a agir como um agente para essas finalidades. A editora permite que a Microsoft facilite a transação de licenciamento de software, mantendo sua designação como vendedor, provedor, distribuidor e licenciador.
 
-A Microsoft permite aos clientes solicitar, licenciar e usar o software do editor, sujeito aos termos e condições do Azure Marketplace e do contrato de licenciamento do usuário final do editor (consulte o Cloud Partner Portal). Os editores devem fornecer seu contrato de licenciamento do usuário final na oferta do mercado.
+Microsoft permite que os clientes ordem, licença e usa um software publisher, sujeitos aos termos e condições do mercado de comercial da Microsoft e o contrato de licenciamento de usuário final do Editor. Os editores devem fornecer seu contrato de licenciamento do usuário final ou selecione o [contrato padrão](https://docs.microsoft.com/azure/marketplace/standard-contract) ao criar a oferta.
 
-Os pedidos processados pelo mercado são faturados para a assinatura do Azure do cliente em uma única fatura, o mesmo método de faturamento que os custos de infraestrutura do Azure do cliente. Os clientes podem usar o método de faturamento e o instrumento de pagamento preferidos usados para o faturamento da assinatura do Azure.
 
 ### <a name="free-software-trials"></a>Avaliações de software livre
 
@@ -86,9 +86,10 @@ Para cenários de publicação em transações, o editor pode disponibilizar uma
 
 ### <a name="private-offers"></a>Ofertas privadas
 
-Além de usar tipos de oferta e modelos de faturamento para monetizar uma oferta, os editores podem realizar transações de uma versão privada da oferta de solução, completa com preços negociados específicos de transação e configurações personalizadas usando uma imagem personalizada. As ofertas privadas são suportadas por todas as três opções de publicação de transações.
+Além de usar tipos de oferta e cobrança modelos para lucrar com uma oferta, os editores podem transact uma oferta privada, completa com preços negociado e específicos do negócio ou configurações personalizadas. As ofertas privadas são suportadas por todas as três opções de publicação de transações.
 
-Essa opção de preço pode ser maior ou menor do que o preço exibido publicamente.  Ofertas privadas podem ser usadas para desconto ou adicionar um prêmio para uma oferta. As ofertas privadas podem ser disponibilizadas para um ou mais clientes por meio de white listando sua assinatura do Azure no nível da oferta.
+Essa opção permite maior ou menor preço que a oferta disponível publicamente. Ofertas privadas podem ser usadas para desconto ou adicionar um prêmio para uma oferta. As ofertas privadas podem ser disponibilizadas para um ou mais clientes por meio de white listando sua assinatura do Azure no nível da oferta.
+
 
 ### <a name="examples"></a>Exemplos
 
@@ -125,11 +126,10 @@ Essa opção de preço pode ser maior ou menor do que o preço exibido publicame
 |A Microsoft mantém o custo de uso do Azure    |   US $ 0,14 por hora     |
 |A Microsoft mantém 0% do seu custo de licença   |  US $ 0.00 por hora       |
 
-**Assinatura do aplicativo SaaS (venda pelo Azure)**
+**Assinatura de SaaS App**
 
-Essa opção deve ser configurada para vender através da Microsoft e pode ser precificada usando um ou mais planos mensais de taxa fixa definidos no nível da oferta.
-
-* Se você ativar a opção Vender por meio do Azure, terá a seguinte estrutura de custos.
+Essa opção deve ser configurada para venda por meio da Microsoft e pode ser calculada em uma taxa fixa ou por usuário em uma base mensal ou anual.
+• Se você habilitar a origem de venda por meio da opção da Microsoft para uma oferta de SaaS, você terá a seguinte estrutura de custo.
 
 |Custo de sua licença       | US $100,00 por mês  |
 |--------------|---------|
@@ -205,13 +205,13 @@ Quando modelos de preços de assinatura ou de pagamento conforme o uso são sele
 * Os clientes normalmente compram usando o Enterprise Agreement ou um contrato de pagamento por utilização habilitado para cartão de crédito. O tipo de contrato determina o tempo de cobrança, faturamento, cobrança e pagamento.
 
 >[!NOTE] 
->Todos os relatórios e insights da opção de publicação de transações estão disponíveis na seção Insights do Portal do Cloud Partner.
+>Todos os relatórios e insights para a opção de publicação de transação estão disponíveis por meio da seção de informações da seção do Portal do Cloud Partner ou análise do Partner Center.
 
 #### <a name="billing-questions-and-support"></a>Perguntas sobre cobrança e suporte
 
 Para obter mais informações e políticas legais, consulte o [Contrato do editor](https://cloudpartner.azure.com/Content/Unversioned/PublisherAgreement2.pdf) (disponível no Portal do Cloud Partner).
 
-Para receber ajuda sobre questões de faturamento, [crie um incidente de suporte](https://support.microsoft.com/getsupport?wf=0&tenant=classiccommercial&oaspworkflow=start_1.0.0.0&pesid=16230&forceorigin=esmc&ccsid=636764613233453423) e escolha Máquinas virtuais ou Aplicativos da web (também conhecidos como SaaS Apps), dependendo do tipo de oferta usado.
+Para obter ajuda sobre questões sobre cobrança, entre em contato com [suporte do publicador marketplace comercial](https://aka.ms/marketplacepublishersupport).
 
 ## <a name="transact-requirements"></a>Transact requisitos
 
@@ -219,13 +219,11 @@ Os requisitos de transação para diferentes tipos de oferta são abordados nest
 
 ### <a name="requirements-for-all-offer-types"></a>Requisitos para todos os tipos de oferta
 
-**Conta do Centro de desenvolvimento e a Microsoft** 
+- Uma conta da Microsoft e as informações financeiras são necessárias para a opção, independentemente da oferta de publicação de transação do modelo de preços.
+- Obrigatórias informações financeiras incluem o perfil de conta e imposto de pagamento.
 
-* Tanto um Centro de Desenvolvimento quanto uma conta da Microsoft são necessários para a opção de publicação de transações, independentemente do modelo de preços da oferta.
-* A conta do Centro de Desenvolvimento contém todos os detalhes financeiros relevantes necessários para que a Microsoft colete valores do cliente em nome do editor e pague o editor.
-* Embora você possa usar a mesma organizacional ou detalhes de entrada da Microsoft em ambas as contas, o Centro de desenvolvimento é uma conta separada da conta do Portal do Cloud Partner. Para usar a opção de publicação transacionar, o editor deve concluir o processo de inscrição na conta do Centro de Desenvolvimento, além de se inscrever para acessar o Portal do Cloud Partner.
+Para obter mais informações sobre como configurar essas contas, consulte [gerenciar sua conta do Partner Center](https://docs.microsoft.com/azure/marketplace/partner-center-portal/manage-account#financial-details).
 
-*Para obter mais informações sobre como configurar essas contas, consulte [Torne-se um editor do Cloud Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher).*
 
 ### <a name="requirements-for-specific-offer-types"></a>Requisitos para tipos de oferta específica
 
@@ -237,10 +235,9 @@ Selecione modelos gratuitos, traga sua licença própria ou pague conforme o pre
 
 **Aplicativos do Azure: Modelo de solução ou aplicativo gerenciado** 
 
-Deve provisionar uma ou mais máquinas virtuais e pulls por meio da soma dos preços de máquina virtual. Para aplicativos gerenciados em um único plano, uma assinatura mensal de taxa fixa pode ser selecionada como o modelo de preço, em vez do preço da máquina virtual. Em ambos os casos, os valores de uso da infraestrutura do Azure são passadas para o cliente separadamente dos valores de licença de software, mas no mesmo extrato de faturamento.
+Deve provisionar uma ou mais máquinas virtuais e pulls por meio da soma dos preços de máquina virtual. Para aplicativos gerenciados em um único plano, uma assinatura mensal de taxa fixa pode ser selecionada como o modelo de preço, em vez do preço da máquina virtual. Em alguns casos, as taxas de uso de infraestrutura do Azure são passadas para o cliente separadamente de taxas de licença de software, mas na mesma instrução de cobrança. No entanto, se você configurar um aplicativo gerenciado oferta para encargos de infraestrutura de ISV, os recursos do Azure são cobrados com o publicador e o cliente recebe uma taxa fixa que inclui o custo de infraestrutura, licenças de software e serviços de gerenciamento.
 
 ## <a name="next-steps"></a>Próximas etapas
 
 * Examine os requisitos de qualificação nas opções de publicação pela seção de tipo de oferta para finalizar a seleção e a configuração de sua oferta.
 * Examine os padrões de publicação por vitrine eletrônica para obter exemplos de como sua solução é mapeada para uma configuração e tipo de oferta.
-* Torne-se um editor do Marketplace e faça login no [Portal do Cloud Partner](https://cloudpartner.azure.com) para criar e configurar sua oferta.

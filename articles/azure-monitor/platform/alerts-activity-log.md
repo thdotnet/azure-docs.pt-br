@@ -5,14 +5,14 @@ author: msvijayn
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 09/15/2018
+ms.date: 06/25/2019
 ms.author: vinagara
-ms.openlocfilehash: f25321fa5a13ed5a39a62a4115bb0bc10306d36f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8183c7070b5d42e1c7a96fc0d64974658b2ec7d0
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66244953"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448922"
 ---
 # <a name="create-view-and-manage-activity-log-alerts-using-azure-monitor"></a>Criar, exibir e gerenciar alertas do log de atividades usando o Azure Monitor  
 
@@ -24,16 +24,17 @@ Esses alertas são para recursos do Azure e podem ser criados usando um modelo d
 > [!IMPORTANT]
 > Não é possível criar alertas de notificação de Integridade do Serviço por meio da interface para a criação de alerta do log de atividades. Para saber mais sobre a criação e o uso de notificações de Integridade do Serviço, veja [Receber alertas do log de atividades sobre as notificações de Integridade do Serviço](alerts-activity-log-service-notifications.md).
 
+Ao criar as regras de alerta, assegure o seguinte:
+
+- A assinatura no escopo não é diferente da assinatura onde o alerta foi criado.
+- Os critérios devem ser nível/status/chamador/grupo de recursos/ID do recurso/tipo de recurso/categoria de eventos no qual o alerta é configurado.
+- Não há nenhuma condição "anyOf" ou condições aninhadas na configuração de alerta JSON (basicamente, apenas um allOf é permitido sem nenhum allOf/anyOf adicional).
+- Quando a categoria é "administrativa". Você deve especificar pelo menos um dos critérios anteriores em seu alerta. Você não pode criar um alerta que seja ativado sempre que um evento for criado nos logs de atividades.
+
+
 ## <a name="azure-portal"></a>Portal do Azure
 
-> [!NOTE]
-> 
->  Ao criar as regras de alerta, assegure o seguinte:
-> 
-> - A assinatura no escopo não é diferente da assinatura onde o alerta foi criado.
-> - Os critérios devem ser nível/status/chamador/grupo de recursos/ID do recurso/tipo de recurso/categoria de eventos no qual o alerta é configurado.
-> - Não há nenhuma condição "anyOf" ou condições aninhadas na configuração de alerta JSON (basicamente, apenas um allOf é permitido sem nenhum allOf/anyOf adicional).
-> - Quando a categoria é "administrativa". Você deve especificar pelo menos um dos critérios anteriores em seu alerta. Você não pode criar um alerta que seja ativado sempre que um evento for criado nos logs de atividades.
+Usando o portal do Azure, o usuário pode criar e modificar regras de alerta de log de atividade. E a experiência é integrada ao log de atividades do Azure – para garantir que a criação contínua de alerta para eventos específicos de interesse.
 
 ### <a name="create-with-azure-portal"></a>Criar com o portal do Azure
 
@@ -220,11 +221,11 @@ onde o sampleActivityLogAlert.parameters.json contém os valores fornecidos para
 
 Os alertas do log de atividades têm cmdlets do PowerShell dedicados disponíveis:
 
-- [Set-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Set-AzActivityLogAlert?view=azps-1.3.0) : Cria um novo ou atualizar um alerta do log de atividades existente.
-- [Get-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Get-AzActivityLogAlert?view=azps-1.3.0) : Obtém a atividade de um ou mais recursos de alerta do log.
-- [Enable-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Enable-AzActivityLogAlert?view=azps-1.3.0) : Permite que um alerta do log de atividades existente e define suas marcas.
-- [Disable-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Disable-AzActivityLogAlert?view=azps-1.3.0) : Desabilita um alerta do log de atividades existente e define suas marcas.
-- [Remove-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Remove-AzActivityLogAlert?view=azps-1.3.0)    : Remove um alerta do log de atividades.
+- [Set-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Set-AzActivityLogAlert) : Cria um novo ou atualizar um alerta do log de atividades existente.
+- [Get-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Get-AzActivityLogAlert) : Obtém a atividade de um ou mais recursos de alerta do log.
+- [Enable-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Enable-AzActivityLogAlert) : Permite que um alerta do log de atividades existente e define suas marcas.
+- [Disable-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Disable-AzActivityLogAlert) : Desabilita um alerta do log de atividades existente e define suas marcas.
+- [Remove-AzActivityLogAlert](https://docs.microsoft.com/powershell/module/az.monitor/Remove-AzActivityLogAlert)    : Remove um alerta do log de atividades.
 
 ## <a name="cli"></a>CLI
 

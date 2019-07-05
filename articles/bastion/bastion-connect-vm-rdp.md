@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: conceptual
 ms.date: 06/03/2019
 ms.author: cherylmc
-ms.openlocfilehash: c8a4b09a27325f31e548d1b345b2932c6ab6315c
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: 376b7042a513dd50647dc8f88bf1de70f65bb21c
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67191883"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67478413"
 ---
 # <a name="connect-to-a-windows-virtual-machine-using-azure-bastion-preview"></a>Conectar-se a uma máquina virtual do Windows usando o Azure bastião (visualização)
 
@@ -29,12 +29,12 @@ Certifique-se de que você tiver configurado um host bastião do Azure para a re
 Para fazer uma conexão, são necessárias as seguintes funções:
 
 * Função de leitor na máquina virtual
-* Função de leitor a placa de rede com endereço IP privado da máquina virtual
-* Função de leitor do recurso de bastiões do Azure
+* Função de leitor na placa de interface de rede com endereço IP privado da máquina virtual
+* Função de leitor no recurso do Azure Bastion
 
 ## <a name="rdp"></a>Conectar-se usando o RDP
 
-1. No [portal do Azure](https://aka.ms/BastionHost) para a visualização de bastiões, navegue até a máquina virtual que você deseja se conectar e clique em **Connect**. A VM deve ser uma máquina virtual do Windows ao usar uma conexão de RDP.
+1. Use [esse link](https://aka.ms/BastionHost) para abrir a página de portal de visualização de bastiões do Azure. Navegue até a máquina virtual que você deseja se conectar e clique em **Connect**. A VM deve ser uma máquina virtual do Windows ao usar uma conexão de RDP.
 
     ![Conectar-se de VM](./media/bastion-connect-vm-rdp/connect.png)
 

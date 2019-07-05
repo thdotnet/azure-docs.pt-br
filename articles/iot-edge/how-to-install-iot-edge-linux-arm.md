@@ -7,14 +7,14 @@ ms.reviewer: veyalla
 ms.service: iot-edge
 services: iot-edge
 ms.topic: conceptual
-ms.date: 03/20/2019
+ms.date: 06/27/2019
 ms.author: kgremban
-ms.openlocfilehash: 6c22680102c57fdfc3d25beb19e5bc9847995b28
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f7004edf2bab0e22d4d1e4c1200d6e8b8ef729b3
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65152725"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67485942"
 ---
 # <a name="install-azure-iot-edge-runtime-on-linux-arm32v7armhf"></a>Instalar o tempo de execução do Azure IoT Edge no Linux (ARM32v7 / armhf)
 
@@ -25,9 +25,13 @@ Para saber mais sobre como funciona o tempo de execução do IoT Edge e quais co
 Este artigo lista as etapas para instalar o tempo de execução do Azure IoT Edge em um dispositivo Linux ARM32v7/armhf IoT Edge. Essas etapas funcionariam, por exemplo, para dispositivos Raspberry Pi. Para obter uma lista dos sistemas de operacionais ARM32 suportados, consulte [sistemas com suporte do Azure IoT Edge](support.md#operating-systems). 
 
 >[!NOTE]
->Os pacotes nos repositórios de software do Linux estão sujeitos aos termos de licença localizados em cada pacote (/usr/share/doc/ *package-name* ). Leia os termos da licença antes de usar o pacote. Sua instalação e uso do pacote constitui sua aceitação desses termos. Se você não concordar com os termos da licença, não use o pacote.
+>Os pacotes nos repositórios de software do Linux estão sujeitos aos termos de licença localizados em cada pacote (/usr/share/doc/ *package-name* ). Leia os termos da licença antes de usar o pacote. Sua instalação e uso do pacote constitui sua aceitação desses termos. Se você não concorda com os termos de licença, não utilize o pacote.
 
-## <a name="install-the-container-runtime"></a>Instalar o tempo de execução de contêiner
+## <a name="install-the-latest-version"></a>Instalar a versão mais recente
+
+Use as seções a seguir para instalar a versão mais recente do serviço do Azure IoT Edge em seus dispositivos ARM Linux. 
+
+### <a name="install-the-container-runtime"></a>Instalar o tempo de execução de contêiner
 
 O Azure IoT Edge depende de um tempo de execução de contêiner [compatível com OCI](https://www.opencontainers.org/). Para cenários de produção, é altamente recomendável usar o mecanismo [baseado em Moby](https://mobyproject.org/) fornecido abaixo. É o único mecanismo de contêiner oficialmente com suporte do Azure IoT Edge. Imagens de contêiner do Docker CE/EE são compatíveis com o tempo de execução baseado em Moby.
 
@@ -47,7 +51,7 @@ curl -L https://aka.ms/moby-cli-armhf-latest -o moby_cli.deb && sudo dpkg -i ./m
 sudo apt-get install -f
 ```
 
-## <a name="install-the-iot-edge-security-daemon"></a>Instalar o daemon de segurança do IoT Edge
+### <a name="install-the-iot-edge-security-daemon"></a>Instalar o daemon de segurança do IoT Edge
 
 O **daemon de segurança do IoT Edge** fornece e mantém os padrões de segurança no dispositivo do IoT Edge. O daemon é iniciado a cada inicialização e inicializa o dispositivo iniciando o restante do tempo de execução do IoT Edge. 
 
@@ -66,7 +70,17 @@ curl -L https://aka.ms/iotedged-linux-armhf-latest -o iotedge.deb && sudo dpkg -
 sudo apt-get install -f
 ```
 
-## <a name="connect-your-device-to-an-iot-hub"></a>Conectar seu dispositivo a um Hub IoT 
+Depois do IoT Edge é instalado com êxito, a saída solicitará que você atualize o arquivo de configuração. Siga as etapas a [configurar a segurança do Azure IoT Edge daemon](#configure-the-azure-iot-edge-security-daemon) seção para concluir o provisionamento do seu dispositivo. 
+
+## <a name="install-a-specific-version"></a>Instalar uma versão específica
+
+Se você quiser instalar uma versão específica do Azure IoT Edge, você pode direcionar os arquivos de componente diretamente do repositório do GitHub do IoT Edge. Use o mesmo `curl` comandos listados nas seções anteriores para obter todos o IoT Edge componentes em seu dispositivo: o mecanismo Moby e da CLI, o libiothsm e, finalmente, o daemon de segurança do IoT Edge. A única diferença é que você substitua o **aka.ms** URLs com links que apontam diretamente para a versão de cada componente que você deseja usar.
+
+Navegue até a [do Azure IoT Edge libera](https://github.com/Azure/azure-iotedge/releases)e encontrar a versão de lançamento que você deseja direcionar. Expanda o **ativos** seção para obter a versão e, em seguida, escolha os arquivos que correspondem ao seu IoT Edge a arquitetura do dispositivo. Contém todas as versões do IoT Edge **iotedge** e **libiothsm** arquivos. Nem todas as versões incluem **moby mecanismo** ou **moby-cli**. Se você ainda não tiver o mecanismo de contêiner Moby instalado, examine as versões mais antigas até encontrar uma que inclui os componentes de Moby. 
+
+Depois do IoT Edge é instalado com êxito, a saída solicitará que você atualize o arquivo de configuração. Siga as etapas na próxima seção para concluir o provisionamento do seu dispositivo. 
+
+## <a name="configure-the-azure-iot-edge-security-daemon"></a>Configurar o daemon de segurança do Azure IoT Edge
 
 Configure o tempo de execução do IoT Edge para vincular seu dispositivo físico com uma identidade do dispositivo existente em um Hub IoT do Azure. 
 

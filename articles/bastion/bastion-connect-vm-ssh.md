@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: conceptual
 ms.date: 06/03/2019
 ms.author: cherylmc
-ms.openlocfilehash: 572043598c71a400e154c5c2e9e6c2f1e9b4ab49
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: 69548541d16db95f633400808f72aebaf59cff08
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67191792"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67477774"
 ---
 # <a name="connect-using-ssh-to-a-linux-virtual-machine-using-azure-bastion-preview"></a>Conectar-se de usar o SSH para uma máquina virtual do Linux usando o Azure bastião (visualização)
 
@@ -36,13 +36,13 @@ Certifique-se de que você tiver configurado um host bastião do Azure para a re
 Para fazer uma conexão, são necessárias as seguintes funções:
 
 * Função de leitor na máquina virtual
-* Função de leitor a placa de rede com endereço IP privado da máquina virtual
-* Função de leitor do recurso de bastiões do Azure
+* Função de leitor na placa de interface de rede com endereço IP privado da máquina virtual
+* Função de leitor no recurso do Azure Bastion
 
 ## <a name="username"></a>Conecte-se: Usando o nome de usuário e senha
 
 
-1. No [portal do Azure](https://aka.ms/BastionHost) para a visualização de bastiões, navegue até a máquina virtual que você deseja se conectar e clique em **Connect**. A VM deve ser uma máquina virtual Linux ao usar uma conexão SSH.
+1.  Use [esse link](https://aka.ms/BastionHost) para abrir a página de portal de visualização de bastiões do Azure. Navegue até a máquina virtual que você deseja se conectar e clique em **Connect**. A VM deve ser uma máquina virtual Linux ao usar uma conexão SSH.
 1. Depois de clicar em conectar, será exibida uma barra lateral tem três guias – bastiões, SSH e RDP. Se bastiões foi provisionado para a rede virtual, a guia de bastiões estiver ativa por padrão. Se você não o tiver provisionado bastiões para a rede virtual, consulte [bastiões configurar](bastion-create-host-portal.md). Se você não vir **bastiões** listado, você não abriu o portal de visualização. Abra o portal usando [esse link](https://aka.ms/BastionHost).
 
       ![Conectar-se de VM](./media/bastion-connect-vm-ssh/bastion.png)
@@ -52,7 +52,7 @@ Para fazer uma conexão, são necessárias as seguintes funções:
 
 ## <a name="privatekey"></a>Conecte-se: Inserir manualmente uma chave privada
 
-1. No [portal do Azure](https://aka.ms/BastionHost) para a visualização de bastiões, navegue até a máquina virtual que você deseja se conectar e clique em **Connect**. A VM deve ser uma máquina virtual Linux ao usar uma conexão SSH.
+1.  Use [esse link](https://aka.ms/BastionHost) para abrir a página de portal de visualização de bastiões do Azure. Navegue até a máquina virtual que você deseja se conectar e clique em **Connect**. A VM deve ser uma máquina virtual Linux ao usar uma conexão SSH.
 1. Depois de clicar em conectar, será exibida uma barra lateral tem três guias – bastiões, SSH e RDP. Se bastiões foi provisionado para a rede virtual, a guia de bastiões estiver ativa por padrão. Se você não o tiver provisionado bastiões para a rede virtual, consulte [bastiões configurar](bastion-create-host-portal.md). Se você não vir **bastiões** listado, você não abriu o portal de visualização. Abra o portal usando [esse link](https://aka.ms/BastionHost).
 
       ![Conectar-se de VM](./media/bastion-connect-vm-ssh/bastion.png)
@@ -63,7 +63,7 @@ Para fazer uma conexão, são necessárias as seguintes funções:
 
 ## <a name="ssh"></a>Conecte-se: Usando um arquivo de chave privada
 
-1. No [portal do Azure](https://aka.ms/BastionHost) para a visualização de bastiões, navegue até a máquina virtual que você deseja se conectar e clique em **Connect**. A VM deve ser uma máquina virtual Linux ao usar uma conexão SSH.
+1.  Use [esse link](https://aka.ms/BastionHost) para abrir a página de portal de visualização de bastiões do Azure. Navegue até a máquina virtual que você deseja se conectar e clique em **Connect**. A VM deve ser uma máquina virtual Linux ao usar uma conexão SSH.
 
     ![Conectar-se de VM](./media/bastion-connect-vm-ssh/connect.png)
 

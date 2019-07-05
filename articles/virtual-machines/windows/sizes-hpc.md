@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/12/2018
 ms.author: jonbeck;amverma
-ms.openlocfilehash: ad490084b34a8bf6e89c7feb14d5cd2e70a8138f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5fc5b5a287a421f93d3184ded3e429c5cff8fa3c
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66755326"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67566288"
 ---
 # <a name="high-performance-compute-vm-sizes"></a>Tamanhos de VM de computação de alto desempenho
 
@@ -31,11 +31,10 @@ ms.locfileid: "66755326"
 [!INCLUDE [virtual-machines-common-a8-a9-a10-a11-specs](../../../includes/virtual-machines-common-a8-a9-a10-a11-specs.md)]
 
 
-* **Sistema operacional** -Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+* **Sistema operacional** -Windows Server 2016 em todas as acima HPC séries de VMs. Windows Server 2012 R2, Windows Server 2012 também têm suporte nas máquinas virtuais habilitadas não SR-IOV (portanto, excluindo HB e HC).
 
-* **MPI** – Microsoft MPI (MS-MPI) 2012 R2 ou posterior, Intel MPI Library 5.x
-
-  Em VMs de habilitado não SR-IOV, implementações de MPI com suporte usam a interface de Microsoft Network Direct (ND) para comunicação entre instâncias. O SR-IOV habilitados tamanhos de VM (HB e HC-series) no Azure permitem que praticamente qualquer versão do MPI para ser usado com OFED Mellanox. 
+* **MPI** -a SR-IOV habilitados tamanhos de VM no Azure (HB, HC) permitem que praticamente qualquer tipo de MPI para ser usado com OFED Mellanox.
+Em VMs de habilitado não SR-IOV, implementações de MPI com suporte usam a interface de Microsoft Network Direct (ND) para comunicação entre instâncias. Portanto, somente o Microsoft MPI (MS-MPI) 2012 R2 ou posterior e há suporte para versões do Intel MPI 5.x. Em versões posteriores (2017, 2018) de tempo de execução do Intel MPI biblioteca pode ou não ser compatível com os drivers de RDMA do Azure.
 
 * **Extensão de VM InfiniBandDriverWindows** – em VMs compatíveis com RDMA, adicione a extensão InfiniBandDriverWindows para habilitar InfiniBand. Essa extensão de VM do Windows instala drivers Windows Network Direct (em VMs não SR-IOV) ou drivers de Mellanox OFED (em VMs de SR-IOV) para conectividade RDMA.
 Em algumas implantações das instâncias A8 e A9, a extensão HpcVmDrivers é adicionada automaticamente. Observe que a extensão de VM HpcVmDrivers está sendo preterida; ele não será atualizado. Para adicionar a extensão de VM a uma VM, use cmdlets do [Azure PowerShell](/powershell/azure/overview). 
@@ -53,7 +52,16 @@ Em algumas implantações das instâncias A8 e A9, a extensão HpcVmDrivers é a
   "typeHandlerVersion": "1.0",
   } 
   ```
-  
+
+  O comando a seguir instala a extensão de InfiniBandDriverWindows mais recente versão 1.0 em todas as VMs compatíveis com RDMA em um conjunto nomeado de dimensionamento VM existente *myVMSS* implantada no grupo de recursos denominado *myResourceGroup*:
+
+  ```powershell
+  $VMSS = Get-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myVMSS"
+  Add-AzVmssExtension -VirtualMachineScaleSet $VMSS -Name "InfiniBandDriverWindows" -Publisher "Microsoft.HpcCompute" -Type "InfiniBandDriverWindows" -TypeHandlerVersion "1.0"
+  Update-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "MyVMSS" -VirtualMachineScaleSet $VMSS
+  Update-AzVmssInstance -ResourceGroupName "myResourceGroup" -VMScaleSetName "myVMSS" -InstanceId "*"
+  ```
+
   Para obter mais informações, consulte [Recursos e extensões da máquina virtual](extensions-features.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Também é possível trabalhar com extensões de VMs implantadas no [modelo de implantação clássico](classic/manage-extensions.md).
 
 * **Espaço de endereço de rede RDMA** - A rede RDMA no Azure reserva o espaço de endereço 172.16.0.0/16. Para executar aplicativos MPI em instâncias implantadas em uma rede virtual do Azure, verifique se o espaço do endereço de rede virtual não se sobrepõe à rede RDMA.
@@ -66,6 +74,8 @@ O Azure fornece várias opções para criar clusters de VMs do Windows HPC que p
 * **Máquinas virtuais** - implante as VMs HPC compatíveis com RDMA no mesmo conjunto de disponibilidade (ao usar o modelo de implantação do Azure Resource Manager). Se você usar o modelo de implantação clássico, implante as VMs no mesmo serviço de nuvem. 
 
 * **Conjuntos de dimensionamento de máquina virtual** – em uma escala de máquina virtual definido, certifique-se de que você limite a implantação em um único grupo de posicionamento. Por exemplo, em um modelo do Resource Manager, defina a `singlePlacementGroup`propriedade como`true`. 
+
+* **MPI entre máquinas virtuais** - se a comunicação MPI se for necessário entre máquinas virtuais (VMs), certifique-se de que as VMs estão no mesma conjunto de disponibilidade ou da máquina virtual mesmo conjunto de dimensionamento.
 
 * **Azure CycleCloud** - Crie um cluster HPC em [Azure CycleCloud](/azure/cyclecloud/) para executar tarefas MPI em nós do Windows.
 

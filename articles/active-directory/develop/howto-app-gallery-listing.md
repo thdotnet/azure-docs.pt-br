@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: elisol, bryanla
 ms.custom: aaddev, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 005e5c92a16760d8eec5dc37526f4b1f2dbd751c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 41b407b4343db4f594049c4b1027fe4279dab840
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65540543"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67482948"
 ---
 # <a name="how-to-list-your-application-in-the-azure-active-directory-application-gallery"></a>Como: Listar seu aplicativo na galeria de aplicativos do Azure Active Directory
 
@@ -117,21 +117,21 @@ Para atualizar ou remover um aplicativo existente na galeria de aplicativos do M
 
 Os clientes podem enviar a solicitação de listar um aplicativo clicando **aplicativo solicita por clientes** -> **Enviar nova solicitação**.
 
-![Bloco de aplicativos solicitada do cliente](./media/howto-app-gallery-listing/customer-submit-request.png)
+![Mostra o cliente solicitado o bloco de aplicativos](./media/howto-app-gallery-listing/customer-submit-request.png)
 
 Abaixo está que o fluxo de cliente solicitada aplicativos-
 
-![Fluxo de aplicativos solicitadas pelos clientes](./media/howto-app-gallery-listing/customer-request.png)
+![Mostra o cliente solicitou o fluxo de aplicativos](./media/howto-app-gallery-listing/customer-request.png)
 
 ## <a name="timelines"></a>Linhas do tempo
 
 A linha do tempo para o processo de listagem de um aplicativo WS-Fed ou SAML 2.0 na galeria é 7 a 10 dias úteis.
 
-   ![TimeLine de listagem de aplicativos SAML na galeria](./media/howto-app-gallery-listing/timeline.png)
+   ![TimeLine de listagem de aplicativos SAML na Galeria](./media/howto-app-gallery-listing/timeline.png)
 
 A linha do tempo para o processo de listagem de um aplicativo OpenID Connect na galeria é 2 a 5 dias úteis.
 
-   ![TimeLine de listagem de aplicativos SAML na galeria](./media/howto-app-gallery-listing/timeline2.png)
+   ![TimeLine de listagem de aplicativos SAML na Galeria](./media/howto-app-gallery-listing/timeline2.png)
 
 ## <a name="escalations"></a>Escalonamentos
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/11/2019
 ms.author: cynthn;azcspmt;jonbeck
 ms.custom: include file
-ms.openlocfilehash: e8e11ffd4260c2956c6bb4740973eb77abfdc7b9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 26a5baf07ee31bdf155629139e12ef1977ddca1d
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67055226"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67457214"
 ---
 Os tamanhos de VM otimizados para GPU são máquinas virtuais especializadas disponíveis com um ou vários GPUs NVIDIA. Esses tamanhos são projetados para cargas de trabalho de visualização e com muita computação e muitos gráficos. Este artigo fornece informações sobre o número e o tipo de GPUs, vCPUs, discos de dados e NICs. A taxa de transferência de armazenamento e a largura de banda de rede também são incluídos para cada tamanho neste agrupamento.
 
@@ -103,9 +103,9 @@ A máquina virtual da série NDv2 é uma nova adição à família de GPUs proje
 [Inscreva-se e tenha acesso a essas máquinas durante a visualização](https://aka.ms/ndv2signup).
 <br>
 
-| Tamanho | vCPU | GPU | Memória | NICs (Máx.) | Máx. tamanho do disco | Máx. de discos de dados | Taxa de transferência de disco sem cache: IOPS / MBps | Largura de banda de rede máxima | 
+| Tamanho | vCPU | GPU | Memória | NICs (Máx.) | Armazenamento temporário (SSD) GiB | Máx. de discos de dados | Taxa de transferência de disco sem cache: IOPS / MBps | Largura de banda de rede máxima | 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_ND40s_v2 | 40 | 8 V100 (NVLink) | 672 GiB | 8 | Temporário 1344 / 2948XIO | 32 | 80000 / 800 | 24000 Mbps |
+| Standard_ND40s_v2 | 40 | 8 V100 (NVLink) | 672 GiB | 8 | 2948 | 32 | 80000 / 800 | 24000 Mbps |
 
 ## <a name="nd-series"></a>Série ND
 

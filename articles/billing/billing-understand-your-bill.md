@@ -1,33 +1,29 @@
 ---
-title: Entenda sua fatura do Azure | Microsoft Docs
-description: Saiba como ler e entender o uso e a fatura da sua assinatura do Azure
-services: ''
-documentationcenter: ''
-author: tonguyen10
+title: Entender sua fatura do Azure
+description: Saiba como ler e entender seu uso e a fatura da sua assinatura do Azure.
+author: bandersmsft
 manager: jureid
-editor: ''
 tags: billing
-ms.assetid: 32eea268-161c-4b93-8774-bc435d78a8c9
 ms.service: billing
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/19/2019
+ms.date: 07/01/2019
 ms.author: banders
-ms.openlocfilehash: 4303b79a7ee69d029504bf6ca2359f6e6070e5b8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c8b0d6febbffb80cb4e8bcbf62febb51d059282c
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60370098"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67490296"
 ---
 # <a name="understand-your-microsoft-azure-bill"></a>Entenda sua fatura do Microsoft Azure
-Para entender sua fatura do Azure, compare sua fatura com o arquivo de uso diário detalhado e os relatórios de gerenciamento de custo no Portal do Azure.
+Para entender sua fatura do Azure, você compare sua fatura com o arquivo de uso diário detalhado e os relatórios de gerenciamento de custo no portal do Azure.
 
 Este artigo não se aplica aos clientes do Azure com um Contrato Enterprise (clientes da EA). Se você for um cliente EA, consulte [entenda sua fatura para clientes do Azure com um Enterprise Agreement](billing-understand-your-bill-ea.md).
 
-Este artigo não se aplica aos clientes do Azure com um contrato de cliente da Microsoft. Se você tiver uma conta de cobrança para um contrato de cliente da Microsoft, consulte [entender os encargos do Azure na sua fatura do contrato do cliente Microsoft](billing-mca-understand-your-bill.md).
+Este artigo não se aplica a clientes do Azure com um [contrato de cliente do Microsoft](#check-access-to-a-microsoft-customer-agreement). Se você tiver um contrato de cliente da Microsoft, consulte [entender os encargos do Azure na sua fatura do contrato do cliente Microsoft](billing-mca-understand-your-bill.md).
 
 Para obter uma explicação sobre como o faturamento funciona no programa Provedor de Soluções de Nuvem do Azure (Azure CSP), incluindo o ciclo de cobrança, o preço e o uso, confira [Visão geral da cobrança do Azure CSP](/azure/cloud-solution-provider/billing/azure-csp-billing-overview/).
 
@@ -39,7 +35,7 @@ Se houver uma cobrança em sua fatura sobre a qual você deseja obter mais infor
 
 ### <a name="option-1-compare-usage-and-costs-with-usage-file"></a>Opção 1: Comparar o uso e os custos com o arquivo de uso
 
-O arquivo CSV de uso detalhado mostra os encargos por período de cobrança e de uso diário. Para obter o arquivo, consulte [Obtenha sua fatura de cobrança do Azure e os dados de uso diário](billing-download-azure-invoice-daily-usage-date.md).
+O arquivo CSV de uso detalhado mostra os encargos por período de cobrança e de uso diário. Para baixar ou exibir o arquivo, consulte [obter sua fatura e o diário de dados de uso de cobrança do Azure](billing-download-azure-invoice-daily-usage-date.md).
 
 Os encargos de uso são exibidos no nível do medidor. Os termos na lista a seguir têm o mesmo significado na fatura e no arquivo de uso detalhado. Por exemplo, o ciclo de faturamento na fatura é o mesmo que o período de faturamento mostrado no arquivo de uso detalhado.
 
@@ -54,7 +50,7 @@ Os encargos de uso são exibidos no nível do medidor. Os termos na lista a segu
  |Incluso |Quantidade incluída |
  |Faturável |Quantidade de excesso |
 
-A seção de **Encargos de Uso** da sua fatura tem o valor total de cada medidor que foi consumido durante o período de cobrança. Por exemplo, a captura de tela a seguir mostra um encargo de uso para o serviço Agendador do Azure.
+O **encargos de uso** seção da fatura mostra o valor total para cada medidor que foi consumido durante o período de cobrança. Por exemplo, a imagem a seguir mostra um encargo de uso para o serviço de Agendador do Azure.
 
 ![Encargos de uso da fatura](./media/billing-understand-your-bill/1.png)
 
@@ -62,7 +58,7 @@ O mesmo encargo é mostrado na seção **Instrução** de seu CSV de uso detalha
 
 ![Encargos de uso de CSV](./media/billing-understand-your-bill/2.png)
 
-Para ver uma análise diária dessa cobrança, acesse a seção **Uso diário** do CSV. Filtrar por *Agendador* sob *categoria do medidor*. Você pode ver em quais dias o medidor foi usado e quanto foi consumido. As informações *Recurso* e *Grupo de Recursos* também são listadas para comparação. A soma dos valores de *Consumido* devem equivaler ao que é mostrado na fatura.
+Para ver um detalhamento diário da cobrança, vá para o **uso diário** seção do arquivo CSV. Filtrar por *Agendador* sob *categoria do medidor*. Você pode ver em quais dias o medidor foi usado e quanto foi consumido. O *Resource* e *grupo de recursos* informações também são mostradas para comparação. O *consumida* valores devem ser adicionados a e corresponder ao que é mostrado na fatura.
 
 ![Seção Uso Diário no CSV](./media/billing-understand-your-bill/3.png)
 
@@ -84,7 +80,7 @@ O portal do Azure também pode lhe ajudar a verificar seus encargos. Para obter 
 
    ![Exibição de análise de custo no portal do Azure](./media/billing-understand-your-bill/4.png)
 
-1. Selecione essa linha para ver o detalhamento do custo diário.
+1. Selecione a linha que mostra a carga para ver a análise de custo diário.
 
    ![Exibição de histórico de custo no Portal do Azure](./media/billing-understand-your-bill/5.png)
 
@@ -135,6 +131,9 @@ Para verificar o status do pagamento, [criar um tíquete de suporte](https://por
   - [Custo total de Calculadora de propriedade](https://aka.ms/azure-tco-calculator)
   - [Obter informações para cada serviço de preço](https://azure.microsoft.com/pricing/)
 - [Examine o uso e os custos regularmente no Portal do Azure](billing-getting-started.md#costs).
+
+## <a name="check-access-to-a-microsoft-customer-agreement"></a>Verificar o acesso a um contrato de cliente da Microsoft
+[!INCLUDE [billing-check-mca](../../includes/billing-check-mca.md)]
 
 ## <a name="need-help-contact-us"></a>Precisa de ajuda? Entre em contato conosco.
 

@@ -4,14 +4,14 @@ description: Use o Azure Resource Manager para mover recursos para um novo grupo
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 06/19/2019
+ms.date: 06/24/2019
 ms.author: tomfitz
-ms.openlocfilehash: eb99bec74ae5444320b7098616d4bf2d81b90697
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: 6cb2f49113a67a8dc6cea70ae58bd440f420a1d2
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67332025"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442786"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Mover recursos para um novo grupo de recursos ou uma nova assinatura
 
@@ -49,6 +49,7 @@ A lista a seguir fornece um resumo geral dos serviços do Azure que podem ser mo
 * Gerenciamento de API
 * Aplicativos do Serviço de Aplicativo (aplicativos Web) - consulte [Limitações do Serviço de Aplicativo](#app-service-limitations)
 * Certificados do Serviço de Aplicativo – veja [Limitações de Certificado de Serviço de Aplicativo](#app-service-certificate-limitations)
+* Domínio do Serviço de Aplicativo
 * Automação: os runbooks devem existir no mesmo grupo de recursos que a conta de automação.
 * Azure Active Directory B2C
 * Cache do Azure para Redis – se o Cache do Azure para instância do Redis estiver configurado com uma rede virtual, a instância não poderá ser movida para uma assinatura diferente. Confira [Limitações de redes virtuais](#virtual-networks-limitations).

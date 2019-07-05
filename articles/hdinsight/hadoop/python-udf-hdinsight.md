@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 03/15/2019
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: 6f3140f412f9d36ca36cef440bd4e60f1a9197d4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d74c40264e8ed535d250e938487885a848ba6b47
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64702234"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67484188"
 ---
 # <a name="use-python-user-defined-functions-udf-with-apache-hive-and-apache-pig-in-hdinsight"></a>Usar funções definidas pelo usuário (UDF) do Python com o Apache Hive e o Apache Pig no HDInsight
 
@@ -161,9 +161,6 @@ Os comandos a seguir, substitua `sshuser` com o nome de usuário real se elas fo
     ```
 
 ### <a name="upload-file-powershell"></a>Carregar arquivo (PowerShell)
-
-> [!IMPORTANT]  
-> Esses scripts do PowerShell não funcionará se [transferência segura](../../storage/common/storage-require-secure-transfer.md) está habilitado.  Use os comandos do shell ou desativar a transferência segura.
 
 O PowerShell também pode ser usado para executar remotamente consultas do Hive. Certifique-se de seu diretório de trabalho é onde `hiveudf.py` está localizado.  Use o seguinte script do PowerShell para executar uma consulta de Hive que usa o `hiveudf.py` script:
 
@@ -433,9 +430,6 @@ Os comandos a seguir, substitua `sshuser` com o nome de usuário real se elas fo
 
 
 ### <a name="upload-file-powershell"></a>Carregar arquivo (PowerShell)
-
-> [!IMPORTANT]  
-> Esses scripts do PowerShell não funcionará se [transferência segura](../../storage/common/storage-require-secure-transfer.md) está habilitado.  Use os comandos do shell ou desativar a transferência segura.
 
 O PowerShell também pode ser usado para executar remotamente consultas do Hive. Certifique-se de seu diretório de trabalho é onde `pigudf.py` está localizado.  Use o seguinte script do PowerShell para executar uma consulta de Hive que usa o `pigudf.py` script:
 

@@ -6,12 +6,12 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 06/10/2019
-ms.openlocfilehash: ef97f17bf159511ce94f90cd00623e05489acb92
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 0a7140f70db78c8511f3c4da00b2f9c11c368163
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67274669"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67477670"
 ---
 # <a name="mapping-data-flow-parameters"></a>Mapeando parâmetros de fluxo de dados
 
@@ -37,6 +37,12 @@ Para adicionar parâmetros ao seu fluxo de dados, clique na parte em branco da t
 Parâmetros podem ser utilizados em qualquer expressão de fluxo de dados. Parâmetros começam com $ e são imutáveis. Você encontrará a lista de parâmetros disponíveis dentro do construtor de expressão na guia 'Parameters'.
 
 ![Expressão de parâmetro de fluxo de dados](media/data-flow/parameter-expression.png "expressão de parâmetro de fluxo de dados")
+
+## <a name="use-parameters-in-your-data-flow"></a>Usar parâmetros em seu fluxo de dados
+
+* Você pode usar valores de parâmetro dentro de suas expressões de transformação. Você encontrará uma lista de parâmetros na guia parâmetros no construtor de expressões. ![Usar parâmetros de fluxo de dados](media/data-flow/params9.png "parâmetros de fluxo de dados de uso")
+
+* Parâmetros também são usados para configurar valores dinâmicos para seu código-fonte e configurações de transformação do coletor. Quando você clica dentro de campos configuráveis, você verá o link "Adicionar contect dinâmico" são exibidos. Clicar em lá, você será levado para um construtor de expressões em que você pode usar parâmetros para usar valores dinâmicos. ![Fluxo de dados de conteúdo dinâmico](media/data-flow/params6.png "conteúdo dinâmico de fluxo de dados")
 
 ## <a name="set-mapping-data-flow-parameters-from-pipeline"></a>Definir os parâmetros de fluxo de dados de mapeamento de pipeline
 

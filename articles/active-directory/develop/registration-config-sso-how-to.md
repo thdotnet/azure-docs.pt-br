@@ -1,5 +1,5 @@
 ---
-title: Como configurar um novo aplicativo multilocatário | Microsoft Docs
+title: Como configurar o logon único | Microsoft Docs
 description: Como configurar o logon único para um aplicativo personalizado que você está desenvolvendo e registrar com o Azure AD.
 services: active-directory
 documentationcenter: ''
@@ -15,14 +15,14 @@ ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: ryanwi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83fae56dd0cf7157575b7c5a07e33ca1888d8560
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d151d4d7f32c479f2cfb4d71a8ed667f42e03b49
+ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65545445"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67465687"
 ---
-# <a name="how-to-configure-a-new-multi-tenant-application"></a>Como configurar um novo aplicativo multilocatário
+# <a name="how-to-configure-single-sign-on-for-an-application"></a>Como configurar o logon único para um aplicativo
 
 Habilitar logon único federado (SSO) em seu aplicativo é habilitado automaticamente por meio do Azure AD para OpenID Connect, SAML 2.0 ou WS-Fed. Se os usuários finais estão precisando entrar, mesmo já tendo uma sessão existente com o Azure AD, é provável que seu aplicativo possa estar configurado incorretamente.
 

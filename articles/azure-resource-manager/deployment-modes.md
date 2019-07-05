@@ -4,14 +4,14 @@ description: Descreve como especificar se um modo de implantação completo ou i
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 05/14/2019
+ms.date: 07/01/2019
 ms.author: tomfitz
-ms.openlocfilehash: 1ff098bf329979d0702c41f83d8e5f8ee7cceca1
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 8a53ed1eea66c976c46a21378a9c48a1ad5ce902
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67206557"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508211"
 ---
 # <a name="azure-resource-manager-deployment-modes"></a>Modos de implantação do Azure Resource Manager
 
@@ -22,6 +22,8 @@ Para ambos os modos, o Resource Manager tenta criar todos os recursos especifica
 ## <a name="complete-mode"></a>Modo completo
 
 No modo completo, o Gerenciador de recursos **exclui** recursos existentes no grupo de recursos, mas que não são especificados no modelo. Os recursos que estão especificados no modelo, mas que não foram implantados porque uma [condição](resource-group-authoring-templates.md#condition) foi avaliada como falsa, não são excluídos.
+
+Tenha cuidado ao usar o modo completo com [copiar loops](resource-group-create-multiple.md). Todos os recursos que não são especificados no modelo depois de resolver o loop de cópia são excluídos.
 
 Há algumas diferenças nos tipos de recurso lidarem com exclusões de modo completo. Os recursos pai serão excluídos automaticamente quando não estiverem em um modelo que é implantado no modo completo. Alguns recursos filho não são excluídos automaticamente quando não estão no modelo. No entanto, esses recursos filho serão excluídos se o recurso pai seja excluído. 
 
