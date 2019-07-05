@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin, nacanuma
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bc352c6867779fd8f4487acdb1d11c0fabe4b9f7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 51fd5c8f406ea54c7fc8e81c674e41b30d7ad406
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67110985"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67482424"
 ---
 # <a name="service-to-service-calls-that-use-delegated-user-identity-in-the-on-behalf-of-flow"></a>Chamadas de serviço a serviço que usam a identidade do usuário delegado no fluxo On-Behalf-Of
 
@@ -38,7 +38,7 @@ O fluxo OBO (On-Behalf-Of) do OAuth 2.0 permite que um aplicativo que invoca um 
 
 O fluxo OBO é iniciado após o usuário ter sido autenticado em um aplicativo que usa o [fluxo de concessão de código de autorização OAuth 2.0](v1-protocols-oauth-code.md). Nesse ponto, o aplicativo envia um token de acesso (token A) para a API Web da camada intermediária (API A) que contém as declarações do usuário e o consentimento para acessar a API A. Em seguida, a API A faz uma solicitação autenticada para a API Web downstream (API B).
 
-Essas etapas compõem o fluxo On-Behalf-Of: ![Fluxo On-Behalf-Of do OAuth 2.0](./media/v1-oauth2-on-behalf-of-flow/active-directory-protocols-oauth-on-behalf-of-flow.png)
+Essas etapas compõem o fluxo On-Behalf-Of: ![Mostra as etapas em que o fluxo On-Behalf-Of OAuth 2.0](./media/v1-oauth2-on-behalf-of-flow/active-directory-protocols-oauth-on-behalf-of-flow.png)
 
 1. O aplicativo cliente faz uma solicitação para API A com o token A.
 1. A API A se autentica no ponto de extremidade de emissão de token do Azure AD e solicita um token para acessar a API B.

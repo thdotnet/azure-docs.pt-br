@@ -11,17 +11,17 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
-ms.date: 05/20/2019
-ms.openlocfilehash: 3e56244f074e31672cf77bc74998096e215a4db7
-ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
+ms.date: 06/27/2019
+ms.openlocfilehash: 1eeb37ce74b3e2f57588197d6bb88f59944c61cf
+ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357340"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67460673"
 ---
 # <a name="automated-backups"></a>Backups automatizados
 
-Banco de dados SQL cria os backups de banco de dados que são mantidos entre 7 e 35 dias e automaticamente usa o Azure [armazenamento com redundância geográfica de acesso de leitura (RA-GRS)](../storage/common/storage-redundancy-grs.md#read-access-geo-redundant-storage) para garantir que eles sejam preservados, mesmo se o data center não está disponível. Esses backups são criados automaticamente e sem nenhum custo adicional. Você não precisa fazer nada para que isso ocorra. Os backups de banco de dados são uma parte essencial de qualquer estratégia de recuperação de desastre e continuidade dos negócios, porque eles protegem seus dados contra exclusão ou corrupção acidentais. Se as regras de segurança exigem que os backups estão disponíveis por um longo período de tempo (até 10 anos), você pode configurar uma [retenção de longo prazo](sql-database-long-term-retention.md) em Elástico e bancos de dados Singleton de pools.
+Banco de dados SQL cria os backups de banco de dados que são mantidos entre 7 e 35 dias e automaticamente usa o Azure [armazenamento com redundância geográfica de acesso de leitura (RA-GRS)](../storage/common/storage-redundancy-grs.md#read-access-geo-redundant-storage) para garantir que eles sejam preservados, mesmo se o data center não está disponível. Esses backups são criados automaticamente. Os backups de banco de dados são uma parte essencial de qualquer estratégia de recuperação de desastre e continuidade dos negócios, porque eles protegem seus dados contra exclusão ou corrupção acidentais. Se as regras de segurança exigem que os backups estão disponíveis por um longo período de tempo (até 10 anos), você pode configurar uma [retenção de longo prazo](sql-database-long-term-retention.md) em Elástico e bancos de dados Singleton de pools.
 
 [!INCLUDE [GDPR-related guidance](../../includes/gdpr-intro-sentence.md)]
 

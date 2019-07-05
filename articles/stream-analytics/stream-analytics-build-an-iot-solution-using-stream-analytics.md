@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: f372c2a85a9a03c7ead779bd4db64722891c9a4c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5b2c153646021aeb8ee0dbb787cfce41af19568d
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60201477"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443671"
 ---
 # <a name="build-an-iot-solution-by-using-stream-analytics"></a>Compilar uma solução de IoT usando o Stream Analytics
 
@@ -138,7 +138,8 @@ Há vários recursos que podem ser facilmente implantados em um grupo de recurso
 10. Após alguns instantes, uma notificação será exibida para confirmar a **Implantação com êxito**.
 
 ### <a name="review-the-azure-stream-analytics-tollapp-resources"></a>Examinar os recursos do TollApp do Azure Stream Analytics
-1. Faça logon no Portal do Azure
+
+1. Entre no Portal do Azure
 
 2. Localize o grupo de recursos que você nomeou na seção anterior.
 
@@ -171,7 +172,7 @@ Há vários recursos que podem ser facilmente implantados em um grupo de recurso
    - O **Registro** é uma conexão do Armazenamento de Blobs do Azure, apontando para um arquivo registration.json estático usado para pesquisas, conforme necessário. Essa entrada de dados de referência é usada em variações posteriores da sintaxe de consulta.
 
 4. Examinar as Saídas do trabalho de exemplo do TollApp.
-   - A saída do **Cosmos DB** é uma coleção de bancos de dados do Cosmos que recebe os eventos do coletor de saída. Observe que essa saída é usada na cláusula INTO da consulta de streaming.
+   - **O cosmos DB** saída é um contêiner de banco de dados do Cosmos que recebe eventos de coletor de saída. Observe que essa saída é usada na cláusula INTO da consulta de streaming.
 
 ## <a name="start-the-tollapp-streaming-job"></a>Iniciar o trabalho de streaming do TollApp
 Siga estas etapas para iniciar o trabalho de streaming:

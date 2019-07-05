@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 08/15/2018
 ms.author: sumeet.mittal
 ms.custom: ''
-ms.openlocfilehash: e621eeeca7a4f325efcfb242c204b2f727e55fc4
-ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.openlocfilehash: 54178ae8988266c751ae0e23ae8c5e6ef7a16f20
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67147758"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67544153"
 ---
 # <a name="virtual-network-service-endpoints"></a>Pontos de extremidade de serviço de rede virtual
 
@@ -43,6 +43,7 @@ Este recurso está disponível para os seguintes serviços e regiões do Azure:
 **Versão prévia pública**
 
 - **[Registro de contêiner do Azure](../container-registry/container-registry-vnet.md)** : Visualização disponível em todas as regiões do Azure em que o registro de contêiner do Azure está disponível.
+- **[O serviço de aplicativo do Azure](https://docs.microsoft.com/en-us/azure/app-service/app-service-ip-restrictions)** : Visualização disponível em todas as regiões do Azure em que o serviço de aplicativo está disponível.
 
 Para obter as notificações mais recentes, verifique a página [Atualizações de rede virtual do Azure](https://azure.microsoft.com/updates/?product=virtual-network).
 

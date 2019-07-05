@@ -5,15 +5,15 @@ services: storage
 author: roygara
 ms.service: storage
 ms.topic: article
-ms.date: 11/26/2018
+ms.date: 06/24/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: d9b7296a116ebd06542a53087afbd083dbd3a7eb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fdbbea2d32762d2d4030ec3a10826595dadd371c
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64696759"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449823"
 ---
 # <a name="azure-file-sync-proxy-and-firewall-settings"></a>Configurações de proxy e firewall da Sincronização de arquivos do Azure
 A Sincronização de arquivos do Azure se conecta seus servidores locais para arquivos do Azure, permitindo camadas de recursos de nuvem e sincronização de vários locais. Como tal, um servidor local deve estar conectado à internet. Um administrador de TI precisa decidir o melhor caminho para o servidor acessar os serviços de nuvem do Azure.
@@ -23,7 +23,7 @@ Este artigo fornecerá informações sobre requisitos específicos e as opções
 > [!Important]
 > A Sincronização de Arquivos do Azure ainda não suporta firewalls e redes virtuais para uma conta de armazenamento.
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 A Sincronização de Arquivos do Azure atua como um serviço de coordenação entre o Windows Server, seu compartilhamento de arquivos do Azure e vários outros serviços do Azure para sincronizar os dados conforme descrito em seu grupo de sincronização. Para que a Sincronização de Arquivos do Azure funcione corretamente, você precisará configurar seus servidores para se comunicar com os seguintes serviços do Azure:
 
 - Armazenamento do Azure
@@ -111,20 +111,31 @@ Por motivos de BCDR (continuidade dos negócios e recuperação de desastres), v
 
 | Nuvem  | Região | URL do ponto de extremidade primário | Região emparelhada | URL de descoberta |
 |--------|--------|----------------------|---------------|---------------|
-| Público |Leste da Austrália | https://kailani-aue.one.microsoft.com | Sudeste da Austrália | https://kailani-aue.one.microsoft.com |
+| Público |Leste da Austrália | https://kailani-aue.one.microsoft.com | Sudeste da Austrália | https://tm-kailani-aue.one.microsoft.com |
 | Público |Sudeste da Austrália | https://kailani-aus.one.microsoft.com | Leste da Austrália | https://tm-kailani-aus.one.microsoft.com |
+| Público | Sul do Brasil | https://brazilsouth01.afs.azure.net | Centro-Sul dos Estados Unidos | https://tm-brazilsouth01.afs.azure.net |
 | Público | Canadá Central | https://kailani-cac.one.microsoft.com | Leste do Canadá | https://tm-kailani-cac.one.microsoft.com |
 | Público | Leste do Canadá | https://kailani-cae.one.microsoft.com | Canadá Central | https://tm-kailani.cae.one.microsoft.com |
+| Público | Índia Central | https://kailani-cin.one.microsoft.com | Sul da Índia | https://tm-kailani-cin.one.microsoft.com |
 | Público | Centro dos EUA | https://kailani-cus.one.microsoft.com | Leste dos EUA 2 | https://tm-kailani-cus.one.microsoft.com |
 | Público | Ásia Oriental | https://kailani11.one.microsoft.com | Sudeste Asiático | https://tm-kailani11.one.microsoft.com |
-| Público | Leste dos EUA | https://kailani1.one.microsoft.com | Oeste dos EUA | https://tm-kailani1.one.microsoft.com |
+| Público | East US | https://kailani1.one.microsoft.com | Oeste dos EUA | https://tm-kailani1.one.microsoft.com |
 | Público | Leste dos EUA 2 | https://kailani-ess.one.microsoft.com | Centro dos EUA | https://tm-kailani-ess.one.microsoft.com |
+| Público | Leste do Japão | https://japaneast01.afs.azure.net | Oeste do Japão | https://tm-japaneast01.afs.azure.net |
+| Público | Oeste do Japão | https://japanwest01.afs.azure.net | Leste do Japão | https://tm-japanwest01.afs.azure.net |
+| Público | Coreia Central | https://koreacentral01.afs.azure.net/ | Sul da Coreia | https://tm-koreacentral01.afs.azure.net/ |
+| Público | Sul da Coreia | https://koreasouth01.afs.azure.net/ | Coreia Central | https://tm-koreasouth01.afs.azure.net/ |
+| Público | Centro-Norte dos EUA | https://northcentralus01.afs.azure.net | Centro-Sul dos Estados Unidos | https://tm-northcentralus01.afs.azure.net |
 | Público | Norte da Europa | https://kailani7.one.microsoft.com | Europa Ocidental | https://tm-kailani7.one.microsoft.com |
+| Público | Centro-Sul dos Estados Unidos | https://southcentralus01.afs.azure.net | Centro-Norte dos EUA | https://tm-southcentralus01.afs.azure.net |
+| Público | Sul da Índia | https://kailani-sin.one.microsoft.com | Índia Central | https://tm-kailani-sin.one.microsoft.com |
 | Público | Sudeste Asiático | https://kailani10.one.microsoft.com | Ásia Oriental | https://tm-kailani10.one.microsoft.com |
 | Público | Sul do Reino Unido | https://kailani-uks.one.microsoft.com | Oeste do Reino Unido | https://tm-kailani-uks.one.microsoft.com |
 | Público | Oeste do Reino Unido | https://kailani-ukw.one.microsoft.com | Sul do Reino Unido | https://tm-kailani-ukw.one.microsoft.com |
+| Público | Centro-Oeste dos EUA | https://westcentralus01.afs.azure.net | Oeste dos EUA 2 | https://tm-westcentralus01.afs.azure.net |
 | Público | Europa Ocidental | https://kailani6.one.microsoft.com | Norte da Europa | https://tm-kailani6.one.microsoft.com |
-| Público | Oeste dos EUA | https://kailani.one.microsoft.com | Leste dos EUA | https://tm-kailani.one.microsoft.com |
+| Público | Oeste dos EUA | https://kailani.one.microsoft.com | East US | https://tm-kailani.one.microsoft.com |
+| Público | Oeste dos EUA 2 | https://westus201.afs.azure.net | Centro-Oeste dos EUA | https://tm-westus201.afs.azure.net |
 | Governamental | Governo dos EUA do Arizona | https://usgovarizona01.afs.azure.us | Governo dos EUA do Texas | https://tm-usgovarizona01.afs.azure.us |
 | Governamental | Governo dos EUA do Texas | https://usgovtexas01.afs.azure.us | Governo dos EUA do Arizona | https://tm-usgovtexas01.afs.azure.us |
 

@@ -6,12 +6,12 @@ ms.author: arramac
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/19/2019
-ms.openlocfilehash: 0086327661df637dc0ae60208ed9424b4610ef0e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 28eb7c6a11f71fa87835bcfe78e635753965bac3
+ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65969486"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67561225"
 ---
 # <a name="limits-in-azure-cosmos-db"></a>Limites no Azure Cosmos DB
 
@@ -25,7 +25,7 @@ Depois de criar uma conta de Cosmos do Azure em sua assinatura, você pode geren
 | --- | --- |
 | RUs máximo por contêiner ([modo de taxa de transferência dedicada provisionado](databases-containers-items.md#azure-cosmos-containers)) | 1\.000.000 por padrão. Você pode aumentá-lo por [preenchendo um tíquete de suporte do Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request) nem entrar em contato conosco por meio de [pergunte o Cosmos DB](mailto:askcosmosdb@microsoft.com) |
 | RUs máximo por banco de dados ([modo de taxa de transferência compartilhada provisionado](databases-containers-items.md#azure-cosmos-containers)) | 1\.000.000 por padrão. Você pode aumentá-lo por [preenchendo um tíquete de suporte do Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request) nem entrar em contato conosco por meio de [pergunte o Cosmos DB](mailto:askcosmosdb@microsoft.com) |
-| RUs máximo por chave de partição (lógico) | 10\.000 |
+| RUs máximo por chave de partição (lógico) | 10.000 |
 | Armazenamento máximo entre todos os itens por chave de partição (lógico)| 10 GB |
 | Número máximo de chaves de partição distinta de (lógico) | Ilimitado |
 | Armazenamento máximo por contêiner | Ilimitado |
@@ -37,7 +37,6 @@ Depois de criar uma conta de Cosmos do Azure em sua assinatura, você pode geren
 
 Um contêiner do Cosmos (ou banco de dados de taxa de transferência compartilhada) deve ter uma taxa de transferência mínima de 400 RUs. À medida que cresce o contêiner, a taxa de transferência mínima com suporte também depende dos seguintes fatores:
 
-* O máximo consumido no contêiner de armazenamento é medido em incrementos de 40 RUs por GB de armazenamento consumido. Por exemplo, se um contêiner contém 100 GB de dados, em seguida, a taxa de transferência deve ser pelo menos de 4000 RUs
 * A taxa de transferência máxima já provisionada no contêiner. O serviço dá suporte a taxa de transferência na redução de um contêiner para 10% do máximo provisionado. Por exemplo, se a taxa de transferência foi aumentada para 10000 RUs, em seguida, mais baixa possível taxa de transferência seria 1000 RUs
 * O número total de contêineres que você já criou um banco de dados de taxa de transferência compartilhada, medido em 100 RUs por contêiner. Por exemplo, se você tiver criado cinco contêineres dentro de um banco de dados de taxa de transferência compartilhada, em seguida, a taxa de transferência deve ser pelo menos 500 RUs
 
@@ -48,7 +47,6 @@ A taxa de transferência atual e o mínima de um contêiner ou um banco de dados
 | RUs mínimo por contêiner ([modo de taxa de transferência dedicada provisionado](databases-containers-items.md#azure-cosmos-containers)) | 400 |
 | RUs mínimo por banco de dados ([modo de taxa de transferência compartilhada provisionado](databases-containers-items.md#azure-cosmos-containers)) | 400 |
 | RUs mínimo por contêiner dentro de um banco de dados de taxa de transferência compartilhada | 100 |
-| RUs mínimo por GB de armazenamento consumido | 40 |
 
 O cosmos DB dá suporte a dimensionamento Elástico da taxa de transferência (RUs) por contêiner ou banco de dados por meio do portal ou SDKs. Cada contêiner pode dimensionar de forma síncrona e imediatamente dentro de um intervalo de escala de 10 a 100 vezes, entre os valores mínimos e máximo. Se o valor de taxa de transferência solicitada está fora do intervalo, dimensionamento é executado de forma assíncrona. Dimensionamento assíncrona pode levar minutos a horas para ser concluída dependendo do tamanho do armazenamento de dados no contêiner e produtividade solicitada.  
 

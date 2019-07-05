@@ -6,13 +6,13 @@ manager: evansma
 ms.author: mattwoj
 ms.service: marketplace
 ms.topic: conceptual
-ms.date: 05/30/2019
-ms.openlocfilehash: f2787cd74525e7676befb133a6106ce83d9c2a20
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 06/27/2019
+ms.openlocfilehash: dc086bc1252c084b717807213b5ba4c7f9d7bb97
+ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67072623"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67514058"
 ---
 # <a name="create-a-new-saas-offer"></a>Criar uma nova oferta de SaaS
 
@@ -42,7 +42,9 @@ Exemplo: teste oferta 1
 
 Selecione **Criar**.  Uma **visão geral da oferta** página é criada para esta oferta.  
 
-![Visão geral da oferta no Partner Center](./media/commercial-marketplace-offer-overview.png)
+<!---
+![Offer overview on Partner Center](./media/commercial-marketplace-offer-overview.png)
+-->
 
 ## <a name="offer-overview"></a>Visão geral da oferta
 
@@ -172,7 +174,7 @@ O **propriedades** guia pede para você definir as categorias e setores usados p
 
 Selecione **salvar** após concluir esses campos. 
 
-### <a name="category"></a>Categoria
+### <a name="category"></a>Category
 Selecione um mínimo de um (1) e um máximo de três (3) categorias usadas para agrupar sua oferta em áreas de pesquisa marketplace apropriado. Entre em contato-out como sua oferta oferece suporte a essas categorias na descrição da oferta. 
 
 ### <a name="industry"></a>Setor
@@ -260,11 +262,11 @@ Adicionar endereços de email em até dez (10) manualmente ou vinte (20) se carr
 
 ## <a name="technical-configuration"></a>Configurações técnicas
 
-O **configurações técnicas** guia define os detalhes técnicos (caminho da URL, webhook, ID de locatário e ID do aplicativo) usados para se conectar à sua oferta. Essa conexão nos permite provisionar sua oferta como um recurso na assinatura do Azure do cliente se eles optarem por adquiri-lo.
+O **configurações técnicas** guia define os detalhes técnicos (caminho da URL, webhook, ID de locatário e ID do aplicativo) usados para se conectar à sua oferta. Essa conexão nos permite provisionar sua oferta para o cliente final se eles optarem por adquiri-lo. Diagramas que descreve o uso dos campos coletados estão disponíveis na documentação para [preenchimento SaaS APIs](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-fulfillment-api-v2).
 
-- **URL da página de aterrissagem** (obrigatório): Defina o site URL que os clientes serão direcionados para parar em depois de adquirir sua oferta do marketplace. Essa URL também será o ponto de extremidade que receberá as APIs de conexão para facilitar o comércio com a Microsoft.
+- **URL da página de aterrissagem** (obrigatório): Defina a URL do site que os clientes serão levado depois de adquirir sua oferta do marketplace. Essa URL será o ponto de extremidade que recebe um token quando um cliente é roteado para a página. Esse token pode ser trocado por detalhes usando o resolve o cumprimento de APIs de provisionamento. Esses detalhes e quaisquer outras que você coleta podem ser usadas como parte de uma página da web interativos de cliente criado em sua experiência para concluir o registro e ativar a compra.
 
-- **Webhook de Conexão** (obrigatório): Para todos os eventos assíncronos que a Microsoft precisa para enviar para você em nome do cliente (exemplo: Assinatura do Azure passou inválida), exigimos que você forneça um webhook de conexão. Se você ainda não tiver um sistema de webhook em vigor, a configuração mais simples é ter um aplicativo de lógica de ponto de extremidade HTTP que atenderá quaisquer eventos que está sendo postados nele e, em seguida, tratá-las adequadamente (por exemplo, https:\//prod-1westus.logic.azure.com:443/work). Para saber mais, confira [Chamar, disparar ou aninhar fluxos de trabalho com pontos de extremidade HTTP em aplicativos lógicos](https://docs.microsoft.com/azure/logic-apps/logic-apps-http-endpoint).
+- **Webhook de Conexão** (obrigatório): Para todos os eventos assíncronos que a Microsoft precisa para enviar para você em nome do cliente (exemplo: Assinatura de SaaS ficou inválida), exigimos que você forneça um webhook de conexão. Se você ainda não tiver um sistema de webhook em vigor, a configuração mais simples é ter um aplicativo de lógica de ponto de extremidade HTTP que atenderá quaisquer eventos que está sendo postados nele e, em seguida, tratá-las adequadamente (por exemplo, https:\//prod-1westus.logic.azure.com:443/work). Para saber mais, confira [Chamar, disparar ou aninhar fluxos de trabalho com pontos de extremidade HTTP em aplicativos lógicos](https://docs.microsoft.com/azure/logic-apps/logic-apps-http-endpoint).
 
 - **A ID de locatário do Azure AD** (obrigatório): Por dentro do portal do Azure, exigimos que você [criar um aplicativo do Azure Active Directory (AD)](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) para que possamos validar a conexão entre nossos dois serviços estiver atrás de uma comunicação autenticada. Para localizar o [ID do locatário](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-tenant-id), vá para o Azure Active Directory e selecione **propriedades**, em seguida, procure o **ID de diretório** número listado (por exemplo, 50c464d3-4930-494c-963c-1e951d15360e).
 
@@ -438,7 +440,7 @@ Para implantar o Test Drive em seu nome, criar e fornecer uma assinatura do Azur
 
 - **A ID de aplicativo do Azure AD** (obrigatório): Insira seu Azure Active Directory (AD) [ID do aplicativo](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-application-id-and-authentication-key). Para localizar essa ID, entrar na [portal do Azure](https://portal.azure.com/), selecione a guia Active Directory no menu à esquerda, selecione **registros de aplicativo**, em seguida, procure o **ID do aplicativo** número listado (por exemplo, 50c464d3-4930-494c-963c-1e951d15360e).
 
-- **Chave de aplicativo do Azure AD** (obrigatório): Insira seu Azure Active Directory (AD) [chave de aplicativo](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-application-id-and-authentication-key). Para localizar essa ID, entrar para o [portal do Azure](https://portal.azure.com/), selecione a guia Active Directory no menu à esquerda, selecione **registros de aplicativo** , em seguida, selecione **configurações**  >  **Chaves**.
+- **Segredo do cliente de aplicativo do Azure AD** (obrigatório): Insira o seu aplicativo do Azure AD [segredo do cliente](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-application-id-and-authentication-key). Para localizar esse valor, entrar para o [portal do Azure](https://portal.azure.com/). Selecione o **Azure Active Directory** guia no menu à esquerda, selecione **registros de aplicativo**, em seguida, selecione seu aplicativo de teste de unidade. Em seguida, selecione **certificados e segredos**, selecione **novo segredo do cliente**, insira uma descrição, selecione **nunca** sob **Expires**, em seguida, escolher **adicionar**. Certifique-se de copiar o valor. (Não navegue para fora da página antes de você fazer isso, caso contrário, você não terá acesso ao valor.)
 
 Lembre-se **salvar** antes de passar para a próxima seção!
 

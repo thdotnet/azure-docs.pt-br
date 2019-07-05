@@ -4,17 +4,17 @@ description: Este artigo descreve como gerenciar os módulos na automação do A
 services: automation
 ms.service: automation
 ms.subservice: shared-resources
-author: georgewallace
-ms.author: gwallace
+author: bobbytreed
+ms.author: robreed
 ms.date: 06/05/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 54ebe7df9523a863ae14bc55c6ae4c9635468755
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 69817d1412aa13d0e7983aa3ad27c15e59185432
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67063461"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67478170"
 ---
 # <a name="manage-modules-in-azure-automation"></a>Gerenciar os módulos na automação do Azure
 
@@ -230,7 +230,7 @@ Recomendamos que você considere o seguinte ao criar um módulo do PowerShell pa
 
 A tabela a seguir lista os módulos que são importados por padrão, quando uma conta de automação é criada. Os módulos listados abaixo podem ter versões mais recentes deles importadas, mas a versão original não pode ser removida da sua conta de automação, mesmo se você excluir uma versão mais recente deles.
 
-|nome do módulo|Version|
+|nome do módulo|Versão|
 |---|---|
 | AuditPolicyDsc | 1.1.0.0 |
 | Azure | 1.0.3 |

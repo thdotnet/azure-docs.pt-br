@@ -5,17 +5,17 @@ keywords: ''
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 03/17/2019
+ms.date: 06/27/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: a3b6327b9e05b039696cc1743fc2d16c5e945e26
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0c461da44d3d9075d66a68fe8994a4e970288fca
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65152628"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67543756"
 ---
 # <a name="update-the-iot-edge-security-daemon-and-runtime"></a>Atualize o daemon de segurança do IoT Edge e o tempo de execução
 
@@ -41,12 +41,14 @@ Verifique a versão do daemon de segurança em execução no seu dispositivo usa
 
 ### <a name="linux-devices"></a>Dispositivos do Linux
 
-Em dispositivos Linux, use o apt-get ou o gerenciador de pacotes apropriado para atualizar o daemon de segurança. 
+Em dispositivos Linux x64, use o apt-get ou o Gerenciador de pacotes apropriado para atualizar o daemon de segurança. 
 
 ```bash
 apt-get update
 apt-get install libiothsm iotedge
 ```
+
+Em dispositivos Linux ARM32, use as etapas em [tempo de execução de instalar o Azure IoT Edge no Linux (ARM32v7/armhf)](how-to-install-iot-edge-linux-arm.md) para instalar a versão mais recente do daemon de segurança. 
 
 ### <a name="windows-devices"></a>Dispositivos Windows
 
@@ -62,7 +64,7 @@ Se você quiser instalar uma versão específica do daemon de segurança, baixe 
 
 ## <a name="update-the-runtime-containers"></a>Atualizar os contêineres de tempo de execução
 
-A maneira de atualizar o agente do IoT Edge e contêineres de hub do IoT Edge depende de se você pode usar marcas sem interrupção (como 1.0) ou marcas específicas (como 1.0.2) em sua implantação. 
+A maneira de atualizar o agente do IoT Edge e contêineres do hub do IoT Edge depende se você pode usar marcas sem interrupção (como 1.0) ou marcas específicas (como 1.0.7) em sua implantação. 
 
 Verifique a versão do agente do IoT Edge e de módulos de hub do IoT Edge atualmente em seu dispositivo usando o comando `iotedge logs edgeAgent` ou `iotedge logs edgeHub`. 
 
@@ -73,7 +75,7 @@ Verifique a versão do agente do IoT Edge e de módulos de hub do IoT Edge atual
 O agente do IoT Edge e as imagens de hub do IoT Edge são marcadas com a versão do IoT Edge a que estão associados. Há duas maneiras diferentes de usar marcas com as imagens de tempo de execução: 
 
 * **Marcas sem interrupção** – use os dois primeiros valores do número de versão para obter a imagem mais recente que corresponde a esses dígitos. Por exemplo, 1.0 é atualizado sempre que há uma nova versão para apontar para a versão 1.0.x mais recente. Se o tempo de execução do contêiner em seu dispositivo IoT Edge extrair a imagem novamente, os módulos de tempo de execução serão atualizados para a versão mais recente. Essa abordagem é sugerida para fins de desenvolvimento. Implantações do portal do Azure usam como padrão marcas sem interrupção. 
-* **Marcas específicas** – use todos os três valores do número de versão para definir explicitamente a versão da imagem. Por exemplo, 1.0.2 não mudará após seu lançamento inicial. Você pode declarar um novo número de versão no manifesto de implantação quando estiver pronto para atualizar. Essa abordagem é sugerida para fins de produção.
+* **Marcas específicas** – use todos os três valores do número de versão para definir explicitamente a versão da imagem. Por exemplo, 1.0.7 não mudará após seu lançamento inicial. Você pode declarar um novo número de versão no manifesto de implantação quando estiver pronto para atualizar. Essa abordagem é sugerida para fins de produção.
 
 ### <a name="update-a-rolling-tag-image"></a>Atualizar uma imagem de tag sem interrupção
 
@@ -92,7 +94,7 @@ O serviço do IoT Edge obterá as versões mais recentes das imagens do tempo de
 
 ### <a name="update-a-specific-tag-image"></a>Atualizar uma imagem de tag específica
 
-Se você usar tags específicas em sua implantação (por exemplo, mcr.microsoft.com/azureiotedge-hub:**1.0.2**), bastará atualizar a tag em seu manifesto de implantação e aplicar as alterações ao seu dispositivo. 
+Se você usar marcas específicas em sua implantação (por exemplo, mcr.microsoft.com/azureiotedge-hub:**1.0.7**) e em seguida, tudo o que você precisa fazer é atualizar a marca em seu manifesto de implantação e aplicar as alterações ao seu dispositivo. 
 
 No portal do Azure, as imagens de implantação de tempo de execução são declaradas na seção **Definir configurações de tempo de execução do Edge avançadas**. 
 
@@ -105,7 +107,7 @@ Em um manifesto de implantação de JSON, atualize as imagens de módulo na seç
   "edgeAgent": {
     "type": "docker",
     "settings": {
-      "image": "mcr.microsoft.com/azureiotedge-agent:1.0.2",
+      "image": "mcr.microsoft.com/azureiotedge-agent:1.0.7",
       "createOptions": ""
     }
   },
@@ -114,12 +116,24 @@ Em um manifesto de implantação de JSON, atualize as imagens de módulo na seç
     "status": "running",
     "restartPolicy": "always",
     "settings": {
-      "image": "mcr.microsoft.com/azureiotedge-hub:1.0.2",
+      "image": "mcr.microsoft.com/azureiotedge-hub:1.0.7",
       "createOptions": "{\"HostConfig\":{\"PortBindings\":{\"5671/tcp\":[{\"HostPort\":\"5671\"}], \"8883/tcp\":[{\"HostPort\":\"8883\"}],\"443/tcp\":[{\"HostPort\":\"443\"}]}}}"
     }
   }
 },
 ```
+
+## <a name="update-to-a-release-candidate-version"></a>Atualizar para uma versão release candidate
+
+O Azure IoT Edge regularmente lança novas versões do serviço do IoT Edge. Antes de cada versão estável, há versão de um ou mais versões release candidate (RC). Versões RC incluem todos os recursos planejados para a versão, mas ainda percorrer os processos de teste e validação necessários para uma versão estável. Se você quiser testar um novo recurso no início, você pode instalar a versão RC e fornecer comentários por meio do GitHub. 
+
+Versões release candidate seguem a mesma convenção de numeração das versões, mas têm **-rc** mais um número incremental acrescentado ao final. Você pode ver os candidatos de versão na mesma lista de [do Azure IoT Edge libera](https://github.com/Azure/azure-iotedge/releases) como as versões estáveis. Por exemplo, encontrar **1.0.7-rc1** e **1.0.7-rc2**, os dois candidatos que vinha antes de versão **1.0.7**. Você também pode ver que as versões RC são marcadas com **pré-lançamento** rótulos. 
+
+Como as visualizações, versões release candidate não são incluídas como a versão mais recente que o destino de instaladores regular. Em vez disso, você precisa direcionar manualmente os ativos para a versão RC que você deseja testar. Dependendo do sistema de operacional do dispositivo IoT Edge, use as seções a seguir para atualizar o IoT Edge para uma versão específica:
+
+* [Linux X64](how-to-install-iot-edge-linux.md#install-a-specific-version)
+* [Linux ARM32](how-to-install-iot-edge-linux-arm.md#install-a-specific-version)
+* [Windows](how-to-install-iot-edge-windows.md#offline-installation)
 
 ## <a name="next-steps"></a>Próximas etapas
 

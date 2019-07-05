@@ -10,17 +10,19 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 04/05/2019
 ms.author: cynthn
-ms.openlocfilehash: 1578ba840c6dca93feb68754863439811d7ef099
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 88596a4bda3c9ebae99403e95b3539f068cad665
+ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65158724"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67465473"
 ---
 # <a name="share-gallery-vm-images-across-azure-tenants"></a>Compartilhar imagens da Galeria de VM entre locatários do Azure
 
 [!INCLUDE [virtual-machines-share-images-across-tenants](../../../includes/virtual-machines-share-images-across-tenants.md)]
 
+> [!IMPORTANT]
+> Você não pode usar o portal para implantar uma VM de uma imagem em outro locatário do azure. Para criar uma VM de uma imagem compartilhada entre locatários, você deve usar a CLI do Azure ou [Powershell](../windows/share-images-across-tenants.md).
 
 ## <a name="create-a-vm-using-azure-cli"></a>Criar uma VM usando a CLI do Azure
 

@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: amverma
-ms.openlocfilehash: ff65f3937069be87e922dad9287ba22380632329
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a41155b90257f7eaec85c3adbd975a0a37e24d91
+ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66810031"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67560411"
 ---
 # <a name="known-issues-with-hb-series-and-hc-series-vms"></a>Problemas comuns com VMs série HB e série HC
 
@@ -31,13 +31,13 @@ As VMs da série HB podem expor somente 228 GB de RAM para máquinas virtuais co
 
 Rede acelerada do Azure não está habilitada no momento, mas será como nós progredimos com o período de visualização. Vamos notificar os clientes quando esse recurso tem suporte.
 
+## <a name="qp0-access-restriction"></a>Restrição de acesso qp0
+
+Para impedir o acesso de hardware de baixo nível que pode resultar em vulnerabilidades de segurança, o par de fila 0 não está acessível para as VMs convidadas. Isso só deve afetar ações normalmente associados com a administração da NIC ConnectX-5 e executar alguns diagnósticos InfiniBand como ibdiagnet, mas não os aplicativos do usuário final em si.
+
 ## <a name="ud-transport"></a>Transporte UD
 
-No lançamento, HB série não suporta dinamicamente conectado transporte (DCT). Suporte para DCT será implementado ao longo do tempo. Há suporte para transportes de Conexão (RC) e não confiáveis datagrama (UD) confiáveis.
-
-## <a name="azure-batch"></a>Lote do Azure
-
-Enquanto as VMs da série HB estão em visualização, use uma conta do lote no modo de assinatura de usuário não está no modo de serviço.
+No lançamento, as séries de HB e de HC não dão suporte a dinamicamente conectado transporte (DCT). Suporte para DCT será implementado ao longo do tempo. Há suporte para transportes de Conexão (RC) e não confiáveis datagrama (UD) confiáveis.
 
 ## <a name="gss-proxy"></a>Proxy GSS
 

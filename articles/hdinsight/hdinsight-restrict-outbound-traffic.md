@@ -8,12 +8,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: howto
 ms.date: 05/30/2019
-ms.openlocfilehash: 542813e0f82a1a52142a2b82bea3fdb101fdec28
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: af5ddd50556b493cddf27d1ebb766d9bf6105107
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67077171"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67433427"
 ---
 # <a name="configure-outbound-network-traffic-for-azure-hdinsight-clusters-using-firewall-preview"></a>Configurar o tráfego de rede de saída para clusters de HDInsight do Azure usando o Firewall (visualização)
 
@@ -54,13 +54,13 @@ Sobre o **adicionar a coleção de regras de aplicativo** tela, conclua as segui
 
 1. Insira um **nome**, **prioridade**e clique em **permitir** do **ação** menu suspenso e insira as seguintes regras na **Seção de marcas de FQDN** :
 
-   | **Nome** | **Endereço de origem** | **Marca FQDN** | **Observações** |
+   | **Name** | **Endereço de origem** | **Marca FQDN** | **Observações** |
    | --- | --- | --- | --- |
    | Rule_1 | * | HDInsight e o Windows Update | Necessários para os serviços do HDI |
 
 1. Adicionar regras a seguir para o **destino FQDNs seção** :
 
-   | **Nome** | **Endereço de origem** | **Protocolo: porta** | **FQDNS de destino** | **Observações** |
+   | **Name** | **Endereço de origem** | **Protocolo: porta** | **FQDNS de destino** | **Observações** |
    | --- | --- | --- | --- | --- |
    | Rule_2 | * | https:443 | login.windows.net | Permite que a atividade de logon do Windows |
    | Rule_3 | * | https:443,http:80 | <storage_account_name.blob.core.windows.net> | Se seu cluster é apoiado por WASB, em seguida, adicione uma regra para o WASB. Para usar somente https garantir conexões ["transferência segura obrigatória"](https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer) está habilitada na conta de armazenamento. |
@@ -78,7 +78,7 @@ Crie as regras de rede para configurar corretamente o seu cluster HDInsight.
 1. No **adicionar a coleção de regras de rede** tela, insira um **nome**, **prioridade**e clique em **permitir** do **ação** menu suspenso.
 1. Crie as seguintes regras de **endereços IP** seção:
 
-   | **Nome** | **Protocolo** | **Endereço de origem** | **Endereço de destino** | **Porta de destino** | **Observações** |
+   | **Name** | **Protocolo** | **Endereço de origem** | **Endereço de destino** | **Porta de destino** | **Observações** |
    | --- | --- | --- | --- | --- | --- |
    | Rule_1 | UDP | * | * | `123` | Serviço de tempo |
    | Rule_2 | Qualquer | * | DC_IP_Address_1, DC_IP_Address_2 | `*` | Se você estiver usando o pacote de segurança Enterprise (ESP), em seguida, adicione uma regra de rede na seção de endereços IP que permite a comunicação com o AAD-DS para clusters do ESP. Você pode encontrar os endereços IP dos controladores de domínio na seção AAD-DS no portal | 
@@ -87,9 +87,9 @@ Crie as regras de rede para configurar corretamente o seu cluster HDInsight.
 
 1. Crie as seguintes regras de **marcas de serviço** seção:
 
-   | **Nome** | **Protocolo** | **Endereço de origem** | **Marcas de Serviço** | **Porta de destino** | **Observações** |
+   | **Name** | **Protocolo** | **Endereço de origem** | **Marcas de Serviço** | **Porta de destino** | **Observações** |
    | --- | --- | --- | --- | --- | --- |
-   | Rule_7 | TCP | * | * | `1433,11000-11999,14000-14999` | Configure uma regra de rede na seção marcas de serviço do SQL que permitirá que você faça logon e auditar o tráfego SQL, a menos que configurado os pontos de extremidade de serviço para o SQL Server na sub-rede HDInsight que irá ignorar o firewall. |
+   | Rule_7 | TCP | * | SQL | `1433` | Configure uma regra de rede na seção marcas de serviço do SQL que permitirá que você faça logon e auditar o tráfego SQL, a menos que configurado os pontos de extremidade de serviço para o SQL Server na sub-rede HDInsight que irá ignorar o firewall. |
 
 1. Clique em **adicionar** para concluir a criação de sua coleção de regras de rede.
 

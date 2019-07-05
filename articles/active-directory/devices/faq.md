@@ -2,26 +2,21 @@
 title: Perguntas frequentes sobre o gerenciamento de dispositivo do Azure Active Directory | Microsoft Docs
 description: Perguntas frequentes sobre o gerenciamento de dispositivos do Azure Active Directory.
 services: active-directory
-documentationcenter: ''
-author: MicrosoftGuyJFlo
-manager: daveba
-ms.assetid: cdc25576-37f2-4afb-a786-f59ba4c284c2
 ms.service: active-directory
 ms.subservice: devices
-ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 03/22/2019
+ms.topic: troubleshooting
+ms.date: 06/28/2019
 ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: daveba
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e29c58c0e9a31b2eb3e3d7e237a3db8173214faf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8802f9e5c84078725675d961ada7f8183c91c0ec
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67110644"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67481760"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Perguntas frequentes sobre o gerenciamento de dispositivos do Azure Active Directory
 
@@ -61,17 +56,15 @@ Se você quiser registrar-se novamente, uma ação manual deverá ser executada 
 
 Para limpar o estado do ingresso do Windows 10 e do Windows Server 2016 que são ingressados no domínio do Active Directory local, execute as seguintes etapas:
 
-1.  Abra o prompt de comando como administrador.
-
-2.  Digite `dsregcmd.exe /debug /leave`.
-
-3.  Saia e entre para disparar a tarefa agendada que registra o dispositivo com o Azure AD novamente. 
+1. Abra o prompt de comando como administrador.
+1. Digite `dsregcmd.exe /debug /leave`.
+1. Saia e entre para disparar a tarefa agendada que registra o dispositivo com o Azure AD novamente. 
 
 Para versões de sistema operacional do Windows de nível inferior que ingressaram no domínio do Active Directory local, execute as seguintes etapas:
 
-1.  Abra o prompt de comando como administrador.
-2.  Digite `"%programFiles%\Microsoft Workplace Join\autoworkplace.exe /l"`.
-3.  Digite `"%programFiles%\Microsoft Workplace Join\autoworkplace.exe /j"`.
+1. Abra o prompt de comando como administrador.
+1. Digite `"%programFiles%\Microsoft Workplace Join\autoworkplace.exe /l"`.
+1. Digite `"%programFiles%\Microsoft Workplace Join\autoworkplace.exe /j"`.
 
 ---
 
@@ -79,19 +72,16 @@ Para versões de sistema operacional do Windows de nível inferior que ingressar
 
 **R:**
 
--   Para o Windows 10 e o Windows Server 2016, tentativas repetidas de desunir e reingressar no mesmo dispositivo podem resultar em entradas duplicadas. 
-
--   Cada usuário do Windows que usar **Adicionar Conta Corporativa ou de Estudante** cria um novo registro do dispositivo com o mesmo nome do dispositivo.
-
--   Para versões do sistema operacional do Windows de nível inferior que são ingressadas no domínio do Azure Directory local, o registro automático cria um novo registro de dispositivo com o mesmo nome do dispositivo para cada usuário de domínio que entra no dispositivo. 
-
--   Uma máquina conectada do Azure AD que foi limpa, reinstalada e reunida com o mesmo nome é exibida como outro registro com o mesmo nome de dispositivo.
+- Para o Windows 10 e o Windows Server 2016, tentativas repetidas de desunir e reingressar no mesmo dispositivo podem resultar em entradas duplicadas. 
+- Cada usuário do Windows que usar **Adicionar Conta Corporativa ou de Estudante** cria um novo registro do dispositivo com o mesmo nome do dispositivo.
+- Para versões do sistema operacional do Windows de nível inferior que são ingressadas no domínio do Azure Directory local, o registro automático cria um novo registro de dispositivo com o mesmo nome do dispositivo para cada usuário de domínio que entra no dispositivo. 
+- Uma máquina conectada do Azure AD que foi limpa, reinstalada e reunida com o mesmo nome é exibida como outro registro com o mesmo nome de dispositivo.
 
 ---
 
 ### <a name="q-does-windows-10-device-registration-in-azure-ad-support-tpms-in-fips-mode"></a>P: O registro de dispositivos Windows 10 no Azure AD dá suporte à TPMs no modo FIPS?
 
-**R:** Não, atualmente, o registro de dispositivos no Windows 10 para todos os estados de dispositivo - junção do Azure AD híbrido, ingresso no Azure AD e registrados no Azure AD - não suporta os TPMs no modo FIPS. Para ingressar ou registre-se ao AD do Azure com êxito, o modo FIPS precisa ser desativado para os TPMs nesses dispositivos
+**R:** Não, atualmente, o registro de dispositivos no Windows 10 para todos os estados de dispositivo ingresso no Azure AD híbrido, ingresso no Azure AD e registrados no Azure AD - não suporta os TPMs no modo FIPS. Para ingressar ou registre-se ao AD do Azure com êxito, o modo FIPS precisa ser desativado para os TPMs nesses dispositivos
 
 ---
 
@@ -110,7 +100,6 @@ Para versões de sistema operacional do Windows de nível inferior que ingressar
 
 **R:** 
 - Para dispositivos ingressados no Azure AD híbrido, certifique-se de desativar o registro automático. A tarefa agendada não registrará o dispositivo novamente. Agora, abra um prompt de comando como administrador e digite `dsregcmd.exe /debug /leave`. Ou execute este comando como um script em vários dispositivos para fazer um cancelamento de associação em massa.
-
 - Para dispositivos Azure AD simplesmente associados, verifique se você tem uma conta de administrador local offline ou crie uma. Você não pode entrar com as credenciais de usuário do Azure AD. Em seguida, acesse **Configurações** > **Contas** > **Acessar corporativo ou de estudante**. Selecione sua conta e, em seguida, **Desconectar**. Siga os prompts e forneça as credenciais de administrador local, quando solicitado. Reinicie o dispositivo para concluir o processo de cancelar a associação.
 
 ---
@@ -125,7 +114,7 @@ Os usuários que não se conectaram anteriormente não podem acessar o dispositi
 
 ---
 
-### <a name="q-can-disabled-or-deleted-users-sign-in-to-azure-ad-joined-devices"></a>P: Os usuários desabilitados ou excluídos podem entrar em dispositivos ingressados no Azure AD?
+### <a name="q-can-a-disabled-or-deleted-user-sign-in-to-an-azure-ad-joined-devices"></a>P: Um usuário desabilitado ou excluído pode entrar em um dispositivos adicionados ao Azure AD
 
 **R:** Sim, mas apenas por um período limitado. Quando um usuário é excluído ou desabilitado no Azure AD, ele não é imediatamente conhecido para o dispositivo do Windows. Portanto, os usuários que se conectaram anteriormente podem acessar a área de trabalho com o nome de usuário e a senha armazenados em cache. 
 
@@ -166,7 +155,6 @@ Os usuários excluídos ou desabilitados que não se conectaram anteriormente n�
 Esse comportamento:
 
 - É aplicável aos dispositivos associados do Azure AD e aos dispositivos registrados do Azure AD, mas não aos dispositivos associados híbridos do Azure AD.
-
 - Não é aplicável a qualquer outro usuário que se conecte a esse dispositivo. Portanto, todos os outros usuários que acessam esse dispositivo serão apresentados a um desafio de autenticação multifator. Só então eles poderão acessar os aplicativos que exigem a autenticação multifator.
 
 ---
@@ -176,11 +164,8 @@ Esse comportamento:
 **R:** As razões comuns para esse cenário são as seguintes:
 
 - Suas credenciais de usuário não são mais válidas.
-
 - O computador não consegue se comunicar com o Azure Active Directory. Verifique se há problemas de conectividade de rede.
-
 - Credenciais federadas requerem que o servidor de federação dê suporte a pontos de extremidade do WS-Trust que estejam habilitados e acessíveis. 
-
 - Você habilitou a autenticação de passagem. Portanto, sua senha temporária precisa ser alterada quando você entrar.
 
 ---
@@ -205,10 +190,9 @@ Esse comportamento:
 
 ### <a name="qwhy-do-i-see-multiple-expired-certificates-issued-by-ms-organization-p2p-access-on-our-windows-10-devices-how-can-i-delete-them"></a>Q:Why vejo vários certificados expirados emitidos pelo MS-organização P2P do acesso em nossos dispositivos Windows 10? Como exclui-los?
 
-**R:** Houve um problema identificado no Windows 10 versão 1709 e inferior em que certificados MS-Organization-P2P-Access expirados continuaram a existir no repositório do computador devido a problemas de criptografia. Os usuários podem enfrentar problemas com conectividade de rede, se você estiver usando qualquer tipo de cliente VPN (por exemplo, o Cisco AnyConnect) que não consegue manipular um grande número de certificados expirados. Esse problema foi corrigido no Windows 10 versão 1803 para excluir automaticamente esses certificados MS-Organization-P2P-Access expirados. Você pode resolver esse problema atualizando seus dispositivos para o Windows 10 versão 1803. Se você não conseguir atualizar, você pode excluir esses certificados sem que seja causado nenhum impacto negativo.  
+**R:** Houve um problema identificado no Windows 10 versão 1709 e inferior em que certificados MS-Organization-P2P-Access expirados continuaram a existir no repositório do computador devido a problemas de criptografia. Os usuários podem enfrentar problemas com conectividade de rede, se você estiver usando qualquer cliente VPN (por exemplo, o Cisco AnyConnect) que não é possível manipular o grande número de certificados expirados. Esse problema foi corrigido no Windows 10 versão 1803 para excluir automaticamente esses certificados MS-Organization-P2P-Access expirados. Você pode resolver esse problema atualizando seus dispositivos para o Windows 10 versão 1803. Se você não conseguir atualizar, você pode excluir esses certificados sem que seja causado nenhum impacto negativo.  
 
 ---
-
 
 ## <a name="hybrid-azure-ad-join-faq"></a>Perguntas frequentes sobre ingresso no Azure AD Híbrido
 
@@ -217,7 +201,6 @@ Esse comportamento:
 **R:** Para encontrar informações sobre soluções de problemas, consulte os seguintes artigos:
 
 - [Solução de problemas do Azure Active Directory híbrido ingressado em dispositivos do Windows 10 e do Windows Server 2016](troubleshoot-hybrid-join-windows-current.md)
-
 - [Solução de problemas do Azure Active Directory híbrido ingressado em dispositivos de nível inferior](troubleshoot-hybrid-join-windows-legacy.md)
  
 ### <a name="q-why-do-i-see-a-duplicate-azure-ad-registered-record-for-my-windows-10-hybrid-azure-ad-joined-device-in-the-azure-ad-devices-list"></a>P: Por que vejo um Azure AD duplicado registro registrado para meu Azure AD híbrido de Windows 10 ingressados no dispositivo na lista de dispositivos do Azure AD?
@@ -226,27 +209,25 @@ Esse comportamento:
 
 O ingresso do Azure AD híbrido tem precedência sobre o estado de registrado pelo Azure AD. Portanto, seu dispositivo é considerado o Azure AD híbrido para qualquer autenticação e a avaliação de acesso condicional. Você pode excluir com segurança o registro do dispositivo registrado pelo Azure AD no portal do Azure AD. Saiba como [evitar ou limpar esse estado duplo no computador com Windows 10](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan#review-things-you-should-know). 
 
-
 ---
 
 ### <a name="q-why-do-my-users-have-issues-on-windows-10-hybrid-azure-ad-joined-devices-after-changing-their-upn"></a>P: Por que meus usuários têm problemas em dispositivos do Windows 10 híbridos adicionados ao Azure AD depois de alterar seu UPN?
 
-**R:** No momento, as alterações de UPN não têm suporte total em dispositivos ingressados no Azure AD híbrido. Embora os usuários possam entrar dispositivo e acessar seus aplicativos locais, a autenticação com o Azure AD falhará após a alteração de um UPN. Como resultado, os usuários têm problemas de SSO e Acesso Condicional em seus dispositivos. Neste momento, você precisa cancelar o ingresso do dispositivo no Azure AD (execute "dsregcmd /leave" com privilégios elevados) e ingressar novamente (ocorre automaticamente) para resolver o problema. Estamos trabalhando para solucionar esse problema. No entanto, os usuários que entram no Windows Hello para Empresas não enfrentam esse problema. 
+**R:** No momento, as alterações de UPN não têm suporte total em dispositivos ingressados no Azure AD híbrido. Embora os usuários possam entrar dispositivo e acessar seus aplicativos locais, a autenticação com o Azure AD falhará após a alteração de um UPN. Como resultado, os usuários têm problemas de SSO e Acesso Condicional em seus dispositivos. Neste momento, você precisa sair do dispositivo do Azure AD (execute "dsregcmd. exe /leave" com privilégios elevados) e o reingresso (ocorre automaticamente) para resolver o problema. Estamos trabalhando para solucionar esse problema. No entanto, os usuários que entram no Windows Hello para Empresas não enfrentam esse problema. 
 
 ---
 
 ### <a name="q-do-windows-10-hybrid-azure-ad-joined-devices-require-line-of-sight-to-the-domain-controller-to-get-access-to-cloud-resources"></a>P: Dispositivos adicionados ao Azure AD do Windows 10 híbridos exigem a linha de visão para o controlador de domínio para obter acesso aos recursos de nuvem?
 
-**R:** Geralmente, não, exceto quando a senha do usuário é alterada. Após a conclusão do ingresso no Azure AD Híbrido do Windows 10, quando o usuário tiver se conectado pelo menos uma vez, o dispositivo não exigirá linha de visão com o controlador de domínio para acessar os recursos de nuvem. O Windows 10 pode ter logon único para aplicativos do Azure AD em qualquer lugar onde haja uma conexão com a Internet, exceto em caso de alteração de senha. Os usuários que entram com o Windows Hello para empresas continuar a obter um único logon para aplicativos do Azure AD mesmo depois que uma alteração de senha, mesmo se eles não têm uma linha de visão para o controlador de domínio. 
+**R:** Não, exceto quando a senha do usuário é alterada. Depois de ingresso no Azure AD Híbrido Windows 10 for concluído e o usuário tem pelo menos uma vez conectado, o dispositivo não exige a linha de visão para o controlador de domínio para acessar recursos de nuvem. Windows 10 pode obter logon único para aplicativos do Azure AD de qualquer lugar com uma conexão de internet, exceto quando uma senha é alterada. Os usuários que entram com o Windows Hello para empresas continuar a obter um único logon para aplicativos do Azure AD, mesmo depois que uma alteração de senha, mesmo se eles não têm uma linha de visão para o controlador de domínio. 
 
 ---
 
 ### <a name="q-what-happens-if-a-user-changes-their-password-and-tries-to-login-to-their-windows-10-hybrid-azure-ad-joined-device-outside-the-corporate-network"></a>P: O que acontece se um usuário altera sua senha e tenta efetuar logon no seu Azure AD híbrido de Windows 10 ingressados no dispositivo fora da rede corporativa?
 
-**R:** Se uma senha for alterada fora da rede corporativa (por exemplo, usando o Azure AD SSPR), o logon do usuário com a nova senha falhará. Para dispositivos de ingressados no Azure AD híbrido, do Active Directory local é a autoridade principal. Quando um dispositivo não tem linha de visão para o controlador de domínio, é não é possível validar a nova senha. Portanto, o usuário precisa estabelecer conexão com o controlador de domínio (seja via VPN ou sendo na rede corporativa) antes que elas possam entrar para o dispositivo com sua nova senha. Caso contrário, eles só podem entrar com a senha antiga devido à funcionalidade de logon armazenado em cache no Windows. No entanto, a senha antiga é invalidada pelo AD do Azure durante solicitações de token e, portanto, impede que o logon único em e falha quaisquer políticas de acesso condicional com base no dispositivo. Esse problema não ocorre se você usar o Windows Hello para empresas. 
+**R:** Se uma senha for alterada fora da rede corporativa (por exemplo, usando o Azure AD SSPR), a entrada do usuário com a nova senha falhará. Para dispositivos de ingressados no Azure AD híbrido, do Active Directory local é a autoridade principal. Quando um dispositivo não tem linha de visão para o controlador de domínio, é não é possível validar a nova senha. Portanto, o usuário precisa estabelecer conexão com o controlador de domínio (seja via VPN ou sendo na rede corporativa) antes que elas possam entrar para o dispositivo com sua nova senha. Caso contrário, eles só podem entrar com sua senha antiga devido a entrada em cache no recurso no Windows. No entanto, a senha antiga é invalidada pelo AD do Azure durante solicitações de token e, portanto, impede que o logon único e falha quaisquer políticas de acesso condicional com base no dispositivo. Esse problema não ocorre se você usar o Windows Hello para empresas. 
 
 ---
-
 
 ## <a name="azure-ad-register-faq"></a>Perguntas frequentes sobre o registro do Azure AD
 
@@ -259,11 +240,15 @@ O ingresso do Azure AD híbrido tem precedência sobre o estado de registrado pe
 **R:** Siga estas etapas:
 
 1.  [Criar uma política de conformidade](https://docs.microsoft.com/intune/compliance-policy-create-mac-os)
-2.  [Definir uma política de acesso condicional para dispositivos macOS](../active-directory-conditional-access-azure-portal.md) 
+1.  [Definir uma política de acesso condicional para dispositivos macOS](../active-directory-conditional-access-azure-portal.md) 
 
 **Comentários:**
 
 - Os usuários incluídos em sua necessidade de política de acesso condicional um [suporte para a versão do Office para macOS](../conditional-access/technical-reference.md#client-apps-condition) para acessar os recursos. 
-
 - Durante a primeira tentativa de acesso, os usuários são solicitados a registrar o dispositivo usando o portal da empresa.
 
+## <a name="next-steps"></a>Próximas etapas
+
+- Saiba mais sobre [dispositivos registrados no AD do Azure](concept-azure-ad-register.md)
+- Saiba mais sobre [dispositivos ingressados no Azure AD](concept-azure-ad-join.md)
+- Saiba mais sobre [dispositivos ingressados no Azure AD híbrido](concept-azure-ad-join-hybrid.md)

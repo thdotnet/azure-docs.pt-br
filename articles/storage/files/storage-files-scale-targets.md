@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 5/5/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 5e2f7b52ca3cb8a4d472b353e844bdad3aa1b0c1
-ms.sourcegitcommit: 6e6813f8e5fa1f6f4661a640a49dc4c864f8a6cb
+ms.openlocfilehash: 91ec65e17b77ccb3864fce45e30729ff420a48b6
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67150470"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67542669"
 ---
 # <a name="azure-files-scalability-and-performance-targets"></a>Metas de desempenho e escalabilidade do Arquivos do Azure
 
@@ -34,15 +34,17 @@ O recurso pai de um compartilhamento de arquivo do Azure é uma conta de armazen
 
 ## <a name="azure-files-scale-targets"></a>Destinos de escala de Arquivos do Azure
 
-### <a name="premium-scale-targets"></a>Destinos de escala do Premium
+Há três categorias de limitações a serem consideradas para arquivos do Azure: contas de armazenamento, compartilhamentos e arquivos.
 
-Há três categorias de limitações a serem consideradas para compartilhamentos de arquivos do premium: contas de armazenamento, compartilhamentos e arquivos.
+Por exemplo:  Com compartilhamentos de arquivos do premium, uma cota única pode alcançar a 100.000 IOPS e um único arquivo pode ser dimensionada até 5.000 IOPS. Portanto, se você tiver três arquivos em um compartilhamento, o IOPS máximo que você pode obter a partir desse compartilhamento é 15.000.
 
-Por exemplo: Um único compartilhamento pode alcançar a 100.000 IOPS e um único arquivo pode ser dimensionada até 5.000 IOPS. Portanto, por exemplo, se você tiver três arquivos em um compartilhamento, o IOPS máximo que você pode obter a partir desse compartilhamento é 15.000.
+### <a name="standard-storage-account-limits"></a>Limites da conta de armazenamento padrão
+
+Consulte a [destinos de escala de conta de armazenamento do Azure](#azure-storage-account-scale-targets) seção para obter esses limites.
 
 ### <a name="premium-filestorage-account-limits"></a>Limites de conta FileStorage Premium
 
-Compartilhamentos de arquivos do Premium são provisionados em uma conta de armazenamento especial chamada **filestorage (visualização)** . Essa conta tem destinos de escala ligeiramente diferente da conta de armazenamento usada para compartilhamentos de arquivos padrão. Para os destinos de escala de conta de armazenamento, consulte a tabela na [destinos de escala de conta de armazenamento do Azure](#azure-storage-account-scale-targets) seção.
+[!INCLUDE [azure-storage-limits-filestorage](../../../includes/azure-storage-limits-filestorage.md)]
 
 > [!IMPORTANT]
 > Limites da conta de armazenamento se aplicam a todos os compartilhamentos. Expandindo para o máximo de contas FileStorage somente é possível se houver apenas um compartilhamento por conta FileStorage.

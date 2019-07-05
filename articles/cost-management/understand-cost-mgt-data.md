@@ -5,29 +5,29 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 05/20/2019
+ms.date: 07/01/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: micflan
 ms.custom: ''
-ms.openlocfilehash: f4c296aeefacc9516303ad75dd8b7d67325e38ee
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4c1c987befe928d316b11c6ecd379be76f8f80d4
+ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65969062"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67490142"
 ---
 # <a name="understand-cost-management-data"></a>Entender os dados de Gerenciamento de Custos
 
-Este artigo ajuda você a entender melhor os dados incluídos no Gerenciamento de Custos do Azure. Além disso, ele explica a frequência com que esses dados são processados, coletados, mostrados e fechados. Você é cobrado mensalmente pelo uso do Azure. No entanto, o tipo de sua assinatura do Azure determina quando o mês de cobrança termina. A frequência com que o Gerenciamento de Custos recebe dados de uso varia com base em diferentes fatores. Esses fatores incluem o tempo necessário para processar os dados e a frequência com que os serviços do Azure transmitem o uso para o sistema de cobrança.
+Este artigo ajuda você a entender melhor os dados de uso e custo do Azure que estão incluídos no gerenciamento de custos do Azure. Ele explica a frequência com que os dados são processados, coletados, mostrado e fechado. Você é cobrado mensalmente pelo uso do Azure. Embora os ciclos de cobrança são períodos mensais, ciclo de início e datas de término variam por tipo de assinatura. A frequência com que o Gerenciamento de Custos recebe dados de uso varia com base em diferentes fatores. Esses fatores incluem o tempo necessário para processar os dados e a frequência com que os serviços do Azure transmitem o uso para o sistema de cobrança.
 
-Gerenciamento de custos inclui o uso e compras, incluindo as reservas e ofertas de terceiros para contas de Enterprise Agreement (EA). Contas de contrato de cliente da Microsoft (MCA) e as assinaturas pré-pagas incluem apenas o uso de serviços do Azure Marketplace. Suporte e outros custos não são incluídos. Os custos são calculados até que uma fatura é gerada e não fatorar créditos.
+Gerenciamento de custos inclui o uso e compras, incluindo as reservas e ofertas de terceiros para contas de Enterprise Agreement (EA). Contas de contrato de cliente da Microsoft (MCA) e assinaturas individuais com tarifas pré-pagas incluem apenas o uso de serviços do Azure Marketplace. Suporte e outros custos não são incluídos. Os custos são calculados até que uma fatura é gerada e não fatorar créditos.
 
-## <a name="supported-microsoft-offers"></a>Ofertas da Microsoft com suporte
+## <a name="supported-microsoft-azure-offers"></a>Ofertas do Microsoft Azure com suporte
 
-As informações a seguir mostram as atuais [ofertas do Microsoft Azure](https://azure.microsoft.com/support/legal/offer-details/) com suporte no Gerenciamento de Custos do Azure.  Uma oferta do Azure é o tipo de assinatura do Azure que você tem.
+As informações a seguir mostram o com suporte no momento [o Microsoft Azure oferece](https://azure.microsoft.com/support/legal/offer-details/) pelo gerenciamento de custos do Azure. Seu contrato assinado para uma oferta do Azure determina o tipo de assinatura do Azure que você tem.
 
-| Categoria  | **Nome da oferta** | **ID da cota** | **Número da oferta** |
+| Category  | **Nome da oferta** | **ID da cota** | **Número da oferta** |
 | --- | --- | --- | --- |
 | **Azure Alemanha** | [Pagamento Conforme o Uso do Azure Alemanha](https://azure.microsoft.com/offers/ms-azr-de-0003p)      | PayAsYouGo_2014-09-01 | MS-AZR-DE-0003P |
 | **Azure Governamental** | Azure Governamental Enterprise                                                         | EnterpriseAgreement_2014-09-01 | MS-AZR-USGOV-0017P |
@@ -49,9 +49,9 @@ As informações a seguir mostram as atuais [ofertas do Microsoft Azure](https:/
 | **Visual Studio** | [Visual Studio Enterprise](https://azure.microsoft.com/offers/ms-azr-0063p)            | MSDN_2014-09-01 | MS-AZR-0063P |
 | **Visual Studio** | [Visual Studio Enterprise: BizSpark](https://azure.microsoft.com/offers/ms-azr-0064p)  | MSDN_2014-09-01 | MS-AZR-0064P |
 
-A tabela a seguir mostra ofertas sem suporte.
+A tabela a seguir mostra as ofertas do Azure que não têm suporte pelo gerenciamento de custos.
 
-| Categoria  | **Nome da oferta** | **ID da cota** | **Número da oferta** |
+| Category  | **Nome da oferta** | **ID da cota** | **Número da oferta** |
 | --- | --- | --- | --- |
 | **CSP (Provedor de Soluções na Nuvem)** | Microsoft Azure                                    | CSP_2015-05-01 | MS-AZR-0145P |
 | **CSP (Provedor de Soluções na Nuvem)** | CSP do Azure Governamental                               | CSP_2015-05-01 | MS-AZR-USGOV-0145P |
@@ -66,7 +66,7 @@ A tabela a seguir mostra ofertas sem suporte.
 | **Planos de suporte** | Suporte Pro-Direct do Azure Governamental | Default_2014-09-01 | MS-AZR-USGOV-0042P |
 | **Planos de suporte** | Suporte Developer do Azure Governamental  | Default_2014-09-01 | MS-AZR-USGOV-0043P |
 
-Para clientes com categorias de oferta paga conforme o uso, do MSDN e do Visual Studio, os dados estão disponíveis no Gerenciamento de Custos a partir de 02/10/2018. Para acessar os dados para sua assinatura antes de 02/10/2018, você pode usar o [Centro de contas do Azure](https://account.azure.com/subscriptions) baixar o uso de detalhes em um arquivo CSV ou você pode usar o [API detalhes de uso](/rest/api/consumption/usagedetails).
+Para clientes com o pré-pago, MSDN e o Visual Studio oferecem categorias, dados estão disponíveis no gerenciamento de custos a partir de 10/02/2018. Para acessar os dados para sua assinatura antes de 02/10/2018, você pode usar o [Centro de contas do Azure](https://account.azure.com/subscriptions) baixar o uso de detalhes em um arquivo CSV ou você pode usar o [API detalhes de uso](/rest/api/consumption/usagedetails).
 
 ## <a name="determine-your-offer-type"></a>Determinar o tipo de oferta
 Se não vir os dados de uma assinatura e quiser determinar se sua assinatura se enquadra nas ofertas com suporte, você poderá validar se sua assinatura tem suporte. Para validar se uma assinatura do Azure tem suporte, entre no [portal do Azure](https://portal.azure.com). Em seguida, selecione **Todos os serviços** no menu do painel esquerdo. Na lista de serviços, selecione **Assinaturas**. No menu de lista de assinaturas, clique na assinatura que deseja verificar. Sua assinatura é mostrada na guia Visão Geral e você pode ver a **Oferta** e a **ID da Oferta**. A imagem a seguir mostra um exemplo.
@@ -116,7 +116,7 @@ Assinaturas pagas conforme o uso – Se o mês de cobrança terminar no dia 15 d
 
 ### <a name="rerated-data"></a>Dados recalculados
 
-Se você usar o [APIs de gerenciamento de custo](https://aka.ms/costmgmt/docs), Power BI ou o portal do Azure para recuperar dados, esperar que os encargos do período de cobrança atual classifique novamente e, consequentemente, alterar, até que a nota fiscal seja fechada.
+Se você usar o [APIs de gerenciamento de custo](index.yml), Power BI ou o portal do Azure para recuperar dados, esperar que os encargos do período de cobrança atual classifique novamente e, consequentemente, alterar, até que a nota fiscal seja fechada.
 
 ## <a name="usage-data-update-frequency-varies"></a>A frequência de atualização dos dados de uso varia
 
@@ -129,7 +129,7 @@ Alguns serviços transmitem o uso com mais frequência do que outros. Portanto, 
 
 ## <a name="historical-data-might-not-match-invoice"></a>Os dados históricos podem não corresponder da fatura
 
-Os dados históricos para ofertas de crédito baseado e pagamento antecipado podem não corresponder a sua fatura. Algumas ofertas pago pelo uso do Azure, do MSDN e do Visual Studio podem ter os créditos do Azure e avançados pagamentos aplicados à fatura. No entanto, os dados históricos mostrados no gerenciamento de custos se baseia apenas os encargos de consumo estimado. Dados históricos de gerenciamento de custos não incluem os pagamentos e créditos. Como resultado, os dados históricos mostrados para as ofertas a seguir podem não corresponder exatamente a sua fatura.
+Os dados históricos para ofertas de crédito baseado e pagamento antecipado podem não corresponder a sua fatura. Alguns pago pelo uso do Azure, do MSDN e do Visual Studio oferece pode ter créditos do Azure e avançada de pagamentos aplicados à fatura. No entanto, os dados históricos mostrados no gerenciamento de custos se baseia apenas os encargos de consumo estimado. Dados históricos de gerenciamento de custos não incluem os pagamentos e créditos. Como resultado, os dados históricos mostrados para as ofertas a seguir podem não corresponder exatamente a sua fatura.
 
 -   MS-AZR-0029P
 -   MS-AZR-0064P

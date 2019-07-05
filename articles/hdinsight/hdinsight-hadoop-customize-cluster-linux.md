@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/02/2019
-ms.openlocfilehash: 03fcbb0216d85e337b4161aa24ceeb7d3a2bdebe
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 41a57d1ad5d216797fc60ea13acff346734fdef8
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66479469"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67433638"
 ---
 # <a name="customize-azure-hdinsight-clusters-by-using-script-actions"></a>Personalizar os clusters de HDInsight do Azure por meio de ações de script
 
@@ -51,6 +51,9 @@ Uma ação de script é Bash script executado em nós em um cluster HDInsight. E
       * Gen1 ADLS: A entidade de serviço que HDInsight usa para acessar o Data Lake Storage deve ter acesso de leitura para o script. O formato de URI dos scripts armazenados no Data Lake Storage Gen1 é `adl://DATALAKESTOREACCOUNTNAME.azuredatalakestore.net/path_to_file`.
       
       * Um blob em uma conta do Armazenamento do Azure que seja a conta de armazenamento principal ou adicional para o cluster do HDInsight. O HDInsight recebe acesso a ambos esses tipos de contas de armazenamento durante a criação do cluster.
+
+        > [!IMPORTANT]  
+        > Não gire a chave de armazenamento nessa conta de armazenamento do Azure, como fará com que as ações de script subsequentes com scripts armazenados ali para falhar.
 
       * Um compartilhamento de arquivos serviço público acessível por meio de caminhos de http://. Os exemplos são BLOBs do Azure, GitHub, OneDrive.
 
@@ -147,7 +150,6 @@ O HDInsight fornece scripts para instalar os seguintes componentes nos clusters 
 | --- | --- |
 | Adicionar uma conta de Armazenamento do Azure |`https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh`. Confira [Adicionar outras contas de armazenamento ao HDInsight](hdinsight-hadoop-add-storage.md). |
 | Instalar o Hue |`https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv02/install-hue-uber-v02.sh`. Confira [Instalar e usar o Hue em clusters Hadoop do HDInsight](hdinsight-hadoop-hue-linux.md). |
-| Instalar o Presto |`https://raw.githubusercontent.com/hdinsight/presto-hdinsight/master/installpresto.sh`. Confira [Instalar e usar o Presto em clusters do HDInsight baseados em Hadoop](hdinsight-hadoop-install-presto.md). |
 | Instalar o Giraph |`https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh`. Confira [Instalar o Apache Giraph em clusters Hadoop do HDInsight](hdinsight-hadoop-giraph-install-linux.md). |
 | Pré-carregar bibliotecas Hive |`https://hdiconfigactions.blob.core.windows.net/linuxsetupcustomhivelibsv01/setup-customhivelibs-v01.sh`. Confira [Adicionar bibliotecas Apache Hive personalizadas ao criar seu cluster do HDInsight](hdinsight-hadoop-add-hive-libraries.md). |
 
