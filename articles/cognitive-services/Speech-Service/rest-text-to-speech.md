@@ -8,15 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 03/26/2019
+ms.date: 07/05/2019
 ms.author: erhopf
-ms.custom: seodec18
-ms.openlocfilehash: 08bf1363f3c6c9b68243cc10ffb2785f53e02107
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 684ddcd49d3cd3c3d4f0a8d6f4675e1e27bdb7b9
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67342187"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67604880"
 ---
 # <a name="text-to-speech-rest-api"></a>API REST conversão de texto em fala
 
@@ -49,7 +48,7 @@ O `voices/list` ponto de extremidade permite que você obtenha uma lista complet
 | Canadá Central | `https://canadacentral.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Centro dos EUA | `https://centralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Ásia Oriental | `https://eastasia.tts.speech.microsoft.com/cognitiveservices/voices/list` |
-| Leste dos EUA | `https://eastus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
+| East US | `https://eastus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Leste dos EUA 2 | `https://eastus2.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | França Central | `https://francecentral.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Centro da Índia | `https://centralindia.tts.speech.microsoft.com/cognitiveservices/voices/list` |
@@ -225,7 +224,7 @@ O código de status HTTP para cada resposta indica sucesso ou erros comuns.
 | 400 | Solicitação incorreta | Um parâmetro obrigatório está ausente, vazio ou nulo. Ou então, o valor passado como um parâmetro obrigatório ou opcional é inválido. Um problema comum é um cabeçalho que é muito longo. |
 | 401 | Não Autorizado | A solicitação não foi autorizada. Verifique se a chave de assinatura ou o token são válidos e se estão na região correta. |
 | 413 | Entidade de solicitação muito grande | A entrada de SSML tem mais de 1024 caracteres. |
-| 415 | Tipo de mídia sem suporte | É possível que o errado `Content-Type` foi fornecido. `Content-Type` deve ser definido como `application/ssml+xml`. | 
+| 415 | Tipo de mídia sem suporte | É possível que o errado `Content-Type` foi fornecido. `Content-Type` deve ser definido como `application/ssml+xml`. |
 | 429 | Número Excessivo de Solicitações | Você excedeu a cota ou a taxa de solicitações permitidas para a sua assinatura. |
 | 502 | Gateway incorreto | Problema de rede ou do servidor. Também pode indicar cabeçalhos inválidos. |
 

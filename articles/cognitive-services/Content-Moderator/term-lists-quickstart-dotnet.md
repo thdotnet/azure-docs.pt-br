@@ -7,17 +7,17 @@ author: sanjeev3
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
-ms.topic: quickstart
-ms.date: 10/10/2018
+ms.topic: conceptual
+ms.date: 07/03/2019
 ms.author: sajagtap
-ms.openlocfilehash: da8ad71ccf8b58ddf3ef7cc6a2f9e9c732913caa
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.openlocfilehash: 0ab11d8ef9fd481d2b3ea7029664a1ec2778cf4b
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55858392"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67604094"
 ---
-# <a name="quickstart-check-text-against-a-custom-term-list-in-c"></a>Início Rápido: Verificar o texto em relação a uma lista de termos personalizados em C#
+# <a name="check-text-against-a-custom-term-list-in-c"></a>Verificar o texto em relação a uma lista de termos personalizados em C#
 
 A lista de termos global padrão do Content Moderator do Azure é suficiente para a maioria das necessidades de moderação de conteúdo. No entanto, você precisará de examinar os termos que são específicos para sua organização. Por exemplo, você talvez queira marcar nomes de concorrentes para análise adicional. 
 
@@ -373,7 +373,7 @@ static void DeleteTermList (ContentModeratorClient client, string list_id)
 }
 ```
 
-## <a name="putting-it-all-together"></a>Juntando as peças
+## <a name="compose-the-main-method"></a>Compor o método Main
 
 Adicione a definição de método **Principal** para o namespace **TermLists** da classe **Programa**. Por fim, feche a classe **Programa** e o namespace **TermLists**.
 
@@ -415,9 +415,9 @@ static void Main(string[] args)
 
 ## <a name="run-the-application-to-see-the-output"></a>Execute o aplicativo de console para ver a saída
 
-A saída será conforme a seguir, mas os dados podem variar.
+A saída do console será a seguinte aparência:
 
-```
+```console
 Creating term list.
 Term list created. ID: 252.
 Updating information for term list with ID 252.

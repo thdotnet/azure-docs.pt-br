@@ -8,15 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 05/02/2019
+ms.date: 07/05/2019
 ms.author: travisw
-ms.custom: ''
-ms.openlocfilehash: 1c5712fa8bbdb158992127f8f48d810a0a9b6f79
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4055b474938e38f653021b46f18200f8e39dd69d
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65603484"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67604752"
 ---
 # <a name="about-custom-voice-first-virtual-assistants-preview"></a>Sobre a visualização de assistentes de virtual primeiro de voz personalizada
 
@@ -30,7 +29,7 @@ Fala de linha direta e sua funcionalidade associada para assistentes de virtuais
 
 ## <a name="core-features"></a>Principais recursos
 
-| Categoria | Recursos |
+| Category | Recursos |
 |----------|----------|
 |[Palavra de ativação personalizado](speech-devices-sdk-create-kws.md) | Você pode permitir que os usuários iniciar conversas com os bots usando uma palavra-chave personalizada, como "Ei Contoso". Essa tarefa é realizada com um mecanismo de word ativação personalizado no SDK do fala, que pode ser configurado com uma palavra personalizada wake [que você pode gerar aqui](speech-devices-sdk-create-kws.md). O canal de fala de linha direta inclui a verificação de palavra no lado do serviço de ativação que aumenta a precisão da ativação de word wake versus o dispositivo sozinho.
 |[Conversão de fala em texto](speech-to-text.md) | O canal de fala de linha direta inclui transcrição em tempo real de áudio em texto reconhecido usando [fala em texto](speech-to-text.md) fala dos serviços do Azure. Esse texto está disponível para seu bot e seu aplicativo cliente conforme ele é transcrita.

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 07/26/2018
+ms.date: 07/05/2019
 ms.author: wolfma
-ms.openlocfilehash: 4099bc7bfce6de620504e03be3afc5392281d8d8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9e975bbdcec2b45d67f910ac1a83a71ed252ebda
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67072369"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67606271"
 ---
 # <a name="support-and-help-options"></a>Opções de Ajuda e suporte
 
@@ -71,7 +71,7 @@ Se não conseguir encontrar uma resposta para seu problema por meio da pesquisa,
 |Tradução de Fala |[[microsoft-cognitivas + conversão]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+translation)|
 |Intenção de fala |[[microsoft-cognitivas + luis]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+luis)|
 |SDK de fala geral |[[microsoft-cognitivas + microsoft-fala-api]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+microsoft-speech-api)|
-| Assistentes de voz-first Virtual (versão prévia) | [[microsoft-cognitive+virtual-assistant+botframework]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+virtual-assistant+botframework) | 
+| Assistentes de voz-first Virtual (versão prévia) | [[microsoft-cognitive+virtual-assistant+botframework]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+virtual-assistant+botframework) |
 
 > [!TIP]
 > As seguintes postagens do Stack Overflow contêm dicas sobre as perguntas de formulário e adicione o código-fonte. As diretrizes a seguir podem ajudar a aumentar as chances de os membros da comunidade avaliarem e responderem à sua pergunta rapidamente:  
