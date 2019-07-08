@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 7bc1f2adf3d8c38845218681a55e3942aa809db5
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 49195efa54c8e6eca9186a9e2fc33da84ff34413
+ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603199"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67625382"
 ---
 # <a name="train-a-model-for-custom-speech"></a>Treinar um modelo de fala personalizado
 
@@ -25,12 +25,11 @@ Um conversão de fala em texto de treinamento é necessário para melhorar a pre
 
 Se você estiver encontrando problemas de reconhecimento com seu modelo, usando rotulada como humanos transcrições e dados relacionados para treinamento adicional podem ajudar a melhorar a precisão. Use esta tabela para determinar qual conjunto de dados a serem seguidas para resolver seus problemas:
 
-| Caso de uso | Tipo de dados | Quantidade de dados |
-|----------|-----------|---------------|
-| Nomes próprios são não reconhecida corretamente | Texto relacionado (sentenças/declarações) | 10 MB a 500 MB |
-| Palavras são não reconhecida corretamente devido a um acento | Texto relacionado (pronúncia) | Forneça as palavras misrecognized |
-| Palavras comuns são excluídas ou não reconhecida corretamente | Transcrições de áudio + rotulada como humanos | horas de 10 a 1.000 transcrição |
-
+| Caso de uso | Tipo de dados |
+|----------|-----------|
+| Melhorar a precisão do reconhecimento no vocabulário específico do setor e a gramática, como a terminologia médica ou jargão IT | Texto relacionado (sentenças/declarações) |
+| Defina a forma de uma palavra ou um termo que tenha a pronúncia não padrão, como nomes de produto ou acrônimos fonética e exibida. | Texto relacionado (pronúncia) |
+| Melhorar a precisão do reconhecimento em estilos, acentos ou ruídos de fundo específica de fala | Transcrições de áudio + rotulada como humanos |
 > [!IMPORTANT]
 > Se você ainda não carregou um conjunto de dados, consulte [preparar e testar seus dados](how-to-custom-speech-test-data.md). Este documento fornece instruções para carregar dados e diretrizes para criação de conjuntos de dados de alta qualidade.
 
