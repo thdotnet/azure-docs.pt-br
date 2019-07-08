@@ -62,6 +62,8 @@
           href: backup-azure-files-faq.md
         - name: Perguntas frequentes – fazer backup de bancos de dados do SQL Server em VMs do Azure
           href: faq-backup-sql-server.md
+        - name: Perguntas frequentes – Servidor de Backup do Azure e DPM
+          href: backup-azure-dpm-azure-server-faq.md
     - name: Arquitetura de backup
       href: backup-architecture.md
     - name: Controle de Acesso Baseado em Função

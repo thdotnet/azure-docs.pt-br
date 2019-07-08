@@ -1,5 +1,5 @@
 ---
-title: Como detectar descompasso de dados (visualização) nas implantações do AKS
+title: Detectar descompasso de dados (visualização) nas implantações do AKS
 titleSuffix: Azure Machine Learning service
 description: Saiba como detectar descompasso de dados no serviço Kubernetes do Azure implantado modelos no serviço Azure Machine Learning.
 services: machine-learning
@@ -10,21 +10,24 @@ ms.reviewer: jmartens
 ms.author: copeters
 author: cody-dkdc
 ms.date: 06/20/2019
-ms.openlocfilehash: e4deeab28fb643ff32624ba9dd16574e621f508c
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: c446c8236ca64948f0bb6a8354a83579cc6ff24c
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67332880"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67443951"
 ---
-# <a name="how-to-detect-data-drift-preview-on-models-deployed-to-azure-kubernetes-service"></a>Como detectar descompasso de dados (versão prévia) em modelos implantados no serviço de Kubernetes do Azure
-Neste artigo, você aprenderá a monitorar [descompasso dados](concept-data-drift.md) entre os dados de conjunto de dados e Inferência de tipos de treinamento de um modelo implantado. 
+# <a name="detect-data-drift-preview-on-models-deployed-to-azure-kubernetes-service"></a>Detectar descompasso de dados (versão prévia) em modelos implantados no serviço de Kubernetes do Azure
+Neste artigo, você aprenderá como monitorar o descompasso de dados entre o conjunto de dados de treinamento e Inferência de dados de um modelo implantado. 
 
-Descompasso de dados é uma das principais razões a onde a precisão do modelo degrada ao longo do tempo. Isso acontece quando os dados fornecidos a um modelo na produção são diferentes de dados usados para treinar o modelo. O serviço de Azure Machine Learning pode monitorar descompasso de dados usando o Detector de descompasso de dados. Se o descompasso for detectado, o serviço pode enviar um alerta para você.  
+## <a name="what-is-data-drift"></a>O que é o descompasso de dados?
+
+Descompasso de dados, também conhecido como descompasso de conceito, é uma das principais razões a onde a precisão do modelo degrada ao longo do tempo. Isso acontece quando os dados fornecidos a um modelo na produção são diferentes de dados usados para treinar o modelo. O serviço de Azure Machine Learning pode monitorar descompasso de dados e, quando um descompasso é detectado, o serviço pode enviar um alerta por email para você.  
 
 > [!Note]
 > Esse serviço está em (visualização) e limitadas em Opções de configuração. Consulte nosso [documentação da API](https://docs.microsoft.com/python/api/azureml-contrib-datadrift/?view=azure-ml-py) e [notas de versão](azure-machine-learning-release-notes.md) para obter detalhes e atualizações. 
 
+## <a name="what-can-i-monitor"></a>O que pode monitorar?
 Com o serviço de Azure Machine Learning, você pode monitorar as entradas para um modelo implantado no AKS e comparar esses dados para o conjunto de dados de treinamento para o modelo. Em intervalos regulares, os dados de inferência de tipos são [de instantâneo e criação de perfil](how-to-explore-prepare-data.md), em seguida, calculado em relação ao conjunto de dados de linha de base para produzir uma análise de descompasso de dados que: 
 
 + Mede a magnitude do descompasso de dados, chamado de coeficiente de descompasso.
@@ -60,7 +63,7 @@ Para obter detalhes sobre como essas métricas são computadas, consulte o [conc
     print(model_name, image_name, service_name, model)
     ```
 
-- Configurar o [coletor de dados de modelo](how-to-enable-data-collection.md) coletar dados da implantação do modelo de AKS e confirme se os dados é coletados no `modeldata` contêiner de blob.
+- [Habilitar a coleta de dados de modelo](how-to-enable-data-collection.md) coletar dados da implantação do modelo de AKS e confirme se os dados é coletados no `modeldata` contêiner de blob.
 
 ## <a name="import-dependencies"></a>Importar dependências 
 Importe as dependências usadas neste guia:
@@ -85,11 +88,11 @@ datadrift = DataDriftDetector.create(ws, model.name, model.version, services, fr
 print('Details of Datadrift Object:\n{}'.format(datadrift))
 ```
 
-Para obter mais informações, consulte o [DataDrift](https://docs.microsoft.com/python/api/azureml-contrib-datadrift/?view=azure-ml-py) referência.
+Para obter mais informações, consulte o `[DataDrift](https://docs.microsoft.com/python/api/azureml-contrib-datadrift/?view=azure-ml-py)` documentação de referência da classe.
 
 ## <a name="submit-a-datadriftdetector-run"></a>Enviar uma execução DataDriftDetector
 
-Com o DataDriftDetector configurado, você pode enviar uma [dessincronização de dados executar](https://docs.microsoft.com/python/api/azureml-contrib-datadrift/azureml.contrib.datadrift.datadriftdetector%28class%29?view=azure-ml-py#run-target-date--services--compute-target-name-none--create-compute-target-false--feature-list-none--drift-threshold-none-) em uma determinada data para o modelo. 
+Com o `DataDriftDetector` objeto configurado, você pode enviar uma [dessincronização de dados executar](https://docs.microsoft.com/python/api/azureml-contrib-datadrift/azureml.contrib.datadrift.datadriftdetector%28class%29?view=azure-ml-py#run-target-date--services--compute-target-name-none--create-compute-target-false--feature-list-none--drift-threshold-none-) em uma determinada data para o modelo. 
 
 ```python
 # adhoc run today
@@ -107,7 +110,7 @@ dd_run = Run(experiment=exp, run_id=run)
 RunDetails(dd_run).show()
 ```
 
-## <a name="get-data-drift-analysis-results"></a>Obter os resultados da análise de dados descompasso
+## <a name="visualize-drift-metrics"></a>Visualizar métricas de descompasso
 
 O exemplo de Python a seguir demonstra como plotar dados relevantes descompasso métricas. Você pode usar as métricas retornadas para criar visualizações personalizadas:
 
@@ -120,13 +123,13 @@ drift_metrics = datadrift.get_output(start_time=start, end_time=end)
 drift_figures = datadrift.show(with_details=True)
 ```
 
-![Mostrar de descompasso de dados](media/how-to-monitor-data-drift/drift_show.png)
+![Consulte descompasso de dados detectado pelo Azure Machine Learning](media/how-to-monitor-data-drift/drift_show.png)
 
 Para obter detalhes sobre as métricas que são computadas, consulte o [conceito de descompasso dados](concept-data-drift.md) artigo.
 
-## <a name="schedule-data-drift-detection"></a>Detecção de descompasso de dados de agendamento 
+## <a name="schedule-data-drift-scans"></a>Verificações de descompasso de dados de agendamento 
 
-Habilitar uma agenda de descompasso de dados executa um DataDriftDetector executado na frequência especificada. Se o coeficiente de descompasso está acima do limite especificado, um email é enviado. 
+Quando você habilita a detecção de descompasso de dados, um DataDriftDetector é executado na frequência especificada, agendada. Se o coeficiente de descompasso está acima do limite especificado, um email é enviado. 
 
 ```python
 datadrift.enable_schedule()
@@ -143,9 +146,9 @@ Para exibir os resultados na IU do espaço de trabalho de AM do Azure, navegue a
 
 ![Descompasso de dados do portal do Azure](media/how-to-monitor-data-drift/drift_ui.png)
 
-## <a name="setting-up-alerts"></a>Configurar Alertas 
+## <a name="receiving-drift-alerts"></a>Receber alertas de descompasso
 
-Definindo o coeficiente de descompasso limite de alertas e fornecendo um endereço de email, uma [do Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) alerta por email será enviada se o coeficiente de descompasso está acima do limite. Todas as métricas de descompasso de dados são armazenadas no recurso de insights do aplicativo associado com o espaço de trabalho do serviço de Azure Machine Learning para que você possa configurar alertas personalizados ou ações. Você pode seguir o link do alerta de email para a consulta de informações do aplicativo.
+Definindo o coeficiente de descompasso limite de alertas e fornecendo um endereço de email, uma [do Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) alerta por email é enviada automaticamente sempre que o coeficiente de descompasso está acima do limite. Para configurar alertas personalizados e ações que, todas as métricas de descompasso de dados são armazenadas no recurso do Application Insights foi criado, juntamente com o espaço de trabalho do serviço de Azure Machine Learning. Você pode seguir o link do alerta de email para a consulta do Application Insights.
 
 ![Alerta de Email de descompasso de dados](media/how-to-monitor-data-drift/drift_email.png)
 

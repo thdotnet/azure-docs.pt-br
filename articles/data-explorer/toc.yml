@@ -101,9 +101,9 @@
         - name: Verificar integridade do cluster
           href: check-cluster-health.md
         - name: Gerenciar escala horizontal do cluster
-          href: manage-cluster-scale-out.md
+          href: manage-cluster-horizontal-scaling.md
         - name: Gerenciar escala vertical do cluster
-          href: manage-cluster-scale-up.md
+          href: manage-cluster-vertical-scaling.md
         - name: Excluir dados
           href: delete-data.md
         - name: Lidar com dados duplicados
