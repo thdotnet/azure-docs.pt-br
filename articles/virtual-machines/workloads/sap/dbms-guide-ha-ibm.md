@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 04/10/2019
 ms.author: juergent
-ms.openlocfilehash: a74dd1a932cac41081786f76938a5b35de62d878
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7464ea481d4c95856b78a83a875f2cd24c00705b
+ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64689707"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67503327"
 ---
 [1928533]: https://launchpad.support.sap.com/#/notes/1928533
 [2015553]: https://launchpad.support.sap.com/#/notes/2015553
@@ -77,17 +77,17 @@ Antes de iniciar uma instalação, consulte a documentação e o seguintes notas
 | Documentação | 
 | --- |
 | [Wiki da comunidade SAP](https://wiki.scn.sap.com/wiki/display/HOME/SAPonLinuxNotes): Tem todas as notas SAP para Linux |
-| [Máquinas virtuais de planejamento e implementação para SAP no Linux do Azure] [ planning-guide] guia |
-| [Implantação de máquinas virtuais do Azure para SAP no Linux] [ deployment-guide] (Este artigo) |
-| [Implantação de system(DBMS) de gerenciamento para o SAP no Linux de banco de dados de máquinas virtuais do Azure] [ dbms-guide] guia |
+| [Máquinas virtuais de planejamento e implementação para SAP no Linux do Azure][planning-guide] guia |
+| [Implantação de máquinas virtuais do Azure para SAP no Linux][deployment-guide] (Este artigo) |
+| [Implantação de system(DBMS) de gerenciamento para o SAP no Linux de banco de dados de máquinas virtuais do Azure][dbms-guide] guia |
 | [Carga de trabalho do SAP na lista de verificação de planejamento e implantação do Azure][azr-sap-plancheck] |
-| [Guias de melhores práticas do SUSE Linux Enterprise Server for SAP Applications 12 SP3][sles-for-sap-bp] |
+| [Guias de SUSE Linux Enterprise Server para aplicativos SAP 12 SP3 melhores práticas][sles-for-sap-bp] |
 | [SUSE Linux Enterprise alta disponibilidade extensão 12 SP3][sles-ha-guide] |
 | [Implantação de DBMS de máquinas virtuais do IBM Db2 do Azure para carga de trabalho do SAP][dbms-db2] |
 | [IBM Db2 HADR 11.1][db2-hadr-11.1] |
 | [IBM Db2 HADR R 10.5][db2-hadr-10.5] |
 
-## <a name="overview"></a>Visão geral
+## <a name="overview"></a>Visão Geral
 Para obter alta disponibilidade, IBM Db2 LUW com HADR é instalado em pelo menos duas máquinas virtuais do Azure, que são implantadas em um [conjunto de disponibilidade do Azure](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-availability-sets) ou de vários [zonas de disponibilidade do Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-ha-availability-zones). 
 
 Os gráficos a seguir exibem uma instalação do servidor de banco de dados de duas VMs do Azure. Tanto o servidor de banco de dados as VMs do Azure têm seu próprio armazenamento anexado e estão em execução. No HADR, uma instância do banco de dados em uma das VMs do Azure tem a função da instância primária. Todos os clientes estão conectados a esta instância primária. Todas as alterações em transações de banco de dados mantidas localmente no log de transações do Db2. Conforme os registros de log de transação são mantidos localmente, os registros são transferidos por meio de TCP/IP para a instância de banco de dados no segundo servidor de banco de dados, o servidor em espera ou instância em espera. A instância em espera atualiza o banco de dados local, roll forward da transação transferida registros de log. Dessa forma, o servidor em espera é mantido em sincronizado com o servidor primário.
@@ -496,13 +496,12 @@ Se você tiver executado a instalação antes de você criar a configuração de
 
 Use a ferramenta de configuração do J2EE para verificar ou atualizar a URL do JDBC. Como a ferramenta de configuração do J2EE é uma ferramenta gráfica, você precisa ter o X server instalado:
  
-1. Entrar para o servidor de aplicativos principal da instância do J2EE e execute:
-     <pre><code>sudo /usr/sap/*SID*/*Instance*/j2ee/configtool/configtool.sh</code></pre>
+1. Entrar para o servidor de aplicativos principal da instância do J2EE e execute:   `sudo /usr/sap/*SID*/*Instance*/j2ee/configtool/configtool.sh`
 1. No quadro esquerdo, escolha **repositório de segurança**.
-1. No quadro à direita, escolha o chave/pool de jdbc / \<SAPSID>/url.
+1. No quadro à direita, escolha o chave/pool dejdbc/\<SAPSID > / url.
 1. Altere o nome do host na URL do JDBC para o nome de host virtual.
-     <pre><code>jdbc:db2://db-virt-hostname:5912/TSP:deferPrepares=0</code></pre>
-1. Selecione **adicionar**.
+     `jdbc:db2://db-virt-hostname:5912/TSP:deferPrepares=0`
+1. Selecione **Adicionar**.
 1. Para salvar suas alterações, selecione o ícone de disco no canto superior esquerdo.
 1. Feche a ferramenta de configuração.
 1. Reinicie a instância de Java.
@@ -516,7 +515,7 @@ Recomendamos configurar um compartilhamento de NFS comuns em que os logs são gr
 
 Você pode usar o existentes compartilhamentos NFS altamente disponíveis para os transportes ou um diretório de perfil. Para obter mais informações, consulte:
 
-- [Alta disponibilidade do NFS em VMs do Azure no SUSE Linux Enterprise Server][nfs-ha] 
+- [Alta disponibilidade para NFS em VMs do Azure no SUSE Linux Enterprise Server][nfs-ha] 
 - [Alta disponibilidade do SAP NetWeaver em VMs do Azure no SUSE Linux Enterprise Server com arquivos do Azure NetApp para aplicativos SAP](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/high-availability-guide-suse-netapp-files)
 - [Os arquivos do Azure do NetApp](https://docs.microsoft.com/azure/azure-netapp-files/azure-netapp-files-introduction) (para criar compartilhamentos NFS)
 
