@@ -8,21 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 03/13/2019
+ms.date: 07/05/2019
 ms.author: erhopf
-ms.custom: seodec18
-ms.openlocfilehash: fcb09720d188150736dbe7da0c925f5762ff6a10
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: afe69d396c42023df8fcf5e4a6772771afc75c76
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67072327"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67606243"
 ---
 # <a name="what-is-speech-to-text"></a>O que é a conversão de fala em texto?
 
 Conversão de fala em texto fala dos serviços do Azure, também conhecido como conversão de fala em texto, habilita a transcrição em tempo real de fluxos de áudio em texto que podem consumir seus aplicativos, ferramentas ou dispositivos, exibir e agir como entrada de comando. Esse serviço estiver usando a mesma tecnologia de reconhecimento que a Microsoft usa para produtos Cortana e do Office e funciona perfeitamente com o texto em fala e conversão.  Para obter uma lista completa de idiomas de fala em texto disponíveis, consulte [idiomas com suporte](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#speech-to-text).
 
-Por padrão, o serviço de fala em texto usa o modelo de linguagem Universal. Esse modelo foi treinado usando dados de propriedade da Microsoft e é implantado na nuvem. Ele é ideal para o formato de conversação e cenários de ditado. Se estiver usando a conversão de fala em texto para funcionalidades de reconhecimento e transcrição em um ambiente exclusivo, você poderá criar e treinar modelos acústicos, de idioma e de pronúncia personalizados para lidar com o ruído ambiente ou vocabulário específico do setor. 
+Por padrão, o serviço de fala em texto usa o modelo de linguagem Universal. Esse modelo foi treinado usando dados de propriedade da Microsoft e é implantado na nuvem. Ele é ideal para o formato de conversação e cenários de ditado. Se estiver usando a conversão de fala em texto para funcionalidades de reconhecimento e transcrição em um ambiente exclusivo, você poderá criar e treinar modelos acústicos, de idioma e de pronúncia personalizados para lidar com o ruído ambiente ou vocabulário específico do setor.
 
 Você pode facilmente capturar áudio do microfone, ler de um fluxo ou acessar arquivos de áudio de armazenamento com o SDK de fala e APIs REST. O Speech SDK dá suporte a WAV/PCM 16 bits, 16 kHz/8 kHz, um canal áudio para reconhecimento de fala. Há suporte para formatos de áudio adicionais usando o [ponto de extremidade REST de fala em texto](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis) ou o [transcrição de serviço de lote](https://docs.microsoft.com/azure/cognitive-services/speech-service/batch-transcription#supported-formats).
 
