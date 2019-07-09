@@ -165,11 +165,11 @@ Ao usar o recurso de sincronização offline, você define as três tabelas do s
 
 | Atributo | Type |
 | --- | --- |
-| id | Número Inteiro 64 |
-| itemId | Cadeia de caracteres |
-| propriedades | Dados binários |
+| id | Integer 64 |
+| itemId | String |
+| properties |Binary Data |
 | table | String |
-| tableKind | Número inteiro 16 |
+| tableKind | Integer 16 |
 
 
 **MS_TableOperationErrors**
@@ -179,9 +179,9 @@ Ao usar o recurso de sincronização offline, você define as três tabelas do s
 | Atributo | Type |
 | --- | --- |
 | id |Cadeia de caracteres |
-| operationId |Número Inteiro 64 |
-| propriedades |Dados binários |
-| tableKind |Número inteiro 16 |
+| operationId |Integer 64 |
+| properties |Binary Data |
+| tableKind |Integer 16 |
 
  **MS_TableConfig**
 
@@ -191,8 +191,8 @@ Ao usar o recurso de sincronização offline, você define as três tabelas do s
 | --- | --- |
 | id |String |
 | key |String |
-| keyType |Número Inteiro 64 |
-| table |Cadeia de caracteres |
+| keyType |Integer 64 |
+| table |String |
 | value |String |
 
 ### <a name="data-table"></a>Tabela de dados
@@ -201,12 +201,12 @@ Ao usar o recurso de sincronização offline, você define as três tabelas do s
 
 | Atributo | Type | Observação |
 | --- | --- | --- |
-| id | Cadeia de caracteres, marcadas como obrigatórias |Chave primária no repositório remoto |
+| id | String, marcadas como obrigatórias |Chave primária no repositório remoto |
 | concluído | Boolean | Campo To-do item |
 | text |string |Campo To-do item |
 | createdAt | Data | (opcional) É mapeado para a propriedade do sistema **createdAt** |
 | updatedAt | Data | (opcional) É mapeado para a propriedade do sistema **updatedAt** |
-| version | Cadeia de caracteres | (opcional) Usado para detectar conflitos, é mapeado para a versão |
+| version | String | (opcional) Usado para detectar conflitos, é mapeado para a versão |
 
 ## <a name="setup-sync"></a>Alterar o comportamento de sincronização do aplicativo
 Nesta seção, você altera o aplicativo para que ele não sincronize na inicialização ou ao inserir e atualizar itens. Ele sincroniza somente quando o botão de atualização é executado.
