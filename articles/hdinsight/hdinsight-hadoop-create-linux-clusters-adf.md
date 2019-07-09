@@ -189,11 +189,11 @@ Neste artigo, você deve configurar a atividade de Hive para criar um cluster Ha
 
     |Propriedade  |Valor  |
     |---------|---------|
-    |NOME | Insira um nome para o data factory. Esse nome deve ser globalmente exclusivo.|
-    |Assinatura | Selecione sua assinatura do Azure. |
-    |Grupo de recursos | Selecione **Usar existente** e, em seguida, selecione o grupo de recursos que você criou usando o script do PowerShell. |
+    |Name | Insira um nome para o data factory. Esse nome deve ser globalmente exclusivo.|
+    |Subscription | Selecione sua assinatura do Azure. |
+    |Resource group | Selecione **Usar existente** e, em seguida, selecione o grupo de recursos que você criou usando o script do PowerShell. |
     |Version | Deixe **V2**. |
-    |Local padrão | O local é definido automaticamente para o local que você especificou ao criar o grupo de recursos anterior. Para este tutorial, o local é definido como **Leste dos EUA**. |
+    |Location | O local é definido automaticamente para o local que você especificou ao criar o grupo de recursos anterior. Para este tutorial, o local é definido como **Leste dos EUA**. |
 
     ![Criar Azure Data Factory usando o portal do Azure](./media/hdinsight-hadoop-create-linux-clusters-adf/create-data-factory-portal.png "criar Azure Data Factory usando o portal do Azure")
 
