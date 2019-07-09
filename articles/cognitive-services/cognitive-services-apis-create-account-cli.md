@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 06/26/2019
 ms.author: aahi
-ms.openlocfilehash: 26f7f3ab60347d9ec5f2a144410ad3de436f5b5c
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: acafc2c42c2946632496b646d001c58d6b48c2a6
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67454890"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657721"
 ---
 # <a name="create-a-cognitive-services-account-using-the-azure-command-line-interfacecli"></a>Criar uma conta de serviços Cognitivos usando o Interface(CLI) de linha de comando do Azure
 
@@ -39,11 +39,11 @@ Você também pode usar o verde **Experimente** botão para executar esses coman
  
 ## <a name="create-a-new-azure-cognitive-services-resource-group"></a>Criar um novo grupo de recursos de serviços Cognitivos do Azure
 
-Suas assinaturas para os serviços Cognitivos são representadas por recursos do Azure. Cada conta dos serviços Cognitivos (e seus recursos do Azure associados) devem pertencer a um grupo de recursos do Azure.
+Suas assinaturas para os serviços Cognitivos são representadas por recursos do Azure. Toda conta dos Serviços Cognitivos (e seus recursos do Azure associados) precisam pertencer a um grupo de recursos do Azure.
 
 ### <a name="choose-your-resource-group-location"></a>Escolha o local do grupo de recursos
 
-Para criar um recurso, será necessário um dos locais do Azure disponíveis para sua assinatura. Você pode recuperar uma lista de locais disponíveis com o [locais de lista az conta](/cli/azure/account#az_account_list) comando. A maioria dos serviços Cognitivos pode ser acessado de vários locais. Escolha a opção mais próxima de você ou ver quais locais estão disponíveis para o serviço.
+Para criar um recurso, será necessário um dos locais do Azure disponíveis para sua assinatura. Você pode recuperar uma lista de locais disponíveis com o [locais de lista az conta](/cli/azure/account#az-account-list-locations) comando. A maioria dos serviços Cognitivos pode ser acessado de vários locais. Escolha a opção mais próxima de você ou ver quais locais estão disponíveis para o serviço.
 
 > [!IMPORTANT]
 > * Lembre-se o local do Azure, pois você precisará ao chamar os serviços Cognitivos do Azure.
@@ -55,7 +55,7 @@ az account list-locations \
     --out table
 ```
 
-Depois de ter seu local do azure, crie um novo grupo de recursos na CLI do Azure usando o [criar grupo de az](/cli/azure/group#az_group_create) comando.
+Depois de ter seu local do azure, crie um novo grupo de recursos na CLI do Azure usando o [criar grupo de az](/cli/azure/group#az-group-create) comando.
 
 No exemplo a seguir, substitua o local do azure `westus2` com um dos locais disponíveis para sua assinatura do Azure.
 
