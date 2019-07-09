@@ -178,7 +178,7 @@ Esta seção explica as diferentes maneiras de usar ações de script ao criar u
     | Selecionar um script | Para usar seu próprio script, selecione __Personalizado__. Caso contrário, selecione um dos scripts fornecidos. |
     | NOME |Especifique um nome para a ação de script. |
     | URI do script Bash |Especificar o URI do script. |
-    | Cabeçalho/Trabalho/Zookeeper |Especifique os nós em que o script deve ser executado: **Cabeçalho**, **Trabalho** ou **ZooKeeper**. |
+    | Head/Worker/ZooKeeper |Especifique os nós em que o script deve ser executado: **Head**, **Worker** ou **ZooKeeper**. |
     | parâmetros |Especifique os parâmetros, se exigido pelo script. |
 
     Use a entrada __Persista essa ação de script__ para garantir que o script seja aplicado durante operações de escalonamento.
