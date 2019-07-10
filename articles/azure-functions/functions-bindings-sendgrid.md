@@ -259,10 +259,10 @@ A tabela a seguir explica as propriedades de configuração de associação que 
 |**direction**|| Obrigatório – deve ser definido como `out`.|
 |**name**|| Obrigatório – o nome da variável usado no código da função da solicitação ou do corpo da solicitação. Esse valor é ```$return``` quando há apenas um valor retornado. |
 |**apiKey**|**ApiKey**| O nome de uma configuração de aplicativo que contém sua chave de API. Se não configurado, o nome da configuração do aplicativo padrão é "AzureWebJobsSendGridApiKey".|
-|**to**|**Para**| o endereço de email do destinatário. |
-|**from**|**De**| o endereço de email do remetente. |
-|**subject**|**Assunto**| o assunto do email. |
-|**text**|**Texto**| o conteúdo do email. |
+|**to**|**To**| o endereço de email do destinatário. |
+|**from**|**From**| o endereço de email do remetente. |
+|**subject**|**Subject**| o assunto do email. |
+|**text**|**Text**| o conteúdo do email. |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
