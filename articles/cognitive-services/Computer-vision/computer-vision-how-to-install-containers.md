@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
 ms.custom: seodec18
-ms.openlocfilehash: 8a5a66c720c0a591fe9d6c9864286d80f68ba599
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: d72b47d375b8e50cde43e263261551d3010ba013
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67449344"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67704708"
 ---
 # <a name="install-and-run-recognize-text-containers"></a>Instalar e executar os contêineres de Reconhecimento de Texto
 
@@ -36,7 +36,6 @@ Você deve cumprir os seguintes pré-requisitos antes de usar contêineres de Re
 |Familiaridade com o Docker | É necessário ter uma compreensão básica de conceitos do Docker, como registros, repositórios, contêineres e imagens de contêiner, bem como conhecimento dos comandos básicos do `docker`.| 
 |Azure `Cognitive Services` recursos |Para usar o contêiner, você precisará ter:<br><br>Um _dos serviços Cognitivos_ o ponto de extremidade cobrança URI de chave de recurso do Azure e a cobrança associada. Ambos os valores estão disponíveis nas páginas de visão geral e as chaves de recurso e são necessários para iniciar o contêiner. Você precisará adicionar o `vision/v2.0` roteamento para o URI do ponto de extremidade, conforme mostrado no exemplo a seguir de BILLING_ENDPOINT_URI. <br><br>**{BILLING_KEY}** : chave do recurso<br><br>**{BILLING_ENDPOINT_URI}** : exemplo de URI de terminal é: `https://westus.api.cognitive.microsoft.com/vision/v2.0`|
 
-
 ## <a name="request-access-to-the-private-container-registry"></a>Solicitar acesso ao registro de contêiner privado
 
 [!INCLUDE [Request access to private preview](../../../includes/cognitive-services-containers-request-access.md)]
@@ -50,7 +49,7 @@ Você deve cumprir os seguintes pré-requisitos antes de usar contêineres de Re
 
 A tabela a seguir descreve os núcleos de CPU e a memória mínimos e recomendados a serem alocados para cada contêiner do Reconhecimento de Texto.
 
-| Contêiner | Mínimo | Recomendado |TPS<br>(No mínimo, máximo)|
+| Contêiner | Mínimo | Recomendadas |TPS<br>(No mínimo, máximo)|
 |-----------|---------|-------------|--|
 |Reconhecimento de Texto|1 núcleo, 8 GB de memória, 0,5 TPS|2 núcleos, 8 GB de memória, 1 TPS|0.5, 1|
 

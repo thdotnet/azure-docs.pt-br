@@ -9,14 +9,15 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: a3c7de8f5e86df749ec3b6d9e73e6f6299e94faf
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: f88cfb1d74897abddeaea6aaec9d7f7b1960be6e
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67592674"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67704312"
 ---
 # <a name="install-and-run-form-recognizer-containers"></a>Instalar e executar contêineres do Reconhecimento de Formulários
+
 O Reconhecimento de Formulários do Azure aplica tecnologia de aprendizado de máquina para identificar e extrair pares chave-valor e tabelas de formulários. Ele associa valores e entradas de tabelas a pares chave-valor e, em seguida, gera dados estruturados que incluem as relações no arquivo original. 
 
 Para reduzir a complexidade e integrar facilmente um modelo de Reconhecimento de Formulários personalizado ao seu processo de automação de fluxo de trabalho ou a outro aplicativo, você pode chamar o modelo usando uma API REST simples. Apenas cinco documentos de formulário (ou um formulário vazio e dois formulários preenchidos) são necessários, portanto você pode obter resultados rapidamente, com precisão e adaptados para um conteúdo específico. Não é necessária intervenção manual intensa nem ampla experiência em ciência de dados. E não é necessária rotulagem nem anotação de dados.

@@ -11,12 +11,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: beb9818be05fbb9a9e9c958dccb2e375f7685bd0
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 84960e82e25f4b6cc59324f17ce46de7f9f7ac23
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67272796"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67704674"
 ---
 # <a name="install-and-run-face-containers"></a>Instalar e executar os contêineres de detecção facial
 
@@ -32,7 +32,7 @@ Você deve atender aos seguintes pré-requisitos antes de usar os contêineres d
 |--|--|
 |Mecanismo Docker| O mecanismo do Docker deve ser instalado em um [computador host](#the-host-computer). O Docker fornece pacotes que configuram o ambiente do Docker no [macOS](https://docs.docker.com/docker-for-mac/), no [Windows](https://docs.docker.com/docker-for-windows/) e no [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Para instruções sobre conceitos básicos do Docker e de contêiner, consulte a [visão geral do Docker](https://docs.docker.com/engine/docker-overview/).<br><br> O Docker deve ser configurado para permitir que os contêineres conectem-se e enviem dados de cobrança para o Azure. <br><br> No Windows, Docker também deve ser configurado para dar suporte a contêineres do Linux.<br><br>|
 |Familiaridade com o Docker | Você precisa de uma compreensão básica dos conceitos do Docker, como registros, repositórios, contêineres e imagens de contêiner. Você também precisa de conhecimento do basic `docker` comandos.| 
-|Azure `Cognitive Services` recursos |Para usar o contêiner, você deve ter:<br><br>Um recurso dos serviços Cognitivos do Azure e a chave de cobrança associada e o URI de ponto de extremidade cobrança. Ambos os valores estão disponíveis na **visão geral** e **chaves** páginas para o recurso. Eles são necessários para iniciar o contêiner. Adicionar o `face/v1.0` roteamento para o ponto de extremidade do URI, conforme mostrado no exemplo a seguir de BILLING_ENDPOINT_URI: <br><br>**{BILLING_KEY}** : chave do recurso<br><br>**{BILLING_ENDPOINT_URI}** : exemplo URI do ponto de extremidade é `https://westus.api.cognitive.microsoft.com/face/v1.0`|
+|Azure `Cognitive Services` recursos |Para usar o contêiner, você deve ter:<br><br>Um recurso dos serviços Cognitivos do Azure e a chave de cobrança associada e o URI de ponto de extremidade cobrança. Ambos os valores estão disponíveis na **visão geral** e **chaves** páginas para o recurso. Eles são necessários para iniciar o contêiner. Adicionar o `face/v1.0` roteamento para o ponto de extremidade do URI, conforme mostrado no exemplo a seguir de BILLING_ENDPOINT_URI: <br><br>**{BILLING_KEY}** : chave do recurso<br><br>**{BILLING_ENDPOINT_URI}** : exemplo de URI de ponto de extremidade é `https://westus.api.cognitive.microsoft.com/face/v1.0`|
 
 ## <a name="request-access-to-the-private-container-registry"></a>Solicitar acesso ao registro de contêiner privado
 
@@ -42,12 +42,11 @@ Você deve atender aos seguintes pré-requisitos antes de usar os contêineres d
 
 [!INCLUDE [Host Computer requirements](../../../includes/cognitive-services-containers-host-computer.md)]
 
-
 ### <a name="container-requirements-and-recommendations"></a>Recomendações e requisitos do contêiner
 
 A tabela a seguir descreve os núcleos de CPU e a memória mínimos e recomendados a serem alocados para cada contêiner da API de Detecção Facial.
 
-| Contêiner | Mínimo | Recomendado | Transações por segundo<br>(No mínimo, máximo)|
+| Contêiner | Mínimo | Recomendadas | Transações por segundo<br>(No mínimo, máximo)|
 |-----------|---------|-------------|--|
 |Face | 1 núcleo, 2 GB de memória | 1 núcleo, memória de 4 GB |10, 20|
 
@@ -74,7 +73,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-face:latest
 
 ## <a name="use-the-container"></a>Usar o contêiner
 
-Depois que o contêiner estiver na [computador host](#the-host-computer), use o seguinte processo para trabalhar com o contêiner.
+Depois que o contêiner estiver no [computador host](#the-host-computer), use o processo a seguir para trabalhar com o contêiner.
 
 1. [Execute o contêiner](#run-the-container-with-docker-run) com as configurações de cobrança. Há outros [exemplos](./face-resource-container-config.md#example-docker-run-commands) do comando `docker run` disponíveis. 
 1. [Consulte o ponto de extremidade de previsão do contêiner](#query-the-containers-prediction-endpoint). 
