@@ -36,11 +36,16 @@
   items:
     - name: Visão geral
       href: concepts-overview.md
-    - name: Upload e armazenamento na nuvem
+    - name: Contas
       items:
-        - name: Armazenamento
+        - name: Conta dos Serviços de Mídia
+          displayName: subscription
+          href: media-services-account-concept.md
+        - name: Conta de armazenamento
           href: storage-account-concept.md
           displayName: Storage side encryption
+    - name: Como carregar
+      items:
         - name: Ativos
           href: assets-concept.md
     - name: Codificação

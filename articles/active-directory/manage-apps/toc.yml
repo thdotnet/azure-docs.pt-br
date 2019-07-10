@@ -49,6 +49,14 @@
       items:
         - name: O que é logon único?
           href: what-is-single-sign-on.md
+        - name: Como habilitar o SSO para seu aplicativo multilocatário
+          href: isv-sso-content.md
+        - name: Criar um locatário do Azure para o aplicativo multilocatário
+          href: isv-tenant-multi-tenant-app.md
+        - name: Escolher a federação multilocatário
+          href: isv-choose-multi-tenant-federation.md
+        - name: Criar documentação para o aplicativo multilocatário
+          href: isv-create-sso-documentation.md
         - name: Planejamento de uma implantação de logon único
           href: plan-sso-deployment.md
     - name: SSO de um clique
@@ -73,6 +81,20 @@
           href: tenant-restrictions.md
         - name: Configurar a criptografia de token SAML (versão prévia)
           href: howto-saml-token-encryption.md
+    - name: Logon único
+      items:
+        - name: O que é logon único?
+          href: what-is-single-sign-on.md
+        - name: Planejamento de uma implantação de logon único
+          href: plan-sso-deployment.md
+        - name: Habilitar o logon único no aplicativo multilocatário
+          href: isv-sso-content.md
+        - name: Escolher o protocolo de federação de SSO certo
+          href: isv-choose-multi-tenant-federation.md
+        - name: Criar um locatário do Azure para o aplicativo multilocatário
+          href: isv-tenant-multi-tenant-app.md
+        - name: Criar e publicar a documentação de SSO para o aplicativo
+          href: isv-create-sso-documentation.md
     - name: Portais do usuário final
       href: end-user-experiences.md
 - name: Guias de instruções
