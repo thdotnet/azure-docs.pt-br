@@ -13,8 +13,8 @@ ms.openlocfilehash: 38addf4651373ba0f4df411325218a255c835508
 ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67711401"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717175"
 ---
 ## <a name="create-an-azure-container-instance-resource"></a>Criar um recurso de instância de contêiner do Azure
 
@@ -35,13 +35,13 @@ ms.locfileid: "67711401"
 
 3. Sobre o **rede** , insira os detalhes a seguir:
 
-    |Configuração|Value|
+    |Configuração|Valor|
     |--|--|
     |Portas|Defina a porta TCP como `5000`. Expõe o contêiner na porta 5000.|
 
 4. No **Advanced** , insira o necessário **variáveis de ambiente** para o contêiner [configurações de cobrança](https://docs.microsoft.com/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-install-containers#billing-arguments) do recurso ACI:
 
-    | Chave | Value |
+    | Chave | Valor |
     |--|--|
     |`apikey`|Copiado do **chaves** página do recurso de análise de texto. É uma cadeia de caracteres alfanuméricos 32 caracteres sem espaços ou traços, `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.|
     |`billing`|Copiado do **visão geral** página do recurso de análise de texto. Exemplo: `https://northeurope.api.cognitive.microsoft.com/text/analytics/v2.0`|

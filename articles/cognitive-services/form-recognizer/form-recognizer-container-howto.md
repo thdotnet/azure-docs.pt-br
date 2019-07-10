@@ -1,5 +1,5 @@
 ---
-title: Instalar e executar o contêiner – Reconhecimento de Formulários
+title: Como instalar e executar o contêiner para o reconhecedor de formulário
 titleSuffix: Azure Cognitive Services
 description: Saiba como usar o contêiner do Reconhecimento de Formulários para analisar dados de formulário e de tabela.
 author: IEvangelist
@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: f88cfb1d74897abddeaea6aaec9d7f7b1960be6e
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: a251e97d671c4aad0aebb1d6c3349cdc09444308
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67704312"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67718477"
 ---
 # <a name="install-and-run-form-recognizer-containers"></a>Instalar e executar contêineres do Reconhecimento de Formulários
 
@@ -32,7 +32,7 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 Antes de usar contêineres de Reconhecimento de Formulários, é necessário atender aos seguintes pré-requisitos:
 
-|Obrigatório|Finalidade|
+|Necessária|Finalidade|
 |--|--|
 |Mecanismo Docker| É necessário ter o Mecanismo Docker instalado em um [computador host](#the-host-computer). O Docker fornece pacotes que configuram o ambiente do Docker no [macOS](https://docs.docker.com/docker-for-mac/), no [Windows](https://docs.docker.com/docker-for-windows/) e no [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Para instruções sobre conceitos básicos do Docker e de contêiner, consulte a [visão geral do Docker](https://docs.docker.com/engine/docker-overview/).<br><br> O Docker deve ser configurado para permitir que os contêineres conectem-se e enviem dados de cobrança para o Azure. <br><br> No Windows, o Docker também deve ser configurado para dar suporte a contêineres do Linux.<br><br>|
 |Familiaridade com o Docker | É necessário ter uma compreensão básica de conceitos do Docker, como Registros, repositórios, contêineres e imagens de contêiner, bem como conhecimento dos comandos básicos do `docker`.|
@@ -56,7 +56,7 @@ Primeiro, é necessário preencher e enviar o [formulário de solicitação de a
 
 Os núcleos de CPU e a memória mínimos e recomendados a serem alocados para cada contêiner do Reconhecimento de Formulários são descritos na tabela a seguir:
 
-| Contêiner | Mínimo | Recomendadas |
+| Contêiner | Mínimo | Recomendado |
 |-----------|---------|-------------|
 |cognitive-services-form-recognizer | 2 núcleos, 4 GB de memória | 4 núcleos, 8 GB de memória |
 
@@ -104,7 +104,7 @@ Depois que o contêiner estiver no [computador host](#the-host-computer), use o 
 
 Use o comando [docker run](https://docs.docker.com/engine/reference/commandline/run/) para executar qualquer um dos três contêineres. O comando usa os seguintes parâmetros:
 
-| Placeholder | Value |
+| Placeholder | Valor |
 |-------------|-------|
 |{BILLING_KEY} | Essa chave é usada para iniciar o contêiner. Ela está disponível na página **Chaves de Reconhecimento de Formulários** do portal do Azure.  |
 |{BILLING_ENDPOINT_URI} | O valor de URI do ponto de extremidade de cobrança está disponível na página **Visão Geral do Reconhecimento de Formulários** do portal do Azure.|
@@ -276,7 +276,7 @@ O contêiner fornece as APIs do ponto de extremidade REST, que podem ser encontr
 
 [!INCLUDE [How to stop the container](../../../includes/cognitive-services-containers-stop.md)]
 
-## <a name="troubleshooting"></a>solução de problemas
+## <a name="troubleshooting"></a>Solução de problemas
 
 Quando você executa o contêiner, ele usa **stdout** e **stderr** para gerar informações úteis para solucionar problemas que ocorrem durante a inicialização ou a execução do contêiner.
 

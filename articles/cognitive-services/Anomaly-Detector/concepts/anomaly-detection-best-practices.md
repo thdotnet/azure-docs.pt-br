@@ -1,20 +1,21 @@
 ---
 title: Melhores práticas ao usar a API do Detector de Anomalias
+titleSuffix: Azure Cognitive Services
 description: Saiba mais sobre as práticas recomendadas ao detectar anomalias com a API do Detector de anomalias.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: aahi
-ms.openlocfilehash: 1ad4a67d7737733e4c910d3495be29860769f27e
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 9407f2fc9375765efb6eb9688b3ebfeef24ba90a
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67477805"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67721628"
 ---
 # <a name="best-practices-for-using-the-anomaly-detector-api"></a>Práticas recomendadas para usar a API do Detector de anomalias
 

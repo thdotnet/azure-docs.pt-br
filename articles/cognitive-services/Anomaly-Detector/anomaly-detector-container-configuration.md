@@ -1,20 +1,21 @@
 ---
-title: Configurar os contêineres - detector de anomalias
+title: Como configurar um contêiner para a API do Detector de anomalias
 titleSuffix: Azure Cognitive Services
-description: O ambiente de tempo de execução de contêiner do Detector de anomalias é configurado usando o `docker run` argumentos do comando. Esse contêiner tem várias configurações obrigatórias e outras configurações opcionais.
+description: O ambiente de tempo de execução do contêiner de API do Detector de anomalias é configurado usando o `docker run` argumentos do comando. Esse contêiner tem várias configurações obrigatórias e outras configurações opcionais.
 services: cognitive-services
 author: IEvangelist
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: 50f62fa20ea9b52db79160d9d2f3a6fa463079b7
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: cb0a12df6696e76050d4c53bd75e07134b3dc27c
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67593098"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67721724"
 ---
 # <a name="configure-anomaly-detector-containers"></a>Configurar os contêineres do Detector de anomalias
 
@@ -24,7 +25,7 @@ O **Detector de anomalias** ambiente de tempo de execução do contêiner é con
 
 Esse contêiner tem as seguintes configurações:
 
-|Obrigatório|Configuração|Finalidade|
+|Necessária|Configuração|Finalidade|
 |--|--|--|
 |Sim|[ApiKey](#apikey-configuration-setting)|Usado para rastrear informações de cobrança.|
 |Não|[ApplicationInsights](#applicationinsights-setting)|Permite que você adicione suporte a dados telemétricos do [Azure Application Insights](https://docs.microsoft.com/azure/application-insights) para seu contêiner.|
@@ -58,9 +59,9 @@ Essa configuração pode ser localizada no seguinte local:
 
 * Portal do Azure: **Detector de anomalias** visão geral, rotulado `Endpoint`
 
-|Obrigatório| NOME | Tipo de dados | DESCRIÇÃO |
+|Necessária| NOME | Tipo de dados | DESCRIÇÃO |
 |--|------|-----------|-------------|
-|Sim| `Billing` | Cadeia de caracteres | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westus2.api.cognitive.microsoft.com` |
+|Sim| `Billing` | string | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westus2.api.cognitive.microsoft.com` |
 
 ## <a name="eula-setting"></a>Configuração de EULA
 
@@ -87,10 +88,10 @@ Os contêineres do Detector de anomalias não usam a entrada ou saída monta par
 
 A sintaxe exata do local da montagem do host varia de acordo com o sistema operacional do host. Além disso, a localização de montagem do [computador host](anomaly-detector-container-howto.md#the-host-computer) pode não estar acessível devido a um conflito entre as permissões usadas pela conta de serviço do Docker e as permissões da localização de montagem do host. 
 
-|Opcional| NOME | Tipo de dados | DESCRIÇÃO |
+|Opcional| Nome | Tipo de dados | DESCRIÇÃO |
 |-------|------|-----------|-------------|
-|Não permitido| `Input` | Cadeia de caracteres | Contêineres do Detector de anomalias não usam isso.|
-|Opcional| `Output` | String | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Não permitido| `Input` | Cadeia de Caracteres | Contêineres do Detector de anomalias não usam isso.|
+|Opcional| `Output` | string | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Comandos docker run de exemplo 
 
@@ -101,7 +102,7 @@ Os exemplos a seguir usam as definições de configuração para ilustrar como e
 
 Substitua o valor entre colchetes, `{}`, com seus próprios valores:
 
-| Placeholder | Value | Formato ou exemplo |
+| Placeholder | Valor | Formato ou exemplo |
 |-------------|-------|---|
 |{BILLING_KEY} | A chave do ponto de extremidade do recurso Detector de anomalias. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
 |{BILLING_ENDPOINT_URI} | O valor de ponto de extremidade cobrança, incluindo a região.|`https://westus2.api.cognitive.microsoft.com`|

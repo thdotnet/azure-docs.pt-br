@@ -1,5 +1,5 @@
 ---
-title: Configurar um contêiner – Reconhecimento de Formulários
+title: Como configurar um contêiner para o reconhecedor de formulário
 titleSuffix: Azure Cognitive Services
 description: Saiba como configurar o contêiner do Reconhecimento de Formulários para analisar dados de formulário e de tabela.
 author: IEvangelist
@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: e4b6a852ece3060ecf866d66d32f213355d99950
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: 7752b09dd1bf20d796b19d03e62426b098486c39
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67592656"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67718443"
 ---
 # <a name="configure-form-recognizer-containers"></a>Configurar contêineres do Reconhecimento de Formulários
 
@@ -47,7 +47,7 @@ Você pode encontrar essa configuração no portal do Azure, em **Visão Geral d
 
 |Obrigatório| NOME | Tipo de dados | DESCRIÇÃO |
 |--|------|-----------|-------------|
-|Sim| `Billing` | Cadeia de caracteres | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westus2.api.cognitive.microsoft.com/` |
+|Sim| `Billing` | Cadeia de Caracteres | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westus2.api.cognitive.microsoft.com/` |
 
 ## <a name="eula-setting"></a>Configuração de EULA
 
@@ -74,10 +74,10 @@ O contêiner do Reconhecimento de Formulários exige uma montagem de entrada e u
 
 A sintaxe exata do local da montagem do host varia de acordo com o sistema operacional do host. Além disso, a localização de montagem do [computador host](form-recognizer-container-howto.md#the-host-computer) pode não estar acessível devido a um conflito entre as permissões de conta de serviço do Docker e as permissões da localização de montagem do host.
 
-|Opcional| NOME | Tipo de dados | DESCRIÇÃO |
+|Opcional| Nome | Tipo de dados | DESCRIÇÃO |
 |-------|------|-----------|-------------|
-|Obrigatório| `Input` | Cadeia de caracteres | O destino de montagem de entrada. O valor padrão é `/input`.    <br><br>Exemplo:<br>`--mount type=bind,src=c:\input,target=/input`|
-|Obrigatório| `Output` | Cadeia de caracteres | O destino de montagem de saída. O valor padrão é `/output`.  <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Necessária| `Input` | string | O destino de montagem de entrada. O valor padrão é `/input`.    <br><br>Exemplo:<br>`--mount type=bind,src=c:\input,target=/input`|
+|Necessária| `Output` | Cadeia de Caracteres | O destino de montagem de saída. O valor padrão é `/output`.  <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Comandos docker run de exemplo
 
@@ -88,7 +88,7 @@ Os exemplos a seguir usam as definições de configuração para ilustrar como e
 
 Substitua {_argument_name_} na tabela a seguir por seus próprios valores:
 
-| Placeholder | Value |
+| Placeholder | Valor |
 |-------------|-------|
 |{BILLING_KEY} | A chave usada para iniciar o contêiner. Ela está disponível na página Chaves de Reconhecimento de Formulários do portal do Azure.  |
 |{BILLING_ENDPOINT_URI} | O valor de URI do ponto de extremidade de cobrança está disponível na página Visão Geral do Reconhecimento de Formulários do portal do Azure.|

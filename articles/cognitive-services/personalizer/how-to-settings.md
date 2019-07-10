@@ -1,5 +1,5 @@
 ---
-title: Configurar definições
+title: Definir as configurações - Personalizer
 titleSuffix: Azure Cognitive Services
 description: A configuração do serviço inclui como o serviço trata as recompensas, com que frequência o serviço faz explorações, com que frequência o modelo é treinado novamente e quantos dados são armazenados.
 services: cognitive-services
@@ -7,15 +7,15 @@ author: edjez
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: edjez
-ms.openlocfilehash: 976830232453eee0993e64ac445c2e6a2f7e20ef
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
-ms.translationtype: HT
+ms.openlocfilehash: 6f5028f093a9fd8c17928c2167039599d4db897c
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66478585"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67722341"
 ---
 # <a name="personalizer-settings"></a>Configurações do Personalizador
 
@@ -35,7 +35,7 @@ Crie um recurso do Personalizador para cada loop de comentários.
 1. Encontre o recurso do Personalizador. 
 1. Na seção **Gerenciamento de recursos**, selecione **Configurações**.
 
-    Antes de sair do portal do Azure, copie uma de suas chaves de recurso da página de **Chaves**. Você precisará disso para usar o [SDK do Personalizador](https://go.microsoft.com/fwlink/?linkid=2092353).
+    Antes de sair do portal do Azure, copie uma de suas chaves de recurso da página de **Chaves**. Você precisará disso para usar o [SDK do Personalizador](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.personalizer).
 
 ### <a name="configure-reward-settings-for-the-feedback-loop-based-on-use-case"></a>Defina as configurações de recompensa para o loop de comentários com base no caso de uso
 

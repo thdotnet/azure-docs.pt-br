@@ -12,8 +12,8 @@ ms.openlocfilehash: 3c42bf2b2acc2472741bd603ea9d653a314ecc40
 ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67711819"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67717267"
 ---
 ## <a name="create-a-speech-resource"></a>Criar um recurso de fala
 
@@ -32,7 +32,7 @@ ms.locfileid: "67711819"
 1. Clique em **criar** e aguarde até que o recurso a ser criado. Depois que ele é criado, navegue até a página de recursos
 1. Coletar configurado `endpoint` e uma chave de API:
 
-    |Guia de recursos no Portal|Configuração|Value|
+    |Guia de recursos no Portal|Configuração|Valor|
     |--|--|--|
     |**Visão geral**|Ponto de extremidade|Copie o ponto de extremidade. Ele é semelhante a `https://speech.cognitiveservices.azure.com/sts/v1.0/issuetoken`|
     |**Chaves**|Chave de API|Copie 1 das duas chaves. É uma cadeia de caracteres alfanuméricos 32 caracteres sem espaços ou traços, `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.|

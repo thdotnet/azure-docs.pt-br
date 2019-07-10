@@ -167,7 +167,7 @@ Ao usar o recurso de sincronização offline, você define as três tabelas do s
 | --- | --- |
 | id | Integer 64 |
 | itemId | String |
-| properties |Binary Data |
+| properties | Binary Data |
 | table | String |
 | tableKind | Integer 16 |
 
@@ -178,7 +178,7 @@ Ao usar o recurso de sincronização offline, você define as três tabelas do s
 
 | Atributo | Type |
 | --- | --- |
-| id |Cadeia de caracteres |
+| id |String |
 | operationId |Integer 64 |
 | properties |Binary Data |
 | tableKind |Integer 16 |

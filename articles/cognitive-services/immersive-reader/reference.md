@@ -1,20 +1,21 @@
 ---
 title: Referência de SDK do leitor de imersão
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Referência para o leitor de imersão SDK
 services: cognitive-services
 author: metanMSFT
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: immersive-reader
 ms.topic: reference
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: c128608b3c4a8e1155c3ac962bcfd07f589fbf23
-ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
+ms.openlocfilehash: 485e8626af4266492e02d4f9fbe4af486e10c082
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67311792"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67718398"
 ---
 # <a name="immersive-reader-sdk-reference"></a>Referência de SDK do leitor de imersão
 
@@ -34,10 +35,10 @@ launchAsync(token: string, resourceName: string, content: Content, options?: Opt
 
 #### <a name="parameters"></a>parâmetros
 
-| NOME | Type | DESCRIÇÃO |
+| Nome | Tipo | DESCRIÇÃO |
 | ---- | ---- |------------ |
-| `token` | string | O token de acesso adquirido da chamada para o `issueToken` ponto de extremidade. |
-| `resourceName` | string | Reservado. Deve ser definido como `null`. |
+| `token` | cadeia de caracteres | O token de acesso adquirido da chamada para o `issueToken` ponto de extremidade. |
+| `resourceName` | cadeia de caracteres | Reservado. Deve ser definido como `null`. |
 | `content` | [Conteúdo](#content) | Um objeto que contém o conteúdo a ser mostrado no leitor de imersão. |
 | `options` | [Opções](#options) | Opções de configuração de determinados comportamentos do leitor de imersão. Opcional. |
 
@@ -97,7 +98,7 @@ Contém informações sobre o erro.
 }
 ```
 
-#### <a name="error-codes"></a>Códigos do Erro
+#### <a name="error-codes"></a>Códigos de erro
 
 | Código | DESCRIÇÃO |
 | ---- | ----------- |

@@ -1,20 +1,21 @@
 ---
-title: Instalar e executar contêineres - detector de anomalias
+title: Como instalar e executar os contêineres para usar a API do Detector de anomalias
 titleSuffix: Azure Cognitive Services
 description: Use algoritmos avançados da API de Detector de anomalias para identificar anomalias em seus dados de série temporal.
 services: cognitive-services
 author: IEvangelist
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: 254173df33bdc82b7de87328a715954c1a6993d7
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: f84f1bab048630d6dd45085b3d082004d10bb6a8
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67593120"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67721712"
 ---
 # <a name="install-and-run-anomaly-detector-containers"></a>Instalar e executar contêineres do Detector de anomalias
 
@@ -97,7 +98,7 @@ Depois que o contêiner estiver no [computador host](#the-host-computer), use o 
 
 Use o comando [docker run](https://docs.docker.com/engine/reference/commandline/run/) para executar qualquer um dos três contêineres. O comando usa os seguintes parâmetros:
 
-| Placeholder | Value |
+| Placeholder | Valor |
 |-------------|-------|
 |{BILLING_KEY} | Essa chave é usada para iniciar o contêiner e está disponível na página de chaves do Detector de anomalias do portal do Azure.  |
 |{BILLING_ENDPOINT_URI} | O valor do URI de ponto de extremidade cobrança está disponível na página de visão geral de Detector de anomalias do portal do Azure.|
@@ -165,7 +166,7 @@ Use o host, https://localhost:5000, para APIs de contêiner.
 
 [!INCLUDE [How to stop the container](../../../includes/cognitive-services-containers-stop.md)]
 
-## <a name="troubleshooting"></a>solução de problemas
+## <a name="troubleshooting"></a>Solução de problemas
 
 Se você executar o contêiner com uma [montagem](anomaly-detector-container-configuration.md#mount-settings) de saída e o registro em log habilitado, o contêiner gerará arquivos de log que são úteis para solucionar problemas que ocorrem durante a inicialização ou execução do contêiner. 
 

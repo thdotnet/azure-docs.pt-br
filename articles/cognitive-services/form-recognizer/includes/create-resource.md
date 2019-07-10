@@ -1,16 +1,16 @@
 ---
 author: PatrickFarley
 ms.service: cognitive-services
-ms.subservice: form-recognizer
+ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 06/12/2019
 ms.author: pafarley
-ms.openlocfilehash: d322aa27c7c9dcf4ad365ec22f8074aeacc85d3b
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+ms.openlocfilehash: a37087c90b6c9b3629402c7a8c2fa5861e46ae9a
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67502858"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67592522"
 ---
 Quando o acesso para usar o Reconhecimento de Formulários for concedido, você receberá um email de boas-vindas com vários links e recursos. Use o link do "portal do Azure" na mensagem para abrir o portal do Azure e criar um recurso do Reconhecimento de Formulários. No painel **Criar**, forneça as informações a seguir:
 
