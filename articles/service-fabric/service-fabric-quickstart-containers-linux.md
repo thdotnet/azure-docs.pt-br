@@ -13,14 +13,14 @@ ms.topic: quickstart
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/30/2019
-ms.author: aljo,suhuruli
+ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: 1487c9e3e57a2fe4dcdcab04aa81cd81315decfd
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 5d0c8b458f11076ea87d74eae3eecd72fb37eb40
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66302387"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67621518"
 ---
 # <a name="quickstart-deploy-linux-containers-to-service-fabric"></a>Início Rápido: Implantar contêineres do Linux no Service Fabric
 
@@ -188,7 +188,7 @@ ResourceGroupName="containertestcluster"
 az group delete --name $ResourceGroupName
 ```
 
-Se você concluiu o trabalho com o cluster, remova o certificado do repositório de certificados. Por exemplo: 
+Se você concluiu o trabalho com o cluster, remova o certificado do repositório de certificados. Por exemplo:
 - No Windows: Use o [snap-in MMC de certificados](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in). Selecione **Minha conta de usuário** ao adicionar o snap-in. Navegue até `Certificates - Current User\Personal\Certificates` e remova o certificado.
 - No Mac: Use o aplicativo de Conjunto de Chaves.
 - No Ubuntu: siga as etapas usadas para exibir certificados e remova o certificado.
