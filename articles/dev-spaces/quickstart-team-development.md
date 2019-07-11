@@ -9,13 +9,13 @@ ms.date: 04/25/2019
 ms.topic: quickstart
 description: Desenvolvimento em equipe no Kubernetes com contêineres e microsserviços no Azure
 keywords: Docker, Kubernetes, Azure, AKS, Serviço de Kubernetes do Azure, contêineres, Helm, malha de serviço, roteamento de malha de serviço, kubectl, k8s
-manager: jeconnoc
-ms.openlocfilehash: 8160e72657be83af6f9af5226b7cd77c692dcd82
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+manager: gwallace
+ms.openlocfilehash: cb1cc62125e668544eb4af9f84b477b273bfe30e
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67061850"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706265"
 ---
 # <a name="quickstart-team-development-on-kubernetes-using-azure-dev-spaces"></a>Início Rápido: Desenvolvimento em equipe no Kubernetes usando o Azure Dev Spaces
 
