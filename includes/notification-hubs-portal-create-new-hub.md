@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 01/17/2019
 ms.author: jowargo
 ms.custom: include file
-ms.openlocfilehash: 244a4ebe20863945bfc3b6236e70e786387c8909
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5afcc8e4524a0e8353766ba239d5ab9161b29d86
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67116664"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67509128"
 ---
 1. Entre no [Portal do Azure](https://portal.azure.com).
 
@@ -31,7 +31,7 @@ ms.locfileid: "67116664"
 
     1. Insira um nome em **Criar um namespace**. Um namespace contém um ou mais hubs.
 
-    1. Selecione um valor da caixa de listagem suspensa **Local**. Esse valor especifica a localização na qual você deseja criar o hub de notificação.
+    1. Selecione um valor da caixa de listagem suspensa **Local**. Esse valor especifica a localização na qual você deseja criar o hub.
 
     1. Selecione grupo de recursos existente em **Grupo de Recursos** ou crie um nome para um novo grupo de recursos.
 
@@ -39,11 +39,11 @@ ms.locfileid: "67116664"
 
         ![Portal do Azure - definir propriedades do hub de notificação](./media/notification-hubs-portal-create-new-hub/notification-hubs-azure-portal-settings.png)
 
-1. Selecione **Notificações** (ícone de sino) e selecione **Acessar recurso**. Atualize também a lista na página **Hubs de Notificação** e, em seguida, selecione seu hub de notificação.
+1. Selecione **Notificações** (ícone de sino) e selecione **Acessar recurso**. Atualize também a lista na página **Hubs de Notificação** e, em seguida, selecione seu hub.
 
       ![Portal do Azure - notificações -> Acessar recurso](./media/notification-hubs-portal-create-new-hub/go-to-notification-hub.png)
 
-1. Selecione **Políticas de Acesso** na lista. Observe as cadeias de caracteres de duas conexão que estão disponíveis para você. Você precisará delas para manipular notificações por push mais tarde.
+1. Selecione **Políticas de Acesso** na lista. Observe que as cadeias de caracteres de duas conexão estão disponíveis para você. Você precisará delas para manipular notificações por push mais tarde.
 
       >[!IMPORTANT]
       >*Não* use a política **DefaultFullSharedAccessSignature** em seu aplicativo. Ela é destinada a ser usada apenas em seu back-end.

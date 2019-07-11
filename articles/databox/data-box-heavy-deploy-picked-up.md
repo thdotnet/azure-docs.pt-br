@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: heavy
 ms.topic: tutorial
-ms.date: 05/28/2019
+ms.date: 07/01/2019
 ms.author: alkohli
-ms.openlocfilehash: 31185900ede0fae74a04f98eaecee7379fb1c4fe
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
+ms.openlocfilehash: 3903e14e8923f6d29f2a88c61aead0cfc605b5b5
+ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66427815"
+ms.lasthandoff: 07/02/2019
+ms.locfileid: "67508666"
 ---
 # <a name="tutorial-return-azure-data-box-heavy-and-verify-data-upload-to-azure-preview"></a>Tutorial: Devolver o Azure Data Box Heavy e verificar o upload de dados no Azure (versão prévia)
 
@@ -43,11 +43,11 @@ Antes de começar, verifique se:
 ## <a name="ship-data-box-heavy-back"></a>Devolver o Data Box Heavy
 
 1. Verifique se o dispositivo está desligado e se todos os cabos foram removidos. Enrole e coloque os quatro cabos de alimentação com segurança na bandeja que você pode acessar na parte traseira do dispositivo.
-2. Se o dispositivo estiver sendo enviado nos EUA ou na Europa, a transportadora será a FedEx.
+2. O dispositivo é enviado com frete LTL por FedEx nos EUA e DHL na UE
 
-    1. Ligue para o número local da transportadora para agendar a retirada.
-    2. Contate as [Operações do Data Box](mailto:DataBoxOps@microsoft.com) para informar sobre a retirada e obter a etiqueta de remessa de devolução.
-    3. Verifique se a etiqueta de remessa é exibida na tela clara na parte dianteira do dispositivo.
+    1. Contate as [Operações do Data Box](mailto:DataBoxOps@microsoft.com) para informar sobre a retirada e obter a etiqueta de remessa de devolução.
+    2. Ligue para o número local da transportadora para agendar a retirada.
+    3. Certifique-se de que a etiqueta de remessa é exibida com destaque no exterior da remessa.
     4. Lembre-se de remover do dispositivo as etiquetas de remessa antigas da remessa anterior.
 3. Após a retirada e o exame do Data Box Heavy pela transportadora, o status do pedido no portal será atualizado para **Retirado**. Uma ID de rastreamento também é exibida.
 

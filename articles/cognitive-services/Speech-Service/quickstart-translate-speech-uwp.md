@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 03/13/2019
+ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 123a05012db1494799bf523bda2972a18c8f2ff4
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: 108edfeb7bfe24184219e0011f054c36c22c9890
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65465617"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67602779"
 ---
 # <a name="quickstart-translate-speech-with-the-speech-sdk-for-c-uwp"></a>Início Rápido: Tradução de fala com o Speech SDK para C# (UWP)
 
-Guias de início rápido também estão disponíveis para a [conversão de fala em texto](quickstart-csharp-uwp.md) e o [assistente virtual que tem como prioridade o uso de voz](quickstart-virtual-assistant-csharp-uwp.md).
+Guias de início rápido também estão disponíveis para a [tradução de fala em fala](quickstart-csharp-uwp.md), [texto em fala](quickstart-text-to-speech-csharp-uwp.md) e o [assistente virtual que tem como prioridade o uso de voz](quickstart-virtual-assistant-csharp-uwp.md).
 
 Neste início rápido, você criará um aplicativo UPW (Plataforma Universal do Windows) simples que captura a fala do usuário do microfone do seu computador, converte a fala e transcreve o texto traduzido para a linha de comando em tempo real. Este aplicativo foi projetado para ser executado no Windows de 64 bits e é criado com o [pacote NuGet do Speech SDK](https://aka.ms/csspeech/nuget) e o Microsoft Visual Studio 2017.
 

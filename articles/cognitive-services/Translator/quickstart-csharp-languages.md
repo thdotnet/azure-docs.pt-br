@@ -3,19 +3,19 @@ title: 'Início Rápido: Obter lista de idiomas compatíveis, C# – API de Trad
 titleSuffix: Azure Cognitive Services
 description: Neste início rápido, você obtém uma lista dos idiomas com suporte para tradução, transliteração e pesquisa em dicionário usando a API de Tradução de Texto.
 services: cognitive-services
-author: erhopf
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/04/2019
-ms.author: erhopf
-ms.openlocfilehash: e5e57757fbd80ca8e90b9997440050a751914a8a
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.author: swmachan
+ms.openlocfilehash: 5b5bf33c70b9f8827f1f55378e9caf4d1c858bed
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66514949"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449414"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-get-a-list-of-supported-languages-using-c"></a>Início Rápido: Usar a API de Tradução de Texto para obter uma lista dos idiomas com suporte usando C#
 
@@ -114,6 +114,8 @@ var jsonResponse = response.Content.ReadAsStringAsync().Result;
 Console.WriteLine(PrettyPrint(jsonResponse));
 Console.WriteLine("Press any key to continue.");
 ```
+
+Se estiver usando uma assinatura de vários serviço cognitivos, você também deve incluir o `Ocp-Apim-Subscription-Region` em seus parâmetros de solicitação. [Saiba mais sobre a autenticação com a assinatura de vários serviços](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
 
 Para imprimir a resposta com "Estilo de formatação" (formatação para a resposta), adicione essa função à sua classe de Programa:
 ```

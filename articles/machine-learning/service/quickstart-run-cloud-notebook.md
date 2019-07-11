@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 05/14/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3e360b019a0c275c5ce0f9986fabd5dfc847f130
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 68f24d4d019af873a0ca45792a3cbcc3dd3c3c3f
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "66015285"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67476038"
 ---
 # <a name="quickstart-use-a-cloud-based-notebook-server-to-get-started-with-azure-machine-learning"></a>Início Rápido: Usar um servidor do notebook baseado em nuvem para começar a usar o Azure Machine Learning
 
@@ -74,15 +74,20 @@ Depois que sua VM estiver em execução, use a seção **VMs de Notebook** para 
 
 1. Na página da Web do Jupyter notebook, o nome da pasta superior é o seu nome de usuário.  Selecione esta pasta.
 
+    > [!TIP]
+    > Esta pasta está localizada no [contêiner de armazenamento](concept-workspace.md#resources) em seu espaço de trabalho, não na VM do notebook.  Você pode excluir a VM do notebook e ainda manter todo o seu trabalho.  Quando você criar uma nova VM do notebook posteriormente, ela será carregada dessa mesma pasta.
+
 1. O nome da pasta de amostras inclui um número de versão, por exemplo, **amostras-1.0.33.1**.  Selecione a pasta de amostras.
 
-1. Selecione o notebook de **início rápido**.
+1. Selecione a pasta de **início rápido**.
 
 ## <a name="run-the-notebook"></a>Executar o notebook
 
 Execute um notebook que estima o pi e registra o erro em seu workspace.
 
 1. Selecione **01.run experiment.ipynb** para abrir o notebook.
+
+1. Se você vir um alerta de "Kernel não encontrado", selecione o kernel **Python 3.6 - AzureML** (localizado na metade inferior da lista) e defina o kernel.
 
 1. Clique na primeira célula de código e selecione **Executar**.
 
@@ -113,11 +118,11 @@ Execute um notebook que estima o pi e registra o erro em seu workspace.
 
 1. Clique no **Link para o portal do Azure** para exibir informações sobre a execução em seu workspace.  Esse link abre seu workspace no portal do Azure.
 
-1. Os gráficos dos valores registrados que você vê foram criados automaticamente no workspace. Sempre que registra diversos valores com o mesmo parâmetro de nome, um gráfico é gerado automaticamente para você.
+1. Os gráficos dos valores registrados que você vê foram criados automaticamente no workspace. Sempre que registra diversos valores com o mesmo parâmetro de nome, um gráfico é gerado automaticamente para você. Veja um exemplo:
 
    ![Exibir histórico](./media/quickstart-run-cloud-notebook/web-results.png)
 
-Já que o código para aproximar o pi usa valores aleatórios, seus gráficos mostrarão valores diferentes.  
+Já que o código para aproximar o pi usa valores aleatórios, seus gráficos poderão ser diferentes.  
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
@@ -152,7 +157,9 @@ Neste início rápido, você concluiu estas tarefas:
 * Execute o notebook.
 * Exiba os valores de erro registrados em log no workspace.  Este exemplo mostra como o espaço de trabalho pode ajudar a manter o controle das informações geradas em um script. 
 
-Na página da Web do Jupyter Notebook, procure entre os outros notebooks da pasta de amostras para saber mais sobre o Serviço do Azure Machine Learning.
+Na página da Web do Jupyter Notebook, na pasta **quickstart**, abra e execute o notebook **02.deploy-web-service.ipynb** para saber como implantar um serviço Web.
+
+Novamente na página da Web do Jupyter Notebook, procure entre os outros notebooks da pasta de exemplos para saber mais sobre o Serviço do Azure Machine Learning.
 
 Para obter uma experiência de fluxo de trabalho detalhado, siga os tutoriais do Machine Learning para treinar e implantar um modelo:  
 

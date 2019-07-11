@@ -16,12 +16,12 @@ ms.author: jmprieur
 ms.reviwer: brandwe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6112facfc0c10d7a0a0495cd778fa6c3cb6130a7
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: d8f8c8e98a7a99fc1b94bd5ae84062843ebabbc1
+ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65962143"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67550588"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-from-an-android-app"></a>Conectar usuários e chamar o Microsoft Graph em um aplicativo Android
 
@@ -178,7 +178,7 @@ Você pode registrar seu aplicativo de duas maneiras, conforme descrito nas duas
 
 ### <a name="add-msal-to-your-project"></a>Adicionar MSAL ao seu projeto
 
-1. No Android Studio, selecione **Gradle Scripts** > **build.gradle (Módulo: aplicativo)**.
+1. No Android Studio, selecione **Gradle Scripts** > **build.gradle (Módulo: aplicativo)** .
 2. Em **Dependências**, cole o seguinte código:
 
     ```gradle  
@@ -465,7 +465,7 @@ Depois de obtermos um token com sucesso, podemos fazer uma solicitação à API 
 
 | chave de cabeçalho    | value                 |
 | ------------- | --------------------- |
-| Autorização | Bearer <token-de-acesso> |
+| Autorização | Bearer \<access-token> |
 
 Para fazer isso no código, adicione os dois métodos a seguir ao seu aplicativo para chamar o gráfico e atualizar a interface do usuário: 
 

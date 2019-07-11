@@ -10,12 +10,12 @@ ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 02/04/2019
 ms.author: diberry
-ms.openlocfilehash: 85d5fa1cc036737497e276413985e0828e3b51f6
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: c6fddec80da1baa852a2f3712a94b785d775919e
+ms.sourcegitcommit: 6e6813f8e5fa1f6f4661a640a49dc4c864f8a6cb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65788712"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67151036"
 ---
 # <a name="quickstart-create-a-knowledge-base-in-qna-maker-using-java"></a>Início Rápido: Criar uma base de dados de conhecimento no QnA Maker usando o Java
 
@@ -100,7 +100,7 @@ Repita a chamada até ter um resultado com êxito ou falha:
 ```
 
 ## <a name="add-a-main-method"></a>Adicionar um método principal
-O método principal cria a base de dados de conhecimento, em seguida, sonda o status. A **ID da Operação** de criação é retornada no **Local** do campo de cabeçalho da resposta POST e, em seguida, usada como parte da rota na solicitação GET. **O loop `while` repete o status se não for concluído.
+O método principal cria a base de dados de conhecimento, em seguida, sonda o status. A ID da operação de criação é retornada no **Local** do campo de cabeçalho da resposta POST e, em seguida, é usada como parte da rota na solicitação GET. O loop `while` repete o status se não for concluído.
 
 [!code-java[Add main method](~/samples-qnamaker-java/documentation-samples/quickstarts/create-knowledge-base/CreateKB.java?range=152-191 "Add main method")]
 

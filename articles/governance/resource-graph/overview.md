@@ -7,12 +7,12 @@ ms.date: 05/06/2019
 ms.topic: overview
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: 9d3385b688208065e5854b6358819b5afad8fe65
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 4724789dd1a0893c5ef4ab112306c185f0e87da7
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66162072"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67274390"
 ---
 # <a name="overview-of-the-azure-resource-graph-service"></a>Visão geral do serviço Azure Resource Graph
 
@@ -71,7 +71,7 @@ O Resource Graph limita as consultas a nível do locatário. A resposta do servi
 - `x-ms-user-quota-remaining` (int): A cota de recursos que resta para o usuário. Esse valor é mapeado para a contagem de consultas.
 - `x-ms-user-quota-resets-after` (hh:mm:ss): A duração de tempo até que o consumo da cota do usuário seja redefinido
 
-Para saber mais, confira [Limitar solicitação do Resource Manager](../../azure-resource-manager/resource-manager-request-limits.md).
+Para saber mais, consulte [Orientação para solicitações limitadas](./concepts/guidance-for-throttled-requests.md).
 
 ## <a name="running-your-first-query"></a>Realizando sua primeira consulta
 

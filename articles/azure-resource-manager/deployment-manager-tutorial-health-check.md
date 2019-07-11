@@ -4,21 +4,16 @@ description: Use modelos do Resource Manager com o Gerenciador de Implantação 
 services: azure-resource-manager
 documentationcenter: ''
 author: mumian
-manager: dougeby
-editor: tysonn
 ms.service: azure-resource-manager
-ms.workload: multiple
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.date: 05/31/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: d43a0e7c48db9dd42c7cf3b52e5d4072a4827898
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: 0e8a9fefdf92f568001cc3352fe83a85157acf9a
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66479170"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67442592"
 ---
 # <a name="tutorial-use-health-check-in-azure-deployment-manager-public-preview"></a>Tutorial: Usar a verificação de integridade no Gerenciador de Implantação do Azure (versão prévia pública)
 
@@ -41,7 +36,10 @@ Este tutorial cobre as seguintes tarefas:
 > * Verificar a implantação de distribuição
 > * Limpar recursos
 
-A referência à API REST do Gerenciador de Implantação do Azure pode ser encontrada [aqui](https://docs.microsoft.com/rest/api/deploymentmanager/).
+Recursos adicionais:
+
+- A [referência à API REST do Gerenciador de Implantação do Azure](https://docs.microsoft.com/rest/api/deploymentmanager/).
+- [Um exemplo do Gerenciador de Implantação do Azure](https://github.com/Azure-Samples/adm-quickstart).
 
 Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://azure.microsoft.com/free/) antes de começar.
 
@@ -59,7 +57,7 @@ Em produção, normalmente, são usados um ou mais provedores de monitoramento. 
 Os dois seguintes arquivos são usados para implantar a Função do Azure. Você não precisa baixar esses arquivos para acompanhar o tutorial.
 
 * Um modelo do Resource Manager localizado em [https://armtutorials.blob.core.windows.net/admtutorial/deploy_hc_azure_function.json](https://armtutorials.blob.core.windows.net/admtutorial/deploy_hc_azure_function.json). Você implantará esse modelo para criar uma Função do Azure.
-* Um arquivo zip do código-fonte da Função do Azure, [http://armtutorials.blob.core.windows.net/admtutorial/ADMHCFunction0417.zip](http://armtutorials.blob.core.windows.net/admtutorial/ADMHCFunction0417.zip). Esse zip chamado é chamado pelo modelo do Resource Manager.
+* Um arquivo zip do código-fonte da Função do Azure, [https://armtutorials.blob.core.windows.net/admtutorial/ADMHCFunction0417.zip](https://armtutorials.blob.core.windows.net/admtutorial/ADMHCFunction0417.zip). Esse zip chamado é chamado pelo modelo do Resource Manager.
 
 Para implantar a função do Azure, selecione **Experimentar** para abrir o Azure Cloud Shell e, em seguida, cole o script a seguir na janela do shell.  Para colar o código, clique com o botão direito do mouse na janela do shell e, em seguida, selecione **Colar**.
 

@@ -5,13 +5,13 @@ ms.service: cosmos-db
 ms.topic: tutorial
 author: deborahc
 ms.author: dech
-ms.date: 05/20/2019
-ms.openlocfilehash: 9e7342ebcbcf536b26e6cf7fb89e3cf58666d24f
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.date: 06/21/2019
+ms.openlocfilehash: d7d9d62525161e6871cafd65cf5cd2c403cf0579
+ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65953964"
+ms.lasthandoff: 06/22/2019
+ms.locfileid: "67331768"
 ---
 # <a name="use-the-azure-cosmos-emulator-for-local-development-and-testing"></a>Usar o Emulador do Azure Cosmos para desenvolvimento e teste locais
 
@@ -284,7 +284,7 @@ Não hesite em enviar um email askcosmosdb@microsoft.com a qualquer momento ou p
 
 Para alterar o número de contêineres disponíveis para o emulador do Azure Cosmos DB, faça o seguinte:
 
-1. Exclua todos os dados locais do emulador do Azure Cosmos clicando com o botão direito do mouse no ícone **Emulador do Azure Cosmos DB** na bandeja do sistema e clicando em **Redefinir Dados…**.
+1. Exclua todos os dados locais do emulador do Azure Cosmos clicando com o botão direito do mouse no ícone **Emulador do Azure Cosmos DB** na bandeja do sistema e clicando em **Redefinir Dados…** .
 2. Excluir todos os dados de emulador desta pasta `%LOCALAPPDATA%\CosmosDBEmulator`.
 3. Saia de todas as instâncias abertas clicando com o botão direito do mouse no ícone do **Emulador do Azure Cosmos DB** na bandeja do sistema e clicando em **Sair**. Pode levar um minuto para que todas as instâncias saiam.
 4. Instale a versão mais recente do [emulador Azure Cosmos](https://aka.ms/cosmosdb-emulator).
@@ -413,6 +413,57 @@ Para abrir o Data Explorer, navegue até a URL a seguir no seu navegador. O pont
 
     https://<emulator endpoint provided in response>/_explorer/index.html
 
+## Executar no Mac ou Linux<a id="mac"></a>
+
+Atualmente, o emulador do Cosmos somente pode ser executado no Windows. Os usuários do Mac ou do Linux podem executar o emulador em uma máquina virtual do Windows hospedada em um hipervisor, como o Parallels ou o VirtualBox. Abaixo estão as etapas para habilitá-lo.
+
+Na VM do Windows, execute o comando a seguir e anote o endereço IPv4.
+
+```cmd
+ipconfig.exe
+```
+
+No seu aplicativo, você precisa alterar o URI do objeto DocumentClient para usar o endereço IPv4 retornado por `ipconfig.exe`. A próxima etapa é contornar a validação de autoridade de certificação ao construir o objeto DocumentClient. Para isso, você precisará fornecer um objeto HttpClientHandler para o construtor do DocumentClient, que tem sua própria implementação para ServerCertificateCustomValidationCallback.
+
+Abaixo é mostrado um exemplo de como deve ser o código.
+
+```csharp
+using System;
+using Microsoft.Azure.Documents;
+using Microsoft.Azure.Documents.Client;
+using System.Net.Http;
+
+namespace emulator
+{
+    class Program
+    {
+        static async void Main(string[] args)
+        {
+            string strEndpoint = "https://10.135.16.197:8081/";  //IPv4 address from ipconfig.exe
+            string strKey = "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==";
+
+            //Work around the CA validation
+            var httpHandler = new HttpClientHandler()
+            {
+                ServerCertificateCustomValidationCallback = (req,cert,chain,errors) => true
+            };
+
+            //Pass http handler to document client
+            using (DocumentClient client = new DocumentClient(new Uri(strEndpoint), strKey, httpHandler))
+            {
+                Database database = await client.CreateDatabaseIfNotExistsAsync(new Database { Id = "myDatabase" });
+                Console.WriteLine($"Created Database: id - {database.Id} and selfLink - {database.SelfLink}");
+            }
+        }
+    }
+}
+```
+
+Por fim, na VM do Windows, inicie o emulador do Cosmos a partir da linha de comando usando as opções a seguir.
+
+```cmd
+Microsoft.Azure.Cosmos.Emulator.exe /AllowNetworkAccess /Key=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==
+```
 
 ## <a name="troubleshooting"></a>solução de problemas
 
@@ -450,7 +501,7 @@ Para coletar rastreamentos de depuração, execute os seguintes comandos em um p
 ### <a id="uninstall"></a>Desinstalar o emulador local
 
 1. Saia de todas as instâncias abertas do emulador local clicando com o botão direito do mouse no ícone do Emulador do Azure Cosmos na bandeja do sistema e clicando em Sair. Pode levar um minuto para que todas as instâncias saiam.
-2. Na caixa de pesquisa do Windows, digite **Aplicativos e recursos** e clique no resultado de **Aplicativos e recursos (Configurações do sistema)**.
+2. Na caixa de pesquisa do Windows, digite **Aplicativos e recursos** e clique no resultado de **Aplicativos e recursos (Configurações do sistema)** .
 3. Na lista de aplicativos, vá para **Emulador do Azure Cosmos DB**, selecione-o, clique em **Desinstalar** e então confirme e clique em **Desinstalar** novamente.
 4. Após a desinstalação do aplicativo, navegue até `%LOCALAPPDATA%\CosmosDBEmulator` e exclua a pasta.
 

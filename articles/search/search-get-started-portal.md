@@ -1,6 +1,6 @@
 ---
-title: 'Início Rápido: Criar, carregar e consultar um índice do Azure Search no portal do Azure – Azure Search'
-description: Saiba como criar e consultar seu primeiro índice no Azure Search usando dados de exemplo internos e o Assistente para Importação de Dados no portal do Azure.
+title: 'Início Rápido: Criar, carregar e consultar um índice usando o portal do Azure - Azure Search'
+description: Use o assistente de Importação de dados no portal do Azure para criar, carregar e consultar seu primeiro índice no Azure Search.
 author: HeidiSteen
 manager: cgronlun
 tags: azure-portal
@@ -10,18 +10,18 @@ ms.topic: tutorial
 ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: e5baa0876dc976553e8e541cef6b481329500bf6
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: 4a1944c5c5f169274cf45bd3ebfb6df47942dd5a
+ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65606452"
+ms.lasthandoff: 07/01/2019
+ms.locfileid: "67485641"
 ---
-# <a name="quickstart-use-built-in-portal-tools-for-azure-search-import-indexing-and-queries"></a>Início Rápido: Usar ferramentas internas do portal para importação, indexação e consultas do Azure Search
+# <a name="quickstart-create-an-azure-search-index-using-the-azure-portal"></a>Início Rápido: Criar um índice do Azure Search usando o portal do Azure
 > [!div class="op_single_selector"]
 > * [Portal](search-get-started-portal.md)
 > * [PowerShell](search-howto-dotnet-sdk.md)
-> * [Postman](search-fiddler.md)
+> * [Postman](search-get-started-postman.md)
 > * [C#](search-create-index-dotnet.md)
 >*
 
@@ -34,7 +34,7 @@ Para se familiarizar rapidamente com os conceitos do Azure Search, experimente a
 > * Exibir um índice existente e as opções para modificá-lo
 > * Explore a pesquisa de texto completo, filtros, facetas, pesquisa difusa e pesquisa geográfica com o **Search Explorer**
 
-Se as ferramentas forem muito limitadas, considere a possibilidade de começar com uma [introdução à programação do Azure Search no .NET baseada em código](search-howto-dotnet-sdk.md) ou usar o [Postman ou o Fiddler para fazer chamadas à API REST](search-fiddler.md).
+Se as ferramentas forem muito limitadas, considere a possibilidade de começar com uma [introdução à programação do Azure Search no .NET baseada em código](search-howto-dotnet-sdk.md) ou usar o [Postman ou o Fiddler para fazer chamadas à API REST](search-get-started-postman.md).
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar. Você também pode assistir a uma demonstração de seis minutos das etapas deste tutorial a partir do minuto 3 neste [vídeo de visão geral do Azure Search](https://channel9.msdn.com/Events/Connect/2016/138).
 
@@ -274,4 +274,4 @@ Você pode explorar mais o Azure Search usando as ferramentas programáticas:
 
 * [Criar um índice usando o SDK do .NET](https://docs.microsoft.com/azure/search/search-create-index-dotnet)
 * [Criar um índice usando APIs REST](https://docs.microsoft.com/azure/search/search-create-index-rest-api)
-* [Criar um índice usando o Postman ou o Fiddler e as APIs REST do Azure Search](search-fiddler.md)
+* [Criar um índice usando o Postman ou o Fiddler e as APIs REST do Azure Search](search-get-started-postman.md)

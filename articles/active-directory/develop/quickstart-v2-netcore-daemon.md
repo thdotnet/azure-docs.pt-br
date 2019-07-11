@@ -17,12 +17,12 @@ ms.date: 04/10/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3851e53bb648811b46ec69d9c4fc91b920ce80fb
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: d64c13a43d1e74e4372e57cf6d5c3054f5effea4
+ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65784951"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67540703"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-console-app-using-apps-identity"></a>Início Rápido: Adquirir um token e chamar a API do Microsoft Graph de um aplicativo de console usando a identidade do aplicativo
 
@@ -96,6 +96,10 @@ Este início rápido requer o [.NET Core 2.2](https://www.microsoft.com/net/down
     > > [!div renderon="portal" id="certandsecretspage" class="sxs-lookup"]
     > > [Gerar um novo segredo do cliente]()
     
+    > [!div renderon="portal"]
+    > > [!NOTE]
+    > > Este guia de início rápido oferece suporte a Enter_the_Supported_Account_Info_Here.
+    
     > [!div renderon="docs"]
     >> Em que:
     >> * `Enter_the_Application_Id_Here` - é a **ID do aplicativo (cliente)** que você registrou.
@@ -104,7 +108,7 @@ Este início rápido requer o [.NET Core 2.2](https://www.microsoft.com/net/down
 
     > [!div renderon="docs"]
     > > [!TIP]
-    > > Para encontrar os valores de **ID do aplicativo (cliente)**, **ID de diretório (locatário)**, acesse a página **Visão Geral** do aplicativo no portal do Azure. Para gerar uma nova chave, acesse a página **Certificados e segredos**.
+    > > Para encontrar os valores de **ID do aplicativo (cliente)** , **ID de diretório (locatário)** , acesse a página **Visão Geral** do aplicativo no portal do Azure. Para gerar uma nova chave, acesse a página **Certificados e segredos**.
     
 #### <a name="step-4-admin-consent"></a>Etapa 4: Consentimento do administrador
 
@@ -157,7 +161,7 @@ Você deverá ver uma lista de usuários em seu diretório do Azure AD como resu
 
 ### <a name="msalnet"></a>MSAL.NET
 
-MSAL ([Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client)) é a biblioteca usada para conectar usuários e solicitar tokens usados para acessar uma API protegida pela plataforma de identidade da Microsoft. Conforme descrito, este início rápido solicita tokens usando a identidade do próprio aplicativo, em vez de permissões delegadas. O fluxo de autenticação usado nesse caso é conhecido como *[fluxo OAuth de credenciais do cliente](v2-oauth2-client-creds-grant-flow.md)*. Para saber mais sobre como usar MSAL.NET com fluxo de credenciais de cliente, confira [este artigo](https://aka.ms/msal-net-client-credentials).
+MSAL ([Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client)) é a biblioteca usada para conectar usuários e solicitar tokens usados para acessar uma API protegida pela plataforma de identidade da Microsoft. Conforme descrito, este início rápido solicita tokens usando a identidade do próprio aplicativo, em vez de permissões delegadas. O fluxo de autenticação usado nesse caso é conhecido como *[fluxo OAuth de credenciais do cliente](v2-oauth2-client-creds-grant-flow.md)* . Para saber mais sobre como usar MSAL.NET com fluxo de credenciais de cliente, confira [este artigo](https://aka.ms/msal-net-client-credentials).
 
  Você pode instalar o MSAL.NET executando o comando abaixo no **Console do Gerenciador de Pacotes** do Visual Studio:
 

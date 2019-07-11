@@ -3,19 +3,19 @@ title: 'Início Rápido: Obter lista de idiomas compatíveis, Node.js – API de
 titleSuffix: Azure Cognitive Services
 description: Neste início rápido, você obterá uma lista dos idiomas compatíveis com tradução, transliteração e pesquisa em dicionário, além de exemplos que usam a API de Tradução de Texto com Node.js.
 services: cognitive-services
-author: erhopf
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/04/2019
-ms.author: erhopf
-ms.openlocfilehash: 1341307ef3868e5398f8ee6583c8bec9759832f5
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.author: swmachan
+ms.openlocfilehash: cb01269d21d3b036dfff84faef1903dc082dc6f1
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66515151"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67445033"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-get-a-list-of-supported-languages-with-nodejs"></a>Início Rápido: Usar a API de Tradução de Texto para obter uma lista dos idiomas com suporte com Node.js
 
@@ -63,6 +63,8 @@ let options = {
     json: true,
 };
 ```
+
+Se estiver usando uma assinatura de vários serviço cognitivos, você também deverá incluir o `Ocp-Apim-Subscription-Region` em seus parâmetros de solicitação. [Saiba mais sobre a autenticação com a assinatura de vários serviços](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
 
 ## <a name="make-the-request-and-print-the-response"></a>Fazer a solicitação e imprimir a resposta
 

@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: sample
-ms.date: 04/16/2019
-ms.author: aahi
-ms.openlocfilehash: 9cb6a40e6ce53a6d82d4129db876a1b24269f166
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.date: 06/05/2019
+ms.author: raymondl
+ms.openlocfilehash: c803c85a0900a09b18909e2c81d52915a12cff1a
+ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59997709"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67304065"
 ---
 # <a name="example-how-to-extract-key-phrases-using-text-analytics"></a>Exemplo: Como extrair frases-chave na Análise de Texto
 
@@ -22,7 +22,7 @@ A [API de Extração de Frases-chave](https://westcentralus.dev.cognitive.micros
 
 Esse recurso é útil se você precisar identificar rapidamente os principais pontos de estratégias em uma coleção de documentos. Por exemplo, para o texto de entrada dado "A comida estava deliciosa e a equipe era maravilhosa", o serviço retorna os principais pontos de discussão: "comida" e "equipe maravilhosa".
 
-Atualmente, a Extração de Frases-chave dá tem suporte em inglês, alemão, espanhol e japonês. Os idiomas estão em versão prévia. Para obter mais informações, consulte [Linguagens com suporte](../text-analytics-supported-languages.md).
+Para obter mais informações, consulte o artigo de [Linguagens com suporte](../text-analytics-supported-languages.md). 
 
 > [!TIP]
 > A Análise de Texto também fornece uma imagem de contêiner do Docker baseado em Linux para extração de frases-chave, para que você possa [instalar e executar o contêiner de Análise de Texto](text-analytics-how-to-install-containers.md) perto de seus dados.
@@ -84,7 +84,7 @@ Detalhes sobre a definição de solicitação podem ser encontrados em [Como cha
 
 ## <a name="step-2-post-the-request"></a>Etapa 2: Postar a solicitação
 
-A análise é executada após o recebimento da solicitação. O serviço aceita até 100 solicitações por minuto. Cada solicitação pode ter um máximo de 1 MB.
+A análise é executada após o recebimento da solicitação. Consulte a seção [limites de dados](../overview.md#data-limits) na visão geral para obter informações sobre o tamanho e o número de solicitações que você pode enviar por minuto e segundo.
 
 Lembre-se de que o serviço é sem estado. Nenhum dado é armazenado em sua conta. Os resultados são retornados imediatamente na resposta.
 

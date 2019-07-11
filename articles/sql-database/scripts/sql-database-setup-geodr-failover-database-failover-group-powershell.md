@@ -1,6 +1,6 @@
 ---
-title: Grupo de failover, replicação geográfica e exemplo do PowerShell único - Banco de Dados SQL do Azure | Microsoft Docs
-description: Exemplo de script do Azure PowerShell para configurar um grupo de failover de replicação geográfica ativa para um banco de dados individual no Banco de Dados SQL do Azure e fazer failover.
+title: Exemplo do PowerShell - replicação geográfica ativa - BD único do Banco de Dados SQL do Azure | Microsoft Docs
+description: Script de exemplo do Azure PowerShell para configurar a replicação geográfica ativa para um banco de dados individual no Banco de Dados SQL do Azure e fazer failover.
 services: sql-database
 ms.service: sql-database
 ms.subservice: high-availability
@@ -12,14 +12,14 @@ ms.author: mathoma
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: a90753d075f7f4db9dbae95fde979d471db3247c
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.openlocfilehash: 1733e117c2a5b0d58e37c3f5af451f949bd253f9
+ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66729206"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67561480"
 ---
-# <a name="use-powershell-to-configure-an-active-geo-replication-failover-group-for-a-single-database-in-azure-sql-database"></a>Use o PowerShell para configurar um grupo de failover de replicação geográfica ativa para um banco de dados individual do Banco de Dados SQL do Azure
+# <a name="use-powershell-to-configure-active-geo-replication-for-a-single-database-in-azure-sql-database"></a>Use o PowerShell para configurar a replicação geográfica ativa de um banco de dados individual no Banco de Dados SQL do Azure
 
 Este exemplo de script do PowerShell configura um grupo de failover da replicação geográfica ativa para um banco de dados individual e faz o failover para uma réplica secundária do banco de dados.
 

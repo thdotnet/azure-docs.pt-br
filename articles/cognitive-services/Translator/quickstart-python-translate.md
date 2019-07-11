@@ -3,19 +3,19 @@ title: 'Início Rápido: Traduzir texto, Python – API de Tradução de Texto'
 titleSuffix: Azure Cognitive Services
 description: Neste início rápido, você traduzirá texto de um idioma para outro usando a API de Tradução de Texto com Python em menos de 10 minutos.
 services: cognitive-services
-author: erhopf
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/04/2019
-ms.author: erhopf
-ms.openlocfilehash: 48e6aa8c098c702095c9e25207f04eef7fd46a4f
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.author: swmachan
+ms.openlocfilehash: 689aa655967910c0114f50eac522df00c5659d1b
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66514694"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67444903"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-translate-a-string-using-python"></a>Início Rápido: Usar a API de Tradução de Texto para converter uma cadeia de caracteres usando Python
 
@@ -36,7 +36,10 @@ Crie um novo projeto Python usando seu IDE ou editor favorito. Em seguida, copie
 
 ```python
 # -*- coding: utf-8 -*-
-import os, requests, uuid, json
+import os
+import requests
+import uuid
+import json
 ```
 
 > [!NOTE]
@@ -92,13 +95,15 @@ headers = {
 }
 ```
 
+Se estiver usando uma assinatura de vários serviço cognitivos, você também deve incluir o `Ocp-Apim-Subscription-Region` em seus parâmetros de solicitação. [Saiba mais sobre a autenticação com a assinatura de vários serviços](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
+
 ## <a name="create-a-request-to-translate-text"></a>Criar uma solicitação para traduzir texto
 
 Defina uma ou mais cadeias de caracteres que você deseja traduzir:
 
 ```python
 body = [{
-    'text' : 'Hello World!'
+    'text': 'Hello World!'
 }]
 ```
 
@@ -114,7 +119,8 @@ response = request.json()
 A última etapa é imprimir os resultados. Este trecho de código embeleza os resultados classificando as chaves, definindo o recuo e declarando os separadores de item e chave.
 
 ```python
-print(json.dumps(response, sort_keys=True, indent=4, ensure_ascii=False, separators=(',', ': ')))
+print(json.dumps(response, sort_keys=True, indent=4,
+                 ensure_ascii=False, separators=(',', ': ')))
 ```
 
 ## <a name="put-it-all-together"></a>Colocar tudo isso junto

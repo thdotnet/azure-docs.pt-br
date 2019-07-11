@@ -3,19 +3,19 @@ title: 'Início Rápido: Detectar o idioma do texto, Node.js – API de Traduç�
 titleSuffix: Azure Cognitive Services
 description: Neste início rápido, você aprenderá a identificar o idioma do texto fornecido usando o Node.js e a API REST de Tradução de Texto.
 services: cognitive-services
-author: erhopf
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/04/2019
-ms.author: erhopf
-ms.openlocfilehash: 2a22584cdace196287f5475536ac019d8dcfc15d
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.author: swmachan
+ms.openlocfilehash: c4baf5fc72986f73bf9081a351a9baec1b4ea277
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66515166"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67445058"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-detect-text-language-with-nodejs"></a>Início Rápido: Usar a API de Tradução de Texto para detectar o idioma de texto com Node.js
 
@@ -89,10 +89,11 @@ let options = {
     json: true,
 };
 ```
+A maneira mais fácil de autenticar uma solicitação é transmitir sua chave de assinatura como um cabeçalho `Ocp-Apim-Subscription-Key`, que é o que usamos neste exemplo. Como alternativa, você pode trocar sua chave de assinatura por um token de acesso e passar o token de acesso como um cabeçalho `Authorization` para validar sua solicitação. 
 
-### <a name="authentication"></a>Authentication
+Se estiver usando uma assinatura de vários Serviços Cognitivos, você também deve incluir o `Ocp-Apim-Subscription-Region` em seus cabeçalhos de solicitação. 
 
-A maneira mais fácil de autenticar uma solicitação é transmitir sua chave de assinatura como um cabeçalho `Ocp-Apim-Subscription-Key`, que é o que usamos neste exemplo. Como alternativa, você pode trocar sua chave de assinatura por um token de acesso e passar o token de acesso como um cabeçalho `Authorization` para validar sua solicitação. Para obter mais informações, consulte [Autenticação](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication).
+Para obter mais informações, consulte [Autenticação](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication).
 
 ## <a name="make-the-request-and-print-the-response"></a>Fazer a solicitação e imprimir a resposta
 

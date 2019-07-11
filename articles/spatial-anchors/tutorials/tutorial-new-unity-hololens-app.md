@@ -8,12 +8,12 @@ ms.author: pmorgan
 ms.date: 05/14/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 3c125c54c1e0a70cdec19af912b17759d82a9936
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: c831e8fdacf5103619374605dd980ab1f6735047
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65969425"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "67135290"
 ---
 # <a name="tutorial-step-by-step-instructions-to-create-a-new-hololens-unity-app-using-azure-spatial-anchors"></a>Tutorial: Instruções passo a passo para criar um novo aplicativo HoloLens Unity usando Âncoras Espaciais do Azure
 
@@ -38,7 +38,7 @@ Vamos primeiro configurar nosso projeto e a cena do Unity:
 7. Salve a cena padrão vazia em um novo arquivo usando: **Arquivo** > **Salvar Como**.
 8. Nomeie a nova cena como **Principal** e pressione o botão **Salvar**.
 
-**definir as Configurações do Projeto**
+**Definir as Configurações do Projeto**
 
 Vamos agora definir algumas configurações de projeto do Unity que nos ajudam a direcionar ao SDK do Windows Holographic para desenvolvimento. 
 
@@ -57,17 +57,17 @@ Precisamos permitir que o Unity saiba que o aplicativo que estamos tentando expo
 > [!NOTE]
 > Se você não vir o ícone da Windows Store, verifique novamente se você selecionou o back-end de script .NET da Windows Store antes da instalação. Caso contrário, talvez seja necessário reinstalar o Unity com a instalação correta do Windows.
 
-**verificar a configuração do .NET**
+**Verificar a configuração do .NET**
 1. Vá para **Edite** > **Configurações do Projeto** > **Player** (você ainda poderá ter **Player** aberto da etapa anterior).
 2. No **Painel Inspetor** para **Configurações do Player**, selecione o ícone da **Windows Store**.
 3. Na seção de configuração **Outras Configurações**, verifique se o **Back-end de Script** é definido como **.NET**.
 
-**definir capacidades**
+**Definir capacidades**
 1. Vá para **Edite** > **Configurações do Projeto** > **Player** (você ainda poderá ter **Player** aberto da etapa anterior).
 2. No **Painel Inspetor** para **Configurações do Player**, selecione o ícone da **Windows Store**.
 3. Na seção de configuração **Configurações de Publicação**, marque **InternetClientServer** e **SpatialPerception**.
 
-**configurar a câmera virtual principal**
+**Configurar a câmera virtual principal**
 1. No **Painel de Hierarquia**, selecione **Câmera Principal**.
 2. No **Inspetor**, defina sua posição de transformação para **0,0,0**.
 3. Localize a propriedade **Limpar Sinalizadores** e altere a lista suspensa de **Skybox** para **Cor Sólida**.
@@ -75,7 +75,7 @@ Precisamos permitir que o Unity saiba que o aplicativo que estamos tentando expo
 5. Defina **R, G, B e A** para **0**.
 6. Selecione **Adicionar Componente** e pesquise **Colisor de Mapeamento Espacial**.
 
-**criar nosso script**
+**Criar nosso script**
 1. No painel **Projeto**, crie uma pasta chamada **Scripts** sob a pasta **Ativos**. 
 2. Clique com o botão direito do mouse na pasta e, em seguida, selecione **Criar >** , **Script C#** . Dê a ela o título **AzureSpatialAnchorsScript**. 
 3. Vá para **GameObject** -> **Criar Vazio**. 

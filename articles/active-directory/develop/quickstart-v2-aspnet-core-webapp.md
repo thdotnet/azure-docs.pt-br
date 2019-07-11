@@ -17,12 +17,12 @@ ms.date: 04/11/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e51437a99217316ead50d4075be52f089225e618
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 04d13786dc731627ba2000ab6069ea06ed3183ba
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65190865"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67565453"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-core-web-app"></a>Início Rápido: Adicionar entrada com a Microsoft para um aplicativo Web do ASP.NET Core
 
@@ -86,6 +86,10 @@ Neste início rápido, você aprenderá como um aplicativo Web ASP.NET Core pode
     "TenantId": "Enter_the_Tenant_Info_Here"
     ```
 
+> [!div class="sxs-lookup" renderon="portal"]
+> > [!NOTE]
+> > Este guia de início rápido oferece suporte a Enter_the_Supported_Account_Info_Here.
+
 > [!div renderon="docs"]
 > Em que:
 > - `Enter_the_Application_Id_here` - é a **ID do aplicativo (cliente)** para o aplicativo registrado no portal do Azure. Você pode encontrar **ID do aplicativo (cliente)** na página **Visão geral** do aplicativo.
@@ -95,7 +99,7 @@ Neste início rápido, você aprenderá como um aplicativo Web ASP.NET Core pode
 >   - Se seu aplicativo dá suporte a **Todos os usuários de contas da Microsoft**, substitua esse valor por `common`
 >
 > > [!TIP]
-> > Para encontrar os valores de **ID do aplicativo (cliente)**, **ID de diretório (locatário)** e **Tipos de conta com suporte**, vá para a página **Visão Geral** do aplicativo no portal do Azure.
+> > Para encontrar os valores de **ID do aplicativo (cliente)** , **ID de diretório (locatário)** e **Tipos de conta com suporte**, vá para a página **Visão Geral** do aplicativo no portal do Azure.
 
 ## <a name="more-information"></a>Mais informações
 

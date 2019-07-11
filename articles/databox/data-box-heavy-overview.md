@@ -7,14 +7,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: overview
-ms.date: 05/20/2019
+ms.date: 06/19/2019
 ms.author: alkohli
-ms.openlocfilehash: 0f71d9b4400041db50cb3e24940e922acde55edc
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 94ba0040b1de7e1f03825f1cd2ef2a6536343d96
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65991682"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67271752"
 ---
 # <a name="what-is-azure-data-box-heavy-preview"></a>O que é o Azure Data Box Heavy? (versão prévia)
 
@@ -62,14 +62,14 @@ O dispositivo Data Box Heavy tem os seguintes recursos nesta versão.
 
 | Especificações                                          | DESCRIÇÃO              |
 |---------------------------------------------------------|--------------------------|
-| Peso                                                  | Aproximadamente 500 lbs.                |
+| Peso                                                  | Aproximadamente 500 lbs. <br>Dispositivo nas rodas para transporte|
 | Dimensões                                              | Largura: 66,04 cm de altura: 71,12 cm de comprimento: 121,92 cm |
-| Espaço em rack                                              | Não montável em rack|
+| Espaço em rack                                              | Não pode ser montado em rack|
 | Cabos necessários                                         | Inclui 4 cabos de alimentação 120 V/10 A de aterramento (NEMA 5-15) <br> O dispositivo tem suporte para até 240 V de potência e conectores C-13 <br> Usar cabos de rede compatíveis com [Mellanox MCX314A-BCCT](https://store.mellanox.com/products/mellanox-mcx314a-bcct-connectx-3-pro-en-network-interface-card-40-56gbe-dual-port-qsfp-pcie3-0-x8-8gt-s-rohs-r6.html)  |
-|Potência                                                    | 4 unidades de fonte de energia internas compartilhadas nos dois nós do dispositivo|
+| Potência                                                    | 4 unidades de fonte de energia internas compartilhadas nos dois nós do dispositivo <br> Consumo de energia típico de 1.200 watts|
 | Capacidade de armazenamento                                        | Aproximadamente 70 discos de 1 PB brutos com 14 TB cada <br> 770 TB de capacidade utilizável|
-|Número de nós                                          | 2 nós independentes por dispositivo (500 TB cada) |
-| Adaptadores de rede por nó                             | 4 adaptadores de rede por nó <br> MGMT, DATA3 <ul><li> 2 interfaces 1 GbE </li><li> MGMT serve para gerenciamento, não é configurável pelo usuário, e é usada na configuração inicial </li><li> DATA3 é uma interface de dados configurável pelo usuário, com protocolo DHCP por padrão</li><li>Os adaptadores de rede 1 GbE também podem ser configurados como as interfaces 10 GbE</li></ul>Interfaces de dados DATA1, DATA2 <ul><li>2 interfaces 40 GbE </li><li> Protocolo DHCP por padrão ou interfaces de dados estáticos configuráveis pelo usuário</li>|
+| Número de nós                                          | 2 nós independentes por dispositivo (500 TB cada) |
+| Adaptadores de rede por nó                             | 4 adaptadores de rede por nó <br><br> MGMT, DATA3 <ul><li> 2 interfaces 1 GbE </li><li> MGMT serve para gerenciamento e configuração inicial, não é configurável pelo usuário </li><li> DATA3 é um protocolo DHCP configurável pelo usuário por padrão</li><li>Os adaptadores de rede 1 GbE também podem ser configurados como as interfaces 10 GbE</li></ul>Interfaces de dados DATA1, DATA2 <ul><li>2 interfaces 40 GbE </li><li> Usuário configurável para DHCP (padrão) ou estático</li></ul>|
 
 
 ## <a name="components"></a>Componentes

@@ -1,21 +1,24 @@
 ---
 title: Como configurar vários mestres no Azure Cosmos DB
 description: Saiba como configurar vários mestres nos aplicativos no Azure Cosmos DB.
-author: rimman
+author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 05/23/2019
-ms.author: rimman
-ms.openlocfilehash: 1d9fa7380f62165d360888fd8cb03919f1736297
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.date: 07/02/2019
+ms.author: mjbrown
+ms.openlocfilehash: 73b4ada713e264aaa2504fe4d4f504e07ae45181
+ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66244760"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67538090"
 ---
 # <a name="configure-multi-master-in-your-applications-that-use-azure-cosmos-db"></a>Configurar vários mestres nos aplicativos que usam o Azure Cosmos DB
 
-Para usar o recurso de vários mestres em seu aplicativo, você precisará habilitar gravações em várias regiões e configurar a capacidade de hospedagem múltipla no Azure Cosmos DB. Para configurar a hospedagem múltipla, defina a região em que o aplicativo está implantado.
+Quando uma conta tiver sido criada com várias regiões de gravação habilitadas, faça duas alterações em seu aplicativo em ConnectionPolicy para DocumentClient a fim de habilitar os recursos de vários mestres e a hospedagem múltipla no Azure Cosmos DB. Em ConnectionPolicy, defina UseMultipleWriteLocations como true e passe o nome da região em que o aplicativo é implantado em SetCurrentLocation. Isso preencherá a propriedade PreferredLocations com base na proximidade geográfica do local passado. Se uma nova região posteriormente é adicionada à conta, o aplicativo não precisa ser atualizado ou reimplantado, ele detectará automaticamente a região mais próxima e será automaticamente iniciado em caso de evento regional.
+
+> [!TIP]
+> As contas do Cosmos criadas e não configuradas inicialmente para vários mestres podem ser migradas sem nenhum tempo de inatividade. Para saber mais, consulte [Configurar a gravação de várias regiões](how-to-manage-database-account.md#configure-multiple-write-regions)
 
 ## <a id="netv2"></a>SDK do .NET v2
 

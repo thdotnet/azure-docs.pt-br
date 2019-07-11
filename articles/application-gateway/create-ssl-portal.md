@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: tutorial
 ms.date: 4/17/2019
 ms.author: victorh
-ms.openlocfilehash: f3ba3eb12dc85a72c4e49c374e62209b83400d33
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ed4230969e81eee0d77b7e4b69eac3a264068388
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66134506"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67449158"
 ---
 # <a name="tutorial-configure-an-application-gateway-with-ssl-termination-using-the-azure-portal"></a>Tutorial: Configurar um gateway de aplicativo com terminação SSL usando o portal do Azure
 
@@ -54,9 +54,9 @@ PSParentPath: Microsoft.PowerShell.Security\Certificate::LocalMachine\my
 Thumbprint                                Subject
 ----------                                -------
 E1E81C23B3AD33F9B4D1717B20AB65DBB91AC630  CN=www.contoso.com
-
-Use [Export-PfxCertificate](https://docs.microsoft.com/powershell/module/pkiclient/export-pfxcertificate) with the Thumbprint that was returned to export a pfx file from the certificate:
 ```
+
+Use o [Export-PfxCertificate](https://docs.microsoft.com/powershell/module/pkiclient/export-pfxcertificate) com a impressão digital que foi retornada para exportar um arquivo pfx do certificado:
 
 ```powershell
 $pwd = ConvertTo-SecureString -String "Azure123456!" -Force -AsPlainText

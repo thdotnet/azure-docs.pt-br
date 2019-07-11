@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c64fb2dc4c494252f0078b8d23e05b15f07ebe00
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 8ad2ffddf96aa6ecc886ac5653d2d0b8dcfb0856
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65903553"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67091709"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sap-business-object-cloud"></a>Tutorial: Integração do Azure Active Directory com o SAP Business Object Cloud
 
@@ -53,7 +53,7 @@ Para configurar a integração do SAP Business Object Cloud ao Azure AD, você p
 
 **Para adicionar o SAP Business Object Cloud da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -105,14 +105,14 @@ Para configurar o logon único do Azure AD com o SAP Business Object Cloud, exec
 
     ![Informações de Domínio e URLs do SAP Business Object Cloud para logon único](common/sp-identifier.png)
 
-     a. Na caixa de texto **URL de Logon**, digite uma URL usando o seguinte padrão:
+    a. Na caixa de texto **URL de Logon**, digite uma URL usando o seguinte padrão:
 
     | |
     |-|-|
     | `https://<sub-domain>.sapanalytics.cloud/` |
     | `https://<sub-domain>.sapbusinessobjects.cloud/` |
 
-    b. Na caixa de texto **Identificador (ID da Entidade)**, digite uma URL usando o seguinte padrão:
+    b. Na caixa de texto **Identificador (ID da Entidade)** , digite uma URL usando o seguinte padrão:
     
     | |
     |-|-|
@@ -154,7 +154,7 @@ Para configurar o logon único do Azure AD com o SAP Business Object Cloud, exec
 
     ![Selecionar Atributo de Usuário](./media/sapboc-tutorial/config6.png)
 
-8. Para verificar a conta com o provedor de identidade (Etapa 4), na caixa **Credencial de Logon (Email)**, insira o endereço de email do usuário. Em seguida, selecione **Verificar Conta**. O sistema adiciona credenciais de entrada à conta de usuário.
+8. Para verificar a conta com o provedor de identidade (Etapa 4), na caixa **Credencial de Logon (Email)** , insira o endereço de email do usuário. Em seguida, selecione **Verificar Conta**. O sistema adiciona credenciais de entrada à conta de usuário.
 
     ![Inserir email e selecionar Verificar Conta](./media/sapboc-tutorial/config7.png)
 
@@ -225,13 +225,13 @@ Para provisionar uma conta de usuário:
 
     ![Adicionar Funcionário](./media/sapboc-tutorial/user1.png)
 
-3. Na página **Usuários**, para adicionar detalhes do novo usuário, selecione **+**. 
+3. Na página **Usuários**, para adicionar detalhes do novo usuário, selecione **+** . 
 
     ![Página Adicionar Usuários](./media/sapboc-tutorial/user4.png)
 
     Em seguida, conclua as seguintes etapas:
 
-     a. Na caixa **ID DE USUÁRIO**, insira a ID do usuário, como **Brenda**.
+    a. Na caixa **ID DE USUÁRIO**, insira a ID do usuário, como **Brenda**.
 
     b. Na caixa **NOME**, insira o nome do usuário, como **Brenda**.
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/17/2019
 ms.author: jeedes
-ms.openlocfilehash: b2c7ca8699274b96f7f382dfe1958bf5babbbe99
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: c217663c5752907e0b3d6372d4522f6aba982b3d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64720151"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67107403"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-adaptive-insights"></a>Tutorial: Integração do Azure Active Directory com o Adaptive Insights
 
@@ -104,7 +104,7 @@ Para configurar o logon único do Azure AD com o Adaptive Insights, execute as s
 
     ![Informações de logon único de Domínio e URLs do Adaptive Insights](common/idp-intiated.png)
 
-     a. No **identificador** caixa de texto, digite uma URL usando o seguinte padrão: `https://login.adaptiveinsights.com:443/samlsso/<unique-id>`
+    a. No **identificador** caixa de texto, digite uma URL usando o seguinte padrão: `https://login.adaptiveinsights.com:443/samlsso/<unique-id>`
 
     b. No **URL de resposta** caixa de texto, digite uma URL usando o seguinte padrão: `https://login.adaptiveinsights.com:443/samlsso/<unique-id>`
 
@@ -141,7 +141,7 @@ Para configurar o logon único do Azure AD com o Adaptive Insights, execute as s
 
     ![Configurações de SSO do SAML](./media/adaptivesuite-tutorial/ic805646.png "Configurações de SSO do SAML")
 
-     a. Na caixa de texto **Nome do provedor de identidade** , digite um nome para a sua configuração.
+    a. Na caixa de texto **Nome do provedor de identidade** , digite um nome para a sua configuração.
 
     b. Cole o **Identificador do Azure AD** copiado do Portal do Azure na caixa de texto **ID da Entidade do Provedor de Identidade**.
 
@@ -235,7 +235,7 @@ Para permitir que os usuários do Azure AD entrem no Adaptive Insights, eles dev
 
    ![Enviar](./media/adaptivesuite-tutorial/IC805649.png "Enviar")
 
-    a. Digite o **Nome**, **Logon**, **Email** e **Senha** de um usuário válido do Azure Active Directory que você deseja provisionar nas caixas de texto relacionadas.
+   a. Digite o **Nome**, **Logon**, **Email** e **Senha** de um usuário válido do Azure Active Directory que você deseja provisionar nas caixas de texto relacionadas.
 
    b. Selecione uma **Função**.
 
@@ -256,4 +256,4 @@ Ao clicar no bloco do Adaptive Insights no Painel de Acesso, você deverá ser c
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

@@ -4,14 +4,14 @@ description: Saiba como encontrar o preço de RU (Unidade de Solicitação) para
 author: ThomasWeiss
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 05/23/2019
+ms.date: 06/14/2019
 ms.author: thweiss
-ms.openlocfilehash: 0671556a1ad049782090ffede509072adbac4c6a
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: 07ca6278da6dd1f50f017f389c2c1389a42196f4
+ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66416044"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67163835"
 ---
 # <a name="find-the-request-unit-charge-in-azure-cosmos-db"></a>Encontrar o preço de Unidade de Solicitação no Azure Cosmos DB
 
@@ -302,3 +302,4 @@ Para saber mais sobre como otimizar o consumo de RU, confira estes artigos:
 * [Taxa de transferência provisionada para dimensionamento global](scaling-throughput.md)
 * [Provisionar a taxa de transferência para contêineres e bancos de dados](set-throughput.md)
 * [Provisionar a taxa de transferência para um contêiner](how-to-provision-container-throughput.md)
+* [Monitorar e depurar com métricas no Azure Cosmos DB](use-metrics.md)

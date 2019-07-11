@@ -17,12 +17,12 @@ ms.date: 04/12/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd4b6dd31d620603b765fd33494f399f97915af3
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 84da3ca512af30ad3b5d4fbc1182f5195366e1ae
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65784929"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67565440"
 ---
 # <a name="quickstart-call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Início Rápido: Chamar a API do Microsoft Graph de um aplicativo da UWP (Plataforma Universal do Windows)
 
@@ -53,14 +53,14 @@ Este início rápido contém um exemplo de código que demonstra como um aplicat
 > 1. Selecione **Novo registro**.
 > 1. Quando a página **Registrar um aplicativo** for exibida, insira as informações de registro do aplicativo:
 >      - Na seção **Nome**, insira um nome de aplicativo relevante que será exibido aos usuários do aplicativo, por exemplo, `UWP-App-calling-MsGraph`.
->      - Na seção **Tipos de conta com suporte**, selecione **Contas em qualquer diretório organizacional e contas pessoais da Microsoft (por exemplo, Skype, Xbox, Outlook.com)**.
+>      - Na seção **Tipos de conta com suporte**, selecione **Contas em qualquer diretório organizacional e contas pessoais da Microsoft (por exemplo, Skype, Xbox, Outlook.com)** .
 >      - Selecione **Registrar** para criar o aplicativo.
 > 1. Na lista de páginas para o aplicativo, selecione **Autenticação**.
 > 1. Expanda a seção **Desktop + dispositivos**.  (Se **Desktop + dispositivos** não está visível, primeiro clique na faixa superior para exibir a experiência de Autenticação em versão prévia)
 > 1. Na seção **URI de redirecionamento**, selecione **Adicionar URI**.  Digite **urn:ietf:wg:oauth:2.0:oob**.
 > 1. Clique em **Salvar**.
 
-> [!div renderon="portal" class="sxs-lookup alert alert-info"]
+> [!div renderon="portal" class="sxs-lookup"]
 > #### <a name="step-1-configure-your-application"></a>Etapa 1: Configurar seu aplicativo
 > Para que o exemplo de código deste Início Rápido funcione, você precisa adicionar um URI de redirecionamento como **urn:ietf:wg:oauth:2.0:oob**.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
@@ -82,6 +82,9 @@ Este início rápido contém um exemplo de código que demonstra como um aplicat
     ```csharp
     private const string ClientId = "Enter_the_Application_Id_here";
     ```
+> [!div class="sxs-lookup" renderon="portal"]
+> > [!NOTE]
+> > Este guia de início rápido oferece suporte a Enter_the_Supported_Account_Info_Here.    
 
 > [!div renderon="docs"]
 > Em que:

@@ -12,15 +12,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/18/2019
+ms.date: 06/17/2019
 ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: dc43e2ad2668a7d3a808e398857cbf1d28c9aa1c
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 6a41df70340da626a849804155ca245d95b6da46
+ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65150862"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67190514"
 ---
 # <a name="tutorial-configure-https-on-an-azure-cdn-custom-domain"></a>Tutorial: Configurar HTTPS em um domínio personalizado da CDN do Azure
 
@@ -50,7 +50,11 @@ Neste tutorial, você aprenderá como:
 
 Antes de concluir as etapas deste tutorial, crie primeiro um perfil CDN e pelo menos um ponto de extremidade da CDN. Para saber mais, confira [Início Rápido: Criar um ponto de extremidade e um perfil de CDN do Azure](cdn-create-new-endpoint.md).
 
-Além disso, você deve associar um domínio personalizado da CDN do Azure no ponto de extremidade da CDN. Para obter mais informações, confira [Tutorial: Adicionar um domínio personalizado ao seu ponto de extremidade da CDN do Azure](cdn-map-content-to-custom-domain.md)
+Além disso, você deve associar um domínio personalizado da CDN do Azure no ponto de extremidade da CDN. Para obter mais informações, confira [Tutorial: Adicionar um domínio personalizado ao seu ponto de extremidade da CDN do Azure](cdn-map-content-to-custom-domain.md) 
+
+> [!IMPORTANT]
+> Os certificados gerenciados pela CDN não estão disponíveis para os domínios raiz ou apex. Se seu domínio personalizado da CDN do Azure for um domínio raiz ou apex, você deverá usar o recurso Traga seu próprio certificado. 
+>
 
 ---
 
@@ -178,17 +182,17 @@ Para obter mais informações sobre os registros CNAME, consulte [criar o regist
 
 Se o registro CNAME estiver no formato correto, o DigiCert verificará automaticamente seu nome de domínio personalizado e criará um certificado dedicado ao seu nome de domínio. O DigitCert não enviará um email de verificação, e você não precisará aprovar sua solicitação. O certificado é válido por um ano e será renovado automaticamente antes de expirar. Avance para a [Aguardar a propagação](#wait-for-propagation). 
 
-A validação automática geralmente demora alguns minutos. Se você não vir o seu domínio validado em uma hora, abra um tíquete de suporte.
+A validação automática geralmente demora algumas horas. Se o domínio não for validado em 24 horas, abra um tíquete de suporte.
 
 >[!NOTE]
 >Caso você tenha um registro de CAA (Autorização de Autoridade de Certificação) com o provedor DNS, ele deverá incluir o DigiCert como uma AC válida. Um registro de CAA permite que os proprietários do domínio especifiquem com seus provedores DNS quais ACs estão autorizadas a emitir certificados para seus domínios. Se uma AC receber um pedido de um certificado para um domínio que tem um registro de CAA e a AC não estiver listada como um emissor autorizado, ela será proibida de emitir o certificado para esse domínio ou subdomínio. Para obter informações sobre como gerenciar registros CAA, consulte [Gerenciar registros CAA](https://support.dnsimple.com/articles/manage-caa-record/). Para uma ferramenta de registro CAA, consulte [Ajuda do registro CAA](https://sslmate.com/caa/).
 
 ### <a name="custom-domain-is-not-mapped-to-your-cdn-endpoint"></a>O domínio personalizado não é mapeado para o ponto de extremidade da CDN
 
-Se a entrada do registro CNAME do ponto de extremidade não existir mais ou contiver o subdomínio cdnverify, siga o restante das instruções nesta etapa.
-
 >[!NOTE]
->No momento, a validação de email de propriedade de domínio personalizado não está disponível para os perfis **CDN do Azure da Akamai**. Esse recurso está atualmente em nossa lista de pendências. 
+>No momento, a validação de email de propriedade de domínio personalizado não está disponível para os perfis **CDN do Azure da Akamai**. Se você estiver usando a **CDN do Azure do Akamai**, seu domínio personalizado deve ser mapeado ao ponto de extremidade da CDN com um registro CNAME, conforme mencionado acima.  Esse recurso está atualmente em nossa lista de pendências. 
+
+Se a entrada do registro CNAME do ponto de extremidade não existir mais ou contiver o subdomínio cdnverify, siga o restante das instruções nesta etapa.
 
 Após enviar uma solicitação para habilitar HTTPS no domínio personalizado, a AC da DigiCert validará a propriedade do domínio, entrando em contato com o responsável pelo registro, de acordo com as informações do participante [WHOIS](http://whois.domaintools.com/). O contato é feito pelo endereço de email (por padrão) ou pelo número de telefone listado no registro WHOIS. Conclua a validação completa de domínio antes de ativar o HTTPS no seu domínio personalizado. Você tem seis dias úteis para aprovar o domínio. As solicitações que não foram aprovadas em até seis dias úteis são canceladas automaticamente. 
 

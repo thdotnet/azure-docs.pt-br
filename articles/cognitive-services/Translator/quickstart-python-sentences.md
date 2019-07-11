@@ -3,19 +3,19 @@ title: 'Início Rápido: Obter comprimentos de frase, Python – API de Traduç�
 titleSuffix: Azure Cognitive Services
 description: Neste início rápido, você aprenderá a determinar os comprimentos de sentença (em caracteres) usando o Python e a API REST de Tradução de Texto.
 services: cognitive-services
-author: erhopf
+author: swmachan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/04/2019
-ms.author: erhopf
-ms.openlocfilehash: 9ab2ebe5556e6850845392fc574c35809730a41a
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.author: swmachan
+ms.openlocfilehash: eddad0efae0a6de691cc55020c0e01742960cb18
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66515067"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67444890"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-determine-sentence-length-using-python"></a>Início Rápido: Usar a API de Tradução de Texto para determinar o comprimento de frase usando Python
 
@@ -36,7 +36,10 @@ Crie um novo projeto Python usando seu IDE ou editor favorito. Em seguida, copie
 
 ```python
 # -*- coding: utf-8 -*-
-import os, requests, uuid, json
+import os
+import requests
+import uuid
+import json
 ```
 
 > [!NOTE]
@@ -92,6 +95,8 @@ headers = {
 }
 ```
 
+Se estiver usando uma assinatura de vários serviço cognitivos, você também deve incluir o `Ocp-Apim-Subscription-Region` em seus parâmetros de solicitação. [Saiba mais sobre a autenticação com a assinatura de vários serviços](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
+
 ## <a name="create-a-request-to-determine-sentence-length"></a>Criar uma solicitação para determinar o comprimento de frase
 
 Definir a frase (ou as frases) para a qual você deseja determinar o comprimento:
@@ -115,7 +120,8 @@ response = request.json()
 A última etapa é imprimir os resultados. Este trecho de código embeleza os resultados classificando as chaves, definindo o recuo e declarando os separadores de item e chave.
 
 ```python
-print(json.dumps(response, sort_keys=True, indent=4, ensure_ascii=False, separators=(',', ': ')))
+print(json.dumps(response, sort_keys=True, indent=4,
+                 ensure_ascii=False, separators=(',', ': ')))
 ```
 
 ## <a name="put-it-all-together"></a>Colocar tudo isso junto

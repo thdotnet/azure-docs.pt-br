@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: b1789f0f6441da8a38440fc606a5748d48930a1a
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: c480babcb88528ef59cc9f1a9a0478e35a7b3fba
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65897910"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67098709"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kiteworks"></a>Tutorial: Integração do Azure Active Directory com Kiteworks
 
@@ -106,7 +106,7 @@ Para configurar o logon único do AD do Azure com o Kiteworks, execute as seguin
 
     ![Informações de logon único de Domínio e URLs do Kiteworks](common/sp-identifier.png)
 
-     a. Na caixa de texto **URL de Logon**, digite uma URL usando o seguinte padrão: `https://<subdomain>.kiteworks.com`
+    a. Na caixa de texto **URL de Logon**, digite uma URL usando o seguinte padrão: `https://<subdomain>.kiteworks.com`
 
     b. Na caixa de texto **Identificador (ID da Entidade)** , digite uma URL usando o seguinte padrão: `https://<subdomain>.kiteworks.com/sp/module.php/saml/sp/saml2-acs.php/sp-sso`
 
@@ -143,7 +143,7 @@ Para configurar o logon único do AD do Azure com o Kiteworks, execute as seguin
 
     ![Configurar o logon único](./media/kiteworks-tutorial/tutorial_kiteworks_09.png)
 
-     a. Selecione **Autenticar via SSO**.
+    a. Selecione **Autenticar via SSO**.
 
     b. Selecione **Iniciar AuthnRequest**.
 
@@ -229,4 +229,4 @@ Ao clicar no bloco do Kiteworks no Painel de Acesso, você deverá ser conectado
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

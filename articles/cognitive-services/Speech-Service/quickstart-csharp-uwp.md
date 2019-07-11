@@ -8,19 +8,19 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 12/06/2018
+ms.date: 07/05/2019
 ms.author: wolfma
 ms.custom: seodec18
-ms.openlocfilehash: 674bb3f22f7b8c7c7ea3b52c2f27d862a9961fcb
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: 30a12c504071cd178ed3e7563f9d7d967d8ba36d
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65466242"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67606402"
 ---
 # <a name="quickstart-recognize-speech-in-a-uwp-app-by-using-the-speech-sdk"></a>Início Rápido: Reconhecer a fala em um aplicativo UWP usando o SDK de Fala
 
-Guias de início rápido também estão disponíveis para a [tradução de fala](quickstart-translate-speech-uwp.md) e o [assistente virtual que tem como prioridade o uso de voz](quickstart-virtual-assistant-csharp-uwp.md).
+Guias de início rápido também estão disponíveis para a [tradução de texto em fala](quickstart-text-to-speech-csharp-uwp.md), [tradução de fala](quickstart-translate-speech-uwp.md) e [assistente virtual com prioridade do uso de voz](quickstart-virtual-assistant-csharp-uwp.md).
 
 Se desejar, escolha uma linguagem de programação e/ou ambiente diferente:<br/>
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]

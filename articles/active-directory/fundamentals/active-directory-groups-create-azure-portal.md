@@ -13,12 +13,12 @@ ms.author: lizross
 ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 78e83f4a1aea04bbaea12181419de6c5c06034f2
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.openlocfilehash: d47c742e4f6d2ba8a96e9897f43231e509e8aa63
+ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58287070"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67476078"
 ---
 # <a name="create-a-basic-group-and-add-members-using-azure-active-directory"></a>Criar um grupo básico e adicionar membros usando o Azure Active Directory
 Você pode criar um grupo básico usando o portal do Azure AD (Azure Active Directory). Para os fins deste artigo, um grupo básico é adicionado a um único recurso pelo proprietário do recurso (administrador) e inclui membros específicos (funcionários) que precisam acessar o recurso. Para cenários mais complexos, incluindo associações dinâmicas e criação de regra, confira a [documentação de gerenciamento de usuário do Azure Active Directory](../users-groups-roles/index.yml).
@@ -43,7 +43,7 @@ Você pode criar um grupo básico e adicionar seus membros ao mesmo tempo.
         
        - **Office 365**. Fornece oportunidades de colaboração, oferecendo acesso de membros a uma caixa de correio compartilhada, calendário, arquivos, site do SharePoint e muito mais. Essa opção também permite dar acesso ao grupo a pessoas fora da sua organização. Para obter mais informações sobre grupos do Office 365, confira [Saiba mais sobre grupos do Office 365](https://support.office.com/article/learn-about-office-365-groups-b565caa1-5c40-40ef-9915-60fdb2d97fa2).
 
-   - **Nome do grupo (obrigatório).** Adicione um nome para o grupo, algo fácil de lembrar e que faça sentido.
+   - **Nome do grupo (obrigatório).** Adicione um nome para o grupo, algo fácil de lembrar e que faça sentido. Uma verificação será executada para determinar se o nome já é usado por outro grupo. Se o nome já está em uso, para evitar nomes duplicados, você precisará modificar o nome do grupo.
 
    - **Descrição do grupo.** Adicione uma descrição opcional para seu grupo.
 

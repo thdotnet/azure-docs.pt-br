@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: overview
-ms.date: 05/08/2019
+ms.date: 06/11/2019
 ms.author: edjez
-ms.openlocfilehash: a7f6c6fe25bf9dff2f102080f93fc1e0024ac660
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: 2f2e3d01b02f7c06d69a09374528475301952179
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66478638"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67055501"
 ---
 # <a name="quickstart-personalize-content-using-c"></a>Início Rápido: Personalizar o conteúdo usando o C# 
 
@@ -54,6 +54,7 @@ Get the latest code as a Visual Studio solution from [GitHub] (add link).
 
 1. Crie um novo aplicativo de console do Visual C# no Visual Studio.
 1. Instale o pacote NuGet da biblioteca de clientes do Personalizador. No menu, selecione **Ferramentas**, selecione **Gerenciador de Pacotes NuGet** e, em seguida, **Gerenciar Pacotes NuGet para a Solução**.
+1. Marque **Incluir pré-lançamento**.
 1. Selecione a guia **Procurar** e, na caixa **Pesquisa**, digite `Microsoft.Azure.CognitiveServices.Personalizer`.
 1. Selecione **Microsoft.Azure.CognitiveServices.Personalizer** quando ele for exibido.
 1. Marque a caixa de seleção ao lado do nome do projeto e selecione **Instalar**.

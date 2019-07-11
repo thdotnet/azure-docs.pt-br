@@ -12,12 +12,12 @@ ms.date: 04/08/2019
 ms.author: mimart
 ms.reviewer: arvinh,luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fa18bc637ec31a1f83b5cab090e008715c5e0c2a
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 0f6707c780931eac58e2a870c321385e63bd948a
+ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65825007"
+ms.lasthandoff: 07/03/2019
+ms.locfileid: "67550463"
 ---
 # <a name="tutorial-configure-saml-based-single-sign-on-for-an-application-with-azure-active-directory"></a>Tutorial: Configurar logon único baseado em SAML para um aplicativo com Azure Active Directory
 
@@ -138,7 +138,7 @@ Para atribuir um usuário ou um grupo ao aplicativo:
 
 Você está quase lá.  Como etapa final, você precisará configurar o aplicativo para usar o Azure AD como um provedor de identidade SAML. 
 
-1. Role a página para baixo até a seção **Configurar o <applicationName>**. Para este tutorial, esta seção é chamada **Configurar GitHub-test**. 
+1. Role para baixo até a seção **Configurar \<applicationName >** . Para este tutorial, esta seção é chamada **Configurar GitHub-test**. 
 2. Copie o valor de cada linha nesta seção. Em seguida, cole cada valor na linha apropriada na seção **Configuração Básica do SAML**. Por exemplo, copie o valor da **URL de Logon** da seção **Configurar o GitHub-test** e cole-o no campo **URL de Logon** da seção **Configuração Básica do SAML** e assim por diante.
 3. Depois de colar todos os valores nos campos apropriados, selecione **Salvar**.
 
@@ -147,13 +147,13 @@ Você está quase lá.  Como etapa final, você precisará configurar o aplicati
 Você está pronto para testar as configurações.  
 
 1. Abra as configurações de logon único do aplicativo. 
-2. Role a página até a seção **Validar o logon único com o <applicationName>**. Para este tutorial, esta seção é chamada **Configurar GitHub-test**.
+2. Role até a seção **Validar o logon único com \<applicationName>** . Para este tutorial, esta seção é chamada **Configurar GitHub-test**.
 3. Selecione **Testar**. As opções de teste são exibidas.
 4. Selecione **Entrar como o usuário atual**. Esse teste permite que você veja primeiro se o logon único funciona para você, o administrador.
 
 Se houver um erro, uma mensagem de erro será exibida. Conclua as seguintes etapas:
 
-1. Copie e cole as informações específicas na caixa **Como é o erro?**.
+1. Copie e cole as informações específicas na caixa **Como é o erro?** .
 
     ![Obter diretrizes de resolução](media/configure-single-sign-on-portal/error-guidance.png)
 

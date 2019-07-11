@@ -12,16 +12,16 @@ ms.date: 06/05/2019
 ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 80680de6602b26488a8bade8a69fdd85b7f83ed1
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.openlocfilehash: 9246d7bd48579def171986606e88c09593029aa2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66729941"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67108147"
 ---
 # <a name="application-management-with-azure-active-directory"></a>Gerenciamento de aplicativo com o Azure Active Directory
 
-O Azure AD (Azure Active Directory) simplifica a maneira de gerenciar seus aplicativos, fornecendo um sistema de identidade única para seus aplicativos de nuvem e locais. Você pode adicionar seus aplicativos SaaS (software como serviço), aplicativos locais e aplicativos LOB (linha de negócios) ao Azure AD. Os usuários entram uma vez para acessar com segurança esses aplicativos, juntamente com o Office 365 e outros aplicativos de negócios da Microsoft. Você pode reduzir os custos administrativos automatizando o provisionamento de usuários. Também é possível usar a autenticação multifator e as políticas de acesso condicional para oferecer acesso seguro aos aplicativos.
+O Azure AD (Azure Active Directory) simplifica a maneira de gerenciar seus aplicativos, fornecendo um sistema de identidade única para seus aplicativos de nuvem e locais. Você pode adicionar seus aplicativos SaaS (software como serviço), aplicativos locais e aplicativos LOB (linha de negócios) ao Azure AD. Os usuários entram uma vez para acessar com segurança esses aplicativos, juntamente com o Office 365 e outros aplicativos de negócios da Microsoft. Você pode reduzir os custos administrativos automatizando o provisionamento de usuários. Também é possível usar a autenticação multifator e as políticas de Acesso Condicional para oferecer acesso seguro aos aplicativos.
 
 ![Aplicativos federados por meio do Azure AD](media/what-is-application-management/app-management-overview.png)
 
@@ -40,8 +40,8 @@ Há quatro tipos principais de aplicativos que você pode adicionar aos seus **A
 
 -   **Aplicativos inexistentes na Galeria** – traga seus aplicativos! Suporte a logon único para outros aplicativos adicionando-os ao Azure AD. Você pode integrar qualquer link da Web desejado, ou qualquer aplicativo que renderiza um campo de nome de usuário e senha, dá suporte aos protocolos SAML ou OpenID Connect ou dá suporte ao SCIM. Para saber mais, confira [Configurar o logon único para aplicativos inexistente na galeria](configure-single-sign-on-non-gallery-applications.md).
 
-## <a name="manage-risk-with-conditional-access-policies"></a>Gerenciar os riscos com as políticas de acesso condicional
-Combinar o SSO (logon único) do Azure AD com [acesso condicional](https://docs.microsoft.com/azure/active-directory/conditional-access/overview) aumenta a segurança no acesso aos aplicativos. As funcionalidades de segurança incluem a proteção de identidade em escala de nuvem, o controle de acesso baseado em risco, a autenticação multifator nativa e as políticas de acesso condicional. Essas funcionalidades permitem ter um controle granular das políticas baseadas em aplicativos ou em grupos que precisam de mais segurança.
+## <a name="manage-risk-with-conditional-access-policies"></a>Gerenciar os riscos com as políticas de Acesso Condicional
+Combinar o SSO (logon único) do Azure AD com [Acesso Condicional](https://docs.microsoft.com/azure/active-directory/conditional-access/overview) aumenta a segurança no acesso aos aplicativos. As funcionalidades de segurança incluem a proteção de identidade em escala de nuvem, o controle de acesso baseado em risco, a autenticação multifator nativa e as políticas de Acesso Condicional. Essas funcionalidades permitem ter um controle granular das políticas baseadas em aplicativos ou em grupos que precisam de mais segurança.
 
 ## <a name="improve-productivity-with-single-sign-on"></a>Aumentar a produtividade com o logon único
 Habilitar o SSO (logon único) em todos os aplicativos e no Office 365 aprimora a experiência de logon para os usuários atuais ao reduzir ou eliminar as solicitações de entrada. O ambiente do usuário parece mais coeso e há menos distração sem as várias solicitações ou a necessidade de gerenciar diversas senhas. O grupo de negócios pode gerenciar e aprovar o acesso por meio de uma associação dinâmica de autoatendimento. Permitir que as pessoas certas na empresa gerenciem o acesso a um aplicativo aumenta a segurança do sistema de identidade.

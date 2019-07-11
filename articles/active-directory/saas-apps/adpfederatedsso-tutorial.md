@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eba63f8295fb5bebffdc8480f763c852521e331b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ae7f47fcbdf61caa95e49a34bcfd093d3370f769
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65859237"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67107306"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-adp"></a>Tutorial: Integração do Azure Active Directory com o ADP
 
@@ -53,7 +53,7 @@ Para configurar a integração de ADP ao Microsoft Azure Active Directory, você
 
 **Para adicionar o ADP da galeria, execute as seguintes etapas:**
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -93,7 +93,7 @@ Para configurar o logon único do Azure AD com o ADP, execute as seguintes etapa
 
     ![Propriedades de logon único](./media/adpfederatedsso-tutorial/tutorial_adp_prop.png)
 
-     a. Defina o valor do campo **Habilitado para os usuários entrarem** como **Sim**.
+    a. Defina o valor do campo **Habilitado para os usuários entrarem** como **Sim**.
 
     b. Copie a **URL de acesso do usuário** e cole-a na **seção Configurar URL de Entrada**, que é explicado mais adiante no tutorial.
 
@@ -117,11 +117,11 @@ Para configurar o logon único do Azure AD com o ADP, execute as seguintes etapa
 
     ![Informações de logon único de Domínio e URLs do ADP](common/idp-identifier.png)
 
-    Na caixa de texto **Identificador (ID da Entidade)**, digite uma URL: `https://fed.adp.com`
+    Na caixa de texto **Identificador (ID da Entidade)** , digite uma URL: `https://fed.adp.com`
 
 6. O aplicativo ADP espera que as declarações SAML estejam em um formato específico. Configure as declarações a seguir para este aplicativo. Você pode gerenciar os valores desses atributos da seção **Atributos de Usuário** na página de integração de aplicativos. Na página **Definir Logon Único com SAML**, clique no botão **Editar** para abrir a caixa de diálogo **Atributos do Usuário**. O nome da declaração sempre será **"PersonImmutableID"** e o valor que mapeamos para **employeeid**. 
 
-    O mapeamento de usuário do Azure AD para o ADP será feito na **employeeid**, mas isso pode ser mapeado para um valor diferente baseado nas configurações de aplicativo. Portanto, trabalhe com a [equipe de suporte do ADP](https://www.adp.com/contact-us/overview.aspx) primeiro para usar o identificador correto de um usuário e mapear esse valor com a declaração **“PersonImmutableID”**.
+    O mapeamento de usuário do Azure AD para o ADP será feito na **employeeid**, mas isso pode ser mapeado para um valor diferente baseado nas configurações de aplicativo. Portanto, trabalhe com a [equipe de suporte do ADP](https://www.adp.com/contact-us/overview.aspx) primeiro para usar o identificador correto de um usuário e mapear esse valor com a declaração **“PersonImmutableID”** .
 
     ![image](common/edit-attribute.png)
 
@@ -131,7 +131,7 @@ Para configurar o logon único do Azure AD com o ADP, execute as seguintes etapa
     | ---------------| --------------- |
     | PersonImmutableID  | user.employeeid |
 
-     a. Clique em **Adicionar nova reivindicação** para abrir a caixa de diálogo **Gerenciar declarações de usuários**.
+    a. Clique em **Adicionar nova reivindicação** para abrir a caixa de diálogo **Gerenciar declarações de usuários**.
 
     ![image](common/new-save-attribute.png)
 
@@ -169,7 +169,7 @@ Para configurar o logon único do lado do **ADP**, você precisa carregar o **XM
 > Os funcionários que precisam de acesso federado aos serviços do ADP precisam ser atribuídos ao aplicativo de serviço do ADP e posteriormente, os usuários precisam ser reatribuídos para o serviço do ADP específico.
 Após o recebimento da confirmação de seu representante da ADP, configure os serviços do ADP e atribua/gerencie usuários para controlar o acesso do usuário ao serviço do ADP específico.
 
-1. No **[Portal do Azure](https://portal.azure.com)**, no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
+1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**.
 
     ![O botão Azure Active Directory](common/select-azuread.png)
 
@@ -189,7 +189,7 @@ Após o recebimento da confirmação de seu representante da ADP, configure os s
 
     ![Propriedades vinculadas de logon único](./media/adpfederatedsso-tutorial/tutorial_adp_linkedproperties.png)
 
-     a.  Defina o valor do campo **Habilitado para os usuários entrarem** como **Sim**.
+    a.  Defina o valor do campo **Habilitado para os usuários entrarem** como **Sim**.
 
     b.  Defina o valor do campo **Atribuição de usuário necessária** como **Sim**.
 
@@ -207,7 +207,7 @@ Após o recebimento da confirmação de seu representante da ADP, configure os s
 
     ![Propriedades de logon único](./media/adpfederatedsso-tutorial/tutorial_adp_linkedsignon.png)
 
-     a. Cole a **URL de acesso do usuário**, copiada da **guia de propriedades** acima (do aplicativo principal do ADP).
+    a. Cole a **URL de acesso do usuário**, copiada da **guia de propriedades** acima (do aplicativo principal do ADP).
                                                              
     b. Veja a seguir os cinco aplicativos que dão suporte a diferentes **URLs de Estado de Retransmissão**. Você precisa acrescentar o valor **URL do Estado de Retransmissão** apropriado de determinado aplicativo manualmente à **URL de acesso do usuário**.
     
@@ -235,7 +235,7 @@ Após o recebimento da confirmação de seu representante da ADP, configure os s
 
 10. Após o recebimento da confirmação de seu representante da ADP, inicie o teste com um ou dois usuários.
 
-     a. Atribua alguns usuários ao Aplicativo do serviço ADP para testar o acesso federado.
+    a. Atribua alguns usuários ao Aplicativo do serviço ADP para testar o acesso federado.
 
     b. O teste é bem-sucedido quando os usuários acessam o aplicativo de serviço do ADP na galeria e podem acessar seus serviços do ADP.
  

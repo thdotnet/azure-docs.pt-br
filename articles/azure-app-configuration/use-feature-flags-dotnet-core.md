@@ -14,14 +14,14 @@ ms.topic: tutorial
 ms.date: 04/19/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: fc5215f71af45d3273da437fc796bf0d396ba3f9
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.openlocfilehash: 5e27c6a1ab5fc9dff779c6e5d04689683d5c8e6d
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66393523"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67274138"
 ---
-# <a name="tutorial-use-feature-flags-in-a-net-core-app"></a>Tutorial: Usar sinalizadores de recursos em um aplicativo .NET Core
+# <a name="tutorial-use-feature-flags-in-an-aspnet-core-app"></a>Tutorial: Usar sinalizadores de recursos em um aplicativo ASP.NET Core
 
 As bibliotecas de Gerenciamento de Recursos do .NET Core fornecem suporte idiomático para implementação de sinalizadores de recursos em um aplicativo .NET ou ASP.NET Core. Essas bibliotecas permitem que você adicione sinalizadores de recursos ao código de forma declarativa, de modo que você não precise escrever todas as instruções `if` para elas manualmente.
 
@@ -109,7 +109,7 @@ Os valores de sinalizadores de recurso devem ser alterados ao longo do tempo. Po
 config.AddAzureAppConfiguration(options => {
     options.Connect(settings["ConnectionStrings:AppConfig"])
            .UseFeatureFlags(featureFlagOptions => {
-                featureFlagOptions.PollInterval = TimeSpan.FromSeconds(5);
+                featureFlagOptions.PollInterval = TimeSpan.FromSeconds(300);
            });
 });
 ```
@@ -189,10 +189,10 @@ public class HomeController : Controller
 
 ## <a name="controller-actions"></a>Ações do controlador
 
-Em controladores MVC, use o atributo `Feature` para controlar se uma classe de controlador inteira ou uma ação específica será habilitada. O seguinte controlador `HomeController` exige que `FeatureA` esteja *ativado* antes de executar qualquer ação contida pela classe do controlador:
+Em controladores MVC, use o atributo `FeatureGate` para controlar se uma classe de controlador inteira ou uma ação específica será habilitada. O seguinte controlador `HomeController` exige que `FeatureA` esteja *ativado* antes de executar qualquer ação contida pela classe do controlador:
 
 ```csharp
-[Feature(MyFeatureFlags.FeatureA)]
+[FeatureGate(MyFeatureFlags.FeatureA)]
 public class HomeController : Controller
 {
     ...
@@ -202,7 +202,7 @@ public class HomeController : Controller
 A seguinte ação `Index` exige que `FeatureA` esteja *ativado* para ser executada:
 
 ```csharp
-[Feature(MyFeatureFlags.FeatureA)]
+[FeatureGate(MyFeatureFlags.FeatureA)]
 public IActionResult Index()
 {
     return View();
@@ -218,6 +218,25 @@ Em exibições do MVC, você pode usar uma marca `<feature>` para renderizar o c
 ```html
 <feature name="FeatureA">
     <p>This can only be seen if 'FeatureA' is enabled.</p>
+</feature>
+```
+
+Para exibir o conteúdo alternativo quando os requisitos não forem atendidos, é possível usar o atributo `negate`.
+
+```html
+<feature name="FeatureA" negate="true">
+    <p>This will be shown if 'FeatureA' is disabled.</p>
+</feature>
+```
+
+A marcar do recurso `<feature>` também pode ser usada para mostrar o conteúdo se qualquer ou todos os recursos em uma lista estiverem habilitados.
+
+```html
+<feature name="FeatureA, FeatureB" requirement="All">
+    <p>This can only be seen if 'FeatureA' and 'FeatureB' are enabled.</p>
+</feature>
+<feature name="FeatureA, FeatureB" requirement="Any">
+    <p>This can be seen if 'FeatureA', 'FeatureB', or both are enabled.</p>
 </feature>
 ```
 
