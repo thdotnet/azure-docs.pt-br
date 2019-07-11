@@ -8,12 +8,12 @@ ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: overview
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: cd004e1eb6a40648c52dd3b5aee0ec38bff8f9b3
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 73979ec3bd1d667453a186ea1f20bbeddc12db8f
+ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66304177"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67273303"
 ---
 # <a name="frequently-asked-questions-about-azure-spatial-anchors"></a>Perguntas frequentes sobre as Âncoras Espaciais do Azure
 
@@ -78,7 +78,7 @@ O recurso Âncoras Espaciais do Azure segue os [Termos do Contrato de Serviço d
 Datas de GA (Disponibilidade Geral) serão anunciadas em breve.
 
 **P: Vocês têm limites de limitação em vigor?**
- 
+
 **R**: Sim, temos limites de limitação.  Não esperamos que você os atinja para teste e desenvolvimento de aplicativos típicos. Para implantações de produção, estamos prontos para dar suporte aos requisitos de alta escala de nossos clientes. [Entre em contato conosco](mailto:azuremrs@microsoft.com) para discutir isso. Durante essa fase de Versão Prévia, ainda não publicamos nossa estrutura de camadas e preços, mas esperamos fazê-lo em breve.
 
 **P: Em quais regiões o recurso Âncoras Espaciais do Azure está disponível?**
@@ -125,3 +125,7 @@ Introdução ao [desenvolvimento aqui](index.yml).
 **P: Funciona com Xamarin?**
 
 **R:** Sim. Enquanto não fornecemos um SDK do Xamarin, esperamos que os desenvolvedores possam usar Âncoras Espaciais do Azure em seus aplicativos Xamarin integrando com a API de Âncoras Espaciais do Azure.
+
+**P: Quais portas e protocolos usam Âncoras Espaciais do Azure?**
+
+**R:** As Âncoras Espaciais do Azure se comunicam pela porta TCP 443 usando um protocolo criptografado. Para autenticação, é usado o [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/), que se comunica usando HTTPS pela porta 443.

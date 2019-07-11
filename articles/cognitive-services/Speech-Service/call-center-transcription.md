@@ -7,15 +7,15 @@ author: erhopf
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
-ms.topic: overview
-ms.date: 05/02/2019
+ms.topic: conceptual
+ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 055d141cab8ece3fcb462573f6ed4d8941c19751
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: HT
+ms.openlocfilehash: 37d68a4d2b7658542ebcfdb5d22a10676a8e4d52
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67064108"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603300"
 ---
 # <a name="speech-services-for-telephony-data"></a>Serviços de Fala para dados de telefonia
 
@@ -36,7 +36,7 @@ Vamos analisar alguns dos recursos de tecnologia e relacionados que são ofereci
 
 Além disso, o aspecto funcional dos Serviços de Fala e sua finalidade principal – quando aplicada ao call center – é melhorar a experiência do cliente. Há três domínios bem definidos a este respeito:
 
-* Análise pós-chamada, ou seja, processamento em lotes de gravações de chamada 
+* Análise pós-chamada, ou seja, processamento em lotes de gravações de chamada
 * Processamento de análise em tempo real do sinal de áudio para extração de vários insights durante a chamada (com o sentimento sendo um caso de uso proeminente) e
 * Assistentes Virtuais (bots) conduzindo o diálogo entre o cliente e o bot em uma tentativa de resolver o problema do cliente sem a participação de nenhum agente ou sendo o aplicativo de protocolos de IA para auxiliar o agente.
 
@@ -44,9 +44,9 @@ Um diagrama da arquitetura típica da implementação de um cenário de lote é 
 
 ## <a name="speech-analytics-technology-components"></a>Componentes da tecnologia de análise de fala
 
-Independentemente de o domínio ser pós-chamada ou em tempo real, o Azure oferece um conjunto aperfeiçoado e emergente de tecnologias para melhorar a experiência do cliente. 
+Independentemente de o domínio ser pós-chamada ou em tempo real, o Azure oferece um conjunto aperfeiçoado e emergente de tecnologias para melhorar a experiência do cliente.
 
-### <a name="speech-to-text-stt"></a>STT (conversão de fala em texto) 
+### <a name="speech-to-text-stt"></a>STT (conversão de fala em texto)
 
 A [conversão de fala em texto](speech-to-text.md) é o recurso mais procurado em qualquer solução de call center. Como muitos dos processos de análise downstream dependem do texto transcrito, a WER (taxa de erros de palavras) é de extrema importância. Um dos principais desafios na transcrição de call center é o ruído predominante no call center (por exemplo: outros agentes falando em segundo plano), a grande variedade de localidades de idioma e dialetos, bem como a baixa qualidade do sinal de telefone real. A WER está altamente correlacionada à qualidade de treinamento dos modelos acústicos e de linguagem para determinada localidade e, assim, é importante ter a capacidade de personalizar o modelo para a sua localidade. Nossos modelos Unificados mais recentes da versão 4.x são a solução para a precisão e a latência de transcrição. Treinados com dezenas de milhares de horas de dados acústicos e bilhões de informações lexicais, os modelos Unificados são os modelos mais precisos do mercado para a transcrição de dados de call center.
 
@@ -56,17 +56,17 @@ Avaliar se o cliente teve uma boa experiência é uma das áreas mais importante
 ### <a name="silence-non-talk"></a>Silêncio (sem conversa)
 Não é incomum que 35% de uma chamada de suporte consista no que chamamos de tempo sem conversa. Alguns cenários em que não há conversa são: agentes pesquisando o histórico de casos com um cliente, agentes usando ferramentas que permitem acessar a área de trabalho do cliente e executar funções, clientes esperando uma transferência e assim por diante. É extremamente importante poder avaliar quando o silêncio está ocorrendo em uma chamada, pois há diversos fatores importantes de sensibilidade do cliente que ocorrem nesses tipos de cenários e quando eles ocorrem na chamada.
 
-### <a name="translation"></a>Tradução
+### <a name="translation"></a>Conversão
 Algumas empresas estão experimentando fornecer transcrições traduzidas de chamadas de suporte de idiomas estrangeiros, de modo que os gerentes de entrega possam entender a experiência mundial de seus clientes. Nossas funcionalidades de [tradução](translation.md) são incomparáveis. Podemos converter áudio em áudio ou áudio em texto em uma grande variedade de localidades.
 
 ### <a name="text-to-speech"></a>Texto em fala
-A [conversão de texto em fala](text-to-speech.md) é outra área importante na implementação de bots que interagem com os clientes. O caminho típico é o que o cliente fala, sua voz é transcrita em texto, o texto é analisado quanto às intenções, uma resposta é sintetizada com base na intenção reconhecida e, em seguida, um ativo é exposto ao cliente ou uma resposta de voz sintetizada é gerada. Evidentemente, tudo isso deve ocorrer com rapidez – portanto, a latência é um componente importante no sucesso desses sistemas. 
+A [conversão de texto em fala](text-to-speech.md) é outra área importante na implementação de bots que interagem com os clientes. O caminho típico é o que o cliente fala, sua voz é transcrita em texto, o texto é analisado quanto às intenções, uma resposta é sintetizada com base na intenção reconhecida e, em seguida, um ativo é exposto ao cliente ou uma resposta de voz sintetizada é gerada. Evidentemente, tudo isso deve ocorrer com rapidez – portanto, a latência é um componente importante no sucesso desses sistemas.
 
-Nossa latência de ponta a ponta é muito baixa, considerando as diversas tecnologias envolvidas, como [Conversão de Fala em Texto](speech-to-text.md), [LUIS](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/), [Bot Framework](https://dev.botframework.com/) e [Conversão de Texto em Fala](text-to-speech.md). 
+Nossa latência de ponta a ponta é muito baixa, considerando as diversas tecnologias envolvidas, como [Conversão de Fala em Texto](speech-to-text.md), [LUIS](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/), [Bot Framework](https://dev.botframework.com/) e [Conversão de Texto em Fala](text-to-speech.md).
 
 Nossas novas vozes também são praticamente idênticas às vozes humanas. É possível usar vozes para dar ao seu bot uma personalidade única.
 
-### <a name="search"></a>Search
+### <a name="search"></a>Pesquisar
 Outro ponto importante da análise é identificar as interações em que uma experiência ou um evento específico tenha ocorrido. Isso normalmente é feito com uma das duas abordagens: uma pesquisa ad-hoc, em que o usuário apenas digita uma frase e o sistema responde, ou uma consulta mais estruturada, em que um analista pode criar um conjunto de instruções lógicas que identifiquem um cenário em uma chamada e, em seguida, cada chamada possa ser indexada em relação a esses conjunto de consultas. Um bom exemplo de pesquisa é a instrução de conformidade ubíqua “esta chamada será gravada para fins de qualidade... ”, pois muitas empresas desejam garantir que seus agentes forneçam esse aviso de isenção de responsabilidade aos clientes antes que a chamada seja, de fato, gravada. A maioria dos sistemas de análise tem a capacidade de analisar a tendência dos comportamentos encontrados pelos algoritmos de consulta/pesquisa, uma vez que esse relatório de tendências é, em última análise, uma das funções mais importantes de um sistema de análise. Por meio do [diretório de Serviços Cognitivos](https://azure.microsoft.com/services/cognitive-services/directory/search/), sua solução de ponta a ponta pode ser consideravelmente aprimorada com funcionalidades de indexação e pesquisa.
 
 ### <a name="key-phrase-extraction"></a>Extração de Frases-Chave
