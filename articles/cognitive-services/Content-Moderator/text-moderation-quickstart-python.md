@@ -1,5 +1,5 @@
 ---
-title: 'Início rápido: Analisar o conteúdo de texto no Python – Content Moderator'
+title: 'Início Rápido: Analisar o conteúdo de texto no Python – Content Moderator'
 titlesuffix: Azure Cognitive Services
 description: Como analisar conteúdo de texto para encontrar materiais indesejáveis usando o SDK do Content Moderator para Python
 services: cognitive-services
@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: quickstart
-ms.date: 01/10/2019
+ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: 20920a04c5b85c9eede7d7b249dd6e0548308240
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 0fef3bffd30c19d0313e5fce7eb610ae7f6349f5
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55883399"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67607002"
 ---
 # <a name="quickstart-analyze-text-content-for-objectionable-material-in-python"></a>Início Rápido: Analisar o conteúdo de texto para material indesejável em Python
 
@@ -32,7 +32,7 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 Instale o SDK do Python do Content Moderator abrindo um prompt de comando e executando o seguinte comando:
 
-```
+```bash
 pip install azure-cognitiveservices-vision-contentmoderator
 ```
 

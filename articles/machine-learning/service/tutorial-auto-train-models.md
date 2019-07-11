@@ -11,12 +11,12 @@ ms.author: nilesha
 ms.reviewer: trbye
 ms.date: 04/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: 907383c057c0c1eebee6550a0d1e9c75dd88513c
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: 8cedf7abf71a772a0b770dd2f82d9a5508f5dd75
+ms.sourcegitcommit: dda9fc615db84e6849963b20e1dce74c9fe51821
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66417298"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67622368"
 ---
 # <a name="tutorial-use-automated-machine-learning-to-build-your-regression-model"></a>Tutorial: Usar o aprendizado de máquina automatizado para compilar o modelo de regressão
 
@@ -1127,6 +1127,8 @@ print(y_predict[:10])
 Crie um gráfico de dispersão para visualizar os valores de custo previstos em comparação com os reais. O código a seguir usa o recurso `distance` como o eixo x e a corrida `cost` como o eixo y. Para comparar a variação de custo prevista em cada valor de distância de corrida, os 100 primeiros valores de custo previstos e reais são criados como uma série separada. O exame do gráfico mostra que a relação de distância/custo é quase linear, sendo que os valores de custo previstos são, na maioria dos casos, muito próximos dos valores de custo reais para a mesma distância de corrida.
 
 ```python
+%matplotlib inline
+
 import matplotlib.pyplot as plt
 
 fig = plt.figure(figsize=(14, 10))

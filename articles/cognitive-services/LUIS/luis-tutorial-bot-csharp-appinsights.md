@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 06/16/2019
 ms.author: diberry
-ms.openlocfilehash: fa7147dd1b5f22ead17a60042c1c35c4b770cd18
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: 720352403fd5f5937669f9838f3974cb0d3f8797
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67154907"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657797"
 ---
 # <a name="add-luis-results-to-application-insights-from-a-bot-in-c"></a>Adicionar resultados do LUIS ao Application Insights de um Bot em C#
 
@@ -173,7 +173,7 @@ Abra o Application Insights para ver as entradas do LUIS. Poderão ser necessár
     ![Examine as propriedades personalizadas do LUIS armazenadas no Application Insights](./media/luis-tutorial-appinsights/application-insights-luis-trace-custom-properties-csharp.png)
 
 ## <a name="query-application-insights-for-intent-score-and-utterance"></a>Consulte o Application Insights para intenções, pontuações e enunciados
-O Application Insights oferece a capacidade de consultar os dados com a linguagem [Kusto](https://docs.microsoft.com/azure/application-insights/app-insights-analytics#query-data-in-analytics), bem como exportar para o [Power BI](https://powerbi.microsoft.com). 
+O Application Insights oferece a capacidade de consultar os dados com a linguagem [Kusto](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview#what-language-do-log-queries-use), bem como exportar para o [Power BI](https://powerbi.microsoft.com). 
 
 1. Selecione **Log (Analytics)** . Uma nova janela é aberta com uma janela de consulta na parte superior e uma janela de tabela de dados abaixo. Se você tiver usado bancos de dados antes, essa organização será familiar. A consulta representa seus dados filtrados anteriores. A coluna **CustomDimensions** tem o bot e as informações do LUIS.
 1. Para extrair as principais intenções, pontuações e enunciados, adicione o seguinte logo acima da última linha (a linha `|top...`) na janela de consulta:

@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 06/16/2019
 ms.author: diberry
-ms.openlocfilehash: 5459fb5d8304a35b3f009354c446514a2831c513
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: cfed5477df75350f24e77786117e85b9c728c49a
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67155276"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657741"
 ---
 # <a name="add-luis-results-to-application-insights-from-a-bot-in-nodejs"></a>Adicionar resultados do LUIS ao Application Insights de um Bot no Node.js
 Este tutorial adiciona informações de bot e de Reconhecimento vocal ao armazenamento de dados telemétricos do [Application Insights](https://azure.microsoft.com/services/application-insights/). Quando tiver esses dados, você poderá consultá-los usando a linguagem Kusto ou o Power BI para analisar, agregar e relatar intenções e entidades do enunciado em tempo real. Esta análise ajuda a determinar se você deve adicionar ou editar as intenções e as entidades do seu aplicativo LUIS.
@@ -205,7 +205,7 @@ Abra o Application Insights para ver as entradas do LUIS. Poderão ser necessár
     ![Examine as propriedades personalizadas do LUIS armazenadas no Application Insights](./media/luis-tutorial-appinsights/application-insights-luis-trace-custom-properties-nodejs.png)
 
 ## <a name="query-application-insights-for-intent-score-and-utterance"></a>Consulte o Application Insights para intenções, pontuações e enunciados
-O Application Insights oferece a capacidade de consultar os dados com a linguagem [Kusto](https://docs.microsoft.com/azure/application-insights/app-insights-analytics#query-data-in-analytics), bem como exportar para o [Power BI](https://powerbi.microsoft.com). 
+O Application Insights oferece a capacidade de consultar os dados com a linguagem [Kusto](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview#what-language-do-log-queries-use), bem como exportar para o [Power BI](https://powerbi.microsoft.com). 
 
 1. Selecione **Log (Analytics)** . Uma nova janela é aberta com uma janela de consulta na parte superior e uma janela de tabela de dados abaixo. Se você tiver usado bancos de dados antes, essa organização será familiar. A consulta representa seus dados filtrados anteriores. A coluna **CustomDimensions** tem o bot e as informações do LUIS.
 1. Para extrair as principais intenções, pontuações e enunciados, adicione o seguinte logo acima da última linha (a linha `|top...`) na janela de consulta:
