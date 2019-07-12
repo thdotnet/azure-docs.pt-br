@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 05/28/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 140e6c338d12732d1e41ccd9dabef1de7d5cf8d8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: ee65aa5753d9967022ca91a66433b11761b73a32
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67068838"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67835808"
 ---
 # <a name="content-protection-with-dynamic-encryption"></a>Proteção de conteúdo com criptografia dinâmica
 
@@ -73,7 +73,7 @@ Para concluir com êxito o design do sistema / aplicativo de "proteção de cont
   
      Você consegue criar um player usando a [API do Player de Mídia do Azure](https://amp.azure.net/libs/amp/latest/docs/). Use a [API ProtectionInfo do Player de Mídia do Azure](https://amp.azure.net/libs/amp/latest/docs/) para especificar qual tecnologia de DRM usar em diferentes plataformas de DRM.
 
-     Para testar conteúdo criptografado AES ou CENC (Widevine e/ou PlayReady), é possível usar o [Player de Mídia do Azure](https://ampdemo.azureedge.net/azuremediaplayer.html). Certifique-se de clicar em "Opções avançadas" e verifique as opções de criptografia.
+     Para testar conteúdo criptografado AES ou CENC (Widevine e/ou PlayReady), é possível usar o [Player de Mídia do Azure](http://aka.ms/azuremediaplayer). Certifique-se de clicar em "Opções avançadas" e verifique as opções de criptografia.
 
      Se você quiser testar o conteúdo do FairPlay criptografado, use [esse teste player](https://aka.ms/amtest). O player suporta DRM Widevine, PlayReady e FairPlay, bem como a criptografia de chave AES-128. 
     
@@ -203,7 +203,7 @@ Para proteger os Ativos em repouso, os ativos devem ser criptografados pela crip
 
 Se você receber o `MPE_ENC_ENCRYPTION_NOT_SET_IN_DELIVERY_POLICY` erro, verifique se você especificar a política de Streaming apropriada.
 
-Se você obtiver erros que terminam com `_NOT_SPECIFIED_IN_URL`, certifique-se de que você especifica o formato de criptografia na URL. Por exemplo: `…/manifest(format=m3u8-cmaf,encryption=cbcs-aapl)`. Ver [tipos de criptografia e protocolos de Streaming](#streaming-protocols-and-encryption-types).
+Se você obtiver erros que terminam com `_NOT_SPECIFIED_IN_URL`, certifique-se de que você especifica o formato de criptografia na URL. Por exemplo, `…/manifest(format=m3u8-cmaf,encryption=cbcs-aapl)`. Ver [tipos de criptografia e protocolos de Streaming](#streaming-protocols-and-encryption-types).
 
 ## <a name="ask-questions-give-feedback-get-updates"></a>Fazer perguntas, comentar, obter atualizações
 

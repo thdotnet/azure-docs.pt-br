@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 134ab2a5f0b1b1569cdf4747f5bbe3f895ba4e8f
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 8487f82b123b42f9d6a6f0fbd6d6cbb240bf9fdc
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67293028"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67785536"
 ---
 # <a name="deploy-azure-ad-password-protection"></a>Implantar proteção de senha do Azure AD
 
@@ -44,7 +44,7 @@ Depois que o recurso tiver sido executado em modo de auditoria por um período r
    > Implantação do serviço de proxy é um requisito obrigatório para implantar a proteção por senha do Azure AD, mesmo que o controlador de domínio pode ter saída conectividade direta com a internet. 
    >
 * Todos os computadores em que o serviço de Proxy de proteção de senha do AD do Azure será instalado devem ter o .NET 4.7 instalado.
-  .NET 4.7 já deve estar instalado em um Windows Server totalmente atualizado. Se isso não for o caso, baixe e execute o instalador encontrado em [o .NET Framework 4.7 o instalador offline para o Windows](https://support.microsoft.com/en-us/help/3186497/the-net-framework-4-7-offline-installer-for-windows).
+  .NET 4.7 já deve estar instalado em um Windows Server totalmente atualizado. Se isso não for o caso, baixe e execute o instalador encontrado em [o .NET Framework 4.7 o instalador offline para o Windows](https://support.microsoft.com/help/3186497/the-net-framework-4-7-offline-installer-for-windows).
 * Todos os computadores, incluindo controladores de domínio, que obtém os componentes de proteção de senha do Azure AD instalados deve ter o tempo de execução C Universal instalado. Você pode obter o tempo de execução, tornando-se de que ter todas as atualizações do Windows Update. Ou você pode obtê-lo em um pacote de atualização específicas do sistema operacional. Para obter mais informações, consulte [atualização para o tempo de execução C Universal no Windows](https://support.microsoft.com/help/2999226/update-for-uniersal-c-runtime-in-windows).
 * Conectividade de rede deve existir entre pelo menos um controlador de domínio em cada domínio e pelo menos um servidor que hospeda o serviço de proxy para a proteção por senha. Essa conectividade deve permitir que o controlador de domínio acessar a porta de mapeador de ponto de extremidade RPC 135 e a porta do servidor RPC no serviço de proxy. Por padrão, a porta do servidor RPC é uma porta dinâmica da RPC, mas ele pode ser configurado para [usar uma porta estática](#static).
 * Todos os computadores que hospedam o serviço de proxy devem ter acesso à rede para os pontos de extremidade a seguir:

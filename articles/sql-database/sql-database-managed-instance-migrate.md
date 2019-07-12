@@ -11,27 +11,31 @@ author: bonova
 ms.author: bonova
 ms.reviewer: douglas, carlrab
 manager: craigg
-ms.date: 02/11/2019
-ms.openlocfilehash: 9fe6ab797eaa325ad802702e95f5a0e5b8e4fef4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 11/07/2019
+ms.openlocfilehash: 7cf54b79fac87905117e321574571890c59315e6
+ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67070420"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67827073"
 ---
 # <a name="sql-server-instance-migration-to-azure-sql-database-managed-instance"></a>Migração de uma Instância do SQL Server para uma Instância Gerenciada do Banco de Dados SQL do Azure
 
 Neste artigo, você aprenderá sobre os métodos para migrar uma Instância do SQL Server 2005 ou versão posterior para uma [Instância Gerenciada do Banco de Dados SQL do Azure](sql-database-managed-instance.md). Para obter informações sobre como migrar para um banco de dados individual ou pool elástico, confira [Migrar para um banco de dados individual ou em pool](sql-database-cloud-migrate.md). Para obter informações de migração sobre como migrar de outras plataformas, confira o [Guia de Migração de Banco de Dados do Azure](https://datamigration.microsoft.com/).
 
+> [!NOTE]
+> Se você quiser iniciar rapidamente e experimente a instância gerenciada, você talvez queira ir para [guia de início rápido](/sql-database-managed-instance-quickstart-guide.md) em vez desta página. 
+
 Em um nível alto, o processo de migração de banco de dados se parece com:
 
 ![processo de migração](./media/sql-database-managed-instance-migration/migration-process.png)
 
-- [Avaliar a compatibilidade da instância gerenciada](#assess-managed-instance-compatibility)
-- [Escolher a opção de conectividade do aplicativo](sql-database-managed-instance-connect-app.md)
-- [Implantar em uma instância gerenciada de tamanho ideal](#deploy-to-an-optimally-sized-managed-instance)
-- [Selecionar o método de migração e migrar](#select-migration-method-and-migrate)
-- [Monitorar aplicativos](#monitor-applications)
+- [Avaliar a compatibilidade da instância gerenciada](#assess-managed-instance-compatibility) onde você deve garantir que não há nenhum problema de bloqueio que pode impedir que suas migrações.
+  - Esta etapa também inclui a criação de [linha de base de desempenho](#create-performance-baseline) para determinar o uso de recursos em sua instância do SQL Server de origem. Essa etapa é necessária se você quiser que o implantar a instância gerenciada de tamanho corretamente e verifique se que o desempenho após a migração não é afetado.
+- [Escolha as opções de conectividade do aplicativo](sql-database-managed-instance-connect-app.md)
+- [Implantar em uma instância gerenciada de tamanho ideal](#deploy-to-an-optimally-sized-managed-instance) onde você escolherá características técnicas (número de vCores, quantidade de memória) e o nível de desempenho (comercialmente crítico, de finalidade geral) da sua instância gerenciada.
+- [Selecionar o método de migração e migrar](#select-migration-method-and-migrate) onde você pode migrar seus bancos de dados usando a migração offline (backup/restauração nativa, importe/exportação do banco de dados) ou online (serviço de migração de dados, replicação transacional).
+- [Monitorar aplicativos](#monitor-applications) para garantir que o desempenho de ter esperado.
 
 > [!NOTE]
 > Para migrar um banco de dados individual para um banco de dados individual ou um pool elástico, confira [Migrar um banco de dados do Microsoft SQL Server para o Banco de Dados SQL do Azure](sql-database-single-database-migrate.md).
@@ -58,7 +62,11 @@ Gerenciado instância garantia de 99,99% de disponibilidade até mesmo em cenár
 
 ### <a name="create-performance-baseline"></a>Criar linha de base de desempenho
 
-Se você precisar comparar o desempenho da carga de trabalho na instância gerenciada com sua carga de trabalho original em execução no SQL Server, você precisaria criar uma linha de base de desempenho que será usada para comparação. Estes são alguns dos parâmetros que você precisaria de medidas em sua instância do SQL Server: 
+Se você precisar comparar o desempenho da carga de trabalho na instância gerenciada com sua carga de trabalho original em execução no SQL Server, você precisaria criar uma linha de base de desempenho que será usada para comparação. 
+
+Linha de base de desempenho é um conjunto de parâmetros, como o uso de CPU média/máx, latência de e/s de disco de média/máx, taxa de transferência, IOPS, a expectativa de vida da página de média/máx, média de tamanho máximo de tempdb. Você gostaria de ter parâmetros semelhantes ou melhores, mesmo após a migração, portanto, é importante medir e registre os valores de linha de base para esses parâmetros. Além dos parâmetros do sistema, você precisa selecionar um conjunto de consultas representativas ou as consultas mais importantes em sua duração de min/média/máx carga de trabalho e a medida, uso da CPU para consultas selecionadas. Esses valores permitem que você comparar o desempenho da carga de trabalho em execução na instância gerenciada com os valores originais no seu código-fonte do SQL Server.
+
+Estes são alguns dos parâmetros que você precisaria de medidas em sua instância do SQL Server: 
 - [Monitorar o uso de CPU em sua instância do SQL Server](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/Monitor-CPU-usage-on-SQL-Server/ba-p/680777#M131) e registre a média e de pico de uso da CPU.
 - [Monitorar o uso de memória na instância do SQL Server](https://docs.microsoft.com/sql/relational-databases/performance-monitor/monitor-memory-usage) e determinar a quantidade de memória usada por componentes diferentes, como o pool de buffers, cache, o pool de repositório de coluna do plano [OLTP na memória](https://docs.microsoft.com/sql/relational-databases/in-memory-oltp/monitor-and-troubleshoot-memory-usage?view=sql-server-2017), etc. Além disso, você deve encontrar os valores médios e de pico de contador de desempenho de memória de expectativa de vida da página.
 - Monitorar o uso de e/s de disco em que a instância de SQL Server de origem usando [DM io_virtual_file_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-io-virtual-file-stats-transact-sql) modo de exibição ou [contadores de desempenho](https://docs.microsoft.com/sql/relational-databases/performance-monitor/monitor-disk-usage).
@@ -72,9 +80,10 @@ Como resultado dessa atividade deve documentar média e valores de pico de CPU, 
 ## <a name="deploy-to-an-optimally-sized-managed-instance"></a>Implantar em uma instância gerenciada de tamanho ideal
 
 A instância gerenciada é adaptada para cargas de trabalho locais cuja movimentação para a nuvem é planejada. Ela introduz um [novo modelo de compra](sql-database-service-tiers-vcore.md) que oferece maior flexibilidade na seleção do nível certo de recursos para as cargas de trabalho. No ambiente local, você provavelmente está acostumado a dimensionar essas cargas de trabalho usando núcleos físicos e largura de banda de E/S. O modelo de compra para a instância gerenciada baseia-se em núcleos virtuais, ou “vCores”, com armazenamento adicional e E/S disponíveis separadamente. O modelo vCore é uma maneira mais simples de compreender os requisitos de computação na nuvem em relação ao que você utiliza no local atualmente. Esse novo modelo permite que você dimensione adequadamente o ambiente de destino na nuvem. Algumas diretrizes gerais que podem ajudar você a escolher a camada de serviço certa e as características são descritas aqui:
-- [Monitorar o uso de CPU em sua instância do SQL Server](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/Monitor-CPU-usage-on-SQL-Server/ba-p/680777#M131) e seleção quanto você usa atualmente (usando exibições de gerenciamento dinâmico, o SQL Server Management Studio ou outras ferramentas de monitoramento) de potência de computação. Você pode provisionar uma instância gerenciada que corresponde ao número de núcleos que você está usando no SQL Server, tendo em mente que talvez precisem ser dimensionados de acordo com características de CPU [características da VM em que a instância gerenciada está instalada](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-resource-limits#hardware-generation-characteristics).
-- Verifique a quantidade de memória disponível em sua instância do SQL Server e, em seguida, escolha [a camada de serviço que tem memória correspondente](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-resource-limits#hardware-generation-characteristics). Seria útil medir a expectativa de vida da página na instância do SQL Server para determinar [precisa de mais memória](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/Do-you-need-more-memory-on-Azure-SQL-Managed-Instance/ba-p/563444).
-- Medir a latência de e/s do subsistema de arquivo para escolher entre as camadas de serviço de uso geral e comercialmente crítico.
+- Com base na linha de base de uso de CPU, você pode provisionar uma instância gerenciada que corresponde ao número de núcleos que você está usando no SQL Server, tendo em mente que as características de CPU talvez precise ser dimensionada para corresponder à [características da VM em que é a instância gerenciada instalado](sql-database-managed-instance-resource-limits.md#hardware-generation-characteristics).
+- Com base no uso de memória a linha de base escolher [a camada de serviço que tem memória correspondente](sql-database-managed-instance-resource-limits.md#hardware-generation-characteristics). A quantidade de memória não pode ser escolhida diretamente, portanto, você precisará selecionar a instância gerenciada com a quantidade de vCores que tem memória correspondente (por exemplo 5.1 GB/vCore Gen5). 
+- Com base na linha de base e/s latência do subsistema de arquivo de escolha entre o uso geral (maior que 5 ms de latência) e as camadas de serviço comercialmente crítico (latência menor que 3 ms).
+- Com base na taxa de transferência de linha de base pré-alocar o tamanho dos dados ou arquivos de log para obter o desempenho de e/s de esperado.
 
 Você pode escolher a computação e recursos de armazenamento na implantação de tempo e, em seguida, alteração-lo posteriormente sem introduzir tempo de inatividade para seu aplicativo usando o [portal do Azure](sql-database-scale-resources.md):
 
@@ -169,6 +178,13 @@ O resultado da comparação de desempenho pode ser:
 Faça a alteração dos parâmetros ou atualizar as camadas de serviço para convergir para a configuração ideal, até que você obtenha o desempenho da carga de trabalho que atende às suas necessidades.
 
 ### <a name="monitor-performance"></a>Monitorar o desempenho
+
+A instância gerenciada fornece muitas ferramentas avançadas para monitoramento e solução de problemas, e você deve usá-los para monitorar o desempenho em sua instância. Alguns dos parâmetros que seu precisa monitorar são:
+- Uso da CPU na instância para determinar faz o número de vCores que você forneceu é a combinação ideal para sua carga de trabalho.
+- Expectativa de vida da página em sua instância gerenciada para determinar [precisa de mais memória](https://techcommunity.microsoft.com/t5/Azure-SQL-Database/Do-you-need-more-memory-on-Azure-SQL-Managed-Instance/ba-p/563444).
+- Aguarde estatísticas, como `INSTANCE_LOG_GOVERNOR` ou `PAGEIOLATCH` que informará que você tiver problemas de e/s de armazenamento, especialmente na camada de uso geral em que você talvez precise pré-alocar arquivos para obter um melhor desempenho de e/s.
+
+## <a name="leverage-advanced-paas-features"></a>Aproveitar recursos avançados de PaaS
 
 Depois que você estiver usando uma plataforma totalmente gerenciada e você verificou que o desempenho de carga de trabalho forem correspondentes desempenho da carga de trabalho do SQL Server, aproveite as vantagens que são fornecidas automaticamente como parte do serviço de banco de dados SQL. 
 

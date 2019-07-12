@@ -7,14 +7,14 @@ ms.topic: conceptual
 ms.date: 06/11/2019
 ms.author: tvoellm
 ms.reviewer: sngun
-ms.openlocfilehash: eb8c98df0f015244adf06a9b57f2223509f1f081
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: cc39cc09259c1ae681e1fee070777575e2788323
+ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67082957"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67827837"
 ---
-# <a name="certificate-based-authentication-for-an-azure-ad-identity-to-access-keys-from-an-azure-cosmos-account"></a>Autenticação baseada em certificado para uma identidade do AD do Azure para chaves de acesso de uma conta do Azure Cosmos
+# <a name="certificate-based-authentication-for-an-azure-ad-identity-to-access-keys-from-an-azure-cosmos-db-account"></a>Autenticação baseada em certificado para uma identidade do AD do Azure para chaves de acesso de uma conta do Azure Cosmos DB
 
 Autenticação baseada em certificado permite que seu aplicativo cliente seja autenticado usando o Azure Active Directory (Azure AD) com um certificado de cliente. Você pode executar a autenticação baseada em certificado em um computador em que você precisa de uma identidade, como um computador local ou máquina virtual no Azure. Seu aplicativo pode ler as chaves do Azure Cosmos DB sem a necessidade das chaves diretamente no aplicativo. Este artigo descreve como criar um aplicativo de exemplo do Azure AD, configurá-lo para autenticação baseada em certificado, entrar no Azure usando a nova identidade do aplicativo e, em seguida, ele recupera as chaves de sua conta do Cosmos do Azure. Este artigo usa o Azure PowerShell para configurar as identidades e fornece um C# aplicativo de exemplo que autentica e acessa chaves de sua conta do Cosmos do Azure.  
 
@@ -26,7 +26,7 @@ Autenticação baseada em certificado permite que seu aplicativo cliente seja au
 
 ## <a name="register-an-app-in-azure-ad"></a>Registrar um aplicativo no Azure AD
 
-Nesta etapa, você registrará o aplicativo web de exemplo em sua conta do Azure AD. Este aplicativo mais tarde é usado para ler as chaves da sua conta do Cosmos do Azure. Use as etapas a seguir para registrar um aplicativo: 
+Nesta etapa, você registrará o aplicativo web de exemplo em sua conta do Azure AD. Este aplicativo mais tarde é usado para ler as chaves da sua conta do Azure Cosmos DB. Use as etapas a seguir para registrar um aplicativo: 
 
 1. Faça logon no [Portal do Azure](https://portal.azure.com/).
 

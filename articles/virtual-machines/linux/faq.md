@@ -4,7 +4,7 @@ description: Fornece respostas para algumas das perguntas mais comuns sobre as m
 services: virtual-machines-linux
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-management
 ms.assetid: 3648e09c-1115-4818-93c6-688d7a54a353
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/08/2019
 ms.author: cynthn
-ms.openlocfilehash: 4c184b3c38db53caed31b9fc463ad68f11c73479
-ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
+ms.openlocfilehash: ae636917a32aae823d0d31b415f9ef9ac16e9c2f
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67550325"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67667782"
 ---
 # <a name="frequently-asked-question-about-linux-virtual-machines"></a>Perguntas frequentes sobre as Máquinas Virtuais Linux
 Este artigo trata de algumas das perguntas mais comuns feitas sobre as máquinas virtuais Linux criadas no Azure com o modelo de implantação do Gerenciador de Recursos. Para a versão deste tópico para o Windows, confira [Perguntas frequentes sobre Máquinas Virtuais do Windows](../windows/faq.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)

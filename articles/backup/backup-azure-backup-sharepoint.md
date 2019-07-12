@@ -6,14 +6,14 @@ author: kasinh
 manager: vvithal
 ms.service: backup
 ms.topic: conceptual
-ms.date: 01/30/2019
+ms.date: 07/09/2019
 ms.author: kasinh
-ms.openlocfilehash: 7e8043badbc0accd38ad618a7d455729ab6606b2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: dd38ed8119e2879c4a1e4c6a52ad283043f067bf
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60644328"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705244"
 ---
 # <a name="back-up-a-sharepoint-farm-to-azure"></a>Fazer backup do farm do SharePoint para o Azure
 Faça backup de um farm do SharePoint para o Microsoft Azure usando o DPM (System Center Data Protection Manager) da mesma maneira que o backup de outras fontes de dados. O Backup do Azure fornece flexibilidade no agendamento de backup para criar pontos de backup diariamente, semanalmente, mensalmente ou anualmente e fornece opções de política de retenção para diversos pontos de backup. O DPM fornece a capacidade de armazenar cópias de disco locais para obter RTOs (Objetivos de Tempo de Recuperação) rápidos e armazenar cópias no Azure para uma retenção econômica e de longo prazo.
@@ -220,24 +220,13 @@ No exemplo a seguir, o *item Recuperando SharePoint* foi excluído acidentalment
 
     ![Proteção do SharePoint do DPM11](./media/backup-azure-backup-sharepoint/dpm-sharepoint-protection13.png)
 
-    Após a catalogação ser concluída, o status é alterado para *Êxito*. Clique em **fechar**
+    Após a catalogação ser concluída, o status é alterado para *Êxito*. Clique em **Fechar**.
 
     ![Proteção do SharePoint do DPM12](./media/backup-azure-backup-sharepoint/dpm-sharepoint-protection14.png)
 4. Clique no objeto do SharePoint mostrado na guia **Recuperação** do DPM para obter a estrutura do banco de dados de conteúdo. Clique com o botão direito do mouse no item apropriado e em **Recuperar**.
 
     ![Proteção do SharePoint do DPM13](./media/backup-azure-backup-sharepoint/dpm-sharepoint-protection15.png)
 5. Nesse ponto, siga as etapas de recuperação descritas anteriormente neste artigo para recuperar um banco de dados de conteúdo do SharePoint do disco.
-
-## <a name="faqs"></a>Perguntas frequentes
-
-### <a name="which-versions-of-dpm-support-sql-server-2014-and-sql-2012-sp2"></a>Quais versões do DPM dão suporte ao SQL Server 2014 e SQL 2012 (SP2)?
-O DPM 2012 R2 com Pacote Cumulativo de Atualizações 4 dá suporte a ambos.
-
-### <a name="can-i-recover-a-sharepoint-item-to-the-original-location-if-sharepoint-is-configured-by-using-sql-alwayson-with-protection-on-disk"></a>Poderei recuperar um item do SharePoint para a localização original se o SharePoint tiver sido configurado usando o SQL AlwaysOn (com proteção em disco)?
-Sim, o item pode ser recuperado para o site do SharePoint original.
-
-### <a name="can-i-recover-a-sharepoint-database-to-the-original-location-if-sharepoint-is-configured-by-using-sql-alwayson"></a>Poderei recuperar um banco de dados do SharePoint na localização original se o SharePoint estiver configurado usando o AlwaysOn do SQL?
-Como os bancos de dados do SharePoint são configurados no SQL AlwaysOn, eles não podem ser modificados a menos que o grupo de disponibilidade seja removido. Por isso, o DPM não pode restaurar o banco de dados para o local original. Não é possível recuperar um banco de dados do SQL Server para outra instância do SQL Server.
 
 ## <a name="next-steps"></a>Próximas etapas
 * Saiba mais sobre a Proteção do DPM do SharePoint: veja a [Série de vídeos - Proteção do DPM do SharePoint](https://channel9.msdn.com/Series/Azure-Backup/Microsoft-SCDPM-Protection-of-SharePoint-1-of-2-How-to-create-a-SharePoint-Protection-Group)

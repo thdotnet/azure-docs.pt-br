@@ -8,12 +8,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: jgao
-ms.openlocfilehash: 3d6a102b794ca9c43e1dd18f923f6ce224596499
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 5197358e3bd8a3052fbf71cafc2f1e3acda46b26
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67296256"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67721155"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-azure-powershell"></a>Gerenciar grupos de recursos do Azure Resource Manager usando o PowerShell do Azure
 
@@ -89,7 +89,7 @@ Esse recurso também é conhecido como *reversão em erro*. Para obter mais info
 
 ## <a name="move-to-another-resource-group-or-subscription"></a>Mover para outro grupo de recursos ou assinatura
 
-Você pode mover os recursos no grupo para outro grupo de recursos. Para saber mais, confira [Mover recursos para um novo grupo de recursos ou assinatura](./resource-group-move-resources.md#move-resources).
+Você pode mover os recursos no grupo para outro grupo de recursos. Para saber mais, confira [Mover recursos para um novo grupo de recursos ou assinatura](./resource-group-move-resources.md).
 
 ## <a name="lock-resource-groups"></a>Grupos de recursos de bloqueio
 

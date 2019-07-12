@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8cd29fc00a1c25a7c092393591060ca7e2938155
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 5d3b8176566593c5c9e9ff63a6ccbafcb2a35cd5
+ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67481261"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828000"
 ---
 # <a name="wildcard-applications-in-the-azure-active-directory-application-proxy"></a>Aplicativos curinga no proxy do aplicativo do Azure Active Directory
 
@@ -45,7 +45,9 @@ Você poderá publicar aplicativos com curingas se ambas as URLs, interna e exte
 
 > http(s)://*.\<domain\>
 
-Por exemplo: `http(s)://*.adventure-works.com`. Embora as URLs interna e externa possam usar domínios diferentes, como melhor prática, elas devem ser iguais. Ao publicar o aplicativo, você verá um erro se uma das URLs não tiver um curinga.
+Por exemplo: `http(s)://*.adventure-works.com`.
+
+Embora as URLs interna e externa possam usar domínios diferentes, como melhor prática, elas devem ser iguais. Ao publicar o aplicativo, você verá um erro se uma das URLs não tiver um curinga.
 
 Se tiver aplicativos adicionais com definições de configuração diferentes, você deverá publicar essas exceções como aplicativos à parte para substituir os padrões definidos para o curinga. Aplicativos sem um curinga sempre têm precedência sobre aplicativos curinga. Do ponto de vista da configuração, esses são aplicativos "apenas" regulares.
 
@@ -60,7 +62,7 @@ Para começar, certifique-se de que atender esses requisitos.
 Embora [domínios personalizados](application-proxy-configure-custom-domain.md) sejam opcionais para todos os outros aplicativos, eles são um pré-requisito para aplicativos curinga. A criação de domínios personalizados requer:
 
 1. Crie um domínio verificado no Azure.
-2. Carregue um certificado SSL no formato PFX para o proxy do aplicativo.
+1. Carregue um certificado SSL no formato PFX para o proxy do aplicativo.
 
 Você deve considerar o uso de um certificado curinga de acordo com o aplicativo que pretende criar. Você também pode usar um certificado que liste apenas aplicativos específicos. Neste caso, somente os aplicativos listados no certificado serão acessíveis por meio desse aplicativo curinga.
 
@@ -82,11 +84,11 @@ Aqui estão algumas considerações que você deve levar em conta para aplicativ
 
 Para aplicativos curinga, a **URL interna** deve ser formatada como `http(s)://*.<domain>`.
 
-![Para a URL interna, use o formato http :/ / *. < domínio >](./media/application-proxy-wildcard/22.png)
+![Para a URL interna, use o formato http :/ / *. \<domínio >](./media/application-proxy-wildcard/22.png)
 
 Ao configurar uma **URL externa**, você deve usar o seguinte formato: `https://*.<custom domain>`
 
-![Para a URL externa, use o domínio do formato https://*.<custom >](./media/application-proxy-wildcard/21.png)
+![Para a URL externa, use o formato https://*. \<domínio personalizado >](./media/application-proxy-wildcard/21.png)
 
 Outras posições do curinga, vários curingas ou outras cadeias de caracteres regex não são compatíveis e estão causando erros.
 
@@ -95,11 +97,11 @@ Outras posições do curinga, vários curingas ou outras cadeias de caracteres r
 Você pode excluir um aplicativo do aplicativo curinga
 
 - Publicando o aplicativo de exceção como aplicativo regular
-- Habilitando o curinga somente para aplicativos específicos por meio das configurações DNS  
+- Habilitando o curinga somente para aplicativos específicos por meio das configurações DNS
 
 A publicação de um aplicativo como aplicativo regular é o método preferido para excluir um aplicativo de um curinga. Você deve publicar os aplicativos excluídos antes dos aplicativos curinga para garantir que as exceções sejam impostas desde o início. O aplicativo mais específico sempre terá precedência – um aplicativo publicado como `budgets.finance.adventure-works.com` tem precedência sobre o aplicativo `*.finance.adventure-works.com`, que, por sua vez, tem precedência sobre o aplicativo `*.adventure-works.com`.
 
-Você também pode limitar o curinga para funcionar apenas para aplicativos específicos por meio do gerenciamento DNS. Como melhor prática, você deve criar uma entrada CNAME que inclua um curinga e corresponda ao formato da URL externa configurada. No entanto, em vez disso, você pode apontar as URLs dos aplicativos específicos para os curingas. Por exemplo, em vez de `*.adventure-works.com`, aponte `hr.adventure-works.com`, `expenses.adventure-works.com` e `travel.adventure-works.com individually` para `000aa000-11b1-2ccc-d333-4444eee4444e.tenant.runtime.msappproxy.net`. 
+Você também pode limitar o curinga para funcionar apenas para aplicativos específicos por meio do gerenciamento DNS. Como melhor prática, você deve criar uma entrada CNAME que inclua um curinga e corresponda ao formato da URL externa configurada. No entanto, em vez disso, você pode apontar as URLs dos aplicativos específicos para os curingas. Por exemplo, em vez de `*.adventure-works.com`, aponte `hr.adventure-works.com`, `expenses.adventure-works.com` e `travel.adventure-works.com individually` para `000aa000-11b1-2ccc-d333-4444eee4444e.tenant.runtime.msappproxy.net`.
 
 Se usar essa opção, você também precisará de outra entrada CNAME para o valor `AppId.domain`, por exemplo, `00000000-1a11-22b2-c333-444d4d4dd444.adventure-works.com`, também apontando para o mesmo local. Você pode encontrar o **AppId** na página de propriedades do aplicativo curinga:
 
@@ -110,7 +112,7 @@ Se usar essa opção, você também precisará de outra entrada CNAME para o val
 O aplicativo curinga é representado com apenas um bloco no [painel MyApps](https://myapps.microsoft.com). Por padrão, esse bloco permanece oculto. Para mostrar o bloco e fazer os usuários aterrissarem em uma página específica:
 
 1. Siga as diretrizes para [definir uma URL da home page](application-proxy-configure-custom-home-page.md).
-2. Defina **Mostrar Aplicativo** como **verdadeiro** na página de propriedades do aplicativo.
+1. Defina **Mostrar Aplicativo** como **verdadeiro** na página de propriedades do aplicativo.
 
 ### <a name="kerberos-constrained-delegation"></a>Delegação restrita de Kerberos
 

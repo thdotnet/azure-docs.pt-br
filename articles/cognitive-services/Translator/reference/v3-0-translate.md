@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: swmachan
-ms.openlocfilehash: e63670504dedf426829778e154b2d5c2b69d98a0
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 2b08ddb4241a9af7aee31bb51d75dd82ff8255d2
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67435061"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67839630"
 ---
 # <a name="translator-text-api-30-translate"></a>API de Tradução de Texto 3.0: Translate
 
@@ -42,7 +42,7 @@ Os parâmetros de solicitação passados na cadeia de caracteres de consulta sã
   </tr>
   <tr>
     <td>from</td>
-    <td><em>Parâmetro opcional</em>.<br/>Especifica o idioma do texto de entrada. Localize quais idiomas estão disponíveis para tradução, consultando <a href="./v3-0-languages.md">idiomas com suporte</a> usando o escopo <code>translation</code>. Se o parâmetro <code>from</code> não for especificado, a detecção automática de idioma será aplicada para determinar o idioma de origem.</td>
+    <td><em>Parâmetro opcional</em>.<br/>Especifica o idioma do texto de entrada. Localize quais idiomas estão disponíveis para tradução, consultando <a href="./v3-0-languages.md">idiomas com suporte</a> usando o escopo <code>translation</code>. Se o parâmetro <code>from</code> não for especificado, a detecção automática de idioma será aplicada para determinar o idioma de origem. <br/><br/>Você deve usar o <code>from</code> parâmetro, em vez da detecção automática ao usar o <a href="https://docs.microsoft.com/azure/cognitive-services/translator/dynamic-dictionary">dicionário dinâmico</a> recurso.</td>
   </tr>
   <tr>
     <td>para</td>
@@ -374,7 +374,7 @@ Se você quiser evitar conteúdo ofensivo na tradução, independentemente da pr
 
 <table width="100%">
   <th width="20%">ProfanityAction</th>
-  <th>Ação</th>
+  <th>Action</th>
   <tr>
     <td><code>NoAction</code></td>
     <td>Esse é o comportamento padrão. O conteúdo ofensivo passará da origem para o destino.<br/><br/>

@@ -3,17 +3,17 @@ title: Solucionar problemas de erros de backup com máquinas virtuais do Azure
 description: Solucionar problemas de backup e restauração de máquinas virtuais do Azure
 services: backup
 author: srinathvasireddy
-manager: vijayts
+manager: sivan
 ms.service: backup
 ms.topic: conceptual
-ms.date: 05/22/2019
-ms.author: srinathvasireddy
-ms.openlocfilehash: 23137cd686bcdba59880ff705a43b16ced992b59
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 07/05/2019
+ms.author: srinathv
+ms.openlocfilehash: d7b99e7076e52db004bba7155922f4b144f2ad0a
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66303987"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67704893"
 ---
 # <a name="troubleshoot-azure-virtual-machine-backup"></a>Solucionar problemas de backup de máquinas virtuais do Azure
 Você pode solucionar os erros encontrados durante o uso do Backup do Azure com as informações listadas abaixo:

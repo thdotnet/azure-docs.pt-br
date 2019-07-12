@@ -17,12 +17,12 @@ ms.date: 10/03/2018
 ms.author: joflore
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2b4f8caf03aad339cea3c3fcc732fc1af6086ea7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0f6c2f36e1061243851b37da47659aaf7a18e8d6
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67108895"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67673017"
 ---
 # <a name="what-is-azure-active-directory-identity-protection-refreshed"></a>O que é Azure Active Directory Identity Protection (atualizado)?
 
@@ -119,7 +119,7 @@ O risco do usuário é calculado considerando todos os riscos associados ao usu�
 
 ## <a name="how-identity-protection-detects-risk"></a>Como o Identity Protection detecta riscos  
 
-O Azure AD usa o aprendizado de máquina para detectar anomalias e atividades suspeitas usando os dois sinais detectados em tempo real durante as entradas, bem como os sinais não em tempo real relacionados aos usuários e suas atividades de entrada. Usando esses dados, o Identity Protection calcula um risco de entrada em tempo real sempre que um usuário é autenticado, bem como determina um nível de risco geral do usuário para cada usuário. O Identity Protection permite que você tome providências automaticamente nessas detecções de risco configurando o risco de usuário do Identity Protection e as políticas de risco de entrada.  
+O Azure AD usa o aprendizado de máquina para detectar anomalias e atividades suspeitas usando os dois sinais detectados em tempo real durante as entradas, bem como os sinais não em tempo real relacionados aos usuários e suas atividades de entrada. Usando esses dados, o Identity Protection calcula um risco de entrada em tempo real sempre que um usuário é autenticado, bem como determinar um nível de risco do usuário geral para cada usuário. O Identity Protection permite que você tome providências automaticamente nessas detecções de risco configurando o risco de usuário do Identity Protection e as políticas de risco de entrada.  
 
  
 
@@ -194,7 +194,7 @@ Para começar a trabalhar com o Identity Protection, configure primeiro uma pol�
 
 O Identity Protection dá suporte a 3 funções no Azure AD para equilibrar as atividades de gerenciamento em torno da sua implantação: 
 
-| Função | O que ele pode fazer | O que não pode fazer |
+| Role | O que ele pode fazer | O que não pode fazer |
 | --- | --- | --- |
 | Administrador global | Acesso completo à Proteção de Identidade, Proteção de Identidade integrada | |
 | Administrador de segurança | Acesso total à proteção de identidade | Proteção de Identidade integrada, redefinir senhas para um usuário |

@@ -6,16 +6,16 @@ author: kevinvngo
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: load data
+ms.subservice: load-data
 ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: a4f52c2bd0040efef9e12a8feec0bfc779105ad4
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: e20667c0414f551a545e66b84da31c873c96dc48
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67461857"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67589014"
 ---
 # <a name="tutorial-load-data-to-azure-sql-data-warehouse"></a>Tutorial: Carregar dados no SQL Data Warehouse do Azure
 
@@ -67,7 +67,7 @@ Siga estas etapas para criar um SQL data warehouse em branco.
 
 4. Clique em **Servidor** para criar e configurar um novo servidor para o novo banco de dados. Preencha o **formulário Novo servidor** com as seguintes informações: 
 
-    | Configuração | Valor sugerido | DESCRIÇÃO | 
+    | Configuração | Valor sugerido | Description | 
     | ------- | --------------- | ----------- |
     | **Nome do servidor** | Qualquer nome exclusivo globalmente | Para ver os nomes do servidor válidos, consulte [Regras e restrições de nomenclatura](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). | 
     | **Logon de administrador do servidor** | Qualquer nome válido | Para ver os nomes de logon válidos, consulte [Identificadores do Banco de Dados](https://docs.microsoft.com/sql/relational-databases/databases/database-identifiers).|
@@ -150,9 +150,9 @@ Esta seção usa o [SSMS](/sql/ssms/download-sql-server-management-studio-ssms) 
     | ------------ | --------------- | ----------- | 
     | Tipo de servidor | Mecanismo de banco de dados | Esse valor é obrigatório |
     | Nome do servidor | O nome do servidor totalmente qualificado | Por exemplo, **sample-svr.database.windows.net** é um nome do servidor totalmente qualificado. |
-    | Authentication | Autenticação do SQL Server | A Autenticação do SQL é o único tipo de autenticação configurado neste tutorial. |
-    | Logon | A conta do administrador do servidor | Esta é a conta que você especificou quando criou o servidor. |
-    | Senha | A senha para sua conta do administrador do servidor | Esta é a senha que você especificou quando criou o servidor. |
+    | Autenticação | Autenticação do SQL Server | A Autenticação do SQL é o único tipo de autenticação configurado neste tutorial. |
+    | Logon | A conta do administrador do servidor | Essa é a conta que você especificou quando criou o servidor. |
+    | Senha | A senha de sua conta do administrador do servidor | Esta é a senha que você especificou quando criou o servidor. |
 
     ![conectar-se ao servidor](media/load-data-wideworldimportersdw/connect-to-server.png)
 

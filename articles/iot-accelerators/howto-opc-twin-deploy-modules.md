@@ -5,15 +5,15 @@ author: dominicbetts
 ms.author: dobett
 ms.date: 11/26/2018
 ms.topic: conceptual
-ms.service: iot-industrialiot
+ms.service: industrial-iot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 41d544fd23d258393cc83ea09371332655223581
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 798f087c260b6b0a1efc366b864fe2bb7bce732e
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67203939"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603697"
 ---
 # <a name="deploy-opc-twin-module-and-dependencies-from-scratch"></a>Implantar o módulo gêmeo de OPC e as dependências do zero
 
@@ -72,7 +72,7 @@ Todos os módulos são implantados usando um manifesto de implantação.  Um man
               "restartPolicy": "always",
               "settings": {
                 "image": "mcr.microsoft.com/iotedge/opc-twin:latest",
-                "createOptions": "{\"NetworkingConfig\":{\"EndpointsConfig\":{\"host\":{}}},\"HostConfig\":{\"NetworkMode\":\"host\",\"CapAdd\":[\"NET_ADMIN\"]}}"
+                "createOptions": "{\"NetworkingConfig\": {\"EndpointsConfig\": {\"host\": {}}}, \"HostConfig\": {\"NetworkMode\": \"host\" }}"
               }
             },
             "opcpublisher": {
@@ -136,7 +136,7 @@ Todos os módulos são implantados usando um manifesto de implantação.  Um man
    Como *opções de criação de* usar o JSON a seguir:
 
    ```json
-   {"HostConfig":{"NetworkMode":"host","CapAdd":["NET_ADMIN"]}}
+   {"NetworkingConfig": {"EndpointsConfig": {"host": {}}}, "HostConfig": {"NetworkMode": "host" }}
    ```
 
    Preencha os campos opcionais se necessário. Para mais informações sobre opções de criação de contêiner, políticas de reinício, e status desejados consulte [propriedades desejadas do EdgeAgent](https://docs.microsoft.com/azure/iot-edge/module-edgeagent-edgehub#edgeagent-desired-properties). Para mais informações sobre o módulo gêmeo consulte [Defina ou atualize propriedades desejadas](https://docs.microsoft.com/azure/iot-edge/module-composition#define-or-update-desired-properties).

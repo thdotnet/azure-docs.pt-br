@@ -4,7 +4,7 @@ description: Lista os tamanhos diferentes disponíveis de máquinas virtuais do 
 services: virtual-machines-windows
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager,azure-service-management
 ms.assetid: aabf0d30-04eb-4d34-b44a-69f8bfb84f22
@@ -15,19 +15,19 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 07/02/2019
 ms.author: jonbeck
-ms.openlocfilehash: bd083a00887c5de41a488866fc5244126f6b17be
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: 78b0de43652aba20563e2712e249e18ccd18c407
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67544050"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67710076"
 ---
 # <a name="sizes-for-windows-virtual-machines-in-azure"></a>Tamanhos das máquinas virtuais do Windows no Azure
 
 Este artigo descreve os tamanhos e as opções disponíveis de máquinas virtuais do Azure que você pode usar para executar seus aplicativos Windows e cargas de trabalho. Ele também fornece considerações de implantação a serem observadas ao planejar o uso desses recursos.  Este artigo também está disponível para [máquinas virtuais Linux](../linux/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 
-| Type                     | Tamanhos           |    DESCRIÇÃO       |
+| Tipo                     | Tamanhos           |    DESCRIÇÃO       |
 |--------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | [Propósito geral](sizes-general.md)          | B, Dsv3, Dv3, DSv2, Dv2, Av2, DC  | Relação equilibrada de CPU/memória. Ideal para teste e desenvolvimento, bancos de dados pequenos a médios e servidores Web de tráfego baixo a médio. |
 | [Computação otimizada](sizes-compute.md)        | Fsv2           | Alta relação de CPU/memória. Boa para servidores web de tráfego médio, dispositivos de rede, processos de lote e servidores de aplicativo.        |

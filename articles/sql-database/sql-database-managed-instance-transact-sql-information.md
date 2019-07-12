@@ -10,14 +10,14 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlrab, bonova
 manager: craigg
-ms.date: 03/13/2019
+ms.date: 07/07/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 2ca2e4e98f56f7df5e81217bcda00179f05ff69e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6b0e10ce48088853090958dca9d8c1fad20780e7
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67070352"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67723247"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Diferenças de T-SQL da Instância Gerenciada do Banco de Dados SQL do Azure em relação ao SQL Server
 
@@ -293,13 +293,13 @@ Para saber mais, confira [ALTERAR BANCO DE DADOS](https://docs.microsoft.com/sql
   - Não há suporte para SQL Server Analysis Services.
 - Há suporte parcial para notificações.
 - Notificação por email é suportada, embora exija que você configure um perfil do Database Mail. SQL Server Agent pode usar apenas um perfil do Database Mail e ele deve ser chamado `AzureManagedInstance_dbmail_profile`. 
-  - Não há suporte para o Pager. 
+  - Não há suporte para o Pager.
   - Não há suporte para o NetSend.
   - Ainda não há suporte para alertas.
-  - Não há suporte para proxies. 
+  - Não há suporte para proxies.
 - Não há suporte para log de eventos.
 
-Os seguintes recursos atualmente não têm suporte, mas serão habilitados no futuro:
+Os seguintes recursos do SQL Agent atualmente não têm suporte:
 
 - Proxies
 - Agendamento de trabalhos em uma CPU ociosa
@@ -398,7 +398,13 @@ As tabelas externas que fazem referência que os arquivos no armazenamento de BL
 
 ### <a name="replication"></a>Replicação
 
-A replicação está disponível para a visualização pública em Instâncias Gerenciadas. Para obter informações sobre a replicação, consulte [replicação do SQL Server](https://docs.microsoft.com/sql/relational-databases/replication/replication-with-sql-database-managed-instance).
+[Replicação transacional](sql-database-managed-instance-transactional-replication.md) está disponível para visualização pública na instância gerenciada, com algumas restrições:
+- Al tipos de participantes de replicação (publicador, distribuidor, assinante de Pull e Push assinante) podem ser colocados na instância gerenciada, mas o publicador e distribuidor não podem ser colocados em instâncias diferentes.
+- Há suporte para tipos de replicação transacional, instantâneo e bidirecionais. Não há suporte para replicação de mesclagem, replicação ponto a ponto e assinaturas atualizáveis.
+- A instância gerenciada pode se comunicar com as versões recentes do SQL Server. Consulte as versões com suporte [aqui](sql-database-managed-instance-transactional-replication.md#supportability-matrix-for-instance-databases-and-on-premises-systems).
+- Replicação transacional tem alguns [requisitos de rede adicionais](sql-database-managed-instance-transactional-replication.md#requirements).
+
+Para obter informações sobre como configurar a replicação, consulte [tutorial de replicação](replication-with-sql-database-managed-instance.md).
 
 ### <a name="restore-statement"></a>Instrução RESTAURAR 
 
@@ -459,7 +465,7 @@ Não há suporte para agente de serviços entre instâncias:
 
 ## <a name="Environment"></a>Restrições de ambiente
 
-### <a name="subnet"></a>Sub-rede
+### <a name="subnet"></a>Subnet
 - Na sub-rede reservada para sua instância gerenciada, você não pode colocar outros recursos (por exemplo máquinas virtuais). Coloque esses recursos em outras sub-redes.
 - Subrede deve ter um número suficiente de disponíveis [endereços IP](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Mínimo é 16, enquanto a recomendação é ter pelo menos 32 endereços IP na sub-rede.
 - [Pontos de extremidade de serviço não podem ser associados a sub-rede da instância gerenciada](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Certifique-se de que a opção de pontos de extremidade de serviço é desabilitada quando você cria a rede virtual.
@@ -486,7 +492,7 @@ As seguintes variáveis, funções e exibições retornam resultados diferentes:
 
 ### <a name="tempdb-size"></a>Tamanho de TEMPDB
 
-O tamanho máximo do arquivo de `tempdb` não pode ser maior que 24 GB por núcleo de uma camada de uso geral. O máximo `tempdb` tamanho em uma camada comercialmente crítico é limitado com o tamanho do armazenamento de instância. O `tempdb` banco de dados sempre é dividido em arquivos de dados de 12. Esse tamanho máximo por arquivo não pode ser alterado, e não não possível adicionar novos arquivos `tempdb`. Algumas consultas podem retornar um erro se eles precisarem de mais de 24 GB por núcleo em `tempdb`. `tempdb` é sempre recriado como um banco de dados vazio quando o início de instância ou fazer o failover e qualquer alteração feita no `tempdb` não será preservado. 
+O tamanho máximo do arquivo de `tempdb` não pode ser maior que 24 GB por núcleo de uma camada de uso geral. O máximo `tempdb` tamanho em uma camada comercialmente crítico é limitado com o tamanho do armazenamento de instância. `tempdb` tamanho do arquivo de log é limitado a 120 GB no uso geral e comercialmente crítico. O `tempdb` banco de dados sempre é dividido em arquivos de dados de 12. Esse tamanho máximo por arquivo não pode ser alterado, e não não possível adicionar novos arquivos `tempdb`. Algumas consultas podem retornar um erro se eles precisarem de mais de 24 GB por núcleo em `tempdb` ou se eles produzam mais de 120 GB de log. `tempdb` é sempre recriado como um banco de dados vazio quando a instância é iniciada ou fazer o failover e qualquer alteração feita no `tempdb` não será preservado. 
 
 ### <a name="cant-restore-contained-database"></a>Não é possível restaurar o banco de dados independente
 
@@ -585,6 +591,11 @@ Módulos CLR colocados em uma instância gerenciada e servidores vinculados ou c
 Você não é possível executar `BACKUP DATABASE ... WITH COPY_ONLY` em um banco de dados é criptografado com serviços gerenciados criptografia TDE (Transparent Data). TDE gerenciada por serviço força backups a serem criptografados com uma chave interna de TDE. A chave não pode ser exportada, portanto, é possível restaurar o backup.
 
 **Solução alternativa:** Use backups automáticos e restauração point-in-time ou use [gerenciadas pelo cliente (BYOK) TDE](https://docs.microsoft.com/azure/sql-database/transparent-data-encryption-azure-sql#customer-managed-transparent-data-encryption---bring-your-own-key) em vez disso. Você também pode desabilitar a criptografia no banco de dados.
+
+### <a name="point-in-time-restore-follows-time-by-the-time-zone-set-on-the-source-instance"></a>Restauração point-in-time segue a hora, fuso horário definido na instância de origem
+
+Atualmente, a restauração point-in-time interpreta o tempo de restauração pela seguinte fuso horário da instância de origem em vez disso, pelo seguinte UTC.
+Verifique [fuso horário de instância gerenciada problemas conhecidos](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-timezone#known-issues) para obter mais detalhes.
 
 ## <a name="next-steps"></a>Próximas etapas
 

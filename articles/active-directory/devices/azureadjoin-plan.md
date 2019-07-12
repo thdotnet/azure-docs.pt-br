@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 36429feed99c421984ed55d4e506954aa30f0040
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 4332c921af770cb47e9a9a779d0bd148153fcd31
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67482123"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67666136"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>Como: Planejar sua implementação de ingresso no Azure AD
 
@@ -70,7 +70,7 @@ Um ambiente federado deve ter um provedor de identidade que dá suporte aos prot
 - **WS-Fed:** Esse protocolo é necessário para ingressar um dispositivo no Azure AD.
 - **WS-Trust:** Esse protocolo é necessário para entrar em um dispositivo ingressado no Azure AD. 
 
-Se seu provedor de identidade não oferece suporte a esses protocolos, o ingresso no Azure Active Directory não trabalha nativamente. Começando com o Windows 10 1809, seus usuários podem entrar um dispositivo ingressado do Azure Active Directory com um provedor de identidade baseado em SAML [web entrar no Windows 10](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1809#web-sign-in-to-windows-10). Atualmente, a entrada na web é um recurso apenas para visualização.
+Se seu provedor de identidade não oferece suporte a esses protocolos, o ingresso no Azure Active Directory não trabalha nativamente. Começando com o Windows 10 1809, seus usuários podem entrar um dispositivo ingressado do Azure Active Directory com um provedor de identidade baseado em SAML [web entrar no Windows 10](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1809#web-sign-in-to-windows-10). Atualmente, entrada na web é um recurso de visualização e não é recomendada para implantações de produção.
 
 ### <a name="smartcards-and-certificate-based-authentication"></a>Cartões inteligentes e autenticação baseada em certificado
 
@@ -189,7 +189,7 @@ Aqui está uma comparação dessas três abordagens
 |   | Instalação do autoatendimento | Windows Autopilot | Registro em massa |
 | --- | --- | --- | --- |
 | Requer interação do usuário para configurar | Sim | sim | Não |
-| Requer trabalho de TI | Não | sim | Sim |
+| Requer trabalho de TI | Não | Sim | Sim |
 | Fluxos aplicáveis | OOBE e Configurações | OOBE somente | OOBE somente |
 | Direitos de administrador local para o usuário primário | Sim, por padrão | Configurável | Não |
 | Precisar de suporte do OEM | Não | Sim | Não |

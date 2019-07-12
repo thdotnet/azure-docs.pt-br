@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 06/26/2019
 ms.author: brendm
 ms.custom: seodec18
-ms.openlocfilehash: 51ca597208b582e95fd305886dcf163744825eee
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: af6fd7b99147396a70fccc7b2b11dfef3def15a8
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67509655"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67786308"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Configurar um aplicativo Linux Java para o serviço de aplicativo do Azure
 
@@ -133,7 +133,7 @@ Os desenvolvedores que executam um único aplicativo com um slot de implantaçã
 
 Ao ajustar as configurações de heap do aplicativo, examine os detalhes do Plano do Serviço de Aplicativo e considere os vários aplicativos e slots de implantação necessários para encontrar a alocação de memória ideal.
 
-Se você estiver implantando um aplicativo de JAR, devem ser nomeado *app.jar* para que a imagem interna possa identificar corretamente o seu aplicativo. (O plug-in do Maven faz essa renomeação automaticamente.) Se você não quiser renomear seu JAR do *app.jar*, você pode carregar um script de shell com o comando para executar o JAR. Em seguida, cole o caminho completo para esse script na [arquivo de inicialização](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-faq#startup-file) caixa de texto na seção de configuração do portal.
+Se você estiver implantando um aplicativo de JAR, devem ser nomeado *app.jar* para que a imagem interna possa identificar corretamente o seu aplicativo. (O plug-in do Maven faz essa renomeação automaticamente.) Se você não quiser renomear seu JAR do *app.jar*, você pode carregar um script de shell com o comando para executar o JAR. Em seguida, cole o caminho completo para esse script na [arquivo de inicialização](app-service-linux-faq.md#built-in-images) caixa de texto na seção de configuração do portal.
 
 ### <a name="turn-on-web-sockets"></a>Ativar os soquetes da Web
 
@@ -170,6 +170,10 @@ Como alternativa, é possível definir a configuração do aplicativo usando o p
 ### <a name="adjust-startup-timeout"></a>Ajustar o tempo limite de inicialização
 
 Se seu aplicativo Java é especialmente grande, você deverá aumentar o limite de tempo de inicialização. Para fazer isso, crie uma configuração de aplicativo, `WEBSITES_CONTAINER_START_TIME_LIMIT` e defini-lo como o número de segundos que o serviço de aplicativo deve aguardar antes de atingir o tempo limite. O valor máximo é `1800` segundos.
+
+### <a name="pre-compile-jsp-files"></a>Pré-Compile os arquivos JSP
+
+Para melhorar o desempenho de aplicativos Tomcat, você pode compilar os arquivos JSP antes de implantar o serviço de aplicativo. Você pode usar o [plug-in do Maven](https://sling.apache.org/components/jspc-maven-plugin/plugin-info.html) fornecido pelo Apache arremessar ou usando este [Ant compilar arquivo](https://tomcat.apache.org/tomcat-9.0-doc/jasper-howto.html#Web_Application_Compilation).
 
 ## <a name="secure-applications"></a>Aplicativos seguros
 
@@ -267,7 +271,7 @@ Esta seção mostra como conectar aplicativos Java implantados no serviço de ap
 
 Por padrão, o serviço de aplicativo espera que seu aplicativo JAR será nomeado *app.jar*. Se ele tem esse nome, ele será executado automaticamente. Para usuários do Maven, você pode definir o nome do arquivo JAR, incluindo `<finalName>app</finalName>` no `<build>` seção da sua *POM. XML*. [Você pode fazer o mesmo no Gradle](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.bundling.Jar.html#org.gradle.api.tasks.bundling.Jar:archiveFileName) definindo o `archiveFileName` propriedade.
 
-Se você quiser usar um nome diferente para o JAR, você também deve fornecer o [o comando de inicialização](app-service-linux-faq.md#built-in-images) que executa o arquivo JAR. Por exemplo: `java -jar my-jar-app.jar`. Você pode definir o valor para o comando de inicialização no Portal, na configuração > Configurações gerais, ou com uma configuração de aplicativo denominado `STARTUP_COMMAND`.
+Se você quiser usar um nome diferente para o JAR, você também deve fornecer o [o comando de inicialização](app-service-linux-faq.md#built-in-images) que executa o arquivo JAR. Por exemplo, `java -jar my-jar-app.jar`. Você pode definir o valor para o comando de inicialização no Portal, na configuração > Configurações gerais, ou com uma configuração de aplicativo denominado `STARTUP_COMMAND`.
 
 ### <a name="server-port"></a>Porta do servidor
 

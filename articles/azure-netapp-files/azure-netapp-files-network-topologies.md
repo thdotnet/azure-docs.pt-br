@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: b-juche
-ms.openlocfilehash: 207fb003eb1fdaafe4f43f7cd41dd4b7662eddf9
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: 5b54d8f21f4cb1cdd7bb06871df6ac22d19d1ab6
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67331972"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705213"
 ---
 # <a name="guidelines-for-azure-netapp-files-network-planning"></a>Diretrizes para planejamento de rede do Azure NetApp Files
 
 Planejamento da arquitetura de rede é um elemento fundamental da criação de qualquer infraestrutura do aplicativo. Este artigo ajuda você a criar uma arquitetura de rede em vigor para suas cargas de trabalho para se beneficiar de recursos avançados dos arquivos do Azure NetApp.
 
-Volumes de arquivos NetApp do Azure são projetados para estar contidos em uma sub-rede de finalidade especial chamada [delegada sub-rede](https://docs.microsoft.com/azure/virtual-network/virtual-network-manage-subnet) em sua rede Virtual do Azure. Portanto, você pode acessar os volumes diretamente da sua rede virtual, redes virtuais emparelhadas na mesma região ou local ao longo de um Gateway de rede Virtual (ExpressRoute ou Gateway de VPN) conforme necessário. A sub-rede é dedicada a arquivos do Azure NetApp e nenhuma conectividade com a internet ou outros serviços do Azure.
+Volumes de arquivos NetApp do Azure são projetados para ser contidos em uma sub-rede de finalidade especial chamada de um [delegada sub-rede](https://docs.microsoft.com/azure/virtual-network/virtual-network-manage-subnet) em sua rede Virtual do Azure. Portanto, você pode acessar os volumes diretamente da sua rede virtual, redes virtuais emparelhadas na mesma região ou local ao longo de um Gateway de rede Virtual (ExpressRoute ou Gateway de VPN) conforme necessário. A sub-rede é dedicada a arquivos do Azure NetApp e nenhuma conectividade com a Internet ou outros serviços do Azure.
 
 ## <a name="considerations"></a>Considerações  
 
@@ -35,7 +35,7 @@ Você deve entender algumas considerações ao planejar para a rede de arquivos 
 
 Os recursos a seguir atualmente não há suportados para arquivos do NetApp do Azure: 
 
-* Grupos de segurança de rede (NSGs) na sub-rede
+* Grupos de segurança de rede (NSGs) aplicados à sub-rede de delegado
 * Definido pelo usuário UDRs (rotas) com o próximo salto como sub-rede de arquivos do Azure NetApp
 * Políticas do Azure (por exemplo, políticas de nomenclatura personalizadas) na interface de arquivos do Azure NetApp
 * Balanceadores de carga para tráfego de arquivos do Azure NetApp
@@ -71,7 +71,7 @@ Antes de provisionar um volume de arquivos do Azure NetApp, você precisa criar 
 
 ### <a name="subnets"></a>Sub-redes
 
-Subredes segmentar a rede virtual em espaços de endereço separados que podem ser usados pelos recursos do Azure-los.  Volumes de arquivos NetApp do Azure estão contidos em uma sub-rede de finalidade especial chamada [delegada sub-rede](https://docs.microsoft.com/azure/virtual-network/virtual-network-manage-subnet). 
+Subredes segmentar a rede virtual em espaços de endereço separados que podem ser usados pelos recursos do Azure-los.  Volumes de arquivos NetApp do Azure estão contidos em uma sub-rede de finalidade especial chamada de um [delegada sub-rede](https://docs.microsoft.com/azure/virtual-network/virtual-network-manage-subnet). 
 
 Delegação de sub-rede dá permissões explícitas para o serviço de arquivos do Azure NetApp para criar recursos específicos do serviço na sub-rede.  Ele usa um identificador exclusivo na implantação do serviço. Nesse caso, uma interface de rede é criada para habilitar a conectividade para arquivos do Azure NetApp.
 
@@ -99,7 +99,7 @@ Um cenário básico é criar ou se conectar a um volume de arquivos do Azure Net
 
 Se você tiver redes virtuais adicionais na mesma região que precisam acessar recursos uns dos outros, as redes virtuais podem ser conectadas usando [emparelhamento VNet](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) para habilitar a conectividade segura por meio da infraestrutura do Azure. 
 
-Considere a rede virtual 2 e 3 de rede virtual no diagrama acima. Se VM 1 precisa se conectar à VM 2 e Volume 2, ou se o VM 2 precisa se conectar à VM 1 ou Volume 1, em seguida, você precisa habilitar o emparelhamento VNet entre a rede virtual 2 e 3 de rede virtual. 
+Considere a rede virtual 2 e 3 de rede virtual no diagrama acima. Se a VM 2 precisa se conectar à VM 3 ou Volume 2 ou 3 VM precisa se conectar à VM 2 ou 1 de Volume, você precisa habilitar o emparelhamento VNet entre a rede virtual 2 e 3 de rede virtual. 
 
 Além disso, considere um cenário em que 1 rede virtual está emparelhada com vnet2 e vnet2 é emparelhada com a rede virtual 3 na mesma região. Os recursos de rede virtual 1 podem se conectar aos recursos na rede virtual 2, mas ele não pode se conectar aos recursos na rede virtual 3, a menos que a rede virtual 1 e 3 de rede virtual estejam emparelhadas. 
 
@@ -111,17 +111,17 @@ O diagrama a seguir ilustra um ambiente híbrido:
 
 ![Ambiente de rede híbrida](../media/azure-netapp-files/azure-netapp-files-network-hybrid-environment.png)
 
-No cenário híbrido, aplicativos de locais de data centers precisam acessar os recursos no Azure.  Esse é o caso se você deseja estender seu data center do Azure, ou você deseja usar serviços nativos do Azure ou recuperação de desastres. Ver [opções de planejamento do Gateway de VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%2fazure%2fvirtual-network%2ftoc.json#planningtable) sobre como conectar vários recursos locais para recursos no Azure por meio de uma VPN site a site ou ExpressRoute.
+No cenário híbrido, aplicativos de datacenters locais precisam acessar os recursos no Azure.  Esse é o caso se você deseja estender seu datacenter para o Azure, ou você deseja usar os serviços nativos do Azure ou recuperação de desastres. Ver [opções de planejamento do Gateway de VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%2fazure%2fvirtual-network%2ftoc.json#planningtable) para obter informações sobre como conectar vários recursos locais para recursos no Azure por meio de uma VPN site a site ou ExpressRoute.
 
 Em uma topologia hub-spoke híbrida, o hub de rede virtual no Azure atua como um ponto central de conectividade para sua rede local. Os raios são VNets emparelhadas com o hub e eles podem ser usados para isolar as cargas de trabalho.
 
-Dependendo da configuração. Você pode conectar recursos do local a recursos no hub quanto nos spokes.
+Dependendo da configuração, você pode se conectar a recursos locais para recursos no hub quanto nos spokes.
 
 Na topologia ilustrada acima, a rede local está conectada a um hub de rede virtual no Azure e há spoke 2 redes virtuais na mesma região é emparelhada com a VNet do hub.  Nesse cenário, as opções de conectividade com suporte para volumes de arquivos do Azure NetApp são da seguinte maneira:
 
-* Recursos de local VM 1 e 2 da VM pode se conectar para Volume 1 no hub usando uma VPN de site a site ou rota expressa. 
+* Com recursos locais VM 1 e 2 da VM podem se conectar ao Volume 1 no hub em um circuito de ExpressRoute ou VPN site a site. 
 * Recursos locais VM 1 e 2 da VM podem se conectar como Volume 2 ou 3 de Volume ao longo de uma VPN site a site e o emparelhamento de Vnet regional.
-* VM 3 no hub de rede virtual pode se conectar ao volume 2 no spoke 1 rede virtual e o Volume 3 no spoke 2 da rede virtual.
+* 3 de VM no hub de rede virtual pode se conectar ao Volume 2 no spoke 1 rede virtual e o Volume 3 no spoke 2 da rede virtual.
 * 4 de VM de spoke 1 rede virtual e 5 de VM de spoke 2 da rede virtual podem se conectar ao Volume 1 na VNet do hub.
 
 4 de VM no spoke 1 rede virtual não pode se conectar ao Volume 3 no spoke 2 da rede virtual. Além disso, 5 de VM no spoke VNet2 não é possível se conectar ao Volume 2 no spoke 1 rede virtual. Esse é o caso, porque as redes virtuais spoke não emparelhadas e _não há suporte para roteamento de tráfego por meio do emparelhamento de VNet_.

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: panosper
-ms.openlocfilehash: 73e53e47576b0697c0d09b386bb3e830d976dd04
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: a437927f6ad43f4c3a90433faa5b9fa6f964aa5c
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606657"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67839244"
 ---
 # <a name="speech-to-text-frequently-asked-questions"></a>Perguntas frequentes sobre Conversão de Fala em Texto
 
@@ -33,7 +33,7 @@ Se você não encontrar respostas para suas perguntas nas perguntas frequentes, 
 
 **P: Preciso sempre criar um modelo de fala personalizada?**
 
-**R**: Não. Se o aplicativo usa linguagem genérica diária, você não precisa personalizar um modelo. Se o aplicativo é usado em um ambiente em que há pouco ou nenhum ruído de fundo, você não precisa personalizar um modelo.
+**R**: Nº Se o aplicativo usa linguagem genérica diária, você não precisa personalizar um modelo. Se o aplicativo é usado em um ambiente em que há pouco ou nenhum ruído de fundo, você não precisa personalizar um modelo.
 
 Você pode implantar modelos personalizados e de linha de base no portal e, em seguida, executar testes de precisão neles. Você pode usar esse recurso para medir a precisão de um modelo de linha de base em comparação com um modelo personalizado.
 
@@ -83,7 +83,12 @@ Entre em contato com [suporte de fala](mailto:speechsupport@microsoft.com?subjec
 
 **R**: A API REST limita as solicitações a 25 a cada 5 segundos. Detalhes podem ser encontrados em nossas páginas de [Conversão de fala em texto](speech-to-text.md).
 
-Se você tiver mais problemas de privacidade que o impeçam de usar o serviço de voz personalizada, entre em contato com um dos canais de suporte.
+**P: Como sou cobrado por dois canais de áudio?**
+
+**R**: Se você enviar cada canal separadamente (cada canal em seu próprio arquivo), você será cobrado pela duração de cada arquivo a. Se você enviar um único arquivo com cada canal multiplexada juntos, em seguida, você será cobrado para a duração de um único arquivo.
+
+> [!IMPORTANT]
+> Se você tiver mais problemas de privacidade que o impeçam de usar o serviço de voz personalizada, entre em contato com um dos canais de suporte.
 
 ## <a name="importing-data"></a>Importação de dados
 
@@ -93,7 +98,7 @@ Se você tiver mais problemas de privacidade que o impeçam de usar o serviço d
 
 **P: Posso compactar meus arquivos de texto para carregar um arquivo de texto maior?** 
 
-**R**: Não. No momento são permitidos apenas os arquivos de texto não compactados.
+**R**: Nº No momento são permitidos apenas os arquivos de texto não compactados.
 
 **P: O relatório de dados indica que houve enunciados com falha. Qual é o problema?**
 

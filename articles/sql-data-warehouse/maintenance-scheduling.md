@@ -10,12 +10,12 @@ ms.subservice: design
 ms.date: 03/13/2019
 ms.author: anvang
 ms.reviewer: jrasnick
-ms.openlocfilehash: b97e27b86ecad1f7f87a6de4d43b09d69c167c6f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ab6efb858cc86495c687055ce3049cfc0cca7433
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61075307"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807904"
 ---
 # <a name="use-maintenance-schedules-to-manage-service-updates-and-maintenance"></a>Use agendas de manutenção para gerenciar atualizações e manutenção de serviços
 
@@ -34,6 +34,9 @@ Para usar esse recurso, você precisará identificar uma janela primária e secu
 A integração com notificações do Service Health e o Monitor de verificação de integridade do recurso permite que os clientes se mantenham informados sobre a atividade de manutenção iminente. A nova automação aproveita o Azure Monitor. Você pode decidir como deseja ser notificado sobre eventos de manutenção iminentes. Decida também quais fluxos automatizados podem ajudar a gerenciar o tempo de inatividade e minimizar o impacto em suas operações.
 
 Uma notificação antecipada de 24 horas que precede todos os eventos de manutenção, com a exceção atual de DW400c e os níveis inferiores. Para minimizar o tempo de inatividade da instância, certifique-se de que o data warehouse não tenha transações de longa execução antes do período de manutenção escolhido. Quando a manutenção é iniciada, todas as sessões ativas serão canceladas. Transações confirmadas por não serão revertidas e o data warehouse será experiência curta perda de conectividade. Você será notificado imediatamente após a conclusão da manutenção em seu data warehouse.
+
+> [!NOTE]
+> No caso de nós são necessários para implantar uma atualização crítica do tempo, horas de notificação avançada podem ser reduzidas significativamente.
 
 Se você recebeu uma notificação prévia de que a manutenção ocorrerá, mas o SQL Data Warehouse não pode executar manutenção durante esse período, você receberá uma notificação de cancelamento. A manutenção será retomada durante o próximo período de manutenção agendada.
 

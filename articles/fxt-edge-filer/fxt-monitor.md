@@ -6,12 +6,12 @@ ms.service: fxt-edge-filer
 ms.topic: conceptual
 ms.date: 06/20/2019
 ms.author: v-erkell
-ms.openlocfilehash: e7395c69d99884a5c662e545a69778ed195aec55
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: e6afd90c4e5a1b0759b3de7789ec37db4c04f2c7
+ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67543064"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67827451"
 ---
 # <a name="monitor-azure-fxt-edge-filer-hardware-status"></a>Monitorar o status de hardware de servidor de dados do Azure FXT Edge
 
@@ -58,7 +58,7 @@ O painel de controle frontal esquerdo tem vários indicadores de status de LED (
 
 Os indicadores de status na parte esquerda mostram uma luz âmbar se há um erro no sistema. A tabela a seguir descreve as possíveis causas e soluções para os erros. 
 
-Se você ainda terá o erro depois de tentar essas soluções, contate o suporte para obter ajuda. 
+Se você ainda terá o erro depois de tentar essas soluções [entre em contato com o suporte](fxt-support-ticket.md) para obter ajuda. 
 
 | ícone | DESCRIÇÃO | Condição de erro | Soluções possíveis |
 |----------------|---------------|--------------------|----------------------|
@@ -79,7 +79,7 @@ Pressione o botão de ID para alternar entre o modo de ID do sistema e o modo de
 |-------------------------------------------|-----------------------------------------------|
 | Azul sólido | A operação normal: o sistema está ligado, operando normalmente, e o modo de ID do sistema não está ativo. <br/>Pressione o botão de ID e a integridade do sistema, se você quiser alternar para o modo de ID do sistema. |
 | Azul piscando | Modo da ID do sistema está ativo. Pressione o botão de ID de sistema e a integridade do sistema se você quiser alternar para o modo de integridade do sistema. |
-| Âmbar | O sistema está no modo à prova de falhas. Se o problema persistir, contate o suporte e atendimento ao cliente Microsoft. |
+| Âmbar | O sistema está no modo à prova de falhas. Se o problema persistir, [entre em contato com o suporte e atendimento ao cliente Microsoft](fxt-support-ticket.md). |
 | Âmbar piscando | Falha no sistema. Verifique o log de eventos do sistema de mensagens de erro específicas. Para obter informações sobre as mensagens de erro e evento gerado pelo firmware do sistema e os agentes que monitora os componentes do sistema, consulte a página de pesquisa de código de erro em qrl.dell.com. |
 
 

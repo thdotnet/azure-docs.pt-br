@@ -3,18 +3,18 @@ title: Integração do Active Directory do Azure para Azure Red Hat OpenShift | 
 description: Saiba como criar um grupo de segurança do Azure AD e o usuário para testar aplicativos em seu cluster do Microsoft Azure Red Hat OpenShift.
 author: jimzim
 ms.author: jzim
-ms.service: openshift
+ms.service: container-service
 manager: jeconnoc
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/13/2019
-ms.openlocfilehash: b79efa6ee1f4c052a0037a971fc36d8a9ae0ce58
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: 00609905d09f8d414660c21805c6efca5eb30843
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67458716"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67669399"
 ---
 # <a name="azure-active-directory-integration-for-azure-red-hat-openshift"></a>Integração do Active Directory do Azure para Azure Red Hat OpenShift
 
@@ -33,7 +33,7 @@ Crie um novo usuário de administrador global do Active Directory do Azure para 
 1. Vá para o [os usuários de todos os usuários](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/AllUsers) folha.
 2. Clique em **+ novo usuário** para abrir o **usuário** painel.
 3. Insira um **nome** para este usuário.
-4. Criar uma **nome de usuário** com base no nome do locatário que você criou, com `.onmicrosoft.com` acrescentado ao final. Por exemplo: `yourUserName@yourTenantName.onmicrosoft.com`. Anote esse nome de usuário. Você precisará dela para entrar no seu cluster.
+4. Criar uma **nome de usuário** com base no nome do locatário que você criou, com `.onmicrosoft.com` acrescentado ao final. Por exemplo, `yourUserName@yourTenantName.onmicrosoft.com`. Anote esse nome de usuário. Você precisará dela para entrar no seu cluster.
 5. Clique em **função de diretório** para abrir o painel de função de diretório e selecione **Administrador Global** e, em seguida, clique em **Okey** na parte inferior do painel.
 6. No **usuário** painel, clique em **Mostrar senha** e registre a senha temporária. Depois de entrar pela primeira vez, você será solicitado para redefini-lo.
 7. Na parte inferior do painel, clique em **criar** para criar o usuário.

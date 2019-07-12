@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: martincoetzer
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 56ddc2738305600c611cab1e09d654164f78b3d6
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: 3fca84a71e1ede572e3889f973248db158115bec
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67509438"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67655497"
 ---
 # <a name="how-to-plan-your-conditional-access-deployment-in-azure-active-directory"></a>Como: Planejar a implantação de acesso condicional no Azure Active Directory
 
@@ -57,7 +57,7 @@ No mínimo, **quando isso ocorrer** define a entidade de segurança (**quem**) q
 
 Com **faça isso**, você define a resposta da sua política a uma condição de acesso. Em sua resposta, você bloqueia ou concede acesso com requisitos adicionais, por exemplo, MFA (autenticação multifator). Para obter uma visão completa, consulte [quais são acesso controla o acesso condicional do Azure Active Directory?](controls.md)  
 
-A combinação de condições e seus controles de acesso representa uma política de acesso condicional.
+A combinação de condições e seus controles de acesso representa uma política de Acesso Condicional.
 
 ![Motivo e resposta](./media/plan-conditional-access/51.png)
 
@@ -158,11 +158,11 @@ Algumas organizações têm locatários de teste para essa finalidade. No entant
 
 O plano de teste é importante para que se tenha uma comparação entre os resultados esperados e os resultados reais. Você sempre deve ter uma expectativa antes de testar algo. A tabela a seguir descreve exemplos de casos de teste. Ajuste os cenários e os resultados esperados com base na configuração de suas políticas de autoridade de certificação.
 
-|Política |Cenário |Resultado esperado | Result |
+|Política |Cenário |Resultado esperado | Resultado |
 |---|---|---|---|
 |[Exigir MFA quando não estiver no trabalho](https://docs.microsoft.com/azure/active-directory/conditional-access/untrusted-networks)|Usuário autorizado entra no *Aplicativo* quando está no trabalho/em um local confiável|Não é solicitado que o usuário use a MFA| |
 |[Exigir MFA quando não estiver no trabalho](https://docs.microsoft.com/azure/active-directory/conditional-access/untrusted-networks)|Usuário autorizado entra no *Aplicativo* quando não está no trabalho/em um local confiável|É solicitado que o usuário use a MFA para se conectar com êxito| |
-|[Exigir MFA (para administradores)](https://docs.microsoft.com/azure/active-directory/conditional-access/baseline-protection#require-mfa-for-admins)|Administrador global entra no *Aplicativo*|É solicitado que o administrador use MFA| |
+|[Exigir MFA (para administradores)](https://docs.microsoft.com/azure/active-directory/conditional-access/howto-baseline-protect-administrators)|Administrador global entra no *Aplicativo*|É solicitado que o administrador use MFA| |
 |[Entradas de risco](https://docs.microsoft.com/azure/active-directory/identity-protection/howto-sign-in-risk-policy)|O usuário entra no *Aplicativo* usando um [navegador Tor](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection-playbook)|É solicitado que o administrador use MFA| |
 |[Gerenciamento de dispositivos](https://docs.microsoft.com/azure/active-directory/conditional-access/require-managed-devices)|O usuário autorizado tenta se conectar usando um dispositivo autorizado|Acesso concedido| |
 |[Gerenciamento de dispositivos](https://docs.microsoft.com/azure/active-directory/conditional-access/require-managed-devices)|O usuário autorizado tenta se conectar usando um dispositivo não autorizado|Acesso bloqueado| |
@@ -181,7 +181,7 @@ Se você quiser saber mais sobre como criar políticas de acesso condicional, co
 
 ### <a name="evaluate-a-simulated-sign-in"></a>Avaliar uma entrada simulada
 
-Agora que você configurou sua política de acesso condicional, você provavelmente desejará saber se ele funciona conforme o esperado. Como uma primeira etapa, use o acesso condicional [e se a ferramenta de política](what-if-tool.md) para simular uma entrada de seu usuário de teste. A simulação calcula o impacto que esse logon tem em suas políticas e gera um relatório de simulação.
+Agora que você configurou a política de acesso condicional, provavelmente deseja saber se ela funciona conforme o esperado. Como primeira etapa, use a [ferramenta de política “What If”](what-if-tool.md) do acesso condicional para simular uma entrada de seu usuário de teste. A simulação calcula o impacto que esse logon tem em suas políticas e gera um relatório de simulação.
 
 >[!NOTE]
 > Enquanto uma execução simulada lhe dá a impressão do impacto que tem uma política de acesso condicional, ele não substitui uma execução de teste real.

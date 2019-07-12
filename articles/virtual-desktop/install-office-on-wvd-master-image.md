@@ -4,15 +4,15 @@ description: Como instalar e personalizar o Office em uma imagem mestre de visua
 services: virtual-desktop
 author: ChJenk
 ms.service: virtual-desktop
-ms.topic: how-to
+ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: v-chjenk
-ms.openlocfilehash: 6d2bb7efdd5567da377e1e15fec4935b7d4a3a6f
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 0e89d37011ccdfc3acdace5b45faa8e9a64e4d3e
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67444128"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620475"
 ---
 # <a name="install-office-on-a-master-vhd-image"></a>Instalar o Office em uma imagem de VHD mestre
 
@@ -23,7 +23,7 @@ Este artigo pressupõe que você já tiver criado uma máquina virtual (VM). Cas
 Este artigo também pressupõe que têm acesso elevado na VM, se ela é provisionada no Azure ou o Gerenciador do Hyper-V. Caso contrário, consulte [elevar o acesso para gerenciar todos os grupos de gerenciamento e a assinatura do Azure](https://docs.microsoft.com/azure/role-based-access-control/elevate-access-global-admin).
 
 >[!NOTE]
->Essas instruções são para uma configuração específica de visualização de área de trabalho Virtual do Windows que pode ser usada com os processos existentes da sua organização.
+>Essas instruções são referentes a uma configuração específica da Visualização da Área de Trabalho Virtual do Windows que pode ser usada com os processos existentes de sua organização.
 
 ## <a name="install-office-in-shared-computer-activation-mode"></a>Instalar o Office no modo de ativação de computador compartilhado
 

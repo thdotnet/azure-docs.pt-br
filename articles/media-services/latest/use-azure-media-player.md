@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 01/03/2018
+ms.date: 07/10/2018
 ms.author: juliako
-ms.openlocfilehash: fd5bf9f7bca9c667191d0d3f83be6e29a96c8dbe
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c599bc2bba27a3b3603d8d67e2c6049dc2a8b08b
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64926524"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67840148"
 ---
 # <a name="azure-media-player-overview"></a>Visão geral do Player de Mídia do Azure
 
@@ -30,7 +30,7 @@ Os Serviços de Mídia do Microsoft Azure permitem que o conteúdo seja fornecid
 
 ### <a name="start-using"></a>Comece a usar
 
-Você pode usar a [página de demonstração do Player de Mídia do Azure](https://aka.ms/amp) para reproduzir amostras dos Serviços de Mídia do Azure ou seu próprio stream.  
+Você pode usar a [página de demonstração do Player de Mídia do Azure](http://aka.ms/azuremediaplayer) para reproduzir amostras dos Serviços de Mídia do Azure ou seu próprio stream.  
 
 Para reproduzir um novo vídeo, cole uma URL diferente e pressione **Atualizar**.
 
@@ -40,7 +40,7 @@ Para configurar várias opções de reprodução (por exemplo, tecnologia, lingu
 
 ### <a name="monitor-diagnostics-of-a-video-stream"></a>Monitorar o diagnóstico de um stream de vídeo
 
-Você pode usar a página de demonstração do [Player de Mídia do Azure](https://aka.ms/amp) para monitorar o diagnóstico de um stream de vídeo. 
+Você pode usar a página de demonstração do [Player de Mídia do Azure](http://aka.ms/azuremediaplayer) para monitorar o diagnóstico de um stream de vídeo. 
 
 ![Diagnóstico do Player de Mídia do Azure](./media/azure-media-player/diagnostics.png)
 

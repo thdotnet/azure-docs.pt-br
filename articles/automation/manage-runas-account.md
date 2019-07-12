@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 05/24/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 6fceee819762e10809a94f72d944e7625cb7e67c
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 49b8554f6064f036d4305cf7a5c1450c2f18c48d
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478558"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67798500"
 ---
 # <a name="manage-azure-automation-run-as-accounts"></a>Gerenciar contas Executar como da Automação do Azure
 
@@ -104,7 +104,7 @@ Este script do PowerShell inclui suporte para as seguintes configurações:
 
 1. Salve o script a seguir em seu computador. Neste exemplo, salve-o com o nome de arquivo *New-RunAsAccount.ps1*.
 
-   O script usa vários cmdlets do Azure Resource Manager para criar recursos. A tabela a seguir mostra os cmdlets e as permissões necessárias.
+   O script usa vários cmdlets do Azure Resource Manager para criar recursos. Precedente [permissões](#permissions) tabela mostra os cmdlets e suas permissões necessárias.
 
     ```powershell
     #Requires -RunAsAdministrator
@@ -368,15 +368,37 @@ Para renovar o certificado, faça o seguinte:
 
 1. Enquanto o certificado está sendo renovado, você poderá acompanhar o andamento em **Notificações** no menu.
 
-## <a name="limiting-run-as-account-permissions"></a>Limitar as permissões da conta Executar como
+## <a name="limiting-run-as-account-permissions"></a>Limitando as permissões de conta executar como
 
-Para controlar o direcionamento da automação nos recursos na Automação do Azure, a conta Executar como tem direitos de colaborador concedidos na assinatura. Se for necessário restringir o que a entidade de serviço RunAs pode fazer, você poderá remover a conta da função de Colaborador para a assinatura e adicioná-lo como um colaborador para os grupos de recursos que deseja especificar.
+Para controlar o direcionamento da automação nos recursos do Azure, você pode executar o [AutomationRunAsAccountRoleAssignments.ps1 atualização](https://aka.ms/AA5hug8) script na Galeria do PowerShell para alterar a entidade de serviço de conta executar como existente para criar e usar uma definição de função personalizada. Essa função terá permissões para todos os recursos, exceto [Key Vault](https://docs.microsoft.com/azure/key-vault/). 
 
-No Portal do Azure, selecione **Assinaturas** e escolha a assinatura de sua Conta de Automação. Selecione **Controle de acesso (IAM)** e, em seguida, selecione a guia **Atribuições de função**. Pesquise a entidade de serviço da Conta de Automação (é semelhante ao \<identificador AutomationAccountName\>_unique). Selecione a conta e clique em **Remover** para removê-lo da assinatura.
+> [!IMPORTANT]
+> Depois de executar o `Update-AutomationRunAsAccountRoleAssignments.ps1` script, os runbooks que acessá-lo com o uso de contas executar como não funcionarão mais. Você deve revisar os runbooks em sua conta para chamadas para o Azure Key Vault.
+>
+> Para habilitar o acesso ao Cofre de chaves de runbooks de automação do Azure, você precisaria [adicionar a conta executar como para permissões do Cofre de chaves](#add-permissions-to-key-vault).
 
-![Colaboradores de assinatura](media/manage-runas-account/automation-account-remove-subscription.png)
+Se você precisa restringir o que a entidade de serviço RunAs pode fazer ainda mais, você pode adicionar outros tipos de recursos para o `NotActions` da definição de função personalizada. O exemplo a seguir restringe o acesso a `Microsoft.Compute`. Se você adicionar isso para o **NotActions** da definição da função, essa função não poderá acessar qualquer recurso de computação. Para saber mais sobre as definições de função, consulte [entender as definições de função para recursos do Azure](../role-based-access-control/role-definitions.md).
 
-Para adicionar a entidade de serviço a um grupo de recursos, selecione o grupo de recursos no Portal do Azure e selecione **IAM (Controle de acesso)** . Selecione **Adicionar atribuição de função**, **isso abre a página Adicionar atribuição de função**. Para **Função**, selecione **Colaborador**. Na caixa de texto **Selecionar** digite o nome da entidade de serviço da conta Executar como e selecione-a na lista. Clique em **Salvar** para salvar as alterações. Conclua essas etapas para os grupos de recursos aos quais você quer conceder acesso de entidade de serviço Executar Como da Automação do Azure.
+```powershell
+$roleDefinition = Get-AzureRmRoleDefinition -Name 'Automation RunAs Contributor'
+$roleDefinition.NotActions.Add("Microsoft.Compute/*")
+$roleDefinition | Set-AzureRMRoleDefinition
+```
+
+Para determinar se a entidade de serviço usado por sua conta executar como está no **Colaborador** ou uma definição de função personalizada acesse sua conta de automação e, em **configurações de conta**, selecione **executar como contas** > **executar como conta do Azure**. Sob **função** você encontrará a definição de função que está sendo usada. 
+
+[![](media/manage-runas-account/verify-role.png "Verifique se a função de conta executar como")](media/manage-runas-account/verify-role-expanded.png#lightbox)
+
+Para determinar a definição de função usada pelas contas de automação executar como para várias assinaturas ou contas de automação, você pode usar o [AutomationRunAsAccountRoleAssignments.ps1 seleção](https://aka.ms/AA5hug5) script na Galeria do PowerShell.
+
+### <a name="add-permissions-to-key-vault"></a>Adicionar permissões ao Cofre de chaves
+
+Se você deseja permitir que a automação do Azure gerenciar o Cofre de chaves e a entidade de serviço de conta executar como está usando uma definição de função personalizada, que você precisará executar etapas adicionais para permitir esse comportamento:
+
+* Conceder permissões para o Cofre de chaves
+* Definir a política de acesso
+
+Você pode usar o [estender AutomationRunAsAccountRoleAssignmentToKeyVault.ps1](https://aka.ms/AA5hugb) script na Galeria do PowerShell para fornecer suas permissões de conta executar como para o Cofre de chaves, visite [conceder acesso de aplicativos para um cofre de chaves ](../key-vault/key-vault-group-permissions-for-apps.md) para obter mais detalhes sobre as permissões de configurações no cofre de chaves.
 
 ## <a name="misconfiguration"></a>Configuração incorreta
 

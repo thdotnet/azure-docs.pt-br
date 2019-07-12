@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
-ms.date: 05/31/2019
+ms.date: 07/08/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: dcb90eb8ee25b8b0c780006f3555a5a9b815ffdd
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: fb23e61142a639420d74c08e5a9a41324acab18b
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67514255"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706275"
 ---
 # <a name="deploy-models-with-the-azure-machine-learning-service"></a>Implantar modelos com o serviço do Azure Machine Learning
 
@@ -332,12 +332,9 @@ A tabela a seguir fornece um exemplo de criação de uma configuração de impla
 As seções a seguir demonstram como criar a configuração de implantação e, em seguida, usá-lo para implantar o serviço web.
 
 ### <a name="optional-profile-your-model"></a>Opcional: Seu modelo de perfil
-Antes de implantar seu modelo como um serviço, você talvez queira seu perfil para determinar os requisitos de memória e CPU ideal. Você pode fazer o perfil de seu modelo usando o SDK ou a CLI.
+Antes de implantar seu modelo como um serviço, você pode analisar para determinar os requisitos de memória usando o SDK ou a CLI e excelente de CPU.  Resultados de criação de perfil de modelo são emitidos como um `Run` objeto. Os detalhes completos da [o esquema de modelo de perfil pode ser encontrado na documentação da API](https://docs.microsoft.com/python/api/azureml-core/azureml.core.profile.modelprofile?view=azure-ml-py)
 
-Para obter mais informações, confira nossa documentação do SDK aqui: https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#profile-workspace--profile-name--models--inference-config--input-data-
-
-Resultados de criação de perfil de modelo são emitidos como um objeto Run.
-Obter informações específicas sobre o esquema de modelo de perfil podem ser encontradas aqui: https://docs.microsoft.com/python/api/azureml-core/azureml.core.profile.modelprofile?view=azure-ml-py
+Saiba mais sobre [como criar o perfil de seu modelo usando o SDK](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#profile-workspace--profile-name--models--inference-config--input-data-)
 
 ## <a name="deploy-to-target"></a>Implantar no destino
 
@@ -356,9 +353,27 @@ Para implantar localmente, você precisa ter **Docker instalado** em seu computa
 
 + **Usando a CLI**
 
+    Para implantar usando a CLI, use o comando a seguir. Substitua `mymodel:1` com o nome e a versão do modelo registrado:
+
   ```azurecli-interactive
-  az ml model deploy -m sklearn_mnist:1 -ic inferenceconfig.json -dc deploymentconfig.json
+  az ml model deploy -m mymodel:1 -ic inferenceconfig.json -dc deploymentconfig.json
   ```
+
+    As entradas na `deploymentconfig.json` mapa de documento para os parâmetros para [LocalWebservice.deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.local.localwebservicedeploymentconfiguration?view=azure-ml-py). A tabela a seguir descreve o mapeamento entre as entidades no documento JSON e os parâmetros para o método:
+
+    | Entidade JSON | Parâmetro de método | DESCRIÇÃO |
+    | ----- | ----- | ----- |
+    | `computeType` | ND | O destino de computação. Para o local, o valor deve ser `local`. |
+    | `port` | `port` | A porta local em que expor um ponto de extremidade HTTP do serviço. |
+
+    O JSON a seguir está um exemplo de configuração de implantação para uso com a CLI:
+
+    ```json
+    {
+        "computeType": "local",
+        "port": 32267
+    }
+    ```
 
 ### <a id="aci"></a> Instâncias de contêiner do Azure (desenvolvimento/teste)
 
@@ -379,10 +394,44 @@ Para ver a disponibilidade de região e de cota do ACI, consulte o [cotas e disp
 
 + **Usando a CLI**
 
-  ```azurecli-interactive
-  az ml model deploy -m sklearn_mnist:1 -n aciservice -ic inferenceconfig.json -dc deploymentconfig.json
-  ```
+    Para implantar usando a CLI, use o comando a seguir. Substitua `mymodel:1` com o nome e a versão do modelo registrado. Substitua `myservice` com o nome a ser atribuído a esse serviço:
 
+    ```azurecli-interactive
+    az ml model deploy -m mymodel:1 -n myservice -ic inferenceconfig.json -dc deploymentconfig.json
+    ```
+
+    As entradas na `deploymentconfig.json` mapa de documento para os parâmetros para [AciWebservice.deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aci.aciservicedeploymentconfiguration?view=azure-ml-py). A tabela a seguir descreve o mapeamento entre as entidades no documento JSON e os parâmetros para o método:
+
+    | Entidade JSON | Parâmetro de método | DESCRIÇÃO |
+    | ----- | ----- | ----- |
+    | `computeType` | ND | O destino de computação. Para ACI, o valor deve ser `ACI`. |
+    | `containerResourceRequirements` | ND | Contém elementos de configuração para a CPU e memória alocada para o contêiner. |
+    | &emsp;&emsp;`cpu` | `cpu_cores` | O número de núcleos de CPU para alocar para esse serviço web. Padrões, `0.1` |
+    | &emsp;&emsp;`memoryInGB` | `memory_gb` | A quantidade de memória (em GB) para alocar para esse serviço web. Padrão, `0.5` |
+    | `location` | `location` | A região do Azure para implantar este serviço Web para. Se não for especificado o espaço de trabalho local será usado. Obter mais detalhes sobre as regiões disponíveis podem ser encontrados aqui: [Regiões ACI](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=container-instances) |
+    | `authEnabled` | `auth_enabled` | Se deseja ou não habilitar a autenticação para este serviço Web. Padrão é False |
+    | `sslEnabled` | `ssl_enabled` | Se deseja ou não habilitar o SSL para este serviço Web. Padrão é False. |
+    | `appInsightsEnabled` | `enable_app_insights` | Se deseja ou não habilitar a AppInsights para este serviço Web. Padrão é False |
+    | `sslCertificate` | `ssl_cert_pem_file` | O arquivo de certificado necessário se o SSL estiver habilitado |
+    | `sslKey` | `ssl_key_pem_file` | O arquivo de chave necessário se o SSL está habilitado |
+    | `cname` | `ssl_cname` | O cname, se o SSL está habilitado |
+    | `dnsNameLabel` | `dns_name_label` | O rótulo de nome de dns para o ponto de extremidade de pontuação. Se não for especificado um rótulo de nome dns exclusivo será gerado para o ponto de extremidade de pontuação. |
+
+    O JSON a seguir está um exemplo de configuração de implantação para uso com a CLI:
+
+    ```json
+    {
+        "computeType": "aci",
+        "containerResourceRequirements":
+        {
+            "cpu": 0.5,
+            "memoryInGB": 1.0
+        },
+        "authEnabled": true,
+        "sslEnabled": false,
+        "appInsightsEnabled": false
+    }
+    ```
 
 + **Usando o VS Code**
 
@@ -414,9 +463,71 @@ Se você já tiver um cluster do AKS anexado, você poderá implantar nele. Se v
 
 + **Usando a CLI**
 
+    Para implantar usando a CLI, use o comando a seguir. Substitua `myaks` destino de computação com o nome do que o AKS. Substitua `mymodel:1` com o nome e a versão do modelo registrado. Substitua `myservice` com o nome a ser atribuído a esse serviço:
+
   ```azurecli-interactive
-  az ml model deploy -ct myaks -m mymodel:1 -n aksservice -ic inferenceconfig.json -dc deploymentconfig.json
+  az ml model deploy -ct myaks -m mymodel:1 -n myservice -ic inferenceconfig.json -dc deploymentconfig.json
   ```
+
+    As entradas na `deploymentconfig.json` mapa de documento para os parâmetros para [AksWebservice.deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aks.aksservicedeploymentconfiguration?view=azure-ml-py). A tabela a seguir descreve o mapeamento entre as entidades no documento JSON e os parâmetros para o método:
+
+    | Entidade JSON | Parâmetro de método | DESCRIÇÃO |
+    | ----- | ----- | ----- |
+    | `computeType` | ND | O destino de computação. Para o AKS, o valor deve ser `aks`. |
+    | `autoScaler` | ND | Contém elementos de configuração para o dimensionamento automático. Consulte a tabela dimensionador automático. |
+    | &emsp;&emsp;`autoscaleEnabled` | `autoscale_enabled` | Se deseja ou não habilitar o dimensionamento automático para o serviço web. Se `numReplicas`  =  `0`, `True`; caso contrário, `False`. |
+    | &emsp;&emsp;`minReplicas` | `autoscale_min_replicas` | O número mínimo de contêineres a ser usado ao dimensionamento automático esse serviço web. Padrão, `1`. |
+    | &emsp;&emsp;`maxReplicas` | `autoscale_max_replicas` | O número máximo de contêineres a ser usado ao dimensionamento automático esse serviço web. Padrão, `10`. |
+    | &emsp;&emsp;`refreshPeriodInSeconds` | `autoscale_refresh_seconds` | A frequência com que o dimensionador automático tenta dimensionar esse serviço web. Padrão, `1`. |
+    | &emsp;&emsp;`targetUtilization` | `autoscale_target_utilization` | A utilização de destino (em porcentagem 100) que o dimensionador automático deve tentar manter desse serviço da web. Padrão, `70`. |
+    | `dataCollection` | ND | Contém elementos de configuração para coleta de dados. |
+    | &emsp;&emsp;`storageEnabled` | `collect_model_data` | Se deseja ou não habilitar a coleta de dados de modelo para o serviço web. Padrão, `False`. |
+    | `authEnabled` | `auth_enabled` | Se deseja ou não habilitar a autenticação para o serviço web. Padrão, `True`. |
+    | `containerResourceRequirements` | ND | Contém elementos de configuração para a CPU e memória alocada para o contêiner. |
+    | &emsp;&emsp;`cpu` | `cpu_cores` | O número de núcleos de CPU para alocar para esse serviço web. Padrões, `0.1` |
+    | &emsp;&emsp;`memoryInGB` | `memory_gb` | A quantidade de memória (em GB) para alocar para esse serviço web. Padrão, `0.5` |
+    | `appInsightsEnabled` | `enable_app_insights` | Se deseja ou não habilitar o log do Application Insights para o serviço web. Padrão, `False`. |
+    | `scoringTimeoutMs` | `scoring_timeout_ms` | Um tempo limite para impor para chamadas para o serviço web de pontuação. Padrão, `60000`. |
+    | `maxConcurrentRequestsPerContainer` | `replica_max_concurrent_requests` | As solicitações simultâneas máximas por nó para esse serviço web. Padrão, `1`. |
+    | `maxQueueWaitMs` | `max_request_wait_time` | O tempo máximo que uma solicitação permanecerá em três fila (em milissegundos) antes de um 503, erro será retornado. Padrão, `500`. |
+    | `numReplicas` | `num_replicas` | O número de contêineres para alocar para esse serviço web. Nenhum valor padrão. Se esse parâmetro não for definido, o dimensionador automático está habilitado por padrão. |
+    | `keys` | ND | Contém elementos de configuração para as chaves. |
+    | &emsp;&emsp;`primaryKey` | `primary_key` | Uma chave primária de autenticação a ser usado para este serviço Web |
+    | &emsp;&emsp;`secondaryKey` | `secondary_key` | Uma chave de autenticação secundária a ser usado para este serviço Web |
+    | `gpuCores` | `gpu_cores` | O número de núcleos GPU para alocar para este serviço Web. O padrão é UTF-1. |
+    | `livenessProbeRequirements` | ND | Contém elementos de configuração para obter os requisitos de investigação de execução. |
+    | &emsp;&emsp;`periodSeconds` | `period_seconds` | Frequência (em segundos) para realizar a execução de investigação. O padrão para 10 segundos. Valor mínimo é 1. |
+    | &emsp;&emsp;`initialDelaySeconds` | `initial_delay_seconds` | Número de segundos depois que o contêiner for iniciado antes de testes de execução são iniciadas. O padrão é 310 |
+    | &emsp;&emsp;`timeoutSeconds` | `timeout_seconds` | Número de segundos após o qual a execução de investigação de tempo limite. O padrão é 2 segundos. Valor mínimo é 1 |
+    | &emsp;&emsp;`successThreshold` | `success_threshold` | Êxitos de consecutivos mínimo para a execução de investigação ser considerada bem-sucedida após com falha. O valor padrão é 1. Valor mínimo é 1. |
+    | &emsp;&emsp;`failureThreshold` | `failure_threshold` | Quando um Pod é iniciado e falha de execução de investigação, Kubernetes tentarão failureThreshold vezes antes de desistir. O padrão é 3. Valor mínimo é 1. |
+    | `namespace` | `namespace` | O namespace do Kubernetes que o serviço Web é implantado. Letras minúsculas, até 63 alfanuméricos ('a'-'z', '0'-'9') e hífen ('-') caracteres. O primeiro e último caracteres não podem ser hifens. |
+
+    O JSON a seguir está um exemplo de configuração de implantação para uso com a CLI:
+
+    ```json
+    {
+        "computeType": "aks",
+        "autoScaler":
+        {
+            "autoscaleEnabled": true,
+            "minReplicas": 1,
+            "maxReplicas": 3,
+            "refreshPeriodInSeconds": 1,
+            "targetUtilization": 70
+        },
+        "dataCollection":
+        {
+            "storageEnabled": true
+        },
+        "authEnabled": true,
+        "containerResourceRequirements":
+        {
+            "cpu": 0.5,
+            "memoryInGB": 1.0
+        }
+    }
+    ```
 
 + **Usando o VS Code**
 

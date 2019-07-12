@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 2/7/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: a745fefa5ceb0f81cf8d66e7af9e308c0ecb40b9
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: e9e790ac8ac67478a0e7b5143a5b2f1fdd9c790c
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67449863"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67798675"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Planejando uma implantação da Sincronização de Arquivos do Azure
 Use a Sincronização de Arquivos do Azure para centralizar os compartilhamentos de arquivos da sua organização em Arquivos do Azure enquanto mantém a flexibilidade, o desempenho e a compatibilidade de um servidor de arquivos local. A Sincronização de arquivos do Azure transforma o Windows Server em um cache rápido do compartilhamento de arquivos do Azure. Use qualquer protocolo disponível no Windows Server para acessar seus dados localmente, incluindo SMB, NFS e FTPS. Você pode ter tantos caches quantos precisar em todo o mundo.
@@ -69,23 +69,10 @@ A camada de nuvem é um recurso opcional da Sincronização de Arquivos do Azure
 ## <a name="azure-file-sync-system-requirements-and-interoperability"></a>Requisitos de sistema e interoperabilidade da Sincronização de Arquivos do Azure 
 Esta seção aborda os requisitos de sistema e a interoperabilidade do agente de Sincronização de Arquivos do Azure com soluções de terceiros, funções e recursos do Windows Server.
 
-### <a name="evaluation-tool"></a>Ferramenta de avaliação
-Antes de implantar a Sincronização de Arquivos do Azure, você precisa avaliar se ela é compatível com seu sistema usando a ferramenta de avaliação da Sincronização de Arquivos do Azure. Essa ferramenta é um cmdlet do Azure PowerShell que verifica se há possíveis problemas com seu sistema de arquivos e conjunto de dados, como caracteres sem suporte ou uma versão do sistema operacional sem suporte. Observe que suas verificações abrangem a maioria dos recursos mencionados abaixo, mas não todos eles. É recomendável que você leia o restante desta seção com cuidado para garantir que sua implantação seja perfeita. 
+### <a name="evaluation-cmdlet"></a>Cmdlet de avaliação
+Antes de implantar a sincronização de arquivos do Azure, você deve avaliar se ele é compatível com seu sistema usando o cmdlet de avaliação de sincronização de arquivos do Azure. Esse cmdlet procura possíveis problemas com seu sistema de arquivos e o conjunto de dados, como caracteres sem suporte ou uma versão de sistema operacional sem suporte. Observe que suas verificações abrangem a maioria dos recursos mencionados abaixo, mas não todos eles. É recomendável que você leia o restante desta seção com cuidado para garantir que sua implantação seja perfeita. 
 
-#### <a name="download-instructions"></a>Instruções de download
-1. Certifique-se de que você tem a versão mais recente do PackageManagement e do PowerShellGet instalada (isso permite que você instale módulos na versão prévia)
-    
-    ```powershell
-        Install-Module -Name PackageManagement -Repository PSGallery -Force
-        Install-Module -Name PowerShellGet -Repository PSGallery -Force
-    ```
- 
-2. Reiniciar o PowerShell
-3. Instalar os módulos
-    
-    ```powershell
-        Install-Module -Name Az.StorageSync -AllowPrerelease -AllowClobber -Force
-    ```
+O cmdlet de avaliação pode ser instalado pela instalação do módulo do PowerShell de Az, que pode ser instalado seguindo as instruções aqui: [Instale e configure o Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps).
 
 #### <a name="usage"></a>Uso  
 Você pode invocar a ferramenta de avaliação de algumas maneiras diferentes: você pode executar verificações de sistema, verificações de conjunto de dados ou ambas. Para executar verificações de sistema e de conjunto de dados: 
@@ -110,16 +97,16 @@ Para exibir os resultados em CSV:
     $errors | Select-Object -Property Type, Path, Level, Description | Export-Csv -Path <csv path>
 ```
 
-### <a name="system-requirements"></a>Requisitos do Sistema
+### <a name="system-requirements"></a>Requisitos de sistema
 - Um servidor executando o Windows Server 2012 R2, o Windows Server 2016 ou o Windows Server 2019:
 
     | Versão | SKUs com suporte | Opções de implantação com suporte |
     |---------|----------------|------------------------------|
-    | Windows Server 2019 | Datacenter e Standard | Completo (servidor com uma interface do usuário) |
-    | Windows Server 2016 | Datacenter e Standard | Completo (servidor com uma interface do usuário) |
-    | Windows Server 2012 R2 | Datacenter e Standard | Completo (servidor com uma interface do usuário) |
+    | Windows Server 2019 | Datacenter e Standard | Completo e de núcleo |
+    | Windows Server 2016 | Datacenter e Standard | Completo e de núcleo |
+    | Windows Server 2012 R2 | Datacenter e Standard | Completo e de núcleo |
 
-    Versões futuras do Windows Server serão adicionadas à medida que forem liberadas. Versões anteriores do Windows podem ser adicionadas de acordo com os comentários do usuário.
+    Versões futuras do Windows Server serão adicionadas à medida que forem liberadas.
 
     > [!Important]  
     > Recomendamos manter todos os servidores usados com a Sincronização de Arquivos do Azure atualizados com as últimas atualizações do Windows Update. 
@@ -169,8 +156,12 @@ O clustering de failover do Windows Server tem suporte pela Sincronização de A
 > O agente de Sincronização de Arquivos do Azure deve ser instalado em cada nó em um Cluster de Failover para a sincronização funcionar corretamente.
 
 ### <a name="data-deduplication"></a>Eliminação de duplicação de dados
-**Versão do agente 5.0.2.0**   
-A eliminação de duplicação de dados tem suporte em volumes com a camada de nuvem habilitada no Windows Server 2016 e Windows Server 2019. Habilitar a eliminação de duplicação em um volume com camada de nuvem habilitada permite armazenar em cache mais arquivos localmente sem ter que provisionar mais armazenamento. Observe que essas economias de volume se aplicam somente no local; seus dados em arquivos do Azure serão não ser com eliminação de duplicação. 
+**Versão do agente 5.0.2.0 ou mais recente**   
+A eliminação de duplicação de dados tem suporte em volumes com a camada de nuvem habilitada no Windows Server 2016 e Windows Server 2019. Eliminação de duplicação de dados em um volume com a disposição em camadas habilitada permite armazenar em cache mais arquivos no local sem provisionamento mais armazenamento. 
+
+Quando a eliminação de duplicação de dados é habilitada em um volume com a disposição em camadas habilitada, otimizado de eliminação de duplicação arquivos no local de ponto de extremidade do servidor serão hierárquico semelhante a um arquivo normal com base na configurações de política de camadas de nuvem. Uma vez a eliminação de duplicação hierárquica de arquivos otimizados, o trabalho de coleta de lixo de eliminação de duplicação de dados será executado automaticamente para recuperar espaço em disco removendo partes desnecessárias que não são mais referenciados por outros arquivos no volume.
+
+Observe que a economia de volume se aplicam somente ao servidor. seus dados no compartilhamento de arquivos do Azure serão não ser com eliminação de duplicação.
 
 **Windows Server 2012 R2 ou versões mais antigas do agente**  
 Para volumes que não têm a disposição em camadas de nuvem habilitada, a Sincronização de Arquivos do Azure dá suporte à Eliminação de Duplicação de Dados do Windows Server habilitada no volume.
@@ -220,7 +211,7 @@ Como os antivírus funcionam com o exame de arquivos em busca de códigos mal-in
 As soluções antivírus internas da Microsoft, o Windows Defender e o System Center Endpoint Protection (SCEP), ignoram automaticamente a leitura de arquivos que possuem esse atributo definido. Nós os testamos e identificamos um problema menor: quando você adiciona um servidor a um grupo de sincronização existente, os arquivos com menos de 800 bytes são recuperados (feitos o download) no novo servidor. Esses arquivos permanecerão no novo servidor e não serão colocados em camadas, pois não atendem ao requisito de tamanho em camadas (> 64kb).
 
 > [!Note]  
-> Fornecedores de antivírus podem verificar a compatibilidade entre seus produtos e a sincronização de arquivos do Azure usando o [Azure arquivo sincronização antivírus compatibilidade conjunto de testes] (https://www.microsoft.com/download/details.aspx?id=58322), que está disponível para download no Microsoft Download Center.
+> Fornecedores de antivírus podem verificar a compatibilidade entre seus produtos e a sincronização de arquivos do Azure usando o [conjunto de testes de compatibilidade do Azure arquivo sincronização antivírus](https://www.microsoft.com/download/details.aspx?id=58322), que está disponível para download no Microsoft Download Center.
 
 ### <a name="backup-solutions"></a>Soluções de backup
 Como as soluções de antivírus, as soluções de backup podem causar o recall de arquivos em camadas. Recomendamos o uso de uma solução de backup de nuvem para fazer backup do compartilhamento do arquivos do Azure, em vez de um produto de backup local.
@@ -263,6 +254,7 @@ A Sincronização de Arquivos do Azure está disponível apenas nas seguintes re
 | Ásia Oriental | RAE de Hong Kong |
 | East US | Virgínia |
 | Leste dos EUA 2 | Virgínia |
+| França Central | Paris |
 | Coreia Central| Seul |
 | Sul da Coreia| Busan |
 | Leste do Japão | Tóquio |
@@ -304,6 +296,7 @@ Para dar suporte à integração de failover entre o armazenamento com redundân
 | Ásia Oriental           | Sudeste Asiático     |
 | East US             | Oeste dos EUA            |
 | Leste dos EUA 2           | Centro dos EUA         |
+| França Central      | Sul da França       |
 | Leste do Japão          | Oeste do Japão         |
 | Oeste do Japão          | Leste do Japão         |
 | Coreia Central       | Sul da Coreia        |

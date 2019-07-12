@@ -4,7 +4,7 @@ description: Arquitetura de rede de como implantar o SAP HANA no Azure (Instânc
 services: virtual-machines-linux
 documentationcenter: ''
 author: RicksterCDN
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
 ms.devlang: NA
@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 03/05/2019
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 02272ee16cf3303890a8ba6d35d38676e98c788c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a2cfe9dc02e69f3b47c99e01bc70bffc942338fd
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60478639"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67707268"
 ---
 # <a name="sap-hana-large-instances-storage-architecture"></a>Arquitetura de armazenamento do SAP HANA (Instâncias Grandes)
 
@@ -35,17 +35,17 @@ Consulte a tabela a seguir em termos de alocação de armazenamento. A tabela li
 | S72m | 3\.328 GB | 768 GB |1\.280 GB | 768 GB |
 | S96 | 1\.280 GB | 512 GB | 768 GB | 512 GB |
 | S192 | 4\.608 GB | 1\.024 GB | 1\.536 GB | 1\.024 GB |
-| S192m | 11\.520 GB | 1\.536 GB | 1\.792 GB | 1\.536 GB |
-| S192xm |  11\.520 GB |  1\.536 GB |  1\.792 GB |  1\.536 GB |
-| S384 | 11\.520 GB | 1\.536 GB | 1\.792 GB | 1\.536 GB |
-| S384m | 12\.000 GB | 2\.050 GB | 2\.050 GB | 2\.040 GB |
-| S384xm | 16\.000 GB | 2\.050 GB | 2\.050 GB | 2\.040 GB |
-| S384xxm |  20\.000 GB | 3\.100 GB | 2\.050 GB | 3\.100 GB |
-| S576m | 20\.000 GB | 3\.100 GB | 2\.050 GB | 3\.100 GB |
-| S576xm | 31\.744 GB | 4\.096 GB | 2\.048 GB | 4\.096 GB |
-| S768m | 28\.000 GB | 3\.100 GB | 2\.050 GB | 3\.100 GB |
-| S768xm | 40\.960 GB | 6\.144 GB | 4\.096 GB | 6\.144 GB |
-| S960m | 36\.000 GB | 4\.100 GB | 2\.050 GB | 4\.100 GB |
+| S192m | 11.520 GB | 1\.536 GB | 1\.792 GB | 1\.536 GB |
+| S192xm |  11.520 GB |  1\.536 GB |  1\.792 GB |  1\.536 GB |
+| S384 | 11.520 GB | 1\.536 GB | 1\.792 GB | 1\.536 GB |
+| S384m | 12.000 GB | 2\.050 GB | 2\.050 GB | 2\.040 GB |
+| S384xm | 16.000 GB | 2\.050 GB | 2\.050 GB | 2\.040 GB |
+| S384xxm |  20.000 GB | 3\.100 GB | 2\.050 GB | 3\.100 GB |
+| S576m | 20.000 GB | 3\.100 GB | 2\.050 GB | 3\.100 GB |
+| S576xm | 31.744 GB | 4\.096 GB | 2\.048 GB | 4\.096 GB |
+| S768m | 28.000 GB | 3\.100 GB | 2\.050 GB | 3\.100 GB |
+| S768xm | 40.960 GB | 6\.144 GB | 4\.096 GB | 6\.144 GB |
+| S960m | 36.000 GB | 4\.100 GB | 2\.050 GB | 4\.100 GB |
 
 
 Os volumes implantados reais podem variar com base na implantação e na ferramenta utilizada para mostrar os tamanhos do volume.

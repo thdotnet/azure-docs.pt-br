@@ -11,14 +11,14 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/15/2018
-ms.author: sumeet.mittal
+ms.author: sumi
 ms.custom: ''
-ms.openlocfilehash: 54178ae8988266c751ae0e23ae8c5e6ef7a16f20
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: e36e1ca17b5106c79076d1c62e737ba60907ab19
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67544153"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67666466"
 ---
 # <a name="virtual-network-service-endpoints"></a>Pontos de extremidade de serviço de rede virtual
 
@@ -39,11 +39,12 @@ Este recurso está disponível para os seguintes serviços e regiões do Azure:
 - **[Barramento de Serviço do Azure](../service-bus-messaging/service-bus-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : Disponível em todas as regiões do Azure.
 - **[Hubs de Eventos do Azure](../event-hubs/event-hubs-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : Disponível em todas as regiões do Azure.
 - **[Azure Data Lake Storage Gen 1](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : Disponível em todas as regiões do Azure nas quais o ADLS Gen1 está disponível.
+- **[O serviço de aplicativo do Azure](https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions)** : Disponível em todas as regiões do Azure em que o serviço de aplicativo está disponível
 
 **Versão prévia pública**
 
 - **[Registro de contêiner do Azure](../container-registry/container-registry-vnet.md)** : Visualização disponível em todas as regiões do Azure em que o registro de contêiner do Azure está disponível.
-- **[O serviço de aplicativo do Azure](https://docs.microsoft.com/en-us/azure/app-service/app-service-ip-restrictions)** : Visualização disponível em todas as regiões do Azure em que o serviço de aplicativo está disponível.
+.
 
 Para obter as notificações mais recentes, verifique a página [Atualizações de rede virtual do Azure](https://azure.microsoft.com/updates/?product=virtual-network).
 

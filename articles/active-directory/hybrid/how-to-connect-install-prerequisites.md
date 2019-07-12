@@ -16,12 +16,12 @@ ms.date: 05/08/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f2916c9aba7d404ff4ad380d249bd507fadf71ea
-ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
+ms.openlocfilehash: b0392a40ef948d96e613da9127629f52b02deb97
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67310071"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67655812"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Pré-requisitos do Azure AD Connect
 Este tópico descreve os pré-requisitos e requisitos de hardware para o Azure AD Connect.
@@ -49,7 +49,7 @@ Antes de instalar o Azure AD Connect, aqui estão algumas coisas de que você pr
 
 ### <a name="azure-ad-connect-server"></a>Servidor do Azure AD Connect
 >[!IMPORTANT]
->O servidor do Azure AD Connect contém dados de identidade crítica e deve ser tratado como um componente de camada 0, conforme documentado no [o modelo de camadas administrativas do Active Directory](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material#ADATM_BM)
+>O servidor do Azure AD Connect contém dados de identidade crítica e deve ser tratado como um componente de camada 0, conforme documentado no [o modelo de camadas administrativas do Active Directory](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material)
 
 * O Azure AD Connect não pode ser instalado no Small Business Server ou no Windows Server Essentials anteriores a 2019 (o Windows Server Essentials 2019 é compatível). O servidor deve estar usando o Windows Server standard ou superior.
 * Instalando o Azure AD Connect em um controlador de domínio não é recomendado devido a configurações mais restritivas que podem impedir a instalação correta do Azure AD Connect e práticas de segurança.

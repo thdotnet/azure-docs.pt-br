@@ -2,17 +2,17 @@
 title: Melhores práticas do operador - Armazenamento nos Serviços do Kubernetes do Azure (AKS)
 description: Aprenda as práticas recomendadas do operador de cluster para armazenamento, criptografia de dados e backups no Serviço de Kubernetes do Azure (AKS)
 services: container-service
-author: iainfoulds
+author: mlearned
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.author: iainfou
-ms.openlocfilehash: 9231b3629c10043e72efad4231111e56fd54c626
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.author: mlearned
+ms.openlocfilehash: b42cdae634a6c2d8d994225d4cb6b440a99918e5
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67447156"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67614587"
 ---
 # <a name="best-practices-for-storage-and-backups-in-azure-kubernetes-service-aks"></a>Práticas recomendadas para armazenamento e backups no Serviço de Kubernetes do Azure (AKS)
 
@@ -36,9 +36,9 @@ A tabela a seguir descreve os tipos de armazenamento disponíveis e suas funcion
 
 | Caso de uso | Plug-in de volume | Ler/gravar uma vez | Muitos somente leitura | Muitos ler/gravar | Suporte de contêiner do Windows Server |
 |----------|---------------|-----------------|----------------|-----------------|--------------------|
-| Configuração compartilhada       | Arquivos do Azure   | Sim | sim | sim | Sim |
+| Configuração compartilhada       | Arquivos do Azure   | Sim | Sim | Sim | Sim |
 | Dados de aplicativo estruturados        | Discos do Azure   | Sim | Não  | Não  | Sim |
-| Dados não estruturados, operações do sistema de arquivos | [BlobFuse (versão prévia)][blobfuse] | Sim | sim | sim | Não |
+| Dados não estruturados, operações do sistema de arquivos | [BlobFuse (versão prévia)][blobfuse] | Sim | Sim | sim | Não |
 
 Os dois principais tipos de armazenamento fornecidos para volumes no AKS são apoiados pelos Discos do Azure ou Arquivos do Azure. Para melhorar a segurança, os dois tipos de armazenamento usam a Criptografia do Serviço de Armazenamento do Azure (SSE) por padrão, que criptografa os dados em repouso. No momento, os discos não podem ser criptografados usando a Criptografia de Disco do Azure no nível do nó do AKS.
 

@@ -3,16 +3,15 @@ title: Descompasso do Esquema do Fluxo de Dados do Mapeamento do Azure Data Fact
 description: Construa fluxos de dados resistentes no Azure Data Factory com descompasso de esquema
 author: kromerm
 ms.author: makromer
-ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 10/04/2018
-ms.openlocfilehash: aadab68185347dc0a12e0802f675efe13ecea545
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6fd610afc0a21a97a8544b9e4b173f207f5fb50f
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61261794"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67722874"
 ---
 # <a name="mapping-data-flow-schema-drift"></a>Descompasso do Esquema do Fluxo de Dados do Mapeamento
 
@@ -34,7 +33,7 @@ Para proteger contra o Descompasso do Esquema, é importante ter recursos em uma
 
 * Ao selecionar essa opção, todos os campos recebidos são lidos da sua fonte em cada execução do Fluxo de Dados e são passados por todo o fluxo até o Coletor.
 
-* Certifique-se de usar o "Mapeamento Automático" para mapear todos os novos campos na Transformação de Coletor para que todos os novos campos sejam coletados e descarregados no seu destino:
+* Certifique-se de usar o "mapeamento automático" para mapear todos os novos campos na transformação de coletor para que todos os novos campos obterem retirado e descarregados no seu destino.
 
 <img src="media/data-flow/automap.png" width="400">
 
