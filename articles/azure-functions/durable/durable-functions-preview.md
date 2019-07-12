@@ -5,38 +5,38 @@ services: functions
 author: cgillum
 manager: jeconnoc
 keywords: ''
-ms.service: functions
+ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: article
-ms.date: 04/23/2019
+ms.date: 07/08/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 8ceb84ab9e9c41ff6a9cbde62571fb12ae67d790
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7101519aa4a87995dac3a7f11046eed84a2c09b6
+ms.sourcegitcommit: af31deded9b5836057e29b688b994b6c2890aa79
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65596082"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67812771"
 ---
 # <a name="durable-functions-20-preview-azure-functions"></a>Versão prévia 2.0 de funções durável (Azure Functions)
 
 As *Funções Duráveis* são uma extensão do [Azure Functions](../functions-overview.md) e do [Azure WebJobs](../../app-service/web-sites-create-web-jobs.md) que permitem que você escreva funções com estado em um ambiente sem servidor. A extensão gerencia estado, pontos de verificação e reinicializações para você. Se você já não estiver familiarizado com as funções duráveis, consulte o [documentação de visão geral](durable-functions-overview.md).
 
-As funções duráveis é um recurso de GA (disponibilidade geral) do Azure Functions, mas também contém vários sub-recursos que estão atualmente em visualização pública. Este artigo descreve os recursos de visualização recém-lançado e apresenta detalhes sobre como eles funcionam e como você pode começar a usá-los.
+As funções duráveis 1.x é um recurso de GA (disponibilidade geral) do Azure Functions, mas também contém vários sub-recursos que estão atualmente em visualização pública. Este artigo descreve os recursos de visualização recém-lançado e apresenta detalhes sobre como eles funcionam e como você pode começar a usá-los.
 
 > [!NOTE]
-> Estes recursos de visualização são parte de uma versão 2.0 de funções duráveis, o que é atualmente uma **versão alfa qualidade** com várias alterações significativas. O Azure Functions durável compilações do pacote de extensão podem ser encontrada em nuget.org com versões na forma de **2.0.0-alpha**. Essas compilações não são adequadas para quaisquer cargas de trabalho de produção e versões posteriores podem conter alterações significativas adicionais.
+> Estes recursos de visualização são parte de uma versão 2.0 de funções duráveis, o que é atualmente uma **versão de qualidade de visualização** com várias alterações significativas. O Azure Functions durável compilações do pacote de extensão podem ser encontrada em nuget.org com versões na forma de **2.0.0-betaX**. Essas compilações não se destinam para cargas de trabalho de produção e versões posteriores podem conter alterações significativas adicionais.
 
 ## <a name="breaking-changes"></a>Alterações de última hora
 
 Várias alterações significativas são apresentadas no 2.0 de funções duráveis. Os aplicativos existentes não devem ser compatíveis com 2.0 de funções duráveis sem alterações de código. Esta seção lista algumas das alterações:
 
-### <a name="dropping-net-framework-support"></a>Removendo o suporte do .NET Framework
-
-Suporte para o .NET Framework (e, portanto, o Functions 1.0) foi descartado para 2.0 de funções duráveis. É o principal motivo habilitar o não-Windows colaboradores para facilmente criar e testar as alterações feitas por eles para funções duráveis de plataformas macOS e Linux. O motivo secundário é ajudar a encorajar os desenvolvedores a se mover para a versão mais recente do tempo de execução do Azure Functions.
-
 ### <a name="hostjson-schema"></a>Esquema de host. JSON
 
-O trecho a seguir mostra o novo esquema para o host. JSON. A principal mudança estar ciente é o novo `"storageProvider"` seção e o `"azureStorage"` seção abaixo dela. Essa alteração foi feita para apoiar [alternativos de provedores de armazenamento](durable-functions-preview.md#alternate-storage-providers).
+O trecho a seguir mostra o novo esquema para o host. JSON. As principais alterações a serem consideradas são as subseções a nova:
+
+* `"storageProvider"` (e o `"azureStorage"` subseção) para a configuração de armazenamento específico
+* `"tracking"` para acompanhamento e a configuração de registro em log
+* `"notifications"` (e o `"eventGrid"` subseção) para a configuração de notificação de grade de eventos
 
 ```json
 {
@@ -56,19 +56,25 @@ O trecho a seguir mostra o novo esquema para o host. JSON. A principal mudança 
           "maxQueuePollingInterval": <hh:mm:ss?>
         }
       },
+      "tracking": {
+        "traceInputsAndOutputs": <bool?>,
+        "traceReplayEvents": <bool?>,
+      },
+      "notifications": {
+        "eventGrid": {
+          "topicEndpoint": <string?>,
+          "keySettingName": <string?>,
+          "publishRetryCount": <string?>,
+          "publishRetryInterval": <hh:mm:ss?>,
+          "publishRetryHttpStatus": <int[]?>,
+          "publishEventTypes": <string[]?>,
+        }
+      },
       "maxConcurrentActivityFunctions": <int?>,
       "maxConcurrentOrchestratorFunctions": <int?>,
-      "traceInputAndOutputs": <bool?>,
-      "eventGridTopicEndpoint": <string?>,
-      "eventGridKeySettingName": <string?>,
-      "eventGridPublishRetryCount": <string?>,
-      "eventGridPublishRetryInterval": <hh:mm:ss?>,
-      "eventGridPublishRetryHttpStatus": <int[]?>,
-      "eventgridPublishEventTypes": <string[]?>,
-      "customLifeCycleNotificationHelperType"
       "extendedSessionsEnabled": <bool?>,
       "extendedSessionIdleTimeoutInSeconds": <int?>,
-      "logReplayEvents": <bool?>
+      "customLifeCycleNotificationHelperType": <string?>
   }
 }
 ```
@@ -93,27 +99,27 @@ No caso em que uma classe base abstrata contido métodos virtuais, esses método
 
 Definem as funções da entidade operações para ler e atualizar pequenos pedaços de estado, conhecido como *entidades duráveis*. Como funções de orquestrador, funções de entidade são funções com um tipo especial de gatilho, *disparador entidade*. Diferentemente das funções de orquestrador, funções da entidade não tem quaisquer restrições de código específico. Funções de entidade também gerenciam estado explicitamente em vez de implicitamente que representa o estado por meio do fluxo de controle.
 
-O código a seguir é um exemplo de uma função de entidade simples que define uma *contador* entidade. A função define três operações, `add`, `subtract`, e `reset`, cada do que atualizar um valor inteiro, `currentValue`.
+### <a name="net-programing-models"></a>Modelos de programação do .NET
+
+Há dois modelos de programação opcionais para a criação de entidades duráveis. O código a seguir é um exemplo de um simples *contador* entidade implementada como uma função padrão. Essa função define três *operações*, `add`, `reset`, e `get`, cada do que operam em um valor de estado de inteiro, `currentValue`.
 
 ```csharp
 [FunctionName("Counter")]
-public static async Task Counter(
-    [EntityTrigger] IDurableEntityContext ctx)
+public static void Counter([EntityTrigger] IDurableEntityContext ctx)
 {
     int currentValue = ctx.GetState<int>();
-    int operand = ctx.GetInput<int>();
 
-    switch (ctx.OperationName)
+    switch (ctx.OperationName.ToLowerInvariant())
     {
         case "add":
+            int amount = ctx.GetInput<int>();
             currentValue += operand;
             break;
-        case "subtract":
-            currentValue -= operand;
-            break;
         case "reset":
-            await SendResetNotificationAsync();
             currentValue = 0;
+            break;
+        case "get":
+            ctx.Return(currentValue);
             break;
     }
 
@@ -121,16 +127,38 @@ public static async Task Counter(
 }
 ```
 
+Esse modelo funciona melhor para implementações de entidade simples ou implementações que têm um conjunto dinâmico de operações. No entanto, há também um modelo de programação baseado em classe que é útil para entidades que são estáticos, mas têm implementações mais complexas. O exemplo a seguir é uma implementação equivalente do `Counter` entidade usando métodos e classes do .NET.
+
+```csharp
+public class Counter
+{
+    [JsonProperty("value")]
+    public int CurrentValue { get; set; }
+
+    public void Add(int amount) => this.CurrentValue += amount;
+    
+    public void Reset() => this.CurrentValue = 0;
+    
+    public int Get() => this.CurrentValue;
+
+    [FunctionName(nameof(Counter))]
+    public static Task Run([EntityTrigger] IDurableEntityContext ctx)
+        => ctx.DispatchAsync<Counter>();
+}
+```
+
+O modelo baseado em classe é semelhante ao modelo de programação popularizado por [Orleans](https://www.microsoft.com/research/project/orleans-virtual-actors/). Nesse modelo, um tipo de entidade é definido como uma classe .NET. Cada método da classe é uma operação que pode ser invocada por um cliente externo. No entanto, ao contrário de Orleans, interfaces .NET são opcionais. Anterior *contador* exemplo não tiver usado uma interface, mas ele ainda pode ser invocado por meio de outras funções ou por meio de chamadas de API HTTP.
+
 Entidade *instâncias* são acessadas por meio de um identificador exclusivo, o *ID da entidade*. Uma ID de entidade é simplesmente um par de cadeias de caracteres que identifica exclusivamente uma instância de entidade. Ele consiste em:
 
-1. uma **nome da entidade**: um nome que identifica o tipo da entidade (por exemplo, "Counter")
-2. uma **chave de entidade**: uma cadeia de caracteres que identifica exclusivamente a entidade entre todas as outras entidades do mesmo nome (por exemplo, um GUID)
+* Uma **nome da entidade**: um nome que identifica o tipo da entidade (por exemplo, "Counter").
+* Uma **chave de entidade**: uma cadeia de caracteres que identifica exclusivamente a entidade entre todas as outras entidades do mesmo nome (por exemplo, um GUID).
 
 Por exemplo, uma *contador* função de entidade pode ser usada para manter a pontuação em um jogo online. Cada instância do jogo terá uma ID de entidade exclusivo, como `@Counter@Game1`, `@Counter@Game2`e assim por diante.
 
 ### <a name="comparison-with-virtual-actors"></a>Comparação com atores virtuais
 
-O design de entidades durável é amplamente influenciado pelo [modelo de ator](https://en.wikipedia.org/wiki/Actor_model). Se você já estiver familiarizado com os atores, os conceitos por trás de entidades duráveis devem ser familiares para você. Em particular, as entidades duráveis são semelhantes às [atores virtuais](https://research.microsoft.com/en-us/projects/orleans/) de várias maneiras:
+O design de entidades durável é amplamente influenciado pelo [modelo de ator](https://en.wikipedia.org/wiki/Actor_model). Se você já estiver familiarizado com os atores, os conceitos por trás de entidades duráveis devem ser familiares para você. Em particular, as entidades duráveis são semelhantes às [atores virtuais](https://research.microsoft.com/projects/orleans/) de várias maneiras:
 
 * Entidades duráveis são endereçáveis por meio de um *ID da entidade*.
 * Entidade durável operações são executadas em série, um de cada vez, para evitar condições de corrida.
@@ -139,23 +167,22 @@ O design de entidades durável é amplamente influenciado pelo [modelo de ator](
 
 Há algumas diferenças importantes, no entanto, que vale a pena observar:
 
-* Entidades duráveis são modeladas como funções puras. Esse design é diferente da maioria das estruturas orientada a objeto que representam atores usando o suporte de idioma específico para classes, propriedades e métodos.
 * Entidades duráveis priorizar *durabilidade* pela *latência*e, portanto, pode não ser adequado para aplicativos com requisitos estritos de latência.
 * As mensagens enviadas entre as entidades são entregues com confiança e em ordem.
 * Entidades duráveis podem ser usadas junto com orquestrações duráveis e podem servir como bloqueios distribuídos, que são descritos neste artigo.
 * Padrões de solicitação/resposta nas entidades estão limitados a orquestrações. Para a comunicação de entidade de entidade, apenas a mensagens unidirecionais (também conhecido como "sinalização") são permitidas, como no modelo de ator original. Esse comportamento impede deadlocks distribuídos.
 
-### <a name="durable-entity-apis"></a>APIs de entidade duráveis
+### <a name="durable-entity-net-apis"></a>Entidade durável APIs do .NET
 
 Suporte ao Entity envolve várias APIs. Por exemplo, há uma nova API para definir funções de entidade, como mostrado acima, que especificam o que deve acontecer quando uma operação é invocada em uma entidade. Além disso, as APIs existentes para clientes e orquestrações foram atualizadas com a nova funcionalidade para interação com entidades.
 
-### <a name="implementing-entity-operations"></a>Implementar operações de entidade
+#### <a name="implementing-entity-operations"></a>Implementar operações de entidade
 
 A execução de uma operação em uma entidade pode chamar esses membros no objeto de contexto (`IDurableEntityContext` no .NET):
 
 * **OperationName**: obtém o nome da operação.
-* **GetInput\<T >** : obtém a entrada para a operação.
-* **GetState\<T >** : obtém o estado atual da entidade.
+* **GetInput\<TInput >** : obtém a entrada para a operação.
+* **GetState\<TState >** : obtém o estado atual da entidade.
 * **SetState**: atualiza o estado da entidade.
 * **SignalEntity**: envia uma mensagem unidirecional para uma entidade.
 * **Self**: obtém a ID da entidade.
@@ -168,24 +195,90 @@ As operações são menos restritas que orquestrações:
 * Operações podem chamar e/s externos, usando as APIs síncronas ou assíncronas (é recomendável usar apenas as assíncronas).
 * Operações podem ser não determinístico. Por exemplo, é seguro chamar `DateTime.UtcNow`, `Guid.NewGuid()` ou `new Random()`.
 
-### <a name="accessing-entities-from-clients"></a>Acessar as entidades de clientes
+#### <a name="accessing-entities-from-clients"></a>Acessar as entidades de clientes
 
 Entidades duráveis podem ser chamadas de funções comuns por meio de `orchestrationClient` associação (`IDurableOrchestrationClient` no .NET). Há suporte para os seguintes métodos:
 
 * **ReadEntityStateAsync\<T >** : lê o estado de uma entidade.
 * **SignalEntityAsync**: envia uma mensagem unidirecional para uma entidade e aguarda até que ele seja enfileirado.
+* **SignalEntityAsync\<T >** : igual `SignalEntityAsync` , mas usa um objeto de proxy gerado do tipo `T`.
 
-Esses métodos priorizar desempenho sobre a consistência: `ReadEntityStateAsync` pode retornar um valor obsoleto, e `SignalEntityAsync` pode retornar antes da operação for concluída. Por outro lado, é altamente consistente chamando entidades de orquestrações (conforme descrito a seguir).
+Anterior `SignalEntityAsync` chamada requer especificando o nome da operação de entidade como uma `string` e a carga da operação como um `object`. O código de exemplo a seguir é um exemplo desse padrão:
 
-### <a name="accessing-entities-from-orchestrations"></a>Acessar as entidades de orquestrações
+```csharp
+EntityId id = // ...
+object amount = 5;
+context.SignalEntityAsync(id, "Add", amount);
+```
 
-Orquestrações podem acessar entidades usando o objeto de contexto. Eles podem escolher entre comunicação unidirecional (disparar e esquecer) e a comunicação bidirecional (solicitação e resposta). Os métodos respectivos são
+Também é possível gerar um objeto de proxy para acesso fortemente tipado. Para gerar um proxy de tipo seguro, o tipo de entidade deve implementar uma interface. Por exemplo, suponha que o `Counter` implementado entidade mencionada anteriormente um `ICounter` interface, definida da seguinte maneira:
+
+```csharp
+public interface ICounter
+{
+    void Add(int amount);
+    void Reset();
+    int Get();
+}
+
+public class Counter : ICounter
+{
+    // ...
+}
+```
+
+Código do cliente pode usar `SignalEntityAsync<T>` e especifique o `ICounter` interface como parâmetro de tipo para gerar um proxy de tipo seguro. Esse uso de proxies de tipo seguro é demonstrado no exemplo de código a seguir:
+
+```csharp
+[FunctionName("UserDeleteAvailable")]
+public static async Task AddValueClient(
+    [QueueTrigger("my-queue")] string message,
+    [OrchestrationClient] IDurableOrchestrationClient client)
+{
+    int amount = int.Parse(message);
+    var target = new EntityId(nameof(Counter), "MyCounter");
+    await client.SignalEntityAsync<ICounter>(target, proxy => proxy.Add(amount));
+}
+```
+
+No exemplo anterior, o `proxy` parâmetro é uma instância gerada dinamicamente do `ICounter`, que converte internamente a chamada para `Add` para o equivalente (sem tipo) chamar `SignalEntityAsync`.
+
+> [!NOTE]
+> É importante observar que o `ReadEntityStateAsync` e `SignalEntityAsync` métodos de `IDurableOrchestrationClient` priorizar desempenho sobre a consistência. `ReadEntityStateAsync` pode retornar um valor obsoleto, e `SignalEntityAsync` pode retornar antes da operação for concluída.
+
+#### <a name="accessing-entities-from-orchestrations"></a>Acessar as entidades de orquestrações
+
+Orquestrações podem acessar entidades usando o `IDurableOrchestrationContext` objeto. Eles podem escolher entre comunicação unidirecional (disparar e esquecer) e a comunicação bidirecional (solicitação e resposta). Os respectivos métodos são:
 
 * **SignalEntity**: envia uma mensagem unidirecional para uma entidade.
 * **CallEntityAsync**: envia uma mensagem para uma entidade e aguarda uma resposta que indica se a operação foi concluída.
 * **CallEntityAsync\<T >** : envia uma mensagem a uma entidade e aguarda uma resposta que contém um resultado do tipo T.
 
 Ao usar a comunicação bidirecional, todas as exceções geradas durante a execução da operação também são transmitidas novamente para a orquestração chamada e gerada novamente. Por outro lado, ao usar disparar e esquecer, as exceções não são observadas.
+
+Para acesso de segurança de tipos, funções de orquestração podem gerar proxies com base em uma interface. O `CreateEntityProxy` método de extensão pode ser usado para essa finalidade:
+
+```csharp
+public interface IAsyncCounter
+{
+    Task AddAsync(int amount);
+    Task ResetAsync();
+    Task<int> GetAsync();
+}
+
+[FunctionName("CounterOrchestration)]
+public static async Task Run(
+    [OrchestrationTrigger] IDurableOrchestrationContext context)
+{
+    // ...
+    IAsyncCounter proxy = context.CreateEntityProxy<IAsyncCounter>("MyCounter");
+    await proxy.AddAsync(5);
+    int newValue = await proxy.GetAsync();
+    // ...
+}
+```
+
+No exemplo anterior, uma entidade "counter" foi considerada existe que implementa o `IAsyncCounter` interface. A orquestração, em seguida, foi capaz de usar o `IAsyncCounter` definição para gerar um tipo de proxy para interação de forma síncrona com a entidade de tipo.
 
 ### <a name="locking-entities-from-orchestrations"></a>Entidades de bloqueio de orquestrações
 
@@ -282,4 +375,4 @@ O [DurableTask.Redis](https://www.nuget.org/packages/Microsoft.Azure.DurableTask
 O `connectionStringName` deve fazer referência ao nome de uma variável de ambiente ou configuração de aplicativo. Essa variável de ambiente ou configuração de aplicativo deve conter um valor de cadeia de caracteres de conexão do Redis na forma de *porta do servidor:* . Por exemplo, `localhost:6379` para se conectar a um cluster local do Redis.
 
 > [!NOTE]
-> O provedor de Redis está atualmente experimental e só oferece suporte a aplicativos de função em execução em um único nó.
+> O provedor de Redis está atualmente experimental e só oferece suporte a aplicativos de função em execução em um único nó. Não há garantia de que o provedor de Redis nunca será feito em disponibilidade geral, e ele pode ser removido em uma versão futura.
