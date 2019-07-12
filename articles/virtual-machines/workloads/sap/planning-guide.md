@@ -4,7 +4,7 @@ description: Planejamento e implementação de Máquinas Virtuais do Azure para 
 services: virtual-machines-linux,virtual-machines-windows
 documentationcenter: ''
 author: MSSedusch
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 05/07/2019
 ms.author: sedusch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c6a119fe777c443c777781aca4ae46e0ca171e52
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 11a54dee653bcfa6c94a861e483183ac39f465bf
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67442128"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67710191"
 ---
 # <a name="azure-virtual-machines-planning-and-implementation-for-sap-netweaver"></a>Planejamento e implementação de Máquinas Virtuais do Azure para SAP NetWeaver
 
@@ -370,7 +370,7 @@ O ponto de entrada para a carga de trabalho SAP na documentação do Azure é en
 
 As seguintes Notas do SAP estão relacionadas com o tópico do SAP no Azure:
 
-| Número da observação | Title |
+| Número da observação | Título |
 | --- | --- |
 | [1928533] |Aplicativos SAP no Azure: Produtos com suporte e dimensionamento |
 | [2015553] |SAP no Microsoft Azure: Pré-requisitos de suporte |

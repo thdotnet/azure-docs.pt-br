@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 06/27/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e76b36d03f9d1d08e506be4e09933cbe56b8199
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: ac9647bf6a9e2e763bcfb6e3d840cdccd2b6c305
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67544607"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67595001"
 ---
 # <a name="tutorial-integrate-clever-nelly-with-azure-active-directory"></a>Tutorial: integrar o Clever Nelly ao Azure Active Directory
 
@@ -144,7 +144,7 @@ Nesta seção, você permitirá que B.Fernandes use o logon único do Azure conc
 
     ![O link Adicionar Usuário](common/add-assign-user.png)
 
-1. Na caixa de diálogo **Usuários e grupos**, selecione **B.Fernandes** na lista Usuários e clique no botão **Selecionar**, na parte inferior da tela.
+1. Na caixa de diálogo **Usuários e grupos**, selecione **B.Fernandes** na lista Usuários e clique no botão **Selecionar** na parte inferior da tela.
 1. Se você estiver esperando um valor de função na declaração SAML, na caixa de diálogo **Selecionar Função**, escolha a função apropriada para o usuário da lista e, em seguida, clique no botão **Escolher** na parte inferior da tela.
 1. Na caixa de diálogo **Adicionar atribuição**, clique no botão **Atribuir**.
 
@@ -160,8 +160,8 @@ Ao clicar no bloco do Clever Nelly no Painel de Acesso, você deverá ser conect
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-- [ Lista de tutoriais sobre como integrar aplicativos SaaS com o Active Directory do Azure ](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Lista de tutoriais sobre como integrar aplicativos SaaS com o Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [O que é o acesso a aplicativos e logon único com o Azure Active Directory? ](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

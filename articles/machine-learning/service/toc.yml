@@ -245,7 +245,7 @@
         - name: Executar previsões em lotes
           displayName: score scoring asynchronous consume pipeline
           href: how-to-run-batch-predictions.md
-    - name: Monitorar serviços Web
+    - name: Monitorar modelos
       items:
         - name: Coletar e avaliar dados de modelo
           displayName: track production
@@ -273,9 +273,6 @@
     - name: SDK do aprendizado de máquina
       displayName: api core package python data prep
       href: 'https://aka.ms/aml-sdk'
-    - name: Monitoramento do SDK
-      displayName: api package python monitor
-      href: 'https://aka.ms/aml-monitoring-sdk'
     - name: CLI do Machine Learning
       displayName: 'cli, extension, command line, command-line, az, ci/cd, automate, automated'
       href: reference-azure-machine-learning-cli.md

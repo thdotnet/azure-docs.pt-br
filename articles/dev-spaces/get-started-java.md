@@ -9,13 +9,13 @@ ms.date: 09/26/2018
 ms.topic: tutorial
 description: Desenvolvimento rápido de Kubernetes com contêineres e microsserviços no Azure
 keywords: Docker, Kubernetes, Azure, AKS, Serviço de Kubernetes do Azure, contêineres, Helm, malha de serviço, roteamento de malha de serviço, kubectl, k8s
-manager: mmontwil
-ms.openlocfilehash: 517951be2bc99f7607facaed3c9b04260fc6d3d8
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+manager: gwallace
+ms.openlocfilehash: ec1c2b385797b1219814e584a9db7da82d111e2d
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67503198"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67704128"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-java"></a>Introdução ao Azure Dev Spaces com Java
 
@@ -143,7 +143,7 @@ Service 'webfrontend' port 80 (TCP) is available at 'http://localhost:<port>'
 
 Identifique a URL pública do serviço na saída do comando `up`. Termina em `.azds.io`. No exemplo acima, a URL pública é `http://webfrontend.1234567890abcdef1234.eus.azds.io/`.
 
-Para ver seu aplicativo Web, abra a URL pública em um navegador. Além disso, observe que a saída de `stdout` e `stderr` é transmitida para a janela do terminal *azds trace* enquanto você interage com o aplicativo Web. Também é possível exibir informações de acompanhamento de solicitações HTTP à medida que passam pelo sistema. Isso facilita o acompanhamento de chamadas de vários serviços complexas durante o desenvolvimento. A instrumentação adicionada pelo Dev Spaces fornece essa solicitação de acompanhamento.
+Para ver seu aplicativo Web, abra a URL pública em um navegador. Além disso, observe que a saída de `stdout` e `stderr` é transmitida para a janela do terminal *azds trace* enquanto você interage com o aplicativo Web. Também é possível conferir informações de acompanhamento das solicitações HTTP à medida que elas passam pelo sistema. Isso facilita o acompanhamento de chamadas complexas de vários serviços durante o desenvolvimento. A instrumentação adicionada pelo Dev Spaces fornece essa solicitação de acompanhamento.
 
 > [!Note]
 > Além da URL pública, você pode usar a URL `http://localhost:<portnumber>` alternativa exibida na saída do console. Se você usar a URL de host local, poderá parecer que o contêiner está sendo executado localmente, mas, na verdade, ele está sendo executado no AKS. O Azure Dev Spaces usa a funcionalidade de *encaminhamento de porta* do Kubernetes para mapear a porta do host local para o contêiner em execução no AKS. Isso facilita a interação com o serviço em seu computador local.
