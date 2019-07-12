@@ -1,5 +1,5 @@
 ---
-title: Aprendizado de reforço – Personalizador
+title: Escalabilidade e desempenho - Personalizer
 titleSuffix: Azure Cognitive Services
 description: 'Os aplicativos e os sites de alto desempenho e alto tráfego têm dois principais fatores a considerar com o Personalizador para desempenho e escalabilidade: taxa de transferência de treinamento e latência.'
 services: cognitive-services
@@ -7,15 +7,15 @@ author: edjez
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
-ms.topic: overview
+ms.topic: conceptual
 ms.date: 06/07/2019
 ms.author: edjez
-ms.openlocfilehash: 242cc1b96c08cd79dc3e2ef5efbbe96a934b8ad3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: HT
+ms.openlocfilehash: 06c2e65c723e18acc515dd7effc61aae0564f411
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67068298"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67722426"
 ---
 # <a name="scalability-and-performance"></a>Desempenho e escalabilidade
 

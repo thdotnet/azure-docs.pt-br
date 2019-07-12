@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 05/06/2019
+ms.date: 06/25/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 8df9c2a5e45cf222debc733b3e051c3f707715c5
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: 7e7a1f119a2f2b0e60645cb776b26c124910cacb
+ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65603093"
+ms.lasthandoff: 06/28/2019
+ms.locfileid: "67448207"
 ---
 # <a name="tutorial-return-azure-data-box-disk-and-verify-data-upload-to-azure"></a>Tutorial: Devolver o Azure Data Box Disk e verificar o upload de dados para o Azure
 
@@ -88,7 +88,7 @@ Execute as seguintes etapas se estiver devolvendo o dispositivo na Europa.
 
 ### <a name="pick-up-in-asia-pacific-region"></a>Retirada na região do Pacífico Asiático
 
-Essa região inclui instruções para retirada no Japão, na Coreia do Sul e na Austrália.
+Essa região inclui instruções para retirada no Japão, na Coreia, na Austrália e em Singapura.
 
 #### <a name="pick-up-in-australia"></a>Retirada na Austrália
 
@@ -103,43 +103,64 @@ Datacenters do Azure na Austrália têm uma notificação de segurança adiciona
 
 #### <a name="pick-up-in-japan"></a>Retirada no Japão
 
-1. Inclua a carta de porte de devolução do Japan Post Chakubarai.
-2. Escreva as informações de nome e endereço da sua empresa na carta de porte como suas informações de remetente.
-3. Ligue para o número de solicitação de retirada do Japan Post 0800-0800-111 (ligação gratuita). Disque o código postal de sete dígitos para o endereço de retirada e, em seguida, encaminhe para sua agência mais próxima.
-    - Os horários disponíveis para a solicitação de retirada dependem das respectivas agências de postagem.
-    - Informe que a remessa é para o Japan Post Chakubarai Yu-Pack.
-    - Use a carta de porte do Chakubarai incluída.
-4. Se a carta de porte do Japan Post Chakubarai não tiver sido incluída, envie um email para *Quantium Solutions* em `Customerservice.JP@quantiumsolutions.com`. A *Quantium Solutions* solicitará que o Japan Post retire e pedirá que leve a carta de porte na retirada.
-    - Indique o número de referência na coluna de observação da carta de porte do Chakubarai que o Japan Post trará.
-    - Insira o endereço de entrega, conforme mostrado abaixo:   
-        ```
-        3F N7 Prologis Park Tokyo Ohta, 1-3-6 Tokai Ohta-ku, Tokyo 143-0001
-        Microsoft Service Center c/o Quantium Solutions Japan
-        TEL: 03-5755-0150
-        ```
+1. Escreva as informações de nome e endereço da sua empresa na nota de consignação como suas informações de remetente.
+2. A solução de email da Quantium usando o seguinte modelo de email.
 
-Se a carta de porte do Chakubarai estiver ausente, você poderá solicitar a retirada via email. Use o modelo de email a seguir para solicitar a retirada.
+    - Se a nota de consignação do Japan Post Chakubarai não tiver sido incluída ou estiver faltando, faça essa observação neste email. A Quantium Solutions Japan solicitará que o Japan Post (Correios do Japão) leve a nota de consignação na retirada.
+    - Se você tem vários pedidos, envie um email para garantir a retirada individual.
 
-```
-To: Customerservice.JP@quantiumsolutions.com
-Subject: Pickup request for Azure Data Box Disk｜Job Name： 
-Body: 
-- Azure Data Box Disk job name：
-- Reference number:  
-- Requested pickup date：mmdd (Select a requested time slot from below).
-    a. 08：00-13：00 
-    b. 13：00-15：00 
-    c. 15：00-17：00 
-    d. 17：00-19：00 
-```
+    ```
+    To: Customerservice.JP@quantiumsolutions.com
+    Subject: Pickup request for Azure Data Box Disk｜Job Name： 
+    Body: 
+    - Japan Post Yu-Pack tracking number (reference number)：
+    - Requested pickup date：mmdd (Select a requested time slot from below).
+        a. 08：00-13：00 
+        b. 13：00-15：00 
+        c. 15：00-17：00 
+        d. 17：00-19：00 
+    ```
+
+3. Receba um email de confirmação da Quantium Solutions após registrar uma retirada. O email de confirmação também inclui informações sobre a nota de consignação da Chakubarai.
+
+Se for necessário, você poderá contatar o suporte da Quantium Solutions (em japonês): 
+
+- Email：Customerservice.JP@quantiumsolutions.com 
+- Telefone: 03-5755-0150 
 
 #### <a name="pick-up-in-korea"></a>Retirada na Coreia do Sul
 
-1. Inclua a carta de porte de devolução.
-2. Para solicitar retirada:
-    1. Ligue para a linha direta da *Quantium Solutions International* em 070-8231 1418 durante o horário de expediente (das 10h às 17h, de segunda a sexta-feira). Mencione *Retirada da Microsoft* e o número da carta de porte para providenciar uma retirada.  
-    2. Se a linha direta estiver ocupada, envie um email para `microsoft@rocketparcel.com` com o assunto *Retirada da Microsoft* e o número da carta de porte como referência.
+1. Inclua a nota de consignação de devolução.
+2. Para solicitar a retirada quando houver nota de consignação:
+    1. Ligue para a linha direta da *Quantium Solutions International* em 070-8231 1418 durante o horário de expediente (das 10h às 17h, de segunda a sexta-feira). Mencione *Retirada do Microsoft Azure* e o número da solicitação de serviço para providenciar uma retirada.  
+    2. Se a linha direta estiver ocupada, envie um email para `microsoft@rocketparcel.com` com o assunto *Retirada do Microsoft Azure* e o número da solicitação de serviço como referência.
     3. Se a transportadora não chegar para a coleta, ligue para a linha direta da *Quantium Solutions International* para providências alternativas. 
+    4. Você receberá um email de confirmação para o agendamento da retirada.
+3. Siga esta etapa somente se não houver nota de consignação. Para solicitar retirada:
+    1. Ligue para a linha direta da *Quantium Solutions International* em 070-8231 1418 durante o horário de expediente (das 10h às 17h, de segunda a sexta-feira). Mencione *Retirada do Microsoft Azure* e o número da solicitação de serviço para providenciar uma retirada. Especifique que você precisa de uma nova nota de consignação para providenciar uma retirada. Forneça o remetente (cliente), as informações de destinatário (datacenter do Azure) e o número de referência (número da solicitação de serviço). 
+    2. Se a linha direta estiver ocupada, envie um email para `microsoft@rocketparcel.com` com o assunto *Retirada do Microsoft Azure* e o número da solicitação de serviço como referência.
+    3. Se a transportadora não chegar para a coleta, ligue para a linha direta da *Quantium Solutions International* para providências alternativas. 
+    4. Você recebe uma confirmação verbal se a solicitação for feita por telefone.
+
+### <a name="pick-up-in-singapore"></a>Retirada em Singapura
+
+1. Imprima a etiqueta de remessa e anexe à caixa. Se o rótulo estiver danificado ou tiver sido perdido:
+    - Vá para **Visão geral > Baixar etiqueta de remessa**.
+
+        ![Faça o download da etiqueta de remessa](media/data-box-disk-deploy-picked-up/download-shipping-label.png)
+
+        Essa ação faz o download de uma etiqueta de remessa de devolução, conforme mostrado abaixo.
+
+        ![Etiqueta de remessa de exemplo](media/data-box-disk-deploy-picked-up/exmple-shipping-label.png)
+    - Afixe o rótulo ao dispositivo. Certifique-se que a etiqueta está visível.
+
+2. Para solicitar retirada:
+    - Ligue para a linha direta do **SingPost** pelo número **6845 6485** no horário comercial (das 9h às 17h, de segunda-feira a sexta-feira).  
+    - Mencione *Retirada do Microsoft Azure* e o número da solicitação de serviço (número de rastreamento na etiqueta de remessa de devolução) para providenciar uma retirada. 
+    - Você receberá uma confirmação verbal para o agendamento da retirada. 
+    - Se a transportadora não chegar para a coleta, ligue para o **SingPost** pelo número **6845 6485** para providências alternativas. 
+3. Passe para a transportadora. 
+
 
 ## <a name="verify-data-upload-to-azure"></a>Verificar o carregamento de dados para o Azure
 
@@ -156,6 +177,8 @@ Os dados são copiados automaticamente quando os discos são conectados a um ser
 Depois que a cópia for concluída, o status do pedido será atualizado para **Concluído**.
 
 ![Cópia de dados concluída](media/data-box-disk-deploy-picked-up/data-box-portal-completed.png)
+
+Se a cópia for concluída com erros, confira [Solucionar problemas de upload](data-box-disk-troubleshoot-upload.md).
 
 Verifique se seus dados estão nas contas de armazenamento antes de excluí-los da fonte. Seus dados podem estar em:
 
