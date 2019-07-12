@@ -11,13 +11,13 @@ author: oslake
 ms.author: moslake
 ms.reviewer: sstein, carlrab
 manager: craigg
-ms.date: 06/12/2019
-ms.openlocfilehash: afa575c9015cbb21386d23101b74456822dfa33c
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.date: 07/05/2019
+ms.openlocfilehash: 5a1a5ea39c9c0ed8973e1ecfa46977d2d06f83e7
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67275473"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603618"
 ---
 # <a name="azure-sql-database-serverless-preview"></a>Azure SQL Database sem servidor (visualização)
 
@@ -166,7 +166,7 @@ Criando um novo banco de dados ou mover que um banco de dados existente para uma
    |Parâmetro|Opções de valor|Valor padrão|
    |---|---|---|---|
    |Mínimo de vCores|{0,5, 1, 2, 4} sem exceder o máximo de vCores|vCores de 0,5|
-   |Atraso de pausa automática|Mínimo: 360 minutos (6 horas)<br>Máximo: 10.080 minutos (7 dias)<br>Incrementos: 60 minutos<br>Desabilitar pausa automática: -1|360 minutos|
+   |Atraso de pausa automática|Mínimo: 60 minutos (1 hora)<br>Máximo: 10.080 minutos (7 dias)<br>Incrementos: 60 minutos<br>Desabilitar pausa automática: -1|60 minutos|
 
 > [!NOTE]
 > Não há suporte para usar o T-SQL para mover um banco de dados existente para uma camada sem servidor ou alterar seu tamanho da computação, mas isso pode ser feito por meio do portal do Azure ou do PowerShell.

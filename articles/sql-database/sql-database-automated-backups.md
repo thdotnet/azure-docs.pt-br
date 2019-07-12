@@ -12,12 +12,12 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 06/27/2019
-ms.openlocfilehash: 1eeb37ce74b3e2f57588197d6bb88f59944c61cf
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: ce16450f7f25e5703cf283c4babb2a935aad21de
+ms.sourcegitcommit: af31deded9b5836057e29b688b994b6c2890aa79
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67460673"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67813059"
 ---
 # <a name="automated-backups"></a>Backups automatizados
 
@@ -109,7 +109,11 @@ Quando o banco de dados é criptografado com TDE, os backups são criptografados
 
 ## <a name="how-does-microsoft-ensure-backup-integrity"></a>Como a Microsoft garante a integridade do backup
 
-Continuamente, a equipe de engenharia do Banco de Dados SQL do Azure testa automaticamente a restauração de backups de banco de dados automatizados entre o serviço. Após a restauração, os bancos de dados também recebem verificações de integridade usando DBCC CHECKDB. Os problemas encontrados durante a verificação de integridade resultarão em um alerta para a equipe de engenharia. Para obter mais informações sobre a integridade dos dados no Banco de Dados SQL do Azure, confira [Integridade dos dados no Banco de Dados SQL do Azure](https://azure.microsoft.com/blog/data-integrity-in-azure-sql-database/).
+Em uma base contínua, o banco de dados SQL do Azure equipe de engenharia automaticamente testes a restauração de backups de banco de dados automatizados dos bancos de dados colocado em servidores lógicos e pools Elásticos (isso não está disponível na instância gerenciada). Após a restauração point-in-time, bancos de dados também recebem as verificações de integridade de uso do DBCC CHECKDB.
+
+A instância gerenciada usa o backup inicial automático com `CHECKSUM` dos bancos de dados restaurados usando nativo `RESTORE` comando ou o serviço de migração de dados depois que a migração for concluída.
+
+Os problemas encontrados durante a verificação de integridade resultarão em um alerta para a equipe de engenharia. Para obter mais informações sobre a integridade dos dados no Banco de Dados SQL do Azure, confira [Integridade dos dados no Banco de Dados SQL do Azure](https://azure.microsoft.com/blog/data-integrity-in-azure-sql-database/).
 
 ## <a name="how-do-automated-backups-impact-compliance"></a>Como os backups automatizados afetam a conformidade
 
@@ -181,7 +185,7 @@ Código de status: 200
 
 Para obter mais informações, confira [API REST de retenção de backup](https://docs.microsoft.com/rest/api/sql/backupshorttermretentionpolicies).
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - Os backups de banco de dados são uma parte essencial de qualquer estratégia de recuperação de desastre e continuidade dos negócios, porque eles protegem seus dados contra exclusão ou corrupção acidentais. Para saber mais sobre as outras soluções de continuidade dos negócios do Banco de Dados SQL do Azure, consulte [Visão geral da continuidade dos negócios](sql-database-business-continuity.md).
 - Para restaurar para um determinado ponto no tempo usando o Portal do Azure, consulte [Restaurar um banco de dados para um ponto no tempo usando o Portal do Azure](sql-database-recovery-using-backups.md).

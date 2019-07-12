@@ -12,12 +12,12 @@ ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: f68f6c366571b8f0f04f8507606c1a4008ab0405
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: f4add4bf07178aa616e86f8a64b313630466824f
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67443252"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67653275"
 ---
 # <a name="develop-secure-applications-on-azure"></a>Desenvolver aplicativos seguros no Azure
 Neste artigo, apresentamos as atividades de segurança e controles a serem considerados ao desenvolver aplicativos para a nuvem. Perguntas de segurança e conceitos a serem considerados durante as fases de implementação e a verificação da Microsoft [Security Development Lifecycle (SDL)](https://msdn.microsoft.com/library/windows/desktop/84aed186-1d75-4366-8e61-8d258746bopq.aspx) são abordados. O objetivo é ajudá-lo a definir as atividades e serviços do Azure que você pode usar para desenvolver um aplicativo mais seguro.
@@ -88,7 +88,7 @@ Isso significa que menos pessoas têm acesso a seus dados reais, o que reduz a s
 
 Para fornecer proteção contra força bruta e baseada em dicionário adivinhar, você deve implementar uma política de senha forte para garantir que os usuários criem uma senha complexa (por exemplo, comprimento mínimo de 12 caracteres e exigir caracteres especiais e alfanuméricos).
 
-Você pode usar uma estrutura de identidade para criar e impor políticas de senha. B2C do AD do Azure ajuda você com o gerenciamento de senhas, fornecendo [políticas internas](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-policies#create-a-password-reset-policy), [de redefinição de senha de autoatendimento](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-sspr)e muito mais.
+Você pode usar uma estrutura de identidade para criar e impor políticas de senha. B2C do AD do Azure ajuda você com o gerenciamento de senhas, fornecendo [políticas internas](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-user-flows#create-a-password-reset-user-flow), [de redefinição de senha de autoatendimento](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-reference-sspr)e muito mais.
 
 Para se proteger contra ataques em contas padrão, verifique se todas as chaves e senhas são substituíveis e que eles são gerados ou substituídos após a instalação de recursos.
 

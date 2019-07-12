@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: jeedes
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1baf4af41fd5dcb6723b6ee2827ae91b43b072d9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a084ceb841ea35bc62d9851f2b6c4821f4acb6fd
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65780957"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807711"
 ---
 # <a name="advanced-certificate-signing-options-in-the-saml-token-for-gallery-apps-in-azure-active-directory"></a>As opções avançadas de assinatura de certificado no token SAML para aplicativos da galeria no Azure Active Directory
 
@@ -57,27 +57,21 @@ Para alterar as opções de assinatura de certificado de SAML do aplicativo e o 
 1. No painel esquerdo, selecione **Aplicativos Empresariais**. É exibida uma lista de aplicativos empresariais em sua conta.
 1. Selecione um aplicativo. É exibida uma página de visão geral do aplicativo.
 
-   ![Página de visão geral do aplicativo](./media/certificate-signing-options/application-overview-page.png)
+   ![Exemplo: Página de visão geral do aplicativo](./media/certificate-signing-options/application-overview-page.png)
 
 Em seguida, altere o opções no token SAML para o aplicativo de assinatura de certificado:
 
 1. No painel esquerdo da página de visão geral do aplicativo, selecione **logon único**.
+1. Se o **definir o logon único com SAML - visualização** página for exibida, vá para a etapa 5.
+1. Se o **selecionar um método de logon único** página não aparece, selecione **alterar modos de logon únicos** para exibir a página.
+1. No **selecionar um método de logon único** , selecione **SAML** se disponível. (Se **SAML** não estiver disponível, o aplicativo não dá suporte a SAML, e você pode ignorar o restante deste procedimento e o artigo.)
+1. No **definir o logon único com SAML - Preview** página, localize o **certificado de autenticação SAML** título e selecione o **editar** ícone (um lápis). O **certificado de autenticação SAML** página será exibida.
 
-2. Se o **definir o logon único com SAML - visualização** página for exibida, vá para a etapa 5.
+   ![Exemplo: Página do certificado de autenticação SAML](./media/certificate-signing-options/saml-signing-page.png)
 
-3. Se o **selecionar um método de logon único** página não aparece, selecione **alterar modos de logon únicos** para exibir a página.
-
-4. No **selecionar um método de logon único** , selecione **SAML** se disponível. (Se **SAML** não estiver disponível, o aplicativo não dá suporte a SAML, e você pode ignorar o restante deste procedimento e o artigo.)
-
-5. No **definir o logon único com SAML - Preview** página, localize o **certificado de autenticação SAML** título e selecione o **editar** ícone (um lápis). O **certificado de autenticação SAML** página será exibida.
-
-   ![Página de entrada do SAML](./media/certificate-signing-options/saml-signing-page.png)
-
-6. No **opção de assinatura** lista suspensa, escolha **assinar resposta SAML**, **assinar declaração SAML**, ou **assinar resposta SAML e declaração**. Descrições dessas opções aparecem neste artigo na [opções de assinatura de certificado](#certificate-signing-options).
-
-7. No **algoritmo de assinatura** lista suspensa, escolha **SHA-1** ou **SHA-256**. Descrições dessas opções aparecem neste artigo na [algoritmos de assinatura de certificado](#certificate-signing-algorithms) seção.
-
-8. Se você estiver satisfeito com suas escolhas, selecione **salvar** aplicar de nova configurações de certificado de assinatura de SAML. Caso contrário, selecione a **X** para descartar as alterações.
+1. No **opção de assinatura** lista suspensa, escolha **assinar resposta SAML**, **assinar declaração SAML**, ou **assinar resposta SAML e declaração**. Descrições dessas opções aparecem neste artigo na [opções de assinatura de certificado](#certificate-signing-options).
+1. No **algoritmo de assinatura** lista suspensa, escolha **SHA-1** ou **SHA-256**. Descrições dessas opções aparecem neste artigo na [algoritmos de assinatura de certificado](#certificate-signing-algorithms) seção.
+1. Se você estiver satisfeito com suas escolhas, selecione **salvar** aplicar de nova configurações de certificado de assinatura de SAML. Caso contrário, selecione a **X** para descartar as alterações.
 
 ## <a name="next-steps"></a>Próximas etapas
 

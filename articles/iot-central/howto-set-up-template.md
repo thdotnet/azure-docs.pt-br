@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 7fb0fba519a7833ac318c713dc9eb3c6ac7f8b5b
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: d27fd9460685c08a2b13936415935f5aaf893797
+ms.sourcegitcommit: dda9fc615db84e6849963b20e1dce74c9fe51821
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67509542"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67622403"
 ---
 # <a name="set-up-a-device-template"></a>Configurar um modelo de dispositivo
 
@@ -65,7 +65,7 @@ Para adicionar uma nova medida de telemetria, selecione **+ nova medição**, es
 > Os nomes de campo no modelo de dispositivo precisarão corresponder aos nomes de propriedade no código do dispositivo correspondente para que a medida de telemetria seja exibida no aplicativo quando um dispositivo real estiver conectado. Faça o mesmo ao definir configurações, propriedades do dispositivo e comandos enquanto você continua a definir o modelo de dispositivo nas seções a seguir.
 . png, por exemplo, você pode adicionar uma nova medida de telemetria de temperatura:
 
-| Nome para exibição        | Nome do campo    |  Unidades    | Min   |max|
+| Nome de exibição        | Nome do campo    |  Unidades    | Min   |max|
 | --------------------| ------------- |-----------|-------|---|
 | Temperatura         | temp          |  degC     |  0    |100|
 
@@ -86,7 +86,7 @@ Forneça os detalhes **Nome para exibição**, **Nome do campo** e **Gravidade**
 
 Por exemplo, você pode adicionar um novo evento **Fan Motor Error**.
 
-| Nome para exibição        | Nome do campo    |  Gravidade padrão |
+| Nome de exibição        | Nome do campo    |  Gravidade padrão |
 | --------------------| ------------- |-----------|
 | Erro do motor do ventilador     | fanmotorerror |  Erro    |
 
@@ -109,7 +109,7 @@ Forneça os detalhes para **Nome de exibição**, **Nome do campo** e **Valores*
 
 Por exemplo, você pode adicionar um novo **estado do Modo de fãs** que tenha dois valores possíveis que o dispositivo pode enviar, **Em funcionamento** e **Parado**.
 
-| Nome para exibição | Nome do campo    |  Valor 1   | Nome para exibição | Valor 2    |Nome para exibição  | 
+| Nome de exibição | Nome do campo    |  Valor 1   | Nome de exibição | Valor 2    |Nome de exibição  | 
 | -------------| ------------- |----------- | -------------| -----------| -------------|
 | Modo ventilação     | fanmode       |  1         | Operacional    |     0      | Parado      |
 
@@ -128,7 +128,7 @@ Para adicionar uma nova medida local, selecione **+ nova medição**, escolha **
 
 Por exemplo, você pode adicionar uma nova medida de telemetria local:
 
-| Nome para exibição        | Nome do campo    |
+| Nome de exibição        | Nome do campo    |
 | --------------------| ------------- |
 | Localização do ativo      |  assetloc     |
 
@@ -150,7 +150,7 @@ assetloc: {
 
 ## <a name="settings"></a>Configurações
 
-As configurações controlam um dispositivo. Elas permitem que os operadores forneçam entradas ao dispositivo. É possível adicionar várias configurações ao modelo de dispositivo que aparecem como blocos na guia **Configurações** para os operadores usarem. Você pode adicionar vários tipos de configurações: número, texto, data, alternância, lista de seleção e rótulo da seção.
+As configurações controlam um dispositivo. Elas permitem que os operadores forneçam entradas ao dispositivo. É possível adicionar várias configurações ao modelo de dispositivo que aparecem como blocos na guia **Configurações** para os operadores usarem. Você pode adicionar vários tipos de configurações: texto, número, data, alternância e rótulo de seção.
 
 As configurações podem estar em um dos três estados. O dispositivo informa esses estados.
 
@@ -162,7 +162,7 @@ As configurações podem estar em um dos três estados. O dispositivo informa es
 
 Por exemplo, você pode adicionar uma nova configuração de velocidade do ventilador, selecionando **as configurações** e inserindo na nova **número** configuração:
 
-| Nome para exibição  | Nome do campo    |  Unidades  | Decimais |Inicial|
+| Nome de exibição  | Nome do campo    |  Unidades  | Decimais |Initial|
 | --------------| ------------- |---------| ---------|---- |
 | Velocidade da ventoinha     | fanSpeed      | RPM     | 2        | 0   |
 
@@ -170,7 +170,7 @@ Por exemplo, você pode adicionar uma nova configuração de velocidade do venti
 
 Depois que você selecionar **Salvar**, a configuração **Velocidade do Ventilador** será exibida como um bloco. Um operador pode usar a configuração na página **Device Explorer** para alterar a velocidade do ventilador do dispositivo.
 
-## <a name="properties"></a>propriedades
+## <a name="properties"></a>Propriedades
 
 As propriedades são metadados que está associada com o dispositivo, como um local fixo de dispositivo e o número de série. Adicione várias propriedades ao modelo de dispositivo que são exibidas como blocos na guia **Propriedades**. Uma propriedade tem um tipo, como número, texto, data, ativar/desativar, propriedade do dispositivo, rótulo ou um local fixo. Um operador especifica os valores para propriedades quando eles criam um dispositivo, e eles podem editar esses valores a qualquer momento. As propriedades de dispositivo são somente leitura e são enviadas do dispositivo para o aplicativo. Um operador não é possível alterar as propriedades do dispositivo. Quando um dispositivo real se conecta, as atualizações de bloco de propriedade do dispositivo no aplicativo.
 
@@ -181,7 +181,7 @@ Existem duas categorias de propriedades:
 
 Por exemplo, adicione a última data de manutenção do dispositivo como uma nova propriedade **Data** (uma propriedade do aplicativo) à guia **Propriedades**:
 
-| Nome para exibição  | Nome do campo | Valor inicial   |
+| Nome de exibição  | Nome do campo | Valor inicial   |
 | --------------| -----------|-----------------|
 | Atendido por último      | lastServiced        | 29/01/2019     |
 
@@ -213,7 +213,7 @@ Você pode criar uma propriedade de local como uma propriedade de aplicativo usa
 
 3. Configure **Nome de exibição**, **Nome do campo** e (opcionalmente) **Valor inicial** para o local.
 
-    | Nome para exibição  | Nome do campo | Valor inicial |
+    | Nome de exibição  | Nome do campo | Valor inicial |
     | --------------| -----------|---------|
     | Endereço de instalação | installAddress | Microsoft, 1 Microsoft Way, Redmond, WA 98052   |
 
@@ -235,7 +235,7 @@ Você pode criar uma propriedade de localização como uma propriedade de dispos
 
 3. Configure o nome de exibição e o nome de campo e selecione **Localização** como o tipo de dados:
 
-    | Nome para exibição  | Nome do campo | Tipo de Dados |
+    | Nome de exibição  | Nome do campo | Tipo de dados |
     | --------------| -----------|-----------|
     | Localização do dispositivo | deviceLocation | location  |
 
@@ -258,7 +258,7 @@ Como um comando é diferente de um cenário?
 
 Por exemplo, você pode adicionar um novo **Echo** comando selecionando o **comandos** guia, em seguida, selecionando **+ novo comando**e inserindo os detalhes do novo comando:
 
-| Nome para exibição  | Nome do campo | Tempo limite padrão | Tipo de Dados |
+| Nome de exibição  | Nome do campo | Tempo limite padrão | Tipo de dados |
 | --------------| -----------|---------------- | --------- |
 | Comando echo  | echo       |  30             | text      |
 

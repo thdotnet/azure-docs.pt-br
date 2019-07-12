@@ -2,18 +2,18 @@
 title: Solucionar problemas de Servidor de Backup do Azure
 description: Solucionar problemas de instalação, registro de Servidor de Backup do Azure e backup e restauração de cargas de trabalho do aplicativo.
 services: backup
-author: kasinh
-manager: vvithal
+author: srinathvasireddy
+manager: sivan
 ms.service: backup
 ms.topic: conceptual
-ms.date: 05/21/2019
-ms.author: kasinh
-ms.openlocfilehash: 06faed8ceca77edc20b67f73a76d885839aa7dbc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 07/05/2019
+ms.author: srinathv
+ms.openlocfilehash: ee24fe4c1792f1934fcfb87a2481133631de4263
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66304331"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705077"
 ---
 # <a name="troubleshoot-azure-backup-server"></a>Solucionar problemas de Servidor de Backup do Azure
 

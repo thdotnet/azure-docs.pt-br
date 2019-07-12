@@ -10,12 +10,12 @@ ms.author: robreed
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: b486c30827ee67b58cbdc0027c8221cceed02e51
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a5d4657f87b0a6cbae0699c5a2f95773ff55f633
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66235953"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67798444"
 ---
 # <a name="azure-automation-state-configuration-overview"></a>Visão geral da Configuração de Estado da Automação do Azure
 
@@ -81,6 +81,10 @@ Se os nós estão localizados em uma rede privada, a porta e as URLs a seguir s�
 * URL global: *.azure-automation.net
 * URL global do EUA Gov Virgínia: *.azure automation.us
 * Serviço de agente: https://\<workspaceId\>.agentsvc.azure-automation.net
+
+Isso fornece conectividade de rede para o nó gerenciado para se comunicar com a automação do Azure.
+Se você estiver usando recursos de DSC que se comunicam entre os nós, como o [WaitFor * recursos](https://docs.microsoft.com/powershell/dsc/reference/resources/windows/waitForAllResource), você também precisará permitir o tráfego entre os nós.
+Consulte a documentação para cada recurso de DSC entender os requisitos de rede.
 
 #### <a name="proxy-support"></a>Suporte do proxy
 
