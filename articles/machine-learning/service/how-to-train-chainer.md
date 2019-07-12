@@ -6,15 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.author: sgilley
-author: sdgilley
+ms.author: maxluk
+author: maxluk
+ms.reviewer: sdgilley
 ms.date: 06/15/2019
-ms.openlocfilehash: 5057a8cf6c8769761a1a1a9f513ec46d152289ab
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
+ms.openlocfilehash: 8ecefccbdf5f02652e935858b6ae8fb4cdfde640
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67488667"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67840032"
 ---
 # <a name="train-and-register-chainer-models-at-scale-with-azure-machine-learning-service"></a>Treinar e registrar os modelos de Encadeador em escala com serviço de Azure Machine Learning
 
@@ -201,6 +202,6 @@ Neste artigo, você treinou um modelo de Encadeador no serviço do Azure Machine
 
 * Para saber como implantar um modelo, continue no nosso [implantação de modelo](how-to-deploy-and-where.md) artigo.
 
-* [Ajustar os hiperparâmetros](how-to-tune-hyperparameters.md)
+* [Ajustar hiperparâmetros](how-to-tune-hyperparameters.md)
 
 * [Executar as métricas de durante o treinamento de faixa](how-to-track-experiments.md)

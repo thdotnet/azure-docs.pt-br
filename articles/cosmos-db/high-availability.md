@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 928c943e21e7d00b87ac1e506b98d47107ac4348
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: 904994134db28a8244f15ff42e0104e8565c68dd
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67508559"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67839792"
 ---
 # <a name="high-availability-with-azure-cosmos-db"></a>Alta disponibilidade com o Azure Cosmos DB
 
@@ -42,7 +42,7 @@ Como um banco de dados distribuído globalmente, o Cosmos DB fornece SLAs abrang
 
 ## <a name="high-availability-with-cosmos-db-in-the-event-of-regional-outages"></a>Alta disponibilidade com o Cosmos DB em caso de interrupções regionais
 
-Interrupções regionais não são incomuns e Azure Cosmos DB garante que seu banco de dados sempre está altamente disponível. Os detalhes a seguir capturam o comportamento do Cosmos DB durante uma interrupção, dependendo da configuração de conta do Cosmos:
+Interrupções regionais não são incomuns e o Azure Cosmos DB garante que seu banco de dados esteja sempre altamente disponível. Os detalhes a seguir capturam o comportamento do Cosmos DB durante uma interrupção, dependendo da configuração de conta do Cosmos:
 
 - Com o Cosmos DB, antes que uma operação de gravação seja confirmada para o cliente, os dados serão confirmados por um quorum de réplicas dentro da região que aceitará as operações de gravação.
 
@@ -90,10 +90,11 @@ A tabela a seguir resume a capacidade de alta disponibilidade de várias configu
 |Latência de gravação    |   Entre a região   |  Entre a região    |   Baixo   |
 |Interrupção regional – perda de dados    |   Perda de dados      |  Perda de dados       |   Perda de dados <br/><br/> Quando uso limitado consistência de desatualização limitada com o mestre de múltiplos e mais de uma região, perda de dados é limitada para a desatualização limitada configurada na sua conta. <br/><br/> Perda de dados durante a interrupção regional pode ser evitada Configurando uma coerência forte em várias regiões. Essa opção é fornecido com as compensações que afetam o desempenho e disponibilidade.      |
 |Interrupção regional – disponibilidade  |  Perda de disponibilidade       |  Perda de disponibilidade       |  Sem perda de disponibilidade  |
-|Produtividade    |  Taxa de transferência provisionada de X RU/s      |  Taxa de transferência provisionada de X RU/s       |  2 x taxa de transferência provisionada de RU/s <br/><br/> Esse modo de configuração requer o dobro da taxa de transferência em comparação com uma única região com zonas de disponibilidade porque há duas regiões.   |
+|Taxa de transferência    |  Taxa de transferência provisionada de X RU/s      |  Taxa de transferência provisionada de X RU/s       |  2 x taxa de transferência provisionada de RU/s <br/><br/> Esse modo de configuração requer o dobro da taxa de transferência em comparação com uma única região com zonas de disponibilidade porque há duas regiões.   |
 
 > [!NOTE] 
-> Para habilitar o suporte de zona de disponibilidade, a conta do Azure Cosmos DB deve ter o multi-mestres/multirregião gravações habilitadas. 
+> Para habilitar o suporte de zona de disponibilidade para uma região de várias conta Cosmos do Azure, a conta deve ter as gravações de vários mestres habilitadas.
+
 
 Ao adicionar uma região a contas do Cosmos do Azure novas ou existentes, você pode habilitar redundância de zona. Atualmente, só é possível habilitar a redundância de zona usando o Azure portal, PowerShell e o Azure Resource Manager de modelos. Para habilitar a redundância de zona em sua conta do Cosmos do Azure, você deve definir a `isZoneRedundant` sinalizador como `true` para um local específico. Você pode definir esse sinalizador dentro da propriedade locais. Por exemplo, o seguinte trecho do powershell permite a redundância de zona para a região de "Sudeste Asiático":
 

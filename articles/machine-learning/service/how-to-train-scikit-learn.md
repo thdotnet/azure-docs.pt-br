@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.author: minxia
-author: mx-iao
+ms.author: maxluk
+author: maxluk
 ms.date: 06/30/2019
 ms.custom: seodec18
-ms.openlocfilehash: d2c9b104d1fe9333221bc20e7e23b436358c9ece
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: c9e983f7981c1155964617694d2cce86aba741b7
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67514030"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67840013"
 ---
 # <a name="train-and-register-scikit-learn-models-at-scale-with-azure-machine-learning-service"></a>Treinar e registrar modelos Scikit-learn em escala com serviço de Azure Machine Learning
 
@@ -194,6 +194,6 @@ Neste artigo, você treinado e registrou um modelo Scikit-learn no serviço do A
 
 * Para saber como implantar um modelo, continue no nosso [implantação de modelo](how-to-deploy-and-where.md) artigo.
 
-* [Ajustar os hiperparâmetros](how-to-tune-hyperparameters.md)
+* [Ajustar hiperparâmetros](how-to-tune-hyperparameters.md)
 
 * [Executar as métricas de durante o treinamento de faixa](how-to-track-experiments.md)
