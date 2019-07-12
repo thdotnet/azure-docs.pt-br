@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
-ms.openlocfilehash: a41c3f60d4b949f78c0755f97c9ef7e6302d78d8
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: 68c40cf893bf150756f0a03056473e82cff5754f
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67329996"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620968"
 ---
 # <a name="troubleshoot-azure-stream-analytics-by-using-diagnostics-logs"></a>Solucionar problemas do Stream Analytics do Azure usando logs de diagnóstico
 
@@ -99,15 +99,15 @@ O Azure Stream Analytics captura duas categorias de logs de diagnóstico:
 
 Todos os logs são armazenados no formato JSON. Cada entrada tem os seguintes campos de cadeia de caracteres comuns:
 
-NOME | DESCRIÇÃO
+Nome | DESCRIÇÃO
 ------- | -------
-tempo real | Carimbo de data/hora (em UTC) do log.
-ResourceId | ID do recurso em que a operação ocorreu, em maiúsculas. Inclui a ID da assinatura, o grupo de recursos e o nome do trabalho. Por exemplo, **/SUBSCRIPTIONS/6503D296-DAC1-4449-9B03-609A1F4A1C87/RESOURCEGROUPS/MY-RESOURCE-GROUP/PROVIDERS/MICROSOFT.STREAMANALYTICS/STREAMINGJOBS/MYSTREAMINGJOB**.
-categoria | Categoria do log, **Execução** ou **Criação**.
+time | Carimbo de data/hora (em UTC) do log.
+resourceId | ID do recurso em que a operação ocorreu, em maiúsculas. Inclui a ID da assinatura, o grupo de recursos e o nome do trabalho. Por exemplo, **/SUBSCRIPTIONS/6503D296-DAC1-4449-9B03-609A1F4A1C87/RESOURCEGROUPS/MY-RESOURCE-GROUP/PROVIDERS/MICROSOFT.STREAMANALYTICS/STREAMINGJOBS/MYSTREAMINGJOB**.
+category | Categoria do log, **Execução** ou **Criação**.
 operationName | Nome da operação que está registrada. Por exemplo, **Enviar eventos: falha na gravação da Saída do SQL em mysqloutput**.
 status | Status da operação. Por exemplo, **Com Falha** ou **Com Êxito**.
 level | Nível do log. Por exemplo, **Erro**, **Aviso** ou **Informativo**.
-propriedades | Detalhes específicos à entrada de log, serializados como uma cadeia de caracteres JSON. Para obter mais informações, consulte as próximas seções deste artigo.
+properties | Detalhes específicos à entrada de log, serializados como uma cadeia de caracteres JSON. Para obter mais informações, consulte as próximas seções deste artigo.
 
 ### <a name="execution-log-properties-schema"></a>Esquema de propriedades do log de execução
 
@@ -117,11 +117,11 @@ Os logs de execução trazem informações sobre eventos que ocorreram durante a
 
 Qualquer erro ocorrido enquanto o trabalho processa os dados está nessa categoria de logs. Esses logs costumam ser criados durante operações de leitura, serialização e gravação de dados. Esses logs não incluem erros de conectividade. Os erros de conectividade são tratados como eventos genéricos. Você pode aprender mais sobre a causa de vários diferentes [erros de dados de entrada e saída](https://docs.microsoft.com/azure/stream-analytics/data-errors).
 
-NOME | DESCRIÇÃO
+Nome | DESCRIÇÃO
 ------- | -------
-Fonte | Nome da entrada ou saída do trabalho em que ocorreu o erro.
+Origem | Nome da entrada ou saída do trabalho em que ocorreu o erro.
 Mensagem | Mensagem associada ao erro.
-Type | Tipo de erro. Por exemplo, **DataConversionError**, **CsvParserError** ou **ServiceBusPropertyColumnMissingError**.
+Tipo | Tipo de erro. Por exemplo, **DataConversionError**, **CsvParserError** ou **ServiceBusPropertyColumnMissingError**.
 Dados | Contém dados que são úteis para localizar com precisão a origem do erro. Sujeito a truncamento, dependendo do tamanho.
 
 Dependendo do valor de **operationName**, os erros de dados terão o seguinte esquema:
@@ -142,7 +142,7 @@ NOME | DESCRIÇÃO
 -------- | --------
 Erro | (opcional) Informações sobre erros. Normalmente, essas são informações de exceção, se estiverem disponíveis.
 Mensagem| Mensagem de log.
-Type | Tipo de mensagem. É mapeado para a categorização interna de erros. Por exemplo, **JobValidationError** ou **BlobOutputAdapterInitializationFailure**.
+Tipo | Tipo de mensagem. É mapeado para a categorização interna de erros. Por exemplo, **JobValidationError** ou **BlobOutputAdapterInitializationFailure**.
 ID de Correlação | [GUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) que identifica exclusivamente a execução do trabalho. Todas as entradas do log de execução desde a hora em que o trabalho é iniciado até ele ser interrompido têm o mesmo valor de **ID de Correlação**.
 
 ## <a name="next-steps"></a>Próximas etapas
@@ -150,5 +150,5 @@ ID de Correlação | [GUID](https://en.wikipedia.org/wiki/Universally_unique_ide
 * [Introdução ao Stream Analytics](stream-analytics-introduction.md)
 * [Introdução ao Stream Analytics](stream-analytics-real-time-fraud-detection.md)
 * [Dimensionar trabalhos do Stream Analytics](stream-analytics-scale-jobs.md)
-* [Referência da linguagem de consulta do Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+* [Referência da linguagem de consulta do Stream Analytics](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Erros de dados do Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/data-errors)

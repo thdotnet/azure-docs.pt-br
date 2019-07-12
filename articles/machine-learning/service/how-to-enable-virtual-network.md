@@ -9,13 +9,13 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: aashishb
 author: aashishb
-ms.date: 01/08/2019
-ms.openlocfilehash: f1cb7c9aa0844c82acd333c4f9dd87a4dda013e7
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.date: 07/10/2019
+ms.openlocfilehash: 06004f766cb8e9b12c2353bbe5e432e77df03cee
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165342"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67797695"
 ---
 # <a name="securely-run-experiments-and-inference-inside-an-azure-virtual-network"></a>Executar com segurança experimentos e Inferência de tipos dentro de uma rede virtual do Azure
 
@@ -277,7 +277,7 @@ Para adicionar o Serviço de Kubernetes do Azure em uma rede virtual do workspac
 
     - __Intervalo de endereços do Serviço de Kubernetes__: Selecione o intervalo de endereços do serviço do Kubernetes. Esse intervalo de endereços usa um intervalo IP de notação CIDR para definir os endereços IP disponíveis para o cluster. Não deverá sobrepor-se a nenhum intervalo de IP de sub-rede. Por exemplo:  10.0.0.0/16.
 
-    - __Endereço IP do serviço DNS do Kubernetes__: selecione o endereço IP do serviço DNS do Kubernetes. Esse endereço IP é atribuído ao serviço DNS do Kubernetes. É necessário estar dentro do intervalo de endereços de serviço do Kubernetes. Por exemplo: 10.0.0.10.
+    - __Endereço IP do serviço DNS do Kubernetes__: selecione o endereço IP do serviço DNS do Kubernetes. Esse endereço IP é atribuído ao serviço DNS do Kubernetes. É necessário estar dentro do intervalo de endereços de serviço do Kubernetes. Por exemplo:  10.0.0.10.
 
     - __Endereço da ponte Docker__: selecione o endereço da ponte Docker. Esse endereço IP é atribuído à ponte Docker. Não deverá estar em nenhum intervalo de IP de sub-rede ou intervalo de endereços de serviço do Kubernetes. Por exemplo:  172.17.0.1/16.
 

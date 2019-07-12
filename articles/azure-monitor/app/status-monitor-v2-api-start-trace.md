@@ -12,14 +12,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: 186324e6a93f90fd04323074e5dc883e3e271725
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: b6787134707273a76290adb723a9bc9012252ebd
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478986"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807052"
 ---
-# <a name="status-monitor-v2-api-start-applicationinsightsmonitoringtrace-v031-alpha"></a>API de v2 do Monitor de status: Start-ApplicationInsightsMonitoringTrace (v0.3.1-alpha)
+# <a name="status-monitor-v2-api-start-applicationinsightsmonitoringtrace-v040-alpha"></a>API de v2 do Monitor de status: Start-ApplicationInsightsMonitoringTrace (v0.4.0-alpha)
 
 Este artigo descreve um cmdlet que é um membro do [módulo do Az.ApplicationMonitor PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
@@ -83,7 +83,7 @@ Quando a coleta de eventos, você tem três opções:
 
 
 
-## <a name="output"></a>Output
+## <a name="output"></a>Saída
 
 
 ### <a name="example-of-application-startup-logs"></a>Exemplo de logs de inicialização do aplicativo

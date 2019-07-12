@@ -4,7 +4,7 @@ description: Fornece respostas para algumas das perguntas mais comuns sobre as m
 services: virtual-machines-windows
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-management
 ms.assetid: 757da816-a050-4889-a010-6f75d7978eb7
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/08/2019
 ms.author: cynthn
-ms.openlocfilehash: 7961656e0f295b3e1a9264d839da94de25a224a8
-ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
+ms.openlocfilehash: 69c79db937d70bcc8ae834bf0bdf8f1930bed3c9
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67550307"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67722750"
 ---
 # <a name="frequently-asked-question-about-windows-virtual-machines"></a>Perguntas frequentes sobre as Máquinas Virtuais do Windows
 Este artigo trata de algumas das perguntas mais comuns sobre as máquinas virtuais do Windows criadas no Azure com o modelo de implantação do Gerenciador de Recursos. Para a versão do Linux deste tópico, consulte [perguntas frequentes sobre máquinas virtuais do Linux](../linux/faq.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
@@ -54,7 +54,7 @@ Se tiver um aplicativo que precise usar a letra da unidade D:, você poderá rea
 Você pode alterar a letra da unidade movendo o arquivo de paginação e reatribuindo as letras da unidade, mas precisa se lembrar de seguir as etapas em uma ordem específica. Para obter instruções, veja [Alterar a letra da unidade do disco temporário do Windows](change-drive-letter.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).
 
 ## <a name="can-i-add-an-existing-vm-to-an-availability-set"></a>Posso adicionar uma VM existente a um conjunto de disponibilidade?
-Não. Se você quiser que sua VM faça parte de um conjunto de disponibilidade, precisará criar a VM no conjunto. Atualmente, não há uma maneira de adicionar uma VM a um conjunto de disponibilidade após ela ter sido criada.
+Nº Se você quiser que sua VM faça parte de um conjunto de disponibilidade, precisará criar a VM no conjunto. Atualmente, não há uma maneira de adicionar uma VM a um conjunto de disponibilidade após ela ter sido criada.
 
 ## <a name="can-i-upload-a-virtual-machine-to-azure"></a>Posso carregar uma máquina virtual no Azure?
 Sim. Para obter instruções, consulte [Migrando VMs locais para o Azure](on-prem-to-azure.md).
