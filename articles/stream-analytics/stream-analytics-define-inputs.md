@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/30/2019
-ms.openlocfilehash: bfdebacb4de205fa42fe96ceb9970d2d109536e8
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: 1f03f9e68640edd73d2f6bb55cf205a609450658
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67296163"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620511"
 ---
 # <a name="stream-data-as-input-into-stream-analytics"></a>Transmitir dados como entrada no Stream Analytics
 
@@ -79,7 +79,7 @@ FROM Input
 ```
 
 > [!NOTE]
-> Ao usar o Hub de Eventos como um ponto de extremidade das Rotas do Hub IoT, é possível acessar os metadados do Hub IoT usando a [função GetMetadataPropertyValue](https://msdn.microsoft.com/library/azure/mt793845.aspx).
+> Ao usar o Hub de Eventos como um ponto de extremidade das Rotas do Hub IoT, é possível acessar os metadados do Hub IoT usando a [função GetMetadataPropertyValue](https://docs.microsoft.com/stream-analytics-query/getmetadatapropertyvalue).
 > 
 
 ## <a name="stream-data-from-iot-hub"></a>Transmitir dados do Hub IoT
@@ -129,7 +129,7 @@ Para cenários com grandes quantidades de dados não estruturados para repositó
 
 O processamento de log é um cenário bastante usado para o uso de entradas de armazenamento de Blobs com o Stream Analytics. Nesse cenário, os arquivos de dados telemétricos foram capturados de um sistema e precisam ser analisados e processados para extrair dados significativos.
 
-O carimbo de data/hora padrão de eventos de Armazenamento de Blobs no Stream Analytics é o carimbo de data/hora que o blob foi modificado pela última vez, que é `BlobLastModifiedUtcTime`. Para processar os dados como uma transmissão usando um carimbo de data/hora na carga do evento, você deve usar a palavra-chave [TIMESTAMP BY](https://msdn.microsoft.com/library/azure/dn834998.aspx). Um trabalho do Stream Analytics extrai dados de entrada do armazenamento de BLOBs do Azure cada segundo se o arquivo de blob estiver disponível. Se o arquivo de blob não estiver disponível, não há uma retirada exponencial com um atraso de tempo máximo de 90 segundos.
+O carimbo de data/hora padrão de eventos de Armazenamento de Blobs no Stream Analytics é o carimbo de data/hora que o blob foi modificado pela última vez, que é `BlobLastModifiedUtcTime`. Para processar os dados como uma transmissão usando um carimbo de data/hora na carga do evento, você deve usar a palavra-chave [TIMESTAMP BY](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference). Um trabalho do Stream Analytics extrai dados de entrada do armazenamento de BLOBs do Azure cada segundo se o arquivo de blob estiver disponível. Se o arquivo de blob não estiver disponível, não há uma retirada exponencial com um atraso de tempo máximo de 90 segundos.
 
 Entradas formatadas em CSV exigem uma linha de cabeçalho para definir os campos de conjunto de dados e todos os campos de linha de cabeçalho devem ser exclusivos.
 

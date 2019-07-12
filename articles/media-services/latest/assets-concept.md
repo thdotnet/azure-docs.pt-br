@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 07/02/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 1bd9774cf045d9ed7f16a637fcb2eb1378b48686
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
+ms.openlocfilehash: d0a81d5d7ce8e7569b77007b6ad9c322cf626f16
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67565822"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67670693"
 ---
 # <a name="assets"></a>Ativos
 
@@ -98,10 +98,10 @@ A tabela a seguir mostra como o [ativo](https://docs.microsoft.com/rest/api/medi
 |alternateId|AlternateId|
 |assetId|ID - valor (exclusivo) começa com o `nb:cid:UUID:` prefixo.|
 |criado|Criado|
-|description|NOME|
+|description|Nome|
 |lastModified|LastModified|
 |storageAccountName|StorageAccountName|
-|storageEncryptionFormat| Opções – Opções de criação|
+|storageEncryptionFormat| Opções (opções de criação)|
 |type||
 
 ## <a name="storage-side-encryption"></a>Criptografia do armazenamento

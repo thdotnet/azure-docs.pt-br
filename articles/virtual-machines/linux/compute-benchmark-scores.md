@@ -4,7 +4,7 @@ description: Compare as pontuações de parâmetro de comparação de computaç�
 services: virtual-machines-linux
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager,azure-service-management
 ms.assetid: 93e812c1-79dd-40c5-b97b-aa79f5cd7d76
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/09/2018
 ms.author: cynthn;davberg
-ms.openlocfilehash: 7a302a3c6c32819f898cccc99cb83ed09ae03f2c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 54c15ecf458ed2cc5ffd549b3b1e4ee696c3e015
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64869834"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67668158"
 ---
 # <a name="compute-benchmark-scores-for-linux-vms"></a>Pontuações de parâmetro de comparação de computação de VMs do Linux
 As pontuações de parâmetro de comparação CoreMark a seguir mostram o desempenho de computação de uma lista organizada de VMs de alto desempenho do Azure que executam o Ubuntu. As pontuações de parâmetro de comparação de computação também estão disponíveis para [VMs do Windows](../windows/compute-benchmark-scores.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
@@ -42,7 +42,7 @@ As pontuações de parâmetro de comparação CoreMark a seguir mostram o desemp
 | Standard_A4_v2 | Intel(R) Xeon(R) CPU E5-2660 0 @ 2,20 GHz | 4 | 1 | 7.8 | 26,307 | 231 | 0.88% | 231 |
 | Standard_A4_v2 | Intel(R) Xeon(R) CPU E5-2673 v3 @ 2,40 GHz | 4 | 1 | 7.8 | 24,552 | 720 | 2,93% | 224 |
 | Standard_A4_v2 | Intel(R) Xeon(R) CPU E5-2673 v4 @ 2,30 GHz | 4 | 1 | 7.8 | 24,963 | 1\.625 | 6.51% | 252 |
-| Standard_A4m_v2 | Intel(R) Xeon(R) CPU E5-2660 0 @ 2,20 GHz | 4 | 1 | 31.4 | 26\.238 | 292 | 1.11% | 259 |
+| Standard_A4m_v2 | Intel(R) Xeon(R) CPU E5-2660 0 @ 2,20 GHz | 4 | 1 | 31.4 | 26.238 | 292 | 1.11% | 259 |
 | Standard_A4m_v2 | Intel(R) Xeon(R) CPU E5-2673 v3 @ 2,40 GHz | 4 | 1 | 31.4 | 24,250 | 491 | 2,02% | 189 |
 | Standard_A4m_v2 | Intel(R) Xeon(R) CPU E5-2673 v4 @ 2,30 GHz | 4 | 1 | 31.4 | 24,725 | 1,553 | 6.28% | 259 |
 | Standard_A8_v2 | Intel(R) Xeon(R) CPU E5-2660 0 @ 2,20 GHz | 8 | 1 | 15.7 | 53,237 | 687 | 1.29% | 266 |

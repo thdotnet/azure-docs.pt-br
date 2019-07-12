@@ -5,12 +5,12 @@ ms.date: 04/30/2019
 ms.topic: include
 ms.service: virtual-machines-linux
 manager: jeconnoc
-ms.openlocfilehash: 6eedc095f155a77cddf48211dbc4a677bf188112
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+ms.openlocfilehash: 55d73b2602a9a862375ca3e72dee4597c1d6f1d6
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67509801"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67659742"
 ---
 Imagens padronizadas VM (máquina virtual) permitem que as organizações a migrar para a nuvem e garantir a consistência nas implantações. Imagens normalmente incluem configurações de segurança e configuração predefinidas e o software necessário. Configurar seu próprio pipeline da geração de imagens exige tempo, infraestrutura e configuração, mas com o construtor de imagem de VM do Azure, basta fornecer uma configuração simples que descreve sua imagem, enviá-lo para o serviço e a imagem é criada e distribuída.
  
@@ -55,7 +55,7 @@ AIB suportará RHEL ISO, como uma fonte para:
 - RHEL 7.4
 - RHEL 7.5
 
-RHEL 7.6 não for compatível, mas que está sendo testado.
+RHEL 7.6 ISOs não têm suporte, mas estão sendo testados.
 
 ## <a name="how-it-works"></a>Como ele funciona
 

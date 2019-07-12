@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 07/01/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: cff3c57c31526119ab81225a1c70b163173be937
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: 7d41e32065e3de37eb8f01ab1b836040e7f57b12
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67514428"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657911"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Transferir a propriedade de cobrança de uma assinatura do Azure para outra conta
 
@@ -38,7 +38,7 @@ Se você for um cliente do Enterprise Agreement (EA), os administradores de empr
 
 1. Selecione **assinaturas** do painel esquerdo. Dependendo do seu acesso, você precisará selecionar um escopo de cobrança e, em seguida, selecione **inscrições** ou **assinaturas do Azure**.
 
-1. Selecione **transferência para outra conta** para a assinatura que você deseja transferir. 
+1. Selecione **transferir a propriedade de cobrança** para a assinatura que você deseja transferir. 
 
    ![Selecione a assinatura para transferir](./media/billing-subscription-transfer/billing-select-subscription-to-transfer.png)
 
@@ -195,7 +195,7 @@ Sua conta é responsável pelo pagamento por qualquer uso que será relatado a p
 
 Sim. Ao aceitar a solicitação de transferência, você pode selecionar um método de pagamento existente que esteja vinculado à sua conta ou adicionar um novo método de pagamento.
 
-## <a name="troubleshooting"></a>solução de problemas
+## <a name="troubleshooting"></a>Solução de problemas
 
 ### <a id="no-button"></a> Por que não vejo o botão “Transferir Assinatura”?
 

@@ -6,14 +6,14 @@ ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
-ms.topic: howto
+ms.topic: conceptual
 ms.date: 05/09/2019
-ms.openlocfilehash: e9cb9a902cf60fbd3b297a72a7dfa836ee18c835
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
-ms.translationtype: HT
+ms.openlocfilehash: 98bd222212d616a5d2c608779c607bb431d184b9
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67484592"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657325"
 ---
 # <a name="create-and-configure-enterprise-security-package-clusters-in-azure-hdinsight"></a>Criar e configurar clusters do pacote de segurança empresarial no Azure HDInsight
 
@@ -150,7 +150,7 @@ Visão geral: Agora você irá configurar seu locatário do AD do Azure para que
 1. [Baixar o Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594).
 
 1. Instalação do Microsoft Azure Active Directory connect no controlador de domínio.
-    1. Abra o arquivo executável que você baixou na etapa anterior e concorde com os termos de licença. Clique em **Continuar**.
+    1. Abra o arquivo executável que você baixou na etapa anterior e concorde com os termos de licença. Clique em **Continue**.
 
         ![Azure AD Connect](./media/apache-domain-joined-create-configure-enterprise-security-cluster/image052.png)
 
@@ -302,7 +302,7 @@ Verificar se o certificado está instalado no computador\'repositório pessoal d
     1. Sob **as configurações** clique em **regras de segurança de entrada** > **Add**.
     1. Sobre o **Adicionar regra de segurança de entrada** tela, insira as propriedades a seguir e clique em **Add**:
 
-        | Propriedade | Value |
+        | Propriedade | Valor |
         |---|---|
         | Source | Any |
         | Source port ranges | * |
@@ -310,8 +310,8 @@ Verificar se o certificado está instalado no computador\'repositório pessoal d
         | Destination port range | 636 |
         | Protocol | Any |
         | Action | Allow |
-        | Prioridade | <Desired Number> |
-        | Name | Port_LDAP_636 |
+        | Prioridade | \<Número desejado\> |
+        | Nome | Port_LDAP_636 |
 
     ![regra de segurança de entrada](./media/apache-domain-joined-create-configure-enterprise-security-cluster/add-inbound-security-rule.png)
 

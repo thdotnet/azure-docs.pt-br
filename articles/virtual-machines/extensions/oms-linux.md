@@ -4,7 +4,7 @@ description: Implante o agente do Log Analytics na máquina virtual do Linux usa
 services: virtual-machines-linux
 documentationcenter: ''
 author: roiyz-msft
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: c7bbf210-7d71-4a37-ba47-9c74567a9ea6
@@ -15,16 +15,16 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/01/2019
 ms.author: roiyz
-ms.openlocfilehash: 2c16e4c105a69d0d48d0b161db2caa390837bf26
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: 7d8192a3b6ff732481a4d48f6e188b4bb3989cda
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67514543"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705944"
 ---
 # <a name="azure-monitor-virtual-machine-extension-for-linux"></a>Extensão da máquina virtual do Azure Monitor para Linux
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Os logs do Azure Monitor fornece recursos de correção de alerta, monitoramento e alertas nos ativos de nuvem e locais. A extensão da máquina virtual do agente do Log Analytics para Linux é publicada e recebe suporte da Microsoft. A extensão instala o agente do Log Analytics em máquinas virtuais do Azure e registra máquinas virtuais em um espaço de trabalho do Log Analytics existente. Este documento detalha as plataformas com suporte, configurações e opções de implantação para a extensão de máquina virtual do Azure Monitor para Linux.
 
@@ -136,7 +136,7 @@ O JSON a seguir mostra o esquema para a extensão do Agente do Log Analytics. A 
 | Nome | Valor/Exemplo |
 | ---- | ---- |
 | apiVersion | 2018-06-01 |
-| publicador | Microsoft.EnterpriseCloud.Monitoring |
+| publisher | Microsoft.EnterpriseCloud.Monitoring |
 | type | OmsAgentForLinux |
 | typeHandlerVersion | 1.7 |
 | workspaceId (por exemplo) | 6f680a37-00c6-41c7-a93f-1437e3462574 |
@@ -231,7 +231,7 @@ A saída de execução da extensão é registrada no seguinte arquivo:
 
 ### <a name="error-codes-and-their-meanings"></a>Códigos de erro e seus significados
 
-| Código de Erro | Significado | Ação possível |
+| Código do Erro | Significado | Ação possível |
 | :---: | --- | --- |
 | 9 | Habilitar chamado prematuramente | [Atualize o Agente Linux do Azure](https://docs.microsoft.com/azure/virtual-machines/linux/update-agent) para a versão mais recente disponível. |
 | 10 | A VM já está conectada a um espaço de trabalho do Log Analytics | Para conectar a VM ao workspace especificado no esquema de extensão, defina stopOnMultipleConnections como falso nas configurações públicas ou remova esta propriedade. Essa VM é cobrada uma vez para cada workspace ao qual está conectada. |

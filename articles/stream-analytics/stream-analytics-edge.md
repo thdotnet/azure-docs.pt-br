@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 07/01/2019
 ms.custom: seodec18
-ms.openlocfilehash: 17b9d11b75e2677e22fa2e38c21a69f018a4bee8
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: 8e3b6d0fbefb8e3d3437fd5e24f929e453c573df
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67508353"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67621008"
 ---
 # <a name="azure-stream-analytics-on-iot-edge"></a>O Stream Analytics do Azure no IoT Edge
  
@@ -81,7 +81,7 @@ Um contêiner de armazenamento é necessário para exportar a consulta compilada
 4. Defina as informações de contêiner de armazenamento no menu **Configurações do IoT Edge**.
 
 5. Definir configurações opcionais
-    1. **Ordenação de eventos**. Você pode configurar a política fora de ordem no portal. A documentação está disponível [aqui](https://msdn.microsoft.com/library/azure/mt674682.aspx?f=255&MSPPError=-2147217396).
+    1. **Ordenação de eventos**. Você pode configurar a política fora de ordem no portal. A documentação está disponível [aqui](https://docs.microsoft.com/stream-analytics-query/time-skew-policies-azure-stream-analytics).
     2. **Localidade**. Defina o formato de internacionalização.
 
 

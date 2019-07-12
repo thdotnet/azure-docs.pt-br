@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
-ms.openlocfilehash: 002ea00364056f0780146b79936a6bc04e289973
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: b815ce95da24b20ff18ea03d637ad85bfe72cb00
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480073"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67654255"
 ---
 # <a name="azure-table-storage-bindings-for-azure-functions"></a>Associações de armazenamento de tabelas do Azure Functions
 
@@ -501,14 +501,14 @@ A tabela a seguir explica as propriedades de configuração de associação que 
 
 |Propriedade function.json | Propriedade de atributo |DESCRIÇÃO|
 |---------|---------|----------------------|
-|**type** | n/d | Deve ser definido como `table`. Esse parâmetro é definido automaticamente quando você cria a associação no portal do Azure.|
-|**direction** | n/d | Deve ser definido como `in`. Esse parâmetro é definido automaticamente quando você cria a associação no portal do Azure. |
-|**name** | n/d | O nome da variável que representa a tabela ou entidade no código de função. | 
+|**type** | N/D | Deve ser definido como `table`. Esse parâmetro é definido automaticamente quando você cria a associação no portal do Azure.|
+|**direction** | N/D | Deve ser definido como `in`. Esse parâmetro é definido automaticamente quando você cria a associação no portal do Azure. |
+|**name** | N/D | O nome da variável que representa a tabela ou entidade no código de função. | 
 |**tableName** | **TableName** | O nome da tabela.| 
 |**partitionKey** | **PartitionKey** |Opcional. Chave de partição da entidade de tabela para leitura. Consulte a seção de [uso](#input---usage) para obter orientação sobre como usar essa propriedade.| 
 |**rowKey** |**RowKey** | Opcional. Chave de linha da entidade de tabela para leitura. Consulte a seção de [uso](#input---usage) para obter orientação sobre como usar essa propriedade.| 
 |**take** |**Take** | Opcional. O número máximo de entidades para ler em JavaScript. Consulte a seção de [uso](#input---usage) para obter orientação sobre como usar essa propriedade.| 
-|**filter** |**Filter** | Opcional. Uma expressão de filtro OData para a entrada de tabela em JavaScript. Consulte a seção de [uso](#input---usage) para obter orientação sobre como usar essa propriedade.| 
+|**filter** |**Filtrar** | Opcional. Uma expressão de filtro OData para a entrada de tabela em JavaScript. Consulte a seção de [uso](#input---usage) para obter orientação sobre como usar essa propriedade.| 
 |**conexão** |**Conexão** | O nome de uma configuração de aplicativo que contém uma cadeia de conexão de Armazenamento para usar para essa associação. Se o nome de configuração do aplicativo começar com "AzureWebJobs", você pode especificar apenas o resto do nome aqui. Por exemplo, se você configurar `connection` para “MyStorage”, o tempo de execução do Functions procura por uma configuração de aplicativo que esteja nomeada “AzureWebJobsMyStorage." Se você deixar `connection` vazio, o tempo de execução de Functions usa a cadeia de caracteres de conexão de Armazenamento padrão na configuração de aplicativo chamada `AzureWebJobsStorage`.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
@@ -532,12 +532,12 @@ A associação de entrada da Tabela de Armazenamento dá suporte aos seguintes c
 
   Definir as propriedades `filter` e `take`. Não definir `partitionKey` ou `rowKey`. Acesse a entidade (ou entidades) de tabela de entrada usando `context.bindings.<name>`. Os objetos desserializados têm propriedades `RowKey` e `PartitionKey`.
 
-## <a name="output"></a>Output
+## <a name="output"></a>Saída
 
 Use uma associação de saída de armazenamento de Tabela do Azure para gravar entidades para uma tabela em uma conta de Armazenamento do Azure.
 
 > [!NOTE]
-> Essa associação de saída não dá suporte para atualização de entidades existentes. Use a `TableOperation.Replace` operação [do SDK do Armazenamento do Microsoft Azure](https://docs.microsoft.com/azure/cosmos-db/table-storage-how-to-use-dotnet#replace-an-entity) para atualizar uma entidade existente.   
+> Essa associação de saída não dá suporte para atualização de entidades existentes. Use a `TableOperation.Replace` operação [do SDK do Armazenamento do Microsoft Azure](https://docs.microsoft.com/azure/cosmos-db/tutorial-develop-table-dotnet#delete-an-entity) para atualizar uma entidade existente.   
 
 ## <a name="output---example"></a>Saída - exemplo
 
@@ -761,9 +761,9 @@ A tabela a seguir explica as propriedades de configuração de associação que 
 
 |Propriedade function.json | Propriedade de atributo |DESCRIÇÃO|
 |---------|---------|----------------------|
-|**type** | n/d | Deve ser definido como `table`. Esse parâmetro é definido automaticamente quando você cria a associação no portal do Azure.|
-|**direction** | n/d | Deve ser definido como `out`. Esse parâmetro é definido automaticamente quando você cria a associação no portal do Azure. |
-|**name** | n/d | O nome da variável usada no código da função que representa a tabela ou entidade. Definido como `$return` para referenciar o valor de retorno da função.| 
+|**type** | N/D | Deve ser definido como `table`. Esse parâmetro é definido automaticamente quando você cria a associação no portal do Azure.|
+|**direction** | N/D | Deve ser definido como `out`. Esse parâmetro é definido automaticamente quando você cria a associação no portal do Azure. |
+|**name** | N/D | O nome da variável usada no código da função que representa a tabela ou entidade. Definido como `$return` para referenciar o valor de retorno da função.| 
 |**tableName** |**TableName** | O nome da tabela.| 
 |**partitionKey** |**PartitionKey** | Chave de partição da entidade de tabela para gravar. Consulte a [seção de uso](#output---usage) para obter orientação sobre como usar essa propriedade.| 
 |**rowKey** |**RowKey** | A chave de linha da entidade de tabela para gravar. Consulte a [seção de uso](#output---usage) para obter orientação sobre como usar essa propriedade.| 

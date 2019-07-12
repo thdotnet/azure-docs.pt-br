@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 225ac86efba8a32b085a5fb7fc41bed48c499eab
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 41637fae5592ac292da22303071d51b43116c78b
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65022174"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67671899"
 ---
 # <a name="documentation-resources-for-cognitive-search-workloads"></a>Recursos de documentação para cargas de trabalho de pesquisa cognitivas
 
@@ -27,7 +27,7 @@ Os artigos a seguir são a documentação completa de pesquisa cognitiva.
 + [O que é pesquisa cognitiva?](cognitive-search-concept-intro.md)
 + [Início Rápido: Experimentar a pesquisa cognitiva no portal](cognitive-search-quickstart-blob.md)
 + [Tutorial: Conheça as APIs de pesquisa cognitiva](cognitive-search-tutorial-blob.md)
-+ [Exemplo: criar uma habilidade personalizada](cognitive-search-create-custom-skill-example.md)
++ [Exemplo: Criando uma habilidade personalizada para pesquisa cognitiva](cognitive-search-create-custom-skill-example.md)
 
 ## <a name="how-to-guidance"></a>Diretrizes
 + [Como definir um conjunto de qualificações](cognitive-search-defining-skillset.md)

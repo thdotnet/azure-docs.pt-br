@@ -6,13 +6,13 @@ ms.author: hrasheed
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 06/17/2019
-ms.openlocfilehash: 61a208f3e84125acc2a3cb22d3abccf16587e581
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.date: 07/10/2019
+ms.openlocfilehash: dab4262e5412c8ef3cd1e0d2ef8203d7f289693f
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67543690"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67839181"
 ---
 # <a name="extend-azure-hdinsight-using-an-azure-virtual-network"></a>Estender o Azure HDInsight usando uma Rede Virtual do Azure
 
@@ -25,7 +25,9 @@ Saiba como usar o HDInsight com uma [Rede Virtual do Azure](../virtual-network/v
 * Acessando diretamente os serviços do [Apache Hadoop](https://hadoop.apache.org/) que não estão disponíveis publicamente pela Internet. Por exemplo,APIs [Apache Kafka](https://kafka.apache.org/) ou a API Java do [Apache HBase](https://hbase.apache.org/).
 
 > [!IMPORTANT]  
-> Depois de 28 de fevereiro de 2019, os recursos de rede (por exemplo, NICs, LBs, etc.) para novos clusters criados em uma rede virtual serão configurados no mesmo grupo de recursos de cluster HDInsight. Esses recursos foram provisionados anteriormente, no grupo de recursos de rede virtual. Não há nenhuma alteração para os clusters em execução atuais e os clusters criados sem uma rede virtual.
+> Criar um cluster do HDInsight em uma rede virtual criará vários recursos de rede, como NICs e balanceadores de carga. Fazer **não** excluir esses recursos de rede, conforme eles são necessários para seu cluster para funcionar corretamente com a rede virtual.
+>
+> Depois de 28 de fevereiro de 2019, esses recursos de rede (por exemplo, NICs, LBs, etc.) para novos clusters criados em uma rede virtual serão configurados no mesmo grupo de recursos de cluster HDInsight. Esses recursos foram provisionados anteriormente, no grupo de recursos de rede virtual. Não há nenhuma alteração para os clusters em execução atuais e os clusters criados sem uma rede virtual.
 
 ## <a name="prerequisites-for-code-samples-and-examples"></a>Pré-requisitos para exemplos de código e exemplos
 
@@ -266,12 +268,11 @@ Se você usar grupos de segurança de rede ou rotas definidas pelo usuário para
     > [!IMPORTANT]  
     > Se a região do Azure que você está usando não estiver listada, use apenas os quatro endereços IP da etapa 1.
 
-    | País/Região | Região | Endereços IP de origem permitidos | Destino permitido | Direction |
+    | País | Região | Endereços IP de origem permitidos | Destino permitido | Direction |
     | ---- | ---- | ---- | ---- | ----- |
     | Ásia | Ásia Oriental | 23.102.235.122</br>52.175.38.134 | \*:443 | Entrada |
     | &nbsp; | Sudeste Asiático | 13.76.245.160</br>13.76.136.249 | \*:443 | Entrada |
-    | Austrália | Austrália Central | 20.36.36.33</br>20.36.36.196 | \*:443 | Entrada |
-    | &nbsp; | Leste da Austrália | 104.210.84.115</br>13.75.152.195 | \*:443 | Entrada |
+    | Austrália | Leste da Austrália | 104.210.84.115</br>13.75.152.195 | \*:443 | Entrada |
     | &nbsp; | Sudeste da Austrália | 13.77.2.56</br>13.77.2.94 | \*:443 | Entrada |
     | Brasil | Sul do Brasil | 191.235.84.104</br>191.235.87.113 | \*:443 | Entrada |
     | Canadá | Leste do Canadá | 52.229.127.96</br>52.229.123.172 | \*:443 | Entrada |
@@ -569,7 +570,7 @@ No servidor DNS personalizado da rede virtual:
     
     * Substitua o valor `192.168.0.1` pelo endereço IP do servidor DNS local. Essa entrada encaminha todas as outras solicitações DNS para o servidor DNS local.
 
-3. Para usar a configuração, reinicie o Bind. Por exemplo: `sudo service bind9 restart`.
+3. Para usar a configuração, reinicie o Bind. Por exemplo, `sudo service bind9 restart`.
 
 4. Adicione um encaminhador condicional ao servidor DNS local. Configure o encaminhador condicional para enviar solicitações para o sufixo DNS da etapa 1 para o servidor DNS personalizado.
 
