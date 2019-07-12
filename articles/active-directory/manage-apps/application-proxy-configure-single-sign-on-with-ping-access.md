@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c43498a7829a43fad331841aca045f52ae680be
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 54a99d001f8cb59af3042ce8b6849a2cd9480e99
+ms.sourcegitcommit: 0ebc62257be0ab52f524235f8d8ef3353fdaf89e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67481479"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67724003"
 ---
 # <a name="header-based-authentication-for-single-sign-on-with-application-proxy-and-pingaccess"></a>Autenticação baseada em cabeçalho para logon único com Proxy de Aplicativo e PingAccess
 
@@ -53,10 +53,11 @@ Se você tiver habilitado o Proxy de aplicativo habilitada e já instalado um co
 O conector de Proxy de aplicativo é um serviço do Windows Server que direciona o tráfego de seus funcionários remotos para seus aplicativos publicados. Para obter instruções de instalação mais detalhadas, consulte [Tutorial: Adicionar um aplicativo local para acesso remoto por meio do Proxy de aplicativo no Azure Active Directory](application-proxy-add-on-premises-application.md).
 
 1. Entrar para o [portal do Azure Active Directory](https://aad.portal.azure.com/) como um administrador do aplicativo. O **Centro de administração do Azure Active Directory** página será exibida.
-2. Selecione **Azure Active Directory** > **proxy de aplicativo** > **baixar conector de serviço**. O **Download do conector do Proxy de aplicativo** página será exibida.
+1. Selecione **Azure Active Directory** > **proxy de aplicativo** > **baixar conector de serviço**. O **Download do conector do Proxy de aplicativo** página será exibida.
 
    ![Download do conector de proxy de aplicativo](./media/application-proxy-configure-single-sign-on-with-ping-access/application-proxy-connector-download.png)
-3. Siga as instruções de instalação.
+
+1. Siga as instruções de instalação.
 
 Baixar o conector deve habilitar automaticamente o Proxy de aplicativo para seu diretório, mas se não estiver, você pode selecionar **habilitar o Proxy de aplicativo**.
 
@@ -205,7 +206,7 @@ Exemplo para incluir o endereço de email para o access_token que consumirá o P
 
 ### <a name="use-of-claims-mapping-policy-optional"></a>Uso da política (opcional) de mapeamento de declarações
 
-[Declarações de política de mapeamento (visualização)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-claims-mapping#claims-mapping-policy-properties/) para atributos que não existem no Azure AD. Mapeamento de declarações lhe permite migrar aplicativos de locais antigos para a nuvem, adicionando declarações personalizadas extras que são apoiadas por seus objetos de usuário ou o ADFS
+[Declarações de política de mapeamento (visualização)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-claims-mapping#claims-mapping-policy-properties) para atributos que não existem no Azure AD. Mapeamento de declarações lhe permite migrar aplicativos de locais antigos para a nuvem, adicionando declarações personalizadas extras que são apoiadas por seus objetos de usuário ou o ADFS
 
 Para tornar seu aplicativo usar uma declaração personalizada e incluir campos adicionais, não se esqueça de que você também [criou uma política de mapeamento de declarações personalizadas e atribuída ao aplicativo](../develop/active-directory-claims-mapping.md#claims-mapping-policy-assignment).
 

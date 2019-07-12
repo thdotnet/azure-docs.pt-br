@@ -7,19 +7,19 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: anantr
-ms.component: alerts
-ms.openlocfilehash: 5f351dd7fddb4c15b28954eccf8ada3bfc14dbca
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.subservice: alerts
+ms.openlocfilehash: c37ecfbadd7345fea347ff488895f16ba505c818
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67447645"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67594372"
 ---
 # <a name="common-alert-schema-definitions"></a>Definições comuns do esquema de alertas
 
 Este artigo descreve o [definições de alerta de esquema comuns](https://aka.ms/commonAlertSchemaDocs) para Runbooks de automação de funções/aplicativos/Azure Webhooks/lógica. 
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 
 Qualquer instância de alerta descreve **o recurso que foi afetado** e **a causa do alerta**, e essas instâncias são descritas no esquema comum nas seções a seguir:
 * **Essentials**: Um conjunto de **padronizado campos**, comuns em todos os tipos de alerta, que descrevem **quais recursos** o alerta está nos juntamente com metadados adicionais de comuns alerta (por exemplo, severidade ou descrição). 
@@ -80,7 +80,7 @@ Qualquer instância de alerta descreve **o recurso que foi afetado** e **a causa
 |:---|:---|
 | alertId | GUID identificando exclusivamente a instância de alerta. |
 | alertRule | Nome da regra de alerta que gerou a instância de alerta. |
-| severity | Severidade do alerta. Valores possíveis: Sev0, Sev1, Sev2, Sev3, Sev4 |
+| Severidade | Severidade do alerta. Valores possíveis: Sev0, Sev1, Sev2, Sev3, Sev4 |
 | signalType | Identifica o sinal na qual a regra de alerta foi definida. Valores possíveis: Métrica, Log, Log de atividades |
 | monitorCondition | Quando um alerta é acionado, a condição do monitor do alerta é definida como 'Disparado'. Quando a condição subjacente que causou o alerta seja acionado limpa, a condição do monitor é definida como 'Resolvido'.   |
 | monitoringService | O serviço de monitoramento ou a solução que gerou o alerta. Os campos para o contexto de alerta são determinados pelo serviço de monitoramento. |
