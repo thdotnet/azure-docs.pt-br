@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: raynew
-ms.openlocfilehash: d8ade598e4f1b6331367e8bd04ad59951ef5de8f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 856f45f448aa843e9dc04ec3b6a60841cfe33227
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66242390"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67704872"
 ---
 # <a name="restore-sql-server-databases-on-azure-vms"></a>Restaurar bancos de dados do SQL Server em VMs do Azure
 
@@ -156,7 +156,7 @@ Se você tiver selecionado **Completo e Diferencial** como o tipo de restauraç�
 
 ### <a name="restore-databases-with-large-number-of-files"></a>Restaurar bancos de dados com um grande número de arquivos
 
-Se o tamanho total da cadeia de caracteres de arquivos em um banco de dados for maior que um [determinado limite](backup-sql-server-azure-troubleshoot.md#files-size-limit-beyond-which-restore-happens-to-default-path), o Backup do Azure armazena a lista de arquivos de banco de dados em um componente de pit diferentes, de modo que você não poderá definir o caminho de restauração de destino durante a restauração operação. Os arquivos serão restaurados para o caminho padrão do SQL.
+Se o tamanho total da cadeia de caracteres de arquivos em um banco de dados for maior que um [determinado limite](backup-sql-server-azure-troubleshoot.md#size-limit-for-files), o Backup do Azure armazena a lista de arquivos de banco de dados em um componente de pit diferentes, de modo que você não poderá definir o caminho de restauração de destino durante a restauração operação. Os arquivos serão restaurados para o caminho padrão do SQL.
 
   ![Restaurar o banco de dados com arquivos grandes](./media/backup-azure-sql-database/restore-large-files.jpg)
 
