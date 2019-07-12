@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/16/2019
-ms.openlocfilehash: b0f513462f1e09718dc18e9ce454b82e8978961f
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: 88df7ae0d4e6054d82302ad5f0adabcf656cb0f5
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67329604"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620814"
 ---
 # <a name="query-examples-for-common-stream-analytics-usage-patterns"></a>Exemplos de consulta para padrões de uso do Stream Analytics
 
@@ -35,7 +35,7 @@ JSON e Avro podem conter tipos complexos, como matrizes ou objetos aninhados (re
 
 **Entrada**:
 
-| Faça | Hora | Peso |
+| Faça | Time | Peso |
 | --- | --- | --- |
 | Honda |2015-01-01T00:00:01.0000000Z |"1000" |
 | Honda |2015-01-01T00:00:02.0000000Z |"2000" |
@@ -68,7 +68,7 @@ Por exemplo, verifique se o resultado retorna placas de licença que começam co
 
 **Entrada**:
 
-| Faça | PlacaDeCarro | Hora |
+| Faça | PlacaDeCarro | Time |
 | --- | --- | --- |
 | Honda |ABC-123 |2015-01-01T00:00:01.0000000Z |
 | Toyota |AAA-999 |2015-01-01T00:00:02.0000000Z |
@@ -76,7 +76,7 @@ Por exemplo, verifique se o resultado retorna placas de licença que começam co
 
 **Saída**:
 
-| Faça | PlacaDeCarro | Hora |
+| Faça | PlacaDeCarro | Time |
 | --- | --- | --- |
 | Toyota |AAA-999 |2015-01-01T00:00:02.0000000Z |
 | Nissan |ABC-369 |2015-01-01T00:00:03.0000000Z |
@@ -100,7 +100,7 @@ Por exemplo, verifique se o resultado retorna placas de licença que começam co
 
 **Entrada**:
 
-| Faça | Hora |
+| Faça | Time |
 | --- | --- |
 | Honda |2015-01-01T00:00:01.0000000Z |
 | Toyota |2015-01-01T00:00:02.0000000Z |
@@ -108,7 +108,7 @@ Por exemplo, verifique se o resultado retorna placas de licença que começam co
 
 **Saída**:
 
-| CarrosPassaram | Hora |
+| CarrosPassaram | Time |
 | --- | --- |
 | 1 Honda |2015-01-01T00:00:10.0000000Z |
 | 2 Toyotas |2015-01-01T00:00:10.0000000Z |
@@ -137,7 +137,7 @@ Por exemplo, verifique se o resultado retorna placas de licença que começam co
 
 **Entrada**:
 
-| Faça | Hora |
+| Faça | Time |
 | --- | --- |
 | Honda |2015-01-01T00:00:01.0000000Z |
 | Honda |2015-01-01T00:00:02.0000000Z |
@@ -147,7 +147,7 @@ Por exemplo, verifique se o resultado retorna placas de licença que começam co
 
 **Saída1**:
 
-| Faça | Hora |
+| Faça | Time |
 | --- | --- |
 | Honda |2015-01-01T00:00:01.0000000Z |
 | Honda |2015-01-01T00:00:02.0000000Z |
@@ -157,7 +157,7 @@ Por exemplo, verifique se o resultado retorna placas de licença que começam co
 
 **Saída2**:
 
-| Faça | Hora | Count |
+| Faça | Time | Count |
 | --- | --- | --- |
 | Toyota |2015-01-01T00:00:10.0000000Z |3 |
 
@@ -211,7 +211,7 @@ Por exemplo:
 
 **Entrada**:
 
-| Faça | Hora |
+| Faça | Time |
 | --- | --- |
 | Honda |2015-01-01T00:00:01.0000000Z |
 | Honda |2015-01-01T00:00:02.0000000Z |
@@ -221,7 +221,7 @@ Por exemplo:
 
 **Saída:**
 
-| CountMake | Hora |
+| CountMake | Time |
 | --- | --- |
 | 2 |2015-01-01T00:00:02.000Z |
 | 1 |2015-01-01T00:00:04.000Z |
@@ -247,14 +247,14 @@ GROUP BY
 
 **Entrada**:
 
-| Faça | Hora |
+| Faça | Time |
 | --- | --- |
 | Honda |2015-01-01T00:00:01.0000000Z |
 | Toyota |2015-01-01T00:00:02.0000000Z |
 
 **Saída**:
 
-| Faça | Hora |
+| Faça | Time |
 | --- | --- |
 | Toyota |2015-01-01T00:00:02.0000000Z |
 
@@ -278,7 +278,7 @@ GROUP BY
 
 **Entrada**:
 
-| PlacaDeCarro | Faça | Hora |
+| PlacaDeCarro | Faça | Time |
 | --- | --- | --- |
 | DXE 5291 |Honda |2015-07-27T00:00:05.0000000Z |
 | YZK 5704 |Ford |2015-07-27T00:02:17.0000000Z |
@@ -290,7 +290,7 @@ GROUP BY
 
 **Saída**:
 
-| PlacaDeCarro | Faça | Hora |
+| PlacaDeCarro | Faça | Time |
 | --- | --- | --- |
 | DXE 5291 |Honda |2015-07-27T00:00:05.0000000Z |
 | QYF 9358 |Honda |2015-07-27T00:12:02.0000000Z |
@@ -310,7 +310,7 @@ GROUP BY
 
 Agora vamos alterar o problema e localize o primeiro carro de determinada marca em cada intervalo de 10 minutos.
 
-| PlacaDeCarro | Faça | Hora |
+| PlacaDeCarro | Faça | Time |
 | --- | --- | --- |
 | DXE 5291 |Honda |2015-07-27T00:00:05.0000000Z |
 | YZK 5704 |Ford |2015-07-27T00:02:17.0000000Z |
@@ -337,7 +337,7 @@ Agora vamos alterar o problema e localize o primeiro carro de determinada marca 
 
 **Entrada**:
 
-| PlacaDeCarro | Faça | Hora |
+| PlacaDeCarro | Faça | Time |
 | --- | --- | --- |
 | DXE 5291 |Honda |2015-07-27T00:00:05.0000000Z |
 | YZK 5704 |Ford |2015-07-27T00:02:17.0000000Z |
@@ -349,7 +349,7 @@ Agora vamos alterar o problema e localize o primeiro carro de determinada marca 
 
 **Saída**:
 
-| PlacaDeCarro | Faça | Hora |
+| PlacaDeCarro | Faça | Time |
 | --- | --- | --- |
 | VFE 1616 |Toyota |2015-07-27T00:09:31.0000000Z |
 | MDR 6128 |BMW |2015-07-27T00:13:45.0000000Z |
@@ -386,7 +386,7 @@ Por exemplo, dois carros consecutivos da mesma marca entraram na rodovia nos úl
 
 **Entrada**:
 
-| Faça | PlacaDeCarro | Hora |
+| Faça | PlacaDeCarro | Time |
 | --- | --- | --- |
 | Honda |ABC-123 |2015-01-01T00:00:01.0000000Z |
 | Honda |AAA-999 |2015-01-01T00:00:02.0000000Z |
@@ -395,7 +395,7 @@ Por exemplo, dois carros consecutivos da mesma marca entraram na rodovia nos úl
 
 **Saída**:
 
-| Faça | Hora | PlacaDoCarroAtual | PlacaDoPrimeiroCarro | HoraDoPrimeiroCarro |
+| Faça | Time | PlacaDoCarroAtual | PlacaDoPrimeiroCarro | HoraDoPrimeiroCarro |
 | --- | --- | --- | --- | --- |
 | Honda |2015-01-01T00:00:02.0000000Z |AAA-999 |ABC-123 |2015-01-01T00:00:01.0000000Z |
 
@@ -422,14 +422,14 @@ Por exemplo, dois carros consecutivos da mesma marca entraram na rodovia nos úl
 
 **Entrada**:  
 
-| Usuário | Recurso | Evento | Hora |
+| User | Recurso | evento | Time |
 | --- | --- | --- | --- |
-| user@location.com |RightMenu |Start |2015-01-01T00:00:01.0000000Z |
+| user@location.com |RightMenu |Início |2015-01-01T00:00:01.0000000Z |
 | user@location.com |RightMenu |End |2015-01-01T00:00:08.0000000Z |
 
 **Saída**:  
 
-| Usuário | Recurso | Duration |
+| User | Recurso | Duração |
 | --- | --- | --- |
 | user@location.com |RightMenu |7 |
 
@@ -456,7 +456,7 @@ Por exemplo, suponha que um bug resultou no peso incorreto de todos os carros (a
 
 **Entrada**:
 
-| Faça | Hora | Peso |
+| Faça | Time | Peso |
 | --- | --- | --- |
 | Honda |2015-01-01T00:00:01.0000000Z |2000 |
 | Toyota |2015-01-01T00:00:02.0000000Z |25000 |
@@ -619,7 +619,7 @@ WHERE
 
 **Entrada**:
 
-| PlacaDeCarro | Faça | Hora | TollID |
+| PlacaDeCarro | Faça | Time | TollID |
 | --- | --- | --- | --- |
 | DXE 5291 |Honda |2015-07-27T00:00:01.0000000Z | 1 |
 | YHN 6970 |Toyota |2015-07-27T00:00:05.0000000Z | 1 |
@@ -660,7 +660,7 @@ GROUP BY TUMBLINGWINDOW(second, 5), TollId
 
 **Entrada**:  
 
-| deviceId | Hora | Atributo | Value |
+| deviceId | Time | Atributo | Valor |
 | --- | --- | --- | --- |
 | 1 |2018-07-27T00:00:01.0000000Z |Temperatura |50 |
 | 1 |2018-07-27T00:00:01.0000000Z |Temperatura |50 |
@@ -718,6 +718,6 @@ Para obter mais assistência, experimente nosso [fórum do Stream Analytics do A
 * [Introdução ao Stream Analytics do Azure](stream-analytics-introduction.md)
 * [Introdução ao uso do Stream Analytics do Azure](stream-analytics-real-time-fraud-detection.md)
 * [Dimensionar trabalhos do Stream Analytics do Azure](stream-analytics-scale-jobs.md)
-* [Referência de Linguagem de Consulta do Stream Analytics do Azure](https://msdn.microsoft.com/library/azure/dn834998.aspx)
+* [Referência de Linguagem de Consulta do Stream Analytics do Azure](https://docs.microsoft.com/stream-analytics-query/stream-analytics-query-language-reference)
 * [Referência da API REST do Gerenciamento do Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 

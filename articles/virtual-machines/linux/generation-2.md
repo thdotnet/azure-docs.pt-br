@@ -4,7 +4,7 @@ description: Visão geral do suporte do Azure para VMs da geração 2
 services: virtual-machines-linux
 documentationcenter: ''
 author: laurenhughes
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.service: virtual-machines-linux
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/23/2019
 ms.author: lahugh
-ms.openlocfilehash: 352df275742c38307065252d2f65bb4253d78e5d
-ms.sourcegitcommit: 6e6813f8e5fa1f6f4661a640a49dc4c864f8a6cb
+ms.openlocfilehash: 653d4baa89e28255f11df1c5e2d813d37535793a
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67151269"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67667556"
 ---
 # <a name="support-for-generation-2-vms-preview-on-azure"></a>Suporte para geração 2 VMs (visualização) no Azure
 
@@ -40,7 +40,7 @@ VMs de geração 1 têm suporte por todos os tamanhos VM no Azure. O Azure agora
 * [Série Dsv2](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-general#dsv2-series) e [série Dsv3](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-general#dsv3-series-1)
 * [Esv3-series](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-memory#esv3-series)
 * [Fsv2-series](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-compute#fsv2-series-1)
-* [Série GS](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-memory#gs-series)
+* [Série GS](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-previous-gen#gs-series)
 * [Série ls](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-previous-gen#ls-series) e [Lsv2-series](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-storage#lsv2-series)
 * [Mv2-series](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-memory#mv2-series)
 
@@ -117,7 +117,7 @@ Você também pode criar geração 2 VMs usando conjuntos de dimensionamento de 
     Sim. Mas nem todos os [tamanhos de VM de geração 2](#generation-2-vm-sizes) estão disponíveis em todas as regiões. A disponibilidade da geração que 2 VM depende da disponibilidade do tamanho de VM.
 
 * **Há uma diferença de preço entre a geração 1 e geração 2 VMs?**  
-    Não.
+    Nº
 
 * **Como posso aumentar o tamanho do disco do sistema operacional?**  
   Discos do sistema operacional maiores que 2 TB são novos para a geração 2 VMs. Por padrão, os discos do sistema operacional são menores que 2 TB para VMs da geração 2. Você pode aumentar o tamanho do disco até o máximo recomendado de 4 TB. Use a CLI do Azure ou o portal do Azure para aumentar o tamanho do disco do sistema operacional. Para obter informações sobre como expandir discos programaticamente, consulte [redimensionar o disco](expand-disks.md).

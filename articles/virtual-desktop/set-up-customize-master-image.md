@@ -4,19 +4,19 @@ description: Como preparar, personalizar e carregar uma imagem mestre de visuali
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
-ms.topic: how-to
+ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: helohr
-ms.openlocfilehash: 186086a94470faaf19fa8a3c07939b9856ae2ec9
-ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
+ms.openlocfilehash: 2413a380adf32755452482d2b68d2055f7db666d
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67466810"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67620429"
 ---
 # <a name="prepare-and-customize-a-master-vhd-image"></a>Preparar e personalizar uma imagem de VHD mestre
 
-Este artigo informa como preparar uma imagem de disco de rígido virtual (VHD) mestre para carregar no Azure, incluindo como criar máquinas virtuais (VMs) e instalar software neles. Essas instruções são para uma configuração específica de visualização de área de trabalho Virtual do Windows que pode ser usada com os processos existentes da sua organização.
+Este artigo informa como preparar uma imagem de disco de rígido virtual (VHD) mestre para carregar no Azure, incluindo como criar máquinas virtuais (VMs) e instalar software neles. Essas instruções são referentes a uma configuração específica da Visualização da Área de Trabalho Virtual do Windows que pode ser usada com os processos existentes de sua organização.
 
 ## <a name="create-a-vm"></a>Criar uma máquina virtual
 
@@ -157,7 +157,7 @@ reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\
 
 ### <a name="include-additional-language-support"></a>Incluir suporte a idiomas adicionais
 
-Este artigo não aborda como configurar o suporte idiomático e regional. Para obter mais informações, consulte os seguintes artigos:
+Este artigo não aborda como configurar o suporte idiomático e regional. Para obter mais informações, confira os seguintes artigos:
 
 - [Adicionar idiomas às imagens do Windows](https://docs.microsoft.com/windows-hardware/manufacture/desktop/add-language-packs-to-windows)
 - [Recursos sob demanda](https://docs.microsoft.com/windows-hardware/manufacture/desktop/features-on-demand-v2--capabilities)

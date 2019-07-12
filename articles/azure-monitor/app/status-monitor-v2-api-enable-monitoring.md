@@ -12,14 +12,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: e0d5363e253e89b32b5eca14366504f0ace39043
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 1e5a4ac9f159ce238149d44127fd63dcf3279623
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67479637"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807113"
 ---
-# <a name="status-monitor-v2-api-enable-applicationinsightsmonitoring-v031-alpha"></a>API de v2 do Monitor de status: Enable-ApplicationInsightsMonitoring (v0.3.1-alpha)
+# <a name="status-monitor-v2-api-enable-applicationinsightsmonitoring-v040-alpha"></a>API de v2 do Monitor de status: Enable-ApplicationInsightsMonitoring (v0.4.0-alpha)
 
 Este artigo descreve um cmdlet que é um membro do [módulo do Az.ApplicationMonitor PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
@@ -93,9 +93,9 @@ Você pode criar um script de instalação única para vários computadores, def
 - **MachineFilter** é um necessária C# regex do computador ou nome da VM.
     - '. *' corresponderá a todos
     - 'ComputerName' corresponderá apenas computadores com o nome exato especificado.
-- **AppFilter** é um necessária C# regex do computador ou nome da VM.
+- **AppFilter** é um necessária C# regex do nome do Site do IIS. Você pode obter uma lista de sites em seu servidor executando o comando [get-iissite](https://docs.microsoft.com/powershell/module/iisadministration/get-iissite).
     - '. *' corresponderá a todos
-    - 'ApplicationName' corresponderá apenas aplicativos do IIS com o nome exato especificado.
+    - "SiteName" corresponderá apenas o Site do IIS com o nome exato especificado.
 - **InstrumentationKey** é necessária para habilitar o monitoramento de aplicativos que correspondem aos duas filtros anteriores.
     - Deixe esse valor nulo se você quiser definir regras para excluir o monitoramento.
 
@@ -120,7 +120,7 @@ Use essa opção para ignorar essa verificação e continuar a instalação dos 
 ### <a name="-whatif"></a>-WhatIf 
 **Parâmetro comum.** Use essa opção para testar e validar seus parâmetros de entrada sem, na verdade, habilitando o monitoramento.
 
-## <a name="output"></a>Output
+## <a name="output"></a>Saída
 
 
 #### <a name="example-output-from-a-successful-enablement"></a>Exemplo de saída de uma ativação bem-sucedida

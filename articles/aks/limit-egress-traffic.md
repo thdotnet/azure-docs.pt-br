@@ -2,17 +2,17 @@
 title: Restringir o tráfego de saída no serviço de Kubernetes do Azure (AKS)
 description: Saiba quais portas e endereços são necessários para controlar o tráfego de saída no serviço de Kubernetes do Azure (AKS)
 services: container-service
-author: iainfoulds
+author: mlearned
 ms.service: container-service
 ms.topic: article
 ms.date: 06/06/2019
-ms.author: iainfou
-ms.openlocfilehash: 52a9ba20b60e8ef6cdb743546cd842e4ee24b3fd
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.author: mlearned
+ms.openlocfilehash: 12922496bc97ad51d1cc96f7ffe8df05c1fd66ea
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67441917"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67614953"
 ---
 # <a name="preview---limit-egress-traffic-for-cluster-nodes-and-control-access-to-required-ports-and-services-in-azure-kubernetes-service-aks"></a>Visualização – tráfego de saída de limite para nós de cluster e controlar o acesso a portas e os serviços no serviço de Kubernetes do Azure (AKS)
 
@@ -77,7 +77,7 @@ As seguintes portas de saída / regras de rede são necessárias para um cluster
 
 O seguinte FQDN / regras de aplicativo são necessárias:
 
-| FQDN                       | Port      | Uso      |
+| FQDN                       | Porta      | Uso      |
 |----------------------------|-----------|----------|
 | *.hcp.\<location\>.azmk8s.io | HTTPS:443, TCP:22, TCP:9000 | Esse endereço é o ponto de extremidade do servidor de API. Substitua *\<local\>* com a região em que o cluster do AKS é implantado. |
 | *.tun.\<location\>.azmk8s.io | HTTPS:443, TCP:22, TCP:9000 | Esse endereço é o ponto de extremidade do servidor de API. Substitua *\<local\>* com a região em que o cluster do AKS é implantado. |
@@ -97,7 +97,7 @@ O seguinte FQDN / regras de aplicativo são necessárias:
 
 O seguinte FQDN / regras de aplicativo são recomendadas para clusters AKS funcionar corretamente:
 
-| FQDN                                    | Port      | Uso      |
+| FQDN                                    | Porta      | Uso      |
 |-----------------------------------------|-----------|----------|
 | *.ubuntu.com                            | HTTP:80   | Esse endereço permite que os nós de cluster do Linux baixem os patches de segurança necessários e atualizações. |
 | packages.microsoft.com                  | HTTPS:443 | Esse endereço é o repositório de pacotes da Microsoft usado para armazenada em cache *apt-get* operações. |

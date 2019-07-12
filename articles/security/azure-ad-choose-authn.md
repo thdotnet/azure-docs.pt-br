@@ -4,17 +4,17 @@ description: Este guia ajuda Presidentes de empresas, Diretores de Informática,
 services: active-directory
 keywords: ''
 author: martincoetzer
-ms.author: martincoetzer
+ms.author: martinco
 ms.date: 04/12/2018
 ms.topic: article
 ms.service: active-directory
 ms.workload: identity
-ms.openlocfilehash: 26fca12060363f4ad05baaeceb6fb800a0d76216
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: c0faeb211860391c93563200f509d60876a504b9
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67449263"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67786690"
 ---
 # <a name="choose-the-right-authentication-method-for-your-azure-active-directory-hybrid-identity-solution"></a>Escolha o método de autenticação certo para sua solução de identidade híbrida do Azure Active Directory 
 
@@ -94,7 +94,7 @@ Detalhes sobre questões de decisão:
 
 * **Cenários avançados**. Se for uma escolha das organizações, é possível usar insights de identidades com relatórios do Azure AD Identity Protection com o Azure AD Premium P2. Um exemplo é o relatório de credenciais vazadas. Tem Windows Hello para empresas [requisitos específicos quando você usar a sincronização de hash de senha](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-identity-verification). [Azure AD Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started-password-sync) exigem sincronização de hash de senha para provisionar usuários com suas credenciais corporativas no domínio gerenciado.
 
-    As organizações que exigem a autenticação multifator com sincronização de hash de senha deve usar a autenticação multifator do Azure AD ou [controles personalizados de acesso condicional](https://docs.microsoft.com/azure/active-directory/conditional-access/controls#custom-controls). As organizações que não podem usar métodos de autenticação multifator local ou de terceiros que se baseia na federação.
+    As organizações que exigem a autenticação multifator com sincronização de hash de senha deve usar a autenticação multifator do Azure AD ou [controles personalizados de acesso condicional](https://docs.microsoft.com/azure/active-directory/conditional-access/controls#custom-controls-preview). As organizações que não podem usar métodos de autenticação multifator local ou de terceiros que se baseia na federação.
 
 > [!NOTE]
 > Acesso condicional do Azure AD exigem [Azure AD Premium P1](https://azure.microsoft.com/pricing/details/active-directory/) licenças.
@@ -118,7 +118,7 @@ Veja [como implementar a sincronização de hash de senha](https://docs.microsof
 
 * **Cenários avançados**. A Autenticação de Passagem impõe a política de conta local no momento da entrada. Por exemplo, o acesso é negado quando o estado da conta de um usuário local é desabilitado, bloqueado, tem a [senha expirada](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-pta-faq#what-happens-if-my-users-password-has-expired-and-they-try-to-sign-in-by-using-pass-through-authentication) ou está fora do horário de entrada permitida do usuário. 
 
-    As organizações que exigem a autenticação multifator com autenticação de passagem deve usar a autenticação de multifator do Azure (MFA) ou [controles personalizados de acesso condicional](https://docs.microsoft.com/azure/active-directory/conditional-access/controls#custom-controls). As organizações que não podem usar um método de autenticação multifator local ou de terceiros que se baseia na federação. Os recursos avançados exigem a implantação da sincronização de hash de senha, independentemente de você escolher ou não a autenticação de passagem. Um exemplo é o relatório de credenciais vazadas do Identity Protection.
+    As organizações que exigem a autenticação multifator com autenticação de passagem deve usar a autenticação de multifator do Azure (MFA) ou [controles personalizados de acesso condicional](https://docs.microsoft.com/azure/active-directory/conditional-access/controls#custom-controls-preview). As organizações que não podem usar um método de autenticação multifator local ou de terceiros que se baseia na federação. Os recursos avançados exigem a implantação da sincronização de hash de senha, independentemente de você escolher ou não a autenticação de passagem. Um exemplo é o relatório de credenciais vazadas do Identity Protection.
 
 * **Continuidade dos negócios**. Recomendamos a implantação de dois agentes extras de autenticação de passagem. Esses extras complementam o primeiro agente no servidor do Azure AD Connect. Essa implantação adicional garante a alta disponibilidade das solicitações de autenticação. Quando você tiver três agentes implantados, um deles ainda poderá falhar quando outro agente estiver inoperante para manutenção. 
 

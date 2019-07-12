@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4dadc68e78fbaa979751d5bcd04ef481c3ab886
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: 1bc3c1325e8379082134e2cbec1586f7d338ee61
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67544342"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67797930"
 ---
 # <a name="direct-federation-with-ad-fs-and-third-party-providers-for-guest-users-preview"></a>Federação direta com AD FS e provedores de terceiros para usuários convidados (visualização)
 |     |
@@ -62,7 +62,7 @@ Por exemplo, ao configurar a federação direta para **fabrikam.com**, a URL de 
 ### <a name="signing-certificate-renewal"></a>Renovação de certificado de assinatura
 Se você especificar a URL de metadados nas configurações do provedor de identidade, o AD do Azure será renovada automaticamente o certificado de assinatura quando ela expirar. No entanto, se o certificado é girado por qualquer motivo, antes da hora de expiração, ou se você não fornecer uma URL de metadados, do Azure AD será possível renová-la. Nesse caso, você precisará atualizar manualmente o certificado de autenticação.
 ## <a name="frequently-asked-questions"></a>Perguntas frequentes
-### <a name="can-i-set-up-direct-federation-with-an-unmanaged-email-verified-tenant"></a>Pode configurar a federação direta com um locatário não gerenciado (verificado por email)? 
+### <a name="can-i-set-up-direct-federation-with-a-domain-for-which-an-unmanaged-email-verified-tenant-exists"></a>Pode configurar a federação direta com um domínio para o qual existe um locatário não gerenciado (verificado por email)? 
 Sim. Se o domínio não verificado e locatário ainda não passou por uma [controle de administrador](../users-groups-roles/domains-admin-takeover.md), você pode configurar a federação direta. Os locatários não gerenciados ou verificado por email, são criados quando um usuário resgata um convite de B2B ou executa uma inscrição de autoatendimento do Azure AD usando um domínio que não existe no momento. Você pode configurar a federação direta com esses domínios. Se você tentar configurar a federação direta com um domínio verificado de DNS, no portal do Azure ou por meio do PowerShell, você verá um erro.
 ### <a name="if-direct-federation-and-email-one-time-passcode-authentication-are-both-enabled-which-method-takes-precedence"></a>Se a federação direta e autenticação de senha de uso único email estiverem habilitadas, o qual método terá precedência?
 Quando a federação direta é estabelecida com uma organização parceira, ela terá precedência sobre a autenticação de senha de uso único de email para novos usuários convidados da organização. Se um usuário convidado resgatou seu convite usando a autenticação de senha única antes de configurar a federação direta, eles continuarão a usar a autenticação de senha de uso único. 
@@ -87,7 +87,7 @@ As tabelas a seguir mostram os requisitos para atributos específicos e declara�
 
 Atributos necessários para a resposta de SAML 2.0 do IdP:
 
-|Atributo  |Value  |
+|Atributo  |Valor  |
 |---------|---------|
 |AssertionConsumerService     |`https://login.microsoftonline.com/login.srf`         |
 |Público-alvo     |`urn:federation:MicrosoftOnline`         |
@@ -96,7 +96,7 @@ Atributos necessários para a resposta de SAML 2.0 do IdP:
 
 Declarações necessárias para o token de SAML 2.0 emitido pelo IdP:
 
-|Atributo  |Value  |
+|Atributo  |Valor  |
 |---------|---------|
 |Formato de NameID     |`urn:oasis:names:tc:SAML:2.0:nameid-format:persistent`         |
 |emailaddress     |`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`         |
@@ -113,7 +113,7 @@ As tabelas a seguir mostram os requisitos para atributos específicos e declara�
 
 Atributos necessários na mensagem de WS-Fed do IdP:
  
-|Atributo  |Value  |
+|Atributo  |Valor  |
 |---------|---------|
 |PassiveRequestorEndpoint     |`https://login.microsoftonline.com/login.srf`         |
 |Público-alvo     |`urn:federation:MicrosoftOnline`         |
@@ -121,7 +121,7 @@ Atributos necessários na mensagem de WS-Fed do IdP:
 
 Declarações necessárias para o token de WS-Fed emitido pelo IdP:
 
-|Atributo  |Value  |
+|Atributo  |Valor  |
 |---------|---------|
 |ImmutableID     |`http://schemas.microsoft.com/LiveID/Federation/2008/05/ImmutableID`         |
 |emailaddress     |`http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`         |
@@ -158,7 +158,7 @@ Em seguida, você vai configurar a federação com o provedor de identidade conf
 ### <a name="to-configure-direct-federation-in-azure-ad-using-powershell"></a>Para configurar a federação direta no Azure AD usando o PowerShell
 
 1. Instale a versão mais recente do módulo PowerShell for Graph ([AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview)) do Azure AD. (Se você precisar obter as etapas detalhadas, o guia de início rápido para adicionar um usuário convidado inclui a seção [instalar o módulo mais recente do AzureADPreview](b2b-quickstart-invite-powershell.md#install-the-latest-azureadpreview-module).) 
-2. Execute o comando a seguir: 
+2. Execute o seguinte comando: 
    ```powershell
    Connect-AzureAD
    ```
@@ -201,7 +201,7 @@ Você pode remover a configuração de Federação direta. Se você fizer isso, 
 
 Para remover uma federação direta com um provedor de identidade por meio do PowerShell:
 1. Instale a versão mais recente do módulo PowerShell for Graph ([AzureADPreview](https://www.powershellgallery.com/packages/AzureADPreview)) do Azure AD.
-2. Execute o comando a seguir: 
+2. Execute o seguinte comando: 
    ```powershell
    Connect-AzureAD
    ```

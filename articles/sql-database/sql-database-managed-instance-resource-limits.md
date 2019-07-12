@@ -12,12 +12,12 @@ ms.author: bonova
 ms.reviewer: carlrab, jovanpop, sachinp, sstein
 manager: craigg
 ms.date: 06/26/2019
-ms.openlocfilehash: a0846a7d03cc2f63af6747c8b8514b563c1d4a5d
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: f4e19b916553912e36f2c3beee3f6a518b244e4d
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67447809"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706996"
 ---
 # <a name="overview-azure-sql-database-managed-instance-resource-limits"></a>Visão geral do Azure SQL Database managed limites de recursos de instância
 
@@ -37,11 +37,11 @@ Instância gerenciada de banco de dados SQL do Azure pode ser implantada nas dua
 |   | **Gen4** | **Gen5** |
 | --- | --- | --- |
 | Hardware | Processadores Intel E5-2673 v3 (Haswell) de 2,4 GHz, SSD ligado vCore = 1 PP (núcleo físico) | Processadores Intel E5-2673 v4 (Broadwell) 2,3 GHz, SSD NVMe rápido, vCore=1 LP (hyper-thread) |
-| vCores | 8, 16, 24 vCores | 4, 8, 16, 24, 32, 40, 64, 80 vCores |
-| Memória (taxa de memória/núcleo) | 7 GB por vCore | 5.1 GB por vCore |
+| Número de vCores | 8, 16, 24 vCores | 4, 8, 16, 24, 32, 40, 64, 80 vCores |
+| Memória máxima (taxa de memória/núcleo) | 7 GB por vCore<br/>Adicione mais vCores para obter mais memória. | 5.1 GB por vCore<br/>Adicione mais vCores para obter mais memória. |
 | Memória máximo OLTP na memória | Limite de instância: 3 GB por vCore<br/>Limites de banco de dados:<br/> -8-core: 8 GB por banco de dados<br/> -16 núcleos: 20 GB por banco de dados<br/> -24-core: 36 GB por banco de dados | Limite de instância: 2,5 GB por vCore<br/>Limites de banco de dados:<br/> -8-core: 13 GB por banco de dados<br/> -16 núcleos: 32 GB por banco de dados |
-| Armazenamento de instância máximo (uso geral) |  8 TB | 8 TB |
-| Armazenamento de instância máximo (comercialmente crítico) | 1 TB | 1 TB, 2 TB ou 4 TB, dependendo do número de núcleos |
+| Máxima de instâncias reservadas (uso geral) de armazenamento |  8 TB | 8 TB |
+| Máxima de instâncias reservadas (críticos de negócios) de armazenamento | 1 TB | 1 TB, 2 TB ou 4 TB, dependendo do número de núcleos |
 
 > [!IMPORTANT]
 > Não há suporte para novos bancos de dados Gen4 na região AustraliaEast.
@@ -53,16 +53,16 @@ A instância gerenciada tem duas camadas de serviço: Uso geral e comercialmente
 | **Recurso** | **Uso geral** | **Comercialmente Crítico** |
 | --- | --- | --- |
 | Número de vCores\* | Gen4: 8, 16, 24<br/>Gen5: 4, 8, 16, 24, 32, 40, 64, 80 | Gen4: 8, 16, 24, 32 <br/> Gen5: 4, 8, 16, 24, 32, 40, 64, 80 |
-| Memória | Gen4: 56 GB - 168 GB (7GB/vCore)<br/>Gen5: 40.8 GB - 408 GB (5.1 GB/vCore) | Gen4: 56 GB - 168 GB (7GB/vCore)<br/>Gen5: 40.8 GB - 408 GB (5.1 GB/vCore) |
-| Tamanho máximo de armazenamento de instância | -2 TB para 4 vCores (Gen5)<br/>-8 TB para os outros tamanhos | Gen4: 1 TB <br/> Gen5: <br/>-1 TB para 4, 8, 16 vCores<br/>- 2 TB para 24 vCores<br/>- 4 TB para 32, 40, 64, 80 vCores |
-| Armazenamento máximo por banco de dados | Determinado pelo tamanho de armazenamento máximo por instância | Determinado pelo tamanho de armazenamento máximo por instância |
+| Memória máxima | Gen4: 56 GB - 168 GB (7GB/vCore)<br/>Gen5: 40.8 GB - 408 GB (5.1 GB/vCore)<br/>Adicione mais vCores para obter mais memória. | Gen4: 56 GB - 168 GB (7GB/vCore)<br/>Gen5: 40.8 GB - 408 GB (5.1 GB/vCore)<br/>Adicione mais vCores para obter mais memória. |
+| Máxima de instâncias reservadas de tamanho de armazenamento | -2 TB para 4 vCores (Gen5)<br/>-8 TB para os outros tamanhos | Gen4: 1 TB <br/> Gen5: <br/>-1 TB para 4, 8, 16 vCores<br/>- 2 TB para 24 vCores<br/>- 4 TB para 32, 40, 64, 80 vCores |
+| Tamanho máximo do banco de dados | Determinado pelo tamanho de armazenamento máximo por instância | Determinado pelo tamanho de armazenamento máximo por instância |
 | Número máximo de bancos de dados por instância | 100 | 100 |
-| Arquivos de banco de dados máximo por instância | Até 280 | 32.767 arquivos por banco de dados |
-| Dados/Log IOPS (aproximado) | 500 – 7.500 por arquivo<br/>\*[Depende do tamanho do arquivo](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance#premium-storage-disk-sizes)| 11 mil a 110 mil (1375/vCore) |
-| Taxa de transferência de log | 3 MB/s por vCore<br/>Máx de 22 MB/s por instância | 4 MB/s por vCore<br/>Máximo de 48 MB/s por instância|
-| Taxa de transferência de dados (aproximada) | 100 – 250 MB/s por arquivo<br/>\*[Depende do tamanho do arquivo](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance#premium-storage-disk-sizes) | N/D |
-| Latência de E/S (aproximada) | 5-10 ms | 1-2 ms |
-| Tamanho máximo de TempDB | 192 – 1.920 GB (24 GB por vCore) | Não há restrições - limitadas pelo tamanho de armazenamento de instância máxima |
+| Número máximo de arquivos de banco de dados por instância | Até 280 | 32.767 arquivos por banco de dados |
+| Dados/Log IOPS (aproximado) | 500 – 7.500 por arquivo<br/>\*[Aumentar o tamanho do arquivo para obter mais IOPS](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance#premium-storage-disk-sizes)| 11 mil a 110 mil (1375/vCore)<br/>Adicione mais vCores para obter um melhor desempenho de e/s. |
+| Limite de taxa de transferência de gravação de log | 3 MB/s por vCore<br/>Máx de 22 MB/s por instância | 4 MB/s por vCore<br/>Máximo de 48 MB/s por instância|
+| Taxa de transferência de dados (aproximada) | 100 – 250 MB/s por arquivo<br/>\*[Aumentar o tamanho de arquivo para obter um melhor desempenho de e/s](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance#premium-storage-disk-sizes) | N/D |
+| Latência de e/s de armazenamento (aproximada) | 5-10 ms | 1-2 ms |
+| Tamanho máximo de TempDB | 192 – 1.920 GB (24 GB por vCore)<br/>Adicione mais vCores para obter mais espaço em TempDB. | Limitado pelo tamanho do armazenamento de instância máximo. Tamanho do arquivo de log TempDB é atualmente limitado a 24GB/vCore. |
 | Número máximo de sessões | 30000 | 30000 |
 
 > [!NOTE]

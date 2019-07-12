@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/20/2019
 ms.subservice: hybrid
-ms.author: martincoetzer
+ms.author: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96b5e8ab63c1784ff073c7ba38cd4a6319db43c5
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: a20a1a1009949aa2e6de8586040e918ae15c8d39
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67452729"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67655938"
 ---
 # <a name="four-steps-to-a-strong-identity-foundation-with-azure-active-directory"></a>Quatro etapas para uma base de identidade forte com o Azure Active Directory
 
@@ -147,7 +147,7 @@ Da mesma forma, o [relatório de gerenciamento de senha de autoatendimento](http
 
 ### <a name="self-service-app-management"></a>Gerenciamento de aplicativo de autoatendimento
 
-Antes que os usuários podem descobrir por conta própria aplicativos de seu painel de acesso, você precisa habilitar [acesso a aplicativos de autoatendimento](https://docs.microsoft.com/azure/active-directory/manage-apps/access-panel-manage-self-service-access) a todos os aplicativos que você deseja permitir que os usuários a descobrir por conta própria e solicitar acesso. Acesso de aplicativo de autoatendimento é uma ótima maneira de permitir que os usuários a descobrir por conta própria aplicativos e, opcionalmente, permitir que o grupo de negócios aprovar o acesso a esses aplicativos. Você pode permitir que o grupo de negócios gerenciar as credenciais atribuídas a esses usuários para [senha de logon único em aplicativos](https://docs.microsoft.com/azure/active-directory/manage-apps/application-sign-in-problem-password-sso-gallery#configure-the-application-for-password-single-sign-on) diretamente de seus painéis de acesso.
+Antes que os usuários podem descobrir por conta própria aplicativos de seu painel de acesso, você precisa habilitar [acesso a aplicativos de autoatendimento](https://docs.microsoft.com/azure/active-directory/manage-apps/access-panel-manage-self-service-access) a todos os aplicativos que você deseja permitir que os usuários a descobrir por conta própria e solicitar acesso. Acesso de aplicativo de autoatendimento é uma ótima maneira de permitir que os usuários a descobrir por conta própria aplicativos e, opcionalmente, permitir que o grupo de negócios aprovar o acesso a esses aplicativos. Você pode permitir que o grupo de negócios gerenciar as credenciais atribuídas a esses usuários para [senha de logon único em aplicativos](https://docs.microsoft.com/azure/active-directory/manage-apps/application-sign-in-problem-password-sso-gallery#configure-password-sso-for-an-azure-ad-gallery-app) diretamente de seus painéis de acesso.
 
 ### <a name="self-service-group-management"></a>Gerenciamento de grupo de autoatendimento
 

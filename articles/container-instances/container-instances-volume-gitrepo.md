@@ -7,19 +7,19 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 06/15/2018
 ms.author: danlep
-ms.openlocfilehash: 70593bffbf30b3a0c0978e56c2af1a856a22f2ec
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 86f8c099061cd3b75b77330c567f34dea2b34928
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60563011"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657593"
 ---
 # <a name="mount-a-gitrepo-volume-in-azure-container-instances"></a>Montar um volume gitRepo em Instâncias de Contêiner do Azure
 
 Saiba como montar um volume *gitRepo* para clonar um repositório Git em suas instâncias de contêiner.
 
 > [!NOTE]
-> A montagem de um volume *gitRepo* está atualmente restrita a contêineres do Linux. Enquanto estamos trabalhando para trazer todos os recursos para contêineres do Windows, você pode encontrar as diferenças atuais de plataforma em [Cotas e disponibilidade de região para Instâncias de Contêiner do Azure](container-instances-quotas.md).
+> A montagem de um volume *gitRepo* está atualmente restrita a contêineres do Linux. Enquanto estamos trabalhando para trazer todos os recursos para contêineres do Windows, você pode encontrar diferenças da plataforma atual na [visão geral](container-instances-overview.md#linux-and-windows-containers).
 
 ## <a name="gitrepo-volume"></a>Volume gitRepo
 
@@ -35,9 +35,9 @@ Quando você monta um volume *gitRepo*, você pode definir três propriedades pa
 
 ## <a name="mount-gitrepo-volume-azure-cli"></a>Montagem gitrepo: CLI do Azure
 
-Para montar um volume gitRepo quando você implanta instâncias de contêiner com o [CLI do Azure](/cli/azure), forneça os parâmetros `--gitrepo-url` e `--gitrepo-mount-path` para o [az criar o comando ] [ az-container-create]. Você pode opcionalmente especificar o diretório dentro do volume para clonar em (`--gitrepo-dir`) e o hash de confirmação da revisão a ser clonado (`--gitrepo-revision`).
+Para montar um volume gitRepo quando você implanta instâncias de contêiner com o [CLI do Azure](/cli/azure), forneça o `--gitrepo-url` e `--gitrepo-mount-path` parâmetros para o [criar contêiner az][az-container-create] comando. Você pode opcionalmente especificar o diretório dentro do volume para clonar em (`--gitrepo-dir`) e o hash de confirmação da revisão a ser clonado (`--gitrepo-revision`).
 
-Este exemplo de comando clona o Microsoft [aci-helloworld] [ aci-helloworld] exemplo de aplicativo em `/mnt/aci-helloworld` na instância de contêiner:
+Este exemplo de comando clona o Microsoft [aci-helloworld][aci-helloworld] exemplo de aplicativo em `/mnt/aci-helloworld` na instância de contêiner:
 
 ```azurecli-interactive
 az container create \
@@ -50,7 +50,7 @@ az container create \
     --gitrepo-mount-path /mnt/aci-helloworld
 ```
 
-Para verificar se o volume gitRepo foi montado, inicie um shell no contêiner com [exec de contêiner az] [ az-container-exec] e liste o diretório:
+Para verificar se o volume gitRepo foi montado, iniciar um shell no contêiner com [exec de contêiner do az][az-container-exec] e liste o diretório:
 
 ```console
 $ az container exec --resource-group myResourceGroup --name hellogitrepo --exec-command /bin/sh

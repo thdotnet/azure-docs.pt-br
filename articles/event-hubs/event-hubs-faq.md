@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 05/15/2019
 ms.author: shvija
-ms.openlocfilehash: c5e58f7bc89fbe2d93f6610465abf4a92fd31406
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e1ec6987f1a142e9bf9cd4413cfb4444bde1b7dd
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66476122"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67796996"
 ---
 # <a name="event-hubs-frequently-asked-questions"></a>Perguntas frequentes sobre os Hubs de Eventos
 
@@ -83,7 +83,7 @@ Para localizar os endereços IP corretos para a lista branca para suas conexões
     ```
     nslookup <YourNamespaceName>.servicebus.windows.net
     ```
-2. Anote o endereço IP retornado na `Non-authoritative answer`. Esse endereço IP é estático. O único ponto no tempo que ele seria alterado é se você restaurar o namespace de logon em um cluster diferente.
+2. Anote o endereço IP retornado na `Non-authoritative answer`. O único ponto no tempo que ele seria alterado é se você restaurar o namespace de logon em um cluster diferente.
 
 Se você usar a redundância de zona para seu namespace, você precisará seguir algumas etapas adicionais: 
 
@@ -230,7 +230,7 @@ A Captura usa uma conta de armazenamento fornecida quando habilitado em um Hub d
 
 Para obter uma lista de todas as cotas de Hubs de Eventos, consulte [cotas](event-hubs-quotas.md).
 
-## <a name="troubleshooting"></a>solução de problemas
+## <a name="troubleshooting"></a>Solução de problemas
 
 ### <a name="why-am-i-not-able-to-create-a-namespace-after-deleting-it-from-another-subscription"></a>Por que não eu consigo criar um namespace após excluí-lo de outra assinatura? 
 Quando você exclui um namespace de uma assinatura, aguarde até 4 horas antes de recriá-lo com o mesmo nome em outra assinatura. Caso contrário, a seguinte mensagem de erro será exibida: `Namespace already exists`. 

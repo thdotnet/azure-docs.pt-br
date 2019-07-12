@@ -9,12 +9,12 @@ ms.date: 05/21/2019
 ms.author: mhopkins
 ms.reviewer: yzheng
 ms.subservice: common
-ms.openlocfilehash: 50eb62b20be66337c819372fa3d97eae4d7214b8
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 43a673621aa3c114f99479a6da97153dae44990d
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67435753"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67696090"
 ---
 # <a name="manage-the-azure-blob-storage-lifecycle"></a>Gerenciar o ciclo de vida de armazenamento de BLOBs do Azure
 
@@ -31,7 +31,7 @@ Considere um cenário em que dados obtém acesso frequente durante os estágios 
 
 ## <a name="storage-account-support"></a>Suporte da conta de armazenamento
 
-A política de gerenciamento do ciclo de vida está disponível nas contas GPv2 (Uso Geral v2) e do Armazenamento de Blobs. No portal do Azure, você pode atualizar uma conta de finalidade geral (GPv1) existente para uma conta de GPv2. Para saber mais sobre as contas de armazenamento, confira [Visão geral da conta de armazenamento do Azure](../common/storage-account-overview.md).  
+A política de gerenciamento do ciclo de vida está disponível com o uso geral v2 (GPv2) contas, as contas de armazenamento de BLOBs e contas de armazenamento de Blob de blocos de Premium. No portal do Azure, você pode atualizar uma conta de finalidade geral (GPv1) existente para uma conta de GPv2. Para saber mais sobre as contas de armazenamento, confira [Visão geral da conta de armazenamento do Azure](../common/storage-account-overview.md).  
 
 ## <a name="pricing"></a>Preços
 
@@ -39,7 +39,7 @@ O recurso de gerenciamento do ciclo de vida é gratuito. O custo de operação n
 
 ## <a name="regional-availability"></a>Disponibilidade regional
 
-O recurso de gerenciamento do ciclo de vida está disponível em todas as regiões globais do Azure.
+O recurso de gerenciamento do ciclo de vida está disponível em todas as regiões globais do Azure e o Azure governamental.
 
 ## <a name="add-or-remove-a-policy"></a>Adicionar ou remover uma política
 
@@ -199,10 +199,10 @@ Cada regra na política tem vários parâmetros:
 
 | Nome do parâmetro | Tipo de parâmetro | Observações | Obrigatório |
 |----------------|----------------|-------|----------|
-| `name`         | Cadeia de caracteres |Um nome de regra pode incluir até 256 caracteres alfanuméricos. A regra de nome diferencia maiúsculas de minúsculas.  Ela deve ser exclusiva em uma política. | True |
-| `enabled`      | Boolean | Um booliano opcional para permitir que uma regra para ser temporário desabilitado. Valor padrão é true se não for definido. | Falso | 
-| `type`         | Um valor de enumeração | O tipo atual de válido é `Lifecycle`. | True |
-| `definition`   | Um objeto que define a regra de ciclo de vida | Cada definição é composta por um conjunto de filtros e um conjunto de ações. | True |
+| `name`         | string |Um nome de regra pode incluir até 256 caracteres alfanuméricos. A regra de nome diferencia maiúsculas de minúsculas.  Ela deve ser exclusiva em uma política. | verdadeiro |
+| `enabled`      | Boolean | Um booliano opcional para permitir que uma regra para ser temporário desabilitado. Valor padrão é true se não for definido. | False | 
+| `type`         | Um valor de enumeração | O tipo atual de válido é `Lifecycle`. | verdadeiro |
+| `definition`   | Um objeto que define a regra de ciclo de vida | Cada definição é composta por um conjunto de filtros e um conjunto de ações. | verdadeiro |
 
 ## <a name="rules"></a>Regras
 
@@ -262,7 +262,7 @@ Ações são aplicadas aos blobs filtrados quando a execução condição for at
 
 Gerenciamento de ciclo de vida dá suporte a disposição em camadas e exclusão de blobs e a exclusão de instantâneos de blob. Defina, pelo menos, uma ação para cada regra em blobs ou instantâneos de blob.
 
-| Ação        | Blob base                                   | Instantâneo      |
+| Action        | Blob base                                   | Instantâneo      |
 |---------------|---------------------------------------------|---------------|
 | tierToCool    | Dá suporte aos blobs atualmente presentes na camada frequente         | Sem suporte |
 | tierToArchive | Dá suporte aos blobs atualmente presentes na camada frequente ou esporádica | Sem suporte |
@@ -391,7 +391,7 @@ Para dados que são modificados e acessados regularmente durante seu ciclo de vi
 }
 ```
 
-## <a name="faq"></a>Perguntas frequentes
+## <a name="faq"></a>Perguntas Frequentes
 
 **Eu criei uma nova política, por que as ações de não executar imediatamente?**  
 A plataforma executa a política de ciclo de vida uma vez por dia. Depois de configurar uma política, ele pode levar até 24 horas para algumas ações ser executado pela primeira vez.  

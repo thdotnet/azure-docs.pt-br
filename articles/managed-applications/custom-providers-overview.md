@@ -6,12 +6,12 @@ ms.service: managed-applications
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: jobreen
-ms.openlocfilehash: f418cd6c5470740ce123448ddbbe54cb6e89dabe
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: d25ef00adc307bae57da2c04d4472874f8d67bcd
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67475953"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67796074"
 ---
 # <a name="azure-custom-resource-providers-overview"></a>Visão geral dos provedores de recurso personalizada do Azure
 
@@ -58,7 +58,7 @@ Propriedade | Obrigatório | DESCRIÇÃO
 ---|---|---
 name | *Sim* | O nome da definição do ponto de extremidade. Azure vai expor esse nome por meio de sua API em ' /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomProviders/<br>resourceProviders/{resourceProviderName}/{endpointDefinitionName}'
 routingType | *no* | Determina o tipo de contrato com o **ponto de extremidade**. Se não for especificado, o padrão será "Proxy".
-endpoint | *Sim* | O ponto de extremidade para encaminhar as solicitações. Isso irá manipular a resposta, bem como os efeitos colaterais da solicitação.
+ponto de extremidade | *Sim* | O ponto de extremidade para encaminhar as solicitações. Isso irá manipular a resposta, bem como os efeitos colaterais da solicitação.
 
 ### <a name="building-custom-resources"></a>Criando recursos personalizados
 
@@ -87,8 +87,8 @@ HttpMethod | URI de exemplo | DESCRIÇÃO
 ---|---|---
 PUT | /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/<br>providers/Microsoft.CustomProviders/resourceProviders/{resourceProviderName}/<br>myCustomResources/{customResourceName}?api-version=2018-09-01-preview | A chamada de API REST do Azure para criar um novo recurso.
 DELETE | /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/<br>providers/Microsoft.CustomProviders/resourceProviders/{resourceProviderName}/<br>myCustomResources/{customResourceName}?api-version=2018-09-01-preview | A chamada de API REST do Azure para excluir um recurso existente.
-GET | /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/<br>providers/Microsoft.CustomProviders/resourceProviders/{resourceProviderName}/<br>myCustomResources/{customResourceName}?api-version=2018-09-01-preview | A chamada de API REST do Azure para recuperar um recurso existente.
-GET | /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/<br>providers/Microsoft.CustomProviders/resourceProviders/{resourceProviderName}/<br>myCustomResources?api-version=2018-09-01-preview | A chamada de API REST do Azure para recuperar a lista de recursos existentes.
+OBTER | /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/<br>providers/Microsoft.CustomProviders/resourceProviders/{resourceProviderName}/<br>myCustomResources/{customResourceName}?api-version=2018-09-01-preview | A chamada de API REST do Azure para recuperar um recurso existente.
+OBTER | /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/<br>providers/Microsoft.CustomProviders/resourceProviders/{resourceProviderName}/<br>myCustomResources?api-version=2018-09-01-preview | A chamada de API REST do Azure para recuperar a lista de recursos existentes.
 
 ### <a name="building-custom-actions"></a>Criação de ações personalizadas
 
@@ -115,7 +115,7 @@ APIs adicionadas para o Azure para o exemplo acima:
 
 HttpMethod | URI de exemplo | DESCRIÇÃO
 ---|---|---
-POST | /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/<br>providers/Microsoft.CustomProviders/resourceProviders/{resourceProviderName}/<br>myCustomAction?api-version=2018-09-01-preview | A chamada de API REST do Azure para ativar a ação.
+POSTAR | /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/<br>providers/Microsoft.CustomProviders/resourceProviders/{resourceProviderName}/<br>myCustomAction?api-version=2018-09-01-preview | A chamada de API REST do Azure para ativar a ação.
 
 ## <a name="looking-for-help"></a>Procurando ajuda
 
@@ -125,6 +125,7 @@ Se você tiver perguntas para o desenvolvimento do provedor de recursos do Azure
 
 Neste artigo, você aprendeu sobre provedores personalizados. Vá para o próximo artigo para criar um provedor personalizado.
 
-- [Tutorial: Criar provedor de recursos personalizado do Azure e implantar recursos personalizados](./create-custom-provider.md)
+- [Início Rápido: Criar provedor de recursos personalizado do Azure e implantar recursos personalizados](./create-custom-provider.md)
+- [Tutorial: Criar ações personalizadas e os recursos no Azure](./tutorial-custom-providers-101.md)
 - [Como: Adicionar ações personalizadas a API REST do Azure](./custom-providers-action-endpoint-how-to.md)
 - [Como: Adicionar recursos personalizados à API REST do Azure](./custom-providers-resources-endpoint-how-to.md)

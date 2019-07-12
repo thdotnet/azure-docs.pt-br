@@ -3,8 +3,8 @@ title: Delegar tarefas de gerenciamento de direitos do AD do Azure (visualizaç�
 description: Saiba mais sobre as funções que você pode atribuir a delegar tarefas de gerenciamento de direitos do Active Directory.
 services: active-directory
 documentationCenter: ''
-author: rolyon
-manager: mtillman
+author: msaburnley
+manager: daveba
 editor: markwahl-msft
 ms.service: active-directory
 ms.workload: identity
@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 06/07/2019
-ms.author: rolyon
+ms.date: 07/10/2019
+ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8fa0be8e2af7644564ba27e6d58fda09b1ae7bc7
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: d4c4933847a39a56084894e5bbd40e166e6b73b6
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67191493"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67798628"
 ---
 # <a name="delegate-tasks-in-azure-ad-entitlement-management-preview"></a>Delegar tarefas de gerenciamento de direitos do AD do Azure (visualização)
 
@@ -38,7 +38,7 @@ Em vez de conceder permissões irrestritas a não-administradores, você pode co
 
 Para entender como você pode delegar tarefas de gerenciamento de direitos, convém para considerar um exemplo. Suponha que sua organização tem os seguintes cinco usuários:
 
-| Usuário | department | Observações |
+| User | department | Observações |
 | --- | --- | --- |
 | Alice | IT | Administrador global |
 | Roberto | Pesquisa | Bob também é o proprietário de um grupo de pesquisa |
@@ -64,7 +64,7 @@ A pesquisa e os departamentos de marketing podem utilizar o gerenciamento de dir
 
 Gerenciamento de direitos tem as seguintes funções que são específicas ao gerenciamento de direitos.
 
-| Função | DESCRIÇÃO |
+| Role | DESCRIÇÃO |
 | --- | --- |
 | Criador de catálogo | Criar e gerenciar catálogos. Normalmente um administrador de TI que não seja um Administrador Global ou um proprietário de recurso para uma coleção de recursos. A pessoa que cria um catálogo automaticamente se torna o proprietário do catálogo primeiro do catálogo e pode adicionar os proprietários de catálogo adicionais. |
 | Proprietário do catálogo | Editar e gerenciar catálogos existentes. Normalmente, um administrador de TI ou proprietários de recursos ou um usuário que o proprietário do catálogo tiver designado. |
@@ -84,7 +84,7 @@ A tabela a seguir lista as tarefas que podem ser executadas por essas funções.
 | [Editar um catálogo](entitlement-management-catalog-create.md#edit-a-catalog) |  | :heavy_check_mark: |  |  |
 | [Excluir um catálogo](entitlement-management-catalog-create.md#delete-a-catalog) |  | :heavy_check_mark: |  |  |
 | [Adicionar um proprietário do catálogo ou um Gerenciador de pacotes de acesso a um catálogo](#add-a-catalog-owner-or-an-access-package-manager) |  | :heavy_check_mark: |  |  |
-| [Criar um novo pacote de acesso em um catálogo](entitlement-management-access-package-create.md) |  | :heavy_check_mark: |  |  |
+| [Criar um novo pacote de acesso em um catálogo](entitlement-management-access-package-create.md) |  | :heavy_check_mark:  | :heavy_check_mark:  |  |
 | [Gerenciar funções de recurso em um pacote de acesso](entitlement-management-access-package-edit.md) |  | :heavy_check_mark: | :heavy_check_mark: |  |
 | [Especifique quem pode solicitar um pacote de acesso](entitlement-management-access-package-edit.md#add-a-new-policy) |  | :heavy_check_mark: | :heavy_check_mark: |  |
 | [Atribuir diretamente um usuário a um pacote de acesso](entitlement-management-access-package-edit.md#directly-assign-a-user) |  | :heavy_check_mark: | :heavy_check_mark: |  |
@@ -104,15 +104,15 @@ Para um usuário que não é um Administrador Global ou administrador de usuári
 
 | Função do diretório do Azure Active Directory | Função de gerenciamento de direitos | Pode adicionar o grupo de segurança | Pode adicionar o grupo do Office 365 | Pode adicionar o aplicativo | Pode adicionar o site do SharePoint Online |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| [Administrador global](../users-groups-roles/directory-assign-admin-roles.md) | n/d |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Usuário administrador](../users-groups-roles/directory-assign-admin-roles.md) | n/d |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |
+| [Administrador global](../users-groups-roles/directory-assign-admin-roles.md) | N/D |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| [Usuário administrador](../users-groups-roles/directory-assign-admin-roles.md) | N/D |  :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |  |
 | [Administrador do Intune](../users-groups-roles/directory-assign-admin-roles.md) | Proprietário do catálogo | :heavy_check_mark: | :heavy_check_mark: |  |  |
 | [Administrador do Exchange](../users-groups-roles/directory-assign-admin-roles.md) | Proprietário do catálogo |  | :heavy_check_mark: |  |  |
 | [Administrador de serviços de equipes](../users-groups-roles/directory-assign-admin-roles.md) | Proprietário do catálogo |  | :heavy_check_mark: |  |  |
 | [Administrador do SharePoint](../users-groups-roles/directory-assign-admin-roles.md) | Proprietário do catálogo |  | :heavy_check_mark: |  | :heavy_check_mark: |
 | [Administrador de aplicativo](../users-groups-roles/directory-assign-admin-roles.md) | Proprietário do catálogo |  |  | :heavy_check_mark: |  |
 | [Administrador de aplicativos de nuvem](../users-groups-roles/directory-assign-admin-roles.md) | Proprietário do catálogo |  |  | :heavy_check_mark: |  |
-| Usuário | Proprietário do catálogo | Proprietário do grupo somente se | Proprietário do grupo somente se | Somente se o proprietário de aplicativo |  |
+| User | Proprietário do catálogo | Proprietário do grupo somente se | Proprietário do grupo somente se | Somente se o proprietário de aplicativo |  |
 
 ## <a name="add-a-catalog-creator"></a>Adicionar um criador de catálogo
 

@@ -14,12 +14,12 @@ ms.workload: na
 ms.custom: seodec18
 ms.date: 06/18/2019
 ms.author: shvija
-ms.openlocfilehash: 3eb20013a6b3afaddce10f2e4652add0edf22a9a
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: c46b333f2cc304cc12ddf78670b60940c7bc0db3
+ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67276776"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67827704"
 ---
 # <a name="scaling-with-event-hubs"></a>Dimensionamento com os Hubs de eventos
 
@@ -48,14 +48,14 @@ O serviço de Hubs de Eventos aumenta a taxa de transferência quando a carga au
 Para obter mais informações sobre o recurso inflar, consulte [dimensionar automaticamente as unidades de produtividade](event-hubs-auto-inflate.md).
 
 ## <a name="partitions"></a>Partições
+[!INCLUDE [event-hubs-partitions](../../includes/event-hubs-partitions.md)]
 
-As partições permitem que você escala para o processamento de downstream. Por causa do modelo de consumidor particionado Hubs de eventos oferece com partições, você pode expandir ao processar seus eventos simultaneamente. Um Hub de eventos pode ter até 32 partições.
+### <a name="partition-key"></a>Chave de partição
 
-É recomendável balancear partições e unidades de taxa de transferência de 1:1 para obter uma escala ideal. Uma única partição tem uma entrada e saída de até uma unidade de taxa de transferência garantida. Embora você possa ser capaz de alcançar maior taxa de transferência em uma partição, o desempenho não é garantido. É por isso é altamente recomendável que o número de partições em um hub de eventos seja maior que ou igual ao número de unidades de taxa de transferência.
+Use uma [chave de partição](event-hubs-programming-guide.md#partition-key) para mapear dados de evento de entrada em partições específicas para fins de organização de dados. A chave de partição é um valor fornecido pelo remetente passado para um hub de eventos. Ela é processada por meio de uma função de hash estática, que cria a atribuição de partição. Se você não especificar uma chave de partição ao publicar um evento, uma atribuição de round robin será usada.
 
-Dada a taxa de transferência total que você planeja necessidade, você sabe o número de unidades de taxa de transferência, que você precisa e o número mínimo de partições, mas quantas partições você deve ter? Escolha o número de partições com base em paralelismo de downstream que você quer atingir, bem como suas necessidades futuras de taxa de transferência. Não há nenhum custo para o número de partições que você tem em um Hub de eventos.
+O editor de eventos só está ciente da sua chave de partição, não da partição para a qual os eventos são publicados. Essa desassociação de chave e partição isenta o remetente da necessidade de saber muito sobre o processamento de downstream. Uma identidade por dispositivo ou exclusiva do usuário é uma boa chave de partição, mas outros atributos, como geografia, também podem ser usados para agrupar eventos relacionados em uma única partição.
 
-Para obter informações detalhadas sobre o preço de Hubs de Eventos, consulte [Preço de Hubs de Eventos](https://azure.microsoft.com/pricing/details/event-hubs/).
 
 ## <a name="next-steps"></a>Próximas etapas
 Você pode saber mais sobre Hubs de Eventos visitando os links abaixo:

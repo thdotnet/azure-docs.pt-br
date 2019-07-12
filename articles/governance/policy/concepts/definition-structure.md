@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 398efd36e6c8d82a5090b7446c95abb2d1bfbca1
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 03c7be9112ed22bb43e259fa72581d382a276163
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67428753"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67718192"
 ---
 # <a name="azure-policy-definition-structure"></a>Estrutura de definição da Política do Azure
 
@@ -105,7 +105,7 @@ Os parâmetros funcionam da mesma maneira que ao criar políticas. Ao incluir pa
 Um parâmetro tem as seguintes propriedades que são usadas na definição de política:
 
 - **nome**: o nome do parâmetro. Usado pela função de implantação `parameters` dentro da regra de política. Para saber mais, confira [Usar o valor de parâmetro](#using-a-parameter-value).
-- `type`: determina se o parâmetro é uma **cadeia de caracteres** ou uma **matriz**.
+- `type`: Determina se o parâmetro é um **cadeia de caracteres**, **array**, **objeto**, **booliano**, **inteiro**, **float**, ou **datetime**.
 - `metadata`: define as subpropriedades usadas principalmente pelo portal do Azure para exibição de informações simples:
   - `description`: a explicação de uso do parâmetro. Pode ser usado para fornecer exemplos de valores aceitáveis.
   - `displayName`: O nome amigável exibido no portal para o parâmetro.
@@ -304,7 +304,7 @@ No exemplo a seguir, `concat` é usado para criar uma pesquisa de campo de marca
 }
 ```
 
-### <a name="value"></a>Value
+### <a name="value"></a>Valor
 
 As condições também podem ser formadas usando o **valor**. O **valor** verifica as condições em relação aos [parâmetros](#parameters), [funções de modelo com suporte](#policy-functions) ou literais.
 O **valor** é emparelhado a uma [condição](#conditions) com suporte.
