@@ -7,13 +7,13 @@ manager: vijayts
 ms.service: backup
 ms.topic: conceptual
 ms.date: 4/3/2019
-ms.author: geetha
-ms.openlocfilehash: 893a22fb9f325625707869c8f6571d572b8f6b33
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: geg
+ms.openlocfilehash: 24ae6ddae30110f6d125158d6f2744bf4eae5006
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61216880"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67704984"
 ---
 # <a name="back-up-and-restore-encrypted-azure-vm"></a>Fazer backup e restaurar a VM do Azure criptografada
 
@@ -79,7 +79,7 @@ Além disso, há algumas coisas que você talvez precise fazer em algumas circun
 
       ![Folha Cenário](./media/backup-azure-vms-encryption/select-backup-goal-one.png)
 
-5. Na **política de Backup** > **escolher política de backup**, selecione a política que você deseja associar ao cofre. Em seguida, clique em **OK**.
+5. Na **política de Backup** > **escolher política de backup**, selecione a política que você deseja associar ao cofre. Clique em **OK**.
     - Uma política de backup Especifica quando backups são feitos e por quanto tempo eles são armazenados.
     - Os detalhes da política padrão estão listados no menu suspenso.
 
@@ -113,7 +113,7 @@ O backup inicial será executado de acordo com o agendamento, mas você pode exe
 2. Em **Itens de Backup**, clique em **Máquina Virtual do Azure**.
 3. No **itens de Backup** lista, clique nas reticências (...).
 4. Clique em **Fazer backup agora**.
-5. Na **fazer Backup agora**, use o controle de calendário para selecionar o último dia em que o ponto de recuperação deve ser mantido. Em seguida, clique em **OK**.
+5. Na **fazer Backup agora**, use o controle de calendário para selecionar o último dia em que o ponto de recuperação deve ser mantido. Clique em **OK**.
 6. Monitorar as notificações do portal. Você pode monitorar o andamento do trabalho no painel do cofre > **Trabalhos de Backup** > **Em Andamento**. Dependendo do tamanho da VM, a criação do backup inicial pode demorar um pouco.
 
 
@@ -151,7 +151,7 @@ Para definir permissões:
 Você pode restaurar VMs criptografadas da seguinte maneira:
 
 1. [Restaurar o disco VM](backup-azure-arm-restore-vms.md#restore-disks).
-2. Em seguida, faça o seguinte:
+2. Siga um destes procedimentos:
     - Use o modelo gerado durante a operação de restauração para personalizar as configurações da VM e disparar a implantação da VM. [Saiba mais](backup-azure-arm-restore-vms.md#use-templates-to-customize-a-restored-vm).
     - Crie uma nova VM de discos restaurados usando o Powershell. [Saiba mais](backup-azure-vms-automation.md#create-a-vm-from-restored-disks).
 

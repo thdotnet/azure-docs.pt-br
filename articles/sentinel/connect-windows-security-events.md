@@ -7,19 +7,20 @@ author: rkarlin
 manager: rkarlin
 editor: ''
 ms.assetid: d51d2e09-a073-41c8-b396-91d60b057e6a
-ms.service: sentinel
+ms.service: azure-sentinel
+ms.subservice: azure-sentinel
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/17/2019
 ms.author: rkarlin
-ms.openlocfilehash: 36d38aa82b4f0ec8d7d9ef6ebb1145b1fcc334df
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: 188febf090ddb3f685f9d3c3b94d822f15bbcfcb
+ms.sourcegitcommit: 80aaf27e3ad2cc4a6599a3b6af0196c6239e6918
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67190580"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67673775"
 ---
 # <a name="connect-windows-security-events"></a>Conectar eventos de segurança do Windows 
 
@@ -30,10 +31,10 @@ ms.locfileid: "67190580"
 Você pode transmitir todos os eventos de segurança dos servidores Windows conectados ao espaço de trabalho do Azure Sentinel. Essa conexão permite que você exibir painéis, criar alertas personalizados e melhorará a investigação. Isso fornece mais informações sobre a rede da sua organização e aprimora sua capacidade de operação de segurança.  Você pode selecionar quais eventos de fluxo:
 
 - **Todos os eventos** -Windows todos os eventos de segurança e AppLocker.
-- **Common** -um conjunto padrão de eventos para fins de auditoria. Uma trilha de auditoria de usuário completo está incluída nesse conjunto. Por exemplo, este conjunto contém tanto os logons quanto os logoffs de usuário (ID de evento 4634). Incluímos ações de auditoria, como alterações de grupo de segurança, operações Kerberos do controlador de domínio de chave e outros eventos que são recomendados por organizações do setor.
+- **Common** -um conjunto padrão de eventos para fins de auditoria. Uma trilha de auditoria de usuário completo está incluída nesse conjunto. Por exemplo, esse conjunto contém a entrada do usuário e os eventos (ID de evento 4634) de entrada do usuário. Incluímos ações de auditoria, como alterações de grupo de segurança, operações Kerberos do controlador de domínio de chave e outros eventos que são recomendados por organizações do setor.
 
 Eventos que têm um volume muito baixo foram incluídos no conjunto Comum, pois a principal motivação para escolhê-los dentre todos os eventos era reduzir o volume e não filtrar eventos específicos.
-- **Mínimo** -um pequeno conjunto de eventos que podem indicar possíveis ameaças. Ao habilitar essa opção, você não poderá ter uma trilha de auditoria completa.  Esse conjunto aborde apenas os eventos que podem indicar uma violação com êxito e eventos importantes que tenham um volume muito baixo. Por exemplo, este conjunto conterá logon de usuário bem-sucedidos e malsucedidos (IDs de evento 4624 e 4625), mas não conterá o logout que seja importante para a auditoria, mas não seja significativo para a detecção e que tenha um volume relativamente alto. A maior parte do volume de dados desse conjunto é dos eventos de logon e do evento de criação de processo (ID de evento 4688).
+- **Mínimo** -um pequeno conjunto de eventos que podem indicar possíveis ameaças. Ao habilitar essa opção, você não poderá ter uma trilha de auditoria completa.  Esse conjunto aborde apenas os eventos que podem indicar uma violação com êxito e eventos importantes que tenham um volume muito baixo. Por exemplo, este conjunto contém logon usuário bem-sucedidas e com falha (evento IDs 4624 e 4625), mas ele não contém informações que são importantes para auditoria, mas não é significativo para a detecção e tem um volume relativamente alto de saída. A maioria do volume de dados desse conjunto é o evento de criação de processo (ID de evento 4688) e de eventos de entrada.
 - **Nenhum** -nenhuma segurança ou eventos do AppLocker.
 
 > [!NOTE]

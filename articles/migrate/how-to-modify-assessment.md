@@ -1,63 +1,72 @@
 ---
-title: Personalizar as configurações de avaliação de Migrações para Azure | Microsoft Docs
-description: Descreve como configurar e executar uma avaliação de migração de VMs VMware para o Azure usando o Planejador de Migrações para Azure
+title: Personalizar as avaliações para avaliação de servidor de migrar do Azure | Microsoft Docs
+description: Descreve como personalizar as avaliações criadas com a avaliação de servidor de migrar do Azure
 author: rayne-wiselman
 ms.service: azure-migrate
 ms.topic: article
-ms.date: 01/10/2019
+ms.date: 07/09/2019
 ms.author: raynew
-ms.openlocfilehash: 8419d7e7a91e4cbfd0eebfe00d35bf498cf5998c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8b200ce3d6e73a575b1b89d82a9323d58f435a48
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62129816"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807920"
 ---
 # <a name="customize-an-assessment"></a>Personalizar uma avaliação
 
-As [Migrações para Azure](migrate-overview.md) criam avaliações com configurações padrão. Depois de criar uma avaliação, você pode modificar essas configurações padrão usando as instruções neste artigo.
+Este artigo descreve como personalizar as avaliações criadas pela avaliação de servidor de migrar do Azure.
+
+[As migrações para Azure](migrate-services-overview.md) fornece um hub central para acompanhar a descoberta, avaliação e migração de seus aplicativos locais e cargas de trabalho e VMs, para o Azure na nuvem privada/pública. O hub fornece ferramentas de migrações para Azure para avaliação e migração, bem como ofertas do ISV (fornecedor) independentes de software de terceiros.
+
+Você pode usar a ferramenta de avaliação de servidor de migrar do Azure para criar avaliações para VMs do VMware locais e VMs do Hyper-V, em preparação para migração para o Azure. 
+
+## <a name="about-assessments"></a>Sobre avaliações
+
+Há dois tipos de avaliações, que você pode executar usando a avaliação de servidor de migrar do Azure.
+
+**Avaliação** | **Detalhes** | **Dados**
+--- | --- | ---
+**Com base no desempenho** | Avaliações com base nos dados de desempenho coletados | **Tamanho VM recomendado**: Com base nos dados de utilização de CPU e memória.<br/><br/> **O tipo de disco (disco padrão ou premium gerenciado) recomendado**: Com base na IOPS e taxa de transferência dos discos no local.
+**Como no local** | Avaliações com base no local de dimensionamento. | **Tamanho VM recomendado**: Com base no tamanho da VM local<br/><br> **Tipo de disco recomendado**: Com base na configuração do tipo de armazenamento selecionada para a avaliação.
+
+
+## <a name="how-is-an-assessment-done"></a>Como uma avaliação é feita?
+
+Uma avaliação das Migrações para Azure tem três etapas. A avaliação começa com uma análise de adequação, seguida de dimensionamento, e por fim, uma estimativa de custo mensal. Uma máquina só passa para um estágio posterior se passar pelo anterior. Por exemplo, se um computador falhar na verificação de adequação do Azure, será marcado como não adequado para o Azure, e o dimensionamento e o custo não serão calculados.
+
+## <a name="whats-in-an-assessment"></a>O que é uma avaliação?
+
+**Property** | **Detalhes**
+--- | ---
+**Local de destino** | O local do Azure para o qual você deseja migrar.<br/> As migrações para Azure atualmente dá suporte a essas regiões de destino: Leste da Austrália, Sudeste da Austrália, Sul do Brasil, Canadá Central, Leste do Canadá, Índia Central, centro dos EUA, Leste da China, Norte da China, Ásia Oriental, Leste dos EUA, Leste dos EUA 2, Alemanha Central, Alemanha – nordeste da Alemanha, Japão Leste, oeste do Japão, Coreia Central, Coreia Sul, Norte Centro dos EUA, Europa Setentrional, Centro-Sul dos EUA, Sudeste Asiático, Sul da Índia, Sul do Reino Unido, oeste do Reino Unido, gov – Arizona, US gov – Texas, US Gov. EUA Virgínia, EUA Central, Europa Ocidental, Índia Ocidental, oeste dos EUA e Oeste dos EUA 2.<br/> Por padrão, a região de destino é definida como Oeste dos EUA 2.
+**Tipo de armazenamento** | Discos SSD de discos/Standard de HDD padrão/Premium.<br/> Quando você especifica o tipo de armazenamento como automáticos em uma avaliação, a recomendação de disco é baseada nos dados de desempenho dos discos (IOPS e taxa de transferência).<br/> Se você especificar o tipo de armazenamento como Premium/Standard, recomenda a avaliação um disco SKU dentro do tipo de armazenamento selecionada.<br/> Se você quiser obter uma única instância VM SLA de 99,9%, você pode definir o tipo de armazenamento como discos gerenciados Premium. Em seguida, todos os discos na avaliação serão recomendados como discos gerenciados Premium. <br/> As Migrações para Azure são compatíveis com discos gerenciados apenas para avaliação de migração.<br/> 
+**Instâncias reservadas (RI)** | Especifica essa propriedade, se você tiver reservado instâncias no Azure. As estimativas de custo na avaliação levarão descontos de RI em conta. As instâncias reservadas são atualmente só tem suporte para pago pelo uso oferece nas migrações para Azure.
+**Critério de dimensionamento** | Usado para redimensionar VMs. Dimensionamento pode ser baseada em desempenho, ou **como local**, sem considerar o histórico de desempenho.
+**Histórico de desempenho** | A duração a considerar para avaliar o desempenho da VM. Essa propriedade só é aplicável quando o dimensionamento é baseado em desempenho.
+**Utilização de percentual** | O valor percentual da amostra de desempenho que é usado para VMs de redimensionamento. Essa propriedade só é aplicável quando o dimensionamento é baseado em desempenho.
+**Série de VM** | A série de VM usada para estimativas de tamanho. Por exemplo, se você tiver um ambiente de produção que não pretende migrar para VMs da série A no Azure, poderá excluir a série A da lista ou da série. O dimensionamento baseia-se apenas na série selecionada.
+**Fator de conforto** | Avaliação de servidor de migrar do Azure consideram um buffer (fator de conforto) durante a avaliação. Esse buffer é aplicado sobre os dados de utilização da máquina para VMs (CPU, memória, disco e rede). O fator de conforto considera problemas como uso sazonal, histórico curto de desempenho e aumento provável do uso futuro.<br/><br/> Por exemplo, uma VM com 10 núcleos e 20% de utilização normalmente resulta em uma VM de dois núcleos. No entanto, com um fator de conforto de 2.0x, o resultado é uma VM de quatro núcleos.
+**Oferta** | A [oferta do Azure](https://azure.microsoft.com/support/legal/offer-details/) na qual você se inscreveu. As Migrações para Azure calculam o custo de acordo com isso.
+**Moeda** | Moeda de cobrança. 
+**Desconto (%)** | Qualquer desconto específico da assinatura  recebido por você sobre a oferta do Azure.<br/> A configuração padrão é 0%.
+**Tempo de atividade da VM** | Se as VMs não estiverem em execução 24x7 no Azure, será possível especificar a duração da execução (número de dias por mês e número de horas por dia) e as estimativas de custo serão feitas adequadamente.<br/> O valor padrão é 31 dias por mês e 24 horas por dia.
+**Benefício Híbrido do Azure** | Especifica se você tiver o software assurance e é elegíveis para [benefício híbrido do Azure](https://azure.microsoft.com/pricing/hybrid-use-benefit/). Se definido como Sim, os preços do Windows Azure são considerados para VMs do Windows. | O padrão é Sim.
 
 
 ## <a name="edit-assessment-properties"></a>Editar propriedades de avaliação
 
-1. Na página **Avaliações** do projeto de migração, selecione a avaliação e clique em **Editar propriedades**.
-2. Personalize as propriedades de avaliação com base nos detalhes a seguir:
+Para editar propriedades de avaliação após a criação de uma avaliação, faça o seguinte:
 
-    **Configuração** | **Detalhes** | **Padrão**
-    --- | --- | ---
-    **Local de destino** | O local do Azure para o qual você deseja migrar.<br/><br/> Atualmente, as Migrações para Azure dão suporte a 30 regiões, incluindo Leste da Austrália, Sudeste da Austrália, Sul do Brasil, Canadá Central, Leste do Canadá, Índia Central, EUA Central, Leste da China, Norte da China, Ásia Oriental, Leste dos EUA, Alemanha Central, Nordeste da Alemanha, Leste dos EUA 2, Leste do Japão, Oeste do Japão, Coreia Central, Sul da Coreia, Centro-Norte dos EUA, Europa Setentrional, Centro-Sul dos EUA, Sudeste Asiático, Sul da Índia, Sul do Reino Unido, Oeste do Reino Unido, US Gov – Arizona, US Gov – Texas, US Gov – Virgínia, Centro-Oeste dos EUA, Europa Ocidental, Índia Ocidental, Oeste dos EUA e Oeste dos EUA 2. |  Oeste dos EUA 2 é o local padrão.
-    **Tipo de armazenamento** | Você pode usar essa propriedade para especificar o tipo dos discos que deseja mover no Azure. Para dimensionamento local, especifique o tipo de disco de destino como discos gerenciados Premium ou Standard. Para dimensionamento baseado em desempenho, especifique o tipo de disco de destino como discos gerenciados Automático, Premium ou Standard. Quando você especifica o tipo de armazenamento como automático, a recomendação de disco é feita com base nos dados de desempenho dos discos (IOPS e taxa de transferência). Por exemplo, se você quiser obter um [SLA de VM de instância única de 99,9%](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/), talvez queira especificar o tipo de armazenamento como discos gerenciados Premium. Isso garante que todos os discos na avaliação sejam recomendados como discos gerenciados Premium. Observe que as Migrações para Azure são compatíveis apenas com discos gerenciados para avaliação de migração. | O valor padrão é discos gerenciados Premium (com o critério de dimensionamento *como dimensionamento local*).
-    **Instâncias reservadas** |  Você também pode especificar se tem [instâncias reservadas](https://azure.microsoft.com/pricing/reserved-vm-instances/) no Azure, e as Migrações para Azure estimarão o custo adequadamente. As instâncias reservadas atualmente só têm suporte para a oferta de Pagamento Conforme o Uso em Migrações para Azure. | O valor padrão para essa propriedade é de 3 anos de instâncias reservadas.
-    **Critério de dimensionamento** | O critério a ser usado pelas Migrações para Azure para redimensionar VMs para o Azure. Você pode fazer dimensionamento *com base no desempenho* ou dimensionar as VMs *como locais*, sem considerar o histórico de desempenho. | O dimensionamento com base no desempenho é a opção padrão.
-    **Histórico de desempenho** | A duração a considerar para avaliar o desempenho das VMs. Essa propriedade só é aplicável quando o critério de dimensionamento é *dimensionamento com base no desempenho*. | O padrão é um dia.
-    **Utilização de percentual** | O valor percentual da amostra de desempenho definido para ser considerado para o redimensionamento. Essa propriedade só é aplicável quando o critério de dimensionamento é *dimensionamento com base no desempenho*.  | O padrão é 95 por cento.
-    **Série de VM** | Você pode especificar a série de VM que deseja considerar para o dimensionamento correto. Por exemplo, se você tiver um ambiente de produção que não planeja migrar para VMs da série A no Azure, poderá excluir a série A da lista ou da série e o dimensionamento correto será feito apenas na série selecionada. | Por padrão, todos as séries VM são selecionadas.
-    **Fator de conforto** | As Migrações para Azure consideram um buffer (fator de conforto) durante a avaliação. Esse buffer é aplicado sobre os dados de utilização da máquina para VMs (CPU, memória, disco e rede). O fator de conforto considera problemas como uso sazonal, histórico curto de desempenho e aumento provável do uso futuro.<br/><br/> Por exemplo, uma VM com 10 núcleos e 20% de utilização normalmente resulta em uma VM de dois núcleos. No entanto, com um fator de conforto de 2.0x, o resultado é uma VM de quatro núcleos. | A configuração padrão é 1.3 x.
-    **Oferta** | A [Oferta do Azure](https://azure.microsoft.com/support/legal/offer-details/) em que você está inscrito. | [Pré-pago](https://azure.microsoft.com/offers/ms-azr-0003p/) é o padrão.
-    **Moeda** | Moeda de cobrança. | O padrão é dólares americanos.
-    **Desconto (%)** | Qualquer desconto específico da assinatura  recebido por você sobre a oferta do Azure. | A configuração padrão é 0%.
-    **Tempo de atividade da VM** | Se as VMs não estiverem em execução 24x7 no Azure, será possível especificar a duração da execução (número de dias por mês e número de horas por dia) e as estimativas de custo serão feitas adequadamente. | O valor padrão é 31 dias por mês e 24 horas por dia.
-    **Benefício Híbrido do Azure** | Especifique se você tem a garantia do software e é qualificado para o [Benefício Híbrido do Azure](https://azure.microsoft.com/pricing/hybrid-use-benefit/). Se definido como Sim, os preços do Windows Azure são considerados para VMs do Windows. | O padrão é Sim.
+1. No projeto de migrações para Azure, clique em **servidores**.
+2. No **migrações para Azure: Avaliação de servidor**, clique na contagem de avaliações.
+3. Na **Assessment**, clique em avaliação relevante > **editar propriedades**.
+5. Personalize as propriedades de avaliação de acordo com a tabela acima.
+6. Clique em **Salvar** para atualizar a avaliação.
 
-3. Clique em **Salvar** para atualizar a avaliação.
 
-## <a name="faqs-on-assessment-properties"></a>Perguntas frequentes sobre propriedades de avaliação
+Você também pode editar as propriedades de avaliação quando você estiver criando uma avaliação.
 
-### <a name="what-is-the-difference-between-as-on-premises-sizing-and-performance-based-sizing"></a>Qual é a diferença entre o dimensionamento como local e dimensionamento com base em desempenho?
-
-Quando você especifica o critério de dimensionamento para ser dimensionamento local, o recurso Migrações para Azure não considera os dados de desempenho das VMs e tamanhos de VMs com base na configuração local. Se o critério de dimensionamento for baseado em desempenho, o dimensionamento será feito com base nos dados de utilização. Por exemplo, se houver uma VM local com 4 núcleos e 8 GB de memória com 50% de utilização de CPU e 50% de utilização da memória. Se o critério de dimensionamento for dimensionamento local, um SKU de VM do Azure com 4 núcleos e 8 GB de memória será recomendado, no entanto, se o critério de dimensionamento for baseado em desempenho como, um SKU de VM de dois núcleos e 4 GB será recomendado, pois o percentual de utilização será considerado ao recomendar o tamanho.
-
-Da mesma forma, para discos, o dimensionamento de disco depende de duas propriedades de avaliação – tipo de armazenamento e critério de dimensionamento. Se o critério de dimensionamento for baseado em desempenho e o tipo de armazenamento for automático, os valores de IOPS e a taxa de transferência do disco serão considerados para identificar o tipo de disco de destino (Standard ou Premium). Se o critério de dimensionamento for baseado em desempenho e o tipo de armazenamento for premium, um disco premium será recomendado, e a SKU de disco premium no Azure será selecionada com base no tamanho do disco local. A mesma lógica é usada para dimensionamento do disco quando o critério de dimensionamento é dimensionamento local e o tipo de armazenamento é standard ou premium.
-
-### <a name="what-impact-does-performance-history-and-percentile-utilization-have-on-the-size-recommendations"></a>Que impacto que a utilização do percentil e o histórico de desempenho têm sobre as recomendações de tamanho?
-
-Essas propriedades só são aplicáveis ao dimensionamento com base no desempenho. O recurso Migrações para Azure coleta o histórico de desempenho dos computadores locais e o utiliza para recomendar o tipo de disco e tamanho da VM no Azure.
-
-- O dispositivo coletor cria perfis do ambiente local continuamente para coletar dados de utilização em tempo real a cada 20 segundos.
-- O dispositivo acumula as amostras de 20 segundos e cria um único ponto de dados a cada 15 minutos. Para criar o ponto de dados único, o dispositivo seleciona o valor de pico de todas as amostras de 20 segundos e envia-o para o Azure.
-- Quando você cria uma avaliação no Azure, com base na duração de desempenho e no valor de percentil do histórico de desempenho, as Migrações para Azure calculam o valor de utilização eficiente e o utilizam para dimensionamento.
-
-Por exemplo, se você tiver definido a duração de desempenho como um dia e o valor de percentil como o percentil 95, as Migrações para Azure usarão os pontos de amostra de 15 minutos enviados pelo coletor para o último dia, os classificarão em ordem crescente e escolherão o valor do 95º percentil como a utilização efetiva. O valor do 95º percentil faz com que você ignore eventuais desvios que possam aparecer se você escolher o 99º percentil. Se você quiser escolher o pico de uso para o período e não quiser perder nenhuma exceções, deverá selecionar o 99º percentil.
 
 ## <a name="next-steps"></a>Próximas etapas
 

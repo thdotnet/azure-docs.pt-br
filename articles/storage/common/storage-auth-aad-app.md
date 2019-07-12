@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/05/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: e57291292d8957fd323f9be03bb7df0492484ea8
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: da10b70b85e284173abbd1779fb1d39f477ca0cd
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341625"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67723215"
 ---
 # <a name="authenticate-with-azure-active-directory-from-an-application-for-access-to-blobs-and-queues"></a>Autenticar com o Azure Active Directory de um aplicativo para acesso a blobs e filas
 
@@ -49,16 +49,16 @@ Para obter mais informações sobre como registrar um aplicativo no Azure AD, co
 Em seguida, conceda as permissões do aplicativo para chamar as APIs de armazenamento do Azure. Esta etapa permite que seu aplicativo autorizar solicitações para o armazenamento do Azure com o Azure AD.
 
 1. Sobre o **visão geral** página do seu aplicativo registrado, selecione **exibir permissões de API**.
-1. No **permissões de API** seção, selecione **adicionar uma permissão** e escolha **APIs minha organização usa**.
-1. Sob o **APIs minha organização utiliza** seção, pesquise por "Armazenamento do Azure" e selecione **armazenamento do Azure** na lista de resultados para exibir o **permissões de API de solicitação** painel.
+1. No **permissões de API** seção, selecione **adicionar uma permissão** e escolha **APIs Microsoft**.
+1. Selecione **armazenamento do Azure** na lista de resultados para exibir o **permissões de API de solicitação** painel.
+1. Sob **que tipo de permissões de seu aplicativo exigir?** , observe que o tipo de permissão disponíveis é **permissões delegadas**. Por padrão, essa opção é selecionada para você.
+1. No **selecionar permissões** seção o **permissões de API de solicitação** painel, marque a caixa de seleção ao lado **user_impersonation**, em seguida, clique em **adicionar permissões**.
 
     ![Captura de tela mostrando permissões para o armazenamento](media/storage-auth-aad-app/registered-app-permissions-1.png)
 
-1. Sob **que tipo de permissões de seu aplicativo exigir?** , observe que o tipo de permissão disponíveis é **permissões delegadas**. Por padrão, essa opção é selecionada para você.
-1. No **selecionar permissões** seção o **permissões de API de solicitação** painel, marque a caixa de seleção ao lado **user_impersonation**, em seguida, clique em **adicionar permissões**.
-1. O **permissões de API** painel agora mostra que o aplicativo Azure AD tem acesso ao Microsoft Graph e o armazenamento do Azure. Permissões são concedidas automaticamente para o Microsoft Graph quando você primeiro registra seu aplicativo com o Azure AD.
+O **permissões de API** painel agora mostra que seu registrado aplicativo do Azure AD tem acesso ao Microsoft Graph e o armazenamento do Azure. Permissões são concedidas automaticamente para o Microsoft Graph quando você primeiro registra seu aplicativo com o Azure AD.
 
-    ![Captura de tela mostrando registrar as permissões de aplicativo](media/storage-auth-aad-app/registered-app-permissions-2.png)
+![Captura de tela mostrando registrar as permissões de aplicativo](media/storage-auth-aad-app/registered-app-permissions-2.png)
 
 ## <a name="create-a-client-secret"></a>Criar um segredo do cliente
 

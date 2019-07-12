@@ -12,12 +12,12 @@ ms.date: 05/15/2019
 ms.author: mimart
 ms.reviewer: arvindh, japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2576a33e62b370bc2fd91c5d155e9f8d6e52c0f8
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: 01477ad3a5a0c4643721815fa2b0943512c0c520
+ms.sourcegitcommit: 0ebc62257be0ab52f524235f8d8ef3353fdaf89e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67190279"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67723974"
 ---
 # <a name="single-sign-on-to-applications-in-azure-active-directory"></a>Logon único para aplicativos no Azure Active Directory
 
@@ -36,7 +36,7 @@ Há várias maneiras de configurar um aplicativo para logon único. A escolha de
 
 Este fluxograma ajuda você a decidir qual método de logon único é melhor para sua situação.
 
-![Escolher o método de logon único](./media/what-is-single-sign-on/choose-single-sign-on-method-040419.png)
+![Fluxograma de decisão para o método de logon único](./media/what-is-single-sign-on/choose-single-sign-on-method-040419.png)
 
 A tabela a seguir resume os métodos de logon único e os links para obter mais detalhes.
 
@@ -47,23 +47,24 @@ A tabela a seguir resume os métodos de logon único e os links para obter mais 
 | [Baseado em senha](#password-based-sso) | nuvem e local | Escolha o método baseado em senha quando o aplicativo é autenticado com o nome de usuário e senha. O logon único baseado em senha permite o armazenamento e a reprodução segura de senhas do aplicativo usando uma extensão de navegador da Web ou aplicativo móvel. Esse método utiliza o processo de entrada existente fornecido pelo aplicativo, mas permite que um administrador gerencie as senhas. |
 | [Vinculado](#linked-sign-on) | nuvem e local | Escolha logon vinculado quando o aplicativo é configurado para logon único em outro serviço de provedor de identidade. Essa opção não adiciona o logon único ao aplicativo. No entanto, o aplicativo pode já ter o logon único implementado usando outro serviço, como Serviços de Federação do Active Directory (AD FS).|
 | [Desabilitado](#disabled-sso) | nuvem e local | Escolha o logon único desabilitado quando o aplicativo não estiver pronto para ser configurado para logon único. Os usuários precisam inserir seu nome de usuário e senha toda vez que iniciarem este aplicativo.|
-| [IWA (Autenticação Integrada do Windows)](#integrated-windows-authentication-iwa-sso) | apenas local | Escolha esse logon único de IWA para aplicativos que usam a [IWA (Autenticação Integrada do Windows)](/aspnet/web-api/overview/security/integrated-windows-authentication) ou aplicativos com reconhecimento de declaração. Para IWA, os conectores de Proxy de Aplicativo usam a KCD (Delegação Restrita de Kerberos) para autenticar os usuários no aplicativo. | 
-| [Baseado em cabeçalho](#header-based-sso) | apenas local | Use o logon único baseado em cabeçalho quando o aplicativo usar cabeçalhos para autenticação. O logon único baseado em cabeçalho requer o PingAccess para o Azure AD. O Proxy de Aplicativo usa o Azure AD para autenticar o usuário e, em seguida, passa o tráfego pelo serviço de conector.  | 
+| [IWA (Autenticação Integrada do Windows)](#integrated-windows-authentication-iwa-sso) | apenas local | Escolha esse logon único de IWA para aplicativos que usam a [IWA (Autenticação Integrada do Windows)](/aspnet/web-api/overview/security/integrated-windows-authentication) ou aplicativos com reconhecimento de declaração. Para IWA, os conectores de Proxy de Aplicativo usam a KCD (Delegação Restrita de Kerberos) para autenticar os usuários no aplicativo. |
+| [Baseado em cabeçalho](#header-based-sso) | apenas local | Use o logon único baseado em cabeçalho quando o aplicativo usar cabeçalhos para autenticação. O logon único baseado em cabeçalho requer o PingAccess para o Azure AD. O Proxy de Aplicativo usa o Azure AD para autenticar o usuário e, em seguida, passa o tráfego pelo serviço de conector.  |
 
 ## <a name="openid-connect-and-oauth"></a>OpenID Connect e OAuth
-Ao desenvolver novos aplicativos, use protocolos modernos, como OpenID Connect e OAuth, para obter a melhor experiência de logon único para seu aplicativo em várias plataformas de dispositivo. O OAuth permite que os usuários ou administradores [concedam o consentimento](configure-user-consent.md) para recursos protegidos, como [MS Graph](/graph/overview). Fornecemos [SDKs](../develop/reference-v2-libraries.md) de fácil adoção para seu aplicativo, deixando ele pronto para usar o [MS Graph](/graph/overview).
+
+Ao desenvolver novos aplicativos, use protocolos modernos, como OpenID Connect e OAuth, para obter a melhor experiência de logon único para seu aplicativo em várias plataformas de dispositivo. OAuth permite que os usuários ou administradores [conceder consentimento](configure-user-consent.md) para recursos protegidos, como [o Microsoft Graph](/graph/overview). Fornecemos fácil adotar [SDKs](../develop/reference-v2-libraries.md) para seu aplicativo e, além disso, seu aplicativo estará pronto para usar [o Microsoft Graph](/graph/overview).
 
 Para obter mais informações, consulte:
 
 - [OAuth 2.0](../develop/v2-oauth2-auth-code-flow.md)
 - [OpenID Connect 1.0](../develop/v2-protocols-oidc.md)
-- [Guia do desenvolvedor do Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-developers-guide).
+- [Guia do desenvolvedor do Microsoft identity platform](https://docs.microsoft.com/azure/active-directory/develop/active-directory-developers-guide).
 
 ## <a name="saml-sso"></a>SSO do SAML
+
 Com o **logon único SAML**, o Azure AD realiza a autenticação para o aplicativo usando a conta do Azure AD do usuário. O Azure AD comunica as informações do logon para o aplicativo por meio de um protocolo de conexão. Com o logon único baseado em SAML, você pode mapear os usuários para funções de aplicativo específicas com base nas regras definidas nas suas declarações SAML.
 
 Escolha o logon único baseado em SAML quando o aplicativo der suporte a ele.
-
 
 O logon único baseado em SAML é compatível com aplicativos que usam qualquer um desses protocolos:
 
@@ -79,9 +80,10 @@ Para configurar um aplicativo no local de baseado em SAML single sign-on, consul
 Para saber mais sobre o protocolo SAML, confira [Protocolo SAML de logon único](../develop/single-sign-on-saml-protocol.md).
 
 ## <a name="password-based-sso"></a>SSO baseado em senha
-Com o logon baseado em senha, os usuários entram no aplicativo com um nome de usuário e uma senha na primeira vez que o acessam. Após o primeiro logon, o Azure AD fornece o nome de usuário e a senha ao aplicativo. 
 
-O logon único baseado em senha usa os processos de autenticação existentes fornecidos pelo aplicativo. Quando você habilita o logon único de senha para um aplicativo, o Azure AD coleta e armazena de forma segura os nomes de usuário e senhas do aplicativo. As credenciais do usuário são armazenadas em um estado criptografado no diretório. 
+Com o logon baseado em senha, os usuários entram no aplicativo com um nome de usuário e uma senha na primeira vez que o acessam. Após o primeiro logon, o Azure AD fornece o nome de usuário e a senha ao aplicativo.
+
+O logon único baseado em senha usa os processos de autenticação existentes fornecidos pelo aplicativo. Quando você habilita o logon único de senha para um aplicativo, o Azure AD coleta e armazena de forma segura os nomes de usuário e senhas do aplicativo. As credenciais do usuário são armazenadas em um estado criptografado no diretório.
 
 Escolha o logon único baseado em senha quando:
 
@@ -118,12 +120,12 @@ Quando o administrador do Azure AD gerencia as credenciais:
 
 Quando o usuário final gerencia as credenciais:
 
-- Os usuários podem gerenciar as senhas atualizando-as ou excluindo-as, conforme necessário. 
+- Os usuários podem gerenciar as senhas atualizando-as ou excluindo-as, conforme necessário.
 - Os administradores ainda são capazes de definir novas credenciais para o aplicativo.
 
-
 ## <a name="linked-sign-on"></a>Logon vinculado
-O logon vinculado permite que o Azure AD forneça o logon único para um aplicativo que já está configurado para um logon único em outro serviço. O aplicativo vinculado pode aparecer para os usuários finais no portal do Office 365 ou portal MyApps do Azure AD. Por exemplo, um usuário pode iniciar um aplicativo que está configurado para logon único no Serviços de Federação do Active Directory (AD FS) 2.0 no portal do Office 365. Relatórios adicionais também estão disponíveis para aplicativos vinculados que são iniciados no portal do Office 365 ou no portal MyApps do Azure AD. 
+
+O logon vinculado permite que o Azure AD forneça o logon único para um aplicativo que já está configurado para um logon único em outro serviço. O aplicativo vinculado pode aparecer para os usuários finais no portal do Office 365 ou portal MyApps do Azure AD. Por exemplo, um usuário pode iniciar um aplicativo que está configurado para logon único no Serviços de Federação do Active Directory (AD FS) 2.0 no portal do Office 365. Relatórios adicionais também estão disponíveis para aplicativos vinculados que são iniciados no portal do Office 365 ou no portal MyApps do Azure AD.
 
 ### <a name="linked-sign-on-for-application-migration"></a>Logon vinculado para migração de aplicativo
 
@@ -133,47 +135,43 @@ Depois que um usuário for autenticado com um aplicativo vinculado, um registro 
 
 ## <a name="disabled-sso"></a>SSO desabilitado
 
-O modo desabilitado significa que o logon único não é usado para o aplicativo. Quando o logon único está desabilitado, pode ser necessário que os usuários se autentiquem duas vezes. Primeiro, os usuários se autenticam no Azure AD e, em seguida, entram no aplicativo. 
+O modo desabilitado significa que o logon único não é usado para o aplicativo. Quando o logon único está desabilitado, pode ser necessário que os usuários se autentiquem duas vezes. Primeiro, os usuários se autenticam no Azure AD e, em seguida, entram no aplicativo.
 
 Use o modo de logon único desabilitado:
 
 - Se você não estiver pronto para integrar este aplicativo ao logon único do Azure AD,
 - Se você estiver testando outros aspectos do aplicativo ou
-- Como uma camada de segurança para um aplicativo local que não exige que os usuários se autentiquem. Com logon único desabilitado, o usuário precisa se autenticar. 
+- Como uma camada de segurança para um aplicativo local que não exige que os usuários se autentiquem. Com logon único desabilitado, o usuário precisa se autenticar.
 
 ## <a name="integrated-windows-authentication-iwa-sso"></a>SSO de IWA (Autenticação Integrada do Windows)
 
 O [Proxy de Aplicativo](application-proxy.md) oferece SSO (logon único) para aplicativos que usam a [IWA (Autenticação Integrada do Windows)](/aspnet/web-api/overview/security/integrated-windows-authentication) ou aplicativos com reconhecimento de declaração. Se o aplicativo usar a IWA, o Proxy de Aplicativo autenticará o aplicativo usando a KCD (Delegação Restrita de Kerberos). Para um aplicativo com reconhecimento de declaração que confia no Azure Active Directory, o logon único funciona porque o usuário já foi autenticado usando o Azure AD.
 
-Escolha o modo de logon único de Autenticação Integrada do Windows:
+Escolha a autenticação integrada do Windows modo de logon único para fornecer logon único para um aplicativo local que autentica com IWA.
 
-- Para fornecer o logon único para um aplicativo local que se autentica com IWA. 
-
-Para configurar um aplicativo local para IWA, confira [Delegação restrita de Kerberos para logon único em seus aplicativos com o Proxy de Aplicativo](application-proxy-configure-single-sign-on-with-kcd.md). 
+Para configurar um aplicativo local para IWA, confira [Delegação restrita de Kerberos para logon único em seus aplicativos com o Proxy de Aplicativo](application-proxy-configure-single-sign-on-with-kcd.md).
 
 ### <a name="how-single-sign-on-with-kcd-works"></a>Como funciona o logon único com a KCD
 Este diagrama explica o fluxo de quando um usuário acessa um aplicativo local que usa IWA.
 
-![Diagrama de fluxo de autenticação do Microsoft AAD](./media/application-proxy-configure-single-sign-on-with-kcd/AuthDiagram.png)
+![Diagrama de fluxo de autenticação do Microsoft Azure AD](./media/application-proxy-configure-single-sign-on-with-kcd/AuthDiagram.png)
 
 1. O usuário insere a URL para acessar o aplicativo no local por meio do Proxy de aplicativo.
-2. O Proxy de Aplicativo redireciona a solicitação para serviços de autenticação do AD do Azure para pré-autenticação. Neste ponto, o AD do Azure se aplica a qualquer política de autenticação e autorização aplicável, tal como autenticação multifator. Se o usuário for validado, o AD do Azure cria um token e o envia para o usuário.
-3. O usuário passa o token para o Proxy de Aplicativo.
-4. O Proxy de Aplicativo valida o token e recupera o nome UPN dele. Em seguida, ele envia a solicitação, o nome UPN e o SPN (nome da entidade de serviço) para o conector por meio de um canal seguro duplamente autenticado.
-5. O conector usa a negociação de delegação restrita de Kerberos (KCD) com o AD, representando o usuário para obter um token Kerberos para o aplicativo local.
-6. O Active Directory envia o token Kerberos do aplicativo para o conector.
-7. O conector envia a solicitação original para o servidor de aplicativos usando o token Kerberos recebido do AD.
-8. O aplicativo envia a resposta para o conector, que é retornada para o serviço de Proxy de Aplicativo e, finalmente, para o usuário.
+1. O Proxy de Aplicativo redireciona a solicitação para serviços de autenticação do AD do Azure para pré-autenticação. Neste ponto, o AD do Azure se aplica a qualquer política de autenticação e autorização aplicável, tal como autenticação multifator. Se o usuário for validado, o AD do Azure cria um token e o envia para o usuário.
+1. O usuário passa o token para o Proxy de Aplicativo.
+1. O Proxy de Aplicativo valida o token e recupera o nome UPN dele. Em seguida, ele envia a solicitação, o nome UPN e o SPN (nome da entidade de serviço) para o conector por meio de um canal seguro duplamente autenticado.
+1. O conector usa a negociação de delegação restrita de Kerberos (KCD) com o AD, representando o usuário para obter um token Kerberos para o aplicativo local.
+1. O Active Directory envia o token Kerberos do aplicativo para o conector.
+1. O conector envia a solicitação original para o servidor de aplicativos usando o token Kerberos recebido do AD.
+1. O aplicativo envia a resposta para o conector, que é retornada para o serviço de Proxy de Aplicativo e, finalmente, para o usuário.
 
 ## <a name="header-based-sso"></a>SSO baseado em cabeçalho
 
-O logon único baseado em cabeçalho funciona para aplicativos que usam cabeçalhos de HTTP para autenticação. Esse método de logon usa um serviço de autenticação de terceiros chamado PingAccess. O usuário precisa se autenticar apenas no Azure AD. 
+O logon único baseado em cabeçalho funciona para aplicativos que usam cabeçalhos de HTTP para autenticação. Esse método de logon usa um serviço de autenticação de terceiros chamado PingAccess. O usuário precisa se autenticar apenas no Azure AD.
 
-Escolha o logon único baseado em cabeçalho quando:
+Escolha com base no cabeçalho de logon único ao Proxy de aplicativo e PingAccess é configurado para o aplicativo.
 
-- O Proxy de Aplicativo e o PingAccess são configurados para o aplicativo
-
-Para configurar a autenticação baseada em cabeçalho, confira [Autenticação baseada em cabeçalho para logon único com o Proxy de Aplicativo](application-proxy-configure-single-sign-on-with-ping-access.md). 
+Para configurar a autenticação baseada em cabeçalho, confira [Autenticação baseada em cabeçalho para logon único com o Proxy de Aplicativo](application-proxy-configure-single-sign-on-with-ping-access.md).
 
 ### <a name="what-is-pingaccess-for-azure-ad"></a>O que é PingAccess para Azure AD?
 
@@ -183,15 +181,13 @@ Os usuários não perceberão algo diferente quando entrarem para usar seus apli
 
 ### <a name="how-do-i-get-a-license-for-pingaccess"></a>Como obtenho uma licença para o PingAccess?
 
-Como esse cenário é oferecido por meio de uma parceria entre o Azure AD e o PingAccess, você precisa de licenças para os dois serviços. No entanto, as assinaturas do Azure AD Premium incluem uma licença básica PingAccess que abrange até 20 aplicativos. Se você precisar publicar mais de 20 aplicativos com base em cabeçalho, poderá adquirir uma licença adicional do PingAccess. 
+Como esse cenário é oferecido por meio de uma parceria entre o Azure AD e o PingAccess, você precisa de licenças para os dois serviços. No entanto, as assinaturas do Azure AD Premium incluem uma licença básica PingAccess que abrange até 20 aplicativos. Se você precisar publicar mais de 20 aplicativos com base em cabeçalho, poderá adquirir uma licença adicional do PingAccess.
 
 Para obter mais informações, consulte [Edições do Active Directory do Azure](../fundamentals/active-directory-whatis.md).
 
-
 ## <a name="related-articles"></a>Artigos relacionados
-* [Tutoriais para a integração de aplicativos SaaS ao Azure Active Directory](../saas-apps/tutorial-list.md)
-* [Tutorial para a configuração do logon único](configure-single-sign-on-portal.md)
-* [Introdução ao gerenciamento do acesso a aplicativos](what-is-access-management.md)
-* Link de download: [Plano de implantação de logon único](https://aka.ms/SSODeploymentPlan).
 
-
+- [Tutoriais para a integração de aplicativos SaaS ao Azure Active Directory](../saas-apps/tutorial-list.md)
+- [Tutorial para a configuração do logon único](configure-single-sign-on-portal.md)
+- [Introdução ao gerenciamento do acesso a aplicativos](what-is-access-management.md)
+- Link de download: [Plano de implantação de logon único](https://aka.ms/SSODeploymentPlan)

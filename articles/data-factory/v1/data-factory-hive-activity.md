@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 4b622a5925aebd140fed2ac74eaf7cc186803b90
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a63ef969f17fc48145174d99fec53e77b61885a4
+ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60236147"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67827986"
 ---
 # <a name="transform-data-using-hive-activity-in-azure-data-factory"></a>Transformar dados usando a Atividade de Hive no Azure Data Factory 
 > [!div class="op_single_selector" title1="Atividades de transformação"]
@@ -242,7 +242,7 @@ Para usar o script do Hive com parâmetros, faça o seguinte
         SUM(Duration)
     FROM HiveSampleIn Group by ProfileID
     ```
-  ## <a name="see-also"></a>Veja também
+  ## <a name="see-also"></a>Consulte também
 * [Atividade Pig](data-factory-pig-activity.md)
 * [Atividade MapReduce](data-factory-map-reduce.md)
 * [Atividade de Transmissão do Hadoop](data-factory-hadoop-streaming-activity.md)

@@ -9,12 +9,12 @@ ms.service: service-bus-messaging
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 8461764a3f1f682ffb97420a4efdf2803f518872
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 26609e7b21af8804a4b43039c84c04597035721c
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64707144"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706202"
 ---
 # <a name="service-bus-faq"></a>Perguntas frequentes sobre o Barramento de Serviço
 
@@ -86,7 +86,7 @@ Se você usar a redundância de zona para seu namespace, você precisará seguir
 
 ## <a name="best-practices"></a>Práticas recomendadas
 ### <a name="what-are-some-azure-service-bus-best-practices"></a>Quais são algumas das práticas recomendadas do Barramento de Serviço do Azure?
-Consulte [Práticas recomendadas para melhorias de desempenho usando o Barramento de Serviço][Best practices for performance improvements using Service Bus] – este artigo descreve como otimizar o desempenho ao trocar mensagens.
+Ver [práticas recomendadas para melhorias de desempenho usando o barramento de serviço][Best practices for performance improvements using Service Bus] – este artigo descreve como otimizar o desempenho na troca de mensagens.
 
 ### <a name="what-should-i-know-before-creating-entities"></a>O que devo saber antes de criar entidades?
 As propriedades de uma fila e tópico a seguir são imutáveis. Considere essa limitação ao provisionar suas entidades, já que essas propriedades não podem ser modificadas sem criar uma nova entidade de substituição.
@@ -114,27 +114,27 @@ Não, o Barramento de Serviço não cobra pelo armazenamento. No entanto, há um
 
 ## <a name="quotas"></a>Cotas
 
-Para obter uma lista de cotas e limites do Barramento de Serviço, veja [Visão geral sobre cotas do Barramento de Serviço][Quotas overview].
+Para obter uma lista de cotas e limites do barramento de serviço, consulte o [visão geral sobre cotas do barramento de serviço][Quotas overview].
 
 ### <a name="does-service-bus-have-any-usage-quotas"></a>O Barramento de Serviço tem cotas de uso?
 Por padrão, para qualquer serviço de nuvem, a Microsoft define uma cota de uso mensal agregado calculada entre todas as assinaturas de um cliente. Se precisar de mais do que esses limites, você poderá entrar em contato com o atendimento ao cliente em qualquer horário para que possamos entender suas necessidades e ajustar esses limites adequadamente. Para o Barramento de Serviço, a cota de uso agregado é de 5 bilhões de mensagens por mês.
 
 Embora a Microsoft se reserve o direito de desabilitar uma conta de cliente que tenha ultrapassado suas cotas de uso em determinado mês, notificações por email são enviadas e várias tentativas de contatar o cliente são feitas antes de realizarmos qualquer ação. Os clientes que excederem essas cotas ainda serão responsáveis por cobranças que excedam as cotas.
 
-Como ocorre com outros serviços no Azure, o Barramento de Serviço aplica um conjunto de cotas específicas para garantir que haja um uso inteligente dos recursos. Você pode encontrar mais detalhes sobre essas cotas em [visão geral de cotas do Barramento de Serviço][Quotas overview].
+Como ocorre com outros serviços no Azure, o Barramento de Serviço aplica um conjunto de cotas específicas para garantir que haja um uso inteligente dos recursos. Você pode encontrar mais detalhes sobre essas cotas na [visão geral sobre cotas do barramento de serviço][Quotas overview].
 
 ### <a name="how-to-handle-messages-of-size--1-mb"></a>Como lidar com mensagens com mais de 1 MB?
 Os serviços de mensagens do Barramento de Serviço (filas e tópicos/assinaturas) permitem que o aplicativo envie mensagens com até 256 KB (camada standard) ou 1 MB (camada premium). Se você estiver lidando com mensagens de tamanho maior do que 1 MB, use o padrão de verificação de declaração descrito [nesta postagem de blog](https://www.serverless360.com/blog/deal-with-large-service-bus-messages-using-claim-check-pattern).
 
-## <a name="troubleshooting"></a>solução de problemas
+## <a name="troubleshooting"></a>Solução de problemas
 ### <a name="why-am-i-not-able-to-create-a-namespace-after-deleting-it-from-another-subscription"></a>Por que não eu consigo criar um namespace após excluí-lo de outra assinatura? 
 Quando você exclui um namespace de uma assinatura, aguarde até 4 horas antes de recriá-lo com o mesmo nome em outra assinatura. Caso contrário, a seguinte mensagem de erro será exibida: `Namespace already exists`. 
 
 ### <a name="what-are-some-of-the-exceptions-generated-by-azure-service-bus-apis-and-their-suggested-actions"></a>Quais são algumas das exceções geradas pelas APIs do Barramento de Serviço do Azure e suas ações sugeridas?
-Para obter uma lista de exceções possíveis do Barramento de Serviço, confira [Visão geral das exceções][Exceptions overview].
+Para obter uma lista de exceções possíveis do barramento de serviço, consulte [visão geral sobre exceções][Exceptions overview].
 
 ### <a name="what-is-a-shared-access-signature-and-which-languages-support-generating-a-signature"></a>O que é uma Assinatura de Acesso Compartilhado e quais idiomas oferecem suporte para a geração de uma assinatura?
-Assinaturas de acesso compartilhado são um mecanismo de autenticação com base em hashes seguros SHA-256 ou URIs. Para obter mais informações sobre como gerar suas próprias assinaturas no Node, PHP, Java e C\#, consulte o artigo [Assinaturas de Acesso Compartilhado][Shared Access Signatures].
+Assinaturas de acesso compartilhado são um mecanismo de autenticação com base em hashes seguros SHA-256 ou URIs. Para obter informações sobre como gerar suas próprias assinaturas no Node. js, PHP, Java e C\#, consulte o [assinaturas de acesso compartilhado][Shared Access Signatures] artigo.
 
 ## <a name="subscription-and-namespace-management"></a>Gerenciamento de assinaturas e de namespaces
 ### <a name="how-do-i-migrate-a-namespace-to-another-azure-subscription"></a>Como posso migrar um namespace para outra assinatura do Azure?
@@ -143,7 +143,7 @@ Mova um namespace de uma assinatura do Azure para outra usando o [portal do Azur
 
 #### <a name="portal"></a>Portal
 
-Para usar o portal do Azure para migrar namespaces do Barramento de Serviço para outra assinatura, siga as instruções descritas [aqui](../azure-resource-manager/resource-group-move-resources.md#use-portal). 
+Para usar o portal do Azure para migrar namespaces do Barramento de Serviço para outra assinatura, siga as instruções descritas [aqui](../azure-resource-manager/resource-group-move-resources.md#use-the-portal). 
 
 #### <a name="powershell"></a>PowerShell
 

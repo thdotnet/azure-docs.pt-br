@@ -4,7 +4,7 @@ description: Guia de alta disponibilidade do SAP NetWeaver em máquinas virtuais
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
 author: goraco
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7de46a534ea7920bcae4a5b2a3316117f090a7bf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5e5493b3688c4de9dab971d58b58f85d00f8003b
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60935815"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67709023"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver"></a>Alta disponibilidade de Máquinas Virtuais do Azure para SAP NetWeaver
 
@@ -193,7 +193,7 @@ Esta série de artigos aborda:
 * Etapas de instalação do SAP para implantar sistemas SAP de alta disponibilidade no Azure usando o modelo de implantação do Azure Resource Manager.
 
     > [!IMPORTANT]
-    > Recomendamos fortemente que você use o modelo de implantação do Azure Resource Manager para as instalações do SAP. Ele oferece muitos benefícios que não estão disponíveis no modelo de implantação clássico. Saiba mais sobre os [modelos de implantação do Azure][virtual-machines-azure-resource-manager-architecture-benefits-arm].   
+    > Recomendamos fortemente que você use o modelo de implantação do Azure Resource Manager para as instalações do SAP. Ele oferece muitos benefícios que não estão disponíveis no modelo de implantação clássico. Saiba mais sobre os [modelos de implantação][virtual-machines-azure-resource-manager-architecture-benefits-arm] do Azure.   
     >
 * Alta disponibilidade do SAP em:
   * ![Windows][Logo_Windows] **Windows** usando **WSFC (Windows Server Failover Cluster)**
@@ -207,7 +207,7 @@ Nestes artigos, você aprenderá a ajudar a proteger componentes de ponto único
 
 **Updated:** Outubro de 2017
 
-* [Arquitetura e cenários de alta disponibilidade de Máquinas Virtuais do Azure para SAP NetWeaver][sap-high-availability-architecture-scenarios]
+* [Arquitetura de alta disponibilidade de máquinas virtuais do Azure e cenários para SAP NetWeaver][sap-high-availability-architecture-scenarios]
 
 O artigo abrange ![Windows][Logo_Windows] **Windows** e ![Linux][Logo_Linux] **Linux**.
 
@@ -218,11 +218,11 @@ O artigo abrange ![Windows][Logo_Windows] **Windows** e ![Linux][Logo_Linux] **L
 
 **Updated:** Março de 2019
 
-* ![Windows][Logo_Windows] [Preparar a infraestrutura do Azure para alta disponibilidade do SAP usando um cluster de failover do Windows e um **disco compartilhado** para instâncias do SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-shared-disk]
+* ![Windows][Logo_Windows] [infra-estrutura de preparar o Azure para alta disponibilidade do SAP usando um cluster de failover do Windows e **disco compartilhado** para instâncias SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-shared-disk]
 
-* ![Windows][Logo_Windows] [Preparar a infraestrutura do Azure para alta disponibilidade do SAP usando um cluster de failover do Windows e um **compartilhamento de arquivo** para instâncias do SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-file-share]
+* ![Windows][Logo_Windows] [infra-estrutura de preparar o Azure para alta disponibilidade do SAP usando um cluster de failover do Windows e **compartilhamento de arquivos** para instâncias SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-file-share]
 
-* ![Linux][Logo_Linux] [Preparar a infraestrutura do Azure para a alta disponibilidade do SAP usando uma estrutura de cluster do SUSE Linux Enterprise Server para instâncias do SAP ASCS/SCS][sap-suse-ascs-ha-setting-ha-nfs]
+* ![Linux][Logo_Linux] [infraestrutura de preparar o Azure para alta disponibilidade do SAP usando uma estrutura de cluster do SUSE Linux Enterprise Server para instâncias SAP ASCS/SCS][sap-suse-ascs-ha-setting-ha-nfs]
 
 * ![Linux][Logo_Linux] [infraestrutura de preparar o Azure para alta disponibilidade do SAP usando uma estrutura de cluster do SUSE Linux Enterprise Server para instâncias SAP ASCS/SCS com arquivos do Azure NetApp][sap-suse-ascs-ha-setting-ha-anf]
 
@@ -236,11 +236,11 @@ O artigo abrange ![Windows][Logo_Windows] **Windows** e ![Linux][Logo_Linux] **L
 
 **Updated:** Março de 2019
 
-* ![Windows][Logo_Windows] [Instalar a alta disponibilidade do SAP NetWeaver usando um cluster de failover do Windows e um **disco compartilhado** para instâncias do SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk]
+* ![Windows][Logo_Windows] [alta disponibilidade de instalar o SAP NetWeaver usando um cluster de failover do Windows e **disco compartilhado** para instâncias SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk]
 
-* ![Windows][Logo_Windows] [Instale a alta disponibilidade do SAP NetWeaver usando um cluster de failover do Windows e o **compartilhamento de arquivos** para instâncias do SAP ASCS/SCS][sap-high-availability-installation-wsfc-file-share]
+* ![Windows][Logo_Windows] [alta disponibilidade de instalar o SAP NetWeaver usando um cluster de failover do Windows e **compartilhamento de arquivos** para instâncias SAP ASCS/SCS][sap-high-availability-installation-wsfc-file-share]
 
-* ![Linux][Logo_Linux] [Instalar a alta disponibilidade do SAP NetWeaver usando uma estrutura de cluster do SUSE Linux Enterprise Server para instâncias do SAP ASCS/SCS][sap-suse-ascs-ha-sap-installation]
+* ![Linux][Logo_Linux] [alta disponibilidade de instalar o SAP NetWeaver usando uma estrutura de cluster do SUSE Linux Enterprise Server para instâncias SAP ASCS/SCS][sap-suse-ascs-ha-sap-installation]
 
 * ![Linux][Logo_Linux] [alta disponibilidade de instalar o SAP NetWeaver usando uma estrutura de cluster do SUSE Linux Enterprise Server para instâncias SAP ASCS/SCS com arquivos do Azure NetApp][sap-suse-ascs-ha-sap-installation-anf]
 

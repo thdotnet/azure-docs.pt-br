@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: conceptual
 ms.date: 06/25/2019
 ms.author: cherylmc
-ms.openlocfilehash: 4a52383e6ab24c6ae1e2be0b67293d65dfa04466
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 65116ebbd6a66241a5b35a39f3dfb8f826a3745f
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67477875"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67594281"
 ---
 # <a name="create-an-azure-bastion-host-preview"></a>Criar um host de bastiões do Azure (visualização)
 
@@ -50,14 +50,14 @@ Esta seção ajuda você a criar um novo recurso de bastiões do Azure do portal
     ![criar um bastiões](./media/bastion-create-host-portal/settings.png)
 
     * **Assinatura**: A assinatura do Azure que você deseja usar para criar um novo recurso de bastiões.
-    * **Grupo de recursos**: O grupo de recursos do Azure no qual o novo recurso de bastiões será criado em. Se você não tiver um grupo de recursos, você pode criar um novo.
+    * **Grupo de Recursos**: O grupo de recursos do Azure no qual o novo recurso de bastiões será criado em. Se você não tiver um grupo de recursos, você pode criar um novo.
     * **Nome**: O nome do novo recurso de bastiões
     * **Região**: A região pública do Azure que o recurso será criado em.
     * **Rede virtual**: A rede virtual na qual o recurso de bastiões será criado em. Você pode criar uma nova rede virtual no portal durante esse processo, caso você não tiver ou não quiser usar uma rede virtual existente. Se você estiver usando uma rede virtual existente, verifique se que a rede virtual existente tem suficiente espaço livre do endereço para acomodar os requisitos de sub-rede de bastiões.
     * **Sub-rede**: A sub-rede em sua rede virtual no qual o novo recurso de host de bastiões será implantado. Você deve criar uma sub-rede usando o valor de nome **AzureBastionSubnet**. Esse valor permite que o Azure para implantar os recursos de bastiões para qual sub-rede. Isso é diferente de uma sub-rede de Gateway. É altamente recomendável que você use pelo menos um/27 ou sub-rede maior (/ 27, / 26 e assim por diante). Criar o **AzureBastionSubnet** sem nenhum grupo de segurança de rede, rotear tabelas ou as delegações.
     * **Endereço IP público**: O IP público do recurso de bastiões em que o RDP/SSH será acessado (pela porta 443). Criar um novo IP público, ou usar um existente. O endereço IP público deve estar na mesma região que o recurso de bastiões que você está criando.
     * **Nome do endereço IP público**: O nome do recurso de endereço IP público.
-    * **Endereço IP público SKU**: Previamente preenchido por padrão para **padrão**.
+    * **Endereço IP público SKU**: Previamente preenchido por padrão para **padrão**. Azure bastiões usam/dá suporte a apenas o padrão SKU do IP público.
     * **Atribuição**: Previamente preenchido por padrão para **estático**.
 
 1. Quando tiver terminado de especificar as configurações, clique em **revisar + criar**. Isso valida os valores. Depois que a validação é bem-sucedida, você pode começar o processo de criação.

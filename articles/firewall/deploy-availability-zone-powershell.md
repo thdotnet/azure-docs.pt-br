@@ -5,21 +5,16 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 06/20/2019
+ms.date: 7/10/2019
 ms.author: victorh
-ms.openlocfilehash: 2fa6a62a28a1536da83994cb07b7c5fa5d7bda9f
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 56958eedceeb4602589d65d5e0eb7b10e8a9ff2d
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67276906"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67704008"
 ---
 # <a name="deploy-an-azure-firewall-with-availability-zones-using-azure-powershell"></a>Implantar um Firewall do Azure com zonas de disponibilidade usando o Azure PowerShell
-
-> [!IMPORTANT]
-> Firewall do Azure com zonas de disponibilidade está atualmente em visualização pública.
-> Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos.
-> Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Firewall do Azure pode ser configurado durante a implantação para abranger várias zonas de disponibilidade para maior disponibilidade.
 

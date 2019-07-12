@@ -11,16 +11,16 @@ ms.reviewer: nibaccam
 ms.topic: conceptual
 ms.date: 06/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: d0bc4620d0c55d6e94a3d99c39ab405dab2743e5
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: 2f3ec9792a7af0398da770286b805be4d1f25589
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67461660"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67657975"
 ---
 # <a name="use-mlflow-with-azure-machine-learning-service-preview"></a>Usar MLflow com o serviço de Azure Machine Learning (versão prévia)
 
-Este artigo demonstra como usar MLflow URI de rastreamento e registro em log API, coletivamente também conhecido como MLflow de acompanhamento, com o serviço de Azure Machine Learning para rastrear e registrar suas métricas de teste e os artefatos em sua [Azure Machine Learning espaço de trabalho do serviço](https://docs.microsoft.com/azure/machine-learning/service/concept-azure-machine-learning-architecture#workspace). Se você já usa o acompanhamento de MLflow para seus testes, o espaço de trabalho fornece um local centralizado, seguro e escalonável para armazenar seus modelos e métricas de treinamento.
+Este artigo demonstra como usar MLflow URI de rastreamento e registro em log API, coletivamente também conhecido como MLflow de acompanhamento, com o serviço de Azure Machine Learning para rastrear e registrar suas métricas de teste e os artefatos em sua [Azure Machine Learning espaço de trabalho do serviço](https://docs.microsoft.com/azure/machine-learning/service/concept-azure-machine-learning-architecture#workspaces). Se você já usa o acompanhamento de MLflow para seus testes, o espaço de trabalho fornece um local centralizado, seguro e escalonável para armazenar seus modelos e métricas de treinamento.
 
 [MLflow](https://www.mlflow.org) é uma biblioteca de código-fonte aberto para o gerenciamento de ciclo de vida de seus experimentos de aprendizado de máquina. [Acompanhamento de MLFlow](https://mlflow.org/docs/latest/quickstart.html#using-the-tracking-api) é um componente do MLflow que registra em log e rastreia sua métricas de execução de treinamento e artefatos de modelo, se seus testes são executados localmente, em uma máquina virtual ou em um controle remoto do cluster de computação.
 ![mlflow com o diagrama de aprendizado de máquina do azure](media/how-to-use-mlflow/mlflow-diagram.png)

@@ -6,12 +6,12 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/20/2019
-ms.openlocfilehash: dcd51756a9c5a5a24a082862bb911cc2d2605d61
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f9de37c04e5e791445659de0ab667b51f44a4024
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65954364"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67839834"
 ---
 # <a name="consistency-levels-in-azure-cosmos-db"></a>Níveis de coerência no Azure Cosmos DB
 
@@ -48,7 +48,7 @@ A semântica dos cinco níveis de coerência é descrita aqui:
 
   A desatualização limitada oferece ordem global total, exceto na "janela de desatualização". Há garantias de leitura monotônica em uma região tanto dentro quanto fora da janela de desatualização. Coerência forte tem a mesma semântica que o oferecido por desatualização limitada. A janela de desatualização limitada é igual a zero. A desatualização limitada também é referida como linearização retardada no tempo. Quando um cliente executa operações de leitura em uma região que aceite gravações, as garantias fornecidas pelo consistência de desatualização são idênticas a essas garantias pela coerência forte.
 
-- **Session**: As leituras têm a garantia de honrar o prefixo consistente (assumindo uma seção de “gravador” única), leituras monotônicas, gravações monótonas, leituras de suas gravações, garantias de gravação de seguidas leituras. A coerência de sessão engloba uma sessão de cliente.
+- **Session**:  Dentro de uma sessão de cliente único, as leituras são garantidas para honrar o prefixo consistente (supondo que uma sessão única "gravador") leituras monotônicas, gravações monotônicas, garantias de leitura-your-writes e write-follows-reads. Os clientes fora da sessão executando gravações verá a consistência eventual.
 
 - **Prefixo Coerente**: Atualizações que são retornadas contêm algum prefixo de todas as atualizações, sem intervalos. Nível de consistência de prefixo consistente garante que as leituras nunca vejam gravações fora de ordem.
 
@@ -61,7 +61,7 @@ Vejamos um cenário de jogo de beisebol como exemplo. Imagine uma sequência de 
 | | **1** | **2** | **3** | **4** | **5** | **6** | **7** | **8** | **9** | **Execuções** |
 | - | - | - | - | - | - | - | - | - | - | - |
 | **Visitantes** | 0 | 0 | 1 | 0 | 1 | 0 | 0 |  |  | 2 |
-| **Página Inicial** | 1 | 0 | 1 | 1 | 0 | 2 |  |  |  | 5 |
+| **Início** | 1 | 0 | 1 | 1 | 0 | 2 |  |  |  | 5 |
 
 Um contêiner do Azure Cosmos mantém os totais de execução para os visitantes e equipes iniciais. Enquanto o jogo estiver em andamento, diferentes garantias de leitura podem resultar em clientes lerem diferentes pontuações. A tabela a seguir lista o conjunto completo de pontuações que podem ser retornadas ao ler as pontuações do visitante e da casa com cada uma das cinco garantias de coerência. A pontuação dos visitantes é listada primeiro. Diferentes valores retornados possíveis são separados por vírgulas.
 

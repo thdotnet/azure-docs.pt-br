@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b8e9ea8956d87e2ec47cc65495e81d8a0f0ad8cb
-ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
+ms.openlocfilehash: d21b54c3bea98a9a1499dc75890f75f28f2f9dc0
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67560935"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67655718"
 ---
 # <a name="baseline-policy-block-legacy-authentication-preview"></a>Política de linha de base: Autenticação herdada do bloco (visualização)
 
@@ -25,11 +25,11 @@ Para fornecer aos usuários acesso fácil aos aplicativos na nuvem, o Azure AD (
 * Clientes do Office mais antigos que não usam autenticação moderna (por exemplo, o cliente do Office 2010)
 * Qualquer cliente que usa protocolos de email herdados, como IMAP/SMTP/POP3
 
-Hoje, a maioria de todos os comprometer tentativas de entrada provenientes de autenticação herdados. Autenticação herdados não oferece suporte a autenticação multifator (MFA). Mesmo se você tiver uma política de MFA habilitada no seu diretório, um ator mal-intencionado pode autenticar usando um protocolo herdado e ignorar o MFA.
+Atualmente, a maioria de todos os comprometer tentativas de entrada provenientes de autenticação herdados. Autenticação herdados não oferece suporte a autenticação multifator (MFA). Mesmo se você tiver uma política de MFA habilitada no seu diretório, um ator mal-intencionado pode autenticar usando um protocolo herdado e ignorar o MFA.
 
-A melhor maneira de proteger sua conta das solicitações de autenticação mal-intencionada feitas pelos protocolos herdados é bloquear essas tentativas de tudo isso. Para tornar mais fácil para você bloquear todas as solicitações de logon feitas por protocolos herdados, criamos uma política de linha de base que faz exatamente isso.
+A melhor maneira de proteger sua conta das solicitações de autenticação mal-intencionada feitas pelos protocolos herdados é bloquear essas tentativas completamente. Em um esforço para tornar mais fácil de proteger seu ambiente, criamos esta política de linha de base para o bloco de autenticação herdados.
 
-**Autenticação herdados do bloco** está [política de linha de base](concept-baseline-protection.md) que bloqueia todas as solicitações de autenticação feitas de protocolos herdados. Autenticação moderna deve ser usada para entrar com êxito para todos os usuários. Usado em conjunto com outras políticas de linha de base, todas as solicitações provenientes de protocolos herdados serão bloqueadas e todos os usuários serão necessários para a MFA sempre que for necessário. Essa política não bloqueie o Exchange ActiveSync.
+**Autenticação herdados do bloco** é um [política de linha de base](concept-baseline-protection.md) que bloqueia todas as solicitações de autenticação feitas de protocolos herdados. Autenticação moderna deve ser usada para entrar com êxito para todos os usuários. Usado em conjunto com outras políticas de linha de base, todas as solicitações provenientes de protocolos herdados serão bloqueadas e todos os usuários serão necessários para a MFA sempre que for necessário. Essa política não bloqueie o Exchange ActiveSync.
 
 ## <a name="identify-legacy-authentication-use"></a>Identificar o uso de autenticação herdados
 
@@ -78,13 +78,13 @@ SharePoint Online está habilitado para o padrão de autenticação moderna. Par
 
 Para impedir que solicitações de autenticação herdados feitas pelo Skype for Business, é necessário habilitar a autenticação moderna para o Skype for Business Online. Para diretórios criados após 1º de agosto de 2017, a autenticação moderna para o Skype for Business é habilitada por padrão.
 
-Para habilitar a autenticação moderna no Skype for Business, sugerimos a transição para o Microsoft Teams, que dá suporte à autenticação moderna por padrão. No entanto, se você conseguir tr neste momento, você precisará habilitar a autenticação moderna para o Skype for Business Online para que o Skype para clientes de negócios é iniciado usando autenticação moderna. Siga estas etapas no artigo [Skype para topologias de negócios com autenticação moderna](https://docs.microsoft.com/skypeforbusiness/plan-your-deployment/modern-authentication/topologies-supported), para obter as etapas habilitar a autenticação moderna para o Skype for Business.
+Sugerimos que você transição para o Microsoft Teams, que dá suporte à autenticação moderna por padrão. No entanto, se você não conseguir migrar neste momento, você precisará habilitar a autenticação moderna para o Skype for Business Online para que o Skype para clientes de negócios começar a usar a autenticação moderna. Siga as etapas neste artigo [Skype para topologias de negócios com autenticação moderna](https://docs.microsoft.com/skypeforbusiness/plan-your-deployment/modern-authentication/topologies-supported), para habilitar a autenticação moderna para o Skype for Business.
 
-Além de habilitar a autenticação moderna para o Skype for Business Online, é recomendável moderna autenticação ser habilitada para o Exchange Online ao habilitar a autenticação moderna para o Skype for Business. Esse processo ajudará a sincronizar o estado da autenticação moderna no Exchange Online e Skype for Business online e evitar vários prompts de entrada para o Skype para clientes de negócios.
+Além de habilitar a autenticação moderna para o Skype for Business Online, é recomendável habilitar a autenticação moderna para o Exchange Online, ao habilitar a autenticação moderna para o Skype for Business. Esse processo ajudará a sincronizar o estado da autenticação moderna no Exchange Online e Skype for Business online e evitar vários prompts de entrada para o Skype para clientes de negócios.
 
 ### <a name="step-5-using-mobile-devices"></a>Etapa 5: Usando dispositivos móveis
 
-Aplicativos em seu dispositivo móvel precisam bloquear a autenticação herdada. É recomendável usar o Outlook para dispositivos móveis. Outlook Mobile dá suporte à autenticação moderna por padrão e atender a outras políticas de proteção de linha de base MFA.
+Aplicativos em seu dispositivo móvel precisam bloquear a autenticação herdada. É recomendável usar o Outlook para dispositivos móveis. O Outlook para dispositivos móveis dá suporte à autenticação moderna por padrão e atender a outras políticas de proteção de linha de base MFA.
 
 Para usar o cliente de email do iOS nativo, você precisará estar executando o iOS versão 11.0 ou posterior para garantir que o cliente de email foi atualizado para o bloco de autenticação herdados.
 
@@ -92,9 +92,10 @@ Para usar o cliente de email do iOS nativo, você precisará estar executando o 
 
 Se você for um cliente híbrida usando o Exchange Server local e o Skype para Business local, os dois serviços precisará ser atualizado para habilitar a autenticação moderna. Ao usar a autenticação moderna em um ambiente híbrido, você ainda estiver autenticando usuários locais. A história de autorizar o acesso às alterações de recursos (arquivos ou emails).
 
-Antes de começar a habilitar a autenticação moderna no local, certifique-se de que você atende aos theIf você atender aos requisitos, você agora está pronto para habilitar a autenticação moderna no local.
+Antes de começar a habilitar a autenticação moderna no local, certifique-se de que os pré-requisitos foram atendidos.
+Agora você está pronto para habilitar a autenticação moderna no local.
 
-Etapas para habilitar a autenticação moderna ser encontradas nos seguintes artigos:
+Etapas para habilitar a autenticação moderna podem ser encontradas nos seguintes artigos:
 
 * [Como configurar o Exchange Server local para usar a autenticação moderna híbrida](https://docs.microsoft.com/office365/enterprise/configure-exchange-server-for-hybrid-modern-authentication)
 * [Como usar a autenticação moderna (ADAL) com o Skype for Business](https://docs.microsoft.com/skypeforbusiness/manage/authentication/use-adal)
@@ -105,7 +106,7 @@ A política **política de linha de base: Autenticação herdada do bloco (visua
 
 Para habilitar essa política e proteger sua organização:
 
-1. Entrar para o **portal do Azure** como administrador global, administrador de segurança ou administrador de acesso condicional.
+1. Entrar para o **portal do Azure** como Administrador Global, administrador de segurança ou administrador de acesso condicional.
 1. Navegue até **do Azure Active Directory** > **acesso condicional**.
 1. Na lista de políticas, selecione **política de linha de base: Autenticação herdada do bloco (visualização)** .
 1. Definir **habilitar política** à **usar a política imediatamente**.
@@ -117,4 +118,4 @@ Para obter mais informações, consulte:
 
 * [Políticas de proteção de linha de base de acesso condicional](concept-baseline-protection.md)
 * [Cinco etapas para proteger a infraestrutura de identidade](../../security/azure-ad-secure-steps.md)
-* [O que é acesso condicional no Azure Active Directory?](overview.md)
+* [O que é o Acesso Condicional no Azure Active Directory?](overview.md)

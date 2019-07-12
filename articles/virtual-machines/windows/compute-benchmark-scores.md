@@ -4,7 +4,7 @@ description: Compare as pontuações de parâmetro de computação SPECint para 
 services: virtual-machines-windows
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager,azure-service-management
 ms.assetid: 69ae72ec-e8be-4e46-a8f0-e744aebb5cc2
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/09/2018
 ms.author: cynthn;davberg
-ms.openlocfilehash: 041906120ea156a00d272e2d3da15dc5174b6585
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e24266a46d192addebfe63f1caab3ac66eca2beb
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64866294"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67719078"
 ---
 # <a name="compute-benchmark-scores-for-windows-vms"></a>Pontuações de parâmetro de comparação de computação de VMs do Windows
 As pontuações de parâmetro de comparação SPECInt a seguir mostram o desempenho de computação para selecionar as VMs do Azure executando o Windows Server. As pontuações de parâmetro de comparação de computação também estão disponíveis para [VMs do Linux](../linux/compute-benchmark-scores.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
@@ -97,7 +97,7 @@ As pontuações de parâmetro de comparação SPECInt a seguir mostram o desempe
 ## <a name="dsv2---storage-optimized"></a>DSv2 - Otimizado para Armazenamento
 | Tamanho | vCPUs | Nós NUMA | CPU | Execuções | Taxa de Base do Tam. | StdDev | 
 | ---- | ----: | ---------: | --- | ---: | ------------: | -----: | 
-| Standard_DS1_v2 | 1 | 1 | Intel(R) Xeon(R) CPU E5-2673 v3 @ 2,40 GHz | 12 | 33.0 | 1,1 | 
+| Standard_DS1_v2 | 1 | 1 | Intel(R) Xeon(R) CPU E5-2673 v3 @ 2,40 GHz | 12 | 33.0 | 1.1 | 
 | Standard_DS1_v2 | 1 | 1 | Intel(R) Xeon(R) CPU E5-2673 v4 @ 2,30 GHz | 37 | 33.8 | 2.5 | 
 | Standard_DS2_v2 | 2 | 1 | Intel(R) Xeon(R) CPU E5-2673 v3 @ 2,40 GHz | 33 | 63.9 | 1.7 | 
 | Standard_DS2_v2 | 2 | 1 | Intel(R) Xeon(R) CPU E5-2673 v4 @ 2,30 GHz | 32 | 66.6 | 4.8 | 
@@ -274,7 +274,7 @@ As pontuações de parâmetro de comparação SPECInt a seguir mostram o desempe
 | Standard_L4s | 4 | 1 | Intel(R) Xeon(R) CPU E5-2698B v3 @ 2,00 GHz | 29 | 122.7 | 6.6 | 
 | Standard_L8s | 8 | 1 | Intel(R) Xeon(R) CPU E5-2698B v3 @ 2,00 GHz | 30 | 223.3 | 7.5 | 
 | Standard_L16s | 16 | 1 | Intel(R) Xeon(R) CPU E5-2698B v3 @ 2,00 GHz | 31 | 397.3 | 2.5 | 
-| Standard_L32s | 32 | 2 | Intel(R) Xeon(R) CPU E5-2698B v3 @ 2,00 GHz | 31 | 766.1 | 3,5 | 
+| Standard_L32s | 32 | 2 | Intel(R) Xeon(R) CPU E5-2698B v3 @ 2,00 GHz | 31 | 766.1 | 3.5 | 
 
 ## <a name="m---memory-optimized"></a>M - Otimizado para Memória
 | Tamanho | vCPUs | Nós NUMA | CPU | Execuções | Taxa de Base do Tam. | StdDev | 
@@ -326,7 +326,7 @@ As pontuações de parâmetro de comparação SPECInt a seguir mostram o desempe
 | ---- | ----: | ---------: | --- | ---: | ------------: | -----: | 
 | Standard_NC6 | 6 | 1 | Intel (r) Xeon (r) CPU E5 2690 v3 @ 2,60 GHz | 27 | 209.6 | 4.4 | 
 | Standard_NC12 | 12 | 1 | Intel (r) Xeon (r) CPU E5 2690 v3 @ 2,60 GHz | 28 | 394.4 | 3.8 | 
-| Standard_NC24 | 24 | 2 | Intel (r) Xeon (r) CPU E5 2690 v3 @ 2,60 GHz | 28 | 751.7 | 3,5 | 
+| Standard_NC24 | 24 | 2 | Intel (r) Xeon (r) CPU E5 2690 v3 @ 2,60 GHz | 28 | 751.7 | 3.5 | 
 | Standard_NC24r | 24 | 2 | Intel (r) Xeon (r) CPU E5 2690 v3 @ 2,60 GHz | 27 | 752.9 | 3.4 | 
 
 ## <a name="nds--gpu-enabled"></a>GPU NDs - habilitado
@@ -334,7 +334,7 @@ As pontuações de parâmetro de comparação SPECInt a seguir mostram o desempe
 | ---- | ----: | ---------: | --- | ---: | ------------: | -----: | 
 | Standard_ND6s | 6 | 1 | Intel (r) Xeon (r) CPU E5 2690 v4 @ 2,60 GHz | 8 | 230.1 | 1.2 | 
 | Standard_ND12s | 12 | 1 | Intel (r) Xeon (r) CPU E5 2690 v4 @ 2,60 GHz | 11 | 426.5 | 1.4 | 
-| Standard_ND24rs | 24 | 2 | Intel (r) Xeon (r) CPU E5 2690 v4 @ 2,60 GHz | 10 | 811.4 | 3,5 | 
+| Standard_ND24rs | 24 | 2 | Intel (r) Xeon (r) CPU E5 2690 v4 @ 2,60 GHz | 10 | 811.4 | 3.5 | 
 | Standard_ND24s | 24 | 2 | Intel (r) Xeon (r) CPU E5 2690 v4 @ 2,60 GHz | 11 | 812.6 | 4.4 | 
 
 ## <a name="nv---gpu-enabled"></a>NV - habilitado para GPU

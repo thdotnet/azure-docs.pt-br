@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 11/15/2018
 ms.author: genli
-ms.openlocfilehash: bc058cb3f27545b9e4ad8ef1062ca4d2fa4c9fa8
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: 46f52cb0478b47f8f6b45356815bc4c74e7cc800
+ms.sourcegitcommit: 0ebc62257be0ab52f524235f8d8ef3353fdaf89e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67155156"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67724112"
 ---
 # <a name="troubleshoot-azure-windows-virtual-machine-activation-problems"></a>Solucionar problemas de ativação de máquina virtual do Windows Azure
 
@@ -84,7 +84,6 @@ Para a VM é criada a partir de uma imagem personalizada, você deve configurar 
 
 3. Certifique-se de que a VM está configurada para usar o servidor correto do KMS do Azure. Para fazer isso, execute o seguinte comando:
   
-
     ```powershell
     Invoke-Expression "$env:windir\system32\cscript.exe $env:windir\system32\slmgr.vbs /skms kms.core.windows.net:1688"
     ```
@@ -93,36 +92,33 @@ Para a VM é criada a partir de uma imagem personalizada, você deve configurar 
 
 4. Verifique usando Psping que você tem conectividade ao servidor KMS. Alterne para a pasta onde você extraiu o download de Pstools.zip e, em seguida, execute o seguinte:
   
-
     ```
     \psping.exe kms.core.windows.net:1688
     ```
-
-  
    Na penúltima linha da saída, certifique-se de que você vê: Sent = 4, Received = 4, Lost = 0 (0% loss).
 
    Se Lost for maior que 0 (zero), a VM não tem conectividade com o servidor KMS. Nessa situação, se a VM estiver em uma rede virtual e tiver um servidor DNS especificado, certifique-se de que o servidor DNS é capaz de resolver kms.core.windows.net. Ou então, altere o servidor DNS para um que resolva kms.core.windows.net.
 
    Observe que, se você remover todos os servidores DNS de uma rede virtual, as VMs usam o serviço DNS interno do Azure. Esse serviço pode resolver kms.core.windows.net.
   
-Também verifique se o firewall do convidado não foi configurado de forma que impediria as tentativas de ativação.
+    Além disso, certifique-se de que o tráfego de rede de saída para o ponto de extremidade do KMS com a porta 1688 não é bloqueado pelo firewall na VM.
 
-1. Depois de verificar a conectividade com sucesso para kms.core.windows.net, execute o seguinte comando no prompt do Windows PowerShell com privilégios elevados. Esse comando tenta a ativação várias vezes.
+5. Depois de verificar a conectividade com sucesso para kms.core.windows.net, execute o seguinte comando no prompt do Windows PowerShell com privilégios elevados. Esse comando tenta a ativação várias vezes.
 
     ```powershell
-    1..12 | ForEach-Object { Invoke-Expression “$env:windir\system32\cscript.exe $env:windir\system32\slmgr.vbs /ato” ; start-sleep 5 }
+    1..12 | ForEach-Object { Invoke-Expression "$env:windir\system32\cscript.exe $env:windir\system32\slmgr.vbs /ato" ; start-sleep 5 }
     ```
 
-Uma ativação bem-sucedida retorna informações semelhantes à seguinte:
+    Uma ativação bem-sucedida retorna informações semelhantes à seguinte:
+    
+    **Ativando o Windows (r), edição ServerDatacenter (12345678-1234-1234-1234-12345678)...  Produto ativado com êxito.**
 
-**Ativando o Windows(R), edição ServerDatacenter (12345678-1234-1234-1234-12345678)... Produto ativado com sucesso.**
-
-## <a name="faq"></a>Perguntas frequentes 
+## <a name="faq"></a>Perguntas Frequentes 
 
 ### <a name="i-created-the-windows-server-2016-from-azure-marketplace-do-i-need-to-configure-kms-key-for-activating-the-windows-server-2016"></a>Criei o Windows Server 2016 a partir do Azure Marketplace. É necessário configurar a chave KMS para ativação do Windows Server 2016? 
 
  
-Não. A imagem no Azure Marketplace já possui a chave de instalação de cliente KMS adequada configurada. 
+Nº A imagem no Azure Marketplace já possui a chave de instalação de cliente KMS adequada configurada. 
 
 ### <a name="does-windows-activation-work-the-same-way-regardless-if-the-vm-is-using-azure-hybrid-use-benefit-hub-or-not"></a>A ativação do Windows funciona da mesma maneira independentemente se a VM estiver usando o Benefício de Uso Híbrido do Azure (HUB) ou não? 
 

@@ -8,17 +8,22 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 07/05/2019
+ms.date: 07/10/2019
 ms.author: wellsi
-ms.openlocfilehash: 93272520434ea43a94af9441a947239e983c216f
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 1ca6b5265cf97ef551ec0b13b46ac934a372d2c7
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606691"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67797919"
 ---
 # <a name="release-notes-of-cognitive-services-speech-devices-sdk"></a>Notas de versão do SDK dos Dispositivos de Fala dos Serviços Cognitivos
 As seções a seguir listam as alterações nas versões mais recentes.
+
+## <a name="speech-devices-sdk-160"></a>Dispositivos de fala do SDK 1.6.0:
+
+*   O suporte [Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/) no Windows e Linux com comum [aplicativo de exemplo](https://aka.ms/sdsdk-download)
+*   Atualizado o [Speech SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) componente para a versão 1.6.0. Para obter mais informações, consulte [notas de versão](https://aka.ms/csspeech/whatsnew).
 
 ## <a name="speech-devices-sdk-151"></a>Dispositivos de fala 1.5.1 do SDK:
 

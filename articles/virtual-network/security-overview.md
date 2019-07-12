@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/26/2018
 ms.author: malop;kumud
-ms.openlocfilehash: a81232266749c14ce421ccf774e0cbd843b8b4eb
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 99a55d0cd06e6f1a92a70b20447d300dbc05eee1
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67436617"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67709533"
 ---
 # <a name="security-groups"></a>Grupos de segurança
 <a name="network-security-groups"></a>
@@ -32,13 +32,13 @@ Um grupo de segurança de rede pode conter nenhuma ou quantas regras você desej
 
 |Propriedade  |Explicação  |
 |---------|---------|
-|NOME|Um nome exclusivo dentro do grupo de segurança de rede.|
+|Nome|Um nome exclusivo dentro do grupo de segurança de rede.|
 |Prioridade | Um número entre 100 e 4096. As regras são processadas na ordem de prioridade, com números mais baixos processados antes de números mais altos, pois os números mais baixos têm prioridade mais alta. Depois que o tráfego corresponde a uma regra, o processamento é interrompido. Assim, as regras existentes com baixa prioridade (números mais altos) que têm os mesmos atributos das regras com prioridades mais altas não são processadas.|
 |Origem ou destino| Qualquer endereço IP ou um endereço IP individual, bloco de CIDR (encaminhamento entre domínios) (10.0.0.0/24, por exemplo), [marca de serviço](#service-tags) ou [grupo de segurança de aplicativo](#application-security-groups). Se você especificar um endereço para um recurso do Azure, especifique o endereço IP privado atribuído ao recurso. Os grupos de segurança de rede são processados depois que o Azure traduz um endereço IP público em um endereço IP privado para tráfego de entrada e antes que o Azure traduza um endereço IP privado para um endereço IP público para tráfego de saída. Saiba mais sobre os [endereços IP](virtual-network-ip-addresses-overview-arm.md) do Azure. A especificação de um intervalo, uma etiqueta de serviço ou um grupo de segurança de aplicativos permite que você crie menos regras de segurança. A capacidade de especificar vários endereços IP individuais e intervalos (você não pode especificar várias marcas de serviço ou grupos de aplicativos) em uma regra é conhecida como [regras de segurança aumentadas](#augmented-security-rules). As regras de segurança aumentadas só podem ser criadas em grupos de segurança de rede criados pelo modelo de implantação do Gerenciador de Recursos. Você não pode especificar vários endereços IP e intervalos de endereços IP em grupos de segurança de rede criados pelo modelo de implantação clássica. Saiba mais sobre os [modelos de implantação do Azure](../azure-resource-manager/resource-manager-deployment-model.md?toc=%2fazure%2fvirtual-network%2ftoc.json).|
-|Protocolo     | TCP, UDP ou Qualquer um, o que inclui (entre outros) TCP, UDP e ICMP. Você não pode especificar o ICMP sozinho e, portanto, se precisar de ICMP, use a opção Qualquer um. |
-|Direção| Se a regra se aplica ao tráfego de entrada ou de saída.|
+|Protocol     | TCP, UDP ou Qualquer um, o que inclui (entre outros) TCP, UDP e ICMP. Você não pode especificar o ICMP sozinho e, portanto, se precisar de ICMP, use a opção Qualquer um. |
+|Direction| Se a regra se aplica ao tráfego de entrada ou de saída.|
 |Intervalo de portas     |Você pode especificar uma porta individual ou um intervalo de portas. Por exemplo, você pode especificar 80 ou 10000-10005. A especificação de intervalos permite que você crie menos regras de segurança. As regras de segurança aumentadas só podem ser criadas em grupos de segurança de rede criados pelo modelo de implantação do Gerenciador de Recursos. Você não pode especificar várias portas ou intervalos de porta na mesma regra de segurança em grupos de segurança de rede criados pelo modelo de implantação clássica.   |
-|Ação     | Permitir ou negar        |
+|Action     | Permitir ou negar        |
 
 As regras de segurança do grupo de segurança de rede são avaliadas por prioridade usando as informações de 5 tuplas (origem, porta de origem, destino, porta de destino e protocolo) para permitir ou negar o tráfego. Um registro de fluxo é criado para as conexões existentes. A comunicação é permitida ou negada com base no estado de conexão do registro de fluxo. O registro de fluxo permite que um grupo de segurança de rede seja com estado. Se você especificar uma regra de segurança de saída para algum endereço pela porta 80, por exemplo, não será necessário especificar uma regra de segurança de entrada para a resposta ao tráfego de saída. Você precisa especificar uma regra de segurança de entrada se a comunicação for iniciada externamente. O oposto também é verdadeiro. Se o tráfego de entrada é permitido por uma porta, não é necessário especificar uma regra de segurança de saída para responder ao tráfego pela porta.
 As conexões existentes podem não ser interrompidas quando você remove uma regra de segurança que habilitou o fluxo. Os fluxos de tráfego são interrompidos quando as conexões são interrompidas e nenhum tráfego está fluindo em qualquer direção por pelo menos alguns minutos.
@@ -82,6 +82,11 @@ As marcas de serviço a seguir estão disponíveis para uso em [regras de grupos
 * **AzureBackup*** (somente Resource Manager): Essa marca denota os prefixos de endereço do serviço AzureBackup. Se você especificar *AzureBackup* para o valor, o tráfego é permitido ou negado para AzureBackup. Essa marca tem dependência de **armazenamento** e **AzureActiveDirectory** marca. Essa marca é recomendada para a regra de segurança de saída. 
 * **AzureActiveDirectoryDomainServices*** (somente Resource Manager): Essa marca denota os prefixos de endereço, o tráfego de gerenciamento para implantações de serviços de domínio do Active Directory do Azure dedicadas. Se você especificar *AzureActiveDirectoryDomainServices* para o valor, o tráfego é permitido ou negado para AzureActiveDirectoryDomainServices. Essa marca é recomendada para a regra de segurança de entrada/saída.  
 * **Base*** (somente Resource Manager): Essa marca denota que os prefixos de endereço, o tráfego de gerenciamento para SQL dedicado implantações. Se você especificar *base* para o valor, o tráfego é permitido ou negado para base. Essa marca é recomendada para a regra de segurança de entrada/saída. 
+* **CognitiveServicesManagement** (somente Resource Manager): Essa marca denota os prefixos de endereço de tráfego para os serviços Cognitivos. Se você especificar *CognitiveServicesManagement* para o valor, o tráfego é permitido ou negado para CognitiveServicesManagement. Essa marca é recomendada para a regra de segurança de saída.  
+* **Dynamics365ForMarketingEmail** (somente Resource Manager): Essa marca denota os prefixos de endereço do serviço de email marketing do Dynamics 365. Se você especificar *Dynamics365ForMarketingEmail* para o valor, o tráfego é permitido ou negado para Dynamics365ForMarketingEmail. Se você quiser permitir o acesso ao Dynamics365ForMarketingEmail em uma determinada [região](https://azure.microsoft.com/regions), você pode especificar a região no seguinte formato Dynamics365ForMarketingEmail. [ nome da região].
+* **AzurePlatformDNS** (somente Resource Manager): Essa marca denota o DNS que é um serviço de infraestrutura básica. Se você especificar *AzurePlatformDNS* para o valor, você pode desabilitar o padrão [consideração da plataforma Windows Azure](https://docs.microsoft.com/azure/virtual-network/security-overview#azure-platform-considerations) para DNS. Por favor, tome cuidado usando essa marca. É recomendável a testes antes de usar essa marca. 
+* **AzurePlatformIMDS** (somente Resource Manager): Essa marca denota o IMDS que é um serviço de infraestrutura básica. Se você especificar *AzurePlatformIMDS* para o valor, você pode desabilitar o padrão [consideração da plataforma Windows Azure](https://docs.microsoft.com/azure/virtual-network/security-overview#azure-platform-considerations) para IMDS. Por favor, tome cuidado usando essa marca. É recomendável a testes antes de usar essa marca. 
+* **AzurePlatformLKM** (somente Resource Manager): Essa marca denota o licenciamento do Windows ou o serviço de gerenciamento de chaves. Se você especificar *AzurePlatformLKM* para o valor, você pode desabilitar o padrão [consideração da plataforma Windows Azure](https://docs.microsoft.com/azure/virtual-network/security-overview#azure-platform-considerations) para licenciamento. Por favor, tome cuidado usando essa marca. É recomendável a testes antes de usar essa marca. 
 
 > [!NOTE]
 > Marcas de serviço dos serviços do Microsoft Azure indicam os prefixos de endereço da nuvem específica que está sendo usada. 
@@ -105,19 +110,19 @@ O Azure cria as seguintes regras padrão em cada grupo de segurança de rede que
 
 #### <a name="allowvnetinbound"></a>AllowVNetInBound
 
-|Prioridade|Fonte|Portas de origem|Destino|Portas de destino|Protocolo|Access|
+|Prioridade|Origem|Portas de origem|Destino|Portas de destino|Protocol|Access|
 |---|---|---|---|---|---|---|
-|65000|VirtualNetwork|0-65535|VirtualNetwork|0-65535|Todos|PERMITIR|
+|65000|VirtualNetwork|0-65535|VirtualNetwork|0-65535|Todos|Allow|
 
 #### <a name="allowazureloadbalancerinbound"></a>AllowAzureLoadBalancerInBound
 
-|Prioridade|Fonte|Portas de origem|Destino|Portas de destino|Protocolo|Access|
+|Prioridade|Origem|Portas de origem|Destino|Portas de destino|Protocol|Access|
 |---|---|---|---|---|---|---|
-|65001|AzureLoadBalancer|0-65535|0.0.0.0/0|0-65535|Todos|PERMITIR|
+|65001|AzureLoadBalancer|0-65535|0.0.0.0/0|0-65535|Todos|Allow|
 
 #### <a name="denyallinbound"></a>DenyAllInBound
 
-|Prioridade|Fonte|Portas de origem|Destino|Portas de destino|Protocolo|Access|
+|Prioridade|Origem|Portas de origem|Destino|Portas de destino|Protocol|Access|
 |---|---|---|---|---|---|---|
 |65500|0.0.0.0/0|0-65535|0.0.0.0/0|0-65535|Todos|Negar|
 
@@ -125,19 +130,19 @@ O Azure cria as seguintes regras padrão em cada grupo de segurança de rede que
 
 #### <a name="allowvnetoutbound"></a>AllowVnetOutBound
 
-|Prioridade|Fonte|Portas de origem| Destino | Portas de destino | Protocolo | Access |
+|Prioridade|Origem|Portas de origem| Destino | Portas de destino | Protocol | Access |
 |---|---|---|---|---|---|---|
-| 65000 | VirtualNetwork | 0-65535 | VirtualNetwork | 0-65535 | Todos | PERMITIR |
+| 65000 | VirtualNetwork | 0-65535 | VirtualNetwork | 0-65535 | Todos | Allow |
 
 #### <a name="allowinternetoutbound"></a>AllowInternetOutBound
 
-|Prioridade|Fonte|Portas de origem| Destino | Portas de destino | Protocolo | Access |
+|Prioridade|Origem|Portas de origem| Destino | Portas de destino | Protocol | Access |
 |---|---|---|---|---|---|---|
-| 65001 | 0.0.0.0/0 | 0-65535 | Internet | 0-65535 | Todos | PERMITIR |
+| 65001 | 0.0.0.0/0 | 0-65535 | Internet | 0-65535 | Todos | Allow |
 
 #### <a name="denyalloutbound"></a>DenyAllOutBound
 
-|Prioridade|Fonte|Portas de origem| Destino | Portas de destino | Protocolo | Access |
+|Prioridade|Origem|Portas de origem| Destino | Portas de destino | Protocol | Access |
 |---|---|---|---|---|---|---|
 | 65500 | 0.0.0.0/0 | 0-65535 | 0.0.0.0/0 | 0-65535 | Todos | Negar |
 
@@ -157,15 +162,15 @@ Na figura anterior, *NIC1* e *NIC2* são membros do grupo de segurança de aplic
 
 Essa regra é necessária para permitir o tráfego da Internet para os servidores Web. Como o tráfego de entrada da Internet é negado pela regra de segurança padrão [DenyAllInbound](#denyallinbound), nenhuma regra adicional é necessária para os grupos de segurança do aplicativo *AsgLogic* ou *AsgDb*.
 
-|Prioridade|Fonte|Portas de origem| Destino | Portas de destino | Protocolo | Access |
+|Prioridade|Origem|Portas de origem| Destino | Portas de destino | Protocol | Access |
 |---|---|---|---|---|---|---|
-| 100 | Internet | * | AsgWeb | 80 | TCP | PERMITIR |
+| 100 | Internet | * | AsgWeb | 80 | TCP | Allow |
 
 ### <a name="deny-database-all"></a>Deny-Database-All
 
 Já que a regra de segurança padrão [AllowVNetInBound](#allowvnetinbound) permite toda a comunicação entre recursos na mesma rede virtual, essa regra é necessária para negar o tráfego de todos os recursos.
 
-|Prioridade|Fonte|Portas de origem| Destino | Portas de destino | Protocolo | Access |
+|Prioridade|Origem|Portas de origem| Destino | Portas de destino | Protocol | Access |
 |---|---|---|---|---|---|---|
 | 120 | * | * | AsgDb | 1433 | Todos | Negar |
 
@@ -173,9 +178,9 @@ Já que a regra de segurança padrão [AllowVNetInBound](#allowvnetinbound) perm
 
 Essa regra permite o tráfego do grupo de segurança de aplicativo *AsgLogic* para o grupo de segurança de aplicativo *AsgDb*. A prioridade para essa regra é mais alta do que a prioridade para a regra *Deny-Database-All*. Como resultado, essa regra é processada antes da regra *Deny-Database-All* e, portanto, o tráfego do grupo de segurança de aplicativo *AsgLogic* é permitido enquanto todos os outros tráfegos são bloqueados.
 
-|Prioridade|Fonte|Portas de origem| Destino | Portas de destino | Protocolo | Access |
+|Prioridade|Origem|Portas de origem| Destino | Portas de destino | Protocol | Access |
 |---|---|---|---|---|---|---|
-| 110 | AsgLogic | * | AsgDb | 1433 | TCP | PERMITIR |
+| 110 | AsgLogic | * | AsgDb | 1433 | TCP | Allow |
 
 As regras que especificam um grupo de segurança de aplicativo como origem ou destino são aplicadas apenas aos adaptadores de rede que são membros do grupo de segurança de aplicativo. Se o adaptador de rede não for membro de um grupo de segurança de aplicativo, a regra não será aplicada ao adaptador de rede, mesmo que o grupo de segurança de rede esteja associado à sub-rede.
 

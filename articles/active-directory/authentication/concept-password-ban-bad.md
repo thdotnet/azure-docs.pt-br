@@ -11,28 +11,80 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 50452dc5a0c2074c452878c890643f7b21591689
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c043b2ed1a626e362d7edd1a83429aa14046f8ac
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65977300"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67703071"
 ---
 # <a name="eliminate-bad-passwords-in-your-organization"></a>Eliminar senhas incorretas na organização
 
-Os líderes do setor orientam que você não utilize a mesma senha em vários lugares, que torne-a complexa e para não simplificá-la como Senha123. Como as organizações podem garantir que os usuários estejam seguindo as diretrizes? Como podem garantir que os usuários não utilizam senhas comuns ou senhas que são conhecidas por estarem incluídas em violações de dados recentes?
+Líderes do setor que você não deve usar a mesma senha em vários lugares, para tornar isso complexo e não fazer simples como "Password123". Como as organizações podem garantir que seus usuários estão seguindo as orientações para práticas recomendadas? Como eles ter certeza de que os usuários não estiverem usando senhas fracas, ou até mesma variações senhas fracas?
+
+A etapa inicial que senhas mais fortes é fornecer orientações para seus usuários. A diretriz atual da Microsoft sobre este tópico pode ser encontrada no seguinte link:
+
+[Diretrizes de Senha da Microsoft](https://www.microsoft.com/research/publication/password-guidance)
+
+É importante, mas até mesmo com o que sabemos que muitos usuários acabarão escolhendo senhas fracas ter boas diretrizes. A proteção de senha do AD do Azure protege sua organização, detectar e bloquear senhas fracas conhecidas e suas variantes, bem como, opcionalmente, bloqueando termos fracos adicionais que são específicos para sua organização.
+
+Para obter mais informações sobre os esforços atuais de segurança, consulte o [Relatório de inteligência de segurança da Microsoft](https://www.microsoft.com/security/operations/security-intelligence-report).
 
 ## <a name="global-banned-password-list"></a>Lista de senhas proibidas globalmente
 
-A Microsoft está sempre trabalhando para se manter um passo à frente dos cibercriminosos. Portanto, a equipe do Azure AD Identity Protection procura continuamente por senhas comumente usadas e comprometidas. Em seguida, bloqueiam as senhas consideradas muito comuns na lista de senhas proibidas globalmente. Os criminosos cibernéticos também usam estratégias semelhantes em seus ataques, portanto, a Microsoft não publica o conteúdo dessa lista publicamente. Essas senhas vulneráveis são bloqueadas antes de tornarem-se uma ameaça real aos clientes da Microsoft. Para obter mais informações sobre os esforços atuais de segurança, consulte o [Relatório de inteligência de segurança da Microsoft](https://www.microsoft.com/security/operations/security-intelligence-report).
+A equipe do Azure AD Identity Protection constantemente analisa a telemetria de segurança do Azure AD dados procurando para senhas fracas ou comprometidas comumente usadas, ou, mais especificamente, o mais fraco base termos que geralmente são usados como base para senhas fracas. Quando esses termos de baixa segurança forem encontrados, eles são adicionados à lista de senhas banidas global. O conteúdo da lista global de senhas banidas não se baseiam em qualquer fonte de dados externa. A lista global de senhas banidas baseia-se totalmente nos resultados contínuos de telemetria de segurança do Azure AD e a análise.
+
+Sempre que uma nova senha for alterada ou redefinida para qualquer usuário em qualquer locatário do AD do Azure, a versão atual da lista de senhas banidas global é usada como a chave de entrada ao validar a força da senha. Essa validação resulta em senhas muito mais fortes para todos os clientes do AD do Azure.
+
+> [!NOTE]
+> Cibercriminosos também usam estratégias semelhantes em seus ataques. Portanto, Microsoft não publica o conteúdo desta lista publicamente.
 
 ## <a name="custom-banned-password-list"></a>Lista personalizada de senhas banidas
 
-Algumas organizações podem querer levar a segurança um passo adiante, adicionando suas próprias personalizações no topo da lista de senhas proibidas, em que a Microsoft chama de lista de senhas proibidas personalizada. Os clientes empresariais, como a Contoso, podem optar por bloquear variantes de nomes de marca, termos específicos da empresa ou outros itens.
+Algumas organizações podem desejar melhorar ainda mais a segurança, adicionando suas próprias personalizações na parte superior da lista de senhas banidas global em que a Microsoft chama de lista de senhas banidas personalizado. A Microsoft recomenda que adicionada à lista de termos estão concentrados principalmente em termos de organizacionais específicos, como:
+
+- Nomes de marca
+- Nomes de produto
+- Locais (por exemplo, como a sede da empresa)
+- Termos de internos específico da empresa
+- Abreviações que têm o que significa específica da empresa.
+
+Depois que termos são adicionados à lista de senhas banidas personalizados, eles serão adicionados à lista global de senhas banidas quando a validação de senhas.
+
+> [!NOTE]
+> A lista de senhas banidas personalizado é limitada a ter um máximo de termos de 1000. Ele não foi projetado para ser extremamente grandes listas de senhas de bloqueio. Para aproveitar totalmente os benefícios da lista de senhas banidas personalizada, a Microsoft recomenda que você primeiro examinar e entender o algoritmo de avaliação de senha (veja [como as senhas são avaliadas](concept-password-ban-bad.md#how-are-passwords-evaluated)) antes de adicionar novos termos para o lista proibida personalizada. Noções básicas sobre como funciona o algoritmo permitirá que sua empresa detectar e bloquear o grande número de senhas fracas e suas variantes de maneira eficiente.
+
+Por exemplo: considere um cliente chamado "Contoso", que se baseia em Londres, e isso faz com que um produto chamado "Widget". Para o cliente, ele seria um desperdício, bem como menos seguro para tentar bloquear as variações específicas desses termos, como:
+
+- "Contoso! 1"
+- "Contoso@London"
+- "ContosoWidget"
+- "! Contoso"
+- "LondonHQ"
+- ...etcetera
+
+Em vez disso, é muito mais eficiente e seguro para bloquear os principais termos de base:
+
+- "Contoso"
+- "Londres"
+- "Widget"
+
+O algoritmo de validação de senha, em seguida, bloqueará automaticamente variantes fracos e combinações de opções acima.
 
 A lista de senhas proibidas personalizada e a capacidade de habilitar a integração do Active Directory local são gerenciadas usando o portal do Azure.
 
 ![Modificar a lista de senhas banidas personalizado em métodos de autenticação](./media/concept-password-ban-bad/authentication-methods-password-protection.png)
+
+## <a name="password-spray-attacks-and-third-party-compromised-password-lists"></a>Ataques de senha de spray e listas de senhas comprometidas de terceiros
+
+É uma chave de benefício de proteção de senha do AD do Azure para ajudá-lo a se defender contra ataques de senha de spray. A maioria dos ataques de senha de spray não tentar atacar qualquer determinada conta individual mais de algumas vezes desde que tal comportamento aumenta significativamente a probabilidade de detecção de, por meio do bloqueio de conta ou outros meios. Portanto, a maioria dos ataques de senha de spray contar enviando apenas um pequeno número de senhas mais fracas conhecidos em relação a cada uma das contas em uma empresa. Essa técnica permite que o invasor localizar rapidamente uma conta podem ser facilmente comprometida enquanto ao mesmo tempo evitando possíveis limites de detecção.
+
+Proteção por senha do AD do Azure é projetada para bloquear com eficiência todas as senhas fracas conhecidas que podem ser usadas em ataques de spray de senha, com base nos dados de telemetria de segurança do mundo real, como visto pelo AD do Azure.  A Microsoft está ciente dos sites de terceiros que enumerar milhões de senhas que foram comprometidas em violações de segurança publicamente conhecidos anteriores. É comum para produtos de validação de senha de terceiros deve se basear a comparação de força bruta contra esses milhões de senhas. Microsoft sentem que essas técnicas não são a melhor maneira de melhorar a força da senha geral considerando as estratégias típica usadas pelos invasores de spray de senha.
+
+> [!NOTE]
+> Microsoft global senhas banidas lista não é com base em fontes de depende de quaisquer dados de terceiros, incluindo listas de senhas comprometidas.
+
+Embora a lista proibida global da Microsoft é pequena em comparação com algumas listas em massa de terceiros, seus efeitos de segurança são amplificados pelo fato de que ele é originado de telemetria de segurança do mundo real de ataques de senha real de irrigação, além do fato de que a Microsoft algoritmo de validação de senha usa técnicas de correspondência difusa inteligentes. O resultado final é que ele com eficiência detectar e bloquear milhões de senhas fracas mais comuns do que está sendo usado em sua empresa. Os clientes que optam por adicionar termos específicos da organização à lista de senhas banidas personalizado também aproveitar o mesmo algoritmo.
 
 ## <a name="on-premises-hybrid-scenarios"></a>Cenários híbridos locais
 
@@ -46,7 +98,7 @@ Mesmo que a senha do usuário contenha uma senha proibida, ela ainda poderá ser
 
 ### <a name="step-1-normalization"></a>Etapa 1: Normalização
 
-Primeiro, uma nova senha passa por um processo de normalização. Isso permite que um pequeno conjunto de senhas banidas seja mapeado para um conjunto muito maior de senhas potencialmente fracas.
+Primeiro, uma nova senha passa por um processo de normalização. Essa técnica permite que um pequeno conjunto de senhas banidas ser mapeado para um conjunto muito maior do que senhas fracas potencialmente.
 
 A normalização tem duas partes.  Primeiros, todas as letras maiúsculas são alteradas para letras minúsculas.  Por exemplo, as substituições de caractere comuns são realizadas, como:  
 
@@ -69,7 +121,7 @@ Exemplo: suponha que a senha “abcdef” seja proibida e um usuário tente alte
 
 ‘abcdeg’    *(último caractere foi alterado de ‘f’ para ‘g’)* ‘abcdefg’   *’(g’ acrescentado ao final)* ‘abcde’     *(‘f’ à direita excluído do fim)*
 
-Cada uma das senhas acima não corresponde especificamente à senha banida "abcdef". No entanto, uma vez que cada exemplo está a uma edição do token proibido ‘abcdef’, eles são considerados uma correspondência de “abcdef”.
+Cada uma das senhas acima não corresponde especificamente à senha banida "abcdef". No entanto, uma vez que cada exemplo é dentro de uma distância de edição de 1 do termo 'abcdef' proibido, eles são considerados como uma correspondência para "abcdef".
 
 #### <a name="substring-matching-on-specific-terms"></a>Correspondência de subcadeia de caracteres (em termos específicos)
 
@@ -83,7 +135,7 @@ A próxima etapa é identificar todas as instâncias de senhas banidas na nova s
 
 1. Cada senha banida encontrada na senha do usuário recebe um ponto.
 2. Cada caractere exclusivo restante recebe um ponto.
-3. Uma senha deve ter pelo menos cinco pontos para que seja aceita.
+3. Uma senha deve ter pelo menos cinco (5) pontos para que ela seja aceita.
 
 Para os próximos dois exemplos, vamos supor que a Contoso esteja usando a proteção de senha do Azure AD e tenha "contoso" em suas listas personalizadas. Vamos supor também que "em branco" está na lista global.
 
@@ -91,13 +143,13 @@ Exemplo: um usuário altera sua senha para “C0ntos0Blank12”
 
 Após a normalização, essa senha se torna “contosoblank12”. O processo de correspondência localiza que essa senha contém duas senhas banidas: contoso e em branco. Essa senha então recebe uma pontuação:
 
-[contoso] + [em branco] + [1] + [2] = 4 pontos como essa senha é em 5 pontos, ele será rejeitado.
+[contoso] + [em branco] + [1] + [2] = 4 pontos como essa senha é pontos em cinco (5), ele será rejeitado.
 
 Exemplo: um usuário altera a senha para "ContoS0Bl@nkf9!".
 
 Após a normalização, essa senha se torna “contosoblankf9!”. O processo de correspondência localiza que essa senha contém duas senhas banidas: contoso e em branco. Essa senha então recebe uma pontuação:
 
-[contoso] + [em branco] + [f] + [9] + [!] = 5 pontos; uma vez que essa senha tem pelo menos 5 pontos, ela é aceita.
+[contoso] + [em branco] + [f] + [9] + [!] = 5 pontos, pois essa senha é pontos de pelo menos cinco (5), ela é aceita.
 
    > [!IMPORTANT]
    > Observe que o algoritmo de senhas banidas junto com a lista global pode mudar e muda a qualquer momento no Azure com base em análise e pesquisa de segurança contínuas. Para o serviço de agente do controlador de domínio local, os algoritmos atualizados só terão efeito depois que o software do agente de controlador de domínio for reinstalado.
@@ -122,5 +174,5 @@ Infelizmente, sua senha contém uma palavra, uma frase ou um padrão que pode se
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Configurar a lista de senhas proibidas personalizada](howto-password-ban-bad.md)
-* [Habilitar agentes de proteção por senha do Azure AD local](howto-password-ban-bad-on-premises-deploy.md)
+- [Configurar a lista de senhas proibidas personalizada](howto-password-ban-bad.md)
+- [Habilitar agentes de proteção por senha do Azure AD local](howto-password-ban-bad-on-premises-deploy.md)

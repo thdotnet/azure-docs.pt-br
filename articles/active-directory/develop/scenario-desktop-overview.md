@@ -15,12 +15,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 204e230f7ff0897d2ba97213ebc836aff9d0324b
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 476703b52813e6b3081dcfb3ab5a2fb4f3a7bfc5
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204643"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67785628"
 ---
 # <a name="scenario-desktop-app-that-calls-web-apis"></a>Cenário: Aplicativo da área de trabalho que chama APIs Web
 
@@ -45,7 +45,11 @@ Se você ainda não fez isso, crie seu primeiro aplicativo seguindo o início r�
 
 Você escreve um aplicativo da área de trabalho, e você deseja conectar usuários ao seu aplicativo e chamar APIs, como o Microsoft Graph, outras APIs da Microsoft ou sua própria API web da web. Você tem várias possibilidades:
 
-- Se seu aplicativo da área de trabalho oferece suporte a controles de gráficos, por exemplo se ele é um aplicativo de Windows.Form ou um aplicativo WPF, você pode usar a aquisição de token interativa.
+- Você pode usar a aquisição de token interativa:
+
+  - Se seu aplicativo da área de trabalho oferece suporte a controles de gráficos, por exemplo se ele é um aplicativo de Windows.Form ou um aplicativo WPF.
+  - De se ele for um aplicativo .NET Core e você concorda que a interação de autenticação com o Azure AD acontecer no navegador do sistema
+
 - Para aplicativos hospedado do Windows, também é possível para aplicativos executados em computadores que ingressaram em um domínio do Windows ou ingressado no AAD para adquirir um token silenciosamente usando a autenticação integrada do Windows.
 - Por fim, e embora não seja recomendado, você pode usar o nome de usuário e senha em aplicativos de cliente público. Ele ainda é necessário em alguns cenários (como o DevOps), mas lembre-se de que a usá-lo impõem restrições em seu aplicativo. Por exemplo, ele não pode entrar no usuário que precisa para realizar a autenticação multifator (acesso condicional). Também seu aplicativo não se beneficiar do logon único (SSO).
 
@@ -53,7 +57,7 @@ Você escreve um aplicativo da área de trabalho, e você deseja conectar usuár
 
   ![Aplicativo da área de trabalho](media/scenarios/desktop-app.svg)
 
-- Se você estiver escrevendo uma ferramenta de linha de comando portátil - provavelmente um aplicativo .NET Core em execução no Linux ou Mac, você não poderá usar a autenticação de interativa (como .NET Core não fornece um [navegador da Web](https://aka.ms/msal-net-uses-web-browser)), ou integrado Autenticação do Windows. Nesse caso, a melhor opção é usar o fluxo de código do dispositivo. Esse fluxo também é usado para aplicativos sem um navegador, como aplicativos de IoT
+- Se você estiver escrevendo uma ferramenta de linha de comando - provavelmente um aplicativo .NET Core em execução no Linux ou Mac - portáteis e se você aceitar que a autenticação ser designado como o navegador do sistema, você poderá usar a autenticação interativa. (.NET core não fornece ainda [navegador da Web](https://aka.ms/msal-net-uses-web-browser) e, portanto, a autenticação ocorre no navegador system), caso contrário, a melhor opção nesse caso é usar o fluxo de código do dispositivo. Esse fluxo também é usado para aplicativos sem um navegador, como aplicativos de IoT
 
   ![Aplicativo browserless](media/scenarios/device-code-flow-app.svg)
 

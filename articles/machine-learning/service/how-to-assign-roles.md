@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: larryfr
 author: Blackmist
-ms.date: 02/20/2019
+ms.date: 07/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: e062fd73f2baeb4948430b13e0caa1f5c0b3f066
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 4a5723b2ffbd34fd7cf022bf747b4504b3bdac53
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341108"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67797670"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Gerenciar o acesso a um espaço de trabalho do Azure Machine Learning
 
@@ -26,7 +26,7 @@ Neste artigo, você aprenderá a gerenciar o acesso a um espaço de trabalho do 
 
 Um espaço de trabalho do Azure Machine Learning é um recurso do Azure. Assim como outros recursos do Azure, quando um novo espaço de trabalho do Azure Machine Learning é criado, ele vem com três funções padrão. Você pode adicionar usuários ao espaço de trabalho e atribuí-los a uma dessas funções internas.
 
-| Função | Nível de acesso |
+| Role | Nível de acesso |
 | --- | --- |
 | **Leitor** | Ações de somente leitura no espaço de trabalho. Leitores podem listar e exibir ativos no espaço de trabalho, mas não é possível criar ou atualizar esses ativos. |
 | **Colaborador** | Exibir, criar, editar ou excluir (quando aplicável) ativos em um espaço de trabalho. Por exemplo, colaboradores podem criar um teste, criar ou anexar a um cluster de computação, enviar uma execução e implantar um serviço web. |

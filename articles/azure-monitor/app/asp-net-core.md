@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: mbullwin
-ms.openlocfilehash: 7fe5a4f5a5d1d254918f1b4f997acfb9cf67a75b
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 5ea7ec41ccc721e8eafda56aa7463505ba089845
+ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67272447"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67827802"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights para aplicativos ASP.NET Core
 
@@ -177,7 +177,7 @@ Se seu projeto não inclua `_Layout.cshtml`, você pode adicionar ainda [monitor
 Você pode personalizar o SDK do Application Insights para ASP.NET Core alterar a configuração padrão. Os usuários do SDK do Application Insights ASP.NET podem estar familiarizados com a alteração de configuração por meio `ApplicationInsights.config` ou modificando `TelemetryConfiguration.Active`. Você alterar a configuração de forma diferente para o ASP.NET Core. Adicionar o SDK do ASP.NET Core para o aplicativo e configurá-lo usando o ASP.NET Core internos [injeção de dependência](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection). Fazer quase todas as alterações de configuração na `ConfigureServices()` método de sua `Startup.cs` de classe, a menos que você está direcionado de outra forma. As seções a seguir oferecem mais informações.
 
 > [!NOTE]
-> Em aplicativos ASP.NET Core, alterando a configuração modificando `TelemetryConfiguration.Active` não é recomendado.
+> Em aplicativos ASP.NET Core, alterando a configuração modificando `TelemetryConfiguration.Active` não tem suporte.
 
 ### <a name="using-applicationinsightsserviceoptions"></a>Usando ApplicationInsightsServiceOptions
 
@@ -314,6 +314,23 @@ using Microsoft.ApplicationInsights.Channel;
     }
 ```
 
+### <a name="disable-telemetry-dynamically"></a>Desabilitar a telemetria dinamicamente
+
+Se você quiser desabilitar condicionalmente e dinamicamente a telemetria, você pode resolver `TelemetryConfiguration` de instância com o contêiner de injeção de dependência do ASP.NET Core em qualquer lugar no seu código e defina `DisableTelemetry` sinalizador nele.
+
+```csharp
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddApplicationInsightsTelemetry();
+    }
+
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env, TelemetryConfiguration configuration)
+    {
+        configuration.DisableTelemetry = true;
+        ...
+    }
+```
+
 ## <a name="frequently-asked-questions"></a>Perguntas frequentes
 
 ### <a name="how-can-i-track-telemetry-thats-not-automatically-collected"></a>Como posso acompanhar telemetria coletada automaticamente?
@@ -364,7 +381,7 @@ Se o SDK está instalado no momento da compilação, conforme mostrado neste art
 
 ### <a name="can-i-enable-application-insights-monitoring-by-using-tools-like-status-monitor"></a>Posso habilitar o monitoramento do Application Insights usando ferramentas como o Monitor de Status?
 
-Não. [Monitor de status](https://docs.microsoft.com/azure/azure-monitor/app/monitor-performance-live-website-now) e [v2 do Monitor de Status](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview) atualmente dão suporte ao ASP.NET 4. x somente.
+Nº [Monitor de status](https://docs.microsoft.com/azure/azure-monitor/app/monitor-performance-live-website-now) e [v2 do Monitor de Status](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview) atualmente dão suporte ao ASP.NET 4. x somente.
 
 ### <a name="is-application-insights-automatically-enabled-for-my-aspnet-core-20-application"></a>Application Insights é habilitado automaticamente para o meu aplicativo ASP.NET Core 2.0?
 
@@ -408,3 +425,4 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 * [Configurar uma coleção de instantâneo](https://docs.microsoft.com/azure/application-insights/app-insights-snapshot-debugger) para ver o estado do código-fonte e variáveis no momento em que uma exceção será lançada.
 * [Usar a API](../../azure-monitor/app/api-custom-events-metrics.md) para enviar seus próprios eventos e métricas para uma exibição detalhada do desempenho e uso de seu aplicativo.
 * Use os [Testes de disponibilidade](../../azure-monitor/app/monitor-web-app-availability.md) para verificar seu aplicativo constante em todo o mundo.
+* [Injeção de dependência no ASP.NET Core](https://docs.microsoft.com/aspnet/fundamentals/dependency-injection)

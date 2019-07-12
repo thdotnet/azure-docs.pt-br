@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 06/18/2019
+ms.date: 07/10/2019
 ms.author: diberry
-ms.openlocfilehash: 7f82bf5a40df0554d4f98b2d835fcbd69279be43
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: dedc498ebc910b448b1684136c288b2045780e00
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204151"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67797946"
 ---
 # <a name="using-subscription-keys-with-your-luis-app"></a>Usando chaves de assinatura com seu aplicativo LUIS
 
@@ -32,6 +32,8 @@ Para testar e protótipo apenas, use a camada gratuita (F0). Para sistemas de pr
 
 Você cria o [recurso de ponto de extremidade de previsão](get-started-portal-deploy-app.md#create-the-endpoint-resource) no portal do Azure. Esse recurso deve ser usado somente para consultas de previsão de ponto de extremidade. Não use esse recurso para criação de alterações para o aplicativo.
 
+Você pode criar um recurso de compreensão de idioma ou um recurso dos serviços Cognitivos. Se você estiver criando um recurso de reconhecimento vocal, é uma boa prática postpend o tipo de recurso para o nome do recurso. 
+
 <a name="programmatic-key" ></a>
 <a name="authoring-key" ></a>
 <a name="endpoint-key" ></a>
@@ -45,6 +47,15 @@ Você cria o [recurso de ponto de extremidade de previsão](get-started-portal-d
 <a name="assign-endpoint-key"></a>
 <a name="assign-resource"></a>
 
+### <a name="using-resource-from-luis-portal"></a>Usando o recurso do portal do LUIS
+
+Se você estiver usando o recurso do portal do LUIS, você não precisa saber a sua chave e o local. Em vez disso, você precisa saber o seu locatário do recurso, a assinatura e o nome do recurso.
+
+Depois que você [atribua](#assign-resource-key-to-luis-app-in-luis-portal) seu recurso ao seu aplicativo LUIS no portal do LUIS, a chave e o local são fornecidos como parte da URL de ponto de extremidade de previsão de consulta na seção gerenciar **chaves e o ponto de extremidade configurações** página.
+ 
+### <a name="using-resource-from-rest-api-or-sdk"></a>Usando o recurso da API REST ou SDK
+
+Se você estiver usando o recurso do API(s) REST ou SDK, você precisa saber a sua chave e o local. Essas informações são fornecidas como parte da URL de ponto de extremidade de previsão de consulta na seção gerenciar **chaves e o ponto de extremidade configurações** página, bem como no portal do Azure, nas páginas de visão geral e as chaves do recurso.
 
 ## <a name="assign-resource-key-to-luis-app-in-luis-portal"></a>Atribuir chave de recurso ao aplicativo do LUIS no Portal do LUIS
 
@@ -121,7 +132,7 @@ Para fins de automação, como um pipeline de CI/CD, você talvez queira automat
 
     Essa API POST requer as seguintes configurações:
 
-    |Cabeçalho|Value|
+    |Cabeçalho|Valor|
     |--|--|
     |`Authorization`|O valor de `Authorization` é `Bearer {token}`. Observe que o valor do token deve ser precedido pela palavra `Bearer` e um espaço.| 
     |`Ocp-Apim-Subscription-Key`|Sua [chave de criação](luis-how-to-account-settings.md).|
@@ -132,7 +143,7 @@ Para fins de automação, como um pipeline de CI/CD, você talvez queira automat
 
     Essa API POST requer as seguintes configurações:
 
-    |Type|Configuração|Value|
+    |Tipo|Configuração|Valor|
     |--|--|--|
     |Cabeçalho|`Authorization`|O valor de `Authorization` é `Bearer {token}`. Observe que o valor do token deve ser precedido pela palavra `Bearer` e um espaço.|
     |Cabeçalho|`Ocp-Apim-Subscription-Key`|Sua [chave de criação](luis-how-to-account-settings.md).|

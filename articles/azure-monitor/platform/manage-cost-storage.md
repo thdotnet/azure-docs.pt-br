@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 06/06/2019
 ms.author: magoedte
 ms.subservice: ''
-ms.openlocfilehash: b7fa59f4086608a8bacabde21f0c02c108f1f5e8
-ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
+ms.openlocfilehash: bcfefc9698f7f251e99531750e19e7c06395e064
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67466741"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67655700"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Gerenciar o uso e os custos com Logs do Azure Monitor
 
@@ -383,7 +383,7 @@ Use as etapas descritas em [criar um novo alerta de log](alerts-metric.md) para 
 
 Ao criar o alerta para a primeira consulta, quando há mais de 100 GB de dados em 24 horas, defina:  
 
-- **Definir condição de alerta** especifica seu workspace do Log Analytics como o destino do recurso.
+- **Definir condição de alerta** especifica seu espaço de trabalho do Log Analytics como o destino do recurso.
 - **Critérios de alerta** especificam o seguinte:
    - **Nome do sinal** seleciona **Pesquisa de registro personalizada**
    - **Consulta de pesquisa** como `union withsource = $table Usage | where QuantityUnit == "MBytes" and iff(isnotnull(toint(IsBillable)), IsBillable == true, IsBillable == "true") == true | extend Type = $table | summarize DataGB = sum((Quantity / 1024)) by Type | where DataGB > 100`
@@ -397,7 +397,7 @@ Especifique um já existente ou crie um novo [Grupo de ação](action-groups.md)
 
 Ao criar o alerta para a segunda consulta, quando existe a previsão de que haverá mais de 100 GB de dados em 24 horas, defina:
 
-- **Definir condição de alerta** especifica seu workspace do Log Analytics como o destino do recurso.
+- **Definir condição de alerta** especifica seu espaço de trabalho do Log Analytics como o destino do recurso.
 - **Critérios de alerta** especificam o seguinte:
    - **Nome do sinal** seleciona **Pesquisa de registro personalizada**
    - **Consulta de pesquisa** como `union withsource = $table Usage | where QuantityUnit == "MBytes" and iff(isnotnull(toint(IsBillable)), IsBillable == true, IsBillable == "true") == true | extend Type = $table | summarize EstimatedGB = sum(((Quantity * 8) / 1024)) by Type | where EstimatedGB > 100`
@@ -413,7 +413,7 @@ Ao receber um alerta, use as etapas na seção a seguir para solucionar problema
 
 ## <a name="limits-summary"></a>Resumo de limites
 
-Há alguns limites adicionais do Log Analytics, algumas das quais dependem do tipo de preço do Log Analytics. Essas situações são documentadas [aqui](https://docs.microsoft.com/azure/azure-subscription-service-limits#log-analytics-limits).
+Há alguns limites adicionais do Log Analytics, algumas das quais dependem do tipo de preço do Log Analytics. Essas situações são documentadas [aqui](https://docs.microsoft.com/azure/azure-subscription-service-limits#log-analytics-workspaces).
 
 
 ## <a name="next-steps"></a>Próximas etapas

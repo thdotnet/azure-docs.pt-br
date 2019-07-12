@@ -1,7 +1,7 @@
 ---
 title: 'Início rápido do Python: Criar, carregar e consultar índices usando APIs de REST de pesquisa do Azure - Azure Search'
 description: Explica como criar um índice, carregar os dados e executar consultas usando o Python, Jupyter Notebooks e a API REST do Azure Search.
-ms.date: 06/20/2019
+ms.date: 07/11/2019
 author: heidisteen
 manager: cgronlun
 ms.author: heidist
@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 613879abd4c5c09450b690b793500a99428cff29
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 123afa2452c3e492b85292514e64f84d3baec390
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67485466"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67840298"
 ---
 # <a name="quickstart-create-an-azure-search-index-in-python-using-jupyter-notebooks"></a>Início Rápido: Criar um índice de Azure Search em Python usando notebooks Jupyter
 > [!div class="op_single_selector"]
@@ -26,7 +26,7 @@ ms.locfileid: "67485466"
 > * [Portal](search-create-index-portal.md)
 > 
 
-Criar um bloco de anotações do Jupyter que cria, carrega e consulta o índice de Azure Search usando o Python e o [as APIs REST do Azure Search](https://docs.microsoft.com/rest/api/searchservice/). Este artigo explica como criar um bloco de anotações passo a passo, começar do zero. Como alternativa, você pode executar um bloco de anotações concluído. Para baixar uma cópia, vá para o[repositório azure-search-python-samples](https://github.com/Azure-Samples/azure-search-python-samples).
+Criar um bloco de anotações do Jupyter que cria, carrega e consulta o índice de Azure Search usando o Python e o [as APIs REST do Azure Search](https://docs.microsoft.com/rest/api/searchservice/). Este artigo explica como criar um bloco de anotações passo a passo. Como alternativa, você pode [baixar e executar um bloco de anotações do Jupyter Python concluído](https://github.com/Azure-Samples/azure-search-python-samples).
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
@@ -64,7 +64,7 @@ Nesta tarefa, inicie um notebook Jupyter e verifique se que você pode se conect
    from pprint import pprint
    ```
 
-1. Na segunda célula, os elementos de solicitação que serão constantes em todas as solicitações de entrada. Substitua o nome do serviço de pesquisa (YOUR-SEARCH-SERVICE-NAME) e a chave de API de administração (YOUR-ADMIN-API-KEY) com valores válidos. 
+1. Na segunda célula, os elementos de solicitação que serão constantes em todas as solicitações de entrada. Substitua o nome do serviço de pesquisa (NOME-DO-SERVIÇO-DE-PESQUISA) e a chave de API de administração (CHAVE-DE-API-DE-ADMINISTRAÇÃO) por valores válidos. 
 
    ```python
    endpoint = 'https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/'
@@ -295,26 +295,13 @@ Esta etapa mostra como consultar um índice usando o [API REST de pesquisa de do
    searchstring = '&search=pool&$orderby=Address/City&$select=HotelId, HotelName, Address/City, Address/StateProvince, Tags'
    ```
 
-## <a name="clean-up"></a>Limpar 
+## <a name="clean-up"></a>Limpar
 
-Você deve excluir o índice se você não precisar mais dela. Um serviço gratuito é limitado a três índices. Você deve excluir qualquer índice que você não estiver usando ativamente para liberar espaço para outros tutoriais.
+Quando você estiver trabalhando em sua própria assinatura, é uma boa ideia no final de um projeto para identificar se você ainda precisa os recursos criados por você. Recursos deixados em execução podem custar dinheiro. Você pode excluir os recursos individualmente ou excluir o grupo de recursos para excluir todo o conjunto de recursos.
 
-A maneira mais fácil excluir objetos é por meio do portal, mas como esse é um guia de início rápido do Python, a sintaxe a seguir produz o mesmo resultado:
+Você pode localizar e gerenciar recursos no portal, usando o **todos os recursos** ou **grupos de recursos** link no painel de navegação à esquerda.
 
-   ```python
-  url = endpoint + "indexes/hotels-quickstart" + api_version
-  response  = requests.delete(url, headers=headers)
-   ```
-
-Você pode verificar a exclusão de índice, solicitando uma lista dos índices existentes. Se o guia de início rápido hotéis não existe mais, você sabe sua solicitação foi bem-sucedida.
-
-```python
-url = endpoint + "indexes" + api_version + "&$select=name"
-
-response  = requests.get(url, headers=headers)
-index_list = response.json()
-pprint(index_list)
-```
+Se você estiver usando um serviço gratuito, lembre-se de que você está limitado a três índices, indexadores e fontes de dados. Você pode excluir itens individuais no portal para permanecer abaixo do limite. 
 
 ## <a name="next-steps"></a>Próximas etapas
 
