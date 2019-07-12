@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: 3265477108b7e74d65050408add6c5d5c94b4852
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b615185472ede25fd6ceef9cc3e7325375e16ac7
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65233884"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67846674"
 ---
 # <a name="prebuilt-domain-reference-for-your-luis-app"></a>Referência de domínio predefinida para seu aplicativo LUIS
 Esta referência contém informações sobre o [domínios pré-compilada](luis-how-to-use-prebuilt-domains.md), que são conjuntos predefinidos de entidades que oferece LUÍS e tentativas.
@@ -54,7 +54,7 @@ The table below summarizes the currently supported domains. Support for English 
 
 |Tipo de entidade|description|
 |--|--|
-|Calendário|Calendário é nada sobre reuniões particulares e compromissos, _não_ eventos públicos (como agendas de Copa do mundo, os calendários de eventos de Seattle ou calendários genéricos (como que dia é hoje em dia, o que for outono iniciado, quando é dia de trabalho).|
+|Calendário|Calendário é nada sobre reuniões particulares e compromissos, _não_ eventos públicos (como agendas de Copa do mundo, calendários de eventos de Seattle) ou calendários genéricos (como que dia é hoje em dia, o que for outono iniciado, quando é dia de trabalho).|
 |Comunicação|As solicitações para fazer chamadas, enviar mensagens ou mensagens instantâneas, localizar e adicionar contatos e várias outras solicitações relacionadas à comunicação (geralmente de saída). Nome de contato apenas as consultas não pertencem ao domínio de comunicação.|
 |Email|Email é um subdomínio do domínio de comunicação. Ele contém principalmente as solicitações para enviar e receber mensagens por meio de emails.|
 |HomeAutomation|O domínio de HomeAutomation fornece intenções e entidades relacionadas ao controle de dispositivos inteligentes de base. Ele é compatível basicamente com o comando de controle relacionado ao luzes e ar-condicionado, mas ele tem algumas capacidades de generalização para outros dispositivos de energia elétricas.|
