@@ -9,13 +9,14 @@ ms.service: azure-functions
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/22/2019
-ms.author: tyleonha, glenga
-ms.openlocfilehash: 489c94f37b6c88db001dee437cc6ed89383e6053
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.author: tyleonha
+ms.reviewer: glenga
+ms.openlocfilehash: a75bdaf0e26193a5b2792b52923c085eff89b83f
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67442173"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706408"
 ---
 # <a name="azure-functions-powershell-developer-guide"></a>Guia do desenvolvedor do PowerShell de funções do Azure
 
@@ -81,11 +82,11 @@ O `TriggerMetadata` parâmetro é usado para fornecer informações adicionais s
 $TriggerMetadata.sys
 ```
 
-| Propriedade   | Description                                     | Type     |
+| Propriedade   | Description                                     | Tipo     |
 |------------|-------------------------------------------------|----------|
 | UtcNow     | Quando, no UTC, a função foi disparada        | DateTime |
-| MethodName | O nome da função que foi disparado     | string   |
-| RandGuid   | um guid exclusivo para a execução da função | string   |
+| MethodName | O nome da função que foi disparado     | cadeia de caracteres   |
+| RandGuid   | um guid exclusivo para a execução da função | cadeia de caracteres   |
 
 Cada tipo de gatilho tem um conjunto diferente de metadados. Por exemplo, o `$TriggerMetadata` para `QueueTrigger` contém o `InsertionTime`, `Id`, `DequeueCount`, entre outras coisas. Para obter mais informações sobre os metadados do gatilho de fila, vá para o [documentação oficial para gatilhos de fila](functions-bindings-storage-queue.md#trigger---message-metadata). Verifique a documentação sobre o [gatilhos](functions-triggers-bindings.md) você está trabalhando para ver o que vem de dentro de metadados de gatilho.
 
@@ -133,10 +134,10 @@ Produce-MyOutputValue | Push-OutputBinding -Name myQueue
 
 Estes são os parâmetros válidos para a chamada `Push-OutputBinding`:
 
-| NOME | Type | Position | DESCRIÇÃO |
+| Nome | Tipo | Position | DESCRIÇÃO |
 | ---- | ---- |  -------- | ----------- |
-| **`-Name`** | String | 1 | O nome da associação de saída que você deseja definir. |
-| **`-Value`** | Object | 2 | O valor da associação de saída você deseja definir, que é aceito na pipeline ByValue. |
+| **`-Name`** | string | 1 | O nome da associação de saída que você deseja definir. |
+| **`-Value`** | Objeto | 2 | O valor da associação de saída você deseja definir, que é aceito na pipeline ByValue. |
 | **`-Clobber`** | SwitchParameter | nomeado | (Opcional) Quando especificado, obrigará o valor a ser definido para uma associação de saída especificado. | 
 
 Também há suporte para os seguintes parâmetros comuns: 
@@ -283,7 +284,7 @@ Há um número de gatilhos e associações para usar com seu aplicativo de funç
 Todos os gatilhos e associações são representadas no código, como alguns tipos de dados real:
 
 * Tabela de hash
-* string
+* cadeia de caracteres
 * byte[]
 * int
 * double
@@ -302,14 +303,14 @@ HTTP e gatilhos de webhook e associações de saída HTTP usam objetos de solici
 
 O objeto de solicitação que é passado para o script é do tipo `HttpRequestContext`, que tem as seguintes propriedades:
 
-| Propriedade  | Description                                                    | Type                      |
+| Propriedade  | Description                                                    | Tipo                      |
 |-----------|----------------------------------------------------------------|---------------------------|
-| **`Body`**    | Um objeto que contém o corpo da solicitação. `Body` é serializado no melhor tipo com base nos dados. Por exemplo, se os dados JSON, ele é passado como uma tabela de hash. Se os dados forem uma cadeia de caracteres, ele é passado como uma cadeia de caracteres. | object |
+| **`Body`**    | Um objeto que contém o corpo da solicitação. `Body` é serializado no melhor tipo com base nos dados. Por exemplo, se os dados JSON, ele é passado como uma tabela de hash. Se os dados forem uma cadeia de caracteres, ele é passado como uma cadeia de caracteres. | objeto |
 | **`Headers`** | Um dicionário que contém os cabeçalhos de solicitação.                | Dicionário < cadeia de caracteres, cadeia de caracteres ><sup>*</sup> |
-| **`Method`** | O método HTTP da solicitação.                                | string                    |
+| **`Method`** | O método HTTP da solicitação.                                | cadeia de caracteres                    |
 | **`Params`**  | Um objeto que contém os parâmetros de roteamento da solicitação. | Dicionário < cadeia de caracteres, cadeia de caracteres ><sup>*</sup> |
 | **`Query`** | Um objeto que contém os parâmetros da consulta.                  | Dicionário < cadeia de caracteres, cadeia de caracteres ><sup>*</sup> |
-| **`Url`** | A URL da solicitação.                                        | string                    |
+| **`Url`** | A URL da solicitação.                                        | cadeia de caracteres                    |
 
 <sup>*</sup> Todos os `Dictionary<string,string>` chaves diferenciam maiusculas de minúsculas.
 
@@ -317,10 +318,10 @@ O objeto de solicitação que é passado para o script é do tipo `HttpRequestCo
 
 O objeto de resposta que você deve enviar de volta é do tipo `HttpResponseContext`, que tem as seguintes propriedades:
 
-| Propriedade      | Description                                                 | Type                      |
+| Propriedade      | Description                                                 | Tipo                      |
 |---------------|-------------------------------------------------------------|---------------------------|
-| **`Body`**  | Um objeto que contém o corpo da resposta.           | object                    |
-| **`ContentType`** | Uma mão curta para definir o tipo de conteúdo para a resposta. | string                    |
+| **`Body`**  | Um objeto que contém o corpo da resposta.           | objeto                    |
+| **`ContentType`** | Uma mão curta para definir o tipo de conteúdo para a resposta. | cadeia de caracteres                    |
 | **`Headers`** | Um objeto que contém os cabeçalhos da resposta.               | Dicionário ou tabela de hash   |
 | **`StatusCode`**  | O código de status HTTP da resposta.                       | cadeia de caracteres ou inteiro             |
 
@@ -602,7 +603,7 @@ O script é executado em cada invocação. Evite usar `Install-Module` em seu sc
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para saber mais, consulte os recursos a seguir:
+Para obter mais informações, consulte os seguintes recursos:
 
 * [Práticas recomendadas para o Azure Functions](functions-best-practices.md)
 * [Referência do desenvolvedor do Azure Functions](functions-reference.md)

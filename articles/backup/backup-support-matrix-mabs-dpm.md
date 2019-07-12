@@ -8,12 +8,12 @@ ms.date: 02/17/2019
 ms.topic: conceptual
 ms.author: raynew
 manager: carmonm
-ms.openlocfilehash: 0f99042d91738c88a8b673444bb3d4a40602b012
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 85e65c36a0d636d94a9ef9070c21ab047542d8f4
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204180"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67594255"
 ---
 # <a name="support-matrix-for-backup-with-microsoft-azure-backup-server-or-system-center-dpm"></a>Matriz de suporte para backup com o servidor de Backup do Microsoft Azure ou o System Center DPM
 
@@ -55,7 +55,7 @@ Para mais informações:
 
 **Cenário** | **Agente** | **Localidade**
 --- | --- | ---
-**Fazer backup das cargas de trabalho/computadores locais** | Agente de proteção do MABS/DPM é executado nas máquinas que você deseja fazer backup.<br/><br/> O agente do MARS no servidor MABS/DPM. | MABS/DPM deve estar em execução no local.
+**Fazer backup das cargas de trabalho/computadores locais** | Agente de proteção do MABS/DPM é executado nas máquinas que você deseja fazer backup.<br/><br/> O agente do MARS no servidor MABS/DPM.<br/> A versão mínima do agente dos Serviços de Recuperação do Microsoft Azure ou do agente de Backup do Azure necessária para habilitar esse recurso é 2.0.8719.0.  | MABS/DPM deve estar em execução no local.
 **Fazer backup de VMs/cargas de trabalho do Azure** | Agente de proteção do MABS/DPM no computador protegido.<br/><br/> O agente do MARS no servidor MABS/DPM. | O MABS/DPM deve ser executado na VM do Azure.
 
 ## <a name="supported-deployments"></a>Implantações com suporte
@@ -152,7 +152,7 @@ Do DPM 2016 para o MABS v2 (em execução no Windows Server 2016) e posterior, v
 - Os backups do MBS são armazenados no disco ReFS (Sistema de Arquivos Resiliente).
 - MBS usa a clonagem de backup mais rápido e um uso mais eficiente do espaço de armazenamento de bloco do ReFS.
 - Quando você adiciona volumes ao pool de armazenamento local do MABS/DPM, você pode configurá-los com letras de unidade. Em seguida, é possível configurar o armazenamento de carga de trabalho em diferentes volumes.
-- Ao criar grupos de proteção para fazer backup dos dados do MABS/DPM, é possível selecionar a unidade que você deseja usar. Por exemplo, você pode armazenar os backups para outra unidade de cargas de trabalho de alto desempenho de IOPS alta ou de SQL e armazenar cargas de trabalho de backup com menos frequência em uma unidade de desempenho inferior.
+- Ao criar grupos de proteção para fazer backup dos dados do MABS/DPM, é possível selecionar a unidade que você deseja usar. Por exemplo, você pode armazenar os backups para o SQL ou outras cargas de trabalho IOPS altas em uma unidade de alto desempenho e armazenar as cargas de trabalho de backup com menos frequência em uma unidade de desempenho inferior.
 
 
 ## <a name="supported-backups-to-mabs"></a>Backups compatíveis com o MABS
@@ -206,7 +206,7 @@ A tabela a seguir resume o que pode ser feito backup no DPM das máquinas locais
 **VMs do VMware: vCenter/vSphere ESXi 5.5/6.0/6.5** | MABS v3, v2 <br/><br/> O DPM 2012 R2 precisa do System Center com pacote cumulativo de atualizações 1) <br/><br/>No local. | Fazer backup de VMs de VMware no armazenamento CSVs, NFS e SAN.<br/><br/> Recuperar toda a VM.<br/><br/> Backup do Windows/Linux.<br/><br/> Recuperação em nível de item de pasta/arquivos somente para VMs do Windows.<br/><br/> Não é compatível com vApps de VMware.<br/><br/> A recuperação de VMs do Linux é para o computador inteiro.
 
 
-- Observe que cargas de trabalho clusterizadas backup pelo MABS/DPM devem estar no mesmo domínio que o MABS/DPM ou em um domínio filho/confiável.
+- Cargas de trabalho clusterizadas backup pelo MABS/DPM devem ser no mesmo domínio que o MABS/DPM ou em um domínio filho/confiável.
 - Você pode usar a autenticação NTLM/certificado para fazer backup de dados em grupos de trabalho ou domínios não confiáveis.
 
 

@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
-ms.date: 12/03/2018
+ms.date: 07/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 8fd7af7c2a075258e337b51c3aaca3da9e3d497f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 376be43a57783f537df81f0e97f005e2c46a710e
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66692869"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67797627"
 ---
 # <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Consumir um modelo de Azure Machine Learning implantado como um serviço web
 
@@ -491,6 +491,6 @@ Os resultados retornados são semelhantes ao seguinte documento JSON:
 
 Power BI dá suporte ao consumo de serviços da web de Azure Machine Learning para enriquecer os dados no Power BI com previsões. 
 
-Para gerar um serviço web que tem suporte para consumo no Power BI, o esquema deve oferecer suporte o formato exigido pelo Power BI. [Saiba como criar um esquema com suporte do Power BI](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-and-where#Example-script-with-dictionary-input-Support-consumption-from-Power-BI).
+Para gerar um serviço web que tem suporte para consumo no Power BI, o esquema deve oferecer suporte o formato exigido pelo Power BI. [Saiba como criar um esquema com suporte do Power BI](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-and-where#example-script-with-dictionary-input-support-consumption-from-power-bi).
 
 Depois que o serviço web é implantado, é consumido de fluxos de dados do Power BI. [Saiba como consumir um serviço web de Azure Machine Learning do Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-integration).

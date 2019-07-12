@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: raynew
-ms.openlocfilehash: a16ed7134fc9f3c159715f58f116de3fb30e8aca
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 1c5c38e9af58aa9468fb0e22491327d3a35f0dda
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67481134"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67656656"
 ---
 # <a name="back-up-an-sap-hana-database"></a>Fazer backup de um banco de dados do SAP HANA
 
@@ -26,7 +26,7 @@ ms.locfileid: "67481134"
 
 **Suporte** | **Detalhes**
 --- | ---
-**Áreas geográficas com suporte** | Sudeste da Austrália, Leste da Austrália <br> Sul do Brasil <br> No Canadá, Leste do Canadá <br> Sudeste Asiático, Ásia Oriental <br> Leste dos EUA, Leste dos EUA 2, oeste dos EUA, oeste dos EUA, oeste dos EUA 2, Centro-Norte dos EUA, centro dos EUA, Centro-Sul dos EUA<br> Índia Central, Sul da Índia <br> Leste do Japão, Oeste do Japão<br> Coreia Central, Sul da Coreia <br> Norte da Europa, Europa Ocidental <br> Sul do Reino Unido, oeste do Reino Unido
+**Áreas geográficas com suporte** | Sudeste da Austrália, Leste da Austrália <br> Sul do Brasil <br> No Canadá, Leste do Canadá <br> Sudeste Asiático, Ásia Oriental <br> Leste dos EUA, Leste dos EUA 2, oeste dos EUA, oeste dos EUA, oeste dos EUA 2, Centro-Norte dos EUA, centro dos EUA, Centro-Sul dos EUA<br> Índia Central, Sul da Índia <br> Leste do Japão, Oeste do Japão<br> Coreia Central, Sul da Coreia <br> Norte da Europa, Europa Ocidental <br> Sul do Reino Unido, oeste do Reino Unido
 **Sistemas operacionais VM** | SLES 12 com SP2 ou SP3.
 **Versões com suporte do HANA** | SDC no HANA 1.x, MDC no HANA 2. x < = SPS03
 
@@ -164,7 +164,7 @@ Execute backups de acordo com o agendamento da política. Você pode executar um
 
 1. No menu do cofre, clique em **Itens de backup**.
 2. Na **itens de Backup**, selecione a VM executando o banco de dados do SAP HANA e, em seguida, clique em **fazer Backup agora**.
-3. Na **fazer Backup agora**, use o controle de calendário para selecionar o último dia em que o ponto de recuperação deve ser mantido. Em seguida, clique em **OK**.
+3. Na **fazer Backup agora**, use o controle de calendário para selecionar o último dia em que o ponto de recuperação deve ser mantido. Clique em **OK**.
 4. Monitorar as notificações do portal. Você pode monitorar o andamento do trabalho no painel do cofre > **trabalhos de Backup** > em andamento. Dependendo do tamanho do banco de dados, a criação do backup inicial pode demorar um pouco.
 
 ## <a name="run-sap-hana-studio-backup-on-a-database-with-azure-backup-enabled"></a>Executar o backup do SAP HANA Studio em um banco de dados com o Backup do Azure habilitado

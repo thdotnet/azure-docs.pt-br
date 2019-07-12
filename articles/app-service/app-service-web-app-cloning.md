@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 01/14/2016
 ms.author: aelnably
 ms.custom: seodec18
-ms.openlocfilehash: 907816d4f44a953ae338f6ca505b8fb3e048234e
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: d31a6ee13965aa326ab8a71b5b5435025bc26057
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67329641"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705738"
 ---
 # <a name="azure-app-service-app-cloning-using-powershell"></a>Clonagem de aplicativo do Serviço de Aplicativo do Azure usando o Azure PowerShell
 
@@ -130,6 +130,7 @@ Estas são as restrições conhecidas da clonagem de aplicativos:
 * As regras de TiP não são clonadas
 * O conteúdo do banco de dados não é clonado
 * Os endereços IP de saída são alterados em caso de clonagem para uma unidade de escala diferente
+* Não está disponível para aplicativos Linux
 
 ### <a name="references"></a>Referências
 * [Clonagem de Serviço de Aplicativo](app-service-web-app-cloning.md)

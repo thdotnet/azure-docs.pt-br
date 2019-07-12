@@ -15,12 +15,12 @@ ms.date: 11/08/2018
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf665362e2d20f26c17e8a4ae9da29fc30cb47ce
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 71c342ede77349b3f6c22093e5877ad5f5ce6549
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67481288"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807675"
 ---
 # <a name="how-to-deploy-the-access-panel-extension-for-internet-explorer-using-group-policy"></a>Como: Implantar a extensão do painel de acesso para o Internet Explorer usando a diretiva de grupo
 
@@ -43,9 +43,11 @@ Primeiro, você deve colocar o pacote do instalador em um local de rede que poss
 1. Na janela **Gerenciador do Servidor**, vá para **Arquivos e Serviços de Armazenamento**.
 
     ![Abrir Serviços de Arquivo e Armazenamento](./media/deploy-access-panel-browser-extension/files-services.png)
+
 1. Vá para a guia **Compartilhamentos** . Em seguida, clique em **Tarefas** > **Novo Compartilhamento...**
 
-    ![Abrir Serviços de Arquivo e Armazenamento](./media/deploy-access-panel-browser-extension/shares.png)
+    ![Captura de tela mostra onde encontrar o novo compartilhamento de tela de tarefas](./media/deploy-access-panel-browser-extension/shares.png)
+
 1. Conclua o **Assistente de Novo Compartilhamento** e defina permissões para garantir que ele possa ser acessado dos computadores dos usuários. [Saiba mais sobre compartilhamentos.](https://technet.microsoft.com/library/cc753175.aspx)
 1. Faça o download do seguinte pacote do Microsoft Windows Installer (arquivo .msi): [Access Panel Extension.msi](https://account.activedirectory.windowsazure.com/Applications/Installers/x64/Access%20Panel%20Extension.msi)
 1. Copie o pacote do instalador para um local desejado no compartilhamento.
@@ -80,15 +82,16 @@ Primeiro, você deve colocar o pacote do instalador em um local de rede que poss
 
    * `Computer Configuration/Policies/Software Settings/`
    * `User Configuration/Policies/Software Settings/`
+
 1. Clique com o botão direito do mouse em **Instalação do software** e selecione **Novo** > **Pacote...**
 1. Vá para a pasta compartilhada que contém o pacote do instalador da [Etapa 1: criar o ponto de distribuição](#step-1-create-the-distribution-point), escolha o arquivo .msi e clique em **Abrir**.
 
    > [!IMPORTANT]
    > Se o compartilhamento estiver localizado no mesmo servidor, verifique se você está acessando o .msi por meio do caminho do arquivo de rede, em vez do caminho do arquivo local.
 
-    ![Selecione o pacote de instalação na pasta compartilhada.](./media/deploy-access-panel-browser-extension/select-package.png)
+    ![Selecione o pacote de instalação a partir da pasta compartilhada](./media/deploy-access-panel-browser-extension/select-package.png)
 
-1. No prompt **Implantar Software**, selecione **Atribuído** para o método de implantação. Em seguida, clique em **OK**.
+1. No prompt **Implantar Software**, selecione **Atribuído** para o método de implantação. Clique em **OK**.
 
 Agora a extensão está implantada na UO que você selecionou. [Saiba mais sobre a instalação do Software de Política de Grupo.](https://technet.microsoft.com/library/cc738858%28v=ws.10%29.aspx)
 
@@ -100,6 +103,7 @@ Além da execução do instalador, todas as extensões do Internet Explorer deve
 
    * `Computer Configuration/Policies/Administrative Templates/Windows Components/Internet Explorer/Security Features/Add-on Management`
    * `User Configuration/Policies/Administrative Templates/Windows Components/Internet Explorer/Security Features/Add-on Management`
+
 1. Clique com o botão direito do mouse em **Lista de Complementos** e selecione **Editar**.
 
     ![Clique com botão direito "Lista de complementos" e selecione "Editar"](./media/deploy-access-panel-browser-extension/edit-add-on-list.png)
@@ -111,8 +115,8 @@ Além da execução do instalador, todas as extensões do Internet Explorer deve
 1. Na janela **Mostrar Conteúdo** , execute as seguintes etapas:
 
    1. Na primeira coluna (o campo **Nome do Valor**), copie e cole a seguinte ID de Classe: `{030E9A3F-7B18-4122-9A60-B87235E4F59E}`
-   2. Na segunda coluna (o campo **Valor**), digite o seguinte valor: `1`
-   3. Clique em **OK** para fechar a janela **Mostrar Conteúdo**.
+   1. Na segunda coluna (o campo **Valor**), digite o seguinte valor: `1`
+   1. Clique em **OK** para fechar a janela **Mostrar Conteúdo**.
 
       ![Preencha os valores conforme especificado na etapa anterior](./media/deploy-access-panel-browser-extension/show-contents.png)
 
@@ -160,7 +164,7 @@ Siga as etapas abaixo para verificar se a implantação da extensão obteve êxi
 1. Depois de reiniciar, abra o **Internet Explorer**. No canto superior direito da janela, clique em **Ferramentas** (ícone de engrenagem) e, em seguida, selecione **Gerenciar complementos**.
 1. Na janela **Gerenciar Complementos**, verifique se a **Extensão do Painel de Acesso** foi instalada e se seu **Status** foi definido como **Habilitado**.
 
-   ![Verifique se a Extensão do Painel de Acesso está instalada e habilitada.](./media/deploy-access-panel-browser-extension/verify-install.png)
+   ![Verifique se a extensão do painel de acesso é instalada e habilitada](./media/deploy-access-panel-browser-extension/verify-install.png)
 
 ## <a name="learn-more"></a>Saiba mais
 

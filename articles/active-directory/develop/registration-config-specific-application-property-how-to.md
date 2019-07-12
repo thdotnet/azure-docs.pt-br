@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: ryanwi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9bccaa28d34ebff47c7de73a4d9b3d8296ae9fef
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: b01ff1e2d0c9bc926d54bd54716e0579ef395ec0
+ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67476136"
+ms.lasthandoff: 07/08/2019
+ms.locfileid: "67655986"
 ---
 # <a name="how-to-fill-out-specific-fields-for-a-custom-developed-application"></a>Como preencher campos específicos para um aplicativo personalizado
 
@@ -43,7 +43,7 @@ Este artigo oferece uma breve descrição de todos os campos disponíveis no for
 |------------------|------------------------------------------------------------------------------------------|
 | NOME             | O nome do aplicativo. Ele deve ter um mínimo de quatro caracteres.                |
 | Tipos de conta com suporte| Selecione as contas que você gostaria de seu aplicativo para dar suporte a: contas somente nesse diretório organizacional, contas em qualquer diretório organizacional ou contas em qualquer diretório organizacional e contas pessoais da Microsoft.  |
-| (Opcional) do URI de redirecionamento | Selecione o tipo de aplicativo que você está compilando, **Web** ou **cliente público (dispositivos móvel e desktop)** e, em seguida, insira o URI de redirecionamento (ou a URL de resposta) para seu aplicativo. Para aplicativos Web, informe a URL base do aplicativo. Por exemplo, http://localhost:31544 pode ser uma URL para um aplicativo Web em execução no seu computador local. Os usuários usariam essa URL para entrar em um aplicativo cliente Web. Para aplicativos cliente públicos, informe o URI usado pelo Azure AD para retornar respostas de token. Insira um valor específico para seu aplicativo, como myapp://auth. Para ver exemplos específicos de aplicativos da Web ou aplicativos nativos, confira nossos [inícios rápidos](https://docs.microsoft.com/azure/active-directory/develop/#quickstarts).|
+| (Opcional) do URI de redirecionamento | Selecione o tipo de aplicativo que você está compilando, **Web** ou **cliente público (dispositivos móvel e desktop)** e, em seguida, insira o URI de redirecionamento (ou a URL de resposta) para seu aplicativo. Para aplicativos Web, informe a URL base do aplicativo. Por exemplo, http://localhost:31544 pode ser uma URL para um aplicativo Web em execução no seu computador local. Os usuários usariam essa URL para entrar em um aplicativo cliente Web. Para aplicativos cliente públicos, informe o URI usado pelo Azure AD para retornar respostas de token. Insira um valor específico para seu aplicativo, como myapp://auth. Para ver exemplos específicos de aplicativos da Web ou aplicativos nativos, confira nossos [inícios rápidos](https://docs.microsoft.com/azure/active-directory/develop).|
 
 Depois de preencher os campos acima, o aplicativo está registrado no portal do Azure, e você será redirecionado à página de visão geral do aplicativo. As páginas de configurações no painel esquerdo, sob **gerenciar** ter mais campos para personalizar seu aplicativo. As tabelas a seguir descrevem todos os campos. Você verá apenas um subconjunto desses campos, dependendo se você criou um aplicativo web ou um aplicativo cliente público.
 
@@ -60,7 +60,7 @@ Depois de preencher os campos acima, o aplicativo está registrado no portal do 
 | Carregar novo logotipo | Pode ser usado para carregar um logotipo para seu aplicativo. O logotipo deve estar no formato. bmp,. jpg ou. PNG e o tamanho do arquivo deve ser menor que 100 KB. As dimensões da imagem devem ser 215x215 pixels, com as dimensões da imagem central de 94x94 pixels.|
 | URL da home page   | É a URL de logon especificada durante o registro do aplicativo.|
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Autenticação
 
 | Campo           | DESCRIÇÃO        |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
