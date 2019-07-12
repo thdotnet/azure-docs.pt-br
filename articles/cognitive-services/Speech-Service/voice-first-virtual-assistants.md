@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: travisw
-ms.openlocfilehash: 4055b474938e38f653021b46f18200f8e39dd69d
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: c9b85895e701ff74e025d6f7895bc32513bc29a1
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67604752"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67806896"
 ---
 # <a name="about-custom-voice-first-virtual-assistants-preview"></a>Sobre a visualização de assistentes de virtual primeiro de voz personalizada
 
@@ -29,7 +29,7 @@ Fala de linha direta e sua funcionalidade associada para assistentes de virtuais
 
 ## <a name="core-features"></a>Principais recursos
 
-| Category | Recursos |
+| Categoria | Recursos |
 |----------|----------|
 |[Palavra de ativação personalizado](speech-devices-sdk-create-kws.md) | Você pode permitir que os usuários iniciar conversas com os bots usando uma palavra-chave personalizada, como "Ei Contoso". Essa tarefa é realizada com um mecanismo de word ativação personalizado no SDK do fala, que pode ser configurado com uma palavra personalizada wake [que você pode gerar aqui](speech-devices-sdk-create-kws.md). O canal de fala de linha direta inclui a verificação de palavra no lado do serviço de ativação que aumenta a precisão da ativação de word wake versus o dispositivo sozinho.
 |[Conversão de fala em texto](speech-to-text.md) | O canal de fala de linha direta inclui transcrição em tempo real de áudio em texto reconhecido usando [fala em texto](speech-to-text.md) fala dos serviços do Azure. Esse texto está disponível para seu bot e seu aplicativo cliente conforme ele é transcrita.
@@ -43,6 +43,7 @@ Código de exemplo para a criação de um Assistente de voz-first virtual está 
 * [Exemplos do Assistente de voz-first virtual (SDK)](https://aka.ms/csspeech/samples)
 * [Guia de início rápido: primeiro voz assistentes virtuais (C#)](quickstart-virtual-assistant-csharp-uwp.md)
 * [Guia de início rápido: assistentes voz, primeiro virtuais (Java)](quickstart-virtual-assistant-java-jre.md)
+* [Direcionar o cliente de fala de linha (C#, WPF)](https://github.com/Azure-Samples/Cognitive-Services-Direct-Line-Speech-Client)
 
 ## <a name="customization"></a>Personalização
 

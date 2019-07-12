@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 05/02/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: ca4e343ea4774bbe4ff992ad671575b150b3c045
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a8dac6f38052f176c7a3741a664e174d0a66cbc5
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65890973"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "67612694"
 ---
 # <a name="developing-with-media-services-v3-apis"></a>Desenvolver com os serviços de mídia APIs v3
 
@@ -59,7 +59,7 @@ Na figura a seguir, os números representam o fluxo das solicitações em ordem 
 4. A camada intermediária envia a solicitação à API REST da Mídia do Azure com o token do Azure AD.
 5. A camada intermediária obtém novamente os dados dos Serviços de Mídia.
 
-### <a name="samples"></a>Amostras
+### <a name="samples"></a>Exemplos
 
 Consulte os seguintes exemplos que mostram como se conectar com a entidade de serviço do Azure AD:
 
@@ -99,7 +99,6 @@ Os serviços de mídia tem as seguintes operações de longa execução:
 * Iniciar StreamingEndpoint
 * Parar um StreamingEndpoint
 * Escala StreamingEndpoint
-
 
 ## <a name="sdks"></a>SDKs
 

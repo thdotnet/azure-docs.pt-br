@@ -4,7 +4,7 @@ description: Mova uma VM Windows para outro grupo de recursos ou outra assinatur
 services: virtual-machines-windows
 documentationcenter: ''
 author: cynthn
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: 4e383427-4aff-4bf3-a0f4-dbff5c6f0c81
@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.topic: article
 ms.date: 07/03/2019
 ms.author: cynthn
-ms.openlocfilehash: d67f9e9ad99ccd6267de9dbb9fd0c64adb41f0cb
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
+ms.openlocfilehash: 6b189c4bfcc61084ed197649d376cae8fdf2eb56
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67565569"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67723077"
 ---
 # <a name="move-a-windows-vm-to-another-azure-subscription-or-resource-group"></a>Mover uma VM Windows para outra assinatura ou outro grupo de recursos do Azure
 Este artigo explica como mover uma VM (máquina virtual) do Windows entre grupos de recursos ou assinaturas. A movimentação entre assinaturas poderá ser útil se você tiver originalmente criado uma VM em uma assinatura pessoal e agora deseja movê-la para a assinatura da sua empresa a fim de continuar seu trabalho. Você não precisa iniciar a VM a fim de movê-lo e ele deve continuar em execução durante a movimentação.

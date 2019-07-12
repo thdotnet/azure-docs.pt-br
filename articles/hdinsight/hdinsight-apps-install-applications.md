@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/17/2019
 ms.author: hrasheed
-ms.openlocfilehash: 3e1f64aa00ea0d78eca8a994814a91600b91239f
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: 9d25996db9c13a12781d369327f2b43a41fb4115
+ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67190706"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67786528"
 ---
 # <a name="install-third-party-apache-hadoop-applications-on-azure-hdinsight"></a>Instalar aplicativos Apache Hadoop de terceiros no Azure HDInsight
 
@@ -38,7 +38,7 @@ A lista a seguir mostra os aplicativos publicados:
 |[Explosão Presto para HDInsight do Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/starburst.starburst-presto) |O Hadoop |Presto é um rápido e escalonável distribuído mecanismo de consulta SQL. Arquitetado para a separação de armazenamento e computação, o Presto é perfeito para consultar dados no Azure Data Lake Storage, no Armazenamento de Blobs do Azure, em bancos de dados SQL e NoSQL e em outras fontes de dados. |
 |[Coletor de dados de conjuntos de fluxos para a nuvem do HDInsight](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/streamsets.streamsets-data-collector-hdinsight) |Hadoop,HBase,Spark,Kafka |StreamSets Data Collector é um mecanismo leve e poderoso que transmite dados em tempo real. Use o coletor de dados a rota e processar dados em seus fluxos de dados. Ele vem com uma licença de avaliação de 30 dias. |
 |[Trifacta Wrangler Enterprise](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/trifacta.tr01) |Hadoop, Spark,HBase |Trifacta Wrangler Enterprise para HDInsight dá suporte a disputa para qualquer escala dos dados de dados de toda a empresa. O custo da execução Trifacta no Azure é uma combinação de Trifacta os custos de assinatura com os custos de infraestrutura do Azure para as máquinas virtuais. |
-|[Plataforma de dados do Unifi](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/unifi-software.unifi-data-platform) |Hadoop,HBase,Storm,Spark |A plataforma de dados do Unifi é um pacote perfeitamente integrado de ferramentas de dados de autoatendimento projetados para capacitar o usuário para lidar com desafios de negócios que aumentar a receita, reduzir custos ou complexidade operacional. |
+|[Plataforma de dados do Unifi](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/unifi-software.unifi-data-catalog) |Hadoop,HBase,Storm,Spark |A plataforma de dados do Unifi é um pacote perfeitamente integrado de ferramentas de dados de autoatendimento projetados para capacitar o usuário para lidar com desafios de negócios que aumentar a receita, reduzir custos ou complexidade operacional. |
 |[APM Unraveldata](https://azuremarketplace.microsoft.com/marketplace/apps/unravel-data.unravel-app) |Spark |Desvendar os dados de aplicativo para o cluster HDInsight Spark. |
 |[Catálogo de dados controlados por IA waterline](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/waterline_data.waterline_data) |Spark |Waterline cataloga, organiza e controla os dados usando o AI para dados de marca automática com os termos de negócios. O catálogo didático de negócios da Waterline é um componente crítico e de sucesso para iniciativas de análise, conformidade e governança de autoatendimento e gerenciamento de TI. |
 
@@ -96,7 +96,7 @@ Você pode se conectar ao nó de borda usando HTTP e SSH. As informações de po
 
 As credenciais de ponto de extremidade HTTP são as credenciais de usuário HTTP que você configurou para o cluster HDInsight. As credenciais de ponto de extremidade do SSH são as credenciais SSH que você configurou para o cluster HDInsight.
 
-## <a name="troubleshoot"></a>Solucionar problemas
+## <a name="troubleshoot"></a>Solução de problemas
 Confira [Solucionar problemas de instalação](hdinsight-apps-install-custom-applications.md#troubleshoot-the-installation).
 
 ## <a name="next-steps"></a>Próximas etapas

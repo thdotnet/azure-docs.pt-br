@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 39edbc77215d3a4f6477beae3be9d7d47cbba4f0
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: 61a3c1cdccf01b266581a13fe3c660bd57f59b2c
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67540913"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67796199"
 ---
 # <a name="deploy-and-monitor-iot-edge-modules-at-scale-using-the-azure-cli"></a>Implantar e monitorar módulos do IoT Edge em escala usando a CLI do Azure
 
@@ -29,7 +29,7 @@ Neste artigo, você configura a CLI do Azure e a extensão IoT. Em seguida, voc�
 
 * Um [Hub IoT](../iot-hub/iot-hub-create-using-cli.md) na assinatura do Azure. 
 * [Dispositivos do IoT Edge](how-to-register-device-cli.md) com o tempo de execução do IoT Edge instalado.
-* [CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) em seu ambiente. No mínimo, a versão da CLI do Azure deve ser 2.0.24 ou superior. Use `az –-version` para validar. Esta versão dá suporte aos comandos da extensão az e introduz a estrutura de comandos Knack. 
+* [CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli) em seu ambiente. No mínimo, a versão da CLI do Azure deve ser 2.0.24 ou superior. Use `az --version` para validar. Esta versão dá suporte aos comandos da extensão az e introduz a estrutura de comandos Knack. 
 * A [extensão de IoT para a CLI do Azure](https://github.com/Azure/azure-iot-cli-extension).
 
 ## <a name="configure-a-deployment-manifest"></a>Configurar um manifesto de implantação
@@ -145,7 +145,7 @@ A implantação criar comando usa os seguintes parâmetros:
 * **--hub-name** - Nome do hub IoT no qual a implantação será criada. O hub deve estar na assinatura atual. Alterar sua assinatura atual com o `az account set -s [subscription name]` comando.
 * **--content** - Caminho do arquivo para o manifesto de implantação JSON. 
 * **--labels** - Adicione rótulos para ajudar a acompanhar as implantações. Rótulos são pares de Nome e Valor que descrevem a implantação. Os rótulos usam a formatação JSON para os nomes e valores. Por exemplo, `{"HostPlatform":"Linux", "Version:"3.0.1"}`
-* **--target-condition** - Insira uma condição de destino para determinar quais dispositivos serão segmentados com essa implantação. A condição se baseia nas marcas do dispositivo gêmeo ou propriedades reportadas do dispositivo gêmeo e deve corresponder ao formato da expressão. Por exemplo: `tags.environment='test' and properties.reported.devicemodel='4000x'`. 
+* **--target-condition** - Insira uma condição de destino para determinar quais dispositivos serão segmentados com essa implantação. A condição se baseia nas marcas do dispositivo gêmeo ou propriedades reportadas do dispositivo gêmeo e deve corresponder ao formato da expressão. Por exemplo, `tags.environment='test' and properties.reported.devicemodel='4000x'`. 
 * **--priority** - Um inteiro positivo. No caso de duas ou mais implantações serem direcionadas ao mesmo dispositivo, será aplicada a implantação com o maior valor numérico para Prioridade.
 
 ## <a name="monitor-a-deployment"></a>Monitorar uma implantação

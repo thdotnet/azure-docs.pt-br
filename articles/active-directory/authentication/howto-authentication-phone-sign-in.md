@@ -1,25 +1,25 @@
 ---
-title: Sem senha entrar com o aplicativo Microsoft Authenticator (visualização) – Azure Active Directory
+title: Entrar sem senha com o aplicativo Microsoft Authenticator (visualização) – Azure Active Directory
 description: Entrar no Azure AD usando o aplicativo Microsoft Authenticator sem usar sua senha (versão prévia pública)
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 02/01/2019
+ms.date: 07/09/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown
 ms.custom: seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb10378d890c2b7156b6764321e177a22ffc538a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3125de0d1fd784b30c000bb287b457397c0fbebb
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66472748"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67703035"
 ---
-# <a name="password-less-phone-sign-in-with-the-microsoft-authenticator-app-public-preview"></a>Entrada sem senha pelo telefone com o aplicativo Microsoft Authenticator (visualização pública)
+# <a name="passwordless-phone-sign-in-with-the-microsoft-authenticator-app-public-preview"></a>Entrada sem senha pelo telefone com o aplicativo Microsoft Authenticator (versão prévia pública)
 
 O aplicativo Microsoft Authenticator pode ser usado para entrar em qualquer conta do Azure AD sem usar uma senha. Similar à tecnologia do [Windows Hello para Empresas](/windows/security/identity-protection/hello-for-business/hello-identity-verification), o Microsoft Authenticator usa a autenticação baseada em chave para habilitar uma credencial de usuário que esteja associada a um dispositivo e use biometria ou PIN.
 
@@ -39,28 +39,11 @@ Para versão prévia pública, um administrador deve primeiro adicionar uma pol�
 
 ### <a name="steps-to-enable"></a>Etapas para habilitar
 
-1. Verifique se você tem a versão mais recente da liberação da Versão Prévia Pública do Módulo do PowerShell do Azure Active Directory V2. Você pode querer desinstalar e reinstalar para confirmar isso, executando os seguintes comandos:
-
-    ```powershell
-    Uninstall-Module -Name AzureADPreview
-    Install-Module -Name AzureADPreview
-    ```
-
-2. Autentique-se para o locatário do Azure AD para usar o módulo do PowerShell do Azure AD V2. A conta usada deve ser um Administrador de Segurança ou um Administrador Global.
-
-    ```powershell
-    Connect-AzureAD
-    ```
-
-3. Crie a política de Entrada do Autenticador:
-
-    ```powershell
-    New-AzureADPolicy -Type AuthenticatorAppSignInPolicy -Definition '{"AuthenticatorAppSignInPolicy":{"Enabled":true}}' -isOrganizationDefault $true -DisplayName AuthenticatorAppSignIn
-    ```
+Siga as etapas no artigo [habilitar o logon sem senha no AD do Azure](howto-authentication-passwordless-enable.md#enable-new-passwordless-authentication-methods), para habilitar métodos de autenticação sem senha no seu diretório.
 
 ## <a name="how-do-my-end-users-enable-phone-sign-in"></a>Como os meus usuários finais habilitam entrada pelo telefone?
 
-Para versão prévia pública, não há nenhuma maneira de impor que os usuários criem ou usem essa nova credencial. Um usuário final apenas encontrará entrada sem senha depois que um administrador tiver habilitado seu locatário e o usuário tiver atualizado o aplicativo Microsoft Authenticator para habilitar entrada pelo telefone.
+Para versão prévia pública, não há nenhuma maneira de impor que os usuários criem ou usem essa nova credencial. Um usuário final apenas encontrarão entrar sem senha depois que um administrador tiver habilitado o seu locatário e o usuário atualizou o aplicativo Microsoft Authenticator para habilitar entrada pelo telefone.
 
 > [!NOTE]
 > Essa funcionalidade está no aplicativo desde março de 2017, portanto, existe a possibilidade de que, quando a política estiver habilitada para um locatário, os usuários possam encontrar esse fluxo imediatamente. Esteja atento e prepare seus usuários para essa alteração.
@@ -72,11 +55,11 @@ Para versão prévia pública, não há nenhuma maneira de impor que os usuário
 
 Depois que o usuário tem a conta MFA com notificações por push no aplicativo Microsoft Authenticator, ele pode seguir as etapas no artigo [Entrar com seu telefone, não sua senha](../user-help/microsoft-authenticator-app-phone-signin-faq.md) para concluir o registro de entrada com telefone.
 
-## <a name="known-issues"></a>Problemas conhecidos
+## <a name="known-issues"></a>Problemas Conhecidos
 
 ### <a name="ad-fs-integration"></a>Integração do AD FS
 
-Quando um usuário tiver habilitado a credencial sem senha do Microsoft Authenticator, a autenticação para esse usuário sempre enviará como padrão uma notificação de aprovação. Essa lógica impede que os usuários em um locatário híbrido sejam direcionados para o ADFS para verificação de entrada sem que o usuário realize uma etapa adicional de clicar em "Usar sua senha em vez disso". Esse processo também ignorará quaisquer políticas de Acesso Condicional locais e fluxos de autenticação de Passagem. A exceção a esse processo é se um login_hint for especificado, um usuário será autoforwarded para o AD FS e ignorar a opção para usar a credencial sem senha.
+Quando um usuário tiver habilitado a credencial sem senha do Microsoft Authenticator, a autenticação para esse usuário sempre enviará como padrão uma notificação de aprovação. Essa lógica impede que os usuários em um locatário híbrido sejam direcionados para o ADFS para verificação de entrada sem que o usuário realize uma etapa adicional de clicar em "Usar sua senha em vez disso". Esse processo também ignorará quaisquer políticas de Acesso Condicional locais e fluxos de autenticação de Passagem. A exceção a esse processo é se um login_hint for especificado, um usuário será AutoEncaminhada ao AD FS e ignorar a opção de usar a credencial sem senha.
 
 ### <a name="azure-mfa-server"></a>Servidor MFA do Azure
 
@@ -87,6 +70,8 @@ Usuários finais habilitados para MFA por meio do servidor de MFA do Azure local
 Um dos pré-requisitos para criar essa nova credencial forte é que o dispositivo no qual ela reside esteja registrado no locatário do Azure AD para um usuário individual. Devido às restrições de registro de dispositivo, um dispositivo só pode ser registrado em um único locatário. Esse limite significa que apenas uma conta corporativa ou de estudante no aplicativo Microsoft Authenticator pode ser habilitada para entrada por telefone.
 
 ## <a name="next-steps"></a>Próximas etapas
+
+[O que é sem senha?](concept-authentication-passwordless.md)
 
 [Saiba mais sobre registro de dispositivo](../devices/overview.md#getting-devices-in-azure-ad)
 

@@ -1,6 +1,6 @@
 ---
-title: Ações de webhook para alertas do log nos Alertas do Azure
-description: Este artigo descreve como para uma regra de alerta de log usando o log analytics workspace ou application insights efetuará push de dados como webhook HTTP e fornece detalhes das diferentes personalizações possíveis.
+title: Ações de Webhook para alertas de log no alertas do Azure
+description: Este artigo descreve como criar uma regra de alerta de log usando o espaço de trabalho do Log Analytics ou Application Insights, como o alerta envia dados como um webhook de HTTP e os detalhes das diferentes personalizações possíveis.
 author: msvijayn
 services: monitoring
 ms.service: azure-monitor
@@ -8,58 +8,58 @@ ms.topic: conceptual
 ms.date: 06/25/2019
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: cad1b0ab484d172000bd62146a88a27bfab1e9f2
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 6aa007c621e76cb0c188a7dab6279fd9e387b2b3
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448780"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705183"
 ---
 # <a name="webhook-actions-for-log-alert-rules"></a>Ações de webhook para regras de alerta do log
-Quando um [alerta de log é criado no Azure](alerts-log.md), você tem a opção de [configurar usando grupos de ações](action-groups.md) para executar uma ou mais ações.  Este artigo descreve as diferentes ações do webhook que estão disponíveis e os detalhes sobre a configuração do webhook baseado em JSON personalizado.
+Quando um [o alerta de log é criado no Azure](alerts-log.md), você tem a opção de [configurá-lo por meio de grupos de ação](action-groups.md) para executar uma ou mais ações. Este artigo descreve as ações de webhook diferentes que estão disponíveis e mostra como configurar um webhook personalizado baseado em JSON.
 
 > [!NOTE]
-> Você também pode usar o [esquema de alerta comum](https://aka.ms/commonAlertSchemaDocs), que fornece a vantagem de ter um único extensível e conteúdo de alerta unificado em todo o alerta de serviços no Azure Monitor para suas integrações de webhook. [Saiba mais sobre as definições de alerta de esquema comuns.](https://aka.ms/commonAlertSchemaDefinitions)
+> Você também pode usar o [esquema de alerta comum](https://aka.ms/commonAlertSchemaDocs) para suas integrações de webhook. O esquema de alerta comum tem a vantagem de ter uma única carga alerta extensível e unificada em todos os serviços alerta no Azure Monitor. [Saiba mais sobre as definições de alerta de esquema comuns.](https://aka.ms/commonAlertSchemaDefinitions)
 
 ## <a name="webhook-actions"></a>Ações de Webhook
 
-Ações de Webhook permitem invocar um processo externo por meio de uma única solicitação HTTP POST.  O serviço que está sendo chamado deve dar suporte a webhooks e determinar como ele usa as cargas recebidas.    
+Com as ações de webhook, você pode invocar um processo externo por meio de uma única solicitação HTTP POST. O serviço que é chamado deve dar suporte a webhooks e determinar como usar qualquer conteúdo que ele recebe.
 
-As ações de webhook exigem as propriedades indicadas na tabela a seguir:
+As ações de webhook exigem as propriedades indicadas na tabela a seguir.
 
 | Propriedade | DESCRIÇÃO |
 |:--- |:--- |
-| URL de Webhook |A URL do webhook. |
-| Carga JSON personalizada |Carga personalizada para enviar com o webhook quando esta opção for escolhida durante a criação do alerta. Detalhes disponíveis em [Gerenciar alertas de log](alerts-log.md) |
+| **URL de Webhook** |A URL do webhook. |
+| **Carga JSON personalizada** |A carga personalizada para enviar com o webhook quando esta opção for escolhida durante a criação do alerta. Para obter mais informações, consulte [gerenciar alertas de log](alerts-log.md).|
 
 > [!NOTE]
-> Botão Exibir o Webhook junto com a opção *Incluir conteúdo JSON personalizado para webhook* para Alerta do Log exibirá exemplo de conteúdo webhook para a personalização fornecida. Não contém dados reais e representativos do esquema JSON usado para Alertas do Log. 
+> O **exibição Webhook** botão junto com o **incluir conteúdo JSON personalizado para webhook** opção para o alerta de log exibe o conteúdo do webhook de exemplo para a personalização que foi fornecido. Ele não contém dados reais, mas é representativo do esquema JSON que é usado para alertas do log. 
 
-Webhooks incluem uma URL e uma carga formatada em JSON, que são os dados enviados para um serviço externo.  Por padrão, o conteúdo inclui os valores na tabela a seguir:  Você pode optar por substituir essa carga por uma personalizado de sua preferência.  Nesse caso, você pode usar as variáveis da tabela para cada um dos parâmetros para incluir seus valores na carga personalizada.
+Webhooks incluem uma URL e uma carga formatada em JSON, que os dados enviados para o serviço externo. Por padrão, a carga inclui os valores na tabela a seguir. Você pode optar por substituir essa carga por uma personalizado de sua preferência. Nesse caso, use as variáveis na tabela para cada um dos parâmetros para incluir seus valores na carga personalizada.
 
 
 | Parâmetro | Variável | DESCRIÇÃO |
 |:--- |:--- |:--- |
-| AlertRuleName |#alertrulename |Nome da regra de alerta. |
-| Severity |#severity |Severidade definida para o alerta do log disparado. |
-| AlertThresholdOperator |#thresholdoperator |O operador de limite da regra de alerta.  *Greater than (Maior que)* ou *Less than (Menor que)* . |
-| AlertThresholdValue |#thresholdvalue |O valor de limite para a regra de alerta. |
-| LinkToSearchResults |#linktosearchresults |Vincular ao portal do Analytics que retorna os registros da consulta que criou o alerta. |
-| ResultCount |#searchresultcount |Número de registros nos resultados da pesquisa. |
-| Hora de término do intervalo de pesquisa |#searchintervalendtimeutc |Hora de término para consultas em UTC, formato – dd/mm/aaaa hh:mm:ss AM/PM. |
-| Intervalo de pesquisa |#searchinterval |A janela de tempo para a regra de alerta, formato – HH:mm:ss. |
-| Hora de início do intervalo de pesquisa |#searchintervalstarttimeutc |Hora de início para consultas em UTC, formato – dd/mm/aaaa hh:mm:ss AM/PM. 
-| SearchQuery |#searchquery |A consulta da pesquisa de log usada pela regra de alerta. |
-| SearchResults |"IncludeSearchResults": true|Registros retornados pela consulta como uma Tabela JSON, limitada aos primeiros 1.000 registros; se "IncludeSearchResults":true for adicionado na definição personalizada do webhook JSON como uma propriedade de nível superior. |
-| Tipo de alerta| #alerttype | O tipo de regra de alerta de log configurada - [medição métrica](alerts-unified-log.md#metric-measurement-alert-rules) ou [número de resultados](alerts-unified-log.md#number-of-results-alert-rules).|
-| WorkspaceID |#workspaceid |ID do seu espaço de trabalho do Log Analytics. |
-| ID do aplicativo |#applicationid |ID do seu aplicativo Application Insight. |
-| ID da assinatura |#subscriptionid |ID da assinatura do Azure usada. 
+| *AlertRuleName* |#alertrulename |Nome da regra de alerta. |
+| *Severidade* |#severity |Severidade definida para o alerta do log disparado. |
+| *AlertThresholdOperator* |#thresholdoperator |Operador de limite para a regra de alerta, que usa o maior ou menor que. |
+| *AlertThresholdValue* |#thresholdvalue |O valor de limite para a regra de alerta. |
+| *LinkToSearchResults* |#linktosearchresults |Link para o portal de análise que retorna os registros da consulta que criou o alerta. |
+| *ResultCount* |#searchresultcount |Número de registros nos resultados da pesquisa. |
+| *Hora de término do intervalo de pesquisa* |#searchintervalendtimeutc |Hora de término para a consulta em UTC, com o formato mm/dd/aaaa hh: mm: ss AM/PM. |
+| *Intervalo de pesquisa* |#searchinterval |Janela de tempo para a regra de alerta, com o formato hh: mm ss. |
+| *Hora de início de intervalo de pesquisa* |#searchintervalstarttimeutc |Hora de início para a consulta em UTC, com o formato mm/dd/aaaa hh: mm: ss AM/PM. 
+| *SearchQuery* |#searchquery |A consulta da pesquisa de log usada pela regra de alerta. |
+| *SearchResults* |"IncludeSearchResults": true|Registros retornados pela consulta como uma tabela JSON, limitada aos primeiros 1.000 registros, se "IncludeSearchResults": true for adicionado em uma definição personalizada do webhook JSON como uma propriedade de nível superior. |
+| *Tipo de alerta*| #alerttype | O tipo de regra de alerta de log configurado como [medição métrica](alerts-unified-log.md#metric-measurement-alert-rules) ou [número de resultados](alerts-unified-log.md#number-of-results-alert-rules).|
+| *WorkspaceID* |#workspaceid |ID do seu espaço de trabalho do Log Analytics. |
+| *ID do aplicativo* |#applicationid |ID de suas ideias de aplicativo app. |
+| *ID da assinatura* |#subscriptionid |ID da assinatura do Azure usada. 
 
 > [!NOTE]
-> O LinkToSearchResults passa parâmetros como os tempos de Search Interval StartTime & Search Interval End time na URL para o portal do Azure para visualização na seção de análise. Portal do Azure tem URI limite de cerca de 2000 caracteres de tamanho e serão *não* Abrir link fornecido nos alertas, se os valores de parâmetros excederem o limite ditas. Os usuários podem inserir manualmente os detalhes para exibir os resultados no portal de análise ou usar o [API REST do Application Insights Analytics](https://dev.applicationinsights.io/documentation/Using-the-API) ou [API REST do Log Analytics](/rest/api/loganalytics/) para recuperar os resultados por meio de programação 
+> *LinkToSearchResults* passa parâmetros, como *SearchQuery*, *StartTime de intervalo de pesquisa*, e *hora de término do intervalo de pesquisa* na URL para o Azure Portal para exibição na seção de análise. O portal do Azure tem um limite de tamanho do URI de aproximadamente 2.000 caracteres. O portal será *não* abrir links fornecidas nos alertas se os valores de parâmetro excederem o limite. Você pode inserir manualmente os detalhes para exibir os resultados no portal do Analytics. Ou, você pode usar o [API REST do Application Insights Analytics](https://dev.applicationinsights.io/documentation/Using-the-API) ou o [API REST do Log Analytics](/rest/api/loganalytics/) para recuperar os resultados por meio de programação. 
 
-Por exemplo, você pode especificar a seguinte carga personalizada que inclui um único parâmetro chamado *text*.  O serviço chamado por esse webhook seria esperaria receber esse parâmetro.
+Por exemplo, você pode especificar a seguinte carga personalizada que inclui um único parâmetro chamado *text*. O serviço que chama esse webhook espera que esse parâmetro.
 
 ```json
 
@@ -67,25 +67,25 @@ Por exemplo, você pode especificar a seguinte carga personalizada que inclui um
         "text":"#alertrulename fired with #searchresultcount over threshold of #thresholdvalue."
     }
 ```
-Essa carga de exemplo seria resolvida como algo semelhante ao mostrado a seguir quando enviado para o webhook.
+Essa carga de exemplo resolve para algo semelhante ao seguinte quando ele é enviado para o webhook:
 
 ```json
     {
         "text":"My Alert Rule fired with 18 records over threshold of 10 ."
     }
 ```
-Como todas as variáveis em um webhook personalizado devem ser especificadas no compartimento JSON como "#searchinterval", o webhook resultante também terá dados variáveis dentro do compartimento como "00:05:00".
+Porque todas as variáveis em um webhook personalizado devem ser especificadas dentro de um compartimento JSON, como "#searchinterval", o webhook resultante também tem dados de variável dentro de compartimentos, como "00: 05:00."
 
-Para incluir resultados de pesquisa em um conteúdo personalizado, assegure-se de que **IncludeSearchResults** está definido como uma propriedade de nível superior no conteúdo JSON. 
+Para incluir os resultados da pesquisa em uma carga personalizada, certifique-se de que **IncludeSearchResults** é definido como uma propriedade de nível superior na carga JSON. 
 
 ## <a name="sample-payloads"></a>Cargas de exemplo
-Essa seção mostra o conteúdo de exemplo para webhook para Alertas do Log, inclusive quando o conteúdo for padrão e quando for personalizado.
+Esta seção mostra as cargas de exemplo para webhooks para alertas do log. As cargas de exemplo incluem exemplos de quando a carga é padrão e quando ele é personalizado.
 
-### <a name="standard-webhook-for-log-alerts"></a>Webhook padrão para Alertas do Log 
-Ambos exemplos declararam uma carga fictícia com apenas duas colunas e duas linhas.
+### <a name="standard-webhook-for-log-alerts"></a>Padrão do webhook para alertas do log 
+Ambos os exemplos têm uma carga fictícia com apenas duas colunas e duas linhas.
 
-#### <a name="log-alert-for-azure-log-analytics"></a>Alerta do Log para Azure Log-Analytics
-A seguir, é apresentado uma carga de amostra para uma ação padrão do webhook *sem a opção Json personalizado* sendo utilizada para alertas com base no Log Analytics.
+#### <a name="log-alert-for-log-analytics"></a>Alerta do log para o Log Analytics
+O conteúdo de exemplo a seguir é para uma ação padrão do webhook *sem uma opção JSON personalizado* que é usado para alertas com base no Log Analytics:
 
 ```json
 {
@@ -124,11 +124,11 @@ A seguir, é apresentado uma carga de amostra para uma ação padrão do webhook
  ```
 
 > [!NOTE]
-> Valor de campo de severidade pode ser alterado se você tiver [alternado de sua preferência de API](alerts-log-api-switch.md) para alertas do log no Log Analytics.
+> O valor do campo "Severity" pode mudar se você já [alternado de sua preferência de API](alerts-log-api-switch.md) para alertas do log no Log Analytics.
 
 
-#### <a name="log-alert-for-azure-application-insights"></a>Alerta do Log para Azure Application Insights
-A seguir, é apresentado uma carga de amostra para um padrão do webhook *sem a opção Json personalizado* quando utilizado para alertas do log com base no Application Insights.
+#### <a name="log-alert-for-application-insights"></a>Alerta do log para o Application Insights
+O conteúdo de exemplo a seguir é para um padrão do webhook *sem uma opção JSON personalizado* quando ele é usado para alertas do log com base no Application Insights:
     
 ```json
 {
@@ -169,8 +169,8 @@ A seguir, é apresentado uma carga de amostra para um padrão do webhook *sem a 
 }
 ```
 
-#### <a name="log-alert-with-custom-json-payload"></a>Alerta do Log com conteúdo JSON personalizado
-Por exemplo, para criar uma carga personalizada que inclui apenas o nome do alerta e os resultados da pesquisa, você poderia usar o seguinte: 
+#### <a name="log-alert-with-custom-json-payload"></a>Alerta do log com conteúdo JSON personalizado
+Por exemplo, para criar uma carga personalizada que inclui apenas o nome do alerta e os resultados da pesquisa, você pode usar o seguinte: 
 
 ```json
     {
@@ -179,7 +179,7 @@ Por exemplo, para criar uma carga personalizada que inclui apenas o nome do aler
     }
 ```
 
-A seguir, é apresentado um conteúdo de amostra para uma ação do webhook personalizado para qualquer alerta do log.
+O conteúdo de exemplo a seguir é para uma ação de webhook personalizados para qualquer alerta do log:
     
 ```json
     {
@@ -206,9 +206,9 @@ A seguir, é apresentado um conteúdo de amostra para uma ação do webhook pers
 
 
 ## <a name="next-steps"></a>Próximas etapas
-- Saiba mais sobre os [Alertas de log nos alertas do Azure](alerts-unified-log.md)
-- Entenda como [gerenciar alertas de log no Azure](alerts-log.md)
-- Criar e gerenciar [grupos de ações no Azure](action-groups.md)
-- Saiba mais sobre o [Application Insights](../../azure-monitor/app/analytics.md)
+- Saiba mais sobre [alertas de log nos alertas do Azure](alerts-unified-log.md).
+- Entender como [gerenciar alertas de log no Azure](alerts-log.md).
+- Criar e gerenciar [grupos de ações no Azure](action-groups.md).
+- Saiba mais sobre o [Application Insights](../../azure-monitor/app/analytics.md).
 - Saiba mais sobre [registrar consultas](../log-query/log-query-overview.md). 
 

@@ -4,7 +4,7 @@ description: Descreve a série B de tamanhos expansíveis de VM do Azure.
 services: virtual-machines-linux
 documentationcenter: ''
 author: ayshakeen
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/25/2019
 ms.author: ayshak
-ms.openlocfilehash: 7f9bed859191c77069b2610e828a3d523cff5c43
-ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
+ms.openlocfilehash: 2445ad4804755fb2bdc013f7ea819ed51a2f6480
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67466749"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67671827"
 ---
 # <a name="b-series-burstable-virtual-machine-sizes"></a>Tamanhos expansíveis da máquina virtual da série B
 

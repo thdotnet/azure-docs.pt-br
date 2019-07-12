@@ -3,19 +3,19 @@ title: Migrar seu SQL Data Warehouse do Azure existente para Gen2 | Microsoft Do
 description: Instruções para migrar um data warehouse existente para Gen2 e o agendamento de migração por região.
 services: sql-data-warehouse
 author: mlee3gsd
-ms.author: anumjs
+ms.author: anjangsh
 ms.reviewer: jrasnick
 manager: craigg
 ms.assetid: 04b05dea-c066-44a0-9751-0774eb84c689
 ms.service: sql-data-warehouse
 ms.topic: article
 ms.date: 04/03/2019
-ms.openlocfilehash: 3141f3a1d6a9f09261dee4113276af72168e35e8
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: cef3036b01709847016d9523a5770febb8ff1134
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67444701"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67839669"
 ---
 # <a name="upgrade-your-data-warehouse-to-gen2"></a>Atualizar o seu data warehouse para Gen2
 
@@ -39,13 +39,13 @@ A tabela a seguir resume por região quando a camada de computação inferior Ge
 | Leste do Canadá |\* |\* |
 | Centro dos EUA |Disponível |1 de junho de 2019 |
 | Leste da China |\* |\* |
-| Leste da China 2 |\* |Somente Gen2 |
+| Leste da China 2 |Disponível |Somente Gen2 |
 | Norte da China |\* |\* |
 | Norte da China 2 |Disponível |Somente Gen2 |
 | Ásia Oriental |Disponível |1 de junho de 2019 |
 | East US |Disponível |1 de junho de 2019 |
 | Leste dos EUA 2 |Disponível |1 de junho de 2019 |
-| França Central |\* |1 de junho de 2019 |
+| França Central |Disponível |1 de junho de 2019 |
 | Alemanha Central |\* |\* |
 | Centro-oeste da Alemanha |1 de setembro de 2019|2 de janeiro de 2020 |
 | Centro da Índia |Disponível |1 de junho de 2019 |
@@ -56,10 +56,12 @@ A tabela a seguir resume por região quando a camada de computação inferior Ge
 | Sul da Coreia |Disponível |1º de maio de 2019 |
 | Centro-Norte dos EUA |Disponível |1º de maio de 2019 |
 | Norte da Europa |Disponível |1 de junho de 2019 |
+| Norte da África do Sul |12 de julho de 2019 |Somente Gen2 |
 | Centro-Sul dos Estados Unidos |Disponível |1 de junho de 2019 |
 | Sudeste da Ásia |Disponível |1 de junho de 2019 |
-| Sul do Reino Unido |Disponível, de 2019 |1 de junho de 2019 |
-| Oeste do Reino Unido |\*|\* |
+| Norte dos EAU |20 de julho de 2019 |Somente Gen2 |
+| Sul do Reino Unido |Disponível |1 de junho de 2019 |
+| Oeste do Reino Unido |Disponível |Somente Gen2 |
 | Centro-Oeste dos EUA |2 de setembro de 2019 |2 de janeiro de 2020|
 | Europa Ocidental |Disponível |1 de junho de 2019 |
 | Oeste dos EUA |Disponível |1 de junho de 2019 |
@@ -131,7 +133,7 @@ Para saber mais, confira [Atualizar para Gen2](upgrade-to-latest-generation.md).
 - R: Se você estiver executando um DW600 ou DW1200 em Gen1, é aconselhável usar DW500c ou DW1000c, respectivamente, pois Gen2 fornece mais memória e recursos, além de um desempenho mais alto do que Gen1.
 
 **P: Posso desabilitar o backup geográfico?**
-- R: Não. O backup geográfico é um recurso corporativo para preservar a disponibilidade do seu data warehouse no caso de uma região se tornar indisponível. Abra uma [solicitação de suporte](sql-data-warehouse-get-started-create-support-ticket.md) em caso de outras dúvidas.
+- R: Nº O backup geográfico é um recurso corporativo para preservar a disponibilidade do seu data warehouse no caso de uma região se tornar indisponível. Abra uma [solicitação de suporte](sql-data-warehouse-get-started-create-support-ticket.md) em caso de outras dúvidas.
 
 **P: Há uma diferença na sintaxe do T-SQL entre Gen1 e Gen2?**
 
@@ -143,7 +145,7 @@ Para saber mais, confira [Atualizar para Gen2](upgrade-to-latest-generation.md).
 
 **P: Serei capaz de criar uma nova instância de Gen1 depois que minha região for atualizada?**
 
-- R: Não. Depois que uma região for atualizada, a criação de novas instâncias de Gen1 será desabilitada.
+- R: Nº Depois que uma região for atualizada, a criação de novas instâncias de Gen1 será desabilitada.
 
 ## <a name="next-steps"></a>Próximas etapas
 

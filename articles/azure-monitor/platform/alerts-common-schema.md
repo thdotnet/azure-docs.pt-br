@@ -7,13 +7,13 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: anantr
-ms.component: alerts
-ms.openlocfilehash: be38f5d3bbf4fe3d90fc78feab8774595b5338f2
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.subservice: alerts
+ms.openlocfilehash: 91ec5aa42367f6caaa93aaf808fde504e92fbc04
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67447664"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67594332"
 ---
 # <a name="common-alert-schema"></a>Esquema comum de alertas
 
@@ -35,7 +35,7 @@ Isso significa que você pode potencialmente ter menos de integrações, tornand
 
 O esquema de alerta comuns principalmente se manifestará em suas notificações de alerta. Os aprimoramentos que você verá estão listados abaixo:
 
-| Ação | Melhorias|
+| Action | Melhorias|
 |:---|:---|
 | sms | Um modelo consistente de SMS para todos os tipos de alerta. |
 | Email | Um modelo de email consistente e detalhadas, permitindo que você diagnosticar facilmente problemas rapidamente. Links profundo inseridos para a instância de alerta no portal e os recursos afetados Certifique-se de que você pode ir rapidamente para o processo de correção. |

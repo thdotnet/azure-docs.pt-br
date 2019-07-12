@@ -7,13 +7,13 @@ manager: vijayts
 ms.service: backup
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.author: sachdevaswati
-ms.openlocfilehash: 649e50634d901ab48f1cb36c39d7331401c0cc51
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: vijayts
+ms.openlocfilehash: b5e6b1b07f986228eef66e2e92fb9ac3caef32fa
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64700163"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67704834"
 ---
 # <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Perguntas Frequentes sobre bancos de dados do SQL Server que estão em execução em um backup de VM do Azure
 
@@ -59,13 +59,13 @@ Sim. Você pode limitar a taxa com que a política de backup é executada para m
 De acordo com as limitações do SQL, você pode executar copiar somente backup completo na réplica secundária; No entanto, não é permitido o backup completo.
 
 ## <a name="can-i-protect-availability-groups-on-premises"></a>Posso proteger grupos de disponibilidade no local?
-Não. O Backup do Azure protege os bancos de dados do SQL Server em execução no Azure. Se um grupo de disponibilidade (AG) é distribuído entre computadores locais e do Azure, o grupo de disponibilidade pode ser protegido somente se a réplica primária está em execução no Azure. Além disso, o Azure Backup protege apenas os nós que são executados na mesma região do Azure que o Cofre de serviços de recuperação.
+Nº O Backup do Azure protege os bancos de dados do SQL Server em execução no Azure. Se um grupo de disponibilidade (AG) é distribuído entre computadores locais e do Azure, o grupo de disponibilidade pode ser protegido somente se a réplica primária está em execução no Azure. Além disso, o Azure Backup protege apenas os nós que são executados na mesma região do Azure que o Cofre de serviços de recuperação.
 
 ## <a name="can-i-protect-availability-groups-across-regions"></a>Pode proteger grupos de disponibilidade entre regiões?
 O cofre dos serviços de recuperação de Backup do Azure pode detectar e proteger todos os nós que estão na mesma região que o cofre. Se seu grupo de disponibilidade Always On do SQL Server se estender por várias regiões do Azure, configure o backup da região que tem o nó primário. O Backup do Microsoft Azure poderá detectar e proteger todos os bancos de dados no grupo de disponibilidade, de acordo com a sua preferência de backup. Quando sua preferência de backup não for atendida, os backups falharão e você receber o alerta de falha.
 
 ## <a name="do-successful-backup-jobs-create-alerts"></a>Trabalhos de backup bem-sucedidos criam alertas?
-Não. Trabalhos de backup bem-sucedidos não geram alertas. Os alertas são enviados somente para trabalhos de backup com falha. Comportamento detalhado para alertas do portal está documentado [aqui](backup-azure-monitoring-built-in-monitor.md). No entanto, caso você esteja interessado têm alertas mesmo para trabalhos com êxito, você pode usar [monitoramento usando o Azure Monitor](backup-azure-monitoring-use-azuremonitor.md).
+Nº Trabalhos de backup bem-sucedidos não geram alertas. Os alertas são enviados somente para trabalhos de backup com falha. Comportamento detalhado para alertas do portal está documentado [aqui](backup-azure-monitoring-built-in-monitor.md). No entanto, caso você esteja interessado têm alertas mesmo para trabalhos com êxito, você pode usar [monitoramento usando o Azure Monitor](backup-azure-monitoring-use-azuremonitor.md).
 
 ## <a name="can-i-see-scheduled-backup-jobs-in-the-backup-jobs-menu"></a>Posso ver os trabalhos de backup agendados no menu trabalhos de Backup?
 O **trabalho de Backup** menu mostrará apenas ad-hoc trabalhos de backup. Para o trabalho agendado, use [monitoramento usando o Azure Monitor](backup-azure-monitoring-use-azuremonitor.md).

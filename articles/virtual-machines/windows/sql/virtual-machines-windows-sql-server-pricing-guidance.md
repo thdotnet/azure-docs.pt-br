@@ -16,12 +16,12 @@ ms.workload: iaas-sql-server
 ms.date: 08/09/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: ce07c6c19c19f134cc322309bb338b94ef11ea85
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d53c1de9678db497a20788d0cab7ee4f0e6f0c9c
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66393851"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67607058"
 ---
 # <a name="pricing-guidance-for-sql-server-azure-vms"></a>Diretrizes de preços para VMs do Azure do SQL Server
 
@@ -110,7 +110,7 @@ Trazer seu próprio licenciamento do SQL por meio da Mobilidade de Licença é r
 
 - **Cargas de trabalho com tempo de vida e escala conhecidos**. Por exemplo, um aplicativo que é necessário o ano todo e cuja demanda foi prevista.
 
-Para usar BYOL com uma VM do SQL Server, você deve ter uma licença para o SQL Server Standard ou Enterprise e o [Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx#tab=1), que é uma opção obrigatória em alguns programas de licenciamento por volume e uma compra adicional com outros. O nível de preço fornecido pelos programas de Licenciamento por Volume varia, com base no tipo de contrato e na quantidade e/ou no compromisso com o SQL Server. Porém, como uma regra geral, trazer sua própria licença para cargas de trabalho de produção contínuas agrega os seguintes benefícios:
+Para usar BYOL com uma VM do SQL Server, você deve ter uma licença para o SQL Server Standard ou Enterprise e o [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx#tab=1), que é uma opção obrigatória em alguns programas de licenciamento por volume e uma compra adicional com outros. O nível de preço fornecido pelos programas de Licenciamento por Volume varia, com base no tipo de contrato e na quantidade e/ou no compromisso com o SQL Server. Porém, como uma regra geral, trazer sua própria licença para cargas de trabalho de produção contínuas agrega os seguintes benefícios:
 
 | Benefício do método BYOL | DESCRIÇÃO |
 |-----|-----|
@@ -143,8 +143,8 @@ Há novos tamanhos de computador que funcionam bem com certos tipos de cargas de
 
 | Tamanho da VM | vCPUs | Memória | Máx. de discos | Taxa máxima de transferência de E/S | Custos de licenciamento de SQL | Custo total (computação + licenciamento) |
 |---|---|---|---|---|---|---|
-| **Standard_DS14v2** | 16 | 112 GB | 32 | 51\.200 IOPS ou 768 MB/s | | |
-| **Standard_DS14-4v2** | 4 | 112 GB | 32 | 51\.200 IOPS ou 768 MB/s | 75% inferior | 57% inferior |
+| **Standard_DS14v2** | 16 | 112 GB | 32 | 51.200 IOPS ou 768 MB/s | | |
+| **Standard_DS14-4v2** | 4 | 112 GB | 32 | 51.200 IOPS ou 768 MB/s | 75% inferior | 57% inferior |
 
 > [!IMPORTANT]
 > Este é um exemplo pontual. Para as especificações mais recentes, consulte os artigos sobre tamanhos de computador e página de preços do Azure para [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) e [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/).

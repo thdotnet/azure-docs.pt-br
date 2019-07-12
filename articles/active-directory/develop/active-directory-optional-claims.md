@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 60eeb420c723e22b771b4b86b55c2ce7d6a23659
-ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
+ms.openlocfilehash: 98b0ec2e1defc4701bff798b2fa93900ec8a9a64
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67536828"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67595152"
 ---
 # <a name="how-to-provide-optional-claims-to-your-azure-ad-app"></a>Como: Fornecer declarações opcionais para seu aplicativo do AD do Azure
 
@@ -83,7 +83,7 @@ Essas declarações são sempre incluídas nos tokens do Azure AD v 1.0, mas nã
 
 **Tabela 3: somente v2.0 declarações opcionais**
 
-| Declaração JWT     | NOME                            | DESCRIÇÃO                                | Observações |
+| Declaração JWT     | Nome                            | DESCRIÇÃO                                | Observações |
 |---------------|---------------------------------|-------------|-------|
 | `ipaddr`      | Endereço IP                      | O endereço IP com o qual o cliente se conectou.   |       |
 | `onprem_sid`  | Identificador de Segurança Local |                                             |       |
@@ -168,7 +168,7 @@ Declara as declarações opcionais solicitadas por um aplicativo. Um aplicativo 
 
 **Tabela 5: Propriedades do tipo OptionalClaims**
 
-| NOME        | Type                       | DESCRIÇÃO                                           |
+| Nome        | Tipo                       | DESCRIÇÃO                                           |
 |-------------|----------------------------|-------------------------------------------------------|
 | `idToken`     | Coleção (OptionalClaim) | As declarações opcionais retornadas no token de ID JWT. |
 | `accessToken` | Coleção (OptionalClaim) | As declarações opcionais retornadas no token de acesso JWT. |
@@ -181,11 +181,11 @@ Caso haja suporte por uma declaração específica, você também poderá modifi
 
 **Tabela 6: Propriedades do tipo OptionalClaim**
 
-| NOME                 | Type                    | DESCRIÇÃO                                                                                                                                                                                                                                                                                                   |
+| NOME                 | Tipo                    | DESCRIÇÃO                                                                                                                                                                                                                                                                                                   |
 |----------------------|-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `name`                 | Edm.String              | O nome da declaração opcional.                                                                                                                                                                                                                                                                           |
 | `source`               | Edm.String              | A origem (objeto de diretório) da declaração. Há declarações predefinidas e definidas pelo usuário de propriedades de extensão. Se o valor de origem for nulo, a declaração será uma declaração opcional predefinida. Se o valor de origem for um usuário, o valor na propriedade name será a propriedade de extensão do objeto de usuário. |
-| `essential`            | Edm.Boolean             | Se o valor for true, a declaração especificada pelo cliente será necessária para garantir uma experiência de autorização sem problemas para a tarefa específica solicitada pelo usuário final. O valor padrão é falso.                                                                                                             |
+| `essential`            | Edm.Boolean             | Se o valor for true, a declaração especificada pelo cliente será necessária para garantir uma experiência de autorização sem problemas para a tarefa específica solicitada pelo usuário final. O valor padrão é false.                                                                                                             |
 | `additionalProperties` | Coleção (Edm.String) | Propriedades adicionais da declaração. Se uma propriedade existir na coleção, ela modificará o comportamento da declaração opcional especificado na propriedade name.                                                                                                                                               |
 ## <a name="configuring-directory-extension-optional-claims"></a>Configurar declarações opcionais de extensão de diretório
 
@@ -193,7 +193,7 @@ Além do conjunto de declarações opcional padrão, você também pode configur
 
 > [!Note]
 > - Extensões de esquema de diretório são um recurso somente do AD do Azure, portanto, se o manifesto do seu aplicativo solicitar uma extensão personalizada e um usuário MSA fizer logon no seu aplicativo, essas extensões não serão retornadas.
-> - Declarações opcionais de AD do Azure só funcionam com a extensão do AD do Azure e não funciona o trabalho com a extensão de diretório do Microsoft Graph. Ambas as APIs exigem o `Directory.ReadWriteAll` permissão, que só pode ser consentida por administradores.
+> - Declarações opcionais de AD do Azure só funcionam com a extensão do AD do Azure e não funciona com a extensão de diretório do Microsoft Graph. Ambas as APIs exigem o `Directory.ReadWriteAll` permissão, que só pode ser consentida por administradores.
 
 ### <a name="directory-extension-formatting"></a>Formatação de extensão de diretório
 
@@ -254,7 +254,7 @@ Esta seção aborda as opções de configuração em declarações opcionais par
    }
    ```
 
-   | Esquema de declarações opcionais | Value |
+   | Esquema de declarações opcionais | Valor |
    |----------|-------------|
    | **name:** | Deve ser "grupos" |
    | **Fonte:** | Não usado. Omitir ou especifique null |

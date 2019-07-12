@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/14/2019
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 529c536d9ea3b898745f03c80b63702b2af485da
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 53ff318dcc034fb11e2d554f9ad8e8814eb32879
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165572"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672579"
 ---
 # <a name="stored-procedures-triggers-and-user-defined-functions"></a>Procedimentos armazenados, gatilhos e funções definidas pelo usuário
 
@@ -37,7 +37,7 @@ A escrita de procedimentos armazenados, gatilhos e UDFs (funções definidas pel
 * **Encapsulamento:** Os procedimentos armazenados podem ser usados para agrupar a lógica em um só lugar. O encapsulamento adiciona uma camada de abstração aos dados, o que permite que você desenvolva seus aplicativos de maneira independente dos dados. Essa camada de abstração é útil quando os dados são sem esquema e você não precisa gerenciar a adição de lógica extra diretamente no aplicativo. A abstração permite manter os dados seguros simplificando o acesso pelos scripts.
 
 > [!TIP]
-> Os procedimentos armazenados são mais adequados para operações com uso intensivo de gravação. Ao decidir em que local usar procedimentos armazenados, otimize o encapsulamento da quantidade máxima possível de gravações. Em termos gerais, os procedimentos armazenados não são o meio mais eficaz para fazer grandes quantidades de operações de leitura. Portanto, o uso de procedimentos armazenados para criar um lote de uma grande quantidade de leituras para retorná-las para o cliente não produzirá o benefício desejado.
+> Procedimentos armazenados são mais adequados para operações de gravação intensa e exigem uma transação em um valor de chave de partição. Ao decidir se deseja usar procedimentos armazenados, otimize em torno de encapsular a quantidade máxima de possíveis de gravações. Em termos gerais, procedimentos armazenados não são o meio mais eficaz para fazer um grande número de operações de leitura ou consulta, usando armazenados, procedimentos para um grande número de lotes de leituras para retornar para o cliente não obterá o benefício desejado. Para obter melhor desempenho, essas operações de leitura pesada devem ser feitas no lado do cliente, usando o SDK do Cosmos. 
 
 ## <a name="transactions"></a>Transações
 

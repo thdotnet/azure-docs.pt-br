@@ -3,18 +3,17 @@ title: Gerenciar os módulos na automação do Azure
 description: Este artigo descreve como gerenciar os módulos na automação do Azure
 services: automation
 ms.service: automation
-ms.subservice: shared-resources
 author: bobbytreed
 ms.author: robreed
 ms.date: 06/05/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 69817d1412aa13d0e7983aa3ad27c15e59185432
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: cd085164fc9804e0c1c822df1c72d3ef94093a07
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478170"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672799"
 ---
 # <a name="manage-modules-in-azure-automation"></a>Gerenciar os módulos na automação do Azure
 
@@ -71,7 +70,7 @@ Remove-AzureRmAutomationModule -Name <moduleName> -AutomationAccountName <automa
 
 A seguir está uma lista dos cmdlets no interno `Orchestrator.AssetManagement.Cmdlets` módulo é importado para cada conta de automação. Esses cmdlets podem ser acessados em runbooks e configurações DSC e permitem que você interaja com seus ativos em sua conta de automação. Além disso, os cmdlets internos permitem que você recuperar segredos de criptografados **variável** valores, **credenciais**e criptografados **Conexão** campos. Os cmdlets do PowerShell do Azure não são capazes de recuperar esses segredos. Esses cmdlets não exigem que você implicitamente se conectar ao Azure, ao usá-los. Isso é útil para cenários nos quais você tem uma conexão, como uma conta executar como que você precisa usar a autenticação do Azure.
 
-|NOME|DESCRIÇÃO|
+|Nome|DESCRIÇÃO|
 |---|---|
 |Get-AutomationCertificate|`Get-AutomationCertificate [-Name] <string> [<CommonParameters>]`|
 |Get-AutomationConnection|`Get-AutomationConnection [-Name] <string> [-DoNotDecrypt] [<CommonParameters>]` |
@@ -253,7 +252,7 @@ A tabela a seguir lista os módulos que são importados por padrão, quando uma 
 | PSDscResources | 2.9.0.0 |
 | SecurityPolicyDsc | 2.1.0.0 |
 | StateConfigCompositeResources | 1 |
-| xDSCDomainjoin | 1,1 |
+| xDSCDomainjoin | 1.1 |
 | xPowerShellExecutionPolicy | 1.1.0.0 |
 | xRemoteDesktopAdmin | 1.1.0.0 |
 
