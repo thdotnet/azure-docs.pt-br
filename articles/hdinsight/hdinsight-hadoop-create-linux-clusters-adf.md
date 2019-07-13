@@ -189,11 +189,11 @@ Neste artigo, você deve configurar a atividade de Hive para criar um cluster Ha
 
     |Propriedade  |Valor  |
     |---------|---------|
-    |NOME | Insira um nome para o data factory. Esse nome deve ser globalmente exclusivo.|
-    |Assinatura | Selecione sua assinatura do Azure. |
-    |Grupo de recursos | Selecione **Usar existente** e, em seguida, selecione o grupo de recursos que você criou usando o script do PowerShell. |
+    |Name | Insira um nome para o data factory. Esse nome deve ser globalmente exclusivo.|
+    |Subscription | Selecione sua assinatura do Azure. |
+    |Resource group | Selecione **Usar existente** e, em seguida, selecione o grupo de recursos que você criou usando o script do PowerShell. |
     |Versão | Deixe como **V2**. |
-    |Local padrão | O local é definido automaticamente para o local que você especificou ao criar o grupo de recursos anterior. Para este tutorial, o local é definido como **Leste dos EUA**. |
+    |Location | O local é definido automaticamente para o local que você especificou ao criar o grupo de recursos anterior. Para este tutorial, o local é definido como **Leste dos EUA**. |
 
     ![Criar Azure Data Factory usando o portal do Azure](./media/hdinsight-hadoop-create-linux-clusters-adf/create-data-factory-portal.png "criar Azure Data Factory usando o portal do Azure")
 
@@ -230,7 +230,7 @@ Nesta seção, você pode criar dois serviços vinculados no data factory.
 
     |Propriedade |Valor |
     |---|---|
-    |NOME |Digite `HDIStorageLinkedService`.|
+    |Name |Digite `HDIStorageLinkedService`.|
     |Assinatura do Azure |Selecione sua assinatura na lista suspensa.|
     |Nome da conta de armazenamento |Selecione a conta de armazenamento do Azure que você criou como parte do script do PowerShell.|
 
@@ -252,7 +252,7 @@ Nesta seção, você pode criar dois serviços vinculados no data factory.
 
     | Propriedade | Valor |
     | --- | --- |
-    | NOME | Digite `HDInsightLinkedService`.|
+    | Name | Digite `HDInsightLinkedService`.|
     | Type | Selecione **HDInsight sob demanda**. |
     | Serviço vinculado de armazenamento do Azure | Selecione `HDIStorageLinkedService`. |
     | Tipo de cluster | Selecione **hadoop** |
@@ -260,7 +260,7 @@ Nesta seção, você pode criar dois serviços vinculados no data factory.
     | ID da entidade de serviço | Forneça a ID do aplicativo da entidade de serviço do Azure Active Directory que você criou como parte dos pré-requisitos. |
     | Chave da entidade de serviço | Forneça a chave de autenticação para a entidade de serviço do Azure Active Directory. |
     | Prefixo do nome do cluster | Forneça um valor que será prefixado para todos os tipos de cluster que são criados pelo data factory. |
-    |Assinatura |Selecione sua assinatura na lista suspensa.|
+    |Subscription |Selecione sua assinatura na lista suspensa.|
     | Escolha o grupo de recursos | Selecione o grupo de recursos criado como parte do script do PowerShell que você usou anteriormente.|
     |Selecionar região | Selecione uma região na lista suspensa.|
     | Tipo de SO/nome de usuário do cluster SSH | Insira um nome de usuário SSH, normalmente `sshuser`. |
