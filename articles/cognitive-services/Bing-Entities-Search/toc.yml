@@ -45,7 +45,8 @@
 - name: Guias de instruções
   items:
     - name: Miniaturas de redimensionamento e corte
-      href: resize-and-crop-thumbnails.md
+      maintainContext: true
+      href: ../bing-web-search/resize-and-crop-thumbnails.md
 - name: Conceitos
   items:
     - name: Pesquisando entidades

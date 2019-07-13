@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 03/29/2018
 ms.author: swmachan
-ms.openlocfilehash: 9b8f3894062c34e743a39f28b5f079a67a285c84
-ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
+ms.openlocfilehash: 8956aff86777e2a2570c6a555a9bd0882f328a77
+ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357680"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67868405"
 ---
 # <a name="translator-text-api-v30"></a>API de Tradução de Texto v3.0
 
@@ -31,10 +31,10 @@ A versão 3 do API de tradução de texto fornece uma API de Web modernos basead
 
 ## <a name="base-urls"></a>URLs base
 
-O Microsoft Translator é distribuído a partir de vários locais de datacenter. No momento estão localizados em 6 [regiões geográficas do Azure](https://azure.microsoft.com/global-infrastructure/regions):
+O Microsoft Translator é distribuído a partir de vários locais de datacenter. No momento estão localizados em 10 [regiões geográficas do Azure](https://azure.microsoft.com/global-infrastructure/regions):
 
-* **Américas:** Oeste dos EUA 2 e Centro-Oeste dos EUA 
-* **Pacífico Asiático:** Sudeste Asiático e Sul da Coreia
+* **Américas:** Leste dos EUA, Centro-Sul dos EUA, oeste dos EUA e Oeste dos EUA 2 
+* **Pacífico Asiático:** Coreia do Sul, Leste do Japão, Sudeste Asiático e Leste da Austrália
 * **Europa:** Europa Setentrional e Europa Ocidental
 
 As solicitações para a API de Tradução de Texto da Microsoft são na maioria dos casos, tratadas pelo datacenter mais próximo que originou a solicitação. Em caso de falha do datacenter, a solicitação pode ser roteada fora da geografia do Azure.
@@ -49,7 +49,7 @@ Para forçar a solicitação para ser manipulada por uma Geografia do Azure espe
 |Azure|Pacífico Asiático|    api-apc.cognitive.microsofttranslator.com|
 
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Autenticação
 
 Inscrever-se à API de tradução de texto ou [serviço de vários serviços Cognitivos](https://azure.microsoft.com/pricing/details/cognitive-services/) no serviços Cognitivos da Microsoft e usar sua assinatura da chave (disponível no portal do Azure) para autenticar. 
 
@@ -58,7 +58,7 @@ Há três cabeçalhos que você pode usar para autenticar sua assinatura. Esta t
 |Cabeçalhos|DESCRIÇÃO|
 |:----|:----|
 |Ocp-Apim-Subscription-Key|*Use com a assinatura dos Serviços Cognitivos se você estiver passando a chave secreta*.<br/>O valor é a chave secreta do Azure da sua assinatura para a API de Tradução de Texto.|
-|Authorization|*Use com a assinatura dos Serviços Cognitivos se você estiver passando um token de autenticação.*<br/>O valor é o token de portador: `Bearer <token>`.|
+|Autorização|*Use com a assinatura dos Serviços Cognitivos se você estiver passando um token de autenticação.*<br/>O valor é o token de portador: `Bearer <token>`.|
 |Ocp-Apim-Subscription-Region|*Use com assinatura de vários serviço de serviços Cognitivos, se você estiver passando uma chave secreta vários serviço.*<br/>O valor é a região da assinatura vários serviço. Esse valor é opcional quando não estiver usando uma assinatura de vários serviço.|
 
 ###  <a name="secret-key"></a>Chave secreta
