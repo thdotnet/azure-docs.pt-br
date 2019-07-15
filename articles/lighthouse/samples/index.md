@@ -7,12 +7,12 @@ ms.service: lighthouse
 ms.topic: sample
 ms.date: 07/11/2019
 ms.author: jenhayes
-ms.openlocfilehash: 3bc4446b1964b28963166c92b59b55f782ceb67c
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: c0266bd3c88dccc8b0413e617bb4a5fcadbf3720
+ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67808066"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67971340"
 ---
 # <a name="azure-lighthouse-samples"></a>Exemplos do Azure Lighthouse
 
@@ -21,7 +21,7 @@ A tabela a seguir inclui links para os principais modelos do Azure Resource Mana
 | **Modelo** | **Descrição** |
 |---------|---------|
 | [create-multiple-rgs](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/Azure-Delegated-Resource-Management/templates/create-multiple-rgs) | Cria vários grupos de recursos usando um único modelo do Azure Resource Manager. |
-| [cross-rg-deployment](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/Azure-Delegated-Resource-Management/cross-rg-deployment) | Implanta contas de armazenamento em dois grupos de recursos diferentes. |
+| [cross-rg-deployment](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/Azure-Delegated-Resource-Management/templates/cross-rg-deployment) | Implanta contas de armazenamento em dois grupos de recursos diferentes. |
 | [cross-subscription-deployment](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/Azure-Delegated-Resource-Management/templates/cross-subscription-deployment) | Implanta modelos do Azure Resource Manager entre várias assinaturas. |
 | [delegated-resource-management](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/Azure-Delegated-Resource-Management/templates/delegated-resource-management) | Integra uma assinatura de cliente ao gerenciamento de recursos delegados do Azure. |
 | [deploy-azure-mgmt-services](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/Azure-Delegated-Resource-Management/templates/deploy-azure-mgmt-services) | Cria serviços de gerenciamento do Azure, vincula-os e implanta soluções adicionais. |

@@ -126,7 +126,7 @@ Obtenha a chave pública da lista de nós de transação. Copie a chave pública
 ### <a name="transaction-node-endpoint-addresses"></a>Endereços do ponto de extremidade do nó de transação
 
 1. No portal do Azure, navegue para cada nó de transação e selecione **Nós de transação > Cadeias de conexão**.
-1. Copie e salve a URL do ponto de extremidade de ***HTTPS (Chave de acesso 1)** para cada nó de transação. Você precisará dos endereços do ponto de extremidade para o arquivo de configuração do contrato inteligente mais adiante no tutorial.
+1. Copie e salve a URL do ponto de extremidade de **HTTPS (Chave de acesso 1)** para cada nó de transação. Você precisará dos endereços do ponto de extremidade para o arquivo de configuração do contrato inteligente mais adiante no tutorial.
 
     ![Endereço do ponto de extremidade da transação](./media/send-transaction/endpoint.png)
 
