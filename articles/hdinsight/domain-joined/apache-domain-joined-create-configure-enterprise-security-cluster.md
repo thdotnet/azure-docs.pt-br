@@ -310,7 +310,7 @@ Verificar se o certificado está instalado no computador\'repositório pessoal d
         | Destination port range | 636 |
         | Protocol | Any |
         | Action | Allow |
-        | Prioridade | \<Número desejado\> |
+        | Priority | \<Número desejado\> |
         | Nome | Port_LDAP_636 |
 
     ![regra de segurança de entrada](./media/apache-domain-joined-create-configure-enterprise-security-cluster/add-inbound-security-rule.png)

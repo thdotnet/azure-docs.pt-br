@@ -16,8 +16,6 @@
       href: tutorial-sspr-pilot.md
     - name: Habilitar a integração local de SSPR
       href: tutorial-enable-writeback.md
-    - name: Habilitar a redefinição de senha do Windows 10
-      href: tutorial-sspr-windows.md
     - name: Integrar o Azure Identity Protection
       href: tutorial-risk-based-sspr-mfa.md
 - name: Conceitos
@@ -73,8 +71,8 @@
           href: howto-sspr-authenticationdata.md
         - name: Habilitar o write-back de senha
           href: howto-sspr-writeback.md
-        - name: 'SSPR para Windows 7, 8 e 8.1'
-          href: howto-sspr-windows-7-8.md
+        - name: SSPR para clientes do Windows
+          href: howto-sspr-windows.md
     - name: MFA baseado em nuvem
       items:
         - name: Implantar o MFA baseado em nuvem
