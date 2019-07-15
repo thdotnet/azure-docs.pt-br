@@ -98,8 +98,8 @@ Os resultados são semelhantes ao seguinte:
 
 |Nome da Propriedade|Value|
 |----|----|
-| NOME | AzureGermanCloud |
-| EnableAdfsAuthentication | Falso |
+| Name | AzureGermanCloud |
+| EnableAdfsAuthentication | False |
 | ActiveDirectoryServiceEndpointResourceI | http://management.core.cloudapi.de/ |
 | GalleryURL | https://gallery.cloudapi.de/ |
 | ManagementPortalUrl | https://portal.microsoftazure.de/ | 
