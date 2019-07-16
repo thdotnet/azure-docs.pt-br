@@ -102,6 +102,8 @@
           href: manage-database-permissions.md
         - name: Verificar integridade do cluster
           href: check-cluster-health.md
+        - name: Selecionar SKU de VM do cluster
+          href: manage-cluster-choose-sku.md
         - name: Gerenciar escala horizontal do cluster
           href: manage-cluster-horizontal-scaling.md
         - name: Gerenciar escala vertical do cluster

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/17/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: e29a9265e010c3f442b742faf62b16dae02739fa
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: 29ab9b3c33aae6005510c34b207c7f87714149e5
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67191135"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67608061"
 ---
 ### <a name="preview"></a>Como posso participar da versão prévia pública?
 
@@ -55,4 +55,8 @@ Para fazer uma conexão, são necessárias as seguintes funções:
 
 ### <a name="previewbill"></a>Preço – Serei cobrado por participar da versão prévia?
 
-Você será cobrado apenas parcialmente durante a versão prévia pública. No entanto, não há um SLA vinculado à implantação. Para saber mais, confira a [página de preço](https://aka.ms/BastionHostPricing).
+Você será cobrado apenas parcialmente durante a versão prévia pública. No entanto, não há nenhum SLA anexado à implantação. Para saber mais, confira a [página de preço](https://aka.ms/BastionHostPricing).
+
+### <a name="previewbill"></a>Por que recebo a mensagem de erro "Sua sessão expirou" antes de iniciar a sessão do Bastion?
+
+Uma sessão deve ser iniciada somente por meio do portal do Azure. Entre no portal do Azure e inicie sua sessão novamente. Se você acessar a URL diretamente em outra guia ou sessão do navegador, esse erro será esperado. Ele ajuda a garantir que sua sessão seja mais segura e que ela possa ser acessada somente por meio do portal do Azure.

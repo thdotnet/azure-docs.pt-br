@@ -4,19 +4,18 @@ titleSuffix: Azure Dev Spaces
 author: zr-msft
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
-ms.subservice: azds-kubernetes
 ms.author: zarhoads
 ms.date: 05/07/2019
 ms.topic: overview
 description: Introdução ao Azure Dev Spaces
 keywords: Docker, Kubernetes, Azure, AKS, Serviço do Kubernetes do Azure, contêineres, kubectl, k8s
-manager: jeconnoc
-ms.openlocfilehash: 3e887409518f5cc97238a0168213a7918e318c04
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+manager: gwallace
+ms.openlocfilehash: 33ac5a7aa6d823105b87325ba52aa77cd9b9b3a3
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66394045"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67706294"
 ---
 # <a name="azure-dev-spaces"></a>Espaços de Desenvolvimento do Azure
 
@@ -40,7 +39,7 @@ Como as equipes podem trabalhar com o aplicativo inteiro e colaborar diretamente
 
 O Azure Dev Spaces fornece ferramentas para gerar recursos do Docker e do Kubernetes para seus projetos. Esse conjunto de ferramentas permite que você adicione facilmente aplicativos novos e existentes a um espaço de desenvolvimento e a outros clusters do AKS.
 
-Para saber mais sobre o funcionamento do Azure Dev Spaces, confira [Como o Azure Dev Spaces funciona e é configurado][how-dev-spaces-works].
+Para obter mais informações sobre como funciona o Azure Dev Spaces, confira [Como funciona o Azure Dev Spaces e como ele é configurado][how-dev-spaces-works].
 
 ## <a name="supported-regions-and-configurations"></a>Configurações e regiões com suporte
 

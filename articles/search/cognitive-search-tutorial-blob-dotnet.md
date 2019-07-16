@@ -9,12 +9,12 @@ ms.devlang: NA
 ms.topic: tutorial
 ms.date: 05/02/2019
 ms.author: maheff
-ms.openlocfilehash: 7fc33f89797fe0e3cc3a9832c9dc084194cf6603
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 2c77d509a0e66fd02bd949e481c5f0316fdd9afb
+ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67485761"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67672017"
 ---
 # <a name="c-tutorial-call-cognitive-services-apis-in-an-azure-search-indexing-pipeline"></a>Tutorial do C#: Chamar APIs de Serviços Cognitivos em um pipeline de indexação do Azure Search
 
@@ -98,7 +98,7 @@ Para este projeto, você precisará instalar a versão 9 do pacote `Microsoft.Az
 
 Instale o pacote `Microsoft.Azure.Search` NuGet usando o console do Gerenciador de Pacotes no Visual Studio. Para abrir o console do Gerenciador de Pacotes, selecione **Ferramentas** > **Gerenciador de Pacotes NuGet** > **Console do Gerenciador de Pacotes**. Para obter o comando a ser executado, navegue até a [página do pacote Microsoft.Azure.Search NuGet](https://www.nuget.org/packages/Microsoft.Azure.Search), selecione a versão 9 e copie o comando do Gerenciador de Pacotes. No console do Gerenciador de Pacotes, execute este comando.
 
-Para instalar o pacote `Microsoft.Extensions.Configuration.Json` NuGet no Visual Studio, selecione **Ferramentas** > **Gerenciador de Pacotes NuGet** > **Gerenciar Pacotes NuGet para a solução...** . Selecione Procurar e procure o pacote `Microsoft.Extensions.Configuration.Json` NuGet. Depois de encontrá-lo, selecione o pacote, selecione seu projeto, confirme se a versão é a versão estável mais recente e selecione Instalar.
+Para instalar o pacote `Microsoft.Extensions.Configuration.Json` NuGet no Visual Studio, selecione **Ferramentas** > **Gerenciador de Pacotes NuGet** > **Gerenciar Pacotes NuGet para a solução...**. Selecione Procurar e procure o pacote `Microsoft.Extensions.Configuration.Json` NuGet. Depois de encontrá-lo, selecione o pacote, selecione seu projeto, confirme se a versão é a versão estável mais recente e selecione Instalar.
 
 ## <a name="add-azure-search-service-information"></a>Adicionar informações de serviço do Azure Search
 
@@ -425,7 +425,7 @@ Este exercício usa os seguintes campos e tipos de campo:
 
 Os campos para este índice são definidos usando uma classe de modelo. Cada propriedade da classe de modelo tem atributos que determinam os comportamentos relacionados à pesquisa do campo de índice correspondente. 
 
-Vamos adicionar a classe de modelo a um novo arquivo C#. Clique com o botão direito do mouse em seu projeto e selecione **Adicionar** > **Novo Item...** , selecione "Classe" e nomeie o arquivo `DemoIndex.cs`, depois selecione **Adicionar**.
+Vamos adicionar a classe de modelo a um novo arquivo C#. Clique com o botão direito do mouse em seu projeto e selecione **Adicionar** > **Novo Item...**, selecione "Classe" e nomeie o arquivo `DemoIndex.cs`, depois selecione **Adicionar**.
 
 Certifique-se de indicar que você deseja usar os tipos dos namespaces `Microsoft.Azure.Search` e `Microsoft.Azure.Search.Models`.
 
@@ -697,4 +697,4 @@ A maneira mais rápida para limpar depois de um tutorial é excluindo o grupo de
 Personalizar ou estender o pipeline com qualificações personalizadas. Criando uma habilidade personalizada e adicionando-a a um conjunto de qualificações permite que você carregue texto ou análise de imagem que você escreve por conta própria.
 
 > [!div class="nextstepaction"]
-> [Exemplo: criar uma habilidade personalizada](cognitive-search-create-custom-skill-example.md)
+> [Exemplo: Como criar uma habilidade personalizada para a pesquisa cognitiva](cognitive-search-create-custom-skill-example.md)

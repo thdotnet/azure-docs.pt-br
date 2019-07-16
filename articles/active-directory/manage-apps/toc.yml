@@ -59,9 +59,9 @@
           href: isv-create-sso-documentation.md
         - name: Planejamento de uma implantação de logon único
           href: plan-sso-deployment.md
-    - name: SSO de um clique
+    - name: SSO com um clique
       items:
-        - name: O que é o SSO de um clique
+        - name: Configuração do SSO com um clique
           href: one-click-sso-tutorial.md
     - name: Provisionamento de usuários e grupos
       items:

@@ -1,19 +1,19 @@
 ---
-title: Script do PowerShell do Azure – Azure Cosmos DB obter taxa de transferência (RU/s) para a API de tabela
-description: Script do PowerShell do Azure – Azure Cosmos DB obter taxa de transferência (RU/s) para a API de tabela
+title: Script do Azure PowerShell – Obter a taxa de transferência (RU/s) do Azure Cosmos DB para a API de Tabela
+description: Script do Azure PowerShell – Obter a taxa de transferência (RU/s) do Azure Cosmos DB para a API de Tabela
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: samples
+ms.topic: sample
 ms.date: 05/18/2019
 ms.author: mjbrown
-ms.openlocfilehash: 41bc70bc391214ce831f600bc4fbdc7fad944094
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
-ms.translationtype: MT
+ms.openlocfilehash: d34a9e679ee6c1b65111817197a98555be13cf1d
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67566772"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67601941"
 ---
-# <a name="get-throughput-rus-for-a-table-for-azure-cosmos-db---table-api"></a>Obter a taxa de transferência (RU/s) de uma tabela do Azure Cosmos DB – API de tabela
+# <a name="get-throughput-rus-for-a-table-for-azure-cosmos-db---table-api"></a>Obter a taxa de transferência (RU/s) de uma tabela do Azure Cosmos DB – API de Tabela
 
 [!INCLUDE [updated-for-az](../../../../../includes/updated-for-az.md)]
 
