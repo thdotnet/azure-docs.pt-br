@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 06/04/2019
 ms.author: swmachan
-ms.openlocfilehash: a7621cc80a38d9a07872a94d8e5221dc04023b86
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: f9620cc5f135dd7b10da5528e5dec0f5baa70350
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67435023"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68226244"
 ---
 # <a name="request-limits-for-translator-text"></a>Limites de solicitação para a Tradução de Texto
 
@@ -54,7 +54,7 @@ Se você atinge ou ultrapassar esses limites ou envia muito grande de uma parte 
 
 Limites para [multi-Service assinaturas](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication) são o mesmo que a camada S1.
 
-Esses limites são restritos aos modelos de tradução padrão da Microsoft. Modelos de conversão personalizada que usam o conversor personalizado são limitados a caracteres 1.800 por segundo.
+Esses limites são restritos aos modelos de tradução padrão da Microsoft. Modelos de conversão personalizada que usam o conversor personalizado são limitados a 1.800 caracteres por segundo.
 
 ## <a name="latency"></a>Latency
 
@@ -64,7 +64,7 @@ A API de tradução de texto tem uma latência máxima de 15 segundos usando os 
 
 Ao usar a função [BreakSentence](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-break-sentence), o comprimento da sentença é limitado a 275 caracteres. Existem exceções para esses idiomas:
 
-| Linguagem | Código | Limite de caracteres |
+| Idioma | Código | Limite de caracteres |
 |----------|------|-----------------|
 | Chinês | zh | 132 |
 | Alemão | de | 290 |

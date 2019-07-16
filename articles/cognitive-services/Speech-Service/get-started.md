@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: aaae84fcb7df2abfe7e78adb64c22fb19fe45f4e
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 203526b23a9571f0cccf3ebed432978772282418
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606726"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68226414"
 ---
 # <a name="try-speech-services-for-free"></a>Experimente os Serviços de Fala gratuitamente
 
@@ -89,7 +89,7 @@ Para adicionar um recurso de Serviços de Fala (camada gratuita ou paga) à sua 
 
    * Um nome para o novo recurso. O nome ajuda a distinguir entre várias assinaturas do mesmo serviço.
    * Escolha a assinatura do Azure a qual o novo recurso está associado para determinar como os valores serão cobrados.
-   * Escolha a região onde o recurso será usado. No momento, os Serviços de Fala estão disponíveis nas regiões Ásia Oriental, Europa Setentrional e Oeste dos EUA.
+   * Escolha o [região](regions.md) onde o recurso será usado.
    * Escolha um tipo de preço gratuito ou pago. Clique em **Exibir detalhes completos de preço** para obter informações completas sobre preço e cotas de uso para cada tipo.
    * Crie um grupo de recursos para esta assinatura de Fala ou atribua a assinatura a um grupo de recursos existente. Os grupos de recurso ajudam você a manter suas diversas assinaturas do Azure organizadas.
    * Para ter acesso conveniente à sua assinatura futuramente, marque a caixa de seleção **Fixar no painel**.
