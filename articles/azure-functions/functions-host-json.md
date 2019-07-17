@@ -116,7 +116,7 @@ Controla o [recurso de amostragem no Application Insights](./functions-monitorin
 
 |Propriedade  |Padrão | DESCRIÇÃO |
 |---------|---------|---------| 
-|isEnabled|verdadeiro|Habilita ou desabilita a amostragem.| 
+|isEnabled|true|Habilita ou desabilita a amostragem.| 
 |maxTelemetryItemsPerSecond|5|O limite em que a amostragem começa.| 
 
 ## <a name="cosmosdb"></a>cosmosDb
@@ -173,7 +173,7 @@ Definições de configuração para [monitor de integridade de Host](https://git
 
 |Propriedade  |Padrão | DESCRIÇÃO |
 |---------|---------|---------| 
-|enabled|verdadeiro|Especifica se o recurso está habilitado. | 
+|enabled|true|Especifica se o recurso está habilitado. | 
 |healthCheckInterval|10 segundos|O intervalo de tempo entre as verificações de integridade em segundo plano. | 
 |healthCheckWindow|2 minutos|Uma janela de tempo deslizante usada em conjunto com a configuração `healthCheckThreshold`.| 
 |healthCheckThreshold|6|Número máximo de vezes que a verificação de integridade pode falhar antes de uma reciclagem de host ser iniciada.| 
