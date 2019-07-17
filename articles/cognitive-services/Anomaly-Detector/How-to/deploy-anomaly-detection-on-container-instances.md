@@ -1,31 +1,31 @@
 ---
-title: Executar as instâncias de contêiner do Azure
+title: Executar instâncias de contêiner do Azure
 titleSuffix: Azure Cognitive Services
-description: Implantar o contêiner do Detector de anomalias em uma instância de contêiner do Azure e testá-lo em um navegador da web.
+description: Implante o contêiner do detector de anomalias em uma instância de contêiner do Azure e teste-o em um navegador da Web.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
 ms.service: cognitive-services
-ms.subservice: anomaly-detection
+ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 7/5/2019
 ms.author: dapine
-ms.openlocfilehash: b5adc3ed9234050d3977e812202717a0ce83e842
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: defbd1275e24217c235caaef15dc8f7a55ad8613
+ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67711687"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68296568"
 ---
-# <a name="deploy-an-anomaly-detector-container-to-azure-container-instances"></a>Implantar um contêiner do Detector de anomalias em instâncias de contêiner do Azure
+# <a name="deploy-an-anomaly-detector-container-to-azure-container-instances"></a>Implantar um contêiner de detector de anomalias nas instâncias de contêiner do Azure
 
-Saiba como implantar os serviços Cognitivos [Detector de anomalias](../anomaly-detector-container-howto.md) contêiner do Azure [instâncias de contêiner](https://docs.microsoft.com/azure/container-instances/). Este procedimento demonstra a criação de um recurso do Detector de anomalias. Em seguida, discutiremos a efetuar pull da imagem de contêiner associado. Por fim, podemos destacar a capacidade de exercitar a orquestração dos dois em um navegador. Usando contêineres pode mudar a atenção dos desenvolvedores para longe de gerenciar a infraestrutura para em vez disso, com foco no desenvolvimento de aplicativos.
+Saiba como implantar o contêiner do [detector](../anomaly-detector-container-howto.md) de anomalias dos serviços cognitivas nas [instâncias de contêiner](https://docs.microsoft.com/azure/container-instances/)do Azure. Este procedimento demonstra a criação de um recurso de detector de anomalias. Em seguida, discutimos a extração da imagem de contêiner associada. Por fim, destacamos a capacidade de exercitar a orquestração dos dois em um navegador. O uso de contêineres pode mudar a atenção dos desenvolvedores para longe de gerenciar a infraestrutura para se concentrar no desenvolvimento de aplicativos.
 
 [!INCLUDE [Prerequisites](../../containers/includes/container-preview-prerequisites.md)]
 
 ## <a name="request-access-to-the-private-container-registry"></a>Solicitar acesso ao registro de contêiner privado
 
-Você deve primeiro concluir e enviar o [formulário de solicitação de contêiner do Detector de anomalias](https://aka.ms/adcontainer) para solicitar acesso ao contêiner.
+Você deve primeiro concluir e enviar o [formulário de solicitação de contêiner do detector](https://aka.ms/adcontainer) de anomalias para solicitar acesso ao contêiner.
 
 [!INCLUDE [Request access](../../../../includes/cognitive-services-containers-request-access-only.md)]
 
