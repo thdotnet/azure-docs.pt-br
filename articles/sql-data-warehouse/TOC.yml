@@ -303,6 +303,8 @@
           href: sql-data-warehouse-troubleshoot-connectivity.md
 - name: Referência
   items:
+    - name: Tipos de ordenação do banco de dados
+      href: sql-data-warehouse-reference-collation-types.md
     - name: T-SQL
       items:
         - name: Referência completa

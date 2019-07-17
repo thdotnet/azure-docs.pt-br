@@ -17,6 +17,8 @@
       href: notifications.md
     - name: Qual é sua experiência de entrada?
       href: flows.md
+    - name: Usuários do Identity Protection e B2B
+      href: concept-identity-protection-b2b.md
 - name: Guias de instruções
   expanded: true
   items:

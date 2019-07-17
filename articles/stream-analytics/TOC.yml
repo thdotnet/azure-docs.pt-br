@@ -94,10 +94,12 @@
           href: stream-analytics-clean-up-your-job.md
         - name: Emparelhar trabalhos para confiabilidade
           href: stream-analytics-job-reliability.md
-        - name: Autenticar com identidade gerenciada
+        - name: Autenticar com identidade gerenciada – saída do ADLS Gen 1
           href: stream-analytics-managed-identities-adls.md
         - name: Usar dados de referência do SQL
           href: sql-reference-data.md
+        - name: Autenticar com identidade gerenciada – saída de Blob
+          href: blob-output-managed-identity.md
     - name: Compilar soluções
       items:
         - name: Análise de sentimento no Twitter
