@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 07/05/2019
+ms.date: 07/16/2019
 ms.author: erhopf
-ms.openlocfilehash: 121e94228ca85684b20f2ee43c0f7fa3af82fc73
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: cb30b476471e140f96fa1d159e9a16898f529607
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606329"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68277485"
 ---
 # <a name="speech-devices-sdk-microphone-array-recommendations"></a>Recomendações de matriz do microfone do SDK de dispositivos de fala
 
@@ -43,44 +43,44 @@ As propriedades recomendadas ao selecionar microfones são:
 
 | Parâmetro                         | Recomendado                       |
 |-----------------------------------|-----------------------------------|
-| SNR                               | \> 65 dB (1 kHz sinal 94 dBSPL, ponderados de um ruído)   |
+| SNR                               | \>= 65 dB (1 kHz sinal 94 dBSPL, ponderados de um ruído)   |
 | Amplitude de correspondência                | ± 1 dB @ 1 kHz                     |
 | Fase de correspondência                    | ± 2° @ 1 kHz                       |
-| Ponto de sobrecarga acústicos (AOP)     | \> 120 dBSPL (THD = 10%)          |
+| Ponto de sobrecarga acústicos (AOP)     | \>= dBSPL 120 (THD = % 10)          |
 | Taxa de bits                          | Mínimo de 24 bits                    |
 | Taxa de amostragem                     | Mínimo 16 kHz\*                   |
-| Directivity                       | Unidirecional                   |
 | Resposta de frequência                | ± 3 dB, 200 8000 Hz flutuante máscara\*|
 | Confiabilidade                       | Intervalo de temperatura de armazenamento-40 ° C a 70 ° C<br />Intervalo de temperatura operacional-20 ° C a 55 ° C  |
 
-*\*Taxas de amostragem mais altas ou intervalos de frequência "maior" podem ser necessários para aplicativos de comunicação de alta qualidade (VoIP)*
+*\* Taxas de amostragem mais altas ou intervalos de frequência "maior" podem ser necessários para aplicativos de comunicação de alta qualidade (VoIP)*
 
 Seleção de componente boa deve ser emparelhada com boa integração electroacoustic para evitar prejudicando o desempenho dos componentes usados. Casos de uso exclusivo também podem necessitar de requisitos adicionais (por exemplo: operando intervalos de temperatura).
 
 ## <a name="microphone-array-integration"></a>Integração de matriz de microfone
 
-O desempenho das matrizes quando integrado em um dispositivo e depois de qualquer ganho fixo ou EQ deve atender as recomendações a seguir:
+O desempenho da matriz de microfone quando integrados a um dispositivo será diferente da especificação de componente. É importante garantir que os microfones também são correspondidos após a integração. Portanto, o desempenho do dispositivo medida após qualquer fixo obter ou EQ deve atender aos seguintes recomendações:
 
 |  Parâmetro        |    Recomendado |
 |--------------------|----------------------------------------------------|
-|  SNR                 | \> 65 dB (1 kHz sinal 94 dBSPL, ponderados de um ruído) |
+|  SNR                 | \> 63 dB (1 kHz sinal 94 dBSPL, ponderados de um ruído) |
 |  Sensibilidade de saída  | -26 dBFS/Pa @ 1 kHz (recomendado) |
 |  Amplitude de correspondência  | ± 2 dB, 200-8000 Hz |
-|  Fase de correspondência      | ± 5°, 200-8000 Hz |
-| THD%                 | ≤ 1%, 200 8000 Hz, 94 dBSPL, 5 de ordem |
-|  Resposta de frequência  | ± 6 dB, 200 8000 Hz flutuante máscara\* |
+| % THD\*                 | ≤ 1%, 200 8000 Hz, 94 dBSPL, 5 de ordem |
+|  Resposta de frequência  | ± 6 dB, 200 8000 Hz flutuante máscara\*\* |
 
-*\*"Maior" intervalos de frequência podem ser necessários para aplicativos de comunicação de alta qualidade (VoIP)*
+*\*\* Um alto-falante baixa distorção é necessária para medir THD (por exemplo, Neumann KH120)*
+
+*\*\* "Maior" intervalos de frequência podem ser necessários para aplicativos de comunicação de alta qualidade (VoIP)*
 
 ## <a name="speaker-integration-recommendations"></a>Recomendações de integração de alto-falante
 
 Conforme necessário, para dispositivos de reconhecimento de fala que contêm os alto-falantes cancelamento de eco, recomendações adicionais são fornecidas para integração e a seleção de alto-falante.
 
-| Parâmetro                         | Recomendadas                       |
+| Parâmetro                         | Recomendado                       |
 |-----------------------------------|-----------------------------------|
 | Considerações de linearidade          | Nenhum processamento não-linear após a referência de alto-falante, caso contrário, um fluxo de referência de loopback com base em hardware é necessário  |
 | Loopback de alto-falante                  | Fornecido por meio de WASAPI, APIs privadas, personalizado ALSA plug-in (Linux) ou fornecidos por meio do canal de firmware      |
-| THD%                              | 3ª octave bandas mínimo 5 de ordem, 70 dBA reprodução @ m 0,8 ≤ 6.3%, 500 315 Hz ≤ 5%, 5000 630 Hz                 |
+| % THD                              | 3ª octave bandas mínimo 5 de ordem, 70 dBA reprodução @ m 0,8 ≤ 6.3%, 500 315 Hz ≤ 5%, 5000 630 Hz                 |
 | Acoplamento de eco a microfones      | \> dB-10 TCLw usando o método ITU-T G.122 Anexo B.4, normalizado para o nível de mic<br />TCLw = TCLwmeasured \+ (medido em nível - sensibilidade de saída de destino)<br />TCLw = TCLwmeasured \+ (medido em nível - (-26)) |
 
 ## <a name="integration-design-architecture"></a>Arquitetura de integração de design

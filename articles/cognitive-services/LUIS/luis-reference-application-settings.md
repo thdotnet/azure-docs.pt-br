@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 05/29/2019
+ms.date: 07/16/2019
 ms.author: diberry
-ms.openlocfilehash: a8a1f6fe9372d013d310c557161ceb813b8a478b
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 3682b9e0c38344be1522440290b46f8c10bd5607
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67163648"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68275917"
 ---
 # <a name="application-settings"></a>Configurações do aplicativo
 
@@ -24,8 +24,8 @@ Essas configurações de aplicativo são armazenadas do [exportado](https://west
 
 |Configuração|Valor padrão|Observações|
 |--|--|--|
-|NormalizePunctuation|True|Remove a pontuação.|
-|NormalizeDiacritics|True|Remove os sinais diacríticos.|
+|NormalizePunctuation|verdadeiro|Remove a pontuação.|
+|NormalizeDiacritics|verdadeiro|Remove os sinais diacríticos.|
 
 ## <a name="diacritics-normalization"></a>Normalização de diacríticos 
 
@@ -48,7 +48,7 @@ As declarações a seguir mostram como normalização diacríticos afeta declara
 
 #### <a name="brazilian-portuguese-pt-br-diacritics"></a>Português (Brasil) `pt-br` diacríticos
 
-|Sinais diacríticos definido como false|Sinais diacríticos definido como false|
+|Sinais diacríticos definido como false|Sinais diacríticos definido como true|
 |-|-|
 |`á`|`a`|
 |`â`|`a`|
@@ -66,7 +66,7 @@ As declarações a seguir mostram como normalização diacríticos afeta declara
 
 #### <a name="dutch-nl-nl-diacritics"></a>Holandês `nl-nl` diacríticos
 
-|Sinais diacríticos definido como false|Sinais diacríticos definido como false|
+|Sinais diacríticos definido como false|Sinais diacríticos definido como true|
 |-|-|
 |`á`|`a`|
 |`à`|`a`|
@@ -85,7 +85,7 @@ As declarações a seguir mostram como normalização diacríticos afeta declara
 
 Isso inclui subculturas tanto francês canadenses.
 
-|Sinais diacríticos definido como false|Sinais diacríticos definido como false|
+|Sinais diacríticos definido como false|Sinais diacríticos definido como true|
 |--|--|
 |`é`|`e`|
 |`à`|`a`|
@@ -104,7 +104,7 @@ Isso inclui subculturas tanto francês canadenses.
 
 #### <a name="german-de-de-diacritics"></a>Alemão `de-de` diacríticos
 
-|Sinais diacríticos definido como false|Sinais diacríticos definido como false|
+|Sinais diacríticos definido como false|Sinais diacríticos definido como true|
 |--|--|
 |`ä`|`a`|
 |`ö`|`o`| 
@@ -112,7 +112,7 @@ Isso inclui subculturas tanto francês canadenses.
 
 #### <a name="italian-it-it-diacritics"></a>Italiano `it-it` diacríticos
 
-|Sinais diacríticos definido como false|Sinais diacríticos definido como false|
+|Sinais diacríticos definido como false|Sinais diacríticos definido como true|
 |--|--|
 |`à`|`a`|
 |`è`|`e`|
@@ -129,7 +129,7 @@ Isso inclui subculturas tanto francês canadenses.
 
 Isso inclui mexicano espanhol e canadenses.
 
-|Sinais diacríticos definido como false|Sinais diacríticos definido como false|
+|Sinais diacríticos definido como false|Sinais diacríticos definido como true|
 |-|-|
 |`á`|`a`|
 |`é`|`e`|
