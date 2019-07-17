@@ -1,25 +1,25 @@
 ---
 title: 'Início Rápido: Detectar e enquadrar faces em uma imagem com o SDK de Python'
 titleSuffix: Azure Cognitive Services
-description: Neste início rápido, você criará um script simples em Python que usa a API de Detecção Facial para detectar e enquadrar faces em uma imagem.
+description: Neste início rápido, você criará um script do Python que usa a API de Detecção Facial para detectar e enquadrar rostos em uma imagem remota.
 services: cognitive-services
 author: SteveMSFT
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: quickstart
-ms.date: 11/13/2018
+ms.date: 07/03/2018
 ms.author: sbowles
-ms.openlocfilehash: b816f4b78921c4bace1d15dd408b3fd701a3d6c5
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 741dd18a3b8da5e44d77c24d46adb8d550322281
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67339367"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603289"
 ---
 # <a name="quickstart-create-a-python-script-to-detect-and-frame-faces-in-an-image"></a>Início Rápido: Criar um aplicativo em Python para detectar e enquadrar faces em uma imagem
 
-Neste início rápido, você criará um script simples em Python que usa a API de Detecção Facial do Azure, por meio do SDK de Python, para detectar faces humanas em uma imagem remota. O aplicativo exibe uma imagem selecionada e desenha um quadro ao redor de cada face detectada.
+Neste início rápido, você criará um script do Python que usa a API de Detecção Facial do Azure, por meio do SDK do Python, para detectar rostos humanos em uma imagem remota. O aplicativo exibe uma imagem selecionada e desenha um quadro ao redor de cada face detectada.
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar. 
 
@@ -39,7 +39,7 @@ pip install cognitive_face
 
 ## <a name="detect-faces-in-an-image"></a>Detectar faces em uma imagem
 
-Crie um novo script do Python chamado _FaceQuickstart.py_ e adicione o código a seguir. Essa é a principal funcionalidade da detecção facial. Será necessário substituir `<Subscription Key>` pelo valor da sua chave. Talvez também seja necessário alterar o valor de `BASE_URL` para usar o identificador de região correto para sua chave (confira os [documentos da API de Detecção Facial](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) para obter uma lista com todos os pontos de extremidade de região). As chaves de assinatura de avaliação gratuita são geradas na região **westus**. Opcionalmente, defina `img_url` como a URL de qualquer imagem que você queira usar.
+Crie um novo script do Python chamado _FaceQuickstart.py_ e adicione o código a seguir. Esse código manipula a funcionalidade principal da detecção facial. Será necessário substituir `<Subscription Key>` pelo valor da sua chave. Talvez também seja necessário alterar o valor de `BASE_URL` para usar o identificador de região correto para sua chave (confira os [documentos da API de Detecção Facial](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) para obter uma lista com todos os pontos de extremidade de região). As chaves de assinatura de avaliação gratuita são geradas na região **westus**. Opcionalmente, defina `img_url` como a URL de qualquer imagem que você queira usar.
 
 O script detectará faces chamando o método **cognitive_face.face.detect**, que encapsula a API REST [Detectar](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) e retorna uma lista de faces.
 
@@ -64,11 +64,11 @@ print(faces)
 
 Execute o aplicativo com o comando `python FaceQuickstart.py`. Você deve obter uma resposta de texto na janela do console semelhante à seguinte:
 
-```shell
+```console
 [{'faceId': '26d8face-9714-4f3e-bfa1-f19a7a7aa240', 'faceRectangle': {'top': 124, 'left': 459, 'width': 227, 'height': 227}}]
 ```
 
-Esta é uma lista de faces detectadas. Cada item na lista é uma instância **dict** em que `faceId` é uma ID exclusiva para a face detectada e `faceRectangle` descreve a posição da face detectada. 
+A saída representa uma lista de rostos detectados. Cada item na lista é uma instância **dict** em que `faceId` é uma ID exclusiva para a face detectada e `faceRectangle` descreve a posição da face detectada. 
 
 > [!NOTE]
 > IDs de Detecção Facial expiram após 24 horas. Você precisará armazenar explicitamente os dados faciais se quiser mantê-los por muito tempo.
@@ -83,7 +83,7 @@ from io import BytesIO
 from PIL import Image, ImageDraw
 ```
 
-Em seguida, na parte inferior do script, adicione o seguinte código. Isso cria uma função simples para analisar as coordenadas do retângulo, e usa o Pillow para desenhar retângulos na imagem original. Depois, exibe a imagem em seu visualizador de imagem padrão.
+Em seguida, na parte inferior do script, adicione o seguinte código. Esse código cria uma função simples para analisar as coordenadas do retângulo e usa o Pillow para desenhar retângulos na imagem original. Depois, exibe a imagem em seu visualizador de imagem padrão.
 
 ```python
 # Convert width height to a point in a rectangle

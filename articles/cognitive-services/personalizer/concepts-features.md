@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 06/24/2019
 ms.author: edjez
-ms.openlocfilehash: 94eaeb6e34e74e1a0f1a3958c23cf33b86c4adcd
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: c317cbec02b82743c233bf36f743cea808c30c69
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67620274"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68253584"
 ---
 # <a name="features-are-information-about-actions-and-context"></a>Recursos são informações sobre ações e contexto
 
@@ -56,7 +56,7 @@ O Personalizador aceita recursos organizados em namespaces. Você determina, em 
 Estes são exemplos de namespaces de recurso usados por aplicativos:
 
 * User_Profile_from_CRM
-* Hora
+* Time
 * Mobile_Device_Info
 * http_user_agent
 * VideoResolution
@@ -66,9 +66,10 @@ Estes são exemplos de namespaces de recurso usados por aplicativos:
 * current_time
 * NewsArticle_TextAnalytics
 
-Você pode nomear os namespaces de recurso seguindo suas próprias convenções, desde que elas sejam chaves JSON válidas.
+Você pode nomear os namespaces de recurso seguindo suas próprias convenções, desde que elas sejam chaves JSON válidas. Namespaces são usados para organizar recursos em conjuntos distintos e para resolver a ambiguidade de recursos com nomes semelhantes. Você pode pensar em namespaces como um prefixo que é adicionado aos nomes de recurso. Namespaces não podem ser aninhados.
 
-No JSON a seguir, `user`, `state` e `device` são namespaces de recurso.
+
+No JSON a seguir, `user`, `state` e `device` são namespaces de recurso. Observação de visualização pública: No momento fortemente recomendamos usar nomes de namespaces do recurso com base em UTF-8 e começar com diferentes letras. Por exemplo, `user`, `state`, e `device` começam com `u`, `s`, e `d`. Atualmente ter namespaces com os mesmos caracteres primeiro pode resultar em colisões em índices usados para aprendizado de máquina.
 
 Objetos JSON podem incluir objetos JSON aninhados e simples/valores de propriedade. Uma matriz pode ser incluída somente se os itens da matriz são números. 
 
@@ -77,7 +78,7 @@ Objetos JSON podem incluir objetos JSON aninhados e simples/valores de proprieda
     "contextFeatures": [
         { 
             "user": {
-                "name":"Doug",
+                "profileType":"AnonymousUser",
                 "latlong": [47.6, -122.1]
             }
         },
@@ -167,7 +168,7 @@ As ações enviadas para a API de Classificação dependerão do que você está
 
 Estes são alguns exemplos:
 
-|Finalidade|Ação|
+|Finalidade|Action|
 |--|--|
 |Personalizar qual artigo é realçado em um site de notícias.|Cada ação é um artigo de notícias potencial.|
 |Otimizar o posicionamento de anúncios em um site.|Cada ação será um layout ou regras para criar um layout para os anúncios (por exemplo, na parte superior, à direita, imagens pequenas, imagens grandes).|

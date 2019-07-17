@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 04/09/2019
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d1688cc9317306e7f524536754854b6147ad3dd5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3de6a2cbdfe7a6d006a3bbfab16792376eda0d07
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67108778"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67702529"
 ---
 # <a name="quickstart-add-an-application-to-your-azure-active-directory-tenant"></a>Início Rápido: Adicionar um aplicativo a seu locatário do Azure Active Directory
 
@@ -43,27 +43,21 @@ Para testar as etapas deste tutorial, recomendamos o uso de um ambiente que não
 Para adicionar um aplicativo de galeria ao locatário do Azure AD:
 
 1. No [portal do Azure](https://portal.azure.com), no painel de navegação esquerdo, selecione **Azure Active Directory**.
-
 1. No painel do **Azure Active Directory**, selecione **Aplicativos empresariais**.
+1. O painel **Todos os aplicativos** é aberto para mostrar uma amostra aleatória dos aplicativos em seu locatário do Azure AD. Selecione **Novo aplicativo** na parte superior do painel **Todos os aplicativos** para adicionar um aplicativo da galeria ao seu locatário.
 
-    ![Abrir aplicativos empresariais](media/add-application-portal/open-enterprise-apps.png)
+    ![Selecione Novo aplicativo para adicionar um aplicativo da galeria ao seu locatário](media/add-application-portal/new-application.png)
 
-1. O painel **Todos os aplicativos** é aberto para mostrar uma amostra aleatória dos aplicativos em seu locatário do Azure AD. Selecione **Novo aplicativo** na parte superior do painel **Todos os aplicativos**.
+1. No painel **Categorias**, você verá ícones na área **Aplicativos em destaque** que são uma amostra aleatória de aplicativos da galeria. Para ver mais aplicativos, você pode selecionar **Mostrar mais**, mas não recomendamos pesquisar dessa forma, porque há milhares de aplicativos na galeria.
 
-    ![Novo aplicativo](media/add-application-portal/new-application.png)
-
-1. No painel **Categorias**, você verá ícones na área **Aplicativos em destaque** que são uma amostra aleatória de aplicativos da galeria.  Para ver mais aplicativos, selecione **Mostrar mais**. No entanto, não recomendamos pesquisar dessa maneira, pois há milhares de aplicativos na galeria.
-
-    ![Pesquisar por nome ou categoria](media/add-application-portal/categories.png)
+    ![Pesquisar por um aplicativo por nome ou categoria](media/add-application-portal/categories.png)
 
 1. Para pesquisar um aplicativo, em **Adicionar da galeria**, insira o nome do aplicativo que você deseja adicionar. Selecione o aplicativo nos resultados e selecione **Adicionar**. O exemplo a seguir mostra o formulário **Adicionar aplicativo** que aparece depois da pesquisa de github.com.
 
-    ![Adicionar um aplicativo](media/add-application-portal/add-an-application.png)
+    ![Mostra como adicionar um aplicativo da galeria](media/add-application-portal/add-an-application.png)
 
 1. No formulário específico do aplicativo, você pode alterar as informações de propriedade. Por exemplo, você pode editar o nome do aplicativo para atender às necessidades de sua organização. Este exemplo usa o nome **GitHub-test**.
-
 1. Quando você terminar de fazer alterações nas propriedades, selecione **Adicionar**.
-
 1. Uma página de introdução é exibida com as opções para configurar o aplicativo para a organização.
 
 Você terminou de adicionar seu aplicativo. Fique à vontade para fazer um intervalo. As seções a seguir mostram como alterar o logotipo e editar outras propriedades do aplicativo.
@@ -73,17 +67,12 @@ Você terminou de adicionar seu aplicativo. Fique à vontade para fazer um inter
 Vamos supor que você teve que sair e agora você está retornando para continuar a configurar o aplicativo. A primeira coisa a fazer é localizar o aplicativo.
 
 1. No **[portal do Azure](https://portal.azure.com)** , no painel de navegação esquerdo, selecione **Azure Active Directory**.
-
 1. No painel do **Azure Active Directory**, selecione **Aplicativos empresariais**.
-
 1. No menu suspenso **Tipo de Aplicativo**, selecione **Todos os Aplicativos** e, sem seguida, **Aplicar**. Para saber mais sobre as opções de exibição, consulte [Exibir aplicativos de locatário](view-applications-portal.md).
-
 1. Agora você pode ver uma lista de todos os aplicativos em seu locatário do Azure AD. A lista é uma amostra aleatória. Para ver mais aplicativos, selecione **Mostrar mais** uma ou mais vezes.
-
 1. Para localizar rapidamente um aplicativo no locatário, insira o nome dele na caixa de pesquisa e selecione **Aplicar**. Este exemplo localiza o aplicativo de teste do GitHub adicionado anteriormente.
 
-    ![Pesquisar um aplicativo](media/add-application-portal/find-application.png)
-
+    ![Mostra como encontrar um aplicativo usando a caixa de pesquisa](media/add-application-portal/find-application.png)
 
 ## <a name="configure-user-sign-in-properties"></a>Configurar propriedades de logon do usuário
 
@@ -94,7 +83,7 @@ Para editar as propriedades do aplicativo:
 1. Selecione o aplicativo para abri-lo.
 1. Selecione **Propriedades** para abrir o painel de propriedades para edição.
 
-    ![Editar painel de propriedades](media/add-application-portal/edit-properties.png)
+    ![Mostra a tela Propriedades e as propriedades editáveis do aplicativo](media/add-application-portal/edit-properties.png)
 
 1. Reserve um tempo para entender as opções de entrada. As opções determinam como os usuários que foram atribuídos ou não ao aplicativo podem entrar nele. Além disso, as opções também determinam se um usuário pode ver o aplicativo no painel de acesso.
 
@@ -144,8 +133,7 @@ Para usar um logotipo personalizado:
 1. Carregue o logotipo.
 1. Quando terminar, selecione **Salvar**.
 
-    ![Alterar o logotipo](media/add-application-portal/change-logo.png)
-
+    ![Mostra como alterar o logotipo da página Propriedades do aplicativo](media/add-application-portal/change-logo.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -155,5 +143,3 @@ Agora, você está pronto para configurar o aplicativo para logon único.
 
 > [!div class="nextstepaction"]
 > [Configurar Logon Único](configure-single-sign-on-portal.md)
-
-

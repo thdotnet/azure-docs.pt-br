@@ -5,16 +5,16 @@ description: Neste início rápido, você usará a API REST do Reconhecimento de
 author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
-ms.subservice: form-recognizer
+ms.subservice: forms-recognizer
 ms.topic: quickstart
-ms.date: 04/15/2019
+ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: 1990077e6466e08c1b6c463dafe9809b52df6d14
-ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
+ms.openlocfilehash: 3bfffc94bc11f9da2336d6edaeb96bf2e471c4ce
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67537613"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67602617"
 ---
 # <a name="quickstart-train-a-form-recognizer-model-and-extract-form-data-by-using-the-rest-api-with-curl"></a>Início Rápido: Treinar em um modelo do Reconhecimento de Formulários e extrair dados de formulário usando a API REST com o cURL
 
@@ -40,7 +40,7 @@ Para treinar um modelo do Reconhecimento de Formulários usando os documentos no
 
 1. Substitua `<Endpoint>` pelo ponto de extremidade que você obteve da chave de assinatura do Reconhecimento de Formulários. Encontre-o na guia **Visão geral** de recursos do Reconhecimento de Formulários.
 1. Substitua `<subscription key>` pela chave de assinatura que você copiou na etapa anterior.
-1. Substitua `<SAS URL>` pela URL da Assinatura de Acesso Compartilhado (SAS) do contêiner de armazenamento de Blob do Azure. Para recuperá-la, abra o Gerenciador de Armazenamento do Microsoft Azure, clique com o botão direito no seu contêiner e selecione **Obter assinatura de acesso compartilhado**. Verifique se as permissões de **Leitura** e **Lista** estão marcadas e clique em **Criar**. Em seguida, copie o valor na seção **URL**. Deve ter o formato: `https://<storage account>.blob.core.windows.net/<container name>?<SAS value>`.
+1. Substitua `<SAS URL>` pela URL da Assinatura de Acesso Compartilhado (SAS) do contêiner de armazenamento de Blobs do Azure. Para recuperar a URL de SAS, abra o Gerenciador de Armazenamento do Microsoft Azure, clique com o botão direito do mouse no seu contêiner e selecione **Obter assinatura de acesso compartilhado**. Verifique se as permissões de **Leitura** e **Lista** estão marcadas e clique em **Criar**. Em seguida, copie o valor na seção **URL**. Deve ter o formato: `https://<storage account>.blob.core.windows.net/<container name>?<SAS value>`.
 
 ```bash
 curl -X POST "https://<Endpoint>/formrecognizer/v1.0-preview/custom/train" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: <subscription key>" --data-ascii "{ \"source\": \""<SAS URL>"\"}"
@@ -96,7 +96,7 @@ Em seguida, você analisará um documento e extrairá pares chave-valor e tabela
 1. Substitua `<Endpoint>` pelo ponto de extremidade que você obteve da chave de assinatura do Reconhecimento de Formulários. Encontre-o na guia **Visão geral** de recursos do Reconhecimento de Formulários.
 1. Substitua `<modelID>` pela ID do modelo recebida na seção anterior.
 1. Substitua `<path to your form>` pelo caminho do arquivo do formulário (por exemplo, C:\temp\file.pdf).
-1. Substitua `<file type>` pelo tipo do arquivo. Tipos com suporte: `application/pdf`, `image/jpeg` e `image/png`.
+1. Substitua `<file type>` pelo tipo do arquivo. Tipos com suporte: `application/pdf`, `image/jpeg`, `image/png`.
 1. Substitua `<subscription key>` por sua chave de assinatura.
 
 

@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 05/29/2019
-ms.openlocfilehash: c876c012c48298268f682b5ee428ec0f27979b84
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.date: 07/04/2019
+ms.openlocfilehash: 2ff5ebefbe379edda94dcf8ac066027398e2f3f4
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66298949"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67565537"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-offline-using-dms"></a>Tutorial: Migração offline do MongoDB para a API do Azure Cosmos DB para MongoDB usando o DMS
 
@@ -122,7 +122,7 @@ Depois que o serviço é criado, localize-o no portal do Azure, abra-o e, em seg
    * O **modo de cadeia de conexão**, que aceita uma cadeia de conexão do MongoDB, conforme descrito no artigo [Formato de URI de cadeia de conexão](https://docs.mongodb.com/manual/reference/connection-string/).
    * **Dados do armazenamento do Azure**, que aceita um URL de SAS de contêiner de blob. Selecione **O blob contém despejos BSON** se o contêiner de blob tiver despejos BSON produzidos pela [ferramenta bsondump](https://docs.mongodb.com/manual/reference/program/bsondump/) do MongoDB e anule a seleção se o contêiner contiver arquivos JSON.
 
-    Se você selecionar essa opção, verifique se a cadeia de conexão da conta de armazenamento é exibida no formato:
+     Se você selecionar essa opção, verifique se a cadeia de conexão da conta de armazenamento é exibida no formato:
 
      ```
      https://blobnameurl/container?SASKEY
@@ -133,6 +133,13 @@ Depois que o serviço é criado, localize-o no portal do Azure, abra-o e, em seg
      * Para despejos BSON, os dados dentro do contêiner de blobs devem estar no formato bsondump, tal que os arquivo de dados sejam inseridos em pastas nomeadas de acordo com os bancos de dados que as contêm no formato collection.bson. Arquivos de metadados (se houver) devem ser nomeados usando o formato *coleção*.metadata.json.
 
      * Para despejos JSON, os arquivos no contêiner de blobs devem ser inseridos em pastas nomeadas de acordo com os bancos de dados que as contêm. Dentro de cada pasta de banco de dados, os arquivos de dados devem ser inseridos em uma subpasta chamada “dados” e nomeados usando o formato *collection*.json. Arquivos de metadados (se houver) devem ser inseridos em uma subpasta chamada “metadados” e nomeada usando o mesmo formato, *collection*.json. Os arquivos de metadados devem estar no mesmo formato que o produzido pela ferramenta bsondump MongoDB.
+
+    > [!IMPORTANT]
+    > Não é recomendado usar um certificado autoassinado no servidor do Mongo. No entanto, se um certificado for usado, conecte-se ao servidor usando o **modo de cadeia de conexão** e verifique se a cadeia de conexão tem “”
+    >
+    >```
+    >&sslVerifyCertificate=false
+    >```
 
    Você também pode usar o endereço IP para situações em que a resolução de nome do DNS não é possível.
 

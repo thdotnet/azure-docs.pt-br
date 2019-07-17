@@ -1,19 +1,19 @@
 ---
-title: Script do PowerShell do Azure – Azure Cosmos DB obter taxa de transferência (RU/s) para a API do Cassandra
-description: Script do PowerShell do Azure – Azure Cosmos DB obter taxa de transferência (RU/s) para a API do Cassandra
+title: Script do Azure PowerShell – Obter a taxa de transferência (RU/s) do Azure Cosmos DB para a API do Cassandra
+description: Script do Azure PowerShell – Obter a taxa de transferência (RU/s) do Azure Cosmos DB para a API do Cassandra
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: samples
+ms.topic: sample
 ms.date: 07/03/2019
 ms.author: mjbrown
-ms.openlocfilehash: a4871f56aa3d479342ca1bd25e521d2760451d98
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
-ms.translationtype: MT
+ms.openlocfilehash: 4aed55a0c3ae969cf9148e5bf8d6a70a3151f695
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67566928"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67603982"
 ---
-# <a name="get-throughput-rus-for-a-keyspace-or-table-for-azure-cosmos-db---cassandra-api"></a>Obter a taxa de transferência (RU/s) para uma tabela ou keyspace para Azure Cosmos DB – API do Cassandra
+# <a name="get-throughput-rus-for-a-keyspace-or-table-for-azure-cosmos-db---cassandra-api"></a>Obter a taxa de transferência (RU/s) para um keyspace ou uma tabela do Azure Cosmos DB – API do Cassandra
 
 [!INCLUDE [updated-for-az](../../../../../includes/updated-for-az.md)]
 

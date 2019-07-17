@@ -5,16 +5,16 @@ description: Neste Início Rápido, você usará a API REST do Reconhecimento de
 author: PatrickFarley
 manager: nitinme
 ms.service: cognitive-services
-ms.subservice: form-recognizer
+ms.subservice: forms-recognizer
 ms.topic: quickstart
-ms.date: 04/24/2019
+ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: b9985bfa15cf300f82a0d24400ed1167a2d3f135
-ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
+ms.openlocfilehash: 63b58e5e667d03d7808973b0783ed98ab4cb5447
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67537569"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67605867"
 ---
 # <a name="quickstart-train-a-form-recognizer-model-and-extract-form-data-by-using-the-rest-api-with-python"></a>Início Rápido: treinar em um modelo do Reconhecimento de Formulários e extrair dados de formulário usando a API REST com o Python
 
@@ -40,7 +40,7 @@ Para treinar um modelo do Reconhecimento de Formulários usando os documentos no
 
 1. Substitua `<Endpoint>` pela URL do ponto de extremidade do recurso do Reconhecimento de Formulários na região do Azure em que você obteve suas chaves de assinatura.
 1. Substitua `<Subscription key>` pela chave de assinatura que você copiou na etapa anterior.
-1. Substitua `<SAS URL>` pela URL da Assinatura de Acesso Compartilhado (SAS) do contêiner de armazenamento de Blobs do Azure. Para recuperá-la, abra o Gerenciador de Armazenamento do Microsoft Azure, clique com o botão direito no seu contêiner e selecione **Obter assinatura de acesso compartilhado**. Verifique se as permissões de **Leitura** e **Lista** estão marcadas e clique em **Criar**. Copie o valor na seção **URL**. Deve ter o formulário: `https://<storage account>.blob.core.windows.net/<container name>?<SAS value>`.
+1. Substitua `<SAS URL>` pela URL da Assinatura de Acesso Compartilhado (SAS) do contêiner de armazenamento de Blobs do Azure. Para recuperar a URL de SAS, abra o Gerenciador de Armazenamento do Microsoft Azure, clique com o botão direito do mouse no seu contêiner e selecione **Obter assinatura de acesso compartilhado**. Verifique se as permissões de **Leitura** e **Lista** estão marcadas e clique em **Criar**. Copie o valor na seção **URL**. Deve ter o formulário: `https://<storage account>.blob.core.windows.net/<container name>?<SAS value>`.
 
     ```python
     ########### Python Form Recognizer Train #############

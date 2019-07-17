@@ -9,114 +9,211 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 04/06/2019
-ms.openlocfilehash: e37e99323c92adad0b9e897af8c276a8ac153371
-ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
+ms.openlocfilehash: 21f5a2d93b708e93f124bd44177bb7852dfbd86a
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66515627"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67720559"
 ---
 # <a name="tutorial-predict-automobile-price-with-the-visual-interface"></a>Tutorial: Prever o preço de automóveis com a interface visual
 
 Neste tutorial, você analisará de maneira aprofundada o desenvolvimento de uma solução preditiva na interface visual do Serviço do Azure Machine Learning. Ao final deste tutorial, você terá uma solução que pode prever o preço de qualquer carro com base nas especificações técnicas enviadas a ela.
 
-Este tutorial [é uma continuação do Início Rápido](ui-quickstart-run-experiment.md) e é a **primeira parte de uma série de tutoriais de duas partes**. No entanto, você não precisa concluir o Início Rápido antes de começar.
-
-Na primeira parte da série de tutoriais, você aprenderá a:
+Na primeira parte do tutorial, você aprenderá a:
 
 > [!div class="checklist"]
-> * Importar e limpar os dados (as mesmas etapas do Início Rápido)
+> * Importar e limpar dados
 > * Treinar um modelo de machine learning
 > * Pontuar e avaliar um modelo
 
-Na [segunda parte](ui-tutorial-automobile-price-deploy.md) da série de tutoriais, você aprenderá a implantar seu modelo preditivo como um serviço Web do Azure.
-
-> [!NOTE]
-> Uma versão concluída deste tutorial está disponível como um teste de exemplo.
-> Na página Testes, acesse **Adicionar Novo** > **Amostra 1 – Regressão: Previsão de Preços de Automóveis (Básica)**
-
+Na [segunda parte](ui-tutorial-automobile-price-deploy.md) do tutorial, você aprenderá a implantar seu modelo preditivo como um serviço Web do Azure.
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2X1GY]
 
+Uma versão concluída deste tutorial está disponível como um teste de exemplo.
+
+Para encontrá-la, na **página Experimentos**, selecione **Adicionar Novo** e, em seguida, selecione o experimento **Amostra 1 – Regressão: Previsão de Preços de Automóveis (Básica)** .
+
 ## <a name="create-a-workspace"></a>Criar um workspace
 
-Se você tiver um workspace do Serviço do Azure Machine Learning, passe para a [próxima seção](#open-the-visual-interface-webpage). Caso contrário, crie um agora.
+Se você tiver um workspace do Serviço do Azure Machine Learning, passe para a [próxima seção](#open-the-visual-interface-webpage).
 
 [!INCLUDE [aml-create-portal](../../../includes/aml-create-in-portal.md)]
 
 ## <a name="open-the-visual-interface-webpage"></a>Abrir a página da Web da interface visual
 
-1. Abra seu workspace na [portal do Azure](https://portal.azure.com/).  
+1. Abra seu workspace na [portal do Azure](https://portal.azure.com/).
 
-1. No workspace, selecione **Interface visual**.  Em seguida, selecione **Iniciar interface visual**.  
+1. No workspace, selecione **Interface visual**. Em seguida, selecione **Iniciar interface visual**. 
 
     ![Captura de tela do portal do Azure mostrando como acessar a Interface visual em um workspace do serviço do Machine Learning](./media/ui-tutorial-automobile-price-train-score/launch-ui.png)
 
-    A página da Web da interface será aberta em uma nova página do navegador.  
+## <a name="create-your-first-experiment"></a>Criar seu primeiro experimento
 
-## <a name="import-and-clean-your-data"></a>Importar e limpar os dados
-
-A primeira coisa que você precisa fazer é limpar os dados. Se você concluiu o Início Rápido, reutilize seu teste de preparação de dados aqui. Se você não concluiu o Início Rápido, vá para a próxima seção e [comece com um novo teste](#start-from-a-new-experiment).
-
-### <a name="reuse-the-quickstart-experiment"></a>Reutilizar o teste do Início Rápido
-
-1. Abra o teste do Início Rápido.
-
-1. Selecione **Salvar como** na parte inferior da janela.
-
-1. Forneça a ele um novo nome na caixa de diálogo pop-up exibida.
-
-    ![Captura de tela mostrando como renomear um teste para "Tutorial – Prever o Preço de Automóveis"](./media/ui-tutorial-automobile-price-train-score/save-a-copy.png)
-
-1. O teste deve se parecer como o seguinte:
-
-    ![Captura de tela mostrando o estado esperado do teste. O conjunto de dados de automóveis se conecta ao módulo Selecionar Colunas, que, por sua vez, se conecta ao módulo Limpar Dados Ausentes](./media/ui-tutorial-automobile-price-train-score/save-copy-result.png)
-
-Se você reutilizou com êxito seu teste do Início Rápido, vá para a próxima seção para começar a [treinar seu modelo](#train-the-model).
-
-### <a name="start-from-a-new-experiment"></a>Começar com um novo teste
-
-Se você não concluiu o Início Rápido, siga estas etapas para criar rapidamente um teste que importa e limpa o conjunto de dados de automóveis.
+A ferramenta de interface visual fornece um lugar visual e interativo para a criação de modelos de análise preditiva. Arraste e solte conjuntos de dados e módulos de análise em uma tela interativa e conecte-os para criar um *experimento*.
 
 1. Crie um teste selecionando **+Novo** na parte inferior da janela da interface visual.
 
-1. Selecione **Experimentos** >  **Experimento em Branco**.
+    ![Adicionar um novo experimento](./media/ui-tutorial-automobile-price-train-score/add-new.png)
+
+1. Selecione **Teste em branco**.
 
 1. Selecione o nome do teste padrão **"Teste Criado em...** " na parte superior da tela e renomeie-o para algo significativo. Por exemplo, **Previsão de preços de automóveis**. O nome não precisa ser exclusivo.
 
-1. À esquerda da tela do experimento está uma paleta de conjuntos de dados e módulos. Para encontrar os módulos, use a caixa de pesquisa na parte superior da paleta de módulos. Digite **automóvel** na caixa de pesquisa para encontrar o conjunto de dados rotulado **Dados de preços de automóveis (Brutos)** . Arraste este conjunto de dados até a tela do experimento.
+## <a name="add-data"></a>Adicionar dados
 
-    ![Captura de tela de como encontrar o conjunto de dados de preços de automóveis](./media/ui-tutorial-automobile-price-train-score/automobile-dataset.png)
+A primeira coisa de que você precisa para o aprendizado de máquina são os dados. Há vários conjuntos de dados de exemplo incluídos nessa interface que podem ser usados. Você também pode importar dados de fontes existentes. Neste tutorial, use o conjunto de dados de exemplo **Dados de preços de automóveis (brutos)** . 
 
-    Agora que você tem seus dados, adicione um módulo que remove por completo a coluna **normalized-losses**. Em seguida, adicione outro módulo que remova qualquer linha que tenha dados ausentes.
+1. À esquerda da tela do experimento está uma paleta de conjuntos de dados e módulos. Selecione **Conjuntos de Dados Salvos**; em seguida, selecione **Exemplos** para exibir os conjuntos de dados de exemplo disponíveis.
 
-1. Digite **selecionar colunas** na caixa de pesquisa para encontrar o módulo **Selecionar Colunas no Conjunto de Dados**. Em seguida, arraste-o para a tela do experimento. Esse módulo permite selecionar quais colunas de dados você deseja incluir ou excluir no modelo.
+1. Selecione o conjunto de dados, **Dados de preço de automóvel (brutos)** e arraste-o para a tela.
 
-1. Conecte a porta de saída do conjunto de dados **Dados de preço de automóveis (Brutos)** à porta de entrada de Selecionar Colunas no Conjunto de Dados.
+   ![Arraste os dados para a tela](./media/ui-tutorial-automobile-price-train-score/drag-data.png)
 
-    ![GIF animado mostrando como conectar o módulo Dados de Preços de Automóveis ao módulo Selecionar Colunas](./media/ui-tutorial-automobile-price-train-score/connect-modules.gif)
+## <a name="select-columns"></a>Selecionar colunas
 
-1. Selecione o módulo Selecionar Colunas no Conjunto de Dados e selecione **Iniciar seletor de colunas** no painel **Propriedades**.
+Selecione com quais colunas de dados você deseja trabalhar. Para começar, configure o módulo para mostrar todas as colunas disponíveis.
 
-   1. À esquerda, selecione **Com regras**
+> [!TIP]
+> Se você souber o nome dos dados ou do módulo desejado, use a barra de pesquisa na parte superior da paleta para localizá-los rapidamente. O restante do tutorial usará esse atalho.
 
-   1. Ao lado de **Começar com**, selecione **Todas as colunas**. Essas regras instruem o módulo **Selecionar Colunas no Conjunto de Dados** a passar por todas as colunas (exceto aquelas que estamos prestes a excluir).
 
-   1. Nos menus suspensos, selecione **Excluir** e **nomes de coluna** e, em seguida, digite **normalized-losses** na caixa de texto.
+1. Digite **Selecionar** na caixa de pesquisa para localizar o módulo **Selecionar colunas no conjunto de dados**.
 
-   1. Selecione o botão OK para fechar o seletor de colunas (no canto inferior direito).
+1. Clique e arraste **Selecionar colunas no conjunto de dados** para a tela. Solte o módulo embaixo do conjunto de dados adicionado anteriormente.
 
-     Agora, o painel de propriedades de **Selecionar Colunas no Conjunto de Dados** indica que ele passará por todas as colunas do conjunto de dados exceto por **normalized-losses**.
+1. Conecte o conjunto de dados a **Selecionar colunas no conjunto de dados**: clique na porta de saída do conjunto de dados, arraste para a porta de entrada de **Selecionar colunas no conjunto de dados** e, em seguida, solte o botão do mouse. O conjunto de dados e o módulo permanecem conectados mesmo se você mover um deles nas telas.
 
-1. Adicione um comentário ao módulo **Selecionar Colunas no Conjunto de Dados** clicando duas vezes no módulo e inserindo "Excluir perdas normalizadas". Isso pode ajudar você a ver rapidamente o que o módulo está fazendo no teste.
+    > [!TIP]
+    > Os módulos e conjuntos de dados têm portas de entrada e saída representadas por círculos pequenos – portas de entrada na parte superior, portas de saída na parte inferior. Crie um fluxo de dados por meio do seu teste quando você conectar a porta de saída de um módulo a uma porta de entrada de outro.
+    >
 
-    ![Captura de tela mostrando a configuração correta do módulo Selecionar Colunas](./media/ui-tutorial-automobile-price-train-score/select-columns.png)
+    ![Conectar módulos](./media/ui-tutorial-automobile-price-train-score/connect-modules.gif)
 
-1. Digite **Limpar** na caixa de pesquisa para encontrar o módulo **Limpar Dados Ausentes**. Arraste o módulo **Limpar Dados Ausentes** para a tela do teste e conecte-o ao módulo **Selecionar Colunas no Conjunto de Dados**.
+    O ponto de exclamação vermelho indica que você não definiu as propriedades do módulo ainda.
 
-1. No painel **Propriedades** selecione **Remover linha inteira** em **Modo de limpeza**. Essas opções instruem o módulo **Limpar Dados Ausentes** a limpar os dados removendo as linhas que têm valores ausentes. Clique duas vezes no módulo e digite o comentário “Remover linhas de valor ausente".
+1. Selecione o módulo **Selecionar colunas no conjunto de dados**.
 
-![Captura de tela mostrando a configuração correta do módulo Limpar Dados Ausentes](./media/ui-tutorial-automobile-price-train-score/clean-missing-data.png)
+1. No painel **Propriedades** à direita da tela, selecione **Editar colunas**.
+
+    Na caixa de diálogo **Selecionar colunas**, selecione **TODAS AS COLUNAS** e inclua **todos os recursos**. A caixa de diálogo deve ter esta aparência:
+
+     ![column-selector](./media/ui-tutorial-automobile-price-train-score/select-all.png)
+
+1. No canto inferior direito, selecione **Ok** para fechar o seletor de coluna.
+
+## <a name="run-the-experiment"></a>Execute o experimento
+
+A qualquer momento, clique na porta de saída de um conjunto de dados ou de um módulo para ver qual é a aparência dos dados nesse momento no fluxo de dados. Se a opção **Visualizar** estiver desabilitada, primeiro será necessário executar o teste.
+
+Um experimento é executado em um destino de computação, que é um recurso de computação anexado ao workspace. Depois de criar um destino de computação, você poderá reutilizá-lo para execuções futuras.
+
+[!INCLUDE [aml-ui-create-training-compute](../../../includes/aml-ui-create-training-compute.md)]
+
+Depois que o destino de computação estiver disponível, o teste será executado. Quando a execução for concluída, uma marca de seleção verde será exibida em cada módulo.
+
+
+## <a name="preview-the-data"></a>Visualizar os dados
+
+Agora que você executou o experimento inicial, visualize os dados para entender mais sobre o conjunto de dados com o qual precisará trabalhar.
+
+1. Selecione a porta de saída na parte inferior de **Selecionar colunas no conjunto de dados** e, em seguida, selecione **Visualizar**.
+
+1. Clique em diferentes colunas na janela de dados para exibir informações sobre ela.
+
+    No conjunto de dados de exemplo, cada linha representa uma instância de um automóvel e as variáveis associadas a cada automóvel aparecem como colunas. Há 205 linhas e 26 colunas nesse conjunto de dados.
+
+     Cada vez que você clica em uma coluna de dados, as informações de **Estatísticas** e a imagem de **Visualização** dessa coluna são exibidas à esquerda. Por exemplo, ao clicar em **num-of-doors**, você verá que ela tem dois valores exclusivos e dois valores ausentes. Role para baixo para ver os valores: duas e quatro portas.
+
+     ![Visualizar os dados](./media/ui-tutorial-automobile-price-train-score/preview-data.gif)
+
+1. Clique em cada coluna para entender mais sobre o conjunto de dados e pense se essas colunas serão úteis para prever o preço de um automóvel.
+
+## <a name="prepare-data"></a>Preparar dados
+
+Um conjunto de dados geralmente requer algum pré-processamento antes de poder ser analisado. Talvez você tenha observado alguns valores ausentes ao visualizar o conjunto de dados. Os valores ausentes precisam ser limpos para que o modelo possa analisar os dados corretamente. Você removerá quaisquer linhas com valores ausentes. Além disso, a coluna **normalized-losses** tem uma grande proporção de valores ausentes; portanto, você a excluirá do modelo completamente.
+
+> [!TIP]
+> Limpar os valores ausentes dos dados de entrada é um pré-requisito para usar a maioria dos módulos.
+
+### <a name="remove-column"></a>Remover coluna
+
+Primeiro, remova a coluna **normalized-losses** por completo.
+
+1. Selecione o módulo **Selecionar colunas no conjunto de dados**.
+
+1. No painel **Propriedades** à direita da tela, selecione **Editar colunas**.
+
+    * Mantenha as opções **Com regras** e **TODAS AS COLUNAS** selecionadas.
+
+    * Nos menus suspensos, selecione **Excluir** e **nomes da coluna** e clique dentro da caixa de texto. Digite **normalized-losses**.
+
+    * No canto inferior direito, selecione **Ok** para fechar o seletor de coluna.
+
+    ![Excluir uma coluna](./media/ui-tutorial-automobile-price-train-score/exclude-column.png)
+        
+    Agora o painel de propriedades para Selecionar colunas no Conjunto de dados indica que ele passará todas as colunas do conjunto de dados, exceto **normalized-losses**.
+        
+    O painel de propriedades mostra que a coluna **normalized-losses** foi excluída.
+        
+    ![Painel de propriedade](./media/ui-tutorial-automobile-price-train-score/property-pane.png)
+        
+    É possível adicionar um comentário em um módulo ao clicar duas vezes nele e inserir o texto. Isso pode ajudar a ver rapidamente o que o módulo está fazendo em seu experimento. 
+
+1. Clique duas vezes no módulo **Selecionar Colunas no Conjunto de Dados** e digite o comentário "Excluir perdas normalizadas." 
+    
+    Após digitar o comentário, clique fora do módulo. Uma seta para baixo é exibida para mostrar que o módulo contém um comentário.
+
+1. Clique na seta para baixo para exibir o comentário.
+
+    Agora o módulo mostra uma seta para cima para ocultar o comentário.
+        
+    ![Comentários](./media/ui-tutorial-automobile-price-train-score/comments.png)
+
+### <a name="clean-missing-data"></a>Limpar dados ausentes
+
+Quando você treina um modelo, precisa fazer algo sobre os dados que estão faltando. Nesse caso, você adicionará um módulo para remover qualquer linha restante que tenha dados ausentes.
+
+1. Digite **Limpar** na caixa de pesquisa para encontrar o módulo **Limpar Dados Ausentes**.
+
+1. Arraste o módulo **Limpar Dados Ausentes** para a tela do teste e conecte-o ao módulo **Selecionar Colunas no Conjunto de Dados**. 
+
+1. No painel Propriedades, selecione **Remover linha inteira** em **Modo de limpeza**.
+
+    Essas opções instruem o módulo **Limpar Dados Ausentes** a limpar os dados removendo as linhas que têm valores ausentes.
+
+1. Clique duas vezes no módulo e digite o comentário “Remover linhas de valor ausente".
+ 
+    ![Remover linhas](./media/ui-tutorial-automobile-price-train-score/remove-rows.png)
+
+    Agora seu teste deve ter a seguinte aparência:
+    
+    ![select-column](./media/ui-tutorial-automobile-price-train-score/experiment-clean.png)
+
+## <a name="visualize-the-results"></a>Visualizar os resultados
+
+Coo você fez alterações nos módulos do seu teste, o status mudou para “Em rascunho”.  Para visualizar os novos dados limpos, primeiro você precisa executar o teste novamente.
+
+1. Selecione **Executar** na parte inferior para executar o teste.
+
+    Neste momento, é possível reutilizar o destino de computação que você criou anteriormente.
+
+1. Selecione **Executar** na caixa de diálogo.
+
+   ![Executar o experimento](./media/ui-tutorial-automobile-price-train-score/select-compute.png)
+
+1. Após a conclusão da execução, clique com o botão direito do mouse no módulo **Limpar Dados Ausentes** para visualizar os novos dados limpos.
+
+    ![Visualizar dados limpos](./media/ui-tutorial-automobile-price-train-score/visualize-cleaned.png)
+
+1. Clique em colunas diferentes na janela de dados limpos para ver como os dados mudaram.
+
+    ![Visualizar dados limpos](media/ui-tutorial-automobile-price-train-score/visualize-result.png)
+
+    Agora há 193 linhas e 25 colunas.
+
+    Ao clicar em **num-of-doors**, você verá que ele ainda tem dois valores exclusivos, mas agora tem 0 valores ausentes. Clique no restante das colunas para ver que não há valores ausentes no conjunto de dados. 
 
 ## <a name="train-the-model"></a>Treinar o modelo
 
@@ -154,8 +251,9 @@ Use seus dados para treinar o modelo e testá-lo, dividindo os dados em conjunto
 
     ![Captura de tela mostrando a configuração correta do módulo do seletor de colunas. Com regras > Incluir nomes de coluna > "preço"](./media/ui-tutorial-automobile-price-train-score/select-price.png)
 
-    Agora, o teste deverá ser semelhante ao mostrado a seguir.
-    ![Captura de tela mostrando a configuração correta do teste após a adição do módulo Treinar Modelo.](./media/ui-tutorial-automobile-price-train-score/train-graph.png)
+    O experimento deverá ser semelhante ao seguinte:
+
+    ![Captura de tela mostrando a configuração correta do experimento após a adição do módulo Treinar Modelo.](./media/ui-tutorial-automobile-price-train-score/train-graph.png)
 
 ### <a name="run-the-training-experiment"></a>Executar o teste de treinamento
 
@@ -219,7 +317,7 @@ Os testes criados na interface visual podem ser gerenciados no workspace do Serv
 
 Na primeira parte deste tutorial, você concluiu estas etapas:
 
-* Reutilizar o teste criado no Início Rápido
+* Criou um experimento
 * Preparar os dados
 * Treinar o modelo
 * Pontuar e avaliar o modelo

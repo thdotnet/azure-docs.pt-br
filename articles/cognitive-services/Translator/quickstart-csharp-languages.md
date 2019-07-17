@@ -10,16 +10,19 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/04/2019
 ms.author: swmachan
-ms.openlocfilehash: 5b5bf33c70b9f8827f1f55378e9caf4d1c858bed
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 4a1be3cd71a32210db8b3d5ef835af7b2d50667f
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67449414"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705665"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-get-a-list-of-supported-languages-using-c"></a>Início Rápido: Usar a API de Tradução de Texto para obter uma lista dos idiomas com suporte usando C#
 
 Neste início rápido, você obtém uma lista dos idiomas com suporte para tradução, transliteração e pesquisa em dicionário usando a API de Tradução de Texto.
+
+>[!TIP]
+> Caso queira ver todo o código de uma vez, o código-fonte deste exemplo está disponível no [GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-C-Sharp).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -115,7 +118,7 @@ Console.WriteLine(PrettyPrint(jsonResponse));
 Console.WriteLine("Press any key to continue.");
 ```
 
-Se estiver usando uma assinatura de vários serviço cognitivos, você também deve incluir o `Ocp-Apim-Subscription-Region` em seus parâmetros de solicitação. [Saiba mais sobre a autenticação com a assinatura de vários serviços](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
+Se estiver usando uma assinatura de vários serviço cognitivos, você também deve incluir o `Ocp-Apim-Subscription-Region` em seus parâmetros de solicitação. [Saiba mais sobre a autenticação com a assinatura de vários serviços](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication).
 
 Para imprimir a resposta com "Estilo de formatação" (formatação para a resposta), adicione essa função à sua classe de Programa:
 ```
@@ -236,10 +239,10 @@ Remova todas as informações confidenciais do código-fonte do seu aplicativo d
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Explore o exemplo de código para este início rápido e outros, incluindo identificação de transliteração e idioma, bem como outros projetos de Tradução de Texto de exemplo no GitHub.
+Confira a referência da API para saber tudo o que você pode fazer com a API de Tradução de Texto.
 
 > [!div class="nextstepaction"]
-> [Explore exemplos de C# no GitHub](https://aka.ms/TranslatorGitHub?type=&language=c%23)
+> [Referência de API](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference)
 
 ## <a name="see-also"></a>Consulte também
 

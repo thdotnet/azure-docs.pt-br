@@ -7,15 +7,15 @@ author: sanjeev3
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
-ms.topic: conceptual
-ms.date: 01/10/2019
+ms.topic: quickstart
+ms.date: 07/03/2019
 ms.author: sajagtap
-ms.openlocfilehash: d1c65b590fd68f68fdaeb110c0fd00e0c5a6649a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.openlocfilehash: 31bbc59b0587bb71999c4b10d273f75942737be2
+ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62127644"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67604140"
 ---
 # <a name="quickstart-try-content-moderator-on-the-web"></a>Início Rápido: Experimentar o Content Moderator na Web
 
@@ -69,5 +69,5 @@ Ou então, continue com as próximas etapas para começar a usar as APIs de mode
 
 Aprenda a usar as próprias APIs de moderação no seu aplicativo.
 - Implemente a moderação de imagem. Use o [console de API](try-image-api.md) ou o [C# quickstart](image-moderation-quickstart-dotnet.md) para varrer imagens e detectar conteúdo adulto e vigoroso usando tags, índices de confiança e outras informações extraídas.
-- Implementar a moderação de texto. Use o [console de API](try-text-api.md) ou usar o [ C# guia de início rápido](text-moderation-quickstart-dotnet.md) para examinar o conteúdo de texto para possíveis palavrões, classificação de texto indesejado auxiliada por computador (visualização) e dados pessoais.
+- Implementar a moderação de texto. Use o [console de API](try-text-api.md) ou o [início rápido do C#](text-moderation-quickstart-dotnet.md) para examinar o conteúdo de texto para encontrar conteúdo ofensivo, classificação de textos indesejados assistida por computador (versão prévia) e dados pessoais.
 - Implementar a moderação de vídeo. Siga as [guia de instruções de moderação de vídeo para C# ](video-moderation-api.md) para verificar a vídeos e detectar possível conteúdo adulto. 

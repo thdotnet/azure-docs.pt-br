@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 05/16/2019
 ms.author: yluiu
-ms.openlocfilehash: fbefbea171a8559466117c55703a14268b4c4c99
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: 26ab3cb247309aa21791ca5a984f39ef40ce9a78
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67592934"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68249628"
 ---
 # <a name="specify-a-face-detection-model"></a>Especificar um modelo de detecção facial
 
@@ -45,8 +45,7 @@ Quando você usa o [enfrentam - detectar] API, você pode atribuir a versão do 
 
 Uma URL de solicitação para o [enfrentam - detectar] REST API terá esta aparência:
 
-`https://westus.api.cognitive.microsoft.com/face/v1.0/detect[?returnFaceId][&returnFaceLandmarks][&returnFaceAttributes][&recognitionModel][&returnRecognitionModel][&detectionModel]
-&subscription-key=<Subscription key>`
+`https://westus.api.cognitive.microsoft.com/face/v1.0/detect[?returnFaceId][&returnFaceLandmarks][&returnFaceAttributes][&recognitionModel][&returnRecognitionModel][&detectionModel]&subscription-key=<Subscription key>`
 
 Se você estiver usando a biblioteca de cliente, você pode atribuir o valor para `detectionModel` , passando uma cadeia de caracteres apropriada. Se você deixar não atribuídos, a API usará a versão do modelo padrão (`detection_01`). Consulte o seguinte exemplo de código para a biblioteca de cliente .NET.
 

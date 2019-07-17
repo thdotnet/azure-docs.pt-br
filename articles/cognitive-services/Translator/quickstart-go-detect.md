@@ -10,18 +10,21 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/04/2019
 ms.author: swmachan
-ms.openlocfilehash: 5e11b7e61505952ceab285c5c10ec2cf9928ecaa
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 5690923c644b25703fe98e66fbb08319b7231abc
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67445221"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705626"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-detect-text-language-using-go"></a>Início Rápido: Usar a API de Tradução de Texto para detectar o idioma de texto com Go
 
 Neste início rápido, você aprenderá a detectar o idioma do texto fornecido usando Go e a API REST de Tradução de Texto.
 
 Este início rápido requer uma [Conta dos Serviços Cognitivos do Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) com um recurso de Tradução de Texto. Se não tiver uma conta, você poderá usar a [avaliação gratuita](https://azure.microsoft.com/try/cognitive-services/) para obter uma chave de assinatura.
+
+>[!TIP]
+> Caso queira ver todo o código de uma vez, o código-fonte deste exemplo está disponível no [GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-Go).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -137,7 +140,7 @@ if err != nil {
 }
 ```
 
-Se estiver usando uma assinatura de vários serviço cognitivos, você também deve incluir o `Ocp-Apim-Subscription-Region` em seus parâmetros de solicitação. [Saiba mais sobre a autenticação com a assinatura de vários serviços](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
+Se estiver usando uma assinatura de vários serviço cognitivos, você também deve incluir o `Ocp-Apim-Subscription-Region` em seus parâmetros de solicitação. [Saiba mais sobre a autenticação com a assinatura de vários serviços](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication).
 
 ## <a name="handle-and-print-the-response"></a>Processar e imprimir a resposta
 
@@ -195,10 +198,10 @@ Localize a abreviação do país/região nesta [lista de idiomas](https://docs.m
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Explore pacotes Go para APIs de Serviços Cognitivos do [SDK do Azure para linguagem Go](https://github.com/Azure/azure-sdk-for-go) no GitHub.
+Confira a referência da API para saber tudo o que você pode fazer com a API de Tradução de Texto.
 
 > [!div class="nextstepaction"]
-> [Explore pacotes Go no GitHub](https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices)
+> [Referência de API](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference)
 
 ## <a name="see-also"></a>Consulte também
 

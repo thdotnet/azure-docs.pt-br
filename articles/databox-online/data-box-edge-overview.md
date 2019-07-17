@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: overview
-ms.date: 06/28/2019
+ms.date: 07/09/2019
 ms.author: alkohli
-ms.openlocfilehash: 3972f9f93cc6323601102f1a54bb067a8995d9e4
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: bc6b9662a5d67f6ed315c33444bcb061115fe6d4
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67484750"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67701471"
 ---
 # <a name="what-is-azure-data-box-edge"></a>O que é o Azure Data Box Edge? 
 
@@ -34,7 +34,7 @@ O Azure Data Box Edge é um dispositivo de computação de borda habilitado para
     - Colocar em subconjunto e transferir os dados necessários para realizar análises mais aprofundadas na nuvem.
     - Analisar e reagir a Eventos de IoT. 
 
-- **Azure Machine Learning de Inferência** – Com o Data Box Edge, é possível executar modelos de ML (Machine Learning) para obter resultados rápidos que podem ser tratados antes que os dados sejam enviados para a nuvem. O conjunto de dados completo pode ser transferido para continuar a treinar novamente e melhorar os modelos de ML. Para obter mais informações sobre como usar os modelos acelerados por hardware do Azure ML no dispositivo Databox Edge, veja [Implantar modelos acelerados por hardware do Azure ML no Databox Edge](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-fpga-web-service#deploy-to-a-local-edge-server).
+- **Azure Machine Learning de Inferência** – Com o Data Box Edge, é possível executar modelos de ML (Machine Learning) para obter resultados rápidos que podem ser tratados antes que os dados sejam enviados para a nuvem. O conjunto de dados completo pode ser transferido para continuar a treinar novamente e melhorar os modelos de ML. Para obter mais informações sobre como usar os Modelos de Aceleração de Hardware do Azure ML no dispositivo Data Box Edge, confira [Implantar Modelos de Aceleração de Hardware do Azure ML no Data Box Edge](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-fpga-web-service#deploy-to-a-local-edge-server).
 
 - **Transferir dados pela rede para o Azure** – Use o Data Box Edge para transferir dados de maneira rápida e fácil para o Azure para habilitar ainda mais computação e análise ou para fins de arquivamento. 
 
@@ -88,16 +88,9 @@ A solução Data Box Edge é composta pelo recurso do Data Box Edge, dispositivo
 
 O dispositivo físico Data Box Edge, o recurso do Azure e a conta de armazenamento de destino para a qual os dados são transferidos não precisam estar na mesma região.
 
-- **Disponibilidade do recurso** – Para esta versão, o recurso Data Box Edge está disponível nas seguintes regiões:
-    - **Estados Unidos** – Leste dos EUA
-    - **União Europeia** – Europa Ocidental
-    - **Pacífico Asiático** – Sudeste da Ásia
+- **Disponibilidade de recursos** – para obter uma lista de todas as regiões em que o recurso do Data Box Edge está disponível, vá para [Produtos do Azure disponíveis por região](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all). O Data Box Edge também pode ser implantado na Nuvem do Azure Governamental. Para obter mais informações, confira [O que é o Azure Governamental?](https://docs.microsoft.com/azure/azure-government/documentation-government-welcome).
     
-    O Data Box Edge também pode ser implantado na Nuvem do Azure Governamental. Para obter mais informações, confira [O que é o Azure Governamental?](https://docs.microsoft.com/azure/azure-government/documentation-government-welcome).
-    
-- **Contas de Armazenamento de destino** – as contas de armazenamento que armazenam os dados estão disponíveis em todas as regiões do Azure. 
-
-    As regiões em que as contas de armazenamento armazenam os dados do Data Box devem estar localizadas perto do local em que o dispositivo está localizado para render desempenho ideal. Uma conta de armazenamento localizada longe do dispositivo resulta em longas latências de desempenho mais lentos. 
+- **Contas de Armazenamento de destino** – as contas de armazenamento que armazenam os dados estão disponíveis em todas as regiões do Azure. As regiões em que as contas de armazenamento armazenam dados do Data Box Edge devem estar localizadas perto do local em que o dispositivo está para apresentar o desempenho ideal. Uma conta de armazenamento localizada longe do dispositivo resulta em longas latências de desempenho mais lentos. 
 
 
 ## <a name="next-steps"></a>Próximas etapas

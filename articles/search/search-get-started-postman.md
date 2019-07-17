@@ -7,15 +7,15 @@ services: search
 ms.service: search
 ms.devlang: rest-api
 ms.topic: quickstart
-ms.date: 05/16/2019
+ms.date: 07/09/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: b3c5c08e9862d59481573b501045466d6d691a77
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: ee3c4da96629910801413cbbad69963defb87dfe
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67485550"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67798790"
 ---
 # <a name="quickstart-create-an-azure-search-index-in-postman-using-rest-apis"></a>Início Rápido: Criar um índice do Azure Search no Postman usando as APIs REST
 > [!div class="op_single_selector"]
@@ -36,7 +36,7 @@ Os serviços e as ferramentas a seguir são usados neste Início Rápido.
 
 + [Crie um serviço Azure Search](search-create-service-portal.md) ou [localize um serviço existente](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) na assinatura atual. É possível usar um serviço gratuito para este início rápido. 
 
-+ O [Aplicativo da área de trabalho do Postman](https://www.getpostman.com/) ou [Telerik Fiddler](https://www.telerik.com/fiddler) é usado para enviar solicitações para o Azure Search.
++ [Aplicativo da área de trabalho do Postman](https://www.getpostman.com/) é usado para enviar solicitações para o Azure Search.
 
 ## <a name="get-a-key-and-url"></a>Obter uma chave e uma URL
 
@@ -240,7 +240,11 @@ Para saber mais sobre esta API, confira [API REST Obter Estatísticas do Índice
 
 ## <a name="clean-up"></a>Limpar
 
-Se você não precisar mais do serviço de pesquisa, a maneira mais rápida para liberar os serviços é excluindo o grupo de recursos que contém o serviço do Azure Search. A exclusão do grupo de recursos exclui tudo permanentemente, incluindo os serviços e qualquer conteúdo armazenado. No portal, o nome do grupo de recurso está na página de Visão geral de cada serviço.
+Quando você está trabalhando em sua própria assinatura, é uma boa ideia identificar, no final de um projeto, se você ainda precisa dos recursos criados. Recursos deixados em execução podem custar dinheiro. Você pode excluir os recursos individualmente ou excluir o grupo de recursos para excluir todo o conjunto de recursos.
+
+Você pode localizar e gerenciar recursos no portal usando o link **Todos os recursos** ou **Grupos de recursos** no painel de navegação à esquerda.
+
+Se você estiver usando um serviço gratuito, estará limitado a três índices, indexadores e fontes de dados. Você pode excluir itens individuais no portal para permanecer abaixo do limite. 
 
 ## <a name="next-steps"></a>Próximas etapas
 

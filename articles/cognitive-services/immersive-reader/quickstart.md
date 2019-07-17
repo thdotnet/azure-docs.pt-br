@@ -1,26 +1,27 @@
 ---
-title: 'Início Rápido: Criar um aplicativo Web que inicia a Leitura Avançada (C#)'
+title: 'Início Rápido: Criar um aplicativo Web que inicia a Leitura Avançada com C#'
 titlesuffix: Azure Cognitive Services
-description: Neste início rápido, você cria um aplicativo Web do zero e adiciona a funcionalidade de Leitura Avançada.
+description: Neste início rápido, você cria um aplicativo Web do zero e adiciona a funcionalidade da API de Leitura Avançada.
 services: cognitive-services
 author: metanMSFT
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: immersive-reader
 ms.topic: quickstart
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: 77d95383c801038c256ccb2bf386ddf06048cf78
-ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
+ms.openlocfilehash: 3b408de6b60e7e7704ee228b52c399e5b80e3a9e
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67311805"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67718425"
 ---
 # <a name="quickstart-create-a-web-app-that-launches-the-immersive-reader-c"></a>Início Rápido: Criar um aplicativo Web que inicia a Leitura Avançada (C#)
 
 A [Leitura Avançada](https://www.onenote.com/learningtools) é uma ferramenta projetada de forma inclusiva que implementa técnicas comprovadas para melhorar a compreensão da leitura.
 
-Neste Início Rápido, você cria um aplicativo Web do zero e integra a Leitura Avançada usando o SDK de Leitura Avançada. Um exemplo de funcionamento completo deste Início Rápido está disponível [aqui](https://github.com/Microsoft/immersive-reader-sdk/samples/quickstart-csharp).
+Neste Início Rápido, você cria um aplicativo Web do zero e integra a Leitura Avançada usando o SDK de Leitura Avançada. Um exemplo de funcionamento completo deste Início Rápido está disponível [aqui](https://github.com/microsoft/immersive-reader-sdk/tree/master/samples/quickstart-csharp).
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 

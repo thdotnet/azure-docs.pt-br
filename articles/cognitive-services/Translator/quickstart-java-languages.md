@@ -10,16 +10,19 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/04/2019
 ms.author: swmachan
-ms.openlocfilehash: 1c6db84acc2bca8e649f5f7acb1dcbdfd6d1269d
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 4b5c89d6d2066af3978845676a42a6c39ba3659e
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67445117"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67705569"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-get-a-list-of-supported-languages-using-java"></a>Início Rápido: Usar a API de Tradução de Texto para obter uma lista dos idiomas com suporte usando Java
 
 Neste início rápido, você obtém uma lista dos idiomas com suporte para tradução, transliteração e pesquisa em dicionário usando a API de Tradução de Texto.
+
+>[!TIP]
+> Caso queira ver todo o código de uma vez, o código-fonte deste exemplo está disponível no [GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-Java).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -104,7 +107,7 @@ Adicione essas linhas à classe `GetLanguages`:
 String url = "https://api.cognitive.microsofttranslator.com/languages?api-version=3.0";
 ```
 
-Se estiver usando uma assinatura de vários serviço cognitivos, você também deve incluir o `Ocp-Apim-Subscription-Region` em seus parâmetros de solicitação. [Saiba mais sobre a autenticação com a assinatura de vários serviços](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
+Se estiver usando uma assinatura de vários serviço cognitivos, você também deve incluir o `Ocp-Apim-Subscription-Region` em seus parâmetros de solicitação. [Saiba mais sobre a autenticação com a assinatura de vários serviços](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication).
 
 ## <a name="create-a-client-and-build-a-request"></a>Crie um cliente e compile uma solicitação
 
@@ -264,10 +267,10 @@ Uma resposta bem-sucedida é retornada em JSON, conforme mostrado no seguinte ex
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Explore o exemplo de código para este início rápido e outros, incluindo tradução e transliteração, bem como outros projetos de Tradução de Texto de exemplo no GitHub.
+Confira a referência da API para saber tudo o que você pode fazer com a API de Tradução de Texto.
 
 > [!div class="nextstepaction"]
-> [Explorar exemplos de Java no GitHub](https://aka.ms/TranslatorGitHub?type=&language=java)
+> [Referência de API](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference)
 
 ## <a name="see-also"></a>Consulte também
 

@@ -5,28 +5,27 @@ services: databox
 documentationcenter: NA
 author: alkohli
 ms.service: databox
-ms.subservice: pod
+ms.subservice: heavy
 ms.topic: overview
-ms.date: 06/19/2019
+ms.date: 07/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 94ba0040b1de7e1f03825f1cd2ef2a6536343d96
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 0f4657cdd71a104ca111f62a6e9757b5a33b46e8
+ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67271752"
+ms.lasthandoff: 07/05/2019
+ms.locfileid: "67592312"
 ---
-# <a name="what-is-azure-data-box-heavy-preview"></a>O que é o Azure Data Box Heavy? (versão prévia)
+# <a name="what-is-azure-data-box-heavy"></a>O que é o Azure Data Box Heavy?
 
 O Azure Data Box Heavy permite enviar centenas de terabytes de dados para o Microsoft Azure de forma rápida, econômica e confiável. Os dados são transferidos para o Microsoft Azure enviando um dispositivo Data Box Heavy com capacidade de armazenamento de 1 PB, com o qual você preenche seus dados e envia à Microsoft. O dispositivo tem uma caixa reforçada para proteger os dados durante o transporte.
 
-O Data Box Heavy está em versão prévia. Inscreva-se no portal do Azure para solicitar um dispositivo. Quando receber o dispositivo em seu datacenter, use a IU da Web local para configurá-lo. Copie os dados de seus servidores para o dispositivo e envie o dispositivo novamente para o Azure. No datacenter do Azure, os dados são carregados em suas contas de Armazenamento do Microsoft Azure. É possível controlar o processo de ponta a ponta no portal do Azure.
+Quando receber o dispositivo em seu datacenter, use a IU da Web local para configurá-lo. Copie os dados de seus servidores para o dispositivo e envie o dispositivo novamente para o Azure. No datacenter do Azure, os dados são carregados em suas contas de Armazenamento do Microsoft Azure. É possível controlar o processo de ponta a ponta no portal do Azure.
 
 
 > [!IMPORTANT]
-> - O Data Box Heavy está em versão prévia. Examine os [termos de serviço do Azure para a versão prévia](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) antes de implantar essa solução.
-> - Para solicitar um dispositivo, inscreva-se na [Versão Prévia do portal](https://aka.ms/azuredatabox).
-> - Durante a versão prévia, o Data Box Heavy pode ser entregue aos clientes nos EUA e na União Europeia. Para saber mais, acesse [Disponibilidade por região](#region-availability).
+> - Para solicitar um dispositivo, inscreva-se no [Portal do Azure](https://portal.azure.com).
+
 
 ## <a name="use-cases"></a>Casos de uso
 
@@ -115,25 +114,14 @@ Para obter informações mais atualizadas sobre a disponibilidade de região do 
 
 ## <a name="sign-up"></a>Inscrição
 
-O Data Box Heavy está em versão prévia e uma inscrição é necessária. Para se inscrever no Data Box Heavy, faça o seguinte:
+Para se inscrever no Data Box Heavy, faça o seguinte:
 
-1. Entre no portal do Azure em: https://aka.ms/azuredatabox.
+1. Entre no portal do Azure em: https://portal.azure.com.
 2. Clique em **+ Criar um recurso** para criar um novo recurso. Pesquise **Azure Data Box**. Selecione o serviço **Azure Data Box**.
-
-    <!--![The Data Box Heavy sign up 1]()-->
-
 3. Clique em **Criar**.
-
-    <!--![The Data Box Heavy sign up 2]()-->
-
-4. Escolha a assinatura que você deseja usar para a versão prévia do Data Box Heavy. Selecione a região na qual você deseja implantar o recurso Data Box Heavy. Na opção **Data Box Heavy**, clique em **Inscrever-se**.
-
-   <!--![The Data Box Heavy sign up 3]()-->
-
+4. Escolha a assinatura que deseja usar para o Data Box Heavy. Selecione a região na qual você deseja implantar o recurso Data Box Heavy. Na opção **Data Box Heavy**, clique em **Inscrever-se**.
 5. Responda às perguntas sobre país/região de residência dos dados, período, serviço de destino do Microsoft Azure para transferência de dados, largura de banda de rede e frequência da transferência de dados. Examine a Privacidade e os termos e marque a caixa de seleção A Microsoft pode usar seu endereço de email para contatá-lo.
 
-    <!--![The Data Box Heavy sign up 4]()-->
-
-Depois de se inscrever e se habilitar para a versão prévia, você poderá solicitar um Data Box Heavy.
+Após se inscrever, você poderá solicitar um Data Box Heavy.
 
     

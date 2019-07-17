@@ -1,5 +1,6 @@
 ---
-title: 'Início Rápido: Detectar anomalias como um lote usando a API REST do Detector de Anomalias e do Python | Microsoft Docs'
+title: 'Início Rápido: Detectar anomalias como lote usando a API REST do Detector de Anomalias e o Python'
+titleSuffix: Azure Cognitive Services
 description: Use a API do Detector de Anomalias para detectar anormalidades em sua série de dados como um lote ou em dados de streaming.
 services: cognitive-services
 author: aahill
@@ -9,12 +10,12 @@ ms.subservice: anomaly-detector
 ms.topic: quickstart
 ms.date: 03/26/2019
 ms.author: aahi
-ms.openlocfilehash: 0ab39a7bb86671efb6258e3171e3bf7847aa241f
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: c69bc4db35a198d73f9b29ee3ed2fa6b6f71be49
+ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341734"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67721453"
 ---
 # <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-python"></a>Início Rápido: Detectar anomalias nos dados de série temporal usando o Python e a API REST do Detector de Anomalias
 

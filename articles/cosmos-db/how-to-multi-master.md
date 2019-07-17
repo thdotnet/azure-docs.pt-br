@@ -4,21 +4,21 @@ description: Saiba como configurar vários mestres nos aplicativos no Azure Cosm
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 07/02/2019
+ms.date: 07/03/2019
 ms.author: mjbrown
-ms.openlocfilehash: 73b4ada713e264aaa2504fe4d4f504e07ae45181
-ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
+ms.openlocfilehash: 646706eabf1b3a33c3143410f0e922a03e6a8ad6
+ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67538090"
+ms.lasthandoff: 07/04/2019
+ms.locfileid: "67565902"
 ---
 # <a name="configure-multi-master-in-your-applications-that-use-azure-cosmos-db"></a>Configurar vários mestres nos aplicativos que usam o Azure Cosmos DB
 
 Quando uma conta tiver sido criada com várias regiões de gravação habilitadas, faça duas alterações em seu aplicativo em ConnectionPolicy para DocumentClient a fim de habilitar os recursos de vários mestres e a hospedagem múltipla no Azure Cosmos DB. Em ConnectionPolicy, defina UseMultipleWriteLocations como true e passe o nome da região em que o aplicativo é implantado em SetCurrentLocation. Isso preencherá a propriedade PreferredLocations com base na proximidade geográfica do local passado. Se uma nova região posteriormente é adicionada à conta, o aplicativo não precisa ser atualizado ou reimplantado, ele detectará automaticamente a região mais próxima e será automaticamente iniciado em caso de evento regional.
 
-> [!TIP]
-> As contas do Cosmos criadas e não configuradas inicialmente para vários mestres podem ser migradas sem nenhum tempo de inatividade. Para saber mais, consulte [Configurar a gravação de várias regiões](how-to-manage-database-account.md#configure-multiple-write-regions)
+> [!Note]
+> Contas do Cosmos configuradas inicialmente com uma região de gravação podem ser configuradas para várias regiões de gravação (ou seja, vários mestres) sem nenhum tempo de inatividade. Para saber mais, consulte [Configurar a gravação de várias regiões](how-to-manage-database-account.md#configure-multiple-write-regions)
 
 ## <a id="netv2"></a>SDK do .NET v2
 

@@ -9,13 +9,13 @@ services: search
 ms.service: search
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 06/20/2019
-ms.openlocfilehash: a5cbd2036f92c27709d92d0cf415cc9837645fb8
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.date: 07/09/2019
+ms.openlocfilehash: d3236f4782cc4fd9113329f03e36515a91bad528
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67485613"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67798763"
 ---
 # <a name="quickstart-create-an-azure-search-index-in-c-using-the-net-sdk"></a>Início Rápido: Criar um índice do Azure Search no C# usando o SDK do .NET
 > [!div class="op_single_selector"]
@@ -39,7 +39,7 @@ Os serviços, as ferramentas e os dados a seguir são usados neste início rápi
 
 + [Visual Studio](https://visualstudio.microsoft.com/downloads/), qualquer edição. O código de exemplo e as instruções foram testados na edição gratuita da Comunidade.
 
-+ Um índice e documentos de exemplo são fornecidos neste artigo, bem como a [solução do Visual Studio](https://github.com/Azure-Samples/azure-search-dotnet-samples/quickstart) para este início rápido.
++ Um índice e documentos de exemplo são fornecidos neste artigo, bem como a [solução do Visual Studio](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/quickstart) para este início rápido.
 
 + [Crie um serviço Azure Search](search-create-service-portal.md) ou [localize um serviço existente](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) na assinatura atual. É possível usar um serviço gratuito para este início rápido.
 
@@ -550,13 +550,11 @@ A classe [`DocumentsSearchResult`](https://docs.microsoft.com/dotnet/api/microso
 
 ## <a name="clean-up"></a>Limpar
 
-Ao concluir um índice e quiser excluí-lo, chame o método `Indexes.Delete` no `SearchServiceClient`.
+Quando você está trabalhando em sua própria assinatura, é uma boa ideia identificar, no final de um projeto, se você ainda precisa dos recursos criados. Recursos deixados em execução podem custar dinheiro. Você pode excluir os recursos individualmente ou excluir o grupo de recursos para excluir todo o conjunto de recursos.
 
-```csharp
-serviceClient.Indexes.Delete("hotels");
-```
+Você pode localizar e gerenciar recursos no portal usando o link **Todos os recursos** ou **Grupos de recursos** no painel de navegação à esquerda.
 
-Se você também terminou de usar o serviço de pesquisa, exclua os recursos do portal do Azure.
+Se você estiver usando um serviço gratuito, estará limitado a três índices, indexadores e fontes de dados. Você pode excluir itens individuais no portal para permanecer abaixo do limite. 
 
 ## <a name="next-steps"></a>Próximas etapas
 

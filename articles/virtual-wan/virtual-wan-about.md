@@ -5,21 +5,23 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: overview
-ms.date: 06/11/2019
+ms.date: 06/28/2019
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to understand what Virtual WAN is and if it is the right choice for my Azure network.
-ms.openlocfilehash: 7ee6b2dd07a89de4f5347e82bde19990dbb6c995
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 46f3f87fac5b65229e03ee91d8f2b93b1a1590e8
+ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67077538"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67795273"
 ---
 # <a name="what-is-azure-virtual-wan"></a>O que é a WAN Virtual do Azure?
 
 WAN Virtual do Azure é um serviço de rede que fornece conectividade de ramificação otimizada e automatizada para e por meio do Azure. As regiões do Azure servem como hubs para os quais é possível optar por conectar suas ramificações. Você pode aproveitar o backbone do Azure para também conectar as ramificações e aproveitar a conectividade de ramificação a VNet. Temos uma lista de parceiros que oferecem suporte à automação de conectividade com VPN da WAN Virtual do Azure. Para saber mais, veja o artigo [Parceiros e localizações de WAN Virtual](virtual-wan-locations-partners.md).
 
-A WAN Virtual do Azure reúne muitos serviços de conectividade de nuvem do Azure, como VPN site a site (em disponibilidade geral), ExpressRoute (versão prévia), VPN de usuário ponto a site (versão prévia) em uma única interface operacional. A conectividade com VNets do Azure é estabelecida usando conexões de rede virtual.
+A WAN Virtual do Azure reúne muitos serviços de conectividade de nuvem do Azure, como VPN site a site, ExpressRoute e VPN de usuário ponto a site em uma única interface operacional. A conectividade com VNets do Azure é estabelecida usando conexões de rede virtual.
+
+O ExpressRoute e o VPN de usuário ponto a site para WAN Virtual estão na versão prévia.
 
 ![Diagrama de WAN virtual](./media/virtual-wan-about/virtualwan1.png)
 

@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/13/2019
 ms.author: swmachan
-ms.openlocfilehash: f09f9081dd535762afd2e26e5e86476eb06f5133
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 0c36830709c59632945a8c11e8a7113dcd5dc7e7
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67445245"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67704559"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-transliterate-text-using-c"></a>Início Rápido: Usar a API de Tradução de Texto para transliterar texto usando C#
 
@@ -158,7 +158,7 @@ foreach (TransliterationResult o in deserializedOutput)
 }
 ```
 
-Se estiver usando uma assinatura de vários serviço cognitivos, você também deve incluir o `Ocp-Apim-Subscription-Region` em seus parâmetros de solicitação. [Saiba mais sobre a autenticação com a assinatura de vários serviços](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
+Se estiver usando uma assinatura de vários serviço cognitivos, você também deve incluir o `Ocp-Apim-Subscription-Region` em seus parâmetros de solicitação. [Saiba mais sobre a autenticação com a assinatura de vários serviços](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication).
 
 ## <a name="put-it-all-together"></a>Colocar tudo isso junto
 
@@ -214,10 +214,10 @@ Remova todas as informações confidenciais do código-fonte do seu aplicativo d
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Explore o exemplo de código para este início rápido e outros, incluindo tradução e identificação de idioma, bem como outros projetos de Tradução de Texto de exemplo no GitHub.
+Confira a referência da API para saber tudo o que você pode fazer com a API de Tradução de Texto.
 
 > [!div class="nextstepaction"]
-> [Explore exemplos de C# no GitHub](https://aka.ms/TranslatorGitHub?type=&language=c%23)
+> [Referência de API](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference)
 
 ## <a name="see-also"></a>Consulte também
 

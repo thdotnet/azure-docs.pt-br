@@ -10,18 +10,21 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 06/04/2019
 ms.author: swmachan
-ms.openlocfilehash: eddad0efae0a6de691cc55020c0e01742960cb18
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 9408e1b30dc183784f427c61138a0a46e49bc36a
+ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67444890"
+ms.lasthandoff: 07/09/2019
+ms.locfileid: "67704369"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-determine-sentence-length-using-python"></a>Início Rápido: Usar a API de Tradução de Texto para determinar o comprimento de frase usando Python
 
 Neste início rápido, você aprenderá a determinar os comprimentos de sentença (em caracteres) usando o Python e a API REST de Tradução de Texto.
 
 Este início rápido requer uma [Conta dos Serviços Cognitivos do Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) com um recurso de Tradução de Texto. Se não tiver uma conta, você poderá usar a [avaliação gratuita](https://azure.microsoft.com/try/cognitive-services/) para obter uma chave de assinatura.
+
+>[!TIP]
+> Caso queira ver todo o código de uma vez, o código-fonte deste exemplo está disponível no [GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-Python).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -95,7 +98,7 @@ headers = {
 }
 ```
 
-Se estiver usando uma assinatura de vários serviço cognitivos, você também deve incluir o `Ocp-Apim-Subscription-Region` em seus parâmetros de solicitação. [Saiba mais sobre a autenticação com a assinatura de vários serviços](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication). 
+Se estiver usando uma assinatura de vários serviço cognitivos, você também deve incluir o `Ocp-Apim-Subscription-Region` em seus parâmetros de solicitação. [Saiba mais sobre a autenticação com a assinatura de vários serviços](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication).
 
 ## <a name="create-a-request-to-determine-sentence-length"></a>Criar uma solicitação para determinar o comprimento de frase
 
@@ -154,8 +157,10 @@ Se você embutiu sua chave de assinatura no programa, remova-a quando tiver term
 
 ## <a name="next-steps"></a>Próximas etapas
 
+Confira a referência da API para saber tudo o que você pode fazer com a API de Tradução de Texto.
+
 > [!div class="nextstepaction"]
-> [Explorar exemplos do Python no GitHub](https://github.com/MicrosoftTranslator/Text-Translation-API-V3-Python)
+> [Referência de API](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference)
 
 ## <a name="see-also"></a>Consulte também
 
