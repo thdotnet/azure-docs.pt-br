@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 06/18/2019
 ms.author: aahi
-ms.openlocfilehash: 96539a59bd22644eaedb88886bc5b9facb4ca1c1
-ms.sourcegitcommit: af58483a9c574a10edc546f2737939a93af87b73
+ms.openlocfilehash: 558ce8950a1848f0cddc247f60dd4e75dd20ccf0
+ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 07/17/2019
-ms.locfileid: "68302091"
+ms.locfileid: "68305471"
 ---
 # <a name="language-and-region-support-for-the-text-analytics-api"></a>Idiomas e regiões compatíveis com a API de Análise de Texto
 
@@ -48,13 +48,13 @@ O suporte a idiomas é implantado inicialmente em versão prévia, passando para
 |:----------- |:-------------:|:---------:|:-----------:|:-----------:|:-----------:
 | Árabe      | `ar`          |           |             | ✔ \*                     | |
 | Tcheco       | `cs`          |           |             | ✔ \*                     | |
-| Chinês-simplificado | `zh-CN`|           |             | ✔ \        |    |
+| Chinês-simplificado | `zh-CN`|           |             | ✔         |    |
 | Dinamarquês      | `da`          | ✔ \*     | ✔           | ✔ \*            |     |
 | Holandês       | `nl`          | ✔ \*     | ✔          |  ✔ \*           |     |
 | Inglês     | `en`          | ✔        | ✔           |  ✔ \*\*     |      |
 | Finlandês     | `fi`          | ✔ \*     | ✔           |  ✔ \*           |     |
-| Francês      | `fr`          | ✔        | ✔           |  ✔ \           |     |
-| Alemão      | `de`          | ✔ \*     | ✔           |  ✔ \          |     |
+| Francês      | `fr`          | ✔        | ✔           |  ✔            |     |
+| Alemão      | `de`          | ✔ \*     | ✔           |  ✔           |     |
 | Grego       | `el`          | ✔ \*     |             |            |     |
 | Húngaro   | `hu`          |           |             |  ✔ \*          |     | 
 | Italiano     | `it`          | ✔ \*     | ✔           |  ✔ \*           |     |
