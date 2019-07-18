@@ -6,12 +6,12 @@ ms.service: data-share
 ms.topic: overview
 ms.date: 07/10/2019
 ms.author: joanpo
-ms.openlocfilehash: 1e0d640c5434c27695b90ee7fd4c20a4959c24b3
-ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
+ms.openlocfilehash: 7d4e51ec9564bfb123cf73d9fe89d040f42fe650
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67788980"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807553"
 ---
 # <a name="what-is-azure-data-share-preview"></a>O que é o Azure Data Share (versão prévia)?
 
@@ -78,14 +78,6 @@ O Azure Data Share aproveita a segurança subjacente oferecida pelo Azure para p
 Controles de acesso podem ser definidos no nível do recurso do Azure Data Share para garantir que sejam acessados por pessoas autorizadas. 
 
 O Azure Data Share aproveita as Identidades Gerenciadas para Recursos do Azure (anteriormente conhecidas como MSIs) para o gerenciamento automático de identidades no Azure Active Directory. As identidades gerenciadas para Recursos do Azure são usadas para acesso às contas de armazenamento que estão sendo usados para compartilhamento de dados. Não há troca de credenciais entre um provedor de dados e um consumidor de dados. Para saber mais, confira a página [Identidades gerenciadas para recursos do Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities). 
-
-## <a name="pricing"></a>Preços
-
-O Azure Data Share (versão prévia) cobra por dois componentes. O primeiro componente é o gerenciamento de compartilhamento de dados. Enquanto estiver em versão prévia, o gerenciamento de compartilhamento de dados será gratuito.
-
-O segundo componente é a movimentação. O Azure Data Share cobra pela movimentação de dados do locatário do Azure do provedor de dados para o locatário do Azure do consumidor de dados. Você paga pela movimentação do conjunto de dados por operação de movimentação do conjunto de dados e a computação necessária para mover um conjunto de dados. A computação da movimentação do conjunto de dados é cobrada por hora de vCore. Os encargos de computação de movimentação do conjunto de dados são divididos pelos minutos e arredondados para cima. Enquanto estiverem em versão prévia, as operações de movimentação de conjunto de dados serão gratuitas. 
-
-Para obter mais informações sobre preços, acesse a [página de preço](https://azure.microsoft.com/pricing/) do Azure Data Share.
 
 ## <a name="supported-regions"></a>Regiões com suporte
 

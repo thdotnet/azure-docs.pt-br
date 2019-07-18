@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: overview
-ms.date: 06/19/2019
+ms.date: 06/24/2019
 ms.author: aahi
-ms.openlocfilehash: 71d7ebb8cb797e2166fc91fdfdefdba5f22d82ec
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: bf0f74fe76ec7a83e0ce23ca83141276a677a5df
+ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67272704"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67868084"
 ---
 # <a name="search-for-videos-with-the-bing-video-search-api"></a>Pesquisar vídeos com a API de Pesquisa de Vídeo do Bing
 
@@ -98,7 +98,7 @@ A resposta contém uma resposta de [Vídeos](https://docs.microsoft.com/rest/api
 
 ## <a name="video-thumbnails"></a>Miniaturas de vídeo
 
-Você pode exibir todas as miniaturas de vídeo, ou um subconjunto delas, retornadas pela API de Pesquisa de Vídeo do Bing. Se você exibir um subconjunto, forneça ao usuário a opção para exibir os vídeos restantes. Como parte dos [requisitos de uso e exibição](../UseAndDisplayRequirements.md) da API do Bing, você precisa exibir os vídeos na ordem fornecida na resposta. Para obter informações sobre o redimensionamento da miniatura, consulte [Redimensionando e cortando miniaturas](../resize-and-crop-thumbnails.md). 
+Você pode exibir todas as miniaturas de vídeo, ou um subconjunto delas, retornadas pela API de Pesquisa de Vídeo do Bing. Se você exibir um subconjunto, forneça ao usuário a opção para exibir os vídeos restantes. Como parte dos [requisitos de uso e exibição](../UseAndDisplayRequirements.md) da API do Bing, você precisa exibir os vídeos na ordem fornecida na resposta. Para obter informações sobre o redimensionamento da miniatura, consulte [Redimensionando e cortando miniaturas](../../bing-web-search/resize-and-crop-thumbnails.md). 
 
 À medida que o usuário passa o mouse sobre a miniatura, é possível usar [motionThumbnailUrl](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#video-motionthumbnailurl) para reproduzir uma versão em miniatura do vídeo. Atribua a miniatura de movimento ao exibi-la.
 

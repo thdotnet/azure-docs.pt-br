@@ -6,17 +6,17 @@ keywords: ''
 author: mrbullwinkle
 ms.author: mbullwin
 ms.reviewer: lagayhar
-ms.date: 04/18/2019
+ms.date: 07/15/2019
 ms.service: application-insights
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: fc47b00bb266bb57ecffbb522667ca67ac7c8c97
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: ef3c7668f1fb462b2d6a91cc90746437e74df51d
+ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67656734"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67989899"
 ---
 # <a name="start-monitoring-your-java-web-application"></a>Começar a monitorar o aplicativo Web Java
 
@@ -49,8 +49,6 @@ O Application Insights pode coletar dados de telemetria de qualquer aplicativo c
 1. Selecione **Criar um recurso** > **Ferramentas de desenvolvedor** > **Application Insights**.
 
    ![Adicionando um Recurso do Application Insights](./media/java-quick-start/1createresourseappinsights.png)
-
-   ![Adicionando um Recurso do Application Insights](./media/java-quick-start/2createjavaapp.png)
 
    Uma caixa de configuração é exibida. Use a tabela a seguir para preencher os campos de entrada.
 

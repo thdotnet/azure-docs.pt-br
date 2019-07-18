@@ -10,12 +10,12 @@ ms.topic: overview
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 7362bd5b4e15df516478ef4bef20d76fc46b326f
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 7056d127aac8268a131d62c2b20655407e2336b2
+ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67275368"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68304065"
 ---
 # <a name="azure-event-hubs--a-big-data-streaming-platform-and-event-ingestion-service"></a>Hubs de Eventos do Azure – uma plataforma de streaming de Big Data e um serviço de ingestão de eventos
 Os Hubs de Eventos do Azure são uma plataforma de streaming de Big Data e um serviço de ingestão de eventos. Ele pode receber e processar milhões de eventos por segundo. Os dados enviados para um hub de eventos podem ser transformados e armazenados usando qualquer provedor de análise em tempo real ou adaptadores de envio em lote/armazenamento.
@@ -29,17 +29,19 @@ Os seguintes cenários estão alguns dos cenários em que você pode usar os Hub
 - Arquivamento de dados
 - Processamento de transação
 - Processamento de telemetria do usuário
-- Streaming de telemetria do dispositivo 
+- Streaming de telemetria do dispositivo
+
+[!VIDEO https://www.youtube.com/watch?v=45wgY-VSk9I]
 
 ## <a name="why-use-event-hubs"></a>Por que usar Hubs de Eventos?
 
 Dados são valiosos apenas quando há uma maneira fácil de processar e obter análises em tempo hábil das fontes de dados. Os Hubs de Eventos fornecem uma plataforma de processamento de fluxo distribuído com baixa latência e integração perfeita, com serviços de análise e dados dentro e fora do Azure para criar seu pipeline completo de Big Data.
 
-Os Hubs de Evento representam a "porta da frente" de um pipeline de evento, geralmente chamado de *ingestor de eventos* em arquiteturas da solução. Um ingestor de eventos é um componente ou serviço que fica entre os editores de eventos e consumidores de eventos para desacoplar a produção de uma transmissão de eventos do consumo desses eventos. Os Hubs de Eventos fornecem uma plataforma unificada de streaming com o buffer de retenção de tempo, desacoplando os produtores do evento dos consumidores do evento. 
+Os Hubs de Evento representam a "porta da frente" de um pipeline de evento, geralmente chamado de *ingestor de eventos* em arquiteturas da solução. Um ingestor de eventos é um componente ou serviço que fica entre os editores de eventos e consumidores de eventos para desacoplar a produção de uma transmissão de eventos do consumo desses eventos. Os Hubs de Eventos fornecem uma plataforma unificada de streaming com o buffer de retenção de tempo, desacoplando os produtores do evento dos consumidores do evento.
 
-As seções abaixo descrevem os principais recursos do serviço Hubs de Eventos do Azure: 
+As seções abaixo descrevem os principais recursos do serviço Hubs de Eventos do Azure:
 
-## <a name="fully-managed-paas"></a>PaaS totalmente gerenciado 
+## <a name="fully-managed-paas"></a>PaaS totalmente gerenciado
 
 Os Hubs de Eventos são um PaaS (Plataforma como Serviço) totalmente gerenciado com pouca configuração ou sobrecarga de gerenciamento, para que você se concentre em suas soluções de negócios. [Os Hubs de Eventos para ecossistemas do Apache Kafka](event-hubs-for-kafka-ecosystem-overview.md) proporcionam a experiência de PaaS Kafka sem a necessidade de gerenciar, configurar ou executar seus clusters.
 
@@ -51,14 +53,14 @@ Ingerir, armazenar em buffer, armazenar e processar seu fluxo em tempo real para
 
 Os Hubs de Eventos do Azure também se integram com o [Azure Functions](/azure/azure-functions/) para uma arquitetura sem servidor.
 
-## <a name="scalable"></a>Escalonável 
+## <a name="scalable"></a>Escalonável
 
-Com os Hubs de eventos, você pode iniciar com fluxos de dados em megabytes e aumentar para gigabytes ou terabytes. O recurso [Expandir automaticamente](event-hubs-auto-inflate.md) é uma das muitas opções disponíveis para aumentar o número de unidades de produtividade para atender às suas necessidades de uso. 
+Com os Hubs de eventos, você pode iniciar com fluxos de dados em megabytes e aumentar para gigabytes ou terabytes. O recurso [Expandir automaticamente](event-hubs-auto-inflate.md) é uma das muitas opções disponíveis para aumentar o número de unidades de produtividade para atender às suas necessidades de uso.
 
 ## <a name="rich-ecosystem"></a>Ecossistema avançado
 
 [Os Hubs de Eventos para ecossistemas do Apache Kafka](event-hubs-for-kafka-ecosystem-overview.md) permitem que clientes e aplicativos do [Apache Kafka (1.0 e posterior)](https://kafka.apache.org/) se comuniquem com os Hubs de Eventos. Você não precisa definir, configurar nem gerenciar seus próprios clusters Kafka.
- 
+
 Com uma enorme variedade disponível em várias [linguagens (.NET, Java, Python, Go, Node.js)](https://github.com/Azure/azure-event-hubs), você pode iniciar facilmente o processamento dos seus fluxos nos Hubs de Eventos. Todos as linguagens com suporte do cliente fornecem integração de baixo nível. O ecossistema também fornece integração perfeita com serviços do Azure, como o Azure Stream Analytics e o Azure Functions, permitindo que você crie arquiteturas sem servidor.
 
 ## <a name="key-architecture-components"></a>Principais componentes da arquitetura
@@ -77,7 +79,7 @@ A figura a seguir mostra a arquitetura de processamento de fluxo dos Hubs de Eve
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para começar a usar os Hubs de Eventos, consulte os tutoriais **Enviar e receber eventos**: 
+Para começar a usar os Hubs de Eventos, consulte os tutoriais **Enviar e receber eventos**:
 
 - [.NET Core](event-hubs-dotnet-standard-getstarted-send.md)
 - [.NET Framework](event-hubs-dotnet-framework-getstarted-send.md)

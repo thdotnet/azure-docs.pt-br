@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.topic: overview
 ms.date: 04/09/2018
 ms.author: makromer
-ms.openlocfilehash: 976724a40b604bcdc3c83ef1b3d2e95268f75304
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 4d31a134ae15e4ddbda0cc60a741f8780fec8d12
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57432695"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67838110"
 ---
 # <a name="compare-azure-data-factory-with-data-factory-version-1"></a>Comparar o Azure Data Factory com a versão 1 do Data Factory
 Este artigo compara o Data Factory com a versão 1 do Data Factory. Para obter uma introdução ao Data Factory, consulte [Introdução ao Data Factory](introduction.md). Para obter uma introdução à versão 1 do Data Factory, consulte [Introdução ao Azure Data Factory](v1/data-factory-introduction.md). 
@@ -130,11 +130,11 @@ Os SDKs que foram atualizados para a versão atual não são retrocompatíveis c
 
 | &nbsp; | V2 | V1 |
 | ------ | -- | -- | 
-| Portal do Azure | [Sim](quickstart-create-data-factory-portal.md) | [Sim](data-factory-build-your-first-pipeline-using-editor.md) |
+| Portal do Azure | [Sim](quickstart-create-data-factory-portal.md) | Não |
 | Azure PowerShell | [Sim](quickstart-create-data-factory-powershell.md) | [Sim](data-factory-build-your-first-pipeline-using-powershell.md) |
 | SDK .NET | [Sim](quickstart-create-data-factory-dot-net.md) | [Sim](data-factory-build-your-first-pipeline-using-vs.md) |
 | API REST | [Sim](quickstart-create-data-factory-rest-api.md) | [Sim](data-factory-build-your-first-pipeline-using-rest-api.md) |
-| SDK do Python | [Sim](quickstart-create-data-factory-python.md) | Não  |
+| SDK do Python | [Sim](quickstart-create-data-factory-python.md) | Não |
 | Modelo do Resource Manager | [Sim](quickstart-create-data-factory-resource-manager-template.md) | [Sim](data-factory-build-your-first-pipeline-using-arm.md) | 
 
 ## <a name="roles-and-permissions"></a>Funções e permissões
