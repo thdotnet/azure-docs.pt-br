@@ -54,7 +54,7 @@ Durante a migração, os recursos se transformam do clássico para o Gerenciador
 <a name="vault">Quando</a> você mover uma VM do modo clássico para o modo do Resource Manager, os backups feitos antes da migração não serão migrados para a VM recém-migrada do Resource Manager. No entanto, caso deseje manter os backups das VMs clássicas, siga estas etapas antes da migração. 
 
 1. No cofre dos Serviços de Recuperação, acesse a guia **Itens Protegidos** e selecione a VM. 
-2. Clique em Parar Proteção. Deixe a opção *Excluir dados de backup associados***desmarcada**.
+2. Clique em Parar Proteção. Deixe a opção *Excluir dados de backup associados* **desmarcada**.
 
 > [!NOTE]
 > Você será cobrado o custo da instância de backup enquanto mantiver os dados. As cópias de backup serão removidas de acordo com o período de retenção. No entanto, a última cópia de backup sempre é mantida até você excluir explicitamente os dados de backup. É recomendável verificar o período de retenção da Máquina virtual e o gatilho "Excluir Dados de Backup" no item protegido no cofre após o término do período de retenção. 
