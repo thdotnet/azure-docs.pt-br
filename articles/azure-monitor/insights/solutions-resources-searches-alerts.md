@@ -199,7 +199,7 @@ Esta seção é opcional. Inclua-o para um alerta de métrica de medição.
 | Nome do elemento | Obrigatório | description |
 |:--|:--|:--|
 | TriggerCondition | Sim | Especifica se o limite do número total de violações ou falhas consecutivas dos seguintes valores:<br><br>**Total<br>consecutivas** |
-| Operador | Sim | O operador para a comparação dos seguintes valores:<br><br>**gt = maior que<br>lt = menor que** |
+| Operator | Sim | O operador para a comparação dos seguintes valores:<br><br>**gt = maior que<br>lt = menor que** |
 | Value | Sim | Número de vezes que os critérios devem ser atendidos para disparar o alerta. |
 
 
