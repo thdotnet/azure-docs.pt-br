@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 06/24/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1dc537a631cd083da0f902fb4fcd44d47756eeba
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 9bf8b4d696a3784988a92fc24de1ae6964786e07
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67471762"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67836426"
 ---
 # <a name="tutorial-integrate-cisco-webex-with-azure-active-directory"></a>Tutorial: Integrar o Cisco Webex com o Azure Active Directory
 
@@ -133,13 +133,13 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
 2. Escolha **Configurações** e, na seção **Autenticação**, clique em **Modificar**.
 
-    ![Configurar o logon único](./media/cisco-spark-tutorial/tutorial_cisco_spark_10.png)
+    ![Configurar o logon único](./media/cisco-spark-tutorial/tutorial-cisco-spark-10.png)
   
 3. Escolha **Integrar um provedor de identidade de terceiros. (Avançado)** e vá para a próxima tela.
 
 4. Na página **Importar Metadados Idp**, arrastre e solte o arquivo de metadados do Azure AD na página ou use a opção de navegador de arquivos para localizar e carregar o arquivo de metadados do Azure AD. Em seguida, escolha **Exigir certificado assinado por uma autoridade de certificação em Metadados (mais seguro)** e clique em **Avançar**.
 
-    ![Configurar o logon único](./media/cisco-spark-tutorial/tutorial_cisco_spark_11.png)
+    ![Configurar o logon único](./media/cisco-spark-tutorial/tutorial-cisco-spark-11.png)
 
 5. Escolha **Testar Conexão SSO** e, quando uma nova guia do navegador for aberta, autentique-se com o Azure AD conectando-se.
 
@@ -182,13 +182,13 @@ Nesta seção, você criará um usuário chamado Brenda Fernandes no Cisco Webex
 
 2. Clique em **Usuários** e em **Gerenciar Usuários**.
    
-    ![Configurar o logon único](./media/cisco-spark-tutorial/tutorial_cisco_spark_12.png) 
+    ![Configurar o logon único](./media/cisco-spark-tutorial/tutorial-cisco-spark-12.png) 
 
 3. Na janela **Gerenciar Usuário**, escolha **Adicionar ou modificar usuários manualmente** e clique em **Avançar**.
 
 4. Escolha **Nomes e Endereço de email**. Em seguida, preencha a caixa de texto como se segue:
 
-    ![Configurar o logon único](./media/cisco-spark-tutorial/tutorial_cisco_spark_13.png) 
+    ![Configurar o logon único](./media/cisco-spark-tutorial/tutorial-cisco-spark-13.png) 
 
     a. Na caixa de texto **Nome**, digite o nome do usuário como **B**.
 
