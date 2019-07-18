@@ -124,7 +124,7 @@ As propriedades de recursos de agendamento são descritas na tabela a seguir.
 | Nome do elemento | Obrigatório | description |
 |:--|:--|:--|
 | enabled       | Sim | Especifica se o alerta está habilitado quando ele é criado. |
-| intervalo      | Sim | A frequência com a consulta é executada em minutos. |
+| interval      | Sim | A frequência com a consulta é executada em minutos. |
 | queryTimeSpan | Sim | Período de tempo em minutos no qual avaliar resultados. |
 
 O recurso de agendamento deve depender a pesquisa salva para que ele seja criado antes da agenda.
@@ -187,7 +187,7 @@ Esta seção é necessária. Define as propriedades para o limite de alerta.
 
 | Nome do elemento | Obrigatório | description |
 |:--|:--|:--|
-| Operador | Sim | O operador para a comparação dos seguintes valores:<br><br>**gt = maior que<br>lt = menor que** |
+| Operator | Sim | O operador para a comparação dos seguintes valores:<br><br>**gt = maior que<br>lt = menor que** |
 | Value | Sim | O valor para comparar os resultados. |
 
 ##### <a name="metricstrigger"></a>MetricsTrigger
