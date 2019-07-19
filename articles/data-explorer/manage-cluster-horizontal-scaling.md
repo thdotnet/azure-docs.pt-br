@@ -1,67 +1,73 @@
 ---
-title: Escalar horizontalmente um cluster do Gerenciador de dados do Azure
-description: Este artigo descreve as etapas para escalar horizontalmente e escalar em um cluster do Gerenciador de dados do Azure com base na demanda de alteração.
+title: Gerenciar o dimensionamento horizontal do cluster (scale out) no Azure Data Explorer para acomodar a demanda em alteração
+description: Este artigo descreve as etapas para escalar horizontalmente e reduzir em um cluster Data Explorer do Azure com base na demanda em alteração.
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
-ms.date: 06/30/2019
-ms.openlocfilehash: 29bfcc42462a667850f0b2e1bbda3d29cd1597ab
-ms.sourcegitcommit: 1e347ed89854dca2a6180106228bfafadc07c6e5
+ms.date: 07/14/2019
+ms.openlocfilehash: 70e6bdfcf9718244632ad02e09d3ddadee71a617
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67571511"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68311566"
 ---
-# <a name="manage-cluster-horizontal-scaling-to-accommodate-changing-demand"></a>Gerenciar o dimensionamento horizontal de cluster para acomodar a demanda de alteração
+# <a name="manage-cluster-horizontal-scaling-scale-out-in-azure-data-explorer-to-accommodate-changing-demand"></a>Gerenciar o dimensionamento horizontal do cluster (scale out) no Azure Data Explorer para acomodar a demanda em alteração
 
-Dimensionar um cluster apropriadamente é essencial para o desempenho do Azure Data Explorer. Mas por demanda em um cluster não pode ser prevista com exatidão absoluta. Um tamanho de cluster estático pode levar a subutilização ou superutilização, nenhum deles é ideal.
+Dimensionar um cluster apropriadamente é essencial para o desempenho do Azure Data Explorer. Um tamanho de cluster estático pode levar a subutilização ou superutilização, e nenhuma dessas condições é a ideal.
 
-Uma abordagem melhor é a *escala* de um cluster, adicionando e removendo a capacidade confirme as mudanças na demanda. Há dois fluxos de trabalho para o dimensionamento: 
-* Escala horizontal, também chamado e redução de escala.
-* Dimensionamento vertical, também chamado de aumento e redução.
+Como a demanda em um cluster não pode ser prevista com precisão absoluta, é melhor *dimensionar* um cluster, adicionar e remover recursos de capacidade e CPU com alteração de demanda. 
 
-Este artigo explica o fluxo de trabalho de colocação em escala horizontal.
+Há dois fluxos de trabalho para dimensionar um cluster de Data Explorer do Azure: 
 
-Escala horizontal permite que você dimensione a contagem de instâncias automaticamente com base em regras e agendamentos predefinidos. Especifique as configurações de dimensionamento automático para seu cluster no portal do Azure, conforme descrito neste artigo.
+* Dimensionamento horizontal, também chamado de expansão e saída.
+* [Dimensionamento vertical](manage-cluster-vertical-scaling.md), também chamado de expansão e redução.
 
-## <a name="steps-to-configure-horizontal-scaling"></a>Etapas para configurar o dimensionamento horizontal
+Este artigo explica o fluxo de trabalho de dimensionamento horizontal.
 
-No portal do Azure, vá para o recurso de cluster do Gerenciador de dados. Sob o **as configurações** título, selecione **expandir**. 
+## <a name="configure-horizontal-scaling"></a>Configurar o dimensionamento horizontal
 
-Selecione seu método de dimensionamento automático desejado: **Escala manual**, **com otimização de dimensionamento automático** ou **personalizado AutoEscala**.
+Usando o dimensionamento horizontal, você pode dimensionar a contagem de instâncias automaticamente, com base em regras e agendamentos predefinidos. Para especificar as configurações de dimensionamento automático para o cluster:
+
+1. Na portal do Azure, vá para o recurso de cluster de Data Explorer do Azure. Em **configurações**, selecione **escalar horizontalmente**. 
+
+2. Na janela **escalar horizontalmente** , selecione o método de dimensionamento automático desejado: **Escala manual**, **dimensionamento automático otimizado**ou **dimensionamento automático personalizado**.
 
 ### <a name="manual-scale"></a>Dimensionamento manual
 
-Escala manual é a configuração padrão com a criação do cluster. Isso significa que o cluster tem uma capacidade de cluster estático não será alterado automaticamente. Você pode escolher a capacidade estática usando a barra, e não será alterado até que a próxima vez em que você irá alterar a configuração de expansão do cluster.
+A escala manual é a configuração padrão durante a criação do cluster. O cluster tem uma capacidade estática que não é alterada automaticamente. Você seleciona a capacidade estática usando a barra de **contagem de instâncias** . O dimensionamento do cluster permanece nessa configuração até que você faça outra alteração.
 
-   ![Método escala manual](media/manage-cluster-horizontal-scaling/manual-scale-method.png)
+   ![Método de dimensionamento manual](media/manage-cluster-horizontal-scaling/manual-scale-method.png)
 
 ### <a name="optimized-autoscale"></a>Dimensionamento automático otimizado
 
-AutoEscala otimizada é o método recomendado de AutoEscala. Etapas para configurar a AutoEscala otimizado:
+Dimensionamento automático otimizado é o método de dimensionamento automático recomendado. Esse método otimiza o desempenho e os custos do cluster. Se o cluster se aproximar de um estado de subutilização, ele será dimensionado no. Essa ação reduz os custos, mas mantém o nível de desempenho. Se o cluster se aproximar de um estado de excesso de utilização, ele será escalado horizontalmente para manter o desempenho ideal. Para configurar o dimensionamento automático otimizado:
 
-1. Selecionado a opção de dimensionamento automático otimizado e escolher um limite inferior e um limite superior à quantidade de instâncias do cluster, o dimensionamento automático será feito entre esses limites.
-2. Clique em Salvar.
+1. Selecione **dimensionamento automático otimizado**. 
+
+1. Selecione uma contagem de instâncias mínima e uma contagem máxima de instâncias. O dimensionamento automático do cluster varia entre esses dois números, com base na carga.
+
+1. Clique em **Salvar**.
 
    ![Método de dimensionamento automático otimizado](media/manage-cluster-horizontal-scaling/optimized-autoscale-method.png)
 
-Depois de clicar em Salvar o mecanismo de dimensionamento automático otimizado começará a trabalhar e é ações estarão visíveis no log de atividades do cluster. Esse método de dimensionamento automático está otimizando o desempenho do cluster e os custos: se o cluster será iniciado chegar a um estado de subutilização ele irá ser dimensionada-in que deixar os mesmos e os custos de desempenho, e se o cluster será iniciado chegar a um estado de superutilização, ele será expandido para garantir que ele tem um bom desempenho
+O dimensionamento automático otimizado começa a funcionar. Suas ações agora estão visíveis no log de atividades do Azure do cluster.
 
 ### <a name="custom-autoscale"></a>Dimensionamento automático personalizado
 
-Método de dimensionamento automático personalizado permite que você dimensionar o cluster dinamicamente com base nas métricas que você especificar. O gráfico a seguir mostra o fluxo e as etapas para configurar o dimensionamento automático de personalizado. Mais detalhes o gráfico a seguir.
+Usando o dimensionamento automático personalizado, você pode dimensionar seu cluster dinamicamente com base nas métricas que você especificar. O gráfico a seguir mostra o fluxo e as etapas para configurar o dimensionamento automático personalizado. Para obter mais detalhes, siga o elemento gráfico.
 
-1. No **nome da configuração de AutoEscala** caixa, forneça um nome, como *Scale-out: utilização de cache*. 
+1. Na caixa **nome da configuração de dimensionamento automático** , insira um nome, como *escala horizontal: utilização de cache*. 
 
    ![Regra de escala](media/manage-cluster-horizontal-scaling/custom-autoscale-method.png)
 
-2. Para **modo de escala**, selecione **dimensionar com base em uma métrica**. Esse modo oferece dimensionamento dinâmico. Você também pode selecionar **dimensionar para uma contagem de instância específica**.
+2. Para o **modo de escala**, selecione **escala com base em uma métrica**. Esse modo fornece dimensionamento dinâmico. Você também pode selecionar **Dimensionar para uma contagem de instâncias específica**.
 
-3. Selecione **+ adicionar uma regra**.
+3. Selecione **+ Adicionar uma regra**.
 
-4. Na seção **Regra de escala** à direita, informe os valores para cada configuração.
+4. Na seção **regra** de dimensionamento à direita, insira valores para cada configuração.
 
     **Critérios**
 
@@ -71,7 +77,7 @@ Método de dimensionamento automático personalizado permite que você dimension
     | **Nome da métrica** | Selecione a métrica na qual a operação de escala se baseará, como **Utilização de cache**. |
     | **Estatística de intervalo de agregação** | Escolha entre **Média**, **Mínima**, **Máxima** e **Soma**. |
     | **Operador** | Escolha a opção apropriada, como **Maior que ou igual a**. |
-    | **Limite** | Escolha um valor apropriado. Por exemplo, para a utilização do cache, 80 por cento é um bom ponto de partida. |
+    | **Limite** | Escolha um valor apropriado. Por exemplo, para a utilização de cache, 80% é um bom ponto de partida. |
     | **Duração (em minutos)** | Escolha um período apropriado para o sistema retroceder ao calcular métricas. Comece com o padrão de dez minutos. |
     |  |  |
 
@@ -86,20 +92,21 @@ Método de dimensionamento automático personalizado permite que você dimension
 
 5. Selecione **Adicionar**.
 
-6. Na seção **Limites de instância** à esquerda, informe os valores para cada configuração.
+6. Na seção **limites da instância** à esquerda, insira valores para cada configuração.
 
     | Configuração | Descrição e valor |
     | --- | --- |
     | **Mínimo** | É o número de instâncias para baixo do qual o cluster não será reduzido, independentemente da utilização. |
     | **Máximo** | É o número de instâncias para acima do qual o cluster não será aumentado, independentemente da utilização. |
-    | **Padrão** | O número padrão de instâncias. Essa configuração é usada se houver problemas com as métricas de recursos de leitura. |
+    | **Padrão** | O número padrão de instâncias. Essa configuração será usada se houver problemas na leitura das métricas de recurso. |
     |  |  |
 
 7. Clique em **Salvar**.
 
-Agora, você configurou uma operação de expansão para o cluster do Azure Data Explorer. Adicione outra regra para uma operação de redução. Se precisar de ajuda com problemas de dimensionamento de cluster [abrir uma solicitação de suporte](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) no portal do Azure.
+Agora você configurou o dimensionamento horizontal para o cluster de Data Explorer do Azure. Adicione outra regra para o dimensionamento vertical. Se você precisar de assistência com problemas de dimensionamento de cluster, [abra uma solicitação de suporte](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) no portal do Azure.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Monitorar o desempenho, integridade e uso com métricas do Data Explorer do Azure](using-metrics.md)
-* [Gerenciar o dimensionamento vertical do cluster](manage-cluster-vertical-scaling.md) para o dimensionamento apropriado de um cluster.
+* [Monitorar o desempenho, a integridade e o uso do Data Explorer do Azure com métricas](using-metrics.md)
+
+* [Gerencie o dimensionamento vertical do cluster](manage-cluster-vertical-scaling.md) para o dimensionamento apropriado de um cluster.

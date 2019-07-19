@@ -1,28 +1,38 @@
 ---
-title: Métricas de precisão no ML automatizada de treinamento
+title: Métricas de precisão de treinamento em ML automatizado
 titleSuffix: Azure Machine Learning service
-description: Saiba mais sobre métricas de precisão de aprendizado automatizado para cada uma das suas execuções.
+description: Saiba mais sobre as métricas de precisão de aprendizado de máquina automatizadas para cada uma de suas execuções.
 author: j-martens
 ms.author: jmartens
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.date: 06/20/2019
-ms.openlocfilehash: 44dfa387b289afe4dc5f030cca0b13325c04e811
-ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
+ms.date: 07/16/2019
+ms.openlocfilehash: dc147fd0252b2b5ec4ce334d6c1c464d9cde8ef5
+ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67313314"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68297907"
 ---
-# <a name="evaluate-training-accuracy-in-automated-ml-with-metrics"></a>Avaliar a precisão de treinamento no ML automatizado com métricas
+# <a name="evaluate-training-accuracy-in-automated-ml-with-metrics"></a>Avaliar a precisão de treinamento em ML automatizado com métricas
+
+Neste artigo, você aprenderá sobre as diferentes métricas disponíveis para modelos de ml automatizados no Azure Machine Learning. 
 
 Há várias maneiras de exibir as métricas de precisão de treinamento para cada iteração de execução.
+* Usar [um widget Jupyter](how-to-track-experiments.md#view-run-details)
+* Usar [a `get_metrics()` função](how-to-track-experiments.md#query-run-metrics) em qualquer `Run` objeto
+* Exibir [as métricas de experimento no portal do Azure](how-to-track-experiments.md#view-the-experiment-in-the-azure-portal)
 
-* Use [um widget do Jupyter](how-to-track-experiments.md#view-run-details)
-* Use [as `get_metrics()` função](how-to-track-experiments.md#query-run-metrics) em qualquer `Run` objeto
-* Modo de exibição [as métricas de teste no portal do Azure](how-to-track-experiments.md#view-the-experiment-in-the-azure-portal)
+## <a name="prerequisites"></a>Pré-requisitos
+ 
+* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de começar. Experimente a [versão gratuita ou paga do Serviço do Azure Machine Learning](https://aka.ms/AMLFree) hoje mesmo.
+ 
+* Crie um experimento de Machine Learning automatizado, seja com o SDK ou na portal do Azure.
+ 
+    * Usar o SDK para criar um modelo de [classificação](how-to-auto-train-remote.md) ou um [modelo](tutorial-auto-train-models.md) de regressão
+    * Use o [portal do Azure](how-to-create-portal-experiments.md) para criar um modelo de classificação ou regressão carregando os dados apropriados.
 
 ## <a name="classification-metrics"></a>Métricas de classificação
 
@@ -53,7 +63,7 @@ weighted_accuracy|Precisão ponderada é a precisão em que o peso dado a cada e
 
 ## <a name="regression-and-forecasting-metrics"></a>Regressão e métricas de previsão
 
-As métricas a seguir são salvas em cada iteração de execução para uma tarefa de previsão ou de regressão.
+As métricas a seguir são salvas em cada iteração de execução para uma tarefa de regressão ou de previsão.
 
 |Métrica|DESCRIÇÃO|Cálculo|Parâmetros adicionais
 --|--|--|--|
@@ -68,3 +78,7 @@ root_mean_squared_error|A raiz do erro quadrático médio é a raiz quadrada da 
 normalized_root_mean_squared_error|A raiz do erro quadrático médio normalizado é a raiz do erro quadrático médio dividida pelo intervalo dos dados|[Cálculo](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html)|Dividir pelo intervalo dos dados|
 root_mean_squared_log_error|A raiz do erro de log quadrático médio é a raiz quadrada do erro logarítmico quadrático esperado|[Cálculo](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_log_error.html)|Nenhum|
 normalized_root_mean_squared_log_error|A raiz do erro de log quadrático médio normalizada é a raiz do erro de log quadrático médio dividida pelo intervalo dos dados|[Cálculo](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_log_error.html)|Dividir pelo intervalo dos dados|
+
+## <a name="next-steps"></a>Próximas etapas
+
+Saiba mais sobre o [ml automatizado](concept-automated-ml.md) no Azure Machine Learning.

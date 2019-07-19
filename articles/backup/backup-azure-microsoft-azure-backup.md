@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: kasinh
-ms.openlocfilehash: 43793f1cc105bda7a50371f8fffd4ff787f6e300
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 12ec1ce4a774178be621d7d8626ead7f1b106189
+ms.sourcegitcommit: 20bb149fe74459e59b648361235324b0674fe55b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204430"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68298521"
 ---
 # <a name="install-and-upgrade-azure-backup-server"></a>Instalar e atualizar o Servidor de Backup do Azure
 > [!div class="op_single_selector"]
@@ -29,7 +29,7 @@ Este artigo explica como preparar o ambiente para fazer backup de cargas de trab
 >
 >
 
-O MABS implantado em uma VM do Azure pode fazer backup de VMs no Azure, mas elas devem estar no mesmo domínio para habilitar a operação de backup. O processo para fazer uma VM do Azure permanece o mesmo como fazer backup de VMs no local, no entanto, implantar o MABS no Azure tem algumas limitações. Para obter mais informações sobre as limitações, confira [DPM como uma máquina virtual do Azure](https://docs.microsoft.com/system-center/dpm/install-dpm?view=sc-dpm-1807#setup-prerequisites)
+O MABS implantado em uma VM do Azure pode fazer backup de VMs no Azure, mas elas devem estar no mesmo domínio para habilitar a operação de backup. O processo de back-up de uma VM do Azure permanece o mesmo que fazer backup de VMs no local, no entanto, a implantação de MABS no Azure tem algumas limitações. Para obter mais informações sobre as limitações, confira [DPM como uma máquina virtual do Azure](https://docs.microsoft.com/system-center/dpm/install-dpm?view=sc-dpm-1807#setup-prerequisites)
 
 > [!NOTE]
 > O Azure tem dois modelos de implantação para criar e trabalhar com recursos: [Resource Manager e clássico](../azure-resource-manager/resource-manager-deployment-model.md). Este artigo fornece informações e procedimentos para a restauração de VMs implantadas usando o modelo do Gerenciador de Recursos.
@@ -47,7 +47,7 @@ Ao escolher um servidor para executar o Servidor de Backup do Azure, é recomend
 Proteger as cargas de trabalho com o Servidor de Backup do Azure tem muitas nuanças. O artigo [Instalar o DPM como uma máquina virtual do Azure](https://technet.microsoft.com/library/jj852163.aspx), ajuda a explicar essas nuanças. Antes de implantar o computador, leia este artigo na íntegra.
 
 ### <a name="using-an-on-premises-server"></a>Usando um servidor local
-Se você não deseja executar o servidor de base no Azure, poderá executar o servidor em uma VM do Hyper-V, uma VM do VMware ou um host físico. Os requisitos mínimos recomendados para o hardware de servidor são dois núcleos e 8 GB de RAM. Os sistemas operacionais com suporte são listados na seguinte tabela:
+Se você não deseja executar o servidor de base no Azure, poderá executar o servidor em uma VM do Hyper-V, uma VM do VMware ou um host físico. Os requisitos mínimos recomendados para o hardware do servidor são dois núcleos e 8 GB de RAM. Os sistemas operacionais com suporte são listados na seguinte tabela:
 
 | Sistema operacional | Plataforma | SKU |
 |:--- | --- |:--- |
@@ -141,7 +141,7 @@ Para editar a configuração de replicação de armazenamento:
 Depois de baixar todos os arquivos, clique em **MicrosoftAzureBackupInstaller.exe**. Isso iniciará o **Assistente de Instalação do Backup do Microsoft Azure** para extrair os arquivos de instalação para um local especificado. Continue no assistente e clique no botão **Extrair** para iniciar o processo de extração.
 
 > [!WARNING]
-> Pelo menos 4 GB de espaço livre é necessário para extrair os arquivos de instalação.
+> Pelo menos 4 GB de espaço livre são necessários para extrair os arquivos de instalação.
 >
 >
 
@@ -247,30 +247,30 @@ Aqui são apresentadas as etapas, caso seja necessário mover o MABS para um nov
 
 
   > [!IMPORTANT]
-  > - O novo nome do servidor deve ter o mesmo nome da instância original do Servidor de Backup do Azure. Você não pode alterar o nome da nova instância do Servidor de Backup do Azure se quiser usar o pool de armazenamento anterior e o banco de dados do Data Protection Manager para reter os pontos de recuperação.
-  > - Você deve ter um backup do banco de dados do Data Protection Manager. Você precisará restaurar o banco de dados.
+  > - O novo nome do servidor deve ter o mesmo nome da instância original do Servidor de Backup do Azure. Você não poderá alterar o nome da nova instância de Servidor de Backup do Azure se quiser usar o pool de armazenamento anterior e o DPMDB (banco de dados MABS) para manter os pontos de recuperação.
+  > - Você deve ter um backup do banco de dados MABS (DPMDB). Você precisará restaurar o banco de dados.
 
 1. No painel de exibição, selecione os computadores cliente para o qual você deseja atualizar o agente de proteção.
 2. Desligue o servidor de Backup do Azure original ou retire-o da rede.
 3. Redefina a conta do computador no Active Directory.
 4. Instale o Server 2016 no novo computador e dê a ele o mesmo nome de computador do servidor de Backup do Azure original.
 5. Ingressar no domínio
-6. Instale o servidor de Backup do Azure V2 ou posterior (mova os discos do pool de Armazenamento do DPM do servidor antigo e importe)
+6. Instalar o servidor de backup do Azure v2 ou posterior (mover discos do pool de armazenamento MABS do servidor antigo e importar)
 7. Restaure o DPMDB obtido na etapa 1.
 8. Anexe o armazenamento do servidor de backup original ao novo servidor.
 9. Do SQL, restaurar o DPMDB
 10. Na linha de comando de administrador no novo servidor, vá para o diretório do local de instalação do Backup do Microsoft Azure e a pasta bin
 
-    Exemplo de caminho: C:\Windows\System32 > cd "c:\Program Files\Microsoft Microsoft azure\dpm\dpm\bin do Azure\"
+    Exemplo de caminho: C:\Windows\System32 > CD "C:\Arquivos de Programas\microsoft Azure Backup\DPM\DPM\bin\"
 
 11. Para o backup do Azure, execute DPMSYNC-SYNC
 
-    Se você adicionou novos discos ao pool de armazenamento do DPM em vez de mover os antigos, em seguida, executados o DPMSYNC - Reallocatereplica
+    Se você tiver adicionado novos discos ao pool de armazenamento do DPM em vez de mover os antigos, execute DPMSYNC-Reallocatereplica
 
 ## <a name="network-connectivity"></a>Conectividade de rede
 O Servidor de Backup do Azure requer conectividade com o serviço de Backup Azure para que o produto funcione com êxito. Para validar se o computador tem conectividade com o Azure, use o cmdlet ```Get-DPMCloudConnection``` no console do PowerShell do Servidor de Backup do Azure. Se a saída do cmdlet for TRUE, existe conectividade; caso contrário, não existe nenhuma conectividade.
 
-Ao mesmo tempo, a assinatura do Azure deve estar em um estado íntegro. Para descobrir o estado de sua assinatura e gerenciá-lo, entrar para o [portal de assinatura](https://account.windowsazure.com/Subscriptions).
+Ao mesmo tempo, a assinatura do Azure deve estar em um estado íntegro. Para descobrir o estado da sua assinatura e gerenciá-la, entre no portal de [assinatura](https://account.windowsazure.com/Subscriptions).
 
 Quando você souber o estado da conectividade do Azure e da assinatura do Azure, poderá usar a tabela abaixo para descobrir o impacto sobre a funcionalidade de backup/restauração oferecida.
 
@@ -284,7 +284,7 @@ Quando você souber o estado da conectividade do Azure e da assinatura do Azure,
 | Perda de conectividade > 15 dias |Provisionamento Cancelado |Parado |Parado |Parado e pontos de recuperação do Azure excluídos |Parado |
 
 ### <a name="recovering-from-loss-of-connectivity"></a>Recuperação de perda de conectividade
-Se você tiver um firewall ou um proxy que está impedindo o acesso para o Azure, você precisa permitir os seguintes endereços de domínio no perfil de firewall/proxy:
+Se você tiver um firewall ou um proxy que está impedindo o acesso ao Azure, você precisará permitir os seguintes endereços de domínio no perfil de firewall/proxy:
 
 * `http://www.msftncsi.com/ncsi.txt`
 * \*.Microsoft.com
@@ -335,7 +335,7 @@ Use as etapas a seguir para fazer upgrade do MABS:
 >
 > Se você estiver atualizando do MABS V1 para V2, verifique se o sistema operacional é Windows Server 2016 ou Windows Server 2012 R2. Para tirar proveito dos novos recursos como o Armazenamento de Backup Moderno do System Center 2016 Data Protection Manager, instale o Servidor de Backup V2 no Windows Server 2016. Antes de instalar ou fazer upgrade do Servidor de Backup V2, leia sobre os [pré-requisitos de instalação](https://docs.microsoft.com/system-center/dpm/install-dpm?view=sc-dpm-1807#setup-prerequisites) aplicáveis para MABS.
 
-## <a name="troubleshooting"></a>solução de problemas
+## <a name="troubleshooting"></a>Solução de problemas
 Se o servidor de Backup do Microsoft Azure falha com erros durante a fase de instalação (ou no backup ou na restauração), consulte o [documento de códigos de erro](https://support.microsoft.com/kb/3041338) para saber mais.
 Você também pode consultar as [Perguntas frequentes relacionadas ao Backup do Azure](backup-azure-backup-faq.md)
 

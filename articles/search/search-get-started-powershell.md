@@ -1,6 +1,6 @@
 ---
-title: 'Início rápido do PowerShell: Criar, carregar e consultar índices usando APIs de REST de pesquisa do Azure - Azure Search'
-description: Explica como criar um índice, carregar os dados e executar consultas usando o PowerShell Invoke-RestMethod e a API REST do Azure Search.
+title: 'Início rápido do PowerShell: Criar, carregar e consultar índices usando Azure Search APIs REST-Azure Search'
+description: Explica como criar um índice, carregar dados e executar consultas usando o Invoke-RestMethod do PowerShell e a API REST do Azure Search.
 ms.date: 07/11/2019
 author: heidisteen
 manager: cgronlun
@@ -10,31 +10,31 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: c8a49fe5d334b5752b9272e480fb2502a980b0a4
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 6bff2c84a4bfd81b94054b85744c17a1cd217756
+ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67840164"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67847059"
 ---
-# <a name="quickstart-create-an-azure-search-index-in-powershell-using-rest-apis"></a>Início Rápido: Criar um índice de Azure Search no PowerShell usando as APIs REST
+# <a name="quickstart-create-an-azure-search-index-in-powershell-using-rest-apis"></a>Início Rápido: Criar um índice de Azure Search no PowerShell usando APIs REST
 > [!div class="op_single_selector"]
 > * [PowerShell (REST)](search-create-index-rest-api.md)
 > * [C#](search-create-index-dotnet.md)
-> * [Postman (REST)](search-get-started-postman.md)
+> * [Postmaster (REST)](search-get-started-postman.md)
 > * [Python](search-get-started-python.md)
 > * [Portal](search-create-index-portal.md)
 > 
 
-Este artigo orienta você pelo processo de criar, carregar e consultar um índice de Azure Search usando o PowerShell e o [as APIs REST do Azure Search](https://docs.microsoft.com/rest/api/searchservice/). Este artigo explica como executar comandos do PowerShell interativamente. Como alternativa, você pode [baixar e executar um script do Powershell](https://github.com/Azure-Samples/azure-search-powershell-samples/tree/master/Quickstart) que executa as mesmas operações.
+Este artigo orienta você pelo processo de criação, carregamento e consulta de um índice de Azure Search usando o PowerShell e as [APIs REST do Azure Search](https://docs.microsoft.com/rest/api/searchservice/). Este artigo explica como executar comandos do PowerShell interativamente. Como alternativa, você pode [baixar e executar um script do PowerShell](https://github.com/Azure-Samples/azure-search-powershell-samples/tree/master/Quickstart) que executa as mesmas operações.
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Os serviços e as ferramentas a seguir são usados neste Início Rápido. 
+Os seguintes serviços e ferramentas são necessários para este guia de início rápido. 
 
-+ [PowerShell 5.1 ou posterior](https://github.com/PowerShell/PowerShell), usando [Invoke-RestMethod](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Invoke-RestMethod) para etapas sequenciais e interativas.
++ [PowerShell 5,1 ou posterior](https://github.com/PowerShell/PowerShell), usando [Invoke-RestMethod](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Invoke-RestMethod) para etapas sequenciais e interativas.
 
 + [Crie um serviço Azure Search](search-create-service-portal.md) ou [localize um serviço existente](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) na assinatura atual. É possível usar um serviço gratuito para este início rápido. 
 
@@ -52,7 +52,7 @@ Todas as solicitações requerem uma chave de api em cada pedido enviado ao serv
 
 ## <a name="connect-to-azure-search"></a>Conectar-se ao Azure Search
 
-1. No PowerShell, crie uma **$headers** objeto para armazenar o tipo de conteúdo e a chave de API. Substitua a chave de API de administração (YOUR-ADMIN-API-KEY) com uma chave que é válida para o serviço de pesquisa. Você só precisa definir esse cabeçalho de uma vez para a duração da sessão, mas ela será adicionada a cada solicitação. 
+1. No PowerShell, crie um objeto **$Headers** para armazenar o tipo de conteúdo e a chave de API. Substitua a chave de API de administração (YOUR-ADMIN-API-KEY) por uma chave que seja válida para o serviço de pesquisa. Você só precisa definir esse cabeçalho uma vez durante a sessão, mas você irá adicioná-lo a cada solicitação. 
 
     ```powershell
     $headers = @{
@@ -61,19 +61,19 @@ Todas as solicitações requerem uma chave de api em cada pedido enviado ao serv
     'Accept' = 'application/json' }
     ```
 
-2. Criar uma **$url** coleção de índices do objeto que especifica o serviço. Substitua o nome do serviço (YOUR-SEARCH-SERVICE-NAME) com um serviço de pesquisa válida.
+2. Crie um objeto **$URL** que especifica a coleção de índices do serviço. Substitua o nome do serviço (YOUR-SEARCH-SERVICE-NAME) por um serviço de pesquisa válido.
 
     ```powershell
     $url = "https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/indexes?api-version=2019-05-06&$select=name"
     ```
 
-3. Execute **Invoke-RestMethod** para enviar uma solicitação GET para o serviço e verifique se a conexão. Adicione **ConvertTo-Json** para que você pode exibir as respostas enviadas do serviço.
+3. Execute **Invoke-RestMethod** para enviar uma solicitação GET ao serviço e verificar a conexão. Adicione **ConvertTo-JSON** para que você possa exibir as respostas enviadas de volta do serviço.
 
     ```powershell
     Invoke-RestMethod -Uri $url -Headers $headers | ConvertTo-Json
     ```
 
-   Se o serviço está vazio e não tiver nenhum índice, os resultados são semelhantes ao exemplo a seguir. Caso contrário, você verá uma representação JSON de definições de índice.
+   Se o serviço estiver vazio e não tiver índices, os resultados serão semelhantes ao exemplo a seguir. Caso contrário, você verá uma representação JSON de definições de índice.
 
     ```
     {
@@ -86,13 +86,13 @@ Todas as solicitações requerem uma chave de api em cada pedido enviado ao serv
 
 ## <a name="1---create-an-index"></a>1 - Criar um índice
 
-A menos que você estiver usando o portal, um índice deve existir no serviço antes de carregar dados. Esta etapa define o índice e envia por push para o serviço. O [criar API de REST do índice](https://docs.microsoft.com/rest/api/searchservice/create-index) é usado para esta etapa.
+A menos que você esteja usando o portal, um índice deve existir no serviço antes que você possa carregar dados. Esta etapa define o índice e o envia por push para o serviço. A [API REST criar índice](https://docs.microsoft.com/rest/api/searchservice/create-index) é usada para esta etapa.
 
-Os elementos necessários de um índice incluem um nome e uma coleção de campos. A coleção de campos define a estrutura de um *documento*. Cada campo tem um nome, tipo e atributos que determinam como ele é usado (por exemplo, se ele é texto completo pesquisável, filtrável ou recuperável nos resultados da pesquisa). Dentro de um índice, um dos campos do tipo `Edm.String` deve ser designado como o *chave* para a identidade do documento.
+Os elementos necessários de um índice incluem um nome e uma coleção de campos. A coleção Fields define a estrutura de um *documento*. Cada campo tem um nome, tipo e atributos que determinam como ele é usado (por exemplo, se é pesquisável de texto completo, filtrável ou recuperável nos resultados da pesquisa). Dentro de um índice, um dos campos do tipo `Edm.String` deve ser designado como a *chave* para a identidade do documento.
 
-Esse índice chamado "hotéis-quickstart" e tem as definições de campo que você vê abaixo. Ele é um subconjunto de uma maior [índice de hotéis](https://github.com/Azure-Samples/azure-search-sample-data/blob/master/hotels/Hotels_IndexDefinition.JSON) usados em outra instruções passo a passo. Ele é cortado neste início rápido para fins de brevidade.
+Esse índice é denominado "Hotéis-QuickStart" e tem as definições de campo que você vê abaixo. É um subconjunto de um [índice de hotéis](https://github.com/Azure-Samples/azure-search-sample-data/blob/master/hotels/Hotels_IndexDefinition.JSON) maior usado em outros passo a passos. Nós o arrumamos neste guia de início rápido para fins de brevidade.
 
-1. Cole este exemplo no PowerShell para criar uma **$body** objeto que contém o esquema de índice.
+1. Cole este exemplo no PowerShell para criar um objeto de **$Body** que contém o esquema de índice.
 
     ```powershell
     $body = @"
@@ -121,19 +121,19 @@ Esse índice chamado "hotéis-quickstart" e tem as definições de campo que voc
     "@
     ```
 
-2. Definir o URI para a coleção de índices em seu serviço e o *guia de início rápido hotéis* índice.
+2. Defina o URI para a coleção de índices em seu serviço e o índice *Hotéis-QuickStart* .
 
     ```powershell
     $url = "https://<YOUR-SEARCH-SERVICE>.search.windows.net/indexes/hotels-quickstart?api-version=2019-05-06"
     ```
 
-3. Execute o comando com **$url**, **$headers**, e **$body** para criar o índice no serviço. 
+3. Execute o comando com **$URL**, **$Headers**e **$Body** para criar o índice no serviço. 
 
     ```powershell
     Invoke-RestMethod -Uri $url -Headers $headers -Method Put -Body $body | ConvertTo-Json
     ```
 
-    Resultados devem ser semelhantes a este (truncado para os primeiros dois campos para fins de brevidade):
+    Os resultados devem ser semelhantes a este (truncado para os dois primeiros campos para fins de brevidade):
 
     ```
     {
@@ -174,17 +174,17 @@ Esse índice chamado "hotéis-quickstart" e tem as definições de campo que voc
     ```
 
 > [!Tip]
-> Para verificação, você também pode verificar a lista de índices no portal do.
+> Para verificação, você também pode verificar a lista de índices no Portal.
 
 <a name="load-documents"></a>
 
 ## <a name="2---load-documents"></a>2 - Carregar documentos
 
-Para enviar por push documentos, use uma solicitação HTTP POST para o ponto de extremidade de URL do seu índice. A API REST para essa tarefa é [adicionar, atualizar ou excluir documentos](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents).
+Para enviar documentos por push, use uma solicitação HTTP POST para o ponto de extremidade da URL do índice. A API REST para essa tarefa é [Adicionar, atualizar ou excluir documentos](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents).
 
-1. Cole este exemplo no PowerShell para criar uma **$body** objeto que contém os documentos que você deseja carregar. 
+1. Cole este exemplo no PowerShell para criar um objeto de **$Body** que contém os documentos que você deseja carregar. 
 
-    Essa solicitação inclui dois completo e um registro parcial. O registro parcial demonstra que você pode carregar documentos incompletos. O `@search.action` parâmetro especifica como a indexação é feita. Os valores válidos incluem carregar, mesclar, mergeOrUpload e delete. O comportamento de mergeOrUpload ou cria um novo documento para hotelId = 3 ou atualiza o conteúdo se ele já existe.
+    Essa solicitação inclui dois registros completo e um parcial. O registro parcial demonstra que você pode carregar documentos incompletos. O `@search.action` parâmetro especifica como a indexação é feita. Os valores válidos incluem upload, Merge, mergeOrUpload e Delete. O comportamento mergeOrUpload cria um novo documento para hotelid = 3 ou atualiza o conteúdo se ele já existe.
 
     ```powershell
     $body = @"
@@ -271,18 +271,18 @@ Para enviar por push documentos, use uma solicitação HTTP POST para o ponto de
     "@
     ```
 
-1. Definir o ponto de extremidade o *guia de início rápido hotéis* coleção docs e incluir a operação de índice (índices/hotéis-quickstart/docs/index).
+1. Defina o ponto de extremidade para a coleção de documentos *Hotéis-QuickStart* e inclua a operação de índice (Indexes/Hotéis-QuickStart/docs/index).
 
     ```powershell
     $url = "https://<YOUR-SEARCH-SERVICE>.search.windows.net/indexes/hotels-quickstart/docs/index?api-version=2019-05-06"
     ```
 
-1. Execute o comando com **$url**, **$headers**, e **$body** para carregar documentos no índice de hotéis-quickstart.
+1. Execute o comando com **$URL**, **$Headers**e **$Body** para carregar documentos no índice Hotéis-QuickStart.
 
     ```powershell
     Invoke-RestMethod -Uri $url -Headers $headers -Method Post -Body $body | ConvertTo-Json
     ```
-    Resultados devem ser semelhantes ao exemplo a seguir. Você deve ver uma [código de status de 201](https://docs.microsoft.com/rest/api/searchservice/HTTP-status-codes).
+    Os resultados devem ser semelhantes ao exemplo a seguir. Você deverá ver um [código de status de 201](https://docs.microsoft.com/rest/api/searchservice/HTTP-status-codes).
 
     ```
     {
@@ -318,25 +318,25 @@ Para enviar por push documentos, use uma solicitação HTTP POST para o ponto de
 
 ## <a name="3---search-an-index"></a>3 - Pesquisar um índice
 
-Esta etapa mostra como consultar um índice usando o [API de pesquisa de documentos](https://docs.microsoft.com/rest/api/searchservice/search-documents).
+Esta etapa mostra como consultar um índice usando a API de [documentos de pesquisa](https://docs.microsoft.com/rest/api/searchservice/search-documents).
 
-Certifique-se de usar aspas simples na pesquisa $urls. Cadeias de caracteres de consulta incluem **$** caracteres e você pode omitir a necessidade de escape-los se a cadeia de caracteres inteira é colocada entre aspas simples...
+Certifique-se de usar aspas simples no $urls de pesquisa. As cadeias **$** de consulta incluem caracteres e você pode omitir a falta de escape se a cadeia de caracteres inteira estiver entre aspas simples.
 
-1. Definir o ponto de extremidade o *hotéis-quickstart* coleção docs e adicione um **pesquisa** parâmetro para passar uma cadeia de caracteres de consulta. 
+1. Defina o ponto de extremidade para a coleção de documentos *Hotéis-QuickStart* e adicione um parâmetro de **pesquisa** para passar uma cadeia de caracteres de consulta. 
   
-   Essa cadeia de caracteres executa uma pesquisa vazia (pesquisa = *), retornando uma lista unranked (pontuação de pesquisa = 1,0) dos documentos arbitrários. Por padrão, o Azure Search retorna 50 correspondências por vez. Como a estruturadas, esta consulta retorna uma estrutura de todo o documento e os valores. Adicione **$count = true** para obter uma contagem de todos os documentos nos resultados.
+   Essa cadeia de caracteres executa uma pesquisa vazia (Search = *), retornando uma lista não classificada (Pontuação de pesquisa = 1,0) de documentos arbitrários. Por padrão, Azure Search retorna 50 correspondências por vez. Como estruturado, essa consulta retorna uma estrutura de documento inteira e valores. Adicione **$Count = true** para obter uma contagem de todos os documentos nos resultados.
 
     ```powershell
     $url = 'https://<YOUR-SEARCH-SERVICE>.search.windows.net/indexes/hotels-quickstart/docs?api-version=2019-05-06&search=*&$count=true'
     ```
 
-1. Execute o comando para enviar o **$url** para o serviço.
+1. Execute o comando para enviar o **$URL** para o serviço.
 
     ```powershell
     Invoke-RestMethod -Uri $url -Headers $headers | ConvertTo-Json
     ```
 
-    Resultados devem ser semelhantes à seguinte saída.
+    Os resultados devem ser semelhantes à saída a seguir.
 
     ```
     {
@@ -370,7 +370,7 @@ Certifique-se de usar aspas simples na pesquisa $urls. Cadeias de caracteres de 
                 . . . 
     ```
 
-Experimente alguns outros exemplos de consultas para ter uma noção do que a sintaxe. Você pode fazer uma pesquisa de cadeia de caracteres, consultas $filter textuais, limitar o conjunto de resultados, o escopo de pesquisa para campos específicos e muito mais.
+Experimente alguns outros exemplos de consulta para ter uma ideia da sintaxe. Você pode fazer uma pesquisa de cadeia de caracteres, textualmente $filter consultas, limitar o conjunto de resultados, definir o escopo da pesquisa para campos específicos e muito mais.
 
 ```powershell
 # Query example 1
@@ -394,15 +394,15 @@ $url = 'https://<YOUR-SEARCH-SERVICE>.search.windows.net/indexes/hotels-quicksta
 ```
 ## <a name="clean-up"></a>Limpar 
 
-Quando você estiver trabalhando em sua própria assinatura, é uma boa ideia no final de um projeto para identificar se você ainda precisa os recursos criados por você. Recursos deixados em execução podem custar dinheiro. Você pode excluir os recursos individualmente ou excluir o grupo de recursos para excluir todo o conjunto de recursos.
+Quando você está trabalhando em sua própria assinatura, é uma boa ideia identificar, no final de um projeto, se você ainda precisa dos recursos criados. Recursos deixados em execução podem custar dinheiro. Você pode excluir os recursos individualmente ou excluir o grupo de recursos para excluir todo o conjunto de recursos.
 
-Você pode localizar e gerenciar recursos no portal, usando o **todos os recursos** ou **grupos de recursos** link no painel de navegação à esquerda.
+Você pode localizar e gerenciar recursos no portal usando o link **Todos os recursos** ou **Grupos de recursos** no painel de navegação à esquerda.
 
-Se você estiver usando um serviço gratuito, lembre-se de que você está limitado a três índices, indexadores e fontes de dados. Você pode excluir itens individuais no portal para permanecer abaixo do limite. 
+Se você estiver usando um serviço gratuito, estará limitado a três índices, indexadores e fontes de dados. Você pode excluir itens individuais no portal para permanecer abaixo do limite. 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste início rápido, você usou o PowerShell para percorrer o fluxo de trabalho básico para criar e acessar o conteúdo do Azure Search. Com os conceitos em mente, é recomendável passar para cenários mais avançados, como a indexação de fontes de dados do Azure;
+Neste guia de início rápido, você usou o PowerShell para percorrer o fluxo de trabalho básico para criar e acessar conteúdo no Azure Search. Com os conceitos em mente, é recomendável passar para cenários mais avançados, como indexação de fontes de dados do Azure;
 
 > [!div class="nextstepaction"]
-> [Tutorial do REST: Indexar e pesquisar dados semi-estruturados (blobs JSON) no Azure Search](search-semi-structured-data.md)
+> [Tutorial de REST: Indexar e pesquisar dados semiestruturados (BLOBs JSON) no Azure Search](search-semi-structured-data.md)

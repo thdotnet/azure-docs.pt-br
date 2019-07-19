@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/20/2017
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a798b766d09428e7ebebc04d969d63a542de3808
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 43c0da3ca8fa4b2f74d48b0e202cc56bc8b9406c
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835710"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68227214"
 ---
 # <a name="azure-active-directory-b2c-configure-the-ui-with-dynamic-content-by-using-custom-policies"></a>Azure Active Directory B2C: configurar a interface do usuário com conteúdo dinâmico usando políticas personalizadas
 
@@ -89,7 +89,7 @@ O modelo HTML5 personalizado baseia-se no modelo HTML5 interno do Azure AD B2C. 
 ### <a name="step-22-add-the-mvc-view"></a>Etapa 2.2: adicionar a exibição do MVC
 1. Clique com o botão direito do mouse na pasta Exibições/Inicial e, em seguida, **Adicionar** > **Novo Item**.
 
-    ![Adicionar item de menu do novo Item no Visual Studio](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-view1.png)
+    ![Adicionar item de menu novo item no Visual Studio](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-view1.png)
 
 2. Na janela **Adicionar Novo Item – Contoso.AADB2C.UI**, selecione **Web > ASP.NET**.
 
@@ -99,7 +99,7 @@ O modelo HTML5 personalizado baseia-se no modelo HTML5 interno do Azure AD B2C. 
 
 5. Selecione **Adicionar**.
 
-    ![Adicionar Novo Item de caixa de diálogo no Visual Studio com a página de exibição do MVC realçado](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-view2.png)
+    ![Caixa de diálogo Adicionar novo item no Visual Studio com a página exibição do MVC realçada](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-view2.png)
 
 6. Se o arquivo *unified.cshtml* ainda não estiver aberto, clique duas vezes nele para abri-lo e apague o conteúdo do arquivo.
 
@@ -123,7 +123,7 @@ O modelo HTML5 personalizado baseia-se no modelo HTML5 interno do Azure AD B2C. 
 
 Localize o `<img>` elemento que contém o `ID` valor *background_background_image* e, em seguida, substitua o valor `src` por **https://kbdevstorage1.blob.core.windows.net/asset-blobs/19889_en_1** ou qualquer outra imagem de plano de fundo que você queira utilizar.
 
-![Alterar a tela de fundo da página](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-static-background.png)
+![elemento img com valor src personalizado background_background_image](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-static-background.png)
 
 ### <a name="step-24-add-your-view-to-the-mvc-controller"></a>Etapa 2.4: adicionar sua exibição ao controlador MVC
 
@@ -174,7 +174,7 @@ Localize o `<img>` elemento que contém o `ID` valor *background_background_imag
 
 2. Na seção **Configurações**, na seção **API**, selecione **CORS**.
 
-    ![Item de menu CORS realçada no menu de serviço de aplicativo no portal do Azure](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-CORS2.png)
+    ![Item de menu CORS realçado no menu serviço de aplicativo no portal do Azure](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-CORS2.png)
 
 3. Na janela **CORS**, na caixa **Origens permitidas**, siga um destes procedimentos:
 
@@ -196,7 +196,7 @@ Seu modelo HTML5 está pronto para uso. No entanto, ele não está disponível n
     >Para verificar se o site em que você está hospedando seu conteúdo habilitou o CORS e pode testar solicitações CORS, acesse o site [test-cors.org](https://test-cors.org/).
 
 * O conteúdo veiculado é protegido em **HTTPS**.
-* Você está usando *URLS absolutas*, como `https://yourdomain/content`, para todos os links, conteúdo CSS e imagens.
+* Você está usando *URLs absolutas*, `https://yourdomain/content`como, para todos os links, conteúdo CSS e imagens.
 
 ## <a name="step-5-configure-your-content-definition"></a>Etapa 5: configurar sua definição de conteúdo
 Para configurar `ContentDefinition`, faça o seguinte:
@@ -213,7 +213,7 @@ Para configurar `ContentDefinition`, faça o seguinte:
 6. Altere o valor de `LoadUri` de _~/tenant/default/unified_ para _https://<nome_do_aplicativo>.azurewebsites.net/home/unified_.
     Sua política personalizada deverá ter a seguinte aparência:
 
-    ![Trecho XML de exemplo com o elemento LoadUri realçado](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-content-definition.png)
+    ![Exemplo de trecho XML com elemento LoadUri realçado](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-content-definition.png)
 
 ## <a name="step-6-upload-the-policy-to-your-tenant"></a>Etapa 6: Carregar a política ao seu locatário
 1. No [Portal do Azure](https://portal.azure.com), mude para o [contexto do locatário do Azure AD B2C](active-directory-b2c-navigate-to-b2c-context.md) e, em seguida, selecione **Azure AD B2C**.
@@ -292,7 +292,7 @@ Modifique o método `unified` do HomeController para aceitar o parâmetro campai
 
 2. Localize o elemento `<img>` com a ID `background_background_image` e substitua o valor `src` por `@ViewData["background"]`.
 
-    ![elemento img com valor de src realçado ](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-dynamic-background.png)
+    ![elemento img com valor src realçado ](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-dynamic-background.png)
 
 ### <a name="83-upload-the-changes-and-publish-your-policy"></a>8.3: carregar as alterações e publicar sua política
 1. Publique o projeto do Visual Studio no Serviço de Aplicativo do Azure.
@@ -306,16 +306,16 @@ Modifique o método `unified` do HomeController para aceitar o parâmetro campai
 
 5. Adicione o parâmetro da cadeia de caracteres de consulta _campaignId_ ao URI. Por exemplo, adicione `&campaignId=hawaii`, conforme mostrado na imagem a seguir:
 
-    ![URI com o parâmetro de cadeia de caracteres de consulta campaignId realçado](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-campaignId-param.png)
+    ![URI com o parâmetro de cadeia de caracteres de consulta campaignid realçado](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-campaignId-param.png)
 
 6. Selecione **Enter** para exibir a imagem de tela de fundo Havaí.
 
-    ![Inscrição na página de entrada com o plano de fundo personalizado do Havaí imagem](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-demo2.png)
+    ![Página de entrada de inscrição com plano de fundo personalizado de imagem do Havaí](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-demo2.png)
 
 7. Altere o valor para *Tóquio* e selecione **Enter**.
     O navegador exibe a tela de fundo Tóquio.
 
-    ![Inscrição na página de entrada com o plano de fundo personalizado de imagem de Tóquio](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-demo3.png)
+    ![Página de entrada de inscrição com plano de fundo personalizado da imagem de Tokyo](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-demo3.png)
 
 ## <a name="step-9-change-the-rest-of-the-user-journey"></a>Etapa 9: alterar o restante do percurso do usuário
 Se você selecionar o link **Inscrever-se agora** na página de entrada, o navegador exibirá a imagem de tela de fundo padrão, não a imagem que você definiu. Esse comportamento ocorre porque você alterou apenas a página de inscrição ou de entrada. Para alterar o restante das definições de conteúdo autodeclarado:
