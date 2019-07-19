@@ -55,12 +55,12 @@ Uma lógica de negócios de um aplicativo pode ser modelada como uma máquina de
 
 | Campo | Description | Obrigatório | Comprimento máximo |
 |-------|-------------|:--------:|-----------:|
-| NOME | Nome do fluxo de trabalho exclusivo. O contrato inteligente correspondente deve usar o mesmo **Nome** para a classe de contrato aplicável. | Sim | 50 |
+| Name | Nome do fluxo de trabalho exclusivo. O contrato inteligente correspondente deve usar o mesmo **Nome** para a classe de contrato aplicável. | Sim | 50 |
 | DisplayName | Nome de exibição amigável do fluxo de trabalho. | Sim | 255 |
 | Description | Descrição do fluxo de trabalho. | Não | 255 |
 | Iniciadores | Coleção de [ApplicationRoles](#application-roles). Funções que são atribuídas a usuários que estão autorizados a criar contratos no fluxo de trabalho. | Sim | |
 | StartState | Nome do estado inicial do fluxo de trabalho. | Sim | |
-| propriedades | Coleção de [identificadores](#identifiers). Representa os dados que podem ser lidos visualizados em cadeia em uma ferramenta de experiência do usuário. | Sim | |
+| Properties | Coleção de [identificadores](#identifiers). Representa os dados que podem ser lidos visualizados em cadeia em uma ferramenta de experiência do usuário. | Sim | |
 | Construtor | Define os parâmetros de entrada para criar uma instância de fluxo de trabalho. | Sim | |
 | Funções | Uma coleção de [funções](#functions) que podem ser executadas no fluxo de trabalho. | Sim | |
 | Estados | Uma coleção de [estados](#states) de fluxo de trabalho. | Sim | |
