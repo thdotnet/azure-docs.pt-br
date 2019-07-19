@@ -93,12 +93,13 @@
           href: streaming-policy-concept.md
         - name: Códigos de erro do ponto de extremidade de streaming
           href: streaming-endpoint-error-codes.md
-    - name: Criptografia dinâmica e entrega de chaves
+    - name: Proteção do conteúdo
       items:
-        - name: Tipos de criptografia e protocolos de streaming
-          displayName: 'dynamic, encryption, content protection, PlayReady, Widevine, FairPlay'
+        - name: Criptografia dinâmica e entrega de chaves
+          displayName: 'content protection, streaming protocols, encryption types, content protection, PlayReady, Widevine, FairPlay'
           href: content-protection-overview.md
-        - name: Sistema de DRM múltiplo com controle de acesso
+        - name: Design de sistema com vários DRMs
+          displayName: 'drm, access control'
           href: design-multi-drm-system-with-access-control.md
         - name: Licenças DRM
           items:

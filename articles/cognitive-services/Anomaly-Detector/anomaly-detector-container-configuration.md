@@ -1,7 +1,7 @@
 ---
-title: Como configurar um contêiner para a API do Detector de anomalias
+title: Como configurar um contêiner para a API do detector de anomalias
 titleSuffix: Azure Cognitive Services
-description: O ambiente de tempo de execução do contêiner de API do Detector de anomalias é configurado usando o `docker run` argumentos do comando. Esse contêiner tem várias configurações obrigatórias e outras configurações opcionais.
+description: O ambiente de tempo de execução de contêiner da API do detector `docker run` de anomalias é configurado usando os argumentos do comando. Esse contêiner tem várias configurações obrigatórias e outras configurações opcionais.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -10,22 +10,22 @@ ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: cb0a12df6696e76050d4c53bd75e07134b3dc27c
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 617a8fc823b7c40d047e5825dc31b095da132f29
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67721724"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68321442"
 ---
-# <a name="configure-anomaly-detector-containers"></a>Configurar os contêineres do Detector de anomalias
+# <a name="configure-anomaly-detector-containers"></a>Configurar contêineres de detector de anomalias
 
-O **Detector de anomalias** ambiente de tempo de execução do contêiner é configurado usando o `docker run` argumentos do comando. Esse contêiner tem várias configurações obrigatórias e outras configurações opcionais. Há vários [exemplos](#example-docker-run-commands) do comando disponíveis. As configurações específicas do contêiner são as configurações de cobrança. 
+O ambiente de tempo de execução de contêiner do **detector** de `docker run` anomalias é configurado usando os argumentos de comando. Esse contêiner tem várias configurações obrigatórias e outras configurações opcionais. Há vários [exemplos](#example-docker-run-commands) do comando disponíveis. As configurações específicas do contêiner são as configurações de cobrança. 
 
 # <a name="configuration-settings"></a>Definições de configuração
 
 Esse contêiner tem as seguintes configurações:
 
-|Necessária|Configuração|Finalidade|
+|Obrigatório|Configuração|Finalidade|
 |--|--|--|
 |Sim|[ApiKey](#apikey-configuration-setting)|Usado para rastrear informações de cobrança.|
 |Não|[ApplicationInsights](#applicationinsights-setting)|Permite que você adicione suporte a dados telemétricos do [Azure Application Insights](https://docs.microsoft.com/azure/application-insights) para seu contêiner.|
@@ -41,11 +41,11 @@ Esse contêiner tem as seguintes configurações:
 
 ## <a name="apikey-configuration-setting"></a>Configuração de configuração do ApiKey
 
-A configuração `ApiKey` especifica a chave de recurso do Azure usada para rastrear informações de cobrança do contêiner. Você deve especificar um valor para o ApiKey e o valor deve ser uma chave válida para o _Detector de anomalias_ recurso especificado para o [ `Billing` ](#billing-configuration-setting) definição de configuração.
+A configuração `ApiKey` especifica a chave de recurso do Azure usada para rastrear informações de cobrança do contêiner. Você deve especificar um valor para o ApiKey e o valor deve ser uma chave válida para o recurso de _detector_ de anomalias especificado [`Billing`](#billing-configuration-setting) para a definição de configuração.
 
 Essa configuração pode ser localizada no seguinte local:
 
-* Portal do Azure: **Detector de anomalias** gerenciamento de recursos, em **chaves**
+* Portal do Azure: **Detector de anomalias** Gerenciamento de recursos, em **chaves**
 
 ## <a name="applicationinsights-setting"></a>Configuração applicationInsights
 
@@ -53,15 +53,15 @@ Essa configuração pode ser localizada no seguinte local:
 
 ## <a name="billing-configuration-setting"></a>Definição de configuração de cobrança
 
-O `Billing` configuração especifica o URI do ponto de extremidade do _Detector de anomalias_ recursos no Azure é usado para monitorar informações de cobrança para o contêiner. Você deve especificar um valor para este parâmetro de configuração e o valor deve ser um URI de ponto de extremidade válido para um _Detector de anomalias_ recursos no Azure.
+A `Billing` configuração especifica o URI do ponto de extremidade do recurso de _detector_ de anomalias no Azure usado para medir as informações de cobrança do contêiner. Você deve especificar um valor para essa definição de configuração e o valor deve ser um URI de ponto de extremidade válido para um recurso de _detector_ de anomalias no Azure.
 
 Essa configuração pode ser localizada no seguinte local:
 
-* Portal do Azure: **Detector de anomalias** visão geral, rotulado `Endpoint`
+* Portal do Azure: **Detector de anomalias** Visão geral, rotulada`Endpoint`
 
-|Necessária| NOME | Tipo de dados | DESCRIÇÃO |
+|Obrigatório| NOME | Tipo de dados | DESCRIÇÃO |
 |--|------|-----------|-------------|
-|Sim| `Billing` | string | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westus2.api.cognitive.microsoft.com` |
+|Sim| `Billing` | Cadeia de caracteres | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westus2.api.cognitive.microsoft.com` |
 
 ## <a name="eula-setting"></a>Configuração de EULA
 
@@ -84,14 +84,14 @@ Essa configuração pode ser localizada no seguinte local:
 
 Use montagens de associação para ler e gravar dados do contêiner e para ele. Você pode especificar uma montagem de entrada ou saída especificando a opção `--mount` no comando [docker run](https://docs.docker.com/engine/reference/commandline/run/).
 
-Os contêineres do Detector de anomalias não usam a entrada ou saída monta para armazenar dados de serviço ou treinamento. 
+Os contêineres do detector de anomalias não usam montagens de entrada ou saída para armazenar dados de treinamento ou de serviço. 
 
 A sintaxe exata do local da montagem do host varia de acordo com o sistema operacional do host. Além disso, a localização de montagem do [computador host](anomaly-detector-container-howto.md#the-host-computer) pode não estar acessível devido a um conflito entre as permissões usadas pela conta de serviço do Docker e as permissões da localização de montagem do host. 
 
 |Opcional| Nome | Tipo de dados | DESCRIÇÃO |
 |-------|------|-----------|-------------|
-|Não permitido| `Input` | Cadeia de Caracteres | Contêineres do Detector de anomalias não usam isso.|
-|Opcional| `Output` | string | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Não permitido| `Input` | Cadeia de caracteres | Os contêineres do detector de anomalias não usam isso.|
+|Opcional| `Output` | Cadeia de caracteres | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Comandos docker run de exemplo 
 
@@ -100,20 +100,20 @@ Os exemplos a seguir usam as definições de configuração para ilustrar como e
 * **Caractere de continuação de linha**: Os comandos do Docker nas seções a seguir usam a barra invertida, `\`, como um caractere de continuação de linha para um shell de bash. Substitua ou remova essa barra com base nos requisitos do sistema operacional de seu computador host. Por exemplo, o caractere de continuação de linha para o Windows é um acento circunflexo, `^`. Substitua a barra invertida pelo acento circunflexo. 
 * **Ordem do argumento**: Não altere a ordem dos argumentos, a menos que você esteja familiarizado com contêineres do Docker.
 
-Substitua o valor entre colchetes, `{}`, com seus próprios valores:
+Substitua o valor entre colchetes `{}`,, com seus próprios valores:
 
 | Placeholder | Valor | Formato ou exemplo |
 |-------------|-------|---|
-|{BILLING_KEY} | A chave do ponto de extremidade do recurso Detector de anomalias. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
-|{BILLING_ENDPOINT_URI} | O valor de ponto de extremidade cobrança, incluindo a região.|`https://westus2.api.cognitive.microsoft.com`|
+|{API_KEY} | A chave do ponto de extremidade do recurso de detector de anomalias. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
+|{ENDPOINT_URI} | O valor de ponto de extremidade cobrança, incluindo a região.|`https://westus2.api.cognitive.microsoft.com`|
 
 > [!IMPORTANT]
 > As opções `Eula`, `Billing` e `ApiKey` devem ser especificadas para executar o contêiner; caso contrário, o contêiner não será iniciado.  Para mais informações, consulte [Faturamento](anomaly-detector-container-howto.md#billing).
-> O valor de ApiKey é o **chave** na página de chaves de recurso de Detector de anomalias do Azure. 
+> O valor ApiKey é a **chave** da página chaves de recurso do detector de anomalias do Azure. 
 
-## <a name="anomaly-detector-container-docker-examples"></a>Exemplos de Docker de contêiner de Detector de anomalias
+## <a name="anomaly-detector-container-docker-examples"></a>Exemplos de Docker de contêiner de detector de anomalias
 
-Os exemplos de Docker a seguir são para o contêiner do Detector de anomalias. 
+Os exemplos do Docker a seguir são para o contêiner do detector de anomalias. 
 
 ### <a name="basic-example"></a>Exemplo básico 
 
@@ -121,8 +121,8 @@ Os exemplos de Docker a seguir são para o contêiner do Detector de anomalias.
   docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
   containerpreview.azurecr.io/microsoft/cognitive-services-anomaly-detector \
   Eula=accept \
-  Billing={BILLING_ENDPOINT_URI} \
-  ApiKey={BILLING_KEY} 
+  Billing={ENDPOINT_URI} \
+  ApiKey={API_KEY} 
   ```
 
 ### <a name="logging-example-with-command-line-arguments"></a>Exemplo de registro em log com argumentos de linha de comando
@@ -131,6 +131,6 @@ Os exemplos de Docker a seguir são para o contêiner do Detector de anomalias.
   docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
   containerpreview.azurecr.io/microsoft/cognitive-services-anomaly-detector \
   Eula=accept \
-  Billing={BILLING_ENDPOINT_URI} ApiKey={BILLING_KEY} \
+  Billing={ENDPOINT_URI} ApiKey={API_KEY} \
   Logging:Console:LogLevel:Default=Information
   ```

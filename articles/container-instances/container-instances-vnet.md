@@ -3,16 +3,17 @@ title: Implantar instâncias de contêiner em uma rede virtual do Azure
 description: Saiba como implantar grupos de contêiner em uma rede virtual do Azure nova ou existente.
 services: container-instances
 author: dlepow
+manager: gwallace
 ms.service: container-instances
 ms.topic: article
 ms.date: 07/11/2019
 ms.author: danlep
-ms.openlocfilehash: 86d4cb4fded551eccdf9f92c06563003d71376ff
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
-ms.translationtype: HT
+ms.openlocfilehash: ad7f93bb3934ca01b7f45c0bd4b5cc8be81ea54b
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876081"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68325532"
 ---
 # <a name="deploy-container-instances-into-an-azure-virtual-network"></a>Implantar instâncias de contêiner em uma rede virtual do Azure
 
