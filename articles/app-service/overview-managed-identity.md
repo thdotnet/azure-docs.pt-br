@@ -10,13 +10,14 @@ ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: article
 ms.date: 11/20/2018
-ms.author: mahender, yevbronsh
-ms.openlocfilehash: b18d5ba303d1cf7ab637638043f9e0727437c232
-ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
+ms.author: mahender
+ms.reviewer: yevbronsh
+ms.openlocfilehash: 8bc30d50772dffddca32d9f6e22c3d7cec566c70
+ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67827852"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68297148"
 ---
 # <a name="how-to-use-managed-identities-for-app-service-and-azure-functions"></a>Como usar identidades gerenciadas para o Serviço de Aplicativo e o Azure Functions
 
@@ -279,9 +280,9 @@ Para saber mais sobre o Microsoft.Azure.Services.AppAuthentication e as operaç�
 
 ### <a name="using-the-azure-sdk-for-java"></a>Usando o SDK do Azure para Java
 
-Para aplicativos Java e funções, a maneira mais simples de trabalhar com uma identidade gerenciada é por meio de [SDK do Azure para Java](https://github.com/Azure/azure-sdk-for-java). Esta seção mostra a você como começar a usar a biblioteca no seu código.
+Para aplicativos e funções Java, a maneira mais simples de trabalhar com uma identidade gerenciada é por meio do [SDK do Azure para Java](https://github.com/Azure/azure-sdk-for-java). Esta seção mostra a você como começar a usar a biblioteca no seu código.
 
-1. Adicione uma referência para o [biblioteca de SDK do Azure](https://mvnrepository.com/artifact/com.microsoft.azure/azure). Para projetos do Maven, você pode adicionar este trecho de código para o `dependencies` seção do arquivo POM do projeto:
+1. Adicione uma referência à [biblioteca do SDK do Azure](https://mvnrepository.com/artifact/com.microsoft.azure/azure). Para projetos Maven, você pode adicionar esse trecho à `dependencies` seção do arquivo POM do projeto:
 
 ```xml
 <dependency>
@@ -291,7 +292,7 @@ Para aplicativos Java e funções, a maneira mais simples de trabalhar com uma i
 </dependency>
 ```
 
-2. Use o `AppServiceMSICredentials` objeto para autenticação. Este exemplo mostra como esse mecanismo pode ser usado para trabalhar com o Azure Key Vault:
+2. Use o `AppServiceMSICredentials` objeto para autenticação. Este exemplo mostra como esse mecanismo pode ser usado para trabalhar com Azure Key Vault:
 
 ```java
 import com.microsoft.azure.AzureEnvironment;

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
 ms.custom: seodec18
-ms.openlocfilehash: 4613b576b444059d448cf1094284f2a68e6c31a8
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 90358d54077a0c320e8d3186e806b8a61d951c82
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67275146"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68321350"
 ---
 # <a name="configure-recognize-text-docker-containers"></a>Configurar os contêineres do Docker de Reconhecimento de Texto
 
@@ -31,11 +31,11 @@ O ambiente de tempo de execução do contêiner do **Reconhecimento de Texto** �
 
 ## <a name="apikey-configuration-setting"></a>Configuração de configuração do ApiKey
 
-O `ApiKey` configuração especifica que o Azure `Cognitive Services` usado para rastrear informações de cobrança para o contêiner de chave de recurso. Você deve especificar um valor para o ApiKey e o valor deve ser uma chave válida para o _dos serviços Cognitivos_ recurso especificado para o [ `Billing` ](#billing-configuration-setting) definição de configuração.
+A `ApiKey` configuração especifica a chave `Cognitive Services` de recurso do Azure usada para rastrear informações de cobrança para o contêiner. Você deve especificar um valor para o ApiKey e o valor deve ser uma chave válida para o recurso de _Serviços cognitivas_ especificado [`Billing`](#billing-configuration-setting) para a definição de configuração.
 
 Essa configuração pode ser localizada no seguinte local:
 
-* Portal do Azure: **Serviços cognitivos** gerenciamento de recursos, em **chaves**
+* Portal do Azure: **Serviços cognitivas** Gerenciamento de recursos, em **chaves**
 
 ## <a name="applicationinsights-setting"></a>Configuração applicationInsights
 
@@ -43,13 +43,13 @@ Essa configuração pode ser localizada no seguinte local:
 
 ## <a name="billing-configuration-setting"></a>Definição de configuração de cobrança
 
-O `Billing` configuração especifica o URI do ponto de extremidade do _os serviços Cognitivos_ recursos no Azure é usado para monitorar informações de cobrança para o contêiner. Você deve especificar um valor para este parâmetro de configuração e o valor deve ser um URI de ponto de extremidade válido para um _dos serviços Cognitivos_ recursos no Azure. O contêiner relata o uso a cada 10 a 15 minutos.
+A `Billing` configuração especifica o URI do ponto de extremidade do recurso de _Serviços cognitivas_ no Azure usado para medir as informações de cobrança do contêiner. Você deve especificar um valor para essa definição de configuração e o valor deve ser um URI de ponto de extremidade válido para um recurso de _Serviços cognitivas_ no Azure. O contêiner relata o uso a cada 10 a 15 minutos.
 
 Essa configuração pode ser localizada no seguinte local:
 
-* Portal do Azure: **Serviços cognitivos** visão geral, rotulado `Endpoint`
+* Portal do Azure: **Serviços cognitivas** Visão geral, rotulada`Endpoint`
 
-Lembre-se de adicionar o `vision/v1.0` roteamento para o URI do ponto de extremidade, conforme mostrado na tabela a seguir. 
+Lembre-se de `vision/v1.0` adicionar o roteamento ao URI do ponto de extremidade, conforme mostrado na tabela a seguir. 
 
 |Obrigatório| NOME | Tipo de dados | DESCRIÇÃO |
 |--|------|-----------|-------------|
@@ -79,7 +79,7 @@ Os contêineres de Pesquisa Visual Computacional não usam montagens de entrada 
 
 A sintaxe exata do local da montagem do host varia de acordo com o sistema operacional do host. Além disso, a localização de montagem do [computador host](computer-vision-how-to-install-containers.md#the-host-computer) pode não estar acessível devido a um conflito entre as permissões usadas pela conta de serviço do Docker e as permissões da localização de montagem do host. 
 
-|Opcional| NOME | Tipo de dados | DESCRIÇÃO |
+|Opcional| Nome | Tipo de dados | DESCRIÇÃO |
 |-------|------|-----------|-------------|
 |Não permitido| `Input` | Cadeia de caracteres | Os contêineres de Pesquisa Visual Computacional não usam isso.|
 |Opcional| `Output` | Cadeia de caracteres | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
@@ -91,18 +91,18 @@ Os exemplos a seguir usam as definições de configuração para ilustrar como e
 * **Caractere de continuação de linha**: Os comandos do Docker nas seções a seguir usam a barra invertida, `\`, como um caractere de continuação de linha. Substitua ou remova essa barra com base nos requisitos do sistema operacional de seu computador host. 
 * **Ordem do argumento**: Não altere a ordem dos argumentos, a menos que você esteja familiarizado com contêineres do Docker.
 
-Lembre-se de adicionar o `vision/v1.0` roteamento para o URI do ponto de extremidade, conforme mostrado na tabela a seguir. 
+Lembre-se de `vision/v1.0` adicionar o roteamento ao URI do ponto de extremidade, conforme mostrado na tabela a seguir. 
 
 Substitua {_argument_name_} pelos seus próprios valores:
 
-| Placeholder | Value | Formato ou exemplo |
+| Placeholder | Valor | Formato ou exemplo |
 |-------------|-------|---|
-|{BILLING_KEY} | A chave do ponto de extremidade do recurso dos serviços Cognitivos. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
-|{BILLING_ENDPOINT_URI} | O valor de ponto de extremidade cobrança, incluindo a região.|`https://westcentralus.api.cognitive.microsoft.com/vision/v1.0`|
+|{API_KEY} | A chave do ponto de extremidade do recurso de serviços cognitivas. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
+|{ENDPOINT_URI} | O valor de ponto de extremidade cobrança, incluindo a região.|`https://westcentralus.api.cognitive.microsoft.com/vision/v1.0`|
 
 > [!IMPORTANT]
 > As opções `Eula`, `Billing` e `ApiKey` devem ser especificadas para executar o contêiner; caso contrário, o contêiner não será iniciado.  Para mais informações, consulte [Faturamento](computer-vision-how-to-install-containers.md#billing).
-> O valor de ApiKey é o **chave** do Azure `Cognitive Services` página chaves de recurso. 
+> O valor de ApiKey é a **chave** da página `Cognitive Services` de chaves de recurso do Azure. 
 
 ## <a name="recognize-text-container-docker-examples"></a>Exemplos do Docker do contêiner do Reconhecimento de Texto
 
@@ -114,18 +114,18 @@ Os seguintes exemplos do Docker são para o contêiner de Reconhecimento de Text
   docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
   containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text \
   Eula=accept \
-  Billing={BILLING_ENDPOINT_URI} \
-  ApiKey={BILLING_KEY} 
+  Billing={ENDPOINT_URI} \
+  ApiKey={API_KEY} 
   ```
 
-### <a name="logging-example"></a>Exemplo de registro em log 
+### <a name="logging-example"></a>Exemplo de log 
 
   ```
   docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
   containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text \
   Eula=accept \
-  Billing={BILLING_ENDPOINT_URI} \
-  ApiKey={BILLING_KEY} \
+  Billing={ENDPOINT_URI} \
+  ApiKey={API_KEY} \
   Logging:Console:LogLevel:Default=Information
   ```
 

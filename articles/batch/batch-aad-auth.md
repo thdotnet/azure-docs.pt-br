@@ -4,7 +4,7 @@ description: O Lote dá suporte ao Azure AD para autenticação por meio do serv
 services: batch
 documentationcenter: .net
 author: laurenhughes
-manager: jeconnoc
+manager: gwallace
 editor: ''
 tags: ''
 ms.assetid: ''
@@ -15,16 +15,16 @@ ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 04/18/2018
 ms.author: lahugh
-ms.openlocfilehash: 5cda3f99a263e8eef13ee2e8d8e6453eda0f4cb6
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 64921a2ab69306df0b7c3d968055e698dd6995e7
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341184"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68323939"
 ---
 # <a name="authenticate-batch-service-solutions-with-active-directory"></a>Autenticar soluções do serviço do Lote no Active Directory
 
-O lote do Azure dá suporte à autenticação com [Azure Active Directory][aad_about] (Azure AD). O Azure AD é o serviço de gerenciamento de identidade e diretório multilocatário com base em nuvem da Microsoft. O Azure em si usa o Azure AD para autenticar seus clientes, administradores de serviços e usuários organizacionais.
+O lote do Azure dá suporte à autenticação com o [Azure Active Directory][aad_about] (Azure AD). O Azure AD é o serviço de gerenciamento de identidade e diretório multilocatário com base em nuvem da Microsoft. O Azure em si usa o Azure AD para autenticar seus clientes, administradores de serviços e usuários organizacionais.
 
 Ao usar a autenticação do Azure AD com o Lote do Azure, você pode fazer a autenticação usando uma destas duas maneiras:
 
@@ -54,7 +54,7 @@ Para autenticar no Azure AD, use esse ponto de extremidade junto com a ID do loc
 >
 >
 
-Para obter mais informações sobre pontos de extremidade do AD do Azure, consulte [cenários de autenticação do Azure AD][aad_auth_scenarios].
+Para obter mais informações sobre pontos de extremidade do Azure AD, consulte [cenários de autenticação do Azure ad][aad_auth_scenarios].
 
 ### <a name="batch-resource-endpoint"></a>Ponto de extremidade de recursos do Lote
 
@@ -68,7 +68,7 @@ A primeira etapa do uso do Azure AD para realizar a autenticação é registrar 
 
 Ao registrar o aplicativo, você fornece informações sobre ele ao Azure AD. O Microsoft Azure AD, em seguida, fornece um ID do aplicativo (também chamado de *ID do Cliente*) que você usa para associar o aplicativo ao Microsoft Azure AD no tempo de execução. Para saber mais sobre a ID do aplicativo, veja [Objetos de aplicativo e de entidade de serviço no Azure Active Directory](../active-directory/develop/app-objects-and-service-principals.md).
 
-Para registrar seu aplicativo do lote, siga as etapas na [adicionando um aplicativo](../active-directory/develop/quickstart-register-app.md) seção [integrando aplicativos com o Azure Active Directory][aad_integrate]. Se você registrar o aplicativo como um Aplicativo Nativo, poderá especificar qualquer URI válido para o **URI de Redirecionamento**. Ele não precisa ser um ponto de extremidade real.
+Para registrar seu aplicativo do lote, siga as etapas na seção [adicionando um aplicativo](../active-directory/develop/quickstart-register-app.md) em [integrando aplicativos com o Azure Active Directory][aad_integrate]. Se você registrar o aplicativo como um Aplicativo Nativo, poderá especificar qualquer URI válido para o **URI de Redirecionamento**. Ele não precisa ser um ponto de extremidade real.
 
 Depois de registrar o aplicativo, você verá a ID do aplicativo:
 
@@ -167,7 +167,7 @@ Os exemplos de código desta seção mostram como realizar a autenticação com 
 > Um token de autenticação do AD do Azure expirará após uma hora. Ao usar uma vida útil longa **BatchClient** de objeto, é recomendável que você recuperar um token da ADAL em cada solicitação para garantir que você sempre tenha um token válido. 
 >
 >
-> Para fazer isso no .NET, escrever um método que recupera o token do AD do Azure e passar esse método para um **BatchTokenCredentials** objeto como um delegado. O método de representante é chamado em cada solicitação para o serviço de lote para garantir que um token válido seja fornecido. Por padrão ADAL armazena em cache os tokens, para que um novo token é recuperado do AD do Azure somente quando necessário. Para obter mais informações sobre os tokens do AD do Azure, consulte [cenários de autenticação do Azure AD][aad_auth_scenarios].
+> Para fazer isso no .NET, escrever um método que recupera o token do AD do Azure e passar esse método para um **BatchTokenCredentials** objeto como um delegado. O método de representante é chamado em cada solicitação para o serviço de lote para garantir que um token válido seja fornecido. Por padrão ADAL armazena em cache os tokens, para que um novo token é recuperado do AD do Azure somente quando necessário. Para obter mais informações sobre tokens no Azure AD, consulte [cenários de autenticação do Azure ad][aad_auth_scenarios].
 >
 >
 

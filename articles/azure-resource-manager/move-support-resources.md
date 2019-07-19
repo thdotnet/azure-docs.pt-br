@@ -6,15 +6,15 @@ ms.service: azure-resource-manager
 ms.topic: reference
 ms.date: 7/9/2019
 ms.author: tomfitz
-ms.openlocfilehash: 093c20407cb6210125106189f36566f539de0dcc
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 22493ad7998e9014c88c79e6ac5eee3bf1216119
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67721107"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68226809"
 ---
 # <a name="move-operation-support-for-resources"></a>Mover o suporte de operação para recursos
-Este artigo lista se um tipo de recurso do Azure é compatível com a operação de movimentação. Ele também fornece informações sobre condições especiais a considerar ao mover um recurso.
+Este artigo lista se um tipo de recurso do Azure é compatível com a operação de movimentação. Ele também fornece informações sobre condições especiais a serem consideradas ao mover um recurso.
 
 Ir para um namespace do provedor de recursos:
 > [!div class="op_single_selector"]
@@ -29,7 +29,7 @@ Ir para um namespace do provedor de recursos:
 > - [Microsoft.Automation](#microsoftautomation)
 > - [Microsoft.AzureActiveDirectory](#microsoftazureactivedirectory)
 > - [Microsoft.AzureStack](#microsoftazurestack)
-> - [Microsoft.Backup](#microsoftbackup)
+> - [Microsoft. backup](#microsoftbackup)
 > - [Microsoft.Batch](#microsoftbatch)
 > - [Microsoft.BatchAI](#microsoftbatchai)
 > - [Microsoft.BingMaps](#microsoftbingmaps)
@@ -187,7 +187,7 @@ Ir para um namespace do provedor de recursos:
 | gateways | Não | Não |
 
 > [!IMPORTANT]
-> Ver [diretrizes de mover o serviço de aplicativo](./move-limitations/app-service-move-limitations.md).
+> Consulte [diretrizes de movimentação do serviço de aplicativo](./move-limitations/app-service-move-limitations.md).
 
 ## <a name="microsoftauthorization"></a>Microsoft.Authorization
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -202,7 +202,7 @@ Ir para um namespace do provedor de recursos:
 | automationaccounts/runbooks | Sim | Sim |
 
 > [!IMPORTANT]
-> Runbooks deve existir no mesmo grupo de recursos como a conta de automação.
+> Os Runbooks devem existir no mesmo grupo de recursos que a conta de automação.
 
 ## <a name="microsoftazureactivedirectory"></a>Microsoft.AzureActiveDirectory
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -263,12 +263,12 @@ Ir para um namespace do provedor de recursos:
 | redis | Sim | Sim |
 
 > [!IMPORTANT]
-> Se o Cache do Azure para instância do Redis estiver configurado com uma rede virtual, a instância não pode ser movida para uma assinatura diferente. Ver [redes virtuais mover limitações](./move-limitations/virtual-network-move-limitations.md).
+> Se o cache do Azure para instância Redis estiver configurado com uma rede virtual, a instância não poderá ser movida para uma assinatura diferente. Consulte [limitações de movimentação de redes virtuais](./move-limitations/virtual-network-move-limitations.md).
 
 ## <a name="microsoftcdn"></a>Microsoft.Cdn
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| perfis | Sim | Sim |
+| profiles | Sim | Sim |
 | profiles/endpoints | Sim | Sim |
 
 ## <a name="microsoftcertificateregistration"></a>Microsoft.CertificateRegistration
@@ -277,7 +277,7 @@ Ir para um namespace do provedor de recursos:
 | certificateorders | Sim | Sim |
 
 > [!IMPORTANT]
-> Ver [diretrizes de mover o serviço de aplicativo](./move-limitations/app-service-move-limitations.md).
+> Consulte [diretrizes de movimentação do serviço de aplicativo](./move-limitations/app-service-move-limitations.md).
 
 ## <a name="microsoftclassiccompute"></a>Microsoft.ClassicCompute
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -286,7 +286,7 @@ Ir para um namespace do provedor de recursos:
 | virtualmachines | Sim | Não |
 
 > [!IMPORTANT]
-> Ver [da implantação clássica mover diretrizes](./move-limitations/classic-model-move-limitations.md). Recursos de implantação clássico podem ser movidos entre assinaturas com uma operação específica para esse cenário.
+> Consulte [diretrizes de movimentação da implantação clássica](./move-limitations/classic-model-move-limitations.md). Os recursos de implantação clássicos podem ser movidos entre assinaturas com uma operação específica para esse cenário.
 
 ## <a name="microsoftclassicnetwork"></a>Microsoft.ClassicNetwork
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -296,7 +296,7 @@ Ir para um namespace do provedor de recursos:
 | virtualnetworks | Não | Não |
 
 > [!IMPORTANT]
-> Ver [da implantação clássica mover diretrizes](./move-limitations/classic-model-move-limitations.md). Recursos de implantação clássico podem ser movidos entre assinaturas com uma operação específica para esse cenário.
+> Consulte [diretrizes de movimentação da implantação clássica](./move-limitations/classic-model-move-limitations.md). Os recursos de implantação clássicos podem ser movidos entre assinaturas com uma operação específica para esse cenário.
 
 ## <a name="microsoftclassicstorage"></a>Microsoft.ClassicStorage
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -304,7 +304,7 @@ Ir para um namespace do provedor de recursos:
 | storageaccounts | Sim | Não |
 
 > [!IMPORTANT]
-> Ver [da implantação clássica mover diretrizes](./move-limitations/classic-model-move-limitations.md). Recursos de implantação clássico podem ser movidos entre assinaturas com uma operação específica para esse cenário.
+> Consulte [diretrizes de movimentação da implantação clássica](./move-limitations/classic-model-move-limitations.md). Os recursos de implantação clássicos podem ser movidos entre assinaturas com uma operação específica para esse cenário.
 
 ## <a name="microsoftcognitiveservices"></a>Microsoft.CognitiveServices
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -319,8 +319,8 @@ Ir para um namespace do provedor de recursos:
 | galleries | Não | Não |
 | galleries/images | Não | Não |
 | galleries/images/versions | Não | Não |
-| hostgroups | Não | Não |
-| hostgroups/hosts | Não | Não |
+| hosts | Não | Não |
+| hosts/hosts | Não | Não |
 | images | Sim | Sim |
 | proximityplacementgroups | Não | Não |
 | restorepointcollections | Não | Não |
@@ -332,7 +332,7 @@ Ir para um namespace do provedor de recursos:
 | virtualmachinescalesets | Sim | Sim |
 
 > [!IMPORTANT]
-> Ver [diretrizes de mover máquinas virtuais](./move-limitations/virtual-machines-move-limitations.md).
+> Consulte as [diretrizes de movimentação de máquinas virtuais](./move-limitations/virtual-machines-move-limitations.md).
 
 ## <a name="microsoftcontainer"></a>Microsoft.Container
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -399,7 +399,7 @@ Ir para um namespace do provedor de recursos:
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
 | catalogs | Sim | Sim |
-| datacatalogs | Não | Não |
+| catálogos de | Não | Não |
 
 ## <a name="microsoftdataconnect"></a>Microsoft.DataConnect
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -558,7 +558,7 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsofthybridcompute"></a>Microsoft.HybridCompute
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| Máquinas | Não | Não |
+| maquina | Não | Não |
 
 ## <a name="microsofthybriddata"></a>Microsoft.HybridData
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -588,7 +588,7 @@ Ir para um namespace do provedor de recursos:
 | workbooks | Sim | Sim |
 
 > [!IMPORTANT]
-> Certifique-se de mover para nova assinatura não exceda [cotas de assinatura](../azure-subscription-service-limits.md#azure-monitor-limits).
+> Certifique-se de que a mudança para a nova assinatura não exceda as cotas de [assinatura](../azure-subscription-service-limits.md#azure-monitor-limits).
 
 ## <a name="microsoftiotcentral"></a>Microsoft.IoTCentral
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -608,7 +608,7 @@ Ir para um namespace do provedor de recursos:
 | vaults | Sim | Sim |
 
 > [!IMPORTANT]
-> Os cofres de chaves usado para criptografia de disco não pode ser movidos para um grupo de recursos na mesma assinatura ou entre assinaturas.
+> Os cofres de chaves usados para criptografia de disco não podem ser movidos para um grupo de recursos na mesma assinatura ou entre assinaturas.
 
 ## <a name="microsoftkusto"></a>Microsoft.Kusto
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -732,7 +732,7 @@ Ir para um namespace do provedor de recursos:
 | expressrouteports | Não | Não |
 | frontdoors | Não | Não |
 | frontdoorwebapplicationfirewallpolicies | Não | Não |
-| loadbalancers | Sim - SKU básico<br>Não - SKU Standard | Sim - SKU básico<br>Não - SKU Standard |
+| loadbalancers | Sim-SKU básico<br>Não-SKU padrão | Sim-SKU básico<br>Não-SKU padrão |
 | localnetworkgateways | Sim | Sim |
 | natgateways | Sim | Sim |
 | networkintentpolicies | Sim | Sim |
@@ -748,7 +748,7 @@ Ir para um namespace do provedor de recursos:
 | privatednszones/virtualnetworklinks | Sim | Sim |
 | privateendpoints | Não | Não |
 | privatelinkservices | Não | Não |
-| publicipaddresses | Sim - SKU básico<br>Não - SKU Standard | Sim - SKU básico<br>Não - SKU Standard |
+| publicipaddresses | Sim-SKU básico<br>Não-SKU padrão | Sim-SKU básico<br>Não-SKU padrão |
 | publicipprefixes | Sim | Sim |
 | routefilters | Não | Não |
 | routetables | Sim | Sim |
@@ -765,7 +765,7 @@ Ir para um namespace do provedor de recursos:
 | webapplicationfirewallpolicies | Sim | Sim |
 
 > [!IMPORTANT]
-> Ver [redes virtuais mover diretrizes](./move-limitations/virtual-network-move-limitations.md).
+> Consulte [diretrizes de movimentação de redes virtuais](./move-limitations/virtual-network-move-limitations.md).
 
 ## <a name="microsoftnotificationhubs"></a>Microsoft.NotificationHubs
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -779,7 +779,7 @@ Ir para um namespace do provedor de recursos:
 | workspaces | Sim | Sim |
 
 > [!IMPORTANT]
-> Certifique-se de mover para nova assinatura não exceda [cotas de assinatura](../azure-subscription-service-limits.md#azure-monitor-limits).
+> Certifique-se de que a mudança para a nova assinatura não exceda as cotas de [assinatura](../azure-subscription-service-limits.md#azure-monitor-limits).
 
 ## <a name="microsoftoperationsmanagement"></a>Microsoft.OperationsManagement
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -824,7 +824,7 @@ Ir para um namespace do provedor de recursos:
 | vaults | Sim | Sim |
 
 > [!IMPORTANT]
-> Ver [diretrizes de mover os serviços de recuperação](../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json).
+> Consulte [diretrizes de movimentação dos serviços de recuperação](../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json).
 
 ## <a name="microsoftrelay"></a>Microsoft.Relay
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -848,7 +848,7 @@ Ir para um namespace do provedor de recursos:
 | searchservices | Sim | Sim |
 
 > [!IMPORTANT]
-> É possível mover vários recursos de pesquisa em regiões diferentes em uma única operação. Em vez disso, mova-os em operações separadas.
+> Você não pode mover vários recursos de pesquisa em regiões diferentes em uma única operação. Em vez disso, mova-os em operações separadas.
 
 ## <a name="microsoftsecurity"></a>Microsoft.Security
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -899,7 +899,7 @@ Ir para um namespace do provedor de recursos:
 | siterecoveryvault | Não | Não |
 
 > [!IMPORTANT]
-> Ver [diretrizes de mover os serviços de recuperação](../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json).
+> Consulte [diretrizes de movimentação dos serviços de recuperação](../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json).
 
 ## <a name="microsoftsolutions"></a>Microsoft.Solutions
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -913,16 +913,16 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsoftsql"></a>Microsoft.Sql
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| instancepools | Sim | Sim |
-| managedinstances | Sim | Sim |
-| managedinstances/databases | Sim | Sim |
+| instancepools | Não | Não |
+| managedinstances | Não | Não |
+| managedinstances/databases | Não | Não |
 | servers | Sim | Sim |
 | servers/databases | Sim | Sim |
 | servidores/elasticpools | Sim | Sim |
 | virtualclusters | Sim | Sim |
 
 > [!IMPORTANT]
-> Um banco de dados e o servidor devem estar no mesmo grupo de recursos. Quando você move um SQL Server, todos os seus bancos de dados também são movidos. Este comportamento se aplica ao Banco de Dados SQL do Azure e ao banco de dados SQL Data Warehouse do Azure.
+> Um banco de dados e um servidor devem estar no mesmo grupo de recursos. Quando você move um SQL Server, todos os seus bancos de dados também são movidos. Este comportamento se aplica ao Banco de Dados SQL do Azure e ao banco de dados SQL Data Warehouse do Azure.
 
 ## <a name="microsoftsqlvirtualmachine"></a>Microsoft.SqlVirtualMachine
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -943,7 +943,7 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsoftstoragecache"></a>Microsoft.StorageCache
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| Caches | Não | Não |
+| caches | Não | Não |
 
 ## <a name="microsoftstoragesync"></a>Microsoft.StorageSync
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -971,7 +971,7 @@ Ir para um namespace do provedor de recursos:
 | streamingjobs | Sim | Sim |
 
 > [!IMPORTANT]
-> Análise de Stream trabalhos não podem ser movidos durante a execução no estado.
+> Stream Analytics trabalhos não podem ser movidos quando estiver em estado de execução.
 
 ## <a name="microsoftstreamanalyticsexplorer"></a>Microsoft.StreamAnalyticsExplorer
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -998,7 +998,7 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsofttoken"></a>Microsoft.Token
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| armazena | Não | Não |
+| mercado | Não | Não |
 
 ## <a name="microsoftvirtualmachineimages"></a>Microsoft.VirtualMachineImages
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -1013,7 +1013,7 @@ Ir para um namespace do provedor de recursos:
 | account/project | Sim | Sim |
 
 > [!IMPORTANT]
-> Para alterar a assinatura de DevOps do Azure, consulte [alterar a assinatura do Azure usada para cobrança](/azure/devops/organizations/billing/change-azure-subscription?toc=/azure/azure-resource-manager/toc.json).
+> Para alterar a assinatura do Azure DevOps, consulte [alterar a assinatura do Azure usada para cobrança](/azure/devops/organizations/billing/change-azure-subscription?toc=/azure/azure-resource-manager/toc.json).
 
 ## <a name="microsoftvmwarecloudsimple"></a>Microsoft.VMwareCloudSimple
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -1036,7 +1036,7 @@ Ir para um namespace do provedor de recursos:
 | sites/slots | Sim | Sim |
 
 > [!IMPORTANT]
-> Ver [diretrizes de mover o serviço de aplicativo](./move-limitations/app-service-move-limitations.md).
+> Consulte [diretrizes de movimentação do serviço de aplicativo](./move-limitations/app-service-move-limitations.md).
 
 ## <a name="microsoftwindowsiot"></a>Microsoft.WindowsIoT
 | Tipo de recurso | Grupo de recursos | Assinatura |

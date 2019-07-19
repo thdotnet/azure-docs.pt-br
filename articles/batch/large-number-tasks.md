@@ -4,7 +4,7 @@ description: Como enviar com eficácia um grande número de tarefas em um único
 services: batch
 documentationcenter: ''
 author: laurenhughes
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: batch
@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 08/24/2018
 ms.author: lahugh
 ms.custom: ''
-ms.openlocfilehash: 0aff792d7e005fb17ebec0715ca3ac7237fd7a71
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: f91d47e1f57fb74575fbdad0a76386b53fb38b1f
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341004"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68322514"
 ---
 # <a name="submit-a-large-number-of-tasks-to-a-batch-job"></a>Enviar muitas tarefas para um trabalho em lotes
 

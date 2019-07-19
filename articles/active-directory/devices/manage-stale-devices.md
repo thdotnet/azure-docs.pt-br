@@ -1,6 +1,6 @@
 ---
 title: Como gerenciar dispositivos obsoletos no Azure AD | Microsoft Docs
-description: Saiba como remover dispositivos obsoletos do seu banco de dados de dispositivos registrados no Azure Active Directory.
+description: Saiba como remover dispositivos obsoletos do banco de dados de dispositivos registrados no Azure Active Directory.
 services: active-directory
 ms.service: active-directory
 ms.subservice: devices
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b64fd7efb00dabd1e1758ec631e6992d68bff2ab
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 8e9c11613a9bdcaedad1a69662b2d6bd7bfefc3b
+ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67481647"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67867250"
 ---
 # <a name="how-to-manage-stale-devices-in-azure-ad"></a>Como: Gerenciar dispositivos obsoletos no Azure AD
 
@@ -43,7 +43,7 @@ Como um dispositivo obsoleto é definido como dispositivo registrado que não fo
 
 A avaliação do carimbo de data/hora da atividade é disparada por uma tentativa de autenticação de um dispositivo. O Azure AD avalia o carimbo de data/hora da atividade quando:
 
-- Uma necessidade de políticas de acesso condicional [dispositivos gerenciados](../conditional-access/require-managed-devices.md) ou [aplicativos cliente aprovados](../conditional-access/app-based-conditional-access.md) foi disparado.
+- Uma política de acesso condicional que requer [dispositivos gerenciados](../conditional-access/require-managed-devices.md) ou [aplicativos cliente aprovados](../conditional-access/app-based-conditional-access.md) foi disparada.
 - Os dispositivos Windows 10 ingressados no Azure AD ou ingressados no Azure AD híbridos estão ativos na rede. 
 - Os dispositivos gerenciados pelo Intune fizeram check-in no serviço.
 
@@ -129,7 +129,7 @@ Get-MsolDevice -all | select-object -Property Enabled, DeviceId, DisplayName, De
 mateLastLogonTimestamp | export-csv devicelist-summary.csv
 ```
 
-Se você tiver um grande número de dispositivos em seu diretório, use o filtro de carimbo de hora para reduzir o número de dispositivos retornados. Para obter todos os dispositivos com um carimbo de data/hora mais antigo do que a data específica e armazenar os dados retornados em um arquivo CSV: 
+Se você tiver um grande número de dispositivos em seu diretório, use o filtro de carimbo de data/hora para restringir o número de dispositivos retornados. Para obter todos os dispositivos com um carimbo de data/hora mais antigo do que a data específica e armazenar os dados retornados em um arquivo CSV: 
 
 ```PowerShell
 $dt = [datetime]’2017/01/01’
@@ -145,6 +145,13 @@ O carimbo de data/hora é atualizado para dar suporte a cenários de ciclo de vi
 ### <a name="why-should-i-worry-about-my-bitlocker-keys"></a>Por que eu deveria me preocupar com minhas chaves do BitLocker?
 
 Quando configuradas, as chaves do BitLocker para dispositivos Windows 10 são armazenadas no objeto do dispositivo no Azure AD. Se você excluir um dispositivo obsoleto, você também excluirá as chaves do BitLocker armazenadas no dispositivo. Você deve determinar se sua política de limpeza se alinha com o ciclo de vida real do seu dispositivo antes de excluir um dispositivo obsoleto. 
+
+### <a name="why-should-i-worry-about-windows-autopilot-devices"></a>Por que devo me preocupar com os dispositivos do Windows AutoPilot?
+
+Quando um dispositivo do Azure AD foi associado a um objeto do Windows AutoPilot, os três cenários a seguir podem ocorrer se o dispositivo for redefinido no futuro:
+- Com as implantações controladas pelo usuário do Windows AutoPilot sem usar o diferenciada branco, um novo dispositivo do Azure AD será criado, mas não será marcado com o ZTDID.
+- Com as implantações do modo de implantação automática do Windows AutoPilot, elas falharão porque não é possível encontrar um dispositivo associado do Azure AD.  (Esse é um mecanismo de segurança para garantir que nenhum dispositivo "impostor" tente ingressar no Azure AD sem credenciais.) A falha indicará uma incompatibilidade de ZTDID.
+- Com as implantações de diferenciada do Windows AutoPilot, elas falharão porque um dispositivo Azure AD associado não pode ser encontrado. (Nos bastidores, as implantações do diferenciada branco usam o mesmo processo de modo de implantação automática, para que eles imponham os mesmos mecanismos de segurança.)
 
 ### <a name="how-do-i-know-all-the-type-of-devices-joined"></a>Como fazer para conhecer todos os tipos de dispositivos ingressados?
 

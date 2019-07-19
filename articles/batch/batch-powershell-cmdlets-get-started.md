@@ -4,7 +4,7 @@ description: Uma rápida introdução aos cmdlets do Azure PowerShell que podem 
 services: batch
 documentationcenter: ''
 author: laurenhughes
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: batch
@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 01/15/2019
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: a98a98eea1b5c2824c1c54169c5c71456f3a2a64
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 21930d5240225540159fa425d9d9fa518a1b19d5
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67704781"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68323072"
 ---
 # <a name="manage-batch-resources-with-powershell-cmdlets"></a>Gerenciar recursos do Lote com cmdlets do PowerShell
 
@@ -125,7 +125,7 @@ Ao usar muitos desses cmdlets, além de passar um objeto BatchContext, você pre
 
 ### <a name="create-a-batch-pool"></a>Criar um pool do Lote
 
-Ao criar ou atualizar um pool de Lote, selecione a configuração de serviços de nuvem ou a configuração de máquina virtual para o sistema operacional em nós de computação (confira [Visão geral do recurso de Lote](batch-api-basics.md#pool)). Se você especificar a configuração dos serviços de nuvem, os nós de computação serão representados com uma das [versões do sistema operacional convidado do Azure](../cloud-services/cloud-services-guestos-update-matrix.md#releases). Se você especificar a configuração de máquina virtual, você poderá especificar uma do Linux com suporte ou imagens de VM do Windows listadas na [Marketplace de máquinas virtuais do Azure][vm_marketplace], ou fornecer uma imagem personalizada que você preparou.
+Ao criar ou atualizar um pool de Lote, selecione a configuração de serviços de nuvem ou a configuração de máquina virtual para o sistema operacional em nós de computação (confira [Visão geral do recurso de Lote](batch-api-basics.md#pool)). Se você especificar a configuração dos serviços de nuvem, os nós de computação serão representados com uma das [versões do sistema operacional convidado do Azure](../cloud-services/cloud-services-guestos-update-matrix.md#releases). Se você especificar a configuração de máquina virtual, poderá especificar uma das imagens de VM Linux ou Windows com suporte listadas no [Marketplace de máquinas virtuais do Azure][vm_marketplace]ou fornecer uma imagem personalizada que você preparou.
 
 Ao executar **New-AzBatchPool**, passe as configurações do sistema operacional em um objeto PSCloudServiceConfiguration ou PSVirtualMachineConfiguration. Por exemplo, o snippet a seguir cria um pool do Lote na com nós de computação do tamanho Standard_A1 na configuração da máquina virtual, com imagem gerada com o servidor do Ubuntu 18.04-LTS. Aqui, o parâmetro **VirtualMachineConfiguration** especifica a variável *$configuration* do objeto PSVirtualMachineConfiguration. O parâmetro **BatchContext** especifica uma variável definida anteriormente *$context* como o objeto BatchAccountContext.
 

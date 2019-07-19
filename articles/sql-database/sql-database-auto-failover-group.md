@@ -11,13 +11,13 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
-ms.date: 07/15/2019
-ms.openlocfilehash: 229814b908861080ff56d6f4bcba25cc996f00ff
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
-ms.translationtype: HT
+ms.date: 07/18/2019
+ms.openlocfilehash: 174147aca75452dfaee02d20df5377fa1f6070c1
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68228062"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68325089"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Use grupos de failover automático para habilitar o failover transparente e coordenado de vários bancos de dados
 
@@ -278,6 +278,9 @@ Essa sequência é recomendada especificamente para evitar o problema em que o s
 
 > [!NOTE]
 > Se você tiver criado um banco de dados secundário como parte da configuração do grupo de failover não é recomendável fazer o downgrade do banco de dados secundário. Isso é para garantir que sua camada de dados tenha capacidade suficiente para processar sua carga de trabalho normal após o failover ser ativado.
+
+> [!IMPORTANT]
+> Atualmente, não há suporte para atualizar ou fazer downgrade de um Instância Gerenciada que é um membro de um grupo de failover.
 
 ## <a name="preventing-the-loss-of-critical-data"></a>Evitando a perda de dados críticos
 

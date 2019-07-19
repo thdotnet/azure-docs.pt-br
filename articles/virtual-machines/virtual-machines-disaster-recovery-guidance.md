@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/31/2017
-ms.author: kmouss;aglick
+ms.author: gwallace
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f071e1ae97228a16799d391e226ba44b99f6096e
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: bc9ca5f5a638f0b36a28d58172fe8052b3d1522f
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67721175"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67875442"
 ---
 # <a name="what-to-do-in-the-event-that-an-azure-service-disruption-impacts-azure-vms"></a>O que fazer caso uma interrupção de serviço do Azure afete as VMs do Azure
 Na Microsoft, trabalhamos muito para garantir que nossos serviços estejam sempre disponíveis quando você precisar deles. Às vezes, forças além do nosso controle nos afetam de formas que causam interrupções de serviço não planejadas.
@@ -33,7 +33,7 @@ Este artigo aborda um cenário real de recuperação de desastre, quando uma reg
 
 Para ajudar você a lidar com essas ocorrências raras, fornecemos as seguintes diretrizes para a máquina virtual do Azure no caso de uma interrupção de serviço de toda a região em que seu aplicativo da máquina virtual do Azure é implantado.
 
-## <a name="option-1-initiate-a-failover-by-using-azure-site-recovery"></a>Opção 1: Iniciar um failover usando o Azure Site Recovery
+## <a name="option-1-initiate-a-failover-by-using-azure-site-recovery"></a>Opção 1: Iniciar um failover usando Azure Site Recovery
 É possível configurar o Azure Site Recovery para suas VMs, de modo que você possa recuperar o aplicativo com um único clique em questão de minutos. É possível replicar para a região do Azure de sua escolha e não restrito para regiões emparelhadas. Você pode começar [replicando suas máquinas virtuais](https://aka.ms/a2a-getting-started). É possível [criar um plano de recuperação](../site-recovery/site-recovery-create-recovery-plans.md) para que você possa automatizar todo o processo de failover para sua aplicação. Você pode testar [seus failovers](../site-recovery/site-recovery-test-failover-to-azure.md) previamente sem afetar o aplicativo de produção ou a replicação em andamento. No caso de uma interrupção da região primária, você apenas [inicia um failover](../site-recovery/site-recovery-failover.md) e traz seu aplicativo na região alvo.
 
 
