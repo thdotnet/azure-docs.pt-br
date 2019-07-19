@@ -1,5 +1,5 @@
 ---
-title: Authentication
+title: Autenticação
 titleSuffix: Azure Cognitive Services
 description: 'Há três maneiras de autenticar uma solicitação para um recurso dos Serviços Cognitivos do Azure: uma chave de assinatura, um token de portador ou uma assinatura de vários serviços. Neste artigo, você saberá mais sobre cada método e como fazer uma solicitação.'
 services: cognitive-services
@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: erhopf
-ms.openlocfilehash: 6de5711ca977612f01943f6aaf2c9d7061116090
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 0499b2ef25cc93615a72269bd64af689ebced01d
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67435925"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68333591"
 ---
 # <a name="authenticate-requests-to-azure-cognitive-services"></a>Autenticar solicitações para os Serviços Cognitivos do Azure
 
@@ -28,7 +28,7 @@ Cada solicitação para um Serviço Cognitivo do Azure deve incluir um cabeçalh
 
 Antes de fazer uma solicitação, você precisará de uma conta do Azure e uma assinatura dos Serviços Cognitivos do Azure. Se você já tiver uma conta, pule para a próxima seção. Se você não tiver uma conta, temos um guia para ajudá-lo a configurá-la em minutos: [Criar uma conta dos Serviços Cognitivos para o Azure](cognitive-services-apis-create-account.md).
 
-Você pode obter sua chave de assinatura do [portal do Azure](cognitive-services-apis-create-account.md#get-the-keys-for-your-subscription) depois de criar sua conta, ou ativar um [avaliação gratuita](https://azure.microsoft.com/try/cognitive-services/my-apis).
+Você pode obter sua chave de assinatura do [portal do Azure](cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) depois de criar sua conta ou ativar uma [avaliação gratuita](https://azure.microsoft.com/try/cognitive-services/my-apis).
 
 ## <a name="authentication-headers"></a>Cabeçalhos de autenticação
 
@@ -38,7 +38,7 @@ Vamos analisar rapidamente os cabeçalhos de autenticação disponíveis para us
 |--------|-------------|
 | Ocp-Apim-Subscription-Key | Use esse cabeçalho para autenticar com uma chave de assinatura para um serviço específico ou uma chave de assinatura para vários serviços. |
 | Ocp-Apim-Subscription-Region | Esse cabeçalho só é necessário ao usar uma chave de assinatura para vários serviços com a [API de Tradução de Texto](./Translator/reference/v3-0-reference.md). Use esse cabeçalho para especificar a região da assinatura. |
-| Authorization | Use esse cabeçalho se você está usando um token de autenticação. As etapas para executar uma troca de tokens estão detalhadas nas seções a seguir. O valor fornecido segue este formato: `Bearer <TOKEN>`. |
+| Autorização | Use esse cabeçalho se você está usando um token de autenticação. As etapas para executar uma troca de tokens estão detalhadas nas seções a seguir. O valor fornecido segue este formato: `Bearer <TOKEN>`. |
 
 ## <a name="authenticate-with-a-single-service-subscription-key"></a>Autenticar com uma chave de assinatura para um único serviço
 

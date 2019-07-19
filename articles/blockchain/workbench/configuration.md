@@ -209,7 +209,7 @@ Define as funções que podem ser executadas no fluxo de trabalho.
 
 | Campo | Description | Obrigatório | Comprimento máximo |
 |-------|-------------|:--------:|-----------:|
-| NOME | O nome exclusivo da função. O contrato inteligente correspondente deve usar o mesmo **Nome** para a função aplicável. | Sim | 50 |
+| Name | O nome exclusivo da função. O contrato inteligente correspondente deve usar o mesmo **Nome** para a função aplicável. | Sim | 50 |
 | DisplayName | Nome de exibição amigável da função. | Sim | 255 |
 | Description | Descrição da função | Não | 255 |
 | parâmetros | Coleção de [identificadores](#identifiers) correspondente aos parâmetros da função. | Sim | |
@@ -257,7 +257,7 @@ Uma coleção de estados exclusivos dentro de um fluxo de trabalho. Cada estado 
 
 | Campo | Description | Obrigatório | Comprimento máximo |
 |-------|-------------|:--------:|-----------:|
-| NOME | Nome único do estado. O contrato inteligente correspondente deve usar o mesmo **Nome** para o estado aplicável. | Sim | 50 |
+| Name | Nome único do estado. O contrato inteligente correspondente deve usar o mesmo **Nome** para o estado aplicável. | Sim | 50 |
 | DisplayName | Nome de exibição amigável do estado. | Sim | 255 |
 | Description | Descrição do estado. | Não | 255 |
 | PercentComplete | Um valor inteiro exibido na interface do usuário Blockchain Workbench para mostrar o progresso dentro do fluxo de controle de lógica de negócios. | Sim | |
@@ -371,7 +371,7 @@ Funções de aplicativo definem um conjunto de funções que podem ser atribuíd
 
 | Campo | Description | Obrigatório | Comprimento máximo |
 |-------|-------------|:--------:|-----------:|
-| NOME | O nome exclusivo da função do aplicativo. O contrato inteligente correspondente deve usar o mesmo **Nome** para a função aplicável. Nomes de tipo de base são reservados. Você não pode nomear uma função de aplicativo com o mesmo nome como [Tipo](#type)| Sim | 50 |
+| Name | O nome exclusivo da função do aplicativo. O contrato inteligente correspondente deve usar o mesmo **Nome** para a função aplicável. Nomes de tipo de base são reservados. Você não pode nomear uma função de aplicativo com o mesmo nome como [Tipo](#type)| Sim | 50 |
 | Description | Descrição da função do aplicativo. | Não | 255 |
 
 ### <a name="application-roles-example"></a>Exemplo de funções de aplicativo
@@ -394,7 +394,7 @@ Identificadores representam uma coleção de informações usadas para descrever
 
 | Campo | Description | Obrigatório | Comprimento máximo |
 |-------|-------------|:--------:|-----------:|
-| NOME | O nome exclusivo da propriedade ou parâmetro. O contrato inteligente correspondente deve usar o mesmo **Nome** para a propriedade ou parâmetro aplicável. | Sim | 50 |
+| Name | O nome exclusivo da propriedade ou parâmetro. O contrato inteligente correspondente deve usar o mesmo **Nome** para a propriedade ou parâmetro aplicável. | Sim | 50 |
 | DisplayName | Nome para exibição amigável para a propriedade ou parâmetro. | Sim | 255 |
 | Description | Descrição da propriedade ou do parâmetro. | Não | 255 |
 
