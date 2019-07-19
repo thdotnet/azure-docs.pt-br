@@ -6,13 +6,13 @@ manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 06/18/2019
-ms.author: rajani-janaki-ram
-ms.openlocfilehash: 400ffaa9e6fed14ceabf34283cd5fa7c7a0336b8
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.author: rajanaki
+ms.openlocfilehash: a411fc9a95bef595a8fc49cad77189bb88fb7661
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67203409"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67875792"
 ---
 # <a name="remove-servers-and-disable-protection"></a>Remover os servidores e desabilitar a proteção
 
@@ -152,12 +152,12 @@ Os hosts Hyper-V que não são gerenciados pelo VMM são reunidos em um site do 
 > Nas duas opções, o serviço de mobilidade não será desinstalado dos servidores protegidos, é necessário desinstalá-lo manualmente. Se você planeja proteger o servidor novamente usando o mesmo Servidor de configuração, ignore a desinstalação do serviço de mobilidade.
 
 > [!NOTE]
-> Se você já realizou failover de uma VM e ela está em execução no Azure, observe que desabilitar a proteção não remover / afetam a falha pela VM.
+> Se você já tiver feito failover de uma VM e ela estiver em execução no Azure, observe que a desabilitação da proteção não remove/afeta a VM com failover.
 ## <a name="disable-protection-for-a-azure-vm-azure-to-azure"></a>Desabilitar a proteção para uma VM do Azure (Azure para Azure)
 
 -  Em **Itens Protegidos** > **Itens Replicados**, clique com o botão direito na máquina > **Desabilitar replicação**.
 > [!NOTE]
-> o serviço de mobilidade não será desinstalado dos servidores protegidos, você precisará desinstalá-lo manualmente. Se você planeja proteger o servidor novamente, você poderá ignorar a desinstalar o serviço de mobilidade.
+> o serviço de mobilidade não será desinstalado dos servidores protegidos, você precisará desinstalá-lo manualmente. Se você planeja proteger o servidor novamente, poderá ignorar a desinstalação do serviço de mobilidade.
 
 ## <a name="disable-protection-for-a-hyper-v-virtual-machine-hyper-v-to-azure"></a>Desabilite a proteção para uma máquina virtual do Hyper-V (Hyper-V para Azure)
 
@@ -173,7 +173,7 @@ Os hosts Hyper-V que não são gerenciados pelo VMM são reunidos em um site do 
      > Se você escolheu a opção **Remover**, execute o seguinte conjunto de scripts para limpar as configurações de replicação do servidor do Hyper-V local.
 
 > [!NOTE]
-> Se você já realizou failover de uma VM e ela está em execução no Azure, observe que desabilitar a proteção não remover / afetam a falha pela VM.
+> Se você já tiver feito failover de uma VM e ela estiver em execução no Azure, observe que a desabilitação da proteção não remove/afeta a VM com failover.
 
 1. No servidor de host do Hyper-V de origem, para remover a replicação para a máquina virtual. Substituir SQLVM1 pelo nome de sua máquina virtual e executar o script de um PowerShell administrativo
 

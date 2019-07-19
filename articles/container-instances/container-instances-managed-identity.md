@@ -3,17 +3,18 @@ title: Usar uma identidade gerenciada com Instâncias de Contêiner do Azure
 description: Saiba como usar uma identidade gerenciada para autenticar com outros serviços do Azure em Instâncias de Contêiner do Azure.
 services: container-instances
 author: dlepow
+manager: gwallace
 ms.service: container-instances
 ms.topic: article
 ms.date: 10/22/2018
 ms.author: danlep
 ms.custom: ''
-ms.openlocfilehash: c14c3aaf2a5d648572fdc251540264e8057a00f9
-ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
+ms.openlocfilehash: 773650e5e5e85d4a5fca0b3755f3730921cc5f2e
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67144314"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68325935"
 ---
 # <a name="how-to-use-managed-identities-with-azure-container-instances"></a>Como usar identidades gerenciadas com Instâncias de Contêiner do Azure
 
@@ -252,7 +253,7 @@ token=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=
 
 ```
 
-Agora, use o token de acesso para autenticar no Key Vault e ler um segredo. Certifique-se de substituir o nome do seu Cofre de chaves na URL (*https:\//mykeyvault.vault.azure.net/...* ):
+Agora, use o token de acesso para autenticar no Key Vault e ler um segredo. Certifique-se de substituir o nome do cofre de chaves na URL (*https:\//mykeyvault.Vault.Azure.net/...* ):
 
 ```bash
 curl https://mykeyvault.vault.azure.net/secrets/SampleSecret/?api-version=2016-10-01 -H "Authorization: Bearer $token"

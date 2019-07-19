@@ -1,5 +1,5 @@
 ---
-title: Determinar sua publicação opção no Azure Marketplace | O Azure Marketplace
+title: Determinar sua opção de publicação no Azure Marketplace | Azure Marketplace
 description: Este artigo descreve os critérios de qualificação e os parceiros de requisitos de publicação tentando entender como publicar aplicativos no Azure Marketplace.
 services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
 author: qianw211
@@ -7,13 +7,13 @@ manager: pabutler
 ms.service: marketplace
 ms.topic: article
 ms.date: 11/13/2018
-ms.author: qianw211
-ms.openlocfilehash: 7a6a4c1366f23336072e00d1af59bbaa4bd5c7a4
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.author: pabutler
+ms.openlocfilehash: 4864e2c040ad6771ad187269de43d5978fc6324f
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67442061"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67876049"
 ---
 # <a name="publishing-guide-by-offer-type"></a>Guia de publicação por tipo de oferta
 
@@ -23,7 +23,7 @@ Após [decidir sobre uma opção de publicação](https://docs.microsoft.com/azu
 
 Antes de criar uma oferta, você deve escolher um tipo de oferta. O tipo de oferta corresponderá ao tipo de solução, aplicativo, ou oferta de serviço que você deseja publicar, bem como seu alinhamento com produtos e serviços Microsoft. 
 
-Um tipo de oferta única pode ser configurado diferentemente para habilitar as opções de publicação diferentes, chamadas de ação, preços ou provisionamento. A opção de publicação e a configuração do tipo de oferta também são alinhados aos requisitos técnicos e de qualificação da oferta. 
+Um único tipo de oferta pode ser configurado de forma diferente para habilitar diferentes opções de publicação, chamadas para ação, provisionamento ou preços. A opção de publicação e a configuração do tipo de oferta também são alinhados aos requisitos técnicos e de qualificação da oferta. 
 
 Verifique se você examinou os requisitos de qualificação de tipo de oferta e de vitrine e os requisitos técnicos de publicação antes de criar sua oferta.
 
@@ -39,7 +39,7 @@ Os tipos de oferta de Marketplace do Azure estão listados na tabela a seguir.
 | [**Aplicativos SaaS**](https://docs.microsoft.com/azure/marketplace/marketplace-saas-applications-technical-publishing-guide) | Use o tipo de oferta de aplicativo SaaS para permitir que o cliente compre a solução técnica baseada em SaaS como uma assinatura. |
 | [**Ofertas de contêiner**](https://docs.microsoft.com/azure/marketplace/marketplace-containers) | Use o tipo de oferta de Contêiner quando a solução é uma imagem de contêiner do Docker provisionada como um serviço de contêiner do Azure baseado em Kubernetes. |
 | [**Módulos do IoT Microsoft Edge**](https://docs.microsoft.com/azure/marketplace/iot-edge-module) | Os módulos do Azure IoT Edge são as menores unidades de computação gerenciadas pelo IoT Edge e podem conter serviços da Microsoft (como o Azure Stream Analytics), serviços de terceiros ou o código específico da sua própria solução. |
-| [**Serviços de consultoria**](https://docs.microsoft.com/azure/marketplace/consulting-services) | Serviços de consultoria ajudam a conectar clientes com serviços para dar suporte e estender o uso dos serviços do Azure, Dynamics 365 ou conjunto de energia.|
+| [**Serviços de consultoria**](https://docs.microsoft.com/azure/marketplace/consulting-services) | Os serviços de consultoria ajudam a conectar clientes com serviços para dar suporte e estender o uso dos serviços Azure, Dynamics 365 ou Power Suite.|
 
 
 Por fim, veja [**Requisitos do Azure AD**](https://docs.microsoft.com/azure/marketplace/enable-appsource-marketplace-using-azure-ad) por opções de listagem e tipos de oferta para obter mais informações sobre os requisitos de logon únicos.
