@@ -1,5 +1,5 @@
 ---
-title: Validação de conteúdo de critérios de Marketplace | O Azure Marketplace
+title: Validação de conteúdo de critérios do Marketplace | Azure Marketplace
 description: Este artigo descreve como tornar-se um editor no Marketplace.
 services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
 author: yijenj
@@ -7,13 +7,13 @@ manager: nunoc
 ms.service: marketplace
 ms.topic: article
 ms.date: 10/05/2018
-ms.author: yijenj
-ms.openlocfilehash: 97fb4dc37f3c9f776e4abf433f916ceaf177a70b
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.author: pabutler
+ms.openlocfilehash: 0aa7cec4dcdb480555cd0ecb7dee8d00a5a9ec2c
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67202675"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67870837"
 ---
 # <a name="azure-marketplace-listing-guidelines"></a>Diretrizes de listagem do Azure Marketplace
 
@@ -32,7 +32,7 @@ Todas as ofertas precisam cumprir [Todos os requisitos de listagem](https://docs
 | 4 |  Descrição da oferta | <br>• 2 a 3 parágrafos <br>• A oferta de solução pode ser entendida de modo fácil e rápido <br>• A descrição da oferta não contém erros de ortografia e gramática <br>• A descrição da oferta é abrangente e captura: público-alvo, tipo de usuário, por que ela é valiosa (proposta de valor) <br>• A descrição da oferta está em formato narrativo de parágrafo, com frases curtas e fáceis de entender | <br>• O setor-alvo é indicado (se relevante) <br>• Boa formatação de estilo, com cada cabeçalho de parágrafo tendo uma sentença ou frase que resume o conteúdo e que segue, e inclui, marcadores (conforme o caso) para enfatizar os principais benefícios. O objetivo é que o leitor entenda a oferta de forma rápida, em um formato de fácil exibição, sem precisar ler parágrafos. <br>• Há espaçamento entre cada parágrafo e leituras, como um folheto de carro. Ou seja, não há recursos técnicos ou jargão, mas um descritivo da oferta em termos simples e que seja abrangente. | 
 | 5 | Categorias e setores | <br>• As categorias correspondem aos recursos da oferta de solução <br>• Não incluem categorias com as quais a solução não combina <br>• Setor ideal ou todos os setores selecionados (se não forem os setores ideais) | <br>• Máx. 3 categorias <br>• Máx. 3 setores |
 | 6 | Imagens | <br>• Nenhuma imagem é necessária, mas, caso fornecida, deve ser uma imagem de alta resolução. <br>• Os requisitos de imagem estão listados no CPP e também aqui <br>• O texto incluso na captura de tela é legível, com imagem clara | A oferta de solução pode ser entendida de modo fácil e rápido |
-| 7 | vídeos | <br>• Nenhum vídeo é necessário, mas, caso fornecido, precisa ser reproduzido sem erros. <br>• Caso fornecido, não pode se referir a empresas concorrentes, EXCETO na demonstração de uma solução de migração |<br>• O ideal é 3 minutos ou mais <br>• Oferta de solução fácil de entender por meio do conteúdo do vídeo <br>• Demonstração dos recursos da solução |
+| 7 | Vídeos | <br>• Nenhum vídeo é necessário, mas, caso fornecido, precisa ser reproduzido sem erros. <br>• Caso fornecido, não pode se referir a empresas concorrentes, EXCETO na demonstração de uma solução de migração |<br>• O ideal é 3 minutos ou mais <br>• Oferta de solução fácil de entender por meio do conteúdo do vídeo <br>• Demonstração dos recursos da solução |
 | 8 | Listar status (call-to-action) | <br>Deve ter um rótulo de um dos tipos a seguir: <ul>o Entre em contato comigo</ul><ul>o Avaliação gratuita/Obter avaliação gratuita agora/Iniciar avaliação gratuita/Test Drive</ul><ul>o Comprar agora/Obter agora</ul> | O cliente pode entender facilmente quais são as próximas etapas disponíveis: <ul>1. Experimentar a avaliação gratuita</ul> <ul>2. Comprar agora</ul><ul>3. Entre em contato por email ou número de telefone para providenciar a Prova de Conceito, Avaliação ou Resumo.</ul> | 
 | 9 | Preço da solução | É necessário ter uma guia de preço da solução/detalhes, na moeda local da oferta de solução do parceiro | Várias opções de cobrança disponíveis, com faixa de preço, para o cliente ter opções |    
 | 10 | Saiba mais | Os links na parte inferior (na descrição, não os links do Marketplace à esquerda) conduzem a mais informações sobre a solução, estão disponíveis ao público e são exibidos corretamente |   Links para itens específicos (por exemplo, páginas de especificações no site de parceiros) e não apenas site da página inicial do parceiro | 

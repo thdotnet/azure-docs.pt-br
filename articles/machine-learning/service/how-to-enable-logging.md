@@ -9,13 +9,13 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.reviewer: trbye
-ms.date: 02/20/2019
-ms.openlocfilehash: 0d75b983ad6d3b6256852335dc523b481bbe046f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 07/12/2019
+ms.openlocfilehash: f93fdcbea103259e493399ae479cf001c1ff68db
+ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60819265"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67868822"
 ---
 # <a name="enable-logging-in-azure-machine-learning-service"></a>Habilitar o registro em log no Serviço do Azure Machine Learning
 
@@ -27,7 +27,7 @@ O SDK do Python do Azure Machine Learning permite que você habilite o registro 
 > * Modelos implantados
 > * Configurações do Python `logging`
 
-[Criar um workspace do Serviço do Azure Machine Learning](setup-create-workspace.md). Use o [guia](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) para obter mais informações o SDK.
+[Criar um workspace do Serviço do Azure Machine Learning](setup-create-workspace.md). Use o [guia](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py) para obter mais informações sobre o SDK.
 
 ## <a name="training-models-and-compute-target-logging"></a>Modelos de treinamento e registro em log de destino de computação
 
@@ -41,7 +41,7 @@ run = exp.start_logging()
 run.log("test-val", 10)
 ```
 
-Consulte a documentação de referência para o [executar](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py) classe para funções adicionais de log.
+Consulte a documentação de referência para a classe [Run](https://docs.microsoft.com/python/api/azureml-core/azureml.core.run(class)?view=azure-ml-py) para funções de log adicionais.
 
 Para habilitar o registro em log local do estado do aplicativo durante o andamento do treinamento, use o parâmetro `show_output`. Ao habilitar o registro em log detalhado, será possível visualizar os detalhes do processo de treinamento e as informações sobre quaisquer recursos remotos ou destinos de computação. Use o código a seguir para habilitar registro em log no envio do experimento.
 
@@ -90,9 +90,10 @@ Habilitar o registro em log durante a criação da imagem permitirá que você v
 from azureml.core.webservice import Webservice
 
 service = Webservice.deploy_from_image(deployment_config=your_config,
-                                            image=image,
-                                            name="example-image",
-                                            workspace=ws)
+                                       image=image,
+                                       name="example-image",
+                                       workspace=ws
+                                       )
 
 service.wait_for_deployment(show_output=True)
 ```

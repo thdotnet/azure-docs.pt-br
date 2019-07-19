@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: reference
 ms.date: 07/11/2019
 ms.author: tomfitz
-ms.openlocfilehash: 0b65c7a9b6d4f025c574c2dddace6fa45b77398c
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 7d967f0bb0b7a811d4db7836cdbffdad91088a2c
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835784"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68311694"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Funções de recursos para modelos do Azure Resource Manager
 
@@ -50,7 +50,7 @@ Os possíveis usos de lista* são mostrados na tabela a seguir.
 | Tipo de recurso | Nome da função |
 | ------------- | ------------- |
 | Microsoft.AnalysisServices/servers | [listGatewayStatus](/rest/api/analysisservices/servers/listgatewaystatus) |
-| Microsoft.AppConfiguration/configurationStores | listKeys |
+| Microsoft.AppConfiguration/configurationStores | ListKeys |
 | Microsoft.Automation/automationAccounts | [listKeys](/rest/api/automation/keys/listbyautomationaccount) |
 | Microsoft.Batch/batchAccounts | [listkeys](/rest/api/batchmanagement/batchaccount/getkeys) |
 | Microsoft.BatchAI/workspaces/experiments/jobs | [listoutputfiles](/rest/api/batchai/jobs/listoutputfiles) |
@@ -186,13 +186,13 @@ Outras funções de lista têm formatos diferentes de retorno. Para ver o format
 
 Especifique o recurso usando o nome de recurso ou o [função resourceId](#resourceid). Ao usar uma função de lista no mesmo modelo que implanta o recurso referenciado, use o nome do recurso.
 
-Se você usar um **lista** função em um recurso que condicionalmente é implantado, a função é avaliada, mesmo se o recurso não está implantado. Você obterá um erro se o **lista** função refere-se a um recurso que não existe. Use o **se** função para garantir que a função é avaliada somente quando o recurso está sendo implantado. Consulte a [se função](resource-group-template-functions-logical.md#if) para um modelo de exemplo que usa se e uma lista com um recurso condicionalmente implantado.
+Se você usar uma função de **lista** em um recurso que é implantado condicionalmente, a função será avaliada mesmo que o recurso não seja implantado. Você receberá um erro se a função de **lista** se referir a um recurso que não existe. Use a função **If** para garantir que a função só seja avaliada quando o recurso estiver sendo implantado. Consulte a [função If](resource-group-template-functions-logical.md#if) para obter um modelo de exemplo que usa If e List com um recurso implantado condicionalmente.
 
 ### <a name="example"></a>Exemplo
 
 O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/listkeys.json) a seguir mostra como retornar as chaves primárias e secundárias de uma conta de armazenamento na seção de saídas. Ele também retorna um token SAS para a conta de armazenamento. 
 
-Para obter o token SAS, passe um objeto para o tempo de expiração. A data de validade deve ser futura. Este exemplo destina-se a mostrar como você pode usar as funções da lista. Normalmente, você deve usar o token SAS em um valor de recurso em vez de retorná-lo como um valor de saída. Os valores de saída são armazenados no histórico de implantação e não são seguros.
+Para obter o token SAS, passe um objeto para a hora de expiração. A data de validade deve ser futura. Este exemplo destina-se a mostrar como você pode usar as funções da lista. Normalmente, você deve usar o token SAS em um valor de recurso em vez de retorná-lo como um valor de saída. Os valores de saída são armazenados no histórico de implantação e não são seguros.
 
 ```json
 {
@@ -354,11 +354,13 @@ Cada tipo de recurso retorna propriedades diferentes para a função de referên
 
 A função de referência recupera o estado de tempo de execução de um recurso implantado anteriormente ou um recurso implantado no modelo atual. Este artigo mostra exemplos de ambos os cenários. Ao referenciar um recurso no modelo atual, forneça apenas o nome do recurso como parâmetro. Ao referenciar um recurso implantado anteriormente, forneça a ID de recurso e uma versão de API do recurso. Você pode determinar as versões de API válidas para o recurso na [referência de modelo](/azure/templates/).
 
-A função de referência pode ser usada somente nas propriedades de uma definição de recurso e na seção de saídas de um modelo ou uma implantação. Quando usado com [iteração de propriedade](resource-group-create-multiple.md#property-iteration), você pode usar a função de referência para `input` porque a expressão é atribuída à propriedade do recurso. Não é possível usá-lo com `count` porque a contagem deve ser determinada antes que a função de referência é resolvida.
+A função de referência pode ser usada somente nas propriedades de uma definição de recurso e na seção de saídas de um modelo ou uma implantação. Quando usado com a iteração de [Propriedade](resource-group-create-multiple.md#property-iteration), você pode usar a `input` função de referência para o porque a expressão é atribuída à propriedade de recurso. Você não pode usá- `count` lo com o porque a contagem deve ser determinada antes que a função de referência seja resolvida.
+
+Você não pode usar a função de referência nas saídas de um [modelo aninhado](resource-group-linked-templates.md#nested-template) para retornar um recurso que você implantou no modelo aninhado. Em vez disso, use um [modelo vinculado](resource-group-linked-templates.md#external-template-and-external-parameters).
 
 Usando a função de referência, você implicitamente declarar que um recurso depende de outro recurso se o recurso referenciado é provisionado no mesmo modelo e consulte o recurso pelo seu nome (não a ID de recurso). Você não precisa usar a propriedade dependsOn também. A função não é avaliada até que o recurso referenciado conclua a implantação.
 
-Se você usar o **referência** função em um recurso que condicionalmente é implantado, a função é avaliada, mesmo se o recurso não está implantado.  Você obterá um erro se o **referência** função refere-se a um recurso que não existe. Use o **se** função para garantir que a função é avaliada somente quando o recurso está sendo implantado. Consulte a [se função](resource-group-template-functions-logical.md#if) para um modelo de exemplo que usa se e uma referência com um recurso condicionalmente implantado.
+Se você usar a função de **referência** em um recurso que é implantado condicionalmente, a função será avaliada mesmo que o recurso não seja implantado.  Você receberá um erro se a função de **referência** se referir a um recurso que não existe. Use a função **If** para garantir que a função só seja avaliada quando o recurso estiver sendo implantado. Consulte a [função If](resource-group-template-functions-logical.md#if) para obter um modelo de exemplo que usa If e Reference com um recurso implantado condicionalmente.
 
 Para ver os valores e nomes de propriedade para um tipo de recurso, crie um modelo que retorne o objeto na seção de saídas . Se você tiver um recurso existente desse tipo, o modelo retornará o objeto sem implantar qualquer recurso. 
 
@@ -564,6 +566,8 @@ Um uso comum da função resourceGroup é criar recursos no mesmo local que o gr
 ]
 ```
 
+Você também pode usar a função resourcegroup para aplicar marcas do grupo de recursos a um recurso. Para obter mais informações, consulte [aplicar marcas do grupo de recursos](resource-group-using-tags.md#apply-tags-from-resource-group).
+
 ### <a name="example"></a>Exemplo
 
 O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/resourcegroup.json) a seguir retorna as propriedades do grupo de recursos.
@@ -729,12 +733,12 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 A saída do exemplo anterior com os valores padrão é:
 
-| NOME | Tipo | Valor |
+| Nome | Tipo | Valor |
 | ---- | ---- | ----- |
-| sameRGOutput | string | /subscriptions/{current-sub-id}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| differentRGOutput | string | /subscriptions/{current-sub-id}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| differentSubOutput | string | /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
-| nestedResourceOutput | string | /subscriptions/{current-sub-id}/resourceGroups/examplegroup/providers/Microsoft.SQL/servers/serverName/databases/databaseName |
+| sameRGOutput | Cadeia de caracteres | /subscriptions/{current-sub-id}/resourceGroups/examplegroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| differentRGOutput | Cadeia de caracteres | /subscriptions/{current-sub-id}/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| differentSubOutput | Cadeia de caracteres | /subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/otherResourceGroup/providers/Microsoft.Storage/storageAccounts/examplestorage |
+| nestedResourceOutput | Cadeia de caracteres | /subscriptions/{current-sub-id}/resourceGroups/examplegroup/providers/Microsoft.SQL/servers/serverName/databases/databaseName |
 
 ## <a name="subscription"></a>subscription
 

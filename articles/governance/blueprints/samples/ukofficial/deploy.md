@@ -1,6 +1,6 @@
 ---
-title: As etapas de implantação de exemplo - OFICIAL do Reino Unido e NHS do Reino Unido blueprint-
-description: As etapas do OFICIAL do Reino Unido e exemplos de especificações técnicas do Reino Unido NHS de implantação.
+title: Exemplo-Blueprint oficial do Reino Unido e do Reino Unido NHS-etapas de implantação
+description: Implante as etapas dos exemplos do Blueprint oficial do Reino Unido e do Reino Unido NHS.
 services: blueprints
 author: DCtheGeek
 ms.author: dacoulte
@@ -8,16 +8,16 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 43aae882f27031d3e51ac8a4f5a68d243a973d6d
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: d720f220b8903d960e7bba2a75aa5a86bd0391ce
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67453197"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68225991"
 ---
-# <a name="deploy-the-uk-official-and-uk-nhs-blueprint-samples"></a>Implantar o OFICIAL do Reino Unido e exemplos de especificações técnicas do NHS do Reino Unido
+# <a name="deploy-the-uk-official-and-uk-nhs-blueprint-samples"></a>Implantar os exemplos do Blueprint oficial do Reino Unido e do Reino Unido NHS
 
-Para implantar o OFICIAL do Reino Unido e exemplos de especificações técnicas do NHS do Reino Unido, as etapas a seguir devem ser executadas:
+Para implantar os exemplos de plano gráfico do Reino Unido e do Reino Unido NHS, as seguintes etapas devem ser executadas:
 
 > [!div class="checklist"]
 > - Criar um blueprint com base na amostra
@@ -34,7 +34,7 @@ Primeiro, implemente a amostra de blueprint criando um blueprint no ambiente usa
 
 1. Na página **Introdução** à esquerda, selecione o botão **Criar** em _Criar um blueprint_.
 
-1. Localizar o **OFICIAL do Reino Unido** ou **NHS do Reino Unido** exemplo de plano gráfico em _outros exemplos_ e selecione **usar este exemplo**.
+1. Encontre o exemplo **oficial do Reino Unido** ou do **Reino Unido do NHS** em _outros exemplos_ e selecione **usar este exemplo**.
 
 1. Insira as informações _Básicas_ do exemplo de blueprint:
 
@@ -47,13 +47,13 @@ Primeiro, implemente a amostra de blueprint criando um blueprint no ambiente usa
 
 ## <a name="publish-the-sample-copy"></a>Publicar a cópia do exemplo
 
-Agora a cópia do exemplo de blueprint foi criada em seu ambiente. Ela é criada no modo **Rascunho** e deve ser **Publicada** antes de ser atribuída e implantada. A cópia do exemplo de plano gráfico pode ser personalizada ao seu ambiente e as necessidades, mas essa modificação pode movê-lo para fora do padrão.
+Agora a cópia do exemplo de blueprint foi criada em seu ambiente. Ela é criada no modo **Rascunho** e deve ser **Publicada** antes de ser atribuída e implantada. A cópia do exemplo Blueprint pode ser personalizada para seu ambiente e necessidades, mas essa modificação pode movê-la para fora do padrão.
 
 1. Selecione **Todos os serviços** e pesquise e selecione **Política** no painel esquerdo. Na página **Política**, selecione **Blueprints**.
 
 1. Selecione a página **Definições de Blueprint** à esquerda. Use os filtros para localizar a cópia da amostra de blueprint e, em seguida, selecione-a.
 
-1. Selecione **Publicar blueprint** na parte superior da página. Na nova página à direita, informe a **Versão** da sua cópia da amostra de blueprint. Essa propriedade será útil se você fizer uma modificação mais tarde. Fornecer **alterar notas** , como "primeira versão publicada do exemplo de especificação técnica OFICIAL do Reino Unido ou NHS do Reino Unido." Em seguida, selecione **Publicar** na parte inferior da página.
+1. Selecione **Publicar blueprint** na parte superior da página. Na nova página à direita, informe a **Versão** da sua cópia da amostra de blueprint. Essa propriedade será útil se você fizer uma modificação mais tarde. Forneça **observações de alteração** , como "primeira versão publicada do exemplo do Reino Unido ou do RU NHS Blueprint". Em seguida, selecione **Publicar** na parte inferior da página.
 
 ## <a name="assign-the-sample-copy"></a>Atribuir a cópia de exemplo
 
@@ -98,17 +98,17 @@ A seguinte tabela fornece uma lista dos parâmetros de artefato de blueprint:
 
 Nome do artefato|Tipo de artefato|Nome do parâmetro|DESCRIÇÃO|
 |-|-|-|-|
-|Especificações técnicas de iniciativa para OFICIAL do Reino Unido ou NHS do Reino Unido|Atribuição de política |Tipos de recursos para auditar os logs de diagnóstico (política: Especificações técnicas de iniciativa para OFICIAL do Reino Unido ou NHS do Reino Unido) |Lista de tipos de recurso de auditoria se a configuração de log de diagnóstico é habilitada de observação.  Para os valores aceitáveis, consulte [com suporte a serviços, esquemas e categorias para os Logs de diagnóstico do Azure](../../../../azure-monitor/platform/diagnostic-logs-schema.md). |
-|[Versão prévia]: Implantar o Agente do Log Analytics para VMs do Linux |Atribuição de política |Opcional: Lista de imagens VM que tem suporte para o sistema operacional Linux para adicionar ao escopo (política: [Preview]: Implantar o agente do Log Analytics para VMs do Linux) |(Opcional) Valor padrão é _none_. Para obter mais informações, consulte [criar um espaço de trabalho do Log Analytics no portal do Azure](../../../../azure-monitor/learn/quick-create-workspace.md). |
-|[Versão prévia]: Implantar o Agente do Log Analytics para VMs do Windows |Atribuição de política |Opcional: Lista de imagens VM que têm suporte para o sistema operacional Windows para adicionar ao escopo (política: [Preview]: Implantar o agente do Log Analytics para VMs do Windows) |(Opcional) Valor padrão é _none_. Para obter mais informações, consulte [criar um espaço de trabalho do Log Analytics no portal do Azure](../../../../azure-monitor/learn/quick-create-workspace.md). |
+|Iniciativa Blueprint para o Reino Unido ou o NHS UK|Atribuição de política |Tipos de recurso para auditar logs de diagnóstico (política: Iniciativa Blueprint para o Reino Unido ou o NHS UK) |Lista de tipos de recursos para auditoria se a configuração do log de diagnóstico está habilitada.  Para obter valores aceitáveis, consulte [serviços, esquemas e categorias com suporte para logs de diagnóstico do Azure](../../../../azure-monitor/platform/diagnostic-logs-schema.md). |
+|\[Versão Prévia\]: Implantar o Agente do Log Analytics para VMs do Linux |Atribuição de política |Opcional: Lista de imagens de VM com suporte do SO Linux para adicionar ao escopo (política: \[Versão Prévia\]: Implantar o agente de Log Analytics para VMs do Linux) |Adicional O valor padrão é _None_. Para obter mais informações, consulte [criar um log Analytics espaço de trabalho no portal do Azure](../../../../azure-monitor/learn/quick-create-workspace.md). |
+|\[Versão Prévia\]: Implantar o Agente do Log Analytics para VMs do Windows |Atribuição de política |Opcional: Lista de imagens de VM que têm suporte para o sistema operacional Windows para adicionar ao escopo (política: \[Versão Prévia\]: Implantar o agente de Log Analytics para VMs do Windows) |Adicional O valor padrão é _None_. Para obter mais informações, consulte [criar um log Analytics espaço de trabalho no portal do Azure](../../../../azure-monitor/learn/quick-create-workspace.md). |
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Agora que você tiver revisado as etapas para implantar o OFICIAL do Reino Unido e os exemplos de especificações técnicas do Reino Unido NHS, visite os seguintes artigos para saber mais sobre a visão geral e o mapeamento de controle:
+Agora que você analisou as etapas para implantar os exemplos do plano gráfico do Reino Unido e do Reino Unido NHS, visite os seguintes artigos para saber mais sobre a visão geral e o mapeamento de controle:
 
 > [!div class="nextstepaction"]
-> [Plantas OFICIAL do Reino Unido e do Reino Unido NHS - visão geral](./index.md)
-> [OFICIAL do Reino Unido e planos gráficos NHS do Reino Unido – mapeamento de controle](./control-mapping.md)
+> [Plantas NHSis do Reino Unido e do Reino Unido – visão geral dos](./index.md)
+> plantas do Reino Unido e da NHS do Reino Unido[– mapeamento de controle](./control-mapping.md)
 
 Outros artigos sobre blueprints e como usá-los:
 

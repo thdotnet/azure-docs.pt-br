@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d6c8bdb27e9e976a7a490c2a824e994242378641
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 7e798b4316b8ccdc2f76512d4651365f5bb151ce
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67671195"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68278311"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-linux"></a>Instalar drivers NVIDIA GPU em VMs da série N que executam o Linux
 
@@ -170,9 +170,9 @@ Implante VMs da série N habilitadas para RDMA de uma das imagens no Azure Marke
 
 * **CentOS-based 7.4 HPC** - Os drivers RDMA e o Intel MPI 5.1 são instalados na VM.
 
-## <a name="install-grid-drivers-on-nv-or-nvv2-series-vms"></a>Instalar drivers GRID em VMs da série NVv2 ou NV
+## <a name="install-grid-drivers-on-nv-or-nvv3-series-vms"></a>Instalar drivers de grade em VMs do NV ou da série NVv3
 
-Para instalar drivers NVIDIA GRID em VMs da série NVv2 ou NV, faça uma conexão SSH com cada VM e siga as etapas para a sua distribuição do Linux. 
+Para instalar os drivers NVIDIA GRID nas VMs do NV ou da série NVv3, faça uma conexão SSH com cada VM e siga as etapas para sua distribuição do Linux. 
 
 ### <a name="ubuntu"></a>Ubuntu 
 
@@ -188,8 +188,10 @@ Para instalar drivers NVIDIA GRID em VMs da série NVv2 ou NV, faça uma conexã
    sudo apt-get dist-upgrade -y
 
    sudo apt-get install build-essential ubuntu-desktop -y
+   
+   sudo apt-get install linux-azure -y
    ```
-3. Desabilite o driver de kernel Nouveau, que é incompatível com o driver NVIDIA. (Apenas use o driver NVIDIA em VMs NVv2 ou NV.) Para fazer isso, crie um arquivo no `/etc/modprobe.d` chamado `nouveau.conf` com o seguinte conteúdo:
+3. Desabilite o driver de kernel Nouveau, que é incompatível com o driver NVIDIA. (Apenas use o driver NVIDIA em VMs NVv2 ou NV.) Para fazer isso, crie um arquivo em `/etc/modprobe.d` nome `nouveau.conf` com o seguinte conteúdo:
 
    ```
    blacklist nouveau
@@ -226,8 +228,15 @@ Para instalar drivers NVIDIA GRID em VMs da série NVv2 ou NV, faça uma conexã
  
    ```
    IgnoreSP=FALSE
+   EnableUI=FALSE
    ```
-9. Reinicie a VM e prossiga para verificar a instalação.
+   
+9. Remova o seguinte de `/etc/nvidia/gridd.conf` se ele estiver presente:
+ 
+   ```
+   FeatureType=0
+   ```
+10. Reinicie a VM e prossiga para verificar a instalação.
 
 
 ### <a name="centos-or-red-hat-enterprise-linux"></a>CentOS ou Red Hat Enterprise Linux 
@@ -242,9 +251,11 @@ Para instalar drivers NVIDIA GRID em VMs da série NVv2 ou NV, faça uma conexã
    sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
  
    sudo yum install dkms
+   
+   sudo yum install hyperv-daemons
    ```
 
-2. Desabilite o driver de kernel Nouveau, que é incompatível com o driver NVIDIA. (Apenas use o driver NVIDIA em VMs NV2 ou NV.) Para fazer isso, crie um arquivo no `/etc/modprobe.d` chamado `nouveau.conf` com o seguinte conteúdo:
+2. Desabilite o driver de kernel Nouveau, que é incompatível com o driver NVIDIA. (Apenas use o driver NVIDIA em VMs NV2 ou NV.) Para fazer isso, crie um arquivo em `/etc/modprobe.d` nome `nouveau.conf` com o seguinte conteúdo:
 
    ```
    blacklist nouveau
@@ -290,8 +301,15 @@ Para instalar drivers NVIDIA GRID em VMs da série NVv2 ou NV, faça uma conexã
  
    ```
    IgnoreSP=FALSE
+   EnableUI=FALSE 
    ```
-9. Reinicie a VM e prossiga para verificar a instalação.
+9. Remova o seguinte de `/etc/nvidia/gridd.conf` se ele estiver presente:
+ 
+   ```
+   FeatureType=0
+   ```
+10. Reinicie a VM e prossiga para verificar a instalação.
+
 
 ### <a name="verify-driver-installation"></a>Verificar a instalação de drivers
 

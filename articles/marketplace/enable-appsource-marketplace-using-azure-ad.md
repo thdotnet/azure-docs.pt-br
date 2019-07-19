@@ -7,13 +7,13 @@ manager: pabutler
 ms.service: marketplace
 ms.topic: article
 ms.date: 09/12/2018
-ms.author: qianw211
-ms.openlocfilehash: 950371fd92d255ed01dfa89d5c2fcbded686a971
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.author: pabutler
+ms.openlocfilehash: 0b68687a2bbaa817f2776757ccab9571638c0fd5
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67443074"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67876011"
 ---
 # <a name="enable-an-appsource-and-marketplace-listing-by-using-azure-active-directory"></a>Habilite uma listagem do AppSource e do Marketplace usando o Active Directory do Azure
 
@@ -38,7 +38,7 @@ As várias [listando opções e tipos de oferta](https://docs.microsoft.com/azur
 | Máquina Virtual | N/D | Não | Não | Não |
 | Aplicativos Azure (modelo de solução)  | N/D | N/D | N/D | N/D |
 | Aplicativos gerenciados  | N/D | N/D | N/D | Não |
-| SaaS  | Não | sim | sim | Sim |
+| SaaS  | Não | Sim | Sim | Sim |
 | Contêineres  | N/D | N/D | N/D | Não |
 | Serviços de Consultoria  | Não | N/D | N/D | N/D |
 
@@ -89,4 +89,4 @@ Use o Azure AD para oferecer suporte a uma das seguintes ações:
 ## <a name="next-steps"></a>Próximas etapas
 
 - Certifique-se de que você [registrado no Azure Marketplace](https://azuremarketplace.microsoft.com/sell).
-- Ver [como criar uma conta no Partner Center](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) para obter mais informações sobre como criar ou concluir sua oferta.
+- Consulte [como criar uma conta do Partner Center](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) para obter mais informações sobre como criar ou concluir sua oferta.

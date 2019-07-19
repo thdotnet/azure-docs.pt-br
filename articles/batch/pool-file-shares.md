@@ -4,7 +4,7 @@ description: Como montar um compartilhamento de Arquivos do Azure de nós de com
 services: batch
 documentationcenter: ''
 author: laurenhughes
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: batch
@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 05/24/2018
 ms.author: lahugh
 ms.custom: ''
-ms.openlocfilehash: 914bc11736b08dab6b334307dc188b5d153c7331
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: 8c9d041648408b05b7cd160d5aea9dfb33ac061d
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341312"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68322376"
 ---
 # <a name="use-an-azure-file-share-with-a-batch-pool"></a>Usar um compartilhamento de arquivos do Azure com um pool do Lote
 
@@ -52,7 +52,7 @@ No Lote, você precisará montar o compartilhamento sempre que uma tarefa for ex
 Por exemplo, inclua um comando `net use` para montar o compartilhamento de arquivos como parte de cada linha de comando da tarefa. Para montar o compartilhamento de arquivos, as credenciais a seguir são necessárias:
 
 * **Nome de usuário**: AZURE\\\<nomedacontadearmazenamento\>, por exemplo, AZURE\\*nomedaminhacontadearmazenamento*
-* **Senha**: <ChaveDeContaDeArmazenamentoQueTermina em==>, por exemplo, *XXXXXXXXXXXXXXXXXXXXX==*
+* **Senha**: \<StorageAccountKeyWhichEnds in = = >, por exemplo, *XXXXXXXXXXXXXXXXXXXXX = =*
 
 O comando a seguir monta um compartilhamento de arquivos *meucompartilhamentodearquivos* na conta de armazenamento *nomedaminhacontadearmazenamento* como a unidade *S:* :
 
@@ -129,7 +129,7 @@ apt-get update && apt-get install cifs-utils && sudo mkdir -p /mnt/MyAzureFileSh
 Em seguida, execute o comando `mount` para montar o compartilhamento de arquivos, fornecendo estas credenciais:
 
 * **Nome de usuário**: \<nomedacontadearmazenamento\>, por exemplo, *nomedaminhacontadearmazenamento*
-* **Senha**: <ChaveDeContaDeArmazenamentoQueTermina em==>, por exemplo, *XXXXXXXXXXXXXXXXXXXXX==*
+* **Senha**: \<StorageAccountKeyWhichEnds in = = >, por exemplo, *XXXXXXXXXXXXXXXXXXXXX = =*
 
 O comando a seguir monta um compartilhamento de arquivos *meucompartilhamentodearquivos* na conta de armazenamento *nomedaminhacontadearmazenamento* em */mnt/MeuCompartilhamentoDeArquivosDoAzure*: 
 

@@ -1,21 +1,21 @@
 ---
 title: 'Tutorial: Carregar dados no SQL Data Warehouse do Azure | Microsoft Docs'
-description: Tutorial do Azure usa o portal e o SQL Server Management Studio para carregar o data warehouse WideWorldImportersDW de um Azure global de BLOBs do Azure SQL Data warehouse.
+description: O tutorial usa portal do Azure e SQL Server Management Studio para carregar o data warehouse WideWorldImportersDW de um blob global do Azure para o Azure SQL Data Warehouse.
 services: sql-data-warehouse
 author: kevinvngo
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: load-data
-ms.date: 04/17/2018
+ms.date: 07/17/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: e20667c0414f551a545e66b84da31c873c96dc48
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: 30b4009b2f52f4949a380f0fc51b02f94c98d966
+ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67589014"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68304287"
 ---
 # <a name="tutorial-load-data-to-azure-sql-data-warehouse"></a>Tutorial: Carregar dados no SQL Data Warehouse do Azure
 
@@ -78,9 +78,9 @@ Siga estas etapas para criar um SQL data warehouse em branco.
 
 5. Clique em **Selecionar**.
 
-6. Clique em **Nível de desempenho** para especificar se o data warehouse é otimizado para elasticidade ou computação e o número de unidades do data warehouse. 
+6. Clique em **nível de desempenho** para especificar se o data warehouse é Gen1 ou Gen2 e o número de unidades de data warehouse. 
 
-7. Para este tutorial, selecione a camada de serviço **Otimizado para Elasticidade**. O controle deslizante, por padrão, é definido como **DW400**.  Experimente movê-lo para cima e para baixo para ver como ele funciona. 
+7. Para este tutorial, selecione a camada de serviço **Gen1** . O controle deslizante, por padrão, é definido como **DW400**.  Experimente movê-lo para cima e para baixo para ver como ele funciona. 
 
     ![configurar o desempenho](media/load-data-wideworldimportersdw/configure-performance.png)
 
@@ -158,7 +158,7 @@ Esta seção usa o [SSMS](/sql/ssms/download-sql-server-management-studio-ssms) 
 
 4. Clique em **Conectar**. A janela Pesquisador de Objetos abre no SSMS. 
 
-5. No Pesquisador de Objetos, expanda **Bancos de dados**. Em seguida, expanda **Bancos de dados do sistema** e **mestre** para exibir os objetos no banco de dados mestre.  Expandir **SampleDW** para exibir os objetos no novo banco de dados.
+5. No Pesquisador de Objetos, expanda **Bancos de dados**. Em seguida, expanda **Bancos de dados do sistema** e **mestre** para exibir os objetos no banco de dados mestre.  Expanda **SampleDW** para exibir os objetos no novo banco de dados.
 
     ![objetos de banco de dados](media/load-data-wideworldimportersdw/connected.png) 
 
@@ -217,7 +217,7 @@ A primeira etapa para carregar os dados é fazer logon como LoaderRC60.
 
 Você está pronto para iniciar o processo de carregamento de dados em seu novo data warehouse. Para referência futura, para saber como obter os dados para o armazenamento de Blobs do Azure ou carregá-los diretamente do seu código-fonte no SQL Data Warehouse, consulte a [visão geral do carregamento](sql-data-warehouse-overview-load.md).
 
-Execute os seguintes scripts SQL para especificar informações sobre os dados que deseja carregar. Essas informações incluem o local em que os dados estão localizados, o formato do conteúdo dos dados e a definição da tabela para os dados. Os dados estão localizados em um Blob do Azure global.
+Execute os seguintes scripts SQL para especificar informações sobre os dados que deseja carregar. Essas informações incluem o local em que os dados estão localizados, o formato do conteúdo dos dados e a definição da tabela para os dados. Os dados estão localizados em um blob global do Azure.
 
 1. Na seção anterior, você fez logon em seu data warehouse como LoaderRC60. No SSMS, clique com o botão direito do mouse em **SampleDW** na sua conexão LoaderRC60 e selecione **Nova consulta**.  Uma nova janela de consulta é exibida. 
 
@@ -231,7 +231,7 @@ Execute os seguintes scripts SQL para especificar informações sobre os dados q
     CREATE MASTER KEY;
     ```
 
-4. Execute a seguinte instrução [CREATE EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql) para definir o local do blob do Azure. Esse é o local dos dados de importadores em todo o mundo externo.  Para executar um comando que você acrescentou à janela de consulta, realce os comandos que deseja executar e clique em **Executar**.
+4. Execute a seguinte instrução [CREATE EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql) para definir o local do blob do Azure. Este é o local dos dados externos de importadores mundiais.  Para executar um comando que você acrescentou à janela de consulta, realce os comandos que deseja executar e clique em **Executar**.
 
     ```sql
     CREATE EXTERNAL DATA SOURCE WWIStorage
@@ -546,7 +546,7 @@ Execute os seguintes scripts SQL para especificar informações sobre os dados q
 
 ## <a name="load-the-data-into-your-data-warehouse"></a>Carregar os dados em seu data warehouse
 
-Esta seção usa as tabelas externas que você definir para carregar os dados de exemplo do Blob do Azure SQL Data warehouse.  
+Esta seção usa as tabelas externas que você definiu para carregar os dados de exemplo do blob do Azure para SQL Data Warehouse.  
 
 > [!NOTE]
 > Este tutorial carrega os dados diretamente na tabela final. Em um ambiente de produção, você normalmente usará CREATE TABLE AS SELECT para carregar em uma tabela de preparo. Enquanto os dados estão na tabela de preparo, você pode executar todas as transformações necessárias. Para acrescentar os dados na tabela de preparo a uma tabela de produção, você pode usar a instrução INSERT...SELECT. Para saber mais, confira [Inserindo dados em uma tabela de produção](guidance-for-loading-data.md#inserting-data-into-a-production-table).
@@ -554,7 +554,7 @@ Esta seção usa as tabelas externas que você definir para carregar os dados de
 
 O script usa a instrução T-SQL [CTAS (CREATE TABLE AS SELECT)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) para carregar os dados do Azure Storage Blob para novas tabelas no data warehouse. A CTAS cria uma nova tabela com base nos resultados de uma instrução select. A nova tabela tem as mesmas colunas e tipos de dados que os resultados da instrução select. Quando a instrução select seleciona de uma tabela externa, o SQL Data Warehouse importa os dados para uma tabela relacional no data warehouse. 
 
-Esse script não carregar dados nas tabelas dimension_date e wwi.fact_Sale. Essas tabelas são geradas em uma etapa posterior para que elas tenham um número considerável de linhas.
+Esse script não carrega dados nas tabelas WWI. dimension_Date e WWI. fact_Sale. Essas tabelas são geradas em uma etapa posterior para que elas tenham um número considerável de linhas.
 
 1. Execute o seguinte script para carregar os dados para novas tabelas no data warehouse.
 
@@ -750,7 +750,7 @@ Esse script não carregar dados nas tabelas dimension_date e wwi.fact_Sale. Essa
 
 ## <a name="create-tables-and-procedures-to-generate-the-date-and-sales-tables"></a>Criar tabelas e procedimentos para gerar as tabelas de data e vendas
 
-Esta seção cria as tabelas dimension_date e wwi.fact_Sale. Ele também cria os procedimentos armazenados que podem gerar milhões de linhas nas tabelas dimension_date e wwi.fact_Sale.
+Esta seção cria as tabelas WWI. dimension_Date e WWI. fact_Sale. Ele também cria procedimentos armazenados que podem gerar milhões de linhas nas tabelas WWI. dimension_Date e WWI. fact_Sale.
 
 1. Crie as tabelas dimension_Date e fact_Sale.  
 
@@ -893,7 +893,7 @@ Esta seção cria as tabelas dimension_date e wwi.fact_Sale. Ele também cria os
     DROP table #days;
     END;
     ```
-4. Crie esse procedimento que preenche as tabelas dimension_date e wwi.fact_Sale. Ele chama [wwi].[PopulateDateDimensionForYear] para preencher wwi.dimension_Date.
+4. Crie este procedimento que popula as tabelas WWI. dimension_Date e WWI. fact_Sale. Ele chama [wwi].[PopulateDateDimensionForYear] para preencher wwi.dimension_Date.
 
     ```sql
     CREATE PROCEDURE [wwi].[Configuration_PopulateLargeSaleTable] @EstimatedRowsPerDay [bigint],@Year [int] AS
@@ -949,7 +949,7 @@ Esta seção cria as tabelas dimension_date e wwi.fact_Sale. Ele também cria os
     ```
 
 ## <a name="generate-millions-of-rows"></a>Gerar milhões de linhas
-Use os procedimentos armazenados que você criou para gerar milhões de linhas na tabela wwi.fact_Sale e dados correspondentes na tabela dimension_date. 
+Use os procedimentos armazenados criados para gerar milhões de linhas na tabela WWI. fact_Sale e os dados correspondentes na tabela WWI. dimension_Date. 
 
 
 1. Execute este procedimento para propagar o [wwi].[seed_Sale] com mais linhas.
@@ -958,7 +958,7 @@ Use os procedimentos armazenados que você criou para gerar milhões de linhas n
     EXEC [wwi].[InitialSalesDataPopulation]
     ```
 
-2. Execute este procedimento para preencher wwi.fact_Sale com 100.000 linhas por dia para cada dia do ano 2000.
+2. Execute este procedimento para preencher WWI. fact_Sale com 100.000 linhas por dia para cada dia do ano 2000.
 
     ```sql
     EXEC [wwi].[Configuration_PopulateLargeSaleTable] 100000, 2000
@@ -1098,7 +1098,7 @@ Siga estas etapas para limpar os recursos conforme desejado.
 
     ![Limpar recursos](media/load-data-from-azure-blob-storage-using-polybase/clean-up-resources.png)
 
-2. Se desejar manter os dados no armazenamento, será possível pausar a computação quando você não estiver usando o data warehouse. Ao pausar a computação, você será cobrado apenas para armazenamento de dados e você poderá retomar a computação sempre que você está pronto para trabalhar com os dados. Para pausar a computação, clique no botão **Pausar**. Quando o data warehouse for pausado, você verá um botão **Iniciar**.  Para retomar a computação, clique **Iniciar**.
+2. Se desejar manter os dados no armazenamento, será possível pausar a computação quando você não estiver usando o data warehouse. Ao pausar a computação, você será cobrado apenas pelo armazenamento de dados e poderá retomar a computação sempre que estiver pronto para trabalhar com os dados. Para pausar a computação, clique no botão **Pausar**. Quando o data warehouse for pausado, você verá um botão **Iniciar**.  Para retomar a computação, clique **Iniciar**.
 
 3. Se desejar remover encargos futuros, será possível excluir o data warehouse. Para remover o data warehouse para você não ser cobrado pela computação ou pelo armazenamento, clique em **Excluir**.
 
@@ -1120,7 +1120,7 @@ Você fez essas coisas:
 > * Exibiu o andamento dos dados enquanto eles estão sendo carregados
 > * Criou estatísticas sobre os dados recém-carregados
 
-Avance para a visão geral do desenvolvimento para saber como migrar um banco de dados existente para o SQL Data Warehouse.
+Avance para a visão geral de desenvolvimento para saber como migrar um banco de dados existente para SQL Data Warehouse.
 
 > [!div class="nextstepaction"]
->[Decisões de design para migrar um banco de dados existente para o SQL Data Warehouse](sql-data-warehouse-overview-develop.md)
+>[Decisões de design para migrar um banco de dados existente para SQL Data Warehouse](sql-data-warehouse-overview-develop.md)

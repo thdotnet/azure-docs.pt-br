@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
-ms.openlocfilehash: b815ce95da24b20ff18ea03d637ad85bfe72cb00
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: 5c3049b5f9f7607b9b75f3bee48b6ccd44601b15
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67654255"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68254749"
 ---
 # <a name="azure-table-storage-bindings-for-azure-functions"></a>Associações de armazenamento de tabelas do Azure Functions
 
@@ -493,7 +493,7 @@ A conta de armazenamento a ser usada é determinada na seguinte ordem:
 
 ## <a name="input---java-annotations"></a>Entrada - anotações de Java
 
-Na [biblioteca de tempo de execução de funções Java](/java/api/overview/azure/functions/runtime), use a anotação `@TableInput` nos parâmetros cujo valor possa ser proveniente do Armazenamento de Tabelas.  Essa anotação pode ser usada com tipos Java nativos, POJOs ou valores anuláveis usando <T>Optional. 
+Na [biblioteca de tempo de execução de funções Java](/java/api/overview/azure/functions/runtime), use a anotação `@TableInput` nos parâmetros cujo valor possa ser proveniente do Armazenamento de Tabelas.  Esta anotação pode ser usada com tipos Java nativos, POJOs ou valores anuláveis usando T\<> opcional. 
 
 ## <a name="input---configuration"></a>Entrada - configuração
 

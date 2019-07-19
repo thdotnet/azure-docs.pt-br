@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/11/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 0f87b122f81fbd04767354e623dcb808466ee1be
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 508d13356a7dd221b0767a0cedd60b4f1402baf4
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67673226"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68286326"
 ---
 ## <a name="supported-operating-systems-and-drivers"></a>Sistemas operacionais e drivers com suporte
 
@@ -32,9 +32,9 @@ Drivers NVIDIA Tesla (CUDA) para NC, NCv2, NCv3, ND e VMs da série NDV2 (opcion
 
 ### <a name="nvidia-grid-drivers"></a>Drivers NVIDIA GRID
 
-A Microsoft redistribui os instaladores do driver NVIDIA GRID para VMs das séries NV e NVv2 usadas como estações de trabalho virtuais ou para aplicativos virtuais. Instale somente esses drivers de grade em VMs do Azure NV, apenas em sistemas operacionais listados na tabela a seguir. Esses drivers incluem o licenciamento de Software de GPU Virtual de GRID no Azure. Não é necessário você configurar um servidor de licença de software vGPU NVIDIA.
+A Microsoft redistribui os instaladores de driver de grade NVIDIA para VMs de série NVv3 e NV usadas como estações de trabalho virtuais ou para aplicativos virtuais. Instale somente esses drivers de grade nas VMs da série NV do Azure, somente nos sistemas operacionais listados na tabela a seguir. Esses drivers incluem o licenciamento de Software de GPU Virtual de GRID no Azure. Você não precisa configurar um servidor de licença de software de vGPU NVIDIA.
 
 | OS | Driver |
 | -------- |------------- |
-| Windows Server 2019<br/><br/>Windows Server 2016<br/><br/>Windows 10 (até a versão 1809. Sem patch/não há suporte para o nível do patch 0 de 1809). | [GRADE 8.0 (425.31)](https://go.microsoft.com/fwlink/?linkid=874181) (.exe) |
-| Windows Server 2012 R2 | [GRADE 8.0 (425.31)](https://go.microsoft.com/fwlink/?linkid=874184) (.exe)  |
+| Windows Server 2019<br/><br/>Windows Server 2016<br/><br/>Windows 10 | [Grade 9,0 (431, 2)](https://go.microsoft.com/fwlink/?linkid=874181) (. exe) |
+| Windows Server 2012 R2<br/><br/>Windows Server 2008 R2<br/><br/>Windows 8<br/><br/>Windows 7 | [Grade 9,0 (431, 2)](https://go.microsoft.com/fwlink/?linkid=874184) (. exe)  |
