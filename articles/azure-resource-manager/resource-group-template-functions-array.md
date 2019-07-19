@@ -27,7 +27,7 @@ O Resource Manager fornece diversas funções para trabalhar com matrizes e obje
 * [intersection](#intersection)
 * [json](#json)
 * [last](#last)
-* [Comprimento](#length)
+* [length](#length)
 * [max](#max)
 * [min](#min)
 * [range](#range)
