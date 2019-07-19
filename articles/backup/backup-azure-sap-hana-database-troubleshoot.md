@@ -1,6 +1,6 @@
 ---
-title: Solucionando problemas de erros ao fazer backup de bancos de dados do SAP HANA usando o Backup do Azure | Microsoft Docs
-description: Este guia explica como solucionar erros comuns durante a tentativa de backup bancos de dados do SAP HANA usando o Backup do Azure.
+title: Solucionar erros ao fazer backup de bancos de dados do SAP HANA usando o backup do Azure | Microsoft Docs
+description: Descreve como solucionar erros comuns que podem ocorrer quando você usa o backup do Azure para fazer backup de bancos de dados do SAP HANA.
 services: backup
 author: pvrk
 manager: vijayts
@@ -8,65 +8,65 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: pullabhk
-ms.openlocfilehash: 33f1b4674aad35d55ab014c45cd73753533931cb
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: 32e814ea83f30b48af5ce507ce250f37a34390da
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67514177"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68249485"
 ---
-# <a name="troubleshoot-back-up-of-sap-hana-server-on-azure"></a>Solucionar problemas de backup do servidor do SAP HANA no Azure
+# <a name="troubleshoot-backup-of-sap-hana-databases-on-azure"></a>Solucionar problemas de backup de bancos de dados SAP HANA no Azure
 
-Este artigo fornece informações de solução para proteger bancos de dados do SAP HANA em máquinas virtuais do Azure. Antes de prosseguir para a solução de problemas, vamos entender alguns pontos fundamentais sobre permissões e configurações.
+Este artigo fornece informações de solução de problemas para fazer backup de bancos de dados SAP HANA em máquinas virtuais do Azure.
 
-## <a name="understanding-pre-requisites"></a>Pré-requisitos de compreensão
+## <a name="prerequisites"></a>Pré-requisitos
 
-Como parte da [pré-requisitos](backup-azure-sap-hana-database.md#prerequisites), o script de pré-registro deve ser executado na máquina virtual em que o HANA está instalado para configurar as permissões corretas.
+Como parte dos pré-requisitos, verifique se o script de [pré-](backup-azure-sap-hana-database.md#prerequisites)registro foi executado na máquina virtual em que o Hana está instalado.
 
 ### <a name="setting-up-permissions"></a>Configurando permissões
 
-O que faz o script de pré-registro:
+O que o script de auto-registro faz:
 
-1. Cria AZUREWLBACKUPHANAUSER no sistema do HANA e adiciona permissões conforme listado abaixo e as funções necessárias:
-    - ADMINISTRADOR de banco de dados - criar novos bancos de dados durante a restauração
-    - LEITURA de catálogo para ler o catálogo de backup
-    - SAP_INTERNAL_HANA_SUPPORT – para acessar algumas tabelas privadas
-2. Adiciona a chave para Hdbuserstore para plug-in do HANA fazer todas as operações (consulta de banco de dados, configurar o backup, fazendo backup, fazendo a restauração)
+1. Cria AZUREWLBACKUPHANAUSER no sistema HANA e adiciona essas funções e permissões necessárias:
+    - ADMIN. do banco de dados: para criar novos bancos durante a restauração.
+    - LEITURA do catálogo: para ler o catálogo de backup.
+    - SAP_INTERNAL_HANA_SUPPORT: para acessar algumas tabelas privadas.
+2. Adiciona uma chave para Hdbuserstore para o plug-in do HANA para lidar com todas as operações (consultas de banco de dados, operações de restauração, configuração e execução de backup).
    
-   - Para confirmar a criação da chave, execute o comando HDBSQL dentro da máquina do HANA com as credenciais SIDADM:
+   Para confirmar a criação da chave, execute o comando HDBSQL no computador HANA com as credenciais do SIDADM:
 
     ``` hdbsql
     hdbuserstore list
     ```
     
-    A saída do comando deve exibir a chave {SID} {DBNAME} com o usuário como 'AZUREWLBACKUPHANAUSER'.
+    A saída do comando deve exibir a chave {SID} {DBNAME}, com o usuário mostrado como AZUREWLBACKUPHANAUSER.
 
 > [!NOTE]
-> Verifique se você tem um conjunto exclusivo de arquivos SSFS no caminho "/ usr/sap/{SID}/home/.hdb/". Deve haver apenas uma pasta sob esse caminho.
+> Verifique se você tem um conjunto exclusivo de arquivos SSFS em **/usr/SAP/{Sid}/Home/.HDB/** . Deve haver apenas uma pasta neste caminho.
 
-### <a name="setting-up-backint-parameters"></a>Configuração de parâmetros BackInt
+### <a name="setting-up-backint-parameters"></a>Configurando parâmetros de BackInt
 
-Depois que um banco de dados for escolhido para backup, o serviço de Backup do Azure configurará backInt parâmetros no nível de banco de dados.
+Depois que um banco de dados é escolhido para backup, o serviço de backup do Azure configura os parâmetros backInt no nível do banco de dados:
 
-- [catalog_backup_using_backint:true]
-- [enable_accumulated_catalog_backup:false]
-- [parallel_data_backup_backint_channels:1]
+- [catalog_backup_using_backint: true]
+- [enable_accumulated_catalog_backup: false]
+- [parallel_data_backup_backint_channels: 1]
 - [log_backup_timeout_s:900)]
-- [backint_response_timeout:7200]
+- [backint_response_timeout: 7200]
 
 > [!NOTE]
-> Verifique se esses parâmetros não estão presentes no nível do HOST. Parâmetros de nível de host substituirão esses parâmetros e podem causar um comportamento diferente do que o esperado.
+> Verifique se esses parâmetros *não* estão presentes no nível do host. Os parâmetros de nível de host substituirão esses parâmetros e poderão causar um comportamento inesperado.
 
-## <a name="understanding-common-user-errors"></a>Noções básicas sobre erros comuns de usuário
+## <a name="common-user-errors"></a>Erros comuns do usuário
 
 ### <a name="usererrorinopeninghanaodbcconnection"></a>UserErrorInOpeningHanaOdbcConnection
 
-| Mensagem de erro | Possíveis causas | Ação recomendada |
+data| Mensagem de erro | Possíveis causas | Ação recomendada |
 |---|---|---|
-| Falha ao conectar ao system.check HANA que seu sistema está em execução.| O serviço de Backup do Azure não é capaz de se conectar ao HANA porque o BD do HANA está inativo. Ou HANA está em execução, mas não permitindo que o serviço de Backup do Azure para se conectar | Verifique se o banco de dados de HANA/serviço está inativo. Se o serviço da DB HANA está em execução, verifique se todas as permissões estão configuradas como mencionado [aqui](#setting-up-permissions). Se a chave estiver ausente, executar novamente o script de pré-registro para criar uma nova chave. |
+| Falha ao conectar ao sistema HANA. Verifique se o sistema está em execução.| O serviço de backup do Azure não pode se conectar ao HANA porque o banco de dados do HANA está inoperante. Ou o HANA está em execução, mas não permite que o serviço de backup do Azure se conecte. | Verifique se o serviço ou banco de dados HANA está inoperante. Se o banco de dados ou serviço do HANA estiver em execução, verifique se [todas as permissões estão definidas](#setting-up-permissions). Se a chave estiver ausente, execute novamente o script de auto-registro para criar uma nova chave. |
 
 ### <a name="usererrorinvalidbackintconfiguration"></a>UserErrorInvalidBackintConfiguration
 
 | Mensagem de erro | Possíveis causas | Ação recomendada |
 |---|---|---|
-| Configuração de Backint inválidos detectados. Interromper a proteção e reconfigure o banco de dados.| Os parâmetros de backInt incorretamente são especificados para Backup do Azure. | Verificar os parâmetros são como mencionado [aqui](#setting-up-backint-parameters). Se backInt com base em parâmetros estiverem presentes no HOST, em seguida, removê-los. Se os parâmetros não estão presentes no HOST, mas foram modificados manualmente em um nível de banco de dados, em seguida, revertê-los com os valores apropriados conforme mencionado acima. Ou 'Parar proteção com reter dados' do portal do Azure e 'retomar backup' novamente.|
+| Configuração de BACKINT inválida detectada. Interrompa a proteção e reconfigure o banco de dados.| Os parâmetros backInt estão especificados incorretamente para o backup do Azure. | Verifique se [os parâmetros estão definidos](#setting-up-backint-parameters). Se os parâmetros baseados em backInt estiverem presentes no HOST, remova-os. Se os parâmetros não estiverem presentes no nível do HOST, mas tiverem sido modificados manualmente em um nível de banco de dados, reverta-os para os valores apropriados, conforme descrito anteriormente. Ou execute o **Stop Protection e mantenha os dados de backup** do portal do Azure e selecione retomar **backup**.|

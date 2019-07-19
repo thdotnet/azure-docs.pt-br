@@ -11,17 +11,17 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
-ms.date: 05/18/2019
-ms.openlocfilehash: 11b3e7724f34a7929d9851dbc8034829f020868b
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
-ms.translationtype: MT
+ms.date: 07/15/2019
+ms.openlocfilehash: 229814b908861080ff56d6f4bcba25cc996f00ff
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67190722"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68228062"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Use grupos de failover automático para habilitar o failover transparente e coordenado de vários bancos de dados
 
-Grupos de failover automático é um recurso de banco de dados SQL que permite que você gerencie a replicação e failover de um grupo de bancos de dados em um servidor de banco de dados SQL ou todos os bancos de dados em uma instância gerenciada para outra região. Ele usa a mesma tecnologia subjacente da [replicação geográfica ativa](sql-database-active-geo-replication.md). Você pode iniciar o failover manualmente ou pode delegá-lo para o serviço de Banco de Dados SQL com base em uma política definida pelo usuário. A última opção permite que você recupere automaticamente vários bancos de dados relacionados em uma região secundária após uma falha catastrófica ou outro evento não planejado que resulte em perda total ou parcial de disponibilidade do serviço de Banco de Dados SQL na região primária. Além disso, eles podem usar os bancos de dados secundários legíveis para descarregar cargas de trabalho de consulta somente leitura. Como os grupos de failover automático incluem vários bancos de dados, esses bancos de dados devem ser configurados no servidor primário. Servidores primários e secundários para bancos de dados no grupo de failover devem estar na mesma assinatura. Os grupos de failover automático oferecem suporte à replicação de todos os bancos de dados no grupo para apenas um servidor secundário em uma região diferente.
+Os grupos de failover automático são um recurso de banco de dados SQL que permite que você gerencie a replicação e o failover de um grupo de bancos de dados em um servidor de banco de dados SQL ou de todos os bancos em uma instância gerenciada para outra região. É uma abstração declarativa sobre o recurso de [replicação geográfica ativa](sql-database-active-geo-replication.md) existente, projetado para simplificar a implantação e o gerenciamento de bancos de dados replicados geograficamente em escala. Você pode iniciar o failover manualmente ou pode delegá-lo para o serviço de Banco de Dados SQL com base em uma política definida pelo usuário. A última opção permite que você recupere automaticamente vários bancos de dados relacionados em uma região secundária após uma falha catastrófica ou outro evento não planejado que resulte em perda total ou parcial de disponibilidade do serviço de Banco de Dados SQL na região primária. Um grupo de failover pode incluir um ou vários bancos de dados, normalmente usados pelo mesmo aplicativo. Além disso, eles podem usar os bancos de dados secundários legíveis para descarregar cargas de trabalho de consulta somente leitura. Como os grupos de failover automático incluem vários bancos de dados, esses bancos de dados devem ser configurados no servidor primário. Servidores primários e secundários para bancos de dados no grupo de failover devem estar na mesma assinatura. Os grupos de failover automático oferecem suporte à replicação de todos os bancos de dados no grupo para apenas um servidor secundário em uma região diferente.
 
 > [!NOTE]
 > Ao trabalhar com bancos de dados individuais ou em pool em um servidor do Banco de Dados SQL, se quiser vários secundários nas mesmas regiões ou em regiões diferentes, use a [replicação geográfica ativa](sql-database-active-geo-replication.md).
@@ -40,31 +40,31 @@ Para garantir a continuidade de negócios real, a adição de redundância de ba
 
 ## <a name="auto-failover-group-terminology-and-capabilities"></a>Funcionalidades e terminologia de grupo de failover automático
 
-- **Grupo de failover (NÉVOA)**
+- **Grupo de failover (neblina)**
 
-  Um grupo de failover é um grupo nomeado de bancos de dados gerenciados por um único servidor de banco de dados SQL ou em uma única instância gerenciada que pode fazer failover como uma unidade para outra região no caso de alguns ou todos os bancos de dados primários ficarem indisponíveis devido a uma interrupção na região primária. Quando criado para instâncias gerenciadas, um grupo de failover contém todos os bancos de dados de usuário na instância e, portanto, apenas um grupo de failover pode ser configurado em uma instância.
+  Um grupo de failover é um grupo nomeado de bancos de dados gerenciados por um único servidor de banco de dados SQL ou em uma única instância gerenciada que pode fazer failover como uma unidade para outra região caso todos ou alguns bancos de dados primários fiquem indisponíveis devido a uma interrupção na região primária. Quando criadas para instâncias gerenciadas, um grupo de failover contém todos os bancos de dados de usuário na instância e, portanto, apenas um grupo de failover pode ser configurado em uma instância do.
   
   > [!IMPORTANT]
-  > O nome do grupo de failover deve ser globalmente exclusivo dentro do `.database.windows.net` domínio.
+  > O nome do grupo de failover deve ser globalmente exclusivo no `.database.windows.net` domínio.
 
-- **Servidores de Banco de Dados SQL**
+- **Servidores do Banco de Dados SQL**
 
      Com servidores do Banco de Dados SQL, alguns ou todos os bancos de dados do usuário em um único servidor podem ser colocados em um grupo de failover. Além disso, um servidor do Banco de Dados SQL dá suporte a vários grupos de failover em um único servidor do Banco de Dados SQL.
 
 - **Primário**
 
-  O servidor de banco de dados SQL ou instância gerenciada que hospeda os bancos de dados primários no grupo de failover.
+  O servidor de banco de dados SQL ou a instância gerenciada que hospeda os bancos dos dados primários no grupo de failover.
 
 - **Secundário**
 
-  O servidor de banco de dados SQL ou instância gerenciada que hospeda os bancos de dados secundários no grupo de failover. O secundário não pode estar na mesma região do primário.
+  O servidor de banco de dados SQL ou a instância gerenciada que hospeda os bancos dos dados secundários no grupo de failover. O secundário não pode estar na mesma região do primário.
 
 - **Adicionar bancos de dados individuais ao grupo de failover**
 
   É possível colocar vários bancos de dados individuais no mesmo servidor do Banco de Dados SQL no mesmo grupo de failover. Se você adicionar um banco de dados individual ao grupo de failover, ele criará automaticamente um banco de dados secundário usando a mesma edição e tamanho da computação no servidor secundário.  Você especificou esse servidor ao criar o grupo de failover. Se você adicionar um banco de dados que já possui um banco de dados secundário no servidor secundário, esse vínculo de replicação geográfica é herdado pelo grupo. Quando você adiciona um banco de dados que já tem um banco de dados secundário em um servidor que não faz parte do grupo de failover, um novo banco de dados secundário é criado no servidor secundário.
   
   > [!IMPORTANT]
-  > Em uma instância gerenciada, todos os bancos de dados do usuário serão replicados. Você não pode escolher um subconjunto de bancos de dados de usuário para replicação no grupo de failover.
+  > Em uma instância gerenciada, todos os bancos de dados de usuário são replicados. Você não pode escolher um subconjunto de bancos de dados de usuário para replicação no grupo de failover.
 
 - **Adicionar bancos de dados no pool elástico para o grupo de failover**
 
@@ -72,18 +72,18 @@ Para garantir a continuidade de negócios real, a adição de redundância de ba
   
 - **Zona DNS**
 
-  Uma ID exclusiva que é gerada automaticamente quando uma nova instância é criada. Um certificado (SAN) de vários domínio para esta instância é provisionado para autenticar conexões de cliente em qualquer instância na mesma zona de DNS. As duas instâncias gerenciadas no mesmo grupo de failover devem compartilhar a zona DNS. 
+  Uma ID exclusiva que é gerada automaticamente quando uma nova instância é criada. Um certificado de vários domínios (SAN) para essa instância é provisionado para autenticar as conexões de cliente com qualquer instância na mesma zona DNS. As duas instâncias gerenciadas no mesmo grupo de failover devem compartilhar a zona DNS. 
   
   > [!NOTE]
-  > Uma ID de zona do DNS não é necessária para os grupos de failover criados para servidores de banco de dados SQL.
+  > Uma ID de zona DNS não é necessária para grupos de failover criados para servidores de banco de dados SQL.
 
 - **Ouvinte de leitura/gravação do grupo de failover**
 
-  Foi formado um registro CNAME de DNS que aponta para URL da réplica primária atual. Ele permite que os aplicativos de SQL de leitura/gravação se reconectem de forma transparente ao banco de dados primário quando o banco de dados primário for alterado após o failover. Quando o grupo de failover é criado em um servidor de banco de dados SQL, o registro DNS CNAME para a URL do ouvinte é formado como `<fog-name>.database.windows.net`. Quando o grupo de failover é criado em uma instância gerenciada, o registro DNS CNAME para a URL do ouvinte é formado como `<fog-name>.zone_id.database.windows.net`.
+  Um registro DNS CNAME que aponta para a URL primária atual. Ele é criado automaticamente quando o grupo de failover é criado e permite que a carga de trabalho de leitura/gravação do SQL Reconecte-se de forma transparente ao banco de dados primário quando o primário é alterado após o failover. Quando o grupo de failover é criado em um servidor de banco de dados SQL, o registro DNS CNAME para a URL `<fog-name>.database.windows.net`do ouvinte é formado como. Quando o grupo de failover é criado em uma instância gerenciada, o registro DNS CNAME para a URL do ouvinte é formado como `<fog-name>.zone_id.database.windows.net`.
 
 - **Ouvinte de somente leitura do grupo de failover**
 
-  Foi formado um registro CNAME de DNS que aponta ao ouvinte somente leitura que aponta à URL do secundário. Ele permite que os aplicativos SQL de somente leitura se conectem de forma transparente ao secundário usando as regras de balanceamento de carga especificadas. Quando o grupo de failover é criado em um servidor de banco de dados SQL, o registro DNS CNAME para a URL do ouvinte é formado como `<fog-name>.secondary.database.windows.net`. Quando o grupo de failover é criado em uma instância gerenciada, o registro DNS CNAME para a URL do ouvinte é formado como `<fog-name>.zone_id.secondary.database.windows.net`.
+  Foi formado um registro CNAME de DNS que aponta ao ouvinte somente leitura que aponta à URL do secundário. Ele é criado automaticamente quando o grupo de failover é criado e permite que a carga de trabalho SQL somente leitura se conecte de forma transparente ao secundário usando as regras de balanceamento de carga especificadas. Quando o grupo de failover é criado em um servidor de banco de dados SQL, o registro DNS CNAME para a URL `<fog-name>.secondary.database.windows.net`do ouvinte é formado como. Quando o grupo de failover é criado em uma instância gerenciada, o registro DNS CNAME para a URL do ouvinte é formado como `<fog-name>.zone_id.secondary.database.windows.net`.
 
 - **Política de failover automático**
 
@@ -91,7 +91,7 @@ Para garantir a continuidade de negócios real, a adição de redundância de ba
 
 - **Política de failover somente leitura**
 
-  Por padrão, o failover do ouvinte somente leitura é desabilitado. Isso garante que o desempenho do primário não seja afetado quando o secundário estiver offline. No entanto, isso também significa que as sessões somente leitura não poderão conectar-se até que o secundário seja recuperado. Se não for possível tolerar o tempo de inatividade para sessões somente leitura e tiver condições para usar temporariamente o primário tanto para tráfego somente leitura como leitura/gravação às custas da possível degradação do desempenho do primário, você poderá habilitar o failover para o ouvinte somente leitura. Nesse caso, o tráfego de somente leitura será redirecionado automaticamente para a primária se o secundário não está disponível.
+  Por padrão, o failover do ouvinte somente leitura é desabilitado. Isso garante que o desempenho do primário não seja afetado quando o secundário estiver offline. No entanto, isso também significa que as sessões somente leitura não poderão conectar-se até que o secundário seja recuperado. Se não for possível tolerar o tempo de inatividade para sessões somente leitura e tiver condições para usar temporariamente o primário tanto para tráfego somente leitura como leitura/gravação às custas da possível degradação do desempenho do primário, você poderá habilitar o failover para o ouvinte somente leitura. Nesse caso, o tráfego somente leitura será redirecionado automaticamente para o primário se o secundário não estiver disponível.
 
 - **Failover planejado**
 
@@ -103,7 +103,7 @@ Para garantir a continuidade de negócios real, a adição de redundância de ba
 
 - **Failover não planejado**
 
-   Um failover forçado ou não planejado mudará imediatamente o secundário para a função primária, sem nenhuma sincronização com o primário. Esta operação pode resultar em perda de dados. Um failover não planejado é usado como um método de recuperação durante as interrupções quando o primário não está acessível. Quando o primário original estiver online novamente, ele será automaticamente reconectar-se sem sincronização e se tornar um novo secundário.
+   Um failover forçado ou não planejado mudará imediatamente o secundário para a função primária, sem nenhuma sincronização com o primário. Esta operação pode resultar em perda de dados. Um failover não planejado é usado como um método de recuperação durante as interrupções quando o primário não está acessível. Quando o primário original estiver online novamente, ele será reconectado automaticamente sem sincronização e se tornará um novo secundário.
 
 - **Failover manual**
 
@@ -121,16 +121,16 @@ Para garantir a continuidade de negócios real, a adição de redundância de ba
   > A Instância Gerenciada não dá suporte a vários grupos de failover.
   
 ## <a name="permissions"></a>Permissões
-Permissões para um grupo de failover são gerenciadas por meio [controle de acesso baseado em função (RBAC)](../role-based-access-control/overview.md). O [Colaborador do SQL Server](../role-based-access-control/built-in-roles.md#sql-server-contributor) função tem todas as permissões necessárias para gerenciar grupos de failover. 
+As permissões para um grupo de failover são gerenciadas por [RBAC (controle de acesso baseado em função)](../role-based-access-control/overview.md). A função [colaborador de SQL Server](../role-based-access-control/built-in-roles.md#sql-server-contributor) tem todas as permissões necessárias para gerenciar grupos de failover. 
 
 ### <a name="create-failover-group"></a>Criar grupo de failover
-Para criar um grupo de failover, você precisa ter acesso de gravação RBAC para os servidores primários e secundários e todos os bancos de dados no grupo de failover. Para uma instância gerenciada, você precisa ter acesso de gravação RBAC para ambas as primária e secundária instância gerenciada, mas permissões nos bancos de dados individuais não são relevantes, como bancos de dados de instância gerenciada individual não podem ser adicionados ou removidos de um grupo de failover. 
+Para criar um grupo de failover, você precisa de acesso de gravação de RBAC para os servidores primários e secundários e para todos os bancos de dados no grupo de failover. Para uma instância gerenciada, você precisa de acesso de gravação de RBAC para a instância gerenciada primária e secundária, mas as permissões em bancos de dados individuais não são relevantes, pois bancos de dados individuais de instância gerenciada não podem ser adicionados ou removidos de um grupo de failover. 
 
 ### <a name="update-a-failover-group"></a>Atualizar um grupo de failover
-Para atualizar um grupo de failover, você precisa de RBAC acesso de gravação para o grupo de failover e todos os bancos de dados no servidor principal atual ou a instância gerenciada.  
+Para atualizar um grupo de failover, você precisa de acesso de gravação do RBAC para o grupo de failover e de todos os bancos de dados no servidor primário atual ou instância gerenciada.  
 
 ### <a name="failover-a-failover-group"></a>Failover de um grupo de failover
-Para fazer failover de um grupo de failover, você precisa ter acesso de gravação RBAC para o grupo de failover no novo servidor primário ou a instância gerenciada. 
+Para fazer failover de um grupo de failover, você precisa de acesso de gravação de RBAC ao grupo de failover no novo servidor primário ou instância gerenciada. 
 
 ## <a name="best-practices-of-using-failover-groups-with-single-databases-and-elastic-pools"></a>Práticas recomendadas de como usar grupos de failover com bancos de dados individuais e pools elásticos
 
@@ -142,7 +142,7 @@ Ao projetar um serviço pensando em continuidade de negócios, siga estas diretr
 
 - **Use um ou vários grupos de failover para gerenciar failover de vários bancos de dados**
 
-  Um ou mais grupos de failover podem ser criados entre dois servidores em diferentes regiões (servidores primário e secundário). Cada grupo pode conter um ou vários bancos de dados que são recuperados como uma unidade no caso de alguns ou todos os bancos de dados primários ficarem indisponíveis devido a uma interrupção na região primária. O grupo de failover cria um banco de dados geograficamente secundário com o mesmo objetivo de serviço do primário. Se você adicionar uma relação de replicação geográfica existente ao grupo de failover, certifique-se de que o geograficamente secundário esteja configurado com o mesma camada de serviço e tamanho de computação do primário.
+  Um ou mais grupos de failover podem ser criados entre dois servidores em diferentes regiões (servidores primário e secundário). Cada grupo pode conter um ou vários bancos de dados que são recuperados como uma unidade no caso de alguns ou todos os bancos de dados primários ficarem indisponíveis devido a uma interrupção na região primária. O grupo de failover cria um banco de dados geograficamente secundário com o mesmo objetivo de serviço do primário. Se você adicionar uma relação de replicação geográfica existente ao grupo de failover, certifique-se de que o geograficamente secundário esteja configurado com o mesmo nível de serviço e tamanho da computação do primário.
 
 - **Use ouvinte de leitura/gravação para carga de trabalho OLTP**
 
@@ -166,7 +166,7 @@ Ao projetar um serviço pensando em continuidade de negócios, siga estas diretr
   > [!IMPORTANT]
   > Os pools elásticos com 800 ou menos DTUs e mais de 250 bancos de dados usando a replicação geográfica podem encontrar problemas, incluindo failovers planejados mais longos e diminuição do desempenho.  A ocorrência desses problemas é mais provável para cargas de trabalho com uso intensivo de gravação, quando os pontos de extremidade de replicação geográfica são separados por uma grande extensão geográfica ou quando vários pontos de extremidade secundários são usados para cada banco de dados.  Os sintomas desses problemas são indicados quando o retardo da replicação geográfica aumenta ao longo do tempo.  Esse retardo pode ser monitorado usando [sys.dm_geo_replication_link_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-geo-replication-link-status-azure-sql-database).  Se esses problemas ocorrerem, considere mitigações como aumentar o número de DTUs do pool ou reduzir o número de bancos de dados replicados geograficamente no mesmo pool.
 
-## <a name="best-practices-of-using-failover-groups-with-managed-instances"></a>Práticas recomendadas de como usar grupos de failover com instâncias gerenciadas
+## <a name="best-practices-of-using-failover-groups-with-managed-instances"></a>Práticas recomendadas de uso de grupos de failover com instâncias gerenciadas
 
 O grupo de failover automático precisa ser configurado na instância primária e a conectará à instância secundária em uma região do Azure diferente.  Todos os bancos de dados na instância serão replicados para a instância secundária. O diagrama a seguir ilustra uma configuração típica de um aplicativo de nuvem com redundância geográfica usando uma instância gerenciada e um grupo de failover automático.
 
@@ -175,13 +175,13 @@ O grupo de failover automático precisa ser configurado na instância primária 
 > [!IMPORTANT]
 > Os grupos de failover automático para a Instância Gerenciada estão em versão prévia pública.
 
-Se seu aplicativo usa a instância gerenciada como a camada de dados, siga estas diretrizes gerais ao criar para continuidade dos negócios:
+Se seu aplicativo usar a instância gerenciada como a camada de dados, siga estas diretrizes gerais ao projetar para continuidade dos negócios:
 
 - **Criar a instância secundária na mesma zona DNS que a instância primária**
 
-  Para garantir conectividade ininterrupta à instância primária após o failover, ambas as instâncias primária e secundária precisam estar na mesma zona DNS. Isso garante que o mesmo certificado (SAN) de vários domínio pode ser usado para autenticar conexões de cliente para qualquer uma das duas instâncias no grupo de failover. Quando seu aplicativo está pronto para implantação em produção, crie uma instância do secundário em uma região diferente e assegure que ela compartilhe a zona DNS com a instância do primário. Você pode fazer isso especificando um `DNS Zone Partner` usando o portal do Azure, PowerShell ou a API REST de parâmetro opcional. 
+  Para garantir conectividade ininterrupta à instância primária após o failover, ambas as instâncias primária e secundária precisam estar na mesma zona DNS. Ele garantirá que o mesmo certificado de vários domínios (SAN) possa ser usado para autenticar as conexões do cliente com uma das duas instâncias no grupo de failover. Quando seu aplicativo está pronto para implantação em produção, crie uma instância do secundário em uma região diferente e assegure que ela compartilhe a zona DNS com a instância do primário. Você pode fazer isso especificando um `DNS Zone Partner` parâmetro opcional usando o portal do Azure, o PowerShell ou a API REST. 
 
-  Para obter mais informações sobre como criar a instância secundária na mesma zona de DNS como a instância primária, consulte [gerenciamento de grupos de failover com gerenciado instâncias (versão prévia)](#powershell-managing-failover-groups-with-managed-instances-preview).
+  Para obter mais informações sobre como criar a instância secundária na mesma zona DNS que a instância primária, consulte [Gerenciando grupos de failover com instâncias gerenciadas (versão prévia)](#powershell-managing-failover-groups-with-managed-instances-preview).
 
 - **Permitir o tráfego de replicação entre duas instâncias**
 
@@ -215,14 +215,14 @@ Se seu aplicativo usa a instância gerenciada como a camada de dados, siga estas
 
   Quando uma falha for detectada, o SQL disparará o failover de leitura-gravação se não houver perda de dados, até onde nós sabemos. Caso contrário, ele aguardará o período especificado por você em `GracePeriodWithDataLossHours`. Se você especificou `GracePeriodWithDataLossHours`, esteja preparado para perda de dados. Em geral, durante interrupções, o Azure favorece a disponibilidade. Se você não puder perder dados, defina GracePeriodWithDataLossHours com um número grande o suficiente, como 24 horas.
 
-  A atualização do DNS do ouvinte de leitura-gravação ocorrerá imediatamente após o início do failover. Esta operação não resultará em perda de dados. No entanto, o processo de mudar as funções de bancos de dados pode levar até 5 minutos em condições normais. Até que ele seja concluído, alguns bancos de dados na nova instância do primário ainda serão somente leitura. Se o failover é iniciado usando o PowerShell, toda a operação é síncrona. Se ele é iniciado usando o portal do Azure, a interface do usuário indicará o status de conclusão. Se ele é iniciado usando a API REST, use o mecanismo de sondagem padrão do Azure Resource Manager para monitorar quanto à conclusão.
+  A atualização do DNS do ouvinte de leitura-gravação ocorrerá imediatamente após o início do failover. Esta operação não resultará em perda de dados. No entanto, o processo de mudar as funções de bancos de dados pode levar até 5 minutos em condições normais. Até que ele seja concluído, alguns bancos de dados na nova instância do primário ainda serão somente leitura. Se o failover for iniciado usando o PowerShell, toda a operação será síncrona. Se ele for iniciado usando o portal do Azure, a interface do usuário indicará o status de conclusão. Se ele é iniciado usando a API REST, use o mecanismo de sondagem padrão do Azure Resource Manager para monitorar quanto à conclusão.
 
   > [!IMPORTANT]
   > Use o failover manual de grupo para mover os primários de volta para a localização original. Quando a interrupção que causou o failover for atenuada, você poderá mover seus bancos de dados primários para a localização original. Para fazer isso, você deve iniciar o failover manual do grupo.
 
 ## <a name="failover-groups-and-network-security"></a>Grupos de failover e a segurança de rede
 
-Para alguns aplicativos, as regras de segurança exigem que o acesso à rede para a camada de dados seja restrito a um ou mais componentes específicos, como uma VM, um serviço Web etc. Essa exigência impõe alguns desafios para o design de continuidade de negócios e o uso dos grupos de failover. Considere as seguintes opções ao implementar tal acesso restrito.
+Para alguns aplicativos, as regras de segurança exigem que o acesso à rede para a camada de dados seja restrito a um ou mais componentes específicos, como uma VM, um serviço Web etc. Essa exigência impõe alguns desafios para o design de continuidade de negócios e o uso dos grupos de failover. Considere as seguintes opções ao implementar esse acesso restrito.
 
 ### <a name="using-failover-groups-and-virtual-network-rules"></a>Como usar grupos de failover e regras da rede virtual
 
@@ -254,27 +254,27 @@ A configuração acima garantirá que o failover automático não bloqueie conex
 > [!IMPORTANT]
 > Para garantir a continuidade dos negócios para interrupções regionais, garanta redundância geográfica para bancos de dados e componentes de front-end.
 
-## <a name="enabling-geo-replication-between-managed-instances-and-their-vnets"></a>Habilitar a replicação geográfica entre suas redes virtuais e instâncias gerenciadas
+## <a name="enabling-geo-replication-between-managed-instances-and-their-vnets"></a>Habilitando a replicação geográfica entre instâncias gerenciadas e suas VNets
 
-Quando você configura um grupo de failover entre instâncias gerenciadas primários e secundários em duas regiões diferentes, cada instância é isolada usando uma rede de virtual independente. Para permitir o tráfego de replicação entre essas redes virtuais, verifique se estes pré-requisitos forem atendidos:
+Quando você configura um grupo de failover entre instâncias gerenciadas primárias e secundárias em duas regiões diferentes, cada instância é isolada usando uma VNet independente. Para permitir o tráfego de replicação entre esses VNets, verifique se esses pré-requisitos foram atendidos:
 
-1. As duas instâncias gerenciadas precisam estar em diferentes regiões do Azure.
+1. As duas instâncias gerenciadas precisam estar em regiões diferentes do Azure.
 2. Seu secundário deve ser vazio (nenhum banco de dados do usuário).
-3. As instâncias gerenciadas do primárias e secundárias precisam estar no mesmo grupo de recursos.
-4. As redes virtuais que as instâncias gerenciadas fazem parte da necessidade de ser conectados por meio de um [Gateway de VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md). O Emparelhamento VNET Global não é compatível.
-5. As duas redes virtuais de instância gerenciada não pode ter endereços IP sobrepostos.
-6. Você precisa configurar sua segurança grupos NSG (rede) tal que portas 5022 e o intervalo de 11000 ~ 12000 são abertas a entrada e saída para conexões de outro gerenciados sub-rede instanciado. Isso é para permitir o tráfego de replicação entre as instâncias
+3. As instâncias gerenciadas primárias e secundárias precisam estar no mesmo grupo de recursos.
+4. O VNets que as instâncias gerenciadas fazem parte do precisam ser conectados por meio de um [Gateway de VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md). O Emparelhamento VNET Global não é compatível.
+5. Os dois VNets de instância gerenciada não podem ter endereços IP sobrepostos.
+6. Você precisa configurar seus NSG (grupos de segurança de rede) de modo que as portas 5022 e o intervalo 11000 ~ 12000 sejam abertos de entrada e saída para conexões de outra sub-rede em instância gerenciada. Isso é para permitir o tráfego de replicação entre as instâncias
 
    > [!IMPORTANT]
    > Regras de segurança de NSG mal configuradas resultam em operações de cópia de banco de dados paralisadas.
 
-7. A instância secundária está configurada com a ID de zona DNS correto. Zona DNS é uma propriedade de uma instância gerenciada e sua ID é incluída no nome de endereço do host. A ID de zona é gerada como uma cadeia de caracteres aleatória quando a primeira instância gerenciada é criada em cada rede virtual e a mesma ID é atribuída a todas as outras instâncias na mesma sub-rede. Uma vez atribuído, a zona DNS não pode ser modificada. Instâncias gerenciadas incluídas no mesmo grupo de failover devem compartilhar a zona DNS. Para fazer isso passando a ID de zona da instância primária como o valor do parâmetro DnsZonePartner ao criar a instância secundária. 
+7. A instância secundária está configurada com a ID de zona DNS correta. A zona DNS é uma propriedade de uma instância gerenciada e sua ID é incluída no endereço de nome do host. A ID da zona é gerada como uma cadeia de caracteres aleatória quando a primeira instância gerenciada é criada em cada VNet e a mesma ID é atribuída a todas as outras instâncias na mesma sub-rede. Uma vez atribuída, a zona DNS não pode ser modificada. As instâncias gerenciadas incluídas no mesmo grupo de failover devem compartilhar a zona DNS. Isso é feito passando a ID da zona da instância primária como o valor do parâmetro DnsZonePartner ao criar a instância secundária. 
 
 ## <a name="upgrading-or-downgrading-a-primary-database"></a>Atualizar ou fazer downgrade de um banco de dados primário
 
-Você pode atualizar ou fazer downgrade de um banco de dados primário para um tamanho da computação diferente (dentro da mesma camada de serviço, não entre Uso Geral e Comercialmente Crítico) sem desconectar nenhum banco de dados secundário. Ao atualizar, recomendamos que você atualize todos os bancos de dados secundários primeiro e, em seguida, atualize o primário. Ao fazer o downgrade, inverta a ordem: fazer o downgrade do primário pela primeira vez e, em seguida, fazer downgrade de todos os bancos de dados secundários. Quando você atualiza ou faz downgrade do banco de dados para uma camada de serviço diferente essa recomendação é imposta.
+Você pode atualizar ou fazer downgrade de um banco de dados primário para um tamanho da computação diferente (dentro da mesma camada de serviço, não entre Uso Geral e Comercialmente Crítico) sem desconectar nenhum banco de dados secundário. Ao atualizar, recomendamos que você atualize todos os bancos de dados secundários primeiro e, em seguida, atualize o primário. Ao fazer downgrade, inverta o pedido: faça o downgrade do primário primeiro e, em seguida, downgrade todos os bancos de dados secundários. Quando você atualiza ou faz downgrade do banco de dados para uma camada de serviço diferente essa recomendação é imposta.
 
-Essa sequência é recomendável especificamente para evitar o problema em que o secundário em uma SKU inferior fica sobrecarregado e deve ser repropagado durante um processo de atualização ou downgrade. Você também pode evitar o problema, tornando o primário como somente leitura, às custas de afetar todas as cargas de trabalho de leitura / gravação no primário. 
+Essa sequência é recomendada especificamente para evitar o problema em que o secundário em um SKU inferior é sobrecarregado e deve ser propagado durante um processo de atualização ou de downgrade. Você também pode evitar o problema tornando o primário somente leitura, às custas de afetar todas as cargas de trabalho de leitura/gravação no primário. 
 
 > [!NOTE]
 > Se você tiver criado um banco de dados secundário como parte da configuração do grupo de failover não é recomendável fazer o downgrade do banco de dados secundário. Isso é para garantir que sua camada de dados tenha capacidade suficiente para processar sua carga de trabalho normal após o failover ser ativado.
@@ -329,7 +329,7 @@ Conforme discutido anteriormente, os grupos de failover automático e a replica�
       import-module azurerm.sql
    ```
 
-#### <a name="powershell-commandlets-to-create-an-instance-failover-group"></a>Cmdlets do PowerShell para criar um grupo de failover da instância
+#### <a name="powershell-commandlets-to-create-an-instance-failover-group"></a>Commandlets do PowerShell para criar um grupo de failover de instância
 
 | API | DESCRIÇÃO |
 | --- | --- |
@@ -363,7 +363,7 @@ Conforme discutido anteriormente, os grupos de failover automático e a replica�
 | [Obter grupo de failover](https://docs.microsoft.com/rest/api/sql/instancefailovergroups/get) | Obtém um grupo de failover. |
 | [Listar grupos de failover – listar por localização](https://docs.microsoft.com/rest/api/sql/instancefailovergroups/listbylocation) | Lista os grupos de failover em uma localização. |
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - Para exemplos de scripts, consulte:
   - [Configurar e fazer failover de um banco de dados individual usando replicação geográfica ativa](scripts/sql-database-setup-geodr-and-failover-database-powershell.md)

@@ -4,7 +4,7 @@ titlesuffix: Azure Load Balancer
 description: Este artigo explica como o Azure permite que as VMs comuniquem-se com serviços de Internet públicos.
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: asudbring
 ms.service: load-balancer
 ms.custom: seodec18
 ms.devlang: na
@@ -12,13 +12,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/02/2019
-ms.author: kumud
-ms.openlocfilehash: f9742d14fc14230f2424d005aa6aa8b1db3cece4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: allensu
+ms.openlocfilehash: 6623b3e679faaa73f18c0f6b376de101113bcbdb
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65967728"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68274549"
 ---
 # <a name="outbound-connections-in-azure"></a>Conexões de saída no Azure
 
@@ -34,7 +34,7 @@ O Azure usa SNAT (conversão de endereço de rede de origem) para realizar essa 
 Há vários [cenários de saída](#scenarios). É possível combinar esses cenários conforme necessário. Revise-os cuidadosamente para entender os recursos, as restrições e os padrões, e como se aplicam ao seu modelo de implantação e cenário de aplicativo. Revise as diretrizes para [gerenciar esses cenários](#snatexhaust).
 
 >[!IMPORTANT] 
->O Standard Load Balancer e o IP Público Standard apresentam novas habilidades e comportamentos diferentes da conectividade de saída.  Eles não são o mesmo que SKUs Básicos.  Se quiser ter conectividade de saída ao trabalhar com SKUs Standard, você precisará defini-la explicitamente com endereços IP públicos Standard ou com o Load Balancer Standard público.  Isso inclui a criação de conectividade de saída ao usar um Load Balancer Standard interno.  É recomendável que você sempre use regras de saída em um Load Balancer Standard público.  O [Cenário 3](#defaultsnat) não está disponível com o SKU Standard.  Isso significa que, quando um Standard Load Balancer for usado, você precisará executar etapas para criar a conectividade de saída para as VMs no pool de back-end se a conectividade de saída for desejada.  No contexto da conectividade de saída, uma única VM autônoma, todas as VMs em um conjunto de disponibilidade, todas as instâncias em um VMSS se comportam como um grupo. Isso significa que, se uma única VM em um conjunto de disponibilidade estiver associada a um SKU Standard, todas as instâncias de VM neste conjunto de disponibilidade agora se comportarão de acordo com as mesmas regras que se aplicariam se elas estivessem associados ao SKU Standard, mesmo se uma instância individual não estivesse diretamente associada a ele.  Revise atentamente todo este documento para entender os conceitos gerais, revise [Standard Load Balancer](load-balancer-standard-overview.md) para ver as diferenças entre as SKUs e revise [regras de saída](load-balancer-outbound-rules-overview.md).  Usar regras de saída permite ter um controle refinado sobre todos os aspectos da conectividade de saída.
+>O Standard Load Balancer e o IP Público Standard apresentam novas habilidades e comportamentos diferentes da conectividade de saída.  Eles não são o mesmo que SKUs Básicos.  Se quiser ter conectividade de saída ao trabalhar com SKUs Standard, você precisará defini-la explicitamente com endereços IP públicos Standard ou com o Load Balancer Standard público.  Isso inclui a criação de conectividade de saída ao usar um Standard Load Balancer interno.  É recomendável que você sempre use regras de saída em um Load Balancer Standard público.  O [Cenário 3](#defaultsnat) não está disponível com o SKU Standard.  Isso significa que, quando um Standard Load Balancer for usado, você precisará executar etapas para criar a conectividade de saída para as VMs no pool de back-end se a conectividade de saída for desejada.  No contexto da conectividade de saída, uma única VM autônoma, todas as VMs em um conjunto de disponibilidade, todas as instâncias em um VMSS se comportam como um grupo. Isso significa que, se uma única VM em um conjunto de disponibilidade estiver associada a um SKU Standard, todas as instâncias de VM neste conjunto de disponibilidade agora se comportarão de acordo com as mesmas regras que se aplicariam se elas estivessem associados ao SKU Standard, mesmo se uma instância individual não estivesse diretamente associada a ele.  Revise atentamente todo este documento para entender os conceitos gerais, revise [Standard Load Balancer](load-balancer-standard-overview.md) para ver as diferenças entre as SKUs e revise [regras de saída](load-balancer-outbound-rules-overview.md).  Usar regras de saída permite ter um controle refinado sobre todos os aspectos da conectividade de saída.
 
 ## <a name="scenarios"></a>Visão geral do cenário
 
@@ -70,7 +70,7 @@ As portas SNAT são pré-alocadas, conforme descrito na seção [Entendendo SNAT
 
 Quando [vários endereços IP (públicos) estão associados ao Load Balancer Básico](load-balancer-multivip-overview.md), qualquer um desses endereços IP públicos é um candidato para fluxos de saída e um é selecionado aleatoriamente.  
 
-Para monitorar a integridade das conexões de saída com Load Balancer Basic, você pode usar [logs do Azure Monitor para o balanceador de carga](load-balancer-monitor-log.md) e [logs de eventos de alerta](load-balancer-monitor-log.md#alert-event-log) para monitorar mensagens de esgotamento de porta SNAT.
+Para monitorar a integridade das conexões de saída com o Load Balancer Basic, você pode usar [logs de Azure monitor para Load Balancer](load-balancer-monitor-log.md) e [logs de eventos de alerta](load-balancer-monitor-log.md#alert-event-log) para monitorar mensagens de esgotamento de porta SNAT.
 
 ### <a name="defaultsnat"></a>Cenário 3: VM autônoma com um Endereço IP Público em Nível de Instância
 
@@ -176,13 +176,13 @@ As alocações de portas SNAT são o protocolo de transporte IP específico (TCP
 
 ### <a name="tcp-snat-port-release"></a>Liberação da porta TCP SNAT
 
-- Se o servidor/cliente enviar FINACK, porta SNAT será liberada após 240 segundos.
+- Se o servidor/cliente enviar FINACK, a porta SNAT será liberada após 240 segundos.
 - Se um RST for visto, a porta SNAT será liberada após 15 segundos.
-- Se o tempo limite de ociosidade foi atingido, a porta é liberada.
+- Se o tempo limite de ociosidade tiver sido atingido, a porta será liberada.
 
 ### <a name="udp-snat-port-release"></a>Liberação da porta UDP SNAT
 
-- Se o tempo limite de ociosidade foi atingido, a porta é liberada.
+- Se o tempo limite de ociosidade tiver sido atingido, a porta será liberada.
 
 ## <a name="problemsolving"></a> Solução de problemas 
 

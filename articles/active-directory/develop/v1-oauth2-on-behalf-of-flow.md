@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin, nacanuma
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 51fd5c8f406ea54c7fc8e81c674e41b30d7ad406
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: eb64aa401838451191a830a5adbfb435ac5fdf25
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67482424"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68261929"
 ---
 # <a name="service-to-service-calls-that-use-delegated-user-identity-in-the-on-behalf-of-flow"></a>Chamadas de serviço a serviço que usam a identidade do usuário delegado no fluxo On-Behalf-Of
 
@@ -38,7 +38,7 @@ O fluxo OBO (On-Behalf-Of) do OAuth 2.0 permite que um aplicativo que invoca um 
 
 O fluxo OBO é iniciado após o usuário ter sido autenticado em um aplicativo que usa o [fluxo de concessão de código de autorização OAuth 2.0](v1-protocols-oauth-code.md). Nesse ponto, o aplicativo envia um token de acesso (token A) para a API Web da camada intermediária (API A) que contém as declarações do usuário e o consentimento para acessar a API A. Em seguida, a API A faz uma solicitação autenticada para a API Web downstream (API B).
 
-Essas etapas compõem o fluxo On-Behalf-Of: ![Mostra as etapas em que o fluxo On-Behalf-Of OAuth 2.0](./media/v1-oauth2-on-behalf-of-flow/active-directory-protocols-oauth-on-behalf-of-flow.png)
+Essas etapas compõem o fluxo On-Behalf-Of: ![Mostra as etapas no fluxo em nome de do OAuth 2.0](./media/v1-oauth2-on-behalf-of-flow/active-directory-protocols-oauth-on-behalf-of-flow.png)
 
 1. O aplicativo cliente faz uma solicitação para API A com o token A.
 1. A API A se autentica no ponto de extremidade de emissão de token do Azure AD e solicita um token para acessar a API B.
@@ -58,32 +58,32 @@ Registre o aplicativo de camada intermediária e o aplicativo cliente no Azure A
 1. Entre no [Portal do Azure](https://portal.azure.com).
 1. Na barra superior, selecione sua conta e examine a lista **Diretório** para selecionar um locatário do Active Directory para seu aplicativo.
 1. Selecione **Mais Serviços** no painel esquerdo e escolha **Azure Active Directory**.
-1. Selecione **registros de aplicativo** e, em seguida **novo registro**.
+1. Selecione **registros de aplicativo** e, em seguida, **novo registro**.
 1. Insira um nome amigável para o aplicativo e selecione o tipo de aplicativo.
 1. Em **Tipos de conta com suporte**, selecione **Contas em qualquer diretório organizacional e contas pessoais da Microsoft**.
 1. Defina o URI de redirecionamento para a URL base.
 1. Selecione **Registrar** para criar o aplicativo.
 1. Gere um segredo do cliente antes de sair do portal do Azure.
-1. No portal do Azure, escolha o seu aplicativo e selecione **certificados e segredos**.
-1. Selecione **novo segredo do cliente** e adicionar um segredo com uma duração de um ano ou dois anos.
-1. Quando você salva esta página, o portal do Azure exibe o valor do segredo. Copie e salve o valor do segredo em um local seguro.
+1. Na portal do Azure, escolha seu aplicativo e selecione **certificados & segredos**.
+1. Selecione **novo segredo do cliente** e adicione um segredo com uma duração de um ano ou dois anos.
+1. Quando você salvar essa página, a portal do Azure exibirá o valor secreto. Copie e salve o valor secreto em um local seguro.
 
 > [!IMPORTANT]
-> É necessário o segredo para definir as configurações de aplicativo em sua implementação. Esse valor secreto não seja exibido novamente, e não é possível recuperá-la por outros meios. Registre-o assim que ele ficar visível no portal do Azure.
+> Você precisa do segredo para definir as configurações do aplicativo em sua implementação. Esse valor secreto não é exibido novamente e não é recuperável por nenhum outro meio. Registre-o assim que ele ficar visível no portal do Azure.
 
 ### <a name="register-the-client-application"></a>Registrar o aplicativo cliente
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
 1. Na barra superior, selecione sua conta e examine a lista **Diretório** para selecionar um locatário do Active Directory para seu aplicativo.
 1. Selecione **Mais Serviços** no painel esquerdo e escolha **Azure Active Directory**.
-1. Selecione **registros de aplicativo** e, em seguida **novo registro**.
+1. Selecione **registros de aplicativo** e, em seguida, **novo registro**.
 1. Insira um nome amigável para o aplicativo e selecione o tipo de aplicativo.
 1. Em **Tipos de conta com suporte**, selecione **Contas em qualquer diretório organizacional e contas pessoais da Microsoft**.
 1. Defina o URI de redirecionamento para a URL base.
 1. Selecione **Registrar** para criar o aplicativo.
-1. Configurar permissões para seu aplicativo. Na **permissões de API**, selecione **adicionar uma permissão** e, em seguida, **Minhas APIs**.
+1. Configurar permissões para seu aplicativo. Em **permissões de API**, selecione **Adicionar uma permissão** e, em seguida, **minhas APIs**.
 1. Digite o nome do serviço de camada intermediária no campo de texto.
-1. Escolher **selecionar permissões** e, em seguida, selecione **Access <service name>** .
+1. Escolha **selecionar permissões** e, em seguida, selecione **nome do serviço de \<acesso >** .
 
 ### <a name="configure-known-client-applications"></a>Configurar aplicativos cliente conhecidos
 
@@ -213,7 +213,7 @@ O exemplo a seguir mostra uma resposta bem-sucedida a uma solicitação para um 
 
 ### <a name="error-response-example"></a>Exemplo de resposta de erro
 
-O ponto de extremidade de token do Azure AD retorna uma resposta de erro ao tentar adquirir um token de acesso para a API downstream que é definida com uma política de acesso condicional (por exemplo, a autenticação multifator). O serviço de camada intermediária deve revelar esse erro para o aplicativo cliente para que o aplicativo cliente possa fornecer a interação do usuário para atender à política de acesso condicional.
+O ponto de extremidade de token do Azure AD retorna uma resposta de erro quando tenta adquirir um token de acesso para uma API downstream que é definida com uma política de acesso condicional (por exemplo, autenticação multifator). O serviço de camada intermediária deve enfileirar esse erro para o aplicativo cliente para que o aplicativo cliente possa fornecer a interação do usuário para atender à política de acesso condicional.
 
 ```
 {

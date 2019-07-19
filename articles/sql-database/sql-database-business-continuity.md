@@ -13,16 +13,16 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 06/25/2019
-ms.openlocfilehash: 2f3723e0a1b14edd6f516f3cc080501bea80d486
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 26b31781ae0056999eb222981b2eea3eb4595041
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67442045"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68228058"
 ---
 # <a name="overview-of-business-continuity-with-azure-sql-database"></a>Visão geral da continuidade dos negócios com o Banco de Dados SQL do Azure
 
-**Continuidade dos negócios** no Banco de Dados SQL do Azure refere-se aos mecanismos, políticas e procedimentos que permitem que seu negócio continue operando em caso de interrupção, particularmente em sua infraestrutura de computação. Na maioria dos casos, o Banco de Dados SQL do Azure lidará com os eventos de interrupção que podem acontecer no ambiente de nuvem e manterá seus aplicativos e processos empresariais em execução. No entanto, há alguns eventos de interrupção não podem ser tratados pelo banco de dados SQL automaticamente, como:
+**Continuidade dos negócios** no Banco de Dados SQL do Azure refere-se aos mecanismos, políticas e procedimentos que permitem que seu negócio continue operando em caso de interrupção, particularmente em sua infraestrutura de computação. Na maioria dos casos, o Banco de Dados SQL do Azure lidará com os eventos de interrupção que podem acontecer no ambiente de nuvem e manterá seus aplicativos e processos empresariais em execução. No entanto, há alguns eventos de interrupção que não podem ser manipulados pelo banco de dados SQL automaticamente, como:
 
 - O usuário excluiu ou atualizou acidentalmente uma linha de uma tabela.
 - Um invasor mal-intencionado conseguiu excluir dados ou remover um banco de dados.
@@ -37,16 +37,16 @@ De uma perspectiva de banco de dados, há quatro cenários principais de interru
 - Falhas locais de hardware ou software que afetam o nó do banco de dados, como uma falha na unidade de disco.
 - Corrupção ou exclusão de dados geralmente causada por um erro de aplicativo ou erro humano. Essas falhas são específicas do aplicativo e normalmente não podem ser detectadas pelo serviço de banco de dados.
 - Interrupção do datacenter, possivelmente causada por um desastre natural. Esse cenário requer algum nível de redundância geográfica com failover de aplicativo para um datacenter alternativo.
-- Erros de atualização ou manutenção, problemas inesperados que ocorrem durante a infra-estrutura manutenção planejada ou atualizações podem exigir a reversão rápida para um estado anterior do banco de dados.
+- Erros de atualização ou manutenção, problemas inesperados que ocorrem durante a manutenção de infraestrutura planejada ou atualizações podem exigir uma reversão rápida para um estado de banco de dados anterior.
 
-Para atenuar o hardware local e as falhas de software, o banco de dados SQL inclui um [arquitetura de alta disponibilidade](sql-database-high-availability.md), que garante a recuperação automática dessas falhas com até 99,995% SLA de disponibilidade.  
+Para reduzir as falhas de hardware e software locais, o banco de dados SQL inclui uma [arquitetura de alta disponibilidade](sql-database-high-availability.md), que garante a recuperação automática dessas falhas com um SLA de disponibilidade de até 99,995%.  
 
-Para proteger sua empresa contra perda de dados, banco de dados SQL cria automaticamente backups de banco de dados completo backups semanais diferencial de banco de dados a cada 12 horas, e transação backups de log a cada 5 - 10 minutos. Os backups são armazenados no armazenamento RA-GRS pelo menos 7 dias para todas as camadas de serviço. Todas as camadas de serviço, exceto Basic suportam o período de retenção de backup configurável para restauração point-in-time, até 35 dias. 
+Para proteger seu negócio contra perda de dados, o banco de dados SQL cria automaticamente backups completos semanalmente, backups de banco de dado diferenciais a cada 12 horas e backups de log de transações a cada 5-10 minutos. Os backups são armazenados no armazenamento RA-GRS por pelo menos 7 dias para todas as camadas de serviço. Todas as camadas de serviço, exceto suporte Básico período de retenção de backup configurável para restauração pontual, até 35 dias. 
 
-Banco de dados SQL também fornece vários recursos de continuidade dos negócios, que você pode usar para reduzir vários cenários de não planejados. 
+O banco de dados SQL também fornece vários recursos de continuidade de negócios, que você pode usar para atenuar vários cenários não planejados. 
 
 - [Tabelas temporais](sql-database-temporal-tables.md) permitem que você restaure versões de linhas de qualquer ponto no tempo.
-- [Backups automatizados do interna](sql-database-automated-backups.md) e [restauração pontual](sql-database-recovery-using-backups.md#point-in-time-restore) permite que você restaure o banco de dados completo para algum ponto no tempo dentro do período de retenção configurado backup 35 dias.
+- [Os backups automatizados internos e a](sql-database-automated-backups.md) [restauração pontual](sql-database-recovery-using-backups.md#point-in-time-restore) permitem que você restaure o banco de dados completo para algum momento dentro do período de retenção configurado de até 35 dias.
 - Você poderá [restaurar um banco de dados excluído](sql-database-recovery-using-backups.md#deleted-database-restore) para o ponto em que ele foi excluído se o **servidor do Banco de Dados SQL não tiver sido excluído**.
 - [Retenção de backup de longo prazo](sql-database-long-term-retention.md) permite manter os backups em até 10 anos.
 - [Replicação geográfica ativa](sql-database-active-geo-replication.md) permite que você crie réplicas legíveis e faça o failover manualmente para qualquer réplica no caso de uma atualização de aplicativo ou interrupção do data center.
@@ -54,9 +54,9 @@ Banco de dados SQL também fornece vários recursos de continuidade dos negócio
 
 ## <a name="recover-a-database-within-the-same-azure-region"></a>Recuperar um banco de dados na mesma região do Azure
 
-Você pode usar backups de banco de dados automáticos para restaurar um banco de dados para um ponto no tempo no passado. Dessa forma, você pode recuperar da corrupção de dados causada por erros humanos. A restauração de ponto-in-time permite que você crie um novo banco de dados no mesmo servidor que representa o estado dos dados antes do evento de corrupção. Para a maioria dos bancos de dados as operações de restauração leva menos de 12 horas. Pode levar mais tempo para recuperar um banco de dados muito grande ou muito ativo. Para obter mais informações sobre tempo de recuperação, consulte [tempo de recuperação do banco de dados](sql-database-recovery-using-backups.md#recovery-time). 
+Você pode usar backups de banco de dados automáticos para restaurar um banco de dados para um ponto no tempo no passado. Dessa forma, você pode se recuperar de corrompimentos de dados causados por erros humanos. A restauração ponto-in-time permite que você crie um novo banco de dados no mesmo servidor que represente o estado dos dados antes do evento corrompido. Para a maioria dos bancos de dados, as operações de restauração levam menos de 12 horas. Pode levar mais tempo para recuperar um banco de dados muito grande ou muito ativo. Para obter mais informações sobre tempo de recuperação, consulte [tempo de recuperação do banco de dados](sql-database-recovery-using-backups.md#recovery-time). 
 
-Se o período máximo de retenção de backup com suporte para restauração point-in-time (PITR) não é suficiente para seu aplicativo, você pode estendê-lo configurando uma política de retenção (LTR) de longo prazo para os bancos de dados. Para obter mais informações, confira [Retenção de backup de longo prazo](sql-database-long-term-retention.md).
+Se o período máximo de retenção de backup com suporte para a restauração pontual (PITR) não for suficiente para seu aplicativo, você poderá estendê-lo Configurando uma política de retenção de longo prazo (EPD) para os bancos de dados. Para obter mais informações, confira [Retenção de backup de longo prazo](sql-database-long-term-retention.md).
 
 ## <a name="recover-a-database-to-another-azure-region"></a>Recuperar um banco de dados para outra região do Azure
 
@@ -64,20 +64,20 @@ Embora seja raro, um data center do Azure pode ter uma interrupção. Quando uma
 
 - Uma opção é esperar que seu banco de dados volte a ficar online quando a interrupção do data center terminar. Isso funciona para aplicativos que podem manter o banco de dados offline. Por exemplo, um projeto de desenvolvimento ou uma avaliação gratuita não precisam funcionar constantemente. Quando um data center tiver uma interrupção, você não saberá quanto tempo ela durará. Portanto, essa opção só funcionará se o banco de dados não for necessário por um tempo.
 - Outra opção é restaurar um banco de dados em qualquer servidor em qualquer região do Azure usando [backups de banco de dados com redundância geográfica](sql-database-recovery-using-backups.md#geo-restore) (restauração geográfica). A restauração geográfica usa um backup com redundância geográfica como sua fonte e pode ser usada para recuperar um banco de dados, mesmo se o banco de dados ou o datacenter está inacessível devido a uma interrupção.
-- Por fim, você pode se recuperar rapidamente de uma interrupção se você tiver configurado o secundário geográfico usando [replicação geográfica ativa](sql-database-active-geo-replication.md) ou um [grupo de failover automático](sql-database-auto-failover-group.md) para seu banco de dados ou bancos de dados. Dependendo de sua escolha dessas tecnologias, você pode usar o failover manual ou automático. Enquanto o próprio failover leva apenas alguns segundos, o serviço levará pelo menos 1 hora para ativá-lo. Isso é necessário para garantir que o failover seja justificado pela escala da interrupção. Além disso, o failover pode resultar em pequena perda de dados devido à natureza da replicação assíncrona. 
+- Por fim, você pode se recuperar rapidamente de uma interrupção se tiver configurado um secundário geográfico usando [a replicação geográfica ativa](sql-database-active-geo-replication.md) ou um [grupo de failover automático](sql-database-auto-failover-group.md) para seu banco de dados ou bancos de dados. Dependendo de sua escolha dessas tecnologias, você pode usar o failover manual ou automático. Enquanto o próprio failover leva apenas alguns segundos, o serviço levará pelo menos 1 hora para ativá-lo. Isso é necessário para garantir que o failover seja justificado pela escala da interrupção. Além disso, o failover pode resultar em pequena perda de dados devido à natureza da replicação assíncrona. 
 
-Na medida em que você desenvolve o plano de continuidade dos negócios, será necessário compreender qual é o tempo máximo aceitável antes que o aplicativo recupere-se completamente após o evento de interrupção. O tempo necessário para o aplicativo se recupere totalmente é conhecido como o objetivo de tempo de recuperação (RTO). Você também precisa entender o período máximo de atualizações de dados recentes (intervalo) o aplicativo poderá tolerar perder durante a recuperação de um evento de interrupção não planejado. A perda de dados é conhecida como o objetivo de ponto de recuperação (RPO).
+Na medida em que você desenvolve o plano de continuidade dos negócios, será necessário compreender qual é o tempo máximo aceitável antes que o aplicativo recupere-se completamente após o evento de interrupção. O tempo necessário para a recuperação completa do aplicativo é conhecido como RTO (objetivo de tempo de recuperação). Você também precisa entender o período máximo de atualizações de dados recentes (intervalo de tempo) que o aplicativo pode tolerar a perda ao recuperar-se de um evento de interrupção não planejado. A possível perda de dados é conhecida como RPO (objetivo de ponto de recuperação).
 
-Métodos de recuperação diferentes oferecem diferentes níveis de RTO e RPO. Você pode escolher um método de recuperação específico, ou usar uma combinação de métodos para achicethe a recuperação do aplicativo completo. A tabela a seguir compara o RPO e RTO de cada opção de recuperação.
+Métodos de recuperação diferentes oferecem níveis diferentes de RPO e RTO. Você pode escolher um método de recuperação específico ou usar uma combinação de métodos para obter a recuperação completa do aplicativo. A tabela a seguir compara o RPO e o RTO de cada opção de recuperação. Os grupos de failover automático simplificam a implantação e o uso da replicação geográfica e adicionam os recursos adicionais, conforme descrito na tabela a seguir.
 
 | Método de recuperação | RTO | RPO |
 | --- | --- | --- | 
 | Restauração geográfica de backups replicados geograficamente | 12 h | 1 h |
 | Grupos de failover automático | 1 h | 5 s |
-| Failover manual do banco de dados | 30 s | 5 s |
+| Failover manual de banco de dados | 30 s | 5 s |
 
 > [!NOTE]
-> *Failover manual do banco de dados* refere-se ao failover de um banco de dados para seu com replicação geográfica secundário usando o [modo planejado](sql-database-active-geo-replication.md#active-geo-replication-terminology-and-capabilities).
+> *Failover de banco de dados manual* refere-se ao failover de um banco de dados individual para seu secundário replicado geograficamente usando o [modo não planejado](sql-database-active-geo-replication.md#active-geo-replication-terminology-and-capabilities).
 Consulte a tabela no início deste artigo para obter detalhes sobre RTO e RPO de failover automático.
 
 
@@ -92,7 +92,7 @@ Use grupos de failover automático se o aplicativo atender a algum desses crité
 > [!VIDEO https://channel9.msdn.com/Blogs/Azure/Azure-SQL-Database-protecting-important-DBs-from-regional-disasters-is-easy/player]
 >
 
-Você pode optar por usar uma combinação de backups de banco de dados e a replicação geográfica ativa dependendo dos seus requisitos de aplicativo. Para uma discussão sobre as considerações de design para bancos de dados autônomos e pools Elásticos usando esses recursos de continuidade de negócios, consulte [criar um aplicativo de nuvem para recuperação de desastres](sql-database-designing-cloud-solutions-for-disaster-recovery.md) e [desastre do pool Elástico estratégias de recuperação](sql-database-disaster-recovery-strategies-for-applications-with-elastic-pool.md).
+Você pode optar por usar uma combinação de backups de banco de dados e replicação geográfica ativa, dependendo dos requisitos do aplicativo. Para obter uma discussão sobre considerações de design para bancos de dados autônomos e pools elásticos usando esses recursos de continuidade de negócios, consulte [criar um aplicativo para recuperação de desastre na nuvem](sql-database-designing-cloud-solutions-for-disaster-recovery.md) e estratégias de recuperação de desastres do [pool elástico](sql-database-disaster-recovery-strategies-for-applications-with-elastic-pool.md).
 
 As seções a seguir fornecem uma visão geral das etapas para recuperar usando os backups de banco de dados ou a replicação geográfica ativa. Para obter as etapas detalhadas, incluindo os requisitos de planejamento, as etapas pós-recuperação e as informações sobre como simular uma interrupção para executar uma análise de recuperação de desastre, confira [Recover a SQL Database from an outage (Recuperar um Banco de Dados SQL de uma interrupção)](sql-database-disaster-recovery.md).
 
@@ -108,7 +108,7 @@ Se você não se preparar corretamente, colocar seus aplicativos online após um
 
 ### <a name="fail-over-to-a-geo-replicated-secondary-database"></a>Fazer failover em um banco de dados secundário com replicação geográfica
 
-Se você estiver usando replicação geográfica ativa ou grupos de failover automático como mecanismos de recuperação, você pode configurar uma política de failover automático ou usar [manual failover não planejado](sql-database-active-geo-replication-portal.md#initiate-a-failover). Depois de iniciado, o failover faz com que o secundário se torne o novo primário e fique pronto para registrar novas transações e responder à consultas, com perda mínima de dados, para os dados que ainda não foram replicados. Para obter informações sobre como criar o processo de failover, confira [Criar um aplicativo para recuperação de desastre na nuvem](sql-database-designing-cloud-solutions-for-disaster-recovery.md).
+Se você estiver usando a replicação geográfica ativa ou grupos de failover automático como seu mecanismo de recuperação, você poderá configurar uma política de failover automático ou usar o [failover manual não planejado](sql-database-active-geo-replication-portal.md#initiate-a-failover). Depois de iniciado, o failover faz com que o secundário se torne o novo primário e fique pronto para registrar novas transações e responder à consultas, com perda mínima de dados, para os dados que ainda não foram replicados. Para obter informações sobre como criar o processo de failover, confira [Criar um aplicativo para recuperação de desastre na nuvem](sql-database-designing-cloud-solutions-for-disaster-recovery.md).
 
 > [!NOTE]
 > Quando o data center volta a ficar online, os primários antigos reconectam-se automaticamente ao novo primário e se tornam bancos de dados secundários. Se você precisar realocar o primário de volta para a região original, poderá iniciar um failover planejado manualmente (failback).
@@ -137,6 +137,6 @@ Após recuperar de um dos mecanismos de recuperação, você deverá executar as
 
 Às vezes, um aplicativo deve ser colocado offline devido à manutenção planejada, como uma atualização do aplicativo. [Gerenciar atualizações de aplicativos](sql-database-manage-application-rolling-upgrade.md) descreve como usar a replicação geográfica ativa para habilitar as atualizações sem interrupção do seu aplicativo em nuvem para minimizar o tempo de inatividade durante as atualizações e fornecer um caminho de recuperação caso algo saia errado.
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Para obter uma discussão sobre as considerações de design de aplicativo para bancos de dados independentes e para pools elásticos, confira [Criar um aplicativo para recuperação de desastre na nuvem](sql-database-designing-cloud-solutions-for-disaster-recovery.md) e [Estratégias de recuperação de desastre para pool elástico](sql-database-disaster-recovery-strategies-for-applications-with-elastic-pool.md).

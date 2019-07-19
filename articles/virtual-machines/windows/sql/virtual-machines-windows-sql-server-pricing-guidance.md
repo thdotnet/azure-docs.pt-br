@@ -16,12 +16,12 @@ ms.workload: iaas-sql-server
 ms.date: 08/09/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: d53c1de9678db497a20788d0cab7ee4f0e6f0c9c
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: a872b8c34011247e68b0d459482c0599ac0426f2
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67607058"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68228399"
 ---
 # <a name="pricing-guidance-for-sql-server-azure-vms"></a>Diretrizes de preços para VMs do Azure do SQL Server
 
@@ -99,7 +99,7 @@ Para criar uma VM do Azure do SQL Server 2017 com uma dessas imagens de pagament
 **Trazer sua própria licença do SQL Server por meio da Mobilidade de Licença**, também conhecida como **BYOL**, significa usar uma Licença de Volume existente do SQL Server com Software Assurance em uma VM do Azure. Uma VM do SQL Server usando BYOL é cobrada somente pelo custo da respectiva execução e não pelo licenciamento do SQL Server, considerando que você já tenha adquirido licenças e o Software Assurance por meio de um programa de Licenciamento por Volume.
 
 > [!IMPORTANT]
-> As imagens BYOL requeremum Enterprise Agreement com Software Assurance. Não estão disponíveis como parte do Parceiro de Solução de Nuvem (CSP) o Azure neste momento. Os clientes do CSP podem trazer suas próprias licenças implantando uma imagem de pago conforme o uso e, em seguida, habilitando a [benefício híbrido do Azure](virtual-machines-windows-sql-ahb.md).
+> As imagens BYOL requeremum Enterprise Agreement com Software Assurance. Não estão disponíveis como parte do Parceiro de Solução de Nuvem (CSP) o Azure neste momento. Os clientes do CSP podem trazer sua própria licença implantando uma imagem paga conforme o uso e, em seguida, habilitando o [benefício híbrido do Azure](virtual-machines-windows-sql-ahb.md).
 
 > [!NOTE]
 > Atualmente, as imagens BYOL só estão disponíveis para máquinas virtuais do Windows. No entanto, você pode instalar manualmente do SQL Server em uma VM somente Linux. Consulte as diretrizes nas [Perguntas Frequentes de VM Linux do SQL](../../linux/sql/sql-server-linux-faq.md).
@@ -114,8 +114,7 @@ Para usar BYOL com uma VM do SQL Server, você deve ter uma licença para o SQL 
 
 | Benefício do método BYOL | DESCRIÇÃO |
 |-----|-----|
-| **Economia de custos** | Trazer usa própria licença do SQL Server é mais econômico do que pagar pelo uso se uma carga de trabalho for executar continuamente o SQL Server Standard ou Enterprise por *mais de 10 meses*. |
-| **Economias de longo prazo** | Em média, é *30% mais barato por ano* comprar ou renovar uma licença do SQL Server pelos três primeiros anos. Além disso, depois de três anos, você não precisa mais renovar a licença, apenas pagar pelo Software Assurance. Nesse ponto, *a economia é de 200%* . |
+| **Economia de custos** | A [benefício híbrido do Azure](https://azure.microsoft.com/pricing/hybrid-benefit/) oferece economia de até 55%. Para obter mais informações, consulte [alternar modelo de licenciamento] (Virtual-Machines-Windows-SQL-ahb.md |
 | **Réplica secundária passiva gratuita** | Outro benefício de trazer sua própria licença é o [licenciamento gratuito para uma réplica secundária passiva](https://azure.microsoft.com/pricing/licensing-faq/) por SQL Server para fins de alta disponibilidade. Isso reduz pela metade o custo de licenciamento de uma implantação do SQL Server altamente disponível (por exemplo, usar os Grupos de Disponibilidade Always On). Os direitos para executar a réplica secundária passiva são fornecidos pelo benefício do Software Assurance para Servidores de Failover. |
 
 Para criar uma VM do Azure do SQL Server 2017 com uma dessas imagens traga sua própria licença, veja as VMs com o prefixo "{BYOL}":

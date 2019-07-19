@@ -8,16 +8,17 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/09/2018
 ms.author: sngun
-ms.openlocfilehash: 4f502984a09f81b5aaf0568c84b75832f8164151
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: d68e957ece5c634ed1ce069218df717a4fe0952f
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67541042"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68261260"
 ---
 # <a name="azure-cosmos-db-net-sdk-for-sql-api-download-and-release-notes"></a>SDK do .NET do Azure Cosmos DB para a API do SQL: Downloads e notas sobre a versão
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-sdk-dotnet.md)
+> * [.NET](sql-api-sdk-dotnet-standard.md)
 > * [Feed de alterações do .NET](sql-api-sdk-dotnet-changefeed.md)
 > * [.NET Core](sql-api-sdk-dotnet-core.md)
 > * [Node.js](sql-api-sdk-node.md)
@@ -34,42 +35,38 @@ ms.locfileid: "67541042"
 |---|---|
 |**Baixe o SDK**|[NuGet](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/)|
 |**Documentação da API**|[Documentação de referência de API .NET](/dotnet/api/overview/azure/cosmosdb?view=azure-dotnet)|
-|**Exemplos**|[Exemplos de código .NET](sql-api-dotnet-samples.md)|
+|**Exemplos**|[Exemplos de código .NET](https://github.com/Azure/azure-cosmos-dotnet-v2/tree/master/samples)|
 |**Introdução**|[Introdução ao SDK do .NET do Azure Cosmos DB](sql-api-get-started.md)|
 |**Tutorial do aplicativo Web**|[Desenvolvimento de aplicativos Web com o Azure Cosmos DB](sql-api-dotnet-application.md)|
 |**Framework atualmente com suporte**|[Microsoft .NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)|
 
 ## <a name="release-notes"></a>Notas de versão
 
-### <a name="a-name3001-preview3001-preview"></a><a name="3.0.0.1-preview"/>3.0.0.1-preview
-* Versão prévia 1 da [Versão 3.0.0](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) do SDK .NET para visualização pública.
-* O destino é .NET Standard, que dá suporte para .NET Framework 4.6.1+ e .NET Core 2.0+
-* Novo modelo de objeto, com CosmosClient de nível superior e métodos divididos entre as classes CosmosDatabases, CosmosContainers e CosmosItems. 
-* Suporte para fluxos. 
-* Atualizado CosmosResponseMessage do servidor para retornar o código de status e somente gerar exceção quando nenhuma resposta for retornada. 
+> [!NOTE]
+> Se você estiver usando .NET Framework, consulte a versão mais recente 3. x do [SDK do .net](sql-api-sdk-dotnet-standard.md), que tem como alvo .net Standard. 
 
 ### <a name="a-name251251"></a><a name="2.5.1"/>2.5.1
 
-* Versão de HTTP do SDK agora coincide com o que é definido no pacote NuGet.
-* Permitir solicitações de gravação para fallback para uma região diferente se o original um falhar.
-* Adicione política de repetição de sessão para a solicitação de gravação.
+* A versão do System .net. http do SDK agora corresponde ao que está definido no pacote NuGet.
+* Permitir que solicitações de gravação comentem para uma região diferente se o original falhar.
+* Adicionar política de repetição de sessão para solicitação de gravação.
 
 ### <a name="a-name241241"></a><a name="2.4.1"/>2.4.1
 
-* Correções de rastreamento de condição de corrida para consultas que fazia com que páginas vazias
+* Corrige a condição de corrida de rastreamento para consultas que causaram páginas vazias
 
 ### <a name="a-name240240"></a><a name="2.4.0"/>2.4.0
 
-* Aumentou o tamanho de precisão decimal para consultas LINQ.
-* Classes adicionadas novas CompositePath, CompositePathSortOrder, SpatialSpec, SpatialType e PartitionKeyDefinitionVersion
-* Adicionado TimeToLivePropertyPath para DocumentCollection
-* Adicionado CompositeIndexes e SpatialIndexes para IndexPolicy
-* Versão adicionada para PartitionKeyDefinition
-* Adicionado nenhum para a PartitionKey
+* Tamanho de precisão decimal aumentado para consultas LINQ.
+* Adicionadas novas classes CompositePath, CompositePathSortOrder, SpatialSpec, Spatialtype e PartitionKeyDefinitionVersion
+* Adicionado TimeToLivePropertyPath a Documentcollection
+* Adicionado CompositeIndexes e SpatialIndexes ao IndexPolicy
+* Versão adicionada ao PartitionKeyDefinition
+* Adicionado nenhum ao PartitionKey
 
 ### <a name="a-name230230"></a><a name="2.3.0"/>2.3.0
 
- * Adicionado IdleTcpConnectionTimeout, OpenTcpConnectionTimeout, MaxRequestsPerTcpConnection e MaxTcpConnectionsPerEndpoint para ConnectionPolicy.
+ * Adicionado IdleTcpConnectionTimeout, OpenTcpConnectionTimeout, MaxRequestsPerTcpConnection e MaxTcpConnectionsPerEndpoint a ConnectionPolicy.
 
 ### <a name="a-name223223"></a><a name="2.2.3"/>2.2.3
 
@@ -346,7 +343,7 @@ ms.locfileid: "67541042"
 ### <a name="a-name130130"></a><a name="1.3.0"/>1.3.0
 * Suporte adicionado para modificar políticas de indexação.
   * Novo método ReplaceDocumentCollectionAsync no DocumentClient
-  * Nova propriedade IndexTransformationProgress em ResourceResponse<T> para acompanhar o progresso em percentual de alterações na política de índice
+  * Nova Propriedade IndexTransformationProgress em ResourceResponse\<T > para acompanhar a porcentagem de progresso das alterações de política de índice
   * DocumentCollection.IndexingPolicy agora é mutável
 * Suporte adicionado para consulta e indexação espacial.
   * Novo namespace Microsoft.Azure.Documents.Spatial para serializar/desserializar tipos espaciais, como Ponto e Polígono
@@ -445,7 +442,7 @@ Qualquer solicitação feita ao BD Cosmos do Azure usando um SDK obsoleto é rej
 | [1.0.0](#1.0.0) |8 de abril de 2015 |--- |
 
 
-## <a name="faq"></a>Perguntas frequentes
+## <a name="faq"></a>Perguntas Frequentes
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
 ## <a name="see-also"></a>Consulte também

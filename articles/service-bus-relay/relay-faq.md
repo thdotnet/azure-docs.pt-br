@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/21/2018
 ms.author: spelluru
-ms.openlocfilehash: c6ea5e72f70620004b4b00be0c779893a3b2ad90
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: f9f182a459f9a38c96bdf923998d1cdfee8fc3ac
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706184"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68277970"
 ---
 # <a name="azure-relay-faqs"></a>Perguntas frequentes sobre Retransmissão do Azure
 
@@ -42,7 +42,7 @@ O serviço que antes era chamado de Retransmissão do Barramento de Serviço ago
 Esta seção responde a algumas perguntas frequentes sobre a estrutura de preços de Retransmissão. Você também pode conferir as [Perguntas frequentes sobre o suporte do Azure](https://azure.microsoft.com/support/faq/) para obter informações gerais sobre preços do Azure. Para saber mais sobre o preço da Retransmissão, consulte [Detalhes de preço do Barramento de Serviço][Pricing overview].
 
 ### <a name="how-do-you-charge-for-hybrid-connections-and-wcf-relay"></a>Como são cobradas as Conexões Híbridas e a Retransmissão do WCF?
-Para obter informações completas sobre os preços de retransmissão, consulte o [conexões híbridas e retransmissões do WCF][Pricing overview] tabela na página de detalhes de preços de barramento de serviço. Além dos preços mencionados, indicados naquela página, você é cobrado por transferências de dados associadas para saída fora do data center em que seu aplicativo é provisionado.
+Para obter informações completas sobre preços de retransmissão, consulte a tabela [conexões híbridas e retransmissões do WCF][Pricing overview] na página detalhes de preços do barramento de serviço. Além dos preços mencionados, indicados naquela página, você é cobrado por transferências de dados associadas para saída fora do data center em que seu aplicativo é provisionado.
 
 ### <a name="how-am-i-billed-for-hybrid-connections"></a>Como sou cobrado por Conexões Híbridas?
 Aqui estão três exemplos de cenários de cobrança para Conexões Híbridas:
@@ -125,10 +125,10 @@ Move-AzResource -DestinationResourceGroupName 'targetRG' -DestinationSubscriptio
 
 ## <a name="troubleshooting"></a>Solução de problemas
 ### <a name="what-are-some-of-the-exceptions-generated-by-azure-relay-apis-and-suggested-actions-you-can-take"></a>Quais são algumas das exceções geradas pelas APIs de Retransmissão do Azure e que ações sugeridas você pode executar?
-Para obter uma descrição de exceções comuns e ações sugeridas que você pode realizar, consulte [exceções de retransmissão][Relay exceptions].
+Para obter uma descrição das exceções comuns e as ações sugeridas que você pode tomar, consulte [exceções][Relay exceptions]de retransmissão.
 
 ### <a name="what-is-a-shared-access-signature-and-which-languages-can-i-use-to-generate-a-signature"></a>O que é uma assinatura de acesso compartilhado e quais idiomas posso usar para gerar uma assinatura?
-As SAS (Assinaturas de Acesso Compartilhado) são um mecanismo de autenticação com base em hashes seguros SHA-256 ou URIs. Para obter informações sobre como gerar suas próprias assinaturas no nó, PHP, Java, C, e C#, consulte [autenticação do barramento de serviço com assinaturas de acesso compartilhado][Shared Access Signatures].
+As SAS (Assinaturas de Acesso Compartilhado) são um mecanismo de autenticação com base em hashes seguros SHA-256 ou URIs. Para obter informações sobre como gerar suas próprias assinaturas em node. js, PHP, Python, Java, C e C#, consulte Autenticação do [barramento de serviço com assinaturas de acesso compartilhado][Shared Access Signatures].
 
 ### <a name="is-it-possible-to-whitelist-relay-endpoints"></a>É possível colocar pontos de extremidade de retransmissão em uma lista de permissões?
 Sim. O cliente de retransmissão faz conexões com o serviço de Retransmissão do Azure usando nomes de domínio totalmente qualificados. Os clientes podem adicionar uma entrada para `*.servicebus.windows.net` nos firewalls que dão suporte à lista de permissões de DNS.

@@ -1,6 +1,6 @@
 ---
-title: Exemplo de mapeamento de controle - plantas OFICIAL do Reino Unido e do Reino Unido NHS-
-description: Mapeamento de controle do OFICIAL do Reino Unido e exemplos de especificações técnicas do NHS do Reino Unido.
+title: Exemplo-plantas oficiais do Reino Unido e do Reino Unido do NHS – mapeamento de controle
+description: Mapeamento de controle dos exemplos do plano gráfico do Reino Unido e do Reino Unido NHS.
 services: blueprints
 author: DCtheGeek
 ms.author: dacoulte
@@ -8,163 +8,163 @@ ms.date: 06/26/2019
 ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 01a8e104f6d590113784db28e4bfde849d78b15f
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
+ms.openlocfilehash: 945898105aab7261ee494a86aeff10337599feb3
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67491924"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68226018"
 ---
-# <a name="control-mapping-of-the-uk-official-and-uk-nhs-blueprint-samples"></a>Mapeamento de controle do OFICIAL do Reino Unido e exemplos de especificações técnicas do NHS do Reino Unido
+# <a name="control-mapping-of-the-uk-official-and-uk-nhs-blueprint-samples"></a>Mapeamento de controle dos exemplos do plano gráfico do Reino Unido e do Reino Unido NHS
 
-O artigo a seguir fornece detalhes sobre como o OFICIAL do Reino Unido e exemplos de especificações técnicas do Reino Unido NHS mapeiam para os controles OFICIAL do Reino Unido e NHS do Reino Unido. Para obter mais informações sobre os controles, consulte [OFICIAL do Reino Unido](https://www.gov.uk/government/publications/government-security-classifications).
+O artigo a seguir fornece detalhes sobre como os exemplos do plano gráfico do Reino Unido e do Reino Unido NHS são mapeados para os controles OFFICIAL e NHS do Reino Unido. Para obter mais informações sobre os controles, consulte [oficial do Reino Unido](https://www.gov.uk/government/publications/government-security-classifications).
 
-Os seguintes mapeamentos são para o **OFICIAL do Reino Unido** e **NHS do Reino Unido** controles. Use a navegação no lado direito para ir diretamente para um mapeamento de controle específico. Muitos dos controles mapeados são implementados com uma iniciativa do [Azure Policy](../../../policy/overview.md). Para examinar a iniciativa completa, abra **Política** no portal do Azure e selecione a página **Definições**. Em seguida, localize e selecione o  **[visualização] NHS auditoria OFICIAL do Reino Unido e do Reino Unido controla e implantar extensões de VM específicas para dar suporte a requisitos de auditoria** iniciativa de política interna.
+Os mapeamentos a seguir são para os controles **oficial do Reino Unido** e **NHS do Reino Unido** . Use a navegação no lado direito para ir diretamente para um mapeamento de controle específico. Muitos dos controles mapeados são implementados com uma iniciativa do [Azure Policy](../../../policy/overview.md). Para examinar a iniciativa completa, abra **Política** no portal do Azure e selecione a página **Definições**. Em seguida, localize e selecione  **\[os\] controles de auditoria visualização oficial do Reino Unido e NHS do Reino Unido e implante extensões de VM específicas para dar suporte à** iniciativa de política interna de requisitos de auditoria.
 
-## <a name="1-data-in-transit-protection"></a>1 dados na proteção de trânsito
+## <a name="1-data-in-transit-protection"></a>1 proteção de dados em trânsito
 
-O projeto ajuda a garantir a transferência de informações com serviços do Azure é segura, atribuindo [política do Azure](../../../policy/overview.md) definições que conexões inseguras para contas de armazenamento e Cache Redis de auditoria.
+O plano gráfico ajuda a garantir que a transferência de informações com os serviços do Azure seja segura atribuindo definições de [Azure Policy](../../../policy/overview.md) que auditam conexões inseguras a contas de armazenamento e cache Redis.
 
-- Somente conexões seguras para seu Cache Redis devem ser habilitadas
-- Transferência segura para contas de armazenamento deve ser habilitada
+- Somente conexões seguras para o cache Redis devem ser habilitadas
+- A transferência segura para contas de armazenamento deve ser habilitada
 
-## <a name="23-data-at-rest-protection"></a>2.3 dados na proteção de rest
+## <a name="23-data-at-rest-protection"></a>2,3 proteção de dados em repouso
 
-Esta especificação técnica o ajuda a impor sua política sobre o uso de controles cryptograph atribuindo [política do Azure](../../../policy/overview.md) definições que impõem controles cryptograph específico e auditoria usam das configurações de criptografia fracas.
-Entender em que local os recursos do Azure podem ter configurações de criptografia não ideais pode ajudá-lo a tomar ações corretivas para garantir que os recursos sejam configurados de acordo com a política de segurança de informações. Especificamente, as políticas atribuídas por esta especificação técnica exigem criptografia para contas de armazenamento do data lake; exigir criptografia transparente de dados em bancos de dados SQL; auditoria faltando criptografia em contas de armazenamento, bancos de dados SQL, discos de máquina virtual e variáveis de conta de automação; conexões inseguro de auditoria para contas de armazenamento e Cache Redis; auditar criptografia de senha de máquina de virtual fraco; e a auditoria de comunicação não criptografada do Service Fabric.
+Este projeto ajuda a reforçar a política sobre o uso de controles cryptograph atribuindo definições de [Azure Policy](../../../policy/overview.md) que impõem controles cryptograph específicos e auditam o uso de configurações de criptografia fracas.
+Entender em que local os recursos do Azure podem ter configurações de criptografia não ideais pode ajudá-lo a tomar ações corretivas para garantir que os recursos sejam configurados de acordo com a política de segurança de informações. Especificamente, as políticas atribuídas por este projeto exigem criptografia para contas de armazenamento do data Lake; exigir Transparent Data Encryption em bancos de dados SQL; auditar criptografia ausente em contas de armazenamento, bancos de dados SQL, discos de máquina virtual e variáveis de conta de automação; auditar conexões inseguras para contas de armazenamento e cache Redis; auditar a criptografia de senha de máquina virtual fraca; e auditar a comunicação de Service Fabric não criptografada.
 
-- Monitorar bancos de dados SQL não criptografados na Central de segurança do Azure
-- Criptografia de disco deve ser aplicada em máquinas virtuais
-- Variáveis de conta de automação devem ser criptografadas.
-- Transferência segura para contas de armazenamento deve ser habilitada
-- Clusters do Service Fabric devem ter a propriedade ClusterProtectionLevel definida como EncryptAndSign
-- Transparent Data Encryption em bancos de dados SQL deve ser habilitado
-- Implantar a transparent data encryption do banco de dados SQL
-- Exigir criptografia em contas do Data Lake Store
-- Locais permitidos (foi codificado para "Sul do Reino Unido" e "Oeste do Reino Unido")
-- Locais para grupos de recursos permitidos (foi codificado para "Sul do Reino Unido" e "Oeste do Reino Unido")
+- Monitorar bancos de dados SQL não criptografados na central de segurança do Azure
+- A criptografia de disco deve ser aplicada em máquinas virtuais
+- As variáveis da conta de automação devem ser criptografadas
+- A transferência segura para contas de armazenamento deve ser habilitada
+- Service Fabric clusters devem ter a propriedade ClusterProtectionLevel definida como EncryptAndSign
+- Transparent Data Encryption em bancos de dados SQL devem ser habilitadas
+- Implantar a Transparent Data Encryption no BD SQL
+- Exigir criptografia em contas de Data Lake Store
+- Locais permitidos (foram embutidos em código para "sul do Reino Unido" e "oeste do Reino Unido")
+- Locais permitidos para grupos de recursos (foi embutido no código "sul do Reino Unido" e "oeste do Reino Unido")
 
-## <a name="52-vulnerability-management"></a>5.2 gerenciamento de vulnerabilidades
+## <a name="52-vulnerability-management"></a>5,2 gerenciamento de vulnerabilidades
 
-Esta especificação técnica ajuda a gerenciar as vulnerabilidades do sistema de informações por meio da atribuição [política do Azure](../../../policy/overview.md) definições de monitoram o endpoint protection ausente, atualizações de sistema operacional vulnerabilidades do sistema SQL ausentes vulnerabilidades e vulnerabilidades de máquina virtual. Esses insights fornecem informações em tempo real sobre o estado de segurança dos recursos implantados e podem ajudá-lo a priorizar as ações de correção.
+Este projeto ajuda você a gerenciar as vulnerabilidades do sistema de informações atribuindo definições de [Azure Policy](../../../policy/overview.md) que monitoram a proteção de ponto de extremidade ausente, atualizações do sistema ausentes, vulnerabilidades do sistema operacional, vulnerabilidades do SQL e virtual vulnerabilidades do computador. Esses insights fornecem informações em tempo real sobre o estado de segurança dos recursos implantados e podem ajudá-lo a priorizar as ações de correção.
 
 - monitora o Endpoint Protection ausente na Central de Segurança do Azure
-- Atualizações do sistema devem ser instaladas em seus computadores
-- Vulnerabilidades na configuração de segurança em seus computadores devem ser corrigidas.
-- As vulnerabilidades de seus bancos de dados SQL devem ser corrigidas.
+- As atualizações do sistema devem ser instaladas em seus computadores
+- Vulnerabilidades na configuração de segurança em seus computadores devem ser corrigidas
+- Vulnerabilidades em seus bancos de dados SQL devem ser corrigidas
 - Vulnerabilidades devem ser corrigidas por uma solução de avaliação de vulnerabilidade
 
-## <a name="53-protective-monitoring"></a>5.3 monitoramento de proteção
+## <a name="53-protective-monitoring"></a>Monitoramento de proteção 5,3
 
-Esta especificação técnica ajuda a proteger os ativos de sistema de informações por meio da atribuição [política do Azure](../../../policy/overview.md) definições que fornecem monitoramento de proteção no acesso irrestrito, atividade de lista de permissões e ameaças.
+Este projeto ajuda a proteger os ativos do sistema de informações atribuindo definições de [Azure Policy](../../../policy/overview.md) que fornecem monitoramento de proteção de acesso irrestrito, atividade de lista de permissões e ameaças.
 
 - Auditar o acesso irrestrito à rede para contas de armazenamento
-- Controles de aplicativo adaptáveis deve ser habilitados em máquinas virtuais
-- Implantar a detecção de ameaças em servidores SQL
-- Implantar a extensão de IaaS antimalware da Microsoft do padrão para o Windows Server
+- Os controles de aplicativo adaptáveis devem ser habilitados em máquinas virtuais
+- Implantar a Detecção de Ameaças em servidores SQL
+- Implantar a extensão antimalware do Microsoft IaaS padrão para o Windows Server
 
-## <a name="9-secure-user-management--10-identity-and-authentication"></a>Gerenciamento de usuário de seguro de 9 / 10 autenticação e identidade
+## <a name="9-secure-user-management--10-identity-and-authentication"></a>9 gerenciamento seguro de usuários/10 identidade e autenticação
 
-O Azure implementa o acesso baseado em função de RBAC (controle) para Ajuda que você a gerenciar quem tem acesso aos recursos no Azure. Usando o portal do Azure, você pode examinar quem tem acesso aos recursos do Azure e suas permissões. Esta especificação técnica o ajuda a restringir e controlar os direitos de acesso por meio da atribuição [política do Azure](../../../policy/overview.md) definições auditar contas externas com permissões de proprietário e/ou de leitura/gravação e a contas com o proprietário, leia e/ou permissões que fazer de gravação não tem a autenticação multifator habilitada.
+O Azure implementa o RBAC (controle de acesso baseado em função) para ajudá-lo a gerenciar quem tem acesso aos recursos no Azure. Usando o portal do Azure, você pode examinar quem tem acesso aos recursos do Azure e suas permissões. Este projeto ajuda a restringir e controlar os direitos de acesso atribuindo definições de [Azure Policy](../../../policy/overview.md) para auditar contas externas com permissões de proprietário e/ou permissões de leitura/gravação e contas com permissão de proprietário, leitura e/ou gravação que não têm vários fatores autenticação habilitada.
 
-- MFA deve ser habilitado em contas com permissões de proprietário em sua assinatura
-- MFA deve ser habilitadas contas com permissões de gravação em sua assinatura
-- MFA deve ser habilitado em contas com permissões de leitura em sua assinatura
+- A MFA deve ser habilitada em contas com permissões de proprietário em sua assinatura
+- A MFA deve ser habilitada para contas com permissões de gravação em sua assinatura
+- A MFA deve ser habilitada em contas com permissões de leitura em sua assinatura
 - Contas externas com permissões de proprietário devem ser removidas da sua assinatura
 - As contas externas com permissões de gravação do proprietário devem ser removidas da sua assinatura
 - Contas externas com permissões de leitura devem ser removidas da sua assinatura
 
-Esta especificação técnica atribui as definições de política do Azure para auditar o uso de autenticação do Active Directory do Azure para servidores SQL e o Service Fabric. O uso da autenticação do Azure Active Directory permite o gerenciamento simplificado de permissões e o gerenciamento centralizado de identidades dos usuários de banco de dados e de outros serviços da Microsoft.
+Este projeto atribui definições de Azure Policy para auditar o uso de autenticação de Azure Active Directory para SQL Servers e Service Fabric. O uso da autenticação do Azure Active Directory permite o gerenciamento simplificado de permissões e o gerenciamento centralizado de identidades dos usuários de banco de dados e de outros serviços da Microsoft.
 
-- Um administrador do Azure Active Directory deve ser provisionado para servidores SQL
-- Clusters do Service Fabric só devem usar o Azure Active Directory para autenticação de cliente
+- Um administrador de Azure Active Directory deve ser provisionado para servidores SQL
+- Clusters de Service Fabric só devem usar Azure Active Directory para autenticação de cliente
 
-Esta especificação técnica também atribui as definições de política do Azure para auditar as contas que devem ser priorizadas para revisão, incluindo contas depreciadas e contas externas. Quando necessário, as contas podem ser impedidas de entrar (ou removidas), o que remove imediatamente os direitos de acesso aos recursos do Azure. Esta especificação técnica atribui duas definições de política do Azure à conta de auditoria depreciada que deve ser considerada para remoção.
+Esse projeto também atribui definições de Azure Policy para auditar contas que devem ser priorizadas para revisão, incluindo contas depreciadas e contas externas. Quando necessário, as contas podem ser impedidas de entrar (ou removidas), o que remove imediatamente os direitos de acesso aos recursos do Azure. Este projeto atribui duas definições de Azure Policy para auditar a conta depreciada que deve ser considerada para remoção.
 
-- Contas preteridas devem ser removidas da sua assinatura
+- As contas preteridas devem ser removidas da sua assinatura
 - Contas preteridas com permissões de proprietário devem ser removidas da sua assinatura
 - Contas externas com permissões de proprietário devem ser removidas da sua assinatura
 - As contas externas com permissões de gravação do proprietário devem ser removidas da sua assinatura
 
-Esta especificação técnica também atribui uma definição de política do Azure que audita a VM do Linux permissões de arquivo de senha para alertar se eles são definidos incorretamente. Esse design permite que você tomar uma ação corretiva para garantir que autenticadores não estão comprometidos.
+Esse plano gráfico também atribui uma definição de Azure Policy que audita as permissões de arquivo de senha de VM do Linux para alertar se elas estiverem definidas incorretamente. Esse design permite que você tome medidas corretivas para garantir que os autenticadores não sejam comprometidos.
 
-- [Visualização]: Audit Linux VM /etc/passwd file permissions are set to 0644
+- \[Versão Prévia\]: As permissões de arquivo/etc/passwd de VM do Linux de auditoria são definidas como 0644
 
-Esta especificação técnica o ajuda a impor senhas fortes, atribuindo definições de política do Azure que as VMs do Windows que não impõem o nível mínimo e outros requisitos de senha de auditoria. O reconhecimento de VMs que estejam violando a política de força da senha ajuda você a tomar ações corretivas para garantir que as senhas de todas as contas de usuário da VM estejam em conformidade com a política.
+Este projeto ajuda a impor senhas fortes atribuindo definições de Azure Policy que auditam as VMs do Windows que não impõem a força mínima e outros requisitos de senha. O reconhecimento de VMs que estejam violando a política de força da senha ajuda você a tomar ações corretivas para garantir que as senhas de todas as contas de usuário da VM estejam em conformidade com a política.
 
-- [Visualização]: Deploy requirements to audit Windows VMs that do not have the password complexity setting enabled
-- [Visualização]: Deploy requirements to audit Windows VMs that do not have a maximum password age of 70 days
-- [Visualização]: Deploy requirements to audit Windows VMs that do not have a minimum password age of 1 day
-- [Visualização]: Deploy requirements to audit Windows VMs that do not restrict the minimum password length to 14 characters
-- [Visualização]: Deploy requirements to audit Windows VMs that allow re-use of the previous 24 passwords
-- [Visualização]: Audit Windows VMs that do not have the password complexity setting enabled
-- [Visualização]: Audit Windows VMs that do not have a maximum password age of 70 days
-- [Visualização]: Audit Windows VMs that do not have a minimum password age of 1 day
-- [Visualização]: Audit Windows VMs that do not restrict the minimum password length to 14 characters
-- [Visualização]: Audit Windows VMs that allow re-use of the previous 24 passwords
+- \[Versão Prévia\]: Implantar requisitos para auditar VMs do Windows que não têm a configuração de complexidade de senha habilitada
+- \[Versão Prévia\]: Implantar requisitos para auditar VMs do Windows que não têm uma duração máxima de senha de 70 dias
+- \[Versão Prévia\]: Implantar requisitos para auditar VMs do Windows que não têm uma duração mínima de senha de 1 dia
+- \[Versão Prévia\]: Implantar requisitos para auditar VMs do Windows que não restringem o comprimento mínimo da senha para 14 caracteres
+- \[Versão Prévia\]: Implantar requisitos para auditar VMs do Windows que permitem o reuso das 24 senhas anteriores
+- \[Versão Prévia\]: Auditar VMs do Windows que não têm a configuração de complexidade de senha habilitada
+- \[Versão Prévia\]: Auditar VMs do Windows que não têm uma duração máxima de senha de 70 dias
+- \[Versão Prévia\]: Auditar VMs do Windows que não têm uma duração mínima de senha de 1 dia
+- \[Versão Prévia\]: Auditar VMs do Windows que não restringem o comprimento mínimo da senha para 14 caracteres
+- \[Versão Prévia\]: Auditar VMs do Windows que permitem reutilização das 24 senhas anteriores
 
-Esse plano gráfico também ajuda a controlar o acesso aos recursos do Azure, atribuindo definições de política do Azure. Essas políticas auditam o uso de tipos de recursos e configurações que podem permitir um acesso mais permissivo aos recursos. Entender os recursos que estão violando essas políticas pode ajudar você a tomar ações corretivas para garantir que o acesso aos recursos do Azure seja restrito a usuários autorizados.
+Este projeto também ajuda a controlar o acesso aos recursos do Azure atribuindo definições de Azure Policy. Essas políticas auditam o uso de tipos de recursos e configurações que podem permitir um acesso mais permissivo aos recursos. Entender os recursos que estão violando essas políticas pode ajudar você a tomar ações corretivas para garantir que o acesso aos recursos do Azure seja restrito a usuários autorizados.
 
-- [Visualização]: Deploy requirements to audit Linux VMs that have accounts without passwords
-- [Visualização]: Deploy requirements to audit Linux VMs that allow remote connections from accounts without passwords
-- [Visualização]: Audit Linux VMs that have accounts without passwords
-- [Visualização]: Audit Linux VMs that allow remote connections from accounts without passwords
-- Contas de armazenamento devem ser migradas para novos recursos do Azure Resource Manager
-- Máquinas virtuais devem ser migradas para novos recursos do Azure Resource Manager
+- \[Versão Prévia\]: Implantar requisitos para auditar VMs do Linux que têm contas sem senhas
+- \[Versão Prévia\]: Implantar requisitos para auditar VMs Linux que permitem conexões remotas de contas sem senhas
+- \[Versão Prévia\]: Auditar VMs do Linux que têm contas sem senhas
+- \[Versão Prévia\]: Auditar VMs do Linux que permitem conexões remotas de contas sem senhas
+- As contas de armazenamento devem ser migradas para novos recursos de Azure Resource Manager
+- As máquinas virtuais devem ser migradas para novos recursos de Azure Resource Manager
 - Auditar VMs que não usam discos gerenciados
 
-## <a name="11-external-interface-protection"></a>Proteção de Interface externa 11
+## <a name="11-external-interface-protection"></a>11 proteção de interface externa
 
-Além de usar as políticas de mais de 25 para o gerenciamento de usuário segura apropriado, esta especificação técnica ajuda a proteger as interfaces de serviço contra acesso não autorizado, atribuindo um [política do Azure](../../../policy/overview.md) definição irrestrito de monitores contas de armazenamento. Contas de armazenamento com acesso irrestrito podem permitir o acesso involuntário às informações contidas dentro do sistema de informações. Esta especificação técnica também atribui uma política que permite que os controles de aplicativo adaptáveis em máquinas virtuais.
+Além de usar mais de 25 políticas para o gerenciamento de usuários seguro apropriado, este projeto ajuda a proteger interfaces de serviço contra acesso não autorizado, atribuindo uma definição de [Azure Policy](../../../policy/overview.md) que monitora contas de armazenamento irrestritas. As contas de armazenamento com acesso irrestrito podem permitir o acesso não intencional às informações contidas no sistema de informações. Esse projeto também atribui uma política que habilita controles de aplicativo adaptáveis em máquinas virtuais.
 
 - Auditar o acesso irrestrito à rede para contas de armazenamento
-- Controles de aplicativo adaptáveis deve ser habilitados em máquinas virtuais
+- Os controles de aplicativo adaptáveis devem ser habilitados em máquinas virtuais
 
-## <a name="12-secure-service-administration"></a>Administração do serviço de seguro 12
+## <a name="12-secure-service-administration"></a>12 administração segura de serviços
 
-O Azure implementa o acesso baseado em função de RBAC (controle) para Ajuda que você a gerenciar quem tem acesso aos recursos no Azure. Usando o portal do Azure, você pode examinar quem tem acesso aos recursos do Azure e suas permissões. Esta especificação técnica o ajuda a restringir e controlar os direitos de acesso privilegiado atribuindo cinco [política do Azure](../../../policy/overview.md) definições para auditar contas externas com o proprietário e/ou contas e permissões de gravação com o proprietário e/ou permissões de gravação que não têm a autenticação multifator habilitada.
+O Azure implementa o RBAC (controle de acesso baseado em função) para ajudá-lo a gerenciar quem tem acesso aos recursos no Azure. Usando o portal do Azure, você pode examinar quem tem acesso aos recursos do Azure e suas permissões. Este projeto ajuda a restringir e controlar direitos de acesso privilegiado atribuindo cinco definições de [Azure Policy](../../../policy/overview.md) para auditar contas externas com permissões de proprietário e/ou gravação e contas com o proprietário e/ou permissões de gravação que não têm autenticação multifator habilitada.
 
-Sistemas usados para a administração de um serviço de nuvem têm acesso altamente privilegiado ao serviço. Um comprometimento teria um impacto significativo, incluindo os meios para ignorar os controles de segurança e roubar ou manipular grandes volumes de dados. Os métodos usados pelos administradores do provedor de serviços para gerenciar o serviço operacionais devem ser projetados para minimizar qualquer risco de exploração que poderia prejudicar a segurança do serviço. Se não for implementado esse princípio, um invasor pode ter os meios para ignorar os controles de segurança e roubar ou manipular grandes volumes de dados.
+Sistemas usados para a administração de um serviço de nuvem têm acesso altamente privilegiado ao serviço. Um comprometimento teria um impacto significativo, incluindo os meios para ignorar os controles de segurança e roubar ou manipular grandes volumes de dados. Os métodos usados pelos administradores do provedor de serviços para gerenciar o serviço operacional devem ser projetados para atenuar qualquer risco de exploração que possa prejudicar a segurança do serviço. Se esse princípio não for implementado, um invasor poderá ter meios para ignorar os controles de segurança e roubar ou manipular grandes volumes de dados.
 
-- MFA deve ser habilitado em contas com permissões de proprietário em sua assinatura
-- MFA deve ser habilitadas contas com permissões de gravação em sua assinatura
+- A MFA deve ser habilitada em contas com permissões de proprietário em sua assinatura
+- A MFA deve ser habilitada para contas com permissões de gravação em sua assinatura
 - Contas externas com permissões de proprietário devem ser removidas da sua assinatura
 - As contas externas com permissões de gravação do proprietário devem ser removidas da sua assinatura
 
-Esta especificação técnica atribui as definições de política do Azure para auditar o uso de autenticação do Active Directory do Azure para servidores SQL e o Service Fabric. O uso da autenticação do Azure Active Directory permite o gerenciamento simplificado de permissões e o gerenciamento centralizado de identidades dos usuários de banco de dados e de outros serviços da Microsoft.
+Este projeto atribui definições de Azure Policy para auditar o uso de autenticação de Azure Active Directory para SQL Servers e Service Fabric. O uso da autenticação do Azure Active Directory permite o gerenciamento simplificado de permissões e o gerenciamento centralizado de identidades dos usuários de banco de dados e de outros serviços da Microsoft.
 
-- Um administrador do Azure Active Directory deve ser provisionado para servidores SQL
-- Clusters do Service Fabric só devem usar o Azure Active Directory para autenticação de cliente
+- Um administrador de Azure Active Directory deve ser provisionado para servidores SQL
+- Clusters de Service Fabric só devem usar Azure Active Directory para autenticação de cliente
 
-Esta especificação técnica também atribui as definições de política do Azure para auditar as contas que devem ser priorizadas para revisão, incluindo contas depreciadas e contas externas com permissões elevadas. Quando necessário, as contas podem ser impedidas de entrar (ou removidas), o que remove imediatamente os direitos de acesso aos recursos do Azure. Esta especificação técnica atribui duas definições de política do Azure à conta de auditoria depreciada que deve ser considerada para remoção.
+Esse projeto também atribui definições de Azure Policy para auditar contas que devem ser priorizadas para análise, incluindo contas depreciadas e contas externas com permissões elevadas. Quando necessário, as contas podem ser impedidas de entrar (ou removidas), o que remove imediatamente os direitos de acesso aos recursos do Azure. Este projeto atribui duas definições de Azure Policy para auditar a conta depreciada que deve ser considerada para remoção.
 
-- Contas preteridas devem ser removidas da sua assinatura
+- As contas preteridas devem ser removidas da sua assinatura
 - Contas preteridas com permissões de proprietário devem ser removidas da sua assinatura
 - Contas externas com permissões de proprietário devem ser removidas da sua assinatura
 - As contas externas com permissões de gravação do proprietário devem ser removidas da sua assinatura
 
-Esta especificação técnica também atribui uma definição de política do Azure que audita a VM do Linux permissões de arquivo de senha para alertar se eles são definidos incorretamente. Esse design permite que você tomar uma ação corretiva para garantir que autenticadores não estão comprometidos.
+Esse plano gráfico também atribui uma definição de Azure Policy que audita as permissões de arquivo de senha de VM do Linux para alertar se elas estiverem definidas incorretamente. Esse design permite que você tome medidas corretivas para garantir que os autenticadores não sejam comprometidos.
 
-- [Visualização]: Audit Linux VM /etc/passwd file permissions are set to 0644
+- \[Versão Prévia\]: As permissões de arquivo/etc/passwd de VM do Linux de auditoria são definidas como 0644
 
-## <a name="13-audit-information-for-users"></a>Informações de auditoria de 13 para os usuários
+## <a name="13-audit-information-for-users"></a>13 informações de auditoria para usuários
 
-Esta especificação técnica ajuda a garantir que os eventos de sistema são registrados por meio da atribuição [política do Azure](../../../policy/overview.md) definições de configurações de auditoria log em recursos do Azure. Uma política atribuída também audita se as máquinas virtuais não estão enviando logs para um workspace especificado do Log Analytics.
+Este projeto ajuda a garantir que os eventos do sistema sejam registrados por meio da atribuição de definições de [Azure Policy](../../../policy/overview.md) que auditam as configurações de log nos recursos do Azure. Uma política atribuída também audita se as máquinas virtuais não estão enviando logs para um workspace especificado do Log Analytics.
 
-- Monitorar os servidores SQL não auditados na Central de segurança do Azure
+- Monitorar servidores SQL não auditados na central de segurança do Azure
 - Configuração de diagnóstico de auditoria
 - Auditar configurações de Auditoria de nível do servidor SQL
-- [Visualização]: Deploy Log Analytics Agent for Linux VMs
-- [Visualização]: Deploy Log Analytics Agent for Windows VMs
-- Implantar o observador de rede quando as redes virtuais são criadas
+- \[Versão Prévia\]: Implantar o Agente do Log Analytics para VMs do Linux
+- \[Versão Prévia\]: Implantar o Agente do Log Analytics para VMs do Windows
+- Implantar o observador de rede quando redes virtuais são criadas
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Agora que você analisou o mapeamento de controle das plantas OFICIAL do Reino Unido e NHS do Reino Unido, visite os seguintes artigos para saber mais sobre a visão geral e como implantar este exemplo:
+Agora que você analisou o mapeamento de controle dos planos gráficos do Reino Unido e do Reino Unido NHS, visite os artigos a seguir para saber mais sobre a visão geral e como implantar este exemplo:
 
 > [!div class="nextstepaction"]
-> [Plantas OFICIAL do Reino Unido e do Reino Unido NHS - visão geral](./index.md)
-> [OFICIAL do Reino Unido e especificações técnicas do Reino Unido NHS - as etapas de implantação](./deploy.md)
+> [Plantas oficiais do Reino Unido e do Reino Unido de NHS-visão geral](./index.md)
+> do Reino Unido[e do Reino Unido do RU NHS-etapas de implantação](./deploy.md)
 
 Outros artigos sobre blueprints e como usá-los:
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.reviewer: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 51a554586c67842ead40cd4a1bfaaa51bbdd8a18
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e450c0682a22a6e667a2bca153ce5d706a5bea96
+ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65954405"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67986245"
 ---
 # <a name="change-feed-in-azure-cosmos-db---overview"></a>Feed de alterações no Azure Cosmos DB – visão geral
 
@@ -58,7 +58,7 @@ Se uma propriedade TTL (vida útil) for definida em um item como -1, o feed de a
 
 ### <a name="change-feed-and-etag-lsn-or-ts"></a>Feed de alterações e _etag, _lsn ou _ts
 
-O formato de _etag é interno e você não deve assumir uma dependência dele, porque ele pode ser alterado a qualquer momento. _ts é um carimbo de data/hora de modificação ou de criação. Você pode usar o _ts para comparação cronológica. _lsn é uma ID de lote que é adicionada para apenas; do feed de alterações ele representa a ID da transação. Muitos itens podem ter a mesma _lsn. O ETag no FeedResponse é diferente do _etag que você vê no item. O _etag é um identificador interno e usado para controle de simultaneidade; ele informa sobre a versão do item, enquanto o ETag é usado para o sequenciamento do feed.
+O formato de _etag é interno e você não deve assumir uma dependência dele, porque ele pode ser alterado a qualquer momento. _ts é um carimbo de data/hora de modificação ou de criação. Você pode usar o _ts para comparação cronológica. _lsn é uma ID de lote que é adicionada somente para o feed de alterações; representa a ID da transação. Muitos itens podem ter a mesma _lsn. O ETag no FeedResponse é diferente do _etag que você vê no item. O _etag é um identificador interno e usado para controle de simultaneidade; ele informa sobre a versão do item, enquanto o ETag é usado para o sequenciamento do feed.
 
 ## <a name="change-feed-use-cases-and-scenarios"></a>Casos de uso e cenários do feed de alterações
 
@@ -93,8 +93,8 @@ Veja a seguir alguns dos cenários que você pode implementar com o feed de alte
 
 É possível trabalhar com o feed de alterações usando as seguintes opções:
 
-* [Usando o feed de alterações com o Azure Functions](change-feed-functions.md)
-* [Usando o feed de alterações com a biblioteca de processadores do feed de alterações](change-feed-processor.md) 
+* [Usando feed de alterações com o Azure Functions](change-feed-functions.md)
+* [Usando o feed de alterações com o processador do feed de alterações](change-feed-processor.md) 
 
 O feed de alterações está disponível para cada chave de partição lógica dentro do contêiner e pode ser distribuído entre um ou mais clientes para processamento paralelo, conforme mostrado na imagem abaixo.
 
@@ -108,7 +108,7 @@ O feed de alterações está disponível para cada chave de partição lógica d
 
 * O feed de alterações inclui inserções e operações de atualização feitas em itens dentro do contêiner. É possível capturar exclusões definindo um sinalizador de "exclusão suave" dentro dos seus itens (por exemplo, documentos) no lugar de exclusões. Como alternativa, é possível definir um período de expiração finito para seus itens com a [funcionalidade TTL](time-to-live.md). Por exemplo, 24 horas e use o valor dessa propriedade para a captura ser excluída. Com essa solução, é necessário processar alterações em um intervalo de tempo menor do que o período de expiração da TTL. 
 
-* Cada alteração em um item aparece exatamente uma vez no feed de alterações, sendo que os clientes devem gerenciar a lógica do ponto de verificação. Se desejar evitar a complexidade de gerenciar pontos de verificação, a biblioteca de processadores do feed de alterações fornecerá um ponto de verificação automático e semântica "pelo menos uma vez". Confira [usando o feed de alterações com a biblioteca de processadores do feed de alterações](change-feed-processor.md).
+* Cada alteração em um item aparece exatamente uma vez no feed de alterações, sendo que os clientes devem gerenciar a lógica do ponto de verificação. Se você quiser evitar a complexidade do gerenciamento de pontos de verificação, o processador do feed de alterações fornecerá o ponto de verificação automático e a semântica "pelo menos uma vez". Consulte [usar o feed de alterações com o processador do feed de alterações](change-feed-processor.md).
 
 * Somente a alteração mais recente para um determinado item está incluída no log de alterações. As alterações intermediárias podem não estar disponíveis.
 
@@ -125,5 +125,5 @@ O feed de alterações está disponível para cada chave de partição lógica d
 Agora, você pode prosseguir para saber mais sobre o feed de alterações nos seguintes artigos:
 
 * [Opções de ler o feed de alterações](read-change-feed.md)
-* [Usando o feed de alterações com o Azure Functions](change-feed-functions.md)
-* [Biblioteca do processador do feed usando a alteração](change-feed-processor.md)
+* [Usando feed de alterações com o Azure Functions](change-feed-functions.md)
+* [Usando o processador do feed de alterações](change-feed-processor.md)

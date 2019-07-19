@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: iainfou
-ms.openlocfilehash: 38403efd72843e7cd6d1afff5ff65a15af39c107
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 6b808126fe4366d3ca3cc19c674b489ec3055665
+ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67473963"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68234152"
 ---
 # <a name="check-the-health-of-an-azure-ad-domain-services-managed-domain"></a>Verificar a integridade de um domínio gerenciado do Azure AD Domain Services
 
@@ -43,10 +43,10 @@ O status no canto superior direito da página de integridade indica a integridad
 
 | Status | ícone | Explicação |
 | --- | :----: | --- |
-| Executando | <img src= "./media/active-directory-domain-services-alerts/running-icon.png" width = "15"> | O domínio gerenciado está funcionando normalmente e não tem alertas críticos ou de aviso. Este domínio pode ter alertas informativos. |
-| Precisa de atenção (aviso) | <img src= "./media/active-directory-domain-services-alerts/warning-icon.png" width = "15"> | Não existem alertas críticos no domínio gerenciado, mas há um ou mais alertas de aviso que precisam ser resolvidos. |
-| Precisa de atenção (crítico) | <img src= "./media/active-directory-domain-services-alerts/critical-icon.png" width = "15"> | Há um ou mais alertas críticos no seu domínio gerenciado. Você também pode ter alertas de aviso e/ou informativos. |
-| Implantando | <img src= "./media/active-directory-domain-services-alerts/deploying-icon.png" width = "15"> | O domínio está no processo de implantação. |
+| Executando | <img src= "./media/active-directory-domain-services-alerts/running-icon.png" width = "15" alt="Green check mark for running"> | O domínio gerenciado está funcionando normalmente e não tem alertas críticos ou de aviso. Este domínio pode ter alertas informativos. |
+| Precisa de atenção (aviso) | <img src= "./media/active-directory-domain-services-alerts/warning-icon.png" width = "15" alt="Yellow exclamation mark for warning"> | Não existem alertas críticos no domínio gerenciado, mas há um ou mais alertas de aviso que precisam ser resolvidos. |
+| Precisa de atenção (crítico) | <img src= "./media/active-directory-domain-services-alerts/critical-icon.png" width = "15" alt="Red exclamation mark for critical"> | Há um ou mais alertas críticos no seu domínio gerenciado. Você também pode ter alertas de aviso e/ou informativos. |
+| Implantando | <img src= "./media/active-directory-domain-services-alerts/deploying-icon.png" width = "15" alt="Blue circular arrows for deploying"> | O domínio está no processo de implantação. |
 
 ## <a name="monitors"></a>Monitores
 Monitores são aspectos do domínio gerenciado que o Azure AD Domain Services monitora regularmente. A melhor maneira de manter os monitores em estado íntegro é resolver todos alertas ativos do domínio gerenciado.

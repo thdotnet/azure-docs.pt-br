@@ -10,12 +10,12 @@ ms.service: active-directory
 ms.subservice: msi
 manager: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ca461f3be740c3b0bac18795991bb721a5305240
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: e6869602b7d4aff6d779d189f0b6444dde2055d4
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67611528"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68261914"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Serviços que dão suporte a identidades gerenciadas para recursos do Azure
 
@@ -79,10 +79,10 @@ Veja a lista a seguir para configurar a identidade gerenciada para Serviço de A
 | Atribuído pelo sistema | Visualizar | Não disponível | Não disponível | Não disponível |
 | Atribuído pelo usuário | Visualizar | Não disponível | Não disponível | Não disponível |
 
-Consulte a lista a seguir para usar uma identidade gerenciada com [do Azure BluePrint](../../governance/blueprints/overview.md):
+Consulte a lista a seguir para usar uma identidade gerenciada com [plantas do Azure](../../governance/blueprints/overview.md):
 
-- [Portal do Azure - atribuição de planta](../../governance/blueprints/create-blueprint-portal.md#assign-a-blueprint)
-- [API REST – atribuição de planta](../../governance/blueprints/create-blueprint-rest-api.md#assign-a-blueprint)
+- [Portal do Azure-atribuição de plano gráfico](../../governance/blueprints/create-blueprint-portal.md#assign-a-blueprint)
+- [API REST-atribuição de Blueprint](../../governance/blueprints/create-blueprint-rest-api.md#assign-a-blueprint)
 
 ### <a name="azure-functions"></a>Verificação de
 
@@ -155,7 +155,7 @@ Tipo de identidade gerenciada | Todos Disponíveis ao Público Geral<br>Regiões
 | Atribuído pelo sistema | Disponível | Não disponível | Não disponível | Não disponível |
 | Atribuído pelo usuário | Visualizar | Não disponível | Não disponível | Não disponível |
 
-Consulte a lista a seguir para configurar a identidade gerenciada para tarefas de registro de contêiner do Azure (em regiões onde for disponível):
+Consulte a lista a seguir para configurar a identidade gerenciada para tarefas do registro de contêiner do Azure (em regiões onde disponível):
 
 - [CLI do Azure](~/articles/container-registry/container-registry-tasks-authentication-managed-identity.md)
 
@@ -167,10 +167,10 @@ Os serviços a seguir dão suporte à autenticação do Azure AD e foram testado
 
 Consulte a lista a seguir para configurar o acesso ao Azure Resource Manager:
 
-- [Atribuir acesso por meio do portal do Azure](howto-assign-access-portal.md)
-- [Atribuir acesso por meio do Powershell](howto-assign-access-powershell.md)
-- [Atribuir acesso por meio da CLI do Azure](howto-assign-access-CLI.md)
-- [Atribuir acesso por meio do modelo do Resource Manager](../../role-based-access-control/role-assignments-template.md)
+- [Atribuir acesso via portal do Azure](howto-assign-access-portal.md)
+- [Atribuir acesso via PowerShell](howto-assign-access-powershell.md)
+- [Atribuir acesso via CLI do Azure](howto-assign-access-CLI.md)
+- [Atribuir acesso via modelo de Azure Resource Manager](../../role-based-access-control/role-assignments-template.md)
 
 | Nuvem | ID de Recurso | Status |
 |--------|------------|--------|
@@ -224,14 +224,14 @@ Consulte a lista a seguir para configurar o acesso ao Azure Resource Manager:
 | Azure Alemanha |   | Não disponível |
 | Azure China 21Vianet |  | Não disponível |
 
-### <a name="azure-storage-blobs-and-queues"></a>Filas e blobs de armazenamento do azure
+### <a name="azure-storage-blobs-and-queues"></a>BLOBs e filas do armazenamento do Azure
 
 | Nuvem | ID de Recurso | Status |
 |--------|------------|--------|
-| Azure Global | `https://storage.azure.com/` | Disponível |
-| Azure Government | `https://storage.azure.com/` | Disponível |
-| Azure Alemanha | `https://storage.azure.com/` | Disponível |
-| Azure China 21Vianet | `https://storage.azure.com/` | Disponível |
+| Azure Global | `https://storage.azure.com/` <br /><br />`https://<account>.blob.core.windows.net` <br /><br />`https://<account>.queue.core.windows.net` | Disponível |
+| Azure Government | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.windows.net` <br /><br />`https://<account>.queue.core.windows.net` | Disponível |
+| Azure Alemanha | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.windows.net` <br /><br />`https://<account>.queue.core.windows.net` | Disponível |
+| Azure China 21Vianet | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.windows.net` <br /><br />`https://<account>.queue.core.windows.net` | Disponível |
 
 ### <a name="azure-analysis-services"></a>Azure Analysis Services
 
