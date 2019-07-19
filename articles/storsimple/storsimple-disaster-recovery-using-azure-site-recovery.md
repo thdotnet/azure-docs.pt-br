@@ -13,19 +13,19 @@ ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/13/2017
-ms.author: vidarmsft
-ms.openlocfilehash: 8c82170cf9cff1870739bb13db9ac0e348a46c07
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.author: alkohli
+ms.openlocfilehash: 650798fdb884e6494990efb533335a1dd8b4d89f
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67443059"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67875384"
 ---
 # <a name="automated-disaster-recovery-solution-using-azure-site-recovery-for-file-shares-hosted-on-storsimple"></a>Solução de recuperação de desastre automatizada usando o Azure Site Recovery para compartilhamentos de arquivos hospedados no StorSimple
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="overview"></a>Visão Geral
+## <a name="overview"></a>Visão geral
 O Microsoft Azure StorSimple é uma solução de armazenamento de nuvem híbrida que resolve as complexidades de dados não estruturados comumente associados aos compartilhamentos de arquivos. O StorSimple usa o armazenamento em nuvem como uma extensão da solução local e dispõe os dados em camadas automaticamente no armazenamento local e no armazenamento em nuvem. A proteção de dados integrada, com instantâneos locais e de nuvem, elimina a necessidade de uma infraestrutura de armazenamento ampla.
 
 [Azure Site Recovery](../site-recovery/site-recovery-overview.md) é um serviço baseado no Azure que fornece recursos de DR (recuperação de desastre) por meio da orquestração de replicação, de failover e da recuperação de máquinas virtuais. O Azure Site Recovery dá suporte para várias tecnologias de replicação, com o intuito de replicar, proteger e fazer o failover de forma consistente das máquinas virtuais e dos aplicativos em nuvens privadas/públicas ou hospedadas.
@@ -93,7 +93,7 @@ Esta etapa exige que você prepare o ambiente do servidor de arquivos local, cri
       
 1. Clique em **Avançar**.
 1. Aceite os **Termos do Contrato** e, em seguida, clique em **Avançar**.
-1. Clique em **Concluir**.
+1. Clique em **Finalizar**.
 1. Crie os compartilhamentos de arquivos usando volumes criados fora do armazenamento do StorSimple. Para obter mais informações, confira [Usar o serviço StorSimple Manager para gerenciar volumes](storsimple-manage-volumes.md).
    
    1. Em suas VMs locais, pressione a tecla Windows +Q e pesquise por **iSCSI**.
@@ -170,7 +170,7 @@ Você pode criar um plano de recuperação no ASR para automatizar o processo de
    
 1. Na conta de automação, clique em **Variáveis** &gt; **Adicionar uma variável** e adicione os seguintes variáveis. Você pode optar por criptografar esses ativos. Essas variáveis são específicas do plano de recuperação. Se o seu plano de recuperação, que você criará na próxima etapa, o nome será TestPlan, as variáveis deverão ser TestPlan-StorSimRegKey, TestPlan-AzureSubscriptionName e assim por diante.
 
-   - **BaseUrl**: A URL do Gerenciador de Recursos de URL para a nuvem do Azure. Comece usando **Get-AzEnvironment | Select-Object Name, ResourceManagerUrl** cmdlet.
+   - **BaseUrl**: A URL do Gerenciador de Recursos de URL para a nuvem do Azure. Obter usando **Get-AzEnvironment | SELECT – nome do objeto, cmdlet ResourceManagerUrl** .
    - _RecoveryPlanName_ **-ResourceGroupName**: O grupo do Gerenciador de Recursos que tem o recurso StorSimple.
    - _RecoveryPlanName_ **-ManagerName**: O recurso StorSimple que tem o dispositivo StorSimple.
    - _RecoveryPlanName_ **-DeviceName**: O dispositivo StorSimple que precisa sofrer failover.
