@@ -221,7 +221,7 @@ A solicitação exige os seguintes campos:
 | userChainIdentifier      | Endereço do usuário que foi criado na rede blockchain. No Ethereum, esse endereço é o endereço **do usuário na cadeia**. |
 | contractLedgerIdentifier | Endereço do contrato no razão |
 | version                  | Versão do aplicativo. Necessário se você tiver várias versões do aplicativo habilitadas. Caso contrário, a versão é opcional. Para obter mais informações sobre o controle de versão do aplicativo, confira [Controle de versão do aplicativo do Azure Blockchain Workbench](version-app.md). |
-| WorkflowFunctionName     | Nome da função de fluxo de trabalho |
+| workflowFunctionName     | Nome da função de fluxo de trabalho |
 | parameters               | Parâmetros de entrada para criação de contrato |
 | connectionId             | Identificador exclusivo para a conexão blockchain |
 | messageSchemaVersion     | Versão do esquema de mensagens |
