@@ -175,7 +175,7 @@ Os clientes *devem* enviar uma `speech.config` mensagem imediatamente depois de 
 | Campo | DESCRIÇÃO |
 |----|----|
 | Codificação de mensagem WebSocket | Text |
-| Corpo | O conteúdo útil como uma estrutura JSON |
+| Body | O conteúdo útil como uma estrutura JSON |
 
 #### <a name="required-message-headers"></a>Cabeçalhos de mensagem necessários
 
@@ -244,7 +244,7 @@ O serviço de fala usa a primeira `audio` mensagem que contém um identificador 
 | Campo | DESCRIÇÃO |
 |-------------|----------------|
 | Codificação de mensagem WebSocket | Binary |
-| Corpo | Dados binários para a parte de áudio. O tamanho máximo é de 8.192 bytes. |
+| Body | Dados binários para a parte de áudio. O tamanho máximo é de 8.192 bytes. |
 
 #### <a name="required-message-headers"></a>Cabeçalhos de mensagem necessários
 
@@ -332,7 +332,7 @@ A `speech.startDetected` mensagem indica que o Serviço de Fala detectado fala n
 | Codificação de mensagem WebSocket | Text |
 | Path | `speech.startDetected` |
 | Content-Type | application/json; charset=utf-8 |
-| Corpo | Estrutura JSON que contém informações sobre as condições quando o início da fala foi detectado. O campo de *deslocamento* nessa estrutura especifica o deslocamento (em unidades de 100 nanossegundos) quando a fala for detectada no fluxo de áudio, em relação ao início do fluxo. |
+| Body | Estrutura JSON que contém informações sobre as condições quando o início da fala foi detectado. O campo de *deslocamento* nessa estrutura especifica o deslocamento (em unidades de 100 nanossegundos) quando a fala for detectada no fluxo de áudio, em relação ao início do fluxo. |
 
 #### <a name="sample-message"></a>Mensagem de exemplo
 
@@ -358,7 +358,7 @@ Durante o reconhecimento de fala, o serviço de fala gera periodicamente hipóte
 | Path | `speech.hypothesis` |
 | X-RequestId | UUID no formato de "no-dash" |
 | Content-Type | aplicativo/json |
-| Corpo | Hipótese de fala de estrutura JSON |
+| Body | Hipótese de fala de estrutura JSON |
 
 #### <a name="sample-message"></a>Mensagem de exemplo
 
@@ -389,7 +389,7 @@ Quando o serviço de fala determina que ele tem informações suficientes para p
 | Codificação de mensagem WebSocket | Text |
 | Path | `speech.phrase` |
 | Content-Type | aplicativo/json |
-| Corpo | Estrutura JSON de frase de fala |
+| Body | Estrutura JSON de frase de fala |
 
 O esquema JSON de frase de fala inclui os seguintes campos: `RecognitionStatus`, `DisplayText`, `Offset`, e `Duration`. Para obter mais informações sobre esses campos, consulte [respostas de Transcrição](../concepts.md#transcription-responses).
 
@@ -416,7 +416,7 @@ A `speech.endDetected` mensagem especifica que o aplicativo cliente deve parar o
 | ------------- | ---------------- |
 | Codificação de mensagem WebSocket | Text |
 | Path | `speech.endDetected` |
-| Corpo | A estrutura JSON que contém o deslocamento ao final da fala foi detectado. O deslocamento é representado no deslocamento de unidades de 100 nanossegundos desde o início de áudio que é usado para o reconhecimento. |
+| Body | A estrutura JSON que contém o deslocamento ao final da fala foi detectado. O deslocamento é representado no deslocamento de unidades de 100 nanossegundos desde o início de áudio que é usado para o reconhecimento. |
 | Content-Type | application/json; charset=utf-8 |
 
 #### <a name="sample-message"></a>Mensagem de exemplo
@@ -442,7 +442,7 @@ O `turn.start` sinaliza o início de uma curva da perspectiva do serviço. A `tu
 | Codificação de mensagem WebSocket | Text |
 | Path | `turn.start` |
 | Content-Type | application/json; charset=utf-8 |
-| Corpo | Estrutura JSON |
+| Body | Estrutura JSON |
 
 #### <a name="sample-message"></a>Mensagem de exemplo
 
@@ -468,7 +468,7 @@ O `turn.end` sinaliza o início de uma curva da perspectiva do serviço. A `turn
 | ------------- | ---------------- |
 | Codificação de mensagem WebSocket | Text |
 | Path | `turn.end` |
-| Corpo | Nenhum |
+| Body | Nenhum |
 
 #### <a name="sample-message"></a>Mensagem de exemplo
 
