@@ -311,7 +311,7 @@ Os clientes devem reconhecer o fim de uma curva, enviando uma `telemetry` mensag
 | Path | `telemetry` |
 | X-Timestamp | Carimbo de hora do relógio cliente UTC no formato ISO 8601 |
 | Content-Type | `application/json` |
-| Corpo | Uma estrutura JSON que contém informações de cliente sobre a ativar |
+| Body | Uma estrutura JSON que contém informações de cliente sobre a ativar |
 
 O esquema para o corpo da `telemetry` mensagem é definido na seção [esquema de Telemetria](#telemetry-schema).
 
