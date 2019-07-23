@@ -6,47 +6,36 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: overview
-ms.date: 07/09/2019
+ms.date: 07/17/2019
 ms.author: alkohli
-ms.openlocfilehash: bc6b9662a5d67f6ed315c33444bcb061115fe6d4
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 69580f956b603423ef302353953a45ad5d00391e
+ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67701471"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68305429"
 ---
 # <a name="what-is-azure-data-box-edge"></a>O que é o Azure Data Box Edge? 
 
-O Azure Data Box Edge é uma solução de armazenamento que permite processar dados e enviá-los pela rede para o Azure. Este artigo fornece uma visão geral da solução, dos benefícios, das principais funcionalidades e dos cenários do Data Box Edge em que é possível implantar esse dispositivo. 
+O Azure Data Box Edge é um dispositivo de computação de borda habilitado para IA com funcionalidades de transferência de dados de rede. Este artigo fornece uma visão geral da solução, dos benefícios, das principais funcionalidades e dos cenários do Data Box Edge em que é possível implantar esse dispositivo. 
 
-O Data Box Edge usa um dispositivo físico fornecido pela Microsoft para acelerar a transferência de dados segura. O dispositivo físico reside em seu local e você grava os dados nele usando os protocolos NFS e SMB. 
-
-O Data Box Edge tem todas as funcionalidades do Data Box Gateway. Além disso, o Data Box é equipado com funcionalidades de computação borda habilitadas para IA que ajudam a analisar, processar ou filtrar dados à medida em que são movidos para o blob de blocos do Azure, blob de páginas ou para os Arquivos do Azure.  
+O Data Box Edge é uma solução de hardware como serviço. A Microsoft envia a você um dispositivo gerenciado por nuvem com uma FPGA (matriz de porta programável no campo) interna que habilita inferência de IA acelerada e tem todos os recursos de um gateway de armazenamento. 
 
 ## <a name="use-cases"></a>Casos de uso
 
-O Azure Data Box Edge é um dispositivo de computação de borda habilitado para IA com funcionalidades de transferência de dados de rede. Veja a seguir os vários cenários em que o Data Box Edge pode ser usado para a transferência de dados.
+Aqui estão os vários cenários em que o Data Box Edge pode ser usado para inferências rápidas de ML (Machine Learning) na borda e pré-processamento de dados antes de enviá-los para o Azure.
 
-- **Pré-processar dados** – Analise dados de dispositivos IoT ou locais para chegar ao resultado rapidamente e fique perto do local em que os dados são gerados. O Data Box Edge transfere o conjunto de dados completo para a nuvem para realizar um processamento mais avançado ou análise mais aprofundada.  O pré-processamento pode ser usado para: 
+- **Inferência com o Azure Machine Learning** – com o Data Box Edge, é possível executar modelos de ML para obter resultados rápidos que podem ser tratados antes que os dados sejam enviados para a nuvem. O conjunto de dados completo pode ser transferido para continuar a treinar novamente e melhorar os modelos de ML. Para obter mais informações sobre como usar os Modelos de Aceleração de Hardware do Azure ML no dispositivo Data Box Edge, confira [Implantar Modelos de Aceleração de Hardware do Azure ML no Data Box Edge](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-fpga-web-service#deploy-to-a-local-edge-server).
+
+- **Pré-processar dados** – transforme dados antes de enviá-los para o Azure para criar um conjunto de dados mais acionável. O pré-processamento pode ser usado para: 
 
     - Agregar dados.
-    - Modificar dados, por exemplo, para remover PII (Informações de identificação pessoal).
-    - Colocar em subconjunto e transferir os dados necessários para realizar análises mais aprofundadas na nuvem.
+    - Modifique os dados, por exemplo, para remover dados pessoais.
+    - Subconjunto dados para otimizar o armazenamento e a largura de banda ou para análise posterior.
     - Analisar e reagir a Eventos de IoT. 
-
-- **Azure Machine Learning de Inferência** – Com o Data Box Edge, é possível executar modelos de ML (Machine Learning) para obter resultados rápidos que podem ser tratados antes que os dados sejam enviados para a nuvem. O conjunto de dados completo pode ser transferido para continuar a treinar novamente e melhorar os modelos de ML. Para obter mais informações sobre como usar os Modelos de Aceleração de Hardware do Azure ML no dispositivo Data Box Edge, confira [Implantar Modelos de Aceleração de Hardware do Azure ML no Data Box Edge](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-fpga-web-service#deploy-to-a-local-edge-server).
 
 - **Transferir dados pela rede para o Azure** – Use o Data Box Edge para transferir dados de maneira rápida e fácil para o Azure para habilitar ainda mais computação e análise ou para fins de arquivamento. 
 
-## <a name="benefits"></a>Benefícios
-
-O Data Box Edge tem os seguintes benefícios:
-
-- **Transferência de dados fácil** – Torna a movimentação de dados para dentro e fora do Azure tão fácil quanto trabalhar em um compartilhamento de rede local.  
-- **Alto desempenho** – Permite transferências de alto desempenho para o Azure e dele. 
-- **Acesso rápido** – armazena em cache os arquivos mais recentes para acesso rápido de arquivos locais.  
-- **Uso de largura de banda limitado** – Os dados podem ser gravados no Azure, mesmo quando a rede tem uma restrição para limitar o uso durante o horário comercial de pico.  
-- **Transformar dados** – Habilita a análise, processamento ou filtragem de dados conforme eles são movidos para o Azure.
 
 ## <a name="key-capabilities"></a>Principais recursos
 
@@ -54,15 +43,16 @@ O Data Box Edge tem as seguintes funcionalidades:
 
 |Recurso |DESCRIÇÃO  |
 |---------|---------|
-|Alto desempenho     | Largura de banda e transferência de dados totalmente automatizada e altamente otimizada.|
-|Protocolos com suporte     | Suporte para os protocolos SMB e NFS padrão para ingestão de dados. <br> Para obter mais informações sobre as versões com suporte, acesse [Data Box Edge system requirements](data-box-edge-system-requirements.md) (Requisitos do sistema do Data Box Edge).|
+|Inferência de IA acelerada| Habilitada pela FPGA interna.|
 |Computação       |Permite a análise, o processamento e a filtragem de dados.|
-|Acesso de dados     | Acesso direto a dados dos Blobs de Armazenamento do Microsoft Azure e Arquivos do Azure usando APIs de nuvem para processamento adicional de dados na nuvem.|
-|Acesso rápido     | Cache local no dispositivo para acesso rápido dos arquivos usados mais recentemente.|
+|Alto desempenho | Computação de alto desempenho e transferências de dados.|
+|Acesso de dados     | Acesso direto a dados dos Blobs de Armazenamento do Microsoft Azure e Arquivos do Azure usando APIs de nuvem para processamento adicional de dados na nuvem. O cache local no dispositivo é usado para acesso rápido dos arquivos usados mais recentemente.|
+|Gerenciado pela nuvem     |O dispositivo e o serviço são gerenciados por meio do portal do Azure.  |
 |Upload offline     | O modo desconectado é compatível com cenários de upload offline.|
+|Protocolos com suporte     | Suporte para os protocolos SMB e NFS padrão para ingestão de dados. <br> Para obter mais informações sobre as versões com suporte, acesse [Data Box Edge system requirements](data-box-edge-system-requirements.md) (Requisitos do sistema do Data Box Edge).|
 |Atualização dedados     | Capacidade de atualizar arquivos locais com a versão mais recente da nuvem.|
-|Criptografia    | Suporte ao BitLocker para criptografar dados localmente e proteger a transferência de dados para a nuvem por meio do *https*.       |
-|Resiliência     | Resiliência de rede interna.        |
+|Criptografia    | Suporte ao BitLocker para criptografar dados localmente e proteger a transferência de dados para a nuvem por meio do *https*.|
+|Limitação de largura de banda| Limitação para restringir o uso de largura de banda durante horários de pico.|
 
 
 ## <a name="components"></a>Componentes

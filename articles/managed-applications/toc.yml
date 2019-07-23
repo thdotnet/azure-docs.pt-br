@@ -29,6 +29,8 @@
       href: publish-service-catalog-app.md
     - name: Publicar aplicativo do marketplace
       href: publish-marketplace-app.md
+    - name: Criar aplicativo gerenciado com provedor personalizado
+      href: tutorial-create-managed-app-with-custom-provider.md
 - name: Exemplos
   items:
     - name: A CLI do Azure
@@ -83,6 +85,14 @@
           href: custom-providers-proxy-cache-resource-endpoint-reference.md
         - name: Referência de ponto de extremidade RESTful do provedor personalizado
           href: reference-custom-providers-csharp-endpoint.md
+    - name: Artefatos de aplicativo
+      items:
+        - name: Elementos da interface do usuário
+          href: reference-createuidefinition-artifact.md
+        - name: Modelo de implantação
+          href: reference-main-template-artifact.md
+        - name: Exibir definição
+          href: reference-view-definition-artifact.md
     - name: CLI do Azure
       href: /cli/azure/managedapp
     - name: PowerShell

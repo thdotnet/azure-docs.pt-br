@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 07/03/2019
 ms.author: rimman
-ms.openlocfilehash: de39581f832c30c64a69797805df7e13ce47b439
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
+ms.openlocfilehash: 2744422e2e082c5bc6f63975b1100f336d32d5fa
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67565875"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68250072"
 ---
 # <a name="provision-throughput-on-a-database-in-azure-cosmos-db"></a>Provisionar taxa de transferência em um banco de dados no Azure Cosmos DB
 
@@ -33,6 +33,22 @@ Este artigo explica como provisionar a taxa de transferência em um banco de dad
    * Selecione **OK**.
 
 ![Captura de tela da caixa de diálogo Novo Banco de Dados](./media/how-to-provision-database-throughput/provision-database-throughput-portal-all-api.png)
+
+
+## <a name="provision-throughput-using-azure-cli"></a>Provisionar a taxa de transferência usando a CLI do Azure
+
+```azcli-interactive
+az cosmosdb database create --db-name
+                            [--key]
+                            [--name]
+                            [--resource-group-name]
+                            [--subscription]
+                            [--throughput]
+                            [--url-connection]
+```
+
+
+
 
 ## <a name="provision-throughput-using-powershell"></a>Provisionar a taxa de transferência usando o PowerShell
 
@@ -59,6 +75,7 @@ New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts/apis/databas
 > Você pode usar os SDKs do Cosmos para a API de SQL para provisionar a taxa de transferência de todas as APIs. Opcionalmente, você pode usar o exemplo a seguir para a API do Cassandra também.
 
 ### <a id="dotnet-all"></a>Todas as APIs
+### <a name="net-v2-sdk"></a>SDK do .NET V2
 
 ```csharp
 //set the throughput for the database
@@ -72,6 +89,9 @@ await client.CreateDatabaseIfNotExistsAsync(
     new Database {Id = databaseName},  
     options);
 ```
+
+### <a name="net-v3-sdk"></a>SDK do .NET V3
+[!code-csharp[](~/samples-cosmosdb-dotnet-v3/Microsoft.Azure.Cosmos/tests/Microsoft.Azure.Cosmos.Tests/SampleCodeForDocs/DatabaseDocsSampleCode.cs?name=DatabaseCreateWithThroughput)]
 
 ### <a id="dotnet-cassandra"></a>API do Cassandra
 

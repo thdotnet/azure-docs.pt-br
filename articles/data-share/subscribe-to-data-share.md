@@ -6,12 +6,12 @@ ms.service: data-share
 ms.topic: tutorial
 ms.date: 07/10/2019
 ms.author: joanpo
-ms.openlocfilehash: 2dc4994d88fc03c23a6d5722d6018c926e7d6b8c
-ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
+ms.openlocfilehash: fc63c1a0b3b496de8e5ecea58f79f1db9d872e80
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67788358"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67838438"
 ---
 # <a name="tutorial-accept-and-receive-data-using-azure-data-share-preview"></a>Tutorial: Aceitar e receber dados usando o Azure Data Share (versão prévia)
 
@@ -31,6 +31,8 @@ Cumpra todos os pré-requisitos antes de aceitar um convite de compartilhamento 
 * Assinatura do Azure: Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/) antes de começar.
 * Uma conta de Armazenamento do Azure: Se você não tiver uma, poderá criar uma [conta de Armazenamento do Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account). 
 * Um convite do Azure Data Share: Um convite do Microsoft Azure com o assunto intitulado "Convite do Azure Data Share de **<yourdataprovider@domain.com>** ".
+* Permissão para adicionar uma atribuição de função à conta de armazenamento, que está presente na permissão *Microsoft.Authorization/atribuições de função/gravação*. Essa permissão existe na função de proprietário. 
+* Registro do Provedor de Recursos para o Microsoft.DataShare. Consulte a documentação sobre [Provedores de Recursos do Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services) para obter informações sobre como fazer isso. 
 
 > [!IMPORTANT]
 > Para aceitar e receber um Azure Data Share, primeiro registre o provedor de recursos Microsoft.DataShare. Você também deve ser um proprietário da conta de armazenamento na qual você aceita dados. Siga as instruções documentadas em [Solucionar problemas do Azure Data Share (versão prévia)](data-share-troubleshoot.md) para registrar o provedor de recursos de compartilhamento de dados, bem como adicionar a si próprio como proprietário da conta de armazenamento. 

@@ -334,8 +334,6 @@
           href: cognitive-search-skill-keyphrases.md
         - name: Detecção de Idioma
           href: cognitive-search-skill-language-detection.md
-        - name: Reconhecimento de Entidade Nomeada
-          href: cognitive-search-skill-named-entity-recognition.md
         - name: Reconhecimento de Entidade
           href: cognitive-search-skill-entity-recognition.md
         - name: Fusão de texto
@@ -344,6 +342,8 @@
           href: cognitive-search-skill-textsplit.md
         - name: Sentimento
           href: cognitive-search-skill-sentiment.md
+        - name: Tradução de texto (versão prévia)
+          href: cognitive-search-skill-text-translation.md
         - name: Análise de imagens
           href: cognitive-search-skill-image-analysis.md
         - name: OCR
@@ -352,12 +352,15 @@
           href: cognitive-search-skill-shaper.md
         - name: Condicional
           href: cognitive-search-skill-conditional.md
-        - name: Habilidades preteridas
-          href: cognitive-search-skill-deprecated.md
     - name: Habilidades personalizadas
       items:
         - name: API Web personalizada
           href: cognitive-search-custom-skill-web-api.md
+    - name: Habilidades preteridas
+      href: cognitive-search-skill-deprecated.md
+      items:
+        - name: Reconhecimento de Entidade Nomeada
+          href: cognitive-search-skill-named-entity-recognition.md
 - name: Recursos
   items:
     - name: Suporte da Comunidade do Azure

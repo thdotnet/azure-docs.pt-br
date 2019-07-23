@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e51c37f983162b82747760b05e2ec5e4e6553c0b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ccf3894daf71be0defe4271a08ec5e8d963e0d34
+ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67106941"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "68227490"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-answerhub"></a>Tutorial: Integração do Azure Active Directory ao AnswerHub
 
@@ -193,7 +193,7 @@ Nesta seção, você criará uma usuária de teste no portal do Azure chamada Br
 
 ### <a name="assign-the-azure-ad-test-user"></a>Atribuir o usuário de teste do Azure AD
 
-Nesta seção, você configurará Brenda Fernandes para que ela use o logon único do Azure AD concedendo a ela acesso ao AnswerHub.
+Nesta seção, você configurará o usuário Brenda Fernandes para que use o logon único do Azure AD, concedendo a esse usuário acesso ao AnswerHub.
 
 **Para atribuir o usuário de teste do Azure AD:**
 

@@ -31,9 +31,9 @@
           href: ../aks/tutorial-kubernetes-prepare-app.md
 - name: Guia de início rápido
   items:
-    - name: Criar uma conta usando o portal do Azure
+    - name: Criar um recurso usando o portal do Azure
       href: cognitive-services-apis-create-account.md
-    - name: Criar uma conta usando a CLI do Azure
+    - name: Criar um recurso usando a CLI do Azure
       href: cognitive-services-apis-create-account-cli.md
     - name: Authentication
       href: authentication.md

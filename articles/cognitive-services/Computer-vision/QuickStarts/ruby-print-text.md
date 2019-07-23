@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: quickstart
-ms.date: 03/11/2019
+ms.date: 07/15/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 71fc32fb34ae67f6d3a4de556da8b107574cc920
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 7c9385078b1f9b42847cf627cf49ac16158d6b52
+ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603521"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68276426"
 ---
 # <a name="quickstart-extract-printed-text-ocr-using-the-computer-vision-rest-api-and-ruby"></a>Início Rápido: Extrair um texto impresso (OCR) usando a API REST da Pesquisa Visual Computacional e o Ruby
 
@@ -33,8 +33,8 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 Para criar e executar o exemplo, siga estas etapas:
 
-1. Copie o código a seguir em um editor de texto.
-1. Faça as alterações a seguir no código quando necessário:
+1. Copie o código abaixo para um editor de texto.
+1. Faça as alterações a seguir ao código:
     1. Substitua `<Subscription Key>` por sua chave de assinatura.
     1. Substitua `https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/ocr` pela URL do ponto de extremidade para o método [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) na região do Azure em que você adquiriu suas chaves de assinatura, se necessário.
     1. Outra opção é substituir `https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Atomist_quote_from_Democritus.png/338px-Atomist_quote_from_Democritus.png\` pela URL de uma imagem diferente da qual você deseja extrair texto impresso.

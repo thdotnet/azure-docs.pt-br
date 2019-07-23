@@ -5,15 +5,15 @@ author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: tutorial
-ms.date: 06/25/2019
+ms.date: 07/02/2019
 ms.author: hrasheed
 ms.custom: hdinsightactive,mvc
-ms.openlocfilehash: 403e165d7ebe8365ffa0fd2f5f3779d3b4fab68f
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: fbab8502c088c2ae7a4b8e87285d7e4cac1de4c0
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67543638"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67807395"
 ---
 # <a name="tutorial-extract-transform-and-load-data-using-interactive-query-in-azure-hdinsight"></a>Tutorial: Extrair, transformar e carregar dados usando a Consulta Interativa no Azure HDInsight
 
@@ -59,6 +59,8 @@ Há muitas maneiras de carregar dados para o armazenamento associado a um cluste
     ```cmd
     scp FILENAME.zip sshuser@CLUSTERNAME-ssh.azurehdinsight.net:FILENAME.zip
     ```
+
+    Se for solicitado que você insira sim ou não para continuar, digite yes no prompt de comando e pressione Enter. O texto não fica visível na janela conforme você digita.
 
 2. Após o upload ser concluído, conecte-se ao cluster usando SSH. Edite o comando abaixo substituindo `CLUSTERNAME` pelo nome do cluster do HDInsight. Em seguida, digite o seguinte comando:
 

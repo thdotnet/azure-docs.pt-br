@@ -7,12 +7,12 @@ ms.service: data-share
 ms.topic: overview
 ms.date: 07/10/2019
 ms.author: joanpo
-ms.openlocfilehash: ef33ff41ce78657709a497860cdbc3acb1bb24ae
-ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
+ms.openlocfilehash: c02f72d6a327c4dcb94ac8844005613cfe316986
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67789000"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67838392"
 ---
 # <a name="troubleshoot-common-issues-in-azure-data-share-preview"></a>Solucionar problemas comuns na versão prévia do Azure Data Share
 
@@ -34,6 +34,8 @@ O erro acima é um problema conhecido com o serviço e está sendo tratado. Como
 
 Você precisará ter a [função de RBAC do Colaborador do Azure](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) para concluir estas etapas. 
 
+Se ainda não vir um convite para compartilhamento de dados, entre em contato com seu provedor de dados e verifique se ele enviou o convite para seu endereço de email de logon do Azure, e *não* para seu alias de email. 
+
 > [!IMPORTANT]
 > Se você já tiver aceitado um convite do Azure Data Share e saído do serviço antes de configurar o armazenamento, siga as instruções detalhadas no guia de instruções [Configurar um mapeamento de conjunto de dados](how-to-configure-mapping.md) para saber como concluir a configuração de seu compartilhamento de dados recebido e começar a receber dados. 
 
@@ -47,12 +49,12 @@ Você precisará ter a [função de RBAC do Colaborador do Azure](https://docs.m
 
 ![Erro de privilégio](media/error-write-privilege.png)
 
-Se você receber qualquer um dos erros acima ao criar um novo compartilhamento de dados ou receber um novo compartilhamento de dados, haverá permissões insuficientes para a conta de armazenamento. É a ação necessária é *Microsoft.Authorization/role assignments/write*, que existe na função de proprietário de armazenamento ou pode ser atribuída a uma função personalizada. Mesmo que você tenha criou a conta de armazenamento, isso NÃO o torna automaticamente o proprietário dessa conta. Siga estas etapas para permitir a si mesmo a função de proprietário da conta de armazenamento. Como alternativa, uma função personalizada pode ser criada com essa permissão à qual você pode adicionar a si próprio.  
+Se você receber qualquer um dos erros acima ao criar um novo compartilhamento de dados ou receber um novo compartilhamento de dados, haverá permissões insuficientes para a conta de armazenamento. A permissão necessária é *Microsoft.Authorization/atribuições de função/gravação*, que existe na função de proprietário de armazenamento ou pode ser atribuída a uma função personalizada. Mesmo que você tenha criou a conta de armazenamento, isso NÃO o torna automaticamente o proprietário dessa conta. Siga estas etapas para permitir a si mesmo a função de proprietário da conta de armazenamento. Como alternativa, uma função personalizada pode ser criada com essa permissão à qual você pode adicionar a si próprio.  
 
 1. Vá até a conta de Armazenamento no portal do Azure
 1. Selecione **Controle de Acesso (IAM)**
 1. Clique em **Adicionar**
-1. Adicione a si mesmo como o Proprietário de Dados do Blob de Armazenamento
+1. Adicione a si mesmo como proprietário.
 
 ## <a name="next-steps"></a>Próximas etapas
 

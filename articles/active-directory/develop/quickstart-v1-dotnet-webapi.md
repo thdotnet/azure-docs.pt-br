@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 05/21/2019
+ms.date: 07/15/2019
 ms.author: ryanwi
 ms.reviewer: jmprieur, andret
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 83f5b08e5fee17c0ea5577d4d56d4d3208a818e3
-ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
+ms.openlocfilehash: 5375d47c1b012a1c808a1115b7c902d99b05bf9d
+ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67625301"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68304712"
 ---
 # <a name="quickstart-build-a-net-web-api-that-integrates-with-azure-ad-for-authentication-and-authorization"></a>Início Rápido: Criar uma API Web do .NET que se integre ao Azure AD para autenticação e autorização
 
@@ -59,12 +59,21 @@ Para proteger seu aplicativo, você primeiro precisará criar um aplicativo em s
 
 3. No painel de navegação esquerdo, selecione **Azure Active Directory**.
 4. Selecione **Registros de aplicativo** e **Novo registro**.
-5. Quando a página **Registrar um aplicativo** aparecer, insira um nome para o seu aplicativo.
+5. Quando a página **Registrar um aplicativo** aparecer, insira um nome para o seu aplicativo. Por exemplo, "Serviço da Lista de Tarefas Pendentes".
 Em **Tipos de conta com suporte**, selecione **Contas em qualquer diretório organizacional e contas pessoais da Microsoft**.
 6. Selecione a plataforma **Web** na seção **URI de Redirecionamento** e defina o valor como `https://localhost:44321/` (o local para o qual o Microsoft Azure AD retornará os tokens).
 7. Ao terminar, selecione **Registrar**. Na página **Visão geral** do aplicativo, anote o valor de **ID do aplicativo (cliente)** .
-6. Selecione **Expor uma API** e, em seguida, clique em **Definir** para atualizar o URI da ID do Aplicativo. Insira um identificador específico ao locatário. Por exemplo, insira: `https://contoso.onmicrosoft.com/TodoListService`.
-7. Salve a configuração. Deixe o portal aberto, pois você também precisará registrar seu aplicativo cliente em breve.
+8. Selecione **Expor uma API** e clique em **Adicionar um escopo**.
+9. Aceite o URI da ID do aplicativo proposto (api://{clientId}) selecionando **Salvar e Continuar**.
+10. Insira os parâmetros s seguir:
+    1. Para **Nome do escopo**, insira "access_as_user".
+    1. Verifique se a opção **Administradores e usuários** está selecionada para **Quem pode consentir?** .
+    1. Em **Nome de exibição do consentimento do administrador**, digite "Acessar TodoListService como um usuário".
+    1. Em **Descrição do consentimento do administrador**, digite "Acessa a API Web do TodoListService como um usuário".
+    1. Em **Nome de exibição do consentimento do usuário**, insira "Acessar TodoListService como um usuário".
+    1. Em **Descrição do consentimento do usuário**, digite "Acessa a API Web do TodoListService como um usuário".
+    1. Em **Estado**, selecione **Habilitado.**
+11. Selecione **Adicionar escopo** para salvar a configuração. Deixe o portal aberto, pois você também precisará registrar seu aplicativo cliente em breve.
 
 ## <a name="step-2-set-up-the-app-to-use-the-owin-authentication-pipeline"></a>Etapa 2: Configurar o aplicativo para usar o pipeline de autenticação OWIN
 
@@ -73,8 +82,8 @@ Para validar tokens e solicitações de entrada, você precisa configurar seu ap
 1. Para começar, abra a solução e adicione os pacotes do NuGet de middleware OWIN ao projeto TodoListService usando o Console do Gerenciador de Pacotes.
 
     ```
-    PM> Install-Package Microsoft.Owin.Security.ActiveDirectory -ProjectName TodoListService
-    PM> Install-Package Microsoft.Owin.Host.SystemWeb -ProjectName TodoListService
+    Install-Package Microsoft.Owin.Security.ActiveDirectory -ProjectName TodoListService
+    Install-Package Microsoft.Owin.Host.SystemWeb -ProjectName TodoListService
     ```
 
 2. Adicionar uma classe de inicialização OWIN no projeto TodoListService chamado `Startup.cs`.  Clique com o botão direito do mouse no projeto, selecione **Adicionar > Novo Item** e pesquise por **OWIN**. O middleware OWIN invocará o método `Configuration(…)` quando seu aplicativo for iniciado.
@@ -94,7 +103,7 @@ Para validar tokens e solicitações de entrada, você precisa configurar seu ap
 4. Abra o arquivo `App_Start\Startup.Auth.cs` e implemente o método `ConfigureAuth(…)`. Os parâmetros que você fornecer em `WindowsAzureActiveDirectoryBearerAuthenticationOptions` servirão como coordenadas para seu aplicativo para se comunicar com o Azure AD. Para usá-los, é necessário usar classes no namespace de `System.IdentityModel.Tokens`.
 
     ```csharp
-    using System.IdentityModel.Tokens;
+    using Microsoft.IdentityModel.Tokens;
     ```
 
     ```csharp
@@ -148,9 +157,9 @@ Para validar tokens e solicitações de entrada, você precisa configurar seu ap
 Antes de poder ver o serviço de Lista de Tarefas Pendentes funcionando, você precisa configurar o cliente de Lista de Tarefas Pendentes para que ele possa obter tokens do Azure AD e fazer chamadas para o serviço.
 
 1. Retorne ao [Portal do Azure](https://portal.azure.com).
-1. Crie um novo registro de aplicativo em seu locatário do Microsoft Azure AD.  Insira um **nome** que descreva o aplicativo para os usuários, insira `http://TodoListClient/` como valor do **URI de Redirecionamento** e selecione **Cliente público (móvel e da área de trabalho)** , na lista suspensa.
+1. Crie um novo registro de aplicativo em seu locatário do Microsoft Azure AD.  Insira um **nome** que descreva o aplicativo para os usuários, insira `https://TodoListClient/` como valor do **URI de Redirecionamento** e selecione **Cliente público (móvel e da área de trabalho)** , na lista suspensa.
 1. Depois de concluir o registro, o Azure AD atribui uma identificação exclusiva do aplicativo ao seu aplicativo. Você precisará desse valor nas próximas etapas, portanto, copie-o da página do aplicativo.
-1. Selecione **Permissões de API** e **Adicionar uma permissão**.  Localize e selecione o serviço de Lista de Tarefas Pendentes, adicione a permissão **user_impersonation Access TodoListService**, em **Permissões Delegadas**, e selecione **Adicionar permissões**.
+1. Selecione **Permissões de API** e **Adicionar uma permissão**.  Localize e selecione o **Serviço de Lista de Tarefas Pendentes**, adicione a permissão **user_impersonation Access TodoListService**, em **Permissões Delegadas** e selecione **Adicionar permissões**.
 1. No Visual Studio, abra `App.config` no projeto TodoListClient e insira seus valores de configuração na seção `<appSettings>`.
 
     * `ida:Tenant` é o nome do seu locatário do Azure AD, por exemplo, contoso.onmicrosoft.com.

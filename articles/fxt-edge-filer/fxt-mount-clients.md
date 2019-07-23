@@ -6,12 +6,12 @@ ms.service: fxt-edge-filer
 ms.topic: tutorial
 ms.date: 06/20/2019
 ms.author: v-erkell
-ms.openlocfilehash: b48d8d74843947c3e40dc80234560b0147be6eea
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: 5471bf4041275d5988414def99dd2130f51fbb80
+ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67542990"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67828029"
 ---
 # <a name="tutorial-mount-the-cluster"></a>Tutorial: Montar o cluster
 
@@ -43,7 +43,7 @@ Para saber mais sobre o balanceamento de carga de DNS round robin para o cluster
 
 Para instalações menores, é mais simples usar um script para atribuir endereços IP por todo o intervalo em tempo de montagem do cliente. 
 
-Outros métodos de balanceamento de carga podem ser adequados para sistemas grandes ou complexos. Confira um representante da Microsoft ou abra uma solicitação de suporte para receber ajuda. No momento, o Azure Load Balancer *não tem suporte* com o Azure FXT Edge Filer.
+Outros métodos de balanceamento de carga podem ser adequados para sistemas grandes ou complexos. Consulte um representante da Microsoft ou abra uma [solicitação de suporte](fxt-support-ticket.md) para receber ajuda. No momento, o Azure Load Balancer *não tem suporte* com o Azure FXT Edge Filer.
 
 ## <a name="create-the-mount-command"></a>Criar o comando de montagem 
 

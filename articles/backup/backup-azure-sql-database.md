@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: tutorial
 ms.date: 06/18/2019
 ms.author: raynew
-ms.openlocfilehash: 5dbdeeba68ae75069b61bd6dc069279ec3c5e5de
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 2957e784540f7c6450235d26da43121db2458dd1
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67443005"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68249519"
 ---
 # <a name="about-sql-server-backup-in-azure-vms"></a>Sobre o Backup do SQL Server nas VMs do Azure
 
@@ -48,7 +48,7 @@ Antes de começar, verifique o que está descrito abaixo:
 **Implantações com suporte** | Há suporte para VMs do Azure no Marketplace do SQL e VMs que não são do Marketplace (do SQL Server instaladas manualmente).
 **Áreas geográficas com suporte** | Sudeste da Austrália (ASE), Leste da Austrália (AE) <br> Sul do Brasil (BRS)<br> Canadá Central (CNC), Leste do Canadá (CE)<br> Sudeste Asiático (SEA), Ásia Oriental (EA) <br> Leste dos EUA (EUS), Leste dos EUA 2 (EUS2), Centro-Oeste dos EUA (WCUS), Oeste dos EUA (WUS); Oeste dos EUA 2 (WUS 2) Centro-Norte dos EUA (NCUS) EUA Central (CUS) Centro-Sul dos EUA (SCUS) <br> Índia Central (INC), Sul da Índia (INS) <br> Oeste do Japão (JPE), Leste do Japão (JPW) <br> Coreia Central (KRC), Sul da Coreia (KRS) <br> Norte da Europa (NE), Oeste da Europa <br> Sul do Reino Unido (UKS), Oeste do Reino Unido (UKW)
 **Sistemas operacionais com suporte** | Windows Server 2016, Windows Server 2012 R2 e Windows Server 2012<br/><br/> Não há suporte para Linux no momento.
-**Versões do SQL Server com suporte** | SQL Server 2017, SQL Server 2016, SQL Server 2014 e SQL Server 2012.<br/><br/> Enterprise, Standard, Web, Developer e Express.
+**Versões do SQL Server com suporte** | SQL Server 2017, conforme detalhado [aqui](https://support.microsoft.com/lifecycle/search?alpha=SQL%20server%202017), SQL Server 2016 e SPs, conforme detalhado [aqui](https://support.microsoft.com/lifecycle/search?alpha=SQL%20server%202016%20service%20pack), SQL Server 2014 e SQL Server 2012.<br/><br/> Enterprise, Standard, Web, Developer e Express.
 **Versões do .NET com suporte** | .NET Framework 4.5.2 e superior instalado na VM
 
 ### <a name="support-for-sql-server-2008-and-sql-server-2008-r2"></a>Suporte para SQL Server 2008 e SQL Server 2008 R2
@@ -76,7 +76,7 @@ Os usuários não serão cobrados por esse recurso até a hora em que ele estive
 - É possível fazer backup de até **~2000** bancos de dados do SQL Server em um cofre. Caso você tenha um número maior de bancos de dados, poderá criar vários cofres.
 - Você pode configurar o backup de até **50** bancos de dados de uma vez; essa restrição ajuda a otimizar cargas de backup.
 - Damos suporte a bancos de dados de até **2TB** em tamanho; para tamanhos maiores do que isso, poderá haver problemas de desempenho.
-- Para ter uma ideia de sobre quantos bancos de dados podem ser protegidos por servidor, precisamos considerar fatores como a largura de banda, tamanho da VM, frequência de backup, tamanho do banco de dados, etc. Estamos trabalhando em um planejador que ajudará você a calcular esses números sozinho. Publicaremos em breve.
+- Para ter uma ideia de sobre quantos bancos de dados podem ser protegidos por servidor, precisamos considerar fatores como a largura de banda, tamanho da VM, frequência de backup, tamanho do banco de dados, etc. [Baixe](http://download.microsoft.com/download/A/B/5/AB5D86F0-DCB7-4DC3-9872-6155C96DE500/SQL%20Server%20in%20Azure%20VM%20Backup%20Scale%20Calculator.xlsx) o planejador de recursos que fornece o número aproximado de bancos de dados que você pode ter por servidor com base nos recursos da VM e na política de backup.
 - No caso de grupos de disponibilidade, os backups são feitos de nós diferentes com base em alguns fatores. O comportamento de backup para um grupo de disponibilidade está resumido abaixo.
 
 ### <a name="back-up-behavior-in-case-of-always-on-availability-groups"></a>Faça backup do comportamento no caso de grupos de disponibilidade Always On

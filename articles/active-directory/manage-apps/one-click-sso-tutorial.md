@@ -1,6 +1,6 @@
 ---
-title: Configurar um SSO com um clique para seu aplicativo na Galeria de aplicativos Azure AD | Microsoft Docs
-description: Etapas para configurar o SSO com um clique para o aplicativo na Galeria de aplicativos Azure AD.
+title: Configuração de SSO (logon único) com um clique do aplicativo do Azure Marketplace | Microsoft Docs
+description: Etapas para a configuração de SSO com um clique para seu aplicativo do Azure Marketplace.
 services: active-directory
 documentationCenter: na
 author: jeevansd
@@ -16,74 +16,74 @@ ms.topic: tutorial
 ms.date: 06/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 358240823da469551e254356fc0613bea20d78c5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a83d27af4fd783b95c53ef3a9169cb72bfc29d34
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67064810"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67872438"
 ---
-# <a name="one-click-sso-feature-for-azure-ad-gallery-applications"></a>Recurso SSO com um clique para aplicativos da Galeria do Azure AD
+# <a name="one-click-app-configuration-of-single-sign-on"></a>Configuração de aplicativos de logon único com um clique
 
- Neste tutorial, você aprenderá a fazer o SSO com um clique para todos os aplicativos SAML que fornecem interface do usuário para configuração de SSO.
+ Neste tutorial, você aprenderá a executar a configuração de SSO (logon único) com um clique para aplicativos do Azure AD (Azure Active Directory) que dão suporte ao SAML por meio do Azure Marketplace.
 
 ## <a name="introduction-to-one-click-sso"></a>Introdução ao SSO com um clique
 
-O recurso SSO com um clique foi apresentado para configurar o Logon Único para aplicativos da Galeria do Azure AD que oferecem suporte ao protocolo SAML. Na página de configuração do SSO do Azure AD, fornecemos essa opção para permitir que nossos clientes configurem os metadados do Azure AD no lado do aplicativo automaticamente. O objetivo é permitir que os clientes configurem o SSO rapidamente com o mínimo de esforço manual. 
+O recurso SSO com um clique foi projetado para configurar o logon único para aplicativos do Azure Marketplace que dão suporte ao protocolo SAML. Na página de configuração de SSO do Azure AD, essa opção permite que você configure automaticamente os metadados do Azure AD no lado do aplicativo. Dessa forma, você poderá configurar rapidamente o SSO com um mínimo de esforço manual.
 
-## <a name="advantages-of-the-one-click-sso"></a>Vantagens do SSO com um clique
+## <a name="advantages-of-one-click-sso"></a>Vantagens do SSO com um clique
 
-- Configuração rápida de SSO nos aplicativos da galeria quando os clientes precisam fazer configuração manual no lado do aplicativo.
-- Forma mais precisa e eficiente de configuração.
-- Sem necessidade de comunicação com parceiros ou suporte para a configuração, já que o aplicativo fornece a interface do usuário para configuração SAML.
+- Configuração de SSO rápido de aplicativos do Azure Marketplace que exigem a configuração manual no lado do aplicativo.
+- Configuração de SSO mais eficiente e precisa.
+- Nenhuma comunicação de parceiro ou suporte necessário para a instalação. O aplicativo fornece a interface do usuário para a configuração do SAML.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Assinatura ativa do aplicativo com credenciais de administrador que serão configuradas com o SSO com um clique.
-- **Extensão de navegador Entrada Segura dos Meus Aplicativos** da Microsoft instalada no navegador. Se quiser saber mais sobre essa extensão, confira este [link](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access).
+- Uma assinatura ativa do aplicativo a ser configurado com o SSO. Você também precisa ter credenciais de administrador.
+- A **extensão Entrada Segura dos Meus Aplicativos** da Microsoft instalada no navegador. Para obter mais informações, confira [Acessar e usar aplicativos no portal Meus Aplicativos](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access).
 
-## <a name="one-click-sso-feature-step-by-step-details"></a>Detalhes passo a passo do recurso SSO com um clique
+## <a name="one-click-sso-configuration-steps"></a>Etapas da configuração de SSO com um clique
 
-1. Adicione o aplicativo por meio da Galeria de aplicativos Azure AD.
+1. Adicione o aplicativo por meio do Azure Marketplace.
 
-2. Clique em Logon único.
+2. Selecione **Logon único**.
 
-3. Clique em Habilitar Logon único.
+3. Selecione **Habilitar logon único**.
 
-4. Preencha os valores de configuração obrigatórios na seção Configuração Básica do SAML.
-
-    > [!NOTE] 
-    > Se o aplicativo exigir configuração de declarações personalizadas, configure-as antes de realizar o SSO com um clique.
-
-5. Se o recurso SSO com um clique tiver sido implementado em aplicativos da galeria, você verá a tela a seguir. Se a **extensão de navegador Entrada Segura dos Meus Aplicativos** ainda não estiver instalada, você precisará clicar na opção **Instalar a extensão**.
-
-    ![Instalar a extensão de navegador Entrada Segura dos Meus Aplicativos](./media/one-click-sso-tutorial/install-myappssecure-extension.png)
-
-6. Depois de adicionar a extensão ao navegador, clique em **Configurar Nome do Aplicativo** para ser redirecionado ao portal de administrador do aplicativo. Você precisará entrar como administrador para acessar o aplicativo.
-
-    ![Configurar o nome do aplicativo](./media/one-click-sso-tutorial/setup-sso.png)
-
-7. A extensão do navegador agora configurará o aplicativo para você automaticamente. Ela pedirá sua confirmação para prosseguir. Clique em **Sim**.
-
-    ![Salvando os dados preenchidos automaticamente](./media/one-click-sso-tutorial/save-autopopulate.png)
+4. Popule os valores de configuração obrigatórios na seção **Configuração Básica do SAML**.
 
     > [!NOTE]
-    > Se um aplicativo precisar de mais navegação ou etapas, você verá as devidas mensagens pedindo a execução dessas etapas. 
+    > Se o aplicativo tiver declarações personalizadas que você precisa configurar, lide com elas antes de executar o SSO com um clique.
 
-8. Depois que a configuração for concluída, clique em **OK** para salvar as alterações.
+5. Se o recurso de SSO de um clique estiver disponível para seu aplicativo do Azure Marketplace, você verá a tela a seguir. Talvez seja necessário instalar a **extensão do navegador Entrada Segura dos Meus Aplicativos** selecionando **Instalar a extensão**.
 
-    ![Salvar os dados preenchidos automaticamente](./media/one-click-sso-tutorial/save-data.png)
+   ![Instalar a extensão de navegador Entrada Segura dos Meus Aplicativos](./media/one-click-sso-tutorial/install-myappssecure-extension.png)
 
-9. Uma mensagem pop-up de confirmação de êxito é exibida e suas configurações de SSO são definidas com sucesso. Você agora pode testar o aplicativo.
+6. Depois de adicionar a extensão ao navegador, selecione **Configurar \<Nome do Aplicativo\>** . Depois de ser redirecionado para o portal de administração do aplicativo, entre como administrador.
 
-    ![SSO configurado](./media/one-click-sso-tutorial/sso-configured.png)
+   ![Configurar o nome do aplicativo](./media/one-click-sso-tutorial/setup-sso.png)
 
-10. Depois que a configuração é concluída com sucesso, o aplicativo é desconectado e você é redirecionado ao portal do Azure.
+7. A extensão do navegador configura automaticamente o SSO no aplicativo. Confirme selecionando **Sim**.
 
-11. Clique no botão Testar para testar o Logon único.
+   ![Como salvar os dados populados automaticamente](./media/one-click-sso-tutorial/save-autopopulate.png)
+
+   > [!NOTE]
+   > Se a configuração de SSO do aplicativo exigir etapas adicionais, siga os prompts para executar as etapas.
+
+8. Depois que a configuração for concluída, selecione **OK** para salvar as alterações.
+
+   ![Salvar os dados populados automaticamente](./media/one-click-sso-tutorial/save-data.png)
+
+9. Uma janela de confirmação será exibida para informá-lo de que as configurações de SSO foram definidas com êxito.
+
+   ![SSO configurado](./media/one-click-sso-tutorial/sso-configured.png)
+
+10. Após a configuração bem-sucedida, você será desconectado do aplicativo e retornará ao portal do Azure.
+
+11. Selecione **Testar** para testar o logon único.
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Lista de tutoriais sobre como integrar aplicativos SaaS com o Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list)
-* [O que é a extensão de navegador Entrada Segura dos Meus Aplicativos](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access)
+* [Lista de tutoriais sobre como integrar aplicativos SaaS ao Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list)
+* [O que é a extensão do navegador Entrada Segura dos Meus Aplicativos?](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access)
  

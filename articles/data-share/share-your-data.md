@@ -6,12 +6,12 @@ ms.service: data-share
 ms.topic: tutorial
 ms.date: 07/10/2019
 ms.author: joanpo
-ms.openlocfilehash: ebd60607f9a24074e0fa985973dfc35674f0d66c
-ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
+ms.openlocfilehash: 01888f3656765b922c1b646e7ca8e07d81e799f3
+ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67788448"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67838412"
 ---
 # <a name="tutorial-share-your-data-using-azure-data-share-preview"></a>Tutorial: Compartilhar seus dados usando o Azure Data Share (versão prévia)
 
@@ -29,6 +29,8 @@ Neste tutorial, você aprenderá como:
 
 * Assinatura do Azure: Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/) antes de começar.
 * Uma conta de Armazenamento do Azure: Se você não tiver uma, poderá criar uma [conta de Armazenamento do Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account)
+* Permissão para adicionar uma atribuição de função à conta de armazenamento, que está presente na permissão *Microsoft.Authorization/atribuições de função/gravação*. Essa permissão existe na função de proprietário. 
+* O endereço de email de logon do Azure de seus destinatários (usar o alias de email não funcionará).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Entre no Portal do Azure
 
@@ -49,9 +51,9 @@ Crie um recurso do Azure Data Share em um grupo de recursos do Azure.
      **Configuração** | **Valor sugerido** | **Descrição do campo**
     |---|---|---|
     | NOME | *datashareacount* | Especifique um nome para sua conta de compartilhamento de dados. |
-    | Assinatura | Sua assinatura | Selecione a assinatura do Azure que deseja usar para sua conta de compartilhamento de dados.|
-    | Grupo de recursos | *test-resource-group* | Use um grupo de recursos existente ou crie um novo. |
-    | Local padrão | *Leste dos EUA 2* | Selecione uma região para sua conta de compartilhamento de dados.
+    | Subscription | Sua assinatura | Selecione a assinatura do Azure que deseja usar para sua conta de compartilhamento de dados.|
+    | Resource group | *test-resource-group* | Use um grupo de recursos existente ou crie um novo. |
+    | Location | *Leste dos EUA 2* | Selecione uma região para sua conta de compartilhamento de dados.
     | | |
 
 1. Selecione **Criar** para provisionar sua conta de compartilhamento de dados. O provisionamento de uma nova conta de compartilhamento de dados normalmente leva cerca de 2 minutos ou menos. 

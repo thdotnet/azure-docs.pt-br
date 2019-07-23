@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: tutorial
 ms.date: 06/18/2019
 ms.author: dacurwin
-ms.openlocfilehash: 5fbbd2cf999ab8ba3183879bd9b417353aa5edd0
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: b5e2ccef3b2a91f903706745d74a4bf16e1003d4
+ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67203490"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68305216"
 ---
 # <a name="back-up-sql-server-databases-in-azure-vms"></a>Fazer backup de bancos de dados do SQL Server nas VMs do Azure
 
@@ -143,19 +143,19 @@ Configure o backup da seguinte maneira:
 
     ![Habilite a proteção automática no grupo de disponibilidade Always On](./media/backup-azure-sql-database/enable-auto-protection.png)
 
-5. Em  **Escolher política de backup**, selecione uma política e, em seguida, clique em  **OK**.
+5. Em **Escolher política de backup**, selecione uma política e, em seguida, clique em **OK**.
 
-   - Selecionar a política padrão: HourlyLogBackup.
+   - Selecionar a política padrão: HourlyLogBackup.
    - Escolher uma política de backup existente criada anteriormente para SQL.
    - Definir uma nova política baseada no seu período de retenção e o RPO.
 
      ![Selecionar a Política de backup](./media/backup-azure-sql-database/select-backup-policy.png)
 
-6. No menu  **Backup**, selecione  **Habilitar backup**.
+6. No menu **Backup**, selecione **Habilitar backup**.
 
     ![Habilitar a política de backup escolhida](./media/backup-azure-sql-database/enable-backup-button.png)
 
-7. Acompanhe o progresso da configuração na área  **Notificações**  do portal.
+7. Acompanhe o progresso da configuração na área **Notificações** do portal.
 
     ![Área de notificação](./media/backup-azure-sql-database/notifications-area.png)
 
@@ -245,5 +245,5 @@ Continue no próximo tutorial para restaurar uma máquina virtual do Azure de um
 
 > [!div class="nextstepaction"]
 > [Restaurar bancos de dados do SQL Server em VMs do Azure](./restore-sql-database-azure-vm.md)
- 
+ 
 

@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: overview
 ms.date: 05/07/2019
 ms.author: edjez
-ms.openlocfilehash: e5781af44732782936e1e1a87bf70bd4a9d4804d
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 286a19207236392367b924bea7e26e90fd0db8d5
+ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722271"
+ms.lasthandoff: 07/16/2019
+ms.locfileid: "68253456"
 ---
 # <a name="what-is-personalizer"></a>O que é o Personalizador?
 
@@ -29,14 +29,14 @@ O Personalizador do Azure é um serviço de API baseado em nuvem que permite que
 
 ## <a name="how-does-personalizer-work"></a>Como funciona o Personalizador?
 
-O Personalizador usa modelos de machine learning para descobrir qual ação deve ter a classificação mais alta em um contexto. Seu aplicativo cliente fornece uma lista de possíveis ações, com informações sobre elas, e informações sobre o contexto, que podem incluir informações sobre o usuário, o dispositivo etc. O Personalizador determina a ação a ser tomada. Depois que o aplicativo cliente usa a ação escolhida, ele fornece comentários ao Personalizador na forma de uma pontuação de recompensa. Após a conclusão do loop de comentários, o Personalizador atualiza automaticamente seu próprio modelo usado para classificações futuras.
+O Personalizador usa modelos de machine learning para descobrir qual ação deve ter a classificação mais alta em um contexto. Seu aplicativo cliente fornece uma lista de possíveis ações, com informações sobre elas, e informações sobre o contexto, que podem incluir informações sobre o usuário, o dispositivo etc. O Personalizador determina a ação a ser tomada. Depois que o aplicativo cliente usa a ação escolhida, ele fornece comentários ao Personalizador na forma de uma pontuação de recompensa. Após o recebimento dos comentários, o Personalizador atualiza automaticamente o próprio modelo usado para classificações futuras.
 
 ## <a name="how-do-i-use-the-personalizer"></a>Como fazer para usar o Personalizador?
 
 ![Como usar o Personalizador para escolher qual vídeo será mostrado a um usuário](media/what-is-personalizer/personalizer-example-highlevel.png)
 
 1. Escolha uma experiência em seu aplicativo a ser personalizada.
-1. Criar e configurar o serviço de personalização no portal do Azure
+1. Crie e configure uma instância do Serviço de Personalização no portal do Azure. Cada instância é um Loop do Personalizador.
 1. Use o SDK para chamar o Personalizador com informações (_recursos_) sobre os usuários e o conteúdo (_ações_). Você não precisa fornecer dados limpos e rotulados antes de usar o Personalizador. 
 1. No aplicativo cliente, mostre ao usuário a ação selecionada pelo Personalizador.
 1. Use o SDK para fornecer comentários ao Personalizador, indicando se o usuário selecionou a ação do Personalizador. Essa é uma _pontuação de recompensa_, normalmente entre -1 e 1.
