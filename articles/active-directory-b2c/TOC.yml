@@ -46,7 +46,7 @@
   href: code-samples.md
 - name: Conceitos
   items:
-    - name: Tipos de aplicativo
+    - name: Tipos de aplicativos
       href: active-directory-b2c-apps.md
     - name: Protocolos de autenticação
       href: active-directory-b2c-reference-protocols.md
@@ -192,7 +192,7 @@
                           href: social-transformations.md
                         - name: StringCollection
                           href: stringcollection-transformations.md
-                        - name: string
+                        - name: Cadeia de caracteres
                           href: string-transformations.md
                     - name: Predicados
                       href: predicates.md
