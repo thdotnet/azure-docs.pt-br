@@ -1,37 +1,37 @@
 ---
-title: 'Unir dados: Referência de módulo'
+title: 'Dados de junção: Referência de módulo'
 titleSuffix: Azure Machine Learning service
-description: Saiba como usar a módulo de unir os dados no serviço de Azure Machine Learning de junção para mesclar conjuntos de dados.
+description: Saiba como usar o módulo ingressar dados de ingresso no serviço de Azure Machine Learning para mesclar DataSets.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
 author: xiaoharper
-ms.author: peterclu
+ms.author: peterlu
 ms.date: 06/01/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 7e814f5ea4bd47ceb0697e860c946039ce39ae1f
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: 1022bdc26a340b6b54ad840d1fe47674509fa865
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67518008"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "67871666"
 ---
 # <a name="join-data"></a>Unir dados
 
-Este artigo descreve como usar o **unir os dados** módulo em que a interface visual do serviço de Azure Machine Learning para mesclar dois conjuntos de dados usando uma operação de junção de estilo de banco de dados.  
+Este artigo descreve como usar o módulo de **dados de junção** na interface visual do serviço de Azure Machine Learning para mesclar dois DataSets usando uma operação de junção de estilo de banco de dados.  
 
-## <a name="how-to-configure-join-data"></a>Como configurar a junção de dados
+## <a name="how-to-configure-join-data"></a>Como configurar dados de junção
 
-Para executar uma junção em dois conjuntos de dados, eles devem estar relacionados por uma coluna de chave. Também há suporte para chaves compostas usando várias colunas. 
+Para executar uma junção em dois conjuntos de valores, eles devem estar relacionados por uma coluna de chave. Também há suporte para chaves compostas usando várias colunas. 
 
-1. Adicionar os conjuntos de dados que você deseja combinar e, em seguida, arraste a **ingressar dados** módulo em seu teste. 
+1. Adicione os conjuntos de dados que você deseja combinar e, em seguida, arraste o módulo de **dado de junção** para seu experimento. 
 
-    Você pode encontrar o módulo na **Data Transformation** categoria, em **manipulação**.
+    Você pode encontrar o módulo na categoria **transformação de dados** , em **manipulação**.
 
-1. Conectar-se os conjuntos de dados para o **ingressar dados** módulo. 
+1. Conecte os conjuntos de dados ao módulo **unir data** . 
  
-1. Selecione **iniciar seletor de coluna** para escolher colunas de chave. Lembre-se de escolher colunas para entradas esquerda e direita.
+1. Selecione **Iniciar seletor de coluna** para escolher coluna (s) de chave. Lembre-se de escolher colunas para as entradas à esquerda e à direita.
 
     Para uma única chave:
 
@@ -39,34 +39,34 @@ Para executar uma junção em dois conjuntos de dados, eles devem estar relacion
     
     Para uma chave composta:
 
-    Selecione todas as colunas de chave na entrada à esquerda e à direita na mesma ordem. O **unir os dados** módulo unirá as tabelas quando correspondem a todas as colunas de chave. Marque a opção **Permitir duplicatas e preservar a ordem das colunas na seleção** se a ordem das colunas não é o mesmo que a tabela original. 
+    Selecione todas as colunas de chave da entrada esquerda e a entrada direita na mesma ordem. O módulo de **dados de junção** unirá as tabelas quando todas as colunas de chave forem correspondentes. Marque a opção **permitir duplicatas e preservar a ordem das colunas na seleção** se a ordem da coluna não for igual à tabela original. 
 
     ![column-selector](media/module/join-data-column-selector.png)
 
 
-1. Selecione o **diferenciar maiusculas de minúsculas** opção se você quiser preservar as maiusculas e minúsculas em uma associação de coluna de texto. 
+1. Selecione a opção **corresponder caso** para preservar a diferenciação de maiúsculas e minúsculas em uma junção de coluna de texto. 
    
-1. Use o **tipo de junção** lista suspensa para especificar como os conjuntos de dados devem ser combinados.  
+1. Use a lista suspensa **tipo de junção** para especificar como os conjuntos de valores devem ser combinados.  
   
-    * **Junção interna**: Uma *junção interna* é a operação de junção mais comuns. Ele retorna as linhas combinadas somente quando os valores das colunas de chave corresponderem.  
+    * **Junção interna**: Uma *junção interna* é a operação de junção mais comum. Ele retorna as linhas combinadas somente quando os valores das colunas de chave correspondem.  
   
-    * **Junção externa esquerda**: Um *junção externa esquerda* retorna linhas Unidas para todas as linhas da tabela esquerda. Quando uma linha na tabela esquerda não possui linhas correspondentes na tabela direita, a linha retornada contém valores ausentes para todas as colunas que vêm da tabela direita. Você também pode especificar um valor de substituição para valores ausentes.  
+    * **Junção externa esquerda**: Uma *junção externa esquerda* retorna linhas Unidas para todas as linhas da tabela esquerda. Quando uma linha na tabela esquerda não tem linhas correspondentes na tabela direita, a linha retornada contém valores ausentes para todas as colunas que vêm da tabela direita. Você também pode especificar um valor de substituição para valores ausentes.  
   
-    * **Full Outer Join**: Um *junção externa completa* retorna todas as linhas da tabela esquerda (**table1**) e da tabela direita (**table2**).  
+    * **Junção externa completa**: Uma *junção externa completa* retorna todas as linhas da tabela esquerda (**Table1**) e da tabela direita (**Table2**).  
   
          Para cada uma das linhas em uma das tabelas que não têm linhas correspondentes no outro, o resultado inclui uma linha que contém valores ausentes.  
   
-    * **Deixado Semijunção**: Um *semi-junção esquerda* retorna apenas os valores da tabela esquerda quando os valores das colunas de chave corresponderem.  
+    * **Semijunção à esquerda**: Uma *semijunção à esquerda* retorna somente os valores da tabela esquerda quando os valores das colunas de chave correspondem.  
 
-1. Para a opção **manter as colunas de chave à direita na tabela unida**:
+1. Para a opção, **Mantenha as colunas de chave direita na tabela unida**:
 
     * Selecione esta opção para exibir as chaves de ambas as tabelas de entrada.
-    * Anule a seleção para retornar somente as colunas de chave da entrada à esquerda.
+    * Anular seleção para retornar apenas as colunas de chave da entrada à esquerda.
 
-1. Execute o experimento, ou selecione o módulo de unir os dados e selecionou **executar selecionado** ao executar a junção.
+1. Execute o experimento ou selecione o módulo ingressar dados e selecionou a **execução selecionada** para executar a junção.
 
-1. Para exibir os resultados, clique com botão direito do **dados ingressar** > **conjunto de dados de resultados** > **visualizar**.
+1. Para exibir os resultados, clique com o botão  > direito do mouse no conjunto > de dados de**resultados da**junção **.**
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Consulte a [conjunto de módulos disponíveis](module-reference.md) ao serviço de Azure Machine Learning. 
+Consulte o [conjunto de módulos disponíveis](module-reference.md) para Azure Machine Learning serviço. 

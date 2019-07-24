@@ -1,6 +1,6 @@
 ---
-title: Configurar o logon sem senha do Active Directory do Azure (versão prévia)
-description: Habilitar o logon sem senha no AD do Azure usando chaves de segurança de FIDO2 ou o aplicativo Microsoft Authenticator (visualização)
+title: Configurar Azure Active Directory entrada sem senha (versão prévia)
+description: Habilitar a entrada sem senha no Azure AD usando as chaves de segurança do FIDO2 ou o aplicativo Microsoft Authenticator (versão prévia)
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,187 +11,187 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ba2545467ebfbd032408aeee25b82b92a628f2a
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 79f5eba18e34f65f7bc8a625babca92b86e06b4c
+ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67712066"
+ms.lasthandoff: 07/13/2019
+ms.locfileid: "67867288"
 ---
-# <a name="enable-passwordless-sign-in-for-azure-ad-preview"></a>Habilitar o logon sem senha no AD do Azure (visualização)
+# <a name="enable-passwordless-sign-in-for-azure-ad-preview"></a>Habilitar entrada sem senha para o Azure AD (versão prévia)
 
 ## <a name="requirements"></a>Requisitos
 
 * Autenticação Multifator do Azure
-* Combinados a visualização de registro
-* Visualização de chave de segurança FIDO2 requer chaves de segurança FIDO2 compatíveis
-* WebAuthN requer o Microsoft Edge no Windows 10 versão 1809 ou superior
-* FIDO2 requer o logon de Windows com base no Azure AD ingressados no Windows 10 versão 1809 ou superior
+* Visualização de registro combinado
+* A visualização da chave de segurança do FIDO2 requer chaves de segurança FIDO2 compatíveis
+* Webauthn requer o Microsoft Edge no Windows 10 versão 1809 ou superior
+* O logon do Windows baseado em FIDO2 requer o Azure AD ingressado no Windows 10 versão 1809 ou superior
 
-## <a name="prepare-devices-for-preview"></a>Preparar os dispositivos para visualização
+## <a name="prepare-devices-for-preview"></a>Preparar dispositivos para visualização
 
-Dispositivos que será um piloto com devem estar executando o Windows 10 versão 1809 ou superior. É a melhor experiência no Windows 10 versão 1903 ou superior.
+Os dispositivos com os quais você executará o piloto devem estar executando o Windows 10 versão 1809 ou superior. A melhor experiência é no Windows 10 versão 1903 ou superior.
 
-## <a name="enable-security-keys-for-windows-sign-in"></a>Habilitar as chaves de segurança para o logon no Windows
+## <a name="enable-security-keys-for-windows-sign-in"></a>Habilitar chaves de segurança para entrada no Windows
 
-As organizações podem optar por usar um ou mais dos métodos a seguir para habilitar o uso de chaves de segurança para o Windows entrar.
+As organizações podem optar por usar um ou mais dos métodos a seguir para habilitar o uso de chaves de segurança para entrada no Windows.
 
-### <a name="enable-credential-provider-via-intune"></a>Habilitar o provedor de credenciais por meio do Intune
+### <a name="enable-credential-provider-via-intune"></a>Habilitar provedor de credenciais via Intune
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-1. Navegue até **Microsoft Intune** > **registro de dispositivo** > **registro do Windows** > **Windows Hello para empresas** > **propriedades**.
-1. Sob **as configurações** defina **usar chaves de segurança para entrar no** para **habilitado**.
+1. Navegue até **Microsoft Intune** > registro de**dispositivo** > inscrição do**Windows** > **Windows Hello para empresas** > **Propriedades**.
+1. Em **configurações** , defina **usar chaves de segurança para entrar** como **habilitado**.
 
-Configuração de chaves de segurança para entrar, não é dependente de configurar o Windows Hello para empresas.
+A configuração de chaves de segurança para entrar, não depende da configuração do Windows Hello para empresas.
 
-#### <a name="enable-targeted-intune-deployment"></a>Habilitar implantação direcionada do Intune
+#### <a name="enable-targeted-intune-deployment"></a>Habilitar implantação de destino do Intune
 
 Para direcionar grupos de dispositivos específicos para habilitar o provedor de credenciais, use as seguintes configurações personalizadas por meio do Intune. 
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-1. Navegue até **Microsoft Intune** > **configuração do dispositivo** > **perfis** > **criar perfil**.
+1. Navegue até **Microsoft Intune** >  > **perfis**de > configuração de dispositivo**Criar perfil**.
 1. Configurar o novo perfil com as seguintes configurações
-   1. Nome: Chaves de segurança para entrar no Windows
-   1. Descrição: Permite que as chaves de segurança FIDO a serem usados durante o logon do Windows no
+   1. Nome: Chaves de segurança para entrada no Windows
+   1. Descrição: Permite que as chaves de segurança FIDO sejam usadas durante a entrada do Windows
    1. Plataforma: Windows 10 e posterior
    1. Tipo de plataforma: Personalizado
-   1. Configurações de OMA-URI personalizadas:
-      1. Nome: Ativar as chaves de segurança FIDO para entrar no Windows
+   1. Configurações personalizadas de OMA-URI:
+      1. Nome: Ativar as chaves de segurança do FIDO para entrar no Windows
       1. OMA-URI: ./Device/Vendor/MSFT/PassportForWork/SecurityKey/UseSecurityKeyForSignin
       1. Tipo de dados: Inteiro
       1. Valor: 1 
-1. Esta política pode ser atribuída a usuários específicos, dispositivos ou grupos. Mais informações podem ser encontradas no artigo [atribuir perfis de usuário e dispositivo no Microsoft Intune](https://docs.microsoft.com/intune/device-profile-assign).
+1. Essa política pode ser atribuída a usuários, dispositivos ou grupos específicos. Mais informações podem ser encontradas no artigo [atribuir perfis de usuário e de dispositivo no Microsoft Intune](https://docs.microsoft.com/intune/device-profile-assign).
 
-![Criação de política de configuração de dispositivo personalizado do Intune](./media/howto-authentication-passwordless-enable/intune-custom-profile.png)
+![Criação de política de configuração de dispositivo personalizada do Intune](./media/howto-authentication-passwordless-enable/intune-custom-profile.png)
 
 ### <a name="enable-credential-provider-via-provisioning-package"></a>Habilitar o provedor de credenciais por meio do pacote de provisionamento
 
-Para dispositivos não gerenciados pelo Intune, um pacote de provisionamento pode ser instalado para habilitar a funcionalidade. O aplicativo Windows Configuration Designer pode ser instalado do [Microsoft Store](https://www.microsoft.com/store/apps/9nblggh4tx22).
+Para dispositivos não gerenciados pelo Intune, um pacote de provisionamento pode ser instalado para habilitar a funcionalidade. O aplicativo do Windows Configuration designer pode ser instalado por meio do [Microsoft Store](https://www.microsoft.com/store/apps/9nblggh4tx22).
 
-1. Inicie o Designer de configuração do Windows.
+1. Inicie o designer de configuração do Windows.
 1. Selecione **arquivo** > **novo projeto**.
-1. Dê um nome ao seu projeto e observe o caminho onde o projeto é criado.
+1. Dê um nome ao projeto e anote o caminho em que o projeto é criado.
 1. Selecione **Avançar**.
-1. Deixe **pacote de provisionamento** selecionado como o **fluxo de trabalho de projeto selecionado** e selecione **próxima**.
-1. Selecione **edições de área de trabalho do Windows todos os** sob **escolher quais configurações para exibir e configurar** e selecione **próxima**.
+1. Deixe o **pacote de provisionamento** selecionado como o **fluxo de trabalho do projeto selecionado** e selecione **Avançar**.
+1. Selecione **todas as edições da área de trabalho do Windows** em **escolher quais configurações exibir e configurar** e selecione **Avançar**.
 1. Selecione **Concluir**.
-1. No seu projeto recém-criado, navegue até **configurações de tempo de execução** > **WindowsHelloForBusiness** > **SecurityKeys**  >  **UseSecurityKeyForSignIn**.
-1. Definir **UseSecurityKeyForSignIn** à **habilitado**.
-1. Selecione **exportar** > **pacote de provisionamento**
-1. Mantenha os padrões na **construir** janela sob **descrevem o pacote de provisionamento** e selecione **próxima**.
-1. Mantenha os padrões no **construir** janela sob **selecionar detalhes de segurança para o pacote de provisionamento** e selecione **próxima**.
-1. Anote ou alterar o caminho na **construir** windows sob **selecione onde salvar o pacote de provisionamento** e selecione **próxima**.
-1. Selecione **compilar** sobre o **criar o pacote de provisionamento** página.
-1. Salve os dois arquivos criados (ppkg e cat) para um local onde você pode aplicá-las às máquinas mais tarde.
-1. Siga as orientações neste artigo [se aplicam a um pacote de provisionamento](https://docs.microsoft.com/windows/configuration/provisioning-packages/provisioning-apply-package)para aplicar o pacote de provisionamento que você criou.
+1. Em seu projeto recém-criado, navegue até **configurações** > de tempo de execução**WindowsHelloForBusiness** > **SecurityKeys** > **UseSecurityKeyForSignIn**.
+1. Defina **UseSecurityKeyForSignIn** como **habilitado**.
+1. Selecione **Exportar** > **pacote de provisionamento**
+1. Deixe os padrões na janela de **compilação** em **descrever o pacote de provisionamento** e selecione **Avançar**.
+1. Deixe os padrões na janela de **compilação** em **selecionar detalhes de segurança para o pacote de provisionamento** e selecione **Avançar**.
+1. Anote ou altere o caminho nas janelas de **Build** em **selecionar onde salvar o pacote de provisionamento** e selecione **Avançar**.
+1. Selecione **Compilar** na página **criar o pacote de provisionamento** .
+1. Salve os dois arquivos criados (ppkg e Cat) em um local em que você possa aplicá-los aos computadores mais tarde.
+1. Siga as orientações no artigo [aplicar um pacote de provisionamento](https://docs.microsoft.com/windows/configuration/provisioning-packages/provisioning-apply-package)para aplicar o pacote de provisionamento que você criou.
 
-## <a name="obtain-fido2-security-keys"></a>Obter chaves de segurança FIDO2
+## <a name="obtain-fido2-security-keys"></a>Obter chaves de segurança do FIDO2
 
-Consulte a seção chaves de segurança FIDO2, no artigo [What ' s sem senha?](concept-authentication-passwordless.md) para obter mais informações sobre chaves com suporte e fabricantes.
+Consulte a seção FIDO2 Security Keys, no artigo [o que é sem senha?](concept-authentication-passwordless.md) para obter mais informações sobre as chaves e os fabricantes com suporte.
 
 > [!NOTE]
-> Se você comprar e planeja usar NFC com base em chaves de segurança você precisará de um leitor de NFC com suporte.
+> Se você comprar e planejar usar as chaves de segurança com base em NFC, precisará de um leitor NFC com suporte.
 
-## <a name="enable-passwordless-authentication-methods"></a>Habilitar métodos de autenticação sem senha
+## <a name="enable-passwordless-authentication-methods"></a>Habilitar métodos de autenticação com senha
 
 ### <a name="enable-the-combined-registration-experience"></a>Habilitar a experiência de registro combinado
 
-Recursos de registro para chaves de segurança FIDO2 contam com a visualização de registro combinado. Siga as etapas abaixo para habilitar a visualização de registro combinado.
+Os recursos de registro para as chaves de segurança do FIDO2 dependem da visualização do registro combinado. Siga as etapas abaixo para habilitar a visualização de registro combinado.
 
 1. Entre no [Portal do Azure](https://portal.azure.com)
-1. Navegue até **do Azure Active Directory** > **as configurações do usuário**
-   1. Clique em **gerenciar as configurações de recursos de visualização do painel de acesso**
-   1. Sob **os usuários podem usar recursos de visualização para registrar e gerenciar informações de segurança - aprimorada**.
-      1. Escolher **selecionados** e escolha um grupo de usuários que participará na visualização.
-      1. Ou escolha **todos os** habilitar para todos em seu diretório.
+1. Navegue até **Azure Active Directory** > **configurações de usuário**
+   1. Clique em **gerenciar configurações da visualização do recurso do usuário**
+   1. Em **usuários podem usar os recursos de visualização para registrar e gerenciar informações de segurança-avançado**.
+      1. Escolha **selecionado** e escolha um grupo de usuários que participarão da visualização.
+      1. Ou escolha **tudo** para habilitar o para todos em seu diretório.
 1. Clique em **Salvar**
 
-### <a name="enable-new-passwordless-authentication-methods"></a>Habilitar novos métodos de autenticação sem senha
+### <a name="enable-new-passwordless-authentication-methods"></a>Habilitar novos métodos de autenticação com senha
 
 1. Entre no [Portal do Azure](https://portal.azure.com)
-1. Navegue até **Azure Active Directory** > **métodos de autenticação** > **política de método de autenticação (versão prévia)**
-1. Em cada **método**, escolha as opções a seguir
-   1. **Habilitar** – Sim ou não
-   1. **Destino** -todos os usuários ou selecione os usuários
+1. Navegue até **Azure Active Directory** > **política de método de autenticação de** **métodos** > de autenticação (versão prévia)
+1. Em cada **método**, escolha as seguintes opções
+   1. **Habilitar** -Sim ou não
+   1. **Destino** -todos os usuários ou Selecionar usuários
 1. **Salvar** cada método
 
 > [!WARNING]
-> O FIDO2 "Políticas de restrição de chave" não ainda funciona. Essa funcionalidade estará disponível antes da disponibilidade geral, não altere essas políticas de padrão.
+> As "políticas de restrição de chave" do FIDO2 ainda não funcionam. Essa funcionalidade estará disponível antes da disponibilidade geral, não altere essas políticas por padrão.
 
 > [!NOTE]
-> Você não precisa aceitar os métodos sem senha (se você quiser visualizar apenas um método sem senha, você pode permitir apenas esse método). Recomendamos que você experimente os dois métodos, pois ambos têm seus próprios benefícios.
+> Você não precisa aceitar os dois métodos sem senha (se quiser Visualizar apenas um método sem senha, você pode habilitar apenas esse método). Incentivamos você a experimentar os dois métodos, pois ambos têm seus próprios benefícios.
 
-## <a name="user-registration-and-management-of-fido2-security-keys"></a>Registro do usuário e o gerenciamento de chaves de segurança FIDO2
+## <a name="user-registration-and-management-of-fido2-security-keys"></a>Registro de usuário e gerenciamento de chaves de segurança FIDO2
 
 1. Navegue até [https://myprofile.microsoft.com](https://myprofile.microsoft.com)
-1. Assinar se ainda não já
+1. Entrar se ainda não estiver
 1. Clique em **informações de segurança**
-   1. Se o usuário já tem pelo menos um método de autenticação multifator do Azure registrado, eles podem registrar imediatamente uma chave de segurança FIDO2.
-   1. Se eles não tiverem pelo menos um método de autenticação multifator do Azure registrado, eles devem adicionar um.
-1. Adicionar uma chave de segurança FIDO2 clicando **o método Add** e escolhendo **chave de segurança**
+   1. Se o usuário já tiver pelo menos um método de autenticação multifator do Azure registrado, ele poderá registrar imediatamente uma chave de segurança FIDO2.
+   1. Se eles não tiverem pelo menos um método de autenticação multifator do Azure registrado, eles deverão adicionar um.
+1. Adicione uma chave de segurança FIDO2 clicando em **Adicionar método** e escolhendo **chave de segurança**
 1. Escolher **dispositivo USB** ou **dispositivo NFC**
-1. Ter sua chave prontos e escolha **Avançar**
-1. Uma caixa aparecem e pedir que você crie/inserir um PIN para sua chave de segurança e executar o gesto necessário para sua chave biométrica ou touch.
-1. Você será retornado para a experiência de registro combinado e solicitado a fornecer um nome significativo para seu token para que você pode identificar qual delas se você tiver várias. Clique em **Avançar**.
-1. Clique em **feito** para concluir o processo
+1. Prepare sua chave e escolha **Avançar**
+1. Uma caixa será exibida e solicitará que você crie/Insira um PIN para sua chave de segurança e, em seguida, execute o gesto necessário para sua chave biométrica ou toque.
+1. Você será retornado para a experiência de registro combinada e deverá fornecer um nome significativo para o token para que você possa identificar qual deles se tiver vários. Clique em **Avançar**.
+1. Clique em **concluído** para concluir o processo
 
-### <a name="manage-security-key-biometric-pin-or-reset-security-key"></a>Gerenciar chave de segurança biométrica, PIN, ou redefinir a chave de segurança
+### <a name="manage-security-key-biometric-pin-or-reset-security-key"></a>Gerenciar chave de segurança biométrica, PIN ou redefinição de chaves de segurança
 
 * Windows 10 versão 1809
-   * Software complementar do fornecedor de chave de segurança é necessário
+   * O software complementar do fornecedor da chave de segurança é necessário
 * Windows 10 versão 1903 ou superior
-   * Os usuários podem abrir **configurações do Windows** em seu dispositivo > **contas** > **chave de segurança**
-   * Os usuários podem alterar o PIN, atualizar biometria ou redefinir sua chave de segurança
+   * Os usuários podem abrir **as configurações do Windows** em seu dispositivo >**chave de segurança** de **contas** > 
+   * Os usuários podem alterar seu PIN, atualizar a biometria ou redefinir sua chave de segurança
 
-## <a name="user-registration-and-management-of-microsoft-authenticator-app"></a>Registro do usuário e o gerenciamento de aplicativo Microsoft Authenticator
+## <a name="user-registration-and-management-of-microsoft-authenticator-app"></a>Registro de usuário e gerenciamento do aplicativo Microsoft Authenticator
 
-Para configurar o aplicativo Microsoft Authenticator para entrada por telefone, siga as diretrizes neste artigo [entrar em suas contas usando o aplicativo Microsoft Authenticator](../user-help/user-help-auth-app-sign-in.md).
+Para configurar o aplicativo Microsoft Authenticator para entrada no telefone, siga as orientações no artigo [entrar em suas contas usando o aplicativo Microsoft Authenticator](../user-help/user-help-auth-app-sign-in.md).
 
 ## <a name="sign-in-with-passwordless-credentials"></a>Entrar com credenciais sem senha
 
 ### <a name="sign-in-at-the-lock-screen"></a>Entrar na tela de bloqueio
 
-No exemplo abaixo, um usuário Bala Sandhu já tenha provisionado sua chave de segurança FIDO2. Bala pode escolher o provedor de credenciais de chave de segurança da tela de bloqueio do Windows 10 e insira a chave de segurança para entrar no Windows.
+No exemplo abaixo, um usuário bala Sandhu já provisionou sua chave de segurança FIDO2. Bala pode escolher o provedor de credenciais de chave de segurança na tela de bloqueio do Windows 10 e inserir a chave de segurança para entrar no Windows.
 
-![Chave de segurança entrar na tela de bloqueio do Windows 10](./media/howto-authentication-passwordless-enable/fido2-windows-10-1903-sign-in-lock-screen.png)
+![Entrada de chave de segurança na tela de bloqueio do Windows 10](./media/howto-authentication-passwordless-enable/fido2-windows-10-1903-sign-in-lock-screen.png)
 
-### <a name="sign-in-on-the-web"></a>Entrar na web
+### <a name="sign-in-on-the-web"></a>Entrar na Web
 
-No exemplo abaixo, um usuário já tenha provisionado sua chave de segurança FIDO2. O usuário pode optar por entrar na web com sua chave de segurança FIDO2 dentro do navegador Microsoft Edge no Windows 10 versão 1809 ou superior.
+No exemplo abaixo, um usuário já provisionou sua chave de segurança FIDO2. O usuário pode optar por entrar na Web com sua chave de segurança FIDO2 dentro do navegador Microsoft Edge no Windows 10 versão 1809 ou superior.
 
 ![Entrada de chave de segurança no Microsoft Edge](./media/howto-authentication-passwordless-enable/fido2-windows-10-1903-edge-sign-in.png)
 
-Para obter informações sobre a assinatura usando o aplicativo Microsoft Authenticator, consulte o artigo [entrar em suas contas usando o aplicativo Microsoft Authenticator](../user-help/user-help-auth-app-sign-in.md).
+Para obter informações sobre como entrar usando o aplicativo Microsoft Authenticator, consulte o artigo, [entrar em suas contas usando o aplicativo Microsoft Authenticator](../user-help/user-help-auth-app-sign-in.md).
 
 ## <a name="known-issues"></a>Problemas conhecidos
 
-### <a name="fido2-security-keys"></a>Chaves de segurança FIDO2
+### <a name="fido2-security-keys"></a>Chaves de segurança do FIDO2
 
-#### <a name="security-key-provisioning"></a>O provisionamento de chave de segurança
+#### <a name="security-key-provisioning"></a>Provisionamento de chave de segurança
 
-Administrador de provisionamento e desprovisionamento de chaves de segurança não está disponível na visualização pública.
+O provisionamento e desprovisionamento de chaves de segurança do administrador não estão disponíveis na visualização pública.
 
 #### <a name="hybrid-azure-ad-join"></a>Ingresso no Azure AD Híbrido
 
-Usuários WIA SSO da terceira parte confiável que usam credenciais gerenciadas como chaves de segurança FIDO2 ou entrar sem senha com o aplicativo Microsoft Authenticator precisará híbrida ingressar no Windows 10 para obter os benefícios do SSO. No entanto, chaves de segurança funcionam apenas para máquinas do Azure Active Directory ingressado no momento. É recomendável que experimentar apenas FIDO2 chaves de segurança para a tela de bloqueio do Windows nas máquinas puras Unido do Azure Active Directory. Essa limitação não se aplica para a web.
+Os usuários que dependem do SSO do WIA que usam credenciais gerenciadas como chaves de segurança FIDO2 ou logon sem senha com Microsoft Authenticator aplicativo precisam ingressar no Windows 10 para obter os benefícios do SSO. No entanto, as chaves de segurança só funcionam para computadores Azure Active Directory associados por enquanto. Recomendamos que você experimente apenas as chaves de segurança do FIDO2 para a tela de bloqueio do Windows em computadores adicionados com Azure Active Directory pura. Essa limitação não se aplica à Web.
 
-#### <a name="upn-changes"></a>Alterações UPN
+#### <a name="upn-changes"></a>Alterações de UPN
 
-Estamos trabalhando no suporte a um recurso que permite a alteração UPN no hybrid AADJ e dispositivos AADJ. Se o UPN do usuário for alterado, você não pode mais modificar FIDO2 chaves de segurança para levar isso em conta. Portanto, a única abordagem é redefinir o dispositivo e o usuário deve registrar novamente.
+Estamos trabalhando para dar suporte a um recurso que permita a alteração de UPN em dispositivos AADJ e AADJ híbridos. Se o UPN de um usuário for alterado, você não poderá mais modificar as chaves de segurança FIDO2 para considerar isso. Portanto, a única abordagem é redefinir o dispositivo e o usuário precisa se registrar novamente.
 
 ### <a name="authenticator-app"></a>Aplicativo autenticador
 
 #### <a name="ad-fs-integration"></a>Integração do AD FS
 
-Quando um usuário tiver habilitado a credencial sem senha do Microsoft Authenticator, a autenticação para esse usuário sempre enviará como padrão uma notificação de aprovação. Essa lógica impede que os usuários em um locatário híbrido que está sendo direcionado para o ADFS para verificação de entrada sem que o usuário tirar uma etapa adicional para clique em "Usar sua senha em seu lugar." Esse processo também ignorará quaisquer políticas de Acesso Condicional locais e fluxos de autenticação de Passagem. A exceção a esse processo é se um login_hint for especificado, um usuário será AutoEncaminhada ao AD FS e ignorar a opção de usar a credencial sem senha.
+Quando um usuário tiver habilitado a credencial sem senha do Microsoft Authenticator, a autenticação para esse usuário sempre enviará como padrão uma notificação de aprovação. Essa lógica impede que os usuários em um locatário híbrido sejam direcionados ao ADFS para verificação de entrada sem que o usuário execute uma etapa adicional para clicar em "usar sua senha". Esse processo também ignorará quaisquer políticas de Acesso Condicional locais e fluxos de autenticação de Passagem. A exceção a esse processo é se um login_hint for especificado, um usuário será encaminhado automaticamente para AD FS e ignorará a opção de usar a credencial sem senha.
 
 #### <a name="azure-mfa-server"></a>Servidor MFA do Azure
 
-Os usuários finais que estão habilitados para MFA por meio do servidor de MFA do Azure da organização local ainda pode criar e usar uma entrada de telefone sem senha na credencial. Se o usuário tentar atualizar várias instalações (+5) do Microsoft Authenticator com a credencial, essa alteração poderá resultar em um erro.  
+Os usuários finais que estão habilitados para MFA por meio do servidor Azure MFA local de uma organização ainda podem criar e usar uma única credencial de entrada de telefone sem senha. Se o usuário tentar atualizar várias instalações (+5) do Microsoft Authenticator com a credencial, essa alteração poderá resultar em um erro.  
 
 #### <a name="device-registration"></a>Registro de dispositivos
 
-Um dos pré-requisitos para criar essa nova credencial forte é que o dispositivo no qual ela reside esteja registrado no locatário do Azure AD para um usuário individual. Devido às restrições de registro de dispositivo, um dispositivo só pode ser registrado em um único locatário. Esse limite significa que apenas uma conta corporativa ou de estudante no aplicativo Microsoft Authenticator pode ser habilitada para entrada por telefone.
+Um dos pré-requisitos para criar essa nova credencial forte é que o dispositivo no qual ela reside esteja registrado no locatário do Azure AD para um usuário individual. Devido às restrições de registro de dispositivo, um dispositivo só pode ser registrado em um único locatário. Esse limite significa que apenas uma conta corporativa ou de estudante no aplicativo Microsoft Authenticator pode ser habilitada para entrada pelo telefone.
 
 ## <a name="next-steps"></a>Próximas etapas
 
