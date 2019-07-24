@@ -9,12 +9,12 @@ ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 06/07/2019
 ms.author: edjez
-ms.openlocfilehash: 38480d3cc32d53084b79af627e4f7e6ae7dcc03d
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 7bdafafc0d542a98b80f2b6f5db2c14c8777bf5b
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722363"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68423248"
 ---
 # <a name="how-personalizer-works"></a>Como funciona o Personalizador
 
@@ -79,6 +79,8 @@ O Personalizador se baseia em ciência e pesquisa de ponta na área de [Aprendiz
 * **Eventos Inativos**: Um evento inativo é aquele em que você chamou a Classificação, mas não tem certeza se o usuário verá o resultado, devido às decisões do aplicativo cliente. Os eventos inativos permitem criar e armazenar resultados de personalização e decidir como descartá-los posteriormente sem afetar o modelo de machine learning.
 
 * **Modelo**: Um modelo do Personalizador captura todos os dados aprendidos sobre o comportamento do usuário, obtendo dados de treinamento da combinação dos argumentos enviados para as chamadas de Classificação e Recompensa e com um comportamento de treinamento determinado pela Política de Aprendizado. 
+
+* **Política de aprendizagem**: O modo como o personalizado treinará um modelo em cada evento será determinado por alguns metaparâmetros que afetam o funcionamento dos algoritmos de aprendizado de máquina. Novos loops do personalizador começarão com uma política de aprendizado padrão, que pode produzir um desempenho moderado. Ao executar [avaliações](concepts-offline-evaluation.md), o personalizador pode criar novas políticas de aprendizado especificamente otimizadas para os casos de uso do loop. O personalizador terá um desempenho significativamente melhor com políticas otimizadas para cada loop específico, gerado durante a avaliação.
 
 ## <a name="example-use-cases-for-personalizer"></a>Casos de uso de exemplo do Personalizador
 
@@ -182,3 +184,4 @@ Em algumas arquiteturas, a sequência acima pode ser difícil de ser implementad
 ## <a name="next-steps"></a>Próximas etapas
 
 Entenda [as situações em que você pode usar o Personalizador](where-can-you-use-personalizer.md).
+Executar [avaliações offline](how-to-offline-evaluation.md)

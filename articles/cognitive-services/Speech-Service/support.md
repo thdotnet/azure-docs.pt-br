@@ -3,27 +3,27 @@ title: Opções de Ajuda e suporte
 titlesuffix: Azure Cognitive Services
 description: Como obter ajuda e suporte para perguntas e problemas ao criar aplicativos que se integram com o Serviço de Fala
 services: cognitive-services
-author: wolfma61
+author: jhakulin
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 07/05/2019
-ms.author: wolfma
-ms.openlocfilehash: 9e975bbdcec2b45d67f910ac1a83a71ed252ebda
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.date: 07/23/2019
+ms.author: jhakulin
+ms.openlocfilehash: 981851ab9c4bbc39a2bd5df9f97a080b4f6ea388
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606271"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68404794"
 ---
 # <a name="support-and-help-options"></a>Opções de Ajuda e suporte
 
-Você apenas começando a explorar a funcionalidade dos serviços de fala? Você está implementando um novo recurso para o seu aplicativo? Aqui estão sugestões onde você pode obter ajuda como desenvolvedor.
+Você está apenas começando a explorar a funcionalidade dos serviços de fala? Você está implementando um novo recurso para o seu aplicativo? Aqui estão sugestões onde você pode obter ajuda como desenvolvedor.
 
 > [!div class="checklist"]
 > * Mantenha-se informado sobre novos desenvolvimentos dos *Serviços Cognitivos do Azure*, ou localizar as notícias mais recentes relacionadas ao *Serviço de Fala*.
-> * Notas de versão contêm informações para todas as versões.
+> * As notas de versão contêm informações para todas as versões.
 > * Pesquise para ver se o problema foi discutido pela comunidade, ou se a documentação existente para o recurso que você deseja implementar já existe.
 > * Se você não conseguir encontrar uma resposta satisfatória, faça uma pergunta *Stack Overflow*.
 > * Se você encontrar um problema com um dos exemplos no GitHub, gere um problema *GitHub*.
@@ -31,13 +31,13 @@ Você apenas começando a explorar a funcionalidade dos serviços de fala? Você
 
 ## <a name="stay-informed"></a>Continue informado
 
-Notícias sobre os serviços Cognitivos são coletadas no [blog de Serviços Cognitivos](https://azure.microsoft.com/blog/topics/cognitive-services/). Para obter as informações mais recentes sobre os serviços de fala, acompanhar os [blog de serviços de fala](https://azure.microsoft.com/blog/tag/speech-service/).
+Notícias sobre os serviços Cognitivos são coletadas no [blog de Serviços Cognitivos](https://azure.microsoft.com/blog/topics/cognitive-services/). Para obter as informações mais recentes sobre os serviços de fala, acompanhe o [blog de serviços de fala](https://azure.microsoft.com/blog/tag/speech-service/).
 
 ## <a name="release-notes"></a>Notas de versão
 
-O [notas de versão](https://aka.ms/csspeech/whatsnew) são atualizados assim que uma nova versão está disponível. As notas contêm informações sobre novos recursos, aprimoramentos e correções de bugs.
+As [notas de versão](https://aka.ms/csspeech/whatsnew) são atualizadas assim que uma nova versão estiver disponível. As notas contêm informações sobre novos recursos, aprimoramentos e correções de bugs.
 
-## <a name="search"></a>Search
+## <a name="search"></a>Pesquisar
 
 Você pode encontrar a resposta de que precisa na documentação, as amostras ou respostas para as perguntas do [Stack Overflow](https://www.stackoverflow.com) ou nas amostras.
 
@@ -64,14 +64,14 @@ O Stack Overflow é o canal preferido para o desenvolvimento de questões relaci
 
 Se não conseguir encontrar uma resposta para seu problema por meio da pesquisa, envie uma nova pergunta ao Stack Overflow. Use uma das seguintes tags ao formular a pergunta:
 
-|Componente/Área  |tags  |
+|Componente/Área  |Marcas  |
 |---------|---------|
 |Reconhecimento de fala |[[microsoft-cognitivas + fala em texto]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+speech-to-text)|
 |Síntese de fala |[[microsoft-cognitivas + texto em fala]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+text-to-speech)|
-|Tradução de Fala |[[microsoft-cognitivas + conversão]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+translation)|
+|Tradução de fala |[[microsoft-cognitivas + conversão]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+translation)|
 |Intenção de fala |[[microsoft-cognitivas + luis]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+luis)|
 |SDK de fala geral |[[microsoft-cognitivas + microsoft-fala-api]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+microsoft-speech-api)|
-| Assistentes de voz-first Virtual (versão prévia) | [[microsoft-cognitive+virtual-assistant+botframework]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+virtual-assistant+botframework) |
+| Assistentes virtuais da primeira voz (visualização) | [[microsoft-cognitive+virtual-assistant+botframework]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+virtual-assistant+botframework) |
 
 > [!TIP]
 > As seguintes postagens do Stack Overflow contêm dicas sobre as perguntas de formulário e adicione o código-fonte. As diretrizes a seguir podem ajudar a aumentar as chances de os membros da comunidade avaliarem e responderem à sua pergunta rapidamente:  
@@ -85,7 +85,7 @@ Normalmente, os exemplos são lançados como código-fonte aberto. Para pergunta
 * [SDK da fala](https://github.com/Azure-Samples/cognitive-services-speech-sdk/issues)
 * [SDK de Dispositivos de Fala](https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK/issues)
 
-Você pode criar um relatório de bug, solicitação de recurso, ou faça uma pergunta geral e compartilhar as melhores práticas. Para relatórios de bugs, siga o modelo fornecido:
+Você pode criar um relatório de bugs, uma solicitação de recurso ou fazer uma pergunta geral e compartilhar práticas recomendadas. Para relatórios de bugs, siga o modelo fornecido:
 
 **Descrever o bug**
 
@@ -114,7 +114,7 @@ Qual versão do SDK você está usando.
 **Contexto adicional**
 
  - Mensagens de erro, informações de log, rastreamento ...
- - Se você relatar um erro para uma interação de serviço específica, relate a SessionId e a hora (incluindo fuso horário) dos incidentes relatados. A SessionId é informada em todos os retornos de chamada/eventos que você receber.
+ - Se você relatar um erro para uma interação de serviço específica, relate a SessionId e a hora (incluindo o fuso horário) dos incidentes relatados. A SessionId é informada em todos os retornos de chamada/eventos que você receber.
  - Quaisquer outras informações adicionais
 
 

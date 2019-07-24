@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: edjez
-ms.openlocfilehash: 3fdedd1af9b683b221dfa4aebad7a30559b7abff
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 3d9415a99655c7866c1a6688d0e48fd0b236a63b
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722497"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68423274"
 ---
 # <a name="offline-evaluation"></a>Avaliação offline
 
@@ -48,7 +48,7 @@ Os seguintes aspectos são considerações importantes para uma avaliação offl
 
 O Personalizador pode usar o processo de avaliação offline para descobrir uma política de aprendizado mais ideal automaticamente.
 
-Depois de executar a avaliação offline, você poderá ver a eficácia comparativa do Personalizador com essa nova política em comparação com a atual política online. Em seguida, será possível aplicar essa política de aprendizado para implementá-la imediatamente no Personalizador ou baixá-la para análise ou uso futuro.
+Depois de executar a avaliação offline, você poderá ver a eficácia comparativa do Personalizador com essa nova política em comparação com a atual política online. Em seguida, você pode aplicar essa política de aprendizado para torná-la eficaz imediatamente no Personalizador, baixando-a e carregando-a no painel modelos e políticas. Você também pode baixá-lo para análise ou uso futuro.
 
 ## <a name="understanding-the-relevance-of-offline-evaluation-results"></a>Como entender a relevância dos resultados da avaliação offline
 
@@ -98,4 +98,5 @@ Recomendamos examinar as avaliações de recurso e fazer as seguintes perguntas:
 
 ## <a name="next-steps"></a>Próximas etapas
 
-[Configurar o Personalizador](how-to-settings.md)
+[Configurar o personalizado](how-to-settings.md)
+[executar avaliações offline](how-to-offline-evaluation.md) entender [como o personalizador funciona](how-personalizer-works.md)
