@@ -1,7 +1,7 @@
 ---
-title: Referência de SDK do leitor de imersão
+title: Referência do SDK do leitor de imersão
 titleSuffix: Azure Cognitive Services
-description: Referência para o leitor de imersão SDK
+description: Referência para o SDK do leitor de imersão
 services: cognitive-services
 author: metanMSFT
 manager: nitinme
@@ -10,45 +10,45 @@ ms.subservice: immersive-reader
 ms.topic: reference
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: 485e8626af4266492e02d4f9fbe4af486e10c082
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 67da7d67a3165583a872c2b435c3cdca9763d4dd
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67718398"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68443815"
 ---
-# <a name="immersive-reader-sdk-reference"></a>Referência de SDK do leitor de imersão
+# <a name="immersive-reader-sdk-reference"></a>Referência do SDK do leitor de imersão
 
-O SDK do leitor de imersão é uma biblioteca JavaScript que permite que você integre o leitor de imersão em seu aplicativo web.
+O SDK do leitor de imersão é uma biblioteca JavaScript que permite integrar o leitor de imersão ao seu aplicativo Web.
 
 ## <a name="functions"></a>Funções
 
-O SDK do expõe uma única função, `ImmersiveReader.launchAsync(token, resourceName, content, options)`.
+O SDK expõe uma única função, `ImmersiveReader.launchAsync(token, subdomain, content, options)`.
 
 ### <a name="launchasync"></a>launchAsync
 
-Inicia o leitor de imersão dentro de um `iframe` em seu aplicativo web.
+Inicia o leitor de imersão dentro `iframe` de um em seu aplicativo Web.
 
 ```typescript
-launchAsync(token: string, resourceName: string, content: Content, options?: Options): Promise<HTMLDivElement>;
+launchAsync(token: string, subdomain: string, content: Content, options?: Options): Promise<HTMLDivElement>;
 ```
 
-#### <a name="parameters"></a>parâmetros
+#### <a name="parameters"></a>Parâmetros
 
-| Nome | Tipo | DESCRIÇÃO |
+| Nome | Tipo | Descrição |
 | ---- | ---- |------------ |
-| `token` | cadeia de caracteres | O token de acesso adquirido da chamada para o `issueToken` ponto de extremidade. |
-| `resourceName` | cadeia de caracteres | Reservado. Deve ser definido como `null`. |
+| `token` | cadeia de caracteres | O token de autenticação do Azure AD. Consulte o [tutorial de autenticação do Azure ad](./azure-active-directory-authentication.md). |
+| `subdomain` | cadeia de caracteres | O subdomínio personalizado do seu recurso de leitor de imersão no Azure. Consulte o [How-to de autenticação do Azure ad](./azure-active-directory-authentication.md). |
 | `content` | [Conteúdo](#content) | Um objeto que contém o conteúdo a ser mostrado no leitor de imersão. |
-| `options` | [Opções](#options) | Opções de configuração de determinados comportamentos do leitor de imersão. Opcional. |
+| `options` | [Opções](#options) | Opções para configurar determinados comportamentos do leitor de imersão. Opcional. |
 
 #### <a name="returns"></a>Retornos
 
-Retorna um `Promise<HTMLDivElement>` que resolve quando o leitor de imersão é carregado. O `Promise` resolve para um `div` elemento cujo único filho é um `iframe` elemento que contém a página de imersão leitor.
+Retorna um `Promise<HTMLDivElement>` que resolve quando o leitor de imersão é carregado. O `Promise` resolve para um `div` elemento cujo único filho é um `iframe` elemento que contém a página do leitor de imersão.
 
 #### <a name="exceptions"></a>Exceções
 
-Retornado `Promise` serão rejeitadas com uma [ `Error` ](#error) se o leitor de imersão Falha ao carregar do objeto. Para obter mais informações, consulte o [códigos de erro](#error-codes).
+O retornado `Promise` será rejeitado com um [`Error`](#error) objeto se o leitor de imersão não for carregado. Para obter mais informações, consulte os [códigos de erro](#error-codes).
 
 ## <a name="types"></a>Tipos
 
@@ -69,14 +69,14 @@ Contém o conteúdo a ser mostrado no leitor de imersão.
 
 #### <a name="supported-mime-types"></a>Tipos MIME com suporte
 
-| Tipo de MIME | DESCRIÇÃO |
+| Tipo MIME | Descrição |
 | --------- | ----------- |
 | texto/sem formatação | Texto sem formatação. |
-| aplicativo/mathml + xml | Linguagem de marcação de matemática (MathML). [Saiba mais](https://developer.mozilla.org/en-US/docs/Web/MathML).
+| aplicativo/MathML + XML | MathML (matematica Markup Language). [Saiba mais](https://developer.mozilla.org/en-US/docs/Web/MathML).
 
 ### <a name="options"></a>Opções
 
-Contém propriedades que configurar determinados comportamentos do leitor de imersão.
+Contém propriedades que configuram determinados comportamentos do leitor de imersão.
 
 ```typescript
 {
@@ -100,15 +100,15 @@ Contém informações sobre o erro.
 
 #### <a name="error-codes"></a>Códigos de erro
 
-| Código | DESCRIÇÃO |
+| Código | Descrição |
 | ---- | ----------- |
-| BadArgument | O argumento fornecido é inválido, consulte `message` para obter detalhes. |
-| Tempo limite | O leitor de imersão Falha ao carregar dentro do tempo limite especificado. |
+| BadArgument | O argumento fornecido é inválido, `message` consulte para obter detalhes. |
+| Tempo limite | Falha ao carregar o leitor de imersão no tempo limite especificado. |
 | TokenExpired| O token fornecido expirou. |
 
 ## <a name="launching-the-immersive-reader"></a>Iniciando o leitor de imersão
 
-O SDK fornece o estilo padrão para o botão para iniciar o leitor envolventes. Use o `immersive-reader-button` atributo de classe para habilitar esse estilo.
+O SDK fornece o estilo padrão para o botão iniciar o leitor de imersão. Use o `immersive-reader-button` atributo Class para habilitar esse estilo.
 
 ```html
 <div class='immersive-reader-button'></div>
@@ -116,17 +116,17 @@ O SDK fornece o estilo padrão para o botão para iniciar o leitor envolventes. 
 
 ### <a name="optional-attributes"></a>Atributos opcionais
 
-Use os seguintes atributos para configurar a aparência do botão.
+Use os atributos a seguir para configurar a aparência do botão.
 
-| Atributo | DESCRIÇÃO |
+| Atributo | Descrição |
 | --------- | ----------- |
 | `data-button-style` | Define o estilo do botão. Pode ser `icon`, `text` ou `iconAndText`. Assume o padrão de `icon`. |
-| `data-locale` | Define a localidade, por exemplo, `en-US`, `fr-FR`. O padrão é inglês. |
+| `data-locale` | Define a localidade, por exemplo `en-US`, `fr-FR`. O padrão é inglês. |
 | `data-icon-px-size` | Define o tamanho do ícone em pixels. O padrão é 20px. |
 
 ## <a name="browser-support"></a>Suporte ao navegador
 
-Use as versões mais recentes dos navegadores a seguir para a melhor experiência com o leitor envolventes.
+Use as versões mais recentes dos seguintes navegadores para obter a melhor experiência com o leitor de imersão.
 
 * Microsoft Edge
 * Internet Explorer 11
@@ -136,5 +136,5 @@ Use as versões mais recentes dos navegadores a seguir para a melhor experiênci
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* Explore o [leitor imersivo SDK no GitHub](https://github.com/Microsoft/immersive-reader-sdk)
-* [Início Rápido: Criar um aplicativo web que inicia o leitor de imersão (C#)](./quickstart.md)
+* Explorar o [SDK da Leitura Avançada no GitHub](https://github.com/Microsoft/immersive-reader-sdk)
+* [Início Rápido: Criar um aplicativo Web que inicia o leitor de imersãoC#()](./quickstart.md)
