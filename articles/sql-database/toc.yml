@@ -19,7 +19,7 @@
       href: sql-database-managed-instance-quickstart-guide.md
     - name: Criar
       items:
-        - name: Banco de dados individual – portal
+        - name: Banco de dados individual
           href: sql-database-single-database-get-started.md
         - name: Banco de dados individual – modelo
           displayName: 'Azure Resource Manager template, ARM'
@@ -87,14 +87,22 @@
           href: sql-database-design-first-database.md
         - name: Criar Banco de Dados usando .NET
           href: sql-database-design-first-database-csharp.md
-    - name: Banco de dados singleton
+    - name: Banco de Dados Individual
       items:
         - name: Migrar para um banco de dados individual/em pool usando DMS
           href: ../dms/tutorial-sql-server-to-azure-sql.md?toc=/azure/sql-database/toc.json
+        - name: Adicionar a um grupo de failover
+          href: sql-database-single-database-failover-group-tutorial.md
         - name: Implementar um banco de dados distribuído geograficamente
           href: sql-database-implement-geo-distributed-database.md
+        - name: Configurar a replicação geográfica ativa
+          href: sql-database-active-geo-replication-portal.md
         - name: Configurar a Sincronização de Dados SQL do Azure
           href: sql-database-get-started-sql-data-sync.md
+    - name: Pool elástico
+      items:
+        - name: Adicionar a um grupo de failover
+          href: sql-database-elastic-pool-failover-group-tutorial.md
     - name: Instância Gerenciada
       items:
         - name: Migrar online usando DMS
@@ -245,8 +253,6 @@
               href: sql-database-active-geo-replication.md
             - name: Grupos de failover automático
               href: sql-database-auto-failover-group.md
-            - name: Configurar Replicação Geográfica Ativa - Portal
-              href: sql-database-active-geo-replication-portal.md
             - name: Configurar segurança para réplicas
               href: sql-database-geo-replication-security-config.md
         - name: Opções de recuperação do banco de dados
@@ -516,6 +522,8 @@
           href: sql-database-managed-instance-connect-app.md
     - name: Carregar e mover dados
       items:
+        - name: Mover um recurso para uma nova região
+          href: sql-database-move-resources-across-regions.md
         - name: Copiar um banco de dados dentro do Azure
           href: sql-database-copy.md
         - name: Importar um banco de dados de um arquivo BACPAC

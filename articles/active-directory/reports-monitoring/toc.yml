@@ -27,6 +27,8 @@
       href: tutorial-azure-monitor-stream-logs-to-event-hub.md
 - name: Conceitos
   items:
+    - name: Planejar um relatório e monitorar uma implantação
+      href: plan-monitoring-and-reporting.md
     - name: Logs de auditoria
       href: concept-audit-logs.md
     - name: Logs de entrada

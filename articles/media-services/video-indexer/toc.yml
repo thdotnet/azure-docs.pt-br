@@ -21,6 +21,8 @@
       href: compare-video-indexer-with-media-services-presets.md
     - name: Gerenciar vários locatários
       href: manage-multiple-tenants.md
+    - name: Modelo de identificação de idioma
+      href: language-identification-model.md
     - name: Personalizando modelos de conteúdo
       items:
         - name: Visão geral

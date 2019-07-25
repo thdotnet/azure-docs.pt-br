@@ -6,6 +6,12 @@
       href: home.md
 - name: Guia de início rápido
   items:
+    - name: Usar o portal da Web
+      items:
+        - name: Criar um classificador
+          href: getting-started-build-a-classifier.md
+        - name: Criar um detector de objeto
+          href: get-started-build-detector.md
     - name: Usar o .NET SDK
       items:
         - name: Classificação de imagens
@@ -42,8 +48,6 @@
       href: logo-detector-mobile.md
 - name: Guias de instruções
   items:
-    - name: Criar um classificador
-      href: getting-started-build-a-classifier.md
     - name: Testar o modelo
       href: test-your-model.md
     - name: Melhorar o seu classificador
