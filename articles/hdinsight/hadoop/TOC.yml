@@ -397,7 +397,7 @@
     - name: Segurança do Enterprise
       items:
         - name: Visão geral
-          href: ../domain-joined/apache-domain-joined-introduction.md
+          href: ../domain-joined/hdinsight-security-overview.md
           maintainContext: true
         - name: Planejar segurança da empresa
           href: ../domain-joined/apache-domain-joined-architecture.md
