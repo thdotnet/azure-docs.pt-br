@@ -12,12 +12,12 @@ metadata:
   ms.date: 02/20/2019
   ms.author: helohr
 abstract:
-  description: Forneça uma experiência de área de trabalho virtual e aplicativos remotos para qualquer dispositivo. Reúna o Microsoft 365 e o Azure para fornecer aos usuários a única experiência de sessão múltipla do Windows 10 – com escala excepcional e custos de TI reduzidos.
+  description: Forneça uma experiência de área de trabalho virtual e aplicativos remotos para qualquer dispositivo. Reúna o Microsoft 365 e o Azure para fornecer aos usuários uma experiência única de múltiplas sessões do Windows 10 – com escala excepcional e custos reduzidos de TI.
 sections:
   - title: Visão geral
     items:
       - type: paragraph
-        text: 'Conheça a Versão Prévia da Área de Trabalho Virtual do Windows e saiba como usá-la. Tutoriais, guias de instruções, conteúdo de referência e muito mais mostram como configurar locatários e pools de host e atribuir funções aos usuários para o seu ambiente de Área de Trabalho Virtual do Windows.'
+        text: 'Conheça a Versão Prévia da Área de Trabalho Virtual do Windows e saiba como usá-la. Tutoriais, guias de instruções, conteúdo de referência e também mostram como configurar host pools e tenants atribuindo funções aos usuários para o seu ambiente de Área de Trabalho Virtual do Windows.'
       - type: list
         style: unordered
         items:
@@ -29,7 +29,7 @@ sections:
       - type: list
         style: ordered
         items:
-          - html: <a href="/azure/virtual-desktop/tenant-setup-azure-active-directory">Criar um locatário na Área de Trabalho Virtual do Windows</a>
+          - html: <a href="/azure/virtual-desktop/tenant-setup-azure-active-directory">Criar um tenant na Área de Trabalho Virtual do Windows</a>
           - html: <a href="/azure/virtual-desktop/create-host-pools-azure-marketplace">Criar um pool de host com o Azure Marketplace</a>
           - html: <a href="/azure/virtual-desktop/manage-app-groups">Gerenciar grupos de aplicativos para a Área de Trabalho Virtual do Windows</a>
           - html: <a href="/azure/virtual-desktop/create-service-principal-role-powershell">Criar entidades de serviço e atribuições de função com o PowerShell</a>
