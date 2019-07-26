@@ -1,21 +1,21 @@
 ---
-title: 'Início rápido: Expandir a computação no SQL Data Warehouse do Azure – Portal do Azure | Microsoft Docs'
+title: 'Início Rápido: Expandir a computação no SQL Data Warehouse do Azure – Portal do Azure | Microsoft Docs'
 description: Dimensionar a computação no SQL Data Warehouse do Azure no Portal do Azure. Escale horizontalmente a computação para melhorar o desempenho ou reduza a escala da computação para economizar custos.
 services: sql-data-warehouse
-author: kevinvngo
+author: Antvgski
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: quickstart
 ms.subservice: implement
 ms.date: 04/17/2018
-ms.author: kevin
+ms.author: Anthony.vanGemert
 ms.reviewer: jrasnick
-ms.openlocfilehash: b02259e2eaf497fb1bfefc4c1ed7611a22394d48
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 7c3e48cc57613b107e82cb0fbcb7d69aceb6cf0a
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57894182"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68479270"
 ---
 ## <a name="quickstart-scale-compute-in-azure-sql-data-warehouse-in-the-azure-portal"></a>Início Rápido: Dimensionar a computação no SQL Data Warehouse do Azure no Portal do Azure
 
@@ -50,7 +50,7 @@ Para alterar unidades de data warehouse:
 
     ![Mover o controle deslizante](media/quickstart-scale-compute-portal/scale-dwu.png)
 
-3. Clique em **Salvar**. Será exibida uma mensagem de confirmação. Clique em **sim** para confirmar ou em **não** para cancelar.
+3. Clique em **Save** (Salvar). Será exibida uma mensagem de confirmação. Clique em **sim** para confirmar ou em **não** para cancelar.
 
     ![Clique em Salvar](media/quickstart-scale-compute-portal/confirm-change.png)
 
