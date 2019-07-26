@@ -11,12 +11,12 @@ author: tsikiksr
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 05/02/2019
-ms.openlocfilehash: 5eb3e94ff65e8a8b74f357a4cb8a517fd3837c5a
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 1bfc415b2e4dbc66e2afeae73b78079fb027a60c
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67871823"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68358837"
 ---
 # <a name="create-and-explore-automated-machine-learning-experiments-in-the-azure-portal-preview"></a>Criar e explorar experimentos automatizados de aprendizado de máquina na portal do Azure (versão prévia)
 
@@ -58,9 +58,9 @@ Selecione o botão criar experimento para preencher o formulário a seguir.
 
     ![Criar nova computação para experimento](media/how-to-create-portal-experiments/create-new-compute.png)
 
-    Campo|DESCRIÇÃO
+    Campo|Descrição
     ---|---
-    Nome da computação| Insira um nome exclusivo que identifique o contexto de computação.
+    Nome de computação| Insira um nome exclusivo que identifique o contexto de computação.
     Tamanho da máquina virtual| Selecione o tamanho da máquina virtual para sua computação.
     Configurações adicionais| *Nó mínimo*: Insira o número mínimo de nós para a computação. O número mínimo de nós para a computação AML é 0. Para habilitar a criação de perfil de dados, você deve ter um ou mais nós. <br> *Nó máximo*: Insira o número máximo de nós para sua computação. O padrão é 6 nós para uma computação AML.
 
@@ -100,7 +100,7 @@ Selecione o botão criar experimento para preencher o formulário a seguir.
 
 1. Adicional Configurações avançadas: configurações adicionais que você pode usar para controlar melhor o trabalho de treinamento.
 
-    Configurações avançadas|DESCRIÇÃO
+    Configurações avançadas|Descrição
     ------|------
     Métrica primária| Métrica principal usada para pontuar seu modelo. [Saiba mais sobre métricas de modelo](how-to-configure-auto-train.md#explore-model-metrics).
     Critérios de saída| Quando qualquer um desses critérios é atendido, o trabalho de treinamento termina antes da conclusão completa. <br> *Tempo de trabalho de treinamento (minutos)* : Por quanto tempo permitir que o trabalho de treinamento seja executado.  <br> *Número máximo de iterações*: Número máximo de pipelines (iterações) a serem testados no trabalho de treinamento. O trabalho não será executado mais do que o número especificado de iterações. <br> *Limite de pontuação da métrica*:  Pontuação de métrica mínima para todos os pipelines. Isso garante que, se você tiver uma métrica de destino definida que deseja alcançar, não gaste mais tempo no trabalho de treinamento do que o necessário.
@@ -154,7 +154,7 @@ Você pode obter uma grande variedade de estatísticas de resumo em seu conjunto
 
 Ao configurar seus experimentos, você pode habilitar a configuração `Preprocess`avançada. Isso significa que as etapas de pré-processamento e personalização de dados a seguir são executadas automaticamente.
 
-|&nbsp;Etapas de pré-processamento| DESCRIÇÃO |
+|&nbsp;Etapas de pré-processamento| Descrição |
 | ------------- | ------------- |
 |Remover alta cardinalidade ou nenhum recurso de variação|Descarte-os dos conjuntos de treinamento e validação, incluindo recursos com todos os valores ausentes, o mesmo valor em todas as linhas ou com cardinalidade extremamente alta (por exemplo, hashes, IDs ou GUIDs).|
 |Acrescentar valores ausentes|Para recursos numéricos, imputar com a média de valores na coluna.<br/><br/>Para recursos categóricos, imputar com o valor mais frequente.|
@@ -180,7 +180,7 @@ Os trabalhos de treinamento podem levar algum tempo para que cada pipeline termi
 
 ### <a name="view-training-run-details"></a>Exibir detalhes da execução de treinamento
 
-Faça uma busca detalhada em qualquer um dos modelos de saída para ver detalhes de execução de treinamento, como métricas de desempenho e gráficos de distribuição. [Saiba mais sobre gráficos](how-to-track-experiments.md#understanding-automated-ml-charts).
+Faça uma busca detalhada em qualquer um dos modelos de saída para ver detalhes de execução de treinamento, como métricas de desempenho e gráficos de distribuição. [Saiba mais sobre gráficos](how-to-understand-automated-ml.md).
 
 ![Detalhes da iteração](media/how-to-create-portal-experiments/iteration-details.png)
 
@@ -213,7 +213,7 @@ O ML automatizado ajuda você a implantar o modelo sem escrever código:
 
     Você pode identificar o modelo por sua descrição, que incluirá a ID de execução, o número de iteração, no seguinte formato: *< Run_ID > _ < Iteration_number > _Model*
 
-    ![Modelos Criar imagem](media/how-to-create-portal-experiments/model-create-image.png)
+    ![Modelos: Criar imagem](media/how-to-create-portal-experiments/model-create-image.png)
 
 1. Insira um nome para a imagem. 
 1. Selecione o botão **procurar** ao lado da caixa "arquivo de Pontuação" para carregar o arquivo de pontuação (Scoring.py) que você baixou anteriormente.
@@ -243,4 +243,5 @@ O ML automatizado ajuda você a implantar o modelo sem escrever código:
 ## <a name="next-steps"></a>Próximas etapas
 
 * [Saiba mais sobre o aprendizado de máquina](concept-automated-ml.md) e a Azure Machine Learning automatizados.
+* [Entenda os resultados automatizados do Machine Learning](how-to-understand-automated-ml.md).
 * [Saiba como consumir um serviço Web](https://docs.microsoft.com/azure/machine-learning/service/how-to-consume-web-service).

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/02/2019
 ms.author: allensu
-ms.openlocfilehash: 6623b3e679faaa73f18c0f6b376de101113bcbdb
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 833d0d0b17f7cc22b2ab37b4e225c1a8cce9c592
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68274549"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68385554"
 ---
 # <a name="outbound-connections-in-azure"></a>Conexões de saída no Azure
 
@@ -40,27 +40,27 @@ Há vários [cenários de saída](#scenarios). É possível combinar esses cená
 
 O Azure Load Balancer e os recursos relacionados são explicitamente definidos ao utilizar o [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview).  Atualmente, o Azure fornece três métodos diferentes para alcançar a conectividade de saída para recursos do Azure Resource Manager. 
 
-| SKUs | Cenário | Método | Protocolos IP | DESCRIÇÃO |
+| SKUs | Cenário | Método | Protocolos IP | Descrição |
 | --- | --- | --- | --- | --- |
-| Standard, Básico | [1. VM com um endereço IP Público em Nível de Instância (com ou sem Load Balancer)](#ilpip) | SNAT, disfarce de porta não usado | TCP, UDP, ICMP, ESP | O Azure usa o IP público atribuído à configuração de IP do NIC da instância. A instância possui todas as portas efêmeras disponíveis. Ao usar o Standard Load Balancer, você precisa usar [regras de saída](load-balancer-outbound-rules-overview.md) para definir explicitamente a conectividade de saída |
-| Standard, Básico | [2. Load Balancer público associado a uma VM (sem endereço IP Público em Nível de Instância)](#lb) | SNAT com PAT (disfarce de porta) usando front-ends do Load Balancer | TCP, UDP |O Azure compartilha o endereço IP público dos front-ends do Load Balancer público com vários endereços IP privados. O Azure usa os portas efêmeras dos front-ends para PAT. |
-| Nenhuma ou Básico | [3. VM autônomo (sem Load Balancer, nenhum endereço IP Público em Nível de Instância) ](#defaultsnat) | SNAT com disfarce de porta (PAT) | TCP, UDP | O Azure designa automaticamente um endereço IP público para SNAT, compartilha esse endereço IP público com vários endereços IP privados do conjunto de disponibilidade e usa portas efêmeras desse endereço IP público. Esse cenário é um fallback para os cenários anteriores. Não é recomendável se você precisar de visibilidade e controle. |
+| Standard, Básico | [1. VM com endereço IP público (com ou sem Load Balancer)](#ilpip) | SNAT, disfarce de porta não usado | TCP, UDP, ICMP, ESP | O Azure usa o IP público atribuído à configuração de IP do NIC da instância. A instância possui todas as portas efêmeras disponíveis. Ao usar o Standard Load Balancer, você precisa usar [regras de saída](load-balancer-outbound-rules-overview.md) para definir explicitamente a conectividade de saída |
+| Standard, Básico | [2. Load Balancer públicos associados a uma VM (nenhum endereço IP público na instância)](#lb) | SNAT com PAT (disfarce de porta) usando front-ends do Load Balancer | TCP, UDP |O Azure compartilha o endereço IP público dos front-ends do Load Balancer público com vários endereços IP privados. O Azure usa os portas efêmeras dos front-ends para PAT. |
+| Nenhuma ou Básico | [3. VM autônoma (sem Load Balancer, nenhum endereço IP público)](#defaultsnat) | SNAT com disfarce de porta (PAT) | TCP, UDP | O Azure designa automaticamente um endereço IP público para SNAT, compartilha esse endereço IP público com vários endereços IP privados do conjunto de disponibilidade e usa portas efêmeras desse endereço IP público. Esse cenário é um fallback para os cenários anteriores. Não é recomendável se você precisar de visibilidade e controle. |
 
 Se você não quiser que uma VM comunique-se com os pontos de extremidade fora do Azure no espaço de endereço IP público, poderá usar NSGs (grupos de segurança de rede) para bloquear o acesso conforme necessário. A seção [Impedir conectividade de saída](#preventoutbound) descreve sobre os NSGs mais detalhadamente. As diretrizes sobre a projeto, implementação e gerenciamento de uma rede virtual sem qualquer acesso de saída estão fora do escopo deste artigo.
 
-### <a name="ilpip"></a>Cenário 1: VM com um endereço IP Público no Nível de Instância
+### <a name="ilpip"></a>Cenário 1: VM com endereço IP público
 
-Nesse cenário, a VM tem um ILPIP (IP Público em Nível de Instância) atribuído a ela. No que diz respeito às conexões de saída, não importa se a VM é com balanceamento de carga ou não. Esse cenário tem precedência sobre os outros. Quando um ILPIP é usado, a VM usa o ILPIP para todos os fluxos de saída.  
+Nesse cenário, a VM tem um IP público atribuído a ela. No que diz respeito às conexões de saída, não importa se a VM é com balanceamento de carga ou não. Esse cenário tem precedência sobre os outros. Quando um endereço IP público é usado, a VM usa o endereço IP público para todos os fluxos de saída.  
 
 Um IP público atribuído a uma VM é uma relação 1:1 (em vez de 1:muitos) e implementado como sem estado 1:1 NAT.  A PAT (disfarce de porta) não é usada e a VM tem todas as portas efêmeras disponíveis para uso.
 
-Se o aplicativo iniciar muitos fluxos de saída e for observado um esgotamento da porta SNAT, considere atribuir um [ILPIP para mitigar as restrições SNAT](#assignilpip). Revise [Gerenciar esgotamento de SNAT](#snatexhaust) completamente.
+Se seu aplicativo iniciar muitos fluxos de saída e você enfrentar esgotamento de porta SNAT, considere atribuir um [endereço IP público para atenuar as restrições SNAT](#assignilpip). Revise [Gerenciar esgotamento de SNAT](#snatexhaust) completamente.
 
-### <a name="lb"></a>Cenário 2: VM com balanceamento de carga sem um Endereço IP Público em Nível de Instância
+### <a name="lb"></a>Cenário 2: VM com balanceamento de carga sem um endereço IP público
 
 Nesse cenário, a VM faz parte de um pool de back-end do balanceador de carga público. A VM não tem um endereço IP público atribuído a ela. O recurso do Load Balancer deve ser configurado com uma regra de balanceador de carga para criar um link entre o front-end de IP público e o pool de back-end.
 
-Se você não concluir essa configuração da regra, o comportamento será conforme descrito no cenário para [VM autônoma sem IP em Nível de Instância](#defaultsnat). Não é necessário que a regra tenha um ouvinte trabalhando no pool de back-end ou a investigação de integridade para ter êxito.
+Se você não concluir essa configuração de regra, o comportamento será conforme descrito no cenário para [VM autônoma sem IP público](#defaultsnat). Não é necessário que a regra tenha um ouvinte trabalhando no pool de back-end ou a investigação de integridade para ter êxito.
 
 Quando a VM com balanceamento de carga cria um fluxo de saída, o Azure converte o endereço IP de origem particular do fluxo de saída para um endereço IP público do frontend do Balanceador de Carga público. O Azure usa SNAT para executar essa função. O Azure também usa [PAT](#pat) para disfarçar vários endereços IP privados por trás de um endereço IP público. 
 
@@ -72,9 +72,9 @@ Quando [vários endereços IP (públicos) estão associados ao Load Balancer Bá
 
 Para monitorar a integridade das conexões de saída com o Load Balancer Basic, você pode usar [logs de Azure monitor para Load Balancer](load-balancer-monitor-log.md) e [logs de eventos de alerta](load-balancer-monitor-log.md#alert-event-log) para monitorar mensagens de esgotamento de porta SNAT.
 
-### <a name="defaultsnat"></a>Cenário 3: VM autônoma com um Endereço IP Público em Nível de Instância
+### <a name="defaultsnat"></a>Cenário 3: VM autônoma sem um endereço IP público
 
-Nesse cenário, a VM não faz parte de um pool público do Load Balancer (e não faz parte de um pool do Load Balancer Standard interno) e não possui um endereço ILPIP atribuído. Quando a VM cria um fluxo de saída, o Azure converte o endereço IP de origem particular do fluxo de saída para um endereço IP de origem pública. O endereço IP público usado para esse fluxo de saída não é configurável e não conta para o limite de recursos IP públicos da assinatura. Esse endereço IP público não pertence a você e não pode ser reservado. Se você reimplantar o conjunto de dimensionamento de VMs ou conjuntos de disponibilidade ou máquinas virtuais, esse endereço IP público será liberado e um novo endereço IP público será solicitado. Não use esse cenário para endereços IP de lista de permissões. Em vez disso, use um dos outros dois cenários para declarar explicitamente o cenário de saída e o endereço IP público a ser usado para conectividade de saída.
+Nesse cenário, a VM não faz parte de um pool de Load Balancer público (e não faz parte de um pool de Standard Load Balancer interno) e não tem um endereço IP público atribuído a ele. Quando a VM cria um fluxo de saída, o Azure converte o endereço IP de origem particular do fluxo de saída para um endereço IP de origem pública. O endereço IP público usado para esse fluxo de saída não é configurável e não conta para o limite de recursos IP públicos da assinatura. Esse endereço IP público não pertence a você e não pode ser reservado. Se você reimplantar o conjunto de dimensionamento de VMs ou conjuntos de disponibilidade ou máquinas virtuais, esse endereço IP público será liberado e um novo endereço IP público será solicitado. Não use esse cenário para endereços IP de lista de permissões. Em vez disso, use um dos outros dois cenários para declarar explicitamente o cenário de saída e o endereço IP público a ser usado para conectividade de saída.
 
 >[!IMPORTANT] 
 >Esse cenário também será aplicável quando __somente__ um Load Balancer Básico interno estiver conectado. O cenário 3 será __não disponível__ quando um Load Balancer Standard interno for anexado a uma VM.  É necessário criar explicitamente o [cenário 1](#ilpip) ou [cenário 2](#lb), além de usar um Load Balancer Standard interno.
@@ -189,7 +189,7 @@ As alocações de portas SNAT são o protocolo de transporte IP específico (TCP
 Esta seção destina-se a ajudar a mitigar o esgotamento de SNAT e que pode ocorrer com conexões de saída no Azure.
 
 ### <a name="snatexhaust"></a> Gerenciar esgotamento da porta SNAT (PAT)
-[As portas efêmeras](#preallocatedports) usadas para [PAT](#pat) são um recurso esgotável, conforme descrito em [VM autônoma sem um Endereço IP Público em Nível de Instância](#defaultsnat) e [VM com balanceamento de carga sem um Endereço IP Público em Nível de Instância](#lb).
+[As portas efêmeras](#preallocatedports) usadas para [Pat](#pat) são um recurso esse esgotável, conforme descrito em [VM autônoma sem um endereço IP público](#defaultsnat) e [VM com balanceamento de carga sem um endereço IP público](#lb).
 
 Se você sabe que está iniciando muitas conexões TCP ou UDP de saída para o mesmo endereço e porta IP de destino, se você observa as conexões de saída com falha ou é avisado pelo suporte que as portas SNAT ([portas efêmeras](#preallocatedports) pré-alocadas usadas pela [PAT](#pat)) estão se esgotando, você terá várias opções gerais de mitigação. Avalie essas opções e decida o que está disponível e melhor para o seu cenário. É possível que uma ou mais possam ajudar a gerenciar esse cenário.
 
@@ -210,8 +210,8 @@ Quando as [portas efêmeras pré-alocadas](#preallocatedports) usadas para [PAT]
 
 As portas efêmeras têm um tempo limite de ociosidade de 4 minutos (não ajustável). Se as tentativas forem muito agressivas, o esgotamento não terá oportunidade de limpar por conta própria. Portanto, considerando como -- e com que frequência -- o aplicativo reage transações é uma parte crítica do projeto.
 
-#### <a name="assignilpip"></a>Atribuir um IP Público em Nível de Instância a cada VM
-Atribuir um ILPIP altera seu cenário para [IP Público em Nível de Instância para uma VM](#ilpip). Todas as portas efêmeras do IP público que são usadas para cada VM estão disponíveis para a VM. (Em oposição aos cenários em que as portas efêmeras de um IP público são compartilhadas com todas as VMs associadas ao respectivo grupo de back-end.) Há compromissos a considerar, tais como o custo adicional dos endereços IP públicos e o potencial impacto da listagem de permissões de um grande número de endereços IP individuais.
+#### <a name="assignilpip"></a>Atribuir um IP público a cada VM
+A atribuição de um endereço IP público altera seu cenário para o [IP público para uma VM](#ilpip). Todas as portas efêmeras do IP público que são usadas para cada VM estão disponíveis para a VM. (Em oposição aos cenários em que as portas efêmeras de um IP público são compartilhadas com todas as VMs associadas ao respectivo grupo de back-end.) Há compromissos a considerar, tais como o custo adicional dos endereços IP públicos e o potencial impacto da listagem de permissões de um grande número de endereços IP individuais.
 
 >[!NOTE] 
 >Essa opção não está disponível para as funções de trabalho da Web.

@@ -1,5 +1,5 @@
 ---
-title: Personalizar declarações emitidas em tokens para um aplicativo específico em um locatário do Azure AD (versão prévia pública)
+title: Personalizar declarações para um aplicativo em um locatário do Azure AD (visualização pública)
 description: Esta página descreve o mapeamento de declarações no Azure Active Directory.
 services: active-directory
 author: rwike77
@@ -15,12 +15,12 @@ ms.date: 03/28/2019
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e923cde3cfcffe594226f6b8b665053d1fc584f6
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 97de45ef94afa9da8a5e928a3d4a8911db052107
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68324986"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68381057"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Como: personalizar declarações emitidas em tokens para um aplicativo específico em um locatário (versão prévia)
 
@@ -46,7 +46,7 @@ Uma política de mapeamento de declarações é um tipo de objeto de **Política
 
 Há determinados conjuntos de declarações que definem como e quando elas são usadas em tokens.
 
-| Conjunto de declarações | DESCRIÇÃO |
+| Conjunto de declarações | Descrição |
 |---|---|
 | Conjunto de declarações de núcleo | Estão presentes em todos os tokens, independentemente da política. Essas declarações também são consideradas restritas e não podem ser modificadas. |
 | Conjunto de declarações básicas | Inclui as declarações que são emitidas por padrão para os tokens (além do conjunto de declarações principais). Você pode omitir ou modificar as declarações básicas usando as políticas de mapeamento de declarações. |
@@ -179,7 +179,7 @@ Há determinados conjuntos de declarações que definem como e quando elas são 
 | unique_name |
 | upn |
 | user_setting_sync_url |
-| Nome de Usuário |
+| username |
 | uti |
 | ver |
 | verified_primary_email |
@@ -286,18 +286,18 @@ O elemento ID identifica qual propriedade na origem fornece o valor da declaraç
 
 #### <a name="table-3-valid-id-values-per-source"></a>Tabela 3: valores de ID válidos por fonte
 
-| Origem | ID | DESCRIÇÃO |
+| Origem | ID | Descrição |
 |-----|-----|-----|
 | User | sobrenome | Nome da família |
 | User | givenname | Nome |
-| User | displayname | Nome de exibição |
+| User | displayname | Nome para exibição |
 | User | objectid | ObjectID |
 | User | mail | Endereço de Email |
 | User | userprincipalname | Nome UPN |
 | User | department|department|
 | User | onpremisessamaccountname | Nome da conta SAM local |
 | User | netbiosname| Nome NetBios |
-| User | dnsdomainname | Nome de domínio DNS |
+| User | dnsdomainname | Nome de Domínio DNS |
 | User | onpremisesecurityidentifier | Identificador de segurança local |
 | User | companyname| Nome da Organização |
 | User | streetaddress | Endereço |
@@ -327,9 +327,9 @@ O elemento ID identifica qual propriedade na origem fornece o valor da declaraç
 | User | jobtitle | Cargo |
 | User | employeeid | ID do funcionário |
 | User | facsimiletelephonenumber | Número de telefone de fax |
-| aplicativo, recurso, público-alvo | displayName | Nome de exibição |
+| aplicativo, recurso, público-alvo | displayName | Nome para exibição |
 | aplicativo, recurso, público-alvo | objected | ObjectID |
-| aplicativo, recurso, público-alvo | marcas | Marcação da entidade de serviço |
+| aplicativo, recurso, público-alvo | marcações | Marcação da entidade de serviço |
 | Empresa | tenantcountry | País/Região do locatário |
 
 **TransformationID:** o elemento TransformationID deverá ser fornecido apenas se o elemento Source estiver definido como "transformation".
@@ -360,7 +360,7 @@ Com base no método escolhido, um conjunto de entradas e saídas é esperado. De
 
 #### <a name="table-4-transformation-methods-and-expected-inputs-and-outputs"></a>Tabela 4: métodos de transformação e entradas e saídas esperadas
 
-|TransformationMethod|Entrada esperada|Saída esperada|DESCRIÇÃO|
+|TransformationMethod|Entrada esperada|Saída esperada|Descrição|
 |-----|-----|-----|-----|
 |Ingressar|cadeia1, cadeia2, separador|outputClaim|Une cadeias de entrada usando um separador entre elas. Por exemplo: cadeia1: "foo@bar.com", cadeia2: "sandbox", separador: "." resulta no outputClaim: "foo@bar.com.sandbox"|
 |ExtractMailPrefix|mail|outputClaim|Extrai a parte local do endereço de email. Por exemplo: email: "foo@bar.com" resulta no outputClaim: "foo". Se não houver nenhum sinal \@ presente, a cadeia de caracteres de entrada original será retornada sem alterações.|
@@ -386,7 +386,7 @@ Com base no método escolhido, um conjunto de entradas e saídas é esperado. De
 
 #### <a name="table-5-attributes-allowed-as-a-data-source-for-saml-nameid"></a>Tabela 5: atributos permitidos como fonte de dados para NameID SAML
 
-|Origem|ID|DESCRIÇÃO|
+|Origem|ID|Descrição|
 |-----|-----|-----|
 | User | mail|Endereço de Email|
 | User | userprincipalname|Nome UPN|

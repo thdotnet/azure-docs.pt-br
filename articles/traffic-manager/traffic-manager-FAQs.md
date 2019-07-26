@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/26/2019
 ms.author: allensu
-ms.openlocfilehash: c2bff5749ab833efcb252d3fafb5d38cfbc8691e
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 37f1a0d9c70afc0a3a86ac76b682ee7b2adb253d
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68310274"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68335800"
 ---
 # <a name="traffic-manager-frequently-asked-questions-faq"></a>Perguntas frequentes sobre o Gerenciador de Tráfego
 
@@ -385,10 +385,10 @@ Para perfis com qualquer método de roteamento que não seja de Múltiplos Valor
 |Solicitação de consulta de entrada|    Tipo de ponto de extremidade|  Resposta fornecida|
 |--|--|--|
 |QUALQUER |  A / AAAA / CNAME |  Ponto de extremidade de destino| 
-|O |    A / CNAME | Ponto de extremidade de destino|
-|O |    AAAA |  NODATA |
+|A |    A / CNAME | Ponto de extremidade de destino|
+|A |    AAAA |  NODATA |
 |AAAA | AAAA / CNAME |  Ponto de extremidade de destino|
-|AAAA | O | NODATA |
+|AAAA | A | NODATA |
 |CNAME |    CNAME | Ponto de extremidade de destino|
 |CNAME  |A / AAAA | NODATA |
 |
@@ -398,7 +398,7 @@ Para perfis com o método de roteamento definido como de Múltiplos Valores:
 |Solicitação de consulta de entrada|    Tipo de ponto de extremidade | Resposta fornecida|
 |--|--|--|
 |QUALQUER |  Combinação de A e AAAA | Pontos de extremidade de destino|
-|O |    Combinação de A e AAAA | Somente pontos de extremidade de destino do tipo A|
+|A |    Combinação de A e AAAA | Somente pontos de extremidade de destino do tipo A|
 |AAAA   |Combinação de A e AAAA|     Somente pontos de extremidade de destino do tipo AAAA|
 |CNAME |    Combinação de A e AAAA | NODATA |
 
@@ -438,7 +438,7 @@ As configurações de monitoramento do Gerenciador de Tráfego estão em um nív
 O Gerenciador de Tráfego permite especificar cabeçalhos personalizados nas verificações de integridade de HTTP(S) que ele inicia nos pontos de extremidade. Se você quiser especificar um cabeçalho personalizado, poderá fazer isso no nível do perfil (aplicável a todos os pontos de extremidade) ou especificá-lo no nível do ponto de extremidade. Se um cabeçalho for definido em ambos os níveis, o especificado no nível do ponto de extremidade substituirá o nível de perfil um.
 Um caso de uso comum para isso é especificar cabeçalhos de host para que as solicitações do Gerenciador de Tráfego sejam roteadas corretamente para um ponto de extremidade hospedado em um ambiente de vários locatários. Outro caso de uso disso é identificar as solicitações do Gerenciador de Tráfego dos logs de solicitações HTTP(S) de um ponto de extremidade
 
-## <a name="what-host-header-do-endpoint-health-checks-use"></a>Qual cabeçalho host as verificações de integridade do ponto de extremidade usam?
+### <a name="what-host-header-do-endpoint-health-checks-use"></a>Qual cabeçalho host as verificações de integridade do ponto de extremidade usam?
 
 Se nenhuma configuração de cabeçalho de host personalizado for fornecida, o cabeçalho de host usado pelo Gerenciador de Tráfego será o nome DNS do destino do ponto de extremidade configurado no perfil, se disponível.
 

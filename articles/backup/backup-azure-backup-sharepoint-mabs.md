@@ -1,19 +1,18 @@
 ---
 title: Usar o servidor de Backup do Azure para fazer backup de um farm do SharePoint no Azure
 description: Use o Servidor de Backup do Azure para fazer backup e restaurar seus dados do SharePoint. Este artigo fornece informações para configurar seu farm do SharePoint para que os dados desejados possam ser armazenados no Azure. Você pode restaurar dados protegidos do SharePoint do disco ou do Azure.
-services: backup
 author: kasinh
 manager: vvithal
 ms.service: backup
 ms.topic: conceptual
 ms.date: 6/8/2018
 ms.author: kasinh
-ms.openlocfilehash: 7c0a39ab09a52d61e51d297c5018eac6b00d7ad4
-ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
+ms.openlocfilehash: cc7a5f6703d8d6fcec800071e75b7ca42c8f1cef
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67625161"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466695"
 ---
 # <a name="back-up-a-sharepoint-farm-to-azure"></a>Fazer backup do farm do SharePoint para o Azure
 Faça backup de um farm do SharePoint para o Microsoft Azure usando o MABS (Servidor de Backup do Microsoft Azure) da mesma maneira que você faz backup de outras fontes de dados. O Backup do Azure fornece flexibilidade no agendamento de backup para criar pontos de backup diariamente, semanalmente, mensalmente ou anualmente e fornece opções de política de retenção para diversos pontos de backup. Ele também fornece a capacidade de armazenar cópias de disco locais para obter RTOs (Objetivos de Tempo de Recuperação) rápidos e armazenar cópias no Azure para uma retenção econômica e de longo prazo.
@@ -21,11 +20,11 @@ Faça backup de um farm do SharePoint para o Microsoft Azure usando o MABS (Serv
 ## <a name="sharepoint-supported-versions-and-related-protection-scenarios"></a>Versões do SharePoint com suporte e cenários de proteção relacionados
 O Backup do Azure para DPM dá suporte aos seguintes cenários:
 
-| Carga de trabalho | Versão | Implantação do SharePoint | Proteção e recuperação |
+| Carga de Trabalho | Versão | Implantação do SharePoint | Proteção e recuperação |
 | --- | --- | --- | --- |
-| SharePoint |SharePoint 2016, SharePoint 2013, SharePoint 2010, SharePoint 2007, SharePoint 3.0 |SharePoint implantado como um servidor físico ou em uma máquina virtual Hyper-V/VMware <br> -------------- <br> AlwaysOn do SQL | Proteger opções de recuperação do SharePoint Farm: Farm de recuperação, banco de dados e arquivo ou item de lista de pontos de recuperação de disco.  Recuperação do farm e do banco de dados dos pontos de recuperação do Azure. |
+| SharePoint |SharePoint 2016, SharePoint 2013, SharePoint 2010, SharePoint 2007, SharePoint 3.0 |SharePoint implantado como um servidor físico ou em uma máquina virtual Hyper-V/VMware <br> -------------- <br> SQL AlwaysOn | Proteger opções de recuperação do SharePoint Farm: Farm de recuperação, banco de dados e arquivo ou item de lista de pontos de recuperação de disco.  Recuperação do farm e do banco de dados dos pontos de recuperação do Azure. |
 
-## <a name="before-you-start"></a>Antes de começar
+## <a name="before-you-start"></a>Antes de iniciar
 Há alguns elementos que você precisa confirmar antes de fazer o backup de um farm do SharePoint para o Azure.
 
 ### <a name="prerequisites"></a>Pré-requisitos

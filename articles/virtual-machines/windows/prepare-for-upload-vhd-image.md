@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 05/11/2019
 ms.author: genli
-ms.openlocfilehash: a0cd2952633293bfa1d29bf3a399c67bf092d288
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
-ms.translationtype: HT
+ms.openlocfilehash: ad30bd4f77c5f4314956e39f26a30b72d72a208a
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68318313"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68361166"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Preparar um VHD ou VHDX do Windows para carregar no Azure
 
@@ -33,7 +33,7 @@ Para obter informações sobre a política de suporte para VMs do Azure, consult
 > [!NOTE]
 > As instruções neste artigo se aplicam a:
 >1. A versão de 64 bits do Windows Server 2008 R2 e sistemas operacionais Windows Server posteriores. Para obter informações sobre como executar um sistema operacional de 32 bits no Azure, consulte [suporte para sistemas operacionais de 32 bits em VMs do Azure](https://support.microsoft.com/help/4021388/support-for-32-bit-operating-systems-in-azure-virtual-machines).
->2. Se qualquer ferramenta de recuperação de desastres for usada para migrar a carga de trabalho como Azure Site Recovery ou migrações para Azure, esse processo ainda precisará ser feito e seguido no SO convidado para preparar a imagem antes da migração.
+>2. Se qualquer ferramenta de recuperação de desastre for usada para migrar a carga de trabalho, como Azure Site Recovery ou migrações para Azure, esse processo ainda precisará ser feito e seguido no SO convidado para preparar a imagem antes da migração.
 
 ## <a name="convert-the-virtual-disk-to-a-fixed-size-and-to-vhd"></a>Converter o disco virtual em um tamanho fixo e VHD
 
@@ -214,7 +214,7 @@ Verifique se as seguintes configurações estão definidas corretamente para ace
 
 9. Se a VM for parte de um domínio, verifique as políticas a seguir para certificar-se de que as configurações anteriores não sejam revertidas. 
     
-    | Objetivo                                     | Política                                                                                                                                                       | Valor                                                                                    |
+    | Meta                                     | Política                                                                                                                                                       | Valor                                                                                    |
     |------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
     | RDP está habilitado                           | Configuração do Computador\Diretivas\Configurações do Windows\Modelos Administrativos\Componentes\Serviços de Área de Trabalho Remota\Host de Sessão da Área de Trabalho Remota\Conexões         | Permitir que os usuários se conectem remotamente usando a Área de Trabalho Remota                                  |
     | Diretiva de grupo do NLA                         | Configurações\Modelos Administrativos\Componentes\Serviços de Área de Trabalho Remota\Host de Sessão da Área de Trabalho Remota\Segurança                                                    | Exigir autenticação de usuário para acesso remoto usando NLA |
@@ -248,7 +248,7 @@ Verifique se as seguintes configurações estão definidas corretamente para ace
    ``` 
 5. Se a VM for parte de um domínio, verifique as seguintes políticas do Azure AD para certificar-se de que as configurações anteriores não são revertidas. 
 
-    | Objetivo                                 | Política                                                                                                                                                  | Valor                                   |
+    | Meta                                 | Política                                                                                                                                                  | Valor                                   |
     |--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------|
     | Habilitar os perfis do Firewall do Windows | Configuração do Computador\Políticas\Configurações do Windows\Modelos Administrativos\Rede\Conexão de Rede\Firewall do Windows\Perfil de Domínio\Firewall do Windows   | Proteger todas as conexões de rede         |
     | Habilitar o RDP                           | Configuração do Computador\Políticas\Configurações do Windows\Modelos Administrativos\Rede\Conexão de Rede\Firewall do Windows\Perfil de Domínio\Firewall do Windows   | Permitir exceções de área de trabalho remota de entrada |

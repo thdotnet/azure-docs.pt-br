@@ -12,12 +12,12 @@ ms.topic: reference
 ms.date: 05/28/2019
 ms.author: cshoe
 ms.reviewer: jehollan
-ms.openlocfilehash: 1ebb2fd77830074648a580dddad98e05e10c9c75
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: 1dbbb6e7bd88e08520225515c422529dc260e1b2
+ms.sourcegitcommit: b49431b29a53efaa5b82f9be0f8a714f668c38ab
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67850032"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68377377"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Usar injeção de dependência no .NET do Azure Functions
 
@@ -94,7 +94,7 @@ namespace MyNamespace
         public HttpTrigger(IMyService service, IHttpClientFactory httpClientFactory)
         {
             _service = service;
-            _client = httpClientFactory.CreateClient();;
+            _client = httpClientFactory.CreateClient();
         }
 
         [FunctionName("GetPosts")]
@@ -135,7 +135,7 @@ Se você precisar de seu próprio provedor de log, a maneira recomendada é regi
 
 O host de função registra vários serviços. Os seguintes serviços são seguros para serem adotados como uma dependência em seu aplicativo:
 
-|Tipo de serviço|Tempo de vida|DESCRIÇÃO|
+|Tipo de Serviço|Tempo de vida|Descrição|
 |--|--|--|
 |`Microsoft.Extensions.Configuration.IConfiguration`|Único|Configuração de tempo de execução|
 |`Microsoft.Azure.WebJobs.Host.Executors.IHostIdProvider`|Único|Responsável por fornecer a ID da instância do host|

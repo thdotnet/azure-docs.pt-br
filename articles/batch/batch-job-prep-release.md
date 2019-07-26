@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 02/27/2017
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: 75ff3bdf7a0900c32feb7090e0c24af748080a76
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: a85ced787529db7e6d607665d81632ab1c450dfe
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68323479"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466966"
 ---
 # <a name="run-job-preparation-and-job-release-tasks-on-batch-compute-nodes"></a>Executar tarefas de preparação e liberação do trabalho em nós de computação do Lote
 
@@ -68,11 +68,13 @@ A tarefa de preparação de trabalho é executada apenas em nós programados par
 > 
 > 
 
-## <a name="job-release-task"></a>tarefa de liberação de trabalho
+## <a name="job-release-task"></a>Tarefa de liberação do trabalho
 Quando um trabalho é marcado como concluído, a tarefa de liberação do trabalho é executada em cada nó no pool que executou pelo menos uma tarefa. Marcar uma tarefa como concluída emitindo uma solicitação de encerramento. Em seguida, o serviço do Lote define o estado do trabalho como *encerrando*, encerra quaisquer tarefas em execução ou ativas associadas ao trabalho e executa a tarefa de liberação do trabalho. Em seguida, o trabalho é movido para o estado *concluído* .
 
 > [!NOTE]
 > A exclusão do trabalho também executa a tarefa de liberação do trabalho. No entanto, se um trabalho já tiver sido encerrado, a tarefa de liberação não será executada uma segunda vez se o trabalho for excluído posteriormente.
+
+Tarefas de liberação de trabalhos podem ser executadas por um máximo de 15 minutos antes de serem encerradas pelo serviço de lote. Para obter mais informações, consulte a [documentação de referência da API REST](https://docs.microsoft.com/rest/api/batchservice/job/add#jobreleasetask).
 > 
 > 
 
@@ -185,7 +187,7 @@ A captura de tela abaixo mostra a **Folha de tarefas de preparação** no portal
 ![Propriedades de preparação de trabalho no portal do Azure][1]
 
 ## <a name="next-steps"></a>Próximas etapas
-### <a name="application-packages"></a>pacotes de aplicativos
+### <a name="application-packages"></a>Pacotes de aplicativos
 Além da tarefa de preparação de trabalho, você também pode usar o recurso de [pacotes de aplicativos](batch-application-packages.md) do Lote para preparar nós de computação para execução da tarefa. Esse recurso é especialmente útil para implantação de aplicativos que não exigem a execução de um instalados, aplicativos que contêm muitos arquivos (mais de 100) ou aplicativos que exigem um controle de versão estrito.
 
 ### <a name="installing-applications-and-staging-data"></a>Instalação de aplicativos e preparação de dados

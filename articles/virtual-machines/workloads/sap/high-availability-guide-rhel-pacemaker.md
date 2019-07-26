@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/17/2018
 ms.author: sedusch
-ms.openlocfilehash: dc703f02ecf5dbaf5eb69e8e20918415e76ba469
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: cd56df8e88a84f52933e5ee43fecd598252ba6c0
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68228371"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68479766"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Configurando o Pacemaker no Red Hat Enterprise Linux no Azure
 
@@ -209,7 +209,7 @@ O dispositivo STONITH usa uma Entidade de Serviço para autorização no Microso
 
 ### <a name="1-create-a-custom-role-for-the-fence-agent"></a>**[1]**  Criar uma função personalizada para o agente de isolamento
 
-A Entidade de Serviço não tem permissões para acessar os recursos do Azure por padrão. Você precisa fornecer as permissões da Entidade de Serviço para iniciar e parar (desalocar) todas as máquinas virtuais do cluster. Se você ainda não tiver criado a função personalizada, você pode criá-la usando o [PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell) ou [CLI do Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli)
+A Entidade de Serviço não tem permissões para acessar os recursos do Azure por padrão. Você precisa conceder permissões de entidade de serviço para iniciar e parar (desligar) todas as máquinas virtuais do cluster. Se você ainda não tiver criado a função personalizada, você pode criá-la usando o [PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell) ou [CLI do Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli)
 
 Use o seguinte conteúdo para o arquivo de entrada. Você precisa adaptar o conteúdo às suas assinaturas, ou seja, substitua c276fc76-9cd4-44c9-99a7-4fd71546436e e e91d47c4-76f3-4271-a796-21b4ecfe3624 pelas IDs da sua assinatura. Se você tiver apenas uma assinatura, remova a segunda entrada em AssignableScopes.
 
@@ -218,10 +218,10 @@ Use o seguinte conteúdo para o arquivo de entrada. Você precisa adaptar o cont
   "Name": "Linux Fence Agent Role",
   "Id": null,
   "IsCustom": true,
-  "Description": "Allows to deallocate and start virtual machines",
+  "Description": "Allows to power-off and start virtual machines",
   "Actions": [
     "Microsoft.Compute/*/read",
-    "Microsoft.Compute/virtualMachines/deallocate/action",
+    "Microsoft.Compute/virtualMachines/powerOff/action",
     "Microsoft.Compute/virtualMachines/start/action"
   ],
   "NotActions": [

@@ -12,12 +12,12 @@ manager: cgronlun
 ms.reviewer: jmartens
 ms.date: 07/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0fa60198af66154e0ddc703f90224adf5be89447
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: bd60d9f9bee55ef1342fe344e8b4f2f64e313331
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876420"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68360980"
 ---
 # <a name="load-and-read-data-with-the-azure-machine-learning-data-prep-sdk"></a>Carregar e ler dados com o SDK de preparação de dados Azure Machine Learning
 Neste artigo, você aprende diferentes métodos de carregamento de dados usando o SDK do Azure Machine Learning data Prep.  O SDK suporta vários recursos de ingestão de dados, incluindo:
@@ -101,7 +101,7 @@ Para excluir linhas durante o carregamento, defina o parâmetro `skip_rows`. Est
 
 ```python
 dflow = dprep.read_csv(path='https://dpreptestfiles.blob.core.windows.net/testfiles/read_csv_duplicate_headers.csv',
-                          skip_rows=1)
+                       skip_rows=1)
 dflow.head(5)
 ```
 
@@ -162,16 +162,17 @@ dflow.head(5)
 |0|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum| |
 |1|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum| |
 |2|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum| |
-|3|RANK|Título|Estúdio|Worldwide|Domestic / %|Coluna1|Overseas / %|Coluna2|Year^| |
+|3|Classificar|Título|Estúdio|Worldwide|Domestic / %|Coluna1|Overseas / %|Coluna2|Year^| |
 |4|1|Avatar|Fox|2788|760.5|0.273|2027.5|0.727|2009^|5|
 
 A saída mostra que os dados na segunda folha tinham três linhas vazias antes dos cabeçalhos. A função `read_excel()` contém parâmetros opcionais para pular linhas e usar cabeçalhos. Execute o seguinte código para pular as três primeiras linhas e use a quarta linha como os cabeçalhos.
 
 ```python
-dflow = dprep.read_excel(path='./data/excel.xlsx', sheet_name='Sheet2', use_column_headers=True, skip_rows=3)
+dflow = dprep.read_excel(path='./data/excel.xlsx',
+                         sheet_name='Sheet2', use_column_headers=True, skip_rows=3)
 ```
 
-||RANK|Título|Estúdio|Worldwide|Domestic / %|Coluna1|Overseas / %|Coluna2|Year^|
+||Classificar|Título|Estúdio|Worldwide|Domestic / %|Coluna1|Overseas / %|Coluna2|Year^|
 |------|------|------|-----|------|-----|-------|----|-----|-----|
 |0|1|Avatar|Fox|2788|760.5|0.273|2027.5|0.727|2009^|
 |1|2|Titanic|Par.|2186,8|658. 7|0,301|1528,1|0. 699|1997^|
@@ -181,7 +182,8 @@ dflow = dprep.read_excel(path='./data/excel.xlsx', sheet_name='Sheet2', use_colu
 Para carregar arquivos de largura fixa, você especifica uma lista de deslocamentos de caracteres. A primeira coluna é sempre assumida para iniciar no deslocamento zero.
 
 ```python
-dflow = dprep.read_fwf('./data/fixed_width_file.txt', offsets=[7, 13, 43, 46, 52, 58, 65, 73])
+dflow = dprep.read_fwf('./data/fixed_width_file.txt',
+                       offsets=[7, 13, 43, 46, 52, 58, 65, 73])
 dflow.head(5)
 ```
 
@@ -195,8 +197,8 @@ Para evitar a detecção de cabeçalho e analisar os dados corretos, passe `Prom
 
 ```python
 dflow = dprep.read_fwf('./data/fixed_width_file.txt',
-                          offsets=[7, 13, 43, 46, 52, 58, 65, 73],
-                          header=dprep.PromoteHeadersMode.NONE)
+                       offsets=[7, 13, 43, 46, 52, 58, 65, 73],
+                       header=dprep.PromoteHeadersMode.NONE)
 ```
 
 ||Coluna1|Coluna2|Coluna3|Coluna4|Coluna5|Coluna6|Coluna7|Coluna8|Coluna9|
@@ -300,9 +302,12 @@ Use o `adal` pacote (`pip install adal`) para criar um contexto de autenticaçã
 import adal
 from azureml.dataprep.api.datasources import DataLakeDataSource
 
-ctx = adal.AuthenticationContext('https://login.microsoftonline.com/microsoft.onmicrosoft.com')
-token = ctx.acquire_token_with_client_certificate('https://datalake.azure.net/', servicePrincipalAppId, certificate, certThumbprint)
-dflow = dprep.read_csv(path = DataLakeDataSource(path='adl://dpreptestfiles.azuredatalakestore.net/farmers-markets.csv', accessToken=token['accessToken']))
+ctx = adal.AuthenticationContext(
+    'https://login.microsoftonline.com/microsoft.onmicrosoft.com')
+token = ctx.acquire_token_with_client_certificate(
+    'https://datalake.azure.net/', servicePrincipalAppId, certificate, certThumbprint)
+dflow = dprep.read_csv(path=DataLakeDataSource(
+    path='adl://dpreptestfiles.azuredatalakestore.net/farmers-markets.csv', accessToken=token['accessToken']))
 dflow.to_pandas_dataframe().head()
 ```
 

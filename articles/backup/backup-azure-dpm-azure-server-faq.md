@@ -1,22 +1,21 @@
 ---
-title: Azure Backup Server e do DPM-perguntas Frequentes
-description: 'Respostas a perguntas comuns sobre: O servidor de Backup do Azure e o DPM.'
-services: backup
+title: Perguntas frequentes sobre o Servidor de Backup do Azure e o DPM
+description: 'Respostas a perguntas comuns sobre: O Servidor de Backup do Azure e o DPM.'
 author: srinathvasireddy
 manager: sivan
 ms.service: backup
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: srinathv
-ms.openlocfilehash: 7a598038ee435b67b9ad8f06bdec2490bc1c53c3
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 54727daa158172ae44379b847c70602ca998c65d
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705100"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466406"
 ---
-# <a name="azure-backup-server-and-dpm---faq"></a>Servidor de Backup do Azure e o DPM - perguntas Frequentes
-Este artigo responde perguntas frequentes sobre o servidor de Backup do Azure e o DPM.
+# <a name="azure-backup-server-and-dpm---faq"></a>Servidor de Backup do Azure e o DPM-perguntas frequentes
+Este artigo responde a perguntas frequentes sobre o Servidor de Backup do Azure e o DPM.
 
 ### <a name="can-i-use-azure-backup-server-to-create-a-bare-metal-recovery-bmr-backup-for-a-physical-server-br"></a>Posso usar o servidor de Backup do Azure para criar um backup BMR (Recuperação Bare-Metal) para um servidor físico? <br/>
 Sim.
@@ -42,7 +41,7 @@ Sim. Você pode usar o Servidor de Backup do Azure para fazer backup dos hosts V
 - [Saiba mais](backup-mabs-protection-matrix.md) sobre as versões compatíveis.
 - [Siga estas etapas](backup-azure-backup-server-vmware.md) para fazer backup de um servidor VMware.
 
-### <a name="do-i-need-a-separate-license-to-recover-a-full-on-premises-vmwarehyper-v-cluster"></a>É necessário uma licença separada para recuperar um cluster do VMware/Hyper-V de local completo?
+### <a name="do-i-need-a-separate-license-to-recover-a-full-on-premises-vmwarehyper-v-cluster"></a>Preciso de uma licença separada para recuperar um cluster VMware/Hyper-V local completo?
 Você não precisa separar licenciamento para a proteção de VMware/Hyper-V.
 
 - Se você for um cliente do System Center, use o System Center Data Protection Manager (DPM) para proteger as VMs do VMware.
@@ -61,5 +60,5 @@ Como os bancos de dados do SharePoint são configurados no SQL AlwaysOn, eles n�
 
 Leia as outras perguntas frequentes:
 
-- [Saiba mais](backup-support-matrix-mabs-dpm.md) matriz de suporte sobre o servidor de Backup do Azure e o DPM.
-- [Saiba mais](backup-azure-mabs-troubleshoot.md) sobre o servidor de Backup do Azure e o DPM solução de problemas de diretrizes.
+- [Saiba mais](backup-support-matrix-mabs-dpm.md) sobre a matriz de suporte do servidor de backup do Azure e do DPM.
+- [Saiba mais](backup-azure-mabs-troubleshoot.md) sobre as diretrizes de solução de problemas do servidor de backup do Azure e do DPM.

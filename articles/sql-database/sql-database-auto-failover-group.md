@@ -12,12 +12,12 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 07/18/2019
-ms.openlocfilehash: 174147aca75452dfaee02d20df5377fa1f6070c1
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: bd68909f51ff6cead8484ae4ab9f2557e9d6554e
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68325089"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68443313"
 ---
 # <a name="use-auto-failover-groups-to-enable-transparent-and-coordinated-failover-of-multiple-databases"></a>Use grupos de failover automático para habilitar o failover transparente e coordenado de vários bancos de dados
 
@@ -31,7 +31,7 @@ Ao usar grupos de failover automático com uma política de failover automático
 Ao usar grupos de failover automático com uma política de failover automático, qualquer interrupção que afete bancos de dados no servidor do Banco de Dados SQL ou na instância gerenciada resulta em um failover automático. Você pode gerenciar o grupo de failover automático usando:
 
 - O [Portal do Azure](sql-database-implement-geo-distributed-database.md)
-- [PowerShell: Grupo de failover](scripts/sql-database-setup-geodr-failover-database-failover-group-powershell.md)
+- [PowerShell: Grupo de failover](scripts/sql-database-add-single-db-to-failover-group-powershell.md)
 - [API REST: Grupo de failover](https://docs.microsoft.com/rest/api/sql/failovergroups).
 
 Após o failover, verifique se os requisitos de autenticação para o servidor e o banco de dados estão configurados no novo primário. Para obter detalhes, consulte [Segurança do Banco de Dados SQL do Azure após a recuperação de desastre](sql-database-geo-replication-security-config.md).
@@ -299,7 +299,7 @@ Conforme discutido anteriormente, os grupos de failover automático e a replica�
 
 ### <a name="powershell-manage-sql-database-failover-with-single-databases-and-elastic-pools"></a>PowerShell: Gerenciar failover do Banco de Dados SQL com pools elásticos e bancos de dados individuais
 
-| Cmdlet | DESCRIÇÃO |
+| Cmdlet | Descrição |
 | --- | --- |
 | [New-AzSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabasefailovergroup) |Esse comando cria um grupo de failover e registra-o nos servidores primário e secundário|
 | [Remove-AzSqlDatabaseFailoverGroup](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqldatabasefailovergroup) | Remove o grupo de failover do servidor e exclui todos os bancos de dados secundários incluídos no grupo |
@@ -310,7 +310,7 @@ Conforme discutido anteriormente, os grupos de failover automático e a replica�
 |  | |
 
 > [!IMPORTANT]
-> Para um script de exemplo, confira [Configurar e realizar o failover de um grupo de failover para um banco de dados individual](scripts/sql-database-setup-geodr-failover-database-failover-group-powershell.md).
+> Para um script de exemplo, confira [Configurar e realizar o failover de um grupo de failover para um banco de dados individual](scripts/sql-database-add-single-db-to-failover-group-powershell.md).
 >
 
 ### <a name="powershell-managing-failover-groups-with-managed-instances-preview"></a>PowerShell: Gerenciar grupos de failover com instâncias gerenciadas (versão prévia)
@@ -334,7 +334,7 @@ Conforme discutido anteriormente, os grupos de failover automático e a replica�
 
 #### <a name="powershell-commandlets-to-create-an-instance-failover-group"></a>Commandlets do PowerShell para criar um grupo de failover de instância
 
-| API | DESCRIÇÃO |
+| API | Descrição |
 | --- | --- |
 | New-AzureRmSqlDatabaseInstanceFailoverGroup |Esse comando cria um grupo de failover e registra-o nos servidores primário e secundário|
 | Set-AzureRmSqlDatabaseInstanceFailoverGroup |Modifica a configuração do grupo de failover|
@@ -344,7 +344,7 @@ Conforme discutido anteriormente, os grupos de failover automático e a replica�
 
 ### <a name="rest-api-manage-sql-database-failover-groups-with-single-and-pooled-databases"></a>API REST: Gerenciar grupos de failover de Banco de Dados SQL com bancos de dados individuais e em pool
 
-| API | DESCRIÇÃO |
+| API | Descrição |
 | --- | --- |
 | [Criar ou atualizar grupo de failover](https://docs.microsoft.com/rest/api/sql/failovergroups/createorupdate) | Criar ou atualizar grupo de failover |
 | [Excluir grupo de failover](https://docs.microsoft.com/rest/api/sql/failovergroups/delete) | Remove o grupo de failover do servidor |
@@ -357,7 +357,7 @@ Conforme discutido anteriormente, os grupos de failover automático e a replica�
 
 ### <a name="rest-api-manage-failover-groups-with-managed-instances-preview"></a>API REST: Gerenciar grupos de failover com instâncias gerenciadas (versão prévia)
 
-| API | DESCRIÇÃO |
+| API | Descrição |
 | --- | --- |
 | [Criar ou atualizar grupo de failover](https://docs.microsoft.com/rest/api/sql/instancefailovergroups/createorupdate) | Criar ou atualizar grupo de failover |
 | [Excluir grupo de failover](https://docs.microsoft.com/rest/api/sql/instancefailovergroups/delete) | Remove o grupo de failover do servidor |
@@ -371,7 +371,7 @@ Conforme discutido anteriormente, os grupos de failover automático e a replica�
 - Para exemplos de scripts, consulte:
   - [Configurar e fazer failover de um banco de dados individual usando replicação geográfica ativa](scripts/sql-database-setup-geodr-and-failover-database-powershell.md)
   - [Configurar e fazer failover de um banco de dados em pool usando replicação geográfica ativa](scripts/sql-database-setup-geodr-and-failover-pool-powershell.md)
-  - [Configurar e fazer failover de um grupo de failover para um banco de dados individual](scripts/sql-database-setup-geodr-failover-database-failover-group-powershell.md)
+  - [Configurar e fazer failover de um grupo de failover para um banco de dados individual](scripts/sql-database-add-single-db-to-failover-group-powershell.md)
 - Para obter uma visão geral e os cenários de continuidade dos negócios, confira [Visão geral da continuidade dos negócios](sql-database-business-continuity.md)
 - Para saber mais sobre backups automatizados do Banco de Dados SQL do Azure, confira [Backups automatizados do Banco de Dados SQL](sql-database-automated-backups.md).
 - Para saber mais sobre como usar backups automatizados de recuperação, confira [Restaurar um banco de dados de backups iniciados pelo serviço](sql-database-recovery-using-backups.md).
