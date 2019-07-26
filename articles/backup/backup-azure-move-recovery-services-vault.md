@@ -1,19 +1,18 @@
 ---
 title: Mover um cofre dos Serviços de Recuperação entre assinaturas do Azure ou para outro grupo de recursos
 description: Instruções para mover o cofre dos serviços de recuperação entre grupos de recursos e assinaturas do Azure.
-services: backup
 author: sogup
 manager: vijayts
 ms.service: backup
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: sogup
-ms.openlocfilehash: 57263dfd1e226f2ff4321b2d097d30106fae87fa
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: 0e351a842a303430e66a52a87305cba23f774ef2
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68304919"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68465811"
 ---
 # <a name="move-a-recovery-services-vault-across-azure-subscriptions-and-resource-groups"></a>Mover um cofre dos serviços de recuperação entre assinaturas e grupos de recursos do Azure
 
@@ -99,7 +98,7 @@ Você pode mover um cofre dos Serviços de Recuperação e seus recursos associa
 5. Selecione a assinatura de destino na lista suspensa **Assinaturas** para a qual você deseja que o cofre seja movido.
 6. Para adicionar o grupo de recursos de destino, na lista suspensa **Grupo de recursos**, selecione um grupo de recursos existente ou clique na opção **criar um novo grupo**.
 
-   ![Adicionar assinatura](./media/backup-azure-move-recovery-services/add-subscription.png)
+   ![Adicionar Assinatura](./media/backup-azure-move-recovery-services/add-subscription.png)
 
 7. Clique na opção **Eu entendo que ferramentas e scripts associados aos recursos movidos não funcionarão até que eu os atualize para usar as novas IDs de recurso** para confirmar e, em seguida, clique em **OK**.
 

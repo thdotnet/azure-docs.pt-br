@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 06/07/2019
-ms.openlocfilehash: 72be96e89cd46267d0c0795bd5121de76e48cf6f
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: a9de7c75ef2bd29b2e401ba387ca16a5dfda34fb
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67484090"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68442041"
 ---
 # <a name="what-are-the-apache-hadoop-components-and-versions-available-with-hdinsight"></a>Quais são os componentes e versões do Apache Hadoop disponíveis com o HDInsight?
 
@@ -47,7 +47,7 @@ As versões do componente associadas às versões do cluster HDInsight são list
 | O Apache Mahout | - | 0.9.0+ | 0.9.0+ | 0.9.0+ | 0.9.0+ | 0.9.0 |
 | Apache Phoenix | 5 | 4.7.0 | 4.7.0 | 4.4.0 | 4.4.0 | 4.2.0 |
 | Apache Spark | 2.3.1, 2.4 | 2.3.0, 2.2.0, 2.1.0 | 1.6.2, 2.0 | 1.6.0 | 1.5.2 | 1.3.1 (somente Windows) |
-| Apache Livy | 0,5 | 0.4, 0.4, 0.3 | 0.3 | 0.3 | 0,2 | - |
+| Apache Livy | 0,5 | 0,4, 0,4, 0,3 | 0.3 | 0.3 | 0,2 | - |
 | Apache Kafka | 1.1.1, 2.1 | 1.1, 1.0 * (Veja a Observação abaixo) | 0.10.0 | 0.9.0 | - | - |
 | Apache Ambari | 2.7.0 | 2.6.0 | 2.4.0 | 2.2.1 | 2.1.0 | - |
 | Apache Zeppelin | 0.8.0 | 0.7.0 | - | - | - | - |
@@ -58,7 +58,7 @@ As versões do componente associadas às versões do cluster HDInsight são list
 
 ## <a name="check-for-current-hadoop-component-version-information"></a>Verificar informações atuais de versão do componente do Hadoop
 
-As versões de componente do ecossistema Hadoop associadas às versões do cluster HDInsight podem ser alteradas com atualizações ao HDInsight. Para verificar os componentes do Hadoop e verificar quais versões estão sendo usadas para um cluster é usar a API REST do Ambari. O comando **GetComponentInformation** recupera informações sobre componentes de serviço. Para obter detalhes, consulte o [documentação do Apache Ambari](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).
+As versões de componente do ecossistema Hadoop associadas às versões do cluster HDInsight podem ser alteradas com atualizações ao HDInsight. Para verificar os componentes do Hadoop e verificar quais versões estão sendo usadas para um cluster é usar a API REST do Ambari. O comando **GetComponentInformation** recupera informações sobre componentes de serviço. Para obter detalhes, consulte a [documentação do Apache Ambari](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).
 
 ### <a name="release-notes"></a>Notas de versão
 
@@ -111,7 +111,7 @@ O Enterprise Security é um pacote opcional que pode ser adicionado ao cluster H
 
     Para obter mais informações, consulte:
 
-    - [Uma introdução à segurança do Apache Hadoop com clusters HDInsight ingressados no domínio](./domain-joined/apache-domain-joined-introduction.md)
+    - [Uma introdução à segurança do Apache Hadoop com clusters HDInsight ingressados no domínio](./domain-joined/hdinsight-security-overview.md)
     - [Planeje clusters do Apache Hadoop associados ao domínio do Azure no HDInsight](./domain-joined/apache-domain-joined-architecture.md)
     - [Configurar ambiente de área restrita ingressado no domínio](./domain-joined/apache-domain-joined-configure.md)
     - [Configurar clusters HDInsight ingressados no domínio usando o Azure Active Directory Domain Services](./domain-joined/apache-domain-joined-configure-using-azure-adds.md)
@@ -139,7 +139,7 @@ Atualmente, apenas os tipos de cluster a seguir oferecem suporte ao Pacote de Se
 
 O Enterprise Security Package oferece suporte ao uso do Azure Data Lake Storage como o armazenamento primário e o armazenamento de complemento.
 
-### <a name="pricing-and-service-level-agreement"></a>Contrato de nível de serviço e preço
+### <a name="pricing-and-service-level-agreement"></a>Preço e contrato de nível de serviço
 
 Para obter informações sobre preços e SLA para o Pacote de Segurança Enterprise, consulte [preços do HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/).
 
@@ -167,13 +167,13 @@ A seção fornece links para notas de versão para as distribuições do Hortonw
 
   * As [notas de versão do Apache Storm](https://storm.apache.org/2015/11/05/storm0100-released.html) estão disponíveis no site do Apache.
   * As [notas de versão do Apache Hive](https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12332384&styleName=Text&projectId=12310843) estão disponíveis no site do Apache.
-* Cluster do HDInsight versão 3.2 usa uma distribuição do Hadoop com base no [Hortonworks Data Platform 2.2][hdp-2-2].
+* O cluster HDInsight versão 3,2 usa uma distribuição do Hadoop baseada em [Hortonworks Data Platform 2,2][hdp-2-2].
 
   * Notas sobre a versão de componentes específicos do Apache estão disponíveis da seguinte maneira: [Hive 0.14](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310843&version=12326450), [Pig 0.14](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310730&version=12326954), [HBase 0.98.4](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310753&version=12326810), [Phoenix 4.2.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12315120&version=12327581), [M/R 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310941&version=12327180), [HDFS 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310942&version=12327181), [YARN 2.6](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12313722&version=12327197), [Common](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310240&version=12327179), [Tez 0.5.2](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12314426&version=12328742), [Ambari 2.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12312020&version=12327486), [Storm 0.9.3](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12314820&version=12327112) e [Oozie 4.1.0](https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12324960&projectId=12311620).
-* Cluster do HDInsight versão 3.1 usa uma distribuição do Hadoop com base no [Hortonworks Data Platform 2.1.7][hdp-2-1-7]. HDInsight 3.1 clusters created before November, 7, 2014, are based on [Hortonworks Data Platform 2.1.1][hdp-2-1-1].
-* Cluster do HDInsight versão 3.0 usa uma distribuição do Hadoop com base no [Hortonworks Data Platform 2.0][hdp-2-0-8].
-* HDInsight cluster versão 2.1 usa uma distribuição do Hadoop com base no [Hortonworks Data Platform 1.3][hdp-1-3-0].
-* Cluster do HDInsight versão 1.6 usa uma distribuição do Hadoop com base no [Hortonworks Data Platform 1.1][hdp-1-1-0].
+* O cluster HDInsight versão 3,1 usa uma distribuição do Hadoop baseada em [Hortonworks Data Platform 2.1.7][hdp-2-1-7]. HDInsight 3.1 clusters created before November, 7, 2014, are based on [Hortonworks Data Platform 2.1.1][hdp-2-1-1].
+* O cluster HDInsight versão 3,0 usa uma distribuição do Hadoop baseada em [Hortonworks Data Platform 2,0][hdp-2-0-8].
+* O cluster HDInsight versão 2,1 usa uma distribuição do Hadoop baseada em [Hortonworks Data Platform 1,3][hdp-1-3-0].
+* O cluster HDInsight versão 1,6 usa uma distribuição do Hadoop baseada em [Hortonworks Data Platform 1,1][hdp-1-1-0].
 
 ## <a name="default-node-configuration-and-virtual-machine-sizes-for-clusters"></a>Tamanhos de máquina virtual e configuração de nó de padrão para clusters
 
@@ -184,7 +184,7 @@ As tabelas abaixo listam os tamanhos de VM (máquina virtual) padrão para clust
 
 * Todas as regiões com suporte, exceto Sul do Brasil e Oeste do Japão:
 
-|Tipo de cluster|O Hadoop|HBase|Consulta Interativa|Storm|Spark|ML Server|Kafka|
+|Tipo de Cluster|Hadoop|HBase|Consulta Interativa|Storm|Spark|ML Server|Kafka|
 |---|---|---|---|---|---|---|---|
 |Cabeçalho: tamanho padrão da VM|D12 v2|D12 v2|D13 v2|A3|D12 v2|D12 v2|D3V2|
 |Cabeçalho: tamanhos de VM recomendados|D3 v2|D3 v2|D13|A4 v2|D12 v2|D12 v2|A2M v2|
@@ -204,7 +204,7 @@ As tabelas abaixo listam os tamanhos de VM (máquina virtual) padrão para clust
 |Zookeeper: tamanhos de VM recomendados||A4 v2||A2 v2|||A2M v2|
 |||A8 v2||A4 v2|||D3 v2|
 |||A2m v2||A8 v2|||E8 v3|
-|Serviços de ML: tamanho da VM padrão||||||D4 v2||
+|Serviços de ML: tamanho de VM padrão||||||D4 v2||
 |Serviços de ML: tamanho de VM recomendado||||||D4 v2||
 |||||||D12 v2||
 |||||||D13 v2||
@@ -216,7 +216,7 @@ As tabelas abaixo listam os tamanhos de VM (máquina virtual) padrão para clust
 
 * Apenas Sul do Brasil e Oeste do Japão (sem tamanhos v2):
 
-  | Tipo de cluster | O Hadoop | HBase | Consulta Interativa |Storm | Spark | ML Services |
+  | Tipo de Cluster | Hadoop | HBase | Consulta Interativa |Storm | Spark | Serviços de ML |
   | --- | --- | --- | --- | --- | --- | --- |
   | Cabeçalho: tamanho padrão da VM |D12 |D12  | D13 |A3 |D12 |D12 |
   | Cabeçalho: tamanhos de VM recomendados |D3,<br/> D4,<br/> D12 |D3,<br/> D4,<br/> D12  | D13,<br/> D14 |A3,<br/> A4,<br/> A5 |D12,<br/> D13,<br/> D14 |D12,<br/> D13,<br/> D14 |
@@ -224,7 +224,7 @@ As tabelas abaixo listam os tamanhos de VM (máquina virtual) padrão para clust
   | Trabalho: tamanhos de VM recomendados |D3,<br/> D4,<br/> D12 |D3,<br/> D4,<br/> D12  | D13,<br/> D14 |D3,<br/> D4,<br/> D12 |D4,<br/> D12,<br/> D13,<br/> D14 | D4,<br/> D12,<br/> D13,<br/> D14 |
   | Zookeeper: tamanho de VM padrão | |A4 v2 | A4 v2| A4 v2 | | A2 v2|
   | Zookeeper: tamanhos de VM recomendados | |A2,<br/> A3,<br/> A4 | |A2,<br/> A3,<br/> A4 | | |
-  | Serviços de ML: tamanhos de VM de padrão | | | | | |D4 |
+  | Serviços de ML: tamanhos de VM padrão | | | | | |D4 |
   | Serviços de ML: tamanhos de VM recomendados | | | | | |D4,<br/> D12,<br/> D13,<br/> D14 |
 
 > [!NOTE]

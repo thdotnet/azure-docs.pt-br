@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: ec2580f0c71c98c7a03f3326cb1b8ff539109ee0
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 6f86a8465bcbd3d88ffb7909cac53c3fd38c3af6
+ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67720019"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68489445"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Perguntas frequentes sobre configuração e gerenciamento de aplicativos Web no Azure
 
@@ -152,12 +152,9 @@ Exception: System.Data.Entity.Core.EntityException: The underlying provider fail
 
 A exceção foi causada por um problema com o Gerenciador de Conexões Híbridas que desde então foi corrigido. Certifique-se de [atualizar o Gerenciador de Conexões Híbridas](https://go.microsoft.com/fwlink/?LinkID=841308) para resolver esse problema.
 
-## <a name="how-do-i-add-or-edit-a-url-rewrite-rule"></a>Como adicionar ou editar uma regra de regravação de URL?
+## <a name="how-do-i-add-a-url-rewrite-rule"></a>Como fazer adicionar uma regra de regravação de URL?
 
-Para adicionar ou editar uma regra de regravação de URL:
-
-1. Configure o Gerenciador de Serviços de Informações da Internet (IIS) para que ele se conecte ao seu aplicativo web do Serviço de Aplicativo. Para saber como conectar o Gerenciador do IIS para o Serviço de Aplicativo, consulte [Administração remota de sites do Azure usando o Gerenciador do IIS](https://azure.microsoft.com/blog/remote-administration-of-windows-azure-websites-using-iis-manager/).
-2. No Gerenciador do IIS, adicione ou edite uma regra de regravação de URL. Para saber como adicionar ou editar uma regra de regravação de URL, consulte [Criar regras de regravação para o módulo de regravação de URL](https://www.iis.net/learn/extensions/url-rewrite-module/creating-rewrite-rules-for-the-url-rewrite-module).
+Para adicionar uma regra de reescrita de URL, crie um arquivo Web. config com as entradas de configuração relevantes na pasta **wwwroot** . Para obter mais informações, [consulte serviços de Azure App: Entendendo a regravação](https://blogs.msdn.microsoft.com/madhurabharadwaj/2018/06/01/azure-app-services-understanding-url-re-write/)de URL.
 
 ## <a name="how-do-i-control-inbound-traffic-to-app-service"></a>Como controlar o tráfego de entrada para o Serviço de Aplicativo?
 

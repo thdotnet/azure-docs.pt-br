@@ -10,22 +10,25 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 03/20/2019
+ms.date: 07/18/2019
 ms.author: bwren
-ms.openlocfilehash: 50804e1f6ab4f352239d3f405e5b41e4e0c58d14
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: b9a4a0a18e120a2843e23d44b03c0fe53b0d84fc
+ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67292817"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68370683"
 ---
-# <a name="standard-properties-in-azure-monitor-logs"></a>Propriedades padrão em Logs do Azure Monitor
-São de dados em Logs do Azure Monitor [armazenados como um conjunto de registros em um espaço de trabalho do Log Analytics ou o aplicativo de Application Insights](../log-query/logs-structure.md), cada um com um determinado tipo de dados que tem um conjunto exclusivo de propriedades. Muitos tipos de dados terão propriedades padrão comuns a vários tipos. Este artigo descreve essas propriedades e fornece exemplos de como você pode usá-las em consultas.
+# <a name="standard-properties-in-azure-monitor-logs"></a>Propriedades padrão em logs de Azure Monitor
+Os dados em logs de Azure Monitor são [armazenados como um conjunto de registros em um espaço de trabalho log Analytics ou Application insights aplicativo](../log-query/logs-structure.md), cada um com um tipo de dados específico que tem um conjunto exclusivo de propriedades. Muitos tipos de dados terão propriedades padrão comuns a vários tipos. Este artigo descreve essas propriedades e fornece exemplos de como você pode usá-las em consultas.
 
-Algumas dessas propriedades ainda estão no processo de implementação, portanto, você poderá vê-las em alguns tipos de dados, mas não em outros.
+> [!NOTE]
+> Alguns dos padrões de propriedade padrão não serão mostrados na exibição de esquema ou no IntelliSense no Log Analytics e não serão mostrados nos resultados da consulta, a menos que você especifique explicitamente a propriedade na saída.
 
-## <a name="timegenerated-and-timestamp"></a>TimeGenerated e carimbo de data
-O **TimeGenerated** (espaço de trabalho do Log Analytics) e **timestamp** propriedades (aplicativo de Application Insights) contém a data e hora em que o registro foi criado. Ela fornece uma propriedade comum a ser usada para filtrar ou para resumir pela hora. Quando você seleciona um intervalo de tempo para uma exibição ou painel no portal do Azure, ele usa TimeGenerated ou carimbo de hora para filtrar os resultados.
+## <a name="timegenerated-and-timestamp"></a>TimeGenerated e timestamp
+As  Propriedades TimeGenerated (log Analytics espaço de trabalho) e **timestamp** (Application insights aplicativo) contêm a data e a hora em que o registro foi criado pela fonte de dados. Confira [tempo de ingestão de dados de log no Azure monitor](data-ingestion-time.md) para obter mais detalhes.
+
+**TimeGenerated** e **timestamp** fornecem uma propriedade comum a ser usada para filtrar ou resumir por tempo. Quando você seleciona um intervalo de tempo para um modo de exibição ou painel no portal do Azure, ele usa TimeGenerated ou timestamp para filtrar os resultados. 
 
 ### <a name="examples"></a>Exemplos
 
@@ -48,8 +51,22 @@ exceptions
 | sort by timestamp asc 
 ```
 
-## <a name="type-and-itemtype"></a>Tipo e itemType
-O **tipo** (espaço de trabalho do Log Analytics) e **itemType** espera de propriedades (aplicativo de Application Insights) o nome da tabela que o registro foi recuperado do que pode também ser considerado como o registro tipo. Essa propriedade é útil em consultas que combinam registros de várias tabelas, como aqueles que usam o operador `search`, para distinguir entre registros de tipos diferentes. **$table** pode ser usado no lugar de **Type** em alguns locais.
+## <a name="timereceived"></a>\_De recebimento
+A propriedade timereceberd contém a data e a hora em que o registro foi recebido pelo ponto de ingestão Azure monitor na nuvem do Azure.  **\_** Isso pode ser útil para identificar problemas de latência entre a fonte de dados e a nuvem. Um exemplo seria um problema de rede causando um atraso com os dados enviados de um agente. Confira [tempo de ingestão de dados de log no Azure monitor](data-ingestion-time.md) para obter mais detalhes.
+
+A consulta a seguir fornece a latência média por hora para registros de eventos de um agente. Isso inclui o tempo do agente para a nuvem e o tempo total para que o registro esteja disponível para consultas de log.
+
+```Kusto
+Event
+| where TimeGenerated > ago(1d) 
+| project TimeGenerated, TimeReceived = _TimeReceived, IngestionTime = ingestion_time() 
+| extend AgentLatency = toreal(datetime_diff('Millisecond',TimeReceived,TimeGenerated)) / 1000
+| extend TotalLatency = toreal(datetime_diff('Millisecond',IngestionTime,TimeGenerated)) / 1000
+| summarize avg(AgentLatency), avg(TotalLatency) by bin(TimeGenerated,1hr)
+``` 
+
+## <a name="type-and-itemtype"></a>Digite e itemType
+As propriedades **Type** (log Analytics Workspace) e **ItemType** (Application insights Application) mantêm o nome da tabela da qual o registro foi recuperado, que também pode ser considerado como o tipo de registro. Essa propriedade é útil em consultas que combinam registros de várias tabelas, como aqueles que usam o operador `search`, para distinguir entre registros de tipos diferentes. **$table** pode ser usado no lugar de **Type** em alguns locais.
 
 ### <a name="examples"></a>Exemplos
 A consulta a seguir retorna a contagem de registros por tipo coletados na última hora.
@@ -58,7 +75,11 @@ A consulta a seguir retorna a contagem de registros por tipo coletados na últim
 search * 
 | where TimeGenerated > ago(1h)
 | summarize count() by Type
+
 ```
+## <a name="itemid"></a>\_ItemId
+A propriedade ItemId mantém um identificador exclusivo para o registro.  **\_**
+
 
 ## <a name="resourceid"></a>\_ResourceId
 A propriedade **\__ResourceId** contém um identificador exclusivo do recurso ao qual o registro está associado. Isso lhe dá uma propriedade padrão a ser usada para definir o escopo de sua consulta apenas aos registros de um recurso específico, ou para unir dados relacionados em várias tabelas.
@@ -94,7 +115,7 @@ AzureActivity
 ) on _ResourceId  
 ```
 
-A consulta a seguir analisa **_ResourceId** e agregações cobrado volumes de dados por assinatura do Azure.
+A consulta a seguir analisa o **_ResourceId** e agrega os volumes de dados cobrados por assinatura do Azure.
 
 ```Kusto
 union withsource = tt * 
@@ -136,6 +157,7 @@ union withsource = tt *
 ## <a name="billedsize"></a>\_BilledSize
 A propriedade **\_BilledSize** especifica o tamanho em bytes de dados que são cobrados na sua conta do Azure se **\_IsBillable** é true.
 
+
 ### <a name="examples"></a>Exemplos
 Para ver os tamanho de eventos cobráveis ingeridos por computador, use a propriedade `_BilledSize` que fornece o tamanho em bytes:
 
@@ -145,7 +167,7 @@ union withsource = tt *
 | summarize Bytes=sum(_BilledSize) by  Computer | sort by Bytes nulls last 
 ```
 
-Para ver o tamanho de eventos cobráveis ingeridos por assinatura, use a seguinte consulta:
+Para ver o tamanho dos eventos faturáveis ingeridos por assinatura, use a seguinte consulta:
 
 ```Kusto
 union withsource=table * 
@@ -154,7 +176,7 @@ union withsource=table *
 | summarize Bytes=sum(_BilledSize) by  SubscriptionId | sort by Bytes nulls last 
 ```
 
-Para ver o tamanho de eventos cobráveis ingeridos por grupo de recursos, use a seguinte consulta:
+Para ver o tamanho dos eventos faturáveis ingeridos por grupo de recursos, use a seguinte consulta:
 
 ```Kusto
 union withsource=table * 
@@ -180,7 +202,7 @@ union withsource = tt *
 | summarize count() by Computer  | sort by count_ nulls last
 ```
 
-Para ver a contagem de tipos de dados faturáveis em um computador específico, use a seguinte consulta:
+Para ver a contagem de tipos de dados faturáveis de um computador específico, use a seguinte consulta:
 
 ```Kusto
 union withsource = tt *

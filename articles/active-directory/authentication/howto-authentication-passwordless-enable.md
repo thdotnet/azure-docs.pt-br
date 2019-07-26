@@ -11,19 +11,19 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 79f5eba18e34f65f7bc8a625babca92b86e06b4c
-ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
+ms.openlocfilehash: ad2f25aac7f74c74eb63fd4666c5184ae751ec1f
+ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67867288"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68499927"
 ---
 # <a name="enable-passwordless-sign-in-for-azure-ad-preview"></a>Habilitar entrada sem senha para o Azure AD (versão prévia)
 
 ## <a name="requirements"></a>Requisitos
 
 * Autenticação Multifator do Azure
-* Visualização de registro combinado
+* Visualização de registro combinado com usuários habilitados para SSPR
 * A visualização da chave de segurança do FIDO2 requer chaves de segurança FIDO2 compatíveis
 * Webauthn requer o Microsoft Edge no Windows 10 versão 1809 ou superior
 * O logon do Windows baseado em FIDO2 requer o Azure AD ingressado no Windows 10 versão 1809 ou superior
@@ -171,7 +171,7 @@ Para obter informações sobre como entrar usando o aplicativo Microsoft Authent
 
 O provisionamento e desprovisionamento de chaves de segurança do administrador não estão disponíveis na visualização pública.
 
-#### <a name="hybrid-azure-ad-join"></a>Ingresso no Azure AD Híbrido
+#### <a name="hybrid-azure-ad-join"></a>Ingresso no Azure AD híbrido
 
 Os usuários que dependem do SSO do WIA que usam credenciais gerenciadas como chaves de segurança FIDO2 ou logon sem senha com Microsoft Authenticator aplicativo precisam ingressar no Windows 10 para obter os benefícios do SSO. No entanto, as chaves de segurança só funcionam para computadores Azure Active Directory associados por enquanto. Recomendamos que você experimente apenas as chaves de segurança do FIDO2 para a tela de bloqueio do Windows em computadores adicionados com Azure Active Directory pura. Essa limitação não se aplica à Web.
 
@@ -179,7 +179,7 @@ Os usuários que dependem do SSO do WIA que usam credenciais gerenciadas como ch
 
 Estamos trabalhando para dar suporte a um recurso que permita a alteração de UPN em dispositivos AADJ e AADJ híbridos. Se o UPN de um usuário for alterado, você não poderá mais modificar as chaves de segurança FIDO2 para considerar isso. Portanto, a única abordagem é redefinir o dispositivo e o usuário precisa se registrar novamente.
 
-### <a name="authenticator-app"></a>Aplicativo autenticador
+### <a name="authenticator-app"></a>Aplicativo Authenticator
 
 #### <a name="ad-fs-integration"></a>Integração do AD FS
 
@@ -189,7 +189,7 @@ Quando um usuário tiver habilitado a credencial sem senha do Microsoft Authenti
 
 Os usuários finais que estão habilitados para MFA por meio do servidor Azure MFA local de uma organização ainda podem criar e usar uma única credencial de entrada de telefone sem senha. Se o usuário tentar atualizar várias instalações (+5) do Microsoft Authenticator com a credencial, essa alteração poderá resultar em um erro.  
 
-#### <a name="device-registration"></a>Registro de dispositivos
+#### <a name="device-registration"></a>Registro do dispositivo
 
 Um dos pré-requisitos para criar essa nova credencial forte é que o dispositivo no qual ela reside esteja registrado no locatário do Azure AD para um usuário individual. Devido às restrições de registro de dispositivo, um dispositivo só pode ser registrado em um único locatário. Esse limite significa que apenas uma conta corporativa ou de estudante no aplicativo Microsoft Authenticator pode ser habilitada para entrada pelo telefone.
 

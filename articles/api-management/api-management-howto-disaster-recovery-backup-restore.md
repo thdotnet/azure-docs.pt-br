@@ -13,27 +13,27 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/26/2019
 ms.author: apimpm
-ms.openlocfilehash: 6507c39faecfa0e56fc19597e414e9d25d368567
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: 619a4de993f052f143e4117f0100ed1e0aa77b03
+ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67460873"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68498584"
 ---
 # <a name="how-to-implement-disaster-recovery-using-service-backup-and-restore-in-azure-api-management"></a>Como implementar a recuperação de desastre usando o backup de serviço e restaurar no Gerenciamento de API no Azure
 
 Ao publicar e gerenciar suas APIs através do Gerenciamento de API do Azure, você está tirando proveito de muitos recursos de tolerância e infraestrutura que você precisaria criar, implementar e gerenciar manualmente. A plataforma Azure atenua grande parte das falhas potenciais a uma fração do custo.
 
-Para se recuperar de problemas de disponibilidade que afetam a região que hospeda seu serviço de Gerenciamento de API, esteja pronto para reconstituir seu serviço em outra região a qualquer momento. Dependendo de seu objetivo de tempo de recuperação, você talvez queira manter um serviço em espera em um ou mais regiões. Você também pode tentar manter suas configurações e conteúdos na sincronização com o serviço Active Directory de acordo com o objetivo de ponto de recuperação. O backup do serviço e recursos de restauração fornece os blocos de construção necessários para implementar a estratégia de recuperação de desastres.
+Para se recuperar de problemas de disponibilidade que afetam a região que hospeda seu serviço de Gerenciamento de API, esteja pronto para reconstituir seu serviço em outra região a qualquer momento. Dependendo do objetivo do tempo de recuperação, talvez você queira manter um serviço em espera em uma ou mais regiões. Você também pode tentar manter a configuração e o conteúdo em sincronia com o serviço ativo de acordo com o objetivo do ponto de recuperação. Os recursos de backup e restauração do serviço fornecem os blocos de construção necessários para implementar a estratégia de recuperação de desastres.
 
-Operações de backup e restauração também podem ser usadas para replicar a configuração do serviço de gerenciamento de API entre ambientes operacionais, por exemplo, desenvolvimento e preparo. Lembre-se de que dados de tempo de execução, como os usuários e as assinaturas serão copiadas também, que nem sempre pode ser desejável.
+As operações de backup e restauração também podem ser usadas para replicar a configuração do serviço de gerenciamento de API entre ambientes operacionais, por exemplo, desenvolvimento e preparo. Lembre-se de que os dados de tempo de execução como usuários e assinaturas também serão copiados, o que talvez nem sempre seja desejável.
 
-Este guia mostra como automatizar o backup e restaurar operações e como garantir que a autenticação bem-sucedida do backup e restaurar as solicitações pelo Gerenciador de recursos do Azure.
+Este guia mostra como automatizar as operações de backup e restauração e como garantir a autenticação bem-sucedida de solicitações de backup e restauração por Azure Resource Manager.
 
 > [!IMPORTANT]
-> Restaurar operação não altera o nome de host personalizado de configuração do serviço de destino. É recomendável usar o mesmo nome de host personalizado e o certificado TLS para serviços do Active Directory e em espera, para que, após a conclusão da operação de restauração, o tráfego pode ser redirecionado para a instância em espera por uma simple alteração de DNS CNAME.
+> A operação de restauração não altera a configuração de nome de host personalizado do serviço de destino. É recomendável usar o mesmo nome de host e TLS personalizados para serviços ativos e em espera, de modo que, após a conclusão da operação de restauração, o tráfego possa ser redirecionado para a instância em espera por uma alteração simples de CNAME de DNS.
 >
-> Operação de backup não captura dados de log agregados previamente usados em relatórios mostrados na folha do Analytics no portal do Azure.
+> A operação de backup não captura dados de log previamente agregados usados em relatórios mostrados na folha de análise no portal do Azure.
 
 > [!WARNING]
 > Cada backup expira após 30 dias. Se você tentar restaurar um backup após o período de expiração de 30 dias, a restauração falhará com uma mensagem `Cannot restore: backup expired`.
@@ -125,7 +125,7 @@ Substitua `{tenant id}`, `{application id}` e `{redirect uri}` usando as seguint
 
     Depois que os valores são especificados, o exemplo de código deve retornar um token semelhante ao seguinte exemplo:
 
-    ![A criptografia do token][api-management-arm-token]
+    ![Token][api-management-arm-token]
 
     > [!NOTE]
     > O token pode expirar após um período determinado. Execute o código de exemplo novamente para gerar um novo token.
@@ -148,12 +148,12 @@ Para fazer backup de um serviço de Gerenciamento de API, execute a seguinte sol
 POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/backup?api-version={api-version}
 ```
 
-onde:
+em que:
 
 -   `subscriptionId` – ID da assinatura que contém o serviço de Gerenciamento de API do qual você está tentando fazer backup
 -   `resourceGroupName` -nome do grupo de recursos do seu serviço de Gerenciamento de API do Azure
 -   `serviceName` - o nome do serviço de Gerenciamento de API que você está fazendo um backup em específico, no momento de sua criação
--   `api-version` -Substitua por `2018-06-01-preview`
+-   `api-version`-substituir por`2018-06-01-preview`
 
 No corpo da solicitação, especifique o nome da conta de armazenamento de destino do Azure, a chave de acesso, o nome do contêiner Blob e o nome de backup:
 
@@ -178,7 +178,8 @@ Observe as restrições a seguir ao fazer uma solicitação de backup:
 -   Os **Dados de uso** utilizados para a criação de relatórios de análise **não estão incluídos** no backup. Use o [API REST de Gerenciamento de API do Azure][azure api management rest api] para recuperar periodicamente os relatórios analíticos por questões de segurança.
 -   A frequência com que você executa backups de serviço afeta seu objetivo de ponto de recuperação. Para minimizar, aconselhamos a implementação de backups regulares e realizar backups sob demanda depois de fazer as mudanças ao seu serviço de Gerenciamento de API.
 -   As **alterações** feitas na configuração do serviço (por exemplo, APIs, políticas, aparência do portal do desenvolvedor) enquanto uma operação de backup está em andamento **podem não ser incluídas no backup e, portanto, serão perdidas**.
-
+-   **Permitir** o acesso do plano de controle à conta de armazenamento do Azure. O cliente deve abrir o seguinte conjunto de IPs de entrada em sua conta de armazenamento para backup. 
+    > 13.84.189.17/32, 13.85.22.63/32, 23.96.224.175/32, 23.101.166.38/32, 52.162.110.80/32, 104.214.19.224/32, 13.64.39.16/32, 40.81.47.216/32, 51.145.179.78/32, 52.142.95.35/32, 40.90.185.46/32, 20.40.125.155/32
 ### <a name="step2"> </a>Restaurar um serviço de Gerenciamento de API
 
 Para restaurar um serviço de Gerenciamento de API de um backup criado anteriormente, faça a seguinte solicitação HTTP:
@@ -187,12 +188,12 @@ Para restaurar um serviço de Gerenciamento de API de um backup criado anteriorm
 POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/restore?api-version={api-version}
 ```
 
-onde:
+em que:
 
 -   `subscriptionId` - ID da assinatura que contém o serviço de Gerenciamento de API que você está restaurando um backup em
 -   `resourceGroupName` – nome do grupo de recursos que contém o serviço de Gerenciamento de API do Azure em que você está restaurando um backup
 -   `serviceName` - o nome do serviço de Gerenciamento de API para o qual está sendo realizada a restauração especificada no momento de sua criação
--   `api-version` -Substitua por `2018-06-01-preview`
+-   `api-version`-substituir por`2018-06-01-preview`
 
 No corpo da solicitação, especifique o local do arquivo de backup. Ou seja, adicione o nome da conta de armazenamento do Azure, chave de acesso, nome do contêiner de blob e nome de backup:
 
@@ -217,7 +218,7 @@ Restaure uma operação longa de execução que pode levar até 30 minutos ou ma
 <!-- Dummy comment added to suppress markdown lint warning -->
 
 > [!NOTE]
-> Operações de backup e restauração também podem ser executadas com o PowerShell _Backup-AzApiManagement_ e _AzApiManagement restauração_ comandos, respectivamente.
+> As operações de backup e restauração também podem ser executadas com os comandos _backup-AzApiManagement_ e _Restore-AzApiManagement_ do PowerShell, respectivamente.
 
 ## <a name="next-steps"></a>Próximas etapas
 

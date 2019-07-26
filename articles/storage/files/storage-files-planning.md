@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/25/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: aba41d62df49a40d9fc3686684b39b71e1363453
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 6282ce426b08c4ad9c44bead0bd4ec3d259f65fe
+ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68296046"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68501426"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Planejando uma implantação de Arquivos do Azure
 
@@ -209,7 +209,7 @@ Os compartilhamentos de arquivos padrão estão disponíveis em todas as regiõe
 |Região  |Redundância com suporte  |Dá suporte a contas de armazenamento existentes  |
 |---------|---------|---------|
 |Sudeste da Ásia     |LRS|Não         |
-|Europa Ocidental     |LRS|Não         |
+|Europa Ocidental     |LRS, ZRS|Não         |
 |Oeste dos EUA 2     |LRS, ZRS|Não         |
 
 Para nos ajudar a priorizar novas regiões e recursos, preencha esta [pesquisa](https://aka.ms/azurefilesatscalesurvey).

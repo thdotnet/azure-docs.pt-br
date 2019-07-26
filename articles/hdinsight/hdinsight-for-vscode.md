@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 05/30/2019
-ms.openlocfilehash: 31f6c34089c1825eca21283b01eae181c8112216
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: da5cdd36e70166d274d50fcb093c0889cf534172
+ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68312181"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68489008"
 ---
 # <a name="use-spark--hive-tools-for-visual-studio-code"></a>Use as ferramentas do Spark & Hive para Visual Studio Code
 
@@ -83,9 +83,9 @@ Antes de enviar scripts para seus clusters do Visual Studio Code, você precisa 
 
 ## <a name="link-a-cluster"></a>Vincular um cluster
 
-### <a name="link-azure-hdinsight"></a>Criar Azure HDInsight
+### <a name="link-azure-hdinsight"></a>Vínculo: Azure HDInsight
 
-É possível vincular um cluster normal usando um nome de usuário gerenciado do [Apache Ambari](https://ambari.apache.org/) ou vincular um cluster Hadoop seguro do pacote Enterprise Security usando um nome de usuário de domínio (como: user1@contoso.com).
+É possível vincular um cluster normal usando um nome de usuário gerenciado do [Apache Ambari](https://ambari.apache.org/) ou vincular um cluster Hadoop seguro do pacote Enterprise Security usando um nome de usuário de domínio (como: `user1@contoso.com`).
 
 1. Na barra de menus, navegue até **Exibir** > **paleta de comandos...** e **insira Spark/Hive: Vincular um Cluster**.
 
@@ -109,7 +109,7 @@ Antes de enviar scripts para seus clusters do Visual Studio Code, você precisa 
    > O nome de usuário e a senha vinculados serão usados se o cluster foi registrado na assinatura do Azure e vinculou um cluster.  
 
 
-### <a name="link-generic-livy-endpoint"></a>Criar Ponto de Extremidade Genérico do Livy
+### <a name="link-generic-livy-endpoint"></a>Vínculo: Ponto de Extremidade Genérico do Livy
 
 1. Na barra de menus, navegue até **Exibir** > **paleta de comandos...** e **insira Spark/Hive: Vincular um Cluster**.
 
@@ -288,7 +288,7 @@ Envie um arquivo, observe que a pasta .vscode é adicionada automaticamente à p
 + As configurações de Livy compatíveis:   
 
     **POST /batches**   
-    Corpo da solicitação
+    Corpo de Solicitação
 
     | name | description | type | 
     | :- | :- | :- | 
@@ -309,13 +309,13 @@ Envie um arquivo, observe que a pasta .vscode é adicionada automaticamente à p
     | name | O nome desta sessão | cadeia de caracteres |
     | conf | Propriedades de configuração do Spark | Mapa de key=val |
 
-    Corpo da resposta   
+    Corpo da Resposta   
     O objeto de lote criado.
 
     | name | description | type | 
     | :- | :- | :- | 
     | id | A id da sessão | int | 
-    | appId | A ID de aplicativo desta sessão |  Cadeia de caracteres |
+    | appId | A ID de aplicativo desta sessão |  Cadeia |
     | appInfo | As informações detalhadas do aplicativo | Mapa de key=val |
     | log | As linhas do log | lista de cadeias de caracteres |
     | state |   O estado do lote | cadeia de caracteres |

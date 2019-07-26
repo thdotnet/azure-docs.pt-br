@@ -12,12 +12,12 @@ ms.date: 07/17/2019
 ms.author: mimart
 ms.reviewer: arvindh, japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f3b23aa7db29390ef50a72f73fb153fef5301b92
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: ddbb233bb9d0970169f040e3040b44a0b75aa1f8
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68304827"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68477171"
 ---
 # <a name="single-sign-on-to-applications-in-azure-active-directory"></a>Logon único para aplicativos no Azure Active Directory
 
@@ -69,11 +69,11 @@ Escolha o logon único baseado em SAML quando o aplicativo der suporte a ele.
 O logon único baseado em SAML é compatível com aplicativos que usam qualquer um desses protocolos:
 
 - SAML 2.0
-- O certificado do provedor de identidade do Web Services Federation
+- Web Services Federation
 
-Para configurar um aplicativo SaaS para logon único baseado em SAML, consulte [Configurar logon único baseado em SAML](configure-single-sign-on-portal.md). Além disso, muitos aplicativos SaaS (Software como Serviço) têm um [tutorial específico de aplicativo](../saas-apps/tutorial-list.md) que explica a configuração para logon único baseado em SAML.
+Para configurar um aplicativo SaaS para logon único baseado em SAML, consulte [Configurar logon único baseado em SAML](configure-single-sign-on-non-gallery-applications.md). Além disso, muitos aplicativos SaaS (Software como Serviço) têm um [tutorial específico de aplicativo](../saas-apps/tutorial-list.md) que explica a configuração para logon único baseado em SAML.
 
-Para configurar um aplicativo para o WS-Federation, siga as mesmas diretrizes para configurar o aplicativo para logon único baseado em SAML, consulte [Configurar logon único baseado em SAML](configure-single-sign-on-portal.md). Na etapa de configurar o aplicativo para usar o Azure AD, você precisará substituir a URL de logon do Azure AD para o ponto `https://login.microsoftonline.com/<tenant-ID>/wsfed`de extremidade do WS-Federation.
+Para configurar um aplicativo para o WS-Federation, siga as mesmas diretrizes para configurar o aplicativo para logon único baseado em SAML, consulte [Configurar logon único baseado em SAML](configure-single-sign-on-non-gallery-applications.md). Na etapa de configurar o aplicativo para usar o Azure AD, você precisará substituir a URL de logon do Azure AD para o ponto `https://login.microsoftonline.com/<tenant-ID>/wsfed`de extremidade do WS-Federation.
 
 Para configurar um aplicativo local para logon único baseado em SAML, consulte [logon único do SAML para aplicativos locais com o proxy de aplicativo](application-proxy-configure-single-sign-on-on-premises-apps.md).
 
@@ -100,7 +100,7 @@ O logon único baseado em senha for compatível com qualquer aplicativo baseado 
 - Chrome no Windows 7 ou posterior e no MacOS X ou posterior
 - Firefox 26.0 ou posterior no Windows XP SP2 ou posterior e no Mac OS X 10.6 ou posterior
 
-Para configurar um aplicativo em nuvem para o logon único baseado em senha, confira [Configurar o aplicativo para logon único com senha](application-sign-in-problem-password-sso-gallery.md#configure-the-app-for-password-sso).
+Para configurar um aplicativo de nuvem para logon único baseado em senha, consulte [Configurar logon único com senha](configure-password-single-sign-on-non-gallery-applications.md).
 
 Para configurar um aplicativo local para logon único por meio do Proxy de Aplicativo, confira [Cofre para senhas para logon único com o Proxy de Aplicativo](application-proxy-configure-single-sign-on-password-vaulting.md)
 
@@ -127,8 +127,7 @@ Quando o usuário final gerencia as credenciais:
 - Os administradores ainda são capazes de definir novas credenciais para o aplicativo.
 
 ## <a name="linked-sign-on"></a>Logon vinculado
-
-O logon vinculado permite que o Azure AD forneça o logon único para um aplicativo que já está configurado para um logon único em outro serviço. O aplicativo vinculado pode aparecer para os usuários finais no portal do Office 365 ou portal MyApps do Azure AD. Por exemplo, um usuário pode iniciar um aplicativo que está configurado para logon único no Serviços de Federação do Active Directory (AD FS) 2.0 no portal do Office 365. Relatórios adicionais também estão disponíveis para aplicativos vinculados que são iniciados no portal do Office 365 ou no portal MyApps do Azure AD.
+O logon vinculado permite que o Azure AD forneça o logon único para um aplicativo que já está configurado para um logon único em outro serviço. O aplicativo vinculado pode aparecer para os usuários finais no portal do Office 365 ou portal MyApps do Azure AD. Por exemplo, um usuário pode iniciar um aplicativo que está configurado para logon único no Serviços de Federação do Active Directory (AD FS) 2.0 no portal do Office 365. Relatórios adicionais também estão disponíveis para aplicativos vinculados que são iniciados no portal do Office 365 ou no portal MyApps do Azure AD. Para configurar um aplicativo para logon vinculado, consulte [Configurar logon vinculado](configure-linked-sign-on.md).
 
 ### <a name="linked-sign-on-for-application-migration"></a>Logon vinculado para migração de aplicativo
 
@@ -176,7 +175,7 @@ Escolha logon único baseado em cabeçalho quando o proxy de aplicativo e o Ping
 
 Para configurar a autenticação baseada em cabeçalho, confira [Autenticação baseada em cabeçalho para logon único com o Proxy de Aplicativo](application-proxy-configure-single-sign-on-with-ping-access.md).
 
-### <a name="what-is-pingaccess-for-azure-ad"></a>O que é PingAccess para Azure AD?
+### <a name="what-is-pingaccess-for-azure-ad"></a>O que é o PingAccess para Azure AD?
 
 Usando o PingAccess para o Azure AD, os usuários podem acessar e realizar o logon único em aplicativos que usam cabeçalhos para autenticação. O Proxy de Aplicativo trata esses aplicativos como qualquer outro, usando o Azure AD para autenticar o acesso e, depois, passando o tráfego por meio do serviço de conector. Após a autenticação, o serviço de PingAccess converte o token de acesso do Azure AD em um formato de cabeçalho que é enviado para o aplicativo.
 
@@ -189,8 +188,9 @@ Como esse cenário é oferecido por meio de uma parceria entre o Azure AD e o Pi
 Para obter mais informações, consulte [Edições do Active Directory do Azure](../fundamentals/active-directory-whatis.md).
 
 ## <a name="related-articles"></a>Artigos relacionados
-
-- [Tutoriais para a integração de aplicativos SaaS ao Azure Active Directory](../saas-apps/tutorial-list.md)
-- [Tutorial para a configuração do logon único](configure-single-sign-on-portal.md)
-- [Introdução ao gerenciamento do acesso a aplicativos](what-is-access-management.md)
-- Link de download: [Plano de implantação de logon único](https://aka.ms/SSODeploymentPlan)
+* [Tutoriais para a integração de aplicativos SaaS ao Azure Active Directory](../saas-apps/tutorial-list.md)
+* [Configurando o logon único baseado em SAML](configure-single-sign-on-non-gallery-applications.md)
+* [Configurando o logon único baseado em senha](configure-password-single-sign-on-non-gallery-applications.md)
+* [Configurando o logon vinculado](configure-linked-sign-on.md)
+* [Introdução ao gerenciamento do acesso a aplicativos](what-is-access-management.md)
+* Link de download: [Plano de implantação de logon único](https://aka.ms/SSODeploymentPlan).

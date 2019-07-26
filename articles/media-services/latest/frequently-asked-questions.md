@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 06/21/2019
 ms.author: juliako
-ms.openlocfilehash: 766208c01f27d2024025b7a202bc3724b4fc9fff
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 28b9c8f343437c20e277d2f3ba53767afa45a5c2
+ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68311848"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68501264"
 ---
 # <a name="media-services-v3-frequently-asked-questions"></a>Perguntas frequentes sobre os serviços de mídia v3
 
@@ -58,7 +58,7 @@ A codificação ativa dos Serviços de Mídia v3 ainda não dá suporte à inser
 
 Você pode usar um [codificador ativo local](recommended-on-premises-live-encoders.md) para alternar para o vídeo de origem. Muitos aplicativos fornecem a capacidade de alternar fontes, incluindo o Telestream Wirecast, o Switcher Studio (no iOS), o OBS Studio (aplicativo gratuito) e muito mais.
 
-## <a name="content-protection"></a>Proteção do conteúdo
+## <a name="content-protection"></a>Proteção de conteúdo
 
 ### <a name="should-i-use-an-aes-128-clear-key-encryption-or-a-drm-system"></a>Devo usar uma criptografia de chave não criptografada AES-128 ou um sistema DRM?
 
@@ -110,28 +110,6 @@ Muitas vezes os clientes investiram em um farm de servidores de licença em seu 
 
 * O STS precisa emitir tokens que sejam aceitáveis e possam ser verificados pelo farm de servidores de licença. Por exemplo, os servidores de licença do Widevine fornecidos pela Axinom exigem um JWT específico que contém uma mensagem de autorização. Portanto, você precisa ter um STS para emitir esse JWT. 
 * Você não precisa mais configurar o serviço de entrega de licença nos Serviços de Mídia. Você precisa fornecer URLs de aquisição de licença (para o PlayReady, o Widevine e o FairPlay) ao configurar o ContentKeyPolicies.
-
-### <a name="what-if-i-want-to-use-a-custom-sts"></a>E se eu quiser usar um STS personalizado?
-
-Um cliente pode optar por usar um STS personalizado para fornecer JWTs. Os motivos incluem:
-
-* O IDP usado pelo cliente não é compatível com o STS. Nesse caso, um STS personalizado poderá ser uma opção.
-* O cliente poderá precisar de controle mais flexível ou mais restrito na integração do STS com o sistema de cobrança de assinante do cliente. Por exemplo, um operador de MVPD poderá oferecer vários pacotes de assinante OTT, como Premium, básico e esportes. O operador poderá corresponder as declarações de um token com o pacote do assinante para que somente o conteúdo de um pacote específico seja disponibilizado. Nesse caso, um STS personalizado oferece a flexibilidade e o controle necessários.
-
-Ao usar um STS personalizado, duas alterações devem ser feitas:
-
-* Ao configurar o serviço de entrega de licença para um ativo, você precisa especificar a chave de segurança usada para verificação pelo STS personalizado em vez da chave atual do Azure AD. (Mais detalhes a seguir). 
-* Quando um token JTW é gerado, uma chave de segurança é especificada em vez da chave privada do certificado X509 atual no Azure AD.
-
-Há dois tipos de chaves de segurança:
-
-* Chave simétrica: a mesma chave é usada para gerar e verificar um JWT.
-* Chave assimétrica: um par de chaves pública/privada em um certificado X509 é usado com uma chave privada para criptografar/gerar um JWT e, com a chave pública, para verificar o token.
-
-> [!NOTE]
-> Se você usa o .NET Framework /C# como sua plataforma de desenvolvimento, o certificado X509 usado para uma chave assimétrica de segurança deve ter um comprimento de chave de pelo menos 2048. Este é um requisito da classe System.IdentityModel.Tokens.X509AsymmetricSecurityKey no .NET Framework. Caso contrário, a seguinte exceção é lançada:
-> 
-> IDX10630: 'System.IdentityModel.Tokens.X509AsymmetricSecurityKey' para a assinatura não pode ter menos de '2048' bits.
 
 ## <a name="media-services-v2-vs-v3"></a>Serviços de Mídia v2 comparado com v3 
 

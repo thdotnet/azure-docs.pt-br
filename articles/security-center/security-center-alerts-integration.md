@@ -1,5 +1,5 @@
 ---
-title: Integração da central de segurança com os produtos de segurança do Azure | Microsoft Docs
+title: Integração dos produtos de segurança do Azure na central de segurança do Azure | Microsoft Docs
 description: Este tópico apresenta os produtos de segurança do Azure que foram integrados à central de segurança do Azure.
 services: security-center
 documentationcenter: na
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 7/02/2019
 ms.author: v-mohabe
-ms.openlocfilehash: 64a636cc4452de1ef4a2d0e94629e7d8e3a5878d
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
-ms.translationtype: HT
+ms.openlocfilehash: 847748d1c56221119d8f74a2aee716ee08448e28
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68295745"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68335822"
 ---
-# <a name="security-center-integration-with-azure-security-products-in-asc"></a>Integração da central de segurança com os produtos de segurança do Azure no ASC
+# <a name="integration-of-azure-security-products-in-azure-security-center"></a>Integração dos produtos de segurança do Azure na central de segurança do Azure
 
 A central de segurança oferece aos clientes licenças adicionais da Microsoft para integrar suas descobertas à central de segurança e exibi-las de maneira consolidada.
 
@@ -46,7 +46,7 @@ A Proteção contra DDoS Standard pode mitigar os tipos de ataques a seguir:
 
 > [!div class="mx-tableFixed"]
 
-|Alerta|DESCRIÇÃO|
+|Alerta|Descrição|
 |---|---|
 |**Ataque de volumétricos detectado**|O objetivo desse ataque é inundar a camada de rede com uma quantidade significativa de tráfego aparentemente legítimo. Eles incluem inundações de UDP, inundações de amplificação e outras inundações de pacotes falsificados. A Proteção contra DDoS Standard mitiga esses ataques de potencialmente vários gigabytes absorvendo-os e depurando-os com a escala de rede global do Azure automaticamente.|
 |**Ataque de protocolo detectado**|Esses ataques renderizam um destino inacessível, explorando um ponto fraco na camada 3 e na pilha de protocolos da camada 4. Eles incluem ataques de inundação SYN, ataques de reflexão e outros ataques de protocolo. A Proteção contra DDoS Standard mitiga esses ataques diferenciando entre o tráfego mal-intencionado e o legítimo, interagindo com o cliente e bloqueando o tráfego mal-intencionado.|

@@ -1,7 +1,6 @@
 ---
 title: Que tipo de backup o Servidor de Backup do Azure pode fazer
 description: Este artigo fornece uma matriz de suporte listando todas as cargas de trabalho, tipos de dados e instalações que o Servidor de Backup do Azure protege.
-services: backup
 author: rayne-wiselman
 ms.service: backup
 keywords: ''
@@ -9,12 +8,12 @@ ms.date: 11/13/2018
 ms.topic: conceptual
 ms.author: raynew
 manager: carmonm
-ms.openlocfilehash: ad6d1b067e396b8f46578484d3c960372e51176c
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: 2e8004b07542efed3ddc2b5a390cfb12fd48cc1b
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68234768"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68465045"
 ---
 # <a name="azure-backup-server-protection-matrix"></a>Matriz de proteção do Servidor de Backup do Azure
 
@@ -22,7 +21,7 @@ Este artigo lista os vários servidores e as cargas de trabalho que você pode p
 
 ## <a name="protection-support-matrix"></a>Matriz de suporte de proteção
 
-|Carga de trabalho|Versão|Servidor de Backup do Azure</br> instalação|Serviço de Backup do Azure</br> Servidor V3|Serviço de Backup do Azure</br> Servidor V2|Proteção e recuperação|
+|Carga de Trabalho|Versão|Servidor de Backup do Azure</br> instalação|Backup do Azure</br> Servidor V3|Backup do Azure</br> Servidor V2|Proteção e recuperação|
 |------------|-----------|---------------|--------------|---------------|-----------------|
 |Computadores cliente (64 bits e 32 bits)|Windows 10|Servidor físico<br /><br />Máquina virtual do Hyper-V<br /><br />Máquinas Virtuais VMware|S|S|Volume, compartilhamento, pasta, arquivos, volumes com duplicados eliminados<br /><br />Os volumes protegidos devem ser NTFS. FAT e FAT32 não têm suporte.<br /><br />Os volumes devem ter no mínimo 1 GB. Servidor de Backup do Azure usa Serviço de Cópias de Sombra de Volume (VSS) para pegar o instantâneo de dados e o instantâneo só funciona se o volume for de pelo menos 1 GB.|
 |Computadores cliente (64 bits e 32 bits)|Windows 8.1|Servidor físico<br /><br />Máquina virtual do Hyper-V|S|S|Arquivos<br /><br />Os volumes protegidos devem ser NTFS. FAT e FAT32 não têm suporte.<br /><br />Os volumes devem ter no mínimo 1 GB. Servidor de Backup do Azure usa Serviço de Cópias de Sombra de Volume (VSS) para pegar o instantâneo de dados e o instantâneo só funciona se o volume for de pelo menos 1 GB.|
@@ -43,7 +42,7 @@ Este artigo lista os vários servidores e as cargas de trabalho que você pode p
 |Servidores (32 bits e 64 bits)|Windows Server 2008 SP2|Servidor físico<br /><br />Máquina virtual local do Hyper-V<br /> <br /> Azure Stack|N|N|Volume, compartilhamento, pasta, arquivo, estado do sistema/bare metal|
 |Servidores (32 bits e 64 bits)|Windows Server 2008 SP2|Máquina virtual Windows no VMWare (protege as cargas de trabalho em execução na máquina virtual Windows no VMWare)<br /> <br /> Azure Stack|S|S|Volume, compartilhamento, pasta, arquivo, estado do sistema/bare metal|
 |Servidores (32 bits e 64 bits)|Windows Storage Server 2008|Servidor físico<br /><br />Máquina virtual local do Hyper-V<br /> <br /> Azure Stack|S|S|Volume, compartilhamento, pasta, arquivo, estado do sistema/bare metal|
-|SQL Server|Microsoft SQL Server 2017|Servidor físico <br /><br /> Máquina virtual local do Hyper-V <br /> <br /> Máquina virtual do Azure <br /><br /> Máquina virtual Windows no VMWare (protege as cargas de trabalho em execução na máquina virtual Windows no VMWare)<br /> <br /> Azure Stack|S|N|Todos os cenários de implantação: banco de dados|
+|SQL Server|SQL Server 2017|Servidor físico <br /><br /> Máquina virtual local do Hyper-V <br /> <br /> Máquina virtual do Azure <br /><br /> Máquina virtual Windows no VMWare (protege as cargas de trabalho em execução na máquina virtual Windows no VMWare)<br /> <br /> Azure Stack|S|N|Todos os cenários de implantação: banco de dados|
 |SQL Server|Microsoft SQL Server 2016 SP2|Servidor físico <br /><br /> Máquina virtual local do Hyper-V <br /> <br /> Máquina virtual do Azure <br /><br /> Máquina virtual Windows no VMWare (protege as cargas de trabalho em execução na máquina virtual Windows no VMWare)<br /> <br /> Azure Stack|S|S|Todos os cenários de implantação: banco de dados|
 |SQL Server|SQL Server 2016 SP1|Servidor físico <br /><br /> Máquina virtual local do Hyper-V <br /> <br /> Máquina virtual do Azure <br /><br /> Máquina virtual Windows no VMWare (protege as cargas de trabalho em execução na máquina virtual Windows no VMWare)<br /> <br /> Azure Stack|S|S|Todos os cenários de implantação: banco de dados|
 |SQL Server|SQL Server 2016|Servidor físico <br /><br /> Máquina virtual local do Hyper-V <br /> <br /> Máquina virtual do Azure <br /><br /> Máquina virtual Windows no VMWare (protege as cargas de trabalho em execução na máquina virtual Windows no VMWare)<br /> <br /> Azure Stack|S|S |Todos os cenários de implantação: banco de dados|
