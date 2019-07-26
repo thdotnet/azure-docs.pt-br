@@ -272,6 +272,8 @@
         - name: Controle de acesso baseado em função
           displayName: rbac
           href: role-based-access-control.md
+        - href: cosmos-db-advanced-threat-protection.md
+          name: Proteção avançada contra ameaças
         - name: Atributos de segurança
           href: cosmos-db-security-attributes.md
     - name: Preparação corporativa

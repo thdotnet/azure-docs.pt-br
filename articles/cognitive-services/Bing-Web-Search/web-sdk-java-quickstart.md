@@ -1,5 +1,5 @@
 ---
-title: 'Início rápido: Usar o SDK de Pesquisa na Web do Bing para Java'
+title: 'Início Rápido: Usar o SDK de Pesquisa na Web do Bing para Java'
 titleSuffix: Azure Cognitive Services
 description: O SDK de Pesquisa na Web do Bing torna fácil integrar a Pesquisa na Web do Bing ao seu aplicativo Java. Neste início rápido, você aprenderá a enviar uma solicitação, receber uma resposta JSON e filtrar e analisar os resultados.
 services: cognitive-services
@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 03/12/2019
+ms.date: 07/25/2019
 ms.author: aahi
-ms.openlocfilehash: 7209df902f03a7055e142dcbbb7743b6832958b6
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0d2c1ca439dbbbd79ddabd2ea7a4eb5298d1071a
+ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57863773"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68500961"
 ---
-# <a name="quickstart-use-the-bing-web-search-sdk-for-java"></a>Início rápido: Usar o SDK de Pesquisa na Web do Bing para Java
+# <a name="quickstart-use-the-bing-web-search-sdk-for-java"></a>Início Rápido: Usar o SDK de Pesquisa na Web do Bing para Java
 
 O SDK de Pesquisa na Web do Bing torna fácil integrar a Pesquisa na Web do Bing ao seu aplicativo Java. Neste início rápido, você aprenderá a enviar uma solicitação, receber uma resposta JSON e filtrar e analisar os resultados.
 
@@ -127,7 +127,7 @@ import com.microsoft.azure.cognitiveservices.search.websearch.models.VideoObject
 import com.microsoft.azure.cognitiveservices.search.websearch.models.WebPage;
 ```
 
-Se você criou o projeto com o Maven, o pacote já deve ser sido declarado. Caso contrário, declare o pacote agora. Por exemplo: 
+Se você criou o projeto com o Maven, o pacote já deve ser sido declarado. Caso contrário, declare o pacote agora. Por exemplo:
 
 ```java
 package com.bingwebsearch.app
@@ -300,4 +300,4 @@ Quando você terminar com este projeto, remova sua chave de assinatura do códig
 
 ## <a name="see-also"></a>Consulte também
 
-* [Referência de SDK do Java do Azure](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/websearch)
+* [Referência de SDK do Java do Azure](https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/bingwebsearchapi?view=azure-java-stable)

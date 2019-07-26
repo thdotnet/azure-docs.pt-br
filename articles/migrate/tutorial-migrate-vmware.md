@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 07/08/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 3510c0505a5a3c1353642baf5060a83d13fdd43a
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 885c877f219f59ab5049cf7b8e01243077d6d3eb
+ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67808106"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68348391"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless"></a>Migrar VMs VMware para o Azure (sem agente)
 
@@ -104,7 +104,7 @@ As Migrações para Azure requer algumas alterações de VM para verificar se el
 **Ação** | **Detalhes** | **Instruções**
 --- | --- | ---
 Verifique se os volumes do Windows na VM do Azure usam as mesmas atribuições de letra da unidade que a VM local. | Configure a política de SAN como Todos Online. | 1. Entre na VM com uma conta do administrador e abra uma janela de comando.<br/> 2. Digite **diskpart** para executar o utilitário Diskpart.<br/> 3. Digite **SAN POLICY=OnlineAll**<br/> 4. Digite Exit para sair do Diskpart e feche o prompt de comando.
-Habilitar o console de acesso serial do Azure para a VM do Azure | Isso ajuda a solucionar problemas. Não é necessário reinicializar a VM. A VM do Azure será reinicializada usando a imagem de disco, e isso é equivalente à reinicialização da nova VM. | Siga [estas instruções](https://docs.microsoft.com/azure/virtual-machines/windows/serial-console#enable-serial-console-in-custom-or-older-images) para habilitar.
+Habilitar o console de acesso serial do Azure para a VM do Azure | Isso ajuda a solucionar problemas. Não é necessário reinicializar a VM. A VM do Azure será reinicializada usando a imagem de disco, e isso é equivalente à reinicialização da nova VM. | Siga [estas instruções](https://docs.microsoft.com/azure/virtual-machines/windows/serial-console) para habilitar.
 Instalar integração convidada do Hyper-V | Se você estiver migrando computadores que executam o Windows Server 2003, instale os Serviços de Integração de Convidado do Hyper-V no sistema operacional da VM. | [Saiba mais](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#install-or-update-integration-services).
 Área de Trabalho Remota | Habilite a Área de Trabalho Remota na VM e verifique se o Firewall do Windows não está bloqueando o acesso Área de Trabalho Remota em nenhum perfil de rede. | [Saiba mais](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-allow-access).
 
