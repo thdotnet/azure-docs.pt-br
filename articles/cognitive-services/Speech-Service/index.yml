@@ -7,7 +7,7 @@ metadata:
   description: 'O Serviço de Fala fornece aos desenvolvedores um jeito fácil de adicionar recursos incríveis habilitados para fala aos seus aplicativos. Exemplos incluem controle de comando de voz e caixa de diálogo, conversa com fala natural, transcrição e ditado de fala e tradução de fala.'
   services: cognitive-services
   author: nitinme
-  manager: cgronlun
+  manager: nitinme
   layout: LandingPage
   ms.service: cognitive-services
   ms.subservice: speech-service

@@ -6,7 +6,7 @@ metadata:
   description: 'A API de Análise de Texto é um serviço baseado em nuvem que fornece um processamento de linguagem natural avançado sobre texto bruto e inclui quatro funções principais: análise de sentimento, extração de frases-chave, reconhecimento de entidade nomeada e detecção de idioma.'
   services: cognitive-services
   author: nitinme
-  manager: cgronlun
+  manager: nitinme
   layout: LandingPage
   ms.service: cognitive-services
   ms.subservice: text-analytics
