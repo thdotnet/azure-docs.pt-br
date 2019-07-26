@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 07/19/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 9c05f3cf9a4c6fc916f1c9578de7aee6d0190ee5
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
-ms.translationtype: HT
+ms.openlocfilehash: 6a41830dcb7f681713db7a7802ab430581dc844f
+ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327135"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68371162"
 ---
 # <a name="deploy-azure-file-sync"></a>Implantar a Sincronização de Arquivos do Azure
 Use a Sincronização de Arquivos do Azure para centralizar os compartilhamentos de arquivos da sua organização em Arquivos do Azure enquanto mantém a flexibilidade, o desempenho e a compatibilidade de um servidor de arquivos local. A Sincronização de arquivos do Azure transforma o Windows Server em um cache rápido do compartilhamento de arquivos do Azure. Use qualquer protocolo disponível no Windows Server para acessar seus dados localmente, incluindo SMB, NFS e FTPS. Você pode ter tantos caches quantos precisar em todo o mundo.
@@ -357,18 +357,19 @@ if ($cloudTieringDesired) {
 
 ---
 
-## <a name="configure-firewall-and-vnet-settings"></a>Definir configurações de firewall e VNet
+## <a name="configure-firewall-and-virtual-network-settings"></a>Definir configurações de rede virtual e de firewall
 
 ### <a name="portal"></a>Portal
 Se você quiser configurar a sincronização de arquivos do Azure para trabalhar com as configurações de firewall e rede virtual, faça o seguinte:
 
 1. No portal do Azure, navegue até a conta de armazenamento que você deseja proteger.
-1. Selecione o botão **firewalls e redes virtuais** no menu Lefthand.
+1. Selecione o botão **firewalls e redes virtuais** no menu à esquerda.
 1. Selecione **redes selecionadas** em **permitir acesso de**.
 1. Verifique se os servidores IP ou rede virtual estão listados na seção apropriada.
 1. Certifique-se **de que permitir que serviços da Microsoft confiáveis acessem esta conta de armazenamento** esteja marcado.
 1. Selecione **salvar** para salvar suas configurações.
 
+![Definindo configurações de rede virtual e de firewall para trabalhar com a sincronização de arquivos do Azure](media/storage-sync-files-deployment-guide/firewall-and-vnet.png)
 
 ## <a name="onboarding-with-azure-file-sync"></a>Integração com a Sincronização de arquivos do Azure
 As etapas recomendadas para se integrar à Sincronização de arquivos do Azure pela primeira vez com zero tempo de inatividade e ainda preservar a fidelidade do arquivo completo e a lista de controle de acesso (ACL) são as seguintes:

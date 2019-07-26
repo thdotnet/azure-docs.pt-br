@@ -1,19 +1,18 @@
 ---
 title: Usar o Servidor de Backup do Azure para fazer backup de cargas de trabalho no Azure
 description: Use o Servidor de Backup do Azure para proteger ou fazer backup de cargas de trabalho no Portal do Azure.
-services: backup
 author: kasinh
 manager: vvithal
 ms.service: backup
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: kasinh
-ms.openlocfilehash: 12ec1ce4a774178be621d7d8626ead7f1b106189
-ms.sourcegitcommit: 20bb149fe74459e59b648361235324b0674fe55b
+ms.openlocfilehash: bf0e964c46088947fa50d1eadbcc12b78978251f
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68298521"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466371"
 ---
 # <a name="install-and-upgrade-azure-backup-server"></a>Instalar e atualizar o Servidor de Backup do Azure
 > [!div class="op_single_selector"]
@@ -278,8 +277,8 @@ Quando você souber o estado da conectividade do Azure e da assinatura do Azure,
 | --- | --- | --- | --- | --- | --- |
 | Conectado |Ativo |Permitido |Permitido |Permitido |Permitido |
 | Conectado |Expirado |Parado |Parado |Permitido |Permitido |
-| Conectado |Provisionamento Cancelado |Parado |Parado |Parado e pontos de recuperação do Azure excluídos |Parado |
-| Perda de conectividade > 15 dias |Ativo |Parado |Parado |Permitido |Permitido |
+| Conectado |Desprovisionado |Parado |Parado |Parado e pontos de recuperação do Azure excluídos |Parado |
+| Perda de conectividade > 15 dias |Ativos |Parado |Parado |Permitido |Permitido |
 | Perda de conectividade > 15 dias |Expirado |Parado |Parado |Permitido |Permitido |
 | Perda de conectividade > 15 dias |Provisionamento Cancelado |Parado |Parado |Parado e pontos de recuperação do Azure excluídos |Parado |
 

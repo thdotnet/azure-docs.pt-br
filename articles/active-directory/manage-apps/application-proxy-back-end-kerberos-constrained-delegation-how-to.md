@@ -1,5 +1,5 @@
 ---
-title: Solucionar problemas configurações de delegação restrita de Kerberos para o Proxy do Aplicativo | Microsoft Docs
+title: Solucionar problemas de configurações de delegação restrita de Kerberos para o proxy de aplicativo | Microsoft Docs
 description: Solucionar problemas configurações de delegação restrita de Kerberos para o Proxy do Aplicativo
 services: active-directory
 documentationcenter: ''
@@ -16,12 +16,12 @@ ms.date: 04/23/2019
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c758b473dcdf36456bcc3569c18849488ad14983
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 3ca50cfb8697fdbb8c71054c5a6b4d5e23792eb5
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67702650"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68381528"
 ---
 # <a name="troubleshoot-kerberos-constrained-delegation-configurations-for-application-proxy"></a>Solucionar problemas configurações de delegação restrita de Kerberos para o Proxy do Aplicativo
 
@@ -46,7 +46,7 @@ Por esse motivo, é melhor certificar-se de que você cumpriu todos os pré-requ
 
 - Não é incomum que um servidor membro do domínio abra uma caixa de diálogo de canal seguro com um controlador de domínio (DC) específico. Em seguida, o servidor pode mudar para outra caixa de diálogo a qualquer momento. Então hosts de conector não estão restritos à comunicação com os controladores de domínio do site do local específico.
 - Cenários entre domínios dependem de referências para direcionar um host de conector para controladores de domínio que estejam fora do perímetro da rede local. Nesses casos, é igualmente importante também enviar tráfego para controladores de domínio que representam outros domínios. Caso contrário, a delegação falha.
-- Sempre que possível, evite colocar quaisquer dispositivos IPS ou IDS ativos entre os hosts do conector e os controladores de domínio. Esses dispositivos, às vezes, são muito invasivos e interferem com o tráfego RPC de núcleo.
+- Sempre que possível, evite colocar quaisquer dispositivos IPS ou IDS ativos entre os hosts do conector e os controladores de domínio. Esses dispositivos são, às vezes, muito invasivos e interferem no tráfego principal de RPC.
 
 Teste a delegação em cenários simples. Quanto mais variáveis você introduzir, com mais você pode ter que lidar. Para economizar tempo, limite o teste a um único conector. Adicione outros conectores depois que o problema for resolvido.
 
@@ -129,7 +129,7 @@ O consumidor do tíquete do Kerberos fornecido pelo conector. Neste estágio, é
 
      *Conector do Application Proxy do Microsoft AAD não pode autenticar o usuário porque o servidor back-end responde às tentativas de autenticação do Kerberos com um erro HTTP 401.*
 
-      ![Mostra o erro proibido HTTTP 401](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic8.png)
+      ![Mostra o erro proibido do HTTTP 401](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic8.png)
 
    - Verificar o aplicativo IIS. Certifique-se de que o pool de aplicativos configurado e o SPN estão configurados para usar a mesma conta no Azure AD. Navegue no IIS conforme mostrado na ilustração a seguir:
 
@@ -165,8 +165,8 @@ Se você ainda não conseguir progredir, o suporte da Microsoft pode ajudá-lo. 
 
 ## <a name="other-scenarios"></a>Outros cenários
 
-- Application Proxy do Azure solicita um tíquete do Kerberos antes de enviar a solicitação para um aplicativo. Alguns aplicativos de terceiros não gostam deste método de autenticação. Esses aplicativos esperam que as negociações mais convencionais ocorram. A primeira solicitação é anônima, e permite que o aplicativo responda com os tipos de autenticação que ele oferece suporte através de um 401.
-- Autenticação com salto duplo é comumente usada em cenários com aplicativos em camadas, com um back-end e front-end, ambos exigindo autenticação, como o SQL Server Reporting Services. Para configurar o cenário de saltos múltiplos, consulte o artigo de suporte [restrita a delegação pode exigir transição do protocolo Kerberos em cenários com saltos múltiplos](https://support.microsoft.com/help/2005838/kerberos-constrained-delegation-may-require-protocol-transition-in-mul).
+- Application Proxy do Azure solicita um tíquete do Kerberos antes de enviar a solicitação para um aplicativo. Alguns aplicativos de terceiros não gostam desse método de autenticação. Esses aplicativos esperam que as negociações mais convencionais ocorram. A primeira solicitação é anônima, e permite que o aplicativo responda com os tipos de autenticação que ele oferece suporte através de um 401.
+- Autenticação com salto duplo é comumente usada em cenários com aplicativos em camadas, com um back-end e front-end, ambos exigindo autenticação, como o SQL Server Reporting Services. Para configurar o cenário de salto múltiplo, consulte o artigo de suporte a [delegação restrita de Kerberos pode exigir a transição de protocolo em cenários de multi-hop](https://support.microsoft.com/help/2005838/kerberos-constrained-delegation-may-require-protocol-transition-in-mul).
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -1,5 +1,5 @@
 ---
-title: Relatórios sobre o provisionamento automático de conta de usuário do Azure Active Directory para aplicativos SaaS | Microsoft Docs
+title: Relatar o provisionamento automático de conta de usuário para aplicativos SaaS | Microsoft Docs
 description: Saiba como verificar o status dos trabalhos de provisionamento de automático de conta de usuário e como solucionar problemas com o provisionamento de usuários individuais.
 services: active-directory
 documentationcenter: ''
@@ -15,16 +15,16 @@ ms.date: 09/09/2018
 ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6f7386fd26de55911f51f73600f1e2bf1a70ce11
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: fda7654ca2d825ae4112dd06021c7e83ed6867cd
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67807702"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68381252"
 ---
 # <a name="tutorial-reporting-on-automatic-user-account-provisioning"></a>Tutorial: Relatórios sobre o provisionamento automático de conta de usuário
 
-Azure Active Directory (Azure AD) inclui um [conta de usuário do serviço de provisionamento](user-provisioning.md) que ajuda a automatizar o provisionamento desprovisionamento de contas de usuário em aplicativos SaaS e outros sistemas, com a finalidade de ciclo de vida de identidade de ponta a ponta gerenciamento. O Azure AD dá suporte a conectores de provisionamento de usuário pré-integrados para todos os aplicativos e sistemas na seção "Em destaque" da [Galeria de aplicativos do Azure AD](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps?page=1&subcategories=featured).
+O Azure Active Directory (AD do Azure) inclui um [serviço de provisionamento de conta de usuário](user-provisioning.md) que ajuda a automatizar o provisionamento de desprovisionamento de contas de usuário em aplicativos SaaS e outros sistemas, para fins de gerenciamento de ciclo de vida de identidade de ponta a ponta. O Azure AD dá suporte a conectores de provisionamento de usuário pré-integrados para todos os aplicativos e sistemas na seção "Em destaque" da [Galeria de aplicativos do Azure AD](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps?page=1&subcategories=featured).
 
 Este artigo descreve como verificar o status de trabalhos de provisionamento depois de eles terem sido configurados e como solucionar problemas com o provisionamento de usuários e grupos individuais.
 
@@ -32,7 +32,7 @@ Este artigo descreve como verificar o status de trabalhos de provisionamento dep
 
 Conectores de provisionamento são configurados e definidos usando o [Portal do Azure](https://portal.azure.com), seguindo a [documentação fornecida](../saas-apps/tutorial-list.md) para o aplicativo suportado. Depois de estarem configurados e em execução, os trabalhos de provisionamento podem ser informados usando um dos dois métodos:
 
-* **Portal do Azure** -este artigo descreve principalmente ao recuperar informações de relatório do [portal do Azure](https://portal.azure.com), que fornece tanto um relatório de resumo de provisionamento, bem como provisionamento detalhados logs de auditoria de um determinado aplicativo.
+* **Portal do Azure** -este artigo descreve principalmente a recuperação de informações de relatório do [portal do Azure](https://portal.azure.com), que fornece um relatório de Resumo de provisionamento, bem como os logs de auditoria de provisionamento detalhado para um determinado aplicativo.
 * **API de auditoria** – o Azure Active Directory também fornece uma API de auditoria que permite a recuperação programática dos logs de auditoria de provisionamento detalhados. Consulte a [referência da API de auditoria do Azure Active Directory](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) para a documentação específica para usar essa API. Embora este artigo não cubra especificamente como usar a API, ele detalha os tipos de eventos de provisionamento que são registrados no log de auditoria.
 
 ### <a name="definitions"></a>Definições
@@ -40,11 +40,11 @@ Conectores de provisionamento são configurados e definidos usando o [Portal do 
 Este artigo usa os seguintes termos, definidos a seguir:
 
 * **Sistema de origem** – o repositório de usuários do qual o serviço de provisionamento do Azure AD faz a sincronização. O Azure Active Directory é o sistema de origem para a maioria dos conectores de provisionamento previamente integrados, no entanto, há algumas exceções (exemplo: Sincronização de Entrada do Workday).
-* **Sistema de destino** – o repositório de usuários ao qual o serviço de provisionamento do Azure AD faz a sincronização. Isso normalmente é um aplicativo SaaS (exemplos: SalesForce, ServiceNow, G Suite, Dropbox for Business), mas em alguns casos, pode ser um sistema local como o Active Directory (exemplo: Sincronização de Entrada do Workday para Active Directory).
+* **Sistema de destino** – o repositório de usuários ao qual o serviço de provisionamento do Azure AD faz a sincronização. Isso normalmente é um aplicativo SaaS (exemplos: Salesforce, ServiceNow, G Suite, Dropbox for Business), mas, em alguns casos, pode ser um sistema local, como Active Directory (exemplo: Sincronização de Entrada do Workday para Active Directory).
 
-## <a name="getting-provisioning-reports-from-the-azure-portal"></a>Obter relatórios de provisionamento no portal do Azure
+## <a name="getting-provisioning-reports-from-the-azure-portal"></a>Obtendo relatórios de provisionamento do portal do Azure
 
-Para obter informações de relatório para um determinado aplicativo de provisionamento, primeiro inicie o [portal do Azure](https://portal.azure.com) e navegando até o aplicativo empresarial para o qual o provisionamento está configurado. Por exemplo, se você estiver provisionando usuários para o LinkedIn Elevate, o caminho de navegação para os detalhes do aplicativo será:
+Para obter informações de relatório de provisionamento para um determinado aplicativo, comece iniciando o [portal do Azure](https://portal.azure.com) e navegando até o aplicativo empresarial para o qual o provisionamento está configurado. Por exemplo, se você estiver provisionando usuários para o LinkedIn Elevate, o caminho de navegação para os detalhes do aplicativo será:
 
 **Azure Active Directory > Aplicativos Empresariais > Todos os aplicativos > LinkedIn Elevate**
 
@@ -79,7 +79,7 @@ Ao examinar eventos de provisionamento para um usuário individual, os eventos g
 1. Evento de regra de sincronização: os dados do usuário de sistemas de origem e destino são avaliados com relação aos filtros de escopo e às regras de mapeamento do atributo configurado para determinar qual ação, caso haja, deve ser executada.
 1. Evento de exportação: se o evento de regra de sincronização tiver determinado que uma ação deve ser executada (Adicionar, Atualizar, Excluir), os resultados da ação serão registrados em um evento de exportação.
 
-   ![Exemplo: Página de log que mostra as atividades e o status de auditoria](./media/check-status-user-account-provisioning/audit_logs.PNG)
+   ![Exemplo: Página log de auditoria que mostra as atividades e o status](./media/check-status-user-account-provisioning/audit_logs.PNG)
 
 ### <a name="looking-up-provisioning-events-for-a-specific-user"></a>Como pesquisar eventos de provisionamento para um usuário específico
 

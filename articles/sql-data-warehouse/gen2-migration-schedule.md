@@ -9,20 +9,20 @@ manager: craigg
 ms.assetid: 04b05dea-c066-44a0-9751-0774eb84c689
 ms.service: sql-data-warehouse
 ms.topic: article
-ms.date: 04/03/2019
-ms.openlocfilehash: cef3036b01709847016d9523a5770febb8ff1134
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.date: 07/22/2019
+ms.openlocfilehash: d4724672510d6ccbbc819691d621400cb00d8c9a
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67839669"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68405448"
 ---
 # <a name="upgrade-your-data-warehouse-to-gen2"></a>Atualizar o seu data warehouse para Gen2
 
-A Microsoft está ajudando a reduzir o custo da execução de um data warehouse de nível básico.  Quanto menor de computação camadas capazes de tratar mais exigentes de consultas agora estão disponíveis para o Azure SQL Data Warehouse. Leia o comunicado completo [inferior computação suporte de camada para Gen2](https://azure.microsoft.com/blog/azure-sql-data-warehouse-gen2-now-supports-lower-compute-tiers/). A nova oferta está disponível nas regiões observados na tabela a seguir. Para regiões compatíveis, data warehouses Gen1 existentes podem ser atualizados para Gen2 por um destes processos:
+A Microsoft está ajudando a reduzir o custo de nível de entrada da execução de um data warehouse.  As camadas de computação mais baixas capazes de lidar com consultas exigentes agora estão disponíveis para o Azure SQL Data Warehouse. Leia o suporte de [camada de computação inferior](https://azure.microsoft.com/blog/azure-sql-data-warehouse-gen2-now-supports-lower-compute-tiers/)do anúncio completo para Gen2. A nova oferta está disponível nas regiões indicadas na tabela a seguir. Para regiões compatíveis, data warehouses Gen1 existentes podem ser atualizados para Gen2 por um destes processos:
 
-- **O processo de atualização automática:** As atualizações automáticas não comece assim que o serviço está disponível em uma região.  Quando as atualizações automáticas são iniciadas em uma região específica, as atualizações individuais do data warehouse ocorrem durante o agendamento de manutenção selecionado.
-- [**Atualização automática para Gen2:** ](#self-upgrade-to-gen2) Você pode controlar quando a atualização, fazendo uma atualização automática para Gen2. Se ainda não há suporte para a sua região, você pode restaurar de um ponto de restauração diretamente a uma instância de Gen2 em uma região com suporte.
+- **O processo de atualização automática:** As atualizações automáticas não são iniciadas assim que o serviço está disponível em uma região.  Quando as atualizações automáticas são iniciadas em uma região específica, as atualizações individuais do data warehouse ocorrem durante o agendamento de manutenção selecionado.
+- [**Atualização automática para Gen2:** ](#self-upgrade-to-gen2) Você pode controlar quando atualizar fazendo uma autoatualização para Gen2. Se sua região ainda não tiver suporte, você poderá restaurar de um ponto de restauração diretamente para uma instância do Gen2 em uma região com suporte.
 
 ## <a name="automated-schedule-and-region-availability-table"></a>Agendamento automatizado e tabela de disponibilidade na região
 
@@ -32,46 +32,47 @@ A tabela a seguir resume por região quando a camada de computação inferior Ge
 
 | **Região** | **Gen2 inferior disponível** | **Início das atualizações automáticas** |
 |:--- |:--- |:--- |
-| Leste da Austrália |Disponível |1 de junho de 2019 |
-| Sudeste da Austrália |Disponível |1º de maio de 2019 |
-| Sul do Brasil |Disponível |1 de junho de 2019 |
-| Canadá Central |Disponível |1 de junho de 2019 |
-| Leste do Canadá |\* |\* |
-| Centro dos EUA |Disponível |1 de junho de 2019 |
+| Leste da Austrália |Disponível |Complete |
+| Sudeste da Austrália |Disponível |Complete |
+| Sul do Brasil |Disponível |Complete |
+| Canadá Central |Disponível |Complete |
+| Leste do Canadá |1º de junho de 2020 |1º de julho de 2020 |
+| EUA Central |Disponível |Complete |
 | Leste da China |\* |\* |
-| Leste da China 2 |Disponível |Somente Gen2 |
+| Leste da China 2 |Disponível |Complete |
 | Norte da China |\* |\* |
-| Norte da China 2 |Disponível |Somente Gen2 |
-| Ásia Oriental |Disponível |1 de junho de 2019 |
-| East US |Disponível |1 de junho de 2019 |
-| Leste dos EUA 2 |Disponível |1 de junho de 2019 |
-| França Central |Disponível |1 de junho de 2019 |
+| Norte da China 2 |Disponível |Complete |
+| Ásia Oriental |Disponível |Complete |
+| East US |Disponível |Complete |
+| Leste dos EUA 2 |Disponível |Complete |
+| Centro da França |Disponível |Em andamento |
 | Alemanha Central |\* |\* |
-| Centro-oeste da Alemanha |1 de setembro de 2019|2 de janeiro de 2020 |
-| Centro da Índia |Disponível |1 de junho de 2019 |
-| Sul da Índia |Disponível |1 de junho de 2019 |
-| Leste do Japão |Disponível |1 de junho de 2019 |
-| Oeste do Japão |Disponível |1º de maio de 2019 |
-| Coreia Central |Disponível |1 de junho de 2019 |
-| Sul da Coreia |Disponível |1º de maio de 2019 |
-| Centro-Norte dos EUA |Disponível |1º de maio de 2019 |
-| Norte da Europa |Disponível |1 de junho de 2019 |
-| Norte da África do Sul |12 de julho de 2019 |Somente Gen2 |
-| Centro-Sul dos Estados Unidos |Disponível |1 de junho de 2019 |
-| Sudeste da Ásia |Disponível |1 de junho de 2019 |
-| Norte dos EAU |20 de julho de 2019 |Somente Gen2 |
-| Sul do Reino Unido |Disponível |1 de junho de 2019 |
-| Oeste do Reino Unido |Disponível |Somente Gen2 |
-| Centro-Oeste dos EUA |2 de setembro de 2019 |2 de janeiro de 2020|
-| Europa Ocidental |Disponível |1 de junho de 2019 |
-| Oeste dos EUA |Disponível |1 de junho de 2019 |
-| Oeste dos EUA 2 |Disponível |1 de junho de 2019 |
+| Centro-oeste da Alemanha |1º de setembro de 2019|1 de outubro de 2019 |
+| Índia Central |Disponível |Complete |
+| Índia do Sul |Disponível |Complete |
+| Índia Ocidental |1º de julho de 2019 |Em andamento |
+| Leste do Japão |Disponível |Complete |
+| Oeste do Japão |Disponível |Complete |
+| Coreia Central |Disponível |Complete |
+| Sul da Coreia |Disponível |Complete |
+| Centro-Norte dos EUA |Disponível |Complete |
+| Europa Setentrional |Disponível |Complete |
+| Norte da África do Sul |12 de julho de 2019 |Complete |
+| Centro-Sul dos EUA |Disponível |Complete |
+| Sudeste Asiático |Disponível |Complete |
+| Norte dos EAU |20 de julho de 2019 |Complete |
+| Sul do Reino Unido |Disponível |Em andamento |
+| Oeste do Reino Unido |Disponível |Em andamento |
+| Centro-oeste dos EUA |1º de setembro de 2019 |1 de outubro de 2019|
+| Europa Ocidental |Disponível |Complete |
+| Oeste dos EUA |Disponível |Complete |
+| Oeste dos EUA 2 |Disponível |Complete |
 
 ## <a name="automatic-upgrade-process"></a>Processo de atualização automática
 
-Com base no gráfico de disponibilidade acima, podemos vai ser agendar atualizações automatizadas para suas instâncias Gen1. Para evitar interrupções inesperadas de disponibilidade do data warehouse, as atualizações automatizadas serão agendadas durante o seu agendamento de manutenção. A capacidade de criar uma nova instância de Gen1 será desativada em regiões em processo de atualização automática para Gen2. Gen1 será preterido após concluir as atualizações automáticas. Para saber mais sobre agendamentos, consulte [Exibir um agendamento de manutenção](viewing-maintenance-schedule.md)
+Com base no gráfico de disponibilidade acima, vamos agendar atualizações automatizadas para suas instâncias do Gen1. Para evitar interrupções inesperadas de disponibilidade do data warehouse, as atualizações automatizadas serão agendadas durante o seu agendamento de manutenção. A capacidade de criar uma nova instância de Gen1 será desabilitada em regiões que passam por atualização automática para Gen2. O Gen1 será preterido depois que as atualizações automáticas forem concluídas. Para saber mais sobre agendamentos, consulte [Exibir um agendamento de manutenção](viewing-maintenance-schedule.md)
 
-O processo de atualização envolverá uma breve queda na conectividade (aproximadamente 5 min) como podemos reiniciar seu data warehouse.  Depois que o data warehouse for reiniciado, ele estará totalmente disponível para uso. No entanto, você pode enfrentar uma degradação no desempenho durante o processo de atualização continua a atualizar os arquivos de dados em segundo plano. O tempo total para a degradação do desempenho varia de acordo com o tamanho dos seus arquivos de dados.
+O processo de atualização envolverá uma breve queda na conectividade (aproximadamente 5 min) à medida que reiniciamos o data warehouse.  Depois que o data warehouse for reiniciado, ele estará totalmente disponível para uso. No entanto, você pode enfrentar uma degradação no desempenho enquanto o processo de atualização continua a atualizar os arquivos de dados em segundo plano. O tempo total para a degradação do desempenho varia de acordo com o tamanho dos seus arquivos de dados.
 
 Você também pode agilizar o processo de atualização do arquivo de dados executando [Alter Index rebuild](sql-data-warehouse-tables-index.md) em todas as tabelas columnstore primárias usando uma classe maior de SLO e recursos após a reinicialização.
 
@@ -80,11 +81,11 @@ Você também pode agilizar o processo de atualização do arquivo de dados exec
 
 ## <a name="self-upgrade-to-gen2"></a>Autoatualização para Gen2
 
-Você pode optar por atualizar automaticamente, seguindo estas etapas em um data warehouse existente do Gen1. Se você optar por atualizar automaticamente, você deve concluí-lo antes do início do processo de atualização automática em sua região. Isso garante que você evite qualquer risco das atualizações automáticas, causando um conflito.
+Você pode optar por fazer a atualização automática seguindo estas etapas em um data warehouse Gen1 existente. Se você optar por atualizar automaticamente, deverá concluí-lo antes que o processo de atualização automática comece na sua região. Isso garante que você evite qualquer risco de atualizações automáticas causando um conflito.
 
 Há duas opções ao realizar uma autoatualização.  Você pode atualizar o seu data warehouse atual in-loco ou restaurar um data warehouse Gen1 em uma instância Gen2.
 
-- [Atualização in-loco](upgrade-to-latest-generation.md): essa opção atualizará o seu data warehouse Gen1 existente para Gen2. O processo de atualização envolverá uma breve queda na conectividade (aproximadamente 5 min) como podemos reiniciar seu data warehouse.  Depois que o data warehouse for reiniciado, ele estará totalmente disponível para uso. Se você enfrentar problemas durante a atualização, abra uma [solicitação de suporte](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-get-started-create-support-ticket) e fazer referência a "Atualização de Gen2" como a possível causa.
+- [Atualização in-loco](upgrade-to-latest-generation.md): essa opção atualizará o seu data warehouse Gen1 existente para Gen2. O processo de atualização envolverá uma breve queda na conectividade (aproximadamente 5 min) à medida que reiniciamos o data warehouse.  Depois que o data warehouse for reiniciado, ele estará totalmente disponível para uso. Se você tiver problemas durante a atualização, abra uma [solicitação de suporte](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-get-started-create-support-ticket) e faça referência a "atualização Gen2" como a possível causa.
 - [Atualização do ponto de restauração](sql-data-warehouse-restore.md): crie um ponto de restauração definido pelo usuário no seu data warehouse Gen1 atual e, em seguida, restaure diretamente em uma instância Gen2. O data warehouse Gen1 existente permanecerá em vigor. Depois que a restauração for concluída, o seu data warehouse Gen2 estará completamente disponível para uso.  Depois de executar todos os processos de teste e validação na instância Gen2 restaurada, a instância Gen1 original pode ser excluída.
 
    - Etapa 1: No portal do Azure, [crie um ponto de restauração definido pelo usuário](sql-data-warehouse-restore.md#create-a-user-defined-restore-point-using-the-azure-portal).

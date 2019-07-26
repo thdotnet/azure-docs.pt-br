@@ -1,5 +1,5 @@
 ---
-title: Autenticação de serviço a serviço do Azure Active Directory que usa a especificação de rascunho On-Behalf-Of do OAuth2.0 | Microsoft Docs
+title: Especificação de rascunho em nome de do OAuth 2.0 de autenticação serviço a serviço do Azure AD | Microsoft Docs
 description: Este artigo descreve como usar mensagens HTTP para implementar a autenticação de serviço a serviço usando o fluxo On-Behalf-Of do OAuth2.0.
 services: active-directory
 documentationcenter: .net
@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: hirsin, nacanuma
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb64aa401838451191a830a5adbfb435ac5fdf25
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 7381a0dfb8f780900d8c2c8ba0637dcd232bdb9f
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68261929"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68380898"
 ---
 # <a name="service-to-service-calls-that-use-delegated-user-identity-in-the-on-behalf-of-flow"></a>Chamadas de serviço a serviço que usam a identidade do usuário delegado no fluxo On-Behalf-Of
 
@@ -109,7 +109,7 @@ O aplicativo cliente é protegido por um segredo compartilhado ou por um certifi
 
 Ao usar um segredo compartilhado, uma solicitação de token de acesso de serviço para serviço contém estes parâmetros:
 
-| Parâmetro |  | DESCRIÇÃO |
+| Parâmetro |  | Descrição |
 | --- | --- | --- |
 | grant_type |obrigatório | O tipo da solicitação de token. Uma solicitação OBO usa um JWT (Token Web JSON), de modo que o valor deve ser **urn:ietf:params:oauth:grant-type:jwt-bearer**. |
 | assertion |obrigatório | O valor do token de acesso usado na solicitação. |
@@ -143,7 +143,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 
 Uma solicitação de token de acesso de serviço para serviço com certificado contém estes parâmetros:
 
-| Parâmetro |  | DESCRIÇÃO |
+| Parâmetro |  | Descrição |
 | --- | --- | --- |
 | grant_type |obrigatório | O tipo da solicitação de token. Uma solicitação OBO usa um token de acesso JWT, de modo que o valor deve ser **urn:ietf:params:oauth:grant-type:jwt-bearer**. |
 | assertion |obrigatório | O valor do token usado na solicitação. |
@@ -181,7 +181,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 
 Uma resposta bem-sucedida é uma resposta JSON do OAuth 2.0 com os parâmetros a seguir:
 
-| Parâmetro | DESCRIÇÃO |
+| Parâmetro | Descrição |
 | --- | --- |
 | token_type |Indica o valor do tipo de token. O único tipo com suporte do Azure AD é **Portador**. Para saber mais sobre os tokens de portador, confira [Estrutura de Autorização do OAuth 2.0: Uso do Token de Portador (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt). |
 | scope |O escopo do acesso concedido no token. |
@@ -253,7 +253,7 @@ Alguns serviços Web baseados em OAuth precisam acessar outras APIs de serviços
 
 Uma solicitação de serviço a serviço para obter uma declaração SAML contém os seguintes parâmetros:
 
-| Parâmetro |  | DESCRIÇÃO |
+| Parâmetro |  | Descrição |
 | --- | --- | --- |
 | grant_type |obrigatório | O tipo da solicitação de token. Para uma solicitação que usa um JWT, o valor deve ser **urn:ietf:params:oauth:grant-type:jwt-bearer**. |
 | assertion |obrigatório | O valor do token de acesso usado na solicitação.|
@@ -272,7 +272,7 @@ A resposta contém um token SAML codificado em Base64url e UTF8.
 
 ### <a name="response-with-saml-assertion"></a>Resposta com declaração SAML
 
-| Parâmetro | DESCRIÇÃO |
+| Parâmetro | Descrição |
 | --- | --- |
 | token_type |Indica o valor do tipo de token. O único tipo com suporte do Azure AD é **Portador**. Para saber mais sobre os tokens de portador, confira [Estrutura de Autorização do OAuth 2.0: Uso do Token de Portador (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt). |
 | scope |O escopo do acesso concedido no token. |

@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: 269568c172ff6c65c9877f9ad22067a11125b339
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: edc0da77fc1c2813c2485fca18d50952e3060db8
+ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67847593"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68370477"
 ---
 # <a name="log-metrics-during-training-runs-in-azure-machine-learning"></a>Métricas de log durante execuções de treinamento no Azure Machine Learning
 
@@ -225,8 +225,8 @@ O artigo [Iniciar, monitorar e cancelar execuções de treinamento](how-to-manag
 
 ## <a name="view-run-details"></a>Exibir detalhes de execução
 
-### <a name="monitor-run-with-jupyter-notebook-widgets"></a>Monitorar execução com widgets do Jupyter Notebook
-Quando você usa o método **ScriptRunConfig** para enviar execuções, pode inspecionar o progresso da execução com um widget do Jupyter Notebook. Como o envio de execução, o widget é assíncrono e fornece atualizações ao vivo a cada 10 a 15 segundos até que o trabalho seja concluído.
+### <a name="monitor-run-with-jupyter-notebook-widget"></a>Monitor executar com o widget do Jupyter Notebook
+Ao usar o método **ScriptRunConfig** para enviar execuções, você pode observar o progresso da execução com um [widget Jupyter](https://docs.microsoft.com/python/api/azureml-widgets/azureml.widgets?view=azure-ml-py). Como o envio de execução, o widget é assíncrono e fornece atualizações ao vivo a cada 10 a 15 segundos até que o trabalho seja concluído.
 
 1. Exiba o widget do Jupyter enquanto aguarda a execução ser concluída.
 
@@ -236,6 +236,12 @@ Quando você usa o método **ScriptRunConfig** para enviar execuções, pode ins
    ```
 
    ![Captura de tela do widget do Jupyter Notebook](./media/how-to-track-experiments/run-details-widget.png)
+
+Você também pode obter um link para a mesma exibição em seu espaço de trabalho.
+
+```python
+print(run.get_portal_url())
+```
 
 2. **[Para execuções automatizadas do aprendizado de máquina]**  Para acessar os gráficos a partir de uma execução anterior. Substituir `<<experiment_name>>` pelo nome de experimento apropriado:
 
@@ -257,7 +263,8 @@ Para exibir mais detalhes de um pipeline, clique naquele que você gostaria de e
 ### <a name="get-log-results-upon-completion"></a>Obter resultados de log após a conclusão
 
 O treinamento e o monitoramento do modelo ocorrem em segundo plano para que você possa executar outras tarefas enquanto aguarda. Você também pode esperar até o modelo ter concluído o treinamento antes de executar mais código. Quando você usa **ScriptRunConfig**, pode usar ```run.wait_for_completion(show_output = True)``` para mostrar quando o treinamento do modelo está concluído. O sinalizador ```show_output``` fornece saída detalhada. 
-  
+
+
 ### <a name="query-run-metrics"></a>Métricas de execução de consulta
 
 Você pode exibir as métricas de um modelo treinado usando ```run.get_metrics()```. Agora você pode obter todas as métricas registradas no exemplo anterior para determinar o melhor modelo.
@@ -287,140 +294,6 @@ Há várias maneiras de usar as APIs para tipos diferentes de registro de métri
 |Faça uma linha com colunas numéricas 2 repetidamente|`run.log_row(name='Cosine Wave', angle=angle, cos=np.cos(angle))   sines['angle'].append(angle)      sines['sine'].append(np.sin(angle))`|Gráfico de linhas de duas variáveis|
 |Tabela de log com 2 colunas numéricas|`run.log_table(name='Sine Wave', value=sines)`|Gráfico de linhas de duas variáveis|
 
-<a name="auto"></a>
-## <a name="understanding-automated-ml-charts"></a>Noções básicas sobre gráficos automatizados de ML
-
-Depois de enviar um trabalho de ML automatizado em um notebook, é possível encontrar um histórico dessas execuções no workspace do serviço de aprendizado de máquina. 
-
-Saiba mais sobre:
-+ [Gráficos e curvas para modelos de classificação](#classification)
-+ [Quadros e gráficos para modelos de regressão](#regression)
-+ [Capacidade de explicar o modelo](#model-explain-ability-and-feature-importance)
-
-
-### <a name="view-the-run-charts"></a>Exibir os gráficos de execução
-
-1. Vá até seu workspace. 
-
-1. Selecione **Experimentos** no painel mais à esquerda do workspace.
-
-   ![Captura de tela do menu de experimento](./media/how-to-track-experiments/azure-machine-learning-auto-ml-experiment-menu.png)
-
-1. Selecione o experimento no qual você está interessado.
-
-   ![Lista de experimentos](./media/how-to-track-experiments/azure-machine-learning-auto-ml-experiment-list.png)
-
-1. Na tabela, selecione o Número da Execução.
-
-   ![Execução do experimento](./media/how-to-track-experiments/azure-machine-learning-auto-ml-experiment-run.png)
-
-1. Na tabela, selecione o Número da Iteração do modelo que você gostaria de explorar ainda mais.
-
-   ![Modelo do experimento](./media/how-to-track-experiments/azure-machine-learning-auto-ml-experiment-model.png)
-
-
-
-### <a name="classification"></a>classificação
-
-Para cada modelo de classificação compilado usando os recursos automatizados de aprendizado de máquina do Azure Machine Learning, é possível obter os gráficos a seguir: 
-+ [Matriz de confusão](#confusion-matrix)
-+ [Gráfico de precisão/recall](#precision-recall-chart)
-+ [ROC (características operacionais do destinatário)](#roc)
-+ [Curva de comparação de precisão](#lift-curve)
-+ [Curva de ganhos](#gains-curve)
-+ [Gráfico de calibragem](#calibration-plot)
-
-#### <a name="confusion-matrix"></a>Matriz de confusão
-
-Uma matriz de confusão é usada para descrever o desempenho de um modelo de classificação. Cada linha exibe as instâncias da classe real, e cada coluna representa as instâncias da classe prevista. A matriz de confusão mostra os rótulos classificados de modo correto e incorreto para um determinado modelo.
-
-Para problemas de classificação, o Azure Machine Learning fornece automaticamente uma matriz de confusão para cada modelo compilado. Para cada matriz de confusão, o ML automatizado mostrará em verde e vermelho os rótulos classificados de modo correto e incorreto respectivamente. O tamanho do círculo representa a quantidade de amostras desse compartimento. Além disso, a contagem de frequência de cada rótulo previsto e de cada rótulo real é fornecida em gráficos de barras adjacentes. 
-
-Exemplo 1: Um modelo de classificação com baixa precisão ![Um modelo de classificação com baixa precisão](./media/how-to-track-experiments/azure-machine-learning-auto-ml-confusion-matrix1.png)
-
-Exemplo 2: Um modelo de classificação com alta precisão (recomendado) ![Um modelo de classificação com alta precisão](./media/how-to-track-experiments/azure-machine-learning-auto-ml-confusion-matrix2.png)
-
-
-#### <a name="precision-recall-chart"></a>Gráfico de precisão/recall
-
-Com esse gráfico, você pode comparar as curvas de precisão/recall de cada modelo para determinar qual deles tem uma relação aceitável entre a precisão e a recall conforme seu problema comercial específico. Esse gráfico mostra a média macro e micro da precisão/recall, além da precisão/recall associada a todas as classes de um modelo.
-
-O termo “precisão” representa a capacidade de um classificador rotular todas as instâncias corretamente. O termo “recall” representa a capacidade de um classificador localizar todas as instâncias de um rótulo específico. A curva de precisão/recall mostra a relação entre esses dois conceitos. Idealmente, o modelo teria 100% de precisão e exatidão.
-
-Exemplo 1: Um modelo de classificação com baixa precisão e baixo recall ![Um modelo de classificação com baixa precisão e baixo recall](./media/how-to-track-experiments/azure-machine-learning-auto-ml-precision-recall1.png)
-
-Exemplo 2: Um modelo de classificação com ~100% de precisão e ~100% de recall (ideal) ![Um modelo de classificação com alta precisão e recall](./media/how-to-track-experiments/azure-machine-learning-auto-ml-precision-recall2.png)
-
-#### <a name="roc"></a>ROC
-
-O ROC (característica operacional do receptor) é um gráfico que compara os rótulos classificados de modo correto e incorreto de um modelo específico. A curva ROC pode ser menos informativa ao treinar modelos em conjuntos de dados com alto desvio, pois ela não mostrará os rótulos falso-positivos.
-
-Exemplo 1: Um modelo de classificação com baixa quantidade de rótulos reais e alta quantidade de rótulos falsos ![Modelo de classificação com baixa quantidade de rótulos verdadeiros e alta quantidade de rótulos falsos](./media/how-to-track-experiments/azure-machine-learning-auto-ml-roc-1.png)
-
-Exemplo 2: Um modelo de classificação com alta quantidade de rótulos verdadeiros e baixa quantidade de rótulos falsos ![Modelo de classificação com alta quantidade de rótulos verdadeiros e baixa quantidade de rótulos falsos](./media/how-to-track-experiments/azure-machine-learning-auto-ml-roc-2.png)
-
-#### <a name="lift-curve"></a>Curva de comparação de precisão
-
-Você pode comparar a precisão do modelo compilado automaticamente do Azure Machine Learning com a linha de base para exibir o ganho de valor desse determinado modelo.
-
-Gráficos de comparação de precisão são usados para avaliar o desempenho de um modelo de classificação. Eles mostram o quão melhor seu desempenho pode ficar com um modelo em comparação a não ter um modelo. 
-
-Exemplo 1: O modelo tem desempenho pior que um modelo de seleção aleatória ![Um modelo de classificação com desempenho pior do que um modelo de seleção aleatória](./media/how-to-track-experiments/azure-machine-learning-auto-ml-lift-curve1.png)
-
-Exemplo 2: O modelo tem desempenho melhor do que um modelo de seleção aleatória ![Um modelo de classificação que tem desempenho melhor](./media/how-to-track-experiments/azure-machine-learning-auto-ml-lift-curve2.png)
-
-#### <a name="gains-curve"></a>Curva de ganhos
-
-Um gráfico de ganhos avalia o desempenho de um modelo de classificação em cada porção dos dados. Ele mostra, para cada percentil do conjunto de dados, o quão melhor o desempenho pode ser em comparação a um modelo de seleção aleatória.
-
-Use o gráfico de ganhos cumulativos para ajudar você a escolher o corte de classificação usando uma porcentagem que corresponda a um ganho desejado do modelo. Essas informações fornecem outra maneira de observar os resultados no gráfico de comparação de precisão anexo.
-
-Exemplo 1: Um modelo de classificação com ganho mínimo ![Um modelo de classificação com ganho mínimo](./media/how-to-track-experiments/azure-machine-learning-auto-ml-gains-curve1.png)
-
-Exemplo 2: Um modelo de classificação com ganho significativo ![Um modelo de classificação com ganho significativo](./media/how-to-track-experiments/azure-machine-learning-auto-ml-gains-curve2.png)
-
-#### <a name="calibration-plot"></a>Gráfico de calibragem
-
-Em todos os problemas de classificação, você pode examinar a linha de calibração para cada média micro, macro e cada classe de um determinado modelo de previsão. 
-
-Um gráfico de calibragem é usado para exibir a confiança de um modelo de previsão. Para isso, ele mostra a relação entre a probabilidade prevista e a probabilidade real, em que “probabilidade” representa as chances de uma determinada instância pertencer a algum rótulo. Um modelo bem calibrado se alinha com a linha y = x, estando razoavelmente confiante em suas previsões. Um modelo com confiança excessiva se nivela à linha y=0, na qual a probabilidade prevista está presente, mas não há nenhuma probabilidade real.
-
-Exemplo 1: Um modelo mais bem calibrado ![Um modelo mais bem calibrado](./media/how-to-track-experiments/azure-machine-learning-auto-ml-calib-curve1.png)
-
-Exemplo 2: Um modelo com confiança excessiva ![Um modelo com confiança excessiva](./media/how-to-track-experiments/azure-machine-learning-auto-ml-calib-curve2.png)
-
-### <a name="regression"></a>Regressão
-Para cada modelo de regressão compilado usando os recursos automatizados de aprendizado de máquina do Azure Machine Learning, é possível obter os gráficos a seguir: 
-+ [Previsto vs. Real](#pvt)
-+ [Histograma de resíduos](#histo)
-
-<a name="pvt"></a>
-
-#### <a name="predicted-vs-true"></a>Previsto vs. verdadeiro
-
-Previsto vs. “Real” mostra a relação entre um valor previsto e seu valor real de correlação para um problema de regressão. Esse gráfico pode ser usado para medir o desempenho de um modelo que, quanto mais próximos à linha y=x linha estiverem seus valores previstos, melhor será a precisão de um modelo de previsão.
-
-Após cada execução, você pode ver um gráfico comparando os dados previstos e reais de cada modelo de regressão. Para proteger a privacidade dos dados, os valores ficam no mesmo compartimento, sendo que o tamanho de cada compartimento é mostrado como um gráfico de barras na parte inferior da área do gráfico. Você pode comparar o modelo de previsão, com as áreas de tonalidade mais leves, mostrando as margens de erro comparadas ao valor ideal de onde o modelo deveria estar.
-
-Exemplo 1: Um modelo de regressão com a baixa precisão em previsões ![Um modelo de regressão com baixa precisão em previsões](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression1.png)
-
-Exemplo 2: Um modelo de regressão com a alta precisão em previsões ![Um modelo de regressão com alta precisão em previsões](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression2.png)
-
-<a name="histo"></a>
-
-#### <a name="histogram-of-residuals"></a>Histograma de resíduos
-
-Um resíduo representa um y observado, que é o y previsto. Para mostrar uma margem de erro com baixo desvio, o histograma de resíduos deve ter a forma de uma curva de sino, centralizada em torno do 0. 
-
-Exemplo 1: Um modelo de regressão com desvio em seus erros ![Modelo de regressão de SA com desvio em seus erros](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression3.png)
-
-Exemplo 2: Um modelo de regressão com uma distribuição mais uniforme de erros ![Um modelo de regressão com uma distribuição mais uniforme de erros](./media/how-to-track-experiments/azure-machine-learning-auto-ml-regression4.png)
-
-### <a name="model-explain-ability-and-feature-importance"></a>Capacidade de explicar o modelo e a importância do recurso
-
-A importância do recurso fornece uma pontuação que indica o quão valioso era cada recurso na construção de um modelo. É possível analisar a pontuação de importância do recurso do modelo geral, bem como por classe de um modelo de previsão. Também é possível ver, em cada recurso, como a importância se compara a cada classe e no geral.
-
-![Capacidade de explicar o recurso](./media/how-to-track-experiments/azure-machine-learning-auto-ml-feature-explain1.png)
 
 ## <a name="example-notebooks"></a>Blocos de anotações de exemplo
 Os seguintes blocos de anotações demonstram conceitos neste artigo:

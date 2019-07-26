@@ -11,12 +11,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 06/21/2019
 ms.author: dapine
-ms.openlocfilehash: 7f178152fb5b6d540c2cecdfa42687469dfe3881
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 39f15cf8d1374ca95b10ccbddb8a59ec3e98f4f8
+ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68357007"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68488772"
 ---
 # <a name="install-and-run-text-analytics-containers"></a>Instalar e executar contêineres da Análise de Texto
 
@@ -32,11 +32,13 @@ Para executar qualquer um dos contêineres de Análise de Texto, você deve ter 
 
 Você deve cumprir os seguintes pré-requisitos antes de usar os contêineres de Análise de Texto:
 
-|Obrigatório|Finalidade|
+|Necessário|Finalidade|
 |--|--|
 |Mecanismo Docker| É necessário ter o Mecanismo Docker instalado em um [computador host](#the-host-computer). O Docker fornece pacotes que configuram o ambiente do Docker no [macOS](https://docs.docker.com/docker-for-mac/), no [Windows](https://docs.docker.com/docker-for-windows/) e no [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Para instruções sobre conceitos básicos do Docker e de contêiner, consulte a [visão geral do Docker](https://docs.docker.com/engine/docker-overview/).<br><br> O Docker deve ser configurado para permitir que os contêineres conectem-se e enviem dados de cobrança para o Azure. <br><br> **No Windows**, o Docker também deve ser configurado para dar suporte a contêineres do Linux.<br><br>|
 |Familiaridade com o Docker | É necessário ter uma compreensão básica de conceitos do Docker, como registros, repositórios, contêineres e imagens de contêiner, bem como conhecimento dos comandos básicos do `docker`.| 
 |Recurso de Análise de Texto |Para usar o contêiner, você precisará ter:<br><br>Um recurso de [análise de texto](text-analytics-how-to-access-key.md) do Azure para obter a chave de API e o URI de ponto de extremidade associados. Ambos os valores estão disponíveis nas páginas Visão Geral e Chaves da Análise de Texto no portal do Azure e são necessários para iniciar o contêiner.<br><br>**{API_KEY}** : Uma das duas chaves de recurso disponíveis na página **chaves**<br><br>**{ENDPOINT_URI}** : O ponto de extremidade conforme fornecido na página **visão geral**|
+
+[!INCLUDE [Gathering required parameters](../../containers/includes/container-gathering-required-parameters.md)]
 
 ### <a name="the-host-computer"></a>O computador host
 
@@ -48,8 +50,8 @@ A tabela a seguir descreve os núcleos de CPU mínimos e recomendados, pelo meno
 
 | Contêiner | Mínimo | Recomendado | TPS<br>(Mínimo, máximo)|
 |-----------|---------|-------------|--|
-|Extração de Frases-Chave | 1 núcleo, 2 GB de memória | 1 núcleo, 4 GB de memória |15, 30|
-|Detecção de Idioma | 1 núcleo, 2 GB de memória | 1 núcleo, 4 GB de memória |15, 30|
+|Extração de Frases-chave | 1 núcleo, 2 GB de memória | 1 núcleo, 4 GB de memória |15, 30|
+|Detecção de idioma | 1 núcleo, 2 GB de memória | 1 núcleo, 4 GB de memória |15, 30|
 |Análise de Sentimento | 1 núcleo, 2 GB de memória | 1 núcleo, 4 GB de memória |15, 30|
 
 * Cada núcleo precisa ser de pelo menos 2,6 GHz (gigahertz) ou mais rápido.
@@ -63,8 +65,8 @@ Imagens de contêiner para Análise de Texto estão disponíveis no Registro de 
 
 | Contêiner | Repositório |
 |-----------|------------|
-|Extração de Frases-Chave | `mcr.microsoft.com/azure-cognitive-services/keyphrase` |
-|Detecção de Idioma | `mcr.microsoft.com/azure-cognitive-services/language` |
+|Extração de Frases-chave | `mcr.microsoft.com/azure-cognitive-services/keyphrase` |
+|Detecção de idioma | `mcr.microsoft.com/azure-cognitive-services/language` |
 |Análise de Sentimento | `mcr.microsoft.com/azure-cognitive-services/sentiment` |
 
 Use o [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/) comando para baixar uma imagem de contêiner do registro de contêiner da Microsoft.
@@ -107,14 +109,7 @@ Depois que o contêiner estiver no [computador host](#the-host-computer), use o 
 
 ## <a name="run-the-container-with-docker-run"></a>Executar o contêiner com `docker run`
 
-Use o comando [docker run](https://docs.docker.com/engine/reference/commandline/run/) para executar qualquer um dos três contêineres. O comando usa os seguintes parâmetros:
-
-| Placeholder | Valor |
-|-------------|-------|
-|{API_KEY} | Essa chave é usada para iniciar o contêiner e está disponível na página chaves do `Text Analytics` portal do Azure. |
-|{ENDPOINT_URI} | O valor do URI do ponto de extremidade de cobrança `Text Analytics` está disponível na página Visão geral do Azure. |
-
-Substitua esses parâmetros por seus próprios valores no comando `docker run` de exemplo a seguir.
+Use o comando [docker run](https://docs.docker.com/engine/reference/commandline/run/) para executar qualquer um dos três contêineres. Consulte [coletando parâmetros necessários](#gathering-required-parameters) para obter detalhes sobre como obter os `{Endpoint_URI}` valores `{API_Key}` e.
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \

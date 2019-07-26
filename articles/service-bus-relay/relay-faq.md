@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/21/2018
 ms.author: spelluru
-ms.openlocfilehash: f9f182a459f9a38c96bdf923998d1cdfee8fc3ac
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 207f73bbf9a92d26be1791fc11ce81fe68252705
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68277970"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68422964"
 ---
 # <a name="azure-relay-faqs"></a>Perguntas frequentes sobre Retransmissão do Azure
 
@@ -36,7 +36,7 @@ O [serviço de Retransmissão do Azure](relay-what-is-it.md) facilita seus aplic
 Um [namespace](relay-create-namespace-portal.md) é um contêiner de escopo que você pode usar para tratar recursos de Retransmissão dentro de seu aplicativo. Você deve criar um namespace para usar a Retransmissão. Essa é uma das primeiras etapas para começar.
 
 ### <a name="what-happened-to-service-bus-relay-service"></a>O que aconteceu com o serviço de Retransmissão do Barramento de Serviço?
-O serviço que antes era chamado de Retransmissão do Barramento de Serviço agora se chama [Retransmissão do WCF](relay-wcf-dotnet-get-started.md). Você pode continuar a usar esse serviço como de costume. O recurso Conexões Híbridas é uma versão atualizada de um serviço que foi transplantado dos Serviços BizTalk do Azure. Ainda há suporte para Retransmissão do WCF e Conexões Híbridas.
+O serviço que antes era chamado de Retransmissão do Barramento de Serviço agora se chama [Retransmissão do WCF](service-bus-relay-tutorial.md). Você pode continuar a usar esse serviço como de costume. O recurso Conexões Híbridas é uma versão atualizada de um serviço que foi transplantado dos Serviços BizTalk do Azure. Ainda há suporte para Retransmissão do WCF e Conexões Híbridas.
 
 ## <a name="pricing"></a>Preços
 Esta seção responde a algumas perguntas frequentes sobre a estrutura de preços de Retransmissão. Você também pode conferir as [Perguntas frequentes sobre o suporte do Azure](https://azure.microsoft.com/support/faq/) para obter informações gerais sobre preços do Azure. Para saber mais sobre o preço da Retransmissão, consulte [Detalhes de preço do Barramento de Serviço][Pricing overview].

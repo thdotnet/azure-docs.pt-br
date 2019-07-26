@@ -1,19 +1,18 @@
 ---
 title: Solucionar problemas de Servidor de Backup do Azure
 description: Solucionar problemas de instalação, registro de Servidor de Backup do Azure e backup e restauração de cargas de trabalho do aplicativo.
-services: backup
 author: srinathvasireddy
 manager: sivan
 ms.service: backup
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: srinathv
-ms.openlocfilehash: 8e7ee506448f5ce0c8dc0b7f55dd9d66e73f110e
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: f601901ed0cb90421dbf7254d657ef80e1769541
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68234776"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466084"
 ---
 # <a name="troubleshoot-azure-backup-server"></a>Solucionar problemas de Servidor de Backup do Azure
 
@@ -45,11 +44,11 @@ Recomendamos que você execute a validação abaixo antes de iniciar a solução
 | --- | --- | --- |
 | Backup | A réplica está inconsistente | Verifique se a opção de verificação de consistência automática no Assistente de grupo de proteção está ativada. Para obter mais informações sobre as causas de inconsistência de réplica e sugestões relevantes, consulte o artigo a [réplica está](https://technet.microsoft.com/library/cc161593.aspx)inconsistente.<br> <ol><li> No caso de backup de BMR/estado do sistema, verifique se o Backup do Windows Server está instalado no servidor protegido.</li><li> Verifique se há problemas relacionados ao espaço no pool de armazenamento do DPM no Servidor de Backup do Azure/DPM, e alocar armazenamento conforme necessário.</li><li> Verificar o estado do Serviço de Cópias de Sombra de Volume no servidor protegido. Se ele estiver em um estado desabilitado, defina-o para iniciar manualmente. Inicie o serviço no servidor. Em seguida, volte para o console do Servidor de Backup do Azure/DPM e inicie a sincronização com o trabalho de verificação de consistência.</li></ol>|
 
-## <a name="online-recovery-point-creation-failed"></a>Falha na criação de ponto de recuperação online
+## <a name="online-recovery-point-creation-failed"></a>Falha na criação do ponto de recuperação online
 
 | Operação | Detalhes do erro | Solução alternativa |
 | --- | --- | --- |
-| Backup | Falha na criação de ponto de recuperação online | **Mensagem de erro**: O Agente de Backup do Microsoft Azure não conseguiu criar um instantâneo do volume selecionado. <br> **Solução alternativa**: Tente aumentar o espaço no volume de ponto de recuperação e de réplica.<br> <br> **Mensagem de erro**: O Agente de Backup do Microsoft Azure não conseguiu conectar-se ao serviço OBEngine <br> **Solução alternativa**: verifique se o OBEngine consta na lista de serviços em execução no computador. Se o serviço OBEngine não estiver em execução, use o comando "net start OBEngine" para iniciar o serviço OBEngine. <br> <br> **Mensagem de erro**: A frase secreta de criptografia para este servidor não está definida. Configure uma frase secreta de criptografia. <br> **Solução alternativa**: Tente configurar uma frase secreta de criptografia. Se falhar, execute as seguintes etapas: <br> <ol><li>Verifique se o local de rascunho existe. Esse é o local que é mencionado no registro **HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Azure Backup\Config**, com o nome **ScratchLocation** deve existir.</li><li> Se houver um local temporário, tente registrar novamente usando a frase secreta antiga. *Sempre que você configurar uma frase secreta de criptografia, salve-a em um local seguro.*</li><ol>|
+| Backup | Falha na criação do ponto de recuperação online | **Mensagem de erro**: O Agente de Backup do Microsoft Azure não conseguiu criar um instantâneo do volume selecionado. <br> **Solução alternativa**: Tente aumentar o espaço no volume de ponto de recuperação e de réplica.<br> <br> **Mensagem de erro**: O Agente de Backup do Microsoft Azure não conseguiu conectar-se ao serviço OBEngine <br> **Solução alternativa**: verifique se o OBEngine consta na lista de serviços em execução no computador. Se o serviço OBEngine não estiver em execução, use o comando "net start OBEngine" para iniciar o serviço OBEngine. <br> <br> **Mensagem de erro**: A frase secreta de criptografia para este servidor não está definida. Configure uma frase secreta de criptografia. <br> **Solução alternativa**: Tente configurar uma frase secreta de criptografia. Se falhar, execute as seguintes etapas: <br> <ol><li>Verifique se o local de rascunho existe. Esse é o local que é mencionado no registro **HKEY_LOCAL_MACHINE\Software\Microsoft\Windows Azure Backup\Config**, com o nome **ScratchLocation** deve existir.</li><li> Se houver um local temporário, tente registrar novamente usando a frase secreta antiga. *Sempre que você configurar uma frase secreta de criptografia, salve-a em um local seguro.*</li><ol>|
 
 ## <a name="the-vault-credentials-provided-are-different-from-the-vault-the-server-is-registered"></a>As credenciais fornecidas para o cofre são diferentes das do cofre no qual o servidor está registrado
 
@@ -99,7 +98,7 @@ Recomendamos que você execute a validação abaixo antes de iniciar a solução
 
 | Operação | Detalhes do erro | Solução alternativa |
 | --- | --- | --- |
-| Backup | Ocorreu um erro inesperado durante a execução do trabalho. O dispositivo não está pronto. | **Se a ação recomendada exibida no produto não funcionar, realize as seguintes etapas:** <br> <ul><li>Defina o Espaço de Armazenamento de Cópia de Sombra para ilimitado nos itens no grupo de proteção e execute a verificação de consistência.<br></li> (OU) <li>Tente excluir o grupo de proteção existente e criar vários grupos novos. Cada novo grupo de proteção deve ter um item individual dentro dele.</li></ul> |
+| Backup | Erro inesperado durante a execução do trabalho. O dispositivo não está pronto. | **Se a ação recomendada exibida no produto não funcionar, realize as seguintes etapas:** <br> <ul><li>Defina o Espaço de Armazenamento de Cópia de Sombra para ilimitado nos itens no grupo de proteção e execute a verificação de consistência.<br></li> (OU) <li>Tente excluir o grupo de proteção existente e criar vários grupos novos. Cada novo grupo de proteção deve ter um item individual dentro dele.</li></ul> |
 | Backup | Se você estiver fazendo backup somente do estado do sistema, verifique se há espaço livre suficiente no computador protegido para armazenar o backup do estado do sistema. | <ol><li>Verifique se o Backup do Windows Server está instalado no computador protegido.</li><li>Verifique se há espaço suficiente no computador protegido para o estado do sistema. A maneira mais fácil de verificar isso é acessar o computador protegido, abrir o Backup do Windows Server, clicar nas seleções e, em seguida, selecionar a BMR. A interface do usuário lhe mostrará quanto espaço é necessário. Abra **WSB** > **Backup local** > **Agendamento de backup** > **Selecionar configuração de backup**  >  **Servidor completo** (o tamanho é exibido). Use esse tamanho para verificação.</li></ol>
 | Backup | Falha de backup para BMR | Se o tamanho de BMR for grande, mova alguns arquivos do aplicativo para a unidade do sistema operacional e tente novamente. |
 | Backup | A opção de proteger novamente uma VM do VMware em um novo Servidor de Backup do Azure não aparece como disponível para adicionar. | As propriedades do VMware são apontadas para uma instância antiga e obsoleta do Servidor de Backup do Azure. Para resolver esse problema:<br><ol><li>No VCenter (equivalente do SC-VMM), vá para a guia **Resumo** e então **Atributos Personalizados**.</li>  <li>Exclua o antigo nome do Servidor de Backup do Azure do valor **DPMServer**.</li>  <li>Volte para o novo Servidor de Backup do Azure e modifique o PG.  Depois de selecionar o botão **Atualizar**, a VM é exibida com uma caixa de seleção conforme disponível para adicionar para proteção.</li></ol> |
