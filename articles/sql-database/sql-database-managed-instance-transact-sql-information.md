@@ -12,12 +12,12 @@ ms.reviewer: sstein, carlrab, bonova
 manager: craigg
 ms.date: 07/07/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: fa5e8a1f51284d93f51a1a197e2612f356b8b0d5
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
-ms.translationtype: MT
+ms.openlocfilehash: c9b481e63ecf7a92af679c0f32d4b3ab71486021
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68228279"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68360799"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Diferenças de T-SQL da Instância Gerenciada do Banco de Dados SQL do Azure em relação ao SQL Server
 
@@ -278,7 +278,7 @@ Para saber mais, confira [ALTERAR BANCO DE DADOS](https://docs.microsoft.com/sql
 
 - Não há suporte para habilitar e desabilitar SQL Server Agent atualmente na instância gerenciada. O SQL Agent sempre está em execução.
 - SQL Server Agent configurações são somente leitura. O procedimento `sp_set_agent_properties` não tem suporte no instância gerenciada. 
-- Trabalhos
+- Tarefas (Jobs)
   - As etapas de trabalho T-SQL têm suporte.
   - Os trabalhos de replicação a seguir têm suporte:
     - Leitor do log de transações
@@ -417,7 +417,7 @@ Para obter informações sobre como configurar a replicação, consulte o [tutor
 - Sintaxe sem suporte:
   - `RESTORE LOG ONLY`
   - `RESTORE REWINDONLY ONLY`
-- Origem: 
+- Fonte: 
   - `FROM URL`(Armazenamento de BLOBs do Azure) é a única opção com suporte.
   - Não há suporte para `FROM DISK`/`TAPE`/dispositivo de backup.
   - Conjuntos de backup não são compatíveis.
@@ -554,7 +554,7 @@ Uma instância gerenciada coloca informações detalhadas nos logs de erros e gr
 
 A `TransactionScope` classe no .net não funcionará se duas consultas forem enviadas a dois bancos de dados dentro da mesma instância no mesmo escopo de transação:
 
-```C#
+```csharp
 using (var scope = new TransactionScope())
 {
     using (var conn1 = new SqlConnection("Server=quickstartbmi.neu15011648751ff.database.windows.net;Database=b;User ID=myuser;Password=mypassword;Encrypt=true"))

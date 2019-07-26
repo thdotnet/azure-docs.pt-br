@@ -1,19 +1,18 @@
 ---
 title: Configurar relatórios para Backup do Azure
 description: Configure relatórios do Power BI para Backup do Azure usando um cofre dos Serviços de Recuperação.
-services: backup
 author: adigan
 manager: shivamg
 ms.service: backup
 ms.topic: conceptual
 ms.date: 07/09/2019
 ms.author: adigan
-ms.openlocfilehash: 5f656a097509e9998d6fb8f157d1910cc04b7799
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: ae772446a4955f9f9def830d5c770f7d826b7e48
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705151"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466624"
 ---
 # <a name="configure-azure-backup-reports"></a>Configurar relatórios de Backup do Azure
 Este artigo mostra as etapas a seguir para configurar relatórios para o Backup do Azure por meio de um cofre dos Serviços de Recuperação. Ele também mostra como acessar relatórios por meio do Power BI. Depois de concluir essas etapas, você pode ir diretamente para o Power BI para exibir, personalizar e criar relatórios.
@@ -87,7 +86,7 @@ Se você quiser personalizar e compartilhar o relatório, criar um espaço de tr
       ![Obter pacote de conteúdo](./media/backup-azure-configure-reports/content-pack-get.png)
 4. Insira o nome da conta de armazenamento que foi configurada na etapa 5 anterior e selecione **Próximo**.
 
-    ![Insira o nome da conta de armazenamento](./media/backup-azure-configure-reports/content-pack-storage-account-name.png)    
+    ![Inserir nome da conta de armazenamento](./media/backup-azure-configure-reports/content-pack-storage-account-name.png)    
 5. Usando o método de autenticação "Chave", insira a chave da conta de armazenamento para essa conta de armazenamento. Para [exibir e copiar chaves de acesso de armazenamento](../storage/common/storage-account-manage.md#access-keys), vá para a sua conta de armazenamento no portal do Azure.
 
      ![Insira a conta de armazenamento](./media/backup-azure-configure-reports/content-pack-storage-account-key.png) <br/>

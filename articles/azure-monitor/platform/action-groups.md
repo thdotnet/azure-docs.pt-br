@@ -5,20 +5,20 @@ author: dkamstra
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 7/08/2019
+ms.date: 7/22/2019
 ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: 842965aa49ae4cd546fe9c107107d2a2ceebebbb
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 52d7b84fe6210d8a4d46814ad6749bed0463478e
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705249"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68405654"
 ---
 # <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Criar e gerenciar grupos de ações no portal do Azure
 Um grupo de ações é uma coleção de preferências de notificação definidas pelo proprietário de uma assinatura do Azure. Alertas do Azure Monitor e da Integridade do Serviço usam grupos de ações para notificar usuários de que um alerta foi disparado. Vários alertas podem usar o mesmo grupo de ação ou grupos de ações diferentes dependendo dos requisitos do usuário. Você pode configurar até 2 mil grupos de ação em uma assinatura.
 
-Você configurar uma ação para notificar que uma pessoa por email ou SMS, eles recebem uma confirmação indicando que eles foram adicionados ao grupo de ação.
+Você configura uma ação para notificar uma pessoa por email ou SMS, elas recebem uma confirmação indicando que foram adicionadas ao grupo de ações.
 
 Este artigo mostra como criar e gerenciar grupos de ação no Portal do Azure.
 
@@ -26,19 +26,19 @@ Cada ação é composta das seguintes propriedades:
 
 * **Nome**: um identificador exclusivo dentro do grupo de ações.  
 * **Tipo de ação**: A ação executada. Exemplos incluem o envio de um email de chamada, SMS, voz; ou disparando vários tipos de ações automatizadas. Veja os tipos mais adiante neste artigo.
-* **Detalhes**: Os detalhes correspondentes que variam de acordo com *tipo de ação*.
+* **Detalhes**: Os detalhes correspondentes que variam de acordo com o *tipo de ação*.
 
 Para saber mais sobre como usar modelos do Azure Resource Manager para configurar grupos de ação, veja [Modelos do Resource Manager de grupos de ações](../../azure-monitor/platform/action-groups-create-resource-manager-template.md).
 
 ## <a name="create-an-action-group-by-using-the-azure-portal"></a>Como criar um grupo de ações usando o portal do Azure
 
-1. No [portal do Azure](https://portal.azure.com), selecione **Monitor**. O **Monitor** painel consolida todas as suas configurações e dados em uma exibição monitoramento.
+1. No [portal do Azure](https://portal.azure.com), selecione **Monitor**. O painel **Monitor** consolida todas as suas configurações e dados de monitoramento em uma exibição.
 
     ![O serviço “Monitor”](./media/action-groups/home-monitor.png)
     
-1. Selecione **alertas** , em seguida, selecione **Gerenciar ações**.
+1. Selecione **alertas** e, em seguida, selecione **Gerenciar ações**.
 
-    ![Gerenciar o botão ações](./media/action-groups/manage-action-groups.png)
+    ![Botão Gerenciar ações](./media/action-groups/manage-action-groups.png)
     
 1. Selecione **Adicionar grupo de ações** e preencha os campos.
 
@@ -60,13 +60,13 @@ Para saber mais sobre como usar modelos do Azure Resource Manager para configura
 
     1. **Detalhes**: de acordo com o tipo de ação, insira um número de telefone, endereço de email, URI de webhook, aplicativo do Azure, conexão de ITSM ou runbook de Automação. Para Ação do ITSM, além disso, especifique **Item de Trabalho** e outros campos necessários para a ferramenta de ITSM.
     
-    1. **Esquema de alerta comum**: Você pode optar por habilitar o [esquema de alerta comum](https://aka.ms/commonAlertSchemaDocs), que fornece a vantagem de ter um único extensível e conteúdo de alerta unificado em todo o alerta para serviços no Azure Monitor.
+    1. **Esquema de alerta comum**: Você pode optar por habilitar o [esquema de alerta comum](https://aka.ms/commonAlertSchemaDocs), que fornece a vantagem de ter uma única carga de alerta extensível e unificada em todos os serviços de alerta no Azure monitor.
 
 1. Selecione **OK** para criar o grupo de ações.
 
 ## <a name="manage-your-action-groups"></a>Gerenciar seus grupos de ação
 
-Depois de criar um grupo de ação, ele ficará visível na **grupos de ação** seção o **Monitor** painel. Selecione o grupo de ações que você deseja gerenciar:
+Depois de criar um grupo de ações, ele fica visível na seção **grupos de ações** do painel **Monitor** . Selecione o grupo de ações que você deseja gerenciar:
 
 * Adicionar, editar ou remover ações.
 * Excluir o grupo de ação.
@@ -74,9 +74,9 @@ Depois de criar um grupo de ação, ele ficará visível na **grupos de ação**
 ## <a name="action-specific-information"></a>Informações específicas da ação
 
 > [!NOTE]
-> Ver [limites de serviço de subscrição para monitoramento](https://docs.microsoft.com/azure/azure-subscription-service-limits#azure-monitor-limits) para limites numéricos em cada um dos itens abaixo.  
+> Consulte [limites de serviço de assinatura para o monitoramento](https://docs.microsoft.com/azure/azure-subscription-service-limits#azure-monitor-limits) de limites numéricos em cada um dos itens abaixo.  
 
-### <a name="azure-app-push-notifications"></a>Notificações por Push de aplicativo do Azure
+### <a name="azure-app-push-notifications"></a>Notificações de Envio por Push do Aplicativo Azure
 Você pode ter um número limitado de ações de aplicativo do Azure em um grupo de ação.
 
 ### <a name="email"></a>Email
@@ -85,38 +85,38 @@ Os emails serão enviados dos endereços de email a seguir. Certifique-se de que
 - azureemail-noreply@microsoft.com
 - alerts-noreply@mail.windowsazure.com
 
-Você pode ter um número limitado de ações de email em um grupo de ação. Consulte a [informações de limitação de taxa](./../../azure-monitor/platform/alerts-rate-limiting.md) artigo.
+Você pode ter um número limitado de ações de email em um grupo de ações. Consulte o artigo [informações de limitação de taxa](./../../azure-monitor/platform/alerts-rate-limiting.md) .
 
 ### <a name="itsm"></a>ITSM
 Ação de ITSM exige uma Conexão de ITSM. Saiba como criar uma [Conexão de ITSM](../../azure-monitor/platform/itsmc-overview.md).
 
-Você pode ter um número limitado de ações de ITSM em um grupo de ação. 
+Você pode ter um número limitado de ações de ITSM em um grupo de ações. 
 
 ### <a name="logic-app"></a>Aplicativo Lógico
-Você pode ter um número limitado de ações do aplicativo lógico em um grupo de ação.
+Você pode ter um número limitado de ações de aplicativo lógico em um grupo de ação.
 
 ### <a name="function"></a>Função
-As teclas de função para aplicativos de função configurados como ações são lidos por meio da API de funções, que atualmente requer que os aplicativos de função do v2 para configurar o aplicativo de configuração "AzureWebJobsSecretStorageType" como "arquivos". Para obter mais informações, consulte [muda para o gerenciamento de chaves no Functions V2]( https://aka.ms/funcsecrets).
+As chaves de função para aplicativos de funções configuradas como ações são lidas por meio da API do functions, que atualmente requer que os aplicativos de função v2 definam a configuração do aplicativo "AzureWebJobsSecretStorageType" como "Files". Para obter mais informações, consulte [alterações no gerenciamento de chaves no functions v2]( https://aka.ms/funcsecrets).
 
-Você pode ter um número limitado de ações de função em um grupo de ação.
+Você pode ter um número limitado de ações de função em um grupo de ações.
 
-### <a name="automation-runbook"></a>Runbook de automação
-Consulte a [limites de serviço de assinatura do Azure](../../azure-subscription-service-limits.md) para limites de cargas de Runbook.
+### <a name="automation-runbook"></a>Runbook de Automação
+Consulte os [limites do serviço de assinatura do Azure](../../azure-subscription-service-limits.md) para limites em cargas de runbook.
 
-Você pode ter um número limitado de ações de Runbook em um grupo de ação. 
+Você pode ter um número limitado de ações de runbook em um grupo de ações. 
 
-### <a name="sms"></a>sms
-Consulte a [informações de limitação de taxa](./../../azure-monitor/platform/alerts-rate-limiting.md) e [comportamento de alertas por SMS](../../azure-monitor/platform/alerts-sms-behavior.md) para obter informações adicionais importantes.
+### <a name="sms"></a>SMS
+Consulte as [informações de limitação de taxa](./../../azure-monitor/platform/alerts-rate-limiting.md) e o [comportamento de alerta do SMS](../../azure-monitor/platform/alerts-sms-behavior.md) para obter informações importantes adicionais.
 
-Você pode ter um número limitado de ações de SMS em um grupo de ação.  
+Você pode ter um número limitado de ações de SMS em um grupo de ações.  
 
 ### <a name="voice"></a>Voz
-Consulte a [informações de limitação de taxa](./../../azure-monitor/platform/alerts-rate-limiting.md) artigo.
+Consulte o artigo [informações de limitação de taxa](./../../azure-monitor/platform/alerts-rate-limiting.md) .
 
-Você pode ter um número limitado de ações de voz em um grupo de ação.
+Você pode ter um número limitado de ações de voz em um grupo de ações.
 
-### <a name="webhook"></a>webhook
-Webhooks são repetidos usando as regras a seguir. A chamada webhook será repetida um máximo de 2 vezes quando os seguintes códigos de status HTTP forem retornados: 408, 429, 503, 504 ou quando o ponto de extremidade HTTP não responder. A primeira nova tentativa ocorre após 10 segundos. A segunda tentativa ocorre após 100 segundos. Após duas falhas, nenhum grupo de ação chamará o ponto de extremidade por 30 minutos. 
+### <a name="webhook"></a>Webhook
+Os WebHooks são repetidos usando as regras a seguir. A chamada de webhook é repetida no máximo duas vezes quando os seguintes códigos de status HTTP são retornados: 408, 429, 503, 504 ou quando o ponto de extremidade HTTP não responder. A primeira nova tentativa ocorre após 10 segundos. A segunda tentativa ocorre após 100 segundos. Após duas falhas, nenhum grupo de ação chamará o ponto de extremidade por 30 minutos. 
 
 Intervalos de endereços IP de fonte
  - 13.72.19.232
@@ -126,6 +126,7 @@ Intervalos de endereços IP de fonte
  - 13.106.38.142
  - 13.106.38.148
  - 13.106.57.196
+ - 13.106.57.197
  - 52.244.68.117
  - 52.244.65.137
  - 52.183.31.0
@@ -134,33 +135,33 @@ Intervalos de endereços IP de fonte
  - 51.5.148.86
  - 51.5.149.19
 
-Para receber atualizações sobre as alterações para esses endereços IP, é recomendável que você configure um alerta de integridade do serviço, que monitora para notificações informativas sobre o serviço de grupos de ação.
+Para receber atualizações sobre alterações nesses endereços IP, recomendamos que você configure um alerta de integridade do serviço, que monitora as notificações informativas sobre o serviço de grupos de ação.
 
-Você pode ter um número limitado de ações de Webhook em um grupo de ação.
+Você pode ter um número limitado de ações de webhook em um grupo de ações.
 
-#### <a name="secure-webhook"></a>Secure Webhook
-**A funcionalidade de proteger o Webhook está atualmente em visualização.**
+#### <a name="secure-webhook"></a>Proteger webhook
+**A funcionalidade proteger webhook está atualmente em versão prévia.**
 
-A ação de Webhook de grupos de ação permite que você tirar proveito dos Azure Active Directory para proteger a conexão entre o grupo de ações e sua API (ponto de extremidade de webhook) da web protegida. O fluxo de trabalho geral para aproveitar essa funcionalidade é descrito abaixo. Para obter uma visão geral de aplicativos do Azure AD e as entidades de serviço, consulte [visão geral do Microsoft identity platform (v2.0)](https://docs.microsoft.com/azure/active-directory/develop/v2-overview).
+A ação de webhook de grupos de ações permite que você aproveite Azure Active Directory para proteger a conexão entre o grupo de ação e a API Web protegida (ponto de extremidade do webhook). O fluxo de trabalho geral para aproveitar essa funcionalidade é descrito abaixo. Para obter uma visão geral dos aplicativos do Azure AD e das entidades de serviço, consulte [visão geral da plataforma Microsoft Identity (v 2.0)](https://docs.microsoft.com/azure/active-directory/develop/v2-overview).
 
-1. Crie um aplicativo do Azure AD para sua API web protegida. Consulte https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-overview.
-    - Configure sua API protegido a ser chamada por um aplicativo daemon.
+1. Crie um aplicativo do Azure AD para sua API Web protegida. Consulte https://docs.microsoft.com/azure/active-directory/develop/scenario-protected-web-api-overview.
+    - Configure sua API protegida para ser chamada por um aplicativo daemon.
     
-1. Habilite grupos de ação usar seu aplicativo do Azure AD.
+1. Habilite grupos de ação para usar seu aplicativo do Azure AD.
 
     > [!NOTE]
-    > Você deve ser um membro do [função de administrador de aplicativo do Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#available-roles) para executar esse script.
+    > Você deve ser membro da função de [administrador de aplicativos do Azure ad](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#available-roles) para executar esse script.
     
-    - Modifique a chamada do Connect-AzureAD do script do PowerShell para usar sua ID de locatário do Azure AD.
-    - Modificar a variável de script do PowerShell $myAzureADApplicationObjectId para usar a ID de objeto do aplicativo do AD do Azure
+    - Modifique a chamada Connect-AzureAD do script do PowerShell para usar sua ID de locatário do Azure AD.
+    - Modifique a variável do script do PowerShell $myAzureADApplicationObjectId para usar a ID de objeto do seu aplicativo do Azure AD
     - Execute o script modificado.
     
-1. Configure a ação de Webhook do grupo de ação.
-    - Copie o valor $myApp.ObjectId do script e insira-o no campo de ID de objeto de aplicativo na definição de ação de Webhook.
+1. Configure a ação de webhook do grupo de ações.
+    - Copie o valor $myApp. ObjectId do script e insira-o no campo ID de objeto do aplicativo na definição de ação do webhook.
     
-    ![Proteger a ação de Webhook](./media/action-groups/action-groups-secure-webhook.png)
+    ![Ação proteger webhook](./media/action-groups/action-groups-secure-webhook.png)
 
-##### <a name="secure-webhook-powershell-script"></a>Proteger o Script do PowerShell do Webhook
+##### <a name="secure-webhook-powershell-script"></a>Script do PowerShell de webhook seguro
 
 ```PowerShell
 Connect-AzureAD -TenantId "<provide your Azure AD tenant ID here>"

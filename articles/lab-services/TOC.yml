@@ -255,6 +255,8 @@
               href: devtest-lab-guidance-prescriptive-adoption.md
             - name: Arquitetura de referência
               href: devtest-lab-reference-architecture.md
+            - name: Entregar prova de conceito
+              href: deliver-proof-concept.md
             - name: Escalar verticalmente sua implantação dos Laboratórios de Desenvolvimento/Teste
               href: devtest-lab-guidance-scale.md
             - name: Orquestrar implementação dos Laboratórios de Desenvolvimento/Teste
