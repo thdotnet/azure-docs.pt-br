@@ -1,5 +1,5 @@
 ---
-title: Erro “Não é Possível Acessar este Aplicativo Corporativo” ao usar um aplicativo do Proxy de Aplicativo | Microsoft Docs
+title: Não é possível acessar este erro de aplicativo corporativo com o aplicativo proxy de aplicativo | Microsoft Docs "
 description: Como resolver problemas comuns de acesso com aplicativos do Proxy de Aplicativo do Azure AD.
 services: active-directory
 documentationcenter: ''
@@ -16,12 +16,12 @@ ms.date: 05/21/2019
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 734aeac1f4f2850d73dcdc9f9cc6ceac45708884
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 6e54b54f592082ad998e1f5dfbdcb5ed30e6dc4a
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67807742"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68381407"
 ---
 # <a name="cant-access-this-corporate-application-error-when-using-an-application-proxy-application"></a>Erro "Não é possível Acessar este Aplicativo Corporativo" ao usar um aplicativo de Proxy de Aplicativo
 
@@ -64,14 +64,14 @@ Se você confirmar que o usuário está atribuído ao aplicativo no Azure, verif
 
 ## <a name="check-the-applications-internal-url"></a>Verificar a URL interna do aplicativo
 
-Como uma primeira etapa rápida, verifique novamente e corrija a URL interna, abrindo o aplicativo pelo **Aplicativos Empresariais** e, em seguida, selecionando o menu **Proxy de Aplicativo**. Verifique se que a URL interna é usada na sua rede local para acessar o aplicativo.
+Como uma primeira etapa rápida, verifique novamente e corrija a URL interna, abrindo o aplicativo pelo **Aplicativos Empresariais** e, em seguida, selecionando o menu **Proxy de Aplicativo**. Verifique se a URL interna é a usada de sua rede local para acessar o aplicativo.
 
 ## <a name="check-the-application-is-assigned-to-a-working-connector-group"></a>Verificar se o aplicativo está atribuído a um Grupo de Conectores de trabalho
 
 Para verificar se o aplicativo está atribuído a um Grupo de Conectores de trabalho:
 
 1. Abra o aplicativo no portal, acessando o **Azure Active Directory**, clicando em **Aplicativos Empresariais** e, em seguida, em **Todos os Aplicativos.** Abra o aplicativo e, em seguida, selecione **Proxy de aplicativo** no menu esquerdo.
-1. Analise o campo Grupo de Conectores. Se não houver conectores ativos no grupo, você verá um aviso. Se você não vir todos os avisos, mova para verificar se todas as portas necessárias são permitidas.
+1. Analise o campo Grupo de Conectores. Se não houver conectores ativos no grupo, você verá um aviso. Se você não vir nenhum aviso, passe para verificar se todas as portas necessárias são permitidas.
 1. Se o Grupo de Conectores incorreto for exibido, use o menu suspenso para selecionar o grupo correto e confirme se nenhum aviso é exibido. Se o Grupo de Conectores pretendido for exibido, clique na mensagem de aviso para abrir a página com o gerenciamento do Conector.
 1. A partir daqui, há algumas maneiras de aprofundar-se ainda mais:
 
@@ -81,7 +81,7 @@ Para verificar se o aplicativo está atribuído a um Grupo de Conectores de trab
 
 Após usar essas etapas para garantir que o aplicativo está atribuído a um grupo com Conectores funcionando, teste o aplicativo novamente. Se ainda não estiver funcionando, continue na próxima seção.
 
-## <a name="check-all-required-ports-are-open"></a>Verifique todas as portas necessárias estejam abertas
+## <a name="check-all-required-ports-are-open"></a>Verifique se todas as portas necessárias estão abertas
 
 Para verificar se todas as exigidas portas estão abertas, consulte a documentação sobre a abertura de portas. Se todas as portas exigidas estiver abertas, siga para a próxima seção.
 

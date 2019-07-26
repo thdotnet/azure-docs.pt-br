@@ -1,5 +1,5 @@
 ---
-title: Exemplos do PowerShell para gerenciamento de grupos e a visualização local - Azure Active Directory do Write-back de grupo | Microsoft Docs
+title: Exemplos do PowerShell para gerenciar grupos e Visualizar write-back de grupo no local-Azure Active Directory | Microsoft Docs
 description: Esta página fornece exemplos do PowerShell para ajudar no gerenciamento de seus grupos no Azure Active Directory
 keywords: Azure AD, Azure Active Directory, PowerShell, Grupos, Gerenciamento de grupos
 services: active-directory
@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9817d63990b390cfbb0002423c1ff8f19fcd27f7
-ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.openlocfilehash: 2e22baabda901a34f624cf27c25037ff3ba94e90
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67147275"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68381850"
 ---
 # <a name="azure-active-directory-version-2-cmdlets-for-group-management"></a>Cmdlets da versão 2 do Azure Active Directory para gerenciamento de grupos
 
@@ -170,9 +170,10 @@ Em seguida, vamos mudar a propriedade Description para o novo valor "Intune Devi
     PS C:\Windows\system32> Set-AzureADGroup -ObjectId 31f1ff6c-d48c-4f8a-b2e1-abca7fd399df -Description "Intune Device Administrators"
 ```
 
-Agora, se encontrarmos o grupo novamente, vemos que a propriedade de descrição é atualizada para refletir o novo valor:
+Agora, se encontrarmos o grupo novamente, veremos que a propriedade Description é atualizada para refletir o novo valor:
 
-```powershell    PS C:\Windows\system32> Get-AzureADGroup -Filter "DisplayName eq 'Intune Administrators'"
+```powershell
+    PS C:\Windows\system32> Get-AzureADGroup -Filter "DisplayName eq 'Intune Administrators'"
 
     DeletionTimeStamp            :
     ObjectId                     : 31f1ff6c-d48c-4f8a-b2e1-abca7fd399df
@@ -190,15 +191,15 @@ Agora, se encontrarmos o grupo novamente, vemos que a propriedade de descrição
     SecurityEnabled              : True
 ```
 
-## Delete groups
+## <a name="delete-groups"></a>Excluir grupos
 
-To delete groups from your directory, use the Remove-AzureADGroup cmdlet as follows:
+Para excluir grupos do diretório, use o cmdlet Remove-AzureADGroup da seguinte maneira:
 
 ```powershell
     PS C:\Windows\system32> Remove-AzureADGroup -ObjectId b11ca53e-07cc-455d-9a89-1fe3ab24566b
 ```
 
-## <a name="manage-group-membership"></a>Gerenciar associação ao grupo
+## <a name="manage-group-membership"></a>Gerenciar associação a um grupo
 
 ### <a name="add-members"></a>Adicionar membros
 
@@ -283,7 +284,7 @@ Para adicionar proprietários a um grupo, use o cmdlet Add-AzureADGroupOwner:
     PS C:\Windows\system32> Add-AzureADGroupOwner -ObjectId 31f1ff6c-d48c-4f8a-b2e1-abca7fd399df -RefObjectId 72cd4bbd-2594-40a2-935c-016f3cfeeeea
 ```
 
-O parâmetro - ObjectId é o ObjectID do grupo ao qual queremos adicionar um proprietário de e - RefObjectId é o ObjectID do usuário ou entidade que queremos adicionar como proprietário do grupo de serviço.
+O parâmetro-ObjectId é o ObjectID do grupo ao qual queremos adicionar um proprietário, e-RefObjectId é o ObjectID do usuário ou da entidade de serviço que desejamos adicionar como um proprietário do grupo.
 
 Para recuperar os proprietários de um grupo, use o cmdlet Get-AzureADGroupOwner:
 
@@ -321,15 +322,15 @@ Quando um grupo é criado, certos pontos de extremidade permitem que o usuário 
 * ssl-admin
 * webmaster
 
-## <a name="group-writeback-to-on-premises-preview"></a>Write-back de grupo local (versão prévia)
+## <a name="group-writeback-to-on-premises-preview"></a>Write-back de grupo para local (versão prévia)
 
-Hoje, muitos grupos ainda são gerenciados no Active Directory no local. Recurso do Azure AD para responder a solicitações para grupos de nuvem para write-back do local, Office 365 grupos de sincronização agora está disponível para visualização.
+Hoje, muitos grupos ainda são gerenciados no local Active Directory. Para responder a solicitações de sincronização de grupos de nuvem de volta para o local, o recurso de write-back de grupos do Office 365 para o Azure AD agora está disponível para visualização.
 
-Grupos do Office 365 são criados e gerenciados na nuvem. O recurso de write-back permite gravar grupos do Office 365 como grupos de distribuição em uma floresta do Active Directory com o Exchange instalado. Usuários com caixas de correio podem, em seguida, enviar e receber emails destes grupos do Exchange local. O recurso de write-back de grupo não dá suporte a grupos de segurança do Azure AD ou grupos de distribuição.
+Os grupos do Office 365 são criados e gerenciados na nuvem. A capacidade de write-back permite que você escreva grupos do Office 365 como grupos de distribuição para uma floresta Active Directory com o Exchange instalado. Os usuários com caixas de correio locais do Exchange podem enviar e receber emails desses grupos. O recurso de write-back de grupo não dá suporte a grupos de segurança ou grupos de distribuição do Azure AD.
 
-Para obter mais detalhes, consulte a documentação para o [serviço de sincronização do Azure AD Connect](../hybrid/how-to-connect-syncservice-features.md).
+Para obter mais detalhes, consulte a documentação para o [serviço de sincronização de Azure ad Connect](../hybrid/how-to-connect-syncservice-features.md).
 
-Write-back de grupo do Office 365 é um recurso de visualização pública do Azure Active Directory (Azure AD) e está disponível com qualquer pago plano de licença do Azure AD. Para obter algumas informações legais sobre visualizações, consulte [termos complementares de uso para visualizações do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+O Write-back do grupo do Office 365 é um recurso de visualização pública do Azure Active Directory (Azure AD) e está disponível com qualquer plano de licença pago do Azure AD. Para obter informações legais sobre visualizações, consulte [termos de uso suplementares para Microsoft Azure visualizações](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="next-steps"></a>Próximas etapas
 

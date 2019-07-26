@@ -1,5 +1,5 @@
 ---
-title: Considerações de topologia de rede ao usar o Proxy de Aplicativo do Azure Active Directory | Microsoft Docs
+title: Considerações sobre topologia de rede para o Azure Proxy de Aplicativo do AD | Microsoft Docs
 description: Cobre as considerações de topologia de rede ao usar o Proxy de Aplicativo do Azure AD.
 services: active-directory
 documentationcenter: ''
@@ -11,17 +11,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/28/2017
+ms.date: 07/22/2019
 ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 734fd1d0c150cfb655279b7978a3dd1512923e49
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: a7320df63885f562b4724285a3ca5c3cf6ea2a52
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67702241"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68381462"
 ---
 # <a name="network-topology-considerations-when-using-azure-active-directory-application-proxy"></a>Considerações de topologia de rede ao usar o Proxy de Aplicativo do Azure Active Directory
 
@@ -39,7 +39,7 @@ Quando um aplicativo é publicado por meio do Proxy de Aplicativo do Azure AD, o
 
 ## <a name="tenant-location-and-application-proxy-service"></a>Local do locatário e serviço Proxy de Aplicativo
 
-Quando você se inscreve para um locatário do Azure AD, a região do seu locatário é determinada pelo país/região que você especificar. Quando você habilita o Proxy de Aplicativo, as instâncias do serviço Proxy de Aplicativo de seu locatário são escolhidas ou criadas na mesma região que seu locatário do Azure AD, ou na região mais próxima a ele.
+Quando você se inscreve em um locatário do Azure AD, a região do seu locatário é determinada pelo país/região que você especificar. Quando você habilita o Proxy de Aplicativo, as instâncias do serviço Proxy de Aplicativo de seu locatário são escolhidas ou criadas na mesma região que seu locatário do Azure AD, ou na região mais próxima a ele.
 
 Por exemplo, se a região ou país do seu locatário do Azure AD for o Reino Unido, todos os conectores do Proxy de Aplicativo usarão instâncias de serviço em datacenters na UE. Quando seus usuários acessarem aplicativos publicados, o tráfego deles passará por instâncias do serviço Proxy de Aplicativo nessa localização.
 
@@ -78,7 +78,7 @@ Se você tiver um link dedicado de VPN ou do ExpressRoute entre o Azure e sua re
 
 ## <a name="focus-your-optimization-strategy"></a>Concentrar-se em sua estratégia de otimização
 
-Não há muito que você pode fazer para controlar a conexão entre os usuários e o serviço Proxy de Aplicativo. Os usuários podem acessar seus aplicativos de uma rede doméstica, de uma cafeteria ou de um país/região diferente. Em vez disso, você pode otimizar as conexões do serviço Proxy de Aplicativo para os conectores de Proxy de Aplicativo para os aplicativos. Considere a possibilidade de incorporar os padrões a seguir em seu ambiente.
+Não há muito que você pode fazer para controlar a conexão entre os usuários e o serviço Proxy de Aplicativo. Os usuários podem acessar seus aplicativos de uma rede doméstica, uma cafeteria ou um país/região diferente. Em vez disso, você pode otimizar as conexões do serviço Proxy de Aplicativo para os conectores de Proxy de Aplicativo para os aplicativos. Considere a possibilidade de incorporar os padrões a seguir em seu ambiente.
 
 ### <a name="pattern-1-put-the-connector-close-to-the-application"></a>Padrão 1: colocar o conector perto do aplicativo
 
@@ -124,7 +124,7 @@ Nesses cenários, chamamos cada conexão de um "salto" e os numeramos para uma d
 
 Este é um padrão simples. Você otimiza o salto 3 colocando o conector perto do aplicativo. Essa também é uma opção natural, pois o conector normalmente é instalado com uma linha de visão para o aplicativo e com o data center para executar operações KCD.
 
-![Diagrama que mostra os usuários, proxy, conector e aplicativo estão todos nos EUA](./media/application-proxy-network-topology/application-proxy-pattern1.png)
+![O diagrama que mostra os usuários, proxy, conector e aplicativo estão todos nos EUA](./media/application-proxy-network-topology/application-proxy-pattern1.png)
 
 ### <a name="use-case-2"></a>Caso de uso 2
 
@@ -134,7 +134,7 @@ Este é um padrão simples. Você otimiza o salto 3 colocando o conector perto d
 
 Novamente, o padrão mais comum é otimizar o salto 3, onde você coloca o conector perto do aplicativo. O salto 3 não costuma ser caro, se tudo estiver dentro da mesma região. No entanto, o salto 1 poderá ser mais caro dependendo de onde o usuário estiver, pois os usuários pelo mundo precisarão acessar a instância do Proxy de Aplicativo nos EUA. Vale a pena observar que qualquer solução de proxy tem características semelhantes sobre os usuários que estão sendo distribuídos globalmente.
 
-![Os usuários estão distribuídos globalmente, mas todo o resto é nos EUA](./media/application-proxy-network-topology/application-proxy-pattern2.png)
+![Os usuários são distribuídos globalmente, mas todo o restante está nos EUA](./media/application-proxy-network-topology/application-proxy-pattern2.png)
 
 ### <a name="use-case-3"></a>Caso de uso 3
 
@@ -158,7 +158,7 @@ Coloque o conector no data center do Azure que está conectado à rede corporati
 
 O conector pode ser colocado no datacenter do Azure. Como o conector ainda tem uma linha de visão para o aplicativo e o data center por meio da rede privada, o salto 3 permanece otimizado. Além disso, o salto 2 é ainda mais otimizado.
 
-![Conector no data center do Azure ExpressRoute entre o conector e o aplicativo](./media/application-proxy-network-topology/application-proxy-pattern4.png)
+![Conector no datacenter do Azure, ExpressRoute entre o conector e o aplicativo](./media/application-proxy-network-topology/application-proxy-pattern4.png)
 
 ### <a name="use-case-5"></a>Caso de uso 5
 
@@ -166,15 +166,15 @@ O conector pode ser colocado no datacenter do Azure. Como o conector ainda tem u
 
 **Recomendação:** coloque o conector próximo ao aplicativo. Como os usuários dos Estados Unidos estão acessando uma instância do Proxy de Aplicativo que está na mesma região, o salto 1 não é muito caro. O salto 3 está otimizado. Considere a possibilidade de usar o ExpressRoute para otimizar o salto 2.
 
-![Diagrama mostra o proxy e usuários nos EUA, o conector e o aplicativo na UE](./media/application-proxy-network-topology/application-proxy-pattern5b.png)
+![O diagrama mostra os usuários e o proxy nos EUA, conector e aplicativo na UE](./media/application-proxy-network-topology/application-proxy-pattern5b.png)
 
 Você também pode considerar o uso de uma outra variante nessa situação. Se a maioria dos usuários na organização estiver nos EUA, provavelmente sua rede se “estende” também para os EUA. Coloque o conector nos EUA e use a linha de rede corporativa interna dedicada para o aplicativo na UE. Desta forma, os saltos 2 e 3 são otimizados.
 
-![Diagrama mostra os usuários, proxy e o conector nos EUA, o aplicativo na UE](./media/application-proxy-network-topology/application-proxy-pattern5c.png)
+![Diagrama mostra usuários, proxy e conector nos EUA, aplicativo na UE](./media/application-proxy-network-topology/application-proxy-pattern5c.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 
 - [Habilitar Proxy de aplicativo](application-proxy-add-on-premises-application.md)
 - [Habilitar o logon único](application-proxy-configure-single-sign-on-with-kcd.md)
-- [Habilitar o acesso condicional](application-proxy-integrate-with-sharepoint-server.md)
+- [Habilitar acesso condicional](application-proxy-integrate-with-sharepoint-server.md)
 - [Solucionar problemas que surgirem com o Proxy de Aplicativo](application-proxy-troubleshoot.md)

@@ -12,12 +12,12 @@ manager: cgronlun
 ms.reviewer: jmartens
 ms.date: 07/16/2019
 ms.custom: seodec18
-ms.openlocfilehash: 6c5d60bb51a96725f766c6b49d61ac20fb2a1b58
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 08cf646d63e1a295a1bc2ff28180983cc462f084
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68297915"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68360921"
 ---
 # <a name="transform-data-with-the-azure-machine-learning-data-prep-sdk"></a>Transformar dados com o SDK de preparação de dados do Azure Machine Learning
 
@@ -46,7 +46,7 @@ dflow = dprep.read_csv(path=r'data\crime0-10.csv')
 dflow.head(3)
 ```
 
-||ID|Número do Caso|Date|Bloco|IUCR|Texto Primário|DESCRIÇÃO|Descrição do Local|Detenção|Nacional|...|Ward|Área da Comunidade|Código do FBI|Coordenada X|Coordenada Y|Ano|Atualizado Em|Latitude|Longitude|Location|
+||ID|Número do Caso|Date|Bloquear|IUCR|Texto Primário|Descrição|Descrição do Local|Detenção|Nacional|...|Ward|Área da Comunidade|Código do FBI|Coordenada X|Coordenada Y|Ano|Atualizado Em|Latitude|Longitude|Location|
 |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
 |0|10140490|HY329907|05/07/2015 11:50:00 pm|050XX N NEWLAND AVE|0820|ROUBO|US $500 E ABAIXO DE|RUA|false|false|...|41|10|06|1129230|1933315|2015|12/07/2015 12:42:46 pm|41,973309466|-87,800174996|(41,973309466, -87,800174996)|
 |1|10139776|HY329265|05/07/2015 11:30:00 pm|011XX W MORSE AVE|0460|BATERIA|SIMPLES|RUA|false|true|...|49|1|08B|1167370|1946271|2015|12/07/2015 12:42:46 pm|42,008124017|-87,65955018|(42,008124017, -87,65955018)|
@@ -63,7 +63,7 @@ case_category = dflow.add_column(new_column_name='Case Category',
 case_category.head(3)
 ```
 
-||ID|Número do Caso|Categoria do Caso|Date|Bloco|IUCR|Texto Primário|DESCRIÇÃO|Descrição do Local|Detenção|Nacional|...|Ward|Área da Comunidade|Código do FBI|Coordenada X|Coordenada Y|Ano|Atualizado Em|Latitude|Longitude|Location|
+||ID|Número do Caso|Categoria do Caso|Date|Bloquear|IUCR|Texto Primário|Descrição|Descrição do Local|Detenção|Nacional|...|Ward|Área da Comunidade|Código do FBI|Coordenada X|Coordenada Y|Ano|Atualizado Em|Latitude|Longitude|Location|
 |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|------|
 |0|10140490|HY329907|HY|05/07/2015 11:50:00 pm|050XX N NEWLAND AVE|0820|ROUBO|US $500 E ABAIXO DE|RUA|false|false|...|41|10|06|1129230|1933315|2015|12/07/2015 12:42:46 pm|41,973309466|-87,800174996|(41,973309466, -87,800174996)|
 |1|10139776|HY329265|HY|05/07/2015 11:30:00 pm|011XX W MORSE AVE|0460|BATERIA|SIMPLES|RUA|false|true|...|49|1|08B|1167370|1946271|2015|12/07/2015 12:42:46 pm|42,008124017|-87,65955018|(42,008124017, -87,65955018)|
@@ -106,9 +106,9 @@ Verifique o `MEAN` valor da coluna latitude usando a [`summarize()`](https://doc
 
 ```python
 dflow_mean = dflow.summarize(group_by_columns=['Arrest'],
-                       summary_columns=[dprep.SummaryColumnsValue(column_id='Latitude',
-                                                                 summary_column_name='Latitude_MEAN',
-                                                                 summary_function=dprep.SummaryFunction.MEAN)])
+                             summary_columns=[dprep.SummaryColumnsValue(column_id='Latitude',
+                                                                        summary_column_name='Latitude_MEAN',
+                                                                        summary_function=dprep.SummaryFunction.MEAN)])
 dflow_mean = dflow_mean.filter(dprep.col('Arrest') == 'false')
 dflow_mean.head(1)
 ```
@@ -130,7 +130,7 @@ impute_custom = dprep.ImputeColumnArguments(column_id='Longitude',
                                             custom_impute_value=42)
 # get instance of ImputeMissingValuesBuilder
 impute_builder = dflow.builders.impute_missing_values(impute_columns=[impute_mean, impute_custom],
-                                                   group_by_columns=['Arrest'])
+                                                      group_by_columns=['Arrest'])
 
 impute_builder.learn()
 dflow_imputed = impute_builder.to_dataflow()
@@ -156,11 +156,12 @@ Uma das ferramentas mais avançadas no SDK de preparação de dados de aprendiza
 
 ```python
 import azureml.dataprep as dprep
-dflow = dprep.read_csv(path='https://dpreptestfiles.blob.core.windows.net/testfiles/BostonWeather.csv')
+dflow = dprep.read_csv(
+    path='https://dpreptestfiles.blob.core.windows.net/testfiles/BostonWeather.csv')
 dflow.head(4)
 ```
 
-||DATE|REPORTTPYE|HOURLYDRYBULBTEMPF|HOURLYRelativeHumidity|HOURLYWindSpeed|
+||DATA|REPORTTPYE|HOURLYDRYBULBTEMPF|HOURLYRelativeHumidity|HOURLYWindSpeed|
 |----|----|----|----|----|----|
 |0|1/1/2015 0:54|FM-15|22|50|10|
 |1|1/1/2015 1:00|FM-12|22|50|10|
@@ -170,12 +171,14 @@ dflow.head(4)
 Suponha que você precise unir esse arquivo com um conjunto de dados em que a data e a hora estejam em um formato '10 de março de 2018|2 AM-4AM'.
 
 ```python
-builder = dflow.builders.derive_column_by_example(source_columns=['DATE'], new_column_name='date_timerange')
-builder.add_example(source_data=dflow.iloc[1], example_value='Jan 1, 2015 12AM-2AM')
-builder.preview(count=5) 
+builder = dflow.builders.derive_column_by_example(
+    source_columns=['DATE'], new_column_name='date_timerange')
+builder.add_example(
+    source_data=dflow.iloc[1], example_value='Jan 1, 2015 12AM-2AM')
+builder.preview(count=5)
 ```
 
-||DATE|date_timerange|
+||DATA|date_timerange|
 |----|----|----|
 |0|1/1/2015 0:54|1 de janeiro de 2015 0:00 - 2:00|
 |1|1/1/2015 1:00|1 de janeiro de 2015 0:00 - 2:00|
@@ -196,7 +199,7 @@ Agora, passe o número de linhas que você deseja `skip` da parte superior para 
 builder.preview(skip=30, count=5)
 ```
 
-||DATE|date_timerange|
+||DATA|date_timerange|
 |-----|-----|-----|
 |0|1/1/2015 22:54|1 de janeiro de 2015 22:00 - 00:00|
 |1|1/1/2015 23:54|1 de janeiro de 2015 22:00 - 00:00|
@@ -207,11 +210,12 @@ builder.preview(skip=30, count=5)
 Aqui você vê um problema com o programa gerado. Baseado apenas no exemplo fornecido acima, o programa derive escolheu analisar a data como "Dia/Mês/Ano", o que não é o que você deseja neste caso. Para corrigir esse problema, direcione um índice de registro específico e forneça outro exemplo usando `add_example()` a função `builder` na variável.
 
 ```python
-builder.add_example(source_data=dflow.iloc[3], example_value='Jan 2, 2015 12AM-2AM')
+builder.add_example(
+    source_data=dflow.iloc[3], example_value='Jan 2, 2015 12AM-2AM')
 builder.preview(skip=30, count=5)
 ```
 
-||DATE|date_timerange|
+||DATA|date_timerange|
 |-----|-----|-----|
 |0|1/1/2015 22:54|1 de janeiro de 2015 22:00 - 00:00|
 |1|1/1/2015 23:54|1 de janeiro de 2015 22:00 - 00:00|
@@ -226,7 +230,7 @@ builder.preview(skip=75, count=5)
 ```
 
 
-||DATE|date_timerange|
+||DATA|date_timerange|
 |-----|-----|-----|
 |0|1/3/2015 7:00|3 de janeiro de 2015 6h – 8:00|
 |1|1/3/2015 7:54|3 de janeiro de 2015 6h – 8:00|
@@ -235,11 +239,12 @@ builder.preview(skip=75, count=5)
 |4|1/29/2015 7:54|Nenhum|
 
 ```python
-builder.add_example(source_data=dflow.iloc[77], example_value='Jan 29, 2015 6AM-8AM')
+builder.add_example(
+    source_data=dflow.iloc[77], example_value='Jan 29, 2015 6AM-8AM')
 builder.preview(skip=75, count=5)
 ```
 
-||DATE|date_timerange|
+||DATA|date_timerange|
 |-----|-----|-----|
 |0|1/3/2015 7:00|3 de janeiro de 2015 6h – 8:00|
 |1|1/3/2015 7:54|3 de janeiro de 2015 6h – 8:00|
@@ -253,7 +258,7 @@ builder.preview(skip=75, count=5)
 examples = builder.list_examples()
 ```
 
-| |DATE|exemplo|example_id|
+| |DATA|exemplo|example_id|
 | -------- | -------- | -------- | -------- |
 |0|1/1/2015 1:00|1 de janeiro de 2015 0:00 - 2:00|-1|
 |1|2/1/2015 0:54|2 de janeiro de 2015 0:00 - 2:00|-2|
@@ -270,21 +275,22 @@ dflow = builder.to_dataflow()
 df = dflow.to_pandas_dataframe()
 ```
 
-## <a name="filtering"></a>Filtragem
+## <a name="filtering"></a>Filtrando
 
 O SDK inclui os métodos [`drop_columns()`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#drop-columns-columns--multicolumnselection-----azureml-dataprep-api-dataflow-dataflow) e [`filter()`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py) para permitir que você filtre colunas ou linhas.
 
 ### <a name="initial-setup"></a>Configuração inicial
 
 > [!Note]
-> A URL neste mesmo exemplo não é uma URL completa. Em vez disso, ele se refere à pasta demo no BLOB. A URL completa para os dados é https://dprepdata.blob.core.windows.net/demo/green-small/green_tripdata_2013-08.csv
+> A URL neste mesmo exemplo não é uma URL completa. Em vez disso, ela se refere à pasta demo no BLOB. A URL completa para os dados é https://dprepdata.blob.core.windows.net/demo/green-small/green_tripdata_2013-08.csv
 
 O que estamos fazendo no tutorial é carregar todos os arquivos dentro da pasta e agregar o resultado em green_df_raw e yellow_df_raw.
 
 ```python
 import azureml.dataprep as dprep
 from datetime import datetime
-dflow = dprep.read_csv(path='https://dprepdata.blob.core.windows.net/demo/green-small/*')
+dflow = dprep.read_csv(
+    path='https://dprepdata.blob.core.windows.net/demo/green-small/*')
 dflow.head(5)
 ```
 
@@ -319,7 +325,8 @@ dflow.head(2)
 Como alternativa, use a expressão `ColumnSelector` para descartar colunas que correspondam a uma expressão regex. Neste exemplo, você solta todas as colunas que correspondem à expressão `Column*|.*longitude|.*latitude`.
 
 ```python
-dflow = dflow.drop_columns(dprep.ColumnSelector('Column*|.*longitud|.*latitude', True, True))
+dflow = dflow.drop_columns(dprep.ColumnSelector(
+    'Column*|.*longitud|.*latitude', True, True))
 dflow.head(2)
 ```
 
@@ -360,7 +367,8 @@ Neste exemplo, `dflow.filter()` retorna um novo fluxo de dados com as linhas em 
 
 ```python
 dflow = dflow.to_number(['Passenger_count', 'Tolls_amount'])
-dflow = dflow.filter(dprep.f_and(dprep.col('Passenger_count') < 5, dprep.col('Tolls_amount') > 0))
+dflow = dflow.filter(dprep.f_and(
+    dprep.col('Passenger_count') < 5, dprep.col('Tolls_amount') > 0))
 dflow.head(2)
 ```
 
@@ -375,9 +383,10 @@ Também é possível filtrar linhas combinando mais de um construtor de express�
 > `lpep_pickup_datetime` e `Lpep_dropoff_datetime` são primeiro convertidos em números, o que nos permite criar uma expressão comparando-o a outros valores de data/hora.
 
 ```python
-dflow = dflow.to_datetime(['lpep_pickup_datetime', 'Lpep_dropoff_datetime'], ['%Y-%m-%d %H:%M:%S'])
+dflow = dflow.to_datetime(
+    ['lpep_pickup_datetime', 'Lpep_dropoff_datetime'], ['%Y-%m-%d %H:%M:%S'])
 dflow = dflow.to_number(['Total_amount', 'Trip_distance'])
-mid_2013 = datetime(2013,7,1)
+mid_2013 = datetime(2013, 7, 1)
 dflow = dflow.filter(
     dprep.f_and(
         dprep.f_or(
@@ -392,7 +401,7 @@ dflow.head(2)
 ||lpep_pickup_datetime|Lpep_dropoff_datetime|Passenger_count|Trip_distance|Tip_amount|Tolls_amount|Total_amount|
 |-----|-----|-----|-----|-----|-----|-----|-----|
 |0|13-08-2013 06:11:06+00:00|13-08-2013 06:30:28+00:00|1.0|9.57|7.47|5.33|44.80|
-|1|23-08-2013 06:30:28+00:00|23-08-2013 12:50:28+00:00|2,0|8.22|8.08|5.33|40.41|
+|1|23-08-2013 06:30:28+00:00|23-08-2013 12:50:28+00:00|2.0|8.22|8.08|5.33|40.41|
 
 ## <a name="custom-python-transforms"></a>Transformações personalizadas de Python
 
@@ -412,7 +421,8 @@ Comece a carregar alguns dados do Blob do Azure.
 import azureml.dataprep as dprep
 col = dprep.col
 
-dflow = dprep.read_csv(path='https://dpreptestfiles.blob.core.windows.net/testfiles/read_csv_duplicate_headers.csv', skip_rows=1)
+dflow = dprep.read_csv(
+    path='https://dpreptestfiles.blob.core.windows.net/testfiles/read_csv_duplicate_headers.csv', skip_rows=1)
 dflow.head(2)
 ```
 
@@ -424,8 +434,10 @@ dflow.head(2)
 Reduza o conjunto de dados e faça algumas transformações básicas, incluindo a remoção de colunas, a substituição de valores e a conversão de tipos.
 
 ```python
-dflow = dflow.keep_columns(['stnam', 'leanm10', 'ncessch', 'MAM_MTH00numvalid_1011'])
-dflow = dflow.replace_na(columns=['leanm10', 'MAM_MTH00numvalid_1011'], custom_na_list='.')
+dflow = dflow.keep_columns(
+    ['stnam', 'leanm10', 'ncessch', 'MAM_MTH00numvalid_1011'])
+dflow = dflow.replace_na(
+    columns=['leanm10', 'MAM_MTH00numvalid_1011'], custom_na_list='.')
 dflow = dflow.to_number(['ncessch', 'MAM_MTH00numvalid_1011'])
 dflow.head(2)
 ```

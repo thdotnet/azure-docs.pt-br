@@ -1,26 +1,25 @@
 ---
 title: Excluir um cofre dos serviços de recuperação no Azure
 description: Descreve como excluir um cofre dos serviços de recuperação.
-services: backup
 author: rayne-wiselman
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 07/11/2019
 ms.author: raynew
-ms.openlocfilehash: 3d3a77b43babb7fa3666dbbc9e4334f61ae612f8
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: f98b9a02d12cc53ba23857b203ee3eaed9dd7cfa
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68232657"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466649"
 ---
 # <a name="delete-a-recovery-services-vault"></a>Excluir um cofre dos Serviços de Recuperação
 
 Este artigo descreve como excluir um cofre dos serviços de recuperação de [backup do Azure](backup-overview.md) . Ele contém instruções para remover dependências e, em seguida, excluir um cofre.
 
 
-## <a name="before-you-start"></a>Antes de começar
+## <a name="before-you-start"></a>Antes de iniciar
 
 Você não pode excluir um cofre dos serviços de recuperação que tem dependências como servidores protegidos ou servidores de gerenciamento de backup associados ao cofre.<br/>
 O cofre que contém os dados de backup não pode ser excluído (ou seja, mesmo que você tenha interrompido a proteção, mas manteve os dados de backup).

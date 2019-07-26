@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/03/2019
 ms.author: tamram
 ms.reviewer: cbrooks
-ms.openlocfilehash: fb221d774d9d00a5dc7b0d94edc35a5651443a5b
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 5d0b41344f4a77f3205799be7c30526e2a150523
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67874065"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68479908"
 ---
 # <a name="advanced-threat-protection-for-azure-storage"></a>Proteção Avançada contra Ameaças do Armazenamento do Azure
 
@@ -50,7 +50,7 @@ Quando você assina a camada Standard na central de segurança do Azure, a prote
 1. No menu principal, clique em **preços & configurações**.
 1. Clique na assinatura que você deseja habilitar ou desabilitar a proteção contra ameaças para suas contas de armazenamento.
 
-    ![Escolha a assinatura](./media/storage-advanced-threat-protection/storage-advanced-threat-protection-subscription.png)
+    ![Selecionar assinatura](./media/storage-advanced-threat-protection/storage-advanced-threat-protection-subscription.png)
 
 1. Clique em **Tipo de preço**.
 1. Na seção **selecionar camada de preços por tipo de recurso** , na **linha contas de armazenamento** , clique em **habilitado** ou **desabilitado**.
@@ -66,7 +66,7 @@ Use um modelo de Azure Resource Manager para implantar uma conta de armazenament
 
 Use um Azure Policy para habilitar a proteção avançada contra ameaças em contas de armazenamento em uma assinatura ou grupo de recursos específico.
 
-1. Almoço na página de **definições de política** do Azure.
+1. Inicie a página de **definições de política** do Azure.
 
 1. Procure a política **implantar proteção avançada contra ameaças em contas de armazenamento** .
 

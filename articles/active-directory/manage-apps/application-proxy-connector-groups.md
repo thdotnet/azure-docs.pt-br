@@ -1,5 +1,5 @@
 ---
-title: Publicar aplicativos em redes e locais separados usando grupos de conectores no Proxy de Aplicativo Azure AD | Microsoft Docs
+title: Publicar aplicativos em redes separadas com Aplicativo Azure AD grupos de conectores de proxy | Microsoft Docs
 description: Aborda como criar e gerenciar grupos de conectores no Proxy de Aplicativo Azure AD.
 services: active-directory
 author: msmimart
@@ -14,12 +14,12 @@ ms.date: 11/08/2018
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 574ce6def407f302439f6c53356fe69259240b2e
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: dae4eea3e08818d43482c995595cc9fbc3f91910
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67702490"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68381490"
 ---
 # <a name="publish-applications-on-separate-networks-and-locations-using-connector-groups"></a>Publicar aplicativos em redes e locais separados usando grupos de conectores
 
@@ -77,11 +77,11 @@ Para aplicativos instalados no IaaS para acesso à nuvem, os grupos de conector 
 
 Veja um exemplo de uma organização que tem diversas máquinas virtuais conectadas à própria rede virtual IaaS hospedada. Para permitir que os funcionários usem esses aplicativos, essas redes privadas são conectadas à rede corporativa usando VPN site a site. Isso proporciona uma boa experiência para os funcionários locais. Mas, talvez não seja ideal para funcionários remotos, pois exige uma infraestrutura local adicional para rotear o acesso, como você pode ver no diagrama a seguir:
 
-![Diagrama que ilustra a rede de IaaS do Azure AD](./media/application-proxy-connector-groups/application-proxy-iaas-network.png)
+![Diagrama que ilustra a rede IaaS do Azure AD](./media/application-proxy-connector-groups/application-proxy-iaas-network.png)
   
 Com os grupos de conectores do Proxy de Aplicativo Azure AD, você pode permitir que um serviço comum proteja o acesso a todos os aplicativos sem criar dependências adicionais em sua rede corporativa:
 
-![Fornecedores de nuvem de vários de IaaS do Azure AD](./media/application-proxy-connector-groups/application-proxy-multiple-cloud-vendors.png)
+![Vários fornecedores de nuvem do Azure AD IaaS](./media/application-proxy-connector-groups/application-proxy-multiple-cloud-vendors.png)
 
 ### <a name="multi-forest--different-connector-groups-for-each-forest"></a>Várias florestas – grupos de conectores diferentes para cada floresta
 
@@ -108,7 +108,7 @@ Entre os exemplos que você pode implementar, estão os grupos de conectores a s
 
 Se você não usar grupos de conector, sua configuração terá esta aparência:
 
-![Exemplo Azure AD sem grupos de conectores](./media/application-proxy-connector-groups/application-proxy-sample-config-1.png)
+![Exemplo do Azure AD sem grupos de conectores](./media/application-proxy-connector-groups/application-proxy-sample-config-1.png)
 
 Essa configuração é suficiente para testes e pequenas implantações. Ela também funcionará bem se a sua organização tiver uma topologia de rede simples.
 
@@ -116,7 +116,7 @@ Essa configuração é suficiente para testes e pequenas implantações. Ela tam
 
 Essa configuração é uma evolução da padrão, pois há um aplicativo específico que é executado em uma rede isolada, como a rede virtual IaaS:
 
-![Grupos de conectores No exemplo do Azure AD e uma rede isolada](./media/application-proxy-connector-groups/application-proxy-sample-config-2.png)
+![Exemplo do Azure AD sem grupos de conectores e uma rede isolada](./media/application-proxy-connector-groups/application-proxy-sample-config-2.png)
 
 ### <a name="recommended-configuration--several-specific-groups-and-a-default-group-for-idle"></a>Configuração recomendada – vários grupos específicos e um grupo padrão para ociosidade
 
@@ -124,7 +124,7 @@ A configuração recomendada para organizações complexas e de grande porte é 
 
 No exemplo abaixo, a empresa tem dois data centers, A e B, com dois conectores que atendem a cada site. Cada site possui aplicativos diferentes em execução.
 
-![Exemplo de empresa com 2 datacenters e 2 conectores](./media/application-proxy-connector-groups/application-proxy-sample-config-3.png)
+![Exemplo de empresa com 2 data centers e 2 conectores](./media/application-proxy-connector-groups/application-proxy-sample-config-3.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

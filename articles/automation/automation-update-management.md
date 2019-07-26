@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 05/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 0c94e10a6f44a99c31e30c8f7df54e9441ce7a18
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
-ms.translationtype: MT
+ms.openlocfilehash: 82d5775f0b99e3f55a70399f15894589b769d887
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68311756"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68381551"
 ---
 # <a name="update-management-solution-in-azure"></a>Solução Gerenciamento de Atualizações no Azure
 
@@ -54,7 +54,7 @@ A solução relata o grau de atualização do computador com base na fonte com a
 
 Você pode implantar e instalar atualizações de software em computadores que precisam de atualizações, criando uma implantação agendada. As atualizações classificadas como *Opcional* não são incluídas no escopo de implantação para computadores Windows. Somente as atualizações necessárias são incluídas no escopo de implantação.
 
-A implantação agendada define quais computadores de destino recebem as atualizações aplicáveis, especificando explicitamente computadores ou selecionando um [grupo](../azure-monitor/platform/computer-groups.md) de computadores baseado em pesquisas de log de um conjunto específico de computadores ou uma [consulta do Azure](#azure-machines) Isso seleciona dinamicamente as VMs do Azure com base em critérios especificados. Esses grupos são diferentes da [configuração de escopo](../azure-monitor/insights/solution-targeting.md), que é usada apenas para determinar quais computadores obtêm os pacotes de gerenciamento que habilitam a solução. 
+A implantação agendada define quais computadores de destino recebem as atualizações aplicáveis, especificando explicitamente computadores ou selecionando um [grupo](../azure-monitor/platform/computer-groups.md) de computadores baseado em pesquisas de log de um conjunto específico de computadores ou uma [consulta do Azure](#azure-machines) Isso seleciona dinamicamente as VMs do Azure com base em critérios especificados. Esses grupos são diferentes da [configuração de escopo](../azure-monitor/insights/solution-targeting.md), que é usada apenas para determinar quais computadores obtêm os pacotes de gerenciamento que habilitam a solução.
 
 Você também pode especificar uma agenda para aprovar e definir um período de tempo durante o qual as atualizações podem ser instaladas. Esse período de tempo é chamado de janela de manutenção. Dez minutos da janela de manutenção será reservado para reinicializações se uma reinicialização for necessária e você tiver selecionado a opção de reinicialização apropriada. Se a aplicação de patch demorar mais do que o esperado e houver menos de dez minutos na janela de manutenção, uma reinicialização não ocorrerá.
 
@@ -78,6 +78,9 @@ A tabela a seguir mostra uma lista de sistemas operacionais com suporte:
 |Red Hat Enterprise 6 (x86/x64) e 7 (x64)     | Os agentes do Linux devem ter acesso a um repositório de atualização.        |
 |SUSE Linux Enterprise Server 11 (x86/x64) e 12 (x64)     | Os agentes do Linux devem ter acesso a um repositório de atualização.        |
 |Ubuntu 14.04 LTS, 16.04 LTS, e 18.04 (x86/x64)      |Os agentes do Linux devem ter acesso a um repositório de atualização.         |
+
+> [!NOTE]
+> Os conjuntos de dimensionamento de máquinas virtuais do Azure podem ser gerenciados com Gerenciamento de Atualizações. Gerenciamento de Atualizações funciona nas próprias instâncias e não na imagem base. Você precisará agendar as atualizações de forma incremental, como não atualizar todas as instâncias de VM ao mesmo tempo.
 
 ### <a name="unsupported-client-types"></a>Tipos de clientes sem suporte
 
@@ -140,7 +143,7 @@ Para começar a aplicar patch em sistemas, você precisa habilitar a solução d
 * [Da navegação em várias máquinas](automation-onboard-solutions-from-browse.md)
 * [Da sua conta de Automação](automation-onboard-solutions-from-automation-account.md)
 * [Com um runbook de Automação do Azure](automation-onboard-solutions.md)
-  
+
 ### <a name="confirm-that-non-azure-machines-are-onboarded"></a>Confirmar se computadores não Azure estão integrados
 
 Para confirmar se os computadores conectados diretamente estão se comunicando com os logs de Azure Monitor, após alguns minutos, você pode executar uma das seguintes pesquisas de log.
@@ -229,9 +232,9 @@ Para criar uma nova implantação de atualização, selecione **Agendar implanta
 |Sistema operacional| Linux ou Windows|
 | Grupos a serem atualizados |Para computadores do Azure, defina uma consulta com base em uma combinação de assinatura, grupos de recursos, localizações e marcas para criar um grupo dinâmico de VMs do Azure a ser incluído na implantação. </br></br>Para computadores que não são Azure, selecione uma pesquisa salva existente para selecionar um grupo de computadores que não são Azure a serem incluídos na implantação. </br></br>Para obter mais informações, consulte [grupos dinâmicos](automation-update-management.md#using-dynamic-groups)|
 | Computadores para atualizar |Selecione uma pesquisa salva, um grupo importado ou selecione a máquina na lista suspensa e selecione máquinas individuais. Se você escolher **Machines**, a prontidão da máquina é mostrada na coluna **UPDATE AGENT READINESS**.</br> Para saber mais sobre os diferentes métodos de criação de grupos de computadores nos logs do Azure Monitor, veja [Grupos de computadores nos logs do Azure Monitor](../azure-monitor/platform/computer-groups.md) |
-|Classificações de origem|Selecione todas as classificações de atualização necessárias|
+|Atualizar classificações|Selecione todas as classificações de atualização necessárias|
 |Incluir/excluir atualizações|Isso abre o **incluir/excluir** página. As atualizações a serem incluídas ou excluídas estão em guias separadas. Para mais informações sobre como a inclusão é tratada, consulte o [comportamento de inclusão](automation-update-management.md#inclusion-behavior) |
-|Configurações de agendamento|Selecione o tempo para iniciar e selecione Uma Vez ou recorrente para a recorrência|
+|Configurações de agenda|Selecione o tempo para iniciar e selecione Uma Vez ou recorrente para a recorrência|
 | Pré-scripts + pós-scripts|Selecione os scripts sejam executados antes e após sua implantação|
 | Janela de manutenção |Número de minutos definido para atualizações. O valor não pode ser inferior a 30 minutos e não superior a 6 horas |
 | Reinicialize o controle| Determina como as reinicializações devem ser tratadas. As opções disponíveis são:</br>Reinicialização, se necessário (Padrão)</br>Sempre reinicializar</br>Nunca reinicializar</br>Somente reinicialização - não instalará as atualizações|
@@ -265,7 +268,7 @@ Selecione a guia **Atualizar Implantações** para exibir a lista das implantaç
 
 Para visualizar uma implementação de atualização da API REST, consulte [Execuções de configuração de atualização de software](/rest/api/automation/softwareupdateconfigurationruns).
 
-## <a name="update-classifications"></a>Classificações de origem
+## <a name="update-classifications"></a>Atualizar classificações
 
 As tabelas a seguir listam as classificações de atualização no Gerenciamento de Atualizações, com uma definição de cada classificação.
 
@@ -284,7 +287,7 @@ As tabelas a seguir listam as classificações de atualização no Gerenciamento
 
 ### <a name="linux-2"></a>Linux
 
-|classificação  |Descrição  |
+|Classificação  |Descrição  |
 |---------|---------|
 |Atualizações críticas ou de segurança     | Atualizações para um problema específico ou um problema relacionado à segurança específico do produto.         |
 |Outras atualizações     | Todas as outras atualizações que não são críticas em atualizações de segurança ou de natureza.        |
@@ -580,7 +583,7 @@ Esses grupos são definidos por uma consulta, quando uma implantação de atuali
 
 * Assinatura
 * Grupos de recursos
-* Locais
+* Localizações
 * Marcas
 
 ![Selecionar grupos](./media/automation-update-management/select-groups.png)

@@ -1,80 +1,101 @@
 ---
-title: Integrações de parceiros de área de trabalho Virtual do Windows - Azure
-description: Saiba mais sobre parceiros do Windows da área de trabalho e acessar a documentação sobre como integrar com eles.
+title: Integrações de parceiros de área de trabalho virtual do Windows – Azure
+description: Saiba mais sobre os parceiros da área de trabalho virtual do Windows e acesse a documentação sobre como integrá-los a eles.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.author: helohr
-ms.openlocfilehash: eb433b8781a72943c059754d0b3acff00a603506
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 6fe2e63138ce9e0f4e8980e4f37330228ac2bdb6
+ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67811304"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68369474"
 ---
-# <a name="windows-virtual-desktop-partner-integrations"></a>Integrações de parceiros de área de trabalho Virtual do Windows
+# <a name="windows-virtual-desktop-partner-integrations"></a>Integrações de parceiros de área de trabalho virtual do Windows
 
-Este artigo lista os parceiros do Windows Virtual da área de trabalho em ordem alfabética.
+Este artigo lista os parceiros da área de trabalho virtual do Windows em ordem alfabética.
 
-## <a name="active-cypher"></a>Codificação ativa
+## <a name="active-cypher"></a>Criptografia ativo
 
-Codificação ativa é um provedor de serviços de valor agregado de área de trabalho Virtual do Windows que equipa IT com a tecnologia de criptografia para ajudar a proteger a empresa contra violações e perda de dados. Com codificação ativa, a tecnologia de criptografia inovadores dá suporte à estratégia geral de proteção de arquivo para executar a área de trabalho Virtual do Windows no Azure.
+![Logotipo do Active criptografia](./media/partners/active-cypher.png)
 
-Quando usado com a área de trabalho Virtual do Windows, codificação de Active Directory fornece recursos adicionais para habilitar a acessibilidade e a mobilidade de dados do usuário ao mesmo tempo, evitando a perda acidental de dados. Com codificação ativa, as políticas de segurança de grupo existentes e as permissões na proteção de informações do Azure podem ser utilizadas para criptografar arquivos de usuário ao usar a área de trabalho Virtual do Windows.
+O Active criptografia é um provedor de serviços de valor agregado da área de trabalho virtual do Windows que o equipa com tecnologia de criptografia para ajudar a proteger a empresa contra violações e perda de dados. Com o Active criptografia, a tecnologia de criptografia inovadora dá suporte à estratégia geral de proteção de arquivo para executar a área de trabalho virtual do Windows no Azure.
 
-[Vá para o site de parceiro.](https://activecypher.com/)
+Quando usado com a área de trabalho virtual do Windows, o Active criptografia fornece recursos adicionais para habilitar a acessibilidade e a mobilidade de dados do usuário, impedindo a perda acidental de dados. Com o Active criptografia, as políticas de segurança de grupo existentes e as permissões na proteção de informações do Azure podem ser usadas para criptografar arquivos de usuário ao usar a área de trabalho virtual do Windows.
+
+- [Veja o resumo da solução conjunta.](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3oNLu)
+- [Acesse o site do parceiro.](https://activecypher.com/)
 
 ## <a name="cloudjumper"></a>CloudJumper
 
-CloudJumper é um provedor de serviços de valor agregado de área de trabalho Virtual do Windows que proporciona aos provedores de soluções e TI empresarial com o software para provisionar e gerenciar ambientes de área de trabalho Virtual do Windows de forma global. Com o software CloudJumper, o departamento de TI pode gerenciar todas as camadas de uma implantação de área de trabalho Virtual do Windows. Entrega de aplicativos e cargas de trabalho é automatizada, garantindo que os usuários possam acessar rapidamente sua área de trabalho em qualquer lugar em qualquer dispositivo.
+![Logotipo do CloudJumper](./media/partners/cloudjumper.png)
 
-Software do CloudJumper, suíte de gerenciamento de espaço de trabalho aumenta o valor da área de trabalho Virtual do Windows, simplificando tarefas de implantação e administração contínua no Azure. De um único painel de vidro, o departamento de TI pode provisionar, gerenciar e otimizar a infra-estrutura para espaços de trabalho do usuário. Mecanismo de disparo de Script simples do CloudJumper integra-se a plataformas de serviço de TI para automatizar as tarefas envolvidas no provisionamento de área de trabalho Virtual do Windows. Além disso, CloudJumper APIs permitem que mais extensibilidade e integração com outros sistemas corporativos, como ServiceNow e BMC pronto.
+O CloudJumper é um provedor de serviços de valor agregado da área de trabalho virtual do Windows que equipa os provedores de soluções e ti empresarial com software para provisionar e gerenciar ambientes de área de trabalho virtual do Windows. Com o CloudJumper software, ele pode gerenciar todas as camadas de uma implantação de área de trabalho virtual do Windows. A entrega de cargas de trabalho e aplicativos é automatizada, garantindo que os usuários possam acessar rapidamente seus desktops em qualquer lugar em qualquer dispositivo.
 
-[Vá para o site de parceiro.](https://cloudjumper.com/wvd/)
+O software da CloudJumper, o Cloud Workspace Management Suite estende o valor da área de trabalho virtual do Windows, simplificando a implantação e tarefas de administração contínuas no Azure. Em um único painel, ele pode provisionar, gerenciar e otimizar a infraestrutura de espaços de trabalho de usuário. O mecanismo de disparo de scripts simples do CloudJumper integra-se às plataformas de serviço de ti para automatizar tarefas envolvidas no provisionamento da área de trabalho virtual do Windows. Além disso, as APIs CloudJumper permitem mais extensibilidade e integração com outros sistemas empresariais, como o ServiceNow e o BMC prontos.
 
-## <a name="lakeside-software"></a>Lakeside Software
+- [Veja o resumo da solução conjunta.](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3p0Mg)
+- [Acesse o site do parceiro.](https://cloudjumper.com/wvd/)
 
-Software Lakeside é um provedor de serviços de valor agregado de área de trabalho Virtual do Windows que prepara as equipes de TI com o software para monitorar o desempenho e avaliar a preparação de migração do Azure de cargas de trabalho do usuário. Com este software, os ganhos IT mais clara visibilidade do consumo de uso e de recurso do aplicativo para simplificar o processo de migração. Software Lakeside coleta dados em cada espaço de trabalho para criar um relatório abrangente sobre ambientes de usuário, permitindo a rápida solução de problemas e otimização de ativos.
+## <a name="lakeside-software"></a>Lakeside software
 
-Experiência de digital Lakeside do Software solução, SysTrack, de monitoramento pode ajudar a fornecer uma excelente experiência de usuário, acompanhamento de desempenho e identificar cargas de trabalho ideais para a migração. SysTrack funciona para estender o valor da área de trabalho Virtual do Windows por meio de avaliações de redimensionamento e monitoramento contínuo de ambientes de usuário.
+![Logotipo do Lakeside software](./media/partners/lakeside.png)
 
-[Vá para o site de parceiro.](https://www.lakesidesoftware.com/assessments/wvd)
+O Lakeside software é um provedor de serviços de valor agregado da área de trabalho virtual do Windows que equipa as equipes de ti com software para monitorar o desempenho e avaliar a prontidão de migração do Azure de cargas de trabalho do usuário. Com esse software, ele obtém uma visibilidade mais nítida do uso do aplicativo e do consumo de recursos para simplificar o processo de migração. O Lakeside software coleta dados em todos os espaços de trabalho para criar um relatório abrangente sobre ambientes de usuário, permitindo uma rápida solução de problemas e otimização de ativos.
 
-## <a name="liquidware"></a>Liquidware
+A solução de monitoramento de experiência digital, SysTrack, da Lakeside software, pode ajudar a fornecer uma excelente experiência de usuário rastreando o desempenho e identificando cargas de trabalho ideais para a migração. O SysTrack trabalha para estender o valor da área de trabalho virtual do Windows por meio de avaliações de dimensionamento correto e monitoramento contínuo de ambientes de usuário.
 
-Liquidware é um provedor de serviços de valor agregado de área de trabalho Virtual do Windows que fornece software que gerencia e otimiza a implantação de área de trabalho Virtual do Windows. O pacote de Liquidware Essentials fornece entrega de aplicativos por meio das camadas, gerenciamento de ambiente do usuário e visibilidade de experiência do usuário principal e diagnóstico. Com as soluções para avaliar a preparação de migração e analisar as métricas de uso, Liquidware fornece uma experiência de área de trabalho virtual para os usuários finais.
+- [Veja o resumo da solução conjunta.](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3oL8Q)
+- [Acesse o site do parceiro.](https://www.lakesidesoftware.com/assessments/wvd)
 
-Liquidware Essentials estende o valor da área de trabalho Virtual do Windows, com eficiência os perfis de usuário de coleta e coleta de dados de chave de usuário para simplificar a migração de ambientes de usuário no Azure. Além disso, Liquidware Essentials simplifica o gerenciamento de imagens, unificar os perfis de usuário e a disposição em camadas aplicativos com base nos direitos configuráveis, configurações de gerenciamento.
+## <a name="liquidware"></a>Liquidez
 
-[Vá para o site de parceiro.](https://www.liquidware.com/solutions/solutions-platform/microsoft)
+![Logotipo de liquidez](./media/partners/liquidware.png)
+
+A liquidez é um provedor de serviços de valor agregado da área de trabalho virtual do Windows que fornece software que gerencia e otimiza a implantação da área de trabalho virtual do Windows. O pacote Essentials do liquidez fornece a entrega de aplicativos por meio de camadas, gerenciamento de ambiente de usuário e visibilidade e diagnósticos de experiência do usuário-chave. Com soluções para avaliar a preparação da migração e analisar as métricas de uso, a liquidez fornece uma experiência de área de trabalho virtual direta para usuários finais.
+
+O liquide Essentials estende o valor da área de trabalho virtual do Windows com a coleta eficiente de perfis de usuário e a coleta de dados importantes do usuário para simplificar a migração de ambientes de usuário para o Azure. Além disso, o liquide Essentials simplifica o gerenciamento de imagens, unificando perfis de usuário e colocando aplicativos em camadas com base nas configurações configuráveis do Rights Management.
+
+- [Veja o resumo da solução conjunta.](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3oSY1)
+- [Acesse o site do parceiro.](https://www.liquidware.com/solutions/solutions-platform/microsoft)
 
 ## <a name="nerdio"></a>Nerdio
 
-Nerdio é uma plataforma de automação de TI do Azure que torna mais fácil de implantar e gerenciar a área de trabalho Virtual do Windows. Nerdio fornece o conhecimento e a tecnologia de implantar, preço, empacotar, gerenciar e otimizar as implantações de clientes do Azure — com a área de trabalho Virtual do Windows frente e no centro.
+![Logotipo do Nerdio](./media/partners/nerdio.png)
 
-Nerdio estende o valor da área de trabalho Virtual do Windows, tornando mais fácil provisionar recursos do Azure e simplificar a implantação. Com Nerdio para o Azure, que pode implantar e gerenciar um ambiente do Azure completo, incluindo a área de trabalho Virtual do Windows, em menos de duas horas automaticamente.
+O Nerdio é uma plataforma de automação de ti do Azure que torna mais fácil implantar e gerenciar a área de trabalho virtual do Windows. O Nerdio fornece o conhecimento e a tecnologia para implantar, preço, empacotar, gerenciar e otimizar as implantações do Azure dos clientes, com o Windows Virtual Desktop front-and-Center.
 
-[Vá para o site de parceiro.](https://getnerdio.com/academy/windows-virtual-desktop-explained-for-msps/)
+O Nerdio estende o valor da área de trabalho virtual do Windows, facilitando o provisionamento de recursos do Azure e simplifique a implantação. Com o Nerdio para Azure, ele pode implantar e gerenciar automaticamente um ambiente completo do Azure, incluindo a área de trabalho virtual do Windows, em menos de duas horas.
+
+- [Veja o resumo da solução conjunta.](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3p0Mh)
+- [Acesse o site do parceiro.](https://getnerdio.com/academy/windows-virtual-desktop-explained-for-msps/)
 
 ## <a name="thinprint"></a>ThinPrint
 
-ThinPrint é um provedor de serviços de valor agregado de área de trabalho Virtual do Windows que fornece nuvem simple e seguro, imprimindo de área de trabalho Virtual do Windows. Com o seu software e serviços, infraestrutura de impressa existente pode ser utilizada para imprimir documentos da nuvem. ThinPrint permite a conexão para locais e impressoras de rede, tornando mais fácil para os usuários imprimam no escritório ou trabalhando remotamente.
+![Logotipo do ThinPrint](./media/partners/thinprint.png)
 
-Solução de ezeep do ThinPrint estende o valor da área de trabalho Virtual do Windows, permitindo a conexão à infraestrutura existente de impressão da empresa. ezeep dá aos usuários controle sobre a impressão da empresa, independentemente de onde estiverem. Usando ezeep, os usuários podem a lacuna entre a área de trabalho Virtual do Windows e o hardware de impressão.
+ThinPrint é um provedor de serviços de valor agregado da área de trabalho virtual do Windows que fornece impressão em nuvem simples e segura da área de trabalho virtual do Windows. Com seus serviços e software, a infraestrutura de impressão existente pode ser utilizada para imprimir documentos da nuvem. O ThinPrint permite a conexão com impressoras locais e de rede, facilitando a impressão dos usuários enquanto estiver no escritório ou trabalhando remotamente.
 
-[Vá para o site de parceiro.](http://www.ezeep.com/wvd-printing)
+A solução ezeep da ThinPrint estende o valor da área de trabalho virtual do Windows habilitando a conexão à infraestrutura de impressão empresarial existente. o ezeep dá aos usuários controle sobre a impressão na empresa, independentemente de onde estiverem. Usando o ezeep, os usuários podem preencher a lacuna entre a área de trabalho virtual do Windows e o hardware de impressão.
+
+- [Veja o resumo da solução conjunta.](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3oYas)
+- [Acesse o site do parceiro.](http://www.ezeep.com/wvd-printing)
 
 ## <a name="workspot"></a>Workspot
 
-Workspot é um provedor de serviços de valor agregado de área de trabalho Virtual do Windows que possibilita a empresas com desktops de alto desempenho e estações de trabalho no Azure. Com Workspot, provisionamento de infraestrutura é automatizado, que significa que os usuários podem acessar o seu ambiente de área de trabalho Virtual do Windows em qualquer lugar no mundo com alta disponibilidade.
+![Logotipo do Workspot](./media/partners/workspot.png)
 
-Workspot estende o valor da área de trabalho Virtual do Windows, simplificando o processo de provisionamento de infraestrutura de área de trabalho de nuvem. Com Workspot, recursos podem ser facilmente aumentados e reduzido para atender às necessidades de casos de usuários e usos diferentes. Workspot pode otimizar as implantações para estações de trabalho GPU do alto desempenho necessárias para CAD e usuários de engenharia, bem como aplicativos do Windows e áreas de trabalho do Windows 10 para todos os usuários empresariais.
+Workspot é um provedor de serviços de valor agregado da área de trabalho virtual do Windows que equipa empresas com desktops e estações de trabalho de alto desempenho no Azure. Com o Workspot, o provisionamento de infraestrutura é automatizado, o que significa que os usuários podem acessar seu ambiente de área de trabalho virtual do Windows em qualquer lugar do mundo com alta disponibilidade.
 
-[Vá para o site de parceiro.](https://www.workspot.com/wvd)
+Workspot estende o valor da área de trabalho virtual do Windows simplificando o processo de provisionamento da infraestrutura de área de trabalho em nuvem. Com o Workspot, os recursos podem ser facilmente dimensionados e reduzidos para atender às necessidades de diferentes usuários e usar casos. O Workspot pode otimizar as implantações para estações de trabalho de GPU de alto desempenho necessárias para os usuários de CAD e de engenharia, bem como aplicativos do Windows e desktops Windows 10 para todos os usuários empresariais.
+
+- [Veja o resumo da solução conjunta.](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3oL8P)
+- [Acesse o site do parceiro.](https://www.workspot.com/wvd)
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Saiba mais sobre a área de trabalho Virtual do Windows](overview.md)
-- [Criar um locatário na Área de Trabalho Virtual do Windows](tenant-setup-azure-active-directory.md)
+- [Saiba mais sobre a área de trabalho virtual do Windows.](overview.md)
+- [Crie um locatário na área de trabalho virtual do Windows.](tenant-setup-azure-active-directory.md)

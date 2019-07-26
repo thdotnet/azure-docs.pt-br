@@ -1,7 +1,6 @@
 ---
 title: 'Serviço de Backup do Azure: Fazer backup de VMs do Azure usando a API REST'
 description: Gerenciar operações de backup do Backup de VM do Azure usando a API REST
-services: backup
 author: pvrk
 manager: shivamg
 keywords: API REST; Backup de VM do Azure; Restauração de VM do Azure;
@@ -10,12 +9,12 @@ ms.topic: conceptual
 ms.date: 08/03/2018
 ms.author: pullabhk
 ms.assetid: b80b3a41-87bf-49ca-8ef2-68e43c04c1a3
-ms.openlocfilehash: 295c4fed9ab674f0c9e812c02f6b82ee53ef1b91
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: e78c7ca9e5b39beb160aeef96dbbf6bce07613e4
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67274859"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466829"
 ---
 # <a name="back-up-an-azure-vm-using-azure-backup-via-rest-api"></a>Fazer backup de uma VM do Azure usando o Backup do Azure por meio da API REST
 
@@ -47,10 +46,10 @@ A operação “atualizar” é uma [operação assíncrona](https://docs.micros
 
 Duas respostas são retornadas: 202 (Aceito) quando outra operação é criada e, em seguida, 200 (OK) quando a operação é concluída.
 
-|NOME  |Type  |DESCRIÇÃO  |
+|Nome  |Tipo  |Descrição  |
 |---------|---------|---------|
 |204 Sem Conteúdo     |         |  OK sem conteúdo retornado      |
-|202 Aceito     |         |     Aceita    |
+|202 Aceito     |         |     Aceito    |
 
 ##### <a name="example-responses"></a>Respostas de exemplo
 
@@ -108,9 +107,9 @@ GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 O URI *GET* tem todos os parâmetros necessários. Nenhum corpo da solicitação adicional é necessário.
 
-##### <a name="responses-1"></a>Respostas
+##### <a name="responses-1"></a>Response
 
-|NOME  |Type  |DESCRIÇÃO  |
+|Nome  |Tipo  |Descrição  |
 |---------|---------|---------|
 |200 OK     | [WorkloadProtectableItemResourceList](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list#workloadprotectableitemresourcelist)        |       OK |
 
@@ -186,9 +185,9 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Para criar um item protegido, confira a seguir os componentes do corpo da solicitação.
 
-|NOME  |Type  |DESCRIÇÃO  |
+|Nome  |Tipo  |Descrição  |
 |---------|---------|---------|
-|propriedades     | AzureIaaSVMProtectedItem        |Propriedades do recurso ProtectedItem         |
+|properties     | AzureIaaSVMProtectedItem        |Propriedades do recurso ProtectedItem         |
 
 Para obter uma lista de definições de corpo da solicitação e outros detalhes, veja o [documento sobre a criação de itens protegidos da API REST](https://docs.microsoft.com/rest/api/backup/protecteditems/createorupdate#request-body).
 
@@ -214,10 +213,10 @@ A criação de um item protegido é uma [operação assíncrona](https://docs.mi
 
 Duas respostas são retornadas: 202 (Aceito) quando outra operação é criada e, em seguida, 200 (OK) quando a operação é concluída.
 
-|NOME  |Type  |DESCRIÇÃO  |
+|Nome  |Tipo  |Descrição  |
 |---------|---------|---------|
 |200 OK     |    [ProtectedItemResource](https://docs.microsoft.com/rest/api/backup/protecteditemoperationresults/get#protecteditemresource)     |  OK       |
-|202 Aceito     |         |     Aceita    |
+|202 Aceito     |         |     Aceito    |
 
 ##### <a name="example-responses"></a>Respostas de exemplo
 
@@ -300,9 +299,9 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 Para disparar um backup sob demanda, a seguir estão os componentes do corpo da solicitação.
 
-|NOME  |Type  |DESCRIÇÃO  |
+|Nome  |Tipo  |Descrição  |
 |---------|---------|---------|
-|propriedades     | [IaaSVMBackupRequest](https://docs.microsoft.com/rest/api/backup/backups/trigger#iaasvmbackuprequest)        |Propriedades de BackupRequestResource         |
+|properties     | [IaaSVMBackupRequest](https://docs.microsoft.com/rest/api/backup/backups/trigger#iaasvmbackuprequest)        |Propriedades de BackupRequestResource         |
 
 Para obter uma lista de definições de corpo da solicitação e outros detalhes, veja o [documento sobre como disparar backups de itens protegidos da API REST](https://docs.microsoft.com/rest/api/backup/backups/trigger#request-body).
 
@@ -325,9 +324,9 @@ Disparar um backup sob demanda é uma [operação assíncrona](https://docs.micr
 
 Duas respostas são retornadas: 202 (Aceito) quando outra operação é criada e, em seguida, 200 (OK) quando a operação é concluída.
 
-|NOME  |Type  |DESCRIÇÃO  |
+|Nome  |Tipo  |Descrição  |
 |---------|---------|---------|
-|202 Aceito     |         |     Aceita    |
+|202 Aceito     |         |     Aceito    |
 
 ##### <a name="example-responses-3"></a>Respostas de exemplo
 
@@ -393,7 +392,7 @@ Como a tarefa de backup é uma operação longa, ela precisa ser rastreada confo
 
 ### <a name="changing-the-policy-of-protection"></a>Alterar a política de proteção
 
-Para alterar a política com que a VM é protegida, você pode usar o mesmo formato que para [habilitar a proteção](#enabling-protection-for-the-azure-vm). Basta fornecer a ID da nova política no [corpo da solicitação](#example-request-body) e enviar a solicitação. Para por exemplo: Para alterar a política de testVM de 'DefaultPolicy' para 'ProdPolicy', forneça a id de 'ProdPolicy' no corpo da solicitação.
+Para alterar a política com que a VM é protegida, você pode usar o mesmo formato que para [habilitar a proteção](#enabling-protection-for-the-azure-vm). Basta fornecer a ID da nova política no [corpo da solicitação](#example-request-body) e enviar a solicitação. Por exemplo: Para alterar a política de testVM de ' DefaultPolicy ' para ' ProdPolicy ', forneça a ID ' ProdPolicy ' no corpo da solicitação.
 
 ```http
 {
@@ -439,16 +438,16 @@ DELETE https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroup
 DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/testVaultRG/providers/Microsoft.RecoveryServices/vaults/testVault/backupFabrics/Azure/protectionContainers/iaasvmcontainer;iaasvmcontainerv2;testRG;testVM/protectedItems/vm;iaasvmcontainerv2;testRG;testVM?api-version=2016-12-01
 ```
 
-### <a name="responses-2"></a>Respostas
+### <a name="responses-2"></a>Response
 
 *EXCLUIR* a proteção é uma [operação assíncrona](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Isso significa que essa operação cria outra operação que precisa ser rastreada separadamente.
 
 Duas respostas são retornadas: 202 (aceito) quando outra operação é criada e 204 (NoContent) quando essa operação é concluída.
 
-|NOME  |Type  |DESCRIÇÃO  |
+|Nome  |Tipo  |Descrição  |
 |---------|---------|---------|
 |204 NoContent     |         |  NoContent       |
-|202 Aceito     |         |     Aceita    |
+|202 Aceito     |         |     Aceito    |
 
 ## <a name="next-steps"></a>Próximas etapas
 
