@@ -15,12 +15,13 @@ ms.topic: conceptual
 ms.date: 11/08/2018
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e5e7ae02cfdc921d593d204151ac501c8c8ee80
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ROBOTS: NOINDEX
+ms.openlocfilehash: fb2c49d6436a14e9b6cbb0a92eb0dfba077c8e4d
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67807669"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68424254"
 ---
 # <a name="choosing-the-application-type-when-adding-an-application-in-azure-active-directory"></a>Escolhendo o tipo de aplicativo ao adicionar um aplicativo no Active Directory Domain Services do Azure
 
@@ -42,7 +43,7 @@ O Azure AD oferece suporte a quatro tipos de aplicativos principais que você po
 
 Os seguintes recursos são suportados por qualquer um dos quatro tipos de aplicativos anteriores no Azure Active Directory:
 
-- **Início rápido** – familiarize-se rapidamente com um aplicativo executando [etapas simples de implantação](https://docs.microsoft.com/azure/active-directory/active-directory-integrating-applications-getting-started)
+- **Início rápido** – comece a usar um aplicativo rapidamente seguindo [as etapas de implantação simples](https://docs.microsoft.com/azure/active-directory/active-directory-integrating-applications-getting-started)
 
 - **Gerenciamento de propriedades gerais** – obtenha um [deeplink direto](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis) para um aplicativo, [personalize a marca](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-change-app-logo-user-azure-portal) de um aplicativo ou [desabilite o aplicativo](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-disable-app-azure-portal) para todos os usuários.
 
@@ -62,7 +63,7 @@ Os seguintes recursos são suportados por qualquer um dos quatro tipos de aplica
 
 A tabela a seguir descreve os diferentes modos de logon único e de provisionamento com suporte de cada um dos tipos de aplicativos anteriores. Use essa tabela como um auxílio para entender qual aplicativo você precisa adicionar a fim de dar suporte a um objetivo específico.
 
-  ![Tabela: SSO e provisionamento modos com suporte por cada tipo de aplicativo diferente](./media/choose-application-type/table1.png)
+  ![Tabela: Diferentes modos de provisionamento e SSO com suporte de cada tipo de aplicativo](./media/choose-application-type/table1.png)
 
 ## <a name="how-to-choose-a-single-sign-on-mode"></a>Como escolher um modo de logon único
 
@@ -105,7 +106,7 @@ Leia o [Guia do Desenvolvedor do Azure Active Directory](https://docs.microsoft.
 
 ## <a name="how-to-set-an-applications-single-sign-on-mode"></a>Como definir o modo de logon único de um aplicativo
 
-Para definir o modo de logon único do aplicativo, siga estas instruções:
+Para definir o modo de logon único de um aplicativo, siga estas instruções:
 
 1. Abra o [**Portal do Azure**](https://portal.azure.com/) e entre como um **Administrador Global** ou **Coadministrador.**
 1. Abra a **Extensão do Azure Active Directory** clicando em **Todos os serviços** na parte superior do menu de navegação esquerdo principal.

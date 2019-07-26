@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/20/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 1bf90ec8987ec419131ba21137972a0905e33f19
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: 557d25c4921c9906be75bce03c326903e63432de
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67654136"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68464803"
 ---
 # <a name="set-up-sign-in-with-a-twitter-account-by-using-custom-policies-in-azure-active-directory-b2c"></a>Configurar a entrada com uma conta do Twitter usando políticas personalizadas no Azure Active Directory B2C
 
@@ -46,7 +46,7 @@ Para usar o Twitter como provedor de identidade no Azure AD B2C, você precisar�
 É necessário armazenar a chave secreta que gravou anteriormente no locatário do Azure AD B2C.
 
 1. Entre no [Portal do Azure](https://portal.azure.com/).
-2. Verifique se que você estiver usando o diretório que contém o seu locatário do Azure AD B2C. Selecione o **filtro de diretório e assinatura** no menu superior e escolha o diretório que contém o seu locatário.
+2. Verifique se você está usando o diretório que contém seu locatário de Azure AD B2C. Selecione o **diretório e o filtro de assinatura** no menu superior e escolha o diretório que contém seu locatário.
 3. Escolha **Todos os serviços** no canto superior esquerdo do Portal do Azure, pesquise **Azure AD B2C** e selecione-o.
 4. Na página de Visão Geral, selecione **Estrutura de Experiência de Identidade**.
 5. Selecione **Chaves de Política** e, em seguida, escolha **Adicionar**.
@@ -110,7 +110,7 @@ Você pode definir uma conta do Twitter como um provedor de declarações, adici
 
 ### <a name="upload-the-extension-file-for-verification"></a>Carregar o arquivo de extensão para verificação
 
-Até este ponto, você configurou a política para que o Azure AD B2C saiba como comunicar-se com a conta do LinkedIn. Tente carregar o arquivo de extensão da política apenas para confirmar se ele não apresenta problemas até o momento.
+Agora, você configurou sua política para que Azure AD B2C saiba como se comunicar com sua conta do Twitter. Tente carregar o arquivo de extensão da política apenas para confirmar se ele não apresenta problemas até o momento.
 
 1. Na página **Políticas Personalizadas** em seu locatário do Azure AD B2C, selecione **Carregar Política**.
 2. Habilite **Substitua a política se ela existir** e, em seguida, navegue até o arquivo *TrustFrameworkExtensions.xml* e selecione-o.
@@ -157,7 +157,7 @@ Agora que implementou um botão, você precisará vinculá-lo a uma ação. Ness
 A comunicação com o Azure AD B2C ocorre por meio de um aplicativo que você cria no seu locatário. Esta seção lista etapas opcionais que você pode concluir para criar um aplicativo de teste, caso ainda não tenha feito isso.
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-2. Verifique se que você estiver usando o diretório que contém o seu locatário do Azure AD B2C. Selecione o **filtro de diretório e assinatura** no menu superior e escolha o diretório que contém o seu locatário.
+2. Verifique se você está usando o diretório que contém seu locatário de Azure AD B2C. Selecione o **diretório e o filtro de assinatura** no menu superior e escolha o diretório que contém seu locatário.
 3. Escolha **Todos os serviços** no canto superior esquerdo do Portal do Azure, pesquise **Azure AD B2C** e selecione-o.
 4. Selecione **Aplicativos** e, em seguida, selecione **Adicionar**.
 5. Insira um nome para o aplicativo, por exemplo *testapp1*.

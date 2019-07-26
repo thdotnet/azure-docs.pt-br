@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 1bf66fdb18398aaf233980ee7f2fd45fe1cc543b
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 47d3018015d05d0587e841c216a5eb89f2a0ae20
+ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68260505"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68414557"
 ---
 # <a name="configure-an-iot-edge-device-to-communicate-through-a-proxy-server"></a>Configurar um dispositivo IoT Edge para se comunicar por meio de um servidor proxy
 
@@ -64,7 +64,7 @@ Se o dispositivo IoT Edge for executado no Windows ou no Linux, você precisará
 
 ### <a name="linux"></a>Linux
 
-Se você estiver instalando o tempo de execução do IoT Edge em um dispositivo Linux, configure o gerenciador de pacotes para percorrer seu servidor proxy para acessar o pacote de instalação. Por exemplo, [Configurar o apt-get para usar um proxy http](https://help.ubuntu.com/community/AptGet/Howto/#Setting_up_apt-get_to_use_a_http-proxy). Depois que o gerenciador de pacotes estiver configurado, siga as instruções em [Instalar tempo de execução do Azure IoT Edge no Linux (ARM32v7/armhf)](how-to-install-iot-edge-linux-arm.md) ou [Instalar o tempo de execução do Azure IoT Edge no Linux (x64)](how-to-install-iot-edge-linux.md) como de costume.
+Se você estiver instalando o tempo de execução do IoT Edge em um dispositivo Linux, configure o gerenciador de pacotes para percorrer seu servidor proxy para acessar o pacote de instalação. Por exemplo, [Configurar o apt-get para usar um proxy http](https://help.ubuntu.com/community/AptGet/Howto/#Setting_up_apt-get_to_use_a_http-proxy). Quando o Gerenciador de pacotes estiver configurado, siga as instruções em [instalar Azure IOT Edge tempo de execução no Linux](how-to-install-iot-edge-linux.md) como de costume.
 
 ### <a name="windows"></a>Windows
 
@@ -218,7 +218,7 @@ Quando você usa o assistente **Configurar módulos** para criar implantações 
 
 Para configurar o agente do IoT Edge e os módulos do hub do IoT Edge, selecione **Definir configurações avançadas do Edge Runtime** na primeira etapa do assistente. 
 
-![Definir configurações avançadas de tempo de execução do Edge](./media/how-to-configure-proxy-support/configure-runtime.png)
+![Definir configurações avançadas do tempo de execução do Edge](./media/how-to-configure-proxy-support/configure-runtime.png)
 
 Adicione a variável de ambiente **https_proxy** às definições do módulo de agente IoT Edge e do hub do IoT Edge. Se você incluiu a variável de ambiente **UpstreamProtocol** no arquivo config.yaml em seu dispositivo IoT Edge, inclua isso na definição do módulo do agente do IoT Edge também. 
 

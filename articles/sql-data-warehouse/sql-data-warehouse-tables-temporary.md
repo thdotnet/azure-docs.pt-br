@@ -2,7 +2,7 @@
 title: Tabelas temporárias no SQL Data Warehouse | Microsoft Docs
 description: Guia essencial para usar as tabelas temporárias e destaca os princípios das tabelas temporárias no nível da sessão.
 services: sql-data-warehouse
-author: XiaoyuL-Preview
+author: XiaoyuMSFT
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.subservice: development
 ms.date: 04/01/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 32830039c62f7ff68137e704b2562269fd4ad2c7
-ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
+ms.openlocfilehash: e43e52e56ec7abbf5d8eb879defef54bd7d50658
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67466126"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68479822"
 ---
 # <a name="temporary-tables-in-sql-data-warehouse"></a>Tabelas temporárias no SQL Data Warehouse
 Este artigo contém as diretrizes essenciais de como usar as tabelas temporárias e destaca os princípios das tabelas temporárias no nível da sessão. Usar as informações neste artigo pode ajudá-lo a modularizar seu código, melhorando a reutilização e a facilidade de manutenção do seu código.
@@ -202,7 +202,7 @@ DROP TABLE #stats_ddl;
 ```
 
 ## <a name="temporary-table-limitations"></a>Limitações da tabela temporária
-O SQL Data Warehouse impõe algumas limitações ao implementar a tabelas temporárias.  Atualmente, somente a sessão com o escopo das tabelas temporárias é suportada.  Não há suporte para as Tabelas Temporárias Globais.  E mais, as exibições não podem ser criadas nas tabelas temporárias.  Tabelas temporárias podem ser criadas somente com a distribuição de hash ou round robin.  Não há suporte para a distribuição da tabela temporária replicada. 
+O SQL Data Warehouse impõe algumas limitações ao implementar a tabelas temporárias.  Atualmente, somente a sessão com o escopo das tabelas temporárias é suportada.  Não há suporte para as Tabelas Temporárias Globais.  E mais, as exibições não podem ser criadas nas tabelas temporárias.  As tabelas temporárias só podem ser criadas com a distribuição hash ou round robin.  Não há suporte para a distribuição de tabela temporária replicada. 
 
 ## <a name="next-steps"></a>Próximas etapas
 Para saber mais sobre como desenvolver tabelas, consulte a [Visão geral da tabela](sql-data-warehouse-tables-overview.md).

@@ -1,19 +1,19 @@
 ---
 title: Definir as configurações do Spark - Azure HDInsight
 description: Como configurar o Spark para um cluster Azure HDInsight.
-author: maxluk
-ms.author: maxluk
+author: hrasheed-msft
+ms.author: hrasheed
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/17/2019
-ms.openlocfilehash: d5dca3f4517f3d24b765652f420a38c258ad9a2e
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: eb948aa2b683f426831e1b0d34b44f814eab6b9f
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67190913"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68441926"
 ---
 # <a name="configure-apache-spark-settings"></a>Definir configurações do Apache Spark
 
@@ -57,7 +57,7 @@ O exemplo mostrado acima substitui vários valores padrão para cinco parâmetro
 
 ## <a name="view-cluster-configuration-settings"></a>Exibir definições de configuração do cluster
 
-Verifique as definições de configuração de cluster HDInsight atuais antes de executar a otimização de desempenho no cluster. Iniciar o dashboard de HDInsight do portal do Azure clicando no link **Dashboard** no painel de cluster Spark. Faça logon com o nome de usuário e a senha do administrador do cluster.
+Verifique as definições de configuração de cluster HDInsight atuais antes de executar a otimização de desempenho no cluster. Iniciar o dashboard de HDInsight do portal do Azure clicando no link **Dashboard** no painel de cluster Spark. Entre com o nome de usuário e a senha do administrador de cluster.
 
 A interface da Web do Apache Ambari aparece, com uma visualização do painel de métricas de utilização de recursos do cluster principal.  O painel do Ambari mostra a configuração do Apache Spark e outros serviços que você instalou. O painel inclui uma guia do **histórico de configuração**, onde você pode exibir informações de configuração para todos os serviços instalados, incluindo o Spark.
 

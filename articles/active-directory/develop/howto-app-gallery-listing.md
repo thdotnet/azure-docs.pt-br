@@ -13,17 +13,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/08/2019
+ms.date: 07/04/2019
 ms.author: ryanwi
 ms.reviewer: elisol, bryanla
 ms.custom: aaddev, seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e1b0ea2f808c982a587392edbe57eb75c532ee2
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 0198e5f5df3d25ef825248ff78db95326dc755c2
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68324716"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68477053"
 ---
 # <a name="how-to-list-your-application-in-the-azure-active-directory-application-gallery"></a>Como: Listar seu aplicativo na galeria de aplicativos do Azure Active Directory
 
@@ -49,6 +49,8 @@ Este artigo mostra como listar um aplicativo na Galeria de aplicativos do Azure 
 - Para o SSO de senha, certifique-se de que seu aplicativo dê suporte à autenticação de formulário para que o cofre para senhas possa ser feito para que o logon único funcione conforme o esperado.
 
 - Para solicitações de provisionamento automático de usuários, o aplicativo deve ser listado na galeria com o recurso de logon único habilitado usando SAML 2.0/WS-Fed. Você pode solicitar o fornecimento de SSO e Usuário juntos no portal, se ele ainda não estiver listado.
+
+- Precisa de uma conta permanente para teste com pelo menos 2 usuários registrados.
 
 >[!NOTE]
 >Estamos executando com alto número de solicitações de conector SCIM, portanto, vamos parar de fazer novas solicitações em nosso portal. Aguarde suas solicitações até um aviso adicional. Nós desculpasmos esse atraso e qualquer inconveniente que isso possa ter causado.
@@ -123,7 +125,7 @@ Abaixo está o fluxo de aplicativos solicitados pelo cliente-
 
 ![Mostra o fluxo de aplicativos solicitados pelo cliente](./media/howto-app-gallery-listing/customer-request.png)
 
-## <a name="timelines"></a>Linhas do tempo
+## <a name="timelines"></a>Linhas do Tempo
 
 A linha do tempo para o processo de listagem de um aplicativo WS-Fed ou SAML 2.0 na galeria é 7 a 10 dias úteis.
 

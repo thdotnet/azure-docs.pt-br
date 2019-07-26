@@ -1,19 +1,18 @@
 ---
 title: Backup do Azure - Perguntas frequentes
 description: 'Respostas a perguntas comuns sobre: recursos do Backup do Azure incluindo cofres dos Serviços de Recuperação, do que ele pode fazer backup, como ele funciona, criptografia e limites. '
-services: backup
 author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 07/07/2019
 ms.author: dacurwin
-ms.openlocfilehash: aecad4273493cd573935c78cae51bd0f59461e2e
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: c60b2bfae0d974d454c03b7eba655cbdacab5943
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67806962"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466683"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Backup do Azure — Perguntas frequentes
 Este artigo responde às perguntas frequentes sobre o serviço de Backup do Azure.
@@ -40,7 +39,7 @@ Nº Um cofre do Recovery Services só pode alterar as opções de armazenamento 
 
 ### <a name="can-i-do-an-item-level-restore-ilr-for-vms-backed-up-to-a-recovery-services-vault"></a>Posso criar uma ILR (restauração no nível do item) para VMs com backup em um cofre dos Serviços de Recuperação?
 - O ILR tem suporte para VMs do Azure com backup pelo backup de VM do Azure. Para saber mais, confira este [artigo](backup-azure-restore-files-from-vm.md)
-- ILR não há suporte para pontos de recuperação online de VMs locais com suporte pelo servidor de backup do Azure ou o System Center DPM.
+- Não há suporte para ILR para pontos de recuperação online de VMs locais com backup feito pelo servidor de backup do Azure ou pelo System Center DPM.
 
 
 ## <a name="azure-backup-agent"></a>Agente de Backup do Azure
@@ -154,7 +153,7 @@ Você pode criar até 9999 pontos de recuperação por instância protegida. Uma
 - Saiba mais sobre [backup e retenção](./backup-overview.md#backup-and-retention).
 
 
-### <a name="how-many-times-can-i-recover-data-thats-backed-up-to-azure"></a>Quantas vezes posso recuperar dados que são feitos backup do Azure?
+### <a name="how-many-times-can-i-recover-data-thats-backed-up-to-azure"></a>Quantas vezes posso recuperar dados dos quais foi feito backup no Azure?
 Não há limite para o número de recuperações do Backup do Azure.
 
 ### <a name="when-restoring-data-do-i-pay-for-the-egress-traffic-from-azure"></a>Ao restaurar dados, eu pago pelo tráfego de saída do Azure?

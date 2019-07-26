@@ -1,19 +1,18 @@
 ---
 title: Gerenciar servidores e cofres dos Serviços de Recuperação do Microsoft Azure
 description: Gerenciar trabalhos e alertas em um cofre dos Serviços de Recuperação do Azure.
-services: backup
 author: rayne-wiselman
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 07/08/2019
 ms.author: raynew
-ms.openlocfilehash: b447290a6910d144703bb796290908d0fc21b924
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 5876ce4a511617d8465cdf008ea0ce14b3ad15d4
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705132"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68466364"
 ---
 # <a name="monitor-and-manage-recovery-services-vaults"></a>Monitorar e gerenciar cofres dos Serviços de Recuperação
 
@@ -85,7 +84,7 @@ A lista de Alertas de Backup exibe as informações selecionadas para os alertas
 
 | Nível de alerta | Eventos que geram alertas |
 | ----------- | ----------- |
-| Crítico | Você recebe alertas críticos quando: Falha dos trabalhos de backup, falha dos trabalhos de recuperação e quando você parar a proteção em um servidor, mas retém os dados.|
+| Crítica | Você recebe alertas críticos quando: Falha dos trabalhos de backup, falha dos trabalhos de recuperação e quando você parar a proteção em um servidor, mas retém os dados.|
 | Aviso | Você receberá o aviso de alertas quando: Trabalhos de Backup são concluídos com avisos, por exemplo quando menos de 100 arquivos ficam sem backup devido a problemas de corrupção, ou quando o backup de mais de 1.000.000 de arquivos é feito com êxito). |
 | Informativo | no momento, nenhum alerta informativo está em uso. |
 
@@ -102,7 +101,7 @@ Por padrão, todos os detalhes, exceto **Última hora da ocorrência**, são exi
 * Servidor protegido
 * Severidade
 * Duração
-* Hora de criação
+* Hora de Criação
 * Status
 * Última hora da ocorrência
 
@@ -221,7 +220,7 @@ O Tipo de Item é o tipo de gerenciamento de backup da instância protegida. Há
 É possível exibir uma única operação ou todas as operações. Não é possível selecionar duas ou três operações. As Operações disponíveis são:
 
 * Todas as operações
-* Registrar
+* Registro
 * Configurar o backup
 * Backup
 * Restaurar
@@ -235,8 +234,8 @@ O Tipo de Item é o tipo de gerenciamento de backup da instância protegida. Há
 * Todos os status
 * Concluído
 * Em andamento
-* Com falha
-* Cancelado
+* Falhou
+* Cancelada
 * Concluído com avisos
 
 #### <a name="start-time"></a>Hora de início

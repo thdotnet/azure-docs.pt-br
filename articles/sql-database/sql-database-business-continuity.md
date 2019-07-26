@@ -13,12 +13,12 @@ ms.author: sashan
 ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 06/25/2019
-ms.openlocfilehash: 26b31781ae0056999eb222981b2eea3eb4595041
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: 361613c52c00b7a7e468eccbb52bf113b6adb434
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68228058"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68444503"
 ---
 # <a name="overview-of-business-continuity-with-azure-sql-database"></a>Visão geral da continuidade dos negócios com o Banco de Dados SQL do Azure
 
@@ -58,7 +58,23 @@ Você pode usar backups de banco de dados automáticos para restaurar um banco d
 
 Se o período máximo de retenção de backup com suporte para a restauração pontual (PITR) não for suficiente para seu aplicativo, você poderá estendê-lo Configurando uma política de retenção de longo prazo (EPD) para os bancos de dados. Para obter mais informações, confira [Retenção de backup de longo prazo](sql-database-long-term-retention.md).
 
-## <a name="recover-a-database-to-another-azure-region"></a>Recuperar um banco de dados para outra região do Azure
+## <a name="compare-geo-replication-with-failover-groups"></a>Comparar a replicação geográfica com grupos de failover
+
+Os [grupos de failover automático](sql-database-auto-failover-group.md#auto-failover-group-terminology-and-capabilities) simplificam a implantação e o uso da [replicação geográfica](sql-database-active-geo-replication.md) e adicionam os recursos adicionais, conforme descrito na tabela a seguir:
+
+|                                              | Replicação Geográfica | Grupos de failover  |
+|:---------------------------------------------| :-------------- | :----------------|
+| Failover automático                           |     Não          |      Sim         |
+| Fazer failover de vários bancos de dados simultaneamente  |     Não          |      Sim         |
+| Atualizar cadeia de conexão após o failover      |     Sim         |      Não          |
+| Instância gerenciada com suporte                   |     Não          |      Sim         |
+| Pode estar na mesma região que o primário             |     Sim         |      Não          |
+| Várias réplicas                            |     Sim         |      Não          |
+| Dá suporte à escala de leitura                          |     Sim         |      Sim         |
+| &nbsp; | &nbsp; | &nbsp; |
+
+
+## <a name="recover-a-database-to-the-existing-server"></a>Recuperar um banco de dados para o servidor existente
 
 Embora seja raro, um data center do Azure pode ter uma interrupção. Quando uma interrupção ocorre, ela causa uma parada nos negócios, que pode durar alguns minutos ou horas.
 

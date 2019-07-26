@@ -6,14 +6,14 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 02/12/2019
+ms.date: 07/23/2019
 ms.author: normesta
-ms.openlocfilehash: fd3875c5c78a02efab1251166ec7113902be3e08
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 010b7bc38caf83c12dd0d8b8e731fdbad6e45256
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67723241"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68422871"
 ---
 # <a name="using-azure-data-lake-storage-gen2-for-big-data-requirements"></a>Usando o Azure Data Lake Storage Gen2 para exigências de big data
 
@@ -71,7 +71,7 @@ Esta tabela mostra como conceder acesso a cada serviço ou ferramenta do Azure.
 |Gerenciador de Armazenamento| Atribuir uma função a usuários e grupos | [Atribuir funções de administrador e não administrador aos usuários com Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal) |
 |AzCopy| Atribuir uma função a usuários e grupos <br>**or**<br> Usar um token SAS| [Atribuir funções de administrador e não administrador aos usuários com Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal)<br><br>[Criar facilmente um SAS para baixar um arquivo do Armazenamento do Azure, usando o Gerenciador de Armazenamento do Azure](https://blogs.msdn.microsoft.com/jpsanders/2017/10/12/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer/)|
 |Apache DistCp | Atribuir uma função a uma identidade gerenciada atribuída pelo usuário | [Criando um cluster do HDInsight com o Data Lake Storage Gen2](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2) |
-|Fábrica de dados do Azure| Atribuir uma função a uma identidade gerenciada atribuída pelo usuário<br>**or**<br> Atribuir uma função a uma entidade de serviço<br>**or**<br> Usar uma chave de conta de armazenamento | [Propriedades do serviço vinculado](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#linked-service-properties) |
+|Azure Data Factory| Atribuir uma função a uma identidade gerenciada atribuída pelo usuário<br>**or**<br> Atribuir uma função a uma entidade de serviço<br>**or**<br> Usar uma chave de conta de armazenamento | [Propriedades do serviço vinculado](https://docs.microsoft.com/azure/data-factory/connector-azure-data-lake-storage#linked-service-properties) |
 |Azure HDInsight| Atribuir uma função a uma identidade gerenciada atribuída pelo usuário | [Criando um cluster do HDInsight com o Data Lake Storage Gen2](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2)|
 |Azure Databricks| Atribuir uma função a uma entidade de serviço | [Como: Usar o portal para criar um aplicativo e uma entidade de serviço do Azure AD que possa acessar recursos](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal)|
 
@@ -81,7 +81,7 @@ Para permitir acesso a pastas e arquivos específicos, confira estes artigos.
 
 * [Listas de controle de acesso em arquivos e diretórios](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-access-control#access-control-lists-on-files-and-directories)
 
-Para saber como configurar outros aspectos de segurança, confira [Guia de segurança do Azure Data Lake Storage Gen2](https://review.docs.microsoft.com/azure/storage/common/storage-data-lake-storage-security-guide?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
+Para saber como configurar outros aspectos de segurança, confira [Guia de segurança do Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/common/storage-data-lake-storage-security-guide?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
 
 ## <a name="ingest-the-data"></a>Ingerir os dados
 
@@ -95,7 +95,7 @@ Representam conjuntos de dados menores que são usados para criar protótipos de
 
 Aqui está uma lista de ferramentas que você pode usar para a ingestão de dados ad hoc.
 
-| Fonte de dados | Ingeri-la usando |
+| Fonte de Dados | Ingeri-la usando |
 | --- | --- |
 | Computador local |[Gerenciador de Armazenamento](https://azure.microsoft.com/features/storage-explorer/)<br><br>[Ferramenta AzCopy](../common/storage-use-azcopy-v10.md)|
 | Blob de Armazenamento do Azure |[Azure Data Factory](../../data-factory/connector-azure-data-lake-store.md)<br><br>[Ferramenta AzCopy](../common/storage-use-azcopy-v10.md)<br><br>[DistCp em execução no cluster HDInsight](data-lake-storage-use-distcp.md)|
@@ -118,7 +118,7 @@ Aqui está uma lista de ferramentas que você pode usar para a ingestão de dado
 
 |Ferramenta | Diretrizes |
 |---|--|
-|Fábrica de dados do Azure | [Atividade Copiar no Azure Data Factory](https://docs.microsoft.com/azure/data-factory/copy-activity-overview) |
+|Azure Data Factory | [Atividade Copiar no Azure Data Factory](https://docs.microsoft.com/azure/data-factory/copy-activity-overview) |
 
 ### <a name="web-server-log-data-upload-using-custom-applications"></a>Dados de log do servidor Web (carregar usando aplicativos personalizados)
 
@@ -128,7 +128,7 @@ Aqui está uma lista de ferramentas que você pode usar para a ingestão de dado
 
 |Ferramenta | Diretrizes |
 |---|--|
-|Fábrica de dados do Azure | [Atividade Copiar no Azure Data Factory](https://docs.microsoft.com/azure/data-factory/copy-activity-overview)  |
+|Azure Data Factory | [Atividade Copiar no Azure Data Factory](https://docs.microsoft.com/azure/data-factory/copy-activity-overview)  |
 
 Para carregar dados de log do servidor Web, e também para carregar outros tipos de dados (por exemplo, dados de sentimentos sociais), é uma boa abordagem escrever seus próprios scripts/aplicativos personalizados, pois eles proporcionam a flexibilidade para incluir seus dados carregando o componente como parte do aplicativo maior de big data. Em alguns casos, esse código pode assumir a forma de um script ou um utilitário simples de linha de comando. Em outros casos, o código pode ser usado para integrar o processamento de big data em um aplicativo ou uma solução de negócios.
 
@@ -142,7 +142,7 @@ Aqui está uma lista de ferramentas que você pode usar para a ingestão de dado
 |---|--|
 |Apache DistCp | [Use o DistCp para copiar dados entre os Azure Storage Blobs e o Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-use-distcp) |
 |Ferramenta AzCopy | [Transferir dados com AzCopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10) |
-|Fábrica de dados do Azure | [Copiar dados de ou para Gen2 de armazenamento do Azure Data Lake usando o Azure Data Factory](https://docs.microsoft.com/azure/data-factory/load-azure-data-lake-storage-gen2) |
+|Azure Data Factory | [Copiar dados de ou para Azure Data Lake Storage Gen2 usando Azure Data Factory](https://docs.microsoft.com/azure/data-factory/load-azure-data-lake-storage-gen2) |
 
 ### <a name="data-stored-in-on-premises-or-iaas-hadoop-clusters"></a>Dados armazenados localmente ou em clusters Hadoop da IaaS
 
@@ -195,5 +195,5 @@ Aqui está uma lista de ferramentas que você pode usar para baixar dados do Dat
 
 |Ferramenta | Diretrizes |
 |---|--|
-|Fábrica de dados do Azure | [Atividade Copiar no Azure Data Factory](https://docs.microsoft.com/azure/data-factory/copy-activity-overview) |
+|Azure Data Factory | [Atividade Copiar no Azure Data Factory](https://docs.microsoft.com/azure/data-factory/copy-activity-overview) |
 |Apache DistCp | [Use o DistCp para copiar dados entre os Azure Storage Blobs e o Azure Data Lake Storage Gen2](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-use-distcp) |
