@@ -1,7 +1,7 @@
 ---
-title: Notas sobre a versão – Serviços de Fala
-titlesuffix: Azure Cognitive Services
-description: Veja um log de execução de versões de recursos, aprimoramentos, correções de bugs e problemas conhecidos dos Serviços de Fala do Azure.
+title: Notas de versão – serviço de fala
+titleSuffix: Azure Cognitive Services
+description: Veja um log em execução de versões de recursos, melhorias, correções de bugs e problemas conhecidos do serviço de fala.
 services: cognitive-services
 author: BrianMouncer
 manager: nitinme
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/23/2019
 ms.author: jhakulin
 ms.custom: seodec18
-ms.openlocfilehash: e641051b75620ef5308bc81bca21b3ceda105d09
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: 12eecc4998153cbeedeb907ecad33c56141a50e6
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68404839"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68559117"
 ---
 # <a name="release-notes"></a>Notas de versão
 

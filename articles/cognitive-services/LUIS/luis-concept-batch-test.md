@@ -1,6 +1,6 @@
 ---
-title: Teste em lote
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Teste em lote-LUIS
+titleSuffix: Azure Cognitive Services
 description: Use o teste em lote para trabalhar continuamente em seu aplicativo para aprimorá-lo e melhorar o reconhecimento do idioma.
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 03/29/2019
 ms.author: diberry
-ms.openlocfilehash: acb561970b6a8576d1219fc15758e21a3032c9e5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a9a6e7ae48a51ab10e6ba2e5d3996e61938c6f3a
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60813312"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560844"
 ---
 # <a name="batch-testing-with-1000-utterances-in-luis-portal"></a>Lote de teste com 1.000 declarações no portal do LUIS
 

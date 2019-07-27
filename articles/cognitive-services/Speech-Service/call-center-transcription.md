@@ -1,5 +1,5 @@
 ---
-title: Transcrição de call center – Serviços de Fala
+title: Transcrição do Call Center – serviço de fala
 titleSuffix: Azure Cognitive Services
 description: Um cenário comum para a conversão de fala em texto é a transcrição de grandes volumes de dados de telefonia que podem ser recebidos de vários sistemas, como o IVR (resposta interativa de voz). O áudio pode ser estéreo ou mono e bruto com pouco ou nenhum pós-processamento feito no sinal. Usando os Serviços de Fala e o Modelo de fala unificado, uma empresa pode obter transcrições de alta qualidade, com muitos sistemas de captura de áudio.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 37d68a4d2b7658542ebcfdb5d22a10676a8e4d52
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: b7c7bfffb5ddf947dc9bd25e6828e2816a7325cd
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603300"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68559739"
 ---
 # <a name="speech-services-for-telephony-data"></a>Serviços de Fala para dados de telefonia
 
@@ -59,7 +59,7 @@ Não é incomum que 35% de uma chamada de suporte consista no que chamamos de te
 ### <a name="translation"></a>Conversão
 Algumas empresas estão experimentando fornecer transcrições traduzidas de chamadas de suporte de idiomas estrangeiros, de modo que os gerentes de entrega possam entender a experiência mundial de seus clientes. Nossas funcionalidades de [tradução](translation.md) são incomparáveis. Podemos converter áudio em áudio ou áudio em texto em uma grande variedade de localidades.
 
-### <a name="text-to-speech"></a>Texto em fala
+### <a name="text-to-speech"></a>Conversão de Texto em Fala
 A [conversão de texto em fala](text-to-speech.md) é outra área importante na implementação de bots que interagem com os clientes. O caminho típico é o que o cliente fala, sua voz é transcrita em texto, o texto é analisado quanto às intenções, uma resposta é sintetizada com base na intenção reconhecida e, em seguida, um ativo é exposto ao cliente ou uma resposta de voz sintetizada é gerada. Evidentemente, tudo isso deve ocorrer com rapidez – portanto, a latência é um componente importante no sucesso desses sistemas.
 
 Nossa latência de ponta a ponta é muito baixa, considerando as diversas tecnologias envolvidas, como [Conversão de Fala em Texto](speech-to-text.md), [LUIS](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/), [Bot Framework](https://dev.botframework.com/) e [Conversão de Texto em Fala](text-to-speech.md).
@@ -69,7 +69,7 @@ Nossas novas vozes também são praticamente idênticas às vozes humanas. É po
 ### <a name="search"></a>Pesquisar
 Outro ponto importante da análise é identificar as interações em que uma experiência ou um evento específico tenha ocorrido. Isso normalmente é feito com uma das duas abordagens: uma pesquisa ad-hoc, em que o usuário apenas digita uma frase e o sistema responde, ou uma consulta mais estruturada, em que um analista pode criar um conjunto de instruções lógicas que identifiquem um cenário em uma chamada e, em seguida, cada chamada possa ser indexada em relação a esses conjunto de consultas. Um bom exemplo de pesquisa é a instrução de conformidade ubíqua “esta chamada será gravada para fins de qualidade... ”, pois muitas empresas desejam garantir que seus agentes forneçam esse aviso de isenção de responsabilidade aos clientes antes que a chamada seja, de fato, gravada. A maioria dos sistemas de análise tem a capacidade de analisar a tendência dos comportamentos encontrados pelos algoritmos de consulta/pesquisa, uma vez que esse relatório de tendências é, em última análise, uma das funções mais importantes de um sistema de análise. Por meio do [diretório de Serviços Cognitivos](https://azure.microsoft.com/services/cognitive-services/directory/search/), sua solução de ponta a ponta pode ser consideravelmente aprimorada com funcionalidades de indexação e pesquisa.
 
-### <a name="key-phrase-extraction"></a>Extração de Frases-Chave
+### <a name="key-phrase-extraction"></a>Extração de Frases-chave
 Essa área é uma das aplicações de análise que mais gera desafios e que vem se beneficiando da aplicação de IA e ML. O cenário principal aqui é inferir a intenção do cliente. Por que o cliente está ligando? Qual é o problema do cliente? Por que o cliente teve uma experiência negativa? Nosso [serviço de Análise de Texto](https://azure.microsoft.com/services/cognitive-services/text-analytics/) fornece um conjunto de análise pronto para uso para atualização rápida de sua solução de ponta a ponta, visando extrair essas palavras-chave ou frases importantes.
 
 Agora vamos dar uma olhada no processamento em lotes e nos pipelines em tempo real do reconhecimento de fala um pouco mais detalhadamente.
@@ -116,14 +116,14 @@ Outro cenário é a integração de SIP Direto. Um serviço do Azure se conecta 
 
 O Serviço de Fala do Azure funciona bem com modelos internos, no entanto, talvez você queira personalizar e ajustar ainda mais a experiência para seu ambiente ou produto. As opções de personalização vão do ajuste do modelo acústico a fontes de voz exclusivas para sua marca. Depois de criar um modelo personalizado, você poderá usá-lo com um dos Serviços de Fala do Azure em tempo real ou no modo de lote.
 
-| Serviço de Fala | Modelo | DESCRIÇÃO |
+| Serviço de Fala | Modelo | Descrição |
 |----------------|-------|-------------|
 | Conversão de fala em texto | [Modelo acústico](how-to-customize-acoustic-models.md) | Crie um modelo acústico personalizado para aplicativos, ferramentas ou dispositivos usados em ambientes particulares, como um carro ou um chão de fábrica, cada um deles com condições específicas de gravação. Exemplos incluem fala com sotaque, ruídos de fundo específicos ou uso de um microfone específico para gravação. |
 | | [Modelo de linguagem](how-to-customize-language-model.md) | Crie um modelo de linguagem personalizado para melhorar a transcrição do vocabulário e da gramática específicos de um setor, por exemplo, terminologia médica ou jargão de TI. |
 | | [Modelo de pronúncia](how-to-customize-pronunciation.md) | Usando um modelo de pronúncia personalizado, você pode definir a forma fonética e a exibição de uma palavra ou termo. É útil para lidar com termos personalizados, como nomes de produtos ou acrônimos. Tudo o que você precisa para começar é de um arquivo de pronúncia (um arquivo .txt simples). |
 | Conversão de texto em fala | [Fonte de voz](how-to-customize-voice-font.md) | Fontes de voz personalizadas permitem que você crie uma voz reconhecível exclusiva para sua marca. É necessária apenas uma pequena quantidade de dados para começar a usar. Quanto mais dados que você fornecer, mais natural e humana sua fonte de voz soará. |
 
-## <a name="sample-code"></a>Exemplo de código
+## <a name="sample-code"></a>Código de exemplo
 
 Há um código de exemplo disponível no GitHub para cada um dos Serviços de Fala do Azure. Esses exemplos abordam cenários comuns, como ler áudio de um arquivo ou fluxo, reconhecimento contínuo e único e trabalho com modelos personalizados. Use estes links para exibir exemplos de SDK e REST:
 

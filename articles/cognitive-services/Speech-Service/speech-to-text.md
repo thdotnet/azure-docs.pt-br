@@ -1,7 +1,7 @@
 ---
-title: Conversão de fala em texto com os serviços de fala do Azure
+title: Speech-to-Text-serviço de fala
 titleSuffix: Azure Cognitive Services
-description: A conversão de fala em texto dos serviços de fala do Azure, também conhecida como conversão de fala em texto, permite a transcrição em tempo real de fluxos de áudio em texto que seus aplicativos, ferramentas ou dispositivos podem consumir, exibir e agir como entrada de comando. Esse serviço é alimentado pela mesma tecnologia de reconhecimento que a Microsoft usa para os produtos da Cortana e do Office e trabalha diretamente com a tradução e conversão de texto em fala.
+description: O recurso de conversão de fala em texto no serviço de fala, também conhecido como conversão de fala em texto, permite a transcrição em tempo real de fluxos de áudio em texto que seus aplicativos, ferramentas ou dispositivos podem consumir, exibir e agir como entrada de comando. Esse serviço é alimentado pela mesma tecnologia de reconhecimento que a Microsoft usa para os produtos da Cortana e do Office e trabalha diretamente com a tradução e conversão de texto em fala.
 services: cognitive-services
 author: erhopf
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: cb9362c4d58deb5472c8d5adab39cdd1cc4e2600
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: 435de6e6516256d350ad93b121dd5a38d1512ddc
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68333578"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68558847"
 ---
 # <a name="what-is-speech-to-text"></a>O que é conversão de fala em texto?
 
@@ -29,7 +29,7 @@ Você pode facilmente capturar áudio de um microfone, ler de um fluxo ou acessa
 
 Aqui estão os recursos disponíveis por meio do SDK de fala e APIs REST:
 
-| Caso de uso | . | REST |
+| Caso de uso | SDK | REST |
 |----------|-----|------|
 | Transcrever declarações curtos (< 15 segundos). Dá suporte apenas ao resultado final da transcrição. | Sim | Sim |
 | Transcrição contínua de longa declarações e áudio de streaming (> 15 segundos). Dá suporte a resultados provisórios e finais de transcrição. | Sim | Não |
@@ -65,7 +65,7 @@ O código de exemplo para o SDK de fala está disponível no GitHub. Esses exemp
 
 Além do modelo Universal usado pelos serviços de fala, você pode criar modelos acústicos, de linguagem e de pronúncia personalizados específicos à sua experiência. Aqui está uma lista de opções de personalização:
 
-| Modelo | DESCRIÇÃO |
+| Modelo | Descrição |
 |-------|-------------|
 | [Modelo acústico](how-to-customize-acoustic-models.md) | A criação de um modelo acústico personalizado será útil se o aplicativo, as ferramentas ou os dispositivos forem usados em um ambiente específico, como em um carro ou fábrica com condições de gravação específicas. Os exemplos envolvem fala e ruídos de fundo específicos ou o uso de um microfone específico para gravação. |
 | [Modelo de linguagem](how-to-customize-language-model.md) | Crie um modelo de linguagem personalizado para melhorar a transcrição do vocabulário e da gramática específicos de um setor, por exemplo, terminologia médica ou jargão de TI. |

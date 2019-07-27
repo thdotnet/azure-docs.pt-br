@@ -1,7 +1,7 @@
 ---
-title: Ordinal V2 entidade predefinida
-titleSuffix: Language Understanding - Azure Cognitive Services
-description: Este artigo contém ordinal V2 informações de entidade predefinidas no idioma Luis (reconhecimento vocal).
+title: Entidade predefinida do ordinal v2-LUIS
+titleSuffix: Azure Cognitive Services
+description: Este artigo contém informações de entidade predefinidas do ordinal V2 em Reconhecimento vocal (LUIS).
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -11,21 +11,21 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 06/25/2019
 ms.author: diberry
-ms.openlocfilehash: 862b962f5642e01d7ed8250f49d51a6132447083
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 972f75fd1c977e79a2fa70c44bb3069e2c69a2c5
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67486135"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563405"
 ---
-# <a name="ordinal-v2-prebuilt-entity-for-a-luis-app"></a>Ordinal V2 entidade predefinida para um aplicativo LUIS
-Número ordinal do V2 expande [Ordinal](luis-reference-prebuilt-ordinal.md) para fornecer as referências relativas, como `next`, `last`, e `previous`. Eles não são extraídos usando a entidade predefinida ordinal.
+# <a name="ordinal-v2-prebuilt-entity-for-a-luis-app"></a>Entidade predefinida do ordinal v2 para um aplicativo LUIS
+`previous`O `next`número do ordinal v2 expande o [ordinal](luis-reference-prebuilt-ordinal.md) para fornecer referências relativas `last`, como, e. Eles não são extraídos usando a entidade predefinida ordinal.
 
-## <a name="resolution-for-prebuilt-ordinal-v2-entity"></a>Resolução para a entidade de V2 ordinal predefinida
+## <a name="resolution-for-prebuilt-ordinal-v2-entity"></a>Resolução para a entidade do ordinal v2 predefinida
 
 ### <a name="api-version-2x"></a>Versão da API 2. x
 
-O exemplo a seguir mostra a resolução do **builtin.ordinalV2** entidade.
+O exemplo a seguir mostra a resolução da entidade **Builtin. ordinalV2** .
 
 ```json
 {
@@ -55,9 +55,9 @@ O exemplo a seguir mostra a resolução do **builtin.ordinalV2** entidade.
 }
 ```
 
-### <a name="preview-api-version-3x"></a>Versão de API de visualização 3. x
+### <a name="preview-api-version-3x"></a>Versão prévia da API 3. x
 
-O JSON a seguir é com o `verbose` parâmetro definido como `false`:
+O JSON a seguir é com `verbose` o parâmetro definido `false`como:
 
 ```json
 {
@@ -82,7 +82,7 @@ O JSON a seguir é com o `verbose` parâmetro definido como `false`:
 }
 ```
 
-O JSON a seguir é com o `verbose` parâmetro definido como `true`:
+O JSON a seguir é com `verbose` o parâmetro definido `true`como:
 
 ```json
 {
@@ -124,4 +124,4 @@ O JSON a seguir é com o `verbose` parâmetro definido como `true`:
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Saiba mais sobre o [percentual](luis-reference-prebuilt-percentage.md), [número de telefone](luis-reference-prebuilt-phonenumber.md), e [temperatura](luis-reference-prebuilt-temperature.md) entidades. 
+Saiba mais sobre a [porcentagem](luis-reference-prebuilt-percentage.md), o [número de telefone](luis-reference-prebuilt-phonenumber.md)e as entidades de [temperatura](luis-reference-prebuilt-temperature.md) . 

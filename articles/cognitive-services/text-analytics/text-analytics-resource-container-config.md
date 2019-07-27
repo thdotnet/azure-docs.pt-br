@@ -1,6 +1,6 @@
 ---
-title: Configurar contêineres
-titlesuffix: Text Analytics - Azure Cognitive Services
+title: Configurar contêineres-Análise de Texto
+titleSuffix: Azure Cognitive Services
 description: A Análise de Texto fornece uma estrutura de configuração comum a cada contêiner para que você possa facilmente definir e gerenciar configurações de armazenamento, registro em log, telemetria e segurança de seus contêineres.
 services: cognitive-services
 author: IEvangelist
@@ -11,18 +11,18 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 06/20/2019
 ms.author: dapine
-ms.openlocfilehash: 2a9b9ce5109315d940d6dcadf395489612faddec
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 65d88e6c201f633a260e31544444341e636e9941
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68356927"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68552264"
 ---
 # <a name="configure-text-analytics-docker-containers"></a>Configurar contêineres de docker de Análise de Texto
 
 A Análise de Texto fornece uma estrutura de configuração comum a cada contêiner para que você possa facilmente definir e gerenciar configurações de armazenamento, registro em log, telemetria e segurança de seus contêineres.
 
-## <a name="configuration-settings"></a>Definições de configuração
+## <a name="configuration-settings"></a>Parâmetros de configuração
 
 [!INCLUDE [Container shared configuration settings table](../../../includes/cognitive-services-containers-configuration-shared-settings-table.md)]
 
@@ -49,9 +49,9 @@ Essa configuração pode ser localizada no seguinte local:
 
 * Portal do Azure: **Análise de texto** Visão geral, rotulada`Endpoint`
 
-|Obrigatório| Nome | Tipo de dados | DESCRIÇÃO |
+|Necessário| Nome | Tipo de dados | Descrição |
 |--|------|-----------|-------------|
-|Sim| `Billing` | Cadeia de caracteres | O URI do ponto de extremidade de cobrança necessário |
+|Sim| `Billing` | Cadeia | O URI do ponto de extremidade de cobrança necessário |
 
 ## <a name="eula-setting"></a>Configuração de EULA
 
@@ -77,10 +77,10 @@ Os contêineres de Análise de Texto não usam montagens de entrada ou saída pa
 
 A sintaxe exata do local da montagem do host varia de acordo com o sistema operacional do host. Além disso, o local de montagem do [computador host](how-tos/text-analytics-how-to-install-containers.md#the-host-computer) pode não estar acessível devido a um conflito entre as permissões usadas pela conta de serviço do Docker e as permissões do local de montagem do host. 
 
-|Opcional| NOME | Tipo de dados | DESCRIÇÃO |
+|Opcional| Nome | Tipo de dados | Descrição |
 |-------|------|-----------|-------------|
-|Não permitido| `Input` | Cadeia de caracteres | Contêineres de Análise de Texto não usam.|
-|Opcional| `Output` | Cadeia de caracteres | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Não permitido| `Input` | Cadeia | Contêineres de Análise de Texto não usam.|
+|Opcional| `Output` | Cadeia | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Comandos docker run de exemplo 
 
@@ -91,7 +91,7 @@ Os exemplos a seguir usam as definições de configuração para ilustrar como e
 
 Substitua {_argument_name_} pelos seus próprios valores:
 
-| Placeholder | Valor | Formato ou exemplo |
+| Espaço reservado | Valor | Formato ou exemplo |
 |-------------|-------|---|
 |{API_KEY} | A chave do ponto de `Text Analytics` extremidade do recurso disponível na `Text Analytics` página chaves do Azure. |`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`|
 |{ENDPOINT_URI} | O valor do ponto de extremidade de cobrança está `Text Analytics` disponível na página Visão geral do Azure.|`https://westus.api.cognitive.microsoft.com/text/analytics/v2.1`|

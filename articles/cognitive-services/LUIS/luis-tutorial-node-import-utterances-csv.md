@@ -1,6 +1,6 @@
 ---
-title: Importar declarações usando o Node.js
-titleSuffix: Azure
+title: Importar declarações usando node. js-LUIS
+titleSuffix: Azure Cognitive Services
 description: Saiba como criar um aplicativo LUIS programaticamente com base em dados preexistentes em formato CSV usando a API de criação do LUIS.
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/30/2019
 ms.author: diberry
-ms.openlocfilehash: 314d121e8964ba1cdbb457260826d85bf8505fbc
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9ca04bdd7f4ed577ad571e6a715201f8c3e2b6ee
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60494859"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68559968"
 ---
 # <a name="build-a-luis-app-programmatically-using-nodejs"></a>Criar um aplicativo LUIS programaticamente usando o Node.js
 
@@ -26,7 +26,7 @@ O LUIS fornece uma API programática que faz tudo o que o site do [LUIS](luis-re
 
 * Faça logon no site do [LUIS](luis-reference-regions.md) e localize a [chave de criação](luis-concept-keys.md#authoring-key) nas Configurações da Conta. Use essa chave para chamar as APIs de criação.
 * Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
-* Este tutorial começa com um CSV para arquivos de log de solicitações de usuário de uma empresa hipotética. Baixe [aqui](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/IoT.csv).
+* Este tutorial começa com um CSV para arquivos de log de solicitações de usuário de uma empresa hipotética. Faça download dela [aqui](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/examples/build-app-programmatically-csv/IoT.csv).
 * Instale o Node.js mais recente com o NPM. Baixe-o [aqui](https://nodejs.org/en/download/).
 * **[Recomendado]** O Visual Studio Code para IntelliSense e depuração, baixe-o [aqui](https://code.visualstudio.com/) gratuitamente.
 
@@ -132,7 +132,7 @@ Execute o script em um terminal/linha de comando com Node.js.
 > node index.js
 ```
 
-ou o
+ou
 
 ```console
 > npm start

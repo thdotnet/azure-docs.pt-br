@@ -1,6 +1,6 @@
 ---
-title: Glossário
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Glossário-LUIS
+titleSuffix: Azure Cognitive Services
 description: O glossário explica os termos que você pode encontrar à medida que trabalha com o Serviço de API do LUIS.
 services: cognitive-services
 author: diberry
@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: a88d7de69158a54995106d45683094c9b976896b
-ms.sourcegitcommit: af58483a9c574a10edc546f2737939a93af87b73
+ms.openlocfilehash: 595a835018475ed3aa915971f5ff2b78981e7bdf
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68302518"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560499"
 ---
 # <a name="language-understanding-glossary-of-common-vocabulary-and-concepts"></a>Glossário de noções básicas de linguagem de conceitos e vocabulário comuns
 O glossário do LUIS (Reconhecimento vocal) explica os termos que você pode encontrar à medida que trabalha com o Serviço de API do LUIS.
@@ -82,11 +82,11 @@ Um exemplo de ponto de extremidade tem a seguinte aparência:
 
 |Parâmetro querystring|description|
 |--|--|
-|region| [região publicada](luis-reference-regions.md#publishing-regions) |
+|Região| [região publicada](luis-reference-regions.md#publishing-regions) |
 |appID | ID do aplicativo LUIS |
 |subscriptionID | Chave de ponto de extremidade (assinatura) de LUIS criada no portal do Azure |
 |q | utterance |
-|timezoneOffset| minutes|
+|timezoneOffset| minutos|
 
 ## <a name="entity"></a>Entidade
 

@@ -1,6 +1,6 @@
 ---
 title: Verificar as imagens em relação a listas personalizadas em C# – Content Moderator
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Como moderar imagens com as listas de imagens personalizadas do SDK do Content Moderator para C#.
 services: cognitive-services
 author: sanjeev3
@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 07/03/2019
 ms.author: sajagtap
-ms.openlocfilehash: 49f87b7cf3d7f46a66c0992edf25968b1dbae073
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 915b308b0129d714e51ac50b4230d8447b5c933a
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603404"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564484"
 ---
 # <a name="moderate-with-custom-image-lists-in-c"></a>Moderar com as listas de imagem personalizada no C#
 
@@ -32,7 +32,7 @@ Este artigo fornece informações e exemplos de código para ajudá-lo a começa
 > [!NOTE]
 > Há um limite máximo de **cinco listas de imagens**, e cada lista **não deve exceder 10.000 imagens**.
 
-O aplicativo de console para este guia simula a algumas das tarefas que podem ser executadas com a API de lista de imagens.
+O aplicativo de console para este guia simula algumas das tarefas que você pode executar com a API da lista de imagens.
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar. 
 
@@ -303,7 +303,7 @@ private static ImageList CreateCustomList(ContentModeratorClient client)
 
 ## <a name="create-a-method-to-add-a-collection-of-images-to-the-list"></a>Criar um método para adicionar uma coleção de imagens para a lista
 
-Adicione o seguinte método à classe **Programa**. Este guia demonstra como aplicar marcas a imagens na lista. 
+Adicione o seguinte método à classe **Programa**. Este guia não demonstra como aplicar marcas a imagens na lista. 
 
 ```csharp
 /// <summary>

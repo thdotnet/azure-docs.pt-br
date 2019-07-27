@@ -1,6 +1,6 @@
 ---
-title: Conversão de dados
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Conversão de dados-LUIS
+titleSuffix: Azure Cognitive Services
 description: Saiba como as expressões podem ser alteradas antes das previsões no Reconhecimento vocal (LUIS)
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/16/2019
 ms.author: diberry
-ms.openlocfilehash: a148c849d0935978f049e01dd254c4c18800ee3b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bdce1a49ce6c6531ce344de5aa157717fe72c609
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66496996"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560816"
 ---
 # <a name="convert-data-format-of-utterances"></a>Converter o formato de dados de declarações
 O LUIS usa o serviço de Fala dos Serviços Cognitivos para converter enunciados falados em enunciados de texto antes da previsão. 
@@ -27,7 +27,7 @@ Conversão de fala em texto no LUIS permite que você envie expressões faladas 
 ### <a name="key-requirements"></a>Requisitos de chave
 Você não precisa criar uma chave de **API de Fala do Bing** para esta integração. Uma chave de **Reconhecimento vocal** criada no portal do Azure funciona para este exercício. Não use a chave de inicialização do LUIS.
 
-### <a name="pricing-tier"></a>Camada de preços
+### <a name="pricing-tier"></a>Tipo de Preço
 Essa integração usa um modelo de [preço](luis-boundaries.md#key-limits) diferente dos tipos de preço comuns do Reconhecimento vocal. 
 
 ### <a name="quota-usage"></a>Uso da cota
@@ -36,5 +36,5 @@ Consulte [limites de chave](luis-boundaries.md#key-limits) para obter informaç�
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
-> [Extração de dados](luis-concept-data-extraction.md)
+> [Extraindo dados](luis-concept-data-extraction.md)
 

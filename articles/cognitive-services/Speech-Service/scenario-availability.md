@@ -1,6 +1,6 @@
 ---
-title: Disponibilidade do cenário - serviços de fala
-titlesuffix: Azure Cognitive Services
+title: Disponibilidade do cenário-serviço de fala
+titleSuffix: Azure Cognitive Services
 description: Referência para regiões do serviço de Fala.
 services: cognitive-services
 author: chrisbasoglu
@@ -10,40 +10,40 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: cbasoglu
-ms.openlocfilehash: 7aa2c72a01f1887ea9680f8d5706b825a49039a1
-ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
+ms.openlocfilehash: 94fd415909e86a43916ee2f510732a6a6d9c5ed3
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67561280"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68552960"
 ---
 # <a name="scenario-availability"></a>Disponibilidade do cenário
 
-O SDK do serviço de fala apresenta muitos cenários em uma ampla variedade de ambientes e linguagens de programação.  Nem todos os cenários ainda estão atualmente disponíveis em todas as linguagens de programação ou em todos os ambientes.  Abaixo está a disponibilidade de cada cenário.
+O SDK do serviço de fala apresenta muitos cenários em uma ampla variedade de linguagens de programação e ambientes.  Nem todos os cenários estão atualmente disponíveis em todas as linguagens de programação ou todos os ambientes ainda.  Listada abaixo está a disponibilidade de cada cenário.
 
-- **Reconhecimento de fala (SR), lista de frases, intenção, tradução e locais dos contêineres**
-  - Todos os idiomas/ambientes de programação em que há um link da seta <img src="media/index/link.jpg" height="15" width="15"></img> na tabela de início rápido [aqui](https://aka.ms/csspeech).
-- **Texto em fala (TTS)**
-  - C++/ Windows e Linux
-  - C#/ O Windows UWP & Unity
-  - API de REST de TTS pode ser usado em todas as outras situações.
-- **Ativação de Word (palavra-chave Spotter/KWS)**
-  - C++/ Windows e Linux
-  - C#/ Windows e Linux
-  - Python/Windows e Linux
-  - Java/Windows, Linux & Android (dispositivos de fala do SDK)
-  - Funcionalidade de palavra (palavra-chave Spotter/KWS) de ativação pode funcionar com qualquer tipo de microfone, oficial KWS oferecer suporte a, no entanto, é atualmente limitado para as matrizes de microfone encontrado no hardware do Azure Kinect DK ou o SDK de dispositivos de fala
-- **Assistente de voz-First Virtual**
-  - C++/ Windows e Linux e macOS
+- **Reconhecimento de fala (SR), lista de frases, intenção, tradução e contêineres locais**
+  - Todas as linguagens de programação/ambientes em que há um link de seta <img src="media/index/link.jpg" height="15" width="15"></img> na tabela de início rápido [aqui](https://aka.ms/csspeech).
+- **Conversão de texto em fala (TTS)**
+  - C++/Windows & Linux
+  - C#/Windows & UWP & Unity
+  - A API REST de TTS pode ser usada em todas as outras situações.
+- **Ativar palavra (palavra-chave spotter/KWS)**
+  - C++/Windows & Linux
+  - C#/Windows & Linux
+  - Python/Windows & Linux
+  - Java/Windows & Linux & Android (SDK de dispositivos de fala)
+  - A funcionalidade wake Word (keyword spotter/KWS) pode funcionar com qualquer tipo de microfone, o suporte oficial de KWS, no entanto, está limitado atualmente às matrizes de microfone encontradas no hardware do Azure Kinect DK ou no SDK de dispositivos de fala
+- **Assistente virtual de voz-primeiro**
+  - C++/Windows & Linux & macOS
   - C#/Windows
-  - Java/Windows, Linux, macOS, & Android (SDK de dispositivos de fala)
+  - Java/Windows & Linux & macOS & Android (SDK de dispositivos de fala)
 - **Transcrição de Conversas**
-  - C++/ Windows e Linux
-  - C#(Framework e .NET Core) / Windows UWP & Linux
-  - Java/Windows, Linux & Android (dispositivos de fala do SDK)
-- **Transcrição de Call Center**
-  - API REST e podem ser usados em qualquer situação
-- **Codec de compactação a entrada de áudio**
+  - C++/Windows & Linux
+  - C#(Framework & .NET Core)/Windows & UWP & Linux
+  - Java/Windows & Linux & Android (SDK de dispositivos de fala)
+- **Transcrição do Call Center**
+  - API REST e pode ser usada em qualquer situação
+- **Entrada de áudio compactada por codec**
   - C++/Linux
   - C#/Linux
-  - Java/Linux e no Android
+  - Java/Linux & Android

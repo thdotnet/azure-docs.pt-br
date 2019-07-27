@@ -1,6 +1,6 @@
 ---
-title: Alteração de dados
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Alteração de dados-LUIS
+titleSuffix: Azure Cognitive Services
 description: Saiba como os dados podem ser alterados antes das previsões no LUIS (Reconhecimento vocal)
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: 0648dd9bc93097d3c2433943f983b5e9d22f0279
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 67b56f09663aca35ed0843f50e2420b531c82833
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66473498"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560828"
 ---
 # <a name="alter-utterance-data-before-or-during-prediction"></a>Alterar os dados de declaração antes ou durante a previsão
 O LUIS fornece maneiras de manipular a declaração antes ou durante a previsão. Isso inclui a correção de ortografia e a correção de problemas de fuso horário do datetimeV2 pré-criado. 
@@ -30,7 +30,7 @@ O uso da chave no painel de teste e no ponto de extremidade são contados na cot
 
 O ponto de extremidade requer dois parâmetros para as correções ortográfica funcionarem:
 
-|Param|Value|
+|Param|Valor|
 |--|--|
 |`spellCheck`|boolean|
 |`bing-spell-check-subscription-key`|Chave de ponto de extremidade de [API de Verificação Ortográfica do Bing V7](https://azure.microsoft.com/services/cognitive-services/spell-check/)|
@@ -58,7 +58,7 @@ Quando um aplicativo LUIS usa a entidade datetimeV2 predefinida, um valor dateti
 ### <a name="endpoint-querystring-parameter"></a>Parâmetro querystring do ponto de extremidade
 O fuso horário é corrigido adicionando o fuso horário do usuário ao [ponto de extremidade](https://go.microsoft.com/fwlink/?linkid=2092356) usando o parâmetro `timezoneOffset`. O valor de `timezoneOffset` deve ser o número positivo ou negativo, em minutos, para alterar a hora.  
 
-|Param|Value|
+|Param|Valor|
 |--|--|
 |`timezoneOffset`|O número positivo ou negativo, em minutos|
 

@@ -1,5 +1,5 @@
 ---
-title: Domínios predefinidos para Reconhecimento Vocal
+title: Domínios predefinidos para Reconhecimento vocal
 titleSuffix: Azure Cognitive Services
 description: O LUIS inclui um conjunto de domínios predefinidos para adicionar rapidamente cenários comuns de usuário de conversação.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/24/2019
 ms.author: diberry
-ms.openlocfilehash: e1b99396c4739dc6f1b7a4da0164553d4c25ef3c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 05769bb284a89f16af79a03cdc471b339c7af855
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60198915"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563540"
 ---
 # <a name="add-prebuilt-domains-for-common-usage-scenarios"></a>Adicionar domínios predefinidos para cenários comuns de uso 
 

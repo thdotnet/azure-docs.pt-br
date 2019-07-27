@@ -1,7 +1,7 @@
 ---
-title: Experimente os Serviços de Fala gratuitamente
+title: Experimente o Speech Service gratuitamente
 titleSuffix: Azure Cognitive Services
-description: É fácil e barato começar a usar os Serviços de Fala. Uma avaliação gratuita de 30 dias permite que você descubra o que o serviço pode fazer e decida se ele é o ideal para as necessidades do seu aplicativo.
+description: A introdução ao serviço de fala é fácil e acessível. Uma avaliação gratuita de 30 dias permite que você descubra o que o serviço pode fazer e decida se ele é o ideal para as necessidades do seu aplicativo.
 services: cognitive-services
 author: erhopf
 manager: nitinme
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 203526b23a9571f0cccf3ebed432978772282418
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: a8797afdfacfcfc75445c7f35083aeb9bb847ac1
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68226414"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68562935"
 ---
 # <a name="try-speech-services-for-free"></a>Experimente os Serviços de Fala gratuitamente
 
@@ -89,7 +89,7 @@ Para adicionar um recurso de Serviços de Fala (camada gratuita ou paga) à sua 
 
    * Um nome para o novo recurso. O nome ajuda a distinguir entre várias assinaturas do mesmo serviço.
    * Escolha a assinatura do Azure a qual o novo recurso está associado para determinar como os valores serão cobrados.
-   * Escolha o [região](regions.md) onde o recurso será usado.
+   * Escolha a [região](regions.md) em que o recurso será usado.
    * Escolha um tipo de preço gratuito ou pago. Clique em **Exibir detalhes completos de preço** para obter informações completas sobre preço e cotas de uso para cada tipo.
    * Crie um grupo de recursos para esta assinatura de Fala ou atribua a assinatura a um grupo de recursos existente. Os grupos de recurso ajudam você a manter suas diversas assinaturas do Azure organizadas.
    * Para ter acesso conveniente à sua assinatura futuramente, marque a caixa de seleção **Fixar no painel**.

@@ -1,6 +1,6 @@
 ---
 title: Solução de problemas – QnAMaker
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: O QnAMaker inclui componentes hospedados na conta do usuário do Azure. A depuração pode exigir que os usuários manipulem os recursos do QnAMaker Azure ou forneçam à equipe de suporte do QnAMaker informações adicionais sobre a configuração.
 services: cognitive-services
 author: diberry
@@ -11,18 +11,18 @@ ms.topic: article
 ms.date: 01/14/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 5b65a121e895b4855c7c69d2b67e7055c88ddd08
-ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
+ms.openlocfilehash: 94a3dfd9a3560321d7e2753ccd385fb1a5323107
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67466054"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68559931"
 ---
 # <a name="troubleshooting-tips-to-support-the-qna-maker-service-and-runtime"></a>Dicas de solução de problemas para dar suporte ao tempo de execução e ao serviço do QnA Maker
 O QnAMaker inclui componentes hospedados na conta do usuário do Azure. A depuração pode exigir que os usuários manipulem os recursos do QnAMaker Azure ou forneçam à equipe de suporte do QnAMaker informações adicionais sobre a configuração.
 
 ## <a name="how-to-get-latest-qnamaker-runtime-updates"></a>Como obter as últimas atualizações do tempo de execução do QnAMaker
-O tempo de execução do QnAMaker é parte do Serviço de Aplicativo do Azure implantado ao [criar um serviço do QnAMaker](./set-up-qnamaker-service-azure.md) no portal do Azure. Atualizações são feitas periodicamente para o tempo de execução. Serviço de aplicativo do QnA Maker é em automaticamente post do modo de atualização de nossa versão de extensão de site de abril de 2019 (versão 5 ou superior). Isso já foi projetado para cuidar de tempo de inatividade ZERO durante as atualizações. Você pode verificar a versão atual em https://www.qnamaker.ai/UserSettings. Se sua versão for anterior à versão 5.x, você deve reiniciar o serviço de aplicativo para aplicar as atualizações mais recentes para aplicar à sua instalação do QnAMaker.
+O tempo de execução do QnAMaker é parte do Serviço de Aplicativo do Azure implantado ao [criar um serviço do QnAMaker](./set-up-qnamaker-service-azure.md) no portal do Azure. Atualizações são feitas periodicamente para o tempo de execução. QnA Maker serviço de aplicativo estiver no modo de atualização automática, poste nossa versão de extensão de site de abril 2019 (versão 5 +). Isso já foi projetado para cuidar do tempo de inatividade ZERO durante as atualizações. Você pode verificar a versão atual em https://www.qnamaker.ai/UserSettings. Se sua versão for anterior à versão 5. x, você deverá reiniciar o serviço de aplicativo para aplicar as atualizações mais recentes a serem aplicadas à configuração do QnAMaker.
 
 1. Acesse o serviço do QnAMaker (grupo de recursos) no [portal do Azure](https://portal.azure.com)
 

@@ -1,6 +1,6 @@
 ---
-title: Contêineres do Docker
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Contêineres do Docker-LUIS
+titleSuffix: Azure Cognitive Services
 description: O contêiner do LUIS carrega seu aplicativo treinado ou publicado para um contêiner do Docker e fornece acesso às previsões de consulta dos pontos de extremidade da API do contêiner.
 services: cognitive-services
 author: IEvangelist
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 07/02/2019
 ms.author: dapine
-ms.openlocfilehash: ae2f24c83cb0de054cc97bf0be8ada35a568ad82
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 2b87f9bcbaa0fd9d8a23d774e0765e1eb5b56633
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360558"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563908"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Instalar e executar os contêineres de docker LUIS
  
@@ -32,7 +32,7 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 Para executar o contêiner do LUIS, você precisará ter o seguinte: 
 
-|Obrigatório|Finalidade|
+|Necessário|Finalidade|
 |--|--|
 |Mecanismo Docker| É necessário ter o Mecanismo Docker instalado em um [computador host](#the-host-computer). O Docker fornece pacotes que configuram o ambiente do Docker no [macOS](https://docs.docker.com/docker-for-mac/), no [Windows](https://docs.docker.com/docker-for-windows/) e no [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Para instruções sobre conceitos básicos do Docker e de contêiner, consulte a [visão geral do Docker](https://docs.docker.com/engine/docker-overview/).<br><br> O Docker deve ser configurado para permitir que os contêineres conectem-se e enviem dados de cobrança para o Azure. <br><br> **No Windows**, o Docker também deve ser configurado para dar suporte a contêineres do Linux.<br><br>|
 |Familiaridade com o Docker | É necessário ter uma compreensão básica de conceitos do Docker, como registros, repositórios, contêineres e imagens de contêiner, bem como conhecimento dos comandos básicos do `docker`.| 
@@ -108,8 +108,8 @@ O diretório de montagem de entrada pode conter as versões de **Produção**, *
 
 |Tipo de pacote|API do ponto de extremidade de consulta|Disponibilidade de consulta|Formato do nome de arquivo do pacote|
 |--|--|--|--|
-|Treinado|Get, Post|Somente contêiner|`{APPLICATION_ID}_v{APPLICATION_VERSION}.gz`|
-|Staging|Get, Post|Azure e contêiner|`{APPLICATION_ID}_STAGING.gz`|
+|Treinamento concluído|Get, Post|Somente contêiner|`{APPLICATION_ID}_v{APPLICATION_VERSION}.gz`|
+|Preparo|Get, Post|Azure e contêiner|`{APPLICATION_ID}_STAGING.gz`|
 |Produção|Get, Post|Azure e contêiner|`{APPLICATION_ID}_PRODUCTION.gz`|
 
 > [!IMPORTANT]
@@ -168,7 +168,7 @@ Host: {AZURE_REGION}.api.cognitive.microsoft.com
 Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 ```
 
-| Placeholder | Valor |
+| Espaço reservado | Valor |
 |-------------|-------|
 |{APPLICATION_ID} | A ID de aplicativo do aplicativo LUIS publicado. |
 |{APPLICATION_ENVIRONMENT} | O ambiente do aplicativo LUIS publicado. Use um dos seguintes valores:<br/>```PRODUCTION```<br/>```STAGING``` |
@@ -187,7 +187,7 @@ Host: {AZURE_REGION}.api.cognitive.microsoft.com
 Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 ```
 
-| Placeholder | Valor |
+| Espaço reservado | Valor |
 |-------------|-------|
 |{APPLICATION_ID} | A ID de aplicativo do aplicativo LUIS treinado. |
 |{APPLICATION_VERSION} | A versão de aplicativo do aplicativo LUIS treinado. |
@@ -200,7 +200,7 @@ Para baixar o pacote treinado, consulte a documentação da [API aqui][download-
 
 Use o comando [docker run](https://docs.docker.com/engine/reference/commandline/run/) para executar o contêiner. O comando usa os seguintes parâmetros:
 
-| Placeholder | Valor |
+| Espaço reservado | Valor |
 |-------------|-------|
 |{API_KEY} | Essa chave é usada para iniciar o contêiner. Não use a chave de inicialização. |
 |{ENDPOINT_URI} | O valor do ponto de extremidade está disponível na `Cognitive Services` página de visão geral do portal do Azure. |
@@ -253,7 +253,7 @@ Use o host, `https://localhost:5000`, para APIs de contêiner.
 |Tipo de pacote|Método|Rota|Parâmetros de consulta|
 |--|--|--|--|
 |Publicado|[Get](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee78), [Post](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee79)|/luis/v2.0/apps/{appId}?|q={q}<br>&staging<br>[&timezoneOffset]<br>[&verbose]<br>[&log]<br>|
-|Treinado|Get, Post|/luis/v2.0/apps/{appId}/versions/{versionId}?|q={q}<br>[&timezoneOffset]<br>[&verbose]<br>[&log]|
+|Treinamento concluído|Get, Post|/luis/v2.0/apps/{appId}/versions/{versionId}?|q={q}<br>[&timezoneOffset]<br>[&verbose]<br>[&log]|
 
 Os parâmetros de consulta configuram como e o que é retornado na resposta da consulta:
 
@@ -345,7 +345,7 @@ Configurações de aplicativo sem suporte|Detalhes|
 |Entidades sem suporte para todas as culturas|Entidade predefinida [KeyPhrase](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-prebuilt-keyphrase) para todas as culturas|
 |Entidades sem suporte para a cultura Inglês (en-US)|Entidades predefinidas [GeographyV2](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-prebuilt-geographyv2)|
 |Preparação da fala|Não há suporte para dependências externas no contêiner.|
-|Análise de sentimento|Não há suporte para dependências externas no contêiner.|
+|Análise de Sentimento|Não há suporte para dependências externas no contêiner.|
 
 <!--blogs/samples/video courses -->
 [!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]

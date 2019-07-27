@@ -1,6 +1,6 @@
 ---
-title: Configurações de contêiner do Docker
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Configurações de contêiner do Docker-LUIS
+titleSuffix: Azure Cognitive Services
 description: O ambiente de tempo de execução do contêiner do LUIS é configurado usando argumentos de comando `docker run`. O LUIS tem várias configurações obrigatórias e outras configurações opcionais.
 services: cognitive-services
 author: IEvangelist
@@ -11,22 +11,22 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 06/11/2019
 ms.author: dapine
-ms.openlocfilehash: 7858d94b6e2a9ef07da9121cb84ffaf6adaa24d3
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: e6a13688bba1c3a0e62e427e078e78c8f8dd4e70
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360544"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560619"
 ---
 # <a name="configure-language-understanding-docker-containers"></a>Configurar contêineres do Docker do Serviço Inteligente de Reconhecimento Vocal 
 
 O ambiente de tempo de execução do contêiner do LUIS (**Serviço Inteligente de Reconhecimento Vocal**) é configurado usando argumentos de comando `docker run`. O LUIS tem várias configurações obrigatórias e outras configurações opcionais. Há vários [exemplos](#example-docker-run-commands) do comando disponíveis. As configurações específicas do contêiner são as [configurações de montagem](#mount-settings) de entrada e as configurações de cobrança. 
 
-## <a name="configuration-settings"></a>Definições de configuração
+## <a name="configuration-settings"></a>Parâmetros de configuração
 
 Esse contêiner tem as seguintes configurações:
 
-|Obrigatório|Configuração|Finalidade|
+|Necessário|Configuração|Finalidade|
 |--|--|--|
 |Sim|[ApiKey](#apikey-setting)|Usado para rastrear informações de cobrança.|
 |Não|[ApplicationInsights](#applicationinsights-setting)|Permite que você adicione suporte a dados telemétricos do [Azure Application Insights](https://docs.microsoft.com/azure/application-insights) para seu contêiner.|
@@ -67,9 +67,9 @@ Essa configuração pode ser localizada no seguinte local:
 Lembre-se de `luis/v2.0` incluir o roteamento na URL, conforme mostrado na tabela a seguir:
 
 
-|Obrigatório| Nome | Tipo de dados | DESCRIÇÃO |
+|Necessário| Nome | Tipo de dados | Descrição |
 |--|------|-----------|-------------|
-|Sim| `Billing` | Cadeia de caracteres | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westus.api.cognitive.microsoft.com/luis/v2.0` |
+|Sim| `Billing` | Cadeia | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westus.api.cognitive.microsoft.com/luis/v2.0` |
 
 ## <a name="eula-setting"></a>Configuração de EULA
 
@@ -97,10 +97,10 @@ A sintaxe exata do local da montagem do host varia de acordo com o sistema opera
 
 A tabela a seguir descreve as configurações com suporte.
 
-|Obrigatório| Nome | Tipo de dados | DESCRIÇÃO |
+|Necessário| Nome | Tipo de dados | Descrição |
 |-------|------|-----------|-------------|
-|Sim| `Input` | Cadeia de caracteres | O destino de montagem de entrada. O valor padrão é `/input`. Esse é o local dos arquivos de pacote do LUIS. <br><br>Exemplo:<br>`--mount type=bind,src=c:\input,target=/input`|
-|Não| `Output` | Cadeia de caracteres | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de consulta do LUIS e logs do contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Sim| `Input` | Cadeia | O destino de montagem de entrada. O valor padrão é `/input`. Esse é o local dos arquivos de pacote do LUIS. <br><br>Exemplo:<br>`--mount type=bind,src=c:\input,target=/input`|
+|Não| `Output` | Cadeia | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de consulta do LUIS e logs do contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Comandos docker run de exemplo
 
@@ -114,7 +114,7 @@ Lembre-se de `luis/v2.0` incluir o roteamento na URL, conforme mostrado na tabel
 
 Substitua {_argument_name_} pelos seus próprios valores:
 
-| Placeholder | Valor | Formato ou exemplo |
+| Espaço reservado | Valor | Formato ou exemplo |
 |-------------|-------|---|
 |{API_KEY} | A chave do ponto de extremidade do aplicativo LUIS treinado. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
 |{ENDPOINT_URL} | O valor do ponto de extremidade de cobrança está `Cognitive Services` disponível na página Visão geral do Azure. |https://westus.api.cognitive.microsoft.com/luis/v2.0|

@@ -1,6 +1,6 @@
 ---
-title: Recursos
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Recursos-LUIS
+titleSuffix: Azure Cognitive Services
 description: Adicione recursos a um modelo de linguagem para fornecer dicas sobre como reconhecer a entrada que você deseja identificar ou classificar.
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: diberry
-ms.openlocfilehash: 7889f223b607912fd88c798b31ec028f97dfbbd6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1aed6f9a0ceec18ca800e5030ec09bbb8d98cb76
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60812931"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560716"
 ---
 # <a name="phrase-list-features-in-your-luis-app"></a>Recurso de lista de frases em seu aplicativo LUIS
 
@@ -93,7 +93,7 @@ Embora uma lista de frases e as entidades de lista possam afetar as declaraçõe
 ### <a name="use-a-phrase-list"></a>Usar uma lista de frases
 Com uma lista de frases, o LUIS ainda pode levar o contexto em consideração e generalizar para identificar os itens que são semelhantes, mas que não são uma correspondência exata, como itens em uma lista. Se você precisar que o seu aplicativo LUIS generalize e identifique novos itens em uma categoria, use uma lista de frases. 
 
-Quando você deseja ser capaz de reconhecer novas instâncias de uma entidade, como um agendador de reunião deve reconhecer os nomes dos novos contatos ou um aplicativo de estoque que deve reconhecer novos produtos, use outro tipo de entidade de computador aprendeu como uma entidade simples. Em seguida, crie uma lista de palavras e frases que ajuda o LUIS a encontrar outras palavras semelhantes para a entidade. Essa lista orienta o LUIS a reconhecer exemplos da entidade adicionando outro significado ao valor dessas palavras. 
+Quando você quiser ser capaz de reconhecer novas instâncias de uma entidade, como um Agendador de reunião que deve reconhecer os nomes de novos contatos ou um aplicativo de inventário que deve reconhecer novos produtos, use outro tipo de entidade aprendida por máquina, como uma entidade simples. Em seguida, crie uma lista de palavras e frases que ajuda o LUIS a encontrar outras palavras semelhantes para a entidade. Essa lista orienta o LUIS a reconhecer exemplos da entidade adicionando outro significado ao valor dessas palavras. 
 
 Listas de frase são como um vocabulário específico ao domínio que ajudam a melhorar a qualidade da compreensão de intenções e entidades. Um uso comum de uma lista de frases é para substantivos, como nomes de cidades. Um nome de cidade pode ter várias palavras, incluindo hifens ou apóstrofos.
  

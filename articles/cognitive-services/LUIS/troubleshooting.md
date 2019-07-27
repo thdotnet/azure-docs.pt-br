@@ -1,5 +1,5 @@
 ---
-title: Perguntas frequentes (FAQ)
+title: Perguntas frequentes – LUIS
 titleSuffix: Azure Cognitive Services
 description: Este artigo contém as respostas para perguntas frequentes sobre o LUIS (Serviço Inteligente de Reconhecimento Vocal).
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 06/18/2019
 ms.author: diberry
-ms.openlocfilehash: 7e1e61d96b066c395668ce1dd9cdba4cb4ecb2be
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: bccdcce52b9e62048d7eb307a4783abda0f9d17c
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204113"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563176"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Perguntas frequentes sobre o LUIS (Serviço Inteligente de Reconhecimento Vocal)
 
@@ -24,7 +24,7 @@ Este artigo contém as respostas para perguntas frequentes sobre o LUIS (Serviç
 
 ## <a name="whats-new"></a>Novidades
 
-[Saiba mais](whats-new.md) sobre o que há de novo no reconhecimento vocal.
+[Saiba mais](whats-new.md) sobre as novidades do reconhecimento vocal.
 
 <a name="luis-authoring"></a>
 
@@ -68,11 +68,11 @@ Os aplicativos pré-compilados da Cortana foram preteridos em 2017. Não há mai
 ### <a name="how-do-i-transfer-ownership-of-a-luis-app"></a>Como fazer para transferir a propriedade de um aplicativo de LUIS?
 Para transferir um aplicativo de LUIS para uma assinatura do Azure diferente, exporte o aplicativo de LUIS e importe-lo usando uma nova conta. Atualize a ID do aplicativo de LUIS no aplicativo cliente que o chama. O novo aplicativo pode retornar pontuações de LUIS ligeiramente diferentes que as do aplicativo original.
 
-### <a name="a-prebuilt-entity-is-tagged-in-an-example-utterance-instead-of-my-custom-entity-how-do-i-fix-this"></a>Uma entidade predefinida é marcada em uma expressão de exemplo, em vez de minha entidade personalizada. Como corrigir isso? 
+### <a name="a-prebuilt-entity-is-tagged-in-an-example-utterance-instead-of-my-custom-entity-how-do-i-fix-this"></a>Uma entidade predefinida é marcada em um exemplo de expressão em vez de minha entidade personalizada. Como corrigir isso? 
 
-Ver [as entidades predefinidas de solução de problemas](luis-concept-entity-types.md#troubleshooting-prebuilt-entities).
+Consulte [Solucionando problemas de entidades](luis-concept-entity-types.md#troubleshooting-prebuilt-entities)predefinidas.
 
-### <a name="i-tried-to-import-an-app-or-version-file-but-i-got-an-error-what-happened"></a>Eu tentei importar um arquivo de aplicativo ou versão, mas recebi um erro, o que aconteceu? 
+### <a name="i-tried-to-import-an-app-or-version-file-but-i-got-an-error-what-happened"></a>Tentei importar um arquivo de aplicativo ou de versão, mas recebi um erro, o que aconteceu? 
 
 Leia mais sobre [erros de importação de versão](luis-how-to-manage-versions.md#import-errors) e [erros de importação de aplicativo](luis-how-to-start-new-app.md#import-errors).
 
@@ -189,11 +189,11 @@ Confira [Chaves de ponto de extremidade de previsão de criação e consulta no 
 
 ### <a name="i-got-an-error-about-being-out-of-quota-how-do-i-fix-it"></a>Recebi um erro informando a ausência de cota. Como corrigi-la? 
 
-Consulte, [código de status HTTP corrigir 403 e 429](luis-how-to-azure-subscription.md#fix-http-status-code-403-and-429) para saber mais.
+Consulte [corrigir o código de status HTTP 403 e 429](luis-how-to-azure-subscription.md#fix-http-status-code-403-and-429) para saber mais.
 
 ### <a name="i-need-to-handle-more-endpoint-queries-how-do-i-do-that"></a>Eu preciso lidar com mais consultas de ponto de extremidade. Como faço isso? 
 
-Consulte, [código de status HTTP corrigir 403 e 429](luis-how-to-azure-subscription.md#fix-http-status-code-403-and-429) para saber mais.
+Consulte [corrigir o código de status HTTP 403 e 429](luis-how-to-azure-subscription.md#fix-http-status-code-403-and-429) para saber mais.
 
 
 
@@ -288,23 +288,23 @@ Sim, você poderá usar o [contêiner](luis-container-howto.md) do LUIS para ess
 
 ## <a name="migrating-to-the-next-version"></a>Migrando para a próxima versão
 
-### <a name="how-do-i-migrate-to-preview-v3-api"></a>Como migrar para visualizar V3 API? 
+### <a name="how-do-i-migrate-to-preview-v3-api"></a>Como fazer migrar para a API da visualização v3? 
 
-Consulte [API v2 para v3 migração guia para aplicativos do LUIS](luis-migration-api-v3.md)
+Consulte o [Guia de migração da API v2 para V3 para aplicativos Luis](luis-migration-api-v3.md)
 
-## <a name="build-2019-conference-announcements"></a>Anúncios de conferência do Build de 2019
+## <a name="build-2019-conference-announcements"></a>Crie anúncios de conferência 2019
 
 Os seguintes recursos foram lançados na conferência Build 2019:
 
-* [Visualização do guia de migração de API V3](luis-migration-api-v3.md)
-* [Dashboard de análises aprimoradas](luis-how-to-use-dashboard.md)
+* [Visualização do guia de migração da API v3](luis-migration-api-v3.md)
+* [Painel analítico aprimorado](luis-how-to-use-dashboard.md)
 * [Domínios predefinidos aprimorados](luis-reference-prebuilt-domains.md) 
 * [Entidades de lista dinâmica](luis-migration-api-v3.md#dynamic-lists-passed-in-at-prediction-time)
 * [Entidades externas](luis-migration-api-v3.md#external-entities-passed-in-at-prediction-time)
 
 Vídeos:
 
-* [Como usar inteligência Artificial de conversação do Azure para dimensionar seus negócios para a próxima geração](https://www.youtube.com/watch?v=_k97jd-csuk&feature=youtu.be)
+* [Como usar o AI de conversa do Azure para dimensionar sua empresa para a próxima geração](https://www.youtube.com/watch?v=_k97jd-csuk&feature=youtu.be)
 
 ## <a name="next-steps"></a>Próximas etapas
 

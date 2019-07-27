@@ -1,6 +1,6 @@
 ---
 title: Melhores práticas – QnA Maker
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Use essas melhores práticas para melhorar a base de dados de conhecimento e fornecer melhores resultados aos usuários finais do aplicativo/chat.
 services: cognitive-services
 author: diberry
@@ -11,16 +11,16 @@ ms.topic: article
 ms.date: 06/25/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: dd4f85822a5e6615e7ea6e31b4231c04c9d4e88c
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: bbd6c55337eb30c883ecbd542abbdfc0f842e3f9
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67542845"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563119"
 ---
 # <a name="best-practices-of-a-qna-maker-knowledge-base"></a>Melhores práticas de uma base de dados de conhecimento do QnA Maker
 
-O [ciclo de vida de desenvolvimento da base de dados de conhecimento](../Concepts/development-lifecycle-knowledge-base.md) informa como gerenciar a base de dados de conhecimento de ponta a ponta. Use essas melhores práticas para melhorar a sua base de dados de conhecimento e fornecem os melhores resultados ao aplicativo cliente ou bate-papo de usuários finais do bot.
+O [ciclo de vida de desenvolvimento da base de dados de conhecimento](../Concepts/development-lifecycle-knowledge-base.md) informa como gerenciar a base de dados de conhecimento de ponta a ponta. Use essas práticas recomendadas para melhorar sua base de dados de conhecimento e fornecer resultados melhores para o aplicativo cliente ou para os usuários finais do bate-papo.
 
 ## <a name="extraction"></a>Extração
 
@@ -28,9 +28,9 @@ O serviço QnA Maker está melhorando continuamente os algoritmos que extraem pe
 
 Em geral, as páginas de perguntas frequentes devem ser independentes e não combinadas com outras informações. Manuais de produtos devem ter títulos claros e, de preferência, uma página de índice. 
 
-### <a name="configuring-multi-turn"></a>Configurando várias ativar
+### <a name="configuring-multi-turn"></a>Configurando o multi-Transform
 
-Crie sua base de dados de conhecimento com a extração de turno várias habilitada. Se sua base de dados de conhecimento ou deve dar suporte a hierarquia de perguntas, essa hierarquia pode ser extraída do documento ou criada depois que o documento é extraído. 
+Crie sua base de dados de conhecimento com a extração múltipla habilitada. Se sua base de dados de conhecimento faz ou deve oferecer suporte à hierarquia de perguntas, essa hierarquia pode ser extraída do documento ou criada depois que o documento é extraído. 
 
 <!--is this a global setting that can only be configured at kb creation time? -->
 
@@ -43,29 +43,29 @@ As melhores perguntas são simples. Considere a palavra-chave ou frase para cada
 Adicione quantas perguntas alternativas você precisa, mas mantenha as alterações simples. Adicionar mais palavras ou frases que não fazem parte da meta principal da pergunta não ajuda o QnA Maker a encontrar uma correspondência. 
 
 
-### <a name="add-relevant-alternative-questions"></a>Adicionar perguntas relevantes de alternativas
+### <a name="add-relevant-alternative-questions"></a>Adicionar perguntas alternativas relevantes
 
-O usuário poderá digitar perguntas com um estilo de conversa de texto, `How do I add a toner cartridge to my printer?` ou uma palavra-chave de pesquisa, como `toner cartridge`. A base de conhecimento deve ter os dois estilos de perguntas para não retornar a melhor resposta corretamente. Se você não tiver certeza sobre quais palavras-chave de inserção de um cliente, use dados do Application Insights para analisar consultas.
+O usuário pode inserir perguntas com um estilo de conversa de texto `How do I add a toner cartridge to my printer?` ou uma pesquisa de palavra-chave, como. `toner cartridge` A base de dados de conhecimento deve ter os dois estilos de perguntas para retornar corretamente a melhor resposta. Se você não tiver certeza de quais palavras-chave um cliente está inserindo, use Application Insights dados para analisar consultas.
 
 ### <a name="good-answers"></a>Boas respostas
 
-As respostas recomendadas são respostas simples, mas não muito simples. Não use, como respostas `yes` e `no`. Se sua resposta deve vincular a outras fontes ou fornecer uma experiência avançada com a mídia e links, use [metadados de marcação](./knowledge-base.md#key-knowledge-base-concepts) para distinguir as respostas, em seguida, [enviar a consulta](../how-to/metadata-generateanswer-usage.md#generateanswer-request-configuration) com marcas de metadados no `strictFilters` propriedade para obter a versão de resposta correta.
+As melhores respostas são respostas simples, mas não muito simples. Não use respostas `yes` como e `no`. Se sua resposta deve ser vinculada a outras fontes ou fornecer uma experiência rica com mídia e links, use a [marcação de metadados](./knowledge-base.md#key-knowledge-base-concepts) para distinguir entre as respostas e, em seguida, [envie a consulta com as](../how-to/metadata-generateanswer-usage.md#generateanswer-request-configuration) `strictFilters` marcas de metadados na propriedade para obter a resposta correta Versão.
 
 ## <a name="chit-chat"></a>Bate-papo
-Adicione bate-papo ao seu bot para torná-lo mais conversacional e envolvente com pouco esforço. Você pode facilmente adicionar conjuntos de dados de bate-papo de chit da personalidades predefinidas ao criar seu KB e alterá-los a qualquer momento. Saiba como [adicionar bate-papo à base de dados de conhecimento](../How-To/chit-chat-knowledge-base.md). 
+Adicione bate-papo ao seu bot para torná-lo mais conversacional e envolvente com pouco esforço. Você pode adicionar facilmente conjuntos de dados do Chit-Chat de personalidades predefinidos ao criar seu KB e alterá-los a qualquer momento. Saiba como [adicionar bate-papo à base de dados de conhecimento](../How-To/chit-chat-knowledge-base.md). 
 
 ### <a name="choosing-a-personality"></a>Escolhendo uma personalidade
-Bate-papo de chit tem suporte para vários personalidades predefinidas: 
+Chit-o chat tem suporte para vários personalidades predefinidos: 
 
-|Personalidade |Arquivo de conjunto de dados do QnA Maker |
+|Personalidade |Arquivo do conjunto de QnA Maker |
 |---------|-----|
 |Profissional |[qna_chitchat_professional.tsv](https://qnamakerstore.blob.core.windows.net/qnamakerdata/editorial/qna_chitchat_professional.tsv) |
 |Amigável |[qna_chitchat_friendly.tsv](https://qnamakerstore.blob.core.windows.net/qnamakerdata/editorial/qna_chitchat_friendly.tsv) |
-|Geniais |[qna_chitchat_witty.tsv](https://qnamakerstore.blob.core.windows.net/qnamakerdata/editorial/qna_chitchat_witty.tsv) |
-|Vençam |[qna_chitchat_caring.tsv](https://qnamakerstore.blob.core.windows.net/qnamakerdata/editorial/qna_chitchat_caring.tsv) |
-|Entusiástica |[qna_chitchat_enthusiastic.tsv](https://qnamakerstore.blob.core.windows.net/qnamakerdata/editorial/qna_chitchat_enthusiastic.tsv) |
+|Voluntariay |[qna_chitchat_witty.tsv](https://qnamakerstore.blob.core.windows.net/qnamakerdata/editorial/qna_chitchat_witty.tsv) |
+|Preocupar |[qna_chitchat_caring.tsv](https://qnamakerstore.blob.core.windows.net/qnamakerdata/editorial/qna_chitchat_caring.tsv) |
+|Entusiasmado |[qna_chitchat_enthusiastic.tsv](https://qnamakerstore.blob.core.windows.net/qnamakerdata/editorial/qna_chitchat_enthusiastic.tsv) |
 
-As respostas vão de formal e informal a irreverente. Selecione a personalidade mais alinhada com o tom que você deseja que o bot tenha. Você pode exibir o [conjuntos de dados](https://github.com/Microsoft/BotBuilder-PersonalityChat/tree/master/CSharp/Datasets), escolha uma que serve como base para o bot e, em seguida, personalizar as respostas. 
+As respostas vão de formal e informal a irreverente. Selecione a personalidade mais alinhada com o tom que você deseja que o bot tenha. Você pode exibir os [conjuntos](https://github.com/Microsoft/BotBuilder-PersonalityChat/tree/master/CSharp/Datasets)de dados e escolher um que sirva como base para o bot e, em seguida, personalizar as respostas. 
 
 ### <a name="edit-bot-specific-questions"></a>Editar perguntas específicas do bot
 Há algumas perguntas específicas do bot que fazem parte do conjunto de dados de bate-papo e que foram preenchidas com respostas genéricas. Altere essas respostas para refletir melhor os detalhes de seu bot. 
@@ -78,29 +78,29 @@ Recomendamos que você torne as seguintes perguntas e respostas do bate-papo mai
 * Quem criou você?
 * Olá
    
-### <a name="adding-custom-chit-chat-with-a-metadata-tag"></a>Adicionando chit-bate-papo personalizado com uma marca de metadados
+### <a name="adding-custom-chit-chat-with-a-metadata-tag"></a>Adicionando Chit personalizado-chat com uma marca de metadados
 
-Se você adicionar seus próprios pares de QnA chit-bate-papo, certifique-se de adicionar metadados para que essas respostas são retornadas. O par de nome/valor de metadados é `editorial:chitchat`.
+Se você adicionar seus próprios pares de QnA Chit-Chat, certifique-se de adicionar metadados para que essas respostas sejam retornadas. O par nome/valor de metadados `editorial:chitchat`é.
 
-## <a name="searching-for-answers"></a>Pesquisar por respostas
+## <a name="searching-for-answers"></a>Procurando respostas
 
-API de GenerateAnswer usa perguntas e a resposta a ser pesquisado com melhores respostas a consultas de usuários.
+A API do GenerateAnswer usa as duas perguntas e a resposta para pesquisar as melhores respostas para a consulta de um usuário.
 
-### <a name="searching-questions-only-when-answer-is-not-relevant"></a>Pesquisar perguntas somente quando a resposta não é relevante
+### <a name="searching-questions-only-when-answer-is-not-relevant"></a>Perguntas de pesquisa somente quando a resposta não é relevante
 
-Use o [ `RankerType=QuestionOnly` ](#choosing-ranker-type) se você não desejar procurar respostas. 
+Use o [`RankerType=QuestionOnly`](#choosing-ranker-type) se você não quiser pesquisar respostas. 
 
-Um exemplo disso é quando a base de Conhecimento é um catálogo de acrônimos como perguntas com a forma como a resposta completa. O valor da resposta não ajudará para procurar a resposta apropriada.
+Um exemplo disso é quando a base de dados de conhecimento é um catálogo de acrônimos como perguntas com sua forma completa como resposta. O valor da resposta não ajudará a procurar a resposta apropriada.
 
 ## <a name="rankingscoring"></a>Classificação/pontuação
 Certifique-se de que você está utilizando da melhor forma os recursos de classificação com suporte do QnA Maker. Isso aumentará a probabilidade de que uma determinada consulta de usuário seja respondida com uma resposta apropriada.
 
 ### <a name="choosing-a-threshold"></a>Escolhendo um limite
 
-O padrão [pontuação de confiança](confidence-score.md) que é usado como um limite é 50, no entanto, você pode [alterar o limite](confidence-score.md#set-threshold) para seu KB, com base em suas necessidades. Como cada base de dados de conhecimento é diferente, você precisa testar e escolher o limite mais adequado à sua. 
+A [Pontuação de confiança](confidence-score.md) padrão usada como um limite é de 50, no entanto, você pode [alterar o limite](confidence-score.md#set-threshold) para a KB com base em suas necessidades. Como cada base de dados de conhecimento é diferente, você precisa testar e escolher o limite mais adequado à sua. 
 
-### <a name="choosing-ranker-type"></a>Escolhendo o tipo de classificador
-Por padrão, o QnA Maker pesquisa por meio de perguntas e respostas. Se você quiser pesquisar apenas perguntas, para gerar uma resposta, use o `RankerType=QuestionOnly` no corpo POST da solicitação GenerateAnswer.
+### <a name="choosing-ranker-type"></a>Escolhendo o tipo de classificação
+Por padrão, QnA Maker pesquisa perguntas e respostas. Se você quiser pesquisar apenas as perguntas, para gerar uma resposta, use o `RankerType=QuestionOnly` no corpo da postagem da solicitação GenerateAnswer.
 
 ### <a name="add-alternate-questions"></a>Adicionar perguntas alternativas
 [Perguntas alternativas](../How-To/edit-knowledge-base.md) melhoram a probabilidade de uma correspondência com uma consulta de usuário. Perguntas alternativas são úteis quando há várias maneiras de como a mesma pergunta pode ser feita. Isso pode incluir alterações na estrutura da frase e no estilo das expressões.
@@ -114,14 +114,14 @@ Por padrão, o QnA Maker pesquisa por meio de perguntas e respostas. Se você qu
 
 ### <a name="use-metadata-tags-to-filter-questions-and-answers"></a>Use marcas de metadados para filtrar perguntas e respostas
 
-[Metadados](../How-To/edit-knowledge-base.md) adiciona a capacidade de um aplicativo cliente conhecê-la não deve executar todas as respostas, mas em vez disso, para restringir os resultados de uma consulta de usuário com base em marcas de metadados. A resposta da base de dados de conhecimento poderá variar com base na marca de metadados, mesmo se a consulta for a mesma. Por exemplo, *"onde o estacionamento está localizado"* poderá ter uma resposta diferente se a localização da filial do restaurante for diferente – ou seja, se os metadados forem *Localização: Seattle* versus *Localização: Redmond*.
+Os [metadados](../How-To/edit-knowledge-base.md) adicionam a capacidade de um aplicativo cliente saber que ele não deve receber todas as respostas, mas sim restringir os resultados de uma consulta de usuário com base nas marcas de metadados. A resposta da base de dados de conhecimento poderá variar com base na marca de metadados, mesmo se a consulta for a mesma. Por exemplo, *"onde o estacionamento está localizado"* poderá ter uma resposta diferente se a localização da filial do restaurante for diferente – ou seja, se os metadados forem *Localização: Seattle* versus *Localização: Redmond*.
 
 ### <a name="use-synonyms"></a>Usar sinônimos
-Enquanto há algum suporte para sinônimos em inglês, use as alterações de maiusculas e minúsculas de palavra por meio de [alterações de API](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/alterations/replace) para adicionar sinônimos para palavras-chave que assumem a forma diferente. Sinônimos são adicionados no nível de serviço do QnA Maker e compartilhados por todas as bases de Conhecimento no serviço.
+Embora haja suporte para sinônimos no idioma inglês, use as alterações de palavras que não diferenciam maiúsculas de minúsculas por meio da [API de alterações](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/alterations/replace) para adicionar sinônimos a palavras-chave que usam um formulário diferente. Os sinônimos são adicionados no nível de serviço QnA Maker e compartilhados por todas as bases de conhecimento no serviço.
 
 |Palavra original|Sinônimos|
 |--|--|
-|comprar|comprar<br>NET bancário<br>Internet banking|
+|comprar|comprar<br>NET-Banking<br>Internet banking|
 
 ### <a name="use-distinct-words-to-differentiate-questions"></a>Use palavras distintas para diferenciar perguntas
 O algoritmo de classificação do QnA Maker, que corresponde uma consulta de usuário a uma pergunta na base de conhecimento, funciona melhor se cada pergunta atende a uma necessidade diferente. A repetição do mesmo conjunto de palavras entre as perguntas reduz a probabilidade da resposta correta ser escolhida para uma determinada consulta de usuário com essas palavras. 
@@ -142,7 +142,7 @@ O QnA Maker permite que os usuários [colaborem](../How-to/collaborate-knowledge
 
 ## <a name="active-learning"></a>Aprendizado ativo
 
-O [aprendizado ativo](../How-to/improve-knowledge-base.md) faz o melhor trabalho de sugerir perguntas alternativas quando ele tem diversas consultas baseadas no usuário de qualidade e quantidade variadas. É importante permitir que as consultas do usuário dos aplicativos cliente participem do loop de comentários do aprendizado ativo sem censura. Depois de perguntas são sugeridas no portal do QnA Maker, você pode **[filtrar por sugestões](../How-To/improve-knowledge-base.md#accept-an-active-learning-suggestion-in-the-knowledge-base)** e em seguida, examinar e aceitar ou rejeitar essas sugestões. 
+O [aprendizado ativo](../How-to/improve-knowledge-base.md) faz o melhor trabalho de sugerir perguntas alternativas quando ele tem diversas consultas baseadas no usuário de qualidade e quantidade variadas. É importante permitir que as consultas do usuário dos aplicativos cliente participem do loop de comentários do aprendizado ativo sem censura. Quando as perguntas são sugeridas no portal de QnA Maker, você pode **[Filtrar por sugestões](../How-To/improve-knowledge-base.md#accept-an-active-learning-suggestion-in-the-knowledge-base)** e, em seguida, revisar e aceitar ou rejeitar essas sugestões. 
 
 ## <a name="next-steps"></a>Próximas etapas
 
