@@ -1,6 +1,6 @@
 ---
-title: Práticas recomendadas
-titleSuffix: Language Understanding - Azure Cognitive Services
+title: Práticas recomendadas-LUIS
+titleSuffix: Azure Cognitive Services
 description: Conheça as melhores práticas do LUIS para obter os melhores resultados do seu modelo de aplicativo do LUIS.
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 02/26/2019
 ms.author: diberry
-ms.openlocfilehash: 9a6f9d54c52f36b8f709eacaf25d3fea31dbe516
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5cbdf94ef1899c4963f6ebe0149024baed4916a7
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60812922"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564030"
 ---
 # <a name="best-practices-for-building-a-language-understanding-app-with-cognitive-services"></a>Melhores práticas para criação de um aplicativo de reconhecimento vocal com os Serviços Cognitivos
 Use o processo de criação de aplicativos para criar seu aplicativo LUIS. 
@@ -78,7 +78,7 @@ Para mais informações:
 
 ## <a name="do-add-phrase-lists-and-patterns-in-later-iterations"></a>Adicione listas de frase e padrões em iterações posteriores
 
-Recomenda-se não aplicar essas práticas antes de seu aplicativo ser testado. Você deve compreender como o aplicativo se comporta antes de adicionar listas de frase e padrões, porque esses recursos são ponderados mais pesada do que as declarações de exemplo e distorção confiança. 
+Recomenda-se não aplicar essas práticas antes de seu aplicativo ser testado. Você deve entender como o aplicativo se comporta antes de adicionar listas de frases e padrões, pois esses recursos são ponderados de forma mais intensa do que o exemplo declarações e distorcerá a confiança. 
 
 Depois de compreender como o seu aplicativo se comporta sem elas, adicione cada um desses recursos que se aplicam ao seu aplicativo. Você não precisa adicionar esses recursos a cada [iteração](luis-concept-app-iteration.md) nem alterá-los a cada versão. 
 
