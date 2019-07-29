@@ -112,7 +112,7 @@ Clique em *Depurar* e, em seguida, *Parar Depuração* para parar o depurador.
 
 ## <a name="update-code"></a>Atualizar código
 
-Para implantar uma versão atualizada do serviço, atualize qualquer arquivo no projeto e execute *Iniciar Programa Java (AZDS)* novamente. Por exemplo: 
+Para implantar uma versão atualizada do serviço, atualize qualquer arquivo no projeto e execute *Iniciar Programa Java (AZDS)* novamente. Por exemplo:
 
 1. Se o aplicativo ainda estiver em execução, clique em *Depurar* e, em seguida, em *Parar Depuração* para interrompê-lo.
 1. Atualize a [linha 19 em `src/main/java/com/ms/sample/webfrontend/Application.java`](https://github.com/Azure/dev-spaces/blob/master/samples/java/getting-started/webfrontend/src/main/java/com/ms/sample/webfrontend/Application.java#L19) para:
@@ -128,7 +128,7 @@ Para implantar uma versão atualizada do serviço, atualize qualquer arquivo no 
 
 ## <a name="setting-and-using-breakpoints-for-debugging"></a>Definir e usar pontos de interrupção para depuração
 
-Inicie o serviço usando *Iniciar Programa Java (AZDS)*. Isso também executa o serviço no modo de depuração.
+Inicie o serviço usando *Iniciar Programa Java (AZDS)* . Isso também executa o serviço no modo de depuração.
 
 Navegue de volta para a exibição *Explorer* clicando em *Exibir* e, em seguida, *Explorer*. Abra `src/main/java/com/ms/sample/webfrontend/Application.java` e clique em algum lugar da linha 19 para colocar o cursor lá. Para definir um ponto de interrupção, pressione *F9* ou clique em *Depurar* e, em seguida, *Ativar/Desativar Pontos de Interrupção*.
 
@@ -140,7 +140,7 @@ Remova o ponto de interrupção, colocando o cursor na linha 19 em `src/main/jav
 
 ## <a name="update-code-from-visual-studio-code"></a>Atualizar o código no Visual Studio Code
 
-Enquanto o serviço estiver em execução no modo de depuração, atualize a linha 19 em `src/main/java/com/ms/sample/webfrontend/Application.java`. Por exemplo: 
+Enquanto o serviço estiver em execução no modo de depuração, atualize a linha 19 em `src/main/java/com/ms/sample/webfrontend/Application.java`. Por exemplo:
 ```java
 return "Hello from webfrontend in Azure while debugging!";
 ```
