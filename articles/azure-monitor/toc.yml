@@ -308,7 +308,13 @@
               displayname: 'live, quickpulse, quick pulse, live metrics'
               href: app/live-stream.md
             - name: Métricas
-              href: app/metrics-explorer.md
+              items:
+                - name: Métricas pré-agregadas e baseadas em log
+                  href: app/pre-aggregated-metrics-log-metrics.md
+                - name: Definições de métrica baseadas em log
+                  href: platform/app-insights-metrics.md
+                - name: Metrics Explorer clássico
+                  href: app/metrics-explorer.md
             - name: Search
               href: app/diagnostic-search.md
             - name: Criador de perfil
@@ -425,8 +431,6 @@
                   href: app/asp-net-dependencies.md
                 - name: ApplicationInsights.config
                   href: app/configuration-with-applicationinsights-config.md
-                - name: Métricas pré-agregadas e baseadas em log
-                  href: app/pre-aggregated-metrics-log-metrics.md
                 - name: Diagnóstico da transação
                   href: app/transaction-diagnostics.md
                 - name: Correlacionar fontes de dados personalizadas
@@ -659,15 +663,13 @@
                 - name: Coletar nos logs
                   href: platform/diagnostic-logs-stream-log-store.md
                 - name: Coletar do Armazenamento do Azure
-                  href: platform/collect-azure-metrics-logs.md
+                  href: platform/azure-storage-iis-table.md
                 - name: Arquivar no armazenamento
                   href: platform/archive-diagnostic-logs.md
                 - name: Transmitir dados para os Hubs de Eventos
                   href: platform/diagnostic-logs-stream-event-hubs.md
                 - name: Habilitar com modelos do Resource Manager
                   href: platform/diagnostic-logs-stream-template.md
-                - name: Logs e métricas de serviço
-                  href: platform/azure-storage-iis-table.md
             - name: Transmitir dados para os Hubs de Eventos
               href: platform/stream-monitoring-data-event-hubs.md
             - name: Análise do Cofre de Chaves
@@ -736,8 +738,8 @@
               href: platform/metrics-getting-started.md
             - name: Recursos avançados do Metrics Explorer
               href: platform/metrics-charts.md
-            - name: Métricas baseadas em log
-              href: platform/app-insights-metrics.md
+            - name: Exemplos de gráficos de métricas
+              href: platform/metric-chart-samples.md
             - name: Solução de problemas de gráficos de métricas
               href: platform/metrics-troubleshoot.md
         - name: Logs
