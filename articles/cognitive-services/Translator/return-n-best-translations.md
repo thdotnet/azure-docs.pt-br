@@ -1,6 +1,6 @@
 ---
 title: Retornar traduções N-Best - API de Tradução de Texto
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Retorne as traduções N-Best com a API de Tradução de Texto da Microsoft.
 services: cognitive-services
 author: swmachan
@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: swmachan
-ms.openlocfilehash: d3e64fff8fa0d2d815ea3bff4a44962d74a7118b
-ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
+ms.openlocfilehash: 7aec6bb81f3ca99ead744767668c2e4f1d1d4d53
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357628"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68594892"
 ---
 # <a name="how-to-return-n-best-translations"></a>Como retornar traduções N-Best
 
@@ -35,14 +35,14 @@ A assinatura é:
 
 **Parâmetros**
 
-| Parâmetro | DESCRIÇÃO |
+| Parâmetro | Descrição |
 |:---|:---|
 | appId | **Obrigatório** Se o cabeçalho de Autorização for usado, deixe o campo appid vazio, caso contrário, especifique uma cadeia de caracteres contendo "token de portador" + " " + token de acesso.|
-| text | **Necessário** Uma cadeia de caracteres que representa o texto a ser traduzido. O tamanho do texto não deve exceder dez mil caracteres.|
+| texto | **Necessário** Uma cadeia de caracteres que representa o texto a ser traduzido. O tamanho do texto não deve exceder dez mil caracteres.|
 | from | **Necessário** Uma cadeia de caracteres que representa o código de idioma do texto a ser traduzido. |
 | para | **Necessário** Uma cadeia de caracteres que representa o código de idioma para o qual o texto será traduzido. |
 | maxTranslations | **Necessário** Um inteiro que representa o número máximo de traduções para retornar. |
-| options | **Opcional** Um objeto TranslateOptions que contém os valores listados abaixo. Eles são todos opcionais e usam como padrão as configurações mais comuns.
+| opções | **Opcional** Um objeto TranslateOptions que contém os valores listados abaixo. Eles são todos opcionais e usam como padrão as configurações mais comuns.
 
 * Categoria: A única opção padrão compatível é "geral".
 * ContentType: A única opção compatível é "text/plain", que é a opção padrão.

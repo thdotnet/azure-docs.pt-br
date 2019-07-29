@@ -3,24 +3,24 @@ title: Exibir detalhes do modelo - Tradutor Personalizado
 titleSuffix: Azure Cognitive Services
 description: A guia Modelos, em qualquer projeto, mostra detalhes de cada modelo como nome do modelo, status do modelo, pontuação BLEU, treinamento, ajuste, contagem de frase de teste.
 author: swmachan
-manager: christw
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: 92f5275b85b4a257e8841f43424d356db702cacd
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 64f446c3b331c1aa6ddaae9081b7f61943f74ab2
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67442461"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68595570"
 ---
 # <a name="view-model-details"></a>Exibir detalhes do modelo
 
 A guia Modelos no projeto mostra todos os modelos nesse projeto. Todos os modelos treinados para esse projeto estão listados nesta guia.
 
-Para cada modelo do projeto, esses detalhes são exibidos.
+Para cada modelo no projeto, esses detalhes são exibidos.
 
 1.  Nome do modelo: Mostra o nome do modelo de um modelo especificado.
 

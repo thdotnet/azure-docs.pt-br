@@ -3,18 +3,18 @@ title: Como pesquisar, editar e excluir projetos - Tradutor Personalizado
 titleSuffix: Azure Cognitive Services
 description: O tradutor personalizado fornece várias maneiras de gerenciar seus projetos de maneira eficiente. Você pode criar vários projetos, pesquisar com base em seus critérios, editar seus projetos. Exclusão de um projeto também é possível no tradutor de personalizado.
 author: swmachan
-manager: christw
+manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 02/21/2019
 ms.author: swmachan
 ms.topic: conceptual
-ms.openlocfilehash: 3a19feb76b5f5e65f891dc9f4e9dbfbd642d15b6
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 9432ac390b7677b3dea5aebc84cf23ef6e45db92
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67447934"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68595721"
 ---
 # <a name="search-edit-and-delete-projects"></a>Pesquisar, editar e excluir projetos
 
@@ -39,7 +39,7 @@ A ferramenta de filtragem permite pesquisar projetos por diferentes condições 
 
 ## <a name="edit-a-project"></a>Editar um projeto
 
-Conversor personalizado fornece a capacidade de editar o nome e descrição de um projeto. Outros metadados do projeto, como a categoria, o idioma de origem e o idioma de destino não estão disponíveis para edição. As etapas a seguir descrevem como editar um projeto.
+O tradutor personalizado oferece a capacidade de editar o nome e a descrição de um projeto. Outros metadados do projeto como a categoria, o idioma de origem e o idioma de destino não estão disponíveis para edição. As etapas a seguir descrevem como editar um projeto.
 
 1.  Clique no ícone de lápis que aparece quando você passa o mouse sobre um projeto.
 

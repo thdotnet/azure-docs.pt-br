@@ -1,6 +1,6 @@
 ---
 title: Criar um recurso de serviços cognitivas usando o CLI do Azure
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Introdução aos serviços cognitivas do Azure criando e assinando um recurso usando a interface de linha de comando do Azure.
 services: cognitive-services
 author: aahill
@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: aahi
-ms.openlocfilehash: 05b679fd969dc766d697070979416312c3bad622
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: c0a89a61f50d245389c9cdbd8a0aa9ba09eec004
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68334276"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68594615"
 ---
 # <a name="create-a-cognitive-services-resource-using-the-azure-command-line-interfacecli"></a>Criar um recurso de serviços cognitivas usando a CLI (interface de linha de comando) do Azure
 
@@ -79,9 +79,9 @@ Ao criar um novo recurso, você precisará saber o "tipo" de serviço que deseja
 
 ### <a name="vision"></a>Visão
 
-| Serviço                    | Tipo                      |
+| Serviço                    | Espécie                      |
 |----------------------------|---------------------------|
-| Visual Computacional            | `ComputerVision`          |
+| Pesquisa Visual Computacional            | `ComputerVision`          |
 | Visão Personalizada-previsão | `CustomVision.Prediction` |
 | Visão Personalizada-treinamento   | `CustomVision.Training`   |
 | API de Detecção Facial                   | `Face`                    |
@@ -90,7 +90,7 @@ Ao criar um novo recurso, você precisará saber o "tipo" de serviço que deseja
 
 ### <a name="search"></a>Pesquisar
 
-| Serviço            | Tipo                  |
+| Serviço            | Espécie                  |
 |--------------------|-----------------------|
 | Sugestão Automática do Bing   | `Bing.Autosuggest.v7` |
 | Pesquisa Personalizada do Bing | `Bing.CustomSearch`   |
@@ -100,24 +100,24 @@ Ao criar um novo recurso, você precisará saber o "tipo" de serviço que deseja
 
 ### <a name="speech"></a>Fala
 
-| Serviço            | Tipo                 |
+| Serviço            | Espécie                 |
 |--------------------|----------------------|
 | Serviços de Fala    | `SpeechServices`     |
 | Reconhecimento de fala | `SpeakerRecognition` |
 
 ### <a name="language"></a>Idioma
 
-| Serviço            | Tipo                |
+| Serviço            | Espécie                |
 |--------------------|---------------------|
 | Compreensão do formulário | `FormUnderstanding` |
 | LUIS               | `LUIS`              |
 | QnA Maker          | `QnAMaker`          |
-| Análise de texto     | `TextAnalytics`     |
+| Análise de Texto     | `TextAnalytics`     |
 | Tradução de Texto   | `TextTranslation`   |
 
 ### <a name="decision"></a>Decisão
 
-| Serviço           | Tipo               |
+| Serviço           | Espécie               |
 |-------------------|--------------------|
 | Detector de Anomalias  | `AnomalyDetector`  |
 | Content Moderator | `ContentModerator` |
