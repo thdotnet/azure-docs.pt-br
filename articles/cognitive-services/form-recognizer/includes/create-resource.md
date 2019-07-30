@@ -5,12 +5,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 06/12/2019
 ms.author: pafarley
-ms.openlocfilehash: a37087c90b6c9b3629402c7a8c2fa5861e46ae9a
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: dce9b4ffa05b48fc1789859328b221ac1a0f3a27
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67592522"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68594447"
 ---
 Quando o acesso para usar o Reconhecimento de Formulários for concedido, você receberá um email de boas-vindas com vários links e recursos. Use o link do "portal do Azure" na mensagem para abrir o portal do Azure e criar um recurso do Reconhecimento de Formulários. No painel **Criar**, forneça as informações a seguir:
 
@@ -25,4 +25,4 @@ Quando o acesso para usar o Reconhecimento de Formulários for concedido, você 
 > [!IMPORTANT]
 > Normalmente, ao criar um recurso de Serviço Cognitivo no portal do Azure, você tem a opção de criar uma chave de assinatura para vários serviços (usada em vários serviços cognitivos) ou uma chave de assinatura de serviço único (usada somente com um serviço cognitivo específico). No entanto, como o Reconhecimento de Formulários é uma versão prévia, ele não está incluído na assinatura vários serviços e você não pode criar a assinatura de serviço único, a menos que você use o link fornecido no email de boas-vindas.
 
-Quando o recurso de Reconhecimento de Formulários concluir a implantação, localize-o e selecione-o na lista **Todos os recursos** do portal. Em seguida, selecione a guia **Chaves** para exibir suas chaves de assinatura. A chave fornecerá ao aplicativo o acesso ao recurso. Copie o valor de **CHAVE 1**. Você o usará na próxima seção.
+Quando o recurso de Reconhecimento de Formulários concluir a implantação, localize-o e selecione-o na lista **Todos os recursos** do portal. Em seguida, selecione a guia **Chaves** para exibir suas chaves de assinatura. A chave fornecerá ao aplicativo o acesso ao recurso. Copie o valor de **CHAVE 1**.

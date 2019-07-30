@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/11/2018
 ms.author: yexu
-ms.openlocfilehash: 6a9d6ec651cd365995ce63a8dff6d60c8b23dec1
-ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
+ms.openlocfilehash: 52cb11b015bb231b91184a2270e333e4c9aa8303
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67312635"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68424285"
 ---
 # <a name="incrementally-load-data-from-an-azure-sql-database-to-azure-blob-storage"></a>Carregar incrementalmente os dados do banco de dados SQL do Azure para o Armazenamento de Blobs do Azure
 Neste tutorial, você cria um Azure Data Factory com um pipeline que carrega dados delta de uma tabela em um banco de dados SQL do Azure para um Armazenamento de Blobs do Azure. 
@@ -309,7 +309,7 @@ Neste tutorial, você cria um pipeline com duas atividades de Pesquisa, uma ativ
         | NOME | Tipo | Valor | 
         | ---- | ---- | ----- | 
         | LastModifiedtime | Datetime | @{activity('LookupNewWaterMarkActivity').output.firstRow.NewWatermarkvalue} |
-        | TableName | string | @{activity('LookupOldWaterMarkActivity').output.firstRow.TableName} |
+        | TableName | Cadeia de caracteres | @{activity('LookupOldWaterMarkActivity').output.firstRow.TableName} |
 
     ![Atividade de Procedimento armazenado - configurações de procedimento armazenado](./media/tutorial-incremental-copy-portal/sproc-activity-stored-procedure-settings.png)
 27. Para validar as configurações de pipeline, clique em **Validar** na barra de ferramentas. Confirme se não houver nenhum erro de validação. Para fechar a janela **Relatório de validação do pipeline** clique em >>.   

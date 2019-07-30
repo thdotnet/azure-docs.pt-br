@@ -1,7 +1,6 @@
 ---
 title: Início Rápido do Azure – Fazer backup de uma VM com o modelo do Resource Manager
 description: Saiba como fazer backup de máquinas virtuais com o modelo do Azure Resource Manager
-services: backup
 author: rayne-wiselman
 manager: carmonm
 ms.service: backup
@@ -10,12 +9,12 @@ ms.topic: quickstart
 ms.date: 05/14/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: b144d7509562b8ca0bca6299caee4a7ce292f4a6
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: 643ae23ef566cb433bd3890e6ab2f38050cb1f47
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66481087"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68467147"
 ---
 # <a name="back-up-a-virtual-machine-in-azure-with-resource-manager-template"></a>Fazer backup de uma máquina virtual no Azure com o modelo do Resource Manager
 

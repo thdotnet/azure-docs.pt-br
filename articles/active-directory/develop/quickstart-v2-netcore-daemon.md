@@ -17,12 +17,12 @@ ms.date: 07/16/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5955be5670759329e42ec24999d73df977c665e
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: fd29c24aa0da83b67f0c0d943312adc5c2558f8f
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68276835"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68335571"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-console-app-using-apps-identity"></a>Início Rápido: Adquirir um token e chamar a API do Microsoft Graph de um aplicativo de console usando a identidade do aplicativo
 
@@ -236,3 +236,8 @@ Para saber mais sobre o fluxo de autenticação para este cenário, consulte o f
 
 > [!div class="nextstepaction"]
 > [Fluxos de credencial de cliente com MSAL.NET](https://aka.ms/msal-net-client-credentials)
+
+Ajude-nos a melhorar a plataforma de identidade da Microsoft. Deixe sua opinião respondendo a uma breve pesquisa de duas perguntas.
+
+> [!div class="nextstepaction"]
+> [Pesquisa da plataforma de identidade da Microsoft](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRyKrNDMV_xBIiPGgSvnbQZdUQjFIUUFGUE1SMEVFTkdaVU5YT0EyOEtJVi4u)

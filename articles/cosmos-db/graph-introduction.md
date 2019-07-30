@@ -5,18 +5,18 @@ author: LuisBosquez
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: overview
-ms.date: 06/25/2019
+ms.date: 07/18/2019
 ms.author: lbosq
-ms.openlocfilehash: 126c825106b7844a5fc8a5a3cdbcc7aa6c273b5b
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+ms.openlocfilehash: 1f46eb1995e2e7cb098098ebd22eedbd194dc6a6
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67502801"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68310250"
 ---
 # <a name="introduction-to-azure-cosmos-db-gremlin-api"></a>Introdução ao Azure Cosmos DB: API do Gremlin
 
-O [Azure Cosmos DB](introduction.md) é o serviço de banco de dados multimodelo distribuído globalmente da Microsoft para aplicativos de missão crítica. Ele é um banco de dados multimodelo e dá suporte a modelos de dados de colunas, grafos, valores-chave e documentos. A API do Gremlin do Azure Cosmos DB é usada para armazenar e operar com dados de grafo em um ambiente de banco de dados totalmente gerenciado em qualquer escala.  
+O [Azure Cosmos DB](introduction.md) é o serviço de banco de dados multimodelo distribuído globalmente da Microsoft para aplicativos de missão crítica. Ele é um banco de dados multimodelo e é compatível com modelos de dados de documentos, de chave-valor, de grafos e de família de colunas. A API do Gremlin do Azure Cosmos DB é usada para armazenar e operar com os dados de grafo em um serviço de banco de dados totalmente gerenciado criado para qualquer escala.  
 
 ![Arquitetura de grafo do Azure Cosmos DB](./media/graph-introduction/cosmosdb-graph-architecture.png)
 
@@ -32,15 +32,15 @@ Estes são recursos diferenciados oferecidos pela API do Gremlin do Azure Cosmos
 
 * **Dimensionamento elástico do armazenamento e da taxa de transferência**
 
-  Grafos no mundo real precisam ser dimensionados além da capacidade de um único servidor. O Azure Cosmos DB oferece suporte a bancos de dados de grafo que podem ter um tamanho praticamente ilimitado em termos de taxa de transferência provisionada. À medida que aumenta a escala do banco de dados de grafo, os dados serão distribuídos automaticamente usando o [particionamento do graph](https://docs.microsoft.com/azure/cosmos-db/graph-partitioning).
+  Grafos no mundo real precisam ser dimensionados além da capacidade de um único servidor. O Azure Cosmos DB é compatível com bancos de dados de grafo que podem ter um tamanho praticamente ilimitado em termos de armazenamento e de taxa de transferência provisionada. À medida que aumenta a escala do banco de dados de grafo, os dados serão distribuídos automaticamente usando o [particionamento do graph](https://docs.microsoft.com/azure/cosmos-db/graph-partitioning).
 
 * **Replicação de várias regiões**
 
-  O Azure Cosmos DB pode replicar automaticamente seus dados de grafo para qualquer região do Azure. A replicação simplifica o desenvolvimento de aplicativos que exigem acesso global aos dados. Além de minimizar a latência de leitura, o Azure Cosmos DB fornece um mecanismo de failover regional que pode garantir a continuidade do seu aplicativo no caso raro de uma interrupção de serviço em uma região. 
+  O Azure Cosmos DB pode replicar automaticamente seus dados de grafo para qualquer região do Azure no mundo. A replicação global simplifica o desenvolvimento de aplicativos que exigem acesso global aos dados. Além de minimizar a latência de leitura e de gravação em qualquer lugar em todo o mundo, o Azure Cosmos DB fornece um mecanismo de failover regional automático que pode garantir a continuidade do seu aplicativo no caso raro de uma interrupção de serviço em uma região. 
 
 * **Passagens e consultas rápidas com o padrão de consulta de grafo mais amplamente adotado**
 
-  Armazenar bordas e vértices heterogêneos e consultar esses documentos por meio de uma sintaxe Gremlin familiar. O Gremlin é uma linguagem de consulta imperativa e funcional que fornece uma interface avançada para implementar algoritmos de grafo comuns. 
+  Armazene bordas e vértices heterogêneos e consulte esses documentos por meio de uma sintaxe Gremlin familiar. O Gremlin é uma linguagem de consulta imperativa e funcional que fornece uma interface avançada para implementar algoritmos de grafo comuns. 
   
   O Azure Cosmos DB habilita passagens e consultas avançadas em tempo real sem a necessidade de especificar dicas de esquema, índices secundários ou exibições. Saiba mais em [Consultar grafos usando Gremlin](gremlin-support.md).
 
@@ -48,7 +48,7 @@ Estes são recursos diferenciados oferecidos pela API do Gremlin do Azure Cosmos
 
   O BD Cosmos do Azure elimina a necessidade de gerenciar recursos do computador e do banco de dados. A maioria das plataformas existentes de banco de dados de grafo está associada às limitações de infraestrutura dela e geralmente exigem um alto grau de manutenção para garantir sua operação. 
   
-  Como um serviço do Microsoft Azure totalmente gerenciado, não é necessário gerenciar máquinas virtuais, atualizar o software de tempo de execução, gerenciar a fragmentação ou a replicação nem lidar com atualizações de camadas de dados complexas. Cada grafo é salvo em backup automaticamente e protegido contra falhas regionais. Essas garantias permitem que os desenvolvedores se concentrem no fornecimento de valor para o aplicativo em vez de operar e gerenciar os bancos de dados deles. 
+  Como um serviço totalmente gerenciado, o Cosmos DB acaba com a necessidade de gerenciar máquinas virtuais, atualizar o software de tempo de execução, gerenciar a fragmentação ou a replicação ou lidar com atualizações de camadas de dados complexas. Cada grafo é salvo em backup automaticamente e protegido contra falhas regionais. Essas garantias permitem que os desenvolvedores se concentrem no fornecimento de valor para o aplicativo em vez de operar e gerenciar os bancos de dados de grafo deles. 
 
 * **Indexação automática**
 
@@ -60,24 +60,24 @@ Estes são recursos diferenciados oferecidos pela API do Gremlin do Azure Cosmos
 
 * **Níveis de consistência ajustáveis**
 
-  Escolha entre cinco níveis de consistência bem-definidos para chegar ao equilíbrio ideal entre consistência e desempenho. Para operações de consulta e leitura, o Azure Cosmos DB oferece cinco níveis de consistência diferentes: forte, desatualização limitada, sessão, prefixo constante e eventual. Esses níveis de consistência granulares e bem-definidos permitem que você faça compensações seguras entre consistência, disponibilidade e latência. Saiba mais em [Níveis ajustáveis de consistência de dados no Azure Cosmos DB](consistency-levels.md).
+  O Azure Cosmos DB fornece cinco níveis de consistência bem-definidos para alcançar a compensação certa entre consistência e desempenho do seu aplicativo. Para operações de consulta e leitura, o Azure Cosmos DB oferece cinco níveis de consistência diferentes: forte, desatualização limitada, sessão, prefixo constante e eventual. Esses níveis de consistência granulares e bem-definidos permitem que você faça compensações seguras entre consistência, disponibilidade e latência. Saiba mais em [Níveis ajustáveis de consistência de dados no Azure Cosmos DB](consistency-levels.md).
 
 ## <a name="scenarios-that-can-use-gremlin-api"></a>Cenários que podem usar a API Gremlin
-Veja alguns cenários em que o suporte para grafo do Azure Cosmos DB pode ser usado:
+Veja alguns cenários em que o suporte para grafo do Azure Cosmos DB pode ser útil:
 
-* Redes Sociais
+* **Redes sociais/Customer 365**
 
   Combinando dados sobre seus clientes e as interações deles com outras pessoas, você pode desenvolver experiências personalizadas, prever o comportamento do cliente ou conectar pessoas com interesses semelhantes. O BD Cosmos do Azure pode ser usado para gerenciar redes sociais e monitorar dados e preferências do cliente.
 
-* Mecanismos de recomendação
+* **Mecanismos de recomendação**
 
-  Este cenário costuma ser usado no setor de varejo. Combinando informações sobre produtos, usuários e interações do usuário, como compras, navegação ou a classificação de um item, você pode criar recomendações personalizadas. O Azure Cosmos DB, com sua baixa latência, dimensionamento elástico e suporte para grafo nativo, é ideal para modelar essas interações.
+  Este cenário costuma ser usado no setor de varejo. Combinando informações sobre produtos, usuários e interações do usuário, como compras, navegação ou a classificação de um item, você pode criar recomendações personalizadas. O Azure Cosmos DB, com sua baixa latência, dimensionamento elástico e suporte para grafo nativo, é ideal para esses cenários.
 
-* Geoespacial
+* **Geoespacial**
 
   Muitos aplicativos de telecomunicações, logística e planejamento de viagens precisam encontrar um local de interesse em uma área específica ou localizar a rota mais curta/ideal entre dois locais. O BD Cosmos do Azure é uma solução natural para esses problemas.
 
-* Internet das coisas
+* **Internet das Coisas**
 
   Com a rede e as conexões entre os dispositivos IoT modelados como um grafo, você pode criar uma melhor compreensão do estado de seus dispositivos e ativos. Você também pode saber mais como as alterações em uma parte da rede podem afetar potencialmente outra parte.
 
@@ -96,26 +96,26 @@ Um [grafo](http://mathworld.wolfram.com/Graph.html) de propriedade é uma estrut
 
 * **Propriedades** - as propriedades expressam informações sobre os vértices e as bordas. Pode haver qualquer número de propriedades nos vértices ou nas bordas e elas podem ser usadas para descrever e filtrar os objetos em uma consulta. As propriedades de exemplo incluem um vértice com um nome, uma idade e um limite com um carimbo de data/hora ou um peso. 
 
-Os bancos de dados de gráfico costumam ser incluídos na categoria de banco de dados de NoSQL, ou não relacional, uma vez que não há nenhuma dependência no modelo de dados restrito ou de esquema. Essa falta de esquema permite modelar e armazenar estruturas conectadas de forma natural e eficiente. 
+Os bancos de dados de grafo costumam ser incluídos na categoria de banco de dados de NoSQL ou não relacional, uma vez que não há nenhuma dependência no modelo de dados restrito ou de esquema. Essa falta de esquema permite modelar e armazenar estruturas conectadas de forma natural e eficiente. 
 
 ### <a name="gremlin-by-example"></a>Gremlin pelo exemplo
 Vamos usar um grafo de exemplo para entender como as consultas podem ser expressas no Gremlin. A figura a seguir mostra um aplicativo de negócios que gerencia dados sobre usuários, interesses e dispositivos na forma de um grafo.  
 
 ![Banco de dados de exemplo mostrando interesses, dispositivos e pessoas](./media/gremlin-support/sample-graph.png) 
 
-Este grafo tem os seguintes tipos de vértice (chamados de "rótulo" no Gremlin):
+Este grafo tem os seguintes tipos de *vértice* (chamados de "rótulo" no Gremlin):
 
-- Pessoas: O grafo tem três pessoas; Robin, Thomas e Ben
-- Interesses: Os interesses dessas pessoas, que neste exemplo é o jogo de futebol
-- Dispositivos: Os dispositivos que as pessoas usam
-- Sistemas operacionais: Os sistemas operacionais em que os dispositivos executam
+- **Pessoas**: O grafo tem três pessoas; Robin, Thomas e Ben
+- **Interesses**: Os interesses dessas pessoas, que neste exemplo é o jogo de futebol
+- **Dispositivos**: Os dispositivos que as pessoas usam
+- **Sistemas operacionais**: Os sistemas operacionais em que os dispositivos executam
 
-Nós representamos as relações entre essas entidades usando os seguintes tipos/rótulos de borda:
+Nós representamos as relações entre essas entidades usando os seguintes tipos/rótulos de *borda*:
 
-- Conhece: Por exemplo, "Thomas conhece Robin"
-- Interessado: Para representar os interesses das pessoas em nosso grafo, por exemplo, "Ben está interessado em futebol"
-- RunsOS: O laptop executa o sistema operacional Windows
-- Usa: Para representar qual dispositivo uma pessoa usa. Por exemplo, Robin usa um telefone Motorola com o número de série 77
+- **Conhece**: Por exemplo, "Thomas conhece Robin"
+- **Interessado**: Para representar os interesses das pessoas em nosso grafo, por exemplo, "Ben está interessado em futebol"
+- **RunsOS**: O laptop executa o sistema operacional Windows
+- **Usa**: Para representar qual dispositivo uma pessoa usa. Por exemplo, Robin usa um telefone Motorola com o número de série 77
 
 Vamos executar algumas operações nesse grafo usando o [Console do Gremlin](https://tinkerpop.apache.org/docs/3.3.2/reference/#gremlin-console). Você também pode executar essas operações usando drivers do Gremlin na plataforma de sua escolha (Java, Node.js, Python ou .NET).  Antes de examinarmos o que tem suporte no BD Cosmos do Azure, vejamos alguns exemplos para nos familiarizarmos com a sintaxe.
 
@@ -141,7 +141,6 @@ Os grafos se destacam em situações em que você precisa responder perguntas co
 ```java
 :> g.V('thomas.1').out('knows').out('uses').out('runsos').group().by('name').by(count())
 ```
-Agora, vejamos o que o BD Cosmos do Azure oferece para desenvolvedores de Gremlin.
 
 ## <a name="next-steps"></a>Próximas etapas
 Para saber mais sobre o suporte para grafo no Azure Cosmos DB, consulte:

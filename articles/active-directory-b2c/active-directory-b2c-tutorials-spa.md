@@ -5,17 +5,17 @@ services: active-directory-b2c
 author: mmacy
 manager: celestedg
 ms.author: marsma
-ms.date: 07/08/2019
+ms.date: 07/24/2019
 ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 496cf801a44638af61306b43791abce9466e2cb2
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 6884cb7b10da3996977f2aea7693625bc45c3139
+ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835681"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68369566"
 ---
 # <a name="tutorial-enable-authentication-in-a-single-page-application-using-azure-active-directory-b2c"></a>Tutorial: Habilitar autenticação em um aplicativo de página única usando o Azure Active Directory B2C
 
@@ -41,7 +41,7 @@ Você precisará dos seguintes recursos do Azure AD B2C em vigor antes de contin
 Além disso, você precisará do seguinte no ambiente de desenvolvimento local:
 
 * Editor de códigos, por exemplo, [Visual Studio Code](https://code.visualstudio.com/) ou [Visual Studio 2019](https://www.visualstudio.com/downloads/)
-* [SDK do .NET Core 2.0.0](https://www.microsoft.com/net/core) ou posterior
+* [SDK do .NET Core 2.2](https://dotnet.microsoft.com/download) ou posterior
 * [Node.js](https://nodejs.org/en/download/)
 
 ## <a name="update-the-application"></a>Atualizar o aplicativo
@@ -115,7 +115,7 @@ O exemplo dá suporte à inscrição, conexão, edição de perfil e redefiniç�
 
 ### <a name="sign-up-using-an-email-address"></a>Criar conta usando um endereço de email
 
-1. Clique em **Logon** para inscrever-se como um usuário do aplicativo. Isso usa o fluxo de usuário **B2C_1_signupsignin1** especificado em uma etapa anterior.
+1. Clique em **Logon** para iniciar o fluxo de usuário *B2C_1_signupsignin1* especificado em uma etapa anterior.
 1. O Azure AD B2C apresenta uma página de entrada com um link de inscrição. Como você ainda não tem uma conta, clique no link **Inscrever-se agora**.
 1. O fluxo de trabalho de inscrição apresenta uma página para coletar e verificar a identidade do usuário usando um endereço de email. O fluxo de trabalho de inscrição também coleta a senha do usuário e os atributos solicitados definidos no fluxo de usuário.
 
@@ -133,11 +133,15 @@ Agora você pode usar seu endereço de email e sua senha para entrar no aplicati
 
 Depois que você entrar, o aplicativo exibirá um erro de permissões insuficientes – isso é **esperado**:
 
-`ServerError: AADB2C90205: This application does not have sufficient permissions against this web resource to perform the operation.`
+```Output
+ServerError: AADB2C90205: This application does not have sufficient permissions against this web resource to perform the operation.
+Correlation ID: ce15bbcc-0000-0000-0000-494a52e95cd7
+Timestamp: 2019-07-20 22:17:27Z
+```
 
-Você recebe esse erro porque está tentando acessar um recurso do diretório de demonstração, mas seu token de acesso é válido somente para o diretório do Azure AD. A chamada à API, portanto, não é autorizada.
+Você recebe esse erro porque o aplicativo Web está tentando acessar uma API Web protegida pelo diretório de demonstração, *fabrikamb2c*. Como seu token de acesso só é válido para o diretório do Azure AD, a chamada à API não é autorizada.
 
-Continue com o próximo tutorial da série (confira [Próximas etapas](#next-steps)) para criar uma API Web protegida para o diretório.
+Para corrigir esse erro, prossiga para o próximo tutorial da série (confira as [Próximas etapas](#next-steps)) a fim de criar uma API Web protegida para o diretório.
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -151,4 +155,4 @@ Neste artigo, você aprendeu a:
 Agora passe para o próximo tutorial da série para permitir acesso a uma API Web protegida por meio do SPA:
 
 > [!div class="nextstepaction"]
-> [Tutorial: Permitir acesso a uma API Web ASP.NET Core de um aplicativo de página única usando o Azure Active Directory B2C](active-directory-b2c-tutorials-spa-webapi.md)
+> [Tutorial: Permitir acesso a uma API Web do ASP.NET Core de um SPA usando o Azure AD B2C >](active-directory-b2c-tutorials-spa-webapi.md)

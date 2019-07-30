@@ -6,12 +6,12 @@ ms.service: data-share
 ms.topic: overview
 ms.date: 07/10/2019
 ms.author: joanpo
-ms.openlocfilehash: 7d4e51ec9564bfb123cf73d9fe89d040f42fe650
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: 11f32b1f1349ef0f9826f95832648e6949cc2f8c
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67807553"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68421391"
 ---
 # <a name="what-is-azure-data-share-preview"></a>O que é o Azure Data Share (versão prévia)?
 
@@ -25,6 +25,8 @@ Um provedor de dados pode se manter no controle de como seus dados são tratados
 
 O Azure Data Share ajuda a aprimorar os insights tornando fácil combinar dados de terceiros para enriquecer os cenários de IA e análise. Use facilmente o poder das ferramentas de análise do Azure para facilmente preparar, processar e analisar os dados compartilhados usando o Azure Data Share. 
 
+O provedor de dados e o consumidor de dados precisam ter uma assinatura do Azure para compartilhar e receber dados. Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/).
+
 ## <a name="scenarios-for-azure-data-share"></a>Cenários para o Azure Data Share
 
 O Azure Data Share pode ser usado em vários setores diferentes. Por exemplo, um varejista talvez queira compartilhar dados recentes de ponto de vendas com seus fornecedores. Usando o Azure Data Share, um varejista pode configurar um compartilhamento de dados contendo dados do ponto de vendas para todos os fornecedores e compartilhar vendas por hora ou por dia. 
@@ -37,7 +39,7 @@ Outro caso de uso do Azure Data Share é estabelecer um consórcio de dados. Por
 
 O Azure Data Share usa uma abordagem de compartilhamento baseada em instantâneo, em que os dados passam da assinatura do Azure do provedor de dados e chegam à assinatura do Azure do consumidor de dados. Como um provedor de dados, você provisiona um compartilhamento de dados e convida destinatários para ele. Os consumidores de dados recebem um convite para o compartilhamento de dados por email. Depois que um consumidor de dados aceita o convite, ele pode disparar um instantâneo completo dos dados que compartilhou com ele. Esses dados são recebidos na conta de armazenamento dos consumidores de dados. Os consumidores de dados podem receber atualizações regulares incrementais dos dados compartilhados com eles para que sempre tenham a versão mais recente dos dados. 
 
-Os provedores de dados podem oferecer a seus consumidores de dados atualizações incrementais aos dados compartilhados com eles por meio de uma agenda de instantâneo. Agendas de instantâneo são oferecidas por hora ou por dia. Quando um consumidor de dados aceita e configura o compartilhamento de dados, ele pode assinar uma agenda de instantâneo. Isso é útil em cenários em que os dados compartilhados são atualizados regularmente e o consumidor de dados precisa dos dados mais atualizados. 
+Os provedores de dados podem oferecer a seus consumidores de dados atualizações incrementais aos dados compartilhados com eles por meio de um agendamento de instantâneo. Agendas de instantâneo são oferecidas por hora ou por dia. Quando um consumidor de dados aceita e configura o compartilhamento de dados, ele pode assinar uma agenda de instantâneo. Isso é útil em cenários em que os dados compartilhados são atualizados regularmente e o consumidor de dados precisa dos dados mais atualizados. 
 
 ![fluxo de compartilhamento de dados](media/data-share-flow.png)
 
@@ -78,6 +80,7 @@ O Azure Data Share aproveita a segurança subjacente oferecida pelo Azure para p
 Controles de acesso podem ser definidos no nível do recurso do Azure Data Share para garantir que sejam acessados por pessoas autorizadas. 
 
 O Azure Data Share aproveita as Identidades Gerenciadas para Recursos do Azure (anteriormente conhecidas como MSIs) para o gerenciamento automático de identidades no Azure Active Directory. As identidades gerenciadas para Recursos do Azure são usadas para acesso às contas de armazenamento que estão sendo usados para compartilhamento de dados. Não há troca de credenciais entre um provedor de dados e um consumidor de dados. Para saber mais, confira a página [Identidades gerenciadas para recursos do Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities). 
+
 
 ## <a name="supported-regions"></a>Regiões com suporte
 

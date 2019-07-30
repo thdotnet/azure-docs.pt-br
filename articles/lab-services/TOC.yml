@@ -249,6 +249,8 @@
               href: devtest-lab-integrate-ci-cd-vsts.md
             - name: Integrar ambientes ao seu pipeline de CI/CD do Azure DevOps
               href: integrate-environments-devops-pipeline.md
+            - name: Usar o DevTest Labs no build do Azure DevOps e em pipelines de lançamento
+              href: use-devtest-labs-build-release-pipelines.md
         - name: DevTest Labs na empresa
           items:
             - name: DevTest Labs em escala empresarial

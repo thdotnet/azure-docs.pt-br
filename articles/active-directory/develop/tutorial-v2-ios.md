@@ -6,6 +6,7 @@ documentationcenter: dev-center-name
 author: danieldobalian
 manager: CelesteDG
 ms.service: active-directory
+ms.subservice: develop
 ms.topic: tutorial
 ms.workload: identity
 ms.date: 07/15/2019
@@ -13,12 +14,12 @@ ms.author: jmprieur
 ms.reviewer: brandwe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 910069ab89cef18794e637b6bfbbc57fb732871c
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: f22cf95fcf13f0038525b2cac282f01959fa7eb6
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67872082"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68335525"
 ---
 # <a name="sign-in-users-and-call-the-microsoft-graph-from-an-ios-app"></a>Conectar usuários e chamar o Microsoft Graph de um aplicativo iOS
 
@@ -498,3 +499,8 @@ Após entrar, este aplicativo exibirá os dados retornados do ponto de extremida
 ## <a name="get-help"></a>Obter ajuda
 
 Visite [Ajuda e suporte](https://docs.microsoft.com/azure/active-directory/develop/developer-support-help-options) se você tiver algum problema com este tutorial ou com a plataforma de identidade da Microsoft.
+
+Ajude-nos a melhorar a plataforma de identidade da Microsoft. Deixe sua opinião respondendo a uma breve pesquisa de duas perguntas.
+
+> [!div class="nextstepaction"]
+> [Pesquisa da plataforma de identidade da Microsoft](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRyKrNDMV_xBIiPGgSvnbQZdUQjFIUUFGUE1SMEVFTkdaVU5YT0EyOEtJVi4u)

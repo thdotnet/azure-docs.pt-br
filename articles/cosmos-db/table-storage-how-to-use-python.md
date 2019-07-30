@@ -9,12 +9,12 @@ ms.date: 04/05/2018
 author: wmengmsft
 ms.author: wmeng
 ms.reviewer: sngun
-ms.openlocfilehash: 11b47483eaf39e7445ece8b9e38d81a6a2404cc6
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 0f0acc721fd8888953d80976234b431943985ebf
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55756590"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68356274"
 ---
 # <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-python"></a>Introdução ao Armazenamento de Tabelas do Azure e à API de Tabela do Azure Cosmos DB usando Python
 
@@ -56,7 +56,7 @@ Depois de criar uma conta de armazenamento, a próxima etapa é instalar o [SDK 
 
 ## <a name="import-the-tableservice-and-entity-classes"></a>Importar as classes Entity e TableService
 
-Para trabalhar com entidades no serviço Tabela do Azure em Python, você usa as classes [TableService][py_TableService] e [Entity][py_Entity]. Adicione este código próximo à parte superior seu arquivo Python para importar ambos:
+Para trabalhar com entidades no serviço Tabela do Azure em Python, use as classes [TableService][py_TableService] and [Entity][py_Entity]. Adicione este código próximo à parte superior seu arquivo Python para importar ambos:
 
 ```python
 from azure.cosmosdb.table.tableservice import TableService
@@ -89,16 +89,17 @@ table_service.create_table('tasktable')
 
 ## <a name="add-an-entity-to-a-table"></a>Adicionar uma entidade a uma tabela
 
-Para adicionar uma entidade, primeiro crie um objeto que representa a entidade, em seguida, passe o objeto para o [método TableService.insert_entity][py_TableService]. O objeto de entidade pode ser um dicionário ou um objeto do tipo [Entity][py_Entity] e define os valores e nomes de propriedade da entidade. Cada entidade deve incluir as propriedades [PartitionKey e RowKey](#partitionkey-and-rowkey) necessárias, além de quaisquer outras propriedades que você definir para a entidade.
+Para adicionar uma entidade, primeiro crie um objeto que representa a entidade, depois passe o objeto para o [método TableService.insert_entity][py_TableService]. The entity object can be a dictionary or an object of type [Entity][py_Entity] e, por fim, defina os nomes e os valores das propriedades da entidade. Cada entidade deve incluir as propriedades [PartitionKey e RowKey](#partitionkey-and-rowkey) necessárias, além de quaisquer outras propriedades que você definir para a entidade. Este exemplo cria um objeto de dicionário que representa uma entidade e o passa para o método [insert_entity][py_insert_entity] a fim de adicionar o objeto à tabela:
 
-Este exemplo cria um objeto de dicionário que representa uma entidade, em seguida, o passa para o método [insert_entity][py_insert_entity] para adicioná-lo à tabela:
+Este exemplo cria um método de [Entidade][py_Entity] object, then passes it to the [insert_entity][py_insert_entity] a fim de adicioná-la à tabela:
 
 ```python
-task = {'PartitionKey': 'tasksSeattle', 'RowKey': '001', 'description' : 'Take out the trash', 'priority' : 200}
+task = {'PartitionKey': 'tasksSeattle', 'RowKey': '001',
+        'description': 'Take out the trash', 'priority': 200}
 table_service.insert_entity('tasktable', task)
 ```
 
-Este exemplo cria um objeto [Entity][py_Entity], em seguida, o passa para o método [insert_entity][py_insert_entity] para adicioná-lo à tabela:
+PartitionKey e RowKey
 
 ```python
 task = Entity()
@@ -109,66 +110,73 @@ task.priority = 100
 table_service.insert_entity('tasktable', task)
 ```
 
-### <a name="partitionkey-and-rowkey"></a>PartitionKey e RowKey
+### <a name="partitionkey-and-rowkey"></a>Você deve especificar uma propriedade **PartitionKey** e uma **RowKey** para cada entidade.
 
-Você deve especificar uma propriedade **PartitionKey** e uma **RowKey** para cada entidade. Esses são os identificadores exclusivos das entidades, uma vez que juntos eles formam a chave primária de uma entidade. Você pode consultar usando esses valores muito mais rápido do que pode consultar quaisquer outras propriedades de entidade porque somente essas propriedades são indexadas.
+Esses são os identificadores exclusivos das entidades, uma vez que juntos eles formam a chave primária de uma entidade. Você pode consultar usando esses valores muito mais rápido do que pode consultar quaisquer outras propriedades de entidade porque somente essas propriedades são indexadas. O serviço Tabela usa **PartitionKey** para distribuir de forma inteligente as entidades de tabela entre os nós de armazenamento.
 
-O serviço Tabela usa **PartitionKey** para distribuir de forma inteligente as entidades de tabela entre os nós de armazenamento. As entidades com o mesmo **PartitionKey** são armazenadas no mesmo nó. O **RowKey** é a ID exclusiva da entidade na partição à qual pertence.
+As entidades com o mesmo **PartitionKey** são armazenadas no mesmo nó. O **RowKey** é a ID exclusiva da entidade na partição à qual pertence. Atualizar uma entidade
 
-## <a name="update-an-entity"></a>Atualizar uma entidade
+## <a name="update-an-entity"></a>Para atualizar todos os valores de propriedade de uma entidade, chame o método [update_entity][py_update_entity].
 
-Para atualizar todos os valores de propriedade da entidade, chame o método [update_entity][py_update_entity]. Este exemplo mostra como substituir uma entidade existente pela versão atualizada:
+Este exemplo mostra como substituir uma entidade existente pela versão atualizada: Se a entidade que está sendo atualizada ainda não existir, a operação de atualização falhará.
 
 ```python
-task = {'PartitionKey': 'tasksSeattle', 'RowKey': '001', 'description' : 'Take out the garbage', 'priority' : 250}
+task = {'PartitionKey': 'tasksSeattle', 'RowKey': '001',
+        'description': 'Take out the garbage', 'priority': 250}
 table_service.update_entity('tasktable', task)
 ```
 
-Se a entidade que está sendo atualizada ainda não existir, a operação de atualização falhará. Se você quiser armazenar uma entidade quer ela exista ou não, use [insert_or_replace_entity][py_insert_or_replace_entity]. No exemplo a seguir, a primeira chamada substituirá a entidade existente. A segunda chamada vai inserir uma nova entidade, contanto que não exista na tabela nenhuma entidade com o PartitionKey e o RowKey especificados.
+Se você quiser armazenar uma entidade quer ela exista ou não, use [insert_or_replace_entity][py_insert_or_replace_entity]. No exemplo a seguir, a primeira chamada substituirá a entidade existente. A segunda chamada vai inserir uma nova entidade, contanto que não exista na tabela nenhuma entidade com o PartitionKey e o RowKey especificados. O método [update_entity][py_update_entity] substitui todas as propriedades e valores de uma entidade existente, que você também pode usar para remover propriedades de uma entidade existente.
 
 ```python
 # Replace the entity created earlier
-task = {'PartitionKey': 'tasksSeattle', 'RowKey': '001', 'description' : 'Take out the garbage again', 'priority' : 250}
+task = {'PartitionKey': 'tasksSeattle', 'RowKey': '001',
+        'description': 'Take out the garbage again', 'priority': 250}
 table_service.insert_or_replace_entity('tasktable', task)
 
 # Insert a new entity
-task = {'PartitionKey': 'tasksSeattle', 'RowKey': '003', 'description' : 'Buy detergent', 'priority' : 300}
+task = {'PartitionKey': 'tasksSeattle', 'RowKey': '003',
+        'description': 'Buy detergent', 'priority': 300}
 table_service.insert_or_replace_entity('tasktable', task)
 ```
 
 > [!TIP]
-> O método [update_entity][py_update_entity] substitui todas as propriedades e valores de uma entidade existente, que você também pode usar para remover propriedades de uma entidade existente. Você pode usar o método [merge_entity][py_merge_entity] para atualizar uma entidade existente com valores de propriedade novos ou modificados sem substituir totalmente a entidade.
+> Você pode usar o método [merge_entity][py_merge_entity] para atualizar uma entidade existente com valores de propriedade novos ou modificados, sem substituir a entidade por completo. Modificar várias entidades
 
-## <a name="modify-multiple-entities"></a>Modificar várias entidades
+## <a name="modify-multiple-entities"></a>Para garantir o processamento atômico de uma solicitação pelo serviço Tabela, você pode enviar várias operações juntas em um lote.
 
-Para garantir o processamento atômico de uma solicitação pelo serviço Tabela, você pode enviar várias operações juntas em um lote. Primeiro, use a classe [TableBatch][py_TableBatch] para adicionar várias operações a um único lote. Em seguida, chame [TableService][py_TableService].[commit_batch][py_commit_batch] para enviar as operações em uma operação atômica. Todas as entidades a serem modificadas em lote devem estar na mesma partição.
+Primeiro, use a classe [TableBatch][py_TableBatch] para adicionar várias operações a um único lote. Em seguida, chame [TableService][py_TableService].[commit_batch][py_commit_batch] para enviar as operações em uma operação atômica. Todas as entidades a serem modificadas em lote devem estar na mesma partição. Esse exemplo adiciona duas entidades juntas em um lote:
 
-Esse exemplo adiciona duas entidades juntas em um lote:
+Os lotes também podem ser usados com a sintaxe do gerenciador de contexto:
 
 ```python
 from azure.cosmosdb.table.tablebatch import TableBatch
 batch = TableBatch()
-task004 = {'PartitionKey': 'tasksSeattle', 'RowKey': '004', 'description' : 'Go grocery shopping', 'priority' : 400}
-task005 = {'PartitionKey': 'tasksSeattle', 'RowKey': '005', 'description' : 'Clean the bathroom', 'priority' : 100}
+task004 = {'PartitionKey': 'tasksSeattle', 'RowKey': '004',
+           'description': 'Go grocery shopping', 'priority': 400}
+task005 = {'PartitionKey': 'tasksSeattle', 'RowKey': '005',
+           'description': 'Clean the bathroom', 'priority': 100}
 batch.insert_entity(task004)
 batch.insert_entity(task005)
 table_service.commit_batch('tasktable', batch)
 ```
 
-Os lotes também podem ser usados com a sintaxe do gerenciador de contexto:
+Consultar uma entidade
 
 ```python
-task006 = {'PartitionKey': 'tasksSeattle', 'RowKey': '006', 'description' : 'Go grocery shopping', 'priority' : 400}
-task007 = {'PartitionKey': 'tasksSeattle', 'RowKey': '007', 'description' : 'Clean the bathroom', 'priority' : 100}
+task006 = {'PartitionKey': 'tasksSeattle', 'RowKey': '006',
+           'description': 'Go grocery shopping', 'priority': 400}
+task007 = {'PartitionKey': 'tasksSeattle', 'RowKey': '007',
+           'description': 'Clean the bathroom', 'priority': 100}
 
 with table_service.batch('tasktable') as batch:
     batch.insert_entity(task006)
     batch.insert_entity(task007)
 ```
 
-## <a name="query-for-an-entity"></a>Consultar uma entidade
+## <a name="query-for-an-entity"></a>Para consultar uma entidade em uma tabela, passe seu PartitionKey e seu RowKey para o método [TableService][py_TableService].[get_entity][py_get_entity].
 
-Para consultar uma entidade em uma tabela, passe seu PartitionKey e RowKey para o método [TableService][py_TableService].[get_entity][py_get_entity].
+Consultar um conjunto de entidades
 
 ```python
 task = table_service.get_entity('tasktable', 'tasksSeattle', '001')
@@ -176,55 +184,57 @@ print(task.description)
 print(task.priority)
 ```
 
-## <a name="query-a-set-of-entities"></a>Consultar um conjunto de entidades
+## <a name="query-a-set-of-entities"></a>Você pode consultar um conjunto de entidades fornecendo uma cadeia de caracteres de filtro com o parâmetro **filtro**.
 
-Você pode consultar um conjunto de entidades fornecendo uma cadeia de caracteres de filtro com o parâmetro **filtro**. Este exemplo localiza todas as tarefas em Seattle aplicando um filtro em PartitionKey:
+Este exemplo localiza todas as tarefas em Seattle aplicando um filtro em PartitionKey: consultar um subconjunto de propriedades da entidade
 
 ```python
-tasks = table_service.query_entities('tasktable', filter="PartitionKey eq 'tasksSeattle'")
+tasks = table_service.query_entities(
+    'tasktable', filter="PartitionKey eq 'tasksSeattle'")
 for task in tasks:
     print(task.description)
     print(task.priority)
 ```
 
-## <a name="query-a-subset-of-entity-properties"></a>consultar um subconjunto de propriedades da entidade
+## <a name="query-a-subset-of-entity-properties"></a>Você também pode restringir quais propriedades são retornadas para cada entidade em uma consulta.
 
-Você também pode restringir quais propriedades são retornadas para cada entidade em uma consulta. Essa técnica, chamada *projeção*, reduz a largura de banda e pode melhorar o desempenho da consulta, principalmente para entidades ou conjuntos de resultados grandes. Use o parâmetro **select** e transmita os nomes das propriedades que você deseja que sejam retornadas para o cliente.
+Essa técnica, chamada *projeção*, reduz a largura de banda e pode melhorar o desempenho da consulta, principalmente para entidades ou conjuntos de resultados grandes. Use o parâmetro **select** e transmita os nomes das propriedades que você deseja que sejam retornadas para o cliente. A consulta no código a seguir retorna apenas as descrições das entidades na tabela.
 
-A consulta no código a seguir retorna apenas as descrições das entidades na tabela.
+O snippet a seguir funciona apenas no Armazenamento do Azure.
 
 > [!NOTE]
-> O snippet a seguir funciona apenas no Armazenamento do Azure. Não há suporte para ele no emulador de armazenamento.
+> Não há suporte para ele no emulador de armazenamento. Excluir uma entidade
 
 ```python
-tasks = table_service.query_entities('tasktable', filter="PartitionKey eq 'tasksSeattle'", select='description')
+tasks = table_service.query_entities(
+    'tasktable', filter="PartitionKey eq 'tasksSeattle'", select='description')
 for task in tasks:
     print(task.description)
 ```
 
-## <a name="delete-an-entity"></a>Excluir uma entidade
+## <a name="delete-an-entity"></a>Exclua uma entidade passando seu **PartitionKey** e seu **RowKey** para o método [delete_entity][py_delete_entity].
 
-Exclua uma entidade passando seu **PartitionKey** e **RowKey** para o método [delete_entity][py_delete_entity].
+Excluir uma tabela
 
 ```python
 table_service.delete_entity('tasktable', 'tasksSeattle', '001')
 ```
 
-## <a name="delete-a-table"></a>Excluir uma tabela
+## <a name="delete-a-table"></a>Se você não precisar mais de uma tabela ou qualquer uma das entidades dentro dela, chame o método [delete_table][py_delete_table] para excluir permanentemente a tabela do Armazenamento do Microsoft Azure.
 
-Se você não precisar mais de uma tabela ou qualquer uma das entidades dentro dela, chame o método [delete_table][py_delete_table] para excluir permanentemente a tabela do Armazenamento do Azure.
+Próximas etapas
 
 ```python
 table_service.delete_table('tasktable')
 ```
 
-## <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>[Perguntas Frequentes – Desenvolver com a API de Tabela](https://docs.microsoft.com/azure/cosmos-db/faq)
 
-* [Perguntas Frequentes – Desenvolver com a API de Tabela](https://docs.microsoft.com/azure/cosmos-db/faq)
 * [Referência da API do SDK do Azure Cosmos DB para Python](https://docs.microsoft.com/python/api/overview/azure/cosmosdb?view=azure-python)
 * [Centro de desenvolvedores do Python](https://azure.microsoft.com/develop/python/)
 * [Gerenciador de Armazenamento do Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md): Um aplicativo gratuito multiplataforma para trabalhar visualmente com os dados do Armazenamento do Azure no Windows, no macOS e no Linux.
 * [Trabalhando com Python no Visual Studio (Windows)](https://docs.microsoft.com/visualstudio/python/overview-of-python-tools-for-visual-studio)
+* <bpt id="p1">[</bpt>Working with Python in Visual Studio (Windows)<ept id="p1">](https://docs.microsoft.com/visualstudio/python/overview-of-python-tools-for-visual-studio)</ept>
 
 
 [py_commit_batch]: https://docs.microsoft.com/python/api/azure-cosmosdb-table/azure.cosmosdb.table.tableservice.tableservice?view=azure-python

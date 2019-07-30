@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 06/11/2019
 ms.author: spelluru
-ms.openlocfilehash: 803fe6eff8804dbd407642386865fe975c8db524
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 0c50a321cbeb0d07a5039038ff796df00463ac8a
+ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67123252"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68385673"
 ---
 # <a name="tutorial-set-up-a-classroom-lab"></a>Tutorial: Configurar um laboratório de sala de aula 
 Neste tutorial, você configura um laboratório de sala de aula com máquinas virtuais que são usadas por alunos na sala de aula.  
@@ -113,14 +113,14 @@ Um proprietário de laboratório pode adicionar outros usuários à função **C
 Defina cotas por usuário usando as seguintes etapas: 
 
 1. Selecione **Usuários** no menu à esquerda se a página não estiver ativa. 
-2. Selecione **Cota por usuário:** na barra de ferramentas. 
+2. Selecione **Cota por usuário: 10 horas** na barra de ferramentas. 
 3. Na página **Cota por usuário**, especifique o número de horas que você deseja conceder a cada usuário (aluno): 
+    1. **Número total de horas por usuário**. Os usuários podem usar suas VMs durante o número definido de horas (especificado para este campo), **além do horário agendado**. Se você selecionar essa opção, insira o **número de horas** na caixa de texto. 
+
+        ![Número de horas por usuário](../media/how-to-configure-student-usage/number-of-hours-per-user.png). 
     1. **0 horas (somente agenda)** . Os usuários podem usar suas VMs somente durante o horário agendado ou quando você, como o proprietário de laboratório, ativa as máquinas virtuais para eles.
 
         ![Horas de zero - somente horário agendado](../media/how-to-configure-student-usage/zero-hours.png)
-    1. **Número total de horas por usuário**. Os usuários podem usar suas VMs durante o número definido de horas (especificado para este campo), **além do horário agendado**. Se você selecionar essa opção, insira o **número de horas** na caixa de texto. 
-
-        ![Número de horas por usuário](../media/how-to-configure-student-usage/number-of-hours-per-user.png)
     4. Clique em **Salvar**. 
 5. Agora você vê os valores alterados na barra de ferramentas: **Cota por usuário: &lt;número de horas&gt;** . 
 

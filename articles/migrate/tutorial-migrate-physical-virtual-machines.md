@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/09/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 2554501ecf6d4ef115e3283fa635c24510b8c797
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 728bf785edebcd17599b6a56edea1e26ed2d2fbc
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68249599"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68311783"
 ---
 # <a name="migrate-physical-or-virtualized-servers-to-azure"></a>Migrar servidores físicos ou virtualizados para o Azure 
 
@@ -214,7 +214,7 @@ Nos computadores que você deseja migrar, você precisa instalar o agente do ser
 4. Copie o arquivo do instalador para o computador que você deseja migrar.
 5. Verifique se você tem a frase secreta gerada ao implantar o dispositivo.
     - Armazene o arquivo em um arquivo de texto temporário no computador.
-    - Você pode obter a frase secreta no dispositivo de replicação. Na linha de comando, execute **C:\ProgramData\ASR\svsystems\bin\genpassphrase.exe-v** para exibir a frase secreta atual.
+    - Você pode obter a frase secreta no dispositivo de replicação. Na linha de comando, execute **C:\ProgramData\ASR\home\svsystems\bin\genpassphrase.exe-v** para exibir a frase secreta atual.
     - Não gere novamente a frase secreta. Isso interromperá a conectividade e você precisará registrar o dispositivo de replicação novamente.
 
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/01/2019
 ms.author: jeedes
-ms.openlocfilehash: 607e5aded52375190878de6b48ffa4aa2ab49767
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5c7d6116ed2925e57f094a67f27a11f9e2d61831
+ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67104080"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68499252"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-docusign"></a>Tutorial: integração do Active Directory do Azure com o DocuSign
 
@@ -47,7 +47,7 @@ Neste tutorial, você configurará e testará o logon único do Azure AD em um a
 
 * O DocuSign dá suporte ao SSO iniciado por **SP**
 
-* O DocuSign dá suporte ao provisionamento de usuário **just-in-time**
+* O DocuSign dá suporte a [provisionamento automático de usuários](https://docs.microsoft.com/azure/active-directory/saas-apps/dropboxforbusiness-provisioning-tutorial)
 
 ## <a name="adding-docusign-from-the-gallery"></a>Adicionando o DocuSign por meio da galeria
 
@@ -272,7 +272,7 @@ Ao clicar no bloco do DocuSign no Painel de Acesso, você deverá ser conectado 
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
 <!--Image references-->
 

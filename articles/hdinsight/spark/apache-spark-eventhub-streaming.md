@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
 ms.date: 05/24/2019
-ms.openlocfilehash: c8c99d976f416d0c1d07fb3a266d37ecd6235fdb
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: fef551c254eb4fa212333a55bde3d642645a16b6
+ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295365"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68489798"
 ---
 # <a name="tutorial-process-tweets-using-azure-event-hubs-and-apache-spark-in-hdinsight"></a>Tutorial: Processar tweets usando Hubs de Eventos do Azure e Apache Spark no HDInsight
 
@@ -48,7 +48,7 @@ Para receber uma transmissão de tweets, crie um aplicativo no Twitter. Siga as 
     |---|---|
     |NOME|Forneça o nome do aplicativo. O valor usado para este tutorial é **HDISparkStreamApp0423**. Esse nome deve ser um nome exclusivo.|
     |DESCRIÇÃO|Forneça uma breve descrição do aplicativo. O valor usado para este tutorial é **Um aplicativo de streaming simples do HDInsight Spark**.|
-    |Site|Forneça o site do aplicativo. Ele não precisa ser um site válido.  O valor usado para este tutorial é **http://www.contoso.com** .|
+    |Site|Forneça o site do aplicativo. Ele não precisa ser um site válido.  O valor usado para este tutorial é `http://www.contoso.com`.|
     |URL de retorno de chamada|Você pode deixar em branco.|
 
 1. Selecione **Sim, eu li e concordo com o Contrato de Desenvolvedor do Twitter** e, em seguida, selecione **Criar seu aplicativo Twitter**.
@@ -84,9 +84,9 @@ Você pode usar esse hub de eventos para armazenar tweets.
     |---|---|
     |NOME|Insira um nome para o hub de evento.  O valor usado para este tutorial é **myeventhubns20180403**.|
     |Tipo de preço|Selecione **Padrão**.|
-    |Assinatura|Selecione a assinatura apropriada.|
-    |Grupo de recursos|Selecione um grupo de recursos existente na lista suspensa ou selecione **Criar novo** para criar um novo grupo de recursos.|
-    |Local padrão|Selecione o mesmo **Local** como o cluster Apache Spark no HDInsight para reduzir latência e custos.|
+    |Subscription|Selecione a assinatura apropriada.|
+    |Resource group|Selecione um grupo de recursos existente na lista suspensa ou selecione **Criar novo** para criar um novo grupo de recursos.|
+    |Location|Selecione o mesmo **Local** como o cluster Apache Spark no HDInsight para reduzir latência e custos.|
     |Habilitar Inflar Automaticamente (Opcional) |A inflação automática dimensiona automaticamente o número de Unidades de Produtividade atribuídas ao Namespace de Hubs de Eventos quando o tráfego excede a capacidade das Unidades de Produtividade atribuídas a ele.  |
     |Máximo de Unidades de Produtividade de Inflação Automática (Opcional)|Esse controle deslizante somente aparecerá se você marcar **Habilitar Inflar Automaticamente**.  |
 

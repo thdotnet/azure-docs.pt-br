@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 04/09/2019
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3de6a2cbdfe7a6d006a3bbfab16792376eda0d07
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 466660a1e064ef41eb330b36107dbdcb1d097498
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67702529"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68477313"
 ---
 # <a name="quickstart-add-an-application-to-your-azure-active-directory-tenant"></a>Início Rápido: Adicionar um aplicativo a seu locatário do Azure Active Directory
 
@@ -137,9 +137,8 @@ Para usar um logotipo personalizado:
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste início rápido, você aprendeu a adicionar um aplicativo de galeria ao locatário do Azure AD. Você aprendeu a editar as propriedades de um aplicativo.
+Agora que você adicionou o aplicativo à sua organização do Azure AD, [escolha um método de logon único](what-is-single-sign-on.md#choosing-a-single-sign-on-method) que deseja usar e veja o artigo apropriado abaixo:
 
-Agora, você está pronto para configurar o aplicativo para logon único.
-
-> [!div class="nextstepaction"]
-> [Configurar Logon Único](configure-single-sign-on-portal.md)
+- [Configurar o logon único baseado em SAML](configure-single-sign-on-non-gallery-applications.md)
+- [Configurar o logon único com senha](configure-password-single-sign-on-non-gallery-applications.md)
+- [Configurar o logon vinculado](configure-linked-sign-on.md)

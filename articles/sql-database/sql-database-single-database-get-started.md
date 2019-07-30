@@ -1,6 +1,6 @@
 ---
-title: 'Portal do Azure: Criar um banco de dados individual – Banco de Dados SQL do Azure | Microsoft Docs'
-description: Crie e consulte um banco de dados individual no Banco de Dados SQL do Azure usando o portal do Azure.
+title: Criar um banco de dados individual – Banco de Dados SQL do Azure | Microsoft Docs
+description: Crie e consulte um banco de dados individual no Banco de Dados SQL do Azure usando o portal do Azure, o PowerShell e a CLI do Azure.
 services: sql-database
 ms.service: sql-database
 ms.subservice: single-database
@@ -12,14 +12,14 @@ ms.author: ninarn
 ms.reviewer: carlrab, sstein
 manager: craigg
 ms.date: 04/23/2019
-ms.openlocfilehash: 1c24c8a10e35c0cf8979538c67fa8fb71b712741
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 470dca235b9a3212c09052f7535fa90d076fe4d3
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67070160"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68444429"
 ---
-# <a name="quickstart-create-a-single-database-in-azure-sql-database-using-the-azure-portal"></a>Início Rápido: Criar um banco de dados individual no Banco de Dados SQL do Azure usando o portal do Azure
+# <a name="quickstart-create-a-single-database-in-azure-sql-database-using-the-azure-portal-powershell-and-azure-cli"></a>Início Rápido: Criar um banco de dados individual no Banco de Dados SQL do Azure usando o portal do Azure, o PowerShell e a CLI do Azure
 
 A criação de um [banco de dados individual](sql-database-single-database.md) é a opção de implantação mais rápida e simples para criação de um Banco de Dados SQL do Azure. Este Início Rápido mostra como criar e, em seguida, consultar um banco de dados individual usando o portal do Azure.
 
@@ -41,59 +41,7 @@ Quando você cria um banco de dados individual, você também define um [servido
 
 Para criar um banco de dados individual que contém os dados de exemplo AdventureWorksLT:
 
-1. Selecione **Criar um recurso** no canto superior esquerdo do portal do Azure.
-2. Selecione **Bancos de Dados** e, em seguida, **Banco de Dados SQL** para abrir a página **Criar Banco de Dados SQL**.
-
-   ![Criar banco de dados individual](./media/sql-database-get-started-portal/create-database-1.png)
-
-3. Na guia **Informações Básicas** da seção **Detalhes do Projeto**, digite ou selecione os seguintes valores:
-
-   - **Assinatura**: Selecione a lista suspensa e escolha a assinatura correta, caso ela não seja exibida.
-   - **Grupo de recursos**: Selecione **Criar novo**, digite `myResourceGroup` e selecione **OK**.
-
-     ![Novo banco de dados SQL – guia Informações Básicas](media/sql-database-get-started-portal/new-sql-database-basics.png)
-
-4. Na seção **Detalhes do Banco de Dados**, digite ou selecione os seguintes valores:
-
-   - **Nome do banco de dados**: Digite `mySampleDatabase`.
-   - **Servidor**: Selecione **Criar novo**, insira os valores a seguir e, em seguida, escolha **Selecionar**.
-       - **Nome do servidor**: Digite `mysqlserver`, juntamente com alguns números para exclusividade.
-       - **Logon de administrador do servidor**: Digite `azureuser`.
-       - **Senha**: Digite uma senha complexa que atenda aos requisitos de senha.
-       - **Localização**: Escolha uma localização na lista suspensa, como `West US 2`.
-
-         ![Novo servidor](media/sql-database-get-started-portal/new-server.png)
-
-      > [!IMPORTANT]
-      > Lembre-se de registrar o logon de administrador do servidor e a senha para fazer logon no servidor e nos bancos de dados deste e de outros inícios rápidos. Caso esqueça seu logon ou a senha, obtenha o nome de logon ou redefina a senha na página **SQL Server**. Para abrir a página **SQL Server**, selecione o nome do servidor na página **Visão Geral** do banco de dados após a criação do banco de dados.
-
-        ![Detalhes do Banco de Dados SQL](media/sql-database-get-started-portal/sql-db-basic-db-details.png)
-
-   - **Deseja usar o pool elástico SQL?** : Selecione a opção **Não**.
-   - **Computação + armazenamento**: Selecione **Configurar banco de dados** e, nesse início rápido, selecione as **opções de compra baseado em vCore**
-
-     ![Opções de compra baseado em vCore](media/sql-database-get-started-portal/create-database-vcore.png)
-
-   - Selecione **Sem servidor**.
-
-     ![camada de computação sem servidor](media/sql-database-get-started-portal/create-database-serverless.png)
-
-   - Examine as configurações para **Máx vCores**, **Mín vCores**, **Atraso de pausa automática** e **Tamanho máximo de dados**. Altere-as conforme desejado.
-   - Aceite os termos de versão prévia e clique em **OK**.
-   - Escolha **Aplicar**.
-
-5. Selecione a guia **Configurações adicionais**. 
-6. Na seção **Fonte de dados**, em **Usar dados existentes**, selecione `Sample`. 
-
-   ![Configurações adicionais do BD SQL](media/sql-database-get-started-portal/create-sql-database-additional-settings.png)
-
-   > [!IMPORTANT]
-   > Selecione os dados da **Amostra (AdventureWorksLT)** para seguir com facilidade este e outros Guias de Início Rápido do Banco de Dados SQL do Azure que usam esses dados.
-
-7. Mantenha o restante dos valores como padrão e selecione **Examinar + Criar** na parte inferior do formulário.
-8. Examine as configurações finais e selecione **Criar**.
-
-9. No formulário **Banco de Dados SQL**, selecione **Criar** para implantar e provisionar o grupo de recursos, o servidor e o banco de dados.
+[!INCLUDE [sql-database-create-single-database](includes/sql-database-create-single-database.md)]
 
 ## <a name="query-the-database"></a>Consultar o banco de dados
 

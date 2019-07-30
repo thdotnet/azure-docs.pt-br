@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: e4b2f9eaa243c0cbef66f88544be769481dd6722
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: a3d2b51824f4293dc790979ca2513d011b60fd9c
+ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67798649"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68414433"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-linux-device"></a>Início Rápido: Implantar seu primeiro módulo do IoT Edge em um dispositivo Linux
 
@@ -66,7 +66,7 @@ Dispositivo IoT Edge:
 
    Ao criar uma nova máquina virtual, anote o **publicIpAddress**, que é fornecido como parte da saída do comando create. Você usará esse endereço IP público para se conectar à máquina virtual posteriormente no início rápido.
 
-* Se preferir executar o tempo de execução do Azure IoT Edge em seu próprio dispositivo, siga as instruções em [Instalar o tempo de execução do Azure IoT Edge no Linux (x64)](how-to-install-iot-edge-linux.md) ou [Instalar o tempo de execução do Azure IoT Edge no Linux (ARM32v7/armhf)](how-to-install-iot-edge-linux-arm.md).
+* Se você preferir executar o tempo de execução do Azure IoT Edge em seu próprio dispositivo, siga as instruções em [Instalar o tempo de execução do Azure IoT Edge no Linux](how-to-install-iot-edge-linux.md).
 
 ## <a name="create-an-iot-hub"></a>Crie um hub IoT
 
@@ -130,7 +130,7 @@ Se você estiver usando o Azure IoT Edge na máquina virtual Ubuntu conforme des
    az vm run-command invoke -g IoTEdgeResources -n EdgeVM --command-id RunShellScript --script "/etc/iotedge/configedge.sh '{device_connection_string}'"
    ```
 
-Se estiver executando o IoT Edge no computador local ou em um dispositivo ARM32, você precisará instalar o tempo de execução do IoT Edge e seus pré-requisitos em no dispositivo. Siga as instruções em [Instalar o tempo de execução do Azure IoT Edge no Linux (x64)](how-to-install-iot-edge-linux.md) ou [Instalar o tempo de execução do Azure IoT Edge no Linux (ARM32v7/armhf)](how-to-install-iot-edge-linux-arm.md), depois retorne a este início rápido.
+Se você estiver executando o IoT Edge no computador local ou em um dispositivo ARM32 ou ARM64, precisará instalar o tempo de execução do IoT Edge e seus pré-requisitos em seu dispositivo. Siga as instruções em [Instalar o tempo de execução do Azure IoT Edge no Linux](how-to-install-iot-edge-linux.md) e, em seguida, retorne a este início rápido.
 
 ### <a name="view-the-iot-edge-runtime-status"></a>Veja o status do tempo de execução do IoT Edge
 

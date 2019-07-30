@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 06/25/2019
-ms.openlocfilehash: b6ef08be346aebd220b7234253ce45c4615e38a9
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 53a46c6137c3336c405eb62dc7b254ac26c13d9e
+ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67445517"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68406004"
 ---
 # <a name="tutorial-use-apache-storm-with-apache-kafka-on-hdinsight"></a>Tutorial: Usar o Apache Storm com o Apache Kafka no HDInsight
 
@@ -58,7 +58,7 @@ As seguintes variáveis de ambiente podem ser definidas quando você instala o J
 > 
 > Para sua conveniência, este documento direciona para um modelo que pode criar todos os recursos necessários do Azure. 
 >
-> Para obter mais informações sobre como usar o HDInsight em uma rede virtual, confira o documento [Estender o HDInsight usando uma rede virtual](hdinsight-extend-hadoop-virtual-network.md).
+> Para obter mais informações sobre como usar o HDInsight em uma rede virtual, confira o documento [Planejar uma rede virtual para o HDInsight](hdinsight-plan-virtual-network-deployment.md).
 
 ## <a name="storm-and-kafka"></a>Storm e Kafka
 

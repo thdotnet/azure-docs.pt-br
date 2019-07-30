@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 06/19/2019
 ms.author: magoedte
 ms.custom: mvc
-ms.openlocfilehash: 93cda8680bc665055d449e86c24d6565f6fc525f
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: c859fb9b8b3509e8369559a3a9a4d45cb4e34125
+ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67296355"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68414143"
 ---
 # <a name="create-and-share-dashboards-of-log-analytics-data"></a>Criar e compartilhar painéis de dados do Log Analytics
 
@@ -75,7 +75,7 @@ Salve a consulta selecionando o botão **Salvar** na parte superior da página.
 
 ![Salvar consulta](media/tutorial-logs-dashboards/save-query.png)
 
-No painel de controle **Salvar Consulta**, forneça um nome como *VMs do Azure - Utilização do Processador* e uma categoria como *Painéis* e depois clique em **Salvar**.  Dessa forma, você pode criar uma biblioteca de consultas comuns que pode ser usada e modificada.  Por fim, fixe isso no painel compartilhado criado anteriormente selecionando o botão **Fixar** no canto superior direito da página e selecionando o nome do painel.
+No painel de controle **Salvar Consulta**, forneça um nome como *VMs do Azure - Utilização do Processador* e uma categoria como *Painéis* e depois clique em **Salvar**.  Dessa forma, você pode criar uma biblioteca de consultas comuns que pode ser usada e modificada.  Por fim, fixe isso no painel compartilhado criado anteriormente selecionando o botão **Fixar no painel** no canto superior direito da página e, em seguida, selecionando o nome do painel.
 
 Agora que temos uma consulta fixada no painel, você observará que ele tem um título genérico e um comentário abaixo.
 

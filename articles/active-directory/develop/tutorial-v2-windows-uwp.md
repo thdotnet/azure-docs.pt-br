@@ -16,12 +16,12 @@ ms.date: 07/16/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff2089e8abdde8e6a99de1be2be070fb457fa632
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: dae3f9f2f4a9f6966d3453123773887c244cf4e2
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68276634"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68334063"
 ---
 # <a name="call-microsoft-graph-api-from-a-universal-windows-platform-application-xaml"></a>Chamar a API do Microsoft Graph de um aplicativo da Plataforma Universal do Windows (XAML)
 
@@ -419,3 +419,8 @@ Você habilitar a [autenticação integrada em domínios federados](#enable-inte
 **Solução alternativa:** Selecione **Entrar com outras opções**. Depois selecione **Entrar com nome de usuário e senha**. Selecione **Forneça sua senha**. Depois passe pelo processo de autenticação de telefone.
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
+
+Ajude-nos a melhorar a plataforma de identidade da Microsoft. Deixe sua opinião respondendo a uma breve pesquisa de duas perguntas.
+
+> [!div class="nextstepaction"]
+> [Pesquisa da plataforma de identidade da Microsoft](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRyKrNDMV_xBIiPGgSvnbQZdUQjFIUUFGUE1SMEVFTkdaVU5YT0EyOEtJVi4u)

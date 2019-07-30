@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b24888934d7e89a13b1b07b7138be476575fc306
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: c7781651536275eba60bfde49e00a450dde6d3e1
+ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204608"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68357034"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Tutorial: Configurar o ingresso no Azure Active Directory híbrido para os domínios gerenciados
 
-Como um usuário na sua organização, um dispositivo é uma identidade importante que você quer proteger. É possível usar uma identidade do dispositivo para proteger seus recursos a qualquer momento e de qualquer local. É possível atingir essa meta colocando e gerenciando identidades de dispositivo no Azure Active Directory usando um dos seguintes métodos:
+Como um usuário na sua organização, um dispositivo é uma identidade importante que você quer proteger. É possível usar uma identidade do dispositivo para proteger seus recursos a qualquer momento e de qualquer local. É possível atingir esse objetivo colocando e gerenciando identidades de dispositivo no Azure Active Directory (Azure AD) seguindo um dos seguintes métodos:
 
 - Ingresso no Azure AD
 - Ingresso no Azure AD Híbrido
@@ -53,7 +53,7 @@ Este tutorial presume que você esteja familiarizado com estes artigos:
 
 Para configurar o cenário neste artigo, é necessário que a [última versão do Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594) (1.1.819.0 ou posterior) esteja instalada.
 
-Verifique se o Azure AD Connect sincronizou os objetos de computador dos dispositivos que você quer que sejam unidos ao Azure AD híbrido com o Azure AD. Se os objetos de computador pertencerem a OUs (unidades organizacionais) específicas, você também deverá configurar as OUs para sincronizarem no Azure AD Connect. Para saber mais sobre como sincronizar objetos de computador usando o Azure AD Connect, confira [Configurar filtragem usando o Azure AD Connect](../hybrid/how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering).
+Verifique se o Azure AD Connect sincronizou os objetos de computador dos dispositivos que você quer que sejam unidos ao Azure AD híbrido com o Azure AD. Se os objetos de computador pertencerem a unidades organizacionais (OUs) específicas, você também deverá configurar as OUs para sincronizarem no Azure AD Connect. Para saber mais sobre como sincronizar objetos de computador usando o Azure AD Connect, confira [Configurar filtragem usando o Azure AD Connect](../hybrid/how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering).
 
 A partir da versão 1.1.819.0, o Azure AD Connect inclui um assistente que você pode usar para configurar o ingresso no Azure AD híbrido. O assistente simplifica significativamente o processo de configuração. O assistente configura os SCPs (pontos de conexão do serviço) para registro do dispositivo.
 
@@ -73,7 +73,7 @@ Se você não usar a WPAD e precisar configurar as definições de proxy no comp
 > [!NOTE]
 > Se você definir configurações de proxy em seu computador usando as configurações de WinHTTP, qualquer computador que não possa se conectar ao proxy configurado falhará ao se conectar à Internet.
 
-Se a organização exigir acesso à Internet por meio de um proxy de saída autenticado, será necessário garantir que os computadores com Windows 10 possam ser autenticados com êxito no proxy de saída. Como computadores com Windows 10 executam o registro de dispositivos usando o contexto do computador, será necessário configurar a autenticação de proxy de saída usando o contexto do computador. Acompanhe com o provedor de proxy de saída nos requisitos de configuração.
+Se a organização exigir acesso à Internet por meio de um proxy de saída autenticado, será preciso garantir que os computadores com Windows 10 possam ser autenticados com êxito no proxy de saída. Como computadores com Windows 10 executam o registro de dispositivos usando o contexto do computador, será preciso configurar a autenticação de proxy de saída usando o contexto do computador. Acompanhe com o provedor de proxy de saída nos requisitos de configuração.
 
 ## <a name="configure-hybrid-azure-ad-join"></a>Configurar ingresso no Azure AD híbrido
 
@@ -88,7 +88,7 @@ Para configurar um ingresso no Azure AD híbrido usando o Azure AD Connect, ser�
 
    ![Bem-Vindo](./media/hybrid-azuread-join-managed-domains/11.png)
 
-1. Na página **Tarefas adicionais**, selecione **Configurar opções de dispositivo** e clique em **Avançar**.
+1. Na página **Tarefas adicionais**, selecione **Configurar opções de dispositivo** e, em seguida, **Avançar**.
 
    ![Tarefas adicionais](./media/hybrid-azuread-join-managed-domains/12.png)
 
@@ -120,13 +120,13 @@ Para configurar um ingresso no Azure AD híbrido usando o Azure AD Connect, ser�
 
    ![Pronto para configurar](./media/hybrid-azuread-join-managed-domains/19.png)
 
-1. Na página **Configuração completa**, selecione **Sair**.
+1. Na página **Configuração completa** selecione **Sair**.
 
    ![Configuração concluída](./media/hybrid-azuread-join-managed-domains/20.png)
 
 ## <a name="enable-windows-downlevel-devices"></a>Habilitar dispositivos de nível inferior do Windows
 
-Se alguns dos seus dispositivos unidos ao domínio forem dispositivos de nível inferior do Windows, será necessário:
+Se alguns dos seus dispositivos ingressados ao domínio forem dispositivos de nível inferior do Windows, será preciso:
 
 - Definir as configurações de Intranet Local para registro do dispositivo
 - Configurar o SSO contínuo
@@ -134,20 +134,20 @@ Se alguns dos seus dispositivos unidos ao domínio forem dispositivos de nível 
 
 ### <a name="configure-the-local-intranet-settings-for-device-registration"></a>Definir as configurações de Intranet Local para registro do dispositivo
 
-Para concluir com êxito o ingresso no Azure AD híbrido dos dispositivos de nível inferior do Windows e evitar prompts de certificado quando os dispositivos autenticarem no Azure AD, envie uma política por push aos dispositivos unidos ao domínio para adicionar as seguintes URLs à zona da intranet local no Internet Explorer:
+Para concluir com êxito o ingresso dos dispositivos de nível inferior do Windows no Azure AD híbrido e evitar prompts de certificado quando os dispositivos autenticarem no Azure AD, envie uma política por push aos dispositivos ingressados no domínio para adicionar as seguintes URLs à zona da Intranet Local no Internet Explorer:
 
 - `https://device.login.microsoftonline.com`
 - `https://autologon.microsoftazuread-sso.com`
 
-Também é necessário habilitar **Permitir atualizações da barra de status via script** na zona da intranet local do usuário.
+Também será preciso habilitar **Permitir atualizações da barra de status via script** na zona da intranet local do usuário.
 
 ### <a name="configure-seamless-sso"></a>Configurar o SSO contínuo
 
-Para concluir o ingresso no Azure AD híbrido de seus dispositivos de nível inferior do Windows em um domínio gerenciado que usa [PHS]../hybrid/whatis-phs.md) ou [PTA](../hybrid/how-to-connect-pta.md) como método de autenticação de nuvem do Azure AD, você também deve [configurar o SSO contínuo](../hybrid/how-to-connect-sso-quick-start.md#step-2-enable-the-feature).
+Para concluir o ingresso no Azure AD híbrido de seus dispositivos de nível inferior do Windows em um domínio gerenciado que usa [PHS](../hybrid/whatis-phs.md) ou [PTA](../hybrid/how-to-connect-pta.md) como método de autenticação em nuvem do Azure AD, você também precisa [configurar o SSO contínuo](../hybrid/how-to-connect-sso-quick-start.md#step-2-enable-the-feature).
 
 ### <a name="install-microsoft-workplace-join-for-windows-downlevel-computers"></a>Instalar o Workplace Join da Microsoft para computadores Windows de nível inferior
 
-Para registrar dispositivos de nível inferior do Windows, as organizações devem instalar o [Workplace Join da Microsoft para computadores sem Windows 10](https://www.microsoft.com/download/details.aspx?id=53554). O Workplace Join da Microsoft para computadores sem Windows 10 está disponível no Centro de Download da Microsoft.
+Para registrar dispositivos de nível inferior do Windows, as organizações devem instalar o [Workplace Join da Microsoft nos computadores sem Windows 10](https://www.microsoft.com/download/details.aspx?id=53554). O Workplace Join da Microsoft para computadores sem Windows 10 está disponível no Centro de Download da Microsoft.
 
 É possível implantar o pacote usando um sistema de distribuição de software como o [System Center Configuration Manager](https://www.microsoft.com/cloud-platform/system-center-configuration-manager). O pacote dá suporte às opções de instalação silenciosa padrão com o parâmetro `quiet`. O atual branch do Configuration Manager oferece benefícios adicionais em relação às versões anteriores, como a capacidade de rastrear registros concluídos.
 
@@ -165,7 +165,7 @@ Ao usar o cmdlet **Get-MSolDevice** para verificar os detalhes do serviço:
 
 **Para verificar os detalhes do serviço**:
 
-1. Abra o Windows PowerShell como um administrador.
+1. Abra o Windows PowerShell como administrador.
 1. Digite `Connect-MsolService` para se conectar ao locatário do Azure.  
 1. Digite `get-msoldevice -deviceId <deviceId>`.
 1. Verifique se **Habilitado** está definido como **Verdadeiro**.

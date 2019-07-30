@@ -8,20 +8,20 @@ manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
+ms.custom: aaddev
 ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
-ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2182708ea459b578a2a9a94213ab41e76821aefc
-ms.sourcegitcommit: 6cb4dd784dd5a6c72edaff56cf6bcdcd8c579ee7
+ms.openlocfilehash: 3ca7e7f282d63160cd1f729fba00f6d7d7704270
+ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67514344"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68334125"
 ---
 # <a name="quickstart-sign-in-users-and-acquire-an-access-token-from-a-javascript-single-page-application"></a>Início Rápido: Conectar usuários e adquirir um token de acesso de um aplicativo de página única do JavaScript
 
@@ -275,3 +275,8 @@ Para navegar pelo repositório da MSAL em busca de documentos, perguntas frequen
 
 > [!div class="nextstepaction"]
 > [Repositório GitHub do MSAL.js](https://github.com/AzureAD/microsoft-authentication-library-for-js)
+
+Ajude-nos a melhorar a plataforma de identidade da Microsoft. Deixe sua opinião respondendo a uma breve pesquisa de duas perguntas.
+
+> [!div class="nextstepaction"]
+> [Pesquisa da plataforma de identidade da Microsoft](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRyKrNDMV_xBIiPGgSvnbQZdUQjFIUUFGUE1SMEVFTkdaVU5YT0EyOEtJVi4u)

@@ -4,7 +4,7 @@ description: Saiba mais sobre o uso do serviço Lote do Azure para cargas de tra
 services: batch
 documentationcenter: ''
 author: mscurrell
-manager: jeconnoc
+manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: batch
@@ -15,12 +15,12 @@ ms.topic: overview
 ms.date: 01/19/2018
 ms.author: markscu
 ms.custom: mvc
-ms.openlocfilehash: 1dbd31b3c666857765b8b20a11d4d0c7ea8ea37b
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: c55b831903ed8dad124156013c8379536f676efa
+ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67704755"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68322794"
 ---
 # <a name="what-is-azure-batch"></a>O que é o Lote do Azure?
 

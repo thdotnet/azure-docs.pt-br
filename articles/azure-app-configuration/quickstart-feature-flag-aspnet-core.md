@@ -14,32 +14,29 @@ ms.tgt_pltfrm: ASP.NET Core
 ms.workload: tbd
 ms.date: 04/19/2019
 ms.author: yegu
-ms.openlocfilehash: 38b404ec10fb7b66b5e276665b0c9047d0576c15
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: 41947de18ae27b41d046fd4358f0039a1b56374d
+ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67798395"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68347918"
 ---
 # <a name="quickstart-add-feature-flags-to-an-aspnet-core-app"></a>Início Rápido: Adicionar sinalizadores de recurso a um aplicativo ASP.NET Core
 
-Você pode habilitar o gerenciamento de recursos no ASP.NET Core conectando seu aplicativo à Configuração de Aplicativos do Azure. Use esse serviço gerenciado para armazenar todos os sinalizadores de recurso e controlar seus estados centralmente. Este início rápido mostra como incorporar a Configuração de Aplicativos ao aplicativo Web ASP.NET Core para criar uma implementação de ponta a ponta do gerenciamento de recursos.
+Neste início rápido, você incorpora a Configuração de Aplicativos do Azure a um aplicativo Web do ASP.NET Core para criar uma implementação de ponta a ponta do gerenciamento de recursos. Você pode usar o serviço de Configuração de Aplicativos para armazenar de forma centralizada todos os sinalizadores de recurso e controlar seus estados. 
 
 As bibliotecas do Gerenciamento de Recursos do .NET Core estendem a estrutura com suporte abrangente para sinalizadores de recursos. Essas bibliotecas se baseiam no sistema de configuração do .NET Core. Elas são integradas diretamente à Configuração de Aplicativos por meio de seu provedor de configuração do .NET Core.
 
-Você pode usar qualquer editor de código para executar as etapas deste início rápido. O [Visual Studio Code](https://code.visualstudio.com/) é uma excelente opção disponível nas plataformas Windows, macOS e Linux.
-
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para fazer este início rápido, instale o [SDK do .NET Core](https://dotnet.microsoft.com/download).
-
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+- Assinatura do Azure - [criar uma gratuitamente](https://azure.microsoft.com/free/)
+- [SDK do .Net Core](https://dotnet.microsoft.com/download).
 
 ## <a name="create-an-app-configuration-store"></a>Criar um repositório de Configuração de Aplicativos
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-6. Escolha **Gerenciador de Recursos** > **+ Criar** para adicionar os seguintes sinalizadores de recursos:
+6. Escolha **Gerenciador de Recursos** >  **+ Criar** para adicionar os seguintes sinalizadores de recursos:
 
     | Chave | Estado |
     |---|---|
@@ -135,7 +132,7 @@ Adicione a [ferramenta Gerenciador de Segredos](https://docs.microsoft.com/aspne
 1. Abra *Startup.cs* e adicione referências ao gerenciador de recursos do .NET Core:
 
     ```csharp
-    using Microsoft.FeatureManagement.AspNetCore;
+    using Microsoft.FeatureManagement;
     ```
 
 1. Atualize o método `ConfigureServices` para adicionar suporte ao sinalizador de recursos chamando o método `services.AddFeatureManagement()`. Opcionalmente, você pode incluir qualquer filtro que será usado com sinalizadores de recursos chamando `services.AddFeatureFilter<FilterType>()`:

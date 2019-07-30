@@ -3,17 +3,18 @@ title: Tutorial – criar imagens de contêiner na nuvem – Tarefas do Registro
 description: Neste tutorial, você aprenderá como criar uma imagem de contêiner de Docker no Azure com as Tarefas do ACR (Tarefas do Registro de Contêiner do Azure) e implantá-la em Instâncias de Contêiner do Azure.
 services: container-registry
 author: dlepow
+manager: gwallace
 ms.service: container-registry
 ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: ed5df09d492bbf6123e76f73717a1738a23a066c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a9e84210427612143bffe33efe4a5da5364b7a22
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66152115"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68310451"
 ---
 # <a name="tutorial-build-and-deploy-container-images-in-the-cloud-with-azure-container-registry-tasks"></a>Tutorial: criar e implantar imagens de contêineres na nuvem com as Tarefas do Registro de Contêiner do Azure
 
@@ -34,7 +35,7 @@ Em tutoriais subsequentes, você aprenderá a usar as Tarefas do ACR para builds
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Se quiser usar a CLI do Azure localmente, será preciso ter a CLI do Azure versão **2.0.46** ou posterior instalada e conectada com [az login][az-login]. Execute `az --version` para encontrar a versão. Caso precise instalar ou fazer upgrade da CLI, confira [Instalar a CLI do Azure][azure-cli].
+Se quiser usar a CLI do Azure localmente, será preciso ter a CLI do Azure versão **2.0.46** ou posterior instalada e conectada com [az login][az-login]. Execute `az --version` para encontrar a versão. Se você precisar instalar ou atualizar a CLI, confira como [instalar a CLI do Azure][azure-cli].
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -191,7 +192,7 @@ az keyvault create --resource-group $RES_GROUP --name $AKV_NAME
 
 Agora, é necessário criar uma entidade de serviço e armazenar as credenciais no cofre de chaves.
 
-Use o comando [az ad sp create-for-rbac][az-ad-sp-create-for-rbac] para criar a entidade de serviço e [az keyvault secret set][az-keyvault-secret-set] para armazenar a **senha** da entidade de serviço no cofre:
+Use [az ad sp create-for-rbac][az-ad-sp-create-for-rbac] command to create the service principal, and [az keyvault secret set][az-keyvault-secret-set] para armazenar a **senha** da entidade de serviço no cofre:
 
 ```azurecli-interactive
 # Create service principal, store its password in AKV (the registry *password*)

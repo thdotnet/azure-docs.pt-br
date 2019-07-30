@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
 ms.date: 07/04/2019
-ms.openlocfilehash: 2ff5ebefbe379edda94dcf8ac066027398e2f3f4
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
+ms.openlocfilehash: baf3c372d0c84d4daf439fdc92fa6eeac5d12d0b
+ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67565537"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68501012"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-offline-using-dms"></a>Tutorial: Migração offline do MongoDB para a API do Azure Cosmos DB para MongoDB usando o DMS
 
@@ -128,6 +128,8 @@ Depois que o serviço é criado, localize-o no portal do Azure, abra-o e, em seg
      https://blobnameurl/container?SASKEY
      ```
 
+     Essa cadeia de conexão SAS do contêiner de blob pode ser encontrada no gerenciador de Armazenamento do Azure. A criação da SAS para o contêiner em questão fornecerá a você a URL no formato solicitado acima.
+     
      Além disso, com base nas informações de despejo de tipo no armazenamento do Azure, tenha os detalhes a seguir em mente.
 
      * Para despejos BSON, os dados dentro do contêiner de blobs devem estar no formato bsondump, tal que os arquivo de dados sejam inseridos em pastas nomeadas de acordo com os bancos de dados que as contêm no formato collection.bson. Arquivos de metadados (se houver) devem ser nomeados usando o formato *coleção*.metadata.json.

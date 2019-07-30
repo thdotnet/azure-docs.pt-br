@@ -6,16 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 06/25/2019
+ms.date: 07/23/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 7e7a1f119a2f2b0e60645cb776b26c124910cacb
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: ca42532fe6ba954180ce06ed0e3561e42f1fb447
+ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448207"
+ms.lasthandoff: 07/23/2019
+ms.locfileid: "68424241"
 ---
+::: zone target="docs"
+
 # <a name="tutorial-return-azure-data-box-disk-and-verify-data-upload-to-azure"></a>Tutorial: Devolver o Azure Data Box Disk e verificar o upload de dados para o Azure
 
 Este é o último tutorial da série: Implantar o Azure Data Box Disk. Neste tutorial, você aprenderá a:
@@ -28,6 +30,7 @@ Este é o último tutorial da série: Implantar o Azure Data Box Disk. Neste tut
 ## <a name="prerequisites"></a>Pré-requisitos
 
 Antes de começar, verifique se você concluiu o [Tutorial: copiar dados para o Azure Data Box Disk e verificar](data-box-disk-deploy-copy-data.md).
+
 
 ## <a name="ship-data-box-disk-back"></a>Devolver o Data Box Disk
 
@@ -104,10 +107,10 @@ Datacenters do Azure na Austrália têm uma notificação de segurança adiciona
 #### <a name="pick-up-in-japan"></a>Retirada no Japão
 
 1. Escreva as informações de nome e endereço da sua empresa na nota de consignação como suas informações de remetente.
-2. A solução de email da Quantium usando o seguinte modelo de email.
+2. Envie um email para a Quantium Solutions usando o modelo de email a seguir.
 
-    - Se a nota de consignação do Japan Post Chakubarai não tiver sido incluída ou estiver faltando, faça essa observação neste email. A Quantium Solutions Japan solicitará que o Japan Post (Correios do Japão) leve a nota de consignação na retirada.
-    - Se você tem vários pedidos, envie um email para garantir a retirada individual.
+    - Se a nota de consignação do Japan Post Chakubarai não tiver sido incluída ou estiver ausente, indique isso nesse email. A Quantium Solutions Japan solicitará ao Japan Post que traga a nota de consignação após a retirada.
+    - Caso você tenha vários pedidos, envie um email para garantir a retirada individual.
 
     ```
     To: Customerservice.JP@quantiumsolutions.com
@@ -121,9 +124,9 @@ Datacenters do Azure na Austrália têm uma notificação de segurança adiciona
         d. 17：00-19：00 
     ```
 
-3. Receba um email de confirmação da Quantium Solutions após registrar uma retirada. O email de confirmação também inclui informações sobre a nota de consignação da Chakubarai.
+3. Receba um email de confirmação da Quantium Solutions depois de agendar uma retirada. O email de confirmação também inclui informações sobre a nota de consignação do Chakubarai.
 
-Se for necessário, você poderá contatar o suporte da Quantium Solutions (em japonês): 
+Se necessário, você poderá contatar o Suporte da Quantium Solutions (em japonês) com as seguintes informações: 
 
 - Email：Customerservice.JP@quantiumsolutions.com 
 - Telefone: 03-5755-0150 
@@ -229,5 +232,41 @@ Avance para a próxima instrução para saber como gerenciar o Data Box Disk por
 
 > [!div class="nextstepaction"]
 > [Usar o portal do Azure para administrar o Azure Data Box Disk](./data-box-portal-ui-admin.md)
+
+::: zone-end
+
+
+::: zone target="chromeless"
+
+# <a name="return-the-disk-and-verify-upload-to-azure"></a>Devolver o disco e verificar o upload no Azure
+
+## <a name="ship-to-azure"></a>Enviar para o Azure
+
+1. Após a conclusão da validação de dados, desconecte os discos. Remova os cabos de conexão.
+2. Encapsule todos os discos e os cabos de conexão com plástico bolha e coloque-os na caixa de remessa. Poderá haver encargos se os acessórios estiverem ausentes.
+    - Reutilize a embalagem da remessa inicial.  
+    - É recomendável que empacotar os discos usando um plástico bolha bem ajustado.
+    - Verifique se que o ajuste é firme para reduzir qualquer movimentos dentro da caixa.
+3. As próximas etapas são determinadas pelo local em você está devolvendo o dispositivo.
+    - [Agende uma retirada com a UPS se estiver devolvendo o dispositivo nos EUA e no Canadá](data-box-disk-deploy-picked-up.md#pick-up-in-us-canada).
+    - [Agende uma retirada com a DHL para a Europa](data-box-disk-deploy-picked-up.md#pick-up-in-europe) visitando seu site e especificando o número de conhecimento aéreo.
+    - [Agende uma retirada para países na região Austrália/Pacífico](data-box-disk-deploy-picked-up.md#pick-up-in-asia-pacific-region), como Austrália, Japão, Coreia do Sul e Singapura.
+4. Depois que os discos forem retirados pela transportadora, o status do pedido no portal será atualizado e uma ID de rastreamento será exibida.
+
+## <a name="verify-upload-to-azure"></a>Verificar o upload no Azure
+
+Depois que os dados forem carregados no Azure, verifique se os seus dados estão nas contas de armazenamento antes de excluí-los da fonte. Seus dados podem estar em:
+
+- Suas contas de Armazenamento do Microsoft Azure. Quando você copia os dados para o Data Box, dependendo do tipo, eles são carregados em um dos caminhos a seguir em sua conta do Armazenamento do Azure.
+
+    - **Para blobs de blocos e blobs de páginas**: https://<nome_da_conta_de_armazenamento>.blob.core.windows.net/<containername>/files/a.txt
+
+    - **Para Arquivos do Azure**: https://<nome_da_conta_de_armazenamento>.file.core.windows.net/<sharename>/files/a.txt
+
+    Como alternativa, você pode acessar sua conta de Armazenamento do Azure no portal do Azure e navegar de lá.
+
+- Seus grupos de recursos de disco gerenciado. Ao criar discos gerenciados, os VHDs são carregados como blob de páginas e, em seguida, convertidos em discos gerenciados. Os discos gerenciados são anexados aos grupos de recursos especificados no momento da criação do pedido.
+
+::: zone-end
 
 

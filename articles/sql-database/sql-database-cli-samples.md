@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 02/03/2019
-ms.openlocfilehash: 7a1132b5857cf6c54d0566ca29bb76ce1ef88513
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ad4706ce038feb316d238c1cabc12b27621c8085
+ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66150235"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68443343"
 ---
 # <a name="azure-cli-samples-for-azure-sql-database"></a>Amostras da CLI do Azure para o Banco de Dados SQL do Azure
 
@@ -41,6 +41,8 @@ A tabela a seguir inclui links para exemplos de scripts da CLI do Azure para o B
 |**Dimensionar um banco de dados individual e um pool elástico**||
 | [Dimensionar um banco de dados individual](scripts/sql-database-monitor-and-scale-database-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Este exemplo de script da CLI dimensiona um banco de dados SQL do Azure individual para um tamanho da computação diferente depois de consultar as informações de tamanho do banco de dados. |
 | [Dimensionar um pool elástico](scripts/sql-database-scale-pool-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Este exemplo de script da CLI dimensiona um pool elástico do SQL para um tamanho da computação diferente.  |
+|**Grupos de failover**||
+| [Adicionar um banco de dados individual ao grupo de failover](scripts/sql-database-add-single-db-to-failover-group-cli.md?toc=%2fcli%2fazure%2ftoc.json)| Esse script da CLI cria um banco de dados e um grupo de failover, adiciona o banco de dados ao grupo de failover e testa o failover no servidor secundário.|
 |||
 
 Saiba mais sobre a [API da CLI do Azure do Banco de Dados Individual](sql-database-single-databases-manage.md#azure-cli-manage-sql-database-servers-and-single-databases).

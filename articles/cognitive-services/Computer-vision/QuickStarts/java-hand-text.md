@@ -1,7 +1,7 @@
 ---
-title: 'Início Rápido: Extrair texto manuscrito – REST, Java'
+title: 'Início Rápido: Extrair texto impresso e manuscrito – REST, Java'
 titleSuffix: Azure Cognitive Services
-description: Neste início rápido, você extrairá um texto manuscrito de uma imagem usando a API da Pesquisa Visual Computacional com o Java.
+description: Neste início rápido, você extrairá um texto impresso e manuscrito de uma imagem usando a API da Pesquisa Visual Computacional com o Java.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -11,16 +11,16 @@ ms.topic: quickstart
 ms.date: 07/03/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 1776a387add47464287e4ee3a22a2e1f5c3c781a
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 545bd3acbd212a26b3e35020559ab62788ab7257
+ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67604389"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68312004"
 ---
-# <a name="quickstart-extract-handwritten-text-using-the-computer-vision-rest-api-and-java"></a>Início Rápido: Extrair um texto manuscrito usando a API REST da Pesquisa Visual Computacional e o Java
+# <a name="quickstart-extract-printed-and-handwritten-text-using-the-computer-vision-rest-api-and-java"></a>Início Rápido: Extrair um texto impresso e manuscrito usando a API REST da Pesquisa Visual Computacional e o Java
 
-Neste início rápido, você extrairá um texto manuscrito de uma imagem usando a API REST da Pesquisa Visual Computacional. Com a API [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) e a API [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d), é possível detectar texto manuscrito em uma imagem e extrair os caracteres reconhecidos em um fluxo de caracteres utilizável por computador.
+Neste início rápido, você extrairá um texto impresso e/ou manuscrito de uma imagem usando a API REST da Pesquisa Visual Computacional. Com os métodos [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) e [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d), é possível detectar texto em uma imagem e extrair os caracteres reconhecidos em um fluxo de caracteres legível por computador. A API determinará qual modelo de reconhecimento usar para cada linha de texto, para que ele dê suporte a imagens com texto impresso e manuscrito.
 
 > [!IMPORTANT]
 > Ao contrário do método [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc), o método [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) é executado de forma assíncrona. Esse método não retorna todas as informações no corpo de uma resposta bem-sucedida. Em vez disso, o método Batch Read retorna um URI no valor do campo de cabeçalho de resposta `Operation-Content`. Em seguida, é possível chamar esse URI, que representa o método [Read Operation Result](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/5be108e7498a4f9ed20bf96d) para verificar o status e retornar os resultados da chamada do método Batch Read.
@@ -61,7 +61,7 @@ Para criar e executar o exemplo, siga estas etapas:
 1. Substitua a classe pública `Main` pelo código a seguir e realize as seguintes alterações no código, se necessário:
    1. Substitua o valor de `subscriptionKey` pela sua chave de assinatura.
    1. Substitua o valor de `uriBase` pela URL do ponto de extremidade para o método [Batch Read](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/2afb498089f74080d7ef85eb) na região do Azure em que você adquiriu suas chaves de assinatura, se necessário.
-   1. Outra opção é substituir o valor de `imageToAnalyze` pela URL de uma imagem diferente da qual você deseja extrair o texto manuscrito.
+   1. Outra opção é substituir o valor de `imageToAnalyze` pela URL de uma imagem diferente da qual você deseja extrair texto.
 1. Salve e crie o projeto Java.
 1. Se você usar um IDE, execute `Main`. Caso contrário, abra uma janela do prompt de comando e use o comando `java` para executar a classe compilada. Por exemplo, `java Main`.
 
@@ -112,7 +112,7 @@ public class Main {
                     new StringEntity("{\"url\":\"" + imageToAnalyze + "\"}");
             request.setEntity(requestEntity);
 
-            // Two REST API methods are required to extract handwritten text.
+            // Two REST API methods are required to extract text.
             // One method to submit the image for processing, the other method
             // to retrieve the text found in the image.
 
@@ -152,12 +152,12 @@ public class Main {
             // If the first REST API method completes successfully, the second
             // REST API method retrieves the text written in the image.
             //
-            // Note: The response may not be immediately available. Handwriting
+            // Note: The response may not be immediately available. Text
             // recognition is an asynchronous operation that can take a variable
-            // amount of time depending on the length of the handwritten text.
+            // amount of time depending on the length of the text.
             // You may need to wait or retry this operation.
 
-            System.out.println("\nHandwritten text submitted.\n" +
+            System.out.println("\nText submitted.\n" +
                     "Waiting 10 seconds to retrieve the recognized text.\n");
             Thread.sleep(10000);
 
@@ -187,7 +187,7 @@ public class Main {
 Uma resposta com êxito é retornada em JSON. O aplicativo de exemplo analisa e exibe uma resposta bem-sucedida na janela do console, semelhante ao exemplo a seguir:
 
 ```json
-Handwritten text submitted. Waiting 10 seconds to retrieve the recognized text.
+Text submitted. Waiting 10 seconds to retrieve the recognized text.
 
 Text recognition result response:
 

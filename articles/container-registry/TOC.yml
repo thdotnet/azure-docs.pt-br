@@ -77,6 +77,8 @@
       items:
         - name: Limitar o acesso com a rede virtual (versão prévia)
           href: container-registry-vnet.md
+        - name: Acessar por trás de um firewall
+          href: container-registry-firewall-access-rules.md
         - name: Authentication
           items:
             - name: Visão geral da autenticação

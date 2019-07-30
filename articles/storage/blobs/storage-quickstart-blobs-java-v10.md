@@ -1,20 +1,20 @@
 ---
-title: 'Início rápido do Azure: Criar um blob no armazenamento de objetos usando o SDK de Armazenamento de Java V10 | Microsoft Docs'
+title: 'Início Rápido: usar o SDK de Armazenamento do Java para criar um blob'
 description: Neste início rápido, você vai criar um contêiner no armazenamento de objetos (Azure Blob), carregar um arquivo, listar objetos e baixá-los usando o SDK de Armazenamento de Java.
 services: storage
 author: mhopkins-msft
-ms.custom: mvc
+ms.custom: mvc, seo-java-july2019
 ms.service: storage
 ms.topic: quickstart
 ms.date: 11/14/2018
 ms.author: mhopkins
 ms.reviewer: seguler
-ms.openlocfilehash: f023f3fdbc82960f3994f8e5763310dc95ca1c2f
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 96da1f8903896f932fa63aa8497eaff69f893559
+ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65152793"
+ms.lasthandoff: 07/25/2019
+ms.locfileid: "68489675"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-by-using-the-java-storage-sdk-v10"></a>Início Rápido: Carregar, baixar e listar blobs usando o SDK de Armazenamento de Java V10
 
@@ -50,14 +50,14 @@ Essa solução requer que você armazene o nome e a chave da conta de armazename
 
 ### <a name="linux-example"></a>Exemplo do Linux
 
-```
+```bash
 export AZURE_STORAGE_ACCOUNT="<youraccountname>"
 export AZURE_STORAGE_ACCESS_KEY="<youraccountkey>"
 ```
 
 ### <a name="windows-example"></a>Exemplo do Windows
 
-```
+```CMD
 setx AZURE_STORAGE_ACCOUNT "<youraccountname>"
 setx AZURE_STORAGE_ACCESS_KEY "<youraccountkey>"
 ```
@@ -74,7 +74,7 @@ Se você deseja executar o exemplo usando Maven na linha de comando, abra um she
 
 Este exemplo mostra a saída se você executa o aplicativo no Windows.
 
-```
+```Output
 Created quickstart container
 Enter a command
 (P)utBlob | (L)istBlobs | (G)etBlob | (D)eleteBlobs | (E)xitSample

@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 041bcf32035ab6cdc3ee4df06050f75186759f5e
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: bcfd1ef02c68de7709cb8642b94f23a6884ea156
+ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835644"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68464755"
 ---
 # <a name="tutorial-enable-authentication-in-a-web-application-using-azure-active-directory-b2c"></a>Tutorial: Habilitar autenticação em um aplicativo Web usando o Azure Active Directory B2C
 
@@ -64,8 +64,9 @@ A seguir, há dois projetos estão na solução de exemplo:
 Altere o exemplo para usar o aplicativo registrado no locatário, que inclui a ID do aplicativo e a chave registrada anteriormente. Além disso, configure os fluxos de usuário que você criou. O exemplo define os valores de configuração como configurações no arquivo Web.config. Para alterar as configurações:
 
 1. Abra a solução **B2C-WebAPI-DotNet** no Visual Studio.
-2. No projeto **TaskWebApp**, abra o arquivo **Web.config**. Substitua o valor de `ida:Tenant` pelo nome do locatário que você criou. Substitua o valor de `ida:ClientId` pela ID do aplicativo que você registrou. Substitua o valor de `ida:ClientSecret` pela chave que você registrou.
+2. No projeto **TaskWebApp**, abra o arquivo **Web.config**. Substitua o valor de `ida:Tenant` pelo nome do locatário que você criou. Substitua o valor de `ida:ClientId` pela ID do aplicativo que você registrou. Substitua o valor de `ida:ClientSecret` pela chave que você registrou. É necessário codificar o segredo do cliente em XML antes de adicioná-lo a Web.config.
 3. No arquivo **Web.config**, substitua o valor de `ida:SignUpSignInPolicyId` por `b2c_1_signupsignin1`. Substitua o valor de `ida:EditProfilePolicyId` por `b2c_1_profileediting1`. Substitua o valor de `ida:ResetPasswordPolicyId` por `b2c_1_passwordreset1`.
+
 
 ## <a name="run-the-sample"></a>Execute o exemplo
 
