@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 01/02/2019
+ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: 2b574e0a545091263fce7949f997a3ba2dc8e5a8
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: bb7fa9d930f4c1ab3c241048804060e17fe5a8e4
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68563964"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619924"
 ---
 # <a name="concepts-about-intents-in-your-luis-app"></a>Conceitos sobre intenções em seu aplicativo LUIS
 
@@ -42,12 +42,15 @@ Atribua uma declaração a uma única intenção. Quando o LUIS recebe uma decla
 ## <a name="intent-compared-to-entity"></a>Intenção comparada com a entidade
 A intenção representa a ação que o chatbot deve executar para o usuário e baseia-se na declaração inteira. A entidade representa palavras ou frases contidas dentro da declaração. Uma declaração pode ter apenas uma intenção de pontuação principal, mas pode ter muitas entidades. 
 
-<a name="how-do-intents-relate-to-entities"></a> Crie uma intenção quando a _intenção_ do usuário disparar uma ação em seu aplicativo cliente, como uma chamada à função checkweather(). Em seguida, crie uma entidade para representar os parâmetros necessários para executar a ação. 
+<a name="how-do-intents-relate-to-entities"></a>
+
+Crie uma intenção quando a _intenção_ do usuário dispararia uma ação em seu aplicativo cliente, como uma chamada para a função checkweather (). Em seguida, crie uma entidade para representar os parâmetros necessários para executar a ação. 
 
 |Intenção de exemplo   | Entidade | Entidade em declarações de exemplo   | 
 |------------------|------------------------------|------------------------------|
 | CheckWeather | { "type": "location", "entity": "seattle" }<br>{ "type": "builtin.datetimeV2.date","entity": "tomorrow","resolution":"2018-05-23" } | Como está o clima em `Seattle` `tomorrow`? |
 | CheckWeather | { "type": "date_range", "entity": "this weekend" } | Mostre-me a previsão para `this weekend` | 
+||||
 
 ## <a name="custom-intents"></a>Intenções personalizadas
 
