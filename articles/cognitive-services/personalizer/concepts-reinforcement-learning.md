@@ -3,19 +3,19 @@ title: Aprendizado de reforço – Personalizador
 titleSuffix: Azure Cognitive Services
 description: O Personalizador usa informações sobre ações e o contexto atual para oferecer melhores sugestões de classificação. As informações sobre essas ações e o contexto são atributos ou propriedades que são conhecidos como recursos.
 services: cognitive-services
-author: edjez
+author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 05/07/2019
-ms.author: edjez
-ms.openlocfilehash: 26f8348bc2de9cb56110c1cc7ce896934bb46ef7
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.author: diberry
+ms.openlocfilehash: 36071cdee25cfa99fc54b0e5c0c0aa822cb5fe2f
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722459"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68662830"
 ---
 # <a name="what-is-reinforcement-learning"></a>O que é o aprendizado de reforço?
 

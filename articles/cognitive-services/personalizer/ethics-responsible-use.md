@@ -3,19 +3,19 @@ title: Ética e uso responsável – Personalizador
 titleSuffix: Azure Cognitive Services
 description: O objetivo dessas diretrizes é ajudar você a implementar a personalização de uma maneira que ajude você a criar uma relação de confiança em sua empresa e no seu serviço. Pare para pesquisar novamente, aprender e discutir o impacto da personalização nas vidas das pessoas. Em caso de dúvida, procure orientação.
 services: cognitive-services
-author: edjez
+author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 06/12/2019
-ms.author: edjez
-ms.openlocfilehash: ceb32e9e378ba1e58db11e55be8bd551faf08c2a
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.author: diberry
+ms.openlocfilehash: f565d95f8270612a8d83dd44a1e1bb895d1a4373
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722399"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68662780"
 ---
 # <a name="guidelines-for-responsible-implementation-of-personalizer"></a>Diretrizes para a implementação responsável do Personalizador
 
@@ -183,7 +183,7 @@ Considere a criação de métodos para membros da equipe, usuários e proprietá
 
 Qualquer pessoa que pensar nos efeitos colaterais do uso de qualquer tecnologia estará limitada à sua perspectiva e experiência de vida. Expanda a variedade de opiniões disponíveis levando vozes mais diversas para suas equipes, usuários ou conselhos, de forma que eles possam se manifestar e serem incentivados a fazer isso. Considere materiais de treinamento e de aprendizado para expandir mais ainda o conhecimento da equipe nesse domínio e para adicionar uma funcionalidade para discutir tópicos complexos e confidenciais.
 
-Considere tratar as tarefas com relação ao uso responsável assim como outras tarefas transversais no ciclo de vida do aplicativo, como tarefas relacionadas à experiência do usuário, à segurança ou a DevOps. Essas tarefas e seus respectivos requisitos não podem ser uma consideração a posteriori. O uso responsável deve ser discutido e verificado ao longo do ciclo de vido do aplicativo.
+Considere tratar tarefas relacionadas ao uso responsável, assim como outras tarefas de transversais no ciclo de vida do aplicativo, como tarefas relacionadas à experiência do usuário, segurança ou DevOps. Essas tarefas e seus respectivos requisitos não podem ser uma consideração a posteriori. O uso responsável deve ser discutido e verificado ao longo do ciclo de vido do aplicativo.
  
 ## <a name="questions-and-feedback"></a>Perguntas e comentários
 

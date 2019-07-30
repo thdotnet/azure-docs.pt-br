@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 04/18/2019
+ms.date: 07/29/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 5dd49035414c7e717c3d60ab9bc185f42dcac408
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 6d4991a0a05bbdd7143987bfa227cc40732cda35
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68560856"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639237"
 ---
 # <a name="boundaries-for-your-luis-model-and-keys"></a>Limites para seu modelo e suas chaves do LUIS
 O LUIS tem várias áreas de limite. A primeira é o [limite de modelo](#model-boundaries), que controla intenções, entidades e recursos no LUIS. A segunda área é [limites de cota](#key-limits) com base no tipo de chave. A terceira área de limites é a [combinação de teclado](#keyboard-controls) para controlar o site do LUIS. Uma quarta área é o [mapeamento de região do mundo](luis-reference-regions.md) entre o site de criação do LUIS e as APIs do [ponto de extremidade](luis-glossary.md#endpoint) do LUIS. 
@@ -76,7 +76,7 @@ A chave de criação tem diferentes limites para criação e ponto de extremidad
 |[Assinatura][pricing] reconhecimento vocal-S0-camada básica|inválido|50/segundo|Consultando seu ponto de extremidade LUIS|
 |[Assinatura][pricing] de serviço cognitiva-S0-camada Standard|inválido|50/segundo|Consultando seu ponto de extremidade LUIS|
 |[Integração de análise de sentimento](luis-how-to-publish-app.md#enable-sentiment-analysis)|inválido|sem encargos|Adicionando informações de sentimento incluindo extração de dados de frase de chave |
-|Integração de fala|inválido|US$ 5,50/1 mil solicitações de ponto de extremidade|Converter declaração falada em declaração de texto e retornar resultados do LUIS|
+|[Integração de fala](../speech-service/how-to-recognize-intents-from-speech-csharp.md)|inválido|US$ 5,50/1 mil solicitações de ponto de extremidade|Converter declaração falada em declaração de texto e retornar resultados do LUIS|
 
 ## <a name="keyboard-controls"></a>Controles de teclado
 
@@ -84,7 +84,7 @@ A chave de criação tem diferentes limites para criação e ponto de extremidad
 |--|--|
 |Control+E|alterna entre tokens e entidades na lista de declarações|
 
-## <a name="website-sign-in-time-period"></a>Período de tempo de entrada no site
+## <a name="website-sign-in-time-period"></a>Período de tempo de entrada do site
 
 O acesso de entrada é para **60 minutos**. Após esse período, você obterá esse erro. Você precisa entrar novamente.
 

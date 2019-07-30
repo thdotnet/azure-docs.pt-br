@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 04/01/2019
+ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: 1aed6f9a0ceec18ca800e5030ec09bbb8d98cb76
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: e85f9a90af778a7e68bf761d8d2159e808cf122d
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68560716"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639215"
 ---
 # <a name="phrase-list-features-in-your-luis-app"></a>Recurso de lista de frases em seu aplicativo LUIS
 
@@ -35,7 +35,7 @@ Listas de frase não estão vinculadas a uma intenção ou entidade específico,
 
 ## <a name="how-to-use-phrase-lists"></a>Como usar as listas de frase
 
-Crie uma lista de frases quando seu aplicativo tiver palavras ou frases importantes para o aplicativo, como:
+[Crie uma lista de frases](luis-how-to-add-features.md) quando seu aplicativo tiver palavras ou frases que são importantes para o aplicativo, como:
 
 * termos do setor
 * gírias
@@ -88,7 +88,7 @@ Uma lista de frases não é uma instrução para o LUIS executar uma correspond�
 Adicionar uma lista de frases é uma alternativa à adição de mais declarações de exemplo para uma intenção. 
 
 ## <a name="when-to-use-phrase-lists-versus-list-entities"></a>Quando usar listas de frase versus entidades de lista
-Embora uma lista de frases e as entidades de lista possam afetar as declarações em todas as intenções, cada uma faz isso de maneira diferente. Use uma lista de frases para afetar a pontuação de previsão da intenção. Use uma entidade de lista para afetar a extração de entidade de uma correspondência exata do texto. 
+Embora uma lista de frases e as [entidades de lista](reference-entity-list.md) possam afetar o declarações em todas as intenções, cada uma faz isso de uma maneira diferente. Use uma lista de frases para afetar a pontuação de previsão da intenção. Use uma entidade de lista para afetar a extração de entidade de uma correspondência exata do texto. 
 
 ### <a name="use-a-phrase-list"></a>Usar uma lista de frases
 Com uma lista de frases, o LUIS ainda pode levar o contexto em consideração e generalizar para identificar os itens que são semelhantes, mas que não são uma correspondência exata, como itens em uma lista. Se você precisar que o seu aplicativo LUIS generalize e identifique novos itens em uma categoria, use uma lista de frases. 

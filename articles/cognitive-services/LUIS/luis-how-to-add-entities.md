@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 04/01/2019
+ms.date: 07/29/2019
 ms.author: diberry
-ms.openlocfilehash: fdf60a454aeb19b83ce455a771b8399c90af3bce
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 1b42ab9155f5b9719ef6477934722021e3fbac99
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68563756"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638242"
 ---
 # <a name="create-entities-without-utterances"></a>Criar entidades sem declarações
 
@@ -114,13 +114,13 @@ No enunciado `Where is Request relocation from employee new to the company on th
 
 Uma função é um subtipo nomeado com base no contexto. Ele está disponível em todas as entidades, incluindo entidades predefinidas e não aprendidas por computador. 
 
-A sintaxe de uma função é **`{Entityname:Rolename}`** onde o nome da entidade é seguido por dois-pontos e, em seguida, o nome da função. Por exemplo, `Move {personName} from {LocationUsingRoles:Origin} to {LocationUsingRoles:Destination}`.
+A sintaxe de uma função é **`{Entityname:Rolename}`** onde o nome da entidade é seguido por dois-pontos e, em seguida, o nome da função. Por exemplo, `Move {personName} from {Location:Origin} to {Location:Destination}`.
 
 1. Na seção **Build**, selecione **Entities** no painel esquerdo.
 
-1. Selecione **Criar nova entidade**. Insira o nome de `LocationUsingRoles`. Selecione o tipo **simples** e selecione **feito**. 
+1. Selecione **Criar nova entidade**. Insira o nome de `Location`. Selecione o tipo **simples** e selecione **feito**. 
 
-1. Selecione **Entities** no painel esquerdo e, em seguida, selecione a nova entidade **LocationUsingRoles** criada na etapa anterior.
+1. Selecione **entidades** no painel esquerdo e, em seguida, selecione o novo **local** de entidade criado na etapa anterior.
 
 1. Na caixa de texto **Nome da função**, insira o nome da função `Origin` e insira. Adicione um segundo nome de função `Destination`. 
 

@@ -2,19 +2,19 @@
 title: Como funciona o Personalizador – Personalizador
 titleSuffix: Azure Cognitive Services
 description: O Personalizador usa o aprendizado de máquina para descobrir qual ação deve ser usada em um contexto. Cada loop de aprendizado tem um modelo que é treinado exclusivamente nos dados que você enviou para ele por meio de chamadas de Classificação e Recompensa. Cada loop de aprendizado é completamente independente entre si.
-author: edjez
+author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 06/07/2019
-ms.author: edjez
-ms.openlocfilehash: 7bdafafc0d542a98b80f2b6f5db2c14c8777bf5b
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.author: diberry
+ms.openlocfilehash: e55ccb508760c4473f71245c183948219f31985c
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68423248"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68663905"
 ---
 # <a name="how-personalizer-works"></a>Como funciona o Personalizador
 

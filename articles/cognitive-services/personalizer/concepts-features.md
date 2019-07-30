@@ -3,19 +3,19 @@ title: 'Recursos: Ação e contexto – Personalizador'
 titleSuffix: Azure Cognitive Services
 description: O Personalizador usa recursos, informações sobre ações e contexto, para oferecer melhores sugestões de classificação. Os recursos podem ser muitos genéricos ou específicos a um item.
 services: cognitive-services
-author: edjez
+author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 06/24/2019
-ms.author: edjez
-ms.openlocfilehash: c317cbec02b82743c233bf36f743cea808c30c69
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.author: diberry
+ms.openlocfilehash: 1960856ce2f15945d1b1bfa093f349771d481ffc
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68253584"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68663837"
 ---
 # <a name="features-are-information-about-actions-and-context"></a>Recursos são informações sobre ações e contexto
 
@@ -29,23 +29,23 @@ Por exemplo, você pode ter um **recurso** sobre:
 * O _conteúdo_, por exemplo, se um vídeo é um `Documentary`, um `Movie` ou uma `TV Series`, ou se um item de varejo está disponível na loja.
 * O período _atual_, por exemplo, qual é o dia da semana.
 
-Personalizer não prescrever, limitar ou corrigir a quais recursos você pode enviar para ações e contexto:
+O personalizador não prescreve, limita ou corrige quais recursos você pode enviar para ações e contexto:
 
 * Você pode enviar alguns recursos para algumas ações e não para outras, caso não os tenha. Por exemplo, uma série de TV pode ter atributos que filmes não têm.
 * Você pode ter alguns recursos disponíveis apenas algumas vezes. Por exemplo, um aplicativo móvel pode fornecer mais informações do que uma página da Web. 
 * Ao longo do tempo, você pode adicionar e remover recursos sobre ações e contexto. O Personalizador continua aprendendo com as informações disponíveis.
-* Deve haver, pelo menos, um recurso para o contexto. O Personalizador não dá suporte a um contexto vazio. Se você enviar apenas um contexto fixo sempre, o Personalizador escolherá a ação para classificações somente referente aos recursos nas ações. 
-* O Personalizador tentará escolher as ações que funcionam melhor para todas as pessoas a qualquer momento.
+* Deve haver, pelo menos, um recurso para o contexto. O Personalizador não dá suporte a um contexto vazio. Se você enviar apenas um contexto fixo sempre, o Personalizador escolherá a ação para classificações somente referente aos recursos nas ações.
+* Para recursos categóricos, não é necessário definir os valores possíveis, e você não precisa definir os intervalos predefinidos para valores numéricos.
 
 ## <a name="supported-feature-types"></a>Tipos de recursos compatíveis
 
 O Personalizador dá suporte a recursos de tipos de cadeia de caracteres, numéricos e boolianos.
 
-### <a name="how-choice-of-feature-type-affects-machine-learning-in-personalizer"></a>Como opção do tipo de recurso afeta o aprendizado de máquina no Personalizer
+### <a name="how-choice-of-feature-type-affects-machine-learning-in-personalizer"></a>Como a escolha do tipo de recurso afeta Machine Learning no Personalizador
 
-* **Cadeias de caracteres**: Para tipos de cadeia de caracteres, cada combinação de chave e valor cria novo pesos na máquina Personalizer modelo de aprendizado. 
-* **Numérico**: Quando o número proporcionalmente deve afetar o resultado de personalização, você deve usar valores numéricos. Isso é muito dependente de cenário. Um exemplo simplificado, por exemplo, quando a personalização de um retail experiência, NumberOfPetsOwned poderia ser um recurso que é numérico à medida que as pessoas com 2 ou 3 animais de estimação para influenciar o resultado de personalização duas vezes ou três vezes por tanto quanto com 1 animal de estimação. Recursos que se baseiam em unidades numéricas, mas em que o significado não é linear - como idade, temperatura ou altura de pessoa - melhor são codificados como cadeias de caracteres e a qualidade do recurso normalmente podem ser melhorado com o uso de intervalos. Por exemplo, idade poderia ser codificada como "Age": "0-5", "Age": "6-10", etc.
-* **Booliano** valores enviados com o valor do act "false", como se não tivesse sido enviadas em todos os.
+* **Cadeias de caracteres**: Para tipos de cadeia de caracteres, cada combinação de chave e valor cria novos pesos no modelo personalizado de aprendizado de máquina. 
+* **Numérico**: Você deve usar valores numéricos quando o número deve afetar proporcionalmente o resultado da personalização. Isso depende muito do cenário. Em um exemplo simplificado, por exemplo, ao personalizar uma experiência de varejo, o NumberOfPetsOwned pode ser um recurso que é numérico, pois você pode querer que as pessoas com 2 ou 3 animais de estimação influenciem o resultado da personalização duas vezes ou três vezes por até um animal de estimação. Recursos que são baseados em unidades numéricas, mas em que o significado não é linear, como idade, temperatura ou altura da pessoa, são mais bem codificados como cadeias de caracteres, e a qualidade do recurso pode ser normalmente melhorada usando intervalos. Por exemplo, age pode ser codificada como "Age": "0-5", "Age": "6-10", etc.
+* Valores Boolianos enviados com o valor "false" funcionam como se não tivessem sido enviados.
 
 Os recursos que não estão presentes devem ser omitidos da solicitação. Evite o envio de recursos com um valor nulo, pois ele será processado como existente e com um valor igual a "nulo" ao treinar o modelo.
 
@@ -66,12 +66,12 @@ Estes são exemplos de namespaces de recurso usados por aplicativos:
 * current_time
 * NewsArticle_TextAnalytics
 
-Você pode nomear os namespaces de recurso seguindo suas próprias convenções, desde que elas sejam chaves JSON válidas. Namespaces são usados para organizar recursos em conjuntos distintos e para resolver a ambiguidade de recursos com nomes semelhantes. Você pode pensar em namespaces como um prefixo que é adicionado aos nomes de recurso. Namespaces não podem ser aninhados.
+Você pode nomear os namespaces de recurso seguindo suas próprias convenções, desde que elas sejam chaves JSON válidas. Os namespaces são usados para organizar recursos em conjuntos distintos e para desambiguar recursos com nomes semelhantes. Você pode considerar os namespaces como um ' prefix ' que é adicionado aos nomes de recursos. Namespaces não podem ser aninhados.
 
 
-No JSON a seguir, `user`, `state` e `device` são namespaces de recurso. Observação de visualização pública: No momento fortemente recomendamos usar nomes de namespaces do recurso com base em UTF-8 e começar com diferentes letras. Por exemplo, `user`, `state`, e `device` começam com `u`, `s`, e `d`. Atualmente ter namespaces com os mesmos caracteres primeiro pode resultar em colisões em índices usados para aprendizado de máquina.
+No JSON a seguir, `user`, `state` e `device` são namespaces de recurso. Observação de visualização pública: No momento, é altamente recomendável usar nomes para namespaces de recursos que são baseados em UTF-8 e começar com letras diferentes. Por `user`exemplo `device` `u`,, e comece com ,`s`e .`d` `state` Atualmente, ter namespaces com os mesmos primeiros caracteres pode resultar em colisões em índices usados para aprendizado de máquina.
 
-Objetos JSON podem incluir objetos JSON aninhados e simples/valores de propriedade. Uma matriz pode ser incluída somente se os itens da matriz são números. 
+Os objetos JSON podem incluir objetos JSON aninhados e propriedades/valores simples. Uma matriz só poderá ser incluída se os itens de matriz forem números. 
 
 ```JSON
 {
@@ -125,7 +125,7 @@ Por exemplo, um carimbo de data/hora que inclui os segundos é um recurso muito 
 
 #### <a name="expand-feature-sets-with-extrapolated-information"></a>Expandir conjuntos de recursos com informações extrapoladas
 
-Você também pode obter mais recursos pensando em atributos inexplorados que podem ser derivados das informações que você já tem. Por exemplo, em uma personalização de lista de filme fictícios, é possível que um dia da semana do final de semana versus gera um comportamento diferente de usuários? A hora pode ser expandida para ter um atributo "fim de semana" ou "dia útil". Os feriados culturais nacionais atraem a atenção para determinados tipos de filme? Por exemplo, um atributo "Dia das Bruxas" é útil em locais em que ele é relevante. É possível que o clima chuvoso tenha impacto significativo na escolha de um filme para muitas pessoas? Com a hora e o local, um serviço de meteorologia pode fornecer essas informações, e você pode adicioná-lo como um recurso extra. 
+Você também pode obter mais recursos pensando em atributos inexplorados que podem ser derivados das informações que você já tem. Por exemplo, em uma personalização de lista de filmes fictícias, é possível que um fim de semana em vez de um dia final dos usuários seja diferente do comportamento? A hora pode ser expandida para ter um atributo "fim de semana" ou "dia útil". Os feriados culturais nacionais atraem a atenção para determinados tipos de filme? Por exemplo, um atributo "Dia das Bruxas" é útil em locais em que ele é relevante. É possível que o clima chuvoso tenha impacto significativo na escolha de um filme para muitas pessoas? Com a hora e o local, um serviço de meteorologia pode fornecer essas informações, e você pode adicioná-lo como um recurso extra. 
 
 #### <a name="expand-feature-sets-with-artificial-intelligence-and-cognitive-services"></a>Expandir conjuntos de recursos com inteligência artificial e serviços cognitivos
 
@@ -200,7 +200,7 @@ Em alguns casos, só pode ser determinado posteriormente na lógica de negócios
 
 Ao chamar a Classificação, você enviará várias ações para sua escolha:
 
-Objetos JSON podem incluir objetos JSON aninhados e simples/valores de propriedade. Uma matriz pode ser incluída somente se os itens da matriz são números. 
+Os objetos JSON podem incluir objetos JSON aninhados e propriedades/valores simples. Uma matriz só poderá ser incluída se os itens de matriz forem números. 
 
 ```json
 {
@@ -281,7 +281,7 @@ Seu aplicativo é responsável por carregar as informações sobre o contexto do
 
 O contexto é expresso como um objeto JSON que é enviado para a API de Classificação:
 
-Objetos JSON podem incluir objetos JSON aninhados e simples/valores de propriedade. Uma matriz pode ser incluída somente se os itens da matriz são números. 
+Os objetos JSON podem incluir objetos JSON aninhados e propriedades/valores simples. Uma matriz só poderá ser incluída se os itens de matriz forem números. 
 
 ```JSON
 {
