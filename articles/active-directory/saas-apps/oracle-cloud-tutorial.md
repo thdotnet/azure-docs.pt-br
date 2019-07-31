@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 06/10/2019
+ms.date: 07/26/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 456c984e577e3427ce8cd62d6f63987118f2c8ed
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: e0725988ff88baea2458f0a5e459440874e66088
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67164146"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68596431"
 ---
 # <a name="tutorial-integrate-oracle-cloud-infrastructure-console-with-azure-active-directory"></a>Tutorial: Integrar o Console da Infraestrutura de Nuvem da Oracle com o Azure Active Directory
 
@@ -165,7 +165,7 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
       ![Configuração](./media/oracle-cloud-tutorial/config09.png)
 
-   1. Nos campos **GRUPO DE PROVEDOR DE IDENTIDADE**, insira o nome do grupo e a ID do grupo que estão configurados no portal do Azure. O grupo precisa ser mapeado com o grupo correspondente no campo **GRUPO OCI**.
+   1. O **GRUPO DE PROVEDOR DE IDENTIDADE** deve ser selecionado como Grupo Personalizado. A ID DO GRUPO deve ser a GUID do grupo do Azure Active Directory. O grupo precisa ser mapeado com o grupo correspondente no campo **GRUPO OCI**.
 
    1. Você pode mapear vários grupos de acordo com sua configuração no portal do Azure e sua necessidade de organização. Clique em **+ Adicionar mapeamento** para adicionar quantos grupos conforme necessário.
 
@@ -217,4 +217,4 @@ Quando selecionar o bloco do Console da Infraestrutura de Nuvem da Oracle no Pai
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

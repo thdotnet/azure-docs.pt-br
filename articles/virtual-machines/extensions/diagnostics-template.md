@@ -1,6 +1,6 @@
 ---
 title: Adicionar monitoramento e diagnóstico a uma máquina virtual do Azure | Microsoft Docs
-description: Use um modelo do Azure Resource Manager para criar uma nova máquina virtual Windows com extensão de diagnóstico do Azure.
+description: Use um modelo de Azure Resource Manager para criar uma nova máquina virtual do Windows com a extensão de diagnóstico do Azure.
 services: virtual-machines-windows
 documentationcenter: ''
 author: sbtron
@@ -17,10 +17,10 @@ ms.date: 05/31/2017
 ms.author: saurabh
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 8d1c5598bd7ea5b3f35d5447935953d4cd55664a
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 07/31/2019
 ms.locfileid: "67706764"
 ---
 # <a name="use-monitoring-and-diagnostics-with-a-windows-vm-and-azure-resource-manager-templates"></a>Usar monitoramento e diagnóstico com uma VM Windows e modelos do Azure Resource Manager

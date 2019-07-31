@@ -8,12 +8,12 @@ ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 3d0295512452367cb0f70f1d9ca6e950d6649353
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 2578202c2464248c1c765368d308ca669d918057
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67669317"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68562545"
 ---
 # <a name="how-to-create-and-locate-anchors-using-azure-spatial-anchors-in-cndk"></a>Como criar e localizar âncoras usando as Âncoras Espaciais do Azure no C++/NDK
 
@@ -39,7 +39,7 @@ Para concluir este guia, verifique se você tem:
 - Leia a [Visão geral de Âncoras Espaciais do Azure](../overview.md).
 - Concluído um dos [Inícios Rápidos de 5 minutos](../index.yml).
 - Conhecimento básico sobre o C++ e o <a href="https://developer.android.com/ndk/" target="_blank">Kit de Desenvolvimento Nativo do Android</a>.
-- Conhecimento básico sobre o <a href="https://developers.google.com/ar/discover/" target="_blank">ARCore</a> 1.7.
+- Conhecimento básico sobre o <a href="https://developers.google.com/ar/discover/" target="_blank">ARCore</a>.
 
 [!INCLUDE [Start](../../../includes/spatial-anchors-create-locate-anchors-start.md)]
 

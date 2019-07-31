@@ -14,14 +14,14 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 2/28/2019
+ms.date: 7/25/2019
 ms.author: rkarlin
-ms.openlocfilehash: 52346e2ff9c47e58f2bd040582bee29eaf08bb13
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: cdfe22b67585221e2d7e17f47c6a09ba929d68ef
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67621206"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599021"
 ---
 # <a name="tutorial-set-up-automated-threat-responses-in-azure-sentinel-preview"></a>Tutorial: Configurar respostas de ameaças automatizado na visualização do Azure Sentinel
 
@@ -36,6 +36,7 @@ Este tutorial ajuda você a usar os Guias estratégicos de segurança no Azure S
 > * Entender os Guias estratégicos
 > * Criar um Guia estratégico
 > * Executar um Guia estratégico
+> * Automatizar as respostas a ameaças
 
 
 ## <a name="what-is-a-security-playbook-in-azure-sentinel"></a>O que é um Guia estratégico de segurança no Azure Sentinel?
@@ -95,9 +96,29 @@ Executar um Guia estratégico sob demanda:
 
 
 
+## <a name="automate-threat-responses"></a>Automatizar as respostas a ameaças
+
+As equipes SIEM/SOC podem ser inundadas com alertas de segurança regularmente. O volume de alertas gerados é tão grande que os administradores de segurança disponíveis estão sobrecarregados. Muito frequentemente, isso gera situações em que muitos alertas não podem ser investigados, deixando a organização vulnerável a ataques que passam despercebidos. 
+
+Muitos desses alertas, se não a maioria, estão em conformidade com os padrões recorrentes que podem ser resolvidos por ações de correção específicas e definidas. O Azure Sentinel já permite que você defina sua correção nos guias estratégicos. Também é possível definir a automação em tempo real como parte da definição de guia estratégico para permitir a automatização completa de uma resposta definida a alertas de segurança específicos. Com a automação em tempo real, as equipes de resposta podem reduzir significativamente a carga de trabalho automatizando completamente as respostas de rotina a tipos recorrentes de alertas, permitindo que você se concentre mais em alertas exclusivos, análise de padrões, busca de ameaças e muito mais.
+
+Para automatizar as respostas:
+
+1. Escolha o alerta para o qual você deseja automatizar a resposta.
+1. No menu de navegação do workspace do Azure Sentinel, selecione **Análise**.
+1. Selecione o alerta que você deseja automatizar. 
+1. Na página **Editar regra de alerta**, em **Automação em tempo real**, escolha o **Guia estratégico disparado** que deve ser executado quando a regra de alerta for correspondente.
+1. Clique em **Salvar**.
+
+   ![automação em tempo real](./media/tutorial-detect-threats/rt-configuration.png)
+
+
+
+
+
 
 ## <a name="next-steps"></a>Próximas etapas
-Neste artigo, você aprendeu a executar um manual no Azure Sentinel. Para saber mais sobre o Azure Sentinel, consulte os seguintes artigos: Neste tutorial, você aprendeu a executar um manual no Azure Sentinel. Continue para o [Como buscar ameaças proativamente](hunting.md) usando o Azure Sentinel.
-> [!div class="nextstepaction"]
-> [Busca de ameaças](hunting.md) para proativamente encontrar ameaças em sua rede.
+
+Neste tutorial, você aprendeu a executar um manual no Azure Sentinel. Continue para o [Como buscar ameaças proativamente](hunting.md) usando o Azure Sentinel.
+
 

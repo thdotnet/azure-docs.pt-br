@@ -9,10 +9,10 @@ ms.topic: tutorial
 ms.date: 06/24/2019
 ms.author: sngun
 ms.openlocfilehash: 85d9cbe7d0807ca0e7951e1e12d1edbbf7c921db
-ms.sourcegitcommit: 6b41522dae07961f141b0a6a5d46fd1a0c43e6b2
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67985846"
 ---
 # <a name="tutorial-develop-an-aspnet-core-mvc-web-application-with-azure-cosmos-db-by-using-net-sdk"></a>Tutorial: Desenvolver um aplicativo Web ASP.NET Core MVC com o Azure Cosmos DB usando o SDK do .NET 
@@ -132,7 +132,7 @@ Agora vamos adicionar os modelos, as exibições e os controladores ao aplicativ
 
    [!code-csharp[Main](~/samples-cosmosdb-dotnet-core-web-app/src/Controllers/ItemController.cs)]
 
-   O atributo **ValidateAntiForgeryToken** é usado aqui para ajudar a proteger esse aplicativo contra ataques de solicitação intersite forjada. Isso envolve mais do que apenas adicionar esse atributo, pois as exibições também precisam trabalhar com esse token antifalsificação. Para saber mais sobre o assunto e ver exemplos de como implementar isso corretamente, confira [Como prevenir solicitação intersite forjada][Preventing Cross-Site Request Forgery]. The source code provided on [GitHub][GitHub] tem a implementação completa em vigor.
+   O atributo **ValidateAntiForgeryToken** é usado aqui para ajudar a proteger esse aplicativo contra ataques de solicitação intersite forjada. Isso envolve mais do que apenas adicionar esse atributo, pois as exibições também precisam trabalhar com esse token antifalsificação. Para saber mais sobre o assunto e ver exemplos de como implementar isso corretamente, confira [Impedir solicitação intersite forjada][Preventing Cross-Site Request Forgery]. O código-fonte fornecido no [GitHub][GitHub] tem a implementação completa estabelecida.
 
    Também usamos o atributo **Bind** no parâmetro de método para ajudar na proteção contra ataques overposting. Para obter mais detalhes, confira [Operações CRUD básicas no ASP.NET MVC][Basic CRUD Operations in ASP.NET MVC].
 

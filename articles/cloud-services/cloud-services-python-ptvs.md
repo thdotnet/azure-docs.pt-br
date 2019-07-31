@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 07/18/2017
 ms.author: gwallace
 ms.openlocfilehash: 981b1cc4a7adb98ba68ebf3a7673b7116479e704
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
+ms.lasthandoff: 07/31/2019
 ms.locfileid: "68359564"
 ---
 # <a name="python-web-and-worker-roles-with-python-tools-for-visual-studio"></a>Funções Web e de trabalho do Python com Ferramentas Python para Visual Studio
@@ -23,15 +23,15 @@ Este artigo oferece uma visão geral do uso das funções Web e de trabalho do P
 ## <a name="prerequisites"></a>Pré-requisitos
 * [Visual Studio 2013, 2015 ou 2017](https://www.visualstudio.com/)
 * [Python Tools for Visual Studio][Python Tools for Visual Studio] (PTVS)
-* [SDK Tools do Azure para VS 2013][Azure SDK Tools for VS 2013] or  
-[Azure SDK Tools for VS 2015][Azure SDK Tools for VS 2015] ou  
-[SDK Tools do Azure para VS 2017] [SDK Tools do Azure para VS 2017]
+* [SDK Tools do Azure para VS 2013][Azure SDK Tools for VS 2013] ou  
+[SDK Tools do Azure para VS 2015][Azure SDK Tools for VS 2015] ou  
+[SDK Tools do Azure para VS 2017][Azure SDK Tools for VS 2017]
 * [Python 2.7 de 32 bits][Python 2.7 32-bit] ou [Python 3.5 de 32 bits][Python 3.5 32-bit]
 
 [!INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 ## <a name="what-are-python-web-and-worker-roles"></a>O que são funções Web e de Trabalho do Python?
-O Azure fornece três modelos de computação para a execução de aplicativos: [Recurso de aplicativos Web no serviço][execution model-web sites], [Azure Virtual Machines][execution model-vms]de Azure app e modelo de execução de [serviços de nuvem do Azure][-serviços de nuvem]. Todos os três modelos oferecem suporte ao Python. Os Serviços de Nuvem, que incluem as funções Web e de trabalho, fornecem a *PaaS (plataforma como serviço)* . Dentro de um serviço de nuvem, uma função Web fornece um servidor web dos Serviços de Informações da Internet (IIS) dedicado para hospedar aplicativos web de front-end, enquanto uma função de trabalho pode executar tarefas assíncronas, de longa execução ou perpétuas independentes de interação com o usuário ou de entrada.
+O Azure fornece três modelos de computação para a execução de aplicativos: [Recurso de aplicativos Web no serviço de Azure app][execution model-web sites], [máquinas virtuais do Azure][execution model-vms]e [serviços de nuvem do Azure][execution model-cloud services]. Todos os três modelos oferecem suporte ao Python. Os Serviços de Nuvem, que incluem as funções Web e de trabalho, fornecem a *PaaS (plataforma como serviço)* . Dentro de um serviço de nuvem, uma função Web fornece um servidor web dos Serviços de Informações da Internet (IIS) dedicado para hospedar aplicativos web de front-end, enquanto uma função de trabalho pode executar tarefas assíncronas, de longa execução ou perpétuas independentes de interação com o usuário ou de entrada.
 
 Para saber mais, confira [O que é um Serviço de Nuvem?].
 
