@@ -13,7 +13,7 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 09/24/2018
+  ms.date: 07/29/2019
   ms.author: nitinme
 abstract:
   description: 'A API de Análise de Texto é um serviço baseado em nuvem que fornece um processamento de linguagem natural avançado sobre texto bruto e inclui quatro funções principais: análise de sentimento, extração de frases-chave, reconhecimento de entidade nomeada e detecção de idioma. Aprenda a analisar o conteúdo de diferentes maneiras com nossos tutoriais, tutoriais e exemplos.'
@@ -34,11 +34,11 @@ sections:
             image:
               src: ../media/index/i_get-started.svg
             title: Inscrever-se para usar a API de Análise de Texto
-          - href: /azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-access-key
-            html: <p>Saiba como obter as chaves de acesso e os pontos de extremidade para a API de Análise de Texto.</p>
+          - href: /azure/cognitive-services/text-analytics/whats-new
+            html: <p>Mantenha-se atualizado com os desenvolvimentos recentes na API de Análise de Texto.</p>
             image:
               src: ../media/index/i_tasks.svg
-            title: Chaves de acesso para a API de Análise de Texto
+            title: O que há de novo na API de Análise de Texto?
   - title: Guia de início rápido de 5 minutos
     items:
       - type: paragraph

@@ -105,8 +105,14 @@
           href: container-registry-tasks-multi-step.md
         - name: Criar imagem com Buildpacks (versão prévia)
           href: container-registry-tasks-pack-build.md
-        - name: Usar com identidade gerenciada
-          href: container-registry-tasks-authentication-managed-identity.md
+        - name: Acessar recursos seguros com identidades gerenciadas
+          items:
+            - name: Habilitar uma identidade gerenciada em uma tarefa
+              href: container-registry-tasks-authentication-managed-identity.md
+            - name: Autenticação entre registros de uma tarefa
+              href: container-registry-tasks-cross-registry-authentication.md
+            - name: Autenticação externa usando um cofre de chaves
+              href: container-registry-tasks-authentication-key-vault.md
     - name: Registros e outros serviços do Azure
       items:
         - name: Instâncias de Contêiner do Azure

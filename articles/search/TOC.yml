@@ -231,7 +231,9 @@
           href: cognitive-search-resources-documentation.md
     - name: Repositório de conhecimento (versão prévia)
       items:
-        - name: Como começar
+        - name: Conectar usando o Power BI
+          href: knowledge-store-connect-powerbi.md
+        - name: Criar usando REST e Postman
           href: knowledge-store-howto.md
     - name: Consultar dados
       items:

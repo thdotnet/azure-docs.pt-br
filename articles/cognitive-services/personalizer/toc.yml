@@ -43,6 +43,8 @@
         - name: Avaliação offline
           href: concepts-offline-evaluation.md
           displayName: 'learning policy, Counterfactual, features'
+        - name: Avaliação de recurso
+          href: concept-feature-evaluation.md
     - name: Desempenho e escalabilidade
       href: concepts-scalability-performance.md
 - name: Guias de instruções

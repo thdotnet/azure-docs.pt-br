@@ -33,6 +33,12 @@
   items:
     - name: SDK do Python
       items:
+        - name: Criar primeiro experimento do ML
+          items:
+            - name: 1. Workspace de instalação e ambiente de desenvolvimento
+              href: tutorial-1st-experiment-sdk-setup.md
+            - name: 2. Treinar seu primeiro modelo
+              href: tutorial-1st-experiment-sdk-train.md
         - name: Classificação de imagem (dados MNIST)
           items:
             - name: 1. Treinar um modelo

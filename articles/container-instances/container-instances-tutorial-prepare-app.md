@@ -10,10 +10,10 @@ ms.date: 03/21/2018
 ms.author: danlep
 ms.custom: seodec18, mvc
 ms.openlocfilehash: 719237f63d387cf56ab7947f8f168e0aa4351376
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68325577"
 ---
 # <a name="tutorial-create-a-container-image-for-deployment-to-azure-container-instances"></a>Tutorial: Criar uma imagem de contêiner para implantação nas Instâncias de Contêiner do Azure
@@ -49,7 +49,7 @@ Também é possível [baixar o arquivo morto ZIP][aci-helloworld-zip] diretament
 
 ## <a name="build-the-container-image"></a>Criar a imagem de contêiner
 
-O Dockerfile no aplicativo de exemplo mostra como o contêiner é criado. Ele é iniciado de uma [imagem oficial do Node.js][docker-hub-nodeimage] based on [Alpine Linux][alpine-linux], uma distribuição pequena que é adequada para uso com contêineres. Em seguida, ele copia os arquivos do aplicativo para o contêiner, instala dependências usando o Gerenciador de Pacotes do Node e inicia o aplicativo.
+O Dockerfile no aplicativo de exemplo mostra como o contêiner é criado. Ele é iniciado por meio de uma [imagem oficial do Node.js][docker-hub-nodeimage] com base no [Alpine Linux][alpine-linux], uma distribuição pequena que é adequada para uso com contêineres. Em seguida, ele copia os arquivos do aplicativo para o contêiner, instala dependências usando o Gerenciador de Pacotes do Node e inicia o aplicativo.
 
 ```Dockerfile
 FROM node:8.9.3-alpine

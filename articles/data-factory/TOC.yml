@@ -526,6 +526,8 @@
           href: create-shared-self-hosted-integration-runtime-powershell.md
     - name: Executar pacotes SSIS no Azure
       items:
+        - name: Executar pacotes SSIS no Azure do SSDT
+          href: how-to-invoke-ssis-package-ssdt.md
         - name: Executar pacotes SSIS com a atividade Executar pacote do SSIS
           href: how-to-invoke-ssis-package-ssis-activity.md
         - name: Executar pacotes SSIS com a atividade de Procedimento Armazenado
