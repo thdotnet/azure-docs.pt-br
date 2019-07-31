@@ -52,7 +52,8 @@
     - name: Uso de insights do Bing
       href: bing-insights-usage.md
     - name: Análise de API de pesquisa Visual
-      href: bing-visual-search-stats.md
+      maintainContext: true
+      href: ../bing-web-search/bing-web-stats.md
 - name: Guias de instruções
   items:
     - name: Obter insights usando tokens
