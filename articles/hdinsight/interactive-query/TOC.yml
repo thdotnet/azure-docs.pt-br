@@ -28,6 +28,8 @@
           items:
             - name: Limite de sobrecarga de GC excedido
               href: ./interactive-query-troubleshoot-outofmemory-overhead-exceeded.md
+        - name: Desempenho da consulta do Apache Hive LLAP
+          href: ./interactive-query-troubleshoot-query-performance.md
 - name: Como
   items:
     - name: Migrar cargas de trabalho do Hive para o HDInsight 4.0

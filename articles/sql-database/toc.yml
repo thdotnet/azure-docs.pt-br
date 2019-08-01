@@ -175,7 +175,7 @@
           href: sql-database-service-tier-hyperscale-faq.md
     - name: Bancos de dados únicos
       items:
-        - name: Visão geral de banco de dados individual
+        - name: Documentação do banco de dados individual
           href: sql-database-single-index.yml
         - name: Funcionalidades de banco de dados individual
           href: sql-database-single-database.md
@@ -215,7 +215,7 @@
           href: sql-database-elastic-pool-manage.md
     - name: Instâncias gerenciadas
       items:
-        - name: Visão geral de instâncias gerenciadas
+        - name: Documentação da instância gerenciada
           href: sql-database-managed-instance-index.yml
         - name: Recursos de instâncias gerenciadas
           href: sql-database-managed-instance.md
@@ -235,7 +235,7 @@
           href: sql-database-managed-instance-public-endpoint-securely.md
     - name: Plataforma como serviço
       items:
-        - name: Visão geral de PaaS (plataforma como serviço)
+        - name: Documentação da plataforma como serviço
           href: sql-database-paas.yml
         - name: Continuidade dos negócios
           href: sql-database-business-continuity.md
@@ -324,7 +324,7 @@
           href: sql-database-feature-restrictions.md
     - name: Escalabilidade
       items:
-        - name: Visão geral de escalabilidade
+        - name: Documentação de escalabilidade
           href: sql-database-scalability-index.yml
         - name: Aumentar/Reduzir
           href: sql-database-scale-resources.md
@@ -354,7 +354,7 @@
           href: sql-database-elastic-transactions-overview.md
     - name: Monitoramento e ajuste
       items:
-        - name: Visão geral de monitoramento e Ajuste
+        - name: Documentação de monitoramento e ajuste
           href: sql-database-monitoring-tuning-index.yml
         - name: Monitoramento e ajuste de desempenho
           href: sql-database-monitor-tune-overview.md
@@ -378,7 +378,7 @@
               href: sql-database-advisor.md
     - name: Recursos de bancos de dados
       items:
-        - name: Visão geral
+        - name: Documentação do recurso do Banco de Dados SQL
           href: sql-database-features-index.yml
         - name: Comparação de recursos do SQL
           href: sql-database-features.md

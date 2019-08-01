@@ -54,6 +54,14 @@
     - name: Entender identidades gerenciadas
       href: ../hdinsight-managed-identities.md
       maintainContext: true
+    - name: Solucionar problemas
+      items:
+        - name: Não é possível adicionar nós ao cluster HDInsight
+          href: ./hdinsight-troubleshoot-unable-add-nodes.md
+        - name: InvalidNetworkSecurityGroupSecurityRules – falha na criação do cluster
+          href: ./hdinsight-troubleshoot-invalidnetworksecuritygroupsecurityrules-cluster-creation-fails.md
+        - name: Convertendo um certificado de entidade de serviço
+          href: ./hdinsight-troubleshoot-converting-service-principal-certificate.md
 - name: Como
   items:
     - name: Usar área restrita do Apache Hadoop
