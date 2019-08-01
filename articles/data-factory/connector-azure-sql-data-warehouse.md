@@ -28,7 +28,7 @@ Este artigo descreve como copiar dados para e do Azure SQL Data Warehouse. Para 
 
 ## <a name="supported-capabilities"></a>Funcionalidades com suporte
 
-Este conector de Blob do Azure é compatível com as seguintes atividades:
+Este conector de Azure Blob é compatível com as seguintes atividades:
 
 - [Atividade de cópia](copy-activity-overview.md) com [suporte para a matriz de origem/coletor](copy-activity-overview.md) tabela
 - [Mapeamento de fluxo de dados](concepts-data-flow-overview.md)
@@ -421,7 +421,7 @@ Se os requisitos não forem atendidos, o Azure Data Factory verificará as confi
 
     | Tipo de repositório de dados de origem com suporte | Tipo de autenticação de origem com suporte |
     |:--- |:--- |
-    | [Blob do Azure](connector-azure-blob-storage.md) | Autenticação de chave de conta, autenticação de identidade gerenciada |
+    | [Azure Blob](connector-azure-blob-storage.md) | Autenticação de chave de conta, autenticação de identidade gerenciada |
     | [Azure Data Lake Storage Gen1](connector-azure-data-lake-store.md) | Autenticação de entidade de serviço |
     | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage.md) | Autenticação de chave de conta, autenticação de identidade gerenciada |
 
@@ -470,7 +470,7 @@ Se os requisitos não forem atendidos, o Azure Data Factory verificará as confi
 
 ### <a name="staged-copy-by-using-polybase"></a>Cópia organizada usando PolyBase
 
-Quando os dados de origem não atendem aos critérios da seção anterior, ative a cópia de dados por meio de uma instância intermediária de armazenamento do Blur de armazenamento temporário do Azure. Não pode ser o Armazenamento Premium do Azure. Nesse caso, o Azure Data Factory executa automaticamente as transformações nos dados para atender aos requisitos de formato de dados do PolyBase. Em seguida, ele usa o PolyBase para carregar os dados no SQL Data Warehouse. Finalmente, ele limpa seus dados temporários do armazenamento de blobs. Consulte [Cópia preparada](copy-activity-performance.md#staged-copy) para obter detalhes sobre a cópia de dados por meio de uma instância de armazenamento de Blob do Azure de preparação.
+Quando os dados de origem não atendem aos critérios da seção anterior, ative a cópia de dados por meio de uma instância intermediária de armazenamento do Blur de armazenamento temporário do Azure. Não pode ser o Armazenamento Premium do Azure. Nesse caso, o Azure Data Factory executa automaticamente as transformações nos dados para atender aos requisitos de formato de dados do PolyBase. Em seguida, ele usa o PolyBase para carregar os dados no SQL Data Warehouse. Finalmente, ele limpa seus dados temporários do armazenamento de blobs. Consulte [Cópia preparada](copy-activity-performance.md#staged-copy) para obter detalhes sobre a cópia de dados por meio de uma instância de armazenamento de Azure Blob de preparação.
 
 Para usar esse recurso, crie uma [serviço vinculado do armazenamento de BLOBs do Azure](connector-azure-blob-storage.md#linked-service-properties) que se refere à conta de armazenamento do Azure com o armazenamento de BLOBs provisório. Em seguida, especifique o `enableStaging` e `stagingSettings` propriedades da atividade de cópia, conforme mostrado no código a seguir.
 
