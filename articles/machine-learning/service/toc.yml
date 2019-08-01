@@ -91,6 +91,9 @@
       href: /azure/open-datasets/samples?context=azure/machine-learning/service/context/ml-context
 - name: Conceitos
   items:
+    - name: Aprendizado
+      displayName: 'deep learning vs machine learning, deep learning, vs, versus'
+      href: concept-deep-learning-vs-machine-learning.md
     - name: Workspace
       displayName: concept definitions architecture
       href: concept-workspace.md
@@ -115,8 +118,6 @@
       href: concept-accelerate-with-fpgas.md
     - name: ONNX e Tempo de Execução do ONNX
       href: concept-onnx.md
-    - name: Monitoramento de dessincronização de dados
-      href: concept-data-drift.md
     - name: Segurança
       items:
         - name: Visão geral de segurança empresarial
