@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: tutorial
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: 73f9ee597682cc995f3a2cc783abeee92bf11bd2
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: ea9728ac54ae357925bd666ffecf270172137f77
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68501135"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68688297"
 ---
 # <a name="tutorial-launch-the-immersive-reader-nodejs"></a>Tutorial: Iniciar a Leitura Avançada (Node.js)
 
@@ -126,7 +126,7 @@ O ponto de extremidade da API do **getimmersivereadertoken** deve ser protegido 
 
 ## <a name="launch-the-immersive-reader-with-sample-content"></a>Iniciar a Leitura Avançada com o conteúdo de exemplo
 
-1. Abra _views\layout.pug_ e adicione o seguinte código sob a marca `head`, antes da marca `body`. Essas marcas `script` carregam o [SDK de Leitura Avançada](https://github.com/Microsoft/immersive-reader-sdk) e jQuery.
+1. Abra _views\layout.pug_ e adicione o seguinte código sob a marca `head`, antes da marca `body`. Essas marcas `script` carregam o [SDK de Leitura Avançada](https://github.com/microsoft/immersive-reader-sdk) e jQuery.
 
     ```pug
     script(src='https://contentstorage.onenote.office.net/onenoteltir/immersivereadersdk/immersive-reader-sdk.0.0.2.js')
@@ -264,5 +264,5 @@ Você pode incluir o conteúdo de matemática na Leitura Avançada usando o [Mat
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* Explore o [SDK da Leitura Avançada](https://github.com/Microsoft/immersive-reader-sdk) e a [Referência de SDK da Leitura Avançada](./reference.md)
-* Visualize exemplos de código no [GitHub](https://github.com/microsoft/immersive-reader-sdk/tree/master/samples/advanced-csharp)
+* Explore o [SDK da Leitura Avançada](https://github.com/microsoft/immersive-reader-sdk) e a [Referência de SDK da Leitura Avançada](./reference.md)
+* Visualize exemplos de código no [GitHub](https://github.com/microsoft/immersive-reader-sdk/tree/master/js/samples/advanced-csharp)

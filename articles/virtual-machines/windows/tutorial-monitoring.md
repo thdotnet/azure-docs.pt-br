@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 12/05/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 05fd9f06bec2a68455d42bfd460f0a5a419a255e
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 25160c50cd4844fdb5b3a3454213b2067ef91d01
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67708050"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68608032"
 ---
 # <a name="tutorial-monitor-and-update-a-windows-virtual-machine-in-azure"></a>Tutorial: Monitorar e atualizar uma máquina virtual do Windows no Azure
 
@@ -300,4 +300,4 @@ Neste tutorial, você configurou e revisou VMs com a Central de Segurança do Az
 Avance para o próximo tutorial para saber mais sobre a Central de Segurança do Azure.
 
 > [!div class="nextstepaction"]
-> [Gerenciar a segurança da VM](./tutorial-azure-security.md)
+> [Gerenciar a segurança da VM](../../security/fundamentals/overview.md)

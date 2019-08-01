@@ -1,6 +1,6 @@
 ---
 title: 'Tutorial: Moderar imagens de produto de comércio eletrônico – Content Moderator'
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Configure um aplicativo para analisar e classificar imagens de produtos com rótulos especificados (usando a Pesquisa Visual Computacional e a Visão Personalizada do Azure). Marque imagens indesejáveis para serem examinadas mais detalhadamente (usando o Azure Content Moderator).
 services: cognitive-services
 author: PatrickFarley
@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: tutorial
 ms.date: 07/03/2019
 ms.author: pafarley
-ms.openlocfilehash: ec17f9f0206ef639bd47d694880c064a012ea1cf
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: b118a509f72af2146abf854b881fa34d8de302a1
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67604188"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564929"
 ---
 # <a name="tutorial-moderate-e-commerce-product-images-with-azure-content-moderator"></a>Tutorial: Moderar imagens de produto de comércio eletrônico com o Azure Content Moderator
 

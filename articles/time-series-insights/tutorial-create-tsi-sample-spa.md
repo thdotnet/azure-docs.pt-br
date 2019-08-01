@@ -8,12 +8,12 @@ ms.date: 06/29/2019
 ms.author: dpalled
 manager: cshankar
 ms.custom: seodec18
-ms.openlocfilehash: 8ee4cd30d5742896df96ccfd714d85ebbab194f9
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: bd50fb4a28aa0ab71c1fb0aeba772a2bd7d1df9d
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67595709"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68677736"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-single-page-web-app"></a>Tutorial: Criar um aplicativo Web de página única do Azure Time Series Insights
 
@@ -30,9 +30,9 @@ Neste tutorial, você aprenderá:
 > * O código-fonte completo deste tutorial está disponível no [GitHub](https://github.com/Microsoft/tsiclient/tree/tutorial/pages/tutorial).
 > * O [aplicativo de exemplo do cliente](https://insights.timeseries.azure.com/clientsample) do Time Series Insights está hospedado para mostrar o aplicativo concluído usado neste tutorial.
 
-## <a name="prerequisites"></a>Pré-requisitos
+Inscreva-se em uma [assinatura do Azure gratuita](https://azure.microsoft.com/free/) se já não tiver uma.
 
-* Inscreva-se em uma [assinatura do Azure gratuita](https://azure.microsoft.com/free/) se já não tiver uma.
+## <a name="prerequisites"></a>Pré-requisitos
 
 * Uma cópia gratuita do Visual Studio. Baixe as [versões Community 2017 ou 2019](https://www.visualstudio.com/downloads/) para começar.
 
@@ -57,7 +57,7 @@ Este tutorial também usa os dados do ambiente do Time Series Insights do aplica
 1. Crie um diretório para armazenar os arquivos do projeto de aplicativo. Em seguida, acesse cada uma das URLs a seguir. Clique com o botão direito do mouse no link **Bruto** no canto superior direito da página e selecione **Salvar como** para salvar os arquivos no diretório do projeto.
 
    - [*index.html*](https://github.com/Microsoft/tsiclient/blob/tutorial/pages/tutorial/index.html): HTML e JavaScript da página
-   - [*sampleStyles.css*]( https://github.com/Microsoft/tsiclient/blob/tutorial/pages/tutorial/sampleStyles.css): a folha de estilos CSS
+   - [*sampleStyles.css*](https://github.com/Microsoft/tsiclient/blob/tutorial/pages/tutorial/sampleStyles.css): a folha de estilos CSS
 
    > [!NOTE]
    > Dependendo do navegador, você precisará alterar as extensões de arquivo para .html ou .css antes de salvá-lo.

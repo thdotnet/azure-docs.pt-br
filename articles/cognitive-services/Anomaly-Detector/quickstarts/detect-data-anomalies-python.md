@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: quickstart
-ms.date: 03/26/2019
+ms.date: 07/26/2019
 ms.author: aahi
-ms.openlocfilehash: c69bc4db35a198d73f9b29ee3ed2fa6b6f71be49
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: f40f1b94b3e7c2732fd8bed0bc6e503277b533c3
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67721453"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68565822"
 ---
 # <a name="quickstart-detect-anomalies-in-your-time-series-data-using-the-anomaly-detector-rest-api-and-python"></a>Início Rápido: Detectar anomalias nos dados de série temporal usando o Python e a API REST do Detector de Anomalias
 
@@ -50,7 +50,7 @@ Use este início rápido para começar a usar os dois modos de detecção da API
     import json
     ```
 
-2. Crie variáveis para o ponto de extremidade e a chave de assinatura. Abaixo estão os URIs que você pode usar para a detecção de anomalias. Eles serão anexados ao seu ponto de extremidade de serviço posteriormente para criar as URLs de solicitação da API.
+2. Crie variáveis para o ponto de extremidade e a chave de assinatura. Abaixo estão os URIs que você pode usar para a detecção de anomalias. Eles serão anexados a seu ponto de extremidade de serviço posteriormente para criar as URLs de solicitação da API.
 
     |Método de detecção  |URI  |
     |---------|---------|
@@ -75,7 +75,7 @@ Use este início rápido para começar a usar os dois modos de detecção da API
 
 ## <a name="create-a-function-to-send-requests"></a>Criar uma função para enviar solicitações
 
-1. Crie uma nova função chamada `send_request()` que use as variáveis criadas anteriormente. Em seguida, siga estas etapas.
+1. Crie uma função chamada `send_request()` que use as variáveis criadas anteriormente. Em seguida, siga estas etapas.
 
 2. Crie um dicionário para os cabeçalhos de solicitação. Defina `Content-Type` como `application/json` e adicione a chave de assinatura ao cabeçalho `Ocp-Apim-Subscription-Key`.
 
@@ -149,7 +149,7 @@ detect_latest(json_data)
 ### <a name="example-response"></a>Exemplo de resposta
 
 Uma resposta bem-sucedida é retornada no formato JSON. Clique nos links abaixo para exibir a resposta JSON no GitHub:
-* [Exemplo de resposta de detecção de lote](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/batch-response.json)
+* [Exemplo de resposta de detecção em lote](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/batch-response.json)
 * [Exemplo de resposta de detecção do ponto mais recente](https://github.com/Azure-Samples/anomalydetector/blob/master/example-data/latest-point-response.json)
 
 ## <a name="next-steps"></a>Próximas etapas
