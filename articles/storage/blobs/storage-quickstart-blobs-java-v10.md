@@ -9,16 +9,18 @@ ms.topic: quickstart
 ms.date: 11/14/2018
 ms.author: mhopkins
 ms.reviewer: seguler
-ms.openlocfilehash: 96da1f8903896f932fa63aa8497eaff69f893559
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: 12507ba87148bef6378542feb4ebde3b1c291a72
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68489675"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68565919"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-by-using-the-java-storage-sdk-v10"></a>Início Rápido: Carregar, baixar e listar blobs usando o SDK de Armazenamento de Java V10
 
 Neste início rápido, você aprende a usar o novo SDK de Armazenamento de Java para carregar, baixar e listar blobs de blocos em um contêiner no Armazenamento de Blobs do Azure. O novo SDK de Java utiliza o modelo de programação reativa com RxJava, que oferece operações assíncronas. Saiba mais sobre [extensões reativas para a VM Java](https://github.com/ReactiveX/RxJava) de RxJava. 
+
+[!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

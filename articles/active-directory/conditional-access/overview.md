@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 370771d44e2fbbf0fca7af453f7425ebc1b1bdcd
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 99d17b354e267d003e23e507ca190b951e3ed4a0
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67612607"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68608086"
 ---
 # <a name="what-is-conditional-access"></a>O que é Acesso Condicional?
 
@@ -73,7 +73,7 @@ Uma abordagem baseada em política para proteger o acesso aos aplicativos de nuv
 
 ## <a name="azure-ad-conditional-access-and-federated-authentication"></a>Acesso Condicional do Azure AD e autenticação federada
 
-As políticas de Acesso Condicional funcionam perfeitamente com [autenticação federada](../../security/azure-ad-choose-authn.md#federated-authentication). Esse suporte inclui todas as condições com suporte e controles e visibilidade de como a política é aplicada às entradas do usuário por meio dos [relatórios do Azure AD](../reports-monitoring/concept-sign-ins.md).
+As políticas de Acesso Condicional funcionam perfeitamente com [autenticação federada](../../security/fundamentals/choose-ad-authn.md#federated-authentication). Esse suporte inclui todas as condições com suporte e controles e visibilidade de como a política é aplicada às entradas do usuário por meio dos [relatórios do Azure AD](../reports-monitoring/concept-sign-ins.md).
 
 *Autenticação federada com o Azure AD* significa que um serviço de autenticação confiável lida com a autenticação do usuário no Azure AD. Um serviço de autenticação confiável é, por exemplo, o AD FS (Serviços de Federação do Active Directory) ou qualquer outro serviço de federação. Nessa configuração, a autenticação de usuário principal é executada no serviço e, em seguida, o Azure AD é usado para entrar em aplicativos individuais. O Acesso Condicional do Azure AD é aplicado antes da concessão de acesso ao aplicativo que o usuário está acessando. 
 

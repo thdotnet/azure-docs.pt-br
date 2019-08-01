@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 5f41263113568cf9f3771119135be8db37119181
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: dbcb0e87159efc7cc33101cdd5eee55afbdf3c10
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67442950"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68516647"
 ---
 # <a name="what-is-azure-maps"></a>O que é o Azure Mapas?
 
@@ -174,14 +174,10 @@ Os Mapas do Azure usam um esquema de autenticação baseado em chave. Sua conta 
 
 Atualmente, as APIs do Azure Mapas estão disponíveis em todos os países/regiões, exceto estes:
 
-* Argentina
 * China
-* Índia
-* Marrocos
-* Paquistão
 * Coreia do Sul
 
-Verifique se a localização de seu endereço IP atual não está em um dos países/regiões sem suporte.
+Verifique se a localização do seu endereço IP atual não está em um dos países sem suporte acima.
 
 ## <a name="next-steps"></a>Próximas etapas
 

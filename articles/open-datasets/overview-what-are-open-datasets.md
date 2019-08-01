@@ -7,12 +7,12 @@ ms.topic: overview
 author: cjgronlund
 ms.author: cgronlun
 ms.date: 05/02/2019
-ms.openlocfilehash: b01ad5a4fd8808c1e841ba2fb47ea06ece011010
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7fa8562c466c81ebc05360bf06cdde1ee29bed9e
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67051052"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68598976"
 ---
 # <a name="what-are-azure-open-datasets-preview-and-how-can-you-use-them"></a>O que são Conjuntos de dados abertos do Azure (versão prévia) e como você pode usá-los?
 
@@ -58,4 +58,4 @@ Se você não pode localizar os dados desejados, envie um email para nós para [
 ## <a name="next-steps"></a>Próximas etapas
 * [Exemplo de notebook](samples.md)
 * [Tutorial: Modelagem de regressão com os dados de táxi de Nova York](tutorial-opendatasets-automl.md)
-* [SDK do Python para conjuntos de dados abertos](https://aka.ms/open-datasets-api)
+* [SDK do Python para conjuntos de dados abertos](/python/api/azureml-opendatasets/?view=azure-ml-py)

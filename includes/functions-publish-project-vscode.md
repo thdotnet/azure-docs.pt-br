@@ -9,18 +9,18 @@ ms.topic: include
 ms.date: 04/16/2019
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: 3cfa36331f8f4ad45f3bf8ff32eee7d89c7d8852
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: ba3cf3e77e5414804e881e0cddb151fb14fb7fd5
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67608071"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68669511"
 ---
 ## <a name="publish-the-project-to-azure"></a>Publicar o projeto no Azure
 
 O Visual Studio Code permite que você publique seu projeto de funções diretamente no Azure. No processo, você criará um aplicativo de funções e recursos relacionados em sua assinatura do Azure. O aplicativo de funções fornece um contexto de execução para suas funções. O projeto é empacotado e implantado para o novo aplicativo de função em sua assinatura do Azure.
 
-Por padrão, o Visual Studio cria todos os recursos do Azure necessários para criar seu aplicativo de funções. Os nomes desses recursos são baseados no nome do aplicativo de funções escolhido. Se precisar ter controle total sobre os recursos criados, você pode [publicar usando opções avançadas](../articles/azure-functions/functions-develop-vs-code.md#enabled-publishing-with-advanced-create-options).
+Por padrão, o Visual Studio cria todos os recursos do Azure necessários para criar seu aplicativo de funções. Os nomes desses recursos são baseados no nome do aplicativo de funções escolhido. Se precisar ter controle total sobre os recursos criados, você pode [publicar usando opções avançadas](../articles/azure-functions/functions-develop-vs-code.md#enable-publishing-with-advanced-create-options).
 
 Esta seção pressupõe que você está criando um novo aplicativo de funções no Azure.
 
