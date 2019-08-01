@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: article
-ms.date: 04/16/2019
+ms.date: 07/30/2019
 ms.author: aahi
-ms.openlocfilehash: 5a5787504d72259354f9c5eba2e2f4e22402ef0b
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.openlocfilehash: ea7d3f56aa512b8f5998d710451ff3b37659ca13
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68619738"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68697838"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Como usar o reconhecimento de entidade nomeada no Análise de Texto
 
@@ -96,11 +96,11 @@ O tamanho do documento precisa ter menos de 5.120 caracteres por documento, e vo
 
 Detalhes sobre a definição de solicitação podem ser encontrados em [Como chamar a API de Análise de Texto](text-analytics-how-to-call-api.md). Os seguintes pontos são redeclarados para conveniência:
 
-+ Criar uma solicitação de **Postagem**. Examine a documentação da API para esta solicitação: [API de Vinculação de Entidade](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634)
++ Criar uma solicitação de **Postagem**. Examine a documentação da API para esta solicitação: [API de entidades](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634)
 
 + Defina o ponto de extremidade HTTP para extração de entidade. Deve incluir o recurso `/entities`: `https://[your-region].api.cognitive.microsoft.com/text/analytics/v2.1/entities`
 
-+ Defina um cabeçalho de solicitação para incluir a chave de acesso para operações de Análises de Texto do Azure Machine Learning. Para obter mais informações, consulte [Como localizar pontos de extremidade e chaves de acesso](text-analytics-how-to-access-key.md).
++ Defina um cabeçalho de solicitação para incluir [a chave de acesso](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) para operações de análise de texto.
 
 + No corpo da solicitação, forneça a coleção de documentos JSON preparada para esta análise
 
@@ -283,7 +283,7 @@ Neste artigo, você aprendeu os conceitos e fluxo de trabalho para detecção de
 
 + A [API de Entidades](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/5ac4251d5b4ccd1554da7634) está disponível para os idiomas selecionados.
 + Documentos JSON no corpo da solicitação incluem um código de idioma, texto e ID.
-+ A solicitação POST é um `/entities` ponto de extremidade, usando uma [chave de acesso personalizada e um ponto de extremidade](text-analytics-how-to-access-key.md) que é válido para sua assinatura.
++ A solicitação POST é um `/entities` ponto de extremidade, usando uma [chave de acesso personalizada e um ponto de extremidade](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) que é válido para sua assinatura.
 + A saída da resposta, composta por entidades vinculadas (incluindo pontuações de confiança, deslocamentos e links da Web, para cada ID de documento) pode ser usada em qualquer aplicativo
 
 ## <a name="next-steps"></a>Próximas etapas
