@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 0f68627e2db3c08049f0273045906057526bd6aa
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 615a2dedd8a4698bab5eaa237184266e5bef1a1b
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61094911"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68720785"
 ---
 # <a name="copy-data-from-google-adwords-using-azure-data-factory-preview"></a>Copiar dados do Google AdWords usando o Azure Data Factory (versão prévia)
 
@@ -42,7 +42,7 @@ As seções que se seguem fornecem detalhes sobre as propriedades que são usada
 
 As propriedades a seguir são compatíveis com o serviço vinculado do Google AdWords:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **GoogleAdWords** | Sim |
 | clientCustomerID | A ID do cliente da conta do AdWords para a qual você deseja buscar dados do relatório.  | Sim |
@@ -54,7 +54,7 @@ As propriedades a seguir são compatíveis com o serviço vinculado do Google Ad
 | email | A ID de e-mail da conta de serviço que é usada para ServiceAuthentication e que só pode ser usada em IR auto-hospedado.  | Não |
 | keyFilePath | O caminho completo para o arquivo chave .p12 que é usado para autenticar o endereço de e-mail da conta de serviço e que só pode ser usado em IR auto-hospedado.  | Não |
 | trustedCertPath | O caminho completo do arquivo .pem que contém certificados de autoridade de certificação confiáveis para verificar o servidor ao se conectar via SSL. Essa propriedade só pode ser definida ao usar o SSL em IR auto-hospedado. O valor padrão é o arquivo de cacerts.pem instalado com o IR.  | Não |
-| useSystemTrustStore | Especifica se deve usar um certificado de autoridade de certificação do repositório de confiança de sistema ou de um arquivo PEM especificado. O valor padrão é falso.  | Não |
+| useSystemTrustStore | Especifica se deve usar um certificado de autoridade de certificação do repositório de confiança de sistema ou de um arquivo PEM especificado. O valor padrão é false.  | Não |
 
 **Exemplo:**
 
@@ -98,7 +98,7 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 Para copiar dados do Google AdWords, defina a propriedade type do conjunto de dados para **GoogleAdWordsObject**. Há suporte para as seguintes propriedades:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type do conjunto de dados deve ser definida como: **GoogleAdWordsObject** | Sim |
 | tableName | Nome da tabela. | Não (se "query" na fonte da atividade for especificada) |
@@ -110,11 +110,12 @@ Para copiar dados do Google AdWords, defina a propriedade type do conjunto de da
     "name": "GoogleAdWordsDataset",
     "properties": {
         "type": "GoogleAdWordsObject",
+        "typeProperties": {},
+        "schema": [],
         "linkedServiceName": {
             "referenceName": "<GoogleAdWords linked service name>",
             "type": "LinkedServiceReference"
-        },
-        "typeProperties": {}
+        }
     }
 }
 
@@ -128,10 +129,10 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 Para copiar dados do Google AdWords, defina o tipo de origem na atividade de cópia como **GoogleAdWordsSource**. As propriedades a seguir têm suporte na seção **source** da atividade de cópia:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type da fonte da atividade de cópia deve ser definida como: **GoogleAdWordsSource** | Sim |
-| query | Utiliza a consulta SQL personalizada para ler os dados. Por exemplo: `"SELECT * FROM MyTable"`. | Não (se "tableName" no conjunto de dados for especificado) |
+| consultar | Utiliza a consulta SQL personalizada para ler os dados. Por exemplo: `"SELECT * FROM MyTable"`. | Não (se "tableName" no conjunto de dados for especificado) |
 
 **Exemplo:**
 

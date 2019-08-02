@@ -1,5 +1,5 @@
 ---
-title: 'Azure Cosmos DB: API Java, SDK e recursos do executor em massa'
+title: 'O Azure Cosmos DB: API Java do executor em massa, recursos do SDK &'
 description: Saiba tudo sobre o SDK e a API Java de bulk executor, incluindo datas de lançamento, datas de desativação e alterações feitas entre cada versão do SDK Java de bulk executor do Azure Cosmos DB.
 author: tknandu
 ms.service: cosmos-db
@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: reference
 ms.date: 11/21/2018
 ms.author: ramkris
-ms.openlocfilehash: 51499b86aa44b89442f84a345cba6e9093f8c274
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 134a4e42b779c199b7846dabd1f5158c86c5a146
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62129478"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638608"
 ---
 # <a name="java-bulk-executor-library-download-information"></a>Biblioteca do executor em massa Java: Baixar informações
 
@@ -28,8 +28,8 @@ ms.locfileid: "62129478"
 > * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Provedor de recursos REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
 > * [SQL](sql-api-query-reference.md)
-> * [bulk executor – .NET](sql-api-sdk-bulk-executor-dot-net.md)
-> * [bulk executor – Java](sql-api-sdk-bulk-executor-java.md)
+> * [Executor em massa-.NET](sql-api-sdk-bulk-executor-dot-net.md)
+> * [Executor em massa – Java](sql-api-sdk-bulk-executor-java.md)
 
 | |  |
 |---|---|

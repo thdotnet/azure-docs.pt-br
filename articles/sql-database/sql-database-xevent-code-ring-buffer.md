@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
 ms.reviewer: jrasnik
-manager: craigg
 ms.date: 12/19/2018
-ms.openlocfilehash: bb493fc0a9d3a9173ef4faf17b3cdd4e3781a557
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f1ec9cd3a4256597ade409fb3e04d44171277554
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60331019"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566166"
 ---
 # <a name="ring-buffer-target-code-for-extended-events-in-sql-database"></a>Código de destino do Buffer de Anéis para eventos estendidos no Banco de Dados SQL
 
@@ -223,7 +222,7 @@ Para exibir os resultados, clicamos na célula no título de coluna **target_dat
 
 Em seguida, no painel de resultados, clicamos na célula no título de coluna **target_data_XML**. Esse clique criou outra guia de arquivo no ssms.exe, onde o conteúdo da célula de resultado foi exibido como XML.
 
-A saída é mostrada no bloco a seguir. Parece longo, mas é apenas dois  **\<evento >** elementos.
+A saída é mostrada no bloco a seguir. Parece longo, mas é apenas dois  **\<** elementos de > de eventos.
 
 &nbsp;
 
@@ -346,7 +345,7 @@ O tópico principal para eventos estendidos no Banco de Dados SQL do Azure é:
 
 * [Considerações sobre eventos estendidos no Banco de Dados SQL](sql-database-xevent-db-diff-from-svr.md), que é diferente em alguns aspectos dos eventos estendidos que diferem entre o Banco de Dados SQL do Azure e o Microsoft SQL Server.
 
-Outros tópicos com exemplos de código para eventos estendidos estão disponíveis nos links a seguir. No entanto, você deve verificar regularmente os exemplos para ver se eles se destinam ao Microsoft SQL Server ou ao Banco de Dados SQL do Azure. Assim você pode decidir se pequenas alterações são necessárias para a execução do exemplo.
+Outros tópicos com exemplos de código para eventos estendidos estão disponíveis nos links a seguir. No entanto, você deve verificar regularmente os exemplos para ver se eles se destinam ao Microsoft SQL Server ou ao Banco de Dados SQL do Azure. Em seguida, você pode decidir se alterações mínimas são necessárias para realizar o exemplo.
 
 * Amostra do código para o Banco de Dados SQL do Microsoft Azure: [Código de destino do Arquivo de evento para eventos estendidos no Banco de Dados SQL](sql-database-xevent-code-event-file.md)
 

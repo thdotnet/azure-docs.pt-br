@@ -1,6 +1,6 @@
 ---
-title: Usar os logs do Azure Monitor com um aplicativo de multilocatário do banco de dados SQL | Microsoft Docs
-description: Configurar e usar os logs do Azure Monitor com um aplicativo multilocatário de SaaS de banco de dados SQL do Azure
+title: Usar logs de Azure Monitor com um aplicativo de multilocatário do banco de dados SQL | Microsoft Docs
+description: Configurar e usar logs de Azure Monitor com um aplicativo SaaS multilocatário do banco de dados SQL do Azure
 services: sql-database
 ms.service: sql-database
 ms.subservice: scenario
@@ -10,26 +10,25 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: billgib
-manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 6380488faa9a4554df5df5ea67e11dbeb8853fff
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6b9b2239cfdf0f214ed2f2b179978fe2828d1be3
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61389295"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570515"
 ---
-# <a name="set-up-and-use-azure-monitor-logs-with-a-multitenant-sql-database-saas-app"></a>Configurar e usar os logs do Azure Monitor com um aplicativo multilocatário de SaaS de banco de dados SQL
+# <a name="set-up-and-use-azure-monitor-logs-with-a-multitenant-sql-database-saas-app"></a>Configurar e usar logs de Azure Monitor com um aplicativo SaaS de banco de dados SQL multilocatário
 
-Neste tutorial, você pode configurar e usar [registra em log do Azure Monitor](/azure/log-analytics/log-analytics-overview) para monitorar pools Elásticos e bancos de dados. Este tutorial se baseia no [Tutorial de gerenciamento e monitoramento do desempenho](saas-dbpertenant-performance-monitoring.md). Ele mostra como usar os logs do Azure Monitor para ampliar o monitoramento e os alertas fornecidos no portal do Azure. O Azure Monitor registra dá suporte a milhares de pools Elásticos e centenas de milhares de bancos de dados de monitoramento. Os logs do Azure Monitor fornece uma única solução de monitoramento, que pode integrar o monitoramento de diferentes aplicativos e serviços do Azure entre várias assinaturas do Azure.
+Neste tutorial, você configura e usa logs de [Azure monitor](/azure/log-analytics/log-analytics-overview) para monitorar pools elásticos e bancos de dados. Este tutorial se baseia no [Tutorial de gerenciamento e monitoramento do desempenho](saas-dbpertenant-performance-monitoring.md). Ele mostra como usar os logs de Azure Monitor para aumentar o monitoramento e os alertas fornecidos no portal do Azure. Os logs de Azure Monitor dão suporte ao monitoramento de milhares de pools elásticos e centenas de milhares de bancos de dados. Os logs de Azure Monitor fornecem uma única solução de monitoramento, que pode integrar o monitoramento de diferentes aplicativos e serviços do Azure entre várias assinaturas do Azure.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 Neste tutorial, você aprenderá a:
 
 > [!div class="checklist"]
-> * Instale e configure os logs do Azure Monitor.
-> * Use logs do Azure Monitor para monitorar pools e bancos de dados.
+> * Instalar e configurar logs de Azure Monitor.
+> * Use logs de Azure Monitor para monitorar pools e bancos de dados.
 
 Para concluir este tutorial, verifique se todos os pré-requisitos a seguir são atendidos:
 
@@ -38,11 +37,11 @@ Para concluir este tutorial, verifique se todos os pré-requisitos a seguir são
 
 Consulte o [Tutorial de monitoramento e gerenciamento de desempenho](saas-dbpertenant-performance-monitoring.md) para uma discussão sobre padrões e cenários de SaaS, e como eles afetam os requisitos de uma solução de monitoramento.
 
-## <a name="monitor-and-manage-database-and-elastic-pool-performance-with-azure-monitor-logs"></a>Monitorar e gerenciar o desempenho do pool Elástico e banco de dados com os logs do Azure Monitor
+## <a name="monitor-and-manage-database-and-elastic-pool-performance-with-azure-monitor-logs"></a>Monitorar e gerenciar o desempenho do banco de dados e do pool elástico com logs de Azure Monitor
 
 Para o Banco de Dados SQL do Azure, o monitoramento e o alerta estão disponíveis em bancos de dados e pools no portal do Azure. Esse monitoramento e alertas internos são convenientes, mas também específicos do recurso. Isso significa que são adequados para monitorar grandes instalações ou fornecer uma exibição unificada de recursos e assinaturas.
 
-Para cenários de alto volume, você pode usar os logs do Azure Monitor para monitoramento e alertas. O Azure Monitor é um serviço do Azure separado que habilita a análise de logs de diagnóstico e telemetria coletada em um espaço de trabalho de possivelmente vários serviços. Os logs do Azure Monitor fornece ferramentas de visualização de dados e de linguagem que permitem a análise de dados operacionais de uma consulta interna. A solução Análise do SQL fornece várias exibições e consultas de monitoramento e alertas de pools elásticos e bancos de dados. Os logs do Azure Monitor também fornece um designer de exibição personalizado.
+Para cenários de alto volume, você pode usar logs de Azure Monitor para monitoramento e alertas. Azure Monitor é um serviço do Azure separado que permite a análise em logs de diagnóstico e telemetria coletados em um espaço de trabalho de potencialmente muitos serviços. Os logs de Azure Monitor fornecem uma linguagem de consulta interna e ferramentas de visualização de dados que permitem a análise de dados operacional. A solução Análise do SQL fornece várias exibições e consultas de monitoramento e alertas de pools elásticos e bancos de dados. Os logs de Azure Monitor também fornecem um designer de exibição personalizado.
 
 Os workspaces do OMS agora são chamados de workspaces do Log Analytics. As áreas de trabalho do Log Analytics e as soluções de análise são abertas no portal do Azure. O portal do Azure é o ponto de acesso mais novo, mas pode ser o que está por trás do portal do Operations Management Suite em algumas áreas.
 
@@ -57,7 +56,7 @@ Os workspaces do OMS agora são chamados de workspaces do Log Analytics. As áre
 
 1. Agora, inicie o gerador de carga para executar uma carga simulada em todos os locatários.
 
-    a. Definir **$DemoScenario = 2**, _gerar carga de intensidade normal (aproximadamente 30 DTU)_ .
+    a. Defina **$DemoScenario = 2**, _gerar carga de intensidade normal (aproximadamente 30 DTU)_ .
 
     b. Para executar o script, pressione F5.
 
@@ -65,27 +64,27 @@ Os workspaces do OMS agora são chamados de workspaces do Log Analytics. As áre
 
 Os scripts e o código-fonte do aplicativo SaaS de banco de dados multilocatário Wingtip Tickets estão disponíveis no repositório [WingtipTicketsSaaS-DbPerTenant](https://github.com/Microsoft/WingtipTicketsSaaS-DbPerTenant) do GitHub. Para obter as etapas para fazer o download e desbloquear os scripts de PowerShell do Wingtip Tickets, consulte as [diretrizes gerais](saas-tenancy-wingtip-app-guidance-tips.md).
 
-## <a name="install-and-configure-log-analytics-workspace-and-the-azure-sql-analytics-solution"></a>Instalar e configurar o espaço de trabalho do Log Analytics e a solução de análise de SQL do Azure
+## <a name="install-and-configure-log-analytics-workspace-and-the-azure-sql-analytics-solution"></a>Instalar e configurar Log Analytics espaço de trabalho e a solução de Análise de SQL do Azure
 
-O Azure Monitor é um serviço separado que deve ser configurado. O Azure Monitor registra coleta dados de log, telemetria e métrica no espaço de trabalho do Log Analytics. Assim como outros recursos no Azure, o espaço de trabalho do Log Analytics deve ser criado. O workspace não precisa ser criado no mesmo grupo de recursos que os aplicativos que ele está monitorando. Mas isso geralmente faz mais sentido. Para o aplicativo Wingtip Tickets, use um único grupo de recursos para garantir que o workspace seja excluído com o aplicativo.
+Azure Monitor é um serviço separado que deve ser configurado. Os logs de Azure Monitor coletam dados de log, telemetria e métricas em um espaço de trabalho Log Analytics. Assim como outros recursos no Azure, o espaço de trabalho do Log Analytics deve ser criado. O workspace não precisa ser criado no mesmo grupo de recursos que os aplicativos que ele está monitorando. Mas isso geralmente faz mais sentido. Para o aplicativo Wingtip Tickets, use um único grupo de recursos para garantir que o workspace seja excluído com o aplicativo.
 
 1. No ISE do PowerShell, abra *..\\WingtipTicketsSaaS-MultiTenantDb-master\\Módulos de Aprendizado\\Gerenciamento e Monitoramento do Desempenho\\Log Analytics\\Demo-LogAnalytics.ps1*.
 1. Para executar o script, pressione F5.
 
-Agora você pode abrir o Azure Monitor registra em log no portal do Azure. Leva alguns minutos para coletar a telemetria no espaço de trabalho do Log Analytics e para torná-la visível. Quanto mais tempo você deixa o sistema coletando dados, mais interessante é a experiência. 
+Agora você pode abrir logs de Azure Monitor no portal do Azure. Leva alguns minutos para coletar a telemetria no espaço de trabalho do Log Analytics e para torná-la visível. Quanto mais tempo você deixa o sistema coletando dados, mais interessante é a experiência. 
 
-## <a name="use-log-analytics-workspace-and-the-sql-analytics-solution-to-monitor-pools-and-databases"></a>Use o espaço de trabalho do Log Analytics e a solução de análise de SQL para monitorar pools e bancos de dados
+## <a name="use-log-analytics-workspace-and-the-sql-analytics-solution-to-monitor-pools-and-databases"></a>Use Log Analytics espaço de trabalho e a solução de análise de SQL para monitorar pools e bancos de dados
 
 
-Neste exercício, abra o espaço de trabalho do Log Analytics no portal do Azure para examinar a telemetria coletada para os bancos de dados e pools.
+Neste exercício, abra Log Analytics espaço de trabalho no portal do Azure para examinar a telemetria coletada para os bancos de dados e pools.
 
-1. Navegue até o [Portal do Azure](https://portal.azure.com). Selecione **todos os serviços** para abrir o espaço de trabalho do Log Analytics. Em seguida, pesquise por Log Analytics.
+1. Navegue até o [Portal do Azure](https://portal.azure.com). Selecione **todos os serviços** para abrir log Analytics espaço de trabalho. Em seguida, pesquise por Log Analytics.
 
-   ![Abrir espaço de trabalho do Log Analytics](media/saas-dbpertenant-log-analytics/log-analytics-open.png)
+   ![Abrir Log Analytics espaço de trabalho](media/saas-dbpertenant-log-analytics/log-analytics-open.png)
 
 1. Selecione o workspace chamado _wtploganalytics-&lt;user&gt;_ .
 
-1. Selecione **visão geral** para abrir a solução de análise de log no portal do Azure.
+1. Selecione **visão geral** para abrir a solução log analytics no portal do Azure.
 
    ![Visão geral](media/saas-dbpertenant-log-analytics/click-overview.png)
 
@@ -100,7 +99,7 @@ Neste exercício, abra o espaço de trabalho do Log Analytics no portal do Azure
 
 1. Para explorar a página de resumo, selecione os blocos ou bancos de dados individuais para abrir um gerenciador de detalhes.
 
-    ![Painel de análise de log](media/saas-dbpertenant-log-analytics/log-analytics-overview.png)
+    ![Painel do log Analytics](media/saas-dbpertenant-log-analytics/log-analytics-overview.png)
 
 1. Altere a configuração de filtro para modificar o intervalo de tempo. Para este tutorial, selecione **Última 1 hora**.
 
@@ -129,15 +128,15 @@ Neste exercício, abra o espaço de trabalho do Log Analytics no portal do Azure
 
 1. Voltando para o espaço de trabalho do Log Analytics, selecione **Portal do OMS** para abrir o espaço de trabalho nele.
 
-    ![Espaço de trabalho do Log Analytics](media/saas-dbpertenant-log-analytics/log-analytics-workspace-oms-portal.png)
+    ![Workspace do Log Analytics](media/saas-dbpertenant-log-analytics/log-analytics-workspace-oms-portal.png)
 
 No espaço de trabalho do Log Analytics, você poderá explorar ainda mais os dados de métrica e log. 
 
-Monitoramento e alertas no Azure Monitor logs baseiam-se em consultas sobre os dados no espaço de trabalho, ao contrário dos alertas definidos em cada recurso no portal do Azure. Baseando alertas em consultas, você pode definir um único alerta sobre todos os bancos de dados em vez de uma definição para cada banco de dados. As consultas são limitadas apenas pelos dados disponíveis no workspace.
+O monitoramento e os alertas em logs de Azure Monitor são baseados em consultas sobre os dados no espaço de trabalho, ao contrário do alerta definido em cada recurso na portal do Azure. Baseando alertas em consultas, você pode definir um único alerta sobre todos os bancos de dados em vez de uma definição para cada banco de dados. As consultas são limitadas apenas pelos dados disponíveis no workspace.
 
-Para obter mais informações sobre como usar os logs do Azure Monitor para consultar e definir alertas, consulte [logs de trabalho com regras de alerta no Azure Monitor](https://docs.microsoft.com/azure/log-analytics/log-analytics-alerts-creating).
+Para obter mais informações sobre como usar os logs de Azure Monitor para consultar e definir alertas, consulte [trabalhar com regras de alerta em logs de Azure monitor](https://docs.microsoft.com/azure/log-analytics/log-analytics-alerts-creating).
 
-Logs de encargos de banco de dados SQL com base no volume de dados no espaço de trabalho no Azure Monitor. Nesse tutorial, você criou um workspace gratuito, que é limitado a 500 MB por dia. Após esse limite ser atingido, os dados não são mais adicionados ao workspace.
+Azure Monitor logs de encargos do banco de dados SQL com base no volume do espaço de trabalho. Nesse tutorial, você criou um workspace gratuito, que é limitado a 500 MB por dia. Após esse limite ser atingido, os dados não são mais adicionados ao workspace.
 
 
 ## <a name="next-steps"></a>Próximas etapas
@@ -145,8 +144,8 @@ Logs de encargos de banco de dados SQL com base no volume de dados no espaço de
 Neste tutorial, você aprendeu a:
 
 > [!div class="checklist"]
-> * Instale e configure os logs do Azure Monitor.
-> * Use logs do Azure Monitor para monitorar pools e bancos de dados.
+> * Instalar e configurar logs de Azure Monitor.
+> * Use logs de Azure Monitor para monitorar pools e bancos de dados.
 
 Experimente o [Tutorial de análise de locatário](saas-dbpertenant-log-analytics.md).
 

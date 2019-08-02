@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: bb0e146ef32ba24c3911bae86806c84768c005ef
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b62cbe6be7f48aa05bf3756580df0777aeee8cae
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60405946"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68726090"
 ---
 # <a name="copy-data-from-oracle-eloqua-using-azure-data-factory-preview"></a>Copiar dados da Oracle Eloqua utilizando o Azure Data Factory (versão prévia)
 
@@ -42,10 +42,10 @@ As seções a seguir fornecem detalhes sobre as propriedades usadas para definir
 
 As propriedades a seguir têm suporte para o serviço vinculado do Oracle Eloqua:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **Eloqua** | Sim |
-| endpoint | O endpoint do servidor Eloqua. O Eloqua dá suporte a vários datacenters e, para determinar o ponto de extremidade, faça logon em https://login.eloqua.com com a credencial e, em seguida, copie a parte da **URL base** da URL redirecionada com o padrão `xxx.xxx.eloqua.com`. | Sim |
+| ponto de extremidade | O endpoint do servidor Eloqua. O Eloqua dá suporte a vários datacenters e, para determinar o ponto de extremidade, faça logon em https://login.eloqua.com com a credencial e, em seguida, copie a parte da **URL base** da URL redirecionada com o padrão `xxx.xxx.eloqua.com`. | Sim |
 | username | O nome de site e nome de usuário da conta Eloqua no formulário: `SiteName\Username` e.g. `Eloqua\Alice`.  | Sim |
 | password | A senha correspondente ao nome de usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Sim |
 | useEncryptedEndpoints | Especifica se os endpoints de fonte de dados são criptografados usando HTTPS. O valor padrão é true.  | Não |
@@ -77,7 +77,7 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 Para copiar dados do Oracle Eloqua, defina a propriedade type do conjunto de dados como **EloquaObject**. Há suporte para as seguintes propriedades:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type do conjunto de dados deve ser definida como: **EloquaObject** | Sim |
 | tableName | Nome da tabela. | Não (se "query" na fonte da atividade for especificada) |
@@ -89,11 +89,12 @@ Para copiar dados do Oracle Eloqua, defina a propriedade type do conjunto de dad
     "name": "EloquaDataset",
     "properties": {
         "type": "EloquaObject",
+        "typeProperties": {},
+        "schema": [],
         "linkedServiceName": {
             "referenceName": "<Eloqua linked service name>",
             "type": "LinkedServiceReference"
-        },
-        "typeProperties": {}
+        }
     }
 }
 ```
@@ -106,10 +107,10 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 Para copiar dados do Oracle Eloqua, defina o tipo de fonte na atividade de cópia como **EloquaSource**. As propriedades a seguir têm suporte na seção **source** da atividade de cópia:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type da fonte da atividade de cópia deve ser definida como: **EloquaSource** | Sim |
-| query | Utiliza a consulta SQL personalizada para ler os dados. Por exemplo: `"SELECT * FROM Accounts"`. | Não (se "tableName" no conjunto de dados for especificado) |
+| consultar | Utiliza a consulta SQL personalizada para ler os dados. Por exemplo: `"SELECT * FROM Accounts"`. | Não (se "tableName" no conjunto de dados for especificado) |
 
 **Exemplo:**
 

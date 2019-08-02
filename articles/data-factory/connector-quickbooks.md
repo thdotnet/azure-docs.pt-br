@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 8f5e3958588a597bde04ae1c8e4873006b281458
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2c490c9eb23ad62559a6246f1588f80080851014
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60405810"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68726056"
 ---
 # <a name="copy-data-from-quickbooks-online-using-azure-data-factory-preview"></a>Copiar dados do QuickBooks Online usando o Azure Data Factory (Versão prévia)
 
@@ -44,10 +44,10 @@ As seções a seguir fornecem detalhes sobre as propriedades usadas para definir
 
 As propriedades a seguir têm suporte no serviço vinculado do QuickBooks:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **QuickBooks** | Sim |
-| endpoint | O ponto de extremidade do servidor do QuickBooks Online. (ou seja, quickbooks.api.intuit.com)  | Sim |
+| ponto de extremidade | O ponto de extremidade do servidor do QuickBooks Online. (ou seja, quickbooks.api.intuit.com)  | Sim |
 | companyId | A ID de empresa da empresa QuickBooks para autorização. Para obter informações sobre como localizar a ID da empresa, confira [Como encontrar minha ID da Empresa?](https://quickbooks.intuit.com/community/Getting-Started/How-do-I-find-my-Company-ID/m-p/185551). | Sim |
 | consumerKey | A chave do consumidor para autenticação OAuth 1.0. | Sim |
 | consumerSecret | O segredo do consumidor para autenticação OAuth 1.0. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Sim |
@@ -90,7 +90,7 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 Para copiar dados do QuickBooks Online, defina a propriedade type do conjunto de dados como **QuickBooksObject**. Há suporte para as seguintes propriedades:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type do conjunto de dados deve ser definida como: **QuickBooksObject** | Sim |
 | tableName | Nome da tabela. | Não (se "query" na fonte da atividade for especificada) |
@@ -102,11 +102,12 @@ Para copiar dados do QuickBooks Online, defina a propriedade type do conjunto de
     "name": "QuickBooksDataset",
     "properties": {
         "type": "QuickBooksObject",
+        "typeProperties": {},
+        "schema": [],
         "linkedServiceName": {
             "referenceName": "<QuickBooks linked service name>",
             "type": "LinkedServiceReference"
-        },
-        "typeProperties": {}
+        }
     }
 }
 ```
@@ -119,10 +120,10 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 Para copiar dados do QuickBooks Online, defina o tipo de fonte na atividade de cópia como **QuickBooksSource**. As propriedades a seguir têm suporte na seção **source** da atividade de cópia:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type da fonte da atividade de cópia deve ser definida como: **QuickBooksSource** | Sim |
-| query | Utiliza a consulta SQL personalizada para ler os dados. Por exemplo: `"SELECT * FROM "Bill" WHERE Id = '123'"`. | Não (se "tableName" no conjunto de dados for especificado) |
+| consultar | Utiliza a consulta SQL personalizada para ler os dados. Por exemplo: `"SELECT * FROM "Bill" WHERE Id = '123'"`. | Não (se "tableName" no conjunto de dados for especificado) |
 
 **Exemplo:**
 

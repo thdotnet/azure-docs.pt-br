@@ -16,10 +16,10 @@ ms.date: 12/18/2018
 ms.author: lahugh
 ms.custom: seodec18
 ms.openlocfilehash: bead5f0bec6d57c0f4aaddc6537e00c466d987f1
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68323900"
 ---
 # <a name="develop-large-scale-parallel-compute-solutions-with-batch"></a>Desenvolva soluções de computação paralela em larga escala com o Lote
@@ -116,7 +116,7 @@ Ao criar um pool, você pode especificar os seguintes atributos:
 - Política de agendamento de tarefas
 - Status de comunicação de nós de computação
 - Tarefas iniciais para nós de computação
-- pacotes de aplicativos
+- Pacotes de aplicativos
 - Configuração de rede
 
 Cada uma dessas configurações é descrita mais detalhadamente nas seções a seguir.
@@ -204,7 +204,7 @@ Observe que habilitar a comunicação entre nós também afeta a colocação dos
 
 A *tarefa inicial* opcional é executada em cada nó quando ele ingressa no pool e sempre que um nó é reiniciado ou sua imagem é refeita. A tarefa inicial é particularmente útil para preparar nós de computação para a execução de tarefas, como instalar aplicativos que as tarefas executarão nos nós de computação.
 
-### <a name="application-packages"></a>pacotes de aplicativos
+### <a name="application-packages"></a>Pacotes de aplicativos
 
 Você pode especificar [pacotes de aplicativos](#application-packages) para implantar os nós de computação no pool. Os pacotes de aplicativos fornecem uma implantação simplificada e controle de versão dos aplicativos que suas tarefas executam. Os pacotes de aplicativos que você especifica para um pool são instalados em cada nó que ingressa no pool e sempre que um nó é reinicializado ou sua imagem é recriada.
 
@@ -234,7 +234,7 @@ Um trabalho é uma coleção de tarefas. Ele gerencia como a computação é rea
     Observe que o serviço de Lote considera que um trabalho *sem* tarefas tem todas as suas tarefas concluídas. Portanto, essa opção é mais comumente usada com uma [tarefa do gerenciador de trabalhos](#job-manager-task). Se você quiser usar o encerramento automático de trabalho sem um gerenciador de trabalhos, defina inicialmente a propriedade **onAllTasksComplete** de um novo trabalho como *noaction*. Depois, defina-a como *terminatejob* somente depois que você terminar de adicionar tarefas ao trabalho.
 
 ### <a name="job-priority"></a>prioridade de trabalho
-Você pode atribuir uma prioridade a trabalhos criados no Lote. O serviço Lote usa o valor da prioridade do trabalho para determinar a ordem de agendamento dos trabalhos em uma conta (isso não deve ser confundido com um [trabalho agendado](#scheduled-jobs)). Os valores de prioridade variam de -1000 a 1000, em que -1000 é a prioridade mais baixa e 1000 a mais alta. Para atualizar a prioridade de um trabalho, chame [atualizar as propriedades de uma propriedade de trabalho][rest_update_job] operation (Batch REST), or modify the [CloudJob.Priority][net_cloudjob_priority] (.net do lote).
+Você pode atribuir uma prioridade a trabalhos criados no Lote. O serviço Lote usa o valor da prioridade do trabalho para determinar a ordem de agendamento dos trabalhos em uma conta (isso não deve ser confundido com um [trabalho agendado](#scheduled-jobs)). Os valores de prioridade variam de -1000 a 1000, em que -1000 é a prioridade mais baixa e 1000 a mais alta. Para atualizar a prioridade de um trabalho, chame [atualizar as propriedades de uma operação de trabalho][rest_update_job] (REST em lotes) ou modifique a propriedade [CloudJob. Priority][net_cloudjob_priority] (.net do lote).
 
 Em uma mesma conta, os trabalhos com prioridade mais alta têm precedência no agendamento sobre aqueles com prioridade mais baixa. Um trabalho com valor de prioridade mais alto em uma conta não tem precedência no agendamento sobre outro trabalho com valor de prioridade mais baixo em uma conta diferente.
 
@@ -287,7 +287,7 @@ Geralmente é desejável que o serviço de Lote aguarde a conclusão da tarefa i
 
 Se uma tarefa de inicialização falhar em um nó de computação, o estado do nó será atualizado para refletir a falha e o nó não tem nenhuma tarefa atribuída a ele. Uma tarefa inicial poderá falhar se houver um problema ao copiar seus arquivos de recursos do armazenamento ou se o processo executado por sua linha de comando retornar um código de saída diferente de zero.
 
-Se você adicionar ou atualizar a tarefa inicial para um pool existente , deverá reinicializar seus nós de computação para que a tarefa inicial seja aplicada aos nós.
+Se você adicionar ou atualizar o início da tarefa para um pool existente, será necessário reinicializar seus nós de computação para que o início da tarefa seja aplicado aos nós.
 
 >[!NOTE]
 > O lote limita o tamanho total de uma tarefa de inicialização, que inclui arquivos de recurso e variáveis de ambiente. Se você precisar reduzir o tamanho de uma tarefa de inicialização, poderá usar uma das duas abordagens:
@@ -299,7 +299,7 @@ Se você adicionar ou atualizar a tarefa inicial para um pool existente , dever�
 >
 >
 
-### <a name="job-manager-task"></a>Tarefa do Gerenciador de Trabalhos
+### <a name="job-manager-task"></a>Tarefa do gerenciador de trabalhos
 Você geralmente usa uma **tarefa do gerenciador de trabalhos** para controlar e/ou monitorar a execução do trabalho — por exemplo, para criar e enviar tarefas para um trabalho, determinar as tarefas adicionais a executar e quando o trabalho é concluído. No entanto, uma tarefa do gerenciador de trabalhos não está limitada a essas atividades. É uma tarefa completa que pode executar as ações necessárias para o trabalho. Por exemplo, uma tarefa do gerenciador de trabalhos pode baixar um arquivo especificado como um parâmetro, analisar o conteúdo desse arquivo e enviar tarefas adicionais com base no conteúdo.
 
 Uma tarefa do gerenciador de trabalho é iniciada antes de todas as outras tarefas. Ela fornece os seguintes recursos:
@@ -326,7 +326,7 @@ Uma [tarefa de várias instâncias](batch-mpi.md) é a que é configurada para s
 
 Para obter uma análise detalhada sobre como executar os trabalhos da MPI no Lote usando a biblioteca .NET do Lote, confira [Usar tarefas de várias instâncias para executar os aplicativos da MPI (Interface de Troca de Mensagens) no Lote do Azure](batch-mpi.md).
 
-### <a name="task-dependencies"></a>Dependências da tarefa
+### <a name="task-dependencies"></a>Dependências de tarefa
 As [dependências de tarefas](batch-task-dependencies.md), como o nome indica, permitem especificar que uma tarefa depende da conclusão de outras tarefas antes de sua execução. Este recurso fornece suporte para situações em que uma tarefa "downstream" consome a saída de uma tarefa "upstream" - ou quando uma tarefa upstream executa alguma inicialização necessária para uma tarefa downstream. Para usar esse recurso, primeiro você deve habilitar as dependências em seu trabalho do Lote. Em seguida, para cada tarefa que dependa de outra (ou de muitas outras), especifique as tarefas das quais essa tarefa depende.
 
 Com as dependências de tarefas, você pode configurar cenários como o seguinte:
@@ -335,14 +335,14 @@ Com as dependências de tarefas, você pode configurar cenários como o seguinte
 * A *tarefaC* depende da *tarefaA* e da *tarefaB*.
 * A *tarefaD* depende de várias tarefas, como as tarefas de *1* a *10*, antes de ser executada.
 
-Confira [dependências de tarefas no lote do Azure](batch-task-dependencies.md) e no repositório GitHub do [TaskDependencies][github_sample_taskdeps] code sample in the [azure-batch-samples][github_samples] para obter detalhes mais detalhados sobre esse recurso.
+Confira [dependências de tarefas no lote do Azure](batch-task-dependencies.md) e o exemplo de código [TaskDependencies][github_sample_taskdeps] no repositório GitHub [Azure-batch-Samples][github_samples] para obter detalhes mais aprofundados sobre esse recurso.
 
 ## <a name="environment-settings-for-tasks"></a>Configurações do ambiente para tarefas
 Cada tarefa executada pelo serviço Lote tem acesso a variáveis de ambiente definidas em nós de computação. Isso inclui as variáveis de ambiente definidas pelo serviço de lote ([definido pelo serviço][msdn_env_vars]) e variáveis de ambiente personalizadas que você pode definir para suas tarefas. Os aplicativos e scripts executados pelas tarefas têm acesso a essas variáveis de ambiente durante a execução.
 
-Você pode definir variáveis de ambiente personalizadas no nível de tarefa ou de trabalho populando a propriedade *configurações de ambiente* para essas entidades. Por exemplo, consulte as propriedades [Adicionar uma tarefa a um trabalho][rest_add_task] operation (Batch REST API), or the [CloudTask.EnvironmentSettings][net_cloudtask_env] e [CloudJob. CommonEnvironmentSettings][net_job_env] no .net do lote.
+Você pode definir variáveis de ambiente personalizadas no nível de tarefa ou de trabalho populando a propriedade *configurações de ambiente* para essas entidades. Por exemplo, consulte a operação [Adicionar uma tarefa a um trabalho][rest_add_task] (API REST do lote) ou as propriedades [CloudTask. EnvironmentSettings][net_cloudtask_env] e [CloudJob. CommonEnvironmentSettings][net_job_env] no .net do lote.
 
-Seu aplicativo cliente ou serviço pode obter as variáveis de ambiente de uma tarefa, definidas pelo serviço e personalizadas, usando a propriedade [obter informações sobre uma tarefa][rest_get_task_info] operation (Batch REST) or by accessing the [CloudTask.EnvironmentSettings][net_cloudtask_env] (.net do lote). Os processos em execução em um nó de computação podem acessar essas e outras variáveis de ambiente no nó, por exemplo, usando a sintaxe familiar do `%VARIABLE_NAME%` (Windows) ou `$VARIABLE_NAME` (Linux).
+Seu aplicativo cliente ou serviço pode obter as variáveis de ambiente de uma tarefa, definidas pelo serviço e personalizadas, usando a operação [obter informações sobre uma tarefa][rest_get_task_info] (REST do lote) ou acessando a propriedade [CloudTask. EnvironmentSettings][net_cloudtask_env] ( .NET do lote). Os processos em execução em um nó de computação podem acessar essas e outras variáveis de ambiente no nó, por exemplo, usando a sintaxe familiar do `%VARIABLE_NAME%` (Windows) ou `$VARIABLE_NAME` (Linux).
 
 Você pode encontrar uma lista completa de todas as variáveis de ambiente definidas pelo serviço em [variáveis de ambiente do nó de computação][msdn_env_vars].
 
@@ -425,7 +425,7 @@ Para saber mais sobre o dimensionamento automático de um aplicativo, consulte [
 ## <a name="security-with-certificates"></a>Segurança com certificados
 Normalmente, você precisa usar certificados ao criptografar ou descriptografar informações confidenciais para tarefas, como a chave para uma [conta de armazenamento do Azure][azure_storage]. Para dar suporte a isso, você pode instalar certificados nos nós. Os segredos criptografados são passados para tarefas por meio dos parâmetros de linha de comando ou incorporados em um dos recursos de tarefa, e os certificados instalados podem ser usados para descriptografá-los.
 
-Use o método [Adicionar certificado][rest_add_cert] operation (Batch REST) or [CertificateOperations.CreateCertificate][net_create_cert] (.net do lote) para adicionar um certificado a uma conta do lote. Então, pode associar o certificado a um pool novo ou existente. Quando um certificado está associado a um pool, o serviço em lote instala o certificado em cada nó presente no pool. O serviço Lote instala os certificados apropriados quando o nó é inicializado, antes que ele execute qualquer tarefa (incluindo a tarefa inicial e a tarefa do gerenciador de trabalhos).
+Você usa o método Adicionar operação de [certificado][rest_add_cert] (REST de lote) ou [o.][net_create_cert] CreateCertificate (.net do lote) para adicionar um certificado a uma conta do lote. Então, pode associar o certificado a um pool novo ou existente. Quando um certificado está associado a um pool, o serviço em lote instala o certificado em cada nó presente no pool. O serviço Lote instala os certificados apropriados quando o nó é inicializado, antes que ele execute qualquer tarefa (incluindo a tarefa inicial e a tarefa do gerenciador de trabalhos).
 
 Se você adicionar certificados a um pool *existente* , deverá reinicializar seus nós de computação para que os certificados sejam aplicados aos nós.
 
@@ -462,7 +462,7 @@ As falhas de tarefas se enquadram nestas categorias:
 ### <a name="debugging-application-failures"></a>Falhas de depuração de aplicativos
 * `stderr` e `stdout`
 
-    Durante a execução, um aplicativo pode produzir uma saída de diagnóstico que pode ser usada para solucionar os problemas. Conforme mencionado na seção [Arquivos e diretórios](#files-and-directories) anterior, o serviço de Lote grava a saída padrão e os erros padrão nos arquivos `stdout.txt` e `stderr.txt` no diretório da tarefa no nó de computação. Você pode usar o portal do Azure ou um dos SDKs do Lote para baixar esses arquivos. Por exemplo, você pode recuperar esses e outros arquivos para fins de solução de problemas usando [ComputeNode.][net_getfile_node] and [CloudTask.GetNodeFile][net_getfile_task] getnodefile na biblioteca .net do lote.
+    Durante a execução, um aplicativo pode produzir uma saída de diagnóstico que pode ser usada para solucionar os problemas. Conforme mencionado na seção [Arquivos e diretórios](#files-and-directories) anterior, o serviço de Lote grava a saída padrão e os erros padrão nos arquivos `stdout.txt` e `stderr.txt` no diretório da tarefa no nó de computação. Você pode usar o portal do Azure ou um dos SDKs do Lote para baixar esses arquivos. Por exemplo, você pode recuperar esses e outros arquivos para fins de solução de problemas usando [ComputeNode.][net_getfile_node] getnodefile e [CloudTask.][net_getfile_task] getnodefile na biblioteca .net do lote.
 
 * **Códigos de saída de tarefas**
 
@@ -477,7 +477,7 @@ Também é possível que um problema intermitente faça com que uma tarefa pare 
 Você pode executar uma depuração e solução de problemas adicionais conectando um nó de computação remotamente. Você pode usar o portal do Azure para baixar um arquivo RDP (Remote Desktop Protocol) para os nós do Windows e obter informações da conexão SSH (Secure Shell) para os nós do Linux. Você também pode fazer isso usando as APIs do lote – por exemplo, com o [lote .net][net_rdpfile] ou o [Python](batch-linux-nodes.md#connect-to-linux-nodes-using-ssh)do lote.
 
 > [!IMPORTANT]
-> Para se conectar a um nó via RDP ou SSH, primeiro você deve criar um usuário no nó. Para fazer isso, você pode usar a Portal do Azure, [Adicionar uma conta de usuário a um][rest_create_user] by using the Batch REST API, call the [ComputeNode.CreateComputeNodeUser][net_create_user] método de nó no .net do lote ou chamar o método [add_user][py_add_user] no módulo python do lote.
+> Para se conectar a um nó via RDP ou SSH, primeiro você deve criar um usuário no nó. Para fazer isso, você pode usar o portal do Azure, [Adicionar uma conta de usuário a um nó][rest_create_user] usando a API REST do lote, chamar o método [ComputeNode. CreateComputeNodeUser][net_create_user] no .net do lote ou chamar o método [Add_user][py_add_user] no módulo python do lote.
 >
 >
 
@@ -486,21 +486,21 @@ Se for necessário restringir ou desabilitar o acesso RDP ou SSH para nós de co
 ### <a name="troubleshooting-problematic-compute-nodes"></a>Solucionando os nós de computação problemáticos
 Em situações em que algumas das tarefas falham, o aplicativo cliente ou o serviço de Lote pode examinar os metadados das tarefas com falha para identificar um nó com comportamento inadequado. Cada nó em um pool tem uma ID exclusiva, e o nó no qual uma tarefa é executada é incluído nos metadados da tarefa. Após identificar um nó com problemas, você poderá executar várias ações nele:
 
-* **Reinicializar o nó** ([REST][rest_reboot] | [.NET][net_reboot])
+* **Reinicializar o nó** ([REST][rest_reboot] | [.net][net_reboot])
 
     Às vezes, reiniciar o nó pode corrigir problemas latentes, como processos bloqueados ou com falha. Observe que, se o pool usar uma tarefa de inicialização ou se o trabalho usar uma tarefa de preparação de trabalho, eles serão executados quando o nó for reiniciado.
-* Refazer **a imagem do nó** ([REST][rest_reimage] | [.NET][net_reimage])
+* Refazer **a imagem do nó** ([REST][rest_reimage] | [.net][net_reimage])
 
     Esse procedimento reinstala o sistema operacional no nó. Assim como ocorre com a reinicialização de um nó, as tarefas de inicialização e de preparação de trabalho são executadas novamente depois que a imagem do nó é refeita.
-* **Remover o nó do pool** ([REST][rest_remove] | [.NET][net_remove])
+* **Remover o nó do pool** ([REST][rest_remove] | [.net][net_remove])
 
     Às vezes, é necessário remover completamente o nó do pool.
-* **Desabilitar o agendamento de tarefas no nó** ([REST][rest_offline] | [.NET][net_offline])
+* **Desabilitar o agendamento de tarefas no nó** ([REST][rest_offline] | [.net][net_offline])
 
-    Isso efetivamente coloca o nó offline para que nenhuma tarefa adicional seja atribuída a ele, mas permite que o nó permaneça em execução e no pool. Isso o habilita a continuar a investigar a causa das falhas sem perder os dados da tarefa com falha e sem que o nó cause falhas de tarefas adicionais. Por exemplo, você pode desabilitar o agendamento de tarefas no nó e [fazer logon remotamente](#connecting-to-compute-nodes) para examinar os logs de evento do nó ou solucionar outros problemas. Depois de concluir sua investigação, você pode colocar o nó online novamente habilitando o[REST][rest_online] | [.NET][net_online](agendamento de tarefas) ou executar uma das outras ações discutidas anteriormente.
+    Isso efetivamente coloca o nó offline para que nenhuma tarefa adicional seja atribuída a ele, mas permite que o nó permaneça em execução e no pool. Isso o habilita a continuar a investigar a causa das falhas sem perder os dados da tarefa com falha e sem que o nó cause falhas de tarefas adicionais. Por exemplo, você pode desabilitar o agendamento de tarefas no nó e [fazer logon remotamente](#connecting-to-compute-nodes) para examinar os logs de evento do nó ou solucionar outros problemas. Depois de concluir sua investigação, você pode colocar o nó online novamente habilitando o agendamento de tarefas ([REST][rest_online] | [.net][net_online]) ou executar uma das outras ações discutidas anteriormente.
 
 > [!IMPORTANT]
-> Com cada ação descrita nesta seção – reinicializar, refazer a imagem, remover e desabilitar o agendamento de tarefas – é possível especificar como as tarefas atualmente em execução no nó são lidadas quando você executa a ação. Por exemplo, quando você desabilita o agendamento de tarefas em um nó usando a biblioteca de cliente .NET do lote, você pode especificar um valor de enumeração [DisableComputeNodeSchedulingOption][net_offline_option] para especificar se deseja **encerrar** as tarefas em execução, reenfileira-las para  agendamento em outros nós ou permitir que as tarefas em execução sejam concluídas antes de executar a ação (**TaskCompletion**).
+> Com cada ação descrita nesta seção – reinicializar, refazer a imagem, remover e desabilitar o agendamento de tarefas – é possível especificar como as tarefas atualmente em execução no nó são lidadas quando você executa a ação. Por exemplo, quando você desabilita o agendamento de tarefas em um nó usando a biblioteca de cliente .NET do lote, você pode especificar um valor de enumeração [DisableComputeNodeSchedulingOption][net_offline_option] para especificar se deseja **encerrar** as tarefas em execução, reenfileira-las para agendamento em outros nós ou permitir que as tarefas em execução sejam concluídas antes de executar a ação (**TaskCompletion**).
 >
 >
 

@@ -1,18 +1,19 @@
 ---
 title: Fazer backup de um farm do SharePoint no Azure Stack
 description: Use o Servidor de Backup do Azure para fazer backup e restaurar seus dados do SharePoint no Azure Stack. Este artigo fornece informações para configurar seu farm do SharePoint para que os dados desejados possam ser armazenados no Azure. Você pode restaurar dados protegidos do SharePoint do disco ou do Azure.
-author: adigan
-manager: shivamg
+ms.reviewer: adigan
+author: dcurwin
+manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 6/8/2018
-ms.author: adigan
-ms.openlocfilehash: 729b21095f14463cb6fb1615a9f61f1189a3bbce
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.author: dacurwin
+ms.openlocfilehash: ac87fa66b72f2d7eaaf1ae2cd71bfeb827469444
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68465186"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68688696"
 ---
 # <a name="back-up-a-sharepoint-farm-on-azure-stack"></a>Fazer backup de um farm do SharePoint no Azure Stack
 Faça backup de um farm do SharePoint no Azure Stack para o Microsoft Azure usando o MABS (Servidor de Backup do Microsoft Azure) da mesma maneira que você faz backup de outras fontes de dados. O Backup do Azure fornece flexibilidade no agendamento de backup para criar pontos de backup diariamente, semanalmente, mensalmente ou anualmente e fornece opções de política de retenção para diversos pontos de backup. Ele também fornece a capacidade de armazenar cópias de disco locais para obter RTOs (Objetivos de Tempo de Recuperação) rápidos e armazenar cópias no Azure para uma retenção econômica e de longo prazo.

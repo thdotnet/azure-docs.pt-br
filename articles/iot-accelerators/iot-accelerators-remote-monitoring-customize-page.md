@@ -1,5 +1,5 @@
 ---
-title: Adicionar uma página para a solução de monitoramento remoto da interface do usuário - Azure | Microsoft Docs
+title: Adicionar uma página à interface do usuário da solução de monitoramento remoto – Azure | Microsoft Docs
 description: Este artigo mostra como adicionar uma nova página na interface do usuário web do acelerador de solução de Monitoramento Remoto.
 author: dominicbetts
 manager: timlt
@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 10/02/2018
 ms.topic: conceptual
-ms.openlocfilehash: 95830cdffb232e16f9fbae51cfa11fbd18172c3c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ec0b9fbdfdb96317e1e7f6fe00384ba4f8c42bcc
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61447073"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68607958"
 ---
 # <a name="add-a-custom-page-to-the-remote-monitoring-solution-accelerator-web-ui"></a>Adicione uma página personalizada à interface da Web da web do acelerador de solução de monitoramento remoto
 
@@ -160,7 +160,7 @@ Opcionalmente, você pode conectar sua cópia local de execução da web da inte
     az network nsg rule update --name SSH --nsg-name {your solution name}-nsg --resource-group {your solution name} --access Allow
     ```
 
-    Você só deve habilitar o acesso SSH durante o desenvolvimento e teste. Se você habilitar o SSH, [você deve desabilitá-lo novamente assim que possível](../security/azure-security-network-security-best-practices.md).
+    Você só deve habilitar o acesso SSH durante o desenvolvimento e teste. Se você habilitar o SSH, [você deve desabilitá-lo novamente assim que possível](../security/fundamentals/network-best-practices.md).
 
 1. Use o portal do Azure ou a [CLI az](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) para localizar o nome e o endereço IP público de sua máquina virtual. Por exemplo:
 

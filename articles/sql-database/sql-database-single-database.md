@@ -10,18 +10,17 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 04/08/2019
-ms.openlocfilehash: 36b1fb96ac1dd89375588a65063ce729f6ac825d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1dc1d2780dcaf27e0c60cfffe84581c0278491dd
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65794399"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566533"
 ---
 # <a name="what-is-a-single-database-in-azure-sql-database"></a>O que é um banco de dados individual no Banco de Dados SQL do Azure
 
-A opção de implantação de banco de dados individual cria um banco de dados no Banco de Dados SQL com seu próprio conjunto de recursos e é gerenciada por meio de um servidor do Banco de Dados SQL. Com um banco de dados individual, cada banco de dados é portátil e fica isolado uns dos outros, cada qual com sua própria camada de serviço dentro do [modelo de compra baseado em DTU](sql-database-service-tiers-dtu.md) ou do [modelo de compra baseado em vCore](sql-database-service-tiers-vcore.md) e uma garantia de tamanho da computação.
+A opção de implantação de banco de dados individual cria um banco de dados no Banco de Dados SQL do Azure com seu próprio conjunto de recursos e é gerenciada por meio de um servidor de Banco de Dados SQL. Com um banco de dados individual, cada banco de dados é portátil e fica isolado uns dos outros, cada qual com sua própria camada de serviço dentro do [modelo de compra baseado em DTU](sql-database-service-tiers-dtu.md) ou do [modelo de compra baseado em vCore](sql-database-service-tiers-vcore.md) e uma garantia de tamanho da computação.
 
 > [!IMPORTANT]
 > O banco de dados individual é uma das três opções de implantação para o Banco de Dados SQL do Azure. As outras duas são [pools elásticos](sql-database-elastic-pool.md) e [instância gerenciada](sql-database-managed-instance.md).
@@ -30,7 +29,7 @@ A opção de implantação de banco de dados individual cria um banco de dados n
 
 ## <a name="dynamic-scalability"></a>Dimensionamento dinâmico
 
-Você pode criar seu primeiro aplicativo em um pequeno banco de dados único em baixo custo na camada de computação sem servidor (visualização) ou um tamanho de computação pequena na camada de computação provisionada. Alterar o [camada de computação ou serviço](sql-database-single-database-scale.md) manualmente ou por meio de programação a qualquer momento para atender às necessidades da sua solução. Você pode ajustar o desempenho sem tempo de inatividade para seu aplicativo ou para seus clientes. A escalabilidade dinâmica permite que o banco de dados responda de forma transparente às mudanças rápidas de requisitos de recursos e que você pague apenas pelos recursos de que precisa, quando precisar deles.
+Você pode criar seu primeiro aplicativo em um banco de dados pequeno e único com baixo custo na camada de computação sem servidor (visualização) ou em um tamanho de computação pequeno na camada de computação provisionada. Você altera a [camada de computação ou de serviço](sql-database-single-database-scale.md) manualmente ou programaticamente a qualquer momento para atender às necessidades de sua solução. Você pode ajustar o desempenho sem tempo de inatividade para seu aplicativo ou para seus clientes. A escalabilidade dinâmica permite que o banco de dados responda de forma transparente às mudanças rápidas de requisitos de recursos e que você pague apenas pelos recursos de que precisa, quando precisar deles.
 
 ## <a name="single-databases-and-elastic-pools"></a>Bancos de dados individuais e pools elásticos
 
@@ -42,7 +41,7 @@ Use as ferramentas de [monitoramento de desempenho interno](sql-database-perform
 
 ## <a name="availability-capabilities"></a>Recursos de disponibilidade
 
-Bancos de dados individuais, pools Elásticos e instâncias gerenciadas fornecem muitas características de disponibilidade. Para obter informações, confira [Características de disponibilidade](sql-database-technical-overview.md#availability-capabilities).
+Os bancos de dados individuais, os pools elásticos e as instâncias gerenciadas oferecem muitas características de disponibilidade. Para obter informações, confira [Características de disponibilidade](sql-database-technical-overview.md#availability-capabilities).
 
 ## <a name="transact-sql-differences"></a>Diferenças do Transact-SQL
 
@@ -56,7 +55,7 @@ Para obter mais informações, confira [Resolvendo diferenças de Transact-SQL d
 O Banco de Dados SQL fornece uma variedade de [recursos internos de segurança e conformidade](sql-database-security-overview.md) para ajudar seu aplicativo a atender a vários requisitos de conformidade e segurança.
 
 > [!IMPORTANT]
-> Azure SQL Database (todas as opções de implantação) foi certificado em relação a vários padrões de conformidade. Para obter mais informações, consulte o [Microsoft Azure Trust Center](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) onde você pode encontrar a lista mais atual das certificações de conformidade do banco de dados SQL.
+> O banco de dados SQL do Azure (todas as opções de implantação) foi certificado em relação a vários padrões de conformidade. Para obter mais informações, consulte a [central de confiabilidade do Microsoft Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) , em que você pode encontrar a lista mais atual de certificações de conformidade do banco de dados SQL.
 
 ## <a name="next-steps"></a>Próximas etapas
 

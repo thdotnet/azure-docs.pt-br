@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: juliemsft
 ms.author: jrasnick
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: a49d30d3058a6cf3ce82d56076f348861ad631ff
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4ea5d6c734659d36822f62237a42a8fbe332c996
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60585031"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567106"
 ---
 # <a name="manual-tune-query-performance-in-azure-sql-database"></a>Desempenho de consulta de ajuste manual no Banco de Dados SQL do Azure
 
@@ -38,7 +37,7 @@ Embora as camadas de serviço do Banco de Dados SQL do Azure sejam projetadas pa
 
 - **Aplicativos com desempenho lento devido a comportamento "com ruídos"**
 
-  Aplicativos barulhentos geram um excesso de operações de acesso a dados sensíveis à latência de rede. Pode ser necessário modificar esses tipos de aplicativos para reduzir o número de operações de acesso a dados no banco de dados SQL. Por exemplo, você pode melhorar o desempenho do aplicativo usando técnicas como envio em lote de consultas ad hoc ou movimentação das consultas em procedimentos armazenados. Para obter mais informações, consulte [Consultas em lote](#batch-queries).
+  Aplicativos barulhentos geram um excesso de operações de acesso a dados sensíveis à latência de rede. Pode ser necessário modificar esses tipos de aplicativos para reduzir o número de operações de acesso a dados no banco de dados SQL. Por exemplo, você pode melhorar o desempenho do aplicativo usando técnicas como o envio em lote de consultas ad hoc ou a movimentação das consultas para procedimentos armazenados. Para obter mais informações, consulte [Consultas em lote](#batch-queries).
 
 - **Bancos de dados com uma carga de trabalho intensiva que não pode ter suporte por um único computador inteiro**
 

@@ -1,20 +1,18 @@
 ---
 title: Como criar um blob no Armazenamento do Azure usando a biblioteca de clientes para Node.js v2
 description: Crie uma conta de armazenamento e um contêiner no armazenamento de objeto (Blob). Em seguida, use a biblioteca cliente do Armazenamento do Azure para o Node.js v2 para carregar um blob no Armazenamento do Microsoft Azure, fazer o download de um blob e listar os blobs em um contêiner.
-services: storage
 author: mhopkins-msft
-ms.custom: mvc
-ms.service: storage
-ms.topic: conceptual
-ms.date: 02/04/2019
 ms.author: mhopkins
-ms.reviewer: seguler
-ms.openlocfilehash: 7ca1eacd1add7453833b4b9ad1d4bd0fbef13ca7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 02/04/2019
+ms.service: storage
+ms.subservice: blobs
+ms.topic: conceptual
+ms.openlocfilehash: 89dbd6cc9a03398427b157fa207adb898d3bfc56
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65149428"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68721966"
 ---
 # <a name="how-to-upload-download-and-list-blobs-using-the-client-library-for-nodejs-v2"></a>Como carregar, baixar e listar blobs usando a biblioteca de clientes para Node.js v2
 

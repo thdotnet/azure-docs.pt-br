@@ -7,12 +7,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: sngun
-ms.openlocfilehash: a53a62a7bc7a5c7f8d9bdabdf411588fdf7bd5e7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7923ce10912ebb6f09c1c3d8390dd51b4f876bea
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66257061"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68552006"
 ---
 # <a name="use-azure-cosmos-db-change-feed-to-visualize-real-time-data-analytics"></a>Usar feed de alterações do Azure Cosmos DB para visualizar análise de dados em tempo real
 
@@ -41,7 +41,7 @@ O diagrama a seguir representa o fluxo de dados e os componentes envolvidos na s
    }
    ```
 
-2. **Cosmos DB:** os dados gerados são armazenados em uma coleção do Azure Cosmos DB.  
+2. **Cosmos DB:** Os dados gerados são armazenados em uma coleção de Azure Cosmos DB.  
 
 3. **Feed de alterações:** o feed de alterações escutará as alterações na coleção do Azure Cosmos DB. Todas as vezes que um novo documento for adicionado à coleção (ou seja, quando um evento ocorrer como um usuário visualizando um item, adicionando um item ao carrinho ou comprando um item), o feed de alterações disparará um [Azure Functions](../azure-functions/functions-overview.md).  
 
@@ -328,7 +328,7 @@ Agora, você observará como é possível usar a nova ferramenta de análise de 
 
 2. Selecione a coleção **topItems** e, em **Escala e configurações**, defina a **Vida Útil** como **30 segundos** para que a coleção topItems seja atualizada a cada 30 segundos.
 
-   ![Vida útil](./media/changefeed-ecommerce-solution/time-to-live.png)
+   ![Tempo para ficar ao vivo](./media/changefeed-ecommerce-solution/time-to-live.png)
 
 3. Para preencher a coleção **topItems** com os itens comprados com mais frequência, navegue de volta para **streamjob1** e adicione uma nova **Saída**. Selecione **Cosmos DB**.
 

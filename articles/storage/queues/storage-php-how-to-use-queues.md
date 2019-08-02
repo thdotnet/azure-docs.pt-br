@@ -1,21 +1,19 @@
 ---
-title: Como usar o armazenamento de fila do PHP - armazenamento do Azure
+title: Como usar o armazenamento de fila do PHP-armazenamento do Azure
 description: Saiba como usar o serviço de armazenamento de Filas do Azure para criar e excluir filas, bem como para inserir, obter e excluir mensagens. As amostras são escritas em PHP.
-services: storage
 author: mhopkins-msft
-ms.service: storage
-ms.devlang: php
-ms.topic: article
-ms.date: 01/11/2018
 ms.author: mhopkins
-ms.reviewer: cbrooks
+ms.date: 01/11/2018
+ms.service: storage
 ms.subservice: queues
-ms.openlocfilehash: 4ff54f9ca20c101de55bec2c7acf914c17bd7709
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.topic: conceptual
+ms.reviewer: cbrooks
+ms.openlocfilehash: b175c34f131a7a0f172c7be0dda083fbfda3dc1e
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65951204"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68721435"
 ---
 # <a name="how-to-use-queue-storage-from-php"></a>Como usar o Armazenamento de Fila do PHP
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -23,14 +21,14 @@ ms.locfileid: "65951204"
 [!INCLUDE [storage-try-azure-tools-queues](../../../includes/storage-try-azure-tools-queues.md)]
 
 ## <a name="overview"></a>Visão geral
-Este guia mostra como executar cenários comuns usando o serviço de armazenamento de Fila do Azure. Os exemplos são escritos usando classes da [Biblioteca do Cliente de Armazenamento do Azure para PHP][download]. Os cenários abrangidos incluem inserir, exibir, obter e excluir mensagens da fila, bem como criar e excluir filas.
+Este guia mostra como executar cenários comuns usando o serviço de armazenamento de Fila do Azure. Os exemplos são gravados por meio de classes da [biblioteca de cliente de armazenamento do Azure para php][download]. Os cenários abrangidos incluem inserir, exibir, obter e excluir mensagens da fila, bem como criar e excluir filas.
 
 [!INCLUDE [storage-queue-concepts-include](../../../includes/storage-queue-concepts-include.md)]
 
 [!INCLUDE [storage-create-account-include](../../../includes/storage-create-account-include.md)]
 
 ## <a name="create-a-php-application"></a>Criar um aplicativo PHP
-O único requisito para a criação de um aplicativo PHP que acessa o armazenamento de Filas do Azure é a referência de classes no [Biblioteca do Cliente de Armazenamento do Azure para PHP][download] em seu código. Você pode usar as ferramentas de desenvolvimento para criar seu aplicativo, incluindo o bloco de notas.
+O único requisito para a criação de um aplicativo PHP que acessa o armazenamento de filas do Azure é a referência de classes na [biblioteca de cliente de armazenamento do Azure para php][download] de dentro do seu código. Você pode usar as ferramentas de desenvolvimento para criar seu aplicativo, incluindo o bloco de notas.
 
 Neste guia, você usará os recursos do serviço de armazenamento de Filas que podem ser chamados dentro de um aplicativo PHP localmente ou no código em execução dentro de uma função web do Azure, função de trabalho ou no site.
 
@@ -45,14 +43,14 @@ Neste guia, você usará os recursos do serviço de armazenamento de Filas que p
       }
     }
     ```
-2. Baixe **[composer.phar][composer-phar]** na raiz do projeto.
+2. Baixe o **[Composer. Phar][composer-phar]** na raiz do projeto.
 3. Abra um prompt de comando e execute o seguinte comando na raiz do projeto
    
     ```
     php composer.phar install
     ```
 
-Como alternativa acesse a [biblioteca de clientes PHP do armazenamento do Azure ][download] no GitHub para clonar o código-fonte.
+Como alternativa, vá para a [biblioteca de cliente php do armazenamento do Azure][download] no GitHub para clonar o código-fonte.
 
 ## <a name="configure-your-application-to-access-queue-storage"></a>Configurar seu aplicativo para acessar o armazenamento de Filas
 Para usar as APIs de armazenamento de Filas do Azure, você precisa:

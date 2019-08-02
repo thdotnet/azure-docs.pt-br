@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 02/28/2019
 ms.author: zarhoads
-ms.openlocfilehash: 3230d85dfcf57bfd4e2e1684f4f5620600ec4e3a
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.openlocfilehash: c25bc316a345404c759b346b4fb877de42ee4d13
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68424211"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561563"
 ---
 # <a name="scaling-options-for-applications-in-azure-kubernetes-service-aks"></a>Opções dimensionamento para aplicativos no AKS (Serviço de Kubernetes do Azure)
 
@@ -45,9 +45,9 @@ Para começar a usar o dimensionamento automático de Pod horizontal em AKS, con
 
 Uma vez que o dimensionador automático de pod horizontal verifica a API de métricas a cada 30 segundos, eventos de escala anteriores talvez não tenham concluído com êxito antes de outra verificação ser feita. Esse comportamento pode fazer o dimensionador automático de pod horizontal mudar o número de réplicas antes que o evento de dimensionamento anterior seja capaz de receber a carga de trabalho do aplicativo e as demandas de recursos para ajustar-se de acordo.
 
-Para minimizar esses eventos de corrida, valores de resfriamento ou atraso podem ser definidos. Esses valores definem quanto o dimensionador automático de pod horizontal deve esperar após um evento de escala antes que outro evento de escala possa ser disparado. Esse comportamento permite que a nova contagem de réplicas entre em vigor e a API de métricas reflita a carga de trabalho distribuída. Por padrão, o atraso em eventos de aumento de escala é de 3 minutos e o atraso em eventos de redução é de 5 minutos
+Para minimizar esses eventos de corrida, cooldown ou valores de atraso são definidos. Esses valores definem quanto o dimensionador automático de pod horizontal deve esperar após um evento de escala antes que outro evento de escala possa ser disparado. Esse comportamento permite que a nova contagem de réplicas entre em vigor e a API de métricas reflita a carga de trabalho distribuída. Por padrão, o atraso em eventos de aumento de escala é de 3 minutos e o atraso em eventos de redução é de 5 minutos
 
-Talvez você precise ajustar esses valores de resfriamento. Os valores de resfriamento padrão podem dar a impressão de que o dimensionador automático de pod horizontal não está dimensionando a contagem de réplicas com rapidez suficiente. Por exemplo, para aumentar mais rapidamente o número de réplicas em uso, reduza `--horizontal-pod-autoscaler-upscale-delay` ao criar suas definições de dimensionador automático de pod horizontal usando `kubectl`.
+No momento, não é possível ajustar esses valores de cooldown do padrão.
 
 ## <a name="cluster-autoscaler"></a>Dimensionador automático do cluster
 
@@ -93,7 +93,7 @@ Nós virtuais são implantados em uma sub-rede adicional na mesma rede virtual q
 
 Para começar a dimensionar aplicativos, primeiro siga o guia de [início rápido para criar um cluster AKs com o CLI do Azure][aks-quickstart]. Em seguida, você pode começar a dimensionar manual ou automaticamente aplicativos em seu cluster do AKS:
 
-- Dimensionar [pods][aks-manually-scale-pods] manualmente or [nodes][aks-manually-scale-nodes]
+- Dimensionar manualmente os [pods][aks-manually-scale-pods] ou [nós][aks-manually-scale-nodes]
 - Usar o [dimensionamento de escalabilidade horizontal][aks-hpa]
 - Usar o [dimensionamento de cluster][aks-cluster-autoscaler]
 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 286c5850400242224e710a7883d3d3dc175cef12
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: bee8c1d2a1cd313c7fe59d8e53379dc57554e98c
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67273211"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68618576"
 ---
 # <a name="duplicate-detection"></a>Detecção de duplicidade
 
@@ -37,9 +37,9 @@ Para um processo de negócios em que várias mensagens são enviadas no decorrer
 A *MessageId* sempre pode ser algum GUID, mas a ancoragem o identificador para o processo de negócios produz a repetição previsível, o que é desejado para aproveitar o recurso de detecção de duplicidades com eficiência.
 
 > [!NOTE]
-> Se a detecção de duplicidades estiver habilitada e a chave de partição ou a ID de sessão não forem definidas, a ID da mensagem é usada como a chave de partição. Se a ID da mensagem também não for definida, as bibliotecas .NET e AMQP geram automaticamente uma ID de mensagem para a mensagem. Para obter mais informações, consulte [uso de chaves de partição](service-bus-partitioning.md#use-of-partition-keys).
+> Se a detecção de duplicidades estiver habilitada e a ID da sessão ou a chave de partição não estiver definida, a ID da mensagem será usada como a chave de partição. Se a ID da mensagem também não for definida, as bibliotecas .NET e AMQP gerarão automaticamente uma ID de mensagem para a mensagem. Para obter mais informações, consulte [uso de chaves de partição](service-bus-partitioning.md#use-of-partition-keys).
 
-## <a name="enable-duplicate-detection"></a>Habilitar detecção de duplicidade
+## <a name="enable-duplicate-detection"></a>Habilitar detecção de duplicidades
 
 No portal, o recurso é ativado durante a criação de entidade com a caixa de seleção **Habilitar detecção de duplicidade**, que está desativado por padrão. A configuração para criar novos tópicos é equivalente.
 

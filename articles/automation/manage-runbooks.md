@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 02/14/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 4519991f8ce3c8b4f99e1d7fb62295f3c0ece3a2
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 5a477811e46d97375d4dce4d83072dda60ca797c
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478266"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68717224"
 ---
 # <a name="manage-runbooks-in-azure-automation"></a>Gerenciar runbooks na Automação do Azure
 
@@ -48,12 +48,13 @@ New-AzureRmAutomationRunbook -AutomationAccountName MyAccount `
 Você pode criar um novo runbook na Automação do Azure importando um script do PowerShell ou o Fluxo de Trabalho do PowerShell (extensão .ps1), um runbook gráfico exportado (.graphrunbook) ou um script Python 2 (extensão .py).  Você precisa especificar o [tipo de runbook](automation-runbook-types.md) que é criado durante a importação, levando em consideração os aspectos a seguir.
 
 * Um arquivo `.graphrunbook` só pode ser importado para um novo [runbook gráfico](automation-runbook-types.md#graphical-runbooks) e os runbooks gráficos só podem ser criados a partir de um arquivo `.graphrunbook`.
-* Um arquivo `.ps1` com um Fluxo de Trabalho do PowerShell só poderá ser importado para um [runbook do Fluxo de Trabalho do PowerShell](automation-runbook-types.md#powershell-workflow-runbooks).  Se o arquivo contiver vários Fluxos de Trabalho do PowerShell, a importação falhará. Você deve salvar cada fluxo de trabalho em seu próprio arquivo e importá-los separadamente.
+* Um arquivo `.ps1` com um Fluxo de Trabalho do PowerShell só poderá ser importado para um [runbook do Fluxo de Trabalho do PowerShell](automation-runbook-types.md#powershell-workflow-runbooks). Se o arquivo contiver vários Fluxos de Trabalho do PowerShell, a importação falhará. Você deve salvar cada fluxo de trabalho em seu próprio arquivo e importá-los separadamente.
+* Um `.ps1` arquivo que contém um fluxo de trabalho do PowerShell não deve ser importado para um [runbook do PowerShell](automation-runbook-types.md#powershell-runbooks), pois não pode ser reconhecido pelo mecanismo de script do PowerShell.
 * Um arquivo `.ps1` que não contém um fluxo de trabalho pode ser importado para um [runbook do PowerShell](automation-runbook-types.md#powershell-runbooks) ou um [runbook do Fluxo de Trabalho do PowerShell](automation-runbook-types.md#powershell-workflow-runbooks).  Se for importado para um runbook de Fluxo de Trabalho do PowerShell, ele será convertido em um fluxo de trabalho e serão incluídos comentários no runbook especificando as alterações feitas.
 
 ### <a name="to-import-a-runbook-from-a-file-with-the-azure-portal"></a>Para importar um runbook de um arquivo com o portal do Azure
 
-Você pode usar o procedimento a seguir para importar um arquivo de script para a Automação do Azure.  
+Você pode usar o procedimento a seguir para importar um arquivo de script para a Automação do Azure.
 
 > [!NOTE]
 > Observe que você só poderá importar um arquivo .ps1 para um runbook do Fluxo de Trabalho do PowerShell usando o portal.
@@ -63,7 +64,7 @@ Você pode usar o procedimento a seguir para importar um arquivo de script para 
 3. Clique no botão **Adicionar um runbook** e em **Importar**.
 4. Clique em **Arquivo de runbook** para selecionar o arquivo a ser importado
 5. Se o campo **Nome** estiver habilitado, você terá a opção de alterá-lo.  O nome do runbook deve começar com uma letra e pode ter letras, números, sublinhados e traços.
-6. O [tipo de runbook](automation-runbook-types.md) é selecionado automaticamente, mas você pode alterá-lo depois levar as restrições aplicáveis em consideração. 
+6. O [tipo de runbook](automation-runbook-types.md) é selecionado automaticamente, mas você pode alterá-lo depois levar as restrições aplicáveis em consideração.
 7. O novo runbook é exibido na lista de runbooks da Conta de Automação.
 8. Será necessário [publicar o runbook](#publish-a-runbook) antes de executá-lo.
 
@@ -93,7 +94,7 @@ Quando você testa um runbook, a [Versão de rascunho](#publish-a-runbook) é ex
 
 Mesmo que a versão de rascunho esteja em execução, o runbook ainda será executado normalmente e executará qualquer ação nos recursos do ambiente. Por esse motivo, você deve testar apenas runbooks nos recursos de não produção.
 
-O procedimento para testar cada [tipo de runbook](automation-runbook-types.md) é o mesmo e não há nenhuma diferença entre testar o editor de texto e o editor gráfico no portal do Azure.  
+O procedimento para testar cada [tipo de runbook](automation-runbook-types.md) é o mesmo e não há nenhuma diferença entre testar o editor de texto e o editor gráfico no portal do Azure.
 
 1. Abra a versão de Rascunho do runbook no [editor de texto](automation-edit-textual-runbook.md) ou no [editor gráfico](automation-graphical-authoring-intro.md).
 1. Clique no botão **Testar** para abrir a página de Teste.

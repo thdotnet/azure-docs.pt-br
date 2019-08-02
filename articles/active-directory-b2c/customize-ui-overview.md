@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 13ae1b74acbcab8d623c24d6a7b8d7e1355b80e8
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: bbce41271914df4bb8a75804bc66ae538fe766fa
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68227150"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68716759"
 ---
 # <a name="about-user-interface-customization-in-azure-active-directory-b2c"></a>Sobre a personalização da interface do usuário no Azure Active Directory B2C
 
@@ -124,7 +124,7 @@ A tabela abaixo lista os fragmentos de HTML que o Azure AD B2C mescla ao element
 
 ## <a name="how-do-i-localize-content"></a>Como localizo o conteúdo?
 
-Você localiza seu conteúdo HTML habilitando a [personalização de idioma](active-directory-b2c-reference-language-customization.md) em seu locatário do Azure AD B2C. Habilitar esse recurso permite que o Azure AD B2C encaminhe o parâmetro do Open ID Connect `ui-locales` para seu ponto de extremidade. O servidor de conteúdo pode usar esse parâmetro para fornecer páginas HTML específicas a um idioma.
+Você localiza seu conteúdo HTML habilitando a [personalização de idioma](active-directory-b2c-reference-language-customization.md) em seu locatário do Azure AD B2C. Habilitar esse recurso permite que Azure ad B2C encaminhe o parâmetro `ui-locales` OpenID Connect para seu ponto de extremidade. O servidor de conteúdo pode usar esse parâmetro para fornecer páginas HTML específicas a um idioma.
 
 O conteúdo pode ser extraído de diferentes locais com base na localidade usada. No ponto de extremidade habilitado para CORS, você configura uma estrutura de pastas para hospedar conteúdo para idiomas específicos. Você chamará a correta se usar o valor curinga {Culture:RFC5646}. Por exemplo, seu URI de página personalizada pode parecer com `https://contoso.blob.core.windows.net/{Culture:RFC5646}/myHTML/unified.html`. Você pode carregar a página em francês efetuando o pull de conteúdo de `https://contoso.blob.core.windows.net/fr/myHTML/unified.html`
 

@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 12/03/2018
-ms.openlocfilehash: 84b93005941acf625d05a48f0df7b685e1bea0bd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0f64642d04504770415c0d2243ec77b44bde05f2
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65785508"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566290"
 ---
 # <a name="resolving-transact-sql-differences-during-migration-to-sql-database"></a>Resolvendo diferenças de Transact-SQL durante a migração para o Banco de Dados SQL
 
@@ -85,7 +84,7 @@ Para obter mais informações sobre a gramática, uso e exemplos do Transact-SQL
 
 A referência do Transact-SQL inclui artigos relacionados a versões do SQL Server da 2008 à atual. Abaixo do título do artigo, há um ícone de barra, listando as quatro plataformas do SQL Server e que indica a aplicabilidade. Por exemplo, grupos de disponibilidade foram introduzidos no SQL Server 2012. O artigo  [CREATE AVAILABILITY GROUP](https://msdn.microsoft.com/library/ff878399.aspx)  indica que a instrução se aplica a  **SQL Server (a partir de 2012)** . A instrução não se aplica ao SQL Server 2008, ao SQL Server 2008 R2, ao Banco de Dados SQL do Azure, ao SQL Data Warehouse ou ao Parallel Data Warehouse.
 
-Em alguns casos, o assunto geral de um artigo pode ser usado em um produto, mas há pequenas diferenças entre produtos. As diferenças são indicadas em pontos médios no artigo, conforme apropriado. Em alguns casos, o assunto geral de um artigo pode ser usado em um produto, mas há pequenas diferenças entre produtos. As diferenças são indicadas em pontos médios no artigo, conforme apropriado. Por exemplo, o artigo CREATE TRIGGER está disponível no Banco de Dados SQL. No entanto, a opção **ALL SERVER** para gatilhos de nível de servidor indica que os gatilhos de nível de servidor não podem ser usados no Banco de Dados SQL. Use gatilhos de nível de banco de dados em vez disso.
+Em alguns casos, o assunto geral de um artigo pode ser usado em um produto, mas há pequenas diferenças entre os produtos. As diferenças são indicadas em pontos médios no artigo, conforme apropriado. Em alguns casos, o assunto geral de um artigo pode ser usado em um produto, mas há pequenas diferenças entre os produtos. As diferenças são indicadas em pontos médios no artigo, conforme apropriado. Por exemplo, o artigo CREATE TRIGGER está disponível no Banco de Dados SQL. No entanto, a opção **ALL SERVER** para gatilhos de nível de servidor indica que os gatilhos de nível de servidor não podem ser usados no Banco de Dados SQL. Use gatilhos de nível de banco de dados em vez disso.
 
 ## <a name="next-steps"></a>Próximas etapas
 

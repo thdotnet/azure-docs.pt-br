@@ -2,7 +2,7 @@
 title: Atribuir ou remover licenças - Azure Active Directory | Microsoft Docs
 description: Instruções sobre como atribuir ou remover licenças do Azure Active Directory de seus usuários ou grupos.
 services: active-directory
-author: eross-msft
+author: msaburnley
 manager: daveba
 ms.assetid: f8b932bc-8b4f-42b5-a2d3-f2c076234a78
 ms.service: active-directory
@@ -10,16 +10,16 @@ ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/05/2018
-ms.author: lizross
+ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e7a3f80067adb3093bd27e34a45b3afd72b4993
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9f76e766d0aedae88eb11dd244f71f130f77c57e
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60247574"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561666"
 ---
 # <a name="assign-or-remove-licenses-using-the-azure-active-directory-portal"></a>Atribuir ou remover licenças usando o portal do Azure Active Directory
 Muitos serviços do Azure AD (Azure Active Directory) exigem que você ative um produto do Azure AD e licencie cada um dos seus usuários ou grupos (e membros associados) para esse produto. Somente usuários com licenças ativas poderão acessar e usar os serviços licenciados do Azure AD.
@@ -27,9 +27,9 @@ Muitos serviços do Azure AD (Azure Active Directory) exigem que você ative um 
 ## <a name="available-product-editions"></a>Edições do produto disponível
 Há várias edições do produto do AD do Azure.
 
-- AD do Azure Gratuito
+- Azure AD Gratuito
 
-- AD Basic do Azure
+- Azure AD Básico
 
 - O Azure AD Premium 1 (Azure AD P1)
 
@@ -47,7 +47,7 @@ Você pode visualizar seus produtos disponíveis, incluindo as licenças individ
 
     O **licenças** página será exibida.
 
-    ![Página de licenças, com o número de produtos comprados e licenças atribuídas](media/license-users-groups/license-details-blade.png)
+    ![Página licenças, com número de produtos comprados e licenças atribuídas](media/license-users-groups/license-details-blade.png)
     
 3. Selecione o link **Produtos comprados** para visualizar a página **Produtos** e para ver os **atribuídos**, **Disponíveis** e **expirados em breve** detalhes para cada edição de produto específica.
 

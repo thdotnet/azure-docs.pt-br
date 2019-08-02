@@ -9,64 +9,64 @@ ms.date: 06/01/2019
 ms.author: tamram
 ms.reviewer: hux
 ms.subservice: blobs
-ms.openlocfilehash: d58c596421cec2e69210dd39a5d4a9708c154b44
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c0b4a83b2c950683926be7fb3be3b0cbe977fef8
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66492749"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68618402"
 ---
 # <a name="store-business-critical-data-in-azure-blob-storage"></a>Armazenar dados comercialmente críticos no Armazenamento de Blobs do Azure
 
-Armazenamento imutável para o armazenamento de BLOBs do Azure permite aos usuários armazenar objetos de dados críticos de negócios em um estado WORM (Write Once, Read Many). Esse estado torna os dados não apagáveis e não modificáveis para um intervalo especificado pelo usuário. Objetos de blob podem ser criados e lido, mas não modificados ou excluídos, para a duração do intervalo de retenção. Armazenamento imutável está habilitado para uso geral v2 e contas de armazenamento de BLOBs em todas as regiões do Azure.
+O armazenamento imutável para o armazenamento de BLOBs do Azure permite que os usuários armazenem objetos de dados críticos para os negócios em um estado de WORM (gravar uma vez, ler muitos). Esse estado torna os dados não apagáveis e não modificáveis para um intervalo especificado pelo usuário. Os objetos de blob podem ser criados e lidos, mas não modificados ou excluídos, durante a duração do intervalo de retenção. O armazenamento imutável é habilitado para Uso Geral V2 e contas de armazenamento de BLOBs em todas as regiões do Azure.
 
 ## <a name="overview"></a>Visão geral
 
-Armazenamento imutável ajuda a organização de saúde, instituições financeiras e setores relacionados – particularmente corretores que as organizações – armazenar dados com segurança. Ele também pode ser utilizado em qualquer cenário para proteger dados críticos contra modificação ou exclusão. 
+O armazenamento imutável ajuda a organização de saúde, instituições financeiras e setores relacionados, especialmente as organizações de distribuidores de agente, para armazenar dados com segurança. Ele também pode ser aproveitado em qualquer cenário para proteger dados críticos contra modificação ou exclusão. 
 
 Os aplicativos típicos incluem:
 
-- **Conformidade normativa**: O armazenamento imutável para armazenamento de Blobs do Azure ajuda as organizações a atender às regulamentações SEC 17a-4 (f), CFTC 1.31 (d), FINRA e outras. Esses requisitos normativos podem ser baixados por meio de endereços de armazenamento como imutável de detalhes de um white paper técnico por Cohasset associa a [Portal de confiança do serviço de Microsoft](https://aka.ms/AzureWormStorage). O [Central de confiabilidade do Azure](https://www.microsoft.com/trustcenter/compliance/compliance-overview) contém informações detalhadas sobre nossas certificações de conformidade.
+- **Conformidade normativa**: O armazenamento imutável para armazenamento de Blobs do Azure ajuda as organizações a atender às regulamentações SEC 17a-4 (f), CFTC 1.31 (d), FINRA e outras. Um White paper técnico da Cohasset Associates fornece detalhes sobre como o armazenamento imutável resolve esses requisitos regulatórios é baixável por meio do [portal de confiança do serviço da Microsoft](https://aka.ms/AzureWormStorage). O [central de confiabilidade do Azure](https://www.microsoft.com/trustcenter/compliance/compliance-overview) contém informações detalhadas sobre nossas certificações de conformidade.
 
-- **Retenção segura de documentos**: Armazenamento imutável para o armazenamento de BLOBs do Azure garante que os dados não podem ser modificados ou excluídos por qualquer usuário, incluindo usuários com privilégios administrativos da conta.
+- **Retenção segura de documentos**: O armazenamento imutável para o armazenamento de BLOBs do Azure garante que os dados não possam ser modificados ou excluídos por qualquer usuário, incluindo os usuários com privilégios administrativos de conta.
 
-- **Retenção legal**: Armazenamento imutável para o armazenamento de BLOBs do Azure permite aos usuários armazenar informações confidenciais que é essenciais para o uso de litígio ou business em um estado de prova de adulteração, a duração desejada até que o bloqueio seja removido. Este recurso não se limita apenas aos casos de uso legal, mas pode também ser considerado uma espera baseada em evento ou um bloqueio de enterprise, em que a necessidade de proteger os dados com base em política corporativa ou de gatilhos de evento é necessária.
+- **Retenção legal**: O armazenamento imutável para o armazenamento de BLOBs do Azure permite que os usuários armazenem informações confidenciais que são críticas para o uso de litígios ou negócios em um estado de prova de adulteração até a duração desejada até que a suspensão seja removida. Esse recurso não é limitado apenas a casos de uso jurídico, mas também pode ser considerado como uma suspensão baseada em evento ou um bloqueio corporativo, em que a necessidade de proteger dados com base em gatilhos de evento ou política corporativa é necessária.
 
-Armazenamento imutável suporta o seguinte:
+O armazenamento imutável dá suporte ao seguinte:
 
-- **[Suporte à política de retenção baseada em tempo](#time-based-retention)** : Os usuários podem definir políticas para armazenar dados de um intervalo especificado. Quando uma política de retenção baseada em tempo é definido, blobs podem ser criados e lido, mas não modificados ou excluídos. Depois que o período de retenção expirar, blobs podem ser excluídos, mas não substituídos.
+- **[Suporte à política de retenção baseada em tempo](#time-based-retention)** : Os usuários podem definir políticas para armazenar dados para um intervalo especificado. Quando uma política de retenção baseada em tempo é definida, os BLOBs podem ser criados e lidos, mas não modificados ou excluídos. Depois que o período de retenção tiver expirado, os BLOBs poderão ser excluídos, mas não substituídos.
 
-- **[Suporte à política de retenção legal](#legal-holds)** : Se o intervalo de retenção não for conhecido, os usuários podem definir Retenções legais para armazenar dados immutably até que a retenção legal é limpo.  Quando uma política de retenção legal for definida, blobs podem ser criados e lido, mas não modificados ou excluídos. Cada bloqueio legal é associado uma definida pelo usuário alfanumérica marca (por exemplo, uma ID de caso, o nome do evento, etc.) que é usada como uma cadeia de caracteres do identificador. 
+- **[Suporte de política de manutenção legal](#legal-holds)** : Se o intervalo de retenção não for conhecido, os usuários poderão definir as isenções legais para armazenar dados immutably até que a retenção legal seja apagada.  Quando uma política de manutenção legal é definida, os BLOBs podem ser criados e lidos, mas não modificados ou excluídos. Cada retenção legal é associado a uma marca alfanumérica definida pelo usuário (como uma ID de caso, um nome de evento, etc.) que é usada como uma cadeia de caracteres de identificador. 
 
 - **Suporte para todas as camadas de blob**: As políticas do WORM são independentes da camada de armazenamento do Azure Blob e se aplicam a todas as camadas: frequente, esporádica e de arquivo. Os usuários podem fazer a transição dos dados de suas cargas de trabalho para a camada de custo mais otimizado, mantendo a imutabilidade dos dados.
 
-- **Configuração de nível do contêiner**: Os usuários podem configurar políticas de retenção com base no tempo e marcas de retenção legal no nível do contêiner. Usando configurações de nível de contêiner simples, os usuários podem criar e políticas de retenção baseada em tempo de bloqueio, estender os intervalos de retenção, conjunto e retenções legais clara e muito mais. Essas políticas se aplicam a todos os blobs no contêiner, existentes e novos.
+- **Configuração de nível do contêiner**: Os usuários podem configurar políticas de retenção com base no tempo e marcas de retenção legal no nível do contêiner. Usando configurações de nível de contêiner simples, os usuários podem criar e bloquear políticas de retenção baseadas em tempo, estender intervalos de retenção, definir e limpar as isenções legais e muito mais. Essas políticas se aplicam a todos os blobs no contêiner, existentes e novos.
 
-- **Suporte de registro em log de auditoria**: Cada contêiner inclui um log de auditoria de política. Ele mostra até sete com base no tempo de retenção de comandos para as políticas de retenção bloqueado com base no tempo e contém a ID de usuário, tipo de comando, carimbos de data / hora e intervalo de retenção. Para retenções legais, o log contém as identificações de ID do usuário, tipo de comando, carimbos de tempo e retenção legal. Esse log é retido para o tempo de vida da política de acordo com as diretrizes de normas 17a-4(f) s. O [Log de atividades do Azure](../../azure-monitor/platform/activity-logs-overview.md) mostra um log mais abrangente de todas as atividades de plano de controle; permitindo [Logs de diagnóstico do Azure](../../azure-monitor/platform/diagnostic-logs-overview.md) retém e mostra as operações do plano de dados. É responsabilidade do usuário armazenar esses logs de forma persistente, conforme o necessário para regulamentações ou outros fins.
+- **Suporte de registro em log de auditoria**: Cada contêiner inclui um log de auditoria de política. Ele mostra até sete comandos de retenção baseados em tempo para políticas de retenção baseadas em tempo bloqueadas e contém a ID de usuário, o tipo de comando, os carimbos de data/hora e o intervalo de retenção. Para retenções legais, o log contém as identificações de ID do usuário, tipo de comando, carimbos de tempo e retenção legal. Esse log é retido durante o tempo de vida da política, de acordo com as diretrizes regulatórias da SEC 17a-4 (f). O [log de atividades do Azure](../../azure-monitor/platform/activity-logs-overview.md) mostra um log mais abrangente de todas as atividades do plano de controle; ao habilitar [os logs de diagnóstico do Azure](../../azure-monitor/platform/diagnostic-logs-overview.md) , o mantém e mostra as operações do plano de dados. É responsabilidade do usuário armazenar esses logs de forma persistente, conforme o necessário para regulamentações ou outros fins.
 
-## <a name="how-it-works"></a>Como ele funciona
+## <a name="how-it-works"></a>Como funciona
 
-O armazenamento imutável para armazenamento de Blobs do Azure oferece suporte a dois tipos de políticas WORM ou imutáveis: retenção baseada em tempo e retenções legais. Quando uma política de retenção baseada em tempo ou retenção legal for aplicada em um contêiner, todos os blobs existentes movem para um estado imutável do WORM em menos de 30 segundos. Todos os novos blobs que são carregados para esse contêiner também serão movidos para o estado imutável. Depois que todos os blobs foram movidos para o estado imutável, a política imutável é confirmada e todos os substituir ou excluam não são permitidas operações para objetos novos e existentes no contêiner imutável.
+O armazenamento imutável para armazenamento de Blobs do Azure oferece suporte a dois tipos de políticas WORM ou imutáveis: retenção baseada em tempo e retenções legais. Quando uma política de retenção baseada em tempo ou uma retenção legal é aplicada em um contêiner, todos os BLOBs existentes são movidos para um estado de WORM imutável em menos de 30 segundos. Todos os novos BLOBs que são carregados nesse contêiner também serão movidos para o estado imutável. Depois que todos os BLOBs forem movidos para o estado imutável, a política imutável será confirmada e todas as operações de substituição ou exclusão para objetos novos e existentes no contêiner imutável não serão permitidas.
 
-Contêiner e a exclusão da conta também não são permitidas se não houver nenhum BLOB protegido por uma política imutável. A operação Excluir contêiner falhará se houver pelo menos um blob com uma política de retenção baseada em tempo ou uma retenção legal bloqueada. A exclusão da conta de armazenamento falhará se houver pelo menos um contêiner WORM com retenção legal ou um blob com um intervalo de retenção ativa. 
+A exclusão de contêiner e conta também não será permitida se houver BLOBs protegidos por uma política imutável. A operação Excluir contêiner falhará se houver pelo menos um blob com uma política de retenção baseada em tempo ou uma retenção legal bloqueada. A exclusão da conta de armazenamento falhará se houver pelo menos um contêiner WORM com retenção legal ou um blob com um intervalo de retenção ativa. 
 
 ### <a name="time-based-retention"></a>Retenção baseada em tempo
 
 > [!IMPORTANT]
-> Uma política de retenção com base no tempo deve ser *bloqueada* para o blob em uma conformidade imutável (gravar e excluir protegido) estado 17a-4(f) s e outra conformidade a normas. É recomendável que você bloqueie a política em um período razoável de tempo, geralmente menos de 24 horas. É o estado inicial de uma política de retenção baseada em tempo aplicada *desbloqueada*, permitindo que você teste o recurso e fazer alterações à política antes de você bloqueá-lo. Enquanto o *desbloqueada* estado fornece proteção de imutabilidade, não recomendamos usar o *desbloqueada* estado para qualquer finalidade que não seja de avaliações de recurso de curto prazo. 
+> Uma política de retenção baseada em tempo deve estar bloqueada para que o blob esteja em um estado compatível imutável (gravação e exclusão protegida) para SEC 17a-4 (f) e outra conformidade regulatória. É recomendável que você bloqueie a política em um período de tempo razoável, normalmente menos de 24 horas. O estado inicial de uma política de retenção baseada em tempo é *desbloqueado*, permitindo que você teste o recurso e faça alterações na política antes de bloqueá-lo. Embora o estado desbloqueado forneça proteção contra imutabilidade, não é recomendável usar o estado desbloqueado para qualquer outra finalidade que não seja a avaliação de recursos de curto prazo. 
 
-Quando uma política de retenção baseada em tempo é aplicada em um contêiner, todos os blobs no contêiner ficará no estado imutável durante o *efetivo* período de retenção. O período de retenção em vigor para os blobs existentes é igual à diferença entre a hora de modificação do blob e o intervalo de retenção especificado pelo usuário.
+Quando uma política de retenção baseada em tempo é aplicada em um contêiner, todos os blobs no contêiner ficará no estado imutável durante o *efetivo* período de retenção. O período de retenção efetivo para BLOBs existentes é igual à diferença entre a hora da modificação do blob e o intervalo de retenção especificado pelo usuário.
 
 Para novos blobs, o período efetivo de retenção é igual ao intervalo de retenção especificado pelo usuário. Como os usuários podem estender o intervalo de retenção, o armazenamento imutável usa o valor mais recente do intervalo de retenção especificado pelo usuário para calcular o período de retenção efetivo.
 
 > [!TIP]
 > **Exemplo:** Um usuário cria uma política de retenção baseada em tempo com um intervalo de retenção de cinco anos.
 >
-> O blob existente nesse contêiner _testblob1_, foi criado um ano atrás. O período de retenção efetiva _testblob1_ é de quatro anos.
+> O blob existente nesse contêiner, _testblob1_, foi criado há um ano atrás. O período de retenção efetivo para _testblob1_ é de quatro anos.
 >
-> Um novo blob, _testblob2_, agora é carregado no contêiner. O período de retenção em vigor para esse novo blob é de cinco anos.
+> Um novo BLOB, _testblob2_, agora é carregado no contêiner. O período de retenção em vigor para esse novo blob é de cinco anos.
 
-Uma política de retenção baseada em tempo de desbloqueada é recomendada somente para teste de recurso e uma política deve ser bloqueada para ser compatível com 17a-4(f) s e outra conformidade a normas. Depois que uma política de retenção com base em hora estiver bloqueada, a política não pode ser removida e um máximo de 5 aumenta ao período de retenção efetiva é permitido. Para obter mais informações sobre como definir e políticas de retenção baseada em tempo de bloqueio, consulte o [guia de Introdução](#getting-started) seção.
+Uma política de retenção baseada em tempo desbloqueada é recomendada apenas para teste de recursos e uma política deve ser bloqueada para ser compatível com a SEC 17a-4 (f) e outra conformidade regulatória. Quando uma política de retenção baseada em tempo é bloqueada, a política não pode ser removida e um máximo de 5 aumentos no período de retenção efetivo é permitido. Para obter mais informações sobre como definir e bloquear políticas de retenção baseadas em tempo, consulte a seção [introdução](#getting-started) .
 
 ### <a name="legal-holds"></a>Retenções legais
 
@@ -78,35 +78,35 @@ A tabela a seguir mostra os tipos de operações de blob desativadas para os dif
 
 |Cenário  |Estado do blob  |Operações de blob não permitidas  |
 |---------|---------|---------|
-|O intervalo efetivo de retenção no blob ainda não expirou e/ou a retenção legal está definida     |Imutável: protegido contra exclusão e gravação         | Colocar Blob<sup>1</sup>, coloque o bloco<sup>1</sup>, colocar lista de blocos<sup>1</sup>, excluir metadados de Blob do contêiner, Blob Delete, conjunto, colocar página, definir propriedades de Blob, Blob de instantâneo, Blob de cópia Incremental Acrescentar bloco         |
+|O intervalo efetivo de retenção no blob ainda não expirou e/ou a retenção legal está definida     |Imutável: protegido contra exclusão e gravação         | Colocar blob<sup>1</sup>, colocar bloco<sup>1</sup>, colocar lista de blocos<sup>1</sup>, excluir contêiner, excluir BLOB, definir metadados de BLOB, colocar página, definir propriedades de BLOB, BLOB de instantâneo, BLOB de cópia incremental, bloco de acréscimo         |
 |O intervalo efetivo de retenção no blob expirou     |Protegido apenas contra gravação  (operações de exclusão são permitidas)         |Inserir blob<sup>1</sup>, inserir bloco<sup>1</sup>, inserir lista de blocos<sup>1</sup>, definir metadados de blob, inserir página, definir propriedades de blob, obter instantâneo de blob, fazer cópia incremental de blob, acrescentar bloco         |
 |Todas as retenções legais são liberadas e nenhuma política de retenção baseada em tempo é definida no contêiner     |Mutável         |Nenhum         |
 |Nenhuma política WORM é criada (retenção baseada em tempo ou retenção legal)     |Mutável         |Nenhum         |
 
-<sup>1</sup> o aplicativo permite que essas operações criar um novo blob de uma vez. Todos os próximos substituir operações em um caminho de blob existente em um contêiner de imutável não são permitidas.
+<sup>1</sup> o aplicativo permite que essas operações criem um novo BLOB uma vez. Todas as operações de substituição subsequentes em um caminho de blob existente em um contêiner imutável não são permitidas.
 
 ## <a name="supported-values"></a>Valores com suporte
 
 ### <a name="time-based-retention"></a>Retenção baseada em tempo
-- Para uma conta de armazenamento, o número máximo de contêineres com políticas imutáveis com base no tempo bloqueados é 1.000.
-- O intervalo de retenção mínimo é 1 dia. O máximo é de dias 146,000 (400 anos).
-- Para um contêiner, o número máximo de edições para estender um intervalo de retenção para políticas imutáveis com base no tempo bloqueados é 5.
-- Para um contêiner, um máximo de logs de auditoria de política de retenção baseada em tempo de 7 são mantidas para a duração da política.
+- Para uma conta de armazenamento, o número máximo de contêineres com políticas imutáveis baseadas em tempo bloqueado é de 1.000.
+- O intervalo de retenção mínimo é 1 dia. O máximo é de 146.000 dias (400 anos).
+- Para um contêiner, o número máximo de edições para estender um intervalo de retenção para políticas imutáveis baseadas em tempo bloqueado é 5.
+- Para um contêiner, um máximo de sete logs de auditoria de política de retenção com base em tempo são mantidos para uma política bloqueada.
 
 ### <a name="legal-hold"></a>Retenção legal
 - Para uma conta de armazenamento, o número máximo de contêineres com uma configuração de retenção legal é 1.000.
 - Para um contêiner, o número máximo de tags de retenção legal é 10.
-- O comprimento mínimo de uma marca de retenção legal é 3 caracteres alfanuméricos. O comprimento máximo é 23 caracteres alfanuméricos.
-- Para um contêiner, um máximo de 10 legal mantenha os logs são mantidos para a duração da política de auditoria de política.
+- O comprimento mínimo de uma marca de retenção legal é de 3 caracteres alfanuméricos. O comprimento máximo é de 23 caracteres alfanuméricos.
+- Para um contêiner, um máximo de 10 logs de auditoria de política de retenção legal são mantidos durante a política.
 
 ## <a name="pricing"></a>Preços
 
 Não há nenhum custo adicional para usar esse recurso. Dados imutáveis são cobrados da mesma forma como dados regulares, mutáveis. Para obter detalhes de preço do Armazenamento de Blobs do Azure, confira a [Página de preços do Armazenamento do Azure](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
 ## <a name="getting-started"></a>Introdução
-Armazenamento imutável está disponível somente para uso geral v2 e contas de armazenamento de Blob. Essas contas devem ser gerenciadas por meio [do Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview). Para obter informações sobre como atualizar uma conta de armazenamento v1 de uso geral existente, consulte [atualizar uma conta de armazenamento](../common/storage-account-upgrade.md).
+O armazenamento imutável está disponível somente para contas de armazenamento de BLOBs e Uso Geral v2. Essas contas devem ser gerenciadas por meio de [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview). Para obter informações sobre como atualizar uma conta de armazenamento Uso Geral v1 existente, consulte [atualizar uma conta de armazenamento](../common/storage-account-upgrade.md).
 
-As versões mais recentes do [portal do Azure](https://portal.azure.com), [CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), e [Azure PowerShell](https://github.com/Azure/azure-powershell/releases) oferece suporte a armazenamento imutável para o armazenamento de BLOBs do Azure. [Suporte de biblioteca de cliente](#client-libraries) também é fornecido.
+As versões mais recentes do [portal do Azure](https://portal.azure.com), [CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)e [Azure PowerShell](https://github.com/Azure/azure-powershell/releases) dão suporte ao armazenamento imutável para o armazenamento de BLOBs do Azure. O [suporte à biblioteca de cliente](#client-libraries) também é fornecido.
 
 ### <a name="azure-portal"></a>Portal do Azure
 
@@ -120,19 +120,19 @@ As versões mais recentes do [portal do Azure](https://portal.azure.com), [CLI d
 
     !["Com base no tempo de retenção" selecionada em "Tipo de política"](media/storage-blob-immutable-storage/portal-image-2.png)
 
-4. Digite o intervalo de retenção em dias (os valores aceitáveis de 1 para 146000 dias).
+4. Insira o intervalo de retenção em dias (valores aceitáveis de 1 a 146000 dias).
 
     ![Caixa "Período de retenção de atualização para"](media/storage-blob-immutable-storage/portal-image-5-retention-interval.png)
 
-    O estado inicial da política é desbloqueado permitindo que você teste o recurso e fazer alterações à política antes de você bloqueá-lo. A política de bloqueio é essencial para conformidade com as normas, como SEC 17a-4.
+    O estado inicial da política é desbloqueado, permitindo que você teste o recurso e faça alterações na política antes de bloqueá-lo. O bloqueio da política é essencial para conformidade com regulamentos, como SEC 17a-4.
 
-5. A política de bloqueio. Clique no botão de reticências ( **...** ), e o seguinte menu será exibido com ações adicionais:
+5. A política de bloqueio. Clique com o botão direito do mouse nas reticências ( **...** ) e o menu a seguir aparecerá com ações adicionais:
 
     !["Política de bloqueio" no menu](media/storage-blob-immutable-storage/portal-image-4-lock-policy.png)
 
-6. Selecione **política de bloqueio** e confirme o bloqueio. A política agora está bloqueada e não pode ser excluída, somente as extensões do intervalo de retenção serão permitidas. Exclui de blob e substituições não são permitidas. 
+6. Selecione **Bloquear política** e confirmar o bloqueio. A política agora está bloqueada e não pode ser excluída, somente as extensões do intervalo de retenção serão permitidas. Não são permitidas exclusões e substituições de BLOB. 
 
-    ![Confirme se a "Política de bloqueio" no menu](media/storage-blob-immutable-storage/portal-image-5-lock-policy.png)
+    ![Confirmar "política de bloqueio" no menu](media/storage-blob-immutable-storage/portal-image-5-lock-policy.png)
 
 7. Para ativar retenções legais, selecione **+ Adicionar Política**. Selecione **Retenção legal** no menu suspenso.
 
@@ -142,7 +142,7 @@ As versões mais recentes do [portal do Azure](https://portal.azure.com), [CLI d
 
     ![Caixa "Nome da tag" no tipo de política](media/storage-blob-immutable-storage/portal-image-set-legal-hold-tags.png)
 
-9. Para limpar uma retenção legal, simplesmente remova a marca de identificador legal do aplicado.
+9. Para limpar uma retenção legal, basta remover a marca de identificador de retenção legal aplicada.
 
 ### <a name="azure-cli"></a>CLI do Azure
 
@@ -150,7 +150,7 @@ O recurso está incluído nos seguintes grupos de comandos: `az storage containe
 
 ### <a name="powershell"></a>PowerShell
 
-O módulo Az.Storage dá suporte a armazenamento imutável.  Para habilitar o recurso, siga estas etapas:
+O módulo AZ. Storage dá suporte ao armazenamento imutável.  Para habilitar o recurso, siga estas etapas:
 
 1. Certifique-se de que você tenha a versão mais recente do PowerShellGet instalado: `Install-Module PowerShellGet –Repository PSGallery –Force`.
 2. Remova qualquer instalação anterior do PowerShell do Azure.
@@ -167,31 +167,31 @@ As seguintes bibliotecas de cliente dão suporte a armazenamento imutável para 
 - [Biblioteca de cliente do Python versão 2.0.0 versão Release Candidate 2 e posterior](https://pypi.org/project/azure-mgmt-storage/2.0.0rc2/)
 - [Biblioteca de clientes Java](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/storage/resource-manager/Microsoft.Storage/preview/2018-03-01-preview)
 
-## <a name="faq"></a>Perguntas frequentes
+## <a name="faq"></a>Perguntas Frequentes
 
-**Você pode fornecer a documentação de conformidade do WORM?**
+**Você pode fornecer documentação sobre a conformidade do WORM?**
 
-Sim. A conformidade de documento Microsoft mantidos de uma empresa de avaliação independente especializado em controle de informações e gerenciamento de registros, Cohasset Associates, para avaliar o armazenamento de BLOBs imutável e sua conformidade com requisitos específicos no setor de serviços financeiros. Cohasset validado que imutável Blob de armazenamento do Azure, quando usada para manter os Blobs com base no tempo em um estado WORM, cumpra os requisitos de armazenamento relevantes de regra CFTC 1.31(c)-(d), FINRA regra 4511 e norma SEC 17a-4. Microsoft direcionados a esse conjunto de regras, pois eles representam as diretrizes prescritivas mais globalmente para retenção de registros para instituições financeiras. O relatório Cohasset está disponível na [Microsoft Service Trust Center](https://aka.ms/AzureWormStorage). Para solicitar uma carta de Atestado da Microsoft em relação à conformidade do WORM, entre em contato com o suporte do Azure.
+Sim. Para documentar a conformidade, a Microsoft manteve uma importante empresa de avaliação independente especializada em gerenciamento de registros e governança de informações, Cohasset Associates, para avaliar o armazenamento de BLOBs imutável do Azure e sua conformidade com os requisitos específicos para o setor de serviços financeiros. Cohasset validou que o armazenamento de blob imutável do Azure, quando usado para manter BLOBs baseados em tempo em um estado de WORM, atende aos requisitos de armazenamento relevantes do CFTC Rule 1.31 (c)-(d), à regra de FINRA 4511 e à norma SEC 17a-4. A Microsoft direcionou esse conjunto de regras, pois representam as diretrizes mais prescritivas globalmente para retenção de registros para instituições financeiras. O relatório Cohasset está disponível na [central de confiabilidade do serviço da Microsoft](https://aka.ms/AzureWormStorage). Para solicitar uma carta de atestado da Microsoft sobre a conformidade do WORM, entre em contato com o suporte do Azure.
 
 **O recurso se aplica apenas a blobs de bloco ou a páginas e acréscimos de blobs também?**
 
-O armazenamento imutável pode ser usado com qualquer tipo de blob, mas é mais recomendado usá-lo para blobs de blocos. Ao contrário dos blobs de bloco, os blobs de página e os blobs de acréscimo precisam ser criados fora de um contêiner WORM e depois copiados. Depois de copiar esses blobs em um contêiner WORM, não mais *acrescenta* para um acréscimo são permitidas alterações em um blob de páginas ou blob.
+O armazenamento imutável pode ser usado com qualquer tipo de blob, mas é mais recomendado usá-lo para blobs de blocos. Ao contrário dos blobs de bloco, os blobs de página e os blobs de acréscimo precisam ser criados fora de um contêiner WORM e depois copiados. Depois de copiar esses BLOBs em um contêiner de WORM, não são permitidos acréscimos adicionais a um blob de acréscimo ou alterações em um blob de páginas.
 
-**É necessário criar uma nova conta de armazenamento para usar este recurso?**
+**É necessário criar uma nova conta de armazenamento para usar esse recurso?**
 
-Não, você pode usar o armazenamento imutável com v2 de uso geral existente ou recém-criado ou contas de armazenamento de Blob. Esse recurso destina-se a uso com blobs de blocos em contas GPv2 e armazenamento de BLOBs. Contas de armazenamento de v1 de uso gerais não são suportadas, mas podem ser facilmente atualizadas para uso geral v2. Para obter informações sobre como atualizar uma conta de armazenamento v1 de uso geral existente, consulte [atualizar uma conta de armazenamento](../common/storage-account-upgrade.md).
+Não, você pode usar o armazenamento imutável com todas as contas de armazenamento de BLOB ou Uso Geral v2 existentes ou recém-criadas. Esse recurso destina-se ao uso com blobs de blocos em contas de armazenamento de BLOBs e GPv2. Não há suporte para contas de armazenamento Uso Geral v1, mas elas podem ser facilmente atualizadas para Uso Geral v2. Para obter informações sobre como atualizar uma conta de armazenamento Uso Geral v1 existente, consulte [atualizar uma conta de armazenamento](../common/storage-account-upgrade.md).
 
-**Posso aplicar uma retenção legal e a política de retenção baseada em tempo?**
+**Posso aplicar uma política de retenção baseada em tempo e em retenção legal?**
 
-Sim, um contêiner pode ter uma retenção legal e uma política de retenção baseada em tempo ao mesmo tempo. Todos os blobs nesse contêiner permanecem no estado imutável até que todas as retenções legais sejam apagadas, mesmo que o período de retenção efetivo tenha expirado. Por outro lado, um blob permanece em um estado imutável até que o período de retenção efetivo expire, mesmo que todas as retenções legais tenham sido compensadas.
+Sim, um contêiner pode ter um controle legal e uma política de retenção baseada em tempo ao mesmo tempo. Todos os blobs nesse contêiner permanecem no estado imutável até que todas as retenções legais sejam apagadas, mesmo que o período de retenção efetivo tenha expirado. Por outro lado, um blob permanece em um estado imutável até que o período de retenção efetivo expire, mesmo que todas as retenções legais tenham sido compensadas.
 
-**São as políticas de retenção legal apenas para procedimentos legais ou há outros cenários de uso?**
+**As políticas de retenção legal são apenas para procedimentos legais ou existem outros cenários de uso?**
 
-Não, o controle Legal é simplesmente o termo genérico usado para uma política de retenção não baseados em tempo. Ele não precisa ser usado apenas para litígios relacionados judiciais. Políticas de retenção legais são úteis para desabilitar a substituição e exclusões para proteger a empresa importante dados WORM, em que o período de retenção é desconhecido. Você pode usá-lo como uma diretiva corporativa para proteger suas cargas de trabalho WORM críticas missão ou usá-lo como uma política de preparo antes de um gatilho de evento personalizado requer o uso de uma política de retenção baseada em tempo. 
+Não, a retenção legal é apenas o termo geral usado para uma política de retenção não baseada em tempo. Ele não precisa ser usado apenas para procedimentos relacionados a litígios. As políticas de retenção legal são úteis para desabilitar a substituição e as exclusões para proteger dados importantes do WORM corporativo, em que o período de retenção é desconhecido. Você pode usá-lo como uma política corporativa para proteger suas cargas de trabalho de WORMs de missão crítica ou usá-las como uma política de preparo antes que um gatilho de evento personalizado exija o uso de uma política de retenção baseada em tempo. 
 
-**Posso remover um *bloqueado* política de retenção baseada em tempo ou em bloqueio legal?**
+**Posso remover uma política de retenção baseada em tempo bloqueada ou uma retenção legal?**
 
-Políticas de retenção desbloqueada baseada em tempo de somente podem ser removidas de um contêiner. Depois que uma política de retenção com base em hora estiver bloqueada, ele não pode ser removido; somente o período de retenção efetiva extensões são permitidas. Retenção legal marcas podem ser excluídas. Quando todas as marcas legais são excluídas, a retenção legal é removida.
+Somente políticas de retenção baseadas em tempo desbloqueadas podem ser removidas de um contêiner. Quando uma política de retenção baseada em tempo é bloqueada, ela não pode ser removida; somente as extensões de período de retenção efetivas são permitidas. As marcas de retenção legal podem ser excluídas. Quando todas as marcas legais são excluídas, a retenção legal é removida.
 
 **O que acontece se eu tentar excluir um contêiner com uma política de retenção baseada em tempo ou retenção legal *bloqueada*?**
 
@@ -203,7 +203,7 @@ A exclusão da conta de armazenamento falhará se houver pelo menos um contêine
 
 **Posso mover os dados entre níveis diferentes de blob (frequente, esporádico, passivo) quando o blob estiver no estado imutável?**
 
-Sim, você pode usar o comando Definir nível de Blob para mover dados entre as camadas de blob, mantendo os dados em um estado imutável em conformidade. O armazenamento imutável tem suporte nas camadas de blob frequente, esporádica e de arquivos.
+Sim, você pode usar o comando definir camada de BLOB para mover dados entre as camadas de BLOB e, ao mesmo tempo, manter os dados no estado imutável em conformidade. O armazenamento imutável tem suporte nas camadas de blob frequente, esporádica e de arquivos.
 
 **O que acontece se eu não conseguir pagar e meu intervalo de retenção não expirou?**
 
@@ -211,15 +211,15 @@ No caso de não pagamento, as políticas normais de retenção de dados serão a
 
 **Há oferta de um período de avaliação ou de cortesia para apenas experimentar o recurso?**
 
-Sim. Quando uma política de retenção baseada em tempo é criada, ela está em um *desbloqueada* estado. Nesse estado, você pode fazer qualquer alteração desejada no intervalo de retenção, como aumentar ou diminuir e até excluir a política. Depois que a política é bloqueada, ela permanece bloqueada até que o intervalo de retenção expire. Essa política bloqueada impede que a exclusão e modificação para o intervalo de retenção. É altamente recomendável que você use o *desbloqueada* apenas para fins de avaliação de estado e a política de bloqueio dentro de um período de 24 horas. Essas práticas ajudarão-lo a cumprir 17a-4(f) s e outros regulamentos.
+Sim. Quando uma política de retenção baseada em tempo é criada pela primeira vez, ela está em um estado desbloqueado. Nesse estado, você pode fazer qualquer alteração desejada no intervalo de retenção, como aumentar ou diminuir e até excluir a política. Depois que a política é bloqueada, ela permanece bloqueada até que o intervalo de retenção expire. Essa política bloqueada impede a exclusão e a modificação no intervalo de retenção. É altamente recomendável que você use o *desbloqueada* apenas para fins de avaliação de estado e a política de bloqueio dentro de um período de 24 horas. Essas práticas ajudarão-lo a cumprir 17a-4(f) s e outros regulamentos.
 
-**Posso usar a exclusão reversível junto com as políticas de BLOBs imutável?**
+**Posso usar a exclusão reversível juntamente com políticas de blob imutáveis?**
 
-Sim. [Exclusão reversível para o armazenamento de BLOBs do Azure](storage-blob-soft-delete.md) se aplica a todos os contêineres dentro de uma conta de armazenamento, independentemente de uma retenção legal ou política de retenção com base no tempo. É recomendável habilitar exclusão reversível para proteção adicional antes de qualquer imutável WORM as diretivas são aplicadas e confirmadas. 
+Sim. A [exclusão reversível para o armazenamento de BLOBs do Azure](storage-blob-soft-delete.md) aplica-se a todos os contêineres em uma conta de armazenamento, independentemente de uma política de retenção baseada em tempo ou em retenção É recomendável habilitar a exclusão reversível para proteção adicional antes de qualquer política de WORM imutável ser aplicada e confirmada. 
 
 **Onde o recurso está disponível?**
 
-O armazenamento imutável está disponível nas regiões do Azure Público, China e Governo. Se o armazenamento imutável não está disponível em sua região, entre em contato com o suporte e o email azurestoragefeedback@microsoft.com.
+O armazenamento imutável está disponível nas regiões do Azure Público, China e Governo. Se o armazenamento imutável não estiver disponível em sua região, entre em contato com o azurestoragefeedback@microsoft.comsuporte e o email.
 
 ## <a name="sample-powershell-code"></a>Exemplos de código do PowerShell
 
@@ -381,7 +381,7 @@ $policy = Set-AzRmStorageContainerImmutabilityPolicy -Container `
     $containerObject -ImmutabilityPeriod 13 -Etag $policy.Etag -ExtendPolicy
 ```
 
-Remover uma política de imutabilidade desbloqueada (Adicionar - Force para ignorar o prompt):
+Remover uma política de imutabilidade desbloqueada (Add-Force para ignorar o prompt):
 ```powershell
 # with an immutability policy object
 $policy = Get-AzRmStorageContainerImmutabilityPolicy -ResourceGroupName `

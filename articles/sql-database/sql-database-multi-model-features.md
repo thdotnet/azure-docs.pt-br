@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: ''
-manager: craigg
 ms.date: 12/17/2018
-ms.openlocfilehash: 84efdb0297a2dc69497baee5fb746fb51d02b1b7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e319daf322d688828c7d05d78dacd2359273223f
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64939509"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567137"
 ---
 # <a name="multi-model-capabilities-of-azure-sql-database"></a>Recursos de multimodelos do Banco de Dados SQL do Azure
 
@@ -26,11 +25,11 @@ Os bancos de dados multimodelos permitem que você armazene e trabalhe com dados
 ## <a name="when-to-use-multi-model-capabilities"></a>Quando usar os recursos de vários modelos
 
 O Banco de Dados SQL do Azure foi projetado para funcionar com o modelo relacional que fornece o melhor desempenho na maioria dos casos para uma variedade de aplicativos de uso geral. No entanto, o Banco de Dados SQL do Azure não limita-se apenas a dados relacionais. O Banco de Dados SQL do Azure permite usar uma variedade de formatos não relacionais que são totalmente integrados ao modelo relacional.
-Considere o uso de recursos de vários modelos de banco de dados SQL do Azure nos seguintes casos:
-- Você tem algumas informações ou estruturas que se ajuste melhor para modelos de NoSQL e você não quiser usar o banco de dados NoSQL separado.
-- A maioria dos seus dados é adequada para o modelo relacional, e você precisa modelar algumas partes de seus dados em estilo de NoSQL.
-- Você deseja aproveitar avançada linguagem Transact-SQL para consultar e analisar relacionais e dados NoSQL e integrá-lo com uma variedade de ferramentas e aplicativos que podem usar a linguagem SQL.
-- Você deseja aplicar os recursos de banco de dados, como [tecnologias in-memory](sql-database-in-memory.md) para melhorar o desempenho da sua análise ou processamento de seu strucutres de dados NoSQL, use [replicação transacional](sql-database-managed-instance-transactional-replication.md) ou [réplicas legíveis](sql-database-read-scale-out.md) para criar a cópia dos seus dados em outro lugar e descarregar algumas cargas de trabalho analíticas do banco de dados primário.
+Você deve considerar o uso de recursos de vários modelos do banco de dados SQL do Azure nos seguintes casos:
+- Você tem algumas informações ou estruturas que são mais adequadas para modelos NoSQL e não deseja usar um banco de dados NoSQL separado.
+- A maioria dos seus dados é adequada para o modelo relacional e você precisa modelar algumas partes de seus dados no estilo NoSQL.
+- Você deseja aproveitar a rica linguagem Transact-SQL para consultar e analisar dados relacionais e NoSQL e integrá-los a uma variedade de ferramentas e aplicativos que podem usar a linguagem SQL.
+- Você deseja aplicar recursos de banco de dados, como [tecnologias na memória](sql-database-in-memory.md) , para melhorar o desempenho de seu processo analítico ou de processamento de seus data strucutress NoSQL, usar a [replicação](sql-database-managed-instance-transactional-replication.md) transacional ou [réplicas legíveis](sql-database-read-scale-out.md) para criar uma cópia dos dados em o outro local e descarregar algumas cargas de trabalho analíticas do banco de dados primário.
 
 ## <a name="overview"></a>Visão geral
 
@@ -90,7 +89,7 @@ Em alguns cenários específicos podem ser usados modelos de documentos, em vez 
 
 ## <a name="spatial-features"></a>Recursos espaciais
 
-Os dados espaciais representam informações sobre a localização física e a forma dos objetos geométricos. Esses objetos podem ser locais de ponto ou objetos mais complexos como países/regiões, estradas ou Lagos.
+Os dados espaciais representam informações sobre a localização física e a forma dos objetos geométricos. Esses objetos podem ser locais de ponto ou objetos mais complexos, como países/regiões, estradas ou lagos.
 
 O Banco de Dados SQL do Azure oferece suporte a dois tipos de dados espaciais - tipo de dados Geometria e tipo de dados Geografia.
 - O tipo Geometria representa dados em um sistema de coordenadas Euclidiano (plano).

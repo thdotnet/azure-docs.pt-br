@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 904893d4881de6be2c9055fefa9a8267cb045afd
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: b8b2cad95929d6132a4f0ae52597fb1633874ff1
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67849418"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68592117"
 ---
 # <a name="trustframeworkpolicy"></a>TrustFrameworkPolicy
 
@@ -38,7 +38,7 @@ Uma política personalizada é representada como um ou vários arquivos formatad
 
 O elemento **TrustFrameworkPolicy** contém os seguintes atributos:
 
-| Atributo | Obrigatório | DESCRIÇÃO |
+| Atributo | Necessário | Descrição |
 |---------- | -------- | ----------- |
 | PolicySchemaVersion | Sim | A versão do esquema a ser usado para executar a política. O valor deve ser `0.3.0.0` |
 | TenantObjectId | Não | O identificador de objeto exclusivo do locatário do Azure AD (Azure Active Directory) B2C. |
@@ -88,7 +88,7 @@ Para herdar de uma política de outra política, um elemento **BasePolicy** deve
 
 O elemento **BasePolicy** contém os seguintes elementos:
 
-| Elemento | Ocorrências | DESCRIÇÃO |
+| Elemento | Ocorrências | Descrição |
 | ------- | ----------- | --------|
 | TenantId | 1:1 | O identificador do locatário do Azure AD B2C. |
 | `PolicyId` | 1:1 | O identificador da política pai. |
@@ -138,7 +138,7 @@ B2C_1A_TrustFrameWorkBase ou B2C_1A_TrustFrameworkExtensionPolicy:
 
 Um percurso do usuário define a lógica de negócios pela qual um usuário passa. Cada percurso do usuário é um conjunto de etapas de orquestração que executa uma série de ações em sequência em termos de coleta de informações e autenticação.
 
-O arquivo de política **SocialAndLocalAccounts** no [starter pack](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-get-started-custom#download-starter-pack-and-modify-policies) contém os percursos do usuário SignUpOrSignIn, ProfileEdit, PasswordReset. Você pode adicionar mais viagens de usuário para outros cenários, como alterar um endereço de email ou vincular e desvincular uma conta social.
+O arquivo de política **SocialAndLocalAccounts** no [starter pack](active-directory-b2c-get-started-custom.md#custom-policy-starter-pack) contém os percursos do usuário SignUpOrSignIn, ProfileEdit, PasswordReset. Você pode adicionar mais viagens de usuário para outros cenários, como alterar um endereço de email ou vincular e desvincular uma conta social.
 
 As etapas de orquestração podem chamar um [Perfil Técnico](technicalprofiles.md). Um perfil técnico fornece uma estrutura com um mecanismo interno para se comunicar com diferentes tipos de partes. Por exemplo, um perfil técnico pode executar estas ações, entre outras:
 

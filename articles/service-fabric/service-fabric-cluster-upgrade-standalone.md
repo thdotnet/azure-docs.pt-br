@@ -3,7 +3,7 @@ title: Atualizar um cluster autônomo do Fabric Service do Azure|Microsoft Docs
 description: Aprenda sobre como atualizar a versão ou a configuração de um cluster autônomo do Azure Service Fabric.  T
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: chackdan
 editor: ''
 ms.assetid: 15190ace-31ed-491f-a54b-b5ff61e718db
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/12/2018
-ms.author: aljo
-ms.openlocfilehash: 1d96a2e81917af5e80bb847ea25610ccb71ad70f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: atsenthi
+ms.openlocfilehash: bf99d5d59354745508d8ca88abfc4b42fe608025
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60711043"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599794"
 ---
 # <a name="upgrading-and-updating-a-service-fabric-standalone-cluster"></a>Atualizando e atualizando um cluster independente do Service Fabric
 

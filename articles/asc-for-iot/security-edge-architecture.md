@@ -1,6 +1,6 @@
 ---
-title: Noções básicas sobre Central de segurança do Azure para o módulo de segurança de IoT para o IoT Edge | Microsoft Docs
-description: Compreenda a arquitetura e os recursos da Central de segurança do Azure para o módulo de segurança de IoT para o IoT Edge.
+title: Entendendo a central de segurança do Azure para o módulo de segurança de IoT para IoT Edge versão prévia | Microsoft Docs
+description: Entenda a arquitetura e os recursos da central de segurança do Azure para o módulo de segurança de IoT para IoT Edge.
 services: asc-for-iot
 ms.service: asc-for-iot
 documentationcenter: na
@@ -13,59 +13,59 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/25/2019
+ms.date: 07/23/2019
 ms.author: mlottner
-ms.openlocfilehash: 4581f66a3401764237621bee86228aac724ec0af
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 6114fc768ad04ef812f6093d006ec9ad91b17af3
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67616448"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68596858"
 ---
-# <a name="azure-iot-edge-security-module"></a>Módulo de segurança do Azure IoT Edge
+# <a name="azure-iot-edge-security-module"></a>Azure IoT Edge módulo de segurança
 
 > [!IMPORTANT]
-> A Central de Segurança do Azure para IoT está em versão prévia pública no momento.
-> Esta versão de visualização é fornecida sem um contrato de nível de serviço e não é recomendada para produção worklo§1ads. Alguns recursos podem não ter suporte ou podem ter restrição de recursos. Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+> A central de segurança do Azure para o serviço de IoT para IoT Edge está atualmente em visualização pública.
+> Esta versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos. Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-[O Azure IoT Edge](https://docs.microsoft.com/azure/iot-edge/) fornece recursos poderosos para gerenciar e executar fluxos de trabalho de negócios na borda.
-A parte de chave do IoT Edge desempenha em ambientes de IoT torná-lo particularmente atraente de atores mal-intencionados.
+[Azure IOT Edge](https://docs.microsoft.com/azure/iot-edge/) fornece recursos poderosos para gerenciar e executar fluxos de trabalho de negócios na borda.
+A parte importante que IoT Edge desempenha em ambientes de IoT o torna particularmente atraente para atores mal-intencionados.
 
-Azure segurança ASC (Central) para o módulo de segurança de IoT fornece uma solução abrangente de segurança para o IoT Edge dispositivos.
-ASC para o módulo do IoT coleta, agrega e analisa os dados de segurança brutas do seu sistema operacional e do sistema do contêiner em alertas e recomendações de práticas de segurança.
+A central de segurança do Azure para o módulo de segurança de IoT fornece uma solução de segurança abrangente para seus dispositivos IoT Edge.
+A central de segurança do Azure para o módulo IoT coleta, agrega e analisa dados de segurança brutos do sistema operacional e do sistema de contêiner em alertas e recomendações de segurança acionáveis.
 
-Semelhante ao ASC para agentes de segurança de IoT para dispositivos de IoT, o ASC para o módulo do IoT Edge é altamente personalizável por meio de seu módulo gêmeo.
-Ver [configurar o agente](how-to-agent-configuration.md) para saber mais.
+Semelhante à central de segurança do Azure para agentes de segurança de IoT para dispositivos IoT, a central de segurança do Azure para IoT Edge módulo é altamente personalizável por meio de seu módulo.
+Consulte [configurar seu agente](how-to-agent-configuration.md) para saber mais.
 
-ASC para o módulo de segurança de IoT para o IoT Edge oferece os seguintes recursos:
+A central de segurança do Azure para o módulo de segurança de IoT para IoT Edge oferece os seguintes recursos:
 
-- Coleta eventos de segurança brutas do sistema operacional subjacente (Linux) e os sistemas de contêiner do IoT Edge.
+- Coleta eventos de segurança brutos do sistema operacional subjacente (Linux) e os sistemas de contêineres IoT Edge.
   
-  Ver [ASC para configuração do agente IoT](how-to-agent-configuration.md) para saber mais sobre os coletores de dados de segurança disponíveis.
+  Consulte a [central de segurança do Azure para configuração do agente de IOT](how-to-agent-configuration.md) para saber mais sobre os coletores de dados de segurança disponíveis.
 
 - Análise de manifestos de implantação do IoT Edge.
 
-- Agrega eventos de segurança brutos em mensagens enviadas por meio [Hub do IoT Edge](https://docs.microsoft.com/azure/iot-edge/iot-edge-runtime#iot-edge-hub).
+- Agrega eventos de segurança brutos em mensagens enviadas por meio do [Hub IOT Edge](https://docs.microsoft.com/azure/iot-edge/iot-edge-runtime#iot-edge-hub).
 
-- Remova configuração por meio do uso do gêmeo do módulo de segurança.
+- Remova a configuração por meio do uso do módulo de segurança.
 
-  Ver [configurar um ASC para agente do IoT](how-to-agent-configuration.md) para saber mais.
+  Consulte [Configurar uma central de segurança do Azure para o agente de IOT](how-to-agent-configuration.md) para saber mais.
 
-ASC para o módulo de segurança de IoT para o IoT Edge é executado em modo privilegiado no IoT Edge.
-Modo privilegiado é necessária para permitir que o módulo para monitorar o sistema operacional e outros módulos do IoT Edge.
+A central de segurança do Azure para o módulo de segurança de IoT para IoT Edge é executada em um modo privilegiado em IoT Edge.
+O modo privilegiado é necessário para permitir que o módulo monitore o sistema operacional e outros módulos IoT Edge.
 
-## <a name="agent-supported-platforms"></a>Plataformas com suporte do agente
+## <a name="module-supported-platforms"></a>Plataformas com suporte do módulo
 
-ASC para o módulo de segurança de IoT para o IoT Edge só está disponível para Linux no momento.
+A central de segurança do Azure para o módulo de segurança de IoT para IoT Edge está disponível no momento apenas para Linux. 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste artigo, você aprendeu sobre a arquitetura e os recursos do ASC para módulo de segurança de IoT para o IoT Edge.
+Neste artigo, você aprendeu sobre a arquitetura e os recursos da central de segurança do Azure para o módulo de segurança de IoT para IoT Edge.
 
-Para continuar a introdução ao ASC para implantação de IoT, use os seguintes artigos:
+Para continuar a introdução à central de segurança do Azure para implantação de IoT, use os seguintes artigos:
 
-- Implantar [módulo de segurança do IoT Edge](how-to-deploy-edge.md)
+- Implantar o [módulo de segurança para IOT Edge](how-to-deploy-edge.md)
 - Saiba como [configurar seu módulo de segurança](how-to-agent-configuration.md)
-- Examine o ASC para IoT [pré-requisitos de serviço](service-prerequisites.md)
-- Saiba como [ASC habilitar para o serviço de IoT em seu IoT Hub](quickstart-onboard-iot-hub.md)
-- Saiba mais sobre o serviço do [ASC para perguntas frequentes sobre o IoT](resources-frequently-asked-questions.md)
+- Examine os pré-requisitos da central de segurança do Azure para [Serviços](service-prerequisites.md) de IOT
+- Saiba como [habilitar a central de segurança do Azure para o serviço de IOT em seu hub IOT](quickstart-onboard-iot-hub.md)
+- Saiba mais sobre o serviço da [central de segurança do Azure para as perguntas frequentes sobre IOT](resources-frequently-asked-questions.md)

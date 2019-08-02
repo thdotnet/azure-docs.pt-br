@@ -4,14 +4,14 @@ description: Este artigo explica como gerenciar os custos de implantações de v
 author: rimman
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/21/2019
+ms.date: 07/31/2019
 ms.author: rimman
-ms.openlocfilehash: 478714f48782adb138f1ed803d53c81ec48f2efd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 233eab1fc49d7ce4cbb1e5b98b67eda9a64aa195
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65967281"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68667589"
 ---
 # <a name="optimize-multi-region-cost-in-azure-cosmos-db"></a>Otimizar o custo de várias regiões no Azure Cosmos DB
 
@@ -25,7 +25,7 @@ A taxa de transferência provisionada com região de gravação única custa US$
 
 ## <a name="costs-for-multiple-write-regions"></a>Custos de várias regiões de gravação
 
-Em um sistema de vários mestres, as RUs disponíveis para operações de gravação aumentam `N` vezes em que `N` é o número de regiões de gravação. Ao contrário de gravações de região única, cada região agora é gravável e deve dar suporte à resolução de conflitos. A quantidade de carga de trabalho para gravadores aumentou. Do custo, planejamento de ponto de Vista, para realizar `M` a partir de RU/s das gravações em todo o mundo, você precisará provisionar M `RUs` em um nível de contêiner ou banco de dados. Em seguida, você pode adicionar quantas regiões desejar e usá-las para gravações para executar `M` RU de gravações em todo o mundo. 
+Em um sistema de vários mestres, as RUs disponíveis para operações de gravação aumentam `N` vezes em que `N` é o número de regiões de gravação. Ao contrário de gravações de região única, cada região agora é gravável e deve dar suporte à resolução de conflitos. A quantidade de carga de trabalho para gravadores aumentou. Do ponto de vista do planejamento de custos, para `M` executar ru/s de gravações em todo o mundo, você precisará `RUs` provisionar M em um nível de contêiner ou banco de dados. Em seguida, você pode adicionar quantas regiões desejar e usá-las para gravações para executar `M` RU de gravações em todo o mundo. 
 
 ### <a name="example"></a>Exemplo
 
@@ -35,9 +35,9 @@ Considere que você tenha um contêiner no Oeste dos EUA provisionado com uma ta
 |----|----|----|----|
 |Cobrança da taxa de transferência para o contêiner no Oeste dos EUA (várias regiões de gravação) |10 mil RU/s * 24 * 31 |US$ 0,016 por 100 RU/s por hora |US$ 1.190,40 |
 |Cobrança da taxa de transferência para três regiões adicionais: Leste dos EUA, Europa Setentrional e Ásia Oriental (várias regiões de gravação) |(3 + 1) * 10 mil RU/s * 24 * 31 |US$ 0,016 por 100 RU/s por hora |US$ 4.761,60 |
-|Cobrança de armazenamento para o contêiner no Oeste dos EUA |100 GB |US$ 0,25/GB |U$ 25 |
-|Cobrança de armazenamento para três regiões adicionais – Leste dos EUA, Europa Setentrional e Ásia Oriental |3 * 1 TB |US$ 0,25/GB |US$ 75 |
-|**Total**|||**US$ 6.052** |
+|Cobrança de armazenamento para o contêiner no Oeste dos EUA |1 TB (ou 1.024 GB) |US$ 0,25/GB |$256 |
+|Cobrança de armazenamento para três regiões adicionais – Leste dos EUA, Europa Setentrional e Ásia Oriental |3 * 1 TB (ou 3.072 GB) |US$ 0,25/GB |$768 |
+|**Total**|||**$6976** |
 
 ## <a name="improve-throughput-utilization-on-a-per-region-basis"></a>Melhorar a utilização de taxa de transferência por região
 

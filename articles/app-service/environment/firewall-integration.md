@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/25/2019
+ms.date: 07/29/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: b57ac43b02e8630528e7ed3f77f51befa52ed45f
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: 3e24b95704249a8a0b7588112cbaa678ae1e2c86
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68498468"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619123"
 ---
 # <a name="locking-down-an-app-service-environment"></a>Bloqueando um Ambiente do Serviço de Aplicativo
 
@@ -106,7 +106,7 @@ As informações a seguir só são necessárias se você deseja configurar um di
 
 #### <a name="service-endpoint-capable-dependencies"></a>Dependências com capacidade de Ponto de Extremidade de Serviço 
 
-| Ponto de Extremidade |
+| Ponto de extremidade |
 |----------|
 | Azure SQL |
 | Armazenamento do Azure |
@@ -114,7 +114,7 @@ As informações a seguir só são necessárias se você deseja configurar um di
 
 #### <a name="ip-address-dependencies"></a>Dependências de endereço IP
 
-| Ponto de Extremidade | Detalhes |
+| Ponto de extremidade | Detalhes |
 |----------| ----- |
 | \*:123 | Verificação do relógio do NTP. O tráfego é verificado em vários pontos de extremidade na porta 123 |
 | \*:12000 | Essa porta é usada para alguns tipos de monitoramento do sistema. Se ela estiver bloqueada, alguns problemas serão mais difíceis de serem passados pela triagem, mas o ASE continuará funcionando |
@@ -131,7 +131,7 @@ Com um Firewall do Azure, você obtém automaticamente tudo abaixo configurado c
 
 #### <a name="fqdn-httphttps-dependencies"></a>Dependências de HTTP/HTTPS do FQDN 
 
-| Ponto de Extremidade |
+| Ponto de extremidade |
 |----------|
 |graph.windows.net:443 |
 |login.live.com:443 |
@@ -189,10 +189,11 @@ Com um Firewall do Azure, você obtém automaticamente tudo abaixo configurado c
 |azureprofileruploads3.blob.core.windows.net:443 |
 |azureprofileruploads4.blob.core.windows.net:443 |
 |azureprofileruploads5.blob.core.windows.net:443 |
+|azureprofilerfrontdoor.cloudapp.net:443 |
 
 #### <a name="wildcard-httphttps-dependencies"></a>Dependências de HTTP/HTTPS de curinga 
 
-| Ponto de Extremidade |
+| Ponto de extremidade |
 |----------|
 |gr-Prod-\*.cloudapp.net:443 |
 | \*.management.azure.com:443 |
@@ -201,7 +202,7 @@ Com um Firewall do Azure, você obtém automaticamente tudo abaixo configurado c
 
 #### <a name="linux-dependencies"></a>Dependências do Linux 
 
-| Ponto de Extremidade |
+| Ponto de extremidade |
 |----------|
 |wawsinfraprodbay063.blob.core.windows.net:443 |
 |registry-1.docker.io:443 |

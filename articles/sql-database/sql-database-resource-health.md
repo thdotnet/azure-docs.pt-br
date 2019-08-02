@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: aamalvea
 ms.author: aamalvea
 ms.reviewer: jrasnik, carlrab
-manager: craigg
 ms.date: 02/26/2019
-ms.openlocfilehash: 4757236d179e4d6ceb626f58f12cfe48799eed7a
-ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
+ms.openlocfilehash: 1c2720d61c7b4ea918a3d0c1ff7f41984ea42c69
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67854357"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566900"
 ---
 # <a name="use-resource-health-to-troubleshoot-connectivity-for-azure-sql-database"></a>Use o Resource Health para solucionar problemas de conectividade do Banco de Dados SQL do Azure
 
@@ -45,11 +44,11 @@ Um status **Degradado** significa que o Resource Health detectou a maioria dos l
 
 ![Degradado](./media/sql-database-resource-health/sql-resource-health-degraded.jpg)
 
-### <a name="unavailable"></a>Indisponível
+### <a name="unavailable"></a>Não Disponível
 
 Um status **Indisponível** significa que o Resource Health detectou falhas de login consistentes em seu recurso SQL. Se o seu recurso permanecer nesse estado por um período prolongado, entre em contato com o suporte.
 
-![Indisponível](./media/sql-database-resource-health/sql-resource-health-unavailable.jpg)
+![Não Disponível](./media/sql-database-resource-health/sql-resource-health-unavailable.jpg)
 
 ### <a name="unknown"></a>Unknown
 

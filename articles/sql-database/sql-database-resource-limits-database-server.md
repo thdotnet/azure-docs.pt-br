@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: sashan,moslake,josack
-manager: craigg
 ms.date: 04/18/2019
-ms.openlocfilehash: 4e4c0a6cd25587b33c06526b57e6acdbebb69c8b
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 175f694cbe46f871349136c9ce91888b6de48d21
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67445637"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566856"
 ---
 # <a name="sql-database-resource-limits-for-azure-sql-database-server"></a>Limites de recursos de Banco de Dados SQL para servidor do Banco de Dados SQL do Azure
 
@@ -46,7 +45,7 @@ Este artigo fornece uma visão geral dos limites de recursos do Banco de Dados S
 > - Aumento de latência nas operações de gerenciamento e pontos de vista do portais de renderização que envolvem a enumeração de bancos de dados no servidor.
 
 ### <a name="storage-size"></a>Tamanho do armazenamento
-- Para bancos de dados únicos rources, consulte o [limites de recurso baseado em DTU](sql-database-dtu-resource-limits-single-databases.md) ou [limites de recurso baseado em vCore](sql-database-vcore-resource-limits-single-databases.md) para os limites de tamanho de armazenamento por tipo de preço.
+- Para bancos de dados individuais rources, consulte limites de [recursos baseados em DTU](sql-database-dtu-resource-limits-single-databases.md) ou [limites de recursos baseados em vCore](sql-database-vcore-resource-limits-single-databases.md) para os limites de tamanho de armazenamento por tipo de preço.
 
 ## <a name="what-happens-when-database-resource-limits-are-reached"></a>O que acontece quando os limites de recursos do banco de dados são atingidos
 
@@ -77,33 +76,33 @@ Ao encontrar uma utilização alta de sessão ou trabalho, as opções de atenua
 - Aumentar a camada de serviço ou o tamanho da computação do banco de dados ou do pool elástico. Consulte [limites de recursos do banco de dados individual em escala](sql-database-single-database-scale.md) e [limites de recursos do pool elástico](sql-database-elastic-pool-scale.md).
 - Otimizar consultas para reduzir a utilização de recursos de cada consulta se a causa do aumento da utilização de trabalho for devido à contenção de recursos de computação. Para saber mais, consulte [Ajuste/Dicas de consulta](sql-database-performance-guidance.md#query-tuning-and-hinting).
 
-## <a name="transaction-log-rate-governance"></a>Governança de taxa de Log de transação 
-Governança de taxa de log de transações é um processo no banco de dados SQL do Azure usada para limitar as taxas de ingestão de alta para cargas de trabalho como bulk insert, SELECT INTO e compilações de índice. Esses limites são rastreados e aplicados no nível de subsegundos para a taxa de geração de registro de log, limitação de taxa de transferência, independentemente de quantos IOs pode ser emitida em relação aos arquivos de dados.  Taxas de geração de log de transações atualmente aumentam linearmente até um ponto que é dependente de hardware, com o máximo do log de taxa de permissão que está sendo 96 MB/s com o modelo de compra de vCore. 
+## <a name="transaction-log-rate-governance"></a>Governança de taxa de log de transações 
+A governança de taxa do log de transações é um processo no banco de dados SQL do Azure usado para limitar altas taxas de ingestão para cargas de trabalho, como inserção em massa, seleção INTO e compilações de índice. Esses limites são rastreados e aplicados no nível de subsegundos à taxa de geração de registro de log, limitando a taxa de transferência, independentemente de quantos IOs podem ser emitidos em relação aos arquivos de dados.  As taxas de geração de log de transações são atualmente dimensionadas linearmente até um ponto dependente de hardware, com a taxa de log máxima permitida de 96 MB/s com o modelo de compra vCore. 
 
 > [!NOTE]
-> O IOs físico real para arquivos de log de transações não é regido ou limitado. 
+> O IOs físico real para os arquivos de log de transações não são governados ou limitados. 
 
-As taxas de log são definidas, de modo que pode ser obtidas e mantidos em uma variedade de cenários, enquanto o sistema geral pode manter sua funcionalidade com menor impacto à carga de usuário. Governança de taxa de log garante que backups permanecem dentro a recuperabilidade publicada SLAs do log de transações.  Esse controle também impede que uma lista de pendências excessiva em réplicas secundárias.
+As taxas de log são definidas de modo que elas possam ser alcançadas e mantidas em vários cenários, enquanto o sistema geral pode manter sua funcionalidade com impacto minimizado na carga do usuário. A governança de taxa de log garante que os backups de log de transações permaneçam dentro dos SLAs de recuperação publicados.  Essa governança também impede uma pendência excessiva em réplicas secundárias.
 
-Conforme os registros de log são gerados, cada operação é avaliada e avaliada por se ele deve ser atrasado para manter uma taxa de log desejado máximo (MB/s por segundo). Os atrasos não são adicionados quando os registros de log são liberados para o armazenamento, em vez disso, governança de taxa de log é aplicada durante a geração de taxa de log em si.
+À medida que os registros de log são gerados, cada operação é avaliada e avaliada se deve ser atrasada para manter uma taxa máxima de log desejada (MB/s por segundo). Os atrasos não são adicionados quando os registros de log são liberados para armazenamento, em vez disso, a governança de taxa de log é aplicada durante a própria geração de taxa de log.
 
-A geração de log real taxas de imposto em tempo de execução também podem ser influenciadas por mecanismos de comentários, reduzindo temporariamente as taxas de log permitido para que o sistema pode se estabilizar. Gerenciamento de espaço do arquivo de log, evitando ficando em condições de espaço de log e o grupo de disponibilidade mecanismos de replicação temporariamente pode diminuir os limites do sistema geral. 
+As taxas de geração de log reais impostas em tempo de execução também podem ser influenciadas por mecanismos de comentários, reduzindo temporariamente as taxas de log permitidas para que o sistema possa se estabilizar. Gerenciamento de espaço de arquivo de log, evitando a execução de condições de espaço de log e os mecanismos de replicação de grupo de disponibilidade podem diminuir temporariamente os limites gerais do sistema. 
 
-Modelagem de tráfego do administrador de taxa de log será exposto por meio dos seguintes tipos de espera (exposto na [sys.dm_db_wait_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-wait-stats-azure-sql-database) DMV):
+A modelagem de tráfego do administrador de taxa de log é revelada por meio dos seguintes tipos de espera (expostos na DMV [Sys. dm _db_wait_stats](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-db-wait-stats-azure-sql-database) ):
 
 | Tipo de espera | Observações |
 | :--- | :--- |
-| LOG_RATE_GOVERNOR | Limitação do banco de dados |
+| LOG_RATE_GOVERNOR | Limitação de banco de dados |
 | POOL_LOG_RATE_GOVERNOR | Limitação de pool |
 | INSTANCE_LOG_RATE_GOVERNOR | Limitação de nível de instância |  
-| HADR_THROTTLE_LOG_RATE_SEND_RECV_QUEUE_SIZE | Controle de comentários, replicação física do grupo de disponibilidade no Premium/comercialmente crítico não manter |  
-| HADR_THROTTLE_LOG_RATE_LOG_SIZE | Controle de comentários, limitando as taxas para evitar uma condição de espaço de log de insuficiente |
+| HADR_THROTTLE_LOG_RATE_SEND_RECV_QUEUE_SIZE | Controle de comentários, replicação física do grupo de disponibilidade em Premium/Comercialmente Crítico não está acompanhando |  
+| HADR_THROTTLE_LOG_RATE_LOG_SIZE | Controle de comentários, limitando as taxas para evitar uma condição de espaço de log insuficiente |
 |||
 
-Ao encontrar um limite de taxa de log que está limitando a escalabilidade desejada, considere as seguintes opções:
-- Escalar verticalmente para uma camada maior de fim de obter a taxa máxima de log 96 MB/s. 
-- Se os dados que está sendo carregados forem transitórios, ou seja, a preparação de dados em um processo ETL, pode ser carregado em tempdb (que é minimamente registrada). 
-- Para cenários analíticos, carregue em uma tabela columnstore clusterizada coberto. Isso reduz a taxa de log necessários devido à compactação. Essa técnica aumente a utilização da CPU e só é aplicável aos conjuntos de dados que se beneficiam de índices columnstore clusterizados. 
+Ao encontrar um limite de taxa de log que está atrasando a escalabilidade desejada, considere as seguintes opções:
+- Escale verticalmente para uma camada maior a fim de obter a taxa máxima de logs de 96 MB/s. 
+- Se os dados que estão sendo carregados forem transitórios, ou seja, os dados de preparo em um processo de ETL, eles poderão ser carregados em tempdb (que é minimamente registrado). 
+- Para cenários analíticos, carregue em uma tabela coberta por columnstore clusterizado. Isso reduz a taxa de log necessária devido à compactação. Essa técnica aumenta a utilização da CPU e só é aplicável a conjuntos de dados que se beneficiam de índices columnstore clusterizados. 
 
 ## <a name="next-steps"></a>Próximas etapas
 

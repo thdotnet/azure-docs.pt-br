@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
 ms.reviewer: sstein
-manager: craigg
 ms.date: 04/03/2019
-ms.openlocfilehash: d861ccb93de7aa0b84b20215afb5fddf49aa94c9
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: a39cfd1981041c807a91a08c198378d238f0846e
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67427958"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568910"
 ---
 # <a name="ports-beyond-1433-for-adonet-45"></a>Portas além da 1433 para ADO.NET 4.5
 
@@ -43,11 +42,11 @@ Esta é a sequência:
 
 1. O ADO.NET 4.5 (ou posterior) inicia uma breve interação com a nuvem do Azure e recebe um número de porta identificado dinamicamente.
 
-   * O número da porta identificado dinamicamente está no intervalo de 11000 a 11999.
+   * O número da porta identificada dinamicamente está no intervalo de 11000-11999.
 2. O ADO.NET conecta-se ao servidor do Banco de Dados SQL diretamente, sem um middleware entre os dois.
 3. As consultas são enviadas diretamente ao banco de dados, e os resultados são retornados diretamente ao cliente.
 
-Certifique-se de que os intervalos de portas 11000 a 11999 no computador cliente do Azure estão disponíveis para interações de cliente ADO.NET 4.5 com o banco de dados SQL.
+Verifique se os intervalos de porta de 11000-11999 no computador cliente do Azure estão disponíveis para interações de cliente do ADO.NET 4,5 com o banco de dados SQL.
 
 * Em particular, as portas no intervalo devem estar livres de outros bloqueadores de saída.
 * Em sua VM do Azure, o **Firewall do Windows com Segurança Avançada** controla as configurações de porta.
@@ -63,7 +62,7 @@ Esta seção explica os identificadores que se referem a versões do produto. El
 * O ADO.NET 4.0 dá suporte ao protocolo TDS 7.3, mas não ao 7.4.
 * O ADO.NET 4.5 e posterior dá suporte ao protocolo TDS 7.4.
 
-### <a name="odbc"></a>ODBCODBC
+### <a name="odbc"></a>ODBC
 
 * Microsoft SQL Server ODBC 11 ou posterior
 

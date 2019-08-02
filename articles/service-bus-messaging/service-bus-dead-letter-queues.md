@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/21/2019
 ms.author: aschhab
-ms.openlocfilehash: 79bc5e640498788ef805d07a26dd29e943117b58
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: afa2e6e46579d9ce2906e2686cf40adf4b65ab2b
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476966"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68516591"
 ---
 # <a name="overview-of-service-bus-dead-letter-queues"></a>Visão geral das filas de mensagens mortas do Barramento de Serviço
 
@@ -108,7 +108,7 @@ Você pode acessar a fila de mensagens mortas usando a seguinte sintaxe:
 
 ```
 <queue path>/$deadletterqueue
-<topic path>/Subscription/<subscription path>/$deadletterqueue
+<topic path>/Subscriptions/<subscription path>/$deadletterqueue
 ```
 
 Se você estiver usando o SDK do .NET, poderá obter o caminho para a fila de mensagens mortas usando o método SubscriptionClient. FormatDeadLetterPath (). Esse método usa o nome do tópico/assinatura e sufixos com **/$DeadLetterQueue**.

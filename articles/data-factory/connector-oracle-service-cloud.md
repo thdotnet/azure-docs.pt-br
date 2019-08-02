@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: b65bcfa5252a150c8101322eaf6d84ce46eef755
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 33c73bffc6c8ddac3a6465093d1994fcbfe14a9b
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60546345"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68726063"
 ---
 # <a name="copy-data-from-oracle-service-cloud-using-azure-data-factory-preview"></a>Copiar dados do Oracle Service Cloud usando o Azure Data Factory (versão prévia)
 
@@ -42,7 +42,7 @@ As seções a seguir fornecem detalhes sobre as propriedades que são usadas par
 
 As propriedades a seguir são compatíveis com o serviço Oracle Service Cloud vinculado:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Obrigatório |
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **OracleServiceCloud** | Sim |
 | host | A URL da instância do Oracle Service Cloud.  | Sim |
@@ -81,7 +81,7 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 Para copiar dados do Oracle Service Cloud e para ele, defina a propriedade type do conjunto de dados como **OracleServiceCloudObject**. Há suporte para as seguintes propriedades:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Obrigatório |
 |:--- |:--- |:--- |
 | type | A propriedade type do conjunto de dados deve ser definida como: **OracleServiceCloudObject** | Sim |
 | tableName | Nome da tabela. | Não (se "query" na fonte da atividade for especificada) |
@@ -93,11 +93,12 @@ Para copiar dados do Oracle Service Cloud e para ele, defina a propriedade type 
     "name": "OracleServiceCloudDataset",
     "properties": {
         "type": "OracleServiceCloudObject",
+        "typeProperties": {},
+        "schema": [],
         "linkedServiceName": {
             "referenceName": "<OracleServiceCloud linked service name>",
             "type": "LinkedServiceReference"
-        },
-        "typeProperties": {}
+        }
     }
 }
 
@@ -111,10 +112,10 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 Para copiar dados do Oracle Service Cloud, defina o tipo de origem na atividade de cópia como **OracleServiceCloudSource**. As propriedades a seguir têm suporte na seção **source** da atividade de cópia:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Obrigatório |
 |:--- |:--- |:--- |
 | type | A propriedade type da fonte da atividade de cópia deve ser definida como: **OracleServiceCloudSource** | Sim |
-| query | Utiliza a consulta SQL personalizada para ler os dados. Por exemplo: `"SELECT * FROM MyTable"`. | Não (se "tableName" no conjunto de dados for especificado) |
+| consultar | Utiliza a consulta SQL personalizada para ler os dados. Por exemplo: `"SELECT * FROM MyTable"`. | Não (se "tableName" no conjunto de dados for especificado) |
 
 **Exemplo:**
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: sedusch
-ms.openlocfilehash: cd377e78abe328814795bb1f75465b090a13e456
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: 551f140c22677bea363ad5d8f43bf9670f783a1d
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68228359"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68725614"
 ---
 # <a name="setting-up-pacemaker-on-suse-linux-enterprise-server-in-azure"></a>Configuração do Pacemaker no SUSE Linux Enterprise Server no Azure
 
@@ -35,14 +35,14 @@ ms.locfileid: "68228359"
 
 Há duas opções para configurar um cluster Pacemaker no Azure. Você pode usar um agente de isolamento que cuida da reinicialização de um nó com falha por meio das APIs do Azure ou você pode usar um dispositivo SBD.
 
-O dispositivo SBD requer pelo menos uma máquina virtual adicional que atue como um servidor de destino iSCSI e forneça um dispositivo SBD. Esses servidores de destino iSCSI, podem, entretanto, ser compartilhados com outros clusters do Pacemaker. A vantagem de usar um dispositivo SBD é um tempo de failover mais rápido e, se você estiver usando dispositivos SBD locais, não precisará de quais alterações ao operar o cluster do pacemaker. Você pode usar até três dispositivos SBD para um cluster do Pacemaker para permitir que um dispositivo SBD se torne indisponível, por exemplo, durante a aplicação de patch de sistema operacional do servidor de destino iSCSI. Se você quiser usar mais de um dispositivo SBD por Pacemaker, certifique-se implantar vários servidores de destino iSCSI e conectar um SBD de cada servidor de destino iSCSI. É recomendável usar um dispositivo SBD ou três. O Pacemaker não poderá automaticamente isolar um nó de cluster se você apenas configurar dois dispositivos SBD e um deles não estiver disponível. Se quiser ser capaz de isolar quando um servidor de destino iSCSI estiver inativo, você precisará usar três dispositivos SBD e, portanto, três servidores de destino iSCSI.
+O dispositivo SBD requer pelo menos uma máquina virtual adicional que atue como um servidor de destino iSCSI e forneça um dispositivo SBD. Esses servidores de destino iSCSI, podem, entretanto, ser compartilhados com outros clusters do Pacemaker. A vantagem de usar um dispositivo SBD é um tempo de failover mais rápido e, se você estiver usando dispositivos SBD no local, o não exigirá nenhuma alteração na maneira como você opera o cluster pacemaker. Você pode usar até três dispositivos SBD para um cluster do Pacemaker para permitir que um dispositivo SBD se torne indisponível, por exemplo, durante a aplicação de patch de sistema operacional do servidor de destino iSCSI. Se você quiser usar mais de um dispositivo SBD por Pacemaker, certifique-se implantar vários servidores de destino iSCSI e conectar um SBD de cada servidor de destino iSCSI. É recomendável usar um dispositivo SBD ou três. O Pacemaker não poderá automaticamente isolar um nó de cluster se você apenas configurar dois dispositivos SBD e um deles não estiver disponível. Se quiser ser capaz de isolar quando um servidor de destino iSCSI estiver inativo, você precisará usar três dispositivos SBD e, portanto, três servidores de destino iSCSI.
 
-Se você não quiser investir em uma máquina virtual adicional, também poderá usar o agente do Azure Fence. A desvantagem é que um failover pode levar entre 10 a 15 minutos se uma parada de recurso falhar ou se os nós do cluster não puderem mais se comunicar uns com os outros.
+Se você não quiser investir em uma máquina virtual adicional, também poderá usar o agente de limite do Azure. A desvantagem é que um failover pode levar entre 10 a 15 minutos se uma parada de recurso falhar ou se os nós do cluster não puderem mais se comunicar uns com os outros.
 
 ![Pacemaker na visão geral do SLES](./media/high-availability-guide-suse-pacemaker/pacemaker.png)
 
 >[!IMPORTANT]
-> Ao planejar e implantar nós de cluster do Linux Pacemaker e dispositivos SBD, é essencial para a confiabilidade geral da configuração completa do cluster que o roteamento entre as VMs envolvidas e a(s) VM(s) que hospeda(m) o(s) dispositivo(s) SBD não esteja passando por nenhum outro dispositivos como [NVAs](https://azure.microsoft.com/solutions/network-appliances/). Caso contrário, problemas e eventos de manutenção com o NVA podem ter um impacto negativo na estabilidade e confiabilidade da configuração geral do cluster. Para evitar esses obstáculos, não defina regras de roteamento de NVAs ou [regras de Roteamento Definido pelo Usuário](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview) que roteiem o tráfego entre nós de cluster e dispositivos SBD por meio de NVAs e dispositivos semelhantes ao planejar e implantar nós de cluster do Linux Pacemaker e dispositivos SBD. 
+> Ao planejar e implantar nós de cluster do Linux Pacemaker e dispositivos SBD, é essencial para a confiabilidade geral da configuração completa do cluster que o roteamento entre as VMs envolvidas e a(s) VM(s) que hospeda(m) o(s) dispositivo(s) SBD não esteja passando por nenhum outro dispositivos como [NVAs](https://azure.microsoft.com/solutions/network-appliances/). Caso contrário, problemas e eventos de manutenção com o NVA podem ter um impacto negativo na estabilidade e confiabilidade da configuração geral do cluster. Para evitar esses obstáculos, não defina regras de roteamento de NVAs ou [regras de roteamento definidas pelo usuário](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview) que roteiam o tráfego entre nós clusterizados e dispositivos SBD por meio de NVAs e dispositivos semelhantes ao planejar e implantar nós clusterizados do Linux pacemaker e Dispositivos SBD. 
 >
 
 ## <a name="sbd-fencing"></a>Isolamento de SBD
@@ -53,7 +53,7 @@ Siga etapas a seguir se você quiser usar um dispositivo SBD para isolamento.
 
 Primeiro, você precisa criar as máquinas virtuais de destino iSCSI. Os servidores de destino iSCSI podem ser compartilhados com vários clusters Pacemaker.
 
-1. Implante um novo SLES 12 SP1 ou máquinas virtuais superiores e conecte-se a eles por meio do ssh. As máquinas não precisam ser grandes. Um tamanho de máquina virtual, como Standard_E2s_v3 ou Standard_D2s_v3 é suficiente. Certifique-se de usar o armazenamento Premium do disco do SO.
+1. Implante um novo SLES 12 SP1 ou máquinas virtuais superiores e conecte-se a eles por meio do ssh. Os computadores não precisam ser grandes. Um tamanho de máquina virtual, como Standard_E2s_v3 ou Standard_D2s_v3 é suficiente. Certifique-se de usar o armazenamento Premium do disco do SO.
 
 Execute os seguintes comandos em todas as **máquinas virtuais de destino iSCSI**.
 
@@ -84,7 +84,7 @@ Execute os seguintes comandos em todas as **máquinas virtuais de destino iSCSI*
 
 Execute os seguintes comandos em todas as **máquinas virtuais de destino iSCSI** para criar os discos iSCSI para os clusters usados por seus sistemas SAP. No exemplo a seguir, os dispositivos SBD para vários clusters são criados. Ele mostra como você usaria um servidor de destino iSCSI para vários clusters. Os dispositivos SBD são colocados no disco do SO. Certifique-se de que você tenha espaço suficiente.
 
-**`nfs`** é usado para identificar o cluster NFS, **ascsnw1** é usado para identificar o cluster ASCS de **NW1**, **dbnw1** é usado para identificar o cluster de banco de dados de **NW1**, **NFS-0** e **NFS-1** são os nomes de host dos nós de cluster NFS,  **NW1-xscs-0** e **NW1-xscs-1** são os nomes de host dos  nós de cluster NW1 ASCS e **NW1-dB-0** e **NW1-DB-1** são os nomes de host dos nós de cluster de banco de dados. Substitua-os pelos nomes do hoste do seus nós de cluster e pelo SID do sistema SAP.
+**`nfs`** é usado para identificar o cluster NFS, **ascsnw1** é usado para identificar o cluster ASCS de **NW1**, **dbnw1** é usado para identificar o cluster de banco de dados de **NW1**, **NFS-0** e **NFS-1** são os nomes de host dos nós de cluster NFS,  **NW1-xscs-0** e **NW1-xscs-1** são os nomes de host dos nós de cluster NW1 ASCS e **NW1-dB-0** e **NW1-DB-1** são os nomes de host dos nós de cluster de banco de dados. Substitua-os pelos nomes do hoste do seus nós de cluster e pelo SID do sistema SAP.
 
 <pre><code># Create the root folder for all SBD devices
 sudo mkdir /sbd
@@ -398,6 +398,28 @@ Os itens a seguir são prefixados com **[A]** – aplicável a todos os nós, **
    <pre><code>sudo zypper install fence-agents
    </code></pre>
 
+   >[!IMPORTANT]
+   > Se estiver usando o SuSE Linux Enterprise Server para SAP 15, lembre-se de que você precisa ativar o módulo adicional e instalar o componente adicional, que é o pré-requisito para usar o agente de isolamento do Azure. Para saber mais sobre os módulos e extensões do SUSE, consulte [módulos e extensões explicadas](https://www.suse.com/documentation/sles-15/singlehtml/art_modules/art_modules.html). Siga as instruções abaixo para instalar o SDK do Python do Azure. 
+
+   As instruções a seguir sobre como instalar o SDK do Python do Azure só são aplicáveis ao SuSE Enterprise Server para SAP **15**.  
+
+    - Se você estiver usando o traga sua própria assinatura, siga estas instruções  
+
+    <pre><code>
+    #Activate module PackageHub/15/x86_64
+    sudo SUSEConnect -p PackageHub/15/x86_64
+    #Install Azure Python SDK
+    sudo zypper in python3-azure-sdk
+    </code></pre>
+
+     - Se você estiver usando a assinatura paga conforme o uso, siga estas instruções  
+
+    <pre><code>#Activate module PackageHub/15/x86_64
+    zypper ar https://download.opensuse.org/repositories/openSUSE:/Backports:/SLE-15/standard/ SLE15-PackageHub
+    #Install Azure Python SDK
+    sudo zypper in python3-azure-sdk
+    </code></pre>
+
 1. **[A]** Configurar a resolução de nome do host
 
    Você pode usar um servidor DNS ou modificar /etc/hosts em todos os nós. Este exemplo mostra como usar o arquivo /etc/hosts.
@@ -448,7 +470,7 @@ Os itens a seguir são prefixados com **[A]** – aplicável a todos os nós, **
    <pre><code>sudo vi /etc/corosync/corosync.conf
    </code></pre>
 
-   Adicione o seguinte conteúdo em negrito para o arquivo se os valores não forem diferentes ou estiverem ausentes. Altere o token para 30.000 para permitir a manutenção da preservação da Memória. Para obter mais informações, consulte [Este artigo para Linux][virtual-machines-linux-maintenance] or [Windows][virtual-machines-windows-maintenance]. Além disso, certifique-se de remover o parâmetro mcastaddr.
+   Adicione o seguinte conteúdo em negrito para o arquivo se os valores não forem diferentes ou estiverem ausentes. Altere o token para 30.000 para permitir a manutenção da preservação da Memória. Para obter mais informações, consulte [Este artigo para Linux][virtual-machines-linux-maintenance] ou [Windows][virtual-machines-windows-maintenance]. Além disso, certifique-se de remover o parâmetro mcastaddr.
 
    <pre><code>[...]
      <b>token:          30000
@@ -510,7 +532,7 @@ O dispositivo STONITH usa uma Entidade de Serviço para autorização no Microso
 
 ### <a name="1-create-a-custom-role-for-the-fence-agent"></a>**[1]**  Criar uma função personalizada para o agente de isolamento
 
-A Entidade de Serviço não tem permissões para acessar os recursos do Azure por padrão. Você precisa fornecer as permissões da Entidade de Serviço para iniciar e parar (desalocar) todas as máquinas virtuais do cluster. Se você ainda não tiver criado a função personalizada, você pode criá-la usando o [PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell) ou [CLI do Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli)
+A entidade de serviço não tem permissões para acessar os recursos do Azure por padrão. Você precisa fornecer as permissões da Entidade de Serviço para iniciar e parar (desalocar) todas as máquinas virtuais do cluster. Se você ainda não tiver criado a função personalizada, você pode criá-la usando o [PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell) ou [CLI do Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli)
 
 Use o seguinte conteúdo para o arquivo de entrada. Você precisa adaptar o conteúdo às suas assinaturas, ou seja, substitua c276fc76-9cd4-44c9-99a7-4fd71546436e e e91d47c4-76f3-4271-a796-21b4ecfe3624 pelas IDs da sua assinatura. Se você tiver apenas uma assinatura, remova a segunda entrada em AssignableScopes.
 
@@ -536,7 +558,7 @@ Use o seguinte conteúdo para o arquivo de entrada. Você precisa adaptar o cont
 
 ### <a name="a-assign-the-custom-role-to-the-service-principal"></a>**[A]** Atribuir a função personalizada à Entidade de Serviço
 
-Atribua a função personalizada “Função do Agente de Isolamento Linux" que foi criada no último capítulo para a Entidade de Serviço. Não mais use a função de proprietário!
+Atribua a função personalizada “Função do Agente de Isolamento Linux" que foi criada no último capítulo para a Entidade de Serviço. Não use mais a função de proprietário!
 
 1. Vá até [https://portal.azure.com](https://portal.azure.com)
 1. Abra a folha Todos os recursos

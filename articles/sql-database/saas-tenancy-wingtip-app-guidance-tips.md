@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
 ms.reviewer: sstein
-manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: 758cb47760f4a15e262a4d682089ac7d9fee64e8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6c14fd69521be85dbda5ec4ceda991dfdff54ae0
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60326237"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570095"
 ---
 # <a name="general-guidance-for-working-with-wingtip-tickets-sample-saas-apps"></a>Diretrizes gerais para trabalhar com aplicativos SaaS de exemplo do Wingtip Tickets
 
@@ -94,7 +93,7 @@ Para garantir uma conexão de demonstração bem-sucedida, todos os servidores t
 
    ![servidor catalog](media/saas-tenancy-wingtip-app-guidance-tips/connect.png)
 
-3. As credenciais de demonstração são: Logon = *developer*, senha = *P\@ssword1*
+3. As credenciais de demonstração são: Logon = *desenvolvedor*, senha = *P\@ssword1*
 
     A imagem abaixo demonstra o logon para o padrão *Banco de dados por locatário*. 
     ![conexão](media/saas-tenancy-wingtip-app-guidance-tips/tenants1-connect.png)

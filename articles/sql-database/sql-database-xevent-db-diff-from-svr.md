@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
 ms.reviewer: jrasnik
-manager: craigg
 ms.date: 12/19/2018
-ms.openlocfilehash: 7f742b094575b78f453fb735b23cc5319a27fa7e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f9af487e2eb35e7dc94e1b70945d5c03ffdde2ba
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65206649"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566075"
 ---
 # <a name="extended-events-in-sql-database"></a>Eventos estendidos no Banco de Dados SQL
 [!INCLUDE [sql-database-xevents-selectors-1-include](../../includes/sql-database-xevents-selectors-1-include.md)]
@@ -82,7 +81,7 @@ Os tópicos relacionados fornecem dois exemplos de código:
 
 O recurso de eventos estendidos recebe suporte de várias [exibições do catálogo](https://msdn.microsoft.com/library/ms174365.aspx). As exibições do catálogo mostram *metadados ou definições* de sessões de eventos criadas pelo usuário no banco de dados atual. As exibições não retornam informações sobre as instâncias de sessões de eventos ativas.
 
-| Nome da<br/>exibição do catálogo | DESCRIÇÃO |
+| Nome da<br/>exibição do catálogo | Descrição |
 |:--- |:--- |
 | **sys.database_event_session_actions** |Retorna uma linha para cada ação em cada evento de uma sessão de eventos. |
 | **sys.database_event_session_events** |Retorna uma linha para cada evento em uma sessão de eventos. |
@@ -96,7 +95,7 @@ No Microsoft SQL Server, exibições do catálogo semelhantes têm nomes que inc
 
 O Banco de Dados SQL do Azure tem [exibições de gerenciamento dinâmico (DMVs)](https://msdn.microsoft.com/library/bb677293.aspx) que dão suporte a eventos estendidos. DMVs mostram as sessões de evento *ativas* .
 
-| Nome da DMV | DESCRIÇÃO |
+| Nome da DMV | Descrição |
 |:--- |:--- |
 | **sys.dm_xe_database_session_event_actions** |Retorna informações sobre ações da sessão de eventos. |
 | **sys.dm_xe_database_session_events** |Retorna informações sobre eventos da sessão. |
@@ -172,7 +171,7 @@ O token SAS gerado para o contêiner de Armazenamento do Azure deve especificar 
 
 - Ler
 - Gravar
-- Listar
+- Lista
 
 ## <a name="performance-considerations"></a>Considerações sobre o desempenho
 

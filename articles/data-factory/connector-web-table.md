@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 12/20/2018
+ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: e578b3a6b3905569567b568b0130c1ed1b90d915
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 09de2919b22ebb088b23c1ab59f60d182657a2f1
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60557663"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68720402"
 ---
 # <a name="copy-data-from-web-table-by-using-azure-data-factory"></a>Copiar dados da tabela da Web usando o Azure Data Factory
 > [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
@@ -52,7 +52,7 @@ As seções que a seguir fornecem detalhes sobre as propriedades usadas para def
 
 As propriedades a seguir têm suporte para o serviço vinculado de tabela da Web:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **Web** |Sim |
 | url | URL para a origem da Web |Sim |
@@ -84,10 +84,10 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 Para copiar dados da tabela web, defina a propriedade type do conjunto de dados como **WebTable**. Há suporte para as seguintes propriedades:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type do conjunto de dados deve ser definida como: **WebTable** | Sim |
-| path |Uma URL relativa para o recurso que contém a tabela. |Não. Quando o caminho não for especificado, apenas a URL especificada na definição do serviço vinculado será usada. |
+| path |Uma URL relativa para o recurso que contém a tabela. |Nº Quando o caminho não for especificado, apenas a URL especificada na definição do serviço vinculado será usada. |
 | index |O índice da tabela no recurso. Confira a seção [Obter índice de uma tabela em uma página HTML](#get-index-of-a-table-in-an-html-page) a fim de ver as etapas para obter o índice de uma tabela em uma página HTML. |Sim |
 
 **Exemplo:**
@@ -97,13 +97,14 @@ Para copiar dados da tabela web, defina a propriedade type do conjunto de dados 
     "name": "WebTableInput",
     "properties": {
         "type": "WebTable",
-        "linkedServiceName": {
-            "referenceName": "<Web linked service name>",
-            "type": "LinkedServiceReference"
-        },
         "typeProperties": {
             "index": 1,
             "path": "AFI's_100_Years...100_Movies"
+        },
+        "schema": [],
+        "linkedServiceName": {
+            "referenceName": "<Web linked service name>",
+            "type": "LinkedServiceReference"
         }
     }
 }

@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 09/24/2018
-ms.openlocfilehash: 1c16ea44418d99ee1f80a7d0ef7a3e5b3f118f46
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 16f4bb946af4720a327a8755c6bf9187f3b71ba6
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61485165"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570346"
 ---
 # <a name="introduction-to-a-multitenant-saas-app-that-uses-the-database-per-tenant-pattern-with-sql-database"></a>Introdução a um aplicativo SaaS multilocatário que usa o padrão de banco de dados por locatário com o Banco de Dados SQL
 
@@ -40,16 +39,16 @@ Ao percorrer os tutoriais e trabalhar com o aplicativo, tenha em mente os padrõ
 Depois de implantar o aplicativo, explore a seguinte coleção de tutoriais que aproveitam a implantação inicial. Esses tutoriais exploram padrões comuns de SaaS que aproveitam os recursos internos do banco de dados SQL, SQL Data Warehouse do Azure e outros serviços do Azure. Os tutoriais incluem scripts do PowerShell com explicações detalhadas. As explicações simplificam a compreensão e a implementação dos mesmos padrões de gerenciamento de SaaS em seus aplicativos.
 
 
-| Tutorial | DESCRIÇÃO |
+| Tutorial | Descrição |
 |:--|:--|
 | [Diretrizes e dicas para o exemplo de aplicativo SaaS de multilocatário do Banco de Dados SQL](saas-tenancy-wingtip-app-guidance-tips.md) | Baixe e execute scripts do PowerShell para preparar as partes do aplicativo. |
 |[Implantar e explorar o aplicativo SaaS Wingtip](saas-dbpertenant-get-started-deploy.md)|  Implantar e explorar o aplicativo SaaS Wingtip com sua assinatura do Azure. |
 |[Provisionar e catalogar locatários](saas-dbpertenant-provision-and-catalog.md)| Saiba como o aplicativo se conecta aos locatários usando um banco de dados do catálogo, e como o catálogo mapeia locatários para seus dados. |
 |[Monitorar e gerenciar o desempenho](saas-dbpertenant-performance-monitoring.md)| Saiba como usar os recursos de monitoramento do Banco de Dados SQL e definir alertas quando os limites de desempenho são excedidos. |
-|[Monitorar com logs do Azure Monitor](saas-dbpertenant-log-analytics.md) | Saiba como usar [registra em log do Azure Monitor](../log-analytics/log-analytics-overview.md) para monitorar grandes quantidades de recursos em vários pools. |
+|[Monitorar com logs de Azure Monitor](saas-dbpertenant-log-analytics.md) | Saiba como usar [os logs de Azure monitor](../log-analytics/log-analytics-overview.md) para monitorar grandes quantidades de recursos em vários pools. |
 |[Restaurar um único locatário](saas-dbpertenant-restore-single-tenant.md)| Saiba como restaurar um banco de dados de locatário em um ponto anterior no tempo. Também saiba como restaurar um banco de dados paralelo, o que deixa o banco de dados existente do locatário online. |
 |[Gerenciar o esquema de banco de dados do locatário](saas-tenancy-schema-management.md)| Saiba como atualizar o esquema e atualizar dados de referência, em todos os bancos de dados de locatários. |
-|[Executar consultas distribuídas entre locatários](saas-tenancy-cross-tenant-reporting.md) | Criar um banco de dados de análise ad hoc e executar consultas distribuídas em tempo real em todos os locatários.  |
+|[Executar consultas distribuídas entre locatários](saas-tenancy-cross-tenant-reporting.md) | Crie um banco de dados de análise ad hoc e execute consultas distribuídas em tempo real em todos os locatários.  |
 |[Executar análise em dados extraídos de locatário](saas-tenancy-tenant-analytics.md) | Extraia dados de locatário em um análise banco de dados ou data warehouse para consultas analíticas offline. |
 
 

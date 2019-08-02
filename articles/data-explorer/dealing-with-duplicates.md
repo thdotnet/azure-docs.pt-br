@@ -1,20 +1,20 @@
 ---
-title: Lidar com dados duplicados no Gerenciador de dados do Azure
-description: Este tópico mostra várias abordagens para lidar com dados duplicados ao usar o Data Explorer do Azure.
+title: Manipular dados duplicados no Azure Data Explorer
+description: Este tópico mostrará várias abordagens para lidar com dados duplicados ao usar o Azure Data Explorer.
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 12/19/2018
-ms.openlocfilehash: 8f55b6dfb7b5bc9eda675aca4ed80a66b8a25a7f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 60ec2b86e0205060f907f1fe39d084dca3aac1cd
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60445763"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68608234"
 ---
-# <a name="handle-duplicate-data-in-azure-data-explorer"></a>Lidar com dados duplicados no Gerenciador de dados do Azure
+# <a name="handle-duplicate-data-in-azure-data-explorer"></a>Manipular dados duplicados no Azure Data Explorer
 
 Os dispositivo que enviam dados para a nuvem mantêm um cache local dos dados. Dependendo do volume dos dados, o cache local pode armazenar dados por dias, e até meses. Você deseja proteger os seus bancos de dados analíticos contra o funcionamento incorreto de dispositivos que reenviam os dados armazenados em cache e causam a duplicação dos dados no banco de dados analítico. Este tópico descreve as melhores práticas para tratar de dados duplicados nesses tipos de cenário.
 
@@ -70,7 +70,7 @@ DeviceEventsAll
 
 ### <a name="solution-3-filter-duplicates-during-the-ingestion-process"></a>Solução 3: filtrar as duplicatas durante o processo de ingestão
 
-Outra solução é filtrar duplicatas durante o processo de ingestão. O sistema ignora os dados duplicados durante a ingestão nas tabelas Kusto. Os dados são ingeridos em uma tabela de preparo e copiados em outra tabela após a remoção das linhas duplicadas. A vantagem dessa solução é que o desempenho da consulta melhora consideravelmente em relação à solução anterior. As desvantagens incluem aumento do tempo de ingestão e custos adicionais com o armazenamento de dados.
+Outra solução é filtrar duplicatas durante o processo de ingestão. O sistema ignora os dados duplicados durante a ingestão nas tabelas Kusto. Os dados são ingeridos em uma tabela de preparo e copiados em outra tabela após a remoção das linhas duplicadas. A vantagem dessa solução é que o desempenho da consulta melhora consideravelmente em relação à solução anterior. As desvantagens incluem aumento do tempo de ingestão e custos adicionais com o armazenamento de dados. Adicionalmente, essa solução funcionará somente se as duplicações não estiverem ingeridas simultaneamente. Se houver várias ingestãos simultâneas contendo registros duplicados, todas poderão ser ingeridas, já que o processo de eliminação de duplicação não encontrará nenhum registro correspondente existente na tabela.    
 
 O seguinte exemplo descreve esse método:
 

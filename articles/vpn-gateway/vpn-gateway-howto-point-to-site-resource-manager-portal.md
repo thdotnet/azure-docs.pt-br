@@ -3,24 +3,22 @@ title: 'Conectar um computador a uma rede virtual do Azure usando autenticação
 description: Conecte clientes Windows, Linux e Mac OS X com segurança a uma rede virtual do Azure usando P2S e certificados autoassinados ou emitidos por autoridade de certificação. Este artigo usa o portal do Azure.
 services: vpn-gateway
 author: cherylmc
-tags: azure-resource-manager
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 6/18/2019
+ms.date: 07/31/2019
 ms.author: cherylmc
-ms.openlocfilehash: 07bcf50a816c090ccef846909dff671486e514c4
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: e603eed34aaff4ad7303819a730fea09a332b7a8
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67203055"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68706752"
 ---
 # <a name="configure-a-point-to-site-connection-to-a-vnet-using-native-azure-certificate-authentication-azure-portal"></a>Para isso, configure uma conexão ponto a site em uma VNet usando a autenticação de certificado nativa do Azure: Portal do Azure
 
 Este artigo ajuda você a conectar clientes individuais que executem Windows, Linux ou Mac OS X a uma VNet do Azure com segurança. As conexões VPN Ponto a Site são úteis quando você deseja se conectar à rede virtual de um local remoto, como ao trabalhar de casa ou em uma conferência. Também é possível usar P2S em vez de uma VPN Site a Site, quando você tiver apenas alguns clientes que precisam se conectar a uma VNet. As conexões Ponto a Site não exigem um dispositivo VPN ou um endereço IP voltado para o público. A P2S cria a conexão VPN no SSTP (Secure Socket Tunneling Protocol) ou IKEv2. Para obter mais informações sobre conexões VPN Ponto a Site, consulte [Sobre VPN Ponto a Site](point-to-site-about.md).
 
 ![Conectar um computador a um diagrama de conexão de ponto para Site da rede virtual do Azure](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/p2snativeportal.png)
-
 
 ## <a name="architecture"></a>Arquitetura
 
@@ -41,12 +39,12 @@ Você pode usar os seguintes valores para criar um ambiente de teste ou fazer re
 * **Intervalo de endereços da sub-rede:**  192.168.1.0/24
 * **Assinatura:** Se você tem mais de uma assinatura, verifique se está usando a correta.
 * **Grupo de recursos:** TestRG
-* **Localização:** Leste dos EUA
+* **Localização:** East US
 * **GatewaySubnet:** 192.168.200.0/24<br>
 * **Servidor DNS:** (opcional) endereço IP do servidor DNS que você deseja usar para a resolução de nome.
 * **Nome do gateway de rede virtual:** VNet1GW
 * **Tipo de gateway:** VPN
-* **Tipo de VPN:** Baseado em rotas
+* **Tipo de VPN:** Baseado em rota
 * **Nome do endereço IP público:** VNet1GWpip
 * **Tipo de conexão**: Point-to-site
 * **Pool de endereços do cliente:** 172.16.201.0/24<br>Os clientes VPN que se conectarem à rede virtual usando esta conexão Ponto a Site receberão um endereço IP do pool de endereços do cliente.
@@ -73,7 +71,7 @@ Depois de criar a rede virtual, você pode adicionar o endereço IP de um servid
 [!INCLUDE [create-gateway](../../includes/vpn-gateway-add-gw-p2s-rm-portal-include.md)]
 
 >[!NOTE]
->A SKU Básica não dá suporte à autenticação IKEv2 ou RADIUS. Se você estiver planejando clientes Mac, se conecte à sua rede virtual, não use a SKU básica.
+>O SKU do gateway básico não oferece suporte à autenticação IKEv2 ou RADIUS. Se você planeja ter clientes Mac conectados à sua rede virtual, não use a SKU básica.
 >
 
 ## <a name="generatecert"></a>5. Gerar certificados
@@ -98,7 +96,7 @@ O pool de endereços do cliente é um intervalo de endereços IP que você espec
 2. Clique em **Configurar agora** para abrir a página de configuração.
 
    ![Configurar agora](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/configurenow.png)
-3. Na página de configuração **Ponto a site**, na caixa **Pool de endereços**, adicione o intervalo de endereços IP privado que deseja usar. Os clientes VPN recebem dinamicamente um endereço IP do intervalo que você especificar. A máscara de sub-rede mínimo é de 29 bits para ativo/passivo e configuração ativo/ativo de 28 bits. Clique em **Salvar** para validar e salvar a configuração.
+3. Na página de configuração **Ponto a site**, na caixa **Pool de endereços**, adicione o intervalo de endereços IP privado que deseja usar. Os clientes VPN recebem dinamicamente um endereço IP do intervalo que você especificar. A máscara de sub-rede mínima é 29 bits para ativo/passivo e 28 bits para configuração ativa/ativa. Clique em **Salvar** para validar e salvar a configuração.
 
    ![Pool de endereços do cliente](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/addresspool.png)
 
@@ -108,7 +106,7 @@ O pool de endereços do cliente é um intervalo de endereços IP que você espec
 
 ## <a name="tunneltype"></a>7. Configurar o tipo de túnel
 
-Você pode selecionar o tipo de túnel. As opções de túneis são OpenVPN, SSTP e IKEv2. O cliente strongSwan no Android e no Linux e o cliente nativo VPN IKEv2 no iOS e no OSX usarão somente o túnel IKEv2 para se conectar. Os clientes Windows tentam o IKEv2 primeiro e, se isso gerar a conexão, retornarão ao SSTP. Você pode usar o cliente OpenVPN para conectar-se para o tipo de túnel OpenVPN.
+Você pode selecionar o tipo de túnel. As opções de túnel são OpenVPN, SSTP e IKEv2. O cliente strongSwan no Android e no Linux e o cliente nativo VPN IKEv2 no iOS e no OSX usarão somente o túnel IKEv2 para se conectar. Os clientes Windows tentam o IKEv2 primeiro e, se isso gerar a conexão, retornarão ao SSTP. Você pode usar o cliente OpenVPN para se conectar ao tipo de túnel OpenVPN.
 
 ![Tipo de túnel](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/tunneltype.png)
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2019
 ms.author: spelluru
-ms.openlocfilehash: 9f38502cc543f19855dbca32c4724a5651b1a3f2
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: fb66fa2d4a6a03841fa057c4d1982b7bf4c6976d
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68318114"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68565334"
 ---
 # <a name="azure-devtest-labs-faq"></a>Perguntas frequentes sobre o Azure DevTest Labs
 Obtenha respostas para algumas das perguntas mais comuns sobre o Azure DevTest Labs.
@@ -46,11 +46,11 @@ Nosso identificador do Twitter:[@azlabservices](https://twitter.com/azlabservice
 ### <a name="what-if-my-question-isnt-answered-here"></a>E se dúvida não foi respondida aqui?
 Se sua pergunta não estiver listada aqui, informe-nos, para que possamos ajudá-lo a encontrar uma resposta.
 
-- Poste uma pergunta no final destas Perguntas Frequentes. Entre em contato com a equipe de Cache do Azure e outros membros da comunidade a respeito deste artigo.
+- Poste uma pergunta no final destas Perguntas Frequentes. 
 - Para alcançar um público maior, poste uma pergunta no [Fórum do MSDN do Azure DevTest Labs](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureDevTestLabs). Envolva-se com a equipe do Azure DevTest Labs e outros membros da comunidade.
 - Para solicitações de recurso, envie solicitações e ideias para o [User Voice do Azure DevTest Labs](https://feedback.azure.com/forums/320373-azure-devtest-labs).
 
-### <a name="what-is-a-microsoft-account"></a>O que é uma conta da Microsoft?
+### <a name="what-is-a-microsoft-account"></a>O que é uma conta da Microsoft?
 Uma conta da Microsoft é uma conta que você utiliza para quase tudo o que faz com os serviços e dispositivos da Microsoft. É um endereço de email e senha que você usa para entrar no Skype, Outlook.com, OneDrive, Windows Phone, Azure e Xbox Live. Uma conta única significa que seus arquivos, fotos, contatos e configurações, podem seguir você em qualquer dispositivo.
  
 > [!NOTE]

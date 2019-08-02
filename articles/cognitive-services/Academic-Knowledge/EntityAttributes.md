@@ -10,25 +10,26 @@ ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 03/27/2017
 ms.author: alch
-ms.openlocfilehash: 485775660ecfdf2291365ab98c9188295ea2cbde
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 596ce35a0d744691edd75d6071d4758691e0031b
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61340172"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68705026"
 ---
 # <a name="entity-attributes"></a>Atributos da entidade
 
 O grafo acadêmico é composto de 7 tipos de entidades. Todas as entidades terão uma ID de entidade e um tipo de entidade.
 
 ## <a name="common-entity-attributes"></a>Atributos de entidades comuns
-NOME    |DESCRIÇÃO                |Type       | Operações
+Nome    |Descrição                |Tipo       | Operações
 ------- | ------------------------- | --------- | ----------------------------
-ID      |ID da Entidade                  |Int64      |É igual a
-Ty      |Tipo de entidade                |enum   |É igual a
+Id      |ID da Entidade                  |Int64      |Igual a
+Ty      |Tipo de entidade                |enum   |Igual a
 
 ## <a name="entity-type-enum"></a>Enumeração de tipo de entidade
-NOME                                                            |value
+Nome                                                            |value
 ----------------------------------------------------------------|-----
 [Papel](PaperEntityAttributes.md)                               |0
 [Autor](AuthorEntityAttributes.md)                             |1

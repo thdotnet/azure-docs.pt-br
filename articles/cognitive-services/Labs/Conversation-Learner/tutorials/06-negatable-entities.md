@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: 2c758d1dd5d4d1e7ab25faccd5280963211181d1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 4edbfc396d4ab32b991b084a7b738f04b5205418
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66388799"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68704099"
 ---
 # <a name="how-to-use-negatable-entities-with-a-conversation-learner-model"></a>Como usar Entidades Negáveis com um Modelo do Conversation Learner
 
@@ -31,7 +32,7 @@ Este tutorial exige que Bot de tutorial esteja em execução
     npm run tutorial-general
 
 ## <a name="details"></a>Detalhes
-A propriedade "Negatable" de uma entidade permite rotular os dois normal (positivo) e números negativos são instâncias da entidade, ensinar com base em modelos positivos e negativos e limpar o valor de uma entidade existente. Entidades com o conjunto de propriedades "Negáveis" são chamadas de Entidades Negáveis no Conversation Leaner.
+A propriedade "Negable" de uma entidade permite que você rotule instâncias normais (positivas) e negativas da entidade, ensine com base em modelos positivos e negativos e limpe o valor de uma entidade existente. Entidades com o conjunto de propriedades "Negáveis" são chamadas de Entidades Negáveis no Conversation Leaner.
 
 ## <a name="steps"></a>Etapas
 
@@ -40,36 +41,36 @@ Inicie na home page na interface de usuário da Web.
 ### <a name="create-the-model"></a>Criar o modelo
 
 1. Selecione **novo modelo**.
-2. Insira **NegatableEntity** para **nome**.
+2. Digite **NegatableEntity** para o **nome**.
 3. Selecione **Criar**.
 
 ### <a name="entity-creation"></a>Criação da entidade
 
-1. Selecione **entidades** no painel esquerdo, em seguida, **nova entidade**.
+1. Selecione **entidades** no painel esquerdo e **nova entidade**.
 2. Selecione **personalizado treinado** para **tipo de entidade**.
-3. Insira **nome** para **nome da entidade**.
-4. Verifique **Negatable** permitir que os usuários fornecer um valor de entidade ou dizer algo *não* valor de uma entidade, assim, excluindo o valor de entidade correspondente.
+3. Insira o **nome** para o **nome da entidade**.
+4. Marque **negação** para permitir que os usuários forneçam um valor de entidade, ou digamos que algo *não* seja um valor de entidade, excluindo o valor de entidade correspondente.
 5. Selecione **Criar**.
 
 ![](../media/T06_entity_create.png)
 
 ### <a name="create-the-first-action"></a>Criar a primeira ação
 
-1. Selecione **ações** no painel esquerdo, em seguida, **nova ação**.
-2. Insira **não sei seu nome.** para **de resposta do Bot...** .
-3. Insira **nome** para **desqualificação qualifica**.
+1. Selecione **ações** no painel esquerdo e **nova ação**.
+2. Digite **eu não sei seu nome.** para **resposta do bot...**
+3. Insira o **nome** para qualificar os **direitos**.
 4. Selecione **Criar**.
 
 ![](../media/T06_action_create_1.png)
 
 ### <a name="create-the-second-action"></a>Criar a segunda ação
 
-1. Selecione **ações** no painel esquerdo, em seguida, **nova ação**.
-2. Insira **sei seu nome. Ele é $name.** para **de resposta do Bot...** .
+1. Selecione **ações** no painel esquerdo e **nova ação**.
+2. Digite **eu sei seu nome. É $name.** para **resposta do bot...**
 3. Selecione **Criar**.
 
 > [!NOTE]
-> O **nome** entidade foi adicionada automaticamente como um **necessárias entidades** por referência na declaração de resposta.
+> A entidade de **nome** foi adicionada automaticamente como **entidades necessárias** por referência na resposta expressão.
 
 Agora você tem duas ações.
 
@@ -77,20 +78,20 @@ Agora você tem duas ações.
 
 ### <a name="train-the-model"></a>Treinar o modelo
 
-1. Selecione **Train Dialogs** no painel esquerdo, em seguida, **caixa de diálogo do novo treinamento**.
-2. Insira **hello** para a declaração do usuário no painel à esquerda de bate-papo.
-3. Selecione **pontuar ações**.
-4. Selecione **não sei seu nome.** na lista de ações. O percentual é 100%, como a ação só é válida com base em restrições.
-5. Insira **meu nome é o Frank** para a declaração do usuário no painel à esquerda de bate-papo.
-6. Realçar **Frank** , em seguida, selecione **+ nome**. Entidades negável tem duas instâncias: (+) e adiciona ou substitui o valor; (-) menos remove o valor.
-7. Selecione **pontuar ações**. O **nome** entidade agora está definida como **Frank** na memória do modelo, portanto, o **sei seu nome. Ele é $name** ação está disponível.
-8. Selecione **sei seu nome. Ele é $name.** na lista de ações.
-9. Insira **meu nome não é Frank.** para a declaração do usuário no painel à esquerda de bate-papo.
-10. Realçar **Frank** , em seguida, selecione **-nome** para limpar o valor da **nome** entidade.
-11. Selecione **pontuar ações**.
+1. Selecione **treinar caixas de diálogo** no painel esquerdo e, em seguida, **nova caixa de diálogo treinar**.
+2. Insira **Olá** para o expressão do usuário no painel de bate-papo à esquerda.
+3. Selecione **ações de Pontuação**.
+4. Selecione **não sei seu nome.** na lista de ações. O percentual é 100% como a única ação válida com base nas restrições.
+5. Insira **meu nome é Frank** para o expressão do usuário no painel de bate-papo à esquerda.
+6. Realce **Frank** e selecione **+ nome**. As entidades que não são de negação têm duas instâncias: (+) Plus adiciona ou substitui o valor; (-) menos remove o valor.
+7. Selecione **ações de Pontuação**. A entidade **Name** agora é definida como **Frank** na memória do modelo **, portanto, eu sei seu nome. $Name** ação está disponível.
+8. Selecione **sei seu nome. É $name.** na lista de ações.
+9. Digite **meu nome não é Frank.** para o expressão do usuário no painel de bate-papo à esquerda.
+10. Realce **Frank** e, em seguida, selecione **-nome** para limpar o valor da entidade **nome** .
+11. Selecione **ações de Pontuação**.
 12. Selecione **não sei seu nome.** na lista de ações.
-13. Insira **Susan, meu nome é.** para a expressão de terceiro do usuário no painel à esquerda de bate-papo.
-14. Realçar **Susan** , em seguida, **+ nome** 
+13. Digite **meu nome é Susan.** para o terceiro expressão do usuário no painel de bate-papo à esquerda.
+14. Realce **Susan** e **+ nome** 
 
 ![](../media/T06_training.png)
 

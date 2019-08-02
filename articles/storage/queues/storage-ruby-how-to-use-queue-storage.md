@@ -1,21 +1,19 @@
 ---
-title: Como usar o armazenamento de fila do Ruby - armazenamento do Azure
+title: Como usar o armazenamento de fila do Ruby-armazenamento do Azure
 description: Saiba como usar o serviço Fila do Azure para criar e excluir filas, bem como para inserir, obter e excluir mensagens. Exemplos gravados no Ruby.
-services: storage
 author: mhopkins-msft
-ms.service: storage
-ms.devlang: ruby
-ms.topic: article
-ms.date: 12/08/2016
 ms.author: mhopkins
-ms.reviewer: cbrooks
+ms.date: 12/08/2016
+ms.service: storage
 ms.subservice: queues
-ms.openlocfilehash: 30a090aeb2d66c732e70a9acce67d5f3374c32fa
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.topic: conceptual
+ms.reviewer: cbrooks
+ms.openlocfilehash: c7211bc805f4ed1d026faedbfdc9d53d3c1dfd93
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65153158"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68721277"
 ---
 # <a name="how-to-use-queue-storage-from-ruby"></a>Como usar o Armazenamento de fila do Ruby
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -63,7 +61,7 @@ Para obter esses valores de uma conta de armazenamento clássico ou do Resource 
 4. Na folha Acessar chaves exibida, você verá as teclas de acesso 1 e 2. Você pode usar qualquer uma das duas. 
 5. Clique no ícone de cópia para copiar a chave para a área de transferência. 
 
-## <a name="how-to-create-a-queue"></a>Como: criar uma fila
+## <a name="how-to-create-a-queue"></a>Como: Criar uma Fila
 O código a seguir cria o objeto **Azure::QueueService** , permitindo que você trabalhe com filas.
 
 ```ruby

@@ -10,18 +10,17 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 02/07/2019
-ms.openlocfilehash: 5c6c923c86ea0c5968079188c87ec3988ec30142
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ae7666113bd3a4bdb595a8312fdb25007d4ed2c3
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61475687"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568669"
 ---
 # <a name="create-performance-counters-to-track-performance-of-shard-map-manager"></a>Criar contadores de desempenho para acompanhar o desempenho do Gerenciador de mapa de fragmentos
 
-Contadores de desempenho são usados para controlar o desempenho do [roteamento dependente de dados](sql-database-elastic-scale-data-dependent-routing.md) operações. Esses contadores estão acessíveis no Monitor de desempenho, na categoria do "Banco de Dados Elástico: Gerenciamento de fragmentos".
+Os contadores de desempenho são usados para acompanhar o desempenho de operações de [Roteamento dependentes de dados](sql-database-elastic-scale-data-dependent-routing.md) . Esses contadores estão acessíveis no Monitor de desempenho, na categoria do "Banco de Dados Elástico: Gerenciamento de fragmentos".
 
 Você pode capturar o desempenho de um [Gerenciador de mapa do fragmento](sql-database-elastic-scale-shard-map-management.md), especialmente ao usar [roteamento dependente de dados](sql-database-elastic-scale-data-dependent-routing.md). Contadores são criados com métodos da classe Microsoft.Azure.SqlDatabase.ElasticScale.Client.  
 

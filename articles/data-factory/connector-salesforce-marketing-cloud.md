@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 06/10/2019
+ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 70ce03834910447e92f0272fc67034caa59c43f2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6548f4add8a794276bd4e7f7fa3c0bd7e24a2d5c
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67074078"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68726024"
 ---
 # <a name="copy-data-from-salesforce-marketing-cloud-using-azure-data-factory-preview"></a>Copiar dados do Salesforce Marketing Cloud usando o Azure Data Factory (visualização)
 
@@ -30,7 +30,7 @@ Este artigo descreve como usar a atividade de cópia no Azure Data Factory para 
 
 Você pode copiar dados do Salesforce Marketing Cloud para qualquer armazenamento de dados de coletor com suporte. Para obter uma lista de armazenamentos de dados com suporte como origens/coletores da atividade de cópia, confira a tabela [Armazenamentos de dados com suporte](copy-activity-overview.md#supported-data-stores-and-formats).
 
-O conector de nuvem de Marketing do Salesforce dá suporte à autenticação OAuth 2. Ele é criado na parte superior dos [API de REST de nuvem de Marketing Salesforce](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/index-api.htm).
+O conector de nuvem de marketing do Salesforce dá suporte à autenticação OAuth 2. Ele é criado sobre a [API REST de nuvem de marketing do Salesforce](https://developer.salesforce.com/docs/atlas.en-us.mc-apis.meta/mc-apis/index-api.htm).
 
 >[!NOTE]
 >Esse conector não dá suporte a recuperação de objetos personalizados ou extensões de dados personalizadas.
@@ -45,7 +45,7 @@ As seções que se seguem fornecem detalhes sobre as propriedades que são usada
 
 As propriedades a seguir têm suporte para o serviço vinculado do Salesforce Marketing Cloud:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **SalesforceMarketingCloud** | Sim |
 | clientId | A ID do cliente associada ao aplicativo do Salesforce Marketing Cloud.  | Sim |
@@ -82,7 +82,7 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 Para copiar dados do e para o Salesforce Marketing Cloud, defina a propriedade tipo do conjunto de dados como **SalesforceMarketingCloudObject**. Há suporte para as seguintes propriedades:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type do conjunto de dados deve ser definida como: **SalesforceMarketingCloudObject** | Sim |
 | tableName | Nome da tabela. | Não (se "query" na fonte da atividade for especificada) |
@@ -94,11 +94,12 @@ Para copiar dados do e para o Salesforce Marketing Cloud, defina a propriedade t
     "name": "SalesforceMarketingCloudDataset",
     "properties": {
         "type": "SalesforceMarketingCloudObject",
+        "typeProperties": {},
+        "schema": [],
         "linkedServiceName": {
             "referenceName": "<SalesforceMarketingCloud linked service name>",
             "type": "LinkedServiceReference"
-        },
-        "typeProperties": {}
+        }
     }
 }
 ```
@@ -111,10 +112,10 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 Para copiar dados do Salesforce Marketing Cloud, defina o tipo de origem na atividade de cópia como **SalesforceMarketingCloudSource**. As propriedades a seguir têm suporte na seção **source** da atividade de cópia:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type da fonte da atividade de cópia deve ser definida como: **SalesforceMarketingCloudSource** | Sim |
-| query | Utiliza a consulta SQL personalizada para ler os dados. Por exemplo: `"SELECT * FROM MyTable"`. | Não (se "tableName" no conjunto de dados for especificado) |
+| consultar | Utiliza a consulta SQL personalizada para ler os dados. Por exemplo: `"SELECT * FROM MyTable"`. | Não (se "tableName" no conjunto de dados for especificado) |
 
 **Exemplo:**
 

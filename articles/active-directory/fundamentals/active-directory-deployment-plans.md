@@ -2,22 +2,22 @@
 title: Planos de implantação - Azure Active Directory | Microsoft Docs
 description: Fornece orientação de ponta a ponta sobre como implantar recursos do Azure Active Directory.
 services: active-directory
-author: eross-msft
+author: msaburnley
 manager: daveba
 ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 02/08/2019
-ms.author: lizross
+ms.author: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7f695d9f0240f8c27ea0bedba7e532d37a177752
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: a19c78efb7d81dcdcd3c221f58d4e4cc7be5ccd1
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68304752"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68722183"
 ---
 # <a name="azure-active-directory-deployment-plans"></a>Planos de implantação do Azure Active Directory
 Procurando orientação de ponta a ponta sobre como implantar alguns recursos do Azure AD (Azure Active Directory)? Os planos de implantação a seguir explicam o valor comercial, as considerações de planejamento, o design e os procedimentos operacionais necessários para implantar com êxito alguns dos recursos mais comuns do Azure AD. 
@@ -32,7 +32,7 @@ Ao iniciar o planejamento da implantação para um novo recurso, é importante i
 
 As funções podem incluir o seguinte 
 
-|Role |DESCRIÇÃO |
+|Role |Descrição |
 |-|-|
 |Usuário final|Um grupo representativo de usuários para os quais a funcionalidade será implementada. Geralmente, visualiza as alterações em um programa piloto.
 |Gerente de suporte de ti|O departamento de ti oferece suporte à organização que pode fornecer informações sobre a compatibilidade dessa mudança de uma perspectiva de assistência técnica.  
@@ -55,7 +55,7 @@ As funções podem incluir o seguinte
 
 
 
-|Cenário |DESCRIÇÃO |
+|Cenário |Descrição |
 |-|-|
 |[Autenticação Multifator](../authentication/howto-mfa-getstarted.md)|A Autenticação Multifator do Azure é uma solução de verificação em duas etapas da Microsoft. Usando métodos de autenticação aprovados pelo administrador, o Azure MFA ajuda a proteger o acesso a dados e a aplicativos, ao mesmo tempo que atende à demanda por um processo de logon simples.|
 |[Acesso condicional](https://aka.ms/deploymentplans/ca)|Com o acesso condicional, você pode implementar decisões de controle de acesso automatizadas para quem pode acessar seus aplicativos de nuvem, com base em condições.|
@@ -69,3 +69,4 @@ As funções podem incluir o seguinte
 |[Proxy de Aplicativo do Azure AD](https://aka.ms/deploymentplans/appproxy)|Os funcionários de hoje querem ser produtivos em qualquer lugar, a qualquer momento e com qualquer dispositivo. Eles desejam trabalhar em seus próprios dispositivos, sejam laptops, telefones ou tablets. Além disso, os funcionários esperam poder acessar todos os aplicativos, tanto aplicativos SaaS na nuvem como aplicativos corporativos locais. O fornecimento de acesso a aplicativos locais sempre envolveu VPNs (redes virtuais privadas), redes de perímetro ou proxies reversos locais. Essas soluções são complexas e difíceis de proteger, além de serem caras para configurar e gerenciar. Há uma opção melhor! – Proxy de Aplicativo do Azure AD|
 |[Provisionamento do usuário](https://aka.ms/UserProvisioningDPDownload)|O Azure AD ajuda a automatizar a criação, a manutenção e a remoção de identidades de usuário em aplicativos em nuvem (SaaS) como Dropbox, Salesforce, ServiceNow e outros.|
 |[Provisionamento de entrada de usuário controlada pelo Workday](https://aka.ms/WorkdayDeploymentPlan)|O provisionamento de entrada de usuário controlada pelo Workday cria uma base para a governança de identidade contínua e melhora a qualidade dos processos de negócios que dependem de dados de identidade autoritativos. Usando esse recurso, você pode gerenciar facilmente o ciclo de vida de identidade de funcionários e trabalhadores contingentes por meio da configuração de regras que mapeiam os processos de ligação/movimentação/saída (como nova contratação, rescisão, transferência) para ações de provisionamento de TI (como criar, habilitar, desabilitar, excluir contas).|
+|[Relatórios e monitoramento](https://aka.ms/deploymentplans/reporting)| O design de sua solução de monitoramento e relatório do Azure AD depende dos seus requisitos legais, de segurança e operacionais, bem como do ambiente e dos processos existentes. Este artigo apresenta as várias opções de design e orienta você para a estratégia de implantação certa.|

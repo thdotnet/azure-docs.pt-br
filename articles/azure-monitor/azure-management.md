@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/07/2018
 ms.author: bwren
-ms.openlocfilehash: b56993b9ad03f2ab50fe3954ab5e8855d0d8bc0f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a0d3ea3f4a63e7c69a190cf856929437d6f0b9d8
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60371625"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68608301"
 ---
 # <a name="azure-management---monitoring"></a>Gerenciamento do Azure - monitoramento
 
@@ -33,7 +33,7 @@ O diagrama a seguir ilustra as diferentes áreas de gerenciamento que são neces
 
 As seções a seguir descrevem resumidamente as diferentes áreas de gerenciamento e fornecem links para conteúdo detalhado sobre os principais serviços do Azure destinados a abordá-las.
 
-## <a name="monitor"></a>Monitoramento
+## <a name="monitor"></a>Monitor
 O monitoramento é o ato de coletar e analisar dados para determinar o desempenho, a integridade e a disponibilidade do seu aplicativo de negócios e os recursos necessários. Uma estratégia de monitoramento efetiva irá ajudá-lo a entender a operação detalhada dos diferentes componentes do aplicativo e a aumentar o tempo de atividade, notificando-o proativamente sobre problemas críticos para que possa resolvê-los antes de se tornarem problemas. O monitoramento no Azure é fornecido principalmente pelo [Azure Monitor](../azure-monitor/overview.md), que fornece armazenamentos comuns para armazenar dados de monitoramento, diversas fontes de dados para coletar dados das diferentes camadas que dão suporte a seu aplicativo e recursos para analisar e responder a dados coletados.
 
 ## <a name="configure"></a>Configurar
@@ -43,7 +43,7 @@ Configurar refere-se à implantação inicial e à configuração de aplicativos
 Governança fornece mecanismos e processos para manter controle sobre seus aplicativos e recursos no Azure.  Ela envolve planejar suas iniciativas e estabelecer prioridades estratégicas.  Governança no Azure é implementada principalmente com dois serviços.  O [Azure Policy](../governance/policy/overview.md) permite que você crie, atribua e gerencie definições de política que aplicam diferentes regras e ações sobre seus recursos para que esses recursos permaneçam em conformidade com seus padrões corporativos e contratos de nível de serviço. O [Gerenciamento de Custos do Azure pelo Cloudyn](../cost-management/overview.md) permite acompanhar o uso da nuvem e as despesas de seus recursos do Azure e de outros provedores de nuvem, incluindo AWS e Google.
 
 ## <a name="secure"></a>Segurança
-Gerenciar segurança de aplicativos, recursos e dados envolve uma combinação de avaliação de ameaças, coletando e analisando dados de segurança e garante que seus aplicativos e recursos sejam criados e configurados de forma segura.  A [Central de Segurança do Azure](../security-center/security-center-intro.md) fornece monitoramento de segurança e análise de ameaças, que inclui o gerenciamento unificado de segurança e proteção avançada contra ameaças em cargas de trabalho de nuvem híbrida.  Leia também a [Introdução à segurança do Azure](../security/azure-security.md) para obter informações abrangentes sobre segurança no Azure e orientação sobre como configurar com segurança os recursos do Azure.
+Gerenciar segurança de aplicativos, recursos e dados envolve uma combinação de avaliação de ameaças, coletando e analisando dados de segurança e garante que seus aplicativos e recursos sejam criados e configurados de forma segura.  A [Central de Segurança do Azure](../security-center/security-center-intro.md) fornece monitoramento de segurança e análise de ameaças, que inclui o gerenciamento unificado de segurança e proteção avançada contra ameaças em cargas de trabalho de nuvem híbrida.  Leia também a [Introdução à segurança do Azure](../security/fundamentals/overview.md) para obter informações abrangentes sobre segurança no Azure e orientação sobre como configurar com segurança os recursos do Azure.
 
 
 ## <a name="protect"></a>Proteger

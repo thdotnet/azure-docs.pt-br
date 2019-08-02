@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
-manager: craigg
 ms.date: 12/19/2018
-ms.openlocfilehash: d80581aae56fc9d65d6f24d21f2c582cb74b3f2d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b6bcb2650cd11ed97b6e81fda6aaafe7fca61202
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61420249"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68569589"
 ---
 # <a name="find-and-apply-performance-recommendations"></a>Localizar e aplicar recomendações de desempenho
 
@@ -39,11 +38,11 @@ As recomendações de desempenho são exibidas na tabela semelhante à exibida n
 
 As recomendações são classificadas de acordo com seu impacto em potencial no desempenho nas seguintes categorias:
 
-| Impacto | DESCRIÇÃO |
+| Impacto | Descrição |
 |:--- |:--- |
 | Alto |Recomendações de alto impacto devem fornecer o impacto mais significativo no desempenho. |
-| Média |Recomendações de médio impacto devem melhorar o desempenho, mas não substancialmente. |
-| Baixo |Recomendações de baixo impacto devem fornecer um desempenho melhor do que seria obtido sem elas, mas as melhorias podem não ser significativas. |
+| Médio |Recomendações de médio impacto devem melhorar o desempenho, mas não substancialmente. |
+| Baixa |Recomendações de baixo impacto devem fornecer um desempenho melhor do que seria obtido sem elas, mas as melhorias podem não ser significativas. |
 
 
 > [!NOTE]
@@ -111,11 +110,11 @@ Você pode definir o Banco de Dados SQL do Azure para implementar as recomendaç
 
 Depois de selecionar a configuração desejada, clique em Aplicar.
 
-### <a name="manually-apply-recommendations-through-t-sql"></a>Aplicar manualmente as recomendações por meio do T-SQL
+### <a name="manually-apply-recommendations-through-t-sql"></a>Aplicar recomendações manualmente por meio do T-SQL
 
 Selecione qualquer recomendação e clique em **Exibir script**. Execute este script em seu banco de dados para aplicar manualmente a recomendação.
 
-*Os índices que são executados manualmente não são monitorados e validados quanto ao impacto no desempenho pelo serviço* , portanto, é recomendável que você monitore esses índices após a criação para verificar se eles fornecem ganhos de desempenho e ajustá-los ou excluí-los, se necessário. Para obter detalhes sobre a criação de índices, consulte [CRIAR ÍNDICE (Transact-SQL)](https://msdn.microsoft.com/library/ms188783.aspx). Além disso, recomendações aplicadas manualmente permanecerá ativo e mostrados na lista de recomendações por 24 a 48 horas. antes do sistema retira automaticamente-los. Se você quiser remover uma recomendação mais cedo, você pode descartá-lo manualmente.
+*Os índices que são executados manualmente não são monitorados e validados quanto ao impacto no desempenho pelo serviço* , portanto, é recomendável que você monitore esses índices após a criação para verificar se eles fornecem ganhos de desempenho e ajustá-los ou excluí-los, se necessário. Para obter detalhes sobre a criação de índices, consulte [CRIAR ÍNDICE (Transact-SQL)](https://msdn.microsoft.com/library/ms188783.aspx). Além disso, as recomendações aplicadas manualmente permanecerão ativas e exibidas na lista de recomendações de 24-48 horas. antes que o sistema as retire automaticamente. Se você quiser remover uma recomendação mais cedo, poderá descartá-la manualmente.
 
 ### <a name="canceling-recommendations"></a>Cancelando recomendações
 
@@ -128,7 +127,7 @@ Recomendações que estão com status **Pendente**, **Validando** ou **Êxito** 
 
 A aplicação de uma recomendação pode não acontecer instantaneamente. O portal fornece detalhes sobre o status da recomendação. Um índice pode estar em um dos estados a seguir:
 
-| Status | DESCRIÇÃO |
+| Status | Descrição |
 |:--- |:--- |
 | Pendente |O comando Aplicar recomendação foi recebido e está programado para execução. |
 | Executando |A recomendação está sendo aplicada. |

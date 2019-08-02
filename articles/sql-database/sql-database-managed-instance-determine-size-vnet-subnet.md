@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab
-manager: craigg
 ms.date: 02/22/2019
-ms.openlocfilehash: 2a10876bc3c9558de29caf9fee2ae0b06ee87f28
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4b627b13fb79cd5105a95d9161d9239f28f2e062
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60405334"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567511"
 ---
 # <a name="determine-vnet-subnet-size-for-azure-sql-database-managed-instance"></a>Determinar o tamanho da sub-rede da VNet para o banco de dados da Instância Gerenciada do Banco de Dados SQL do Azure
 
@@ -27,10 +26,10 @@ O número de Instâncias Gerenciadas que podem ser implantadas na sub-rede da VN
 
 Quando você cria uma Instância Gerenciada, o Azure aloca uma série de máquinas virtuais, dependendo da camada selecionada durante o provisionamento. Como essas máquinas virtuais estão associadas à sua sub-rede, elas exigem endereços IP. Para garantir alta disponibilidade durante operações regulares e manutenção do serviço, o Azure pode alocar máquinas virtuais adicionais. Como resultado, o número de endereços IP necessários em uma sub-rede é maior que o número de Instâncias Gerenciadas nessa sub-rede.
 
-Por design, uma Instância Gerenciada precisa de um mínimo de 16 endereços IP em uma sub-rede e pode usar até 256 endereços IP. Como resultado, você pode usar um máscaras de sub-rede entre /28 e /24 ao definir os intervalos de IP de sub-rede. Um bit da máscara de rede de/28 (14 hosts por rede) é um bom tamanho para um único uso geral ou implantação críticos de negócios. Um bit da máscara de/27 (30 hosts por rede) é ideal para uma várias implantações de instância gerenciada na mesma VNet. Configurações de bit da máscara de /26 (62 hosts) e /24 (254 hosts) permite que a escala adicional fora da rede virtual para dar suporte a instâncias gerenciadas adicionais.
+Por design, uma Instância Gerenciada precisa de um mínimo de 16 endereços IP em uma sub-rede e pode usar até 256 endereços IP. Como resultado, você pode usar uma máscara de sub-rede entre/28 e/24 ao definir seus intervalos de IP de sub-rede. Um bit de máscara de rede de/28 (14 hosts por rede) é um bom tamanho para uma única finalidade geral ou implantação crítica para os negócios. Um bit de máscara de/27 (30 hosts por rede) é ideal para várias implantações de Instância Gerenciada dentro da mesma VNet. As configurações de bits de máscara de/26 (62 hosts) e/24 (hosts 254) permitem a expansão adicional da VNet para dar suporte a instâncias gerenciadas adicionais.
 
 > [!IMPORTANT]
-> Um tamanho de sub-rede com 16 endereços IP é o mínimo necessário com potencial de limitado para o adicional de dimensionamento de instância gerenciada. É altamente recomendável escolher uma sub-rede com o prefixo /27 ou abaixo.
+> Um tamanho de sub-rede com 16 endereços IP é o mínimo simples com potencial limitado para o maior Instância Gerenciada escalar horizontalmente. É altamente recomendável escolher uma sub-rede com o prefixo /27 ou abaixo.
 
 ## <a name="determine-subnet-size"></a>Determinar o tamanho da sub-rede
 

@@ -10,27 +10,28 @@ ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alch
-ms.openlocfilehash: 82e6a5b66342e58e62da029d617cbd1d74c28149
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 333875472d9b859196c4d828061301b9d32c4d5a
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61340501"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68705105"
 ---
 # <a name="affiliation-entity"></a>Entidade Afiliação
 
 <sub> *Os atributos a seguir são específicos da entidade de afiliação. (Ty = '5') </sub>
 
-NOME    |DESCRIÇÃO                            |Type       | Operações
+Nome    |Descrição                            |Tipo       | Operações
 ------- | ------------------------------------- | --------- | ----------------------------
-ID      |ID da Entidade                              |Int64      |É igual a
-AfN     |Nome normalizado da afiliação        |Cadeia de caracteres     |É igual a
-DAfN    |Nome de exibição da afiliação       |Cadeia de caracteres     |Nenhum
-CC      |Contagem total de citações da afiliação           |Int32      |Nenhum  
-ECC     |Contagem total estimada de citações da afiliação |Int32      |Nenhum
+Id      |ID da Entidade                              |Int64      |Igual a
+AfN     |Nome normalizado da afiliação        |Cadeia     |Igual a
+DAfN    |Nome de exibição da afiliação       |Cadeia     |nenhum
+CC      |Contagem total de citações da afiliação           |Int32      |nenhum  
+ECC     |Contagem total estimada de citações da afiliação |Int32      |nenhum
 
 ## <a name="extended-metadata-attributes"></a>Atributos de metadados estendidos ##
 
-NOME    | DESCRIÇÃO               
+Nome    | Descrição               
 --------|---------------------------    
 Computador      |Contagem de artigos da afiliação

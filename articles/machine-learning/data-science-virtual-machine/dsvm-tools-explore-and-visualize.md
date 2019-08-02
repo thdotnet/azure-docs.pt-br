@@ -4,7 +4,7 @@ description: Ferramentas de exploração e visualização de dados para a Máqui
 keywords: ferramentas de ciência de dados, máquina virtual de ciência de dados, ferramentas para ciência de dados, ciência de dados do linux
 services: machine-learning
 documentationcenter: ''
-author: gopitk
+author: vijetajo
 manager: cgronlun
 ms.assetid: ''
 ms.service: machine-learning
@@ -14,17 +14,17 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/16/2018
-ms.author: gokuma
-ms.openlocfilehash: 693be80e493a0ba259d147f432dc9d6c07ba876d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: vijetaj
+ms.openlocfilehash: 31b05ec4fa68c3d4804000caee94b62432bdaed9
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66427522"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68557767"
 ---
 # <a name="data-exploration-and-visualization-tools-on-the-data-science-virtual-machine"></a>Ferramentas de exploração e visualização de dados para a Máquina Virtual de Ciência de Dados
 
-Uma etapa importante na ciência de dados é entender os dados. Ferramentas de visualização e exploração de dados ajudam a acelerar a compreensão dos dados. Aqui estão algumas ferramentas oferecidas na DSVM que facilitam essa etapa fundamental. 
+Uma etapa importante na ciência de dados é entender os dados. Ferramentas de visualização e exploração de dados ajudam a acelerar a compreensão dos dados. Aqui estão algumas ferramentas fornecidas no DSVM que facilitam essa etapa. 
 
 ## <a name="apache-drill"></a>Análise do Apache
 |    |           |
@@ -42,7 +42,7 @@ Uma etapa importante na ciência de dados é entender os dados. Ferramentas de v
 | O que é?   |  Weka é uma coleção de algoritmos de aprendizado de máquina para tarefas de mineração de dados. Os algoritmos podem ser aplicados diretamente a um conjunto de dados ou chamados do seu próprio código Java. Weka contém ferramentas para o pré-processamento, classificação, regressão, clustering, regras de associação e visualização de dados. |
 | Edições do DSVM com suporte     | Windows, Linux     |
 | Usos típicos      | Ferramenta de ML geral     |
-| Como usar/executar?      | No Windows, pesquise Weka no Menu Iniciar. No Linux, entrar com X2Go e, em seguida, navegue até aplicativos -> desenvolvimento -> Weka. |
+| Como usar/executar?      | No Windows, pesquise Weka no Menu Iniciar. No Linux, entre com X2Go e navegue até Applications-> Development-> weka. |
 | Links para exemplos      | [Exemplos de Weka](https://www.cs.waikato.ac.nz/ml/weka/documentation.html) |
 | Ferramentas relacionadas ao DSVM      |LightGBM, Rattle, Xgboost   |
 
@@ -63,5 +63,5 @@ Uma etapa importante na ciência de dados é entender os dados. Ferramentas de v
 | Versões do DSVM com suporte      | Windows  |
 | Usos típicos      |  Visualização de Dados e criação de Painéis   |
 | Como usar/executar?      | Atalho da Área de Trabalho (`C:\Program Files\Microsoft Power BI Desktop\bin\PBIDesktop.exe`)      |
-| Ferramentas relacionadas ao DSVM      |   2019 do Visual Studio, Visual Studio Code, Juno      |
+| Ferramentas relacionadas ao DSVM      |   Visual Studio 2019, Visual Studio Code, Juno      |
 

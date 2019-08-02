@@ -1,6 +1,6 @@
 ---
 title: PowerShell para alias de DNS para SQL do Azure| Microsoft Docs
-description: Cmdlets do PowerShell, como novo AzSqlServerDNSAlias permitem que você redirecione novas conexões de cliente para um servidor de banco de dados SQL diferente, sem precisar tocar qualquer configuração de cliente.
+description: Os cmdlets do PowerShell, como New-AzSqlServerDNSAlias, permitem que você redirecione novas conexões de cliente para um servidor de banco de dados SQL do Azure diferente, sem precisar tocar em nenhuma configuração de cliente.
 keywords: banco de dados sql dns
 services: sql-database
 ms.service: sql-database
@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: oslake
 ms.author: moslake
 ms.reviewer: genemi,amagarwa,maboja, jrasnick
-manager: craigg
 ms.date: 05/14/2019
-ms.openlocfilehash: 4318e6557dc72dff7200beb8783575131659b77f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5afa25a9a92b45c48c30d56428f5cf4e1d2f5d49
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65797697"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561346"
 ---
 # <a name="powershell-for-dns-alias-to-azure-sql-database"></a>PowerShell para alias do DNS para o Banco de Dados SQL do Azure
 
@@ -42,8 +41,8 @@ Para se conectar a um servidor do Banco de Dados SQL do Azure específico, um cl
 
 Se você deseja executar o script de demonstração do PowerShell fornecido neste artigo, os seguintes pré-requisitos se aplicam:
 
-- Uma assinatura e uma conta do Azure. Para uma avaliação gratuita, clique em [https://azure.microsoft.com/free/][https://azure.microsoft.com/free/].
-- Módulo do PowerShell do Azure, com o cmdlet **New-AzSqlServerDNSAlias**.
+- Uma assinatura e uma conta do Azure. Para uma avaliação gratuita, clique [https://azure.microsoft.com/free/][https://azure.microsoft.com/free/]em.
+- Azure PowerShell Module, com cmdlet **New-AzSqlServerDNSAlias**.
   - Para instalar ou atualizar, confira [Instalar o módulo do Azure PowerShell][install-Az-ps-84p].
   - Execute `Get-Module -ListAvailable Az;` em powershell\_ise.exe, para localizar a versão.
 - Dois servidores do Banco de Dados SQL do Azure.
@@ -154,7 +153,7 @@ gm-rg-dns-2       gm-sqldb-dns-2     unique-alias-name-food
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para obter uma explicação completa sobre o recurso Alias de DNS para o Banco de Dados SQL, consulte [Alias de DNS para o Banco de Dados SQL do Azure][dns-alias-overview-37v].
+Para obter uma explicação completa do recurso de alias de DNS para o banco de dados SQL, consulte [alias DNS para o banco de dados SQL do Azure][dns-alias-overview-37v].
 
 <!-- Article links. -->
 

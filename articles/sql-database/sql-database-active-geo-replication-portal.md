@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, carlrab
-manager: craigg
 ms.date: 02/13/2019
-ms.openlocfilehash: 8bada96c648881a9943176c45115627a829fcc58
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 058afdbc4aa134b5b3c4c8cc5e9e2f2ae6f53084
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60864013"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68569640"
 ---
 # <a name="configure-active-geo-replication-for-azure-sql-database-in-the-azure-portal-and-initiate-failover"></a>Configurar a replicação geográfica ativa para o Banco de Dados SQL do Azure usando o Portal do Azure e inicializar o failover
 
@@ -73,7 +72,7 @@ O banco de dados secundário pode ser alternado para se tornar primário.
     ![Failover](./media/sql-database-geo-replication-failover-portal/secondaries.png)
 4. Clique em **Sim** para iniciar o failover.
 
-O comando mudará imediatamente o banco de dados secundário para a função primária. Esse processo normalmente deverá concluir dentro de 30 segundos ou menos.
+O comando mudará imediatamente o banco de dados secundário para a função primária. Esse processo normalmente deve ser concluído dentro de 30 segundos ou menos.
 
 Há um breve período durante o qual os bancos de dados não estão disponíveis (na ordem de 0 a 25 segundos) enquanto as funções são alternadas. Se o banco de dados primário tiver vários bancos de dados secundários, o comando reconfigurará automaticamente os outros secundários para se conectarem ao novo primário. A operação inteira deve levar menos de um minuto para ser concluída em circunstâncias normais.
 
@@ -92,7 +91,7 @@ Essa operação termina permanentemente a replicação para o banco de dados sec
     ![Remover secundário](./media/sql-database-geo-replication-portal/remove-secondary.png)
 5. Uma janela de confirmação é aberta. Clique em **Sim** para remover o banco de dados da parceria de replicação geográfica. (Defina-o como um banco de dados de leitura/gravação que não faz parte de nenhuma replicação.)
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 * Para saber mais sobre a replicação geográfica ativa, confira [Replicação geográfica ativa](sql-database-active-geo-replication.md).
 * Para saber mais sobre grupos de failover automático, confira [Grupos de failover automático](sql-database-auto-failover-group.md)

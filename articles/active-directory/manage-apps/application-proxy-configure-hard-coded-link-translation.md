@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0899a127566c4d06de7d42443a956c2660a7a6d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e6d85fc7ed16f397cb91232e9648df4e8741b37a
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65956893"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68705793"
 ---
 # <a name="redirect-hardcoded-links-for-apps-published-with-azure-ad-application-proxy"></a>Redirecione os links inseridos no código para aplicativos publicados com o Proxy de Aplicativo do Azure AD
 
@@ -32,7 +32,7 @@ A melhor maneira de garantir que os links funcionem corretamente dentro e fora d
 
 Se você não pode usar domínios personalizados em seu locatário, há várias outras opções para fornecer essa funcionalidade. Todos esses também são compatíveis com domínios personalizados e entre si, assim você pode configurar domínios personalizados e outras soluções, se necessário. 
 
-**Opção 1: usar o navegador gerenciado**. Essa solução aplica-se somente se você planeja recomendar ou exigir que os usuários acessem o aplicativo com o Intune Managed Browser. Ele manipulará todas as URLs publicadas. 
+**Opção 1: Use o Managed browser ou o Microsoft** Edge – essa solução só será aplicável se você planeja recomendar ou exigir que os usuários acessem o aplicativo por meio do navegador Intune Managed browser ou Microsoft Edge. Ele manipulará todas as URLs publicadas. 
 
 **Opção 2: usar a extensão do MyApps**. Essa solução exige que os usuários instalem uma extensão de navegador no lado do cliente que manipula todas as URLs publicadas e funciona com os navegadores mais populares. 
 
@@ -47,9 +47,9 @@ Esses três recursos mantêm seus vínculos de trabalho, independentemente de on
 > Ou, se o aplicativo que você precisa configurar com a conversão de link é o SharePoint, consulte [Configurar mapeamentos alternativos de acesso para o SharePoint 2013](https://technet.microsoft.com/library/cc263208.aspx) a fim de conhecer outra abordagem de mapeamento de links. 
 
  
-### <a name="option-1-intune-managed-browser-integration"></a>Opção 1: Integração do Intune Managed Browser 
+### <a name="option-1-intune-managed-browser-and-microsoft-edge-integration"></a>Opção 1: Integração do Intune Managed Browser e do Microsoft Edge 
 
-Você pode usar o Intune Managed Browser para proteger ainda mais seu aplicativo e conteúdo. Para usar essa solução, você precisa exigir/recomendar aos usuários que acessem o aplicativo por meio do Intune Managed Browser. Todas as URLs internas publicados com o Proxy de Aplicativo serão reconhecidas pelo Managed Browser e redirecionadas para a URL externa correspondente. Isso garante que todas as URLs internas inseridas no código funcionem, e se um usuário for ao navegador e digitar diretamente a URL interna, ela funcione mesmo se o usuário estiver remoto.  
+Você pode usar o Intune Managed Browser ou o Microsoft Edge para proteger ainda mais seu aplicativo e conteúdo. Para usar essa solução, você precisa exigir/recomendar aos usuários que acessem o aplicativo por meio do Intune Managed Browser. Todas as URLs internas publicados com o Proxy de Aplicativo serão reconhecidas pelo Managed Browser e redirecionadas para a URL externa correspondente. Isso garante que todas as URLs internas inseridas no código funcionem, e se um usuário for ao navegador e digitar diretamente a URL interna, ela funcione mesmo se o usuário estiver remoto.  
 
 Para saber mais, incluindo como definir essa opção, consulte a documentação do [Managed Browser](https://docs.microsoft.com/intune/app-configuration-managed-browser).  
 
@@ -59,14 +59,14 @@ Com a extensão de navegador My Apps, todas as URLs internas publicadas com o Pr
 
 Para usar esse recurso, o usuário deve fazer o download da extensão e estar conectado. Não há nenhuma outra configuração necessária para os administradores ou usuários. 
 
-Para obter mais informações, incluindo como configurar essa opção, consulte a [extensão de navegador MyApps](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access#download-and-install-the-my-apps-secure-sign-in-extension) documentação.
+Para saber mais, incluindo como configurar essa opção, confira a documentação da [extensão do navegador myapps](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access#download-and-install-the-my-apps-secure-sign-in-extension) .
 
 ### <a name="option-3-link-translation-setting"></a>Opção 3: Configuração de conversão de link 
 
-Quando a translação de link está habilitada, o serviço de Proxy de Aplicativo pesquisa o HTML e o CSS para links internos publicados e converte-os para que seus usuários obtenham uma experiência ininterrupta. Usando a extensão de navegador MyApps é preferencial para a configuração de translação de Link, já que ele oferece uma experiência mais de alto desempenho para os usuários.
+Quando a translação de link está habilitada, o serviço de Proxy de Aplicativo pesquisa o HTML e o CSS para links internos publicados e converte-os para que seus usuários obtenham uma experiência ininterrupta. Usar a extensão de navegador myapps é preferencial para a configuração de conversão de link, pois oferece uma experiência mais eficaz aos usuários.
 
 > [!NOTE]
-> Se você estiver usando a opção 2 ou 3, somente uma delas deve estar habilitada por vez.
+> Se você estiver usando a opção 2 ou 3, apenas uma delas deverá ser habilitada por vez.
 
 ## <a name="how-link-translation-works"></a>Como a translação de link funciona
 
@@ -83,30 +83,30 @@ Há dois tipos comuns de links internos em aplicativos locais:
 - **Links internos relativos** que apontam para um recurso compartilhado em uma estrutura de arquivo local como `/claims/claims.html`. Esses links funcionam automaticamente em aplicativos que são publicados por meio do Proxy de Aplicativo e continuam funcionando com ou sem a conversão de link. 
 - **Links internos inseridos no código** para outros aplicativos de locais como `http://expenses` ou arquivos publicados como `http://expenses/logo.jpg`. O recurso de translação de link funciona em links internos inseridos no código e os altera para apontar para as URLs externas de que os usuários remotos precisam para avançar.
 
-A lista completa de marcas de código HTML que o Proxy de aplicativo dá suporte a translação de link para incluem:
+A lista completa de marcas de código HTML que o proxy de aplicativo dá suporte à conversão de links para o incluem:
 * a
 * audio
-* Base de dados de
+* polybase
 * botão
 * div
 * Incorporar
-* Formulário
-* Quadro
-* Head
+* isolada
+* quadro
+* principal
 * html
-* IFRAME
+* iframe
 * img
-* input
+* entrada
 * link
 * MenuItem
-* meta
+* volume
 * objeto
 * script
-* source
-* Faixa
-* video
+* origem
+* controles
+* vídeo
 
-Além disso, dentro do CSS o atributo URL também é convertido.
+Além disso, no CSS, o atributo URL também é traduzido.
 
 ### <a name="how-do-apps-link-to-each-other"></a>Como aplicativos são vinculados entre si?
 

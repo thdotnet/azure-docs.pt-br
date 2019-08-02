@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 02/01/2019
+ms.date: 08/01/2019
 ms.author: jingwang
-ms.openlocfilehash: 7ef8f80f44c921cc1f2524351c8acb78ebd713bf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c4ea3c93daac1ebb88bae2b8cb01485d955be2bb
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66153552"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68726204"
 ---
 # <a name="copy-data-to-and-from-azure-table-storage-by-using-azure-data-factory"></a>Copiar dados para e do Armazenamento de Tabelas do Azure usando o Azure Data Factory
 > [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
@@ -46,7 +46,7 @@ As seções que se seguem fornecem detalhes sobre as propriedades que são usada
 
 Você pode criar um serviço vinculado do Armazenamento do Azure usando a chave de conta. Isso fornece ao data factory acesso global ao Armazenamento. Há suporte para as seguintes propriedades.
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como **AzureTableStorage**. |Sim |
 | connectionString | Especifique as informações necessárias para se conectar ao Armazenamento para a propriedade connectionString. <br/>Marque esse campo como SecureString para armazená-lo com segurança no Data Factory. Você também pode colocar a chave de conta no Azure Key Vault e efetuar pull da configuração `accountKey` da cadeia de conexão. Confira os exemplos a seguir e o artigo [Armazenar credenciais no Azure Key Vault](store-credentials-in-key-vault.md) com mais detalhes. |Sim |
@@ -121,10 +121,10 @@ Uma assinatura de acesso compartilhado fornece acesso delegado aos recursos da s
 
 Para usar a autenticação de assinatura de acesso compartilhado, há suporte para as seguintes propriedades.
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como **AzureTableStorage**. |Sim |
-| sasUri | Especifique o URI da SAS do URI da assinatura de acesso compartilhado para a tabela. <br/>Marque esse campo como SecureString para armazená-lo com segurança no Data Factory. Você também pode colocar o token SAS no cofre de chaves do Azure para aproveitar a rotação automática e remover a parte do token. Confira os exemplos a seguir e o artigo [Armazenar credenciais no Azure Key Vault](store-credentials-in-key-vault.md) com mais detalhes. | Sim |
+| sasUri | Especifique o URI da SAS do URI da assinatura de acesso compartilhado para a tabela. <br/>Marque esse campo como SecureString para armazená-lo com segurança no Data Factory. Você também pode colocar o token SAS em Azure Key Vault para aproveitar a rotação automática e remover a parte do token. Confira os exemplos a seguir e o artigo [Armazenar credenciais no Azure Key Vault](store-credentials-in-key-vault.md) com mais detalhes. | Sim |
 | connectVia | O [Integration Runtime](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. Você pode usar o Integration Runtime do Azure ou o Integration Runtime auto-hospedado (se o armazenamento de dados estiver localizado em uma rede privada). Se não for especificado, ele usa o Integration Runtime padrão do Azure. |Não |
 
 >[!NOTE]
@@ -192,7 +192,7 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 Para copiar dados para e da Tabela do Azure, defina a propriedade type do conjunto de dados como **AzureTable**. Há suporte para as seguintes propriedades.
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type do conjunto de dados deve ser definida como **AzureTable**. |Sim |
 | tableName |O nome da tabela na instância do banco de dados do armazenamento de Tabelas à qual o serviço vinculado se refere. |Sim |
@@ -205,12 +205,13 @@ Para copiar dados para e da Tabela do Azure, defina a propriedade type do conjun
     "properties":
     {
         "type": "AzureTable",
+        "typeProperties": {
+            "tableName": "MyTable"
+        },
+        "schema": [],
         "linkedServiceName": {
             "referenceName": "<Azure Table storage linked service name>",
             "type": "LinkedServiceReference"
-        },
-        "typeProperties": {
-            "tableName": "MyTable"
         }
     }
 }
@@ -233,7 +234,7 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 Para copiar dados da Tabela do Azure, defina o tipo de fonte na atividade de cópia como **AzureTableSource**. As propriedades a seguir têm suporte na seção **source** da atividade de cópia.
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type da fonte da atividade de cópia deve ser definida como **AzureTableSource**. |Sim |
 | azureTableSourceQuery |Utiliza a consulta personalizada de armazenamento de tabelas para ler os dados. Veja os exemplos na seção a seguir. |Não |
@@ -259,7 +260,7 @@ Caso use o parâmetro de pipeline, converta o valor datetime para o formato apro
 
 Para copiar dados da Tabela do Azure, defina o tipo de coletor na atividade de cópia como **AzureTableSink**. As propriedades a seguir têm suporte na seção **sink** da atividade de cópia.
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | O tipo de propriedade do coletor da atividade de cópia deve ser definida como **AzureTableSink**. |Sim |
 | azureTableDefaultPartitionKeyValue |O valor de chave de partição padrão que pode ser utilizado pelo coletor. |Não |
@@ -335,11 +336,11 @@ Quando dados forem movidos para e da Tabela do Azure, os seguintes [mapeamentos 
 | Edm.Binary |byte[] |Uma matriz de bytes de até 64 KB. |
 | Edm.Boolean |bool |Um valor booliano. |
 | Edm.DateTime |DateTime |Um valor de 64 bits expressado como Tempo Universal Coordenado (UTC). O intervalo de data e hora com suporte começa à meia-noite de 1º de janeiro de 1601 D.C. (C.E.), UTC. O intervalo termina em 31 de dezembro de 9999. |
-| Edm.Double |double |Um valor de ponto flutuante de 64 bits. |
+| Edm.Double |duplo |Um valor de ponto flutuante de 64 bits. |
 | Edm.Guid |Guid |Um identificador global exclusivo de 128 bits. |
 | Edm.Int32 |Int32 |Um inteiro de 32 bits. |
 | Edm.Int64 |Int64 |Um inteiro de 64 bits. |
-| Edm.String |Cadeia de caracteres |Um valor codificado em UTF-16. Valores de cadeia de caracteres podem ter até 64 KB. |
+| Edm.String |String |Um valor codificado em UTF-16. Valores de cadeia de caracteres podem ter até 64 KB. |
 
 ## <a name="next-steps"></a>Próximas etapas
 Para obter uma lista de armazenamentos de dados com suporte como origens e coletores pela atividade de cópia no Data Factory, consulte [Armazenamentos de dados com suporte](copy-activity-overview.md#supported-data-stores-and-formats).

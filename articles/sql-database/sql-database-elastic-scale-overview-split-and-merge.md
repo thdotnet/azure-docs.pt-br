@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: 506847b436eeb3e1f612a17bf1182359a0e00947
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 841794dcbb41249ea25f615524150df4bd257b45
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68348433"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568379"
 ---
 # <a name="moving-data-between-scaled-out-cloud-databases"></a>Mover dados entre bancos de dados na nuvem escalados horizontalmente
 
@@ -180,7 +179,7 @@ A implementação atual do serviço de divisão/mesclagem está sujeita aos requ
 
 O serviço de divisão/mesclagem é executado como um serviço de nuvem em sua assinatura do Microsoft Azure. Portanto, os encargos para serviços de nuvem se aplicam à sua instância do serviço. A menos que você execute operações de divisão/mesclagem/movimentação com frequência, recomendamos que você exclua seu serviço de nuvem de divisão/mesclagem. Isso reduz os custos de execução ou de instâncias de serviço de nuvem implantadas. Você pode implantar novamente e iniciar sua configuração prontamente executável sempre que desejar executar operações de divisão/mesclagem.
 
-## <a name="monitoring"></a>Monitoramento
+## <a name="monitoring"></a>Monitorando
 
 ### <a name="status-tables"></a>Tabelas de status
 

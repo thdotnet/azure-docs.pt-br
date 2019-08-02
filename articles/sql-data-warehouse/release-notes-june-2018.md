@@ -11,10 +11,10 @@ ms.date: 07/23/2018
 ms.author: anjangsh
 ms.reviewer: jrasnick
 ms.openlocfilehash: 4348a634fd5b2b33f36d8e79f28caf659b82ccf4
-ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67626143"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-june-2018"></a>O que há de novo no SQL Data Warehouse do Azure? Junho de 2018
@@ -25,7 +25,7 @@ O SQL Data Warehouse do Azure recebe melhorias continuamente. Este artigo descre
 ## <a name="user-defined-restore-points"></a>Pontos de Restauração Definido Pelo Usuário
 O SQL Data Warehouse cria automaticamente instantâneos de seu data warehouse a cada oito horas, garantindo um RPO (objetivo de ponto de recuperação) de oito horas. Embora esses instantâneos automatizados facilitem o gerenciamento da execução de seu data warehouse, é necessário tirar instantâneos em momentos críticos com base em suas necessidades comerciais. Por exemplo, tirar um instantâneo imediatamente antes de um carregamento considerável de dados ou da implantação de novos scripts no data warehouse para habilitar um ponto de restauração logo antes da operação. 
 
-SQL Data Warehouse agora dá suporte a [pontos de restauração definido pelo usuário](https://azure.microsoft.com/blog/quick-recovery-time-with-sql-data-warehouse-using-user-defined-restore-points/) por meio de [AzSqlDatabaseRestorePoint New](https://docs.microsoft.com/powershell/module/az.sql/new-azsqldatabaserestorepoint) cmdlet.
+SQL Data Warehouse agora dá suporte a [pontos de restauração definidos pelo usuário](https://azure.microsoft.com/blog/quick-recovery-time-with-sql-data-warehouse-using-user-defined-restore-points/) por meio do cmdlet [New-AzSqlDatabaseRestorePoint](https://docs.microsoft.com/powershell/module/az.sql/new-azsqldatabaserestorepoint) .
 
 ```powershell
 New-AzSqlDatabaseRestorePoint
@@ -111,7 +111,7 @@ start_time                | end_time                | command
 ```
 
 ## <a name="next-steps"></a>Próximas etapas
-Agora que você sabe um pouco sobre o SQL Data Warehouse, saiba como rapidamente [criar um SQL Data Warehouse][create a SQL Data Warehouse] . If you are new to Azure, you may find the [Azure glossary][Azure glossary] úteis à medida que encontrar nova terminologia. Ou, dê uma olhada em alguns desses outros Recursos do SQL Data Warehouse.  
+Agora que você já sabe um pouco sobre SQL Data Warehouse, saiba como [criar rapidamente um SQL data warehouse][create a SQL Data Warehouse]. Se você for novo no Azure, você pode encontrar o [Glossário do Azure][Azure glossary] úteis à medida que encontrar nova terminologia. Ou, dê uma olhada em alguns desses outros Recursos do SQL Data Warehouse.  
 
 * [Histórias de sucesso de clientes]
 * [Blogs]

@@ -1,20 +1,19 @@
 ---
-title: Executar operações no armazenamento de filas do Azure com o PowerShell - armazenamento do Azure
+title: Executar operações no armazenamento de filas do Azure com o PowerShell-armazenamento do Azure
 description: Como executar operações no armazenamento de Fila do Azure com o PowerShell
-services: storage
 author: mhopkins-msft
-ms.service: storage
-ms.topic: conceptual
-ms.date: 05/15/2019
 ms.author: mhopkins
-ms.reviewer: cbrooks
+ms.date: 05/15/2019
+ms.service: storage
 ms.subservice: queues
-ms.openlocfilehash: 6e8640b136c52f500de010f842ab73678acdce4f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.topic: conceptual
+ms.reviewer: cbrooks
+ms.openlocfilehash: bf5cf668620eb08e0d808c2052eac59b15af740c
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65991347"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68721217"
 ---
 # <a name="perform-azure-queue-storage-operations-with-azure-powershell"></a>Executar operações de armazenamento de Fila do Azure com o Azure PowerShell
 
@@ -63,7 +62,7 @@ $resourceGroup = "howtoqueuesrg"
 New-AzResourceGroup -ResourceGroupName $resourceGroup -Location $location
 ```
 
-## <a name="create-storage-account"></a>Criar Conta de Armazenamento
+## <a name="create-storage-account"></a>Criar conta de armazenamento
 
 Crie uma conta de armazenamento padrão para uso geral com o LRS (armazenamento com redundância local) usando [New-AzStorageAccount](/powershell/module/az.storage/New-azStorageAccount). Obtenha o contexto da conta de armazenamento que define a conta de armazenamento a ser usada. Ao agir em uma conta de armazenamento, você pode referenciar o contexto em vez de fornecer repetidamente as credenciais.
 
@@ -104,7 +103,7 @@ Get-AzStorageQueue -Context $ctx | select Name
 
 ## <a name="add-a-message-to-a-queue"></a>Adicionar uma mensagem a uma fila
 
-As operações que afetam as mensagens reais na fila usam a biblioteca de cliente de armazenamento do .NET como exposta no PowerShell. Para adicionar uma mensagem para uma fila, crie uma nova instância do objeto de mensagem, [Microsoft.Azure.Storage.Queue.CloudQueueMessage](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.queue._cloud_queue_message) classe. Em seguida, chame o método [AddMessage](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.queue._cloud_queue.addmessage) . Um CloudQueueMessage pode ser criado por meio de uma cadeia de caracteres (em formato UTF-8) ou de uma matriz de bytes.
+As operações que afetam as mensagens reais na fila usam a biblioteca de cliente de armazenamento do .NET como exposta no PowerShell. Para adicionar uma mensagem a uma fila, crie uma nova instância do objeto de mensagem, a classe [Microsoft. Azure. Storage. Queue. CloudQueueMessage](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.queue._cloud_queue_message) . Em seguida, chame o método [AddMessage](https://docs.microsoft.com/java/api/com.microsoft.azure.storage.queue._cloud_queue.addmessage) . Um CloudQueueMessage pode ser criado por meio de uma cadeia de caracteres (em formato UTF-8) ou de uma matriz de bytes.
 
 O exemplo a seguir demonstra como adicionar uma mensagem à sua fila.
 
@@ -132,7 +131,7 @@ As mensagens são lidas na ordem do primeiro a entrar, primeiro a sair de melhor
 
 Esse **tempo limite de invisibilidade** define por quanto tempo a mensagem permanecerá invisível antes de estar disponível novamente para processamento. O padrão é 30 segundos.
 
-Seu código remove uma mensagem de uma fila em duas etapas. Quando você chama o [Microsoft.Azure.Storage.Queue.CloudQueue.GetMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessage) método, você receberá a próxima mensagem na fila. Uma mensagem retornada de **GetMessage** torna-se invisível para todas as outras mensagens de leitura de código da fila. Para concluir a remoção da mensagem da fila, você chama o [Microsoft.Azure.Storage.Queue.CloudQueue.DeleteMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.deletemessage) método.
+Seu código remove uma mensagem de uma fila em duas etapas. Ao chamar o método [Microsoft. Azure. Storage. Queue. CloudQueue. GetMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessage) , você obtém a próxima mensagem na fila. Uma mensagem retornada de **GetMessage** torna-se invisível para todas as outras mensagens de leitura de código da fila. Para concluir a remoção da mensagem da fila, você chama o método [Microsoft. Azure. Storage. Queue. CloudQueue. DeleteMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.deletemessage) .
 
 No exemplo a seguir, leia as mensagens em três filas e aguarde 10 segundos (o tempo limite de invisibilidade). Em seguida, leia as três mensagens novamente, excluindo as mensagens depois de lê-las ao chamar **DeleteMessage**. Se você tentar ler a fila após a exclusão das mensagens, $queueMessage será retornada como NULL.
 

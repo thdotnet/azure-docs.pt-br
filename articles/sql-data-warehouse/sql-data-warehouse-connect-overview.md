@@ -11,10 +11,10 @@ ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.openlocfilehash: 71f5c8ca56bc188c0664604a78c38a05be3c3b01
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68479742"
 ---
 # <a name="connect-to-azure-sql-data-warehouse"></a>Conectar-se ao SQL Data Warehouse do Azure
@@ -31,7 +31,7 @@ O nome do servidor no exemplo a seguir é samplesvr.database.windows.net. Para l
     ![Nome completo do servidor][1]
 
 ## <a name="supported-drivers-and-connection-strings"></a>Drivers suportados e cadeias de conexão
-O Azure SQL data warehouse dá suporte a [ADO.net][ADO.NET], [ODBC][ODBC], [php][php]e [JDBC][JDBC]. Para encontrar a versão e a documentação mais recentes, clique em um dos drivers anteriores. Para gerar automaticamente a cadeia de conexão para o driver que você está usando no Portal do Azure, clique em **Mostrar cadeias de conexão de banco de dados** no exemplo anterior. A seguir também há alguns exemplos da aparência de uma cadeia de conexão para cada driver.
+O Azure SQL Data Warehouse dá suporte a [ADO.net][ADO.NET], [ODBC][ODBC], [php][PHP]e [JDBC][JDBC]. Para encontrar a versão e a documentação mais recentes, clique em um dos drivers anteriores. Para gerar automaticamente a cadeia de conexão para o driver que você está usando no Portal do Azure, clique em **Mostrar cadeias de conexão de banco de dados** no exemplo anterior. A seguir também há alguns exemplos da aparência de uma cadeia de conexão para cada driver.
 
 > [!NOTE]
 > Considere definir o tempo limite de conexão para 300 segundos a fim de permitir que a conexão perdure em curtos períodos de indisponibilidade.
@@ -69,7 +69,7 @@ O SQL Data Warehouse padroniza algumas configurações durante a conexão e a cr
 | [DATEFIRST][DATEFIRST] |7 |
 
 ## <a name="next-steps"></a>Próximas etapas
-Para se conectar e consultar com o Visual Studio, consulte [consultar com o Visual Studio][Query with Visual Studio]. To learn more about authentication options, see [Authentication to Azure SQL Data Warehouse][Authentication to Azure SQL Data Warehouse].
+Para se conectar e consultar com o Visual Studio, veja [Consultar com o Visual Studio][Query with Visual Studio]. Para saber mais sobre as opções de autenticação, consulte [Autenticação no Azure SQL Data Warehouse][Authentication to Azure SQL Data Warehouse].
 
 <!--Articles-->
 [Query with Visual Studio]: ./sql-data-warehouse-query-visual-studio.md

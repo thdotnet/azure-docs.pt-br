@@ -2,23 +2,23 @@
 title: Editar informações do grupo – Azure Active Directory | Microsoft Docs
 description: Instruções sobre como editar as informações do grupo usando o Azure Active Directory.
 services: active-directory
-author: eross-msft
+author: msaburnley
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 08/27/2018
-ms.author: lizross
+ms.author: ajburnle
 ms.reviewer: krbain
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 691f705574050b15869a0ac8b7d128507e5aae10
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: dc06abca08b2522ac57552e85f7c1bac3ef854af
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60248804"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561883"
 ---
 # <a name="edit-your-group-information-using-azure-active-directory"></a>Editar as informações do grupo usando o Azure Active Directory
 
@@ -39,7 +39,7 @@ Usando o Azure AD (Azure Active Directory), é possível editar as configuraçõ
 
 4. Selecione o grupo **Política de MDM - Oeste** e, em seguida, selecione **Propriedades** na área **Gerenciar**.
 
-    ![Página de visão geral do grupo, com opção de membro e informações realçado](media/active-directory-groups-settings-azure-portal/group-overview-blade.png)
+    ![Página Visão geral do grupo, com a opção de membro e as informações realçadas](media/active-directory-groups-settings-azure-portal/group-overview-blade.png)
 
 5. Atualize as informações **Configurações gerais** conforme necessário, incluindo:
 

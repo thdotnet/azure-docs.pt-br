@@ -11,14 +11,15 @@ ms.topic: conceptual
 ms.date: 05/09/2018
 ms.author: slivkins
 ms.reviewer: marcozo
-ms.openlocfilehash: c56aef180f5e16d2ec1931caabe04295ef288ca9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ROBOTS: NOINDEX
+ms.openlocfilehash: 4a8e4e91e768e3ad28ea9ff88c18515db4a40323
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60509759"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68704558"
 ---
-# <a name="register-your-application"></a>Registre seu aplicativo
+# <a name="register-your-application"></a>Registrar seu aplicativo
 
 Para usar o Serviço de Decisão Personalizada em seu aplicativo, registre-o no portal. Este artigo explica como fazer isso.
 

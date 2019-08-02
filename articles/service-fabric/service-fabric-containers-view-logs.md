@@ -3,7 +3,7 @@ title: Exibir logs de contêineres no Azure Service Fabric | Microsoft Docs
 description: Descreve como exibir os logs de contêineres para serviços de contêiner do Service Fabric em execução usando o Service Fabric Explorer.
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: chackdan
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/15/2018
-ms.author: aljo
-ms.openlocfilehash: 0408010a49b8ec83aa02c74887139f663788ad80
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: atsenthi
+ms.openlocfilehash: 3fa40d794d02da08d29b6cac652edf493977f8e1
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60881464"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599736"
 ---
 # <a name="view-logs-for-a-service-fabric-container-service"></a>Exibir logs para um serviço de contêiner do Service Fabric
 O Microsoft Azure Service Fabric é um orquestrador de contêineres e dá suporte a [contêineres de Linux e Windows](service-fabric-containers-overview.md).  Este artigo descreve como exibir logs de contêiner de um serviço de contêiner em execução ou contêiner inativo para que você possa diagnosticar e solucionar problemas.

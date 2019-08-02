@@ -8,12 +8,12 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 06/10/2019
-ms.openlocfilehash: fbc68b551db1f68fe253a833ad26c88de1b92f30
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f4db353e3c2f625478df6a547d1b67c5d074d18a
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67055361"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640623"
 ---
 # <a name="understand-and-use-device-twins-in-iot-hub"></a>Entender e usar dispositivos gêmeos no Hub IoT
 
@@ -180,9 +180,9 @@ O back-end da solução funciona no dispositivo gêmeo usando as seguintes opera
 
 * **Receba notificações gêmeas**. Esta operação permite que o back-end de solução seja notificado quando o gêmeo é modificado. Para fazer isso, sua solução de IoT precisa para criar uma rota e definir a Fonte de Dados como *twinChangeEvents*. Por padrão, nenhuma dessas rotas existe previamente, então nenhuma notificação gêmea é enviada. Se a taxa de alteração for alta demais ou então por outros motivos como falhas internas, o Hub IoT poderá enviar apenas uma notificação contendo todas as alterações. Portanto, se o aplicativo precisar de auditoria e registro em log confiável de todos os estados intermediários, será necessário usar mensagens de dispositivo para nuvem. A mensagem de notificação gêmea inclui propriedades e corpo.
 
-  - propriedades
+  - Propriedades
 
-    | NOME | Value |
+    | Nome | Valor |
     | --- | --- |
     $content-type | aplicativo/json |
     $iothub-enqueuedtime |  Hora em que a notificação foi enviada |
@@ -196,7 +196,7 @@ O back-end da solução funciona no dispositivo gêmeo usando as seguintes opera
 
     As propriedades do sistema de mensagens são fixadas previamente com o símbolo `$`.
 
-  - Corpo
+  - Body
         
     Esta seção inclui todas as alterações gêmeas em um formato JSON. Ele usa o mesmo formato que um patch, com as diferenças de que ele pode conter todas as seções gêmeas: marcas, properties.reported, properties.desired e também de que ele contém os elementos "$metadata". Por exemplo,
 
@@ -231,7 +231,7 @@ Além dessas operações, o back-end da solução pode:
 
 O aplicativo do dispositivo opera no dispositivo gêmeo usando as seguintes operações atômicas:
 
-* **Recuperar dispositivo gêmeo**. Essa operação retorna o documento do dispositivo gêmeo (incluindo marcas e propriedades do sistema desejadas e reportadas) para o dispositivo conectado no momento.
+* **Recuperar dispositivo gêmeo**. Esta operação retorna o documento de dispositivo de documentos (incluindo as propriedades do sistema desejadas e reportadas) para o dispositivo conectado no momento. (As marcas não são visíveis para os aplicativos do dispositivo.)
 
 * **Atualizar parcialmente as propriedades reportadas**. Essa operação permite a atualização parcial das propriedades reportadas do dispositivo conectado no momento. Esta operação usa o mesmo formato de atualização JSON que a solução de back-end usa para uma atualização parcial de propriedades desejadas.
 

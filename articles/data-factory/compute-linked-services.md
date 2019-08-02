@@ -11,19 +11,19 @@ ms.date: 01/15/2019
 author: nabhishek
 ms.author: abnarain
 manager: craigg
-ms.openlocfilehash: 0e7405e48307091ff5df12096d49a00c011e2de3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d0fd26da81c4f59f16b5f0364cf165ec36a6ea39
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66480439"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68516342"
 ---
 # <a name="compute-environments-supported-by-azure-data-factory"></a>Ambientes de computação com suporte do Azure Data Factory
 Este artigo explica diferentes ambientes de computação que você pode usar para processar ou transformar dados. Ele também fornece detalhes sobre as diferentes configurações (sob demanda versus traga a sua própria) com suporte pela Data Factory ao configurar serviços vinculados que vinculam esses ambientes de computação para uma Azure Data Factory.
 
 A tabela a seguir fornece uma lista dos ambientes de computação com suporte do Data Factory e as atividades que podem ser executadas neles. 
 
-| Ambiente de computação                                          | atividades                                                   |
+| Ambiente de computação                                          | activities                                                   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [Cluster HDInsight sob demanda](#azure-hdinsight-on-demand-linked-service) ou [seu próprio cluster HDInsight](#azure-hdinsight-linked-service) | [Hive](transform-data-using-hadoop-hive.md), [Pig](transform-data-using-hadoop-pig.md), [Spark](transform-data-using-spark.md), [MapReduce](transform-data-using-hadoop-map-reduce.md), [Hadoop Streaming](transform-data-using-hadoop-streaming.md) |
 | [Lote do Azure](#azure-batch-linked-service)                   | [Personalizado](transform-data-using-dotnet-custom-activity.md)     |
@@ -95,8 +95,8 @@ O JSON a seguir define um serviço vinculado HDInsight sob demanda baseado em Li
 >
 > 
 
-### <a name="properties"></a>propriedades
-| Propriedade                     | DESCRIÇÃO                              | Obrigatório |
+### <a name="properties"></a>Propriedades
+| Propriedade                     | Descrição                              | Necessário |
 | ---------------------------- | ---------------------------------------- | -------- |
 | type                         | A propriedade de tipo deve ser configurada como **HDInsightOnDemand**. | Sim      |
 | clusterSize                  | Número de nós de trabalho/dados no cluster. O cluster HDInsight é criado com 2 nós principais juntamente com o número de nós de trabalho que você especifica para esta propriedade. Os nós são do tamanho Standard_D3 que tem 4 núcleos; portanto, um cluster de 4 nós de trabalho usa 24 núcleos (4\*4 = 16 núcleos para nós de trabalho + 2\*4 = 8 núcleos para nós de cabeçalho). Consulte [Configurar clusters no HDInsight com Hadoop, Spark, Kafka e mais](../hdinsight/hdinsight-hadoop-provision-linux-clusters.md) para obter detalhes. | Sim      |
@@ -104,7 +104,7 @@ O JSON a seguir define um serviço vinculado HDInsight sob demanda baseado em Li
 | clusterResourceGroup         | O cluster HDInsight é criado nesse grupo de recursos. | Sim      |
 | timeToLive                   | O tempo ocioso permitido para o cluster HDInsight sob demanda. Especifica quanto tempo o cluster HDInsight sob demanda permanece ativo após a conclusão de uma atividade executada se não há nenhum outro trabalho ativo no cluster. O mínimo valor permitido é de 5 minutos (00:05:00).<br/><br/>Por exemplo, se uma execução de atividade demora 6 minutos e o timetolive é definido como 5 minutos, o cluster fica ativo durante 5 minutos após a execução de 6 minutos de execução da atividade. Se outra atividade é executada com a janela de 6 minutos, ela é processada pelo mesmo cluster.<br/><br/>A criação de um cluster HDInsight sob demanda é uma operação cara (pode demorar um pouco) e, portanto, use essa configuração conforme o necessário para melhorar o desempenho de um data factory com a reutilização de um cluster HDInsight sob demanda.<br/><br/>Se você definir o valor de timetolive como 0, o cluster é excluído assim que a atividade executada é processada. Enquanto que, se você definir um valor alto, o cluster poderá permanecer ocioso para que você faça logon a fim de realizar alguma solução de problemas, mas isso poderá resultar em altos custos. Portanto, é importante que você defina o valor apropriado com base em suas necessidades.<br/><br/>Se o valor da propriedade timetolive foi definido apropriadamente, vários pipelines podem compartilhar a instância do cluster HDInsight sob demanda. | Sim      |
 | clusterType                  | O tipo do cluster HDInsight a ser criado. Os valores permitidos são "hadoop" e "spark". Se não for especificado, o valor padrão será hadoop. O cluster habilitado pelo Enterprise Security Package não pode ser criado sob demanda, em vez disso, use um [cluster existente/traga sua própria computação](#azure-hdinsight-linked-service). | Não       |
-| version                      | Versão do cluster HDInsight Se não for especificada, será usada a versão padrão atual definida do HDInsight. | Não       |
+| versão                      | Versão do cluster HDInsight Se não for especificada, será usada a versão padrão atual definida do HDInsight. | Não       |
 | hostSubscriptionId           | A ID de assinatura do Azure usada para criar o cluster HDInsight. Se não for especificada, será usada a ID da assinatura de seu contexto de logon do Azure. | Não       |
 | clusterNamePrefix           | O prefixo do nome do cluster HDI, um carimbo de data/hora, será acrescentado automaticamente ao final do nome do cluster| Não       |
 | sparkVersion                 | A versão do Spark se o tipo de cluster for "Spark" | Não       |
@@ -136,27 +136,27 @@ O JSON a seguir define um serviço vinculado HDInsight sob demanda baseado em Li
 }]
 ```
 
-### <a name="service-principal-authentication"></a>Autenticação de entidade de serviço
+### <a name="service-principal-authentication"></a>Autenticação da entidade de serviço
 
 O serviço vinculado do HDInsight sob demanda exige uma autenticação de entidade de serviço para criar clusters HDInsight em seu nome. Para usar a autenticação de entidade de serviço, registre uma entidade de aplicativo no Azure AD (Azure Active Directory) e a atribua à função **Colaborador** da assinatura ou do grupo de recursos no qual o cluster HDInsight será criado. Para conhecer etapas detalhadas, consulte [Usar o portal para criar um aplicativo e uma entidade de serviço do Azure Active Directory que possa acessar recursos](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal). Anote os seguintes valores, que são usados para definir o serviço vinculado:
 
-- ID do aplicativo
+- ID do Aplicativo
 - Chave do aplicativo 
 - ID do locatário
 
 Use a autenticação de entidade de serviço especificando as seguintes propriedades:
 
-| Propriedade                | DESCRIÇÃO                              | Obrigatório |
+| Propriedade                | Descrição                              | Necessário |
 | :---------------------- | :--------------------------------------- | :------- |
 | **servicePrincipalId**  | Especifique a ID do cliente do aplicativo.     | Sim      |
 | **servicePrincipalKey** | Especifique a chave do aplicativo.           | Sim      |
 | **tenant**              | Especifique as informações de locatário (domínio nome ou ID do Locatário) em que o aplicativo reside. É possível recuperá-las focalizando o mouse no canto superior direito do Portal do Azure. | Sim      |
 
-### <a name="advanced-properties"></a>Propriedades avançadas
+### <a name="advanced-properties"></a>Propriedades Avançadas
 
 Você também pode especificar as seguintes propriedades para a configuração granular do cluster HDInsight sob demanda.
 
-| Propriedade               | DESCRIÇÃO                              | Obrigatório |
+| Propriedade               | Descrição                              | Necessário |
 | :--------------------- | :--------------------------------------- | :------- |
 | coreConfiguration      | Especifica os parâmetros de configuração principal (como core-site. xml) para o cluster HDInsight a ser criado. | Não       |
 | hBaseConfiguration     | Especifica os parâmetros de configuração HBase (hbase-site.xml) para o cluster HDInsight. | Não       |
@@ -224,7 +224,7 @@ Você também pode especificar as seguintes propriedades para a configuração g
 ### <a name="node-sizes"></a>Tamanhos dos nós
 Você pode especificar os tamanhos de nós de dados, principais e zookeeper usando as seguintes propriedades: 
 
-| Propriedade          | DESCRIÇÃO                              | Obrigatório |
+| Propriedade          | Descrição                              | Necessário |
 | :---------------- | :--------------------------------------- | :------- |
 | headNodeSize      | Especificar o tamanho do nó principal O valor padrão é: Standard_D3. Veja a seção **Especificando tamanhos dos nós** para obter detalhes. | Não       |
 | dataNodeSize      | Especifica o tamanho do nó principal O valor padrão é: Standard_D3. | Não       |
@@ -250,7 +250,7 @@ Esse tipo de configuração tem suporte para os ambientes de computação a segu
 * Azure HDInsight
 * Lote do Azure
 * Machine Learning do Azure
-* Análise Azure Data Lake
+* Azure Data Lake Analytics
 * Banco de Dados SQL do Azure, SQL DW do Azure, SQL Server
 
 ## <a name="azure-hdinsight-linked-service"></a>Serviço vinculado do Azure HDInsight
@@ -283,15 +283,15 @@ Você pode criar um serviço vinculado Azure HDInsight para registrar seu própr
   }
 ```
 
-### <a name="properties"></a>propriedades
-| Propriedade          | DESCRIÇÃO                                                  | Obrigatório |
+### <a name="properties"></a>Propriedades
+| Propriedade          | Descrição                                                  | Necessário |
 | ----------------- | ------------------------------------------------------------ | -------- |
 | type              | A propriedade de tipo deve ser configurada como **HDInsight**.            | Sim      |
 | clusterUri        | A URI do cluster HDInsight.                            | Sim      |
 | Nome de Usuário          | Especifique o nome do usuário a ser usado para se conectar a um cluster HDInsight existente. | Sim      |
-| Senha          | Especifique a senha para a conta de usuário.                       | Sim      |
+| password          | Especifique a senha para a conta de usuário.                       | Sim      |
 | linkedServiceName | Nome do serviço vinculado do Armazenamento do Azure que faz referência ao Armazenamento de Blobs usado pelo cluster HDInsight. <p>No momento, você não pode especificar um serviço vinculado do Azure Data Lake Store para essa propriedade. Você pode acessar dados no Azure Data Lake Store usando scripts Hive/Pig se o cluster HDInsight tiver acesso ao Data Lake Store. </p> | Sim      |
-| isEspEnabled      | Especifique '*true*' se o cluster HDInsight for habilitado para o [Enterprise Security Package](https://docs.microsoft.com/azure/hdinsight/domain-joined/apache-domain-joined-introduction). O padrão é '*false*'. | Não       |
+| isEspEnabled      | Especifique '*true*' se o cluster HDInsight for habilitado para o [Enterprise Security Package](https://docs.microsoft.com/azure/hdinsight/domain-joined/apache-domain-joined-architecture). O padrão é '*false*'. | Não       |
 | connectVia        | O Integration Runtime a ser usado para distribuir as atividades a esse serviço vinculado. Você pode usar o Integration Runtime do Azure ou Integration Runtime auto-hospedado. Se não for especificado, ele usa o Integration Runtime padrão do Azure. <br />Para o cluster HDInsight habilitado para o ESP (Enterprise Security Package), use um tempo de execução da integração auto-hospedada que tenha uma linha de visão para o cluster ou ele deve ser implantado dentro da mesma Rede Virtual que o cluster HDInsight ESP. | Não       |
 
 > [!IMPORTANT]
@@ -311,8 +311,8 @@ Você pode criar um serviço vinculado de Lote do Azure para registrar um pool d
 Veja os tópicos a seguir se você for novo no serviço de Lote do Azure:
 
 * [Noções básicas do Lote do Azure](../batch/batch-technical-overview.md) para obter uma visão geral do serviço de Lote do Azure.
-* [Novo AzBatchAccount](/powershell/module/az.batch/New-azBatchAccount) cmdlet para criar uma conta do lote do Azure (ou) [portal do Azure](../batch/batch-account-create-portal.md) para criar a conta do lote do Azure usando o portal do Azure. Consulte o tópico [Usando o PowerShell para gerenciar a conta do Lote do Azure](https://blogs.technet.com/b/windowshpc/archive/2014/10/28/using-azure-powershell-to-manage-azure-batch-account.aspx) para obter instruções detalhadas sobre como usar este cmdlet.
-* [Novo AzBatchPool](/powershell/module/az.batch/New-AzBatchPool) cmdlet para criar um pool do lote do Azure.
+* Cmdlet [New-AzBatchAccount](/powershell/module/az.batch/New-azBatchAccount) para criar uma conta do lote do Azure (ou) [portal do Azure](../batch/batch-account-create-portal.md) para criar a conta do lote do Azure usando portal do Azure. Consulte o tópico [Usando o PowerShell para gerenciar a conta do Lote do Azure](https://blogs.technet.com/b/windowshpc/archive/2014/10/28/using-azure-powershell-to-manage-azure-batch-account.aspx) para obter instruções detalhadas sobre como usar este cmdlet.
+* Cmdlet [New-AzBatchPool](/powershell/module/az.batch/New-AzBatchPool) para criar um pool do lote do Azure.
 
 ### <a name="example"></a>Exemplo
 
@@ -343,8 +343,8 @@ Veja os tópicos a seguir se você for novo no serviço de Lote do Azure:
 ```
 
 
-### <a name="properties"></a>propriedades
-| Propriedade          | DESCRIÇÃO                              | Obrigatório |
+### <a name="properties"></a>Propriedades
+| Propriedade          | Descrição                              | Necessário |
 | ----------------- | ---------------------------------------- | -------- |
 | type              | A propriedade de tipo deve ser definida como **AzureBatch**. | Sim      |
 | accountName       | Nome da conta do Lote do Azure.         | Sim      |
@@ -379,10 +379,10 @@ Criar um serviço vinculado de Machine Learning do Azure para registrar um ponto
 }
 ```
 
-### <a name="properties"></a>propriedades
-| Propriedade               | DESCRIÇÃO                              | Obrigatório                                 |
+### <a name="properties"></a>Propriedades
+| Propriedade               | Descrição                              | Necessário                                 |
 | ---------------------- | ---------------------------------------- | ---------------------------------------- |
-| Type                   | A propriedade de tipo deve ser configurada como: **AzureML**. | Sim                                      |
+| Tipo                   | A propriedade de tipo deve ser configurada como: **AzureML**. | Sim                                      |
 | mlEndpoint             | A URL de pontuação do lote.                   | Sim                                      |
 | apiKey                 | A API do modelo de workspace publicada.     | Sim                                      |
 | updateResourceEndpoint | A URL do recurso de atualização para um ponto de extremidade de serviço Web do Azure ML usado para atualizar o serviço Web preditivo com o arquivo de modelo treinado | Não                                       |
@@ -421,9 +421,9 @@ Você cria um serviço vinculado do **Azure Data Lake Analytics** para vincular 
 }
 ```
 
-### <a name="properties"></a>propriedades
+### <a name="properties"></a>Propriedades
 
-| Propriedade             | DESCRIÇÃO                              | Obrigatório                                 |
+| Propriedade             | Descrição                              | Necessário                                 |
 | -------------------- | ---------------------------------------- | ---------------------------------------- |
 | type                 | A propriedade de tipo deve ser configurada como: **AzureDataLakeAnalytics**. | Sim                                      |
 | accountName          | Nome da conta da Análise Azure Data Lake.  | Sim                                      |
@@ -481,9 +481,9 @@ Você cria um serviço vinculado do **Azure Data Lake Analytics** para vincular 
 
 ```
 
-### <a name="properties"></a>propriedades
+### <a name="properties"></a>Propriedades
 
-| Propriedade             | DESCRIÇÃO                              | Obrigatório                                 |
+| Propriedade             | Descrição                              | Obrigatório                                 |
 | -------------------- | ---------------------------------------- | ---------------------------------------- |
 | name                 | Nome do serviço vinculado               | Sim   |
 | type                 | A propriedade de tipo deve ser configurada como: **AzureDatabricks**. | Sim                                      |
@@ -494,7 +494,7 @@ Você cria um serviço vinculado do **Azure Data Lake Analytics** para vincular 
 | newClusterNumOfWorker| Número de nós de trabalho que esse cluster deve ter. Um cluster possui um Spark Driver e um num_workers Executors para um total de num_workers + 1 nós do Spark. Uma cadeia de caracteres formatada Int32, como "1" significa que numOfWorker é 1 ou "1:10" significa autoescala de 1 como mínimo e 10 como máximo.  | Não                |
 | newClusterNodeType   | Esse campo codifica, por meio de um único valor, os recursos disponíveis para cada um dos nós do Spark neste cluster. Por exemplo, os nós do Spark podem ser provisionados e otimizados para cargas de trabalho intensivas de computação e memória. Esse campo é necessário para um novo cluster                | Não               |
 | newClusterSparkConf  | um conjunto opcional de pares chave-valor de configuração do Spark especificado pelo usuário. Os usuários também podem passar de uma cadeia de caracteres de opções adicionais da JVM para o driver e os executores via spark.driver.extraJavaOptions e spark.executor.extraJavaOptions respectivamente. | Não  |
-| newClusterInitScripts| um conjunto de scripts de inicialização opcional, definido pelo usuário para o novo cluster. Especificando o caminho DBFS para os scripts de inicialização. | Não  |
+| newClusterInitScripts| um conjunto de scripts de inicialização opcionais definidos pelo usuário para o novo cluster. Especificando o caminho DBFS para os scripts init. | Não  |
 
 
 ## <a name="azure-sql-database-linked-service"></a>Serviço vinculado para o Banco de Dados SQL do Azure

@@ -4,7 +4,7 @@ titleSuffix: Azure
 description: Como executar várias tarefas comuns da ciência de dados com a VM da Ciência de Dados do Linux.
 services: machine-learning
 documentationcenter: ''
-author: gopitk
+author: vijetajo
 manager: cgronlun
 editor: cgronlun
 ms.custom: seodec18
@@ -16,13 +16,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/16/2018
-ms.author: gokuma
-ms.openlocfilehash: 6e8883870cc0f035df5122e91449f04203836218
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: vijetaj
+ms.openlocfilehash: df05b2605f3553ce26447a4f8e2440002b75ec3a
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60516905"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68557361"
 ---
 # <a name="data-science-with-a-linux-data-science-virtual-machine-on-azure"></a>Ciência de dados com uma Máquina Virtual da Ciência de Dados do Linux no Azure
 Este passo a passo mostra como executar várias tarefas comuns da ciência de dados com a VM da Ciência de Dados do Linux. A Máquina Virtual da Ciência de Dados do Linux (DSVM) é uma imagem da máquina virtual disponível no Azure pré-instalada com uma coleção de ferramentas usadas comumente para a análise de dados e o aprendizado de máquina. Os principais componentes do software são detalhados no tópico [Provisionar a Máquina Virtual da Ciência de Dados do Linux](linux-dsvm-intro.md) . A imagem da VM facilita começar a fazer a ciência de dados em minutos, sem precisar instalar e configurar cada uma das ferramentas individualmente. Você pode dimensionar facilmente a VM, se necessário, e parar quando não estiver em uso. Portanto, esse recurso é elástico e econômico.
@@ -37,7 +37,7 @@ Antes de criar uma Máquina Virtual da Ciência de Dados do Linux, você deve te
 * Uma **assinatura do Azure**. Se você não tiver uma, consulte [Criar sua conta gratuita do Azure hoje](https://azure.microsoft.com/free/).
 * Uma [**VM da ciência de dados do Linux**](https://azure.microsoft.com/marketplace/partners/microsoft-ads/linux-data-science-vm). Para obter informações sobre como provisionar essa VM, consulte [Provisionar a Máquina Virtual da Ciência de Dados do Linux](linux-dsvm-intro.md).
 * [X2Go](https://wiki.x2go.org/doku.php) instalado em seu computador e aberto em uma sessão XFCE. Para obter informações sobre como instalar e configurar um **cliente X2Go**, confira [Instalando e configurando o cliente X2Go](linux-dsvm-intro.md#installing-and-configuring-x2go-client).
-* Para uma experiência mais suave de rolagem, alterne o sinalizador de gfx.xrender.enabled em about: config no navegador FireFox VMs. [Consulte mais aqui](https://www.reddit.com/r/firefox/comments/4nfmvp/ff_47_unbearable_slow_over_remote_x11/). Além disso, considere mudar *mousewheel.enable_pixel_scrolling* para False. [Instruções aqui.](https://support.mozilla.org/en-US/questions/981140)
+* Para uma experiência mais suave de rolagem, alterne o sinalizador de gfx.xrender.enabled em about: config no navegador FireFox VMs. [Consulte mais aqui](https://www.reddit.com/r/firefox/comments/4nfmvp/ff_47_unbearable_slow_over_remote_x11/). Além disso, considere mudar *mousewheel.enable_pixel_scrolling* para False. [Instruções aqui.](https://support.mozilla.org/questions/981140)
 * Uma **conta do AzureML**. Se você ainda não tiver, inscreva-se para ter uma nova na [home page do AzureML](https://studio.azureml.net/). Há uma camada de uso gratuita para ajudá-lo a começar.
 
 ## <a name="download-the-spambase-dataset"></a>Baixar o conjunto de dados baseado em spam
@@ -423,7 +423,7 @@ Um dos recursos interessantes do Rattle é sua capacidade de executar vários m�
 Após terminar de compilar os modelos, selecione a guia **Log** para exibir o código do R executado pelo Rattle durante a sessão. Você pode selecionar o botão **Exportar** para salvá-lo.
 
 > [!NOTE]
-> Há um bug na versão atual do Rattle. Para modificar o script ou usá-lo para repetir as etapas posteriormente, você deve inserir um caractere # na frente do *exportar este log...*  no texto do log.
+> Há um bug na versão atual do Rattle. Para modificar o script ou usá-lo para repetir as etapas mais tarde, você deve inserir um caractere # na frente de *Exportar este log...* no texto do log.
 >
 >
 

@@ -16,17 +16,17 @@ ms.date: 08/24/2018
 ms.author: cephalin
 ms.reviewer: mahender
 ms.custom: seodec18
-ms.openlocfilehash: 42d925a77de20392459081e6669706da330ba7fa
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 53733774968f94ac95d9b3fea6d8fcb422b4e02c
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67836724"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68515181"
 ---
 # <a name="authentication-and-authorization-in-azure-app-service"></a>Autenticação e autorização no Serviço de Aplicativo do Azure
 
 > [!NOTE]
-> Neste momento, o AAD V2 (incluindo MSAL) não há suporte para serviços de aplicativo do Azure e o Azure Functions. Verifique se há atualizações.
+> Neste momento, o AAD v2 (incluindo MSAL) não tem suporte para serviços Azure App e Azure Functions. Verifique novamente se há atualizações.
 >
 
 O Serviço de Aplicativo do Azure dá suporte interno à autenticação e autorização para que você possa fazer login de usuários e acessar dados, gravando o mínimo ou nenhum código no aplicativo Web, na API RESTful e no back-end para dispositivos móveis, e também [Azure Functions](../azure-functions/functions-overview.md). Este artigo descreve como o Serviço de Aplicativo ajuda a simplificar a autenticação e autorização do aplicativo. 
@@ -39,7 +39,7 @@ A autenticação e autorização seguras exigem um profundo entendimento de segu
 
 Para informações específicas sobre aplicativos móveis nativos, consulte [Autenticação e autorização de usuários para aplicativos móveis com Serviço de Aplicativo do Azure ](../app-service-mobile/app-service-mobile-auth.md).
 
-## <a name="how-it-works"></a>Como ele funciona
+## <a name="how-it-works"></a>Como funciona
 
 O módulo de autenticação e autorização executa na mesma caixa restrita que o código do aplicativo. Quando habilitado, toda solicitação HTTP de entrada passa por ele antes de ser manipulada pelo código do aplicativo.
 
@@ -56,7 +56,7 @@ O módulo executa separadamente do código do aplicativo e é configurado usando
 
 ### <a name="user-claims"></a>Declarações de usuário
 
-Para todas as estruturas de linguagem, o Serviço de Aplicativo disponibiliza as declarações de usuário para o código, injetando-as nos cabeçalhos da solicitação. Para aplicativos ASP.NET 4.6, o Serviço de Aplicativo preenche [ClaimsPrincipal.Current](/dotnet/api/system.security.claims.claimsprincipal.current) com as declarações do usuário autenticado, de modo que seja possível seguir o padrão de código .NET Standard, incluindo o atributo `[Authorize]`. Da mesma forma, para aplicativos PHP, o Serviço de Aplicativo preenche a variável `_SERVER['REMOTE_USER']`. Para aplicativos Java, as declarações são [acessíveis a partir do servlet Tomcat](containers/configure-language-java.md#authenticate-users).
+Para todas as estruturas de linguagem, o Serviço de Aplicativo disponibiliza as declarações de usuário para o código, injetando-as nos cabeçalhos da solicitação. Para aplicativos ASP.NET 4.6, o Serviço de Aplicativo preenche [ClaimsPrincipal.Current](/dotnet/api/system.security.claims.claimsprincipal.current) com as declarações do usuário autenticado, de modo que seja possível seguir o padrão de código .NET Standard, incluindo o atributo `[Authorize]`. Da mesma forma, para aplicativos PHP, o Serviço de Aplicativo preenche a variável `_SERVER['REMOTE_USER']`. Para aplicativos Java, as declarações podem [ser acessadas do servlet Tomcat](containers/configure-language-java.md#authenticate-users-easy-auth).
 
 Para [Azure Functions](../azure-functions/functions-overview.md), `ClaimsPrincipal.Current` não é hidratado para código .NET, mas ainda é possível localizar as declarações de usuário nos cabeçalhos da solicitação.
 

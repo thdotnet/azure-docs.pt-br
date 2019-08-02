@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: kumud
-ms.openlocfilehash: 1ec7fd4116aa848a9c431df386997cb23f405f1b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5c156e30f4fa0270082cd1108958c3472130a460
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64925422"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640826"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>Introdução ao log de fluxo dos grupos de segurança da rede
 
@@ -77,8 +77,6 @@ Versão 2 dos logs apresenta o estado de fluxo. Você pode configurar qual vers�
 
 O estado de fluxo *B* é registrado quando um fluxo é iniciado. Estado de fluxo *C* e o estado de fluxo *E* são os estados que marcam a continuação de um fluxo e encerramento de fluxo, respectivamente. Os estados *C* e *E* contêm informações de largura de banda de tráfego.
 
-Para os estados de fluxo de continuação *C* e final *E*, as contagens de bytes e pacotes são contagens agregadas do tempo do registro da tupla de fluxo anterior. Referenciando a conversação de exemplo anterior, o número total de pacotes transferidos é 1021 + 52 + 8005 + 47 = 9125. O número total de bytes transferidos é 588096 + 29952 + 4610880 + 27072 = 5256000.
-
 **Exemplo**: Fluxo de tuplas de uma conversa TCP entre 185.170.185.105:35370 e 10.2.0.4:23:
 
 "1493763938,185.170.185.105,10.2.0.4,35370,23,T,I,A,B,,,," "1493695838,185.170.185.105,10.2.0.4,35370,23,T,I,A,C,1021,588096,8005,4610880" "1493696138,185.170.185.105,10.2.0.4,35370,23,T,I,A,E,52,29952,47,27072"
@@ -93,7 +91,7 @@ O texto que segue é um exemplo de um log de fluxo. Como você pode ver, há vá
 
 **Os custos de registro em log de fluxo**: O registro em log de fluxo de NSG é cobrado segundo o volume de log produzido. Um alto volume de tráfego pode resultar em um volume grande de log de fluxo e nos custos associados. Os preços do log de fluxo de NSG não incluem os custos de armazenamento subjacentes. O uso do recurso de política de retenção com o log de fluxo do NSG pode resultar em um alto volume de operações de armazenamento e os custos associados. Se você não precisa do recurso de política de retenção, é recomendável que você defina esse valor como 0. Veja [Preços do Observador de Rede](https://azure.microsoft.com/pricing/details/network-watcher/) e [Preços do Armazenamento do Azure](https://azure.microsoft.com/pricing/details/storage/) para obter mais detalhes.
 
-**Conectado da internet IPs a VMs sem IPs públicos de fluxos de entrada**: As VMs que não têm um endereço IP público atribuído por meio de um endereço IP público associado à NIC como um IP público em nível de instância, ou que fazem parte de um pool de back-end do balanceador de carga básico, uso [padrão SNAT](../load-balancer/load-balancer-outbound-connections.md#defaultsnat) e tem um endereço IP atribuído pelo Azure para facilitar a conectividade de saída. Como resultado, você poderá ver entradas de log de fluxo para fluxos de internet endereços IP, se o fluxo é destinado a uma porta no intervalo de portas atribuídas para SNAT. Embora o Azure não permitirá que esses fluxos para a máquina virtual, a tentativa é registrada e aparece no log de fluxo NSG do observador de rede por design. É recomendável que o tráfego de internet de entrada indesejado ser explicitamente bloqueada com NSG.
+**Fluxos de entrada registrados de IPS de Internet para VMs sem IPS públicos**: As VMs que não têm um endereço IP público atribuído por meio de um endereço IP público associado à NIC como um IP público em nível de instância, ou que fazem parte de um pool de back-end do balanceador de carga básico, usam [SNAT padrão](../load-balancer/load-balancer-outbound-connections.md#defaultsnat) e têm um endereço IP atribuído pelo Azure para facilitar conectividade de saída. Como resultado, você poderá ver entradas de log de fluxo de fluxos de endereços IP da Internet, se o fluxo for destinado a uma porta no intervalo de portas atribuídas para SNAT. Embora o Azure não permita esses fluxos para a VM, a tentativa é registrada e aparece no log de fluxo do NSG do observador de rede por design. Recomendamos que o tráfego de Internet de entrada indesejado seja explicitamente bloqueado com NSG.
 
 ## <a name="sample-log-records"></a>Registros de log de exemplo
 
@@ -288,5 +286,5 @@ O texto que segue é um exemplo de um log de fluxo. Como você pode ver, há vá
 
 - Para saber como habilitar os logs de fluxo, consulte [Habilitar o log de fluxo NSG](network-watcher-nsg-flow-logging-portal.md).
 - Para saber como ler os logs de fluxo, confira [Ler logs de fluxo do NSG](network-watcher-read-nsg-flow-logs.md).
-- Para saber mais sobre o log de NSG, consulte [do Azure Monitor registra em log para grupos de segurança de rede (NSGs)](../virtual-network/virtual-network-nsg-manage-log.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json).
+- Para saber mais sobre o log de NSG, consulte [logs de Azure monitor para grupos de segurança de rede (NSGs)](../virtual-network/virtual-network-nsg-manage-log.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json).
 - Para determinar se o tráfego é permitido ou negado para ou de uma VM, consulte [Diagnosticar um problema de filtro de tráfego de rede VM](diagnose-vm-network-traffic-filtering-problem.md)

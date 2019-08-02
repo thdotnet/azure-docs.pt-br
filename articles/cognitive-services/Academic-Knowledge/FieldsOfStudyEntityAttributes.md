@@ -10,26 +10,27 @@ ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 03/31/2017
 ms.author: alch
-ms.openlocfilehash: e9d6badf76efd03c0520a728af7b3e47b25f200a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: d54f3c72462e6702b09068092b7c18ea50f12048
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61339578"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68704989"
 ---
 # <a name="field-of-study-entity"></a>Entidade Campo de Estudo
 
 <sub> *Os atributos a seguir são específicos para a entidade do campo de estudo. (Ty = '6') </sub>
 
-NOME    |DESCRIÇÃO                            |Type       | Operações
+Nome    |Descrição                            |Tipo       | Operações
 ------- | ------------------------------------- | --------- | ----------------------------
-ID      |ID da Entidade                              |Int64      |É igual a
-FN      |Nome normalizado do campo de estudo         |Cadeia de caracteres     |É igual a
-DFN     |Nome de exibição do campo de estudo            |Cadeia de caracteres     |Nenhum
-CC      |Contagem total de citações do campo de estudo    |Int32      |Nenhum  
-ECC     |Campo da contagem total estimada de citações|Int32      |Nenhum
+Id      |ID da Entidade                              |Int64      |Igual a
+FN      |Nome normalizado do campo de estudo         |Cadeia     |Igual a
+DFN     |Nome de exibição do campo de estudo            |Cadeia     |nenhum
+CC      |Contagem total de citações do campo de estudo    |Int32      |nenhum  
+ECC     |Campo da contagem total estimada de citações|Int32      |nenhum
 FL      |Nível nos campos de hierarquia de estudo     |Int32      |Igual a, <br/>IsBetween
-FP.FN   |Nome do campo de estudo pai             |Cadeia de caracteres     |É igual a
-FP.FId  |ID do campo de estudo pai               |Int64      |É igual a
-FC.FN   |Nome do campo de estudo filho              |Cadeia de caracteres     |É igual a
-FC.FId  |ID do campo de estudo filho                |Int64      |É igual a
+FP.FN   |Nome do campo de estudo pai             |Cadeia     |Igual a
+FP.FId  |ID do campo de estudo pai               |Int64      |Igual a
+FC.FN   |Nome do campo de estudo filho              |Cadeia     |Igual a
+FC.FId  |ID do campo de estudo filho                |Int64      |Igual a

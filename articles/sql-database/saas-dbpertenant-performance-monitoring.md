@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 075d0e2471457e1a585f7fdea9b523b1d13499c7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 322cc2fd53972c7c084da76ac0c80b757d0d2297
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61388537"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570411"
 ---
 # <a name="monitor-and-manage-performance-of-azure-sql-databases-and-pools-in-a-multi-tenant-saas-app"></a>Monitore e gerencie o desempenho dos pools e dos bancos de dados SQL do Azure em um aplicativo SaaS multilocatário
 
@@ -57,7 +56,7 @@ Os pools e os bancos de dados nos pools, devem ser monitorados para garantir que
 
 O [Portal do Azure](https://portal.azure.com) fornece monitoramento e alertas internos sobre a maioria dos recursos. Para o Banco de Dados SQL, o monitoramento e o alerta estão disponíveis em bancos de dados e pools. Esse monitoramento e alertas internos são específicos ao recurso e, portanto, é conveniente usá-los para pequenas quantidades de recursos, mas não são muito convenientes ao trabalhar com muitos recursos.
 
-Para cenários de alto volume, em que você está trabalhando com muitos recursos, [registra em log do Azure Monitor](saas-dbpertenant-log-analytics.md) pode ser usado. Isso é um serviço do Azure separado que fornece análise sobre logs de diagnóstico emitidos e telemetria coletados em um espaço de trabalho do Log Analytics. Os logs do Azure Monitor podem coletar a telemetria de muitos serviços e ser usados para consultar e definir alertas.
+Para cenários de alto volume, nos quais você está trabalhando com muitos recursos, [Azure monitor logs](saas-dbpertenant-log-analytics.md) podem ser usados. Esse é um serviço do Azure separado que fornece análise sobre telemetria e logs de diagnóstico emitidos coletados em um espaço de trabalho Log Analytics. Os logs de Azure Monitor podem coletar telemetria de vários serviços e serem usados para consultar e definir alertas.
 
 ## <a name="get-the-wingtip-tickets-saas-database-per-tenant-application-scripts"></a>Obter os scripts do aplicativo Wingtip Tickets SaaS Database Per Tenant
 
@@ -85,8 +84,8 @@ O script *New-TenantBatch* usa um conjunto aninhado ou vinculado de modelos do [
 |:--|:--|
 | 2 | Gerar carga de intensidade normal (aproximadamente 40 DTU) |
 | 3 | Gerar carga com picos mais longos e mais frequentes por banco de dados|
-| 4 | Gerar carga com picos maiores de DTU por banco de dados (aproximadamente 80 DTU)|
-| 5 | Gerar uma carga normal e uma carga alta em um único locatário (aproximadamente 95 DTU)|
+| 4 | Gerar carga com intermitências de DTU mais altas por banco de dados (aproximadamente 80 DTU)|
+| 5 | Gerar uma carga normal mais uma carga alta em um único locatário (aproximadamente 95 DTU)|
 | 6 | Gerar carga desbalanceada entre vários pools|
 
 O gerador de carga aplica uma carga *sintética* somente da CPU em cada banco de dados de locatário. O gerador inicia um trabalho para cada banco de dados de locatário, que chama um procedimento armazenado que gera a carga periodicamente. Os níveis de carga (em eDTUs), a duração e os intervalos variam em todos os bancos de dados, simulando uma atividade de locatário imprevisível.
@@ -196,7 +195,7 @@ Se um banco de dados individual em um pool apresentar uma alta carga constante, 
 Este exercício simula o efeito do Contoso Concert Hall experimentando uma alta carga quando os ingressos de um concerto popular são disponibilizados para a venda.
 
 1. No **PowerShell ISE**, abra o script \\*Demo-PerformanceMonitoringAndManagement.ps1*.
-1. Definir **$DemoScenario = 5, gerar uma carga normal e uma carga alta em um único locatário (aproximadamente 95 DTU).**
+1. Defina **$DemoScenario = 5, gerar uma carga normal mais uma carga alta em um único locatário (aproximadamente 95 DTU).**
 1. Defina **$SingleTenantDatabaseName = contosoconcerthall**
 1. Execute o script usando **F5**.
 
@@ -247,4 +246,4 @@ Neste tutorial, você aprenderá a:
 * [Tutoriais que compilam a implantação do aplicativo Banco de Dados por Locatário SaaS Wingtip Tickets](saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials) adicionais
 * [Pools elásticos do SQL](sql-database-elastic-pool.md)
 * [Automação do Azure](../automation/automation-intro.md)
-* [Os logs do Azure Monitor](saas-dbpertenant-log-analytics.md) – configuração e uso tutorial de logs do Azure Monitor
+* [Azure monitor logs](saas-dbpertenant-log-analytics.md) -Configurando e usando o tutorial de logs de Azure monitor

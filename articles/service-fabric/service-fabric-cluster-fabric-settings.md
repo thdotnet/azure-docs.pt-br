@@ -3,7 +3,7 @@ title: Alterar configurações de cluster do Azure Service Fabric | Microsoft Do
 description: Este artigo descreve as configurações de malha e as políticas de atualização de malha que você pode personalizar.
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: chackdan
 editor: ''
 ms.assetid: 7ced36bf-bd3f-474f-a03a-6ebdbc9677e2
@@ -13,13 +13,13 @@ ms.topic: reference
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/12/2019
-ms.author: aljo
-ms.openlocfilehash: 951c244d7f7d037c8d2ae117f36c18acd902436f
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.author: atsenthi
+ms.openlocfilehash: c20e782423c60985adb9e18e275fde59e57e00a2
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67850065"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599888"
 ---
 # <a name="customize-service-fabric-cluster-settings"></a>Saiba como personalizar algumas das configurações de cluster do Service Fabric
 Este artigo descreve as várias configurações de malha para o cluster do Service Fabric que você pode personalizar. Para clusters hospedados no Azure, você pode personalizá-los através do [portal do Azure](https://portal.azure.com) ou utilizando um modelo do Azure Resource Manager. Para obter mais informações, consulte [Atualizar a configuração de um cluster do Azure](service-fabric-cluster-config-upgrade-azure.md). Para clusters independentes, você customiza as configurações atualizando o arquivo *ClusterConfig.json* e executando uma atualização de configuração em seu cluster. Para obter mais informações, consulte [atualizar a configuração de um cluster autônomo](service-fabric-cluster-config-upgrade-windows-server.md).
@@ -122,7 +122,7 @@ A seguir, é apresentada uma lista de configurações de Malha que você pode pe
 | --- | --- | --- | --- |
 |PropertyGroup|KeyDoubleValueMap, o padrão é None|Dinâmico|Determina o número de nós livres que são necessários para considerar o cluster desfragmentado, especificando o percentual no intervalo [0,0-1,0] ou o número de nós vazios como número > = 1,0 |
 
-## <a name="diagnostics"></a>Diagnósticos
+## <a name="diagnostics"></a>Diagnóstico
 
 | **Parâmetro** | **Valores permitidos** | **Política de Atualização** | **Diretrizes ou descrição resumida** |
 | --- | --- | --- | --- |
@@ -132,8 +132,8 @@ A seguir, é apresentada uma lista de configurações de Malha que você pode pe
 |ApplicationLogsFormatVersion |Int, o padrão é 0 | Dinâmico |A versão do formato de logs de aplicativo. Os valores com suporte são 0 e 1. A versão 1 inclui mais campos do registro de eventos ETW que a versão 0. |
 |AuditHttpRequests |Bool, o padrão é false | Dinâmico | Ativar ou desativar a auditoria HTTP. A finalidade da auditoria é ver as atividades que foram executadas no cluster; incluindo quem iniciou a solicitação. Observe que se trata de um registro em log de melhor tentativa; e a perda de rastreamento pode ocorrer. As solicitações HTTP com a autenticação "usuário" não são registradas. |
 |CaptureHttpTelemetry|Bool, o padrão é false | Dinâmico | Ativar ou desativar a telemetria HTTP. A finalidade da telemetria é para que Service Fabric seja capaz de capturar dados de telemetria para ajudar a planejar o trabalho futuro e identificar áreas problemáticas. A telemetria não registra nenhum dado pessoal ou o corpo da solicitação. A telemetria captura todas as solicitações HTTP, exceto se configuradas de outra forma. |
-|ClusterId |Cadeia de caracteres | Dinâmico |A ID exclusiva do cluster. Ela é gerada quando o cluster é criado. |
-|ConsumerInstances |Cadeia de caracteres | Dinâmico |A lista de instâncias de consumidor DCA. |
+|ClusterId |Cadeia | Dinâmico |A ID exclusiva do cluster. Ela é gerada quando o cluster é criado. |
+|ConsumerInstances |Cadeia | Dinâmico |A lista de instâncias de consumidor DCA. |
 |DiskFullSafetySpaceInMB |Int, o padrão é 1024 | Dinâmico |Espaço em disco restante em MB para proteger contra o uso pelo DCA. |
 |EnableCircularTraceSession |Bool, o padrão é false | Estático |O sinalizador indica se as sessões de rastreamento circular devem ser usadas. |
 |EnablePlatformEventsFileSink |Bool, o padrão é false | Estático |Habilitar/desabilitar eventos de plataforma sendo gravados no disco |
@@ -141,7 +141,7 @@ A seguir, é apresentada uma lista de configurações de Malha que você pode pe
 |FailuresOnlyHttpTelemetry | Bool, o padrão é true | Dinâmico | Se a captura de telemetria HTTP estiver habilitada; capturar apenas solicitações com falha. Isso é para ajudar a reduzir o número de eventos gerados para telemetria. |
 |HttpTelemetryCapturePercentage | int, o padrão é 50 | Dinâmico | Se a captura de telemetria HTTP estiver habilitada; capturar apenas uma porcentagem aleatória de solicitações. Isso é para ajudar a reduzir o número de eventos gerados para telemetria. |
 |MaxDiskQuotaInMB |Int, o padrão é 65536 | Dinâmico |Cota de disco em MB para arquivos de log do Windows Fabric. |
-|ProducerInstances |Cadeia de caracteres | Dinâmico |A lista de instâncias de produtor DCA. |
+|ProducerInstances |Cadeia | Dinâmico |A lista de instâncias de produtor DCA. |
 
 ## <a name="dnsservice"></a>DnsService
 | **Parâmetro** | **Valores permitidos** |**Política de Atualização**| **Diretrizes ou descrição resumida** |
@@ -326,7 +326,7 @@ A seguir, é apresentada uma lista de configurações de Malha que você pode pe
 |MaxPercentDeltaUnhealthyNodes|int, o padrão é 10|Estático|Política de avaliação de integridade de atualização do cluster: a porcentagem máxima de nós delta não íntegros permitida para que o cluster seja íntegro |
 |MaxPercentUpgradeDomainDeltaUnhealthyNodes|int, o padrão é 15|Estático|Política de avaliação de integridade de atualização do cluster: a porcentagem máxima de delta de nós não íntegros em um domínio de atualização permitida para que o cluster seja íntegro |
 
-## <a name="hosting"></a>Hosting
+## <a name="hosting"></a>Hospedagem
 
 | **Parâmetro** | **Valores permitidos** | **Política de Atualização** | **Diretrizes ou descrição resumida** |
 | --- | --- | --- | --- |
@@ -744,7 +744,7 @@ A seguir, é apresentada uma lista de configurações de Malha que você pode pe
 |PropertyWriteBatch |cadeia de caracteres, o padrão é "Admin" |Dinâmico|Configurações de segurança para operações de gravação da propriedade de Nomenclatura. |
 |ProvisionApplicationType |cadeia de caracteres, o padrão é "Admin" |Dinâmico| Configuração de segurança para provisionamento de tipo de aplicativo. |
 |ProvisionFabric |cadeia de caracteres, o padrão é "Admin" |Dinâmico| Configuração de segurança para MSI e/ou provisionamento de manifesto do cluster. |
-|Consultar |cadeia de caracteres, o padrão é "Admin\|\|User" |Dinâmico| Configuração de segurança para consultas. |
+|Consulta |cadeia de caracteres, o padrão é "Admin\|\|User" |Dinâmico| Configuração de segurança para consultas. |
 |RecoverPartition |cadeia de caracteres, o padrão é "Admin" | Dinâmico|Configuração de segurança para recuperar uma partição. |
 |RecoverPartitions |cadeia de caracteres, o padrão é "Admin" | Dinâmico|Configuração de segurança para recuperar partições. |
 |RecoverServicePartitions |cadeia de caracteres, o padrão é "Admin" |Dinâmico| Configuração de segurança para recuperar partições de serviço. |

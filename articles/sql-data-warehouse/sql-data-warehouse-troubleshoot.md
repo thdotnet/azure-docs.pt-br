@@ -7,67 +7,61 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: manage
-ms.date: 4/26/2019
+ms.date: 7/29/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 02591185914f3b04a70af3b7c5d607f4a2865806
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 04d63b2c1583228a274c0ba21c87df08886f5cdb
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65154261"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619074"
 ---
 # <a name="troubleshooting-azure-sql-data-warehouse"></a>Solução de problemas do Azure SQL Data Warehouse
 Este artigo lista perguntas de solução de problemas comuns.
 
-## <a name="connecting"></a>Conexão
+## <a name="connecting"></a>Conectando
 | Problema                                                        | Resolução                                                   |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | Falha de logon do usuário 'NT AUTHORITY\ANONYMOUS LOGON'. (Microsoft SQL Server, erro: 18456) | Esse erro ocorre quando um usuário do AAD tenta se conectar no banco de dados mestre, mas não tem um usuário no mestre.  Para corrigir esse problema, especifique o SQL Data Warehouse que deseja conectar no momento da conexão ou adicione o usuário ao banco de dados mestre.  Confira o artigo [Visão geral de segurança][Security overview] para obter mais detalhes. |
 | A entidade de segurança do servidor "MyUserName" não é capaz de acessar o banco de dados "mestre" no contexto de segurança atual. Não é possível abrir o banco de dados padrão do usuário. Falha no logon. Falha de logon do usuário 'MyUserName'. (Microsoft SQL Server, erro: 916) | Esse erro ocorre quando um usuário do AAD tenta se conectar no banco de dados mestre, mas não tem um usuário no mestre.  Para corrigir esse problema, especifique o SQL Data Warehouse que deseja conectar no momento da conexão ou adicione o usuário ao banco de dados mestre.  Confira o artigo [Visão geral de segurança][Security overview] para obter mais detalhes. |
-| Erro CTAIP                                                  | Esse erro pode ocorrer quando um logon tiver sido criado no banco de dados mestre do SQL Server, mas não no banco de dados do SQL Data Warehouse.  Se você encontrar esse erro, examine o artigo [Visão geral de segurança][Security overview].  Este artigo explica como criar um logon e um usuário no mestre e, em seguida, como criar um usuário no banco de dados do SQL Data Warehouse. |
-| Bloqueado pelo firewall                                          | Bancos de Dados SQL do Azure são protegidos pelo servidor e firewalls de nível de banco de dados para garantir que somente os endereços IP conhecidos possam acessar um bancos de dados. Os firewalls são seguros por padrão, o que significa que você deve habilitar explicitamente um endereço IP ou um intervalo de endereços antes de se conectar.  Para configurar seu firewall para acesso, siga as etapas na seção [Configurar o acesso ao servidor de firewall para o IP do cliente][Configure server firewall access for your client IP] nas [Instruções de provisionamento][Provisioning instructions]. |
-| Não é possível conectar-se com a ferramenta ou driver                           | O SQL Data Warehouse recomenda usar o [SSMS][SSMS], o [SSDT para Visual Studio][SSDT for Visual Studio] ou o [sqlcmd][sqlcmd] para consultar os dados. Para informações sobre os drivers e como se conectar ao SQL Data Warehouse, confira os artigos [Drivers do SQL Data Warehouse do Azure][Drivers for Azure SQL Data Warehouse] e [Conectar-se ao SQL Data Warehouse do Azure][Connect to Azure SQL Data Warehouse]. |
+| Erro CTAIP                                                  | Esse erro pode ocorrer quando um logon tiver sido criado no banco de dados mestre do SQL Server, mas não no banco de dados do SQL Data Warehouse.  Se você encontrar esse erro, examine o artigo [Visão geral de segurança][Security overview] .  Este artigo explica como criar um logon e um usuário no mestre e, em seguida, como criar um usuário no banco de dados do SQL Data Warehouse. |
+| Bloqueado por Firewall                                          | Bancos de Dados SQL do Azure são protegidos pelo servidor e firewalls de nível de banco de dados para garantir que somente os endereços IP conhecidos possam acessar um bancos de dados. Os firewalls são seguros por padrão, o que significa que você deve habilitar explicitamente um endereço IP ou um intervalo de endereços antes de se conectar.  Para configurar o firewall para acesso, siga as etapas em [Configurar o acesso de firewall do servidor para o IP do cliente][Configure server firewall access for your client IP] nas [instruções de provisionamento][Provisioning instructions]. |
+| Não é possível conectar-se com a ferramenta ou driver                           | SQL Data Warehouse recomenda usar o [SSMS][SSMS], o [SSDT para Visual Studio][SSDT for Visual Studio]ou o [sqlcmd][sqlcmd] para consultar seus dados. Para obter mais informações sobre drivers e como se conectar a SQL Data Warehouse, confira [drivers do azure SQL data warehouse][Drivers for Azure SQL Data Warehouse] e [Conecte-se aos artigos do Azure SQL data warehouse][Connect to Azure SQL Data Warehouse] . |
 
 ## <a name="tools"></a>Ferramentas
 | Problema                                                        | Resolução                                                   |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| O Pesquisador de objetos do Visual Studio não tem usuários de AAD           | Esse é um problema conhecido.  Como alternativa, exiba os usuários em [sys.database_principals][sys.database_principals].  Confira [Autenticação do Azure SQL Data Warehouse][Authentication to Azure SQL Data Warehouse] para saber mais sobre como usar o Azure Active Directory com o SQL Data Warehouse. |
-| Manual de script, usando o Assistente de script ou conectar-se via SSMS é lento, não está respondendo ou a produção de erros | Certifique-se de que os usuários foram criados no banco de dados mestre. Nas opções de script, certifique-se também de que a edição do mecanismo está definida como "Edição do SQL Data Warehouse do Microsoft Azure" e o tipo de mecanismo é "Banco de Dados SQL do Microsoft Azure". |
-| Gerar falhas de script no SSMS                             | Gerar um script do SQL data warehouse falhará se a opção "Gerar script para objetos dependentes" for definida como "True". Como alternativa, os usuários manualmente devem ir para Ferramentas -> Opções -> SQL Pesquisador de Objetos do SQL Server -> Gerar script para opções dependentes e definidas como false |
+| O Pesquisador de objetos do Visual Studio não tem usuários de AAD           | Este é um problema conhecido.  Como alternativa, exiba os usuários em [sys.database_principals][sys.database_principals].  Confira [Autenticação do Azure SQL Data Warehouse][Authentication to Azure SQL Data Warehouse] para saber mais sobre como usar o Azure Active Directory com o SQL Data Warehouse. |
+| O script manual, o uso do assistente para criação de scripts ou a conexão via SSMS são lentos, não respondem ou produzem erros | Certifique-se de que os usuários foram criados no banco de dados mestre. Nas opções de script, certifique-se também de que a edição do mecanismo está definida como "Edição do SQL Data Warehouse do Microsoft Azure" e o tipo de mecanismo é "Banco de Dados SQL do Microsoft Azure". |
+| Gerar falhas de script no SSMS                               | Gerar um script do SQL data warehouse falhará se a opção "Gerar script para objetos dependentes" for definida como "True". Como alternativa, os usuários manualmente devem ir para Ferramentas -> Opções -> SQL Pesquisador de Objetos do SQL Server -> Gerar script para opções dependentes e definidas como false |
 
 ## <a name="performance"></a>Desempenho
 | Problema                                                        | Resolução                                                   |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | Solucionar problemas de desempenho da consulta                            | Caso você esteja tentando solucionar problemas de uma determinada consulta, comece com [Aprendendo a monitorar suas consultas][Learning how to monitor your queries]. |
-| Planos e consultas com um desempenho ruim normalmente são o resultado da falta de estatísticas | A causa mais comum do mau desempenho é a falta de estatísticas em tabelas.  Confira [Como manter estatísticas de tabela][Statistics] para obter detalhes sobre como criar estatísticas e por que elas são essenciais para o desempenho. |
+| Planos e consultas com um desempenho ruim normalmente são o resultado da falta de estatísticas | A causa mais comum do mau desempenho é a falta de estatísticas em tabelas.  Consulte [mantendo estatísticas de tabela][Statistics] para obter detalhes sobre como criar estatísticas e por que elas são críticas para o desempenho. |
 | Baixa simultaneidade/consultas em fila                             | É importante entender o [Gerenciamento de carga de trabalho][Workload management] para compreender como equilibrar a alocação de memória com simultaneidade. |
-| Como implementar as práticas recomendadas                              | O melhor lugar para começar a aprender maneiras de melhorar o desempenho de consulta é o artigo [Práticas recomendadas do SQL Data Warehouse][SQL Data Warehouse best practices]. |
+| Como implementar as práticas recomendadas                              | O melhor lugar para começar a aprender maneiras de melhorar o desempenho de consulta é o artigo [Práticas recomendadas do SQL Data Warehouse][SQL Data Warehouse best practices] . |
 | Como melhorar o desempenho com o dimensionamento                      | Às vezes, a solução para aprimorar o desempenho é simplesmente adicionar mais poder de computação às suas consultas [Dimensionando seu SQL Data Warehouse][Scaling your SQL Data Warehouse]. |
-| Desempenho ruim da consulta como resultado da baixa qualidade do índice     | Às vezes, as consultas podem apresentar lentidão devido à [Baixa qualidade do índice columnstore][Poor columnstore index quality].  Consulte este artigo para saber mais e para saber como [Recompilar índices a fim de melhorar a qualidade do segmento][Rebuild indexes to improve segment quality]. |
+| Desempenho ruim da consulta como resultado da baixa qualidade do índice     | Algumas vezes as consultas podem ficar lentas devido à [baixa qualidade do índice columnstore][Poor columnstore index quality].  Consulte este artigo para saber mais e para saber como [Recriar índices a fim de melhorar a qualidade do segmento][Rebuild indexes to improve segment quality]. |
 
 ## <a name="system-management"></a>Gerenciamento do sistema
 | Problema                                                        | Resolução                                                   |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| Msg 40847: Não foi possível executar a operação, pois o servidor excederia a cota de Unidade de Transação de Banco de Dados permitida de 45000. | Reduza a [DWU][DWU] do banco de dados que você está tentando criar ou [solicite um aumento de cota][request a quota increase]. |
-| Investigação da utilização de espaço                              | Confira os [Tamanhos da tabela][Table sizes] para entender a utilização do espaço de seu sistema. |
-| Ajuda com o gerenciamento de tabelas                                    | Confira o artigo [Visão geral da tabela][Overview] para obter ajuda com o gerenciamento de suas tabelas.  Este artigo também inclui links para tópicos mais detalhados, como [Tipos de dados de tabela][Data types], [Distribuindo uma tabela][Distribute], [Indexando uma tabela][Index], [Particionando uma tabela][Partition], [Mantendo as estatísticas da tabela][Statistics] e [Tabelas temporárias][Temporary]. |
-| A barra de progresso TDE (Transparent Data Encryption) não está atualizando no Portal do Azure | Você pode exibir o estado de TDE via [PowerShell](/powershell/module/az.sql/get-azsqldatabasetransparentdataencryption). |
+| Msg 40847: Não foi possível executar a operação, pois o servidor excederia a cota de Unidade de Transação de Banco de Dados permitida de 45000. | Reduza o [DWU][DWU] do banco de dados que você está tentando criar ou [solicite um aumento de cota][request a quota increase]. |
+| Investigação da utilização de espaço                              | Confira [Tamanhos da tabela][Table sizes] para entender a utilização do espaço de seu sistema. |
+| Ajuda com o gerenciamento de tabelas                                    | Consulte o artigo [visão geral da tabela][Overview] para obter ajuda com o gerenciamento de suas tabelas.  Este artigo também inclui links para tópicos mais detalhados, como [tipos de dados de tabela][Data types], [distribuição de uma tabela][Distribute], [indexação de uma tabela][Index], [particionamento de uma tabela][Partition], [manutenção de estatísticas de tabela][Statistics] e [tabelas temporárias][Temporary]. |
+| A barra de progresso da TDE (Transparent Data Encryption) não está atualizando no portal do Azure | Você pode exibir o estado de TDE via [PowerShell](/powershell/module/az.sql/get-azsqldatabasetransparentdataencryption). |
 
-## <a name="polybase"></a>Polybase
-| Problema                                           | Resolução                                                   |
-| :---------------------------------------------- | :----------------------------------------------------------- |
-| Exportações falharem com tipos de data e TINYINT             | Para formatos de arquivo Parquet e ORC, os valores de tipo de data devem estar entre 1970-01-01 00:00:01 UTC e 2038-01-19 03:14:07. Os valores de tipo TINYINT devem estar entre 0 a 127.    |
-| Problema com o tipo DECIMAL do Parquet: escrevendo do Spark digite DecimalType(18,4) e importar para uma coluna do tipo double ou real oferece "Erro: não pode ser convertido java.base/java.lang.Long java.base/java.lang.Float". | Você deve importar para bigint e divida por 10000 ou use o [Databricks] conector de DW do SQL. |
-| Problema com o Parquet tipo de data: gravar do tipo Data do Spark e importando para uma coluna de tipo de data ou data e hora fornece "Erro: não pode ser convertido java.base/java.lang.Integer parquet.io.api.Binary". | Você deve usar um tipo diferente do Spark (int) e a data de computação ou usar o [Databricks] conector de DW do SQL. |
 
 ## <a name="differences-from-sql-database"></a>Diferenças do Banco de Dados SQL
 | Problema                                 | Resolução                                                   |
 | :------------------------------------ | :----------------------------------------------------------- |
 | Recursos do Banco de Dados SQL sem suporte     | Confira [Recursos de tabela sem suporte][Unsupported table features]. |
 | Tipos de dados do Banco de Dados SQL sem suporte   | Confira [Tipos de dados sem suporte][Unsupported data types].        |
-| Limitações de DELETE e UPDATE         | Confira [Soluções alternativas de UPDATE][UPDATE workarounds], [Soluções alternativas de DELETE][DELETE workarounds] e [Como usar CTAS para contornar a sintaxe UPDATE e DELETE sem suporte][Using CTAS to work around unsupported UPDATE and DELETE syntax]. |
-| Não há suporte para a instrução MERGE      | Confira [Soluções alternativas para MERGE][MERGE workarounds].                  |
+| Limitações de DELETE e UPDATE         | Consulte [soluções alternativas de atualização][UPDATE workarounds], [soluções alternativas de exclusão][DELETE workarounds] e [uso de CTAS para contornar a sintaxe de atualização e exclusão sem suporte][Using CTAS to work around unsupported UPDATE and DELETE syntax]. |
+| Não há suporte para a instrução MERGE      | Confira [Substituir instruções MERGE][MERGE workarounds].                  |
 | Limitações de procedimento armazenado          | Confira [Limitações de procedimentos armazenados][Stored procedure limitations] para entender algumas dessas limitações. |
 | UDFs não oferecem suporte a instruções SELECT | Esta é uma limitação atual de nossos UDFs.  Confira [CREATE FUNCTION][CREATE FUNCTION] para ver a sintaxe para a qual damos suporte. |
 
