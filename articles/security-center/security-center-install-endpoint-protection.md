@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/28/2019
 ms.author: rkarlin
-ms.openlocfilehash: 882d4e0592b74e8af30ff5bf110a41e403c3bf7d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4274b3684a2e9e79385a561b1cad426b4ffd954e
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60906427"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68609949"
 ---
 # <a name="manage-endpoint-protection-issues-with-azure-security-center"></a>Gerenciar problemas de proteção de ponto de extremidade com a Central de Segurança do Azure
 A Central de Segurança do Azure monitora o status da proteção antimalware e relata isso na folha Problemas de proteção de ponto de extremidade. A Central de Segurança realça os problemas, como ameaças detectadas e proteção insuficiente, que podem tornar seus computadores e VMs (máquinas virtuais) vulneráveis a ameaças de antimalware. Ao usar as informações em **Problemas de proteção de ponto de extremidade**, você pode identificar um plano para solucionar os problemas identificados.
@@ -47,7 +47,7 @@ Neste exemplo, usaremos **Computação**.  Examinaremos como instalar antimalwar
 
 ## <a name="install-antimalware-on-azure-vms"></a>Instalar antimalware em VMs do Azure
 
-1. Selecione **computação e aplicativos** sob o menu principal da Central de segurança ou **visão geral**.
+1. Selecione **computação & aplicativos** no menu principal da central de segurança ou **visão geral**.
 
    ![Selecionar Computação][1]
 
@@ -60,7 +60,7 @@ Neste exemplo, usaremos **Computação**.  Examinaremos como instalar antimalwar
    - Provedores de proteção de ponto de extremidade instalados – lista os diferentes provedores identificados pela Central de Segurança.
    - Estado de integridade da proteção de ponto de extremidade instalada – mostra o estado de integridade das VMs e dos computadores que têm uma solução de proteção de ponto de extremidade instalada. O gráfico mostra o número de VMs e computadores que estão íntegros, bem como quantos estão com proteção insuficiente.
    - Malware detectado – mostra o número de VMs e computadores em que a Central de Segurança relata detecção de malware.
-   - Computadores atacados – mostra o número de VMs e computadores em que a Central de segurança relata ataques por malware.
+   - Computadores atacados – mostra o número de VMs e computadores em que a central de segurança está relatando ataques por malware.
 
    Na parte inferior do painel há uma lista de problemas de proteção de ponto de extremidade que inclui as seguintes informações:  
 
@@ -84,13 +84,13 @@ Neste exemplo, usaremos **Computação**.  Examinaremos como instalar antimalwar
 
    ![Selecionar Proteção de ponto de extremidade não instalada em computadores não Azure][4]
 
-2. Em **Proteção de ponto de extremidade não instalada em computadores não Azure**, selecione um workspace. Uma consulta de pesquisa de logs do Azure Monitor filtrada para o espaço de trabalho abre e lista computadores sem antimalware. Selecione um computador da lista para obter mais informações.
+2. Em **Proteção de ponto de extremidade não instalada em computadores não Azure**, selecione um workspace. Uma consulta de pesquisa de logs de Azure Monitor filtrada para o espaço de trabalho é aberta e lista os computadores com Antimalware ausentes. Selecione um computador da lista para obter mais informações.
 
-   ![Pesquisa de logs do Azure Monitor][5]
+   ![Pesquisa de logs de Azure Monitor][5]
 
 Outro resultado da pesquisa é aberto com informações filtradas para esse computador.
 
-  ![Pesquisa de logs do Azure Monitor][6]
+  ![Pesquisa de logs de Azure Monitor][6]
 
 > [!NOTE]
 > É recomendável que a proteção de ponto de extremidade seja provisionada para todas as VMs e computadores a fim de ajudar a identificar e remover vírus, spyware e outros softwares mal-intencionados.
@@ -100,7 +100,7 @@ Outro resultado da pesquisa é aberto com informações filtradas para esse comp
 ## <a name="next-steps"></a>Próximas etapas
 Este artigo mostrou como implementar a recomendação da Central de Segurança "Instalar Endpoint Protection". Para saber mais sobre como habilitar o Microsoft Antimalware no Azure, consulte o seguinte documento:
 
-* [Microsoft Antimalware para Serviços de Nuvem e Máquinas Virtuais](../security/azure-security-antimalware.md) – saiba como implantar o Microsoft Antimalware.
+* [Microsoft Antimalware para Serviços de Nuvem e Máquinas Virtuais](../security/fundamentals/antimalware.md) – saiba como implantar o Microsoft Antimalware.
 
 Para saber mais sobre a Central de Segurança, confira os seguintes documentos:
 

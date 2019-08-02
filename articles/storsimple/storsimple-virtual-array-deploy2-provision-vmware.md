@@ -12,20 +12,23 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 01/11/2019
+ms.date: 07/25/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3c9fe597957057dc61da5c2b1cf6f9216711764a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ab5ad8acc5d0769a19a4022c55e0461e7ce42762
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61418559"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68516836"
 ---
 # <a name="deploy-storsimple-virtual-array---provision-in-vmware"></a>Implantar a StorSimple Virtual Array - Provisionar no VMware
 ![](./media/storsimple-virtual-array-deploy2-provision-vmware/vmware4.png)
 
 ## <a name="overview"></a>Visão geral
+
+[!INCLUDE [storsimple-virtual-array-eol-banner](../../includes/storsimple-virtual-array-eol-banner.md)]
+
 Este tutorial descreve como provisionar e conectar uma Matriz Virtual StorSimple em um sistema de host que executa o VMware ESXi 5.0, 5.5, 6.0 ou 6.5. Este artigo se aplica à implantação de Matrizes Virtuais StorSimple no portal do Azure, bem como na Nuvem de Governo do Microsoft Azure.
 
 Você precisa de privilégios de administrador para provisionar e conectar-se a um dispositivo virtual. O provisionamento e a configuração inicial podem levar cerca de 10 minutos para ser concluídos.
@@ -158,7 +161,7 @@ Execute as etapas a seguir para provisionar um dispositivo virtual no seu hiperv
 27. Na página **Pronto para Concluir** , examine todas as configurações associadas à nova máquina virtual. Verifique **Editar as configurações de máquina virtual antes da conclusão**. Clique em **Continuar**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image28.png)
-28. Na página **Propriedades de Máquinas Virtuais**, na guia **Hardware**, localize o hardware de dispositivo. Selecione **Novo Disco Rígido**. Clique em **Adicionar**.
+28. Na página **Propriedades de Máquinas Virtuais**, na guia **Hardware**, localize o hardware de dispositivo. Selecione **Novo Disco Rígido**. Clique em **Adicionar** .
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image29.png)
 29. Você verá uma janela **Adicionar Hardware**. Na página **Tipo de Dispositivo**, em **Escolha o tipo de dispositivo que você deseja adicionar**, selecione **Disco Rígido** e clique em **Próximo**.
@@ -173,10 +176,10 @@ Execute as etapas a seguir para provisionar um dispositivo virtual no seu hiperv
 32. Na página **Opções Avançadas** , aceite o padrão.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image33.png)
-33. Na página **Pronto para Concluir** , examine as opções de disco. Clique em **Concluir**.
+33. Na página **Pronto para Concluir** , examine as opções de disco. Clique em **Finalizar**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image34.png)
-34. Retorne à página Propriedades de Máquina Virtual. Um novo disco rígido é adicionado à sua máquina virtual. Clique em **Concluir**.
+34. Retorne à página Propriedades de Máquina Virtual. Um novo disco rígido é adicionado à sua máquina virtual. Clique em **Finalizar**.
 
     ![](./media/storsimple-virtual-array-deploy2-provision-vmware/image35.png)
 35. Com sua máquina virtual selecionada no painel direito, navegue até a guia **Resumo** . Examine as configurações para sua máquina virtual.

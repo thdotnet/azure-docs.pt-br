@@ -4,7 +4,7 @@ description: Saiba como criar contas de usuário comuns que podem ser usadas em 
 keywords: aprendizado profundo, IA, ferramentas de ciência de dados, máquina virtual de ciência de dados, análise geoespacial, processo de ciência de dados da equipe
 services: machine-learning
 documentationcenter: ''
-author: gopitk
+author: vijetajo
 manager: cgronlun
 ms.custom: seodec18
 ms.assetid: ''
@@ -15,13 +15,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/08/2018
-ms.author: gokuma
-ms.openlocfilehash: 0146ee6ee37c2eb9e98d831b54df2218d7de5b62
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: vijetaj
+ms.openlocfilehash: 34303c8832a58e4d97ba4e712d624edf321b84a1
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60502361"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68558288"
 ---
 # <a name="set-up-a-common-identity-on-the-data-science-virtual-machine"></a>Configurar uma identidade comum na Máquina Virtual de Ciência de Dados
 

@@ -11,14 +11,13 @@ ms.topic: conceptual
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 03/26/2019
-ms.openlocfilehash: af6cec22ae455e6a6ead4c45fead2d7ff5b708d2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3a59e276c3ec9717634c8f0f3634b7337ebc47d8
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67070500"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567708"
 ---
 # <a name="controlling-and-granting-database-access-to-sql-database-and-sql-data-warehouse"></a>Controlando e concedendo acesso de banco de dados a Banco de Dados SQL e SQL Data Warehouse
 
@@ -64,13 +63,13 @@ Quando o firewall no nível do servidor é configurado para um endereço IP indi
 
 Quando o firewall no nível de servidor é configurado corretamente, o **Administrador do servidor SQL** e o **Administrador do Azure Active Directory** podem se conectar usando ferramentas de cliente, como o SQL Server Management Studio ou o SQL Server Data Tools. Somente as ferramentas mais recentes fornecem todos os recursos e capacidades. O diagrama a seguir mostra uma configuração típica para as duas contas de administrador.
 
-![configuração das contas de administração de dois](./media/sql-database-manage-logins/1sql-db-administrator-access.png)
+![configuração das duas contas de administração](./media/sql-database-manage-logins/1sql-db-administrator-access.png)
 
 Ao usar uma porta aberta no firewall no nível do servidor, os administradores podem se conectar a qualquer Banco de Dados SQL.
 
 ### <a name="connecting-to-a-database-by-using-sql-server-management-studio"></a>Conectar-se a um banco de dados usando o SQL Server Management Studio
 
-Para obter uma explicação passo a passo da criação de um servidor, de um banco de dados, de regras de firewall de IP no nível do servidor e do uso do SQL Server Management Studio para consultar um banco de dados, veja [Introdução aos servidores do banco de dados e regras de firewall do Banco de Dados SQL usando o portal do Azure e o SQL Server Management Studio](sql-database-single-database-get-started.md).
+Para obter uma explicação passo a passo da criação de um servidor, de um banco de dados, de regras de firewall de IP no nível do servidor e do uso do SQL Server Management Studio para consultar um banco de dados, veja [Introdução aos servidores, bancos de dados e regras de firewall do Banco de Dados SQL do Azure usando o portal do Azure e o SQL Server Management Studio](sql-database-single-database-get-started.md).
 
 > [!IMPORTANT]
 > Recomendamos que você sempre use a versão mais recente do Management Studio a fim de permanecer sincronizado com as atualizações no Microsoft Azure e no Banco de Dados SQL. [Atualizar o SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx).

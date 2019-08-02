@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: anjangsh,billgib,genemi
-manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: 6115d7f70c2c75898b18a27af298a44ca87ca1bd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2c24a87377eb4b893cbcae1b9a36522e586a6d56
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66240877"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570149"
 ---
 # <a name="cross-tenant-analytics-using-extracted-data---single-tenant-app"></a>Análise entre locatários usando dados extraídos – Aplicativo de locatário único
  
@@ -91,9 +90,9 @@ Nas etapas a seguir, você implanta o armazenamento da análise, que é chamado 
 2. Defina a variável $DemoScenario no script para coincidir com sua escolha de repositório de análise:
     - Para usar o banco de dados SQL sem o repositório de colunas, defina **$DemoScenario** = **2**
     - Para usar o banco de dados SQL com o repositório de colunas, defina **$DemoScenario** = **3**  
-3. Pressione **F5** para executar o script de demonstração (que chama o *Deploy-TenantAnalytics\<XX >. ps1* script) que cria o repositório de análise de locatário. 
+3. Pressione **F5** para executar o script de demonstração (que chama o script *Deploy\<-TenantAnalytics XX >. ps1* ) que cria o repositório de análise de locatário. 
 
-Agora que você implantou o aplicativo e preenchido com dados de locatário interessantes, use [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) conectem **tenants1-dpt -&lt;usuário&gt;**  e **catálogo-dpt -&lt;usuário&gt;**  servidores usando logon = *developer*, senha = *P\@ssword1*. Veja o [tutorial introdutório](saas-dbpertenant-wingtip-app-overview.md) para obter instruções.
+Agora que você implantou o aplicativo e o preencheu com dados de locatário interessantes, use [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) para conectar **tenants1&gt; -DPT-&lt;User** e **Catalog-DPT-&lt;user&gt;** servidores usando login = *Developer*, password *=\@P ssword1*. Veja o [tutorial introdutório](saas-dbpertenant-wingtip-app-overview.md) para obter instruções.
 
 ![architectureOverView](media/saas-tenancy-tenant-analytics/ssmsSignIn.png)
 
@@ -175,7 +174,7 @@ Use as seguintes etapas para se conectar ao Power BI e importar os modos de exib
 
     ![signinpowerbi](./media/saas-tenancy-tenant-analytics/powerBISignIn.PNG)
 
-5. Selecione **banco de dados** no painel esquerdo, em seguida, insira o nome de usuário = *desenvolvedor*e insira a senha = *P\@ssword1*. Clique em **Conectar**.  
+5. Selecione **banco de dados** no painel esquerdo, digite user name = *Developer*e digite password = *P\@ssword1*. Clique em **Conectar**.  
 
     ![databasesignin](./media/saas-tenancy-tenant-analytics/databaseSignIn.PNG)
 

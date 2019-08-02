@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: sstein
-manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: 7ca7e653cc42323f4313ef955de40416154b4ecf
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: ada794807f980854c203b56874e452713ecef6ea
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60335216"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568360"
 ---
 # <a name="split-merge-security-configuration"></a>Configuração de segurança da divisão e mesclagem
 
@@ -121,7 +120,7 @@ A configuração padrão nega todo os acessos ao ponto de extremidade HTTP. Esta
 A configuração padrão permite todo os acessos ao ponto de extremidade HTTPS. Essa configuração pode ser mais restrita.
 
 ### <a name="changing-the-configuration"></a>Alterando a configuração
-O grupo de regras de controle de acesso que se aplicam a e o ponto de extremidade são configurados na  **\<EndpointAcls >** seção os **arquivo de configuração de serviço**.
+O grupo de regras de controle de acesso que se aplicam ao e ao ponto de extremidade são configurados na  **\<seção EndpointAcls >** no **arquivo de configuração de serviço**.
 
 ```xml
 <EndpointAcls>
@@ -130,7 +129,7 @@ O grupo de regras de controle de acesso que se aplicam a e o ponto de extremidad
 </EndpointAcls>
 ```
 
-As regras em um grupo de controle de acesso são configuradas em um \<AccessControl nome = "" > seção do arquivo de configuração do serviço. 
+As regras em um grupo de controle de acesso são configuradas em um \<nome de AccessControl = "" > seção do arquivo de configuração de serviço. 
 
 O formato é explicado na documentação de listas de controle de acesso à rede.
 Por exemplo, para permitir que apenas IPs no intervalo 100.100.0.0 para 100.100.255.255 acessem o ponto de extremidade HTTPS, as regras teriam esta aparência:
@@ -358,9 +357,9 @@ Cada pessoa para quem um certificado cliente tiver sido emitido deve seguir esta
 * Na caixa de diálogo certificado é aberta, selecione a guia Detalhes
 * Certifique-se de que mostrar está exibindo todos
 * Selecione o campo denominado impressão digital na lista
-* Copie o valor da impressão digital
-  * Exclua caracteres Unicode não visíveis na frente do primeiro dígito
-  * Exclua todos os espaços
+* Copiar o valor da impressão digital
+  * Excluir caracteres Unicode não visíveis na frente do primeiro dígito
+  * Excluir todos os espaços
 
 ## <a name="configure-allowed-clients-in-the-service-configuration-file"></a>Configurar clientes permitidos no arquivo de configuração de serviço
 Atualize o valor da configuração a seguir no arquivo de configuração de serviço com uma lista separada por vírgulas das impressões digitais dos certificados do cliente pode acessar o serviço:
@@ -421,9 +420,9 @@ Siga estas etapas:
 1. Execute mmc.exe.
 2. Arquivo -> Adicionar/Remover Snap-in...
 3. Selecione **Certificados**.
-4. Clique em **Adicionar**.
+4. Clique em **Adicionar** .
 5. Escolha o local do repositório de certificados.
-6. Clique em **Concluir**.
+6. Clique em **Finalizar**.
 7. Clique em **OK**.
 8. Expanda **Certificados**.
 9. Expanda o nó do repositório de certificados.
@@ -443,7 +442,7 @@ No **Assistente para Exportação de Certificados**:
 8. Clique em **Avançar**.
 9. Digite ou procure um nome de arquivo onde o certificado deverá ser armazenado (use uma extensão .PFX).
 10. Clique em **Avançar**.
-11. Clique em **Concluir**.
+11. Clique em **Finalizar**.
 12. Clique em **OK**.
 
 ## <a name="import-certificate"></a>Importar certificado
@@ -461,12 +460,12 @@ No Assistente para importação de certificados:
 5. Selecione para “Colocar” os certificados no repositório a seguir
 6. Clique em **Procurar**.
 7. Selecione o repositório desejado.
-8. Clique em **Concluir**.
+8. Clique em **Finalizar**.
    
    * Se o repositório da autoridade de certificação raiz confiável foi escolhido, clique em **Sim**.
 9. Clique em **OK** em todas as janelas de diálogo.
 
-## <a name="upload-certificate"></a>Carregar um certificado
+## <a name="upload-certificate"></a>Carregar certificado
 No [Portal do Azure](https://portal.azure.com/)
 
 1. Selecione os **Serviços de nuvem**.

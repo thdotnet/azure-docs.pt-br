@@ -11,14 +11,14 @@ ms.service: log-analytics
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 06/19/2019
+ms.date: 07/26/2019
 ms.author: bwren
-ms.openlocfilehash: 56dd1c29d5606da96bbc6d519b70caf580852446
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 397272c3a47aca2aa73394f443d76dead66308e0
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67273072"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68555328"
 ---
 # <a name="custom-logs-in-azure-monitor"></a>Logs personalizados de atividades no Azure Monitor
 A fonte de dados de logs personalizados no Azure Monitor permite que você colete eventos de arquivos de texto em computadores com Windows e Linux. Muitos aplicativos registram informações em arquivos de texto em vez de serviços de registro standard, como o log de eventos do Windows ou Syslog. Depois de coletados, você pode analisar os dados em campos individuais em suas consultas ou extrair os dados durante a coleta de campos individuais.
@@ -71,18 +71,15 @@ Se um delimitador de carimbo de data/hora for usado, a propriedade TimeGenerated
 4. Altere o delimitador usado para identificar um novo registro e selecione o delimitador que melhor identifica os registros no arquivo de log.
 5. Clique em **Avançar**.
 
-### <a name="step-3-add-log-collection-paths"></a>Etapa 3. Adicionar caminhos de coleta de log
+### <a name="step-3-add-log-collection-paths"></a>Etapa 3. Adicionar caminhos de coleção de logs
 Você deve definir um ou mais caminhos no agente no qual ele pode localizar o log personalizado.  Você pode fornecer um caminho e um nome específicos para o arquivo de log ou pode especificar um caminho com um caractere curinga para o nome. Isso dá suporte a aplicativos que criam um novo arquivo por dia ou quando um arquivo atinge um determinado tamanho. Você também pode fornecer vários caminhos para um único arquivo de log.
 
 Por exemplo, um aplicativo pode criar um arquivo de log por dia com a data incluída no nome, como log20100316.txt. Um padrão para tal log pode ser *log\*.txt*, que se aplica a qualquer arquivo de log após o esquema de nomenclatura do aplicativo.
 
->[!NOTE]
-> Se seu aplicativo criar um arquivo de log por dia ou quando atingir um determinado tamanho, o agente do Log Analytics para Linux somente os descobrirá quando for reiniciado. Isso ocorre porque o agente só enumera e inicia o monitoramento de padrões com os logs especificados ao ser iniciado e, por isso, você precisa planejar essa questão automatizando a reinicialização do agente.  Essa limitação não existe com o agente do Log Analytics para Windows.  
->
 
 A tabela a seguir fornece exemplos de padrões válidos para especificar diferentes arquivos de log.
 
-| DESCRIÇÃO | Caminho |
+| Descrição | Path |
 |:--- |:--- |
 | Todos os arquivos em *C:\Logs* com extensão .txt no agente do Windows |C:\Logs\\\*.txt |
 | Todos os arquivos em *C:\Logs* cujo nome começa com log e uma extensão .txt no agente do Windows |C:\Logs\log\*.txt |
@@ -127,7 +124,7 @@ Todo o conteúdo da entrada de log é gravado em uma única propriedade chamada 
 ## <a name="custom-log-record-properties"></a>Propriedades de registro do log personalizado
 Os registros de log personalizado têm um tipo com o nome do log que você fornece e as propriedades na tabela a seguir.
 
-| Propriedade | DESCRIÇÃO |
+| Propriedade | Descrição |
 |:--- |:--- |
 | TimeGenerated |Data e hora em que o registro foi coletado pelo Azure Monitor.  Se o log usar um delimitador baseado na hora, essa será a hora coletada da entrada. |
 | SourceSystem |Tipo de registro do qual os dados foram coletados. <br> OpsManager – agente do Windows, conexão direta ou System Center Operations Manager <br> Linux: todos os agentes do Linux |

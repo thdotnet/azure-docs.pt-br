@@ -1,18 +1,18 @@
 ---
 title: Matriz de suporte para o servidor de Backup do Microsoft Azure e System Center DPM
 description: Este artigo resume o suporte de Backup do Azure quando você usa o Servidor de Backup do Microsoft Azure ou o System Center DPM para fazer backup de recursos de VM do Azure e no local.
-author: rayne-wiselman
+author: dcurwin
 ms.service: backup
 ms.date: 02/17/2019
 ms.topic: conceptual
-ms.author: raynew
+ms.author: dacurwin
 manager: carmonm
-ms.openlocfilehash: 777d2286ed24123011e06edfb468d0f2db61715f
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.openlocfilehash: c4d01c3c72669f7fbfd5b2d8df0678cc0675ccde
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68464875"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639567"
 ---
 # <a name="support-matrix-for-backup-with-microsoft-azure-backup-server-or-system-center-dpm"></a>Matriz de suporte para backup com o Backup do Microsoft Azure Server ou o System Center DPM
 

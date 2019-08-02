@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 7/18/2019
+ms.date: 7/26/2019
 ms.author: raiye
-ms.openlocfilehash: 2dac76ef0d0d71c11291e63fdb3a7ce307638b50
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: 9f796d4fe0edd1b6a944fc96e8045b1434d939f0
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68405548"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68592421"
 ---
 # <a name="azure-guest-os-releases-and-sdk-compatibility-matrix"></a>Matriz de compatibilidade de versões de SOs Convidados e do SDK do Azure
 Fornece a você informações atualizadas sobre as versões mais recentes do SO convidado do Azure para serviços de nuvem. Essas informações ajudam a planejar seu caminho de atualização antes que um SO convidado seja desabilitado. Se você configurar suas funções para usar atualizações *automáticas* de SO convidado, conforme descrito em [Configurações de atualização de SO convidado do Azure][Azure Guest OS Update Settings], não é essencial ler esta página.
@@ -42,6 +42,9 @@ Fornece a você informações atualizadas sobre as versões mais recentes do SO 
 Você não tem certeza de como atualizar o SO convidado? Verifique [isso][cloud updates] .
 
 ## <a name="news-updates"></a>Notícias atualizadas
+
+###### <a name="july-26-2019"></a>**26 de julho de 2019**
+O SO convidado de julho foi lançado.
 
 ###### <a name="july-8-2019"></a>**8 de julho de 2019**
 O SO convidado de junho foi lançado.
@@ -98,8 +101,9 @@ O SO convidado de setembro foi lançado.
 
 | Cadeia de caracteres de configuração | Data de liberação | Data da desabilitação |
 | --- | --- | --- |
+| WA-GUEST-OS-6,9 _201907-01 |26 de julho de 2019 |Post 6,11 |
 | WA-GUEST-OS-6.8_201906-01 |8 de julho de 2019 |Post 6,10 |
-| WA-GUEST-OS-6.7_201905-01 |6 de junho de 2019 |Post 6,9 |
+|~~WA-GUEST-OS-6.7 _201905-01~~ |6 de junho de 2019 |26 de julho de 2019 |
 |~~WA-GUEST-OS-6.6_201904-01~~ |7 de maio de 2019 |8 de julho de 2019 |
 |~~WA-GUEST-OS-6.5_201903-01~~ |26 de março de 2019 |6 de junho de 2019 |
 |~~WA-GUEST-OS-6.4_201902-01~~ |12 de março de 2019 |7 de maio de 2019 |
@@ -119,8 +123,9 @@ O SO convidado de setembro foi lançado.
 
 | Cadeia de caracteres de configuração | Data de liberação | Data da desabilitação |
 | --- | --- | --- |
+| WA-GUEST-OS-5.33 _201907-01 |26 de julho de 2019 |Post 5,35 |  
 | WA-GUEST-OS-5.32_201906-01 |8 de julho de 2019 |Post 5,34 |
-| WA-GUEST-OS-5.31_201905-01 |6 de junho de 2019 |Post 5,33 |
+|~~WA-GUEST-OS-5.31 _201905-01~~ |6 de junho de 2019 |26 de julho de 2019 |
 |~~WA-GUEST-OS-5.30_201904-01~~ |7 de maio de 2019 |8 de julho de 2019 |
 |~~WA-GUEST-OS-5.29_201903-01~~ |26 de março de 2019 |6 de junho de 2019 |
 |~~WA-GUEST-OS-5.28_201902-01~~ |12 de março de 2019 |7 de maio de 2019 |
@@ -137,8 +142,9 @@ O SO convidado de setembro foi lançado.
 
 | Cadeia de caracteres de configuração | Data de liberação | Data da desabilitação |
 | --- | --- | --- |
+| WA-GUEST-OS-4.68 _201907-01 | 26 de julho de 2019  |Post 4,70 |
 | WA-GUEST-OS-4.67_201906-01 |8 de julho de 2019 |Post 4,69 |
-| WA-GUEST-OS-4.66_201905-01 |6 de junho de 2019 |Post 4,68 |
+|~~WA-GUEST-OS-4.66 _201905-01~~ |6 de junho de 2019 |26 de julho de 2019 |
 |~~WA-GUEST-OS-4.65_201904-01~~ |7 de maio de 2019 |8 de julho de 2019 |
 |~~WA-GUEST-OS-4.64_201903-01~~ |26 de março de 2019 |6 de junho de 2019 |
 |~~WA-GUEST-OS-4.63_201902-01~~ |12 de março de 2019 |7 de maio de 2019 |
@@ -155,8 +161,9 @@ O SO convidado de setembro foi lançado.
 
 | Cadeia de caracteres de configuração | Data de liberação | Data da desabilitação |
 | --- | --- | --- |
+| WA-GUEST-OS-3,75 _201907-01 | 26 de julho de 2019 |Post 3,77 |
 | WA-GUEST-OS-3.74_201906-01 |8 de julho de 2019 |Post 3,76 |
-| WA-GUEST-OS-3.73_201905-01 |6 de junho de 2019 |Post 3,75 |
+|~~WA-GUEST-OS-3.73 _201905-01~~ |6 de junho de 2019 |26 de julho de 2019 |
 |~~WA-GUEST-OS-3.72_201904-01~~ |7 de maio de 2019 |8 de julho de 2019 |
 |~~WA-GUEST-OS-3.71_201903-01~~ |26 de março de 2019 |6 de junho de 2019 |
 |~~WA-GUEST-OS-3.70_201902-01~~ |12 de março de 2019 |7 de maio de 2019 |
@@ -173,8 +180,9 @@ O SO convidado de setembro foi lançado.
 
 | Cadeia de caracteres de configuração | Data de liberação | Data da desabilitação |
 | --- | --- | --- |
+| WA-GUEST-OS-2,88 _201907-01 | 26 de julho de 2019 |Post 2,90 |
 | WA-GUEST-OS-2.87_201906-01 |8 de julho de 2019 |Post 2,89 |
-| WA-GUEST-OS-2.86_201905-01 |6 de junho de 2019 |Post 2,88 |
+|~~WA-GUEST-OS-2.86 _201905-01~~ |6 de junho de 2019 |26 de julho de 2019 |
 |~~WA-GUEST-OS-2.85_201904-01~~ |7 de maio de 2019 |8 de julho de 2019 |
 |~~WA-GUEST-OS-2.84_201903-01~~ |26 de março de 2019 |6 de junho de 2019 |
 |~~WA-GUEST-OS-2.83_201902-01~~ |12 de março de 2019 |7 de maio de 2019 |

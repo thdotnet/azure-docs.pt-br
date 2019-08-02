@@ -95,15 +95,14 @@
       displayName: 'deep learning vs machine learning, deep learning, vs, versus'
       href: concept-deep-learning-vs-machine-learning.md
     - name: Workspace
-      displayName: concept definitions architecture
       href: concept-workspace.md
     - name: Destino de computação
-      displayName: concept definitions architecture
+      displayName: 'compute, resource, target, dsvm, AKS, kubernetes, amlcompute, Data Science Virtual Machine, local, cluster, ACI, container instance, Databricks, data lake, lake, HDI, HDInsight'
       href: concept-compute-target.md
     - name: Interface visual
-      displayName: concept
+      displayName: studio
       href: ui-concept-visual-interface.md
-    - name: ML automatizado
+    - name: Machine Learning automatizado
       displayName: 'automl, auto ml'
       href: concept-automated-ml.md
     - name: Gerenciamento de modelos (MLOps)
@@ -114,9 +113,10 @@
     - name: Interpretabilidade do modelo
       displayName: explainability
       href: machine-learning-interpretability-explainability.md
-    - name: Visão geral da FPGAs
+    - name: 'FPGA versus CPU, GPU e ASIC'
+      displayName: 'field, programmable, arrays'
       href: concept-accelerate-with-fpgas.md
-    - name: ONNX e Tempo de Execução do ONNX
+    - name: ONNX
       href: concept-onnx.md
     - name: Segurança
       items:

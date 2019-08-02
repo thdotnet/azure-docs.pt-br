@@ -10,21 +10,20 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 05/06/2019
-ms.openlocfilehash: 49d1e171d4d4b2210a98c59332f4842e23a2f2b9
-ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
+ms.openlocfilehash: 70ba6c5507cf31732d679a61c3e185a520b4c5f3
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67537838"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566672"
 ---
 # <a name="faq-about-azure-sql-hyperscale-databases"></a>Perguntas frequentes sobre bancos de dados SQL do Azure da Hiperescala
 
-Este artigo fornece respostas para perguntas frequentes para clientes que consideram um banco de dados na camada de serviço hiperescala de banco de dados SQL do Azure, normalmente chamado de um banco de dados em hiperescala. Este artigo descreve os cenários que o Hyperscale suporta e os serviços entre recursos são compatíveis com o Banco de Dados SQL da Hiperescala em geral.
+Este artigo fornece respostas para as perguntas frequentes para os clientes que consideram um banco de dados na camada de serviço de hiperescala do banco de dados SQL do Azure, normalmente chamada de banco de dados de hiperescala. Este artigo descreve os cenários que o Hyperscale suporta e os serviços entre recursos são compatíveis com o Banco de Dados SQL da Hiperescala em geral.
 
-- Esta FAQ destina-se a leitores que tenham uma breve compreensão da camada de serviço Hiperescala e que desejam ter suas dúvidas e preocupações específicas respondidas.
-- Esta FAQ não pretende ser um guia ou responder a perguntas sobre como usar um banco de dados do Banco de Dados SQL da Hiperescala. Para isso, recomendamos que você consulte a documentação do [Azure Banco de Dados SQL da Hiperescala](sql-database-service-tier-hyperscale.md).
+- Esta FAQ destina-se a leitores que tenham uma breve compreensão do nível de serviço Hiperescala e que desejam ter suas dúvidas e preocupações específicas respondidas.
+- Esta FAQ não pretende ser um guia ou responder a perguntas sobre como usar um banco de dados do Banco de Dados SQL da Hiperescala. Para isso, recomendamos que você consulte a documentação do [Banco de Dados SQL do Azure Hyperscale](sql-database-service-tier-hyperscale.md).
 
 ## <a name="general-questions"></a>Perguntas gerais
 
@@ -36,31 +35,31 @@ Um banco de dados da Hiperescala é um banco de dados SQL do Azure na camada de 
 
 A camada de serviço Hiperescala está disponível apenas para bancos de dados individuais usando o modelo de compra baseado em vCore no Banco de Dados SQL do Azure.  
 
-### <a name="how-does-the-hyperscale-service-tier-differ-from-the-general-purpose-and-business-critical-service-tiers"></a>Como o nível de serviço Hiperescala difere das camada de serviço de uso geral e de negócios críticos?
+### <a name="how-does-the-hyperscale-service-tier-differ-from-the-general-purpose-and-business-critical-service-tiers"></a>Como o nível de serviço da Hiperescala difere dos níveis de serviço de uso geral e de negócios críticos?
 
-O serviço baseado em vCore as camadas são diferenciadas principalmente com base em disponibilidade, o tipo de armazenamento e IOPs.
+As camadas de serviço baseadas em vCore são basicamente diferenciadas com base na disponibilidade, no tipo de armazenamento e no IOPs.
 
 - A camada de serviço de Propósito Geral é apropriada para a maioria das cargas de trabalho de negócios, oferecendo um conjunto equilibrado de opções de computação e armazenamento em que a latência de I/O ou tempos de failover não são a prioridade.
 - A camada de serviço da Hiperescala é otimizada para cargas de trabalho de banco de dados muito grandes.
 - A camada de serviço Business Critical é apropriada para cargas de trabalho de negócios em que a latência de I/O é uma prioridade.
 
-| | Tipo de recurso | Uso geral |  Hiperescala | Comercialmente Crítico |
+| | Tipo de recurso | Uso Geral |  Hiperescala | Essencial Para os Negócios |
 |:---|:---:|:---:|:---:|:---:|:---:|
-| **Mais adequado para** |Todos|  A maioria das cargas de trabalho comerciais. Oferece opções equilibradas de computação e armazenamento orientadas ao orçamento. | Aplicativos de dados com grandes requisitos de capacidade de dados e a capacidade de dimensionar e armazenar em escala automática os recursos de computação. | Aplicativos OLTP com alta taxa de transação e menor I/O de latência. Oferece maior resiliência a falhas usando várias réplicas isoladas.|
+| **Mais adequado para** |Todas|  A maioria das cargas de trabalho comerciais. Oferece opções equilibradas de computação e armazenamento orientadas ao orçamento. | Aplicativos de dados com grandes requisitos de capacidade de dados e a capacidade de dimensionar e armazenar em escala automática os recursos de computação. | Aplicativos OLTP com alta taxa de transação e menor I/O de latência. Oferece maior resiliência a falhas usando várias réplicas isoladas.|
 |  **Tipo de recurso** ||Banco de dados único / Elástico pool / instância gerenciada | Banco de dados individual | Banco de dados único / Elástico pool / instância gerenciada |
-| **Tamanho de computação**|Banco de dados único / Elástico pool * | 1 a 80 vCores | 1 a 80 vCores * | 1 a 80 vCores |
+| **Tamanho da computação**|Banco de dados único / Elástico pool * | 1 a 80 vCores | 1 a 80 vCores * | 1 a 80 vCores |
 | |Instância gerenciada | 8, 16, 24, 32, 40, 64, 80 vCores | N/D | 8, 16, 24, 32, 40, 64, 80 vCores |
-| **Tipo de armazenamento** | Todos |Armazenamento remoto Premium (por instância) | Armazenamento desacoplado com cache SSD local (por instância) | Armazenamento SSD local super rápido (por instância) |
+| **Tipo de armazenamento** | Todas |Armazenamento remoto Premium (por instância) | Armazenamento desacoplado com cache SSD local (por instância) | Armazenamento SSD local super rápido (por instância) |
 | **Tamanho de armazenamento** | Banco de dados único / Elástico pool | 5 GB – 4 TB | Até 100 TB | 5 GB – 4 TB |
 | | Instância gerenciada  | 32 GB A 8 TB | N/D | 32 GB – 4 TB |
-| **Taxa de transferência de e/s** | Banco de dados único ** | 500 IOPS por vCore com máximo de 7.000 IOPS | Hiperescala é uma arquitetura de várias camadas com o cache em vários níveis. IOPs efetivas dependerá da carga de trabalho. | 5000 IOPS com 200.000 IOPS máximo|
+| **Taxa de transferência de e/s** | Banco de dados único ** | 500 IOPS por vCore com máximo de 7.000 IOPS | O hiperscale é uma arquitetura de várias camadas com cache em vários níveis. O IOPs efetivo dependerá da carga de trabalho. | 5000 IOPS com 200.000 IOPS máximo|
 | | Instância gerenciada | Depende do tamanho do arquivo | N/D | Instância Gerenciada: Depende do tamanho do arquivo|
-|**Disponibilidade**|Todos|1 réplica, sem escala de leitura, sem cache local | Múltiplas réplicas, até 15 cache local parcial em escala de leitura | 3 réplicas, 1 HA de escala de leitura, com redundância de zona, cache local completo |
-|**Backups**|Todos|RA-GRS, 7-35 dias (7 dias por padrão)| RA-GRS, 7-35 dias (7 dias por padrão), recuperação point-in-time de tempo constante (PITR) | RA-GRS, 7-35 dias (7 dias por padrão) |
+|**Disponibilidade**|Todas|1 réplica, sem escala de leitura, sem cache local | Múltiplas réplicas, até 15 cache local parcial em escala de leitura | 3 réplicas, 1 HA de escala de leitura, com redundância de zona, cache local completo |
+|**Backups**|Todas|RA-GRS, 7-35 dias (7 dias por padrão)| RA-GRS, 7-35 dias (7 dias por padrão), tempo constante de recuperação pontual (PITR) | RA-GRS, 7-35 dias (7 dias por padrão) |
 
-\* Pools Elásticos não tem suportados na camada de serviço em hiper escala
+\* Pools Elásticos não tem suportados na camada de serviço em Hiperescala
 
-### <a name="who-should-use-the-hyperscale-service-tier"></a>Quem deve usar a camada de serviço Hiperescala
+### <a name="who-should-use-the-hyperscale-service-tier"></a>Quem deve usar o nível de serviço Hiperescala
 
 A camada de serviço Hiperescala destina-se principalmente a clientes que possuem grandes bancos de dados SQL Server locais e desejam modernizar seus aplicativos migrando para a nuvem ou para clientes que já usam o Banco de Dados SQL do Azure e desejam expandir significativamente o potencial de crescimento do banco de dados. A Hiperescala também é destinado a clientes que buscam alto desempenho e alta escalabilidade. Com em Hiperescala, você obtém:
 
@@ -73,13 +72,13 @@ A camada de serviço Hiperescala destina-se principalmente a clientes que possue
 
 ### <a name="what-regions-currently-support-hyperscale"></a>Quais regiões atualmente dão suporte em Hiperescala
 
-A camada de hiperescala de banco de dados SQL do Azure está atualmente disponível nas regiões listadas sob [visão geral de hiperescala de banco de dados SQL do Azure](sql-database-service-tier-hyperscale.md#regions).
+A camada de hiperescala do banco de dados SQL do Azure está disponível atualmente nas regiões listadas em [visão geral do hiperescala do banco de dados SQL do Azure](sql-database-service-tier-hyperscale.md#regions).
 
 ### <a name="can-i-create-multiple-hyperscale-databases-per-logical-server"></a>Posso criar vários bancos de dados de Hiperescala por servidor lógico
 
 Sim. Para obter mais informações e limites sobre o número de bancos de dados Hiperescala por servidor lógico, consulte [Limites de recursos do Banco de Dados SQL para bancos de dados únicos e agrupados em um servidor lógico](sql-database-resource-limits-logical-server.md).
 
-### <a name="what-are-the-performance-characteristics-of-a-hyperscale-database"></a>Quais são as características de desempenho de um banco de dados em hiperescala
+### <a name="what-are-the-performance-characteristics-of-a-hyperscale-database"></a>Quais são as características de desempenho de um banco de dados de hiperescala
 
 A arquitetura Hiperescala do Banco de Dados SQL oferece alto desempenho e rendimento, suportando grandes tamanhos de banco de dados. 
 
@@ -89,16 +88,16 @@ O Banco de Dados SQL da Hiperescala fornece escalabilidade rápida com base na s
 
 - **Dimensionamento para cima/para baixo**
 
-  Com a Hiperescala, você pode dimensionar o tamanho de computação principal em termos de recursos como CPU, memória e, em seguida, reduzir a escala, em tempo constante. Como o armazenamento é compartilhado, a ampliação e o dimensionamento não são um tamanho de operação de dados.  
+  Com o Hyperscale, você pode dimensionar o tamanho da computação principal em termos de recursos como CPU, memória e, em seguida, reduzir a escala, em tempo constante. Como o armazenamento é compartilhado, a ampliação e o dimensionamento não são um tamanho de operação de dados.  
 - **Dimensionamento In/Out**
 
-  Com a Hiperescala, você também tem a capacidade de provisionar um ou mais nós de computação adicionais que você pode usar para atender às suas solicitações de leitura. Isso significa que você pode usar esses nós de computação adicionais como nós somente leitura para descarregar sua carga de trabalho de leitura da computação primária. No além a fim de somente leitura, que esses nós também servem como hot-em espera do caso de um failover do primário.
+  Com a Hiperescala, você também tem a capacidade de provisionar um ou mais nós de computação adicionais que você pode usar para atender às suas solicitações de leitura. Isso significa que você pode usar esses nós de computação adicionais como nós somente leitura para descarregar sua carga de trabalho de leitura da computação primária. Além de somente leitura, esses nós também servem como hot-standby no caso de um failover do primário.
 
   O provisionamento de cada um desses nós de computação adicionais pode ser feito em tempo constante e é uma operação on-line. Você pode conectar-se a esses nós de computação adicionais somente leitura configurando o argumento `ApplicationIntent` na cadeia de conexão para `readonly`. Todas as conexões marcadas com `readonly` são roteadas automaticamente para um dos nós de computação adicionais somente leitura.
 
 ## <a name="deep-dive-questions"></a>Perguntas de aprofundamento
 
-### <a name="can-i-mix-hyperscale-and-single-databases-in-a-single-logical-server"></a>Posso combinar bancos de dados individuais em um único servidor lógico e hiperescala
+### <a name="can-i-mix-hyperscale-and-single-databases-in-a-single-logical-server"></a>Posso misturar o hiperescala e os bancos de dados individuais em um único servidor lógico
 
 Sim, pode.
 
@@ -116,11 +115,11 @@ Sim, [benefício híbrido do Azure](https://azure.microsoft.com/pricing/hybrid-b
 
 ### <a name="what-kind-of-workloads-is-sql-database-hyperscale-designed-for"></a>Que tipo de cargas de trabalho é o Banco de Dados SQL da Hiperescala projetado para
 
-O Banco de Dados SQL da Hiperescala suporta todas as cargas de trabalho do SQL Server, mas é otimizado principalmente para OLTP. Você pode colocar híbrido (HTAP) e analítico (armazém de dados) cargas de trabalho.
+O Banco de Dados SQL da Hiperescala suporta todas as cargas de trabalho do SQL Server, mas é otimizado principalmente para OLTP. Você também pode colocar cargas de trabalho híbridas (HTAP) e analíticas (data mart).
 
 ### <a name="how-can-i-choose-between-azure-sql-data-warehouse-and-sql-database-hyperscale"></a>Como posso escolher entre o SQL Data Warehouse do Azure e a Hiperescala do banco de dados SQL
 
-Se você estiver executando consultas de análises interativas usando o SQL Server como um data warehouse, em hiperescala do banco de dados SQL é uma ótima opção porque você pode hospedar os armazéns de dados relativamente pequeno (por exemplo, alguns TB até 10 segundos de TB) a um custo menor e você pode migrar seu dados w arehouse carga de trabalho em hiperescala do banco de dados SQL sem alterações de código T-SQL.
+Se você estiver executando consultas de análise interativas usando SQL Server como um data warehouse, o banco de dados SQL é uma ótima opção, pois você pode hospedar data warehouses relativamente pequenos (como alguns TB de até 10s de TB) a um custo menor e pode migrar seus dados w arehouse carga de trabalho para o SQL Database de hiperescala sem alterações de código T-SQL.
 
 Se você estiver executando análise de dados em grande escala com consultas complexas e usando armazéns de dados Parallel Data Warehouse (PDW), Teradata ou outro MPP (Massively Parallel Processor), o SQL Data Warehouse poderá ser a melhor opção.
   
@@ -128,23 +127,23 @@ Se você estiver executando análise de dados em grande escala com consultas com
 
 ### <a name="can-i-pause-my-compute-at-any-time"></a>Posso pausar meu computação a qualquer momento
 
-Não desta vez, no entanto, você pode dimensionar sua computação e o número de réplicas para reduzir o custo durante horários de pico.
+Não no momento, no entanto, você pode dimensionar a computação e o número de réplicas para reduzir o custo fora do horário de pico.
 
 ### <a name="can-i-provision-a-compute-with-extra-ram-for-my-memory-intensive-workload"></a>Posso provisionar uma computação com RAM extra para minha carga de trabalho com uso intensivo de memória
 
-Não. Para obter mais RAM, você precisa atualizar para um tamanho da computação maior. Para obter mais informações, consulte [Armazenamento Hiperescala e tamanhos de computação](sql-database-vcore-resource-limits-single-databases.md#hyperscale-service-tier).
+Nº Para obter mais RAM, você precisa atualizar para um tamanho da computação maior. Para obter mais informações, consulte [Armazenamento hiper escale e tamanhos da computação](sql-database-vcore-resource-limits-single-databases.md#hyperscale-service-tier).
 
 ### <a name="can-i-provision-multiple-compute-nodes-of-different-sizes"></a>Posso provisionar vários nós de computação de tamanhos diferentes
 
-Não.
+Nº
 
 ### <a name="how-many-read-scale-replicas-are-supported"></a>Quantas réplicas de escala de leitura são suportadas
 
-Por padrão, os bancos de dados em hiperescala são criados com uma réplica de escala de leitura (duas réplicas no total). Você pode dimensionar o número de réplicas somente leitura entre 0 e 4 usando o [portal do Azure](https://portal.azure.com), [T-SQL](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current), [Powershell](https://docs.microsoft.com/powershell/module/azurerm.sql/set-azurermsqldatabase) ou [CLI](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-update).
+Os bancos de dados de hiperescala são criados com uma réplica de escala de leitura (duas réplicas no total) por padrão. Você pode dimensionar o número de réplicas somente leitura entre 0 e 4 usando o [portal do Azure](https://portal.azure.com), [T-SQL](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current), [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.sql/set-azurermsqldatabase) ou [CLI](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-update).
 
 ### <a name="for-high-availability-do-i-need-to-provision-additional-compute-nodes"></a>Para alta disponibilidade, preciso provisionar nós de computação adicionais
 
-Em bancos de dados em hiperescala, a resiliência é fornecida no nível de armazenamento. Você só precisa de uma réplica para fornecer resiliência. Quando a réplica de cálculo está inativa, uma nova réplica é criada automaticamente sem perda de dados.
+Em bancos de dados de hiperescala, a resiliência é fornecida no nível de armazenamento. Você só precisa de uma réplica para fornecer resiliência. Quando a réplica de cálculo está inativa, uma nova réplica é criada automaticamente sem perda de dados.
 
 No entanto, se houver apenas uma réplica, poderá levar algum tempo para criar o cache local na nova réplica após o failover. Durante a fase de recriação do cache, o banco de dados busca dados diretamente dos servidores de páginas, resultando em IOPS e desempenho de consulta degradados.
 
@@ -158,7 +157,7 @@ Para aplicativos de missão crítica que exigem alta disponibilidade, você deve
 
 ### <a name="what-is-the-size-of-the-transaction-log-with-hyperscale"></a>Qual é o tamanho do log de transações com a Hiperescala
 
-O log de transações com a Hiperescala é praticamente infinito. Você não precisa se preocupar com a falta de espaço de log em um sistema que tenha um alto throughput de log. No entanto, a taxa de geração de logs pode ser reduzida para cargas de trabalho agressivas contínuas. A taxa de geração de log prolongada de pico é de aproximadamente 100 MB/s.
+O log de transações com a Hiperescala é praticamente infinito. Você não precisa se preocupar com a falta de espaço de log em um sistema que tenha um alto throughput de log. No entanto, a taxa de geração de logs pode ser reduzida para cargas de trabalho agressivas contínuas. A taxa de geração de log sustentada de pico é de aproximadamente 100 MB/s.
 
 ### <a name="does-my-temp-db-scale-as-my-database-grows"></a>Minha escala de banco de dados temp como meu banco de dados cresce
 
@@ -208,15 +207,15 @@ Sim. As páginas de dados associadas a uma determinada tabela podem acabar em v�
 
 ### <a name="can-i-move-my-existing-azure-sql-databases-to-the-hyperscale-service-tier"></a>Posso mover meus bancos de dados SQL do Azure existentes para a camada de serviço de Hiperescala
 
-Sim. Você pode mover seus bancos de dados SQL do Azure existentes para a Hiperescala. Essa é uma migração unidirecional. Você não pode mover bancos de dados da Hiper escala para outra camada de serviço. Recomendamos que você faça uma cópia de seus bancos de dados de produção e migre para a Hiperescala para prova de conceitos (POCs).
+Sim. Você pode mover seus bancos de dados SQL do Azure existentes para a Hiperescala. Essa é uma migração unidirecional. Você não pode mover bancos de dados da Hiperescala para outro nível de serviço. Recomendamos que você faça uma cópia de seus bancos de dados de produção e migre para a Hiperescala para prova de conceitos (POCs).
   
 ### <a name="can-i-move-my-hyperscale-databases-to-other-editions"></a>Posso mover meus bancos de dados Hiperescala para outras edições?
 
-Não. Neste momento, você não pode mover um banco de dados em hiperescala para outra camada de serviço.
+Nº Neste momento, você não pode mover um banco de dados de hiperescala para outra camada de serviço.
 
 ### <a name="do-i-lose-any-functionality-or-capabilities-after-migration-to-the-hyperscale-service-tier"></a>Perco alguma funcionalidade ou recursos após a migração para a camada de serviço Hiperescala
 
-Sim. Alguns dos recursos de banco de dados SQL ainda não são compatíveis em hiperescala, incluindo mas não se limitando, backup de retenção de longo prazo. Depois de migrar seus bancos de dados para o Hiperescala, esses recursos param de funcionar.  Esperamos que essas limitações ser temporária.
+Sim. Alguns dos recursos do banco de dados SQL do Azure ainda não são compatíveis com o hiperscale, incluindo, mas não limitado, o backup de retenção de longo prazo. Depois de migrar seus bancos de dados para o Hiperescala, esses recursos param de funcionar.  Esperamos que essas limitações sejam temporárias.
 
 ### <a name="can-i-move-my--on-premises-sql-server-database-or-my-sql-server-virtual-machine-database-to-hyperscale"></a>Posso mover meu banco de dados do SQL Server local ou meu banco de dados de máquina virtual do SQL Server para a Hiperescala
 
@@ -229,7 +228,7 @@ O tempo de inatividade é o mesmo que o tempo de inatividade quando você migra 
 
 ### <a name="how-much-time-would-it-take-to-bring-in-x-amount-of-data-to-sql-database-hyperscale"></a>Quanto tempo levaria para trazer X quantidade de dados para o banco de dados SQL Hiperescala
 
-Hiperescala é capaz de consumir 100 MB/s de dados novo/alterado.
+O hiperscale é capaz de consumir 100 MB/s de dados novos/alterados.
 
 ### <a name="can-i-read-data-from-blob-storage-and-do-fast-load-like-polybase-and-sql-data-warehouse"></a>Posso ler dados do armazenamento de blob e fazer uma carga rápida (como o Polybase e o SQL Data Warehouse)
 
@@ -239,7 +238,7 @@ A recuperação simples ou o modelo de log em massa não é suportada na Hiperes
 
 ### <a name="does-sql-database-hyperscale-allow-provisioning-multiple-nodes-for-ingesting-large-amounts-of-data"></a>O Banco de Dados SQL da Hiperescala permite o provisionamento de vários nós para ingerir grandes quantidades de dados
 
-Não. O banco de dados SQL da Hiperescala é uma arquitetura SMP e não é um multiprocessamento assimétrico ou uma arquitetura multi-master. Você só pode criar várias réplicas para dimensionar cargas de trabalho somente leitura.
+Nº O banco de dados SQL da Hiperescala é uma arquitetura SMP e não é um multiprocessamento assimétrico ou uma arquitetura multi-master. Você só pode criar várias réplicas para dimensionar cargas de trabalho somente leitura.
 
 ### <a name="what-is-the-oldest-sql-server-version-will-sql-database-hyperscale-support-migration-from"></a>Qual é a versão mais antiga do SQL Server? A migração do suporte do Banco de Dados SQL da Hiperescala
 
@@ -253,7 +252,7 @@ Sim. Vindo de diferentes fontes de dados diferentes do SQL Server requer migraç
 
 ### <a name="what-slas-are-provided-for-a-hyperscale-database"></a>Quais SLAs são fornecidos para um banco de dados da Hiperescala
 
-Com o padrão, as principais e um secundário legível 1, o SLA é 99,95% de disponibilidade.  Com mais de réplicas, o SLA vai até 99,99%.  
+Com o primário padrão mais 1 secundário legível, o SLA é de 99,95% de disponibilidade.  Com mais réplicas, o SLA vai até 99,99%.  
 
 ### <a name="are-the-database-backups-managed-for-me-by-the-azure-sql-database-service"></a>Os backups de banco de dados são gerenciados para mim pelo serviço Banco de Dados SQL do Azure
 
@@ -273,7 +272,7 @@ O RPO é 0 min. O objetivo do RTO é menos de 10 minutos, independentemente do t
 
 ### <a name="do-backups-of-large-databases-affect-compute-performance-on-my-primary"></a>Os backups de grandes bancos de dados afetam o desempenho de computação em meu primário
 
-Não. Os backups são gerenciados pelo subsistema de armazenamento e aproveitam os instantâneos de arquivos. Eles não afetam a carga de trabalho do usuário no primário.
+Nº Os backups são gerenciados pelo subsistema de armazenamento e aproveitam os instantâneos de arquivos. Eles não afetam a carga de trabalho do usuário no primário.
 
 ### <a name="can-i-perform-geo-restore-with-a-sql-database-hyperscale-database"></a>Posso executar a restauração geográfica com um banco de dados Hiperescala do Banco de Dados SQL
 
@@ -289,53 +288,53 @@ Não no momento.
 
 ### <a name="can-i-take-a-sql-database-hyperscale-database-backup-and-restore-it-to-my-on-premises-server-or-sql-server-in-vm"></a>Posso fazer um backup do banco de dados Banco de Dados SQL da Hiperescala e restaurá-lo no meu servidor local ou no SQL Server na VM
 
-Não. O formato de armazenamento dos bancos de dados da Hiperescala é diferente do SQL Server tradicional, e você não controla backups nem tem acesso a eles. Para retirar seus dados de um banco de dados Hiperescala do Banco de Dados SQL, use o serviço de exportação ou use o script mais o BCP.
+Nº O formato de armazenamento dos bancos de dados da Hiperescala é diferente do SQL Server tradicional, e você não controla backups nem tem acesso a eles. Para retirar seus dados de um banco de dados Hiperescala do Banco de Dados SQL, use o serviço de exportação ou use o script mais o BCP.
 
 ## <a name="cross-feature-questions"></a>Entre as perguntas de recurso
 
 ### <a name="do-i-lose-any-functionality-or-capabilities-after-migration-to-the-hyperscale-service-tier"></a>Perco alguma funcionalidade ou recursos após a migração para a camada de serviço Hiperescala
 
-Sim. Não há suporte para alguns dos recursos de banco de dados SQL em hiperescala, incluindo, mas o backup de retenção de longo prazo não limitada. Depois de migrar seus bancos de dados para o Hiperescala, esses recursos param de funcionar.
+Sim. Alguns dos recursos do banco de dados SQL do Azure não têm suporte em hiperescala, incluindo, mas não limitado, backup de retenção de longo prazo. Depois de migrar seus bancos de dados para o Hiperescala, esses recursos param de funcionar.
 
 ### <a name="will-polybase-work-with-sql-database-hyperscale"></a>O Polybase trabalhará com o Banco de Dados SQL da Hiperescala?
 
-Não. O Polybase não é compatível com o banco de dados SQL do Azure.
+Nº O Polybase não é compatível com o banco de dados SQL do Azure.
 
 ### <a name="does-the-compute-have-support-for-r-and-python"></a>O computador tem suporte para R e python?
 
-Não. R e Python não são suportados no Banco de Dados SQL do Azure.
+Nº R e Python não são suportados no Banco de Dados SQL do Azure.
 
 ### <a name="are-the-compute-nodes-containerized"></a>Os nós de computação são contêinerizados
 
-Não. Seu banco de dados reside em uma VM de computação e não em um contêiner.
+Nº Seu banco de dados reside em uma VM de computação e não em um contêiner.
 
 ## <a name="performance-questions"></a>Perguntas de desempenho
 
 ### <a name="how-much-throughput-can-i-push-on-the-largest-sql-database-hyperscale-compute"></a>Que tamanho de taxa de transferência posso enviar na maior computação em Hiperescala do Banco de Dados SQL
 
-Temos visto 100 MB/s consistente dos dados de alteração (geração de dados de log de transações)
+Vimos um 100 MB/s de dados de alteração consistentes (geração de dados do log de transações)
 
 ### <a name="how-many-iops-do-i-get-on-the-largest-sql-database-hyperscale-compute"></a>Quantas IOPS recebo na maior base de dados da Hiperescala do Banco de Dados SQL
 
-IOPS e latência de e/s irão variar dependendo dos padrões de carga de trabalho.  Se os dados que precisam ser acessados são locais para o cache da computação, ele será os mesmos padrões de e/s do SSD local.   
+O IOPS e a latência de e/s variam dependendo dos padrões de carga de trabalho.  Se os dados que precisam ser acessados forem locais para o cache da computação, serão os mesmos padrões de e/s que o SSD local.   
 
 ### <a name="does-my-throughput-get-affected-by-backups"></a>Meu rendimento é afetado por backups
 
-Não. A computação é desacoplada da camada de armazenamento para evitar impacto na computação.
+Nº A computação é desacoplada da camada de armazenamento para evitar impacto na computação.
 
 ### <a name="does-my-throughput-get-affected-as-i-provision-additional-compute-nodes"></a>Meu rendimento é afetado à medida que provisiono nós de computação adicionais?
 
-Porque o armazenamento é compartilhado e não há nenhuma replicação física direta acontecendo entre nós de computação primários e secundários, tecnicamente, a taxa de transferência no nó primário não será afetada pela adição de nós de escala de leitura. No entanto, podemos limitar a carga de trabalho agressiva contínua para permitir que o log se aplique em nós secundários e servidores de paginação para recuperar o atraso e evitar desempenho de leitura ruim em nós secundários.
+Como o armazenamento é compartilhado e não há nenhuma replicação física direta acontecendo entre nós de computação primários e secundários, tecnicamente, a taxa de transferência no nó primário não será afetada pela adição de nós de escala de leitura. No entanto, podemos limitar a carga de trabalho agressiva contínua para permitir que o log se aplique em nós secundários e servidores de paginação para recuperar o atraso e evitar desempenho de leitura ruim em nós secundários.
 
 ## <a name="scalability-questions"></a>Questões de escalabilidade
 
 ### <a name="how-long-would-it-take-to-scale-up-and-down-a-compute-node"></a>Quanto tempo levaria para aumentar e diminuir um nó de computação
 
-Escalonando a computação para cima ou para baixo deve levar de 5 a 10 minutos, independentemente do tamanho de dados.
+O dimensionamento da computação para cima ou para baixo deve levar de 5-10 minutos, independentemente do tamanho dos dados.
 
 ### <a name="is-my-database-offline-while-the-scaling-updown-operation-is-in-progress"></a>Meu banco de dados está off-line enquanto a operação de aumento/redução está em andamento?
 
-Não. A ampliação e a redução estarão online.
+Nº A ampliação e a redução estarão online.
 
 ### <a name="should-i-expect-connection-drop-when-the-scaling-operations-are-in-progress"></a>Devo esperar queda de conexão quando as operações de dimensionamento estão em andamento
 
@@ -349,15 +348,15 @@ Usuário final. Não é automático.
 
 Sim. O banco de dados de temperatura aumentará automaticamente conforme o cálculo cresce.  
 
-### <a name="can-i-provision-multiple-primary-compute-nodes-such-as-a-multi-master-system-where-multiple-primary-compute-heads-can-drive-a-higher-level-of-concurrency"></a>Posso provisionar vários nós de computação principal como um sistema de vários mestre em que várias cabeças de computação principal podem orientar um nível mais alto de simultaneidade
+### <a name="can-i-provision-multiple-primary-compute-nodes-such-as-a-multi-master-system-where-multiple-primary-compute-heads-can-drive-a-higher-level-of-concurrency"></a>Posso provisionar vários nós de computação primários, como um sistema de vários mestres, em que vários cabeçotes de computação primários podem impulsionar um nível mais alto de simultaneidade
 
-Não. Apenas o nó de computação principal aceita solicitações de leitura / gravação. Os nós de computação secundários aceitam somente solicitações somente leitura.
+Nº Apenas o nó de computação principal aceita solicitações de leitura / gravação. Os nós de computação secundários aceitam somente solicitações somente leitura.
 
 ## <a name="read-scale-questions"></a>Leia as perguntas da escala
 
 ### <a name="how-many-secondary-compute-nodes-can-i-provision"></a>Quantos nós de computação secundária pode provisionar
 
-Por padrão, criamos 2 réplicas para bancos de dados em hiperescala. Se você quiser ajustar o número de réplicas, você pode fazer isso usando [portal do Azure](https://portal.azure.com).
+Criamos 2 réplicas para bancos de dados de hiperescala por padrão. Se você quiser ajustar o número de réplicas, poderá fazer isso usando [portal do Azure](https://portal.azure.com).
 
 ### <a name="how-do-i-connect-to-these-secondary-compute-nodes"></a>Como eu me conecto a esses nós de computação secundários?
 
@@ -365,23 +364,23 @@ Você pode conectar-se a esses nós de computação adicionais somente leitura c
 
 ### <a name="can-i-create-a-dedicated-endpoint-for-the-read-scale-replica"></a>Posso criar um endpoint dedicado para a réplica em escala de leitura
 
-Não. Você pode conectar somente a réplica de escala de leitura, especificando `ApplicationIntent=ReadOnly`.
+Nº Você só pode se conectar à réplica de escala de leitura `ApplicationIntent=ReadOnly`especificando.
 
 ### <a name="does-the-system-do-intelligent-load-balancing-of-the-read-workload"></a>O sistema faz o balanceamento de carga inteligente da carga de trabalho de leitura
 
-Não. A carga de trabalho somente leitura é redirecionada para uma réplica aleatória da escala de leitura.
+Nº A carga de trabalho somente leitura é redirecionada para uma réplica de escala de leitura aleatória.
 
 ### <a name="can-i-scale-updown-the-secondary-compute-nodes-independently-of-the-primary-compute"></a>Posso aumentar ou diminuir os nós de computação secundários independentemente do cálculo principal
 
-Não. Os nós de computação secundário também são usados para alta disponibilidade, para que eles precisem ser a mesma configuração que o primário, no caso de um failover.
+Nº Os nós de computação secundários também são usados para HA, portanto, precisam ser a mesma configuração que o primário, no caso de um failover.
 
 ### <a name="do-i-get-different-temp-db-sizing-for-my-primary-compute-and-my-additional-secondary-compute-nodes"></a>Eu obtenho um tamanho de banco de dados diferente para meu computador principal e meus nós de computação secundários adicionais?
 
-Não. Seu `tempdb` é configurado com base em como o provisionamento de tamanho de computação, os nós de computação secundária são do mesmo tamanho que a computação primário.
+Nº Seu `tempdb` é configurado com base no provisionamento de tamanho de computação, seus nós de computação secundários têm o mesmo tamanho que a computação primária.
 
 ### <a name="can-i-add-indexes-and-views-on-my-secondary-compute-nodes"></a>Posso adicionar índices e exibições nos meus nós de computação secundários?
 
-Não. Os bancos de dados de Hiperescala têm armazenamento compartilhado, o que significa que todos os nós de computação veem as mesmas tabelas, índices e visualizações. Se você quiser índices adicionais otimizados para leituras no secundário - você deve adicioná-los no primeiro primário.
+Nº Os bancos de dados de Hiperescala têm armazenamento compartilhado, o que significa que todos os nós de computação veem as mesmas tabelas, índices e visualizações. Se você quiser índices adicionais otimizados para leituras no secundário - você deve adicioná-los no primeiro primário.
 
 ### <a name="how-much-delay-is-there-going-to-be-between-the-primary-and-secondary-compute-node"></a>Quanto atraso haverá entre o nó de computação principal e secundário
 
@@ -389,4 +388,4 @@ A partir do momento em que uma transação é confirmada no primário, dependend
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para obter mais informações sobre a camada de serviço em hiperescala, consulte [camada de serviço em hiperescala](sql-database-service-tier-hyperscale.md).
+Para obter mais informações sobre a camada de serviço de hiperescala, consulte [camada de serviço](sql-database-service-tier-hyperscale.md)de hiperescala.

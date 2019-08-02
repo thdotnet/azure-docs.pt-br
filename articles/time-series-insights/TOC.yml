@@ -17,9 +17,9 @@
           href: time-series-insights-update-quickstart.md
 - name: Tutoriais
   items:
-    - name: Explorar a biblioteca de cliente Time Series Insights JavaScript
+    - name: Biblioteca de clientes JavaScript do Time Series Insights
       href: tutorial-explore-js-client-lib.md
-    - name: Criar um aplicativo Web de página única do Azure Time Series Insights
+    - name: criar um aplicativo Web de página única
       href: tutorial-create-tsi-sample-spa.md
     - name: Azure Time Series Insights GA
       items:

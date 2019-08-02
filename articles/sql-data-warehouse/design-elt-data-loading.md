@@ -7,15 +7,15 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: load-data
-ms.date: 05/10/2019
+ms.date: 07/28/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: fa688f40f8eb968f2c388601b387e4f584951a91
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: c90deefba75cd8bbeda126c9da8a05e1069831d4
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67595600"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68597474"
 ---
 # <a name="designing-a-polybase-data-loading-strategy-for-azure-sql-data-warehouse"></a>Criando um estratégia de carregamento de dados PolyBase para o SQL Data Warehouse do Azure
 
@@ -49,7 +49,7 @@ Obter dados de fora do seu sistema de origem depende da localização de armazen
 
 ### <a name="polybase-external-file-formats"></a>Formatos de arquivos externos do PolyBase
 
-O PolyBase carrega dados de arquivos de texto delimitados e codificados de UTF-8 e UTF-16. Além dos arquivos de texto delimitados, ele carrega os formatos de arquivo do Hadoop, o arquivo RC, ORC e Parquet. O PolyBase também pode carregar dados de arquivos compactados Gzip e Snappy. Atualmente, o PolyBase não suporta ASCII estendido, formato de largura fixa, e formatos aninhados, como XML, JSON e WinZip. Se você estiver exportando do SQL Server, poderá usar a [ferramenta de linha de comando bcp](/sql/tools/bcp-utility) para exportar os dados para arquivos de texto delimitados. O Parquet para mapeamento de tipo de dados do SQL DW é o seguinte:
+O PolyBase carrega dados de arquivos de texto delimitados e codificados de UTF-8 e UTF-16. Além dos arquivos de texto delimitados, ele carrega os formatos de arquivo do Hadoop, o arquivo RC, ORC e Parquet. O PolyBase também pode carregar dados de arquivos compactados Gzip e Snappy. Atualmente, o PolyBase não suporta ASCII estendido, formato de largura fixa, e formatos aninhados, como XML, JSON e WinZip. Se você estiver exportando do SQL Server, poderá usar a [ferramenta de linha de comando bcp](/sql/tools/bcp-utility) para exportar os dados para arquivos de texto delimitados. O mapeamento de tipo de dados parquet para SQL DW é o seguinte:
 
 | **Tipo de dados parquet** |                      **Tipo de dados SQL**                       |
 | :-------------------: | :----------------------------------------------------------: |
@@ -58,10 +58,10 @@ O PolyBase carrega dados de arquivos de texto delimitados e codificados de UTF-8
 |          int          |                             int                              |
 |        bigint         |                            bigint                            |
 |        boolean        |                             bit                              |
-|        double         |                            float                             |
+|        duplo         |                            float                             |
 |         float         |                             real                             |
-|        double         |                            money                             |
-|        double         |                          smallmoney                          |
+|        duplo         |                            money                             |
+|        duplo         |                          smallmoney                          |
 |        cadeia de caracteres         |                            nchar                             |
 |        cadeia de caracteres         |                           nvarchar                           |
 |        cadeia de caracteres         |                             char                             |
@@ -73,8 +73,8 @@ O PolyBase carrega dados de arquivos de texto delimitados e codificados de UTF-8
 |       timestamp       |                          datetime2                           |
 |       timestamp       |                           datetime                           |
 |       timestamp       |                             time                             |
-|       date        | 1) carga como int e convertido em data </br> 2) [usar o conector do SQL DW do Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/databricks-extract-load-sql-data-warehouse#load-data-into-azure-sql-data-warehouse) com </br> spark.conf.set( "spark.sql.parquet.writeLegacyFormat", "true" ) </br> (**atualizar em breve**) |
-|        decimal        | [Usar o conector do SQL DW do Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/databricks-extract-load-sql-data-warehouse#load-data-into-azure-sql-data-warehouse) com </br> spark.conf.set( "spark.sql.parquet.writeLegacyFormat", "true" ) </br> (**atualizar em breve**) |
+|       date            |                             date                             |
+|        decimal        |                            decimal                           |
 
 ## <a name="2-land-the-data-into-azure-blob-storage-or-azure-data-lake-store"></a>2. Descarregar os dados no Armazenamento de Blobs do Azure ou no Azure Data Lake Storage
 
@@ -123,7 +123,7 @@ Para carregar dados com o PolyBase, é possível usar qualquer uma destas opçõ
 - O [PolyBase com o T-SQL](load-data-from-azure-blob-storage-using-polybase.md) funciona bem quando os seus dados estiverem no armazenamento de Blobs do Azure ou no Azure Data Lake Store. Ele oferece mais controle sobre o processo de carregamento, mas também exige que você defina objetos de dados externos. Os outros métodos definem esses objetos em segundo plano, como mapear as tabelas de origem para as tabelas de destino.  Para coordenar as cargas de T-SQL, você pode usar o Azure Data Factory, SSIS ou as funções do Azure. 
 - O [PolyBase com o SSIS](/sql/integration-services/load-data-to-sql-data-warehouse) funciona bem quando os seus dados de origem estiverem no SQL Server, no SQL Server local ou na nuvem. O SSIS define a origem para mapeamentos de tabela de destino e também coordena a carga. Se você já tiver pacotes SSIS, você pode modificar os pacotes para trabalhar com o novo destino do data warehouse. 
 - O [PolyBase com o Azure Data Factory (ADF)](sql-data-warehouse-load-with-data-factory.md) é outra ferramenta de orquestração.  Ele define um pipeline e agenda de trabalhos. 
-- [O PolyBase com o Azure DataBricks](../azure-databricks/databricks-extract-load-sql-data-warehouse.md) transfere os dados de uma tabela do SQL Data Warehouse para um dataframe Databricks e/ou grava dados de um dataframe Databricks em uma tabela do SQL Data Warehouse usando PolyBase.
+- O [polybase com o Azure](../azure-databricks/databricks-extract-load-sql-data-warehouse.md) databricks transfere dados de uma tabela SQL data warehouse para um Dataframe do databricks e/ou grava dados de um dataframe do databricks em uma tabela SQL data warehouse usando o polybase.
 
 ### <a name="non-polybase-loading-options"></a>Opções de carregamento que não sejam PolyBase
 

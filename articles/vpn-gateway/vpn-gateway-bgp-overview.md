@@ -6,14 +6,14 @@ author: yushwang
 manager: rossort
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 01/12/2017
+ms.date: 07/25/2019
 ms.author: yushwang
-ms.openlocfilehash: 91e9fe1eb6b3df0b64d05f2b1e300403a9e01db9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e85eb756e416f1170a0cb2b19ab68888b5a9422f
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60762248"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68516433"
 ---
 # <a name="about-bgp-with-azure-vpn-gateway"></a>Sobre o BGP com o Gateway de VPN do Azure
 Este artigo fornece uma visão geral do suporte a BGP (Border Gateway Protocol) no Gateway de VPN do Azure.

@@ -12,20 +12,24 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 01/11/2019
+ms.date: 07/25/2019
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7c6f0a6371b38f0271237db0f7d80b831ecc145c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ccdd234f951327aeb5baa6aabcac4314b9de7b34
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62127133"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68517101"
 ---
 # <a name="deploy-storsimple-virtual-array---prepare-the-azure-portal"></a>Implantar o StorSimple Virtual Array – preparar o portal do Azure
 
 ![](./media/storsimple-virtual-array-deploy1-portal-prep/getstarted4.png)
+
+
 ## <a name="overview"></a>Visão geral
+
+[!INCLUDE [storsimple-virtual-array-eol-banner](../../includes/storsimple-virtual-array-eol-banner.md)]
 
 É o primeiro artigo da série de tutoriais de implantação necessários para implantar completamente sua matriz virtual como um servidor de arquivos ou um servidor iSCSI usando o modelo do Resource Manager. Este artigo descreve a preparação necessária para criar e configurar o serviço Gerenciador de Dispositivos do StorSimple antes do provisionamento de uma matriz virtual. Também tem links para uma lista de verificação da configuração da implantação e para pré-requisitos de configuração.
 
@@ -152,7 +156,7 @@ Execute as etapas a seguir no [Portal do Azure](https://ms.portal.azure.com/) na
 
 1. Navegue até seu serviço Gerenciador de Dispositivos, selecione e clique duas vezes nele. Isso abre a folha **Visão geral**.
 2. Selecione **Credenciais da conta de armazenamento** na seção **Configuração**.
-3. Clique em **Adicionar**.
+3. Clique em **Adicionar** .
 4. Na folha **Adicionar uma conta de armazenamento**, faça o seguinte:
    
    1. Para **Assinatura**, selecione **Atual**.
@@ -161,7 +165,7 @@ Execute as etapas a seguir no [Portal do Azure](https://ms.portal.azure.com/) na
    
    3. Selecione **Habilitar** para criar um canal seguro para comunicação de rede entre o dispositivo StorSimple e a nuvem. Selecione **Desabilitar** somente se você estiver operando em uma nuvem privada.
    
-   4. Clique em **Adicionar**. Você será notificado depois que a conta de armazenamento tiver sido criada com êxito.<br></br>
+   4. Clique em **Adicionar** . Você será notificado depois que a conta de armazenamento tiver sido criada com êxito.<br></br>
    
       ![Adicionar uma credencial de conta de armazenamento existente](./media/storsimple-virtual-array-manage-storage-accounts/ova-add-storageacct.png)
 
