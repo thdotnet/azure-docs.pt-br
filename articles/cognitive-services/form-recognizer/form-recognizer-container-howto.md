@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: d03abee7c7a4adb65e1d6146501ee5b7d9e1534c
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 3db63be8856b5bd57323ecd0be767d09032404e9
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68348667"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68741879"
 ---
 # <a name="install-and-run-form-recognizer-containers"></a>Instalar e executar contêineres do Reconhecimento de Formulários
 
@@ -32,7 +32,7 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 Antes de usar contêineres de Reconhecimento de Formulários, é necessário atender aos seguintes pré-requisitos:
 
-|Obrigatório|Finalidade|
+|Necessário|Finalidade|
 |--|--|
 |Mecanismo Docker| É necessário ter o Mecanismo Docker instalado em um [computador host](#the-host-computer). O Docker fornece pacotes que configuram o ambiente do Docker no [macOS](https://docs.docker.com/docker-for-mac/), no [Windows](https://docs.docker.com/docker-for-windows/) e no [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Para instruções sobre conceitos básicos do Docker e de contêiner, consulte a [visão geral do Docker](https://docs.docker.com/engine/docker-overview/).<br><br> O Docker deve ser configurado para permitir que os contêineres conectem-se e enviem dados de cobrança para o Azure. <br><br> No Windows, o Docker também deve ser configurado para dar suporte a contêineres do Linux.<br><br>|
 |Familiaridade com o Docker | É necessário ter uma compreensão básica de conceitos do Docker, como Registros, repositórios, contêineres e imagens de contêiner, bem como conhecimento dos comandos básicos do `docker`.|
@@ -97,14 +97,14 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-form-recogn
 
 Depois que o contêiner estiver no [computador host](#the-host-computer), use o processo a seguir para trabalhar com o contêiner.
 
-1. [Execute o contêiner](#run-the-container-by-using-the-docker-run-command) com as configurações de cobrança necessárias, mas não utilizadas. Há outros [exemplos](form-recognizer-container-configuration.md#example-docker-run-commands) do comando `docker run` disponíveis.
+1. [Execute o contêiner](#run-the-container-by-using-the-docker-run-command) com as configurações de cobrança necessárias. Há outros [exemplos](form-recognizer-container-configuration.md#example-docker-run-commands) do comando `docker run` disponíveis.
 1. [Consulte o ponto de extremidade de previsão do contêiner](#query-the-containers-prediction-endpoint).
 
 ## <a name="run-the-container-by-using-the-docker-run-command"></a>Execute o contêiner usando o comando docker run
 
 Use o comando [docker run](https://docs.docker.com/engine/reference/commandline/run/) para executar qualquer um dos três contêineres. O comando usa os seguintes parâmetros:
 
-| Placeholder | Valor |
+| Espaço reservado | Valor |
 |-------------|-------|
 |{FORM_RECOGNIZER_API_KEY} | Essa chave é usada para iniciar o contêiner. Ela está disponível na página **Chaves de Reconhecimento de Formulários** do portal do Azure.  |
 |{FORM_RECOGNIZER_ENDPOINT_URI} | O valor de URI do ponto de extremidade de cobrança está disponível na página **Visão Geral do Reconhecimento de Formulários** do portal do Azure.|

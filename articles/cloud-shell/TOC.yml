@@ -7,9 +7,7 @@
     - name: PowerShell – Início Rápido
       href: quickstart-powershell.md
 - name: Ferramentas e recursos
-  items:
-    - name: Ferramentas e recursos
-      href: features.md
+  href: features.md
 - name: Tutoriais
   items:
     - name: Ansible
