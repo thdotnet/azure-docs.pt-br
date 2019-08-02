@@ -1,20 +1,18 @@
 ---
 title: Escalabilidade e metas de desempenho para discos de VM no Windows - Microsoft Azure | Microsoft Docs
 description: Saiba mais sobre escalabilidade e metas de desempenho para discos de máquina virtual anexados a VMs executando Linux.
-services: virtual-machines-linux,storage
 author: roygara
 ms.author: rogarana
 ms.date: 11/15/2017
-ms.topic: article
+ms.topic: conceptual
 ms.service: virtual-machines-linux
-ms.tgt_pltfrm: linux
 ms.subservice: disks
-ms.openlocfilehash: 39e0a36b50a9e222e6016140967336ccda167514
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5c1bdecdfc755db530be71a09b18542ade4519c5
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60771627"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68695897"
 ---
 # <a name="scalability-and-performance-targets-for-vm-disks-on-linux"></a>Escalabilidade e metas de desempenho para discos de máquina virtual no Linux
 

@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 33a7b27d065fc0383e4693053f7bfb6d56e2d33b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ae82c0e72287ee4c89cb3fb2294bf4bd79aec8c3
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61480014"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68598635"
 ---
 # <a name="high-frequency-trading-simulation-with-stream-analytics"></a>Simulação de transação de alta frequência com o Stream Analytics
 A combinação da linguagem SQL e das funções UDFs (funções definidas pelo usuário) e UDAs (agregações definidas pelo usuário) de JavaScript no Azure Stream Analytics permite aos usuários a execução de análises avançadas. As análises avançadas podem incluir treinamento de aprendizado de máquina online e pontuação, bem como a simulação de processo com estado. Este artigo descreve como executar regressão linear em um trabalho do Azure Stream Analytics que faz classificação e pontuação contínuas em um cenário de transação de alta frequência.
@@ -65,7 +65,7 @@ Aqui estão alguns exemplos de eventos gerados:
 >O carimbo de data/hora do evento é **lastUpdated**, em época.
 
 ### <a name="predictive-model-for-high-frequency-trading"></a>Modelo preditivo para a transação de alta frequência
-Para fins de demonstração, usamos um modelo linear descrito por Darryl Shen [neste documento](http://eprints.maths.ox.ac.uk/1895/1/Darryl%20Shen%20%28for%20archive%29.pdf).
+Para fins de demonstração, usamos um modelo linear descrito por Darryl Shen [neste documento](https://docplayer.net/23038840-Order-imbalance-based-strategy-in-high-frequency-trading.html).
 
 Desequilíbrio de ordem de volume (VOI) é uma função do preço de compra e venda atual e do volume e preço de compra e venda do último tique. O papel identifica a correlação entre VOI e a movimentação de preços futura. Ele cria um modelo linear entre os últimos 5 valores de VOI, e a mudança de preço nos próximos 10 tiques. O modelo é treinado usado os dados do dia anterior com regressão linear. 
 

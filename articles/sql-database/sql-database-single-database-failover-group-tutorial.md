@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: sstein, carlrab
-manager: jroth
 ms.date: 06/19/2019
-ms.openlocfilehash: 6125fd087d40f9ac6ae24d9200fc0cd1e7843f82
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: d11dd72c65ea32fb5a262f325bdcad0b5a8ab863
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68444975"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566657"
 ---
 # <a name="tutorial-add-an-azure-sql-database-single-database-to-a-failover-group"></a>Tutorial: Adicionar um banco de dados SQL do Azure para um grupo de failover
 
@@ -43,7 +42,7 @@ Para concluir o tutorial, verifique se você tem os seguintes itens:
 - [PowerShell do Azure](/powershell/azureps-cmdlets-docs)
 
 
-# <a name="az-clitabbash"></a>[AZ CLI](#tab/bash)
+# <a name="az-clitabbash"></a>[CLI do Azure](#tab/bash)
 Para concluir o tutorial, verifique se você tem os seguintes itens:
 
 - Uma assinatura do Azure. [Crie uma conta gratuita](https://azure.microsoft.com/free/) se você ainda não tiver uma.
@@ -147,7 +146,7 @@ Crie seu grupo de failover e adicione seu banco de dados individual a ele usando
    Write-host "Successfully added the database to the failover group..." 
    ```
 
-# <a name="az-clitabbash"></a>[AZ CLI](#tab/bash)
+# <a name="az-clitabbash"></a>[CLI do Azure](#tab/bash)
 Crie seu grupo de failover e adicione seu banco de dados individual a ele usando AZ CLI. 
 
    > [!NOTE]
@@ -263,7 +262,7 @@ Reverta o grupo de failover de volta para o servidor primário:
    Write-host "Failed failover group to successfully to back to" $serverName
    ```
 
-# <a name="az-clitabbash"></a>[AZ CLI](#tab/bash)
+# <a name="az-clitabbash"></a>[CLI do Azure](#tab/bash)
 Teste o failover usando o AZ CLI. 
 
 
@@ -342,7 +341,7 @@ Exclua o grupo de recursos usando o PowerShell.
    Write-host "Resource group removed =" $resourceGroupName
    ```
 
-# <a name="az-clitabbash"></a>[AZ CLI](#tab/bash)
+# <a name="az-clitabbash"></a>[CLI do Azure](#tab/bash)
 Exclua o grupo de recursos usando AZ CLI. 
 
 
@@ -366,7 +365,7 @@ Exclua o grupo de recursos usando AZ CLI.
 
 [!code-powershell-interactive[main](../../powershell_scripts/sql-database/failover-groups/add-single-db-to-failover-group-az-ps.ps1 "Add single database to a failover group")]
 
-# <a name="az-clitabbash"></a>[AZ CLI](#tab/bash)
+# <a name="az-clitabbash"></a>[CLI do Azure](#tab/bash)
 
 [!code-azurecli-interactive[main](../../cli_scripts/sql-database/failover-groups/add-single-db-to-failover-group-az-cli.sh "Create SQL Database")]
 

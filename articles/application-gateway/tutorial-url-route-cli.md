@@ -4,16 +4,16 @@ description: Neste artigo, aprenda a rotear o tráfego da Web baseado na URL par
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: tutorial
-ms.date: 5/20/2019
+ms.topic: article
+ms.date: 08/01/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: c0954d1010a6cf5ef6f8edab1470588df9fba559
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
-ms.translationtype: HT
+ms.openlocfilehash: b6bc0b00579bdef0a358f756b8cf2b6034aca017
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65955580"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68688189"
 ---
 # <a name="route-web-traffic-based-on-the-url-using-the-azure-cli"></a>Rotear o tráfego da Web baseado na URL usando a CLI do Azure
 
@@ -70,12 +70,14 @@ az network vnet subnet create \
 
 az network public-ip create \
   --resource-group myResourceGroupAG \
-  --name myAGPublicIPAddress
+  --name myAGPublicIPAddress \
+  --allocation-method Static \
+  --sku Standard
 ```
 
 ## <a name="create-the-app-gateway-with-a-url-map"></a>Criar o gateway de aplicativo com um mapa de URL
 
-Use `az network application-gateway create` para criar um gateway de aplicativo denominado *myAppGateway*. Quando você cria um gateway de aplicativo usando a CLI do Azure, você pode especificar informações de configuração, como configurações de HTTP, sku e capacidade. O gateway de aplicativo é atribuído a *myAGSubnet* e *myAGPublicIPAddress* que você criou anteriormente.
+Use `az network application-gateway create` para criar um gateway de aplicativo denominado *myAppGateway*. Quando você cria um gateway de aplicativo usando a CLI do Azure, você pode especificar informações de configuração, como configurações de HTTP, sku e capacidade. O gateway de aplicativo é atribuído a *myAGSubnet* e *myAGPublicIPAddress*.
 
 ```azurecli-interactive
 az network application-gateway create \
@@ -85,7 +87,7 @@ az network application-gateway create \
   --vnet-name myVNet \
   --subnet myAGsubnet \
   --capacity 2 \
-  --sku Standard_Medium \
+  --sku Standard_v2 \
   --http-settings-cookie-based-affinity Disabled \
   --frontend-port 80 \
   --http-settings-port 80 \
@@ -96,7 +98,7 @@ az network application-gateway create \
  Pode levar vários minutos para criar o gateway de aplicativo. Depois de criar o gateway de aplicativo, você pode ver estes novos recursos:
 
 
-|Recurso  |DESCRIÇÃO  |
+|Recurso  |Descrição  |
 |---------|---------|
 |appGatewayBackendPool     |Um gateway de aplicativo deve ter pelo menos um pool de endereços de back-end.|
 |appGatewayBackendHttpSettings     |Especifica que a porta 80 e um protocolo HTTP são usados para comunicação.|
@@ -180,7 +182,7 @@ az network application-gateway rule create \
   --address-pool appGatewayBackendPool
 ```
 
-## <a name="create-vm-scale-sets"></a>Criar conjuntos de dimensionamento de VMs
+## <a name="create-virtual-machine-scale-sets"></a>Criar conjuntos de dimensionamento de máquinas virtuais
 
 Neste artigo, você cria três conjuntos de dimensionamento de máquinas virtuais que oferecem suporte a três pools de back-end que você criou. Os conjuntos de dimensionamento que você cria são denominados *myvmss1*, *myvmss2*, e *myvmss3*. Cada conjunto de dimensionamento contém duas instâncias de máquina virtual nas quais você instala o NGINX.
 
@@ -246,11 +248,11 @@ az network public-ip show \
 
 ![Testar a URL de base no gateway de aplicativo](./media/tutorial-url-route-cli/application-gateway-nginx.png)
 
-Altere a URL para http://&lt;ip-address&gt;:8080/images/test.html, substituindo o endereço IP por &lt;ip-address&gt;, e você deverá ver algo semelhante ao exemplo a seguir:
+Altere a URL para http://&lt;IP-address&gt;: 8080/images/test.html, substituindo seu endereço IP &lt;por IP-&gt;address e você verá algo semelhante ao exemplo a seguir:
 
 ![Testar a URL de imagens no gateway de aplicativo](./media/tutorial-url-route-cli/application-gateway-nginx-images.png)
 
-Altere a URL para http://&lt;ip-address&gt;:8080/video/test.html, substituindo o endereço IP por &lt;ip-address&gt;, e você deverá ver algo semelhante ao exemplo a seguir.
+Altere a URL para http://&lt;IP-address&gt;: 8080/Video/Test.html, substituindo seu endereço IP &lt;por IP-&gt;address e você verá algo parecido com o exemplo a seguir.
 
 ![Testar a URL de vídeo no gateway de aplicativo](./media/tutorial-url-route-cli/application-gateway-nginx-video.png)
 
@@ -259,9 +261,9 @@ Altere a URL para http://&lt;ip-address&gt;:8080/video/test.html, substituindo o
 Quando não forem mais necessários, remova o grupo de recursos, o gateway de aplicativo e todos os recursos relacionados.
 
 ```azurecli-interactive
-az group delete --name myResourceGroupAG --location eastus
+az group delete --name myResourceGroupAG
 ```
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Criar um gateway de aplicativo com o redirecionamento baseado em caminhos de URL](./tutorial-url-redirect-cli.md)
+[Criar um gateway de aplicativo com o redirecionamento baseado em caminhos de URL](./tutorial-url-redirect-cli.md)

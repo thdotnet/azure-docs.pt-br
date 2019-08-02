@@ -8,22 +8,25 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 07/01/2019
 ms.author: danlep
-ms.openlocfilehash: 2030496548df312b4f4cfab60c216d5f332c7ac2
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 3050a52da4d39657bd7b2fb38e235b9bd418faf4
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68310402"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619891"
 ---
 # <a name="restrict-access-to-an-azure-container-registry-using-an-azure-virtual-network-or-firewall-rules"></a>Restringir o acesso a um registro de contêiner do Azure usando uma rede virtual do Azure ou regras de firewall
 
 A [rede virtual do Azure](../virtual-network/virtual-networks-overview.md) fornece uma rede segura e privada para seus recursos do Azure e locais. Ao limitar o acesso ao seu registro de contêiner do Azure privado de uma rede virtual do Azure, você garante que somente os recursos na rede virtual acessem o registro. Para cenários entre instalações, você também pode configurar regras de firewall para permitir o acesso ao registro somente de endereços IP específicos.
 
-Este artigo mostra dois cenários para criar regras de acesso à rede para limitar o acesso a um registro de contêiner do Azure: de uma máquina virtual implantada em uma rede virtual ou do endereço IP público de uma VM.
+Este artigo mostra dois cenários para configurar regras de acesso à rede de entrada em um registro de contêiner: de uma máquina virtual implantada em uma rede virtual ou do endereço IP público de uma VM.
 
 > [!IMPORTANT]
 > Esse recurso está na versão prévia no momento; algumas [limitações se aplicam](#preview-limitations). As versões prévias são disponibilizadas com a condição de que você concorde com os [termos de uso complementares][terms-of-use]. Alguns aspectos desse recurso podem alterar antes da GA (disponibilidade geral).
 >
+
+Se, em vez disso, você precisar configurar as regras de acesso para que os recursos acessem um registro de contêiner por trás de um firewall, consulte [configurar regras para acessar um registro de contêiner do Azure atrás de um firewall](container-registry-firewall-access-rules.md).
+
 
 ## <a name="preview-limitations"></a>Limitações de visualização
 
@@ -39,7 +42,7 @@ Este artigo mostra dois cenários para criar regras de acesso à rede para limit
 
 * Para usar as etapas de CLI do Azure neste artigo, CLI do Azure versão 2.0.58 ou posterior é necessária. Se você precisa instalar ou atualizar, consulte [Instalar a CLI do Azure][azure-cli].
 
-* Se você ainda não tiver um registro de contêiner, crie um (SKU Premium necessário) e envie por push uma imagem `hello-world` de exemplo, como do Hub do Docker. Por exemplo, use o [portal do Azure][quickstart-portal] or the [Azure CLI][quickstart-cli] para criar um registro. 
+* Se você ainda não tiver um registro de contêiner, crie um (SKU Premium necessário) e envie por push uma imagem `hello-world` de exemplo, como do Hub do Docker. Por exemplo, use o [portal do Azure][quickstart-portal] ou o [CLI do Azure][quickstart-cli] para criar um registro. 
 
 * Se você quiser restringir o acesso ao registro usando uma rede virtual em uma assinatura do Azure diferente, será necessário registrar o provedor de recursos para o registro de contêiner do Azure nessa assinatura. Por exemplo:
 
@@ -61,7 +64,7 @@ Para permitir o acesso de uma sub-rede em uma rede virtual, você precisa adicio
 
 Serviços de vários locatários, como o registro de contêiner do Azure, usam um único conjunto de endereços IP para todos os clientes. Um ponto de extremidade de serviço atribui um ponto de extremidade para acessar um registro. Esse ponto de extremidade fornece ao tráfego uma rota ideal para o recurso na rede de backbone do Azure. As identidades de rede virtual e a sub-rede também são transmitidas com cada solicitação.
 
-### <a name="firewall-rules"></a>Regras de firewall
+### <a name="firewall-rules"></a>Regras de Firewall
 
 Para regras de rede IP, forneça intervalos de endereços de Internet permitidos usando a notação CIDR, como *16.17.18.0/24* , ou um endereço IP individual, como *16.17.18.19*. As regras de rede IP só são permitidas para endereços IP *públicos* da Internet. Os intervalos de endereços IP reservados para redes privadas (conforme definido no RFC 1918) não são permitidos em regras de IP.
 
@@ -69,7 +72,7 @@ Para regras de rede IP, forneça intervalos de endereços de Internet permitidos
 
 Para este artigo, use uma VM Ubuntu habilitada para Docker para acessar um registro de contêiner do Azure. Para usar Azure Active Directory autenticação para o registro, instale também o [CLI do Azure][azure-cli] na VM. Se você já tiver uma máquina virtual do Azure, ignore esta etapa de criação.
 
-Você pode usar o mesmo grupo de recursos para sua máquina virtual e o registro de contêiner. Essa configuração simplifica a limpeza no final, mas não é necessária. Se você optar por criar um grupo de recursos separado para a máquina virtual e a rede virtual, execute [AZ Group Create][az-group-create]. O exemplo a seguir cria um grupo de  recursos chamado MyResource Group no local *westcentralus* :
+Você pode usar o mesmo grupo de recursos para sua máquina virtual e o registro de contêiner. Essa configuração simplifica a limpeza no final, mas não é necessária. Se você optar por criar um grupo de recursos separado para a máquina virtual e a rede virtual, execute [AZ Group Create][az-group-create]. O exemplo a seguir cria um grupo de recursos chamado MyResource Group no local *westcentralus* :
 
 ```azurecli
 az group create --name myResourceGroup --location westus
@@ -352,7 +355,7 @@ az acr network-rule remove \
   --ip-address 23.45.1.0/24
 ```
 
-#### <a name="allow-access"></a>Permitir o acesso
+#### <a name="allow-access"></a>Permitir acesso
 
 Substitua o nome do registro no seguinte comando [AZ ACR Update][az-acr-update] :
 ```azurecli

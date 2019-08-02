@@ -1,20 +1,18 @@
 ---
 title: Aplicação de parâmetros de comparação a seu aplicativo no Armazenamento em Disco do Azure - discos gerenciados
 description: Saiba mais sobre o processo de aplicação de parâmetros de comparação em seu aplicativo no Azure.
-services: virtual-machines-windows,storage
 author: roygara
 ms.author: rogarana
 ms.date: 01/11/2019
-ms.topic: article
+ms.topic: conceptual
 ms.service: virtual-machines-windows
-ms.tgt_pltfrm: windows
 ms.subservice: disks
-ms.openlocfilehash: 8db1fb3c9b3ed551cd668cf14105eb8bfb486251
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 600b456cd77d866f1365b7dadfa9ea2473db0fa4
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60679714"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698767"
 ---
 # <a name="benchmarking-a-disk"></a>Aplicação de parâmetros de comparação em um disco
 

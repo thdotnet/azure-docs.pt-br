@@ -1,18 +1,19 @@
 ---
 title: Modelo de dados de logs de Azure Monitor para o backup do Azure
 description: Este artigo fala sobre detalhes do modelo de dados de logs de Azure Monitor para dados de backup do Azure.
-author: adigan
-manager: shivamg
+ms.reviewer: adigan
+author: dcurwin
+manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 02/26/2019
-ms.author: adigan
-ms.openlocfilehash: 6563eefffee0ed8d9ce94c3e0a1e24b0d32314f0
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.author: dacurwin
+ms.openlocfilehash: 878e4e7508d82f78e82f1fd8bda69079d9468e9f
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68466152"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68689235"
 ---
 # <a name="log-analytics-data-model-for-azure-backup-data"></a>Modelo de dados do Log Analytics para dados de Backup do Azure
 
@@ -329,12 +330,12 @@ Esta tabela fornece campos básicos sobre servidores de gerenciamento de backup.
 
 |Campo  |Tipo de dados  | Descrição  |
 |---------|---------|----------|
-|BackupManagmentServerName_s     |Texto         |Nome do servidor de gerenciamento de backup        |
+|BackupManagementServerName_s     |Texto         |Nome do servidor de gerenciamento de backup        |
 |AzureBackupAgentVersion_s     |Texto         |Versão do agente de backup do Azure no servidor de gerenciamento de backup          |
-|BackupManagmentServerVersion_s     |Texto         |Versão do servidor de gerenciamento de backup|
-|BackupManagmentServerOSVersion_s     |Texto            |Versão do so do servidor de gerenciamento de backup|
+|BackupManagementServerVersion_s     |Texto         |Versão do servidor de gerenciamento de backup|
+|BackupManagementServerOSVersion_s     |Texto            |Versão do so do servidor de gerenciamento de backup|
 |BackupManagementServerType_s     |Texto         |Tipo de servidor de gerenciamento de backup, como MABS, SC DPM|
-|BackupManagmentServerUniqueId_s     |Texto         |Campo para identificar exclusivamente o servidor de gerenciamento de backup       |
+|BackupManagementServerUniqueId_s     |Texto         |Campo para identificar exclusivamente o servidor de gerenciamento de backup       |
 
 ### <a name="preferredworkloadonvolume"></a>PreferredWorkloadOnVolume
 

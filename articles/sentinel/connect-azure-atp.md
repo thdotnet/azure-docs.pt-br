@@ -1,6 +1,6 @@
 ---
-title: Conectar-se a dados do Azure ATP para versão prévia do Azure Sentinel | Microsoft Docs
-description: Saiba como se conectar a dados do Azure ATP ao Azure Sentinel.
+title: Conectar dados do Azure ATP à visualização do Azure Sentinel | Microsoft Docs
+description: Saiba como conectar dados do Azure ATP ao Azure Sentinel.
 services: sentinel
 documentationcenter: na
 author: rkarlin
@@ -13,44 +13,45 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/07/2019
+ms.date: 07/28/2019
 ms.author: rkarlin
-ms.openlocfilehash: 77f745f92133f4f43cd2a65f2b69ded1eff9e8ed
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 6f41a5704c783ba8aeab7bc2e82ef731c6a257ac
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67620622"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599145"
 ---
-# <a name="connect-data-from-azure-advanced-threat-protection-atp"></a>Conecte dados do Azure Advanced Threat ATP (proteção)
+# <a name="connect-data-from-azure-advanced-threat-protection-atp"></a>Conectar dados da ATP (proteção avançada contra ameaças) do Azure
 
 > [!IMPORTANT]
 > No momento, o Azure Sentinel está em versão prévia pública.
 > Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos. Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 
-É possível transmitir logs do [Azure Advanced Threat Protection](https://docs.microsoft.com/azure-advanced-threat-protection/what-is-atp) em Azure Sentinel com um único clique.
+Você pode transmitir logs da [proteção avançada contra ameaças do Azure](https://docs.microsoft.com/azure-advanced-threat-protection/what-is-atp) para o Azure Sentinel com um único clique.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-- Usuário com permissões de administrador de segurança ou de administrador global
-- Você deve ser um cliente de visualização privada do Azure ATP
+- Usuário com permissões de administrador global ou administrador de segurança
+- Você deve ser um cliente de visualização do Azure ATP
 
-## <a name="connect-to-azure-atp"></a>Conectar-se para o Azure ATP
+## <a name="connect-to-azure-atp"></a>Conectar-se ao Azure ATP
 
-Verifique se é a versão de visualização privada do Azure ATP [habilitado na sua rede](https://docs.microsoft.com/azure-advanced-threat-protection/install-atp-step1).
-Se o Azure ATP é implantado e ingestão de seus dados, os alertas suspeitos podem facilmente ser transmitidos em Sentinel do Azure. Pode levar até 24 horas para os alertas iniciar o streaming em Sentinel do Azure.
+Verifique se a versão de visualização do Azure ATP está [habilitada em sua rede](https://docs.microsoft.com/azure-advanced-threat-protection/install-atp-step1).
+Se o Azure ATP for implantado e ingerir seus dados, os alertas suspeitos poderão ser facilmente transmitidos para o Azure Sentinel. Pode levar até 24 horas para que os alertas comecem a transmitir para o Azure Sentinel.
 
 
+1. Para conectar o Azure ATP ao Azure Sentinel, você deve primeiro habilitar a integração entre o Azure ATP e o Microsoft Cloud App Security. Para obter informações sobre como fazer isso, consulte [integração da proteção avançada contra ameaças do Azure](https://docs.microsoft.com/cloud-app-security/aatp-integration).
 
-1. No Azure Sentinel, selecione **conectores de dados** e, em seguida, clique no **do Azure ATP** lado a lado.
+1. No Azure Sentinel, selecione **conectores de dados** e clique no bloco **do Azure ATP** .
 
 2. Clique em **Conectar**.
 
-6. Para usar o esquema relevante no Log Analytics para os alertas do Azure ATP, pesquise **SecurityAlert**.
+6. Para usar o esquema relevante no Log Analytics para os alertas do Azure ATP, procure **SecurityAlert**.
 
 ## <a name="next-steps"></a>Próximas etapas
-Neste documento, você aprendeu como conectar o Azure Advanced Threat Protection para Azure Sentinel. Para saber mais sobre o Azure Sentinel, consulte os seguintes artigos:
-- Saiba como [Obtenha visibilidade sobre seus dados e possíveis ameaças](quickstart-get-visibility.md).
-- Introdução ao [detecção de ameaças com o Azure Sentinel](tutorial-detect-threats.md).
+Neste documento, você aprendeu a conectar a proteção avançada contra ameaças do Azure ao Azure Sentinel. Para saber mais sobre o Azure Sentinel, consulte os seguintes artigos:
+- Saiba como [obter visibilidade de seus dados e ameaças potenciais](quickstart-get-visibility.md).
+- Comece [a detectar ameaças com o Azure Sentinel](tutorial-detect-threats.md).
 

@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/02/2018
+ms.date: 07/26/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4ea3ec9024e4ea6a254fb6fe80f93886dc31a0ff
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9c0bc7f5d4890ae494c6c6616b42eddc2445b159
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65545794"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68666498"
 ---
 # <a name="whats-new-for-authentication"></a>Quais são as novidades para autenticação? 
 
@@ -41,11 +41,50 @@ O sistema de autenticação altera e adiciona recursos em uma base contínua par
 
 ## <a name="upcoming-changes"></a>Alterações futuras
 
-Nenhum agendado neste momento. 
+Agosto de 2019: Impor semântica de POSTAgem de acordo com as regras de análise de URL – parâmetros duplicados dispararão um erro, as aspas entre parâmetros não serão mais ignoradas e a [bom](https://www.w3.org/International/questions/qa-byte-order-mark) será ignorada.
+
+## <a name="july-2019"></a>Julho de 2019
+
+### <a name="app-only-tokens-for-single-tenant-applications-are-only-issued-if-the-client-app-exists-in-the-resource-tenant"></a>Tokens somente de aplicativo para aplicativos de locatário único só serão emitidos se o aplicativo cliente existir no locatário de recursos
+
+**Data de efetivação**: 26 de julho de 2019
+
+**Pontos de extremidade afetados**: [V 1.0](https://docs.microsoft.com/azure/active-directory/develop/v1-oauth2-client-creds-grant-flow) e [v 2.0](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow)
+
+**Protocolo afetado**: [Credenciais do cliente (tokens somente de aplicativo)](https://docs.microsoft.com/azure/active-directory/develop/v1-oauth2-client-creds-grant-flow)
+
+Uma alteração de segurança entrou em 26 de julho que altera a maneira como os tokens somente de aplicativo (por meio da concessão de credenciais de cliente) são emitidos. Anteriormente, os aplicativos eram autorizados a obter tokens para chamar qualquer outro aplicativo, independentemente da presença no locatário ou das funções consentidas para esse aplicativo.  Esse comportamento foi atualizado para que, para recursos (às vezes chamados de APIs da Web) definido como um único locatário (o padrão), o aplicativo cliente deve existir dentro do locatário do recurso.  Observe que o consentimento existente entre o cliente e a API ainda não é necessário, e os aplicativos ainda devem estar fazendo suas próprias verificações de autorização para `roles` garantir que uma declaração esteja presente e contenha o valor esperado para a API.
+
+A mensagem de erro para este cenário declara atualmente: 
+
+`The service principal named <appName> was not found in the tenant named <tenant_name>. This can happen if the application has not been installed by the administrator of the tenant.`
+
+Para corrigir esse problema, use a experiência de consentimento do administrador para criar a entidade de serviço do aplicativo cliente em seu locatário ou crie-a manualmente.  Esse requisito garante que o locatário tenha concedido a permissão do aplicativo para operar dentro do locatário.  
+
+#### <a name="example-request"></a>Solicitação de exemplo
+
+`https://login.microsoftonline.com/contoso.com/oauth2/authorize?resource=https://gateway.contoso.com/api&response_type=token&client_id=14c88eee-b3e2-4bb0-9233-f5e3053b3a28&...`Neste exemplo, o locatário (autoridade) do recurso é contoso.com, o aplicativo de recurso é um aplicativo de locatário único `gateway.contoso.com/api` chamado para o locatário da Contoso e o aplicativo cliente `14c88eee-b3e2-4bb0-9233-f5e3053b3a28`é.  Se o aplicativo cliente tiver uma entidade de serviço dentro de Contoso.com, essa solicitação poderá continuar.  No entanto, se isso não acontecer, a solicitação falhará com o erro acima.  
+
+No entanto, se o aplicativo de gateway da Contoso fosse de vários locatários, a solicitação continuaria independentemente do aplicativo cliente ter uma entidade de serviço em Contoso.com.  
+
+### <a name="redirect-uris-can-now-contain-query-string-parameters"></a>URIs de redirecionamento agora podem conter parâmetros de cadeia de caracteres de consulta
+
+**Data de efetivação**: 22 de julho de 2019
+
+**Pontos de extremidade afetados**: v1.0 e v2.0
+
+**Protocolo afetado**: Todos os fluxos
+
+Por [RFC 6749](https://tools.ietf.org/html/rfc6749#section-3.1.2), os aplicativos do Azure ad agora podem registrar e usar URIs de redirecionamento (resposta) com parâmetros https://contoso.com/oauth2?idp=microsoft) de consulta estáticos (como para solicitações do OAuth 2,0.  URIs de redirecionamento dinâmico ainda são proibidos, pois representam um risco de segurança, e isso não pode ser usado para reter informações de estado em uma solicitação `state` de autenticação-para isso, use o parâmetro.
+
+O parâmetro de consulta estática está sujeito à correspondência de cadeia de caracteres para URIs de redirecionamento como qualquer outra parte do URI de redirecionamento-se nenhuma cadeia de caracteres estiver registrada que corresponda ao redirect_uri decodificado por URI, a solicitação será rejeitada.  Se o URI for encontrado no registro do aplicativo, a cadeia de caracteres inteira será usada para redirecionar o usuário, incluindo o parâmetro de consulta estática. 
+
+Observe que, neste momento (fim de julho de 2019), o UX de registro de aplicativo no portal do Azure ainda bloqueia parâmetros de consulta.  No entanto, você pode editar o manifesto do aplicativo manualmente para adicionar parâmetros de consulta e testá-lo em seu aplicativo.  
+
 
 ## <a name="march-2019"></a>Março de 2019
 
-### <a name="looping-clients-will-be-interrupted"></a>Os clientes de loop será interrompido
+### <a name="looping-clients-will-be-interrupted"></a>Os clientes de loop serão interrompidos
 
 **Data de efetivação**: 25 de março de 2019
 
@@ -53,25 +92,25 @@ Nenhum agendado neste momento.
 
 **Protocolo afetado**: Todos os fluxos
 
-Aplicativos cliente podem, às vezes, inadequados, emitindo centenas da mesma solicitação de logon em um curto período de tempo.  Essas solicitações podem ou não ser bem-sucedida, mas todas elas contribuem para cargas de trabalho avançadas e experiência de usuário insatisfatória para o IDP, aumenta a latência para todos os usuários e reduz a disponibilidade do IDP.  Esses aplicativos estão operando fora dos limites de uso normal e devem ser atualizados para se comportar corretamente.  
+Às vezes, os aplicativos cliente podem se comportar, emitindo centenas da mesma solicitação de logon em um curto período de tempo.  Essas solicitações podem ou não ser bem-sucedidas, mas todas contribuem para a má experiência do usuário e cargas de trabalho aumentadas para o IDP, aumentando a latência para todos os usuários e reduzindo a disponibilidade do IDP.  Esses aplicativos estão operando fora dos limites de uso normal e devem ser atualizados para se comportarem corretamente.  
 
-Os clientes que emitem solicitações duplicadas várias vezes serão enviados um `invalid_grant` erro: `AADSTS50196: The server terminated an operation because it encountered a loop while processing a request`. 
+Os clientes que emitirem solicitações duplicadas várias vezes receberão `invalid_grant` um `AADSTS50196: The server terminated an operation because it encountered a loop while processing a request`erro:. 
 
-A maioria dos clientes não precisará alterar o comportamento para evitar esse erro.  Somente os clientes configurados incorretamente (aqueles sem cache de token ou aqueles que apresentam loops prompt já) serão afetados por esse erro.  Os clientes são rastreados em uma base por instância localmente (por meio do cookie) nos seguintes fatores:
+A maioria dos clientes não precisará alterar o comportamento para evitar esse erro.  Somente clientes mal configurados (aqueles sem cache de token ou aqueles que exibem loops de prompt já) serão afetados por esse erro.  Os clientes são acompanhados em uma base por instância localmente (via cookie) nos seguintes fatores:
 
 * Dica de usuário, se houver
 
-* Escopos ou recurso que está sendo solicitado
+* Escopos ou recursos sendo solicitados
 
 * ID do cliente
 
-* URI de redirecionamento
+* URI de Redirecionamento
 
-* Modo e o tipo de resposta
+* Tipo e modo de resposta
 
-Aplicativos fazendo várias solicitações (15 +) em um curto período de tempo (5 minutos) receberão uma `invalid_grant` erro explicando o que eles são um loop.  Os tokens que está sendo solicitados a ter tempos de vida suficientemente longa duração (mínimo de 10 minutos, 60 minutos por padrão), então, repetidas solicitações durante esse período de tempo são desnecessários.  
+Os aplicativos que fazem várias solicitações (15 +) em um curto período de tempo (5 minutos) receberão um `invalid_grant` erro explicando que eles estão em loop.  Os tokens que estão sendo solicitados têm tempos de vida de vida longa suficiente (10 minutos no mínimo, 60 minutos por padrão), portanto, solicitações repetidas nesse período de tempo são desnecessárias.  
 
-Todos os aplicativos devem lidar com `invalid_grant` mostrando um prompt interativo, em vez de solicitar silenciosamente um token.  Para evitar esse erro, clientes devem garantir que eles corretamente estiver armazenando em cache os tokens que eles recebem.
+Todos os aplicativos devem `invalid_grant` lidar com a exibição de um prompt interativo, em vez de solicitar silenciosamente um token.  Para evitar esse erro, os clientes devem garantir que eles estejam armazenando em cache corretamente os tokens recebidos.
 
 
 ## <a name="october-2018"></a>Outubro de 2018

@@ -1,6 +1,6 @@
 ---
-title: Aviso de migração de gateway para o banco de dados SQL de Gen2 para Gen3 | Microsoft Docs
-description: Artigo fornece aviso aos usuários sobre a migração de endereços IP de Gateways de banco de dados de SQL do Azure
+title: Aviso de migração de gateway para o banco de dados SQL do Azure de Gen2 para Gen3 | Microsoft Docs
+description: O artigo fornece um aviso aos usuários sobre a migração de endereços IP de gateways do banco de dados SQL do Azure
 services: sql-database
 ms.service: sql-database
 ms.subservice: development
@@ -9,54 +9,53 @@ ms.topic: conceptual
 author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
-manager: craigg
 ms.date: 07/01/2019
-ms.openlocfilehash: 5894579c62c524394c7fea044b96885f7c8e8204
-ms.sourcegitcommit: 084630bb22ae4cf037794923a1ef602d84831c57
+ms.openlocfilehash: 85691464684ff327c01a85bf357514f447564dd7
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67538374"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568122"
 ---
-# <a name="azure-sql-database-traffic-migration-to-newer-gateways"></a>Migração de tráfego de banco de dados SQL do Azure para Gateways mais recentes
+# <a name="azure-sql-database-traffic-migration-to-newer-gateways"></a>Migração de tráfego do banco de dados SQL do Azure para gateways mais recentes
 
-Como melhora a infraestrutura do Azure, a Microsoft atualizará periodicamente hardware para garantir que podemos fornecer a experiência melhor possível para o cliente. Nos próximos meses, planeje adicionar que gateways criados nas gerações de hardware mais recentes e encerrar Gateways criados no hardware mais antigo em algumas regiões.  
+À medida que a infraestrutura do Azure melhora, a Microsoft atualizará periodicamente o hardware para garantir que forneceremos a melhor experiência possível para o cliente. Nos próximos meses, planejamos adicionar gateways criados em gerações de hardware mais recentes e descomissionar gateways criados em hardware mais antigo em algumas regiões.  
 
-Os clientes serão notificados por email e no portal do Azure, bem com antecedência sobre qualquer alteração nos Gateways disponíveis em cada região. As informações mais atualizadas serão mantidas na [endereços IP de gateway do banco de dados SQL](sql-database-connectivity-architecture.md#azure-sql-database-gateway-ip-addresses) tabela.
+Os clientes serão notificados por email e na portal do Azure bem antes de qualquer alteração nos gateways disponíveis em cada região. As informações mais atualizadas serão mantidas na tabela [endereços IP do gateway do banco de dados SQL do Azure](sql-database-connectivity-architecture.md#azure-sql-database-gateway-ip-addresses) .
 
 ## <a name="impact-of-this-change"></a>Impacto dessa alteração
 
-A primeira rodada de encerramento de Gateway está agendada para 1 de setembro de 2019 nas seguintes regiões:
+A primeira rodada de descomissionamento de gateway está agendada para 1º de setembro de 2019 nas seguintes regiões:
 
 - Oeste dos EUA
 - Europa Ocidental
 - East US
-- Centro dos EUA
-- Sudeste da Ásia
-- Centro-Sul dos Estados Unidos
-- Norte da Europa
+- EUA Central
+- Sudeste Asiático
+- Centro-Sul dos EUA
+- Europa Setentrional
 - Centro-Norte dos EUA
 - Oeste do Japão
 - Leste do Japão
 - Leste dos EUA 2
 - Ásia Oriental
 
-O endereço de IP encerrada deixará de aceitar tráfego e novas tentativas de conexão serão roteadas para um dos Gateways na região.
+O endereço IP descomissionado deixará de aceitar o tráfego e quaisquer novas tentativas de conexão serão roteadas para um dos gateways na região.
 
-Em que você não verá o impacto dessa alteração:
+Onde você não verá o impacto dessa alteração:
 
-- Clientes usando o redirecionamento de sua política de conexão não verá qualquer impacto.
-- Conexões de banco de dados SQL de dentro do Azure e usando marcas de serviço não serão afetados.
-- As conexões feitas usando as versões com suporte do Driver JDBC para SQL Server não verá nenhum impacto. Para versões com suporte do JDBC, consulte [baixar o Microsoft JDBC Driver para SQL Server](/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server).
+- Os clientes que usam o redirecionamento como sua política de conexão não verão nenhum impacto.
+- As conexões com o banco de dados SQL de dentro do Azure e o uso de marcas de serviço não serão afetadas.
+- As conexões feitas usando as versões com suporte do driver JDBC para SQL Server não terão impacto. Para obter suporte para versões JDBC, consulte [baixar o Microsoft JDBC Driver para SQL Server](/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server).
 
-## <a name="what-to-do-you-do-if-youre-affected"></a>O que fazer você fazer se você for afetado
+## <a name="what-to-do-you-do-if-youre-affected"></a>O que fazer se você for afetado
 
-É recomendável que você permita o tráfego de saída para os endereços IP para todos os [endereços IP de gateway do banco de dados SQL](sql-database-connectivity-architecture.md#azure-sql-database-gateway-ip-addresses) na região em TCP porta 1433 e intervalo de 11000 a 11999 em seu dispositivo de firewall de porta. Para obter mais informações sobre intervalos de porta, consulte [política de Conexão](sql-database-connectivity-architecture.md#connection-policy).
+Recomendamos que você permita o tráfego de saída para endereços IP para todos os [endereços IP do gateway do banco de dados SQL do Azure](sql-database-connectivity-architecture.md#azure-sql-database-gateway-ip-addresses) na região na porta TCP 1433 e o intervalo de portas 11000-11999 no seu dispositivo de firewall. Para obter mais informações sobre intervalos de portas, consulte [política de conexão](sql-database-connectivity-architecture.md#connection-policy).
 
-Conexões feitas a partir de aplicativos usando o Microsoft JDBC Driver abaixo da versão 4.0 podem falhar a validação do certificado. Versões anteriores do Microsoft JDBC se baseiam em CN (nome comum) no campo assunto do certificado. A mitigação é para garantir que a propriedade hostNameInCertificate for definida como *. database.windows.net. Para obter mais informações sobre como definir a propriedade hostNameInCertificate, consulte [conectar-se com criptografia SSL](/sql/connect/jdbc/connecting-with-ssl-encryption).
+As conexões feitas de aplicativos usando o Microsoft JDBC Driver abaixo da versão 4,0 podem falhar na validação do certificado. Versões inferiores do Microsoft JDBC dependem do nome comum (CN) no campo assunto do certificado. A mitigação é garantir que a propriedade hostNameInCertificate esteja definida como *. database.windows.net. Para obter mais informações sobre como definir a propriedade hostNameInCertificate, consulte [conectando-se com a criptografia SSL](/sql/connect/jdbc/connecting-with-ssl-encryption).
 
-Se a mitigação acima não funcionar, uma solicitação de suporte de arquivo para o banco de dados SQL usando a seguinte URL: https://aka.ms/getazuresupport
+Se a atenuação acima não funcionar, entre em arquivo uma solicitação de suporte para o banco de dados SQL usando a seguinte URL: https://aka.ms/getazuresupport
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Saiba mais sobre [arquitetura de conectividade do SQL Azure](sql-database-connectivity-architecture.md)
+- Saiba mais sobre a [arquitetura de conectividade do SQL do Azure](sql-database-connectivity-architecture.md)

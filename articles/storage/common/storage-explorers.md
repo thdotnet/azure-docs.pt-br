@@ -9,12 +9,12 @@ ms.date: 09/06/2017
 ms.author: tamram
 ms.reviewer: dineshm
 ms.subservice: common
-ms.openlocfilehash: 6d80bc71c01d0f1c887d9161edee5516d6b0925b
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 14cbc076f4c9eebd2647cd667acc856b393e4d93
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67443693"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68665742"
 ---
 # <a name="azure-storage-client-tools"></a>Ferramentas de Cliente do Armazenamento do Azure
 Com frequência, os usuários do Armazenamento do Azure desejam poder exibir/interagir com seus dados usando uma ferramenta de cliente do Armazenamento do Azure. Nas tabelas abaixo, listamos várias ferramentas que permitem que você faça isso. Colocamos um "X" em cada bloco caso a ferramenta forneça a capacidade de enumerar e/ou acessar a abstração de dados. A tabela também mostra se as ferramentas são gratuitas ou não. "Avaliação" indica que há uma avaliação gratuita, mas o produto completo não é gratuito. "S/N" indica que uma versão está disponível gratuitamente, enquanto outra versão está disponível para compra.
@@ -26,13 +26,13 @@ Fornecemos somente um instantâneo das ferramentas de cliente do Armazenamento d
 <table>
   <tr>
     <th rowspan="2">Ferramenta de Cliente do Armazenamento do Azure</th>
-    <th rowspan="2">Blob de blocos</th>
+    <th rowspan="2">Bloquear Blob</th>
     <th rowspan="2">Blob de páginas</th>
-    <th rowspan="2">Acrescentar blob</th>
+    <th rowspan="2">Acrescentar Blob</th>
     <th rowspan="2">Tabelas</th>
     <th rowspan="2">Filas</th>
     <th rowspan="2">Arquivos</th>
-    <th rowspan="2">Grátis</th>
+    <th rowspan="2">Gratuito</th>
     <th colspan="4">Plataforma</th>
   </tr>
   <tr>
@@ -92,13 +92,13 @@ Nós não verificamos a funcionalidade nem a qualidade declarada pelas ferrament
 <table>
   <tr>
     <th rowspan="2">Ferramenta de Cliente do Armazenamento do Azure</th>
-    <th rowspan="2">Blob de blocos</th>
+    <th rowspan="2">Bloquear Blob</th>
     <th rowspan="2">Blob de páginas</th>
-    <th rowspan="2">Acrescentar blob</th>
+    <th rowspan="2">Acrescentar Blob</th>
     <th rowspan="2">Tabelas</th>
     <th rowspan="2">Filas</th>
     <th rowspan="2">Arquivos</th>
-    <th rowspan="2">Grátis</th>
+    <th rowspan="2">Gratuito</th>
     <th colspan="4">Plataforma</th>
   </tr>
   <tr>
@@ -142,10 +142,10 @@ Nós não verificamos a funcionalidade nem a qualidade declarada pelas ferrament
     <td></td>
     <td>X</td>
     <td>X</td>
-    <td></td>
-    <td>S</td>
-    <td></td>
     <td>X</td>
+    <td>S</td>
+    <td>X</td>
+    <td></td>
     <td></td>
     <td></td>
   </tr>

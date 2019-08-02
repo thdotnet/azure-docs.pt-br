@@ -16,39 +16,39 @@ ms.date: 06/12/2019
 ms.author: mimart
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1fd6b70e7a4542a4cad2ee95fa280ddf8fbe6553
-ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
+ms.openlocfilehash: bf6190ae35a573ab4b9a37f5cd1f2bd75f06ca46
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67310024"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68667151"
 ---
-# <a name="check-the-status-of-user-provisioning"></a>Verificar o status de provisionamento do usuário
+# <a name="check-the-status-of-user-provisioning"></a>Verificar o status do provisionamento do usuário
 
-O serviço de provisionamento do AD do Azure executa um ciclo de provisionamento inicial contra o sistema de origem e o sistema de destino, seguido de ciclos incrementais periódicos. Quando você configura o provisionamento para um aplicativo, você pode verificar o status atual do serviço de provisionamento e ver quando um usuário será capaz de acessar um aplicativo.
+O serviço de provisionamento do Azure AD executa um ciclo de provisionamento inicial no sistema de origem e no sistema de destino, seguido por ciclos incrementais periódicos. Ao configurar o provisionamento para um aplicativo, você pode verificar o status atual do serviço de provisionamento e ver quando um usuário poderá acessar um aplicativo.
 
-## <a name="view-the-provisioning-progress-bar-preview"></a>Exibir o provisionamento (visualização) da barra de progresso
+## <a name="view-the-provisioning-progress-bar"></a>Exibir a barra de progresso do provisionamento
 
- Sobre o **provisionamento** página para um aplicativo, você pode exibir o status do serviço de provisionamento do Azure AD. O **Status atual** seção na parte inferior da página mostra se um ciclo de provisionamento começou a provisionar contas de usuário. Você pode observar o progresso do ciclo de, ver quantos usuários e grupos foram provisionados e ver quantas funções são criadas.
+ Na página de **provisionamento** de um aplicativo, você pode exibir o status do serviço de provisionamento do Azure AD. A seção **status atual** na parte inferior da página mostra se um ciclo de provisionamento começou a provisionar contas de usuário. Você pode ver o progresso do ciclo, ver quantos usuários e grupos foram provisionados e ver quantas funções são criadas.
 
-Quando você primeiro configurar o provisionamento automático, o **Status atual** seção na parte inferior da página mostra o status do ciclo do provisionamento inicial. Esta seção atualiza cada vez que um ciclo incremental é executado. Os seguintes detalhes são mostrados:
-- O tipo de provisionamento ciclo (inicial ou incremental) que está sendo executado ou foi concluído por último.
-- Um **barra de progresso** que mostre a porcentagem do ciclo de provisionamento que foi concluída. A porcentagem reflete a contagem de páginas provisionado. Observe que cada página pode conter vários usuários ou grupos, portanto, a porcentagem não correlacione diretamente para o número de usuários, grupos ou funções provisionadas.
-- Um **Refresh** botão, você pode usar para manter o modo de exibição atualizado.
-- O número de **os usuários** e **grupos** provisionado e o número de funções criadas. Durante o ciclo inicial, o **usuários** número contagens para cima em 1, quando um usuário é criado ou atualizado, e ele contagem regressiva em 1 quando um usuário é excluído. Durante um ciclo incremental, as atualizações do usuário não afetam a **usuários** contagem; o número é alterado somente quando os usuários são criados ou excluídos.
-- Um **Exibir Logs de auditoria** vincular, que abre a auditoria do AD do Azure registra detalhes sobre todas as operações executadas pelo serviço de provisionamento de usuário, incluindo o provisionamento de status para usuários individuais (consulte o [delogsdeauditoriadouso](#use-audit-logs-to-check-a-users-provisioning-status)seção abaixo).
+Quando você configura o provisionamento automático pela primeira vez, a seção **status atual** na parte inferior da página mostra o status do ciclo de provisionamento inicial. Esta seção é atualizada toda vez que um ciclo incremental é executado. Os seguintes detalhes são mostrados:
+- O tipo de ciclo de provisionamento (inicial ou incremental) que está em execução no momento ou foi concluído pela última vez.
+- Uma **barra de progresso** que mostra a porcentagem do ciclo de provisionamento que foi concluída. A porcentagem reflete a contagem de páginas provisionada. Observe que cada página pode conter vários usuários ou grupos, portanto, o percentual não se correlaciona diretamente com o número de usuários, grupos ou funções provisionados.
+- Um botão de **atualização** que você pode usar para manter a exibição atualizada.
+- O número de **usuários** e **grupos** provisionados e o número de funções criadas. Durante o ciclo inicial, o número de **usuários** conta em 1 quando um usuário é criado ou atualizado e é contado por 1 quando um usuário é excluído. Durante um ciclo incremental, as atualizações do usuário não afetam a contagem de **usuários** ; o número é alterado somente quando os usuários são criados ou excluídos.
+- Um link **Exibir logs de auditoria** , que abre os logs de auditoria do Azure ad para obter detalhes sobre todas as operações executadas pelo serviço de provisionamento de usuário, incluindo o status de provisionamento para usuários individuais (consulte a seção [usar logs de auditoria](#use-audit-logs-to-check-a-users-provisioning-status) abaixo).
 
-Depois que um ciclo de provisionamento for concluído, o **a data das estatísticas** seção mostra os números cumulativos de usuários e grupos que foram provisionados como data, juntamente com a data de conclusão e a duração do último ciclo. O **ID da atividade** identifica exclusivamente o ciclo de provisionamento mais recente. O **ID do trabalho** é um identificador exclusivo para o trabalho de provisionamento e é específico para o aplicativo em seu locatário.
+Após a conclusão de um ciclo de provisionamento, a seção **estatísticas até a data** mostra os números cumulativos de usuários e grupos que foram provisionados até a data, junto com a data de conclusão e a duração do último ciclo. A **ID da atividade** identifica exclusivamente o ciclo de provisionamento mais recente. A **ID do trabalho** é um identificador exclusivo para o trabalho de provisionamento e é específica para o aplicativo em seu locatário.
 
-O progresso do provisionamento podem ser exibidos no portal do Azure, nos **Azure Active Directory &gt; aplicativos empresariais &gt; \[nome do aplicativo\] &gt; provisionamento** guia.
+O progresso do provisionamento pode ser exibido na portal do Azure, na guia **provisionamento de &gt; nome\] &gt; &gt; de aplicativo do \[Azure Active Directory Enterprise apps** .
 
-![Provisionamento de barra de progresso de página](media/application-provisioning-when-will-provisioning-finish-specific-user/provisioning-progress-bar-section.png)
+![Barra de progresso da página de provisionamento](media/application-provisioning-when-will-provisioning-finish-specific-user/provisioning-progress-bar-section.png)
 
-## <a name="use-audit-logs-to-check-a-users-provisioning-status"></a>Usar logs de auditoria para verificar o status de provisionamento do usuário
+## <a name="use-audit-logs-to-check-a-users-provisioning-status"></a>Usar logs de auditoria para verificar o status de provisionamento de um usuário
 
-Para ver o status de provisionamento para um usuário selecionado, consulte os logs de auditoria no Azure AD. Todas as operações executadas pelo usuário serviço de provisionamento são registradas no Azure AD logs de auditoria. Isso inclui todas as operações feitas nos sistemas de origem e destino e os dados do usuário que foi lido ou gravados durante cada operação de leitura e gravação.
+Para ver o status de provisionamento para um usuário selecionado, consulte os logs de auditoria no Azure AD. Todas as operações executadas pelo serviço de provisionamento de usuário são registradas nos logs de auditoria do Azure AD. Isso inclui todas as operações de leitura e gravação feitas nos sistemas de origem e de destino, bem como os dados de usuário que foram lidos ou gravados durante cada operação.
 
-Os logs de auditoria de provisionamento podem ser acessados no portal do Azure na **Azure Active Directory &gt; aplicativos empresariais &gt; \[nome do aplicativo\] &gt; Logs de auditoria** guia. Filtre os logs na categoria de **provisionamento de conta**, para ver apenas os eventos de provisionamento para aquele aplicativo. Você pode procurar por usuários com base na "ID correspondente" que foi configurado para eles nos mapeamentos de atributo. 
+Os logs de auditoria de provisionamento podem ser acessados no portal do Azure, na **guia &gt; logs de &gt; auditoria Azure Active Directory\] nome &gt; de aplicativo dos aplicativos \[empresariais** . Filtre os logs na categoria de **provisionamento de conta**, para ver apenas os eventos de provisionamento para aquele aplicativo. Você pode procurar por usuários com base na "ID correspondente" que foi configurado para eles nos mapeamentos de atributo. 
 
 Por exemplo, se você configurou o "nome UPN" ou "endereço de email" como o atributo correspondente no lado do Azure AD e o usuário não sendo provisionado tem um valor de "audrey@contoso.com", em seguida, pesquise os logs de auditoria para "audrey@contoso.com" e reveja as entradas retornadas.
 
@@ -59,18 +59,18 @@ Os logs de auditoria de provisionamento registram todas as operações executada
 * Comparando objetos de usuário entre o sistema
 * Adicionar, atualizar ou desabilitar a conta de usuário no sistema de destino com base na comparação
 
-Para obter mais informações sobre como ler os logs de auditoria no portal do Azure, consulte a [guia de relatório de provisionamento](check-status-user-account-provisioning.md).
+Para obter mais informações sobre como ler os logs de auditoria no portal do Azure, consulte o [Guia de relatórios de provisionamento](check-status-user-account-provisioning.md).
 
 ## <a name="how-long-will-it-take-to-provision-users"></a>Quanto tempo levará para provisionar os usuários?
-Ao usar o provisionamento automático de usuário com um aplicativo, o Azure AD automaticamente provisiona e atualiza as contas de usuário em um aplicativo com base em coisas como [atribuição de usuário e grupo](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal) em agendado regularmente intervalo de tempo, normalmente cada 10 minutos.
+Ao usar o provisionamento automático de usuário com um aplicativo, o Azure AD provisiona e atualiza automaticamente as contas de usuário em um aplicativo com base em coisas como [atribuição de usuário e grupo](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal) em um intervalo de tempo agendado regularmente, normalmente a cada 10 minutos.
 
-O tempo necessário para um determinado usuário seja provisionado depende principalmente se o trabalho de provisionamento está executando uma sincronização inicial ou uma sincronização incremental.
+O tempo necessário para que um determinado usuário seja provisionado depende principalmente de se o seu trabalho de provisionamento está executando uma sincronização inicial ou uma sincronização incremental.
 
-- Para **inicial sincronizações**, o tempo de trabalho depende de vários fatores, incluindo o número de usuários e grupos no escopo para provisionamento e o número total de usuários e grupos no sistema de origem. A primeira sincronização entre o Azure AD e um aplicativo pode levar de 20 minutos até várias horas, dependendo do tamanho do diretório do Azure AD e o número de usuários no escopo para provisionamento. Confira posteriormente nesta seção uma lista abrangente dos fatores que afetam o desempenho da sincronização inicial.
+- Para **sincronizações iniciais**, o tempo do trabalho depende de muitos fatores, incluindo o número de usuários e grupos no escopo para provisionamento e o número total de usuários e grupo no sistema de origem. A primeira sincronização entre o Azure AD e um aplicativo pode levar de 20 minutos até várias horas, dependendo do tamanho do diretório do Azure AD e o número de usuários no escopo para provisionamento. Confira posteriormente nesta seção uma lista abrangente dos fatores que afetam o desempenho da sincronização inicial.
 
-- Para **sincronizações incrementais** após a sincronização inicial, os horários de trabalho tendem a ser mais rápida (por exemplo, dentro de 10 minutos), como o serviço de provisionamento armazena as marcas d'água que representam o estado dos dois sistemas após a sincronização inicial, melhorando o desempenho de sincronizações subsequentes. O tempo de trabalho depende do número de alterações detectadas nesse ciclo de provisionamento. Se houver menos de 5.000 usuários ou alterações de associação de grupo, o trabalho pode terminar dentro de um único ciclo de provisionamento incremental. 
+- Para **sincronizações incrementais** após a sincronização inicial, os tempos de trabalho tendem a ser mais rápidos (por exemplo, em 10 minutos), pois o serviço de provisionamento armazena marcas d' água que representam o estado de ambos os sistemas após a sincronização inicial, melhorando o desempenho de Sincronizações subsequentes. A hora do trabalho depende do número de alterações detectadas no ciclo de provisionamento. Se houver menos de 5.000 alterações de associação de usuário ou de grupo, o trabalho poderá ser concluído em um único ciclo de provisionamento incremental. 
 
-A tabela a seguir resume os tempos de sincronização para cenários comuns de provisionamento. Nesses cenários, o sistema de origem é o Azure AD e o sistema de destino é um aplicativo SaaS. Os tempos de sincronização são derivados de uma análise estatística dos trabalhos de sincronização para os aplicativos de SaaS G Suite, no local de trabalho, Salesforce e ServiceNow.
+A tabela a seguir resume os tempos de sincronização para cenários comuns de provisionamento. Nesses cenários, o sistema de origem é o Azure AD e o sistema de destino é um aplicativo SaaS. Os tempos de sincronização derivam de uma análise estatística de trabalhos de sincronização para os aplicativos SaaS ServiceNow, Workplace, Salesforce e G Suite.
 
 
 | Configuração de escopo | Usuários, grupos e membros no escopo | Tempo de sincronização inicial | Tempo de sincronização incremental |
@@ -96,11 +96,11 @@ Resumo de fatores que influenciam o tempo necessário para concluir uma **sincro
 
 - O número total de usuários, grupos e membros do grupo presentes no sistema de origem (Azure AD).
 
-- Se os usuários no escopo para provisionamento são correspondidos para os usuários existentes no aplicativo de destino ou precisam ser criadas pela primeira vez. Trabalhos de sincronização para o qual todos os usuários são criados pela primeira vez levar cerca *duas vezes desde* como sincronizar trabalhos para o qual todos os usuários são correspondidos para os usuários existentes.
+- Se os usuários no escopo para provisionamento são correspondidos aos usuários existentes no aplicativo de destino ou precisam ser criados pela primeira vez. Os trabalhos de sincronização para os quais todos os usuários são criados pela primeira vez levam aproximadamente *duas vezes mais* tempo que os trabalhos de sincronização para os quais todos os usuários têm correspondência com os usuários existentes.
 
 - Número de erros nos [logs de auditoria](check-status-user-account-provisioning.md). O desempenho será mais lento se houver muitos erros e o serviço de provisionamento tiver entrado em estado de quarentena.    
 
-- Limites de taxa de solicitação implementados pelo sistema de destino. Alguns sistemas de destino implementam limites de taxa de solicitação e a limitação, que pode afetar o desempenho durante grandes operações de sincronização. Sob essas condições, um aplicativo que recebe muitas solicitações de forma muito rápida pode reduzir sua taxa de resposta ou fechar a conexão. Para melhorar o desempenho, o conector precisa fazer ajustes para não enviar as solicitações de aplicativo mais rápido do que o aplicativo pode processá-las. Os conectores de provisionamento criados pela Microsoft fazem esse ajuste. 
+- Limites de taxa de solicitação implementados pelo sistema de destino. Alguns sistemas de destino implementam limites de taxa de solicitação e limitação, o que pode afetar o desempenho durante grandes operações de sincronização. Sob essas condições, um aplicativo que recebe muitas solicitações de forma muito rápida pode reduzir sua taxa de resposta ou fechar a conexão. Para melhorar o desempenho, o conector precisa fazer ajustes para não enviar as solicitações de aplicativo mais rápido do que o aplicativo pode processá-las. Os conectores de provisionamento criados pela Microsoft fazem esse ajuste. 
 
 - O número e os tamanhos de grupos atribuídos. A sincronização de grupos atribuídos demora mais do que a sincronização de usuários. O número e os tamanhos dos grupos atribuídos afetam o desempenho. Se um aplicativo tiver [mapeamentos habilitados para sincronização de objeto de grupo](customize-application-attributes.md#editing-group-attribute-mappings), propriedades de grupo como nomes de grupo e associações serão sincronizadas, além dos usuários. Essas sincronizações adicionais tomarão mais tempo do que apenas sincronizar os objetos de usuário.
 

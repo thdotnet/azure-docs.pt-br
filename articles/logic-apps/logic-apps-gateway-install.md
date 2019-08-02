@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 10/01/2018
-ms.openlocfilehash: 10a6e5c33f6a3c23d98e6eb3380de0d6dc6ac216
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 61a9b319b9ea44f766bc6f014b76bc48d15efc57
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65544468"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68598462"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Instalar o gateway de dados no local para os Aplicativos Lógicos do Azure
 
@@ -27,12 +27,12 @@ Antes de poder se conectar a fontes de dados locais dos Aplicativos Lógicos do 
 O gateway dá suporte a [conectores locais](../connectors/apis-list.md#on-premises-connectors) nos Aplicativos Lógicos do Azure para essas fontes de dados:
 
 *   BizTalk Server 2016
-*   Sistema de Arquivos
+*   Sistema de arquivos
 *   IBM DB2  
 *   IBM Informix
 *   IBM MQ
 *   MySQL
-*   Banco de dados Oracle
+*   Oracle Database
 *   PostgreSQL
 *   Servidor de aplicativos SAP 
 *   Servidor de mensagens SAP
@@ -238,7 +238,7 @@ O gateway cria uma conexão de saída para o [Barramento de Serviço do Azure](h
 
 O gateway usa estes nomes de domínio totalmente qualificados:
 
-| Nomes de domínio | Portas de saída | DESCRIÇÃO | 
+| Nomes de domínio | Portas de saída | Descrição | 
 | ------------ | -------------- | ----------- | 
 | *.analysis.windows.net | 443 | HTTPS | 
 | *.core.windows.net | 443 | HTTPS | 
@@ -296,7 +296,7 @@ O gateway de dados é executado como um serviço Windows, então, da mesma forma
 
 ## <a name="tenant-level-administration"></a>Administração de nível de locatário 
 
-Atualmente, não há um único local onde os administradores de locatários possam gerenciar todos os gateways que outros usuários instalaram e configuraram. Se você for um administrador de locatários, talvez você queira pedir aos usuários em sua organização para adicioná-lo como administrador para cada gateway que instalarem. Assim é possível gerenciar todos os gateways na sua organização pela página de Configurações do Gateway ou por meio dos [comandos do PowerShell](https://docs.microsoft.com/power-bi/service-gateway-high-availability-clusters#powershell-support-for-gateway-clusters). 
+Atualmente, não há um único local onde os administradores de locatários possam gerenciar todos os gateways que outros usuários instalaram e configuraram. Se você for um administrador de locatários, talvez você queira pedir aos usuários em sua organização para adicioná-lo como administrador para cada gateway que instalarem. Assim é possível gerenciar todos os gateways na sua organização pela página de Configurações do Gateway ou por meio dos [comandos do PowerShell](/data-integration/gateway/service-gateway-powershell-support). 
 
 <a name="gateway-cloud-service"></a>
 
@@ -363,7 +363,7 @@ Estas etapas descrevem o que acontece quando um usuário na nuvem interage com u
 **P**: O serviço Windows do gateway pode ser executado com uma conta do Azure Active Directory? <br/>
 **R**: Não, o serviço Windows deve ter uma conta do Windows válida.
 
-### <a name="disaster-recovery"></a>Recuperação de desastre
+### <a name="disaster-recovery"></a>Recuperação de desastres
 
 **P**: Quais opções estão disponíveis para recuperação de desastre? <br/>
 **R**: Você pode usar a chave de recuperação para restaurar ou mover um gateway. Ao instalar o gateway, especifique a chave de recuperação.
@@ -371,7 +371,7 @@ Estas etapas descrevem o que acontece quando um usuário na nuvem interage com u
 **P**: Qual é o benefício da chave de recuperação? <br/>
 **R**: A chave de recuperação oferece uma maneira de migrar ou recuperar as configurações do gateway após um desastre.
 
-## <a name="troubleshooting"></a>solução de problemas
+## <a name="troubleshooting"></a>Solução de problemas
 
 Esta seção aborda alguns problemas comuns que você pode ter ao configurar e usar o gateway de dados local.
 
@@ -418,7 +418,7 @@ Para ajudá-lo a solucionar problemas, sempre comece coletando e examinando os l
 
 Aqui estão outros locais onde é possível encontrar vários logs:
 
-| Tipo de log | Local padrão | 
+| Tipo de log | Location | 
 |----------|----------| 
 | **Logs do instalador** | %localappdata%\Temp\On-premises_data_gateway_<*yyyymmdd*>.<*number*>.log | 
 | **Logs de configuração** | C:\Users\<*username*>\AppData\Local\Microsoft\On-premises data gateway\GatewayConfigurator<*yyyymmdd*>.<*number*>.log | 
@@ -485,7 +485,7 @@ Para determinar a duração de uma consulta, siga estas etapas:
 
    2. Para localizar uma consulta, pesquise um tipo de atividade, por exemplo: 
 
-      | Tipo de atividade | DESCRIÇÃO | 
+      | Tipo de atividade | Descrição | 
       |---------------|-------------| 
       | MGEQ | Consultas que são executadas no ADO.NET. | 
       | MGEO | Consultas que são executadas no OLEDB. | 

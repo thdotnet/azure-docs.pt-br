@@ -1,6 +1,6 @@
 ---
-title: Central de segurança do Azure para IoT pré-requisitos de versão prévia | Microsoft Docs
-description: Detalhes de todos os componentes necessários para começar a usar a Central de segurança do Azure para pré-requisitos de serviço de IoT.
+title: Pré-requisitos da central de segurança do Azure para IoT | Microsoft Docs
+description: Detalhes de tudo o que é necessário para começar a usar a central de segurança do Azure para os pré-requisitos do serviço de IoT.
 services: asc-for-iot
 ms.service: asc-for-iot
 documentationcenter: na
@@ -13,57 +13,77 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/26/2019
+ms.date: 07/28/2019
 ms.author: mlottner
-ms.openlocfilehash: 198459887ff19b16e897b2a8dde55bca1217c8ac
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: cc2dc3a190e3ad06bdc048f2a5770eae2a6990ec
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67616443"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68596820"
 ---
-# <a name="azure-security-center-for-iot-prerequisites"></a>Central de segurança do Azure para pré-requisitos de IoT
+# <a name="azure-security-center-for-iot-prerequisites"></a>Pré-requisitos da central de segurança do Azure para IoT
 
-> [!IMPORTANT]
-> A Central de Segurança do Azure para IoT está em versão prévia pública no momento.
-> Esta versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos. Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
-
-Este artigo fornece uma explicação sobre os diferentes blocos de construção das Azure segurança ASC (Central) para IoT serviço, o que você precisa para começar e conceitos básicos para ajudar a entender o serviço. 
+Este artigo fornece uma explicação dos diferentes blocos de construção da central de segurança do Azure (ASC) para o serviço de IoT, o que você precisa para começar e explica os conceitos básicos para ajudar a entender o serviço. 
 
 ## <a name="minimum-requirements"></a>Requisitos mínimos
 
-- Camada Standard de Hub IoT
-    - Função RBAC **proprietário** privilégios de nível 
-- [O espaço de trabalho do log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) 
+- Camada padrão do Hub IoT
+    - Privilégios de nível de **proprietário** da função RBAC 
+- [Espaço de trabalho Log Analytics](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) 
 - Central de segurança do Azure (recomendado)
-    - Embora o uso da Central de segurança do Azure é apenas uma recomendação e não um requisito, sem ele, não será capaz de exibir os recursos do Azure dentro do IoT Hub. 
+    - O uso da central de segurança do Azure é uma recomendação, e não um requisito. Sem a central de segurança do Azure, você não poderá exibir os outros recursos do Azure no Hub IoT. 
  
-## <a name="working-with-asc-for-iot-service"></a>Trabalhar com o ASC para o serviço de IoT
+## <a name="working-with-asc-for-iot-service"></a>Trabalhando com o serviço ASC para IoT
 
-ASC para relatórios e insights de IoT estão disponíveis usando o IoT Hub do Azure e a Central de segurança do Azure. Para habilitar o ASC para IoT em seu Hub do IoT do Azure, uma conta com **proprietário** privilégios no nível é necessária. Depois de habilitar o ASC para IoT em seu IoT Hub, ASC para insights de IoT são exibidos como o **segurança** recurso no IoT Hub do Azure e como **IoT** na Central de segurança do Azure. 
+O ASC para informações e relatórios de IoT está disponível usando o Hub IoT do Azure e a central de segurança do Azure. Para habilitar o ASC para IoT no Hub IoT do Azure, é necessária uma conta com privilégios de nível de **proprietário** . Depois de habilitar o ASC para IoT em seu hub IoT, o ASC for IoT insights será exibido como o recurso de **segurança** no Hub IOT do Azure e como **IOT** na central de segurança do Azure. 
 
 ## <a name="supported-service-regions"></a>Regiões de serviço com suporte 
 
-ASC para IoT tem suporte atualmente para os Hubs de IoT nas seguintes regiões do Azure:
-  - Centro dos EUA
-  - Norte da Europa
-  - Sudeste Asiático
-
+O ASC para IoT tem suporte no momento para hubs IoT nas seguintes regiões do Azure:
+  - EUA Central  
+  - East US 
+  - Leste dos EUA 2
+  - Centro-oeste dos EUA
+  - Oeste dos EUA
+  - Oeste dos EUA 2
+  - EUA Central Sul
+  - Centro-Norte dos EUA
+  - Canadá Central
+  - Leste do Canadá 
+  - Europa Setentrional    
+  - Sul do Brasil
+  - Centro da França  
+  - Oeste do Reino Unido 
+  - Sul do Reino Unido
+  - Europa Ocidental 
+  - Norte da Europa 
+  - Oeste do Japão  
+  - Leste do Japão  
+  - Sudeste da Austrália
+  - Leste da Austrália
+  - Ásia Oriental   
+  - Sudeste da Ásia
+  - Coreia Central
+  - Sul da Coreia 
+  - Índia Central
+  - Sul da Índia
+  
 ## <a name="wheres-my-iot-hub"></a>Onde está meu Hub IoT?
 
-Verifique seu local de IoT Hub para verificar a disponibilidade de serviço antes de começar. 
+Verifique o local do Hub IoT para verificar a disponibilidade do serviço antes de começar. 
 
 1. Abra seu Hub IoT. 
 2. Clique em **Visão Geral**. 
-3. Verifique se o local indicado corresponde a um dos [regiões de serviço com suporte](#supported-service-regions). 
+3. Verifique se o local listado corresponde a uma das [regiões de serviço com suporte](#supported-service-regions). 
 
 
 ## <a name="supported-platforms-for-agents"></a>Plataformas com suporte para agentes 
 
-ASC para agentes do IoT dá suporte a uma lista crescente de dispositivos e plataformas. Consulte a [suporte para a lista de plataformas](how-to-deploy-agent.md) para verificar sua biblioteca de dispositivo existente ou planejada.  
+O ASC para agentes de IoT dá suporte a uma lista crescente de dispositivos e plataformas. Consulte a [lista de plataformas com suporte](how-to-deploy-agent.md) para verificar sua biblioteca de dispositivos existente ou planejada.  
 
 ## <a name="next-steps"></a>Próximas etapas
-- [Visão geral](overview.md)
-- [Habilitar o serviço](quickstart-onboard-iot-hub.md)
-- [ASC para perguntas Frequentes de IoT](resources-frequently-asked-questions.md)
-- [Noções básicas sobre o ASC para alertas de IoT](concept-security-alerts.md)
+- Leia a [visão geral](overview.md) da segurança de IOT do Azure
+- Saiba como [habilitar o serviço](quickstart-onboard-iot-hub.md)
+- Leia as [perguntas frequentes sobre a central de segurança do Azure para IOT](resources-frequently-asked-questions.md)
+- Explore como [entender a central de segurança do Azure para alertas de IOT](concept-security-alerts.md)

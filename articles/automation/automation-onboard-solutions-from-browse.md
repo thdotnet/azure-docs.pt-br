@@ -9,12 +9,12 @@ ms.date: 04/11/2019
 ms.topic: article
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: 11dda62a7d8a92b17eb1d431e61086680f356195
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: cf063311e5559ddf5706df397ce744a726610000
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67476613"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68667335"
 ---
 # <a name="enable-update-management-change-tracking-and-inventory-solutions-on-multiple-vms"></a>Habilitar o gerenciamento de atualizações, o controle de alterações e as soluções de inventário em várias VMs
 
@@ -28,7 +28,7 @@ Entre no Azure em https://portal.azure.com
 
 No portal do Azure, navegue até **máquinas virtuais**.
 
-Usando as caixas de seleção, selecione as máquinas virtuais que você deseja integrar com o controle de alterações e inventário ou de gerenciamento de atualização. A integração está disponível para até três grupos de recursos diferente cada vez. As VMs do Azure podem existir em qualquer região não importa o local de sua conta de automação.
+Usando as caixas de seleção, selecione as máquinas virtuais que você deseja integrar com o controle de alterações e inventário ou de gerenciamento de atualização. A integração está disponível para até três grupos de recursos diferente cada vez. As VMs do Azure podem existir em qualquer região, independentemente do local da sua conta de automação.
 
 ![Lista de VMs](media/automation-onboard-solutions-from-browse/vmlist.png)
 > [!TIP]
@@ -47,11 +47,13 @@ A lista de máquinas virtuais é filtrada para mostrar somente as máquinas virt
 
 O número de grupos de recursos que você pode usar para a integração é limitado pelos [limites de implantação do Resource Manager](../azure-resource-manager/resource-manager-cross-resource-group-deployment.md). As implantações do Resource Manager, que não devem ser confundidas com implantações de atualização, estão limitadas a cinco grupos de recursos por implantação. Para garantir a integridade da integração, dois desses grupos de recursos são reservados para configurar o espaço de trabalho do Log Analytics, a conta de Automação e os recursos relacionados. Isso deixa você com três grupos de recursos para selecionar para a implantação.
 
+Você também pode usar um runbook para integração, para obter mais informações, consulte [soluções integradas de atualização e controle de alterações para a automação do Azure](automation-onboard-solutions.md).
+
 Use os controles de filtro para selecionar máquinas virtuais em assinaturas diferentes, locais e grupos de recursos.
 
 ![Solução integrada de gerenciamento de atualização](media/automation-onboard-solutions-from-browse/onboardsolutions.png)
 
-Revise as opções para o espaço de trabalho do Log Analytics e a conta de automação. Um workspace existente e a conta de Automação são selecionados por padrão. Se desejar usar um espaço de trabalho do Log Analytics diferente e a Conta de Automação, clique em **PERSONALIZAR** para selecioná-los na página **Configuração personalizada**. Quando você escolhe um espaço de trabalho do Log Analytics, é feita uma verificação para determinar se ele está vinculado a uma Conta de Automação. Se uma Conta de Automação vinculada for encontrada, você verá a tela a seguir. Quando terminar, clique em **OK**.
+Examine as opções para o espaço de trabalho Log Analytics e a conta de automação. Um workspace existente e a conta de Automação são selecionados por padrão. Se desejar usar um espaço de trabalho do Log Analytics diferente e a Conta de Automação, clique em **PERSONALIZAR** para selecioná-los na página **Configuração personalizada**. Quando você escolhe um espaço de trabalho do Log Analytics, é feita uma verificação para determinar se ele está vinculado a uma Conta de Automação. Se uma Conta de Automação vinculada for encontrada, você verá a tela a seguir. Quando terminar, clique em **OK**.
 
 ![Selecione workspace e conta](media/automation-onboard-solutions-from-browse/selectworkspaceandaccount.png)
 
@@ -62,7 +64,7 @@ Se o workspace selecionado não estiver vinculado a uma Conta de Automação, vo
 > [!NOTE]
 > Ao habilitar soluções, somente determinadas regiões têm suporte para vincular um espaço de trabalho do Log Analytics e uma Conta de Automação.
 >
-> Para obter uma lista de pares de mapeamento com suporte, consulte [mapeamento da região do espaço de trabalho de conta de automação e o Log Analytics](how-to/region-mappings.md).
+> Para obter uma lista dos pares de mapeamento com suporte, confira [mapeamento de região para conta de automação e espaço de trabalho de log Analytics](how-to/region-mappings.md).
 
 Desmarque a caixa de seleção ao lado de qualquer máquina virtual que você não deseja habilitar. Máquinas virtuais que não podem ser habilitadas já estão desmarcadas.
 
@@ -76,7 +78,7 @@ As seguintes soluções são dependentes de um espaço de trabalho do Log Analyt
 * [Controle de alterações](automation-change-tracking.md)
 * [Iniciar/parar VMs durante os horários fora de pico](automation-solution-vm-management.md)
 
-Se você decidir que você não deseja mais integrar sua conta de automação com um espaço de trabalho do Log Analytics, você pode desvincular sua conta diretamente do portal do Azure. Antes de prosseguir, você precisa remover as soluções mencionadas anteriormente, caso contrário, esse processo será impedido de continuar. Examine o artigo sobre a solução específica que você importou para entender as etapas necessárias para removê-la.
+Se você decidir que não deseja mais integrar sua conta de automação a um espaço de trabalho Log Analytics, você poderá desvincular sua conta diretamente da portal do Azure. Antes de prosseguir, você precisa remover as soluções mencionadas anteriormente, caso contrário, esse processo será impedido de continuar. Examine o artigo sobre a solução específica que você importou para entender as etapas necessárias para removê-la.
 
 Depois de remover essas soluções, você poderá executar as etapas a seguir para desvincular sua conta de Automação.
 
@@ -103,11 +105,11 @@ Se você tiver usado a solução Iniciar/parar VMs durante os horários fora de 
 
 * Iniciar e parar agendas de runbook da VM
 * Iniciar e parar runbooks da VM
-* variáveis
+* Variáveis
 
-Como alternativa, você também pode desvincular seu espaço de trabalho de sua conta de automação do espaço de trabalho do Log Analytics. No espaço de trabalho, selecione **conta de automação** sob **recursos relacionados**. Na página conta de automação, selecione **desvincular conta**.
+Como alternativa, você também pode desvincular seu espaço de trabalho de sua conta de automação do seu espaço de trabalho Log Analytics. Em seu espaço de trabalho, selecione **conta de automação** em **recursos relacionados**. Na página conta de automação, selecione **desvincular conta**.
 
-## <a name="troubleshooting"></a>solução de problemas
+## <a name="troubleshooting"></a>Solução de problemas
 
 Ao integrar várias máquinas, pode haver máquinas que mostrem como **Não é possível ativar**. Há diferentes razões que algumas máquinas não podem ser ativadas. As seções a seguir mostram possíveis razões para o estado **Impossível ativar** em uma VM ao tentar integrar.
 
@@ -137,7 +139,7 @@ Ao integrar várias máquinas, pode haver máquinas que mostrem como **Não é p
 
 **Causa**: máquinas virtuais que usam o modelo de implantação clássico não são suportadas.
 
-**Solução**: Migre a máquina virtual para o modelo de implantação do Resource Manager. Para aprender como fazer isso, consulte [ Migrar recursos do modelo de implantação clássico ](../virtual-machines/windows/migration-classic-resource-manager-overview.md).
+**Solução**: Migre a máquina virtual para o modelo de implantação do Gerenciador de recursos. Para aprender como fazer isso, consulte [ Migrar recursos do modelo de implantação clássico ](../virtual-machines/windows/migration-classic-resource-manager-overview.md).
 
 ### <a name="vm-is-stopped-deallocated"></a>A VM está parada. (deslocada)
 

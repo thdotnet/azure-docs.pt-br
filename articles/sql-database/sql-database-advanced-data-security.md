@@ -9,14 +9,13 @@ ms.topic: conceptual
 author: monhaber
 ms.author: v-mohabe
 ms.reviewer: vanto
-manager: craigg
 ms.date: 03/31/2019
-ms.openlocfilehash: ce02fee31041222c48d62ef8410b97fedf74dfdb
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: b8fc82ca8f4b42adf595680541042ef38efe1470
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68297670"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68569546"
 ---
 # <a name="advanced-data-security-for-azure-sql-database"></a>Segurança de Dados Avançada para Banco de Dados SQL do Azure
 
@@ -70,7 +69,7 @@ Depois que a caixa de seleção for selecionada, você poderá definir as config
 
 As configurações de Segurança de Dados Avançada para seu servidor de banco de dados ou instância gerenciada também podem ser acessadas do painel de banco de dados da ADS. Clique em **Configurações** no painel principal da ADS e, em seguida, clique em **Exibir configurações do servidor da Segurança de Dados Avançada**. 
 
-![Configurações de banco de dados](./media/sql-advanced-protection/database_settings.png) 
+![Configurações do banco de dados](./media/sql-advanced-protection/database_settings.png) 
 
 ## <a name="next-steps"></a>Próximas etapas 
 

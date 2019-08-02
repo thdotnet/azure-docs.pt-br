@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/09/2017
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: ab04d1288eb3a851774128b8aaaae03868c2ffa7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fef509d705d0b904586a86b7dc58decc54e7023d
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60839004"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68716633"
 ---
 # <a name="azure-app-service-plan-overview"></a>Visão geral do plano do Serviço de Aplicativo do Azure
 
@@ -113,7 +113,7 @@ Como você paga pelos recursos de computação que o seu plano do serviço de ap
 Isole o seu aplicativo em um novo Plano do Serviço de Aplicativo quando:
 
 - O aplicativo faz uso intensivo de recursos.
-- Você deseja dimensionar o aplicativo independentemente de outros aplicativos no plano existente.
+- Você deseja dimensionar o aplicativo independentemente dos outros aplicativos no plano existente.
 - O aplicativo precisa de recursos em uma região geográfica diferente.
 
 Dessa forma, você pode alocar um novo conjunto de recursos para seu aplicativo e ter mais controle sobre seus aplicativos.

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: b6b4cd38ce5f591d43f27f735a48993cc1a1ab63
-ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
+ms.openlocfilehash: 27f0ebab1fd87eb1870c5a8be21c4f80be4132f1
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68414456"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698599"
 ---
 # <a name="update-the-iot-edge-security-daemon-and-runtime"></a>Atualize o daemon de segurança do IoT Edge e o tempo de execução
 
@@ -24,14 +24,6 @@ Como o serviço de IoT Edge libera novas versões, convém atualizar seus dispos
 Dois componentes de um dispositivo IoT Edge precisam ser atualizados se você deseja passar para uma versão mais recente. O primeiro é o daemon de segurança que é executado no dispositivo e inicia os módulos de tempo de execução quando o dispositivo é iniciado. Atualmente, o daemon de segurança só pode ser atualizado no próprio dispositivo. O segundo componente é o tempo de execução, composto pelos módulos de agente do IoT Edge e hub do IoT Edge. Dependendo de como você estruturar sua implantação, o tempo de execução poderá ser atualizado no dispositivo ou remotamente. 
 
 Para localizar a versão mais recente do Azure IoT Edge, confira [Versões do Azure IoT Edge](https://github.com/Azure/azure-iotedge/releases).
-
->[!IMPORTANT]
->Se você estiver executando o Azure IoT Edge em um dispositivo Windows, não atualize para a versão 1.0.5, se um dos procedimentos a seguir aplica-se ao seu dispositivo: 
->* Você não atualizou seu dispositivo para a compilação 17763 do Windows. A versão 1.0.5 do IoT Edge não oferece suporte a compilações Windows anteriores a 17763.
->* Você executa os módulos Java ou Node.js no seu dispositivo do Windows. Ignore a versão 1.0.5 mesmo se você tiver atualizado seu dispositivo Windows para a compilação mais recente. 
->
->Para obter mais informações sobre o IoT Edge versão 1.0.5, consulte [Notas de versão 1.0.5](https://github.com/Azure/azure-iotedge/releases/tag/1.0.5). Para obter mais informações sobre como impedir que suas ferramentas de desenvolvimento sejam atualizadas para a versão mais recente, consulte [o blog do desenvolvedor de IOT](https://devblogs.microsoft.com/iotdev/).
-
 
 ## <a name="update-the-security-daemon"></a>Atualizar o daemon de segurança
 

@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/22/2018
 ms.author: glenga
-ms.openlocfilehash: 62d359494050b188869d51d1e3975c823b9c0a76
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 50056d4d05d2426ff644518aea04a2c9f4d817f3
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204931"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68667178"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Referência de configurações de aplicativo para Azure Functions
 
@@ -35,7 +35,7 @@ Chave de instrumentação do Application Insights se você estiver usando o Appl
 
 ## <a name="azurefunctionsenvironment"></a>AZURE_FUNCTIONS_ENVIRONMENT
 
-Na versão 2.x do tempo de execução de funções, configura o comportamento do aplicativo com base no ambiente de tempo de execução. Esse valor é [ler durante a inicialização](https://github.com/Azure/azure-functions-host/blob/dev/src/WebJobs.Script.WebHost/Program.cs#L43). Você pode definir `AZURE_FUNCTIONS_ENVIRONMENT` com qualquer valor, mas [três valores](/dotnet/api/microsoft.aspnetcore.hosting.environmentname) têm suporte: [Desenvolvimento](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development), [preparo](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.staging), e [produção](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.production). Quando `AZURE_FUNCTIONS_ENVIRONMENT` não estiver definido, o padrão é `Production`. Essa configuração deve ser usada em vez de `ASPNETCORE_ENVIRONMENT` para definir o ambiente de tempo de execução. 
+Na versão 2. x do tempo de execução do functions, o configura o comportamento do aplicativo com base no ambiente de tempo de execução. Esse valor é [lido durante a inicialização](https://github.com/Azure/azure-functions-host/blob/dev/src/WebJobs.Script.WebHost/Program.cs#L43). Você pode definir `AZURE_FUNCTIONS_ENVIRONMENT` para qualquer valor, mas há suporte para [três valores](/dotnet/api/microsoft.aspnetcore.hosting.environmentname) : [Desenvolvimento](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development), [preparo](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.staging)e [produção](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.production). Quando `AZURE_FUNCTIONS_ENVIRONMENT` não está definido, ele usa como `Development` padrão um ambiente local e `Production` no Azure. Essa configuração deve ser usada em vez `ASPNETCORE_ENVIRONMENT` de para definir o ambiente de tempo de execução. 
 
 ## <a name="azurewebjobsdashboard"></a>AzureWebJobsDashboard
 
@@ -54,7 +54,7 @@ Cadeia de conexão da conta de armazenamento opcional para armazenar logs e exib
 
 |Chave|Valor de exemplo|
 |---|------------|
-|AzureWebJobsDisableHomepage|verdadeiro|
+|AzureWebJobsDisableHomepage|true|
 
 Quando essa configuração de aplicativo é omitida ou definida como `false`, uma página semelhante ao exemplo a seguir é exibida na resposta à URL `<functionappname>.azurewebsites.net`.
 
@@ -66,7 +66,7 @@ Quando essa configuração de aplicativo é omitida ou definida como `false`, um
 
 |Chave|Valor de exemplo|
 |---|------------|
-|AzureWebJobsDotNetReleaseCompilation|verdadeiro|
+|AzureWebJobsDotNetReleaseCompilation|true|
 
 ## <a name="azurewebjobsfeatureflags"></a>AzureWebJobsFeatureFlags
 
@@ -102,7 +102,7 @@ Caminho para o compilador usado para TypeScript. Permite substituir o padrão se
 
 ## <a name="functionappeditmode"></a>FUNCTION\_APP\_EDIT\_MODE
 
-Determina se a edição no portal do Azure está habilitado. Os valores válidos são "readwrite" e "readonly".
+Determina se a edição no portal do Azure está habilitada. Os valores válidos são "readwrite" e "readonly".
 
 |Chave|Valor de exemplo|
 |---|------------|
@@ -118,7 +118,7 @@ A versão do tempo de execução do Functions para usar nesse aplicativo de fun�
 
 ## <a name="functionsworkerruntime"></a>FUNÇÕES\_TRABALHADOR\_TEMPO DE EXECUÇÃO
 
-O tempo de execução do trabalho de linguagem deve ser carregado no aplicativo de funções.  Isso irá corresponder ao idioma que está sendo usado em seu aplicativo (por exemplo, "dotnet"). Para funções em vários idiomas, você precisará publicá-las em vários aplicativos, cada um com um valor de tempo de execução de trabalho correspondente.  Os valores válidos são `dotnet` (C#/F#), `node` (JavaScript/TypeScript) `java` (Java), `powershell` (PowerShell), e `python` (Python).
+O tempo de execução do trabalho de linguagem deve ser carregado no aplicativo de funções.  Isso irá corresponder ao idioma que está sendo usado em seu aplicativo (por exemplo, "dotnet"). Para funções em vários idiomas, você precisará publicá-las em vários aplicativos, cada um com um valor de tempo de execução de trabalho correspondente.  Os valores válidos `dotnet` sãoC#(F#/) `node` , (JavaScript/TypeScript) `java` , (Java) `powershell` , (PowerShell) e `python` (Python).
 
 |Chave|Valor de exemplo|
 |---|------------|
@@ -126,7 +126,7 @@ O tempo de execução do trabalho de linguagem deve ser carregado no aplicativo 
 
 ## <a name="websitecontentazurefileconnectionstring"></a>WEBSITE_CONTENTAZUREFILECONNECTIONSTRING
 
-Apenas para planos de consumo. Cadeia de conexão para a conta de armazenamento na qual o código do aplicativo de funções e a configuração são armazenados. Consulte [Criar um aplicativo de funções](functions-infrastructure-as-code.md#create-a-function-app).
+Para consumo & apenas planos Premium. Cadeia de conexão para a conta de armazenamento na qual o código do aplicativo de funções e a configuração são armazenados. Consulte [Criar um aplicativo de funções](functions-infrastructure-as-code.md#create-a-function-app).
 
 |Chave|Valor de exemplo|
 |---|------------|
@@ -134,7 +134,7 @@ Apenas para planos de consumo. Cadeia de conexão para a conta de armazenamento 
 
 ## <a name="websitecontentshare"></a>WEBSITE\_CONTENTSHARE
 
-Apenas para planos de consumo. O caminho do arquivo para o código do aplicativo de funções e a configuração. Usado com WEBSITE_CONTENTAZUREFILECONNECTIONSTRING. O padrão é uma cadeia única que começa com o nome do aplicativo de funções. Consulte [Criar um aplicativo de funções](functions-infrastructure-as-code.md#create-a-function-app).
+Para consumo & apenas planos Premium. O caminho do arquivo para o código do aplicativo de funções e a configuração. Usado com WEBSITE_CONTENTAZUREFILECONNECTIONSTRING. O padrão é uma cadeia única que começa com o nome do aplicativo de funções. Consulte [Criar um aplicativo de funções](functions-infrastructure-as-code.md#create-a-function-app).
 
 |Chave|Valor de exemplo|
 |---|------------|
@@ -173,20 +173,20 @@ Os valores válidos são `1` ou uma URL que resolve para o local de um arquivo d
 
 Por padrão, os proxies de funções utilizarão um atalho para enviar chamadas à API de proxies diretamente para funções no mesmo aplicativo de funções, em vez de criar uma nova solicitação HTTP. Essa configuração permite que você desabilite esse comportamento.
 
-|Chave|Value|DESCRIÇÃO|
+|Chave|Valor|Descrição|
 |-|-|-|
-|AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|verdadeiro|Chamadas com uma URL de back-end apontando para uma função no Aplicativo de funções local não serão mais enviadas diretamente à função e, em vez disso, serão direcionadas de volta para o front-end HTTP para o Aplicativo de funções|
-|AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|falso|Esse é o valor padrão. Chamadas com uma URL de back-end apontando para uma função no Aplicativo de Funções local serão encaminhadas diretamente para essa Função|
+|AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|true|Chamadas com uma URL de back-end apontando para uma função no Aplicativo de funções local não serão mais enviadas diretamente à função e, em vez disso, serão direcionadas de volta para o front-end HTTP para o Aplicativo de funções|
+|AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|false|Este é o valor padrão. Chamadas com uma URL de back-end apontando para uma função no Aplicativo de Funções local serão encaminhadas diretamente para essa Função|
 
 
 ## <a name="azurefunctionproxybackendurldecodeslashes"></a>AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES
 
 Essa configuração controla se %2F é decodificado como barras nos parâmetros de rota quando inseridos na URL de back-end. 
 
-|Chave|Value|DESCRIÇÃO|
+|Chave|Valor|Descrição|
 |-|-|-|
-|AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|verdadeiro|Os parâmetros de rota com barras codificadas os terão decodificados. `example.com/api%2ftest` se tornará `example.com/api/test`|
-|AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|falso|Esse é o comportamento padrão. Todos os parâmetros de rota serão passados inalterados|
+|AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|true|Os parâmetros de rota com barras codificadas os terão decodificados. `example.com/api%2ftest` se tornará `example.com/api/test`|
+|AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|false|Esse é o comportamento padrão. Todos os parâmetros de rota serão passados inalterados|
 
 ### <a name="example"></a>Exemplo
 
@@ -207,8 +207,8 @@ Aqui, está um exemplo de proxy.json em um aplicativo de funções no myfunction
 ```
 |Decodificação URL|Entrada|Saída|
 |-|-|-|
-|verdadeiro|myfunction.com/test%2fapi|example.com/test/api
-|falso|myfunction.com/test%2fapi|example.com/test%2fapi|
+|true|myfunction.com/test%2fapi|example.com/test/api
+|false|myfunction.com/test%2fapi|example.com/test%2fapi|
 
 
 ## <a name="next-steps"></a>Próximas etapas

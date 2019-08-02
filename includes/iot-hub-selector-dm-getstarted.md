@@ -4,20 +4,20 @@ ms.author: wesmc
 ms.service: iot-hub
 ms.topic: include
 ms.date: 10/26/2018
-ms.openlocfilehash: 19331f35ea2fa773325ec61e728677e37767ab54
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 60c0c700dde5afda2ca93a92b334cbc4f0134043
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67172026"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68667975"
 ---
 > [!div class="op_single_selector"]
-> * [Dispositivo: Serviço do Node. js: Node.js](../articles/iot-hub/iot-hub-node-node-device-management-get-started.md)
-> * [Dispositivo: C#Serviço: C#](../articles/iot-hub/iot-hub-csharp-csharp-device-management-get-started.md)
-> * [Dispositivo: Serviço de Java: Java](../articles/iot-hub/iot-hub-java-java-device-management-getstarted.md)
-> * [Dispositivo: Serviço do Python: Python](../articles/iot-hub/iot-hub-python-python-device-management-get-started.md)
+> * [Node.js](../articles/iot-hub/iot-hub-node-node-device-management-get-started.md)
+> * [.NET](../articles/iot-hub/iot-hub-csharp-csharp-device-management-get-started.md)
+> * [Java](../articles/iot-hub/iot-hub-java-java-device-management-getstarted.md)
+> * [Python](../articles/iot-hub/iot-hub-python-python-device-management-get-started.md)
 
-Os aplicativos de back-end podem usar primitivos no Hub IoT do Azure, ou seja, o [dispositivo gêmeo][lnk-devtwin] e [métodos diretos][lnk-c2dmethod], para iniciar remotamente e monitorar as ações de gerenciamento de dispositivo nos dispositivos. Este tutorial mostra como um aplicativo de back-end e um dispositivo podem trabalhar juntos para permitir que você inicie e monitore uma reinicialização remota por meio do Hub IoT.
+Os aplicativos de back-end podem usar primitivos do Hub IoT do Azure, como [dispositivos][lnk-devtwin] e [métodos diretos][lnk-c2dmethod], para iniciar remotamente e monitorar ações de gerenciamento de dispositivos em dispositivos. Este tutorial mostra como um aplicativo de back-end e um dispositivo podem trabalhar juntos para permitir que você inicie e monitore uma reinicialização remota por meio do Hub IoT.
 
 [!INCLUDE [iot-hub-basic](iot-hub-basic-whole.md)]
 

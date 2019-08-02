@@ -4,7 +4,7 @@ description: Saiba mais sobre e estruturas de aprendizado profundo e ferramentas
 keywords: ferramentas de ciência de dados, máquina virtual de ciência de dados, ferramentas para ciência de dados, ciência de dados do linux
 services: machine-learning
 documentationcenter: ''
-author: gopitk
+author: vijetajo
 manager: cgronlun
 ms.custom: seodec18
 ms.assetid: ''
@@ -15,13 +15,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/11/2017
-ms.author: gokuma
-ms.openlocfilehash: 59f88d54d3542738f1a500c8c476995eb1535ecf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: vijetaj
+ms.openlocfilehash: 08a740ec898f1ac46ff66de9002e4241d918adc0
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62130257"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68558176"
 ---
 # <a name="deep-learning-and-ai-frameworks"></a>Estruturas de Aprendizado Profundo e de AI
 A DSVM ([Máquina Virtual de Ciência de Dados](https://aka.ms/dsvm)) e a [VM de Aprendizado Profundo](https://aka.ms/dsvm/deeplearning) dão suporte a várias estruturas de aprendizado profundo para ajudar a criar aplicativos de AI (Inteligência Artificial) com funcionalidades cognitivas e análise preditiva como entendimento de imagem e linguagem.
@@ -32,7 +32,7 @@ Aqui estão os detalhes sobre todas as estruturas de aprendizado profundo sobre 
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Estrutura de aprendizado profundo      |
+| O que é isto?   | Estrutura de aprendizado profundo      |
 | Edições do DSVM com suporte      | Windows, Linux     |
 | Como é configurado/instalado no DSVM?  | O Microsoft Cognitive Toolkit (CNTK) está instalado em Python 3.5 no [Linux e Windows 2012](dsvm-languages.md#python-linux-and-windows-server-2012-edition) e Python 3.6 no [Windows 2016](dsvm-languages.md#python-windows-server-2016-edition).   |
 | Links para exemplos      | Exemplos de blocos de anotações do Jupyter estão incluídos.     |
@@ -43,7 +43,7 @@ Aqui estão os detalhes sobre todas as estruturas de aprendizado profundo sobre 
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Estrutura de aprendizado profundo      |
+| O que é isto?   | Estrutura de aprendizado profundo      |
 | Edições do DSVM com suporte      | Windows, Linux     |
 | Como é configurado/instalado no DSVM?  | O TensorFlow está instalado em Python 3.5 no [Linux e Windows 2012](dsvm-languages.md#python-linux-and-windows-server-2012-edition) e Python 3.6 no [Windows 2016](dsvm-languages.md#python-windows-server-2016-edition).  |
 | Links para exemplos      | Exemplos de blocos de anotações do Jupyter estão incluídos.     |
@@ -54,7 +54,7 @@ Aqui estão os detalhes sobre todas as estruturas de aprendizado profundo sobre 
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Estrutura de aprendizagem profunda distribuída para TensorFlow      |
+| O que é isto?   | Estrutura de aprendizagem profunda distribuída para TensorFlow      |
 | Edições do DSVM com suporte      | Ubuntu     |
 | Como é configurado/instalado no DSVM?  | Horovod está instalado em Python 3.5 no [Ubuntu](dsvm-languages.md#python-linux-and-windows-server-2012-edition).  |
 | Links para exemplos      | [https://github.com/uber/horovod/tree/master/examples](https://github.com/uber/horovod/tree/master/examples)     |
@@ -65,7 +65,7 @@ Aqui estão os detalhes sobre todas as estruturas de aprendizado profundo sobre 
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | API de aprendizado profundo de alto nível      |
+| O que é isto?   | API de aprendizado profundo de alto nível      |
 | Edições do DSVM com suporte      | Windows, Linux     |
 | Como é configurado/instalado no DSVM?  | O TensorFlow está instalado em Python 3.5 no [Linux e Windows 2012](dsvm-languages.md#python-linux-and-windows-server-2012-edition) e Python 3.6 no [Windows 2016](dsvm-languages.md#python-windows-server-2016-edition). |
 | Links para exemplos      | https://github.com/fchollet/keras/tree/master/examples      |
@@ -76,7 +76,7 @@ Aqui estão os detalhes sobre todas as estruturas de aprendizado profundo sobre 
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Estrutura de aprendizado profundo      |
+| O que é isto?   | Estrutura de aprendizado profundo      |
 | Edições do DSVM com suporte      | Ubuntu     |
 | Como é configurado/instalado no DSVM?  | O Caffe é instalado em `/opt/caffe`.    |
 | Como alternar para o Python 2.7 | Execute `source activate root` |
@@ -103,7 +103,7 @@ A versão instalada do Caffe requer Python 2.7 e não funcionará com o Python 3
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Estrutura de aprendizado profundo      |
+| O que é isto?   | Estrutura de aprendizado profundo      |
 | Edições do DSVM com suporte      | Ubuntu     |
 | Como é configurado/instalado no DSVM?  | O Caffe2 é instalado no [ambiente conda (raiz) do Python 2.7](dsvm-languages.md#python-linux-and-windows-server-2012-edition). A fonte está em `/opt/caffe2`. |
 | Links para exemplos      | Exemplos de blocos de anotações estão incluídos no JupyterHub. |
@@ -111,11 +111,11 @@ A versão instalada do Caffe requer Python 2.7 e não funcionará com o Python 3
 | Como usar/executar?    | * No terminal: ative o [ambiente de Python raiz](dsvm-languages.md#python-linux-and-windows-server-2012-edition), inicie o Python e importe Caffe2. <br/> * No JupyterHub: [conecte-se ao JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-data-science-virtual-machine-for-linux), em seguida, navegue até o diretório Caffe2 para localizar os blocos de anotações de exemplo. Alguns blocos de anotações exigem que a raiz Caffe2 seja definida no código Python; insira /opt/caffe2. |
 | Compilar notas | O Caffe2 é criado a partir do código-fonte no Linux e inclui CUDA, cuDNN e Intel MKL. A confirmação atual é 0d9c0d48c6f20143d6404b99cc568efd29d5a4be, que foi escolhido para estabilidade em todas as GPUs e exemplos testados. |
 
-## <a name="chainer"></a>Encadeador
+## <a name="chainer"></a>Chainer
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Estrutura de aprendizado profundo      |
+| O que é isto?   | Estrutura de aprendizado profundo      |
 | Edições do DSVM com suporte      | Windows, Linux     |
 | Como é configurado/instalado no DSVM?  | O Chainer é instalado em [Python 3.5](dsvm-languages.md#python-linux-and-windows-server-2012-edition). ChainerRL e ChainerCV também são instalados.   |
 | Links para exemplos      | Exemplos de blocos de anotações estão incluídos no JupyterHub. |
@@ -127,7 +127,7 @@ A versão instalada do Caffe requer Python 2.7 e não funcionará com o Python 3
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Estrutura de aprendizado profundo para H2O      |
+| O que é isto?   | Estrutura de aprendizado profundo para H2O      |
 | Edições do DSVM com suporte      | Ubuntu     |
 | Como é configurado/instalado no DSVM?  | O Deep Water é instalado em [Python 3.5](dsvm-languages.md#python-linux-and-windows-server-2012-edition) e também está disponível em `/dsvm/tools/deep_water`.   |
 | Links para exemplos      | Exemplos de blocos de anotações estão incluídos no JupyterHub.      |
@@ -150,7 +150,7 @@ Para usar o Deep Water:
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Estrutura de aprendizado profundo      |
+| O que é isto?   | Estrutura de aprendizado profundo      |
 | Edições do DSVM com suporte      | Windows, Linux     |
 | Como é configurado/instalado no DSVM?  | MXNet é instalado em `C:\dsvm\tools\mxnet` no Windows e `/dsvm/tools/mxnet` no Linux. As associações de Python estão instaladas em Python 3.5 no [Linux e Windows 2012](dsvm-languages.md#python-linux-and-windows-server-2012-edition) e Python 3.6 no [Windows 2016](dsvm-languages.md#python-windows-server-2016-edition). Associações do R também são instaladas no Ubuntu.   |
 | Links para exemplos      | Exemplos de blocos de anotações do Jupyter estão incluídos.    |
@@ -162,7 +162,7 @@ Para usar o Deep Water:
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Sistema de aprendizado profundo da NVIDIA para treinar rapidamente modelos de aprendizado profundo      |
+| O que é isto?   | Sistema de aprendizado profundo da NVIDIA para treinar rapidamente modelos de aprendizado profundo      |
 | Edições do DSVM com suporte      | Ubuntu     |
 | Como é configurado/instalado no DSVM?  | DIGITS está instalado em `/dsvm/tools/DIGITS` e disponível como um serviço, chamado _digits_.   |
 
@@ -180,7 +180,7 @@ O serviço demora aproximadamente um minuto para iniciar. Abra um navegador da W
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Ferramenta NVIDIA para consultar a atividade da GPU      |
+| O que é isto?   | Ferramenta NVIDIA para consultar a atividade da GPU      |
 | Edições do DSVM com suporte      | Windows, Linux     |
 | Como é configurado/instalado no DSVM?  | _nvidia-smi_ está disponível no caminho do sistema.   |
 | Como usar/executar? | Inicie um prompt de comando (no Windows) ou um terminal (no Linux) e, em seguida, execute _nvidia-smi_.
@@ -191,7 +191,7 @@ O serviço demora aproximadamente um minuto para iniciar. Abra um navegador da W
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Estrutura de aprendizado profundo      |
+| O que é isto?   | Estrutura de aprendizado profundo      |
 | Edições do DSVM com suporte      | Ubuntu     |
 | Como é configurado/instalado no DSVM?  | O Theano é instalado em Python 2.7 (_raiz_), bem como no ambiente Python 3.5 (_py35_).   |
 | Ferramentas relacionadas ao DSVM      | Keras      |
@@ -203,7 +203,7 @@ O serviço demora aproximadamente um minuto para iniciar. Abra um navegador da W
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Estrutura de aprendizado profundo      |
+| O que é isto?   | Estrutura de aprendizado profundo      |
 | Edições do DSVM com suporte      | Ubuntu     |
 | Como é configurado/instalado no DSVM?  | O Torch é instalado em `/dsvm/tools/torch`. O PyTorch é instalado em Python 2.7 (_raiz_), bem como no ambiente Python 3.5 (_py35_).   |
 | Links para exemplos      | Exemplos de Torch estão localizados em `/dsvm/samples/torch`. Exemplos de PyTorch estão localizados em `/dsvm/samples/pytorch`.      |
@@ -213,7 +213,7 @@ O serviço demora aproximadamente um minuto para iniciar. Abra um navegador da W
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Estrutura de aprendizado profundo      |
+| O que é isto?   | Estrutura de aprendizado profundo      |
 | Edições do DSVM com suporte      | Linux     |
 | Como é configurado/instalado no DSVM?  | O PyTorch é instalado em [Python 3.5](dsvm-languages.md#python-linux-and-windows-server-2012-edition).  |
 | Links para exemplos      | Exemplos de blocos de anotações do Jupyter estão incluídos e exemplos também podem ser encontrados em /dsvm/samples/pytorch.      |
@@ -224,7 +224,7 @@ O serviço demora aproximadamente um minuto para iniciar. Abra um navegador da W
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Um servidor para criar pontos de extremidade HTTP para modelos MXNet e ONNX      |
+| O que é isto?   | Um servidor para criar pontos de extremidade HTTP para modelos MXNet e ONNX      |
 | Edições do DSVM com suporte      | Linux     |
 | Como é configurado/instalado no DSVM?  | _mxnet-model-server_ está disponível no terminal.   |
 | Links para exemplos      | Procurar exemplos atualizados na [página do servidor do modelo MXNet](https://github.com/awslabs/mxnet-model-server).    |
@@ -234,7 +234,7 @@ O serviço demora aproximadamente um minuto para iniciar. Abra um navegador da W
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Um servidor para executar inferências em um modelo TensorFlow      |
+| O que é isto?   | Um servidor para executar inferências em um modelo TensorFlow      |
 | Edições do DSVM com suporte      | Linux     |
 | Como é configurado/instalado no DSVM?  | _tensorflow_model_server_ está disponível no terminal.   |
 | Links para exemplos      | Exemplos estão disponíveis [online](https://www.tensorflow.org/serving/).      |
@@ -244,7 +244,7 @@ O serviço demora aproximadamente um minuto para iniciar. Abra um navegador da W
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Um servidor inferência de aprendizagem profunda de NVIDIA. |
+| O que é isto?   | Um servidor inferência de aprendizagem profunda de NVIDIA. |
 | Edições do DSVM com suporte      | Ubuntu     |
 | Como é configurado/instalado no DSVM?  | O TensorRT é instalado como um pacote _apt_.   |
 | Links para exemplos      | Exemplos estão disponíveis [online](https://docs.nvidia.com/deeplearning/sdk/tensorrt-developer-guide/index.html#samples).      |

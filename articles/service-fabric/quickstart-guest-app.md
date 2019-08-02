@@ -3,7 +3,7 @@ title: Implantar rapidamente um aplicativo existente em um cluster do Azure Serv
 description: Use um cluster do Azure Service Fabric para hospedar um aplicativo Node.js existente com o Visual Studio.
 services: service-fabric
 documentationcenter: nodejs
-author: aljo-microsoft
+author: athinanthny
 manager: chackdan
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 12/06/2017
-ms.author: aljo
-ms.openlocfilehash: bd19aba68f8b847e8f4800d348197f9c2b1c1289
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: atsenthi
+ms.openlocfilehash: 6cf9594e6e1db3e163d25843b1fec0c0ff98c250
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66428240"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68592458"
 ---
 # <a name="host-a-nodejs-application-on-azure-service-fabric"></a>Hospedar um aplicativo Node.js no Azure Service Fabric
 
@@ -27,9 +27,9 @@ Este guia de início rápido ajuda a implantar um aplicativo existente (Node.js 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Antes de começar, verifique se você [configurou o ambiente de desenvolvimento](service-fabric-get-started.md). Que inclui a instalação do SDK do Service Fabric e 2015 ou Visual Studio de 2019.
+Antes de começar, verifique se você [configurou o ambiente de desenvolvimento](service-fabric-get-started.md). Que inclui a instalação do Service Fabric SDK e do Visual Studio 2019 ou 2015.
 
-Você também precisa ter um aplicativo Node.js existente para a implantação. Este guia de início rápido usa um site Node.js simples que pode ser baixado [aqui][download-sample]. Extraia esse arquivo para a pasta `<path-to-project>\ApplicationPackageRoot\<package-name>\Code\` depois de criar o projeto na próxima etapa.
+Você também precisa ter um aplicativo Node.js existente para a implantação. Este guia de início rápido usa um site do node. js simples que pode ser baixado [aqui][download-sample]. Extraia esse arquivo para a pasta `<path-to-project>\ApplicationPackageRoot\<package-name>\Code\` depois de criar o projeto na próxima etapa.
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita][create-account].
 
@@ -52,12 +52,12 @@ Você pode criar qualquer tipo de serviço Service Fabric na próxima caixa de d
 
 Nomeie o serviço **MyGuestService** e defina as opções à direita com os seguintes valores:
 
-| Configuração                   | Value |
+| Configuração                   | Valor |
 | ------------------------- | ------ |
 | Pasta do Pacote de Código       | _&lt;a pasta com seu aplicativo Node.js&gt;_ |
 | Comportamento do Pacote de Código     | Copiar o conteúdo da pasta para o projeto |
 | Programa                   | node.exe |
-| Argumentos                 | server.js |
+| Arguments                 | server.js |
 | Pasta de trabalho            | CodePackage |
 
 Pressione **OK**.
@@ -66,7 +66,7 @@ Pressione **OK**.
 
 O Visual Studio cria o projeto de aplicativo e o projeto de serviço ator e os exibe no Gerenciador de Soluções.
 
-O projeto de aplicativo (**MyGuestApp**) não contém qualquer código diretamente. O projeto referencia um conjunto de projetos de serviço. Além disso, ele contém três outros tipos de conteúdo:
+O projeto de aplicativo (**MyGuestApp**) não contém nenhum código diretamente. O projeto faz referência a um conjunto de projetos de serviço. Além disso, ele contém três outros tipos de conteúdo:
 
 * **Perfis de publicação**  
 Preferências de ferramentas para ambientes diferentes.
@@ -98,7 +98,7 @@ Abra o arquivo **ServiceManifest.xml** no projeto. Na parte inferior do manifest
 
 ## <a name="deploy-to-azure"></a>Implantar no Azure
 
-Se você pressionar **F5** e executar o projeto, ele é implantado no cluster local. No entanto, vamos implantar no Azure.
+Se você pressionar **F5** e executar o projeto, ele será implantado no cluster local. No entanto, vamos implantar no Azure.
 
 Clique com botão direito do mouse no projeto e escolha **Publicar...**  para abrir um diálogo Publicar no Azure.
 
@@ -106,9 +106,9 @@ Clique com botão direito do mouse no projeto e escolha **Publicar...**  para ab
 
 Selecione o perfil de destino **PublishProfiles\Cloud.xml**.
 
-Se você já não fez isso, escolha uma conta do Azure para implantação. Se você ainda não tiver uma conta, [inscreva-se][create-account].
+Se você já não fez isso, escolha uma conta do Azure para implantação. Se você ainda não tiver um, [Inscreva-se para um][create-account].
 
-Em **Ponto de Extremidade de Conexão**, selecione o cluster do Service Fabric para implantação. Se você não tiver um, selecione **&lt;criar novo Cluster... &gt;** que abrirá a janela do navegador da web no portal do Azure. Para saber mais, confira [Criar um cluster no portal](service-fabric-cluster-creation-via-portal.md#create-cluster-in-the-azure-portal). 
+Em **Ponto de Extremidade de Conexão**, selecione o cluster do Service Fabric para implantação. Se você não tiver um, selecione **&lt;criar novo cluster... que&gt;** abre a janela do navegador da Web para a Portal do Azure. Para saber mais, confira [Criar um cluster no portal](service-fabric-cluster-creation-via-portal.md#create-cluster-in-the-azure-portal). 
 
 Quando você cria o cluster do Service Fabric, defina a configuração **Pontos de extremidade personalizados** como **80**.
 
@@ -126,15 +126,15 @@ Depois que o serviço foi publicado, teste-o em um navegador da Web.
 
 Primeiro, abra o portal do Azure e localize seu serviço Service Fabric.
 
-Verifique a folha de visão geral do endereço do serviço. Use o nome de domínio da propriedade _Ponto de extremidade de conexão de cliente_. Por exemplo: `http://mysvcfab1.westus2.cloudapp.azure.com`.
+Verifique a folha de visão geral do endereço do serviço. Use o nome de domínio da propriedade _Ponto de extremidade de conexão de cliente_. Por exemplo, `http://mysvcfab1.westus2.cloudapp.azure.com`.
 
 ![Folha de visão geral do Service Fabric no portal do Azure][overview]
 
-Navegue até esse endereço no qual você verá o `HELLO WORLD` resposta.
+Navegue até esse endereço, onde você verá a `HELLO WORLD` resposta.
 
 ## <a name="delete-the-cluster"></a>Excluir o cluster
 
-Não se esqueça de excluir todos os recursos que você criou para este início rápido, pois você será cobrado por esses recursos.
+Não se esqueça de excluir todos os recursos que você criou para este guia de início rápido, pois você é cobrado por esses recursos.
 
 ## <a name="next-steps"></a>Próximas etapas
 Leia mais sobre [executáveis convidados](service-fabric-guest-executables-introduction.md).

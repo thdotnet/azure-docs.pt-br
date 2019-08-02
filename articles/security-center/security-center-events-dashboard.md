@@ -14,20 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/05/2017
 ms.author: rkarlin
-ms.openlocfilehash: bc0fd83bd45e7c5c671b387d124cdddc75244ade
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 389aaee621251890cd3f75744a94b9c9b29c5695
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64573514"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68662391"
 ---
 # <a name="monitoring-and-processing-security-events-in-azure-security-center"></a>Monitoramento e processamento de eventos de segurança na Central de Segurança do Azure
 O painel Eventos fornece uma visão geral do número de eventos de segurança coletado ao longo do tempo, além de uma lista de eventos notáveis que possam demandar sua atenção.  
 
 > [!NOTE]
-> Painel de eventos de segurança será desativado em 31 de julho de 2019. Para obter mais informações e serviços alternativos, consulte [recursos de desativação da Central de segurança (julho de 2019)](security-center-features-retirement-july2019.md#menu_events).
-
-[!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
+> O painel de eventos de segurança foi desativado em 31 de julho de 2019. Para obter mais informações e serviços alternativos, consulte [aposentadoria dos recursos da central de segurança (julho de 2019)](security-center-features-retirement-july2019.md#menu_events).
 
 ## <a name="what-is-a-security-event"></a>O que é um evento de segurança?
 A Central de Segurança usa o Microsoft Monitoring Agent para coletar diversas configurações e eventos relacionados a segurança em seus computadores e armazena esses eventos em seu workspace. Exemplos desses dados são: logs do sistema operacional (logs de eventos do Windows), processos em execução e eventos de soluções de segurança integrados com a Central de Segurança. O Microsoft Monitoring Agent também copia os arquivos de despejo de falha para seus workspaces.
@@ -44,7 +42,7 @@ O bloco **Eventos**, em **Central de Segurança**, exibe o número de eventos qu
 
 O **painel Eventos** fornece uma visão geral do número de eventos processados ao longo do tempo, bem como uma lista de eventos.
 
- ![painel][2]
+ ![Painel][2]
 
  A metade superior do painel mostra as tendências de todos os eventos processados na última semana. A metade inferior do painel lista os eventos notáveis e todos os eventos por tipo:
 
@@ -73,7 +71,7 @@ O **painel Eventos** fornece uma visão geral do número de eventos processados 
    ![Pesquisa de log][6]
 
 ## <a name="add-a-notable-event"></a>Adicionar um evento notável
-A Central de Segurança fornece eventos notáveis prontos para uso. Você pode adicionar eventos notáveis com base em sua própria consulta usando o [linguagem de consulta Kusto](../log-analytics/log-analytics-search-reference.md). Retornaremos ao **Painel de eventos** para adicionar um evento notável.
+A Central de Segurança fornece eventos notáveis prontos para uso. Você pode adicionar eventos notáveis com base em sua própria consulta usando a [linguagem de consulta Kusto](../log-analytics/log-analytics-search-reference.md). Retornaremos ao **Painel de eventos** para adicionar um evento notável.
 
 1. Selecione **Adicionar Evento Notável**.
 
@@ -97,7 +95,7 @@ Se a linha do workspace:
 - Está em branco – seu workspace atende aos requisitos e, ao selecionar um workspace, você será levado ao painel
 
 > [!NOTE]
-> No **Painel de eventos**, a coluna **EVENTOS** indica a quantidade de eventos em cada workspace.  Essa coluna aparece em branco para alguns workspaces porque a camada Gratuita da Central de Segurança está aplicada a esse workspace. Na camada gratuita, a Central de segurança coletará eventos, mas os eventos não são salvas nos logs do Azure Monitor e não estão disponíveis no painel de controle.
+> No **Painel de eventos**, a coluna **EVENTOS** indica a quantidade de eventos em cada workspace.  Essa coluna aparece em branco para alguns workspaces porque a camada Gratuita da Central de Segurança está aplicada a esse workspace. Na camada gratuita, a central de segurança coletará eventos, mas os eventos não serão salvos nos logs de Azure Monitor e não estarão disponíveis no painel.
 >
 >
 
@@ -122,9 +120,9 @@ Se a linha do workspace:
 ## <a name="next-steps"></a>Próximas etapas
 Neste artigo, você aprendeu a usar o Painel de eventos da Central de Segurança. Para saber mais sobre como funciona o painel e escrever suas próprias consultas de evento, consulte:
 
-- [O que é o Azure Monitor logs?](../log-analytics/log-analytics-overview.md) – Visão geral sobre os logs do Azure Monitor
-- [Entender pesquisas de log em Kusto](../log-analytics/log-analytics-log-search-new.md) – descreve como as pesquisas de log são usadas nos logs do Azure Monitor e fornece conceitos que devem ser compreendidos antes de criar uma pesquisa de logs
-- [Referência de pesquisa do Kusto](../log-analytics/log-analytics-search-reference.md) – Saiba como escrever suas próprias consultas de evento usando a linguagem de consulta no Log
+- [O que é Azure Monitor logs?](../log-analytics/log-analytics-overview.md) – Visão geral dos logs de Azure Monitor
+- [Noções básicas sobre pesquisas de log em Kusto](../log-analytics/log-analytics-log-search-new.md) -descreve como as pesquisas de log são usadas em logs de Azure monitor e fornece conceitos que devem ser compreendidos antes de criar uma pesquisa de log
+- [Referência de pesquisa do Kusto](../log-analytics/log-analytics-search-reference.md) – saiba como escrever suas próprias consultas de evento usando a linguagem de consulta no log
 
 Para saber mais sobre a Central de Segurança, confira:
 

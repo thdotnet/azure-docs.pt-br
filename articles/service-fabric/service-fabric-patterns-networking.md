@@ -3,7 +3,7 @@ title: Padrões de rede do Service Fabric do Azure | Microsoft Docs
 description: Descreve os padrões de rede comuns do Service Fabric e como criar um cluster usando os recursos de rede do Azure.
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: chackdan
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/19/2018
-ms.author: aljo
-ms.openlocfilehash: 456eac4a8d3a6cb8cbaca13ad4e4f3b2ae0309bc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: atsenthi
+ms.openlocfilehash: 0a411e0fe3b89eaaa19f4e18f5e614b03dd1d682
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67125605"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599421"
 ---
 # <a name="service-fabric-networking-patterns"></a>Padrões de rede do Service Fabric
 Você pode integrar seu cluster do Azure Service Fabric a outros recursos de rede do Azure. Neste artigo, mostramos como criar clusters que usam os seguintes recursos:

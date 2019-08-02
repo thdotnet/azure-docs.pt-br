@@ -1,28 +1,28 @@
 ---
-title: Clustering de ponto de dados em mapas do Azure | Microsoft Docs
-description: Como os dados de ponto de cluster no SDK da Web
+title: Dados de ponto de clustering no Azure Maps | Microsoft Docs
+description: Como agrupar dados de ponto de cluster no SDK da Web
 author: rbrundritt
 ms.author: richbrun
-ms.date: 03/27/2019
+ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
 ms.custom: codepen
-ms.openlocfilehash: 6dbd4461e7b8382ec3c4075b9688de59678f98f5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 69e95a9e6c76da5d502314a7190e99fc10e968f7
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65957323"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639073"
 ---
-# <a name="clustering-point-data"></a>Clustering de ponto de dados
+# <a name="clustering-point-data"></a>Dados do ponto de cluster
 
-Ao visualizar o muitos pontos de dados no mapa, pontos se sobrepõem uns aos outros, o mapa parece desorganizado e torna difícil ver e usar. Clustering de ponto de dados pode ser usado para melhorar a experiência do usuário. Clustering de ponto de dados é o processo de combinação de ponto de dados que estão próximos uns dos outros e que representa-los no mapa como um ponto de dados em cluster único. Como o usuário aplica zoom no mapa, os clusters dividir em seus pontos de dados individuais.
+Ao Visualizar muitos pontos de dados no mapa, os pontos se sobrepõem, o mapa fica confuso e torna-se difícil ver e usar. O clustering de dados de ponto pode ser usado para melhorar a experiência do usuário. Os dados do ponto de cluster são o processo de combinação de dados de ponto que estão próximos uns dos outros e os representa no mapa como um único ponto de dados clusterizado. À medida que o usuário se aplica ao mapa, os clusters se dividem em seus pontos de dados individuais.
 
 ## <a name="enabling-clustering-on-a-data-source"></a>Habilitando o clustering em uma fonte de dados
 
-Clustering facilmente pode ser habilitado na `DataSource` classe, definindo o `cluster` opção como true. Além disso, o raio de pixel para selecionar pontos próximos para combinar em um cluster pode ser definido usando o `clusterRadius` e um nível de zoom pode ser especificado em que se desabilitam a lógica de clustering usando o `clusterMaxZoom` opção. Aqui está um exemplo de como habilitar o clustering em uma fonte de dados.
+O clustering pode ser facilmente habilitado na `DataSource` classe, definindo a `cluster` opção como true. Além disso, o raio de pixel para selecionar pontos próximos a serem combinados em um cluster pode ser `clusterRadius` definido usando o e um nível de zoom pode ser especificado para desabilitar a lógica de clustering usando a `clusterMaxZoom` opção. Aqui está um exemplo de como habilitar o clustering em uma fonte de dados.
 
 ```javascript
 //Create a data source and enable clustering.
@@ -40,73 +40,73 @@ var datasource = new atlas.source.DataSource(null, {
 ```
 
 > [!TIP]
-> Se dois pontos de dados estiverem próximos uns dos outros no chão, é possível que o cluster será nunca separar, não importa quão próximo do usuário mais zoom. Para resolver isso, você pode definir o `clusterMaxZoom` opção da fonte de dados que especifica o nível de zoom para desabilitar a lógica de clustering e simplesmente exibir tudo.
+> Se dois pontos de dados estiverem próximos juntos no chão, é possível que o cluster nunca se divida, independentemente de como fechar o usuário se amplia. Para resolver isso, você pode definir a `clusterMaxZoom` opção da fonte de dados que especifica no nível de zoom para desabilitar a lógica de clustering e simplesmente exibir tudo.
 
-O `DataSource` classe também tem os seguintes métodos relacionados ao cluster:
+A `DataSource` classe também tem os seguintes métodos relacionados ao clustering:
 
-| Método | Tipo de retorno | DESCRIÇÃO |
+| Método | Tipo de retorno | Descrição |
 |--------|-------------|-------------|
-| getClusterChildren(clusterId: number) | Promessa&lt;Array&lt;recurso&lt;geometria, qualquer&gt; \| forma&gt;&gt; | Recupera os filhos de um determinado cluster no próximo nível de zoom. Esses filhos podem ser uma combinação de formas e subclusters. Os subclusters será recursos com propriedades que correspondem a ClusteredProperties. |
-| getClusterExpansionZoom(clusterId: number) | Promise&lt;number&gt; | Calcula um nível de zoom no qual o cluster comece expandindo ou separar. |
-| getClusterLeaves(clusterId: number, limit: number, offset: number) | Promessa&lt;Array&lt;recurso&lt;geometria, qualquer&gt; \| forma&gt;&gt; | Recupera todos os pontos em um cluster. Definir a `limit` para retornar um subconjunto dos pontos e, em seguida, usar o `offset` à página por meio de pontos. |
+| getClusterChildren(clusterId: number) | Geometria&lt;de&lt;recursode&lt;matriz Promise&gt; , qualquer \| forma&gt;&gt; | Recupera os filhos do cluster fornecido no próximo nível de zoom. Esses filhos podem ser uma combinação de formas e subclusters. Os subclusters serão recursos com propriedades correspondentes a ClusteredProperties. |
+| getClusterExpansionZoom(clusterId: number) | Número&lt;da promessa&gt; | Calcula um nível de zoom no qual o cluster começará a se expandir ou separar. |
+| getClusterLeaves(clusterId: number, limit: number, offset: number) | Geometria&lt;de&lt;recursode&lt;matriz Promise&gt; , qualquer \| forma&gt;&gt; | Recupera todos os pontos em um cluster. Defina o `limit` para retornar um subconjunto dos pontos e use a `offset` página para nos pontos. |
 
-## <a name="display-clusters-using-a-bubble-layer"></a>Clusters de exibição usando uma camada de bolha
+## <a name="display-clusters-using-a-bubble-layer"></a>Exibir clusters usando uma camada de bolha
 
-Uma camada de bolha é uma ótima maneira de renderizar pontos em cluster, como você pode facilmente dimensionar o raio e alterar a cor com base no número de pontos no cluster usando uma expressão. Ao exibir os clusters usando uma camada de bolha, você também deve usar uma camada separada para a renderização de pontos de dados não clusterizado. Geralmente é bom também é possível exibir o tamanho do cluster na parte superior de bolhas. Uma camada de símbolo com texto e nenhum ícone pode ser usada para obter esse comportamento. 
-
-<br/>
-
-<iframe height="500" style="width: 100%;" scrolling="no" title="Camada de bolhas básico de clustering" src="//codepen.io/azuremaps/embed/qvzRZY/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Consulte a caneta <a href='https://codepen.io/azuremaps/pen/qvzRZY/'>clustering de camada de bolhas básico</a> por mapas do Azure (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) em <a href='https://codepen.io'>CodePen</a>.
-</iframe>
-
-## <a name="display-clusters-using-a-symbol-layer"></a>Clusters de exibição usando uma camada de símbolo
-
-Ao visualizar os dados de ponto usando a camada de símbolo, por padrão, que ela ocultará automaticamente símbolos que se sobrepõem uns aos outros para criar uma experiência mais limpa, porém isso pode não ser a experiência desejada se você quiser ver a densidade de dados aponta no mapa. Definindo o `allowOverlap` opção das camadas de símbolo `iconOptions` propriedade `true` desabilita essa experiência, mas resultará em todos os símbolos que está sendo exibidos. Usando o clustering permite que você veja a densidade de todos os dados durante a criação de uma experiência de usuário limpa interessante. Neste exemplo, símbolos personalizados serão usados para representar os pontos de dados individuais e clusters.
+Uma camada de bolha é uma ótima maneira de renderizar pontos clusterizados, pois você pode dimensionar facilmente o raio e alterar a cor deles com base no número de pontos no cluster usando uma expressão. Ao exibir clusters usando uma camada de bolha, você também deve usar uma camada separada para renderizar pontos de dados não clusterizados. Geralmente, é bom também poder exibir o tamanho do cluster sobre as bolhas. Uma camada de símbolo com texto e nenhum ícone pode ser usado para alcançar esse comportamento. 
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Camada de símbolo em cluster" src="//codepen.io/azuremaps/embed/Wmqpzz/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Consulte a caneta <a href='https://codepen.io/azuremaps/pen/Wmqpzz/'>camada clusterizado símbolo</a> por mapas do Azure (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) em <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Clustering de camada de bolha básica" src="//codepen.io/azuremaps/embed/qvzRZY/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Consulte o <a href='https://codepen.io/azuremaps/pen/qvzRZY/'>agrupamento da camada de bolha básica</a> da caneta pelo Azure<a href='https://codepen.io/azuremaps'>@azuremaps</a>Maps () em <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="clustering-and-the-heat-maps-layer"></a>Clustering e o calor mapeia camada
+## <a name="display-clusters-using-a-symbol-layer"></a>Exibir clusters usando uma camada de símbolo
 
-Mapas de calor são uma ótima maneira de exibir a densidade de dados no mapa. Essa visualização pode lidar com um grande número de pontos de dados por conta própria, mas ele pode manipular dados ainda mais se os pontos de dados estiverem em cluster e o tamanho do cluster é usado como o peso do mapa de calor. Defina as `weight` opção da camada do mapa de calor para `['get', 'point_count']` para fazer isso. Quando o raio do cluster é pequeno, o mapa de calor será quase idêntico a um mapa de calor usando os pontos de dados não clusterizado, mas terá um desempenho muito melhor. No entanto, quanto menor o raio de cluster, mais precisa o mapa de calor será, mas com menos de um desempenho se beneficiar.
+Ao visualizar os dados de ponto usando a camada de símbolo, por padrão, ele ocultará automaticamente os símbolos que se sobrepõem para criar uma experiência de limpeza. no entanto, essa pode não ser a experiência desejada se você quiser ver a densidade dos pontos de dados no mapa. Definir a `allowOverlap` opção da propriedade de camadas `iconOptions` de símbolo `true` para desabilitar essa experiência, mas resultará na exibição de todos os símbolos. O uso de clustering permite que você veja a densidade de todos os dados ao criar uma boa experiência de usuário clara. Neste exemplo, os símbolos personalizados serão usados para representar clusters e pontos de dados individuais.
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Mapa de calor ponderada de cluster" src="//codepen.io/azuremaps/embed/VRJrgO/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Consulte a caneta <a href='https://codepen.io/azuremaps/pen/VRJrgO/'>Cluster ponderado mapa de calor</a> por mapas do Azure (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) em <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="Camada de símbolo clusterizado" src="//codepen.io/azuremaps/embed/Wmqpzz/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Consulte a <a href='https://codepen.io/azuremaps/pen/Wmqpzz/'>camada de símbolo clusterizado</a> por caneta pelo mapas<a href='https://codepen.io/azuremaps'>@azuremaps</a>do Azure () em <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="mouse-events-on-clustered-data-points"></a>Eventos de mouse nos pontos de dados em cluster
+## <a name="clustering-and-the-heat-maps-layer"></a>Clustering e a camada de mapas de calor
 
-Quando ocorrem eventos de mouse em uma camada que contêm pontos de dados em cluster, o ponto de dados em cluster será retornado para o evento como um objeto de recurso de ponto GeoJSON. Esse recurso de ponto terá as seguintes propriedades:
+Mapas de calor são uma ótima maneira de exibir a densidade dos dados no mapa. Essa visualização pode lidar com um grande número de pontos de dados por conta própria, mas pode manipular ainda mais dados se os pontos de dados são clusterizados e o tamanho do cluster é usado como o peso do mapa de calor. Defina a `weight` opção da camada do mapa de calor `['get', 'point_count']` como para conseguir isso. Quando o raio do cluster for pequeno, o mapa de calor será quase idêntico a um mapa de calor usando os pontos de dados não clusterizados, mas será muito melhor. No entanto, quanto menor for o raio do cluster, mais preciso será o mapa de calor, mas com um benefício de desempenho menor.
 
-| Nome da propriedade | Type | DESCRIÇÃO |
+<br/>
+
+<iframe height="500" style="width: 100%;" scrolling="no" title="Mapa de calor ponderado do cluster" src="//codepen.io/azuremaps/embed/VRJrgO/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Consulte o <a href='https://codepen.io/azuremaps/pen/VRJrgO/'>mapa de calor ponderado do cluster</a> de caneta pelo<a href='https://codepen.io/azuremaps'>@azuremaps</a>Azure Maps () em <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+## <a name="mouse-events-on-clustered-data-points"></a>Eventos de mouse em pontos de dados clusterizados
+
+Quando ocorrem eventos de mouse em uma camada que contém pontos de dados clusterizados, o ponto de dados clusterizado será retornado ao evento como um objeto de recurso de ponto geojson. Esse recurso de ponto terá as seguintes propriedades:
+
+| Nome da propriedade | Tipo | Descrição |
 |---------------|------|-------------|
 | cluster | boolean | Indica se o recurso representa um cluster. |
-| cluster_id | cadeia de caracteres | Uma ID exclusiva para o cluster que pode ser usado com a fonte de dados `getClusterExpansionZoom`, `getClusterChildren`, e `getClusterLeaves` métodos. |
-| point_count | número | O número de pontos que contém o cluster. |
-| point_count_abbreviated | cadeia de caracteres | Uma cadeia de caracteres que abrevia o `point_count` valor se ele for longo. (por exemplo, 4.000 se torna 4K) |
+| cluster_id | cadeia de caracteres | Uma ID exclusiva para o cluster que pode ser usada com os métodos `getClusterExpansionZoom`DataSource `getClusterChildren`, e `getClusterLeaves` . |
+| point_count | número | O número de pontos que o cluster contém. |
+| point_count_abbreviated | cadeia de caracteres | Uma cadeia de caracteres que abrevia `point_count` o valor, se for longo. (por exemplo, 4.000 torna-se 4K) |
 
-Este exemplo usa uma camada de bolha que renderiza os pontos de cluster e adiciona um evento de clique que quando disparado, calcular e aplique zoom no mapa para o próximo nível de zoom no qual o cluster será interrompido entre eles usando o `getClusterExpansionZoom` método da `DataSource` classe e o `cluster_id` ponto de dados em cluster de propriedade do clicado. 
+Este exemplo usa uma camada de bolha que renderiza pontos de cluster e adiciona um evento de clique que, quando disparado, calcula e aplica zoom ao mapa para o próximo nível de zoom no qual o `getClusterExpansionZoom` cluster será separado `DataSource` usando o método da classe e o `cluster_id` Propriedade do ponto de dados clusterizado clicado. 
 
 <br/>
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Cluster getClusterExpansionZoom" src="//codepen.io/azuremaps/embed/moZWeV/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Consulte a caneta <a href='https://codepen.io/azuremaps/pen/moZWeV/'>Cluster getClusterExpansionZoom</a> por mapas do Azure (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) em <a href='https://codepen.io'>CodePen</a>.
+<iframe height="500" style="width: 100%;" scrolling="no" title="GetClusterExpansionZoom de cluster" src="//codepen.io/azuremaps/embed/moZWeV/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Consulte o <a href='https://codepen.io/azuremaps/pen/moZWeV/'>getClusterExpansionZoom de cluster</a> de caneta pelo mapas<a href='https://codepen.io/azuremaps'>@azuremaps</a>do Azure () em <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-## <a name="display-cluster-area"></a>Área de exibição do cluster 
+## <a name="display-cluster-area"></a>Exibir área do cluster 
 
-Os dados de ponto que representa um cluster são difundidos por uma área. Neste exemplo, quando o mouse é colocado em um cluster, os dados individuais de pontos que ele contém (folhas) serão usados para calcular uma forma convexa e exibidos no mapa para mostrar a área. Todos os pontos contidos em um cluster podem ser recuperados da fonte de dados usando o `getClusterLeaves` método. Uma forma convexa é um polígono que encapsula um conjunto de pontos, como uma banda Elástico e pode ser calculado usando o `atlas.math.getConvexHull` método.
+Os dados de ponto que um cluster representa são distribuídos por uma área. Neste exemplo, quando o mouse é focalizado em um cluster, os pontos de dados individuais que ele contém (folhas) serão usados para calcular um envoltória de convexa e exibido no mapa para mostrar a área. Todos os pontos contidos em um cluster podem ser recuperados da fonte de dados `getClusterLeaves` usando o método. Um convexa envoltória é um polígono que encapsula um conjunto de pontos como uma banda elástica e pode ser calculado usando o `atlas.math.getConvexHull` método.
 
 <br/>
 
- <iframe height="500" style="width: 100%;" scrolling="no" title="Forma convexa de área de cluster" src="//codepen.io/azuremaps/embed/QoXqWJ/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
-Consulte a caneta <a href='https://codepen.io/azuremaps/pen/QoXqWJ/'>casco convexo de área de Cluster</a> por mapas do Azure (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) em <a href='https://codepen.io'>CodePen</a>.
+ <iframe height="500" style="width: 100%;" scrolling="no" title="Área de cluster convexa envoltória" src="//codepen.io/azuremaps/embed/QoXqWJ/?height=500&theme-id=0&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+Consulte a área de cluster de caneta <a href='https://codepen.io/azuremaps/pen/QoXqWJ/'>convexa envoltória</a> pelo Azure<a href='https://codepen.io/azuremaps'>@azuremaps</a>Maps () em <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 ## <a name="next-steps"></a>Próximas etapas
@@ -114,10 +114,10 @@ Consulte a caneta <a href='https://codepen.io/azuremaps/pen/QoXqWJ/'>casco conve
 Saiba mais sobre as classes e métodos usados neste artigo:
 
 > [!div class="nextstepaction"]
-> [Classe de fonte de dados](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest)
+> [Classe DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"]
-> [Objeto de DataSourceOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.datasourceoptions?view=azure-iot-typescript-latest)
+> [Objeto dataSourceOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.datasourceoptions?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"]
 > [atlas.math namespace](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.math?view=azure-iot-typescript-latest)
