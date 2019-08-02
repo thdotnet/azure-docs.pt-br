@@ -6,12 +6,12 @@ ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 10/31/2018
 ms.author: v-erkell
-ms.openlocfilehash: f5e780dcab20befe19ca34020908eee93c290516
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 17e55dbe84cda87ee902c94e0024c9a3aad8b31b
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60409151"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698333"
 ---
 # <a name="cluster-tuning"></a>Ajuste do cluster
 
@@ -46,8 +46,6 @@ Essas alterações podem ser recomendadas com base em qualidades do conjuntos de
 Para tirar proveito de maiores velocidades de dados entre o cluster de vFXT e o armazenamento de nuvem em um cenário de gateway ou de NAS de nuvem (em que o cluster vFXT fornece acesso de estilo NAS a um contêiner de nuvem), o representante pode recomendar a alteração de configurações como essas para enviar dados por push, de modo mais agressivo, do cache para o volume de armazenamento:
 
 * Aumentar o número de conexões TCP entre o cluster e o contêiner de armazenamento
-* Diminuir o valor de tempo limite restante para a comunicação entre o cluster e o armazenamento para tentar novamente as gravações mais cedo se elas não tiverem êxito imediatamente  
-* Aumentar o tamanho do segmento para que cada segmento de gravação de back-end transfira um bloco de 8 MB de dados, em vez de 1 MB
 
 ## <a name="cloud-bursting-or-hybrid-wan-optimizations"></a>Intermitência de nuvem ou otimizações de WAN híbrido
 

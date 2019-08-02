@@ -1,6 +1,6 @@
 ---
-title: Noções básicas sobre Central de segurança do Azure para arquitetura de agente de segurança de IoT Preview | Microsoft Docs
-description: Entenda a arquitetura de segurança do agente para os agentes usados na Central de segurança do Azure para o serviço de IoT.
+title: Entendendo a central de segurança do Azure para a arquitetura do agente de segurança de IoT | Microsoft Docs
+description: Entenda a arquitetura do agente de segurança para os agentes usados na central de segurança do Azure para o serviço de IoT.
 services: asc-for-iot
 ms.service: asc-for-iot
 documentationcenter: na
@@ -13,58 +13,54 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/25/2019
+ms.date: 07/26/2019
 ms.author: mlottner
-ms.openlocfilehash: 7f4ca9a2689ab9e09b4ebff903e757f5c352b556
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 998aeab197931a75579fc39b28e3a248b85fc57b
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67616574"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68596913"
 ---
 # <a name="security-agent-reference-architecture"></a>Arquitetura de referência do agente de segurança
 
-> [!IMPORTANT]
-> A Central de Segurança do Azure para IoT está em versão prévia pública no momento.
-> Esta versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos. Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+A central de segurança do Azure para IoT fornece arquitetura de referência para agentes de segurança que registram, processam, agregam e enviam dados de segurança por meio do Hub IoT.
 
+Os agentes de segurança são projetados para funcionar em um ambiente de IoT restrito e são altamente personalizáveis em termos de valores que eles fornecem quando comparados aos recursos que consomem.
 
-Central de segurança (ASC) do Azure para IoT fornece a arquitetura de referência para os agentes de segurança que faça logon, processam, agregam e enviam dados de segurança por meio do hub IoT.
+Os agentes de segurança oferecem suporte aos seguintes recursos:
 
-Agentes de segurança são projetados para funcionar em um ambiente restrito de IoT e são altamente personalizáveis em termos de valores que eles fornecem em comparação com os recursos que eles consomem.
+- Coletar eventos de segurança brutos do sistema operacional subjacente (Linux, Windows). Para saber mais sobre os coletores de dados de segurança disponíveis, consulte [central de segurança do Azure para configuração do agente de IOT](how-to-agent-configuration.md).
 
-Agentes de segurança suportam os seguintes recursos:
+- Agregar eventos de segurança brutos em mensagens enviadas por meio do Hub IoT.
 
-- Colete eventos de segurança brutas do sistema operacional subjacente (Linux, Windows). Para saber mais sobre os coletores de dados de segurança disponíveis, consulte [ASC para configuração do agente IoT](how-to-agent-configuration.md).
+- Autentique com a identidade do dispositivo existente ou uma identidade de módulo dedicada. Consulte [métodos de autenticação do agente de segurança](concept-security-agent-authentication-methods.md) para saber mais.
 
-- Agregar os eventos de segurança brutos em mensagens enviadas por meio do hub IoT.
+- Configure remotamente por meio do uso do módulo **azureiotsecurity** . Para saber mais, confira [Configurar uma central de segurança do Azure para o agente de IOT](how-to-agent-configuration.md).
 
-- Autenticar com a identidade do dispositivo existente ou uma identidade de módulo dedicado. Ver [métodos de autenticação do agente de segurança](concept-security-agent-authentication-methods.md) para saber mais.
+A central de segurança do Azure para agentes de segurança de IoT é desenvolvida como projetos de código-fonte aberto e está disponível no GitHub: 
 
-- Configurar remotamente por meio do uso do **azureiotsecurity** gêmeo do módulo. Para obter mais informações, consulte [configurar um ASC para agente do IoT](how-to-agent-configuration.md).
-
-ASC para agentes de segurança de IoT são desenvolvidas como projetos de código-fonte aberto e estão disponível no GitHub: 
-
-- [ASC para agente de C do IoT](https://github.com/Azure/Azure-IoT-Security-Agent-C) 
-- [ASC para IoT C#-com base em agente](https://github.com/Azure/Azure-IoT-Security-Agent-CS)
+- [Central de segurança do Azure para o agente baseado em IoT C](https://github.com/Azure/Azure-IoT-Security-Agent-C) 
+- [Central de segurança do Azure C#para agente baseado em IOT](https://github.com/Azure/Azure-IoT-Security-Agent-CS)
 
 ## <a name="agent-supported-platforms"></a>Plataformas com suporte do agente
 
-ASC para IoT oferece agentes diferentes do instalador de 32 bits e Windows de 64 bits e o mesmo para 32 bits e 64 bits Linux. Verifique se que você tem o instalador do agente correto para cada um dos seus dispositivos de acordo com a tabela a seguir:
+A central de segurança do Azure para IoT oferece agentes de instalador diferentes para as janelas de 32 bits e de 64 bits e a mesma para Linux de 32 e 64 bits. Verifique se você tem o instalador do agente correto para cada um dos seus dispositivos de acordo com a tabela a seguir:
 
-| 32 ou 64 bits | Linux | Windows |    Detalhes|
+| Arquitetura | Linux | Windows |    Detalhes|
 |----------|----------------------------------------------|-------------|-------------------------------------------|
-| 32 bits  | C  | C#  ||
-| 64 bits  | C#ou C           | C#      | Use o agente de C para dispositivos com o mínimo de recursos|
+| bits  | C  | C#  ||
+| 64 bits  | C#ou C           | C#      | É recomendável usar o agente do C para dispositivos com recursos de dispositivo mais restritos ou mínimos.|
+|
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste artigo, você aprendeu sobre ASC para arquitetura de agente de segurança de IoT e os instaladores disponíveis.
+Neste artigo, você aprendeu sobre a central de segurança do Azure para a arquitetura do agente de segurança do IoT e os instaladores disponíveis.
 
-Para continuar a introdução ao ASC para implantação de IoT, use os seguintes artigos:
+Para continuar a introdução à central de segurança do Azure para implantação de IoT, use os seguintes artigos:
 
-- Entender [métodos de autenticação do agente de segurança](concept-security-agent-authentication-methods.md)
-- Selecione e implante um [agente de segurança](how-to-deploy-agent.md)
-- Examine o ASC para IoT [pré-requisitos de serviço](service-prerequisites.md)
-- Saiba como [ASC habilitar para o serviço de IoT em seu IoT Hub](quickstart-onboard-iot-hub.md)
-- Saiba mais sobre o serviço do [ASC para perguntas frequentes sobre o IoT](resources-frequently-asked-questions.md)
+- Entender os [métodos de autenticação do agente de segurança](concept-security-agent-authentication-methods.md)
+- Selecionar e implantar um [agente de segurança](how-to-deploy-agent.md)
+- Examine os pré-requisitos da central de segurança do Azure para [Serviços](service-prerequisites.md) de IOT
+- Saiba como [habilitar a central de segurança do Azure para o serviço de IOT em seu hub IOT](quickstart-onboard-iot-hub.md)
+- Saiba mais sobre o serviço da [central de segurança do Azure para as perguntas frequentes sobre IOT](resources-frequently-asked-questions.md)

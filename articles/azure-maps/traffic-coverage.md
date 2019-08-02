@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: ad7d4dceefcaa06effa6b2974b0a8a03ad641372
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f9a3c4875f01c650485034fe46f53bb5aa1fd75b
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60794052"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68722650"
 ---
 # <a name="azure-maps-traffic-coverage"></a>Cobertura de tráfego dos Mapas do Azure
 
@@ -43,14 +43,14 @@ No entanto, Mapas não têm o mesmo nível de informações e precisão para tod
 |---------|:---------:|:---------:|
 |Austrália     |✓         |✓        |
 |Brunei   |✓         |✓        |
-|RAE de Hong Kong     |✓         |✓         |
+|Região Administrativa Especial de Hong Kong     |✓         |✓         |
 |Índia   |✓         |✓         |
 |Indonésia     |✓         |✓         |
 |RAE de Macau     |✓         |✓         |
 |Malásia     |✓         |✓         |
 |Nova Zelândia     |✓         |✓         |
 |Filipinas  |✓         |✓         |
-|Singapura     |✓         |✓         |
+|Cingapura     |✓         |✓         |
 |Taiwan     |✓         |✓        |
 |Tailândia     |✓         |✓        |
 |Vietnã   |✓         |✓         |
@@ -62,7 +62,9 @@ No entanto, Mapas não têm o mesmo nível de informações e precisão para tod
 |---------|:---------:|:---------:|
 |Andorra   |✓         |✓         |
 |Áustria     |✓         |✓         |
+|Belarus    |✓         |✓         |
 |Bélgica     |✓         |✓         |
+|Bósnia e Herzegovina    |✓         |✓         |
 |Bulgária     |✓         |✓         |
 |Croácia     |✓         |✓         |
 |República Tcheca     |✓         |✓         |
@@ -78,6 +80,7 @@ No entanto, Mapas não têm o mesmo nível de informações e precisão para tod
 |Islândia     |✓         |✓         |
 |Irlanda     |✓         |✓         |
 |Itália     |✓         |✓        |
+|Cazaquistão    |✓         |✓        |
 |Letônia     |✓         |✓         |
 |Lesoto     |✓         |✓         |
 |Liechtenstein      |✓         |✓         |
@@ -93,6 +96,7 @@ No entanto, Mapas não têm o mesmo nível de informações e precisão para tod
 |Romênia     |✓         |✓         |
 |Federação Russa     |✓         |✓         |
 |San Marino    |✓         |✓         |
+|Sérvia   |✓         |✓         |
 |Eslováquia     |✓         |✓         |
 |Eslovênia     |✓         |✓         |
 |Espanha     |✓         |✓         |
@@ -105,7 +109,7 @@ No entanto, Mapas não têm o mesmo nível de informações e precisão para tod
 |Ucrânia     |✓         |✓         |
 |Reino Unido     |✓         |✓         |
 |+Gibraltar     |✓         |✓         |
-|+Guernsey & Jersey     |✓         |✓         |
+|\+ Guernsey & Jersey     |✓         |✓         |
 |\+ Ilha de Man     |✓         |✓         |
 |Cidade do Vaticano   |✓         |✓         |
 
@@ -123,7 +127,7 @@ No entanto, Mapas não têm o mesmo nível de informações e precisão para tod
 |Moçambique  |✓         |✓         |
 |Nigéria   |✓        |✓        |
 |Omã     |✓         |✓         |
-|Catar     |✓         |✓         |
+|Qatar     |✓         |✓         |
 |Arábia Saudita     |✓         |✓         |
 |África do Sul     |✓         |✓         |
 |Emirados Árabes Unidos  |✓         |✓         |

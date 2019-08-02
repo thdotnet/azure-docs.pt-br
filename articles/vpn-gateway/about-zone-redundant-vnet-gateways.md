@@ -8,12 +8,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 09/21/2018
 ms.author: cherylmc
-ms.openlocfilehash: 0ba818ef3c24d0e88e662adf87b22cc938fe5fab
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d076e2b0057f0ba666fa47ffd0b3d7d1fcc14631
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60391033"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68725594"
 ---
 # <a name="about-zone-redundant-virtual-network-gateways-in-azure-availability-zones"></a>Sobre os gateways de rede virtual com redundância de zona em Zonas de Disponibilidade do Azure
 
@@ -86,7 +86,7 @@ Sim, você pode usar o portal do Azure para implantar as novas SKUs. No entanto,
 
 ### <a name="what-regions-are-available-for-me-to-use-the-new-skus"></a>Quais regiões estão disponíveis para eu usar as novas SKUs?
 
-Os novos SKUs estão disponíveis em regiões do Azure que têm Zonas de Disponibilidade do Azure - EUA Central, França Central, Europa Setentrional, Europa Ocidental e Oeste dos EUA 2. No futuro, disponibilizaremos os gateways com redundância de zona em outras Regiões Públicas do Azure.
+As novas SKUs estão disponíveis nas regiões do Azure que têm as regiões Zonas de Disponibilidade do Azure-EUA Central, França central, Europa Setentrional, Europa Ocidental e oeste dos EUA 2, leste dos EUA, leste dos Estados Unidos 2, Sudeste Asiático, leste do Japão, Sul do Reino Unido. No futuro, disponibilizaremos os gateways com redundância de zona em outras Regiões Públicas do Azure.
 
 ### <a name="can-i-changemigrateupgrade-my-existing-virtual-network-gateways-to-zone-redundant-or-zonal-gateways"></a>Posso alterar/migrar/atualizar meus gateways de rede virtual existentes para gateways com redundância de zona ou em zona?
 

@@ -14,18 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/29/2018
 ms.author: rkarlin
-ms.openlocfilehash: 55def52d248babd439227cdcd4170c0a3ca91bb1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 476bdd50a56b953585a8a4e9cea05975c9922e0f
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64569832"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68662947"
 ---
-# <a name="investigate-incidents-and-alerts-in-azure-security-center-preview"></a>Investigar os incidentes e alertas na Central de Segurança do Azure (Versão prévia)
-Este documento ajuda você a usar o recurso de investigação na Central de Segurança do Azure para investigar alertas e incidentes de segurança.
+# <a name="investigate-incidents-and-alerts-in-azure-security-center-retired"></a>Investigar incidentes e alertas na central de segurança do Azure (desativado)
+Este documento ajuda você a usar o recurso de investigação (versão prévia) na central de segurança do Azure para investigar incidentes de segurança e alertas.
 
 > [!NOTE]
-> A experiência de investigação de incidentes e alertas será desativada em 31 de julho de 2019. Para obter mais informações e serviços alternativos, consulte [recursos de desativação da Central de segurança (julho de 2019)](security-center-features-retirement-july2019.md#menu_investigate).
+> A experiência de investigação de alertas e incidentes (versão prévia) foi desativada em 31 de julho de 2019. Para obter mais informações e serviços alternativos, consulte [aposentadoria dos recursos da central de segurança (julho de 2019)](security-center-features-retirement-july2019.md#menu_investigate).
 
 ## <a name="what-is-investigation-in-security-center"></a>O que é a investigação na Central de Segurança?
 O recurso de investigação na Central de Segurança permite que você faça triagem, compreenda o escopo e rastreie a causa raiz de um possível [incidente de segurança](https://docs.microsoft.com/azure/security-center/security-center-incident).
@@ -35,7 +35,7 @@ A intenção é facilitar o processo de investigação vinculando todas as entid
 
 > [!NOTE]
 > * [Alertas personalizados](security-center-custom-alert.md) não têm suporte no recurso de investigação da Central de segurança.
-> * Somente há suporte para a investigação para alertas com base nos dados coletados dos servidores do Windows.
+> * A investigação só tem suporte para alertas baseados em dados coletados de servidores Windows.
 
 
 ## <a name="how-investigation-works"></a>Como a investigação funciona?
@@ -48,7 +48,7 @@ O usuário pode navegar de uma entidade para outra clicando no grafo. O grafo ce
 ### <a name="investigation-path"></a>Caminho de investigação
 Enquanto o usuário está navegando para entidades diferentes, o caminho de investigação ajuda a manter o controle do contexto de investigação e permite uma navegação rápida. O incidente que contém os resultados da investigação fica sempre na ponta esquerda do caminho de investigação.
 
-![Caminho](./media/security-center-investigation/security-center-investigation-fig2.png)
+![Path](./media/security-center-investigation/security-center-investigation-fig2.png)
 
 ### <a name="general-information"></a>Informações gerais
 Quando uma entidade é apresentada no grafo, as guias mostram outras informações sobre essa entidade. A guia **Informações** apresenta informações gerais sobre a entidade de várias fontes de informação disponíveis.
@@ -65,11 +65,11 @@ A guia **Entidades** mostra todas as entidades relacionadas agrupadas por tipo. 
 
 ![Entidades](./media/security-center-investigation/security-center-investigation-fig4.png)
 
-### <a name="search"></a>Search
+### <a name="search"></a>Pesquisar
 
 A guia **Pesquisa** apresenta todos os tipos de log que estão disponíveis para a entidade. Para cada tipo de log, você pode ver quantos registros estão disponíveis. Clicar em cada tipo de log leva você para a tela de pesquisa. Na tela de pesquisa, você pode refinar a pesquisa e usar os diversos recursos de pesquisa, como definição de alertas. Na versão atual, a guia de pesquisa está disponível somente para entidades usuários e computadores.
 
-![Search](./media/security-center-investigation/security-center-investigation-fig5.png)
+![Pesquisar](./media/security-center-investigation/security-center-investigation-fig5.png)
 
 ### <a name="exploration"></a>Exploração
 

@@ -12,17 +12,21 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 11/08/2018
+ms.date: 07/25/2019
 ms.author: alkohli
-ms.openlocfilehash: b8e9f12a549f71971c2da3b9865f6a74dad58f61
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b5ffc16a7c9dacef3036ca5ce225265252dcdf5d
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60630131"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68516755"
 ---
 # <a name="storsimple-virtual-array-best-practices"></a>Práticas recomendadas do StorSimple Virtual Array
+
 ## <a name="overview"></a>Visão geral
+
+[!INCLUDE [storsimple-virtual-array-eol-banner](../../includes/storsimple-virtual-array-eol-banner.md)]
+
 A Matriz Virtual Microsoft Azure StorSimple é uma solução de armazenamento integrado que gerencia as tarefas de armazenamento entre um dispositivo virtual local executando em um hipervisor e o armazenamento em nuvem do Microsoft Azure. O StorSimple Virtual Array é uma alternativa eficiente e econômica para a matriz física da série 8000. A matriz virtual pode ser executada em sua infraestrutura de hipervisor existente, oferece suporte ao iSCSI e aos protocolos SMB, além de ser adequada a cenários de filiais/escritórios remotos. Para saber mais sobre as soluções do StorSimple, vá para [Visão geral do Microsoft Azure StorSimple](https://www.microsoft.com/en-us/server-cloud/products/storsimple/overview.aspx).
 
 Este artigo aborda as práticas recomendadas implementadas durante a configuração inicial, a implantação e o gerenciamento do StorSimple Virtual Array. Essas práticas recomendadas oferecem diretrizes validadas para a instalação e o gerenciamento da sua matriz virtual. Este artigo é destinado a administradores de TI que implantam e gerenciam as matrizes virtuais em seus datacenters.
@@ -75,9 +79,9 @@ Primeiro, para cada volume/compartilhamento em camadas, a reserva local seria ig
 * reserva local de 120 GB (para um compartilhamento/volume em camadas de 1 TB)
 * 330 GB para compartilhamento ou volume localmente fixado (adicionando 10% de reserva local ao tamanho de 300 GB provisionado)
 
-O espaço total necessário na camada local até o momento é: 240 GB + 120 GB + 330 GB = 690 GB.
+O espaço total necessário na camada local até agora é: 240 GB + 120 GB + 330 GB = 690 GB.
 
-Em segundo lugar, precisamos de pelo menos um espaço na camada local do tamanho da maior reserva única. Esse valor extra será usado caso você precise restaurar de um instantâneo de nuvem. Neste exemplo, a maior reserva local é 330 GB (incluindo a reserva para o sistema de arquivos) e, portanto, você adicionaria isso aos 690 GB: 690 GB + 330 GB = 1020 GB.
+Em segundo lugar, precisamos de pelo menos um espaço na camada local do tamanho da maior reserva única. Esse valor extra será usado caso você precise restaurar de um instantâneo de nuvem. Neste exemplo, a maior reserva local é 330 GB (incluindo a reserva para o sistema de arquivos), portanto, você adicionaria isso ao 690 GB: 690 GB + 330 GB = 1020 GB.
 Se executamos as restaurações adicionais subsequentes, sempre será possível liberar o espaço da operação de restauração anterior.
 
 Em terceiro lugar, precisamos de 15% do espaço total local até o momento para armazenar os instantâneos locais, de modo que apenas 85% disso esteja disponível. Neste exemplo, isso seria em torno de 1020 GB = 0,85&ast;TB de disco de dados provisionado. Portanto, o disco de dados provisionado seria (1020&ast;(1/0,85))= 1200 GB = 1,20 TB ~ 1,25 TB (arredondamento para o quartil mais próximo)
@@ -99,7 +103,7 @@ Com base em 12% de reserva do espaço local para volumes/compartilhamentos em ca
 * uma reserva local de 240 GB (para um compartilhamento/volume em camadas de 2 TB)
 * 330 GB para compartilhamento ou volume localmente fixado (adicionando 10% de reserva local ao espaço provisionado de 300 GB)
 
-Espaço total necessário na camada local é: 240 GB + 330 GB = 570 GB
+O espaço total necessário na camada local é: 240 GB + 330 GB = 570 GB
 
 O espaço local mínimo necessário para restauração é de 330 GB.
 
@@ -246,7 +250,7 @@ Lembre-se das seguintes práticas recomendadas ao desativar sua matriz virtual:
 * Antes de desativar um StorSimple Virtual Array, certifique-se de interromper ou excluir clientes e hosts que dependem desse dispositivo virtual.
 * Exclua um dispositivo desativado se ele não estiver sendo usado para que ele não acumule cobranças.
 
-### <a name="monitoring"></a>Monitoramento
+### <a name="monitoring"></a>Monitorando
 Para garantir que seu StorSimple Virtual Array esteja em um estado de integridade contínuo, você precisará monitorar a matriz e garantir que receberá informações do sistema, incluindo alertas. Para monitorar a integridade geral da matriz virtual, implemente as seguintes práticas recomendadas:
 
 * Configure o monitoramento para acompanhar o uso do disco de dados da matriz virtual, bem como o disco do sistema operacional. Se estiver executando o Hyper-V, você poderá usar uma combinação do SCVMM (System Center Virtual Machine Manager) e do System Center Operations Manager para monitorar os hosts de virtualização.

@@ -1,5 +1,5 @@
 ---
-title: Apache Storm com componentes do Python - Azure HDInsight
+title: Apache Storm com os componentes do Python – Azure HDInsight
 description: Saiba como criar uma topologia Apache Storm que usa componentes de Python.
 author: hrasheed-msft
 ms.reviewer: jasonh
@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 04/30/2018
 ms.author: hrasheed
-ms.openlocfilehash: 3b808a12c7a669a272bf6a1bbb253ed6b4625288
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b9faf33734ba17e9912246fe9c5c2ac45c55ba44
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67078205"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68598465"
 ---
 # <a name="develop-apache-storm-topologies-using-python-on-hdinsight"></a>Desenvolver topologias do Apache Storm usando o Python no HDInsight
 
@@ -33,7 +33,7 @@ O código para esse projeto está disponível em [https://github.com/Azure-Sampl
 
 * [Apache Maven 3](https://maven.apache.org/download.cgi)
 
-* (Opcional) Um ambiente de desenvolvimento local do Storm. Um ambiente local do Storm só será necessário se você quiser executar a topologia localmente. Para obter mais informações, consulte [Configurar um ambiente de desenvolvimento](https://storm.apache.org/releases/1.1.2/Setting-up-development-environment.html).
+* (Opcional) Um ambiente de desenvolvimento local do Storm. Um ambiente local do Storm só será necessário se você quiser executar a topologia localmente. Para obter mais informações, consulte [Configurar um ambiente de desenvolvimento](http://storm.apache.org/releases/current/Setting-up-development-environment.html).
 
 ## <a name="storm-multi-language-support"></a>Suporte a várias linguagens no Storm
 

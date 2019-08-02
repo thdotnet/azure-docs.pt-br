@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 05/08/2019
-ms.openlocfilehash: 783a8f0bc25717f1c2bf78a9c0d40b209a07939b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1292dbf43b5246fe3da95ead4d5d9113b4bc84f9
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65473353"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68569039"
 ---
 # <a name="azure-sql-database-and-sql-data-warehouse-access-control"></a>Controle de acesso ao Banco de Dados SQL e ao SQL Data Warehouse do Azure
 
@@ -34,7 +33,7 @@ O serviço de Banco de dados SQL do Azure só está disponível por meio da port
 
 Como parte do processo de conexão, as conexões de máquinas virtuais do Azure são redirecionadas para um endereço IP e uma porta diferentes, exclusivos para cada função de trabalho. O número da porta está no intervalo de 11000 a 11999. Para obter mais informações sobre portas TCP, consulte [Portas além da 1433 para o ADO.NET 4.5 e o Banco de Dados SQL 2](sql-database-develop-direct-route-ports-adonet-v12.md).
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Autenticação
 
 O Banco de Dados SQL dá suporte a dois tipos de autenticação:
 

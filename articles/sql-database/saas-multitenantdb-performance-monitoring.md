@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: be7dbe35800bbe911bc56d1883462534a16499a0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 50fab6afe837ad409f05dbb0f3a8a44d089a894e
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61485321"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570330"
 ---
 # <a name="monitor-and-manage-performance-of-sharded-multi-tenant-azure-sql-database-in-a-multi-tenant-saas-app"></a>Monitorar e gerenciar o desempenho do banco de dados SQL do Azure multilocatário fragmentado em um aplicativo SaaS multilocatário
 
@@ -52,7 +51,7 @@ O gerenciamento de desempenho do banco de dados consiste na compilação e anál
 
 O [Portal do Azure](https://portal.azure.com) fornece monitoramento e alertas internos sobre a maioria dos recursos. Para o Banco de Dados SQL, o monitoramento e o alerta estão disponíveis em bancos de dados. Esse monitoramento e alertas internos são específicos ao recurso e, portanto, é conveniente usá-los para pequenas quantidades de recursos, mas não são convenientes ao trabalhar com muitos recursos.
 
-Para cenários de alto volume, em que você está trabalhando com muitos recursos, [registra em log do Azure Monitor](https://azure.microsoft.com/services/log-analytics/) pode ser usado. Isso é um serviço do Azure separado que fornece análise sobre logs de diagnóstico emitidos e telemetria coletados em um espaço de trabalho do Log Analytics. Os logs do Azure Monitor podem coletar a telemetria de muitos serviços e ser usados para consultar e definir alertas.
+Para cenários de alto volume, nos quais você está trabalhando com muitos recursos, [Azure monitor logs](https://azure.microsoft.com/services/log-analytics/) podem ser usados. Esse é um serviço do Azure separado que fornece análise sobre telemetria e logs de diagnóstico emitidos coletados em um espaço de trabalho Log Analytics. Os logs de Azure Monitor podem coletar telemetria de vários serviços e serem usados para consultar e definir alertas.
 
 ## <a name="get-the-wingtip-tickets-saas-multi-tenant-database-application-source-code-and-scripts"></a>Obter o código-fonte e os scripts do aplicativo de banco de dados multilocatário SaaS Wingtip Tickets
 
@@ -80,8 +79,8 @@ O script *New-TenantBatch* cria novos locatários com chaves de locatário exclu
 |:--|:--|
 | 2 | Gerar carga de intensidade normal (aproximadamente 30 DTU) |
 | 3 | Gerar carga com intermitências mais longas por locatário|
-| 4 | Gerar carga com picos maiores de DTU por locatário (aproximadamente 70 DTUS)|
-| 5 | Gerar uma alta intensidade (aproximadamente 90 DTUS) em um único locatário e uma carga de intensidade normal em todos os outros locatários |
+| 4 | Gerar carga com intermitências de DTU mais altas por locatário (aproximadamente 70 DTU)|
+| 5 | Gerar uma alta intensidade (aproximadamente 90 DTU) em um único locatário mais uma carga de intensidade normal em todos os outros locatários |
 
 O gerador de carga aplica uma carga *sintética* somente da CPU em cada banco de dados de locatário. O gerador inicia um trabalho para cada banco de dados de locatário, que chama um procedimento armazenado que gera a carga periodicamente. Os níveis de carga (em DTUs), a duração e os intervalos variam em todos os bancos de dados, simulando uma atividade de locatário imprevisível.
 
@@ -168,7 +167,7 @@ Se um único locatário em um banco de dados multilocatário enfrentar uma alta 
 Este exercício simula o efeito em que Salix Salsa enfrenta uma alta carga quando tíquetes são colocados à venda para um evento popular.
 
 1. Abra o script …\\*Demo-PerformanceMonitoringAndManagement.ps1*.
-1. Definir **$DemoScenario = 5**, _gerar uma carga normal e uma carga alta em um único locatário (aproximadamente 90 DTUS)._
+1. Defina **$DemoScenario = 5**, _gerar uma carga normal mais uma carga alta em um único locatário (aproximadamente 90 DTU)._
 1. Defina **$SingleTenantName = Salix Salsa**
 1. Execute o script usando **F5**.
 

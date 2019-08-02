@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
 ms.reviewer: billgib, stein
-manager: craigg
 ms.date: 10/16/2018
-ms.openlocfilehash: 350e67f5a1e7e1eab7abe27a6ca851ed2420af84
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2ddb1fe40507da5caa218f73284a1095035df951
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65978535"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570381"
 ---
 # <a name="deploy-and-explore-a-sharded-multi-tenant-application"></a>Implantar e explorar um aplicativo multilocatário fragmentado
 
@@ -33,7 +32,7 @@ O aplicativo é executado na nuvem do Azure e usa o banco de dados SQL do Azure.
 
 O aplicativo é implantado com dados para três locatários de exemplo. Os locatários são armazenados juntos em um banco de dados de vários locatários.
 
-Qualquer pessoa pode baixar o código fonte do C# e do PowerShell para Wingtip Tickets em [seu repositório do GitHub][link-github-wingtip-multitenantdb-55g].
+Qualquer pessoa pode baixar C# o e o código-fonte do PowerShell para Wingtip tickets em [seu repositório GitHub][link-github-wingtip-multitenantdb-55g].
 
 ## <a name="learn-in-this-tutorial"></a>Neste tutorial, você aprende
 
@@ -58,7 +57,7 @@ Para concluir este tutorial, verifique se todos os pré-requisitos a seguir são
 ### <a name="plan-the-names"></a>Planejar os nomes
 
 Nas etapas desta seção, você fornece um valor *user* que é usado para garantir que os nomes de recursos fiquem globalmente exclusivos, e um nome para o *grupo de recursos* que contém todos os recursos criados por uma implantação do aplicativo. Para uma pessoa denominada *Aline Faria*, sugerimos:
-- *Usuário:* **af1** *(suas iniciais mais um dígito. Use um valor diferente (por exemplo, af2) se você implantar o aplicativo novamente.)*
+- *Usuário:* **AF1** *(Suas iniciais, mais um dígito.   Use um valor diferente (por exemplo, af2) se você implantar o aplicativo novamente.)*
 - *Grupo de recursos:* **wingtip-mt-af1** *(wingtip-mt indica que esse é o aplicativo multilocatário fragmentado. A anexação do nome de usuário af1 correlaciona o nome do grupo de recursos com os nomes dos recursos que ele contém.)*
 
 Escolha seus nomes agora e os escreva. 
@@ -68,7 +67,7 @@ Escolha seus nomes agora e os escreva.
 1. Clique no botão azul **Implantar no Azure** a seguir.
    - Ele abre o portal do Azure com o modelo de implantação Wingtip tíquetes SaaS.
 
-     [![Botão para Implantar no Azure.][image-deploy-to-azure-blue-48d]][link-aka-ms-deploywtp-mtapp-52k]
+     [![Botão para implantar no Azure.][image-deploy-to-azure-blue-48d]][link-aka-ms-deploywtp-mtapp-52k]
 
 1. Insira os valores de parâmetros necessários para a implantação.
 

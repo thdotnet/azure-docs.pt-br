@@ -1,6 +1,6 @@
 ---
-title: Atribuir e remover a atribuição de funções de administrador com o Azure PowerShell - Azure Active Directory | Microsoft Docs
-description: Para aqueles que frequentemente gerenciam atribuições de função, agora você pode gerenciar os membros de uma função de administrador do Azure AD com o Azure PowerShell.
+title: Atribuir e remover atribuição de funções de administrador com Azure PowerShell-Azure Active Directory | Microsoft Docs
+description: Para aqueles que freqüentemente gerenciam atribuições de função, agora você pode gerenciar membros de uma função de administrador do Azure AD com o Azure PowerShell.
 services: active-directory
 author: curtand
 manager: mtillman
@@ -8,21 +8,21 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 04/15/2019
+ms.date: 07/31/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f6877c3e547d625cf58129a546dae798b37a24ae
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: aa4bddf84720265afe361dff665f10ff8184f6f6
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60469087"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68706493"
 ---
-# <a name="assign-azure-active-directory-admin-roles-using-powershell"></a>Atribuir funções de administrador do Active Directory do Azure usando o PowerShell
+# <a name="assign-azure-active-directory-admin-roles-using-powershell"></a>Atribuir Azure Active Directory funções de administrador usando o PowerShell
 
-Você pode automatizar como atribuir funções às contas de usuário usando o Azure PowerShell. Este artigo usa o [Azure Active Directory PowerShell versão 2](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#directory_roles) módulo.
+Você pode automatizar a forma como atribui funções a contas de usuário usando Azure PowerShell. Este artigo usa o módulo [Azure Active Directory PowerShell versão 2](https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0#directory_roles) .
 
 ## <a name="prepare-powershell"></a>Preparar o PowerShell
 
@@ -50,11 +50,11 @@ Agora você pode começar a usar os cmdlets do módulo. Para obter uma descriç�
 
 ## <a name="permissions-required"></a>Permissões necessárias
 
-Conecte-se ao seu locatário do AD do Azure usando uma conta de administrador global para atribuir ou remover funções.
+Conecte-se ao seu locatário do Azure AD usando uma conta de administrador global para atribuir ou remover funções.
 
-## <a name="assign-a-single-role"></a>Atribuir uma função única
+## <a name="assign-a-single-role"></a>Atribuir uma única função
 
-Para atribuir uma função, você deve primeiro obter seu nome de exibição e o nome da função que está sendo atribuído. Quando você tem o nome de exibição da conta e o nome da função, use os cmdlets a seguir para atribuir a função ao usuário.
+Para atribuir uma função, primeiro você deve obter seu nome de exibição e o nome da função que você está atribuindo. Quando você tiver o nome de exibição da conta e o nome da função, use os cmdlets a seguir para atribuir a função ao usuário.
 
 ``` PowerShell
 # Fetch user to assign to role
@@ -103,7 +103,7 @@ Get-AzureADDirectoryRoleMember -ObjectId $role.ObjectId | Get-AzureADServicePrin
 
 ## <a name="multiple-role-assignments"></a>Atribuições de função múltiplas
 
-Exemplos de como atribuir e remover várias funções ao mesmo tempo.
+Exemplos de atribuição e remoção de várias funções de uma só vez.
 
 ```powershell
 #File name
@@ -149,16 +149,16 @@ $roleMember = Get-AzureADUser -ObjectId "username@contoso.com"
 
 #Fetch list of all directory roles with object id
 Get-AzureADDirectoryRole
- 
+
 # Fetch a directory role by id
 $role = Get-AzureADDirectoryRole -ObjectId "5b3fe201-fa8b-4144-b6f1-875829ff7543"
- 
+
 # Remove user from role
 Remove-AzureADDirectoryRoleMember -ObjectId $role.ObjectId -MemberId $roleMember.ObjectId 
 
 # Fetch role membership for role to confirm
 Get-AzureADDirectoryRoleMember -ObjectId $role.ObjectId | Get-AzureADUser
- 
+
 ```
 
 ## <a name="next-steps"></a>Próximas etapas

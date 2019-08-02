@@ -1,20 +1,18 @@
 ---
 title: Usar o Emulador de Armazenamento do Azure para desenvolvimento e teste | Microsoft Docs
 description: O Emulador de Armazenamento do Azure fornece um ambiente de desenvolvimento local gratuito para desenvolvimento e teste de seus aplicativos de Armazenamento do Azure. Saiba como as solicitações são autorizadas, como conectar o emulador por meio do aplicativo e como usar a ferramenta de linha de comando.
-services: storage
 author: mhopkins-msft
-ms.service: storage
-ms.topic: article
-ms.date: 08/10/2018
 ms.author: mhopkins
-ms.reviewer: seguler
+ms.date: 08/10/2018
+ms.service: storage
 ms.subservice: common
-ms.openlocfilehash: 5f55228c80142b2a21af585cb04d16f148460af0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.topic: conceptual
+ms.openlocfilehash: 8737e3b2445f5b89c62cead5fae34b8ad076113a
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65149092"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68721738"
 ---
 # <a name="use-the-azure-storage-emulator-for-development-and-testing"></a>Usar o Emulador de Armazenamento do Azure para desenvolvimento e teste
 
@@ -168,7 +166,7 @@ A partir da versão 3.0, uma janela do console é exibida quando você inicia o 
 ### <a name="options"></a>Opções
 Para exibir a lista de opções, digite `/help` no prompt de comando.
 
-| Opção | DESCRIÇÃO | Comando | Argumentos |
+| Opção | Descrição | Comando | Arguments |
 | --- | --- | --- | --- |
 | **Iniciar** |Inicia o emulador de armazenamento. |`AzureStorageEmulator.exe start [-inprocess]` |*-inprocess*: Inicia o emulador no processo atual em vez de criar um novo processo. |
 | **Parar** |Para o emulador de armazenamento. |`AzureStorageEmulator.exe stop` | |

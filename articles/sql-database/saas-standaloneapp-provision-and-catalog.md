@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: billgib
-manager: craigg
 ms.date: 09/24/2018
-ms.openlocfilehash: 28deb9b7ba15744b9bd3d273d02db4398d2b2ef3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f9087ff33bccb54497ec8d781a47469553683d65
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61484487"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570270"
 ---
 # <a name="provision-and-catalog-new-tenants-using-the--application-per-tenant-saas-pattern"></a>Provisionar e catalogar novos locatários usando o padrão de aplicativo autônomo
 
@@ -99,7 +98,7 @@ Quando o script for concluído, o catálogo existirá e todos os locatários de 
 Agora, analise os recursos que você criou.
 
 1. Abra o [Portal do Azure](https://portal.azure.com/) e navegue pelos grupos de recursos.  Abra o grupo de recursos **wingtip-sa-catalog-\<do usuário \>** anote o servidor de catálogo e o banco de dados.
-1. Abra o banco de dados no portal e selecione *Data Explorer* no menu à esquerda.  Clique no comando Login e, em seguida, digite a senha = **P\@ssword1**.
+1. Abra o banco de dados no portal e selecione *Data Explorer* no menu à esquerda.  Clique no comando de logon e insira a senha = **P\@ssword1**.
 
 
 1. Explore o esquema do banco de dados *tenantcatalog*.  

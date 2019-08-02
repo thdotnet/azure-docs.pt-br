@@ -14,18 +14,18 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: a1dafb8e4c16a59bfed51016ce9ccb0ec3eb7d6c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 460ea15b0827ea307d64d1bd92d9bd14d5919d73
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66754757"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68704386"
 ---
 # <a name="azure-event-hubs---geo-disaster-recovery"></a>Hubs de Eventos do Azure – Recuperação de desastre geográfico 
 
 Quando datacenters ou regiões inteiras do Azure (se nenhuma [zona de disponibilidade](../availability-zones/az-overview.md) for usada) enfrentam tempo de inatividade, é essencial para o processamento de dados continuar a operar em uma região ou datacenter diferente. Como tal, *a recuperação de desastre em área geográfica* e a *replicação geográfica* são recursos importantes para qualquer empresa. Os Hubs de Eventos do Azure dão suporte à recuperação de desastre de área geográfica e à replicação geográfica no nível do namespace. 
 
-O recurso de recuperação de desastre em área geográfica fica globalmente disponível para o Standard de Hubs de eventos e SKU dedicado. Observe que você pode somente namespaces de par de área geográfica entre a mesma camada de SKU. Por exemplo, se você tiver um namespace em um cluster que é oferecido apenas em nossos SKU dedicado, ele só pode ser emparelhado com um namespace em outro cluster. 
+O recurso de recuperação de desastres geograficamente está globalmente disponível para os hubs de eventos Standard e SKU dedicado. Observe que você só pode emparelhar namespaces geograficamente na mesma camada de SKU. Por exemplo, se você tiver um namespace em um cluster que é oferecido somente em nosso SKU dedicado, ele só poderá ser emparelhado com um namespace em outro cluster. 
 
 ## <a name="outages-and-disasters"></a>Interrupções e desastres
 
@@ -82,9 +82,9 @@ Se você iniciar o failover, as duas etapas são necessárias:
 
 Se você cometeu um erro, por exemplo, emparelhou as regiões erradas durante a configuração inicial, você pode interromper o emparelhamento dos dois namespaces a qualquer momento. Se você quiser usar os namespaces emparelhados como namespaces regulares, exclua o alias.
 
-## <a name="samples"></a>Amostras
+## <a name="samples"></a>Exemplos
 
-O [exemplo no GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/GeoDRClient) mostra como configurar e iniciar um failover. Esse exemplo demonstra os seguintes conceitos:
+O [exemplo no GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/GeoDRClient) mostra como configurar e iniciar um failover. Esse exemplo demonstra os seguintes conceitos:
 
 - Configurações necessárias no Azure Active Directory para usar o Azure Resource Manager com os Hubs de Eventos. 
 - Etapas necessárias para executar o exemplo de código. 
@@ -115,7 +115,7 @@ Você pode habilitar as Zonas de Disponibilidade apenas em novos namespaces usan
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* O [exemplo de GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/GeoDRClient) apresenta um fluxo de trabalho simples que cria um emparelhamento de área geográfica e inicia um failover para um cenário de recuperação de desastre.
+* O [exemplo de GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/GeoDRClient) apresenta um fluxo de trabalho simples que cria um emparelhamento de área geográfica e inicia um failover para um cenário de recuperação de desastre.
 * A [referência da API REST](/rest/api/eventhub/disasterrecoveryconfigs) descreve as APIs para executar a configuração de recuperação de desastres de replicação geográfica.
 
 Para saber mais sobre Hubs de Eventos, acesse os seguintes links:

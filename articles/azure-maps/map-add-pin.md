@@ -3,25 +3,25 @@ title: Adicionar uma camada de Símbolo ao Azure Mapas | Microsoft Docs
 description: Como adicionar símbolos ao mapa JavaScript
 author: rbrundritt
 ms.author: richbrun
-ms.date: 12/2/2018
+ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 2580f1177bf9e6e3a92934f88a5d8ab51894e8d9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ba5d5d3aaa6a83dbcc5e5072872bca0fcd22bbf9
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60771661"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638712"
 ---
 # <a name="add-a-symbol-layer-to-a-map"></a>Adicionar uma camada de símbolo a um mapa
 
-Este artigo mostra como você pode renderizar os dados de ponto de uma fonte de dados como uma camada de Símbolo em um mapa. Camadas de símbolo são renderizadas usando o WebGL e dar suporte a muito grandes conjuntos de pontos de marcadores HTML, mas não dão suporte a elementos CSS e HTML tradicionais para aplicação de estilo.  
+Este artigo mostra como você pode renderizar os dados de ponto de uma fonte de dados como uma camada de Símbolo em um mapa. As camadas de símbolo são renderizadas usando WebGL e dão suporte a conjuntos muito maiores de pontos do que marcadores HTML, mas não dão suporte a elementos CSS tradicionais e HTML para definição de estilo.  
 
 > [!TIP]
-> Por padrão, as camadas de Símbolo renderizarão as coordenadas de todas as geometrias em uma fonte de dados. Para limitar a camada de tal forma que ele só processa geometria de ponto de conjunto de recursos do `filter` propriedade da camada para `['==', ['geometry-type'], 'Point']` ou `['any', ['==', ['geometry-type'], 'Point'], ['==', ['geometry-type'], 'MultiPoint']]` se você quiser incluir recursos MultiPoint também.
+> Por padrão, as camadas de Símbolo renderizarão as coordenadas de todas as geometrias em uma fonte de dados. Para limitar a camada de modo que ela só processe os recursos de geometria de `filter` ponto, defina a propriedade `['==', ['geometry-type'], 'Point']` da `['any', ['==', ['geometry-type'], 'Point'], ['==', ['geometry-type'], 'MultiPoint']]` camada como ou se você quiser incluir recursos do MultiPoint também.
 
 ## <a name="add-a-symbol-layer"></a>Adicionar uma camada de símbolo
 
@@ -34,14 +34,14 @@ No segundo bloco de código, um objeto de fonte de dados é criado usando a clas
 
 O terceiro bloco de código cria um [ouvinte de eventos](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) e atualiza as coordenadas do ponto após clique do mouse, usando o método [setCoordinates](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.shape?view=azure-iot-typescript-latest) da classe shape.
 
-Uma [camada de símbolo](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer?view=azure-iot-typescript-latest) usa texto ou ícones para renderizar dados com base em ponto encapsulados na [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) como símbolos no mapa.  A fonte de dados, o ouvinte de eventos de clique e a camada de símbolo são criados e adicionados ao mapa de dentro de `ready` [ouvinte de evento](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) função para garantir que o ponto é exibido após o mapa carregado e pronto para ser acessado.
+Uma [camada de símbolo](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer?view=azure-iot-typescript-latest) usa texto ou ícones para renderizar dados com base em ponto encapsulados na [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) como símbolos no mapa.  A fonte de dados, o ouvinte de evento de clique e a camada de símbolo são criados e adicionados ao `ready` mapa dentro da função de ouvinte de [evento](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) para garantir que o ponto seja exibido após o mapa ser carregado e pronto para ser acessado.
 
 > [!TIP]
-> Por padrão, para o desempenho, as camadas de símbolo otimizam a renderização de símbolos, ocultando os símbolos que se sobrepõem. Conforme você ampliar os símbolos ocultos se tornarão visíveis. Para desabilitar esse recurso e renderizar todos os símbolos em todos os momentos, defina as `allowOverlap` propriedade do `iconOptions` as opções para `true`.
+> Por padrão, para desempenho, as camadas de símbolo otimizam a renderização de símbolos, ocultando os símbolos que se sobrepõem. À medida que você aumenta o zoom, os símbolos ocultos se tornam visíveis. Para desabilitar esse recurso e renderizar todos os símbolos em todos os momentos `allowOverlap` , defina a `iconOptions` propriedade das `true`opções como.
 
 ## <a name="add-a-custom-icon-to-a-symbol-layer"></a>Adicionar um ícone personalizado a uma camada de símbolo
 
-As camadas de símbolo são renderizadas usando o WebGL. Assim, todos os recursos, como imagens de ícone, precisam ser carregados no contexto do WebGL. Este exemplo mostra como adicionar um ícone personalizado para os recursos de mapa e, em seguida, usá-lo para renderizar o ponto de dados com um símbolo personalizado no mapa. A propriedade `textField` da camada de símbolo exige a especificação de uma expressão. Nesse caso, queremos processar a propriedade de temperatura, mas como ele é um número, ele precisa ser convertido em uma cadeia de caracteres. Além disso, queremos acrescentar os "° F" para ele. Uma expressão pode ser usada para fazer isso; `['concat', ['to-string', ['get', 'temperature']], '°F']`. 
+As camadas de símbolo são renderizadas usando o WebGL. Assim, todos os recursos, como imagens de ícone, precisam ser carregados no contexto do WebGL. Este exemplo mostra como adicionar um ícone personalizado aos recursos de mapa e, em seguida, usá-lo para renderizar dados de ponto com um símbolo personalizado no mapa. A propriedade `textField` da camada de símbolo exige a especificação de uma expressão. Nesse caso, desejamos renderizar a propriedade de temperatura, mas como é um número, ela precisa ser convertida em uma cadeia de caracteres. Além disso, queremos acrescentar "° f" a ele. Uma expressão pode ser usada para fazer isso; `['concat', ['to-string', ['get', 'temperature']], '°F']`. 
 
 <br/>
 

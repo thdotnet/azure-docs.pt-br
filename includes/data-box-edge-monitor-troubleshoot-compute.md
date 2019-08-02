@@ -2,16 +2,16 @@
 author: alkohli
 ms.service: databox
 ms.topic: include
-ms.date: 03/05/2019
+ms.date: 07/26/2019
 ms.author: alkohli
-ms.openlocfilehash: 7058d7f46373f8adaacbcbf90e5ea591a15f8f37
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: f3bb391dceb1948820d00c0d09229f2c106ffc0b
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67172380"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68601294"
 ---
-Em um dispositivo de borda da caixa de dados que tenha a função de computação configurada, um subconjunto de docker comandos estão disponíveis para monitorar ou solucionar problemas de módulos. Para ver uma lista dos comandos disponíveis, [conectar-se à interface do PowerShell](#connect-to-the-powershell-interface) e use o `dkrdbe` função.
+Em um dispositivo Data Box Edge que tem a função de computação configurada, um subconjunto de comandos do Docker está disponível para monitorar ou solucionar problemas de módulos. Para ver uma lista de comandos disponíveis, [Conecte-se à interface do PowerShell](#connect-to-the-powershell-interface) e `dkrdbe` use a função.
 
 ```powershell
 [10.100.10.10]: PS>dkrdbe -?
@@ -35,26 +35,26 @@ Commands:
 
 [10.100.10.10]: PS>
 ```
-A tabela a seguir tem uma breve descrição dos comandos disponíveis para `dkrdbe`:
+A tabela a seguir tem uma breve descrição dos comandos disponíveis para `dkrdbe`o:
 
-|command  |DESCRIÇÃO |
+|command  |Descrição |
 |---------|---------|
-|`image`     | Gerenciar imagens       |
+|`image`     | Gerenciar imagens. Para remover imagens não usadas, use:`dkrdbe image prune -a -f`       |
 |`images`     | Listar imagens         |
-|`inspect`     | Retornar informações de baixo nível em objetos do Docker         |
-|`login`     | Entrar para um registro de Docker         |
-|`logout`     | Sair de um registro de Docker         |
+|`inspect`     | Retornar informações de baixo nível sobre objetos do Docker         |
+|`login`     | Entrar em um registro do Docker         |
+|`logout`     | Sair de um registro do Docker         |
 |`logs`     | Buscar os logs de um contêiner        |
-|`port`     | Lista os mapeamentos de porta ou um mapeamento específico para o contêiner        |
+|`port`     | Listar mapeamentos de porta ou um mapeamento específico para o contêiner        |
 |`ps`     | Listar contêineres        |
-|`pull`     | Efetuar pull de uma imagem ou um repositório de um registro         |
-|`start`     | Iniciar um ou mais contêineres parados         |
-|`stats`     | Exibir uma transmissão ao vivo de estatísticas de uso do recurso de contêineres         |
+|`pull`     | Efetuar pull de uma imagem ou de um repositório de um registro         |
+|`start`     | Iniciar um ou mais contêineres interrompidos         |
+|`stats`     | Exibir uma transmissão ao vivo de estatísticas de uso de recursos de contêineres         |
 |`stop`     | Parar um ou mais contêineres em execução        |
-|`system`     | Gerencie o Docker         |
+|`system`     | Gerenciar o Docker         |
 |`top`     | Exibir os processos em execução de um contêiner         |
 
-Para obter ajuda sobre qualquer comando disponível, use `dkrdbe <command-name> --help`.
+Para obter ajuda para qualquer comando disponível, use `dkrdbe <command-name> --help`.
 
 Por exemplo, para entender o uso do `port` comando, digite:
 
@@ -78,11 +78,11 @@ Options:
 [10.100.10.10]: PS>
 ```
 
-Os comandos disponíveis para o `dkrdbe` função usam os mesmos parâmetros, como aqueles usados para os comandos do docker normal. Para as opções e os parâmetros usados com o comando docker, acesse [usar a linha de comando do Docker](https://docs.docker.com/engine/reference/commandline/docker/).
+Os comandos disponíveis para a `dkrdbe` função usam os mesmos parâmetros que aqueles usados para os comandos normais do Docker. Para as opções e parâmetros usados com o comando Docker, acesse [usar a linha de comando do Docker](https://docs.docker.com/engine/reference/commandline/docker/).
 
-### <a name="to-check-if-the-module-deployed-successfully"></a>Para verificar se o módulo implantado com êxito
+### <a name="to-check-if-the-module-deployed-successfully"></a>Para verificar se o módulo foi implantado com êxito
 
-Módulos são contêineres que têm uma lógica de negócios implementada de computação. Para verificar se um módulo de computação é implantado com êxito, execute o `ps` de comando e verifique se o contêiner (correspondente para o módulo de computação) está em execução.
+Os módulos de computação são contêineres que têm uma lógica de negócios implementada. Para verificar se um módulo de computação foi implantado com êxito `ps` , execute o comando e verifique se o contêiner (correspondente ao módulo de computação) está em execução.
 
 Para obter a lista de todos os contêineres (incluindo aqueles que estão em pausa), execute o `ps -a` comando.
 
@@ -96,9 +96,9 @@ acce59f70d60        mcr.microsoft.com/azureiotedge-agent:1.0             "/bin/s
 [10.100.10.10]: PS>
 ```
 
-Se ocorreu um erro na criação da imagem do contêiner ou enquanto puxa a imagem, execute `logs edgeAgent`.  `EdgeAgent` é o contêiner de tempo de execução do IoT Edge é responsável por provisionar outros contêineres.
+Se houvesse um erro na criação da imagem de contêiner ou durante a extração da imagem `logs edgeAgent`, execute.  `EdgeAgent`é o contêiner IoT Edge tempo de execução que é responsável por provisionar outros contêineres.
 
-Porque `logs edgeAgent` Despeja todos os logs, uma boa maneira de ver os erros recentes é usar a opção `--tail 20`.
+Como `logs edgeAgent` o despeja todos os logs, uma boa maneira de ver os erros recentes é usar a opção `--tail 20`.
 
 
 ```powershell
@@ -117,12 +117,12 @@ reateOptions":"{\"HostConfig\":{\"Binds\":[\"/home/hcsshares/share4-dl460:/home/
 2019-02-28 23:38:28.480 +00:00 [DBG] [Microsoft.Azure.Devices.Edge.Agent.Core.Planners.HealthRestartPlanner] - HealthRestartPlanner created Plan, with 0 command(s).
 ```
 
-### <a name="to-get-container-logs"></a>Para obter logs do contêiner
+### <a name="to-get-container-logs"></a>Para obter logs de contêiner
 
-Para obter logs para um contêiner específico, primeiro liste o contêiner e, em seguida, obter os logs para o contêiner que você está interessado.
+Para obter logs de um contêiner específico, primeiro liste o contêiner e, em seguida, obtenha os logs para o contêiner no qual você está interessado.
 
-1. [Conectar-se à interface do PowerShell](#connect-to-the-powershell-interface).
-2. Para obter a lista de contêineres em execução, execute o `ps` comando.
+1. [Conecte-se à interface do PowerShell](#connect-to-the-powershell-interface).
+2. Para obter a lista de contêineres em execução, `ps` execute o comando.
 
     ```powershell
     [10.100.10.10]: P> dkrdbe ps
@@ -133,9 +133,9 @@ Para obter logs para um contêiner específico, primeiro liste o contêiner e, e
     acce59f70d60        mcr.microsoft.com/azureiotedge-agent:1.0             "/bin/sh -c 'echo \"$â€¦"   2 days ago          Up 2 days                                                                                  edgeAgent
     ```
 
-3. Anote a ID do contêiner para o contêiner que você precisa que os logs.
+3. Anote a ID do contêiner para o contêiner para o qual você precisa dos logs.
 
-4. Para obter os logs para um contêiner específico, execute o `logs` comando fornecendo a ID do contêiner.
+4. Para obter os logs de um contêiner específico, execute o `logs` comando fornecendo a ID do contêiner.
 
     ```powershell
     [10.100.10.10]: PS>dkrdbe logs d99e2f91d9a8
@@ -152,10 +152,10 @@ Para obter logs para um contêiner específico, primeiro liste o contêiner e, e
 
 ### <a name="to-monitor-the-usage-statistics-of-the-device"></a>Para monitorar as estatísticas de uso do dispositivo
 
-Para monitorar o uso de memória, CPU e e/s no dispositivo, use o `stats` comando.
+Para monitorar a memória, o uso da CPU e a e/s no dispositivo `stats` , use o comando.
 
-1. [Conectar-se à interface do PowerShell](#connect-to-the-powershell-interface).
-2. Execute o `stats` comando para desabilitar a transmissão ao vivo e extrair apenas o primeiro resultado.
+1. [Conecte-se à interface do PowerShell](#connect-to-the-powershell-interface).
+2. Execute o `stats` comando para desabilitar a transmissão ao vivo e efetuar pull somente do primeiro resultado.
 
    ```powershell
    dkrdbe stats --no-stream

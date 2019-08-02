@@ -3,7 +3,7 @@ title: Implantar um executável existente ao Service Fabric do Azure | Microsoft
 description: Aprenda a empacotar um aplicativo existente como um executável de convidado, para que ele possa ser implantado em um cluster do Service Fabric.
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: chackdan
 editor: ''
 ms.assetid: d799c1c6-75eb-4b8a-9f94-bf4f3dadf4c3
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 07/02/2017
-ms.author: aljo
-ms.openlocfilehash: bfac14c598b405a398cad916787aa3312589bfd1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: atsenthi
+ms.openlocfilehash: 575303cc2ec3e880187bac64da06d05721df14e6
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60393516"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599655"
 ---
 # <a name="package-and-deploy-an-existing-executable-to-service-fabric"></a>Empacotar e implantar um executável existente no Service Fabric
 Ao empacotar um executável já existente como [executável convidado](service-fabric-guest-executables-introduction.md), você pode optar por usar um modelo de projeto do Visual Studio ou [criar o pacote de aplicativos manualmente](#manually). Usando o Visual Studio, a estrutura do pacote de aplicativos e os arquivos de manifesto são criados pelo novo modelo de projeto para você.
@@ -73,7 +73,7 @@ O processo de empacotar manualmente um executável convidado baseia-se nas segui
 -->
 
 ### <a name="create-the-package-directory-structure"></a>Criar a estrutura de diretórios do pacote
-Você pode começar pela criação de estrutura de diretório, conforme descrito em [empacotar um aplicativo do Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-package-apps).
+Você pode começar criando a estrutura de diretório, conforme descrito em [empacotar um aplicativo de Service Fabric do Azure](https://docs.microsoft.com/azure/service-fabric/service-fabric-package-apps).
 
 ### <a name="add-the-applications-code-and-configuration-files"></a>Adicionar os arquivos de configuração e código do aplicativo
 Depois de criar a estrutura de diretório, você pode adicionar os arquivos de configuração e código do aplicativo aos diretórios de code e config. Também é possível criar diretórios adicionais ou subdiretórios nos diretórios code ou config.
@@ -170,7 +170,7 @@ No exemplo anterior, o SetupEntryPoint executa um arquivo em lote chamado `Launc
 
 O elemento `EntryPoint` no arquivo de manifesto do serviço é usado para especificar como iniciar o serviço.
 
-O elemento `ExeHost` especifica o executável e os argumentos que devem ser usados para iniciar o serviço. Opcionalmente, é possível adicionar o atributo `IsExternalExecutable="true"` a `ExeHost` para indicar que o programa é um executável externo fora do pacote de código. Por exemplo: `<ExeHost IsExternalExecutable="true">`.
+O elemento `ExeHost` especifica o executável e os argumentos que devem ser usados para iniciar o serviço. Opcionalmente, é possível adicionar o atributo `IsExternalExecutable="true"` a `ExeHost` para indicar que o programa é um executável externo fora do pacote de código. Por exemplo, `<ExeHost IsExternalExecutable="true">`.
 
 * `Program` especifica o nome do executável que deve iniciar o serviço.
 * `Arguments` especifica os argumentos que devem ser passados para o executável. Pode ser uma lista de parâmetros com argumentos.

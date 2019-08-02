@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: aamalvea
 ms.author: aamalvea
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 01/30/2019
-ms.openlocfilehash: 235d29c876616948516bbe4309ddd630bc3f6dca
-ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
+ms.openlocfilehash: 1bb88d6f74ab4b93e226fe8630f07f0a96f4ba47
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67852599"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567046"
 ---
 # <a name="planning-for-azure-maintenance-events-in-azure-sql-database"></a>Planejando eventos de manutenção do Azure – Banco de Dados SQL do Azure
 
@@ -39,7 +38,7 @@ Qualquer aplicativo de produção cliente que se conecta a um serviço de banco 
 
 Em média, ocorre 1,7 evento de manutenção planejada a cada mês.
 
-## <a name="resource-health"></a>Integridade de recursos
+## <a name="resource-health"></a>Integridade do recurso
 
 Se o banco de dados SQL estiver apresentando falhas de logon, verifique o status atual da janela do [Resource Health](../service-health/resource-health-overview.md#get-started) no [portal do Azure](https://portal.azure.com). A seção Histórico de Integridade contém o motivo do tempo de inatividade para cada evento (quando disponível).
 

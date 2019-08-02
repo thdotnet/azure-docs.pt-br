@@ -1,5 +1,5 @@
 ---
-title: Como usar o AMQP 1,0 com a API do barramento de serviço Java JMS | Microsoft Docs
+title: Usar o AMQP 1,0 com a API do serviço de mensagens Java e o barramento de serviço do Azure
 description: Como usar o Java Message Service (JMS) com o Barramento de Serviço do Microsoft Azure e Advanced Message Queuing Protocol (AMQP) 1.0.
 services: service-bus-messaging
 documentationcenter: java
@@ -14,12 +14,13 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 03/05/2019
 ms.author: aschhab
-ms.openlocfilehash: 47b077dbb62088093c60a588660045529678c58f
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.custom: seo-java-july2019
+ms.openlocfilehash: f816a5c84416b7f40e3062bf22dd70cbb356c6f1
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68318450"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68662894"
 ---
 # <a name="how-to-use-the-java-message-service-jms-api-with-service-bus-and-amqp-10"></a>Como usar a API do Serviço de Mensagem Java (JMS) com Barramento de Serviço e AMQP 1.0
 O AMQP 1.0 é um protocolo de mensagens eficiente, confiável e conectado que pode ser usado para criar aplicativos de mensagens robustos em plataformas cruzadas.
@@ -341,7 +342,7 @@ MODIFIED_FAILED = 4; -> Abandon() which increases delivery count
 MODIFIED_FAILED_UNDELIVERABLE = 5; -> Defer()
 ```
 
-## <a name="jms-topics-vs-service-bus-topics"></a>Tópicos de JMS vs. Tópicos do Service Bus
+## <a name="jms-topics-vs-service-bus-topics"></a>Tópicos de JMS vs. Tópicos do Barramento de Serviço
 O uso de tópicos e assinaturas do barramento de serviço do Azure por meio da API JMS (Java Message Service) fornece recursos básicos de envio e recebimento. É uma opção conveniente ao portar aplicativos de outros agentes de mensagem com APIs compatíveis com JMS, mesmo que os tópicos do barramento de serviço sejam diferentes dos tópicos JMS e exijam alguns ajustes. 
 
 Os tópicos do barramento de serviço do Azure roteiam mensagens para assinaturas nomeadas, compartilhadas e duráveis que são gerenciadas por meio da interface de gerenciamento de recursos do Azure, das ferramentas de linha de comando do Azure ou do portal do Azure. Cada assinatura permite até 2000 regras de seleção, cada uma delas pode ter uma condição de filtro e, para filtros SQL, também uma ação de transformação de metadados. Cada correspondência de condição de filtro seleciona a mensagem de entrada a ser copiada na assinatura tehj.  
@@ -374,6 +375,7 @@ Além disso, o Barramento de Serviço do Microsoft Azure divide o plano de contr
 | createBrowser               | sem suporte. Usar a funcionalidade de Peek() da API do Barramento de Serviço                         |
 | createQueue                 | criar uma fila por meio de ferramentas/API/portal de gerenciamento                                           | 
 | createTemporaryQueue        | criar uma fila por meio do gerenciamento de API/ferramentas/portal com *AutoDeleteOnIdle* definido como um período de expiração |
+| receiveNoWait               | Utilize o método Receive () fornecido pelo SDK do barramento de serviço e especifique um tempo limite muito baixo ou zero |
 
 ## <a name="summary"></a>Resumo
 Este guia de instruções explicou como usar os recursos do sistema de mensagens agenciado do Barramento de Serviço (tópicos sobre filas e publicação/assinatura) do Java usando a API popular JMS e o AMQP 1.0.

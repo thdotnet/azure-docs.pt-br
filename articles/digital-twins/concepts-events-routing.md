@@ -6,14 +6,14 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 12/14/2018
+ms.date: 07/29/2019
 ms.author: alinast
-ms.openlocfilehash: 7dfda00aca403f7f95f0c56d1db28c3c609bebd2
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a013525109fe85ad70e5aaa5895da20f5abc3237
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67080652"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638523"
 ---
 # <a name="routing-events-and-messages"></a>Roteamento de eventos e mensagens
 
@@ -21,7 +21,7 @@ As soluções de IoT geralmente unem vários serviços poderosos que incluem arm
 
 ## <a name="route-types"></a>Tipos de rota  
 
-Gêmeos Digital do Azure oferece duas maneiras de conectar eventos de IoT com outros serviços ou aplicativos de negócios:
+O Azure digital gêmeos oferece duas maneiras de conectar eventos de IoT com outros serviços do Azure ou aplicativos de negócios:
 
 * **Roteamento de eventos dos Gêmeos Digitais do Azure**: Um objeto no grafo espacial que é alterado, dados telemétricos que são recebidos ou uma função definida pelo usuário que cria uma notificação com base em condições predefinidas pode disparar eventos dos Gêmeos Digitais do Azure. Os usuários podem enviar esses eventos para [Hubs de Eventos do Azure](https://azure.microsoft.com/services/event-hubs/), [tópicos do Barramento de Serviço do Azure](https://azure.microsoft.com/services/service-bus/) ou [Grade de Eventos do Azure](https://azure.microsoft.com/services/event-grid/) para processamento adicional.
 

@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: mayg
-ms.openlocfilehash: 90388d570d027aea3c897f7306a1714fd7e847b3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0974e2ed78e557168357c51b5c77a94de2f56dc5
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60772345"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68722114"
 ---
 # <a name="integrate-azure-expressroute-with-disaster-recovery-for-azure-vms"></a>Integrar o ExpressRoute do Azure à recuperação de desastres para VMs do Azure
 
@@ -93,7 +93,7 @@ Geralmente, as implantações corporativas têm cargas de trabalho divididas em 
 - **VNet do hub**. Há uma vNet do hub **vNet do Hub de Origem**: 10.10.10.0/24.
   - Este hub vNet atua como o gatekeeper.
   - Todas as comunicações entre sub-redes passam por esse hub.
-    - **As sub-redes de vNet do hub**. O hub vNet tem duas sub-redes:
+    - **Sub-redes vNet do Hub**. O hub vNet tem duas sub-redes:
     - **Subrede NVA**: 10.10.10.0/25. Essa sub-rede contém uma NVA (10.10.10.10).
     - **Gateway de sub-rede**: 10.10.10.128/25. Essa sub-rede contém um gateway da Rota Expressa conectado a uma conexão da Rota Expressa que direciona para o site local por meio de um domínio de roteamento de emparelhamento.
 - O datacenter local tem uma conexão de circuito de Rota Expressa por meio de uma borda de parceiro em Hong Kong.
@@ -107,8 +107,8 @@ Geralmente, as implantações corporativas têm cargas de trabalho divididas em 
 **Direção** | **Configuração** | **Estado**
 --- | --- | ---
 Do spoke para o hub | Permitir que o endereço de rede virtual | Enabled
-Do spoke para o hub | Permitir tráfego encaminhado | Enabled
-Do spoke para o hub | Permitir trânsito de gateway | Desabilitado
+Do spoke para o hub | Permitir o tráfego encaminhado | Enabled
+Do spoke para o hub | Permitir o trânsito de gateway | Desabilitado
 Do spoke para o hub | Use remover gateways | Enabled
 
  ![Configuração do emparelhamento spoke-hub](./media/azure-vm-disaster-recovery-with-expressroute/spoke-to-hub-peering-configuration.png)
@@ -118,8 +118,8 @@ Do spoke para o hub | Use remover gateways | Enabled
 **Direção** | **Configuração** | **Estado**
 --- | --- | ---
 Do hub para o spoke | Permitir que o endereço de rede virtual | Enabled
-Do hub para o spoke | Permitir tráfego encaminhado | Enabled
-Do hub para o spoke | Permitir trânsito de gateway | Enabled
+Do hub para o spoke | Permitir o tráfego encaminhado | Enabled
+Do hub para o spoke | Permitir o trânsito de gateway | Enabled
 Do hub para o spoke | Use remover gateways | Desabilitado
 
  ![Configuração do emparelhamento hub-spoke](./media/azure-vm-disaster-recovery-with-expressroute/hub-to-spoke-peering-configuration.png)
@@ -166,7 +166,7 @@ Essa configuração ajuda a proteger contra falhas do circuito ExpressRoute prim
 
 Nessa configuração, há apenas um circuito do Expressroute. Embora o circuito tenha uma conexão redundante no caso de um deles ficar inativo, um único circuito de roteamento não fornecerá resiliência se sua região de emparelhamento for desativada. Observe que:
 
-- Você pode replicar VMs do Azure para qualquer região do Azure na [mesma localização geográfica](azure-to-azure-support-matrix.md#region-support). Se a região do Azure de destino não estiver no mesmo local da origem, você precisará ativar o ExpressRoute Premium se estiver usando um único circuito de Rota Expressa. Saiba mais sobre [localizações de ExpressRoute](../expressroute/expressroute-locations.md#azure-regions-to-expressroute-locations-within-a-geopolitical-region) e [preços de ExpressRoute](https://azure.microsoft.com/pricing/details/expressroute/).
+- Você pode replicar VMs do Azure para qualquer região do Azure na [mesma localização geográfica](azure-to-azure-support-matrix.md#region-support). Se a região do Azure de destino não estiver no mesmo local da origem, você precisará ativar o ExpressRoute Premium se estiver usando um único circuito de Rota Expressa. Saiba mais sobre [localizações de ExpressRoute](../expressroute/expressroute-locations.md) e [preços de ExpressRoute](https://azure.microsoft.com/pricing/details/expressroute/).
 - Você não pode conectar redes virtuais de origem e de destino simultaneamente o circuito se o mesmo espaço de endereço IP é usado na região de destino. Neste cenário:    
     -  Desconectar a conexão do lado de origem e, em seguida, estabelecer a conexão do lado de destino. Essa alteração de conexão pode ser inserida como parte de um plano de recuperação de Site Recovery. Observe que:
         - Em uma falha regional, se a região primária estiver inacessível, a operação de desconexão poderá falhar. Isso pode afetar a criação da conexão para a região de destino.

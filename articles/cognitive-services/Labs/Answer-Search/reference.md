@@ -10,12 +10,13 @@ ms.subservice: answer-search
 ms.topic: reference
 ms.date: 04/13/2018
 ms.author: rosh
-ms.openlocfilehash: 4384bf658024f89664c5202ba10d793d7ad734e0
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ROBOTS: NOINDEX
+ms.openlocfilehash: 28449435479aef0d6a1d8aee3e53de1a78f401b3
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67592922"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68705325"
 ---
 # <a name="project-answer-search-v7-reference"></a>Referência da Pesquisa de Resposta de Projeto v7
 
@@ -35,7 +36,7 @@ https://api.labs.cognitive.microsoft.com/answerSearch/v7.0/search?q=<searchTerm>
 ```
 
 A solicitação precisa usar o protocolo HTTPS e incluir o seguinte parâmetro de consulta:
--  `q=<URL>` -A consulta que identifica o objeto de pesquisa
+-  `q=<URL>`-A consulta que identifica o objeto de pesquisa
 
 Para obter exemplos que mostram como fazer solicitações, confira [Início Rápido do C#](c-sharp-quickstart.md) ou [Início Rápido do Java](java-quickstart.md). 
 
@@ -62,7 +63,7 @@ Para obter informações sobre o uso permitido e a exibição de resultados, con
 ## <a name="headers"></a>Cabeçalhos  
 Veja a seguir os cabeçalhos que podem ser incluídos em uma solicitação e uma resposta.  
   
-|Cabeçalho|DESCRIÇÃO|  
+|Cabeçalho|Descrição|  
 |------------|-----------------|  
 |Aceitar|Cabeçalho de solicitação opcional.<br /><br /> O tipo de mídia padrão é application/json. Para especificar que a resposta usará [JSON-LD](https://json-ld.org/), defina o cabeçalho Accept como application/ld+json.|  
 |<a name="acceptlanguage" />Accept-Language|Cabeçalho de solicitação opcional.<br /><br /> Uma lista delimitada por vírgula de idiomas a serem usados para as cadeias de caracteres de interface do usuário. A lista está em ordem decrescente de preferência. Para obter mais informações, incluindo o formato esperado, confira [RFC2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).<br /><br /> Esse cabeçalho e o parâmetro de consulta [setLang](#setlang) são mutuamente exclusivos – não especifique ambos.<br /><br /> Se você definir esse cabeçalho, também deverá especificar o parâmetro de consulta cc. Para determinar o mercado para o qual retornar os resultados, o Bing usa o primeiro idioma compatível suporte encontrado na lista e combina-o com o valor de parâmetro `cc`. Se a lista não inclui um idioma compatível, o Bing encontra o idioma e o mercado mais próximos que dão suporte à solicitação ou usa um mercado padrão ou agregado para os resultados. Para determinar o mercado usado pelo Bing, confira o cabeçalho BingAPIs-Market.<br /><br /> Use esse cabeçalho e o parâmetro de consulta `cc` somente se você especificar vários idiomas. Caso contrário, use os parâmetros de consulta [mkt](#mkt) e [setLang](#setlang).<br /><br /> Uma cadeia de caracteres de interface do usuário é uma cadeia de caracteres que é usada como um rótulo em uma interface do usuário. Há poucas cadeias de caracteres de interface do usuário nos objetos de resposta JSON. Todos os links para as propriedades de Bing.com nos objetos de resposta aplicam o idioma especificado.|  
@@ -83,20 +84,20 @@ Veja a seguir os cabeçalhos que podem ser incluídos em uma solicitação e uma
 A solicitação pode incluir os parâmetros de consulta a seguir. Confira a coluna Obrigatório para obter os parâmetros necessários. É necessário codificar os parâmetros de consulta em URL.  
   
   
-|NOME|Value|Type|Obrigatório|  
+|Nome|Valor|Tipo|Necessário|  
 |----------|-----------|----------|--------------|  
-|<a name="mkt" />mkt|O mercado do qual os resultados são obtidos. <br /><br />Para obter uma lista dos possíveis valores de mercado, confira Códigos de mercado.<br /><br /> **OBSERVAÇÃO:** Atualmente, a API de Visualização de URL dá suporte apenas ao mercado e ao idioma en-us.<br /><br />|String|Sim|  
-|<a name="query" />q|A URL a ser visualizada|String|Sim|  
-|<a name="responseformat" />responseFormat|O tipo de mídia a ser usado para a resposta. Veja a seguir os possíveis valores que não diferenciam maiúsculas de minúsculas.<br /><ul><li>JSON</li><li>JSONLD</li></ul><br /> O padrão é JSON. Para obter informações sobre os objetos JSON contidos na resposta, confira [Objetos de resposta](#response-objects).<br /><br />  Se você especificar JsonLd, o corpo da resposta incluirá objetos JSON-LD que contêm os resultados da pesquisa. Para obter informações sobre o JSON-LD, confira [JSON-LD](https://json-ld.org/).|Cadeia de caracteres|Não|  
-|<a name="safesearch" />Pesquisa Segura|Um filtro usado para filtrar o conteúdo para adulto. Veja a seguir os possíveis valores de filtro que não diferenciam maiúsculas de minúsculas.<br /><ul><li>Desativado – retorna páginas da Web com texto, imagens ou vídeos para adulto.<br /><br/></li><li>Moderado – retorna páginas da Web com texto para adulto, mas não imagens nem vídeos para adulto.<br /><br/></li><li>Estrito – não retorna páginas da Web com texto, imagens ou vídeos para adulto.</li></ul><br /> O padrão é Moderado.<br /><br /> **OBSERVAÇÃO:** Se a solicitação for proveniente de um mercado cuja política de conteúdo para adulto do Bing exija que `safeSearch` seja definido como Estrito, o Bing ignorará o valor `safeSearch` e usará Estrito.<br/><br/>**OBSERVAÇÃO:** Se você usar o operador de consulta `site:`, haverá a possibilidade da resposta poder conter conteúdo adulto, independentemente de como o parâmetro de consulta `safeSearch` está definido. Só use `site:` se estiver ciente do conteúdo do site e se o cenário der suporte à possibilidade de conteúdo para adulto. |Cadeia de caracteres|Não|  
-|<a name="setlang" />setLang|O idioma a ser usado para cadeias de caracteres de interface do usuário. Especifique o idioma usando o código de idioma ISO 639-1 de 2 letras. Por exemplo, o código de idioma para o inglês é EN. O padrão é EN (inglês).<br /><br /> Embora isso seja opcional, você sempre deve especificar o idioma. Normalmente, você define `setLang` com o mesmo idioma especificado por `mkt`, a menos que o usuário deseje exibir as cadeias de caracteres de interface do usuário em outro idioma.<br /><br /> Esse parâmetro e o cabeçalho [Accept-Language](#acceptlanguage) são mutuamente exclusivos – não especifique ambos.<br /><br /> Uma cadeia de caracteres de interface do usuário é uma cadeia de caracteres que é usada como um rótulo em uma interface do usuário. Há poucas cadeias de caracteres de interface do usuário nos objetos de resposta JSON. Além disso, todos os links para as propriedades de Bing.com nos objetos de resposta aplicam o idioma especificado.|String|Não| 
+|<a name="mkt" />mkt|O mercado do qual os resultados são obtidos. <br /><br />Para obter uma lista dos possíveis valores de mercado, confira Códigos de mercado.<br /><br /> **OBSERVAÇÃO:** Atualmente, a API de Visualização de URL dá suporte apenas ao mercado e ao idioma en-us.<br /><br />|Cadeia|Sim|  
+|<a name="query" />q|A URL a ser visualizada|Cadeia|Sim|  
+|<a name="responseformat" />responseFormat|O tipo de mídia a ser usado para a resposta. Veja a seguir os possíveis valores que não diferenciam maiúsculas de minúsculas.<br /><ul><li>JSON</li><li>JSONLD</li></ul><br /> O padrão é JSON. Para obter informações sobre os objetos JSON contidos na resposta, confira [Objetos de resposta](#response-objects).<br /><br />  Se você especificar JsonLd, o corpo da resposta incluirá objetos JSON-LD que contêm os resultados da pesquisa. Para obter informações sobre o JSON-LD, confira [JSON-LD](https://json-ld.org/).|Cadeia|Não|  
+|<a name="safesearch" />Pesquisa Segura|Um filtro usado para filtrar o conteúdo para adulto. Veja a seguir os possíveis valores de filtro que não diferenciam maiúsculas de minúsculas.<br /><ul><li>Desativado – retorna páginas da Web com texto, imagens ou vídeos para adulto.<br /><br/></li><li>Moderado – retorna páginas da Web com texto para adulto, mas não imagens nem vídeos para adulto.<br /><br/></li><li>Estrito – não retorna páginas da Web com texto, imagens ou vídeos para adulto.</li></ul><br /> O padrão é Moderado.<br /><br /> **OBSERVAÇÃO:** Se a solicitação for proveniente de um mercado cuja política de conteúdo para adulto do Bing exija que `safeSearch` seja definido como Estrito, o Bing ignorará o valor `safeSearch` e usará Estrito.<br/><br/>**OBSERVAÇÃO:** Se você usar o operador de consulta `site:`, haverá a possibilidade da resposta poder conter conteúdo adulto, independentemente de como o parâmetro de consulta `safeSearch` está definido. Só use `site:` se estiver ciente do conteúdo do site e se o cenário der suporte à possibilidade de conteúdo para adulto. |Cadeia|Não|  
+|<a name="setlang" />setLang|O idioma a ser usado para cadeias de caracteres de interface do usuário. Especifique o idioma usando o código de idioma ISO 639-1 de 2 letras. Por exemplo, o código de idioma para o inglês é EN. O padrão é EN (inglês).<br /><br /> Embora isso seja opcional, você sempre deve especificar o idioma. Normalmente, você define `setLang` com o mesmo idioma especificado por `mkt`, a menos que o usuário deseje exibir as cadeias de caracteres de interface do usuário em outro idioma.<br /><br /> Esse parâmetro e o cabeçalho [Accept-Language](#acceptlanguage) são mutuamente exclusivos – não especifique ambos.<br /><br /> Uma cadeia de caracteres de interface do usuário é uma cadeia de caracteres que é usada como um rótulo em uma interface do usuário. Há poucas cadeias de caracteres de interface do usuário nos objetos de resposta JSON. Além disso, todos os links para as propriedades de Bing.com nos objetos de resposta aplicam o idioma especificado.|Cadeia|Não| 
 
 
 ## <a name="response-objects"></a>Objetos de resposta  
 O esquema de resposta é uma [WebPage] ou uma ErrorResponse, como na API de Pesquisa na Web. Se a solicitação falha, o objeto de nível superior é o objeto [ErrorResponse](#errorresponse).
 
 
-|Object|DESCRIÇÃO|  
+|Objeto|Descrição|  
 |------------|-----------------|  
 |[WebPage]|O objeto JSON de nível superior que contém atributos de visualização.|  
 |[Fact]|O objeto JSON de nível superior que contém os fatos.| 
@@ -106,22 +107,22 @@ O esquema de resposta é uma [WebPage] ou uma ErrorResponse, como na API de Pesq
 ### <a name="error"></a>Erro  
 Define o erro ocorrido.  
   
-|Elemento|DESCRIÇÃO|Type|  
+|Elemento|Descrição|Tipo|  
 |-------------|-----------------|----------|  
-|<a name="error-code" />code|O código de erro que identifica a categoria de erro. Para obter uma lista dos possíveis códigos, confira [Códigos de erro](#error-codes).|Cadeia de caracteres|  
-|<a name="error-message" />message|Uma descrição do erro.|Cadeia de caracteres|  
-|<a name="error-moredetails" />moreDetails|Uma descrição que fornece informações adicionais sobre o erro.|String|  
-|<a name="error-parameter" />parameter|O parâmetro de consulta na solicitação que causou o erro.|Cadeia de caracteres|  
-|<a name="error-subcode" />subCode|O código de erro que identifica o erro. Por exemplo, se `code` é InvalidRequest, `subCode` pode ser ParameterInvalid ou ParameterInvalidValue. |Cadeia de caracteres|  
-|<a name="error-value" />value|O valor do parâmetro de consulta inválido.|String|  
+|<a name="error-code" />code|O código de erro que identifica a categoria de erro. Para obter uma lista dos possíveis códigos, confira [Códigos de erro](#error-codes).|Cadeia|  
+|<a name="error-message" />message|Uma descrição do erro.|Cadeia|  
+|<a name="error-moredetails" />moreDetails|Uma descrição que fornece informações adicionais sobre o erro.|Cadeia|  
+|<a name="error-parameter" />parameter|O parâmetro de consulta na solicitação que causou o erro.|Cadeia|  
+|<a name="error-subcode" />subCode|O código de erro que identifica o erro. Por exemplo, se `code` é InvalidRequest, `subCode` pode ser ParameterInvalid ou ParameterInvalidValue. |Cadeia|  
+|<a name="error-value" />value|O valor do parâmetro de consulta inválido.|Cadeia|  
   
 
 ### <a name="errorresponse"></a>ErrorResponse  
 O objeto de nível superior incluído pela resposta quando a solicitação falha.  
   
-|NOME|Value|Type|  
+|Nome|Valor|Tipo|  
 |----------|-----------|----------|  
-|_type|Dica de tipo.|Cadeia de caracteres|  
+|_type|Dica de tipo.|Cadeia|  
 |<a name="errors" />errors|Uma lista de erros que descreve os motivos pelos quais a solicitação falhou.|[Erro](#error)|  
 
   
@@ -129,55 +130,55 @@ O objeto de nível superior incluído pela resposta quando a solicitação falha
 ### <a name="license"></a>Licença  
 Define a licença sob a qual a foto ou o texto pode ser usado.  
   
-|NOME|Value|Type|  
+|Nome|Valor|Tipo|  
 |----------|-----------|----------|  
-|name|O nome da licença.|String|  
-|url|A URL para um site em que o usuário pode obter mais informações sobre a licença.<br /><br /> Use o nome e a URL para criar um hiperlink.|Cadeia de caracteres|  
+|name|O nome da licença.|Cadeia|  
+|url|A URL para um site em que o usuário pode obter mais informações sobre a licença.<br /><br /> Use o nome e a URL para criar um hiperlink.|Cadeia|  
   
 
 ### <a name="licenseattribution"></a>LicenseAttribution  
 Define uma regra contratual para atribuição de licença.  
   
-|NOME|Value|Type|  
+|Nome|Valor|Tipo|  
 |----------|-----------|----------|  
-|_type|Uma dica de tipo, que é definida como LicenseAttribution.|String|  
-|license|A licença sob a qual o conteúdo pode ser usado.|[Licença](#license)|  
-|licenseNotice|A licença é exibida ao lado do campo de destino. Por exemplo, "Texto sob a licença CC-BY-SA".<br /><br /> Use o nome da licença e a URL no campo `license` para criar um hiperlink para o site que descreve os detalhes da licença. Em seguida, substitua o nome da licença na cadeia de caracteres `licenseNotice` (por exemplo, CC-BY-SA) com o hiperlink recém-criado.|Cadeia de caracteres|  
+|_type|Uma dica de tipo, que é definida como LicenseAttribution.|Cadeia|  
+|licença|A licença sob a qual o conteúdo pode ser usado.|[Licença](#license)|  
+|licenseNotice|A licença é exibida ao lado do campo de destino. Por exemplo, "Texto sob a licença CC-BY-SA".<br /><br /> Use o nome da licença e a URL no campo `license` para criar um hiperlink para o site que descreve os detalhes da licença. Em seguida, substitua o nome da licença na cadeia de caracteres `licenseNotice` (por exemplo, CC-BY-SA) com o hiperlink recém-criado.|Cadeia|  
 |mustBeCloseToContent|Um valor booliano que determina se o conteúdo da regra precisa ser colocado nas proximidades do campo ao qual a regra se aplica. Se for **true**, o conteúdo precisará ser colocado nas proximidades. Se for **false** ou se esse campo não existir, o conteúdo poderá ser colocado em qualquer lugar, a critério do chamador.|Boolean|  
-|targetPropertyName|O nome do campo ao qual a regra se aplica.|String|  
+|targetPropertyName|O nome do campo ao qual a regra se aplica.|Cadeia|  
   
 
 ### <a name="link"></a>Link  
 Define os componentes de um hiperlink.  
   
-|NOME|Value|Type|  
+|Nome|Valor|Tipo|  
 |----------|-----------|----------|  
-|_type|Dica de tipo.|Cadeia de caracteres|  
-|text|O texto de exibição.|Cadeia de caracteres|  
-|url|Uma URL. Use a URL e exiba o texto para criar um hiperlink.|Cadeia de caracteres|  
+|_type|Dica de tipo.|Cadeia|  
+|texto|O texto de exibição.|Cadeia|  
+|url|Uma URL. Use a URL e exiba o texto para criar um hiperlink.|Cadeia|  
   
 
 ### <a name="linkattribution"></a>LinkAttribution  
 Define uma regra contratual para atribuição de link.  
   
-|NOME|Value|Type|  
+|Nome|Valor|Tipo|  
 |----------|-----------|----------|  
-|_type|Uma dica de tipo, que é definida como LinkAttribution.|String|  
+|_type|Uma dica de tipo, que é definida como LinkAttribution.|Cadeia|  
 |mustBeCloseToContent|Um valor booliano que determina se o conteúdo da regra precisa ser colocado nas proximidades do campo ao qual a regra se aplica. Se for **true**, o conteúdo precisará ser colocado nas proximidades. Se for **false** ou se esse campo não existir, o conteúdo poderá ser colocado em qualquer lugar, a critério do chamador.|Boolean|  
-|targetPropertyName|O nome do campo ao qual a regra se aplica.<br /><br /> Se um destino não é especificado, a atribuição se aplica à entidade como um todo e deve ser exibida imediatamente após a apresentação da entidade. Se houver várias regras de atribuição de texto e de link que não especificam um destino, você deverá concatená-las e exibi-las usando um rótulo "Dados de:". Por exemplo, "Dados de <provider name1\> &#124; <provider name2\>".|Cadeia de caracteres|  
-|text|O texto de atribuição.|Cadeia de caracteres|  
-|url|A URL para o site do provedor. Use `text` e a URL para criação do hiperlink.|Cadeia de caracteres|  
+|targetPropertyName|O nome do campo ao qual a regra se aplica.<br /><br /> Se um destino não é especificado, a atribuição se aplica à entidade como um todo e deve ser exibida imediatamente após a apresentação da entidade. Se houver várias regras de atribuição de texto e de link que não especificam um destino, você deverá concatená-las e exibi-las usando um rótulo "Dados de:". Por exemplo, "Dados de <provider name1\> &#124; <provider name2\>".|Cadeia|  
+|texto|O texto de atribuição.|Cadeia|  
+|url|A URL para o site do provedor. Use `text` e a URL para criação do hiperlink.|Cadeia|  
   
   
 ### <a name="mediaattribution"></a>MediaAttribution  
 Define uma regra contratual para atribuição de mídia.  
   
-|NOME|Value|Type|  
+|Nome|Valor|Tipo|  
 |----------|-----------|----------|  
-|_type|Uma dica de tipo, que é definida como MediaAttribution.|Cadeia de caracteres|  
+|_type|Uma dica de tipo, que é definida como MediaAttribution.|Cadeia|  
 |mustBeCloseToContent|Um valor booliano que determina se o conteúdo da regra precisa ser colocado nas proximidades do campo ao qual a regra se aplica. Se for **true**, o conteúdo precisará ser colocado nas proximidades. Se for **false** ou se esse campo não existir, o conteúdo poderá ser colocado em qualquer lugar, a critério do chamador.|Boolean|  
-|targetPropertyName|O nome do campo ao qual a regra se aplica.|Cadeia de caracteres|  
-|url|A URL usada para criação do hiperlink do conteúdo de mídia. Por exemplo, se o destino é uma imagem, use a URL para tornar a imagem clicável.|Cadeia de caracteres|  
+|targetPropertyName|O nome do campo ao qual a regra se aplica.|Cadeia|  
+|url|A URL usada para criação do hiperlink do conteúdo de mídia. Por exemplo, se o destino é uma imagem, use a URL para tornar a imagem clicável.|Cadeia|  
   
   
   
@@ -186,63 +187,63 @@ Define um editor.
   
 Observe que um editor pode fornecer seu nome, seu site ou ambos.  
   
-|NOME|Value|Type|  
+|Nome|Valor|Tipo|  
 |----------|-----------|----------|  
-|name|O nome do editor.|Cadeia de caracteres|  
-|url|A URL para o site do editor.<br /><br /> Observe que o editor pode não fornecer um site.|Cadeia de caracteres|  
+|name|O nome do editor.|Cadeia|  
+|url|A URL para o site do editor.<br /><br /> Observe que o editor pode não fornecer um site.|Cadeia|  
   
   
 
 ### <a name="webpage"></a>WebPage  
 Define as informações sobre uma página da Web na visualização.  
   
-|NOME|Value|Type|  
+|Nome|Valor|Tipo|  
 |----------|-----------|----------|
-|name|O título de página, não necessariamente o título HTML|Cadeia de caracteres|
-|url|A URL que foi realmente rastreada (a solicitação pode ter seguido os redirecionamentos)|Cadeia de caracteres|  
-|description|Breve descrição da página e do conteúdo|String|  
+|name|O título de página, não necessariamente o título HTML|Cadeia|
+|url|A URL que foi realmente rastreada (a solicitação pode ter seguido os redirecionamentos)|Cadeia|  
+|description|Breve descrição da página e do conteúdo|Cadeia|  
 |isFamilyFriendly|Mais preciso para itens no índice da Web; os fetches em tempo real fazem essa detecção baseada somente na URL e não no conteúdo da página|boolean|
-|primaryImageOfPage/contentUrl|A URL de uma imagem representativa a ser incluída na visualização|String| 
+|primaryImageOfPage/contentUrl|A URL de uma imagem representativa a ser incluída na visualização|Cadeia| 
   
   
 ### <a name="querycontext"></a>QueryContext  
 Define o contexto de consulta usado pelo Bing para a solicitação.  
   
-|Elemento|DESCRIÇÃO|Type|  
+|Elemento|Descrição|Tipo|  
 |-------------|-----------------|----------|  
 |adultIntent|Um valor booliano que indica se a consulta especificada é direcionada para adultos. O valor é **true** se a consulta é direcionada para adultos; caso contrário, **false**.|Boolean|  
-|alterationOverrideQuery|A cadeia de caracteres de consulta a ser usada para forçar o Bing a usar a cadeia de caracteres original. Por exemplo, se a cadeia de caracteres de consulta for *velejando na direção do vento*, a cadeia de caracteres de consulta de substituição será *+velejando na direção do vento*. Lembre-se de codificar a cadeia de caracteres de consulta que resulta em *%2Bvelejando+na direção do vento*.<br /><br /> Esse campo é incluído somente se a cadeia de caracteres de consulta original contém um erro de ortografia.|String|  
-|alteredQuery|A cadeia de caracteres de consulta usada pelo Bing para executar a consulta. O Bing usa a cadeia de caracteres de consulta alterada se a cadeia de caracteres de consulta original contém erros de ortografia. Por exemplo, se a cadeia de caracteres de consulta for `saling downwind`, a cadeia de caracteres de consulta alterada será `sailing downwind`.<br /><br /> Esse campo é incluído somente se a cadeia de caracteres de consulta original contém um erro de ortografia.|String|  
+|alterationOverrideQuery|A cadeia de caracteres de consulta a ser usada para forçar o Bing a usar a cadeia de caracteres original. Por exemplo, se a cadeia de caracteres de consulta for *velejando na direção do vento*, a cadeia de caracteres de consulta de substituição será *+velejando na direção do vento*. Lembre-se de codificar a cadeia de caracteres de consulta que resulta em *%2Bvelejando+na direção do vento*.<br /><br /> Esse campo é incluído somente se a cadeia de caracteres de consulta original contém um erro de ortografia.|Cadeia|  
+|alteredQuery|A cadeia de caracteres de consulta usada pelo Bing para executar a consulta. O Bing usa a cadeia de caracteres de consulta alterada se a cadeia de caracteres de consulta original contém erros de ortografia. Por exemplo, se a cadeia de caracteres de consulta for `saling downwind`, a cadeia de caracteres de consulta alterada será `sailing downwind`.<br /><br /> Esse campo é incluído somente se a cadeia de caracteres de consulta original contém um erro de ortografia.|Cadeia|  
 |askUserForLocation|Um valor booliano que indica se o Bing exige o local do usuário para fornecer resultados precisos. Se você especificou o local do usuário usando os cabeçalhos [X-MSEdge-ClientIP](#clientip) e [X-Search-Location](#location), ignore esse campo.<br /><br /> Para consultas com reconhecimento de local, como "clima de hoje" ou "restaurantes próximos ao meu local" que precisam do local do usuário para fornecer resultados precisos, esse campo é definido como **true**.<br /><br /> Para consultas com reconhecimento de local que incluem o local (por exemplo, "clima de Seattle"), esse campo é definido como **false**. Esse campo também é definido como **false** para consultas sem reconhecimento de local, como "campeões de venda".|Boolean|  
-|originalQuery|A cadeia de caracteres de consulta especificada na solicitação.|String|  
+|originalQuery|A cadeia de caracteres de consulta especificada na solicitação.|Cadeia|  
 
 ### <a name="identifiable"></a>Identifiable
 
-|NOME|Value|Type|  
+|Nome|Valor|Tipo|  
 |-------------|-----------------|----------|
-|id|Um identificador de recurso|String|
+|id|Um identificador de recurso|Cadeia|
  
 ### <a name="rankinggroup"></a>RankingGroup
 Define um grupo de resultados da pesquisa, como linha principal.
 
-|NOME|Value|Type|  
+|Nome|Valor|Tipo|  
 |-------------|-----------------|----------|
 |items|Uma lista de resultados da pesquisa a serem exibidos no grupo.|RankingItem|
 
 ### <a name="rankingitem"></a>RankingItem
 Define um item de resultado da pesquisa a ser exibido.
 
-|NOME|Value|Type|  
+|Nome|Valor|Tipo|  
 |-------------|-----------------|----------|
-|resultIndex|Um índice baseado em zero do item na resposta a ser exibido. Se o item não incluir esse campo, exiba todos os itens na resposta. Por exemplo, exiba todos os artigos de notícias na resposta Notícias.|Número inteiro|
-|answerType|A resposta que contém o item a ser exibido. Por exemplo, Notícias.<br /><br />Use o tipo para encontrar a resposta no objeto SearchResponse. O tipo é o nome de um campo SearchResponse.<br /><br /> No entanto, use o tipo de resposta somente se esse objeto incluir o campo de valor; caso contrário, ignore-o.|Cadeia de caracteres|
+|resultIndex|Um índice baseado em zero do item na resposta a ser exibido. Se o item não incluir esse campo, exiba todos os itens na resposta. Por exemplo, exiba todos os artigos de notícias na resposta Notícias.|Inteiro|
+|answerType|A resposta que contém o item a ser exibido. Por exemplo, Notícias.<br /><br />Use o tipo para encontrar a resposta no objeto SearchResponse. O tipo é o nome de um campo SearchResponse.<br /><br /> No entanto, use o tipo de resposta somente se esse objeto incluir o campo de valor; caso contrário, ignore-o.|Cadeia|
 |textualIndex|O índice da resposta em textualAnswers a ser exibido.| Inteiro sem sinal|
 |value|A ID que identifica uma resposta a ser exibida ou um item de uma resposta a ser exibido. Se a ID identificar uma resposta, exiba todos os itens da resposta.|Identifiable|
 
 ### <a name="rankingresponse"></a>RankingResponse  
 Define o local em que o conteúdo da página de resultados da pesquisa deve ser colocado e em qual ordem.  
   
-|NOME|Value|  
+|Nome|Valor|  
 |----------|-----------|  
 |<a name="ranking-mainline" />mainline|Os resultados da pesquisa a serem exibidos na linha principal.|  
 |<a name="ranking-pole" />pole|Os resultados da pesquisa que devem receber o tratamento mais visível (por exemplo, exibidos acima da linha principal e da barra lateral).|  
@@ -254,28 +255,28 @@ Define o objeto de nível superior incluído pela resposta quando a solicitaçã
   
 Observe que se o serviço suspeitar de um ataque de negação de serviço, a solicitação será bem-sucedida (o código de status HTTP é 200 OK); no entanto, o corpo da resposta estará vazio.  
   
-|NOME|Value|Type|  
+|Nome|Valor|Tipo|  
 |----------|-----------|----------|  
-|_type|Dica de tipo, que é definida como SearchResponse.|String|  
-|WebPage|Um objeto JSON que define a visualização|string|  
+|_type|Dica de tipo, que é definida como SearchResponse.|Cadeia|  
+|WebPage|Um objeto JSON que define a visualização|cadeia de caracteres|  
   
   
 ### <a name="textattribution"></a>TextAttribution  
 Define uma regra contratual para a atribuição de texto sem formatação.  
   
-|NOME|Value|Type|  
+|Nome|Valor|Tipo|  
 |----------|-----------|----------|  
-|_type|Uma dica de tipo, que é definida como TextAttribution.|Cadeia de caracteres|  
-|text|O texto de atribuição.<br /><br /> A atribuição de texto se aplica à entidade como um todo e deve ser exibida imediatamente após a apresentação da entidade. Se houver várias regras de atribuição de texto ou de link que não especificam um destino, você deverá concatená-las e exibi-las usando um rótulo "Dados de:".|Cadeia de caracteres| 
+|_type|Uma dica de tipo, que é definida como TextAttribution.|Cadeia|  
+|texto|O texto de atribuição.<br /><br /> A atribuição de texto se aplica à entidade como um todo e deve ser exibida imediatamente após a apresentação da entidade. Se houver várias regras de atribuição de texto ou de link que não especificam um destino, você deverá concatená-las e exibi-las usando um rótulo "Dados de:".|Cadeia| 
 
 
-## <a name="error-codes"></a>Códigos do Erro
+## <a name="error-codes"></a>Códigos de erro
 
 Veja a seguir os possíveis códigos de status HTTP retornados por uma solicitação.  
   
-|Código de status|DESCRIÇÃO|  
+|Código de Status|Descrição|  
 |-----------------|-----------------|  
-|200|Sucesso.|  
+|200|Êxito.|  
 |400|Um dos parâmetros de consulta está ausente ou é inválido.|  
 |401|A chave de assinatura está ausente ou é inválida.|  
 |403|O usuário foi autenticado (por exemplo, ele usou uma chave de assinatura válida), mas não tem permissão para acessar o recurso solicitado.<br /><br /> O Bing também pode retornar esse status se o chamador excedeu suas consultas em relação à cota do mês.|  
@@ -313,7 +314,7 @@ Se a solicitação falha, a resposta contém um objeto [ErrorResponse](#errorres
 
 Veja a seguir os possíveis valores de código de erro e de código de suberro.
 
-|Código|Subcódigo|DESCRIÇÃO
+|Código|Subcódigo|Descrição
 |-|-|-
 |ServerError|UnexpectedError<br/>ResourceError<br/>NotImplemented|O código de status HTTP é 500.
 |InvalidRequest|ParameterMissing<br/>ParameterInvalidValue<br/>HttpNotAllowed<br/>Bloqueado|O Bing retornará InvalidRequest sempre que qualquer parte da solicitação não for válida. Por exemplo, um parâmetro obrigatório está ausente ou um valor de parâmetro não é válido.<br/><br/>Se o erro for ParameterMissing ou ParameterInvalidValue, o código de status HTTP será 400.<br/><br/>Se você usar o protocolo HTTP em vez de HTTPS, o Bing retornará HttpNotAllowed, e o código de status HTTP será 410.

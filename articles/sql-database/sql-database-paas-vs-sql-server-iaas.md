@@ -11,14 +11,13 @@ keywords: Nuvem do SQL Server, SQL Server na nuvem, banco de dados PaaS, SQL Ser
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 03/11/2019
-ms.openlocfilehash: 9e95569ba3fe65ea5bce7d6a95a24324235e9a7f
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 344d201489a409824bb52f928ba5a87bd968500a
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67447745"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567101"
 ---
 # <a name="choose-the-right-sql-server-option-in-azure"></a>Escolher a melhor opção do Microsoft SQL Server no Azure
 
@@ -91,7 +90,7 @@ A seguinte tabela resume as principais características do Banco de Dados SQL e 
 Há vários fatores que podem influenciar sua decisão para escolher PaaS ou IaaS para hospedar os bancos de dados SQL:
 
 - [Custo](#cost) - tanto a opção PaaS como IaaS incluem a base de dados de preço que abrange a infra-estrutura subjacente e licenciamento. No entanto, com a opção de IaaS você precisa investir mais tempo e recursos para gerenciar o banco de dados, enquanto no PaaS, você obtém esses recursos de administração incluídos no preço. A opção IaaS permite que você encerre seus recursos enquanto não estiver usando-os para reduzir o custo, enquanto a versão PaaS está sempre em execução, a menos que você descarte e recrie seus recursos quando forem necessários.
-- [Administração](#administration) - as opções de PaaS reduzem a quantidade de tempo que você precisa investir para administrar o banco de dados. No entanto, ela também limita o número de tarefas de administração personalizada e scripts que você pode executar ou executar. Por exemplo, o CLR não é compatível com bancos de dados individual ou em pool, mas há suporte para uma instância gerenciada. Além disso, não há opções de implantação no PaaS suportam o uso de sinalizadores de rastreamento.
+- [Administração](#administration) - as opções de PaaS reduzem a quantidade de tempo que você precisa investir para administrar o banco de dados. No entanto, ele também limita o intervalo de tarefas e scripts de administração personalizados que você pode executar ou executar. Por exemplo, o CLR não tem suporte com bancos de dados únicos ou em pool, mas tem suporte para uma instância gerenciada. Além disso, nenhuma opção de implantação no PaaS dá suporte ao uso de sinalizadores de rastreamento.
 - [Contrato de Nível de Serviço](#service-level-agreement-sla) - tanto IaaS como PaaS fornecem SLA de padrão alto do setor. A opção PaaS garante SLA de 99,99%, enquanto IaaS, garante SLA de 99,95% para a infraestrutura, o que significa que você precisa implementar mecanismos adicionais para garantir a disponibilidade de seus bancos de dados. Em casos extremos, se você quiser implementar soluções de alta disponibilidade que corresponda a PaaS, talvez seja necessário criar adicionais do SQL Server na VM e configurar grupos de disponibilidade AlwaysOn, o que pode ser duas vezes o custo de seu banco de dados.
 - [Hora de migrar para o Azure](#market) – o SQL Server na VM do Azure é a correspondência exata do ambiente, portanto, a migração do local para a VM do SQL Azure não é diferente de mover os bancos de dados de um servidor local para outro. A instância gerenciada também permite migração extremamente fácil. No entanto, pode haver algumas alterações que você precisa aplicar antes de migrar para a instância gerenciada.
 
@@ -162,9 +161,9 @@ Para o **SQL Server em execução em VMs do Azure**, a Microsoft fornece um SLA 
 
 **O SQL Server executado em VMs do Azure** é perfeito se seus aplicativos existentes ou novos exigirem bancos de dados grandes ou acesso a todos os recursos do SQL Server ou Windows / Linux e você quiser evitar o tempo e a despesa de adquirir novos hardware das instalações. Ele também é uma boa opção quando você deseja migrar aplicativos e bancos de dados locais existentes para o Azure no estado em que se encontram, nos casos em que a instância gerenciada do Banco de Dados SQL do Azure não é uma boa opção. Como você não precisa alterar as camadas de apresentação, aplicativo e dados, economiza tempo e orçamento na nova arquitetura da solução existente. Em vez disso, você pode se concentrar em migrar todas as soluções para o Azure e fazer algumas otimizações de desempenho que possam ser necessárias para a plataforma Microsoft Azure. Para obter mais informações, veja [Práticas Recomendadas de Desempenho para o SQL Server em Máquinas Virtuais do Azure](../virtual-machines/windows/sql/virtual-machines-windows-sql-performance.md).
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 - Consulte [Seu primeiro Banco de Dados SQL do Azure](sql-database-single-database-get-started.md) para uma introdução ao Banco de Dados SQL.
 - Confira [Preços do Banco de Dados SQL](https://azure.microsoft.com/pricing/details/sql-database/).
 - Confira [Provisionar uma máquina virtual do SQL Server no Azure](../virtual-machines/windows/sql/virtual-machines-windows-portal-sql-server-provision.md) para obter uma introdução ao SQL Server em VMs do Azure.
-- [Identificar o Azure SQL banco de dados/gerenciado instância SKU certa para seu banco de dados local](/sql/dma/dma-sku-recommend-sql-db/).
+- [Identificar o Banco de dados SQL/SKU de instância gerenciada correto do Azure para seu banco de dados local](/sql/dma/dma-sku-recommend-sql-db/).

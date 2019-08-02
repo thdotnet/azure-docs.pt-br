@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: cc071d59a387c8ae4982eacbce6812526f447788
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 7ab32fb421a2c0db72652d1bbf12d312bffd5d1e
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66388778"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68706544"
 ---
 # <a name="create-a-conversation-learner-model-using-nodejs"></a>Como criar um modelo de Aprendiz de Conversa usando Node.js
 
@@ -47,7 +48,7 @@ O Aprendiz de Conversa do Projeto consiste em um SDK que você adiciona ao bot e
 
 - VSCode. Instalar de [https://code.visualstudio.com/](https://code.visualstudio.com/). Observe que isso é recomendável, não obrigatório.
 
-## <a name="quick-start"></a>Início rápido 
+## <a name="quick-start"></a>Início Rápido 
 
 1. Instalar e compilar:
 

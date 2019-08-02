@@ -12,14 +12,14 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 06/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0a482ae44c796e1519ffad0a604510166b1ac63c
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 4f2bb4a6d10f9e45a27b8b5e082b3cbec475b531
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165620"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68677809"
 ---
-# <a name="manage-ga-reference-data-for-an-azure-time-series-insights-environment-by-using-c"></a>Gerenciar dados de referência de GA para um ambiente Azure Time Series Insights usando oC#
+# <a name="manage-ga-reference-data-for-an-azure-time-series-insights-environment-by-using-c"></a>Gerenciar dados de referência do GA para um ambiente de Azure Time Series Insights usandoC#
 
 Esse artigo descreve o exemplo de projeto C# que você pode compilar para gerenciar dados de referência para um ambiente do Azure Time Series Insights.
 
@@ -36,7 +36,7 @@ Conclua as etapas a seguir antes de usar compilar e executar o código de exempl
 1. Edite o código de exemplo para substituir as constantes de exemplo, designadas em **#DUMMY#** , perto do início do código.
 
 > [!NOTE]
-> Exibir o código de exemplo no GA [ https://github.com/Azure-Samples/Azure-Time-Series-Insights ](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample).
+> Exiba o código de exemplo GA [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample)em.
 
 ## <a name="project-dependencies"></a>Dependências do projeto
 
@@ -247,4 +247,4 @@ namespace TimeSeriesInsightsReferenceDataSampleApp
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Leia as [API de dados de referência](/rest/api/time-series-insights/ga-reference-data-api).
+- Leia a [API de dados de referência](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api).

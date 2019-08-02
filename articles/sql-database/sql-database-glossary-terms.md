@@ -10,28 +10,27 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 04/26/2019
-ms.openlocfilehash: 057c764a46508804bee6aa8f9912fdedc69e811f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d940cfa91890d26a48b682a6eb09410b3b7de045
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65762709"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568086"
 ---
 # <a name="azure-sql-database-glossary-of-terms"></a>Glossário de termos do Banco de Dados SQL do Azure
 
 |Contexto|Termo|Mais informações|
 |:---|:---|:---|
 |Nome do serviço do Azure|Banco de Dados SQL do Azure ou Banco de Dados SQL|[O serviço de Banco de Dados SQL do Azure](sql-database-technical-overview.md)|
-|Camada de computação|Serverless (visualização)|[Camada de computação sem servidor](sql-database-serverless.md)
+|Camada de computação|Sem servidor (visualização)|[Camada de computação sem servidor](sql-database-serverless.md)
 ||Provisionado|[Camada de computação sem servidor](sql-database-serverless.md)
-|Opções de implantação |Banco de dados individual|[Bancos de dados únicos](sql-database-single-database.md)|
+|Opções de Implantação |Banco de dados individual|[Bancos de dados únicos](sql-database-single-database.md)|
 ||Pool elástico|[Pool elástico](sql-database-elastic-pool.md)|
 ||Instância gerenciada|[Instância gerenciada](sql-database-managed-instance.md)|
 |Objetos do servidor|Servidor de Banco de Dados SQL ou o servidor do banco de dados|[Servidor de banco de dados](sql-database-servers.md)|
 ||Servidor de instância gerenciada do Banco de Dados SQL, servidor de instância gerenciada ou servidor de instância|[Instância gerenciada](sql-database-managed-instance.md)|
-Objetos de banco de dados|Banco de Dados SQL do Azure|Qualquer banco de dados no Banco de Dados SQL do Azure|
+Objetos do banco de dados|Banco de dados SQL do Azure|Qualquer banco de dados no Banco de Dados SQL do Azure|
 ||Banco de dados individual|Um banco de dados criado usando a opção de implantação do banco de dados individual|
 ||Banco de dados em pool|Um banco de dados criado ou movido para um pool elástico|
 ||Banco de dados de instância|Um banco de dados criado em uma instância gerenciada|

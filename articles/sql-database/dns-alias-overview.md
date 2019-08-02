@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: oslake
 ms.author: moslake
 ms.reviewer: genemi, ayolubek, jrasnick
-manager: craigg
 ms.date: 06/26/2019
-ms.openlocfilehash: bb38f73308fb1eb67be310120cb589cb9412e737
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: 3d0a4b5890ed5758f4045459815fb4ebbffe75c6
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67461821"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68550652"
 ---
 # <a name="dns-alias-for-azure-sql-database"></a>Alias do DNS para Banco de Dados SQL do Azure
 
@@ -30,7 +29,7 @@ Alguns usos comuns para um alias do DNS incluem os seguintes casos:
 - Criar um nome fácil de lembrar para um servidor do SQL Server do Azure.
 - Durante o desenvolvimento inicial, seu alias pode se referir a um servidor de teste do Banco de Dados SQL. Quando o aplicativo for lançado, você poderá modificar o alias para se referir ao servidor de produção. A transição de teste para a produção não exige nenhuma modificação nas configurações dos vários clientes que se conectam ao servidor de banco de dados.
 - Suponha que único banco de dados em seu aplicativo seja movido para outro servidor do Banco de Dados SQL. Aqui você pode modificar o alias sem a necessidade de modificar as configurações dos vários clientes.
-- Durante uma interrupção regional você usar a restauração geográfica para recuperar seu banco de dados em um servidor diferente e uma região. Você pode modificar seu alias existente para apontar para o novo servidor para que o aplicativo de cliente existentes novamente pode se conectar a ele. 
+- Durante uma interrupção regional, você usa a restauração geográfica para recuperar o banco de dados em um servidor e região diferentes. Você pode modificar seu alias existente para apontar para o novo servidor para que o aplicativo cliente existente possa se conectar novamente a ele. 
 
 ## <a name="domain-name-system-dns-of-the-internet"></a>DNS (Sistema de Nomes de Domínio) da Internet
 
@@ -50,7 +49,7 @@ Depois, quando o novo sistema for lançado em produção, você poderá atualiza
 
 ### <a name="cross-region-support"></a>Suporte entre regiões
 
-Uma recuperação de desastre pode mudar seu servidor do Banco de Dados SQL para uma região geográfica diferente. Para um sistema que estava usando um alias DNS, a necessidade de localizar e atualizar todas as cadeias de conexão para todos os clientes pode ser evitada. Em vez disso, você pode atualizar um alias para se referir ao novo servidor do Banco de Dados SQL que agora hospeda o seu banco de dados.
+Uma recuperação de desastre pode mudar seu servidor do Banco de Dados SQL para uma região geográfica diferente. Para um sistema que estava usando um alias DNS, a necessidade de encontrar e atualizar todas as cadeias de conexão para todos os clientes pode ser evitada. Em vez disso, você pode atualizar um alias para se referir ao novo servidor do Banco de Dados SQL que agora hospeda o seu banco de dados.
 
 ## <a name="properties-of-a-dns-alias"></a>Propriedades de um alias do DNS
 
@@ -83,7 +82,7 @@ Além disso, as APIs REST podem ser vistas no GitHub em:
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
-> O módulo do PowerShell do Azure Resource Manager ainda é compatível com o banco de dados SQL, mas todo o desenvolvimento futuro é para o módulo Az.Sql. Para esses cmdlets, consulte [azurerm. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Os argumentos para os comandos no módulo Az e nos módulos AzureRm são substancialmente idênticos.
+> O módulo Azure Resource Manager do PowerShell ainda tem suporte do banco de dados SQL do Azure, mas todo o desenvolvimento futuro é para o módulo AZ. Sql. Para esses cmdlets, consulte [AzureRM. SQL](https://docs.microsoft.com/powershell/module/AzureRM.Sql/). Os argumentos para os comandos no módulo AZ e nos módulos AzureRm são substancialmente idênticos.
 
 Os cmdlets do PowerShell que chamam as APIs REST estão disponíveis.
 

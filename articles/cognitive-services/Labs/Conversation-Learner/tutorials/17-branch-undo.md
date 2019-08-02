@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: 6ffa0881df07e453c8beb175b8580deebbfc1ec9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: f4f3024451696dbd0244d9da39cba67b49447af1
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66389887"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68703632"
 ---
 # <a name="how-to-use-branching-and-undo-operations"></a>Como usar operações desfazer e ramificação
 Neste tutorial, apresentaremos as operações desfazer e ramificação.
@@ -25,7 +26,7 @@ Neste tutorial, apresentaremos as operações desfazer e ramificação.
 ### <a name="undo"></a>Desfazer
 Permite que o desenvolvedor "desfaça" a última entrada do usuário ou escolha de ação. Na verdade, "desfazer" realmente cria um novo diálogo e o reproduz até a etapa anterior.  Isso significa que o retorno de chamada de detecção de entidade e as chamadas à API no diálogo serão chamados novamente.
 
-### <a name="branch"></a>Branch
+### <a name="branch"></a>Ramificação
 Cria um novo diálogo de treinamento, que começa da mesma forma que um diálogo de treinamento existente – isso economiza o esforço de reintroduzir manualmente os turnos do diálogo. Na realidade, “ramificação” cria um novo diálogo e reproduz o diálogo de treinamento existente até a etapa selecionada.  Isso significa que o retorno de chamada de detecção de entidade e as chamadas à API no diálogo serão chamados novamente.
 
 
@@ -51,7 +52,7 @@ Aqui está um exemplo de como verificar o recurso `Undo` em ação:
 6. Clique no botão `Undo`.
     - A última entrada é removida, deixando a última resposta do Bot de "O que você deseja em seu pizza?"
 
-## <a name="branch"></a>Branch
+## <a name="branch"></a>Ramificação
 
 Para esta demonstração, vamos abrir uma caixa de diálogo de treinamento existente e criar uma nova caixa de diálogo de treinamento pela ramificação.
 

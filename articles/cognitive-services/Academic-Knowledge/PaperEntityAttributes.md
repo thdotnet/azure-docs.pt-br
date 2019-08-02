@@ -10,50 +10,51 @@ ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 03/31/2017
 ms.author: alch
-ms.openlocfilehash: 92844b5faf691b67617c9f3424a1322aa05429bb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 4b9431469a7925d26003ad9c34f6b401e5767f6d
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64875747"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68704933"
 ---
 # <a name="paper-entity"></a>Entidade Artigo
 
 <sub> *Os atributos a seguir são específicos da entidade Artigo. (Ty = '0') </sub>
 
 
-NOME    |DESCRIÇÃO                                        |Type       | Operações
+Nome    |Descrição                                        |Tipo       | Operações
 ------- | ------------------------------------------------- | --------- | ----------------------------
-ID      |ID da Entidade                                          |Int64      |É igual a
-Ti      |Título do artigo                                        |Cadeia de caracteres     |Igual a,<br/>StartsWith
-L       |Código de idioma de papel separados por "\@\@\@"          |Cadeia de caracteres     |É igual a
+Id      |ID da Entidade                                          |Int64      |Igual a
+Ti      |Título do artigo                                        |Cadeia     |Igual a,<br/>StartsWith
+S       |Código de idioma de papel separado\@por ""\@\@          |Cadeia     |Igual a
 S       |Ano do artigo                                         |Int32      |Igual a,<br/>IsBetween
-D       |Data do artigo                                         |Data       |Igual a,<br/>IsBetween
-CC      |Contagem de citações                                     |Int32      |Nenhum  
-ECC     |Contagem estimada de citações                           |Int32      |Nenhum
-AA.AuN  |Nome do autor                                        |Cadeia de caracteres     |Igual a,<br/>StartsWith
-AA.AuId |ID do autor                                          |Int64      |É igual a
-AA.AfN  |Nome da associação do autor                            |Cadeia de caracteres     |Igual a,<br/>StartsWith
-AA.AfId |ID da associação do autor                              |Int64      |É igual a
-AA.S    |Ordem do autor para o artigo                         |Int32      |É igual a
-F.FN    |Nome do campo de estudo                                |Cadeia de caracteres     |Igual a,<br/>StartsWith
-F.FId   |ID do campo de estudo                                  |Int64      |É igual a
-J.JN    |Nome do periódico                                       |Cadeia de caracteres     |Igual a,<br/>StartsWith
-J.JId   |ID do periódico                                         |Int64      |É igual a
-C.CN    |Nome da série de conferências                             |Cadeia de caracteres     |Igual a,<br/>StartsWith
-C.CId   |ID da série de conferências                               |Int64      |É igual a
-RId     |ID dos artigos de referência                              |Int64[]    |É igual a
-W       |Palavras do título e do resumo do artigo                |String[]   |É igual a
-E       |Metadados estendidos (veja a tabela abaixo)                |Cadeia de caracteres     |Nenhum  
+D       |Data do artigo                                         |Date       |Igual a,<br/>IsBetween
+CC      |Contagem de citações                                     |Int32      |nenhum  
+ECC     |Contagem estimada de citações                           |Int32      |nenhum
+AA.AuN  |Nome do autor                                        |Cadeia     |Igual a,<br/>StartsWith
+AA.AuId |ID do autor                                          |Int64      |Igual a
+AA.AfN  |Nome da associação do autor                            |Cadeia     |Igual a,<br/>StartsWith
+AA.AfId |ID da associação do autor                              |Int64      |Igual a
+AA.S    |Ordem do autor para o artigo                         |Int32      |Igual a
+F.FN    |Nome do campo de estudo                                |Cadeia     |Igual a,<br/>StartsWith
+F.FId   |ID do campo de estudo                                  |Int64      |Igual a
+J.JN    |Nome do periódico                                       |Cadeia     |Igual a,<br/>StartsWith
+J.JId   |ID do periódico                                         |Int64      |Igual a
+C.CN    |Nome da série de conferências                             |Cadeia     |Igual a,<br/>StartsWith
+C.CId   |ID da série de conferências                               |Int64      |Igual a
+RId     |ID dos artigos de referência                              |Int64[]    |Igual a
+W       |Palavras do título e do resumo do artigo                |String[]   |Igual a
+E       |Metadados estendidos (veja a tabela abaixo)                |Cadeia     |nenhum  
         
 
 
 ## <a name="extended-metadata-attributes"></a>Atributos de metadados estendidos ##
 
-NOME    | DESCRIÇÃO               
+Nome    | Descrição               
 --------|---------------------------    
 DN      | Nome de exibição do artigo 
-S       | Fontes – lista das fontes da Web do artigo, ordenadas por classificação estática
+s       | Fontes – lista das fontes da Web do artigo, ordenadas por classificação estática
 S.Ty    | Tipo de fonte (1:HTML, 2:Texto, 3:PDF, 4:DOC, 5:PPT, 6:XLS, 7:PS)
 S.U     | URL de origem
 VFN     | Nome completo do local – nome completo do periódico ou conferência

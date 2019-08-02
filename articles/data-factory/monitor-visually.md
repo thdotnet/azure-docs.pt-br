@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: shlo
-ms.openlocfilehash: df684860cd3d1b6a002a300682ca4c6398461ba6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 53ead1caed47ae442670f0b6bcd54cd84956a759
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60716674"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68720609"
 ---
 # <a name="visually-monitor-azure-data-factories"></a>Monitorar visualmente data factories do Azure
 O Azure Data Factory é um serviço de integração de dados baseado em nuvem que permite que você crie fluxos de trabalho controlados por dados na nuvem para orquestrar e automatizar a movimentação e a transformação de dados. Usando o Azure Data Factory, você pode criar e agendar fluxos de trabalho orientados a dados (chamados de pipelines) que podem ingerir dados de repositórios de dados diferentes, processar/transformr os dados usando serviços de computação como o Azure HDInsight Hadoop, Spark, Azure Data Lake Analytics e Azure Machine Learning e publicar os dados de saída em repositórios de dados como o SQL Data Warehouse do Azure para consumo pelos aplicativos de business intelligence (BI).
@@ -39,15 +39,15 @@ Exibição de lista mostrando cada execução de pipeline para seus pipelines do
 
 | **Nome da Coluna** | **Descrição** |
 | --- | --- |
-| Nome do Pipeline | Nome do pipeline. |
+| Nome do pipeline | Nome do pipeline. |
 | Ações | Ação única disponível para exibir execuções de atividade. |
 | Início da Execução | Data e hora de início da execução do pipeline (MM/DD/AAAA HH:MM:SS AM/PM) |
-| Duration | Duração da execução (HH:MM:SS) |
+| Duração | Duração da execução (HH:MM:SS) |
 | Disparado por | Gatilho manual, Gatilho de agenda |
 | Status | Falha, Sucesso, Em Andamento |
-| parâmetros | Parâmetros de execução de pipeline (pares de nome, valor) |
+| Parâmetros | Parâmetros de execução de pipeline (pares de nome, valor) |
 | Erro | Erro de execução de pipeline (if/any) |
-| ID da execução | ID da execução de pipeline |
+| ID de execução | ID da execução de pipeline |
 
 ![Monitorar execuções de pipeline](media/monitor-visually/pipeline-runs.png)
 
@@ -56,10 +56,10 @@ Exibição de lista mostrando execuções de atividade correspondentes a cada ex
 
 | **Nome da Coluna** | **Descrição** |
 | --- | --- |
-| Nome da atividade | Nome da atividade no pipeline. |
-| Tipo de atividade | Tipo de atividade como o Copy, HDInsightSpark, HDInsightHive etc. |
+| Nome da Atividade | Nome da atividade no pipeline. |
+| Tipo de Atividade | Tipo de atividade como o Copy, HDInsightSpark, HDInsightHive etc. |
 | Início da Execução | Data hora de início de execução da atividade (MM/DD/AAAA HH: MM: SS AM/PM) |
-| Duration | Duração da execução (HH:MM:SS) |
+| Duração | Duração da execução (HH:MM:SS) |
 | Status | Falha, Sucesso, Em Andamento |
 | Entrada | Matriz JSON que descreve as entradas de atividade |
 | Saída | Matriz JSON que descreve as saídas de atividade |
@@ -85,11 +85,11 @@ Ordene as execuções do pipeline em ordem decrescente/crescente com Início da 
 
 | **Nome da Coluna** | **Descrição** |
 | --- | --- |
-| Nome do Pipeline | Nome do pipeline. As opções incluem filtros rápidos para 'últimas 24 horas', 'Última semana', 'Últimos 30 dias' ou selecione uma data e hora personalizadas. |
+| Nome do pipeline | Nome do pipeline. As opções incluem filtros rápidos para 'últimas 24 horas', 'Última semana', 'Últimos 30 dias' ou selecione uma data e hora personalizadas. |
 | Início da Execução | Data hora de início da execução do pipeline |
 | Status da execução | O filtro é executado por status - Sucesso, Falha, Em andamento |
 
-![Filter](media/monitor-visually/filter.png)
+![Filtro](media/monitor-visually/filter.png)
 
 ### <a name="add-or-remove-columns"></a>Adicionar ou remover colunas
 Clique com o botão direito do mouse no cabeçalho da exibição de lista e escolha as colunas que você deseja que apareçam na exibição de lista
@@ -134,6 +134,18 @@ Exiba também o histórico de novas execuções para uma execução de pipeline 
 
 ![Exibir o histórico para uma execução de pipeline](media/monitor-visually/rerun-history-image2.png)
 
+## <a name="gantt-views"></a>Exibições de Gantt
+
+Use exibições de Gantt para visualizar rapidamente os pipelines e as execuções de atividade. Você pode examinar o modo de exibição de Gantt por pipeline ou por anotações/marcas que você criou em seus pipelines.
+
+![Gráfico de Gantt](media/monitor-visually/gantt1.png)
+
+![Anotações do gráfico de Gantt](media/monitor-visually/gantt2.png)
+
+O comprimento da barra informa a duração do pipeline. Você também pode clicar na barra para ver mais detalhes.
+
+![Duração do gráfico de Gantt](media/monitor-visually/gantt3.png)
+
 ## <a name="guided-tours"></a>Passeios Guiados
 Clique em 'Ícone Informações' no canto inferior esquerdo e clique em 'Passeios Guiados' para obter instruções passo a passo sobre como monitorar as execuções de atividade e o pipeline.
 
@@ -154,7 +166,7 @@ Para uma introdução de sete minutos e uma demonstração desse recurso, assist
 
 > [!VIDEO https://channel9.msdn.com/shows/azure-friday/Monitor-your-Azure-Data-Factory-pipelines-proactively-with-alerts/player]
 
-### <a name="create-alerts"></a>Criar alertas
+### <a name="create-alerts"></a>Criar Alertas
 
 1.  Clique em **Nova regra de alerta**  para criar um novo alerta.
 

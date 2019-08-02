@@ -7,15 +7,15 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: load-data
-ms.date: 07/17/2019
+ms.date: 07/26/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: cbf642b47e4233cec2e2d860288b3bb35b419cf2
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: 7bb775184a0d567fedf9da07cee60e5ba5a2097f
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68304177"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68562364"
 ---
 # <a name="load-data-from-azure-data-lake-storage-to-sql-data-warehouse"></a>Carregar dados de Azure Data Lake Storage para SQL Data Warehouse
 Use tabelas externas do polybase para carregar dados de Azure Data Lake Storage para o SQL Data Warehouse do Azure. Embora seja possível executar consultas ad hoc em dados armazenados no Data Lake Storage, é recomendável importar os dados para o SQL Data Warehouse para obter o melhor desempenho.
@@ -32,20 +32,16 @@ Antes de iniciar este tutorial, baixe e instale a versão mais recente do [SSMS]
 
 Para este tutorial, você precisa do:
 
-* Azure Active Directory aplicativo a ser usado para autenticação serviço a serviço se você estiver carregando de Gen1. Para criar, siga a [Autenticação do Active Directory](../data-lake-store/data-lake-store-authenticate-using-active-directory.md)
-
->[!NOTE] 
-> Se estiver carregando de Azure Data Lake armazenamento Gen1, você precisará da ID do cliente, da chave e do valor do ponto de extremidade do token OAuth 2.0 do seu aplicativo Active Directory para se conectar à sua conta de armazenamento de SQL Data Warehouse. Os detalhes de como obter esses valores estão no link acima. Para registro do aplicativo do Azure Active Directory, use a ID do aplicativo como a ID do cliente.
-> 
+* Aplicativo do Azure Active Directory para usar como autenticação de serviço a serviço. Para criar, siga a [Autenticação do Active Directory](../data-lake-store/data-lake-store-authenticate-using-active-directory.md)
 
 * Um SQL Data Warehouse do Azure. Consulte [Criar e consultar um SQL Data Warehouse do Azure](create-data-warehouse-portal.md).
 
 * Uma conta de Data Lake Storage. Consulte [introdução ao Azure data Lake Storage](../data-lake-store/data-lake-store-get-started-portal.md). 
 
 ##  <a name="create-a-credential"></a>Criar uma credencial
-Para acessar sua conta de Data Lake Storage, você precisará criar uma chave mestra de banco de dados para criptografar seu segredo de credencial usado na próxima etapa. Em seguida, você cria uma credencial no escopo do banco de dados. Para Gen1, a credencial no escopo do banco de dados armazena as credenciais da entidade de serviço configuradas no AAD. Você deve usar a chave da conta de armazenamento na credencial no escopo do banco de dados para Gen2. 
+Para acessar sua conta de Data Lake Storage, você precisará criar uma chave mestra de banco de dados para criptografar seu segredo de credencial usado na próxima etapa. Em seguida, você cria uma credencial no escopo do banco de dados. Ao autenticar usando entidades de serviço, a credencial no escopo do banco de dados armazena as credenciais da entidade de serviço configuradas no AAD. Você também pode usar a chave da conta de armazenamento na credencial no escopo do banco de dados para Gen2. 
 
-Para se conectar ao Data Lake Storage Gen1, você deve **primeiro** criar um Aplicativo do Azure Active Directory, criar uma chave de acesso e conceder ao aplicativo acesso ao recurso Data Lake Storage Gen1. Para obter instruções, consulte [autenticar no Azure Data Lake armazenamento Gen1 usando o Active Directory](../data-lake-store/data-lake-store-authenticate-using-active-directory.md).
+Para se conectar ao Data Lake Storage usando entidades de serviço, **primeiro** você deve criar um aplicativo Azure Active Directory, criar uma chave de acesso e conceder ao aplicativo acesso à conta de data Lake Storage. Para obter instruções, consulte [autenticar para Azure data Lake Storage usando Active Directory](../data-lake-store/data-lake-store-authenticate-using-active-directory.md).
 
 ```sql
 -- A: Create a Database Master Key.
@@ -56,7 +52,7 @@ Para se conectar ao Data Lake Storage Gen1, você deve **primeiro** criar um Apl
 CREATE MASTER KEY;
 
 
--- B (for Gen1): Create a database scoped credential
+-- B (for service principal authentication): Create a database scoped credential
 -- IDENTITY: Pass the client id and OAuth 2.0 Token Endpoint taken from your Azure Active Directory Application
 -- SECRET: Provide your AAD Application Service Principal key.
 -- For more information on Create Database Scoped Credential: https://msdn.microsoft.com/library/mt270260.aspx
@@ -67,7 +63,7 @@ WITH
     SECRET = '<key>'
 ;
 
--- B (for Gen2): Create a database scoped credential
+-- B (for Gen2 storage key authentication): Create a database scoped credential
 -- IDENTITY: Provide any string, it is not used for authentication to Azure storage.
 -- SECRET: Provide your Azure storage account key.
 
@@ -77,7 +73,7 @@ WITH
     SECRET = '<azure_storage_account_key>'
 ;
 
--- It should look something like this for Gen1:
+-- It should look something like this when authenticating using service principals:
 CREATE DATABASE SCOPED CREDENTIAL ADLSCredential
 WITH
     IDENTITY = '536540b4-4239-45fe-b9a3-629f97591c0c@https://login.microsoftonline.com/42f988bf-85f1-41af-91ab-2d2cd011da47/oauth2/token',
@@ -109,7 +105,7 @@ WITH (
 CREATE EXTERNAL DATA SOURCE AzureDataLakeStorage
 WITH (
     TYPE = HADOOP,
-    LOCATION='abfss://<container>@<AzureDataLake account_name>.dfs.core.windows.net', -- Please note the abfs endpoint
+    LOCATION='abfs[s]://<container>@<AzureDataLake account_name>.dfs.core.windows.net', -- Please note the abfss endpoint for when your account has secure transfer enabled
     CREDENTIAL = ADLSCredential
 );
 ```
@@ -221,13 +217,9 @@ Você fez essas coisas:
 > * Objetos de banco de dados criados necessários para carregar do Data Lake Storage Gen1.
 > * Conectado a um diretório do Data Lake Storage Gen1.
 > * Os dados foram carregados para o SQL Data Warehouse do Azure.
-> 
+>
 
 O carregamento de dados é a primeira etapa para desenvolver uma solução de data warehouse usando o SQL Data Warehouse. Confira nossos recursos de desenvolvimento.
 
 > [!div class="nextstepaction"]
->[Saiba como desenvolver tabelas no SQL Data Warehouse](sql-data-warehouse-tables-overview.md)
-
-
-
-
+> [Saiba como desenvolver tabelas no SQL Data Warehouse](sql-data-warehouse-tables-overview.md)

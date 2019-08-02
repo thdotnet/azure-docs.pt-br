@@ -3,7 +3,7 @@ title: Criar um modelo de cluster do Microsoft Azure Service Fabric | Microsoft 
 description: Saiba como criar um modelo do Resource Manager para um cluster do Service Fabric. Configure segurança, Azure Key Vault e Azure AD (Azure Active Directory) para autenticação de cliente.
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: chackdan
 editor: chackdan
 ms.assetid: 15d0ab67-fc66-4108-8038-3584eeebabaa
@@ -13,19 +13,19 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/16/2018
-ms.author: aljo
-ms.openlocfilehash: 2fdea1f088dd6eabdf7d72342c837d976133a1bc
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: atsenthi
+ms.openlocfilehash: 9030a1d9d0b1e3f9b84f6636b0d3d758ab4cfa3b
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60386867"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599977"
 ---
 # <a name="create-a-service-fabric-cluster-resource-manager-template"></a>Criar um modelo do Resource Manager do cluster do Service Fabric
 
 Um [cluster do Azure Service Fabric](service-fabric-deploy-anywhere.md) é um conjunto conectado por rede de máquinas virtuais no qual os microsserviços são implantados e gerenciados. Um cluster do Service Fabric em execução no Azure é um recurso do Azure e é implantado, gerenciado e monitorado usando o Resource Manager.  Este artigo descreve como criar um modelo do Resource Manager para um cluster do Service Fabric em execução no Azure.  Quando o modelo estiver concluído, será possível [implantar o cluster no Azure](service-fabric-cluster-creation-via-arm.md).
 
-A segurança de cluster é configurada quando o cluster é configurado pela primeira vez e não poderá ser alterada posteriormente. Antes de configurar um cluster, leia [Cenários de segurança de cluster do Service Fabric][service-fabric-cluster-security]. No Azure, o Service Fabric usa o certificado x509 para proteger o cluster e os pontos de extremidade, autenticar clientes e criptografar dados. O Azure Active Directory também é recomendado para proteger o acesso a pontos de extremidade de gerenciamento. Os locatários e usuários do Microsoft Azure AD deverão ser criados antes da criação do cluster.  Para mais informações, leia [Configurar o Azure AD para autenticar clientes](service-fabric-cluster-creation-setup-aad.md).
+A segurança de cluster é configurada quando o cluster é configurado pela primeira vez e não poderá ser alterada posteriormente. Antes de configurar um cluster, leia [Service Fabric cenários de segurança de cluster][service-fabric-cluster-security]. No Azure, o Service Fabric usa o certificado x509 para proteger o cluster e os pontos de extremidade, autenticar clientes e criptografar dados. O Azure Active Directory também é recomendado para proteger o acesso a pontos de extremidade de gerenciamento. Os locatários e usuários do Microsoft Azure AD deverão ser criados antes da criação do cluster.  Para mais informações, leia [Configurar o Azure AD para autenticar clientes](service-fabric-cluster-creation-setup-aad.md).
 
 Antes de implantar um cluster de produção para executar cargas de trabalho de produção, primeiro leia a [Lista de verificação de preparação para produção](service-fabric-production-readiness-checklist.md).
 
@@ -35,7 +35,7 @@ Antes de implantar um cluster de produção para executar cargas de trabalho de 
 ## <a name="create-the-resource-manager-template"></a>Criar o modelo do Gerenciador de Recursos
 Os exemplos de modelo do Resource Manager estão disponíveis nos [Exemplos do Azure no GitHub](https://github.com/Azure-Samples/service-fabric-cluster-templates). Esses modelos podem ser usados como ponto de partida para o modelo de cluster.
 
-Este artigo usa o modelo de exemplo de [cluster seguro de cinco nós][service-fabric-secure-cluster-5-node-1-nodetype] e os parâmetros de modelo. Baixe *azuredeploy.json* e *azuredeploy.parameters.json* no computador e abra os dois arquivos no seu editor de texto favorito.
+Este artigo usa o modelo de exemplo de [cluster seguro de cinco nós][service-fabric-secure-cluster-5-node-1-nodetype] e parâmetros de modelo. Baixe *azuredeploy.json* e *azuredeploy.parameters.json* no computador e abra os dois arquivos no seu editor de texto favorito.
 
 > [!NOTE]
 > Para nuvens nacionais (Azure Governamental, Azure China, Azure Alemanha), você também deve adicionar o seguinte `fabricSettings` para o modelo: `AADLoginEndpoint`, `AADTokenEndpointFormat` e `AADCertEndpointFormat`.

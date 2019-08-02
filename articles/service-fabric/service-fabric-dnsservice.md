@@ -3,7 +3,7 @@ title: Serviço DNS do Azure Service Fabric | Microsoft Docs
 description: Use o serviço DNS do Service Fabric para descobrir microsserviços no cluster.
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: chackdan
 editor: vturecek
 ms.assetid: 47f5c1c1-8fc8-4b80-a081-bc308f3655d3
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 7/20/2018
-ms.author: aljo
-ms.openlocfilehash: 3b3262eadc732c23000a66f24aaeeed4d9794db0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: atsenthi
+ms.openlocfilehash: 94b2b807eb68d628165ca8fa4011b8f3e41d3c6d
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60947598"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599652"
 ---
 # <a name="dns-service-in-azure-service-fabric"></a>Serviço DNS no Azure Service Fabric
 O Serviço DNS é um serviço do sistema opcional que pode ser habilitado no cluster para descobrir outros serviços usando o protocolo DNS. 
@@ -176,7 +176,7 @@ Consultas DNS destinadas a uma partição são formatadas da seguinte maneira:
 ```
     <First-Label-Of-Partitioned-Service-DNSName><PartitionPrefix><Target-Partition-Name>< PartitionSuffix>.<Remaining- Partitioned-Service-DNSName>
 ```
-Em que:
+Sendo que:
 
 - *First-Label-Of-Partitioned-Service-DNSName* é a primeira parte do nome DNS do serviço.
 - *PartitionPrefix* é um valor que pode ser definido na seção DnsService do manifesto do cluster ou por meio do modelo do Resource Manager do cluster. O valor padrão é "-". Para saber mais, consulte [Configurações do serviço DNS](./service-fabric-cluster-fabric-settings.md#dnsservice).
@@ -252,7 +252,7 @@ public class ValuesController : Controller
 }
 ```
 
-## <a name="known-issues"></a>Problemas conhecidos
+## <a name="known-issues"></a>Problemas Conhecidos
 * Para versões do Service Fabric 6.3 e superiores, há um problema com pesquisas de DNS para nomes de serviço que contenham um hífen no nome DNS. Para obter mais informações sobre esse problema, acompanhe o seguinte [Problema do GitHub](https://github.com/Azure/service-fabric-issues/issues/1197). Uma correção para isso será disponibilizada na próxima atualização 6.3. 
 
 * O serviço DNS para serviços do Service Fabric ainda não é suportado no Linux. O serviço DNS é suportado para contêineres no Linux. Resolução manual usando Fabric Client / ServicePartitionResolver é a alternativa disponível.

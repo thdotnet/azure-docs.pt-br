@@ -1,20 +1,19 @@
 ---
 title: Gerenciando o ciclo de vida do armazenamento do Azure
 description: Aprenda a criar regras de política de ciclo de vida para fazer a transição dos dados antigos para os níveis Hot to Cool e Archive.
-services: storage
 author: mhopkins-msft
-ms.service: storage
-ms.topic: conceptual
-ms.date: 05/21/2019
 ms.author: mhopkins
-ms.reviewer: yzheng
+ms.date: 05/21/2019
+ms.service: storage
 ms.subservice: common
-ms.openlocfilehash: 6902bf73707dc749da76cd32fe48911fcc88ba1e
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.topic: conceptual
+ms.reviewer: yzheng
+ms.openlocfilehash: 77ed643afaf5e69f41224af68f5e9f8a93fcace5
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68305718"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68722092"
 ---
 # <a name="manage-the-azure-blob-storage-lifecycle"></a>Gerenciar o ciclo de vida do armazenamento de BLOBs do Azure
 
@@ -29,6 +28,8 @@ A política de gerenciamento do ciclo de vida permite:
 
 Considere um cenário em que os dados recebem acesso frequente durante os estágios iniciais do ciclo de vida, mas apenas ocasionalmente após duas semanas. Após o primeiro mês, o conjunto de dados raramente é acessado. Nesse cenário, o armazenamento frequente é melhor durante os estágios iniciais. O armazenamento frio é mais apropriado para acesso ocasional. O armazenamento de arquivos é a melhor opção de camada depois que os dados ficam em um mês. Ajustando as camadas de armazenamento em relação à idade dos dados, você pode criar as opções de armazenamento menos dispendiosas para suas necessidades. Para conseguir essa transição, as regras de política de gerenciamento do ciclo de vida estão disponíveis para mover os dados antigos para camadas mais frias.
 
+[!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
+
 ## <a name="storage-account-support"></a>Suporte da conta de armazenamento
 
 A política de gerenciamento do ciclo de vida está disponível com contas do Uso Geral v2 (GPv2), contas de armazenamento de BLOBs e contas de armazenamento de blob de blocos Premium. No portal do Azure, você pode atualizar uma conta de Uso Geral (GPv1) existente para uma conta do GPv2. Para saber mais sobre as contas de armazenamento, confira [Visão geral da conta de armazenamento do Azure](../common/storage-account-overview.md).  
@@ -39,7 +40,7 @@ O recurso de gerenciamento do ciclo de vida é gratuito. O custo de operação n
 
 ## <a name="regional-availability"></a>Disponibilidade regional
 
-O recurso de gerenciamento do ciclo de vida está disponível em todas as regiões globais do Azure e do Azure governamental.
+O recurso de gerenciamento do ciclo de vida está disponível em todas as regiões do Azure.
 
 ## <a name="add-or-remove-a-policy"></a>Adicionar ou remover uma política
 
@@ -227,9 +228,9 @@ Uma política é uma coleção de regras:
 
 Cada regra na política tem vários parâmetros:
 
-| Nome do parâmetro | Tipo de parâmetro | Observações | Obrigatório |
+| Nome do parâmetro | Tipo de parâmetro | Observações | Necessário |
 |----------------|----------------|-------|----------|
-| `name`         | Cadeia de caracteres |Um nome de regra pode incluir até 256 caracteres alfanuméricos. A regra de nome diferencia maiúsculas de minúsculas.  Ela deve ser exclusiva em uma política. | verdadeiro |
+| `name`         | Cadeia |Um nome de regra pode incluir até 256 caracteres alfanuméricos. A regra de nome diferencia maiúsculas de minúsculas.  Ela deve ser exclusiva em uma política. | verdadeiro |
 | `enabled`      | Boolean | Um booliano opcional para permitir que uma regra seja temporariamente desabilitada. O valor padrão será true se não estiver definido. | False | 
 | `type`         | Um valor de enumeração | O tipo válido atual é `Lifecycle`. | verdadeiro |
 | `definition`   | Um objeto que define a regra de ciclo de vida | Cada definição é composta por um conjunto de filtros e um conjunto de ações. | verdadeiro |
@@ -281,7 +282,7 @@ Os filtros limitam as ações de regra a um subconjunto de blobs na conta de arm
 
 Os filtros incluem:
 
-| Nome do filtro | Tipo do filtro | Observações | Obrigatório |
+| Nome do filtro | Tipo de filtro | Observações | É Necessário |
 |-------------|-------------|-------|-------------|
 | blobTypes   | Uma matriz de valores de enumeração predefinidos. | A versão atual dá `blockBlob`suporte ao. | Sim |
 | prefixMatch | Uma matriz de cadeias de caracteres para prefixos a serem correspondidos. Cada regra pode definir até 10 prefixos. Uma cadeia de caracteres de prefixo deve começar com um nome de contêiner. Por exemplo, se você quiser corresponder a todos os BLOBs `https://myaccount.blob.core.windows.net/container1/foo/...` em para uma regra, o prefixMatch `container1/foo`será. | Se você não definir prefixMatch, a regra se aplicará a todos os BLOBs na conta de armazenamento.  | Não |
@@ -303,7 +304,7 @@ O gerenciamento do ciclo de vida dá suporte a camadas e exclusão de BLOBs e ex
 
 As condições de execução se baseiam na idade. Os blobs base usam a hora da última modificação para acompanhar a idade, enquanto os instantâneos de blob usam a hora de criação do instantâneo para executar a mesma tarefa.
 
-| Condição de execução de ação             | Valor de condição                          | DESCRIÇÃO                             |
+| Condição de execução de ação             | Valor de condição                          | Descrição                             |
 |----------------------------------|------------------------------------------|-----------------------------------------|
 | daysAfterModificationGreaterThan | Valor inteiro que indica a idade em dias | A condição para ações de blob de base     |
 | daysAfterCreationGreaterThan     | Valor inteiro que indica a idade em dias | A condição para ações de instantâneo de BLOB |

@@ -16,12 +16,12 @@ ms.date: 05/31/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cb44c64540cc461bca4e305f7783f7c6b612591b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: dbcc05093d801261493745c61dc5f68878d338b0
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60296333"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68607674"
 ---
 # <a name="azure-ad-connect-user-sign-in-options"></a>Opções de entrada de usuário do Azure AD Connect
 O Azure AD (Azure Active Directory) Connect permite que os usuários se conectem a recursos de nuvem e locais usando as mesmas senhas. Este artigo descreve os principais conceitos de cada modelo de identidade, a fim de ajudá-lo a escolher a identidade que você deseja usar para entrar no Azure AD.
@@ -49,7 +49,7 @@ O Azure AD suporta os seguintes métodos de autenticação:
 
 Para a maioria das organizações que deseja apenas habilitar a conexão do usuário no Office 365, em aplicativos SaaS e em outros recursos baseados no Azure AD, recomendamos a opção de sincronização de hash padrão.
  
-Para obter informações detalhadas sobre como escolher um método de autenticação, confira [Escolher o método de autenticação adequado para sua solução de identidade híbrida do Azure Active Directory](../../security/azure-ad-choose-authn.md)
+Para obter informações detalhadas sobre como escolher um método de autenticação, confira [Escolher o método de autenticação adequado para sua solução de identidade híbrida do Azure Active Directory](../../security/fundamentals/choose-ad-authn.md)
 
 ### <a name="password-hash-synchronization"></a>Sincronização de hash de senha
 Com a sincronização de hash de senha, hashes de senhas de usuário são sincronizados do Active Directory local para o Azure AD. Quando as senhas são alteradas ou redefinidas localmente, os novos hashes de senha são sincronizados com o Azure AD imediatamente, para que os usuários sempre possam usar a mesma senha para recursos de nuvem e recursos locais. As senhas nunca são enviadas ao Azure AD nem armazenadas no Azure AD em texto não criptografado. É possível usar a sincronização de hash de senha em conjunto com write-back de senha para habilitar a redefinição de senha de autoatendimento no Azure AD.
@@ -60,7 +60,7 @@ Além disso, você também pode habilitar o [SSO contínuo](how-to-connect-sso.m
 
 Para obter mais informações, consulte o artigo [Sincronização de hash de senha](how-to-connect-password-hash-synchronization.md).
 
-### <a name="pass-through-authentication"></a>Autenticação de passagem
+### <a name="pass-through-authentication"></a>Autenticação pass-through
 Com a autenticação de passagem, a senha do usuário é validada no controlador do Active Directory local. A senha não precisa estar presente no Azure AD em nenhum formato. Isso permite que as políticas locais, como restrições de horário de conexão, sejam avaliadas durante a autenticação em serviços de nuvem.
 
 A autenticação de passagem usa um agente simples em um computador ingressado em domínio do Windows Server 2012 R2 no ambiente local. Esse agente escuta as solicitações de validação de senha. Ele não exige que nenhuma porta de entrada seja aberta para a Internet.
@@ -126,7 +126,7 @@ A experiência de conexão do Azure AD depende da capacidade do Azure AD de corr
 O Azure AD Connect lista os sufixos UPN que estão definidos para os domínios e tenta correspondê-los a um domínio personalizado no Azure AD. Em seguida, ele ajuda você com a ação apropriada que precisa ser tomada.
 A página de conexão do Azure AD lista os sufixos UPN definidos para o Active Directory local e exibe o status correspondente em cada sufixo. Os valores de status podem ser um dos seguintes:
 
-| Estado | DESCRIÇÃO | Ação necessária |
+| Estado | Descrição | Ação necessária |
 |:--- |:--- |:--- |
 | Verificado |O Azure AD Connect encontrou uma correspondência de domínio verificado no Azure AD. Todos os usuários deste domínio podem se conectar usando suas credenciais locais. |Nenhuma ação é necessária. |
 | Não verificado |O Azure AD Connect encontrou uma correspondência de domínio personalizado, mas ele não é verificado. O sufixo UPN dos usuários desse domínio será alterado para o sufixo .onmicrosoft.com padrão após a sincronização, caso o domínio não seja verificado. | [Verifique o domínio personalizado no Azure AD.](../fundamentals/add-custom-domain.md#verify-your-custom-domain-name) |
@@ -179,11 +179,11 @@ Se você selecionou a opção de conexão do usuário **Federação com o AD FS*
 
 Na próxima página, você deverá fornecer as credenciais do Azure AD.
 
-![Conecte-se ao AD do Azure](./media/plan-connect-user-signin/changeusersignin2.png)
+![Conectar ao Azure AD](./media/plan-connect-user-signin/changeusersignin2.png)
 
 Na página **Entrada de usuário**, selecione a entrada do usuário desejada.
 
-![Conecte-se ao AD do Azure](./media/plan-connect-user-signin/changeusersignin2a.png)
+![Conectar ao Azure AD](./media/plan-connect-user-signin/changeusersignin2a.png)
 
 > [!NOTE]
 > Se estiver fazendo apenas uma mudança temporária para a sincronização de hash de senha, marque a caixa de seleção **Não converter contas de usuário**. Não marcar a opção converterá cada usuário em federado, o que pode levar várias horas.

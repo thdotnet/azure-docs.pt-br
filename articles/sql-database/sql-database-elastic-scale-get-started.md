@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: anumjs
 ms.author: anjangsh
 ms.reviewer: sstein
-manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 7c2e3b2bea7ddef3dfbf69f85b499d9a60158689
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: aa0827bdf6deb388123ed701013ee95f5493eee3
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60584976"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568470"
 ---
 # <a name="get-started-with-elastic-database-tools"></a>Introdução às ferramentas do Banco de Dados Elástico
 
@@ -86,9 +85,9 @@ Para baixar e executar a amostra, siga estas etapas:
 
 2. Para criar um projeto, abra a solução *ElasticScaleStarterKit.sln* do diretório *C#* .
 
-3. Na solução para o exemplo de projeto, abra o arquivo *app.config*. Siga as instruções no arquivo para adicionar o nome de seu servidor do Banco de Dados SQL do Microsoft Azure e suas informações de entrada (nome de usuário e senha).
+3. Na solução para o exemplo de projeto, abra o arquivo *app.config*. Siga as instruções no arquivo para adicionar o nome de seu servidor de Banco de Dados SQL do Azure e suas informações de entrada (nome de usuário e senha).
 
-4. Compile e execute o aplicativo. Quando você receber a solicitação, permita que o Visual Studio restaure os pacotes NuGet da solução. Essa ação faz o download da versão mais recente das bibliotecas de clientes do banco de dados elástico do NuGet.
+4. Crie e execute o aplicativo. Quando você receber a solicitação, permita que o Visual Studio restaure os pacotes NuGet da solução. Essa ação faz o download da versão mais recente das bibliotecas de clientes do banco de dados elástico do NuGet.
 
 5. Para saber mais sobre os recursos da biblioteca de clientes, experimente com as diferentes opções. Observe as etapas que o aplicativo realiza na saída do console e fique à vontade para explorar o código nos bastidores.
    

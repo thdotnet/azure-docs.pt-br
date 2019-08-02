@@ -2,7 +2,7 @@
 title: Redefinir a senha de um usuário - Azure Active Directory | Microsoft Docs
 description: Instruções sobre como redefinir a senha de um usuário usando o Azure Active Directory.
 services: active-directory
-author: eross-msft
+author: msaburnley
 manager: daveba
 ms.assetid: fad5624b-2f13-4abc-b3d4-b347903a8f16
 ms.service: active-directory
@@ -10,16 +10,16 @@ ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/05/2018
-ms.author: lizross
+ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4db6554e86cef61f2fc8e7a466919d2ce723f0e5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 382ffab090613a2b14ce710a45be10b4c36e5222
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60248021"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561745"
 ---
 # <a name="reset-a-users-password-using-azure-active-directory"></a>Redefinir a senha de um usuário usando o Azure Active Directory
 
@@ -33,7 +33,7 @@ Como um administrador, você pode redefinir a senha de um usuário se a senha fo
 
 ## <a name="to-reset-a-password"></a>Para redefinir uma senha
 
-1. Entrar para o [portal do Azure](https://portal.azure.com/) como um usuário administrador ou administrador de senha. Para obter mais informações sobre as funções disponíveis, consulte [Atribuindo funções de administrador no Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md#available-roles)
+1. Entre no [portal do Azure](https://portal.azure.com/) como um administrador de usuário ou administrador de senha. Para obter mais informações sobre as funções disponíveis, consulte [Atribuindo funções de administrador no Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md#available-roles)
 
 2. Selecione **Azure Active Directory**, selecione **Usuários**, pesquise e selecione o usuário que precisa da redefinição e, em seguida, selecione **Redefinir Senha**.
 

@@ -1,91 +1,92 @@
 ---
 title: Implantar aplicativos seguros no Microsoft Azure
-description: Este artigo discute as práticas recomendadas a serem considerados durante as fases de lançamento e a resposta do seu projeto de aplicativo web.
+description: Este artigo aborda as práticas recomendadas a serem consideradas durante as fases de lançamento e resposta do seu projeto de aplicativo Web.
 author: TerryLanfear
 manager: barbkess
 ms.author: terrylan
 ms.date: 06/12/2019
 ms.topic: article
 ms.service: security
+ms.subservice: security-develop
 services: azure
 ms.assetid: 521180dc-2cc9-43f1-ae87-2701de7ca6b8
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: e8249113ee65c28414c79f00c53d11596673434b
-ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
+ms.openlocfilehash: dd86e6bf571dd67da00aee63eadff031a1040ff7
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67144445"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68728733"
 ---
 # <a name="deploy-secure-applications-on-azure"></a>Implantar aplicativos seguros no Azure
-Neste artigo, apresentamos as atividades de segurança e controles a serem considerados ao implantar aplicativos para a nuvem. Perguntas de segurança e conceitos a serem considerados durante as fases de lançamento e a resposta da Microsoft [Security Development Lifecycle (SDL)](https://msdn.microsoft.com/library/windows/desktop/84aed186-1d75-4366-8e61-8d258746bopq.aspx) são abordados. O objetivo é ajudá-lo a definir as atividades e serviços do Azure que você pode usar para implantar um aplicativo mais seguro.
+Neste artigo, apresentamos as atividades de segurança e os controles a serem considerados ao implantar aplicativos para a nuvem. As perguntas de segurança e os conceitos a serem considerados durante as fases de lançamento e resposta do [SDL (Microsoft Security Development Lifecycle)](https://msdn.microsoft.com/library/windows/desktop/84aed186-1d75-4366-8e61-8d258746bopq.aspx) são abordados. O objetivo é ajudá-lo a definir atividades e serviços do Azure que você pode usar para implantar um aplicativo mais seguro.
 
-As seguintes fases SDL são abordadas neste artigo:
+As seguintes fases do SDL são abordadas neste artigo:
 
 - Versão
-- Response
+- Resposta
 
 ## <a name="release"></a>Versão
-O foco da fase de versão está preparando um projeto para a versão pública.
-Isso inclui o planejamento de maneiras de executar tarefas de manutenção pós-lançamento efetivamente e resolver vulnerabilidades de segurança que podem ocorrer mais tarde.
+O foco da fase de lançamento está preparando um projeto para a versão pública.
+Isso inclui formas de planejamento para executar efetivamente tarefas de manutenção de lançamento e resolver vulnerabilidades de segurança que podem ocorrer posteriormente.
 
-### <a name="check-your-applications-performance-before-you-launch"></a>Verificar o desempenho do aplicativo antes de iniciar
+### <a name="check-your-applications-performance-before-you-launch"></a>Verifique o desempenho do aplicativo antes de iniciar
 
-Verifique o desempenho do aplicativo antes de iniciá-lo ou implantar atualizações em produção. Executar com base em nuvem [testes de carga](https://www.visualstudio.com/docs/test/performance-testing/getting-started/getting-started-with-performance-testing) usando o Visual Studio para localizar problemas de desempenho em seu aplicativo, melhorar a qualidade de implantação, certifique-se de que seu aplicativo estará sempre disponível ou disponível e que seu aplicativo pode manipular o tráfego para o seu lançamento.
+Verifique o desempenho do aplicativo antes de iniciá-lo ou implantar atualizações na produção. Execute [testes de carga](https://www.visualstudio.com/docs/test/performance-testing/getting-started/getting-started-with-performance-testing) baseados em nuvem usando o Visual Studio para encontrar problemas de desempenho em seu aplicativo, melhorar a qualidade da implantação, garantir que seu aplicativo esteja sempre ativo ou disponível e que seu aplicativo possa lidar com o tráfego para seu lançamento.
 
 ### <a name="install-a-web-application-firewall"></a>Instalar um firewall do aplicativo Web
 
-Os aplicativos Web cada vez mais são alvos de ataques mal-intencionados que exploram vulnerabilidades conhecidas comuns. São comuns entre essas explorações ataques de injeção de SQL e ataques de script entre sites. Impedir esses ataques no código do aplicativo pode ser desafiador. Ele pode exigir manutenção rigorosa, aplicação de patches e monitoramento em várias camadas da topologia do aplicativo. Um WAF centralizado ajuda a simplificar o gerenciamento de segurança. Uma solução WAF também pode reagir a uma ameaça à segurança, ao aplicar um patch uma vulnerabilidade conhecida em um local central em vez de proteger todos os aplicativos web individuais.
+Os aplicativos Web cada vez mais são alvos de ataques mal-intencionados que exploram vulnerabilidades conhecidas comuns. O comum entre essas explorações são ataques de injeção de SQL e ataques de script entre sites. Impedir esses ataques no código do aplicativo pode ser desafiador. Ele pode exigir manutenção rigorosa, aplicação de patches e monitoramento em muitas camadas da topologia do aplicativo. Um WAF centralizado ajuda a tornar o gerenciamento de segurança mais simples. Uma solução WAF também pode reagir a uma ameaça de segurança por meio da aplicação de patch em uma vulnerabilidade conhecida em um local central em relação à proteção de cada aplicativo Web individual.
 
-O [WAF de Gateway de aplicativo do Azure](https://docs.microsoft.com/azure/application-gateway/waf-overview) fornece proteção centralizada de seus aplicativos web contra vulnerabilidades e explorações comuns. O WAF é baseado nas regras do [conjuntos de regras OWASP principais](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project) 3.0 ou 2.2.9.
+O [WAF Gateway aplicativo Azure](https://docs.microsoft.com/azure/application-gateway/waf-overview) fornece proteção centralizada de seus aplicativos Web contra explorações e vulnerabilidades comuns. O WAF é baseado em regras dos [conjuntos de regras principais do OWASP](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project) 3,0 ou 2.2.9.
 
 ### <a name="create-an-incident-response-plan"></a>Criar um plano de resposta a incidentes
 
-Preparar um plano de resposta a incidentes é crucial para ajudar você a atender a novas ameaças que podem surgir ao longo do tempo. Preparar um plano de resposta a incidentes inclui a identificação de contatos de emergência de segurança apropriados e estabelecendo uma segurança para o código que é herdado de outros grupos da organização e para o código de terceiros licenciado de planos de manutenção.
+Preparar um plano de resposta a incidentes é crucial para ajudá-lo a resolver novas ameaças que podem surgir ao longo do tempo. Preparar um plano de resposta a incidentes inclui a identificação de contatos de emergência de segurança apropriados e o estabelecimento de planos de serviço de segurança para o código herdado de outros grupos na organização e para código de terceiros licenciado.
 
-### <a name="conduct-a-final-security-review"></a>Conduzir uma revisão final de segurança
+### <a name="conduct-a-final-security-review"></a>Conduzir uma revisão de segurança final
 
-Revisar deliberadamente todas as atividades de segurança que foram executadas ajuda a garantir a prontidão para seu aplicativo ou uma versão de software. A revisão final de segurança (FSR) geralmente inclui examinando os modelos de ameaças, saídas de ferramentas e desempenho em relação as restrições de qualidade e as barras de bugs que foram definidas na fase de requisitos.
+Revisar deliberadamente todas as atividades de segurança que foram executadas ajudam a garantir a prontidão para o aplicativo ou a versão do software. A FSR (análise de segurança final) geralmente inclui examinar modelos de ameaças, saídas de ferramentas e desempenho em relação às Gates de qualidade e barras de bugs que foram definidas na fase de requisitos.
 
-### <a name="certify-release-and-archive"></a>Certificar versão e o arquivo morto
+### <a name="certify-release-and-archive"></a>Certificar liberação e arquivo morto
 
-Certificação de software antes de uma versão ajuda a garantir que os requisitos de segurança e privacidade são atendidos. Arquivamento de todos os dados pertinentes é essencial para realizar tarefas de manutenção pós-lançamento. Arquivamento também ajuda a diminuir os custos de longo prazo associados com prolongada de engenharia de software.
+A certificação de software antes de uma versão ajuda a garantir que os requisitos de segurança e privacidade sejam atendidos. O arquivamento de todos os dados pertinentes é essencial para executar tarefas de manutenção de lançamento. O arquivamento também ajuda a reduzir os custos de longo prazo associados à engenharia de software sustentada.
 
-## <a name="response"></a>Response
-Centraliza a fase de pós-versão de resposta na equipe de desenvolvimento, sendo capaz de e para responder adequadamente a todos os relatórios de vulnerabilidades e ameaças emergentes de software está disponível.
+## <a name="response"></a>Resposta
+A fase pós-lançamento da resposta na equipe de desenvolvimento está sendo capaz e disponível para responder adequadamente a quaisquer relatórios de vulnerabilidades e ameaças de software emergentes.
 
 ### <a name="execute-the-incident-response-plan"></a>Executar o plano de resposta a incidentes
 
-Ser capaz de implementar o plano de resposta a incidentes instituído na fase de versão é essencial para ajudar a proteger os clientes contra vulnerabilidades de segurança ou privacidade de software que surgem.
+Ser capaz de implementar o plano de resposta a incidentes instituido na fase de lançamento é essencial para ajudar a proteger os clientes contra a segurança de software ou vulnerabilidades de privacidade que surgiram.
 
 ### <a name="monitor-application-performance"></a>Monitorar desempenho do aplicativo
 
-Monitoramento contínuo de seu aplicativo após sua implantação potencialmente o ajuda a detectar problemas de desempenho, bem como vulnerabilidades de segurança.
-Os serviços do Azure que ajudam com o monitoramento de aplicativo são:
+O monitoramento contínuo de seu aplicativo depois de implantado pode ajudar a detectar problemas de desempenho, bem como vulnerabilidades de segurança.
+Os serviços do Azure que auxiliam no monitoramento de aplicativos são:
 
   - Azure Application Insights
   - Central de Segurança do Azure
 
 #### <a name="application-insights"></a>Application Insights
 
-O [Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview) é um serviço APM (Gerenciamento de Desempenho de Aplicativos) extensível para desenvolvedores da Web em várias plataformas. Use-o para monitorar seu aplicativo Web online. Application Insights detecta automaticamente anomalias de desempenho. Ele inclui ferramentas de análise avançadas para ajudá-lo a diagnosticar problemas e entender o que os usuários realmente fazem com seu aplicativo. Ele foi projetado para ajudar você a aprimorar continuamente o desempenho e a usabilidade do seu aplicativo.
+O [Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview) é um serviço APM (Gerenciamento de Desempenho de Aplicativos) extensível para desenvolvedores da Web em várias plataformas. Use-o para monitorar seu aplicativo Web online. Application Insights detecta automaticamente anomalias de desempenho. Ele inclui ferramentas de análise poderosas para ajudá-lo a diagnosticar problemas e entender o que os usuários realmente fazem com seu aplicativo. Ele foi projetado para ajudar você a aprimorar continuamente o desempenho e a usabilidade do seu aplicativo.
 
 #### <a name="azure-security-center"></a>Central de Segurança do Azure
 
-[A Central de segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-intro) ajuda a prevenir, detectar e responder a ameaças com maior visibilidade (e controle sobre a) a segurança dos recursos do Azure, incluindo aplicativos web. A Central de segurança do Azure ajuda a detectar ameaças que poderiam passar despercebidas. Ele funciona com várias soluções de segurança.
+A [central de segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-intro) ajuda você a prevenir, detectar e responder a ameaças com maior visibilidade no (e controle sobre) a segurança de seus recursos do Azure, incluindo aplicativos Web. A central de segurança do Azure ajuda a detectar ameaças que poderiam passar despercebidas. Ele funciona com várias soluções de segurança.
 
-A camada gratuita da Central de Segurança oferece segurança limitada somente para seus recursos do Azure. O [camada central de segurança Standard](https://docs.microsoft.com/azure/security-center/security-center-onboarding) estende esses recursos para recursos locais e em outras nuvens.
-Central de segurança Standard ajuda você a:
+A camada gratuita da Central de Segurança oferece segurança limitada somente para seus recursos do Azure. A [camada Standard da central de segurança](https://docs.microsoft.com/azure/security-center/security-center-onboarding) estende esses recursos para recursos locais e outras nuvens.
+A central de segurança Standard ajuda você a:
 
-  - Localize e corrija vulnerabilidades de segurança.
-  - Aplique controles de acesso e de aplicativo para bloquear atividades mal-intencionadas.
+  - Encontre e corrija vulnerabilidades de segurança.
+  - Aplicar controles de acesso e de aplicativo para bloquear atividades mal-intencionadas.
   - Detecte ameaças usando análise e inteligência.
-  - Responda rapidamente quando sob ataque.
+  - Responda rapidamente quando estiver sob ataque.
 
 ## <a name="next-steps"></a>Próximas etapas
-Os artigos a seguir, é recomendável que os controles de segurança e as atividades que podem ajudá-lo a projetar e desenvolvem aplicativos seguros.
+Nos artigos a seguir, recomendamos os controles de segurança e as atividades que podem ajudá-lo a projetar e desenvolver aplicativos seguros.
 
-- [Design de aplicativos seguros](secure-design.md)
-- [Desenvolver aplicativos seguros](secure-develop.md)
+- [Criar aplicativos seguros](secure-design.md)
+- [Desenvolva aplicativos seguros](secure-develop.md)

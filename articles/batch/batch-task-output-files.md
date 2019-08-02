@@ -14,10 +14,10 @@ ms.date: 03/05/2019
 ms.author: lahugh
 ms.custom: seodec18
 ms.openlocfilehash: c113521a1828a27ce9454ea142cb1708b7c5a1b6
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68322835"
 ---
 # <a name="persist-task-data-to-azure-storage-with-the-batch-service-api"></a>Manter os dados de tarefa para o Armazenamento do Azure com a API de serviço de lote
@@ -178,7 +178,7 @@ Se você estiver desenvolvendo com uma linguagem que não C#, precisará implant
 
 ## <a name="code-sample"></a>Exemplo de código
 
-O [PersistOutputs][github_persistoutputs] sample project is one of the [Azure Batch code samples][github_samples] no github. Essa solução do Visual Studio demonstra como usar a biblioteca de cliente em lotes para .NET para manter a saída da tarefa para o armazenamento durável. Para executar o exemplo, siga estas etapas:
+O projeto de exemplo [PersistOutputs][github_persistoutputs] é um dos [exemplos de código do lote do Azure][github_samples] no github. Essa solução do Visual Studio demonstra como usar a biblioteca de cliente em lotes para .NET para manter a saída da tarefa para o armazenamento durável. Para executar o exemplo, siga estas etapas:
 
 1. Abra o projeto no **Visual Studio 2019**.
 2. Adicione suas **credenciais de conta** do Lote e do Armazenamento a **AccountSettings.settings** no projeto Microsoft.Azure.Batch.Samples.Common.

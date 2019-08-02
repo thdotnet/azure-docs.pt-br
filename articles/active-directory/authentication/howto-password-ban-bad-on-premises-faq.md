@@ -1,5 +1,5 @@
 ---
-title: Proteção de senha do Azure AD perguntas Frequentes – Azure Active Directory local
+title: Perguntas frequentes sobre proteção de senha do Azure AD local-Azure Active Directory
 description: Perguntas frequentes sobre a proteção por senha do Azure AD local
 services: active-directory
 ms.service: active-directory
@@ -11,14 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b4879093ed80a554219b053cc5a2bc895126725
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 9f1f2e06eb6b5f8d402515ff1c07a4163174495d
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67702887"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68666352"
 ---
 # <a name="azure-ad-password-protection-on-premises---frequently-asked-questions"></a>Proteção por senha do Azure AD local – perguntas frequentes
+
+Esta seção fornece respostas para muitas perguntas frequentes sobre a proteção de senha do Azure AD.
 
 ## <a name="general-questions"></a>Perguntas gerais
 
@@ -34,19 +36,23 @@ Não, locais de proteção por senha do Azure AD têm suporte apenas na nuvem p�
 
 **P: Como posso aplicar os benefícios da proteção por senha do Azure AD a um subconjunto dos usuários locais?**
 
-Sem suporte. Depois de implantada e habilitada, a proteção por senha do Azure AD não discrimina, todos os usuários recebem benefícios de segurança iguais.
+Não compatível. Depois de implantada e habilitada, a proteção por senha do Azure AD não discrimina, todos os usuários recebem benefícios de segurança iguais.
 
 **P: Qual é a diferença entre uma alteração de senha e um conjunto de senhas (ou redefinição)?**
 
-Uma alteração de senha é quando um usuário escolhe uma nova senha depois de comprovar que eles têm conhecimento da senha antiga. Por exemplo, isso é o que acontece quando um usuário faz logon no Windows e, em seguida, é solicitado a escolher uma nova senha.
+Uma alteração de senha é quando um usuário escolhe uma nova senha depois de provar que tem conhecimento da senha antiga. Por exemplo, isso é o que acontece quando um usuário faz logon no Windows e, em seguida, é solicitado a escolher uma nova senha.
 
-Um conjunto de senha (às vezes chamado de uma redefinição de senha) é quando um administrador substitui a senha em uma conta com uma nova senha, por exemplo, usando a ferramenta de gerenciamento de computadores e usuários do Active Directory. Esta operação requer um alto nível de privilégio (normalmente, o administrador de domínio) e a pessoa que realiza a operação geralmente não tem conhecimento da senha antiga. Cenários de assistência técnica faz isso com frequência, por exemplo quando ajudar um usuário que esqueceu a senha. Você também verá senha definir eventos quando uma nova conta de usuário está sendo criada pela primeira vez com uma senha.
+Um conjunto de senhas (às vezes chamado de redefinição de senha) é quando um administrador substitui a senha em uma conta com uma nova senha, por exemplo, usando a ferramenta de gerenciamento Active Directory usuários e computadores. Essa operação requer um alto nível de privilégio (geralmente administrador de domínio) e a pessoa que executa a operação geralmente não tem conhecimento da senha antiga. Cenários de Help Desk geralmente fazem isso, por exemplo, ao auxiliar um usuário que esqueceu sua senha. Você também verá eventos de definição de senha quando uma conta de usuário totalmente nova estiver sendo criada pela primeira vez com uma senha.
 
-A política de validação de senha se comporta da mesma, independentemente se estiver sendo feito uma alteração de senha ou um conjunto. O serviço do agente de controlador de domínio de proteção de senha do Azure AD registrar eventos diferentes para informá-lo se uma alteração de senha ou a operação set foi feita.  Ver [proteção de senha do Azure AD, monitoramento e registro em log](https://docs.microsoft.com/azure/active-directory/authentication/howto-password-ban-bad-on-premises-monitor).
+A política de validação de senha comporta-se o mesmo, independentemente de uma alteração ou definição de senha estar sendo feita. O serviço de agente DC de proteção de senha do Azure AD registra eventos diferentes para informá-lo se uma operação de alteração ou de definição de senha foi feita.  Consulte [monitoramento e registro em log da proteção de senha do Azure ad](https://docs.microsoft.com/azure/active-directory/authentication/howto-password-ban-bad-on-premises-monitor).
 
-**P: Por que os eventos de rejeição de duplicados senha registrados durante a tentativa de definir uma senha fraca estão usando o snap-in Gerenciamento computadores e usuários do Active Directory?**
+**P: Por que os eventos de rejeição de senha duplicados são registrados ao tentar definir uma senha fraca usando o snap-in de gerenciamento de usuários e computadores Active Directory?**
 
-O snap-in de gerenciamento de computadores e usuários do Active Directory tentará primeiro definir a nova senha usando o protocolo Kerberos. Em caso de falha o snap-in fará uma segunda tentativa de definir a senha usando um protocolo (SAM RPC) herdado (os protocolos específicos usados não são importantes). Se a nova senha é considerada fraca pela proteção de senha do Azure AD, isso resultará em dois conjuntos de eventos de rejeição de redefinição de senha que está sendo registrados.
+O snap-in de gerenciamento de usuários e computadores Active Directory primeiro tentará definir a nova senha usando o protocolo Kerberos. Após a falha, o snap-in fará uma segunda tentativa de definir a senha usando um protocolo herdado (SAM RPC) (os protocolos específicos usados não são importantes). Se a nova senha for considerada fraca pela proteção de senha do Azure AD, isso resultará em um log de dois conjuntos de eventos de rejeição de redefinição de senha.
+
+**P: Por que os eventos de validação de senha da proteção de senha do Azure AD são registrados com um nome de usuário vazio?**
+
+Active Directory dá suporte à capacidade de testar uma senha para ver se ela passa os requisitos de complexidade de senha atuais do domínio, por exemplo, usando a API [NetValidatePasswordPolicy](https://docs.microsoft.com/windows/win32/api/lmaccess/nf-lmaccess-netvalidatepasswordpolicy) . Quando uma senha é validada dessa forma, o teste também inclui validação por produtos baseados em filtro de senha, como a proteção de senha do Azure AD, mas os nomes de usuário passados para uma determinada dll de filtro de senha ficarão vazios. Neste cenário, a proteção de senha do Azure AD ainda validará a senha usando a política de senha atualmente em vigor e emitirá uma mensagem de log de eventos para capturar o resultado, no entanto, a mensagem de log de eventos terá campos de nome de usuário vazios.
 
 **P: Há suporte para instalação da proteção por senha do Azure AD lado a lado com outros produtos baseados em filtro de senha?**
 
@@ -54,11 +60,11 @@ Sim. Suporte para várias dlls de filtro de senha registrada é um recurso impor
 
 **P: Como implantar e configurar a proteção de senha do Azure AD no meu ambiente do Active Directory sem o uso do Azure?**
 
-Sem suporte. A proteção de senha do Azure AD é um recurso do Azure que dá suporte a ser estendido para um ambiente local do Active Directory.
+Não compatível. A proteção de senha do Azure AD é um recurso do Azure que dá suporte a ser estendido para um ambiente local do Active Directory.
 
 **P: Como faço para modificar o conteúdo da política no nível do Active Directory?**
 
-Sem suporte. A política só pode ser administrada usando o portal de gerenciamento do Azure AD. Confira também a pergunta anterior.
+Não compatível. A política só pode ser administrada usando o portal de gerenciamento do Azure AD. Confira também a pergunta anterior.
 
 **P: Por que o DFSR é necessário para a replicação de SYSVOL?**
 
@@ -86,9 +92,9 @@ Nº Uma vez que o servidor proxy é sem estado, não é importante saber qual se
 
 Sim. O serviço de Proxy de Proteção de Senha do Azure AD e o Azure AD Connect nunca devem entrar em conflito diretamente entre si.
 
-**P: Em qual ordem devem os agentes de controlador de domínio e os proxies seja instalados e registrados?**
+**P: Em que ordem os agentes e proxies de DC devem ser instalados e registrados?**
 
-Há suporte para qualquer ordenação de instalação do agente de Proxy, instalação do agente de controlador de domínio, o registro de floresta e registro do Proxy.
+Há suporte para qualquer ordem de instalação do agente de proxy, instalação do agente DC, registro de floresta e registro de proxy.
 
 **P: Devo me preocupar com o impacto ao desempenho de meus controladores de domínio ao implantar esse recurso?**
 
@@ -114,15 +120,15 @@ Em resumo, a implantação do serviço de Agente de Controlador de Domínio de P
 
 Nº
 
-**P: Por que é Azure ainda rejeitar senhas fracas, embora eu configurei a política para estar no modo de auditoria?**
+**P: Por que o Azure ainda rejeita senhas fracas, embora tenha configurado a política para estar no modo de auditoria?**
 
-Somente há suporte para o modo de auditoria no ambiente do Active Directory local. Azure é implicitamente sempre no modo "impor" quando ele avalia as senhas.
+O modo de auditoria só tem suporte no ambiente de Active Directory local. O Azure está implicitamente sempre no modo "impor" quando avalia senhas.
 
 ## <a name="additional-content"></a>Conteúdo adicional
 
 Os links a seguir não fazem parte da principal documentação da Proteção de Senha do Azure AD, mas podem ser uma fonte útil de informações adicionais sobre o recurso.
 
-[Proteção por senha do AD do Azure agora está disponível!](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Azure-AD-Password-Protection-is-now-generally-available/ba-p/377487)
+[A proteção de senha do Azure AD já está disponível para o público geral!](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Azure-AD-Password-Protection-is-now-generally-available/ba-p/377487)
 
 [Guia de proteção contra phishing por email – parte 15: Implementar o serviço de proteção de senha do Microsoft Azure AD (para local também!)](https://blogs.technet.microsoft.com/cloudready/2018/10/14/email-phishing-protection-guide-part-15-implement-the-microsoft-azure-ad-password-protection-service-for-on-premises-too/)
 

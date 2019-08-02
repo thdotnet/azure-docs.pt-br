@@ -9,18 +9,17 @@ ms.topic: conceptual
 author: mashamsft
 ms.author: mathoma
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 1d556c82f47868f4ee06694e23092f10029d619d
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: d516dc51a25cbef92ff9fa22012773507b528a99
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67839845"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68569621"
 ---
-# <a name="accelerated-database-recovery"></a>Recuperação acelerada de banco de dados
+# <a name="accelerated-database-recovery"></a>Recuperação de banco de dados acelerada
 
-**ADR (Accelerated Database Recovery - Recuperação Acelerada de Banco de Dados)** é um novo recurso de mecanismo de banco de dados SQL que melhora bastante a disponibilidade do banco de dados, especialmente na presença de transações de longa duração, reprojetando o processo de recuperação do mecanismo de banco de dados SQL. ADR está atualmente disponível para bancos de dados individuais e bancos de dados em pool no banco de dados SQL e bancos de dados no Azure SQL Data Warehouse (atualmente em visualização pública). Principais benefícios da ADR são:
+**ADR (Accelerated Database Recovery - Recuperação Acelerada de Banco de Dados)** é um novo recurso de mecanismo de banco de dados SQL que melhora bastante a disponibilidade do banco de dados, especialmente na presença de transações de longa duração, reprojetando o processo de recuperação do mecanismo de banco de dados SQL. O ADR está disponível no momento para bancos de dados individuais e bancos de dados em pool no banco de dados SQL do Azure, e os bancos de dados no Azure SQL Data Warehouse (atualmente em visualização pública). Principais benefícios da ADR são:
 
 - **Recuperação de banco de dados rápida e consistente**
 
@@ -42,11 +41,11 @@ A recuperação do banco de dados no SQL Server segue o modelo de recuperação 
 
 - **Fase de análise**
 
-  Encaminhar a verificação do log de transações desde o início do último ponto de verificação bem-sucedida (ou a página suja mais antiga LSN) até o final de para determinar o estado de cada transação no momento que do SQL Server é interrompido.
+  Encaminhe a verificação do log de transações desde o início do último ponto de verificação bem-sucedido (ou o LSN de página sujo mais antigo) até o final, para determinar o estado de cada transação no momento SQL Server parado.
 
 - **Fase refazer**
 
-  Encaminhar verificação do log de transação da transação mais antiga não confirmada até o fim, para trazer o banco de dados para o estado em que estava no momento da falha ao refazer todas as operações confirmadas.
+  Encaminhe a varredura do log de transações da transação não confirmada mais antiga até o fim, para colocar o banco de dados no estado em que estava no momento da falha, refazendo todas as operações confirmadas.
 
 - **Fase Desfazer**
 
@@ -56,16 +55,16 @@ Com base nesse design, o tempo que o mecanismo do banco de dados SQL leva para r
 
 Além disso, o cancelamento / reversão de uma transação grande com base nesse design também pode levar um longo tempo, já que está usando a mesma fase de recuperação Desfazer, conforme descrito acima.
 
-Além disso, o mecanismo de banco de dados SQL não pode truncar o log de transações quando há transações de execução longa, porque seus registros de log correspondentes são necessários para os processos de recuperação e reversão. Como resultado desse design do mecanismo de banco de dados SQL, alguns clientes enfrentam o mesmo problema que o tamanho do log de transação ficar muito grande e consome enormes quantidades de espaço em disco.
+Além disso, o mecanismo de banco de dados SQL não pode truncar o log de transações quando há transações de execução longa, porque seus registros de log correspondentes são necessários para os processos de recuperação e reversão. Como resultado desse design do mecanismo de banco de dados SQL, alguns clientes enfrentam o problema de que o tamanho do log de transações cresce muito grande e consome enormes quantidades de espaço na unidade.
 
 ## <a name="the-accelerated-database-recovery-process"></a>O processo de recuperação de banco de dados acelerada
 
 O ADR soluciona os problemas acima, redesenhando completamente o processo de recuperação do mecanismo de banco de dados SQL para:
 
-- Torne constante o tempo / instantâneo, evitando ter que escanear o log de / para o início da transação ativa mais antiga. Com o ADR, só é processado no log de transações do último ponto de verificação bem-sucedida (ou número de sequência de Log (LSN) da página suja mais antiga). Como resultado, o tempo de recuperação não é afetado por longa execução de transações.
+- Torne constante o tempo / instantâneo, evitando ter que escanear o log de / para o início da transação ativa mais antiga. Com ADR, o log de transações só é processado a partir do último ponto de verificação bem-sucedido (ou LSN (número de sequência de log) de página sujo mais antigo). Como resultado, o tempo de recuperação não é afetado por longa execução de transações.
 - Minimize o espaço de log de transações necessário, pois não há mais necessidade de processar o log para toda a transação. Como resultado, o log de transações pode ser truncado de forma agressiva à medida que os pontos de verificação e backups ocorrem.
 
-Em um alto nível, o ADR atinge recuperação rápida de banco de dados pelo controle de versão de todas as modificações de banco de dados físico e somente desfazer operações lógicas, que são limitadas e podem ser desfeitas quase instantaneamente. Qualquer transação que estava ativa no momento de uma falha é marcada como abortada e, portanto, qualquer versão gerada por essas transações pode ser ignorada por consultas de usuários simultâneas.
+Em um nível alto, ADR alcança a recuperação rápida do banco de dados ao realizar o controle de versão de todas as modificações físicas do banco de dados e desfazer apenas operações lógicas, que são limitadas e podem ser desfeitas quase instantaneamente. Qualquer transação que estava ativa no momento de uma falha é marcada como abortada e, portanto, qualquer versão gerada por essas transações pode ser ignorada por consultas de usuários simultâneas.
 
 O processo de recuperação do ADR tem as mesmas três fases que o processo de recuperação atual. Como essas fases operam com ADR é ilustrado no diagrama a seguir e explicado com mais detalhes seguindo o diagrama.
 
@@ -73,7 +72,7 @@ O processo de recuperação do ADR tem as mesmas três fases que o processo de r
 
 - **Fase de análise**
 
-  O processo permanece o mesmo que hoje com a adição de reconstrução sLog copiando os registros de log de operações sem controle de versão.
+  O processo permanece o mesmo que hoje com a adição da recriação de sLog e a cópia de registros de log para operações sem controle de versão.
   
 - fase **Refazer**
 
@@ -100,7 +99,7 @@ Os quatro componentes principais da ADR são:
 
 - **Lógica reverter**
 
-  Reversão lógica é o processo assíncrono responsável por executar desfazer baseada em versão de nível de linha – fornecendo a reversão de transação de instantâneo e desfazer para todas as operações de controle de versão.
+  A reversão lógica é o processo assíncrono responsável por executar desfazer baseado em versão de linha, fornecendo reversão de transação instantânea e desfazer para todas as operações com controle de versão.
 
   - Mantém o controle de todas as transações anuladas
   - Executa a reversão usando o PVS para todas as transações do usuário

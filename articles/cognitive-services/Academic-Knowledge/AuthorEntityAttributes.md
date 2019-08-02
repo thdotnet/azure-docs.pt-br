@@ -10,29 +10,30 @@ ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alch
-ms.openlocfilehash: d4b33c06ab023023aadf403cf0ef0b08c2bafc5f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ROBOTS: NOINDEX
+ms.openlocfilehash: e63e9d3f8f17a2473caf3d31b83e318ddb132b43
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60609755"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68705099"
 ---
 # <a name="author-entity"></a>Entidade Autor
 <sub> *Os atributos a seguir são específicos da entidade de autor. (Ty = '1') </sub>
 
-NOME    |DESCRIÇÃO                            |Type       | Operações
+Nome    |Descrição                            |Tipo       | Operações
 ------- | ------------------------------------- | --------- | ----------------------------
-ID      |ID da Entidade                              |Int64      |É igual a
-AuN     |Nome normalizado do autor                 |Cadeia de caracteres     |É igual a
-DAuN    |Nome de exibição do autor                    |Cadeia de caracteres     |Nenhum
-CC      |Contagem total de citações do autor            |Int32      |Nenhum  
-ECC     |Contagem total estimada de citações do autor  |Int32      |Nenhum
-E       |Metadados estendidos (consulte a tabela "Atributos Meta Estendidos")  |Cadeia de caracteres     |Nenhum  
+Id      |ID da Entidade                              |Int64      |Igual a
+AuN     |Nome normalizado do autor                 |Cadeia     |Igual a
+DAuN    |Nome de exibição do autor                    |Cadeia     |nenhum
+CC      |Contagem total de citações do autor            |Int32      |nenhum  
+ECC     |Contagem total estimada de citações do autor  |Int32      |nenhum
+E       |Metadados estendidos (consulte a tabela "Atributos Meta Estendidos")  |Cadeia     |nenhum  
 
 
 ## <a name="extended-metadata-attributes"></a>Atributos de metadados estendidos ##
 
-NOME    | DESCRIÇÃO               
+Nome    | Descrição               
 --------|---------------------------    
 LKA.Afn     | nome de exibição de afiliação associado ao autor  
 LKA.AfId        | ID da entidade de afiliação associada ao autor

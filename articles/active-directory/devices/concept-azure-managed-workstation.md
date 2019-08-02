@@ -1,6 +1,6 @@
 ---
-title: Entender as estações de trabalho de seguras e gerenciado do Azure - Active Directory do Azure
-description: Saiba mais sobre as estações de trabalho seguras e gerenciada pelo Azure e entenda por que eles são importantes.
+title: Entenda as estações de trabalho seguras e gerenciadas pelo Azure-Azure Active Directory
+description: Saiba mais sobre estações de trabalho seguras e gerenciadas pelo Azure e entenda por que elas são importantes.
 services: active-directory
 ms.service: active-directory
 ms.subservice: devices
@@ -11,105 +11,105 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: frasim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 02a6ddef294c4872f2d7e50e8940ecbb4b4b7bc4
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
+ms.openlocfilehash: ba53049d580f3f90499dc0471b9ac981f4a374f2
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67491585"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68562162"
 ---
-# <a name="understand-secure-azure-managed-workstations"></a>Entender as estações de trabalho seguras e gerenciada pelo Azure
+# <a name="understand-secure-azure-managed-workstations"></a>Entenda as estações de trabalho seguras e gerenciadas pelo Azure
 
-Estações de trabalho segura e isoladas são extremamente importantes para a segurança das funções confidenciais, como administradores, desenvolvedores e operadores essenciais do serviço. Se a segurança da estação de trabalho de cliente estiver comprometida, muitos controles de segurança e garantias podem falhar ou de vigorar.
+Estações de trabalho seguras e isoladas são extremamente importantes para a segurança de funções confidenciais, como administradores, desenvolvedores e operadores de serviço críticos. Se a segurança da estação de trabalho do cliente estiver comprometida, muitos controles de segurança e garantias poderão falhar ou ficar ineficazes.
 
-Este documento explica o que você precisa para a criação de uma estação de trabalho segura, geralmente conhecida como uma estação de trabalho de acesso privilegiado (PAW). O artigo também contém instruções detalhadas sobre como configurar os controles de segurança iniciais. Este guia descreve como baseado em nuvem tecnologia podem gerenciar o serviço. Ele depende dos recursos de segurança que foram introduzidos no Windows 10RS5, Microsoft Defender Advanced Threat ATP (proteção), Active Directory do Azure e Intune.
+Este documento explica o que você precisa para criar uma estação de trabalho segura, geralmente conhecida como uma estação de trabalho de acesso privilegiado (PAW). O artigo também contém instruções detalhadas para configurar os controles de segurança iniciais. Este guia descreve como a tecnologia baseada em nuvem pode gerenciar o serviço. Ele se baseia em recursos de segurança que foram introduzidos no Windows 10RS5, a ATP (proteção avançada contra ameaças) da Microsoft defender, o Azure Active Directory e o Intune.
 
 > [!NOTE]
-> Este artigo explica o conceito de uma estação de trabalho segura e sua importância. Se você já estiver familiarizado com o conceito e quiser ignorar a implantação, visite [implantar uma estação de trabalho segura](https://docs.microsoft.com/azure/active-directory/devices/howto-azure-managed-workstation).
+> Este artigo explica o conceito de uma estação de trabalho segura e sua importância. Se você já estiver familiarizado com o conceito e quiser pular para a implantação, visite [implantar uma estação de trabalho segura](howto-azure-managed-workstation.md).
 
-## <a name="why-secure-workstation-access-is-important"></a>Por que o acesso de estação de trabalho segura é importante
+## <a name="why-secure-workstation-access-is-important"></a>Por que o acesso seguro à estação de trabalho é importante
 
-A rápida adoção de serviços de nuvem e a capacidade de trabalhar em qualquer lugar criou um novo método de exploração. Explorando os controles de segurança fraca em dispositivos em que os administradores trabalham, os invasores podem ganhar acesso a recursos privilegiados.
+A rápida adoção dos serviços de nuvem e a capacidade de trabalhar de qualquer lugar criou um novo método de exploração. Explorando controles de segurança fracos em dispositivos em que os administradores trabalham, os invasores podem obter acesso a recursos privilegiados.
 
-Uso indevido de privilégios e ataques de cadeia de suprimentos estão entre os principais cinco métodos usados pelos invasores para organizações de violação. Eles também são o segundo mais comumente detectada táticas em incidentes relatados em 2018 de acordo com o [relatório de ameaças da Verizon](https://enterprise.verizon.com/resources/reports/dbir/)e o [Security Intelligence Report](https://aka.ms/sir).
+Os ataques de uso indevido privilegiado e de cadeia de suprimentos estão entre os cinco principais métodos que os invasores usam para violar as organizações. Eles também são a segunda tática mais comumente detectada em incidentes relatados em 2018 de acordo com o [relatório de ameaças Verizon](https://enterprise.verizon.com/resources/reports/dbir/)e o [relatório de inteligência de segurança](https://aka.ms/sir).
 
-A maioria dos invasores siga estas etapas:
+A maioria dos invasores segue estas etapas:
 
-1. Reconhecimento de encontrar uma maneira, geralmente específico a um setor.
-1. Análise para coletar informações e identificar a melhor maneira para invadir uma estação de trabalho que é percebida como um valor baixo.
-1. A persistência para procurar um meio mover [lateralmente](https://en.wikipedia.org/wiki/Network_Lateral_Movement).
-1. Extração de dados confidenciais e sigilosas.
+1. Reconhecimento para encontrar uma maneira no, geralmente específico de um setor.
+1. Análise para coletar informações e identificar a melhor maneira de invadirr uma estação de trabalho percebida como valor baixo.
+1. Persistência para procurar um meio para mover-se [mais tarde](https://en.wikipedia.org/wiki/Network_Lateral_Movement).
+1. Vazamento de dados confidenciais.
 
-Durante o reconhecimento, os invasores frequentemente invadir dispositivos que parecem baixo risco ou subestimado. Eles usam esses dispositivos vulneráveis para localizar uma oportunidade para a movimentação lateral e para localizar dispositivos e usuários administrativos. Depois que elas acessem as funções de usuário com privilégios, os invasores identificam se infiltrar e com êxito os dados de alto valor que os dados.
+Durante o reconhecimento, os invasores frequentemente invadir dispositivos que parecem baixo risco ou undervalued. Eles usam esses dispositivos vulneráveis para localizar uma oportunidade de movimento lateral e para localizar usuários e dispositivos administrativos. Depois de obter acesso a funções de usuário privilegiadas, os invasores identificam dados de alto valor e exfiltrar com êxito esses dados.
 
 ![Padrão de comprometimento típico](./media/concept-azure-managed-workstation/typical-timeline.png)
 
-Este documento descreve uma solução que pode ajudar a proteger seus dispositivos de computação contra esses ataques laterais. A solução isola o gerenciamento e os serviços de dispositivos de produtividade menos valiosos, interromper a cadeia antes do dispositivo que tem acesso aos recursos de nuvem confidenciais pode invadido. A solução usa serviços nativos do Azure que fazem parte da pilha do Microsoft 365 Enterprise:
+Este documento descreve uma solução que pode ajudar a proteger seus dispositivos de computação contra tais ataques laterais. A solução isola o gerenciamento e os serviços de dispositivos de produtividade menos valiosos, dividindo a cadeia antes que o dispositivo que tem acesso a recursos de nuvem confidenciais possa ser infiltrated. A solução usa serviços nativos do Azure que fazem parte da pilha de Microsoft 365 Enterprise:
 
-* Intune para gerenciamento de dispositivo e uma lista segura de aplicativos e URLs
-* AutoPilot para atualização, implantação e configuração do dispositivo
-* Azure AD para gerenciamento de usuário, acesso condicional e autenticação multifator
-* Windows 10 (versão atual) para a experiência de usuário e de atestado de integridade do dispositivo
-* Defender ATP para proteção de ponto de extremidade gerenciados na nuvem, detecção e resposta
-* Acesso aos recursos do Azure AD PIM para gerenciar a autorização e just-in-time (JIT) privilegiado
+* Intune para gerenciamento de dispositivos e uma lista segura de aplicativos e URLs
+* Piloto automático para instalação, implantação e atualização do dispositivo
+* Azure AD para gerenciamento de usuários, acesso condicional e autenticação multifator
+* Windows 10 (versão atual) para o atestado de integridade do dispositivo e a experiência do usuário
+* Defender ATP para proteção, detecção e resposta de ponto de extremidade gerenciado pela nuvem
+* PIM do Azure AD para gerenciar autorização e acesso privilegiado JIT (just-in-time) a recursos
 
 ## <a name="who-benefits-from-a-secure-workstation"></a>Quem se beneficia de uma estação de trabalho segura?
 
-Todos os operadores e os usuários se beneficiam ao usar uma estação de trabalho segura. Um invasor que compromete um PC ou dispositivo pode representar armazenado em cache todas as contas. Quando conectado ao dispositivo, eles também podem usar as credenciais e tokens. Esse risco torna importante para proteger os dispositivos que são usados para funções privilegiadas, incluindo direitos administrativos. Dispositivos com as contas privilegiadas são alvos de movimento lateral e ataques de elevação de privilégio. Essas contas podem ser usadas para uma variedade de ativos, como:
+Todos os usuários e operadores se beneficiam ao usar uma estação de trabalho segura. Um invasor que compromete um PC ou dispositivo pode representar todas as contas armazenadas em cache. Quando conectado ao dispositivo, eles também podem usar credenciais e tokens. Esse risco torna importante proteger os dispositivos que são usados para funções com privilégios, incluindo direitos administrativos. Dispositivos com contas privilegiadas são alvos para ataques de movimentação lateral e de elevação de privilégio. Essas contas podem ser usadas para uma variedade de ativos, como:
 
-* Administrador de sistemas baseados em nuvem ou local
-* Estação de trabalho do desenvolvedor para sistemas críticos
+* Administrador de sistemas locais ou baseados em nuvem
+* Estação de trabalho de desenvolvedor para sistemas críticos
 * Administrador da conta de mídia social com alta exposição
 * Estação de trabalho altamente confidencial, como um terminal de pagamento SWIFT
-* Segredos de comerciais de tratamento de estação de trabalho
+* Estação de trabalho lidando com segredos comerciais
 
-Para reduzir o risco, você deve implementar controles de segurança com privilégios elevados para estações de trabalho com privilégios que fazem usam dessas contas. Para obter mais informações, consulte o [guia de implantação de recursos do Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-deployment-checklist-p2), [roteiro do Office 365](https://aka.ms/o365secroadmap), e [roteiro da proteção de acesso privilegiado](https://aka.ms/sparoadmap)).
+Para reduzir o risco, você deve implementar controles de segurança elevados para estações de trabalho privilegiadas que fazem uso dessas contas. Para obter mais informações, consulte o [Guia de implantação de recurso Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-deployment-checklist-p2), o [roteiro do Office 365](https://aka.ms/o365secroadmap)e a [proteção do roteiro de acesso privilegiado](https://aka.ms/sparoadmap)).
 
 ## <a name="why-use-dedicated-workstations"></a>Por que usar estações de trabalho dedicadas?
 
-Embora seja possível adicionar segurança para um dispositivo existente, é melhor começar com uma base segura. Para colocar a sua organização na melhor posição para manter um nível de segurança alta, comece com um dispositivo que você sabe que é seguro e implementar um conjunto de controles de segurança conhecidas.
+Embora seja possível adicionar segurança a um dispositivo existente, é melhor começar com uma base segura. Para colocar sua organização na melhor posição para manter um alto nível de segurança, comece com um dispositivo que você sabe que é seguro e implemente um conjunto de controles de segurança conhecidos.
 
-Um número crescente de vetores de ataque por meio de email e navegação na web fica cada vez mais difícil certificar-se de que um dispositivo pode ser confiável. Este guia pressupõe que uma estação de trabalho dedicada é isolada de email, navegação e produtividade padrão. Remoção de produtividade, navegação na web e email de um dispositivo pode ter um impacto negativo na produtividade. No entanto, essa proteção é geralmente aceitável para cenários em que as tarefas de trabalho não exigem explicitamente e risco de um incidente de segurança é alto.
+Um número crescente de vetores de ataque por email e navegação na Web torna cada vez mais difícil ter certeza de que um dispositivo pode ser confiável. Este guia pressupõe que uma estação de trabalho dedicada seja isolada da produtividade, navegação e email padrão. A remoção de produtividade, navegação na Web e email de um dispositivo pode ter um impacto negativo na produtividade. No entanto, essa proteção normalmente é aceitável para cenários em que as tarefas de trabalho não exigem explicitamente isso e o risco de um incidente de segurança é alto.
 
 > [!NOTE]
-> Navegação na Web aqui refere-se ao acesso geral a sites arbitrários que podem ser uma atividade de alto risco. Essa navegação é distintamente diferente do uso de um navegador da web para acessar um pequeno número de sites administrativos bem conhecidos para serviços como o Azure, Office 365, outros provedores de nuvem e aplicativos SaaS.
+> A navegação na Web aqui refere-se ao acesso geral a sites arbitrários que podem ser uma atividade de alto risco. Essa navegação é distintamente diferente de usar um navegador da Web para acessar um pequeno número de sites administrativos conhecidos para serviços como o Azure, o Office 365, outros provedores de nuvem e aplicativos SaaS.
 
-Estratégias de contenção reforçar a segurança, aumentando o número e tipo de controles que deter a um invasor obtenha acesso a ativos restritos. O modelo descrito neste artigo usa um design de privilégio em camadas e restringe os privilégios administrativos para dispositivos específicos.
+As estratégias de confinamento fortalecem a segurança aumentando o número e o tipo de controles que importam um invasor de obter ativos confidenciais de acesso. O modelo descrito neste artigo usa um design de privilégio em camadas e restringe privilégios administrativos a dispositivos específicos.
 
-## <a name="supply-chain-management"></a>Gerenciamento da cadeia de fornecedores
+## <a name="supply-chain-management"></a>Gerenciamento de cadeia de fornecedores
 
-Essencial para uma estação de trabalho protegida é uma solução de cadeia de fornecimento em que você usa uma estação de trabalho confiável chamada 'raiz de confiança'. Para esta solução usa a raiz de confiança [Autopilot Microsoft](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot) tecnologia. Para proteger uma estação de trabalho, piloto automático permite que você utilize dispositivos Microsoft otimização de OEM do Windows 10. Esses dispositivos são fornecidos em um estado bom conhecido do fabricante. Em vez de refazer a imagem de um dispositivo potencialmente não seguros, piloto automático pode transformar um dispositivo do Windows em um estado "pronto para os negócios". Aplica as configurações e políticas, instala aplicativos e até mesmo altera a edição do Windows 10. Por exemplo, piloto automático pode alterar instalação do Windows de um dispositivo do Windows 10 Pro para Windows 10 Enterprise para que ele possa usar recursos avançados.
+Essencial para uma estação de trabalho segura é uma solução de cadeia de fornecedores em que você usa uma estação de trabalho confiável chamada "raiz de confiança". Para essa solução, a raiz de confiança usa a tecnologia [Microsoft AutoPilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-autopilot) . Para proteger uma estação de trabalho, o Autopilot permite aproveitar os dispositivos Windows 10 com otimização de OEM da Microsoft. Esses dispositivos vêm em um estado válido conhecido do fabricante. Em vez de refazer a imagem de um dispositivo potencialmente inseguro, o piloto automático pode transformar um dispositivo Windows em um estado "pronto para o negócio". Ele aplica configurações e políticas, instala aplicativos e até mesmo altera a edição do Windows 10. Por exemplo, o piloto automático pode alterar a instalação do Windows de um dispositivo do Windows 10 pro para o Windows 10 Enterprise para que ele possa usar recursos avançados.
 
-![Níveis de estação de trabalho segura](./media/concept-azure-managed-workstation/supplychain.png)
+![Proteger níveis de estação de trabalho](./media/concept-azure-managed-workstation/supplychain.png)
 
-## <a name="device-roles-and-profiles"></a>Perfis e as funções do dispositivo
+## <a name="device-roles-and-profiles"></a>Perfis e funções de dispositivo
 
-Este guia faz referência a vários perfis de segurança e as funções que podem ajudá-lo a criarem soluções mais seguras para usuários, desenvolvedores e profissionais de TI. Esses perfis equilibrar a usabilidade e riscos comuns que os usuários podem se beneficiar de uma estação de trabalho avançada ou segura. As configurações de configurações fornecidas aqui são baseadas nos padrões da indústria aceito. Este guia mostra como proteger o Windows 10 e reduzir os riscos associados ao comprometimento de dispositivo ou usuário. Ele faz isso usando a política e tecnologia para ajudar a gerenciar riscos e recursos de segurança.
-![Níveis de estação de trabalho segura](./media/concept-azure-managed-workstation/seccon-levels.png)
+Esta orientação faz referência a vários perfis de segurança e funções que podem ajudá-lo a criar soluções mais seguras para usuários, desenvolvedores e pessoal de ti. Esses perfis equilibram a usabilidade e os riscos para usuários comuns que podem se beneficiar de uma estação de trabalho avançada ou segura. As configurações fornecidas aqui são baseadas nos padrões aceitos do setor. Esta orientação mostra como proteger o Windows 10 e reduzir os riscos associados ao comprometimento do dispositivo ou do usuário. Ele faz isso usando a política e a tecnologia para ajudar a gerenciar recursos e riscos de segurança.
+![Proteger níveis de estação de trabalho](./media/concept-azure-managed-workstation/seccon-levels.png)
 
-* **Baixa segurança** – uma estação de trabalho padrão, gerenciada fornece um bom ponto de partida para a maioria dos negócios pequenos e domésticos usa. Esses dispositivos são registrados no Azure AD e gerenciados com o Intune. Esse perfil permite que os usuários executem todos os aplicativos e navegue até qualquer site. Como uma solução anti-malware [Microsoft Defender](https://www.microsoft.com/windows/comprehensive-security) deve ser habilitado.
+* **Baixa segurança** – uma estação de trabalho gerenciada e padrão fornece um bom ponto de partida para a maioria dos negócios de uso doméstico e de pequena empresa. Esses dispositivos são registrados no Azure AD e gerenciados com o Intune. Esse perfil permite que os usuários executem qualquer aplicativo e naveguem por qualquer site. Uma solução antimalware como [o Microsoft defender](https://www.microsoft.com/windows/comprehensive-security) deve ser habilitada.
 
-* **Segurança aprimorada** – essa solução no nível de entrada, protegida, é bom para os usuários domésticos, usuários de pequenas empresas e desenvolvedores gerais.
+* **Segurança aprimorada** – essa solução de nível de entrada protegida é válida para usuários domésticos, pequenas empresas e desenvolvedores gerais.
 
-   A estação de trabalho avançada é uma maneira baseada em política para aumentar a segurança do perfil de baixa segurança. Ele fornece um meio seguro para trabalhar com dados do cliente, além de usar as ferramentas de produtividade, como email e navegação na web. Você pode usar o Intune e políticas de auditoria para monitorar uma estação de trabalho aprimorada para o uso de comportamento e o perfil do usuário. Você implanta o perfil de estação de trabalho avançada com o script do Windows 10 (1809) e ela tira proveito da proteção de malware avançado usando [proteção avançada de ameaças (ATP)](https://docs.microsoft.com/office365/securitycompliance/office-365-atp).
+   A estação de trabalho avançada é uma maneira baseada em políticas para aumentar a segurança do perfil de baixa segurança. Ele fornece um meio seguro para trabalhar com dados do cliente e também usar ferramentas de produtividade como email e navegação na Web. Você pode usar políticas de auditoria e o Intune para monitorar uma estação de trabalho aprimorada para o uso de perfil e o comportamento do usuário. Você implanta o perfil de estação de trabalho aprimorado com o script Windows10 (1809) e aproveita a proteção avançada contra malware usando a [ATP (proteção avançada contra ameaças)](https://docs.microsoft.com/office365/securitycompliance/office-365-atp).
 
-* **Alta segurança** – o meio mais eficaz para reduzir a superfície de ataque de uma estação de trabalho é remover a capacidade de self-administer a estação de trabalho. Remover direitos administrativos locais é uma etapa que aprimora a segurança, mas ele pode afetar a produtividade se implementado incorretamente. O perfil de segurança alta baseia-se o perfil de segurança aprimorada com uma alteração considerável: a remoção de administrador local. Este perfil foi criado para usuários de alto perfil: executivos, folha de pagamento e dados confidenciais a usuários, os aprovadores para serviços e processos.
+* **Alta segurança** – o meio mais eficaz de reduzir a superfície de ataque de uma estação de trabalho é remover a capacidade de autoadministrar a estação de trabalho. A remoção de direitos administrativos locais é uma etapa que melhora a segurança, mas pode afetar a produtividade se implementada incorretamente. O perfil de alta segurança se baseia no perfil de segurança aprimorado com uma alteração considerável: a remoção do administrador local. Este perfil foi projetado para usuários de perfil alto: executivos, folha de pagamento e usuários de dados confidenciais, Aprovadores para serviços e processos.
 
-   O usuário de alta segurança exige um ambiente mais controlado enquanto ainda consegue fazer atividades, como email e navegação em uma experiência simples de usar. Os usuários esperam recursos como cookies, Favoritos e outros atalhos para trabalhar. No entanto, esses usuários podem não exigir a capacidade de modificar ou depurar o seu dispositivo. Eles também não precisam instalar os drivers. O perfil de segurança alta é implantado usando a segurança de alta - script do Windows 10 (1809).
+   O usuário de alta segurança exige um ambiente mais controlado e, ao mesmo tempo, pode fazer atividades como email e navegação na Web em uma experiência simples de usar. Os usuários esperam que recursos como cookies, favoritos e outros atalhos funcionem. No entanto, esses usuários podem não exigir a capacidade de modificar ou depurar seus dispositivos. Eles também não precisam instalar drivers. O perfil de alta segurança é implantado usando o script de alta segurança-Windows10 (1809).
 
-* **Especializado** – alvo dos invasores desenvolvedores e administradores de TI porque eles podem alterar sistemas de interesse para os invasores. A estação de trabalho especializada expande as políticas da estação de trabalho de alta segurança ao gerenciar aplicativos locais e limitando os sites. Ele também restringe os recursos de produtividade de alto risco, como Java, ActiveX, plug-ins de navegador e outros controles do Windows. Você implanta esse perfil com DeviceConfiguration_NCSC - script SecurityBaseline Windows10 (1803).
+* **Especializado** – os invasores visam desenvolvedores e administradores de ti porque podem alterar sistemas de interesse para os invasores. A estação de trabalho especializada expande as políticas da estação de trabalho de alta segurança Gerenciando aplicativos locais e limitando sites. Ele também restringe os recursos de produtividade de alto risco, como ActiveX, Java, plug-ins de navegador e outros controles do Windows. Você implanta esse perfil com o script SecurityBaseline DeviceConfiguration_NCSC-Windows10 (1803).
 
-* **Protegido** – um invasor que compromete a uma conta administrativa pode causar danos de negócio significativas por roubo de dados, a alteração de dados ou a interrupção do serviço. Nesse estado protegido, a estação de trabalho permite que todos os controles de segurança e políticas que restringem o controle direto de gerenciamento de aplicativo local. Uma estação de trabalho protegida não tem nenhuma ferramenta de produtividade portanto, o dispositivo mais difíceis de se comprometer. Ele bloqueia o vetor mais comuns de ataques de phishing: email e mídia social.  A estação de trabalho protegida pode ser implantada com a estação de trabalho segura - script SecurityBaseline Windows10 (1809).
+* **Protegido** – um invasor que compromete uma conta administrativa pode causar danos significativos nos negócios por roubo de dados, alteração de dados ou interrupção do serviço. Nesse estado protegido, a estação de trabalho habilita todos os controles de segurança e políticas que restringem o controle direto do gerenciamento de aplicativos locais. Uma estação de trabalho protegida não tem ferramentas de produtividade para que o dispositivo seja mais difícil de comprometer. Ele bloqueia o vetor mais comum para ataques de phishing: email e mídia social.  A estação de trabalho protegida pode ser implantada com o script Secure Workstation-Windows10 (1809) SecurityBaseline.
 
    ![Estação de trabalho protegida](./media/concept-azure-managed-workstation/secure-workstation.png)
 
-   Uma estação de trabalho segura fornece ao administrador uma com uma estação de trabalho protegida que tem controle de aplicativo não criptografado e a proteção do aplicativo. A estação de trabalho usa o credential guard, o device guard e exploit guard para proteger o host de comportamentos mal-intencionados. Todos os discos locais também são criptografados com BitLocker.
+   Uma estação de trabalho segura fornece um administrador com uma estação de trabalho protegida que tem controle de aplicativo e proteção de aplicativo claros. A estação de trabalho usa o Credential Guard, o Device Guard e o Exploit Guard para proteger o host contra o comportamento mal-intencionado. Todos os discos locais também são criptografados com o BitLocker.
 
-* **Isolado** – esse cenário personalizado, offline representa o final extremo do espectro. Nenhum script de instalação é fornecida para esse caso. Você talvez precise gerenciar uma função críticos de negócios que requer um sistema de operacional herdado sem patch ou sem suporte. Por exemplo, uma linha de produção de alto valor ou um sistema de suporte – vida. Como a segurança é fundamental e os serviços de nuvem não estão disponíveis, você pode gerenciar e atualizar esses computadores manualmente ou com uma arquitetura de floresta do Active Directory isolada, como o Enhanced Security Admin ESAE (ambiente). Nessas circunstâncias, considere a remoção de todo o acesso, exceto as verificações de integridade básicas do Intune e o ATP.
+* **Isolado** – esse cenário personalizado e offline representa a extremidade extrema do espectro. Nenhum script de instalação é fornecido para esse caso. Talvez seja necessário gerenciar uma função comercialmente crítica que exija um sistema operacional herdado sem suporte ou não. Por exemplo, uma linha de produção de valor alto ou um sistema de suporte de vida. Como a segurança é crítica e os serviços de nuvem não estão disponíveis, você pode gerenciar e atualizar esses computadores manualmente ou com uma arquitetura de floresta Active Directory isolada, como o ESAE (ambiente de administrador de segurança avançado). Nessas circunstâncias, considere remover todo o acesso, exceto as verificações básicas de integridade do Intune e do ATP.
 
-  * [Requisito de comunicações de rede do Intune](https://docs.microsoft.com/intune/network-bandwidth-use)
-  * [Requisito de comunicações de rede do ATP](https://docs.microsoft.com/azure-advanced-threat-protection/configure-proxy)
+  * [Requisito de comunicação de rede do Intune](https://docs.microsoft.com/intune/network-bandwidth-use)
+  * [Requisito de comunicações de rede ATP](https://docs.microsoft.com/azure-advanced-threat-protection/configure-proxy)
 
 ## <a name="next-steps"></a>Próximas etapas
 
-[Implantar uma estação de trabalho segura gerenciada pelo Azure](howto-azure-managed-workstation.md).
+[Implante uma estação de trabalho segura gerenciada pelo Azure](howto-azure-managed-workstation.md).

@@ -1,28 +1,26 @@
 ---
 title: Listar recursos de Armazenamento do Azure com a Biblioteca de Cliente de Armazenamento para C++ | Microsoft Docs
 description: Saiba como usar a APIs de listagem na Biblioteca de Cliente de Armazenamento do Microsoft Azure para C++ para enumerar contêineres, blobs, filas, tabelas e entidades.
-services: storage
 author: mhopkins-msft
-ms.service: storage
-ms.topic: article
-ms.date: 01/23/2017
 ms.author: mhopkins
-ms.reviewer: dineshm
+ms.date: 01/23/2017
+ms.service: storage
 ms.subservice: common
-ms.openlocfilehash: edf50b97ff25a67b41bad266df9236145f288409
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.topic: conceptual
+ms.reviewer: dineshm
+ms.openlocfilehash: 3a87e39c9435ba02357b4b655e95e96666242b71
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65146871"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68721911"
 ---
 # <a name="list-azure-storage-resources-in-c"></a>Listar recursos do Armazenamento do Azure no C++
+
 As operações de listagem são fundamentais para muitos cenários de desenvolvimento com o Armazenamento do Azure. Este artigo descreve como enumerar os objetos no Armazenamento do Azure usando a listagem APIs fornecidas na Biblioteca de Cliente do Armazenamento do Microsoft Azure para C++ com mais eficiência.
 
 > [!NOTE]
 > Este guia destina-se à Biblioteca de Cliente do Armazenamento do Azure para C++ versão 2.x, que está disponível via [NuGet](https://www.nuget.org/packages/wastorage) ou [GitHub](https://github.com/Azure/azure-storage-cpp).
-> 
-> 
 
 A Biblioteca de Cliente do Armazenamento fornece uma variedade de métodos de consulta ou lista de objetos no Armazenamento do Azure. Este artigo aborda os seguintes cenários:
 
@@ -35,6 +33,7 @@ A Biblioteca de Cliente do Armazenamento fornece uma variedade de métodos de co
 Cada um desses métodos é mostrado usando sobrecargas diferentes para diferentes cenários.
 
 ## <a name="asynchronous-versus-synchronous"></a>Assíncrono versus síncrono
+
 Como a Biblioteca de Cliente de Armazenamento para C++ é construída sobre a [Biblioteca C++ REST](https://github.com/Microsoft/cpprestsdk), nós oferecemos inerentemente suporte a operações assíncronas usando [pplx::task](https://microsoft.github.io/cpprestsdk/classpplx_1_1task.html). Por exemplo:
 
 ```cpp
@@ -53,13 +52,14 @@ list_blob_item_segment list_blobs_segmented(const continuation_token& token) con
 Se você estiver trabalhando com vários aplicativos ou serviços de threading, recomendamos usar as APIs assíncronas diretamente, em vez de criar um thread para chamar a APIs de sincronização, o que afeta significativamente o desempenho.
 
 ## <a name="segmented-listing"></a>Listagem segmentada
+
 A escala de armazenamento em nuvem requer uma listagem segmentada. Por exemplo, você pode ter em um milhão de blobs em um contêiner de blob do Azure ou mais de um bilhão de entidades em uma Tabela do Azure. Esses não são números teóricos, são casos reais de uso de clientes.
 
 Portanto, é impraticável listar todos os objetos em uma única resposta. Em vez disso, você pode listar objetos usando a paginação. Cada lista de APIs tem uma sobrecarga *segmentada* .
 
 A resposta para uma operação de listagem segmentada inclui:
 
-* <i>_segment</i>, que contém o conjunto de resultados retornado para uma única chamada à API de listagem.
+* *_segment*, que contém o conjunto de resultados retornado para uma única chamada à API de listagem.
 * *continuation_token*, que é passado para a próxima chamada para obter a próxima página de resultados. Quando não há mais nenhum resultados para retornar, o token de continuação é nulo.
 
 Por exemplo, uma chamada típica para listar todos os blobs em um contêiner pode se parecer com o seguinte snippet de código. O código está disponível em nossos [exemplos](https://github.com/Azure/azure-storage-cpp/blob/master/Microsoft.WindowsAzure.Storage/samples/BlobsGettingStarted/Application.cpp):
@@ -102,6 +102,7 @@ Observe também que uma consulta em relação ao Armazenamento de Tabelas do Azu
 O padrão de codificação recomendado para a maioria dos cenários é a listagem segmentada, que fornece o progresso explícito de listagem ou consulta, e o modo como o serviço responde a cada solicitação. Especificamente para aplicativos C++ ou serviços, um controle de baixo nível do progresso da listagem pode ajudar a controlar a memória e o desempenho.
 
 ## <a name="greedy-listing"></a>Listagem greedy
+
 As versões anteriores da Biblioteca de Cliente de Armazenamento do C++ (versões 0.5.0 Preview e anteriores) incluíam APIs de listagem não segmentadas para tabelas e filas, como no exemplo a seguir:
 
 ```cpp
@@ -147,6 +148,7 @@ Ao especificar o parâmetro *max_results* do segmento, você pode equilibrar ent
 Além disso, se você estiver usando APIs de listagem segmentada, mas armazena os dados em uma coleção local em um estilo "greedy", também recomendamos refatorar seu código para manipular o armazenamento de dados em uma coleção local cuidadosamente em grande escala.
 
 ## <a name="lazy-listing"></a>Listagem lenta
+
 Embora a listagem greedy gerasse possíveis problemas, ela é conveniente se não houver muitos objetos no contêiner.
 
 Se também estiver usando SDKs C# ou Oracle Java, você deverá conhecer o modelo de programação Enumerável, que oferece uma listagem do estilo lazy, na qual os dados em um determinado deslocamento são buscados somente se for necessário. Em C++, o modelo com base em iterador também fornece uma abordagem semelhante.
@@ -182,6 +184,7 @@ A listagem lenta, em comparação com a listagem greedy, busca dados somente qua
 As APIs de listagem lenta estão incluídas na Biblioteca de Cliente de Armazenamento do C++ na versão 2.2.0.
 
 ## <a name="conclusion"></a>Conclusão
+
 Neste artigo, discutimos diferentes sobrecargas para listar as APIs de vários objetos na Biblioteca de Cliente de Armazenamento do C++. Resumidamente:
 
 * As APIs assíncronas são altamente recomendadas em vários cenários de threads.
@@ -190,6 +193,7 @@ Neste artigo, discutimos diferentes sobrecargas para listar as APIs de vários o
 * Listagem greedy não é recomendada e foi removida da biblioteca.
 
 ## <a name="next-steps"></a>Próximas etapas
+
 Para obter mais informações sobre o Armazenamento do Azure e a Biblioteca de Cliente para C++, consulte os seguintes recursos.
 
 * [Como usar o Armazenamento de Blobs do C++](../blobs/storage-c-plus-plus-how-to-use-blobs.md)
@@ -198,4 +202,3 @@ Para obter mais informações sobre o Armazenamento do Azure e a Biblioteca de C
 * [Documentação Biblioteca de Cliente de Armazenamento do Azure para API do C++.](https://azure.github.io/azure-storage-cpp/)
 * [Blog da equipe de Armazenamento do Azure](https://blogs.msdn.com/b/windowsazurestorage/)
 * [Documentação do Armazenamento do Azure](https://azure.microsoft.com/documentation/services/storage/)
-

@@ -1,19 +1,18 @@
 ---
 title: Metas de desempenho e escalabilidade do Arquivos do Azure | Microsoft Docs
 description: Saiba mais sobre as metas de desempenho e escalabilidade para Arquivos do Azure, incluindo a capacidade, taxa de solicitação e limites de largura de banda de entrada e saída.
-services: storage
 author: roygara
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 5/5/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 91ec65e17b77ccb3864fce45e30729ff420a48b6
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: ed4aa832c4ec7ccda760d535aa920be8d5c4e2e3
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67542669"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699636"
 ---
 # <a name="azure-files-scalability-and-performance-targets"></a>Metas de desempenho e escalabilidade do Arquivos do Azure
 
@@ -30,30 +29,30 @@ O recurso pai de um compartilhamento de arquivo do Azure é uma conta de armazen
 [!INCLUDE [azure-storage-limits-azure-resource-manager](../../../includes/azure-storage-limits-azure-resource-manager.md)]
 
 > [!Important]  
-> Utilização de conta de armazenamento de finalidade geral de outros serviços de armazenamento afeta seus compartilhamentos de arquivos do Azure em sua conta de armazenamento. Por exemplo, se você atingir a capacidade máxima da conta de armazenamento com o armazenamento de Blobs do Azure, você não poderá criar novos arquivos em seu compartilhamento de arquivo do Azure, mesmo se o compartilhamento de arquivo do Azure estiver abaixo do tamanho máximo do compartilhamento.
+> A utilização da conta de armazenamento de uso geral de outros serviços de armazenamento afeta os compartilhamentos de arquivos do Azure em sua conta de armazenamento. Por exemplo, se você atingir a capacidade máxima da conta de armazenamento com o armazenamento de Blobs do Azure, você não poderá criar novos arquivos em seu compartilhamento de arquivo do Azure, mesmo se o compartilhamento de arquivo do Azure estiver abaixo do tamanho máximo do compartilhamento.
 
 ## <a name="azure-files-scale-targets"></a>Destinos de escala de Arquivos do Azure
 
-Há três categorias de limitações a serem consideradas para arquivos do Azure: contas de armazenamento, compartilhamentos e arquivos.
+Há três categorias de limitações a serem consideradas para os arquivos do Azure: contas de armazenamento, compartilhamentos e arquivos.
 
-Por exemplo:  Com compartilhamentos de arquivos do premium, uma cota única pode alcançar a 100.000 IOPS e um único arquivo pode ser dimensionada até 5.000 IOPS. Portanto, se você tiver três arquivos em um compartilhamento, o IOPS máximo que você pode obter a partir desse compartilhamento é 15.000.
+Por exemplo: Com compartilhamentos de arquivos premium, um único compartilhamento pode atingir 100.000 IOPS e um único arquivo pode ser dimensionado para até 5.000 IOPS. Portanto, se você tiver três arquivos em um único compartilhamento, o máximo de IOPS que você pode obter desse compartilhamento é 15.000.
 
-### <a name="standard-storage-account-limits"></a>Limites da conta de armazenamento padrão
+### <a name="standard-storage-account-limits"></a>Limites de conta de armazenamento Standard
 
-Consulte a [destinos de escala de conta de armazenamento do Azure](#azure-storage-account-scale-targets) seção para obter esses limites.
+Consulte a seção [destinos de escala da conta de armazenamento do Azure](#azure-storage-account-scale-targets) para esses limites.
 
-### <a name="premium-filestorage-account-limits"></a>Limites de conta FileStorage Premium
+### <a name="premium-filestorage-account-limits"></a>Limites da conta de armazenamento Premium
 
 [!INCLUDE [azure-storage-limits-filestorage](../../../includes/azure-storage-limits-filestorage.md)]
 
 > [!IMPORTANT]
-> Limites da conta de armazenamento se aplicam a todos os compartilhamentos. Expandindo para o máximo de contas FileStorage somente é possível se houver apenas um compartilhamento por conta FileStorage.
+> Os limites da conta de armazenamento são aplicados a todos os compartilhamentos. O dimensionamento até o máximo para contas de armazenamento de filebackup só será atingível se houver apenas um compartilhamento por conta de armazenamento de File.
 
-### <a name="file-share-and-file-scale-targets"></a>Compartilhamento de arquivos e destinos de escala de arquivo
+### <a name="file-share-and-file-scale-targets"></a>Destinos de escala de arquivo e compartilhamento de arquivos
 
 > [!NOTE]
-> Maior que 5 TiB de compartilhamentos de arquivos padrão estão em visualização e possuem certas limitações.
-> Para obter uma lista de limitações e integrar a visualização desses tamanhos maiores de compartilhamento de arquivo, consulte o [compartilhamentos de arquivos padrão](storage-files-planning.md#standard-file-shares) seção do guia de planejamento.
+> Compartilhamentos de arquivos padrão maiores que 5 TiB estão em visualização e têm certas limitações.
+> Para obter uma lista de limitações e integrar a visualização desses tamanhos maiores de compartilhamento de arquivos, consulte a seção compartilhamentos de [arquivos padrão](storage-files-planning.md#standard-file-shares) do guia de planejamento.
 
 [!INCLUDE [storage-files-scale-targets](../../../includes/storage-files-scale-targets.md)]
 
@@ -82,13 +81,13 @@ Para ajudá-lo a planejar a implantação para cada um dos estágios, abaixo sã
 | Memória | 128 GiB |
 | Disco | Cache de discos SAS com RAID 10 com bateria de reserva |
 | Rede | Rede de 1 Gbps |
-| Carga de trabalho | Servidor de arquivos de uso geral|
+| Carga de Trabalho | Servidor de arquivos de uso geral|
 
 | Provisionamento inicial de uso único  |  |
 |-|-|
 | Número de objetos | 25 milhões de objetos |
-| Tamanho do conjunto de dados| ~4.7 TiB |
-| Tamanho médio de arquivo | Cerca de 200 KiB (maior arquivo: 100 GiB) |
+| Tamanho do conjunto de dados| ~ 4,7 TiB |
+| Tamanho médio de arquivo | ~ 200 KiB (maior arquivo: 100 GiB) |
 | Carregue a taxa de transferência | 20 objetos por segundo |
 | Fazer o download do Namespace * | 400 objetos por segundo |
 

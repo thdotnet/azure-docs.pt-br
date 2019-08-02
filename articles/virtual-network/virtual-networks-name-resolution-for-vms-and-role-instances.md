@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 3/25/2019
 ms.author: rohink
-ms.openlocfilehash: e0f3de95cfd4a18294e5e8e2adcf3b52a7487dbb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 64f79b3e72a8655f8d704ffd531d9e34485832b0
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65411350"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570622"
 ---
 # <a name="name-resolution-for-resources-in-azure-virtual-networks"></a>Resolução de nomes para recursos em redes virtuais do Azure
 
@@ -74,7 +74,7 @@ Pontos a serem considerados quando você estiver usando a resolução de nomes f
 * Os nomes de host devem ser compatíveis com DNS. Os nomes devem usar somente 0-9, a-z e '-' e não podem começar ou terminar com um '-'.
 * O tráfego da consulta DNS é restrita a cada VM. Essa limitação não deve afetar a maioria dos aplicativos. Se a limitação da solicitação for observada, certifique-se de que o armazenamento em cache do cliente está habilitado. Para saber mais, veja [Configuração de cliente DNS](#dns-client-configuration).
 * Apenas as VMs dos primeiros 180 serviços de nuvem são registradas para cada rede virtual em um modelo de implantação clássico. Esse limite não se aplica às redes virtuais no Azure Resource Manager.
-* O endereço IP de DNS do Azure é 168.63.129.16. Isso é um endereço IP estático e não será alterado.
+* O endereço IP do DNS do Azure é 168.63.129.16. Esse é um endereço IP estático e não será alterado.
 
 ## <a name="dns-client-configuration"></a>Configuração do cliente DNS
 
@@ -158,7 +158,7 @@ Quando você estiver usando a resolução de nomes fornecida pelo Azure, o proto
 
 Se necessário, você pode determinar o sufixo DNS interno usando o PowerShell ou a API:
 
-* Para redes virtuais nos modelos de implantação do Azure Resource Manager, o sufixo está disponível por meio de [API REST da interface de rede](https://docs.microsoft.com/rest/api/virtualnetwork/networkinterfaces), o [Get-AzNetworkInterface](/powershell/module/az.network/get-aznetworkinterface) cmdlet do PowerShell e o [ show do AZ network nic](/cli/azure/network/nic#az-network-nic-show) comando CLI do Azure.
+* Para redes virtuais em modelos de implantação Azure Resource Manager, o sufixo está disponível por meio da [API REST da interface de rede](https://docs.microsoft.com/rest/api/virtualnetwork/networkinterfaces), do cmdlet [Get-AzNetworkInterface](/powershell/module/az.network/get-aznetworkinterface) do PowerShell e do comando [AZ Network NIC show](/cli/azure/network/nic#az-network-nic-show) CLI do Azure.
 * No caso de modelos implantação clássica, o sufixo está disponível por meio da chamada à [API Obter Implantação](https://msdn.microsoft.com/library/azure/ee460804.aspx) ou do cmdlet [Get-AzureVM -Debug](/powershell/module/servicemanagement/azure/get-azurevm).
 
 Se o encaminhamento de consultas para o Azure não atender às suas necessidades, você deverá fornecer sua própria solução DNS. A solução do DNS precisa:
@@ -192,7 +192,7 @@ Se for necessário realizar a resolução de nomes do seu aplicativo Web criado 
 Quando você estiver usando seus próprios servidores DNS, o Azure fornece a capacidade de especificar vários servidores DNS por rede virtual. Você também pode especificar diversos servidores DNS por adaptador de rede (para o Azure Resource Manager) ou por um serviço de nuvem (para o modelo de implantação clássico). Os servidores DNS especificados para um adaptador de rede ou serviço de nuvem têm precedência sobre aqueles especificados para a rede virtual.
 
 > [!NOTE]
-> As propriedades de conexão de rede, como os IPs de servidor DNS, não devem ser editadas diretamente em máquinas virtuais do Windows. Isso ocorre porque eles podem ser apagados durante a recuperação do serviço quando o adaptador de rede virtual é substituído.
+> As propriedades de conexão de rede, como IPs do servidor DNS, não devem ser editadas diretamente nas VMs. Isso ocorre porque eles podem ser apagados durante a recuperação do serviço quando o adaptador de rede virtual é substituído. Isso se aplica a VMs Windows e Linux.
 >
 >
 

@@ -1,19 +1,18 @@
 ---
 title: Perguntas frequentes sobre o Azure Files| Microsoft Docs
 description: Encontre respostas para perguntas frequentes sobre o Arquivos do Azure.
-services: storage
 author: roygara
 ms.service: storage
 ms.date: 01/02/2019
 ms.author: rogarana
 ms.subservice: files
 ms.topic: conceptual
-ms.openlocfilehash: c32d9954b3c90a5f7e9c5475acdb141f7154cf76
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: 622a033b73ace93e98cfa0d5179002c78ec49b35
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67540351"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68704476"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-files"></a>Perguntas frequentes sobre o Azure Files
 [ Os arquivos do Azure](storage-files-introduction.md) oferecem compartilhamentos de arquivos totalmente gerenciados na nuvem que são acessíveis por meio do {SM} protocolo [de padrão do setor](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Você pode montar compartilhamentos de arquivos do Azure simultaneamente em implantações locais ou na nuvem do Windows, do Linux e do macOS. Também é possível armazenar em cache os compartilhamentos de arquivos do Azure em computadores Windows Server usando a Sincronização de Arquivos do Azure para acesso rápido próximo ao local em que os dados são usados.
@@ -73,10 +72,10 @@ Este artigo responde perguntas frequentes sobre funcionalidades e recursos do se
 
 * <a id="tier-options"></a>
   **Atualmente, quais camadas de armazenamento têm suporte no serviço Arquivos do Azure?**  
-    Os arquivos do Azure dá suporte a duas camadas de armazenamento: standard e premium. Compartilhamentos de arquivos padrão são criados em contas de armazenamento de uso (GPv1 ou de GPv2) e compartilhamentos de arquivos do premium são criados nas contas de armazenamento FileStorage. Saiba mais sobre como criar [compartilhamentos de arquivos padrão](storage-how-to-create-file-share.md) e [compartilhamentos de arquivos do premium](storage-how-to-create-premium-fileshare.md). 
+    Os arquivos do Azure dão suporte a duas camadas de armazenamento: Premium e Standard. Os compartilhamentos de arquivos padrão são criados em contas de armazenamento de uso geral (GPv1 ou GPv2) e os compartilhamentos de arquivos Premium são criados em contas de armazenamento de armazenamento de arquivo. Saiba mais sobre como criar compartilhamentos de [arquivos padrão](storage-how-to-create-file-share.md) e compartilhamentos de [arquivos Premium](storage-how-to-create-premium-fileshare.md). 
     
     > [!NOTE]
-    > Não é possível criar compartilhamentos de arquivos de contas de armazenamento de Blob ou *premium* contas de armazenamento (GPv1 ou de GPv2) de uso geral. Compartilhamentos de arquivos padrão deve criado na *standard* compartilhamentos de arquivos do Azure premium e só devem ser criados no FileStorage apenas para contas de armazenamento de contas de uso geral. *Premium* contas de armazenamento (GPv1 e GPv2) de finalidade geral são blobs de páginas premium somente. 
+    > Você não pode criar compartilhamentos de arquivos do Azure de contas de armazenamento de BLOBs ou contas de armazenamento *Premium* de uso geral (GPv1 ou GPv2). Os compartilhamentos de arquivos padrão do Azure devem ser criados somente em contas de uso geral *padrão* e compartilhamentos de arquivos premium do Azure devem ser criados somente em contas de armazenamento de armazenamento. As contas de armazenamento de uso geral *Premium* (GPv1 e GPv2) são apenas para BLOBs de páginas Premium. 
 
 * <a id="give-us-feedback"></a>
   **Quero muito ver o recurso específico adicionado ao serviço Arquivos do Azure. Você pode adicioná-lo?**  
@@ -145,7 +144,7 @@ Este artigo responde perguntas frequentes sobre funcionalidades e recursos do se
 
 * <a id="afs-os-support"></a>
   **Posso usar a Sincronização de arquivos do Azure com o Windows Server 2008 R2, Linux ou o dispositivo NAS (armazenamento conectado à rede)?**  
-    Atualmente, a sincronização de arquivos do Azure suporta apenas 2019 do Windows Server, Windows Server 2016 e Windows Server 2012 R2. Neste momento, não há outros planos que possamos divulgar, mas gostaríamos de dar suporte a outras plataformas com base na demanda dos clientes. Informe-nos quais plataformas você deseja que tenham suporte no [UserVoice do Arquivos do Azure](https://feedback.azure.com/forums/217298-storage/category/180670-files).
+    Atualmente, Sincronização de Arquivos do Azure dá suporte apenas ao Windows Server 2019, ao Windows Server 2016 e ao Windows Server 2012 R2. Neste momento, não há outros planos que possamos divulgar, mas gostaríamos de dar suporte a outras plataformas com base na demanda dos clientes. Informe-nos quais plataformas você deseja que tenham suporte no [UserVoice do Arquivos do Azure](https://feedback.azure.com/forums/217298-storage/category/180670-files).
 
 * <a id="afs-tiered-files-out-of-endpoint"></a>
   **Por que os arquivos em camadas existem fora o namespace de ponto de extremidade do servidor?**  
@@ -247,14 +246,14 @@ Este artigo responde perguntas frequentes sobre funcionalidades e recursos do se
 ## <a name="on-premises-access"></a>Acesso local
 
 * <a id="port-445-blocked"></a>
-**Monte a meu ISP ou IT bloqueia a porta 445 que está falhando arquivos do Azure. O que devo fazer?**
+**Meu ISP ou bloqueia a porta 445 que está falhando na montagem de arquivos do Azure. O que devo fazer?**
 
-    Você pode aprender sobre [várias maneiras para solucionar esse problema bloqueado a porta 445 aqui](https://docs.microsoft.com/azure/storage/files/storage-troubleshoot-windows-file-connection-problems#cause-1-port-445-is-blocked). Os arquivos do Azure permite apenas conexões usando o SMB 3.0 (com suporte de criptografia) de fora da região ou datacenter. Protocolo SMB 3.0 introduziu muitos recursos de segurança, incluindo a criptografia de canal que é muito segura usar pela internet. No entanto, é possível que a porta 445 foi bloqueado devido a razões históricas de vulnerabilidades encontradas em versões anteriores do SMB. No caso ideal, a porta deve ser bloqueada para somente para tráfego SMB 1.0 e o SMB 1.0 deve ser desligado em todos os clientes.
+    Você pode aprender sobre [várias maneiras de solucionar a porta de solução de bloqueio 445 aqui](https://docs.microsoft.com/azure/storage/files/storage-troubleshoot-windows-file-connection-problems#cause-1-port-445-is-blocked). Os arquivos do Azure só permitem conexões usando SMB 3,0 (com suporte de criptografia) de fora da região ou Datacenter. O protocolo SMB 3,0 introduziu muitos recursos de segurança, incluindo a criptografia de canal, que é muito segura para uso pela Internet. No entanto, é possível que a porta 445 tenha sido bloqueada devido a motivos históricos de vulnerabilidades encontradas em versões SMB inferiores. No caso ideal, a porta deve ser bloqueada apenas para o tráfego SMB 1,0 e o SMB 1,0 deve ser desativado em todos os clientes.
 
 * <a id="expressroute-not-required"></a>
 **Preciso usar o Azure ExpressRoute para me conectar aos Arquivos do Azure ou para usar a Sincronização de arquivos do Azure localmente?**  
 
-    Não. O ExpressRoute não é necessário para acessar um compartilhamento de arquivos do Azure. Se você está montando um compartilhamento de arquivos do Azure diretamente localmente, basta ter a porta 445 (TCP de saída) aberta para acesso à Internet (essa é a porta pela qual o SMB se comunica). Se você está usando a Sincronização de Arquivos do Azure, basta ter a porta 443 (TCP de saída) para acesso HTTPS (não é necessário usar SMB). No entanto, você *pode* usar ExpressRoute com qualquer uma dessas opções de acesso.
+    Nº O ExpressRoute não é necessário para acessar um compartilhamento de arquivos do Azure. Se você está montando um compartilhamento de arquivos do Azure diretamente localmente, basta ter a porta 445 (TCP de saída) aberta para acesso à Internet (essa é a porta pela qual o SMB se comunica). Se você está usando a Sincronização de Arquivos do Azure, basta ter a porta 443 (TCP de saída) para acesso HTTPS (não é necessário usar SMB). No entanto, você *pode* usar ExpressRoute com qualquer uma dessas opções de acesso.
 
 * <a id="mount-locally"></a>
 **Como posso montar o compartilhamento de arquivos do Azure no meu computador local?**  
@@ -276,10 +275,6 @@ Este artigo responde perguntas frequentes sobre funcionalidades e recursos do se
 * <a id="where-are-snapshots-stored"></a>
 **Onde os instantâneos de compartilhamento são armazenados?**  
     Os instantâneos de compartilhamento são armazenados na mesma conta de armazenamento do compartilhamento de arquivos.
-
-* <a id="snapshot-perf-impact"></a>
-**Há qualquer implicações de desempenho para o uso de instantâneos de compartilhamento?**  
-    Os instantâneos de compartilhamento não geram sobrecarga de desempenho.
 
 * <a id="snapshot-consistency"></a>
 **Os instantâneos de compartilhamento são consistentes com o aplicativo?**  
@@ -356,8 +351,8 @@ Este artigo responde perguntas frequentes sobre funcionalidades e recursos do se
     Para obter informações sobre as metas de escalabilidade e desempenho do Arquivos do Azure, consulte [Metas de escalabilidade e desempenho do Arquivos do Azure](storage-files-scale-targets.md).
 
 * <a id="need-larger-share"></a>
-**Quais são os tamanhos estão disponíveis para compartilhamentos de arquivos do Azure?**  
-    Tamanhos de compartilhamento de arquivos do Azure (standard e premium) podem dimensionar até 100 TiB. Tamanhos de compartilhamentos de arquivo Premium até 100 TiB estão disponíveis como uma oferta de GA. Tamanhos de compartilhamentos de arquivo padrão até 5 TiB estão disponíveis como um GA oferecendo, enquanto os tamanhos de até 100 TiB estão em visualização. Consulte a [Onboard para compartilhamentos de arquivos maiores (camada standard)](storage-files-planning.md#onboard-to-larger-file-shares-standard-tier) seção do guia de planejamento para instruções de integração para o maior arquivo compartilha a visualização para a camada standard.
+**Quais tamanhos estão disponíveis para compartilhamentos de arquivos do Azure?**  
+    Os tamanhos de compartilhamento de arquivos do Azure (Premium e Standard) podem ser escalados verticalmente para 100 TiB. Os compartilhamentos de arquivos premium de até 100 TiB estão disponíveis como uma oferta GA. Os tamanhos de compartilhamento de arquivos padrão de até 5 TiB estão disponíveis como uma oferta GA, enquanto os tamanhos de até 100 TiB estão em versão prévia. Consulte a seção [integração a compartilhamentos de arquivos maiores (camada Standard)](storage-files-planning.md#onboard-to-larger-file-shares-standard-tier) do guia de planejamento para obter instruções de integração à versão prévia de compartilhamentos de arquivos maiores para a camada Standard.
 
 * <a id="open-handles-quota"></a>
 **Quantos clientes podem acessar simultaneamente o mesmo arquivo?**    
@@ -386,7 +381,7 @@ Este artigo responde perguntas frequentes sobre funcionalidades e recursos do se
 
 * <a id="nested-shares"></a>
 **Eu posso configurar compartilhamentos aninhados? Em outras palavras, um compartilhamento em um compartilhamento?**  
-    Não. O compartilhamento de arquivos *é* o driver virtual que você pode montar; portanto, não há suporte para compartilhamentos aninhados.
+    Nº O compartilhamento de arquivos *é* o driver virtual que você pode montar; portanto, não há suporte para compartilhamentos aninhados.
 
 * <a id="ibm-mq"></a>
 **Como posso usar os Arquivos do Azure com o IBM MQ?**  

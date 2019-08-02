@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 11/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: aed63e332375be4f8ed939cf162545c9f366f329
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: eb3d5fea68b5b1b6e648943cb3dbaab5857e9e07
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66143473"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68608011"
 ---
 # <a name="customize-the-remote-monitoring-solution-accelerator"></a>Personalizar o acelerador da solução de Monitoramento Remoto
 
@@ -37,7 +37,7 @@ As etapas a seguir descrevem o processo de configurar um ambiente local para o d
     az network nsg rule update --name SSH --nsg-name {your solution name}-nsg --resource-group {your solution name} --access Allow
     ```
 
-    Habilite somente o acesso de SSH durante o desenvolvimento e teste. Se você ativar o SSH, [você deve desativá-lo assim que terminar de usá-lo](../security/azure-security-network-security-best-practices.md#disable-rdpssh-access-to-virtual-machines).
+    Habilite somente o acesso de SSH durante o desenvolvimento e teste. Se você ativar o SSH, [você deve desativá-lo assim que terminar de usá-lo](../security/fundamentals/network-best-practices.md#disable-rdpssh-access-to-virtual-machines).
 
 1. Use o portal do Azure Cloud Shell para encontrar o nome e o endereço IP público da sua máquina virtual. Por exemplo:
 
@@ -73,7 +73,7 @@ As etapas a seguir descrevem o processo de configurar um ambiente local para o d
     npm start
     ```
 
-1. O comando anterior executa a interface do usuário localmente em http:\//localhost:3000 / painel de controle. Você pode editar o código enquanto o site está em execução e vê-lo ser atualizado dinamicamente.
+1. O comando anterior executa a interface do usuário localmente em\/http:/localhost: 3000/Dashboard. Você pode editar o código enquanto o site está em execução e vê-lo ser atualizado dinamicamente.
 
 ## <a name="customize-the-layout"></a>Personalizar o layout
 
@@ -500,7 +500,7 @@ Neste artigo, você aprendeu sobre os recursos disponíveis para ajudá-lo a per
 * [Adicione um serviço personalizado à interface da Web da web do acelerador de solução de monitoramento remoto](iot-accelerators-remote-monitoring-customize-service.md)
 * [Adicione uma grade personalizada à interface da Web da web do acelerador de solução de monitoramento remoto](iot-accelerators-remote-monitoring-customize-grid.md)
 * [Adicionar um desdobrável personalizado à interface de usuário da web do acelerador de solução de monitoramento remoto](iot-accelerators-remote-monitoring-customize-flyout.md)
-* [Adicionar um painel personalizado na interface do usuário web do acelerador de solução do Monitoramento Remoto](iot-accelerators-remote-monitoring-customize-panel.md)
+* [Adicionar um painel personalizado na interface do usuário web do acelerador de solução de Monitoramento Remoto](iot-accelerators-remote-monitoring-customize-panel.md)
 
 Para obter mais informações conceituais sobre o acelerador da solução de Monitoramento Remoto, veja [Arquitetura de Monitoramento Remoto](iot-accelerators-remote-monitoring-sample-walkthrough.md)
 

@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 06/26/2019
 ms.custom: seodec18
-ms.openlocfilehash: 99933fa36cc822598ec9c173a470f90264d06d54
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: 5b48a41f025ef06c69e6de126e0a64ad359ce09a
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67461198"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68666375"
 ---
 # <a name="create-a-reference-data-set-for-your-time-series-insights-environment-using-the-azure-portal"></a>Criar um conjunto de dados de referência para o seu ambiente Time Series Insights usando o Portal do Azure
 
@@ -24,11 +24,11 @@ Este artigo descreve como adicionar um conjunto de dados de referência ao seu a
 
 Um conjunto de dados de referência é uma coleção de itens que aumentam os eventos da fonte de evento. O mecanismo de entrada da Análise de Séries Temporais une cada evento da fonte de evento à linha de dados correspondentes em seu conjunto de dados de referência. Esse evento aumentado é disponibilizado para consulta. Essa junção baseia-se na(s) coluna(s) de chave primária definidas no conjunto de dados de referência.
 
-Os dados de referência não estão unidos retroativamente. Assim, os dados de entrada apenas atuais e futuros são correspondidos e associados ao conjunto de referência de data, depois que ele foi configurado e carregado.
+Os dados de referência não estão unidos retroativamente. Assim, somente os dados de entrada atuais e futuros são correspondidos e associados à data de referência definida, depois que ele tiver sido configurado e carregado.
 
 ## <a name="video"></a>Vídeo
 
-### <a name="learn-about-time-series-insights-reference-data-modelbr"></a>Saiba mais sobre o modelo de dados de referência do Time Series Insight.</br>
+### <a name="learn-about-time-series-insights-reference-data-modelbr"></a>Saiba mais sobre o modelo de dados de referência do time Series Insight.</br>
 
 > [!VIDEO https://www.youtube.com/embed/Z0NuWQUMv1o]
 
@@ -62,7 +62,7 @@ Os dados de referência não estão unidos retroativamente. Assim, os dados de e
 
    Por exemplo, cole dados CSV: [![Dados CSV colados](media/add-reference-data-set/csv-data-pasted.png)](media/add-reference-data-set/csv-data-pasted.png#lightbox)
 
-   Por exemplo, cole os dados da matriz JSON: [![Cole os dados JSON](media/add-reference-data-set/json-data-pasted.png)](media/add-reference-data-set/json-data-pasted.png#lightbox)
+   Por exemplo, cole os dados da matriz JSON: [![Colar dados JSON](media/add-reference-data-set/json-data-pasted.png)](media/add-reference-data-set/json-data-pasted.png#lightbox)
 
    Se houver um erro ao analisar os valores de dados, o erro aparecerá em vermelho na parte inferior da página, como `CSV parsing error, no rows extracted`.
 
@@ -72,17 +72,17 @@ Os dados de referência não estão unidos retroativamente. Assim, os dados de e
 
 1. Examine cada coluna para ver o tipo de dados assumido e alterar o tipo de dados, se necessário.  Selecione o símbolo de tipo de dados no cabeçalho da coluna: **#** para duplo (dados numéricos), **T|F** para booliano, ou **Abc** para cadeia de caracteres.
 
-   [![Escolha os tipos de dados nos cabeçalhos de coluna.](media/add-reference-data-set/choose-datatypes.png)](media/add-reference-data-set/choose-datatypes.png#lightbox)
+   [![Escolha os tipos de dados nos títulos das colunas.](media/add-reference-data-set/choose-datatypes.png)](media/add-reference-data-set/choose-datatypes.png#lightbox)
 
 1. Renomeie os cabeçalhos de coluna, se necessário. O nome da coluna de chave é necessário para associar à propriedade correspondente na fonte de evento. Certifique-se de que os nomes de coluna de chave dos dados de referência correspondem exatamente ao nome do evento para seus dados de entrada, incluindo diferenciar maiúsculas de minúsculas. Os nomes de coluna não chave são usados para ampliar os dados de entrada com os valores de dados de referência correspondentes.
 
-1. Selecione **adicionar uma linha** ou **adicionar uma coluna** para adicionar mais valores de dados de referência, conforme necessário.
+1. Selecione **Adicionar uma linha** ou **Adicionar uma coluna** para adicionar mais valores de dados de referência, conforme necessário.
 
 1. Digite um valor no campo **Filtrar as linhas...**  para examinar linhas específicas, conforme necessário. O filtro é útil para análise de dados, mas não é aplicado ao carregar os dados.
 
 1. Nomeie o conjunto de dados, preenchendo o campo **Nome do conjunto de dados** acima da grade de dados.
 
-    [![O nome do conjunto de dados.](media/add-reference-data-set/name-reference-dataset.png)](media/add-reference-data-set/name-reference-dataset.png#lightbox)
+    [![Nomeie o conjunto de dados.](media/add-reference-data-set/name-reference-dataset.png)](media/add-reference-data-set/name-reference-dataset.png#lightbox)
 
 1. Forneça a coluna de **chave primária** no conjunto de dados, selecionando na lista suspensa acima da grade de dados.
 
@@ -92,7 +92,7 @@ Os dados de referência não estão unidos retroativamente. Assim, os dados de e
 
 1. Para carregar os dados, selecione o botão **Carregar linhas**.
 
-    [![carregar](media/add-reference-data-set/upload-rows.png)](media/add-reference-data-set/upload-rows.png#lightbox)
+    [![Carregar](media/add-reference-data-set/upload-rows.png)](media/add-reference-data-set/upload-rows.png#lightbox)
 
     A página confirma o carregamento concluído e exibe a mensagem **Conjunto de dados carregado com êxito**.
 
@@ -100,4 +100,4 @@ Os dados de referência não estão unidos retroativamente. Assim, os dados de e
 
 * [Gerenciar dados de referência](time-series-insights-manage-reference-data-csharp.md) programaticamente.
 
-* Para obter a referência completa de API, confira o documento [API de Dados de Referência](/rest/api/time-series-insights/ga-reference-data-api).
+* Para obter a referência completa de API, confira o documento [API de Dados de Referência](https://docs.microsoft.com/rest/api/time-series-insights/ga-reference-data-api).

@@ -3,34 +3,23 @@ title: Restringir o tráfego da web com um firewall do aplicativo Web - Azure Po
 description: Aprenda a restringir o tráfego da web com um firewall do aplicativo Web em um gateway de aplicativo usando o Azure PowerShell.
 services: application-gateway
 author: vhorne
-manager: jpconnock
-tags: azure-resource-manager
 ms.service: application-gateway
-ms.topic: tutorial
-ms.workload: infrastructure-services
-ms.date: 03/25/2019
+ms.topic: article
+ms.date: 08/01/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: e962d76bc82edabf750af52c50ec45ed9ed76e17
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
-ms.translationtype: HT
+ms.openlocfilehash: 219c2a36d1a241db8361ae1f8f2f74b9a68780ca
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68596842"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68688272"
 ---
 # <a name="enable-web-application-firewall-using-azure-powershell"></a>Ativar firewall do aplicativo Web usando o Azure PowerShell
 
-> [!div class="op_single_selector"]
->
-> - [Portal do Azure](application-gateway-web-application-firewall-portal.md)
-> - [PowerShell](tutorial-restrict-web-traffic-powershell.md)
-> - [CLI do Azure](tutorial-restrict-web-traffic-cli.md)
->
-> 
-
 Você pode restringir tráfego em um [gateway de aplicativo](overview.md) com um [firewall de aplicativo de web](waf-overview.md) (WAF). O WAF usa as regras de [OWASP](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project) para proteger o seu aplicativo. Essas regras incluem proteção contra ataques, como injeção de SQL, ataques de script entre sites e sequestros de sessão. 
 
-Neste tutorial, você aprenderá como:
+Neste artigo, você aprenderá a:
 
 > [!div class="checklist"]
 > * Configurar a rede
@@ -40,7 +29,7 @@ Neste tutorial, você aprenderá como:
 
 ![Exemplo de Firewall do aplicativo Web](./media/tutorial-restrict-web-traffic-powershell/scenario-waf.png)
 
-Se preferir, você pode concluir este tutorial usando a [CLI do Azure](tutorial-restrict-web-traffic-cli.md).
+Se preferir, você pode concluir este artigo usando o [portal do Azure](application-gateway-web-application-firewall-portal.md) ou o [CLI do Azure](tutorial-restrict-web-traffic-cli.md).
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
@@ -48,7 +37,7 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Se você optar por instalar e usar o PowerShell localmente, este tutorial exigirá o módulo do Azure PowerShell versão 1.0.0 ou posterior. Execute `Get-Module -ListAvailable Az` para encontrar a versão. Se você precisa atualizar, consulte [Instalar o módulo do Azure PowerShell](/powershell/azure/install-az-ps). Se você estiver executando o PowerShell localmente, também precisará executar o `Login-AzAccount` para criar uma conexão com o Azure.
+Se você optar por instalar e usar o PowerShell localmente, este artigo exigirá o Azure PowerShell módulo versão 1.0.0 ou posterior. Execute `Get-Module -ListAvailable Az` para encontrar a versão. Se você precisa atualizar, consulte [Instalar o módulo do Azure PowerShell](/powershell/azure/install-az-ps). Se você estiver executando o PowerShell localmente, também precisará executar o `Login-AzAccount` para criar uma conexão com o Azure.
 
 ## <a name="create-a-resource-group"></a>Criar um grupo de recursos
 
@@ -82,12 +71,13 @@ $pip = New-AzPublicIpAddress `
   -ResourceGroupName myResourceGroupAG `
   -Location eastus `
   -Name myAGPublicIPAddress `
-  -AllocationMethod Dynamic
+  -AllocationMethod Static `
+  -Sku Standard
 ```
 
 ## <a name="create-an-application-gateway"></a>Criar um Gateway de Aplicativo
 
-Nesta seção, você cria recursos que suportam o gateway de aplicativo e, finalmente, cria isso e um WAF. Os recursos que você criar incluem:
+Nesta seção, você cria recursos que dão suporte ao gateway de aplicativo e, finalmente, os cria e um WAF. Os recursos que você criar incluem:
 
 - *Configurações de IP e a porta de front-end* - Associa a sub-rede que você criou anteriormente para o gateway de aplicativo e atribui uma porta a ser usada para acessá-lo.
 - *Padrão de pool* - Todos os gateways de aplicativo devem ter pelo menos um pool de back-end de servidores.
@@ -160,8 +150,8 @@ Agora que você criou os recursos de suporte necessários, especifique os parâm
 
 ```azurepowershell-interactive
 $sku = New-AzApplicationGatewaySku `
-  -Name WAF_Medium `
-  -Tier WAF `
+  -Name WAF_v2 `
+  -Tier WAF_v2 `
   -Capacity 2
 
 $wafConfig = New-AzApplicationGatewayWebApplicationFirewallConfiguration `
@@ -258,7 +248,7 @@ Update-AzVmss `
 
 ## <a name="create-a-storage-account-and-configure-diagnostics"></a>Criar uma conta de armazenamento e configurar diagnósticos
 
-Neste tutorial, o gateway de aplicativo usa uma conta de armazenamento para armazenar dados para fins de detecção e prevenção. Use também os logs do Azure Monitor ou o Hub de Eventos para registrar dados.
+Neste artigo, o gateway de aplicativo usa uma conta de armazenamento para armazenar dados para fins de detecção e prevenção. Use também os logs do Azure Monitor ou o Hub de Eventos para registrar dados.
 
 ### <a name="create-the-storage-account"></a>Criar a conta de armazenamento
 
@@ -314,13 +304,4 @@ Remove-AzResourceGroup -Name myResourceGroupAG
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste tutorial, você aprendeu como:
-
-> [!div class="checklist"]
-> * Configurar a rede
-> * Criar um gateway de aplicativo com o WAF habilitado
-> * Criar um conjunto de dimensionamento de máquinas virtuais
-> * Criar uma conta de armazenamento e configurar diagnósticos
-
-> [!div class="nextstepaction"]
-> [Criar um gateway de aplicativo com terminação SSL](./tutorial-ssl-powershell.md)
+[Criar um gateway de aplicativo com terminação SSL](./tutorial-ssl-powershell.md)

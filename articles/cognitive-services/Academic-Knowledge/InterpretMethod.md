@@ -10,12 +10,13 @@ ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 03/27/2017
 ms.author: alch
-ms.openlocfilehash: b679f1da0ada3e61fca79cdb985a43dc445877ce
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: d960aff109e0eca70cb87463770620093e563f63
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61338445"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68706668"
 ---
 # <a name="interpret-method"></a>Método Interpretar
 
@@ -27,22 +28,22 @@ Para fornecer uma experiência interativa, é possível chamar esse método repe
 
     https://westus.api.cognitive.microsoft.com/academic/v1.0/interpret?
 
-## <a name="request-parameters"></a>Parâmetros de solicitação
+## <a name="request-parameters"></a>Parâmetros de Solicitação
 
-NOME     | Value | Obrigatório?  | DESCRIÇÃO
+Nome     | Valor | Obrigatório?  | Descrição
 ---------|---------|---------|---------
 **query**    | Cadeia de caracteres de texto | Sim | Consulta inserida pelo usuário.  Se o parâmetro completo estiver definido como 1, a consulta será interpretada como um prefixo para gerar sugestões de preenchimento automático de consulta.        
 **modelo**    | Cadeia de caracteres de texto | Não  | Nome do modelo que você quer consultar.  Atualmente, o valor padrão é o *mais recente*.        
 **completo** | 0 ou 1 | Não<br>default:0  | 1 significa que as sugestões de preenchimento automático são geradas com base nos dados de grafo e gramática.         
-**count**    | Número | Não<br>default:10 | Número máximo de interpretações para retornar.         
-**offset**   | Número | Não<br>default:0  | Índice da primeira interpretação para retornar. Por exemplo, *count=2&offset=0* retorna as interpretações 0 e 1. *count=2&offset=2* retorna interpretações 2 e 3.       
-**timeout**  | Número | Não<br>default:1000 | Tempo limite em milissegundos. Somente interpretações localizadas antes que o tempo limite tenha decorrido serão retornadas.
+**count**    | Number | Não<br>default:10 | Número máximo de interpretações para retornar.         
+**offset**   | Number | Não<br>default:0  | Índice da primeira interpretação para retornar. Por exemplo, *count=2&offset=0* retorna as interpretações 0 e 1. *count=2&offset=2* retorna interpretações 2 e 3.       
+**timeout**  | Number | Não<br>default:1000 | Tempo limite em milissegundos. Somente interpretações localizadas antes que o tempo limite tenha decorrido serão retornadas.
 
 <br>
   
 ## <a name="response-json"></a>Resposta (JSON)
 
-NOME     | DESCRIÇÃO
+Nome     | Descrição
 ---------|---------
 **query** |O parâmetro *query* da solicitação.
 **interpretations** |Uma matriz de 0 ou mais maneiras diferentes de corresponder a entrada do usuário à gramática.

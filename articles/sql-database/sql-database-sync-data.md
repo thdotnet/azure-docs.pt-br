@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: allenwux
 ms.author: xiwu
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: cfa94fc1c75bcd1eaa9a076cfe63369f60ce5f1c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 24e340d25cb57f9a35f06f6dbd5a394d60a14fad
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66693092"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566437"
 ---
 # <a name="sync-data-across-multiple-cloud-and-on-premises-databases-with-sql-data-sync"></a>Sincronizar dados entre vários bancos de dados locais e de nuvem com a Sincronização de Dados SQL
 
@@ -38,7 +37,7 @@ A Sincronização de Dados não é a solução preferencial para os cenários a 
 
 | Cenário | Algumas soluções recomendadas |
 |----------|----------------------------|
-| Recuperação de desastre | [Backups com redundância geográfica do Azure](sql-database-automated-backups.md) |
+| Recuperação de Desastres | [Backups com redundância geográfica do Azure](sql-database-automated-backups.md) |
 | Escala de Leitura | [Usar réplicas somente leitura para balancear a carga de cargas de trabalho de consulta somente leitura (versão prévia)](sql-database-read-scale-out.md) |
 | ETL (OLTP para OLAP) | [Azure Data Factory](https://azure.microsoft.com/services/data-factory/) ou [SQL Server Integration Services](https://docs.microsoft.com/sql/integration-services/sql-server-integration-services) |
 | Migração do SQL Server local para um Banco de Dados SQL do Azure | [Serviço de Migração de Banco de Dados do Azure](https://azure.microsoft.com/services/database-migration/) |
@@ -104,7 +103,7 @@ Um Grupo de Sincronização tem as seguintes propriedades:
 
 ## <a name="consistency-and-performance"></a>Consistência e desempenho
 
-#### <a name="eventual-consistency"></a>Consistência eventual
+#### <a name="eventual-consistency"></a>Coerência eventual
 
 Como a Sincronização de Dados é baseada no gatilho, a consistência transacional não é garantida. A Microsoft garante que todas as alterações são feitas, eventualmente, e que a Sincronização de Dados não causa perda de dados.
 
@@ -229,7 +228,7 @@ Você precisa atualizar o esquema de um banco de dados em um grupo de sincroniza
 
 A Sincronização de Dados SQL está funcionando conforme o esperado? Para monitorar a atividade e solucionar problemas, consulte os seguintes artigos:
 
-- [Monitorar a sincronização de dados SQL do Azure com logs do Azure Monitor](sql-database-sync-monitor-oms.md)
+- [Monitorar Sincronização de Dados SQL do Azure com logs de Azure Monitor](sql-database-sync-monitor-oms.md)
 - [Solucionar problemas com a Sincronização de Dados SQL do Azure](sql-database-troubleshoot-data-sync.md)
 
 ### <a name="learn-more-about-azure-sql-database"></a>Saiba mais sobre o Banco de Dados SQL do Azure

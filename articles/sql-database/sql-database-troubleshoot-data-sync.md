@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: allenwux
 ms.author: xiwu
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 12/20/2018
-ms.openlocfilehash: 4e2808378834a0270586ce674e1043ca443320c5
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f1345c7de3ef56473b8ebd16cea20cfe76f0380e
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60331189"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566286"
 ---
 # <a name="troubleshoot-issues-with-sql-data-sync"></a>Solucionar problemas com a Sincronização de Dados SQL do Azure
 
@@ -40,7 +39,7 @@ Para obter uma visão geral da Sincronização de Dados SQL, consulte [Sincroniz
 
 - [Há uma degradação significativa no desempenho](#sync-perf)
 
-- [Esta imagem é exibida: "Não é possível inserir o valor NULL na coluna \<coluna >. A coluna não permite valores nulos”. O que isso significa e como é possível corrigi-lo?](#sync-nulls)
+- [Esta imagem é exibida: "Não é possível inserir o valor NULL na \<coluna de coluna >. A coluna não permite valores nulos”. O que isso significa e como é possível corrigi-lo?](#sync-nulls)
 
 - [Como a Sincronização de Dados trata referências circulares? Ou seja, quando os mesmos dados são sincronizados em vários grupos de sincronização e continuam sendo alterados como resultado?](#sync-circ)
 
@@ -105,7 +104,7 @@ O desempenho é degradado de forma significativa, possivelmente até o ponto em 
 
 - **Resolução**. A melhor correção é a prevenção. Verifique se você não tem referências circulares nos grupos de sincronização. Nenhuma linha sincronizada por um grupo de sincronização pode ser sincronizada por outro grupo de sincronização.
 
-### <a name="sync-nulls"></a> Esta imagem é exibida: "Não é possível inserir o valor NULL na coluna \<coluna >. A coluna não permite valores nulos”. O que isso significa e como posso corrigir o erro? 
+### <a name="sync-nulls"></a> Esta imagem é exibida: "Não é possível inserir o valor NULL na \<coluna de coluna >. A coluna não permite valores nulos”. O que isso significa e como posso corrigir o erro? 
 Essa mensagem de erro indica que um dos dois problemas a seguir ocorreu:
 -  Uma tabela não tem uma chave primária. Para corrigir esse problema, adicione uma chave primária a todas as tabelas que você está sincronizando.
 -  Há uma cláusula WHERE na instrução CREATE INDEX. A Sincronização de Dados não lidar com essa condição. Para corrigir esse problema, remova a cláusula WHERE ou realize as alterações manualmente para todos os bancos de dados. 

@@ -16,14 +16,14 @@ ms.date: 07/10/2019
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 896cc495d6f369c034171833a9b90aa53e6477b6
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: 12452b4e9cc6caa64d4c81a310fbccb5d1717817
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68234649"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68678148"
 ---
-# <a name="what-is-azure-ad-entitlement-management-preview"></a>O que é o gerenciamento de direitos do AD do Azure? (Visualização)
+# <a name="what-is-azure-ad-entitlement-management-preview"></a>O que é o gerenciamento de direitos do AD do Azure? (Versão Prévia)
 
 > [!IMPORTANT]
 > No momento, o gerenciamento de direitos do Azure AD (Azure Active Directory) está em versão prévia pública.
@@ -90,7 +90,7 @@ Com um pacote de acesso e suas políticas, o Gerenciador de pacotes de acesso de
 
 - Recursos
 - Funções que os usuários precisam para os recursos
-- Usuários internos e externos que estão qualificados para solicitar acesso
+- Usuários internos e organizações parceiras de usuários externos qualificados para solicitar acesso
 - Processo de aprovação e os usuários que podem aprovar ou negar o acesso
 - Duração do acesso do usuário
 
@@ -115,20 +115,20 @@ Como você não deseja que o acesso do usuário externo seja feito por último, 
 
 Para entender melhor o gerenciamento de direitos e sua documentação, você deve examinar os termos a seguir.
 
-| Termo ou conceito | DESCRIÇÃO |
+| Termo ou conceito | Descrição |
 | --- | --- |
 | gerenciamento de direitos | Um serviço que atribui, revoga e administra pacotes de acesso. |
 | pacote de acesso | Uma coleção de permissões e políticas para recursos que os usuários podem solicitar. Um pacote do Access sempre está contido em um catálogo. |
 | solicitação de acesso | Uma solicitação para acessar um pacote de acesso. Normalmente, uma solicitação passa por um fluxo de trabalho. |
-| policy | Um conjunto de regras que define o ciclo de vida de acesso, como como os usuários obtêm acesso, quem pode aprovar e por quanto tempo os usuários têm acesso. As políticas de exemplo incluem acesso de funcionário e acesso externo. |
+| política | Um conjunto de regras que define o ciclo de vida de acesso, como como os usuários obtêm acesso, quem pode aprovar e por quanto tempo os usuários têm acesso. As políticas de exemplo incluem acesso de funcionário e acesso externo. |
 | catalog | Um contêiner de recursos relacionados e pacotes de acesso. |
 | Catálogo geral | Um catálogo interno que está sempre disponível. Para adicionar recursos ao catálogo geral, o requer determinadas permissões. |
-| resource | Um ativo ou serviço (como um grupo, um aplicativo ou um site) ao qual um usuário pode receber permissões. |
-| Tipo de recurso | O tipo de recurso, que inclui grupos, aplicativos e sites do SharePoint Online. |
+| resource | Um ativo ou serviço (como um grupo do Office, um grupo de segurança, um aplicativo ou um site do SharePoint Online) ao qual um usuário pode receber permissões. |
+| Tipo de Recurso | O tipo de recurso, que inclui grupos, aplicativos e sites do SharePoint Online. |
 | função de recurso | Uma coleção de permissões associadas a um recurso. |
 | diretório de recursos | Um diretório que tem um ou mais recursos a serem compartilhados. |
-| usuários atribuídos | Uma atribuição de um pacote do Access a um usuário ou grupo. |
-| enable | O processo de disponibilizar um pacote de acesso para os usuários solicitarem. |
+| usuários atribuídos | Uma atribuição de um pacote de acesso a um usuário, para que o usuário tenha todas as funções de recurso desse pacote de acesso. |
+| habilitar | O processo de disponibilizar um pacote de acesso para os usuários solicitarem. |
 
 ## <a name="license-requirements"></a>Requisitos de licença
 

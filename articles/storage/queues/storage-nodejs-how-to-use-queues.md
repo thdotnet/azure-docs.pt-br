@@ -1,21 +1,19 @@
 ---
-title: Como usar o armazenamento de fila do Node. js – armazenamento do Azure
+title: Como usar o armazenamento de fila do node. js – armazenamento do Azure
 description: Saiba como usar o serviço Fila do Azure para criar e excluir filas, bem como para inserir, obter e excluir mensagens. Amostras escritas em Node.js.
-services: storage
 author: mhopkins-msft
 ms.service: storage
-ms.devlang: nodejs
-ms.topic: article
-ms.date: 12/08/2016
 ms.author: mhopkins
-ms.reviewer: cbrooks
+ms.date: 12/08/2016
 ms.subservice: queues
-ms.openlocfilehash: 01afe1ab7b9028f3f77d52f7d6f8ced27f6a79c7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.topic: conceptual
+ms.reviewer: cbrooks
+ms.openlocfilehash: 13da3adc1a3f95f9fdb29eb181eb9759e175cffe
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65142706"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68721279"
 ---
 # <a name="how-to-use-queue-storage-from-nodejs"></a>Como usar o Armazenamento de Fila do Node.js
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -64,7 +62,7 @@ var azure = require('azure-storage');
 ## <a name="setup-an-azure-storage-connection"></a>Configurar uma conexão de armazenamento do Azure
 O módulo do Azure lerá as variáveis de ambiente AZURE\_STORAGE\_ACCOUNT e AZURE\_STORAGE\_ACCESS\_KEY ou AZURE\_STORAGE\_CONNECTION\_STRING para obter as informações necessárias para se conectar à sua conta de armazenamento do Azure. Se essas variáveis de ambiente não estiverem definidas, você deverá especificar as informações da conta ao chamar **createQueueService**.
 
-## <a name="how-to-create-a-queue"></a>Como: criar uma fila
+## <a name="how-to-create-a-queue"></a>Como: Criar uma Fila
 O código a seguir cria um objeto **QueueService** , permitindo que você trabalhe com filas.
 
 ```javascript
@@ -329,7 +327,7 @@ queueSAS = queueSvc.generateSharedAccessSignature('myqueue', { Id: 'user2' });
 Agora que você aprendeu os conceitos básicos do armazenamento de fila, siga estes links para saber mais sobre tarefas de armazenamento mais complexas.
 
 * Visite o [Blog da equipe do Armazenamento do Azure][Azure Storage Team Blog].
-* Visite o repositório [Microsoft Azure Storage SDK for Node.js][Azure Storage SDK for Node] (SDK do Armazenamento do Azure para Node.js) no GitHub.
+* Visite o repositório [SDK de armazenamento do Azure para nó][Azure Storage SDK for Node] no GitHub.
 
 
 

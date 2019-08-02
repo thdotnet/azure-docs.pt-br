@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: bonova, sstein
-manager: craigg
 ms.date: 05/10/2019
-ms.openlocfilehash: 5bdbd9bebfb819ae18de884a014c574e12c53ebf
-ms.sourcegitcommit: 83a89c45253b0d432ce8dcd70084c18e9930b1fd
+ms.openlocfilehash: 3f991d90dfdd5d31d1a7cf7119356f40458e7614
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68371717"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568236"
 ---
 # <a name="feature-comparison-azure-sql-database-versus-sql-server"></a>Comparação de Recursos: Banco de Dados SQL do Azure versus SQL Server
 
@@ -57,7 +56,7 @@ A tabela a seguir lista os principais recursos do SQL Server e fornece informaç
 | [Bancos de dados independentes](https://docs.microsoft.com/sql/relational-databases/databases/contained-databases) | Sim | No momento, não [devido a defeito na restauração, incluindo a restauração pontual](sql-database-managed-instance-transact-sql-information.md#cant-restore-contained-database). Esse é um defeito que será corrigido em breve. |
 | [Usuários independentes](https://docs.microsoft.com/sql/relational-databases/security/contained-database-users-making-your-database-portable) | Sim | Sim |
 | [Controle de palavras-chave da linguagem de fluxo](https://docs.microsoft.com/sql/t-sql/language-elements/control-of-flow) | Sim | Sim |
-| [Credenciais](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/credentials-database-engine) | Sim, mas apenas [as credenciais no escopo do banco de dados](https://docs.microsoft.com/sql/t-sql/statements/create-database-scoped-credential-transact-sql). | Sim, mas há  suporte apenas `SHARED ACCESS SIGNATURE` para Azure Key Vault e para ver os [detalhes](sql-database-managed-instance-transact-sql-information.md#credential) |
+| [Credenciais](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/credentials-database-engine) | Sim, mas apenas [as credenciais no escopo do banco de dados](https://docs.microsoft.com/sql/t-sql/statements/create-database-scoped-credential-transact-sql). | Sim, mas há suporte apenas `SHARED ACCESS SIGNATURE` para Azure Key Vault e para ver os [detalhes](sql-database-managed-instance-transact-sql-information.md#credential) |
 | [Consultas de nome entre bancos de dados/três partes](https://docs.microsoft.com/sql/relational-databases/linked-servers/linked-servers-database-engine) | Não – consulte [Consultas elásticas](sql-database-elastic-query-overview.md) | Sim, além de [Consultas elásticas](sql-database-elastic-query-overview.md) |
 | [Transações entre bancos de dados](https://docs.microsoft.com/sql/relational-databases/linked-servers/linked-servers-database-engine) | Não | Sim, dentro da instância. Consulte [diferenças de servidor vinculado](sql-database-managed-instance-transact-sql-information.md#linked-servers) para consultas entre instâncias. |
 | [Cursores](https://docs.microsoft.com/sql/t-sql/language-elements/cursors-transact-sql) | Sim |Sim |
@@ -89,9 +88,10 @@ A tabela a seguir lista os principais recursos do SQL Server e fornece informaç
 | [Suporte a dados JSON](https://docs.microsoft.com/sql/relational-databases/json/json-data-sql-server) | [Sim](sql-database-json-features.md) | [Sim](sql-database-json-features.md) |
 | [Elementos de linguagem](https://docs.microsoft.com/sql/t-sql/language-elements/language-elements-transact-sql) | Maioria - veja elementos individuais |  Sim – consulte [Diferenças do T-SQL](sql-database-managed-instance-transact-sql-information.md) |
 | [Servidores vinculados](https://docs.microsoft.com/sql/relational-databases/linked-servers/linked-servers-database-engine) | Não - veja [Consulta elástica](sql-database-elastic-query-horizontal-partitioning.md) | Sim. Somente para [SQL Server e o banco de dados SQL](sql-database-managed-instance-transact-sql-information.md#linked-servers) sem transações distribuídas. |
+| [Servidores vinculados](https://docs.microsoft.com/sql/relational-databases/linked-servers/linked-servers-database-engine) que lêem de arquivos (CSV, Excel)| Nº Use [BULK INSERT](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql#e-importing-data-from-a-csv-file) ou [OPENROWSET](https://docs.microsoft.com/sql/t-sql/functions/openrowset-transact-sql#g-accessing-data-from-a-csv-file-with-a-format-file) como uma alternativa para o formato CSV. | Nº Use [BULK INSERT](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql#e-importing-data-from-a-csv-file) ou [OPENROWSET](https://docs.microsoft.com/sql/t-sql/functions/openrowset-transact-sql#g-accessing-data-from-a-csv-file-with-a-format-file) como uma alternativa para o formato CSV. Acompanhar essas solicitações em [instância gerenciada item de comentários](https://feedback.azure.com/forums/915676-sql-managed-instance/suggestions/35657887-linked-server-to-non-sql-sources)|
 | [Envio de logs](https://docs.microsoft.com/sql/database-engine/log-shipping/about-log-shipping-sql-server) | A [alta disponibilidade](sql-database-high-availability.md) é incluída em todos os bancos de dados. A recuperação de desastre é abordada em [Visão geral da continuidade de negócios com o banco de dados SQL do Azure](sql-database-business-continuity.md) | Desenvolvido nativamente como parte do processo de migração do DMS. Não disponível como uma solução de alta disponibilidade, porque outros métodos de [alta disponibilidade](sql-database-high-availability.md) estão incluídos em todos os bancos de dados e não é recomendável usar o envio de logs como alternativa de ha. A recuperação de desastre é discutida em [visão geral da continuidade de negócios com o banco de dados SQL do Azure](sql-database-business-continuity.md) Não disponível como um mecanismo de replicação entre bancos de dados-use réplicas secundárias na [camada de comercialmente crítico](sql-database-service-tier-business-critical.md), [grupos de failover automático](sql-database-auto-failover-group.md)ou [replicação](sql-database-managed-instance-transactional-replication.md) transacional como as alternativas. |
 | [Logons e usuários](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/principals-database-engine) | Sim, mas `CREATE` as `ALTER` instruções de logon não oferecem todas as opções (sem logons Azure Active Directory de nível de servidor e Windows). `EXECUTE AS LOGIN`Não é suportada `EXECUTE AS USER` . em vez disso, use.  | Sim, com algumas [diferenças](sql-database-managed-instance-transact-sql-information.md#logins-and-users). Não há suporte para logons do Windows e eles devem ser substituídos por logons Azure Active Directory. |
-| [Log mínimo na importação em massa](https://docs.microsoft.com/sql/relational-databases/import-export/prerequisites-for-minimal-logging-in-bulk-import) | Não | Não |
+| [Log mínimo na importação em massa](https://docs.microsoft.com/sql/relational-databases/import-export/prerequisites-for-minimal-logging-in-bulk-import) | Não, há suporte apenas para o modelo de recuperação completa. | Não, há suporte apenas para o modelo de recuperação completa. |
 | [Modificação dos dados do sistema](https://docs.microsoft.com/sql/relational-databases/databases/system-databases) | Não | Sim |
 | [Automação OLE](https://docs.microsoft.com/sql/database-engine/configure-windows/ole-automation-procedures-server-configuration-option) | Não | Não |
 | [Operações de índice online](https://docs.microsoft.com/sql/relational-databases/indexes/perform-index-operations-online) | Sim | Sim |
@@ -108,6 +108,7 @@ A tabela a seguir lista os principais recursos do SQL Server e fornece informaç
 | [Predicados](https://docs.microsoft.com/sql/t-sql/queries/predicates) | Sim | Sim |
 | [Notificações de consulta](https://docs.microsoft.com/sql/relational-databases/native-client/features/working-with-query-notifications) | Não | Sim |
 | [R Services](https://docs.microsoft.com/sql/advanced-analytics/r-services/sql-server-r-services) | Sim, em [versão prévia pública](https://docs.microsoft.com/sql/advanced-analytics/what-s-new-in-sql-server-machine-learning-services)  | Não |
+| [Modelos de recuperação](https://docs.microsoft.com/sql/relational-databases/backup-restore/recovery-models-sql-server) | Somente a recuperação completa que garante alta disponibilidade tem suporte. Modelos de recuperação simples e bulk-logged não estão disponíveis. | Somente a recuperação completa que garante alta disponibilidade tem suporte. Modelos de recuperação simples e bulk-logged não estão disponíveis. | 
 | [Resource governor](https://docs.microsoft.com/sql/relational-databases/resource-governor/resource-governor) | Não | Sim |
 | [Instruções RESTORE](https://docs.microsoft.com/sql/t-sql/statements/restore-statements-for-restoring-recovering-and-managing-backups-transact-sql) | Não | Sim, com opções `FROM URL` obrigatórias para os arquivos de backups colocados no armazenamento de BLOBs do Azure. Consulte [diferenças de restauração](sql-database-managed-instance-transact-sql-information.md#restore-statement) |
 | [Restaurar banco de dados desde o backup](https://docs.microsoft.com/sql/relational-databases/backup-restore/back-up-and-restore-of-sql-server-databases#restore-data-backups) | Somente de backups automatizados – consulte [Recuperação do Banco de Dados SQL](sql-database-recovery-using-backups.md) | De backups automatizados-consulte [recuperação de banco de dados SQL](sql-database-recovery-using-backups.md) e de backups completos colocados no armazenamento de BLOBs do Azure-consulte [diferenças de backup](sql-database-managed-instance-transact-sql-information.md#backup) |
@@ -148,6 +149,7 @@ A plataforma Azure fornece vários recursos de PaaS que são adicionados como um
 | [Grupos de failover automático](sql-database-auto-failover-group.md) | Sim-todas as camadas de serviço que não sejam de hiperescala | Sim, em [versão prévia pública](sql-database-auto-failover-group.md)|
 | [Azure Resource Health](/azure/service-health/resource-health-overview) | Sim | Não |
 | [DMS (Serviço de Migração de Dados)](https://docs.microsoft.com/sql/dma/dma-overview) | Sim | Sim |
+| Acesso ao sistema de arquivos | Nº Use [BULK INSERT](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql#f-importing-data-from-a-file-in-azure-blob-storage) ou [OPENROWSET](https://docs.microsoft.com/sql/t-sql/functions/openrowset-transact-sql#i-accessing-data-from-a-file-stored-on-azure-blob-storage) para acessar e carregar dados do armazenamento de BLOBs do Azure como uma alternativa. | Nº Use [BULK INSERT](https://docs.microsoft.com/sql/t-sql/statements/bulk-insert-transact-sql#f-importing-data-from-a-file-in-azure-blob-storage) ou [OPENROWSET](https://docs.microsoft.com/sql/t-sql/functions/openrowset-transact-sql#i-accessing-data-from-a-file-stored-on-azure-blob-storage) para acessar e carregar dados do armazenamento de BLOBs do Azure como uma alternativa. |
 | [Restauração geográfica](sql-database-recovery-using-backups.md#geo-restore) | Sim-todas as camadas de serviço que não sejam de hiperescala | Sim-usando [Azure PowerShell](https://medium.com/azure-sqldb-managed-instance/geo-restore-your-databases-on-azure-sql-instances-1451480e90fa). |
 | [Arquitetura de hiperescala](sql-database-service-tier-hyperscale.md) | Sim | Não |
 | [Retenção de backup de longo prazo-EPD](sql-database-long-term-retention.md) | Sim, mantenha backups feitos automaticamente até 10 anos. | Ainda não. Use `COPY_ONLY` [backups manuais](sql-database-managed-instance-transact-sql-information.md#backup) como uma solução alternativa temporária. |
@@ -167,7 +169,7 @@ A plataforma Azure fornece vários recursos de PaaS que são adicionados como um
 | [Rede virtual](../virtual-network/virtual-networks-overview.md) | Parcial, ele habilita o acesso restrito usando [pontos de extremidade de VNet](sql-database-vnet-service-endpoint-rule-overview.md) | Sim, Instância Gerenciada é injetada na VNet do cliente. Consulte [sub-rede](sql-database-managed-instance-transact-sql-information.md#subnet) e rede [virtual](sql-database-managed-instance-transact-sql-information.md#vnet) |
 
 ## <a name="tools"></a>Ferramentas
-O banco de dados SQL do Azure dá suporte a várias ferramentas de data que podem ajudar a você a gerenciar seus dados.
+O banco de dados SQL do Azure dá suporte a várias ferramentas de data que podem ajudá-lo a gerenciar seus dados.
 
 | **Ferramenta SQL** | **Bancos de dados individuais e pools elásticos** | **Instâncias gerenciadas** |
 | --- | --- | --- |

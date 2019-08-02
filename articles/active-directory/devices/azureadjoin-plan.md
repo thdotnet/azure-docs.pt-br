@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4332c921af770cb47e9a9a779d0bd148153fcd31
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 6e58762bd5bf4342804767a200c94b432dd152a0
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67666136"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68562224"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>Como: Planejar sua implementação de ingresso no Azure AD
 
@@ -30,17 +30,17 @@ Este artigo presume que você esteja familiarizado com o [Introdução ao gerenc
 
 ## <a name="plan-your-implementation"></a>Planejar sua implementação
 
-Para planejar sua implementação de junção do Azure AD, você deve se familiarizar com:
+Para planejar sua implementação de ingresso no Azure AD, você deve se familiarizar com:
 
 |   |   |
 |---|---|
-|![Verificação][1]|Revisar seus cenários|
-|![Verificação][1]|Revisar sua infraestrutura de identidade|
-|![Verificação][1]|Avaliar o gerenciamento de dispositivo|
-|![Verificação][1]|Entenda as considerações para aplicativos e recursos|
-|![Verificação][1]|Entenda suas opções de provisionamento|
-|![Verificação][1]|Configurar o roaming de estado|
-|![Verificação][1]|Configurar o acesso condicional|
+|![Verificar][1]|Revisar seus cenários|
+|![Verificar][1]|Revisar sua infraestrutura de identidade|
+|![Verificar][1]|Avaliar o gerenciamento de dispositivo|
+|![Verificar][1]|Entenda as considerações para aplicativos e recursos|
+|![Verificar][1]|Entenda suas opções de provisionamento|
+|![Verificar][1]|Configurar o roaming de estado|
+|![Verificar][1]|Configurar o acesso condicional|
 
 ## <a name="review-your-scenarios"></a>Revisar seus cenários 
 
@@ -70,7 +70,7 @@ Um ambiente federado deve ter um provedor de identidade que dá suporte aos prot
 - **WS-Fed:** Esse protocolo é necessário para ingressar um dispositivo no Azure AD.
 - **WS-Trust:** Esse protocolo é necessário para entrar em um dispositivo ingressado no Azure AD. 
 
-Se seu provedor de identidade não oferece suporte a esses protocolos, o ingresso no Azure Active Directory não trabalha nativamente. Começando com o Windows 10 1809, seus usuários podem entrar um dispositivo ingressado do Azure Active Directory com um provedor de identidade baseado em SAML [web entrar no Windows 10](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1809#web-sign-in-to-windows-10). Atualmente, entrada na web é um recurso de visualização e não é recomendada para implantações de produção.
+Se seu provedor de identidade não oferece suporte a esses protocolos, o ingresso no Azure Active Directory não trabalha nativamente. Começando com o Windows 10 1809, seus usuários podem entrar um dispositivo ingressado do Azure Active Directory com um provedor de identidade baseado em SAML [web entrar no Windows 10](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1809#web-sign-in-to-windows-10). Atualmente, a entrada na Web é um recurso de visualização e não é recomendada para implantações de produção.
 
 ### <a name="smartcards-and-certificate-based-authentication"></a>Cartões inteligentes e autenticação baseada em certificado
 
@@ -101,10 +101,10 @@ Ingresso no Azure AD:
 
 ### <a name="management-platform"></a>Plataforma de gerenciamento
 
-Gerenciamento de dispositivo para dispositivos ingressados no Azure AD se baseia em uma plataforma MDM como Intune e MDM CSPs. Windows 10 tem um agente MDM interno que funciona com todas as soluções MDM compatíveis.
+O gerenciamento de dispositivos para dispositivos ingressados no Azure AD é baseado em uma plataforma MDM, como o Intune, e CSPs de MDM. Windows 10 tem um agente MDM interno que funciona com todas as soluções MDM compatíveis.
 
 > [!NOTE]
-> As políticas de grupo não têm suporte em dispositivos ingressados no Azure AD que não estão conectados ao Active Directory no local. Gerenciamento de dispositivos ingressados no Azure AD só é possível por meio do MDM
+> Não há suporte para políticas de grupo em dispositivos ingressados no Azure AD, pois eles não estão conectados a Active Directory locais. O gerenciamento de dispositivos ingressados no Azure AD só é possível por meio do MDM
 
 Há duas abordagens para gerenciar o Azure Active Directory ingressado em dispositivos:
 
@@ -271,7 +271,7 @@ MAM não é aplicável ao ingresso no Azure Active Directory.
 
 ## <a name="configure-enterprise-state-roaming"></a>Configurar o roaming de estado
 
-Se você quiser habilitar o roaming de estado para o Azure Active Directory para que os usuários podem sincronizar suas configurações entre dispositivos, consulte [habilitar o Enterprise State Roaming no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/devices/enterprise-state-roaming-enable). 
+Se você quiser habilitar o roaming de estado para o Azure Active Directory para que os usuários podem sincronizar suas configurações entre dispositivos, consulte [habilitar o Enterprise State Roaming no Azure Active Directory](enterprise-state-roaming-enable.md). 
 
 **Recomendação**: Habilite essa configuração mesmo para dispositivos híbridos ingressados no Azure AD.
 
@@ -281,7 +281,7 @@ Se você tiver um provedor MDM configurado para os dispositivos Azure Active Dir
 
 ![Dispositivo em conformidade](./media/azureadjoin-plan/46.png)
 
-Você pode usar essa implementação para [exigir que os dispositivos gerenciados para acesso de aplicativo de nuvem com acesso condicional](../conditional-access/require-managed-devices.md).
+Você pode usar essa implementação para [exigir dispositivos gerenciados para acesso de aplicativo de nuvem com acesso condicional](../conditional-access/require-managed-devices.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 

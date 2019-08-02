@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
-manager: craigg
 ms.date: 02/07/2019
-ms.openlocfilehash: ef64fa1285efc2c271d8d7f37bdecabd67242cc0
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 711552501825e5d34d3547ede8dc998065083c96
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67874975"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566735"
 ---
 # <a name="general-purpose-service-tier---azure-sql-database"></a>Camada de serviço de uso geral – Banco de Dados SQL do Azure
 
@@ -26,7 +25,7 @@ ms.locfileid: "67874975"
 
 O Banco de Dados SQL do Azure é baseado na arquitetura de mecanismo de banco de dados do SQL Server, que é adaptada ao ambiente de nuvem para garantir disponibilidade de 99,99%, até mesmo no caso de falhas de infraestrutura. Três camadas de serviço são usadas no Banco de Dados SQL do Azure, cada uma com diferentes modelos de arquitetura. Essas camadas de serviço são:
 
-- Propósito geral
+- Uso geral
 - Comercialmente crítico
 - Hiperescala
 

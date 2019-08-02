@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab
-manager: craigg
 ms.date: 04/16/2019
-ms.openlocfilehash: 960320e280a613a537f1918d93e4584a13a0b374
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: aac328806e2570bd124626e916c250d481a11311
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68309970"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567580"
 ---
 # <a name="connectivity-architecture-for-a-managed-instance-in-azure-sql-database"></a>Arquitetura de conectividade para uma instância gerenciada no banco de dados SQL do Azure
 
@@ -97,7 +96,7 @@ Implante uma instância gerenciada em uma sub-rede dedicada dentro da rede virtu
 
 ### <a name="mandatory-inbound-security-rules"></a>Regras de segurança de entrada obrigatórias
 
-| NOME       |Porta                        |Protocol|Origem           |Destino|Action|
+| Nome       |Porta                        |Protocol|Origem           |Destino|Action|
 |------------|----------------------------|--------|-----------------|-----------|------|
 |gerenciamento  |9000, 9003, 1438, 1440, 1452|TCP     |Any              |SUB-REDE DA MI  |Allow |
 |mi_subnet   |Any                         |Any     |SUB-REDE DA MI        |SUB-REDE DA MI  |Allow |

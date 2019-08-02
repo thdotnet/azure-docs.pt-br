@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: bonova
 ms.author: bonova
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 06/26/2019
-ms.openlocfilehash: ac57e873a6948e85e78849bd4e22db85491c4bfb
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 39c19661a71a8b466aa6ff25be9e895189dfbfb3
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67441552"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566359"
 ---
 # <a name="getting-started-with-temporal-tables-in-azure-sql-database"></a>Introdução às Tabelas Temporais no Banco de Dados SQL do Azure
 
@@ -109,7 +108,7 @@ WITH (DROP_EXISTING = ON);
 ## <a name="step-2-run-your-workload-regularly"></a>Etapa 2: Executar a carga de trabalho regularmente
 A principal vantagem das Tabelas Temporais é que você não precisa alterar ou ajustar seu site de alguma maneira para executar o controle de alterações. Depois de criadas, as Tabelas Temporais fazem as versões de linha persistirem de forma transparente sempre que você executa modificações em seus dados. 
 
-Para aproveitar o controle para esse cenário específico de alterações automático, iremos atualizar apenas a coluna **PagesVisited** toda vez que um usuário encerra sua sessão no site:
+Para aproveitar o controle de alterações automático para esse cenário específico, vamos apenas atualizar a coluna **PagesVisited** sempre que um usuário terminar sua sessão no site:
 
 ```
 UPDATE WebsiteUserInfo  SET [PagesVisited] = 5 
@@ -196,6 +195,6 @@ Com as tabelas temporais versionadas pelo sistema, a tabela de histórico pode a
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Para obter mais informações sobre tabelas temporais, consulte fazer check-out [tabelas temporais](https://docs.microsoft.com/sql/relational-databases/tables/temporal-tables).
+- Para obter mais informações sobre tabelas temporais, consulte check out [Tables temporal](https://docs.microsoft.com/sql/relational-databases/tables/temporal-tables).
 - Visite o Channel 9 para ouvir uma [história de sucesso real de implementação temporal do cliente](https://channel9.msdn.com/Blogs/jsturtevant/Azure-SQL-Temporal-Tables-with-RockStep-Solutions) e assista a uma [demonstração temporal dinâmica](https://channel9.msdn.com/Shows/Data-Exposed/Temporal-in-SQL-Server-2016).
 

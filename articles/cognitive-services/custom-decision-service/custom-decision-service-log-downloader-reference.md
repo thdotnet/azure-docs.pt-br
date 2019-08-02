@@ -10,12 +10,13 @@ ms.subservice: custom-decision-service
 ms.topic: conceptual
 ms.date: 05/09/2018
 ms.author: marossi
-ms.openlocfilehash: 8a8f669c33f40fb80dc826ec04203880dee74d82
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 33cc0d0dcf16ff82ac128507566427e123020236
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60829983"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68707236"
 ---
 # <a name="logdownloader"></a>LogDownloader
 
@@ -39,13 +40,13 @@ python LogDownloader.py [-h] -a APP_ID -l LOG_DIR [-s START_DATE]
                         [--verbose] [-v VERSION]
 ```
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
-| Entrada | DESCRIÇÃO | Padrão |
+| Entrada | Descrição | Padrão |
 | --- | --- | --- |
 | `-h`, `--help` | Mostrar a mensagem de ajuda e sair. | |
-| `-a APP_ID`, `--app_id APP_ID` | A ID do aplicativo (ou seja, o nome do contêiner de Armazenamento de Blobs do Azure). | Obrigatório |
-| `-l LOG_DIR`, `--log_dir LOG_DIR` | O diretório básico para download de dados (uma subpasta é criada).  | Obrigatório |
+| `-a APP_ID`, `--app_id APP_ID` | A ID do aplicativo (ou seja, o nome do contêiner de Armazenamento de Blobs do Azure). | Necessário |
+| `-l LOG_DIR`, `--log_dir LOG_DIR` | O diretório básico para download de dados (uma subpasta é criada).  | Necessário |
 | `-s START_DATE`, `--start_date START_DATE` | A data de início do download (incluída), no formato *AAAA/MM/DD*. | `None` |
 | `-e END_DATE`, `--end_date END_DATE` | A data de término do download (incluída), no formato *AAAA/MM/DD*. | `None` |
 | `-o OVERWRITE_MODE`, `--overwrite_mode OVERWRITE_MODE` | O modo de substituição para usar. | |
@@ -59,7 +60,7 @@ python LogDownloader.py [-h] -a APP_ID -l LOG_DIR [-s START_DATE]
 | `--delta_mod_t DELTA_MOD_T` | A janela de tempo, em segundos, para detectar se um arquivo está em uso no momento. | `3600` seg (`1` hora) |
 | `--verbose` | Imprima mais detalhes. | `False` |
 | `-v VERSION`, `--version VERSION` | A versão do downloader de log a ser usada. | |
-| | `1`: para logs não processados (somente para compatibilidade com versões anteriores). | Preteridos |
+| | `1`: para logs não processados (somente para compatibilidade com versões anteriores). | Preterido |
 | | `2`: para logs processados. | Padrão |
 
 ### <a name="examples"></a>Exemplos

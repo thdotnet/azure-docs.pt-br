@@ -6,21 +6,24 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/30/2019
-ms.openlocfilehash: 076c3318a68a50e6bd1b4f9f2a4a4b9a034533c6
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 8f1fa6f7823c643278e52ffd0faa1c0ce4972ef8
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68346578"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640247"
 ---
-# <a name="azure-data-factory-mapping-data-flows-column-patterns"></a>Padrões de coluna de fluxos de dados de mapeamento de data factory do Azure
+# <a name="mapping-data-flows-column-patterns"></a>Mapeando padrões de coluna de fluxos de dados
 
 [!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
 
 Várias transformações de Fluxo de Dados do Azure Data Factory dão suporte à ideia de "Padrões de colunas" para que você possa criar colunas de modelo com base nos padrões em vez de nomes de coluna embutidos em código. Você pode usar esse recurso no construtor de expressões para definir padrões para corresponder colunas para transformação em vez de exigir nomes de campo específicos e exatos. Padrões são úteis se os campos de origem de entrada são alterados com frequência, especialmente no caso de alteração de colunas em arquivos de texto ou bancos de dados NoSQL. Essa condição às vezes é chamada de "descompasso de esquema".
 
+Essa manipulação de "esquema flexível" atualmente é encontrada na coluna derivada e nas transformações agregadas, bem como nas transformações Select e Sink como "mapeamento baseado em regras".
+
 ![padrões de coluna](media/data-flow/columnpattern2.png "Padrões de coluna")
 
+## <a name="column-patterns"></a>Padrões de coluna
 Padrões de coluna são úteis para lidar com cenários de Descompasso de esquema, bem como cenários gerais. É uma boa opção para condições em que não é possível saber totalmente cada nome de coluna. Você pode padronizar a correspondência no nome de coluna e no tipo de dados de coluna e criar uma expressão para a transformação que executará essa operação em relação a qualquer campo no fluxo de dados que corresponde aos seus padrões `name` & `type`.
 
 Ao adicionar uma expressão a uma transformação que aceita padrões, escolha "Adicionar coluna padrão". Padrões de coluna permitem que a coluna de descompasso do esquema corresponda aos padrões.
@@ -38,5 +41,11 @@ Para criar padrões com base em colunas, você pode corresponder ao nome da colu
 
 ![posição da coluna](media/data-flow/position.png "Posição da coluna")
 
+## <a name="rule-based-mapping"></a>Mapeamento baseado em regras
+Ao mapear colunas na origem e selecionar transformações, você terá a opção de escolher "mapeamento fixo" ou "mapeamento baseado em regras". Quando você conhece o esquema de seus dados e espera colunas específicas do conjunto do dados de origem que sempre correspondem a nomes estáticos específicos, você pode usar o mapeamento fixo. Mas quando você estiver trabalhando com esquemas flexíveis, use o mapeamento baseado em regras. Você poderá criar uma correspondência de padrões usando as regras descritas acima.
+
+![mapeamento baseado em regras](media/data-flow/rule2.png "Mapeamento baseado em regras")
+
 ## <a name="next-steps"></a>Próximas etapas
-Saiba mais sobre a [linguagem de expressão](https://aka.ms/dataflowexpressions) de fluxo de dados de mapeamento do ADF para transformações de dados
+* Saiba mais sobre a [linguagem de expressão](http://aka.ms/dataflowexpressions) de fluxo de dados de mapeamento do ADF para transformações de dados
+* Usar padrões de coluna na [transformação do coletor](data-flow-sink.md) e [selecionar a transformação](data-flow-select.md) com mapeamento baseado em regras

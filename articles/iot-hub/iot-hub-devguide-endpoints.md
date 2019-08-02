@@ -8,12 +8,12 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 06/10/2019
-ms.openlocfilehash: 50a1e0a6bfa6fe33f432548a4a0b485134a60c72
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 689a702863dda53870f775bd8520d5dd406d242f
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67055347"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640607"
 ---
 # <a name="reference---iot-hub-endpoints"></a>Referência - Pontos de extremidade do Hub IoT
 
@@ -77,19 +77,19 @@ Atualmente, o Hub IoT é compatível com os seguintes serviços do Azure como po
 
 * Contêineres de Armazenamento do Azure
 * Hubs de Eventos
-* Filas de barramento de serviço
-* Tópicos do Service Bus
+* Filas do Barramento de Serviço
+* Tópicos do Barramento de Serviço
 
 Para saber quais são os limites para o número de pontos de extremidade que você pode adicionar, confira [Cotas e limitação](iot-hub-devguide-quotas-throttling.md).
 
-Você pode usar a API REST [obter integridade do ponto de extremidade](https://docs.microsoft.com/rest/api/iothub/iothubresource/getendpointhealth#iothubresource_getendpointhealth) ao obter o status de integridade dos pontos de extremidade. É recomendável usar o [métricas do IoT Hub](iot-hub-metrics.md) relacionados ao roteamento de latência de mensagem para identificar e depurar erros quando a integridade do ponto de extremidade está inativo ou não está íntegro, como podemos esperar que a latência será maior quando o ponto de extremidade estiver em um desses estados.
+Você pode usar a integridade do [ponto de extremidade Get](https://docs.microsoft.com/rest/api/iothub/iothubresource/getendpointhealth#iothubresource_getendpointhealth) da API REST para obter o status de integridade dos pontos de extremidade. É recomendável usar as métricas do [Hub IOT](iot-hub-metrics.md) relacionadas à latência da mensagem de roteamento para identificar e depurar erros quando a integridade do ponto de extremidade está inativa ou não íntegra, pois esperamos que a latência seja maior quando o ponto de extremidade estiver em um desses Estados.
 
-|Status de integridade|DESCRIÇÃO|
+|Status de Integridade|Descrição|
 |---|---|
-|Healthy|O ponto de extremidade é aceitar mensagens conforme o esperado.|
-|Não íntegro|O ponto de extremidade não está aceitando mensagens conforme o esperado e o IoT Hub está tentando novamente para enviar dados para esse ponto de extremidade. O status de um ponto de extremidade não íntegro será ser atualizado para íntegro quando o IoT Hub estabeleceu um estado consistente de integridade.|
-|unknown|O IoT Hub não estabeleceu uma conexão com o ponto de extremidade. Não há mensagens foram entregues ao ou rejeitadas desse ponto de extremidade.|
-|mensagens mortas|O ponto de extremidade não está aceitando mensagens, depois que o IoT Hub repetida enviando mensagens para o período de retrial.|
+|healthy|O ponto de extremidade está aceitando mensagens conforme o esperado.|
+|não íntegro|O ponto de extremidade não está aceitando mensagens conforme esperado e o Hub IoT está tentando novamente enviar dados para esse ponto de extremidade. O status de um ponto de extremidade não íntegro será atualizado para íntegro quando o Hub IoT tiver estabelecido um estado de integridade eventualmente consistente.|
+|desconhecido|O Hub IoT não estabeleceu uma conexão com o ponto de extremidade. Nenhuma mensagem foi entregue ou rejeitada neste ponto de extremidade.|
+|mortos|O ponto de extremidade não está aceitando mensagens, após o Hub IoT tentar enviar mensagens para o período de nova avaliação.|
 
 ## <a name="field-gateways"></a>Gateways de campo
 
@@ -104,3 +104,4 @@ Outros tópicos de referência neste Guia do desenvolvedor do Hub IoT incluem:
 * [Linguagem de consulta do Hub IoT para dispositivos gêmeos, trabalhos e roteamento de mensagens](iot-hub-devguide-query-language.md)
 * [Cotas e limitação](iot-hub-devguide-quotas-throttling.md)
 * [Suporte ao MQTT do Hub IoT](iot-hub-mqtt-support.md)
+* [Entender o endereço IP do Hub IoT](iot-hub-understand-ip-address.md)
