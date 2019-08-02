@@ -1,19 +1,18 @@
 ---
 title: Planejando uma implantação de Sincronização de Arquivos do Azure | Microsoft Docs
 description: Saiba o que considerar ao planejar uma implantação de Arquivos do Azure.
-services: storage
 author: roygara
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 2/7/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: e9e790ac8ac67478a0e7b5143a5b2f1fdd9c790c
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: f89e7307d75b159886cb47bde3e1fceb5ed557f5
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67798675"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699335"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Planejando uma implantação da Sincronização de Arquivos do Azure
 Use a Sincronização de Arquivos do Azure para centralizar os compartilhamentos de arquivos da sua organização em Arquivos do Azure enquanto mantém a flexibilidade, o desempenho e a compatibilidade de um servidor de arquivos local. A Sincronização de arquivos do Azure transforma o Windows Server em um cache rápido do compartilhamento de arquivos do Azure. Use qualquer protocolo disponível no Windows Server para acessar seus dados localmente, incluindo SMB, NFS e FTPS. Você pode ter tantos caches quantos precisar em todo o mundo.
@@ -70,9 +69,9 @@ A camada de nuvem é um recurso opcional da Sincronização de Arquivos do Azure
 Esta seção aborda os requisitos de sistema e a interoperabilidade do agente de Sincronização de Arquivos do Azure com soluções de terceiros, funções e recursos do Windows Server.
 
 ### <a name="evaluation-cmdlet"></a>Cmdlet de avaliação
-Antes de implantar a sincronização de arquivos do Azure, você deve avaliar se ele é compatível com seu sistema usando o cmdlet de avaliação de sincronização de arquivos do Azure. Esse cmdlet procura possíveis problemas com seu sistema de arquivos e o conjunto de dados, como caracteres sem suporte ou uma versão de sistema operacional sem suporte. Observe que suas verificações abrangem a maioria dos recursos mencionados abaixo, mas não todos eles. É recomendável que você leia o restante desta seção com cuidado para garantir que sua implantação seja perfeita. 
+Antes de implantar Sincronização de Arquivos do Azure, você deve avaliar se ele é compatível com seu sistema usando o cmdlet de avaliação Sincronização de Arquivos do Azure. Esse cmdlet verifica possíveis problemas com o seu sistema de arquivos e conjunto de banco de arquivo, como caracteres sem suporte ou uma versão do sistema operacional sem suporte. Observe que suas verificações abrangem a maioria dos recursos mencionados abaixo, mas não todos eles. É recomendável que você leia o restante desta seção com cuidado para garantir que sua implantação seja perfeita. 
 
-O cmdlet de avaliação pode ser instalado pela instalação do módulo do PowerShell de Az, que pode ser instalado seguindo as instruções aqui: [Instale e configure o Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps).
+O cmdlet Evaluation pode ser instalado instalando o módulo AZ PowerShell, que pode ser instalado seguindo as instruções aqui: [Instale e configure o Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps).
 
 #### <a name="usage"></a>Uso  
 Você pode invocar a ferramenta de avaliação de algumas maneiras diferentes: você pode executar verificações de sistema, verificações de conjunto de dados ou ambas. Para executar verificações de sistema e de conjunto de dados: 
@@ -102,9 +101,9 @@ Para exibir os resultados em CSV:
 
     | Versão | SKUs com suporte | Opções de implantação com suporte |
     |---------|----------------|------------------------------|
-    | Windows Server 2019 | Datacenter e Standard | Completo e de núcleo |
-    | Windows Server 2016 | Datacenter e Standard | Completo e de núcleo |
-    | Windows Server 2012 R2 | Datacenter e Standard | Completo e de núcleo |
+    | Windows Server 2019 | Datacenter e Standard | Completo e central |
+    | Windows Server 2016 | Datacenter e Standard | Completo e central |
+    | Windows Server 2012 R2 | Datacenter e Standard | Completo e central |
 
     Versões futuras do Windows Server serão adicionadas à medida que forem liberadas.
 
@@ -157,29 +156,29 @@ O clustering de failover do Windows Server tem suporte pela Sincronização de A
 
 ### <a name="data-deduplication"></a>Eliminação de duplicação de dados
 **Versão do agente 5.0.2.0 ou mais recente**   
-A eliminação de duplicação de dados tem suporte em volumes com a camada de nuvem habilitada no Windows Server 2016 e Windows Server 2019. Eliminação de duplicação de dados em um volume com a disposição em camadas habilitada permite armazenar em cache mais arquivos no local sem provisionamento mais armazenamento. 
+A eliminação de duplicação de dados tem suporte em volumes com a camada de nuvem habilitada no Windows Server 2016 e Windows Server 2019. Habilitar a eliminação de duplicação de dados em um volume com camada de nuvem habilitada permite que você armazene em cache mais arquivos localmente sem provisionar mais armazenamento. 
 
-Quando a eliminação de duplicação de dados é habilitada em um volume com a disposição em camadas habilitada, otimizado de eliminação de duplicação arquivos no local de ponto de extremidade do servidor serão hierárquico semelhante a um arquivo normal com base na configurações de política de camadas de nuvem. Uma vez a eliminação de duplicação hierárquica de arquivos otimizados, o trabalho de coleta de lixo de eliminação de duplicação de dados será executado automaticamente para recuperar espaço em disco removendo partes desnecessárias que não são mais referenciados por outros arquivos no volume.
+Quando a eliminação de duplicação de dados está habilitada em um volume com disposição em camadas de nuvem habilitada, os arquivos otimizados para eliminação de duplicatas no local do ponto de extremidade do servidor serão em camadas semelhantes a um arquivo normal com base nas configurações de política de camadas de nuvem. Depois que os arquivos otimizados para eliminação de duplicação estiverem em camadas, o trabalho de coleta de lixo de eliminação de duplicatas de dados será executado automaticamente para recuperar espaço em disco removendo partes desnecessárias que não são mais referenciadas por outros arquivos no volume.
 
-Observe que a economia de volume se aplicam somente ao servidor. seus dados no compartilhamento de arquivos do Azure serão não ser com eliminação de duplicação.
+Observe que a economia de volume se aplica somente ao servidor; seus dados no compartilhamento de arquivos do Azure não serão eliminação de duplicação.
 
 **Windows Server 2012 R2 ou versões mais antigas do agente**  
 Para volumes que não têm a disposição em camadas de nuvem habilitada, a Sincronização de Arquivos do Azure dá suporte à Eliminação de Duplicação de Dados do Windows Server habilitada no volume.
 
 **Observações**
-- Se a eliminação de duplicação for instalada antes de instalar o agente de sincronização de arquivos do Azure, uma reinicialização é necessária para dar suporte à eliminação de duplicação de dados e camada de nuvem no mesmo volume.
-- Se a eliminação de duplicação de dados é habilitada em um volume depois de nuvem disposição em camadas estiver habilitada, o trabalho inicial de otimização de eliminação de duplicação otimizará a arquivos no volume que não estão em camadas já e terão o seguinte impacto na nuvem disposição em camadas:
-    - Política de espaço livre continuará arquivos de camadas, de acordo com o espaço livre no volume usando o mapa de calor.
-    - Política de data ignorará a disposição em camadas de arquivos que podem ter sido outra forma elegíveis para disposição em camadas devido ao trabalho de otimização da eliminação de duplicação acessando os arquivos.
-- Para trabalhos de otimização de eliminação de duplicação em andamento, as camadas com a política de data de nuvem obter atrasada pela eliminação de duplicação de dados [MinimumFileAgeDays](https://docs.microsoft.com/powershell/module/deduplication/set-dedupvolume?view=win10-ps) a configuração, se o arquivo já não está em camadas. 
-    - Exemplo: Se a configuração MinimumFileAgeDays é de 7 dias e política de data de camadas de nuvem é de 30 dias, a política de data será camada arquivos depois de 37 dias.
-    - Observação: Depois que um arquivo é hierárquico pela sincronização de arquivos do Azure, o trabalho de otimização da eliminação de duplicação irá ignorar o arquivo.
-- Se um servidor que executa o Windows Server 2012 R2 com o agente de sincronização de arquivos do Azure instalado for atualizado para o Windows Server 2016 ou Windows Server 2019, as etapas a seguir devem ser executadas para dar suporte à eliminação de duplicação de dados e camada de nuvem no mesmo volume:  
-    - Desinstale o agente de sincronização de arquivos do Azure para Windows Server 2012 R2 e reinicie o servidor.
-    - Baixe o agente de sincronização de arquivos do Azure para a nova versão do sistema operacional do servidor (Windows Server 2016 ou Windows Server 2019).
-    - Instalar o agente de sincronização de arquivos do Azure e reinicie o servidor.  
+- Se a eliminação de duplicação de dados for instalada antes da instalação do agente de Sincronização de Arquivos do Azure, uma reinicialização será necessária para dar suporte à eliminação de duplicação de dados e à camada de nuvem no mesmo volume.
+- Se a eliminação de duplicação de dados estiver habilitada em um volume depois que a disposição em camadas de nuvem estiver habilitada, o trabalho de otimização de eliminação de duplicação inicial otimizará os arquivos no volume que ainda não estão em camadas e terá o seguinte impacto na camada de nuvem:
+    - A política de espaço livre continuará a hierarquizar arquivos de acordo com o espaço livre no volume usando o calor.
+    - A política de data ignorará a camada de arquivos que, de outra forma, podem ter sido elegíveis para camadas devido ao trabalho de otimização de eliminação de duplicação que acessa os arquivos.
+- Para trabalhos de otimização de eliminação de duplicação em andamento, as camadas de nuvem com a política de data serão atrasadas pela configuração [MinimumFileAgeDays](https://docs.microsoft.com/powershell/module/deduplication/set-dedupvolume?view=win10-ps) de eliminação de duplicação de dados, se o arquivo ainda não estiver em camadas. 
+    - Exemplo: Se a configuração de MinimumFileAgeDays for de 7 dias e a política de data de camadas de nuvem for de 30 dias, a política de data fará a camada dos arquivos após 37 dias.
+    - Observação: Quando um arquivo está em camadas por Sincronização de Arquivos do Azure, o trabalho de otimização de eliminação de duplicação ignorará o arquivo.
+- Se um servidor que executa o Windows Server 2012 R2 com o agente de Sincronização de Arquivos do Azure instalado for atualizado para o Windows Server 2016 ou o Windows Server 2019, as etapas a seguir deverão ser executadas para dar suporte à eliminação de duplicação de dados e à camada de nuvem no mesmo volume:  
+    - Desinstale o agente de Sincronização de Arquivos do Azure para Windows Server 2012 R2 e reinicie o servidor.
+    - Baixe o agente de Sincronização de Arquivos do Azure para a nova versão do sistema operacional do servidor (Windows Server 2016 ou Windows Server 2019).
+    - Instale o agente de Sincronização de Arquivos do Azure e reinicie o servidor.  
     
-    Observação: As definições de configuração de sincronização de arquivos do Azure no servidor são mantidas quando o agente seja desinstalado e reinstalado.
+    Observação: As definições de configuração de Sincronização de Arquivos do Azure no servidor são mantidas quando o agente é desinstalado e reinstalado.
 
 ### <a name="distributed-file-system-dfs"></a>DFS (Sistema de Arquivos Distribuído)
 A Sincronização de Arquivos do Azure fornece suporte para interoperabilidade com Namespaces de DFS (DFS-N) e Replicação do DFS (DFS-R).
@@ -211,7 +210,7 @@ Como os antivírus funcionam com o exame de arquivos em busca de códigos mal-in
 As soluções antivírus internas da Microsoft, o Windows Defender e o System Center Endpoint Protection (SCEP), ignoram automaticamente a leitura de arquivos que possuem esse atributo definido. Nós os testamos e identificamos um problema menor: quando você adiciona um servidor a um grupo de sincronização existente, os arquivos com menos de 800 bytes são recuperados (feitos o download) no novo servidor. Esses arquivos permanecerão no novo servidor e não serão colocados em camadas, pois não atendem ao requisito de tamanho em camadas (> 64kb).
 
 > [!Note]  
-> Fornecedores de antivírus podem verificar a compatibilidade entre seus produtos e a sincronização de arquivos do Azure usando o [conjunto de testes de compatibilidade do Azure arquivo sincronização antivírus](https://www.microsoft.com/download/details.aspx?id=58322), que está disponível para download no Microsoft Download Center.
+> Os fornecedores de antivírus podem verificar a compatibilidade entre seus produtos e Sincronização de Arquivos do Azure usando o [sincronização de arquivos do Azure antivírus Compatibility Suite](https://www.microsoft.com/download/details.aspx?id=58322), que está disponível para download no centro de download da Microsoft.
 
 ### <a name="backup-solutions"></a>Soluções de backup
 Como as soluções de antivírus, as soluções de backup podem causar o recall de arquivos em camadas. Recomendamos o uso de uma solução de backup de nuvem para fazer backup do compartilhamento do arquivos do Azure, em vez de um produto de backup local.
@@ -245,32 +244,32 @@ A Sincronização de Arquivos do Azure está disponível apenas nas seguintes re
 | Região | Localização do Datacenter |
 |--------|---------------------|
 | Leste da Austrália | Nova Gales do Sul |
-| Sudeste da Austrália | Vitória |
-| Sul do Brasil | Estado de Paolo são |
+| Sudeste da Austrália | Victoria |
+| Sul do Brasil | Estado de são Paolo |
 | Canadá Central | Toronto |
 | Leste do Canadá | Cidade de Quebec |
 | Índia Central | Pune |
-| Centro dos EUA | Iowa |
-| Ásia Oriental | RAE de Hong Kong |
+| EUA Central | Iowa |
+| Ásia Oriental | Região Administrativa Especial de Hong Kong |
 | East US | Virgínia |
 | Leste dos EUA 2 | Virgínia |
-| França Central | Paris |
+| Centro da França | Paris |
 | Coreia Central| Seul |
 | Sul da Coreia| Busan |
 | Leste do Japão | Tóquio |
 | Oeste do Japão | Osaka |
 | Centro-Norte dos EUA | Illinois |
-| Norte da Europa | Irlanda |
-| Centro-Sul dos Estados Unidos | Texas |
+| Europa Setentrional | Irlanda |
+| Centro-Sul dos EUA | Texas |
 | Sul da Índia | Chennai |
-| Sudeste Asiático | Singapura |
+| Sudeste da Ásia | Cingapura |
 | Sul do Reino Unido | Londres |
 | Oeste do Reino Unido | Cardiff |
-| Governo dos EUA do Arizona | Arizona |
-| Governo dos EUA do Texas | Texas |
-| Gov. dos EUA – Virgínia | Virgínia |
+| US Gov – Arizona | Arizona |
+| US Gov – Texas | Texas |
+| US Gov - Virgínia | Virgínia |
 | Europa Ocidental | Países Baixos |
-| Centro-Oeste dos EUA | Wyoming |
+| Centro-oeste dos EUA | Wyoming |
 | Oeste dos EUA | Califórnia |
 | Oeste dos EUA 2 | Washington |
 
@@ -288,33 +287,33 @@ Para dar suporte à integração de failover entre o armazenamento com redundân
 |---------------------|--------------------|
 | Leste da Austrália      | Sudeste da Austrália|
 | Sudeste da Austrália | Leste da Austrália     |
-| Sul do Brasil        | Centro-Sul dos Estados Unidos   |
+| Sul do Brasil        | Centro-Sul dos EUA   |
 | Canadá Central      | Leste do Canadá        |
 | Leste do Canadá         | Canadá Central     |
 | Índia Central       | Sul da Índia        |
-| Centro dos EUA          | Leste dos EUA 2          |
-| Ásia Oriental           | Sudeste Asiático     |
+| EUA Central          | Leste dos EUA 2          |
+| Ásia Oriental           | Sudeste da Ásia     |
 | East US             | Oeste dos EUA            |
-| Leste dos EUA 2           | Centro dos EUA         |
-| França Central      | Sul da França       |
+| Leste dos EUA 2           | EUA Central         |
+| Centro da França      | Sul da França       |
 | Leste do Japão          | Oeste do Japão         |
 | Oeste do Japão          | Leste do Japão         |
 | Coreia Central       | Sul da Coreia        |
 | Sul da Coreia         | Coreia Central      |
-| Norte da Europa        | Europa Ocidental        |
-| Centro-Norte dos EUA    | Centro-Sul dos Estados Unidos   |
-| Centro-Sul dos Estados Unidos    | Centro-Norte dos EUA   |
+| Europa Setentrional        | Europa Ocidental        |
+| Centro-Norte dos EUA    | Centro-Sul dos EUA   |
+| Centro-Sul dos EUA    | Centro-Norte dos EUA   |
 | Sul da Índia         | Índia Central      |
-| Sudeste Asiático      | Ásia Oriental          |
+| Sudeste da Ásia      | Ásia Oriental          |
 | Sul do Reino Unido            | Oeste do Reino Unido            |
 | Oeste do Reino Unido             | Sul do Reino Unido           |
-| Governo dos EUA do Arizona      | Governo dos EUA do Texas       |
-| US Gov Iowa         | Gov. dos EUA – Virgínia    |
-| Gov. dos EUA – Virgínia      | Governo dos EUA do Texas       |
-| Europa Ocidental         | Norte da Europa       |
-| Centro-Oeste dos EUA     | Oeste dos EUA 2          |
+| US Gov – Arizona      | US Gov – Texas       |
+| US Gov Iowa         | US Gov - Virgínia    |
+| US Gov - Virgínia      | US Gov – Texas       |
+| Europa Ocidental         | Europa Setentrional       |
+| Centro-oeste dos EUA     | Oeste dos EUA 2          |
 | Oeste dos EUA             | East US            |
-| Oeste dos EUA 2           | Centro-Oeste dos EUA    |
+| Oeste dos EUA 2           | Centro-oeste dos EUA    |
 
 ## <a name="azure-file-sync-agent-update-policy"></a>Política de atualização do agente de Sincronização de Arquivo do Azure
 [!INCLUDE [storage-sync-files-agent-update-policy](../../../includes/storage-sync-files-agent-update-policy.md)]

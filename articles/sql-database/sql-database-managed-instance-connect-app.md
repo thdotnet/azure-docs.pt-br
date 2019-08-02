@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova, carlrab
-manager: craigg
 ms.date: 11/09/2018
-ms.openlocfilehash: 5f4a1962f90d54001f315827c1243e929344e3d7
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: 5a09b8e589b0d4ae9daa3bbd32c38f4946d16d0e
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67274006"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567618"
 ---
 # <a name="connect-your-application-to-azure-sql-database-managed-instance"></a>Conectar seu aplicativo à Instância Gerenciada do Banco de Dados SQL do Azure
 
@@ -45,7 +44,7 @@ Há duas opções de conexão de VNETs:
 A opção de emparelhamento é a preferencial porque o emparelhamento usa a rede de backbone da Microsoft. Portanto, da perspectiva de conectividade, não há nenhuma diferença perceptível na latência entre as máquinas virtuais na VNET emparelhada e na mesma VNET. O emparelhamento de VNET é limitado a redes na mesma região.  
 
 > [!IMPORTANT]
-> O cenário de emparelhamento VNet para a instância gerenciada está limitado às redes na mesma região devido a [restrições do emparelhamento de Rede Virtual Global](../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints). Também consulte a seção relevante a [Azure Virtual redes Frequently Asked Questions](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) artigo para obter mais detalhes. 
+> O cenário de emparelhamento VNet para a instância gerenciada está limitado às redes na mesma região devido a [restrições do emparelhamento de Rede Virtual Global](../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints). Consulte também a seção relevante do artigo [perguntas frequentes sobre redes virtuais do Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) para obter mais detalhes. 
 
 ## <a name="connect-an-on-premises-application"></a>Conectar um aplicativo local
 
@@ -56,7 +55,7 @@ Há duas opções de conexão do local à VNET do Azure:
 - Conexão VPN Site a Site ([portal do Azure](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md), [PowerShell](../vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md), [CLI do Azure](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-cli.md))
 - Conexão do [ExpressRoute](../expressroute/expressroute-introduction.md)  
 
-Se você estabeleceu local para a conexão do Azure com êxito e você não pode estabelecer conexão à instância gerenciada, verifique se o firewall tem conexão de saída aberto na porta 1433 do SQL, bem como intervalo de 11000 a 11999 de portas para o redirecionamento.
+Se você tiver estabelecido a conexão local para o Azure com êxito e não puder estabelecer conexão com Instância Gerenciada, verifique se o firewall tem conexão de saída aberta na porta SQL 1433, bem como 11000-11999 intervalo de portas para redirecionamento.
 
 ## <a name="connect-an-application-on-the-developers-box"></a>Conectar um aplicativo na caixa de desenvolvedores
 
@@ -96,7 +95,7 @@ Este cenário é ilustrado no seguinte diagrama:
 
 Para solucionar problemas de conectividade, examine o seguinte:
 
-- Se você não conseguir se conectar à instância gerenciada de uma máquina virtual do Azure no mesmo VNet mas sub-rede diferente, verifique se você tiver um grupo de segurança de rede definido na sub-rede VM que pode estar bloqueando o acesso. Além disso Observe que você precisa abrir a conexão de saída na porta 1433 do SQL, bem como as portas no intervalo de 11000-11999, pois esses são necessárias para conectar-se via redirecionamento dentro do limite do Azure.
+- Se você não conseguir se conectar a Instância Gerenciada de uma máquina virtual do Azure na mesma VNet, mas em uma sub-rede diferente, verifique se você tem um grupo de segurança de rede definido na sub-rede VM que pode estar bloqueando o acesso. Além disso, observe que você precisa abrir a conexão de saída na porta SQL 1433, bem como portas no intervalo 11000-11999, já que elas são necessárias para se conectar via redirecionamento dentro do limite do Azure.
 - Verifique se a Propagação de BGP está definida como **Habilitada** para a tabela de rotas associada à VNet.
 - Se estiver usando VPN P2S, verifique a configuração no portal do Azure para verificar se os números de **Entrada/Saída** são mostrados. Números diferentes de zero indicam que o Azure está roteando o tráfego de/para o local.
 
@@ -146,7 +145,7 @@ As seguintes versões mínimas das ferramentas e drivers são recomendadas se vo
 |Driver JDBC| 6.4.0 |
 |Driver Node.js| 2.1.1 |
 |Driver OLE DB| 18.0.2.0 |
-|SSMS| 18.0 ou [superior](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) |
+|SSMS| 18,0 ou [superior](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) |
 |[SMO](https://docs.microsoft.com/sql/relational-databases/server-management-objects-smo/sql-server-management-objects-smo-programming-guide) | [150](https://www.nuget.org/packages/Microsoft.SqlServer.SqlManagementObjects) ou superior |
 
 ## <a name="next-steps"></a>Próximas etapas

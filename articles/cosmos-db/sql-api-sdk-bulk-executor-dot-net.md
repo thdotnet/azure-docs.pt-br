@@ -1,5 +1,5 @@
 ---
-title: 'O Azure Cosmos DB: Recursos, SDK e API do executor em massa do .NET'
+title: 'O Azure Cosmos DB: API .NET do executor em massa, recursos do SDK &'
 description: Saiba tudo sobre a API .NET e o SDK do Bulk Executor, incluindo datas de lançamento, datas de aposentadoria e alterações feitas entre cada versão do SDK do .NET do Azure Cosmos DB Bulk Executor.
 author: tknandu
 ms.service: cosmos-db
@@ -8,14 +8,14 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 11/19/2018
 ms.author: ramkris
-ms.openlocfilehash: 74eddadd7fd967daa1eebb9d7cb223fdc708025f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 098cc3d76fff69b6b213514ac85835e7474b6233
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66471430"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68637736"
 ---
-# <a name="net-bulk-executor-library-download-information"></a>Biblioteca do executor em massa do .NET: Fazer o download das informações 
+# <a name="net-bulk-executor-library-download-information"></a>Biblioteca de executores em massa do .NET: Fazer o download das informações 
 
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-sdk-dotnet.md)
@@ -28,12 +28,12 @@ ms.locfileid: "66471430"
 > * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Provedor de recursos REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
 > * [SQL](sql-api-query-reference.md)
-> * [Executor em massa - .NET](sql-api-sdk-bulk-executor-dot-net.md)
-> * [Executor em massa - Java](sql-api-sdk-bulk-executor-java.md)
+> * [Executor em massa-.NET](sql-api-sdk-bulk-executor-dot-net.md)
+> * [Executor em massa – Java](sql-api-sdk-bulk-executor-java.md)
 
 | |  |
 |---|---|
-| **Descrição**| A biblioteca do Executor em massa permite que os aplicativos clientes executem operações em massa nas contas do Azure Cosmos DB. Biblioteca de Executor em massa fornece namespaces BulkImport, BulkUpdate e BulkDelete. O módulo BulkImport pode importar em massa documentos de forma otimizada, de modo que a taxa de transferência provisionada para uma coleção seja consumida até seu limite máximo. O módulo BulkUpdate pode atualizar em massa dados existentes nos contêineres do Azure Cosmos DB como patches. O módulo BulkDelete pode excluir documentos em massa de forma otimizada, de modo que o rendimento provisionado para uma coleção seja consumido em sua extensão máxima.|
+| **Descrição**| A biblioteca de executores em massa do .net permite que aplicativos cliente executem operações em massa em contas de Azure Cosmos DB. Essa biblioteca fornece os namespaces BulkImport, BulkUpdate e BulkDelete. O módulo BulkImport pode importar em massa documentos de forma otimizada, de modo que a taxa de transferência provisionada para uma coleção seja consumida até seu limite máximo. O módulo BulkUpdate pode atualizar em massa dados existentes nos contêineres do Azure Cosmos DB como patches. O módulo BulkDelete pode excluir documentos em massa de forma otimizada, de modo que o rendimento provisionado para uma coleção seja consumido em sua extensão máxima.|
 |**Baixe o SDK**| [NuGet](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.BulkExecutor/) |
 | **Biblioteca BulkExecutor no GitHub**| [GitHub](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started)|
 |**Documentação da API**|[Documentação de referência de API .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmosdb.bulkexecutor?view=azure-dotnet)|
@@ -44,15 +44,15 @@ ms.locfileid: "66471430"
 
 ### <a name="a-name230-preview2230-preview2"></a><a name="2.3.0-preview2"/>2.3.0-preview2
 
-* Adicionado suporte para o executor do graph em massa aceitar a ttl de vértices e bordas
+* Suporte adicionado para executor em massa de grafo para aceitar TTL em vértices e bordas
 
 ### <a name="a-name220-preview2220-preview2"></a><a name="2.2.0-preview2"/>2.2.0-preview2
 
-* Corrigido um problema que causou exceções durante o dimensionamento Elástico do Azure Cosmos DB durante a execução no modo de Gateway. Essa correção torna funcionalmente equivalente à 1.4.1 de versão.
+* Correção de um problema, que causou exceções durante o dimensionamento elástico de Azure Cosmos DB ao ser executado no modo de gateway. Essa correção torna funcionalmente equivalente à versão 1.4.1.
 
 ### <a name="a-name210-preview2210-preview2"></a><a name="2.1.0-preview2"/>2.1.0-preview2
 
-* BulkDelete adicionado suporte para contas de API do SQL aceitar a chave de partição, as tuplas de id do documento para excluir. Essa alteração torna funcionalmente equivalente à 1.4.0 de versão.
+* Adicionado suporte BulkDelete para contas da API do SQL para aceitar chave de partição, tuplas de ID de documento a serem excluídas. Essa alteração o torna funcionalmente equivalente à versão do 1.4.0.
 
 ### <a name="a-name200-preview2200-preview2"></a><a name="2.0.0-preview2"/>2.0.0-preview2
 
@@ -64,19 +64,19 @@ ms.locfileid: "66471430"
 
 ### <a name="a-name160160"></a><a name="1.6.0"/>1.6.0
 
-* Atualizado o Executor em massa para agora usar a versão mais recente do SDK do Azure Cosmos DB .NET (2.4.0)
+* Atualizado o executor em massa para agora usar a versão mais recente do SDK do .NET Azure Cosmos DB (2.4.0)
 
 ### <a name="a-name150150"></a><a name="1.5.0"/>1.5.0
 
-* Adicionado suporte para o executor do graph em massa aceitar a ttl de vértices e bordas
+* Suporte adicionado para executor em massa de grafo para aceitar TTL em vértices e bordas
 
 ### <a name="a-name141141"></a><a name="1.4.1"/>1.4.1
 
-* Corrigido um problema que causou exceções durante o dimensionamento Elástico do Azure Cosmos DB durante a execução no modo de Gateway.
+* Correção de um problema, que causou exceções durante o dimensionamento elástico de Azure Cosmos DB ao ser executado no modo de gateway.
 
 ### <a name="a-name140140"></a><a name="1.4.0"/>1.4.0
 
-* BulkDelete adicionado suporte para contas de API do SQL aceitar a chave de partição, as tuplas de id do documento para excluir.
+* Adicionado suporte BulkDelete para contas da API do SQL para aceitar chave de partição, tuplas de ID de documento a serem excluídas.
 
 ### <a name="a-name130130"></a><a name="1.3.0"/>1.3.0
 
@@ -114,6 +114,6 @@ ms.locfileid: "66471430"
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para saber mais sobre a biblioteca Java de Executor em massa, consulte o artigo a seguir:
+Para saber mais sobre a biblioteca Java do executor em massa, consulte o seguinte artigo:
 
-[SDK de biblioteca do Bulk Executor Java e informações da versão](sql-api-sdk-bulk-executor-java.md)
+[SDK da biblioteca de executor em massa do Java e informações de versão](sql-api-sdk-bulk-executor-java.md)

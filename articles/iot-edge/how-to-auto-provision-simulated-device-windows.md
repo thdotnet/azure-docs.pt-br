@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 01247dfc0046ef722d70fe48f7ab8ee63f685962
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0236491f9ebc8e3ecf7df8b74db4fd5ff441c7f8
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65153565"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68677435"
 ---
 # <a name="create-and-provision-a-simulated-tpm-edge-device-on-windows"></a>Crie e provisione um dispositivo de borda do TPM simulado no Windows
 
@@ -46,7 +46,7 @@ Ao criar uma inscrição no DPS, tem a oportunidade de declarar um **Estado inic
 
 Escolha o idioma SDK que você deseja usar para criar o dispositivo simulado e siga as etapas até que você crie o registro individual.
 
-Ao criar o registro individual, selecione **Habilitar** para declarar que o dispositivo TPM simulado em seu computador de desenvolvimento do Windows é um **Dispositivo IoT Edge**.
+Ao criar o registro individual, selecione **true** para declarar que o dispositivo TPM simulado em seu computador de desenvolvimento do Windows é um **dispositivo IOT Edge**.
 
 Dispositivo simulado e guias de inscrição individuais:
 

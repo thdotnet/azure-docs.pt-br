@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: glenga
-ms.openlocfilehash: 15fd8593f950e0f553d1b7ca34ee785692043cad
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: cfdc28486cf254c4dd808824ab167489818376ab
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68304352"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619601"
 ---
 # <a name="monitor-azure-functions"></a>Monitorar Azure Functions
 
@@ -97,7 +97,7 @@ Para obter informações sobre como usar o Application Insights, consulte a [doc
 
 As áreas de Application Insights a seguir podem ser úteis ao avaliar o comportamento, o desempenho e os erros em suas funções:
 
-| Tabulação | DESCRIÇÃO |
+| Tabulação | Descrição |
 | ---- | ----------- |
 | **[Sucedi](../azure-monitor/app/asp-net-exceptions.md)** |  Crie gráficos e alertas com base em falhas de função e exceções de servidor. O **Nome da Operação** é o nome da função. Falhas em dependências não são mostradas a menos que você implemente telemetria personalizada para dependências. |
 | **[Desempenho](../azure-monitor/app/performance-counters.md)** | Analisar problemas de desempenho. |
@@ -124,7 +124,7 @@ requests
 
 As tabelas disponíveis são mostradas na guia **esquema** à esquerda. Você pode encontrar os dados gerados por invocações de função nas tabelas a seguir:
 
-| Tabela | DESCRIÇÃO |
+| Tabela | Descrição |
 | ----- | ----------- |
 | **rastreamentos** | Logs criados pelo tempo de execução e por código de função. |
 | **requests** | Uma solicitação para cada invocação de função. |
@@ -152,9 +152,9 @@ Você pode usar Application Insights sem nenhuma configuração personalizada. A
 
 O agente do Azure Functions inclui uma *categoria* para cada log. A categoria indica qual parte do código de tempo de execução ou do seu código de função gravou o log. 
 
-O tempo de execução do Functions cria logs com uma categoria que começa com "host". Os logs "função iniciada," "função executada" e "função concluída" têm a categoria "host. executor". 
+O tempo de execução do Functions cria logs com uma categoria que começa com "host". Na versão 1. x, os `function started`logs `function executed`, e `function completed` têm a categoria `Host.Executor`. A partir da versão 2. x, esses logs têm a `Function.<YOUR_FUNCTION_NAME>`categoria.
 
-Se você gravar logs em seu código de função, sua categoria será "função".
+Se você gravar logs em seu código de função, a categoria `Function` estará na versão 1. x do tempo de execução do functions. Na versão 2. x, a categoria é `Function.<YOUR_FUNCTION_NAME>.User`.
 
 ### <a name="log-levels"></a>Níveis de log
 
@@ -167,7 +167,7 @@ O agente de Azure Functions também inclui um *nível de log* com cada log. [Log
 |Information | 2 |
 |Aviso     | 3 |
 |Erro       | 4 |
-|Crítico    | 5 |
+|Crítica    | 5 |
 |Nenhum        | 6 |
 
 Nível de log `None` é explicado na próxima seção. 
@@ -605,7 +605,7 @@ Você pode escrever código personalizado para mostrar as dependências. Para ob
 
 Para relatar um problema com a integração do Application Insights em Functions ou para fazer sugestões ou uma solicitação, [crie um problema no GitHub](https://github.com/Azure/Azure-Functions/issues/new).
 
-## <a name="streaming-logs"></a>Logs de streaming
+## <a name="streaming-logs"></a>Logs de Streaming
 
 Ao desenvolver um aplicativo, é sempre útil visualizar informações de registro em log realizado em tempo quase real. Você pode exibir um fluxo de arquivos de log que estão sendo gerados por suas funções no portal do Azure ou em uma sessão de linha de comando no computador local.
 

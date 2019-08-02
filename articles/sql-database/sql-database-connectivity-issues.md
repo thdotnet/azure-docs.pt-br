@@ -11,14 +11,13 @@ ms.topic: conceptual
 author: dalechen
 ms.author: ninarn
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 06/14/2019
-ms.openlocfilehash: adbe8dfd41725c11516f820656b0476ed1aa8881
-ms.sourcegitcommit: 22c97298aa0e8bd848ff949f2886c8ad538c1473
+ms.openlocfilehash: da2107a0573fafd10394931be21fb446f83fd5f2
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67144042"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68569059"
 ---
 # <a name="working-with-sql-database-connection-issues-and-transient-errors"></a>Trabalhando com problemas de conexão do Banco de Dados SQL do Azure e erros transitórios
 
@@ -77,8 +76,8 @@ Talvez você também queira definir um número máximo de novas tentativas antes
 
 Há exemplos de código com lógica de repetição disponíveis em:
 
-- [Conectar-se de forma resiliente ao SQL com ADO.NET][step-4-connect-resiliently-to-sql-with-ado-net-a78n]
-- [Conectar-se de forma resiliente ao SQL com PHP][step-4-connect-resiliently-to-sql-with-php-p42h]
+- [Connect resiliently to SQL with ADO.NET][step-4-connect-resiliently-to-sql-with-ado-net-a78n]
+- [Connect resiliently to SQL with PHP][step-4-connect-resiliently-to-sql-with-php-p42h]
 
 <a id="k-test-retry-logic" name="k-test-retry-logic"></a>
 
@@ -109,7 +108,7 @@ Para tornar esse teste prático, desconecte o computador da rede antes de inicia
 Seu programa pode errar intencionalmente o nome de usuário antes da primeira tentativa de conexão. O erro é:
 
 - **SqlException.Number** = 18456
-- Mensagem: "Falha de logon do usuário 'WRONG_MyUserName'."
+- Mensagem: "Falha no logon do usuário ' WRONG_MyUserName '."
 
 Como parte da primeira tentativa de repetição, o programa pode corrigir a ortografia e tentar se conectar.
 
@@ -134,12 +133,12 @@ Se o programa cliente se conectar ao Banco de Dados SQL usando a classe **System
 Ao criar a [cadeia de conexão](https://msdn.microsoft.com/library/System.Data.SqlClient.SqlConnection.connectionstring.aspx) para o objeto **SqlConnection**, coordene os valores dentre os seguintes parâmetros:
 
 - **ConnectRetryCount**:&nbsp;&nbsp;o padrão é 1. O intervalo vai de 0 a 255.
-- **ConnectRetryInterval**:&nbsp;&nbsp;padrão é 10 segundos. O intervalo vai de 1 a 60.
+- **ConnectRetryInterval**&nbsp;:&nbsp;o padrão é 10 segundos. O intervalo vai de 1 a 60.
 - **Connection Timeout**:&nbsp;&nbsp;o padrão é 15 segundos. O intervalo vai de 0 a 2147483647.
 
 Especificamente, os valores escolhidos devem tornar verdadeira esta igualdade: Connection Timeout = ConnectRetryCount * ConnectionRetryInterval
 
-Por exemplo, se a contagem for igual a 3 e o intervalo é igual a 10 segundos, um tempo limite de apenas 29 segundos não dará tempo suficiente para sua terceira e última tentativa para se conectar: 29 < 3 * 10.
+Por exemplo, se a contagem for igual a 3 e o intervalo for igual a 10 segundos, um tempo limite de apenas 29 segundos não dará ao sistema tempo suficiente para sua terceira e última tentativa de conexão: 29 < 3 * 10.
 
 <a id="connection-versus-command" name="connection-versus-command"></a>
 
@@ -215,11 +214,11 @@ Se você estiver usando o ADO.NET 4.0 ou anterior, recomendaremos fazer upgrade 
 
 <a id="e-diagnostics-test-utilities-connect" name="e-diagnostics-test-utilities-connect"></a>
 
-## <a name="diagnostics"></a>Diagnósticos
+## <a name="diagnostics"></a>Diagnóstico
 
 <a id="d-test-whether-utilities-can-connect" name="d-test-whether-utilities-can-connect"></a>
 
-### <a name="diagnostics-test-whether-utilities-can-connect"></a>Diagnóstico: Testar se os utilitários podem se conectar
+### <a name="diagnostics-test-whether-utilities-can-connect"></a>Diagnostics Testar se os utilitários podem se conectar
 
 Se o programa não se conectar ao Banco de Dados SQL, uma opção de diagnóstico será tentar se conectar usando um programa utilitário. O ideal é que o utilitário se conecte usando a mesma biblioteca que o programa.
 
@@ -232,7 +231,7 @@ Depois que o programa se conectar, teste se uma consulta SQL SELECT curta funcio
 
 <a id="f-diagnostics-check-open-ports" name="f-diagnostics-check-open-ports"></a>
 
-### <a name="diagnostics-check-the-open-ports"></a>Diagnóstico: Verificar as portas abertas
+### <a name="diagnostics-check-the-open-ports"></a>Diagnostics Verificar as portas abertas
 
 Se suspeitar de uma falha na conexão por causa de problemas na porta, você poderá executar um utilitário no computador relatando as configurações de porta.
 
@@ -261,28 +260,28 @@ TCP port 1433 (ms-sql-s service): LISTENING
 
 <a id="g-diagnostics-log-your-errors" name="g-diagnostics-log-your-errors"></a>
 
-### <a name="diagnostics-log-your-errors"></a>Diagnóstico: Os erros de log
+### <a name="diagnostics-log-your-errors"></a>Diagnostics Registre seus erros
 
 Às vezes, um problema intermitente é mais bem diagnosticado pela detecção de um padrão geral ao longo de dias ou de semanas.
 
 O cliente pode auxiliar em um diagnóstico ao registrar em log todos os erros encontrados. Convém correlacionar as entradas de log com os dados do erro que o próprio Banco de Dados SQL registra em log internamente.
 
-O Enterprise Library 6 (EntLib60) oferece classes gerenciadas .NET para auxiliar no registro em log. Para obter mais informações, consulte [5 - tão fácil quanto evitar um log: Use o Logging Application Block](https://msdn.microsoft.com/library/dn440731.aspx).
+O Enterprise Library 6 (EntLib60) oferece classes gerenciadas .NET para auxiliar no registro em log. Para obter mais informações, [consulte 5-tão fácil como cair em um log: Use o bloqueio](https://msdn.microsoft.com/library/dn440731.aspx)de aplicativo de log.
 
 <a id="h-diagnostics-examine-logs-errors" name="h-diagnostics-examine-logs-errors"></a>
 
-### <a name="diagnostics-examine-system-logs-for-errors"></a>Diagnóstico: Examine os logs de erros do sistema
+### <a name="diagnostics-examine-system-logs-for-errors"></a>Diagnostics Examinar os logs do sistema em busca de erros
 
 Aqui estão algumas instruções SQL SELECT que consultam logs de erros e outras informações.
 
-| Consulta de log | DESCRIÇÃO |
+| Consulta de log | Descrição |
 |:--- |:--- |
 | `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` |A exibição [sys.event_log](https://msdn.microsoft.com/library/dn270018.aspx) oferece informações sobre eventos individuais, o que inclui alguns que podem causar erros transitórios ou falhas de conectividade.<br/><br/>O ideal é que você possa correlacionar os valores **start_time** ou **end_time** com as informações sobre quando o programa cliente enfrentou problemas.<br/><br/>Você deve se conectar ao banco de dados  *mestre* para executar essa consulta. |
 | `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` |A exibição [sys.database_connection_stats](https://msdn.microsoft.com/library/dn269986.aspx) oferece contagens agregadas dos tipos de eventos para diagnóstico adicional.<br/><br/>Você deve se conectar ao banco de dados  *mestre* para executar essa consulta. |
 
 <a id="d-search-for-problem-events-in-the-sql-database-log" name="d-search-for-problem-events-in-the-sql-database-log"></a>
 
-### <a name="diagnostics-search-for-problem-events-in-the-sql-database-log"></a>Diagnóstico: Pesquisar eventos de problema no log do banco de dados SQL
+### <a name="diagnostics-search-for-problem-events-in-the-sql-database-log"></a>Diagnostics Procurar eventos de problema no log do banco de dados SQL
 
 Você pode procurar entradas sobre eventos de problemas no log do Banco de Dados SQL. Experimente a instrução SELECT Transact-SQL a seguir no banco de dados *mestre* :
 
@@ -327,7 +326,7 @@ database_xml_deadlock_report  2015-10-16 20:28:01.0090000  NULL   NULL   NULL   
 
 O Enterprise Library 6 (EntLib60) é uma estrutura de classes .NET que ajuda a implementar clientes robustos de serviços de nuvem, e um deles é o serviço Banco de Dados SQL. Para localizar tópicos dedicados a cada área nas quais o EntLib60 pode ajudar, consulte [Enterprise Library 6 - abril de 2013](https://msdn.microsoft.com/library/dn169621%28v=pandp.60%29.aspx).
 
-A lógica de repetição para tratar erros transitórios é uma área na qual EntLib60 pode auxiliar. Para obter mais informações, consulte [4 - Perseverança, segredo de todos os triunfos: Usar o Transient Fault Handling Application Block](https://msdn.microsoft.com/library/dn440719%28v=pandp.60%29.aspx).
+A lógica de repetição para tratar erros transitórios é uma área na qual EntLib60 pode auxiliar. Para obter mais informações, [consulte 4-perseverity, Secret de todos os triunfos: Use o bloco](https://msdn.microsoft.com/library/dn440719%28v=pandp.60%29.aspx)de aplicativo de tratamento de falhas transitórias.
 
 > [!NOTE]
 > O código-fonte de EntLib60 está disponível para fazer o download público no [Centro de Download](https://go.microsoft.com/fwlink/p/?LinkID=290898). A Microsoft não tem planos de fazer mais atualizações de manutenção ou de recursos no EntLib.
@@ -355,12 +354,12 @@ No namespace **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Test
 Estes são alguns links para informações sobre o EntLib60:
 
 - Download gratuito do livro: [Guia do desenvolvedor para o Microsoft Enterprise Library, 2ª edição](https://www.microsoft.com/download/details.aspx?id=41145).
-- Melhores práticas: [Diretrizes gerais de repetição](../best-practices-retry-general.md) tem uma excelente discussão detalhada sobre lógica de repetição.
-- Download do NuGet: [Enterprise Library – Transient Fault Handling Application Block 6.0](https://www.nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/).
+- Melhores práticas: As [diretrizes gerais de repetição](../best-practices-retry-general.md) têm uma excelente discussão aprofundada sobre a lógica de repetição.
+- Download do NuGet: [Enterprise Library – falha transitória ao lidar com falhas do bloco de aplicativos 6,0](https://www.nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/).
 
 <a id="entlib60-the-logging-block" name="entlib60-the-logging-block"></a>
 
-### <a name="entlib60-the-logging-block"></a>EntLib60: O bloqueio de log
+### <a name="entlib60-the-logging-block"></a>EntLib60: O bloco de log
 
 - O bloqueio de registro em log é uma solução altamente flexível e configurável que permite que você:
   - Crie e armazene mensagens de log em uma grande variedade de locais.
@@ -368,7 +367,7 @@ Estes são alguns links para informações sobre o EntLib60:
   - Colete informações contextuais que sejam úteis para depuração e rastreamento, bem como para requisitos de auditoria e de log geral.
 - O bloqueio de registro em log abstrai a funcionalidade de registro em log do destino de log, de maneira que o código do aplicativo seja consistente, independentemente do local e do tipo de armazenamento de log de destino.
 
-Para obter mais informações, consulte [5 - tão fácil quanto evitar um log: Use o Logging Application Block](https://msdn.microsoft.com/library/dn440731%28v=pandp.60%29.aspx).
+Para obter mais informações, [consulte 5-tão fácil como cair em um log: Use o bloqueio](https://msdn.microsoft.com/library/dn440731%28v=pandp.60%29.aspx)de aplicativo de log.
 
 <a id="entlib60-istransient-method-source-code" name="entlib60-istransient-method-source-code"></a>
 

@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: allenwux
 ms.author: xiwu
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 12/20/2018
-ms.openlocfilehash: 0b1e3b98fe5b934b712db2a5549ebdc865523bfb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 01962770c011a0107abd4e035c25d6c0d45fa0a0
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61412543"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68569377"
 ---
 # <a name="best-practices-for-sql-data-sync"></a>Práticas recomendadas para a Sincronização de Dados SQL 
 
@@ -129,7 +128,7 @@ Quando você criar um grupo de sincronização, comece com os dados em apenas um
 
 Se os bancos de dados estiverem em datacenters diferentes, cada linha deverá percorrer os diferentes datacenters. Isso aumenta o custo de uma sincronização inicial.
 
-#### <a name="recommendation"></a>Recomendações
+#### <a name="recommendation"></a>Recomendação
 
 Se for possível, comece com os dados em apenas um dos bancos de dados do grupo de sincronização.
 
@@ -158,7 +157,7 @@ As alterações podem apresentar falha na propagação por um dos seguintes moti
 > [!NOTE]
 > Essas alterações nunca se propagarão. A única maneira de recuperar-se neste cenário é recriar o grupo de sincronização.
 
-#### <a name="recommendation"></a>Recomendações
+#### <a name="recommendation"></a>Recomendação
 
 Monitore a integridade do banco de dados e do grupo de sincronização regularmente através da interface de log e do Portal.
 

@@ -1,5 +1,5 @@
 ---
-title: Integração de write-back de senha local com o Azure AD SSPR - Azure Active Directory
+title: Integração de write-back de senha local com o Azure AD SSPR-Azure Active Directory
 description: Obter write-back de senhas da nuvem para infraestrutura do AD local
 services: active-directory
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2dbf27301e738978e7f03d2423a4d23fd63c97b5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 07069d22d57540c6a16472bc7278821e14f1f18e
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67113491"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561289"
 ---
 # <a name="what-is-password-writeback"></a>O que é write-back de senha?
 
@@ -43,7 +43,7 @@ O Write-back de senha fornece:
 * **Não exige nenhuma regra de firewall de entrada**: o write-back de senha usa uma retransmissão do Barramento de Serviço do Azure como um canal de comunicação subjacente. Toda a comunicação é de saída pela porta 443.
 
 > [!NOTE]
-> Contas de usuários existentes em grupos protegidos no Active Directory local não podem ser usadas com o write-back de senha. Contas de administrador existentes em grupos protegidos no AD local podem ser usadas com o write-back de senha. Para obter mais informações sobre grupos protegidos, consulte [Contas e grupos protegidos do Active Directory](https://technet.microsoft.com/library/dn535499.aspx).
+> Contas de administrador existentes em grupos protegidos no AD local podem ser usadas com o write-back de senha. Os administradores podem alterar sua senha na nuvem, mas não podem usar a redefinição de senha para redefinir uma senha esquecida. Para obter mais informações sobre grupos protegidos, consulte [Contas e grupos protegidos do Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/appendix-c--protected-accounts-and-groups-in-active-directory).
 
 ## <a name="licensing-requirements-for-password-writeback"></a>Requisitos de licenciamento do write-back de senha
 
@@ -161,10 +161,10 @@ O tamanho de cada mensagem descrita anteriormente normalmente é inferior a 1 KB
    * Qualquer usuário final que redefine sua própria senha usando o PowerShell versão 1, versão 2 ou a API do Graph do Azure AD
 * **Operações do administrador sem suporte**
    * Qualquer redefinição de senha do usuário final iniciada pelo administrador do PowerShell versão 1, versão 2 ou da API do Graph do Azure AD
-   * Qualquer do usuário final iniciada pelo administrador de redefinição de senha das [Centro de administração do Microsoft 365](https://admin.microsoft.com)
+   * Qualquer redefinição de senha do usuário final iniciada pelo administrador no [centro de administração Microsoft 365](https://admin.microsoft.com)
 
 > [!WARNING]
-> Não há suporte para o uso da caixa de seleção "usuário deve alterar a senha no próximo logon" em Ferramentas administrativas do Active Directory local, como usuários do Active Directory e computadores ou o Centro Administrativo do Active Directory. Ao alterar uma senha local não marque esta opção.
+> Use a caixa de seleção "o usuário deve alterar a senha no próximo logon" no local Active Directory ferramentas administrativas como Active Directory usuários e computadores ou o Centro Administrativo do Active Directory não tem suporte. Ao alterar uma senha local, não marque essa opção.
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -1,28 +1,28 @@
 ---
-title: O portal do Azure de lista segura URLs | Microsoft Docs
-description: Adicione essas URLs para o desvio do servidor proxy para se comunicar com o portal do Azure e seus serviços
+title: As URLs de portal do Azure imsafelist | Microsoft Docs
+description: Adicione essas URLs ao bypass do servidor proxy para se comunicar com o portal do Azure e seus serviços
 services: azure-portal
 keywords: ''
 author: kfollis
 ms.author: kfollis
-ms.date: 06/13/2019
+ms.date: 07/29/2019
 ms.topic: conceptual
 ms.service: azure-portal
 manager: mtillman
-ms.openlocfilehash: 87ec600a2f6c4a560ec7cbb064b561fa76e2b615
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: 3747ca7504e1a8a6bbeb6237c1b3cb2e5e4afb5b
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67304967"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68667483"
 ---
-# <a name="safelist-the-azure-portal-urls-on-your-firewall-or-proxy-server"></a>O portal do Azure de lista segura URLs em seu servidor proxy ou firewall
+# <a name="safelist-the-azure-portal-urls-on-your-firewall-or-proxy-server"></a>ProSafe a portal do Azure URLs no seu firewall ou servidor proxy
 
-Para o bom desempenho e conectividade entre sua rede local ou remota e a nuvem do Azure, configurar os dispositivos de segurança local para ignorar as restrições de segurança para o portal do Azure URLs. Geralmente, os administradores de rede implantam servidores proxy, firewalls ou outros dispositivos para ajudar a proteger e oferecer controle sobre como os usuários acessam a internet. No entanto, regras projetadas para proteger os usuários às vezes, podem bloquear ou reduzir a velocidade legítimos tráfego de internet relacionados aos negócios, incluindo comunicações entre você e o Azure. Para otimizar a conectividade entre sua rede e o portal do Azure e seus serviços, é recomendável que você adicione o portal do Azure URLs para sua lista segura.
+Para obter um bom desempenho e conectividade entre sua rede local ou de longa distância e a nuvem do Azure, configure os dispositivos de segurança locais para ignorar as restrições de segurança para as URLs de portal do Azure. Os administradores de rede geralmente implantam servidores proxy, firewalls ou outros dispositivos para ajudar a proteger e dar controle sobre como os usuários acessam a Internet. No entanto, as regras projetadas para proteger os usuários às vezes podem bloquear ou reduzir o tráfego de Internet legítimo relacionado aos negócios, incluindo comunicações entre você e o Azure. Para otimizar a conectividade entre a rede e o portal do Azure e seus serviços, recomendamos que você adicione portal do Azure URLs à sua assafe.
 
-## <a name="azure-portal-urls-for-proxy-bypass"></a>Bypass de URLs para o proxy do portal do Azure
+## <a name="azure-portal-urls-for-proxy-bypass"></a>URLs de portal do Azure para bypass de proxy
 
-Adicione a seguinte lista de URLs para o seu servidor proxy ou firewall para permitir o tráfego de rede para esses pontos de extremidade para ignorar restrições:
+Adicione a seguinte lista de URLs ao seu servidor proxy ou firewall para permitir que o tráfego de rede para esses pontos de extremidade ignore as restrições:
 
 * *.aadcdn.microsoftonline-p.com
 * *.aimon.applicationinsights.io
@@ -44,6 +44,7 @@ Adicione a seguinte lista de URLs para o seu servidor proxy ou firewall para per
 * *.vortex.data.microsoft.com
 * *.vscommerce.visualstudio.com
 * *.vssps.visualstudio.com
+* *.windows.net
 * *.wpc.azureedge.net
 
 > [!NOTE]
@@ -52,5 +53,5 @@ Adicione a seguinte lista de URLs para o seu servidor proxy ou firewall para per
 >
 ## <a name="next-steps"></a>Próximas etapas
 
-* Precisa de endereços IP de lista segura? Baixe a lista de [intervalos de IP de datacenter do Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653).
-* Outro serviços uso Microsoft URLs adicionais e endereços IP para conectividade. Para otimizar a conectividade de rede para serviços do Microsoft 365, consulte [configurar sua rede para o Office 365](/office365/enterprise/set-up-network-for-office-365).
+* Precisa de endereços IP de resafelist? Baixe a lista de [intervalos de IP do datacenter Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653).
+* Outros serviços da Microsoft usam URLs e endereços IP adicionais para conectividade. Para otimizar a conectividade de rede para serviços de Microsoft 365, consulte [configurar sua rede para o Office 365](/office365/enterprise/set-up-network-for-office-365).

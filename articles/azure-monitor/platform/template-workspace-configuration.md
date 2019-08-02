@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 07/11/2019
 ms.author: magoedte
-ms.openlocfilehash: a55a4b2f3045aac8dfe9e46a50074585ab3ef491
-ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
+ms.openlocfilehash: 2acaba4e82f499ce1ca08a0ce17469ccb0a7e541
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67827789"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698439"
 ---
-# <a name="manage-log-analytics-workspace-using-azure-resource-manager-templates"></a>Gerenciar o espaço de trabalho do Log Analytics usando modelos do Azure Resource Manager
+# <a name="manage-log-analytics-workspace-using-azure-resource-manager-templates"></a>Gerenciar Log Analytics espaço de trabalho usando modelos de Azure Resource Manager
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-Você pode usar [modelos do Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) para criar e configurar espaços de trabalho do Log Analytics no Azure Monitor. Os exemplos das tarefas que você pode executar com os modelos incluem:
+Você pode usar [modelos de Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) para criar e configurar espaços de trabalho do Log Analytics no Azure monitor. Os exemplos das tarefas que você pode executar com os modelos incluem:
 
 * Criar um workspace incluindo o tipo de preço de configuração 
 * Adicionar uma solução
@@ -48,11 +48,11 @@ A tabela a seguir lista a versão de API para os recursos usados neste exemplo.
 | Workspace   | workspaces    | 2017-03-15-preview |
 | Pesquisar      | savedSearches | 2015-03-20 |
 | Fonte de dados | datasources   | 2015-11-01-preview |
-| Solução    | solutions     | 2015-11-01-preview |
+| Solução    | soluções     | 2015-11-01-preview |
 
 ## <a name="create-a-log-analytics-workspace"></a>Criar um espaço de trabalho do Log Analytics
 
-O exemplo a seguir cria um workspace usando um modelo da sua máquina local. O modelo JSON está configurado para exigir apenas o nome e o local do novo espaço de trabalho (usando os valores padrão para os outros parâmetros como o tipo de preço e retenção de espaço de trabalho).  
+O exemplo a seguir cria um workspace usando um modelo da sua máquina local. O modelo JSON é configurado para exigir apenas o nome e o local do novo espaço de trabalho (usando os valores padrão para os outros parâmetros de espaço de trabalho, como tipo de preço e retenção).  
 
 ### <a name="create-and-deploy-template"></a>Criar e implantar modelo
 
@@ -120,7 +120,7 @@ O exemplo a seguir cria um workspace usando um modelo da sua máquina local. O m
 
 2. Edite o modelo para atender às suas necessidades. Revisão de referência[Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/workspaces) para saber quais propriedades e os valores são suportados. 
 3. Salve esse arquivo como **deploylaworkspacetemplate.json** para uma pasta local.
-4. Você está pronto para implantar o modelo. Use o PowerShell ou a linha de comando para criar o espaço de trabalho, especificando o nome do espaço de trabalho e local como parte do comando.
+4. Você está pronto para implantar o modelo. Você pode usar o PowerShell ou a linha de comando para criar o espaço de trabalho, especificando o nome do espaço de trabalho e o local como parte do comando.
 
    * No caso do PowerShell, use os seguintes comandos na pasta que contém o modelo:
    
@@ -186,7 +186,6 @@ O exemplo de modelo a seguir ilustra como:
         "description": "Number of days of retention. Workspaces in the legacy Free pricing tier can only have 7 days."
       }
     },
-    {
     "immediatePurgeDataOn30Days": {
       "type": "bool",
       "metadata": {

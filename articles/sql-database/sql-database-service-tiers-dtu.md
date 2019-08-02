@@ -10,18 +10,17 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 06/25/2019
-ms.openlocfilehash: 964a2931267ad2f1e2842693eadf43f8f629a084
-ms.sourcegitcommit: a7ea412ca4411fc28431cbe7d2cc399900267585
+ms.openlocfilehash: c46913f24deffc7c4db95d8a77db1c49ae54b6ae
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67357233"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566688"
 ---
 # <a name="service-tiers-in-the-dtu-based-purchase-model"></a>Camadas de serviço no modelo de compra baseado em DTU
 
-As camadas de serviço no modelo de compra baseado em DTU são diferenciadas por uma gama de tamanhos da computação com quantidade fixa de armazenamento incluído, período de retenção fixo para backups e preço fixo. Todas as camadas de serviço no modelo de compra baseado em DTU fornecem flexibilidade para alterar os tamanhos de computação com pouca [tempo de inatividade](https://azure.microsoft.com/support/legal/sla/sql-database/v1_2/); no entanto, há uma opção de período onde conectividade for perdida ao banco de dados por um curto período de tempo, qual pode ser reduzido usando lógica de repetição. Os bancos de dados individuais e os pools elásticos são cobrados por hora com base na camada de serviço e no tamanho da computação.
+As camadas de serviço no modelo de compra baseado em DTU são diferenciadas por uma gama de tamanhos da computação com quantidade fixa de armazenamento incluído, período de retenção fixo para backups e preço fixo. Todas as camadas de serviço no modelo de compra baseado em DTU fornecem flexibilidade para alterar os tamanhos de computação com [tempo](https://azure.microsoft.com/support/legal/sla/sql-database/v1_2/)de inatividade mínimo; no entanto, há uma mudança no período em que a conectividade é perdida no banco de dados por um curto período de tempo, o que pode ser mitigado usando a lógica de repetição. Os bancos de dados individuais e os pools elásticos são cobrados por hora com base na camada de serviço e no tamanho da computação.
 
 > [!IMPORTANT]
 > A instância gerenciada do Banco de Dados SQL não dá suporte ao modelo de compra baseado em DTU. Para obter mais informações, consulte [Instância Gerenciada do Banco de Dados SQL do Azure](sql-database-managed-instance.md).
@@ -37,15 +36,15 @@ Escolher uma camada de serviço depende principalmente da continuidade dos negó
 |Carga de trabalho de destino|Desenvolvimento e produção|Desenvolvimento e produção|Desenvolvimento e produção|
 |SLA de tempo de atividade|99,99%|99,99%|99,99%|
 |Retenção de backup|7 dias|35 dias|35 dias|
-|CPU|Baixo|Baixo, Médio, Alto|Médio, Alto|
+|CPU|Baixa|Baixo, Médio, Alto|Médio, Alto|
 |Taxa de transferência de E/S (aproximada) |2.5 IOPS por DTU| 2.5 IOPS por DTU | 48 IOPS por DTU|
 |Latência de E/S (aproximada)|5 ms (leitura), 10 ms (gravação)|5 ms (leitura), 10 ms (gravação)|2 ms (leitura/gravação)|
-|Indexação ColumnStore |N/D|S3 e acima|Suportado|
-|OLTP na memória|N/D|N/D|Suportado|
+|Indexação ColumnStore |N/D|S3 e acima|Com suporte|
+|OLTP na memória|N/D|N/D|Com suporte|
 |||||
 
 > [!NOTE]
-> Você pode obter um banco de dados SQL do Azure gratuito na camada de serviço básico em conjunto com uma conta gratuita do Azure para explorar o Azure. Para obter informações, consulte [Crie um banco de dados de nuvem gerenciado com sua conta gratuita do Azure](https://azure.microsoft.com/free/services/sql-database/).
+> Você pode obter um banco de dados SQL do Azure gratuito na camada de serviço básica em conjunto com uma conta gratuita do Azure para explorar o Azure. Para obter informações, consulte [Crie um banco de dados de nuvem gerenciado com sua conta gratuita do Azure](https://azure.microsoft.com/free/services/sql-database/).
 
 ## <a name="single-database-dtu-and-storage-limits"></a>DTU de banco de dados único e limite de armazenamento
 
@@ -104,7 +103,7 @@ O banco de dados é dimensionado com base em um "fator de escala". O fator de es
 
 A carga de trabalho consiste em nove tipos de transação, conforme mostrado na tabela a seguir. Cada transação é projetada para realçar um conjunto de características do sistema em particular no mecanismo de banco de dados e no hardware do sistema, com alto contraste em relação às outras transações. Essa abordagem facilita a avaliação do impacto dos diferentes componentes no desempenho geral. Por exemplo, a transação "Leitura Intensa" gera um número significativo de operações de leitura do disco.
 
-| Tipo de transação | DESCRIÇÃO |
+| Tipo de transação | Descrição |
 | --- | --- |
 | Leitura Simples |SELECT; na memória; somente leitura |
 | Leitura Média |SELECT; maior parte na memória; somente leitura |
@@ -120,7 +119,7 @@ A carga de trabalho consiste em nove tipos de transação, conforme mostrado na 
 
 As transações são selecionadas aleatoriamente em uma distribuição ponderada com a combinação geral a seguir. A combinação geral tem uma taxa de leitura/gravação de aproximadamente 2:1.
 
-| Tipo de transação | % de combinação |
+| Tipo de Transação | % de combinação |
 | --- | --- |
 | Leitura Simples |35 |
 | Leitura Média |20 |
@@ -156,7 +155,7 @@ Por exemplo, um fator de escala de 500 (SF = 500) bancos de dados terá 100 usu�
 
 Uma execução válida do parâmetro de comparação exige uma duração da medida permanente de pelo menos uma hora.
 
-### <a name="metrics"></a>Métricas
+### <a name="metrics"></a>metrics
 
 As principais métricas no parâmetro de comparação são a taxa de transferência e o tempo de resposta.
 

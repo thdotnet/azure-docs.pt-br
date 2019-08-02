@@ -2,26 +2,26 @@
 title: Adicionar seu domínio personalizado – Azure Active Directory | Microsoft Docs
 description: Instruções sobre como adicionar um domínio personalizado usando o Azure Active Directory.
 services: active-directory
-author: eross-msft
+author: msaburnley
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 09/18/2018
-ms.author: lizross
+ms.author: ajburnle
 ms.reviewer: elkuzmen
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fb29fb5ef2e755ff456ad177b66349792b2fa21c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b3f90e594e69c58364b699299964273ce371e525
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60248404"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561724"
 ---
 # <a name="add-your-custom-domain-name-using-the-azure-active-directory-portal"></a>Adicionar um nome de domínio personalizado usando o portal do Azure Active Directory
-Todo novo locatário do Azure AD vem com um nome de domínio inicial: *domainname*.onmicrosoft.com. Você não pode alterar ou excluir o nome de domínio inicial, mas pode adicionar nomes da sua organização à lista. Adicionar nomes de domínio personalizados ajuda você a criar nomes de usuário que são familiares para seus usuários, tais como *alain\@contoso.com*.
+Todo novo locatário do Azure AD vem com um nome de domínio inicial: *domainname*.onmicrosoft.com. Você não pode alterar ou excluir o nome de domínio inicial, mas pode adicionar nomes da sua organização à lista. Adicionar nomes de domínio personalizados ajuda a criar nomes de usuário que são familiares para seus usuários, como *Alain\@contoso.com*.
 
 ## <a name="before-you-begin"></a>Antes de começar
 Antes de poder adicionar um nome de domínio personalizado, é necessário criar seu nome de domínio com um registrador de domínios. Para um registrador de domínios reconhecido, consulte [Registradores reconhecidos pelo ICANN](https://www.icann.org/registrar-reports/accredited-list.html).
@@ -31,7 +31,7 @@ Depois de obter seu nome de domínio, é possível criar seu primeiro diretório
 
 1. Entre no [Portal do Azure](https://portal.azure.com/) do seu diretório, usando uma conta com a função **Proprietário** para a assinatura e, em seguida, selecione **Azure Active Directory**. Para saber mais sobre funções de assinatura, consulte [Funções de administrador da assinatura clássica, funções RBAC do Azure e funções de administrador do Azure AD](../../role-based-access-control/rbac-and-directory-admin-roles.md#azure-rbac-roles).
 
-    ![Tela de portal do Azure, mostrando a opção Azure AD](media/active-directory-access-create-new-tenant/azure-ad-portal.png)
+    ![Tela de portal do Azure, mostrando a opção do Azure AD](media/active-directory-access-create-new-tenant/azure-ad-portal.png)
 
     >[!TIP]
     > Se você planeja federar seu AD do Windows Server local com o Azure AD, você precisa selecionar a caixa de seleção **Pretendo configurar esse domínio para logon único com meu Active Directory local** quando você executa a ferramenta Azure AD Connect para sincronizar seus diretórios. Você também precisa registrar o mesmo nome de domínio selecionado para federação com seu diretório local na etapa **domínio do Azure AD** no assistente. Você pode ver como é essa etapa do assistente [nessas instruções](../hybrid/how-to-connect-install-custom.md#verify-the-azure-ad-domain-selected-for-federation). Se você não tiver a ferramenta Azure AD Connect, poderá [baixá-la aqui](https://go.microsoft.com/fwlink/?LinkId=615771).
@@ -46,7 +46,7 @@ Depois de criar seu diretório, você pode adicionar seu nome de domínio person
 
 1. Selecione **Nomes de domínio personalizado** e, em seguida, selecione **Adicionar domínio personalizado**.
 
-    ![Página de nomes de domínio personalizado, com Adicionar domínio personalizado mostrado](media/add-custom-domain/add-custom-domain.png)
+    ![Página nomes de domínio personalizados, com Adicionar domínio personalizado mostrado](media/add-custom-domain/add-custom-domain.png)
 
 2. Digite o novo nome de domínio da sua organização na caixa **Nome de domínio personalizado** (por exemplo, _contoso.com_) e, em seguida, selecione **Adicionar domínio**.
 
@@ -55,7 +55,7 @@ Depois de criar seu diretório, você pode adicionar seu nome de domínio person
     >[!Important]
     >É necessário incluir .com, .net ou qualquer outra extensão de nível superior para isso funcionar adequadamente.
 
-    ![Página de nomes de domínio personalizado, com a página Adicionar domínio personalizado](media/add-custom-domain/add-custom-domain-blade.png)
+    ![Página nomes de domínio personalizados, com a página Adicionar domínio personalizado](media/add-custom-domain/add-custom-domain-blade.png)
 
 4. Copie as informações de DNS da página da **Contoso**. Por exemplo, MS=ms64983159.
 
@@ -85,7 +85,7 @@ Depois de registrar seu nome de domínio personalizado, precisa certificar-se de
 
     ![Página da Contoso com informações sobre entrada de DNS e o botão Verificar](media/add-custom-domain/contoso-blade-with-dns-info-verify.png)
 
-Depois de verificar seu nome de domínio personalizado, você pode excluir o arquivo. TXT ou MX sua verificação.
+Depois de verificar seu nome de domínio personalizado, você pode excluir seu arquivo TXT ou MX de verificação.
 
 ## <a name="common-verification-issues"></a>Problemas comuns de verificação
 - Se o Azure AD não puder verificar um nome de domínio personalizado, tente as sugestões a seguir:

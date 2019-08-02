@@ -10,12 +10,12 @@ ms.date: 06/02/2017
 ms.author: tamram
 ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: ea7e4757aac0fccf60a44c70e9de6a63c1ec9498
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3338bed8cd8067d58eb2600854de6c0d8e34d1a3
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65147002"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68668454"
 ---
 # <a name="using-the-azure-cli-with-azure-storage"></a>Usando a CLI do Azure com o Armazenamento do Azure
 
@@ -26,6 +26,8 @@ Neste guia, mostraremos como usar a [CLI do Azure](https://docs.microsoft.com/cl
 Os exemplos neste guia supõem o uso do shell Bash no Ubuntu, mas outras plataformas devem funcionar de forma semelhante. 
 
 [!INCLUDE [storage-cli-versions](../../../includes/storage-cli-versions.md)]
+
+[!INCLUDE [storage-multi-protocol-access-preview](../../../includes/storage-multi-protocol-access-preview.md)]
 
 ## <a name="prerequisites"></a>Pré-requisitos
 Este guia pressupõe que você conhece os conceitos básicos do Armazenamento do Azure. Ele também pressupõe que você é capaz de satisfazer os requisitos de criação de conta especificados abaixo para o serviço do Azure e de Armazenamento.
@@ -173,7 +175,7 @@ Done
 
 ## <a name="manage-storage-accounts"></a>Gerenciar contas de armazenamento
 
-### <a name="create-a-new-storage-account"></a>Criar uma nova conta de armazenamento
+### <a name="create-a-new-storage-account"></a>Criar uma conta de armazenamento
 Para usar o Armazenamento do Azure, você precisa de uma conta de armazenamento. Depois de configurar seu computador para se conectar à sua assinatura, você pode criar uma nova conta de Armazenamento do Azure.
 
 ```azurecli
@@ -323,6 +325,17 @@ Para excluir um blob, use o comando `blob delete`:
 
 ```azurecli
 az storage blob delete --container-name <container_name> --name <blob_name>
+```
+
+### <a name="set-the-content-type"></a>Definir o tipo de conteúdo
+
+O tipo de conteúdo, também conhecido como o tipo MIME, identifica o formato dos dados no blob. Navegadores e outros software usam o tipo de conteúdo para determinar como processar os dados. Por exemplo, o tipo de conteúdo para imagens PNG `image/png`é. Para definir o tipo de conteúdo, use `blob update` o comando:
+
+```azurecli
+az storage blob update
+    --container-name <container_name> 
+    --name <blob_name>
+    --content-type <content_type>
 ```
 
 ## <a name="create-and-manage-file-shares"></a>Criar e gerenciar compartilhamentos de arquivos

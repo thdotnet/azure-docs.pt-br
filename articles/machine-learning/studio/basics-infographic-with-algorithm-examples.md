@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
-author: garyericson
-ms.author: garye
+author: xiaoharper
+ms.author: amlstudiodocs
 ms.custom: seodc18
 ms.date: 03/04/2019
-ms.openlocfilehash: e29e4713cb01fcf894e09631ecca91ff07587751
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6e0a355852be57a3b0869a6bf094e98a89f49f28
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60751614"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68514917"
 ---
 # <a name="downloadable-infographic-machine-learning-basics-with-algorithm-examples"></a>Infográfico para download: conceitos básicos do aprendizado de máquina com exemplos de algoritmo
 
@@ -23,7 +23,7 @@ Baixe esta visão geral de fácil compreensão com um infográfico de noções b
 
 ## <a name="popular-algorithms-in-machine-learning-studio"></a>Algoritmos populares no Machine Learning Studio
 
-[Azure Machine Learning Studio](https://studio.azureml.net/) vem com uma grande biblioteca de algoritmos para análise preditiva. Este infográfico identifica quatro famílias populares de algoritmos – regressão, detecção de anomalias, clustering e classificação – e fornece links para exemplos em funcionamento na [Galeria de IA do Azure](https://gallery.azure.ai/). A Galeria contém testes de exemplo e tutoriais que demonstram como esses algoritmos podem ser aplicados a muitas soluções do mundo real.
+[Azure Machine Learning Studio](https://studio.azureml.net/) vem com uma grande biblioteca de algoritmos para análise preditiva. Este infográfico identifica quatro famílias populares de algoritmos – regressão, detecção de anomalias, clustering e classificação, além de fornecer links para exemplos em funcionamento no [Galeria de ia do Azure](https://gallery.azure.ai/). A Galeria contém testes de exemplo e tutoriais que demonstram como esses algoritmos podem ser aplicados a muitas soluções do mundo real.
 
 ## <a name="download-the-infographic-with-algorithm-examples"></a>Baixe o infográfico com exemplos de algoritmo
 

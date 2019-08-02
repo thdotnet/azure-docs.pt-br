@@ -5,15 +5,15 @@ author: rajani-janaki-ram
 manager: gauravd
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 11/27/2018
+ms.date: 07/31/2019
 ms.author: rajanaki
 ms.custom: mvc
-ms.openlocfilehash: 51754021f5029a751be90bfc4194ac6347c1e278
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 780db0cc5a99adfd2e7f8cd5be20a191bba009e8
+ms.sourcegitcommit: 6ad03fa28a0f60cb6dce6144f728c2ceb56ff6e2
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60772122"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68708131"
 ---
 # <a name="protect-a-file-server-by-using-azure-site-recovery"></a>Proteger um servidor de arquivos usando o Azure Site Recovery 
 
@@ -54,9 +54,9 @@ O diagrama a seguir o ajudará a determinar qual estratégia deve ser usada para
 
 ### <a name="factors-to-consider-in-your-decisions-about-disaster-recovery-to-azure"></a>Fatores a considerar ao decidir sobre a recuperação de desastre no Azure
 
-|Ambiente  |Recomendações  |Considere o seguinte |
+|Ambiente  |Recomendação  |Considere o seguinte |
 |---------|---------|---------|
-|Ambiente de servidor de arquivos com ou sem DFSR|   [Usar o Site Recovery para replicação](#replicate-an-on-premises-file-server-by-using-site-recovery)   |    O Site Recovery não oferece suporte a clusters de discos compartilhados ou armazenamento anexado à rede (NAS). Se seu ambiente usa essas configurações, use um dos outros métodos, conforme apropriado. <br> O Site Recovery não oferece suporte a SMB 3.0. A VM replicada incorpora as alterações somente quando as alterações feitas nos arquivos são atualizadas no local original dos arquivos.
+|Ambiente de servidor de arquivos com ou sem DFSR|   [Usar o Site Recovery para replicação](#replicate-an-on-premises-file-server-by-using-site-recovery)   |    O Site Recovery não oferece suporte a clusters de discos compartilhados ou armazenamento anexado à rede (NAS). Se seu ambiente usa essas configurações, use um dos outros métodos, conforme apropriado. <br> O Site Recovery não oferece suporte a SMB 3.0. A VM replicada incorpora as alterações somente quando as alterações feitas nos arquivos são atualizadas no local original dos arquivos.<br>  O Site Recovery oferece um processo de replicação de dados quase síncrono e, portanto, no caso de um cenário de failover não planejado, pode haver potencial perda de dados e pode criar problemas de incompatibilidade de USN.
 |Ambiente de servidor de arquivos com DFSR     |  [Estender a DFSR para uma máquina virtual IaaS do Azure](#extend-dfsr-to-an-azure-iaas-virtual-machine)  |      A DFSR funciona bem em ambientes de largura de banda extremamente fragmentada. Essa abordagem requer uma VM do Azure que esteja em execução o tempo todo. Você precisa levar em conta o custo da VM no planejamento.         |
 |VM IaaS do Azure     |     Sincronização de Arquivos    |     Se você usar a Sincronização de Arquivos em um cenário de recuperação de desastre, durante o failover, você deve realizar ações manuais para certificar-se de que os compartilhamentos de arquivos podem ser acessados pelo computador cliente de forma transparente. A Sincronização de Arquivos requer que a porta 445 esteja aberta no computador cliente.     |
 
@@ -64,7 +64,7 @@ O diagrama a seguir o ajudará a determinar qual estratégia deve ser usada para
 ### <a name="site-recovery-support"></a>Suporte do Site Recovery
 Como a replicação do Site Recovery é independente do aplicativo, estas recomendações devem servir também para os cenários a seguir.
 
-| source    |Para um site secundário    |Para o Azure
+| Origem    |Para um site secundário    |Para o Azure
 |---------|---------|---------|
 |Azure| -|Sim|
 |Hyper-V|   Sim |Sim
@@ -74,6 +74,8 @@ Como a replicação do Site Recovery é independente do aplicativo, estas recome
 
 > [!IMPORTANT]
 > Antes de continuar com uma das três abordagens a seguir, verifique se as estas dependências serão atendidas.
+
+
 
 **Conectividade site a site**: a conexão direta entre o site local e a rede do Azure deve ser estabelecida para permitir a comunicação entre servidores. Use uma conexão de VPN site a site segura a uma rede virtual do Azure que seja usada como local de recuperação de desastres. Para obter mais informações, consulte [Estabelecer uma conexão de VPN site a site entre um site local e uma rede virtual do Azure](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal).
 

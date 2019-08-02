@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
 ms.author: kumud
-ms.openlocfilehash: e4e9ef4f3a50aeac4db4d2cc2f2b6cbafcc47268
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 45200e7620326dedcee92c579843e61bb07ff68e
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67051631"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68610256"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Perguntas frequentes sobre Análise de Tráfego
 
@@ -54,11 +54,11 @@ Sua conta deve atender a uma das seguintes opções para ativar a análise de tr
         
 Para verificar funções atribuídas a um usuário para uma inscrição:
 
-1. Entrar no Azure por meio **AzAccount logon**. 
+1. Entre no Azure usando **login-AzAccount**. 
 
-2. Selecione a assinatura necessária usando **AzSubscription selecione**. 
+2. Selecione a assinatura necessária usando **Select-AzSubscription**. 
 
-3. Para listar todas as funções que são atribuídas a um usuário especificado, use **AzRoleAssignment Get - SignInName [email do usuário] - IncludeClassicAdministrators**. 
+3. Para listar todas as funções atribuídas a um usuário especificado, use **Get-AzRoleAssignment-SignInName [email do usuário]-IncludeClassicAdministrators**. 
 
 Se você não estiver vendo nenhuma saída, entre em contato com o administrador da assinatura respectiva para obter acesso para executar os comandos. Para obter mais detalhes, consulte [ Gerenciar controle de acesso baseado em função com o Azure PowerShell ](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell).
 
@@ -67,52 +67,52 @@ Se você não estiver vendo nenhuma saída, entre em contato com o administrador
 
 Você pode usar a análise de tráfego para NSGs em qualquer uma das seguintes regiões com suporte:
 - Canadá Central
-- Centro-Oeste dos EUA
-- Leste dos EUA
+- Centro-oeste dos EUA
+- East US
 - Leste dos EUA 2
 - Centro-Norte dos EUA
-- Centro-Sul dos Estados Unidos
-- Centro dos EUA
+- Centro-Sul dos EUA
+- EUA Central
 - Oeste dos EUA
 - Oeste dos EUA 2
-- França Central
+- Centro da França
 - Europa Ocidental
-- Norte da Europa
+- Europa Setentrional
 - Sul do Brasil
 - Oeste do Reino Unido
 - Sul do Reino Unido
 - Leste da Austrália
 - Sudeste da Austrália 
 - Ásia Oriental
-- Sudeste Asiático
+- Sudeste da Ásia
 - Coreia Central
 - Índia Central
 - Sul da Índia
 - Leste do Japão
 - Oeste do Japão
-- Gov. dos EUA – Virgínia
+- US Gov - Virgínia
 
 O espaço de trabalho do Log Analytics deve existir nas seguintes regiões:
 - Canadá Central
-- Centro-Oeste dos EUA
+- Centro-oeste dos EUA
 - Oeste dos EUA
 - Oeste dos EUA 2
-- Centro-Sul dos Estados Unidos
-- Centro dos EUA
-- Leste dos EUA
+- Centro-Sul dos EUA
+- EUA Central
+- East US
 - Leste dos EUA 2
-- França Central
+- Centro da França
 - Europa Ocidental
-- Norte da Europa
+- Europa Setentrional
 - Sul do Reino Unido
 - Leste da Austrália
 - Sudeste da Austrália
 - Ásia Oriental
-- Sudeste Asiático 
+- Sudeste da Ásia 
 - Coreia Central
 - Índia Central
 - Leste do Japão
-- Gov. dos EUA – Virgínia
+- US Gov - Virgínia
 
 ## <a name="can-the-nsgs-i-enable-flow-logs-for-be-in-different-regions-than-my-workspace"></a>Os NSGs para os quais eu habilito logs de fluxo podem estar em regiões diferentes do meu workspace?
 
@@ -124,7 +124,7 @@ Sim.
 
 ## <a name="can-i-use-an-existing-workspace"></a>Posso usar um workspace existente?
 
-Sim. Se você selecionar um workspace existente, verifique se ele foi migrado para o novo idioma de consulta. Se você não quiser atualizar o workspace, precisará criar um novo. Para obter mais informações sobre a nova linguagem de consulta, consulte [do Azure Monitor registra a atualização para uma nova pesquisa de log](../log-analytics/log-analytics-log-search-upgrade.md).
+Sim. Se você selecionar um workspace existente, verifique se ele foi migrado para o novo idioma de consulta. Se você não quiser atualizar o workspace, precisará criar um novo. Para obter mais informações sobre a nova linguagem de consulta, consulte [Azure monitor logs atualizar para a nova pesquisa de logs](../log-analytics/log-analytics-log-search-upgrade.md).
 
 ## <a name="can-my-azure-storage-account-be-in-one-subscription-and-my-log-analytics-workspace-be-in-a-different-subscription"></a>A minha Conta de Armazenamento do Microsoft Azure pode estar em uma assinatura e meu espaço de trabalho do Log Analytics está em uma assinatura diferente?
 
@@ -132,7 +132,7 @@ Sim, sua conta de Armazenamento do Microsoft Azure pode estar em uma assinatura 
 
 ## <a name="can-i-store-raw-logs-in-a-different-subscription"></a>Posso armazenar logs brutos em uma assinatura diferente?
 
-Não. Você pode armazenar logs brutos em qualquer conta de armazenamento em que um NSG está habilitado para logs de fluxo. No entanto, a conta de armazenamento e os logs brutos devem estar na mesma assinatura e região.
+Nº Você pode armazenar logs brutos em qualquer conta de armazenamento em que um NSG está habilitado para logs de fluxo. No entanto, a conta de armazenamento e os logs brutos devem estar na mesma assinatura e região.
 
 ## <a name="what-if-i-cant-configure-an-nsg-for-traffic-analytics-due-to-a-not-found-error"></a>E se eu não conseguir configurar um NSG para análise de tráfego devido a um erro "Não encontrado"?
 
@@ -174,7 +174,7 @@ Você está vendo a informação de recursos no painel, no entanto, não há est
 
 ## <a name="can-i-configure-traffic-analytics-using-powershell-or-an-azure-resource-manager-template-or-client"></a>Posso configurar a análise de tráfego usando o PowerShell ou um modelo ou cliente do Azure Resource Manager?
 
-Você pode configurar a análise de tráfego usando o Windows PowerShell a partir da versão 6.2.1. Para configurar o registro de fluxo e análise de tráfego para um NSG específico usando o cmdlet Set, consulte [AzNetworkWatcherConfigFlowLog conjunto](https://docs.microsoft.com/powershell/module/az.network/set-aznetworkwatcherconfigflowlog). Para obter o log de fluxo e o status de análise de tráfego para um NSG específico, consulte [Get-AzNetworkWatcherFlowLogStatus](https://docs.microsoft.com/powershell/module/az.network/get-aznetworkwatcherflowlogstatus).
+Você pode configurar a análise de tráfego usando o Windows PowerShell a partir da versão 6.2.1. Para configurar o log de fluxo e a análise de tráfego para um NSG específico usando o cmdlet Set, consulte [set-AzNetworkWatcherConfigFlowLog](https://docs.microsoft.com/powershell/module/az.network/set-aznetworkwatcherconfigflowlog). Para obter o log de fluxo e o status da análise de tráfego para um NSG específico, consulte [Get-AzNetworkWatcherFlowLogStatus](https://docs.microsoft.com/powershell/module/az.network/get-aznetworkwatcherflowlogstatus).
 
 Atualmente, você não pode usar um modelo do Azure Resource Manager para configurar a análise de tráfego.
 
@@ -246,28 +246,28 @@ A Análise de Tráfego é limitada. A medição é baseada no processamento de d
 
 Por exemplo, de acordo o [plano de preços](https://azure.microsoft.com/pricing/details/network-watcher/), considerando a região Centro-oeste dos EUA, se os dados dos logs de fluxo armazenados em uma conta de armazenamento processada pela Análise de Tráfego tiverem 10 GB e os logs aprimorados ingeridos no espaço de trabalho do Log Analytics tiverem 1 GB, os encargos aplicáveis serão: 10 x US$ 2,3 + 1 x US$ 2,76 = US$ 25,76
 
-## <a name="how-frequently-does-traffic-analytics-process-data"></a>A frequência com que a análise de tráfego de processar dados?
+## <a name="how-frequently-does-traffic-analytics-process-data"></a>Com que frequência Análise de Tráfego processar dados?
 
-Consulte a [seção de agregação de dados](https://docs.microsoft.com/azure/network-watcher/traffic-analytics-schema#data-aggregation) no documento de agregação de dados e esquema da análise de tráfego
+Consulte a seção de agregação de [dados](https://docs.microsoft.com/azure/network-watcher/traffic-analytics-schema#data-aggregation) no esquema de análise de tráfego e no documento de agregação de dados
 
-## <a name="how-does-traffic-analytics-decide-that-an-ip-is-malicious"></a>Como a análise de tráfego decide que um IP é mal-intencionado? 
+## <a name="how-does-traffic-analytics-decide-that-an-ip-is-malicious"></a>Como Análise de Tráfego decidir que um IP é mal-intencionado? 
 
-Análise de tráfego se baseia em sistemas de inteligência de ameaça interna da Microsoft para considerar um IP como mal-intencionado. Esses sistemas utilizam fontes diversificado de telemetria, como os produtos da Microsoft e serviços, a Microsoft Digital Crimes Unit (DCU), o Microsoft Security Response Center (MSRC) e feeds externos e compilar muitas inteligência sobre ele. Alguns desses dados é interno da Microsoft. Se um IP conhecido está obtendo sinalizado como malicios, gere um tíquete de suporte para saber os detalhes.
+Análise de Tráfego se baseia nos sistemas internos de inteligência contra ameaças da Microsoft para considerar um IP como mal-intencionado. Esses sistemas aproveitam fontes de telemetria diferentes, como produtos e serviços da Microsoft, a DCU (unidade de crimes digitais da Microsoft), o MSRC (Microsoft Security Response Center) e os feeds externos e criam uma grande quantidade de inteligência sobre ele. Alguns desses dados são internos da Microsoft. Se um IP conhecido estiver sendo sinalizado como mal-intencionado, gere um tíquete de suporte para saber os detalhes.
 
-## <a name="how-can-i-set-alerts-on-traffic-analytics-data"></a>Como definir alertas nos dados de análise de tráfego?
+## <a name="how-can-i-set-alerts-on-traffic-analytics-data"></a>Como posso definir alertas em Análise de Tráfego dados?
 
-Análise de tráfego não tem suporte interno para alertas. No entanto, como dados de análise de tráfego são armazenados no Log Analytics você pode escrever consultas personalizadas e definir alertas neles. Etapas:
-- Você pode usar o link para o Log Analytics na análise de tráfego. 
-- Use o [esquema documentado aqui](traffic-analytics-schema.md) escrever suas consultas 
-- Clique em "Nova regra de alerta" para criar o alerta
+Análise de Tráfego não tem suporte interno para alertas. No entanto, como Análise de Tráfego dados são armazenados em Log Analytics você pode escrever consultas personalizadas e definir alertas neles. Tarefas
+- Você pode usar o Shortlink para Log Analytics no Análise de Tráfego. 
+- Use o [esquema documentado aqui](traffic-analytics-schema.md) para escrever suas consultas 
+- Clique em "nova regra de alerta" para criar o alerta
 - Consulte a [documentação de alertas de log](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log) para criar o alerta
 
 ## <a name="how-can-i-navigate-by-using-the-keyboard-in-the-geo-map-view"></a>Como posso navegar usando o teclado na vista de mapa geográfico?
 
 A página do mapa geográfico contém duas seções principais:
     
-- **Faixa**: A faixa na parte superior do mapa geográfico fornece botões para selecionar os filtros de distribuição de tráfego (por exemplo, implantação, o tráfego de países/regiões e mal-intencionado). Quando você seleciona um botão, o respectivo filtro é aplicado no mapa. Por exemplo, se você selecionar o botão Ativo, o mapa destacará os datacenters ativos em sua implantação.
-- **Mapa**: Abaixo da faixa, a seção de mapa mostra a distribuição de tráfego entre os datacenters do Azure e países/regiões.
+- **Faixa**: A faixa na parte superior do mapa geográfico fornece botões para selecionar filtros de distribuição de tráfego (por exemplo, implantação, tráfego de países/regiões e mal-intencionado). Quando você seleciona um botão, o respectivo filtro é aplicado no mapa. Por exemplo, se você selecionar o botão Ativo, o mapa destacará os datacenters ativos em sua implantação.
+- **Mapa**: Abaixo da faixa, a seção de mapa mostra a distribuição de tráfego entre os data centers do Azure e os países/regiões.
     
 ### <a name="keyboard-navigation-on-the-banner"></a>Navegação do teclado no banner
     

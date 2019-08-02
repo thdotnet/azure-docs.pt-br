@@ -1,7 +1,7 @@
 ---
-title: Explorar e transformar os dados (classe de conjunto de dados)
+title: Explorar e transformar dados (classe DataSet)
 titleSuffix: Azure Machine Learning service
-description: Explorar dados usando as estatísticas de resumo e preparar dados por meio de limpeza de dados, transformação e engenharia de recursos
+description: Explorar dados usando estatísticas de resumo e preparar dados por meio de limpeza de dados, transformação e engenharia de recursos
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,19 +11,19 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 05/23/2019
-ms.openlocfilehash: 80137c7f1ecebab4d2da0c4b7ba0ca9292dad22e
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: f680a1cb15edf0141897c74da3b7c7afa01acae0
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67443962"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699114"
 ---
-# <a name="explore-and-prepare-data-with-the-dataset-class-preview"></a>Explorar e preparar dados com a classe de conjunto de dados (visualização)
+# <a name="explore-and-prepare-data-with-the-dataset-class-preview"></a>Explorar e preparar dados com a classe DataSet (visualização)
 
-Aprenda a explorar e preparar dados com o pacote azureml conjuntos de dados na [SDK do Azure Machine Learning](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py). O [conjunto de dados](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py) classe (visualização) permite que você explore e preparar seus dados, fornecendo funções, como: amostragem, as estatísticas de resumo e transformações inteligentes. Etapas de transformação são salvos no [definições de conjunto de dados](how-to-manage-dataset-definitions.md) com a capacidade de lidar com vários arquivos grandes de esquemas diferentes de uma maneira altamente escalonável.
+Saiba como explorar e preparar dados com o pacote azureml-DataSets no SDK do [Azure Machine Learning](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py). A classe [DataSet](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py) (visualização) permite que você explore e prepare seus dados fornecendo funções como: amostragem, estatísticas de resumo e transformações inteligentes. As etapas de transformação são salvas nas [definições do conjunto](how-to-manage-dataset-definitions.md) de recursos com a capacidade de lidar com vários arquivos grandes de esquemas diferentes de maneira altamente escalonável.
 
 > [!Important]
-> Algumas classes de conjunto de dados (visualização) têm dependências no [azureml dataprep](https://docs.microsoft.com/python/api/azureml-dataprep/?view=azure-ml-py) (GA) do pacote. Embora as funções de transformação podem ser feitas diretamente com o GA'ed [funções de preparação de dados](how-to-transform-data.md), recomendamos que os wrappers de pacote do conjunto de dados descritos neste artigo se você estiver criando uma nova solução. Azure Machine Learning conjuntos de dados (versão prévia) permitem que você não só transformar seus dados, mas também [dados de instantâneo](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_snapshot.datasetsnapshot?view=azure-ml-py) e armazenar [definições de conjunto de dados com controle de versão](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset?view=azure-ml-py). Conjuntos de dados é a próxima versão do SDK de preparação de dados, oferecendo funcionalidade expandida para gerenciar conjuntos de dados em soluções de inteligência Artificial.
+> Algumas classes de DataSet (versão prévia) têm dependências no pacote [azureml-dataprep](https://docs.microsoft.com/python/api/azureml-dataprep/?view=azure-ml-py) (GA). Embora as funções de transformação possam ser feitas diretamente com as [funções de preparação de dados](how-to-transform-data.md)do GA'ed, recomendamos que os wrappers de pacote do DataSet descritos neste artigo se você estiver criando uma nova solução. Azure Machine Learning conjuntos de dados (versão prévia) permitem que você não apenas transforme os mesmos, mas também os [dados de instantâneo](https://docs.microsoft.com/python/api/azureml-core/azureml.data.dataset_snapshot.datasetsnapshot?view=azure-ml-py) e armazene as definições de conjunto do dados com [controle de versão](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset?view=azure-ml-py). Conjuntos de dados é a próxima versão do data Prep SDK, oferecendo funcionalidade expandida para o gerenciamento de conjuntos de dados em soluções de ia.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -31,17 +31,17 @@ Para explorar e preparar seus dados, você precisará de:
 
 * Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de começar. Experimente a [versão gratuita ou paga do Serviço do Azure Machine Learning](https://aka.ms/AMLFree) hoje mesmo.
 
-* Um workspace de serviço do Azure Machine Learning. Ver [criar um espaço de trabalho do serviço de Azure Machine Learning](https://docs.microsoft.com/azure/machine-learning/service/setup-create-workspace).
+* Um workspace de serviço do Azure Machine Learning. Consulte [criar um Azure Machine Learning espaço de trabalho de serviço](https://docs.microsoft.com/azure/machine-learning/service/setup-create-workspace).
 
-* O SDK de aprendizado de máquina do Azure para Python (versão 1.0.21 ou posterior), que inclui o pacote azureml conjuntos de dados. Para instalar ou atualizar para a versão mais recente do SDK, consulte [instalar ou atualizar o SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
+* O SDK do Azure Machine Learning para Python (versão 1.0.21 ou posterior), que inclui o pacote de conjuntos de linhas do azureml. Para instalar ou atualizar para a versão mais recente do SDK, consulte [instalar ou atualizar o SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
 
-* A Azure Machine Learning a preparação de dados do SDK. Para instalar ou atualizar para a versão mais recente, consulte [instalar ou atualizar o SDK de preparação de dados](https://docs.microsoft.com/python/api/overview/azure/dataprep/intro?view=azure-dataprep-py#install).
+* O SDK do Azure Machine Learning data Prep. Para instalar ou atualizar para a versão mais recente, consulte [instalar ou atualizar o SDK de preparação de dados](https://docs.microsoft.com/python/api/overview/azure/dataprep/intro?view=azure-dataprep-py#install).
 
-* Baixar os arquivos de exemplo para acompanhar os exemplos: [crime.csv](https://dprepdata.blob.core.windows.net/dataset-sample-files/crime.csv) e [city.json](https://dprepdata.blob.core.windows.net/dataset-sample-files/city.json).
+* Baixe os arquivos de exemplo a seguir junto com os exemplos: [crime. csv](https://dprepdata.blob.core.windows.net/dataset-sample-files/crime.csv) e [City. JSON](https://dprepdata.blob.core.windows.net/dataset-sample-files/city.json).
 
 ## <a name="sampling"></a>amostragem
 
-Levar uma amostra dos seus dados para obter uma compreensão inicial de sua arquitetura de dados e conteúdo. Neste momento, o [ `sample()` ](https://docs.microsoft.com//python/api/azureml-core/azureml.core.dataset(class)?view=azure-ml-py#sample-sample-strategy--arguments-) método da classe de conjunto de dados é compatível com estratégias de amostragem Top N aleatória simples e Stratified.
+Obtenha um exemplo de seus dados para obter uma compreensão inicial de sua arquitetura de dados e conteúdo. Neste momento, o [`sample()`](https://docs.microsoft.com//python/api/azureml-core/azureml.core.dataset(class)?view=azure-ml-py#sample-sample-strategy--arguments-) método da classe DataSet dá suporte às principais estratégias de amostragem de N, simples aleatórias e de sobreratificações.
 
 ```Python
 from azureml.core.dataset import Dataset
@@ -54,43 +54,43 @@ dataset = Dataset.auto_read_files('./data/crime.csv')
 seed = random.randint(0, 4294967295)
 ```
 
-### <a name="top-n-sample"></a>Exemplo de N maiores
+### <a name="top-n-sample"></a>Exemplo de N principais
 
-Para amostragem de N superior, os primeiros n registros do conjunto de dados são o seu exemplo. Isso é útil se você estiver apenas tentando obter uma ideia do que a aparência de registros de dados, como o ou veja quais são os campos em seus dados.
+Para a amostragem de N superior, os primeiros N registros de seu conjunto de seus conjuntos de recursos são o seu exemplo. Isso será útil se você estiver apenas tentando ter uma ideia de como os seus registros de dados se parecem ou para ver quais campos estão em seus dados.
 
 ```Python
 top_n_sample_dataset = dataset.sample('top_n', {'n': 5})
 top_n_sample_dataset.to_pandas_dataframe()
 ```
 
-||id|Número do Caso|Data|Bloco|IUCR|Texto Primário|...|
+||ID|Número do Caso|Date|Bloquear|IUCR|Texto Primário|...|
 -|--|-----------|----|-----|----|------------|---
 0|10498554|HZ239907|4/4/2016 23:56|007XX E 111TH ST|1153|PRÁTICA ENGANOSA|...
 1|10516598|HZ258664|4/15/2016 17:00|082XX S MARSHFIELD AVE|890|ROUBO|...
-2|10519196|HZ261252|4/15/2016 10:00|104XX S SACRAMENTO AVE|1154|PRÁTICA ENGANOSA|...
+2|10519196|HZ261252|4/15/2016 10:00|104XX S SACRAMENTO ALVAR|1154|PRÁTICA ENGANOSA|...
 3|10519591|HZ261534|4/15/2016 9:00|113XX S PRAIRIE AVE|1120|PRÁTICA ENGANOSA|...
 4|10534446|HZ277630|4/15/2016 10:00|055XX N KEDZIE AVE|890|ROUBO|...
 
-### <a name="simple-random-sample"></a>Simple exemplo aleatório
+### <a name="simple-random-sample"></a>Exemplo aleatório simples
 
-A amostragem aleatória simples, cada membro da população de dados tem a mesma chance de serem selecionados como parte do exemplo. No `simple_random` estratégia de exemplo, os registros do conjunto de dados são selecionados com base na probabilidade especificada e retorna um conjunto de dados modificado. O parâmetro de semente é opcional.
+Em amostragem aleatória simples, cada membro da população de dados tem uma chance igual de ser selecionado como parte do exemplo. Na estratégia de exemplo, os registros do conjunto de recursos são selecionados com base na probabilidade especificada e retorna um conjunto de registros modificado. `simple_random` O parâmetro semente é opcional.
 
 ```Python
 simple_random_sample_dataset = dataset.sample('simple_random', {'probability':0.3, 'seed': seed})
 simple_random_sample_dataset.to_pandas_dataframe()
 ```
 
-||id|Número do Caso|Data|Bloco|IUCR|Texto Primário|...|
+||ID|Número do Caso|Date|Bloquear|IUCR|Texto Primário|...|
 -|--|-----------|----|-----|----|------------|---
 0|10516598|HZ258664|4/15/2016 17:00|082XX S MARSHFIELD AVE|890|ROUBO|...
-1|10519196|HZ261252|4/15/2016 10:00|104XX S SACRAMENTO AVE|1154|PRÁTICA ENGANOSA|...
+1|10519196|HZ261252|4/15/2016 10:00|104XX S SACRAMENTO ALVAR|1154|PRÁTICA ENGANOSA|...
 2|10534446|HZ277630|4/15/2016 10:00|055XX N KEDZIE AVE|890|ROUBO|...
 
-### <a name="stratified-sample"></a>Amostra estratificada
+### <a name="stratified-sample"></a>Exemplo de sobreratificação
 
-Exemplos estratificados Certifique-se de que certos grupos de uma população são representados no exemplo. No `stratified` estratégia de exemplo, a população é dividida em strata ou subgrupos, com base em semelhanças, e registros serão selecionados aleatoriamente de cada strata de acordo com os pesos de segmentos indicados pelo `fractions` parâmetro.
+Os exemplos de sobreratificação asseguram que determinados grupos de uma população sejam representados no exemplo. Na estratégia de `fractions` exemplo,apopulaçãoédivididaemStrata,ousubgrupos,combaseemsemelhanças,eosregistrossãoselecionadosaleatoriamentedecadaStratadeacordocomospesosStrataindicados`stratified` pelo parâmetro.
 
-No exemplo a seguir, podemos agrupar cada registro pelas colunas especificadas e incluir esse registro com base nas informações strata X peso de `fractions`. Se não for especificado um strata ou o registro não pode ser agrupado, o peso padrão, a amostra é 0.
+No exemplo a seguir, agrupamos cada registro pelas colunas especificadas e incluimos o registro dito com base nas informações de peso do Strata `fractions`X no. Se um Strata não for especificado ou o registro não puder ser agrupado, o peso padrão para a amostra será 0.
 
 ```Python
 # take 50% of records with `Primary Type` as `THEFT` and 20% of records with `Primary Type` as `DECEPTIVE PRACTICE` into sample Dataset
@@ -103,52 +103,52 @@ sample_dataset = dataset.sample('stratified', {'columns': ['Primary Type'], 'fra
 sample_dataset.to_pandas_dataframe()
 ```
 
-||id|Número do Caso|Data|Bloco|IUCR|Texto Primário|...|
+||ID|Número do Caso|Date|Bloquear|IUCR|Texto Primário|...|
 -|--|-----------|----|-----|----|------------|---
 0|10516598|HZ258664|4/15/2016 17:00|082XX S MARSHFIELD AVE|890|ROUBO|...
 1|10534446|HZ277630|4/15/2016 10:00|055XX N KEDZIE AVE|890|ROUBO|...
-2|10535059|HZ278872|4/15/2016 4:30|004XX S KILBOURN AVE|810|ROUBO|...
+2|10535059|HZ278872|4/15/2016 4:30|004XX S KILBOURN ALVAR|810|ROUBO|...
 
-## <a name="explore-with-summary-statistics"></a>Explore com estatísticas de resumo
+## <a name="explore-with-summary-statistics"></a>Explorar com estatísticas de resumo
 
- Detectar anomalias, valores, ausentes ou contagens de erro com o [ `get_profile()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#get-profile-arguments-none--generate-if-not-exist-true--workspace-none--compute-target-none-) método. Essa função obtém o perfil e as estatísticas de resumo de seus dados, que por sua vez ajuda a determinam as operações de preparação de dados necessários para aplicar.
+ Detectar anomalias, valores ausentes ou contagens de erros com [`get_profile()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#get-profile-arguments-none--generate-if-not-exist-true--workspace-none--compute-target-none-) o método. Essa função obtém o perfil e as estatísticas de Resumo de seus dados, o que, por sua vez, ajuda a determinar as operações de preparação de dados necessárias a serem aplicadas.
 
 ```Python
 dataset.get_profile()
 ```
 
-||Type|Min|max|Contagem|Contagem faltando|Sem contagem faltando|Percentual faltando|Contagem de erros|Contagem vazia|0,1% quantil|1% quantil|5% quantil|25% quantil|50% quantil|75% quantil|95% quantil|99% quantil|99,9% quantil|Média|Desvio padrão|Variação|Distorção|Curtose
+||Tipo|Min.|Máx|Contagem|Contagem faltando|Sem contagem faltando|Percentual faltando|Contagem de erros|Contagem vazia|0,1% quantil|1% quantil|5% quantil|25% quantil|50% quantil|75% quantil|95% quantil|99% quantil|99,9% quantil|Média|Desvio Padrão|Variação|Distorção|Curtose
 -|----|---|---|-----|-------------|-----------------|---------------|-----------|-----------|-------------|-----------|-----------|------------|------------|------------|------------|------------|--------------|----|------------------|--------|--------|--------
-id|FieldType.INTEGER|1.04986e + 07|1.05351e + 07|10.0|0,0|10.0|0,0|0,0|0,0|1.04986e + 07|1.04992e + 07|1.04986e + 07|1.05166e + 07|1.05209e + 07|1.05259e + 07|1.05351e + 07|1.05351e + 07|1.05351e + 07|1.05195e + 07|12302.7|1.51358e + 08|-0.495701|-1.02814
+ID|FieldType.INTEGER|1.04986 e + 07|1.05351 e + 07|10.0|0,0|10.0|0,0|0,0|0,0|1.04986 e + 07|1.04992 e + 07|1.04986 e + 07|1.05166 e + 07|1.05209 e + 07|1.05259 e + 07|1.05351 e + 07|1.05351 e + 07|1.05351 e + 07|1.05195 e + 07|12302,7|1.51358 e + 08|-0,495701|-1, 2814
 Número do Caso|FieldType.STRING|HZ239907|HZ278872|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Data|FieldType.DATE|2016-04-04 23:56:00+00:00|2016-04-15 17:00:00+00:00|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Bloco|FieldType.STRING|004XX S KILBOURN AVE|113XX S PRAIRIE AVE|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-IUCR|FieldType.INTEGER|810|1154|10.0|0,0|10.0|0,0|0,0|0,0|810|850|810|890|1136|1153|1154|1154|1154|1058.5|137.285|18847.2|-0.785501|-1.3543
+Date|FieldType. DATE|2016-04-04 23:56:00+00:00|2016-04-15 17:00:00+00:00|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
+Bloquear|FieldType.STRING|004XX S KILBOURN ALVAR|113XX S PRAIRIE AVE|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
+IUCR|FieldType.INTEGER|810|1154|10.0|0,0|10.0|0,0|0,0|0,0|810|850|810|890|1136|1153|1154|1154|1154|1058,5|137,285|18847,2|-0,785501|-1,3543
 Texto Primário|FieldType.STRING|PRÁTICA ENGANOSA|ROUBO|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-DESCRIÇÃO|FieldType.STRING|VERIFICAÇÃO DE FALSA|AO LONGO DE US $500|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Descrição do Local|FieldType.STRING||ESCOLA, PÚBLICA, CRIANDO|10.0|0,0|10.0|0,0|0,0|1.0||||||||||||||
-Detenção|FieldType.BOOLEAN|Falso|Falso|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Nacional|FieldType.BOOLEAN|Falso|Falso|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Superar|FieldType.INTEGER|531|2433|10.0|0,0|10.0|0,0|0,0|0,0|531|531|531|614|1318.5|1911|2433|2433|2433|1371.1|692.094|478994|0.105418|-1.60684
-Distrito|FieldType.INTEGER|5|24|10.0|0,0|10.0|0,0|0,0|0,0|5|5|5|6|13|19|24|24|24|13,5|6.94822|48.2778|0.0930109|-1.62325
-Ward|FieldType.INTEGER|1|48|10.0|0,0|10.0|0,0|0,0|0,0|1|5|1|9|22,5|40|48|48|48|24,5|16.2635|264.5|0.173723|-1.51271
-Área da Comunidade|FieldType.INTEGER|4|77|10.0|0,0|10.0|0,0|0,0|0,0|4|8.5|4|24|37.5|71|77|77|77|41.2|26.6366|709.511|0.112157|-1.73379
-Código do FBI|FieldType.INTEGER|6|11|10.0|0,0|10.0|0,0|0,0|0,0|6|6|6|6|11|11|11|11|11|9.4|2.36643|5.6|-0.702685|-1.59582
-Coordenada X|FieldType.INTEGER|1.16309e + 06|1.18336e + 06|10.0|7.0|3.0|0.7|0,0|0,0|1.16309e + 06|1.16309e + 06|1.16309e + 06|1.16401e + 06|1.16678e + 06|1.17921e + 06|1.18336e + 06|1.18336e + 06|1.18336e + 06|1.17108e + 06|10793.5|1.165e + 08|0.335126|-2.33333
-Coordenada Y|FieldType.INTEGER|1.8315e + 06|1.908e + 06|10.0|7.0|3.0|0.7|0,0|0,0|1.8315e + 06|1.8315e + 06|1.8315e + 06|1.83614e + 06|1.85005e + 06|1.89352e + 06|1.908e + 06|1.908e + 06|1.908e + 06|1.86319e + 06|39905.2|1.59243e + 09|0.293465|-2.33333
+Descrição|FieldType.STRING|VERIFICAÇÃO FALSA|MAIS DE $500|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
+Descrição do Local|FieldType.STRING||ESCOLA, PÚBLICO, PRÉDIO|10.0|0,0|10.0|0,0|0,0|1.0||||||||||||||
+Detenção|FieldType. BOOLEAN|False|False|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
+Nacional|FieldType. BOOLEAN|False|False|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
+Super|FieldType.INTEGER|531|2433|10.0|0,0|10.0|0,0|0,0|0,0|531|531|531|614|1318,5|1911|2433|2433|2433|1371,1|692, 94|478994|0,105418|-1,60684
+Distrito|FieldType.INTEGER|5|24|10.0|0,0|10.0|0,0|0,0|0,0|5|5|5|6|13|19|24|24|24|13,5|6,94822|48,2778|0, 930109|-1,62325
+Ward|FieldType.INTEGER|1|48|10.0|0,0|10.0|0,0|0,0|0,0|1|5|1|9|22,5|40|48|48|48|24,5|16,2635|264,5|0,173723|-1,51271
+Área da Comunidade|FieldType.INTEGER|4|77|10.0|0,0|10.0|0,0|0,0|0,0|4|8.5|4|24|37,5|71|77|77|77|41,2|26,6366|709,511|0,112157|-1,73379
+Código do FBI|FieldType.INTEGER|6|11|10.0|0,0|10.0|0,0|0,0|0,0|6|6|6|6|11|11|11|11|11|9.4|2,36643|5.6|-0,702685|-1,59582
+Coordenada X|FieldType.INTEGER|1.16309 e + 06|1.18336 e + 06|10.0|7.0|3.0|0,7|0,0|0,0|1.16309 e + 06|1.16309 e + 06|1.16309 e + 06|1.16401 e + 06|1.16678 e + 06|1.17921 e + 06|1.18336 e + 06|1.18336 e + 06|1.18336 e + 06|1.17108 e + 06|10793,5|1.165 e + 08|0,335126|-2,33333
+Coordenada Y|FieldType.INTEGER|1.8315 e + 06|1.908 e + 06|10.0|7.0|3.0|0,7|0,0|0,0|1.8315 e + 06|1.8315 e + 06|1.8315 e + 06|1.83614 e + 06|1.85005 e + 06|1.89352 e + 06|1.908 e + 06|1.908 e + 06|1.908 e + 06|1.86319 e + 06|39905,2|1.59243 e + 09|0,293465|-2,33333
 Ano|FieldType.INTEGER|2016|2016|10.0|0,0|10.0|0,0|0,0|0,0|2016|2016|2016|2016|2016|2016|2016|2016|2016|2016|0|0|NaN|NaN
-Atualizado Em|FieldType.DATE|2016-05-11 15:48:00+00:00|2016-05-27 15:45:00+00:00|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Latitude|FieldType.DECIMAL|41.6928|41.9032|10.0|7.0|3.0|0.7|0,0|0,0|41.6928|41.6928|41.6928|41.7057|41.7441|41.8634|41.9032|41.9032|41.9032|41.78|0.109695|0.012033|0.292478|-2.33333
-Longitude|FieldType.DECIMAL|-87.6764|-87.6043|10.0|7.0|3.0|0.7|0,0|0,0|-87.6764|-87.6764|-87.6764|-87.6734|-87.6645|-87.6194|-87.6043|-87.6043|-87.6043|-87.6484|0.0386264|0.001492|0.344429|-2.33333
-Location|FieldType.STRING||(41.903206037, -87.676361925)|10.0|0,0|10.0|0,0|0,0|7.0||||||||||||||
+Atualizado Em|FieldType. DATE|2016-05-11 15:48:00+00:00|2016-05-27 15:45:00+00:00|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
+Latitude|FieldType.DECIMAL|41,6928|41,9032|10.0|7.0|3.0|0,7|0,0|0,0|41,6928|41,6928|41,6928|41,7057|41,7441|41,8634|41,9032|41,9032|41,9032|41,78|0,109695|0, 12033|0,292478|-2,33333
+Longitude|FieldType.DECIMAL|-87,6764|-87,6043|10.0|7.0|3.0|0,7|0,0|0,0|-87,6764|-87,6764|-87,6764|-87,6734|-87,6645|-87,6194|-87,6043|-87,6043|-87,6043|-87,6484|0, 386264|0, 1492|0,344429|-2,33333
+Location|FieldType.STRING||(41,903206037,-87,676361925)|10.0|0,0|10.0|0,0|0,0|7.0||||||||||||||
 
 ## <a name="impute-missing-values"></a>Acrescentar valores ausentes
 
-Conjuntos de dados, valores nulos, do NaN e que não contêm nenhum conteúdo são considerados valores ausentes. Eles podem afetar o desempenho de seu modelos de aprendizado de máquina ou levar a conclusões inválidas. Imputação é uma abordagem comum para tratar valores ausentes e é útil quando você tem uma alta porcentagem de perder os registros que você não pode simplesmente excluir de valor.
+Em DataSets, valores nulos, NaNs e valores que não contêm nenhum conteúdo são considerados valores ausentes. Eles podem afetar o desempenho de seus modelos de aprendizado de máquina ou levar a conclusões inválidas. Imputação é uma abordagem comum para tratar valores ausentes e é útil quando você tem uma alta porcentagem de registros de valor ausente que não pode simplesmente excluir.
 
-O perfil de conjunto de dados gerado na seção anterior, podemos ver que `Latitude` e `Longitude` colunas têm uma alta porcentagem de valores ausentes. Neste exemplo, podemos calcular a média e imputar valores ausentes para essas duas colunas.
+No perfil do conjunto de linhas gerado na seção anterior, vemos que `Latitude` as `Longitude` colunas e têm uma alta porcentagem de valores ausentes. Neste exemplo, calculamos os valores de Mean e imputar ausentes para essas duas colunas.
 
-Primeiro, obtenha a definição mais recente do conjunto de dados com [ `get_definition()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#get-definition-version-id-none-) e reduzir os dados com [ `keep_columns()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow#keep-columns-columns--multicolumnselection--validate-column-exists--bool---false-----azureml-dataprep-api-dataflow-dataflow), portanto, podemos exibir apenas as colunas que desejamos endereço.
+Primeiro, obtenha a definição mais recente do conjunto de [`get_definition()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#get-definition-version-id-none-) dados com o e o parênteses com [`keep_columns()`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow#keep-columns-columns--multicolumnselection--validate-column-exists--bool---false-----azureml-dataprep-api-dataflow-dataflow), portanto, apenas exibimos as colunas que desejamos abordar.
 
 ```Python
 from azureml.core.dataset import Dataset
@@ -162,13 +162,13 @@ ds_def = ds_def.keep_columns(['ID', 'Arrest', 'Latitude', 'Longitude'])
 ds_def.head(3)
 ```
 
-||id|Detenção| Latitude|Longitude|
+||ID|Detenção| Latitude|Longitude|
 -|---------|-----|---------|----------|
-|0|10498554|Falso|41.692834|-87.604319|
-|1|10516598|Falso| 41.744107 |-87.664494|
-|2|10519196|Falso| NaN|NaN|
+|0|10498554|False|41,692834|-87,604319|
+|1|10516598|False| 41,744107 |-87,664494|
+|2|10519196|False| NaN|NaN|
 
-Em seguida, verifique as `MEAN` o valor da coluna de latitude usando o [ `summarize()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#summarize-summary-columns--typing-union-typing-list-azureml-dataprep-api-dataflow-summarycolumnsvalue---nonetype----none--group-by-columns--typing-union-typing-list-str---nonetype----none--join-back--bool---false--join-back-columns-prefix--typing-union-str--nonetype----none-----azureml-dataprep-api-dataflow-dataflow) função. Essa função aceita uma matriz de colunas no parâmetro `group_by_columns` para especificar o nível de agregação. O `summary_columns` parâmetro aceita a `SummaryColumnsValue` função, que especifica o nome da coluna atual, o nome do novo campo calculado, e o `SummaryFunction` para executar.
+Em seguida, verifique `MEAN` o valor da coluna latitude usando a [`summarize()`](/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-ml-py#summarize-summary-columns--typing-union-typing-list-azureml-dataprep-api-dataflow--summarycolumnsvalue---nonetype----none--group-by-columns--typing-union-typing-list-str---nonetype----none--join-back--bool---false--join-back-columns-prefix--typing-union-str--nonetype----none-----azureml-dataprep-api-dataflow-dataflow) função. Essa função aceita uma matriz de colunas no parâmetro `group_by_columns` para especificar o nível de agregação. O `summary_columns` parâmetro aceita a `SummaryColumnsValue` função, que especifica o nome da coluna atual, o novo nome do campo calculado e `SummaryFunction` o a ser executado.
 
 ```Python
 lat_mean = ds_def.summarize(group_by_columns = ['Arrest'],
@@ -181,11 +181,11 @@ lat_mean.head(1)
 
 ||Detenção|Latitude_MEAN|
 --|-----|--------|
-|0|Falso|41.780049|
+|0|False|41,780049|
 
-Assim que pudermos verificar os valores a serem imputar, use [ `ImputeMissingValuesBuilder` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.api.builders.imputemissingvaluesbuilder?view=azure-dataprep-py) aprender uma expressão fixa que imputes as colunas com qualquer um calculado `MIN`, `MAX`, `MEAN` valor, ou um `CUSTOM` valor. Quando `group_by_columns` for especificado, serão inseridos valores ausentes pelo grupo com `MIN`, `MAX` e `MEAN` calculados por grupo.
+Depois de verificarmos os valores para imputar, [`ImputeMissingValuesBuilder`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.api.builders.imputemissingvaluesbuilder?view=azure-dataprep-py) use para aprender uma expressão fixa que imputes as colunas com um `CUSTOM` valor `MIN`calculado `MAX`, `MEAN` , valor ou. Quando `group_by_columns` for especificado, serão inseridos valores ausentes pelo grupo com `MIN`, `MAX` e `MEAN` calculados por grupo.
 
-O [ `ImputeColumnArguments` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.api.builders.imputecolumnarguments?view=azure-dataprep-pyfunction) aceita uma cadeia de caracteres do column_id e um `ReplaceValueFunction` para especificar o tipo de impute. Para o valor de longitude ausente, imputá-lo com-87 com base no conhecimento externo.
+O [`ImputeColumnArguments`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.api.builders.imputecolumnarguments?view=azure-dataprep-pyfunction) aceita uma cadeia de caracteres column_id e `ReplaceValueFunction` um para especificar o tipo imputar. Para o valor de longitude ausente, imputar-o com-87 com base no conhecimento externo.
 
 ```Python
 # impute with MEAN
@@ -197,7 +197,7 @@ impute_custom = dprep.ImputeColumnArguments(column_id='Longitude',
                                             custom_impute_value=-87)
 ```
 
-Imputar etapas podem ser encadeadas em um `ImputeMissingValuesBuilder` do objeto usando o [ `Builders` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.api.builders.builders?view=azure-dataprep-py) classe função [ `impute_missing_values()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.api.builders.builders?view=azure-dataprep-py#impute-missing-values-impute-columns--typing-list-azureml-dataprep-api-builders-imputecolumnarguments----none--group-by-columns--typing-union-typing-list-str---nonetype----none-----azureml-dataprep-api-builders-imputemissingvaluesbuilder). O parâmetro `impute_columns` aceita uma matriz de `ImputeColumnArguments` objetos.
+As etapas de imputar podem ser encadeadas em `ImputeMissingValuesBuilder` um objeto usando [`Builders`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.api.builders.builders?view=azure-dataprep-py) a função [`impute_missing_values()`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.api.builders.builders?view=azure-dataprep-py#impute-missing-values-impute-columns--typing-list-azureml-dataprep-api-builders-imputecolumnarguments----none--group-by-columns--typing-union-typing-list-str---nonetype----none-----azureml-dataprep-api-builders-imputemissingvaluesbuilder)de classe. O parâmetro `impute_columns` aceita uma matriz de `ImputeColumnArguments` objetos.
 
 ```Python
 # get instance of ImputeMissingValuesBuilder
@@ -205,7 +205,7 @@ impute_builder = ds_def.builders.impute_missing_values(impute_columns=[impute_me
                                                    group_by_columns=['Arrest'])
 ```
 
-Chame o [ `learn()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.api.builders.imputemissingvaluesbuilder?view=azure-dataprep-py#learn------none) funcionar para armazenar as etapas de impute e aplicá-las a um objeto de fluxo de dados usando [ `to_dataflow()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.api.builders.imputemissingvaluesbuilder?view=azure-dataprep-py#to-dataflow------azureml-dataprep-api-dataflow-dataflow).
+Chame a [`learn()`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.api.builders.imputemissingvaluesbuilder?view=azure-dataprep-py#learn------none) função para armazenar as etapas imputar e aplique-as a um objeto Dataflow [`to_dataflow()`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.api.builders.imputemissingvaluesbuilder?view=azure-dataprep-py#to-dataflow------azureml-dataprep-api-dataflow-dataflow)usando.
 
 ```Python
 impute_builder.learn()
@@ -213,34 +213,34 @@ ds_def = impute_builder.to_dataflow()
 ds_def.head(3)
 ```
 
-Conforme mostrado na tabela de saída a seguir, a latitude ausente foi inserir com o `MEAN` valor de `Arrest==False` grupo e a longitude ausente foi inserir com-87.
+Conforme mostrado na tabela de saída a seguir, o Latitude ausente foi imputados com `MEAN` o valor `Arrest==False` de Group e a longitude ausente foi imputados com-87.
 
-||id|Detenção|Latitude|Longitude
+||ID|Detenção|Latitude|Longitude
 -|---------|-----|---------|----------
-0|10498554|Falso|41.692834|-87.604319
-1|10516598|Falso|41.744107|-87.664494
-2|10519196|Falso|41.780049|-87.000000
+0|10498554|False|41,692834|-87,604319
+1|10516598|False|41,744107|-87,664494
+2|10519196|False|41,780049|-87, 0
 
-Atualizar a definição de conjunto de dados, [ `update_definition()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset(class)?view=azure-ml-py#update-definition-definition--definition-update-message-) para manter as etapas de transformação executada.
+Atualize a definição de conjunto de [`update_definition()`](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset(class)?view=azure-ml-py#update-definition-definition--definition-update-message-) um com, para manter as etapas de transformação executadas.
 
 ```Python
 dataset = dataset.update_definition(ds_def, 'Impute Missing')
 dataset.head(3)
 ```
 
-||id|Detenção|Latitude|Longitude
+||ID|Detenção|Latitude|Longitude
 -|---------|-----|---------|----------
-0|10498554|Falso|41.692834|-87.604319
-1|10516598|Falso|41.744107|-87.664494
-2|10519196|Falso|41.780049|-87.000000
+0|10498554|False|41,692834|-87,604319
+1|10516598|False|41,744107|-87,664494
+2|10519196|False|41,780049|-87, 0
 
-## <a name="create-assertion-rules"></a>Criar regras de declaração
+## <a name="create-assertion-rules"></a>Criar regras de asserção
 
-Frequentemente, os dados que nós trabalhamos com durante a limpeza e preparação de dados é apenas um subconjunto do total de dados que precisamos para produção. Como resultado, algumas das pressuposições, que podemos fazer como parte de nosso processo de limpeza podem se tornar falsa. Por exemplo, em um conjunto de dados que atualiza continuamente, uma coluna que originalmente continha somente números em um determinado intervalo pode conter uma variedade maior de valores em execuções posteriores. Esses erros geralmente resultam em pipelines interrompidas ou dados corrompidos.
+Frequentemente, os dados com os quais trabalhamos ao limpar e preparar dados são apenas um subconjunto do total de dados de que precisamos para a produção. Como resultado, algumas das suposições que fazemos como parte de nossa limpeza podem se tornar falsas. Por exemplo, em um conjunto de dados que é atualizado continuamente, uma coluna que originalmente continha números dentro de um determinado intervalo pode conter um intervalo maior de valores em execuções posteriores. Esses erros geralmente resultam em pipelines rompidos ou dados incorretos.
 
-Suporte a conjuntos de dados criando asserções em dados, que são avaliados como o pipeline é executado. Essas declarações permitem verificar se nossos suposições sobre os dados continuam sejam precisas e, quando não, para lidar com falhas adequadamente.
+Os conjuntos de dados dão suporte à criação de asserções em data, que são avaliadas à medida que o pipeline é executado. Essas asserções nos permitem verificar se nossas suposições sobre os dados continuam precisas e, quando não, para tratar as falhas de acordo.
 
-Por exemplo, se você quiser restringir `Latitude` e `Longitude` valores no conjunto de dados a intervalos numéricos específicos, o [ `assert_value()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#assert-value-columns--multicolumnselection--expression--azureml-dataprep-api-expressions-expression--policy--azureml-dataprep-api-engineapi-typedefinitions-assertpolicy----assertpolicy-errorvalue--1---error-code--str----assertionfailed------azureml-dataprep-api-dataflow-dataflow) método garante que isso é sempre o caso.
+Por exemplo, se você quiser restringir `Latitude` e `Longitude` valores em seu conjunto de informações para intervalos numéricos específicos [`assert_value()`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#assert-value-columns--multicolumnselection--expression--azureml-dataprep-api-expressions-expression--policy--azureml-dataprep-api-engineapi-typedefinitions-assertpolicy----assertpolicy-errorvalue--1---error-code--str----assertionfailed------azureml-dataprep-api-dataflow-dataflow) , o método garante que sempre será o caso.
 
 ```Python
 from azureml.dataprep import value
@@ -256,14 +256,14 @@ ds_def = ds_def.assert_value('Longitude', (value <= 180) & (value >= -87), error
 ds_def.get_profile()
 ```
 
-||Type|Min|max|Count|Contagem faltando|Sem contagem faltando|Percentual faltando|Contagem de erros|Contagem vazia|0,1% quantil|1% quantil|5% quantil|25% quantil|50% quantil|75% quantil|95% quantil|99% quantil|99,9% quantil|Média|Desvio padrão|Variação|Distorção|Curtose
+||Tipo|Min.|Máx|Count|Contagem faltando|Sem contagem faltando|Percentual faltando|Contagem de erros|Contagem vazia|0,1% quantil|1% quantil|5% quantil|25% quantil|50% quantil|75% quantil|95% quantil|99% quantil|99,9% quantil|Média|Desvio Padrão|Variação|Distorção|Curtose
 -|----|---|---|-----|-------------|-----------------|---------------|-----------|-----------|-------------|-----------|-----------|------------|------------|------------|------------|------------|--------------|----|------------------|--------|--------|--------
-id|FieldType.INTEGER|1.04986e + 07|1.05351e + 07|10.0|0,0|10.0|0,0|0,0|0,0|1.04986e + 07|1.04992e + 07|1.04986e + 07|1.05166e + 07|1.05209e + 07|1.05259e + 07|1.05351e + 07|1.05351e + 07|1.05351e + 07|1.05195e + 07|12302.7|1.51358e + 08|-0.495701|-1.02814
-Detenção|FieldType.BOOLEAN|Falso|Falso|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Latitude|FieldType.DECIMAL|41.6928|41.9032|10.0|0,0|10.0|0,0|0,0|0,0|41.6928|41.7185|41.6928|41.78|41.78|41.78|41.9032|41.9032|41.9032|41.78|0.0517107|0.002674|0.837593|1.05
+ID|FieldType.INTEGER|1.04986 e + 07|1.05351 e + 07|10.0|0,0|10.0|0,0|0,0|0,0|1.04986 e + 07|1.04992 e + 07|1.04986 e + 07|1.05166 e + 07|1.05209 e + 07|1.05259 e + 07|1.05351 e + 07|1.05351 e + 07|1.05351 e + 07|1.05195 e + 07|12302,7|1.51358 e + 08|-0,495701|-1, 2814
+Detenção|FieldType. BOOLEAN|False|False|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
+Latitude|FieldType.DECIMAL|41,6928|41,9032|10.0|0,0|10.0|0,0|0,0|0,0|41,6928|41,7185|41,6928|41,78|41,78|41,78|41,9032|41,9032|41,9032|41,78|0, 517107|0, 2674|0,837593|1.05
 Longitude|FieldType.INTEGER|-87|-87|10.0|0,0|10.0|0,0|3.0|0,0|-87|-87|-87|-87|-87|-87|-87|-87|-87|-87|0|0|NaN|NaN
 
-O perfil, você vê que o `Error Count` para o `Longitude` coluna é 3. O código a seguir filtra o conjunto de dados, recupera o erro e vê que valor faz com que a asserção falha. A partir daqui, ajuste o seu código e limpar seus dados adequadamente.
+No perfil, você verá que o `Error Count` para a `Longitude` coluna é 3. O código a seguir filtra o conjunto de valores, recupera o erro e vê qual valor causa a falha da asserção. A partir daqui, ajuste seu código e limpe os dados adequadamente.
 
 ```Python
 from azureml.dataprep import col
@@ -278,7 +278,7 @@ print(error.originalValue)
 
 ## <a name="derive-columns-by-example"></a>Derivar colunas por exemplo
 
-Uma das ferramentas mais avançadas para conjuntos de dados é a capacidade de derivar colunas usando os exemplos de resultados desejados. Isso permite dar a um exemplo, o SDK para que ele pode gerar o código para obter as transformações pretendidas.
+Uma das ferramentas mais avançadas para conjuntos de informações é a capacidade de derivar colunas usando exemplos de resultados desejados. Isso permite que você dê um exemplo ao SDK para que ele possa gerar código para alcançar as transformações pretendidas.
 
 ```Python
 from azureml.core.dataset import Dataset
@@ -288,15 +288,15 @@ dataset = Dataset.auto_read_files('./data/crime.csv')
 dataset.head(3)
 ```
 
-||id|Número do Caso|Data|Bloco|...|
+||ID|Número do Caso|Date|Bloquear|...|
 -|---------|-----|---------|----|---
 0|10498554|HZ239907|2016-04-04 23:56:00|007XX E 111TH ST|...
 1|10516598|HZ258664|2016-04-15 17:00:00|082XX S MARSHFIELD AVE|...
-2|10519196|HZ261252|2016-04-15 10:00:00|104XX S SACRAMENTO AVE|...
+2|10519196|HZ261252|2016-04-15 10:00:00|104XX S SACRAMENTO ALVAR|...
 
-Digamos que você precisa transformar o formato de data e hora para 2016-04-04 10 e 23h às 00H '. No [ `derive_column_by_example()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#derive-column-by-example-source-columns--sourcecolumns--new-column-name--str--example-data--exampledata-----azureml-dataprep-api-dataflow-dataflow) argumento, fornecem exemplos de sua saída desejada na `example_data` parâmetro neste formato: *(saída original, a saída desejada)* .
+Digamos que você precise transformar o formato de data e hora para ' 2016-04-04 19:10-12AM '. No argumento, forneça exemplos de sua saída desejada `example_data` no parâmetro neste formato: *(saída original, saída desejada)* . [`derive_column_by_example()`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#derive-column-by-example-source-columns--sourcecolumns--new-column-name--str--example-data--exampledata-----azureml-dataprep-api-dataflow-dataflow)
 
-O código a seguir fornece dois exemplos de saída desejado, ("2016-04-04 23:56:00", "2016-04-04 10 PM-12 AM") e ("2016-04-15 17:00:00", "2016-04-15 às 16H - 6 PM")
+O código a seguir fornece dois exemplos de saída desejada, ("2016-04-04 23:56:00", "2016-04-04 19:10-12AM") e ("2016-04-15 17:00:00", "2016-04-15 16:00-18:00")
 
 ```Python
 ds_def = dataset.get_definition()
@@ -308,24 +308,24 @@ ds_def = ds_def.derive_column_by_example(
 ds_def.keep_columns(['ID','Date','Date_Time_Range']).head(3)
 ```
 
-Na tabela a seguir, observe que uma nova coluna, Date_Time_Range contém registros no formato especificado.
+Na tabela a seguir, observe que uma nova coluna, Date_Time_Range, contém registros no formato especificado.
 
-||id|Data|Date_Time_Range
+||ID|Date|Date_Time_Range
 -|--------|-----|----
-0|10498554|2016-04-04 23:56:00|2016-04-04 10 PM-12 AM
-1|10516598|2016-04-15 17:00:00|2016-04-15 ÀS 16H - 6 PM
-2|10519196|2016-04-15 10:00:00|2016-04-15 10H -12H00MIN.
+0|10498554|2016-04-04 23:56:00|2016-04-04 19:10-12AM
+1|10516598|2016-04-15 17:00:00|2016-04-15 16:00-18:00
+2|10519196|2016-04-15 10:00:00|2016-04-15 10H-12:00
 
 ```Python
 # update Dataset definition to keep the transformation steps performed.
 dataset = dataset.update_definition(ds_def, 'Derive Date_Time_Range')
 ```
 
-## <a name="fuzzy-groupings"></a>Agrupamentos difusos
+## <a name="fuzzy-groupings"></a>Agrupamentos difuso
 
-Quando você coletar dados de fontes diferentes, você pode encontrar variações de ortografia, maiusculas e minúsculas ou abreviações das mesmas entidades. Automaticamente padronizar e reconciliar essas variantes com a funcionalidade de agrupamento difuso ou clustering de texto, do SDK.
+Ao coletar dados de fontes diferentes, você pode encontrar variações de ortografia, capitalização ou abreviações das mesmas entidades. Padronizar e reconciliar automaticamente essas variantes com a funcionalidade de agrupamento difuso do SDK ou clustering de texto.
 
-Por exemplo, a coluna `inspections.business.city` contém várias formas da cidade nome "San Francisco".
+Por exemplo, a coluna `inspections.business.city` contém várias formas do nome da cidade "San Francisco".
 
 ```Python
 from azureml.core.dataset import Dataset
@@ -335,19 +335,19 @@ dataset = Dataset.auto_read_files('./data/city.json')
 dataset.head(5)
 ```
 
-||inspections.business.business_id|inspections.business_name|inspections.business.address|inspections.business.city|...|
+||inspections.business.business_id|inspeções de business_name|inspections.business.address|inspections.business.city|...|
 -|-----|-------------------------|------------|--|---
-0|16162|Quick-N-Ezee alimentos indianos|3861 24 St|SF|...
-1|67565|Rei de Cafe macarrão tailandês|1541 TARAVAL St|SAN FRANCISCO|...
-2|67565|Rei de Cafe macarrão tailandês|1541 TARAVAL St|SAN FRANCISCO|...
-3|68701|Grindz|St clement 832|SF|...
-4|69186|Premier buffet & eventos, Inc.|1255 22 St|S.F.|...
+0|16162|Quick-N-eZee Índico pratos|3861 24 St|IF|...
+1|67565|King of tailandês macarrão Cafe|1541 TARAVAL St|SÃO FRANCISCO|...
+2|67565|King of tailandês macarrão Cafe|1541 TARAVAL St|SÃO FRANCISCO|...
+3|68701|Grindz|832 Clement St|IF|...
+4|69186|Premier que atende & Events, Inc.|1255 22 St|S.F.|...
 
-Vamos usar o [ `fuzzy_group_column()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#fuzzy-group-column-source-column--str--new-column-name--str--similarity-threshold--float---0-8--similarity-score-column-name--str---none-----azureml-dataprep-api-dataflow-dataflow) método para adicionar uma coluna com a forma canônica detectada automaticamente de "San Francisco". Os argumentos `source_column` e `new_column_name` são necessários. Você também tem a opção de:
+Vamos usar o [`fuzzy_group_column()`](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#fuzzy-group-column-source-column--str--new-column-name--str--similarity-threshold--float---0-8--similarity-score-column-name--str---none-----azureml-dataprep-api-dataflow-dataflow) método para adicionar uma coluna com o formato canônico detectado automaticamente de "San Francisco". Os argumentos `source_column` e `new_column_name` são obrigatórios. Você também tem a opção de:
 
-* Criar uma nova coluna, `similarity_score_column_name`, que mostra a pontuação de similaridade entre cada par de valores originais e canônicos.
+* Crie uma nova coluna, `similarity_score_column_name`, que mostra a pontuação de similaridade entre cada par de valores originais e canônicos.
 
-* Forneça um `similarity_threshold`, que é a pontuação de similaridade mínima para os valores a serem agrupados.
+* Forneça um `similarity_threshold`, que é a pontuação de similaridade mínima para os valores que serão agrupados juntos.
 
 ```Python
 # get the latest Dataset definition
@@ -359,17 +359,17 @@ ds_def = ds_def.fuzzy_group_column(source_column='inspections.business.city',
 ds_def.head(5)
 ```
 
-||inspections.business.business_id|inspections.business_name|inspections.business.address|inspections.business.city|city_grouped|similarity_score|...|
+||inspections.business.business_id|inspeções de business_name|inspections.business.address|inspections.business.city|city_grouped|similarity_score|...|
 -|-----|-------------------------|------------|--|---|---|---
-0|16162|Quick-N-Ezee alimentos indianos|3861 24 St|SF|São Francisco|0.814806|...
-1|67565|Rei de Cafe macarrão tailandês|1541 TARAVAL St|SAN FRANCISCO|São Francisco|1.000000|...
-2|67565|Rei de Cafe macarrão tailandês|1541 TARAVAL St|SAN FRANCISCO|São Francisco|1.000000|...
-3|68701|Grindz|St clement 832|SF|São Francisco|0.814806|...
-4|69186|Premier buffet & eventos, Inc.|1255 22 St|S.F.|São Francisco|0.814806|...
+0|16162|Quick-N-eZee Índico pratos|3861 24 St|IF|São Francisco|0,814806|...
+1|67565|King of tailandês macarrão Cafe|1541 TARAVAL St|SÃO FRANCISCO|São Francisco|1.000000|...
+2|67565|King of tailandês macarrão Cafe|1541 TARAVAL St|SÃO FRANCISCO|São Francisco|1.000000|...
+3|68701|Grindz|832 Clement St|IF|São Francisco|0,814806|...
+4|69186|Premier que atende & Events, Inc.|1255 22 St|S.F.|São Francisco|0,814806|...
 
-Na definição de conjunto de dados resultante, todas as variações diferentes de "San Francisco" que representa os dados foram normalizadas para a mesma cadeia de caracteres, "San Francisco".
+Na definição de conjunto de dados resultante, todas as diferentes variações de representação de "San Francisco" nos dados foram normalizadas para a mesma cadeia de caracteres, "San Francisco".
 
-Salvar esta etapa de agrupamento difuso para a definição de conjunto de dados mais recente com `update_definition()`.
+Salve essa etapa de agrupamento difuso na definição mais recente do conjunto `update_definition()`de informações com.
 
 ```Python
 dataset = dataset.update_definition(ds_def, 'fuzzy grouping')
@@ -377,8 +377,8 @@ dataset = dataset.update_definition(ds_def, 'fuzzy grouping')
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* Consulte o aprendizado de máquina automatizado [tutorial](tutorial-auto-train-models.md) para obter um exemplo de modelo de regressão.
+* Consulte o [tutorial](tutorial-auto-train-models.md) de aprendizado de máquina automatizado para um exemplo de modelo de regressão.
 
-* Consulte o SDK [visão geral](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) para padrões de design e exemplos de uso.
+* Consulte a [visão geral](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) do SDK para padrões de design e exemplos de uso.
 
-* Para obter um exemplo de como usar conjuntos de dados, consulte o [notebooks de exemplo](https://aka.ms/dataset-tutorial).
+* Para obter um exemplo de como usar conjuntos de valores, consulte os [blocos de anotações de exemplo](https://aka.ms/dataset-tutorial).

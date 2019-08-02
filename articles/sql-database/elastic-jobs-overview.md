@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: srinia
 ms.author: srinia
 ms.reviewer: sstein
-manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: 62efee57f3663f1dad0446da659de16d2800bf75
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7c5905716c0aada4a5070b9968c330eafaffb741
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61482919"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561339"
 ---
 # <a name="create-configure-and-manage-elastic-jobs"></a>Criar, configurar e gerenciar trabalhos elásticos
 
@@ -76,7 +75,7 @@ Atualmente, a versão prévia está limitada a 100 trabalhos simultâneos.
 
 Para que os recursos não fiquem sobrecarregados ao executar trabalhos em bancos de dados em um pool elástico do SQL, os trabalhos podem ser configurados para limitar o número de bancos de dados em que o trabalho pode ser executado simultaneamente.
 
-Definir o número de bancos de dados simultâneos de um trabalho é executado no definindo a `sp_add_jobstep` procedimento armazenado `@max_parallelism` parâmetro no T-SQL ou `Add-AzSqlElasticJobStep -MaxParallelism` no PowerShell.
+Defina o número de bancos de dados simultâneos em que um trabalho é executado definindo `sp_add_jobstep` o parâmetro do `@max_parallelism` procedimento armazenado no T-SQL ou `Add-AzSqlElasticJobStep -MaxParallelism` no PowerShell.
 
 ## <a name="best-practices-for-creating-jobs"></a>Melhores práticas para a criação de trabalhos
 

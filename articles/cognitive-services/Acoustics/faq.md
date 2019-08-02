@@ -1,5 +1,5 @@
 ---
-title: Perguntas frequentes sobre o projeto acústica
+title: Perguntas frequentes sobre o projeto acústicos
 titlesuffix: Azure Cognitive Services
 description: Esta página fornece respostas a perguntas frequentes sobre o Project Acoustics, incluindo instruções de download e processo de cozedura.
 services: cognitive-services
@@ -10,26 +10,27 @@ ms.subservice: acoustics
 ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: kegodin
-ms.openlocfilehash: a18f6b57e203c40c0f667f07e8371348cb738c9b
-ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
+ROBOTS: NOINDEX
+ms.openlocfilehash: a965fc020c5c534616459ad661b71ac67dbc2425
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67827577"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68704803"
 ---
-# <a name="project-acoustics-frequently-asked-questions"></a>Perguntas frequentes sobre o projeto acústica
+# <a name="project-acoustics-frequently-asked-questions"></a>Perguntas frequentes sobre o projeto acústicos
 
 ## <a name="what-is-project-acoustics"></a>O que é Projeto Acústico?
 
-O pacote do projeto acústica de plug-ins é um sistema de acústica que calcula o comportamento de som wave antes do tempo de execução, algo semelhante a iluminação estático. A nuvem faz o trabalho pesado dos cálculos de física de onda, portanto, o custo da CPU de tempo de execução é baixo.  
+O pacote de plug-ins acústicos do projeto é um sistema acústico que calcula o comportamento de som wave antes do tempo de execução, semelhante à iluminação estática. A nuvem faz o trabalho pesado dos cálculos de física de onda, portanto, o custo da CPU de tempo de execução é baixo.  
 
 ## <a name="where-can-i-download-the-plugin"></a>Onde posso baixar o plug-in?
 
-Você pode baixar o [plug-in do projeto acústica Unity](https://www.microsoft.com/download/details.aspx?id=57346) ou o [plug-in do projeto acústica Unreal](https://www.microsoft.com/download/details.aspx?id=58090).
+Você pode baixar o [plug-in do módulo acústica do projeto](https://www.microsoft.com/download/details.aspx?id=57346) ou o [plug-in do projeto acústica inreal](https://www.microsoft.com/download/details.aspx?id=58090).
 
-## <a name="does-project-acoustics-support-ltxgt-platform"></a>Oferece suporte a projeto acústica &lt;x&gt; plataforma?
+## <a name="does-project-acoustics-support-ltxgt-platform"></a>O projeto acústica dá suporte &lt;à&gt; plataforma x?
 
-Suporte à plataforma do projeto acústica evolui com base nas necessidades do cliente. Entre em contato conosco sobre o [acústica projeto problema fórum](https://github.com/microsoft/ProjectAcoustics/issues) para saber mais sobre o suporte para outras plataformas.
+O suporte à plataforma acústica do projeto evolui com base nas necessidades do cliente. Entre em contato conosco no [Fórum de problemas do acústica do projeto](https://github.com/microsoft/ProjectAcoustics/issues) para saber mais sobre o suporte para plataformas adicionais.
 
 ## <a name="is-azure-used-at-runtime"></a>O Azure é usado em tempo de execução?
 
@@ -49,17 +50,17 @@ Nº O sistema ingerirá geometria de nível detalhada diretamente. Será voxeliz
  
 ## <a name="whats-in-the-runtime-lookup-table"></a>O que há na tabela de consulta de tempo de execução?
 
-Inclui o arquivo ACE é uma tabela de parâmetros acústicos entre diversas fonte e pares de local do ouvinte, bem como geometria da cena voxelized usado para a interpolação de parâmetro.
+O arquivo ACE includes é uma tabela de parâmetros acústicos entre vários pares de localização de origem e de ouvinte, bem como a geometria de cena voxelized usada para a interpolação de parâmetro.
  
-## <a name="can-project-acoustics-handle-moving-sources"></a>Projeto acústica pode lidar com a movimentação de fontes?
+## <a name="can-project-acoustics-handle-moving-sources"></a>O projeto de acústica pode lidar com as fontes móveis?
 
-Sim, o projeto acústica consulta a tabela de pesquisa e atualiza o DSP de áudio em todas as marcas, para que ele possa manipular movendo fontes e o ouvinte.
+Sim, o projeto acústicos consulta a tabela de pesquisa e atualiza o DSP de áudio em cada tique, para que possa lidar com as fontes e o ouvinte em movimento.
  
-## <a name="can-project-acoustics-handle-dynamic-geometry-closing-doors-walls-blown-away"></a>Projeto acústica pode lidar com a geometria dinâmica? Fechando portas? Paredes surpreso?
+## <a name="can-project-acoustics-handle-dynamic-geometry-closing-doors-walls-blown-away"></a>Os projetos acústicos podem lidar com a geometria dinâmica? Fechando portas? Paredes surpreso?
 
-Nº Os parâmetros acústicos são pré-computados com base no estado estático de um nível de jogo. Sugerimos deixando a geometria de porta fora acústica e, em seguida, aplicando oclusão adicional com base no estado de destrutível e objetos do jogo móveis usando estabelecida técnicas.
+Nº Os parâmetros acústicos são pré-computados com base no estado estático de um nível de jogo. Sugerimos deixar a geometria da porta fora dos acústicos e, em seguida, aplicar oclusão adicionais com base no estado dos objetos destrutíveis e de jogo móvel usando técnicas estabelecidas.
  
-## <a name="does-project-acoustics-use-acoustic-materials"></a>O projeto acústica usa materiais acústicos?
+## <a name="does-project-acoustics-use-acoustic-materials"></a>Os projetos acústicos usam materiais acústicos?
 
 Sim. Os materiais são escolhidos a partir dos nomes dos materiais físicos em seu nível, impulsionando a absorção.
  
@@ -69,12 +70,12 @@ As sondas são uma amostra dos possíveis locais dos jogadores. Cada sonda repre
  
 ## <a name="why-spend-so-much-compute-in-the-cloud-what-does-it-buy-me"></a>Por que gastar muito computação na nuvem? O que isso me compra?
 
-O Project Acoustics fornece parâmetros acústicos precisos e confiáveis, mesmo para ambientes virtuais ultra-complexos, levando em consideração todos os aspectos arquitetônicos. Ele fornece oclusão suave e obstrução e variação de reverberação dinâmico sem o trabalho manual de volumes de desenho. Tudo isso enquanto o restante de luz na CPU durante o tempo de execução.
+O Project Acoustics fornece parâmetros acústicos precisos e confiáveis, mesmo para ambientes virtuais ultra-complexos, levando em consideração todos os aspectos arquitetônicos. Ele fornece oclusão e obstrução suave e variação de reverberação dinâmica sem o trabalho manual dos volumes de desenho. Tudo isso enquanto o restante de luz na CPU durante o tempo de execução.
 
 ## <a name="what-exactly-happens-during-baking"></a>Exatamente, o que acontece durante "trazendo"?
 
-Uma tortas consiste em simulações acústico onda de regiões de simulação cuboid centralizados na investigação cada ouvinte.
+Um distorta consiste em simulações de ondas acústicas de regiões de simulação de cuboid centralizadas em cada investigação de ouvinte.
 
 ## <a name="next-steps"></a>Próximas etapas
-* Experimente o [conteúdo de exemplo de projeto acústica Unity](unity-quickstart.md) ou [conteúdo de exemplo Unreal](unreal-quickstart.md)
+* Experimente o [conteúdo de exemplo do projeto acústicos do acústica](unity-quickstart.md) ou [conteúdo de exemplo não real](unreal-quickstart.md)
 

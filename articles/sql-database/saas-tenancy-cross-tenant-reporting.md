@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewers: billgib,ayolubek
-manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: 9562d0cd1ad97a459c3630456a6070ac2b6e63f3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fa8dbbbb09fbdc14049e168afe6eb4810ccc8254
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61484609"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570239"
 ---
 # <a name="cross-tenant-reporting-using-distributed-queries"></a>Relatório entre locatários usando consultas distribuídas
 
@@ -93,7 +92,7 @@ Para examinar a definição da exibição *Locais*:
 
 1. Em **Pesquisador de Objetos**, expanda **contosoconcerthall** > **Exibições**:
 
-   ![Modos de exibição](media/saas-tenancy-cross-tenant-reporting/views.png)
+   ![exibições](media/saas-tenancy-cross-tenant-reporting/views.png)
 
 2. Clique com botão direito do mouse em **dbo.Venues**.
 3. Selecione **Modo de Exibição de Script como** > **CRIAR para** > **Janela do Editor Nova Consulta**
@@ -106,7 +105,7 @@ Este exercício implanta o banco de dados _adhocreporting_. Esse é o banco de d
 
 1. No *ISE do PowerShell*, abra ...\\Módulos de Aprendizado\\Análise Operacional\\Relatórios Ad hoc\\*Demo-AdhocReporting.ps1*. 
 
-1. Definir **$DemoScenario = 2**, _improvisadas implantar banco de dados relatórios_.
+1. Defina **$DemoScenario = 2**, _implantar banco de dados de relatórios ad hoc_.
 
 1. Pressione **F5** para executar o script e criar o banco de dados *adhocreporting*.
 
@@ -148,7 +147,7 @@ Agora que o banco de dados *adhocreporting* está configurado, siga em frente e 
 
 Ao inspecionar o plano de execução, passe o mouse sobre os ícones de plano para obter detalhes. 
 
-É importante observar que configurar **DISTRIBUTION = SHARDED(VenueId)** , quando definida a fonte de dados externa, melhora o desempenho em muitos cenários. Como cada *VenueId* é mapeado para um banco de dados individual, a filtragem é facilmente feita remotamente, retornando somente os dados necessários.
+É importante observar que configurar **DISTRIBUTION = SHARDED(VenueId)** , quando definida a fonte de dados externa, melhora o desempenho em muitos cenários. Como cada *LocalId* é mapeado para um banco de dados individual, a filtragem é facilmente feita remotamente, retornando apenas os dados necessários.
 
 1. Abra ...\\Módulos de Aprendizado\\Análise Operacional\\Relatórios Ad hoc\\*Demo-AdhocReportingQueries.sql* no SSMS.
 2. Verifique se você está conectado ao banco de dados **adhocreporting**.
@@ -173,7 +172,7 @@ Ao inspecionar o plano de execução, passe o mouse sobre os ícones de plano pa
 
    Essa consulta faz uma união e uma agregação um pouco mais complexas. A maior parte do processamento ocorre remotamente.  Apenas linhas simples contendo a contagem de venda diária de ingressos são retornadas para o banco de dados principal.
 
-   ![query](media/saas-tenancy-cross-tenant-reporting/query3-plan.png)
+   ![consultar](media/saas-tenancy-cross-tenant-reporting/query3-plan.png)
 
 
 ## <a name="next-steps"></a>Próximas etapas

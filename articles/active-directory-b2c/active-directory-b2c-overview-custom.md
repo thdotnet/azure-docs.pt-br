@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 2938ae075bbd4c38b686ca6654bede678f876857
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: be6d54886f23b0fa219b1e4b8948b4a4c51f5864
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66509810"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68716835"
 ---
 # <a name="custom-policies-in-azure-active-directory-b2c"></a>Políticas personalizadas no Azure Active Directory B2C
 
@@ -27,12 +27,12 @@ Políticas personalizadas são arquivos de configuração que definem o comporta
 
 | | Fluxos de usuário | Políticas personalizadas |
 |-|-------------------|-----------------|
-| Usuários de destino | Todos os desenvolvedores de aplicativos, com ou sem experiência em identidade. | Profissionais de identidade, integradores de sistemas, consultores e equipes internas de identidade. Estão familiarizados com fluxos do OpenIDConnect e têm conhecimento sobre a autenticação baseada em declarações e os provedores de identidade. |
+| Usuários de destino | Todos os desenvolvedores de aplicativos, com ou sem experiência em identidade. | Profissionais de identidade, integradores de sistemas, consultores e equipes internas de identidade. Eles se sentem confortáveis com os fluxos do OpenID Connect e entendem os provedores de identidade e a autenticação baseada em declarações. |
 | Método de configuração | Portal do Azure com uma UI (interface do usuário) amigável ao usuário. | Editando arquivos XML diretamente e carregando-os no portal do Azure. |
-| Personalização da interface do usuário | Personalização da interface do usuário completa incluindo HTML, CSS e JavaScript.<br><br>Suporte a várias linguagens com cadeias de caracteres Personalizadas. | Idêntico |
+| Personalização da interface do usuário | Personalização completa da interface do usuário, incluindo HTML, CSS e JavaScript.<br><br>Suporte a várias linguagens com cadeias de caracteres Personalizadas. | Idêntico |
 | Personalização de atributos | Atributos padrão e personalizados. | Idêntico |
 | Gerenciamento de tokens e sessões | Token personalizado e opções de várias sessões. | Idêntico |
-| Provedores de Identidade | Provedor predefinido de local ou social e a maioria dos provedores de identidade do OIDC, como a federação com locatários do Active Directory do Azure. | SAML, OAUTH e OIDC baseado em padrões.  Autenticação também é possível usando a integração com as APIs REST. |
+| Provedores de Identidade | Provedor local ou social predefinido e provedores de identidade mais OIDC, como Federação com locatários Azure Active Directory. | SAML, OAUTH e OIDC baseado em padrões.  A autenticação também é possível usando a integração com APIs REST. |
 | Tarefas de identidade | Inscrever-se-se ou entrar com contas locais ou muitas contas sociais.<br><br>Redefinição de senha de autoatendimento.<br><br>Edição de perfil.<br><br>Autenticação Multifator.<br><br>Personalizar tokens e sessões.<br><br>Acessar fluxos de token. | Concluir as mesmas tarefas como fluxos de usuários usando os provedores de identidade personalizados ou usar escopos personalizados.<br><br>Provisione uma conta de usuário em outro sistema no momento do registro.<br><br>Enviar um email de boas-vindas usando seu próprio provedor de serviços de email.<br><br>Use um repositório de usuários fora do Azure AD B2C.<br><br>Valide as informações fornecidas pelo usuário com um sistema confiável usando uma API. |
 
 ## <a name="policy-files"></a>Arquivos de política
@@ -50,12 +50,12 @@ Fluxos de usuário no Azure AD B2C seguem o padrão de três arquivos descrito a
 O serviço de CIAM (gerenciamento de acesso e identidade do cliente) no Azure inclui:
 
 - Um diretório do usuário que pode ser acessado usando o Microsoft Graph e que contém dados do usuário para contas locais e federadas.
-- Acesso ao **Estrutura de Experiência de Identidade** que orquestra a confiança entre usuários e entidades e passa as declarações entre eles para concluir uma tarefa de gerenciamento de acesso ou identidade. 
+- Acesso ao **Estrutura de Experiência de Identidade** que orquestra a confiança entre usuários e entidades e passa as declarações entre eles para concluir uma tarefa de gerenciamento de acesso ou identidade.
 - Um STS (serviço de token de segurança) que emite tokens de ID, atualiza tokens e acessa tokens (e asserções de SAML equivalentes) e os valida para proteger recursos.
 
 O Azure AD B2C interage com provedores de identidade, usuários, outros sistemas e com o diretório do usuário local em sequência para obter uma tarefa de identidade. Por exemplo, entre em um usuário, registre um novo usuário ou redefina uma senha. A Estrutura de Experiência de Identidade e uma política (também chamada de percurso do usuário ou uma política de estrutura confiável) estabelecem a confiança de vários participantes e define explicitamente os atores, as ações, os protocolos e a sequência de etapas a serem concluídas.
 
-A Estrutura de Experiência de Identidade é uma plataforma do Azure totalmente configurável, orientada por política e baseada em nuvem que orquestra a confiança entre entidades em formatos de protocolo padrão, como OpenIDConnect, OAuth, SAML, WSFed e alguns não padrão, por exemplo, trocas de declarações de sistema a sistema baseadas em API REST. A estrutura cria experiências fáceis de usar e rotuladas em branco que dão suporte a HTML e CSS.
+A estrutura de experiência de identidade é uma plataforma do Azure baseada em nuvem, orientada por políticas e totalmente configurável, que orquestra a confiança entre entidades em formatos de protocolo padrão, como OpenID Connect, OAuth, SAML, WSFed e alguns não padrão, por exemplo, REST As trocas de declarações do sistema para o sistema baseadas em API. A estrutura cria experiências fáceis de usar e rotuladas em branco que dão suporte a HTML e CSS.
 
 Uma política personalizada é representada como um ou vários arquivos formatados em XML que se referenciam entre si em uma cadeia hierárquica. Os elementos XML definem o esquema de declarações, as transformações de declarações, as definições de conteúdo, os provedores de declarações, os perfis técnicos e as etapas de orquestração do percurso do usuário, entre outros elementos. Uma política personalizada é acessível como um ou vários arquivos XML que são executados pela Estrutura de Experiência de Identidade quando invocados por uma terceira parte confiável. Os desenvolvedores que configuram as políticas personalizadas devem definir as relações de confiança em detalhes para incluir pontos de extremidade de metadados, definições exatas de troca de declarações e configurar segredos, chaves e certificados, conforme necessário, para cada provedor de identidade.
 

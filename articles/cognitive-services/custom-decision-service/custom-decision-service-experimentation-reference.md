@@ -10,12 +10,13 @@ ms.subservice: custom-decision-service
 ms.topic: conceptual
 ms.date: 05/10/2018
 ms.author: marossi
-ms.openlocfilehash: b5f8c853218a1db53f4dd23e7254b35990a7132b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: e6e8e7d0d5b969464ba9183ccae9080f58f786a0
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60829167"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68707293"
 ---
 # <a name="experimentation"></a>Experimentação
 
@@ -76,11 +77,11 @@ python Experimentation.py [-h] -f FILE_PATH [-b BASE_COMMAND] [-p N_PROC]
 
 Um log dos resultados é anexado ao arquivo *mwt-ds/DataScience/experiments.csv*.
 
-### <a name="parameters"></a>parâmetros
-| Entrada | DESCRIÇÃO | Padrão |
+### <a name="parameters"></a>Parâmetros
+| Entrada | Descrição | Padrão |
 | --- | --- | --- |
 | `-h`, `--help` | Mostrar mensagem de ajuda e sair. | |
-| `-f FILE_PATH`, `--file_path FILE_PATH` | Caminho do arquivo de dados (formato `.json` ou `.json.gz` – cada linha é um `dsjson`). | Obrigatório |  
+| `-f FILE_PATH`, `--file_path FILE_PATH` | Caminho do arquivo de dados (formato `.json` ou `.json.gz` – cada linha é um `dsjson`). | Necessário |  
 | `-b BASE_COMMAND`, `--base_command BASE_COMMAND` | Comando Vowpal Wabbit de base.  | `vw --cb_adf --dsjson -c` |  
 | `-p N_PROC`, `--n_proc N_PROC` | Número de processos paralelos a usar. | Processadores lógicos |  
 | `-s SHARED_NAMESPACES, --shared_namespaces SHARED_NAMESPACES` | Namespaces de recurso compartilhado (por exemplo, `abc` significa namespaces `a`, `b` e `c`).  | Detecção automática do arquivo de dados |  

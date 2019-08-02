@@ -1,5 +1,5 @@
 ---
-title: Como usar a versão de marcação com um modelo de aprendiz de conversa – serviços Cognitivos do Azure | Microsoft Docs
+title: Como usar a marcação de versão com um modelo de Conversation Learner-serviços cognitivas do Azure | Microsoft Docs
 titleSuffix: Azure
 description: Saiba como usar o controle de versão e a marcação com um modelo de aprendiz de conversa.
 services: cognitive-services
@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: 4067c7fb43cc200b8f49dbc14151c69a188e4e8e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 0279363c039e3ec3c2deac3bc7f71c32c547e9d1
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66475717"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68703372"
 ---
 # <a name="how-to-use-version-tagging"></a>Como usar a Marcação de Versão
 
@@ -38,7 +39,7 @@ Seu Bot usará a versão do Modelo que você selecionou como a versão "Ativa", 
 
 ### <a name="install-the-bot-framework-emulator"></a>Instalar o Bot Framework Emulator
 
-1. Vá para [https://github.com/Microsoft/BotFramework-Emulator](https://github.com/Microsoft/BotFramework-Emulator).
+1. Acesse [https://github.com/Microsoft/BotFramework-Emulator](https://github.com/Microsoft/BotFramework-Emulator).
 2. Baixe e instale o emulador.
 
 ### <a name="create-a-model"></a>Criar um modelo
@@ -109,4 +110,4 @@ Agora você viu como funciona o controle de versão e como é possível interagi
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
-> [Entidades de enum e defina as ações de entidade](./tutorial-enum-set-entity.md)
+> [Enumerar entidades e definir ações de entidade](./tutorial-enum-set-entity.md)

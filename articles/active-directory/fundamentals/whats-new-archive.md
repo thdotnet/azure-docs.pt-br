@@ -8,17 +8,17 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 02/28/2019
+ms.date: 07/31/2019
 ms.author: lizross
 ms.reviewer: dhanyahk
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a6935d2a89968b55dec1626d23b3f290261cf66f
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: f13c266e9587c245669fc8aec10fe9a448552167
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67655437"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68717343"
 ---
 # <a name="archive-for-whats-new-in-azure-active-directory"></a>Arquivar para Novidades no Active Directory do Azure
 
@@ -34,12 +34,100 @@ As notas de lançamento do Novidades fornecem informações sobre:
 
 ---
 
+## <a name="january-2019"></a>Janeiro de 2019
+
+### <a name="active-directory-b2b-collaboration-using-one-time-passcode-authentication-public-preview"></a>Colaboração do Active Directory B2B usando a autenticação de senha de uso único (Versão prévia pública)
+
+**Tipo:** Novo recurso  
+**Categoria de serviço:** B2B  
+**Funcionalidade do produto:** B2B/B2C
+
+Apresentamos a OTP (autenticação por senha de uso único) para usuários convidados de B2B que não podem ser autenticados por outros meios, tais como o Azure AD, uma MSA (conta Microsoft) ou uma federação do Google. Esse novo método de autenticação significa que os usuários convidados não precisarão criar uma nova conta Microsoft. Em vez disso, ao resgatar um convite ou acessar um recurso compartilhado, o usuário convidado poderá solicitar um código temporário que será enviado para um endereço de email. Usando esse código temporário, o usuário convidado pode continuar a conexão.
+
+Para obter mais informações, consulte [Autenticação de senha de uso único por email (versão prévia)](https://docs.microsoft.com/azure/active-directory/b2b/one-time-passcode) e o blog [Azure AD makes sharing and collaboration seamless for any user with any account](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Azure-AD-makes-sharing-and-collaboration-seamless-for-any-user/ba-p/325949) (O Azure AD torna a colaboração e o compartilhamento perfeitos para qualquer usuário com qualquer conta).
+
+### <a name="new-azure-ad-application-proxy-cookie-settings"></a>Novas configurações de cookies do Proxy de Aplicativo do Azure AD
+
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Proxy de Aplicativo  
+**Funcionalidade do produto:** Controle de Acesso
+
+Apresentamos três novas configurações de cookie, disponíveis para seus aplicativos publicados por meio do Proxy de Aplicativo:
+
+- **Usar Cookie Somente HTTP.** Define o sinalizador **HTTPOnly** em seu acesso de Proxy de Aplicativo e cookies de sessão. Ativar essa configuração fornece benefícios de segurança adicionais, como ajudar a prevenir cópia ou modificação de cookies por meio de script do lado do cliente. É recomendável ativar esse sinalizador (escolher **Sim**) para os benefícios adicionais.
+
+- **Usar um cookie seguro.** Define o sinalizador **Secure** em seu acesso de Proxy de Aplicativo e cookies de sessão. Ativar essa configuração proporciona benefícios de segurança adicionais ao garantir que os cookies só sejam transmitidos em canais seguros TLS, como HTTPS. É recomendável ativar esse sinalizador (escolher **Sim**) para os benefícios adicionais.
+
+- **Usar cookie persistente.** Impede que cookies de acesso expirem quando o navegador da Web é fechado. Esses cookies duram todo o tempo de vida do token de acesso. No entanto, os cookies são redefinidos se o tempo de término é atingido ou se o usuário o exclui manualmente. Recomendamos que você mantenha a configuração padrão de **Não**, apenas ativando essa configuração para aplicativos mais antigos que não compartilham cookies entre processos.
+
+Para obter mais informações sobre os novos cookies, confira [Configurações de cookie para acessar aplicativos locais no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-cookie-settings).
+
+---
+
+### <a name="new-federated-apps-available-in-azure-ad-app-gallery---january-2019"></a>Novos aplicativos federados disponíveis na galeria de aplicativos do Azure AD – janeiro de 2019
+
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Aplicativos empresariais  
+**Funcionalidade do produto:** Integração de Terceiros
+ 
+Em janeiro de 2019, adicionamos esses 35 novos aplicativos com suporte para Federação à galeria de aplicativos:
+
+[Firstbird](https://docs.microsoft.com/azure/active-directory/saas-apps/firstbird-tutorial), [Folloze](https://docs.microsoft.com/azure/active-directory/saas-apps/folloze-tutorial), [paleta de talentos](https://docs.microsoft.com/azure/active-directory/saas-apps/talent-palette-tutorial), [infor CloudSuite](https://docs.microsoft.com/azure/active-directory/saas-apps/infor-cloud-suite-tutorial), [Cisco](https://docs.microsoft.com/azure/active-directory/saas-apps/cisco-umbrella-tutorial), [Zscaler Internet Access Administrator](https://docs.microsoft.com/azure/active-directory/saas-apps/zscaler-internet-access-administrator-tutorial), expiração de [vencimento](https://docs.microsoft.com/azure/active-directory/saas-apps/expiration-reminder-tutorial), [InstaVR Viewer](https://docs.microsoft.com/azure/active-directory/saas-apps/instavr-viewer-tutorial), [CorpTax](https://docs.microsoft.com/azure/active-directory/saas-apps/corptax-tutorial), [ Verbo](https://app.verb.net/login), [OpenLattice](https://openlattice.com/agora), [TheOrgWiki](https://www.theorgwiki.com/signup), [Pavaso digital Close](https://docs.microsoft.com/azure/active-directory/saas-apps/pavaso-digital-close-tutorial), [GoodPractice Toolkit](https://docs.microsoft.com/azure/active-directory/saas-apps/goodpractice-toolkit-tutorial), [serviço de nuvem Picco](https://docs.microsoft.com/azure/active-directory/saas-apps/cloud-service-picco-tutorial), [AuditBoard](https://docs.microsoft.com/azure/active-directory/saas-apps/auditboard-tutorial), [iProva](https://docs.microsoft.com/azure/active-directory/saas-apps/iprova-tutorial), [viável](https://docs.microsoft.com/azure/active-directory/saas-apps/workable-tutorial), [CallPlease ](https://webapp.callplease.com/create-account/create-account.html), [GTNexus SSO System](https://docs.microsoft.com/azure/active-directory/saas-apps/gtnexus-sso-module-tutorial), [CBRE Insight](https://docs.microsoft.com/azure/active-directory/saas-apps/cbre-serviceinsight-tutorial), [Deskradar](https://docs.microsoft.com/azure/active-directory/saas-apps/deskradar-tutorial), [Coralogixv](https://docs.microsoft.com/azure/active-directory/saas-apps/coralogix-tutorial), [Signagelive](https://docs.microsoft.com/azure/active-directory/saas-apps/signagelive-tutorial), [ares for Enterprise](https://docs.microsoft.com/azure/active-directory/saas-apps/ares-for-enterprise-tutorial), [K2 para Office 365](https://www.k2.com/O365), [Xledger](https://www.xledger.net/), [iDiD Manager ](https://docs.microsoft.com/azure/active-directory/saas-apps/idid-manager-tutorial), [HighGear](https://docs.microsoft.com/azure/active-directory/saas-apps/highgear-tutorial), [visitado](https://docs.microsoft.com/azure/active-directory/saas-apps/visitly-tutorial), [Korn Ferry Alp](https://docs.microsoft.com/azure/active-directory/saas-apps/korn-ferry-alp-tutorial), [Acadia](https://docs.microsoft.com/azure/active-directory/saas-apps/acadia-tutorial), [Adoddle cSaas Platform](https://docs.microsoft.com/azure/active-directory/saas-apps/adoddle-csaas-platform-tutorial)<!-- , [CaféX Portal (Meetings)](https://docs.microsoft.com/azure/active-directory/saas-apps/cafexportal-meetings-tutorial), [MazeMap Link](https://docs.microsoft.com/azure/active-directory/saas-apps/mazemaplink-tutorial)-->  
+
+Para obter mais informações sobre os aplicativos, consulte [integração de aplicativos SaaS com o Active Directory do Azure](https://aka.ms/appstutorial). Para obter mais informações sobre como listar seu aplicativo na galeria de aplicativos do Azure AD, consulte [Listar seu aplicativo na galeria de aplicativos do Azure Active Directory](https://aka.ms/azureadapprequest).
+
+---
+
+### <a name="new-azure-ad-identity-protection-enhancements-public-preview"></a>Novas melhorias do Azure AD Identity Protection (versão prévia pública)
+
+**Tipo:** Recurso alterado  
+**Categoria de serviço:** Identity Protection  
+**Funcionalidade do produto:** Segurança de Identidade e Proteção
+
+Temos o prazer de anunciar que adicionamos os seguintes aprimoramentos à oferta de versão prévia pública do Azure AD Identity Protection, incluindo:
+
+- Uma interface do usuário mais integrada e atualizada
+
+- APIs adicionais
+
+- Avaliação de risco aprimorada por meio de aprendizado de máquina
+
+- Alinhamento de todo o produto entre usuários arriscados e entradas arriscadas
+
+Para obter mais informações sobre os aprimoramentos, confira [O que é o Azure Active Directory Identity Protection (atualizado)?](https://aka.ms/IdentityProtectionDocs) Para saber mais e compartilhar suas ideias por meio dos prompts no produto.
+
+---
+
+### <a name="new-app-lock-feature-for-the-microsoft-authenticator-app-on-ios-and-android-devices"></a>Novo recurso de Bloqueio de Aplicativo para o aplicativo Microsoft Authenticator em dispositivos iOS e Android
+
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Aplicativo Microsoft Authenticator  
+**Funcionalidade do produto:** Segurança de Identidade e Proteção
+
+Para manter suas senhas únicas, informações do aplicativo e configurações de aplicativo mais seguras, você pode ativar o recurso de Bloqueio de Aplicativo no aplicativo Microsoft Authenticator. Ativar o Bloqueio de Aplicativo significa que você será solicitado a autenticar-se usando seu PIN ou biometria sempre que abrir o aplicativo Microsoft Authenticator.
+
+Para obter mais informações, confira as [Perguntas frequentes do aplicativo Microsoft Authenticator](https://docs.microsoft.com/azure/active-directory/user-help/microsoft-authenticator-app-faq).
+
+---
+
+### <a name="enhanced-azure-ad-privileged-identity-management-pim-export-capabilities"></a>Funcionalidades de exportação aprimoradas do Azure AD PIM (Privileged Identity Management)
+
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Privileged Identity Management  
+**Funcionalidade do produto:** Privileged Identity Management
+
+Administradores do PIM (Privileged Identity Management) agora podem exportar todas as atribuições de função ativas e qualificadas para um recurso específico, incluindo atribuições de função para todos os recursos filho. Anteriormente, era difícil para os administradores obter uma lista completa das atribuições de função para uma assinatura e eles precisavam exportar as atribuições de função para cada recurso específico.
+
+Para obter mais informações, confira [Exibir histórico de atividade e auditoria para funções de recurso do Azure no PIM](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/azure-pim-resource-rbac).
+
+---
+
 ## <a name="novemberdecember-2018"></a>Novembro/dezembro de 2018
 
 ### <a name="users-removed-from-synchronization-scope-no-longer-switch-to-cloud-only-accounts"></a>Os usuários removidos do escopo de sincronização não alternam mais para contas somente nuvem
 
 **Tipo:** Correção  
-**Categoria de serviço:** Gerenciamento de Usuários  
+**Categoria de serviço:** Gerenciamento do Usuário  
 **Funcionalidade do produto:** Diretório
 
 >[!Important]
@@ -66,7 +154,7 @@ Essa correção, consequentemente, impede atualizações diretas no atributo Imm
 ### <a name="breaking-change-updates-to-the-audit-and-sign-in-logs-schema-through-azure-monitor"></a>Alterações da falha: Atualizações no esquema de auditoria e de logs de entrada por meio do Azure Monitor
 
 **Tipo:** Recurso alterado  
-**Categoria de serviço:** Relatórios  
+**Categoria de serviço:** Relatório  
 **Funcionalidade do produto:** Monitoramento e relatório
 
 No momento, estamos publicando os fluxos de log de Auditoria e Entrada por meio do Azure Monitor, para que você possa integrar os arquivos de log às suas ferramentas SIEM ou ao Log Analytics. Com base em seus comentários e em preparação para o comunicado de disponibilidade geral desse recurso, estamos fazendo as alterações a seguir em nosso esquema. Essas alterações de esquema e suas atualizações de documentação relacionadas ocorrerão até a primeira semana de janeiro.
@@ -79,10 +167,10 @@ Os seguintes campos estão sendo alterados no esquema de Auditoria:
 
 |Nome do campo|O que mudou|Valores antigos|Novos valores|
 |----------|------------|----------|----------|
-|Categoria|Esse era o campo **Nome do Serviço**. Agora ele passou a ser o campo **Categorias de Auditoria**. **Nome do Serviço** foi renomeado para o campo **loggedByService**.|<ul><li>Provisionamento de conta de usuário</li><li>Diretório principal</li><li>Redefinição de senha de autoatendimento</li></ul>|<ul><li>Gerenciamento de Usuários</li><li>Gerenciamento de grupos</li><li>Gerenciamento de aplicativos</li></ul>|
+|Categoria|Esse era o campo **Nome do Serviço**. Agora ele passou a ser o campo **Categorias de Auditoria**. **Nome do Serviço** foi renomeado para o campo **loggedByService**.|<ul><li>Provisionamento de Conta</li><li>Diretório principal</li><li>Redefinição de senha de autoatendimento</li></ul>|<ul><li>Gerenciamento do Usuário</li><li>Gerenciamento de Grupo</li><li>Gerenciamento de aplicativos</li></ul>|
 |targetResources|Inclui **TargetResourceType** no nível superior.|&nbsp;|<ul><li>Política</li><li>Aplicativo</li><li>User</li><li>Grupo</li></ul>|
-|loggedByService|Fornece o nome do serviço que gerou o log de auditoria.|Nulo|<ul><li>Provisionamento de conta de usuário</li><li>Diretório principal</li><li>Redefinição de senha de autoatendimento</li></ul>|
-|Resultado|Fornece o resultado dos logs de auditoria. Anteriormente, isso era enumerado, mas agora mostramos o valor real.|<ul><li>0</li><li>1</li></ul>|<ul><li>Êxito</li><li>Failure</li></ul>|
+|loggedByService|Fornece o nome do serviço que gerou o log de auditoria.|Nulo|<ul><li>Provisionamento de Conta</li><li>Diretório principal</li><li>Redefinição de senha por autoatendimento</li></ul>|
+|Resultado|Fornece o resultado dos logs de auditoria. Anteriormente, isso era enumerado, mas agora mostramos o valor real.|<ul><li>0</li><li>1</li></ul>|<ul><li>Êxito</li><li>Falha</li></ul>|
 
 #### <a name="changed-fields-in-the-sign-in-schema"></a>Campos alterados no esquema de Entrada
 Os seguintes campos estão sendo alterados no esquema de Entrada:
@@ -90,8 +178,8 @@ Os seguintes campos estão sendo alterados no esquema de Entrada:
 |Nome do campo|O que mudou|Valores antigos|Novos valores|
 |----------|------------|----------|----------|
 |appliedConditionalAccessPolicies|Esse era o campo **conditionalaccessPolicies**. Agora ele passou a ser o campo **appliedConditionalAccessPolicies**.|Sem alteração|Sem alteração|
-|conditionalAccessStatus|Fornece o resultado do Status da Política de Acesso Condicional na entrada. Anteriormente, isso era enumerado, mas agora mostramos o valor real.|<ul><li>0</li><li>1</li><li>2</li><li>3</li></ul>|<ul><li>Êxito</li><li>Failure</li><li>Não aplicado</li><li>Desabilitado</li></ul>|
-|appliedConditionalAccessPolicies: resultado|Fornece o resultado do Status da Política de Acesso Condicional individual na entrada. Anteriormente, isso era enumerado, mas agora mostramos o valor real.|<ul><li>0</li><li>1</li><li>2</li><li>3</li></ul>|<ul><li>Êxito</li><li>Failure</li><li>Não aplicado</li><li>Desabilitado</li></ul>|
+|conditionalAccessStatus|Fornece o resultado do Status da Política de Acesso Condicional na entrada. Anteriormente, isso era enumerado, mas agora mostramos o valor real.|<ul><li>0</li><li>1</li><li>2</li><li>3</li></ul>|<ul><li>Êxito</li><li>Falha</li><li>Não Aplicado</li><li>Desabilitado</li></ul>|
+|appliedConditionalAccessPolicies: resultado|Fornece o resultado do Status da Política de Acesso Condicional individual na entrada. Anteriormente, isso era enumerado, mas agora mostramos o valor real.|<ul><li>0</li><li>1</li><li>2</li><li>3</li></ul>|<ul><li>Êxito</li><li>Falha</li><li>Não Aplicado</li><li>Desabilitado</li></ul>|
 
 Para obter mais informações sobre o esquema, confira [Interpretar o esquema de logs de auditoria do Azure AD no Azure Monitor (versão prévia)](https://docs.microsoft.com/azure/active-directory/reports-monitoring/reference-azure-monitor-audit-log-schema)
 
@@ -112,8 +200,8 @@ As detecções de risco agora são avaliadas pelo modelo de machine learning sup
 ### <a name="administrators-can-reset-their-own-password-using-the-microsoft-authenticator-app-public-preview"></a>Os administradores podem redefinir suas próprias senhas usando o aplicativo Microsoft Authenticator (versão prévia pública)
 
 **Tipo:** Recurso alterado  
-**Categoria de serviço:** Redefinição de senha por autoatendimento  
-**Funcionalidade do produto:** Autenticação de usuário
+**Categoria de serviço:** Redefinição de senha de autoatendimento  
+**Funcionalidade do produto:** Autenticação de Usuário
 
 Os administradores do Azure AD agora podem redefinir suas próprias senhas usando as notificações do aplicativo Microsoft Authenticator ou um código em qualquer aplicativo de autenticador móvel ou token de hardware. Para redefinir suas próprias senhas, os administradores agora poderão usar dois dos seguintes métodos:
 
@@ -123,9 +211,9 @@ Os administradores do Azure AD agora podem redefinir suas próprias senhas usand
 
 - Email
 
-- chamada telefônica
+- Telefonema
 
-- mensagem de texto
+- Mensagem de texto
 
 Para obter mais informações sobre como usar o aplicativo Microsoft Authenticator para redefinir senhas, confira [Redefinição de senha de autoatendimento do Azure AD – aplicativo móvel e SSPR (versão prévia)](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-howitworks#mobile-app-and-sspr-preview)
 
@@ -133,7 +221,7 @@ Para obter mais informações sobre como usar o aplicativo Microsoft Authenticat
 
 ### <a name="new-azure-ad-cloud-device-administrator-role-public-preview"></a>Nova função Administrador de Dispositivo de Nuvem do Azure AD (versão prévia pública)
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Registro e Gerenciamento de Dispositivos  
 **Funcionalidade do produto:** Controle de acesso
 
@@ -145,11 +233,11 @@ Para obter mais informações sobre funções e permissões, confira [Atribuindo
 
 ### <a name="manage-your-devices-using-the-new-activity-timestamp-in-azure-ad-public-preview"></a>Gerenciar seus dispositivos usando o novo carimbo de data/hora de atividade no Azure AD (versão prévia pública)
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Registro e Gerenciamento de Dispositivos  
-**Funcionalidade do produto:** Gerenciamento do Ciclo de Vida do Dispositivo
+**Funcionalidade do produto:** Gerenciamento do Ciclo de Vida de Dispositivos
 
-Sabemos que, ao longo do tempo, você deve atualizar e desativar dispositivos de sua organização no Azure AD, para evitar que dispositivos obsoletos em seu ambiente. Para ajudar com esse processo, o Azure AD agora atualiza seus dispositivos com um novo carimbo de data/hora de atividade, ajudando você a gerenciar o ciclo de vida do dispositivo.
+Percebemos que, com o tempo, você deve atualizar e desativar os dispositivos de sua organização no Azure AD, para evitar ter dispositivos obsoletos em seu ambiente. Para ajudar com esse processo, o Azure AD agora atualiza seus dispositivos com um novo carimbo de data/hora de atividade, ajudando você a gerenciar o ciclo de vida do dispositivo.
 
 Para obter mais informações sobre como obter e usar esse carimbo de data/hora, confira [Como: Gerenciar os dispositivos obsoletos no Azure AD](https://docs.microsoft.com/azure/active-directory/devices/manage-stale-devices)
 
@@ -157,44 +245,44 @@ Para obter mais informações sobre como obter e usar esse carimbo de data/hora,
 
 ### <a name="administrators-can-require-users-to-accept-a-terms-of-use-on-each-device"></a>Os administradores podem exigir que os usuários aceitem os termos de uso em cada dispositivo
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Termos de uso  
 **Funcionalidade do produto:** Governança
  
-Os administradores agora podem ativar o **exigem o consentimento em todos os dispositivos dos usuários** opção para exigir que os usuários aceitem os termos de uso em todos os dispositivos estão usando em seu locatário.
+Os administradores agora podem ativar a opção **exigir que os usuários consentissem em cada dispositivo** para exigir que seus usuários aceitem seus termos de uso em cada dispositivo que estão usando em seu locatário.
 
-Para obter mais informações, consulte o [termos de acordo com o dispositivo da seção de uso dos termos do uso de recurso do Azure Active Directory](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use#per-device-terms-of-use).
+Para obter mais informações, consulte a [seção termos de uso por dispositivo do Azure Active Directory recurso termos de uso](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use#per-device-terms-of-use).
 
 ---
 
 ### <a name="administrators-can-configure-a-terms-of-use-to-expire-based-on-a-recurring-schedule"></a>Os administradores podem configurar os termos de uso para expirar com base em um agendamento recorrente
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Termos de uso  
 **Funcionalidade do produto:** Governança
  
 
-Os administradores agora podem ativar o **expirar consentimentos** expirar de opção para tornar os termos de uso para todos os seus usuários com base em seu agendamento recorrente especificado. O agendamento pode ser anual, semestral, trimestral ou mensalmente. Depois que os termos de uso expiram, os usuários devem aceitem novamente.
+Agora, os administradores podem ativar a opção expirar consentis para fazer com que os termos de uso expirem para todos os seus usuários com base em sua agenda recorrente especificada. O agendamento pode ser anual, semestral, trimestral ou mensalmente. Depois que os termos de uso expirarem, os usuários deverão aceitar novamente.
 
-Para obter mais informações, consulte o [adicionar termos de uso seção dos termos do Azure Active Directory do uso de recurso](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use#add-terms-of-use).
+Para obter mais informações, consulte a [seção adicionar termos de uso do recurso Azure Active Directory termos de uso](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use#add-terms-of-use).
 
 ---
 
-### <a name="administrators-can-configure-a-terms-of-use-to-expire-based-on-each-users-schedule"></a>Os administradores podem configurar os termos de uso para expirar com base no agendamento de cada usuário
+### <a name="administrators-can-configure-a-terms-of-use-to-expire-based-on-each-users-schedule"></a>Os administradores podem configurar os termos de uso para expirar com base na agenda de cada usuário
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Termos de uso  
 **Funcionalidade do produto:** Governança
 
-Os administradores agora podem especificar uma duração que o usuário deve aceitem novamente termos de uso. Por exemplo, os administradores podem especificar que os usuários devem aceitem novamente termos de uso a cada 90 dias.
+Os administradores agora podem especificar uma duração que o usuário deve reaceitar os termos de uso. Por exemplo, os administradores podem especificar que os usuários devem reaceitar os termos de uso a cada 90 dias.
 
-Para obter mais informações, consulte o [adicionar termos de uso seção dos termos do Azure Active Directory do uso de recurso](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use#add-terms-of-use).
+Para obter mais informações, consulte a [seção adicionar termos de uso do recurso Azure Active Directory termos de uso](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use#add-terms-of-use).
  
 ---
 
-### <a name="new-azure-ad-privileged-identity-management-pim-emails-for-azure-active-directory-roles"></a>Novos emails do Azure AD PIM (Privileged Identity Management) para funções do Azure Active Directory
+### <a name="new-azure-ad-privileged-identity-management-pim-emails-for-azure-active-directory-roles"></a>Novos emails do Azure AD PIM (Privileged Identity Management) para as funções do Azure Active Directory
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Privileged Identity Management  
 **Funcionalidade do produto:** Privileged Identity Management
  
@@ -228,7 +316,7 @@ Para obter mais informações sobre o licenciamento baseado em grupo, confira [O
 
 ### <a name="new-federated-apps-available-in-azure-ad-app-gallery---november-2018"></a>Novos Aplicativos Federados disponíveis na galeria de aplicativos do Azure AD – novembro de 2018
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
 **Funcionalidade do produto:** Integração de terceiros
  
@@ -242,19 +330,19 @@ Para obter mais informações sobre os aplicativos, consulte [integração de ap
 
 ## <a name="october-2018"></a>Outubro de 2018
 
-### <a name="azure-ad-logs-now-work-with-azure-log-analytics-public-preview"></a>Os Logs do Azure AD agora funcionam com o Azure Log Analytics (visualização pública)
+### <a name="azure-ad-logs-now-work-with-azure-log-analytics-public-preview"></a>Os Logs do Azure AD agora trabalham com o Azure Log Analytics (Versão prévia pública)
 
-**Tipo:** New recurso  
-**Categoria de serviço:** Relatórios  
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Relatório  
 **Funcionalidade do produto:** Monitoramento e relatório
 
 Temos o prazer de anunciar que agora você pode encaminhar seus logs do Azure AD ao Azure Log Analytics! Esse recurso mais solicitados ajuda dão acesso ainda melhor a análise para seu negócio, operações e segurança, bem como uma maneira de ajudar a monitorar sua infra-estrutura. Para obter mais informações, consulte o [logs de atividades de diretório do Azure Active Directory no Azure Log Analytics agora disponível](https://techcommunity.microsoft.com/t5/Azure-Active-Directory-Identity/Azure-Active-Directory-Activity-logs-in-Azure-Log-Analytics-now/ba-p/274843) blog.
 
 ---
 
-### <a name="new-federated-apps-available-in-azure-ad-app-gallery---october-2018"></a>Novos aplicativos federados disponíveis na galeria de aplicativos do Azure AD - outubro de 2018
+### <a name="new-federated-apps-available-in-azure-ad-app-gallery---october-2018"></a>Novos Aplicativos Federados disponíveis na galeria de aplicativos do Azure AD – Outubro de 2018
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
 **Funcionalidade do produto:** Integração de terceiros
 
@@ -266,9 +354,9 @@ Para obter mais informações sobre os aplicativos, consulte [integração de ap
 
 ---
 
-### <a name="azure-ad-domain-services-email-notifications"></a>Notificações por Email de serviços de domínio do AD do Azure
+### <a name="azure-ad-domain-services-email-notifications"></a>Notificações por Email do Azure AD Domain Services
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Azure AD Domain Services  
 **Funcionalidade do produto:** Azure AD Domain Services
 
@@ -280,10 +368,10 @@ Para obter mais informações, consulte [Configurações de notificação nos Se
 
 ---
 
-### <a name="azure-ad-portal-supports-using-the-forcedelete-domain-api-to-delete-custom-domains"></a>Azure AD portal dá suporte ao uso do domínio ForceDelete API para excluir os domínios personalizados 
+### <a name="azure-ad-portal-supports-using-the-forcedelete-domain-api-to-delete-custom-domains"></a>O portal do Azure AD oferece suporte ao uso da API de domínio ForceDelete para excluir domínios personalizados 
 
 **Tipo:** Recurso alterado  
-**Categoria de serviço:** Gerenciamento de diretórios  
+**Categoria de serviço:** Gerenciamento de Diretório  
 **Funcionalidade do produto:** Diretório
 
 Temos o prazer de anunciar que agora você pode usar o domínio ForceDelete API para excluir nomes de domínios personalizados renomeando referências, como usuários, grupos e aplicativos de seu nome de domínio personalizado (contoso.com) volta para o (de nome de domínio padrão inicial de forma assíncrona Contoso.onmicrosoft.com).
@@ -296,10 +384,10 @@ Para obter mais informações, consulte [Excluir um nome de domínio personaliza
 
 ## <a name="september-2018"></a>Setembro de 2018
  
-### <a name="updated-administrator-role-permissions-for-dynamic-groups"></a>Permissões de função de administrador atualizadas para grupos dinâmicos
+### <a name="updated-administrator-role-permissions-for-dynamic-groups"></a>Permissões da função de administrador atualizadas para grupos dinâmicos
 
 **Tipo:** Correção  
-**Categoria de serviço:** Gerenciamento de grupos  
+**Categoria de serviço:** Gerenciamento de Grupo  
 **Funcionalidade do produto:** Colaboração
 
 Corrigimos um problema para que funções de administrador específicas agora possam criar e atualizar regras de associação dinâmica, sem a necessidade de ser o proprietário do grupo.
@@ -316,9 +404,9 @@ Para obter mais informações, consulte [Criar um grupo dinâmico e verificar o 
 
 ---
 
-### <a name="simplified-single-sign-on-sso-configuration-settings-for-some-third-party-apps"></a>Definições de configuração simplificada de SSO (logon único) para alguns aplicativos de terceiros
+### <a name="simplified-single-sign-on-sso-configuration-settings-for-some-third-party-apps"></a>Definições de configuração de logon único (SSO) para alguns aplicativos de terceiros
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
 **Funcionalidade do produto:** SSO
 
@@ -334,9 +422,9 @@ Para começar a usar essa experiência de um único clique, acesse a página do 
 
 ---
 
-### <a name="azure-active-directory---where-is-your-data-located-page"></a>Página: Azure Active Directory – Onde seus dados estão localizados?
+### <a name="azure-active-directory---where-is-your-data-located-page"></a>Página Azure Active Directory – Onde seus dados estão localizados?
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Outros  
 **Funcionalidade do produto:** GoLocal
 
@@ -346,9 +434,9 @@ Para acessar esse recurso e obter mais informações, consulte [Azure Active Dir
 
 ---
 
-### <a name="new-deployment-plan-available-for-the-my-apps-access-panel"></a>Novo plano de implantação disponível para o painel de acesso Meus Aplicativos
+### <a name="new-deployment-plan-available-for-the-my-apps-access-panel"></a>Novo plano de implantação disponível para o painel Acesso a meus aplicativos
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Meus Aplicativos  
 **Funcionalidade do produto:** SSO
 
@@ -359,22 +447,22 @@ Para obter mais informações, consulte [O que é o portal Meus Aplicativos?](ht
 
 ---
 
-### <a name="new-troubleshooting-and-support-tab-on-the-sign-ins-logs-page-of-the-azure-portal"></a>Nova guia de Solução de problemas e Suporte na página de entradas de Logs do portal do Azure
+### <a name="new-troubleshooting-and-support-tab-on-the-sign-ins-logs-page-of-the-azure-portal"></a>Nova guia Solução de problemas e suporte na página logon único do portal do Azure
 
-**Tipo:** New recurso  
-**Categoria de serviço:** Relatórios  
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Relatório  
 **Funcionalidade do produto:** Monitoramento e relatório
 
 A nova guia **Solução de problemas e Suporte** na página **Entradas** do portal do Azure serve para ajudar administradores e engenheiros de suporte a solucionar problemas relacionados a entradas do Azure AD. Esta nova guia oferece o código de erro, a mensagem de erro e as recomendações de correção (caso haja alguma) para ajudar a resolver o problema. Se você não conseguir resolver o problema, também oferecemos uma nova maneira de criar um tíquete de suporte usando a experiência de **Copiar para a área de transferência**, que preenche os campos **ID da Solicitação** e **Data (UTC)** do arquivo de log em seu tíquete de suporte.  
 
-![Logs de entrada que mostra a nova guia](media/whats-new/troubleshooting-and-support.png)
+![Logs de entrada mostrando a nova guia](media/whats-new/troubleshooting-and-support.png)
 
 ---
 
-### <a name="enhanced-support-for-custom-extension-properties-used-to-create-dynamic-membership-rules"></a>Suporte aprimorado para propriedades de extensão personalizadas usadas para criar regras de associação dinâmica
+### <a name="enhanced-support-for-custom-extension-properties-used-to-create-dynamic-membership-rules"></a>Suporte avançado para propriedades de extensão personalizadas usadas para criar regras de associação dinâmica
 
 **Tipo:** Recurso alterado  
-**Categoria de serviço:** Gerenciamento de grupos  
+**Categoria de serviço:** Gerenciamento de Grupo  
 **Funcionalidade do produto:** Colaboração
 
 Com essa atualização, agora você pode clicar no link **Obter propriedades de extensão personalizadas** no construtor de regra dinâmico de grupo dos usuários, inserir sua ID do aplicativo exclusiva e receber a lista completa das propriedades de extensão personalizadas para usar ao criar uma regra de associação dinâmica para usuários. Essa lista também pode ser atualizada para obter as novas propriedades de extensão personalizadas do aplicativo.
@@ -383,7 +471,7 @@ Para obter mais informações sobre como usar propriedades de extensão personal
 
 ---
 
-### <a name="new-approved-client-apps-for-azure-ad-app-based-conditional-access"></a>Novos aplicativos cliente aprovados para o Azure AD baseado em aplicativo o acesso condicional
+### <a name="new-approved-client-apps-for-azure-ad-app-based-conditional-access"></a>Novos aplicativos cliente aprovados para acesso condicional baseado em aplicativo do Azure AD
 
 **Tipo:** Plano para alteração  
 **Categoria de serviço:** Acesso Condicional  
@@ -397,15 +485,15 @@ Os seguintes aplicativos estão na lista de [aplicativos do cliente aprovados](h
 
 Para obter mais informações, consulte:
 
-- [Acesso condicional baseado no aplicativo do Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access)
+- [Acesso condicional com base no aplicativo do Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access)
 
 ---
 
-### <a name="new-support-for-self-service-password-reset-from-the-windows-7881-lock-screen"></a>Novo suporte para redefinição de senha de autoatendimento da tela de bloqueio do Windows 7/8/8.1
+### <a name="new-support-for-self-service-password-reset-from-the-windows-7881-lock-screen"></a>Novo suporte para Redefinição de senha de autoatendimento na tela de bloqueio do Windows 7/8/8.1
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** SSPR  
-**Funcionalidade do produto:** Autenticação de usuário
+**Funcionalidade do produto:** Autenticação de Usuário
 
 Depois de configurar esse novo recurso, os usuários verão um link para redefinir a senha da tela de **bloqueio** de um dispositivo que executa o Windows 7, Windows 8 ou Windows 8.1. Ao clicar nesse link, o usuário é guiado pelo mesmo fluxo de redefinição de senha que no navegador da Web.
 
@@ -417,7 +505,7 @@ Para obter mais informações, consulte [Como habilitar a redefinição de senha
 
 **Tipo:** Plano para alteração  
 **Categoria de serviço:** Autenticações (Logons)  
-**Funcionalidade do produto:** Autenticação de usuário
+**Funcionalidade do produto:** Autenticação de Usuário
 
 A partir de 15 de novembro de 2018, o Azure AD deixará de aceitar códigos de autenticação usados anteriormente para aplicativos. Essa alteração de segurança ajuda a deixar o Azure AD em conformidade com a especificação do OAuth e será aplicada aos pontos de extremidade v1 e v2.
 
@@ -427,9 +515,9 @@ Para isso e outras alterações relacionadas a protocolos, consulte [a lista com
 
 ---
 
-### <a name="new-federated-apps-available-in-azure-ad-app-gallery---september-2018"></a>Novos Aplicativos Federados disponíveis na galeria de Aplicativos do Azure AD – setembro de 2018
+### <a name="new-federated-apps-available-in-azure-ad-app-gallery---september-2018"></a>Novos Aplicativos Federados disponíveis na galeria de aplicativos do Azure AD – setembro de 2018
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
 **Funcionalidade do produto:** Integração de terceiros
  
@@ -443,7 +531,7 @@ Para obter mais informações sobre os aplicativos, consulte [integração de ap
 
 ### <a name="support-for-additional-claims-transformations-methods"></a>Suporte para métodos de transformações de declarações adicionais
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
 **Funcionalidade do produto:** SSO
 
@@ -453,7 +541,7 @@ Para obter mais informações, consulte [Como personalizar declarações emitida
 
 ---
 
-### <a name="updated-saml-based-app-configuration-ui-preview"></a>Interface do usuário atualizada da configuração de aplicativo baseado em SAML (versão prévia)
+### <a name="updated-saml-based-app-configuration-ui-preview"></a>UI de configuração de aplicativo baseado em SAML atualizada (versão prévia)
 
 **Tipo:** Recurso alterado  
 **Categoria de serviço:** Aplicativos empresariais  
@@ -501,7 +589,7 @@ O tráfego de rede está se movendo para esses novos intervalos nos próximos do
 
 **Tipo:** Plano para alteração  
 **Categoria de serviço:** Autenticações (Logons)  
-**Funcionalidade do produto:** Autenticação de usuário
+**Funcionalidade do produto:** Autenticação de Usuário
 
 A partir de 15 de novembro de 2018, o Azure AD deixará de aceitar códigos de autenticação usados anteriormente para aplicativos. Essa alteração de segurança ajuda a deixar o Azure AD em conformidade com a especificação do OAuth e será aplicada aos pontos de extremidade v1 e v2.
 
@@ -511,11 +599,11 @@ Para isso e outras alterações relacionadas a protocolos, consulte [a lista com
  
 ---
 
-### <a name="converged-security-info-management-for-self-service-password-sspr-and-multi-factor-authentication-mfa"></a>Gerenciamento de informações de segurança convergida para SSPR (senha de autoatendimento) e MFA (Autenticação Multifator do Microsoft Azure)
+### <a name="converged-security-info-management-for-self-service-password-sspr-and-multi-factor-authentication-mfa"></a>Gerenciamento de informações de segurança convergente para senha de autoatendimento (SSPR) e Autenticação Multifator (MFA)
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** SSPR  
-**Funcionalidade do produto:** Autenticação de usuário
+**Funcionalidade do produto:** Autenticação de Usuário
  
 Esse novo recurso ajuda as pessoas a gerenciar suas informações de segurança (por exemplo, número de telefone, aplicativo móvel e assim por diante) para SSPR e MFA em um único local e a experiência; anteriormente, isso era feito em dois locais diferentes.
 
@@ -525,10 +613,10 @@ Esta é uma visualização pública opt-in. Os administradores podem ativar a no
 
 ---
 
-### <a name="new-http-only-cookies-setting-in-azure-ad-application-proxy-apps"></a>Nova configuração de cookies somente HTTP em aplicativos do proxy de aplicativo do Azure AD
+### <a name="new-http-only-cookies-setting-in-azure-ad-application-proxy-apps"></a>Nova configuração de cookies somente HTTP em aplicativos de proxy de aplicativo do Azure AD
 
-**Tipo:** New recurso  
-**Categoria de serviço:** Proxy do aplicativo  
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Proxy de Aplicativo  
 **Funcionalidade do produto:** Controle de Acesso
 
 Há uma nova configuração chamada **Cookies somente HTTP** em seus aplicativos de proxy de aplicativo. Essa configuração ajuda a fornecer segurança adicional, pois inclui o sinalizador HTTPOnly no cabeçalho de resposta HTTP para os cookies de sessão e acesso de proxy de aplicativo, impede o acesso ao cookie de um script do lado do cliente e também impede ações como copiar ou modificar o cookie. Embora esse sinalizador não tenha sido usado anteriormente, os cookies sempre foram criptografados e transmitidos usando uma conexão SSL para ajudar a proteger contra modificações inadequadas.
@@ -539,9 +627,9 @@ Para obter mais informações sobre a configuração Cookies somente HTTP, consu
 
 ---
 
-### <a name="privileged-identity-management-pim-for-azure-resources-supports-management-group-resource-types"></a>O PIM (Privileged Identity Management) para recursos do Azure dá suporte aos tipos de recurso do grupo de gerenciamento
+### <a name="privileged-identity-management-pim-for-azure-resources-supports-management-group-resource-types"></a>O Privileged Identity Management (PIM) para recursos do Azure oferece suporte a tipos de recurso do Grupo de Gerenciamento
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Privileged Identity Management  
 **Funcionalidade do produto:** Privileged Identity Management
  
@@ -551,9 +639,9 @@ Para obter mais informações sobre o PIM e os recursos do Azure, consulte [Desc
  
 ---
 
-### <a name="application-access-preview-provides-faster-access-to-the-azure-ad-portal"></a>O acesso do aplicativo (versão prévia) fornece um acesso mais rápido ao portal do Azure AD
+### <a name="application-access-preview-provides-faster-access-to-the-azure-ad-portal"></a>O acesso ao aplicativo (versão prévia) fornece acesso rápido ao portal do Azure AD
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Privileged Identity Management  
 **Funcionalidade do produto:** Privileged Identity Management
  
@@ -563,9 +651,9 @@ Atualmente, o acesso do aplicativo dá suporte apenas à experiência do portal 
  
 ---
 
-### <a name="new-federated-apps-available-in-azure-ad-app-gallery---august-2018"></a>Novos Aplicativos Federados disponíveis na galeria de Aplicativos do Azure AD – agosto de 2018
+### <a name="new-federated-apps-available-in-azure-ad-app-gallery---august-2018"></a>Novos Aplicativos Federados disponíveis na galeria de aplicativos do Azure AD – agosto de 2018
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
 **Funcionalidade do produto:** Integração de terceiros
  
@@ -577,10 +665,10 @@ Para obter mais informações sobre os aplicativos, consulte [integração de ap
 
 ---
 
-### <a name="native-tableau-support-is-now-available-in-azure-ad-application-proxy"></a>O suporte nativo ao Tableau já está disponível no Proxy de Aplicativo do Azure AD
+### <a name="native-tableau-support-is-now-available-in-azure-ad-application-proxy"></a>O suporte ao Tableau nativo agora está disponível no Proxy de aplicativos do Azure AD
 
 **Tipo:** Recurso alterado  
-**Categoria de serviço:** Proxy do aplicativo  
+**Categoria de serviço:** Proxy de Aplicativo  
 **Funcionalidade do produto:** Controle de Acesso
 
 Com nossa atualização do OpenID Connect para o protocolo OAuth 2.0 Code Grant para nosso protocolo de pré-autenticação, você não precisa mais fazer nenhuma configuração adicional para usar o Tableau com Proxy de Aplicativo. Essa alteração de protocolo também ajuda o Proxy de Aplicativo a oferecer um suporte melhor a aplicativos mais modernos usando apenas redirecionamentos de HTTP, que normalmente recebem suporte em marcações HTML e JavaScript.
@@ -589,9 +677,9 @@ Para obter mais informações sobre o suporte nativo para Tableau, consulte [Pro
 
 ---
 
-### <a name="new-support-to-add-google-as-an-identity-provider-for-b2b-guest-users-in-azure-active-directory-preview"></a>Novo suporte para adicionar o Google como provedor de identidade para usuários convidados B2B no Azure Active Directory (versão prévia)
+### <a name="new-support-to-add-google-as-an-identity-provider-for-b2b-guest-users-in-azure-active-directory-preview"></a>Novo suporte para adicionar o Google como um provedor de identidade para os usuários convidados de B2B no Azure Active Directory (versão prévia)
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** B2B  
 **Funcionalidade do produto:** B2B/B2C
 
@@ -614,7 +702,7 @@ Os emails do Active Directory do Azure (Azure AD) agora apresentam um design atu
 - Revisões de acesso do Azure AD
 - Azure AD Connect Health 
 - Azure AD Identity Protection 
-- Gerenciamento de identidades com privilégios do AD do Azure
+- Azure AD Privileged Identity Management
 - Notificação de certificado expirando do Aplicativo Enterprise
 - Notificações do serviço de provisionamento do Aplicativo Enterprise
  
@@ -629,8 +717,8 @@ Para obter um exemplo de alguns dos novos designs de email e mais informações,
 
 ### <a name="azure-ad-activity-logs-are-now-available-through-azure-monitor"></a>Os Logs de atividade do Azure AD agora estão disponíveis por meio do Azure Monitor
 
-**Tipo:** New recurso  
-**Categoria de serviço:** Relatórios  
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Relatório  
 **Funcionalidade do produto:** Monitoramento e relatório
 
 Os Logs de atividade do Azure AD agora estão disponíveis na visualização pública do Monitor do Azure (serviço de monitoramento da plataforma do Azure). O Monitor do Azure oferece retenção a longo prazo e integração perfeita, além dessas melhorias:
@@ -645,10 +733,10 @@ Para obter mais informações sobre esses novos recursos, consulte o [log de ati
 
 ---
 
-### <a name="conditional-access-information-added-to-the-azure-ad-sign-ins-report"></a>Informações de acesso condicionais adicionadas ao relatório de entradas do Azure AD
+### <a name="conditional-access-information-added-to-the-azure-ad-sign-ins-report"></a>Informações de acesso condicional adicionadas ao relatório de entradas do Azure AD
 
-**Tipo:** New recurso  
-**Categoria de serviço:** Relatórios  
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Relatório  
 **Funcionalidade do produto:** Segurança de identidade e proteção
  
 Esta atualização permite ver quais políticas são avaliadas quando um usuário faz login junto com o resultado da política. Além disso, o relatório agora inclui o tipo de aplicativo cliente usado pelo usuário, para que você possa identificar o tráfego de protocolo herdado. Agora, as entradas de relatório também podem ser pesquisadas em busca de um ID de correlação, que pode ser encontrado na mensagem de erro do usuário, e pode ser usado para identificar e solucionar problemas da solicitação de entrada correspondente.
@@ -657,8 +745,8 @@ Esta atualização permite ver quais políticas são avaliadas quando um usuári
 
 ### <a name="view-legacy-authentications-through-sign-ins-activity-logs"></a>Veja autenticações herdadas por meio dos logs de atividades de Entradas
 
-**Tipo:** New recurso  
-**Categoria de serviço:** Relatórios  
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Relatório  
 **Funcionalidade do produto:** Monitoramento e relatório
  
 Com a introdução do campo **Client App** nos logs de atividades de login, os clientes agora podem ver usuários que estão usando autenticações herdadas. Os clientes poderão acessar essas informações usando a API do MS Graph de entradas ou por meio dos logs de atividades de entrada no portal do Azure AD, onde você pode usar o controle **Aplicativo Cliente** para filtrar as autenticações herdadas. Confira a documentação para obter mais detalhes.
@@ -667,7 +755,7 @@ Com a introdução do campo **Client App** nos logs de atividades de login, os c
 
 ### <a name="new-federated-apps-available-in-azure-ad-app-gallery---july-2018"></a>Novos aplicativos federados disponíveis na galeria de aplicativos do Azure AD - julho de 2018
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
 **Funcionalidade do produto:** Integração de terceiros
  
@@ -681,7 +769,7 @@ Para obter mais informações sobre os aplicativos, consulte [integração de ap
  
 ### <a name="new-user-provisioning-saas-app-integrations---july-2018"></a>Novas integrações de aplicativos SaaS para provisionamento de usuários - julho de 2018
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Provisionamento de aplicativo  
 **Funcionalidade do produto:** Integração de terceiros
  
@@ -699,7 +787,7 @@ Para obter uma lista de todos os aplicativos que dão suporte ao provisionamento
 
 ### <a name="connect-health-for-sync---an-easier-way-to-fix-orphaned-and-duplicate-attribute-sync-errors"></a>Conecte o Health for Sync - Uma maneira mais fácil de corrigir erros de sincronização de atributos órfãos e duplicados
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** AD Connect  
 **Funcionalidade do produto:** Monitoramento e relatório
  
@@ -718,8 +806,8 @@ Para obter mais informações, consulte [Diagnosticar e corrigir erros de sincro
 ### <a name="visual-updates-to-the-azure-ad-and-msa-sign-in-experiences"></a>Atualizações visuais nas experiências de entrada do Azure AD e MSA
 
 **Tipo:** Recurso alterado  
-**Categoria de serviço:** AD do Azure  
-**Funcionalidade do produto:** Autenticação de usuário
+**Categoria de serviço:** Azure AD  
+**Funcionalidade do produto:** Autenticação de Usuário
 
 Atualizamos a interface do usuário para a experiência de login de serviços on-line da Microsoft, como no Office 365 e no Azure. Essa alteração torna as telas menos confusas e mais simples. Para obter mais informações sobre essa alteração, consulte as [próximas melhorias no blog de experiência de logon do Azure AD](https://cloudblogs.microsoft.com/enterprisemobility/2018/04/04/upcoming-improvements-to-the-azure-ad-sign-in-experience/).
 
@@ -743,7 +831,7 @@ Para obter mais informações sobre essa atualização, confira [Azure AD Connec
 
 ---
 
-### <a name="updates-to-the-terms-of-use-end-user-ui"></a>Atualizações para os termos de usam a interface do usuário final
+### <a name="updates-to-the-terms-of-use-end-user-ui"></a>Atualizações dos termos de uso da interface do usuário final
 
 **Tipo:** Recurso alterado  
 **Categoria de serviço:** Termos de uso  
@@ -761,7 +849,7 @@ Estamos atualizando a sequência de aceitação na interface do usuário final d
 
 **Tipo:** Recurso alterado  
 **Categoria de serviço:** Autenticações (Logons)  
-**Funcionalidade do produto:** Autenticação de usuário
+**Funcionalidade do produto:** Autenticação de Usuário
  
 A autenticação de passagem agora suporta protocolos e aplicativos legados. As limitações a seguir agora são totalmente suportadas:
 
@@ -779,9 +867,9 @@ A autenticação de passagem agora suporta protocolos e aplicativos legados. As 
  
 ### <a name="converged-security-info-management-for-self-service-password-reset-and-multi-factor-authentication"></a>Gerenciamento de informações de segurança convergida para redefinição de senha de autoatendimento e a autenticação multifator
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** SSPR  
-**Funcionalidade do produto:** Autenticação de usuário
+**Funcionalidade do produto:** Autenticação de Usuário
 
 Esse novo recurso permite que os usuários gerenciem suas informações de segurança (por exemplo, número de telefone, endereço de email, aplicativo móvel etc.) para redefinição de senha de autoatendimento (SSPR) e autenticação de vários fatores (MFA) em uma única experiência. Os usuários não precisarão mais registrar as mesmas informações de segurança para SSPR e MFA em duas experiências diferentes. Essa nova experiência também se aplica a usuários que possuem SSPR ou MFA.
 
@@ -795,7 +883,7 @@ Esta é uma visualização pública opt-in. Os administradores podem ativar a no
 
 **Tipo:** Recurso alterado  
 **Categoria de serviço:** SSPR  
-**Funcionalidade do produto:** Autenticação de usuário
+**Funcionalidade do produto:** Autenticação de Usuário
 
 Esse recurso permite que não administradores verifiquem sua identidade ao redefinir uma senha usando uma notificação ou código do Microsoft Authenticator (ou qualquer outro aplicativo autenticador). Depois que os administradores ativarem esse método de redefinição de senha de autoatendimento, os usuários que tiverem registrado um aplicativo móvel por meio de aka.ms/mfasetup ou aka.ms/setupsecurityinfo poderão usar o aplicativo móvel como um método de verificação ao redefinir a senha.
 
@@ -808,7 +896,7 @@ A notificação de aplicativos para dispositivos móveis só pode ser ativada co
 ### <a name="change-notice-security-fix-to-the-delegated-authorization-flow-for-apps-using-azure-ad-activity-logs-api"></a>Aviso de alteração: Correção de segurança para o fluxo de autorização delegada para aplicativos que usam a API de Logs de Atividades do Azure AD
 
 **Tipo:** Plano para alteração  
-**Categoria de serviço:** Relatórios  
+**Categoria de serviço:** Relatório  
 **Funcionalidade do produto:** Monitoramento e relatório
 
 Devido a nossa aplicação de segurança mais forte, foi necessário fazer uma alteração nas permissões para aplicativos que usam um fluxo de autorização delegado para acessar [APIs dos Logs de Atividades do Azure AD](https://aka.ms/aadreportsapi). Essa alteração ocorrerá até **26 de junho de 2018**.
@@ -831,7 +919,7 @@ Para obter mais informações, consulte a área [ Conceder permissões ](https:/
 
 ### <a name="configure-tls-settings-to-connect-to-azure-ad-services-for-pci-dss-compliance"></a>Definir configurações de TLS para se conectar aos serviços do Azure AD para conformidade com o PCI DSS
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** N/D  
 **Funcionalidade do produto:** Plataforma
 
@@ -871,7 +959,7 @@ Os navegadores desatualizados podem não suportar versões mais recentes do TLS,
 
 ### <a name="new-federated-apps-available-in-azure-ad-app-gallery---june-2018"></a>Novos aplicativos federados disponíveis na galeria de aplicativos do Azure AD - junho de 2018
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
 **Funcionalidade do produto:** Integração de terceiros
  
@@ -885,9 +973,9 @@ Para obter mais informações sobre os aplicativos, consulte [integração de ap
 
 ### <a name="azure-ad-password-protection-is-available-in-public-preview"></a>A proteção de senha do Azure AD está disponível na visualização pública
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Identity Protection  
-**Funcionalidade do produto:** Autenticação de usuário
+**Funcionalidade do produto:** Autenticação de Usuário
 
 Use a proteção de senha do Azure AD para ajudar a eliminar senhas fáceis de adivinhar do seu ambiente. A eliminação dessas senhas ajuda a diminuir o risco de comprometimento de um tipo de ataque de spray de senha.
 
@@ -901,25 +989,25 @@ Para obter mais informações sobre o Azure AD Password Protection, consulte [El
 
 ---
 
-### <a name="new-all-guests-conditional-access-policy-template-created-during-terms-of-use-creation"></a>Novo "todos os convidados" acesso condicional modelo de política criado durante a termos de uso de criação
+### <a name="new-all-guests-conditional-access-policy-template-created-during-terms-of-use-creation"></a>Novo modelo de política de acesso condicional "todos os convidados" criado durante a criação de termos de uso
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Termos de uso  
 **Funcionalidade do produto:** Governança
 
-Durante a criação de seus termos de uso, também é criado um novo modelo de política de acesso condicional para "todos os convidados" e "todos os aplicativos". Esse novo modelo de política aplica os ToU recém-criados, simplificando o processo de criação e execução para os convidados.
+Durante a criação dos seus termos de uso, um novo modelo de política de acesso condicional também é criado para "todos os convidados" e "todos os aplicativos". Esse novo modelo de política aplica os ToU recém-criados, simplificando o processo de criação e execução para os convidados.
 
 Para obter mais informações, consulte [Recurso de Termos de Uso do Azure Active Directory](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use).
 
 ---
 
-### <a name="new-custom-conditional-access-policy-template-created-during-terms-of-use-creation"></a>Novo modelo de política de acesso condicional "custom" criado durante a termos de uso de criação
+### <a name="new-custom-conditional-access-policy-template-created-during-terms-of-use-creation"></a>Novo modelo de política de acesso condicional "personalizado" criado durante a criação de termos de uso
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Termos de uso  
 **Funcionalidade do produto:** Governança
 
-Durante a criação de seus termos de uso, também é criado um novo modelo de política de acesso condicional "personalizado". Esse novo modelo de política permite criar ToU e imediatamente vá para a folha de criação de política de acesso condicional, sem precisar navegar manualmente por meio do portal.
+Durante a criação dos seus termos de uso, um novo modelo de política de acesso condicional "personalizado" também é criado. Esse novo modelo de política permite criar o ToU e, em seguida, ir imediatamente para a folha de criação de política de acesso condicional, sem a necessidade de navegar manualmente pelo portal.
 
 Para obter mais informações, consulte [Recurso de Termos de Uso do Azure Active Directory](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use).
 
@@ -927,7 +1015,7 @@ Para obter mais informações, consulte [Recurso de Termos de Uso do Azure Activ
 
 ### <a name="new-and-comprehensive-guidance-about-deploying-azure-multi-factor-authentication"></a>Orientação nova e abrangente sobre a implantação da autenticação de vários fatores do Azure
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Outros  
 **Funcionalidade do produto:** Segurança de identidade e proteção
  
@@ -939,7 +1027,7 @@ Para visualizar o guia de implantação do MFA, vá para o repositório [Guias d
 
 ### <a name="azure-ad-delegated-app-management-roles-are-in-public-preview"></a>As funções de gerenciamento de aplicativos delegados do Azure AD estão em pré-visualização pública
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
 **Funcionalidade do produto:** Controle de Acesso
 
@@ -985,17 +1073,17 @@ Se você precisar continuar usando circuitos dedicados, fale com a equipe da sua
 
 ### <a name="microsoft-graph-apis-for-administrative-scenarios-for-tou"></a>APIs do Microsoft Graph para cenários administrativos para TOU
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Termos de uso  
-**Funcionalidade do produto:** Experiência do desenvolvedor
+**Funcionalidade do produto:** Experiência do Desenvolvedor
  
-Adicionamos APIs do Microsoft Graph para a operação de administração de termos de uso do Azure AD. É possível criar, atualizar, excluir os termos de uso de objeto.
+Adicionamos Microsoft Graph APIs para a operação de administração de termos de uso do Azure AD. Você pode criar, atualizar, excluir o objeto de termos de uso.
 
 ---
 
 ### <a name="add-azure-ad-multi-tenant-endpoint-as-an-identity-provider-in-azure-ad-b2c"></a>Adicionar ponto de extremidade multilocatário do Azure AD como um provedor de identidade no Azure AD B2C
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** B2C – Gerenciamento de Identidades do Consumidor  
 **Funcionalidade do produto:** B2B/B2C
  
@@ -1005,7 +1093,7 @@ Agora, usando políticas personalizadas, você pode adicionar o ponto de extremi
 
 ### <a name="use-internal-urls-to-access-apps-from-anywhere-with-our-my-apps-sign-in-extension-and-the-azure-ad-application-proxy"></a>Use URLs internas para acessar os aplicativos de qualquer lugar com nossa Extensão de Entrada Meus Aplicativos e o Proxy de Aplicativo do Azure AD
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Meus Aplicativos  
 **Funcionalidade do produto:** SSO
  
@@ -1015,7 +1103,7 @@ Os usuários agora podem acessar aplicativos por meio de URLs internas, mesmo de
  
 ### <a name="azure-active-directory---data-in-europe-for-europe-customers"></a>Azure Active Directory – Dados na Europa para clientes europeus
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Outros  
 **Funcionalidade do produto:** GoLocal
 
@@ -1025,7 +1113,7 @@ Os clientes na Europa exigem que seus dados permaneçam na Europa e não sejam r
  
 ### <a name="new-user-provisioning-saas-app-integrations---may-2018"></a>Novo usuário provisionando integrações de aplicativo SaaS – maio de 2018
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Provisionamento de aplicativo  
 **Funcionalidade do produto:** Integração de terceiros
  
@@ -1043,8 +1131,8 @@ Para obter uma lista de todos os aplicativos que dão suporte ao provisionamento
  
 ### <a name="azure-ad-access-reviews-of-groups-and-app-access-now-provides-recurring-reviews"></a>O Azure AD acessa revisões de grupos e o acesso do aplicativo agora fornece revisões recorrentes
 
-**Tipo:** New recurso  
-**Categoria de serviço:** Revisões de acesso  
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Revisões de Acesso  
 **Funcionalidade do produto:** Governança
  
 A revisão de acesso de grupos e aplicativos agora está geralmente disponível como parte do Azure AD Premium P2.  Os administradores poderão configurar revisões de acesso de membros de grupos e atribuições de aplicativo para que ocorram automaticamente em intervalos regulares, como mensal ou trimestralmente.
@@ -1053,8 +1141,8 @@ A revisão de acesso de grupos e aplicativos agora está geralmente disponível 
 
 ### <a name="azure-ad-activity-logs-sign-ins-and-audit-are-now-available-through-ms-graph"></a>Os logs de atividades do Azure AD (entradas e auditoria) agora estão disponíveis por meio do MS Graph
 
-**Tipo:** New recurso  
-**Categoria de serviço:** Relatórios  
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Relatório  
 **Funcionalidade do produto:** Monitoramento e relatório
  
 Os logs de atividade do Azure AD, que incluem Logs de entradas e de auditoria, agora estão disponíveis por meio do MS Graph. Nós expusemos dois pontos finais através do MS Graph para acessar esses logs. Confira nossos [documentos](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-api-getting-started-azure-portal) para acesso programático às APIs de relatórios do Azure AD para começar. 
@@ -1063,7 +1151,7 @@ Os logs de atividade do Azure AD, que incluem Logs de entradas e de auditoria, a
  
 ### <a name="improvements-to-the-b2b-redemption-experience-and-leave-an-org"></a>Aprimoramentos à experiência de resgate B2B e deixar uma organização
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** B2B  
 **Funcionalidade do produto:** B2B/B2C
 
@@ -1077,7 +1165,7 @@ Os logs de atividade do Azure AD, que incluem Logs de entradas e de auditoria, a
 
 ### <a name="new-federated-apps-available-in-azure-ad-app-gallery---may-2018"></a>Novos aplicativos federados disponíveis na galeria de aplicativos do Azure AD - maio de 2018
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
 **Funcionalidade do produto:** Integração de terceiros
  
@@ -1093,11 +1181,11 @@ Para obter mais informações sobre como listar seu aplicativo na galeria de apl
  
 ### <a name="new-step-by-step-deployment-guides-for-azure-active-directory"></a>Novos guias de implantação passo a passo para o Active Directory do Azure
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Outros  
 **Funcionalidade do produto:** Diretório
  
-Diretrizes de novo, passo a passo sobre como implantar o Azure Active Directory (Azure AD), incluindo a senha de autoatendimento (SSPR) de redefinição, logon único (SSO), acesso condicional (CA), o proxy de aplicativo, provisionamento de usuário, Active Directory Federation Services (ADFS) para A autenticação de passagem (PTA) e o ADFS para sincronização de hash de senha (PHS).
+Novas orientações passo a passo sobre como implantar o Azure Active Directory (Azure AD), incluindo SSPR (autoatendimento de redefinição de senha), logon único (SSO), acesso condicional (CA), proxy de aplicativo, provisionamento de usuário, Serviços de Federação do Active Directory (AD FS) (ADFS) para Autenticação de passagem (PTA) e ADFS para sincronização de hash de senha (PHS).
 
 Para visualizar os guias de implantação, acesse o repositório [Guias de Implantação de Identidade](https://aka.ms/DeploymentPlans) no GitHub. Para fornecer feedback sobre os guias de implantação, use o [formulário de Feedback do Plano de Implantação](https://aka.ms/deploymentplanfeedback). Se você tiver alguma dúvida sobre os guias de implantação, entre em contato conosco em [IDGitDeploy](mailto:idgitdeploy@microsoft.com).
 
@@ -1105,7 +1193,7 @@ Para visualizar os guias de implantação, acesse o repositório [Guias de Impla
 
 ### <a name="enterprise-applications-search---load-more-apps"></a>Pesquisa de Aplicativos Empresariais – Carregar Mais Aplicativos
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
 **Funcionalidade do produto:** SSO
  
@@ -1126,7 +1214,7 @@ O lançamento de maio do AADConnect contém uma prévia pública da integração
 ### <a name="azure-ad-access-reviews-auto-apply"></a>Revisões de acesso do Azure AD: aplicação automática
 
 **Tipo:** Recurso alterado  
-**Categoria de serviço:** Revisões de acesso  
+**Categoria de serviço:** Revisões de Acesso  
 **Funcionalidade do produto:** Governança
 
 As revisões de acesso de grupos e aplicativos agora estão disponíveis como parte do Azure AD Premium P2. Um administrador pode configurar para aplicar as alterações do revisor automaticamente a esse grupo ou aplicativo quando a revisão de acesso for concluída. O administrador também pode especificar o que acontece com o acesso continuado do usuário se os revisores não responderem, removerem o acesso, manterem o acesso ou receberem recomendações do sistema. 
@@ -1137,7 +1225,7 @@ As revisões de acesso de grupos e aplicativos agora estão disponíveis como pa
 
 **Tipo:** Recurso alterado  
 **Categoria de serviço:** Autenticações (Logons)  
-**Funcionalidade do produto:** Autenticação de usuário
+**Funcionalidade do produto:** Autenticação de Usuário
  
 Os aplicativos criados em ou após 25 de abril de 2018 não poderão mais solicitar um **id_token** usando a **consulta** response_mode.  Isso coloca o Azure AD de acordo com as especificações de OIDC e ajuda a reduzir a superfície de ataque dos aplicativos.  Aplicativos criados antes de 25 de abril de 2018 não são impedidos de usar a **consulta** response_mode com um response_type de **id_token**.  O erro retornado, ao solicitar um id_token do AAD, é **AADSTS70007: 'query' não é um valor de 'response_mode' para solicitar um token**.
 
@@ -1149,7 +1237,7 @@ O **fragmento** e **form_post** response_modes continuam funcionando - ao criar 
 
 ### <a name="azure-ad-b2c-access-token-are-ga"></a>Os Tokens de Acesso do Azure AD B2C estão disponíveis ao público
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** B2C – Gerenciamento de Identidades do Consumidor  
 **Funcionalidade do produto:** B2B/B2C 
 
@@ -1161,7 +1249,7 @@ Para obter mais informações, confira [Azure AD B2C: Solicitando tokens de aces
 
 ### <a name="test-single-sign-on-configuration-for-saml-based-applications"></a>Testar configuração de logon único para aplicativos baseados em SAML
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
 **Funcionalidade do produto:** SSO
 
@@ -1174,9 +1262,9 @@ Para obter mais informações, consulte:
 
 ---
  
-### <a name="azure-ad-terms-of-use-now-has-per-user-reporting"></a>Termos do Azure AD de uso agora têm relatórios por usuário
+### <a name="azure-ad-terms-of-use-now-has-per-user-reporting"></a>Os termos de uso do Azure AD agora têm relatórios por usuário
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Termos de uso  
 **Funcionalidade do produto:** Conformidade
  
@@ -1188,7 +1276,7 @@ Para obter mais informações, consulte o [Azure AD terms of use feature](https:
  
 ### <a name="azure-ad-connect-health-risky-ip-for-ad-fs-extranet-lockout-protection"></a>Azure AD Connect Health: IP de risco para proteção de bloqueio de extranet do AD FS 
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Outros  
 **Funcionalidade do produto:** Monitoramento e relatório
 
@@ -1204,7 +1292,7 @@ Para obter mais informações, consulte [Risky IP Report](https://aka.ms/aadchri
  
 ### <a name="easy-app-config-with-metadata-file-or-url"></a>Configuração fácil do aplicativo com arquivos ou URL de metadados
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
 **Funcionalidade do produto:** SSO
 
@@ -1218,12 +1306,12 @@ Para obter mais informações, consulte [Configurando logon único para aplicati
 
 ### <a name="azure-ad-terms-of-use-now-generally-available"></a>Agora os Termos de uso do Azure AD já estão disponíveis
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Termos de uso  
 **Funcionalidade do produto:** Conformidade
  
 
-Os termos de uso do AD do Azure foram movidos da visualização pública para disponibilidade geral.
+Os termos de uso do Azure AD foram movidos da visualização pública para disponibilidade geral.
 
 Para obter mais informações, consulte o [Azure AD terms of use feature](https://docs.microsoft.com/azure/active-directory/conditional-access/terms-of-use) (Recurso de termos de uso do Azure AD).
 
@@ -1231,7 +1319,7 @@ Para obter mais informações, consulte o [Azure AD terms of use feature](https:
 
 ### <a name="allow-or-block-invitations-to-b2b-users-from-specific-organizations"></a>Permitir ou bloquear convites para usuários B2B de organizações específicas
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** B2B  
 **Funcionalidade do produto:** B2B/B2C
  
@@ -1240,7 +1328,7 @@ Agora é possível especificar com quais organizações parceiras você deseja c
 
 Isso ajuda a controlar o acesso aos recursos e permite uma experiência perfeita para usuários aprovados.
 
-Esse recurso de colaboração B2B está disponível para todos os clientes do Azure Active Directory e pode ser usado em conjunto com recursos do Azure AD Premium, como a proteção de identidade e acesso condicional para um controle mais granular de quando e como os usuários de negócios externos entrar no e obter acesso.
+Esse recurso de colaboração B2B está disponível para todos os clientes Azure Active Directory e pode ser usado em conjunto com Azure AD Premium recursos como o acesso condicional e a proteção de identidade para um controle mais granular de quando e como os usuários corporativos externos assinam em e obter acesso.
 
 Para obter mais informações, consulte [Permitir ou bloquear convites para usuários B2B de organizações específicas](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-allow-deny-list).
 
@@ -1248,7 +1336,7 @@ Para obter mais informações, consulte [Permitir ou bloquear convites para usu�
  
 ### <a name="new-federated-apps-available-in-azure-ad-app-gallery"></a>Novos aplicativos federados disponíveis na galeria de aplicativos do Azure AD
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
 **Funcionalidade do produto:** Integração de terceiros
 
@@ -1264,7 +1352,7 @@ Para obter mais informações sobre como listar seu aplicativo na galeria de apl
  
 ### <a name="grant-b2b-users-in-azure-ad-access-to-your-on-premises-applications-public-preview"></a>Permitir acesso a seus aplicativos locais a usuários B2B no Azure AD (versão prévia pública)
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** B2B  
 **Funcionalidade do produto:** B2B/B2C
 
@@ -1303,8 +1391,8 @@ Para obter mais informações, consulte [What happens during provisioning?](http
 ### <a name="self-service-password-reset-from-windows-10-lock-screen-for-hybrid-azure-ad-joined-machines"></a>Redefinição de senha de autoatendimento da tela de bloqueio do Windows 10 para computadores associados ao Azure AD híbrido
 
 **Tipo:** Recurso alterado  
-**Categoria de serviço:** Redefinição de senha por autoatendimento  
-**Funcionalidade do produto:** Autenticação de usuário
+**Categoria de serviço:** Redefinição de senha de autoatendimento  
+**Funcionalidade do produto:** Autenticação de Usuário
  
 Atualizamos o recurso SSPR do Windows 10 para incluir suporte para computadores ingressados no Azure AD híbridos. Esse recurso está disponível no Windows 10 RS4 e permite que os usuários redefinam sua senha da tela de bloqueio de um computador Windows 10. Os usuários habilitados e registrados para redefinição de senha de autoatendimento podem usar esse recurso.
 
@@ -1333,7 +1421,7 @@ Para obter mais informações, consulte:
  
 ### <a name="twitter-and-github-identity-providers-in-azure-ad-b2c"></a>Provedores de identidade do Twitter e do GitHub no Azure AD B2C
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** B2C – Gerenciamento de Identidades do Consumidor  
 **Funcionalidade do produto:** B2B/B2C
  
@@ -1343,9 +1431,9 @@ Para saber mais, confira [O que é a colaboração B2B do Azure AD?](https://doc
  
 ---
 
-### <a name="restrict-browser-access-using-intune-managed-browser-with-azure-ad-application-based-conditional-access-for-ios-and-android"></a>Restringir o acesso do navegador usando Intune Managed Browser com o Azure AD baseada em aplicativo acesso condicional para iOS e Android
+### <a name="restrict-browser-access-using-intune-managed-browser-with-azure-ad-application-based-conditional-access-for-ios-and-android"></a>Restringir o acesso ao navegador usando Intune Managed Browser com acesso condicional baseado em aplicativo do Azure AD para iOS e Android
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Acesso Condicional  
 **Funcionalidade do produto:** Segurança de identidade e proteção
  
@@ -1353,13 +1441,13 @@ Para saber mais, confira [O que é a colaboração B2B do Azure AD?](https://doc
 
 **SSO do Intune Managed Browser:** Seus funcionários podem usar o logon único em clientes nativos (como o Microsoft Outlook) e o Intune Managed Browser para todos os aplicativos conectados ao Azure AD.
 
-**Suporte ao Acesso Condicional do Intune Managed Browser:** Você agora pode exigir que os funcionários usar o Intune Managed browser usando políticas de acesso condicional com base no aplicativo.
+**Suporte ao Acesso Condicional do Intune Managed Browser:** Agora você pode exigir que os funcionários usem o navegador gerenciado do Intune usando políticas de acesso condicional baseadas em aplicativo.
 
 Leia mais sobre isso em nossa [postagem no blog](https://cloudblogs.microsoft.com/enterprisemobility/2018/03/15/the-intune-managed-browser-now-supports-azure-ad-sso-and-conditional-access/).
 
 Para obter mais informações, consulte:
 
-- [Configurar o acesso condicional com base no aplicativo](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access)
+- [Configurar o acesso condicional baseado no aplicativo](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access)
 
 - [Configurar políticas do navegador gerenciado](https://aka.ms/managedbrowser)  
 
@@ -1367,8 +1455,8 @@ Para obter mais informações, consulte:
  
 ### <a name="app-proxy-cmdlets-in-powershell-ga-module"></a>Cmdlets do Proxy de aplicativo no módulo do Powershell GA
 
-**Tipo:** New recurso  
-**Categoria de serviço:** Proxy do aplicativo  
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Proxy de Aplicativo  
 **Funcionalidade do produto:** Controle de Acesso
  
 O suporte para cmdlets de Proxy de Aplicativo agora estão no Módulo Powershell GA! Isso exige que você permaneça atualizado nos módulos do Powershell - se você ficar mais de um ano atrasado, alguns cmdlets poderão parar de funcionar. 
@@ -1379,9 +1467,9 @@ Para saber mais, veja [AzureAD](https://docs.microsoft.com/powershell/module/Azu
  
 ### <a name="office-365-native-clients-are-supported-by-seamless-sso-using-a-non-interactive-protocol"></a>Os clientes nativos do Office 365 têm suporte do SSO Contínuo usando um protocolo não interativo
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Autenticações (Logons)  
-**Funcionalidade do produto:** Autenticação de usuário
+**Funcionalidade do produto:** Autenticação de Usuário
  
 O usuário que utiliza clientes nativos do Office 365 (versão 16.0.8730.xxxx e acima) obtém uma experiência de logon silencioso usando o SSO Contínuo. Esse suporte é fornecido com a adição de um protocolo não interativo (WS-Trust) ao Azure AD.
 
@@ -1391,9 +1479,9 @@ Para saber mais, confira [Como entrar em um cliente nativo com o trabalho de SSO
 
 ### <a name="users-get-a-silent-sign-on-experience-with-seamless-sso-if-an-application-sends-sign-in-requests-to-azure-ads-tenant-endpoints"></a>Os usuários obtêm uma experiência de logon silenciosa, com o SSO contínuo, se um aplicativo envia solicitações de entrada para os terminais de inquilino do Azure AD
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Autenticações (Logons)  
-**Funcionalidade do produto:** Autenticação de usuário
+**Funcionalidade do produto:** Autenticação de Usuário
  
 Os usuários terão uma experiência de logon silenciosa, com SSO contínuo, se um aplicativo (por exemplo, `https://contoso.sharepoint.com`) enviar solicitações de entrada para pontos de extremidade com locatários do Microsoft Azure AD, ou seja, `https://login.microsoftonline.com/contoso.com/<..>` ou `https://login.microsoftonline.com/<tenant_ID>/<..>`, em vez de enviar para o ponto de extremidade comum do Azure AD (`https://login.microsoftonline.com/common/<...>`).
 
@@ -1403,9 +1491,9 @@ Para saber mais, confira [Logon Único Contínuo do Azure Active Directory](http
  
 ### <a name="need-to-add-only-one-azure-ad-url-instead-of-two-urls-previously-to-users-intranet-zone-settings-to-roll-out-seamless-sso"></a>É preciso adicionar apenas uma URL do Azure AD, em vez de duas URLs como anteriormente, às configurações de zona de Intranet dos usuários para implementar o SSO Contínuo
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Autenticações (Logons)  
-**Funcionalidade do produto:** Autenticação de usuário
+**Funcionalidade do produto:** Autenticação de Usuário
  
 Para implementar o SSO contínuo para seus usuários, você deve adicionar apenas uma URL do Azure Active Directory às configurações de zona da Intranet dos usuários usando a política de grupo no Active Directory: `https://autologon.microsoftazuread-sso.com`. Anteriormente, era necessário que os clientes adicionassem duas URLs.
 
@@ -1415,7 +1503,7 @@ Para saber mais, confira [Logon Único Contínuo do Azure Active Directory](http
  
 ### <a name="new-federated-apps-available-in-azure-ad-app-gallery"></a>Novos aplicativos federados disponíveis na galeria de aplicativos do Azure AD
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
 **Funcionalidade do produto:** Integração de terceiros
 
@@ -1431,7 +1519,7 @@ Para obter mais informações sobre como listar seu aplicativo na galeria de apl
  
 ### <a name="pim-for-azure-resources-is-generally-available"></a>O PIM para Recursos do Azure está disponível
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Privileged Identity Management  
 **Funcionalidade do produto:** Privileged Identity Management
  
@@ -1443,9 +1531,9 @@ Para obter mais informações, consulte [Privileged Identity Management para rec
  
 ### <a name="adding-optional-claims-to-your-apps-tokens-public-preview"></a>Adicionar declarações opcionais aos tokens de aplicativos (visualização pública)
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Autenticações (Logons)  
-**Funcionalidade do produto:** Autenticação de usuário
+**Funcionalidade do produto:** Autenticação de Usuário
  
 O aplicativo Azure AD agora pode solicitar declarações personalizadas ou opcionais em tokens SAML ou JWTs.  Essas são as declarações sobre o usuário ou locatário que não são incluídas por padrão no token, devido a restrições de tamanho ou aplicabilidade.  Isso está atualmente em visualização pública para aplicativos Azure AD nos pontos de extremidade v1.0 e v2.0.  Confira a documentação para saber mais sobre quais declarações podem ser adicionadas e como editar o manifesto do aplicativo para solicitá-las.  
 
@@ -1455,9 +1543,9 @@ Para saber mais, confira [Declarações opcionais no Azure AD](https://docs.micr
  
 ### <a name="azure-ad-supports-pkce-for-more-secure-oauth-flows"></a>O Azure AD dá suporte a PKCE para fluxos de OAuth mais seguros
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Autenticações (Logons)  
-**Funcionalidade do produto:** Autenticação de usuário
+**Funcionalidade do produto:** Autenticação de Usuário
  
 Os documentos do Azure AD foram atualizados para indicar o suporte para PKCE, que permite a comunicação mais segura durante o fluxo de concessão de Código de Autorização do OAuth 2.0.  Code_challenges S256 e o texto sem formatação têm suporte nos pontos de extremidade v1.0 e v2.0. 
 
@@ -1467,7 +1555,7 @@ Para saber mais, confira [Solicitar um código de autorização](https://docs.mi
  
 ### <a name="support-for-provisioning-all-user-attribute-values-available-in-the-workday-getworkers-api"></a>O suporte para o provisionamento de todos os valores de atributo de usuário está disponível na API Workday Get_Workers
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Provisionamento de aplicativo  
 **Funcionalidade do produto:** Integração de terceiros
  
@@ -1479,8 +1567,8 @@ Para obter mais informações, consulte: [Personalizando a lista de atributos de
 
 ### <a name="changing-group-membership-from-dynamic-to-static-and-vice-versa"></a>Alterar a associação de grupo de dinâmica para estática e vice-versa
 
-**Tipo:** New recurso  
-**Categoria de serviço:** Gerenciamento de grupos  
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Gerenciamento de Grupo  
 **Funcionalidade do produto:** Colaboração
  
 É possível alterar como a associação é gerida em um grupo. Isso é útil quando você quer manter o mesmo ID e nome de grupo no sistema, então, todas as referências existentes no grupo ainda serão válidas; criar um novo grupo exigiria atualizar essas referências.
@@ -1494,7 +1582,7 @@ Para obter mais informações, consulte [regras de associação dinâmica para g
 
 **Tipo:** Recurso alterado  
 **Categoria de serviço:** Autenticações (Logons)  
-**Funcionalidade do produto:** Autenticação de usuário
+**Funcionalidade do produto:** Autenticação de Usuário
  
 Anteriormente, mesmo que os usuários saíssem explicitamente de um aplicativo protegido pelo Azure AD, seriam conectados automaticamente de novo usando o SSO Contínuo se tentassem acessar um aplicativo Azure AD novamente na rede corporativa por meio de seus dispositivos associados ao domínio. Com essa alteração, há suporte para sair.  Isso permite que os usuários escolham a mesma conta do Azure AD ou outra para entrar novamente, em vez de serem conectados automaticamente usando o SSO contínuo.
 
@@ -1505,7 +1593,7 @@ Para saber mais, confira [Logon Único Contínuo do Azure Active Directory](http
 ### <a name="application-proxy-connector-version-154020-released"></a>Versão de conector de proxy de aplicativo 1.5.402.0 lançado
 
 **Tipo:** Recurso alterado  
-**Categoria de serviço:** Proxy do aplicativo  
+**Categoria de serviço:** Proxy de Aplicativo  
 **Funcionalidade do produto:** Segurança de identidade e proteção
  
 Esta versão do conector está sendo distribuída gradualmente até novembro. Essa nova versão do conector inclui as seguintes alterações:
@@ -1524,7 +1612,7 @@ Para saber mais, veja [Noções básicas sobre conectores de proxy de aplicativo
 ### <a name="improved-navigation-for-managing-users-and-groups"></a>Navegação aprimorada para gerenciar usuários e grupos
 
 **Tipo:** Plano para alteração  
-**Categoria de serviço:** Gerenciamento de diretórios  
+**Categoria de serviço:** Gerenciamento de Diretório  
 **Funcionalidade do produto:** Diretório
 
 A experiência de navegação para gerenciar usuários e grupos foi simplificada. Agora, é possível navegar da visão geral do diretório diretamente para a lista de todos os usuários, com acesso mais fácil à lista dos usuários excluídos. Adicionalmente, você também pode navegar da visão geral do diretório diretamente para a lista de todos os grupos, com acesso mais fácil às configurações de gerenciamento de grupo. Além disso, a partir da página de visão geral do diretório, é possível procurar um usuário, grupo, aplicativo empresarial ou registro do aplicativo. 
@@ -1533,7 +1621,7 @@ A experiência de navegação para gerenciar usuários e grupos foi simplificada
 
 ### <a name="availability-of-sign-ins-and-audit-reports-in-microsoft-azure-operated-by-21vianet-azure-china-21vianet"></a>Disponibilidade de inscrições e relatórios de auditoria no Microsoft Azure operado pela 21Vianet (parceiro 21Vianet do Azure na China)
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Azure Stack  
 **Funcionalidade do produto:** Monitoramento e relatório
 
@@ -1557,8 +1645,8 @@ Para obter mais informações sobre como usar esses relatórios, consulte [Relat
 
 ### <a name="use-report-reader-role-non-admin-role-to-view-azure-ad-activity-reports"></a>Usar a função "Leitor do Relatório" (função não administrador) para exibir relatórios de atividades do Azure Active Directory
 
-**Tipo:** New recurso  
-**Categoria de serviço:** Relatórios  
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Relatório  
 **Funcionalidade do produto:** Monitoramento e relatório
 
 Como parte do feedback dos clientes para permitir que funções não administrativas tenham acesso aos logs de atividades do Azure AD, habilitamos a capacidade de usuários que estão na função "Report Reader" acessarem as atividades de Login e Auditoria no portal do Azure, bem como usando nossas APIs de gráficos. 
@@ -1569,7 +1657,7 @@ Para obter mais informações sobre como usar esses relatórios, consulte [Relat
 
 ### <a name="employeeid-claim-available-as-user-attribute-and-user-identifier"></a>Declaração EmployeeID disponível como atributo de usuário e identificador de usuário
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
 **Funcionalidade do produto:** SSO
  
@@ -1581,9 +1669,9 @@ Para obter mais informações, consulte [Personalizando declarações emitidas n
 
 ### <a name="simplified-application-management-using-wildcards-in-azure-ad-application-proxy"></a>Gerenciamento de aplicativo simplificado usando caracteres curingas no Proxy de Aplicativo do AD
 
-**Tipo:** New recurso  
-**Categoria de serviço:** Proxy do aplicativo  
-**Funcionalidade do produto:** Autenticação de usuário
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Proxy de Aplicativo  
+**Funcionalidade do produto:** Autenticação de Usuário
  
 Para tornar a implantação de aplicativo mais fácil e reduzir a sobrecarga administrativa, agora podemos dar suporte à capacidade de publicar aplicativos usando caracteres curingas. Para publicar um aplicativo curinga, você pode seguir o fluxo de publicação de aplicativo padrão, mas usar um caractere curinga nas URLs internas e externas.
 
@@ -1593,8 +1681,8 @@ Para obter mais informações, consulte [Aplicativos curinga no proxy de aplicat
 
 ### <a name="new-cmdlets-to-support-configuration-of-application-proxy"></a>Novos cmdlets para dar suporte à configuração do Proxy de Aplicativo
 
-**Tipo:** New recurso  
-**Categoria de serviço:** Proxy do aplicativo  
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Proxy de Aplicativo  
 **Funcionalidade do produto:** Plataforma
 
 A versão mais recente do módulo de visualização do AzureAD PowerShell contém novos cmdlets que permitem que os clientes configurem aplicativos de proxy de aplicativo usando o PowerShell.
@@ -1623,8 +1711,8 @@ Os novos cmdlets são:
  
 ### <a name="new-cmdlets-to-support-configuration-of-groups"></a>Novos cmdlets para dar suporte à configuração de grupos
 
-**Tipo:** New recurso  
-**Categoria de serviço:** Proxy do aplicativo  
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Proxy de Aplicativo  
 **Funcionalidade do produto:** Plataforma
 
 A versão mais recente do módulo AzureAD PowerShell contém cmdlets para gerenciar grupos no Azure Active Directory. Esses cmdlets já estavam disponíveis no módulo AzureADPreview e agora adicionados ao módulo AzureAD
@@ -1647,7 +1735,7 @@ Os cmdlets de Grupo agora liberados para disponibilidade geral são:
  
 ### <a name="a-new-release-of-azure-ad-connect-is-available"></a>Uma nova versão do Azure AD Connect está disponível
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** AD Sync  
 **Funcionalidade do produto:** Plataforma
  
@@ -1700,13 +1788,13 @@ Essa versão contém as alterações e atualizações a seguir:
 
 ---
  
-### <a name="applications-supporting-intune-app-protection-policies-added-for-use-with-azure-ad-application-based-conditional-access"></a>Aplicativos que dão suporte a políticas do Intune App Protection adicionadas para uso com o Azure AD baseada em aplicativo o acesso condicional
+### <a name="applications-supporting-intune-app-protection-policies-added-for-use-with-azure-ad-application-based-conditional-access"></a>Aplicativos que dão suporte a políticas de Proteção de Aplicativo do Intune adicionadas para uso com o acesso condicional baseado em aplicativo do Azure AD
 
 **Tipo:** Recurso alterado  
 **Categoria de serviço:** Acesso Condicional  
-**Funcionalidade do produto:** Segurança de identidade e proteção
+**Funcionalidade do produto:** Segurança de Identidade e Proteção
 
-Adicionamos mais aplicativos que dão suporte ao acesso condicional baseado no aplicativo. Agora, é possível acessar o Office 365 e outros aplicativos de nuvem conectados ao Azure Active Directory usando esses aplicativos clientes aprovados.
+Adicionamos mais aplicativos que dão suporte ao acesso condicional baseado em aplicativo. Agora, é possível acessar o Office 365 e outros aplicativos de nuvem conectados ao Azure Active Directory usando esses aplicativos clientes aprovados.
 
 As seguintes aplicações serão adicionadas até o final de fevereiro:
 
@@ -1719,11 +1807,11 @@ As seguintes aplicações serão adicionadas até o final de fevereiro:
 Para obter mais informações, consulte:
 
 - [Requisito de aplicativo cliente aprovado](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement)
-- [Acesso condicional baseado no aplicativo do Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access)
+- [Acesso condicional com base no aplicativo do Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access)
 
 ---
 
-### <a name="terms-of-use-update-to-mobile-experience"></a>Termos de uso de atualização para experiência móvel 
+### <a name="terms-of-use-update-to-mobile-experience"></a>Termos de uso atualizar para a experiência móvel 
 
 **Tipo:** Recurso alterado  
 **Categoria de serviço:** Termos de uso  
@@ -1737,7 +1825,7 @@ Quando os termos de uso são exibidos, você pode clicar em **Tendo problemas co
  
 ### <a name="new-federated-apps-available-in-azure-ad-app-gallery"></a>Novos aplicativos federados disponíveis na galeria de aplicativos do Azure AD 
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
 **Funcionalidade do produto:** Integração de terceiros
 
@@ -1753,7 +1841,7 @@ Para obter mais informações sobre como listar seu aplicativo na galeria de apl
  
 ### <a name="sign-in-with-additional-risk-detected"></a>Entre com risco adicional detectado
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Identity Protection  
 **Funcionalidade do produto:** Segurança de identidade e proteção
 
@@ -1767,7 +1855,7 @@ Para saber mais, veja [Eventos de risco do Azure Active Directory](https://docs.
 
 ### <a name="hide-office-365-applications-from-end-users-access-panels"></a>Ocultar aplicativos do Office 365 dos painéis de acesso do usuário final
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Meus Aplicativos  
 **Funcionalidade do produto:** SSO
 
@@ -1779,7 +1867,7 @@ Para obter mais informações, consulte [Ocultar um aplicativo da experiência d
  
 ### <a name="seamless-sign-into-apps-enabled-for-password-sso-directly-from-apps-url"></a>Entrada direta em aplicativos habilitados para SSO de Senha diretamente na URL do aplicativo 
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Meus Aplicativos  
 **Funcionalidade do produto:** SSO
 
@@ -1796,8 +1884,8 @@ Para obter mais informações, consulte [Extensão de Entrada Segura dos Meus Ap
 
 ### <a name="azure-ad-administration-experience-in-azure-classic-portal-has-been-retired"></a>A experiência de administração do Azure AD no Portal Clássico do Azure foi retirada
 
-**Tipo:** Preteridos   
-**Categoria de serviço:** AD do Azure  
+**Tipo:** Preterido   
+**Categoria de serviço:** Azure AD  
 **Funcionalidade do produto:** Diretório
 
 A partir de 8 de janeiro de 2018, a experiência de administração do Azure AD no portal clássico do Azure foi desativada. Isso ocorreu em conjunto com a desativação do próprio portal clássico do Azure. No futuro, você deve usar o [centro de administração do Azure AD](https://aad.portal.azure.com) para toda a administração baseada em portal do AD do Azure.
@@ -1806,8 +1894,8 @@ A partir de 8 de janeiro de 2018, a experiência de administração do Azure AD 
 
 ### <a name="the-phonefactor-web-portal-has-been-retired"></a>O portal da Web do PhoneFactor foi desativado
 
-**Tipo:** Preteridos  
-**Categoria de serviço:** AD do Azure  
+**Tipo:** Preterido  
+**Categoria de serviço:** Azure AD  
 **Funcionalidade do produto:** Diretório
  
 A partir de 8 de janeiro de 2018, o portal da Web do PhoneFactor foi desativado. Este portal foi usado para a administração do servidor MFA, mas essas funções foram movidas para o portal do Azure em portal.azure.com. 
@@ -1818,8 +1906,8 @@ A configuração do MFA está localizada em: **Azure Active Directory \> Servido
  
 ### <a name="deprecate-azure-ad-reports"></a>Preterir relatórios do Azure AD
 
-**Tipo:** Preteridos  
-**Categoria de serviço:** Relatórios  
+**Tipo:** Preterido  
+**Categoria de serviço:** Relatório  
 **Funcionalidade do produto:** Gerenciamento do ciclo de vida de identidades  
 
 
@@ -1841,7 +1929,7 @@ Para obter mais informações, consulte:
 
 ### <a name="terms-of-use-in-the-access-panel"></a>Termos de uso no Painel de Acesso
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Termos de uso  
 **Funcionalidade do produto:** Conformidade
  
@@ -1863,8 +1951,8 @@ Para obter mais informações, consulte o [Recurso de termos de uso do Azure AD 
  
 ### <a name="new-azure-ad-sign-in-experience"></a>Nova experiência de entrada do Azure AD.
 
-**Tipo:** New recurso  
-**Categoria de serviço:** AD do Azure  
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Azure AD  
 **Funcionalidade do produto:** Autenticação de usuário
  
 As interfaces do usuário do Azure AD e do sistema de identidade da conta da Microsoft foram reformuladas para que tenham uma aparência consistente. Além disso, a página de entrada do Azure AD coleta o nome de usuário primeiro, seguido da credencial em uma segunda tela.
@@ -1875,8 +1963,8 @@ Para obter mais informações, consulte [A nova experiência de entrada do Azure
  
 ### <a name="fewer-sign-in-prompts-a-new-keep-me-signed-in-experience-for-azure-ad-sign-in"></a>Menos prompts de entrada: Uma nova experiência "Manter-me conectado" para a entrada do Azure AD
 
-**Tipo:** New recurso  
-**Categoria de serviço:** AD do Azure  
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Azure AD  
 **Funcionalidade do produto:** Autenticação de usuário
  
 A caixa de seleção **Manter-me conectado** na página de entrada do Azure AD foi substituída por um novo prompt exibido depois que você é autenticado com êxito. 
@@ -1889,7 +1977,7 @@ Para obter mais informações, confira [Menos prompts de entrada: A nova experi�
 
 ### <a name="add-configuration-to-require-the-terms-of-use-to-be-expanded-prior-to-accepting"></a>Adicionar uma configuração para exigir que os termos de uso sejam expandidos antes da aceitação
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Termos de uso  
 **Funcionalidade do produto:** Conformidade
  
@@ -1903,7 +1991,7 @@ Para obter mais informações, consulte o [Recurso de termos de uso do Azure AD 
 
 ### <a name="scoped-activation-for-eligible-role-assignments"></a>Ativação com escopo para atribuições de função qualificadas
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Privileged Identity Management  
 **Funcionalidade do produto:** Privileged Identity Management
  
@@ -1915,7 +2003,7 @@ Para obter mais informações, confira [O que é o Privileged Identity Managemen
  
 ### <a name="new-federated-apps-in-the-azure-ad-app-gallery"></a>Novos aplicativos federados na galeria de aplicativos Azure AD
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos corporativos  
 **Funcionalidade do produto:** Integração de terceiros
 
@@ -1999,11 +2087,11 @@ Atualmente, o acesso está bloqueado quando essa condição é usada. Quando a v
 
 Procure essa funcionalidade e mais informações em notas de versão e blogs futuros. 
 
-Para obter mais informações, consulte [acesso condicional no Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal).
+Para obter mais informações, consulte [acesso condicional no Azure ad](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal).
  
 ---
 
-### <a name="new-approved-client-apps-for-azure-ad-app-based-conditional-access"></a>Novos aplicativos cliente aprovados para o Azure AD baseado em aplicativo o acesso condicional
+### <a name="new-approved-client-apps-for-azure-ad-app-based-conditional-access"></a>Novos aplicativos cliente aprovados para acesso condicional baseado em aplicativo do Azure AD
 
 **Tipo:** Plano para alteração  
 **Categoria de serviço:** Acesso Condicional  
@@ -2017,13 +2105,13 @@ Os seguintes aplicativos estão na lista de [aplicativos do cliente aprovados](h
 Para obter mais informações, consulte:
 
 - [Requisito de aplicativo cliente aprovado](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement)
-- [Acesso condicional baseado no aplicativo do Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access)
+- [Acesso condicional com base no aplicativo do Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access)
 
 ---
 
 ### <a name="terms-of-use-support-for-multiple-languages"></a>Suporte dos termos de uso para diversos idiomas
 
-**Tipo:** New recurso    
+**Tipo:** Novo recurso    
 **Categoria de serviço:** Termos de uso  
 **Funcionalidade do produto:** Conformidade
 
@@ -2033,8 +2121,8 @@ Os administradores agora podem criar novos termos de uso que contêm vários doc
  
 ### <a name="real-time-password-writeback-client-status"></a>Status do cliente de write-back de senha em tempo real
 
-**Tipo:** New recurso  
-**Categoria de serviço:** Redefinição de senha de autoatendimento  
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Redefinição de senha por autoatendimento  
 **Funcionalidade do produto:** Autenticação de usuário
 
 Agora você pode examinar o status do cliente de write-back de senha local. Essa opção está disponível na seção **Integração local** da página [Redefinição de senha](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/PasswordReset). 
@@ -2048,17 +2136,17 @@ Para obter mais informações, consulte [Integração local](https://docs.micros
 
 ---
 
-### <a name="azure-ad-app-based-conditional-access"></a>Acesso condicional baseado no aplicativo do Azure AD 
+### <a name="azure-ad-app-based-conditional-access"></a>Acesso condicional com base no aplicativo do Azure AD 
  
-**Tipo:** New recurso  
-**Categoria de serviço:** AD do Azure  
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Azure AD  
 **Funcionalidade do produto:** Segurança de identidade e proteção
 
-Você agora pode restringir o acesso ao Office 365 e outros aplicativos de nuvem conectados ao AD do Azure para [aplicativos cliente aprovados](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement) que dão suporte a políticas de proteção de aplicativo do Intune usando [Azure acesso condicional baseado no aplicativo do AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access). Políticas da Proteção de Aplicativo do Intune são usadas para configurar e proteger os dados da empresa nesses aplicativos cliente.
+Agora você pode restringir o acesso ao Office 365 e a outros aplicativos de nuvem conectados ao Azure AD a [aplicativos cliente aprovados](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement) que dão suporte a políticas de proteção de aplicativo do Intune usando o [acesso condicional baseado em aplicativo do Azure ad](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access). Políticas da Proteção de Aplicativo do Intune são usadas para configurar e proteger os dados da empresa nesses aplicativos cliente.
 
-Combinando [baseado em aplicativo](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access) com [baseado em dispositivo](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-policy-connected-applications) políticas de acesso condicional, você tem a flexibilidade para proteger dados pessoais e dispositivos da empresa.
+Ao combinar [aplicativos baseados em aplicativo](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access) com políticas de acesso condicional [com base no dispositivo](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-policy-connected-applications) , você tem a flexibilidade de proteger dados para dispositivos pessoais e da empresa.
 
-As seguintes condições e controles agora estão disponíveis para uso com o acesso condicional baseado em aplicativo:
+As seguintes condições e controles agora estão disponíveis para uso com acesso condicional baseado em aplicativo:
 
 **Condição de plataforma com suporte**
 
@@ -2071,15 +2159,15 @@ As seguintes condições e controles agora estão disponíveis para uso com o ac
 
 **Controle de acesso**
 
-- Exigir um aplicativo cliente aprovado
+- Exigir o aplicativo cliente aprovado
 
-Para obter mais informações, consulte [Azure acesso condicional baseado no aplicativo do AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access).
+Para obter mais informações, consulte [acesso condicional baseado em aplicativo do Azure ad](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access).
  
 ---
 
 ### <a name="manage-azure-ad-devices-in-the-azure-portal"></a>Gerenciar dispositivos do Azure AD no portal do Azure
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Registro e gerenciamento de dispositivos  
 **Funcionalidade do produto:** Segurança de identidade e proteção
 
@@ -2094,17 +2182,17 @@ Para obter mais informações, consulte [Gerenciar dispositivos usando o portal 
 
 ---
 
-### <a name="support-for-macos-as-a-device-platform-for-azure-ad-conditional-access"></a>Suporte para macOS como plataforma de dispositivo para acesso condicional do Azure AD 
+### <a name="support-for-macos-as-a-device-platform-for-azure-ad-conditional-access"></a>Suporte para macOS como uma plataforma de dispositivo para acesso condicional do Azure AD 
 
-**Tipo:** New recurso    
+**Tipo:** Novo recurso    
 **Categoria de serviço:** Acesso Condicional  
 **Funcionalidade do produto:** Segurança de identidade e proteção 
 
-Você agora pode incluir (ou excluir) macOS como uma condição de plataforma de dispositivo em sua política de acesso condicional do Azure AD. Com a adição do macOS às plataformas de dispositivos com suporte, você pode:
+Agora você pode incluir (ou excluir) o macOS como uma condição de plataforma de dispositivo em sua política de acesso condicional do Azure AD. Com a adição do macOS às plataformas de dispositivos com suporte, você pode:
 
 - **Registrar e gerenciar dispositivos macOS usando o Intune.** Semelhante a outras plataformas como iOS e Android, um aplicativo do portal da empresa está disponível para o macOS para realizar registros unificados. Use o novo aplicativo do portal da empresa para o macOS para registrar um dispositivo no Intune e registrá-lo no Azure AD.
 - **Garantir que os dispositivos macOS seguem as políticas de conformidade de sua organização definidas no Intune.** No Intune no portal do Azure, agora você pode configurar políticas de conformidade para dispositivos macOS. 
-- **Restringir o acesso a aplicativos no Azure AD apenas a dispositivos macOS em conformidade.** Criação de política de acesso condicional tem macOS como uma opção de plataforma de dispositivo separada. Agora você pode criar políticas de acesso condicional específicas ao macOS para o conjunto de destino do aplicativo no Azure.
+- **Restringir o acesso a aplicativos no Azure AD apenas a dispositivos macOS em conformidade.** A criação de política de acesso condicional tem o macOS como uma opção de plataforma de dispositivo separada. Agora você pode criar políticas de acesso condicional específicas do macOS para o conjunto de aplicativos de destino no Azure.
 
 Para obter mais informações, consulte:
 
@@ -2115,7 +2203,7 @@ Para obter mais informações, consulte:
 
 ### <a name="network-policy-server-extension-for-azure-multi-factor-authentication"></a>Extensão Servidor de Políticas de Rede para a Autenticação Multifator do Azure 
 
-**Tipo:** New recurso    
+**Tipo:** Novo recurso    
 **Categoria de serviço:**  Autenticação multifator  
 **Funcionalidade do produto:** Autenticação de usuário
 
@@ -2129,8 +2217,8 @@ Para obter mais informações, consulte [Integrar sua infraestrutura existente d
 
 ### <a name="restore-or-permanently-remove-deleted-users"></a>Restaurar ou remover permanentemente os usuários excluídos
 
-**Tipo:** New recurso    
-**Categoria de serviço:** Gerenciamento de Usuários  
+**Tipo:** Novo recurso    
+**Categoria de serviço:** Gerenciamento de usuários  
 **Funcionalidade do produto:** Diretório 
 
 No centro de administração do Azure AD, agora você pode:
@@ -2148,7 +2236,7 @@ No centro de administração do Azure AD, agora você pode:
  
 ---
 
-### <a name="new-approved-client-apps-for-azure-ad-app-based-conditional-access"></a>Novos aplicativos cliente aprovados para o Azure AD baseado em aplicativo o acesso condicional
+### <a name="new-approved-client-apps-for-azure-ad-app-based-conditional-access"></a>Novos aplicativos cliente aprovados para acesso condicional baseado em aplicativo do Azure AD
  
 **Tipo:** Recurso alterado  
 **Categoria de serviço:** Acesso Condicional  
@@ -2162,7 +2250,7 @@ Os seguintes aplicativos foram adicionados à lista de [aplicativos cliente apro
 Para obter mais informações, consulte:
 
 - [Requisito de aplicativo cliente aprovado](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-technical-reference#approved-client-app-requirement)
-- [Acesso condicional baseado no aplicativo do Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access)
+- [Acesso condicional com base no aplicativo do Azure AD](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-conditional-access)
 
 ---
 
@@ -2172,9 +2260,9 @@ Para obter mais informações, consulte:
 **Categoria de serviço:** Acesso Condicional  
 **Funcionalidade do produto:** Segurança de identidade e proteção
  
-Você agora pode usar "ou" (exigir um dos controles selecionados) para controles de acesso condicional. Use esse recurso para criar políticas com “OR” entre os controles de acesso. Por exemplo, você pode usar esse recurso para criar uma política que exige que um usuário faça login usando a Autenticação Multifator "OU" para estar em um dispositivo compatível.
+Agora você pode usar "OR" (exigir um dos controles selecionados) para controles de acesso condicional. Use esse recurso para criar políticas com “OR” entre os controles de acesso. Por exemplo, você pode usar esse recurso para criar uma política que exige que um usuário faça login usando a Autenticação Multifator "OU" para estar em um dispositivo compatível.
 
-Para obter mais informações, consulte [controles de acesso condicional do Azure AD no](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-controls).
+Para obter mais informações, consulte [controles no acesso condicional do Azure ad](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-controls).
  
 ---
 
@@ -2195,7 +2283,7 @@ A detecção em tempo real subjacente funciona sempre que o usuário se conecta.
 ### <a name="deprecate-azure-ad-reports"></a>Preterir relatórios do Azure AD
 
 **Tipo:** Plano para alteração  
-**Categoria de serviço:** Relatórios  
+**Categoria de serviço:** Relatório  
 **Funcionalidade do produto:** Gerenciamento do ciclo de vida de identidades  
 
 O Portal do Azure oferece:
@@ -2221,7 +2309,7 @@ Devido a um problema do serviço, essa funcionalidade ficou temporariamente desa
 
 ### <a name="new-multi-factor-authentication-features"></a>Novos recursos de autenticação multifator
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Autenticação multifator  
 **Funcionalidade do produto:** Segurança de identidade e proteção  
 
@@ -2238,7 +2326,7 @@ Para obter mais informações, consulte [Referência de relatórios do MFA no po
 
 ### <a name="terms-of-use"></a>Termos de uso
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Termos de uso  
 **Funcionalidade do produto:** Conformidade  
 
@@ -2256,7 +2344,7 @@ Para obter mais informações, consulte [Termos de uso do Azure AD](https://docs
 
 ### <a name="enhancements-to-privileged-identity-management"></a>Melhorias no Privileged Identity Management
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Privileged Identity Management  
 **Funcionalidade do produto:** Privileged Identity Management  
 
@@ -2272,10 +2360,10 @@ Para obter mais informações, consulte [Privileged Identity Management para rec
 
 ---
 
-### <a name="access-reviews"></a>Análises de acesso
+### <a name="access-reviews"></a>Revisões de acesso
 
-**Tipo:** New recurso  
-**Categoria de serviço:** Análises de acesso  
+**Tipo:** Novo recurso  
+**Categoria de serviço:** Revisões de acesso  
 **Funcionalidade do produto:** Conformidade  
 
 As organizações podem usar revisões de acesso (versão prévia) para gerenciar com eficiência as associações a um grupo e o acesso a aplicativos corporativos: 
@@ -2291,7 +2379,7 @@ Para obter mais informações, consulte [Revisões de acesso do Azure AD](https:
 
 ### <a name="hide-third-party-applications-from-my-apps-and-the-office-365-app-launcher"></a>Ocultar aplicativos de terceiros de Meus Aplicativos e do inicializador de aplicativos do Office 365
 
-**Tipo:** New recurso  
+**Tipo:** Novo recurso  
 **Categoria de serviço:** Meus Aplicativos  
 **Funcionalidade do produto:** Logon único  
 

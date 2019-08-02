@@ -16,12 +16,12 @@ ms.date: 04/19/2019
 ms.author: ajburnle
 ms.reviewer: mamkumar
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 578f78d1853194cad000aa2e54b40d1ac5003544
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: 64a81a871d811c68f5e92822ca88446966be4d5c
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68489039"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68678124"
 ---
 # <a name="request-access-to-an-access-package-in-azure-ad-entitlement-management-preview"></a>Solicitar acesso a um pacote de acesso no gerenciamento de direitos do Azure AD (versão prévia)
 
@@ -44,7 +44,7 @@ A primeira etapa é entrar no portal meu acesso, em que você pode solicitar ace
 
 1. Entre no portal meu acesso.
 
-    Certifique-se de usar sua conta institucional. Se você não tiver certeza, verifique com seu projeto ou gerente de negócios.
+    Certifique-se de usar sua conta organizacional (corporativa ou de estudante). Se você não tiver certeza, verifique com seu projeto ou gerente de negócios.
 
 ## <a name="request-an-access-package"></a>Solicitar um pacote de acesso
 
@@ -52,6 +52,9 @@ Depois de encontrar o pacote de acesso no portal meu acesso, você pode enviar u
 
 **Função de pré-requisito:** Solicitante
 
+1. Localize o pacote de acesso na lista.  Se necessário, você pode pesquisar digitando uma cadeia de caracteres de pesquisa e, em seguida, selecionando o **nome**, o **Catálogo**ou o filtro de **recursos** .
+
+    ![Meu Portal de acesso – pesquisa de recursos](./media/entitlement-management-request-access/elm-myaccess-resource-search.png)
 1. Clique na marca de seleção para selecionar o pacote de acesso.
 
     ![Portal Meus Acessos – Pacotes de acesso](./media/entitlement-management-shared/my-access-access-packages.png)

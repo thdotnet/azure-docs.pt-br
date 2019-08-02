@@ -10,20 +10,19 @@ ms.topic: conceptual
 author: johnpaulkee
 ms.author: joke
 ms.reviewer: sstein
-manager: craigg
 ms.date: 03/13/2019
-ms.openlocfilehash: 627b29018afff2adb57b3b8b5c816bea9c421f68
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9fa3444244cbd51c3f14abcfef5212a366cadbd2
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66236872"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68550562"
 ---
 # <a name="migrate-to-the-new-elastic-database-jobs"></a>Migrar para os novos trabalhos de Banco de Dados Elástico
 
 Uma versão atualizada dos [trabalhos de Banco de Dados Elástico](elastic-jobs-overview.md) está disponível.
 
-Se você tiver um cliente existente hospedado versão dos trabalhos Elásticos de banco de dados, migração cmdlets e scripts são fornecidos para migrar facilmente para a versão mais recente.
+Se você tiver uma versão hospedada do cliente existente de trabalhos de banco de dados elástico, os cmdlets de migração e os scripts serão fornecidos para migrar facilmente para a versão mais recente.
 
 
 ## <a name="prerequisites"></a>Pré-requisitos
@@ -32,7 +31,7 @@ A versão atualizada dos trabalhos de Banco de Dados Elástico tem um novo conju
 
 ### <a name="install-the-latest-elastic-jobs-cmdlets"></a>Instalar os cmdlets de Trabalhos Elásticos mais recentes
 
-Se você ainda não tiver uma assinatura do Azure, [criar uma conta gratuita](https://azure.microsoft.com/free/) antes de começar.
+Se você ainda não tiver uma assinatura do Azure, [crie uma conta gratuita](https://azure.microsoft.com/free/) antes de começar.
 
 Instale o módulo **Az.Sql** 1.1.1-preview mais recente para obter os cmdlets de Trabalho Elástico. Execute os comandos do PowerShell a seguir com acesso administrativo.
 

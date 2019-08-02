@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 05/24/2019
 ms.author: mbullwin
 ms.openlocfilehash: ea324d616928b0d517c00dc9cab3e282f1e3415e
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67876433"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Instrumentar aplicativos Web em tempo de execução com Application Insights anexação sem código
@@ -64,7 +64,7 @@ Se seu aplicativo estiver hospedado em um servidor do IIS, habilite o Applicatio
 2. Se o Application Insights Status Monitor ainda não estiver instalado, [baixe e execute o instalador](#download)
 3. No Monitor de Status, selecione o aplicativo Web ou o site que você deseja monitorar. Entre com suas credenciais do Azure.
 
-    Configure o recurso onde você deseja ver os resultados no portal do Application Insights. (Normalmente, é melhor criar um novo recurso. Selecione um recurso existente se você já or [client monitoring][client] tiver [testes da Web][availability] para este aplicativo.) 
+    Configure o recurso onde você deseja ver os resultados no portal do Application Insights. (Normalmente, é melhor criar um novo recurso. Selecione um recurso existente se você já tiver [testes da Web][availability] ou [monitoramento de cliente][client] para este aplicativo.) 
 
     ![Escolha um aplicativo e um recurso.](./media/monitor-performance-live-website-now/appinsights-036-configAIC.png)
 
@@ -296,7 +296,7 @@ Para aplicativos que você instrumenta apenas em tempo de execução usando o St
 * Solicitações HTTP
 * Chamadas para dependências
 * Exceções
-* contadores de desempenho
+* Contadores de desempenho
 
 Para aplicativos já instrumentados em tempo de compilação:
 

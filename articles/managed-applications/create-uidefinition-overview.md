@@ -1,5 +1,5 @@
 ---
-title: Entender como criar a definição da interface do usuário para aplicativos gerenciados do Azure | Microsoft Docs
+title: CreateUiDefitinion. JSON para a experiência de criação do aplicativo gerenciado do Azure | Microsoft Docs
 description: Descreve como criar definições de interface do usuário para aplicativos gerenciados do Azure
 services: managed-applications
 documentationcenter: na
@@ -13,20 +13,22 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/26/2019
 ms.author: tomfitz
-ms.openlocfilehash: 3d0a6d97440404904c041369a4631fdd3fb618b4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 50bbaf740a67d3830df2d0447b9522153cb8c93c
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66257559"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619087"
 ---
-# <a name="create-azure-portal-user-interface-for-your-managed-application"></a>Criar uma interface do usuário do portal do Azure para seu aplicativo gerenciado
-Este documento apresenta os conceitos básicos do arquivo createUiDefinition.json. O portal do Azure usa este arquivo para gerar a interface do usuário para a criação de um aplicativo gerenciado.
+# <a name="createuidefitinionjson-for-azure-managed-applications-create-experience"></a>CreateUiDefitinion. JSON para a experiência de criação do aplicativo gerenciado do Azure
+Este documento apresenta os principais conceitos do arquivo **createUiDefinition. JSON** que o portal do Azure usa para definir a interface do usuário ao criar um aplicativo gerenciado.
+
+O modelo é o seguinte
 
 ```json
 {
    "$schema": "https://schema.management.azure.com/schemas/0.1.2-preview/CreateUIDefinition.MultiVm.json#",
-   "handler": "Microsoft.Compute.MultiVm",
+   "handler": "Microsoft.Azure.CreateUIDef",
    "version": "0.1.2-preview",
    "parameters": {
       "basics": [ ],
@@ -39,29 +41,29 @@ Este documento apresenta os conceitos básicos do arquivo createUiDefinition.jso
 Um CreateUiDefinition sempre contém três propriedades: 
 
 * handler
-* version
+* versão
 * parameters
 
-Para aplicativos gerenciados, o manipulador deve sempre ser `Microsoft.Compute.MultiVm`, e a versão mais recente com suporte é `0.1.2-preview`.
+O manipulador deve sempre ser `Microsoft.Azure.CreateUIDef`, e a versão mais recente com `0.1.2-preview`suporte é.
 
-O esquema da propriedade parameters depende da combinação do manipulador e da versão especificados. Para aplicativos gerenciados, as propriedades com suporte são `basics`, `steps` e `outputs`. As propriedades basic e steps contêm os _elementos_, como caixas de texto e listas suspensas, que serão exibidos no portal do Azure. A propriedade outputs é usada para mapear os valores de saída de elementos especificados para os parâmetros do modelo de implantação do Azure Resource Manager.
+O esquema da propriedade parameters depende da combinação do manipulador e da versão especificados. Para aplicativos gerenciados, as propriedades com suporte são `basics`, `steps` e `outputs`. As propriedades basic e steps contêm os [elementos](create-uidefinition-elements.md), como caixas de texto e listas suspensas, que serão exibidos no portal do Azure. A propriedade outputs é usada para mapear os valores de saída de elementos especificados para os parâmetros do modelo de implantação do Azure Resource Manager.
 
 A inclusão de `$schema` é opcional, mas recomendada. Se especificado, o valor de `version` deve corresponder à versão dentro do URI `$schema`.
 
-Você pode usar um editor de JSON para criar sua definição de interface do usuário, ou você pode usar a área restrita da definição de interface do usuário para criar e visualizar a definição de interface do usuário. Para obter mais informações sobre a área restrita, consulte [sua interface do portal de teste para aplicativos gerenciados do Azure](test-createuidefinition.md).
+Você pode usar um editor de JSON para criar sua definição de interface do usuário e testá-la na [área restrita da definição da interface do usuário](https://portal.azure.com/?feature.customPortal=false&#blade/Microsoft_Azure_CreateUIDef/SandboxBlade) para visualizá-la. Para obter mais informações sobre a área restrita, consulte [testar sua interface do portal para aplicativos gerenciados do Azure](test-createuidefinition.md).
 
-## <a name="basics"></a>Noções básicas
-A etapa Noções Básicas é sempre a primeira etapa do assistente gerada quando o portal do Azure analisa o arquivo. Além de exibir os elementos especificados em `basics`, o portal injeta elementos para que os usuários escolham a assinatura, o grupo de recursos e o local da implantação. Em geral, elementos que fazem consulta de parâmetros de toda a implantação, como nome de um cluster ou credenciais de administrador, devem entrar nesta etapa.
+## <a name="basics"></a>Noções Básicas
+Noções básicas é a primeira etapa gerada quando o portal do Azure analisa o arquivo. Além de exibir os elementos especificados em `basics`, o portal injeta elementos para que os usuários escolham a assinatura, o grupo de recursos e o local da implantação. Quando possível, os elementos que consultam parâmetros de toda a implantação, como o nome de um cluster ou credenciais de administrador, devem ir nesta etapa.
 
-Se o comportamento de um elemento depende da assinatura, do grupo de recursos ou do local do usuário, esse elemento não pode ser usado em basics. Por exemplo, **Microsoft.Compute.SizeSelector** depende da assinatura e do local para determinar a lista de tamanhos disponíveis para o usuário. Portanto, **Microsoft.Compute.SizeSelector** só pode ser usado em steps. Geralmente, apenas os elementos no namespace **Microsoft.Common** podem ser usados em basics. No entanto, alguns elementos de outros namespaces (como **Microsoft.Compute.Credentials**) que não dependem do contexto do usuário ainda são permitidos.
+Se o comportamento de um elemento depender da assinatura, do grupo de recursos ou do local do usuário, esse elemento não poderá ser usado em Noções básicas. Por exemplo, **Microsoft.Compute.SizeSelector** depende da assinatura e do local para determinar a lista de tamanhos disponíveis para o usuário. Portanto, **Microsoft.Compute.SizeSelector** só pode ser usado em steps. Geralmente, apenas os elementos no namespace **Microsoft.Common** podem ser usados em basics. Embora alguns elementos em outros namespaces (como **Microsoft. COMPUTE. Credentials**) que não dependem do contexto do usuário ainda sejam permitidos.
 
 ## <a name="steps"></a>Etapas
-A propriedade steps pode conter uma ou mais etapas adicionais para exibir depois de basics, cada uma contendo um ou mais elementos. Considere adicionar etapas por função ou camada do aplicativo que está sendo implantado. Por exemplo, adicione uma etapa nas entradas para os nós mestres e uma etapa para os nós de trabalho em um cluster.
+A propriedade steps pode conter uma ou mais etapas adicionais para exibir depois de basics, cada uma contendo um ou mais elementos. Considere adicionar etapas por função ou camada do aplicativo que está sendo implantado. Por exemplo, adicione uma etapa para entradas de nó mestre e uma etapa para os nós de trabalho em um cluster.
 
-## <a name="outputs"></a>outputs
+## <a name="outputs"></a>Saídas
 O portal do Azure usa a propriedade `outputs` para mapear os elementos de `basics` e `steps` para os parâmetros do modelo de implantação do Azure Resource Manager. As chaves do dicionário são os nomes dos parâmetros do modelo, e os valores são propriedades dos objetos da saída dos elementos referenciados.
 
-Para definir o nome de recurso do aplicativo gerenciado, inclua um valor chamado `applicationResourceName` na propriedade outputs. Se você não definir esse valor, o aplicativo atribui um GUID para o nome. Você pode incluir uma caixa de texto na interface do usuário que solicita um nome de usuário.
+Para definir o nome de recurso do aplicativo gerenciado, inclua um valor chamado `applicationResourceName` na propriedade outputs. Se você não definir esse valor, o aplicativo atribuirá um GUID para o nome. Você pode incluir uma caixa de texto na interface do usuário que solicita um nome de usuário.
 
 ```json
 "outputs": {
@@ -74,7 +76,7 @@ Para definir o nome de recurso do aplicativo gerenciado, inclua um valor chamado
 ```
 
 ## <a name="functions"></a>Funções
-Semelhante às funções de modelo no Azure Resource Manager (tanto em sintaxe e funcionalidade), CreateUiDefinition fornece funções para trabalhar com entradas e saídas e recursos como condicionais dos elementos.
+O CreateUiDefinition fornece [funções](create-uidefinition-functions.md) para trabalhar com entradas e saídas de elementos e recursos como condicionais. Essas funções são semelhantes na sintaxe e na funcionalidade para Azure Resource Manager funções de modelo.
 
 ## <a name="next-steps"></a>Próximas etapas
 O próprio arquivo createUiDefinition.json tem um esquema simples. A profundidade real dele é proveniente de todos os elementos e funções com suporte. Esses itens são descritos mais detalhadamente em:

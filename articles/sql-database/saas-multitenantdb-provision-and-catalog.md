@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
 ms.reviewer: billgib,andrela,stein
-manager: craigg
 ms.date: 09/24/2018
-ms.openlocfilehash: d29baaad6090cea5eb31f5f50bba444cb3771155
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3e8e0c69c93c992f31c515c2033a9ae57d2ee3e0
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61485847"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570308"
 ---
 # <a name="provision-and-catalog-new-tenants-in-a-saas-application-using-a-sharded-multi-tenant-azure-sql-database"></a>Provisionar e catalogar novos locatários em um aplicativo de SaaS usando um banco de dados SQL do Azure multilocatário fragmentado do Azure
 
@@ -150,7 +149,7 @@ A seguir, estão os principais elementos do fluxo de trabalho de provisionamento
 - **Adicionar o nome do locatário a uma tabela de extensão de catálogo**: O nome do local é adicionado à tabela Locatários no catálogo.  Essa adição mostra como o banco de dados de catálogo pode ser estendido para permitir dados específicos do aplicativo adicionais.
 - **Abrir página Eventos para o novo locatário**: A página de eventos *Bushwillow Blues* é aberta no navegador.
 
-   ![events](media/saas-multitenantdb-provision-and-catalog/bushwillow.png)
+   ![eventos](media/saas-multitenantdb-provision-and-catalog/bushwillow.png)
 
 #### <a name="debugger-steps"></a>Etapas do depurador
 
@@ -190,7 +189,7 @@ A seguir, estão os principais elementos do fluxo de trabalho que você percorre
 - **O nome do locatário é adicionado ao catálogo**: O nome do local é adicionado à tabela de extensão Locatários no catálogo.
 - **Abrir página Eventos para o novo locatário**: A página de eventos *Sequoia Soccer* é aberta no navegador.
 
-   ![events](media/saas-multitenantdb-provision-and-catalog/sequoiasoccer.png)
+   ![eventos](media/saas-multitenantdb-provision-and-catalog/sequoiasoccer.png)
 
 #### <a name="debugger-steps"></a>Etapas do depurador
 
@@ -237,7 +236,7 @@ A lista completa de locatários e o banco de dados correspondente para cada um e
 - O nome do locatário é armazenado na tabela Locatários.
 - O nome do banco de dados é armazenado nas tabelas de gerenciamento de fragmentos.
 
-1. No SQL Server Management Studio (SSMS), conecte-se ao servidor de locatários em **catalog-MT.\<usuário\>. database.windows.net**, com o logon = **desenvolvedor**e a senha =  **P\@ssword1**
+1. No SQL Server Management Studio (SSMS), conecte-se ao servidor de locatários em **Catalog-\<MT\>. User. Database.Windows.net**, comlogin = Developer e password = **P\@ssword1**
 
     ![caixa de diálogo de conexão do SSMS](media/saas-multitenantdb-provision-and-catalog/SSMSConnection.png)
 

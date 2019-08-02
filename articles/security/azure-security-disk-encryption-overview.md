@@ -5,14 +5,14 @@ author: msmbaldwin
 ms.service: security
 ms.topic: article
 ms.author: mbaldwin
-ms.date: 07/17/2019
+ms.date: 07/29/2019
 ms.custom: seodec18
-ms.openlocfilehash: a67f19f0823827dad74e7aba15a92d696fbf580b
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: c5e568dd073376295e4865994fba8ae5b5ac59a0
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68304280"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68641002"
 ---
 # <a name="azure-disk-encryption-overview"></a>Visão geral de Azure Disk Encryption
 
@@ -72,6 +72,7 @@ Azure Disk Encryption não funciona para os seguintes cenários, recursos e tecn
 * Arquivos do Azure (sistema de arquivo compartilhado).
 * NFS (Network File System).
 * Volumes dinâmicos.
+* Discos do sistema operacional efêmero.
 
 ## <a name="encryption-features"></a>Recursos de criptografia
 
@@ -152,8 +153,8 @@ A tabela a seguir define alguns dos termos comuns usados na documentação de cr
 
 | Terminologia | Definição |
 | --- | --- |
-| AD do Azure | Uma conta do [Microsoft Azure Active Directory](https://azure.microsoft.com/documentation/services/active-directory/) é usada para autenticar, armazenar e recuperar segredos de um cofre de chaves. |
-| Cofre da Chave do Azure | Key Vault é um serviço de gerenciamento de chaves criptográfico baseado em módulos de segurança de hardware validados pelo FIPS (Federal Information Processing Standards). Esses padrões ajudam a proteger as chaves criptográficas e os segredos confidenciais. Para obter mais informações, consulte a documentação do [Azure Key Vault](https://azure.microsoft.com/services/key-vault/). |
+| Azure AD | Uma conta do [Microsoft Azure Active Directory](https://azure.microsoft.com/documentation/services/active-directory/) é usada para autenticar, armazenar e recuperar segredos de um cofre de chaves. |
+| Cofre de Chaves Azure | Key Vault é um serviço de gerenciamento de chaves criptográfico baseado em módulos de segurança de hardware validados pelo FIPS (Federal Information Processing Standards). Esses padrões ajudam a proteger as chaves criptográficas e os segredos confidenciais. Para obter mais informações, consulte a documentação do [Azure Key Vault](https://azure.microsoft.com/services/key-vault/). |
 | BitLocker |O [BitLocker](https://technet.microsoft.com/library/hh831713.aspx) é uma tecnologia de criptografia de volume do Windows reconhecida pela indústria que é usada para habilitar a criptografia de disco em VMs do Windows. |
 | BEK | As chaves de criptografia do BitLocker (BEK) são usadas para criptografar o volume de inicialização do sistema operacional e os volumes de dados. As BEKs são protegidas em um cofre de chaves como segredos. |
 | CLI do Azure | [A CLI do Azure](/cli/azure/install-azure-cli) é otimizada para gerenciar e administrar os recursos do Azure na linha de comando.|

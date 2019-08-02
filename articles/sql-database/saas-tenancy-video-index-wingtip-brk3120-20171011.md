@@ -10,22 +10,21 @@ ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
 ms.reviewer: billgib, sstein
-manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: bbe220780a3c21e7bfb15d0568904af4ed47f765
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7c1f93bb7cfe1e088aa88d9ff194c8fbce9ea3c6
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61486699"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570221"
 ---
 # <a name="video-indexed-and-annotated-for-multi-tenant-saas-app-using-azure-sql-database"></a>Vídeo indexado e anotado para aplicativo SaaS multilocatário usando o Banco de Dados SQL do Azure
 
 Este artigo é um índice anotado para os locais de tempo de vídeo de 81 minutos sobre modelos de locação SaaS ou padrões. Este artigo permite que você avance ou recue o vídeo para a parte que for de seu interesse. O vídeo explica as principais opções de design para uma aplicação multilocatária no banco de dados SQL do Azure. O vídeo inclui demonstrações, explicações passo a passo sobre código de gerenciamento, e por vezes explicações mais detalhadas sobre experiências que podem estar em nossa documentação escrita.
 
 O vídeo amplifica informações em nossa documentação escrita, encontradas em: 
-- *Conceitual:* Padrões de locatário de banco de dados de SaaS multilocatários[saas-concept-design-patterns-563e]
-- *Tutoriais:* [O aplicativo SaaS Wingtip Tickets][saas-how-welcome-wingtip-app-679t]
+- *Conceitual:* [Padrões de locação de banco de dados SaaS multilocatário][saas-concept-design-patterns-563e]
+- *Tutoriais:* [O aplicativo Wingtip tickets SaaS][saas-how-welcome-wingtip-app-679t]
 
 O vídeo e os artigos descrevem as várias fases de criação de um aplicativo multilocatário no Banco de Dados SQL do Azure na nuvem. Os recursos especiais do Banco de Dados SQL do Azure facilitam o desenvolvimento e a implantação de aplicativos multilocatários fáceis de gerenciar e com desempenho confiável.
 
@@ -294,14 +293,14 @@ Clicar em qualquer imagem de captura de tela leva você até a marcação de tem
 
 - [Postagem no blog, 22 de maio de 2017][resource-blog-saas-patterns-app-dev-sql-db-768h]
 
-- *Conceitual:* Padrões de locatário de banco de dados de SaaS multilocatários[saas-concept-design-patterns-563e]
+- *Conceitual:* [Padrões de locação de banco de dados SaaS multilocatário][saas-concept-design-patterns-563e]
 
-- *Tutoriais:* [O aplicativo SaaS Wingtip Tickets][saas-how-welcome-wingtip-app-679t]
+- *Tutoriais:* [O aplicativo Wingtip tickets SaaS][saas-how-welcome-wingtip-app-679t]
 
 - Repositórios GitHub para tipos de aplicativo SaaS de locação Wingtip Tickets:
-    - [Repositório do GitHub para – modelo de aplicativo independente][github-wingtip-standaloneapp].
-    - [Repositório do GitHub para – modelo de banco de dados por locatário][github-wingtip-dbpertenant].
-    - [Repositório do GitHub para – modelo de banco de dados multilocatário][github-wingtip-multitenantdb].
+    - [Repositório GitHub para o modelo de aplicativo autônomo][github-wingtip-standaloneapp].
+    - [Repositório GitHub para-DB por modelo de locatário][github-wingtip-dbpertenant].
+    - [Repositório do GitHub para o modelo de banco de BD de vários locatários][github-wingtip-multitenantdb].
 
 
 
@@ -309,7 +308,7 @@ Clicar em qualquer imagem de captura de tela leva você até a marcação de tem
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Primeiro tutorial][saas-how-welcome-wingtip-app-679t]
+- [Primeiro artigo do tutorial][saas-how-welcome-wingtip-app-679t]
 
 
 

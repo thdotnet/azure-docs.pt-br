@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 01/30/2019
 ms.author: maquaran
-ms.openlocfilehash: 2a4d636ccb03e36f7c495f3c10c90033d7c3c93c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ea6de5f42910457efa5ca6c458d7af63faa38e18
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66417904"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68637740"
 ---
 # <a name="net-change-feed-processor-sdk-download-and-release-notes"></a>SDK do Processador do Feed de Alterações do .NET: download e notas sobre a versão
 
@@ -29,8 +29,8 @@ ms.locfileid: "66417904"
 > * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Provedor de recursos REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
 > * [SQL](sql-api-query-reference.md)
-> * [BulkExecutor - .NET](sql-api-sdk-bulk-executor-dot-net.md)
-> * [BulkExecutor - Java](sql-api-sdk-bulk-executor-java.md)
+> * [Executor em massa-.NET](sql-api-sdk-bulk-executor-dot-net.md)
+> * [Executor em massa – Java](sql-api-sdk-bulk-executor-java.md)
 
 |   |   |
 |---|---|
@@ -44,9 +44,9 @@ ms.locfileid: "66417904"
 ### <a name="v2-builds"></a>v2 builds
 
 ### <a name="a-name227227"></a><a name="2.2.7"/>2.2.7
-* Melhor balanceamento de carga estratégia para o cenário quando obtendo todas as concessões demora mais do que o intervalo de expiração de concessão, por exemplo, devido a problemas de rede:
-  * Esse algoritmo usado para considerar falsamente concessões como expirada de balanceamento de carga de cenário, causando o furto de concessões de proprietários de ativos. Isso poderia disparar desnecessárias muita concessões balanceamento novamente.
-  * Esse problema foi corrigido nesta versão, evitando a repetição em caso de conflito enquanto adquirindo concessão expirada quais proprietário não tiver sido alterado e a aquisição de posponing expiraram concessão para a próxima iteração de balanceamento de carga.
+* Melhor estratégia de balanceamento de carga para o cenário ao obter todas as concessões leva mais tempo do que o intervalo de expiração de concessão, por exemplo, devido a problemas de rede:
+  * Nesse cenário, o algoritmo de balanceamento de carga usado para considerar de forma falsa as concessões expiradas, causando o roubo de concessões de proprietários ativos. Isso poderia disparar um novo balanceamento desnecessário de muitas concessões.
+  * Esse problema é corrigido nesta versão, evitando a repetição em conflito ao adquirir a concessão expirada cujo proprietário não foi alterado e posponing adquirir a concessão expirada para a próxima iteração de balanceamento de carga.
 
 ### <a name="a-name226226"></a><a name="2.2.6"/>2.2.6
 * Melhoria no tratamento de exceções de Observador.
@@ -137,7 +137,7 @@ ms.locfileid: "66417904"
 
 ### <a name="a-name131131"></a><a name="1.3.1"/>1.3.1
 * Aprimoramentos de estabilidade.
-  * Correção para tratar o problema de tarefas canceladas que pode levar a observadores parados em algumas partições.
+  * Correção para lidar com o problema de tarefas canceladas que podem levar a observadores interrompidos em algumas partições.
 * Suporte para o ponto de verificação manual.
 * Compatível com o [SDK do .NET para SQL](sql-api-sdk-dotnet.md) versões 1.21 e superiores.
 
@@ -168,7 +168,7 @@ Qualquer solicitação feita ao Cosmos DB com o uso de um SDK desativado será r
 
 <br/>
 
-| Version | Data do lançamento | Data de desativação |
+| Versão | Data do lançamento | Data de desativação |
 | --- | --- | --- |
 | [2.2.7](#2.2.7) |14 de maio de 2019 |--- |
 | [2.2.6](#2.2.6) |29 janeiro de 2019 |--- |
@@ -185,7 +185,7 @@ Qualquer solicitação feita ao Cosmos DB com o uso de um SDK desativado será r
 | [1.1.0](#1.1.0) |13 de agosto de 2017 |--- |
 | [1.0.0](#1.0.0) |07 de julho de 2017 |--- |
 
-## <a name="faq"></a>Perguntas frequentes
+## <a name="faq"></a>Perguntas Frequentes
 
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 

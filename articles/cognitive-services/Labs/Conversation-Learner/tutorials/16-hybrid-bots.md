@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: nitinme
-ms.openlocfilehash: d6af927e395532e43c7cc51c39665e2e42ac6781
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: c964c62c34f952a547d077e93e7bb4d0eb7b192d
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66389971"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68703670"
 ---
 # <a name="how-to-use-conversation-learner-with-other-bot-building-technologies"></a>Como usar o Aprendiz de Conversa com outras tecnologias de compilação de bots
 
@@ -105,7 +106,7 @@ Ao contrário dos bots de modelo de Aprendiz de Conversa único, não será poss
 
 ### <a name="install-the-bot-framework-emulator"></a>Instalar o emulador de estrutura do Bot
 
-- Vá para [https://github.com/Microsoft/BotFramework-Emulator](https://github.com/Microsoft/BotFramework-Emulator).
+- Acesse [https://github.com/Microsoft/BotFramework-Emulator](https://github.com/Microsoft/BotFramework-Emulator).
 - Baixe e instale o emulador.
 
 ### <a name="configure-the-emulator"></a>Configurar o emulador

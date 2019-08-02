@@ -4,15 +4,15 @@ description: Este artigo apresenta conceitos, como procedimentos armazenados, ga
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 06/14/2019
+ms.date: 08/01/2019
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 53ff318dcc034fb11e2d554f9ad8e8814eb32879
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 1c2bf53a610c566ac58df588f6d96389f2206563
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67672579"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68717543"
 ---
 # <a name="stored-procedures-triggers-and-user-defined-functions"></a>Procedimentos armazenados, gatilhos e funções definidas pelo usuário
 
@@ -37,7 +37,7 @@ A escrita de procedimentos armazenados, gatilhos e UDFs (funções definidas pel
 * **Encapsulamento:** Os procedimentos armazenados podem ser usados para agrupar a lógica em um só lugar. O encapsulamento adiciona uma camada de abstração aos dados, o que permite que você desenvolva seus aplicativos de maneira independente dos dados. Essa camada de abstração é útil quando os dados são sem esquema e você não precisa gerenciar a adição de lógica extra diretamente no aplicativo. A abstração permite manter os dados seguros simplificando o acesso pelos scripts.
 
 > [!TIP]
-> Procedimentos armazenados são mais adequados para operações de gravação intensa e exigem uma transação em um valor de chave de partição. Ao decidir se deseja usar procedimentos armazenados, otimize em torno de encapsular a quantidade máxima de possíveis de gravações. Em termos gerais, procedimentos armazenados não são o meio mais eficaz para fazer um grande número de operações de leitura ou consulta, usando armazenados, procedimentos para um grande número de lotes de leituras para retornar para o cliente não obterá o benefício desejado. Para obter melhor desempenho, essas operações de leitura pesada devem ser feitas no lado do cliente, usando o SDK do Cosmos. 
+> Os procedimentos armazenados são mais adequados para operações que são de gravação pesada e exigem uma transação em um valor de chave de partição. Ao decidir se deseja usar procedimentos armazenados, otimize o encapsulamento da quantidade máxima de gravações possível. Em termos gerais, os procedimentos armazenados não são os meios mais eficientes para fazer grandes quantidades de operações de leitura ou consulta; portanto, o uso de procedimentos armazenados para enviar grandes quantidades de leituras em lotes para retornar ao cliente não produzirá o benefício desejado. Para obter o melhor desempenho, essas operações de leitura pesada devem ser feitas no lado do cliente, usando o SDK do cosmos. 
 
 ## <a name="transactions"></a>Transações
 
@@ -86,7 +86,7 @@ O Azure Cosmos DB fornece gatilhos que podem ser invocados com a execução de u
 Assim como os pré-gatilhos, os pós-gatilhos também estão associados a uma operação em um item do Azure Cosmos DB e não exigem nenhum parâmetro de entrada. Eles são executados *após* a conclusão da operação e têm acesso à mensagem de resposta enviada ao cliente. Para obter exemplos, confira o artigo [Como escrever gatilhos](how-to-write-stored-procedures-triggers-udfs.md#triggers).
 
 > [!NOTE]
-> Registrado gatilhos não são executados automaticamente quando as operações correspondentes (Criar / excluir / substituir / atualizar) ocorrer. Eles precisarão ser chamado explicitamente ao executar essas operações. Para obter mais informações, consulte [como executar gatilhos](how-to-use-stored-procedures-triggers-udfs.md#pre-triggers) artigo.
+> Os gatilhos registrados não são executados automaticamente quando suas operações correspondentes (criar/excluir/substituir/atualizar) acontecem. Eles precisam ser chamados explicitamente ao executar essas operações. Para saber mais, consulte [o artigo como executar gatilhos](how-to-use-stored-procedures-triggers-udfs.md#pre-triggers) .
 
 ## <a id="udfs"></a>Funções definidas pelo usuário
 

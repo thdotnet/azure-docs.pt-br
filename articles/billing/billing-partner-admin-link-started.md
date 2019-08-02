@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.openlocfilehash: 97866a1f1299c028cdc8f86245308ae4a8b5db88
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+ms.openlocfilehash: 0448ffbccddc913bd6359f5f6bbf42988239afb4
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67502686"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68706398"
 ---
 # <a name="link-a-partner-id-to-your-azure-accounts"></a>Vincular ID de parceiro a suas contas do Azure
 
-Parceiros da Microsoft fornecem serviços que ajudam os clientes atingir os objetivos de negócios e missão usando produtos da Microsoft. Ao agir em nome do cliente de gerenciamento, configuração e suporte a serviços do Azure, os usuários do parceiro precisará ter acesso ao ambiente do cliente. Usando o Link de administração de parceiro, parceiros podem associar sua ID de rede do parceiro com as credenciais usadas para fornecimento de serviços.
+Os parceiros da Microsoft fornecem serviços que ajudam os clientes a alcançar objetivos de negócios e de missão usando produtos da Microsoft. Ao agir em nome do cliente que gerencia, configura e dá suporte aos serviços do Azure, os usuários do parceiro precisarão acessar o ambiente do cliente. Usando o link de administrador do parceiro, os parceiros podem associar sua ID de rede do parceiro às credenciais usadas para entrega de serviço.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -54,7 +54,7 @@ Quando você tem acesso aos recursos do cliente, use o portal do Azure, o PowerS
 
 ### <a name="use-powershell-to-link-to-a-new-partner-id"></a>Use o PowerShell para vincular a uma nova ID de parceiro
 
-1. Instalar o módulo [AzureRM.ManagementPartner](https://www.powershellgallery.com/packages/AzureRM.ManagementPartner) do PowerShell.
+1. Instale o módulo do PowerShell [AZ. ManagementPartner](https://www.powershellgallery.com/packages/Az.ManagementPartner/) .
 
 2. Entre no locatário do cliente com a conta de usuário ou a entidade de serviço. Para obter mais informações, veja [Entrar com o PowerShell](https://docs.microsoft.com/powershell/azure/authenticate-azureps).
 
@@ -139,22 +139,22 @@ A vinculação entre a ID de parceiro e a conta é feita para cada locatário do
 A vinculação está associada no nível da conta de usuário. Só você pode editar ou remover a vinculação à ID de parceiro. O cliente e outros parceiros não podem alterar a vinculação à ID de parceiro.
 
 
-**Qual ID MPN devo usar se a minha empresa possui vários?**
+**Qual ID de MPN devo usar se minha empresa tiver vários?**
 
-Contas de local de parceiro e associado identificações do MPN devem ser usadas para vincular a ID de parceiro.  Saiba mais sobre [contas de parceiros](https://docs.microsoft.com/partner-center/account-structure)
+As contas de local de parceiro e as IDs MPN associadas devem ser usadas para vincular a ID de parceiro.  Saiba mais sobre [contas de parceiros](https://docs.microsoft.com/partner-center/account-structure)
 
-**Onde posso encontrar relatórios para a ID de parceiro vinculada de receita influenciou?**
+**Onde posso encontrar relatórios de receita influenciados para a ID de parceiro vinculada?**
 
-Relatório de desempenho do produto com a nuvem está disponível para parceiros no Partner Center em [painel de informações de Meus](https://partner.microsoft.com/membership/reports/myinsights). Você precisa selecionar o Link de administração de parceiro como o tipo de associação de parceiro.
+Os relatórios de desempenho do produto em nuvem estão disponíveis para parceiros no Partner Center no [painel](https://partner.microsoft.com/membership/reports/myinsights)do insights. Você precisa selecionar link de administrador de parceiro como o tipo de associação de parceiro.
 
 **Por que não consigo ver meu cliente nos relatórios?**
 
-Não é possível ver o cliente nos relatórios seguintes motivos
+Você não pode ver o cliente nos relatórios devido aos seguintes motivos
 
-1. A conta de usuário vinculado não tem [acesso baseado em função](https://docs.microsoft.com/azure/role-based-access-control/overview) em todos os recursos ou assinatura do Azure do cliente.
+1. A conta de usuário vinculada não tem [acesso baseado em função](https://docs.microsoft.com/azure/role-based-access-control/overview) em nenhuma assinatura ou recurso do Azure do cliente.
 
-2. A assinatura do Azure no qual o usuário tem [acesso baseado em função](https://docs.microsoft.com/azure/role-based-access-control/overview) access não terá qualquer uso.
+2. A assinatura do Azure em que o usuário tem acesso de [acesso baseado em função](https://docs.microsoft.com/azure/role-based-access-control/overview) não tem nenhum uso.
 
-**Vincular a parceiro que ID funciona com o Azure Stack?**
+**A ID do parceiro de link funciona com Azure Stack?**
 
-Sim, você pode vincular sua ID de parceiro para o Azure Stack.
+Sim, você pode vincular sua ID de parceiro para Azure Stack.

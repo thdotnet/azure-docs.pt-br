@@ -12,16 +12,18 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: TBD
-ms.date: 03/14/2019
+ms.date: 07/25/2019
 ms.author: alkohli
-ms.openlocfilehash: e5713af737a6d9d190814b4155a8e772deea06bc
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: cbfc69c7d8d9354ae4e727b9eb0180583165abab
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60630247"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68516703"
 ---
 # <a name="introduction-to-the-storsimple-virtual-array"></a>Introdução ao StorSimple Virtual Array
+
+[!INCLUDE [storsimple-virtual-array-eol-banner](../../includes/storsimple-virtual-array-eol-banner.md)]
 
 ## <a name="overview"></a>Visão geral
 
@@ -74,7 +76,7 @@ A tabela a seguir descreve algumas das principais vantagens oferecidas pela solu
 
 Confira abaixo um resumo das cargas de trabalho com suporte do StorSimple.
 
-|Cenário     |Carga de trabalho     |Com suporte      |Restrições               | Versões aplicáveis|
+|Cenário     |Carga de Trabalho     |Com suporte      |Restrições               | Versões aplicáveis|
 |-------------|-------------|---------------|---------------------------|--------------------|
 |Escritórios remotos/filiais (ROBO)  |Compartilhamento de arquivos     |Sim      |Consulte [limites máximos para o servidor de arquivos](storsimple-ova-limits.md).<br></br>Confira [requisitos do sistema para as versões suportadas por SMB](storsimple-ova-system-requirements.md).| Todas as versões     |
 |Arquivamento de nuvem  |Compartilhamento de arquivos de arquivamento     |Sim      |Consulte [limites máximos para o servidor de arquivos](storsimple-ova-limits.md).<br></br>Confira [requisitos do sistema para as versões suportadas por SMB](storsimple-ova-system-requirements.md).| Todas as versões     |
@@ -87,7 +89,7 @@ Quando vários usuários simultâneos acessam a matriz virtual, todos eles compa
 
 A Matriz Virtual StorSimple não é adequada para cargas de trabalho que exigem alta disponibilidade. A matriz virtual é um dispositivo de nó único que apresenta o tempo de inatividade quando as atualizações de software são instaladas. Os administradores devem planejar uma janela de manutenção de 30 minutos de três a quatro vezes por ano.
 
-## <a name="workflows"></a>Fluxos de trabalho
+## <a name="workflows"></a>Workflows
 
 A StorSimple Virtual Array é particularmente adequada para os fluxos de trabalho a seguir:
 
@@ -101,7 +103,7 @@ Você pode usar o serviço Gerenciador de Dispositivos StorSimple em execução 
 ![Gerenciamento de armazenamento baseado em nuvem](./media/storsimple-ova-overview/cloud-based-storage-management.png)
 
 ### <a name="location-independent-backup"></a>Backup independente de local
-Com a matriz virtual, os instantâneos de nuvem fornecem uma cópia pontual de um volume ou compartilhamento, independente de local. Instantâneos de nuvem são habilitados por padrão e não podem ser desabilitados. Todos os volumes e compartilhamentos de backup serão realizado ao mesmo tempo por meio de uma única política de backup diária, e você pode fazer backups de ad-hoc adicionais sempre que necessário.
+Com a matriz virtual, os instantâneos de nuvem fornecem uma cópia pontual de um volume ou compartilhamento, independente de local. Instantâneos de nuvem são habilitados por padrão e não podem ser desabilitados. Todos os volumes e compartilhamentos são backups ao mesmo tempo por meio de uma única política de backup diário, e você pode fazer backups ad hoc adicionais sempre que necessário.
 
 ### <a name="data-protection-and-disaster-recovery"></a>Recuperação de desastre e proteção de dados
 A matriz virtual dá suporte aos seguintes cenários de proteção de dados e recuperação de desastre:

@@ -8,21 +8,21 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: d27fd9460685c08a2b13936415935f5aaf893797
-ms.sourcegitcommit: dda9fc615db84e6849963b20e1dce74c9fe51821
+ms.openlocfilehash: ede7167d570c7bd2ba7e04c3a9a703555efb35cd
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67622403"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698519"
 ---
 # <a name="set-up-a-device-template"></a>Configurar um modelo de dispositivo
 
 Um modelo de dispositivo é um blueprint que define as características e os comportamentos de um tipo de dispositivo que conecta a um aplicativo do Azure IoT Central.
 
-Por exemplo, um construtor pode criar um modelo de dispositivo para um ventilador conectado que tem as seguintes características:
+Por exemplo, um construtor pode criar um modelo de dispositivo para um ventilador conectado com as seguintes características:
 
 - Medição de telemetria de temperatura
-- Medição de local
+- Medida de localização
 - Medição de evento de erro de motor da ventoinha
 - Medição do estado operacional da ventoinha
 - Ajuste de velocidade da ventoinha
@@ -44,7 +44,7 @@ A partir desse modelo de dispositivo, um operador pode criar e conectar disposit
 
    ![Biblioteca de modelos de dispositivo](./media/howto-set-up-template/newtemplate.png)
 
-4. Quando você cria um modelo personalizado, você vê o **detalhes do dispositivo** página para o novo modelo de dispositivo. O IoT Central cria automaticamente um dispositivo simulado quando você cria um modelo de dispositivo. Um dispositivo simulado permite testar o comportamento do aplicativo antes de você conectar um dispositivo real.
+4. Ao criar um modelo personalizado, você verá a página de **detalhes do dispositivo** para o novo modelo de dispositivo. O IoT Central cria automaticamente um dispositivo simulado quando você cria um modelo de dispositivo. Um dispositivo simulado permite testar o comportamento do aplicativo antes de você conectar um dispositivo real.
 
 As seções a seguir descrevem cada uma das guias da página **Modelo de Dispositivo**.
 
@@ -55,17 +55,18 @@ Medidas são os dados que vêm do seu dispositivo. É possível adicionar vária
 - **Telemetria** são os pontos de dados numéricos que o seu dispositivo coleta ao longo do tempo. Eles são representados como um fluxo contínuo. Um exemplo é a temperatura.
 - **As medições do evento** são dados point-in-time que representam algo significativo no dispositivo. Um nível de severidade representa a importância de um evento. Um exemplo é um erro no motor do ventilador.
 - Medidas de **Estado** representam o estado do dispositivo ou os respectivos componentes durante um período de tempo. Por exemplo, um modo de ventilador pode ser definido como tendo **Operating** e **Stopped** como os dois estados possíveis.
-- **Local** medidas são as coordenadas de longitude e latitude do dispositivo em um período de tempo em. Por exemplo, um ventilador pode ser movido de um local para outro.
+- As medidas de **localização** são as coordenadas de longitude e latitude do dispositivo durante um período de tempo no. Por exemplo, um ventilador pode ser movido de um local para outro.
 
 ### <a name="create-a-telemetry-measurement"></a>Criar uma medição de telemetria
 
-Para adicionar uma nova medida de telemetria, selecione **+ nova medição**, escolha **telemetria** como a medida de tipo e insira os detalhes no formulário.
+Para adicionar uma nova medição de telemetria, selecione **+ nova medida**, escolha telemetria como o tipo de medida e insira os detalhes no formulário.
 
 > [!NOTE]
 > Os nomes de campo no modelo de dispositivo precisarão corresponder aos nomes de propriedade no código do dispositivo correspondente para que a medida de telemetria seja exibida no aplicativo quando um dispositivo real estiver conectado. Faça o mesmo ao definir configurações, propriedades do dispositivo e comandos enquanto você continua a definir o modelo de dispositivo nas seções a seguir.
-. png, por exemplo, você pode adicionar uma nova medida de telemetria de temperatura:
 
-| Nome de exibição        | Nome do campo    |  Unidades    | Min   |max|
+Por exemplo, é possível adicionar uma nova medida de telemetria de temperatura:
+
+| Nome para exibição        | Nome do Campo    |  Unidades    | Min.   |Máx|
 | --------------------| ------------- |-----------|-------|---|
 | Temperatura         | temp          |  degC     |  0    |100|
 
@@ -73,20 +74,20 @@ Para adicionar uma nova medida de telemetria, selecione **+ nova medição**, es
 
 Depois de selecionar **Salvar**, a medição **Temperatura** aparece na lista de medições. Em alguns instantes, você verá a visualização dos dados de temperatura do dispositivo simulado.
 
-Ao exibir a telemetria, você pode escolher entre as seguintes opções de agregação: Média, mínimo, máximo, soma e contagem. **Médio** é selecionado como a agregação padrão no gráfico.
+Ao exibir a telemetria, você pode escolher entre as seguintes opções de agregação: Média, mínimo, máximo, soma e contagem. A **média** é selecionada como a agregação padrão no gráfico.
 
 > [!NOTE]
 > O tipo de dados da medição de telemetria é um número de ponto flutuante.
 
 ### <a name="create-an-event-measurement"></a>Crie uma medição de evento
 
-Para adicionar uma nova medida de evento, selecione **+ nova medição** e selecione **evento** como o tipo de medida. Insira os detalhes no formulário **Criar Evento**.
+Para adicionar uma nova medição de evento, selecione **+ nova medição** e selecione **evento** como o tipo de medida. Insira os detalhes no formulário **Criar Evento**.
 
 Forneça os detalhes **Nome para exibição**, **Nome do campo** e **Gravidade** para o evento. Escolha um entre os três níveis de gravidade disponíveis: **Erro**, **Aviso** e **Informações**.
 
 Por exemplo, você pode adicionar um novo evento **Fan Motor Error**.
 
-| Nome de exibição        | Nome do campo    |  Gravidade padrão |
+| Nome para exibição        | Nome do Campo    |  Severidade Padrão |
 | --------------------| ------------- |-----------|
 | Erro do motor do ventilador     | fanmotorerror |  Erro    |
 
@@ -103,13 +104,13 @@ Para exibir mais detalhes sobre um evento, selecione o ícone de evento no gráf
 
 ### <a name="create-a-state-measurement"></a>Crie uma medida de estado
 
-Para adicionar uma nova avaliação de estado, selecione o **+ nova medição** botão e selecione **estado** como o tipo de medida. Insira os detalhes no formulário **Criar Estado**.
+Para adicionar uma nova medida de estado, selecione o botão de **medida + nova** e selecione **estado** como o tipo de medida. Insira os detalhes no formulário **Criar Estado**.
 
 Forneça os detalhes para **Nome de exibição**, **Nome do campo** e **Valores** do estado. Cada valor também pode ter um nome de exibição que será usado quando o valor aparecer em gráficos e tabelas.
 
 Por exemplo, você pode adicionar um novo **estado do Modo de fãs** que tenha dois valores possíveis que o dispositivo pode enviar, **Em funcionamento** e **Parado**.
 
-| Nome de exibição | Nome do campo    |  Valor 1   | Nome de exibição | Valor 2    |Nome de exibição  | 
+| Nome para exibição | Nome do Campo    |  Valor 1   | Nome para exibição | Valor 2    |Nome para exibição  |
 | -------------| ------------- |----------- | -------------| -----------| -------------|
 | Modo ventilação     | fanmode       |  1         | Operacional    |     0      | Parado      |
 
@@ -122,23 +123,23 @@ Se o dispositivo enviar muitos pontos de dados durante um curto período, a medi
 > [!NOTE]
 > O tipo de dados da medida de estado é cadeia de caracteres.
 
-### <a name="create-a-location-measurement"></a>Criar uma medida de local
+### <a name="create-a-location-measurement"></a>Criar uma medição de local
 
-Para adicionar uma nova medida local, selecione **+ nova medição**, escolha **local** como a medida de tipo e insira os detalhes o **criar medida** formulário.
+Para adicionar uma nova medida de local, selecione **+ nova medida**, escolha **local** como o tipo de medida e insira os detalhes no formulário **criar medição** .
 
-Por exemplo, você pode adicionar uma nova medida de telemetria local:
+Por exemplo, você pode adicionar uma nova medida de telemetria de local:
 
-| Nome de exibição        | Nome do campo    |
+| Nome para exibição        | Nome do Campo    |
 | --------------------| ------------- |
-| Localização do ativo      |  assetloc     |
+| Local do ativo      |  assetloc     |
 
-![Formulário de "Criar local" com detalhes de medição de local](./media/howto-set-up-template/locationmeasurementsform.png)
+![Formulário "criar local" com detalhes para a medida de localização](./media/howto-set-up-template/locationmeasurementsform.png)
 
-Depois de selecionar **salve**, o **local** medida aparece na lista de medidas. Em pouco tempo, você deve ver a visualização dos dados de localização do dispositivo simulado.
+Depois de selecionar **salvar**, a medida de **localização** aparece na lista de medições. Em breve, você verá a visualização dos dados do local do dispositivo simulado.
 
-Ao exibir o local, você pode escolher entre as seguintes opções: local mais recente e o histórico de localização. **Histórico de localização** só é aplicada ao longo do intervalo de tempo selecionado.
+Ao exibir o local, você pode escolher entre as seguintes opções: o local mais recente e o histórico de localização. O **histórico de localização** só é aplicado no intervalo de tempo selecionado.
 
-O tipo de dados da medida local é um objeto que contém uma altitude opcional, latitude e longitude. O trecho a seguir mostra a estrutura do JavaScript:
+O tipo de dados da medida de localização é um objeto que contém a longitude, a latitude e uma altitude opcional. O trecho a seguir mostra a estrutura JavaScript:
 
 ```javascript
 assetloc: {
@@ -148,9 +149,11 @@ assetloc: {
 }
 ```
 
+Quando o dispositivo real estiver conectado, o local que você adicionou como uma medida será atualizado com o valor enviado pelo dispositivo. Depois de configurar sua medição de local, você pode [Adicionar um mapa para visualizar o local no painel do dispositivo](#add-a-location-measurement-in-the-dashboard).
+
 ## <a name="settings"></a>Configurações
 
-As configurações controlam um dispositivo. Elas permitem que os operadores forneçam entradas ao dispositivo. É possível adicionar várias configurações ao modelo de dispositivo que aparecem como blocos na guia **Configurações** para os operadores usarem. Você pode adicionar vários tipos de configurações: texto, número, data, alternância e rótulo de seção.
+As configurações controlam um dispositivo. Elas permitem que os operadores forneçam entradas ao dispositivo. É possível adicionar várias configurações ao modelo de dispositivo que aparecem como blocos na guia **Configurações** para os operadores usarem. Você pode adicionar vários tipos de configurações: número, texto, data, alternância e rótulo de seção.
 
 As configurações podem estar em um dos três estados. O dispositivo informa esses estados.
 
@@ -160,9 +163,9 @@ As configurações podem estar em um dos três estados. O dispositivo informa es
 
 - **Erro**: o dispositivo retornou um erro.
 
-Por exemplo, você pode adicionar uma nova configuração de velocidade do ventilador, selecionando **as configurações** e inserindo na nova **número** configuração:
+Por exemplo, você pode adicionar uma nova configuração de velocidade do ventilador selecionando **configurações** e inserindo na nova configuração de **número** :
 
-| Nome de exibição  | Nome do campo    |  Unidades  | Decimais |Initial|
+| Nome para exibição  | Nome do Campo    |  Unidades  | Decimais |Initial|
 | --------------| ------------- |---------| ---------|---- |
 | Velocidade da ventoinha     | fanSpeed      | RPM     | 2        | 0   |
 
@@ -172,16 +175,16 @@ Depois que você selecionar **Salvar**, a configuração **Velocidade do Ventila
 
 ## <a name="properties"></a>Propriedades
 
-As propriedades são metadados que está associada com o dispositivo, como um local fixo de dispositivo e o número de série. Adicione várias propriedades ao modelo de dispositivo que são exibidas como blocos na guia **Propriedades**. Uma propriedade tem um tipo, como número, texto, data, ativar/desativar, propriedade do dispositivo, rótulo ou um local fixo. Um operador especifica os valores para propriedades quando eles criam um dispositivo, e eles podem editar esses valores a qualquer momento. As propriedades de dispositivo são somente leitura e são enviadas do dispositivo para o aplicativo. Um operador não é possível alterar as propriedades do dispositivo. Quando um dispositivo real se conecta, as atualizações de bloco de propriedade do dispositivo no aplicativo.
+As propriedades são metadados associados ao dispositivo, como um local do dispositivo fixo e um número de série. Adicione várias propriedades ao modelo de dispositivo que são exibidas como blocos na guia **Propriedades**. Uma propriedade tem um tipo como número, texto, data, alternância, Propriedade do dispositivo, rótulo ou um local fixo. Um operador especifica os valores para propriedades quando eles criam um dispositivo e podem editar esses valores a qualquer momento. As propriedades de dispositivo são somente leitura e são enviadas do dispositivo para o aplicativo. Um operador não pode alterar as propriedades do dispositivo. Quando um dispositivo real se conecta, o bloco de propriedades do dispositivo é atualizado no aplicativo.
 
 Existem duas categorias de propriedades:
 
 - _Propriedades de dispositivo_ que o dispositivo relata ao aplicativo do IoT Central. As propriedades de dispositivo são valores somente leitura relatados pelo dispositivo e são atualizadas no aplicativo quando um dispositivo real é conectado.
-- _Propriedades do aplicativo_ que são armazenadas no aplicativo e que podem ser editadas pelo operador. Propriedades do aplicativo são armazenadas apenas no aplicativo e nunca são vistas por um dispositivo.
+- _Propriedades do aplicativo_ que são armazenadas no aplicativo e que podem ser editadas pelo operador. As propriedades do aplicativo são armazenadas apenas no aplicativo e nunca são vistas por um dispositivo.
 
 Por exemplo, adicione a última data de manutenção do dispositivo como uma nova propriedade **Data** (uma propriedade do aplicativo) à guia **Propriedades**:
 
-| Nome de exibição  | Nome do campo | Valor inicial   |
+| Nome para exibição  | Nome do Campo | Valor Inicial   |
 | --------------| -----------|-----------------|
 | Atendido por último      | lastServiced        | 29/01/2019     |
 
@@ -191,17 +194,17 @@ Depois que você selecionar **Salvar**, a última data de manutenção do dispos
 
 Depois de criar o bloco, você poderá alterar o valor da propriedade do aplicativo no **Device Explorer**.
 
-### <a name="create-a-location-property"></a>Criar uma propriedade local
+### <a name="create-a-location-property"></a>Criar uma propriedade de local
 
-Você pode fornecer contexto geográfico a seus dados locais no Azure IoT Central e mapear qualquer latitude e longitude coordenadas ou um endereço de rua. O Azure Maps habilita esse recurso na IoT Central.
+Você pode fornecer um contexto geográfico aos dados de localização no Azure IoT Central e mapear quaisquer coordenadas de latitude e longitude ou um endereço de rua. O Azure Maps habilita esse recurso na IoT Central.
 
 Você pode adicionar dois tipos de propriedades de localização:
 
-- **Localização como uma propriedade do aplicativo**, que é armazenada no aplicativo. Propriedades do aplicativo são armazenadas apenas no aplicativo e nunca são vistas por um dispositivo.
+- **Localização como uma propriedade do aplicativo**, que é armazenada no aplicativo. As propriedades do aplicativo são armazenadas apenas no aplicativo e nunca são vistas por um dispositivo.
 - **Localização como uma propriedade de dispositivo**, relatada pelo dispositivo ao aplicativo. Esse tipo de propriedade é melhor usado para um local estático.
 
 > [!NOTE]
-> Local como uma propriedade não registrará um histórico. Se o histórico for desejado, use uma medida de local.
+> O local como uma propriedade não registra um histórico. Se o histórico for desejado, use uma medida de local.
 
 #### <a name="add-location-as-an-application-property"></a>Adicionar local como uma propriedade do aplicativo
 
@@ -213,7 +216,7 @@ Você pode criar uma propriedade de local como uma propriedade de aplicativo usa
 
 3. Configure **Nome de exibição**, **Nome do campo** e (opcionalmente) **Valor inicial** para o local.
 
-    | Nome de exibição  | Nome do campo | Valor inicial |
+    | Nome para exibição  | Nome do Campo | Valor Inicial |
     | --------------| -----------|---------|
     | Endereço de instalação | installAddress | Microsoft, 1 Microsoft Way, Redmond, WA 98052   |
 
@@ -235,16 +238,16 @@ Você pode criar uma propriedade de localização como uma propriedade de dispos
 
 3. Configure o nome de exibição e o nome de campo e selecione **Localização** como o tipo de dados:
 
-    | Nome de exibição  | Nome do campo | Tipo de dados |
+    | Nome para exibição  | Nome do Campo | Tipo de dados |
     | --------------| -----------|-----------|
-    | Localização do dispositivo | deviceLocation | location  |
+    | Localização do dispositivo | deviceLocation | localização  |
 
    > [!NOTE]
    > Os nomes de campo devem corresponder aos nomes de propriedade no código do dispositivo correspondente
 
    ![Formulário "Configurar propriedades do dispositivo" com detalhes para localização](./media/howto-set-up-template/locationdeviceproperty2.png)
 
-Depois que o dispositivo real estiver conectado, o local adicionado como uma propriedade de dispositivo é atualizada com o valor enviado pelo dispositivo. Depois de configurar sua propriedade de local, você pode [adicionar um mapa para visualizar o local no painel do dispositivo](#add-a-location-in-the-dashboard).
+Quando o dispositivo real estiver conectado, o local que você adicionou como uma propriedade de dispositivo será atualizado com o valor enviado pelo dispositivo. Depois de configurar sua propriedade Location, você pode [Adicionar um mapa para visualizar o local no painel do dispositivo](#add-a-location-property-in-the-dashboard).
 
 ## <a name="commands"></a>Comandos
 
@@ -252,19 +255,21 @@ Os comandos são usados para gerenciar remotamente um dispositivo. Eles permitem
 
 Como um comando é diferente de um cenário?
 
-* **Configuração**: Uma configuração que você deseja aplicar a um dispositivo. Você deseja que o dispositivo persista essa configuração até você alterá-la. Por exemplo, você deseja definir a temperatura do seu freezer e desejar essa configuração mesmo quando o freezer reiniciar.
+- **Configuração**: Uma configuração que você deseja aplicar a um dispositivo. Você deseja que o dispositivo persista essa configuração até você alterá-la. Por exemplo, você deseja definir a temperatura do seu freezer e desejar essa configuração mesmo quando o freezer reiniciar.
 
-* **Comando**: use comandos para executar de forma instantânea um comando no dispositivo remotamente por meio do IoT Central. Se um dispositivo não estiver conectado, o comando atingirá o tempo limite e falhará. Por exemplo, você deseja reiniciar um dispositivo.
+- **Comando**: use comandos para executar de forma instantânea um comando no dispositivo remotamente por meio do IoT Central. Se um dispositivo não estiver conectado, o comando atingirá o tempo limite e falhará. Por exemplo, você deseja reiniciar um dispositivo.
 
-Por exemplo, você pode adicionar um novo **Echo** comando selecionando o **comandos** guia, em seguida, selecionando **+ novo comando**e inserindo os detalhes do novo comando:
+Por exemplo, você pode adicionar um novo comando de **eco** selecionando a guia **comandos** , selecionando **+ novo comando**e inserindo os detalhes do novo comando:
 
-| Nome de exibição  | Nome do campo | Tempo limite padrão | Tipo de dados |
+| Nome para exibição  | Nome do Campo | Tempo Limite Padrão | Tipo de dados |
 | --------------| -----------|---------------- | --------- |
-| Comando echo  | echo       |  30             | text      |
+| Comando echo  | echo       |  30             | texto      |
 
 ![Formulário "Configurar Comando" com detalhes para o echo](./media/howto-set-up-template/commandsecho1.png)
 
-Depois que você selecionar **Salvar**, o comando **Eco** será exibido como um bloco e estará pronto para ser usado no **Device Explorer** quando o dispositivo real for conectado. Os nomes de campo de seu comando devem corresponder aos nomes de propriedade no código do dispositivo correspondente na ordem de comandos para serem executados com êxito.
+Depois que você selecionar **Salvar**, o comando **Eco** será exibido como um bloco e estará pronto para ser usado no **Device Explorer** quando o dispositivo real for conectado. Os nomes de campo do comando devem corresponder aos nomes de propriedade no código de dispositivo correspondente para que os comandos sejam executados com êxito.
+
+[Aqui está o link para o código de dispositivo C de exemplo.](https://github.com/Azure/iot-central-firmware/blob/ad40358906aeb8f2040a822ba5292df866692c16/MXCHIP/mxchip_advanced/src/AzureIOTClient.cpp#L34)
 
 ## <a name="rules"></a>Regras
 
@@ -272,9 +277,9 @@ As regras permitem que os operadores monitorem os dispositivos quase em tempo re
 
 - **Regra de telemetria**, que é acionada quando a telemetria do dispositivo selecionado ultrapassa um limite especificado. [Saiba mais sobre as regras de telemetria](howto-create-telemetry-rules.md).
 
-## <a name="dashboard"></a>painel
+## <a name="dashboard"></a>Painel
 
-O painel é onde um operador vai para ver informações sobre um dispositivo. Como um construtor, você pode adicionar blocos a esta página para ajudar a entender como o dispositivo está se comportando de operadores. Você pode adicionar muitos tipos de blocos do painel, como imagem, gráfico de linhas, gráfico de barras, KPI (indicador chave de desempenho), configurações, propriedades e rótulo.
+O painel é onde um operador vai para ver informações sobre um dispositivo. Como um construtor, você adiciona blocos a esta página para ajudar os operadores a entender como o dispositivo está se comportando. Você pode adicionar muitos tipos de blocos do painel, como imagem, gráfico de linhas, gráfico de barras, KPI (indicador chave de desempenho), configurações, propriedades e rótulo.
 
 Por exemplo, adicione um bloco **Configurações e Propriedades** para mostrar uma seleção dos valores atuais de configurações e propriedades selecionando a guia **Painel** e o bloco na Biblioteca:
 
@@ -282,29 +287,44 @@ Por exemplo, adicione um bloco **Configurações e Propriedades** para mostrar u
 
 Agora, quando um operador exibir o painel no **Device Explorer**, ele poderá ver o bloco.
 
-### <a name="add-a-location-in-the-dashboard"></a>Adicionar um local no painel de controle
+### <a name="add-a-location-measurement-in-the-dashboard"></a>Adicionar uma medida de local no painel
 
-Se você tiver configurado uma medida de local, você pode visualizar o local com um mapa no painel do dispositivo.
+Se você configurou uma medida de local, poderá visualizar o local com um mapa no painel do seu dispositivo. Para as medidas de localização, você tem a opção de plotar o histórico de localização.
 
 1. Navegue para a guia **Painel**.
 
 1. No painel do dispositivo, selecione **Mapa** da biblioteca.
 
-1. Dê um título ao mapa. O exemplo a seguir tem um título **local atual do dispositivo**. Em seguida, escolha a medida de local que você configurou anteriormente na **medidas** guia. No exemplo a seguir, o **localização do ativo** medida está selecionada:
+1. Dê um título ao mapa. O exemplo a seguir tem o título **local atual do dispositivo**. Em seguida, escolha a medida local que você configurou anteriormente na guia **medidas** . No exemplo a seguir, a medida **local do ativo** é selecionada:
 
    ![Formulário "Configurar Mapa" com detalhes para título e propriedades](./media/howto-set-up-template/locationcloudproperty5map.png)
 
 1. Clique em **Salvar**. O bloco do mapa agora exibe o local selecionado.
 
-Você pode redimensionar o bloco de mapa. Quando um operador de exibições no painel a **Device Explorer**, o painel todos os blocos que você configurou, incluindo um mapa do local são visíveis.
+Você pode redimensionar o bloco mapa. Quando um operador exibe o painel no **Device Explorer**, todos os blocos de painel que você configurou, incluindo um mapa de local, são visíveis.
 
-Para saber mais sobre como usar blocos no Azure IoT Central, consulte [usar blocos de dashboard](howto-use-tiles.md).
+### <a name="add-a-location-property-in-the-dashboard"></a>Adicionar uma propriedade local no painel
+
+Se você configurou uma propriedade Location, poderá visualizar o local com um mapa no painel do seu dispositivo.
+
+1. Navegue para a guia **Painel**.
+
+1. No painel do dispositivo, selecione **Mapa** da biblioteca.
+
+1. Dê um título ao mapa. O exemplo a seguir tem o título **local atual do dispositivo**. Em seguida, escolha a propriedade de localização configurada anteriormente na guia **Propriedades**. No exemplo a seguir, a medição do **local do dispositivo** é selecionada:
+
+   ![Configurar o formulário de mapa com detalhes para título e propriedades](./media/howto-set-up-template/locationcloudproperty6map.png)
+
+1. Clique em **Salvar**. O bloco do mapa agora exibe o local selecionado.
+
+Você pode redimensionar o bloco mapa. Quando um operador exibe o painel no **Device Explorer**, todos os blocos de painel que você configurou, incluindo um mapa de local, são visíveis.
+
+Para saber mais sobre como usar blocos no Azure IoT Central, confira [usar blocos do Dashboard](howto-use-tiles.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 
 Agora que você aprendeu a configurar um modelo de dispositivo no aplicativo Central do IoT do Azure, é possível:
 
-> [!div class="nextstepaction"]
-> [Criar uma nova versão do modelo de dispositivo](howto-version-device-template.md)
-> [conectar um dispositivo MXChip IoT DevKit ao seu aplicativo do Azure IoT Central](howto-connect-devkit.md)
-> [se conectar a um aplicativo cliente genérico para o Azure Aplicativo de Central da IoT (Node. js)](howto-connect-nodejs.md)
+- [Criar uma nova versão do modelo de dispositivo](howto-version-device-template.md)
+- [Conectar um dispositivo MXChip IoT DevKit ao seu aplicativo Azure IoT Central](howto-connect-devkit.md)
+- [Conectar um aplicativo cliente genérico ao seu aplicativo de IoT Central do Azure (Node. js)](howto-connect-nodejs.md)

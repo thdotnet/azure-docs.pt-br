@@ -12,10 +12,10 @@ ms.workload: na
 ms.date: 07/12/2019
 ms.author: tomfitz
 ms.openlocfilehash: cdec216187050a449f23f72474e0265acce14c5f
-ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/13/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67867385"
 ---
 # <a name="azure-resource-manager-template-best-practices"></a>Práticas recomendadas para modelos do Azure Resource Manager
@@ -46,7 +46,7 @@ Quando você implanta recursos em um grupo de recursos, o grupo de recursos arma
 
 Se a região do grupo de recursos está temporariamente indisponível, você não pode atualizar os recursos no grupo de recursos porque os metadados não estão disponíveis. Os recursos em outras regiões ainda funcionarão conforme o esperado, mas não será possível atualizá-los. Para minimizar o risco, localize seu grupo de recursos e recursos na mesma região.
 
-## <a name="parameters"></a>parâmetros
+## <a name="parameters"></a>Parâmetros
 As informações nesta seção podem ser úteis quando você trabalha com [parâmetros](resource-group-authoring-templates.md#parameters).
 
 ### <a name="general-recommendations-for-parameters"></a>Recomendações gerais para parâmetros
@@ -293,7 +293,7 @@ As seguintes informações podem ser úteis quando você trabalha com [recursos]
    > 
    > 
 
-## <a name="outputs"></a>outputs
+## <a name="outputs"></a>Saídas
 
 Se você usar um modelo para criar endereços IP públicos, inclua uma [seção outputs](resource-group-authoring-templates.md#outputs) que retorne detalhes do endereço IP e o FQDN (nome de domínio totalmente qualificado). É possível usar valores de saída para recuperar facilmente detalhes sobre endereços IP públicos e FQDNs após a implantação.
 

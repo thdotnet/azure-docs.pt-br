@@ -1,49 +1,49 @@
 ---
-title: Pré-requisitos para o gerenciamento de contas no Portal do Cloud Partner | O Azure Marketplace
-description: Pré-requisitos para o gerenciamento de contas do Azure Marketplace no Portal do Cloud Partner.
+title: Pré-requisitos para gerenciar contas no Portal do Cloud Partner | Azure Marketplace
+description: Pré-requisitos para gerenciar contas do Azure Marketplace no Portal do Cloud Partner.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: v-miclar
 ms.service: marketplace
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: pabutler
-ms.openlocfilehash: 8c32043d9bf3ca68563ae01d415bdc0e1f6993f7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 62269490355414a6b75759361cd574ac7e90e162
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66258138"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68598676"
 ---
-# <a name="prerequisites-for-managing-accounts-on-the-cloud-partner-portal"></a>Pré-requisitos para o gerenciamento de contas no Portal do Cloud Partner 
+# <a name="prerequisites-for-managing-accounts-on-the-cloud-partner-portal"></a>Pré-requisitos para gerenciar contas no Portal do Cloud Partner 
 
-Antes de poder usar o [Portal do Cloud Partner](https://cloudpartner.azure.com/) para qualquer função, incluindo o gerenciamento de contas, você deve seguir uma série de etapas para registrar a mesmos e sua organização como Publicadores de nuvem da Microsoft.
+Antes de usar o [portal do Cloud Partner](https://cloudpartner.azure.com/) para qualquer função, incluindo o gerenciamento de contas, você deve seguir uma série de etapas para se registrar e sua organização como Publicadores de nuvem da Microsoft.
 
 
-## <a name="account-terms-and-guidelines"></a>Termos de conta e diretrizes
+## <a name="account-terms-and-guidelines"></a>Termos e diretrizes da conta
 
-Revise cuidadosamente os direitos e as responsabilidades sob o [contrato de serviços Microsoft](https://www.microsoft.com/servicesagreement) e o [Terms de uso do Microsoft](https://www.microsoft.com/legal/intellectualproperty/copyright) antes de criar uma conta.  
+Examine atentamente seus direitos e responsabilidades na [contrato de serviços Microsoft](https://www.microsoft.com/servicesagreement) e os [termos de uso da Microsoft antes de](https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx) criar uma conta.  
 
-Escolha o nome da sua conta com cuidado.  Ele representa a sua organização, para que ele não deve conter todas as palavras protegido por direitos autorais ou contenciosos.  Por exemplo, a Microsoft proíbe o uso dos seus termos protegido por direitos autorais, como "Azure" e "Microsoft", em nomes de conta.  Para obter mais informações, consulte [diretrizes para o Azure Marketplace](https://docs.microsoft.com/azure/marketplace/guidelines)
+Escolha o nome da conta com cuidado.  Ele representa sua organização, portanto, não deve conter nenhuma palavra com copyright ou contenciosos.  Por exemplo, a Microsoft proíbe o uso de seus termos protegidos por direitos autorais, como "Azure" e "Microsoft", em nomes de conta.  Para obter mais informações, consulte [diretrizes para o Azure Marketplace](https://docs.microsoft.com/azure/marketplace/guidelines)
 
 
 ## <a name="registration-steps"></a>Etapas de registro
 
-A tabela a seguir lista as etapas necessárias para registrar totalmente como um publicador de nuvem da Microsoft.  Para obter instruções completas, consulte [se tornar um editor do Marketplace de nuvem](https://docs.microsoft.com/azure/marketplace/become-publisher
-). 
+A tabela a seguir lista as etapas necessárias para o registro completo como um Microsoft Cloud Publisher.  Para obter instruções completas, [consulte tornar-se um](https://docs.microsoft.com/azure/marketplace/become-publisher
+)Publicador do Cloud Marketplace. 
 
 
-|                   Etapa                   |  Registro resultante ou recurso                     |
+|                   Etapa                   |  Registro ou recurso resultante                     |
 |                  ------                  |  -----------------------------------                    |
-| 1. Registrar-se no Microsoft Partner Network |  Uma ID do Microsoft Partner Network para sua organização |
-| 2. Criar uma conta Microsoft *           |  Um verificado a conta da Microsoft, terminam em @outlook.com, @live.com, etc. |
+| 1. Registrar-se no Microsoft Partner Network |  Uma ID de Microsoft Partner Network para sua organização |
+| 2. Criar um conta Microsoft *           |  Uma conta Microsoft verificada, terminando @live.comem @outlook.com, etc. |
 | 3. Enviar o formulário de registro do marketplace | Uma conta de editor no Portal do Cloud Partner      |
-| 4. Entrar no Portal do Cloud Partner        | Autoridade para criar e publicar ofertas, gerenciar usuários, marketplace coletar métricas, etc. |
-| 5. Registre-se no Microsoft Developer Center * | Uma conta verificada do Centro de desenvolvimento; autoridade para realizar transações de marketplace  |
+| 4. Entrar no Portal do Cloud Partner        | Autoridade para criar e publicar ofertas, gerenciar usuários, coletar métricas do Marketplace, etc. |
+| 5. Registrar-se no centro de desenvolvimento da Microsoft * | Uma conta verificada do centro de desenvolvimento; autoridade para realizar transações do Marketplace  |
 |   |   |
 
-\* Estas etapas são necessárias para o Azure Marketplace transact ofertas, mas altamente recomendadas para todas as ofertas.  Depois de estabelecer uma conta da Microsoft e registrar como um Microsoft Developer, você pode acessar recursos adicionais de cliente e o desenvolvedor da Microsoft, bem como ofertas de parceiros opcional.  
+\*Essas etapas são necessárias para as ofertas do Azure Marketplace Transact, mas são altamente recomendadas para todas as ofertas.  Depois de estabelecer um conta Microsoft e registrá-lo como desenvolvedor da Microsoft, você pode acessar outros recursos de clientes e desenvolvedores da Microsoft, bem como ofertas de parceiros opcionais.  
 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Depois de concluir as etapas de registro, você deve ser capaz de entrar a [Portal do Cloud Partner](https://cloudpartner.azure.com/).  Você pode usar este portal para gerenciar perfis de publicador e gerenciar contas de usuário.
+Depois de concluir as etapas de registro, você poderá entrar no [portal do Cloud Partner](https://cloudpartner.azure.com/).  Você pode usar este portal para e gerenciar perfis de Publicador e gerenciar contas de usuário.

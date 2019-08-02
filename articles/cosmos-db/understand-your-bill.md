@@ -4,25 +4,25 @@ description: Este artigo ajuda você a entender sua fatura do Azure Cosmos DB co
 author: rimman
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/21/2019
+ms.date: 08/01/2019
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: d30cd92456218284326263d7bd3c9c7820fa435c
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: f800560aa4ddef52c2274fa8b3f5c98d68189f0f
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67621283"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68717530"
 ---
 # <a name="understand-your-azure-cosmos-db-bill"></a>Entendendo sua fatura do Azure Cosmos DB
 
-Como um serviço de banco de dados nativo de nuvem totalmente gerenciado, o Azure Cosmos DB simplifica a cobrança cobrando apenas a taxa de transferência provisionada e o armazenamento consumido. Não há nenhuma das taxas de licença adicionais, hardware, os custos de utilitário ou os custos do recurso comparados a alternativas hospedado por IaaS ou locais. Quando você considera os vários tipos de recursos de região do Azure Cosmos DB, o serviço de banco de dados fornece uma redução substancial nos custos em comparação comparada soluções de IaaS ou locais existentes.
+Como um serviço de banco de dados nativo de nuvem totalmente gerenciado, o Azure Cosmos DB simplifica a cobrança cobrando apenas a taxa de transferência provisionada e o armazenamento consumido. Não há taxas de licença adicionais, hardware, custos do utilitário ou custos de instalações em comparação com alternativas locais ou de IaaS. Quando você considera os recursos de várias regiões de Azure Cosmos DB, o serviço de banco de dados fornece uma redução significativa nos custos em comparação com as soluções locais ou IaaS existentes.
 
 Com o Azure Cosmos DB, você será cobrado por hora com base na taxa de transferência provisionada e no armazenamento consumido. Para a taxa de transferência provisionada, a unidade de cobrança é 100 RU/s por hora, cobrada a US$ 0,008 por hora, levando em conta o preço público padrão; consulte a [página de preços](https://azure.microsoft.com/pricing/details/cosmos-db/). Para o armazenamento consumido, você é cobrado US$ 0,25 por 1 GB de armazenamento por mês. Consulte a [página de preços](https://azure.microsoft.com/pricing/details/cosmos-db/). 
 
 Este artigo usa alguns exemplos para ajudá-lo a entender os detalhes encontrados na fatura mensal. Os números mostrados nos exemplos podem ser diferentes se seus contêineres do Azure Cosmos têm uma taxa de transferência provisionada diferente, se eles abrangem várias regiões ou são executados em regiões diferentes por algum tempo durante o mês.
 
->! Observação: A cobrança é para qualquer parte de uma hora do relógio de parede, não uma duração de 60 minutos.
+>! Anotações A cobrança é para qualquer parte de uma hora do relógio de parede, não uma duração de 60 minutos.
 
 ## <a name="billing-examples"></a>Exemplos de cobrança
 
@@ -214,7 +214,7 @@ Vamos considerar outro exemplo, em que você deseja proativamente estimar sua fa
 
 |**Custo de taxa de transferência** | | | |
 |----|----|----|----|
-|Tipo de operação| Solicitações/s| Média RU/solicitação| RUs necessárias|
+|Tipo de Operação| Solicitações/s| Média RU/solicitação| RUs necessárias|
 |Gravar| 100 | 5 | 500|
 |Ler| 400| 1| 400|
 

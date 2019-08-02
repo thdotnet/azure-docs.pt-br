@@ -1,6 +1,6 @@
 ---
-title: Autenticação e autorização para âncoras espacial do Azure | Microsoft Docs
-description: Saiba mais sobre as várias maneiras para âncoras espacial do Azure e os níveis de controle que tem como acesso a âncoras espacial do Azure que pode autenticar um aplicativo ou serviço.
+title: Autenticação e autorização para âncoras espaciais do Azure | Microsoft Docs
+description: Saiba mais sobre as várias maneiras pelas quais um aplicativo ou serviço pode se autenticar para âncoras espaciais do Azure e os níveis de controle que você precisa para portar acesso a âncoras espaciais do Azure.
 author: julianparismorgan
 manager: vriveras
 services: azure-spatial-anchors
@@ -8,42 +8,42 @@ ms.author: pmorgan
 ms.date: 05/28/2019
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: c7ffa432c9311ba9d4ecf4ba82c375e2dad988d0
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 850748462f0273f2dfb1522d900ce9f1b2156d2a
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478537"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68517059"
 ---
-# <a name="authentication-and-authorization-to-azure-spatial-anchors"></a>Autenticação e autorização para âncoras espacial do Azure
+# <a name="authentication-and-authorization-to-azure-spatial-anchors"></a>Autenticação e autorização para âncoras espaciais do Azure
 
-Nesta seção, abordaremos as várias maneiras que você pode autenticar a âncoras espacial do Azure do seu aplicativo ou serviço da web e as maneiras em que você pode usar o controle de acesso baseado em função no diretório do Azure (AD Azure) para controlar o acesso às suas contas âncoras espacial.  
+Nesta seção, abordaremos as várias maneiras pelas quais você pode autenticar as âncoras espaciais do Azure de seu aplicativo ou serviço Web e as maneiras como você pode usar o controle de acesso baseado em função no diretório do Azure (AD do Azure) para controlar o acesso às suas contas espaciais de âncoras.  
 
 ## <a name="overview"></a>Visão geral
 
-![Uma visão geral de autenticação a ser âncoras espacial do Azure](./media/spatial-anchors-authentication-overview.png)
+![Uma visão geral da autenticação para âncoras espaciais do Azure](./media/spatial-anchors-authentication-overview.png)
 
-Para acessar uma determinada conta âncoras espacial do Azure, os clientes precisam primeiro obter um token de acesso do Azure misto realidade serviço STS (Security Token). Os tokens obtidos do STS ao vivo para 24 horas e contêm informações para os serviços espaciais âncoras tomar decisões de autorização da conta e certifique-se de que somente entidades autorizadas podem acessá-la. 
+Para acessar uma determinada conta de âncoras espaciais do Azure, os clientes precisam primeiro obter um token de acesso do STS (serviço de token de segurança) da realidade mista do Azure. Os tokens obtidos do STS Live por 24 horas e contêm informações para os serviços de âncoras espaciais para tomar decisões de autorização na conta e garantir que apenas entidades de segurança autorizadas possam acessar essa conta. 
 
-Tokens de acesso podem ser obtidos no exchange a partir de qualquer um dos chaves da conta ou os tokens emitidos pelo AD do Azure. 
+Tokens de acesso podem ser obtidos no Exchange a partir de chaves de conta ou de tokens emitidos pelo Azure AD. 
 
-Chaves de conta permitem que você começar a usar rapidamente usando o serviço âncoras espacial do Azure; No entanto, antes de implantar seu aplicativo para produção, é recomendável que você atualize seu aplicativo para usar a autenticação baseada no AD do Azure. 
+As chaves de conta permitem que você comece rapidamente a usar o serviço âncoras espaciais do Azure; no entanto, antes de implantar seu aplicativo para produção, é recomendável que você atualize seu aplicativo para usar a autenticação baseada no Azure AD. 
 
-Os tokens de autenticação do AD do Azure podem ser obtidos de duas maneiras:
+Os tokens de autenticação do Azure AD podem ser obtidos de duas maneiras:
 
-- Se você estiver criando um aplicativo empresarial e sua empresa está usando o Azure AD como seu sistema de identidade, você pode usar o Azure com base no usuário a autenticação do AD em seu aplicativo e conceder acesso a suas contas de âncoras espaciais usando seus grupos de segurança do Azure AD existentes, ou diretamente aos usuários em sua organização. 
-- Caso contrário, é recomendável que você obtenha tokens do AD do Azure de um serviço web que dão suporte a seu aplicativo. Usar um serviço web de suporte é o método de autenticação recomendado para aplicativos de produção, pois evita inserindo as credenciais para acessar as âncoras espacial do Azure em seu aplicativo cliente. 
+- Se você estiver criando um aplicativo empresarial e sua empresa estiver usando o Azure AD como seu sistema de identidade, você poderá usar a autenticação do Azure AD baseada no usuário em seu aplicativo e conceder acesso às suas contas de âncoras espaciais usando seus grupos de segurança existentes do Azure AD ou diretamente aos usuários em sua organização. 
+- Caso contrário, é recomendável que você obtenha tokens do Azure AD de um serviço Web que dê suporte ao seu aplicativo. Usar um serviço Web de suporte é o método de autenticação recomendado para aplicativos de produção, pois evita a inserção de credenciais para acessar âncoras espaciais do Azure em seu aplicativo cliente. 
 
-## <a name="account-keys"></a>Chaves da conta
+## <a name="account-keys"></a>Chaves de conta
 
-Usando chaves de conta para acessar sua conta âncoras espacial do Azure é a maneira mais simples para começar a usar. Você encontrará as chaves da conta no portal do Azure. Navegue até sua conta e selecione a guia "Chaves".
+O uso de chaves de conta para acesso à sua conta de âncoras espaciais do Azure é a maneira mais simples de começar. Você encontrará suas chaves de conta no portal do Azure. Navegue até sua conta e selecione a guia "chaves".
 
-![Uma visão geral de autenticação a ser âncoras espacial do Azure](../../../includes/media/spatial-anchors-get-started-create-resource/view-account-key.png)
+![Uma visão geral da autenticação para âncoras espaciais do Azure](../../../includes/media/spatial-anchors-get-started-create-resource/view-account-key.png)
 
 
-Duas chaves ficam disponíveis, que são ambos simultaneamente válidas para o acesso à conta âncoras espacial. É recomendável que você regularmente atualizar a chave usada para acessar a conta; ter dois separar habilitar chaves válidas essas atualizações sem tempo de inatividade; Você só precisa atualizar, como alternativa, a chave primária e secundária. 
+Duas chaves são disponibilizadas, que são simultaneamente válidas para acesso à conta de âncoras espaciais. É recomendável que você atualize regularmente a chave usada para acessar a conta; ter duas chaves válidas separadas habilita tais atualizações sem tempo de inatividade; Você só precisa atualizar a chave primária e a chave secundária como alternativa. 
 
-O SDK tem suporte interno para autenticar com chaves de conta; Basta definir a propriedade de AccountKey no seu objeto cloudSession. 
+O SDK tem suporte interno para autenticação com chaves de conta; Você simplesmente precisa definir a propriedade AccountKey em seu objeto cloudSession. 
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
@@ -69,49 +69,49 @@ _cloudSession!.configuration.accountKey = "MyAccountKey"
 mCloudSession.getConfiguration().setAccountKey("MyAccountKey");
 ```
 
-# <a name="c-ndktabcpp"></a>[C++ NDK](#tab/cpp)
+# <a name="c-ndktabcpp"></a>[C++NDK](#tab/cpp)
 
 ```cpp
 auto configuration = cloudSession_->Configuration();
 configuration->AccountKey(R"(MyAccountKey)");
 ```
 
-# <a name="c-winrttabcppwinrt"></a>[C++ WinRT](#tab/cppwinrt)
+# <a name="c-winrttabcppwinrt"></a>[C++WinRT](#tab/cppwinrt)
 
 ```cpp
 auto configuration = m_cloudSession.Configuration();
 configuration.AccountKey(LR"(MyAccountKey)");
 ```
 
-***
+---
 
-Depois disso, o SDK tratará a troca da chave de conta para um token de acesso e o armazenamento em cache necessárias de tokens para seu aplicativo. 
+Quando isso for feito, o SDK manipulará a troca da chave de conta para um token de acesso e o cache de tokens necessário para seu aplicativo. 
 
 > [!WARNING] 
-> Uso de chaves de conta é recomendado para integração rápida, mas durante o desenvolvimento/criação de protótipos apenas. É altamente recomendável não para enviar seu aplicativo para produção usando uma chave de conta inserido nele e em vez disso, usar o Azure baseada em serviço ou usuário autenticação AD se aproxima de Avançar listado.
+> O uso de chaves de conta é recomendado para rápida integração, mas somente durante o desenvolvimento/protótipo somente. É altamente recomendável não enviar seu aplicativo para produção usando uma chave de conta incorporada e, em vez disso, usar as abordagens de autenticação do Azure AD baseadas em usuário ou em serviço listadas a seguir.
 
 ## <a name="azure-ad-user-authentication"></a>Autenticação de usuário do Azure AD
 
-Para aplicativos destinados a usuários do Active Directory do Azure, a abordagem recomendada é usar um token do AD do Azure para o usuário, que pode ser obtido usando a biblioteca ADAL, conforme descrito na documentação a seguir: [ https://docs.microsoft.com/azure/active-directory/develop/v1-overview ](../../active-directory/develop/v1-overview.md); você deve seguir as etapas listadas em "Inícios rápidos", que incluem:
+Para aplicativos que visam Azure Active Directory usuários, a abordagem recomendada é usar um token do Azure ad para o usuário, que você pode obter usando a biblioteca Adal, conforme descrito na seguinte [https://docs.microsoft.com/azure/active-directory/develop/v1-overview](../../active-directory/develop/v1-overview.md)documentação:; você deve seguir as etapas listadas em "inícios rápidos", que incluem:
 
 1. Configuração no portal do Azure
-    1.  Registre seu aplicativo no Azure AD como sendo **aplicativo nativo**. Como parte do registro, você precisará determinar se seu aplicativo deve ser multilocatário ou não e fornecer o redirecionamento de URLs permitidas para o seu aplicativo.  
-    2.  Conceda a seu aplicativo ou o acesso a seus recursos: 
-        1.  Navegue até seu recurso âncoras espacial no portal do Azure
-        2.  Alterne para o **controle de acesso (IAM)** guia
-        3.  Ocorrências **Adicionar atribuição de função**
-            1.  [Selecione uma função](#role-based-access-control)
-            2.  No **selecionar** , insira o nome de usuário (s), grupo (s) e/ou ao qual você deseja atribuir acesso de aplicativo (s). 
-            3.  Ocorrências **salvar**.
+    1.  Registre seu aplicativo no Azure AD como **aplicativo nativo**. Como parte do registro, você precisará determinar se seu aplicativo deve ser multilocatário ou não e fornecer as URLs de redirecionamento permitidas para seu aplicativo.  
+    2.  Conceda ao seu aplicativo ou usuários acesso ao seu recurso: 
+        1.  Navegue até o recurso âncoras espaciais em portal do Azure
+        2.  Alternar para a guia **controle de acesso (iam)**
+        3.  Clique em **Adicionar atribuição de função**
+            1.  [Selecionar uma função](#role-based-access-control)
+            2.  No campo **selecionar** , insira o nome dos usuários, grupos e/ou os aplicativos aos quais você deseja atribuir o acesso de usuário (s). 
+            3.  Clique em **salvar**.
 2. Em seu código:
-    1.  Certifique-se de usar o **ID do aplicativo** e **Uri de redirecionamento** do seu próprio aplicativo do Azure AD como o **ID do cliente** e **RedirectUri** parâmetros em ADAL
-    2.  Defina as informações de locatário:
-        1.  Se seu aplicativo suporta **minha organização só**, substitua esse valor com seu **ID do locatário** ou **nome do locatário** (por exemplo, contoso.microsoft.com)
-        2.  Se seu aplicativo suporta **contas em qualquer diretório organizacional**, substitua esse valor com **organizações**
-        3.  Se seu aplicativo suporta **usuários de contas da Microsoft todos os**, substitua esse valor com **comuns**
-    3.  Na sua solicitação de token, defina as **resource** para "https://sts.mixedreality.azure.com". Esse "recurso" indica ao AD do Azure que seu aplicativo está solicitando um token para o serviço âncoras espacial do Azure.  
+    1.  Certifique-se de usar **a ID do aplicativo** e o URI de redirecionamento do seu próprio aplicativo do Azure ad como a ID do **cliente** e os parâmetros **RedirectUri** no Adal
+    2.  Defina as informações do locatário:
+        1.  Se seu aplicativo der suporte **apenas à minha organização**, substitua esse valor pela sua **ID de locatário** ou nome de **locatário** (por exemplo, contoso.Microsoft.com)
+        2.  Se seu aplicativo oferecer suporte a **contas em qualquer diretório organizacional**, substitua esse valor pelas **organizações**
+        3.  Se seu aplicativo der suporte a **todos os conta Microsoft usuários**, substitua esse **valor por**
+    3.  Em sua solicitação de token, defina o **recurso** como https://sts.mixedreality.azure.com"". Esse "recurso" indicará ao Azure AD que seu aplicativo está solicitando um token para o serviço âncoras espaciais do Azure.  
 
-Com isso, seu aplicativo deve ser capaz de obter da ADAL um token do AD do Azure; Você pode definir esse token do Azure AD como o **authenticationToken** em seu objeto de configuração de sessão de nuvem. 
+Com isso, seu aplicativo deve ser capaz de obter do ADAL um token do Azure AD; Você pode definir esse token do Azure AD como o **authenticationToken** em seu objeto de configuração de sessão de nuvem. 
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
@@ -137,51 +137,51 @@ _cloudSession!.configuration.authenticationToken = "MyAuthenticationToken"
 mCloudSession.getConfiguration().setAuthenticationToken("MyAuthenticationToken");
 ```
 
-# <a name="c-ndktabcpp"></a>[C++ NDK](#tab/cpp)
+# <a name="c-ndktabcpp"></a>[C++NDK](#tab/cpp)
 
 ```cpp
 auto configuration = cloudSession_->Configuration();
 configuration->AuthenticationToken(R"(MyAuthenticationToken)");
 ```
 
-# <a name="c-winrttabcppwinrt"></a>[C++ WinRT](#tab/cppwinrt)
+# <a name="c-winrttabcppwinrt"></a>[C++WinRT](#tab/cppwinrt)
 
 ```cpp
 auto configuration = m_cloudSession.Configuration();
 configuration.AuthenticationToken(LR"(MyAuthenticationToken)");
 ```
 
-***
+---
 
 ## <a name="azure-ad-service-authentication"></a>Autenticação de serviço do Azure AD
 
-A opção recomendada para implantar aplicativos, aproveitando as âncoras espacial do Azure para a produção é aproveitar um serviço de back-end que serão as solicitações de autenticação do agente. O esquema geral deve ser conforme descrito neste diagrama:
+A opção recomendada para implantar aplicativos que aproveitam âncoras espaciais do Azure para produção é utilizar um serviço de back-end que atenderá às solicitações de autenticação. O esquema geral deve ser conforme descrito neste diagrama:
 
-![Uma visão geral de autenticação a ser âncoras espacial do Azure](./media/spatial-anchors-aad-authentication.png)
+![Uma visão geral da autenticação para âncoras espaciais do Azure](./media/spatial-anchors-aad-authentication.png)
 
-Aqui, supõe-se que seu aplicativo usa seu próprio mecanismo (por exemplo: Conta da Microsoft, o PlayFab, Facebook, Google ID, nome de usuário e senha personalizada, etc.) para autenticar seu serviço back-end. Depois que os usuários são autenticados para seu serviço de back-end, que o serviço pode recuperar um token do AD do Azure, trocá-lo por um token de acesso para âncoras espacial do Azure e retorná-la ao aplicativo cliente.
+Aqui, supõe-se que seu aplicativo usa seu próprio mecanismo (por exemplo: Conta Microsoft, PlayFab, Facebook, Google ID, nome de usuário personalizado/senha, etc.) para autenticar em seu serviço de back-end. Depois que os usuários são autenticados em seu serviço de back-end, esse serviço pode recuperar um token do Azure AD, trocar o ti por um token de acesso para âncoras espaciais do Azure e retorná-lo de volta para o aplicativo cliente.
 
-O token de acesso do AD do Azure é recuperado usando a biblioteca ADAL, conforme descrito na documentação a seguir: [ https://docs.microsoft.com/azure/active-directory/develop/v1-overview ](../../active-directory/develop/v1-overview.md); você deve seguir as etapas listadas em "Inícios rápidos", que incluem:
+O token de acesso do AD do Azure é recuperado usando a biblioteca Adal, conforme descrito na [https://docs.microsoft.com/azure/active-directory/develop/v1-overview](../../active-directory/develop/v1-overview.md)seguinte documentação:. você deve seguir as etapas listadas em "inícios rápidos", que incluem:
 
 1.  Configuração no portal do Azure:
-    1.  Registre seu aplicativo no Azure AD:
-        1.  No portal do Azure, navegue até **Azure Active Directory**e selecione **registros do aplicativo**
+    1.  Registrar seu aplicativo no Azure AD:
+        1.  Em portal do Azure, navegue até **Azure Active Directory**e selecione **registros do aplicativo**
         2.  Selecione **novo registro de aplicativo**
-        3.  Insira o nome do seu aplicativo, selecione **aplicativo Web / API** como o tipo de aplicativo e digite a URL de autenticação para seu serviço. Em seguida, pressione **criar**.
-        4.  No aplicativo, pressione **as configurações**, em seguida, selecione o **chaves** guia. Insira o nome da sua chave, selecione uma duração e pressione **salvar**. Certifique-se de salvar o valor da chave que é exibido no momento, pois você precisará incluí-lo no código do seu serviço web.
-    2.  Conceda a seu aplicativo e/ou os usuários o acesso ao recurso de:
-        1.  Navegue até seu recurso âncoras espacial no portal do Azure
-        2.  Alterne para o **controle de acesso (IAM)** guia
-        3.  Ocorrências **Adicionar atribuição de função**
-        1.  [Selecione uma função](#role-based-access-control)
-        2.  No **selecionar** de campo, insira o nome do aplicativo (s) criado por você e à qual você deseja atribuir acesso. Se você quiser que os usuários do seu aplicativo têm funções diferentes em relação à conta âncoras espacial, você deve registrar vários aplicativos no Azure AD e atribuir a cada um uma função separada. Em seguida, implemente a lógica de autorização para usar a função correta para seus usuários.  
-    3.  Ocorrências **salvar**.
-2.  Em seu código (Observação: você pode usar o serviço de exemplo incluído no GitHub):
-    1.  Certifique-se de usar a ID do aplicativo, o segredo do aplicativo e Uri de redirecionamento do seu próprio aplicativo do Azure AD como o ID do cliente, segredo e parâmetros de RedirectUri em ADAL
-    2.  Defina a ID de locatário para sua própria ID de locatário AAAzure adicionar no parâmetro autoridade em ADAL
-    3.  Na sua solicitação de token, defina as **resource** para "https://sts.mixedreality.azure.com" 
+        3.  Insira o nome do seu aplicativo, selecione **aplicativo Web/API** como o tipo de aplicativo e insira a URL de autenticação para seu serviço. Em seguida, clique em **criar**.
+        4.  Nesse aplicativo, clique em **configurações**e selecione a guia **chaves** . Insira o nome da sua chave, selecione uma duração e clique em **salvar**. Certifique-se de salvar o valor de chave que é exibido nesse momento, pois você precisará incluí-lo no código do serviço Web.
+    2.  Conceda ao seu aplicativo e/ou usuários acesso ao recurso:
+        1.  Navegue até o recurso âncoras espaciais em portal do Azure
+        2.  Alternar para a guia **controle de acesso (iam)**
+        3.  Clique em **Adicionar atribuição de função**
+        1.  [Selecionar uma função](#role-based-access-control)
+        2.  No campo **selecionar** , insira o nome dos aplicativos que você criou e ao qual você deseja atribuir acesso. Se você quiser que os usuários do aplicativo tenham funções diferentes em relação à conta de âncoras espaciais, registre vários aplicativos no Azure AD e atribua a cada uma delas uma função separada. Em seguida, implemente sua lógica de autorização para usar a função certa para seus usuários.  
+    3.  Clique em **salvar**.
+2.  Em seu código (Observação: você pode usar o exemplo de serviço incluído no GitHub):
+    1.  Certifique-se de usar a ID do aplicativo, o segredo do aplicativo e o URI de redirecionamento do seu próprio aplicativo do Azure AD como a ID do cliente, o segredo e os parâmetros RedirectUri no ADAL
+    2.  Defina a ID do locatário como seu próprio AAAzure adicionar ID de locatário no parâmetro Authority na ADAL
+    3.  Em sua solicitação de token, defina o **recurso** como https://sts.mixedreality.azure.com"" 
 
-Com isso, seu serviço de back-end pode recuperar um token do AD do Azure. Em seguida, ele pode trocá-lo por um token MR que ela será retornada ao cliente. Usar um token do AD do Azure para recuperar um token MR é feito por meio de uma chamada REST. Aqui está uma chamada de exemplo:
+Com isso, o serviço de back-end pode recuperar um token do Azure AD. Em seguida, ele pode alterá-lo para um token MR que ele retornará ao cliente. Usar um token do Azure AD para recuperar um token MR é feito por meio de uma chamada REST. Aqui está uma chamada de exemplo:
 
 ```
 GET https://mrc-auth-prod.trafficmanager.net/Accounts/35d830cb-f062-4062-9792-d6316039df56/token HTTP/1.1
@@ -198,11 +198,11 @@ MS-CV: 05JLqWeKFkWpbdY944yl7A.0
 {"AccessToken":"eyJhbGciOiJSUzI1NiIsImtpZCI6IjI2MzYyMTk5ZTI2NjQxOGU4ZjE3MThlM2IyMThjZTIxIiwidHlwIjoiSldUIn0.eyJqdGkiOiJmMGFiNWIyMy0wMmUxLTQ1MTQtOWEzNC0xNzkzMTA1NTc4NzAiLCJjYWkiOiIzNWQ4MzBjYi1mMDYyLTQwNjItOTc5Mi1kNjMxNjAzOWRmNTYiLCJ0aWQiOiIwMDAwMDAwMC0wMDAwLTAwMDAtMDAwMC0wMDAwMDAwMDAwMDAiLCJhaWQiOiIzNWQ4MzBjYi1mMDYyLTQwNjItOTc5Mi1kNjMxNjAzOWRmNTYiLCJhYW8iOi0xLCJhcHIiOiJlYXN0dXMyIiwicmlkIjoiL3N1YnNjcmlwdGlvbnMvNzIzOTdlN2EtNzA4NC00ODJhLTg3MzktNjM5Y2RmNTMxNTI0L3Jlc291cmNlR3JvdXBzL3NhbXBsZV9yZXNvdXJjZV9ncm91cC9wcm92aWRlcnMvTWljcm9zb2Z0Lk1peGVkUmVhbGl0eS9TcGF0aWFsQW5jaG9yc0FjY291bnRzL2RlbW9fYWNjb3VudCIsIm5iZiI6MTU0NDU0NzkwMywiZXhwIjoxNTQ0NjM0MzAzLCJpYXQiOjE1NDQ1NDc5MDMsImlzcyI6Imh0dHBzOi8vbXJjLWF1dGgtcHJvZC50cmFmZmljbWFuYWdlci5uZXQvIiwiYXVkIjoiaHR0cHM6Ly9tcmMtYW5jaG9yLXByb2QudHJhZmZpY21hbmFnZXIubmV0LyJ9.BFdyCX9UJj0i4W3OudmNUiuaGgVrlPasNM-5VqXdNAExD8acFJnHdvSf6uLiVvPiQwY1atYyPbOnLYhEbIcxNX-YAfZ-xyxCKYb3g_dbxU2w8nX3zDz_X3XqLL8Uha-rkapKbnNgxq4GjM-EBMCill2Svluf9crDmO-SmJbxqIaWzLmlUufQMWg_r8JG7RLseK6ntUDRyDgkF4ex515l2RWqQx7cw874raKgUO4qlx0cpBAB8cRtGHC-3fA7rZPM7UQQpm-BC3suXqRgROTzrKqfn_g-qTW4jAKBIXYG7iDefV2rGMRgem06YH_bDnpkgUa1UgJRRTckkBuLkO2FvA"}
 ```
 
-Em que o cabeçalho de autorização é formatado da seguinte maneira: `Bearer <accoundId>:<accountKey>`
+Onde o cabeçalho de autorização é formatado da seguinte maneira:`Bearer <accoundId>:<accountKey>`
 
 E a resposta contém o token MR em texto sem formatação.
  
-Esse token MR, em seguida, é retornado ao cliente. Seu aplicativo cliente pode, em seguida, defini-lo como seu token de acesso na configuração de sessão de nuvem.
+Esse token Sr é retornado para o cliente. Seu aplicativo cliente pode defini-lo como seu token de acesso na configuração da sessão de nuvem.
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
@@ -228,33 +228,33 @@ _cloudSession!.configuration.accessToken = "MyAccessToken"
 mCloudSession.getConfiguration().setAccessToken("MyAccessToken");
 ```
 
-# <a name="c-ndktabcpp"></a>[C++ NDK](#tab/cpp)
+# <a name="c-ndktabcpp"></a>[C++NDK](#tab/cpp)
 
 ```cpp
 auto configuration = cloudSession_->Configuration();
 configuration->AccessToken(R"(MyAccessToken)");
 ```
 
-# <a name="c-winrttabcppwinrt"></a>[C++ WinRT](#tab/cppwinrt)
+# <a name="c-winrttabcppwinrt"></a>[C++WinRT](#tab/cppwinrt)
 
 ```cpp
 auto configuration = m_cloudSession.Configuration();
 configuration.AccessToken(LR"(MyAccessToken)");
 ```
 
-***
+---
 
 ## <a name="role-based-access-control"></a>Controle de acesso baseado em função
 
-Para ajudar a controlar o nível de acesso concedido a aplicativos, serviços ou usuários do AD do Azure do seu serviço, as seguintes funções foram criadas para a atribuição de conforme necessário nas suas contas do âncoras espacial do Azure:
+Para ajudar a controlar o nível de acesso concedido a aplicativos, serviços ou usuários do Azure AD do seu serviço, as seguintes funções foram criadas para você atribuir conforme necessário em relação às suas contas de âncoras espaciais do Azure:
 
-- **Proprietário da conta âncoras espacial**: aplicativos ou usuários que tenham essa função são capazes de criar âncoras espaciais, consultá-las e excluí-los. Quando você autenticar-se à sua conta usando as chaves de conta, o **espacial proprietário da conta âncoras** função é atribuída à entidade de segurança autenticada. 
-- **Colaborador da conta âncoras espacial**: aplicativos ou usuários que tenham essa função podem criar âncoras espaciais, a consulta para eles, mas não é possível excluí-los. 
-- **Leitor de conta âncoras espacial**: aplicativos ou usuários que tenham essa função só são capazes de consultar âncoras espaciais, mas não é possível criar novos, excluir os existentes ou atualizar metadados em âncoras espaciais. Isso normalmente é usado para aplicativos em que alguns usuários coletem o ambiente, enquanto outros só podem recuperar âncoras colocadas anteriormente nesse ambiente.
+- **Proprietário da conta**de âncoras espaciais: os aplicativos ou usuários que têm essa função podem criar âncoras espaciais, consultá-los e excluí-los. Quando você se autentica em sua conta usando chaves de conta, a função de **proprietário da conta** de âncoras espaciais é atribuída à entidade de segurança autenticada. 
+- **Colaborador de conta**de âncoras espaciais: os aplicativos ou usuários que têm essa função podem criar âncoras espaciais, consultá-los, mas não podem excluí-los. 
+- **Leitor de conta**de âncoras espaciais: os aplicativos ou usuários que têm essa função só podem consultar âncoras espaciais, mas não podem criar novos, excluir ou atualizar metadados em âncoras espaciais. Normalmente, isso é usado para aplicativos em que alguns usuários separam o ambiente, enquanto outros só podem recuperar âncoras previamente colocadas nesse ambiente.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Crie seu primeiro aplicativo com âncoras espacial do Azure.
+Crie seu primeiro aplicativo com âncoras espaciais do Azure.
 
 > [!div class="nextstepaction"]
 > [Unity](../unity-overview.yml)

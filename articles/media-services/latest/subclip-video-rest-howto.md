@@ -1,6 +1,6 @@
 ---
-title: Subclipe um vídeo durante a codificação com a API de REST de serviços de mídia do Azure
-description: Este tópico descreve como subclipe um vídeo quando estiver codificando com os serviços de mídia do Azure usando o REST
+title: Subclipe um vídeo ao codificar com API REST de Serviços de Mídia do Azure
+description: Este tópico descreve como subcortar um vídeo ao codificar com os serviços de mídia do Azure usando REST
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -13,41 +13,41 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 06/10/2019
 ms.author: juliako
-ms.openlocfilehash: df8c8a4040b4aae4379b4bfe0e9a16337588dd1b
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: 3557aef6213955ef77542bffafe0a2b0c374ed68
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67305113"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68704441"
 ---
-# <a name="subclip-a-video-when-encoding-with-media-services---rest"></a>Um vídeo quando estiver codificando com os serviços de mídia - REST do subclipe
+# <a name="subclip-a-video-when-encoding-with-media-services---rest"></a>Subclipe um vídeo ao codificar com os serviços de mídia-REST
 
-Você pode cortar ou subclipe um vídeo quando estiver codificando-o usando um [trabalho](https://docs.microsoft.com/rest/api/media/jobs). Essa funcionalidade funciona com qualquer [transformar](https://docs.microsoft.com/rest/api/media/transforms) que é criado usando o [BuiltInStandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) predefinições, ou o [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset) predefinições. 
+Você pode cortar ou subcortar um vídeo ao codificá-lo usando um [trabalho](https://docs.microsoft.com/rest/api/media/jobs). Essa funcionalidade funciona com qualquer [transformação](https://docs.microsoft.com/rest/api/media/transforms) criada usando as predefinições [BuiltInStandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#builtinstandardencoderpreset) ou as predefinições de [StandardEncoderPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset) . 
 
-O exemplo REST neste tópico cria um trabalho que corta um vídeo, ele envia um trabalho de codificação. 
+O exemplo de REST neste tópico cria um trabalho que corta um vídeo à medida que envia um trabalho de codificação. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 Para concluir as etapas descritas neste tópico, você precisa:
 
-- [Criar uma conta de serviços de mídia do Azure](create-account-cli-how-to.md).
+- [Crie uma conta dos serviços de mídia do Azure](create-account-cli-how-to.md).
 - [Configurar o Postman para chamadas à API REST de Serviços de Mídia do Azure](media-rest-apis-with-postman.md).
     
     Certifique-se de seguir a última etapa no tópico [Obter token do Azure AD](media-rest-apis-with-postman.md#get-azure-ad-token). 
-- Criar uma transformação e uma saída de ativos. Você pode ver como criar uma transformação e uma saída de ativos na [um arquivo remoto com base na URL de codificar e transmitir vídeo - REST](stream-files-tutorial-with-rest.md) tutorial.
-- Examine os [conceito de codificação](encoding-concept.md) tópico.
+- Crie uma transformação e um ativo de saída. Você pode ver como criar uma transformação e um ativo de saída no tutorial [codificar um arquivo remoto baseado em URL e transmitir o vídeo REST](stream-files-tutorial-with-rest.md) .
+- Examine o tópico [conceito de codificação](encoding-concept.md) .
 
-## <a name="create-a-subclipping-job"></a>Criar um trabalho de subclipping
+## <a name="create-a-subclipping-job"></a>Criar um trabalho de subcorte
 
-1. Na coleção de Postman que você baixou, selecione **transforma e trabalhos** -> **criar o trabalho com o recorte Sub**.
+1. Na coleção de postmaster que você baixou, selecione **transformações e trabalhos** -> **criar trabalho com**o subcorte.
     
-    O **colocar** solicitação tem esta aparência:
+    A solicitação **Put** é parecida com esta:
     
     ```
     https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/transforms/:transformName/jobs/:jobName?api-version={{api-version}}
     ```
-1. Atualize o valor da variável de ambiente "transformName" com seu nome de transformação. 
-1. Selecione o **corpo** guia e atualizar "myOutputAsset" com a saída do nome do ativo.
+1. Atualize o valor da variável de ambiente "transformName" com o nome da transformação. 
+1. Selecione a guia **corpo** e atualize o "myOutputAsset" com o nome do ativo de saída.
 
     ```
     {
@@ -82,7 +82,7 @@ Para concluir as etapas descritas neste tópico, você precisa:
     ```
 1. Pressione **Enviar**.
 
-    Você vê o **resposta** com as informações sobre um trabalho que foi criada e enviada e o status do trabalho. 
+    Você verá a **resposta** com as informações sobre o trabalho que foi criado e enviado e o status do trabalho. 
 
 ## <a name="next-steps"></a>Próximas etapas
 

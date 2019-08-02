@@ -2,18 +2,18 @@
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: include
-ms.date: 07/12/2019
+ms.date: 07/30/2019
 ms.author: tomfitz
-ms.openlocfilehash: 5e251402a89f84a0aa67eee676c1794207dd24fb
-ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
+ms.openlocfilehash: f027f5b295d75c105e81360a10718239e5b08e4d
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67869882"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698287"
 ---
 | Recurso | Limite padrão | Limite máximo |
 | --- | --- | --- |
-| Recursos por [grupo de recursos](../articles/azure-resource-manager/resource-group-overview.md#resource-groups), por tipo de recurso |800 |Varia por tipo de recurso |
+| Recursos por [grupo de recursos](../articles/azure-resource-manager/resource-group-overview.md#resource-groups), por tipo de recurso |800 |Alguns tipos de recursos podem exceder o limite de 800. Consulte [recursos não limitados a 800 instâncias por grupo de recursos](../articles/azure-resource-manager/resources-without-rg-limit.md). |
 | Implantações por grupo de recursos no histórico de implantações |800<sup>1</sup> |800 |
 | Recursos por implantação |800 |800 |
 | Bloqueios de gerenciamento por escopo exclusivo |20 |20 |
@@ -27,10 +27,10 @@ ms.locfileid: "67869882"
 
 | Valor | Limite padrão | Limite máximo |
 | --- | --- | --- |
-| parâmetros |256 |256 |
+| Parâmetros |256 |256 |
 | Variáveis |256 |256 |
 | Recursos (incluindo a contagem de cópias) |800 |800 |
-| outputs |64 |64 |
+| Saídas |64 |64 |
 | Expressão de modelo |24.576 caracteres |24.576 caracteres |
 | Recursos em modelos exportados |200 |200 | 
 | Tamanho do modelo |4 MB |4 MB |

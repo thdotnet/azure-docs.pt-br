@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 64e190e3e70459846b50e1f68158b0a5c458a216
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 14e7a4389c192dde8d086a69a35114f3b8b33e96
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67482066"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68562189"
 ---
 # <a name="how-sso-to-on-premises-resources-works-on-azure-ad-joined-devices"></a>Como o SSO para recursos locais funciona em dispositivos associados ao Microsoft Azure Active Directory
 
@@ -24,7 +24,7 @@ Provavelmente, não é surpresa que um dispositivo associado ao Azure Active Dir
 
 Este artigo explica como isso funciona.
 
-## <a name="how-it-works"></a>Como ele funciona 
+## <a name="how-it-works"></a>Como funciona 
 
 Porque você precisa se lembrar de apenas um único nome de usuário e senha, o SSO simplifica o acesso a seus recursos e melhora a segurança do seu ambiente. Com um dispositivo associado ao Azure Active Directory, seus usuários já têm uma experiência de SSO para os aplicativos na nuvem em seu ambiente. Se o seu ambiente tiver um Azure Active Directory e um AD local, você provavelmente desejará expandir o escopo da sua experiência de SSO para os aplicativos de linha de negócios (LOB), compartilhamentos de arquivos e impressoras no local.  
 
@@ -51,7 +51,7 @@ Com o SSO, em um dispositivo associado ao Microsoft Azure Active Directory, voc�
 - Acessar um caminho UNC em um servidor membro do AD
 - Acessar um servidor da Web membro do AD configurado para segurança integrada do Windows 
 
-Se você quiser gerenciar seu AD local a partir de um dispositivo Windows, instale o [Remote Server Administration Tools para Windows 10](https://www.microsoft.com/en-us/download/details.aspx?id=45520).
+Se você quiser gerenciar seu AD local a partir de um dispositivo Windows, instale o [Remote Server Administration Tools para Windows 10](https://www.microsoft.com/download/details.aspx?id=45520).
 
 Você pode usar:
 

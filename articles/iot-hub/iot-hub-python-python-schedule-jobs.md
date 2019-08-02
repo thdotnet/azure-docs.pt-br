@@ -1,20 +1,19 @@
 ---
 title: Agendar trabalhos com o Hub IoT do Azure (Python) | Microsoft Docs
 description: Como agendar um trabalho do Hub IoT do Azure para invocar um método direto em vários dispositivos. Você pode usar os SDKs do IoT do Azure para Python para implementar os aplicativos do dispositivo simulado e um aplicativo de serviço para executar o trabalho.
-author: kgremban
-manager: philmea
+author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: python
 ms.topic: conceptual
-ms.date: 02/16/2019
-ms.author: kgremban
-ms.openlocfilehash: f4a7cbb5c4f8f4a019cbf5d63a6f2ffe8092546e
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.date: 07/30/2019
+ms.author: robinsh
+ms.openlocfilehash: 81b2145e6107558f2d9698c7e5d03658f1129b00
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68405881"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68667950"
 ---
 # <a name="schedule-and-broadcast-jobs-python"></a>Agendar e difundir trabalhos (Python)
 
@@ -48,16 +47,14 @@ No fim deste tutorial, você tem dois aplicativos de Python:
 
 **scheduleJobService.py**, que chama um método direto no aplicativo do dispositivo simulado e atualiza as propriedades desejadas do dispositivo gêmeo usando um trabalho.
 
-Para concluir este tutorial, você precisará do seguinte:
+[!INCLUDE [iot-hub-include-python-sdk-note](../../includes/iot-hub-include-python-sdk-note.md)]
 
-* [Python 2. x ou 3. x](https://www.python.org/downloads/). Certifique-se de usar a instalação de 32 bits ou 64 bits conforme exigido pelo seu programa de instalação. Quando solicitado durante a instalação, certifique-se de adicionar Python à variável de ambiente específica da plataforma. Se você estiver usando o Python 2.x, talvez seja necessário [instalar ou atualizar o *pip*, o sistema de gerenciamento de pacotes do Python](https://pip.pypa.io/en/stable/installing/).
+Veja a seguir as instruções de instalação para os pré-requisitos.
 
-* Se você está usando o sistema operacional Windows, o [Pacote redistribuível do Visual C++](https://www.microsoft.com/download/confirmation.aspx?id=48145) permite o uso de DLLs nativas do Python.
-
-* Uma conta ativa do Azure. (Se você não tiver uma conta, poderá criar uma [conta gratuita](https://azure.microsoft.com/pricing/free-trial/) em apenas alguns minutos.)
+[!INCLUDE [iot-hub-include-python-installation-notes](../../includes/iot-hub-include-python-installation-notes.md)]
 
 > [!NOTE]
-> O **SDK do IoT do Azure para Python** não dá suporte diretamente à funcionalidade **Trabalhos**. Em vez disso, este tutorial oferece uma solução alternativa usando temporizadores e segmentos assíncronos. Para obter informações mais atualizadas, confira a lista de recursos do **SDK de cliente do serviço** na página [SDK do IoT do Azure para Python](https://github.com/Azure/azure-iot-sdk-python). 
+> O **SDK do IoT do Azure para Python** não dá suporte diretamente à funcionalidade **Trabalhos**. Em vez disso, este tutorial oferece uma solução alternativa usando temporizadores e segmentos assíncronos. Para obter informações mais atualizadas, confira a lista de recursos do **SDK de cliente do serviço** na página [SDK do IoT do Azure para Python](https://github.com/Azure/azure-iot-sdk-python).
 >
 
 ## <a name="create-an-iot-hub"></a>Crie um hub IoT

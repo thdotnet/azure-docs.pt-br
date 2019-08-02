@@ -10,21 +10,22 @@ ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alch
-ms.openlocfilehash: ffb159dc684b4b6663dcb966706d4745ab88a403
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 93868bb014809693e7614e74bde7db864de95c04
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61337798"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68704956"
 ---
 # <a name="journal-entity"></a>Entidade Diário
 
 <sub> *Os atributos a seguir são específicos da entidade de diário. (Ty = '2') </sub>
 
-NOME    |DESCRIÇÃO                            |Type       | Operações
+Nome    |Descrição                            |Tipo       | Operações
 ------- | ------------------------------------- | --------- | ----------------------------
-ID      |ID da Entidade                              |Int64      |É igual a
-DJN     |Nome normalizado do diário                |Cadeia de caracteres     |Nenhum
-JN      |Nome de exibição do diário                   |Cadeia de caracteres     |É igual a
-CC      |Contagem total de citações do diário           |Int32      |Nenhum  
-ECC     |Contagem total estimada de citações do diário |Int32      |Nenhum
+Id      |ID da Entidade                              |Int64      |Igual a
+DJN     |Nome normalizado do diário                |Cadeia     |nenhum
+JN      |Nome de exibição do diário                   |Cadeia     |Igual a
+CC      |Contagem total de citações do diário           |Int32      |nenhum  
+ECC     |Contagem total estimada de citações do diário |Int32      |nenhum

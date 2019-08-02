@@ -15,66 +15,63 @@ ms.workload: azure-vs
 ms.date: 02/18/2019
 ms.author: glenga
 ms.reviewer: david.ebbo;suwatch;pbatum;naren.soni
-ms.openlocfilehash: e66a2ffa6578ed0c9eb5eb19659adf9ba253bbeb
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 2695ee2751a2834466c42d224101af246b829aca
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67613367"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68717632"
 ---
 # <a name="develop-and-deploy-webjobs-using-visual-studio---azure-app-service"></a>Desenvolver e implantar o WebJobs usando o Visual Studio – Serviço de Aplicativo do Azure
 
-Este artigo explica como usar o Visual Studio para implantar um projeto de aplicativo de Console em um aplicativo web no [serviço de aplicativo](overview.md) como um [Azure WebJob](https://go.microsoft.com/fwlink/?LinkId=390226). Para obter informações sobre como implantar o WebJobs usando o [portal do Azure](https://portal.azure.com), consulte [Executar tarefas em segundo plano com o WebJobs](webjobs-create.md).
+Este artigo explica como usar o Visual Studio para implantar um projeto de aplicativo de console em um aplicativo Web no [serviço de aplicativo](overview.md) como um [WebJob do Azure](https://go.microsoft.com/fwlink/?LinkId=390226). Para obter informações sobre como implantar o WebJobs usando o [portal do Azure](https://portal.azure.com), consulte [Executar tarefas em segundo plano com o WebJobs](webjobs-create.md).
 
-Você pode publicar diversos trabalhos Web em um único aplicativo web. Certifique-se de que cada trabalho Web em um aplicativo web tem um nome exclusivo.
+Você pode publicar vários webjobs em um único aplicativo Web. Certifique-se de que cada WebJob em um aplicativo Web tenha um nome exclusivo.
 
-Versão 3.x do [SDK do Azure WebJobs](webjobs-sdk-how-to.md) permite que você desenvolva trabalhos Web que são executados como aplicativos .NET Core ou .NET Framework a aplicativos, enquanto a versão 2.x oferece suporte a .NET Framework. A maneira que você implantar um projeto de trabalhos Web é diferente para projetos do .NET Core em comparação com aqueles do .NET Framework.
+A versão 3. x do [SDK do Azure WebJobs](webjobs-sdk-how-to.md) permite que você desenvolva trabalhos Web que são executados como aplicativos .NET Core ou .NET Framework aplicativos, enquanto a versão 2. x dá suporte apenas à .NET Framework. A maneira como você implanta um projeto de trabalhos Web é diferente para projetos do .NET Core versus .NET Framework.
 
-## <a name="webjobs-as-net-core-console-apps"></a>Trabalhos Web como aplicativos de console .NET Core
+## <a name="webjobs-as-net-core-console-apps"></a>Trabalhos Web como aplicativos de console do .NET Core
 
-Ao usar a versão 3.x do WebJobs, você pode criar e publicar WebJobs como aplicativos de console .NET Core. Para obter instruções passo a passo criar e publicar um aplicativo de console .NET Core no Azure como um trabalho Web, consulte [Introdução ao SDK de WebJobs do Azure para processamento em segundo plano controlada por evento](webjobs-sdk-get-started.md).
+Ao usar a versão 3. x dos trabalhos Web, você pode criar e publicar trabalhos Web como aplicativos de console do .NET Core. Para obter as instruções passo a passo para criar e publicar um aplicativo de console do .NET Core no Azure como um WebJob, consulte Introdução [ao SDK do Azure WebJobs para processamento em segundo plano orientado a eventos](webjobs-sdk-get-started.md).
 
 > [!NOTE]
-> Trabalhos Web do .NET core não pode ser vinculado com projetos da web. Se você precisar implantar o seu trabalho Web com um aplicativo web, você deve [criar seu WebJob como um aplicativo de console do .NET Framework](#webjobs-as-net-framework-console-apps).  
+> Os webjobs do .NET Core não podem ser vinculados a projetos da Web. Se você precisar implantar seu WebJob com um aplicativo Web, deverá [criar seu webjob como um aplicativo de console .NET Framework](#webjobs-as-net-framework-console-apps).  
 
-### <a name="deploy-to-azure-app-service"></a>Implantar o serviço de aplicativo do Azure
+### <a name="deploy-to-azure-app-service"></a>Implantar no serviço Azure App
 
-Publicando um WebJob do .NET Core no serviço de aplicativo do Visual Studio usa as mesmas ferramentas como publicar um aplicativo ASP.NET Core.
+A publicação de um WebJob do .NET Core no serviço de aplicativo do Visual Studio usa as mesmas ferramentas que a publicação de um aplicativo ASP.NET Core.
 
 [!INCLUDE [webjobs-publish-net-core](../../includes/webjobs-publish-net-core.md)] 
 
 ### <a name="webjob-types"></a>Tipos de WebJob
 
-Por padrão, um trabalho Web publicados a partir de um projeto de console é executado apenas quando disparado do .NET Core ou sob demanda. Você também pode atualizar o projeto para [executada em uma agenda](#scheduled-execution) ou executado continuamente.
+Por padrão, um WebJob publicado a partir de um projeto de console do .NET Core é executado somente quando disparado ou sob demanda. Você também pode atualizar o projeto para ser [executado em um agendamento](#scheduled-execution) ou executado continuamente.
 
 [!INCLUDE [webjobs-alwayson-note](../../includes/webjobs-always-on-note.md)]
 
 #### <a name="scheduled-execution"></a>Execução agendada
 
-Quando você publica um aplicativo de console .NET Core no Azure, um novo *Settings* arquivo é adicionado ao projeto. Use esse arquivo para definir uma agenda de execução do trabalho Web. Para obter mais informações, consulte [agendar um WebJob disparado](#scheduling-a-triggered-webjob).
+Quando você publica um aplicativo de console do .NET Core no Azure, um novo arquivo *Settings. Job* é adicionado ao projeto. Use esse arquivo para definir um agendamento de execução para seu WebJob. Para obter mais informações, consulte [agendando um WebJob](#scheduling-a-triggered-webjob)disparado.
 
 #### <a name="continuous-execution"></a>Execução contínua
 
-Você pode usar o Visual Studio para alterar o trabalho Web seja executado continuamente quando Always On está habilitado no Azure.
+Você pode usar o Visual Studio para alterar o trabalho Web para ser executado continuamente quando o Always On estiver habilitado no Azure.
 
-1. Se você ainda não fez isso, [publicar o projeto no Azure](#deploy-to-azure-app-service).
+1. Se você ainda não tiver feito isso, [publique o projeto no Azure](#deploy-to-azure-app-service).
 
 1. No **Gerenciador de Soluções**, clique com o botão direito do mouse no nome do projeto e selecione **Publicar**.
 
-1. No **Publish** guia, escolha **configurações**. 
+1. Na guia **publicar** , escolha **configurações**. 
 
-1. No **configurações de perfil** caixa de diálogo, escolha **Continuous** para **tipo de WebJob**e escolha **salvar**.
+1. Na caixa de diálogo **configurações de perfil** , escolha **contínuo** para o **tipo WebJob**e escolha **salvar**.
 
-    ![Caixa de diálogo Configurações de publicação para um trabalho Web](./media/webjobs-dotnet-deploy-vs/publish-settings.png)
+    ![Caixa de diálogo Configurações de publicação para um WebJob](./media/webjobs-dotnet-deploy-vs/publish-settings.png)
 
-1. Selecione **publicar** republicar o trabalho Web com as configurações atualizadas.
+1. Selecione **publicar** para republicar o WebJob com as configurações atualizadas.
 
-## <a name="webjobs-as-net-framework-console-apps"></a>Trabalhos Web como aplicativos de console do .NET Framework  
+## <a name="webjobs-as-net-framework-console-apps"></a>Trabalhos Web como aplicativos de console .NET Framework  
 
-Quando o Visual Studio implanta um projeto habilitado para trabalhos Web o aplicativo de Console do .NET Framework, ele executa duas tarefas:
-
-* Copia os arquivos de tempo de execução para a pasta apropriada no aplicativo web (*App_Data/trabalhos/continuous* para trabalhos Web contínuos e *App_Data/trabalhos/triggered* para trabalhos Web agendados ou sob demanda).
-* Configura trabalhos do [Agendador do Microsoft Azure](https://docs.microsoft.com/azure/scheduler/) para WebJobs agendados para execução em determinadas horas. (Isso não é necessário para Trabalhos Web contínuos.)
+Quando o Visual Studio implanta um projeto de aplicativo de console .NET Framework habilitado para trabalhos Web, ele copia os arquivos de tempo de execução para a pasta apropriada no aplicativo (*App_Data/Jobs/Continuous* para webjobs contínuos e *App_Data/Jobs/* disparados para Trabalhos Web agendados ou sob demanda).
 
 Um projeto habilitado para Trabalhos Web tem os seguintes itens adicionados:
 
@@ -93,7 +90,7 @@ Um projeto habilitado para Trabalhos Web tem os seguintes itens adicionados:
 
 Se estiver usando o Visual Studio 2015, instale o [SDK do Azure para .NET (Visual Studio 2015)](https://azure.microsoft.com/downloads/).
 
-Se você estiver usando o Visual Studio de 2019, instale o [carga de trabalho de desenvolvimento do Azure](https://docs.microsoft.com/visualstudio/install/install-visual-studio#step-4---choose-workloads).
+Se você estiver usando o Visual Studio 2019, instale a [carga de trabalho de desenvolvimento do Azure](https://docs.microsoft.com/visualstudio/install/install-visual-studio#step-4---choose-workloads).
 
 ### <a id="convert"></a> Habilitar a implantação do WebJobs em um projeto existente do Aplicativo de Console
 
@@ -213,9 +210,9 @@ Para implantar um projeto do WebJobs sozinho, clique com o botão direito do mou
 
 Para um Trabalho Web independente, o mesmo assistente **Publicar Web** usado em projetos Web é exibido, mas com menos configurações disponíveis para serem alteradas.
 
-## <a name="scheduling-a-triggered-webjob"></a>Agendar um WebJob disparado
+## <a name="scheduling-a-triggered-webjob"></a>Agendando um WebJob disparado
 
-Trabalhos Web usa um *Settings* arquivo para determinar quando um trabalho Web é executada. Use esse arquivo para definir uma agenda de execução do trabalho Web. O exemplo a seguir executa a cada hora entre 9H às 17H:
+O webjobs usa um arquivo *Settings. Job* para determinar quando um WebJob é executado. Use esse arquivo para definir um agendamento de execução para seu WebJob. O exemplo a seguir é executado a cada hora das 9h às 17:00:
 
 ```json
 {
@@ -223,26 +220,26 @@ Trabalhos Web usa um *Settings* arquivo para determinar quando um trabalho Web �
 }
 ```
 
-Esse arquivo deve estar localizado na raiz da pasta de trabalhos Web, ao longo do lado do script do seu WebJob, como `wwwroot\app_data\jobs\triggered\{job name}` ou `wwwroot\app_data\jobs\continuous\{job name}`. Ao implantar um WebJob por meio do Visual Studio, marque as propriedades do arquivo `settings.job` como **Copiar se mais recente**. 
+Esse arquivo deve estar localizado na raiz da pasta webjobs, ao longo do script do WebJob, `wwwroot\app_data\jobs\triggered\{job name}` como ou. `wwwroot\app_data\jobs\continuous\{job name}` Ao implantar um WebJob por meio do Visual Studio, marque as propriedades do arquivo `settings.job` como **Copiar se mais recente**. 
 
-Quando você [criar um trabalho Web do portal do Azure](webjobs-create.md), o arquivo Settings job é criado para você.
+Quando você [cria um WebJob na portal do Azure](webjobs-create.md), o arquivo Settings. Job é criado para você.
 
 [!INCLUDE [webjobs-alwayson-note](../../includes/webjobs-always-on-note.md)]
 
 ### <a name="cron-expressions"></a>Expressões CRON
 
-Trabalhos Web usa as mesmas expressões de CRON para o agendamento do gatilho de temporizador no Azure Functions. Para saber mais sobre o suporte CRON, consulte o [artigo de referência de gatilho de temporizador](../azure-functions/functions-bindings-timer.md#cron-expressions).
+O webjobs usa as mesmas expressões CRON para agendamento como o gatilho de temporizador no Azure Functions. Para saber mais sobre o suporte a CRON, consulte o [artigo de referência de gatilho](../azure-functions/functions-bindings-timer.md#cron-expressions)de temporizador.
 
-### <a name="settingjob-reference"></a>referência de Setting.job
+### <a name="settingjob-reference"></a>configuração. referência de trabalho
 
-As configurações a seguir têm suporte de trabalhos Web:
+As configurações a seguir são suportadas pelos trabalhos Web:
 
 | **Configuração** | **Tipo**  | **Descrição** |
 | ----------- | --------- | --------------- |
-| `is_in_place` | Todos | Permite que o trabalho seja executado no local sem primeiro ser copiado para uma pasta temporária. Para obter mais informações, consulte [diretório de trabalho de trabalhos Web](https://github.com/projectkudu/kudu/wiki/WebJobs#webjob-working-directory). |
-| `is_singleton` | Contínuo | Execute apenas os trabalhos Web em uma única instância quando escalado horizontalmente. Para obter mais informações, consulte [definir um trabalho contínuo como singleton](https://github.com/projectkudu/kudu/wiki/WebJobs-API#set-a-continuous-job-as-singleton). |
-| `schedule` | Disparado | Execute o trabalho Web em um agendamento de CRON. Para obter mais informações, consulte o [artigo de referência de gatilho de temporizador](../azure-functions/functions-bindings-timer.md#cron-expressions). |
-| `stopping_wait_time`| Todos | Permite o controle do comportamento de desligamento. Para obter mais informações, consulte [desligamento normal](https://github.com/projectkudu/kudu/wiki/WebJobs#graceful-shutdown). |
+| `is_in_place` | Todas | Permite que o trabalho seja executado no local sem ser copiado primeiro para uma pasta temporária. Para saber mais, consulte [diretório de trabalho de trabalhos](https://github.com/projectkudu/kudu/wiki/WebJobs#webjob-working-directory)Web. |
+| `is_singleton` | Contínuo | Só execute os trabalhos Web em uma única instância quando expandido. Para saber mais, consulte [definir um trabalho contínuo como singleton](https://github.com/projectkudu/kudu/wiki/WebJobs-API#set-a-continuous-job-as-singleton). |
+| `schedule` | Disparado | Execute o WebJob em uma agenda baseada em CRON. PARA saber mais, consulte o [artigo de referência do gatilho](../azure-functions/functions-bindings-timer.md#cron-expressions)de temporizador. |
+| `stopping_wait_time`| Todas | Permite o controle do comportamento de desligamento. Para saber mais, confira desligamento [normal](https://github.com/projectkudu/kudu/wiki/WebJobs#graceful-shutdown). |
 
 ## <a name="next-steps"></a>Próximas etapas
 

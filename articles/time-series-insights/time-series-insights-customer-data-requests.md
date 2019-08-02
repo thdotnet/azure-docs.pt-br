@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: time-series-insights
 services: time-series-insights
 ms.custom: seodec18
-ms.openlocfilehash: f99a54f5623100e057e0c02249f5886f46656a21
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a67e716300254b7ae73cf5c608e4ab9177638456
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66355924"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68677893"
 ---
 # <a name="summary-of-customer-data-request-features"></a>Resumo dos recursos de solicitação de dados do cliente
 
@@ -36,7 +36,7 @@ Um administrador de locatários pode excluir os dados do cliente usando o portal
 
 No entanto, antes de excluir os dados do cliente por meio do portal, você deve remover as políticas de acesso do usuário do ambiente do Time Series Insights no portal do Azure. Para obter mais informações, confira [Conceder o acesso a dados a um ambiente do Time Series Insights usando o portal do Azure](time-series-insights-data-access.md).
 
-Você também pode executar operações de exclusão em políticas de acesso usando a API REST. Para obter mais informações, confira [Políticas de Acesso – Excluir](/rest/api/time-series-insights/management/accesspolicies/delete).
+Você também pode executar operações de exclusão em políticas de acesso usando a API REST. Para obter mais informações, confira [Políticas de Acesso – Excluir](https://docs.microsoft.com/rest/api/time-series-insights/management/accesspolicies/delete).
 
 O Time Series Insights é integrado à folha Política no portal do Azure. O Time Series Insights e a folha Política permitem que você exiba, exporte e exclua os dados do usuário armazenados no serviço. Qualquer ação de exclusão realizada na folha Política do portal do Azure resulta na exclusão dos dados do usuário no Time Series Insights. Por exemplo, se um usuário tem uma consulta pessoal salva, essa consulta é excluída permanentemente do explorador do Time Series Insights. Se o usuário tem uma consulta compartilhada salva, a consulta é persistida, mas as informações do usuário são excluídas permanentemente. A observação a seguir contém instruções sobre como realizar essas tarefas.
 
@@ -48,7 +48,7 @@ De forma semelhante à exclusão de dados, um administrador de locatários pode 
 
 Caso você seja um administrador de locatários, exiba as políticas de acesso a dados no ambiente do Time Series Insights no portal do Azure. Para obter mais informações, confira [Conceder o acesso a dados a um ambiente do Time Series Insights usando o portal do Azure](time-series-insights-data-access.md).
 
-Também é possível executar operações de exportação nas políticas de acesso usando a operação "listar por ambiente" na API REST fornecida. Para obter mais informações, confira [Políticas de Acesso – Listar por Ambiente](/rest/api/time-series-insights/management/accesspolicies/listbyenvironment).
+Também é possível executar operações de exportação nas políticas de acesso usando a operação "listar por ambiente" na API REST fornecida. Para obter mais informações, confira [Políticas de Acesso – Listar por Ambiente](https://docs.microsoft.com/rest/api/time-series-insights/management/accesspolicies/listbyenvironment).
 
 ## <a name="to-delete-data-stored-within-time-series-insights"></a>Para excluir os dados armazenados no Time Series Insights
 
@@ -68,8 +68,8 @@ Para obter mais informações, confira [Configurando a retenção no Time Series
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* Leia mais sobre [concedendo acesso a dados para seu ambiente de TSI](./time-series-insights-data-access.md).
+* Leia mais sobre como [conceder acesso a dados ao seu ambiente de TSI](./time-series-insights-data-access.md).
 
-* Modo de exibição de [do Azure Time Series Insights explorer](time-series-insights-explorer.md).
+* Exiba o [Azure Time Series insights Explorer](time-series-insights-explorer.md).
 
-* Saiba mais sobre [Configurando a retenção no Time Series Insights](time-series-insights-how-to-configure-retention.md).
+* Saiba como [Configurar a retenção em time Series insights](time-series-insights-how-to-configure-retention.md).

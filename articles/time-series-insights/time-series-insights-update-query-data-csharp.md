@@ -1,5 +1,5 @@
 ---
-title: Consultar dados de um ambiente de visualização de Insights de série de tempo do Azure usando C# código | Microsoft Docs
+title: Consultar dados de um ambiente de visualização de C# Azure Time Series insights usando código | Microsoft Docs
 description: Este artigo descreve como consultar dados de um ambiente do Azure Time Series Insights codificando um aplicativo personalizado escrito na linguagem C# (C-sharp) do .NET.
 ms.service: time-series-insights
 services: time-series-insights
@@ -12,16 +12,16 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 05/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: fc5f35aedd52e206433afb0f556bc1cde8296232
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8fdfd39527ccd298b78ef2c4c895d1f667d8d33b
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66237468"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68677610"
 ---
-# <a name="query-data-from-the-azure-time-series-insights-preview-environment-using-c"></a>Consultar dados do ambiente do Azure visualização de Insights de série de tempo usandoC#
+# <a name="query-data-from-the-azure-time-series-insights-preview-environment-using-c"></a>Consultar dados do ambiente de visualização de Azure Time Series Insights usandoC#
 
-Isso C# exemplo demonstra como consultar dados do ambiente de visualização de Insights de série de tempo do Azure.
+Este C# exemplo demonstra como consultar dados do ambiente de visualização Azure Time Series insights.
 
 O exemplo mostra vários exemplos básicos do uso da API de consulta:
 
@@ -31,17 +31,17 @@ O exemplo mostra vários exemplos básicos do uso da API de consulta:
 1. Como um exemplo de solicitação do soquete Web, os dados de eventos agregados são solicitados para o ambiente de interesse. Os dados são solicitados para todo o intervalo de tempo de disponibilidade.
 
 > [!NOTE]
-> Esse código de exemplo também está disponível em [ https://github.com/Azure-Samples/Azure-Time-Series-Insights ](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-preview-sample).
+> Esse código de exemplo também está disponível [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-preview-sample)em.
 
 ## <a name="c-example"></a>Exemplo de C#
 
 [!code-csharp[csharpquery-example](~/samples-tsi/csharp-tsi-preview-sample/DataPlaneClientSampleApp/Program.cs)]
 
 > [!NOTE]
-> Exemplo de código acima pode ser executado sem alterar os valores de ambiente padrão.
+> O exemplo de código acima pode ser executado sem alterar os valores de ambiente padrão.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Para saber mais sobre como consultar, leia as [referência da API de consulta](/rest/api/time-series-insights/preview-query).
+- Para saber mais sobre consultas, leia a [referência de API de consulta](https://docs.microsoft.com/rest/api/time-series-insights/preview-query).
 
-- Leia como a [conectar um aplicativo de página única JavaScript](tutorial-create-tsi-sample-spa.md) para análise de séries Temporais.
+- Leia como [conectar um aplicativo JavaScript de página única](tutorial-create-tsi-sample-spa.md) para Time Series insights.

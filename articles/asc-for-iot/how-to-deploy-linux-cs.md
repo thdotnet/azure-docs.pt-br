@@ -1,6 +1,6 @@
 ---
-title: Guia para instalar e implantar o Linux C# agente da Central de segurança do Azure para a versão prévia do IoT | Microsoft Docs
-description: Saiba como instalar a Central de segurança para o agente do IoT do Azure no Linux de 32 bits e 64 bits.
+title: Guia para instalar e implantar o C# agente do Linux da central de segurança do Azure para IOT | Microsoft Docs
+description: Saiba como instalar a central de segurança do Azure para agente de IoT em Linux de 32 bits e 64 bits.
 services: asc-for-iot
 ms.service: asc-for-iot
 documentationcenter: na
@@ -13,22 +13,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/27/2019
+ms.date: 07/27/2019
 ms.author: mlottner
-ms.openlocfilehash: 808ff912a997a4c09a22048ada7546daab895701
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 0d77a1be2a3469282dabb646b02c43e350313ce5
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67618258"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68596292"
 ---
-# <a name="deploy-azure-security-center-for-iot-c-based-security-agent-for-linux"></a>Implantar a Central de segurança do Azure para IoT C#-com base em agente de segurança para Linux
+# <a name="deploy-azure-security-center-for-iot-c-based-security-agent-for-linux"></a>Implantar a central de segurança do C# Azure para o agente de segurança baseado em IOT para Linux
 
-> [!IMPORTANT]
-> A Central de Segurança do Azure para IoT está em versão prévia pública no momento.
-> Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos. Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Este guia explica como instalar e implantar o Azure Security Center (ASC) para IoT C#-com base em agente de segurança no Linux.
+Este guia explica como instalar e implantar a central de segurança do Azure para C#o agente de segurança baseado em IOT no Linux.
 
 Neste guia, você aprenderá a: 
 > [!div class="checklist"]
@@ -39,7 +36,7 @@ Neste guia, você aprenderá a:
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para outras plataformas e versões do agente, consulte [escolha o agente de segurança correta](how-to-deploy-agent.md).
+Para outras plataformas e tipos de agente, consulte [escolher o agente de segurança certo](how-to-deploy-agent.md).
 
 1. Para implantar o agente de segurança, são necessários direitos de administrador local no computador em que você deseja instalar. 
 
@@ -47,9 +44,9 @@ Para outras plataformas e versões do agente, consulte [escolha o agente de segu
 
 ## <a name="installation"></a>Instalação 
 
-Para implantar o agente de segurança, siga as instruções:
+Para implantar o agente de segurança, use as seguintes etapas:
 
-1. Baixe a versão mais recente do [GitHub](https://aka.ms/iot-security-github-cs) para seu computador.
+1. Baixe a versão mais recente em seu computador do [GitHub](https://aka.ms/iot-security-github-cs).
 
 1. Extraia o conteúdo do pacote e navegue até a pasta _/install_.
 
@@ -61,17 +58,17 @@ Para implantar o agente de segurança, siga as instruções:
    ./InstallSecurityAgent.sh -i -aui <authentication identity>  -aum <authentication method> -f <file path> -hn <host name>  -di <device id> -cl <certificate location kind>
    ```
    
-   Veja [Como configurar a autenticação](concept-security-agent-authentication-methods.md) para mais informações sobre parâmetros de autenticação.
+   para obter mais informações sobre parâmetros de autenticação, consulte [como configurar a autenticação](concept-security-agent-authentication-methods.md).
 
-Esse script faz o seguinte:
+O script executa as ações a seguir:
 
 - Instala pré-requisitos.
 
 - Adiciona um usuário de serviço (com logon interativo desabilitado).
 
-- Instala o agente como um **Daemon** – pressupõe que o dispositivo usa **systemd** para gerenciamento de serviços.
+- Instala o agente como um **daemon** -presume que o dispositivo usa o modelo de implantação clássico do **sistema** .
 
-- Configura **sudoers** para permitir que o agente execute certas tarefas como raiz.
+- Configura os **sudoers** para permitir que o agente execute determinadas tarefas como raiz.
 
 - Configura o agente com os parâmetros de autenticação fornecidos.
 
@@ -125,8 +122,8 @@ Para desinstalar o agente, execute o script com o parâmetro –u: `./InstallSec
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Leia a [Visão geral](overview.md) do serviço ASC para IoT
-- Saiba mais sobre a [Arquitetura](architecture.md) da ASC para IoT
+- Leia a [visão geral](overview.md) da central de segurança do Azure para serviços de IOT
+- Saiba mais sobre a [arquitetura](architecture.md) da central de segurança do Azure para IOT
 - Habilite o [serviço](quickstart-onboard-iot-hub.md)
 - Leia as [Perguntas frequentes](resources-frequently-asked-questions.md)
 - Entenda os [alertas](concept-security-alerts.md)

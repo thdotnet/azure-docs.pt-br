@@ -10,12 +10,13 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: 010245480d8e1f59d5c1b92a9e717f73b5ba7f4c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 4d42121468b8a875ecd13fb936d810728bd4b644
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66389152"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68703433"
 ---
 # <a name="demo-pizza-order"></a>Demonstração: Pedido de pizza
 Essa demonstração ilustra um bot de pedido de pizza, que dá suporte a um pedido único de pizza ao:

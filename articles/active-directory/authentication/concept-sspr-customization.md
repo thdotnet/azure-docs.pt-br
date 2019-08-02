@@ -1,22 +1,22 @@
 ---
-title: De redefinição de senha de autoatendimento de AD do Azure personalizando - Azure Active Directory
+title: Personalizando a redefinição de senha de autoatendimento do Azure AD-Azure Active Directory
 description: Opções de personalização para redefinição de senha por autoatendimento do Azure AD
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/11/2018
+ms.date: 07/30/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d38d93a1c9716cc3a71d904b7b1a46fb8b1c2ee0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 527dd99f122ec70cc47305947a5cbce3207b9664
+ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60415644"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68666311"
 ---
 # <a name="customize-the-azure-ad-functionality-for-self-service-password-reset"></a>Personalizar a funcionalidade de Autoatendimento de Redefinição de Senha do Azure AD
 
@@ -24,14 +24,22 @@ Os profissionais de TI que desejam implantar a redefinição de senha de autoate
 
 ## <a name="customize-the-contact-your-administrator-link"></a>Personalizar o link "Contate o administrador"
 
-Mesmo que a SSPR não esteja habilitada, os usuários ainda verão um link "Contate o administrador" no portal de redefinição de senha. Se um usuário selecionar este link, ele executará uma das seguintes ações:
+Os usuários de redefinição de senha de autoatendimento têm um link "Contate o administrador" disponível para eles no portal de redefinição de senha. Se um usuário selecionar esse link, ele fará uma destas duas coisas:
 
-* Enviará um email aos administradores pedindo ajuda para alterar a senha do usuário.
-* Envia seus usuários a uma URL que você especifica para obter assistência.
+* Se deixado no estado padrão:
+   * O email é enviado aos seus administradores e solicita que eles forneçam assistência para alterar a senha do usuário. Consulte o [email de exemplo](#sample-email) abaixo.
+* Se personalizado:
+   * Envia o usuário para uma página da Web ou endereço de email especificado pelo administrador para obter assistência.
 
-É recomendável definir esse contato para algo como um endereço de email ou site os quais os usuários já estão acostumados a usar para obter suporte.
+> [!TIP]
+> Se você personalizar isso, é recomendável definir isso para algo que os usuários já conhecem para obter suporte
 
-![Exemplo de solicitação para redefinir o email enviado ao administrador][Contact]
+> [!WARNING]
+> Se você personalizar essa configuração com um endereço de email e uma conta que precise de uma redefinição de senha, talvez o usuário não possa solicitar assistência.
+
+### <a name="sample-email"></a>Email de exemplo
+
+![Exemplo de solicitação para redefinir email enviado ao administrador][Contact]
 
 Esse contato é enviado para os seguintes destinatários na seguinte ordem:
 
@@ -68,8 +76,8 @@ Os gráficos que escolher são mostrados nas seguintes circunstâncias:
 
 * Depois que um usuário inserir seu nome de usuário
 * Se o usuário acessar a URL personalizada:
-   * Ao passar o `whr` parâmetro como a senha da página de redefinição, como `https://login.microsoftonline.com/?whr=contoso.com`
-   * Ao passar o `username` parâmetro como a senha da página de redefinição, como `https://login.microsoftonline.com/?username=admin@contoso.com`
+   * Passando o `whr` parâmetro para a página de redefinição de senha, como`https://login.microsoftonline.com/?whr=contoso.com`
+   * Passando o `username` parâmetro para a página de redefinição de senha, como`https://login.microsoftonline.com/?username=admin@contoso.com`
 
 Encontre detalhes sobre como configurar a identidade visual da empresa no artigo [Adicionar uma identidade visual da empresa à página de entrada do Azure AD](../fundamentals/customize-branding.md).
 
@@ -95,4 +103,4 @@ Você pode alterar o atributo de nome de diretório em **Azure Active Directory*
 * [Acho que algo não está funcionando. Como faço para solucionar o problema no SSPR?](active-directory-passwords-troubleshoot.md)
 * [Tenho uma pergunta que não foi respondida em nenhum lugar](active-directory-passwords-faq.md)
 
-[Contact]: ./media/concept-sspr-customization/sspr-contact-admin.png "Contate o administrador para obter ajuda para redefinir o exemplo de email de senha"
+[Contact]: ./media/concept-sspr-customization/sspr-contact-admin.png "Contate o administrador para obter ajuda com a redefinição do exemplo de email de senha"

@@ -3,7 +3,7 @@ title: Colocar os microsserviços do Azure Service Fabric em contêineres no Win
 description: Como colocar em contêineres seus serviços de Reliable Services e Reliable Actors do Service Fabric no Windows.
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: anmolah
 editor: roroutra
 ms.assetid: 0b41efb3-4063-4600-89f5-b077ea81fa3a
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 5/23/2018
 ms.author: anmola
-ms.openlocfilehash: 1210b34590484379ae487ad1b87e76a433e4582a
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 0cb48a2272ce854005f9f3db5b6a9abf62cc7015
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67621816"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599197"
 ---
 # <a name="containerize-your-service-fabric-reliable-services-and-reliable-actors-on-windows"></a>Colocar em contêineres seus Reliable Services e Reliable Actors do Service Fabric no Windows
 
@@ -121,7 +121,7 @@ Este documento fornece diretrizes para colocar o serviço em execução dentro d
    ```
 
 > [!NOTE] 
-> Por padrão, os aplicativos do Service Fabric têm acesso ao tempo de execução do Service Fabric, na forma de um ponto de extremidade aceitando solicitações específicas do aplicativo. Considere desabilitar esse acesso quando o aplicativo hospeda o código não confiável. Para obter mais informações, consulte [práticas recomendadas de segurança no Service Fabric](service-fabric-best-practices-security.md#platform-isolation). Para desabilitar o acesso ao tempo de execução do Service Fabric, adicione a seguinte configuração na seção de políticas do manifesto do aplicativo que corresponde ao manifesto do serviço importado, da seguinte maneira:
+> Por padrão, os aplicativos Service Fabric têm acesso ao tempo de execução do Service Fabric, na forma de um ponto de extremidade que aceita solicitações específicas do aplicativo. Considere desabilitar esse acesso quando o aplicativo hospedar código não confiável. Para obter mais informações, consulte [práticas recomendadas de segurança em Service Fabric](service-fabric-best-practices-security.md#platform-isolation). Para desabilitar o acesso ao Service Fabric Runtime, adicione a configuração a seguir na seção políticas do manifesto do aplicativo correspondente ao manifesto do serviço importado, da seguinte maneira:
 >
 ```xml
   <Policies>

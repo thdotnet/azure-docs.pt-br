@@ -2,23 +2,23 @@
 title: Visão geral da arquitetura – Azure Active Directory | Microsoft Docs
 description: Saiba o que é um locatário do Azure Active Directory e como gerenciar o Azure usando o Azure Active Directory.
 services: active-directory
-author: eross-msft
+author: msaburnley
 manager: daveba
 ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 05/23/2019
-ms.author: lizross
+ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aed332f32fa9fdc154c72e45914e642a9dad4993
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b124475b44778ef3bb0dc9eba0c59bb3a277b85a
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67055706"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68562050"
 ---
 # <a name="what-is-the-azure-active-directory-architecture"></a>Qual é a arquitetura do Active Directory do Azure?
 O Azure AD (Azure Active Directory) o habilita a gerenciar o acesso a recursos e serviços do Azure para os usuários. Está incluído no Azure AD um conjunto completo de recursos de gerenciamento de identidade. Para obter informações sobre os recursos do Azure AD, confira [O que é o Azure Active Directory?](active-directory-whatis.md)
@@ -37,7 +37,7 @@ Os seguintes elementos de arquitetura são abordados neste artigo:
 ### <a name="service-architecture-design"></a>Design de arquitetura de serviço
 A maneira mais comum para criar um sistema rico em dados, acessível e utilizável, é através de blocos de construção independentes ou unidades de escala. Para a camada de dados do Azure AD, as unidades de escala são chamadas de *partições*. 
 
-A camada de dados tem vários serviços de front-end que fornecem a capacidade de leitura/gravação. O diagrama a seguir mostra como os componentes de uma partição de diretório único são entregues ao longo de data centers distribuídos geograficamente. 
+A camada de dados tem vários serviços de front-end que fornecem a capacidade de leitura/gravação. O diagrama a seguir mostra como os componentes de uma partição de diretório único são entregues em data centers distribuídos geograficamente. 
 
   ![Diagrama de partição de diretório único](./media/active-directory-architecture/active-directory-architecture.png)
 
@@ -49,7 +49,7 @@ A *réplica principal* recebe todas as *gravações* para a partição à qual e
 
 **Réplicas secundárias**
 
-Diretório de todos os *lê* são atendidos a partir *réplicas secundárias*, que estão em datacenters fisicamente localizados em geografias diferentes. Há várias réplicas secundárias, pois os dados são replicados de forma assíncrona. Leituras de diretório, como solicitações de autenticação, são realizadas por meio de data centers próximos aos clientes. As réplicas secundárias são responsáveis pela escalabilidade de leitura.
+Todas as *leituras* de diretório são atendidas a partir de *réplicas secundárias*, que estão em data centers fisicamente localizados em geografias diferentes. Há várias réplicas secundárias, pois os dados são replicados de forma assíncrona. As leituras de diretório, como solicitações de autenticação, são atendidas de data centers próximos aos clientes. As réplicas secundárias são responsáveis pela escalabilidade de leitura.
 
 ### <a name="scalability"></a>Escalabilidade
 
@@ -61,7 +61,7 @@ Os aplicativos de diretório se conectam aos data centers mais próximos. Essa c
 
 ### <a name="continuous-availability"></a>Disponibilidade contínua
 
-A disponibilidade (ou tempo de atividade) define a capacidade de um sistema de funcionar sem interrupções. A chave para alta disponibilidade do Azure AD é que os serviços podem mudar rapidamente o tráfego em vários datacenters distribuídos geograficamente. Cada data center é independente, que permite que os modos de falha não correlacionados. Através desse design de alta disponibilidade, o Azure AD não requer nenhum tempo de inatividade para atividades de manutenção.
+A disponibilidade (ou tempo de atividade) define a capacidade de um sistema de funcionar sem interrupções. A chave para a alta disponibilidade do AD do Azure é que os serviços podem rapidamente alternar o tráfego entre vários data centers distribuídos geograficamente. Cada datacenter é independente, o que permite modos de falha não correlacionados. Por meio desse design de alta disponibilidade, o Azure AD não requer nenhum tempo de inatividade para atividades de manutenção.
 
 O design da partição do Azure AD é simplificado em comparação com o design do AD corporativo, usando um design de mestre único que inclui um processo de failover de réplica primária cuidadosamente orquestrado e determinístico.
 
@@ -73,7 +73,7 @@ Operações de leitura (que ultrapassam o número de gravações por várias ord
 
 **Durabilidade dos dados**
 
-Uma gravação é permanentemente confirmada em pelo menos dois data centers antes de ser reconhecida. Isso ocorre pela primeira confirmação da gravação no primário e, em seguida, replicação imediata da gravação para pelo menos um outro data center. Esta ação de gravação garante que uma potencial perda catastrófica do datacenter que hospeda o principal não resulta na perda de dados.
+Uma gravação é permanentemente confirmada em pelo menos dois data centers antes de ser confirmada. Isso ocorre primeiro confirmando a gravação no primário e, em seguida, replicando imediatamente a gravação em pelo menos um outro datacenter. Essa ação de gravação garante que uma perda catastrófica potencial do datacenter que hospeda o primário não resulte em perda de dados.
 
 O Azure AD mantém um [RTO (Recovery Time Objective)](https://en.wikipedia.org/wiki/Recovery_time_objective) zero para não perder dados em failovers. Isso inclui:
 -  Edição de tokens e leituras de diretórios
@@ -85,9 +85,9 @@ As réplicas do Azure AD são armazenadas em data centers no mundo todo. Para ob
 
 O Azure AD opera em data centers com as seguintes características:
 
- * Autenticação, gráfico e outros serviços de AD residem atrás do serviço de gateway. O Gateway gerencia o balanceamento de carga desses serviços. Ele falhará automaticamente se algum servidor não íntegro for detectado usando probes de integridade transacionais. Com base nessas investigações de integridade, o Gateway roteia dinamicamente o tráfego para data centers íntegros.
- * Para *lê*, o diretório tem réplicas secundárias e serviços de front-end correspondentes em uma configuração ativo-ativo operando em vários datacenters. Em caso de falha de um datacenter inteiro, o tráfego será roteado para um data center diferente automaticamente.
- *  Para *grava*, o diretório realizará o failover de réplica (mestre) em data centers via planejada (novo principal é sincronizado com o principal antigo) ou procedimentos de emergência de failover. Durabilidade dos dados é obtida com a replicação de qualquer confirmação pelo menos dois data centers.
+ * Autenticação, gráfico e outros serviços de AD residem atrás do serviço de gateway. O Gateway gerencia o balanceamento de carga desses serviços. Ele falhará automaticamente se algum servidor não íntegro for detectado usando probes de integridade transacionais. Com base nessas investigações de integridade, o gateway roteia dinamicamente o tráfego para os data centers íntegros.
+ * Para *leituras*, o diretório tem réplicas secundárias e serviços front-end correspondentes em uma configuração ativo-ativo operando em vários datacenters. No caso de uma falha de um datacenter inteiro, o tráfego será automaticamente roteado para um datacenter diferente.
+ *  Para *gravações*, o diretório fará failover de réplica primária (Mestre) em datacenters via planejado (o novo primário é sincronizado com o primário antigo) ou procedimentos de failover de emergência. A durabilidade dos dados é obtida com a replicação de qualquer confirmação para pelo menos dois data centers.
 
 **Consistência de dados**
 
@@ -95,7 +95,7 @@ O modelo de diretório é uma das consistências eventuais. Um problema típico 
 
 O Azure AD oferece consistência de leitura e gravação para aplicativos destinados a uma réplica secundária roteando suas gravações para a réplica principal e incluindo as gravações de forma síncrona novamente na réplica secundária.
 
-As gravações de aplicativo usando a API do Graph do Azure AD são abstraídas da afinidade de manutenção para uma réplica do diretório para consistência de leitura/gravação. O serviço do Azure AD Graph mantém uma sessão lógica, que tem afinidade para uma réplica secundária usada para leituras; afinidade é capturada em um "token de réplica" que o serviço do graph armazena em cache usando um cache distribuído no datacenter réplica secundária. Esse token é usado para operações subsequentes na mesma sessão lógica. Para continuar usando a mesma sessão lógica, as solicitações subsequentes devem ser roteadas para o mesmo datacenter do Azure AD. Não é possível continuar uma sessão lógica, se o cliente do solicitações estão sendo roteadas para vários datacenters do Azure AD; Se isso acontecer, em seguida, o cliente tem várias sessões de lógicas que têm as consistências de leitura / gravação independentes.
+As gravações de aplicativo usando a API do Graph do Azure AD são abstraídas da afinidade de manutenção para uma réplica do diretório para consistência de leitura/gravação. O serviço do Azure AD Graph mantém uma sessão lógica, que tem afinidade com uma réplica secundária usada para leituras; a afinidade é capturada em um "token de réplica" que o serviço de grafo armazena em cache usando um cache distribuído no datacenter de réplica secundária. Esse token é usado para operações subsequentes na mesma sessão lógica. Para continuar usando a mesma sessão lógica, as solicitações subsequentes devem ser roteadas para o mesmo datacenter do Azure AD. Não é possível continuar uma sessão lógica se as solicitações do cliente de diretório estiverem sendo roteadas para vários datacenters do Azure AD; Se isso acontecer, o cliente terá várias sessões lógicas que têm consistência de leitura/gravação independente.
 
  >[!NOTE]
  >As gravações são replicadas imediatamente para a réplica secundária para a qual foram emitidas leituras lógicas da sessão.

@@ -10,12 +10,13 @@ ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 03/27/2017
 ms.author: alch
-ms.openlocfilehash: a228c5b90e47c9c24c5da70484a1a28f9a3054b1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ROBOTS: NOINDEX
+ms.openlocfilehash: 9e84b1ad37b3224ec5553d0a66ba0fc84bc88f55
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60498815"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68705075"
 ---
 # <a name="calchistogram-method"></a>Método CalcHistogram
 
@@ -28,20 +29,20 @@ https:// westus.api.cognitive.microsoft.com/academic/v1.0/calchistogram?
 ``` 
 <br>
 
-## <a name="request-parameters"></a>Parâmetros de solicitação
+## <a name="request-parameters"></a>Parâmetros de Solicitação
 
-NOME  |Value | Obrigatório?  |DESCRIÇÃO
+Nome  |Valor | Obrigatório?  |Descrição
 -----------|----------|--------|----------
 **expr**    |Cadeia de caracteres de texto | Sim  |Uma expressão de consulta que especifica as entidades sobre as quais calcular histogramas.
 **modelo** |Cadeia de caracteres de texto | Não |Selecione o nome do modelo que você deseja consultar.  Atualmente, o valor padrão é o *mais recente*.
 **atributos** | Cadeia de caracteres de texto | Não<br>padrão: | Uma lista delimitada por vírgulas que especifica os valores de atributo que são incluídos na resposta. Os nomes de atributo diferenciam maiúsculas de minúsculas.
-**count** |Número | Não<br>Padrão: 10 |Número de resultados para retornar.
-**offset**  |Número | Não<br>Padrão: 0 |Índice do primeiro resultado para retornar.
-**timeout**  |Número | Não<br>Padrão: 1000 |Tempo limite em milissegundos. Somente interpretações localizadas antes que o tempo limite tenha decorrido serão retornadas.
+**count** |Number | Não<br>Padrão: 10 |Número de resultados para retornar.
+**offset**  |Number | Não<br>Padrão: 0 |Índice do primeiro resultado para retornar.
+**timeout**  |Number | Não<br>Padrão: 1000 |Tempo limite em milissegundos. Somente interpretações localizadas antes que o tempo limite tenha decorrido serão retornadas.
 
 ## <a name="response-json"></a>Resposta (JSON)
 
-NOME | DESCRIÇÃO
+Nome | Descrição
 --------|---------
 **expr**  |O parâmetro expr da solicitação.
 **num_entities** | Número total de entidades correspondentes.

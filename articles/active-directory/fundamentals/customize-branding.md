@@ -2,23 +2,23 @@
 title: Adicionar identidade visual à página de entrada de sua organização – Azure Active Directory | Microsoft Docs
 description: Instruções sobre como adicionar a identidade visual da organização à página de entrada do Azure Active Directory.
 services: active-directory
-author: eross-msft
+author: msaburnley
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: fundamentals
 ms.topic: conceptual
 ms.date: 09/18/2018
-ms.author: lizross
+ms.author: ajburnle
 ms.reviewer: kexia
 ms.custom: fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bef3960e5c117a131b59a65196214c51e01bd3c8
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 3ae329bd031a2a57ea4fc2eec9cde1e532439bb4
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204589"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561704"
 ---
 # <a name="add-branding-to-your-organizations-azure-active-directory-sign-in-page"></a>Adicionar identidade visual à página de entrada de sua empresa no Azure Active Directory
 Use o logotipo da organização e os esquemas de cores personalizados para fornecer uma aparência consistente nas páginas de entrada do Azure AD (Azure Active Directory). As páginas de entrada aparecem quando os usuários entram nos aplicativos baseados na Web da organização, como o Office 365, que usam o Azure AD como provedor de identidade.
@@ -29,7 +29,7 @@ Use o logotipo da organização e os esquemas de cores personalizados para forne
 ## <a name="customize-your-azure-ad-sign-in-page"></a>Personalizar a página de entrada do Azure AD
 É possível personalizar as páginas de entrada do Azure AD que aparecem quando os usuários entram nos aplicativos específicos de locatário da organização, como [ *https://outlook.com/contoso.com* ](https://outlook.com/contoso.com), ou ao passar uma variável de domínio como [ *https://passwordreset.microsoftonline.com/?whr=contoso.com* ](https://passwordreset.microsoftonline.com/?whr=contoso.com).
 
-Sua identidade visual personalizada não aparecerá imediatamente quando os usuários vão para sites, como www\.office.com. Em vez disso, o usuário precisa entrar antes que a identidade visual personalizada seja exibida.
+Sua identidade visual personalizada não aparecerá imediatamente quando os usuários acessarem sites como,\.www Office.com. Em vez disso, o usuário precisa entrar antes que a identidade visual personalizada seja exibida.
 
 > [!NOTE]
 > Todos os elementos de identidade visual são opcionais. Por exemplo, se você especificar um logotipo do banner sem imagem de plano de fundo, a página de entrada mostrará o logotipo com uma imagem de plano de fundo padrão do site de destino (por exemplo, Office 365).<br><br>Além disso, a marca da página de entrada não é transferida para contas pessoais da Microsoft. Se os usuários ou convidados de negócios entrarem usando uma conta pessoal da Microsoft, a página de entrada não refletirá a identidade visual da organização.
@@ -58,7 +58,7 @@ Sua identidade visual personalizada não aparecerá imediatamente quando os usu�
 
         - **Logotipo do banner.** Selecione uma versão .png ou .jpg do logotipo para aparecer na página de entrada, depois que o usuário inserir um nome de usuário e na página do portal **Meus Aplicativos**.
             
-            A imagem não pode ser mais alto que 60 pixels ou mais de 280 pixels. É recomendável usar uma imagem transparente, já que o plano de fundo pode não ser adequado ao plano de fundo do logotipo. Além disso, é recomendável não adicionar preenchimento ao redor da imagem, pois pode fazer seu logotipo parecer pequeno.
+            A imagem não pode ser mais alta que 60 pixels ou maior que 280 pixels. É recomendável usar uma imagem transparente, já que o plano de fundo pode não ser adequado ao plano de fundo do logotipo. Além disso, é recomendável não adicionar preenchimento ao redor da imagem, pois pode fazer seu logotipo parecer pequeno.
 
         - **Dica de nome de usuário.** Digite o texto de dica que aparecerá aos usuários, caso não se lembrem do nome de usuário. Esse texto deve ser Unicode, sem links ou código, e não pode exceder 64 caracteres. Se os visitantes entrarem no aplicativo, sugerimos que você não adicione essa dica.
 
@@ -70,7 +70,7 @@ Sua identidade visual personalizada não aparecerá imediatamente quando os usu�
 
         - **Cor do plano de fundo da página de entrada.** Especifique a cor hexadecimal (por exemplo, branco é #FFFFFF) que aparecerá no lugar da sua imagem de plano de fundo em situações de conexão com pouca largura de banda. É recomendável a utilização da cor principal do logotipo do banner ou da cor da organização.
 
-        - **Imagem de logotipo quadrado.** Selecione uma imagem .png (preferencial) ou .jpg do logotipo da organização para ser exibida aos usuários durante o processo de configuração dos novos dispositivos do Windows 10 Enterprise. Essa imagem é usada somente para autenticação do Windows e aparece apenas em locatários que estão usando o [Windows Autopilot]( https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot) para implantação ou páginas de entrada de senha em outras experiências do Windows 10. Em alguns casos elas talvez apareçam na caixa de diálogo de consentimento.
+        - **Imagem de logotipo quadrado.** Selecione uma imagem .png (preferencial) ou .jpg do logotipo da organização para ser exibida aos usuários durante o processo de configuração dos novos dispositivos do Windows 10 Enterprise. Essa imagem é usada somente para autenticação do Windows e aparece apenas em locatários que estão usando o [Windows Autopilot]( https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot) para implantação ou páginas de entrada de senha em outras experiências do Windows 10. Em alguns casos, ele também pode aparecer na caixa de diálogo de consentimento.
         
             A imagem não pode ser maior que 240x240 pixels e deve ter um tamanho de arquivo inferior a 10 KB. É recomendável usar uma imagem transparente, já que o plano de fundo pode não ser adequado ao plano de fundo do logotipo. Além disso, é recomendável não adicionar preenchimento ao redor da imagem, pois pode fazer seu logotipo parecer pequeno.
     

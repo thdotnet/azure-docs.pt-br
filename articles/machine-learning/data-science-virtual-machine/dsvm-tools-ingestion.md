@@ -4,7 +4,7 @@ description: Saiba mais sobre ferramentas de ingestão de dados e utilitários i
 keywords: ferramentas de ciência de dados, máquina virtual de ciência de dados, ferramentas para ciência de dados, ciência de dados do linux
 services: machine-learning
 documentationcenter: ''
-author: gopitk
+author: vijetajo
 manager: cgronlun
 ms.custom: seodec18
 ms.assetid: ''
@@ -15,17 +15,17 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/11/2017
-ms.author: gokuma
-ms.openlocfilehash: 92ff5d21fc30d8fcafe97a2b452ff157a2cd5f86
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: vijetaj
+ms.openlocfilehash: ffc6071206236bc25d3c02576225c1de935f722a
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60502206"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68557711"
 ---
 # <a name="data-science-virtual-machine-data-ingestion-tools"></a>Ferramentas de ingestão de dados de Máquina Virtual de Ciência de Dados
 
-Uma das primeiras etapas técnicas em um projeto de AI ou ciência de dados é identificar os conjuntos de dados a serem usados e colocá-los em seu ambiente de análise. A máquina Virtual de ciência de dados (DSVM) fornece ferramentas e bibliotecas para trazer dados de fontes diferentes em um armazenamento de dados analíticos localmente na DSVM ou em uma plataforma de dados na nuvem ou local. 
+Uma das primeiras etapas técnicas em um projeto de AI ou ciência de dados é identificar os conjuntos de dados a serem usados e colocá-los em seu ambiente de análise. O Máquina Virtual de Ciência de Dados (DSVM) fornece ferramentas e bibliotecas para trazer dados de diferentes fontes para um armazenamento de dados analíticos localmente no DSVM ou em uma plataforma de dados na nuvem ou local. 
 
 Aqui estão algumas ferramentas de movimentação de dados que fornecemos na DSVM. 
 
@@ -33,7 +33,7 @@ Aqui estão algumas ferramentas de movimentação de dados que fornecemos na DSV
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Uma ferramenta para copiar dados dos blobs de armazenamento do Azure para o Azure Data Lake Store. Você também pode copiar dados entre contas do Azure Data Lake Store.      |
+| O que é isto?   | Uma ferramenta para copiar dados dos blobs de armazenamento do Azure para o Azure Data Lake Store. Você também pode copiar dados entre contas do Azure Data Lake Store.      |
 | Versões do DSVM com suporte      | Windows      |
 | Usos típicos      | Importar de vários blobs do armazenamento do Azure para o Azure Data Lake Store.      |
 |  Como usar/executar?    |   Abra um prompt de comando e digite `adlcopy` para obter ajuda.    |
@@ -44,7 +44,7 @@ Aqui estão algumas ferramentas de movimentação de dados que fornecemos na DSV
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Uma ferramenta de gerenciamento para o Azure. Também contém verbos de comando para mover dados de plataformas de dados do Azure, como blobs de armazenamento do Azure, Armazenamento do Azure Data Lake     |
+| O que é isto?   | Uma ferramenta de gerenciamento para o Azure. Também contém verbos de comando para mover dados de plataformas de dados do Azure, como blobs de armazenamento do Azure, Armazenamento do Azure Data Lake     |
 | Versões do DSVM com suporte      | Windows, Linux     |
 | Usos típicos      | Importar e exportar dados para e do armazenamento do Azure, Azure Data Lake Store      |
 |  Como usar/executar?    |   Abra um prompt de comando e digite `az` para obter ajuda.    |
@@ -56,7 +56,7 @@ Aqui estão algumas ferramentas de movimentação de dados que fornecemos na DSV
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Uma ferramenta para copiar dados de e para arquivos locais, blobs de armazenamento do Azure, arquivos e tabelas.      |
+| O que é isto?   | Uma ferramenta para copiar dados de e para arquivos locais, blobs de armazenamento do Azure, arquivos e tabelas.      |
 | Versões do DSVM com suporte      | Windows      |
 | Usos típicos      | Copiar arquivos para o armazenamento de blobs, copiar blobs entre contas.      |
 |  Como usar/executar?    |   Abra um prompt de comando e digite `azcopy` para obter ajuda.    |
@@ -68,7 +68,7 @@ Aqui estão algumas ferramentas de movimentação de dados que fornecemos na DSV
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Ferramenta para importar dados de várias fontes, incluindo arquivos JSON, arquivos CSV, SQL, MongoDB, armazenamento de Tabela do Azure, Amazon DynamoDB e coleções de API de SQL do Azure Cosmos DB no Azure Cosmos DB.      |
+| O que é isto?   | Ferramenta para importar dados de várias fontes, incluindo arquivos JSON, arquivos CSV, SQL, MongoDB, armazenamento de Tabela do Azure, Amazon DynamoDB e coleções de API de SQL do Azure Cosmos DB no Azure Cosmos DB.      |
 | Versões do DSVM com suporte      | Windows      |
 | Usos típicos      | Importar arquivos de uma VM para CosmosDB, importar dados do armazenamento de tabela do Azure para CosmosDB ou importar dados de um banco de dados SQL Server para CosmosDB.     |
 |  Como usar/executar?    |   Para usar a versão de linha de comando, abra um prompt de comando e digite `dt`. Para usar a ferramenta de GUI, abra um prompt de comando e digite `dtui`.    |
@@ -80,7 +80,7 @@ Aqui estão algumas ferramentas de movimentação de dados que fornecemos na DSV
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Ferramenta SQL Server para copiar dados entre o SQL Server e um arquivo de dados.      |
+| O que é isto?   | Ferramenta SQL Server para copiar dados entre o SQL Server e um arquivo de dados.      |
 | Versões do DSVM com suporte      | Windows      |
 | Usos típicos      | Importar um arquivo CSV para uma tabela do SQL Server, exportar uma tabela do SQL Server para um arquivo.      |
 |  Como usar/executar?    |   Abra um prompt de comando e digite `bcp` para obter ajuda.    |
@@ -91,7 +91,7 @@ Aqui estão algumas ferramentas de movimentação de dados que fornecemos na DSV
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Uma ferramenta para montar um contêiner de blobs do Azure no sistema de arquivos Linux.      |
+| O que é isto?   | Uma ferramenta para montar um contêiner de blobs do Azure no sistema de arquivos Linux.      |
 | Versões do DSVM com suporte      | Linux      |
 | Usos típicos      | Leitura e gravação para blobs em um contêiner      |
 |  Como usar/executar?    |   Execute _blobfuse_ em um terminal.    |
@@ -103,7 +103,7 @@ Aqui estão algumas ferramentas de movimentação de dados que fornecemos na DSV
 
 |    |           |
 | ------------- | ------------- |
-| O que é?   | Uma ferramenta para conectar fontes de dados locais a serviços de nuvem para consumo.      |
+| O que é isto?   | Uma ferramenta para conectar fontes de dados locais a serviços de nuvem para consumo.      |
 | Versões do DSVM com suporte      | Windows      |
 | Usos típicos      | Conectar uma VM a uma fonte de dados local.      |
 |  Como usar/executar?    |   Inicie "Gateway de Gerenciamento de Dados Microsoft" no Menu Iniciar.    |

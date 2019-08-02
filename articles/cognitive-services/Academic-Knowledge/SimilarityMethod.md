@@ -10,12 +10,13 @@ ms.subservice: academic-knowledge
 ms.topic: conceptual
 ms.date: 01/18/2017
 ms.author: alch
-ms.openlocfilehash: 7f692c08f8af322bf7e6ab576e2e6f516594a6c4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ROBOTS: NOINDEX
+ms.openlocfilehash: 855d29d2c55b841bbbe4e9eadce8c29ad85fad90
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61336510"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68704861"
 ---
 # <a name="similarity-method"></a>Método de Similaridade
 
@@ -27,19 +28,19 @@ A API REST de **similaridade** é usada para calcular a similaridade acadêmica 
 https://westus.api.cognitive.microsoft.com/academic/v1.0/similarity?
 ```
 
-## <a name="request-parameters"></a>Parâmetros de solicitação
+## <a name="request-parameters"></a>Parâmetros de Solicitação
 
-Parâmetro        |Tipo de Dados      |Obrigatório | DESCRIÇÃO
+Parâmetro        |Tipo de dados      |Necessário | Descrição
 ----------|----------|----------|------------
-**s1**        |Cadeia de caracteres   |Sim  |Cadeia de caracteres * a ser comparada
-**s2**        |Cadeia de caracteres   |Sim  |Cadeia de caracteres * a ser comparada
+**s1**        |Cadeia   |Sim  |Cadeia de caracteres * a ser comparada
+**s2**        |Cadeia   |Sim  |Cadeia de caracteres * a ser comparada
 
 <sub> *As cadeias de caracteres a serem comparadas têm um comprimento máximo de 1 MB. </sub>
 <br>
 
-## <a name="response"></a>Response
+## <a name="response"></a>Resposta
 
-NOME | DESCRIÇÃO
+Nome | Descrição
 --------|---------
 **SimilarityScore**        |Um valor de ponto flutuante representando a similaridade do cosseno de s1 e s2, com valores mais próximos a 1,0, significando mais semelhante e valores mais próximos a -1,0, significando menos semelhante
 
@@ -47,12 +48,12 @@ NOME | DESCRIÇÃO
 
 ## <a name="successerror-conditions"></a>Condições de erro/êxito
 
-Status HTTP | Motivo | Response
+Status HTTP | Reason | Resposta
 -----------|----------|--------
 **200**         |Êxito | Número de ponto flutuante
 **400**         | Solicitação incorreta ou solicitação inválida | Mensagem de erro      
-**500**         |Erro interno do servidor | Mensagem de erro
-**Tempo Limite**     | Atingiu tempo limite solicitado.  | Mensagem de erro
+**500**         |Erro de servidor interno | Mensagem de erro
+**Tempo Limite**     | Atingido o tempo limite da solicitação.  | Mensagem de erro
 
 <br>
 
