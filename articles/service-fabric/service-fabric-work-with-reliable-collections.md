@@ -3,7 +3,7 @@ title: Trabalhando com Coleções Confiáveis | Microsoft Docs
 description: Conheça as práticas recomendadas para trabalhar com Reliable Collections.
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: chackdan
 editor: ''
 ms.assetid: 39e0cd6b-32c4-4b97-bbcf-33dad93dcad1
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/22/2019
-ms.author: aljo
-ms.openlocfilehash: bb99e5984f91edb0cf40f3bdc485624b9ec59833
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: atsenthi
+ms.openlocfilehash: 2d1284115a35881087e0ced0ee735ea38ce3f5ce
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60506732"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68598714"
 ---
 # <a name="working-with-reliable-collections"></a>Trabalhando com Reliable Collections
 O Service Fabric oferece um modelo de programação com estado disponível para desenvolvedores .NET por meio das Reliable Collections. Especificamente, o Service Fabric fornece as classes de dicionário confiável e fila confiável. Quando você usar essas classes, seu estado é particionado (para escalabilidade), replicado (para disponibilidade) e transacionado dentro de uma partição (para semântica ACID). Vejamos um uso típico de um objeto de dicionário confiável para ver o que ele está fazendo realmente.
@@ -207,7 +207,7 @@ Além disso, o código de serviço é atualizado em um domínio de atualização
 
 > [!WARNING]
 > Embora seja possível modificar o esquema de uma chave, você deve garantir que o código hash da chave e algoritmos igual a sejam estáveis. Se você alterar como algum desses algoritmos funciona, não será mais possível pesquisar a chave no dicionário confiável.
-> Cadeias de caracteres do .NET pode ser usadas como uma chave, mas use a cadeia de caracteres como a chave – não use o resultado de String.GetHashCode como a chave.
+> As cadeias de caracteres do .NET podem ser usadas como uma chave, mas usam a própria cadeia de caracteres como a chave – não usam o resultado de String. GetHashCode como a chave.
 
 Como alternativa, você pode executar o que é normalmente conhecido como uma atualização de fase 2. Com uma atualização de fase 2, você atualiza seu serviço de V1 para V2: a V2 contém o código que sabe como lidar com a nova alteração de esquema, mas esse código não é executado. Quando o código V2 lê dados V1, ele opera nele e grava dados de V1. Em seguida, depois que a atualização for concluída em todos os domínios de atualização, você pode sinalizar de alguma forma para as instâncias V2 em execução que a atualização for concluída. Uma forma de sinalizar isso é distribuir uma atualização de configuração; é isso que faz desta uma atualização de fase 2. Agora, as instâncias V2 podem ler dados V1, convertê-los em dados V2, operá-los e gravá-los como dados V2. Quando outras instâncias lerem dados V2, elas não precisarão convertê-lo, elas simplesmente os operam e gravam dados V2.
 

@@ -1,5 +1,5 @@
 ---
-title: Como usar os tópicos de Barramento de Serviço do Azure com Java | Microsoft Docs
+title: Usar tópicos e assinaturas do barramento de serviço do Azure com Java
 description: Use tópicos e assinaturas do Barramento de Serviço no Azure.
 services: service-bus-messaging
 documentationcenter: java
@@ -14,31 +14,32 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: aschhab
-ms.openlocfilehash: 578fd0caa8986c48b3fd50a7890bb66b14bee2f4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.custom: seo-java-july2019
+ms.openlocfilehash: 822fadb661fd9fcdde8ff75fa4f9e60dfa44c97b
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65991718"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68663414"
 ---
 # <a name="how-to-use-service-bus-topics-and-subscriptions-with-java"></a>Como usar tópicos e assinaturas do Barramento de Serviço com Java
 
 [!INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
 
-Neste início rápido, você escreve código Java para enviar mensagens para um tópico do barramento de serviço e, em seguida, receber mensagens de assinaturas para esse tópico. 
+Neste guia de início rápido, você escreve o código Java para enviar mensagens para um tópico do barramento de serviço e, em seguida, recebe mensagens de assinaturas para esse tópico. 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-1. Uma assinatura do Azure. Para concluir este tutorial, você precisa de uma conta do Azure. Você pode ativar sua [benefícios de assinante do MSDN ou Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) ou se inscreva em uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-2. Siga as etapas no [guia de início rápido: Usar o portal do Azure para criar um tópico do Barramento de Serviço e assinaturas para o tópico](service-bus-quickstart-topics-subscriptions-portal.md) para executar as seguintes tarefas:
-    1. Criar um barramento de serviço **namespace**.
-    2. Obter o **cadeia de caracteres de conexão**.
-    3. Criar uma **tópico** no namespace.
+1. Uma assinatura do Azure. Para concluir este tutorial, você precisa de uma conta do Azure. Você pode ativar os [benefícios do assinante do Visual Studio ou do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) ou inscrever-se para uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
+2. Siga as etapas no [início rápido: Usar o portal do Azure para criar um tópico do Barramento de Serviço e assinaturas para o tópico](service-bus-quickstart-topics-subscriptions-portal.md) para executar as seguintes tarefas:
+    1. Crie um **namespace**do barramento de serviço.
+    2. Obter a **cadeia de conexão**.
+    3. Crie um **tópico** no namespace.
     4. Crie **três assinaturas** para o tópico no namespace.
 3. [SDK do Azure para Java][Azure SDK for Java].
 
 ## <a name="configure-your-application-to-use-service-bus"></a>Configurar seu aplicativo para usar o Barramento de serviço
-Verifique se você instalou o [SDK do Azure para Java][Azure SDK for Java] antes de compilar este exemplo. Se estiver usando o Eclipse, instale o [Kit de Ferramentas do Azure para Eclipse][Azure Toolkit for Eclipse], que inclui o SDK do Azure para Java. Você pode adicionar as **Bibliotecas do Microsoft Azure para Java** ao seu projeto:
+Verifique se você instalou o [SDK do Azure para Java][Azure SDK for Java] antes de compilar este exemplo. Se você estiver usando o Eclipse, instale o [Kit de ferramentas do Azure para Eclipse][Azure Toolkit for Eclipse], que inclui o SDK do Azure para Java. Você pode adicionar as **Bibliotecas do Microsoft Azure para Java** ao seu projeto:
 
 ![Bibliotecas no caminho de compilação do Eclipse](media/service-bus-java-how-to-use-topics-subscriptions/eclipselibs.png)
 
@@ -458,7 +459,7 @@ Message sending: Id = 9
 > É possível gerenciar os recursos do Barramento de Serviço com o [Gerenciador de Barramento de Serviço](https://github.com/paolosalvatori/ServiceBusExplorer/). O Gerenciador de Barramento de Serviço permite que usuários se conectem a um namespace de serviço do Barramento de Serviço e administrem entidades de mensagens de uma maneira fácil. A ferramenta fornece recursos avançados, como a funcionalidade de importação/exportação ou a capacidade de testar tópicos, filas, assinaturas, serviços de retransmissão, hubs de notificação e hubs de eventos. 
 
 ## <a name="next-steps"></a>Próximas etapas
-Para obter mais informações, consulte [filas do barramento de serviço, tópicos e assinaturas][Service Bus queues, topics, and subscriptions].
+Para obter mais informações, consulte [filas, tópicos e assinaturas do barramento de serviço][Service Bus queues, topics, and subscriptions].
 
 [Azure SDK for Java]: https://docs.microsoft.com/java/api/overview/azure/
 [Azure Toolkit for Eclipse]: https://docs.microsoft.com/java/azure/eclipse/azure-toolkit-for-eclipse

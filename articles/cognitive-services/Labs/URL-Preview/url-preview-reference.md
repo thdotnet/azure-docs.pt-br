@@ -10,12 +10,13 @@ ms.subservice: url-preview
 ms.topic: reference
 ms.date: 03/29/2018
 ms.author: rosh
-ms.openlocfilehash: 69db722295c9c81d45913bd078fe9cc5ab74c512
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ROBOTS: NOINDEX
+ms.openlocfilehash: f92c0faaaa3aa0cd2af16a031f3bed4c6b41fc22
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60462581"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68706839"
 ---
 # <a name="project-url-preview-v7-reference"></a>Referência de Visualização de URL de Projeto v7
 
@@ -62,7 +63,7 @@ Para obter informações sobre o uso permitido e a exibição de resultados, con
 ## <a name="headers"></a>Cabeçalhos
 Veja a seguir os cabeçalhos que podem ser incluídos em uma solicitação e uma resposta.
 
-|Cabeçalho|DESCRIÇÃO|
+|Cabeçalho|Descrição|
 |------------|-----------------|
 |<a name="market" />BingAPIs-Market|Cabeçalho de resposta.<br /><br /> O mercado usado pela solicitação. O formulário é \<languageCode\>-\<countryCode\>. Por exemplo, en-US.|
 |<a name="traceid" />BingAPIs-TraceId|Cabeçalho de resposta.<br /><br /> A ID da entrada de log que contém os detalhes da solicitação. Quando ocorrer um erro, capture essa ID. Se você não conseguir determinar e resolver o problema, inclua essa ID juntamente com outras informações fornecidas à equipe de Suporte.|
@@ -73,63 +74,63 @@ Veja a seguir os cabeçalhos que podem ser incluídos em uma solicitação e uma
 ## <a name="query-parameters"></a>Parâmetros de consulta
 A solicitação pode incluir os parâmetros de consulta a seguir. Confira a coluna Obrigatório para obter os parâmetros necessários. É necessário codificar os parâmetros de consulta em URL. A consulta precisa ser uma URL absoluta com um esquema HTTP ou HTTPS; não damos suporte para URLs relativas ou outros esquemas como ftp://
 
-|NOME|Value|Type|Obrigatório|
+|Nome|Valor|Tipo|Necessário|
 |----------|-----------|----------|--------------|
-|<a name="mkt" />mkt|O mercado do qual os resultados são obtidos. <br /><br />Para obter uma lista dos possíveis valores de mercado, confira Códigos de mercado.<br /><br /> **OBSERVAÇÃO:** Atualmente, a API de Visualização de URL dá suporte apenas à geografia dos EUA e ao idioma inglês.<br /><br />|Cadeia de caracteres|Sim|
-|<a name="query" />q|A URL a ser visualizada|Cadeia de caracteres|Sim|
-|<a name="responseformat" />responseFormat|O tipo de mídia a ser usado para a resposta. Veja a seguir os possíveis valores que não diferenciam maiúsculas de minúsculas.<br /><ul><li>JSON</li><li>JSONLD</li></ul><br /> O padrão é JSON. Para obter informações sobre os objetos JSON contidos na resposta, confira [Objetos de resposta](#response-objects).<br /><br />Se você especificar JsonLd, o corpo da resposta incluirá objetos JSON-LD que contêm os resultados da pesquisa. Para obter informações sobre o JSON-LD, confira [JSON-LD](https://json-ld.org/).|Cadeia de caracteres|Não|
-|<a name="safesearch"/>Pesquisa Segura|O conteúdo ilegal para adulto ou pirateado é bloqueado com o código de erro 400 e o sinalizador *isFamilyFriendly* não é retornado. <p>Para obter conteúdo legal para adulto, veja abaixo o comportamento. O código de status retorna 200 e o sinalizador *isFamilyFriendly* é definido como false.<ul><li>safeSearch=strict: Título, descrição, URL e imagem não serão retornados.</li><li>safeSearch=moderate; Obtém o título, a URL e a descrição, mas não a imagem descritiva.</li><li>safeSearch=off; Obtém todos os elementos/objetos de resposta – título, URL, descrição e imagem.</li></ul> |Cadeia de caracteres|Não obrigatório. </br> Usa como padrão safeSearch=strict.|
+|<a name="mkt" />mkt|O mercado do qual os resultados são obtidos. <br /><br />Para obter uma lista dos possíveis valores de mercado, confira Códigos de mercado.<br /><br /> **OBSERVAÇÃO:** Atualmente, a API de Visualização de URL dá suporte apenas à geografia dos EUA e ao idioma inglês.<br /><br />|Cadeia|Sim|
+|<a name="query" />q|A URL a ser visualizada|Cadeia|Sim|
+|<a name="responseformat" />responseFormat|O tipo de mídia a ser usado para a resposta. Veja a seguir os possíveis valores que não diferenciam maiúsculas de minúsculas.<br /><ul><li>JSON</li><li>JSONLD</li></ul><br /> O padrão é JSON. Para obter informações sobre os objetos JSON contidos na resposta, confira [Objetos de resposta](#response-objects).<br /><br />Se você especificar JsonLd, o corpo da resposta incluirá objetos JSON-LD que contêm os resultados da pesquisa. Para obter informações sobre o JSON-LD, confira [JSON-LD](https://json-ld.org/).|Cadeia|Não|
+|<a name="safesearch"/>Pesquisa Segura|O conteúdo ilegal para adulto ou pirateado é bloqueado com o código de erro 400 e o sinalizador *isFamilyFriendly* não é retornado. <p>Para obter conteúdo legal para adulto, veja abaixo o comportamento. O código de status retorna 200 e o sinalizador *isFamilyFriendly* é definido como false.<ul><li>safeSearch=strict: Título, descrição, URL e imagem não serão retornados.</li><li>safeSearch=moderate; Obtém o título, a URL e a descrição, mas não a imagem descritiva.</li><li>safeSearch=off; Obtém todos os elementos/objetos de resposta – título, URL, descrição e imagem.</li></ul> |Cadeia|Não obrigatório. </br> Usa como padrão safeSearch=strict.|
 
 ## <a name="response-objects"></a>Objetos de resposta
 O esquema de resposta é uma [WebPage] ou uma ErrorResponse, como na API de Pesquisa na Web. Se a solicitação falha, o objeto de nível superior é o objeto [ErrorResponse](#errorresponse).
 
-|Object|DESCRIÇÃO|
+|Objeto|Descrição|
 |------------|-----------------|
 |[WebPage](#webpage)|O objeto JSON de nível superior que contém atributos de visualização.|
 
 ### <a name="error"></a>Erro
 Define o erro ocorrido.
 
-|Elemento|DESCRIÇÃO|Type|
+|Elemento|Descrição|Tipo|
 |-------------|-----------------|----------|
-|<a name="error-code" />code|O código de erro que identifica a categoria de erro. Para obter uma lista dos possíveis códigos, confira [Códigos de erro](#error-codes).|Cadeia de caracteres|
-|<a name="error-message" />message|Uma descrição do erro.|Cadeia de caracteres|
-|<a name="error-moredetails" />moreDetails|Uma descrição que fornece informações adicionais sobre o erro.|Cadeia de caracteres|
-|<a name="error-parameter" />parameter|O parâmetro de consulta na solicitação que causou o erro.|Cadeia de caracteres|
-|<a name="error-subcode" />subCode|O código de erro que identifica o erro. Por exemplo, se `code` é InvalidRequest, `subCode` pode ser ParameterInvalid ou ParameterInvalidValue. |Cadeia de caracteres|
-|<a name="error-value" />value|O valor do parâmetro de consulta inválido.|Cadeia de caracteres|
+|<a name="error-code" />code|O código de erro que identifica a categoria de erro. Para obter uma lista dos possíveis códigos, confira [Códigos de erro](#error-codes).|Cadeia|
+|<a name="error-message" />message|Uma descrição do erro.|Cadeia|
+|<a name="error-moredetails" />moreDetails|Uma descrição que fornece informações adicionais sobre o erro.|Cadeia|
+|<a name="error-parameter" />parameter|O parâmetro de consulta na solicitação que causou o erro.|Cadeia|
+|<a name="error-subcode" />subCode|O código de erro que identifica o erro. Por exemplo, se `code` é InvalidRequest, `subCode` pode ser ParameterInvalid ou ParameterInvalidValue. |Cadeia|
+|<a name="error-value" />value|O valor do parâmetro de consulta inválido.|Cadeia|
 
 ### <a name="errorresponse"></a>ErrorResponse
 O objeto de nível superior incluído pela resposta quando a solicitação falha.
 
-|NOME|Value|Type|
+|Nome|Valor|Tipo|
 |----------|-----------|----------|
-|_type|Dica de tipo.|Cadeia de caracteres|
+|_type|Dica de tipo.|Cadeia|
 |<a name="errors" />errors|Uma lista de erros que descreve os motivos pelos quais a solicitação falhou.|[Error](#error)[]|
 
 ### <a name="webpage"></a>WebPage
 Define as informações sobre uma página da Web na visualização.
 
-|NOME|Value|Type|
+|Nome|Valor|Tipo|
 |----------|-----------|----------|
-|name|O título de página, não necessariamente o título HTML|Cadeia de caracteres|
-|url|A URL que foi realmente rastreada (a solicitação pode ter seguido os redirecionamentos)|Cadeia de caracteres|
-|description|Breve descrição da página e do conteúdo|Cadeia de caracteres|
+|name|O título de página, não necessariamente o título HTML|Cadeia|
+|url|A URL que foi realmente rastreada (a solicitação pode ter seguido os redirecionamentos)|Cadeia|
+|description|Breve descrição da página e do conteúdo|Cadeia|
 |isFamilyFriendly|Mais preciso para itens no índice da Web; os fetches em tempo real fazem essa detecção baseada somente na URL e não no conteúdo da página|boolean|
-|primaryImageOfPage/contentUrl|A URL de uma imagem representativa a ser incluída na visualização|Cadeia de caracteres|
+|primaryImageOfPage/contentUrl|A URL de uma imagem representativa a ser incluída na visualização|Cadeia|
 
 ### <a name="identifiable"></a>Identifiable
-|NOME|Value|Type|
+|Nome|Valor|Tipo|
 |-------------|-----------------|----------|
-|id|Um identificador de recurso|Cadeia de caracteres|
+|id|Um identificador de recurso|Cadeia|
 
-## <a name="error-codes"></a>Códigos do Erro
+## <a name="error-codes"></a>Códigos de erro
 
 Veja a seguir os possíveis códigos de status HTTP retornados por uma solicitação.
 
-|Código de status|DESCRIÇÃO|
+|Código de Status|Descrição|
 |-----------------|-----------------|
-|200|Sucesso.|
+|200|Êxito.|
 |400|Um dos parâmetros de consulta está ausente ou é inválido.|
 |400|ServerError, subCode ResourceError: A URL solicitada não pôde ser acessada|
 |400|ServerError, subCode ResourceError: A URL solicitada não retornou um código de êxito (incluindo se ela retornou HTTP 404)|
@@ -170,7 +171,7 @@ Se a solicitação falha, a resposta contém um objeto [ErrorResponse](#errorres
 
 Veja a seguir os possíveis valores de código de erro e de código de suberro.
 
-|Código|Subcódigo|DESCRIÇÃO
+|Código|Subcódigo|Descrição
 |-|-|-
 |ServerError|UnexpectedError<br/>ResourceError<br/>NotImplemented|O código de status HTTP é 500.
 |InvalidRequest|ParameterMissing<br/>ParameterInvalidValue<br/>HttpNotAllowed<br/>Bloqueado|O Bing retornará InvalidRequest sempre que qualquer parte da solicitação não for válida. Por exemplo, um parâmetro obrigatório está ausente ou um valor de parâmetro não é válido.<br/><br/>Se o erro for ParameterMissing ou ParameterInvalidValue, o código de status HTTP será 400.<br/><br/>Se você usar o protocolo HTTP em vez de HTTPS, o Bing retornará HttpNotAllowed, e o código de status HTTP será 410.

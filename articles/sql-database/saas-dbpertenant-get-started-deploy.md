@@ -10,20 +10,19 @@ ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
 ms.reviewer: sstein
-manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: bbb67845922dd9a3b2a78f76bf25d73bace98a82
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d5326a3a154ed6f193b5527a0150ad84c843c273
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66240128"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570442"
 ---
 # <a name="deploy-and-explore-a-multitenant-saas-app-that-uses-the-database-per-tenant-pattern-with-sql-database"></a>Implantar e explorar um aplicativo SaaS multilocatário que usa o padrão de banco de dados por locatário com o Banco de Dados SQL
 
 Neste tutorial, você implanta e explora o aplicativo de banco de dados por locatário Wingtip Tickets SaaS (Wingtip). O aplicativo usa um padrão de banco de dados por locatário para armazenar os dados de vários locatários. O aplicativo foi projetado para demonstrar os recursos do Banco de dados SQL do Azure que simplificam como habilitar cenários SaaS.
 
-Cinco minutos depois de selecionar **Implantar no Azure**, você tem um aplicativo de SaaS multilocatário. O aplicativo inclui um banco de dados SQL que é executado na nuvem. O aplicativo é implantado com três locatários de exemplo, cada qual com seu próprio banco de dados. Todos os bancos de dados são implantados em um pool elástico do SQL. O aplicativo é implantado em sua assinatura do Azure. Você tem acesso completo para explorar e trabalhar com os componentes individuais do aplicativo. O código-fonte C# do aplicativo e os scripts de gerenciamento estão disponíveis no repositório [WingtipTicketsSaaS-DbPerTenant do GitHub][github-wingtip-dpt].
+Cinco minutos depois de selecionar **Implantar no Azure**, você tem um aplicativo de SaaS multilocatário. O aplicativo inclui um banco de dados SQL que é executado na nuvem. O aplicativo é implantado com três locatários de exemplo, cada qual com seu próprio banco de dados. Todos os bancos de dados são implantados em um pool elástico do SQL. O aplicativo é implantado em sua assinatura do Azure. Você tem acesso completo para explorar e trabalhar com os componentes individuais do aplicativo. O código C# -fonte do aplicativo e os scripts de gerenciamento estão disponíveis no [repositório GitHub repositório wingtipticketssaas-DbPerTenant][github-wingtip-dpt].
 
 Neste tutorial, você aprende:
 
@@ -75,7 +74,7 @@ Escolha seus nomes agora e os escreva.
 
 1. Para monitorar o status da implantação, selecione **Notificações** (o ícone de sino à direita da caixa de pesquisa). A implantação do aplicativo Wingtip Tickets SaaS leva aproximadamente cinco minutos.
 
-   ![Implantação bem-sucedida](media/saas-dbpertenant-get-started-deploy/succeeded.png)
+   ![Implantação com êxito](media/saas-dbpertenant-get-started-deploy/succeeded.png)
 
 ## <a name="download-and-unblock-the-wingtip-tickets-management-scripts"></a>Baixar e desbloquear os scripts de gerenciamento de Wingtip Tickets
 
@@ -117,7 +116,7 @@ Uma página central do **Hub de Eventos** fornece uma lista de links para os loc
 
 2. Selecione **Fabrikam Jazz Club** no Hub de Eventos.
 
-    ![Events](./media/saas-dbpertenant-get-started-deploy/fabrikam.png)
+    ![Eventos](./media/saas-dbpertenant-get-started-deploy/fabrikam.png)
 
 ### <a name="azure-traffic-manager"></a>Gerenciador de Tráfego do Azure
 
@@ -127,7 +126,7 @@ O aplicativo Wingtip usa o [*Gerenciador de Tráfego do Azure*](../traffic-mana
 
     As partes do formato anterior são explicadas na tabela a seguir.
 
-    | Parte da URL        | DESCRIÇÃO       |
+    | Parte da URL        | Descrição       |
     | :-------------- | :---------------- |
     | http://events.wingtip-dpt | As partes de eventos do aplicativo Wingtip.<br /><br /> *-dpt* distingue a implementação do *banco de dados por locatário* dos tíquetes Wingtip de outras implementações. São exemplos o aplicativo por locatário *único* ( *-sa*) ou as implementações do *banco de dados multilocatário* ( *-mt*). |
     | . *&lt;usuário&gt;* | *af1* no exemplo. |

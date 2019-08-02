@@ -10,21 +10,20 @@ ms.topic: conceptual
 author: danimir
 ms.author: danil
 ms.reviewer: jrasnik
-manager: craigg
 ms.date: 12/19/2018
-ms.openlocfilehash: d09adbfa7cb2782d710ef3116cbd7bc68ee247b7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 08def3ac2fd94f01586bc690d867c04758b8856b
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61417576"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68569525"
 ---
 # <a name="performance-recommendations-for-sql-database"></a>Recomendações de desempenho do Banco de Dados SQL
 
 O Banco de Dados SQL do Azure aprende e se adapta ao seu aplicativo. Ele fornece recomendações personalizadas que permitem que você maximize o desempenho de seus bancos de dados SQL. O Banco de Dados SQL avalia e analisa continuamente o histórico de uso de bancos de dados SQL. As recomendações fornecidas são baseadas em padrões de carga de trabalho exclusiva do banco de dados e ajudam a melhorar o desempenho.
 
 > [!TIP]
-> [O ajuste automático](sql-database-automatic-tuning.md) é o método recomendado para ajustar automaticamente alguns dos problemas mais comuns de desempenho do banco de dados. [Análise de desempenho de consulta](sql-database-query-performance.md) é o método recomendado para necessidades de monitoramento de desempenho de Banco de Dados SQL do Microsoft Azure. [Análise de SQL do Azure](../azure-monitor/insights/azure-sql.md) é o método recomendado para monitoramento de desempenho do banco de dados avançado em grande escala, com inteligência interna para solução de problemas de desempenho automatizado.
+> [O ajuste automático](sql-database-automatic-tuning.md) é o método recomendado para ajustar automaticamente alguns dos problemas mais comuns de desempenho do banco de dados. [Análise de desempenho de consulta](sql-database-query-performance.md) é o método recomendado para necessidades de monitoramento de desempenho de Banco de Dados SQL do Azure. [Análise de SQL do Azure](../azure-monitor/insights/azure-sql.md) é o método recomendado para monitoramento de desempenho do banco de dados avançado em grande escala, com inteligência interna para solução de problemas de desempenho automatizado.
 >
 
 ## <a name="create-index-recommendations"></a>Criar recomendações de índice
@@ -77,7 +76,7 @@ Recomendações para **Corrigir problemas do esquema** aparecem quando o serviç
 
 A recomendação para “Corrigir problemas do esquema” aparece quando o serviço de Banco de Dados SQL do Azure observa uma anomalia no número erros de SQL relacionados ao esquema ocorrendo no Banco de Dados SQL. A tabela a seguir mostra os erros relacionados a problemas de esquema:
 
-| Código do erro SQL | Mensagem |
+| Código de erro do SQL | Mensagem |
 | --- | --- |
 | 201 |Procedimento ou função ' *' espera o parâmetro '* ', que não foi fornecido. |
 | 207 |Nome de coluna inválido '*'. |
@@ -88,7 +87,7 @@ A recomendação para “Corrigir problemas do esquema” aparece quando o servi
 
 ## <a name="custom-applications"></a>Aplicativos personalizados
 
-Os desenvolvedores podem considerar desenvolvendo aplicativos personalizados usando as recomendações de desempenho para o banco de dados SQL. Todas as recomendações listadas no portal para um banco de dados pode ser acessado por meio [Get-AzSqlDatabaseRecommendedAction](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabaserecommendedaction) API.
+Os desenvolvedores podem considerar o desenvolvimento de aplicativos personalizados usando recomendações de desempenho para o banco de dados SQL do Azure. Todas as recomendações listadas no portal para um banco de dados podem ser acessadas por meio da API [Get-AzSqlDatabaseRecommendedAction](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabaserecommendedaction) .
 
 ## <a name="next-steps"></a>Próximas etapas
 Monitore suas recomendações e continue a aplicá-las para refinar o desempenho. Cargas de trabalho de banco de dados são dinâmicas e mudam continuamente. O Assistente do Banco de Dados SQL continua a monitorar e fornecer recomendações que podem potencialmente melhorar o desempenho do seu banco de dados. 

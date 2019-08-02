@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/18/2017
 ms.author: glenga
-ms.openlocfilehash: 99e043adeac9a43432fb1eba85527b561c477354
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 665eeb60012d5cec08b8a3ad919d7ddfdadc2d23
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64570557"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68609585"
 ---
 # <a name="get-started-guide-for-azure-developers"></a>Guia de introdução para desenvolvedores do Azure
 
@@ -50,7 +50,7 @@ O Azure oferece serviços que dão suporte ao desenvolvimento de aplicativos e n
 ![Opções de hospedagem de aplicativo do Azure](./media/azure-developer-guide/azure-developer-hosting-options.png)
 
 
-#### <a name="azure-app-service"></a>Serviço de aplicativo do Azure 
+#### <a name="azure-app-service"></a>Serviço de Aplicativo do Azure 
 
 Ao buscar o caminho mais rápido para publicar seus projetos baseados na web, considere o Serviço de Aplicativo do Azure. O Serviço de Aplicativo facilita a extensão de seus aplicativos Web para oferecer suporte aos clientes móveis e publicar facilmente as APIs REST consumidas. Essa plataforma fornece autenticação utilizando provedores sociais, dimensionamento automático baseado em tráfego, teste em produção e implantações baseadas em contêiner e contínuas.
 
@@ -154,7 +154,7 @@ O Azure fornece várias maneiras de utilizar contêineres em seus aplicativos.
   > 
   > **Introdução**: [Usar uma imagem personalizada do Docker para o Serviço de Aplicativo no Linux](../../app-service/containers/quickstart-docker-go.md).
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Autenticação
 
 É crucial não apenas saber quem está utilizando seus aplicativos, como também impedir o acesso não autorizado aos seus recursos. O Azure fornece várias maneiras de autenticar os clientes do aplicativo.
 
@@ -170,9 +170,9 @@ O Azure fornece várias maneiras de utilizar contêineres em seus aplicativos.
   > 
   > **Introdução**: Para saber mais sobre a autenticação no Serviço de Aplicativo, confira [Autenticação e autorização no Serviço de Aplicativo do Azure](../../app-service/overview-authentication-authorization.md).
 
-Para saber mais sobre as melhores práticas de segurança no Azure, consulte [Padrões e melhores práticas de segurança do Azure](../../security/security-best-practices-and-patterns.md).
+Para saber mais sobre as melhores práticas de segurança no Azure, consulte [Padrões e melhores práticas de segurança do Azure](../../security/fundamentals/best-practices-and-patterns.md).
 
-### <a name="monitoring"></a>Monitoramento
+### <a name="monitoring"></a>Monitorando
 
 Com seu aplicativo instalado e executando no Azure será necessário monitorar o desempenho, inspecionar problemas e observar como os clientes estão utilizando seu aplicativo. O Azure fornece várias opções de monitoramento.
 
@@ -199,7 +199,7 @@ O Azure é uma plataforma de nuvem global que geralmente está disponível em mu
 
 ### <a name="choose-the-best-region-for-your-application-and-data"></a>Escolha a melhor região para seu aplicativo e dados
 
-Um dos benefícios de utilizar o Azure é que você pode implantar seus aplicativos em vários datacenters em todo o mundo. A região que você escolher poderá afetar o desempenho do aplicativo. Por exemplo, é melhor escolher uma região que esteja mais próxima da maioria dos seus clientes para reduzir a latência nas solicitações de rede. Você também poderá selecionar sua região visando cumprir os requisitos legais para distribuir seu aplicativo em determinados países/regiões. Sempre a melhor prática será armazenar os dados do aplicativo no mesmo datacenter ou em um datacenter o mais próximo possível do datacenter que hospeda o aplicativo.
+Um dos benefícios de utilizar o Azure é que você pode implantar seus aplicativos em vários datacenters em todo o mundo. A região que você escolher poderá afetar o desempenho do aplicativo. Por exemplo, é melhor escolher uma região que esteja mais próxima da maioria dos seus clientes para reduzir a latência nas solicitações de rede. Talvez você também queira selecionar sua região para atender aos requisitos legais para distribuir seu aplicativo em determinados países/regiões. Sempre a melhor prática será armazenar os dados do aplicativo no mesmo datacenter ou em um datacenter o mais próximo possível do datacenter que hospeda o aplicativo.
 
 ### <a name="multi-region-apps"></a>Aplicativos de várias regiões
 
@@ -267,7 +267,7 @@ Cada assinatura do Azure tem uma relação de confiança com uma instância do A
 
 Além de definir identidades de conta do Azure individuais, chamadas de *usuários*, também é possível definir *grupos* no Azure AD. Criar grupos de usuários é uma boa maneira de gerenciar o acesso aos recursos em uma assinatura utilizando o controle de acesso baseado em função (RBAC). Para saber como criar grupos, consulte [Criar um grupo na versão prévia do Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md). Também é possível criar e gerenciar grupos [utilizando o PowerShell](../../active-directory/users-groups-roles/groups-settings-v2-cmdlets.md).
 
-### <a name="manage-your-subscriptions"></a>Gerencie suas assinaturas
+### <a name="manage-your-subscriptions"></a>Gerenciar suas assinaturas
 
 Uma assinatura é um agrupamento de serviços do Azure que está vinculada a uma conta do Azure. Uma única conta do Azure pode conter várias assinaturas. A cobrança dos serviços do Azure é feita por assinatura. Para obter uma lista das ofertas de assinatura disponíveis por tipo, consulte os [Detalhes da oferta do Microsoft Azure](https://azure.microsoft.com/support/legal/offer-details/). As assinaturas do Azure têm um Administrador da Conta (que tem controle total sobre a assinatura) e um Administrador de Serviços (que tem controle sobre todos os serviços na assinatura). Para obter informações sobre os administradores clássicos de assinatura, confira [Adicionar ou alterar administradores de assinatura do Azure](../../billing/billing-add-change-azure-subscription-administrator.md). Além dos administradores, é possível conceder controle detalhado de recursos do Azure usando [RBAC (Controle de Acesso Baseado em Função)](../../role-based-access-control/overview.md) a contas individuais.
 
@@ -281,7 +281,7 @@ O Azure Resource Explorer é uma ótima ferramenta para visualizar os recursos j
 
 Ao permitir acesso aos recursos do Azure, a melhor prática sempre será fornecer aos usuários o privilégio mínimo necessário para executar uma determinada tarefa.
 
-- **RBAC (controle de acesso baseado em função)** : No Azure, é possível permitir acesso a contas de usuários (entidades de segurança) em um escopo especificado: assinatura, grupo de recursos ou recursos individuais. O RBAC permite implantar um conjunto de recursos em um grupo de recursos e conceder permissões a um usuário ou grupo específico. Ele também permite limitar o acesso aos recursos que pertencem ao grupo de recursos de destino. Além disso, é possível conceder acesso a um recurso único, como uma máquina virtual ou uma rede virtual. Para conceder acesso, você atribui uma função ao usuário, ao grupo ou à entidade de serviço. Há muitas funções predefinidas, no entanto, você também pode definir suas próprias funções personalizadas. Para saber mais, confira [O que é RBAC (controle de acesso baseado em função)?](../../role-based-access-control/overview.md).
+- **RBAC (controle de acesso baseado em função)** : No Azure, é possível permitir acesso a contas de usuários (entidades de segurança) em um escopo especificado: assinatura, grupo de recursos ou recursos individuais. O RBAC permite implantar um conjunto de recursos em um grupo de recursos e conceder permissões a um usuário ou grupo específico. Ele também permite que você limite o acesso apenas aos recursos que pertencem ao grupo de recursos de destino. Além disso, é possível conceder acesso a um recurso único, como uma máquina virtual ou uma rede virtual. Para conceder acesso, você atribui uma função ao usuário, ao grupo ou à entidade de serviço. Há muitas funções predefinidas, no entanto, você também pode definir suas próprias funções personalizadas. Para saber mais, confira [O que é RBAC (controle de acesso baseado em função)?](../../role-based-access-control/overview.md).
 
   > **Quando usar**: Quando você precisar de gerenciamento de acesso refinado para usuários e grupos ou quando precisar transformar um usuário em proprietário de uma assinatura.
   > 
@@ -291,7 +291,7 @@ Ao permitir acesso aos recursos do Azure, a melhor prática sempre será fornece
 
   > **Quando usar**: Ao gerenciar de forma programática os recursos do Azure ou conceder acesso para aplicativos. Para obter mais informações, consulte [Criar entidade de serviço e aplicativo do Active Directory](../../active-directory/develop/howto-create-service-principal-portal.md).
 
-#### <a name="tags"></a>tags
+#### <a name="tags"></a>Marcas
 
 O Azure Resource Manager permite atribuir marcas personalizadas para recursos individuais. As marcas, que são pares chave-valor, podem ser úteis quando for necessário organizar recursos para cobrança ou monitoramento. As marcas fornecem uma maneira de rastrear recursos em vários grupos de recursos. É possível atribuir marcas no portal, no modelo do Azure Resource Manager ou programaticamente utilizando a API REST, a CLI do Azure ou o PowerShell. Além disso, é possível atribuir várias marcas para cada recurso. Para saber mais, consulte [Usando marcas para organizar os recursos do Azure](../../resource-group-using-tags.md).
 

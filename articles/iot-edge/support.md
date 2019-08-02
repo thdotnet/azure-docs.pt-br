@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 62b8ed553e3b4cec3750dae4f0426b6f0dd38855
-ms.sourcegitcommit: c556477e031f8f82022a8638ca2aec32e79f6fd9
+ms.openlocfilehash: 9b9acac829fd128a66e3ceea603bb804adf2a88b
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68414394"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68598591"
 ---
 # <a name="azure-iot-edge-supported-systems"></a>Sistemas compatíveis com o Azure IoT Edge
 
@@ -61,9 +61,9 @@ Os sistemas listados na tabela a seguir têm suporte da Microsoft, seja geralmen
 
 | Sistema operacional | AMD64 | ARM32v7 | ARM64 |
 | ---------------- | ----- | ------- | ----- |
-| Raspbian-stretch |  | ![Raspbian Stretch + ARM32v7](./media/tutorial-c-module/green-check.png) | Versão prévia pública |
-| Ubuntu Server 16.04 | ![Ubuntu Server 16, 4 + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
-| Ubuntu Server 18.04 | ![Ubuntu Server 18, 4 + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
+| Raspbian-stretch |  | ![Raspbian Stretch + ARM32v7](./media/tutorial-c-module/green-check.png) |  |
+| Ubuntu Server 16.04 | ![Ubuntu Server 16, 4 + AMD64](./media/tutorial-c-module/green-check.png) |  | Versão prévia pública  |
+| Ubuntu Server 18.04 | ![Ubuntu Server 18, 4 + AMD64](./media/tutorial-c-module/green-check.png) |  | Versão prévia pública |
 | Windows 10 IoT Enterprise, Build 17763 | ![Windows 10 IoT Enterprise + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
 | Windows Server 2019, Build 17763 | ![Windows Server 2019 + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
 | Windows Server IoT 2019, Build 17763 | ![Windows Server IoT 2019 + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
@@ -95,7 +95,7 @@ Os sistemas listados na tabela a seguir são considerados compatíveis com Azure
 sudo apt-get install libssl1.0.2
 ```
 
-## <a name="virtual-machines"></a>Máquinas virtuais
+## <a name="virtual-machines"></a>Máquinas Virtuais
 O Azure IoT Edge pode ser executado em máquinas virtuais. Usar uma máquina virtual como um dispositivo IoT Edge é comum quando os clientes desejam aumentar a infraestrutura existente com o Edge Intelligence. A família do sistema operacional de host da VM deve corresponder à família do sistema operacional convidado usado dentro do contêiner de um módulo. Esse requisito é o mesmo que quando Azure IoT Edge é executado diretamente em um dispositivo. O Azure IoT Edge é independente da tecnologia de virtualização subjacente e funciona em VMs desenvolvidas por plataformas como Hyper-V e vSphere.
 
 <br>

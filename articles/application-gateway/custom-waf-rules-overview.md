@@ -1,43 +1,43 @@
 ---
-title: Azure regras personalizadas v2 de Firewall de aplicativo da Web (WAF)
-description: Este artigo fornece uma visão geral de regras personalizadas de v2 de Firewall de aplicativo da Web (WAF) no Gateway de aplicativo do Azure.
+title: Regras personalizadas do firewall do aplicativo Web do Azure (WAF) V2
+description: Este artigo fornece uma visão geral das regras personalizadas do WAF (firewall do aplicativo Web) V2 no gateway Aplicativo Azure.
 services: application-gateway
 ms.topic: article
 author: vhorne
 ms.service: application-gateway
 ms.date: 6/18/2019
 ms.author: victorh
-ms.openlocfilehash: f6ea831771a8ffecfdd4c7c0d6374c16894e25ed
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 9c04f805cf410d2306eda76c84a201a67b022b84
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67164656"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68716615"
 ---
 # <a name="custom-rules-for-web-application-firewall-v2"></a>Regras personalizadas para o Firewall do aplicativo Web v2
 
-O Azure Application Gateway Web aplicativo WAF (Firewall) v2 vem com um conjunto de regras pré-configuradas, plataforma gerenciada que oferece proteção contra muitos tipos diferentes de ataques. Esses ataques incluem entre scripts sites, injeção de SQL e outros. Se você for um administrador de WAF, você talvez queira escrever a suas próprias regras para aumentar a regra principal definir regras (CRS). As regras podem bloquear ou permitir tráfego solicitado com base em critérios de correspondência.
+O Firewall do aplicativo Web do Aplicativo Azure gateway (WAF) V2 vem com um conjunto de regras pré-configurado gerenciado por plataforma que oferece proteção contra vários tipos diferentes de ataques. Esses ataques incluem scripts entre sites, injeção de SQL e outros. Se você for um administrador de WAF, talvez queira escrever suas próprias regras para aumentar as regras do CRS (conjunto de regras principais). Suas regras podem bloquear ou permitir o tráfego solicitado com base nos critérios de correspondência.
 
-Regras personalizadas permitem que você crie suas próprias regras que estão sendo avaliadas para cada solicitação que passa pelo WAF. Essas regras mantenha uma prioridade maior que o restante das regras em conjuntos de regras gerenciado. As regras personalizadas contêm um nome de regra, a prioridade da regra e uma matriz de critérios de correspondência. Se essas condições forem atendidas, uma ação é executada (para permitir ou bloquear).
+As regras personalizadas permitem que você crie suas próprias regras que são avaliadas para cada solicitação que passa pelo WAF. Essas regras têm uma prioridade mais alta do que o restante das regras nos conjuntos de regras gerenciadas. As regras personalizadas contêm um nome de regra, prioridade de regra e uma matriz de condições de correspondência. Se essas condições forem atendidas, uma ação será tomada (para permitir ou bloquear).
 
-Por exemplo, você pode bloquear todas as solicitações de um endereço IP no 192.168.5.4/24 intervalo. Nessa regra, é o operador *IPMatch*, o matchValues é o intervalo de endereços IP (192.168.5.4/24) e a ação é bloquear o tráfego. Você também definir o nome e a prioridade da regra.
+Por exemplo, você pode bloquear todas as solicitações de um endereço IP no intervalo 192.168.5.4/24. Nessa regra, o operador é *IPMatch*, o matchValues é o intervalo de endereços IP (192.168.5.4/24) e a ação é bloquear o tráfego. Você também define o nome e a prioridade da regra.
 
-Dar suporte a regras personalizadas, usando a lógica de composição para tornar mais avançado de regras que abordam que suas necessidades de segurança. Por exemplo, (condição 1 **e** condição 2) **ou** condição 3).  Este exemplo significa que, se condição 1 **e** condição 2 forem atendidos, **ou** se 3 da condição for atendida, o WAF deve levar a ação especificada na regra personalizada.
+As regras personalizadas dão suporte ao uso da lógica de composição para fazer regras mais avançadas que atendam às suas necessidades de segurança. Por exemplo, (condição 1 **e** condição 2) **ou** condição 3).  Este exemplo significa que, se a condição 1 **e** a condição 2 forem atendidas **ou** se a condição 3 for atendida, o WAF deverá executar a ação especificada na regra personalizada.
 
-Condições de correspondência diferentes dentro da mesma regra sempre são compostas usando **e**. Por exemplo, bloquear o tráfego de um endereço IP específico, e somente se eles estão usando um determinado navegador.
+Diferentes condições de correspondência dentro da mesma regra sempre são compostas usando **e**. Por exemplo, bloqueie o tráfego de um endereço IP específico e somente se eles estiverem usando um determinado navegador.
 
-Se você quiser **ou** diferentes condições, as duas condições devem ser nas regras diferentes. Por exemplo, bloquear o tráfego de um tráfego específico de endereço ou bloco IP se eles estão usando um navegador específico.
+Se você quiser **ou** duas condições diferentes, as duas condições deverão estar em regras diferentes. Por exemplo, bloqueie o tráfego de um endereço IP específico ou bloqueie o tráfego se eles estiverem usando um navegador específico.
 
 > [!NOTE]
-> O número máximo de regras personalizadas do WAF é 100. Para obter mais informações sobre os limites de Gateway de aplicativo, consulte [assinatura do Azure e limites de serviço, cotas e restrições](../azure-subscription-service-limits.md#application-gateway-limits).
+> O número máximo de regras personalizadas de WAF é 100. Para obter mais informações sobre os limites do gateway de aplicativo, consulte [assinatura e limites de serviço, cotas e restrições do Azure](../azure-subscription-service-limits.md#application-gateway-limits).
 
-Expressões regulares também têm suporte em regras personalizadas, assim como em conjuntos de regras de CRS. Para obter exemplos deles, consulte exemplos 3 e 5 [criar e usar regras de firewall de aplicativo da web personalizado](create-custom-waf-rules.md).
+Também há suporte para expressões regulares em regras personalizadas, assim como nos conjuntos de regras do CRS. Para obter exemplos desses, consulte os exemplos 3 e 5 em [criar e usar regras personalizadas de firewall do aplicativo Web](create-custom-waf-rules.md).
 
-## <a name="allowing-vs-blocking"></a>Permitindo versus bloqueio
+## <a name="allowing-vs-blocking"></a>Permitindo vs. bloqueio
 
-Permitir e bloquear o tráfego são simple com regras personalizadas. Por exemplo, você pode bloquear todo o tráfego proveniente de um intervalo de endereços IP. Você pode fazer outra regra para permitir o tráfego se a solicitação vier de um navegador específico.
+Permitir e bloquear o tráfego é simples com regras personalizadas. Por exemplo, você pode bloquear todo o tráfego proveniente de um intervalo de endereços IP. Você pode fazer outra regra para permitir o tráfego se a solicitação vier de um navegador específico.
 
-Para permitir que algo, certifique-se de que o `-Action` parâmetro é definido como **permitir**. Para bloquear algo, certifique-se de que o `-Action` parâmetro é definido como **bloco**.
+Para permitir algo, verifique se o `-Action` parâmetro está definido como **permitir**. Para bloquear algo, verifique se o `-Action` parâmetro está definido como **Bloquear**.
 
 ```azurepowershell
 $AllowRule = New-AzApplicationGatewayFirewallCustomRule `
@@ -55,7 +55,7 @@ $BlockRule = New-AzApplicationGatewayFirewallCustomRule `
    -Action Block
 ```
 
-Anterior `$BlockRule` é mapeado para a seguinte regra personalizada no Azure Resource Manager:
+Os mapas `$BlockRule` anteriores para a seguinte regra personalizada no Azure Resource Manager:
 
 ```json
 "customRules": [
@@ -86,47 +86,47 @@ Anterior `$BlockRule` é mapeado para a seguinte regra personalizada no Azure Re
     ], 
 ```
 
-Essa regra personalizada contém um nome, prioridade, uma ação e a matriz de correspondência de condições que devem ser atendidas para a ação entrar em vigor. Para obter mais explicações desses campos, consulte as seguintes descrições do campo. Por exemplo regras personalizadas, consulte [criar e usar regras de firewall de aplicativo da web personalizado](create-custom-waf-rules.md).
+Essa regra personalizada contém um nome, uma prioridade, uma ação e a matriz de condições de correspondência que devem ser atendidas para que a ação ocorra. Para obter mais explicações sobre esses campos, consulte as descrições de campo a seguir. Por exemplo, regras personalizadas, consulte [criar e usar regras personalizadas de firewall do aplicativo Web](create-custom-waf-rules.md).
 
 ## <a name="fields-for-custom-rules"></a>Campos para regras personalizadas
 
 ### <a name="name-optional"></a>Nome [opcional]
 
-Esse é o nome da regra. Esse nome aparece nos logs.
+Este é o nome da regra. Esse nome aparece nos logs.
 
 ### <a name="priority-required"></a>Prioridade [obrigatório]
 
-- Determina a ordem em que as regras são avaliadas no. Quanto menor o valor, mais antiga a avaliação da regra.
+- Determina a ordem em que as regras são avaliadas. Quanto menor o valor, mais cedo a avaliação da regra.
 -Deve ser exclusivo entre todas as regras personalizadas. Uma regra com prioridade 100 será avaliada antes de uma regra com prioridade 200.
 
 ### <a name="rule-type-required"></a>Tipo de regra [obrigatório]
 
-Atualmente, deve ser **MatchRule**.
+No momento, deve ser **MatchRule**.
 
 ### <a name="match-variable-required"></a>Variável de correspondência [obrigatório]
 
 Deve ser uma das variáveis:
 
-- RemoteAddr – IP endereço/nome do host da conexão do computador remoto
-- RequestMethod – método de solicitação HTTP (GET, POST, PUT, DELETE e assim por diante.)
+- RemoteAddr – endereço IP/nome do host da conexão do computador remoto
+- RequestMethod – método de solicitação HTTP (GET, POST, PUT, DELETE e assim por diante).
 - QueryString – variável no URI
-- PostArgs – os argumentos enviados no corpo da POSTAGEM
-- RequestUri – o URI da solicitação
+- POST args – argumentos enviados no corpo da postagem. As regras personalizadas que usam essa variável de correspondência serão aplicadas somente se o cabeçalho ' Content-Type ' estiver definido como ' application/x-www-form-urlencoded ' e ' multipart/form-data '.
+- RequestUri – URI da solicitação
 - RequestHeaders – cabeçalhos da solicitação
-- RequestBody – o corpo da solicitação
-- RequestCookies – Cookies da solicitação
+- RequestBody – contém todo o corpo da solicitação como um todo. As regras personalizadas que usam essa variável de correspondência serão aplicadas somente se o cabeçalho ' Content-Type ' estiver definido como ' application/x-www-form-urlencoded '. 
+- RequestCookies – cookies da solicitação
 
-### <a name="selector-optional"></a>Seletor de [opcional]
+### <a name="selector-optional"></a>Seletor [opcional]
 
-Descreve o campo da coleção matchVariable. Por exemplo, se o matchVariable for RequestHeaders, o seletor pode ser na *User-Agent* cabeçalho.
+Descreve o campo da coleção matchVariable. Por exemplo, se matchVariable for RequestHeaders, o seletor poderá estar no cabeçalho *User-Agent* .
 
 ### <a name="operator-required"></a>Operador [obrigatório]
 
 Deve ser um dos seguintes operadores:
 
-- IPMatch - usado somente quando a variável de correspondência é *RemoteAddr*
-- É igual a – de entrada é o mesmo que o MatchValue
-- Contém:
+- IPMatch-usado somente quando a variável de correspondência é *RemoteAddr*
+- Equals – a entrada é igual a Matchvalue
+- Contém
 - LessThan
 - GreaterThan
 - LessThanOrEqual
@@ -135,31 +135,31 @@ Deve ser um dos seguintes operadores:
 - EndsWith
 - Regex
 
-### <a name="negate-condition-optional"></a>Negar a condição [opcional]
+### <a name="negate-condition-optional"></a>Negar condição [opcional]
 
 Nega a condição atual.
 
-### <a name="transform-optional"></a>Transformação [opcional]
+### <a name="transform-optional"></a>Transformar [opcional]
 
-Tentativa de obter uma lista de cadeias de caracteres com nomes de transformações para fazer antes da correspondência. Eles podem ser as seguintes transformações:
+Uma lista de cadeias de caracteres com nomes de transformações a serem realizadas antes da tentativa de correspondência. Elas podem ser as seguintes transformações:
 
-- Letras minúsculas
-- Trim
+- Minúsculas
+- Cortar
 - UrlDecode
 - UrlEncode 
 - RemoveNulls
 - HtmlEntityDecode
 
-### <a name="match-values-required"></a>Corresponder aos valores [obrigatório]
+### <a name="match-values-required"></a>Valores de correspondência [obrigatório]
 
-Lista de valores para correspondência com, que pode ser considerada como sendo *ou*' ed. Por exemplo, é possível endereços IP ou outras cadeias de caracteres. O formato do valor depende do operador anterior.
+Lista de valores a serem correspondidos, que pode ser considerada como sendo *ou*' Ed '. Por exemplo, pode ser endereços IP ou outras cadeias de caracteres. O formato do valor depende do operador anterior.
 
 ### <a name="action-required"></a>Ação [obrigatório]
 
-- Permitir – autoriza a transação, ignorando todas as demais regras. Isso significa que a solicitação especificada é adicionada à lista de permissões e depois correspondentes, a solicitação para avaliação adicional e é enviada para o pool de back-end. Regras que estão na lista de permissões não são avaliadas para qualquer ainda mais as regras personalizadas ou regras gerenciadas.
-- Bloquear – bloqueia a transação com base em *SecDefaultAction* (modo de detecção/prevenção). Assim como a ação de permissão, depois que a solicitação é avaliada e adicionada à lista de bloqueios, avaliação for interrompida e a solicitação é bloqueada. Qualquer solicitação depois que satisfazem as mesmas condições não será avaliada e apenas será bloqueada. 
-- Log – permite que a regra de gravar no log, mas permite que o restante das regras de execução para avaliação. Regras personalizadas subsequentes são avaliadas na ordem de prioridade, seguida pelas regras gerenciadas.
+- Permitir – autoriza a transação, ignorando todas as regras subsequentes. Isso significa que a solicitação especificada é adicionada à lista de permissões e, uma vez correspondente, a solicitação para uma avaliação adicional e é enviada para o pool de back-end. As regras que estão na lista de permissões não são avaliadas para outras regras personalizadas ou regras gerenciadas.
+- Block – bloqueia a transação com base em *SecDefaultAction* (modo de detecção/prevenção). Assim como a ação permitir, depois que a solicitação é avaliada e adicionada à lista de bloqueios, a avaliação é interrompida e a solicitação é bloqueada. Qualquer solicitação após isso atenderá às mesmas condições não será avaliada e será bloqueada apenas. 
+- Log – permite que a regra grave no log, mas permite que o restante das regras seja executado para avaliação. As regras personalizadas subsequentes são avaliadas em ordem de prioridade, seguidas pelas regras gerenciadas.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Depois que você saiba mais sobre regras personalizadas, [criar suas próprias regras personalizadas](create-custom-waf-rules.md).
+Depois de aprender sobre regras personalizadas, [crie suas próprias regras personalizadas](create-custom-waf-rules.md).

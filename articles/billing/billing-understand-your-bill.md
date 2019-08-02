@@ -2,28 +2,28 @@
 title: Entender sua fatura do Azure
 description: Saiba como ler e entender seu uso e cobrança para sua assinatura do Azure.
 author: bandersmsft
-manager: jureid
+manager: dougeby
 tags: billing
 ms.service: billing
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/22/2019
+ms.date: 07/28/2019
 ms.author: banders
-ms.openlocfilehash: 69659e700ee47c8961ec21f0fb23573e13d72588
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 51143644a62a77a61c4540d9f2ad3dce401c496b
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68383637"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68610126"
 ---
 # <a name="understand-your-microsoft-azure-bill"></a>Entenda sua fatura de Microsoft Azure
 Para entender sua fatura do Azure, você compara sua fatura com o arquivo de uso diário detalhado e com relatórios de gerenciamento de custos no portal do Azure.
 
-Este artigo não se aplica aos clientes do Azure com um Contrato Enterprise (clientes da EA). Se você for um cliente do EA, consulte [entender sua fatura para clientes do Azure com um Enterprise Agreement](billing-understand-your-bill-ea.md).
-
-Este artigo não se aplica aos clientes do Azure com um [contrato de cliente da Microsoft](#check-access-to-a-microsoft-customer-agreement). Se você tiver um contrato com o cliente da Microsoft, consulte [entender os encargos do Azure em sua fatura do contrato de clientes da Microsoft](billing-mca-understand-your-bill.md).
+Este artigo não se aplica aos seguintes clientes:
+- Clientes do Azure com um Enterprise Agreement (clientes do EA). Se você for um cliente do EA, consulte [entender sua fatura para clientes do Azure com um Enterprise Agreement](billing-understand-your-bill-ea.md).
+- Clientes do Azure com um [contrato de cliente da Microsoft](#check-access-to-a-microsoft-customer-agreement). Se você tiver um contrato com o cliente da Microsoft, consulte [entender os encargos do Azure em sua fatura do contrato de clientes da Microsoft](billing-mca-understand-your-bill.md).
 
 Para obter uma explicação sobre como o faturamento funciona no programa Provedor de Soluções de Nuvem do Azure (Azure CSP), incluindo o ciclo de cobrança, o preço e o uso, confira [Visão geral da cobrança do Azure CSP](/azure/cloud-solution-provider/billing/azure-csp-billing-overview/).
 
@@ -58,7 +58,7 @@ O mesmo encargo é mostrado na seção **Instrução** de seu CSV de uso detalha
 
 ![Encargos de uso de CSV](./media/billing-understand-your-bill/2.png)
 
-Para ver uma análise diária do encargo, vá para a seção **uso diário** do arquivo CSV. Filtro para  o Agendador na *categoria de medidor*. Você pode ver em quais dias o medidor foi usado e quanto foi consumido. As informações do *grupo* de *recursos e recursos* também são mostradas para comparação. Os  valores consumidos devem somar e corresponder ao que é mostrado na nota fiscal.
+Para ver uma análise diária do encargo, vá para a seção **uso diário** do arquivo CSV. Filtro para o Agendador na *categoria de medidor*. Você pode ver em quais dias o medidor foi usado e quanto foi consumido. As informações do *grupo* de *recursos e recursos* também são mostradas para comparação. Os valores consumidos devem somar e corresponder ao que é mostrado na nota fiscal.
 
 ![Seção Uso Diário no CSV](./media/billing-understand-your-bill/3.png)
 
@@ -88,7 +88,7 @@ Para saber mais, veja [Evitar custos inesperados com o gerenciamento de custos e
 
 ## <a name="external"></a>Serviços externos cobrados separadamente
 
-Serviços externos, ou cobranças de mercado, são para recursos que foram criados por fornecedores de software de terceiros. Esses recursos estão disponíveis para uso no mercado do Azure. Por exemplo, um Barracuda Firewall é um recurso de mercado do Azure oferecido por terceiros. Todos os encargos para o firewall e seus medidores correspondentes aparecem como cobranças de serviços externos.
+Os serviços externos ou as cobranças do Marketplace são para recursos que foram criados por fornecedores de software de terceiros. Esses recursos estão disponíveis para uso no Azure Marketplace. Por exemplo, um firewall de Barracuda é um recurso do Azure Marketplace oferecido por terceiros. Todos os encargos para o firewall e seus medidores correspondentes aparecem como cobranças de serviços externos.
 
 As taxas de serviço externas são cobradas separadamente. Os encargos não aparecem na fatura do Azure. Para saber mais, confira [Entender os encargos dos serviços externos do Azure](billing-understand-your-azure-marketplace-charges.md).
 
@@ -130,7 +130,7 @@ Para verificar o status de seu pagamento, [crie um tíquete de suporte](https://
   - [Calculadora de preços do Azure](https://azure.microsoft.com/pricing/calculator/)
   - [Custo total de Calculadora de propriedade](https://aka.ms/azure-tco-calculator)
   - [Obter informações para cada serviço de preço](https://azure.microsoft.com/pricing/)
-- [Examine o uso e os custos regularmente no Portal do Azure](billing-getting-started.md#costs).
+- [Examine o uso e os custos regularmente na portal do Azure](billing-getting-started.md#costs)
 
 ## <a name="check-access-to-a-microsoft-customer-agreement"></a>Verificar o acesso a um contrato do cliente da Microsoft
 [!INCLUDE [billing-check-mca](../../includes/billing-check-mca.md)]

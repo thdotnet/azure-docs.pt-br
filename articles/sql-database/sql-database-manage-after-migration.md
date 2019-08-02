@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: joesackmsft
 ms.author: josack
 ms.reviewer: sstein
-manager: craigg
 ms.date: 02/13/2019
-ms.openlocfilehash: 73bc2d9889727a1633986e12642bd06cf2714632
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2edd12435643f88a0923abf0927149993d49e424
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66357323"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567807"
 ---
 # <a name="new-dba-in-the-cloud--managing-your-single-and-pooled-databases-in-azure-sql-database"></a>DBA novo na nuvem – gerenciamento de bancos de dados individuais e em pool no Banco de Dados SQL do Azure
 
@@ -40,10 +39,10 @@ Este artigo discute algumas das principais características do Banco de Dados SQ
 
 ## <a name="monitor-databases-using-the-azure-portal"></a>Monitorar bancos de dados usando o Portal do Azure
 
-No [portal do Azure](https://portal.azure.com/), você pode monitorar a utilização de um banco de dados individual s selecionando seu banco de dados e clicando na **monitoramento** gráfico. Isso abre uma janela **Métrica** que pode ser alterada clicando no botão **Editar gráfico**. Adicione as seguintes métricas:
+No [portal do Azure](https://portal.azure.com/), você pode monitorar uma utilização de bancos de dados individuais selecionando seu banco de dados e clicando no gráfico de **monitoramento** . Isso abre uma janela **Métrica** que pode ser alterada clicando no botão **Editar gráfico**. Adicione as seguintes métricas:
 
 - Percentual de CPU
-- Porcentagem de DTU
+- Porcentual de DTU
 - Porcentagem de E/S de dados
 - Percentual de tamanho do banco de dados
 
@@ -180,7 +179,7 @@ Para proteger dados confidenciais em trânsito e em repouso, o Banco de Dados SQ
 
 ### <a name="how-can-i-limit-access-to-sensitive-data-in-my-database"></a>Como posso limitar o acesso a dados confidenciais em meu banco de dados
 
-Cada aplicativo tem uma determinado quantidade de dados confidenciais no banco de dados que precisam ser protegidos de ficarem visíveis para todos. Uma determinada equipe dentro da organização precisa visualizar esses dados, porém outras não devem ser capazes de visualizá-los. Um exemplo é os salários de funcionários. Um gerente precisaria de acesso às informações de salário para seus relatórios diretos no entanto, os membros da equipe individuais não devem ter acesso às informações de salário de seus colegas. Outro cenário é os desenvolvedores de dados que podem interagir com dados confidenciais durante as fases de desenvolvimento ou teste, por exemplo, CPFs de clientes. Essas informações, novamente, não precisam ser expostas para o desenvolvedor. Nesses casos, dados confidenciais precisam ser mascarados ou não serem expostos de forma alguma. O Banco de Dados SQL oferece duas abordagens para impedir que usuários não autorizados possam visualizar dados confidenciais:
+Cada aplicativo tem uma determinado quantidade de dados confidenciais no banco de dados que precisam ser protegidos de ficarem visíveis para todos. Uma determinada equipe dentro da organização precisa visualizar esses dados, porém outras não devem ser capazes de visualizá-los. Um exemplo é os salários de funcionários. Um gerente precisaria de acesso às informações salariais para seus subordinados diretos, no entanto, os membros individuais da equipe não deveriam ter acesso às informações salariais de seus colegas. Outro cenário é os desenvolvedores de dados que podem interagir com dados confidenciais durante as fases de desenvolvimento ou teste, por exemplo, CPFs de clientes. Essas informações, novamente, não precisam ser expostas para o desenvolvedor. Nesses casos, dados confidenciais precisam ser mascarados ou não serem expostos de forma alguma. O Banco de Dados SQL oferece duas abordagens para impedir que usuários não autorizados possam visualizar dados confidenciais:
 
 A [Máscara de Dados Dinâmicos](sql-database-dynamic-data-masking-get-started.md) é um recurso de mascaramento de dados que permite que você limite a exposição de dados confidenciais mascarando-os para usuários sem privilégios na camada de aplicativo. Defina uma regra de mascaramento que pode criar um padrão de mascaramento (por exemplo, para mostrar apenas os quatro últimos dígitos de um SSN de ID nacional: XXX-XX-0000 e marque a maior parte dele como Xs) e identifique quais usuários devem ser excluídos da regra de mascaramento. O mascaramento ocorre durante a execução e várias funções de mascaramento estão disponíveis para várias categorias de dados. O mascaramento de dados dinâmicos permite automaticamente detectar dados confidenciais no banco de dados e aplicar mascaramento a eles.
 
@@ -227,7 +226,7 @@ A Rota Expressa permite aumentar até 2 vezes o limite da largura de banda adqui
 
 ### <a name="is-sql-database-compliant-with-any-regulatory-requirements-and-how-does-that-help-with-my-own-organizations-compliance"></a>O Banco de Dados SQL está em conformidade com os requisitos regulatórios? Como isso ajuda na conformidade da minha organização?
 
-O Banco de Dados SQL atende a várias regras de conformidade regulatória. Para exibir o último conjunto de conformidades atendido pelo banco de dados SQL, visite o [Microsoft Trust Center](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) e fazer uma busca detalhada sobre as conformidades que são importantes para sua organização para saber se o banco de dados SQL está incluído na conformidade Serviços do Azure. É importante observar que, embora o Banco de Dados SQL possa ser certificado como um serviço em conformidade, ele ajuda na conformidade do serviço de sua organização, mas não garante essa conformidade automaticamente.
+O Banco de Dados SQL atende a várias regras de conformidade regulatória. Para exibir o conjunto mais recente de conformidades que foram atendidas pelo banco de dados SQL, visite a [central de confiabilidade da Microsoft](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) e faça uma busca detalhada das conformidades que são importantes para sua organização para ver se o banco de dados SQL está incluído nos serviços compatíveis do Azure. É importante observar que, embora o Banco de Dados SQL possa ser certificado como um serviço em conformidade, ele ajuda na conformidade do serviço de sua organização, mas não garante essa conformidade automaticamente.
 
 ## <a name="intelligent-database-monitoring-and-maintenance-after-migration"></a>Monitoramento e manutenção de banco de dados inteligente após a migração
 
@@ -281,9 +280,9 @@ A [Análise de Desempenho de Consultas](sql-database-query-performance.md) permi
 
 ![Análise de Desempenho de Consultas](./media/sql-database-manage-after-migration/query-performance-insight.png)
 
-#### <a name="azure-sql-analytics-preview-in-azure-monitor-logs"></a>Logs de análise do SQL Azure (visualização) no Azure Monitor
+#### <a name="azure-sql-analytics-preview-in-azure-monitor-logs"></a>Análise de SQL do Azure (versão prévia) nos logs do Azure Monitor
 
-[Os logs do Azure Monitor](../azure-monitor/insights/azure-sql.md) permite coletar e visualizar as principais métricas de desempenho do Azure SQL Azure, dando suporte a até 150.000 bancos de dados SQL e a 5.000 pools Elásticos de SQL por espaço de trabalho. Você pode usá-lo para monitorar e receber notificações. Você pode monitorar métricas do Banco de Dados SQL e de pool elástico em várias assinaturas do Azure e pools elásticos, e isso pode ser usado para identificar problemas em cada camada da pilha de um aplicativo.
+[Os logs de Azure monitor](../azure-monitor/insights/azure-sql.md) permitem coletar e visualizar as principais métricas de desempenho de SQL Azure do Azure, dando suporte a até 150.000 bancos de dados sql e 5.000 pools elásticos do SQL por espaço de trabalho. Você pode usá-lo para monitorar e receber notificações. Você pode monitorar métricas do Banco de Dados SQL e de pool elástico em várias assinaturas do Azure e pools elásticos, e isso pode ser usado para identificar problemas em cada camada da pilha de um aplicativo.
 
 ### <a name="i-am-noticing-performance-issues-how-does-my-sql-database-troubleshooting-methodology-differ-from-sql-server"></a>Estou tendo problemas de desempenho: Como a minha metodologia de solução de problemas do Banco de Dados SQL difere do SQL Server?
 
@@ -299,7 +298,7 @@ Para obter um conjunto abrangente de recomendações de ajuste dos problemas de 
 
 ### <a name="how-do-i-ensure-i-am-using-the-appropriate-service-tier-and-compute-size"></a>Como fazer para garantir que estou usando o tamanho da computação e a camada de serviço apropriados?
 
-O Banco de Dados SQL oferece várias camadas de serviço: Básica, Standard e Premium. Cada camada de serviço garante um desempenho previsível associado a essa camada de serviço. Dependendo de sua carga de trabalho, você pode ter intermitência de atividade em que a utilização de recursos pode atingir o limite do tamanho da computação em que você está. Nesses casos, é útil primeiro iniciar avaliando se qualquer ajuste pode ajudá-lo (por exemplo, adicionar ou alterar um índice etc.). Se ainda tiver problemas com o limite, considere a possibilidade de passar para um tamanho de computação ou camada de serviço superior.
+O Banco de Dados SQL oferece várias camadas de serviço: Básica, Standard e Premium. Cada camada de serviço garante um desempenho previsível associado a essa camada de serviço. Dependendo de sua carga de trabalho, você pode ter intermitência de atividade em que a utilização de recursos pode atingir o limite do tamanho da computação em que você está. Nesses casos, é útil primeiro iniciar avaliando se qualquer ajuste pode ajudá-lo (por exemplo, adicionar ou alterar um índice etc.). Se ainda tiver problemas com o limite, considere a possibilidade de passar para um tamanho da computação ou nível de serviço superior.
 
 |**Camada de serviço**|**Cenários de caso de uso comuns**|
 |---|---|
@@ -335,6 +334,6 @@ Há várias maneiras fazer isso:
 - **[Sincronização de Dados](sql-database-sync-data.md)** – Esse recurso ajuda a sincronizar dados bidirecionalmente entre vários bancos de dados locais do SQL Server e do Banco de Dados SQL. Para sincronizar com bancos de dados do SQL Server local, você precisa instalar e configurar o agente de sincronização em um computador local e abrir a porta TCP de saída 1433.
 - **[Replicação de Transação](https://azure.microsoft.com/blog/transactional-replication-to-azure-sql-database-is-now-generally-available/)** – Com replicação de transação, você pode sincronizar os dados do local para o Azure SQL DB com o local que está sendo o publicador e o Azure SQL DB que está sendo o assinante. Por ora, apenas há suporte apenas para esta configuração. Para obter mais informações sobre como migrar seus dados do local para o Azure SQL com o mínimo tempo de inatividade, consulte: [Usar Replicação da Transação](sql-database-single-database-migrate.md#method-2-use-transactional-replication)
 
-## <a name="next-steps"></a>Próximos passos
+## <a name="next-steps"></a>Próximas etapas
 
 Conheça o [Banco de Dados SQL](sql-database-technical-overview.md).

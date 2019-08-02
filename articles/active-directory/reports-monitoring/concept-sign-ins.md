@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 04/18/2019
+ms.date: 07/17/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81b7030d0f45222a1641e34b341885d2ecc051e3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6121ca6c1636c8839110712310a1b94fe7fada49
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67107659"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619216"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Relatórios de atividades de entrada no portal do Azure Active Directory
 
@@ -66,7 +66,7 @@ Um log de entradas tem um modo de exibição de lista padrão que mostra:
 
 - A hora de entrada
 - O usuário relacionado
-- O aplicativo no qual o usuário entrou
+- O aplicativo ao qual o usuário entrou
 - O status de entrada
 - O status da detecção de riscos
 - O status do requisito de MFA (autenticação multifator)
@@ -86,21 +86,14 @@ Selecione um item na exibição de lista para obter informações mais detalhada
 ![Atividade de entrada](./media/concept-sign-ins/03.png "Atividade de entrada")
 
 > [!NOTE]
-> Os clientes agora podem solucionar problemas de políticas de acesso condicional por meio de todos os relatórios de entrada. Ao clicar na **acesso condicional** guia para um registro de entrada, os clientes podem examinar o status de acesso condicional e informações detalhadas sobre os detalhes das políticas que são aplicadas na entrada e o resultado para cada política.
+> Agora, os clientes podem solucionar problemas de políticas de acesso condicional por meio de todos os relatórios de entrada. Ao clicar na guia **acesso condicional** para um registro de entrada, os clientes podem examinar o status de acesso condicional e aprofundar-se nos detalhes das políticas que foram aplicadas à entrada e ao resultado de cada política.
 > Para obter mais informações, consulte as [Perguntas frequentes sobre as informações de CA em todos os logins](reports-faq.md#conditional-access).
 
-![Atividade de entrada](./media/concept-sign-ins/ConditionalAccess.png "Atividade de entrada")
 
 
 ## <a name="filter-sign-in-activities"></a>Filtrar atividades de entrada
 
-Para restringir os dados relatados a um nível que funciona para você, filtre os dados de entradas usando os seguintes campos padrão:
-
-- Usuário
-- Aplicativo
-- Status de entrada
-- Acesso Condicional
-- Data
+Para restringir os dados relatados a um nível que funciona para você, você pode filtrar os dados de entradas usando o campo de data como filtro padrão. Além disso, o Azure AD oferece uma ampla variedade de filtros adicionais que podem ser definidos.
 
 ![Atividade de entrada](./media/concept-sign-ins/04.png "Atividade de entrada")
 
@@ -110,16 +103,16 @@ O filtro **Aplicativo** permite que você especifique o nome do aplicativo desej
 
 O filtro **status de entrada** permite que você selecione:
 
-- Todos
+- Todas
 - Êxito
-- Failure
+- Falha
 
 O filtro **Acesso Condicional** permite que você selecione o status da política de Autoridade de Certificação para a entrada:
 
-- Todos
-- Não aplicado
+- Todas
+- Não Aplicado
 - Êxito
-- Failure
+- Falha
 
 O filtro **Data** permite definir um período de tempo para os dados retornados.  
 Os valores possíveis são:
@@ -135,28 +128,28 @@ Se você adicionar outros campos ao modo de exibição de entradas, esses campos
 ![Atividade de entrada](./media/concept-sign-ins/12.png "Atividade de entrada")
 
 - **Navegador**  
-    Esse filtro mostra todos os eventos em que tentativas de logon foram realizados usando fluxos de navegador.
-- **Exchange ActiveSync (compatível)**  
-    Esse filtro mostra todas as tentativas de entrar em que o protocolo Exchange ActiveSync (EAS) foi tentado de plataformas com suporte, como iOS, Android e Windows Phone.
+    Esse filtro mostra todos os eventos em que as tentativas de entrada foram executadas usando fluxos de navegador.
+- **Exchange ActiveSync (com suporte)**  
+    Esse filtro mostra todas as tentativas de entrada em que o protocolo EAS (Exchange ActiveSync) foi tentado a partir de plataformas com suporte, como iOS, Android e Windows Phone.
 - **Exchange ActiveSync (sem suporte)**  
-    Esse filtro mostra todas as tentativas de entrar em que o protocolo EAS foi tentado de plataformas sem suporte, como distribuições de Linux.
-- **Os aplicativos móveis e clientes de Desktop** esse filtro mostra todas as tentativas de entrada que não estavam usando fluxos de navegador. Isso pode ser de qualquer plataforma usando qualquer protocolo ou de aplicativos de área de trabalho cliente como o Office no Windows ou MacOS de aplicativos móveis.
+    Esse filtro mostra todas as tentativas de entrada nas quais o protocolo EAS foi tentado a partir de plataformas sem suporte, como o Linux distribuições.
+- **Aplicativos móveis e clientes de área de trabalho** Esse filtro mostra todas as tentativas de entrada que não estavam usando fluxos de navegador. Isso pode ser aplicativos móveis de qualquer plataforma usando qualquer protocolo ou de aplicativos cliente de desktop, como Office no Windows ou MacOS.
   
 - **Outros clientes**
     - **IMAP**  
-        Um cliente de email herdados usando IMAP para recuperar o email.
+        Um cliente de email herdado usando IMAP para recuperar email.
     - **MAPI**  
-        Office 2013, em que o ADAL está habilitado e está usando MAPI.
+        Office 2013, onde a ADAL está habilitada e está usando MAPI.
     - **Clientes mais antigos do Office**  
-        Office 2013 em sua configuração padrão em que a ADAL não está habilitado e ele está usando MAPI ou Office 2016, em que a ADAL foi desabilitada.
+        Office 2013 em sua configuração padrão em que a ADAL não está habilitada e está usando MAPI ou o Office 2016 em que a ADAL foi desabilitada.
     - **POP**  
-        Um cliente de email herdados usando POP3 para recuperar o email.
+        Um cliente de email herdado usando POP3 para recuperar email.
     - **SMTP**  
-        Um cliente de email herdados usando o SMTP para enviar email.
+        Um cliente de email herdado usando SMTP para enviar email.
 
 ## <a name="download-sign-in-activities"></a>Baixar atividades de entrada
 
-Você poderá [baixar os dados de entradas](quickstart-download-sign-in-report.md), caso queira trabalhar com esses dados fora do portal do Azure. Clicando em **baixar** lhe dá a opção de criar um arquivo CSV ou JSON dos registros de 250.000 mais recentes.  
+Você poderá [baixar os dados de entradas](quickstart-download-sign-in-report.md), caso queira trabalhar com esses dados fora do portal do Azure. Clicar em **baixar** oferece a opção de criar um arquivo CSV ou JSON dos registros 250.000 mais recentes.  
 
 ![Baixar](./media/concept-sign-ins/71.png "Baixar")
 
@@ -175,7 +168,7 @@ Além do Azure AD, o portal do Azure fornece pontos de entrada adicionais aos da
 
 ### <a name="users-sign-ins-data-in-identity-security-protection"></a>Dados de entradas de usuário na proteção de segurança de identidade
 
-O gráfico de entrada do usuário na **proteção de segurança de identidade** página Visão geral mostra agregações semanais de entradas para todos os usuários em um determinado período de tempo. O padrão para o período é de 30 dias.
+O grafo de entrada do usuário na página Visão geral da **proteção de segurança de identidade** mostra as agregações semanais de entradas para todos os usuários em um determinado período de tempo. O padrão para o período é de 30 dias.
 
 ![Atividade de entrada](./media/concept-sign-ins/06.png "Atividade de entrada")
 
@@ -190,16 +183,16 @@ Cada linha na lista de atividades de entrada mostra:
 
 Ao clicar em um item, você verá mais detalhes sobre a operação de entrada:
 
-- Id de Usuário
-- Usuário
-- Nome de Usuário
-- ID do aplicativo
+- ID de usuário
+- User
+- Nome de usuário
+- ID do Aplicativo
 - Aplicativo
 - Cliente
-- Local padrão
+- Location
 - Endereço IP
-- Data
-- MFA obrigatório
+- Date
+- MFA Necessário
 - Status de entrada
 
 > [!NOTE]
@@ -221,7 +214,7 @@ Seu ponto de entrada para esses dados é composto pelos três principais aplicat
 
 ![Atividade de entrada](./media/concept-sign-ins/10.png "Atividade de entrada")
 
-As aplicativo uso agregações semanais ao grafo de entradas para seus aplicativos de 3 principais em um determinado período de tempo. O padrão para o período é de 30 dias.
+As agregações semanais do grafo de uso do aplicativo de entradas para os três principais aplicativos em um determinado período de tempo. O padrão para o período é de 30 dias.
 
 ![Atividade de entrada](./media/concept-sign-ins/47.png "Atividade de entrada")
 
@@ -237,9 +230,9 @@ A opção **Entradas** oferece uma visão geral completa de todos os eventos de 
 
 ## <a name="office-365-activity-logs"></a>Logs de atividade do Office 365
 
-Você pode exibir os logs de atividades do Office 365 do [Centro de administração do Microsoft 365](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center). Apesar de atividades do Office 365 e logs de atividade do Azure AD compartilhem muitos dos recursos de diretório, o Centro de administração do Microsoft 365 fornece uma exibição completa dos logs de atividades do Office 365. 
+Você pode exibir os logs de atividade do Office 365 no [centro de administração do Microsoft 365](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center). Embora a atividade do Office 365 e os logs de atividades do Azure AD compartilhem muitos recursos de diretório, somente o Microsoft 365 centro de administração fornece uma visão completa dos logs de atividade do Office 365. 
 
-Você também pode acessar os logs de atividade do Office 365 de modo programático usando as [APIs de gerenciamento do Office 365](https://docs.microsoft.com/office/office-365-management-api/office-365-management-apis-overview).
+Você também pode acessar os logs de atividade do Office 365 programaticamente usando as [APIs de gerenciamento do office 365](https://docs.microsoft.com/office/office-365-management-api/office-365-management-apis-overview).
 
 ## <a name="next-steps"></a>Próximas etapas
 

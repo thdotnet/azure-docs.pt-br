@@ -6,14 +6,14 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 12/14/2018
+ms.date: 07/29/2019
 ms.author: alinast
-ms.openlocfilehash: e7efe1a8632643e2a299b6c9a1b1407414deee4b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0bb7309ae452b2885be279d1ab38b8467397f2f8
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60925758"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638502"
 ---
 # <a name="understand-digital-twins-object-models-and-spatial-intelligence-graph"></a>Noções básicas sobre modelos de objeto e grafos de inteligência espacial dos Gêmeos Digitais
 
@@ -82,7 +82,7 @@ Após implantar os Gêmeos Digitais pelo [portal do Azure](https://portal.azure.
 https://YOUR_INSTANCE_NAME.YOUR_LOCATION.azuresmartspaces.net/management/swagger
 ```
 
-| NOME | Substitua por |
+| Nome | Substitua por |
 | --- | --- |
 | NOME_DA_SUA_INSTÂNCIA | O nome da instância dos Gêmeos Digitais |
 | SUA_LOCALIZAÇÃO | Em qual região do servidor de sua instância está hospedada |

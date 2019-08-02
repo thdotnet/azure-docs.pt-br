@@ -9,39 +9,39 @@ ms.author: robreed
 ms.date: 03/11/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: a82358a2194f10a2112ed89109f0f2933dfd5fe2
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 8187e4c6f2c7dc721c178bad50b6c3ada2a65367
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478602"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68717237"
 ---
 # <a name="move-your-azure-automation-account-to-another-subscription"></a>Mover sua conta de automação do Azure para outra assinatura
 
-Azure fornece a capacidade de mover alguns recursos para um novo grupo de recursos ou assinatura. Você pode mover recursos por meio do portal do Azure, PowerShell, a CLI do Azure ou a API REST. Para saber mais sobre o processo, consulte [mover recursos para um novo grupo de recursos ou assinatura](../../azure-resource-manager/resource-group-move-resources.md). 
+O Azure fornece a capacidade de mover alguns recursos para um novo grupo de recursos ou assinatura. Você pode mover recursos por meio do portal do Azure, do PowerShell, do CLI do Azure ou da API REST. Para saber mais sobre o processo, consulte [mover recursos para um novo grupo de recursos ou assinatura](../../azure-resource-manager/resource-group-move-resources.md).
 
-Contas de automação do Azure são um dos recursos que podem ser movidos. Neste artigo, você aprenderá as etapas para mover contas de automação para outro recurso ou da assinatura.
+As contas de automação do Azure são um dos recursos que podem ser movidos. Neste artigo, você aprenderá as etapas para mover as contas de automação para outro recurso ou assinatura.
 
-As etapas de alto nível para mover a sua conta de automação são:
+As etapas de alto nível para mover sua conta de automação são:
 
 1. Remova suas soluções.
-2. Desvincule o espaço de trabalho.
+2. Desvincular seu espaço de trabalho.
 3. Mova a conta de automação.
-4. Excluir e recriar as contas executar como.
+4. Exclua e recrie as contas Executar como.
 5. Habilite novamente suas soluções.
 
 ## <a name="remove-solutions"></a>Remover soluções
 
-Para desvincular o espaço de trabalho da sua conta de automação, essas soluções devem ser removidas do seu espaço de trabalho:
-- **Controle de alterações e inventário**
-- **Gerenciamento de atualizações** 
-- **Iniciar/Parar VMs durante horários inativos** 
+Para desvincular seu espaço de trabalho da sua conta de automação, essas soluções devem ser removidas do seu espaço de trabalho:
+- **Controle de Alterações e inventário**
+- **Gerenciamento de atualizações**
+- **Iniciar/parar VMs fora do horário de expediente**
 
-No grupo de recursos, encontre cada solução e selecione **excluir**. Sobre o **excluir recursos** , confirme os recursos a ser removido e selecione **excluir**.
+Em seu grupo de recursos, localize cada solução e selecione **excluir**. Na página **excluir recursos** , confirme os recursos a serem removidos e selecione **excluir**.
 
 ![Excluir soluções do portal do Azure](../media/move-account/delete-solutions.png)
 
-Você pode realizar a mesma tarefa com o [Remove-AzureRmResource](/powershell/module/azurerm.resources/remove-azurermresource) cmdlet, conforme mostrado no exemplo a seguir:
+Você pode realizar a mesma tarefa com o cmdlet [Remove-AzureRmResource](/powershell/module/azurerm.resources/remove-azurermresource) , conforme mostrado no exemplo a seguir:
 
 ```azurepowershell-interactive
 $workspaceName = <myWorkspaceName>
@@ -53,97 +53,98 @@ Remove-AzureRmResource -ResourceType 'Microsoft.OperationsManagement/solutions' 
 
 ### <a name="additional-steps-for-startstop-vms"></a>Etapas adicionais para iniciar/parar VMs
 
-Para o **iniciar/parar VMs** solução, você também precisará remover as regras de alerta criadas pela solução.
+Para a solução **iniciar/parar VMs** , você também precisa remover as regras de alerta criadas pela solução.
 
-No portal do Azure, vá para seu grupo de recursos e selecione **Monitoring** > **alertas** > **gerenciar regras de alerta**.
+Na portal do Azure, vá para o grupo de recursos e selecione**alertas** > de **monitoramento** > **gerenciar regras de alerta**.
 
-![Seleção de mostrando página de regras de alerta de gerenciar de alertas](../media/move-account/alert-rules.png)
+![Página de alertas mostrando a seleção de gerenciar regras de alerta](../media/move-account/alert-rules.png)
 
-Sobre o **regras** página, você deve ver uma lista dos alertas configurados no grupo de recursos. O **iniciar/parar VMs** solução cria três regras de alerta:
+Na página **regras** , você verá uma lista dos alertas configurados nesse grupo de recursos. A solução **iniciar/parar VMs** cria três regras de alerta:
 
 * AutoStop_VM_Child
 * ScheduledStartStop_Parent
 * SequencedStartStop_Parent
 
-Selecione esses três regras de alerta e, em seguida, selecione **excluir**. Esta ação removerá essas regras de alerta.
+Selecione essas três regras de alerta e, em seguida, selecione **excluir**. Esta ação removerá essas regras de alerta.
 
-![Página de regras solicitando a confirmação de exclusão para as regras selecionadas](../media/move-account/delete-rules.png)
+![Página de regras solicitando confirmação de exclusão para regras selecionadas](../media/move-account/delete-rules.png)
 
 > [!NOTE]
-> Se você não vir nenhuma regra de alerta na **regras** página, altere a **Status** para mostrar **desabilitada** alertas, porque você pode ter desabilitado-los.
+> Se você não vir nenhuma regra de alerta na página **regras** , altere o **status** para mostrar alertas **desabilitados** , pois você pode tê-los desabilitados.
 
-Quando as regras de alerta são removidas, remova o grupo de ação que foi criado para o **iniciar/parar VMs** notificações de solução.
+Quando as regras de alerta forem removidas, remova o grupo de ações que foi criado para as notificações de solução **iniciar/parar VMs** .
 
-No portal do Azure, selecione **Monitor** > **alertas** > **gerenciar grupos de ação**.
+No portal do Azure, selecione **monitorar** > **alertas** > **gerenciar grupos de ações**.
 
-Selecione **StartStop_VM_Notification** na lista. Na página do grupo de ação, selecione **excluir**.
+Selecione **StartStop_VM_Notification** na lista. Na página grupo de ações, selecione **excluir**.
 
-![Página de grupo de ação, selecione Excluir](../media/move-account/delete-action-group.png)
+![Grupo de ações página, selecione Excluir](../media/move-account/delete-action-group.png)
 
-Da mesma forma, você pode excluir o grupo de ações usando o PowerShell com o [Remove-AzureRmActionGroup](/powershell/module/azurerm.insights/remove-azurermactiongroup) cmdlet, como visto no exemplo a seguir:
+Da mesma forma, você pode excluir o grupo de ações usando o PowerShell com o cmdlet [Remove-AzureRmActionGroup](/powershell/module/azurerm.insights/remove-azurermactiongroup) , como mostrado no exemplo a seguir:
 
 ```azurepowershell-interactive
 Remove-AzureRmActionGroup -ResourceGroupName <myResourceGroup> -Name StartStop_VM_Notification
 ```
 
-## <a name="unlink-your-workspace"></a>Desvincular o espaço de trabalho
+## <a name="unlink-your-workspace"></a>Desvincular seu espaço de trabalho
 
-No portal do Azure, selecione **conta de automação** > **recursos relacionados** > **espaço de trabalho vinculado**. Selecione **desvincular espaço de trabalho** ao desvincular o espaço de trabalho da sua conta de automação.
+No portal do Azure, selecione > **recursos relacionados à** **conta** > de automação**espaço de trabalho vinculado**. Selecione **desvincular espaço de trabalho** para desvincular o espaço de trabalho da sua conta de automação.
 
 ![Desvincular um espaço de trabalho de uma conta de automação](../media/move-account/unlink-workspace.png)
 
-## <a name="move-your-automation-account"></a>Mover a sua conta de automação
+## <a name="move-your-automation-account"></a>Mover sua conta de automação
 
-Depois de remover os itens anteriores, você pode continuar a remover sua conta de automação e seus runbooks. No portal do Azure, navegue até o grupo de recursos de sua conta de automação. Selecione **mova** > **mover para outra assinatura**.
+Depois de remover os itens anteriores, você pode continuar a remover sua conta de automação e seus runbooks. Na portal do Azure, navegue até o grupo de recursos da sua conta de automação. Selecione **mover** > **mover para outra assinatura**.
 
-![Página de grupo de recursos, mover para outra assinatura](../media/move-account/move-resources.png)
+![Página grupo de recursos, mover para outra assinatura](../media/move-account/move-resources.png)
 
-Selecione os recursos no grupo de recursos que você deseja mover. Verifique se você incluir seu **conta de automação**, **Runbook**, e **espaço de trabalho do Log Analytics** recursos.
+Selecione os recursos em seu grupo de recursos que você deseja mover. Certifique-se de incluir seus recursos de **conta de automação**, **runbook**e espaço de **trabalho do log Analytics** .
 
-Após a migração for concluída, há etapas adicionais necessárias para fazer tudo funcionar.
+Após a conclusão da movimentação, há etapas adicionais necessárias para fazer tudo funcionar.
 
-## <a name="re-create-run-as-accounts"></a>Recrie as contas executar como
+## <a name="re-create-run-as-accounts"></a>Recriar contas Executar como
 
-[Contas executar como](../manage-runas-account.md) criar uma entidade de serviço no Azure Active Directory para autenticar com recursos do Azure. Quando você altera as assinaturas, a conta de automação não usa mais a conta executar como existente.
+[As contas Executar como](../manage-runas-account.md) criam uma entidade de serviço no Azure Active Directory para autenticar com os recursos do Azure. Quando você altera as assinaturas, a conta de automação não usa mais a conta Executar como existente.
 
-Vá para sua conta de automação na nova assinatura e selecione **contas executar como** sob **configurações de conta**. Você verá que as contas executar como mostram como incompletas agora.
+Acesse sua conta de automação na nova assinatura e selecione **contas Executar como** em **configurações de conta**. Você verá que as contas Executar como são mostradas como incompletas agora.
 
-![Contas executar como estão incompletas](../media/move-account/run-as-accounts.png)
+![As contas Executar como estão incompletas](../media/move-account/run-as-accounts.png)
 
-Selecione cada conta executar como. Sobre o **propriedades** página, selecione **excluir** para excluir a conta executar como.
+Selecione cada conta Executar como. Na página **Propriedades** , selecione **excluir** para excluir a conta Executar como.
 
 > [!NOTE]
-> Se você não tem permissões para criar ou exibir as contas executar como, você verá a seguinte mensagem: `You do not have permissions to create an Azure Run As account (service principal) and grant the Contributor role to the service principal.` Para saber mais sobre as permissões necessárias para configurar uma conta executar como, consulte [permissões necessárias para configurar contas executar como](../manage-runas-account.md#permissions).
+> Se você não tiver permissões para criar ou exibir as contas Executar como, verá a seguinte mensagem: `You do not have permissions to create an Azure Run As account (service principal) and grant the Contributor role to the service principal.`Para saber mais sobre as permissões necessárias para configurar uma conta Executar como, consulte [permissões necessárias para configurar contas Executar como](../manage-runas-account.md#permissions).
 
-Depois de excluir as contas executar como, selecione **Create** sob **conta executar como do Azure**. Sobre o **adicionar Azure executar como conta** página, selecione **criar** para criar a conta executar como e o serviço principal. Repita as etapas anteriores com o **do Azure conta executar como clássica**.
+Depois que as contas Executar como forem excluídas, selecione **criar** na **conta Executar como do Azure**. Na página **adicionar conta Executar como do Azure** , selecione **criar** para criar a conta Executar como e a entidade de serviço. Repita as etapas anteriores com a **conta Executar como clássica do Azure**.
 
 ## <a name="enable-solutions"></a>Habilitar soluções
 
-Depois de criar as contas executar como novamente, você vai habilitar novamente as soluções que você removeu antes da movimentação. Para ativar **controle de alterações e inventário** e **gerenciamento de atualizações**, selecione o respectivo recurso em sua conta de automação. Escolha o espaço de trabalho do Log Analytics de mudar e selecione **habilitar**.
+Depois de recriar as contas Executar como, você reabilitará as soluções que você removeu antes da movimentação. Para ativar **controle de alterações e inventário** e **Gerenciamento de atualizações**, selecione o respectivo recurso em sua conta de automação. Escolha o Log Analytics espaço de trabalho que você moveu e selecione **habilitar**.
 
-![Habilitar novamente as soluções em sua conta de automação movida](../media/move-account/reenable-solutions.png)
+![Reabilitar soluções em sua conta de automação movida](../media/move-account/reenable-solutions.png)
 
-As máquinas que estão integrados com suas soluções ficará visíveis quando você se conectou o espaço de trabalho do Log Analytics existente.
+Os computadores que estiverem integrados com suas soluções ficarão visíveis quando você conectar o espaço de trabalho do Log Analytics existente.
 
-Para ativar o **iniciar/parar VMs** durante a solução de fora do horário comercial, você precisará reimplantar a solução. Sob **recursos relacionados**, selecione **iniciar/parar VMs** > **Saiba mais sobre e habilite a solução** > **criar** para iniciar a implantação.
+Para ativar a solução **iniciar/parar VMs** fora do horário comercial, você precisará reimplantar a solução. Em **recursos relacionados**, selecione **iniciar/parar VMs** > **saiba mais sobre e habilite a solução** > **criar** para iniciar a implantação.
 
-Sobre o **adicionar solução** , escolha sua conta de automação e espaço de trabalho do Log Analytics.  
+Na página **Adicionar solução** , escolha o espaço de trabalho log Analytics e a conta de automação.
 
 ![Adicionar menu de solução](../media/move-account/add-solution-vm.png)
 
-Para obter instruções detalhadas sobre como configurar a solução, consulte [iniciar/parar VMs durante a solução de fora do horário comercial na automação do Azure](../automation-solution-vm-management.md).
+Para obter instruções detalhadas sobre como configurar a solução, confira a [solução iniciar/parar VMs fora do horário comercial na automação do Azure](../automation-solution-vm-management.md).
 
-## <a name="post-move-verification"></a>Pós-mover verificação
+## <a name="post-move-verification"></a>Verificação de pós-movimentação
 
-Quando a migração for concluída, verifique a seguinte lista de tarefas que devem ser verificados:
+Quando a movimentação for concluída, verifique a seguinte lista de tarefas que devem ser verificadas:
 
-|Recurso|Testes|Link de solução de problemas|
+|Funcionalidade|Testes|Link de solução de problemas|
 |---|---|---|
-|Runbooks|Um runbook pode executar e conectar-se aos recursos do Azure com êxito.|[Solucionar problemas de runbooks](../troubleshoot/runbooks.md)
-| Controle do código-fonte|Você pode executar uma sincronização manual em seu repositório de controle do código-fonte.|[Integração de controle de origem](../source-control-integration.md)|
-|Controle de alterações e inventário|Verifique se que você ver os dados de inventário atual de suas máquinas.|[Solucionar problemas de controle de alterações](../troubleshoot/change-tracking.md)|
-|Gerenciamento de atualizações|Verifique se você ver suas máquinas e estão íntegros.</br>Execute uma implantação de atualização de software de teste.|[Solucionar problemas de gerenciamento de atualizações](../troubleshoot/update-management.md)|
+|Runbooks|Um runbook pode ser executado com êxito e se conectar aos recursos do Azure.|[Solucionar problemas de runbooks](../troubleshoot/runbooks.md)
+|Controle do código-fonte|Você pode executar uma sincronização manual em seu repositório de controle do código-fonte.|[Integração de controle de origem](../source-control-integration.md)|
+|Controle de alterações e inventário|Verifique se você vê os dados de inventário atuais de seus computadores.|[Solucionar problemas de controle de alterações](../troubleshoot/change-tracking.md)|
+|Gerenciamento de atualizações|Verifique se você vê seus computadores e se eles estão íntegros.</br>Executar uma implantação de atualização de software de teste.|[Solucionar problemas de gerenciamento de atualizações](../troubleshoot/update-management.md)|
+|Recursos compartilhados|Verifique se você vê todos os seus recursos compartilhados, como [credenciais](../shared-resources/credentials.md), [variáveis](../shared-resources/variables.md), etc.|
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para saber mais sobre como mover recursos no Azure, consulte [mover os recursos no Azure](../../azure-resource-manager/move-support-resources.md).
+Para saber mais sobre como mover recursos no Azure, consulte [mover recursos no Azure](../../azure-resource-manager/move-support-resources.md).

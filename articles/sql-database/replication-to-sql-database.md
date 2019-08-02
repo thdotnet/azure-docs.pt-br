@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: allenwux
 ms.author: xiwu
 ms.reviewer: mathoma
-manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: b9d6569504b5352c6187afe12d903c986019c517
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: eab8f4809742b69e92cb835801493722d28afe49
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60646786"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570470"
 ---
 # <a name="replication-to-sql-database-single-and-pooled-databases"></a>Replicação para bancos de dados individuais e em pool do Banco de Dados SQL
 
@@ -107,7 +106,7 @@ As opções a seguir não têm suporte para assinaturas de Banco de Dados SQL do
 Crie uma publicação e uma assinatura push. Para obter mais informações, consulte:
   
 - [Criar uma publicação](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
-- [Criar uma Assinatura Push](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/) usando o nome do servidor de Banco de Dados SQL do Azure como assinante (por exemplo **N'azuresqldbdns.database.windows.net'** ) e o nome do Banco de Dados SQL do Azure como o banco de dados de destino (por exemplo, **AdventureWorks**).  
+- [Criar uma Assinatura Push](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/) usando o nome do servidor do Banco de Dados SQL do Azure como assinante (por exemplo **N'azuresqldbdns.database.windows.net'** ) e o nome do Banco de Dados SQL do Azure como o banco de dados de destino (por exemplo, **AdventureWorks**).  
 
 ## <a name="see-also"></a>Consulte também  
 

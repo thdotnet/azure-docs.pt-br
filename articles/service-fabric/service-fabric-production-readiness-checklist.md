@@ -3,7 +3,7 @@ title: Lista de verificação de preparação da produção do Microsoft Azure S
 description: Prepare o aplicativo do Service Fabric e o cluster prontos para produção seguindo as melhores práticas.
 services: service-fabric
 documentationcenter: .net
-author: aljo-microsoft
+author: athinanthny
 manager: chakdan
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 6/05/2019
-ms.author: aljo
-ms.openlocfilehash: a75b02b8173507a28204a3ec2030ce7ed9838495
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: atsenthi
+ms.openlocfilehash: 9e86f7306ee70bee2e084b967867e2a9be5b66e1
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66729855"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599362"
 ---
 # <a name="production-readiness-checklist"></a>Lista de verificação de preparação para produção
 
@@ -27,7 +27,7 @@ O aplicativo e o cluster estão prontos para receber tráfego de produção? Exe
 
 
 ## <a name="prerequisites-for-production"></a>Pré-requisitos para produção
-1. Práticas recomendadas do Service Fabric do Azure: [Design do aplicativo](./service-fabric-best-practices-applications.md), [Security](./service-fabric-best-practices-security.md), [Networking](./service-fabric-best-practices-networking.md), [planejamento de capacidade e dimensionamento](./service-fabric-best-practices-capacity-scaling.md), [infraestrutura como código](./service-fabric-best-practices-infrastructure-as-code.md), e [monitoramento e diagnóstico](./service-fabric-best-practices-monitoring.md). 
+1. Práticas recomendadas do Azure Service Fabric: [Design de aplicativos](./service-fabric-best-practices-applications.md), [segurança](./service-fabric-best-practices-security.md), [rede](./service-fabric-best-practices-networking.md), [planejamento de capacidade e dimensionamento](./service-fabric-best-practices-capacity-scaling.md), [Infraestrutura como código](./service-fabric-best-practices-infrastructure-as-code.md)e [monitoramento e diagnóstico](./service-fabric-best-practices-monitoring.md). 
 1. Implementar a configuração de segurança dos Reliable Actors se o modelo de programação de Atores estiver sendo usado
 1. Para clusters com mais de 20 núcleos ou 10 nós, crie um tipo de nó primário dedicado para serviços do sistema. Adicione [restrições de posicionamento](service-fabric-cluster-resource-manager-advanced-placement-rules-placement-policies.md) para reservar o tipo de nó primário para serviços do sistema.
 1. Use D2v2 ou SKU superior para o tipo de nó primário. É recomendável separar uma SKU com pelo menos 50 GB de capacidade de disco rígido.
@@ -36,9 +36,9 @@ O aplicativo e o cluster estão prontos para receber tráfego de produção? Exe
 1. Reconheça e defina o [nível de durabilidade](service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster). É recomendável o nível de durabilidade prata ou superior para tipos de nó que executam cargas de trabalho com estado. O tipo de nó primário deve ter um nível de durabilidade definido como Prata ou superior.
 1. Reconheça e escolha o [nível de confiabilidade](service-fabric-cluster-capacity.md#the-reliability-characteristics-of-the-cluster) do tipo de nó. É recomendável confiabilidade prata ou superior.
 1. Carregue e dimensione o teste das cargas de trabalho para identificar os [requisitos de capacidades](service-fabric-cluster-capacity.md) para o cluster. 
-1. Os serviços e aplicativos são monitorados e os logs dos aplicativos estão sendo gerados e armazenados, com alertas. Por exemplo, consulte [Adicionar log ao seu aplicativo do Service Fabric](service-fabric-how-to-diagnostics-log.md) e [monitorar contêineres com os logs do Azure Monitor](service-fabric-diagnostics-oms-containers.md).
-1. O cluster é monitorado com o alerta (por exemplo, com [registra em log do Azure Monitor](service-fabric-diagnostics-event-analysis-oms.md)). 
-1. A infraestrutura de conjunto de dimensionamento de máquina virtual subjacente é monitorada com o alerta (por exemplo, com [registra em log do Azure Monitor](service-fabric-diagnostics-oms-agent.md).
+1. Os serviços e aplicativos são monitorados e os logs dos aplicativos estão sendo gerados e armazenados, com alertas. Por exemplo, consulte [adicionar registro em log ao aplicativo Service Fabric](service-fabric-how-to-diagnostics-log.md) e [monitorar contêineres com Azure monitor logs](service-fabric-diagnostics-oms-containers.md).
+1. O cluster é monitorado com alertas (por exemplo, com [logs de Azure monitor](service-fabric-diagnostics-event-analysis-oms.md)). 
+1. A infraestrutura subjacente do conjunto de dimensionamento de máquinas virtuais é monitorada com alertas (por exemplo, com [logs de Azure monitor](service-fabric-diagnostics-oms-agent.md).
 1. O cluster tem [certificados primários e secundários](service-fabric-cluster-security-update-certs-azure.md) sempre (para que você não seja bloqueado).
 1. Manter clusters separados para desenvolvimento, preparação e produção. 
 1. [Upgrades de aplicativos](service-fabric-application-upgrade.md) e [upgrades de cluster](service-fabric-tutorial-upgrade-cluster.md) primeiro são testados em clusters de preparo e desenvolvimento. 

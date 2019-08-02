@@ -3,7 +3,7 @@ title: Encontrar ajuda e abrir um tíquete de suporte – Azure Active Directory
 description: Instruções sobre como obter ajuda e abrir um tíquete de suporte do Azure Active Directory.
 services: active-directory
 documentationcenter: na
-author: eross-msft
+author: msaburnley
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.subservice: fundamentals
 ms.workload: identity
 ms.date: 08/28/2017
-ms.author: lizross
+ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 22bf80c13ef3b18ab3119b6b35e529c8ad32f504
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9dce9b93dfe4ddfca370d1d3131d1d12cb6f121d
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60248079"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68561758"
 ---
 # <a name="find-help-and-open-a-support-ticket-for-azure-active-directory"></a>Encontrar ajuda e abrir um tíquete de suporte para o Azure Active Directory
 A Microsoft fornece suporte técnico global, de pré-vendas, cobrança e assinatura para o Azure AD (Azure Active Directory). O suporte está disponível online e por telefone para versões de avaliação e assinaturas pagas do Microsoft Azure. O suporte via telefone e o suporte de cobrança online estão disponíveis em outros idiomas. 
@@ -31,17 +31,17 @@ Antes de criar um tíquete de suporte, confira os seguintes recursos para obter 
 
 * Para obter conteúdo, como instruções ou exemplos de código para desenvolvedores e profissionais de TI, consulte a [documentação técnica em docs.microsoft.com](https://docs.microsoft.com/azure/active-directory/).
 
-* O [comunidade técnica da Microsoft](https://techcommunity.microsoft.com/) é o lugar para nossos clientes e parceiros profissionais de TI colaborar, compartilhar e aprender. O [Microsoft Technical Community Info Center](https://techcommunity.microsoft.com/t5/Community-Info-Center/ct-p/Community-Info-Center) é usado para comunicados, postagens de blog, pergunte-me-qualquer coisa as interações (AMA) com especialistas e muito mais. Você também pode [participar da comunidade para enviar suas ideias](https://techcommunity.microsoft.com/t5/Communities/ct-p/communities).
+* A [comunidade técnica da Microsoft](https://techcommunity.microsoft.com/) é o lugar para que nossos clientes e parceiros de profissionais de ti colaborem, compartilhem e aprendam. O [centro de informações da comunidade técnica da Microsoft](https://techcommunity.microsoft.com/t5/Community-Info-Center/ct-p/Community-Info-Center) é usado para anúncios, Postagens de blog, interações de ama (pergunte-me-qualquer coisa) com especialistas e muito mais. Você também pode [participar da comunidade para enviar suas ideias](https://techcommunity.microsoft.com/t5/Communities/ct-p/communities).
 
 
-## <a name="open-a-support-ticket"></a>Abra um tíquete de suporte
+## <a name="open-a-support-ticket"></a>Abrir um ticket de suporte
 
 Se não for possível encontrar respostas usando os recursos de autoatendimento, você poderá abrir um tíquete de suporte online. Você deve abrir somente um tíquete de suporte para cada problema para que possamos conectá-lo aos engenheiros de suporte que são especialistas no assunto relacionado ao seu problema. Além disso, as equipes de engenharia do Azure Active Directory priorizam o trabalho com base em incidentes que são gerados, assim você está frequentemente contribuindo para aprimoramentos de serviço.
 
 ### <a name="how-to-open-a-support-ticket-for-azure-ad-in-the-azure-portal"></a>Como abrir um tíquete de suporte para o Azure AD no Portal do Azure
 
 > [!NOTE]
-> Para problemas de cobrança ou assinatura, você deve usar o [Centro de administração do Microsoft 365](https://admin.microsoft.com).
+> Para problemas de cobrança ou assinatura, você deve usar o [centro de administração do Microsoft 365](https://admin.microsoft.com).
 > 
 
 1. Entre no [Portal do Azure](https://portal.azure.com) e abra o **Azure Active Directory**.
@@ -59,14 +59,14 @@ Se não for possível encontrar respostas usando os recursos de autoatendimento,
 7. Adicione o restante das suas informações sobre o problema e clique em **Avançar**.
   
 8. Forneça suas informações de contato e selecione **Criar**.
-  ![Tela de autoajuda de categoria do problema](./media/active-directory-troubleshooting-support-howto/open-support-ticket.png)
+  ![Captura de tela de autoajuda da categoria do problema](./media/active-directory-troubleshooting-support-howto/open-support-ticket.png)
 
-### <a name="how-to-open-a-support-ticket-for-azure-ad-in-the-microsoft-365-admin-center"></a>Como abrir um tíquete de suporte do Azure AD no Centro de administração do Microsoft 365
+### <a name="how-to-open-a-support-ticket-for-azure-ad-in-the-microsoft-365-admin-center"></a>Como abrir um tíquete de suporte para o Azure AD no centro de administração Microsoft 365
 
 > [!NOTE]
-> Suporte do Azure AD na [Centro de administração do Microsoft 365](https://admin.microsoft.com) é oferecido somente para administradores. 
+> O suporte para o Azure AD no [centro de administração Microsoft 365](https://admin.microsoft.com) é oferecido apenas para administradores. 
 
-1. Entrar para o [Centro de administração do Microsoft 365](https://admin.microsoft.com) com uma conta que tenha uma licença do Security (EMS) do Enterprise Mobility +.
+1. Entre no centro de [Administração do Microsoft 365](https://admin.microsoft.com) com uma conta que tenha uma licença do Enterprise Mobility + Security (EMS).
 
 2. No bloco **Suporte**, selecione **Nova solicitação de serviço**:
 

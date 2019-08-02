@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
 ms.reviewer: sstein
-manager: craigg
 ms.date: 11/07/2018
-ms.openlocfilehash: b1b281c7beac6b6cb48834e636edff818f89bf12
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2e6b18e53358cad1bfe89e8c0ae7fbacec24d179
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66304148"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570206"
 ---
 # <a name="deploy-and-explore-a-standalone-single-tenant-application-that-uses-azure-sql-database"></a>Implantar e explorar um aplicativo autônomo de locatário único que usa o Banco de Dados SQL do Azure
 
@@ -27,7 +26,7 @@ O aplicativo autônomo ou um padrão de aplicativo por locatário implanta uma i
 
 Neste tutorial, você implantará três aplicativos autônomos para três locatários em sua assinatura do Azure.  Você tem acesso completo para explorar e trabalhar com os componentes individuais do aplicativo.
 
-O código-fonte do aplicativo e os scripts de gerenciamento estão disponíveis no repositório GitHub [WingtipTicketsSaaS-StandaloneApp](https://github.com/Microsoft/WingtipTicketsSaaS-StandaloneApp). O aplicativo foi criado usando o Visual Studio 2015 e não com êxito abrir e compilar no Visual Studio de 2019 sem atualizar.
+O código-fonte do aplicativo e os scripts de gerenciamento estão disponíveis no repositório GitHub [WingtipTicketsSaaS-StandaloneApp](https://github.com/Microsoft/WingtipTicketsSaaS-StandaloneApp). O aplicativo foi criado usando o Visual Studio 2015 e não é aberto e compilado com êxito no Visual Studio 2019 sem atualização.
 
 
 Neste tutorial, você aprende:
@@ -37,7 +36,7 @@ Neste tutorial, você aprende:
 > * Onde obter o código-fonte do aplicativo e scripts de gerenciamento.
 > * Sobre os servidores e bancos de dados que constituem o aplicativo.
 
-Outros tutoriais serão liberados. Eles que você explore uma variedade de cenários de gerenciamento com base nesse padrão de aplicativo.   
+Outros tutoriais serão liberados. Eles permitirão que você explore uma variedade de cenários de gerenciamento com base nesse padrão de aplicativo.   
 
 ## <a name="deploy-the-wingtip-tickets-saas-standalone-application"></a>Implantar o Aplicativo Autônomo SaaS Wingtip Tickets
 
@@ -55,8 +54,8 @@ Implante o aplicativo para os três locatários fornecidos:
     > [!IMPORTANT]
     > Algumas autenticações e firewalls de servidor estão intencionalmente desprotegidos para fins de demonstração. **Crie um novo grupo de recursos** para cada implantação de aplicativo.  Não use um grupo de recursos existente. Não use este aplicativo ou todos os recursos que cria, para a produção. Exclua todos os grupos de recursos quando terminar com os aplicativos para interromper a cobrança relacionada.
 
-    É melhor usar apenas letras minúsculas, números e hifens nos nomes de recursos.
-    * Para **Grupo de recursos**, selecione Criar novo e, em seguida, forneça um Nom para o grupo de recursos (em minúsculas). **wingtip-sa-\<venueName\>-\<user\>** é o padrão recomendado.  Para \<venueName\>, substitua o nome do local sem espaços. Para \<usuário\>, substitua o valor de usuário abaixo.  Com esse padrão, os nomes do grupo de recursos podem ser *wingtip-sa-contosoconcerthall-af1*, *wingtip-sa-dogwooddojo-af1*, *wingtip-sa-fabrikamjazzclub-af1*.
+    É melhor usar apenas letras minúsculas, números e hifens em seus nomes de recursos.
+    * Para **Grupo de recursos**, selecione Criar novo e, em seguida, forneça um Nom para o grupo de recursos (em minúsculas). **wingtip-sa-\<venueName\>-\<user\>** é o padrão recomendado.  Para \<o\>LocalName, substitua o nome do local sem espaços. Para \<usuário\>, substitua o valor do usuário abaixo.  Com esse padrão, os nomes do grupo de recursos podem ser *wingtip-sa-contosoconcerthall-af1*, *wingtip-sa-dogwooddojo-af1*, *wingtip-sa-fabrikamjazzclub-af1*.
     * Selecione uma **Localização** na lista suspensa.
 
     * Para **Usuário** – Recomendamos um valor de usuário curto, como as iniciais mais um dígito: por exemplo, *af1*.
@@ -82,7 +81,7 @@ O aplicativo apresenta locais que organizam eventos.  Os locais são os locatár
 
      (Em cada URL, substitua &lt;user&gt; pelo valor do usuário da implantação.)
 
-   ![Events](./media/saas-standaloneapp-get-started-deploy/fabrikam.png)
+   ![Eventos](./media/saas-standaloneapp-get-started-deploy/fabrikam.png)
 
 Para controlar a distribuição das solicitações de entrada, o aplicativo usa o [*Gerenciador de Tráfego do Azure*](../traffic-manager/traffic-manager-overview.md). Cada instância de aplicativo específica do locatário inclui o nome do locatário como parte do nome de domínio na URL. Todas as URLs de locatário incluem o valor do **Usuário** específico. As URLs seguem este formato:
 - http://events.&lt ;venuename&gt;.&lt; user&gt;.trafficmanager.net
@@ -126,6 +125,6 @@ Neste tutorial, você aprendeu:
 > * Sobre os servidores e bancos de dados que constituem o aplicativo.
 > * Como excluir recursos de exemplo para interromper a cobrança relacionada.
 
-Em seguida, tente o [provisionar e catalogar](saas-standaloneapp-provision-and-catalog.md) tutorial no qual você explorará o uso de um catálogo de locatários que permite uma variedade de cenários entre locatários, como a análise de locatário e o gerenciamento de esquema.
+Em seguida, experimente o tutorial de [provisionamento e catálogo](saas-standaloneapp-provision-and-catalog.md) no qual você explorará o uso de um catálogo de locatários que permite uma variedade de cenários entre locatários, como gerenciamento de esquema e análise de locatário.
  
 

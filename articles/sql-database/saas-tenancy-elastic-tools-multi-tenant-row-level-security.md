@@ -10,20 +10,19 @@ ms.topic: conceptual
 author: VanMSFT
 ms.author: vanto
 ms.reviewer: sstein
-manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: 4834688496330210b273f40f1d6f11230a6ae1c8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 996d4e2ba62c06992b0433fd255800ba8cea0af3
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66234119"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68570169"
 ---
 # <a name="multi-tenant-applications-with-elastic-database-tools-and-row-level-security"></a>Aplicativos multilocatários com ferramentas de banco de dados elástico e segurança em nível de linha
 
-As [ferramentas de banco de dados elástico](sql-database-elastic-scale-get-started.md) e a [RLS (segurança em nível de linha)][rls] cooperam para escalar a camada de dados de um aplicativo multilocatário com um Banco de Dados SQL do Azure. Juntas, essas tecnologias ajudam a criar um aplicativo que tem uma camada de dados altamente escalonável. A camada de dados é compatível com fragmentos de multilocatários e usa **ADO.NET SqlClient** ou **Entity Framework**. Para obter mais informações, confira [Padrões de design para aplicativos SaaS multilocatário com o Banco de Dados SQL do Azure](saas-tenancy-app-design-patterns.md).
+As [ferramentas de banco](sql-database-elastic-scale-get-started.md) de dados elástico e a [RLS (segurança em nível de linha)][rls] cooperam para habilitar o dimensionamento da camada de dado de um aplicativo multilocatário com o banco de dados SQL do Azure. Juntas, essas tecnologias ajudam a criar um aplicativo que tem uma camada de dados altamente escalonável. A camada de dados é compatível com fragmentos de multilocatários e usa **ADO.NET SqlClient** ou **Entity Framework**. Para obter mais informações, confira [Padrões de design para aplicativos SaaS multilocatário com o Banco de Dados SQL do Azure](saas-tenancy-app-design-patterns.md).
 
-- **Ferramentas de banco de dados elástico** permitem que os desenvolvedores expandam a camada de dados com a fragmentação padrão usando bibliotecas .NET e modelos de serviço do Azure. Gerenciar fragmentos usando a [Biblioteca Cliente do Banco de Dados Elástico][s-d-elastic-database-client-library] ajuda a automatizar e simplificar muitas das tarefas infraestruturais normalmente associadas à fragmentação.
+- **Ferramentas de banco de dados elástico** permitem que os desenvolvedores expandam a camada de dados com a fragmentação padrão usando bibliotecas .NET e modelos de serviço do Azure. O gerenciamento de fragmentos usando a [biblioteca de cliente do banco de dados elástico][s-d-elastic-database-client-library] ajuda a automatizar e simplificar muitas das tarefas infraestrutura normalmente associadas à fragmentação.
 - A **segurança em nível de linha** permite que os desenvolvedores armazenem com segurança os dados para vários locatários no mesmo banco de dados. Políticas de segurança de RLS filtram linhas que não pertencem ao locatário executando uma consulta. Centralizar a lógica do filtro dentro do banco de dados simplifica a manutenção e reduz o risco de um erro de segurança. A alternativa de depender de todo o código de cliente para aplicar a segurança é arriscada.
 
 Ao usar esses recursos em conjunto, um aplicativo pode armazenar dados para vários locatários no mesmo banco de dados de fragmentos. Custa menos por locatário quando os locatários compartilham um banco de dados. Embora o mesmo aplicativo também pode oferecer a seus locatários premium a opção de pagar para seus próprios fragmentos de banco de dados de único locatário dedicado. Um dos benefícios do isolamento de locatário único é uma maior garantia de desempenho. Em um banco de dados de locatário único, não há nenhum outro locatário competindo pelos recursos.
@@ -46,7 +45,7 @@ O objetivo é usar as APIs do [roteamento dependente de dados](sql-database-elas
 
 Esse projeto expande o descrito em [Ferramentas de Banco de Dados Elástico para o SQL do Azure - Integração com o Entity Framework](sql-database-elastic-scale-use-entity-framework-applications-visual-studio.md) adicionando suporte para bancos de dados de fragmentos multilocatários. O projeto cria um aplicativo de console simples para a criação de blogs e postagens. O projeto inclui quatro locatários, além de dois bancos de dados de fragmento de multilocatário. Essa configuração é ilustrada no diagrama anterior.
 
-Compile e execute o aplicativo. Essa execução inicializa o gerenciador de mapas de fragmentos das ferramentas de banco de dados elástico e executa os seguintes testes:
+Crie e execute o aplicativo. Essa execução inicializa o gerenciador de mapas de fragmentos das ferramentas de banco de dados elástico e executa os seguintes testes:
 
 1. Usando o Entity Framework e o LINQ, crie um novo blog e exiba todos os blogs para cada locatário
 2. Usando o ADO.NET SqlClient, exiba todos os blogs para um locatário

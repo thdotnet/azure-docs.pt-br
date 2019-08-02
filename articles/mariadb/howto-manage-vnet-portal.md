@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 02/26/2019
-ms.openlocfilehash: 6644b6ae3a9482a1bd3f840a814d3bb6361517fc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 392428c0498458f49c439a0553d581a302c0c242
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60745855"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68610102"
 ---
 # <a name="create-and-manage-azure-database-for-mariadb-vnet-service-endpoints-and-vnet-rules-by-using-the-azure-portal"></a>Crie e gerencie o Banco de Dados do Azure para endpoints de serviço do VDB da MariaDB e regras de VNet usando o portal do Azure
 
@@ -24,10 +24,10 @@ Pontos de extremidade e regras de serviços da Rede Virtual (VNet) estendem o es
 
 1. Na página do servidor MariaDB, no cabeçalho Configurações, clique em **Segurança de conexão** para abrir o painel Segurança de conexão do Banco de Dados do Azure para MariaDB.
 
-2. Verifique se a permitir acesso ao controle de serviços do Azure é definido como **OFF**.
+2. Verifique se o controle permitir acesso aos serviços do Azure está definido como **desativado**.
 
 > [!Important]
-> Se você defini-la como ON, o servidor de banco de dados MariaDB aceita comunicação de qualquer sub-rede. Deixar o controle definido como ON pode ocasionar acesso excessivo de um ponto de vista de segurança. O recurso de ponto de extremidade de serviço de rede Virtual do Microsoft Azure, em conjunto com o recurso de regra de rede virtual do banco de dados do Azure para MariaDB, pode reduzir a área da superfície de segurança.
+> Se você defini-lo como ON, o servidor de banco de dados MariaDB do Azure aceitará a comunicação de qualquer sub-rede. Deixar o controle definido como ON pode ocasionar acesso excessivo de um ponto de vista de segurança. O recurso de ponto de extremidade de serviço Rede Virtual do Microsoft Azure, em coordenação com o recurso de regra de rede virtual do banco de dados do Azure para MariaDB, em conjunto pode reduzir sua área de superfície de segurança.
 
 3. Em seguida, clique em **+ Adicionar rede virtual existente**. Se você não tiver uma VNet existente, clique em **+ Criar nova rede virtual** para criar uma. Confira [Início Rápido: Crie uma rede virtual usando o portal do Azure](../virtual-network/quick-create-portal.md)
 
@@ -45,7 +45,7 @@ Pontos de extremidade e regras de serviços da Rede Virtual (VNet) estendem o es
     
    Saiba mais sobre [funções internas](https://docs.microsoft.com/azure/active-directory/role-based-access-built-in-roles) e como atribuir permissões específicas a [funções personalizadas](https://docs.microsoft.com/azure/active-directory/role-based-access-control-custom-roles).
     
-   As VNets e os recursos de serviço do Azure podem estar na mesma assinatura ou em assinaturas diferentes. Se os recursos de serviço VNet e Azure estiverem em assinaturas diferentes, os recursos deverão estar no mesmo locatário do Active Directory (AD).
+   As VNets e os recursos de serviço do Azure podem estar na mesma assinatura ou em assinaturas diferentes. Se os recursos de serviço VNet e Azure estiverem em assinaturas diferentes, os recursos deverão estar no mesmo locatário do Active Directory (AD). Certifique-se de que ambas as assinaturas tenham o provedor de recursos **Microsoft. SQL** registrado. Para obter mais informações, consulte [Resource-Manager-Registration][resource-manager-portal]
 
    > [!IMPORTANT]
    > É altamente recomendável ler este artigo sobre considerações e configurações de ponto de extremidade de serviço antes de configurá-los. **Ponto de extremidade de serviço de Rede Virtual:** Um [ponto de extremidade de serviço de Rede Virtual](../virtual-network/virtual-network-service-endpoints-overview.md) é uma sub-rede cujos valores de propriedade incluem um ou mais nomes formais de tipo de serviço do Azure. Os pontos de extremidade de serviços de VNet usam o nome de tipo de serviço **Microsoft.Sql**, que se refere ao serviço do Azure chamado Banco de Dados SQL. Essa marca de serviço também se aplica aos bancos de dados do Banco de Dados SQL do Azure, Banco de Dados do Azure para MariaDB, PostgreSQL e MySQL. É importante observar ao aplicar a marca de serviço **Microsoft.Sql** a um ponto de extremidade do serviço VNet que ela configura o tráfego de ponto de extremidade de serviço para todos os serviços do Banco de Dados do Azure, incluindo o Banco de Dados SQL do Azure, Banco de Dados do Azure para PostgreSQL, Banco de Dados do Azure para MariaDB, e Banco de Dados do Azure para servidores MySQL na sub-rede.
@@ -58,3 +58,6 @@ Pontos de extremidade e regras de serviços da Rede Virtual (VNet) estendem o es
 ## <a name="next-steps"></a>Próximas etapas
 - Saiba mais sobre [Configurando o SSL no banco de dados do Azure para MariaDB](howto-configure-ssl.md)
 - Da mesma forma, você pode gerar um script para [VNet Habilitar pontos de extremidade de serviço e criar uma regra de rede virtual para o banco de dados do Azure para MariaDB usando a CLI do Azure](howto-manage-vnet-cli.md).
+
+<!-- Link references, to text, Within this same GitHub repo. --> 
+[resource-manager-portal]: ../azure-resource-manager/resource-manager-supported-services.md

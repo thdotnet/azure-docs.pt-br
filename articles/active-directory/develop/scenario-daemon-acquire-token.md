@@ -1,6 +1,6 @@
 ---
-title: Chamada de aplicativo de daemon às APIs da web (aquisição de tokens para o aplicativo) - plataforma de identidade da Microsoft
-description: Saiba como criar um aplicativo daemon que chamadas de web APIs (aquisição de tokens)
+title: Aplicativo de daemon chamando APIs Web (adquirindo tokens para o aplicativo)-plataforma de identidade da Microsoft
+description: Saiba como criar um aplicativo daemon que chama APIs da Web (adquirindo Tokens)
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -16,20 +16,20 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aa4f5dc7a5aceaf81f71eacd36d131471a57e5c0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6a5f15aa5264c0abf87cb15f0468e8a3a924e0b5
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65075364"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68562349"
 ---
-# <a name="daemon-app-that-calls-web-apis---acquire-a-token"></a>Aplicativo daemon que chama APIs - web adquirir um token
+# <a name="daemon-app-that-calls-web-apis---acquire-a-token"></a>Aplicativo daemon que chama APIs da Web – adquirir um token
 
-Depois que o aplicativo cliente confidencial é construído, você pode adquirir um token para o aplicativo chamando ``AcquireTokenForClient``, passando o escopo e forçar ou não uma atualização do token.
+Depois que o aplicativo cliente confidencial é construído, você pode adquirir um token para o aplicativo chamando ``AcquireTokenForClient``, passando o escopo e forçando ou não uma atualização do token.
 
-## <a name="scopes-to-request"></a>Escopos para solicitar
+## <a name="scopes-to-request"></a>Escopos a serem solicitados
 
-O escopo para a solicitação de um fluxo de credenciais do cliente é o nome do recurso seguido por `/.default`. Essa notação informa ao Azure AD para usar o **permissões de nível de aplicativo** declarado estaticamente durante o registro de aplicativo. Além disso, como visto anteriormente, essas permissões de API devem ser concedidas por um administrador de locatários
+O escopo a ser solicitado para um fluxo de credenciais de cliente é o nome do recurso `/.default`seguido por. Essa notação informa ao Azure AD para usar as **permissões de nível de aplicativo** declaradas estaticamente durante o registro do aplicativo. Além disso, como visto anteriormente, essas permissões de API devem ser concedidas por um administrador de locatários
 
 ### <a name="net"></a>.NET
 
@@ -40,7 +40,7 @@ var scopes = new [] {  ResourceId+"/.default"};
 
 ### <a name="python"></a>Python
 
-Na MSAL. Python, o arquivo de configuração pareceria com o seguinte trecho de código:
+Em MSAL. Python, o arquivo de configuração se pareceria com o seguinte trecho de código:
 
 ```Python
 {
@@ -57,17 +57,17 @@ Na MSAL. Python, o arquivo de configuração pareceria com o seguinte trecho de 
 public final static String KEYVAULT_DEFAULT_SCOPE = "https://vault.azure.net/.default";
 ```
 
-### <a name="all"></a>Todos
+### <a name="all"></a>Todas
 
-O escopo usado para as credenciais do cliente deve ser sempre resourceId + "/ padrão"
+O escopo usado para credenciais do cliente sempre deve ser ResourceId + "/.default"
 
-### <a name="case-of-v10-resources"></a>Caso de recursos de v 1.0
+### <a name="case-of-azure-ad-v10-resources"></a>Casos de recursos do Azure AD (v 1.0)
 
 > [!IMPORTANT]
-> Para a MSAL (ponto de extremidade v2.0) solicitando um token de acesso para um recurso de aceitar um token de acesso de v 1.0, AD do Azure analisa o público-alvo desejado do escopo solicitado considerando tudo antes da última barra e usá-lo como o identificador de recurso.
-> Portanto se, como o SQL Azure ( **https://database.windows.net** ) o recurso espera um público-alvo terminando com uma barra (para SQL Azure: `https://database.windows.net/` ), você precisará solicitar um escopo de `https://database.windows.net//.default` (Observe as barras duplas). Consulte também MSAL.NET problema [747 #](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747): Uma barra à direita do recurso da url for omitida, o que causou a falha de autenticação do sql.
+> Para MSAL (ponto de extremidade da plataforma de identidade da Microsoft) solicitando um token de acesso para um recurso que aceita um token de acesso v 1.0, o Azure AD analisa o público desejado do escopo solicitado, levando tudo antes da última barra e usando-o como o identificador de recurso.
+> Portanto, se, como o Azure **https://database.windows.net** SQL (), o recurso espera que um público termine com uma barra ( `https://database.windows.net/` para SQL do Azure:), você precisará `https://database.windows.net//.default` solicitar um escopo de (Observe a barra dupla). Confira também MSAL.NET problema [#747](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747): A barra à direita da URL do recurso é omitida, o que causou falha na autenticação do SQL.
 
-## <a name="acquiretokenforclient-api"></a>AcquireTokenForClient API
+## <a name="acquiretokenforclient-api"></a>API AcquireTokenForClient
 
 ### <a name="net"></a>.NET
 
@@ -100,7 +100,7 @@ catch (MsalServiceException ex) when (ex.Message.Contains("AADSTS70011"))
 
 #### <a name="application-token-cache"></a>Cache de token de aplicativo
 
-No MSAL.NET, `AcquireTokenForClient` usa o **cache de token de aplicativo** (todos os outros métodos de AcquireTokenXX usam o cache de token de usuário) não chame `AcquireTokenSilent` antes de chamar `AcquireTokenForClient` como `AcquireTokenSilent` usa o **usuário** cache de token. `AcquireTokenForClient` verifica a **aplicativo** token do cache em si e o atualiza.
+No MSAL.net, `AcquireTokenForClient` o usa o **cache de token de aplicativo** (todos os outros métodos AcquireTokenXX usam o cache de token `AcquireTokenSilent` de usuário `AcquireTokenForClient` ) não chamam antes de chamar como `AcquireTokenSilent` usa o cache de token de **usuário** . `AcquireTokenForClient`verifica o cache do token de **aplicativo** e o atualiza.
 
 ### <a name="python"></a>Python
 
@@ -130,7 +130,7 @@ AuthenticationResult result = future.get();
 
 ### <a name="protocol"></a>Protocol
 
-Se você não tiver uma biblioteca para a linguagem de sua escolha, você talvez queira usar o protocolo diretamente:
+Se você ainda não tiver uma biblioteca para o idioma de sua escolha, talvez queira usar o protocolo diretamente:
 
 #### <a name="first-case-access-token-request-with-a-shared-secret"></a>Primeiro caso: solicitação de token de acesso com um segredo compartilhado
 
@@ -161,18 +161,18 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 
 ### <a name="learn-more-about-the-protocol"></a>Saiba mais sobre o protocolo
 
-Para obter mais informações, consulte a documentação do protocolo: [Fluxo de credenciais do Azure Active Directory v2.0 e cliente OAuth 2.0](v2-oauth2-client-creds-grant-flow.md).
+Para obter mais informações, consulte a documentação do protocolo: [Plataforma de identidade da Microsoft e o fluxo de credenciais do cliente OAuth 2,0](v2-oauth2-client-creds-grant-flow.md).
 
-## <a name="troubleshooting"></a>solução de problemas
+## <a name="troubleshooting"></a>Solução de problemas
 
-### <a name="did-you-use-the-resourcedefault-scope"></a>Você usou o escopo do recurso/padrão?
+### <a name="did-you-use-the-resourcedefault-scope"></a>Você usou o escopo de recurso/. padrão?
 
-Se você receber uma mensagem de erro informando que você usou um escopo inválido, você provavelmente não usou o `resource/.default` escopo.
+Se você receber uma mensagem de erro informando que usou um escopo inválido, provavelmente não usou o `resource/.default` escopo.
 
-### <a name="did-you-forget-to-provide-admin-consent-daemon-apps-need-it"></a>Você esqueceu de fornecer o consentimento do administrador? Aplicativos daemon necessário!
+### <a name="did-you-forget-to-provide-admin-consent-daemon-apps-need-it"></a>Você se esqueceu de fornecer consentimento de administrador? Aplicativos de daemon precisam!
 
-Se você receber um erro ao chamar a API **privilégios insuficientes para concluir a operação**, o administrador de inquilinos precisa conceder permissões para o aplicativo. Consulte a etapa 6 de registrar o aplicativo de cliente acima.
-Você normalmente verá e erro, como a descrição de erro a seguir:
+Se você receber um erro ao chamar os privilégios insuficientes da API **para concluir a operação**, o administrador de locatários precisará conceder permissões ao aplicativo. Consulte a etapa 6 de registrar o aplicativo cliente acima.
+Você normalmente verá e erro como a seguinte descrição de erro:
 
 ```JSon
 Failed to call the web API: Forbidden
@@ -191,4 +191,4 @@ Content: {
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
-> [Aplicativo daemon - chamar uma API web](scenario-daemon-call-api.md)
+> [Aplicativo de daemon – chamando uma API da Web](scenario-daemon-call-api.md)

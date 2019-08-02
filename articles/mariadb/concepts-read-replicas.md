@@ -6,12 +6,12 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 07/12/2019
-ms.openlocfilehash: e6bbe15727a6f989d8c16c67591d39d7870d5708
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 8d4a7a1b176a0c232c4461c7a8cfc2b1e3faddd6
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67874904"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638382"
 ---
 # <a name="read-replicas-in-azure-database-for-mariadb"></a>Ler réplicas no banco de dados do Azure para MariaDB
 
@@ -53,7 +53,7 @@ Quando você cria uma réplica, ela não herda as regras de firewall nem o ponto
 
 A réplica herda a conta do administrador do servidor mestre. Todas as contas de usuário no servidor mestre são replicadas para as réplicas de leitura. Você só pode se conectar a uma réplica de leitura usando as contas de usuário disponíveis no servidor mestre.
 
-Você pode se conectar à réplica usando seu nome de host e uma conta de usuário válida, como faria em um servidor de banco de dados do Azure normal para MariaDB. Para um servidor chamado  myreplication com o nome de usuário admin myadmin, você pode se conectar à réplica usando a CLI do MySQL:
+Você pode se conectar à réplica usando seu nome de host e uma conta de usuário válida, como faria em um servidor de banco de dados do Azure normal para MariaDB. Para um servidor chamado myreplication com o nome de usuário admin myadmin, você pode se conectar à réplica usando a CLI do MySQL:
 
 ```bash
 mysql -h myreplica.mariadb.database.azure.com -u myadmin@myreplica -p
@@ -69,7 +69,7 @@ Essa métrica é calculada usando `seconds_behind_master` a métrica disponível
 
 Defina um alerta para informá-lo quando o retardo de replicação atingir um valor que não é aceitável para sua carga de trabalho.
 
-## <a name="stop-replication"></a>Parar replicação
+## <a name="stop-replication"></a>Parar a replicação
 
 Você pode interromper a replicação entre um mestre e uma réplica. Após a replicação ser interrompida entre um servidor mestre e uma réplica de leitura, a réplica se torna um servidor autônomo. Os dados no servidor autônomo são os dados que estavam disponíveis na réplica no momento em que o comando de parar a replicação foi iniciado. O servidor autônomo não alcança o servidor mestre.
 
@@ -114,7 +114,7 @@ Quando um servidor mestre é excluído, a replicação é interrompida para toda
 
 Os usuários no servidor mestre são replicados para as réplicas de leitura. Você só pode se conectar a uma réplica de leitura usando as contas de usuário disponíveis no servidor mestre.
 
-### <a name="server-parameters"></a>Parâmetros do Servidor
+### <a name="server-parameters"></a>Parâmetros do servidor
 
 Para impedir que os dados fiquem fora de sincronia e evitar possíveis perdas de dados ou danos, alguns parâmetros de servidor estão bloqueados para serem atualizados ao usar réplicas de leitura.
 
@@ -133,3 +133,4 @@ O [`event_scheduler`](https://mariadb.com/kb/en/library/server-system-variables/
 ## <a name="next-steps"></a>Próximas etapas
 
 - Saiba como [criar e gerenciar réplicas de leitura usando o portal do Azure](howto-read-replicas-portal.md)
+- Saiba como [criar e gerenciar réplicas de leitura usando a CLI do Azure](howto-read-replicas-cli.md)

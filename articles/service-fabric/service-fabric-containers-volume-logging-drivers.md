@@ -2,24 +2,19 @@
 title: Driver de Volume dos Arquivos do Azure do Service Fabric (Versão prévia) | Microsoft Docs
 description: O Service Fabric oferece suporte a Arquivos do Azure para volumes de backup de seu contêiner. No momento, isso está em visualização.
 services: service-fabric
-documentationcenter: other
-author: aljo-microsoft
+author: athinanthny
 manager: chackdan
-editor: ''
 ms.assetid: ab49c4b9-74a8-4907-b75b-8d2ee84c6d90
 ms.service: service-fabric
-ms.devlang: other
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: NA
 ms.date: 6/10/2018
-ms.author: aljo, subramar
-ms.openlocfilehash: 09ee729fea952665350aa25c21cdb3d5823b899f
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.author: atsenthi
+ms.openlocfilehash: 36a3bb385064009f25a585ea299558d54714fc27
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68489891"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68599695"
 ---
 # <a name="service-fabric-azure-files-volume-driver-preview"></a>Driver de Volume dos Arquivos do Azure do Service Fabric (Versão prévia)
 O plug-in de volume dos Arquivos do Azure é um [Plug-in de volume de Docker](https://docs.docker.com/engine/extend/plugins_volume/) que fornece [Arquivos do Azure](https:///azure/storage/files/storage-files-introduction) com base em volumes para contêineres do Docker. Este plug-in de volume do Docker é empacotado como um aplicativo do Service Fabric que pode ser implantado em clusters do Service Fabric. Sua finalidade é fornecer volumes baseados em arquivos do Azure para outros aplicativos de contêiner Service Fabric implantados no cluster.

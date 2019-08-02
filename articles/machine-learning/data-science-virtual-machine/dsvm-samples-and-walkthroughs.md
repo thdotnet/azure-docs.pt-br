@@ -4,7 +4,7 @@ description: Saiba mais sobre exemplos e instruções passo a passo que ensinam 
 keywords: ferramentas de ciência de dados, máquina virtual de ciência de dados, ferramentas para ciência de dados, ciência de dados do linux
 services: machine-learning
 documentationcenter: ''
-author: gopitk
+author: vijetajo
 manager: cgronlun
 ms.custom: seodec18
 ms.assetid: ''
@@ -15,13 +15,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.author: gokuma
-ms.openlocfilehash: e61f0f4ba30b29fea1b2fd5f2a2ab253d3a6710c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: vijetaj
+ms.openlocfilehash: 57ebefb11d23c5ea18d5859ca494944e6a845e04
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60502701"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68565312"
 ---
 # <a name="samples-on-data-science-virtual-machines"></a>Exemplos em Máquinas Virtuais de Ciência de Dados
 
@@ -30,7 +30,7 @@ As Máquinas Virtuais de Ciência de Dados do Azure incluem um conjunto abrangen
 > Para obter mais informações sobre como executar notebooks do Jupyter em suas máquinas virtuais de ciência de dados, consulte a seção [Acessar o Jupyter](#access-jupyter).
 
 ## <a name="quick-reference-of-samples"></a>Referência rápida de exemplos
-| Categoria de exemplos | DESCRIÇÃO | Locais |
+| Categoria de exemplos | Descrição | Localizações |
 | ------------- | ------------- | ------------- |
 | Linguagem R  | Exemplos em R explicam cenários como a conexão com armazenamentos de dados em nuvem do Azure. Eles também explicam como comparar o R de software livre e o Microsoft R. E eles explicam como operacionalizar modelos no Microsoft R Server ou SQL Server. <br/> [Linguagem R](#r-language) | <br/>`~notebooks` <br/> <br/> `~samples/MicrosoftR` <br/> <br/> `~samples/RSqlDemo` <br/> <br/> `~samples/SQLRServices`<br/> <br/>|
 | Linguagem Python  | Exemplos em Python explicam cenários como conectar-se a armazenamentos de dados em nuvem do Azure e trabalhar com o Azure Machine Learning.  <br/> [Linguagem Python](#python-language) | <br/>`~notebooks` <br/><br/>|

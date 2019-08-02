@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlr
-manager: craigg
 ms.date: 04/16/2019
-ms.openlocfilehash: 886f06e8640891ac09d1e4624335a7bfebcd3def
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: b8c05ab05630e92e64a4885d5e6cdc6f5471dff2
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60340784"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568065"
 ---
 # <a name="how-to-use-a-managed-instance-in-azure-sql-database"></a>Como usar uma Instância Gerenciada do Banco de Dados SQL do Azure
 
@@ -36,7 +35,7 @@ Neste artigo, é possível encontrar vários guias, scripts e explicações que 
 - [Configurar a rede virtual e a sub-rede existentes para a Instância Gerenciada](sql-database-managed-instance-configure-vnet-subnet.md) – se deseja configurar sua rede virtual e sub-rede existentes para implantar as Instâncias Gerenciadas nelas, aqui você pode encontrar o script que verifica os [requisitos de rede](sql-database-managed-instance-connectivity-architecture.md#network-requirements) e fazer as configurações na sua sub-rede de acordo com eles.
 - [Configurar DNS personalizado](sql-database-managed-instance-custom-dns.md) – você precisa configurar o DNS personalizado caso deseje acessar recursos externos nos domínios personalizados da sua Instância Gerenciada por meio de um servidor vinculado de perfis de email de banco de dados.
 - [Sincronizar configurações de rede](sql-database-managed-instance-sync-network-configuration.md) – pode acontecer que, embora tenha [integrado seu aplicativo a uma Rede Virtual do Azure](../app-service/web-sites-integrate-with-vnet.md), não seja possível estabelecer a conexão com uma Instância Gerenciada. Algo que você pode é tentar atualizar a configuração de rede para o plano de serviço.
-- [Localizar o endereço IP do ponto de extremidade de gerenciamento](sql-database-managed-instance-find-management-endpoint-ip-address.md) – instância gerenciada usa o ponto de extremidade público para fins de gerenciamento. Você pode determinar o endereço IP do ponto de extremidade de gerenciamento usando o script descrito aqui.
+- [Localizar endereço IP do ponto de extremidade de gerenciamento](sql-database-managed-instance-find-management-endpoint-ip-address.md) – a instância gerenciada usa um ponto de extremidade público para fins de gerenciamento. Você pode determinar o endereço IP do ponto de extremidade de gerenciamento usando o script descrito aqui.
 - [Verificar a proteção de firewall interno](sql-database-managed-instance-management-endpoint-verify-built-in-firewall.md) – a Instância Gerenciada é protegida com o firewall interno que permite o tráfego apenas nas portas necessárias. Você pode verificar as regras do firewall interno usando o script descrito neste guia.
 - [Conectar aplicativos](sql-database-managed-instance-connect-app.md) – a Instância Gerenciada é colocada em sua própria rede virtual privada do Azure com um endereço IP privado. Saiba mais sobre padrões diferentes para conectar os aplicativos à sua Instância Gerenciada.
 

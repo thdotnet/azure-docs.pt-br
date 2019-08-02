@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/15/2018
 ms.author: cshoe
-ms.openlocfilehash: ad927de0274d415ac268d3a29abf2c135ee22d52
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: fc7cb7f82fce4f7da02f39b0b423841ac270dcbd
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480223"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68564819"
 ---
 # <a name="azure-blob-storage-bindings-for-azure-functions"></a>Associações de armazenamento do Blob do Azure para o Azure Functions
 
@@ -45,7 +45,7 @@ As associações de armazenamento de Blobs são fornecidas no pacote NuGet [Micr
 
 [!INCLUDE [functions-package-v2](../../includes/functions-package-v2.md)]
 
-## <a name="trigger"></a>Gatilho
+## <a name="trigger"></a>Disparador
 
 O gatilho de armazenamento de Blob inicia uma função quando é detectado um blob novo ou atualizado. O conteúdo do blob é fornecido como entrada para a função.
 
@@ -261,7 +261,7 @@ Em [bibliotecas de classe C#](functions-dotnet-class-library.md), use os seguint
 
 * [BlobTriggerAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.Extensions.Storage/Blobs/BlobTriggerAttribute.cs)
 
-  O construtor do atributo usa uma cadeia de caracteres de caminho que indica o contêiner para inspecionar e, opcionalmente, um [padrão de nome de blob](#trigger---blob-name-patterns). Aqui está um exemplo:
+  O construtor do atributo usa uma cadeia de caracteres de caminho que indica o contêiner para inspecionar e, opcionalmente, um [padrão de nome de blob](#trigger---blob-name-patterns). Veja um exemplo:
 
   ```csharp
   [FunctionName("ResizeImage")]
@@ -317,9 +317,9 @@ A tabela a seguir explica as propriedades de configuração de associação que 
 
 |Propriedade function.json | Propriedade de atributo |DESCRIÇÃO|
 |---------|---------|----------------------|
-|**type** | n/d | Deve ser definido como `blobTrigger`. Essa propriedade é definida automaticamente quando você cria o gatilho no portal do Azure.|
-|**direction** | n/d | Deve ser definido como `in`. Essa propriedade é definida automaticamente quando você cria o gatilho no portal do Azure. As exceções são mencionadas na seção [uso](#trigger---usage). |
-|**name** | n/d | O nome da variável que representa o blob no código de função. |
+|**type** | N/D | Deve ser definido como `blobTrigger`. Essa propriedade é definida automaticamente quando você cria o gatilho no portal do Azure.|
+|**direction** | N/D | Deve ser definido como `in`. Essa propriedade é definida automaticamente quando você cria o gatilho no portal do Azure. As exceções são mencionadas na seção [uso](#trigger---usage). |
+|**name** | N/D | O nome da variável que representa o blob no código de função. |
 |**path** | **BlobPath** |O [contêiner](../storage/blobs/storage-blobs-introduction.md#blob-storage-resources) para monitorar.  Pode ser um [padrão de nome de blob](#trigger---blob-name-patterns). |
 |**conexão** | **Conexão** | O nome de uma configuração de aplicativo que contém uma cadeia de conexão de Armazenamento para usar para essa associação. Se o nome de configuração do aplicativo começar com "AzureWebJobs", você pode especificar apenas o resto do nome aqui. Por exemplo, se você configurar `connection` para “MyStorage”, o tempo de execução do Functions procura por uma configuração de aplicativo que esteja nomeada “AzureWebJobsMyStorage." Se você deixar `connection` vazio, o tempo de execução de Functions usa a cadeia de caracteres de conexão de Armazenamento padrão na configuração de aplicativo chamada `AzureWebJobsStorage`.<br><br>A cadeia de conexão deve ser uma conta de armazenamento para uso geral e não uma [conta de Armazenamento de Blobs](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
 
@@ -392,7 +392,7 @@ Se o blob é nomeado *{20140101}soundfile.mp3*, o valor da variável `name` no c
 
 O gatilho de blob fornece várias propriedades de metadados. Essas propriedades podem ser usadas como parte de expressões de associação em outras associações ou como parâmetros em seu código. Esses valores têm a mesma semântica que o tipo [CloudBlob](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.blob.cloudblob?view=azure-dotnet).
 
-|Propriedade  |Type  |DESCRIÇÃO  |
+|Propriedade  |Tipo  |Descrição  |
 |---------|---------|---------|
 |`BlobTrigger`|`string`|O caminho do blob de gatilho.|
 |`Uri`|`System.Uri`|A URI do blob para o local principal.|
@@ -427,7 +427,7 @@ O Azure Functions armazena recibos do blob em um contêiner denominado *azure-we
 * O nome do blob
 * O ETag (um identificador de versão de blob, por exemplo: "0x8D1DC6E70A277EF")
 
-Para forçar o reprocessamento de um blob, exclua manualmente o recebimento desse blob do contêiner *azure-webjobs-hosts*. Enquanto o reprocessamento pode não ocorrer imediatamente, há garantia de que ocorrem em um momento posterior no tempo.
+Para forçar o reprocessamento de um blob, exclua manualmente o recebimento desse blob do contêiner *azure-webjobs-hosts*. Embora o reprocessamento possa não ocorrer imediatamente, é garantido que ocorra em um momento posterior.
 
 ## <a name="trigger---poison-blobs"></a>Gatilho - mensagens suspeitas
 
@@ -451,7 +451,7 @@ As funções de JavaScript e Java carregam todo o blob na memória, e as funçõ
 
 ## <a name="trigger---polling"></a>Disparar - sondagem
 
-Se o contêiner de blob que está sendo monitorado contiver mais de 10.000 blobs (em todos os contêineres), as verificações de tempo de execução do Functions varrerão os arquivos para observar blobs novos ou alterados de log. Esse processo pode resultar em atrasos. Uma função não poderá ser disparada até que se passem vários minutos ou mais tempo depois da criação do blob.
+Se o contêiner de BLOB que está sendo monitorado contiver mais de 10.000 BLOBs (em todos os contêineres), o tempo de execução do Functions examinará os arquivos de log para ver se há BLOBs novos ou alterados. Esse processo pode resultar em atrasos. Uma função não poderá ser disparada até que se passem vários minutos ou mais tempo depois da criação do blob.
 
 > [!WARNING]
 > Além disso, [logs de armazenamento são criados da "melhor forma dentro do possível"](/rest/api/storageservices/About-Storage-Analytics-Logging). Não há nenhuma garantia de que todos os eventos são capturados. Sob algumas condições, logs poderão ser perdidos.
@@ -733,12 +733,12 @@ A tabela a seguir explica as propriedades de configuração de associação que 
 
 |Propriedade function.json | Propriedade de atributo |DESCRIÇÃO|
 |---------|---------|----------------------|
-|**type** | n/d | Deve ser definido como `blob`. |
-|**direction** | n/d | Deve ser definido como `in`. As exceções são mencionadas na seção [uso](#input---usage). |
-|**name** | n/d | O nome da variável que representa o blob no código de função.|
+|**type** | N/D | Deve ser definido como `blob`. |
+|**direction** | N/D | Deve ser definido como `in`. As exceções são mencionadas na seção [uso](#input---usage). |
+|**name** | N/D | O nome da variável que representa o blob no código de função.|
 |**path** |**BlobPath** | O caminho para o blob. |
 |**conexão** |**Conexão**| O nome de uma configuração de aplicativo que contém uma cadeia de conexão de [Armazenamento para usar para essa associação](../storage/common/storage-configure-connection-string.md). Se o nome de configuração do aplicativo começar com "AzureWebJobs", você pode especificar apenas o resto do nome aqui. Por exemplo, se você configurar `connection` para “MyStorage”, o tempo de execução do Functions procura por uma configuração de aplicativo que esteja nomeada “AzureWebJobsMyStorage." Se você deixar `connection` vazio, o tempo de execução de Functions usa a cadeia de caracteres de conexão de Armazenamento padrão na configuração de aplicativo chamada `AzureWebJobsStorage`.<br><br>A cadeia de conexão deve ser uma conta de armazenamento de finalidade geral e não uma [conta de armazenamento de blobs](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
-|n/d | **Access** | Indica se você será leitura ou gravação. |
+|N/D | **Access** | Indica se você será leitura ou gravação. |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 
@@ -765,7 +765,7 @@ Associação para `string` ou `Byte[]` só é recomendada se o tamanho do blob f
 
 Em JavaScript, acesse os dados do blob usando `context.bindings.<name from function.json>`.
 
-## <a name="output"></a>Output
+## <a name="output"></a>Saída
 
 Usar as associações de saída do Armazenamento de Blobs para gravar os blobs.
 
@@ -784,23 +784,40 @@ Consulte o exemplo específico a um idioma:
 O exemplo a seguir é uma [função C#](functions-dotnet-class-library.md) que usa um gatilho de blob e duas associações de blob de saída. A função é gatilhada pela criação de um blob de imagem no contêiner *imagens de amostra*. Isso cria cópias de pequeno e médio tamanho de blob de imagem.
 
 ```csharp
+using System.Collections.Generic;
+using System.IO;
+using Microsoft.Azure.WebJobs;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats;
+using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp.Processing;
+
 [FunctionName("ResizeImage")]
 public static void Run(
     [BlobTrigger("sample-images/{name}")] Stream image,
     [Blob("sample-images-sm/{name}", FileAccess.Write)] Stream imageSmall,
     [Blob("sample-images-md/{name}", FileAccess.Write)] Stream imageMedium)
 {
-    var imageBuilder = ImageResizer.ImageBuilder.Current;
-    var size = imageDimensionsTable[ImageSize.Small];
+    IImageFormat format;
 
-    imageBuilder.Build(image, imageSmall,
-        new ResizeSettings(size.Item1, size.Item2, FitMode.Max, null), false);
+    using (Image<Rgba32> input = Image.Load(image, out format))
+    {
+      ResizeImage(input, imageSmall, ImageSize.Small, format);
+    }
 
     image.Position = 0;
-    size = imageDimensionsTable[ImageSize.Medium];
+    using (Image<Rgba32> input = Image.Load(image, out format))
+    {
+      ResizeImage(input, imageMedium, ImageSize.Medium, format);
+    }
+}
 
-    imageBuilder.Build(image, imageMedium,
-        new ResizeSettings(size.Item1, size.Item2, FitMode.Max, null), false);
+public static void ResizeImage(Image<Rgba32> input, Stream output, ImageSize size, IImageFormat format)
+{
+    var dimensions = imageDimensionsTable[size];
+
+    input.Mutate(x => x.Resize(dimensions.Item1, dimensions.Item2));
+    input.Save(output, format);
 }
 
 public enum ImageSize { ExtraSmall, Small, Medium }
@@ -1068,12 +1085,12 @@ A tabela a seguir explica as propriedades de configuração de associação que 
 
 |Propriedade function.json | Propriedade de atributo |DESCRIÇÃO|
 |---------|---------|----------------------|
-|**type** | n/d | Deve ser definido como `blob`. |
-|**direction** | n/d | Deve ser definido como `out` para uma associação de saída. As exceções são mencionadas na seção [uso](#output---usage). |
-|**name** | n/d | O nome da variável que representa o blob no código de função.  Definido como `$return` para referenciar o valor de retorno da função.|
-|**path** |**BlobPath** | O caminho para o contêiner de blob. |
+|**type** | N/D | Deve ser definido como `blob`. |
+|**direction** | N/D | Deve ser definido como `out` para uma associação de saída. As exceções são mencionadas na seção [uso](#output---usage). |
+|**name** | N/D | O nome da variável que representa o blob no código de função.  Definido como `$return` para referenciar o valor de retorno da função.|
+|**path** |**BlobPath** | O caminho para o contêiner de BLOB. |
 |**conexão** |**Conexão**| O nome de uma configuração de aplicativo que contém uma cadeia de conexão de Armazenamento para usar para essa associação. Se o nome de configuração do aplicativo começar com "AzureWebJobs", você pode especificar apenas o resto do nome aqui. Por exemplo, se você configurar `connection` para “MyStorage”, o tempo de execução do Functions procura por uma configuração de aplicativo que esteja nomeada “AzureWebJobsMyStorage." Se você deixar `connection` vazio, o tempo de execução de Functions usa a cadeia de caracteres de conexão de Armazenamento padrão na configuração de aplicativo chamada `AzureWebJobsStorage`.<br><br>A cadeia de conexão deve ser uma conta de armazenamento de finalidade geral e não uma [conta de armazenamento de blobs](../storage/common/storage-account-overview.md#types-of-storage-accounts).|
-|n/d | **Access** | Indica se você será leitura ou gravação. |
+|N/D | **Access** | Indica se você será leitura ou gravação. |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 

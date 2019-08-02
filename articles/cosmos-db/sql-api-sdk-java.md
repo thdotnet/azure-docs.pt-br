@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: reference
 ms.date: 03/13/2019
 ms.author: sngun
-ms.openlocfilehash: 7af43d24b03a4c548925bdca4189fd0524c701a4
-ms.sourcegitcommit: a12b2c2599134e32a910921861d4805e21320159
+ms.openlocfilehash: bf89d419bcd97c276df35701bc4fd808f599094a
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67341630"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68637699"
 ---
 # <a name="azure-cosmos-db-java-sdk-for-sql-api-release-notes-and-resources"></a>SDK do Java do Azure Cosmos DB para a API do SQL: Notas sobre a versão e recursos
 > [!div class="op_single_selector"]
@@ -27,8 +27,8 @@ ms.locfileid: "67341630"
 > * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Provedor de recursos REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
 > * [SQL](sql-api-query-reference.md)
-> * [BulkExecutor - .NET](sql-api-sdk-bulk-executor-dot-net.md)
-> * [BulkExecutor - Java](sql-api-sdk-bulk-executor-java.md)
+> * [Executor em massa-.NET](sql-api-sdk-bulk-executor-dot-net.md)
+> * [Executor em massa – Java](sql-api-sdk-bulk-executor-java.md)
 
 O Java SDK da API do SQL dá suporte a operações síncronas. Para obter suporte assíncrono, use o [Java SDK assíncrono da API do SQL](sql-api-sdk-async-java.md). 
 
@@ -44,22 +44,22 @@ O Java SDK da API do SQL dá suporte a operações síncronas. Para obter suport
 ## <a name="release-notes"></a>Notas de versão
 
 ### <a name="a-name213213"></a><a name="2.1.3"/>2.1.3
-* Corrigido um bug em PartitionKey para V2 de Hash.
+* Corrigido o bug em PartitionKey para hash v2.
 
 ### <a name="a-name212212"></a><a name="2.1.2"/>2.1.2
-* Adicionado suporte para índices compostos.
-* Corrigido o bug no Gerenciador de ponto de extremidade global para forçar a atualização.
-* Correção do bug para upserts com pré-condições no modo direto.
+* Suporte adicionado para índices compostos.
+* Corrigido o bug no global Endpoint Manager para forçar a atualização.
+* Corrigido o bug para upserts com pré-condições no modo direto.
 
 ### <a name="a-name211211"></a><a name="2.1.1"/>2.1.1
-* Corrigido o bug no cache de endereço de gateway.
+* Corrigido o bug no cache de endereços do gateway.
 
 ### <a name="a-name210210"></a><a name="2.1.0"/>2.1.0
 * Suporte à gravação de várias regiões adicionado ao modo direto.
 * Adicionada compatibilidade com a manipulação IOExceptions geradas como exceções de ServiceUnavailable, de um proxy.
 * Corrigido um bug na política de repetição de descoberta do ponto de extremidade.
 * Corrigido um bug para garantir que as exceções de ponteiro nulo não sejam geradas no BaseDatabaseAccountConfigurationProvider.
-* Correção de bug para garantir que QueryIterator não retorna valores nulos.
+* Corrigido um bug para garantir que QueryIterator não retorne nulos.
 * Corrigido um bug para garantir a que PartitionKey grande seja permitida
 
 ### <a name="a-name200200"></a><a name="2.0.0"/>2.0.0
@@ -127,7 +127,7 @@ O Java SDK da API do SQL dá suporte a operações síncronas. Para obter suport
 * Adicionado suporte para alteração de feed.
 * Adicionado suporte para informações de cota de coleção por meio de RequestOptions.setPopulateQuotaInfo.
 * Foi adicionado suporte para o log de script de procedimento armazenado por meio de RequestOptions.setScriptLoggingEnabled.
-* Corrigido um bug em que a consulta no modo de DirectHttps pode parar de responder quando encontrar falhas de limitação.
+* Corrigido um bug em que a consulta no modo DirectHttps pode parar de responder ao encontrar falhas de restrição.
 * Corrigido um bug no modo de sessão de consistência.
 * Corrigido um erro que pode causar a NullReferenceException no HttpContext quando a taxa de solicitação é alta.
 * Desempenho aprimorado de modo DirectHttps.
@@ -198,7 +198,7 @@ O Java SDK da API do SQL dá suporte a operações síncronas. Para obter suport
 
 ### <a name="a-name120120"></a><a name="1.2.0"/>1.2.0
 * Oferece suporte ao Índice Geoespacial.
-* Valida a propriedade de ID para todos os recursos. As IDs de recursos não podem conter caracteres ?, /, #, \, ou terminar com um espaço.
+* Valida a propriedade ID para todos os recursos. As IDs de recursos não podem conter caracteres ?, /, #, \, ou terminar com um espaço.
 * Adiciona o novo cabeçalho "andamento de transformação do índice" ao ResourceResponse.
 
 ### <a name="a-name110110"></a><a name="1.1.0"/>1.1.0
@@ -215,7 +215,7 @@ Os novos recursos, funcionalidades e otimizações são adicionados apenas ao SD
 Qualquer solicitação feita ao Cosmos DB com o uso de um SDK desativado será rejeitada pelo serviço.
 
 > [!WARNING]
-> Todas as versões **1.x** do SDK do SQL para Java será desativado em **30 de maio de 2020**.
+> Todas as versões **1. x** do SDK do SQL para Java serão desativadas em **30 de maio de 2020**.
 > 
 >
 
@@ -229,7 +229,7 @@ Qualquer solicitação feita ao Cosmos DB com o uso de um SDK desativado será r
 | Versão | Data do lançamento | Data de desativação |
 | --- | --- | --- |
 | [2.1.3](#2.1.3) |13 de março de 2018 |--- |
-| [2.1.2](#2.1.2) |Mar 09, 2018 |--- |
+| [2.1.2](#2.1.2) |09 de março de 2018 |--- |
 | [2.1.1](#2.1.1) |13 de dezembro de 2018 |--- |
 | [2.1.0](#2.1.0) |20 de novembro de 2018 |--- |
 | [2.0.0](#2.0.0) |21 de setembro de 2018 |--- |

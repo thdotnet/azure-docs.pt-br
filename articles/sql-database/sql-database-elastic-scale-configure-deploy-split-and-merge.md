@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-manager: craigg
 ms.date: 12/04/2018
-ms.openlocfilehash: 5aff7e93dcfaa5320be0d6f7d427abcdc88c69e4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a8c50f492c28bf1e009d15d6332e939959190a49
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60585501"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568502"
 ---
 # <a name="deploy-a-split-merge-service-to-move-data-between-sharded-databases"></a>Implantar um serviço de mesclagem dividida para mover dados entre bancos de dados compartilhados
 
@@ -311,7 +310,7 @@ Um exemplo disso pode ser visto no script SetupSampleSplitMergeEnvironment.ps1.
 
 O serviço de Divisão-Mesclagem não cria para você o banco de dados de destino (ou o esquema para todas as tabelas no banco de dados). Eles devem ser criados previamente antes de enviar uma solicitação ao serviço.
 
-## <a name="troubleshooting"></a>solução de problemas
+## <a name="troubleshooting"></a>Solução de problemas
 Você pode ver a mensagem abaixo ao executar os scripts do powershell de exemplo:
 
    ```

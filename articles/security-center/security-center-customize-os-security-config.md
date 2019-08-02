@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 3/20/2019
 ms.author: rkarlin
-ms.openlocfilehash: 7095992253fbbe5aafce1eab889965250f5d59a8
-ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
+ms.openlocfilehash: 8216aee1c27fd5bcb722648aa6380044e1431452
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551387"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68662486"
 ---
-# <a name="customize-os-security-configurations-in-azure-security-center-preview"></a>Personalizar as configurações de segurança do sistema operacional na Central de Segurança do Azure (versão prévia)
+# <a name="customize-os-security-configurations-in-azure-security-center-retired"></a>Personalizar as configurações de segurança do sistema operacional na central de segurança do Azure (desativado)
 
-Este passo a passo demonstra como personalizar as avaliações de configuração de segurança do sistema operacional na Central de Segurança do Azure.
+Este tutorial demonstra como personalizar as avaliações de configuração de segurança do sistema operacional (versão prévia) na central de segurança do Azure.
 
 > [!NOTE]
-> A capacidade de personalizar as configurações de segurança do sistema operacional será desativada em 31 de julho de 2019. Para obter mais informações e serviços alternativos, consulte [recursos de desativação da Central de segurança (julho de 2019)](security-center-features-retirement-july2019.md#menu_securityconfigurations).
+> A capacidade de personalizar as configurações de segurança do sistema operacional (recurso de visualização) foi desativada em 31 de julho de 2019. Para obter mais informações e serviços alternativos, consulte [aposentadoria dos recursos da central de segurança (julho de 2019)](security-center-features-retirement-july2019.md#menu_securityconfigurations).
 
 ## <a name="what-are-os-security-configurations"></a>O que são configurações de segurança do sistema operacional?
 
@@ -60,7 +60,7 @@ Para personalizar a configuração padrão de segurança do sistema operacional 
 
     ![Lista Política de Segurança](media/security-center-customize-os-security-config/manual-provision.png)
 
-4. Selecione a assinatura aplicável e selecione **editar configurações de segurança**.  
+4. Selecione a assinatura aplicável e selecione **Editar configurações de segurança**.  
 
     ![A janela “Editar configurações de segurança”](media/security-center-customize-os-security-config/blade.png)
 
@@ -113,7 +113,7 @@ Cada categoria tem seu próprio conjunto de atributos. Você pode alterar os seg
 
     - Lista de grupos de usuários permitidos, por exemplo: *Administradores*, *Operadores de Backup*
 
--   **state**: A cadeia de caracteres pode conter as opções *Desabilitado* ou *Habilitado*. Para esta versão, a cadeia de caracteres diferencia maiusculas de minúsculas.
+-   **state**: A cadeia de caracteres pode conter as opções *Desabilitado* ou *Habilitado*. Para esta versão, a cadeia de caracteres diferencia maiúsculas de minúsculas.
 
 Esses são os únicos campos que podem ser configurados. Se você violar o tamanho ou o formato do arquivo, não poderá salvar a alteração. Você receberá um erro informando que você precisa fazer upload de um arquivo de configuração JSON válido.
 
@@ -270,7 +270,7 @@ Exemplo de um arquivo de erro:
 
 ![Exemplo de arquivo de erro](media/security-center-customize-os-security-config/errors-file.png)
 
-## <a name="error-codes"></a>Códigos do Erro
+## <a name="error-codes"></a>Códigos de erro
 
 Todos os erros potenciais são listados na seguinte tabela:
 
@@ -291,10 +291,10 @@ Todos os erros potenciais são listados na seguinte tabela:
 | BaselineRuleNotInPlace                   | A regra corresponde a uma regra-padrão com o tipo {0} e está na lista {1}.                                                                       |
 | BaselineRulePropertyTooLong              | A propriedade *{0}* é longa demais. Comprimento máximo permitido: {1}.                                                                                        |
 | BaselineRuleRegTypeInvalidError          | O valor esperado *{0}* não corresponde ao tipo de valor de Registro definido.                                                              |
-| BaselineRulesetAdded                     | O conjunto de regras com o identificador *{0}* não foi encontrado na configuração padrão. Não é possível adicionar o conjunto de regras.                                               |
+| BaselineRulesetAdded                     | O conjunto de regras com *{0}* o identificador não foi encontrado na configuração padrão. Não é possível adicionar o conjunto de regras.                                               |
 | BaselineRulesetIdMustBeUnique            | O conjunto de regras de linha de base *{0}* fornecido precisa ser exclusivo.                                                                                           |
-| BaselineRulesetNotFound                  | O conjunto de regras com o identificador *{0}* e o nome *{1}* não foi encontrado na configuração especificada. Não é possível excluir o conjunto de regras.                                |
-| BaselineRuleSourceNotMatch               | A regra com o identificador *{0}* já está definido.                                                                                                       |
+| BaselineRulesetNotFound                  | O conjunto de regras *{0}* com identificador *{1}* e nome não foi encontrado na configuração especificada. Não é possível excluir o conjunto de regras.                                |
+| BaselineRuleSourceNotMatch               | A regra com o *{0}* identificador já está definida.                                                                                                       |
 | BaselineRuleTypeDoesntMatch              | O tipo de regra padrão é *{0}* .                                                                                                              |
 | BaselineRuleTypeDoesntMatchError         | O tipo real da regra é *{0}* , mas a propriedade *ruleType* é *{1}* .                                                                          |
 | BaselineRuleUnpermittedChangesError      | Somente as propriedades *expectedValue* e *state* podem ser alteradas.                                                                       |

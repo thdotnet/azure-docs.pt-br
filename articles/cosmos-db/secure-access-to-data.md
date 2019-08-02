@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: rimman
-ms.openlocfilehash: 6ccb9afb528edf67b29c781217ca1de97b81e017
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e321091f2abcff4c385b442ac6474c0592845e2e
+ms.sourcegitcommit: 15f7b641a67f3d6cf4fb4b4c11eaee18cf335923
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65969209"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68602038"
 ---
 # <a name="secure-access-to-data-in-azure-cosmos-db"></a>Proteger o acesso aos dados no Azure Cosmos DB
 
@@ -28,7 +28,7 @@ O Azure Cosmos DB usa dois tipos de chaves para autenticar usuários e fornecer 
 
 ## <a name="master-keys"></a>Chaves mestras 
 
-As chaves mestras fornecem acesso a todos os recursos administrativos para a conta de banco de dados. Chaves mestras:  
+As chaves mestras fornecem acesso a todos os recursos administrativos da conta do banco de dados. Chaves mestras:  
 - Fornecem acesso a contas, a bancos de dados, a usuários e a permissões. 
 - Não pode ser usado para fornecer acesso granular a contêineres e documentos.
 - São criadas durante a criação de uma conta.

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 03/27/2019
 ms.author: mbullwin
-ms.openlocfilehash: 2ec3b620138c4ae0487c29e38062c044a5210572
-ms.sourcegitcommit: da0a8676b3c5283fddcd94cdd9044c3b99815046
+ms.openlocfilehash: 9bedb74f4e882ac6e4206ee7fef676c94dc2422d
+ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314800"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68717464"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API do Application Insights para métricas e eventos personalizados
 
@@ -30,7 +30,7 @@ Insira algumas linhas de código em seu aplicativo para descobrir o que os usuá
 
 A API principal é uniforme em todas as plataformas, além de algumas variações como `GetMetric` (somente .NET).
 
-| Método | Usado para |
+| Método | Utilizado para |
 | --- | --- |
 | [`TrackPageView`](#page-views) |Páginas, telas, folhas ou formulários. |
 | [`TrackEvent`](#trackevent) |Ações de usuário e outros eventos. Usado para acompanhar o comportamento do usuário ou para monitorar o desempenho. |
@@ -54,7 +54,7 @@ Se você ainda não tem uma referência no SDK do Application Insights:
   * [Projeto Java](../../azure-monitor/app/java-get-started.md)
   * [Projeto do Node.js](../../azure-monitor/app/nodejs.md)
   * [JavaScript em cada página da Web](../../azure-monitor/app/javascript.md) 
-* Em seu código de servidor Web ou dispositivo, inclua:
+* No seu dispositivo ou código de servidor web, inclua:
 
     *C#:* `using Microsoft.ApplicationInsights;`
 
@@ -163,8 +163,6 @@ Se a [amostragem](../../azure-monitor/app/sampling.md) estiver em funcionamento,
 *C#*
 
 ```csharp
-#pragma warning disable CA1716  // Namespace naming
-
 namespace User.Namespace.Example01
 {
     using System;
@@ -300,7 +298,7 @@ A telemetria está disponível na tabela `customMetrics` na [Análise do Applica
 * `valueSum` – essa é a soma das medidas. Para obter o valor médio, divida por `valueCount`.
 * `valueCount` – o número de medidas que foram agregadas nessa chamada para `trackMetric(..)`.
 
-## <a name="page-views"></a>Visualizações de página
+## <a name="page-views"></a>Exibições de página
 
 Em um aplicativo de página da Web ou dispositivo, a telemetria de exibição de páginas é enviada por padrão quando cada tela ou página é carregada. Porém, você pode alterar isso para acompanhar as exibições de páginas em momentos diferentes ou adicionais. Por exemplo, em um aplicativo que exibe guias ou folhas, talvez você queira acompanhar uma página sempre que o usuário abrir uma nova folha.
 
@@ -582,7 +580,7 @@ trackTrace(message: string, properties?: {[string]:string}, severityLevel?: AI.S
 
 Registrar um evento de diagnóstico, como entrar ou sair de um método.
 
- Parâmetro | DESCRIÇÃO
+ Parâmetro | Descrição
 ---|---
 `message` | Dados de diagnóstico. Pode ser muito mais longo do que um nome.
 `properties` | Mapa de cadeia de caracteres para cadeia de caracteres: Dados adicionais usados para [filtrar exceções](https://azure.microsoft.com/documentation/articles/app-insights-api-custom-events-metrics/#properties) no portal. O padrão é vazio.
@@ -741,7 +739,7 @@ A função é assíncrona para o [canal de telemetria do servidor](https://www.n
 
 Idealmente, o método flush () deve ser usado na atividade de desligamento do Aplicativo.
 
-## <a name="authenticated-users"></a>usuários autenticados
+## <a name="authenticated-users"></a>Usuários autenticados
 
 Em um aplicativo Web, os usuários são (por padrão) identificados por cookies. Um usuário pode ser contado mais de uma vez se ele acessar seu aplicativo de um computador ou navegador diferente, ou se ele excluir cookies.
 
@@ -1176,7 +1174,7 @@ Se você definir qualquer um desses valores por conta própria, considere remove
 * **Session**: Sessão do usuário. A ID é definida para um valor gerado, que é alterado quando o usuário ficar inativo por um tempo.
 * **Usuário**: Informação do usuário.
 
-## <a name="limits"></a>limites
+## <a name="limits"></a>Limites
 
 [!INCLUDE [application-insights-limits](../../../includes/application-insights-limits.md)]
 

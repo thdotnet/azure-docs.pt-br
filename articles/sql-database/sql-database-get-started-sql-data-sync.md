@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: allenwux
 ms.author: xiwu
 ms.reviewer: carlrab
-manager: craigg
 ms.date: 01/14/2019
-ms.openlocfilehash: 82b85ffd685df52e702db15e5a5b57a53a3b4f64
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 37b8f64360e871236be7a8623460bbe75bd1d8b5
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60342037"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68568174"
 ---
 # <a name="tutorial-set-up-sql-data-sync-between-azure-sql-database-and-sql-server-on-premises"></a>Tutorial: Configurar a sincronização de dados SQL entre o banco de dados SQL do Azure e SQL Server local
 
@@ -49,7 +48,7 @@ Para obter exemplos do PowerShell sobre como configurar a Sincronização de Dad
 
    Na página **Criar Grupo de Sincronização de Dados**, altere as seguintes configurações:
 
-   | Configuração                        | DESCRIÇÃO |
+   | Configuração                        | Descrição |
    | ------------------------------ | ------------------------------------------------- |
    | **Nome do Grupo de Sincronização** | Insira um nome para o novo grupo de sincronização. Esse nome é diferente do nome do banco de dados. |
    | **Sincronizar Banco de Dados de Metadados** | Escolha criar um banco de dados (recomendado) ou usar um banco de dados existente.<br/><br/>Se você escolher **Novo banco de dados**, selecione **Criar novo banco de dados**. Em seguida, na página **Banco de Dados SQL**, nomeie e configure o novo banco de dados e selecione **OK**.<br/><br/>Se você escolher **Usar banco de dados existente**, selecione o banco de dados na lista. |
@@ -77,7 +76,7 @@ Na seção **Banco de Dados Membro**, opcionalmente, adicione um Banco de Dados 
 
   Na página **Configurar Banco de Dados SQL do Azure**, altere as seguintes configurações:
 
-  | Configuração                       | DESCRIÇÃO |
+  | Configuração                       | Descrição |
   | ----------------------------- | ------------------------------------------------- |
   | **Sincronizar Nome do Membro** | Forneça um nome para o novo membro de sincronização. Esse nome é diferente do nome do banco de dados. |
   | **Assinatura** | Selecione a assinatura associada do Azure para fins de cobrança. |
@@ -164,7 +163,7 @@ Depois que os novos membros do grupo de sincronização forem criados e implanta
 
     ![Sincronização manual](media/sql-database-get-started-sql-data-sync/datasync-sync.png)
 
-## <a name="faq"></a>Perguntas frequentes
+## <a name="faq"></a>Perguntas Frequentes
 
 **Com que frequência a Sincronização de Dados pode sincronizar meus dados?**
 
@@ -232,7 +231,7 @@ Para saber mais sobre a Sincronização de Dados SQL, veja:
 
 - [Agente de Sincronização de Dados para a Sincronização de Dados SQL do Azure](sql-database-data-sync-agent.md)
 - [Práticas recomendadas](sql-database-best-practices-data-sync.md) e [Como solucionar problemas comuns com a Sincronização de Dados SQL do Azure](sql-database-troubleshoot-data-sync.md)
-- [Monitorar a sincronização de dados do SQL com logs do Azure Monitor](sql-database-sync-monitor-oms.md)
+- [Monitorar Sincronização de Dados SQL com logs de Azure Monitor](sql-database-sync-monitor-oms.md)
 - [Atualizar o esquema de sincronização com o Transact-SQL](sql-database-update-sync-schema.md) ou o [PowerShell](scripts/sql-database-sync-update-schema.md)
 
 Para saber mais sobre o Banco de Dados SQL, veja:

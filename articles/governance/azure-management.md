@@ -7,12 +7,12 @@ ms.service: governance
 ms.topic: article
 ms.date: 12/06/2018
 ms.author: dacoulte
-ms.openlocfilehash: d68e7d9ec3b60b93f0050250d7e7d718db7aa5b8
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
+ms.openlocfilehash: 520b84722d9434b309d3eb6da0baa3c1e4da33d0
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67488474"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68608198"
 ---
 # <a name="overview-of-management-services-in-azure"></a>Visão geral dos serviços de gerenciamento no Azure
 
@@ -28,7 +28,7 @@ Nenhum serviço único do Azure preenche completamente os requisitos de uma áre
 
 As seções a seguir descrevem resumidamente as diferentes áreas de gerenciamento e fornecem links para conteúdo detalhado sobre os principais serviços do Azure destinados a abordá-las.
 
-## <a name="monitor"></a>Monitoramento
+## <a name="monitor"></a>Monitor
 
 Monitoramento é o ato de coletar e analisar dados para auditar o desempenho, a integridade e a disponibilidade dos recursos. Uma estratégia de monitoramento eficaz ajuda a compreender a operação dos componentes e aumentar o tempo de atividade com notificações. Leia uma visão geral do monitoramento que identifica os diferentes serviços usados no [Monitoramento de aplicativos e recursos do Azure](../monitoring/monitoring-overview.md).
 
@@ -44,7 +44,7 @@ Governança no Azure é implementada principalmente com dois serviços. O [Azure
 
 ## <a name="secure"></a>Segurança
 
-Gerencie a segurança dos seus recursos e dados. Um programa de segurança envolve a avaliação de ameaças, coletando e analisando dados, e de conformidade dos aplicativos e recursos. A [Central de Segurança do Azure](../security-center/security-center-intro.md) fornece monitoramento de segurança e análise de ameaças, o que inclui o gerenciamento unificado de segurança e proteção avançada contra ameaças em cargas de trabalho de nuvem híbrida. Consulte [Introdução à segurança do Azure](../security/azure-security.md) para obter informações abrangentes e orientações sobre como proteger os recursos do Azure.
+Gerencie a segurança dos seus recursos e dados. Um programa de segurança envolve a avaliação de ameaças, coletando e analisando dados, e de conformidade dos aplicativos e recursos. A [Central de Segurança do Azure](../security-center/security-center-intro.md) fornece monitoramento de segurança e análise de ameaças, o que inclui o gerenciamento unificado de segurança e proteção avançada contra ameaças em cargas de trabalho de nuvem híbrida. Consulte [Introdução à segurança do Azure](../security/fundamentals/overview.md) para obter informações abrangentes e orientações sobre como proteger os recursos do Azure.
 
 ## <a name="protect"></a>Proteger
 

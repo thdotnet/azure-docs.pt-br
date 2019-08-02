@@ -5,14 +5,14 @@ author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 3/20/2019
+ms.date: 7/29/2019
 ms.author: mayg
-ms.openlocfilehash: cbea6785239c70a3cdb229d0811497f051224238
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f4b63cfc67e20158e434e1a401d47144c3e0f90c
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61472360"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68618741"
 ---
 # <a name="analyze-the-azure-site-recovery-deployment-planner-report-for-vmware-disaster-recovery-to-azure"></a>Analise o relatório do Azure Site Recovery Deployment Planner para recuperação de desastre do VMware no Azure
 
@@ -41,9 +41,6 @@ A planilha Resumo local fornece uma visão geral do ambiente VMware analisado.
 **Registro de dados típicos observado por dia (GB)** : A variação de dados média observada na criação de perfil todos os dias. Esse número é usado como uma das entradas para decidir o número de servidores de configuração e servidores de processo adicionais a serem usados na implantação.
 
 ## <a name="recommendations"></a>Recomendações
-
->[!Note]
->Ao replicar diretamente para discos gerenciados, ignore a recomendação para o número de contas de armazenamento.
 
 A planilha de recomendações do relatório do VMware para o Azure apresenta os seguintes detalhes de acordo com o RPO selecionado:
 
@@ -95,7 +92,7 @@ Se você estiver executando a ferramenta em um servidor de configuração ou de 
 Para todas as implantações do Site Recovery corporativo, é recomendável usar o [ExpressRoute](https://aka.ms/expressroute).
 
 ### <a name="required-storage-accounts"></a>Contas de armazenamento necessárias
-O gráfico a seguir mostra o número total de contas de armazenamento (standard e premium) que são necessárias para proteger todas as VMs compatíveis. Para saber qual conta de armazenamento deve ser usada para cada VM, confira a seção "Posicionamento de VM-storage".
+O gráfico a seguir mostra o número total de contas de armazenamento (standard e premium) que são necessárias para proteger todas as VMs compatíveis. Para saber qual conta de armazenamento deve ser usada para cada VM, confira a seção "Posicionamento de VM-storage". Se você estiver usando a v 2.5 de Planejador de Implantações, essa recomendação mostrará apenas o número de contas de armazenamento de cache padrão que são necessárias para a replicação, uma vez que os dados estão sendo gravados diretamente no Managed Disks.
 
 ![Contas de armazenamento necessárias no planejador de implantação](media/site-recovery-vmware-deployment-planner-analyze-report/required-storage-accounts-v2a.png)
 
@@ -160,21 +157,19 @@ Pode haver uma situação em que você saiba que não é possível definir uma l
 ## <a name="vm-storage-placement"></a>Posicionamento de VM-Storage
 
 >[!Note]
->Ao replicar diretamente para discos gerenciados, você precisa se preocupar sobre o número de contas de armazenamento. Para armazenamento, use apenas a recomendação no tipo de armazenamento (Standard ou Premium). O mesmo tipo é aplicável para discos gerenciados.
+>O Planejador de Implantações v 2.5 em diante recomenda o posicionamento de armazenamento para computadores que serão replicados diretamente em discos gerenciados.
 
 ![Posicionamento de VM-Storage](media/site-recovery-vmware-deployment-planner-analyze-report/vm-storage-placement-v2a.png)
 
-**Tipo de Armazenamento em Disco**: Uma conta de armazenamento standard ou premium, que é usada para replicar todas as VMs correspondentes mencionadas na coluna **VMs para Posicionar**.
+**Tipo de armazenamento de replicação**: Um disco gerenciado Standard ou Premium, que é usado para replicar todas as VMs correspondentes mencionadas na coluna **VMs para o local** .
 
-**Prefixo Sugerido**: O prefixo de três caracteres sugerido que pode ser usado para nomear a conta de armazenamento. Você pode usar seu próprio prefixo, mas sugestão da ferramenta segue a [convenção de nomenclatura de partição para contas de armazenamento](https://aka.ms/storage-performance-checklist).
+**Tipo de conta de armazenamento de log**: Todos os logs de replicação são armazenados em uma conta de armazenamento standard.
 
-**Nome da Conta Sugerida**: O nome de conta de armazenamento depois que você inclui o prefixo sugerido. Substitua o nome entre colchetes angulares (< e >) por sua entrada personalizada.
+**Prefixo sugerido para a conta de armazenamento**: O prefixo de três caracteres sugerido que pode ser usado para nomear a conta de armazenamento em cache. Você pode usar seu próprio prefixo, mas sugestão da ferramenta segue a [convenção de nomenclatura de partição para contas de armazenamento](https://aka.ms/storage-performance-checklist).
 
-**Conta de Armazenamento de Log**: Todos os logs de replicação são armazenados em uma conta de armazenamento standard. Para VMs que são replicadas para uma conta de armazenamento premium, configure uma conta de armazenamento standard adicional para o armazenamento de log. Uma conta de armazenamento de log standard pode ser usada por várias contas de armazenamento de replicação premium. VMs replicadas para contas de armazenamento standard usam a mesma conta de armazenamento para logs.
+**Nome de Conta de Log Sugerido**: O nome de conta de armazenamento depois que você inclui o prefixo sugerido. Substitua o nome entre colchetes angulares (< e >) por sua entrada personalizada.
 
-**Nome de Conta de Log Sugerido**: O nome de conta de armazenamento de log depois que você inclui o prefixo sugerido. Substitua o nome entre colchetes angulares (< e >) por sua entrada personalizada.
-
-**Resumo de Posicionamento**: Um resumo da carga total das VMs na conta de armazenamento no momento da replicação e do failover ou failover de teste. Inclui o número total de VMs mapeadas para a conta de armazenamento, o total de IOPS de leitura/gravação em todas as VMs que está sendo colocadas nessa conta de armazenamento, o total de IOPS de gravação (replicação), o tamanho de configuração total em todos os discos e o número total de discos.
+**Resumo de Posicionamento**: Um resumo dos discos necessários para VMs protegidas por tipo de armazenamento. Ele inclui o número total de VMs, o tamanho total provisionado em todos os discos e o número total de discos.
 
 **Máquinas Virtuais para Posicionar**: Uma lista de todas as VMs que devem ser posicionadas na conta de armazenamento específica para obter o melhor desempenho e uso.
 
@@ -195,9 +190,7 @@ Por exemplo, se as características de carga de trabalho de um disco o colocarem
 
 **Tipo de armazenamento**: Standard ou Premium.
 
-**Prefixo Sugerido**: O prefixo de conta de armazenamento com três caracteres.
-
-**Conta de Armazenamento**: O nome que usa o prefixo de conta de armazenamento sugerido.
+**Asrseeddisk (disco gerenciado) criado para replicação**: O nome do disco que é criado quando você habilita a replicação. Ele armazena os dados e seus instantâneos no Azure.
 
 **Pico R/W IOPS (com Fator de Crescimento)** : IOPS de leitura/gravação de carga de trabalho de pico no disco (o padrão é o 95%), incluindo o fator de crescimento futuro (o padrão é 30%). Observe que o IOPS total de leitura/gravação de uma VM nem sempre é a soma de IOPS de leitura/gravação dos discos individuais da VM, pois o IOPS de leitura/gravação de pico da VM é o pico da soma do IOPS de leitura/gravação dos discos individuais durante cada minuto do período de criação de perfil.
 
@@ -238,7 +231,7 @@ Por exemplo, se as características de carga de trabalho de um disco o colocarem
 
 * O IOPS de origem excede o limite de IOPS de armazenamento com suporte de 80.000 por VM.
 
-* A variação de dados média excede o limite de variação de dados do Site Recovery com suporte de 10 MB/s para o tamanho médio de E/S do disco.
+* A rotatividade média de dados excede o limite de variação de dados Site Recovery com suporte de 20 MB/s para o tamanho médio de e/s para o disco.
 
 * A variação de dados média excede o limite de variação de dados do Site Recovery com suporte de 25 MB/s para o tamanho médio de E/S da VM (soma da variação de todos os discos).
 

@@ -4,16 +4,16 @@ description: Saiba como criar um gateway de aplicativo que hospeda vários sites
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: tutorial
-ms.date: 5/20/2019
+ms.topic: article
+ms.date: 07/31/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: caf82fdab8a841e5c49616a40216a788d877a81b
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
-ms.translationtype: HT
+ms.openlocfilehash: eceb380112002ef951d6d5e74998d944da01bd7a
+ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67501958"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68688226"
 ---
 # <a name="create-an-application-gateway-that-hosts-multiple-web-sites-using-the-azure-cli"></a>Criar um gateway de aplicativo que hospeda vários sites usando a CLI do Azure
 
@@ -37,7 +37,7 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Se você optar por instalar e usar a CLI localmente, este guia de início rápido exigirá a execução da CLI do Azure versão 2.0.4 ou posterior. Para saber qual é a versão, execute `az --version`. Se você precisa instalar ou atualizar, consulte [Instalar a CLI do Azure](/cli/azure/install-azure-cli).
+Se você optar por instalar e usar a CLI localmente, este artigo exigirá que você esteja executando o CLI do Azure versão 2.0.4 ou posterior. Para saber qual é a versão, execute `az --version`. Se você precisa instalar ou atualizar, consulte [Instalar a CLI do Azure](/cli/azure/install-azure-cli).
 
 ## <a name="create-a-resource-group"></a>Criar um grupo de recursos
 
@@ -70,7 +70,9 @@ az network vnet subnet create \
 
 az network public-ip create \
   --resource-group myResourceGroupAG \
-  --name myAGPublicIPAddress
+  --name myAGPublicIPAddress \
+  --allocation-method Static \
+  --sku Standard
 ```
 
 ## <a name="create-the-application-gateway"></a>Criar o gateway de aplicativo
@@ -85,7 +87,7 @@ az network application-gateway create \
   --vnet-name myVNet \
   --subnet myAGsubnet \
   --capacity 2 \
-  --sku Standard_Medium \
+  --sku Standard_v2 \
   --http-settings-cookie-based-affinity Disabled \
   --frontend-port 80 \
   --http-settings-port 80 \
@@ -140,9 +142,9 @@ az network application-gateway http-listener create \
 
 ### <a name="add-routing-rules"></a>Adicionar regras de redirecionamento
 
-As regras são processadas na ordem em que são listadas e o tráfego é direcionado usando da primeira regra correspondente, independentemente de especificidade. Por exemplo, se você tiver uma regra usando um ouvinte básico e outra usando um ouvinte multissite, ambas na mesma porta, a regra com o ouvinte multissite deverá ser listada antes daquela com o ouvinte básico, para que a função multissite funcione conforme esperado. 
+As regras são processadas na ordem em que estão listadas. O tráfego é direcionado usando a primeira regra que corresponde, independentemente da especificidade. Por exemplo, se você tiver uma regra usando um ouvinte básico e outra usando um ouvinte multissite, ambas na mesma porta, a regra com o ouvinte multissite deverá ser listada antes daquela com o ouvinte básico, para que a função multissite funcione conforme esperado. 
 
-Neste exemplo, você criará duas novas regras e excluirá a regra padrão que foi criada quando você criou o gateway de aplicativo. Você pode adicionar a regra usando [az network application-gateway rule create](/cli/azure/network/application-gateway/rule#az-network-application-gateway-rule-create).
+Neste exemplo, você cria duas novas regras e exclui a regra padrão criada quando você implantou o gateway de aplicativo. Você pode adicionar a regra usando [az network application-gateway rule create](/cli/azure/network/application-gateway/rule#az-network-application-gateway-rule-create).
 
 ```azurecli-interactive
 az network application-gateway rule create \
@@ -229,11 +231,11 @@ az network public-ip show \
   --output tsv
 ```
 
-O uso de registros A não é recomendado, pois o VIP pode mudar quando o gateway de aplicativo for reiniciado.
+O uso de registros A não é recomendado porque o VIP pode ser alterado quando o gateway de aplicativo é reiniciado.
 
 ## <a name="test-the-application-gateway"></a>Testar o gateway de aplicativo
 
-Digite seu nome de domínio na barra de endereços do navegador. Por exemplo, http:\//www.contoso.com.
+Digite seu nome de domínio na barra de endereços do navegador. Por exemplo, \/http://www.contoso.com.
 
 ![Testar o site contoso no gateway do aplicativo](./media/tutorial-multiple-sites-cli/application-gateway-nginxtest1.png)
 
@@ -246,9 +248,9 @@ Altere o endereço para seu outro domínio e você verá algo parecido com o exe
 Quando não for mais necessário, remova o grupo de recursos, o gateway de aplicativo e todos os recursos relacionados.
 
 ```azurecli-interactive
-az group delete --name myResourceGroupAG --location eastus
+az group delete --name myResourceGroupAG
 ```
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Criar um gateway de aplicativo com regras de roteamento baseadas em caminhos de URL](./tutorial-url-route-cli.md)
+[Criar um gateway de aplicativo com regras de roteamento baseadas em caminhos de URL](./tutorial-url-route-cli.md)

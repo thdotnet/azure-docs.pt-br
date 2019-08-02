@@ -6,14 +6,14 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 10/04/2018
-ms.openlocfilehash: 562daa024985a546ffb49c4da11eace3bc81a659
-ms.sourcegitcommit: da0a8676b3c5283fddcd94cdd9044c3b99815046
+ms.openlocfilehash: b5777300f5033569caf3868218e747df3ff83a76
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314816"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640237"
 ---
-# <a name="mapping-data-flow-schema-drift"></a>Descompasso do Esquema do Fluxo de Dados do Mapeamento
+# <a name="mapping-data-flow-schema-drift"></a>Mapeando descompasso de esquema de fluxo de dados
 
 [!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
 
@@ -65,7 +65,7 @@ Em seguida, arredondaremos e somaremos os valores de cada uma dessas colunas cor
 
 ```round(sum ($$))```
 
-Você pode testar isso com a amostra "Taxi Demo" do Fluxo de Dados do Azure Data Factory. Ative a sessão de depuração usando a opção Depurar na parte superior da superfície de design do Fluxo de Dados para poder ver os resultados de forma interativa:
+Você pode ver essa funcionalidade de descompasso de esquema em funcionamento com o Azure Data Factory exemplo de fluxo de dados "demonstração de táxi". Ative a sessão de depuração usando a opção Depurar na parte superior da superfície de design do Fluxo de Dados para poder ver os resultados de forma interativa:
 
 <img src="media/data-flow/taxidrift2.png" width="800">
 
@@ -75,6 +75,9 @@ Quando você gera novas colunas com padrões de coluna, você pode acessar essas
 * Use "byPosition" para identificar as novas colunas por número de posição.
 * Use "byName" para identificar as novas colunas por seu nome.
 * Em padrões de coluna, use "Name", "Stream", "position" ou "Type" ou qualquer combinação deles para corresponder a novas colunas.
+
+## <a name="rule-based-mapping"></a>Mapeamento baseado em regras
+O padrão de suporte de transformação Select e Sink correspondente por meio de mapeamento baseado em regra. Isso permitirá que você crie regras que possam mapear colunas descompassos para aliases de coluna e coletar essas colunas para o destino.
 
 ## <a name="next-steps"></a>Próximas etapas
 Na [linguagem de expressão de fluxo de dados](data-flow-expression-functions.md) , você encontrará recursos adicionais para padrões de coluna e descompasso de esquema, incluindo "byName" e "byPosition".

@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlrab, srbozovi, bonova
-manager: craigg
 ms.date: 02/18/2019
-ms.openlocfilehash: 59088ad53e923f1303c0e800df9c25f70e63812f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ddcac56671e145728f02d31bf23c657ea172e4c0
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60701815"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68567649"
 ---
 # <a name="quickstart-configure-azure-vm-to-connect-to-an-azure-sql-database-managed-instance"></a>Início Rápido: Configurar a VM do Azure para se conectar a uma Instância Gerenciada do Banco de Dados SQL do Azure
 
@@ -27,7 +26,7 @@ Este início rápido demonstra como configurar uma máquina virtual do Azure par
 
 Este início rápido usa os recursos criados em [Criar uma Instância Gerenciada](sql-database-managed-instance-get-started.md) como um ponto de partida.
 
-## <a name="sign-in-to-the-azure-portal"></a>Entre no Portal do Azure
+## <a name="sign-in-to-the-azure-portal"></a>Entrar no portal do Azure
 
 Entre no [Portal do Azure](https://portal.azure.com/).
 
@@ -74,7 +73,7 @@ A maneira mais fácil de criar uma máquina virtual cliente com todas as ferrame
 
 2. Preencha o formulário usando as informações na tabela a seguir:
 
-   | Configuração| Valor sugerido | DESCRIÇÃO |
+   | Configuração| Valor sugerido | Descrição |
    | ---------------- | ----------------- | ----------- |
    | **Assinatura** | Uma assinatura válida | Precisa ser uma assinatura na qual você tem permissão para criar novos recursos. |
    | **Grupo de recursos** |O grupo de recursos que você especificou no início rápido [Criar Instância Gerenciada](sql-database-managed-instance-get-started.md).|Esse grupo de recursos precisa ser aquele no qual a VNet existe.|
@@ -84,7 +83,7 @@ A maneira mais fácil de criar uma máquina virtual cliente com todas as ferrame
    |**Senha**|Qualquer senha válida|A senha deve ter no mínimo 12 caracteres e atender a [requisitos de complexidade definidos](../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm).<br>Você usa essa senha sempre que você [se conecta à VM](#connect-to-virtual-machine).|
    | **Tamanho da Máquina Virtual** | Qualquer tamanho válido | O padrão neste modelo de **Standard_B2s** é suficiente para este início rápido. |
    | **Localidade**|[resourceGroup().location].| Não altere esse valor. |
-   | **Nome da Rede Virtual**|A rede virtual em que você criou a instância gerenciada.|
+   | **Nome da Rede Virtual**|A rede virtual na qual você criou a Instância Gerenciada.|
    | **Nome da sub-rede**|O nome da sub-rede que você criou no procedimento anterior| Não escolha a sub-rede na qual você criou a Instância Gerenciada.|
    | **Localização de artefatos** | [deployment().properties.templateLink.uri] | Não altere esse valor. |
    | **token SAS de Localização de artefatos** | deixar em branco | Não altere esse valor. |

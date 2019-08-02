@@ -10,14 +10,13 @@ ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
-manager: craigg
 ms.date: 12/04/2018
-ms.openlocfilehash: 90989a9105405f1784b3be9ab59f55cd3433feaf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 208224e10c3acfb17bc5fd89d2d66152943811dc
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66479232"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68566751"
 ---
 # <a name="business-critical-tier---azure-sql-database"></a>Camada Comercialmente Crítico - Banco de Dados SQL do Azure
 
@@ -49,7 +48,7 @@ A camada de serviço Comercialmente Crítico foi projetada para os aplicativos q
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Encontrar recursos características (número de memória de núcleos, e/s,) da camada comercialmente crítico nos [instância gerenciada](sql-database-managed-instance-resource-limits.md#service-tier-characteristics)único banco de dados no [modelo vCore](sql-database-vcore-resource-limits-single-databases.md#business-critical-service-tier-for-provisioned-compute-tier) ou [modelo DTU](sql-database-dtu-resource-limits-single-databases.md#premium-service-tier), ou Elástico pool no [modelo vCore](sql-database-vcore-resource-limits-elastic-pools.md#business-critical-service-tier-storage-sizes-and-compute-sizes) e [modelo DTU](sql-database-dtu-resource-limits-elastic-pools.md#premium-elastic-pool-limits).
+- Encontre características de recursos (número de núcleos, e/s, memória) da camada de Comercialmente Crítico em [instância gerenciada](sql-database-managed-instance-resource-limits.md#service-tier-characteristics), banco de dados individual no modelo de [VCORE](sql-database-vcore-resource-limits-single-databases.md#business-critical-service-tier-for-provisioned-compute-tier) ou [modelo de DTU](sql-database-dtu-resource-limits-single-databases.md#premium-service-tier)ou pool elástico no modelo de [VCORE](sql-database-vcore-resource-limits-elastic-pools.md#business-critical-service-tier-storage-sizes-and-compute-sizes) e [modelo de DTU](sql-database-dtu-resource-limits-elastic-pools.md#premium-elastic-pool-limits).
 - Saiba mais sobre as camadas [Uso Geral](sql-database-service-tier-general-purpose.md) e [Hiperescala](sql-database-service-tier-hyperscale.md).
 - Saiba mais sobre o [Service Fabric](../service-fabric/service-fabric-overview.md).
 - Para obter mais opções de alta disponibilidade e recuperação de desastres, consulte [Continuidade de Negócios](sql-database-business-continuity.md).

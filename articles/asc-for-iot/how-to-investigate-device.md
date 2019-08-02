@@ -1,6 +1,6 @@
 ---
-title: Central de segurança do Azure para guia básico de investigação de dispositivo IoT Preview | Microsoft Docs
-description: Este guia de instruções explica como usar a Central de segurança do Azure para IoT para investigar um dispositivo IoT suspeito usando o Log Analytics.
+title: Central de segurança do Azure para guia de investigação de dispositivos IoT | Microsoft Docs
+description: Este guia de instruções explica como usar a central de segurança do Azure para IoT para investigar um dispositivo IoT suspeito usando o Log Analytics.
 services: asc-for-iot
 ms.service: asc-for-iot
 documentationcenter: na
@@ -13,70 +13,66 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/18/2019
+ms.date: 07/23/2019
 ms.author: mlottner
-ms.openlocfilehash: 884d001a65962d5e7e6e52dd47ce6ad7e02e1057
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 8d2fe8d63c7ece6f3b3426d8fc5a3454a61826f8
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67618117"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68596244"
 ---
 # <a name="investigate-a-suspicious-iot-device"></a>Investigar um dispositivo IoT suspeito
 
-> [!IMPORTANT]
-> A Central de Segurança do Azure para IoT está em versão prévia pública no momento.
-> Esta versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos. Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+A central de segurança do Azure para alertas do serviço de IoT fornece indicações claras quando os dispositivos IoT têm a suspeita de envolvimento em atividades suspeitas ou quando há indicações de que um dispositivo está comprometido. 
 
-Central de segurança do Azure (ASC) para a evidência e os alertas do serviço IoT fornecem indicações claras quando dispositivos IoT são suspeitos de envolvimento com atividades suspeitas ou quando indicações existem que um dispositivo está comprometido. 
-
-Neste guia, use as sugestões de investigação fornecidas para ajudar a determinar os riscos potenciais para sua organização, decida como corrigir e descobrir as melhores maneiras de evitar ataques semelhantes no futuro.  
+Neste guia, use as sugestões de investigação fornecidas para ajudar a determinar os riscos potenciais para sua organização, decidir como corrigir e descobrir as melhores maneiras de evitar ataques semelhantes no futuro.  
 
 > [!div class="checklist"]
 > * Encontrar dados do dispositivo
 > * Investigar usando consultas kql
 
 
-## <a name="how-can-i-access-my-data"></a>Como acessar meus dados?
+## <a name="how-can-i-access-my-data"></a>Como posso acessar meus dados?
 
-Por padrão, a ASC para IoT armazena seus alertas de segurança e recomendações no espaço de trabalho do Log Analytics. Você também pode optar por armazenar seus dados brutos de segurança.
+Por padrão, a central de segurança do Azure para IoT armazena seus alertas de segurança e recomendações em seu espaço de trabalho Log Analytics. Você também pode optar por armazenar seus dados brutos de segurança.
 
-Para localizar o seu espaço de trabalho do Log Analytics para o armazenamento de dados:
+Para localizar seu espaço de trabalho do Log Analytics para armazenamento de dados:
 
 1. Abra seu Hub IoT, 
-1. Sob **segurança**, clique em **visão geral**e, em seguida, selecione **configurações**.
+1. Em **segurança**, clique em **visão geral**e, em seguida, selecione **configurações**.
 1. Altere seus detalhes de configuração do espaço de trabalho do Log Analytics. 
 1. Clique em **Salvar**. 
 
 Após a configuração, faça o seguinte para acessar dados armazenados no espaço de trabalho do Log Analytics:
 
-1. Selecione e clique em um alerta da ASC para IoT em seu Hub IoT. 
+1. Selecione e clique em um alerta da central de segurança do Azure para IoT em seu hub IoT. 
 1. Clique em **Investigação posterior**. 
 1. Selecione **Para ver quais dispositivos têm esse alerta, clique aqui e veja a coluna DeviceId**.
 
 ## <a name="investigation-steps-for-suspicious-iot-devices"></a>Etapas de investigação para dispositivos de IoT suspeitas
 
-Para acessar informações e dados brutos sobre os dispositivos IoT, vá para seu espaço de trabalho do Log Analytics [para acessar seus dados](#how-can-i-access-my-data).
+Para exibir informações e dados brutos sobre seus dispositivos IoT, acesse o espaço de trabalho Log Analytics [para acessar seus dados](#how-can-i-access-my-data).
 
-Verifique e investigue os dados do dispositivo para os seguintes detalhes e atividades usando as seguintes consultas kql.
+Consulte as consultas kql de exemplo abaixo para começar a investigar alertas e atividades em seu dispositivo.
 
 ### <a name="related-alerts"></a>Alertas relacionados
 
 Para saber se outros alertas foram disparados em torno do mesmo tempo, use a seguinte consulta kql:
 
-  ~~~
+  ```
   let device = "YOUR_DEVICE_ID";
   let hub = "YOUR_HUB_NAME";
   SecurityAlert
   | where ExtendedProperties contains device and ResourceId contains tolower(hub)
   | project TimeGenerated, AlertName, AlertSeverity, Description, ExtendedProperties
-  ~~~
+  ```
 
 ### <a name="users-with-access"></a>Usuários com acesso
 
 Para descobrir quais usuários têm acesso a esse dispositivo, use a seguinte consulta kql: 
 
-  ~~~
+ ```
   let device = "YOUR_DEVICE_ID";
   let hub = "YOUR_HUB_NAME";
   SecurityIoTRawEvent
@@ -88,16 +84,16 @@ Para descobrir quais usuários têm acesso a esse dispositivo, use a seguinte co
      GroupNames=extractjson("$.GroupNames", EventDetails, typeof(string)),
      UserName=extractjson("$.UserName", EventDetails, typeof(string))
   | summarize FirstObserved=min(TimestampLocal) by GroupNames, UserName
-  ~~~
+ ```
 Use esses dados para descobrir: 
-  1. Quais usuários têm acesso ao dispositivo?
-  2. Os usuários com acesso possuem os níveis de permissão conforme o esperado? 
+- Quais usuários têm acesso ao dispositivo?
+- Os usuários com acesso têm os níveis de permissão esperados?
 
-### <a name="open-ports"></a>Abrir portas
+### <a name="open-ports"></a>Portas abertas
 
-Para descobrir quais portas no dispositivo estão em uso no momento ou que foram usadas, use a seguinte consulta de kql: 
+Para descobrir quais portas no dispositivo estão atualmente em uso ou foram usadas, use a seguinte consulta kql: 
 
-  ~~~
+ ```
   let device = "YOUR_DEVICE_ID";
   let hub = "YOUR_HUB_NAME";
   SecurityIoTRawEvent
@@ -113,18 +109,18 @@ Para descobrir quais portas no dispositivo estão em uso no momento ou que foram
      RemoteAddress=extractjson("$.RemoteAddress", EventDetails, typeof(string)),
      RemotePort=extractjson("$.RemotePort", EventDetails, typeof(string))
   | summarize MinObservedTime=min(TimestampLocal), MaxObservedTime=max(TimestampLocal), AllowedRemoteIPAddress=makeset(RemoteAddress), AllowedRemotePort=makeset(RemotePort) by Protocol, LocalPort
-  ~~~
+ ```
 
-    Use this data to discover:
-  1. Quais soquetes de escuta estão ativos no dispositivo no momento?
-  2. Os soquetes de escutando que estão ativos no momento devem ser permitidos?
-  3. Existem quaisquer endereços remotos suspeitos conectados ao dispositivo?
+Use esses dados para descobrir:
+- Quais soquetes de escuta estão ativos no dispositivo no momento?
+- Os soquetes de escuta que estão ativos atualmente devem ser permitidos?
+- Há algum endereço remoto suspeito conectado ao dispositivo?
 
 ### <a name="user-logins"></a>Logons de usuário
 
-Para descobrir os usuários conectados ao dispositivo usam a seguinte consulta kql: 
+Para localizar os usuários que fizeram logon no dispositivo, use a seguinte consulta kql: 
  
-  ~~~
+ ```
   let device = "YOUR_DEVICE_ID";
   let hub = "YOUR_HUB_NAME";
   SecurityIoTRawEvent
@@ -144,18 +140,18 @@ Para descobrir os usuários conectados ao dispositivo usam a seguinte consulta k
      RemoteAddress=extractjson("$.RemoteAddress", EventDetails, typeof(string)),
      Result=extractjson("$.Result", EventDetails, typeof(string))
   | summarize CntLoginAttempts=count(), MinObservedTime=min(TimestampLocal), MaxObservedTime=max(TimestampLocal), CntIPAddress=dcount(RemoteAddress), IPAddress=makeset(RemoteAddress) by UserName, Result, LoginHandler
-  ~~~
+ ```
 
-    Use the query results to discover:
-  1. Quais usuários se conectaram ao dispositivo?
-  2. São os usuários que fez logon, deve fazer logon?
-  3. Os usuários que fizeram logon se conectaram com endereços de IP esperados ou inesperados?
+Use os resultados da consulta para descobrir:
+- Quais usuários se conectaram ao dispositivo?
+- Os usuários que fizeram logon devem fazer logon?
+- Os usuários que fizeram logon se conectaram com endereços de IP esperados ou inesperados?
   
 ### <a name="process-list"></a>Lista de processos
 
-Para descobrir se a lista de processos é conforme o esperado, use a seguinte consulta de kql: 
+Para descobrir se a lista de processos é como esperado, use a seguinte consulta kql: 
 
-  ~~~
+ ```
   let device = "YOUR_DEVICE_ID";
   let hub = "YOUR_HUB_NAME";
   SecurityIoTRawEvent
@@ -180,13 +176,13 @@ Para descobrir se a lista de processos é conforme o esperado, use a seguinte co
   ) on UserId
   | extend UserIdName = strcat("Id:", UserId, ", Name:", UserName)
   | summarize CntExecutions=count(), MinObservedTime=min(TimestampLocal), MaxObservedTime=max(TimestampLocal), ExecutingUsers=makeset(UserIdName), ExecutionCommandLines=makeset(CommandLine) by Executable
-  ~~~
+```
 
-    Use the query results to discover:
+Use os resultados da consulta para descobrir:
 
-  1. Houve qualquer processo em execução suspeito no dispositivo?
-  2. Os processos foram executados por usuários apropriados?
-  3. Execuções de qualquer linha de comando continha os argumentos corretos e esperados?
+- Houve qualquer processo em execução suspeito no dispositivo?
+- Os processos foram executados por usuários apropriados?
+- Execuções de qualquer linha de comando continha os argumentos corretos e esperados?
 
 ## <a name="next-steps"></a>Próximas etapas
 
