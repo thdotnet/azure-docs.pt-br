@@ -36,6 +36,26 @@ sections:
           - html: <a href="service/quickstart-run-local-notebook">Executar um experimento usando um servidor de notebook local</a> (instalação local do SDK)
         style: unordered
         type: list
+      - text: '<b>Tutorial: Treinar e implantar seu primeiro modelo de ML automatizado no portal do Azure:</b>'
+        type: paragraph
+      - items:
+          - html: <a href="service/tutorial-first-experiment-automated-ml">Use o aprendizado de máquina automatizado para treinar e implantar seu primeiro modelo de classificação</a>
+        style: unordered
+        type: list
+      - text: '<b>Tutorial: Treinar seu primeiro modelo de ML com o SDK:</b>'
+        type: paragraph
+      - items:
+          - html: 'Parte 1: <a href="service/tutorial-1st-experiment-sdk-setup">Configurar o ambiente e o workspace</a>'
+          - html: 'Parte 2: <a href="service/tutorial-1st-experiment-sdk-train">Treinar seu primeiro modelo</a>'
+        style: unordered
+        type: list
+      - text: '<b>Tutorial: Treinar e implantar o primeiro experimento usando a interface visual:</b>'
+        type: paragraph
+      - items:
+          - html: 'Parte 1: <a href="service/ui-tutorial-automobile-price-train-score">Treinar o modelo de regressão</a>'
+          - html: 'Parte 2: <a href="service/ui-tutorial-automobile-price-deploy">Implantar o modelo</a>'
+        style: unordered
+        type: list
       - text: '<b>Tutorial: Classificação de imagem dos dados MNIST com SDK:</b>'
         type: paragraph
       - items:

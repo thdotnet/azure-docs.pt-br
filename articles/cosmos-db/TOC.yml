@@ -747,6 +747,8 @@
           href: cosmosdb-sql-api-migrate-data-striim.md
         - name: Migrar para a API do Cassandra usando o Striim
           href: cosmosdb-cassandra-api-migrate-data-striim.md
+        - name: Migrar centenas de terabytes de dados para o Azure Cosmos DB
+          href: migrate-cosmosdb-data.md
     - name: Biblioteca bulk executor
       items:
         - name: Sobre a biblioteca do executor em passa

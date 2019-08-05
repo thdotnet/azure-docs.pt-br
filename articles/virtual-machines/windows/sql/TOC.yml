@@ -68,6 +68,8 @@
       items:
         - name: Migrar um banco de dados do SQL Server
           href: virtual-machines-windows-migrate-sql.md
+        - name: VM para uma nova região
+          href: virtual-machines-windows-sql-move-different-region.md
     - name: Configurar alta disponibilidade
       items:
         - name: Usar o Armazenamento do Azure para backup e restauração

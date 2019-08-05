@@ -113,7 +113,7 @@
     - name: Interpretabilidade do modelo
       displayName: explainability
       href: machine-learning-interpretability-explainability.md
-    - name: 'FPGA versus CPU, GPU e ASIC'
+    - name: FPGA versus CPU GPU ASIC
       displayName: 'field, programmable, arrays'
       href: concept-accelerate-with-fpgas.md
     - name: ONNX
@@ -398,7 +398,7 @@
     - name: Fórum de usuários
       href: 'https://aka.ms/aml-forum-service'
     - name: Stack Overflow
-      href: 'https://stackoverflow.com/questions/tagged/azure-machine-learning'
+      href: 'https://stackoverflow.com/questions/tagged/azure-machine-learning-service'
     - name: Comparar os nossos produtos de ML
       href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure/machine-learning/service/context/ml-context
     - name: O que aconteceu com o Workbench?
