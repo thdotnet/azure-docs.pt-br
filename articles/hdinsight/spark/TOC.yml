@@ -53,13 +53,7 @@
     - name: Solucionar problemas
       items:
         - name: Exceção OutOfMemoryError
-          items:
-            - name: Memória heap insuficiente
-              href: ./apache-spark-troubleshoot-outofmemory-heap.md
-            - name: Espaço de heap de Java
-              href: ./apache-spark-troubleshoot-outofmemory-heap-space.md
-            - name: Falha ao iniciar o servidor Livy
-              href: ./apache-spark-troubleshoot-outofmemory-native-thread.md
+          href: ./apache-spark-troubleshoot-outofmemory.md
         - name: Falha no trabalho do Apache Spark – NoClassDefFoundError
           href: ./apache-spark-troubleshoot-job-fails-noclassdeffounderror.md
         - name: Falha no trabalho do Apache Spark – InvalidClassException
