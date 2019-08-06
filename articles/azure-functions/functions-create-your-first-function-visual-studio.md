@@ -4,39 +4,35 @@ description: Criar e publicar uma função do Azure acionada por HTTP usando o V
 services: functions
 documentationcenter: na
 author: ggailey777
-manager: jeconnoc
+manager: gwallace
 keywords: azure functions, funções, processamento de eventos, computação, arquitetura sem servidor
 ms.assetid: 82db1177-2295-4e39-bd42-763f6082e796
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: quickstart
-ms.date: 10/17/2018
+ms.date: 07/19/2019
 ms.author: glenga
 ms.custom: mvc, devcenter, vs-azure, 23113853-34f2-4f
-ms.openlocfilehash: 1c07da0121b8e350c55b139901d56cfe2133386d
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: 23caffd14ba37427869e8e5d0ab8d78c42d39f7d
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65864493"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68593868"
 ---
 # <a name="create-your-first-function-using-visual-studio"></a>Criar sua primeira função usando o Visual Studio
 
 O Azure Functions lhe permite executar seu código em um ambiente [sem servidor](https://azure.microsoft.com/solutions/serverless/) sem que seja preciso primeiro criar uma VM ou publicar um aplicativo Web.
 
-Neste artigo, você aprenderá a usar as ferramentas do Visual Studio 2019 para Azure Functions a fim de criar e testar a função "Olá, Mundo". Em seguida, você publicará o código de função no Azure. Essas ferramentas estão disponíveis como parte da carga de trabalho de desenvolvimento do Azure no Visual Studio 2019.
+Neste artigo, você aprenderá a usar o Visual Studio 2019 para criar e testar localmente uma função “olá, mundo” e publicá-la no Azure. Este início rápido foi criado para o Visual Studio 2019. Ao criar um projeto do Functions usando o Visual Studio 2017, é necessário instalar primeiro as [ferramentas de Azure Functions mais recentes](functions-develop-vs.md#check-your-tools-version).
 
 ![Resposta da função localhost no navegador](./media/functions-create-your-first-function-visual-studio/functions-create-your-first-function-visual-studio-browser-local-final.png)
 
-Este tópico inclui [um vídeo](#watch-the-video) que demonstra as mesmas etapas básicas.
-
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para concluir este tutorial:
+Para concluir este tutorial, é necessário instalar primeiro o [Visual Studio 2019](https://azure.microsoft.com/downloads/). Garanta que a carga de trabalho de **desenvolvimento do Azure** também seja instalada.
 
-* Instale o [Visual Studio 2019](https://azure.microsoft.com/downloads/) e certifique-se de que a carga de trabalho **Desenvolvimento do Azure** também esteja instalada.
-
-* Verifique se você tem as [ferramentas mais recentes do Azure Functions](functions-develop-vs.md#check-your-tools-version).
+![Instalar o Visual Studio com a carga de trabalho de desenvolvimento do Azure](media/functions-create-your-first-function-visual-studio/functions-vs-workloads.png)
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -44,31 +40,23 @@ Para concluir este tutorial:
 
 [!INCLUDE [Create a project using the Azure Functions template](../../includes/functions-vstools-create.md)]
 
-O Visual Studio cria um projeto com uma classe que contém o código padronizado para o tipo de função escolhida. O atributo **FunctionName** no método define o nome da sua função. O atributo **HttpTrigger** especifica que a função é disparada por uma solicitação HTTP. O código padronizado envia uma resposta HTTP que inclui um valor do corpo de solicitação ou da cadeia de consulta. Você pode adicionar associações de entrada e saída para uma função aplicando os atributos apropriados para o método. Para obter mais informações, consulte a seção [Gatilhos e associações](functions-dotnet-class-library.md#triggers-and-bindings) da [referência do desenvolvedor C# do Azure Functions](functions-dotnet-class-library.md).
+O Visual Studio cria um projeto e uma classe que contém o código clichê do tipo de função do gatilho HTTP. O atributo `FunctionName` no método define o nome da função, que é `HttpTrigger` por padrão. O atributo `HttpTrigger` especifica que a função é disparada por uma solicitação HTTP. O código padronizado envia uma resposta HTTP que inclui um valor do corpo de solicitação ou da cadeia de consulta.
+
+É possível estender as funcionalidades de sua função usando associações de entrada e de saída aplicando os atributos adequados ao método. Para obter mais informações, consulte a seção [Gatilhos e associações](functions-dotnet-class-library.md#triggers-and-bindings) da [referência do desenvolvedor C# do Azure Functions](functions-dotnet-class-library.md).
 
 Agora que você criou o seu projeto de função e uma função disparada por HTTP, poderá testá-la em seu computador local.
 
-## <a name="test-the-function-locally"></a>Testar a função localmente
+## <a name="run-the-function-locally"></a>Executar a função localmente
 
-As Ferramentas Principais do Azure Functions permitem executar um projeto do Azure Functions no seu computador de desenvolvimento local. Você precisa instalar essas ferramentas na primeira vez em que inicia uma função no Visual Studio.
+O Visual Studio integra-se ao Azure Functions Core Tools para que você possa testar suas funções localmente usando o tempo de execução completo do Functions.  
 
-1. Para testar sua função, pressione F5. Se solicitado, aceite a solicitação do Visual Studio para baixar e instalar as ferramentas principais (CLI) do Azure Functions. Você também precisará habilitar a exceção de firewall de forma que as ferramentas possam lidar com solicitações HTTP.
-
-2. Copie a URL da sua função da saída de tempo de execução do Azure Functions.
-
-    ![Tempo de execução local do Azure](./media/functions-create-your-first-function-visual-studio/functions-create-your-first-function-visual-studio-debugging.png)
-
-3. Cole a URL para a solicitação HTTP na barra de endereços do navegador. Acrescente o valor de cadeia de consulta `?name=<YOUR_NAME>` a essa URL e execute a solicitação. O exemplo a seguir mostra a resposta no navegador à solicitação GET local retornada pela função: 
-
-    ![Resposta da função localhost no navegador](./media/functions-create-your-first-function-visual-studio/functions-create-your-first-function-visual-studio-browser-local.png)
-
-4. Para interromper a depuração, pressione **Shift + F5**.
+[!INCLUDE [functions-run-function-test-local-vs](../../includes/functions-run-function-test-local-vs.md)]
 
 Após verificar se a função foi executada corretamente no computador local, é hora de publicar o projeto no Azure.
 
 ## <a name="publish-the-project-to-azure"></a>Publicar o projeto no Azure
 
-Você deve ter um aplicativo de funções em sua assinatura do Azure antes de publicar seu projeto. Você pode criar um aplicativo de funções diretamente no Visual Studio.
+Você deve ter um aplicativo de funções em sua assinatura do Azure antes de publicar seu projeto. A publicação do Visual Studio cria um aplicativo de funções para você na primeira vez que você publica seu projeto.
 
 [!INCLUDE [Publish the project to Azure](../../includes/functions-vstools-publish.md)]
 
@@ -84,13 +72,9 @@ Você deve ter um aplicativo de funções em sua assinatura do Azure antes de pu
 
     ![Resposta da função no navegador](./media/functions-create-your-first-function-visual-studio/functions-create-your-first-function-visual-studio-browser-azure.png)
 
-## <a name="watch-the-video"></a>Assista ao vídeo
-
-> [!VIDEO https://www.youtube-nocookie.com/embed/DrhG-Rdm80k]
-
 ## <a name="next-steps"></a>Próximas etapas
 
-Você usou o Visual Studio para criar e publicar um aplicativo de funções C# com uma função disparada por HTTP simples.
+Você usou o Visual Studio para criar e publicar um aplicativo de funções C# no Azure com uma função disparada por HTTP simples. Para saber mais sobre como desenvolver funções como bibliotecas de classes do .NET, consulte [Referência do desenvolvedor de C# do Azure Functions](functions-dotnet-class-library.md).
 
-* [Saiba como adicionar associações de entrada e saída que se integram com outros serviços.](functions-develop-vs.md#add-bindings)
-* [Saiba mais sobre como desenvolver funções como bibliotecas de classe .NET](functions-dotnet-class-library.md).
+> [!div class="nextstepaction"]
+> [Adicionar uma associação de fila do Armazenamento do Azure à sua função](functions-add-output-binding-storage-queue-vs.md)

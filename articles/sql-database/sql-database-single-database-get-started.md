@@ -10,20 +10,19 @@ ms.topic: quickstart
 author: sachinpMSFT
 ms.author: ninarn
 ms.reviewer: carlrab, sstein
-manager: craigg
-ms.date: 04/23/2019
-ms.openlocfilehash: 470dca235b9a3212c09052f7535fa90d076fe4d3
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.date: 07/29/2019
+ms.openlocfilehash: f9c2ed77075affdfdf464dbf8a468629fc2e610d
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68444429"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640055"
 ---
 # <a name="quickstart-create-a-single-database-in-azure-sql-database-using-the-azure-portal-powershell-and-azure-cli"></a>Início Rápido: Criar um banco de dados individual no Banco de Dados SQL do Azure usando o portal do Azure, o PowerShell e a CLI do Azure
 
 A criação de um [banco de dados individual](sql-database-single-database.md) é a opção de implantação mais rápida e simples para criação de um Banco de Dados SQL do Azure. Este Início Rápido mostra como criar e, em seguida, consultar um banco de dados individual usando o portal do Azure.
 
-Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://azure.microsoft.com/free/).
+Se você não tiver uma assinatura do Azure, [crie uma conta gratuita](https://azure.microsoft.com/free/). 
 
 Para todas as etapas deste início rápido, entre no [portal do Azure](https://portal.azure.com/).
 
@@ -37,7 +36,7 @@ Um banco de dados individual pode ser criado na camada de computação (versão 
 Quando você cria um banco de dados individual, você também define um [servidor do Banco de Dados SQL](sql-database-servers.md) para gerenciá-lo e colocá-lo no [grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md) em uma região especificada.
 
 > [!NOTE]
-> Este início rápido usa o [modelo de compra baseado em vCore](sql-database-service-tiers-vcore.md) e a camada de serviço [sem servidor](sql-database-serverless.md), mas o [modelo de compra baseado em DTU](sql-database-service-tiers-DTU.md) também está disponível.
+> Este início rápido usa o [modelo de compra baseado em vCore](sql-database-service-tiers-vcore.md), mas o [modelo de compra baseado em DTU](sql-database-service-tiers-DTU.md) também está disponível.
 
 Para criar um banco de dados individual que contém os dados de exemplo AdventureWorksLT:
 

@@ -9,15 +9,15 @@ ms.date: 01/23/2019
 ms.author: danlep
 ms.custom: include file
 ms.openlocfilehash: 09eaf9465ec3912dea6e1f3ee1693f6bfed50abc
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67172478"
 ---
 ## <a name="push-image-to-registry"></a>Efetuar push de imagem para registro
 
-Para enviar por push uma imagem para um Registro de Contêiner do Azure, primeiro você deve ter uma imagem. Se você ainda não tiver as imagens de contêiner locais, execute o comando [docker pull][docker-pull] a seguir para efetuar pull de uma imagem existente de Hub do Docker. Neste exemplo, extraia a imagem `hello-world`.
+Para enviar por push uma imagem para um Registro de Contêiner do Azure, primeiro você deve ter uma imagem. Se você ainda não tiver as imagens de contêiner locais, execute o comando [docker pull][docker-pull] a seguir para efetuar pull de uma imagem existente do Docker Hub. Neste exemplo, extraia a imagem `hello-world`.
 
 ```
 docker pull hello-world
@@ -37,7 +37,7 @@ Por fim, use [docker push][docker-push] para enviar a imagem por push para a ins
 docker push <acrLoginServer>/hello-world:v1
 ```
 
-Depois de efetuar push da imagem no registro de contêiner, remova a imagem `hello-world:v1` de seu ambiente do Docker local. (Observe que este comando [docker rmi][docker-rmi] não remove a imagem do repositório **Olá, mundo** em seu Registro de Contêiner do Azure.)
+Depois de efetuar push da imagem no registro de contêiner, remova a imagem `hello-world:v1` de seu ambiente do Docker local. (Observe que esse comando [docker rmi][docker-rmi] não remove a imagem do repositório **hello-world** no registro de contêiner do Azure.)
 
 ```
 docker rmi <acrLoginServer>/hello-world:v1

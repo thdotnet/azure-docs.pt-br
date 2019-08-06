@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: agirling, saeeda, benv
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93e4337f0593933a4e877f391df8132a9b2cd4af
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 12027581ae62588550407c8350f3b74f1e743561
+ms.sourcegitcommit: 15f7b641a67f3d6cf4fb4b4c11eaee18cf335923
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67702693"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68601831"
 ---
 # <a name="microsoft-identity-platform-v20-overview"></a>Visão geral da plataforma de identidade da Microsoft (v2.0)
 
@@ -43,7 +43,7 @@ Com a plataforma de identidade da Microsoft, você pode escrever código uma vez
 
 ## <a name="getting-started"></a>Introdução
 
-Trabalhar com identidade não precisa ser difícil. Escolha um cenário que se aplique a você – o caminho de cada cenário conta com um guia de início rápido e uma página de visão geral para ajudá-lo a colocar tudo em funcionamento em minutos:
+Trabalhar com identidade não precisa ser difícil. Escolha um [cenário](authentication-flows-app-scenarios.md) que se aplique a você – o caminho de cada cenário conta com um Início Rápido e uma página de visão geral para ajudá-lo a colocar tudo em funcionamento em minutos:
 
 - [Crie um aplicativo de página única](scenario-spa-overview.md)
 - [Crie um aplicativo Web que conecte os usuários](scenario-web-app-sign-user-overview.md)
@@ -62,6 +62,7 @@ O gráfico a seguir descreve os cenários comuns do aplicativo de autenticação
 
 Se você quiser saber mais sobre os principais conceitos de autenticação, recomendamos iniciar com estes tópicos:
 
+- [Fluxos de autenticação e cenários de aplicativos](authentication-flows-app-scenarios.md)
 - [Noções básicas de autenticação](authentication-scenarios.md)
 - [Aplicativo e entidades de serviço](app-objects-and-service-principals.md)
 - [Públicos-alvo](v2-supported-account-types.md)

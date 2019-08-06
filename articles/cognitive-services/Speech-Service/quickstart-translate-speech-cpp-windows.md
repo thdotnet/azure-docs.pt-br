@@ -1,5 +1,5 @@
 ---
-title: 'Início Rápido: Traduzir fala, C++ (Windows) – Serviços de Fala'
+title: 'Início Rápido: Traduzir fala, C++ (Windows) – Serviço de Fala'
 titleSuffix: Azure Cognitive Services
 description: Neste início rápido, você criará um aplicativo simples do C++ para capturar a fala do usuário, traduzi-la para outro idioma e produzir o texto para a linha de comando. Este guia foi projetado para usuários do Windows.
 services: cognitive-services
@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: ff577bc0fe7db05c71aab04f0aaa5525f30b255c
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 379087ca94eee6ce3d45bfd97b4771c5f08d6333
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67602888"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68607706"
 ---
 # <a name="quickstart-translate-speech-with-the-speech-sdk-for-c"></a>Início Rápido: Traduzir fala com o Speech SDK para C++
 
 Guias de início rápido também estão disponíveis para [reconhecimento de fala](quickstart-cpp-windows.md) e [conversão de texto em fala](quickstart-text-to-speech-cpp-windows.md).
 
-Neste início rápido, você criará um aplicativo C++ simples que captura a fala do usuário do microfone do seu computador, converte a fala e transcreve o texto traduzido para a linha de comando em tempo real. Este aplicativo foi projetado para ser executado no Windows de 64 bits e é criado com o [pacote NuGet do Speech SDK](https://aka.ms/csspeech/nuget) e o Microsoft Visual Studio 2017.
+Neste início rápido, você criará um aplicativo C++ simples que captura a fala do usuário do microfone do seu computador, converte a fala e transcreve o texto traduzido para a linha de comando em tempo real. Este aplicativo foi projetado para ser executado no Windows de 64 bits e é criado com o [pacote NuGet do SDK de Fala](https://aka.ms/csspeech/nuget) e o Microsoft Visual Studio 2017 ou posterior.
 
 Para obter uma lista completa dos idiomas disponíveis para tradução de fala, confira [suporte ao idioma](language-support.md).
 
@@ -29,7 +29,7 @@ Para obter uma lista completa dos idiomas disponíveis para tradução de fala, 
 
 Este início rápido requer:
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) ou posterior
 * Uma chave de assinatura do Azure para o Serviço de Fala. [Obtenha uma gratuitamente](get-started.md).
 
 ## <a name="create-a-visual-studio-project"></a>Criar um projeto do Visual Studio

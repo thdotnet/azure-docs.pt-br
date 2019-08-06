@@ -1,5 +1,5 @@
 ---
-title: 'Início Rápido: Reconhecimento de fala, Java (Windows, Linux) – Serviços de Fala'
+title: 'Início Rápido: Reconhecer fala, Java (Windows, Linux) – Serviço de Fala'
 titleSuffix: Azure Cognitive Services
 description: Neste Início Rápido, você aprenderá a criar um aplicativo Java simples que captura e transcreve a fala do usuário por meio do microfone do computador.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: fmegen
-ms.openlocfilehash: dce0a1b2adf20b2301402f37307e7ee1284c9aee
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 498e41b08133113be9789ef49291b8e2bb0f3705
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67605162"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68554110"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-java"></a>Início Rápido: Reconhecimento de fala com o SDK de Fala para Java
 

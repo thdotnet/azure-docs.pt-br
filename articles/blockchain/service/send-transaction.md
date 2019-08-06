@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.service: azure-blockchain
 ms.reviewer: jackyhsu
 manager: femila
-ms.openlocfilehash: 9037c7b5498a5e0a37b05e5ee09891bf8066393d
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: 3cfbbdc5b95d1607738b132980320d2ff7c99788
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66417491"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68698390"
 ---
 # <a name="tutorial-send-transactions-using-azure-blockchain-service"></a>Tutorial: Enviar transações usando o serviço Azure Blockchain
 
@@ -72,30 +72,17 @@ Você pode continuar com o tutorial enquanto os nós são provisionados. Quando 
     cd truffledemo
     ```
 
-1. Inicie o console de desenvolvimento interativo do Truffle.
+1. Use o console do Truffle para conectar-se ao nó de transação padrão.
 
     ``` bash
-    truffle develop
+    truffle console --network defaultnode
     ```
 
-    O Truffle cria um blockchain de desenvolvimento local e fornece um console interativo.
+    O Truffle conecta-se ao nó de transação padrão e oferece um console interativo.
 
 ## <a name="create-ethereum-account"></a>Criar conta Ethereum
 
-Use o Web3 para se conectar ao nó de transação padrão e criar uma conta do Ethereum. Obtenha a cadeia de conexão do Web3 no portal do Azure.
-
-1. No portal do Azure, navegue até o nó de transação padrão e selecione **Nós de transação > Código de exemplo > Web3**.
-1. Copie o JavaScript de **HTTPS (Chave de acesso 1)** ![Código de exemplo do Web3](./media/send-transaction/web3-code.png)
-
-1. Cole o código JavaScript do Web3 do nó de transação padrão no console de desenvolvimento interativo do Truffle. O código criará um objeto Web3 que é conectado ao nó de transação do serviço Azure Blockchain.
-
-    ```bash
-    truffle(develop)> var Web3 = require("Web3");
-    truffle(develop)> var provider = new Web3.providers.HttpProvider("https://myblockchainmember.blockchain.azure.com:3200/hy5FMu5TaPR0Zg8GxiPwned");
-    truffle(develop)> var web3 = new Web3(provider);
-    ```
-
-    Você pode chamar métodos no objeto Web3 para interagir com o nó de transação.
+Use o Web3 para se conectar ao nó de transação padrão e criar uma conta do Ethereum. Você pode chamar métodos no objeto Web3 para interagir com o nó de transação.
 
 1. Crie uma conta no nó de transação padrão. Substitua o parâmetro de senha por sua própria senha forte.
 
@@ -159,21 +146,21 @@ Obtenha a chave pública da lista de nós de transação. Copie a chave pública
           })(),
     
           network_id: "*",
-          gas: 0,
           gasPrice: 0,
           from: myAccount
         },
         alpha: {
           provider: new Web3.providers.HttpProvider(alpha),
           network_id: "*",
-          gas: 0,
-          gasPrice: 0
         },
         beta: {
           provider: new Web3.providers.HttpProvider(beta),
           network_id: "*",
-          gas: 0,
-          gasPrice: 0
+        }
+      },
+      compilers: {
+        solc: {
+          evmVersion: "byzantium"
         }
       }
     }

@@ -1,5 +1,5 @@
 ---
-title: Configurar a Versão Prévia da solução Central de Segurança do Azure para IoT | Microsoft Docs
+title: Configurar a solução Central de Segurança do Azure para IoT | Microsoft Docs
 description: Saiba como configurar sua solução de IoT de ponta a ponta usando a Central de Segurança do Azure para IoT.
 services: asc-for-iot
 ms.service: asc-for-iot
@@ -13,35 +13,32 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/26/2019
+ms.date: 07/23/2019
 ms.author: mlottner
-ms.openlocfilehash: 7f90dba899651b677740e9ceb88bdd579ebb073c
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 15c8aabbcb19d009bb202d111dc7f80da4cebff1
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67616634"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68597021"
 ---
 # <a name="quickstart-configure-your-iot-solution"></a>Início Rápido: Configure a solução de IoT
 
-> [!IMPORTANT]
-> A Central de Segurança do Azure para IoT está em versão prévia pública no momento.
-> Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos. Para obter mais informações, consulte [Termos de Uso Complementares de Versões Prévias do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+Este artigo fornece uma explicação de como realizar a configuração inicial de sua solução de segurança da IoT usando a Central de Segurança do Azure para IoT. 
 
-Este artigo fornece uma explicação de como realizar a configuração inicial de sua solução de segurança de IoT usando a ASC para IoT. 
+## <a name="azure-security-center-for-iot"></a>Central de Segurança do Azure para IoT
 
-## <a name="azure-security-center-asc-for-iot"></a>ASC (Central de Segurança do Azure) para IoT
+A Central de Segurança do Azure para IoT fornece segurança abrangente de ponta a ponta para soluções de IoT com base no Azure.
 
-A ASC para IoT fornece segurança abrangente de ponta a ponta para soluções de IoT com base no Azure.
+Com a Central de Segurança do Azure para IoT, é possível monitorar toda a solução de IoT em um painel, identificando todos os dispositivos IoT, as plataformas IoT e os recursos de back-end no Azure.
 
-Com o ASC para IoT, é possível monitorar toda a solução de IoT em um painel, identificando todos os dispositivos IoT, as plataformas IoT e os recursos de back-end no Azure.
+Uma vez habilitado em seu Hub IoT, a Central de Segurança do Azure para IoT identifica automaticamente outros serviços do Azure, também conectados ao seu hub IoT e relacionados à solução de IoT.
 
-Uma vez habilitado em seu Hub IoT, a ASC para IoT identifica automaticamente outros serviços do Azure, também conectados ao seu hub IoT e relacionados à solução de IoT.
+Além da detecção automática de relacionamento, também é possível selecionar e escolher outros grupos de recursos do Azure para marcar como parte da solução de IoT.
 
-Além da detecção automática de relacionamento, também é possível selecionar e escolher outros recursos do Azure para marcar como parte da solução de IoT.
 Suas seleções permitem adicionar assinaturas, grupos de recursos ou recursos únicos inteiros.
 
-Depois de definir todas as relações de recursos, a ASC para IoT aproveita a Central de Segurança do Azure para fornecer recomendações de segurança e alertas para esses recursos.
+Depois de definir todas as relações de recursos, a Central de Segurança do Azure para IoT aproveita a Central de Segurança do Azure para fornecer recomendações de segurança e alertas para esses recursos.
 
 ## <a name="add-azure-resources-to-your-iot-solution"></a>Adicionar recursos do Azure à solução de IoT
 
@@ -49,13 +46,12 @@ Para adicionar novos recursos à solução de IoT, faça o seguinte:
 
 1. Abra o **Hub IoT** no portal do Azure. 
 2. No menu à esquerda, selecione e abra **Recursos** em **Segurança**. 
-3. Selecione **Adicionar Recursos**.
-4. Escolha os recursos que pertencem à solução de IoT.
+3. Selecione **Editar** e escolha os grupos de recursos que pertencem à solução de IoT.
 5. Clique em **Adicionar**. 
 
-Parabéns! Você adicionou um novo recurso à solução de IoT.
+Parabéns! Você adicionou um novo grupo de recursos à solução de IoT.
 
-Como parte da solução de IoT, a ASC para IoT agora monitora os recursos recentemente adicionados e identifica recomendações e alertas de segurança relevantes.
+Como parte da solução de IoT, a Central de Segurança do Azure para IoT agora monitora os recursos recentemente adicionados e identifica recomendações e alertas de segurança relevantes.
 
 ## <a name="next-steps"></a>Próximas etapas
 

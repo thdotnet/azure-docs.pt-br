@@ -10,14 +10,13 @@ ms.topic: quickstart
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: carlr
-manager: craigg
-ms.date: 02/04/2019
-ms.openlocfilehash: 7b52453bab661531461a2bec2f15f7659ec15a1c
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.date: 07/29/2019
+ms.openlocfilehash: 45b0b2bc7a2ef5c3cb6ca801668f7b5be7c8ac73
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67441713"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639986"
 ---
 # <a name="getting-started-with-single-databases-in-azure-sql-database"></a>Introdução aos bancos de dados individuais no Banco de Dados SQL do Azure
 
@@ -43,6 +42,14 @@ Use o PowerShell ou a CLI do Azure para criar, configurar e dimensionar seu banc
 ## <a name="migrating-to-a-single-database-with-minimal-downtime"></a>Migrando para um banco de dados individual com tempo de inatividade mínimo
 
 Esses Guias de Início Rápido permitem criar ou importar rapidamente seu banco de dados para o Azure usando um arquivo `.bacpac`. No entanto, os arquivos `.bacpac` e `.dacpac` foram projetados para mover bancos de dados rapidamente entre diferentes versões do SQL Server e opções de implantação no Banco de Dados SQL do Azure ou para implementar a integração contínua no pipeline de DevOps. No entanto, esse método não foi projetado para a migração de bancos de dados de produção com tempo de inatividade mínimo, pois você precisará parar de adicionar novos dados, aguardar a conclusão da exportação do banco de dados de origem para um arquivo `.bacpac` e, em seguida, aguardar a conclusão da importação para o Banco de Dados SQL do Azure. Toda essa espera resulta em tempo de inatividade do aplicativo, especialmente para bancos de dados grandes. Para mover o banco de dados de produção, você precisa de uma maneira melhor para migrá-lo que garanta tempo de inatividade mínimo. Para isso, use o [DMS (Serviço de Migração de Banco de Dados)](https://docs.microsoft.com/azure/dms/tutorial-sql-server-to-azure-sql?toc=/azure/sql-database/toc.json) para migrar seu banco de dados com tempo de inatividade mínimo. O DMS faz isso enviando por push as alterações feitas no banco de dados de origem em incrementos para o banco de dados individual que está sendo restaurado. Dessa forma, você pode alternar rapidamente seu aplicativo do banco de dados de origem para o de destino com tempo de inatividade mínimo.
+
+## <a name="hands-on-learning-modules"></a>Módulos de aprendizado prático
+
+Os módulos do Microsoft Learn a seguir ajudam você a aprender gratuitamente sobre o Banco de Dados SQL do Azure.
+
+- [Provisionar um Banco de Dados SQL do Azure para armazenar dados de aplicativo](https://docs.microsoft.com/learn/modules/provision-azure-sql-db/)
+- [Desenvolver e configurar um aplicativo ASP.NET que consulta um Banco de Dados SQL do Azure](https://docs.microsoft.com/learn/modules/develop-app-that-queries-azure-sql/)
+- [Proteger o Banco de Dados SQL do Azure](https://docs.microsoft.com/learn/modules/secure-your-azure-sql-database/)
 
 ## <a name="next-steps"></a>Próximas etapas
 

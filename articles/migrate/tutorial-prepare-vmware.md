@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 07/11/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 10f559295ff0598dea26fb30b089f020e2985889
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 993b0249bdcc8e0e54dbe0c222aa2335c3bf8d4a
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67840337"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68679133"
 ---
 # <a name="prepare-vmware-vms-for-assessment-and-migration-to-azure"></a>Preparar VMs do VMware para avaliação e migração para o Azure
 
@@ -102,11 +102,11 @@ Atribua permissões de atribuição de função no grupo de recursos no qual o p
 
 ## <a name="prepare-for-vmware-vm-assessment"></a>Preparar para avaliação da VM do VMware
 
-Para se preparar para a avaliação da VM do VMware, você precisa verificar as configurações do host e da VM do Hyper-V e verifique as configurações de implantação do dispositivo.
+Para se preparar para a avaliação da VM do VMware, você precisa verificar as configurações da VM e do host do VMware, bem como verificar as configurações para implantação do dispositivo.
 
 ### <a name="verify-vmware-settings"></a>Verificar as configurações de VMware
 
-1. [Verifique](migrate-support-matrix-vmware.md#assessment-vmware-server-requirements) os requisitos do servidor do VMware para avaliação da VM.
+1. [Verifique](migrate-support-matrix-vmware.md#assessment-vcenter-server-requirements) os requisitos do servidor do VMware para avaliação da VM.
 2. [Verifique](migrate-support-matrix-vmware.md#assessment-port-requirements) se as portas necessárias estão abertas nos servidores do vCenter.
 
 

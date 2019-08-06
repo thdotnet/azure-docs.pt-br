@@ -1,6 +1,6 @@
 ---
 title: 'Início Rápido: Explore o ambiente de demonstração do Azure Time Series Insights Preview | Microsoft Docs'
-description: Compreender o ambiente de demonstração do Azure Time Series Insights Preview.
+description: Início Rápido para compreender o ambiente de demonstração do Azure Time Series Insights Preview.
 ms.service: time-series-insights
 services: time-series-insights
 author: ashannon7
@@ -10,13 +10,13 @@ ms.reviewer: dpalled
 ms.topic: quickstart
 ms.workload: big-data
 ms.custom: mvc seodec18
-ms.date: 04/22/2019
-ms.openlocfilehash: 547edb194ffdf52a805f573d338f61edff80623a
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.date: 07/29/2019
+ms.openlocfilehash: 3d098b1806e4fdf5b45030dfebf3dfe5959b7d5c
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67164874"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68677706"
 ---
 # <a name="quickstart-explore-the-azure-time-series-insights-preview-demo-environment"></a>Início Rápido: Explorar o ambiente de demonstração do Azure Time Series Insights Preview
 
@@ -26,11 +26,12 @@ O ambiente de demonstração da Versão Prévia do Time Series Insights contém 
 
 Neste início rápido, você aprenderá a usar o Time Series Insights para descobrir insights acionáveis nos dados da Contoso. Você também realizará uma análise de causa raiz breve para prever melhor falhas críticas e realizar a manutenção.
 
+> [!IMPORTANT]
+> Crie uma [conta gratuita do Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) se você não tiver uma.
+
 ## <a name="explore-the-time-series-insights-explorer-in-a-demo-environment"></a>Explore o Time Series Insights Explorer em um ambiente de demonstração
 
 O Gerenciador da Versão Prévia do Time Series Insights demonstra a análise de causas raiz e dados históricos. Introdução:
-
-1. Crie uma [conta gratuita do Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) se você não tiver uma.
 
 1. Acesse o ambiente de  [demonstração da Contoso Wind Farm](https://insights.timeseries.azure.com/preview/samples).  
 
@@ -73,10 +74,9 @@ O Gerenciador da Versão Prévia do Time Series Insights demonstra a análise de
 
 Usando o Time Series Insights e a telemetria de sensor, descobrimos uma tendência de longo prazo problemática ocultada nos dados históricos. Com esses novos insights, podemos:
 
-> [!div class="checklist"]
-> * Explicar o que realmente ocorreu.
-> * Corrigir o problema.
-> * Implementar sistemas superiores de notificação de alerta.
+* Explicar o que realmente ocorreu.
+* Corrigir o problema.
+* Implementar sistemas superiores de notificação de alerta.
 
 ## <a name="root-cause-analysis"></a>Análise da causa raiz
 
@@ -115,6 +115,13 @@ Usando o Time Series Insights e a telemetria de sensor, descobrimos uma tendênc
     * Altere a exibição para sobrepor todos os sensores do **Sistema Gerador** na mesma escala de gráfico.
 
       [![Alterar a exibição para incluir tudo](media/v2-update-quickstart/quickstart-ten.png)](media/v2-update-quickstart/quickstart-ten.png#lightbox)
+
+## <a name="clean-up-resources"></a>Limpar recursos
+
+Agora que concluiu o tutorial, limpe os recursos que você criou:
+
+1. No menu à esquerda no [portal do Azure](https://portal.azure.com), selecione **Todos os recursos** e localize o grupo de recursos do Azure Time Series Insights.
+1. Exclua todo o grupo de recursos (e todos os recursos contidos nele) selecionando **Excluir** ou remova cada recurso individualmente.
 
 ## <a name="next-steps"></a>Próximas etapas
 

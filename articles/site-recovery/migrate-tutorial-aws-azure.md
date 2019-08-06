@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 05/30/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 6d2b9c8dd8fb89e201cff5155b1dec0857204752
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: bb60fa216c10b11b6a47c029fbef3698c6f7bd6d
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66400061"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68663490"
 ---
 # <a name="migrate-amazon-web-services-aws-vms-to-azure"></a>Migrar das VMs do AWS (Amazon Web Services) para o Azure
 
@@ -96,8 +96,10 @@ Quando as VMs do Azure são criadas após a migração (failover), elas são ing
 6. Para **Grupo de recursos**, selecione **Usar existente** e, em seguida, selecione **migrationRG**.
 7. Em **Localização**, selecione **Europa Ocidental**.
 8. Em **Sub-rede**,deixe os valores padrão para **Nome** e **intervalo de IP**.
-9. Deixe a opção **Pontos de Extremidade de Serviço** desabilitada.
-10. Quando terminar, selecione **Criar**.
+9. Adicione instruções para as configurações de proteção contra DDoS.
+10. Deixe a opção **Pontos de Extremidade de Serviço** desabilitada.
+11. Adicione instruções para as configurações do firewall.
+12. Quando terminar, selecione **Criar**.
 
 ## <a name="prepare-the-infrastructure"></a>Preparar a infraestrutura
 
@@ -157,7 +159,7 @@ Nesta seção, você vai inserir informações sobre os recursos que criou em [P
 
 Antes de poder habilitar a replicação, será necessário criar uma política de replicação.
 
-1. Selecione **Replicar e Associar**.
+1. Selecione **Criar e Associar**.
 2. Em **Nome**, insira **myReplicationPolicy**.
 3. Deixe o restante das configurações padrão e, em seguida, selecione **OK** para criar a política. A nova política é associada automaticamente ao servidor de configuração.
 

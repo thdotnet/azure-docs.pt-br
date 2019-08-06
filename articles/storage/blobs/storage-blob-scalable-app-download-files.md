@@ -1,21 +1,18 @@
 ---
 title: Fazer o download de grandes quantidades de dados aleatórios a partir do armazenamento do Microsoft Azure | Microsoft Docs
 description: Saiba como usar o SDK do Azure para fazer o download de grandes quantidades de dados aleatórios a partir de uma conta de Armazenamento do Microsoft Azure
-services: storage
 author: roygara
 ms.service: storage
-ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 02/20/2018
 ms.author: rogarana
-ms.custom: mvc
 ms.subservice: blobs
-ms.openlocfilehash: 541d406d7416ff5f50fdcca7e85b8f87f6f377df
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 8d270485cef9fb6859de056bc364a36c054c0121
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65794592"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699010"
 ---
 # <a name="download-large-amounts-of-random-data-from-azure-storage"></a>Fazer o download de grandes quantidades de dados aleatórios a partir do armazenamento do Microsoft Azure
 

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/11/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 83567a45980b29931f9b68bd6d60df0d427b09de
-ms.sourcegitcommit: af31deded9b5836057e29b688b994b6c2890aa79
+ms.openlocfilehash: c790667c73adfed061b97b14ebb7df4c68461786
+ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67813014"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68663799"
 ---
 # <a name="assess-hyper-v-vms-with-azure-migrate-server-assessment"></a>Avaliar VMs do Hyper-V usando a avaliação de servidor das Migrações para Azure
 
@@ -110,15 +110,17 @@ Baixe o modelo de VHD compactado para o dispositivo.
 Verifique se o arquivo compactado é seguro antes de implantá-lo.
 
 1. No computador no qual você baixou o arquivo, abra uma janela de comando do administrador.
-2. Execute o seguinte comando para gerar o hash para o VHD
-    - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
-    - Exemplo de uso: ```C:\>CertUtil -HashFile C:\AzureMigrate\AzureMigrate.ova SHA256```
+
+2. Execute o comando do PowerShell a seguir para gerar o hash para o arquivo zip
+    - ```C:\>Get-FileHash -Path <file_location> -Algorithm [Hashing Algorithm]```
+    - Exemplo de uso: ```C:\>Get-FileHash -Path ./AzureMigrateAppliance_v1.19.06.27.zip -Algorithm SHA256```
+
 3.  Para a versão 1.19.06.27 do dispositivo, o hash gerado deve corresponder a essas configurações.
 
   **Algoritmo** | **Valor de hash**
   --- | ---
-  MD5 | 3681f745fa2b0a0a6910707d85161ec5
-  SHA256 | e6ca109afab9657bdcfb291c343b3e3abced9a273d25273059171f9954d25832
+  MD5 | 3681F745FA2B0A0A6910707D85161EC5
+  SHA256 | E6CA109AFAB9657BDCFB291C343B3E3ABCED9A273D25273059171F9954D25832
 
 
 
@@ -158,9 +160,9 @@ Configure o dispositivo pela primeira vez.
 1. No aplicativo Web > **Configurar os pré-requisitos**, faça o seguinte:
     - **Licença**: Aceite os termos de licença e leia as informações de terceiros.
     - **Conectividade**: o aplicativo verifica se a VM tem acesso à Internet. Se a VM usar um proxy:
-        - Clique em **Configurações de proxy** e especifique o endereço proxy e a porta de escuta, no formato http://ProxyIPAddress ou http://ProxyFQDN.
-        - Especifique as credenciais caso o proxy exija autenticação.
-        - Há suporte apenas para o proxy HTTP.
+      - Clique em **Configurações de proxy** e especifique o endereço proxy e a porta de escuta, no formato http://ProxyIPAddress ou http://ProxyFQDN.
+      - Especifique as credenciais caso o proxy exija autenticação.
+      - Há suporte apenas para o proxy HTTP.
     - **Sincronização do horário**: o horário é verificado. o horário no dispositivo deve ser sincronizado com o horário na Internet para que a descoberta da VM funcione corretamente.
     - **Instalar as atualizações**: a Avaliação de Servidor das Migrações para Azure verifica se o dispositivo tem as atualizações mais recentes instaladas.
 
@@ -178,19 +180,31 @@ Configure o dispositivo pela primeira vez.
 
 ### <a name="delegate-credentials-for-smb-vhds"></a>Delegar credenciais para VHDs de SMB
 
-Se estiver executando VHDs em SMBs, você precisará habilitar a delegação de credenciais do dispositivo para os hosts do Hyper-V. Se não tiver feito isso em cada host do [tutorial](tutorial-prepare-hyper-v.md#enable-credssp-on-hosts) anterior, faça agora no dispositivo:
+Se estiver executando VHDs em SMBs, você precisará habilitar a delegação de credenciais do dispositivo para os hosts do Hyper-V. Isso exige o seguinte:
 
-1. Na VM do dispositivo, execute este comando. HyperVHost1/HyperVHost2 são nomes de host de exemplo.
+- Você permite que cada host atue como um delegado para o dispositivo. Você deve ter feito isso no tutorial anterior, quando preparou o Hyper-V para avaliação e migração. Você deve ter configurado o CredSSP para os hosts [manualmente](tutorial-prepare-hyper-v.md#enable-credssp-on-hosts) ou [executando o script de configuração de pré-requisitos do Hyper-V](tutorial-prepare-hyper-v.md#hyper-v-prerequisites-configuration-script).
+- Habilite a delegação de CredSSP para que o dispositivo de Migrações para Azure possa atuar como o cliente, delegando credenciais a um host.
 
-    ```
-    Enable-WSManCredSSP -Role Client -DelegateComputer HyperVHost1.contoso.com HyperVHost2.contoso.com -Force
-    ```
+Habilite no dispositivo da seguinte maneira:
 
-2. Como alternativa, faça isso no Editor de Política de Grupo Local no dispositivo:
-    - Em **Política do Computador local** > **Configuração do Computador**, clique em **Modelos Administrativos** > **Sistemas** > **Delegação de Credenciais**.
-    - Clique duas vezes em **Permitir delegação de novas credenciais** e selecione **Habilitado**.
-    - Em **Opções**, clique em **Mostrar** e adicione cada host Hyper-V que você deseja descobrir à lista, com o prefixo **wsman/** .
-    - Em **Delegação de Credenciais**, clique duas vezes em **Permitir delegação de novas credenciais com autenticação de servidor somente NTLM**. Mais uma vez, adicione cada host Hyper-V que você deseja descobrir à lista, com o prefixo **wsman/** .
+#### <a name="option-1"></a>Opção 1
+
+Na VM do dispositivo, execute este comando. HyperVHost1/HyperVHost2 são nomes de host de exemplo.
+
+```
+Enable-WSManCredSSP -Role Client -DelegateComputer HyperVHost1.contoso.com HyperVHost2.contoso.com -Force
+```
+
+Exemplo: ` Enable-WSManCredSSP -Role Client -DelegateComputer HyperVHost1.contoso.com HyperVHost2.contoso.com -Force `
+
+#### <a name="option-2"></a>Opção 2
+
+Como alternativa, faça isso no Editor de Política de Grupo Local no dispositivo:
+
+1. Em **Política do Computador local** > **Configuração do Computador**, clique em **Modelos Administrativos** > **Sistemas** > **Delegação de Credenciais**.
+2. Clique duas vezes em **Permitir delegação de novas credenciais** e selecione **Habilitado**.
+3. Em **Opções**, clique em **Mostrar** e adicione cada host Hyper-V que você deseja descobrir à lista, com o prefixo **wsman/** .
+4. Em seguida, em **Delegação de Credenciais**, clique duas vezes em **Permitir delegação de novas credenciais com autenticação de servidor somente NTLM**. Mais uma vez, adicione cada host Hyper-V que você deseja descobrir à lista, com o prefixo **wsman/** .
 
 ## <a name="start-continuous-discovery"></a>Iniciar a descoberta contínua
 

@@ -6,18 +6,18 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: quickstart
-author: garyericson
-ms.author: garye
+author: xiaoharper
+ms.author: amlstudiodocs
 ms.custom: seodec18
 ms.date: 02/06/2019
-ms.openlocfilehash: 0819c232412e1619f82a25476a8318d26c8087da
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: e5c004b69f24b50ed2eb3a10dbd0a7915c0773ce
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58105719"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68515107"
 ---
-# <a name="quickstart-create-your-first-data-science-experiment-in-azure-machine-learning-studio"></a>Início rápido: crie seu primeiro experimento no de ciência de dados no Azure Machine Learning Studio
+# <a name="quickstart-create-your-first-data-science-experiment-in-azure-machine-learning-studio"></a>Início Rápido: crie seu primeiro experimento no de ciência de dados no Azure Machine Learning Studio
 
 Neste início rápido, você cria um teste de machine learning no [do Azure Machine Learning Studio](what-is-ml-studio.md) que prevê o preço de um carro com base em variáveis diferentes, tais como marca e especificações técnicas.
 
@@ -45,7 +45,7 @@ Se você não tiver uma conta do Studio, vá para a [Home page do Studio](https:
 ## <a name="get-the-data"></a>Obter os dados
 
 A primeira coisa que você precisa para executar o aprendizado de máquina são dados.
-Há uma série de conjuntos de dados de exemplo incluídos no Studio que você pode usar ou você pode importar dados de várias fontes. Neste exemplo, usaremos o conjunto de dados de exemplo **Dados de preço de automóvel (Brutos)**, que está incluído no seu workspace.
+Há uma série de conjuntos de dados de exemplo incluídos no Studio que você pode usar ou você pode importar dados de várias fontes. Neste exemplo, usaremos o conjunto de dados de exemplo **Dados de preço de automóvel (Brutos)** , que está incluído no seu workspace.
 Esse conjunto de dados inclui entradas para vários automóveis individuais, incluindo informações como marca, modelo, especificações técnicas e preço.
 
 > [!TIP]
@@ -59,7 +59,7 @@ Aqui está a explicação de como colocar o conjunto de dados no seu experimento
 
     ![Renomear o experimento](./media/create-experiment/rename-experiment.png)
 
-1. À esquerda da tela do experimento está uma paleta de conjuntos de dados e módulos. Digite **automóvel** na caixa Pesquisar na parte superior desta paleta para localizar o conjunto de dados rotulado como **Dados de preço de automóvel (brutos)**. Arraste este conjunto de dados até a tela do experimento.
+1. À esquerda da tela do experimento está uma paleta de conjuntos de dados e módulos. Digite **automóvel** na caixa Pesquisar na parte superior desta paleta para localizar o conjunto de dados rotulado como **Dados de preço de automóvel (brutos)** . Arraste este conjunto de dados até a tela do experimento.
 
     ![Localize o conjunto de dados de automóvel e arraste-o para a tela do experimento](./media/create-experiment/type-automobile.png)
 
@@ -96,7 +96,7 @@ Primeiro, vamos adicionar um módulo que remova a coluna **normalized-losses** c
 1. Selecione o módulo [Selecionar Colunas no Conjunto de Dados][select-columns] e clique em **Iniciar seletor de coluna** no painel **Propriedades**.
 
    - À esquerda, clique em **Com regras**
-   - Em **Começa com**, clique em **Todas as colunas**. Essas regras instruem [Selecionar Colunas no Conjunto de Dados][select-columns] a passar por todas as colunas (exceto por aquelas que estamos prestes a excluir).
+   - Em **Começa com**, clique em **Todas as colunas**. Essas regras instruem o módulo [Selecionar Colunas no Conjunto de Dados][select-columns] a passar por todas as colunas (exceto aquelas que estamos prestes a excluir).
    - Nos menus suspensos, selecione **Excluir** e **nomes da coluna** e clique dentro da caixa de texto. Uma lista de colunas é exibida. Selecione **normalized-losses**e ela será adicionada à caixa de texto.
    - Clique no botão de marca de seleção (OK) para fechar o seletor de coluna (no canto inferior direito).
 
@@ -107,11 +107,11 @@ Primeiro, vamos adicionar um módulo que remova a coluna **normalized-losses** c
      ![O painel de propriedades mostra que a coluna "normalized-losses" foi excluída](./media/create-experiment/showing-excluded-column.png)
 
      > [!TIP] 
-     > É possível adicionar um comentário em um módulo ao clicar duas vezes nele e inserir o texto. Isso pode ajudar a ver rapidamente o que o módulo está fazendo em seu experimento. Neste caso, clique duas vezes no módulo [Selecionar Colunas no Conjunto de Dados][select-columns] e digite o comentário “Excluir perdas normalizadas”.
+     > É possível adicionar um comentário em um módulo ao clicar duas vezes nele e inserir o texto. Isso pode ajudar a ver rapidamente o que o módulo está fazendo em seu experimento. Neste caso, clique duas vezes no módulo [Selecionar Colunas no Conjunto de Dados][select-columns] e digite o comentário "Excluir perdas normalizadas".
 
      ![Clique duas vezes em um módulo para adicionar um comentário](./media/create-experiment/add-comment.png)
 
-1. Arraste o módulo [Limpar valores ausentes][clean-missing-data] até a tela do teste e conecte-o ao módulo [Selecionar Colunas no Conjunto de Dados][select-columns]. No painel **Propriedades** selecione **Remover linha inteira** em **Modo de limpeza**. Essas opções direcionam o [Limpar Dados Ausentes][clean-missing-data] a limpar os dados removendo as linhas que têm valores ausentes. Clique duas vezes no módulo e digite o comentário “Remover linhas de valor ausente".
+1. Arraste o módulo [Limpar Dados Ausentes][clean-missing-data] para a tela do teste e conecte-o ao módulo [Selecionar Colunas no Conjunto de Dados][select-columns]. No painel **Propriedades** selecione **Remover linha inteira** em **Modo de limpeza**. Essas opções instruem o módulo [Limpar Dados Ausentes][clean-missing-data] a limpar os dados removendo as linhas que têm valores ausentes. Clique duas vezes no módulo e digite o comentário “Remover linhas de valor ausente".
 
     ![Defina o modo de limpeza para "Remover linha inteira" no módulo "Limpar Dados Ausentes"](./media/create-experiment/set-remove-entire-row.png)
 
@@ -183,7 +183,7 @@ Vamos usar nossos dados para treinar o modelo e para testá-lo, dividindo-os em 
 
 1. Para selecionar o algoritmo de aprendizado, expanda a categoria **Machine Learning** na paleta do módulo à esquerda da tela e expanda **Inicializar Modelo**. Isso exibe várias categorias de módulos que podem ser usados para inicializar os algoritmos de Aprendizado de Máquina. Para este experimento, selecione módulo [Regressão Linear][linear-regression] na categoria **Regressão** e arraste-o para a tela do experimento. (Você também pode localizar o módulo digitando "regressão linear" na caixa de pesquisa da paleta.)
 
-1. Localize e arraste o módulo [Modelo de Treinamento][train-model] até a tela do experimento. Conecte a saída do módulo [Regressão Linear][linear-regression] com a entrada à esquerda do módulo [Modelo de treinamento][train-model] e conecte a saída de dados de treinamento (porta à esquerda) do módulo [Dividir Dados][split] com a entrada à direita do módulo [Modelo de treinamento][train-model].
+1. Encontre e arraste o módulo [Treinar Modelo][train-model] para a tela do teste. Conecte a saída do módulo [Regressão Linear][linear-regression] à entrada esquerda do módulo [Treinar Modelo][train-model] e conecte a saída de dados de treinamento (porta esquerda) do módulo [Dividir Dados][split] à entrada direita do módulo [Treinar Modelo][train-model].
 
     ![Conecte o módulo "Modelo de treinamento" aos módulos "Regressão Linear" e "Dividir Dados"](./media/create-experiment/connect-train-model.png)
 
@@ -203,7 +203,7 @@ Agora temos um modelo de regressão treinado que pode ser usado para pontuar nov
 
 Agora que treinamos o modelo usando 75% de nossos dados, podemos usá-lo para classificar os outros 25% dos dados e ver se nosso modelo funciona bem.
 
-1. Localize e arraste o módulo [Modelo de Pontuação][score-model] até a tela do experimento. Conecte a saída do módulo [Modelo de Treinamento][train-model] com a porta de entrada à esquerda do [Modelo de Pontuação][score-model]. Conecte a porta de entrada direita à saída de dados de teste (porta à direita) do módulo [Dividir Dados][split] à porta de entrada direita do [Modelo de Pontuação][score-model].
+1. Localize e arraste o módulo [Modelo de Pontuação][score-model] até a tela do experimento. Conecte a saída do módulo [Treinar Modelo][train-model] à porta de entrada esquerda do módulo [Pontuar Modelo][score-model]. Conecte a saída de dados de teste (porta direita) do módulo [Dividir Dados][split] à porta de entrada direita do módulo [Pontuar Modelo][score-model].
 
     ![Conecte o módulo "Modelo de Pontuação" com os módulos "Modelo de Treinamento" e "Dividir Dados"](./media/create-experiment/connect-score-model.png)
 

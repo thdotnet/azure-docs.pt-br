@@ -16,12 +16,12 @@ ms.date: 03/28/2019
 ms.author: cephalin
 ms.reviewer: astay; kraigb
 ms.custom: seodec18
-ms.openlocfilehash: 95a848ff7d74d35203c7e8377405c709f7fc7bd7
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 222ded620610957e752e2081bda638d78eba4867
+ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67617384"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68619446"
 ---
 # <a name="configure-a-linux-ruby-app-for-azure-app-service"></a>Configurar um aplicativo Ruby do Linux para o Serviço de Aplicativo do Azure
 
@@ -122,7 +122,7 @@ Você pode personalizar o processo de inicialização das seguintes maneiras:
 O servidor Rails no contêiner do Ruby é executado no modo de produção por padrão e [pressupõe que os ativos sejam pré-compilados e fornecidos pelo servidor Web](https://guides.rubyonrails.org/asset_pipeline.html#in-production). Para fornecer ativos estáticos no servidor Rails, é necessário realizar duas tarefas:
 
 - **Pré-compilar os ativos** - [Pré-compile os ativos estáticos localmente](https://guides.rubyonrails.org/asset_pipeline.html#local-precompilation) e implante-os manualmente. Se preferir, permita que o mecanismo de implantação cuide disso (confira [Pré-compilar ativos](#precompile-assets).
-- **Habilitar o fornecimento de arquivos estáticos** – para fornecer ativos estáticos do contêiner do Ruby, [defina a configuração de aplicativo `RAILS_SERVE_STATIC_FILES` `RAILS_SERVE_STATIC_FILES`](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) como `true`. Por exemplo:
+- **Habilitar o fornecimento de arquivos estáticos** – para fornecer ativos estáticos do contêiner do Ruby, [defina a configuração `RAILS_SERVE_STATIC_FILES` do aplicativo](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) como `true`. Por exemplo:
 
     ```azurecli-interactive
     az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings RAILS_SERVE_STATIC_FILES=true

@@ -1,5 +1,5 @@
 ---
-title: 'Início Rápido: Tradução de fala, C# (.NET Core Windows)'
+title: 'Início Rápido: Traduzir fala, C# (.NET Core Windows) – Serviço de Fala'
 titleSuffix: Azure Cognitive Services
 description: Neste início rápido, você criará um aplicativo simples do .NET Core para capturar a fala do usuário, traduzi-la para outro idioma e produzir o texto para a linha de comando. Este guia foi projetado para usuários do Windows.
 services: cognitive-services
@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 8ab76a786f11677f5d8f0715b257bd2fb04e50bf
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 81e652e6456b049c2f4fca938d02d1b0724f2ffd
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67602805"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68609678"
 ---
 # <a name="quickstart-translate-speech-with-the-speech-sdk-for-net-core"></a>Início Rápido: Tradução de fala com o Speech SDK para .NET Core
 
 Guias de início rápido também estão disponíveis para [conversão de fala em texto](quickstart-csharp-dotnet-windows.md) e [conversão de texto em fala](quickstart-text-to-speech-dotnetcore.md).
 
-Neste início rápido, você criará um aplicativo .NET Core simples que captura a fala do usuário do microfone do seu computador, converte a fala e transcreve o texto traduzido para a linha de comando em tempo real. Este aplicativo foi projetado para ser executado no Windows de 64 bits e é criado com o [pacote NuGet do Speech SDK](https://aka.ms/csspeech/nuget) e o Microsoft Visual Studio 2017.
+Neste início rápido, você criará um aplicativo .NET Core simples que captura a fala do usuário do microfone do seu computador, converte a fala e transcreve o texto traduzido para a linha de comando em tempo real. Este aplicativo foi projetado para ser executado no Windows de 64 bits e é criado com o [pacote NuGet do SDK de Fala](https://aka.ms/csspeech/nuget) e o Microsoft Visual Studio 2017 ou posterior.
 
 Para obter uma lista completa dos idiomas disponíveis para tradução de fala, confira [suporte ao idioma](language-support.md).
 
@@ -30,7 +30,7 @@ Para obter uma lista completa dos idiomas disponíveis para tradução de fala, 
 Este início rápido requer:
 
 * [SDK do .NET Core](https://dotnet.microsoft.com/download)
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) ou posterior
 * Uma chave de assinatura do Azure para o Serviço de Fala. [Obtenha uma gratuitamente](get-started.md).
 
 ## <a name="create-a-visual-studio-project"></a>Criar um projeto do Visual Studio

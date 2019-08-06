@@ -11,15 +11,15 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.date: 09/11/2018
 ms.author: jingwang
-ms.openlocfilehash: 553e87cacf407da2333da3105647719679feaabf
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: a4d5941091c3cf6516380c4d6384951d886e0e7f
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57544198"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640331"
 ---
 # <a name="copy-data-from-azure-blob-storage-to-a-sql-database-by-using-the-copy-data-tool"></a>Copie dados do Armazenamento de blobs do Azure para um banco de dados SQL usando a ferramenta Copy Data
-> [!div class="op_single_selector" title1="Select the version of the Data Factory service that you're using:"]
+> [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
 > * [Versão 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Versão atual](tutorial-copy-data-tool.md)
 
@@ -72,7 +72,7 @@ Prepare o Armazenamento de blobs e o banco de dados SQL para o tutorial, executa
     CREATE CLUSTERED INDEX IX_emp_ID ON dbo.emp (ID);
     ```
 
-2. Permita que os serviços do Azure acessem o SQL Server. Verifique se a configuração **Permitir acesso aos serviços do Azure** está habilitada para o servidor que está executando o Banco de Dados SQL. Essa configuração permite que o Data Factory grave dados em sua instância de banco de dados. Para verificar e ativar essa configuração, vá até seu servidor do Azure SQL > **Segurança** > **Firewalls e redes virtuais** > defina a opção **Permitir acesso aos serviços do Azure** como **ATIVADA**.
+2. Permita que os serviços do Azure acessem o SQL Server. Verifique se a configuração **Permitir acesso aos serviços do Azure** está habilitada para o servidor que está executando o Banco de Dados SQL. Essa configuração permite que o Data Factory grave dados em sua instância de banco de dados. Para verificar e ativar essa configuração, vá até seu servidor do Azure SQL > Visão geral > Configurar o firewall do servidor > defina a opção **Permitir acesso aos serviços do Azure** para **ATIVADA**.
 
 ## <a name="create-a-data-factory"></a>Criar uma data factory
 
@@ -87,11 +87,11 @@ Prepare o Armazenamento de blobs e o banco de dados SQL para o tutorial, executa
     
     ![Mensagem de erro do novo data factory](./media/tutorial-copy-data-tool/name-not-available-error.png)
 
-    Se você receber uma mensagem de erro sobre o valor do nome, insira um nome diferente para o data factory. Por exemplo, use o nome _**seunome**_**ADFTutorialDataFactory**. Para ver as regras de nomenclatura de artefatos do Data Factory, confira [Regras de nomenclatura do Data Factory](naming-rules.md).
+    Se você receber uma mensagem de erro sobre o valor do nome, insira um nome diferente para o data factory. Por exemplo, use o nome _**seunome**_ **ADFTutorialDataFactory**. Para ver as regras de nomenclatura de artefatos do Data Factory, confira [Regras de nomenclatura do Data Factory](naming-rules.md).
 1. Selecione a **assinatura** do Azure na qual deseja criar o novo data factory.
 1. Em **Grupo de Recursos**, use uma das seguintes etapas:
     
-     a. Selecione **Usar existente**e selecione um grupo de recursos existente na lista suspensa.
+    a. Selecione **Usar existente**e selecione um grupo de recursos existente na lista suspensa.
 
     b. Selecione **Criar novo**e insira o nome de um grupo de recursos.
     
@@ -119,7 +119,7 @@ Prepare o Armazenamento de blobs e o banco de dados SQL para o tutorial, executa
     ![Página Propriedades](./media/tutorial-copy-data-tool/copy-data-tool-properties-page.png)
 1. Na página **Configurações do armazenamento de dados**, conclua as seguintes etapas:
 
-     a. Clique em **+ Criar nova conexão** para adicionar uma conexão
+    a. Clique em **+ Criar nova conexão** para adicionar uma conexão
 
     ![Novo serviço vinculado de origem](./media/tutorial-copy-data-tool/new-source-linked-service.png)
 
@@ -137,7 +137,7 @@ Prepare o Armazenamento de blobs e o banco de dados SQL para o tutorial, executa
 
 1. Na página **Escolha o arquivo de entrada ou a pasta**, execute as seguintes etapas:
     
-     a. Clique em **Navegar** para navegar até a pasta **adfv2tutorial/input**, selecione o arquivo **inputEmp.txt** e então clique em **Escolher**.
+    a. Clique em **Navegar** para navegar até a pasta **adfv2tutorial/input**, selecione o arquivo **inputEmp.txt** e então clique em **Escolher**.
 
     ![Escolha o arquivo ou a pasta de entrada](./media/tutorial-copy-data-tool/specify-source-path.png)
 
@@ -148,7 +148,7 @@ Prepare o Armazenamento de blobs e o banco de dados SQL para o tutorial, executa
     ![Configurações de formato de arquivo](./media/tutorial-copy-data-tool/file-format-settings-page.png)
 1. Na página **Armazenamento de dados de destino**, conclua as seguintes etapas:
 
-     a. Clique em **+ Criar nova conexão** para adicionar uma conexão
+    a. Clique em **+ Criar nova conexão** para adicionar uma conexão
 
     ![Novo serviço coletor vinculado](./media/tutorial-copy-data-tool/new-sink-linked-service.png)
 

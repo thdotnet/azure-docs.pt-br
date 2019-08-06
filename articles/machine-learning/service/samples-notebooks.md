@@ -9,34 +9,37 @@ ms.topic: sample
 author: sdgilley
 ms.author: sgilley
 ms.reviewer: sgilley
-ms.date: 05/29/2019
+ms.date: 07/31/2019
 ms.custom: seodec18
-ms.openlocfilehash: ea4d5a807c25ea0406b49dac8a83ef1a34e0e8b3
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.openlocfilehash: 7fdf9c52df502bc94519ab6c65be2e9fb546ce48
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66391777"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68699130"
 ---
-# <a name="use-jupyter-notebooks-to-explore-azure-machine-learning-service"></a>Usar notebooks Jupyter no serviço do Azure Machine Learning
+# <a name="explore-azure-machine-learning-service-with-jupyter-notebooks"></a>Explore o serviço do Azure Machine Learning com notebooks Jupyter
 
-O [repositório de Notebooks do Azure Machine Learning](https://github.com/azure/machinelearningnotebooks) inclui as amostras mais recentes do SDK do Python do Azure Machine Learning. Esses notebooks Jupyter foram projetados para ajudá-lo a explorar o SDK e servem como modelos para seus próprios projetos de aprendizado de máquina.
+O [exemplo de repositório de Notebooks do Azure Machine Learning](https://github.com/azure/machinelearningnotebooks) inclui as amostras mais recentes do SDK do Python do Azure Machine Learning. Esses notebooks Jupyter foram projetados para ajudá-lo a explorar o SDK e servem como modelos para seus próprios projetos de aprendizado de máquina.
 
 Este artigo mostra como acessar o repositório nos seguintes ambientes:
 
-- [VM do Notebook do Azure Machine Learning](#azure-machine-learning-notebook-vm)
-- [Trazer seu próprio servidor de notebook](#bring-your-own-jupyter-notebook-server)
-- [Máquina Virtual de Ciência de Dados](#data-science-virtual-machine)
-- [Azure Notebooks](#azure-notebooks)
+- [VM do Notebook do Azure Machine Learning](#notebookvm)
+- [Trazer seu próprio servidor de notebook](#byo)
+- [Máquina Virtual de Ciência de Dados](#dsvm)
+- [Azure Notebooks](#aznb)
 
 > [!NOTE]
 > Depois de clonar o repositório, você encontrará notebooks do tutorial na pasta **tutorials** e notebooks específicos do recurso na pasta **how-to-use-azureml**.
 
-## <a name="azure-machine-learning-notebook-vm"></a>VM do Notebook do Azure Machine Learning
+<a name="notebookvm"></a>
+## <a name="get-samples-on-azure-machine-learning-notebook-vm"></a>Obtenha amostras da VM do Notebook do Azure Machine Learning
 
 A maneira mais fácil de começar a usar as amostras é concluir o [início rápido de notebook baseado em nuvem](quickstart-run-cloud-notebook.md). Após a conclusão, você terá um servidor de notebook dedicado pré-carregado com o SDK e o repositório de exemplo. Não há necessidade de downloads nem de instalação.
 
-## <a name="bring-your-own-jupyter-notebook-server"></a>Trazer seu próprio servidor do Jupyter Notebook
+<a name="byo"></a>
+
+## <a name="get-samples-on-your-notebook-server"></a>Obter amostras em seu servidor de notebook
 
 Caso deseje trazer seu próprio servidor de notebook para o desenvolvimento local, siga estas etapas:
 
@@ -44,13 +47,15 @@ Caso deseje trazer seu próprio servidor de notebook para o desenvolvimento loca
 
 Essas instruções instalam os pacotes base do SDK necessários para o início rápido e os notebooks do tutorial. Outros notebooks de exemplo podem exigir a instalação de componentes extras. Para obter mais informações, confira [Instalar o SDK do Azure Machine Learning para Python](https://docs.microsoft.com/python/api/overview/azure/ml/install).
 
-## <a name="data-science-virtual-machine"></a>Máquina Virtual de Ciência de Dados
+<a name="dsvm"></a>
+## <a name="get-samples-on-dsvm"></a>Obter exemplos no DSVM
 
 A DSVM (Máquina Virtual de Ciência de Dados) é uma imagem de VM personalizada, especificamente criada para ciência de dados. Se você [criar uma DSVM](how-to-configure-environment.md#dsvm), o SDK e o servidor de notebook serão instalados e configurados para você. No entanto, você ainda precisará criar um workspace e clonar o repositório de exemplo.
 
 [!INCLUDE [aml-dsvm-server](../../../includes/aml-dsvm-server.md)]
 
-## <a name="azure-notebooks"></a>Azure Notebooks
+<a name="aznb"></a>
+## <a name="get-samples-on-azure-notebooks"></a>Obter amostras do Azure Notebooks
 
 No [Azure Notebooks](https://notebooks.azure.com/), o SDK e o servidor de notebook são instalados e configurados para você. O Azure Notebooks fornece um ambiente de notebook leve e totalmente gerenciado para você explorar.
 

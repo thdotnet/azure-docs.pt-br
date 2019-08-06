@@ -11,47 +11,89 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 6/14/2019
+ms.date: 7/26/2019
 ms.author: raiye
-ms.openlocfilehash: f10290024f9bd46a1de4bdfa6e12f841ddd1c4ed
-ms.sourcegitcommit: 6e6813f8e5fa1f6f4661a640a49dc4c864f8a6cb
-ms.translationtype: MT
+ms.openlocfilehash: dd0adbe7cc27389e3b1d6533b038042824daea22
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67150992"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68592437"
 ---
 # <a name="azure-guest-os"></a>Sistema operacional convidado do Azure
-As tabelas a seguir mostram as atualizações do Microsoft Security Response Center (MSRC) aplicadas ao SO convidado do Azure. Pesquise este artigo para determinar se uma atualização específica se aplica ao SO convidado que você está usando. Atualizações sempre são realizadas para a [família][family-explain] em particular na qual foram introduzidas.
+As tabelas a seguir mostram as atualizações do Microsoft Security Response Center (MSRC) aplicadas ao SO convidado do Azure. Pesquise este artigo para determinar se uma atualização específica se aplica ao SO convidado que você está usando. As atualizações sempre são postergadas para a [família][family-explain] específica em que foram introduzidas.
 
-## <a name="june-2019-guest-os"></a>Sistema operacional convidado de junho de 2019
+## <a name="july-2019-guest-os"></a>SO convidado de julho de 2019
 
->[!NOTE]
->O sistema operacional convidado de junho atualmente está sendo distribuído para VMs do serviço de nuvem que estão configurados para atualizações automáticas. Quando a distribuição estiver concluída, essa versão será disponibilizada para atualizações manuais por meio do portal do Azure e dos arquivos de configuração. Os seguintes patches estão incluídos no SO convidado de junho. Esta lista está sujeita a alterações.
+| Categoria do Produto | Artigo da KB pai | Descrição da vulnerabilidade | SO convidado | Data da primeira introdução |
+| --- | --- | --- | --- | --- |
+|  Rel 19-07   |  [4507434]  |  Internet Explorer   |  2,88, 3,75, 4,68  |  9 de julho de 2019  |
+|  Rel 19-07   |  [4506621]  |  Segurança do Windows   |  2,88, 3,75, 4,68  |  9 de julho de 2019  |
+|  Rel 19-07   |  [4506966]  |  Segurança do .NET 4.5.2   |  2,88  |  9 de julho de 2019  |
+|  Rel 19-07   |  [4506976]  |  Segurança do .NET 3.5.1   |  2,88  |  9 de julho de 2019  |
+|  Rel 19-07   |  [4507456]  |  Segurança do Windows   |  2,88  |  9 de julho de 2019  |
+|  Rel 19-07   |  [4506965]  |  Segurança do .NET 4.5.2   |  3,75  |  9 de julho de 2019  |
+|  Rel 19-07   |  [4506974]  |  Segurança do .NET 3,5   |  3,75  |  9 de julho de 2019  |
+|  Rel 19-07   |  [4507464]  |  Segurança do Windows   |  3,75  |  9 de julho de 2019  |
+|  Rel 19-07   |  [4506964]  |  Segurança do .NET 4.5.2   |  4,68  |  9 de julho de 2019  |
+|  Rel 19-07   |  [4506977]  |  Segurança do .NET 3,5   |  4,68  |  9 de julho de 2019  |
+|  Rel 19-07   |  [4507457]  |  Segurança do Windows   |  4,68  |  9 de julho de 2019  |
+|  Rel 19-07   |  [4507460]  |  Segurança do Windows   |  5.33  |  9 de julho de 2019  |
+|  Rel 19-07   |  [4506998]  |  Segurança do .NET 3,5 & 4.7.2   |  6.9  |  9 de julho de 2019  |
+|  Rel 19-07   |  [4507469]  |  Segurança do Windows   |  6.9  |  9 de julho de 2019  |
+|  N/D  |  [4503537]  |  Atualização da pilha de manutenção de 19 de junho para (servidor 2016)   |  5.33  |  14 de maio de 2019  |
+|  N/D  |  [4504369]  |  Atualização da pilha de manutenção de 19 de junho para (servidor 2019)   |  6.9  |  14 de maio de 2019  |
+|  N/D  |  [4503292]  |  19 de junho ' sem segurança (servidor 2008 R2)   |  2,88  |  20 de maio de 2019  |
+|  N/D  |  [4503285]  |  19 de junho ' sem segurança (servidor 2012)   |  3,75  |  14 de maio de 2019  |
+|  N/D  |  [4503276]  |  19 de junho ' sem segurança (servidor 2012 R2)   |  4,68  |  14 de maio de 2019  |
+
+[4507434]: https://support.microsoft.com/kb/4507434
+[4506621]: https://support.microsoft.com/kb/4506621
+[4506966]: https://support.microsoft.com/kb/4506966
+[4506976]: https://support.microsoft.com/kb/4506976
+[4507456]: https://support.microsoft.com/kb/4507456
+[4506965]: https://support.microsoft.com/kb/4506965
+[4506974]: https://support.microsoft.com/kb/4506974
+[4507464]: https://support.microsoft.com/kb/4507464
+[4506964]: https://support.microsoft.com/kb/4506964
+[4506977]: https://support.microsoft.com/kb/4506977
+[4507457]: https://support.microsoft.com/kb/4507457
+[4507460]: https://support.microsoft.com/kb/4507460
+[4506998]: https://support.microsoft.com/kb/4506998
+[4507469]: https://support.microsoft.com/kb/4507469
+[4503537]: https://support.microsoft.com/kb/4503537
+[4504369]: https://support.microsoft.com/kb/4504369
+[4503292]: https://support.microsoft.com/kb/4503292
+[4503285]: https://support.microsoft.com/kb/4503285
+[4503276]: https://support.microsoft.com/kb/4503276
+
+
+## <a name="june-2019-guest-os"></a>SO convidado de junho de 2019
 
 | Categoria do Produto | Artigo da KB pai | Descrição da vulnerabilidade | SO convidado | Data da primeira introdução |
 | --- | --- | --- | --- | --- |
 |  Rel 19-06   |  [4503327]  |  Segurança do Windows 10   |  6,8  |  11 de junho de 2019  |
-|  Rel 19-06   |  [4503267]  |  Segurança do Windows 10   |  5.32  |  11 de junho de 2019  |
-|  Rel 19-06   |  [4503290]  |  Segurança do Windows   |  4.67  |  11 de junho de 2019  |
-|  Rel 19-06   |  [4503263]  |  Segurança do Windows   |  3.74  |  11 de junho de 2019  |
+|  Rel 19-06   |  [4503267]  |  Segurança do Windows 10   |  5,32  |  11 de junho de 2019  |
+|  Rel 19-06   |  [4503290]  |  Segurança do Windows   |  4,67  |  11 de junho de 2019  |
+|  Rel 19-06   |  [4503263]  |  Segurança do Windows   |  3,74  |  11 de junho de 2019  |
 |  Rel 19-06   |  [4503269]  |  Segurança do Windows   |  2.87  |  11 de junho de 2019  |
 |  Rel 19-06   |  [4494174]  |  Atualização de microcódigo   |  6,8  |  11 de junho de 2019  |
-|  Rel 19-06   |  [4494175]  |  Atualização de microcódigo   |  5.32  |  3 de junho de 2019  |
-|  Rel 19-06   |  [4503308]  |  Piscando   |  3.74, 4.67, 5.32, 6.8  |  11 de junho de 2019  |
-|  Rel 19-06   |  [4503259]  |  Internet Explorer   |  2.87, 3.74, 4.67  |  13 de junho de 2019  |
-|  N/D  |  [4499164]  |  Não é ' 19 de maio de segurança  |  2.87  |  14 de maio de 2019  |
-|  N/D  |  [4495606]  |  May ' 19 .NET 3.5 não são de segurança  |  2.87  |  14 de maio de 2019  |
-|  N/D  |  [4495596]  |  May ' 19 .NET 4.5 não são de segurança  |  2.87  |  20 de maio de 2019  |
-|  N/D  |  [4499171]  |  Não é ' 19 de maio de segurança  |  3.74  |  14 de maio de 2019  |
-|  N/D  |  [4495602]  |  May ' 19 .NET 3.5 não são de segurança  |  3.74  |  14 de maio de 2019  |
-|  N/D  |  [4495594]  |  19 de maio '.NET 4.x não são de segurança  |  4.67  |  14 de maio de 2019  |
-|  N/D  |  [4499151]  |  Não é ' 19 de maio de segurança  |  4.67  |  14 de maio de 2019  |
-|  N/D  |  [4495608]  |  May ' 19 .NET 3.5 não são de segurança  |  4.67  |  14 de maio de 2019  |
-|  N/D  |  [4495592]  |  May ' 19 .NET 4.5.2 não são de segurança  |  4.67  |  14 de maio de 2019  |
-|  N/D  |  [4495610]  |  May ' 19 .NET 4.8 cumulativa  |  6,8  |  14 de maio de 2019  |
-|  N/D  |  [4495618]  |  May'19 .NET 4.8 cumulativa  |  6,8  |  14 de maio de 2019  |
-|  N/D  |  [4501226]  |  Atualizações de fuso horário do horário de verão do Marrocos e a Autoridade Nacional Palestina  |  2.87, 3.74, 4.67  |  23 de maio de 2019  |
-|  N/D  |  [4490128]  |  Atualizações de fuso horário do horário de verão para São Tomé e Príncipe e Qyzylorda  |  2.87, 3.74, 4.67  |  17 de abril de 2019  |
+|  Rel 19-06   |  [4494175]  |  Atualização de microcódigo   |  5,32  |  3 de junho de 2019  |
+|  Rel 19-06   |  [4503308]  |  Piscando   |  3,74, 4,67, 5,32, 6,8  |  11 de junho de 2019  |
+|  Rel 19-06   |  [4503259]  |  Internet Explorer   |  2,87, 3,74, 4,67  |  13 de junho de 2019  |
+|  N/D  |  [4499164]  |  Não é segurança de 19 de maio  |  2.87  |  14 de maio de 2019  |
+|  N/D  |  [4495606]  |  Pode ser ' 19 .NET 3,5 não relacionado à segurança  |  2.87  |  14 de maio de 2019  |
+|  N/D  |  [4495596]  |  Pode ser ' 19 .NET 4,5 não relacionado à segurança  |  2.87  |  20 de maio de 2019  |
+|  N/D  |  [4499171]  |  Não é segurança de 19 de maio  |  3,74  |  14 de maio de 2019  |
+|  N/D  |  [4495602]  |  Pode ser ' 19 .NET 3,5 não relacionado à segurança  |  3,74  |  14 de maio de 2019  |
+|  N/D  |  [4495594]  |  Maio de ' 19 .NET 4. x não segurança  |  4,67  |  14 de maio de 2019  |
+|  N/D  |  [4499151]  |  Não é segurança de 19 de maio  |  4,67  |  14 de maio de 2019  |
+|  N/D  |  [4495608]  |  Pode ser ' 19 .NET 3,5 não relacionado à segurança  |  4,67  |  14 de maio de 2019  |
+|  N/D  |  [4495592]  |  Pode ' 19 .NET 4.5.2 não segurança  |  4,67  |  14 de maio de 2019  |
+|  N/D  |  [4495610]  |  Maio de "19 .NET 4,8 cumulativos"  |  6,8  |  14 de maio de 2019  |
+|  N/D  |  [4495618]  |  Maio de "19 .NET 4,8 cumulativos"  |  6,8  |  14 de maio de 2019  |
+|  N/D  |  [4501226]  |  Atualizações de fuso horário de verão para Marrocos e para a Autoridade Palestina  |  2,87, 3,74, 4,67  |  23 de maio de 2019  |
+|  N/D  |  [4490128]  |  Atualizações de fuso horário de verão para São Tomé e Príncipe e Qyzylorda  |  2,87, 3,74, 4,67  |  17 de abril de 2019  |
 
 [4503327]: https://support.microsoft.com/kb/4503327
 [4503267]: https://support.microsoft.com/kb/4503267
@@ -76,30 +118,30 @@ As tabelas a seguir mostram as atualizações do Microsoft Security Response Cen
 [4501226]: https://support.microsoft.com/kb/KB4501226
 [4490128]: https://support.microsoft.com/kb/KB4490128
 
-## <a name="may-2019-guest-os"></a>Sistema operacional convidado de maio de 2019
+## <a name="may-2019-guest-os"></a>Sistema operacional convidado 2019 de maio
 
 | Categoria do Produto | Artigo da KB pai | Descrição da vulnerabilidade | SO convidado | Data da primeira introdução |
 | --- | --- | --- | --- | --- |
-|  Rel 19-05   |  [4498206]  |  Talvez o pacote cumulativo de atualizações do IE   |  2.86, 3.73, 4.66  |  14 de maio de 2019  |
-|  Rel 19-05   |  [4505050]  |  Talvez o pacote cumulativo de atualizações do IE   |  2.86, 3.73, 4.66  |  18 de maio de 2019  |
-|  Rel 19-05   |  [4497932]  |  Talvez a atualização de Flash   |  3.73, 4.66, 5.31  |  14 de maio de 2019  |
-|  Rel 19-05   |  [4499175]  |  Talvez o pacote cumulativo de atualizações de segurança   |  2.86  |  14 de maio de 2019  |
-|  Rel 19-05   |  [4495612]  |  Talvez o pacote cumulativo de segurança .NET 3.5   |  2.86  |  14 de maio de 2019  |
-|  Rel 19-05   |  [4495593]  |  Talvez o pacote cumulativo de segurança .NET 4.5.2   |  2.86  |  14 de maio de 2019  |
-|  Rel 19-05   |  [4499158]  |  Talvez o pacote cumulativo de atualizações de segurança   |  3.73  |  14 de maio de 2019  |
-|  Rel 19-05   |  [4495607]  |  Talvez o pacote cumulativo de segurança .NET 3.5   |  3.73  |  14 de maio de 2019  |
-|  Rel 19-05   |  [4495591]  |  Talvez o pacote cumulativo de segurança .NET 4.5.2   |  3.73  |  14 de maio de 2019  |
-|  Rel 19-05   |  [4492872]  |  Pacote cumulativo de atualizações do IE   |  3.73  |  16 de abril de 2019  |
-|  Rel 19-05   |  [4499165]  |  Rollup de segurança de março   |  4.66  |  14 de maio de 2019  |
-|  Rel 19-05   |  [4495615]  |  Talvez o pacote cumulativo de segurança .NET 3.5   |  4.66  |  14 de maio de 2019  |
-|  Rel 19-05   |  [4495589]  |  Talvez o pacote cumulativo de segurança .NET 4.5.2   |  4.66  |  14 de maio de 2019  |
-|  Rel 19-05   |  [4498947]  |  SSU de maio   |  5.31  |  14 de maio de 2019  |
-|  Rel 19-05   |  [4494175]  |  Atualização de microcódigo de maio   |  5.31  |  14 de maio de 2019  |
-|  Rel 19-05   |  [4505052]  |  Talvez o pacote cumulativo de atualizações de segurança   |  5.31  |  19 de maio de 2019  |
+|  Rel 19-05   |  [4498206]  |  ROLLUP do IE de maio   |  2,86, 3,73, 4,66  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4505050]  |  ROLLUP do IE de maio   |  2,86, 3,73, 4,66  |  18 de maio de 2019  |
+|  Rel 19-05   |  [4497932]  |  Atualização do flash de maio   |  3,73, 4,66, 5,31  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4499175]  |  ROLLUP de segurança de maio   |  2,86  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4495612]  |  Pode acumulação de segurança .NET 3,5   |  2,86  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4495593]  |  Pode acumulação de segurança do .NET 4.5.2   |  2,86  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4499158]  |  ROLLUP de segurança de maio   |  3.73  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4495607]  |  Pode acumulação de segurança .NET 3,5   |  3.73  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4495591]  |  Pode acumulação de segurança do .NET 4.5.2   |  3.73  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4492872]  |  ROLLUP do IE   |  3.73  |  16 de abril de 2019  |
+|  Rel 19-05   |  [4499165]  |  ROLLUP de segurança de março   |  4,66  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4495615]  |  Pode acumulação de segurança .NET 3,5   |  4,66  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4495589]  |  Pode acumulação de segurança do .NET 4.5.2   |  4,66  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4498947]  |  SSU de maio   |  5,31  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4494175]  |  Atualização de microcódigo de maio   |  5,31  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4505052]  |  ROLLUP de segurança de maio   |  5,31  |  19 de maio de 2019  |
 |  Rel 19-05   |  [4499728]  |  SSU de maio   |  6.7  |  19 de maio de 2019  |
-|  Rel 19-05   |  [4505056]  |  Talvez o pacote cumulativo de atualizações de segurança   |  6.7  |  19 de maio de 2019  |
+|  Rel 19-05   |  [4505056]  |  ROLLUP de segurança de maio   |  6.7  |  19 de maio de 2019  |
 |  Rel 19-05   |  [4494174]  |  Atualização de microcódigo de maio   |  6.7  |  14 de maio de 2019  |
-|  Rel 19-05   |  [4495590]  |  Talvez o Rollup de segurança do .NET   |  6.7  |  14 de maio de 2019  |
+|  Rel 19-05   |  [4495590]  |  .NET ROLLUP de segurança de maio   |  6.7  |  14 de maio de 2019  |
 
 [4498206]: https://support.microsoft.com/kb/4498206
 [4505050]: https://support.microsoft.com/kb/4505050
@@ -123,22 +165,22 @@ As tabelas a seguir mostram as atualizações do Microsoft Security Response Cen
 [4495590]: https://support.microsoft.com/kb/4495590
 
 
-## <a name="april-2019-guest-os"></a>Sistema operacional convidado de abril de 2019
+## <a name="april-2019-guest-os"></a>SO convidado de abril de 2019
 
 | Categoria do Produto | Artigo da KB pai | Descrição da vulnerabilidade | SO convidado | Data da primeira introdução |
 | --- | --- | --- | --- | --- |
 | Rel 19-04 | [4493509] | Segurança do Windows 10 | 6.6 | 9 de abril de 2019 |
-| Rel 19-04 | [4493470] | Segurança do Windows 10 | 5.30 | 9 de abril de 2019 |
-| Rel 19-04 | [4493467] | Segurança do Windows | 4.65 | 9 de abril de 2019 |
-| Rel 19-04 | [4493450] | Segurança do Windows | 3.72 | 9 de abril de 2019 |
-| Rel 19-04 | [4493448] | Segurança do Windows | 2.85 | 9 de abril de 2019 |
+| Rel 19-04 | [4493470] | Segurança do Windows 10 | 5,30 | 9 de abril de 2019 |
+| Rel 19-04 | [4493467] | Segurança do Windows | 4,65 | 9 de abril de 2019 |
+| Rel 19-04 | [4493450] | Segurança do Windows | 3,72 | 9 de abril de 2019 |
+| Rel 19-04 | [4493448] | Segurança do Windows | 2,85 | 9 de abril de 2019 |
 | Rel 19-04 | [4493478] | Piscando | 3.72, 4.65, 5.30, 6.6 | 9 de abril de 2019 |
-| Rel 19-04 | [4493435] | Internet Explorer | 2.85, 3.72, 4.65 | 9 de abril de 2019 |
-| Rel 19-04 | [4490628] | Atualização da Pilha de Manutenção | 2.85 | 12 de março de 2019 |
-| Rel 19-04 | [4474419] | Suporte de SHA2 | 2.85 | 12 de março de 2019 |
-| Rel 19-04 | [4489878] | Rollup não relacionado à segurança de março | 2.85 | 12 de março de 2019 |
-| Rel 19-04 | [4489891] | Rollup não relacionado à segurança de março | 3.72 | 12 de março de 2019 |
-| Rel 19-04 | [4489881] | Rollup não relacionado à segurança de março | 4.65 | 12 de março de 2019 |
+| Rel 19-04 | [4493435] | Internet Explorer | 2,85, 3,72, 4,65 | 9 de abril de 2019 |
+| Rel 19-04 | [4490628] | Atualização da Pilha de Manutenção | 2,85 | 12 de março de 2019 |
+| Rel 19-04 | [4474419] | Suporte do SHA2 | 2,85 | 12 de março de 2019 |
+| Rel 19-04 | [4489878] | ROLLUP não relacionado à segurança de março | 2,85 | 12 de março de 2019 |
+| Rel 19-04 | [4489891] | ROLLUP não relacionado à segurança de março | 3,72 | 12 de março de 2019 |
+| Rel 19-04 | [4489881] | ROLLUP não relacionado à segurança de março | 4,65 | 12 de março de 2019 |
 
 [4493509]: https://support.microsoft.com/kb/4493509
 [4493470]: https://support.microsoft.com/kb/4493470
@@ -153,28 +195,28 @@ As tabelas a seguir mostram as atualizações do Microsoft Security Response Cen
 [4489891]: https://support.microsoft.com/kb/KB4489891
 [4489881]: https://support.microsoft.com/kb/KB4489881
 
-## <a name="march-2019-guest-os"></a>Sistema operacional convidado de março de 2019
+## <a name="march-2019-guest-os"></a>SO convidado de março de 2019
 
 | Categoria do Produto | Artigo da KB pai | Descrição da vulnerabilidade | SO convidado | Data da primeira introdução |
 | --- | --- | --- | --- | --- |
-| Rel 19-03 | [4489873] | Internet Explorer | 2.84, 3.71, 4.64 | 12 de março de 2019 |
-| Rel 19-03 | [4489907] | Piscando | 3.71, 4.64, 5.29, 6.5 | 12 de março de 2019 |
-| Rel 19-03 | [4489885] | Segurança do Windows | 2.84 | 12 de março de 2019 |
-| Rel 19-03 | [4489884] | Segurança do Windows | 3.71 | 12 de março de 2019 |
-| Rel 19-03 | [4489883] | Segurança do Windows | 4.64 | 12 de março de 2019 |
-| Rel 19-03 | [4489882] | Segurança do Windows 10 | 5.29 | 12 de março de 2019 |
+| Rel 19-03 | [4489873] | Internet Explorer | 2,84, 3,71, 4,64 | 12 de março de 2019 |
+| Rel 19-03 | [4489907] | Piscando | 3,71, 4,64, 5,29, 6,5 | 12 de março de 2019 |
+| Rel 19-03 | [4489885] | Segurança do Windows | 2,84 | 12 de março de 2019 |
+| Rel 19-03 | [4489884] | Segurança do Windows | 3,71 | 12 de março de 2019 |
+| Rel 19-03 | [4489883] | Segurança do Windows | 4,64 | 12 de março de 2019 |
+| Rel 19-03 | [4489882] | Segurança do Windows 10 | 5,29 | 12 de março de 2019 |
 | Rel 19-03 | [4489899] | Segurança do Windows 10 | 6.5 | 12 de março de 2019 |
-| Rel 19-03 | [4486563] | Pacote cumulativo de atualizações de fevereiro sem segurança | 2.84 | 12 de fevereiro de 2019 |
-| Rel 19-03 | [4483458] | Rollup de fevereiro não-segurança do .NET 3.x | 2.84 | 12 de fevereiro de 2019 |
-| Rel 19-03 | [4483455] | Rollup de fevereiro sem segurança .NET 4.x | 2.84 | 12 de fevereiro de 2019 |
-| Rel 19-03 | [4487025] | Pacote cumulativo de atualizações de fevereiro sem segurança | 3.71 | 12 de fevereiro de 2019 |
-| Rel 19-03 | [4483456] | Rollup de fevereiro não-segurança do .NET 3.x | 3.71 | 12 de fevereiro de 2019 |
-| Rel 19-03 | [4483454] | Rollup de fevereiro sem segurança .NET 4.x | 3.71 | 12 de fevereiro de 2019 |
-| Rel 19-03 | [4487000] | Pacote cumulativo de atualizações de fevereiro sem segurança | 4.64 | 12 de fevereiro de 2019 |
-| Rel 19-03 | [4483459] | Rollup de fevereiro não-segurança do .NET 3.x | 4.64 | 12 de fevereiro de 2019 |
-| Rel 19-03 | [4483453] | Rollup de fevereiro sem segurança .NET 4.x | 4.64 | 12 de fevereiro de 2019 |
-| Rel 19-03 | [4485447] | Atualização de pilha de manutenção de fevereiro | 5.29 | 12 de fevereiro de 2019 |
-| Rel 19-03 | [4486459] | Atualização de fuso horário | 2.84, 3.71, 4.64 | 12 de fevereiro de 2019 |
+| Rel 19-03 | [4486563] | ROLLUP não relacionado à segurança de fevereiro | 2,84 | 12 de fevereiro de 2019 |
+| Rel 19-03 | [4483458] | ROLLUP do .NET 3. x sem segurança de fevereiro | 2,84 | 12 de fevereiro de 2019 |
+| Rel 19-03 | [4483455] | ROLLUP do .NET 4. x sem segurança de fevereiro | 2,84 | 12 de fevereiro de 2019 |
+| Rel 19-03 | [4487025] | ROLLUP não relacionado à segurança de fevereiro | 3,71 | 12 de fevereiro de 2019 |
+| Rel 19-03 | [4483456] | ROLLUP do .NET 3. x sem segurança de fevereiro | 3,71 | 12 de fevereiro de 2019 |
+| Rel 19-03 | [4483454] | ROLLUP do .NET 4. x sem segurança de fevereiro | 3,71 | 12 de fevereiro de 2019 |
+| Rel 19-03 | [4487000] | ROLLUP não relacionado à segurança de fevereiro | 4,64 | 12 de fevereiro de 2019 |
+| Rel 19-03 | [4483459] | ROLLUP do .NET 3. x sem segurança de fevereiro | 4,64 | 12 de fevereiro de 2019 |
+| Rel 19-03 | [4483453] | ROLLUP do .NET 4. x sem segurança de fevereiro | 4,64 | 12 de fevereiro de 2019 |
+| Rel 19-03 | [4485447] | Atualização da pilha de manutenção de fevereiro | 5,29 | 12 de fevereiro de 2019 |
+| Rel 19-03 | [4486459] | Atualização de fuso horário | 2,84, 3,71, 4,64 | 12 de fevereiro de 2019 |
 
 [4489873]: https://support.microsoft.com/kb/4489873
 [4489907]: https://support.microsoft.com/kb/4489907
@@ -195,33 +237,33 @@ As tabelas a seguir mostram as atualizações do Microsoft Security Response Cen
 [4485447]: https://support.microsoft.com/kb/4485447
 [4486459]: https://support.microsoft.com/kb/4486459
 
-## <a name="february-2019-guest-os"></a>Sistema operacional convidado de fevereiro de 2019
+## <a name="february-2019-guest-os"></a>SO convidado de fevereiro de 2019
 
 | Categoria do Produto | Artigo da KB pai | Descrição da vulnerabilidade | SO convidado | Data da primeira introdução |
 | --- | --- | --- | --- | --- |
-| Rel 19-02 | [4486474] | Internet Explorer | 2.83, 3.70, 4.63 | 12 de fevereiro de 2019 |
-| Rel 19-02 | [4487038] | Piscando | 3.70, 4.63, 5.28, 6.4 | 12 de fevereiro de 2019 |
-| Rel 19-02 | [4486564] | Segurança do Windows | 2.83 | 12 de fevereiro de 2019 |
-| Rel 19-02 | [4483483] | O .NET 3.5.1 segurança | 2.83 | 12 de fevereiro de 2019 |
-| Rel 19-02 | [4483474] | O .NET 4.5.2 segurança | 2.83 | 12 de fevereiro de 2019 |
-| Rel 19-02 | [4486993] | Segurança do Windows | 3.70 | 12 de fevereiro de 2019 |
-| Rel 19-02 | [4483481] | O .NET 3.5 segurança | 3.70 | 12 de fevereiro de 2019 |
-| Rel 19-02 | [4483473] | O .NET 4.5.2 segurança | 3.70 | 12 de fevereiro de 2019 |
-| Rel 19-02 | [4487028] | Segurança do Windows | 4.63 | 12 de fevereiro de 2019 |
-| Rel 19-02 | [4483484] | O .NET 3.5 segurança | 4.63 | 12 de fevereiro de 2019 |
-| Rel 19-02 | [4483472] | O .NET 4.5.2 segurança | 4.63 | 12 de fevereiro de 2019 |
+| Rel 19-02 | [4486474] | Internet Explorer | 2,83, 3,70, 4,63 | 12 de fevereiro de 2019 |
+| Rel 19-02 | [4487038] | Piscando | 3,70, 4,63, 5,28, 6,4 | 12 de fevereiro de 2019 |
+| Rel 19-02 | [4486564] | Segurança do Windows | 2,83 | 12 de fevereiro de 2019 |
+| Rel 19-02 | [4483483] | Segurança do .NET 3.5.1 | 2,83 | 12 de fevereiro de 2019 |
+| Rel 19-02 | [4483474] | Segurança do .NET 4.5.2 | 2,83 | 12 de fevereiro de 2019 |
+| Rel 19-02 | [4486993] | Segurança do Windows | 3,70 | 12 de fevereiro de 2019 |
+| Rel 19-02 | [4483481] | Segurança do .NET 3,5 | 3,70 | 12 de fevereiro de 2019 |
+| Rel 19-02 | [4483473] | Segurança do .NET 4.5.2 | 3,70 | 12 de fevereiro de 2019 |
+| Rel 19-02 | [4487028] | Segurança do Windows | 4,63 | 12 de fevereiro de 2019 |
+| Rel 19-02 | [4483484] | Segurança do .NET 3,5 | 4,63 | 12 de fevereiro de 2019 |
+| Rel 19-02 | [4483472] | Segurança do .NET 4.5.2 | 4,63 | 12 de fevereiro de 2019 |
 | Rel 19-02 | [4487026] | Segurança do Windows | 5.28 | 12 de fevereiro de 2019 |
 | Rel 19-02 | [4487044] | Segurança do Windows | 6.4 | 12 de fevereiro de 2019 |
-| Rel 19-02 | [4483452] | O .NET 3.5, 4.7.2 segurança | 6.4 | 12 de fevereiro de 2019 |
-| N/D | [4480970] | Pacote cumulativo de atualizações de janeiro sem segurança | 2.83 | 8 de janeiro de 2019 |
-| N/D | [4483483] | O .NET 3.5.1 pacote cumulativo de atualizações de janeiro sem segurança  | 2.83 | 8 de janeiro de 2019 |
-| N/D | [4480059] | O .NET 4.5.2 pacote cumulativo de atualizações de janeiro sem segurança  | 2.83 | 8 de janeiro de 2019 |
-| N/D | [4480975] | Pacote cumulativo de atualizações de janeiro sem segurança | 3.70 | 8 de janeiro de 2019 |
-| N/D | [4480061] | Rollup de janeiro sem segurança .NET 3.5 | 3.70 | 8 de janeiro de 2019 |
-| N/D | [4480058] | O .NET 4.5.2 pacote cumulativo de atualizações de janeiro sem segurança | 3.70 | 8 de janeiro de 2019 |
-| N/D | [4480963] | Pacote cumulativo de atualizações de janeiro sem segurança | 4.63 | 8 de janeiro de 2019 |
-| N/D | [4480064] | Rollup de janeiro sem segurança .NET 3.5 | 4.63 | 8 de janeiro de 2019 |
-| N/D | [4480057] | O .NET 4.5.2 pacote cumulativo de atualizações de janeiro sem segurança | 4.63 | 8 de janeiro de 2019 |
+| Rel 19-02 | [4483452] | .NET 3,5, segurança 4.7.2 | 6.4 | 12 de fevereiro de 2019 |
+| N/D | [4480970] | ROLLUP não relacionado à segurança de janeiro | 2,83 | 8 de janeiro de 2019 |
+| N/D | [4483483] | ROLLUP de Janeiro não relacionado à segurança .NET 3.5.1  | 2,83 | 8 de janeiro de 2019 |
+| N/D | [4480059] | Pacote cumulativo de atualizações sem segurança de janeiro de 4.5.2 do .NET  | 2,83 | 8 de janeiro de 2019 |
+| N/D | [4480975] | ROLLUP não relacionado à segurança de janeiro | 3,70 | 8 de janeiro de 2019 |
+| N/D | [4480061] | ROLLUP de Janeiro não relacionado à segurança .NET 3,5 | 3,70 | 8 de janeiro de 2019 |
+| N/D | [4480058] | Pacote cumulativo de atualizações sem segurança de janeiro de 4.5.2 do .NET | 3,70 | 8 de janeiro de 2019 |
+| N/D | [4480963] | ROLLUP não relacionado à segurança de janeiro | 4,63 | 8 de janeiro de 2019 |
+| N/D | [4480064] | ROLLUP de Janeiro não relacionado à segurança .NET 3,5 | 4,63 | 8 de janeiro de 2019 |
+| N/D | [4480057] | Pacote cumulativo de atualizações sem segurança de janeiro de 4.5.2 do .NET | 4,63 | 8 de janeiro de 2019 |
 
 [4486474]: https://support.microsoft.com/kb/4486474
 [4487038]: https://support.microsoft.com/kb/4487038
@@ -260,9 +302,9 @@ As tabelas a seguir mostram as atualizações do Microsoft Security Response Cen
 | Rel 19-01 | [4480074] | Segurança do .NET 4. x | 4.62 | 8 de janeiro de 2019 |
 | Rel 19-01 | [4480075] | Segurança do .NET 4. x | 3.69 | 8 de janeiro de 2019 |
 | Rel 19-01 | [4480076] | Segurança do .NET 4. x | 2.82 | 8 de janeiro de 2019 |
-| Rel 19-01 | [4480086] | Segurança do .NET 3.x | 4.62 | 8 de janeiro de 2019 |
-| Rel 19-01 | [4480083] | Segurança do .NET 3.x | 3.69 | 8 de janeiro de 2019 |
-| Rel 19-01 | [4480085] | Segurança do .NET 3.x | 2.82 | 8 de janeiro de 2019 |
+| Rel 19-01 | [4480086] | Segurança do .NET 3. x | 4.62 | 8 de janeiro de 2019 |
+| Rel 19-01 | [4480083] | Segurança do .NET 3. x | 3.69 | 8 de janeiro de 2019 |
+| Rel 19-01 | [4480085] | Segurança do .NET 3. x | 2.82 | 8 de janeiro de 2019 |
 | Rel 19-01 | [4480979] | Piscando | 3.69, 4.62, 5.27, 6.3 | 8 de janeiro de 2019 |
 | Rel 19-01 | [4480965] | Internet Explorer | 2.82, 3.69, 4.62 | 8 de janeiro de 2019 |
 | N/D | [4471318] | Rollup não relacionado à segurança de dezembro | 2.82 | 11 de dezembro de 2018 |
@@ -307,10 +349,10 @@ As tabelas a seguir mostram as atualizações do Microsoft Security Response Cen
 | Rel 18-12 | [4471328] | Segurança do Windows   | 2.81 | 11 de dezembro de 2018 |
 | Rel 18-12 | [4471326] | Segurança do Windows   | 3.68 | 11 de dezembro de 2018 |
 | Rel 18-12 | [4471322] | Segurança do Windows   | 4.61 | 11 de dezembro de 2018 |
-| Rel 18-12 | [4470600] | Segurança do .NET 3.x  | 2.81 | 11 de dezembro de 2018 |
-| Rel 18-12 | [4470601] | Segurança do .NET 3.x  | 3.68 | 11 de dezembro de 2018|
-| Rel 18-12 | [4470602] | Segurança do .NET 3.x  | 4.61 | 11 de dezembro de 2018 |
-| Rel 18-12 | [4470493] | Segurança do .NET 4. x  | 2.81 | 11 de dezembro de 2018 |
+| Rel 18-12 | [4470600] | Segurança do .NET 3. x  | 2,81 | 11 de dezembro de 2018 |
+| Rel 18-12 | [4470601] | Segurança do .NET 3. x  | 3.68 | 11 de dezembro de 2018|
+| Rel 18-12 | [4470602] | Segurança do .NET 3. x  | 4.61 | 11 de dezembro de 2018 |
+| Rel 18-12 | [4470493] | Segurança do .NET 4. x  | 2,81 | 11 de dezembro de 2018 |
 | Rel 18-12 | [4470492] | Segurança do .NET 4. x  | 3.68 | 11 de dezembro de 2018 |
 | Rel 18-12 | [4470491] | Segurança do .NET 4. x  | 4.61| 11 de dezembro de 2018 |
 | Rel 18-12 | [4471331] | Piscando  | 3.68, 4.61, 5.26 | 5 de dezembro de 2018  |
@@ -667,11 +709,11 @@ As tabelas a seguir mostram as atualizações do Microsoft Security Response Cen
 | N/D | [4014508] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |2.63 |9 de maio de 2017 |
 | N/D | [4014511] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |2.63 |9 de maio de 2017 |
 | N/D | [4014514] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |2.63 |9 de maio de 2017 |
-| N/D | [4019216] |Pacote cumulativo de atualizações não relacionado à segurança de maio |3.50 |9 de maio de 2017 |
-| N/D | [4014503] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |3.50 |9 de maio de 2017 |
-| N/D | [4014506] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |3.50 |9 de maio de 2017 |
-| N/D | [4014509] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |3.50 |9 de maio de 2017 |
-| N/D | [4014513] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |3.50 |9 de maio de 2017 |
+| N/D | [4019216] |Pacote cumulativo de atualizações não relacionado à segurança de maio |3,50 |9 de maio de 2017 |
+| N/D | [4014503] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |3,50 |9 de maio de 2017 |
+| N/D | [4014506] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |3,50 |9 de maio de 2017 |
+| N/D | [4014509] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |3,50 |9 de maio de 2017 |
+| N/D | [4014513] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |3,50 |9 de maio de 2017 |
 | N/D | [4019215] |Pacote cumulativo de atualizações não relacionado à segurança de maio |4.43 |9 de maio de 2017 |
 | N/D | [4014505] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |4.43 |9 de maio de 2017 |
 | N/D | [4014507] |Pacote cumulativo de atualizações não relacionado à segurança do .NET de maio |4.43 |9 de maio de 2017 |
@@ -689,7 +731,7 @@ As tabelas a seguir mostram as atualizações do Microsoft Security Response Cen
 | Rel 17-05 | [4010323] |Assistente SHA1 |2.62, 4.42, 5.7 | 9 de maio de 2017 |
 | Rel 17-05 | [4022344] |Comunicado de Segurança da Microsoft |5.7 | 9 de maio de 2017 |
 | Rel 17-05 | [4022345] |Comunicado de Segurança da Microsoft |5.7 | 9 de maio de 2017 |
-| Rel 17-05 | [4021279] |Comunicado do .NET /ASP.NET core |2.62, 3.49, 4.42, 5.7 | 9 de maio de 2017 |
+| Rel 17-05 | [4021279] |Consultoria .NET/ASP.NET Core |2.62, 3.49, 4.42, 5.7 | 9 de maio de 2017 |
 | N/D | [4012864] |Atualização de fuso horário |2.62, 3.49, 4.42 | 9 de maio de 2017 |
 | N/D | [4014565] |Rollup não relacionado à segurança de .NET de abril |2.62 | 11 de abril de 2017 |
 | N/D | [4014559] |Rollup não relacionado à segurança de .NET de abril |2.62 | 11 de abril de 2017 |
@@ -1020,7 +1062,7 @@ As tabelas a seguir mostram as atualizações do Microsoft Security Response Cen
 | MS15-075 |[3072633] |Vulnerabilidades no OLE poderiam permitir elevação de privilégio |4.22, 3.29, 2.41 |14 de julho de 2015 |
 | MS15-076 |[3067505] |A vulnerabilidade na chamada de procedimento remoto do Windows poderia permitir elevação de privilégio |4.22, 3.29, 2.41 |14 de julho de 2015 |
 | MS15-077 |[3077657] |A vulnerabilidade no driver de fonte do ATM poderia permitir elevação de privilégio |4.22, 3.29, 2.41 |14 de julho de 2015 |
-| ND |[3057154] |Atualização para restringir o uso de criptografia DES |4.22, 3.29, 2.41 |14 de julho de 2015 |
+| N/A |[3057154] |Atualização para restringir o uso de criptografia DES |4.22, 3.29, 2.41 |14 de julho de 2015 |
 
 ## <a name="june-2015-guest-os"></a>SO convidado de junho de 2015
 | ID do boletim | Artigo da KB pai | Descrição da vulnerabilidade | SO convidado | Data da primeira introdução |
@@ -1053,7 +1095,7 @@ As tabelas a seguir mostram as atualizações do Microsoft Security Response Cen
 | MS15-040 |[3045711] |Vulnerabilidade no ADFS poderia permitir a divulgação de informações |4.20, 3.27, 2.39 |17 de abril de 2015 |
 | MS15-041 |[3048010] |Vulnerabilidade no .NET Framework poderia permitir a divulgação de informações |4.20, 3.27, 2.39 |17 de abril de 2015 |
 | MS15-042 |[3047234] |Vulnerabilidade no Hyper-V do Windows poderia permitir a negação de serviço |4.20, 3.27, 2.39 |17 de abril de 2015 |
-| ND |[3045755] |Atualização para melhorar a autenticação PKU2U |4.20, 3.27, 2.39 |17 de abril de 2015 |
+| N/A |[3045755] |Atualização para melhorar a autenticação PKU2U |4.20, 3.27, 2.39 |17 de abril de 2015 |
 
 ## <a name="april-2015-guest-os"></a>SO convidado de abril de 2015
 | ID do boletim | Artigo da KB pai | Descrição da vulnerabilidade | SO convidado | Data da primeira introdução |

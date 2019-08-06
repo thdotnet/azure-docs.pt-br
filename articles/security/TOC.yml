@@ -50,7 +50,7 @@
         - name: Criptografia de disco para VMs de IaaS
           items:
             - name: Sobre o Azure Disk Encryption
-              displayName: 'Bitlocker, bek'
+              displayName: 'BitLocker, bek'
               href: azure-security-disk-encryption-overview.md
             - name: Guia de início rápido
               items:
@@ -70,7 +70,7 @@
                   href: azure-security-disk-encryption-windows.md
                 - name: Criptografia de disco para VMs do Linux
                   href: azure-security-disk-encryption-linux.md
-                - name: Criptografia de disco com o sequenciamento de extensão do VMSS
+                - name: Criptografia de disco com o sequenciamento de extensão do conjunto de dimensionamento de máquinas virtuais
                   href: azure-security-disk-encryption-extension-sequencing.md
                 - name: Apêndice da criptografia de disco
                   href: azure-security-disk-encryption-appendix.md
@@ -332,49 +332,3 @@
     - name: Teste de caneta
       displayName: penetration
       href: ./fundamentals/pen-testing.md
-    - name: Ferramenta de Modelagem de Ameaças da Microsoft
-      displayName: stride
-      href: ./develop/threat-modeling-tool.md
-      items:
-        - name: Introdução
-          href: ./develop/threat-modeling-tool-getting-started.md
-        - name: Visão geral do recurso
-          href: ./develop/threat-modeling-tool-feature-overview.md
-        - name: Ameaças
-          href: ./develop/threat-modeling-tool-threats.md
-        - name: Lançamentos
-          href: ./develop/threat-modeling-tool-releases.md
-          items:
-            - name: Versão 7.1.5091.2 de GA do Threat Modeling Tool – 12 de setembro de 2018
-              href: ./develop/threat-modeling-tool-releases-71509112.md
-            - name: Versão 7.1.51023.1 de atualização do Threat Modeling Tool – 1 de novembro de 2018
-              href: ./develop/threat-modeling-tool-releases-71510231.md
-            - name: Versão 7.1.60126.1 de atualização do Threat Modeling Tool – 29 de janeiro de 2019
-              href: ./develop/threat-modeling-tool-releases-71601261.md
-            - name: Versão 7.1.60408.1 de atualização do Threat Modeling Tool – 9 de abril de 2019
-              href: ./develop/threat-modeling-tool-releases-71604081.md
-            - name: Versão 7.1.60702.1 de atualização do Threat Modeling Tool – 02/07/2019
-              href: ./develop/threat-modeling-tool-releases-71607021.md
-        - name: Atenuações
-          href: ./develop/threat-modeling-tool-mitigations.md
-          items:
-            - name: Auditoria e log
-              href: ./develop/threat-modeling-tool-auditing-and-logging.md
-            - name: Authentication
-              href: ./develop/threat-modeling-tool-authentication.md
-            - name: Autorização
-              href: ./develop/threat-modeling-tool-authorization.md
-            - name: Segurança da Comunicação
-              href: ./develop/threat-modeling-tool-communication-security.md
-            - name: Gerenciamento de configuração
-              href: ./develop/threat-modeling-tool-configuration-management.md
-            - name: Criptografia
-              href: ./develop/threat-modeling-tool-cryptography.md
-            - name: Gerenciamento de Exceções
-              href: ./develop/threat-modeling-tool-exception-management.md
-            - name: Validação da entrada
-              href: ./develop/threat-modeling-tool-input-validation.md
-            - name: Dados Confidenciais
-              href: ./develop/threat-modeling-tool-sensitive-data.md
-            - name: Gerenciamento da sessão
-              href: ./develop/threat-modeling-tool-session-management.md

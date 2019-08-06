@@ -1,7 +1,7 @@
 ---
-title: O que é o Serviço de Fala do Azure?
+title: O que é o Serviço de Fala?
 titleSuffix: Azure Cognitive Services
-description: O Serviço de Fala do Azure é a unificação da conversão de fala em texto, da conversão de texto em fala e da tradução de fala em uma única assinatura do Azure. É fácil adicionar serviços de fala a seus aplicativos, ferramentas e dispositivos usando o SDK de Fala, o SDK de Dispositivos de Fala ou APIs REST. Adicione funcionalidades de fala a um chatbot existente, converta texto em fala em um aplicativo de tradução ou transcreva grandes volumes de dados de call center.
+description: O Serviço de Fala é a unificação da conversão de fala em texto, da conversão de texto em fala e da tradução de fala em uma única assinatura do Azure. É fácil adicionar serviços de fala a seus aplicativos, ferramentas e dispositivos usando o SDK de Fala, o SDK de Dispositivos de Fala ou APIs REST. Adicione funcionalidades de fala a um chatbot existente, converta texto em fala em um aplicativo de tradução ou transcreva grandes volumes de dados de call center.
 services: cognitive-services
 author: erhopf
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: overview
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: d9664ac9fb72a5f094674856a20230199270f01d
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 1d722d7e2886008aa5aa3acff8095fcf35ac38d8
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603159"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68554170"
 ---
 # <a name="what-are-the-speech-services"></a>O que é o Serviço de Fala?
 

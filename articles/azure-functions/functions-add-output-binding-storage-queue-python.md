@@ -11,20 +11,20 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: python
 manager: jeconnoc
-ms.openlocfilehash: c2565a5549cbca08b987883e5905f09070b5ab2c
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 34ec7c678410b2e0814f8dbb7a69257886cb891d
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67443194"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639120"
 ---
 # <a name="add-an-azure-storage-queue-binding-to-your-python-function"></a>Adicionar uma associação de fila do Armazenamento do Azure à sua função do Python
 
-O Azure Functions lhe permite conectar os serviços do Azure e outros recursos às funções sem precisar escrever seu próprio código de integração. Essas *associações*, que representam a entrada e a saída, são declaradas na definição de função. Dados de associações são fornecidos à função como parâmetros. Um gatilho é um tipo especial de associação de entrada. Embora uma função tenha apenas um gatilho, ela pode ter várias associações de entrada e de saída. Para saber mais, confira [Conceitos de gatilhos e de associações do Azure Functions](functions-triggers-bindings.md).
+O Azure Functions lhe permite conectar os serviços do Azure e outros recursos às funções sem precisar escrever seu próprio código de integração. Essas *associações*, que representam a entrada e a saída, são declaradas na definição de função. Dados de associações são fornecidos à função como parâmetros. Um *gatilho* é um tipo especial de associação de entrada. Embora uma função tenha apenas um gatilho, ela pode ter várias associações de entrada e de saída. Para saber mais, confira [Conceitos de gatilhos e de associações do Azure Functions](functions-triggers-bindings.md).
 
-Este artigo mostra como integrar a função criada no [artigo de início rápido anterior](functions-create-first-function-python.md) com uma fila de Armazenamento do Azure. A associação de saída que você adiciona a essa função escreve dados da solicitação HTTP em uma mensagem na fila. 
+Este artigo mostra como integrar a função criada no [artigo de início rápido anterior](functions-create-first-function-python.md) com uma fila de Armazenamento do Azure. A associação de saída que você adiciona a essa função escreve dados de uma solicitação HTTP em uma mensagem na fila.
 
-A maioria das associações requer uma cadeia de conexão armazenada que o Functions usa para acessar o serviço vinculado. Para facilitar, use a Conta de armazenamento que você criou com o seu aplicativo de funções. A conexão com essa conta já está armazenada em uma configuração de aplicativo chamada `AzureWebJobsStorage`.  
+A maioria das associações requer uma cadeia de conexão armazenada que o Functions usa para acessar o serviço vinculado. Para facilitar essa conexão, use a conta de armazenamento que você criou com o seu aplicativo de funções. A conexão com essa conta já está armazenada em uma configuração de aplicativo chamada `AzureWebJobsStorage`.  
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -32,13 +32,13 @@ Antes de iniciar este artigo, conclua as etapas na [parte 1 do início rápido d
 
 ## <a name="download-the-function-app-settings"></a>Baixar as configurações do aplicativo de funções
 
-No artigo de início rápido anterior, você criou um aplicativo de funções no Azure, juntamente com a Conta de armazenamento necessária. A cadeia de conexão dessa conta é armazenada com segurança nas configurações do aplicativo no Azure. Neste artigo, você escreverá mensagens em uma Fila de armazenamento na mesma conta. Para se conectar à sua Conta de armazenamento ao executar a função localmente, é necessário baixar as configurações do aplicativo para o arquivo local.settings.json. Execute o seguinte comando do Azure Functions Core Tools para baixar as configurações para local.settings.json, substituindo `<APP_NAME>` pelo nome do seu aplicativo de funções do artigo anterior:
+No artigo de Início Rápido anterior, você criou um aplicativo de funções no Azure, juntamente com a conta de armazenamento necessária. A cadeia de conexão dessa conta é armazenada com segurança nas configurações do aplicativo no Azure. Neste artigo, você escreverá mensagens em uma Fila de armazenamento na mesma conta. Para se conectar à sua Conta de armazenamento ao executar a função localmente, é necessário baixar as configurações do aplicativo para o arquivo local.settings.json. Execute o comando do Azure Functions Core Tools a seguir para baixar as configurações para local.settings.json, substituindo `<APP_NAME>` pelo nome do seu aplicativo de funções do artigo anterior:
 
 ```bash
 func azure functionapp fetch-app-settings <APP_NAME>
 ```
 
-Talvez seja necessário entrar em sua conta do Azure.
+Talvez você precise entrar em sua conta do Azure.
 
 > [!IMPORTANT]  
 > Como ela contém segredos, o arquivo local.settings.json nunca é publicado e deve ser excluído do controle do código-fonte.
@@ -49,23 +49,23 @@ Talvez seja necessário entrar em sua conta do Azure.
 
 [!INCLUDE [functions-extension-bundles](../../includes/functions-extension-bundles.md)]
 
-Agora, você pode adicionar uma associação de saída do armazenamento ao seu projeto.
+Agora, você pode adicionar a associação de saída do Armazenamento ao seu projeto.
 
 ## <a name="add-an-output-binding"></a>Adicionar uma associação de saída
 
-No Functions, cada tipo de associação requer que um `direction`, `type` e um `name` exclusivo seja definido no arquivo functions.json. Dependendo do tipo de associação, outras propriedades podem ser necessárias. A [configuração de saída da fila](functions-bindings-storage-queue.md#output---configuration) descreve os campos obrigatórios para uma associação de fila do Armazenamento do Azure.
+No Functions, cada tipo de associação requer que um `direction`, um `type` e um `name` exclusivo seja definido no arquivo functions.json. Dependendo do tipo de associação, outras propriedades podem ser necessárias. A [configuração de saída da fila](functions-bindings-storage-queue.md#output---configuration) descreve os campos obrigatórios para uma associação de fila do Armazenamento do Azure.
 
-Para criar uma associação, adicione um objeto de configuração de associação ao arquivo `function.json`. Edite o arquivo function.json em sua pasta HttpTrigger para adicionar um objeto à matriz `bindings` que tem as seguintes propriedades:
+Para criar uma associação, adicione um objeto de configuração de associação ao arquivo function.json. Edite o arquivo function.json em sua pasta HttpTrigger para adicionar um objeto à matriz `bindings` que tem estas propriedades:
 
 | Propriedade | Valor | DESCRIÇÃO |
 | -------- | ----- | ----------- |
-| **`name`** | `msg` | Nome que identifica o parâmetro de associação referenciado em seu código. |
+| **`name`** | `msg` | O nome que identifica o parâmetro de associação referenciado em seu código. |
 | **`type`** | `queue` | A associação é uma associação de fila do Armazenamento do Azure. |
 | **`direction`** | `out` | A associação é uma associação de saída. |
-| **`queueName`** | `outqueue` | O nome da fila na qual a associação escreve. Quando o *queueName* não existe, a associação o cria no primeiro uso. |
+| **`queueName`** | `outqueue` | O nome da fila na qual a associação escreve. Quando o `queueName` não existe, a associação o cria no primeiro uso. |
 | **`connection`** | `AzureWebJobsStorage` | O nome de uma configuração de aplicativo que contém a cadeia de conexão da Conta de armazenamento. A configuração `AzureWebJobsStorage` contém a cadeia de conexão para a Conta de armazenamento criada com o aplicativo de funções. |
 
-Seu arquivo function.json agora deve ter a aparência do exemplo a seguir:
+O arquivo function.json agora deve ter a aparência do exemplo a seguir:
 
 ```json
 {
@@ -99,7 +99,7 @@ Seu arquivo function.json agora deve ter a aparência do exemplo a seguir:
 
 ## <a name="add-code-that-uses-the-output-binding"></a>Adicionar o código que usa a associação de saída
 
-Depois que ele estiver configurado, será possível começar a usar o `name` da associação para acessá-lo como um atributo de método na assinatura de função. No exemplo a seguir, `msg` é uma instância do [`azure.functions.InputStream class`](/python/api/azure-functions/azure.functions.httprequest).
+Depois que o `name` estiver configurado, será possível começar a usá-lo para acessar a associação como um atributo de método na assinatura de função. No exemplo a seguir, `msg` é uma instância do [`azure.functions.InputStream class`](/python/api/azure-functions/azure.functions.httprequest).
 
 ```python
 import logging
@@ -139,7 +139,7 @@ func host start
 ```
 
 > [!NOTE]  
-> Como o artigo anterior exigia que você habilitasse os pacotes de extensões no host.json, a [Extensão de associação de armazenamento](functions-bindings-storage-blob.md#packages---functions-2x) foi baixada e instalada para você durante a inicialização, juntamente com outras extensões de associação da Microsoft.
+> Já que no Início Rápido anterior você habilitou os pacotes de extensões no host.json, a [extensão de associação do armazenamento](functions-bindings-storage-blob.md#packages---functions-2x) foi baixada e instalada para você durante a inicialização, juntamente com outras extensões de associação da Microsoft.
 
 Copie a URL da função `HttpTrigger` da saída do tempo de execução de função e cole-a na barra de endereços do navegador. Acrescente o valor de cadeia de consulta `?name=<yourname>` a essa URL e execute a solicitação. Você deve ver a mesma resposta no navegador como você viu no artigo anterior.
 
@@ -155,7 +155,7 @@ Abra o arquivo local.settings.json e copie o valor de `AzureWebJobsStorage`, que
 export AZURE_STORAGE_CONNECTION_STRING=<STORAGE_CONNECTION_STRING>
 ```
 
-Com a cadeia de conexão definida na variável de ambiente `AZURE_STORAGE_CONNECTION_STRING`, é possível acessar sua Conta de armazenamento sem ter que fornecer a autenticação toda vez.
+Quando você definir a cadeia de conexão na variável de ambiente `AZURE_STORAGE_CONNECTION_STRING`, é possível acessar a conta de Armazenamento sem ter que fornecer a autenticação toda vez.
 
 ### <a name="query-the-storage-queue"></a>Consultar a Fila de armazenamento
 
@@ -167,7 +167,7 @@ az storage queue list --output tsv
 
 A saída desse comando inclui uma fila denominada `outqueue`, que é a fila que foi criada quando a função foi executada.
 
-Em seguida, use o comando [`az storage message peek`](/cli/azure/storage/message#az-storage-message-peek) para exibir as mensagens nesta fila, como no exemplo a seguir.
+Em seguida, use o comando [`az storage message peek`](/cli/azure/storage/message#az-storage-message-peek) para exibir as mensagens nessa fila, como no exemplo a seguir:
 
 ```azurecli-interactive
 echo `echo $(az storage message peek --queue-name outqueue -o tsv --query '[].{Message:content}') | base64 --decode`
@@ -188,13 +188,13 @@ Novamente, é possível usar cURL ou um navegador para testar a função implant
 curl https://myfunctionapp.azurewebsites.net/api/httptrigger?code=cCr8sAxfBiow548FBDLS1....&name=<yourname>
 ```
 
-É possível [Examinar a Mensagem da fila de armazenamento](#query-the-storage-queue) para verificar se a associação de saída gera novamente uma nova mensagem na fila.
+É possível [examinar a Mensagem da fila de armazenamento](#query-the-storage-queue) para verificar se a associação de saída gera novamente uma nova mensagem na fila.
 
 [!INCLUDE [functions-cleanup-resources](../../includes/functions-cleanup-resources.md)]
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Você atualizou sua função disparada por HTTP para gravar dados em uma Fila de armazenamento. Para saber mais sobre como desenvolver o Azure Functions usando o Python, confira o [Guia do desenvolvedor de Python para o Azure Functions](functions-reference-python.md) e [Gatilhos e associações do Azure Functions](functions-triggers-bindings.md).
+Você atualizou a função disparada por HTTP para gravar dados em uma fila de armazenamento. Para saber mais sobre como desenvolver o Azure Functions usando o Python, confira o [Guia do desenvolvedor de Python para o Azure Functions](functions-reference-python.md) e [Gatilhos e associações do Azure Functions](functions-triggers-bindings.md).
 
 Em seguida, você deve habilitar o monitoramento do Application Insights para seu aplicativo de funções:
 

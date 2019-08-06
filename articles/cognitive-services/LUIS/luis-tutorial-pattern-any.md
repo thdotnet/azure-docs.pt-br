@@ -1,5 +1,5 @@
 ---
-title: Entidade pattern.any
+title: Entidade pattern.any – LUIS
 titleSuffix: Azure Cognitive Services
 description: Use a entidade pattern.any para extrair dados de enunciados quando o enunciado está bem formatado e quando o fim dos dados pode ser facilmente confundido com as palavras restantes do enunciado.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 06/12/2019
 ms.author: diberry
-ms.openlocfilehash: 6007f88af4d1049a87851b3808c66693173a648a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 165163d0a889e0bd5f1faef8d7f6a17d28c2b4f7
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67069242"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563270"
 ---
 # <a name="tutorial-extract-free-form-data-with-patternany-entity"></a>Tutorial: Extrair dados de forma livre com a entidade Pattern.any
 

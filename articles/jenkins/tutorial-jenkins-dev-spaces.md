@@ -6,19 +6,19 @@ ms.author: tarcher
 ms.service: jenkins
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 06/18/2019
-ms.openlocfilehash: f5f74ebeb803a5c493f1dbedb6501adf3a88c215
-ms.sourcegitcommit: 1572b615c8f863be4986c23ea2ff7642b02bc605
+ms.date: 07/31/2019
+ms.openlocfilehash: 10ff8f4645ee1e7023c96174236243a3b85de938
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67785663"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68679117"
 ---
 <!-- GMinchAQ, 06/18/19 -->
 
 # <a name="tutorial-using-the-azure-dev-spaces-plugin-for-jenkins-with-azure-kubenetes-service"></a>Tutorial: Usando o plug-in do Azure Dev Spaces para Jenkins com o Serviço de Kubernetes do Azure 
 
-O Azure Dev Spaces permite que você teste e desenvolva de modo iterativo seu aplicativos de microsserviço em execução no AKS (Serviço de Kubernetes do Azure) sem precisar replicar nem simular dependências. O plug-in Azure Dev Spaces para Jenkins ajuda a usar o Dev Spaces em seu pipeline de entrega (CI/CD) e integração contínua.
+O Azure Dev Spaces permite que você teste e desenvolva de modo iterativo seu aplicativos de microsserviço em execução no AKS (Serviço de Kubernetes do Azure) sem precisar replicar nem simular dependências. O plug-in do Azure Dev Spaces para Jenkins ajuda a usar o Dev Spaces em seu pipeline de entrega (CI/CD) e integração contínua.
 
 Este tutorial utiliza o ACR (Registro de Contêiner do Azure). O ACR armazena imagens e uma Tarefa do ACR compila os artefatos do Docker e do Helm. Usar o ACR e a Tarefas do ACR para geração de artefato elimina a necessidade de instalar software adicional, como o Docker, em seu servidor Jenkins. 
 
@@ -175,7 +175,7 @@ Nesta seção, você prepara o servidor Jenkins para executar o pipeline de CI d
 * Instalar a CLI do Helm e do Kubernetes
 * Adicionar credenciais
 
-### <a name="install-plugins"></a>Instalar plug-ins
+### <a name="install-plug-ins"></a>Instalar plug-ins
 
 1. Entre no seu servidor Jenkins. Escolha **Gerenciar Jenkins > Gerenciar Plug-ins**.
 2. Na guia **Disponível**, selecione os seguintes plug-ins:
@@ -184,7 +184,7 @@ Nesta seção, você prepara o servidor Jenkins para executar o pipeline de CI d
     * [Injetor do Ambiente](https://plugins.jenkins.io/envinject)
     * [Integração com o GitHub](https://plugins.jenkins.io/github-pullrequest)
 
-    Se esses plug-ins não aparecem na lista, verifique a guia **Instalado** para ver se eles já estão instalados.
+    Se esses plug-ins não aparecerem na lista, verifique a guia **Instalado** para ver se já estão instalados.
 
 3. Para instalar os plug-ins, escolha **Baixar agora e instalar após a reinicialização**.
 

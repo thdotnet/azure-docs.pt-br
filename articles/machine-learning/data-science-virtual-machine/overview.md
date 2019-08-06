@@ -4,7 +4,7 @@ description: Principais cenários de análise e componentes para Máquinas Virtu
 keywords: ferramentas de ciência de dados, máquina virtual de ciência de dados, ferramentas para ciência de dados, ciência de dados do linux
 services: machine-learning
 documentationcenter: ''
-author: gopitk
+author: vijetajo
 manager: cgronlun
 ms.assetid: d4f91270-dbd2-4290-ab2b-b7bfad0b2703
 ms.service: machine-learning
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
 ms.date: 02/22/2019
-ms.author: gokuma
-ms.openlocfilehash: 384cb274496670e0b0b5a33e001e78a0babed3f0
-ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
+ms.author: vijetaj
+ms.openlocfilehash: 5816f53115f3ec54cbd9784894a5262b68dd6e95
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66427785"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68565182"
 ---
-# <a name="introduction-to-azure-data-science-virtual-machine-for-linux-and-windows"></a>Introdução à Máquina Virtual de Ciência de Dados do Azure para Linux e Windows
+# <a name="what-is-azure-data-science-virtual-machine-for-linux-and-windows"></a>O que é a Máquina Virtual de Ciência de Dados do Azure para Linux e Windows?
 
 A DSVM (Máquina Virtual de Ciência de Dados) é uma imagem de VM personalizada na nuvem do Microsoft Azure especificamente criada para ciência de dados. Ela tem muitas ferramentas conhecidas de ciência de dados, entre outras, pré-instaladas e pré-configuradas que ajudam a começar a criar rapidamente aplicativos inteligentes para análise avançada. Ela está disponível no Windows Server e no Linux. Oferecemos a edição do Windows do DSVM no Server 2016 e no Server 2012. Oferecemos edições de Linux do DSVM no Ubuntu 16.04 LTS e no CentOS 7.4.
 
@@ -48,7 +48,7 @@ As maratonas/competições de ciência de dados ou modelagem e exploração de d
 
 ### <a name="custom-compute-power-for-azure-notebooks"></a>O poder da computação personalizada para o Azure Notebooks
 
-O [Azure Notebooks](/azure/notebooks/azure-notebooks-overview) é um serviço hospedado gratuito para desenvolver, executar e compartilhar os notebooks do Jupyter na nuvem sem instalação. No entanto, a camada de serviço gratuita está limitada a 4 GB de memória e 1 GB de dados. Para liberar todos os limites, você pode anexar um projeto do Notebooks a uma VM de Ciência de Dados ou a qualquer outra máquina virtual que esteja executando o servidor do Jupyter. Se você entrar no Azure Notebooks com uma conta usando o Azure Active Directory (como uma conta corporativa), os Notebooks exibirão automaticamente as VMs de Ciência de Dados em todas as assinaturas associadas a essa conta. Para obter mais informações, consulte [Gerenciar e configurar projetos – nível de computação](/azure/notebooks/configure-manage-azure-notebooks-projects#compute-tier).
+O [Azure Notebooks](../../notebooks/azure-notebooks-overview.md) é um serviço hospedado gratuito para desenvolver, executar e compartilhar os notebooks do Jupyter na nuvem sem instalação. No entanto, a camada de serviço gratuita está limitada a 4 GB de memória e 1 GB de dados. Para liberar todos os limites, você pode anexar um projeto do Notebooks a uma VM de Ciência de Dados ou a qualquer outra máquina virtual que esteja executando o servidor do Jupyter. Se você entrar no Azure Notebooks com uma conta usando o Azure Active Directory (como uma conta corporativa), os Notebooks exibirão automaticamente as VMs de Ciência de Dados em todas as assinaturas associadas a essa conta. Para obter mais informações, consulte [Gerenciar e configurar projetos – nível de computação](../../notebooks/configure-manage-azure-notebooks-projects.md#compute-tier).
 
 ### <a name="short-term-experimentation-and-evaluation"></a>Avaliação e experimento de curto prazo
 A VM de Ciência de Dados pode ser usada para avaliar ferramentas, ou aprender sobre elas, como o Microsoft ML Server, SQL Server, Visual Studio, Jupyter, kits de ferramentas de machine learning/aprendizado profundo, além de novas ferramentas conhecidas na comunidade com mínimo esforço de configuração. Como a VM de Ciência de Dados pode ser configurada rapidamente, ela pode ser aplicada em outros cenários de uso de curto prazo. Esses cenários incluem a replicação de testes publicados, execução de demonstrações, seguindo as instruções passo a passo em sessões online e tutoriais de conferência.
@@ -64,7 +64,7 @@ A Máquina Virtual de Ciência de Dados tem muitas ferramentas conhecidas de ci�
 | :------------------------------------------------------------------ |:-------------------:|:------------------:|
 | [Microsoft R Open](https://mran.microsoft.com/open/) com pacotes populares pré-instalados   |S                      | S             |
 | O [Microsoft ML Server (R, Python)](https://docs.microsoft.com/machine-learning-server/) Developer Edition inclui a <br />  estrutura de alto desempenho paralela e distribuída &nbsp;&nbsp;&nbsp;&nbsp;* [RevoScaleR/revoscalepy](https://docs.microsoft.com/machine-learning-server/r/concept-what-is-revoscaler) (R e Python)<br />  &nbsp;&nbsp;&nbsp;&nbsp;* [MicrosoftML](https://docs.microsoft.com/machine-learning-server/r/concept-what-is-the-microsoftml-package) – Novos algoritmos de AM de última geração da Microsoft <br />  &nbsp;&nbsp;&nbsp;&nbsp;* [Operacionalização do R e Python](https://docs.microsoft.com/machine-learning-server/what-is-operationalization)                                            |S                      | S |
-| [Microsoft Office](https://products.office.com/en-us/business/office-365-proplus-business-software) Pro-Plus com ativação compartilhada – Excel, Word e PowerPoint   |S                      |N              |
+| [Microsoft Office](https://products.office.com/business/office-365-proplus-business-software) Pro-Plus com ativação compartilhada – Excel, Word e PowerPoint   |S                      |N              |
 | [Anaconda Python](https://www.continuum.io/) 2.7, 3.5 com pacotes populares pré-instalados    |S                      |S              |
 | [JuliaPro](https://juliacomputing.com/products/juliapro.html) com pacotes populares para linguagem Julia pré-instalados                         |S                      |S              |
 | Bancos de dados relacionais                                                            | [SQL Server 2017](https://www.microsoft.com/sql-server/sql-server-2017) <br/> Developer Edition| [PostgreSQL](https://www.postgresql.org/) (CentOS),<br/>[SQL Server 2017](https://www.microsoft.com/sql-server/sql-server-2017) <br/> Developer Edition (Ubuntu) |

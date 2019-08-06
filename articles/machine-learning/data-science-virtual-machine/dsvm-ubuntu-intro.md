@@ -4,8 +4,8 @@ titleSuffix: Azure
 description: Configure e crie uma Máquina Virtual de Ciência de Dados para Linux (Ubuntu) no Azure para realizar a análise e o aprendizado de máquina.
 services: machine-learning
 documentationcenter: ''
-author: gopitk
-ms.author: gokuma
+author: vijetajo
+ms.author: vijetaj
 manager: cgronlun
 ms.custom: seodec18
 ms.assetid: 3bab0ab9-3ea5-41a6-a62a-8c44fdbae43b
@@ -14,14 +14,14 @@ ms.subservice: data-science-vm
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: quickstart
 ms.date: 03/16/2018
-ms.openlocfilehash: 5a9fdebc8db0c2a1acc20a894f80cfcc87fb89d5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.openlocfilehash: 8a19f414f31c307111edad876ed973ff4027d907
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66236484"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68591924"
 ---
 # <a name="provision-the-data-science-virtual-machine-for-linux-ubuntu"></a>Provisionar a Máquina Virtual de Ciência de Dados para Linux (Ubuntu)
 
@@ -101,7 +101,7 @@ Veja as etapas para criar uma instância da Máquina Virtual de Ciência de Dado
 
    b. **Tamanho**:
 
-   * Selecione um dos tipos de servidor que atenda aos seus requisitos funcionais e restrições de custo. Selecione uma VM de classe ND para instâncias de VM baseadas em GPU ou o NC. A página [Produtos disponíveis por região](https://azure.microsoft.com/global-infrastructure/services/) lista as regiões com GPUs.
+   * Selecione um dos tipos de servidor que atenda aos seus requisitos funcionais e restrições de custo. Selecione uma VM de classe NC ou ND para instâncias de VMs com base em GPU. A página [Produtos disponíveis por região](https://azure.microsoft.com/global-infrastructure/services/) lista as regiões com GPUs.
 
    c. **Configurações**:
 
@@ -121,7 +121,7 @@ O provisionamento deve demorar cerca de 5 minutos. O status do provisionamento �
 1. X2Go para sessões gráficas
 1. JupyterHub e JupyterLab para notebooks Jupyter
 
-Você também pode anexar uma VM de ciência de dados para o Azure Notebooks para executar os notebooks Jupyter na VM e ignorar as limitações da camada de serviço gratuito. Para obter mais informações, consulte [gerenciar e configurar projetos de blocos de anotações - camada de computação](/azure/notebooks/configure-manage-azure-notebooks-projects#compute-tier).
+Também é possível anexar uma VM de Ciência de Dados ao Azure Notebooks para executar os Jupyter Notebooks na VM e ignorar as limitações da camada de serviço gratuita. Para saber mais, confira [Gerenciar e configurar projetos do Notebooks – Camada de computação](../../notebooks/configure-manage-azure-notebooks-projects.md#compute-tier).
 
 ### <a name="ssh"></a>SSH
 
@@ -148,9 +148,9 @@ Após o logon na VM usando o cliente SSH ou a área de trabalho gráfica XFCE po
 
 ### <a name="jupyterhub-and-jupyterlab"></a>JupyterHub e JupyterLab
 
-A DSVM do Ubuntu executa o [JupyterHub](https://github.com/jupyterhub/jupyterhub), um servidor Jupyter multiusuário. Para se conectar, navegue até https:\// seu-vm-ip:8000 em seu laptop ou desktop, insira o nome de usuário e a senha que você usou para criar a VM e entrar. Muitos notebooks de exemplo estão disponíveis para você procurar e experimentar.
+A DSVM do Ubuntu executa o [JupyterHub](https://github.com/jupyterhub/jupyterhub), um servidor Jupyter multiusuário. Para se conectar, navegue até https:\//your-vm-ip:8000 em seu computador desktop ou laptop, insira o nome de usuário e a senha usados para criar a VM e entre. Muitos notebooks de exemplo estão disponíveis para você procurar e experimentar.
 
-O JupyterLab, a próxima geração de notebooks Jupyter e JupyterHub, também está disponível. Para acessá-lo, entrar no JupyterHub e, em seguida, navegue até a URL https:\// seu-vm-ip:8000/usuário/your-nome de usuário/laboratório. Você pode definir o JupyterLab como o servidor de notebook padrão adicionando esta linha ao */etc/jupyterhub/jupyterhub_config.py*:
+O JupyterLab, a próxima geração de notebooks Jupyter e JupyterHub, também está disponível. Para acessá-lo, entre no JupyterHub e, em seguida, procure a URL https:\//your-vm-ip:8000/user/your-username/lab. É possível definir o JupyterLab como o servidor de Notebook padrão adicionando esta linha a */etc/jupyterhub/jupyterhub_config.py*:
 
 ```python
 c.Spawner.default_url = '/lab'
@@ -209,7 +209,7 @@ DIGITS também é instalado como um módulo do Python no ambiente raiz Conda.
 
 #### <a name="tensorflow"></a>TensorFlow
 
-TensorFlow é a biblioteca de aprendizado aprofundado do Google. É uma biblioteca de software livre para computação numérica usando grafos de fluxo de dados. O TensorFlow está disponível no ambiente de py35 do Python e alguns blocos de anotações de amostra estão incluídos no JupyterHub.
+TensorFlow é a biblioteca de aprendizado aprofundado do Google. É uma biblioteca de software open-source aberto para computação numérica usando grafos de fluxo de dados. O TensorFlow está disponível no ambiente de py35 do Python e alguns blocos de anotações de amostra estão incluídos no JupyterHub.
 
 #### <a name="theano"></a>Theano
 
@@ -286,11 +286,11 @@ Empacotamos exemplos de notebooks, um em Python em outro em R. Você pode ver o 
 
 ### <a name="apache-spark-standalone"></a>Apache Spark autônomo
 
-Há uma instância autônoma do Apache Spark pré-instalada no DSVM Linux para ajudar você a desenvolver aplicativos Spark localmente, antes de testar e implantar em clusters maiores. Execute programas PySpark através do kernel de Jupyter. Ao abrir o Jupyter, clique no botão **Novo** e verá uma lista de kernels disponíveis. O “Spark – Python” é o kernel PySpark que permite a criação de aplicativos Spark usando a linguagem Python. Você também pode usar um IDE Python como PyCharm ou Spyder para compilar seu programa Spark. Nessa instância autônomo, a pilha de Spark é executado dentro do programa de cliente de chamada, que torna mais rápido e mais fácil solucionar problemas em comparação ao desenvolver em um cluster Spark.
+Há uma instância autônoma do Apache Spark pré-instalada no DSVM Linux para ajudar você a desenvolver aplicativos Spark localmente, antes de testar e implantar em clusters maiores. Execute programas PySpark através do kernel de Jupyter. Ao abrir o Jupyter, clique no botão **Novo** e verá uma lista de kernels disponíveis. O “Spark – Python” é o kernel PySpark que permite a criação de aplicativos Spark usando a linguagem Python. Também é possível usar um IDE Python como PyCharm ou Spyder para criar seu programa em Spark. Nesta instância autônoma, a pilha do Spark é executada dentro do programa do cliente chamador, o que facilita e agiliza a solução de problemas em comparação com o desenvolvimento em um cluster Spark.
 
 Um exemplo de notebook PySpark é fornecido no Jupyter, e você pode encontrá-lo no diretório "SparkML" no diretório inicial do Jupyter ($HOME/notebooks/SparkML/pySpark). 
 
-Se você estiver programando em R para Spark, você pode usar o Microsoft R Server, SparkR ou sparklyr. 
+Se você estiver programando em R para Spark, use o Microsoft R Server, SparkR ou sparklyr. 
 
 Antes de executar no contexto do Spark no Microsoft R Server, execute uma etapa de configuração única para habilitar uma instância local de HDFS Hadoop e Yarn de nó único. Por padrão, os serviços do Hadoop serão instalados, mas desabilitados no DSVM. Para habilitá-los, execute os seguintes comandos como raiz na primeira vez:
 
@@ -304,9 +304,9 @@ chown hadoop:hadoop ~hadoop/.ssh/authorized_keys
 systemctl start hadoop-namenode hadoop-datanode hadoop-yarn
 ```
 
-Você pode interromper o Hadoop serviços relacionados quando não precisar deles, executando ```systemctl stop hadoop-namenode hadoop-datanode hadoop-yarn```
+É possível interromper os serviços Hadoop relacionados quando você não precisar deles executando ```systemctl stop hadoop-namenode hadoop-datanode hadoop-yarn```
 
-Um exemplo que demonstra como desenvolver e testar o MRS no contexto de Spark remoto (que é a instância de Spark autônoma no DSVM) é fornecido e disponibilizado na */dsvm/samples/MRS* directory.
+Um exemplo que demonstra como desenvolver e testar o MRS no contexto de Spark remoto (que é a instância de Spark autônoma no DSVM) é fornecido e disponibilizado no diretório */dsvm/samples/MRS*.
 
 ### <a name="ides-and-editors"></a>IDEs e editores
 
@@ -320,7 +320,7 @@ Você tem a opção de vários editores de código, incluindo vi/VIM, Emacs, PyC
 
 #### <a name="graphical-sql-client"></a>Cliente gráfico do SQL
 
-**SQuirrel SQL**, um cliente gráfico do SQL, foi fornecido para conectar-se a bancos de dados diferentes (como o Microsoft SQL Server e MySQL) e executar consultas SQL. Você pode executar o SQuirrel SQL de uma sessão de área de trabalho gráfica (usando o cliente X2Go, por exemplo) usando um ícone da área de trabalho ou, usando o seguinte comando no shell:
+**SQuirrel SQL**, um cliente gráfico do SQL, foi fornecido para conectar-se a bancos de dados diferentes (como o Microsoft SQL Server e MySQL) e executar consultas SQL. É possível executar o SQL do SQuirrel em uma sessão de logon gráfica (usando o cliente X2Go, por exemplo) que usa um ícone de área de trabalho ou usando o seguinte comando no shell:
 
 ```bash
 /usr/local/squirrel-sql-3.7/squirrel-sql.sh
@@ -359,7 +359,7 @@ Há bibliotecas disponíveis em R e Python para acessar bancos de dados.
 As ferramentas do Azure a seguir são instaladas na VM:
 
 * **Interface de linha de comando do Azure**: A CLI do Azure permite criar e gerenciar recursos do Azure por meio de comandos do shell. Para invocar as ferramentas do Azure, digite apenas **azure help**. Para saber mais, confira a [página de documentação da CLI do Azure](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2).
-* **Gerenciador de Armazenamento do Microsoft Azure**: O Gerenciador de Armazenamento do Microsoft Azure é uma ferramenta gráfica usada para navegar pelos objetos armazenados na sua Conta de Armazenamento do Azure e carregar e baixar os dados nos blobs do Azure. Você pode acessar o Gerenciador de Armazenamento do ícone de atalho da área de trabalho. Você pode invocá-lo de um prompt do shell digitando **StorageExplorer**. Você deve estar conectado em um cliente X2Go ou ter o encaminhamento do X11.
+* **Gerenciador de Armazenamento do Microsoft Azure**: O Gerenciador de Armazenamento do Microsoft Azure é uma ferramenta gráfica usada para navegar pelos objetos armazenados na sua Conta de Armazenamento do Azure e carregar e baixar os dados nos blobs do Azure. Você pode acessar o Gerenciador de Armazenamento do ícone de atalho da área de trabalho. Você pode invocá-lo de um prompt do shell digitando **StorageExplorer**. É necessário estar conectado em um cliente X2Go ou ter a configuração de encaminhamento X11.
 * **Bibliotecas do Azure**: Veja a seguir algumas das bibliotecas pré-instaladas.
   
   * **Python**: As bibliotecas relacionadas ao Azure no Python que estão instaladas são **azure**, **azureml**, **pydocumentdb** e **pyodbc**. Com as três primeiras bibliotecas, você pode acessar os serviços de armazenamento do Azure, o Azure Machine Learning e o Azure Cosmos DB (um banco de dados NoSQL no Azure). A quarta biblioteca, pyodbc (juntamente com o Microsoft ODBC Driver for SQL Server), habilita, do Python, o acesso ao SQL Server, ao Banco de Dados SQL do Azure e ao SQL Data Warehouse do Azure pelo uso de uma interface do ODBC. Insira **pip list** para ver todas as bibliotecas listadas. Certifique-se de executar este comando nos ambientes do Python 2.7 e 3.5.
@@ -372,7 +372,7 @@ Você pode acessar o [portal do Azure](https://portal.azure.com) do navegador Fi
 
 O Azure Machine Learning é um serviço de nuvem totalmente gerenciado que habilita você a compilar, implantar e compartilhar soluções de análise preditiva. Você compila seus modelos e experimentos do Azure Machine Learning Studio. Ele pode ser acessado de um navegador da Web na máquina virtual de ciência de dados visitando [Microsoft Azure Machine Learning](https://studio.azureml.net).
 
-Depois de fazer logon no Azure Machine Learning Studio, você tem acesso a uma tela de experimentação em que você pode compilar um fluxo lógico para os algoritmos de aprendizado de máquina. Você também tem acesso a um Notebook do Jupyter hospedado no Azure Machine Learning e pode trabalhar perfeitamente com o Machine Learning Studio. Coloque em operação os modelos de aprendizado de máquina compilados encapsulando-os em uma interface de serviço Web. Operacionalização de modelos do machine learning permite que os clientes escritos em qualquer linguagem invocar as previsões desses modelos. Para saber mais, confira a [Documentação do Machine Learning](https://azure.microsoft.com/documentation/services/machine-learning/).
+Depois de fazer logon no Azure Machine Learning Studio, você tem acesso a uma tela de experimentação em que você pode compilar um fluxo lógico para os algoritmos de aprendizado de máquina. Você também tem acesso a um Notebook do Jupyter hospedado no Azure Machine Learning e pode trabalhar perfeitamente com o Machine Learning Studio. Coloque em operação os modelos de aprendizado de máquina compilados encapsulando-os em uma interface de serviço Web. A operacionalização de modelos de machine learning permite que clientes escritos em qualquer linguagem invoquem previsões desses modelos. Para saber mais, confira a [Documentação do Machine Learning](https://azure.microsoft.com/documentation/services/machine-learning/).
 
 Você pode também criar seus modelos em R ou Python na VM e, em seguida, implantá-los em produção no Azure Machine Learning. Instalamos bibliotecas em R (**AzureML**) e Python (**azureml**) para habilitar essa funcionalidade.
 
@@ -455,7 +455,7 @@ library(rattle)
 rattle()
 ```
 
-Agora, uma interface gráfica é aberta com um conjunto de guias. Aqui estão as etapas do guia de início rápido no Rattle necessárias para usar um conjunto de dados de clima de exemplo e criar um modelo. Em algumas das etapas abaixo, você é solicitado a instalar e carregar automaticamente alguns pacotes do R que ainda não estão no sistema.
+Agora, uma interface gráfica é aberta com um conjunto de guias. Aqui estão as etapas de início rápido no Rattle necessárias para usar um conjunto de dados meteorológicos de exemplo e compilar um modelo. Em algumas das etapas abaixo, você é solicitado a instalar e carregar automaticamente alguns pacotes do R que ainda não estão no sistema.
 
 > [!NOTE]
 > Se não tiver acesso para instalar o pacote no diretório do sistema (o padrão), você poderá ver uma solicitação na janela do console do R para instalar pacotes na sua biblioteca pessoal. Caso veja essas solicitações, responda *s* .

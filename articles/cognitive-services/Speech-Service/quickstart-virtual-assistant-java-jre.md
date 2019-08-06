@@ -1,5 +1,5 @@
 ---
-title: 'Início Rápido: Assistente virtual personalizado que tem como prioridade o uso de voz (versão prévia), Java (Windows, Linux) – Serviços de Fala'
+title: 'Início Rápido: Assistente virtual personalizado que tem como prioridade o uso de voz (versão prévia), Java (Windows, Linux) – Serviço de Fala'
 titleSuffix: Azure Cognitive Services
 description: Neste Início Rápido, você aprenderá a usar o SDK (Software Development Kit) de Fala dos Serviços Cognitivos em um aplicativo de console Java. Você aprenderá como é possível conectar seu aplicativo cliente a um bot do Bot Framework criado anteriormente, configurado para usar o canal de Fala do Direct Line e proporcionar uma experiência de assistente virtual que tem como prioridade o uso de voz.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: bidishac
-ms.openlocfilehash: 78e80b276a13ee6e27fdf0515f2901fdeaa20c5d
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: b1be09a2af712277ccaad827b8e84e24ed9f5c5c
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67604920"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68553255"
 ---
 # <a name="quickstart-create-a-voice-first-virtual-assistant-with-the-speech-sdk-java"></a>Início Rápido: Criar um assistente virtual que tem como prioridade o uso de voz com o SDK de Fala, Java
 
@@ -480,5 +480,5 @@ Amostras adicionais, por exemplo, como ler a fala de um arquivo de áudio, estã
 - [Sobre assistentes virtuais com prioridade no uso de voz](voice-first-virtual-assistants.md)
 - [Obter gratuitamente uma chave de assinatura do Serviço de Fala](get-started.md)
 - [Palavras de ativação personalizadas](speech-devices-sdk-create-kws.md)
-- [Conectar a Fala do Direct Line ao seu bot](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)
+- [Conectar a Direct Line Speech ao seu bot](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)
 - [Explorar amostras de Java no GitHub](https://aka.ms/csspeech/samples)

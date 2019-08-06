@@ -1,5 +1,5 @@
 ---
-title: 'Início Rápido: Assistente virtual personalizado que tem como prioridade o uso de voz (versão prévia), C# (UWP) – Serviços de Fala'
+title: 'Início Rápido: Assistente virtual personalizado que tem como prioridade o uso de voz (versão prévia), C# (UWP) – Serviço de Fala'
 titleSuffix: Azure Cognitive Services
 description: Neste artigo, você criará um aplicativo UWP (Plataforma Universal do Windows) em C# usando o SDK (Software Development Kit) de Fala dos Serviços Cognitivos. Você conectará seu aplicativo cliente a um bot do Bot Framework criado anteriormente, configurado para usar o canal de Fala do Direct Line. O aplicativo é criado com o pacote NuGet do SDK de Fala e o Microsoft Visual Studio 2017.
 services: cognitive-services
@@ -10,18 +10,18 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: travisw
-ms.openlocfilehash: 22c18b573e7107163f858c79956ca6f5380f6834
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 6d88bcc6d9d2c2e46ef3a3cb841c9268a544e37c
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67604967"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68609694"
 ---
 # <a name="quickstart-create-a-voice-first-virtual-assistant-with-the-speech-sdk-uwp"></a>Início Rápido: Criar um assistente virtual que tem como prioridade o uso de voz com o SDK de Fala, UWP
 
 Guias de início rápido também estão disponíveis para [conversão de fala em texto](quickstart-csharp-uwp.md), [conversão de texto em fala](quickstart-text-to-speech-csharp-uwp.md) e [tradução de fala](quickstart-translate-speech-uwp.md).
 
-Neste artigo, você desenvolverá um aplicativo UWP (Plataforma Universal do Windows) em C# usando o [SDK de Fala](speech-sdk.md). O programa se conectará a um bot criado e configurado anteriormente para proporcionar uma experiência de assistente virtual que tem como prioridade o uso de voz no aplicativo cliente. O aplicativo foi criado com o [Pacote NuGet do SDK de Fala](https://aka.ms/csspeech/nuget) e o Microsoft Visual Studio 2017 (qualquer edição).
+Neste artigo, você desenvolverá um aplicativo UWP (Plataforma Universal do Windows) em C# usando o [SDK de Fala](speech-sdk.md). O programa se conectará a um bot criado e configurado anteriormente para proporcionar uma experiência de assistente virtual que tem como prioridade o uso de voz no aplicativo cliente. O aplicativo é criado com o [Pacote NuGet do SDK de Fala](https://aka.ms/csspeech/nuget) e o Microsoft Visual Studio 2017 ou posterior (qualquer edição).
 
 > [!NOTE]
 > A Plataforma Universal do Windows permite desenvolver aplicativos que executam em qualquer dispositivo com suporte para Windows 10, incluindo PCs, Xbox, Surface Hub e outros dispositivos.
@@ -30,7 +30,7 @@ Neste artigo, você desenvolverá um aplicativo UWP (Plataforma Universal do Win
 
 Este início rápido requer:
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) ou posterior
 * Uma chave de assinatura do Azure para os Serviços de Fala. [Obtenha uma gratuitamente](get-started.md) ou crie-a no [portal do Azure](https://portal.azure.com).
 * Um bot criado anteriormente, configurado com o [canal de Fala do Direct Line](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech)
 

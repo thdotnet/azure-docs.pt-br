@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 07/08/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 885c877f219f59ab5049cf7b8e01243077d6d3eb
-ms.sourcegitcommit: e72073911f7635cdae6b75066b0a88ce00b9053b
+ms.openlocfilehash: 7fba9cbbaa15359e7e4dd95e66645dd5f4022431
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68348391"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640773"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless"></a>Migrar VMs VMware para o Azure (sem agente)
 
@@ -41,7 +41,7 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 Para decidir se deseja usar a migração sem agente ou baseada em agente, leia estes artigos:
 
-- [Saiba como](server-migrate-overview.md) funciona a migração sem agente e [examine as limitações](server-migrate-overview.md#agentless-migration-limitations).
+- [Saiba como](server-migrate-overview.md) funciona a migração sem agente e [compare os métodos de migração](server-migrate-overview.md#compare-migration-methods).
 - [Leia este artigo](tutorial-migrate-vmware-agent.md) se desejar usar o método baseado em agente.
 
 ## <a name="prerequisites"></a>Pré-requisitos
@@ -93,7 +93,7 @@ Siga as instruções [deste artigo](how-to-set-up-appliance-vmware.md) para conf
 
 As Migrações para Azure requer algumas alterações de VM para verificar se elas podem ser migradas para o Azure.
 
-- Para alguns [sistemas operacionais](server-migrate-overview.md#agentless-migration-limitations), as Migrações para Azure fazem essas alterações automaticamente.
+- Para alguns sistemas operacionais, as Migrações para Azure fazem essas alterações automaticamente. [Saiba mais](migrate-support-matrix-vmware.md#agentless-migration-vmware-vm-requirements)
 - Se estiver migrando uma VM que não tem nenhum desses sistemas operacionais, siga as instruções para prepará-la.
 - É importante fazer essas alterações antes de iniciar a migração. Se você migrar a VM antes de fazer a alteração, ela não poderá ser inicializada no Azure.
 - As mudanças de configuração que você faz em VMs locais são replicadas no Azure após a replicação da VM ser habilitada. Para que as alterações sejam replicadas, verifique se o ponto de recuperação para o qual você migrará é posterior à hora na qual as alterações de configuração foram feitas localmente.

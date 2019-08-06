@@ -1,5 +1,6 @@
 ---
-title: O que é o Reconhecimento Vocal (LUIS) - Serviços Cognitivos da Microsoft | Microsoft Docs
+title: O que é Reconhecimento Vocal (LUIS)?
+titleSuffix: Azure Cognitive Services
 description: O Reconhecimento Vocal (LUIS) é um serviço de API baseado em nuvem que aplica inteligência de aprendizado de máquina personalizado em um texto de linguagem natural de conversação do usuário prever o significado geral, e extrair informações detalhadas relevantes.
 services: cognitive-services
 author: diberry
@@ -9,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: overview
 ms.date: 06/11/2019
 ms.author: diberry
-ms.openlocfilehash: 569b33d299f52f0da50d8a8992420754aa85b533
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 41c5e2f01678996406c586eb20043516beaf2184
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67062161"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68563196"
 ---
 # <a name="what-is-language-understanding-luis"></a>O que é Reconhecimento Vocal (LUIS)?
 
@@ -28,7 +29,7 @@ Um aplicativo cliente para LUIS é qualquer aplicativo que se comunica com um us
 
 <a name="Accessing-LUIS"></a>
 
-Depois que seu aplicativo LUIS for publicado, seu aplicativo cliente envia expressões (texto) para a [API][endpoint-apis] do ponto de extremidade de processamento da linguagem natural LUIS e recebe os resultados como respostas em JSON. Um aplicativo cliente comum para LUIS é um chatbot.
+Depois que o aplicativo LUIS for publicado, um aplicativo cliente envia expressões (texto) para a [API][endpoint-apis] do ponto de extremidade de processamento da linguagem natural do LUIS e recebe os resultados como respostas em JSON. Um aplicativo cliente comum para LUIS é um chatbot.
 
 
 ![Imagens conceituais do LUIS trabalhando com o Chatbot para prever o texto do usuário com reconhecimento de linguagem natural (NLP)](./media/luis-overview/luis-overview-process-2.png "Imagens conceituais do LUIS trabalhando com o Chatbot para prever o texto do usuário com reconhecimento de linguagem natural (NLP")
@@ -101,7 +102,7 @@ O LUIS fornece ferramentas, controle de versão e colaboração com outros autor
 O LUIS, como uma API REST, pode ser usado com qualquer produto, serviço ou estrutura que faz uma solicitação HTTP. A lista a seguir contém os principais produtos e serviços da Microsoft usados com o LUIS.
 
 O principal aplicativo cliente para o LUIS é:
-* [Bot de aplicativo Web](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0) que cria rapidamente um chatbot habilitado para LUIS para conversar com um usuário por meio de entrada de texto. Usa o [Bot Framework][bot-framework] versão [4.x](https://github.com/Microsoft/botbuilder-dotnet) para uma experiência completa de bot.
+* [Bot de aplicativo Web](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0) que cria rapidamente um chatbot habilitado para LUIS para conversar com um usuário por meio de entrada de texto. Usa o [Bot Framework][bot-framework] versão [4.x](https://github.com/Microsoft/botbuilder-dotnet) para uma experiência de bot completa.
 
 Ferramentas para usar o LUIS com um bot de modo rápido e fácil:
 * [CLI do LUIS](https://github.com/Microsoft/botbuilder-tools/tree/master/packages/LUIS) O pacote NPM fornece criação e previsão como uma ferramenta de linha de comando autônoma ou como uma importação. 

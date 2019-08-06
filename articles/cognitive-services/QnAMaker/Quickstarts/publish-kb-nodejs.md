@@ -1,6 +1,6 @@
 ---
-title: Publicar base de dados de conhecimento, REST, Node.js
-titleSuffix: QnA Maker - Azure Cognitive Services
+title: 'Início Rápido: Publicar uma base de dados de conhecimento, REST, Node.js – QnA Maker'
+titleSuffix: Azure Cognitive Services
 description: Este início rápido do Node.js orienta você durante a publicação programática de sua KB (base de dados de conhecimento). A publicação envia por push a versão mais recente da base de dados de conhecimento para um índice dedicado do Azure Search e cria um ponto de extremidade que pode ser chamado em seu aplicativo ou chat bot.
 services: cognitive-services
 author: diberry
@@ -11,12 +11,12 @@ ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 02/28/2019
 ms.author: diberry
-ms.openlocfilehash: 915d5223b99f530978ade41f69420766cf591021
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: d47359f92a2cebef10514b3746fbf32f7e952132
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65787902"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68562919"
 ---
 # <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-nodejs"></a>Início Rápido: Publicar uma base de dados de conhecimento no QnA Maker usando Node.js
 

@@ -1,5 +1,5 @@
 ---
-title: 'Início Rápido: Executar o SDK de Dispositivos de Fala no Android – Serviços de Fala'
+title: 'Início Rápido: Executar o SDK de Dispositivos de Fala no Android – Serviço de Fala'
 titleSuffix: Azure Cognitive Services
 description: Pré-requisitos e instruções para começar a usar com o SDK de Dispositivos de Fala do Android.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 7eea978456ed565f8fc58647dc548d1a7bc76b27
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: f7039b525cf0d52670b8d76a24d8ec3ea5115772
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606373"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68559108"
 ---
 # <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-android"></a>Início Rápido: Executar o aplicativo de exemplo do SDK de Dispositivos de Fala no Android
 
@@ -135,7 +135,7 @@ Para validar sua instalação do kit de desenvolvimento, crie e instale o aplica
    |||Para um kit de desenvolvimento linear que usa todos os microfones: `Linear4`|
    |||Para um kit de desenvolvimento linear que usa dois microfones: `Linear2`|
 
-1. Para compilar o aplicativo, no menu **Executar**, selecione **Executar 'aplicativo'**. A caixa de diálogo **Selecionar o Destino de Implantação** aparece.
+1. Para compilar o aplicativo, no menu **Executar**, selecione **Executar 'aplicativo'** . A caixa de diálogo **Selecionar o Destino de Implantação** aparece.
 
 1. Selecione seu dispositivo e, em seguida, selecione **OK** para implantar o aplicativo no dispositivo.
 

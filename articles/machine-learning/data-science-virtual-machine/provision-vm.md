@@ -4,7 +4,7 @@ titleSuffix: Azure
 description: Configure e crie uma Máquina Virtual de Ciência de Dados no Azure para realizar a análise e o aprendizado de máquina.
 services: machine-learning
 documentationcenter: ''
-author: gopitk
+author: vijetajo
 manager: cgronlun
 ms.custom: seodec18
 ms.assetid: e1467c0f-497b-48f7-96a0-7f806a7bec0b
@@ -12,15 +12,15 @@ ms.service: machine-learning
 ms.subservice: data-science-vm
 ms.workload: data-services
 ms.devlang: na
-ms.topic: article
+ms.topic: quickstart
 ms.date: 02/22/2019
-ms.author: gokuma
-ms.openlocfilehash: 57768fc463f5ea1d2f1ec386f3f0975758220013
-ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
-ms.translationtype: MT
+ms.author: vijetaj
+ms.openlocfilehash: dfb3e9f6390d4c80b8f3c37b87f2659c671fa823
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67626393"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68591828"
 ---
 # <a name="provision-a-windows-data-science-virtual-machine-on-azure"></a>Provisionar uma Máquina Virtual de Ciência de Dados do Windows no Azure
 
@@ -106,7 +106,7 @@ Para criar uma instância de DSVM:
 
 Depois que a VM for criada e provisionada, será possível entrar na área de trabalho remotamente usando as credenciais da conta de administrador que você configurou anteriormente na seção **Noções básicas**. Você está pronto para começar a usar as ferramentas que estão instaladas e pré-configuradas na VM. Muitas das ferramentas podem ser acessadas por meio de blocos do menu Iniciar e ícones da área de trabalho.
 
-Você também pode anexar uma VM de ciência de dados para o Azure Notebooks para executar os notebooks Jupyter na VM e ignorar as limitações da camada de serviço gratuito. Para obter mais informações, consulte [gerenciar e configurar projetos de blocos de anotações - camada de computação](/azure/notebooks/configure-manage-azure-notebooks-projects#compute-tier).
+Também é possível anexar uma VM de Ciência de Dados ao Azure Notebooks para executar os Jupyter Notebooks na VM e ignorar as limitações da camada de serviço gratuita. Para saber mais, confira [Gerenciar e configurar projetos do Notebooks – Camada de computação](../../notebooks/configure-manage-azure-notebooks-projects.md#compute-tier).
 
 ## <a name="tools-installed-on-the-microsoft-data-science-virtual-machine"></a>Ferramentas Instaladas na Máquina Virtual de Ciência de Dados da Microsoft
 

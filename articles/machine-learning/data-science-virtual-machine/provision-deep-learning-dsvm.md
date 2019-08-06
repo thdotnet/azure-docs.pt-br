@@ -4,7 +4,7 @@ titleSuffix: Azure
 description: Configure e crie uma Máquina Virtual de Ciência de Dados de Aprendizado Aprofundado no Azure para realizar a análise e o aprendizado de máquina.
 services: machine-learning
 documentationcenter: ''
-author: gopitk
+author: vijetajo
 manager: cgronlun
 ms.custom: seodec18
 ms.assetid: e1467c0f-497b-48f7-96a0-7f806a7bec0b
@@ -12,15 +12,15 @@ ms.service: machine-learning
 ms.subservice: data-science-vm
 ms.workload: data-services
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: quickstart
 ms.date: 03/16/2018
-ms.author: gokuma
-ms.openlocfilehash: 318df03c7c4447d051dfa396098462c0f8bbf423
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
-ms.translationtype: MT
+ms.author: vijetaj
+ms.openlocfilehash: b9d0f9aead6e2cedd3ca0884273bac0106a925a0
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65410448"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68591902"
 ---
 # <a name="provision-a-deep-learning-virtual-machine-on-azure"></a>Provisionar uma Máquina Virtual de Aprendizado Aprofundado no Azure 
 
@@ -68,7 +68,7 @@ Depois de criar a máquina virtual, você poderá entrar na área de trabalho re
 
 ### <a name="linux-edition"></a>Edição do Linux
 
-Após a criação da VM, você poderá entrar nela usando SSH. Use as credenciais da conta que você criou na [ **Noções básicas** ](#basics) seção da etapa 3 para a interface do shell de texto. Para obter mais informações sobre conexões de SSH para VMs do Azure, consulte [instalar e configurar a área de trabalho remota para se conectar a uma VM do Linux no Azure](/azure/virtual-machines/linux/use-remote-desktop). Em um cliente Windows, você pode baixar uma ferramenta de cliente SSH como [Putty](https://www.putty.org). Se você preferir uma área de trabalho gráfica (Sistema do Windows X), poderá usar o encaminhamento X11 no Putty ou instalar o cliente X2Go. 
+Após a criação da VM, você poderá entrar nela usando SSH. Use as credenciais de conta criadas na seção [**Conceitos básicos**](#basics) da etapa 3 da interface do shell de texto. Para saber mais sobre conexões SSH com VMs do Azure, confira [Instalar e configurar a Área de Trabalho Remota para se conectar a uma VM Linux no Azure](../../virtual-machines/linux/use-remote-desktop.md). Em um cliente Windows, é possível baixar uma ferramenta de cliente SSH como o [Putty](https://www.putty.org). Se você preferir uma área de trabalho gráfica (Sistema do Windows X), poderá usar o encaminhamento X11 no Putty ou instalar o cliente X2Go. 
 
 > [!NOTE]
 > O cliente X2Go apresentou desempenho melhor do que o encaminhamento X11 nos testes. Recomendamos o uso do cliente X2Go para uma interface gráfica de área de trabalho.

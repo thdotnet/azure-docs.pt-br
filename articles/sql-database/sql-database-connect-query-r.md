@@ -1,7 +1,7 @@
 ---
-title: Usar R para consultar um Banco de Dados SQL do Azure
+title: Usar o R com os Serviços do Machine Learning para consultar Banco de Dados SQL do Azure
 titleSuffix: Azure SQL Database Machine Learning Services (preview)
-description: Este artigo mostra como usar script R para conectar-se a um Banco de dados SQL do Azure e consultá-lo usando instruções Transact-SQL.
+description: Este artigo mostra como usar um script R com os Serviços do Machine Learning do Banco de Dados SQL do Azure para conectar-se a um Banco de dados SQL do Azure e consultá-lo usando instruções Transact-SQL.
 services: sql-database
 ms.service: sql-database
 ms.subservice: machine-learning
@@ -13,16 +13,16 @@ ms.author: garye
 ms.reviewer: davidph, carlrab
 manager: cgronlun
 ms.date: 05/29/2019
-ms.openlocfilehash: 1d4b17cf1e0349bf877c676cb4e591fc20ad4113
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: ff38346a9b3bd14db51383c116240b030d3ee42a
+ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66416372"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68514852"
 ---
-# <a name="quickstart-use-r-to-query-an-azure-sql-database-preview"></a>Início Rápido: Usar R para consultar um Banco de Dados SQL do Azure (versão prévia)
+# <a name="quickstart-use-r-with-machine-learning-services-to-query-an-azure-sql-database-preview"></a>Início Rápido: Usar o R com os Serviços do Machine Learning para consultar um Banco de Dados SQL do Azure (versão prévia)
 
- Este início rápido demonstra como usar [R](https://www.r-project.org/) com os Serviços do Machine Learning para conectar-se a um Banco de Dados SQL do Azure e usar instruções Transact-SQL para consultar dados. Os Serviços do Machine Learning são um recurso do Banco de Dados SQL do Azure, usado para executar scripts do R no banco de dados. Para obter mais informações, consulte [Serviços do Machine Learning do Banco de Dados SQL do Azure com R (versão prévia)](sql-database-machine-learning-services-overview.md).
+Este início rápido demonstra como usar [R](https://www.r-project.org/) com os Serviços do Machine Learning para conectar-se a um Banco de Dados SQL do Azure e usar instruções Transact-SQL para consultar dados. Os Serviços do Machine Learning são um recurso do Banco de Dados SQL do Azure, usado para executar scripts do R no banco de dados. Para obter mais informações, consulte [Serviços do Machine Learning do Banco de Dados SQL do Azure com R (versão prévia)](sql-database-machine-learning-services-overview.md).
 
 [!INCLUDE[ml-preview-note](../../includes/sql-database-ml-preview-note.md)]
 

@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 07/11/2019
+ms.date: 07/24/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 9e0d29770aa36f8e79bf08b7c5435ea2dbc4ae38
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 514905bf2db1c0c58faa131eeb916af033b2c830
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67840383"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640847"
 ---
 # <a name="prepare-for-assessment-and-migration-of-hyper-v-vms-to-azure"></a>Preparar para a avaliação e a migração de VMs do Hyper-V para o Azure
 
@@ -40,20 +40,13 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 ### <a name="azure-permissions"></a>Permissões do Azure
 
-Você precisa de algumas permissões para implantar as Migrações para Azure:
+Você precisa configurar permissões para a implantação de Migrações para Azure.
 
-- Sua conta do Azure precisa de permissões para criar um projeto de Migrações para Azure para avaliação e migração. 
-- Sua conta do Azure precisa de permissões para registrar o dispositivo de Migrações para Azure.
-    - Para avaliação, as Migrações para Azure executam um dispositivo leve que descobre VMs do Hyper-V e envia os metadados da VM e dados de desempenho para as Migrações para Azure.
-    - Durante o registro do dispositivo, as Migrações para Azure criam dois aplicativos Azure AD (Azure Active Directory) que identificam o dispositivo de forma exclusiva:
-        - O primeiro aplicativo comunica-se com os pontos de extremidade de serviço das Migrações para Azure.
-        - O segundo aplicativo acessa um Azure Key Vault criado durante o registro para armazenar informações de aplicativo do Azure AD e definições de configuração do dispositivo.
-    - Você pode atribuir permissões para as Migrações para Azure para criar esses aplicativos do Azure AD usando um dos seguintes métodos:
-        - Um locatário/administrador global pode conceder permissões a usuários no locatário para criar e registrar aplicativos do Azure AD.
-        - Um locatário/administrador global pode atribuir a função de Desenvolvedor de Aplicativos (que tem as permissões) à conta.
-    - Vale a pena observar que:
-        - Os aplicativos não têm nenhuma outra permissão de acesso na assinatura diferente daquelas descritas acima.
-        - Você só precisa dessas permissões ao registrar um novo dispositivo. Você pode remover as permissões depois que o dispositivo está configurado. 
+- Permissões para sua conta do Azure para criar um projeto de Migrações para Azure. 
+- Permissões para sua para registrar o dispositivo de Migrações para Azure. O dispositivo é usado para descoberta e migração do Hyper-V. Durante o registro do dispositivo, as Migrações para Azure criam dois aplicativos Azure AD (Azure Active Directory) que identificam o dispositivo de forma exclusiva:
+    - O primeiro aplicativo comunica-se com os pontos de extremidade de serviço das Migrações para Azure.
+    - O segundo aplicativo acessa um Azure Key Vault criado durante o registro para armazenar informações de aplicativo do Azure AD e definições de configuração do dispositivo.
+
 
 
 ### <a name="assign-permissions-to-create-project"></a>Atribuir permissões para criar o projeto
@@ -69,14 +62,10 @@ Verifique se você tem permissões para criar um projeto de Migrações para Azu
 
 ### <a name="assign-permissions-to-register-the-appliance"></a>Atribuir permissões para registrar o dispositivo
 
-Se estiver implantando o dispositivo das Migrações para Azure para avaliar as VMs, você precisará registrá-lo.
+Você pode atribuir permissões para as Migrações para Azure para criar os aplicativos do Azure AD desenvolvidos durante o registro do dispositivo usando um dos seguintes métodos:
 
-- Durante o registro do dispositivo, as Migrações para Azure criam dois aplicativos Azure AD (Azure Active Directory) que identificam o dispositivo de forma exclusiva
-    - O primeiro aplicativo comunica-se com os pontos de extremidade de serviço das Migrações para Azure.
-    - O segundo aplicativo acessa um Azure Key Vault criado durante o registro para armazenar informações de aplicativo do Azure AD e definições de configuração do dispositivo.
-- Você pode atribuir permissões para as Migrações para Azure para criar esses aplicativos do Azure AD usando um dos seguintes métodos:
-    - Um locatário/administrador global pode conceder permissões a usuários no locatário para criar e registrar aplicativos do Azure AD.
-    - Um locatário/administrador global pode atribuir a função de Desenvolvedor de Aplicativos (que tem as permissões) à conta.
+- Um locatário/administrador global pode conceder permissões a usuários no locatário para criar e registrar aplicativos do Azure AD.
+- Um locatário/administrador global pode atribuir a função de Desenvolvedor de Aplicativos (que tem as permissões) à conta.
 
 Vale a pena observar que:
 
@@ -105,7 +94,63 @@ O locatário/administrador global pode atribuir a função de Desenvolvedor de A
 
 ## <a name="prepare-for-hyper-v-assessment"></a>Preparar para a avaliação do Hyper-V
 
-Para se preparar para a avaliação do Hyper-V, verifique as configurações do host e da VM do Hyper-V e verifique as configurações de implantação do dispositivo.
+Para preparar para a avaliação do Hyper-V, faça o seguinte:
+
+1. Verifique as configurações do host Hyper-V.
+2. Configure a comunicação remota do PowerShell em cada host para que o dispositivo de Migrações para Azure possa executar comandos do PowerShell no host, em uma conexão do WinRM.
+3. Se os discos da VM estiverem localizados no armazenamento SMB remoto, a delegação de credenciais será necessária. 
+    - Habilite a delegação de CredSSP para que o dispositivo de Migrações para Azure possa atuar como o cliente, delegando credenciais a um host. T
+    - Você permite que cada host atue como um delegado para o dispositivo, conforme descrito abaixo.
+    - Posteriormente, ao configurar o dispositivo, você habilitará a delegação no dispositivo.
+4. Examine os requisitos do dispositivo e o acesso à URL/porta necessário para o dispositivo.
+5. Configure uma conta que será usada pelo dispositivo para descobrir VMs.
+6. Configure o Integration Services do Hyper-V em cada VM que você deseja descobrir e avaliar.
+
+
+Você pode definir essas configurações manualmente usando os procedimentos a seguir. Como alternativa, você executa o script de Configuração de Pré-requisitos do Hyper-V.
+
+### <a name="hyper-v-prerequisites-configuration-script"></a>Script de Configuração de Pré-requisitos do Hyper-V
+
+O script valida os hosts do Hyper-V e define as configurações necessárias para descobrir e avaliar as VMs do Hyper-V. Aqui está o que ele faz:
+
+- Verifica se você está executando no script em uma versão do PowerShell compatível.
+- Verifica se você (o usuário que está executando o script) tem privilégios administrativos no host Hyper-V.
+- Permite que você crie uma conta de usuário local (não administrador) usada para o serviço de Migrações para Azure se comunicar com o host Hyper-V. Essa conta de usuário é adicionada a esses grupos no host:
+    - Usuários do gerenciamento remoto
+    - Administradores do Hyper-V
+    - Usuários do monitor de desempenho
+- Verifica se o host está executando uma versão compatível do Hyper-V e a função do Hyper-V.
+- Habilita o serviço WinRM e abre as portas 5985 (HTTP) e 5986 (HTTPS) no host (necessárias para a coleta de metadados).
+- Habilitar a comunicação remota do PowerShell no host.
+- Verifica se o serviço de integração do Hyper-V está habilitado em todas as VMs gerenciadas pelo host. 
+- Habilita CredSSP no host, se necessário.
+
+Crie o script da seguinte maneira:
+
+1. Verifique se você tem o PowerShell versão 4.0 ou posterior instalado no host Hyper-V.
+2. Baixe o script do [Centro de Download da Microsoft](https://aka.ms/migrate/script/hyperv). O script é assinado criptograficamente pela Microsoft.
+3. Valide a integridade do script usando arquivos de hash MD5 ou SHA256. Execute o seguinte comando para gerar o hash para o script:
+    ```
+    C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]
+    ```
+    Exemplo de uso: 
+    ```
+    C:\>CertUtil -HashFile C:\Users\Administrators\Desktop\ MicrosoftAzureMigrate-Hyper-V.ps1
+    SHA256
+    ```
+    
+    Os valores de hash são:
+    Hash | Valor
+    --- | ---
+    **Hash MD5** | 0ef418f31915d01f896ac42a80dc414e
+    **Hash SHA256** | 0ef418f31915d01f896ac42a80dc414e0ad60e7299925eff4d1ae9f1c7db485dc9316ef45b0964148a3c07c80761ade2
+
+
+4.  Depois de validar a integridade do script, execute o script em cada host Hyper-V com este comando do PowerShell:
+    ```
+    PS C:\Users\Administrators\Desktop> MicrosoftAzureMigrate-Hyper-V.ps1
+    ```
+
 
 ### <a name="verify-hyper-v-host-settings"></a>Verificar as configurações do host Hyper-V
 
@@ -125,7 +170,12 @@ Configure a comunicação remota do PowerShell em cada host, da seguinte maneira
 
 ### <a name="enable-credssp-on-hosts"></a>Habilitar CredSSP em hosts
 
-Se os discos da VM estiverem localizados em compartilhamentos SMB, realize esta etapa em todos os hosts Hyper-V relevantes. Esta etapa é usada para descobrir informações de configuração para VMs do Hyper-V com discos em compartilhamentos SMB. Se não tiver discos de VM em compartilhamentos SMB, você poderá ignorar esta etapa.
+Se o host tiver VM com discos localizados em compartilhamentos SMB, complete esta etapa no host.
+
+- Você pode executar esse comando remotamente em todos os hosts do Hyper-V.
+- Se você adicionar novos nós de host a um cluster, eles serão adicionados automaticamente para descoberta, mas você precisará habilitar o CredSSP manualmente nos novos nós, se necessário.
+
+Habilite da seguinte maneira:
 
 1. Identifique os hosts do Hyper-V que executam VMs do Hyper-V com discos em compartilhamentos SMB.
 2. Execute o seguinte comando em cada host do Hyper-V identificado:
@@ -134,9 +184,8 @@ Se os discos da VM estiverem localizados em compartilhamentos SMB, realize esta 
     Enable-WSManCredSSP -Role Server -Force
     ```
 
-- A autenticação CredSSP permite que o host do Hyper-V delegue credenciais em nome do cliente das Migrações para Azure.
-- Você pode executar esse comando remotamente em todos os hosts do Hyper-V.
-- Se você adicionar novos nós de host a um cluster, eles serão adicionados automaticamente para descoberta, mas você precisará habilitar o CredSSP manualmente nos novos nós, se necessário.
+Ao configurar o dispositivo, você conclui a configuração do CredSSP [habilitando-o no dispositivo](tutorial-assess-hyper-v.md#delegate-credentials-for-smb-vhds). Isso é descrito no próximo tutorial desta série.
+
 
 ### <a name="verify-appliance-settings"></a>Verificar configurações do dispositivo
 
@@ -165,7 +214,7 @@ As Migrações para Azure precisam de permissões para descobrir VMs locais.
 
 O Integration Services deve ser habilitado em cada VM para que as Migrações para Azure possam capturar informações do sistema operacional na VM.
 
-- Habilite os [Integration Services do Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services) em cada VM que você deseja descobrir e avaliar. 
+Habilite os [Integration Services do Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services) em cada VM que você deseja descobrir e avaliar. 
 
 ## <a name="prepare-for-hyper-v-migration"></a>Preparar para a migração do Hyper-V
 

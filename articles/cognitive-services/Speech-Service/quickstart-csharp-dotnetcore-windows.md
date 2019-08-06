@@ -1,5 +1,5 @@
 ---
-title: 'Início Rápido: Reconhecimento de fala, C# (.NET Core) – Serviços de Fala'
+title: 'Início Rápido: Reconhecimento de fala, C# (.NET Core) – Serviço de Fala'
 titleSuffix: Azure Cognitive Services
 description: Saiba como fazer o reconhecimento de fala em C# no .NET Core no Windows ou no macOS usando o SDK de Fala
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: wolfma
-ms.openlocfilehash: 9c445ea685518cec77089ce644a79305ff7f3e9e
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 341f173e399196e32ab59f44db4302b1b1a195e6
+ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606596"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68607734"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-net-core"></a>Início Rápido: Reconhecimento de fala com o SDK de Fala para .NET Core
 
@@ -24,7 +24,7 @@ Guias de início rápido também estão disponíveis para [conversão de texto e
 Se desejar, escolha uma linguagem de programação e/ou ambiente diferente:<br/>
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
-Neste artigo, você criará um aplicativo de console C# para o .NET Core no Windows ou no macOS usando o [SDK de Fala](speech-sdk.md) dos Serviços Cognitivos. Você transcreve a fala em texto em tempo real por meio do microfone do computador. O aplicativo é criado com o [Pacote NuGet do SDK de Fala](https://aka.ms/csspeech/nuget) e o Microsoft Visual Studio 2017 (qualquer edição).
+Neste artigo, você criará um aplicativo de console C# para o .NET Core no Windows ou no macOS usando o [SDK de Fala](speech-sdk.md) dos Serviços Cognitivos. Você transcreve a fala em texto em tempo real por meio do microfone do computador. O aplicativo é criado com o [Pacote NuGet do SDK de Fala](https://aka.ms/csspeech/nuget) e o Microsoft Visual Studio 2017 ou posterior (qualquer edição).
 
 > [!NOTE]
 > O .NET Core é uma plataforma .NET multiplataforma de software livre que implementa a especificação [.NET Standard](https://docs.microsoft.com/dotnet/standard/net-standard).
@@ -36,7 +36,7 @@ Você precisa de uma chave de assinatura dos Serviços de Fala para concluir est
 Este início rápido requer:
 
 * [SDK do .NET Core](https://dotnet.microsoft.com/download)
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
+* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) ou posterior
 * Uma chave de assinatura do Azure para o Serviço de Fala. [Obtenha uma gratuitamente](get-started.md).
 
 ## <a name="create-a-visual-studio-project"></a>Criar um projeto do Visual Studio

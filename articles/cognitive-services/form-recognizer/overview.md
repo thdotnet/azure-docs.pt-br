@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: forms-recognizer
 ms.topic: overview
-ms.date: 07/01/2019
+ms.date: 07/25/2019
 ms.author: pafarley
-ms.openlocfilehash: e064faf3017b95cb3a5f3d9b89f178fb7f846766
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: b07201556f08bde4ef8c7a7904c6619a126d7765
+ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67592610"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68594549"
 ---
 # <a name="what-is-form-recognizer"></a>O que é o Reconhecimento de Formulários?
 
@@ -26,17 +26,28 @@ O modelo personalizado do Reconhecimento de Formulários treina para seus própr
 
 O aprendizado sem supervisão permite que o modelo entenda o layout e as relações entre os campos e as entradas sem rotulagem manual de dados nem codificação e manutenção intensivas. Por outro lado, os modelos de aprendizado de máquina previamente treinado exigem dados padronizados. Eles são menos precisos, com material de entrada que se desvia dos formatos tradicionais, como formulários específicos do setor.
 
-## <a name="pre-built-receipt-model"></a>Modelo de recibo predefinidos
+## <a name="prebuilt-receipt-model"></a>Modelo de recebimento predefinido
 
-O Reconhecimento de Formulários também inclui um modelo de leitura de recibos de vendas. Esse modelo extrai informações importantes, como a data e a hora da transação, informações de comerciantes, valores de impostos e totais e muito mais. Além disso, os modelos de recibos predefinidos são treinados para reconhecer e retornar todo o texto de um recibo.
+O Reconhecimento de Formulários também inclui um modelo de leitura de recibos de vendas. Esse modelo extrai informações importantes, como a data e a hora da transação, informações de comerciantes, valores de impostos e totais e muito mais. Além disso, o modelo de recibo predefinido é treinado para reconhecer e retornar todo o texto de um recibo.
 
 ## <a name="what-it-includes"></a>O que inclui
 
 O Reconhecimento de Formulários está disponível como uma API REST. Você pode criar, treinar e classificar um modelo personalizado ou acessar o modelo predefinido chamando essas APIs. Se quiser, você pode treinar e executar modelos personalizados em um contêiner local do Docker.
 
-## <a name="input-requirements-custom-model"></a>Requisitos de entrada (modelo personalizado)
+## <a name="input-requirements"></a>Requisitos de entrada
+### <a name="custom-model"></a>Modelo personalizado
 
 [!INCLUDE [input requirements](./includes/input-requirements.md)]
+
+### <a name="prebuilt-receipt-model"></a>Modelo de recebimento predefinido
+
+Os requisitos de entrada para o modelo de recebimento são um pouco diferentes.
+
+* O formato deve ser JPEG, PNG, BMP, PDF (texto ou digitalizado) ou TIFF.
+* O tamanho do arquivo deve ser inferior a 20 MB.
+* As imagens de dimensões devem estar entre 50 x 50 pixels e 10.000 x 10.000 pixels. 
+* As dimensões de PDF devem ter no máximo 17 x 17 polegadas, correspondentes aos tamanhos de papel ofício ou A3 e menores.
+* Para PDF e TIFF, somente as primeiras 200 páginas são processadas (com uma assinatura de camada gratuita, somente as duas primeiras páginas são processadas).
 
 ## <a name="request-access"></a>Solicitar acesso
 

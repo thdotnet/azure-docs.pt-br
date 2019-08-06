@@ -1,5 +1,5 @@
 ---
-title: Introdução à mineração de conhecimento (versão prévia) – Azure Search
+title: Introdução ao repositório de dados de conhecimento (versão prévia) – Azure Search
 description: Conheça as etapas para enviar documentos enriquecidos criados por pipelines de indexação por IA no Azure Search para um repositório de dados de conhecimento em sua conta de armazenamento do Azure. A partir daí, você pode exibir, reformatar e consumir documentos enriquecidos no Azure Search e em outros aplicativos.
 manager: cgronlun
 author: HeidiSteen
@@ -8,19 +8,19 @@ ms.service: search
 ms.topic: quickstart
 ms.date: 06/29/2019
 ms.author: heidist
-ms.openlocfilehash: e50dfcdc5ac2fbe2435066546a340874e1b8f682
-ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
+ms.openlocfilehash: 5794a24931b613bf1bdddd983799367bb02cf44d
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551065"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68641018"
 ---
-# <a name="how-to-get-started-with-knowledge-mining-in-azure-search"></a>Introdução à mineração de conhecimento no Azure Search
+# <a name="how-to-get-started-with-knowledge-store-in-azure-search"></a>Introdução ao repositório de dados de conhecimento no Azure Search
 
 > [!Note]
 > O armazenamento de dados de conhecimento está em versão prévia e não é destinado para uso em produção. A [API REST versão 2019-05-06-versão prévia](search-api-preview.md) fornece esse recurso. Não há suporte para SDK do .NET no momento.
 >
-O [repositório de conhecimento](knowledge-store-concept-intro.md) salva documentos aprimorados com IA criados durante a indexação em sua conta de armazenamento do Azure para mineração de conhecimento downstream em outros aplicativos. Você também pode usar enriquecimentos salvos para entender e refinar um pipeline de indexação do Azure Search. 
+O [repositório de conhecimento](knowledge-store-concept-intro.md) salva documentos aprimorados com IA criados durante a indexação em sua conta de armazenamento do Azure para mineração de dados downstream em outros aplicativos. Você também pode usar enriquecimentos salvos para entender e refinar um pipeline de indexação do Azure Search. 
 
 Um repositório de conhecimento é definido por um *conjunto de habilidades* e criado por um *indexador*. A expressão física de um repositório de conhecimento é especificada por *projeções* que determinam as estruturas de dados no armazenamento. Ao concluir este passo a passo, você terá criado todos esses objetos e saberá como eles funcionam juntos. 
 

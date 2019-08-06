@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 07/08/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: d222936f93f90573a46cd7f6216fbde8043332c7
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 1ea736b560e2e910ede203e8ce8c0b157ebbce71
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68261403"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68640878"
 ---
 # <a name="migrate-vmware-vms-to-azure-agent-based"></a>Migrar VMs VMware para o Azure (com base em agente)
 
@@ -56,7 +56,7 @@ Embora recomendemos experimentar uma avaliação, não é necessário executar u
 Para decidir se deseja usar a migração sem agente ou baseada em agente, leia estes artigos:
 
 - [Saiba mais](server-migrate-overview.md) sobre as opções de migração do VMware.
-- [Examine as limitações](server-migrate-overview.md#agentless-migration-limitations) da migração sem agente.
+- [Comparar métodos de migração](server-migrate-overview.md#compare-migration-methods).
 - [Siga este artigo](tutorial-migrate-vmware.md) para experimentar a migração sem agente.
 
 

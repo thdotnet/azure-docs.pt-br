@@ -1,5 +1,5 @@
 ---
-title: Alterar, treinar aplicativo, Node.js
+title: Alterar, treinar aplicativo, Node.js — LUIS
 titleSuffix: Azure Cognitive Services
 description: Neste início rápido do Node.js, adicione enunciados de exemplo a um aplicativo Automação de Página Inicial e treine o aplicativo.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 05/29/2019
 ms.author: diberry
-ms.openlocfilehash: 13ce1706a2184075155b2bbc4dca5753be391ceb
-ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
+ms.openlocfilehash: 6f0b19c1ba8d4a72ced19e74a3807c3962989e5d
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66357113"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560577"
 ---
 # <a name="quickstart-change-model-using-nodejs"></a>Início Rápido: Alterar o modelo usando Node.js
 

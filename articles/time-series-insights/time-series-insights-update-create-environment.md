@@ -8,14 +8,14 @@ manager: cshankar
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: tutorial
-ms.date: 06/18/2019
+ms.date: 07/29/2019
 ms.custom: seodec18
-ms.openlocfilehash: 824d24b97f192583a42192b3bb90eb1818e1aa18
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: b462f0c427020b1422b91fbd7ac34e3023e546b8
+ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67273005"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68677877"
 ---
 # <a name="tutorial-set-up-an-azure-time-series-insights-preview-environment"></a>Tutorial: Configurar um ambiente de Versão Prévia do Azure Time Series Insights
 
@@ -23,14 +23,21 @@ Este tutorial orienta você pelo processo de criação de um ambiente PAYG (Pago
 
 Neste tutorial, você aprenderá como:
 
-* Criar um ambiente de Versão Prévia do Azure Time Series Insights.
-* Conectar o ambiente de Versão Prévia do Azure Time Series Insights a um hub de eventos nos Hubs de Eventos do Azure.
-* Executar uma amostra do acelerador de solução para transmitir dados para o ambiente da Versão Prévia do Azure Time Series Insights.
-* Executar uma análise básica nos dados.
-* Definir uma hierarquia e um tipo de Modelo de Série Temporal e associá-los às suas instâncias.
+> [!div class="checklist"]
+> * Criar um ambiente de Versão Prévia do Azure Time Series Insights.
+> * Conectar o ambiente de Versão Prévia do Azure Time Series Insights a um hub de eventos nos Hubs de Eventos do Azure.
+> * Executar uma amostra do acelerador de solução para transmitir dados para o ambiente da Versão Prévia do Azure Time Series Insights.
+> * Executar uma análise básica nos dados.
+> * Definir uma hierarquia e um tipo de Modelo de Série Temporal e associá-los às suas instâncias.
 
 >[!TIP]
 > Os [aceleradores de solução de IoT](https://www.azureiotsolutions.com/Accelerators) fornecem soluções de nível empresarial pré-configuradas que você pode usar para acelerar o desenvolvimento de soluções personalizadas de IoT.
+
+Inscreva-se em uma [assinatura do Azure gratuita](https://azure.microsoft.com/free/) se já não tiver uma.
+
+## <a name="prerequisites"></a>Pré-requisitos
+
+* Sua conta de entrada do Azure também precisa ser um membro da função **Proprietário** da assinatura. Para obter mais informações, confira [Gerenciar o acesso usando o controle de acesso baseado em função e o portal do Azure](../role-based-access-control/role-assignments-portal.md).
 
 ## <a name="create-a-device-simulation"></a>Criar uma simulação de dispositivo
 
@@ -321,6 +328,14 @@ Nesta seção, você aplicará um modelo para estruturar seus dados. Para conclu
 1. Para ver os detalhes do evento, selecione uma região e, em seguida, clique com o botão direito no gráfico:
 
    [![Lista detalhada de eventos](media/v2-update-provision/define-eighteen.png)](media/v2-update-provision/define-eighteen.png#lightbox)
+
+
+## <a name="clean-up-resources"></a>Limpar recursos
+
+Agora que concluiu o tutorial, limpe os recursos que você criou:
+
+1. No menu à esquerda no [portal do Azure](https://portal.azure.com), selecione **Todos os recursos** e localize o grupo de recursos do Azure Time Series Insights.
+1. Exclua todo o grupo de recursos (e todos os recursos contidos nele) selecionando **Excluir** ou remova cada recurso individualmente.
 
 ## <a name="next-steps"></a>Próximas etapas
 

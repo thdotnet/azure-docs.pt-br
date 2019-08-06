@@ -11,14 +11,14 @@ ms.workload: big-data
 ms.topic: overview
 ms.date: 04/26/2019
 ms.custom: seodec18
-ms.openlocfilehash: b32ff070a1ffa9f83132ecc1d3e43bae398f509d
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: 964a010ee2b919ca56c467d3f7ca91b3e78ef590
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67460719"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638846"
 ---
-# <a name="azure-time-series-insights-preview"></a>Versão prévia do Azure Time Series Insights
+# <a name="what-is-azure-time-series-insights-preview"></a>O que é o Azure Time Series Insights Preview?
 
 O Azure Time Series Insights Preview é uma oferta de plataforma como serviço (PaaS) de ponta a ponta. É usado para coletar, processar, armazenar, analisar e consultar dados de escala de IoT otimizados para série temporal e altamente contextualizados. O Time Series Insights é ideal para exploração de dados ad hoc e para análise operacional. O Time Series Insights é uma oferta de serviço exclusivamente extensível e personalizado que atende às amplas necessidades de implantações de IoT industriais.
 

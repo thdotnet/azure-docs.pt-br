@@ -1,5 +1,5 @@
 ---
-title: 'Início Rápido: Reconhecer fala, Python – Serviços de Fala'
+title: 'Início Rápido: Reconhecer fala, Python – Serviço de Fala'
 titleSuffix: Azure Cognitive Services
 description: Use este guia para criar um aplicativo de console de conversão de fala em texto que usa o SDK de Fala para Python. Quando terminar, você pode usar o microfone do computador para transcrever a conversão de fala em texto em tempo real.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: chlandsi
-ms.openlocfilehash: d6b7cc275fc50fefbe0057620d315d1484c47745
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
+ms.openlocfilehash: 6cbe583ca59cb98ba233e58dc665c7e18c2a1f7f
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67603023"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68559291"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-python"></a>Início Rápido: Reconhecer fala com o SDK de Fala para Python
 

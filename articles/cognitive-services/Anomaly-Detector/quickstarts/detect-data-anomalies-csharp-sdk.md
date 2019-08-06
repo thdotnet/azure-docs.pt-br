@@ -1,21 +1,21 @@
 ---
-title: 'Início Rápido: detectar anomalias em dados de série temporal usando o SDK do Detector de Anomalias para .NET'
+title: 'Início Rápido: Detectar anomalias em dados de série temporal usando a biblioteca de clientes do Detector de Anomalias para .NET'
 titleSuffix: Azure Cognitive Services
-description: Comece a detectar anomalias em seus dados de série temporal com o serviço Detector de Anomalias.
+description: Use a API do Detector de Anomalias para detectar anormalidades em sua série de dados como um lote ou em dados de streaming.
 services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: quickstart
-ms.date: 07/01/2019
+ms.date: 07/26/2019
 ms.author: aahi
-ms.openlocfilehash: a75196e035585a7501cdd842fb5b80ceff424dcc
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: c65b64608ade76a65dca42b72844d42ddc1b14fd
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67721564"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639368"
 ---
 # <a name="quickstart-anomaly-detector-client-library-for-net"></a>Início Rápido: biblioteca de clientes do Detector de Anomalias para .NET
 
@@ -23,10 +23,10 @@ Introdução à biblioteca de clientes Detector de Anomalias para .NET. Siga ess
 
 Use a biblioteca de cliente do Detector de Anomalias para .NET para:
 
-* Detectar anomalias como um lote
-* Detectar o status de anomalias do último ponto de dados
+* Detectar anomalias em todo o seu conjunto de dados de série temporal, como uma solicitação em lote
+* Detectar o status de anomalias do ponto de dados mais recente em sua série temporal
 
-[Documentação de referência da API](https://docs.microsoft.com/dotnet/api/Microsoft.Azure.CognitiveServices.AnomalyDetector?view=azure-dotnet-preview) | [Código-fonte da biblioteca](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/AnomalyDetector) | [Pacote (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.AnomalyDetector/) | [Exemplos](https://github.com/Azure-Samples/anomalydetector)
+[Documentação de referência da biblioteca](https://docs.microsoft.com/dotnet/api/Microsoft.Azure.CognitiveServices.AnomalyDetector?view=azure-dotnet-preview) | [Código-fonte da biblioteca](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/cognitiveservices/AnomalyDetector) | [Pacote (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.AnomalyDetector/) | [Exemplos](https://github.com/Azure-Samples/anomalydetector)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -39,11 +39,13 @@ Use a biblioteca de cliente do Detector de Anomalias para .NET para:
 
 [!INCLUDE [anomaly-detector-resource-creation](../../../../includes/cognitive-services-anomaly-detector-resource-cli.md)]
 
-### <a name="create-a-new-c-app"></a>Criar um novo aplicativo C#
+Depois de obter uma chave do recurso ou da assinatura de avaliação, [crie uma variável de ambiente](../../cognitive-services-apis-create-account.md#configure-an-environment-variable-for-authentication) para a chave, chamada `ANOMALY_DETECTOR_KEY`.
+
+### <a name="create-a-new-c-application"></a>Criar um aplicativo em C#
 
 Crie um novo aplicativo .NET Core em seu IDE ou editor preferido. 
 
-Em uma janela de console (como cmd, PowerShell ou Bash), use o comando `new` para criar um novo aplicativo do console com o nome `anomaly-detector-quickstart`. Esse comando cria um projeto simples C# "Olá, Mundo" com um arquivo de origem único: **Program.cs**. 
+Em uma janela de console (como cmd, PowerShell ou Bash), use o comando `new` para criar um novo aplicativo do console com o nome `anomaly-detector-quickstart`. Esse comando cria um projeto simples C# "Olá, Mundo" com um arquivo de origem único: *Program.cs*. 
 
 ```console
 dotnet new console -n anomaly-detector-quickstart
@@ -65,6 +67,14 @@ Build succeeded.
 ...
 ```
 
+No diretório do projeto, abra o arquivo *program.cs* no IDE ou no editor de sua preferência. Adicione o seguinte usando `directives`:
+
+[!code-csharp[using statements](~/samples-anomaly-detector/quickstarts/sdk/csharp-sdk-sample.cs?name=usingStatements)]
+
+No método `main()` do aplicativo, crie variáveis para o local do Azure do seu recurso e a chave como uma variável de ambiente. Se você criou a variável de ambiente depois de iniciar o aplicativo, será necessário fechar e recarregar o editor, o IDE ou o shell em execução para acessar a variável.
+
+[!code-csharp[Main method](~/samples-anomaly-detector/quickstarts/sdk/csharp-sdk-sample.cs?name=mainMethod)]
+
 ### <a name="install-the-client-library"></a>Instalar a biblioteca de clientes
 
 Dentro do diretório do aplicativo, instale a biblioteca de clientes do Detector de Anomalias para .NET com o seguinte comando:
@@ -85,28 +95,12 @@ A resposta do Detector de Anomalias é um objeto [EntireDetectResponse](https://
 
 ## <a name="code-examples"></a>Exemplos de código
 
-Esses trechos de códigos mostram como fazer o seguinte com a biblioteca de clientes do Detector de Anomalias para .NET:
+Estes snippets de códigos mostram como fazer o seguinte com a biblioteca de clientes do Detector de Anomalias para .NET:
 
 * [Autenticar o cliente](#authenticate-the-client)
 * [Carregar um conjunto de dados de série temporal de um arquivo](#load-time-series-data-from-a-file)
 * [Detectar anomalias no conjunto de dados inteiro](#detect-anomalies-in-the-entire-data-set) 
 * [Detectar o status de anomalias do último ponto de dados](#detect-the-anomaly-status-of-the-latest-data-point)
-
-### <a name="add-the-main-method"></a>Adicionar o método principal
-
-No diretório do projeto:
-
-1. Abra o arquivo Program.cs no IDE ou em seu editor preferido
-2. Adicionar as seguintes diretivas `using`
-
-[!code-csharp[using statements](~/samples-anomaly-detector/quickstarts/sdk/csharp-sdk-sample.cs?name=usingStatements)]
-
-> [!NOTE]
-> Este guia de início rápido pressupõe que você já [criou uma variável de ambiente](../../cognitive-services-apis-create-account.md#configure-an-environment-variable-for-authentication) para a chave do Detector de Anomalias, denominada `ANOMALY_DETECTOR_KEY`.
-
-No método `main()` do aplicativo, crie variáveis para o local do Azure do seu recurso e a chave como uma variável de ambiente. Se você criou a variável de ambiente depois de iniciar o aplicativo, será necessário fechar e recarregar o editor, o IDE ou o shell em execução para acessar a variável.
-
-[!code-csharp[Main method](~/samples-anomaly-detector/quickstarts/sdk/csharp-sdk-sample.cs?name=mainMethod)]
 
 ### <a name="authenticate-the-client"></a>Autenticar o cliente
 
@@ -117,8 +111,8 @@ Em um novo método, instancie um cliente com o ponto de extremidade e a chave. C
 ### <a name="load-time-series-data-from-a-file"></a>Carregar um conjunto de dados de série temporal de um arquivo
 
 Baixe os dados de exemplo deste guia de início rápido no [GitHub](https://github.com/Azure-Samples/AnomalyDetector/blob/master/example-data/request-data.csv):
-1. Em seu navegador, clique com botão direito do mouse em **Raw**
-2. Clique em **Salvar link como**
+1. Em seu navegador, clique com o botão direito do mouse em **Raw**.
+2. Clique em **Salvar link como**.
 3. Salve o arquivo no diretório do aplicativo como um arquivo .csv.
 
 Esses dados de série temporal são formatados como um arquivo .csv e são enviados para a API do Detector de Anomalias.
@@ -151,12 +145,12 @@ dotnet run
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
-Se quiser limpar e remover uma assinatura dos Serviços Cognitivos, você pode excluir o recurso ou grupo de recursos. A exclusão do grupo de recursos também exclui todos os recursos associados ao grupo de recursos.
+Se quiser limpar e remover uma assinatura dos Serviços Cognitivos, você poderá excluir o recurso ou grupo de recursos. Excluir o grupo de recursos também exclui todos os recursos associados ao grupo de recursos.
 
 * [Portal](../../cognitive-services-apis-create-account.md#clean-up-resources)
 * [CLI do Azure](../../cognitive-services-apis-create-account-cli.md#clean-up-resources)
 
-É possível executar o comando de shell de nuvem a seguir para remover o grupo de recursos e os seus recursos associados. Pode demorar alguns minutos até ser concluído. 
+É possível executar o comando cloud shell a seguir para remover o grupo de recursos e os seus recursos associados. Isso pode demorar alguns minutos para ser concluído. 
 
 ```azurecli-interactive
 az group delete --name example-anomaly-detector-resource-group

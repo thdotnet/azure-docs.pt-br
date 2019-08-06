@@ -64,6 +64,8 @@
           href: ./hdinsight-troubleshoot-invalidnetworksecuritygroupsecurityrules-cluster-creation-fails.md
         - name: Convertendo um certificado de entidade de serviço
           href: ./hdinsight-troubleshoot-converting-service-principal-certificate.md
+        - name: Problemas de pulsação do Apache Ambari
+          href: ./apache-ambari-troubleshoot-heartbeat-issues.md
 - name: Como
   items:
     - name: Usar área restrita do Apache Hadoop

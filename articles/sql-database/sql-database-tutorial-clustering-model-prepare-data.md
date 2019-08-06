@@ -12,32 +12,34 @@ author: garyericson
 ms.author: garye
 ms.reviewer: davidph
 manager: cgronlun
-ms.date: 05/17/2019
-ms.openlocfilehash: 83ef25f04012933c2665e63e4617d480eb336f7b
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.date: 07/29/2019
+ms.openlocfilehash: 800dbfc05c47a949bf024e9a5c671979b49ad201
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66419794"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68639978"
 ---
 # <a name="tutorial-prepare-data-to-perform-clustering-in-r-with-azure-sql-database-machine-learning-services-preview"></a>Tutorial: Preparar dados para executar o clustering no R com os Serviços de Machine Learning do Banco de Dados SQL do Azure (versão prévia)
 
-Na primeira parte desta série de tutoriais de três partes, você preparará os dados de um banco de dados SQL do Azure para executar o clustering no R com os Serviços de Machine Learning do Banco de Dados SQL do Azure (versão prévia).
+Na primeira parte desta série de tutoriais com três partes, você importará e preparará os dados de um Banco de Dados SQL do Azure usando o R. Mais adiante nesta série, você usará esses dados para treinar e implantar um modelo de clustering no R com os Serviços do Machine Learning do Banco de Dados SQL do Azure (versão prévia).
 
 O *clustering* pode ser explicado como a organização de dados em grupos, nos quais os membros de um grupo são semelhantes de alguma forma.
 Você usará o algoritmo **K-means** para executar o clustering de clientes em um conjunto de dados de compras e devoluções de produto. Agrupando os clientes, você pode concentrar seus esforços de marketing com mais eficiência tendo como alvo grupos específicos.
 O clustering K-means é um algoritmo de *aprendizado não supervisionado* que procura padrões nos dados com base nas semelhanças.
 
+Na primeira e na segunda parte desta série, você desenvolverá alguns scripts do R no RStudio para preparar os dados e treinar um modelo de machine learning. Em seguida, na terceira parte, você executará esses scripts do R em um banco de dados SQL usando os procedimentos armazenados.
+
 Neste artigo, você aprenderá a:
 
 > [!div class="checklist"]
 > * Importar um banco de dados de exemplo para um Banco de Dados SQL do Azure
-> * Clientes separados em dimensões diferentes
-> * Carregar os dados do Banco de Dados SQL do Azure em um dataframe usando o R
+> * Clientes separados em dimensões diferentes usando o R
+> * Carregar os dados do Banco de Dados SQL do Azure em um dataframe do R
 
-Na [segunda parte](sql-database-tutorial-clustering-model-build.md), você aprenderá a criar e treinar um modelo de clustering K-means.
+Na [segunda parte](sql-database-tutorial-clustering-model-build.md), você aprenderá a criar e treinar um modelo de clustering K-Means no R.
 
-Na [terceira parte](sql-database-tutorial-clustering-model-deploy.md), você aprenderá a criar um procedimento armazenado em um banco de dados SQL do Azure que pode executar o clustering com base em dados novos.
+Na [terceira parte](sql-database-tutorial-clustering-model-deploy.md), você aprenderá a criar um procedimento armazenado em um banco de dados SQL do Azure que pode executar o clustering em R com base em dados novos.
 
 [!INCLUDE[ml-preview-note](../../includes/sql-database-ml-preview-note.md)]
 
@@ -207,8 +209,8 @@ No portal do Azure, siga estas etapas:
 Na primeira parte desta série de tutoriais, você concluiu estas etapas:
 
 * Importar um banco de dados de exemplo para um Banco de Dados SQL do Azure
-* Clientes separados em dimensões diferentes
-* Carregar os dados do Banco de Dados SQL do Azure em um dataframe usando o R
+* Clientes separados em dimensões diferentes usando o R
+* Carregar os dados do Banco de Dados SQL do Azure em um dataframe do R
 
 Para criar um modelo de machine learning que usa esses dados do cliente, siga a segunda parte desta série de tutoriais:
 
