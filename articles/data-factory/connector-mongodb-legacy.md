@@ -227,9 +227,9 @@ As tabelas a seguir mostram as tabelas virtuais que representam as matrizes orig
 
 | _id | TabelaDeExemplo_Faturas_dim1_idx | invoice_id | item | preço | Desconto |
 | --- | --- | --- | --- | --- | --- |
-| 1111 |0 |123 |torradeira |456 |0,2 |
-| 1111 |1 |124 |forno |1235 |0,2 |
-| 2222 |0 |135 |geladeira |12543 |0,0 |
+| 1111 |0 |123 |torradeira |456 |0.2 |
+| 1111 |1 |124 |forno |1235 |0.2 |
+| 2222 |0 |135 |geladeira |12543 |0.0 |
 
 **Tabela “ExampleTable_Ratings":**
 
