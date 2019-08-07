@@ -14,16 +14,16 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: 4888ea8473c50b8774add7a930612c585fc9cbde
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 19ccd44888d64967baf82568c1cbb2540f3b3f68
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67074355"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68780334"
 ---
 # <a name="azure-service-fabric-security"></a>Segurança do Azure Service Fabric 
 
-Para saber mais sobre as [práticas de segurança recomendadas para o Azure](https://docs.microsoft.com/azure/security/), examine as [práticas de segurança recomendadas para o Azure Service Fabric](https://docs.microsoft.com/azure/security/azure-service-fabric-security-best-practices)
+Para saber mais sobre as [práticas de segurança recomendadas para o Azure](https://docs.microsoft.com/azure/security/), examine as [práticas de segurança recomendadas para o Azure Service Fabric](https://docs.microsoft.com/azure/security/fundamentals/service-fabric-best-practices)
 
 ## <a name="key-vault"></a>Key Vault
 
@@ -63,7 +63,7 @@ Para implantar certificados de um keyvault colocalizado em um Conjunto de dimens
 > [!NOTE]
 > O vault deve ser habilitado para a implantação do modelo do Resource Manager.
 
-## <a name="apply-an-access-control-list-acl-to-your-certificate-for-your-service-fabric-cluster"></a>Aplicar uma ACL (Lista de Controle de Acesso) em seu certificado para o cluster do Service Fabric
+## <a name="apply-an-access-control-list-acl-to-your-certificate-for-your-service-fabric-cluster"></a>Aplicar uma Lista de controle de acesso (ACL) em seu certificado para o cluster do Service Fabric
 
 O publicador das [extensões do Conjunto de dimensionamento de máquinas virtuais](https://docs.microsoft.com/cli/azure/vmss/extension?view=azure-cli-latest) Microsoft.Azure.ServiceFabric é usado para configurar a Segurança dos Nós.
 Para aplicar uma ACL a seus certificados para os processos de cluster do Service Fabric, use as seguintes propriedades de modelo do Resource Manager:
@@ -102,7 +102,7 @@ Para obter detalhes adicionais sobre como configurar o serviço DNS para resolve
 
 > [!NOTE]
 > Após delegar seus servidores de nome de domínios a seus servidores de nome de zona DNS do Azure, adicione os dois registros a seguir na zona DNS:
-> - Um registro 'A' para o domínio APEX que NÃO seja um `Alias record set` em todos os endereços IP que seu domínio personalizado resolverá.
+> - Um registro 'A' para o domínio APEX que NÃO seja um `Alias record set` em todos os endereços IP que seu domínio personalizado irá resolver.
 > - Um registro de 'C' para subdomínios Microsoft que você provisionou que NÃO seja um `Alias record set`. Por exemplo, você pode usar o Gerenciador de Tráfego ou nome DNS do Load Balancer.
 
 Para atualizar seu portal a fim de exibir um nome DNS personalizado de seu cluster do Service Fabric `"managementEndpoint"`, atualize as seguintes propriedades de modelo do Resource Manager do Cluster do Service Fabric:
@@ -155,11 +155,11 @@ Depois de criptografar os valores protegidos, [especifique os segredos criptogra
 ## <a name="authenticate-service-fabric-applications-to-azure-resources-using-managed-service-identity-msi"></a>Autenticar aplicativos do Service Fabric para recursos do Azure usando a Identidade de Serviço Gerenciada (MSI)
 
 Para saber mais sobre as identidades gerenciadas para os recursos do Azure, confira o artigo [O que são as identidades gerenciadas para recursos do Azure?](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview#how-does-it-work).
-Os clusters do Azure Service Fabric são hospedados em Conjuntos de Dimensionamento de Máquinas Virtuais que dão suporte à [Identidade de Serviço Gerenciada](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-msi#azure-services-that-support-managed-identities-for-azure-resources).
-Para obter uma lista de serviços nos quais a MSI pode ser usada para autenticação, confira os [serviços do Azure que dão suporte à autenticação do Azure Active Directory](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-msi#azure-services-that-support-azure-ad-authentication).
+Os clusters do Azure Service Fabric são hospedados em Conjuntos de Dimensionamento de Máquinas Virtuais que oferece suporte à [Identidade de Serviço Gerenciada](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-msi#azure-services-that-support-managed-identities-for-azure-resources).
+Para obter uma lista de serviços nos quais a MSI pode ser usada para autenticação, confira os [serviços do Azure que oferecem suporte à autenticação do Azure Active Directory](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/services-support-msi#azure-services-that-support-azure-ad-authentication).
 
 
-Para habilitar a identidade gerenciada atribuída ao sistema durante a criação de um conjunto de dimensionamento de máquinas virtuais ou um conjunto de dimensionamento de máquinas virtuais existente, declare a seguinte propriedade `"Microsoft.Compute/virtualMachinesScaleSets"`:
+Para habilitar a identidade gerenciada atribuída ao sistema durante a criação de um conjunto de dimensionamento de máquinas virtuais ou um conjunto de dimensionamento de máquinas virtuais existente, declare as seguintes propriedades `"Microsoft.Compute/virtualMachinesScaleSets"`:
 
 ```json
 "identity": { 
@@ -179,7 +179,7 @@ Se você tiver criado uma [identidade gerenciada atribuída ao usuário](https:/
 }
 ```
 
-Para que o aplicativo do Service Fabric possa usar a identidade gerenciada, é necessário conceder permissões aos Recursos do Azure de que ele necessita para se autenticar.
+Antes de o aplicativo do Service Fabric poder usar a identidade gerenciada, é necessário conceder permissões aos Recursos do Azure que ele necessita para se autenticar.
 Os comandos a seguir concedem acesso a um Recurso do Azure:
 
 ```bash
@@ -188,7 +188,7 @@ principalid=$(az resource show --id /subscriptions/<YOUR SUBSCRIPTON>/resourceGr
 az role assignment create --assignee $principalid --role 'Contributor' --scope "/subscriptions/<YOUR SUBSCRIPTION>/resourceGroups/<YOUR RG>/providers/<PROVIDER NAME>/<RESOURCE TYPE>/<RESOURCE NAME>"
 ```
 
-No código do aplicativo de Service Fabric [obter um token de acesso](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token#get-a-token-using-http) do Azure Resource Manager, fazendo uma pausa todos semelhantes ao seguinte:
+No código do aplicativo Service Fabric, [obtenha um token de acesso](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token#get-a-token-using-http) para Azure Resource Manager tornando um restante semelhante ao seguinte:
 
 ```bash
 access_token=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -H Metadata:true | python -c "import sys, json; print json.load(sys.stdin)['access_token']")
@@ -201,17 +201,17 @@ O exemplo a seguir mostra como fazer isso no recurso Cosmos DB:
 ```bash
 cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBSCRIPTION>/resourceGroups/<YOUR RG>/providers/Microsoft.DocumentDB/databaseAccounts/<YOUR ACCOUNT>/listKeys?api-version=2016-03-31' -X POST -d "" -H "Authorization: Bearer $access_token" | python -c "import sys, json; print(json.load(sys.stdin)['primaryMasterKey'])")
 ```
-## <a name="windows-security-baselines"></a>Linhas de base de segurança de Windows
-[É recomendável que você implemente uma configuração padrão do setor que é amplamente conhecida e bem testada, como o Microsoft security linhas de base, em vez de criar uma linha de base por conta própria](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines); uma opção para provisionar esses em sua máquina Virtual Conjuntos de dimensionamento é usar o manipulador de extensão do Azure Desired State Configuration (DSC), configurar as máquinas virtuais como ficar online, para que eles estão executando o software de produção.
+## <a name="windows-security-baselines"></a>Linhas de base de segurança do Windows
+[Recomendamos que você implemente uma configuração padrão do setor que seja amplamente conhecida e bem testada, como linhas de base de segurança da Microsoft, em oposição à criação de uma linha de base por conta própria](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines); uma opção para provisioná-los em seus conjuntos de dimensionamento de máquinas virtuais é usar o manipulador de extensão de DSC (configuração de estado desejado) do Azure para configurar as VMs à medida que elas ficam online, para que estejam executando o software de produção.
 
 ## <a name="azure-firewall"></a>Firewall do Azure
-[Firewall do Azure é um serviço de segurança de rede gerenciado e baseado em nuvem que protege seus recursos de rede Virtual do Azure. É um firewall com monitoração de estado totalmente como um serviço com alta disponibilidade interna e a escalabilidade de nuvem sem restrições. ](https://docs.microsoft.com/azure/firewall/overview); Isso permite que a capacidade de limitar o tráfego HTTP/S de saída para uma lista especificada de nomes de domínio totalmente qualificado (FQDN) incluindo caracteres curinga. Esse recurso não exige a terminação SSL. Seu recomendável aproveitar [marcas Azure Firewall FQDN](https://docs.microsoft.com/azure/firewall/fqdn-tags) para atualizações do Windows e para habilitar o tráfego de rede para o Microsoft Windows Update pontos de extremidade podem fluir através do firewall. [Implantar o Firewall do Azure usando um modelo](https://docs.microsoft.com/azure/firewall/deploy-template) fornece um exemplo de definição de modelo de recurso Microsoft.Network/azureFirewalls. É comum para aplicativos do Service Fabric de regras de firewall permitir que o seguinte para sua rede virtual de clusters:
+[O Firewall do Azure é um serviço de segurança de rede gerenciado baseado em nuvem que protege os recursos de rede virtual do Azure. Trata-se de um firewall totalmente com estado como um serviço com alta disponibilidade interna e escalabilidade de nuvem irrestrita. ](https://docs.microsoft.com/azure/firewall/overview); isso habilita a capacidade de limitar o tráfego HTTP/S de saída a uma lista especificada de FQDN (nomes de domínio totalmente qualificados), incluindo curingas. Esse recurso não exige a terminação SSL. É recomendável que você aproveite as [marcas de FQDN do firewall do Azure](https://docs.microsoft.com/azure/firewall/fqdn-tags) para atualizações do Windows e para habilitar o tráfego de rede para os pontos de extremidade do Microsoft Windows Update podem fluir pelo firewall. [Implantar o Firewall do Azure usando um modelo](https://docs.microsoft.com/azure/firewall/deploy-template) fornece um exemplo para a definição do modelo de recurso Microsoft. Network/azureFirewalls. Regras de firewall comuns a Service Fabric aplicativos é permitir o seguinte para sua rede virtual de clusters:
 
 - *download.microsoft.com
 - *servicefabric.azure.com
 - *.core.windows.net
 
-Essas regras de firewall complementam seu permitidos saída grupos de segurança, que incluiria ServiceFabric e armazenamento, como destinos permitidos da sua rede virtual.
+Essas regras de firewall complementam seus grupos de segurança de rede de saída permitidos, que incluem o infabric e o armazenamento, como destinos permitidos de sua rede virtual.
 
 ## <a name="tls-12"></a>TLS 1.2
 [TSG](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides/blob/master/Security/TLS%20Configuration.md)
@@ -251,7 +251,7 @@ Por padrão, o antivírus Windows Defender está instalado no Windows Server 201
 > Confira a documentação sobre antimalware para obter as regras de configuração, caso não esteja usando o Windows Defender. O Windows Defender não tem suporte no Linux.
 
 ## <a name="platform-isolation"></a>Isolamento de plataforma
-Por padrão, aplicativos do Service Fabric recebem acesso para a execução do Service Fabric em si, que se manifesta de formas diferentes: [variáveis de ambiente](service-fabric-environment-variables-reference.md) apontando para caminhos de arquivo no host correspondente ao aplicativo e Arquivos do Fabric, um ponto de extremidade de comunicação entre processos que aceita solicitações específicas do aplicativo e o cliente de certificado que Fabric espera que o aplicativo para usar para se autenticar. Na eventualidade que o serviço hospeda próprio código não confiável, é aconselhável desabilitar esse acesso para o tempo de execução do SF - a menos que explicitamente necessário. Acesso ao tempo de execução é removido usando a seguinte declaração na seção de políticas do manifesto do aplicativo: 
+Por padrão, Service Fabric aplicativos recebem acesso ao próprio Service Fabric do tempo de execução, que se manifesta em diferentes formas: [variáveis de ambiente](service-fabric-environment-variables-reference.md) apontando para caminhos de arquivo no host correspondente aos arquivos de aplicativo e malha, um ponto de extremidade de comunicação entre processos que aceita solicitações específicas do aplicativo e o certificado do cliente que a malha espera que o aplicativo use para se autenticar. Na eventualidade de que o serviço hospede o código não confiável, é aconselhável desabilitar esse acesso ao tempo de execução da it-a menos que seja explicitamente necessário. O acesso ao tempo de execução é removido usando a seguinte declaração na seção de políticas do manifesto do aplicativo: 
 
 ```xml
 <ServiceManifestImport>

@@ -11,16 +11,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: sharadag
-ms.openlocfilehash: 59a3bac39437b91eeee3b005bd23476a34a308b7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 289b05a2c50a2b4af50eb2114515a49bb653cf1a
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60736574"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68742400"
 ---
 # <a name="health-probes"></a>Investigações de integridade
 
-Para determinar a integridade de cada back-end, cada ambiente Front Door envia periodicamente uma solicitação HTTP/HTTPS sintética para cada um dos back-ends configurados. O Front Door, em seguida, usa as respostas desses testes para determinar os "melhores" back-ends aos quais ele deve rotear as solicitações reais do cliente.
+Para determinar a integridade de cada back-end, cada ambiente Front Door envia periodicamente uma solicitação HTTP/HTTPS sintética para cada um dos back-ends configurados. O Front Door, em seguida, usa as respostas desses testes para determinar os "melhores" back-ends aos quais ele deve rotear as solicitações reais do cliente. Observe que, como a porta frontal tem muitos ambientes de borda globalmente, o volume de solicitações de investigação de integridade para seus back-ends pode ser tão alto quanto mais de uma solicitação por segundo depende da frequência de investigação de integridade configurada. 
+
 
 
 ## <a name="supported-protocols"></a>Protocolos com suporte
@@ -29,7 +30,7 @@ O Front Door dá suporte para envio de investigações via protocolos HTTP ou HT
 
 ## <a name="health-probe-responses"></a>Respostas de investigação de integridade
 
-| Responses  | DESCRIÇÃO | 
+| Responses  | Descrição | 
 | ------------- | ------------- |
 | Determinar integridade  |  Um código de status 200 OK indica que o back-end está íntegro. Quaisquer outros resultados são considerados uma falha. Se por algum motivo (incluindo falha de rede) uma resposta HTTP válida não for recebida para uma investigação, a investigação será contada como uma falha.|
 | Medir latência  | A latência é o tempo total medido a partir do momento imediatamente antes de enviarmos a solicitação de investigação até o momento em que recebemos o último byte da resposta. Usamos uma nova conexão TCP para cada solicitação, portanto, essa medida não é tendenciosa em relação aos back-ends com conexões passivas existentes.  |

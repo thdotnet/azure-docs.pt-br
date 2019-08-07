@@ -8,14 +8,14 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 05/15/2019
+ms.date: 08/05/2019
 ms.author: juliako
-ms.openlocfilehash: 33493f1bdff6071737aad4bfb8c7d0e5e22896db
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0f67b2e37e264febf11f3fa55b4469d392c59712
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65799838"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68815671"
 ---
 # <a name="create-a-video-indexer-account-connected-to-azure"></a>Crie uma conta do Video Indexer conectada ao Azure
 
@@ -33,7 +33,7 @@ Este artigo mostra como criar uma conta do Video Indexer vinculada a uma assinat
 
     Se você não tiver um domínio do Azure AD, crie esse domínio com sua assinatura do Azure. Para obter mais informações, consulte [Gerenciando nomes de domínio personalizados no Active Directory do Azure](../../active-directory/users-groups-roles/domains-manage.md)
 
-* Um usuário e um membro em seu domínio do AD do Azure. Você usará esse membro ao conectar sua conta do Video Indexer ao Azure.
+* Um usuário em seu domínio do Azure AD com uma função de **administrador de aplicativos** . Você usará esse membro ao conectar sua conta do Video Indexer ao Azure.
 
     Esse usuário deve ser um usuário do Azure AD com uma conta corporativa ou de estudante, não uma conta pessoal como outlook.com, live.com ou hotmail.com.
 
@@ -59,9 +59,12 @@ Pesquise **Microsoft.Media** e **Microsoft.EventGrid**. Se não estiver no estad
 
 ## <a name="connect-to-azure"></a>Conecte-se ao Azure
 
+> [!NOTE]
+> Se sua assinatura do Azure usa a autenticação multifator baseada em certificado, é crucial que você execute as etapas a seguir em um dispositivo que tenha os certificados necessários instalados.
+
 1. Navegue até o site do [Video Indexer](https://www.videoindexer.ai/) e entre.
 
-2. Clique no **criar nova conta** botão:
+2. Clique no botão **criar nova conta** :
 
     ![Conectar-se para o Azure](./media/create-account/connect-to-azure.png)
 
@@ -104,7 +107,7 @@ Se a conexão com o Azure falhar, você poderá tentar solucionar o problema, co
 
 1. Use o portal do [Azure](https://portal.azure.com/) para criar uma conta de Serviços de Mídia do Azure, conforme descrito em [Criar uma conta](../previous/media-services-portal-create-account.md).
 
-    Ao criar uma conta de armazenamento para sua conta de serviços de mídia, selecione **StorageV2** para o tipo de conta e **com redundância geográfica (GRS)** para campos de replicação.
+    Ao criar uma conta de armazenamento para sua conta de serviços de mídia, selecione **StorageV2** para os campos tipo de conta e **REDUNDÂNCIA geográfica (GRS)** para replicação.
 
     ![nova conta de AMS](./media/create-account/create-ams-account1.png)
 
@@ -137,15 +140,15 @@ Na caixa de diálogo **Conectar o Video Indexer a uma assinatura do Azure** da p
 
 Na caixa de diálogo, forneça as informações a seguir:
 
-|Configuração|DESCRIÇÃO|
+|Configuração|Descrição|
 |---|---|
-|Região da conta do Indexador de Vídeo|O nome da região da conta do Video Indexer. Para um melhor desempenho e custos mais baixos, é altamente recomendável especificar o nome da região em que o recurso Serviços de Mídia do Azure e a conta do Armazenamento do Azure estão localizados. |
+|Região da conta do Video Indexer|O nome da região da conta do Video Indexer. Para um melhor desempenho e custos mais baixos, é altamente recomendável especificar o nome da região em que o recurso Serviços de Mídia do Azure e a conta do Armazenamento do Azure estão localizados. |
 |Locatário do Azure Active Directory (AAD)|O nome do locatário do Azure AD, por exemplo "contoso.onmicrosoft.com". As informações do locatário podem ser recuperadas no portal do Azure. Coloque o cursor sobre o nome do usuário conectado no canto superior direito. Localize o nome à direita de **Domínio**.|
 |ID da assinatura|A assinatura do Azure na qual essa conexão deve ser criada. O ID da assinatura pode ser recuperado no portal do Azure. Clique em **Todos os serviços** no painel esquerdo e procure por "inscrições". Selecione **Assinaturas** e escolha a ID desejada na lista das assinaturas.|
-|Nome do grupo de recursos dos Serviços de Mídia do Azur.|O nome do grupo de recursos no qual você criou a conta de Serviços de Mídia.|
-|Nome do recurso de serviço de mídia|O nome da conta de Serviços de Mídia do Azure que você criou na seção anterior.|
-|ID do aplicativo|O ID do aplicativo do Azure AD (com permissões para a conta de Serviços de Mídia especificada) que você criou na seção anterior.|
-|Chave do aplicativo|A chave de aplicativo do Azure AD que você criou na seção anterior. |
+|Nome do grupo de recursos dos Serviços de Mídia do Azure|O nome do grupo de recursos no qual você criou a conta de Serviços de Mídia.|
+|Nome do recurso do serviço de mídia|O nome da conta de Serviços de Mídia do Azure que você criou na seção anterior.|
+|ID do Aplicativo|O ID do aplicativo do Azure AD (com permissões para a conta de Serviços de Mídia especificada) que você criou na seção anterior.|
+|Chave do Aplicativo|A chave de aplicativo do Azure AD que você criou na seção anterior. |
 
 ## <a name="considerations"></a>Considerações
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/28/2018
 ms.author: rkarlin
-ms.openlocfilehash: 99bfab5a5f80fc0a49c7cc6405154394391f43e0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3a55de2d5f47274ea112e52ddbcc0d946db56470
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60908125"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68775326"
 ---
 # <a name="using-azure-security-center-for-an-incident-response"></a>Usando a Central de Segurança do Azure para uma resposta a incidentes
 Muitas organizações aprendem como responder aos incidentes de segurança somente depois de sofrer um ataque. Para reduzir os custos e danos, é importante ter um plano de resposta aos incidentes em vigor antes que ocorra um ataque. A Central de Segurança do Azure pode ser usada em diferentes estágios de uma resposta a incidentes.
@@ -65,17 +65,17 @@ Sam é analista de segurança e suas responsabilidades incluem:
 Como você pode ver, Laura e Sam têm responsabilidades diferentes e devem trabalhar juntos para compartilhar as informações da Central de Segurança.
 
 ## <a name="recommended-solution"></a>Solução recomendada
-Como Laura e Sam têm funções diferentes, eles usarão diferentes áreas da Central de Segurança para obter informações relevantes para suas atividades diárias. Laura usará os **Alertas de Segurança** como parte do seu monitoramento diário.
+Como Laura e Sam têm funções diferentes, eles usarão diferentes áreas da Central de Segurança para obter informações relevantes para suas atividades diárias. Laura usará **alertas de segurança** como parte de seu monitoramento diário.
 
 ![Alertas de segurança](./media/security-center-incident-response/security-center-incident-response-fig3.png)
 
-Laura usará os Alertas de Segurança durante as fases de Detecção e Avaliação. Quando Laura terminar a avaliação inicial, poderá expandir o problema para Sam, se uma investigação adicional for necessária. Neste ponto, Sam usará as informações fornecidas pela Central de Segurança, às vezes, em conjunto com outras fontes de dados, para passar para o estágio de Diagnóstico.
+Laura usará os Alertas de Segurança durante as fases de Detecção e Avaliação. Depois que Judy concluir a avaliação inicial, ele poderá escalonar o problema para Sam se uma investigação adicional for necessária. Neste ponto, Sam usará as informações fornecidas pela Central de Segurança, às vezes, em conjunto com outras fontes de dados, para passar para o estágio de Diagnóstico.
 
 ## <a name="how-to-implement-this-solution"></a>Como implementar esta solução
 Para ver como você usaria a Central de Segurança do Azure em um cenário de resposta a incidentes, seguiremos as etapas de Laura nos estágios para Detectar e Avaliar, em seguida, veremos o que Sam faz para diagnosticar o problema.
 
 ### <a name="detect-and-assess-incident-response-stages"></a>Estágios de resposta a incidentes para detecção e avaliação
-Laura se conectou ao portal do Azure e está trabalhando no console da Central de Segurança. Como parte de suas atividades diárias de monitoramento, ela iniciou a revisão dos alertas de segurança de alta prioridade executando as seguintes etapas:
+Laura se conectou ao portal do Azure e está trabalhando no console da Central de Segurança. Como parte de suas atividades diárias de monitoramento, eles começaram a revisar alertas de segurança de alta prioridade executando as seguintes etapas:
 
 1. Clique no bloco **Alertas de segurança** e acesse a folha **Alertas de segurança**.
     ![Folha Alerta de segurança](./media/security-center-incident-response/security-center-incident-response-fig4.png)
@@ -89,7 +89,7 @@ Laura se conectou ao portal do Azure e está trabalhando no console da Central d
     Nessa folha, Laura pode fazer anotações sobre os recursos atacados, quantas vezes esse ataque aconteceu e quando ele foi detectado.
 3. Clique no **recurso atacado** para obter mais informações sobre o ataque.
 
-Depois de ler a descrição, Laura está convencida de que isso não é um falso positivo e que deve expandir o caso para Sam.
+Depois de ler a descrição, Judy está convencido de que isso não é um falso positivo e que deve escalonar esse caso para o Sam.
 
 ### <a name="diagnose-incident-response-stage"></a>Estágio para diagnosticar a resposta a incidentes
 Sam recebe o caso de Laura e começa a revisar as etapas de correção sugeridas pela Central de Segurança.

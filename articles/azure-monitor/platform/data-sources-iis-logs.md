@@ -13,17 +13,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/28/2018
 ms.author: bwren
-ms.openlocfilehash: 05d9dc8f676589dcb301c19b0a2e80e9fd4c1fa0
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: cc0fcbb2005ce2aaa70c9e1d2a9993d341169209
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68249753"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68814229"
 ---
 # <a name="collect-iis-logs-in-azure-monitor"></a>Coletar logs II no Azure Monitor
 O IIS (Serviços de Informações da Internet) armazena a atividade do usuário em arquivos de log que podem ser coletados pelo Azure Monitor e armazenados como [dados de log](data-platform.md).
 
-![Logs IIS](media/data-sources-iis-logs/overview.png)
+![Logs do IIS](media/data-sources-iis-logs/overview.png)
 
 ## <a name="configuring-iis-logs"></a>Configurando logs do IIS
 O Azure Monitor coleta entradas de arquivos de log criados pelo IIS, por isso você deve [configurar o IIS para o registro em log](https://technet.microsoft.com/library/hh831775.aspx).
@@ -34,13 +34,13 @@ Configurar logs do IIS no Azure Monitor a partir de [menu de configurações ava
 
 
 ## <a name="data-collection"></a>Coleta de dados
-Azure Monitor coleta entradas de log do IIS de cada agente sempre que o carimbo de data/hora do log é alterado ou um novo arquivo é criado. O log é lido a cada 5 minutos. A frequência da criação do novo arquivo é controlada pela configuração **agenda de substituição do arquivo de log** para o site do IIS, que é uma vez por dia por padrão. Se, por algum motivo, o IIS não atualizar o carimbo de data/hora antes do horário de substituição, se a configuração for por **hora**, Azure monitor coletará o log a cada hora. Se a configuração for **diária**, Azure monitor coletará o log a cada 24 horas.
+Azure Monitor coleta entradas de log do IIS de cada agente sempre que o carimbo de data/hora do log é alterado. O log é lido a cada **5 minutos**. Se, por algum motivo, o IIS não atualizar o carimbo de data/hora antes do horário de substituição quando um novo arquivo for criado, as entradas serão coletadas após a criação do novo arquivo. A frequência da criação do novo arquivo é controlada pela configuração **agenda de substituição do arquivo de log** para o site do IIS, que é uma vez por dia por padrão. Se a configuração for por **hora**, Azure monitor coletará o log a cada hora. Se a configuração for **diária**, Azure monitor coletará o log a cada 24 horas.
 
 
 ## <a name="iis-log-record-properties"></a>Propriedades de registro de log do IIS
 Os registros log do IIS têm um tipo de **W3CIISLog** e têm as propriedades na tabela a seguir:
 
-| Propriedade | DESCRIÇÃO |
+| Propriedade | Descrição |
 |:--- |:--- |
 | Computer |Nome do computador do qual o evento foi coletado. |
 | cIP |Endereço IP do cliente. |
@@ -67,7 +67,7 @@ Os registros log do IIS têm um tipo de **W3CIISLog** e têm as propriedades na 
 ## <a name="log-queries-with-iis-logs"></a>Consultas de log com logs do IIS
 A tabela a seguir fornece diferentes exemplos de consultas de log que recuperam registros do log do IIS.
 
-| Consultar | DESCRIÇÃO |
+| Consulta | Descrição |
 |:--- |:--- |
 | W3CIISLog |Todos os registros de log do IIS. |
 | W3CIISLog &#124; where scStatus==500 |Todos os registros de log do IIS com um status de retorno de 500. |

@@ -1,30 +1,30 @@
 ---
-title: Reduzir a solução VMware do Azure pela nuvem privada de CloudSimple
+title: Reduzir a solução VMware do Azure da nuvem privada CloudSimple
 description: Descreve como reduzir uma nuvem privada CloudSimple.
 author: sharaths-cs
 ms.author: b-shsury
 ms.date: 07/01/2019
 ms.topic: article
-ms.service: vmware
+ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 6e639feb603f1654b4dcd40f16d8e3094307839a
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: 67bb7e0cd8a800c2c2ba87c768739fd573ef6888
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67544511"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68812196"
 ---
-# <a name="shrink-a-cloudsimple-private-cloud"></a>Reduzir uma nuvem privada de CloudSimple
+# <a name="shrink-a-cloudsimple-private-cloud"></a>Reduzir uma nuvem privada CloudSimple
 
-CloudSimple fornece a flexibilidade para reduzir dinamicamente uma nuvem privada.  Uma nuvem privada consiste em um ou mais clusters do vSphere. Cada cluster pode ter de 3 a 16 nós. Ao reduzir uma nuvem privada, você pode remove um nó de cluster existente ou excluir um cluster inteiro. 
+O CloudSimple fornece a flexibilidade para reduzir dinamicamente uma nuvem privada.  Uma nuvem privada consiste em um ou mais clusters vSphere. Cada cluster pode ter de 3 a 16 nós. Ao reduzir uma nuvem privada, você remove um nó do cluster existente ou exclui um cluster inteiro. 
 
 ## <a name="before-you-begin"></a>Antes de começar
 
-As condições a seguir deve ser atendida para redução de uma nuvem privada.  Gerenciamento de cluster (primeiro cluster) criado quando uma nuvem privada foi criada não pode ser excluída.
+As condições a seguir devem ser atendidas para a redução de uma nuvem privada.  O cluster de gerenciamento (primeiro cluster) criado quando uma nuvem privada foi criada não pode ser excluído.
 
-* Um cluster do vSphere deve ter três nós.  Não pode ser reduzido a um cluster com apenas três nós.
-* Armazenamento total consumido não deve exceder a capacidade total após a redução do cluster. 
+* Um cluster vSphere deve ter três nós.  Um cluster com apenas três nós não pode ser reduzido.
+* O armazenamento total consumido não deve exceder a capacidade total após a redução do cluster. 
 
 ## <a name="sign-in-to-azure"></a>Entrar no Azure
 
@@ -32,29 +32,29 @@ Entre no Portal do Azure em [https://portal.azure.com](https://portal.azure.com)
 
 ## <a name="shrink-a-private-cloud"></a>Reduzir uma nuvem privada 
 
-1. [Acessar o portal CloudSimple](access-cloudsimple-portal.md).
+1. [Acesse o portal do CloudSimple](access-cloudsimple-portal.md).
 
-2. Abra o **recursos** página.
+2. Abra a página **recursos** .
 
-3. Clique na nuvem privada que deseja reduzir
+3. Clique na nuvem privada que você deseja reduzir
 
 4. Na página Resumo, clique em **reduzir**.
 
-    ![Redução de nuvem privada](media/shrink-private-cloud.png)
+    ![Reduzir nuvem privada](media/shrink-private-cloud.png)
 
 5. Selecione o cluster que você deseja reduzir ou excluir. 
 
-    ![Reduzir a nuvem privada - selecionar cluster](media/shrink-private-cloud-select-cluster.png)
+    ![Reduzir nuvem privada-selecionar cluster](media/shrink-private-cloud-select-cluster.png)
 
 6. Selecione **remover um nó** ou **excluir o cluster inteiro**. 
 
-7. Verifique se a capacidade de cluster
+7. Verificar a capacidade do cluster
 
-8. Clique em **enviar** para reduzir a nuvem privada.
+8. Clique em **Enviar** para reduzir a nuvem privada.
 
-Inicia a redução da nuvem privada.  Você pode monitorar o progresso nas tarefas.  O processo de redução pode levar algumas horas dependendo dos dados, o que precisa ser resynced em vSAN.
+A redução da nuvem privada é iniciada.  Você pode monitorar o progresso em tarefas.  O processo de redução pode levar algumas horas, dependendo dos dados, que precisam ser ressincronizados no vSAN.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Consuma a VMs do VMware no Azure](quickstart-create-vmware-virtual-machine.md)
+* [Consumir VMs VMware no Azure](quickstart-create-vmware-virtual-machine.md)
 * Saiba mais sobre [nuvens privadas](cloudsimple-private-cloud.md)

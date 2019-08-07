@@ -9,15 +9,15 @@ ms.subservice: app-mgmt
 ms.topic: article
 ms.workload: identity
 ms.date: 05/08/2019
-ms.author: msmimart
+ms.author: mimart
 ms.reviewer: arvinh,luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a2d9035adb70ab4a5877f3e55dc4115a5ec1f7f5
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.openlocfilehash: cc1e26a3c7d284a60b830f6f66cdcecef97db4d6
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68426558"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68834626"
 ---
 # <a name="configure-linked-sign-on"></a>Configurar o logon vinculado
 
@@ -25,7 +25,7 @@ Quando você adiciona um aplicativo Web galeria ou não Galeria, uma das opçõe
 
 ## <a name="before-you-begin"></a>Antes de começar
 
-Se o aplicativo não tiver sido adicionado ao seu locatário do Azure AD, consulte [Adicionar um aplicativo da Galeria](add-gallery-app.md) ou [Adicionar um aplicativo](add-non-gallery-app.md)inexistente na galeria.
+Se o aplicativo não tiver sido adicionado ao seu locatário do Azure AD, confira [Adicionar um aplicativo da galeria](add-gallery-app.md) ou [Adicionar um aplicativo inexistente na galeria](add-non-gallery-app.md).
 
 ### <a name="open-the-app-and-select-linked-sign-on"></a>Abra o aplicativo e selecione logon vinculado
 
@@ -49,5 +49,5 @@ Se o aplicativo não tiver sido adicionado ao seu locatário do Azure AD, consul
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Atribuir usuários ou grupos ao aplicativo](methods-for-assigning-users-and-groups.md)
+- [Atribuir usuários e grupos ao aplicativo](methods-for-assigning-users-and-groups.md)
 - [Configurar o provisionamento automático de conta de usuário](configure-automatic-user-provisioning-portal.md)

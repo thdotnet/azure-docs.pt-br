@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 67720256cfac68c350c800291653a4a0c1d7ee46
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 63768b83baafe00348a28c5c9c99e5f16619ac99
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66427827"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68815932"
 ---
 # <a name="certificate-creation-methods"></a>Métodos de criação de certificado
 
@@ -31,7 +31,7 @@ As descrições a seguir correspondem às etapas indicadas em verde no diagrama 
 1. No diagrama acima, o aplicativo está criando um certificado que internamente começa com a criação de uma chave em seu cofre de chaves.
 2. O Key Vault devolve ao seu aplicativo uma Solicitação de Assinatura de Certificado (CSR)
 3. O aplicativo passa a CSR à sua autoridade de certificação escolhida.
-4. Escolhida para sua autoridade de certificação responde com um X509 certificado.
+4. A AC escolhida responde com um certificado X509.
 5. Seu aplicativo conclui a criação do novo certificado com uma fusão do Certificado X509 da autoridade de certificação.
 
 -   **Criar um certificado com um provedor de emissor conhecido:** esse método requer uma única tarefa de criação de um objeto de emissor. Depois que um objeto de emissor é criado no cofre de chaves, seu nome pode ser referenciado na política do certificado do KV. Uma solicitação para criar um certificado do KV criará um par de chaves no cofre e se comunicará com o serviço do provedor de emissor usando as informações no objeto de emissor referenciado para obter um certificado x509. O certificado x509 é recuperado do serviço de emissor e é mesclado com o par de chaves para concluir a criação do certificado do KV.  
@@ -82,7 +82,7 @@ A criação de certificado pode ser concluída manualmente ou usando um emissor 
 |Provedor|Tipo de certificado|  
 |--------------|----------------------|  
 |DigiCert|O Key Vault oferece certificados SSL OV ou EV com DigiCert|
-|GlobalCert|O Cofre de chaves oferece OV ou EV certificados SSL com Globaltrust |
+|GlobalSign|O Key Vault oferece certificados SSL OV ou EV com GlobalSign|
 
  Um emissor do certificado é uma entidade representada no Azure Key Vault (KV) como um recurso CertificateIssuer. Ele é usado para fornecer informações sobre a origem de um certificado KV; nome do emissor, provedor, credenciais e outros detalhes administrativos.
 
@@ -90,6 +90,6 @@ Observe que quando um pedido é feito com o provedor do emissor, ele pode aceita
 
  Autorização: requer a permissão certificates/create.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
  - [Sobre chaves, segredos e certificados](about-keys-secrets-and-certificates.md)
  - [Monitorar e gerenciar a criação de certificados](create-certificate-scenarios.md)

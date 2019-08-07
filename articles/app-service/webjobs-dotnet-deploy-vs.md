@@ -15,12 +15,12 @@ ms.workload: azure-vs
 ms.date: 02/18/2019
 ms.author: glenga
 ms.reviewer: david.ebbo;suwatch;pbatum;naren.soni
-ms.openlocfilehash: 2695ee2751a2834466c42d224101af246b829aca
-ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
+ms.openlocfilehash: d50acc50880229626c847d41d9abe9a9e13d9c6e
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68717632"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736126"
 ---
 # <a name="develop-and-deploy-webjobs-using-visual-studio---azure-app-service"></a>Desenvolver e implantar o WebJobs usando o Visual Studio – Serviço de Aplicativo do Azure
 
@@ -228,7 +228,7 @@ Quando você [cria um WebJob na portal do Azure](webjobs-create.md), o arquivo S
 
 ### <a name="cron-expressions"></a>Expressões CRON
 
-O webjobs usa as mesmas expressões CRON para agendamento como o gatilho de temporizador no Azure Functions. Para saber mais sobre o suporte a CRON, consulte o [artigo de referência de gatilho](../azure-functions/functions-bindings-timer.md#cron-expressions)de temporizador.
+O webjobs usa as mesmas expressões CRON para agendamento como o gatilho de temporizador no Azure Functions. Para saber mais sobre o suporte a CRON, consulte o [artigo de referência de gatilho](../azure-functions/functions-bindings-timer.md#ncrontab-expressions)de temporizador.
 
 ### <a name="settingjob-reference"></a>configuração. referência de trabalho
 
@@ -238,7 +238,7 @@ As configurações a seguir são suportadas pelos trabalhos Web:
 | ----------- | --------- | --------------- |
 | `is_in_place` | Todas | Permite que o trabalho seja executado no local sem ser copiado primeiro para uma pasta temporária. Para saber mais, consulte [diretório de trabalho de trabalhos](https://github.com/projectkudu/kudu/wiki/WebJobs#webjob-working-directory)Web. |
 | `is_singleton` | Contínuo | Só execute os trabalhos Web em uma única instância quando expandido. Para saber mais, consulte [definir um trabalho contínuo como singleton](https://github.com/projectkudu/kudu/wiki/WebJobs-API#set-a-continuous-job-as-singleton). |
-| `schedule` | Disparado | Execute o WebJob em uma agenda baseada em CRON. PARA saber mais, consulte o [artigo de referência do gatilho](../azure-functions/functions-bindings-timer.md#cron-expressions)de temporizador. |
+| `schedule` | Disparado | Execute o WebJob em uma agenda baseada em CRON. PARA saber mais, consulte o [artigo de referência do gatilho](../azure-functions/functions-bindings-timer.md#ncrontab-expressions)de temporizador. |
 | `stopping_wait_time`| Todas | Permite o controle do comportamento de desligamento. Para saber mais, confira desligamento [normal](https://github.com/projectkudu/kudu/wiki/WebJobs#graceful-shutdown). |
 
 ## <a name="next-steps"></a>Próximas etapas

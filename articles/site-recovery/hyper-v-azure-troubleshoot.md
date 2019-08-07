@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/14/2019
 ms.author: rajanaki
-ms.openlocfilehash: a7fcd4deb0446577af310ff5380ffddf05ba87be
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2cf43f8a235b112cfcf1fc6c9dba626a5a0c9b7e
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64719829"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68828399"
 ---
 # <a name="troubleshoot-hyper-v-to-azure-replication-and-failover"></a>Solucionar problemas de Hyper-V para replicação e failover do Azure
 
@@ -30,7 +30,7 @@ Se você enfrentar problemas ao habilitar a proteção para VMs do Hyper-V, veri
 5. Na VM convidada, verifique se o WMI está habilitado e acessível.
    - [Saiba mais sobre](https://blogs.technet.microsoft.com/askperf/2007/06/22/basic-wmi-testing/) teste básico de WMI.
    - [Solucione problemas](https://aka.ms/WMiTshooting) de WMI.
-   - [Solucionar problemas de](https://technet.microsoft.com/library/ff406382.aspx#H22) problemas com scripts do WMI e serviços.
+   - [Solucionar](https://technet.microsoft.com/library/ff406382.aspx#H22) problemas com scripts e serviços WMI.
 6. Na VM convidada, certifique-se de que a versão mais recente do Integration Services está em execução.
     - [Verifique](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services) se você tem a versão mais recente.
     - [Mantenha](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#keep-integration-services-up-to-date) o Integration Services atualizado.
@@ -129,12 +129,12 @@ Um instantâneo consistente com o aplicativo é um instantâneo em um ponto no t
 
 2. Para gerar os instantâneos do VSS para a VM, verifique se os serviços de integração do Hyper-V estão instalados na VM e se o serviço de integração de Backup (VSS) está habilitado.
     - Certifique-se de que o serviço VSS/daemons do Integration Services estão em execução no convidado e se estão em um estado **OK**.
-    - Você pode verificar isso em uma sessão do PowerShell com privilégios elevados no host Hyper-V com o comando **et-VMIntegrationService - VMName\<VMName >-Name VSS** você também pode obter essas informações fazendo logon na VM convidada. [Saiba mais](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services).
+    - Você pode verificar isso em uma sessão elevada do PowerShell no host Hyper-V com o comando **Get-VMIntegrationService-\<VMName VMName >-Name VSS** , você também pode obter essas informações fazendo logon na VM convidada. [Saiba mais](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services).
     - Verifique se os serviços de integração de Backup/VSS na VM estão em execução e em estado íntegro. Se não, reinicie esses serviços e o serviço do solicitante de Cópia de Sombra de Volume do Hyper-V no servidor host Hyper-V.
 
 ### <a name="common-errors"></a>Erros comuns
 
-**Código de erro** | **Mensagem** | **Detalhes**
+**Código de erro** | **Message** | **Detalhes**
 --- | --- | ---
 **0x800700EA** | "Falha do Hyper-V em gerar o conjunto de instantâneo do VSS para a máquina virtual: Mais dados disponíveis. (0x800700EA). A geração do conjunto de instantâneos de VSS pode falhar se a operação de backup estiver em andamento.<br/><br/> A operação de replicação para a máquina virtual falhou: Mais dados disponíveis.” | Verifique se sua VM tem um disco dinâmico habilitado. Não há suporte para isso.
 **0x80070032** | "Falha do solicitante de cópia de sombra de volume do Hyper-V em se conectar à máquina virtual <./VMname> porque a versão não corresponde à versão esperada pelo Hyper-V | Verifique se as atualizações mais recentes do Windows estão instaladas.<br/><br/> [Atualize](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#keep-integration-services-up-to-date) para a versão mais recente do Integration Services.

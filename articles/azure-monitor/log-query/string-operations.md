@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
-ms.openlocfilehash: f53d3bd64b4f837fe29baa338cd338158d59d95d
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.openlocfilehash: 0dd61deb372822c5c564758d26d4c4a4938c1064
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68466962"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68741455"
 ---
 # <a name="work-with-strings-in-azure-monitor-log-queries"></a>Trabalhe com cadeias de caracteres nas consultas de log no Azure Monitor
 
@@ -30,11 +30,11 @@ ms.locfileid: "68466962"
 
 Este artigo descreve como editar, comparar, pesquisar e executar uma variedade de outras operações em cadeias de caracteres.
 
-Cada caractere em uma cadeia de caracteres tem um número de índice, de acordo com o local. O primeiro caractere está no índice 0, o próximo caractere é 1, e assim por diante. Diferentes funções de cadeia de caracteres usam números de índice conforme mostrado nas seções a seguir. Muitos dos exemplos a seguir usam o comando **print** para demonstrar a manipulação da cadeia de caracteres sem usar uma fonte de dados específica.
+Cada caractere em uma cadeia de caracteres tem um número de índice, de acordo com o local. O primeiro caractere está no índice 0, o próximo caractere é 1 e assim por diante. Diferentes funções de cadeia de caracteres usam números de índice conforme mostrado nas seções a seguir. Muitos dos exemplos a seguir usam o comando **print** para demonstrar a manipulação da cadeia de caracteres sem usar uma fonte de dados específica.
 
 
 ## <a name="strings-and-escaping-them"></a>Cadeias de caracteres e seus escapes
-Os valores da cadeia de caracteres são encapsulados com caracteres de aspas simples ou duplas. Barra invertida (\) é usada para caracteres de escape para o caractere seguinte, como \t para tab \n para a newline e \" o próprio caractere de aspas.
+Os valores da cadeia de caracteres são encapsulados com caracteres de aspas simples ou duplas. A barra invertida (\\) é usada para escapar caracteres para o caractere após ele, como \t para Tab, \n para nova linha e \" o próprio caractere de aspas.
 
 ```Kusto
 print "this is a 'string' literal in double \" quotes"
@@ -90,7 +90,7 @@ operador       |Descrição                         |Diferencia maiúsculas de m
 
 ## <a name="countof"></a>countof
 
-Conta as ocorrências de uma subcadeia de caracteres em uma cadeia de caracteres. Pode corresponder cadeias de caracteres sem formatação ou usar regex. As correspondências de cadeia de caracteres sem formatação podem se sobrepor, enquanto as correspondências de regex não.
+Conta as ocorrências de uma subcadeia de caracteres em uma cadeia de caracteres. Pode corresponder cadeias de caracteres sem formatação ou usar regex. As correspondências de cadeia de caracteres sem formatação podem se sobrepor, enquanto as correspondências de regex não podem.
 
 ### <a name="syntax"></a>Sintaxe
 ```
@@ -129,7 +129,7 @@ print countof("abcabc", "a.c", "regex");  // result: 2
 
 ## <a name="extract"></a>extract
 
-Obtém uma correspondência para uma expressão regular a partir de uma determinada cadeia de caracteres. Opcionalmente, também converte a subcadeia de caracteres extraída no tipo especificado.
+Obtém uma correspondência para uma expressão regular a partir de uma determinada cadeia de caracteres. Opcionalmente também converte a subcadeia de caracteres extraída para o tipo especificado.
 
 ### <a name="syntax"></a>Sintaxe
 
@@ -244,7 +244,7 @@ Substitui todas as correspondências de regex por outra cadeia de caracteres.
 replace(regex, rewrite, input_text)
 ```
 
-### <a name="arguments"></a>Arguments
+### <a name="arguments"></a>Argumentos
 
 - `regex` - A expressão regular para fazer a correspondência. Pode conter grupos de captura entre '('parênteses')'.
 - `rewrite` - O regex de substituição para qualquer correspondência feita pelo regex de correspondência. Use \0 para referir-se à correspondência inteira, \1 para o primeiro grupo de captura, \2, e assim por diante para grupos de captura subsequentes.

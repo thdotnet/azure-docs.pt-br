@@ -5,13 +5,13 @@ author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
 ms.topic: conceptual
-ms.date: 04/05/2019
-ms.openlocfilehash: a6f2cf1dcee6a85376c8d767e57c504b6b246e5d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.date: 08/01/2019
+ms.openlocfilehash: d6c813dec3922334f7462b1226ea22371fd5f43b
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60580452"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736284"
 ---
 # <a name="azure-data-catalog-terminology"></a>Terminologia do Catálogo de Dados do Azure
 
@@ -23,7 +23,7 @@ O Catálogo de Dados do Azure é um repositório de metadados baseado em nuvem n
 
 ## <a name="data-source"></a>Fonte de dados
 
-Uma fonte de dados é um sistema ou um contêiner que gerencia ativos de dados. Exemplos incluem bancos de dados do SQL Server, bancos de dados Oracle, bancos de dados do SQL Server Analysis Services (tabulares ou multidimensionais) e servidores do SQL Server Reporting Services.
+Uma fonte de dados é um sistema ou um contêiner que gerencia ativos de dados. Os exemplos incluem bancos de dados SQL Server, bancos de dados Oracle, bancos de dados SQL Server Analysis Services (tabela ou multidimensional) e servidores SQL Server Reporting Services.
 
 ## <a name="data-asset"></a>Ativos de dados
 
@@ -50,7 +50,7 @@ Os metadados descritivos de um ativo de dados podem incluir informações sobre 
 * A URL de uma ferramenta de gerenciamento de identidade e de acesso (como o Microsoft Identity Manager) que pode ser usada para acessar a fonte de dados.
 * Uma entrada de texto livre que descreve como os usuários podem obter acesso à fonte de dados.
 
-## <a name="preview"></a>Visualização
+## <a name="preview"></a>Visualizar
 
 Uma visualização no Catálogo de Dados do Azure é um instantâneo de até 20 registros que podem ser extraídos da fonte de dados durante o registro e armazenados no catálogo com os metadados de ativos de dados. A visualização pode ajudar usuários que descobrem um ativo de dados a compreender melhor sua função e finalidade. Em outras palavras, a visualização de dados de exemplo pode ser mais valiosa do que ver apenas os nomes de coluna e tipos de dados.
 Visualizações só têm suporte para tabelas e exibições e devem ser explicitamente selecionadas pelo usuário durante o registro.
@@ -65,9 +65,9 @@ Um perfil de dados no Catálogo de Dados do Azure é um instantâneo de nível d
 
 ## <a name="user-perspective"></a>Perspectiva do usuário
 
-No Catálogo de Dados do Azure, qualquer usuário pode fornecer metadados descritivos para um ativo de dados registrado. Cada usuário tem uma perspectiva distinta dos dados e seu uso. Por exemplo, o administrador responsável por um servidor pode fornecer detalhes de seu SLA (Contrato de Nível de Serviço) ou janelas de backup; um administrador de dados pode fornecer links de documentação para os negócios de negócios aos quais os dados dão suporte; e um analista pode fornecer uma descrição em termos mais relevantes para outros analistas e que podem ser mais valiosos para usuários que precisam descobrir e entender os dados.
+No Catálogo de Dados do Azure, qualquer usuário pode fornecer metadados descritivos para um ativo de dados registrado. Cada usuário tem uma perspectiva distinta sobre os dados e seu uso. Por exemplo, o administrador responsável por um servidor pode fornecer detalhes de seu SLA (Contrato de Nível de Serviço) ou janelas de backup; um administrador de dados pode fornecer links de documentação para os negócios de negócios aos quais os dados dão suporte; e um analista pode fornecer uma descrição em termos mais relevantes para outros analistas e que podem ser mais valiosos para usuários que precisam descobrir e entender os dados.
 
-Cada uma dessas perspectivas é inerentemente valiosa e com o catálogo de dados do Azure, cada usuário pode fornecer as informações que são significativas para eles, enquanto todos os usuários podem usar essas informações para entender os dados e sua finalidade.
+Cada uma dessas perspectivas é inerentemente valiosa e, com o catálogo de dados do Azure, cada usuário pode fornecer as informações que são significativas para elas, enquanto todos os usuários podem usar essas informações para entender os dados e sua finalidade.
 
 ## <a name="expert"></a>Especialista
 

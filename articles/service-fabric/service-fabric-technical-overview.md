@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/17/2018
 ms.author: masnider
-ms.openlocfilehash: 085d5e560eec090ab76c263f8f93140786f2d734
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 82672114722db843fcb5d0bdff28cf14cddb1aef
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60543199"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68811927"
 ---
 # <a name="service-fabric-terminology-overview"></a>Visão geral da terminologia do Service Fabric
 O Azure Service Fabric é uma plataforma de sistemas distribuídos que facilita o empacotamento, implantação e gerenciamento de microsserviços escalonáveis e confiáveis.  É possível [hospedar clusters de Service Fabric em qualquer lugar](service-fabric-deploy-anywhere.md): Azure, em um datacenter local ou em qualquer provedor de nuvem.  O Service Fabric é o orquestrador que fornece energia à [Malha do Azure Service Fabric](/azure/service-fabric-mesh). É possível usar qualquer estrutura para gravar os serviços e escolher onde executar o aplicativo a partir de várias opções de ambiente. Este artigo apresenta detalhes da terminologia usada pelo Service Fabric para compreensão dos termos usados na documentação.
@@ -142,7 +142,7 @@ Você também pode executar os aplicativos existentes no Service Fabric:
 
 **Contêineres**:  O Service Fabric dá suporte à implantação de contêineres do Docker em contêineres do Linux e do Windows Server no Windows Server 2016, juntamente com o suporte para o modo de isolamento do Hyper-V. No [modelo de aplicativo](service-fabric-application-model.md)do Service Fabric, um contêiner representa um host de aplicativo no qual várias réplicas de serviço são colocadas. O Service Fabric pode executar qualquer contêiner, e o cenário é semelhante ao cenário executável de convidado, no qual você pode empacotar um aplicativo existente dentro de um contêiner. Além disso, também é possível executar os [serviços do Service Fabric dentro de contêineres](service-fabric-services-inside-containers.md).
 
-**Executáveis de convidado**: Você pode executar qualquer tipo de código, como Node.js, Java ou C++ no Service Fabric como um serviço. O Service Fabric se refere a esses tipos de serviço como executáveis convidados, que são tratados como serviços sem estado. As vantagens para executar um executável de convidado no cluster do Service Fabric inclui uma disponibilidade alta, monitoramento de integridade, gerenciamento do ciclo de vida do aplicativo, densidade alta e descoberta.
+**Executáveis de convidado**: Você pode executar qualquer tipo de código, como node. js, Python, Java ou C++ no Azure Service Fabric como um serviço. O Service Fabric se refere a esses tipos de serviço como executáveis convidados, que são tratados como serviços sem estado. As vantagens para executar um executável de convidado no cluster do Service Fabric inclui uma disponibilidade alta, monitoramento de integridade, gerenciamento do ciclo de vida do aplicativo, densidade alta e descoberta.
 
 Leia o artigo [Escolher um modelo de programação para seu serviço](service-fabric-choose-framework.md) para saber mais.
 
@@ -164,13 +164,13 @@ Diferentes ambientes possuem diferentes níveis de suporte para modelos de impla
 | Tipo de aplicativo | Descrito por | Malha do Microsoft Azure Service Fabric | Clusters do Microsoft Azure Service Fabric (qualquer sistema operacional)| Cluster local | Cluster autônomo |
 |---|---|---|---|---|---|
 | Aplicativos de Malha do Service Fabric | Modelo de recurso (YAML & JSON) | Com suporte |Sem suporte | Windows- com suporte, Linux e Mac - sem suporte | Windows- sem suporte |
-|Aplicativos nativos do Service Fabric | Modelo de aplicativo nativo (XML) | Sem suporte| Com suporte|Com suporte|Windows- sem suporte|
+|Aplicativos nativos do Service Fabric | Modelo de aplicativo nativo (XML) | Sem Suporte| Com suporte|Com suporte|Windows- sem suporte|
 
 A tabela a seguir descreve os diferentes modelos de aplicativos e as ferramentas existentes no Service Fabric.
 
-| Tipo de aplicativo | Descrito por | Visual Studio | Eclipse | SFCTL | AZ CLI | Powershell|
+| Tipo de aplicativo | Descrito por | Visual Studio | Eclipse | SFCTL | AZ CLI | PowerShell|
 |---|---|---|---|---|---|---|
-| Aplicativos de Malha do Service Fabric | Modelo de recurso (YAML & JSON) | VS 2017 |Sem suporte |Sem suporte | Com suporte - apenas ambiente de Malha | Sem suporte|
+| Aplicativos de Malha do Service Fabric | Modelo de recurso (YAML & JSON) | VS 2017 |Sem suporte |Sem suporte | Com suporte - apenas ambiente de Malha | Sem Suporte|
 |Aplicativos nativos do Service Fabric | Modelo de aplicativo nativo (XML) | VS 2017 e VS 2015| Com suporte|Com suporte|Com suporte|Com suporte|
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->

@@ -1,18 +1,17 @@
 ---
 title: Como proteger o acesso ao Catálogo de Dados do Azure
 description: Este artigo explica como proteger o catálogo de dados e seus ativos.
-services: data-catalog
 author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
 ms.topic: conceptual
-ms.date: 01/18/2018
-ms.openlocfilehash: 6c09b509399647f4cacbc96427200da5a1b00ac9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/01/2019
+ms.openlocfilehash: c6c99eb62ba628ffc8c84799a6729540b572c580
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61000682"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736393"
 ---
 # <a name="how-to-secure-access-to-data-catalog-and-data-assets"></a>Como proteger o acesso ao catálogo de dados e ativos de dados
 > [!IMPORTANT]
@@ -28,7 +27,7 @@ Para dar a um usuário ou grupo o acesso a um catálogo de dados e definir permi
     ![catálogo de dados – configurações](media/data-catalog-how-to-secure-catalog/data-catalog-settings.png)
 2. Na página configurações, expanda a seção **Usuários do Catálogo**.
     ![Catálogo de Usuários – Adicionar](media/data-catalog-how-to-secure-catalog/data-catalog-add-button.png)
-3. Clique em **Adicionar**.
+3. Clique em **Adicionar** .
 4. Insira o **nome de usuário** totalmente qualificado ou nome do **grupo de segurança** no AAD (Azure Active Directory) associado ao catálogo. Use vírgula (', ') como um separador se você estiver adicionando mais de um usuário ou grupo.
     ![Usuários do Catálogo – usuários ou grupos](media/data-catalog-how-to-secure-catalog/data-catalog-users-groups.png)
 5. Pressione **ENTER** ou **TAB** fora da caixa de texto. 

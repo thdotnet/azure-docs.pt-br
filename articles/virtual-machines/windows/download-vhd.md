@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/01/2018
 ms.author: cynthn
-ms.openlocfilehash: 7128413e48fdeef9b9284bc6db11649016a06153
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: ebcc8301fa3693880974e45b594be218905e8311
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722806"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68775401"
 ---
 # <a name="download-a-windows-vhd-from-azure"></a>Baixar um VHD do Windows Azure
 
@@ -52,11 +52,11 @@ Para usar o VHD como um disco de uma nova instância de uma VM existente ou um d
 Para baixar o arquivo VHD, você precisa gerar uma URL de [SAS (assinatura de acesso compartilhado)](../../storage/common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Quando a URL é gerada, uma hora de expiração é atribuída à URL.
 
 1.  No menu da folha da VM, clique em **Discos**.
-2.  Selecione o disco do sistema operacional da VM e clique em **Exportar**.
+2.  Selecione o disco do sistema operacional para a VM e clique em **exportação de disco**.
 3.  Defina o tempo de expiração da URL como *36000*.
 4.  Clique em **Gerar URL**.
 
-    ![Gerar a URL](./media/download-vhd/export-generate.png)
+    ![Gerar a URL](./media/download-vhd/export-generate-new.png)
 
 > [!NOTE]
 > O tempo de expiração é aumentado de padrão a fim de fornecer tempo suficiente para baixar o arquivo VHD grande para um sistema operacional Windows Server. Você pode esperar que um arquivo VHD que contém o sistema operacional Windows Server leve várias horas para ser baixado, dependendo da conexão. Se você estiver baixando um VHD para um disco de dados, a hora padrão será suficiente. 

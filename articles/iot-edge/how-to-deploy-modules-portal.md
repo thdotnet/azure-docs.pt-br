@@ -10,12 +10,12 @@ ms.reviewer: menchi
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 8337c8672eb886d79b38b2a38a74037f88604497
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: f27484fd1d47a2e29aa5083a7d440e5c7dba11c1
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448554"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68839655"
 ---
 # <a name="deploy-azure-iot-edge-modules-from-the-azure-portal"></a>Implantar módulos do Azure IoT Edge do portal do Azure
 
@@ -43,9 +43,9 @@ O portal do Azure tem um assistente que ajuda você por meio da criação de man
 
 ### <a name="add-modules"></a>Adicionar módulos
 
-1. No **configurações de registro de contêiner** seção da página, forneça as credenciais para acessar quaisquer registros de contêiner privado que contêm suas imagens de módulo.
+1. Na seção **configurações de registro de contêiner** da página, forneça as credenciais para acessar qualquer registro de contêiner privado que contenha suas imagens de módulo.
 
-1. No **módulos de implantação** seção da página, selecione **Add**.
+1. Na seção **módulos de implantação** da página, selecione **Adicionar**.
 
 1. Veja os tipos de módulo na lista suspensa:
 
@@ -57,7 +57,7 @@ O portal do Azure tem um assistente que ajuda você por meio da criação de man
 
 1. Forneça um nome para o módulo, então especifique a imagem do contêiner. Por exemplo:
 
-   * **Nome** - tempSensor
+   * **Nome** -SimulatedTemperatureSensor
    * **Imagem URI** - mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0
 
 1. Preencha os campos opcionais se necessário. Para mais informações sobre opções de criação de contêiner, políticas de reinício, e status desejados consulte [propriedades desejadas do EdgeAgent](module-edgeagent-edgehub.md#edgeagent-desired-properties). Para mais informações sobre o módulo gêmeo consulte [Defina ou atualize propriedades desejadas](module-composition.md#define-or-update-desired-properties).

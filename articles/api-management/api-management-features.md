@@ -13,34 +13,37 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: apimpm
-ms.openlocfilehash: a57f8e44d19432f82abe4fa5e7bafce900db3394
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: c06e297d3d81623b7224082cb66f8faa6879205d
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448003"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68774964"
 ---
 # <a name="feature-based-comparison-of-the-azure-api-management-tiers"></a>Comparação baseada em recursos dos níveis de gerenciamento de API do Azure
 
+>[!IMPORTANT]
+> Observe que a camada de desenvolvedor é para casos de uso e avaliações de não produção. Ele não oferece SLA. 
+
 Cada [tipo de preço](https://aka.ms/apimpricing) de Gerenciamento de API oferece um conjunto distinto de recursos e por unidade de [capacidade](api-management-capacity.md). A tabela a seguir resume os principais recursos disponíveis em cada um dos níveis. Alguns recursos podem funcionar de maneira diferente ou ter recursos diferentes dependendo da camada. Em tais casos, as diferenças são mencionadas nos artigos de documentação que descrevem esses recursos individuais.
 
-| Recurso                                                                                      | Consumo | Desenvolvedores      | Básico          | Standard       | Premium        |
+| Recurso                                                                                      | Consumo | Desenvolvedor      | Básico          | Standard       | Premium        |
 | -------------------------------------------------------------------------------------------- | ----------------------------- | -------------- | -------------- | -------------- | -------------- |
-| Integração do Azure AD<sup>1</sup>                                                             | Não                            | Sim            | Não             | sim            | Sim            |
+| Integração do Azure AD<sup>1</sup>                                                             | Não                            | Sim            | Não             | Sim            | Sim            |
 | Suporte de rede virtual (VNet)                                                               | Não                            | Sim            | Não             | Não             | Sim            |
 | Implantação em várias regiões                                                                      | Não                            | Não             | Não             | Não             | Sim            |
 | Vários nomes de domínio personalizado                                                                 | Não                            | Não             | Não             | Não             | Sim            |
-| Portal do desenvolvedor<sup>2</sup>                                                                 | Não                            | sim            | sim            | sim            | Sim            |
-| Cache embutido                                                                               | Não                            | sim            | sim            | sim            | Sim            |
-| Análise integrada                                                                           | Não                            | sim            | sim            | sim            | Sim            |
-| [Configurações de SSL](api-management-howto-manage-protocols-ciphers.md)                             | Sim                            | sim            | sim            | sim            | Sim            |
-| [Cache externo](https://aka.ms/apimbyoc)                                                    | Sim                           | sim            | sim            | sim            | Sim            |
-| [Autenticação de certificado de cliente](api-management-howto-mutual-certificates-for-clients.md) | Sim                | sim            | sim            | sim            | Sim            |
-| [Backup e restauração](api-management-howto-disaster-recovery-backup-restore.md)               | Não                            | sim            | sim            | sim            | Sim            |
-| [Gerenciamento via Git](api-management-configuration-repository-git.md)                        | Não                            | sim            | sim            | sim            | Sim            |
-| API de Gerenciamento                                                                        | Não                            | sim            | sim            | sim            | Sim            |
-| Métricas e logs do Azure Monitor                                                               | Não                | sim            | sim            | sim            | Sim            |
-| IP Estático                                                               | Não                | sim            | sim            | sim            | Sim            |
+| Portal do desenvolvedor<sup>2</sup>                                                                 | Não                            | Sim            | Sim            | Sim            | Sim            |
+| Cache embutido                                                                               | Não                            | Sim            | Sim            | Sim            | Sim            |
+| Análise integrada                                                                           | Não                            | Sim            | Sim            | Sim            | Sim            |
+| [Configurações de SSL](api-management-howto-manage-protocols-ciphers.md)                             | Sim                            | Sim            | Sim            | Sim            | Sim            |
+| [Cache externo](https://aka.ms/apimbyoc)                                                    | Sim                           | Sim            | Sim            | Sim            | Sim            |
+| [Autenticação de certificado de cliente](api-management-howto-mutual-certificates-for-clients.md) | Sim                | Sim            | Sim            | Sim            | Sim            |
+| [Backup e restauração](api-management-howto-disaster-recovery-backup-restore.md)               | Não                            | Sim            | Sim            | Sim            | Sim            |
+| [Gerenciamento via Git](api-management-configuration-repository-git.md)                        | Não                            | Sim            | Sim            | Sim            | Sim            |
+| API de Gerenciamento                                                                        | Não                            | Sim            | Sim            | Sim            | Sim            |
+| Métricas e logs do Azure Monitor                                                               | Não                | Sim            | Sim            | Sim            | Sim            |
+| IP Estático                                                               | Não                | Sim            | Sim            | Sim            | Sim            |
 
-<sup>1</sup> permite o uso do Azure AD (e do Azure AD B2C) como uma identidade de provedor para o usuário é entrar no portal do desenvolvedor.<br/>
+<sup>1</sup> habilita o uso do Azure AD (e Azure ad B2C) como um provedor de identidade para entrada do usuário no portal do desenvolvedor.<br/>
 <sup>2</sup> Incluindo funcionalidade relacionada, por ex. usuários, grupos, problemas, aplicativos e modelos de email e notificações.<br/>

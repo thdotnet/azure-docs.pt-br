@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 805f11d57a635f4e73309d025e185049b511570b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0c2581106466f7d84cc694cd47d4ba02e40bf60b
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66427846"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68815748"
 ---
 # <a name="get-started-with-key-vault-certificates"></a>Introdução aos certificados com Key Vault
 Os cenários a seguir descrevem vários dos principais usos do serviço de gerenciamento de certificado do Key Vault incluindo as etapas adicionais necessárias para criar seu primeiro certificado em seu Key Vault.
@@ -39,7 +39,7 @@ Certificados são compostos de três recursos inter-relacionados vinculados como
 -   Entrada como o administrador de TI, administradores de PKI ou qualquer pessoa gerenciando contas com autoridades de certificação, para uma determinada empresa (por exemplo, Contoso) é um pré-requisito para usar certificados de Key Vault.  
     As CAs a seguir são os provedores parceiros atuais do Key Vault:  
     -   DigiCert - O Key Vault oferece certificados SSL OV ou EV com DigiCert.  
-    -   Globaltrust - Key Vault oferece OV SSL certificados com Globaltrust.  
+    -   GlobalSign-Key Vault oferece certificados SSL OV com GlobalSign.  
 
 **Etapa 2** - Um administrador de conta para um provedor de autoridade de certificação cria as credenciais a serem usadas pelo Key Vault para registrar, renovar e usar certificados SSL por meio do Key Vault.
 
@@ -97,16 +97,16 @@ Observação - Esse processo, por meio de etapa 3.1, é uma operação única.
 
 -   Além disso, o usuário pode editar a política, que está funcionando no momento da importação, mas contém padrões onde nenhuma informação foi especificada durante a importação. Ex.: sem informações do emissor  
 
-### <a name="formats-of-import-we-support"></a>Formatos de importação, damos suporte a
-Oferecemos suporte o seguinte tipo de importação para o formato de arquivo PEM. Um único certificado PEM codificado, juntamente com um PKCS n º 8 codificados, chave não criptografada que tem as seguintes
+### <a name="formats-of-import-we-support"></a>Formatos de importação para os quais damos suporte
+Damos suporte ao seguinte tipo de importação para o formato de arquivo PEM. Um único certificado codificado por PEM junto com uma chave codificada e não criptografada PKCS # 8 que tem o seguinte
 
----BEGIN CERTIFICATE------END CERTIFICATE--
+-----INICIAR CERTIFICADO----------FIM DO CERTIFICADO-----
 
----BEGIN PRIVATE KEY------END PRIVATE KEY--
+-----INICIAR CHAVE PRIVADA----------ENCERRAR CHAVE PRIVADA-----
 
-Na mesclagem de certificado damos suporte a formatos PEM com base 2. Você também pode mesclar um único certificado codificado de PKCS n º 8 um codificado por base64 ou arquivo P7B. ---BEGIN CERTIFICATE------END CERTIFICATE--
+Na mesclagem de certificados, damos suporte a dois formatos baseados em PEM. Você pode mesclar um único certificado codificado PKCS # 8 ou um arquivo P7B codificado em base64. -----INICIAR CERTIFICADO----------FIM DO CERTIFICADO-----
 
-Atualmente não damos suporte a chaves EC no formato PEM.
+No momento, não há suporte para chaves do EC no formato PEM.
 
 ## <a name="creating-a-certificate-with-a-ca-not-partnered-with-key-vault"></a>Criar um certificado com uma autoridade de certificação não parceira do Key Vault  
  Esse método permite trabalhar com outras autoridades de certificação diferentes dos provedores parceiros do Key Vault, o que significa que sua organização pode trabalhar com uma autoridade de certificação de sua escolha.  
@@ -125,6 +125,6 @@ Atualmente não damos suporte a chaves EC no formato PEM.
 
   (5) - Seu aplicativo conclui a criação do novo certificado com uma fusão do Certificado X509 da autoridade de certificação.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 - [Sobre chaves, segredos e certificados](about-keys-secrets-and-certificates.md)

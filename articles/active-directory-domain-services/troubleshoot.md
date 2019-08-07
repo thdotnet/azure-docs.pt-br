@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: iainfou
-ms.openlocfilehash: 2df1ac6325f692e2d433238ae0b92d8e3f8482b5
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: acb001417b85b8ff45b2617e148e8b1961f3cbfa
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67472291"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68772985"
 ---
 # <a name="azure-ad-domain-services---troubleshooting-guide"></a>Azure AD Domain Services – Guia de solução de problemas
 Este artigo fornece dicas de solução de problemas que você pode encontrar ao configurar ou administrar os Serviços de Domínio do AD (Active Directory do Azure).
@@ -147,6 +147,9 @@ Se um ou mais usuários em seu locatário do Azure AD não conseguirem entrar no
     1. net stop 'Microsoft Azure AD Sync'
     2. net start 'Microsoft Azure AD Sync'
 * **Contas somente de nuvem**: Se a conta de usuário afetado for uma conta de usuário somente em nuvem, verifique se o usuário alterou a senha depois de você ter habilitado o Azure AD Domain Services. Essa etapa faz com que os hashes de credenciais necessários para os Serviços de Domínio do AD do Azure sejam gerados.
+* **Verifique se a conta de usuário está ativa**: Se a conta de um usuário estiver bloqueada, ela não poderá entrar até que sua conta esteja ativa novamente. Cinco tentativas de senha inválida em dois minutos no domínio gerenciado fazem com que uma conta de usuário seja bloqueada por 30 minutos. Depois de 30 minutos, a conta do usuário será desbloqueada automaticamente.
+  * Tentativas de senha inválidas no domínio gerenciado não bloqueiam a conta de usuário no Azure AD. A conta de usuário é bloqueada somente no domínio gerenciado do Azure AD Domain Services. Verifique o status da conta de usuário usando o console administrativo do Active Directory (ADAC) para o domínio gerenciado do AD DS do Azure, não no Azure AD.
+  * Você também pode [Configurar políticas de senha refinadas que alteram o limite e a duração do bloqueio padrão](https://docs.microsoft.com/azure/active-directory-domain-services/password-policy).
 
 ## <a name="there-are-one-or-more-alerts-on-your-managed-domain"></a>Há um ou mais alertas no seu domínio gerenciado
 
@@ -160,5 +163,5 @@ A conta de usuário permanecerá no estado desabilitado no domínio gerenciado, 
 Para remover completamente a conta de usuário de seu domínio gerenciado, exclua permanentemente o usuário do seu locatário do Azure AD. Use o `Remove-MsolUser`cmdlet do PowerShell com a opção `-RemoveFromRecycleBin`, conforme descrito neste [artigo do MSDN](/previous-versions/azure/dn194132(v=azure.100)).
 
 
-## <a name="contact-us"></a>Fale conosco
+## <a name="contact-us"></a>Contate-nos
 Entre em contato com a equipe de produto do Azure Active Directory Domain Services para [compartilhar comentários ou obter suporte](contact-us.md).
