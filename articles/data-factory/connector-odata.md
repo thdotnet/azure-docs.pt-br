@@ -52,7 +52,7 @@ As propriedades a seguir são compatíveis com o serviço vinculado do OData:
 | url | A URL raiz do serviço OData. |Sim |
 | authenticationType | O tipo de autenticação usado para se conectar à fonte OData. Os valores permitidos são **Anonymous**, **Basic**, **Windows**, **AadServicePrincipal** e **ManagedServiceIdentity**. OAuth baseado no usuário não é compatível. | Sim |
 | userName | Especifique o **userName** se estiver usando a autenticação Básica ou do Windows. | Não |
-| password | Especifique a **senha** da conta de usuário que você especificou para **userName**. Marque esse campo como um tipo **SecureString** para armazená-lo com segurança no Data Factory. Você também pode [referenciar um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Não |
+| password | Especifique a **password** da conta de usuário que você especificou para **userName**. Marque esse campo como um tipo **SecureString** para armazená-lo com segurança no Data Factory. Você também pode [referenciar um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Não |
 | servicePrincipalId | Especifique a ID do cliente do aplicativo do Azure Active Directory. | Não |
 | aadServicePrincipalCredentialType | Especifique o tipo de credencial a ser usada para autenticação da entidade de serviço. Os valores permitidos são: `ServicePrincipalKey` ou `ServicePrincipalCert`. | Não |
 | servicePrincipalKey | Especifique a chave do aplicativo do Azure Active Directory. Marque esse campo como **SecureString** para armazená-lo com segurança no Data Factory ou [referencie um segredo armazenado no Cofre de Chaves do Azure](store-credentials-in-key-vault.md). | Não |
