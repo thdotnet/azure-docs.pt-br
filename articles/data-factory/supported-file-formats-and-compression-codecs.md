@@ -7,14 +7,14 @@ ms.reviewer: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 05/22/2019
+ms.date: 08/06/2019
 ms.author: jingwang
-ms.openlocfilehash: 9f6edc45316eaeceb75da643ed64b39382712852
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f2ffd88b21d8cf331435a030199b562e6b5b979f
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66165950"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840258"
 ---
 # <a name="supported-file-formats-and-compression-codecs-in-azure-data-factory"></a>Formatos de arquivo e codecs de compactação com suporte no Azure Data Factory
 
@@ -27,18 +27,19 @@ Se você quiser **copiar arquivos no estado em que se encontram** entre reposit�
 * [Formato Parquet](#parquet-format)
 * [Formato ORC](#orc-format)
 * [Formato Avro](#avro-format)
+* [Formato binário](#binary-format)
 
 > [!TIP]
-> Saiba como a atividade de cópia mapeia seus dados de origem para o coletor de [mapeamento de esquema na atividade de cópia](copy-activity-schema-and-type-mapping.md).
+> Saiba como a atividade de cópia mapeia os dados de origem para o coletor do [mapeamento de esquema na atividade de cópia](copy-activity-schema-and-type-mapping.md).
 
 ## <a name="text-format"></a>Formato de texto
 
 >[!NOTE]
->Data Factory introduziu novos delimitada por conjunto de dados de formato de texto, consulte [formato de texto delimitado](format-delimited-text.md) artigo com detalhes. Ainda há suporte para as seguintes configurações no conjunto de dados de repositório de dados com base em arquivo como-é para compabitility com versões anteriores. São sugeridas para usar o novo modelo no futuro.
+>Data Factory introduziu o novo formato de texto delimitado conjunto, consulte o artigo [formato de texto delimitado](format-delimited-text.md) com detalhes. As configurações a seguir no conjunto de dados de armazenamento com base em arquivo ainda têm suporte no estado em que se encontram para compabitility para trás. Você é sugerido para usar o novo modelo no futuro.
 
 Se você quiser ler um arquivo de texto ou gravar em um arquivo de texto, defina a propriedade `type` na seção `format` do conjunto de dados para **TextFormat**. Você também pode especificar as seguintes propriedades **opcionais** na seção `format`. Veja a seção [Exemplo de TextFormat](#textformat-example) sobre a configuração.
 
-| Propriedade | DESCRIÇÃO | Valores permitidos | Obrigatório |
+| Propriedade | Descrição | Valores permitidos | Necessário |
 | --- | --- | --- | --- |
 | columnDelimiter |O caractere usado para separar as colunas em um arquivo. Você pode considerar o uso de um caractere não imprimível raro que não exista em seus dados. Por exemplo, especifique "\u0001", que representa o SOH (início do título). |Somente um caractere é permitido. O valor **padrão** é **vírgula (‘,’)** . <br/><br/>Para usar um caractere Unicode, consulte [Caracteres Unicode](https://en.wikipedia.org/wiki/List_of_Unicode_characters) para obter o código correspondente. |Não |
 | rowDelimiter |O caractere usado para separar as linhas em um arquivo. |Somente um caractere é permitido. O valor **padrão** é um dos seguintes valores na leitura: **["\r\n", "\r" e "\n"]** e **"\r\n"** na gravação. |Não |
@@ -46,9 +47,9 @@ Se você quiser ler um arquivo de texto ou gravar em um arquivo de texto, defina
 | quoteChar |O caractere usado para citar um valor de cadeia de caracteres. Os delimitadores de linha e coluna dentro dos caracteres de aspas seriam tratados como parte do valor de cadeia de caracteres. Essa propriedade é aplicável a ambos os conjuntos de dados de entrada e de saída.<br/><br/>Não é possível especificar ambos escapeChar e quoteChar para uma tabela. |Somente um caractere é permitido. Nenhum valor padrão. <br/><br/>Por exemplo, se tiver a vírgula (,) como o delimitador de coluna, mas quiser ter o caractere de vírgula no texto (exemplo: <Hello, world>), você poderá definir " (aspas duplas) como o caractere de citação e usar a cadeia de caracteres "Hello, world" na origem. |Não |
 | nullValue |Um ou mais caracteres usados para representar um valor nulo. |Um ou mais caracteres. Os valores **padrão** são **"\N" e "NULL"** na leitura e **"\N"** na gravação. |Não |
 | encodingName |Especifique o nome de codificação. |Um nomes de codificação válido. Consulte [Propriedade Encoding.EncodingName](https://msdn.microsoft.com/library/system.text.encoding.aspx). Por exemplo: windows-1250 ou shift_jis. O valor **padrão** é **UTF-8**. |Não |
-| firstRowAsHeader |Especifica se a primeira linha será considerada como cabeçalho. Para um conjunto de dados de entrada, o Data Factory lê a primeira linha como cabeçalho. Para um conjunto de dados de saída, o Data Factory lê a primeira linha como cabeçalho. <br/><br/>Veja [Cenários para usar o `firstRowAsHeader` e o `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount) para cenários de exemplo. |True<br/><b>False (padrão)</b> |Não |
-| skipLineCount |Indica o número de linhas **não vazias** a serem ignoradas ao ler dados de arquivos de entrada. Se skipLineCount e firstRowAsHeader forem especificados, as linhas serão ignoradas pela primeira vez e, em seguida, as informações de cabeçalho serão lidas do arquivo de entrada. <br/><br/>Veja [Cenários para usar o `firstRowAsHeader` e o `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount) para cenários de exemplo. |Número inteiro |Não |
-| treatEmptyAsNull |Especifica se uma cadeia de caracteres nula ou vazia será ou não tratada como um valor nulo ao ler dados de um arquivo de entrada. |**True (padrão)**<br/>Falso |Não |
+| firstRowAsHeader |Especifica se a primeira linha será considerada como cabeçalho. Para um conjunto de dados de entrada, o Data Factory lê a primeira linha como cabeçalho. Para um conjunto de dados de saída, o Data Factory lê a primeira linha como cabeçalho. <br/><br/>Veja [Cenários para usar o `firstRowAsHeader` e o `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount) para cenários de exemplo. |verdadeiro<br/><b>False (padrão)</b> |Não |
+| skipLineCount |Indica o número de linhas **não vazias** a serem ignoradas ao ler dados de arquivos de entrada. Se skipLineCount e firstRowAsHeader forem especificados, as linhas serão ignoradas pela primeira vez e, em seguida, as informações de cabeçalho serão lidas do arquivo de entrada. <br/><br/>Veja [Cenários para usar o `firstRowAsHeader` e o `skipLineCount`](#scenarios-for-using-firstrowasheader-and-skiplinecount) para cenários de exemplo. |Inteiro |Não |
+| treatEmptyAsNull |Especifica se uma cadeia de caracteres nula ou vazia será ou não tratada como um valor nulo ao ler dados de um arquivo de entrada. |**True (padrão)**<br/>False |Não |
 
 ### <a name="textformat-example"></a>Exemplo de TextFormat
 
@@ -91,7 +92,7 @@ Para **importar/exportar um arquivo JSON no estado em que se encontra de/para o 
 
 Se você quiser analisar os arquivos de JSON ou gravar os dados no formato JSON, defina a propriedade `type` na seção `format` como **JsonFormat**. Você também pode especificar as seguintes propriedades **opcionais** na seção `format`. Veja a seção [Exemplo de JsonFormat](#jsonformat-example) sobre como configurar.
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 | --- | --- | --- |
 | filePattern |Indique o padrão de dados armazenados em cada arquivo JSON. Os valores permitidos são: **setOfObjects** e **arrayOfObjects**. O valor **padrão** é **setOfObjects**. Veja a seção [Padrões de arquivo JSON](#json-file-patterns) para obter detalhes sobre esses padrões. |Não |
 | jsonNodeReference | Se você quiser fazer uma iteração e extrair dados de objetos dentro de um campo de matriz com o mesmo padrão, especifique o caminho JSON da matriz. Esta propriedade só terá suporte na cópia de dados **de** arquivos JSON. | Não |
@@ -100,7 +101,7 @@ Se você quiser analisar os arquivos de JSON ou gravar os dados no formato JSON,
 | nestingSeparator |Caractere que é usado para separar os níveis de aninhamento. O valor padrão é '.' (ponto). |Não |
 
 >[!NOTE]
->Para o caso de dados na matriz em várias linhas de cruzar aplicar (caso 1 -> exemplo 2 na [exemplos de JsonFormat](#jsonformat-example)), você só pode escolher para expandir a matriz única usando a propriedade `jsonNodeReference`.
+>Para o caso de aplicação cruzada de dados na matriz em várias linhas (caso 1-> exemplo 2 em [exemplos de JsonFormat](#jsonformat-example)), você pode optar por expandir apenas uma matriz `jsonNodeReference`usando a propriedade.
 
 ### <a name="json-file-patterns"></a>Padrões de arquivo JSON
 
@@ -412,7 +413,7 @@ O conjunto de dados de saída com o tipo **JsonFormat** é definido da seguinte 
 ## <a name="parquet-format"></a>Formato Parquet
 
 >[!NOTE]
->Data Factory introduziu o novo conjunto de dados de formato de Parquet, consulte [formato Parquet](format-parquet.md) artigo com detalhes. Ainda há suporte para as seguintes configurações no conjunto de dados de repositório de dados com base em arquivo como-é para compabitility com versões anteriores. São sugeridas para usar o novo modelo no futuro.
+>Data Factory introduziu o novo formato parquet conjunto, consulte o artigo [parquet Format](format-parquet.md) com detalhes. As configurações a seguir no conjunto de dados de armazenamento com base em arquivo ainda têm suporte no estado em que se encontram para compabitility para trás. Você é sugerido para usar o novo modelo no futuro.
 
 Se você quiser analisar os arquivos Parquet ou gravar os dados no formato Parquet, defina a propriedade `format` `type` como **ParquetFormat**. Não será necessário especificar nenhuma propriedade na seção Formato dentro da seção typeProperties. Exemplo:
 
@@ -448,7 +449,7 @@ Exemplo: defina a variável `_JAVA_OPTIONS` com o valor `-Xms256m -Xmx16g`. O si
 
 | Tipo de dados provisório do Data Factory | Tipo Primitivo Parquet | Tipo Original Parquet (Desserializar) | Tipo Original Parquet (Serializar) |
 |:--- |:--- |:--- |:--- |
-| BOOLEAN | BOOLEAN | N/D | N/D |
+| Boolean | Boolean | N/D | N/D |
 | SByte | Int32 | Int8 | Int8 |
 | Byte | Int32 | UInt8 | Int16 |
 | Int16 | Int32 | Int16 | Int16 |
@@ -457,16 +458,16 @@ Exemplo: defina a variável `_JAVA_OPTIONS` com o valor `-Xms256m -Xmx16g`. O si
 | UInt32 | Int64 | UInt32 | Int64 |
 | Int64 | Int64 | Int64 | Int64 |
 | UInt64 | Int64/Binário | UInt64 | Decimal |
-| Single | Float | N/D | N/D |
-| Double | Double | N/D | N/D |
-| Decimal | Binário | Decimal | Decimal |
-| Cadeia de caracteres | Binário | Utf8 | Utf8 |
+| Simples | Float | N/D | N/D |
+| Duplo | Duplo | N/D | N/D |
+| Decimal | Binary | Decimal | Decimal |
+| Cadeia | Binary | Utf8 | Utf8 |
 | DateTime | Int96 | N/D | N/D |
 | TimeSpan | Int96 | N/D | N/D |
 | DateTimeOffset | Int96 | N/D | N/D |
-| ByteArray | Binário | N/D | N/D |
-| Guid | Binário | Utf8 | Utf8 |
-| Char | Binário | Utf8 | Utf8 |
+| ByteArray | Binary | N/D | N/D |
+| Guid | Binary | Utf8 | Utf8 |
+| Char | Binary | Utf8 | Utf8 |
 | CharArray | Sem suporte | N/D | N/D |
 
 ## <a name="orc-format"></a>Formato ORC
@@ -498,24 +499,24 @@ Para cópia em execução no IR auto-hospedado com serialização/desserializaç
 
 | Tipo de dados provisório do Data Factory | Tipos ORC |
 |:--- |:--- |
-| BOOLEAN | BOOLEAN |
+| Boolean | Boolean |
 | SByte | Byte |
-| Byte | Curto |
-| Int16 | Curto |
-| UInt16 | Int |
-| Int32 | Int |
-| UInt32 | long |
-| Int64 | long |
-| UInt64 | Cadeia de caracteres |
-| Single | Float |
-| Double | Double |
+| Byte | Abreviado |
+| Int16 | Abreviado |
+| UInt16 | int |
+| Int32 | int |
+| UInt32 | Long |
+| Int64 | Long |
+| UInt64 | Cadeia |
+| Simples | Float |
+| Duplo | Duplo |
 | Decimal | Decimal |
-| Cadeia de caracteres | Cadeia de caracteres |
-| DateTime | Timestamp |
-| DateTimeOffset | Timestamp |
-| TimeSpan | Timestamp |
-| ByteArray | Binário |
-| Guid | Cadeia de caracteres |
+| Cadeia | Cadeia |
+| DateTime | Carimbo de data/hora |
+| DateTimeOffset | Carimbo de data/hora |
+| TimeSpan | Carimbo de data/hora |
+| ByteArray | Binary |
+| Guid | Cadeia |
 | Char | Char(1) |
 
 ## <a name="avro-format"></a>Formato AVRO
@@ -534,6 +535,10 @@ Para usar o formato Avro em uma tabela de Hive, confira [Tutorial do Apache Hive
 Observe os seguintes pontos:
 
 * Não há suporte para [tipos de dados complexos](https://avro.apache.org/docs/current/spec.html#schema_complex) (registros, enumerações, matrizes, mapas, uniões e fixo).
+
+## <a name="binary-format"></a>Formato binário
+
+Consulte o artigo [formato binário](format-binary.md) em detalhes.
 
 ## <a name="compression-support"></a>Suporte à compactação
 
@@ -583,14 +588,14 @@ A seção **compactação** tem duas propriedades:
 > [!NOTE]
 > Não há suporte para configurações de compactação de dados no **AvroFormat**, **OrcFormat** ou **ParquetFormat**. Ao ler arquivos nesses formatos, o Data Factory detecta e usa o codec de compactação nos metadados. Ao gravar em arquivos em um desses formatos, o Data Factory escolhe o codec de compactação padrão para esse formato. Por exemplo, ZLIB para OrcFormat e SNAPPY para ParquetFormat.
 
-## <a name="unsupported-file-types-and-compression-formats"></a>Tipos de arquivo sem suporte e formatos de compactação
+## <a name="unsupported-file-types-and-compression-formats"></a>Tipos de arquivo e formatos de compactação sem suporte
 
 Você pode usar os recursos de extensibilidade do Azure Data Factory para transformar arquivos que não têm suporte.
-Duas opções incluem o Azure Functions e tarefas personalizadas usando o lote do Azure.
+Duas opções incluem Azure Functions e tarefas personalizadas usando o lote do Azure.
 
-Você pode ver um exemplo que usa uma função do Azure para [extrair o conteúdo de um arquivo tar](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV2/UntarAzureFilesWithAzureFunction). Para obter mais informações, consulte [atividade de funções do Azure](https://docs.microsoft.com/azure/data-factory/control-flow-azure-function-activity).
+Você pode ver um exemplo que usa uma função do Azure para [extrair o conteúdo de um arquivo tar](https://github.com/Azure/Azure-DataFactory/tree/master/SamplesV2/UntarAzureFilesWithAzureFunction). Para obter mais informações, consulte [Azure Functions atividade](https://docs.microsoft.com/azure/data-factory/control-flow-azure-function-activity).
 
-Você também pode criar essa funcionalidade usando uma atividade dotnet personalizada. Informações adicionais estão disponíveis [aqui](https://docs.microsoft.com/azure/data-factory/transform-data-using-dotnet-custom-activity)
+Você também pode criar essa funcionalidade usando uma atividade dotnet personalizada. Mais informações estão disponíveis [aqui](https://docs.microsoft.com/azure/data-factory/transform-data-using-dotnet-custom-activity)
 
 ## <a name="next-steps"></a>Próximas etapas
 

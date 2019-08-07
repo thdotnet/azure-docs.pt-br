@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: automation
 ms.subservice: update-management
 manager: carmonm
-ms.openlocfilehash: 3555ec74b7e7c8a0f7606f24f8c6f2c4fe36b52d
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: bbccb9beab374a4a514d527c22b3861f0752d5fd
+ms.sourcegitcommit: f7998db5e6ba35cbf2a133174027dc8ccf8ce957
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67477094"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68782396"
 ---
 # <a name="understand-the-windows-agent-check-results-in-update-management"></a>Reconheça os resultados da verificação de agente do Windows no Gerenciamento de Atualizações
 
@@ -27,7 +27,7 @@ A lista a seguir é composta pelos três estados de preparação em que um compu
 * **Não configurado** -  O agente de atualização não foi localizado ou não concluiu a integração.
 
 > [!NOTE]
-> Pode haver um pequeno atraso entre o que mostra o portal do Azure e o estado atual da máquina.
+> Pode haver um pequeno atraso entre o que o portal do Azure mostra e o estado atual do computador.
 
 ## <a name="start-the-troubleshooter"></a>Iniciar a solução de problemas
 
@@ -55,15 +55,15 @@ A verificação do sistema operacional verifica se o Hybrid Runbook Worker está
 |Sistema operacional  |Observações  |
 |---------|---------|
 |Windows Server 2008 R2 RTM, Windows Server 2008 | Suporta apenas avaliações de atualização.         |
-|Windows Server 2008 R2 SP1 e posterior |É necessário o .NET Framework 4.5.1 ou posterior. ([Fazer o download do .NET Framework](/dotnet/framework/install/guide-for-developers))<br/> Windows PowerShell 4.0 ou posterior é necessário. ([Faça o download do Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855))<br/> Windows PowerShell 5.1é recomendado para maior confiabilidade.  ([Faça o download do Windows Management Framework 5.1](https://www.microsoft.com/download/details.aspx?id=54616))        |
+|Windows Server 2008 R2 SP1 e posterior |É necessário o .NET Framework 4.6.1 ou posterior. ([Fazer o download do .NET Framework](/dotnet/framework/install/guide-for-developers))<br/> O Windows PowerShell 5,1 é necessário.  ([Faça o download do Windows Management Framework 5.1](https://www.microsoft.com/download/details.aspx?id=54616))        |
 
-### <a name="net-451"></a>.NET 4.5.1
+### <a name="net-461"></a>.NET 4.6.1 +
 
-A verificação do .NET Framework verifica se o sistema tem um mínimo de [.NET Framework 4.5.1](https://www.microsoft.com/download/details.aspx?id=30653) instalado.
+A verificação de .NET Framework verifica se o sistema tem um mínimo de [.NET Framework 4.6.1](https://www.microsoft.com/en-us/download/details.aspx?id=49981) instalado.
 
 ### <a name="wmf-51"></a>WMF 5.1
 
-A verificação do WMF verifica se o sistema tem a versão necessária do Windows Management Framework (WMF). [O Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) é a versão mais antiga suportada. Recomendamos que você instale o [Windows Management Framework 5.1](https://www.microsoft.com/download/details.aspx?id=54616) para aumentar a confiabilidade do Hybrid Runbook Worker.
+A verificação do WMF verifica se o sistema tem a versão necessária do WMF (Windows Management Framework) – [Windows Management framework 5,1](https://www.microsoft.com/download/details.aspx?id=54616).
 
 ### <a name="tls-12"></a>TLS 1.2
 
@@ -144,7 +144,7 @@ RuleId                      : AutomationAgentServiceConnectivityCheck1
 RuleGroupId                 : connectivity
 RuleName                    : Registration endpoint
 RuleGroupName               : connectivity
-RuleDescription             : 
+RuleDescription             :
 CheckResult                 : Failed
 CheckResultMessage          : Unable to find Workspace registration information in registry
 CheckResultMessageId        : AutomationAgentServiceConnectivityCheck1.Failed.NoRegistrationFound

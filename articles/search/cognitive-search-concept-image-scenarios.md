@@ -5,18 +5,19 @@ services: search
 manager: pablocas
 author: luiscabrer
 ms.service: search
+ms.subservice: cognitive-search
 ms.devlang: NA
 ms.workload: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 589f8c8f11138b4fb5c3c3096229e28c633efb0d
-ms.sourcegitcommit: 198c3a585dd2d6f6809a1a25b9a732c0ad4a704f
+ms.openlocfilehash: e60eeb601a0a5796609b9c38b7394c2de0610cdf
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68423013"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68841288"
 ---
 #  <a name="how-to-process-and-extract-information-from-images-in-cognitive-search-scenarios"></a>Como processar e extrair informações de imagens em cenários da pesquisa cognitiva
 
@@ -72,7 +73,8 @@ Quando o campo *imageAction* for definido para qualquer valor diferente de "none
 | originalWidth      | A largura original da imagem antes da normalização. |
 | originalHeight      | A altura original da imagem antes da normalização. |
 | rotationFromOriginal |  Rotação no sentido anti-horário em graus para criar a imagem normalizada. Um valor entre 0 graus e 360 graus. Esta etapa lê os metadados da imagem gerada por uma câmera ou scanner. Geralmente, é um múltiplo de 90 graus. |
-| contentOffset |O deslocamento de caractere dentro do campo de conteúdo do qual a imagem foi extraída. Este campo só é aplicável a arquivos com imagens incorporadas. |
+| contentOffset | O deslocamento de caractere dentro do campo de conteúdo do qual a imagem foi extraída. Este campo só é aplicável a arquivos com imagens incorporadas. |
+| pageNumber | Se a imagem tiver sido extraída ou renderizada de um PDF, esse campo conterá o número da página no PDF em que foi extraído ou renderizado, começando em 1.  Se a imagem não fosse de um PDF, esse campo será 0.  |
 
  Exemplo de valor de *normalized_images*:
 ```json
@@ -84,7 +86,8 @@ Quando o campo *imageAction* for definido para qualquer valor diferente de "none
     "originalWidth": 5000,  
     "originalHeight": 3000,
     "rotationFromOriginal": 90,
-    "contentOffset": 500  
+    "contentOffset": 500,
+    "pageNumber": 2
   }
 ]
 ```

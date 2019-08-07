@@ -1,29 +1,32 @@
 ---
-title: Modelos do Azure Resource Manager para a API de tabela do Azure Cosmos DB
-description: Use modelos do Azure Resource Manager para criar e configurar a API de tabela do Azure Cosmos DB.
+title: Modelos de Azure Resource Manager para Azure Cosmos DB API de Tabela
+description: Use modelos de Azure Resource Manager para criar e configurar Azure Cosmos DB API de Tabela.
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/20/2019
+ms.date: 08/05/2019
 ms.author: mjbrown
-ms.openlocfilehash: 82e2a436bf6b25b6164d845d234896390a262292
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4dd636be60233beafca8e8680551bd7c711a4ccc
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65968813"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68814879"
 ---
-# <a name="manage-azure-cosmos-db-table-api-resources-using-azure-resource-manager-templates"></a>Gerenciar recursos da API de tabela do Azure Cosmos DB usando modelos do Azure Resource Manager
+# <a name="manage-azure-cosmos-db-table-api-resources-using-azure-resource-manager-templates"></a>Gerenciar Azure Cosmos DB API de Tabela recursos usando modelos de Azure Resource Manager
 
-## Criar tabela e a conta do Azure Cosmos <a id="create-resource"></a>
+## Criar conta e tabela do Azure Cosmos<a id="create-resource"></a>
 
-Crie recursos do Azure Cosmos DB usando um modelo do Azure Resource Manager. Este modelo criará uma conta do Azure Cosmos para API de tabela com uma única tabela em taxa de transferência de 400 RU/s. Copie o modelo e implantar, conforme mostrado abaixo ou visite [Galeria de início rápido do Azure](https://azure.microsoft.com/resources/templates/101-cosmosdb-table/) e implantar do portal do Azure. Você também pode baixar o modelo em seu computador local ou criar um novo modelo e especifique o caminho local com o `--template-file` parâmetro.
+Crie Azure Cosmos DB recursos usando um modelo de Azure Resource Manager. Este modelo criará uma conta do Azure Cosmos para API de Tabela com uma tabela à taxa de transferência de 400 RU/s. Copie o modelo e implante-o conforme mostrado abaixo ou visite a [Galeria de início rápido do Azure](https://azure.microsoft.com/resources/templates/101-cosmosdb-table/) e implante do portal do Azure. Você também pode baixar o modelo em seu computador local ou criar um novo modelo e especificar o caminho local com o `--template-file` parâmetro.
+
+> [!NOTE]
+> Os nomes de conta devem ter letras minúsculas e < 31 caracteres.
 
 [!code-json[create-cosmos-table](~/quickstart-templates/101-cosmosdb-table/azuredeploy.json)]
 
 ### <a name="deploy-via-powershell"></a>Implantar por meio do PowerShell
 
-Para implantar o modelo do Resource Manager usando o PowerShell **cópia** script e selecione **Experimente** para abrir o Azure Cloud shell. Para colar o script, o shell e, em seguida, selecione **colar**:
+Para implantar o modelo do Resource Manager usando o PowerShell, **Copie** o script e selecione **Experimente-** o para abrir o Azure cloud Shell. Para colar o script, clique com o botão direito do mouse no Shell e selecione **colar**:
 
 ```azurepowershell-interactive
 
@@ -45,11 +48,11 @@ New-AzResourceGroupDeployment `
  (Get-AzResource --ResourceType "Microsoft.DocumentDb/databaseAccounts" --ApiVersion "2015-04-08" --ResourceGroupName $resourceGroupName).name
 ```
 
-Se você optar por usar uma versão do PowerShell em vez de localmente instalada do Azure Cloud shell, você precisará [instalar](/powershell/azure/install-az-ps) módulo PowerShell do Azure. Execute `Get-Module -ListAvailable Az` para encontrar a versão.
+Se você optar por usar uma versão instalada localmente do PowerShell em vez do Azure cloud Shell, será necessário [instalar](/powershell/azure/install-az-ps) o módulo Azure PowerShell. Execute `Get-Module -ListAvailable Az` para encontrar a versão.
 
-### <a name="deploy-via-azure-cli"></a>Implantar por meio da CLI do Azure
+### <a name="deploy-via-azure-cli"></a>Implantar via CLI do Azure
 
-Para implantar o modelo do Resource Manager usando a CLI do Azure, **cópia** script e selecione **Experimente** para abrir o Azure Cloud shell. Para colar o script, o shell e, em seguida, selecione **colar**:
+Para implantar o modelo do Resource Manager usando CLI do Azure, **Copie** o script e selecione **Experimente** para abrir o Azure cloud Shell. Para colar o script, clique com o botão direito do mouse no Shell e selecione **colar**:
 
 ```azurecli-interactive
 read -p 'Enter the Resource Group name: ' resourceGroupName
@@ -67,17 +70,17 @@ az group deployment create --resource-group $resourceGroupName \
 az cosmosdb show --resource-group $resourceGroupName --name accountName --output tsv
 ```
 
-O `az cosmosdb show` comando mostra a conta recém-criada do Azure Cosmos depois que ele foi provisionado. Se você optar por usar uma versão do CLI do Azure instalada localmente em vez de usar CloudShell, consulte [Interface de linha de comando do Azure (CLI)](/cli/azure/) artigo.
+O `az cosmosdb show` comando mostra a conta recém-criada do Azure Cosmos depois que ela é provisionada. Se você optar por usar uma versão instalada localmente do CLI do Azure em vez de usar o CloudShell, consulte o artigo [CLI (interface de linha de comando) do Azure](/cli/azure/) .
 
-## Taxa de transferência (RU/s) em uma tabela de atualização <a id="table-ru-update"></a>
+## Atualizar taxa de transferência (RU/s) em uma tabela<a id="table-ru-update"></a>
 
-O modelo a seguir atualizará a taxa de transferência de uma tabela. Copie o modelo e implantar, conforme mostrado abaixo ou visite [Galeria de início rápido do Azure](https://azure.microsoft.com/resources/templates/101-cosmosdb-table-ru-update/) e implantar do portal do Azure. Você também pode baixar o modelo em seu computador local ou criar um novo modelo e especifique o caminho local com o `--template-file` parâmetro.
+O modelo a seguir atualizará a taxa de transferência de uma tabela. Copie o modelo e implante-o conforme mostrado abaixo ou visite a [Galeria de início rápido do Azure](https://azure.microsoft.com/resources/templates/101-cosmosdb-table-ru-update/) e implante do portal do Azure. Você também pode baixar o modelo em seu computador local ou criar um novo modelo e especificar o caminho local com o `--template-file` parâmetro.
 
 [!code-json[cosmosdb-table-ru-update](~/quickstart-templates/101-cosmosdb-table-ru-update/azuredeploy.json)]
 
 ### <a name="deploy-table-throughput-via-powershell"></a>Implantar a taxa de transferência de tabela por meio do PowerShell
 
-Para implantar o modelo do Resource Manager usando o PowerShell **cópia** script e selecione **Experimente** para abrir o Azure Cloud shell. Para colar o script, o shell e, em seguida, selecione **colar**:
+Para implantar o modelo do Resource Manager usando o PowerShell, **Copie** o script e selecione **Experimente-** o para abrir o Azure cloud Shell. Para colar o script, clique com o botão direito do mouse no Shell e selecione **colar**:
 
 ```azurepowershell-interactive
 $resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
@@ -93,9 +96,9 @@ New-AzResourceGroupDeployment `
     -throughput $throughput
 ```
 
-### <a name="deploy-table-template-via-azure-cli"></a>Implantar o modelo de tabela por meio da CLI do Azure
+### <a name="deploy-table-template-via-azure-cli"></a>Implantar modelo de tabela via CLI do Azure
 
-Para implantar o modelo do Resource Manager usando a CLI do Azure, selecione **Experimente** para abrir o Azure Cloud shell. Para colar o script, o shell e, em seguida, selecione **colar**:
+Para implantar o modelo do Resource Manager usando CLI do Azure, selecione **Experimente-** o para abrir o Azure cloud Shell. Para colar o script, clique com o botão direito do mouse no Shell e selecione **colar**:
 
 ```azurecli-interactive
 read -p 'Enter the Resource Group name: ' resourceGroupName
@@ -113,6 +116,6 @@ az group deployment create --resource-group $resourceGroupName \
 Estes são alguns recursos adicionais:
 
 - [Documentação do Azure Resource Manager](/azure/azure-resource-manager/)
-- [Esquema do provedor de recursos do Azure Cosmos DB](/azure/templates/microsoft.documentdb/allversions)
-- [Modelos de início rápido do BD Cosmos do Azure](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.DocumentDB&pageNumber=1&sort=Popular)
-- [Solucionar problemas de erros comuns de implantação do Azure Resource Manager](../azure-resource-manager/resource-manager-common-deployment-errors.md)
+- [Esquema do provedor de recursos Azure Cosmos DB](/azure/templates/microsoft.documentdb/allversions)
+- [Modelos de início rápido Azure Cosmos DB](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.DocumentDB&pageNumber=1&sort=Popular)
+- [Solucionar erros comuns de implantação de Azure Resource Manager](../azure-resource-manager/resource-manager-common-deployment-errors.md)

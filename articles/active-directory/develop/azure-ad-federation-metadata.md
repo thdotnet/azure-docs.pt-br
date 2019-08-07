@@ -12,18 +12,18 @@ ms.subservice: develop
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/07/2017
 ms.author: ryanwi
 ms.reviewer: hirsin, dastrock
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 32f105c0d4f8807b53d400a1c198edd504c0aef3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fefaf618ff29cc2186dc555eb6f452223f4cd097
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65544498"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68835136"
 ---
 # <a name="federation-metadata"></a>Metadados de federação
 O Azure Active Directory (Azure AD) publica um documento de metadados federados para serviços que são configurados para aceitar os tokens de segurança que o Azure AD emite. O formato de documento de metadados federados é descrito no [Web Services Federation Language (WS-Federation) Version 1.2](https://docs.oasis-open.org/wsfed/federation/v1.2/os/ws-federation-1.2-spec-os.html), que se estende para [Metadata for the OASIS Security Assertion Markup Language (SAML) v2.0](https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf).
@@ -73,7 +73,7 @@ entityID="https://sts.windows.net/{tenant}/">
 ```
 
 ### <a name="token-signing-certificates"></a>Certificados de autenticação de tokens
-Quando um serviço recebe um token emitido por um locatário do AD do Azure, a assinatura do token deve ser validada com uma chave de assinatura que é publicada no documento de metadados de Federação. Os metadados de federação incluem a parte pública dos certificados que os locatários usam para autenticação de tokens. Os bytes brutos do certificado aparecem no elemento `KeyDescriptor` . O certificado de assinatura de token é válido para a assinatura somente quando o valor do atributo `use` é `signing`.
+Quando um serviço recebe um token emitido por um locatário do Azure AD, a assinatura do token deve ser validada com uma chave de assinatura que é publicada no documento de metadados de Federação. Os metadados de federação incluem a parte pública dos certificados que os locatários usam para autenticação de tokens. Os bytes brutos do certificado aparecem no elemento `KeyDescriptor` . O certificado de assinatura de token é válido para a assinatura somente quando o valor do atributo `use` é `signing`.
 
 Um documento de metadados de federação publicado pelo Azure AD pode ter várias chaves de assinatura, como quando o Azure AD está se preparando para atualizar o certificado de autenticação. Quando um documento de metadados de federação inclui mais de um certificado, um serviço que valida os tokens deve dar suporte a todos os certificados no documento.
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 93c36ccb244931c12d8b038f448fbda4eff77f16
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 287902c149fd3a8732ce9ce95b05b0d9fa36147b
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68721721"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68816614"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Planejando uma implantação de Arquivos do Azure
 
@@ -62,7 +62,7 @@ O Arquivos do Azure tem várias opções integradas para garantir a segurança d
     * Os clientes que não dão suporte a SMB 3,0 com criptografia podem se comunicar dentro do datacenter sobre SMB 2,1 ou SMB 3,0 sem criptografia. Os clientes do SMB não têm permissão para se comunicar no interior do datacenter via SMB 2.1 ou SMB 3.0 sem criptografia.
     * Os clientes podem se comunicar por REST de arquivo via HTTP ou HTTPS.
 * Criptografia em repouso ([Criptografia do Serviço de Armazenamento do Azure](../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)): A SSE (Criptografia do Serviço de Armazenamento) está habilitada para todas as contas de armazenamento. Os dados em repouso são criptografados com chaves totalmente gerenciadas. Criptografia em repouso não aumenta os custos de armazenamento nem reduz o desempenho. 
-* Requisito opcional de dados criptografados em trânsito: quando selecionado, o Arquivos do Azure rejeitam o acesso aos dados por canais sem criptografia. Especificamente, são permitidas somente HTTPS e SMB 3.0 com conexões de criptografia.
+* Requisito opcional de dados criptografados em trânsito: quando selecionado, os arquivos do Azure rejeitam o acesso aos dados por canais não criptografados. Especificamente, são permitidas somente HTTPS e SMB 3.0 com conexões de criptografia.
 
     > [!Important]  
     > A exigência de transferência segura de dados fará com que clientes SMB mais antigos não sejam capazes de se comunicar com o SMB 3.0 com criptografia. Para obter mais informações, consulte [Montar no Windows](storage-how-to-use-files-windows.md), [Montar no Linux](storage-how-to-use-files-linux.md) e [Montar no macOS](storage-how-to-use-files-mac.md).
@@ -207,11 +207,12 @@ Os compartilhamentos de arquivos padrão estão disponíveis em todas as regiõe
 
 |Região |Redundância com suporte |Dá suporte a contas de armazenamento existentes |Suporte do portal *   |
 |-------|---------|---------|---------|
-|Leste da Austrália  |LRS|Não         |Sim|
-|Centro da França  |LRS|Não         |Ainda não|
-|Sudeste da Ásia  |LRS, ZRS|Não         |Somente LRS, ZRS-ainda não|
-|Oeste da Europa     |LRS, ZRS|Não       |Sim|
-|Oeste dos EUA 2       |LRS, ZRS|Não         |Sim|
+|Leste da Austrália  |LRS     |Não    |Sim|
+|Centro da França  |LRS     |Não    |Ainda não|
+|Sul da França    |LRS     |Não    |Ainda não|
+|Sudeste da Ásia  |LRS, ZRS|Não    |Sim|
+|Europa Ocidental     |LRS, ZRS|Não    |Sim|
+|Oeste dos EUA 2       |LRS, ZRS|Não    |Sim|
 
 \* Para regiões sem suporte ao portal, você ainda pode usar o PowerShell ou a CLI (interface de linha de comando) do Azure para criar mais de 5 compartilhamentos TiB. Altenatively, crie um novo compartilhamento por meio do portal sem especificar a cota. Isso criará um compartilhamento com o tamanho padrão de 100 TiB, que pode ser atualizado posteriormente por meio do PowerShell ou CLI do Azure.
 

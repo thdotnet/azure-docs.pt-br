@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/15/2019
+ms.date: 08/06/2019
 ms.author: b-juche
-ms.openlocfilehash: 1563b60ef26ac5e4d40f45095d0109dd9dd71570
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9a56fb27fdf9e196291942041d68b249d7f16648
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61084932"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68839241"
 ---
 # <a name="metrics-for-azure-netapp-files"></a>Métricas do Azure NetApp Files
 
@@ -27,19 +27,25 @@ O Azure NetApp Files fornece métricas sobre o armazenamento alocado, a utiliza�
 
 ## <a name="capacity_pools"></a>Métricas de uso de pools de capacidade
 
-- *Tamanho alocado do pool de volume*  
-    Esse é o tamanho (GiB) do pool de capacidade provisionado.  
+<!-- 
+- *Volume pool allocated size*  
+    This is the size (GiB) of the provisioned capacity pool.  
+--> 
 - *Pool de volume alocado usado*  
     Esse é o total de cota do volume (GiB) em um pool de capacidade específico (ou seja, o total dos tamanhos provisionados dos volumes no pool de capacidade). Esse é o tamanho selecionado durante a criação do volume.  
 - *Tamanho lógico total do pool de volume*  
     Esse é o total de espaço lógico (GiB) usado nos volumes em um pool de capacidade.  
-- *Tamanho total de instantâneos do pool de volume*  
-    Esse é o total de espaço lógico incremental usado pelos instantâneos.  
+<!-- 
+- *Volume pool total snapshot size*  
+    This is the total of incremental logical space used by the snapshots.  
+-->
 
 ## <a name="volumes"></a>Métricas de uso de volumes
 
-- *Tamanho alocado do volume*   
-    Esse é o tamanho do volume (cota) provisionado em GiB.  
+<!-- 
+- *Volume allocated size*   
+    This is the volume size (quota) provisioned in GiB.  
+--> 
 - *Tamanho do volume lógico*   
     Esse é o total de espaço lógico usado em um volume (GiB). Esse tamanho inclui espaço lógico usado por sistemas de arquivos ativos e instantâneos.  
 - *Tamanho do instantâneo de volume*   

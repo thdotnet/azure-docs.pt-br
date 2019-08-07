@@ -9,34 +9,34 @@ manager: cshankar
 ms.reviewer: jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 04/30/2019
+ms.date: 08/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: dc192b1e8f5492cdfbfb434b5efb573182c51bb1
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 5388b157ebea78a69355eb745492910f260be3ad
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67164573"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68823651"
 ---
-# <a name="understand-data-retention-in-azure-time-series-insights"></a>Compreender a retenção de dados no Azure Time Series Insights
+# <a name="understand-data-retention-in-azure-time-series-insights"></a>Entender a retenção de dados no Azure Time Series Insights
 
-Este artigo descreve duas configurações que impactam na retenção de dados em seu ambiente Azure Time Series Insights.
+Este artigo descreve duas configurações que afetam a retenção de dados em seu ambiente de Azure Time Series Insights.
 
 ## <a name="video"></a>Vídeo
 
-### <a name="the-following-video-summarizes-time-series-insights-data-retention-and-how-to-plan-for-itbr"></a>O vídeo a seguir resume a retenção de dados de séries temporais e como planejar para ele.</br>
+### <a name="the-following-video-summarizes-time-series-insights-data-retention-and-how-to-plan-for-itbr"></a>O vídeo a seguir resume Time Series Insights retenção de dados e como planejar para ele.</br>
 
 > [!VIDEO https://www.youtube.com/embed/03x6zKDQ6DU]
 
-Cada um dos ambientes Azure Time Series tem uma configuração que controla **tempo de retenção de dados**. O valor varia de 1 a 400 dias. Os dados são excluídos com base na capacidade de armazenamento do ambiente ou duração de retenção, o que vier primeiro.
+Cada um de seus ambientes de série temporal do Azure tem uma configuração que controla o **tempo de retenção de dados**. O valor varia de 1 a 400 dias. Os dados são excluídos com base na capacidade de armazenamento do ambiente ou na duração da retenção, o que vier primeiro.
 
-Além disso, o seu ambiente Azure Time Series tem um **limite de armazenamento excedido comportamento** configuração. Ele controla a entrada e limpar o comportamento quando a capacidade máxima de um ambiente é atingida. Há dois comportamentos de escolha ao configurá-lo:
+Além disso, o ambiente de série temporal do Azure tem uma configuração de **comportamento de limite de armazenamento excedido** . Ele controla o comportamento de entrada e limpeza quando a capacidade máxima de um ambiente é atingida. Há dois comportamentos para escolher ao configurá-lo:
 
 - **Limpar dados antigos** (padrão)  
 - **Pausar a entrada**
 
 > [!NOTE]
-> Por padrão, ao criar um novo ambiente, a retenção está configurada para **Limpar dados antigos**. Essa configuração pode ser alternada conforme necessário, depois usando o portal do Azure, no momento da criação do **configurar** página do ambiente do Time Series Insights.
+> Por padrão, ao criar um novo ambiente, a retenção está configurada para **Limpar dados antigos**. Essa configuração pode ser alternada conforme necessário após a hora de criação usando o portal do Azure, na página **Configurar** do ambiente de time Series insights.
 
 Para mais informações sobre como alternar entre os comportamentos de retenção, veja [Configuração da retenção no Azure Time Series Insights](time-series-insights-how-to-configure-retention.md).
 
@@ -44,18 +44,18 @@ Compare o comportamento de retenção de dados:
 
 ## <a name="purge-old-data"></a>Limpar dados antigos
 
-- Esse comportamento é o comportamento padrão para ambientes do Time Series Insights.  
-- Esse comportamento é preferível quando os usuários querem ver sempre seus *dados mais recentes* em seu ambiente do Time Series Insights.
+- Esse comportamento é o comportamento padrão para ambientes de Time Series Insights.  
+- Esse comportamento é preferível quando os usuários desejam sempre ver seus *dados mais recentes* em seu ambiente de time Series insights.
 - Esse comportamento *limpa* dados uma vez que os limites do ambiente (tempo de retenção, tamanho ou contagem, o que ocorrer primeiro) forem atingidos. A retenção é definida como 30 dias por padrão.
 - Os dados ingeridos mais antigos são apagados primeiro (abordagem PEPS).
 
-### <a name="example-one"></a>Exemplo de um
+### <a name="example-one"></a>Exemplo um
 
 Considere um ambiente de exemplo com o comportamento de retenção **Continuar entrada e limpar dados antigos**:
 
-**Tempo de retenção de dados** é definido como 400 dias. **Capacidade** é definido para a unidade S1, que contém 30 GB de capacidade total.   Suponha que os dados de entrada se acumulam até um volume de 500 MB por dia, em média. Considerando-se a taxa de dados de entrada, esse ambiente pode reter somente o equivalente a 60 dias de dados, já que a capacidade máxima é atingida após 60 dias. Os dados de entrada se acumulam assim: 500 MB cada dia x 60 dias = 30 GB.
+O **tempo de retenção de dados** é definido como 400 dias. **Capacidade** é definido para a unidade S1, que contém 30 GB de capacidade total.   Suponha que os dados de entrada se acumulam até um volume de 500 MB por dia, em média. Considerando-se a taxa de dados de entrada, esse ambiente pode reter somente o equivalente a 60 dias de dados, já que a capacidade máxima é atingida após 60 dias. Os dados de entrada se acumulam assim: 500 MB cada dia x 60 dias = 30 GB.
 
-No 61 º dia, o ambiente mostra os dados mais recentes, mas descarta os dados mais antigos, com mais de 60 dias. A limpeza abre espaço para os novos dados sendo transmitidos em entrada, para que novos dados possam continuar a serem explorados. Se o usuário deseja manter os dados por mais tempo, ele pode aumentar o tamanho do ambiente adicionando unidades adicionais ou reduzir o volume de dados enviados por push.  
+No dia 61 º, o ambiente mostra os dados mais recentes, mas limpa os dados mais antigos, com mais de 60 dias. A limpeza abre espaço para os novos dados sendo transmitidos em entrada, para que novos dados possam continuar a serem explorados. Se o usuário deseja manter os dados por mais tempo, ele pode aumentar o tamanho do ambiente adicionando unidades adicionais ou reduzir o volume de dados enviados por push.  
 
 ### <a name="example-two"></a>Exemplo dois
 
@@ -65,19 +65,19 @@ Sempre que a taxa diária de entrada desse ambiente excede 0,166 GB, os dados n�
 
 ## <a name="pause-ingress"></a>Pausar a entrada
 
-- O **pausar entrada** configuração é projetada para garantir que dados não forem limpos se os limites de tamanho e contagem forem atingidos antes do seu período de retenção.  
-- **Pausar entrada** fornece tempo adicional para os usuários para aumentar a capacidade de seu ambiente antes de dados são apagados devido à violação do período de retenção
-- Ele ajuda a proteger você contra perda de dados, mas pode criar uma oportunidade para que a perda de dados mais recentes, se a entrada é colocada em pausa além do período de retenção da origem do evento.
-- No entanto, depois que a capacidade máxima de um ambiente é atingida, o ambiente pausará a entrada de dados até que as seguintes ações adicionais ocorram:
+- A configuração **Pausar entrada** foi projetada para garantir que os dados não sejam limpos se os limites de tamanho e contagem forem atingidos antes do período de retenção.  
+- **Pausar a entrada** fornece tempo adicional para os usuários aumentarem a capacidade de seu ambiente antes de os dados serem limpos devido à violação do período de retenção
+- Ele ajuda a proteger você contra perda de dados, mas pode criar uma oportunidade para a perda de seus dados mais recentes se a entrada estiver em pausa além do período de retenção da origem do evento.
+- No entanto, depois que a capacidade máxima de um ambiente é atingida, o ambiente pausa a entrada de dados até que as seguintes ações adicionais ocorram:
 
-   - Você aumentar a capacidade máxima do ambiente para adicionar mais unidades de escala, conforme descrito em [como dimensionar seu ambiente do Time Series Insights](time-series-insights-how-to-scale-your-environment.md).
-   - O período de retenção de dados é atingido e os dados são limpos, colocando o ambiente abaixo de sua capacidade máxima.
+   - Você aumenta a capacidade máxima do ambiente para adicionar mais unidades de escala, conforme descrito em [como dimensionar seu ambiente de time Series insights](time-series-insights-how-to-scale-your-environment.md).
+   - O período de retenção de dados é atingido e os dados são limpos, trazendo o ambiente abaixo de sua capacidade máxima.
 
 ### <a name="example-three"></a>Exemplo três
 
-Considere um ambiente com o comportamento de retenção configurado para **Pausar entrada**. Neste exemplo, o **Período de retenção de dados** está configurado para 60 dias. **Capacidade** é definido como três (3) unidades do S1. Suponha que esse ambiente tem uma entrada de 2 GB de dados por dia. Nesse ambiente, a entrada é colocada em pausa quando a capacidade máxima é atingida.
+Considere um ambiente com o comportamento de retenção configurado para **Pausar entrada**. Neste exemplo, o **Período de retenção de dados** está configurado para 60 dias. A **capacidade** é definida como três (3) unidades de S1. Suponha que esse ambiente tem uma entrada de 2 GB de dados por dia. Nesse ambiente, a entrada é colocada em pausa quando a capacidade máxima é atingida.
 
-Nesse momento, o ambiente mostra o mesmo conjunto de dados até retoma o ingresso ou até **continuar entrada** está habilitado (que limparia os dados mais antigos para liberar espaço para novos dados).
+Nesse momento, o ambiente mostra o mesmo conjunto de dados até que a entrada seja retomada ou até que a **entrada continuar** esteja habilitada (o que limparia os mais antigos para liberar espaço para novos dados).
 
 Quando a entrada é retomada:
 
@@ -91,10 +91,10 @@ Nos hubs de eventos afetados, considere ajustar a propriedade **Retenção de Me
 
 [![Retenção de mensagens do hub de eventos.](media/time-series-insights-contepts-retention/event-hub-retention.png)](media/time-series-insights-contepts-retention/event-hub-retention.png#lightbox)
 
-Se nenhuma propriedade está configurada na fonte de evento (`timeStampPropertyName`), o Time Series Insights assume como padrão o carimbo de hora de chegada no hub de eventos como o eixo x. Se `timeStampPropertyName` está configurado para ser algo, a ambiente procura configurado `timeStampPropertyName` no pacote de dados de eventos são analisados.
+Se nenhuma propriedade estiver configurada na origem`timeStampPropertyName`do evento (), Time Series insights usa como padrão o carimbo de data/hora de chegada no Hub de eventos como o eixo X. Se `timeStampPropertyName` o estiver configurado para ser algo mais, o ambiente procurará o `timeStampPropertyName` configurado no pacote de dados quando os eventos forem analisados.
 
 Se você precisar dimensionar o ambiente para acomodar a capacidade adicional ou para aumentar a duração da retenção, veja [Como dimensionar o ambiente do Time Series Insights](time-series-insights-how-to-scale-your-environment.md) para obter mais informações.  
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Para obter informações sobre como configurar ou alterar as configurações de retenção de dados, examine [Configurando a retenção no Time Series Insights](time-series-insights-how-to-configure-retention.md).
+- Para obter informações sobre como configurar ou alterar as configurações de retenção de dados, examine Configurando a [retenção em time Series insights](time-series-insights-how-to-configure-retention.md).

@@ -2,17 +2,17 @@
 title: Diagnosticando problemas de desempenho de gráficos na área de trabalho remota – Azure
 description: Este artigo descreve como usar os contadores gráficos do RemoteFX em sessões de protocolo de área de trabalho remota para diagnosticar problemas de desempenho com elementos gráficos na área de trabalho virtual do Windows.
 services: virtual-desktop
-author: ChJenk
+author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 05/23/2019
-ms.author: v-chjenk
-ms.openlocfilehash: 8cd24861b9d7432a582d1b635b8ffcf0d8d2b9e6
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.author: helohr
+ms.openlocfilehash: de849701365438b21244d1e46ae657495d16c307
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68233636"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68816394"
 ---
 # <a name="diagnose-graphics-performance-issues-in-remote-desktop"></a>Diagnosticar problemas de desempenho de gráficos no Área de Trabalho Remota
 
@@ -77,7 +77,7 @@ Como o RDP dá suporte a um tempo médio de codificação de 33 MS, ele dá supo
 
 Use o contador de qualidade do quadro para diagnosticar problemas de qualidade do quadro. Esse contador expressa a qualidade do quadro de saída como uma porcentagem da qualidade do quadro de origem. A perda de qualidade pode ser devido ao RemoteFX ou pode ser inerente à fonte de gráficos. Se o RemoteFX causou a perda de qualidade, o problema pode ser uma falta de recursos de rede ou de servidor para enviar conteúdo de alta fidelidade.
 
-## <a name="mitigation"></a>Redução
+## <a name="mitigation"></a>Atenuação
 
 Se os recursos do servidor estiverem causando o afunilamento, tente uma das seguintes abordagens para melhorar o desempenho:
 

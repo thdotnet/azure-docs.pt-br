@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/12/2019
 ms.author: apimpm
-ms.openlocfilehash: d902a65c4e36ff698e486e2af899d055de1afca0
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 2756444db010e23f7114e99f474de9ce6614aaee
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68638546"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68837913"
 ---
 # <a name="access-and-customize-the-new-developer-portal-in-azure-api-management"></a>Acessar e personalizar o novo portal do desenvolvedor no gerenciamento de API do Azure
 
@@ -77,6 +77,10 @@ Sim, ele será preterido depois que o novo for disponibilizado para o público g
 O objetivo da disponibilidade geral é fornecer uma paridade de recursos baseada em cenário com o portal antigo. Até lá, a versão de visualização pode não ter os recursos selecionados implementados.
 
 As exceções são os *aplicativos* e *problemas* do portal antigo, que não estarão disponíveis no novo Portal. Se você usar *problemas* no portal antigo e precisar deles em um novo, poste um comentário em [um problema dedicado do GitHub](https://github.com/Azure/api-management-developer-portal/issues/122).
+
+### <a name="ive-found-bugs-andor-id-like-to-request-a-feature"></a>Encontrei bugs e/ou gostaria de solicitar um recurso.
+
+Ótimo! Você pode fornecer comentários, enviar uma solicitação de recurso ou arquivar um relatório de bugs por meio [da seção problemas do repositório do GitHub](https://github.com/Azure/api-management-developer-portal/issues). Enquanto estiver lá, também apreciaremos seus comentários sobre os problemas marcados com o `community` rótulo.
 
 ### <a name="i-want-to-move-the-content-of-the-new-portal-between-environments-how-can-i-do-that-and-do-i-need-to-go-with-the-self-hosted-version"></a>Quero mover o conteúdo do novo portal entre ambientes. Como posso fazer isso e preciso usar a versão hospedada internamente?
 

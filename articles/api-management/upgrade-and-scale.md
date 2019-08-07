@@ -11,12 +11,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 08/18/2018
 ms.author: apimpm
-ms.openlocfilehash: ed3c5790dcb51d12a38b85aa95e9c9178b6f44cd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6bafd5ed5f2d7080b0f2a2db71ac96e4f97a1f76
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65408855"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68774937"
 ---
 # <a name="upgrade-and-scale-an-azure-api-management-instance"></a>Fazer upgrade e dimensionar uma instância de Gerenciamento de API do Azure  
 
@@ -54,7 +54,7 @@ A camada **Premium** permite que você distribua uma única instância de Gerenc
 Você pode atualizar e fazer downgrade de e para qualquer camada. Observe que a atualização ou o downgrade pode remover alguns recursos, por exemplo, VNETs ou implantação de várias regiões, ao fazer o downgrade da camada Standard ou Básico para a Premium.
 
 >[!NOTE]
->O processo de atualização ou escala pode levar de 15 a 45 minutos para ser aplicado. Você seja notificado quando estiver pronto.
+>O processo de atualização ou escala pode levar de 15 a 45 minutos para ser aplicado. Você será notificado quando terminar.
 
 ## <a name="use-the-azure-portal-to-upgrade-and-scale"></a>Use o portal do Azure para atualizar e dimensionar
 
@@ -66,6 +66,10 @@ Você pode atualizar e fazer downgrade de e para qualquer camada. Observe que a 
 4. Especifique o número de **unidades** que você deseja adicionar. Você pode usar o controle deslizante ou digitar o número de unidades.  
     Se você escolher a camada **Premium**, primeiro precisará selecionar uma região.
 5. Pressione **Salvar**.
+
+## <a name="downtime-during-scaling-up-and-down"></a>Tempo de inatividade durante a expansão e a redução
+Se você estiver dimensionando de ou para a camada de desenvolvedor, haverá tempo de inatividade. Caso contrário, não há nenhum tempo de inatividade. 
+
 
 ## <a name="next-steps"></a>Próximas etapas
 

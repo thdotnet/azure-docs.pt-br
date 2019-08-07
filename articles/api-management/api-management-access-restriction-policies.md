@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/21/2019
 ms.author: apimpm
-ms.openlocfilehash: 8ee7db3ade594958729deeb12007f528376d5179
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: 4f06e579e8548f4220d8f3fb4b618902f18b538e
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68442410"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68774801"
 ---
 # <a name="api-management-access-restriction-policies"></a>Políticas de restrição de acesso do Gerenciamento de API
 
@@ -34,6 +34,9 @@ Este tópico fornece uma referência para as políticas de Gerenciamento de API 
 -   [Definir a cota de uso por assinatura](api-management-access-restriction-policies.md#SetUsageQuota) - Permite que você aplique uma cota renovável ou permanente de volume de chamada e/ou largura de banda, baseado em assinatura.
 -   [Definir a cota de uso por chave](#SetUsageQuotaByKey) - Permite que você aplique uma cota renovável ou permanente de volume de chamada e/ou largura de banda, baseado em chave.
 -   [Validar JWT](api-management-access-restriction-policies.md#ValidateJWT) - Impõe a existência e a validade de JWT extraída de um cabeçalho HTTP especificado ou um parâmetro de consulta especificado.
+
+> [!TIP]
+> Você pode usar políticas de restrição de acesso em escopos diferentes para finalidades diferentes. Por exemplo, você pode proteger toda a API com a autenticação do AAD aplicando a `validate-jwt` política no nível de API ou pode aplicá-la no nível de operação da API e usá `claims` -la para um controle mais granular.
 
 ## <a name="CheckHTTPHeader"></a> Verificar cabeçalho HTTP
 

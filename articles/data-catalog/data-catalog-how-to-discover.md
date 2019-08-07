@@ -5,13 +5,13 @@ author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
 ms.topic: conceptual
-ms.date: 04/05/2019
-ms.openlocfilehash: b21bf1b50152130d7b6edd227c87fcaca28c1e6a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/01/2019
+ms.openlocfilehash: b12cb94832a1ea977fb13f5f2271984dc8780cee
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61001401"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736367"
 ---
 # <a name="how-to-discover-data-sources-in-azure-data-catalog"></a>Como descobrir fontes de dados no Catálogo de Dados do Azure
 
@@ -50,7 +50,7 @@ Quando você exibe o resultados da pesquisa, todas as propriedades exibidas que 
 > [!NOTE]
 > Para desligar o destaque de ocorrências, use a opção **Destacar** no portal do Catálogo de Dados.
 
-Quando você exibe os resultados da pesquisa, pode não sempre ser óbvio motivo pelo qual um ativo de dados é incluído, mesmo com realce de ocorrências habilitado. Como todas as propriedades são pesquisadas por padrão, um ativo de dados pode ser retornado devido a uma correspondência em uma propriedade no nível de coluna. E porque vários usuários podem anotar ativos de dados registrados com suas próprias marcas e descrições, nem todos os metadados é exibido na lista de resultados da pesquisa.
+Quando você exibe os resultados da pesquisa, nem sempre pode ser óbvio por que um ativo de dados está incluído, mesmo com o realce de pressionamento de clique habilitado. Como todas as propriedades são pesquisadas por padrão, um ativo de dados pode ser retornado devido a uma correspondência em uma propriedade no nível de coluna. E como vários usuários podem anotar ativos de dados registrados com suas próprias marcas e descrições, nem todos os metadados são exibidos na lista de resultados da pesquisa.
 
 No modo de exibição em bloco padrão, cada bloco exibido nos resultados da pesquisa inclui um ícone **Exibir correspondências do termo de pesquisa** para que você possa rapidamente exibir o número de correspondências e sua localização e acessá-las, se desejar.
 

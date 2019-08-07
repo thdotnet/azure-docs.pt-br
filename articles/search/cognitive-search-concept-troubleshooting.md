@@ -5,18 +5,18 @@ services: search
 manager: pablocas
 author: luiscabrer
 ms.service: search
+ms.subservice: cognitive-search
 ms.devlang: NA
 ms.workload: search
 ms.topic: conceptual
 ms.date: 02/02/2019
 ms.author: luisca
-ms.custom: seodec2018
-ms.openlocfilehash: c0de4d2b9ad0d009b9cd363d19a2de3f29d810d4
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: b85fb5417b014041024dd83ca62572282c6edf81
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67303461"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68841261"
 ---
 # <a name="troubleshooting-tips-for-cognitive-search"></a>Dicas de solução de problemas para a pesquisa cognitiva
 
@@ -84,7 +84,7 @@ Adicione um campo ```enriched``` como parte da definição do índice para fins 
 
 A falta de conteúdo pode ser resultado da remoção de documentos durante a indexação. As camadas Básica e Gratuita têm limites baixos de tamanho do documento. Qualquer arquivo que ultrapassar o limite será removido durante a indexação. Você pode verificar se há documentos removidos no portal do Azure. No painel do serviço de pesquisa, clique duas vezes no bloco Indexadores. Examine a proporção de documentos indexados com êxito. Se ela não for de 100%, você poderá clicar nela para obter mais detalhes. 
 
-Se o problema está relacionado ao tamanho do arquivo, você poderá ver um erro como este: "O blob \<nome do arquivo >" tem o tamanho de \<tamanho do arquivo > bytes, que excede o tamanho máximo para a extração de documento para a camada de serviço atual. " Para obter mais informações sobre os limites de indexador, confira [Limites de serviço](search-limits-quotas-capacity.md).
+Se o problema está relacionado ao tamanho do arquivo, você poderá ver um erro como este: "O nome \<do arquivo de blob >" tem o tamanho \<do tamanho do arquivo > bytes, o que excede o tamanho máximo para extração de documentos para a camada de serviço atual. " Para obter mais informações sobre os limites de indexador, confira [Limites de serviço](search-limits-quotas-capacity.md).
 
 Um segundo motivo para o conteúdo não aparecer pode ser a presença de erros de mapeamento de entrada/saída. Por exemplo, o nome da saída de destino é "People", mas o nome do campo de índice é "people", com letras minúsculas. O sistema pode retornar mensagens de êxito 201 para todo o pipeline, o que levará você a achar que a indexação foi bem-sucedida, quando na verdade um campo está vazio. 
 
@@ -94,10 +94,10 @@ A análise de imagem faz uso intensivo de computação até mesmo em casos simpl
 
 O tempo de execução máximo varia por camada: vários minutos na Camada gratuita, indexação de 24 horas nas camadas faturáveis. Se o processamento não for concluído em um período de 24 horas para o processamento sob demanda, use uma agenda para que o indexador retome o processamento de onde parou. 
 
-Para indexadores agendados, a indexação é retomada de acordo com a agenda no último documento bem-sucedido. Com o uso de um agenda recorrente, o indexador pode percorrer a lista de pendências de imagem ao longo de várias horas ou vários dias, até que todas as imagens não processadas sejam processadas. Para obter mais informações sobre a sintaxe de agendamento, confira a [Etapa 3: Criar um indexador](search-howto-indexing-azure-blob-storage.md#step-3-create-an-indexer) ou consulte [como programar indexadores para o Azure Search](search-howto-schedule-indexers.md).
+Para indexadores agendados, a indexação é retomada de acordo com a agenda no último documento bem-sucedido. Com o uso de um agenda recorrente, o indexador pode percorrer a lista de pendências de imagem ao longo de várias horas ou vários dias, até que todas as imagens não processadas sejam processadas. Para obter mais informações sobre a sintaxe de agendamento, confira a [Etapa 3: Crie um indexador](search-howto-indexing-azure-blob-storage.md#step-3-create-an-indexer) ou veja [como agendar indexadores para Azure Search](search-howto-schedule-indexers.md).
 
 > [!NOTE]
-> Se um indexador é definido para uma determinada agenda mas repetidamente falhar no mesmo documenta repetidamente cada vez que ele é executado, o indexador será iniciada executando em um intervalo menos frequente (até o máximo de pelo menos uma vez a cada 24 horas) com êxito até que ele faz aga de andamento no.  Se você acredita que corrigir qualquer problema que fazia com que o indexador ficar preso em um determinado ponto, você pode executar um em demanda tempo de execução do indexador, e se isso faz com êxito o andamento, o indexador irá retornar de seu intervalo de agendamento do conjunto novamente.
+> Se um indexador for definido como um determinado agendamento, mas falhar repetidamente no mesmo documento repetidamente cada vez que for executado, o indexador começará a ser executado em um intervalo menos frequente (até o máximo de pelo menos uma vez a cada 24 horas) até que ele faça com que o progresso seja agado com êxito no.  Se acreditar que você corrigiu qualquer problema que estava fazendo com que o indexador fosse paralisado em um determinado ponto, você poderá executar uma execução sob demanda do indexador e, se isso fizer o progresso com êxito, o indexador retornará ao seu intervalo de agendamento definido novamente.
 
 Para a indexação baseada em portal (conforme descrita no guia de início rápido), escolher a opção "Executar uma vez" do indexador limita o processamento a 1 hora (`"maxRunTime": "PT1H"`). Você talvez queira estender a janela de processamento para um período mais longo.
 

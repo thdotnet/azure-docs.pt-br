@@ -3,13 +3,13 @@ author: yashesvi
 ms.author: banders
 ms.service: virtual-machines-windows
 ms.topic: include
-ms.date: 07/19/2019
-ms.openlocfilehash: 763d424d9d462c4a9531df84f3e5e26bfc1b0a14
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.date: 08/02/2019
+ms.openlocfilehash: 5c300cb7d5416ada435811872e2cea8865e3c657
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68502259"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68781250"
 ---
 # <a name="prepay-for-virtual-machines-with-azure-reserved-vm-instances-ri"></a>Pagar antecipadamente por máquinas virtuais com instâncias de VM reservadas do Azure (RI)
 
@@ -36,7 +36,7 @@ Suas reservas de VM podem se aplicar ao uso de VM emitido de vários serviços �
 
 A configuração flexibilidade do tamanho da instância determina quais serviços obtêm os descontos da instância reservada.
 
-Se a configuração estiver ativada ou desativada, os descontos de reserva serão aplicados automaticamente a  qualquer uso `Microsoft.Compute`de VM correspondente quando o ConsumedService for. Portanto, verifique os dados de uso para o valor *ConsumedService* . Eis alguns exemplos:
+Se a configuração estiver ativada ou desativada, os descontos de reserva serão aplicados automaticamente a qualquer uso `Microsoft.Compute`de VM correspondente quando o ConsumedService for. Portanto, verifique os dados de uso para o valor *ConsumedService* . Eis alguns exemplos:
 
 - Máquinas virtuais
 - Conjuntos de dimensionamento de máquinas virtuais
@@ -132,13 +132,9 @@ Você não pode fazer os seguintes tipos de alterações após a compra, diretam
 
 No entanto, você pode *trocar* uma reserva se desejar fazer alterações.
 
-## <a name="cancellations-and-exchanges"></a>Cancelamentos e trocas
+## <a name="cancel-exchange-or-refund-reservations"></a>Cancelar, trocar ou reembolsar reservas
 
-Caso precise cancelar sua reserva, pode haver um valor de rescisão antecipada de 12%. Os reembolsos baseiam-se no preço de compra ou no preço atual da reserva, o que for mais baixo. Os reembolsos são limitados a US$ 50.000 por ano. O reembolso que você recebe é o saldo proporcional restante menos o valor da tarifa de rescisão antecipada de 12%. Para cancelar, vá para a reserva no portal do Azure e selecione **reembolso**.
-
-Se você precisar alterar a reserva de instâncias de VM reservadas para outra região, grupo de tamanhos de VM ou termo, você poderá fazer o Exchange. O intercâmbio deve ser para outra reserva que seja de valor igual ou maior. A data de início do prazo da nova reserva não é a mesma da reserva trocada. O termo de um ou três anos começa com quando você cria a nova reserva. Para o Exchange, acesse a reserva no portal do Azure e selecione **Exchange**.
-
-Para obter mais informações sobre como trocar ou reembolsar reservas, consulte trocas [e reembolsos de reserva](../articles/billing/billing-azure-reservations-self-service-exchange-and-refund.md).
+Você pode cancelar, trocar ou reembolsar reservas com determinadas limitações. Para obter mais informações, consulte [trocas e reembolsos de autoatendimento para reservas do Azure](../articles/billing/billing-azure-reservations-self-service-exchange-and-refund.md).
 
 ## <a name="need-help-contact-us"></a>Precisa de ajuda? Entre em contato conosco.
 

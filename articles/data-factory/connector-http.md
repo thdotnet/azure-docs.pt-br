@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 04/29/2019
+ms.date: 08/06/2019
 ms.author: jingwang
-ms.openlocfilehash: a668bb2e0e3381abefaac93a0fb63f0d33bac5a1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8d6cc131c0c2baf7cc0a6600946870615d99e030
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65234037"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68839808"
 ---
 # <a name="copy-data-from-an-http-endpoint-by-using-azure-data-factory"></a>Copiar dados de um ponto de extremidade HTTP usando o Azure Data Factory
 
@@ -56,7 +56,7 @@ As seções a seguir fornecem detalhes sobre propriedades que você pode usar pa
 
 As seguintes propriedades são suportadas para o serviço vinculado HTTP:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | O **tipo** propriedade deve ser definida como **HttpServer**. | Sim |
 | url | A URL base para o servidor web. | Sim |
@@ -68,10 +68,10 @@ As seguintes propriedades são suportadas para o serviço vinculado HTTP:
 
 Defina a **authenticationType** propriedade **Básico**, **Digest**, ou **Windows**. Além das propriedades genéricas descritas na seção anterior, especifique as seguintes propriedades:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | userName | O nome de usuário a ser usada para acessar o ponto de extremidade HTTP. | Sim |
-| Senha | A senha do usuário (o **nome de usuário** valor). Marque esse campo como um tipo **SecureString** para armazená-lo com segurança no Data Factory. Você também pode [referenciar um segredo armazenado no Cofre de Chaves do Azure](store-credentials-in-key-vault.md). | Sim |
+| password | A senha do usuário (o **nome de usuário** valor). Marque esse campo como um tipo **SecureString** para armazená-lo com segurança no Data Factory. Você também pode [referenciar um segredo armazenado no Cofre de Chaves do Azure](store-credentials-in-key-vault.md). | Sim |
 
 **Exemplo**
 
@@ -101,7 +101,7 @@ Defina a **authenticationType** propriedade **Básico**, **Digest**, ou **Window
 
 Para usar a autenticação ClientCertificate, defina a propriedade **authenticationType** como **ClientCertificate**. Além das propriedades genéricas descritas na seção anterior, especifique as seguintes propriedades:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | embeddedCertData | Dados de certificado codificados em Base64. | Especificar **embeddedCertData** ou **certThumbprint**. |
 | certThumbprint | A impressão digital do certificado que está instalado no armazenamento de certificados da sua máquina de Automação do Runtime Integration. Aplica-se apenas quando o tipo de tempo de execução de integração auto-hospedado é especificado na propriedade **connectVia**. | Especificar **embeddedCertData** ou **certThumbprint**. |
@@ -162,23 +162,23 @@ Se você usar **certThumbprint** para autenticação e o certificado estiver ins
 
 Para obter uma lista completa das seções e propriedades disponíveis para definir os conjuntos de dados, confira o artigo sobre [Conjuntos de Dados](concepts-datasets-linked-services.md). 
 
-- Para **Parquet e formato de texto delimitado**, consulte [conjunto de dados de formato de Parquet e texto delimitado](#parquet-and-delimited-text-format-dataset) seção.
-- Para outros formatos, como **formato ORC/Avro/JSON/binário**, consulte [outro conjunto de dados do formato](#other-format-dataset) seção.
+- Para **parquet, texto delimitado e formato binário**, consulte a seção [parquet, texto delimitado e o conjunto de DataSet de formato binário](#format-based-dataset) .
+- Para outros formatos, como o **formato Orc/Avro/JSON**, consulte outra seção do [conjunto](#other-format-dataset) de exemplo.
 
-### <a name="parquet-and-delimited-text-format-dataset"></a>Conjunto de dados de formato de parquet e texto delimitado
+### <a name="format-based-dataset"></a>Parquet, texto delimitado e conjunto de DataSet de formato binário
 
-Para copiar dados de HTTP na **Parquet ou o formato de texto delimitado**, consulte [formato Parquet](format-parquet.md) e [formato de texto delimitado](format-delimited-text.md) artigo no conjunto de dados de formato e com suporte Configurações. As propriedades a seguir têm suporte para HTTP em `location` configurações no conjunto de dados com base no formato:
+Para copiar dados de e para **parquet, texto delimitado ou formato binário**, consulte [formato de parquet](format-parquet.md), [formato de texto delimitado](format-delimited-text.md) e artigo de [formato binário](format-binary.md) em conjunto de dados com base em formato e configurações com suporte. As propriedades a seguir têm suporte para http `location` em configurações no conjunto de conjuntos baseado em formato:
 
-| Propriedade    | DESCRIÇÃO                                                  | Obrigatório |
+| Propriedade    | Descrição                                                  | Necessário |
 | ----------- | ------------------------------------------------------------ | -------- |
-| type        | A propriedade type sob `location` no conjunto de dados deve ser definida como **HttpServerLocation**. | Sim      |
+| type        | A propriedade Type em `location` DataSet deve ser definida como **HttpServerLocation**. | Sim      |
 | relativeUrl | Uma URL relativa para o recurso que contém os dados.       | Não       |
 
 > [!NOTE]
 > O tamanho da carga útil do pedido HTTP suportado é de cerca de 500 KB. Se o tamanho da carga útil que você deseja passar para seu ponto de extremidade da web for maior que 500 KB, considere agrupar a carga útil em partes menores.
 
 > [!NOTE]
-> **HttpFile** ainda há suporte para o tipo de conjunto de dados com formato de texto/Parquet mencionado na próxima seção como-destina-se a atividade de cópia/pesquisa para compatibilidade com versões anteriores. São sugeridas para usar esse novo modelo no futuro, e o ADF criação da interface do usuário foi alternada para gerar esses novos tipos.
+> O conjunto de texto de tipo de httpfile com o formato parquet/Text mencionado na próxima seção ainda tem suporte como é para a atividade de cópia/pesquisa para compatibilidade com versões anteriores. Você é sugerido para usar esse novo modelo no futuro, e a interface do usuário de criação do ADF mudou para gerar esses novos tipos.
 
 **Exemplo:**
 
@@ -206,11 +206,11 @@ Para copiar dados de HTTP na **Parquet ou o formato de texto delimitado**, consu
 }
 ```
 
-### <a name="other-format-dataset"></a>Outro conjunto de dados de formato
+### <a name="other-format-dataset"></a>Outro conjunto de DataSet de formato
 
-Para copiar dados de HTTP na **formato ORC/Avro/JSON/binário**, as propriedades a seguir têm suporte:
+Para copiar dados do HTTP no **formato Orc/Avro/JSON**, há suporte para as seguintes propriedades:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | O **tipo** propriedade do conjunto de dados deve ser definida como **HttpFile**. | Sim |
 | relativeUrl | Uma URL relativa para o recurso que contém os dados. Quando essa propriedade não é especificada, somente o URL especificado na definição de serviço vinculada é usado. | Não |
@@ -270,24 +270,24 @@ Para obter uma lista completa de seções e propriedades que estão disponíveis
 
 ### <a name="http-as-source"></a>HTTP como fonte
 
-- Para copiar de **Parquet e formato de texto delimitado**, consulte [Parquet e a origem do formato de texto delimitado](#parquet-and-delimited-text-format-source) seção.
-- Para cópia de outros formatos, como **formato ORC/Avro/JSON/binário**, consulte [outra fonte de formato](#other-format-source) seção.
+- Para copiar de **parquet, texto delimitado e formato binário**, consulte a seção [parquet, texto delimitado e fonte de formato binário](#format-based-source) .
+- Para copiar de outros formatos, como o **formato Orc/Avro/JSON**, consulte [outra seção fonte de formato](#other-format-source) .
 
-#### <a name="parquet-and-delimited-text-format-source"></a>Parquet e a origem do formato de texto delimitado
+#### <a name="format-based-source"></a>Parquet, texto delimitado e fonte de formato binário
 
-Para copiar dados de HTTP na **Parquet ou o formato de texto delimitado**, consulte [formato Parquet](format-parquet.md) e [formato de texto delimitado](format-delimited-text.md) artigo sobre a fonte da atividade de cópia baseada em formato e configurações com suporte. As propriedades a seguir têm suporte para HTTP em `storeSettings` as configurações na fonte de cópia com base no formato:
+Para copiar dados de **parquet, texto delimitado ou formato binário**, consulte o [formato parquet](format-parquet.md), o [formato de texto delimitado](format-delimited-text.md) e o artigo de [formato binário](format-binary.md) na fonte da atividade de cópia baseada em formato e nas configurações com suporte. As propriedades a seguir têm suporte para http `storeSettings` em configurações na fonte de cópia baseada em formato:
 
-| Propriedade                 | DESCRIÇÃO                                                  | Obrigatório |
+| Propriedade                 | Descrição                                                  | Necessário |
 | ------------------------ | ------------------------------------------------------------ | -------- |
-| type                     | A propriedade type sob `storeSettings` deve ser definida como **HttpReadSetting**. | Sim      |
+| type                     | A propriedade Type em `storeSettings` deve ser definida como **HttpReadSetting**. | Sim      |
 | requestMethod            | O método HTTP. <br>Valores permitidos são **Obtenha** (padrão) e **Post**. | Não       |
 | addtionalHeaders         | Cabeçalhos de solicitação HTTP adicionais.                             | Não       |
 | requestBody              | O corpo da solicitação HTTP.                               | Não       |
 | requestTimeout           | O tempo limite (o valor **TimeSpan**) para a solicitação HTTP para obter uma resposta. Esse valor é o tempo limite para obter uma resposta, não o tempo limite para ler os dados da resposta. O valor padrão é **01:00:40**. | Não       |
-| maxConcurrentConnections | O número das conexões para se conectar ao repositório de armazenamento simultaneamente. Especifique somente quando você quiser limitar a conexão simultâneo ao armazenamento de dados. | Não       |
+| maxConcurrentConnections | O número de conexões a serem conectadas ao repositório de armazenamento simultaneamente. Especifique somente quando quiser limitar a conexão simultânea com o armazenamento de dados. | Não       |
 
 > [!NOTE]
-> Para o formato de texto delimitado por Parquet /, **HttpSource** ainda tem suporte como origem de atividade de cópia de tipo mencionada na próxima seção-é para compatibilidade com versões anteriores. São sugeridas para usar esse novo modelo no futuro, e o ADF criação da interface do usuário foi alternada para gerar esses novos tipos.
+> Para o formato de texto parquet/delimitado, a fonte da atividade de cópia do tipo **http** . de origem mencionada na próxima seção ainda tem suporte como está para compatibilidade com versões anteriores. Você é sugerido para usar esse novo modelo no futuro, e a interface do usuário de criação do ADF mudou para gerar esses novos tipos.
 
 **Exemplo:**
 
@@ -332,9 +332,9 @@ Para copiar dados de HTTP na **Parquet ou o formato de texto delimitado**, consu
 
 #### <a name="other-format-source"></a>Outra fonte de formato
 
-Para copiar dados de HTTP na **formato ORC/Avro/JSON/binário**, as propriedades a seguir têm suporte na atividade de cópia **origem** seção:
+Para copiar dados do HTTP no **formato Orc/Avro/JSON**, as propriedades a seguir têm suporte na seção **origem** da atividade de cópia:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade **tipo** da origem da atividade de cópia deve ser configurada para **HttpSource**. | Sim |
 | httpRequestTimeout | O tempo limite (o valor **TimeSpan**) para a solicitação HTTP para obter uma resposta. Esse valor é o tempo limite para obter uma resposta, não o tempo limite para ler os dados da resposta. O valor padrão é **01:00:40**.  | Não |

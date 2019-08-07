@@ -11,21 +11,21 @@ ms.subservice: develop
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 10/20/2018
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f809fa856d39096a85dcc205d8211ba3551eeb48
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f20a10f7c6f98b352e8a2d794fabc3b6b3b57319
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65962860"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68835303"
 ---
 # <a name="signing-key-rollover-in-azure-active-directory"></a>Substituição de chave de assinatura no Azure Active Directory
-Este artigo aborda o que você precisa saber sobre as chaves públicas que são usadas no Azure Active Directory (Azure AD) para assinar tokens de segurança. É importante observar que essas chaves sobreponha periodicamente e, em caso de emergência, podem ser substituídas imediatamente. Todos os aplicativos que usam o Azure AD devem ser capazes de manipular programaticamente o processo de substituição de chave ou estabelecer um processo de substituição manual periódica. Continue lendo para entender como funcionam as chaves, como avaliar o impacto de substituição no seu aplicativo e como atualizar seu aplicativo ou estabelecer um processo de substituição manual periódica para tratar a substituição de chave, se necessário.
+Este artigo aborda o que você precisa saber sobre as chaves públicas que são usadas no Azure Active Directory (Azure AD) para assinar tokens de segurança. É importante observar que essas chaves passam periodicamente e, em uma emergência, podem ser transferidas imediatamente. Todos os aplicativos que usam o Azure AD devem ser capazes de manipular programaticamente o processo de substituição de chave ou estabelecer um processo de substituição manual periódica. Continue lendo para entender como funcionam as chaves, como avaliar o impacto de substituição no seu aplicativo e como atualizar seu aplicativo ou estabelecer um processo de substituição manual periódica para tratar a substituição de chave, se necessário.
 
 ## <a name="overview-of-signing-keys-in-azure-ad"></a>Visão geral das chaves de assinatura no Azure AD
 O Azure AD usa criptografia de chave pública criada nos padrões da indústria para estabelecer a confiança entre ela e os aplicativos que a utilizam. Em termos práticos, isso funciona da seguinte maneira: O Microsoft Azure AD usa uma chave de assinatura que consiste em um par de chaves pública e privada. Quando um usuário entra em um aplicativo que usa o Azure AD para autenticação, este cria um token de segurança que contém informações sobre o usuário. Esse token é assinado pelo Azure AD usando sua chave privada antes de ser enviado para o aplicativo. Para verificar se o token é válido e é originado a partir do Azure AD, o aplicativo deverá validar a assinatura do token usando a chave pública exposta pelo Azure AD que está contida no [documento de descoberta do OpenID Connect](https://openid.net/specs/openid-connect-discovery-1_0.html) do locatário ou o [documento de metadados federados do locatário SAML/WS-Fed](azure-ad-federation-metadata.md).
@@ -43,7 +43,7 @@ Como o seu aplicativo lida com a substituição de chave depende de variáveis c
 * [Aplicativos/APIs Web que protegem recursos usando .NET OWIN OpenID Connect, WS-Fed ou o middleware WindowsAzureActiveDirectoryBearerAuthentication](#owin)
 * [Aplicativos/APIs Web protegendo recursos usando .NET Core OpenID Connect ou o middleware JwtBearerAuthentication](#owincore)
 * [Aplicativos/APIs Web que protegem recursos usando o módulo passport-azure-ad do Node.js](#passport)
-* [Aplicativos da Web / de APIs que protegem recursos e criadas com o Visual Studio 2015 ou posterior](#vs2015)
+* [Aplicativos/APIs Web que protegem recursos e criados com o Visual Studio 2015 ou posterior](#vs2015)
 * [Aplicativos/APIs Web que protegem recursos e que foram criados com o Visual Studio 2013](#vs2013)
 * APIs Web que protegem recursos e que foram criados com o Visual Studio 2013
 * [Aplicativos Web que protegem recursos e que foram criados com o Visual Studio 2012](#vs2012)
@@ -56,12 +56,12 @@ Esta diretriz **não** é aplicável:
 * Os aplicativos locais publicados por meio do proxy de aplicativo não precisam se preocupar com as chaves de assinatura.
 
 ### <a name="nativeclient"></a>Aplicativos cliente nativos que acessam recursos
-Aplicativos que só acessam recursos (ou seja, Microsoft Graph, KeyVault, API do Outlook e outras APIs Microsoft) geralmente apenas obter um token e passá-lo para o proprietário do recurso. Já que eles não estão protegendo recursos, não inspecionam o token e, portanto, não é necessário garantir que ele esteja adequadamente assinado.
+Aplicativos que só acessam recursos (ou seja, Microsoft Graph, keyvault, API do Outlook e outras APIs da Microsoft) geralmente obtêm apenas um token e os passam para o proprietário do recurso. Já que eles não estão protegendo recursos, não inspecionam o token e, portanto, não é necessário garantir que ele esteja adequadamente assinado.
 
 Os aplicativos cliente nativos, tanto da área de trabalho como móveis, entram nessa categoria e, portanto, não são afetados pela substituição.
 
 ### <a name="webclient"></a>Aplicativos/APIs Web que acessam recursos
-Aplicativos que só acessam recursos (ou seja, Microsoft Graph, KeyVault, API do Outlook e outras APIs Microsoft) geralmente apenas obter um token e passá-lo para o proprietário do recurso. Já que eles não estão protegendo recursos, não inspecionam o token e, portanto, não é necessário garantir que ele esteja adequadamente assinado.
+Aplicativos que só acessam recursos (ou seja, Microsoft Graph, keyvault, API do Outlook e outras APIs da Microsoft) geralmente obtêm apenas um token e os passam para o proprietário do recurso. Já que eles não estão protegendo recursos, não inspecionam o token e, portanto, não é necessário garantir que ele esteja adequadamente assinado.
 
 Os aplicativos Web e as APIs Web que estão usando o fluxo somente para aplicativo (credenciais de cliente/certificado de cliente), entram nessa categoria e, portanto, não são afetados pela substituição.
 
@@ -128,8 +128,8 @@ passport.use(new OIDCStrategy({
 ));
 ```
 
-### <a name="vs2015"></a>Aplicativos da Web / de APIs que protegem recursos e criadas com o Visual Studio 2015 ou posterior
-Se seu aplicativo tiver sido criado usando um modelo de aplicativo web no Visual Studio 2015 ou posterior e você selecionou **contas de trabalho ou escola** da **alterar autenticação** menu, ele já tem o necessário lógica para tratar a substituição de chave automaticamente. Essa lógica, incorporada ao middleware OWIN OpenID Connect, recupera e armazena em cache as chaves de documento de descoberta OpenID Connect e as atualiza periodicamente.
+### <a name="vs2015"></a>Aplicativos/APIs Web que protegem recursos e criados com o Visual Studio 2015 ou posterior
+Se seu aplicativo foi criado usando um modelo de aplicativo Web no Visual Studio 2015 ou posterior e você selecionou **contas corporativas ou de estudante** no menu **alterar autenticação** , ele já tem a lógica necessária para tratar a substituição de chave automaticamente. Essa lógica, incorporada ao middleware OWIN OpenID Connect, recupera e armazena em cache as chaves de documento de descoberta OpenID Connect e as atualiza periodicamente.
 
 Se você tiver adicionado a autenticação à sua solução manualmente, talvez seu aplicativo não tenha a lógica de substituição de chave necessária. Você precisará escrevê-la por conta própria ou seguir as etapas em [Aplicativos/APIs Web que usam quaisquer outras bibliotecas ou que implementam manualmente qualquer um dos protocolos com suporte](#other).
 
@@ -145,7 +145,7 @@ As etapas a seguir o ajudarão a verificar se a lógica está funcionando corret
 3. Na tabela **IssuingAuthorityKeys** , haverá pelo menos uma linha, que corresponde ao valor de impressão digital da chave. Exclua todas as linhas na tabela.
 4. Clique com botão direito do mouse na tabela **Locatários** e clique em **Mostrar Dados da Tabela**.
 5. Na tabela **Locatários** , haverá pelo menos uma linha, que corresponde a um identificador de locatário de diretório exclusivo. Exclua todas as linhas na tabela. Se você não excluir as linhas em ambas as tabelas **Locatários** e **IssuingAuthorityKeys**, obterá um erro no tempo de execução.
-6. Compile e execute o aplicativo. Depois de entrar na sua conta, você poderá interromper o aplicativo.
+6. Crie e execute o aplicativo. Depois de entrar na sua conta, você poderá interromper o aplicativo.
 7. Volte para o **Gerenciador de Servidores** e examine os valores das tabelas **IssuingAuthorityKeys** e **Locatários**. Você notará que eles foram repopulados automaticamente com as informações apropriadas do documento de metadados federados.
 
 ### <a name="vs2013"></a>APIs Web que protegem recursos e que foram criados com o Visual Studio 2013
@@ -278,7 +278,7 @@ Depois que você tiver seguido as etapas, o Web.config do seu aplicativo será a
 
 Siga as etapas abaixo para verificar se a lógica de substituição de chave está funcionando.
 
-1. Depois de ter verificado que seu aplicativo está usando o código acima, abra o **Web. config** de arquivo e navegue até a  **\<issuerNameRegistry >** bloco, procurando especificamente as algumas linhas a seguir:
+1. Depois de verificar se seu aplicativo está usando o código acima, abra o arquivo **Web. config** e navegue até o bloco de  **\<> de issuerNameRegistry** , procurando especificamente as seguintes linhas:
    ```
    <issuerNameRegistry type="System.IdentityModel.Tokens.ValidatingIssuerNameRegistry, System.IdentityModel.Tokens.ValidatingIssuerNameRegistry">
         <authority name="https://sts.windows.net/ec4187af-07da-4f01-b18f-64c2f5abecea/">
@@ -286,7 +286,7 @@ Siga as etapas abaixo para verificar se a lógica de substituição de chave est
             <add thumbprint="3A38FA984E8560F19AADC9F86FE9594BB6AD049B" />
           </keys>
    ```
-2. No  **\<adicionar a impressão digital = "" >** , altere o valor de impressão digital, substituindo qualquer caractere por um diferente. Salve o arquivo **Web.config** .
+2. Na configuração adicionar impressão **digital = "" >, altere o valor da impressão digital, substituindo qualquer caractere por um diferente. \<** Salve o arquivo **Web.config** .
 3. Crie o aplicativo e o execute. Se você consegue completar o processo de logon, seu aplicativo está atualizando a chave com êxito baixando as informações necessárias do documento de metadados federados do diretório. Se você estiver com problemas para entrar, verifique se as alterações em seu aplicativo estão corretas lendo o artigo [Adicionar logon ao seu aplicativo Web usando o Microsoft Azure AD](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect) ou baixando e inspecionando o seguinte exemplo de código: [Aplicativo de nuvem multilocatário do Microsoft Azure Active Directory](https://code.msdn.microsoft.com/multi-tenant-cloud-8015b84b).
 
 ### <a name="vs2010"></a>Os aplicativos Web que protegem recursos e que foram criados com o Visual Studio 2008 ou 2010 e o Windows Identity Foundation (WIF) v1.0 para .NET 3.5

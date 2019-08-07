@@ -10,7 +10,7 @@ ms.assetid: 2e4fc79a-0285-40be-8c77-65edee408a22
 ms.service: active-directory
 ms.subservice: develop
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 12/01/2018
@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b71585c178efbc30892cf95c5c2149818f0dcb3c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 831ebe53e43d0fef5bd57a699f02d06f2dff5ddc
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65764578"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68835506"
 ---
 # <a name="azure-active-directory-authentication-libraries"></a>Bibliotecas de Autenticação do Active Directory do Azure
 
@@ -82,7 +82,7 @@ Nesse cenário, um desenvolvedor tem um aplicativo em execução num servidor qu
 
 Nesse cenário, um desenvolvedor tem um aplicativo Web em execução num servidor que precisa acessar um recurso remoto, como uma API da Web. A API da Web não permite chamadas anônimas, portanto deve ser chamada de um serviço autorizado em nome de um usuário autenticado. A API da Web é pré-configurado para confiar em tokens de acesso emitidos por um locatário específico do Microsoft Azure Active Directory e o Microsoft Azure Active Directory é pré-configurado para emitir tokens de acesso para esse recurso para um serviço com as credenciais do cliente. Quando o usuário é autenticado no aplicativo Web, o aplicativo pode obter um código de autorização para o usuário do AD do Azure. O aplicativo Web pode então usar a ADAL para obter um token de acesso e atualizar o token em nome de um usuário usando o código de autorização e as credenciais de cliente associadas ao aplicativo do AD do Azure. Depois que o aplicativo Web estiver em posse do token de acesso, ele pode chamar a API da Web até o token expirar. Quando o token expirar, o aplicativo Web pode usar a ADAL para obter um novo token de acesso usando o token de atualização recebido anteriormente. Para um exemplo de código que demonstre este cenário, consulte [Cliente nativo para API Web](https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof).
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 
 - [Guia do desenvolvedor do Active Directory do Azure](v1-overview.md)
 - [Cenários de autenticação do Active Directory do Azure](authentication-scenarios.md)

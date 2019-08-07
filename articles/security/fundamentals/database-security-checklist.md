@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: tomsh
-ms.openlocfilehash: 3f51f23f47cfbd81c71234bc2ce5a0adeeadd3f9
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: bf11d7a9dbaa37db521da67deddbed977cc1d251
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68727383"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68780546"
 ---
 # <a name="azure-database-security-checklist"></a>Lista de verificação de segurança do banco de dados do Azure
 
@@ -41,7 +41,7 @@ Elas incluem:
 A computação na nuvem exige novos paradigmas de segurança que não são familiares para muitos usuários do aplicativo, administradores de banco de dados e programadores. Como resultado, algumas organizações hesitam implementar uma infraestrutura de nuvem para o gerenciamento de dados devido a supostos riscos de segurança. No entanto, grande parte dessa preocupação pode ser atenuada por meio de uma melhor compreensão dos recursos de segurança do Microsoft Azure e do Banco de Dados SQL do Microsoft Azure.
 
 ## <a name="checklist"></a>Lista de verificação
-É recomendável que você leia o artigo [Práticas recomendadas de segurança do banco de dados do Azure](https://docs.microsoft.com/azure/security/azure-database-security-best-practices) antes de examinar esta lista de verificação. Você poderá tirar o máximo proveito desta lista de verificação depois de entender as práticas recomendadas. Você pode usar esta lista de verificação para certificar-se de que já resolveu os problemas importantes na segurança do banco de dados do Azure.
+É recomendável que você leia o artigo [Práticas recomendadas de segurança do banco de dados do Azure](https://docs.microsoft.com/azure/security/fundamentals/database-best-practices) antes de examinar esta lista de verificação. Você poderá tirar o máximo proveito desta lista de verificação depois de entender as práticas recomendadas. Você pode usar esta lista de verificação para certificar-se de que já resolveu os problemas importantes na segurança do banco de dados do Azure.
 
 
 |Categoria da lista de verificação| Descrição|

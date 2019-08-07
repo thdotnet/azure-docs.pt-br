@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 05/30/2019
+ms.date: 08/05/2019
 ms.author: raynew
-ms.openlocfilehash: 9f985260175e5f54a17799ef07b3a280f42b716e
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
+ms.openlocfilehash: 2ed93846e0a1ab98b25bdfbe33b34779996da82b
+ms.sourcegitcommit: f7998db5e6ba35cbf2a133174027dc8ccf8ce957
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67491877"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68782635"
 ---
 # <a name="azure-to-azure-disaster-recovery-architecture"></a>Arquitetura de recuperação de desastre do Azure para o Azure
 
@@ -31,7 +31,7 @@ Os componentes envolvidos na recuperação de desastre para VMs do Azure são re
 **VMs na região de origem** | Uma ou mais VMs do Azure em uma [região de origem compatível](azure-to-azure-support-matrix.md#region-support).<br/><br/> As VMs podem executar qualquer [sistema operacional compatível](azure-to-azure-support-matrix.md#replicated-machine-operating-systems).
 **Armazenamento das VMs de origem** | As VMs do Azure podem ser gerenciadas ou ter discos não gerenciados distribuídos em contas de armazenamento.<br/><br/>[Saiba mais](azure-to-azure-support-matrix.md#replicated-machines---storage) sobre o armazenamento do Azure compatível.
 **Redes de VMs de origem** | As VMs podem estar localizadas em uma ou mais sub-redes de uma VNET (rede virtual) na região de origem. [Saiba mais](azure-to-azure-support-matrix.md#replicated-machines---networking) sobre os requisitos de rede.
-**Conta de armazenamento em cache** | Você precisa de uma conta de armazenamento em cache na rede de origem. Durante a replicação, as alterações na VM são armazenadas no cache antes de serem enviadas para o armazenamento de destino.  Contas de armazenamento em cache devem ser o padrão.<br/><br/> O uso de um cache garante um impacto mínimo nos aplicativos de produção que são executados em uma VM.<br/><br/> [Saiba mais](azure-to-azure-support-matrix.md#cache-storage) sobre os requisitos de armazenamento em cache. 
+**Conta de armazenamento em cache** | Você precisa de uma conta de armazenamento em cache na rede de origem. Durante a replicação, as alterações na VM são armazenadas no cache antes de serem enviadas para o armazenamento de destino.  As contas de armazenamento em cache devem ser padrão.<br/><br/> O uso de um cache garante um impacto mínimo nos aplicativos de produção que são executados em uma VM.<br/><br/> [Saiba mais](azure-to-azure-support-matrix.md#cache-storage) sobre os requisitos de armazenamento em cache. 
 **Recursos de destino** | Os recursos de destino são usados durante a replicação e quando ocorre um failover. O Site Recovery pode configurar o recurso de destino por padrão, ou você pode criá-lo/personalizá-lo.<br/><br/> Na região de destino, verifique se você consegue criar VMs e se a sua assinatura tem recursos suficientes para dar suporte a tamanhos de VM que serão necessários na região de destino. 
 
 ![Replicação de origem e de destino](./media/concepts-azure-to-azure-architecture/enable-replication-step-1.png)
@@ -91,7 +91,7 @@ O Site Recovery tira instantâneos da seguinte maneira:
 1. O Site Recovery tira instantâneos consistentes com falhas de dados por padrão e instantâneos consistentes com aplicativo se você especifica uma frequência para eles.
 2. Os pontos de recuperação são criados com base nos instantâneos e armazenados de acordo com as configurações de retenção na política de replicação.
 
-### <a name="consistency"></a>Consistência
+### <a name="consistency"></a>Coerência
 
 A tabela a seguir explica os diferentes tipos de consistência.
 
@@ -144,7 +144,7 @@ Para controlar a conectividade de saída para VMs usando endereços IP, permita 
 
 **Regra** |  **Detalhes** | **Marca do serviço**
 --- | --- | --- 
-Permitir HTTPS de saída: porta 443 | Permita intervalos que correspondam às contas de armazenamento na região de origem | Armazenamento. \<região-name >.
+Permitir HTTPS de saída: porta 443 | Permita intervalos que correspondam às contas de armazenamento na região de origem | Repositório. \<> de nome de região.
 Permitir HTTPS de saída: porta 443 | Permita intervalos que correspondam ao Azure AD (Azure Active Directory).<br/><br/> Se forem adicionados endereços do Azure AD no futuro, você precisará criar regras do NSG (Grupo de Segurança de Rede).  | AzureActiveDirectory
 Permitir HTTPS de saída: porta 443 | Permita o acesso a [pontos de extremidade do Site Recovery](https://aka.ms/site-recovery-public-ips) que correspondam à localização de destino. 
 
@@ -152,7 +152,7 @@ Permitir HTTPS de saída: porta 443 | Permita o acesso a [pontos de extremidade 
 
 **Regra** |  **Detalhes** | **Marca do serviço**
 --- | --- | --- 
-Permitir HTTPS de saída: porta 443 | Permita intervalos que correspondam às contas de armazenamento na região de destino. | Armazenamento. \<região-name >.
+Permitir HTTPS de saída: porta 443 | Permita intervalos que correspondam às contas de armazenamento na região de destino. | Repositório. \<> de nome de região.
 Permitir HTTPS de saída: porta 443 | Permita intervalos que correspondam ao Azure AD.<br/><br/> Se forem adicionados endereços do Azure AD no futuro, você precisará criar regras do NSG.  | AzureActiveDirectory
 Permitir HTTPS de saída: porta 443 | Permita o acesso a [pontos de extremidade do Site Recovery](https://aka.ms/site-recovery-public-ips) que correspondam à localização de origem. 
 

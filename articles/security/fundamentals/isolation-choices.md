@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: 4115964533072e5d8f1760c8c5cdf0f20c9b7625
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 0c07cbd9fef865f3fc7b782210ef44094df9f629
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68727132"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779822"
 ---
 # <a name="isolation-in-the-azure-public-cloud"></a>Isolamento na nuvem pública do Azure
 ##  <a name="introduction"></a>Introdução
@@ -73,7 +73,7 @@ Usuários, grupos e aplicativos do diretório podem gerenciar recursos na assina
 
 Para as necessidades de diagnóstico e manutenção, um modelo operacional que emprega um sistema de elevação de privilégio just-in-time é exigido e usado. O Azure AD Privileged Identity Management (PIM) introduz o conceito de um administrador elegível. [Administradores elegíveis](https://docs.microsoft.com/azure/active-directory/active-directory-privileged-identity-management-configure) devem ser usuários que precisam de acesso privilegiado às vezes, mas não todos os dias. A função fica inativa até que o usuário precise de acesso, então ele conclui um processo de ativação e torna-se um administrador ativo por um tempo predeterminado.
 
-![Gerenciamento de identidades com privilégios do AD do Azure](./media/isolation-choices/azure-isolation-fig2.png)
+![Azure AD Privileged Identity Management](./media/isolation-choices/azure-isolation-fig2.png)
 
 O Azure Active Directory hospeda cada locatário em seu próprio contêiner protegido, com políticas e permissões para e dentro do contêiner que é de propriedade e gerenciamento exclusivo do locatário.
 
@@ -240,7 +240,7 @@ A criptografia em trânsito é um mecanismo de proteção de dados quando eles s
 -   [Criptografia do cliente](https://docs.microsoft.com/azure/storage/storage-security-guide#using-client-side-encryption-to-secure-data-that-you-send-to-storage), que permite criptografar os dados antes que eles sejam transferidos para o armazenamento e descriptografá-los após serem transferidos para fora do armazenamento.
 
 #### <a name="encryption-at-rest"></a>Criptografia em repouso
-Para muitas organizações, a [criptografia de dados em repouso](https://docs.microsoft.com/azure/security/azure-isolation) é uma etapa obrigatória no sentido de garantir a soberania, a privacidade e a conformidade dos dados. Há três recursos do Azure que fornecem criptografia de dados que estão “em repouso”:
+Para muitas organizações, a [criptografia de dados em repouso](https://docs.microsoft.com/azure/security/fundamentals/isolation-choices) é uma etapa obrigatória no sentido de garantir a soberania, a privacidade e a conformidade dos dados. Há três recursos do Azure que fornecem criptografia de dados que estão “em repouso”:
 
 -   [Criptografia do Serviço de Armazenamento](https://docs.microsoft.com/azure/storage/storage-security-guide#encryption-at-rest) permite solicitar que o serviço de armazenamento criptografe automaticamente os dados ao gravá-los no Armazenamento do Azure.
 

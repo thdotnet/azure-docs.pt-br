@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 546abdae5d7c03bb0d4b49f9485fe06b521fdc1d
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 82638e3e102f7b8e39cd797960a11f3193132bc1
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68722209"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779383"
 ---
 # <a name="custom-administrator-roles-in-azure-active-directory-preview"></a>Funções de administrador personalizadas no Azure Active Directory (versão prévia)
 
@@ -72,7 +72,11 @@ Uma definição de função, ou função, é uma coleção de permissões. Uma d
 
 ### <a name="scope"></a>Escopo
 
-Um escopo é a restrição de ações permitidas em um determinado recurso do Azure AD. Ao atribuir uma função, você pode personalizar a função para limitar as ações permitidas do administrador definindo um escopo de ação. Por exemplo, se os desenvolvedores não precisarem gerenciar totalmente todos os aplicativos, você poderá usar as funções personalizadas do Azure AD para permitir que eles gerenciem apenas os registros do aplicativo.
+Um escopo é a restrição de ações permitidas para um recurso específico do Azure AD. Ao atribuir uma função, você pode especificar um escopo que limita as ações permitidas do administrador a um recurso específico. Por exemplo, se você quiser conceder a um desenvolvedor uma função personalizada, mas apenas para gerenciar um registro de aplicativo específico, você poderá incluir o registro de aplicativo específico como um escopo na atribuição de função.
+
+  > [!Note]
+  > As funções personalizadas podem ser atribuídas no escopo do diretório e no escopo do recurso. Eles ainda não podem ser atribuídos no escopo da unidade administrativa.
+  > Funções internas podem ser atribuídas no escopo do diretório e, em alguns casos, escopo da unidade administrativa. Eles ainda não podem ser atribuídos no escopo do objeto.
 
 ## <a name="required-license-plan"></a>Plano de licença necessário
 

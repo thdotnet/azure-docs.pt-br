@@ -10,13 +10,13 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
-ms.custom: seodec2018
-ms.openlocfilehash: bbf2e524d626ac17596ded61746c26f20a6caf1b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.subservice: cognitive-search
+ms.openlocfilehash: 312caf2d514d630c5bc1fb7755b7ab7a6a3d443a
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65021836"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840916"
 ---
 #    <a name="text-merge-cognitive-skill"></a>Habilidade de percepção do Text Merge
 
@@ -32,7 +32,7 @@ Microsoft.Skills.Text.MergeSkill
 
 Os parâmetros diferenciam maiúsculas de minúsculas.
 
-| Nome do parâmetro     | DESCRIÇÃO |
+| Nome do parâmetro     | Descrição |
 |--------------------|-------------|
 | insertPreTag  | Cadeia de caracteres a serem incluídas antes de cada inserção. O valor padrão é `" "`. Para omitir o espaço, defina o valor como `""`.  |
 | insertPostTag | Cadeia de caracteres a ser incluída antes de cada inserção. O valor padrão é `" "`. Para omitir o espaço, defina o valor como `""`.  |

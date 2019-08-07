@@ -1,5 +1,5 @@
 ---
-title: Criar uma estratégia de gerenciamento de controle de acesso flexível - Azure Active Directory
+title: Criar uma estratégia de gerenciamento de controle de acesso resiliente-Azure Active Directory
 description: Este documento fornece diretrizes sobre as estratégias que uma organização deve adotar para fornecer resiliência, visando reduzir o risco de bloqueio durante interrupções imprevistas
 services: active-directory
 author: martincoetzer
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 12/19/2018
 ms.author: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 831ba47ea4e999219a6d8cf34cb5fb0fdcd1ead8
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: c9be48d8f403d3ddde993ebdcf0142b55e52afce
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67594954"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779685"
 ---
 # <a name="create-a-resilient-access-control-management-strategy-with-azure-active-directory"></a>Criar uma estratégia de gerenciamento de controle de acesso resiliente com o Azure Active Directory
 
@@ -37,8 +37,8 @@ Este documento fornece diretrizes sobre as estratégias que uma organização de
 Há quatro observações principais neste documento:
 
 * Evite o bloqueio do administrador usando contas de acesso de emergência.
-* Implemente a autenticação Multifator usando o acesso condicional (CA) em vez de MFA por usuário.
-* Reduzir o bloqueio do usuário por meio de vários controles de acesso condicional (CA).
+* Implemente o MFA usando o acesso condicional (CA) em vez de MFA por usuário.
+* Mitigar o bloqueio do usuário usando vários controles de acesso condicional (AC).
 * Reduza o bloqueio do usuário provisionando vários métodos de autenticação ou equivalentes para cada usuário.
 
 ## <a name="before-a-disruption"></a>Antes de uma interrupção
@@ -58,7 +58,7 @@ Para desbloquear o acesso de administrador para o locatário, é necessário cri
 
 ### <a name="mitigating-user-lockout"></a>Mitigar bloqueio do usuário
 
- Para atenuar o risco de bloqueio do usuário, use políticas de acesso condicional com vários controles para dar aos usuários uma escolha de como eles acessarão recursos e aplicativos. Permitir que um usuário escolha entre, por exemplo, entrar com MFA **ou** entrar a partir de um dispositivo gerenciado **ou** entrar a partir da rede corporativa, se um dos controles de acesso não estiver disponível, proporciona ao usuário outras opções para continuar a trabalhar.
+ Para reduzir o risco de bloqueio de usuário, use políticas de acesso condicional com vários controles para dar aos usuários uma opção de como eles acessarão aplicativos e recursos. Permitir que um usuário escolha entre, por exemplo, entrar com MFA **ou** entrar a partir de um dispositivo gerenciado **ou** entrar a partir da rede corporativa, se um dos controles de acesso não estiver disponível, proporciona ao usuário outras opções para continuar a trabalhar.
 
 #### <a name="microsoft-recommendations"></a>Recomendações da Microsoft
 
@@ -81,7 +81,7 @@ Este conjunto de políticas de exemplo concederá aos usuários selecionados no 
   * Usuários e Grupos: Incluir todos os usuários. Excluir AppUsers, CoreAdmins, e EmergencyAccess
   * Aplicativos de Nuvem: Incluir todos os aplicativos
   * Condições: (Nenhuma)
-  * Controles de Concessão: Bloco
+  * Controles de Concessão: Bloquear
 * Política 2: Conceder acesso a AppUsers exigindo MFA ou dispositivo confiável.
   * Usuários e Grupos: Incluir AppUsers. Excluir CoreAdmins e EmergencyAccess
   * Aplicativos de Nuvem: Incluir todos os aplicativos
@@ -109,7 +109,7 @@ Reconhecer sua exposição durante uma interrupção ajuda a reduzir o risco e �
 
 #### <a name="microsoft-recommendations"></a>Recomendações da Microsoft
 
-Uma política de acesso condicional de contingência é uma **desabilitado política** que omite os controles de Azure MFA, a MFA de terceiros, com base em dispositivo ou risco. Então, quando sua organização decidir ativar o plano de contingência, os administradores poderão habilitar a política e desabilitar as políticas com base em controle regulares.
+Uma política de acesso condicional de contingência é uma **política desabilitada** que OMITE a MFA do Azure, a MFA de terceiros, os controles baseados em risco ou no dispositivo. Então, quando sua organização decidir ativar o plano de contingência, os administradores poderão habilitar a política e desabilitar as políticas com base em controle regulares.
 
 >[!IMPORTANT]
 > Desabilitar políticas que impõem segurança nos usuários, mesmo temporariamente, reduzirá a postura de segurança enquanto o plano de contingência estiver vigente.
@@ -151,21 +151,21 @@ O exemplo a seguir: **Exemplo A - política de CA de contingência para restaura
   * Usuários e Grupos: Incluir todos os usuários. Excluir CoreAdmins e EmergencyAccess
   * Aplicativos de Nuvem: Exchange Online e SharePoint Online
   * Condições: Plataforma de dispositivo inclui todas as plataformas, excluir Windows
-  * Controles de Concessão: Bloco
+  * Controles de Concessão: Bloquear
   * Estado: Desabilitado
 * Política 3: Bloquear redes que não sejam CorpNetwork
   * Nome: EM003 – HABILITAR EM EMERGÊNCIA: Interrupção de MFA [3/4] – Exchange SharePoint – Bloquear acesso, exceto da rede corporativa
   * Usuários e Grupos: Incluir todos os usuários. Excluir CoreAdmins e EmergencyAccess
   * Aplicativos de Nuvem: Exchange Online e SharePoint Online
   * Condições: Locais incluem qualquer local, excluir CorpNetwork
-  * Controles de Concessão: Bloco
+  * Controles de Concessão: Bloquear
   * Estado: Desabilitado
 * Política 4: Bloquear EAS explicitamente
   * Nome: EM004 – HABILITAR EM EMERGÊNCIA: Interrupção de MFA [4/4] – Exchange – Bloquear EAS para todos os usuários
   * Usuários e Grupos: Incluir todos os usuários
   * Aplicativos de Nuvem: Incluir Exchange Online
   * Condições: Aplicativos do cliente: Exchange Active Sync
-  * Controles de Concessão: Bloco
+  * Controles de Concessão: Bloquear
   * Estado: Desabilitado
 
 Ordem de ativação:
@@ -186,14 +186,14 @@ Neste exemplo, **Exemplo B - políticas de CA de contingência para permitir o a
   * Usuários e Grupos: Incluir todos os usuários. Excluir SalesAdmins e SalesforceContingency
   * Aplicativos de Nuvem: Salesforce.
   * Condições: Nenhum
-  * Controles de Concessão: Bloco
+  * Controles de Concessão: Bloquear
   * Estado: Desabilitado
 * Política 2: Bloquear a equipe de vendas de qualquer plataforma que não seja móvel (para reduzir a área da superfície do ataque)
   * Nome: EM002 – HABILITAR EM EMERGÊNCIA: Interrupção de Conformidade do Dispositivo [2/2] – Salesforce – Bloquear todas as plataformas, exceto iOS e Android
   * Usuários e Grupos: Incluir SalesforceContingency. Excluir SalesAdmins
   * Aplicativos de Nuvem: Salesforce
   * Condições: Plataforma de dispositivo inclui todas as plataformas, excluir iOS e Android
-  * Controles de Concessão: Bloco
+  * Controles de Concessão: Bloquear
   * Estado: Desabilitado
 
 Ordem de ativação:
@@ -210,7 +210,7 @@ O bloqueio do usuário também pode ocorrer se as condições a seguir forem ver
 - Sua organização usa uma solução de identidade híbrida com autenticação de passagem ou federação.
 - Seus sistemas de identidade locais (como o Active Directory, AD FS ou um componente dependente) não estão disponíveis. 
  
-Para ser mais resiliente, sua organização deve [habilitar a sincronização de hash de senha](https://docs.microsoft.com/azure/security/azure-ad-choose-authn), pois ela permite [mudar para usar a sincronização de hash de senha](https://docs.microsoft.com/azure/active-directory/hybrid/plan-connect-user-signin) se os sistemas de identidade locais estiverem inoperantes.
+Para ser mais resiliente, sua organização deve [habilitar a sincronização de hash de senha](https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn), pois ela permite [mudar para usar a sincronização de hash de senha](https://docs.microsoft.com/azure/active-directory/hybrid/plan-connect-user-signin) se os sistemas de identidade locais estiverem inoperantes.
 
 #### <a name="microsoft-recommendations"></a>Recomendações da Microsoft
  Habilite a sincronização de hash de senha usando o assistente do Azure AD Connect, independentemente se sua organização usa a autenticação de passagem ou federação.
@@ -247,7 +247,7 @@ Desfaça as alterações feitas como parte do plano de contingência ativado qua
 
 ## <a name="emergency-options"></a>Opções de emergência
 
- No caso de emergência e sua organização antes não eram implementar um plano de contingência ou atenuação e siga as recomendações a [contingências para bloqueio do usuário](#contingencies-for-user-lockout) seção se eles já usam o acesso condicional políticas para impor o MFA.
+ No caso de uma emergência e sua organização não implementar anteriormente um plano de mitigação ou contingência, siga as recomendações na seção contingências [para bloqueio de usuário](#contingencies-for-user-lockout) se eles já usarem políticas de acesso condicional para impor a MFA.
 Se sua organização estiver usando políticas herdadas de MFA por usuário, você pode considerar a seguinte alternativa:
 
 1. Se você tiver o endereço IP de saída de rede corporativa, é possível adicioná-las como IPs confiáveis para habilitar a autenticação somente para a rede corporativa.
@@ -268,5 +268,5 @@ Se sua organização estiver usando políticas herdadas de MFA por usuário, voc
 * [Como configurar dispositivos adicionados ao Azure Active Directory híbrido](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan)
 * [Guia de implantação do Windows Hello for Business](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-deployment-guide)
   * [Diretrizes de senha - Microsoft Research](https://research.microsoft.com/pubs/265143/microsoft_password_guidance.pdf)
-* [Quais são as condições no acesso condicional do Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/conditions)
-* [Quais são os controles de acesso no acesso condicional do Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/controls)
+* [O que são condições em Azure Active Directory acesso condicional?](https://docs.microsoft.com/azure/active-directory/conditional-access/conditions)
+* [O que são controles de acesso no Azure Active Directory acesso condicional?](https://docs.microsoft.com/azure/active-directory/conditional-access/controls)

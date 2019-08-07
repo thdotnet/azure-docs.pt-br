@@ -1,57 +1,61 @@
 ---
-title: Active Directory sem senha de entrada no Azure (visualização)
-description: Logon sem senha no AD do Azure usando chaves de segurança de FIDO2 ou o aplicativo Microsoft Authenticator (visualização)
+title: Azure Active Directory conexão sem senha (versão prévia)
+description: Entrada sem senha no Azure AD usando as chaves de segurança do FIDO2 ou o aplicativo Microsoft Authenticator (versão prévia)
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/09/2019
+ms.date: 08/05/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2d80b359be0a6249327ba1ba1d51ffbc330bb073
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 3ae8f6854241240249cb3b7494872cbbd8fd41e6
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67712079"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68823785"
 ---
-# <a name="what-is-passwordless"></a>O que é sem senha?
+# <a name="what-is-passwordless"></a>O que não tem senha?
 
-A autenticação multifator (MFA) é uma ótima maneira de proteger sua organização, mas os usuários obtêm frustrados com a camada adicional sobre ter de lembrar suas senhas. Métodos de autenticação sem senha são mais convenientes, porque a senha foi removida e substituída com algo que você tem mais alguma coisa que você está ou algo que você conhece.
+A autenticação multifator (MFA) é uma ótima maneira de proteger sua organização, mas os usuários ficam frustrados com a camada adicional sobre a existência de se lembrar de suas senhas. Os métodos de autenticação sem senha são mais convenientes, pois a senha é removida e substituída por algo que você tem algo ou algo que você sabe.
 
-|   | Algo que você tem | Algo que você está ou saber |
+|   | Algo que você tem | Algo que você está ou conhece |
 | --- | --- | --- |
-| Sem senha | Chave de segurança ou telefone | Biometria ou PIN |
+| Sem senha | Telefone ou chave de segurança | Biometria ou PIN |
 
-Reconhecemos que cada organização tem necessidades diferentes quando se trata de autenticação. A Microsoft atualmente oferece Windows Hello, nossa experiência sem senha principal para o PC do Windows. Estamos adicionando novas credenciais para a família sem senha: Aplicativo Microsoft Authenticator e chaves de segurança FIDO2.
+Cada organização tem necessidades diferentes quando se trata de autenticação. Atualmente, a Microsoft oferece o Windows Hello, nosso para computadores Windows. Estamos adicionando as chaves de segurança Microsoft Authenticator aplicativo e FIDO2 à família de senha.
 
 ## <a name="microsoft-authenticator-app"></a>Aplicativo Microsoft Authenticator
 
-Permitir que o telefone dos seus funcionários a se tornar um método de autenticação sem senha. Você pode já estar usando o aplicativo Microsoft Authenticator como uma opção conveniente a autenticação multifator, além de uma senha. Mas, agora, está disponível como uma opção sem senha.
+Permitir que o telefone do funcionário se torne um método de autenticação com senha. Talvez você já esteja usando o aplicativo Microsoft Authenticator como uma opção de autenticação multifator conveniente, além de uma senha. Mas agora ele está disponível como uma opção sem senha.
 
-Ele transforma qualquer iOS ou telefone Android em uma credencial forte, sem senha permitindo que os usuários entrar em qualquer plataforma ou navegador, obtendo uma notificação para seu telefone, correspondência de um número exibido na tela para um no seu telefone e usando seus biométrica ( tocar ou enfrentam) ou PIN para confirmar.
+![Entrar no Microsoft Edge com o aplicativo Microsoft Authenticator](./media/concept-authentication-passwordless/concept-web-sign-in-microsoft-authenticator-app.png)
 
-## <a name="fido2-security-keys"></a>Chaves de segurança FIDO2
+Ele transforma qualquer telefone iOS ou Android em uma credencial forte e sem senha, permitindo que os usuários entrem em qualquer plataforma ou navegador, obtendo uma notificação para seu telefone, correspondendo a um número exibido na tela para aquele em seu telefone e usando suas biométricas ( toque ou face) ou PIN para confirmar.
 
-As chaves de segurança FIDO2 são um método de autenticação sem senha com base em padrões unphishable que pode ser fornecidos em qualquer fator forma. Rápido identidade FIDO (Online) é um padrão aberto para a autenticação sem senha. Ele permite que os usuários e organizações aproveitem o padrão entrar em seus recursos sem um nome de usuário e uma senha usando uma chave de segurança externa ou uma chave de plataforma em um dispositivo.
+## <a name="fido2-security-keys"></a>Chaves de segurança do FIDO2
 
-Para visualização pública, os funcionários podem usar chaves de segurança externos para entrar em suas máquinas do Azure Active Directory ingressado no Windows 10 (executando a versão 1809 ou superior) e obter o logon único em seus recursos de nuvem. Eles também podem entrar navegadores com suporte.
+As chaves de segurança FIDO2 são um método de autenticação de senha com base em padrões não Phish que pode ser fornecido em qualquer fator forma. A FIDO (Fast Identity online) é um padrão aberto para autenticação com senha. Ele permite que usuários e organizações aproveitem o padrão para entrar em seus recursos sem nome de usuário ou senha usando uma chave de segurança externa ou uma chave de plataforma incorporada a um dispositivo.
 
-Embora existam muitas chaves que estão FIDO2 certificada pela FIDO Alliance, a Microsoft exige algumas extensões opcionais da especificação FIDO2 CTAP ser implementado pelo fornecedor para garantir a segurança máxima e a melhor experiência.
+Para a visualização pública, os funcionários podem usar chaves de segurança externas para entrar em suas Azure Active Directory máquinas com Windows 10 Unidas (executando a versão 1809 ou superior) e obter logon único em seus recursos de nuvem. Eles também podem entrar em navegadores com suporte.
+
+![Entrar no Microsoft Edge com uma chave de segurança](./media/concept-authentication-passwordless/concept-web-sign-in-security-key.png)
+
+Embora existam muitas chaves que são FIDO2 certificadas pela Aliança de FIDO, a Microsoft exige que algumas extensões opcionais da especificação FIDO2 CTAP sejam implementadas pelo fornecedor para garantir a segurança máxima e a melhor experiência.
 
 Uma chave de segurança **deve** implementar os seguintes recursos e extensões do protocolo FIDO2 CTAP para ser compatível com a Microsoft:
 
-| # | Recurso / extensão de confiança | Por que isso é necessário? |
+| # | Confiança de recurso/extensão | Por que esse recurso ou extensão é necessário? |
 | --- | --- | --- |
-| 1 | Chave residente | Esse recurso permite que a chave de segurança ser portátil, onde sua credencial é armazenada na chave de segurança. |
-| 2 | Pin de cliente | Esse recurso permite que você proteja suas credenciais com um segundo fator e se aplica às chaves de segurança que não têm uma interface do usuário. |
-| 3 | segredo do HMAC | Essa extensão garante que você pode entrar no seu dispositivo quando ele está offline ou no modo de avião. |
-| 4 | Várias contas por RP | Esse recurso garante que você pode usar a mesma chave de segurança em vários serviços, como Account da Microsoft e do Active Directory do Azure. |
+| 1 | Chave residente | Esse recurso permite que a chave de segurança seja portátil, em que sua credencial é armazenada na chave de segurança. |
+| 2 | PIN do cliente | Esse recurso permite que você proteja suas credenciais com um segundo fator e se aplica a chaves de segurança que não têm uma interface do usuário. |
+| 3 | HMAC-segredo | Essa extensão garante que você possa entrar em seu dispositivo quando ele estiver offline ou no modo avião. |
+| 4 | Várias contas por RP | Esse recurso garante que você possa usar a mesma chave de segurança em vários serviços, como conta da Microsoft e Azure Active Directory. |
 
-Os seguintes provedores oferecem FIDO2 chaves de segurança de diferentes fatores forma que são conhecidos por serem compatíveis com a experiência de paswordless. A Microsoft incentiva os clientes a avaliar as propriedades de segurança dessas chaves, entrando em contato com o fornecedor, bem como FIDO Alliance.
+Os provedores a seguir oferecem chaves de segurança FIDO2 de fatores forma diferentes que são conhecidos como compatíveis com a experiência do paswordless. A Microsoft incentiva os clientes a avaliar as propriedades de segurança dessas chaves contatando o fornecedor, bem como a FIDO Alliance.
 
 | Provedor | Contato |
 | --- | --- |
@@ -61,25 +65,27 @@ Os seguintes provedores oferecem FIDO2 chaves de segurança de diferentes fatore
 | Ensurity | [https://ensurity.com/contact-us.html](https://ensurity.com/contact-us.html) |
 | eWBM | [https://www.ewbm.com/page/sub1_5](https://www.ewbm.com/page/sub1_5) |
 
-Se você for um fornecedor e deseja obter o dispositivo nessa lista, entre em contato com [ Fido2Request@Microsoft.com ](mailto:Fido2Request@Microsoft.com).
+Se você for um fornecedor e quiser obter seu dispositivo nesta lista, entre em contato [Fido2Request@Microsoft.com](mailto:Fido2Request@Microsoft.com)com.
 
-As chaves de segurança FIDO2 são uma ótima opção para empresas que são muito confidenciais de segurança ou ter cenários ou funcionários que não são disposto ou é possível usar o telefone como um segundo fator.
+As chaves de segurança do FIDO2 são uma ótima opção para empresas que são muito sensíveis à segurança ou que têm cenários ou funcionários que não estão dispostos ou podem usar seus telefones como um segundo fator.
 
 ## <a name="what-scenarios-work-with-the-preview"></a>Quais cenários funcionam com a versão prévia?
 
-1. Os administradores podem habilitar métodos de autenticação sem senha para seu locatário
-1. Os administradores podem todos os usuários de destino ou selecionar usuários/grupos em seu locatário para cada método
-1. Os usuários finais podem registrar e gerenciar esses métodos de autenticação sem senha no seu portal de conta
-1. Os usuários finais podem entrar com esses métodos de autenticação sem senha
-   1. Aplicativo Microsoft Authenticator: Será o trabalho em todos os cenários em que a autenticação do Azure AD é usada, incluindo em todos os navegadores, durante o Windows 10-Out de instalação da caixa (OOBE) e com integrado aplicativos móveis em qualquer sistema operacional.
-   1. Chaves de segurança: Funcionará na tela de bloqueio para Windows 10 versão 1809 ou superior e web em navegadores com suporte, como o Microsoft Edge.
+- Os administradores podem habilitar métodos de autenticação com senha para seus locatários
+- Os administradores podem direcionar todos os usuários ou Selecionar usuários/grupos dentro de seu locatário para cada método
+- Os usuários finais podem registrar e gerenciar esses métodos de autenticação com senha em seu portal de conta
+- Os usuários finais podem entrar com esses métodos de autenticação sem senha
+   - Microsoft Authenticator aplicativo: Funcionará em cenários em que a autenticação do Azure AD é usada, inclusive em todos os navegadores, durante a instalação do OOBE (pronto para uso) do Windows e com aplicativos móveis integrados em qualquer sistema operacional.
+   - Chaves de segurança: Funcionará na tela de bloqueio para o Windows 10 versão 1809 ou superior e a Web em navegadores com suporte, como o Microsoft Edge.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-[Habilitar opções sem senha na sua organização](howto-authentication-passwordless-enable.md)
+[Habilitar as opções de passwordlesss de chave de segurança do FIDO2 em sua organização](howto-authentication-passwordless-security-key.md)
+
+[Habilitar opções com senha baseada em telefone em sua organização](howto-authentication-passwordless-phone.md)
 
 ### <a name="external-links"></a>Links externos
 
 [FIDO Alliance](https://fidoalliance.org/)
 
-[Especificação de FIDO2 CTAP](https://fidoalliance.org/specs/fido-v2.0-id-20180227/fido-client-to-authenticator-protocol-v2.0-id-20180227.html)
+[Especificação CTAP FIDO2](https://fidoalliance.org/specs/fido-v2.0-id-20180227/fido-client-to-authenticator-protocol-v2.0-id-20180227.html)

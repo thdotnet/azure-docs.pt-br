@@ -10,13 +10,13 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
-ms.custom: seodec2018
-ms.openlocfilehash: c7f5fda405ca0e5ba9cf1dd0ed44c47cd3ee74b1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.subservice: cognitive-search
+ms.openlocfilehash: 8fb7ff51507212dfb162c09fcee469d6f154f3c3
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65949865"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840890"
 ---
 #   <a name="text-split-cognitive-skill"></a>Habilidade cognitiva do Text Split
 
@@ -32,7 +32,7 @@ Microsoft.Skills.Text.SplitSkill
 
 Os parâmetros diferenciam maiúsculas de minúsculas.
 
-| Nome do parâmetro     | DESCRIÇÃO |
+| Nome do parâmetro     | Descrição |
 |--------------------|-------------|
 | textSplitMode      | "Páginas" ou "sentenças" | 
 | maximumPageLength | Se o textSplitMode for definido como "páginas", isso se refere ao comprimento máximo da página, conforme medido pelo `String.Length`. O valor mínimo é 100.  Se o textSplitMode for definido como "pages", o algoritmo tentará dividir o texto em partes com um tamanho de, no máximo, "maximumPageLength". Nesse caso, o algoritmo fará o melhor para quebrar a frase em um limite de orações, de modo que o tamanho da parte possa ser um pouco menor que "maximumPageLength". | 
@@ -41,14 +41,14 @@ Os parâmetros diferenciam maiúsculas de minúsculas.
 
 ## <a name="skill-inputs"></a>Entradas de habilidades
 
-| Nome do parâmetro       | DESCRIÇÃO      |
+| Nome do parâmetro       | Descrição      |
 |----------------------|------------------|
-| text  | O texto a ser dividido em subcadeias. |
+| texto  | O texto a ser dividido em subcadeias. |
 | languageCode  | (opcional) Código de idioma para o documento.  |
 
 ## <a name="skill-outputs"></a>Saídas de habilidades 
 
-| Nome do parâmetro     | DESCRIÇÃO |
+| Nome do parâmetro     | Descrição |
 |--------------------|-------------|
 | textItems | Uma matriz de subcadeias de caracteres que foram extraídos. |
 
@@ -80,7 +80,7 @@ Os parâmetros diferenciam maiúsculas de minúsculas.
 }
 ```
 
-##  <a name="sample-input"></a>Entrada de exemplo
+##  <a name="sample-input"></a>Entrada de Exemplo
 
 ```json
 {

@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.topic: conceptual
 ms.service: site-recovery
-ms.date: 05/30/2019
+ms.date: 08/05/2019
 ms.author: raynew
-ms.openlocfilehash: 11d409f904c43c0df4bbbd44fdb24531f2f989f6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1932221e18241d8a2d921f61375019f969e61912
+ms.sourcegitcommit: f7998db5e6ba35cbf2a133174027dc8ccf8ce957
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66399588"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68782673"
 ---
 # <a name="replicate-azure-stack-vms-to-azure"></a>Replicar VMs do Azure Stack para Azure
 
@@ -202,7 +202,7 @@ Selecione e verifique os recursos de destino.
 3. A Recuperação de Site verifica se você tem uma ou mais contas de armazenamento e redes do Azure compatíveis. Se não localizá-las, será necessário criar pelo menos uma conta de armazenamento e uma rede virtual para concluir o assistente.
 
 
-## <a name="step-5-enable-replication"></a>Etapa 5: Habilitar a replicação
+## <a name="step-5-enable-replication"></a>Etapa 5: Habilitar replicação
 
 ### <a name="create-a-replication-policy"></a>Criar uma política de replicação
 
@@ -214,7 +214,7 @@ Selecione e verifique os recursos de destino.
 4. Em **Retenção de ponto de recuperação**, especifique quanto tempo cada ponto de recuperação é mantido. VMs replicadas podem ser recuperadas em qualquer ponto na janela de tempo especificada.
 5. Em **Frequência de instantâneos consistente com o aplicativo**, especifique com que frequência os instantâneos consistentes com o aplicativo são criados.
 
-    - Um instantâneo consistente do aplicativo é um instantâneo point-in-time de dados do aplicativo dentro da VM.
+    - Um instantâneo consistente com o aplicativo é um instantâneo pontual dos dados do aplicativo dentro da VM.
     - O VSS (Serviço de Cópias de Sombra de Volume) garante que os aplicativos na VM estejam em um estado consistente quando o instantâneo for criado.
 6. Selecione **OK** para criar a política.
 
@@ -225,14 +225,14 @@ Você pode ignorar essa etapa agora. Na lista suspensa **Planejamento de Implant
 
 
 
-### <a name="enable-replication"></a>Habilitar a replicação
+### <a name="enable-replication"></a>Habilitar replicação
 
 Certifique-se de ter concluído todas as tarefas na [Etapa 1: Preparar o computador](#step-1-prepare-azure-stack-vms). Em seguida, habilite a replicação conforme a seguir:
 
 1. Selecione **Replicar aplicativo** > **Origem**.
 2. Em **Origem**, selecione o servidor de configuração.
 3. Em **Tipo de computador**, selecione **Máquinas físicas**.
-4. Selecione o servidor de processo (servidor de configuração). Em seguida, clique em **OK**.
+4. Selecione o servidor de processo (servidor de configuração). Clique em **OK**.
 5. Em **Destino**, selecione a assinatura e o grupo de recursos no qual você quer criar as VMs após failover. Escolha o modelo de implantação que você quer usar para as VMs com failover.
 6. Selecione a conta de armazenamento do Azure na qual deseja armazenar dados replicados.
 7. Selecione a rede e a sub-rede do Azure às quais conectar as VMs do Azure quando elas forem criadas após o failover.

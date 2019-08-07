@@ -10,22 +10,23 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
-ms.custom: seojan2018
-ms.openlocfilehash: e1ca8a5ce7b615ed8d84c91d8a0d72098c175c44
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.subservice: cognitive-search
+ms.openlocfilehash: 0451778d9b3bb29d06551c881b9f674ef7a74ab3
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67672129"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68841213"
 ---
 # <a name="custom-web-api-skill"></a>Habilidade da API Web personalizada
 
-O **API Web personalizada** habilidade permite que você estenda pesquisa cognitiva ao chamar um ponto de extremidade de API da Web fornecendo operações personalizadas. Semelhante a habilidades internas, uma habilidade **API Web Personalizada** tem entradas e saídas. Dependendo das entradas, sua API Web recebe uma carga JSON quando o indexador é executado e gera uma carga JSON como uma resposta, juntamente com um código de status de êxito. A resposta deve ter as saídas especificadas pela sua habilidade personalizada. Qualquer outra resposta é considerada um erro e nenhum aprimoramento é executado.
+A habilidade **personalizada da API Web** permite que você estenda a pesquisa cognitiva chamando para um ponto de extremidade da API Web fornecendo operações personalizadas. Semelhante a habilidades internas, uma habilidade **API Web Personalizada** tem entradas e saídas. Dependendo das entradas, sua API da Web recebe uma carga JSON quando o indexador é executado e gera uma carga JSON como uma resposta, juntamente com um código de status de êxito. A resposta deve ter as saídas especificadas pela sua habilidade personalizada. Qualquer outra resposta é considerada um erro e nenhum aprimoramento é executado.
 
 A estrutura das payloads JSON é descrita mais detalhadamente abaixo neste documento.
 
 > [!NOTE]
 > O indexador tentará novamente duas vezes determinados códigos de status HTTP padrão retornados da API Web. Esses códigos de status HTTP são: 
+> * `502 Bad Gateway`
 > * `503 Service Unavailable`
 > * `429 Too Many Requests`
 
@@ -36,12 +37,12 @@ Microsoft.Skills.Custom.WebApiSkill
 
 Os parâmetros diferenciam maiúsculas de minúsculas.
 
-| Nome do parâmetro     | DESCRIÇÃO |
+| Nome do parâmetro     | Descrição |
 |--------------------|-------------|
-| uri | O URI da API Web ao qual o _JSON_ carga será enviada. Somente o esquema do URI **https** é permitido |
+| uri | O URI da API Web para a qual o conteúdo _JSON_ será enviado. Somente o esquema do URI **https** é permitido |
 | httpMethod | O método a ser usado ao enviar o conteúdo. Os métodos permitidos são `PUT` ou `POST` |
 | httpHeaders | Uma coleção de pares chave-valor em que as chaves representam os nomes de cabeçalho e os valores representam valores de cabeçalho que serão enviados para sua API Web, juntamente com o conteúdo. Os seguintes cabeçalhos são proibidos de estarem nesta coleção: `Accept`, `Accept-Charset`, `Accept-Encoding`, `Content-Length`, `Content-Type`, `Cookie`, `Host`, `TE`, `Upgrade`, `Via` |
-| timeout | (Opcional) Quando especificado, indica o tempo limite para o cliente http que fez a chamada à API. Ele deve ser formatado como um valor XSD de "dayTimeDuration" (um subconjunto restrito de um [valor de duração ISO 8601](https://www.w3.org/TR/xmlschema11-2/#dayTimeDuration) ). Por exemplo, `PT60S` por 60 segundos. Se não for definido, um valor padrão de 30 segundos será escolhido. O tempo limite pode ser definido para um máximo de 90 segundos e um mínimo de 1 segundo. |
+| timeout | (Opcional) Quando especificado, indica o tempo limite para o cliente http que fez a chamada à API. Ele deve ser formatado como um valor XSD de "dayTimeDuration" (um subconjunto restrito de um [valor de duração ISO 8601](https://www.w3.org/TR/xmlschema11-2/#dayTimeDuration) ). Por exemplo, `PT60S` por 60 segundos. Se não for definido, um valor padrão de 30 segundos será escolhido. O tempo limite pode ser definido como um máximo de 230 segundos e um mínimo de 1 segundo. |
 | batchSize | (Opcional) Indica quantos "registros de dados" (veja estrutura de conteúdos _JSON_ abaixo) serão enviados por chamada à API. Se não for definido, um padrão de 1.000 será escolhido. É recomendável que você faça uso desse parâmetro para alcançar um equilíbrio adequado entre a taxa de transferência de indexação e de carga em sua API |
 
 ## <a name="skill-inputs"></a>Entradas de habilidades
@@ -139,10 +140,10 @@ Ele sempre segue estas restrições:
 
 ## <a name="sample-output-json-structure"></a>Estrutura JSON de saída de exemplo
 
-O "output" corresponde à resposta retornada da sua API da Web. A API da Web deve retornar apenas um _JSON_ carga (verificado ao examinar o `Content-Type` cabeçalho de resposta) e devem atender as restrições a seguir:
+A "saída" corresponde à resposta retornada de sua API da Web. A API Web deve retornar apenas uma carga _JSON_ (verificada observando o cabeçalho `Content-Type` de resposta) e deve atender às seguintes restrições:
 
 * Deve haver uma entidade de nível superior chamada `values`, que deve ser uma matriz de objetos.
-* O número de objetos na matriz deve ser o mesmo que o número de objetos enviados para a API da Web.
+* O número de objetos na matriz deve ser igual ao número de objetos enviados para a API da Web.
 * Cada objeto deve ter:
    * Uma propriedade `recordId`
    * Uma propriedade `data`, que é um objeto no qual os campos são aprimoramentos correspondendo aos "nomes" no `output` e cujo valor é considerado o aprimoramento.
@@ -205,4 +206,4 @@ Para casos em que a API Web não está disponível ou retorna um erro HTTP, um e
 
 + [Como definir um conjunto de qualificações](cognitive-search-defining-skillset.md)
 + [Adicionar habilidade personalizada para pesquisa cognitiva](cognitive-search-custom-skill-interface.md)
-+ [Exemplo: Criando uma habilidade personalizada para pesquisa cognitiva](cognitive-search-create-custom-skill-example.md)
++ [Exemplo: Como criar uma habilidade personalizada para a pesquisa cognitiva](cognitive-search-create-custom-skill-example.md)

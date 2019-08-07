@@ -5,24 +5,26 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 04/04/2018
+ms.date: 08/02/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 9132cf438cab518e20e6c2ddfdb7d0928753bd19
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 52ab0413dffeee59cb9d34c6276a0c806a4d0322
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67171769"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68780258"
 ---
+A sub-rede de gateway contém os endereços IP reservados que usam os serviços de gateway de rede virtual. Criar uma sub-rede de gateway.
+
 1. No portal, navegue até a rede virtual para a qual você deseja criar um gateway de rede virtual.
-2. Na seção **Configurações** da página VNet, clique em **Sub-redes** para expandir a página Sub-redes.
-3. Na página **Sub-redes**, clique em **+Sub-rede de gateway** no topo para abrir a página **Adicionar sub-rede**.
+2. Na sua página rede virtual, clique em **sub-redes** para expandir a página **VNet1 - sub-redes**.
+3. Clique em **+Sub-rede de gateway** no topo para abrir a página **Adicionar sub-rede**.
 
    ![Adicionar a sub-rede de gateway](./media/vpn-gateway-add-gateway-subnet-portal-include/gateway-subnet.png "Adicionar a sub-rede de gateway")
-  
-4. O **Nome** da sua sub-rede será automaticamente preenchido com o valor 'GatewaySubnet'. O valor GatewaySubnet é necessário para que o Azure reconheça a sub-rede como a sub-rede do gateway. Ajuste os valores preenchidos automaticamente de **Intervalo de endereços** para corresponder aos seus requisitos de configuração.
+4. O **Nome** da sua sub-rede será automaticamente preenchido com o valor 'GatewaySubnet'. Ajuste o intervalo de endereços preenchidos automaticamente **(bloco CIDR)** para corresponder ao seguinte valor:
 
-   ![Adição da sub-rede de gateway](./media/vpn-gateway-add-gateway-subnet-portal-include/add-gateway-subnet.png "Adição da sub-rede de gateway")
-  
-5. Para criar a sub-rede, clique em **OK** na parte inferior da página.
+   **Intervalo de endereços (bloco CIDR)** : 10.1.255.0/27
+
+   ![Adicionar a sub-rede de gateway](./media/vpn-gateway-add-gateway-subnet-portal-include/add-gateway-subnet1.png "Adicionar a sub-rede de gateway")
+5. Deixe o restante das configurações como os padrões de **nenhum** ou **0 selecionado**. Em seguida, clique em **OK** para criar a sub-rede de gateway.

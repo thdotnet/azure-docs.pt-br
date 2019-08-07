@@ -1,8 +1,7 @@
 ---
 title: Usando o PowerShell para instalar o Application Insights no Azure | Microsoft Docs
-description: Automatize a configuração do Diagnóstico do Azure para redirecionar para o Application Insights.
+description: Automatizar a configuração de Diagnóstico do Azure para canalizar dados para Application Insights.
 services: application-insights
-documentationcenter: .net
 author: mrbullwinkle
 manager: carmonm
 ms.assetid: 4ac803a8-f424-4c0c-b18f-4b9c189a64a5
@@ -10,16 +9,16 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 11/17/2015
+ms.date: 08/06/2019
 ms.author: mbullwin
-ms.openlocfilehash: 3c0decaa89b4ecc503157a32fcb1e5b4d249ccfb
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 89ed75e4ae3363c2cb25020e6074aa17baf94eda
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60254622"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68827112"
 ---
-# <a name="using-powershell-to-set-up-application-insights-for-an-azure-web-app"></a>Usando o PowerShell para configurar o Application Insights para um aplicativo Web do Azure
+# <a name="using-powershell-to-set-up-application-insights-for-azure-cloud-services"></a>Usando o PowerShell para configurar o Application Insights para serviços de nuvem do Azure
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 

@@ -10,13 +10,13 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
-ms.custom: seodec2018
-ms.openlocfilehash: f10ac45266eefac41f3ba9ac442c3be3f5106ef3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.subservice: cognitive-search
+ms.openlocfilehash: ebff47360aa78a7774be50bcce8518f6e30ca073
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66388421"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68841068"
 ---
 #   <a name="image-analysis-cognitive-skill"></a>Habilidade cognitiva de Análise de Imagens
 
@@ -35,18 +35,18 @@ Microsoft.Skills.Vision.ImageAnalysisSkill
 
 Os parâmetros diferenciam maiúsculas de minúsculas.
 
-| Nome do parâmetro     | DESCRIÇÃO |
+| Nome do parâmetro     | Descrição |
 |--------------------|-------------|
 | defaultLanguageCode   |  Uma cadeia de caracteres que indica o idioma para retornar. O serviço retorna resultados de reconhecimento no idioma especificado. Se este parâmetro não for especificado, o valor padrão é “en”. <br/><br/>Idiomas com suporte: <br/>*en* - inglês (padrão) <br/> *zh* - chinês Simplificado|
-|visualFeatures |   Uma matriz de cadeias de caracteres que indica os tipos de recurso visuais para retornar. Tipos de recurso válido visuais:  <ul><li> *categorias* - classifica o conteúdo da imagem de acordo com uma taxonomia definida na documentação [Serviços Cognitivos](https://docs.microsoft.com/azure/cognitive-services/computer-vision/category-taxonomy).</li><li> *marcas* - marca a imagem com uma lista detalhada das palavras relacionadas ao conteúdo da imagem.</li><li>*Descrição* -descreve o conteúdo com uma frase em inglês completa da imagem.</li><li>*Faces* -detecta se faces estão presentes. Se estiverem, gera coordenadas de sexo e idade.</li><li> *ImageType* -detecta se a imagem é clip-art ou um desenho de linha.</li><li>  *Cor* -determina a cor de ênfase, cor dominante, e se uma imagem é preta e branco.</li><li>*Somente para adultos* -detecta se a imagem é pornográfico por natureza (ilustra nudez ou um ato de sexo). Conteúdo que sugere sexo também detectado.</li></ul> Nomes de recursos visuais diferenciam maiusculas de minúsculas.|
-| detalhes   | Uma matriz de cadeias de caracteres que indica qual domínio específico de detalhes retornar. Tipos de recurso válido visuais: <ul><li>*Celebridades* -identifica celebridades se detectado na imagem.</li><li>*Marcos* -identifica os pontos de referência se detectado na imagem.</li></ul>
+|visualFeatures |   Uma matriz de cadeias de caracteres que indica os tipos de recurso visuais para retornar. Tipos de recurso válido visuais:  <ul><li> *categorias* - classifica o conteúdo da imagem de acordo com uma taxonomia definida na documentação [Serviços Cognitivos](https://docs.microsoft.com/azure/cognitive-services/computer-vision/category-taxonomy).</li><li> *marcas* - marca a imagem com uma lista detalhada das palavras relacionadas ao conteúdo da imagem.</li><li>*Descrição* -descreve o conteúdo da imagem com uma frase do inglês completa.</li><li>*faces* – detecta se há faces presentes. Se estiverem, gera coordenadas de sexo e idade.</li><li> *ImageType* – detecta se a imagem é uma clip-art ou um desenho de linha.</li><li>  *cor* -determina a cor de destaque, a cor dominante e se uma imagem é preta & branca.</li><li>*adulto* – detecta se a imagem é pornográfico por natureza (descreve nudez ou lei sexo). Conteúdo que sugere sexo também detectado.</li></ul> Nomes de recursos visuais diferenciam maiusculas de minúsculas.|
+| details   | Uma matriz de cadeias de caracteres que indica qual domínio específico de detalhes retornar. Tipos de recurso válido visuais: <ul><li>*celebridades* -identifica celebridades se detectada na imagem.</li><li>*pontos de referência* – identifica os pontos de referência, se detectados na imagem.</li></ul>
  |
 
 ## <a name="skill-inputs"></a>Entradas de habilidades
 
-| Nome de entrada      | DESCRIÇÃO                                          |
+| Nome de entrada      | Descrição                                          |
 |---------------|------------------------------------------------------|
-| image         | Tipo complexo. Atualmente só funciona com o campo "/document/normalized_images" produzido pelo indexador de BLOBs do Microsoft Azure quando ```imageAction``` é definido como um valor diferente de ```none```. Para obter mais informações, confira [este exemplo](#sample-output).|
+| imagem         | Tipo complexo. Atualmente só funciona com o campo "/document/normalized_images" produzido pelo indexador de BLOBs do Microsoft Azure quando ```imageAction``` é definido como um valor diferente de ```none```. Para obter mais informações, confira [este exemplo](#sample-output).|
 
 
 
@@ -85,7 +85,7 @@ Os parâmetros diferenciam maiúsculas de minúsculas.
             ]
         }
 ```
-### <a name="sample-index-for-only-the-categories-description-faces-and-tags-fields"></a>Índice de exemplo (para somente os campos categorias, descrição, faces e marcas)
+### <a name="sample-index-for-only-the-categories-description-faces-and-tags-fields"></a>Índice de exemplo (somente para os campos categorias, descrição, rostos e marcas)
 ```json
 {
     "fields": [
@@ -297,7 +297,7 @@ Os parâmetros diferenciam maiúsculas de minúsculas.
 }
 
 ```
-### <a name="sample-output-field-mapping-for-the-above-index"></a>Mapeamento de campos de saída de exemplo (para o índice acima)
+### <a name="sample-output-field-mapping-for-the-above-index"></a>Exemplo de mapeamento de campo de saída (para o índice acima)
 ```json
     "outputFieldMappings": [
         {
@@ -333,7 +333,8 @@ Os parâmetros diferenciam maiúsculas de minúsculas.
                     "originalWidth": 5000,
                     "originalHeight": 3000,
                     "rotationFromOriginal": 90,
-                    "contentOffset": 500
+                    "contentOffset": 500,
+                    "pageNumber": 2
                 }
             }
         }
@@ -484,7 +485,7 @@ Os parâmetros diferenciam maiúsculas de minúsculas.
 ## <a name="error-cases"></a>Casos de erro
 Nos casos de erro a seguir, nenhum elemento é extraído.
 
-| Código do Erro | DESCRIÇÃO |
+| Código de Erro | Descrição |
 |------------|-------------|
 | NotSupportedLanguage | O idioma fornecido não tem suporte. |
 | InvalidImageUrl | A URL da imagem está incorretamente formatada ou não está acessível.|

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/28/2018
 ms.author: bwren
-ms.openlocfilehash: d7d4aa89c4dcf2ac9cc0c393e0481cae1f3aeaf2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f4e86a3a7b6a0781ea6c020bd0afc9364b7132f7
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60776045"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68839347"
 ---
 # <a name="agent-data-sources-in-azure-monitor"></a>Fontes de dados do agente no Azure Monitor
 Os dados coletados pelo Azure Monitor dos agentes são definidos pelas fontes de dados configuradas.  Os dados dos agentes são armazenados como [dados de log](data-platform-logs.md) com um conjunto de registros.  Cada fonte de dados cria registros de um determinado tipo com cada tipo de tendo seu próprio conjunto de propriedades.
@@ -29,7 +29,7 @@ Os dados coletados pelo Azure Monitor dos agentes são definidos pelas fontes de
 A tabela a seguir lista as fontes de dados de agente atualmente disponíveis no Azure Monitor.  Cada uma tem um link para um artigo à parte que fornece detalhes para aquela fonte de dados.   Fornece também informações sobre o método e a frequência de coleta. 
 
 
-| Fonte de dados | Plataforma | Agente de monitoramento da Microsoft | Agente do Operations Manager | Armazenamento do Azure | Operations Manager necessário? | Dados de agente do Operations Manager enviados por meio do grupo de gerenciamento | Frequência de coleta |
+| Fonte de dados | Plataforma | Agente do log Analytics | Agente do Operations Manager | Armazenamento do Azure | Operations Manager necessário? | Dados de agente do Operations Manager enviados por meio do grupo de gerenciamento | Frequência de coleta |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | [Logs personalizados](data-sources-custom-logs.md) | Windows |&#8226; |  | |  |  | na chegada |
 | [Logs personalizados](data-sources-custom-logs.md) | Linux   |&#8226; |  | |  |  | na chegada |

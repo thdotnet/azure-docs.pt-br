@@ -10,7 +10,7 @@ ms.assetid: 3321d130-f2a8-4e38-b35e-0959693f3576
 ms.service: active-directory
 ms.subservice: develop
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 06/04/2019
@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: elisol, lenalepa
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1b92b174d48c710a763857951d66d00956fa0f9
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 6bb3ef2a86c523d7cda5bc7da5d83ec4ac741abf
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67483082"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68835377"
 ---
 # <a name="how-and-why-applications-are-added-to-azure-ad"></a>Como e por que os aplicativos são adicionados ao AD do Azure
 
@@ -34,7 +34,7 @@ Há duas representações de aplicativos no Azure Microsoft AD:
 ## <a name="what-are-application-objects-and-where-do-they-come-from"></a>O que são objetos de aplicativo e de onde originam-se?
 Você pode gerenciar [objetos de aplicativo](app-objects-and-service-principals.md#application-object) no portal do Azure por meio da experiência de [Registros de Aplicativo](https://aka.ms/appregistrations). Objetos de aplicativo descrevem o aplicativo para o Microsoft Azure AD e podem ser considerados a definição do aplicativo, permitindo que o serviço saiba como emitir tokens para o aplicativo baseado nas configurações. O objeto de aplicativo somente existirá no diretório base, mesmo se for um aplicativo multilocatário que dá suporte a entidades de serviço em outros diretórios. O objeto de aplicativo pode incluir qualquer um dos itens a seguir (assim como informações adicionais não mencionadas aqui):
 * Nome, logotipo e editor
-* URIs de redirecionamento
+* URIs de Redirecionamento
 * Segredos (chaves simétricas e/ou assimétricas usadas para autenticar o aplicativo)
 * Dependências de API (OAuth)
 * APIs/recursos/escopos publicados (OAuth)
@@ -82,7 +82,7 @@ Como os objetos de aplicativo, as entidades de serviço também podem ser criada
 
 Um aplicativo tem um objeto de aplicativo no diretório base que é referenciado por uma ou mais entidades de serviço em cada um dos diretórios onde opera (incluindo o diretório base do aplicativo).
 
-![Mostra a relação entre objetos de aplicativo e entidades de serviço][apps_service_principals_directory]
+![Mostra a relação entre os objetos de aplicativo e as entidades de serviço][apps_service_principals_directory]
 
 No diagrama anterior, a Microsoft mantém dois diretórios internamente (mostrados à esquerda) que usa para publicar aplicativos:
 

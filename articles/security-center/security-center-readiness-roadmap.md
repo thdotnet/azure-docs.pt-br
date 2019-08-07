@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/03/2018
 ms.author: yurid
-ms.openlocfilehash: 7de085766ae700b5c76d9eca49c1127aabdddb9b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1527dbd1df3e4a10a68a5949d9e0bca11628bdd2
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60703397"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68781134"
 ---
 # <a name="azure-security-center-readiness-roadmap"></a>Roteiro de Preparação da Central de Segurança do Azure
 Este documento fornece um roteiro de preparação que ajudará você a começar a usar a Central de Segurança do Azure.
@@ -33,7 +33,7 @@ Artigos
 * [Introdução à Central de Segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
 * [Guia de início rápido da Central de Segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-get-started)
 
-vídeos
+Vídeos
 * [Vídeo de introdução rápida](https://azure.microsoft.com/resources/videos/introduction-to-azure-security-center/)
 * [Visão geral dos recursos de resposta, de detecção e de prevenção da Central de Segurança](https://azure.microsoft.com/resources/videos/azurecon-2015-new-azure-security-center-helps-you-prevent-detect-and-respond-to-threats/)
 
@@ -81,7 +81,7 @@ Para reduzir os custos e danos, é importante ter um plano de resposta aos incid
 
 Use os recursos a seguir para entender como a Central de Segurança pode ser incorporada ao processo de resposta a incidentes.
 
-vídeos  
+Vídeos  
 * [Central de Segurança do Azure em resposta a incidentes](https://channel9.msdn.com/Blogs/Azure-Security-Videos/Azure-Security-Center-in-Incident-Response)
 * [Responder rapidamente às ameaças com a operação de segurança de última geração e a investigação](https://youtu.be/e8iFCz5RM4g)
 
@@ -95,7 +95,7 @@ As Máquinas Virtuais do Azure podem tirar proveito dos recursos avançados de d
 
 Use os seguintes recursos para saber como usar esses recursos na Central de Segurança.
 
-vídeos  
+Vídeos  
 * [Central de Segurança do Azure – Acesso de VM Just-in-Time](https://youtu.be/UOQb2FcdQnU)
 * [Central de Segurança do Azure: Controles de Aplicativo Adaptáveis](https://youtu.be/wWWekI1Y9ck)
 
@@ -114,11 +114,11 @@ Artigos
 * [Página de documentação da API REST da Central de Segurança](https://msdn.microsoft.com/library/mt704034.aspx)
 * [Perguntas frequentes sobre a Central de Segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-faq)
 * [Página de preços da Central de Segurança do Azure](https://azure.microsoft.com/pricing/details/security-center/)
-* [Práticas recomendadas de segurança de identidade](https://docs.microsoft.com/azure/security/azure-security-identity-management-best-practices)
-* [Práticas recomendadas de segurança da rede](https://docs.microsoft.com/azure/security/azure-security-network-security-best-practices)
+* [Práticas recomendadas de segurança de identidade](https://docs.microsoft.com/azure/security/fundamentals/identity-management-best-practices)
+* [Práticas recomendadas de segurança da rede](https://docs.microsoft.com/azure/security/fundamentals/network-best-practices)
 * [Recomendações de PaaS](https://docs.microsoft.com/azure/security/security-paas-deployments)
 * [Conformidade](https://www.microsoft.com/en-us/trustcenter/compliance/due-diligence-checklist)
-* [Os clientes do log analytics agora podem usar a Central de segurança do Azure para proteger suas cargas de trabalho de nuvem híbrida](https://blogs.technet.microsoft.com/msoms/2017/09/25/oms-customers-can-now-use-azure-security-center-to-protect-their-hybrid-cloud-workloads/)
+* [Os clientes do log Analytics agora podem usar a central de segurança do Azure para proteger suas cargas de trabalho de nuvem híbrida](https://blogs.technet.microsoft.com/msoms/2017/09/25/oms-customers-can-now-use-azure-security-center-to-protect-their-hybrid-cloud-workloads/)
 
 ## <a name="community-resources"></a>Recursos da comunidade
 

@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 05/23/2019
-ms.openlocfilehash: f680a1cb15edf0141897c74da3b7c7afa01acae0
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 31a367fcde909f393efa4fea65b25716f95c56ee
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68699114"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68828439"
 ---
 # <a name="explore-and-prepare-data-with-the-dataset-class-preview"></a>Explorar e preparar dados com a classe DataSet (visualização)
 
@@ -35,7 +35,7 @@ Para explorar e preparar seus dados, você precisará de:
 
 * O SDK do Azure Machine Learning para Python (versão 1.0.21 ou posterior), que inclui o pacote de conjuntos de linhas do azureml. Para instalar ou atualizar para a versão mais recente do SDK, consulte [instalar ou atualizar o SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
 
-* O SDK do Azure Machine Learning data Prep. Para instalar ou atualizar para a versão mais recente, consulte [instalar ou atualizar o SDK de preparação de dados](https://docs.microsoft.com/python/api/overview/azure/dataprep/intro?view=azure-dataprep-py#install).
+* O SDK do Azure Machine Learning data Prep. Para instalar ou atualizar para a versão mais recente, consulte [instalar ou atualizar o SDK de preparação de dados](https://docs.microsoft.com/python/api/overview/azure/dataprep/intro?view=azure-dataprep-py).
 
 * Baixe os arquivos de exemplo a seguir junto com os exemplos: [crime. csv](https://dprepdata.blob.core.windows.net/dataset-sample-files/crime.csv) e [City. JSON](https://dprepdata.blob.core.windows.net/dataset-sample-files/city.json).
 
@@ -119,28 +119,28 @@ dataset.get_profile()
 
 ||Tipo|Min.|Máx|Contagem|Contagem faltando|Sem contagem faltando|Percentual faltando|Contagem de erros|Contagem vazia|0,1% quantil|1% quantil|5% quantil|25% quantil|50% quantil|75% quantil|95% quantil|99% quantil|99,9% quantil|Média|Desvio Padrão|Variação|Distorção|Curtose
 -|----|---|---|-----|-------------|-----------------|---------------|-----------|-----------|-------------|-----------|-----------|------------|------------|------------|------------|------------|--------------|----|------------------|--------|--------|--------
-ID|FieldType.INTEGER|1.04986 e + 07|1.05351 e + 07|10.0|0,0|10.0|0,0|0,0|0,0|1.04986 e + 07|1.04992 e + 07|1.04986 e + 07|1.05166 e + 07|1.05209 e + 07|1.05259 e + 07|1.05351 e + 07|1.05351 e + 07|1.05351 e + 07|1.05195 e + 07|12302,7|1.51358 e + 08|-0,495701|-1, 2814
-Número do Caso|FieldType.STRING|HZ239907|HZ278872|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Date|FieldType. DATE|2016-04-04 23:56:00+00:00|2016-04-15 17:00:00+00:00|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Bloquear|FieldType.STRING|004XX S KILBOURN ALVAR|113XX S PRAIRIE AVE|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-IUCR|FieldType.INTEGER|810|1154|10.0|0,0|10.0|0,0|0,0|0,0|810|850|810|890|1136|1153|1154|1154|1154|1058,5|137,285|18847,2|-0,785501|-1,3543
-Texto Primário|FieldType.STRING|PRÁTICA ENGANOSA|ROUBO|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Descrição|FieldType.STRING|VERIFICAÇÃO FALSA|MAIS DE $500|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Descrição do Local|FieldType.STRING||ESCOLA, PÚBLICO, PRÉDIO|10.0|0,0|10.0|0,0|0,0|1.0||||||||||||||
-Detenção|FieldType. BOOLEAN|False|False|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Nacional|FieldType. BOOLEAN|False|False|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Super|FieldType.INTEGER|531|2433|10.0|0,0|10.0|0,0|0,0|0,0|531|531|531|614|1318,5|1911|2433|2433|2433|1371,1|692, 94|478994|0,105418|-1,60684
-Distrito|FieldType.INTEGER|5|24|10.0|0,0|10.0|0,0|0,0|0,0|5|5|5|6|13|19|24|24|24|13,5|6,94822|48,2778|0, 930109|-1,62325
-Ward|FieldType.INTEGER|1|48|10.0|0,0|10.0|0,0|0,0|0,0|1|5|1|9|22,5|40|48|48|48|24,5|16,2635|264,5|0,173723|-1,51271
-Área da Comunidade|FieldType.INTEGER|4|77|10.0|0,0|10.0|0,0|0,0|0,0|4|8.5|4|24|37,5|71|77|77|77|41,2|26,6366|709,511|0,112157|-1,73379
-Código do FBI|FieldType.INTEGER|6|11|10.0|0,0|10.0|0,0|0,0|0,0|6|6|6|6|11|11|11|11|11|9.4|2,36643|5.6|-0,702685|-1,59582
-Coordenada X|FieldType.INTEGER|1.16309 e + 06|1.18336 e + 06|10.0|7.0|3.0|0,7|0,0|0,0|1.16309 e + 06|1.16309 e + 06|1.16309 e + 06|1.16401 e + 06|1.16678 e + 06|1.17921 e + 06|1.18336 e + 06|1.18336 e + 06|1.18336 e + 06|1.17108 e + 06|10793,5|1.165 e + 08|0,335126|-2,33333
-Coordenada Y|FieldType.INTEGER|1.8315 e + 06|1.908 e + 06|10.0|7.0|3.0|0,7|0,0|0,0|1.8315 e + 06|1.8315 e + 06|1.8315 e + 06|1.83614 e + 06|1.85005 e + 06|1.89352 e + 06|1.908 e + 06|1.908 e + 06|1.908 e + 06|1.86319 e + 06|39905,2|1.59243 e + 09|0,293465|-2,33333
-Ano|FieldType.INTEGER|2016|2016|10.0|0,0|10.0|0,0|0,0|0,0|2016|2016|2016|2016|2016|2016|2016|2016|2016|2016|0|0|NaN|NaN
-Atualizado Em|FieldType. DATE|2016-05-11 15:48:00+00:00|2016-05-27 15:45:00+00:00|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Latitude|FieldType.DECIMAL|41,6928|41,9032|10.0|7.0|3.0|0,7|0,0|0,0|41,6928|41,6928|41,6928|41,7057|41,7441|41,8634|41,9032|41,9032|41,9032|41,78|0,109695|0, 12033|0,292478|-2,33333
-Longitude|FieldType.DECIMAL|-87,6764|-87,6043|10.0|7.0|3.0|0,7|0,0|0,0|-87,6764|-87,6764|-87,6764|-87,6734|-87,6645|-87,6194|-87,6043|-87,6043|-87,6043|-87,6484|0, 386264|0, 1492|0,344429|-2,33333
-Location|FieldType.STRING||(41,903206037,-87,676361925)|10.0|0,0|10.0|0,0|0,0|7.0||||||||||||||
+ID|FieldType.INTEGER|1.04986 e + 07|1.05351 e + 07|10.0|0.0|10.0|0.0|0.0|0.0|1.04986 e + 07|1.04992 e + 07|1.04986 e + 07|1.05166 e + 07|1.05209 e + 07|1.05259 e + 07|1.05351 e + 07|1.05351 e + 07|1.05351 e + 07|1.05195 e + 07|12302,7|1.51358 e + 08|-0,495701|-1, 2814
+Número do Caso|FieldType.STRING|HZ239907|HZ278872|10.0|0.0|10.0|0.0|0.0|0.0||||||||||||||
+Date|FieldType. DATE|2016-04-04 23:56:00+00:00|2016-04-15 17:00:00+00:00|10.0|0.0|10.0|0.0|0.0|0.0||||||||||||||
+Bloquear|FieldType.STRING|004XX S KILBOURN ALVAR|113XX S PRAIRIE AVE|10.0|0.0|10.0|0.0|0.0|0.0||||||||||||||
+IUCR|FieldType.INTEGER|810|1154|10.0|0.0|10.0|0.0|0.0|0.0|810|850|810|890|1136|1153|1154|1154|1154|1058,5|137,285|18847,2|-0,785501|-1,3543
+Texto Primário|FieldType.STRING|PRÁTICA ENGANOSA|ROUBO|10.0|0.0|10.0|0.0|0.0|0.0||||||||||||||
+Descrição|FieldType.STRING|VERIFICAÇÃO FALSA|MAIS DE $500|10.0|0.0|10.0|0.0|0.0|0.0||||||||||||||
+Descrição do Local|FieldType.STRING||ESCOLA, PÚBLICO, PRÉDIO|10.0|0.0|10.0|0.0|0.0|1.0||||||||||||||
+Detenção|FieldType. BOOLEAN|False|False|10.0|0.0|10.0|0.0|0.0|0.0||||||||||||||
+Nacional|FieldType. BOOLEAN|False|False|10.0|0.0|10.0|0.0|0.0|0.0||||||||||||||
+Super|FieldType.INTEGER|531|2433|10.0|0.0|10.0|0.0|0.0|0.0|531|531|531|614|1318,5|1911|2433|2433|2433|1371,1|692, 94|478994|0,105418|-1,60684
+Distrito|FieldType.INTEGER|5|24|10.0|0.0|10.0|0.0|0.0|0.0|5|5|5|6|13|19|24|24|24|13,5|6,94822|48,2778|0, 930109|-1,62325
+Ward|FieldType.INTEGER|1|48|10.0|0.0|10.0|0.0|0.0|0.0|1|5|1|9|22,5|40|48|48|48|24,5|16,2635|264,5|0,173723|-1,51271
+Área da Comunidade|FieldType.INTEGER|4|77|10.0|0.0|10.0|0.0|0.0|0.0|4|8.5|4|24|37,5|71|77|77|77|41,2|26,6366|709,511|0,112157|-1,73379
+Código do FBI|FieldType.INTEGER|6|11|10.0|0.0|10.0|0.0|0.0|0.0|6|6|6|6|11|11|11|11|11|9.4|2,36643|5.6|-0,702685|-1,59582
+Coordenada X|FieldType.INTEGER|1.16309 e + 06|1.18336 e + 06|10.0|7.0|3.0|0,7|0.0|0.0|1.16309 e + 06|1.16309 e + 06|1.16309 e + 06|1.16401 e + 06|1.16678 e + 06|1.17921 e + 06|1.18336 e + 06|1.18336 e + 06|1.18336 e + 06|1.17108 e + 06|10793,5|1.165 e + 08|0,335126|-2,33333
+Coordenada Y|FieldType.INTEGER|1.8315 e + 06|1.908 e + 06|10.0|7.0|3.0|0,7|0.0|0.0|1.8315 e + 06|1.8315 e + 06|1.8315 e + 06|1.83614 e + 06|1.85005 e + 06|1.89352 e + 06|1.908 e + 06|1.908 e + 06|1.908 e + 06|1.86319 e + 06|39905,2|1.59243 e + 09|0,293465|-2,33333
+Ano|FieldType.INTEGER|2016|2016|10.0|0.0|10.0|0.0|0.0|0.0|2016|2016|2016|2016|2016|2016|2016|2016|2016|2016|0|0|NaN|NaN
+Atualizado Em|FieldType. DATE|2016-05-11 15:48:00+00:00|2016-05-27 15:45:00+00:00|10.0|0.0|10.0|0.0|0.0|0.0||||||||||||||
+Latitude|FieldType.DECIMAL|41,6928|41,9032|10.0|7.0|3.0|0,7|0.0|0.0|41,6928|41,6928|41,6928|41,7057|41,7441|41,8634|41,9032|41,9032|41,9032|41,78|0,109695|0, 12033|0,292478|-2,33333
+Longitude|FieldType.DECIMAL|-87,6764|-87,6043|10.0|7.0|3.0|0,7|0.0|0.0|-87,6764|-87,6764|-87,6764|-87,6734|-87,6645|-87,6194|-87,6043|-87,6043|-87,6043|-87,6484|0, 386264|0, 1492|0,344429|-2,33333
+Location|FieldType.STRING||(41,903206037,-87,676361925)|10.0|0.0|10.0|0.0|0.0|7.0||||||||||||||
 
 ## <a name="impute-missing-values"></a>Acrescentar valores ausentes
 
@@ -256,12 +256,12 @@ ds_def = ds_def.assert_value('Longitude', (value <= 180) & (value >= -87), error
 ds_def.get_profile()
 ```
 
-||Tipo|Min.|Máx|Count|Contagem faltando|Sem contagem faltando|Percentual faltando|Contagem de erros|Contagem vazia|0,1% quantil|1% quantil|5% quantil|25% quantil|50% quantil|75% quantil|95% quantil|99% quantil|99,9% quantil|Média|Desvio Padrão|Variação|Distorção|Curtose
+||Tipo|Min.|Máx|Contagem|Contagem faltando|Sem contagem faltando|Percentual faltando|Contagem de erros|Contagem vazia|0,1% quantil|1% quantil|5% quantil|25% quantil|50% quantil|75% quantil|95% quantil|99% quantil|99,9% quantil|Média|Desvio Padrão|Variação|Distorção|Curtose
 -|----|---|---|-----|-------------|-----------------|---------------|-----------|-----------|-------------|-----------|-----------|------------|------------|------------|------------|------------|--------------|----|------------------|--------|--------|--------
-ID|FieldType.INTEGER|1.04986 e + 07|1.05351 e + 07|10.0|0,0|10.0|0,0|0,0|0,0|1.04986 e + 07|1.04992 e + 07|1.04986 e + 07|1.05166 e + 07|1.05209 e + 07|1.05259 e + 07|1.05351 e + 07|1.05351 e + 07|1.05351 e + 07|1.05195 e + 07|12302,7|1.51358 e + 08|-0,495701|-1, 2814
-Detenção|FieldType. BOOLEAN|False|False|10.0|0,0|10.0|0,0|0,0|0,0||||||||||||||
-Latitude|FieldType.DECIMAL|41,6928|41,9032|10.0|0,0|10.0|0,0|0,0|0,0|41,6928|41,7185|41,6928|41,78|41,78|41,78|41,9032|41,9032|41,9032|41,78|0, 517107|0, 2674|0,837593|1.05
-Longitude|FieldType.INTEGER|-87|-87|10.0|0,0|10.0|0,0|3.0|0,0|-87|-87|-87|-87|-87|-87|-87|-87|-87|-87|0|0|NaN|NaN
+ID|FieldType.INTEGER|1.04986 e + 07|1.05351 e + 07|10.0|0.0|10.0|0.0|0.0|0.0|1.04986 e + 07|1.04992 e + 07|1.04986 e + 07|1.05166 e + 07|1.05209 e + 07|1.05259 e + 07|1.05351 e + 07|1.05351 e + 07|1.05351 e + 07|1.05195 e + 07|12302,7|1.51358 e + 08|-0,495701|-1, 2814
+Detenção|FieldType. BOOLEAN|False|False|10.0|0.0|10.0|0.0|0.0|0.0||||||||||||||
+Latitude|FieldType.DECIMAL|41,6928|41,9032|10.0|0.0|10.0|0.0|0.0|0.0|41,6928|41,7185|41,6928|41,78|41,78|41,78|41,9032|41,9032|41,9032|41,78|0, 517107|0, 2674|0,837593|1.05
+Longitude|FieldType.INTEGER|-87|-87|10.0|0.0|10.0|0.0|3.0|0.0|-87|-87|-87|-87|-87|-87|-87|-87|-87|-87|0|0|NaN|NaN
 
 No perfil, você verá que o `Error Count` para a `Longitude` coluna é 3. O código a seguir filtra o conjunto de valores, recupera o erro e vê qual valor causa a falha da asserção. A partir daqui, ajuste seu código e limpe os dados adequadamente.
 
