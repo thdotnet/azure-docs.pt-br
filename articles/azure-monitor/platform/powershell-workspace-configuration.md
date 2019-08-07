@@ -8,18 +8,18 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/19/2019
 ms.author: bwren
-ms.openlocfilehash: 4faa58536d6458b01adbb7dab60bfd10be18275b
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: ec72b0b9f2cdc932c7fb0c8a6fd8daecbc470c09
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68234809"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779968"
 ---
 # <a name="manage-log-analytics-workspace-in-azure-monitor-using-powershell"></a>Gerenciar Log Analytics espaço de trabalho no Azure Monitor usando o PowerShell
 
 Você pode usar os [cmdlets do log Analytics PowerShell](https://docs.microsoft.com/powershell/module/az.operationalinsights/) para executar várias funções em um espaço de trabalho Log Analytics no Azure monitor de uma linha de comando ou como parte de um script.  Os exemplos das tarefas que você pode executar com o PowerShell incluem:
 
-* Criar um workspace
+* Criar um espaço de trabalho
 * Adicionar ou remover uma solução
 * Importar e exportar pesquisas salvas
 * Criar um grupo de computadores
@@ -45,7 +45,7 @@ Esses exemplos funcionam com a versão 1.0.0 ou posterior do módulo AZ. Operati
 ## <a name="create-and-configure-a-log-analytics-workspace"></a>Criar e configurar um espaço de trabalho do Log Analytics
 O exemplo de script a seguir ilustra como:
 
-1. Criar um workspace
+1. Criar um espaço de trabalho
 2. Listar as soluções disponíveis
 3. Adicionar soluções ao workspace
 4. Importar pesquisas salvas
@@ -79,7 +79,7 @@ $ExportedSearches = @"
     {
         "Category":  "My Saved Searches",
         "DisplayName":  "Current Disk Queue Length",
-        "Query":  "Perf | where ObjectName == "LogicalDisk" and CounterName == "Current Disk Queue Length" and InstanceName == "C:",
+        "Query":  "Perf | where ObjectName == "LogicalDisk" and CounterName == "Current Disk Queue Length" and InstanceName == "C:"",
         "Version":  1
     }
 ]
@@ -134,7 +134,7 @@ try {
 New-AzOperationalInsightsWorkspace -Location $Location -Name $WorkspaceName -Sku Standard -ResourceGroupName $ResourceGroup
 
 # List all solutions and their installation status
-Get-AzOperationalInsightsIntelligencePacks -ResourceGroupName $ResourceGroup -WorkspaceName $WorkspaceName
+Get-AzOperationalInsightsIntelligencePack -ResourceGroupName $ResourceGroup -WorkspaceName $WorkspaceName
 
 # Add solutions
 foreach ($solution in $Solutions) {
@@ -142,7 +142,7 @@ foreach ($solution in $Solutions) {
 }
 
 # List enabled solutions
-(Get-AzOperationalInsightsIntelligencePacks -ResourceGroupName $ResourceGroup -WorkspaceName $WorkspaceName).Where({($_.enabled -eq $true)})
+(Get-AzOperationalInsightsIntelligencePack -ResourceGroupName $ResourceGroup -WorkspaceName $WorkspaceName).Where({($_.enabled -eq $true)})
 
 # Import Saved Searches
 foreach ($search in $ExportedSearches) {
@@ -197,7 +197,7 @@ No exemplo acima, regexDelimiter foi definido como "\\n" para nova linha. O deli
 ## <a name="configuring-log-analytics-to-send-azure-diagnostics"></a>Configurando Log Analytics para enviar o diagnóstico do Azure
 Para o monitoramento de recursos do Azure realizado sem o uso de agente, os recursos precisam ter o diagnóstico do Azure habilitado e configurado para gravar em um espaço de trabalho do Log Analytics. Essa abordagem envia dados diretamente para o espaço de trabalho e não requer que os dados sejam gravados em uma conta de armazenamento. Os recursos com suporte incluem:
 
-| Tipo de recurso | Logs | metrics |
+| Tipo de Recurso | Logs | metrics |
 | --- | --- | --- |
 | Gateways do Aplicativo    | Sim | Sim |
 | Contas de automação     | Sim | |
@@ -206,13 +206,13 @@ Para o monitoramento de recursos do Azure realizado sem o uso de agente, os recu
 | Data Lake Store         | Sim | |
 | Pool SQL Elástico        |     | Sim |
 | Namespace do Hub de Eventos     |     | Sim |
-| Hubs IoT                |     | Sim |
+| Hubs de IoT                |     | Sim |
 | Key Vault               | Sim | |
 | Balanceadores de Carga          | Sim | |
 | Aplicativos Lógicos              | Sim | Sim |
 | Grupos de segurança de rede | Sim | |
 | Cache Redis do Azure             |     | Sim |
-| Serviços Search         | Sim | Sim |
+| Serviços de pesquisa         | Sim | Sim |
 | Namespace do Barramento de Serviço   |     | Sim |
 | SQL (v12)               |     | Sim |
 | Sites               |     | Sim |

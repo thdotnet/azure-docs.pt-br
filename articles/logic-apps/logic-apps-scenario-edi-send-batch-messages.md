@@ -8,12 +8,12 @@ ms.author: divswa
 ms.reviewer: estfan, LADocs
 ms.topic: article
 ms.date: 08/19/2018
-ms.openlocfilehash: d6d3a7111f3a5e49e32eba8ca4f09d692538cb87
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: c2b0e2ed801724b682e0c4a60d6d7dff9645aab3
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "64715796"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68827422"
 ---
 # <a name="send-edi-messages-in-batches-to-trading-partners-with-azure-logic-apps"></a>Enviar mensagens de EDI em lotes para parceiros comerciais com os Aplicativos Lógicos do Azure
 
@@ -65,7 +65,7 @@ Para esse receptor do lote, você especifica o modo de lote, nome, critérios de
 
 4. Defina propriedades de receptor do lote: 
 
-   | Propriedade | Value | Observações | 
+   | Propriedade | Valor | Observações | 
    |----------|-------|-------|
    | **Modo de lote** | Embutido |  |  
    | **Nome do lote** | TestBatch | Disponível apenas com o modo de lote **Embutido** | 
@@ -84,7 +84,7 @@ Para esse receptor do lote, você especifica o modo de lote, nome, critérios de
 
    1. No gatilho de lote, escolha **Nova etapa**.
 
-   2. Na caixa de pesquisa, digite "Lote X12 X" como filtro e selecione a ação (qualquer versão): **Codificar em lote <*versão*>-X12** 
+   2. Na caixa de pesquisa, digite "X12 batch" como filtro e selecione esta ação (qualquer versão): **< De codificação de lote*versão*>-X12** 
 
       ![Selecione a ação Codificação de lote X12](./media/logic-apps-scenario-EDI-send-batch-messages/add-batch-encode-action.png)
 
@@ -94,7 +94,7 @@ Para esse receptor do lote, você especifica o modo de lote, nome, critérios de
 
    4. Configure essas propriedades para a ação do codificador de lote:
 
-      | Propriedade | DESCRIÇÃO |
+      | Propriedade | Descrição |
       |----------|-------------|
       | **Nome do contrato do X12** | Abra a lista e selecione o contrato existente. <p>Se a lista estiver vazia, certifique-se de [vincular o aplicativo lógico à conta de integração](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md#link-account) que tiver o contrato desejado. | 
       | **BatchName** | Clique dentro dessa caixa e, após a exibição da lista de conteúdo dinâmico, selecione o token do **Nome do Lote**. | 
@@ -114,7 +114,7 @@ Para esse receptor do lote, você especifica o modo de lote, nome, critérios de
 
 ### <a name="test-your-logic-app"></a>Como testar o seu aplicativo lógico
 
-Para certificar-se de que o receptor do lote funciona conforme o esperado, você pode adicionar uma ação HTTP para fins de teste e enviar uma mensagem em lote para o [serviço de Compartimento de Solicitação](https://requestbin.fullcontact.com/). 
+Para certificar-se de que o receptor do lote funciona conforme o esperado, você pode adicionar uma ação HTTP para fins de teste e enviar uma mensagem em lote para o [serviço de Compartimento de Solicitação](https://requestbin.com/). 
 
 1. Na ação de codificação do X12, escolha **Nova etapa**. 
 
@@ -124,7 +124,7 @@ Para certificar-se de que o receptor do lote funciona conforme o esperado, você
 
 3. Configure as propriedades para a ação HTTP:
 
-   | Propriedade | DESCRIÇÃO | 
+   | Propriedade | Descrição | 
    |----------|-------------|
    | **Método** | Nessa lista, selecione **POST**. | 
    | **Uri** | Gere um URI para o compartimento de solicitação e, em seguida, insira esse URI nessa caixa. | 
@@ -174,7 +174,7 @@ Agora crie um ou mais aplicativos lógicos que enviem mensagens ao aplicativo l�
 
 4. Defina as propriedades do remetente do lote.
 
-   | Propriedade | DESCRIÇÃO | 
+   | Propriedade | Descrição | 
    |----------|-------------| 
    | **Nome do lote** | O nome do lote definido pelo aplicativo lógico do receptor, que é "TestBatch" neste exemplo <p>**Importante**: O nome do lote é validado no tempo de execução e deve corresponder ao nome especificado pelo aplicativo lógico do receptor. Alterar o nome do lote faz com que o remetente do lote falhe. | 
    | **Conteúdo da mensagem** | O conteúdo da mensagem que você quer enviar, que é o token do **Corpo** neste exemplo | 

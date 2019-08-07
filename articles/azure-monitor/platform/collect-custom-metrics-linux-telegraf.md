@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: metrics
-ms.openlocfilehash: 14415b88cd6036642442ef9ae23e8dee301bb908
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 306180d1a0789aff2fc88930178976c342aef9b9
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60741471"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68827404"
 ---
 # <a name="collect-custom-metrics-for-a-linux-vm-with-the-influxdata-telegraf-agent"></a>Coletar métricas personalizadas para uma VM do Linux com o Agente InfluxData Telegraf
 
@@ -33,23 +33,23 @@ Entre no [Portal do Azure](https://portal.azure.com).
 
 Crie uma nova VM do Linux: 
 
-1. Selecione a opção  **Criar um recurso**  no painel de navegação à esquerda. 
-1. Pesquise **Máquina Virtual**.  
+1. Selecione a opção **criar um recurso** no painel de navegação à esquerda. 
+1. Pesquise **Máquina Virtual**.  
 1. Selecione **Ubuntu 16.04 LTS** e selecione **Criar**. 
-1. Forneça um nome de VM como  **MyTelegrafVM**.  
-1. Deixe o tipo de disco como **SSD**. Em seguida, forneça um **nome de usuário**, como **azureuser**. 
-1. Para **Tipo de autenticação**, selecione **Senha**. Insira uma senha que você usará posteriormente para SSH para essa VM. 
-1. Escolh **Criar novo grupo de recursos**. Em seguida, forneça um nome, como **myResourceGroup**. Escolha seu **Local**. Em seguida, selecione **OK**. 
+1. Forneça um nome de VM como **MyTelegrafVM**.  
+1. Deixe o tipo de disco como **SSD**. Em seguida, forneça um **nome de usuário**, como **azureuser**. 
+1. Para **tipo de autenticação**, selecione **senha**. Insira uma senha que você usará posteriormente para SSH para essa VM. 
+1. Escolha **criar novo grupo de recursos**. Em seguida, forneça um nome,como MyResource. Escolha seu **local**. Depois, selecione **OK**. 
 
     ![Criar uma VM do Ubuntu](./media/collect-custom-metrics-linux-telegraf/create-vm.png)
 
-1. Selecione um tamanho para a VM. Você pode filtrar por **Tipo de computação** ou **Tipo de disco**, por exemplo. 
+1. Selecione um tamanho para a VM. Você pode filtrar por **Tipo de computação** ou **Tipo de disco**, por exemplo. 
 
     ![Visão Geral do Agente Telegraf para o tamanho da Máquina Virtual](./media/collect-custom-metrics-linux-telegraf/vm-size.png)
 
-1. Na página  **configurações** em **Rede** > **Grupo de segurança de rede** >  **Selecione as portas de entrada públicas**, selecione **HTTP** e **SSH (22)** . Mantenha o restante dos padrões e selecione  **OK**. 
+1. Na página **configurações** , em > **grupo** > de segurança de rede de rede,**selecione portas de entrada públicas**, selecione **http** e **SSH (22)** . Deixe o restante dos padrões e selecione **OK**. 
 
-1. Na página de resumo, selecione **Criar** para iniciar a implantação da VM. 
+1. Na página Resumo, selecione **Criar** para iniciar a implantação da máquina virtual. 
 
 1. A VM será fixada ao painel do portal do Azure. Depois que a implantação for concluída, o resumo da VM abre automaticamente. 
 
@@ -59,11 +59,11 @@ Crie uma nova VM do Linux:
  
 ## <a name="connect-to-the-vm"></a>Conectar-se à VM 
 
-Crie uma conexão SSH com a VM. Selecione o botão **Conectar** na página de visão geral de sua VM. 
+Crie uma conexão SSH com a VM. Selecione o botão **Conectar** na página visão geral da sua VM. 
 
 ![Página de visão geral de VM Telegraf](./media/collect-custom-metrics-linux-telegraf/connect-VM-button2.png)
 
-Na página **conectar-se a máquina virtual** , mantenha as opções padrão para conectar-se ao nome DNS pela porta 22. Em **Logon usando a conta local da VM**, um comando de conexão é mostrada. Selecione o botão para copiar o comando. O exemplo a seguir mostra a aparência do comando de conexão SSH: 
+Na página **Conectar-se à máquina virtual**, mantenha as opções padrão para conectar-se ao nome DNS pela porta 22. Em **logon usando a conta local da VM**, é mostrado um comando de conexão. Selecione o botão para copiar o comando. O exemplo a seguir mostra a aparência do comando de conexão SSH: 
 
 ```cmd
 ssh azureuser@XXXX.XX.XXX 
@@ -108,7 +108,7 @@ Agora o agente coletará as métricas de cada um dos plug-ins de entrada especif
 
 1. Abra o [Portal do Azure](https://portal.azure.com). 
 
-1. Navegue até a nova guia **Monitor** . Em seguida, selecione **Métricas**.  
+1. Navegue até a nova guia **Monitor** . Em seguida, selecione métricas.  
 
      ![Monitor - métricas (visualização)](./media/collect-custom-metrics-linux-telegraf/metrics.png)
 
@@ -128,7 +128,7 @@ Além disso, neste passo a passo, você usou o agente Telegraf para emitem métr
 
 ## <a name="clean-up-resources"></a>Limpar recursos 
 
-Quando o grupo de recursos, a máquina virtual e todos os recursos relacionados não forem mais necessários, exclua-os. Para fazer isso, selecione o grupo de recursos da máquina virtual e selecione  **Excluir**. Em seguida, confirme o nome do grupo de recursos para excluir. 
+Quando o grupo de recursos, a máquina virtual e todos os recursos relacionados não forem mais necessários, exclua-os. Para fazer isso, selecione o grupo de recursos para a máquina virtual e selecione **excluir**. Em seguida, confirme o nome do grupo de recursos para excluir. 
 
 ## <a name="next-steps"></a>Próximas etapas
 - Saiba mais sobre [métricas personalizadas](metrics-custom-overview.md).

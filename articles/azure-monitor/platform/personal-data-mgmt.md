@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 05/18/2018
 ms.author: magoedte
-ms.openlocfilehash: 0cf5a80e3eedbe7efb8463162b5b3ed489ac08c8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 29c91f2dcff04a2d21973e79c5719c3f4d84181b
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61087214"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68827378"
 ---
 # <a name="guidance-for-personal-data-stored-in-log-analytics-and-application-insights"></a>Diretrizes para dados pessoais armazenados no Log Analytics e no Application Insights
 
@@ -88,7 +88,7 @@ Conforme mencionado na seção [Estratégia para tratamento de dados pessoais](#
 Para exibir e exportar solicitações de dados, a [API de consulta do Log Analytics](https://dev.loganalytics.io/) ou a [API de consulta do Application Insights](https://dev.applicationinsights.io/quickstart) devem ser usadas. A lógica para converter a forma dos dados em uma forma apropriada para entregar aos usuários será de sua responsabilidade. [Azure Functions](https://azure.microsoft.com/services/functions/) é um ótimo local para hospedar essa lógica.
 
 > [!IMPORTANT]
->  Embora a maioria das operações de limpeza pode ser concluído, muito mais rapidamente do que o SLA **formal SLA para a conclusão das operações de limpeza é definida como 30 dias** devido ao impacto pesado na plataforma de dados usada. Isso é um processo automatizado; não é possível solicitar que uma operação ser tratadas com mais rapidez.
+>  Embora a grande maioria das operações de limpeza possa ser concluída muito mais rapidamente do que o SLA, **o SLA formal para a conclusão de operações de limpeza é definido como 30 dias** devido ao seu impacto pesado na plataforma de dados usada. Este é um processo automatizado; Não é possível solicitar que uma operação seja manipulada mais rapidamente.
 
 ### <a name="delete"></a>Excluir
 
@@ -107,7 +107,7 @@ Depois que a função do Azure Resource Manager for atribuída, dois novos camin
 * Status de limpeza GET – a chamada de limpeza POST retornará um cabeçalho 'x-ms-status-location' que incluirá uma URL que você poderá chamar para determinar o status da API de limpeza. Por exemplo:
 
     ```
-    x-ms-status-location: https://management.azure.com/subscriptions/[SubscriptionId]/resourceGroups/[ResourceGroupName]/providers/Microsoft.OperatonalInsights/workspaces/[WorkspaceName]/operations/purge-[PurgeOperationId]?api-version=2015-03-20
+    x-ms-status-location: https://management.azure.com/subscriptions/[SubscriptionId]/resourceGroups/[ResourceGroupName]/providers/Microsoft.OperationalInsights/workspaces/[WorkspaceName]/operations/purge-[PurgeOperationId]?api-version=2015-03-20
     ```
 
 > [!IMPORTANT]

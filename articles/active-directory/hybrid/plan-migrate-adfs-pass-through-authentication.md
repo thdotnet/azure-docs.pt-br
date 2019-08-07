@@ -12,12 +12,12 @@ ms.date: 05/31/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba63f9c04e062741eded9c39e44ba64281931387
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: 6646217149cec48ca5fcee59b3dd9d850965c602
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68311345"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779913"
 ---
 # <a name="migrate-from-federation-to-pass-through-authentication-for-azure-active-directory"></a>Migrar da federação para a autenticação de passagem do Azure Active Directory
 
@@ -124,7 +124,7 @@ Esta seção descreve considerações sobre implantação e detalhes de como usa
 
 Antes de converter de identidade federada em identidade gerenciada, analise atentamente como você usa no momento AD FS para Azure AD, Office 365 e outros aplicativos (confianças de terceira parte confiável). Especificamente, considere os cenários descritos na tabela a seguir:
 
-| Se | Então |
+| If | Then |
 |-|-|
 | Você planeja continuar usando o AD FS com outros aplicativos (que não o Azure AD e o Office 365). | Depois de converter seus domínios, você usará tanto o AD FS quanto o Azure AD. Considere a experiência do usuário. Em alguns cenários, os usuários podem precisar realizar a autenticação duas vezes: uma vez para o Azure AD (em que um usuário obtém acesso SSO a outros aplicativos, como o Office 365) e novamente para todos os aplicativos que ainda estão associados ao AD FS como um objeto de confiança de terceira parte confiável. |
 | Sua instância do AD FS é muito personalizada e depende das configurações de personalização específicas no arquivo onload.js (por exemplo, se você tiver alterado a experiência de conexão para que os usuários usem apenas um formato **SamAccountName** para o nome de usuário, em vez de um nome UPN, ou sua organização tiver aplicado fortemente a identidade de marca à experiência de conexão). O arquivo onload.js não pode ser duplicado no Azure AD. | Antes de continuar, verifique se que o Azure AD pode atender aos seus atuais requisitos de personalização. Para obter mais informações e diretrizes, veja as seções sobre identidade visual do AD FS e personalização do AD FS.|
@@ -454,5 +454,5 @@ Para obter mais informações, veja [Solucionar problemas de autenticação de p
 ## <a name="next-steps"></a>Próximas etapas
 
 * Aprenda os [Conceitos de design do Azure AD Connect](plan-connect-design-concepts.md).
-* Escolha a [autenticação correta](https://docs.microsoft.com/azure/security/azure-ad-choose-authn).
+* Escolha a [autenticação correta](https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn).
 * Saiba mais sobre [topologias com suporte](plan-connect-design-concepts.md).

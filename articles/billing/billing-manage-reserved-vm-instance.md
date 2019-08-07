@@ -8,39 +8,39 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/01/2019
+ms.date: 08/02/2019
 ms.author: banders
-ms.openlocfilehash: 89279387b3630ea654070eef671f131ec757d55f
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
-ms.translationtype: MT
+ms.openlocfilehash: f690e49813856a231e4b53cd8ab9f957014f6203
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67491191"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779924"
 ---
 # <a name="manage-reservations-for-azure-resources"></a>Gerenciar Reservas para recursos do Azure
 
-Depois de comprar uma reserva para o Azure, você precisa aplicar a reserva para uma assinatura diferente, altere a quem pode gerenciar a reserva, ou alterar o escopo da reserva. Também é possível dividir uma reserva em duas reservas para aplicar algumas das instâncias que você comprou para outra assinatura.
+Depois de comprar uma reserva para o Azure, talvez seja necessário aplicar a reserva a uma assinatura diferente, alterar quem pode gerenciar a reserva ou alterar o escopo da reserva. Também é possível dividir uma reserva em duas reservas para aplicar algumas das instâncias que você comprou para outra assinatura.
 
 Se você comprou Instâncias de Máquinas Virtuais Reservadas do Azure, poderá alterar a configuração de otimização da reserva. O desconto de reserva pode ser aplicado a VMs na mesma série ou você pode reservar a capacidade do data center para um tamanho de VM específico.
 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="reservation-order-and-reservation"></a>Reserva e o pedido de reserva
+## <a name="reservation-order-and-reservation"></a>Ordem de reserva e reserva
 
-Quando você compra de uma reserva, dois objetos são criados: **Pedido de reserva** e **reserva**.
+Quando você adquire uma reserva, dois objetos são criados: **Ordem de reserva** e **reserva**.
 
-No momento da compra, um pedido de reserva tem uma reserva sob ele. Ações como a divisão, mesclagem, reembolso parcial ou exchange criam novas reservas sob o **pedido de reserva**.
+No momento da compra, uma ordem de reserva tem uma reserva sob ela. Ações como dividir, mesclar, reembolsar parcial ou Exchange criam novas reservas sob a **ordem de reserva**.
 
-Para exibir um pedido de reserva, vá para **reservas** > selecione a reserva e, em seguida, clique no **ID do pedido de reserva**.
+Para exibir uma ordem de reserva, acesse **reservas** > selecione a reserva e, em seguida, clique na **ID da ordem de reserva**.
 
-![Exemplo de detalhes do pedido de reserva que mostra a ID do pedido de reserva ](./media/billing-manage-reserved-vm-instance/reservation-order-details.png)
+![Exemplo de detalhes do pedido de reserva mostrando a ID do pedido de reserva ](./media/billing-manage-reserved-vm-instance/reservation-order-details.png)
 
-Uma reserva herda permissões do seu pedido de reserva.
+Uma reserva herda permissões de sua ordem de reserva.
 
 ## <a name="change-the-reservation-scope"></a>Alterar o escopo de reserva
 
- O desconto de reserva se aplica a máquinas virtuais, bancos de dados SQL, BD Cosmos do Azure ou outros recursos que correspondem à reserva e executados no escopo de reserva. O contexto de cobrança depende da assinatura usada para comprar a reserva.
+ Seu desconto de reserva se aplica a máquinas virtuais, bancos de dados SQL, Azure Cosmos DB ou outros recursos que correspondam à sua reserva e executados no escopo de reserva. O contexto de cobrança depende da assinatura usada para comprar a reserva.
 
 Para atualizar o escopo de uma reserva:
 
@@ -52,15 +52,15 @@ Para atualizar o escopo de uma reserva:
 
 Se você alterar de compartilhado para escopo único, poderá selecionar apenas as assinaturas em que é o proprietário. Somente as assinaturas no mesmo contexto de cobrança que a reserva podem ser selecionadas.
 
-O escopo só se aplica a assinaturas individuais com tarifas pré-pagas (ofertas MS-AZR - 0003p ou MS-AZR - 0023P), a oferta Enterprise MS-AZR - 0017p ou MS-AZR - 0148p ou tipos de assinatura de CSP.
+O escopo só se aplica a assinaturas individuais com tarifas pagas conforme o uso (oferece MS-AZR-0003P ou MS-AZR-0023P), a empresa oferece MS-AZR-0017P ou MS-AZR-0148P ou tipos de assinatura CSP.
 
 ## <a name="add-or-change-users-who-can-manage-a-reservation"></a>Adicionar ou alterar os usuários que podem gerenciar uma reserva
 
-Você pode delegar o gerenciamento de reserva adicionando pessoas às funções na ordem de reserva ou a reserva. Por padrão, a pessoa que coloca o pedido de reserva e o administrador da conta tem a função de proprietário na ordem de reserva e a reserva.
+Você pode delegar o gerenciamento de reserva adicionando pessoas a funções na ordem de reserva ou na reserva. Por padrão, a pessoa que coloca a ordem de reserva e o administrador da conta tem a função de proprietário na ordem de reserva e na reserva.
 
-Você pode gerenciar o acesso aos pedidos de reservas e reservas independentemente das assinaturas que obtêm o desconto de reserva. Quando você conceder a alguém permissões para gerenciar a reserva ou um pedido de reserva, ele não conceder permissão para gerenciar a assinatura. Da mesma forma, se você conceder a alguém permissões para gerenciar uma assinatura no escopo da reserva, ele não dá a eles direitos para gerenciar a ordem de reserva ou a reserva.
+Você pode gerenciar o acesso a ordens de reservas e reservas independentemente das assinaturas que obtêm o desconto de reserva. Quando você concede a alguém permissões para gerenciar uma ordem de reserva ou a reserva, ele não concede permissão para gerenciar a assinatura. Da mesma forma, se você conceder a alguém permissões para gerenciar uma assinatura no escopo da reserva, ele não fornecerá direitos para gerenciar a ordem de reserva ou a reserva.
 
-Para executar o exchange ou o reembolso, o usuário deve ter acesso ao pedido de reserva. Ao conceder a alguém permissões, é melhor conceder permissões para o pedido de reserva, não a reserva.
+Para executar uma troca ou reembolso, o usuário deve ter acesso à ordem de reserva. Ao conceder permissões a alguém, é melhor conceder permissões para a ordem de reserva, não para a reserva.
 
 
 Para delegar o gerenciamento de acesso de uma reserva:
@@ -106,13 +106,9 @@ Para delegar o gerenciamento de acesso de uma reserva:
     Update-AzReservation -ReservationOrderId a08160d4-ce6b-4295-bf52-b90a5d4c96a0 -ReservationId 5257501b-d3e8-449d-a1ab-4879b1863aca -AppliedScopeType Single -AppliedScope /subscriptions/15bb3be0-76d5-491c-8078-61fe3468d414
     ```
 
-## <a name="cancellations-and-exchanges"></a>Cancelamentos e trocas
+## <a name="cancel-exchange-or-refund-reservations"></a>Cancelar, trocar ou reembolsar reservas
 
-Dependendo do tipo de reserva, você poderá cancelá-la ou trocá-la. Para obter mais informações, confira as seções de trocas e cancelamentos nos tópicos a seguir:
-
-- [Pré-pagamento para máquinas virtuais com instâncias de VMs reservadas do Azure](..//virtual-machines/windows/prepay-reserved-vm-instances.md#cancellations-and-exchanges)
-- [Pré-pagamento para planos de software SUSE das reservas do Azure](../virtual-machines/linux/prepay-suse-software-charges.md#cancellation-and-exchanges-not-allowed)
-- [Pagar antecipadamente por recursos de computação de banco de dados SQL com capacidade reservada do Azure SQL Database](../sql-database/sql-database-reserved-capacity.md#cancellations-and-exchanges)
+Você pode cancelar, trocar ou reembolsar reservas com determinadas limitações. Para obter mais informações, consulte [trocas e reembolsos de autoatendimento para reservas do Azure](billing-azure-reservations-self-service-exchange-and-refund.md).
 
 ## <a name="change-optimize-setting-for-reserved-vm-instances"></a>Alterar a configuração de otimização para Instâncias de VM Reservadas
 
@@ -132,26 +128,26 @@ Para atualizar a configuração de otimização da reserva:
 
 ## <a name="need-help-contact-us"></a>Precisa de ajuda? Entre em contato conosco.
 
-Se você tiver dúvidas ou precisar de Ajuda, [criar uma solicitação de suporte](https://go.microsoft.com/fwlink/?linkid=2083458).
+Se você tiver dúvidas ou precisar de ajuda, [crie uma solicitação de suporte](https://go.microsoft.com/fwlink/?linkid=2083458).
 
 ## <a name="next-steps"></a>Próximas etapas
 
 Para saber mais sobre as Reservas do Azure, consulte os seguintes artigos:
 
-- [Quais são as reservas para o Azure?](billing-save-compute-costs-reservations.md)
+- [O que são reservas para o Azure?](billing-save-compute-costs-reservations.md)
 
-Compre um plano de serviço:
+Comprar um plano de serviço:
 - [Pré-pagamento para máquinas virtuais com instâncias de VMs reservadas do Azure](../virtual-machines/windows/prepay-reserved-vm-instances.md)
-- [Pagar antecipadamente por recursos de computação de banco de dados SQL com capacidade reservada do Azure SQL Database](../sql-database/sql-database-reserved-capacity.md)
+- [Pagar antecipadamente por recursos de computação de banco de dados SQL com capacidade reservada do Banco de Dados SQL do Azure](../sql-database/sql-database-reserved-capacity.md)
 - [Pagar antecipadamente por recursos do Azure Cosmos DB com capacidade reservada do Azure Cosmos DB](../cosmos-db/cosmos-db-reserved-capacity.md)
 
-Compre um plano de software:
-- [Pagar antecipadamente por planos de software do Red Hat das reservas do Azure](../virtual-machines/linux/prepay-rhel-software-charges.md)
+Comprar um plano de software:
+- [Pagar antecipadamente por planos de software Red Hat de reservas do Azure](../virtual-machines/linux/prepay-rhel-software-charges.md)
 - [Pré-pagamento para planos de software SUSE das reservas do Azure](../virtual-machines/linux/prepay-suse-software-charges.md)
 
-Entenda o uso e desconto:
+Entender o desconto e o uso:
 - [Entender como o desconto de reserva de VM é aplicado](billing-understand-vm-reservation-charges.md)
-- [Entender como o desconto de plano de software do Red Hat Enterprise Linux é aplicado](../billing/billing-understand-rhel-reservation-charges.md)
+- [Entenda como o desconto do plano de software Red Hat Enterprise Linux é aplicado](../billing/billing-understand-rhel-reservation-charges.md)
 - [Entender como o desconto do plano de software do SUSE Linux Enterprise é aplicado](../billing/billing-understand-suse-reservation-charges.md)
 - [Entender como outros descontos de reserva são aplicados](billing-understand-reservation-charges.md)
 - [Entender o uso de reserva para a sua assinatura paga conforme o uso](billing-understand-reserved-instance-usage.md)
