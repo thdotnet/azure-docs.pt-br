@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: 500ae75f9bf53c1633290e706e33165dd9d67a88
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 4e33b22c5bc931685f5848db55fc4b9b8fc6eafe
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68726605"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68780617"
 ---
 # <a name="azure-advanced-threat-detection"></a>Detecção avançada de ameaças do Azure
 
@@ -216,7 +216,7 @@ Esses esforços combinados culminam em detecções novas e melhores, das quais v
 
 ### <a name="virtual-machines-microsoft-antimalware"></a>Máquinas virtuais: Microsoft Antimalware
 
-O [Microsoft Antimalware](https://docs.microsoft.com/azure/security/azure-security-antimalware) para Azure é uma solução de agente único para aplicativos e ambientes de locatário, projetado para ser executado em segundo plano sem intervenção humana. Você pode implantar a proteção baseada nas necessidades de suas cargas de trabalho do aplicativo, com configuração básica padronizada ou personalizada avançada, incluindo monitoramento de antimalware. O antimalware do Azure é uma opção de segurança para máquinas virtuais do Azure instalada automaticamente em todas as máquinas virtuais de PaaS do Azure.
+O [Microsoft Antimalware](https://docs.microsoft.com/azure/security/fundamentals/antimalware) para Azure é uma solução de agente único para aplicativos e ambientes de locatário, projetado para ser executado em segundo plano sem intervenção humana. Você pode implantar a proteção baseada nas necessidades de suas cargas de trabalho do aplicativo, com configuração básica padronizada ou personalizada avançada, incluindo monitoramento de antimalware. O antimalware do Azure é uma opção de segurança para máquinas virtuais do Azure instalada automaticamente em todas as máquinas virtuais de PaaS do Azure.
 
 #### <a name="microsoft-antimalware-core-features"></a>Principais recursos do Microsoft Antimalware
 

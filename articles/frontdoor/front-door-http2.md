@@ -11,14 +11,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: sharadag
-ms.openlocfilehash: 33e738f31be493d5890fc972ec71e7c6cd733bf4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c3c1721454c0b3c96071c685a764f34d4fa540b9
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60736440"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68775263"
 ---
 # <a name="http2-support-in-azure-front-door-service"></a>Suporte a HTTP/2 no Azure Front Door Service
+
+No momento, o suporte a HTTP/2 está ativo para todas as configurações do Front Door. Nenhuma ação adicional dos clientes é necessária.
+
 O HTTP/2 é uma revisão principal do HTTP/1.1. Ela fornece desempenho na Web mais rápido, tempo de reposta reduzido e melhor experiência de usuário, mantendo os métodos HTTP, códigos de status e semântica familiares. Embora o HTTP/2 seja projetado para trabalhar com HTTP e HTTPS, muitos navegadores da Web clientes somente dão suporte a HTTP/2 pelo protocolo TLS.
 
 ### <a name="http2-benefits"></a>Benefícios do HTTP/2
@@ -49,10 +52,6 @@ Todos os principais navegadores implementaram o suporte a HTTP/2 em suas versõe
 |Mozilla Firefox| 38|
 |Opera| 32|
 |Safari| 9|
-
-## <a name="enabling-http2-support-in-azure-front-door-service"></a>Habilitando o suporte a HTTP/2 no Azure Front Door Service
-
-No momento, o suporte a HTTP/2 está ativo para todas as configurações do Front Door. Nenhuma ação adicional dos clientes é necessária.
 
 ## <a name="next-steps"></a>Próximas etapas
 

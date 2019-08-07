@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/03/2019
 ms.author: tamram
 ms.reviewer: cbrooks
-ms.openlocfilehash: bb2d5733704b0b31dc010cec2a90e99e1be07b56
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 7d4f36be51591d6be2b4c42eb8a8950ab52a0258
+ms.sourcegitcommit: f7998db5e6ba35cbf2a133174027dc8ccf8ce957
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68592019"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68782574"
 ---
 # <a name="advanced-threat-protection-for-azure-storage"></a>Proteção Avançada contra Ameaças do Armazenamento do Azure
 
@@ -117,62 +117,7 @@ O email também inclui detalhes sobre possíveis causas e ações recomendadas p
 
 ## <a name="protection-alerts"></a>Alertas de proteção
 
-Os alertas são gerados por tentativas incomuns e potencialmente prejudiciais de acessar ou explorar contas de armazenamento. Esses eventos podem disparar os alertas a seguir:
-
-### <a name="anomalous-access-pattern-alerts"></a>Alertas de padrão de acesso anormal
-
-* **Acesso de local incomum**: Esse alerta é disparado quando alguém acessa uma conta de armazenamento a partir de uma localização geográfica incomum.
-Possíveis causas:
-   * Um invasor acessou sua conta de armazenamento
-   * Um usuário legítimo acessou sua conta de armazenamento a partir de um novo local
- 
-* **Anomalia do aplicativo**: Esse alerta indica que um aplicativo incomum acessou essa conta de armazenamento. Possíveis causas:
-   * Um invasor acessou sua conta de armazenamento usando um novo aplicativo.
-   * Um usuário legítimo usou um novo aplicativo/navegador para acessar sua conta de armazenamento.
-
-* **Acesso anônimo**: Esse alerta indica que essa conta foi acessada anonimamente (ou seja, sem nenhuma autenticação), o que é inesperado em comparação com o padrão de acesso recente nessa conta.
-Possíveis causas:
-   * Um invasor explorou o acesso de leitura público a um contêiner.
-   * Um usuário ou aplicativo legítimo usou acesso de leitura público a um contêiner.
-
-* **Anomalia de Tor**: Esse alerta indica que essa conta foi acessada com êxito de um endereço IP que é conhecido como um nó de saída ativo de Tor (um proxy de anonimato). A severidade desse alerta considera o tipo de autenticação usado (se houver) e se este é o primeiro caso desse acesso.
-Possíveis causas:
-   * Um invasor acessou sua conta de armazenamento usando o Tor.
-   * Um usuário legítimo acessou sua conta de armazenamento usando o Tor.
-
-
-### <a name="anomalous-extractupload-alerts"></a>Alertas de extração/carregamento anormais
-
-* **Vazamento de dados**: Esse alerta indica que uma quantidade incomum de dados muito grande foi extraída em comparação com a atividade recente neste contêiner de armazenamento. Possíveis causas:
-   * Um invasor extraiu uma grande quantidade de dados de um contêiner. (Por exemplo: vazamento/violação de dados, transferência não autorizada de dados)
-   * Um usuário ou aplicativo legítimo extraiu uma quantidade incomum de dados de um contêiner. (Por exemplo: atividade de manutenção)
-
-* **Exclusão inesperada**: Esse alerta indica que uma ou mais operações de exclusão inesperadas ocorreram em uma conta de armazenamento, em comparação com a atividade recente nessa conta. Possíveis causas:
-   * Um invasor excluiu dados de sua conta de armazenamento.
-   * Um usuário legítimo executou uma exclusão incomum.
-
-* **Carregar o pacote de serviço de nuvem do Azure**: Esse alerta indica que um pacote de serviço de nuvem do Azure (arquivo. cspkg) foi carregado em uma conta de armazenamento de maneira incomum, em comparação com a atividade recente nessa conta. Possíveis causas: 
-   * Um invasor está se preparando para implantar código mal-intencionado de sua conta de armazenamento em um serviço de nuvem do Azure.
-   * Um usuário legítimo está se preparando para uma implantação de serviço legítima.
-
-### <a name="suspicious-storage-activities-alerts"></a>Alertas de atividades de armazenamento suspeitas
-
-* **Alteração de permissão de acesso**: Esse alerta indica que as permissões de acesso deste contêiner de armazenamento foram alteradas de maneira incomum. Possíveis causas: 
-   * Um invasor alterou as permissões de contêiner para enfraquecer sua segurança.
-   * Um usuário legítimo alterou as permissões de contêiner.
-
-* **Inspeção de acesso**: Esse alerta indica que as permissões de acesso de uma conta de armazenamento foram inspecionadas de forma incomum, em comparação com a atividade recente nessa conta. Possíveis causas: 
-   * Um invasor executou o reconhecimento para um ataque futuro.
-   * Um usuário legítimo realizou a manutenção na conta de armazenamento.
-
-* **Exploração de dados**: Esse alerta indica que os BLOBs ou contêineres em uma conta de armazenamento foram enumerados de forma incomum, em comparação com a atividade recente nessa conta. Possíveis causas: 
-   * Um invasor executou o reconhecimento para um ataque futuro.
-   * Uma lógica de usuário ou aplicativo legítima explorou dados na conta de armazenamento.
-
-
-
-
-
+Os alertas são gerados por tentativas incomuns e potencialmente prejudiciais de acessar ou explorar contas de armazenamento. Para obter uma lista desses alertas, consulte alertas [do armazenamento do Azure](../../security-center/security-center-alerts-data-services.md#azure-storage)
 
 ## <a name="next-steps"></a>Próximas etapas
 

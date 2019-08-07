@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/19/2018
 ms.author: bwren
-ms.openlocfilehash: 06532369efb802606eb13a4b38a8579a3528f999
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dacc4179483de5d5ef8a05fd836e4241c161deac
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60776977"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68741273"
 ---
 # <a name="alert-management-solution-in-azure-log-analytics"></a>Solução de Gerenciamento de Alertas no Azure Log Analytics
 
@@ -52,7 +52,7 @@ Para obter mais informações sobre como os pacotes de gerenciamento da soluçã
 ### <a name="agents"></a>Agentes
 A tabela a seguir descreve as fontes conectadas que têm suporte dessa solução.
 
-| Fonte Conectada | Suporte | DESCRIÇÃO |
+| Fonte Conectada | Suporte | Descrição |
 |:--- |:--- |:--- |
 | [Agentes do Windows](agent-windows.md) | Não |Agentes diretos do Windows não geram alertas.  Alertas do Log Analytics podem ser criados de eventos e dados de desempenho coletados de agentes do Windows. |
 | [Agentes do Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Não |Agentes diretos do Linux não geram alertas.  Alertas do Log Analytics podem ser criados de eventos e dados de desempenho coletados de agentes do Linux.  Alertas do Nagios e Zabbix são coletados desses servidores que exigem o agente do Linux. |
@@ -70,11 +70,11 @@ Ao adicionar a solução de Gerenciamento de Alertas ao seu espaço de trabalho 
 
 Clique no bloco **Gerenciamento de Alertas** para abrir o painel **Gerenciamento de Alertas**.  O painel inclui as colunas na tabela a seguir.  Cada coluna lista os dez principais alertas por contagem que correspondem aos critérios da coluna para o escopo e intervalo de tempo especificados.  É possível executar uma pesquisa de log que fornece a lista inteira clicando em **Ver todos** na parte inferior da coluna ou clicando no cabeçalho de coluna.
 
-| Coluna | DESCRIÇÃO |
+| Coluna | Descrição |
 |:--- |:--- |
 | Alertas críticos |Todos os alertas com uma severidade de Crítico agrupados por nome do alerta.  Clique em um nome de alerta para executar uma pesquisa de log retornando todos os registros desse alerta. |
 | Alertas de aviso |Todos os alertas com uma severidade de Aviso agrupados por nome do alerta.  Clique em um nome de alerta para executar uma pesquisa de log retornando todos os registros desse alerta. |
-| Alertas ativos do SCOM |Todos os alertas coletados do Operations Manager com qualquer estado diferente de *Fechado*, agrupados pela origem que gerou o alerta. |
+| Alertas Ativos do SCOM |Todos os alertas coletados do Operations Manager com qualquer estado diferente de *Fechado*, agrupados pela origem que gerou o alerta. |
 | Todos os alertas ativos |Todos os alertas com qualquer severidade agrupados por nome do alerta. Inclui somente alertas do Operations Manager com qualquer estado diferente de *Fechado*. |
 
 Se você rolar para a direita, o painel listará várias consultas comuns nas quais você poderá clicar para realizar uma [pesquisa de logs](../../azure-monitor/log-query/log-query-overview.md) e obter dados de alerta.
@@ -87,41 +87,41 @@ A solução de Gerenciamento de Alertas analisa qualquer registro com um tipo de
 
 A solução importa alertas do System Center Operations Manager e cria um registro correspondente para cada um com um tipo de **Alerta** e um SourceSystem de **OpsManager**.  Esses registros têm as propriedades descritas na tabela a seguir:  
 
-| Propriedade | Description |
+| Propriedade | Descrição |
 |:--- |:--- |
-| Type |*Alerta* |
-| SourceSystem |*OpsManager* |
-| AlertContext |Detalhes do item de dados que fez com que o alerta fosse gerado em formato XML. |
-| AlertDescription |Descrição detalhada do alerta. |
-| AlertId |GUID do alerta. |
-| AlertName |Nome do alerta. |
-| AlertPriority |Nível de prioridade do alerta. |
-| AlertSeverity |Nível de severidade do alerta. |
-| AlertState |Último estado de resolução do alerta. |
-| LastModifiedBy |Nome do usuário que modificou o alerta pela última vez. |
-| ManagementGroupName |Nome do grupo de gerenciamento no qual o alerta foi gerado. |
-| RepeatCount |Número de vezes que o mesmo alerta foi gerado para o mesmo objeto monitorado desde sua resolução. |
-| ResolvedBy |Nome do usuário que resolveu o alerta. Vazio, se o alerta ainda não foi resolvido. |
-| SourceDisplayName |Nome de exibição do objeto de monitoramento que gerou o alerta. |
-| SourceFullName |Nome completo do objeto de monitoramento que gerou o alerta. |
-| TicketId |ID do Tíquete do alerta, se o ambiente do System Center Operations Manager é integrado com um processo para atribuição de tíquetes para alertas.  Vazio, se nenhuma ID do Tíquete for atribuída. |
-| TimeGenerated |Data e hora em que o alerta foi criado. |
-| TimeLastModified |Data e hora em que o alerta foi alterado pela última vez. |
-| TimeRaised |Data e hora em que o alerta foi gerado. |
-| TimeResolved |Data e hora em que o alerta foi resolvido. Vazio, se o alerta ainda não foi resolvido. |
+| `Type` |*Alerta* |
+| `SourceSystem` |*OpsManager* |
+| `AlertContext` |Detalhes do item de dados que fez com que o alerta fosse gerado em formato XML. |
+| `AlertDescription` |Descrição detalhada do alerta. |
+| `AlertId` |GUID do alerta. |
+| `AlertName` |Nome do alerta. |
+| `AlertPriority` |Nível de prioridade do alerta. |
+| `AlertSeverity` |Nível de severidade do alerta. |
+| `AlertState` |Último estado de resolução do alerta. |
+| `LastModifiedBy` |Nome do usuário que modificou o alerta pela última vez. |
+| `ManagementGroupName` |Nome do grupo de gerenciamento no qual o alerta foi gerado. |
+| `RepeatCount` |Número de vezes que o mesmo alerta foi gerado para o mesmo objeto monitorado desde sua resolução. |
+| `ResolvedBy` |Nome do usuário que resolveu o alerta. Vazio, se o alerta ainda não foi resolvido. |
+| `SourceDisplayName` |Nome de exibição do objeto de monitoramento que gerou o alerta. |
+| `SourceFullName` |Nome completo do objeto de monitoramento que gerou o alerta. |
+| `TicketId` |ID do Tíquete do alerta, se o ambiente do System Center Operations Manager é integrado com um processo para atribuição de tíquetes para alertas.  Vazio, se nenhuma ID do Tíquete for atribuída. |
+| `TimeGenerated` |Data e hora em que o alerta foi criado. |
+| `TimeLastModified` |Data e hora em que o alerta foi alterado pela última vez. |
+| `TimeRaised` |Data e hora em que o alerta foi gerado. |
+| `TimeResolved` |Data e hora em que o alerta foi resolvido. Vazio, se o alerta ainda não foi resolvido. |
 
 ## <a name="sample-log-searches"></a>Pesquisas de log de exemplo
 A tabela a seguir fornece pesquisas de log de exemplo para os registros de alerta coletados por essa solução: 
 
-| Consulta | DESCRIÇÃO |
+| Consulta | Descrição |
 |:---|:---|
 | Alert &#124; where SourceSystem == "OpsManager" and AlertSeverity == "error" and TimeRaised > ago(24h) |Alertas críticos gerados nas últimas 24 horas |
 | Alert &#124; where AlertSeverity == "warning" and TimeRaised > ago(24h) |Alertas de aviso gerados nas últimas 24 horas |
-| Alert &#124; where SourceSystem == "OpsManager" and AlertState != "Closed" and TimeRaised > ago(24h) &#124; summarize Count = count() by SourceDisplayName |Fontes com alertas ativos gerados nas últimas 24 horas |
+| Alert &#124; where SourceSystem == "OpsManager" and AlertState != "Closed" and TimeRaised > ago(24h) &#124; summarize Count = count() by SourceDisplayName |Origens com alertas ativos gerados durante as últimas 24 horas |
 | Alert &#124; where SourceSystem == "OpsManager" and AlertSeverity == "error" and TimeRaised > ago(24h) and AlertState != "Closed" |Alertas críticos gerados nas últimas 24 horas que ainda estão ativos |
 | Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(24h) and AlertState == "Closed" |Alertas gerados nas últimas 24 horas que agora estão fechados |
-| Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(1d) &#124; summarize Count = count() by AlertSeverity |Alertas gerados durante o último dia agrupados por severidade |
-| Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(1d) &#124; sort by RepeatCount desc |Alertas gerados durante o último dia classificados por valor de contagem de repetição |
+| Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(1d) &#124; summarize Count = count() by AlertSeverity |Alertas gerados durante o dia anterior, agrupados por severidade |
+| Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(1d) &#124; sort by RepeatCount desc |Alertas gerados durante o dia anterior, classificados por seu valor de contagem de repetição |
 
 
 

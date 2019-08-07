@@ -5,13 +5,13 @@ author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
 ms.topic: conceptual
-ms.date: 04/05/2019
-ms.openlocfilehash: 649a842c8c8890713bda938c8e11740c5c8be7aa
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/01/2019
+ms.openlocfilehash: 6ecb481245484332221e45b8f27c776291ea532d
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61001864"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736401"
 ---
 # <a name="set-up-the-business-glossary-for-governed-tagging"></a>Como configurar o glossário de negócios para marcação controlada
 
@@ -32,7 +32,7 @@ Ao usar o glossário de negócios do Catálogo de Dados, uma organização pode 
 
 ## <a name="glossary-availability-and-privileges"></a>Disponibilidade de glossário e privilégios
 
-O glossário de negócios está disponível somente na Standard Edition do Catálogo de Dados do Azure. A edição gratuita do catálogo de dados não inclui um glossário e ele não fornece recursos para marcação controlada.
+O glossário de negócios está disponível somente na Standard Edition do Catálogo de Dados do Azure. A edição gratuita do catálogo de dados não inclui um glossário e não fornece recursos para marcação controlada.
 
 Você pode acessar o glossário de negócios por meio da opção **Glossário** no menu de navegação do portal do Catálogo de Dados.  
 
@@ -55,7 +55,7 @@ Os administradores do Catálogo de Dados e os administradores do glossário pode
 
 Ao usar o glossário de negócios do Catálogo de Dados, uma organização pode descrever seu vocabulário de negócios como uma hierarquia de termos e pode criar uma classificação de termos que melhor represente sua taxonomia de negócios.
 
-Um termo deve ser exclusivo em um determinado nível de hierarquia. Não são permitidos nomes duplicados. Não há nenhum limite para o número de níveis em uma hierarquia, mas uma hierarquia geralmente é mais facilmente compreendida quando há três níveis ou menos.
+Um termo deve ser exclusivo em um determinado nível de hierarquia. Nomes duplicados não são permitidos. Não há nenhum limite para o número de níveis em uma hierarquia, mas uma hierarquia geralmente é mais facilmente compreendida quando há três níveis ou menos.
 
 O uso de hierarquias no glossário de negócios é opcional. Deixar o campo de termo pai em branco para termos de glossário cria uma lista simples (não hierárquica) dos termos no glossário.  
 

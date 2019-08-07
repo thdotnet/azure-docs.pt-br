@@ -1,5 +1,5 @@
 ---
-title: Perguntas Frequentes – Azure Active Directory a autenticação multifator do Azure
+title: Perguntas frequentes sobre a autenticação multifator do Azure-Azure Active Directory
 description: Perguntas frequentes e respostas relacionadas à Autenticação Multifator do Azure.
 services: multi-factor-authentication
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b3517f90d97a19740f5be8c2a755532d305522d7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 46abe367c9047616174a1e43dffd57861e6278e8
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65228176"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68811823"
 ---
 # <a name="frequently-asked-questions-about-azure-multi-factor-authentication"></a>Perguntas frequentes sobre a Autenticação Multifator do Azure
 
@@ -59,7 +59,7 @@ Nos Canadá, a Microsoft usa os seguintes códigos curtos de SMS:
    * 759731 
    * 673801
 
-A Microsoft não garante a entrega de prompt consistente de Autenticação multifator com base em voz ou SMS pelo mesmo número. Pensando no melhor para nossos usuários, a Microsoft pode adicionar ou remover códigos curtos a qualquer momento, pois fazemos ajustes de rota para melhorar a capacidade de entrega de SMS. A Microsoft não suporta códigos curtos para países/regiões, além dos Estados Unidos e Canadá.
+A Microsoft não garante a entrega de prompt consistente de Autenticação multifator com base em voz ou SMS pelo mesmo número. Pensando no melhor para nossos usuários, a Microsoft pode adicionar ou remover códigos curtos a qualquer momento, pois fazemos ajustes de rota para melhorar a capacidade de entrega de SMS. A Microsoft não oferece suporte a códigos curtos para países/regiões além do Estados Unidos e do Canadá.
 
 ## <a name="billing"></a>Cobrança
 
@@ -87,15 +87,13 @@ Saiba mais sobre suas opções em [Como obter a Autenticação Multifator do Azu
 
 Em alguns casos, sim.
 
-A autenticação multifator para administradores do Azure oferece um subconjunto de recursos do Azure MFA sem custo adicional para acesso a serviços online da Microsoft, incluindo o [portal do Azure](https://portal.azure.com) e [Centro de administração do Microsoft 365](https://admin.microsoft.com). Essa oferta somente aplica-se aos administradores do Azure Active Directory em instâncias do Azure Active Directory que não tem a versão completa do Azure MFA através de uma licença MFA, um pacote ou um provedor baseado em consumo autônomo. Se seus administradores usam a versão gratuita e, em seguida, você compra uma versão completa do Azure MFA então todos os administradores globais são elevados para a versão paga automaticamente.
+A autenticação multifator para administradores do Azure oferece um subconjunto de recursos do Azure MFA sem custo adicional para acesso ao Microsoft serviços online, incluindo o [portal do Azure](https://portal.azure.com) e o [Microsoft 365 Admin Center](https://admin.microsoft.com). Essa oferta somente aplica-se aos administradores do Azure Active Directory em instâncias do Azure Active Directory que não tem a versão completa do Azure MFA através de uma licença MFA, um pacote ou um provedor baseado em consumo autônomo. Se seus administradores usam a versão gratuita e, em seguida, você compra uma versão completa do Azure MFA então todos os administradores globais são elevados para a versão paga automaticamente.
 
 A Autenticação Multifator para usuários do Office 365 oferece um subconjunto de recursos do Azure MFA sem custo adicional para acessar os serviços do Office 365, incluindo o Exchange Online, o SharePoint Online. Essa oferta aplica-se aos usuários que tenham uma licença do Office 365 atribuída, quando a instância correspondente do Azure Active Directory não tem a versão completa do Azure MFA por meio de uma licença MFA, um pacote ou um provedor de baseado em consumo autônomo.
 
 **P: Minha organização pode alternar entre os modelos de cobrança de consumo por usuário e por autenticação a qualquer momento?**
 
-Se sua organização adquirir o MFA como um serviço autônomo de cobrança com base em consumo, escolha um modelo de cobrança ao criar um provedor MFA. Depois que um provedor MFA for criado, você não poderá alterar o modelo de cobrança. No entanto, você pode excluir o provedor MFA e criar um novo com um modelo de cobrança diferente.
-
-Quando um provedor de MFA for criado, ele pode ser vinculado a um Azure Active Directory, ou "Locatário do Azure AD". Se o provedor MFA atual é vinculado a um locatário do AD do Azure, com segurança pode excluir o provedor MFA e criar um que esteja vinculado ao mesmo locatário do Azure AD. Como alternativa, se você tiver adquirido suficiente MFA, Azure AD Premium, ou licenças do Premium (EMS) para cobrir todos os usuários que estão habilitados para MFA, você pode excluir o provedor MFA completamente.
+Se sua organização adquirir o MFA como um serviço autônomo de cobrança com base em consumo, escolha um modelo de cobrança ao criar um provedor MFA. Depois que um provedor MFA for criado, você não poderá alterar o modelo de cobrança. 
 
 Se o seu provedor MFA *não* está vinculado a um locatário do Azure AD, ou você vincula o novo provedor MFA a um locatário diferente do Azure AD, as opções de definições de usuário e configuração não serão transferidas. Além disso, os servidores MFA existentes do Azure precisarão ser reativados usando as credenciais de ativação geradas por meio do novo provedor de MFA. Reativar os servidores MFA para vinculá-los para o novo provedor de MFA não afete de telefonema e autenticação de mensagens de texto, mas as notificações de aplicativo móvel deixará de funcionar para todos os usuários até que eles reativarem o aplicativo móvel.
 
@@ -142,7 +140,7 @@ Se sua organização não tiver clientes herdados, você não deve permitir que 
 > [!NOTE]
 > Autenticação moderna para clientes do Office 2013
 >
-> Senhas de aplicativo são necessárias apenas para aplicativos que não suportam autenticação moderna. Clientes do Office 2013 oferece suporte aos protocolos de autenticação moderna, mas precisam ser configurados. Agora a autenticação moderna está disponível para qualquer cliente que executam a atualização de março de 2015 ou posterior para o Office 2013. Para obter mais informações, consulte o postagem no blog [a autenticação moderna do Office 365 atualizada](https://www.microsoft.com/microsoft-365/blog/2015/11/19/updated-office-365-modern-authentication-public-preview/).
+> Senhas de aplicativo são necessárias apenas para aplicativos que não suportam autenticação moderna. Clientes do Office 2013 oferece suporte aos protocolos de autenticação moderna, mas precisam ser configurados. Agora, a autenticação moderna está disponível para qualquer cliente que execute a atualização de março de 2015 ou posterior para o Office 2013. Para obter mais informações, consulte a postagem no blog [atualização da autenticação moderna do Office 365](https://www.microsoft.com/microsoft-365/blog/2015/11/19/updated-office-365-modern-authentication-public-preview/).
 
 **P: Meus usuários dizem que, às vezes, eles não recebem a mensagem de texto ou eles respondem às mensagens de texto bidirecional mas a verificação de tempo limite.**
 
@@ -150,7 +148,7 @@ A entrega de mensagens de texto e o recebimento de respostas em SMS bidirecional
 
 Se os usuários geralmente têm problemas de forma segura, receber mensagens de texto, informe ao usar o método de chamada telefônica ou aplicativo móvel. O aplicativo móvel pode receber notificações em conexões de Wi-Fi e celular. Além disso, o aplicativo móvel pode gerar códigos de verificação mesmo quando o dispositivo não tem sinal. O aplicativo Microsoft Authenticator está disponível para [Android](https://go.microsoft.com/fwlink/?Linkid=825072), [IOS](https://go.microsoft.com/fwlink/?Linkid=825073) e [Windows Phone](https://go.microsoft.com/fwlink/?Linkid=825071).
 
-Se você precisa usar mensagens de texto, é recomendável usar SMS unidirecional em vez de SMS bidirecional, quando possível. O SMS unidirecional é mais confiável e impede que os usuários incorrer em cobranças globais de SMS de responder a uma mensagem de texto que foi enviada de outro país/região.
+Se você precisa usar mensagens de texto, é recomendável usar SMS unidirecional em vez de SMS bidirecional, quando possível. O SMS unidirecional é mais confiável e impede que os usuários incorrerem em encargos de SMS globais de responder a uma mensagem de texto que foi enviada de outro país/região.
 
 **P: Posso alterar a quantidade de tempo que meus usuários precisam inserir o código de verificação de uma mensagem de texto antes do sistema expira?**
 
@@ -200,7 +198,7 @@ Há vários motivos que os usuários podem ser solicitados para registrar as inf
 - A organização criou e ativado uma diretiva de registro de MFA que foi aplicada ao usuário.
 - O usuário registrado para MFA anteriormente, mas escolher um método de verificação que um administrador como desabilitado. O usuário, portanto, deve passar pelo registro MFA novamente para selecionar um novo método de verificação padrão.
 
-## <a name="errors"></a>Errors
+## <a name="errors"></a>Erros
 
 **P: O que os usuários deverão fazer se receberem uma mensagem de erro "A solicitação de autenticação não é para uma conta ativada" ao usar notificações de aplicativo móvel?**
 

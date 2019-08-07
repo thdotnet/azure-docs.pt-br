@@ -16,12 +16,12 @@ ms.date: 04/15/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cd41bdfb90e5e8428a747832c10fe23a2cac4560
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6c7199cd8e5dbde1f6ff2f5cea56a4191211c853
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67109397"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779077"
 ---
 # <a name="azure-active-directory-pass-through-authentication-frequently-asked-questions"></a>Autenticação de passagem do Azure Active Directory: Perguntas frequentes
 
@@ -29,7 +29,7 @@ Este artigo aborda perguntas frequentes sobre a Autenticação de Passagem do Az
 
 ## <a name="which-of-the-methods-to-sign-in-to-azure-ad-pass-through-authentication-password-hash-synchronization-and-active-directory-federation-services-ad-fs-should-i-choose"></a>Qual dos métodos para entrar no Azure AD, Autenticação de Passagem, sincronização de hash de senha e Serviços de Federação do Active Directory (AD FS), devo escolher?
 
-Leia [este guia](https://docs.microsoft.com/azure/security/azure-ad-choose-authn) para uma comparação entre os vários métodos de conexão do Azure AD e como escolher o método de entrada certo para a sua organização.
+Leia [este guia](https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn) para uma comparação entre os vários métodos de conexão do Azure AD e como escolher o método de entrada certo para a sua organização.
 
 ## <a name="is-pass-through-authentication-a-free-feature"></a>A Autenticação de Passagem é um recurso gratuito?
 
@@ -37,11 +37,11 @@ A Autenticação de Passagem é um recurso gratuito. Você não precisa de nenhu
 
 ## <a name="is-pass-through-authentication-available-in-the-microsoft-azure-germany-cloudhttpswwwmicrosoftdecloud-deutschland-and-the-microsoft-azure-government-cloudhttpsazuremicrosoftcomfeaturesgov"></a>A Autenticação de Passagem está disponível na [nuvem do Microsoft Azure Alemanha](https://www.microsoft.de/cloud-deutschland) e na [nuvem do Microsoft Azure Governamental](https://azure.microsoft.com/features/gov/)?
 
-Não. A Autenticação de Passagem está disponível apenas na instância mundial do Azure AD.
+Nº A Autenticação de Passagem está disponível apenas na instância mundial do Azure AD.
 
 ## <a name="does-conditional-accessactive-directory-conditional-access-azure-portalmd-work-with-pass-through-authentication"></a>O [Acesso Condicional](../active-directory-conditional-access-azure-portal.md) funciona com a Autenticação de Passagem?
 
-Sim. Todos os recursos de acesso condicional, incluindo a autenticação multifator, trabalham com a autenticação de passagem.
+Sim. Todos os recursos de acesso condicional, incluindo a autenticação multifator do Azure, funcionam com a autenticação de passagem.
 
 ## <a name="does-pass-through-authentication-support-alternate-id-as-the-username-instead-of-userprincipalname"></a>A Autenticação de Passagem dá suporte à "ID alternativa" como nome de usuário, em vez de "userPrincipalName"?
 
@@ -49,11 +49,11 @@ A Autenticação de Passagem dá suporte `Alternate ID` como nome de usuário qu
 
 ## <a name="does-password-hash-synchronization-act-as-a-fallback-to-pass-through-authentication"></a>A sincronização de hash de senha funciona como um fallback da Autenticação de Passagem?
 
-Não. A Autenticação de Passagem _não_ realiza o failover automaticamente para a sincronização de hash de senha. Para evitar falhas de entrada do usuário, você deve configurar a Autenticação de Passagem para [alta disponibilidade](how-to-connect-pta-quick-start.md#step-4-ensure-high-availability).
+Nº A Autenticação de Passagem _não_ realiza o failover automaticamente para a sincronização de hash de senha. Para evitar falhas de entrada do usuário, você deve configurar a Autenticação de Passagem para [alta disponibilidade](how-to-connect-pta-quick-start.md#step-4-ensure-high-availability).
 
-## <a name="what-happens-when-i-switch-from-password-hash-synchronization-to-pass-through-authentication"></a>O que acontece quando posso mudar da sincronização de hash de senha para autenticação de passagem?
+## <a name="what-happens-when-i-switch-from-password-hash-synchronization-to-pass-through-authentication"></a>O que acontece quando eu faço para alternar da sincronização de hash de senha para autenticação de passagem?
 
-Quando você usa o Azure AD Connect para alternar o método de entrada de sincronização de hash de senha para autenticação de passagem, a autenticação de passagem torna-se o método de entrada principal para os usuários em domínios gerenciados. Observe que os hashes de senha de todos os usuários que foram anteriormente sincronizados pela sincronização de hash de senha permanecem armazenados no Azure AD.
+Quando você usa Azure AD Connect para alternar o método de entrada da sincronização de hash de senha para autenticação de passagem, a autenticação de passagem torna-se o método de entrada primário para seus usuários em domínios gerenciados. Observe que os hashes de senha de todos os usuários que foram sincronizados anteriormente pela sincronização de hash de senha permanecem armazenados no Azure AD.
 
 ## <a name="can-i-install-an-azure-ad-application-proxymanage-appsapplication-proxymd-connector-on-the-same-server-as-a-pass-through-authentication-agent"></a>Eu posso instalar um conector de [Proxy de Aplicativo Azure AD](../manage-apps/application-proxy.md) no mesmo servidor que um Agente de Autenticação de Passagem?
 

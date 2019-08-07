@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 01/14/2016
 ms.author: aelnably
 ms.custom: seodec18
-ms.openlocfilehash: d31a6ee13965aa326ab8a71b5b5435025bc26057
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 52d02fd79571e42f71c06b7090534136e4a5e341
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705738"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68814677"
 ---
 # <a name="azure-app-service-app-cloning-using-powershell"></a>Clonagem de aplicativo do Serviço de Aplicativo do Azure usando o Azure PowerShell
 
@@ -28,7 +28,7 @@ ms.locfileid: "67705738"
 
 Com o lançamento do Microsoft Azure PowerShell versão 1.1.0, uma nova opção foi adicionada ao `New-AzWebApp` que lhe permite clonar um aplicativo de Serviço existente como um aplicativo recém-criado em uma região diferente ou na mesma região. Essa opção permitirá que os clientes implantem vários aplicativos em diferentes regiões de forma rápida e fácil.
 
-Há suporte para clonagem de aplicativo para planos de serviço de aplicativo Standard, Premium, Premium V2 e isolado. O novo recurso usa as mesmas limitações que o recurso de Backup de Serviço de Aplicativo; veja [Fazer backup de um aplicativo no Serviço de Aplicativo do Azure](manage-backup.md).
+A clonagem de aplicativo tem suporte para planos de serviço de aplicativo padrão, Premium, Premium V2 e isolados. O novo recurso usa as mesmas limitações que o recurso de Backup de Serviço de Aplicativo; veja [Fazer backup de um aplicativo no Serviço de Aplicativo do Azure](manage-backup.md).
 
 ## <a name="cloning-an-existing-app"></a>Clonagem de um aplicativo existente
 Cenário: Um aplicativo existente na região Centro-Sul dos EUA que você quer clonar o conteúdo em um novo aplicativo na região Centro-Norte dos EUA. Isso pode ser feito usando a versão do cmdlet do PowerShell do Azure Resource Manager para criar um novo aplicativo com a opção `-SourceWebApp`.
@@ -42,10 +42,10 @@ $srcapp = Get-AzWebApp -ResourceGroupName SourceAzureResourceGroup -Name source-
 Para criar um novo plano do Serviço de Aplicativo, podemos usar comando `New-AzAppServicePlan` como no exemplo a seguir
 
 ```powershell
-New-AzAppServicePlan -Location "South Central US" -ResourceGroupName DestinationAzureResourceGroup -Name NewAppServicePlan -Tier Premium
+New-AzAppServicePlan -Location "North Central US" -ResourceGroupName DestinationAzureResourceGroup -Name DestinationAppServicePlan -Tier Standard
 ```
 
-Usando o comando `New-AzWebApp`, você pode criar o novo aplicativo na região Centro-Norte dos EUA e associá-lo a uma plano de serviço de aplicativo de camada premium existente. Além disso, você pode usar o mesmo grupo de recursos do aplicativo de origem ou definir um novo grupo de recursos, como mostrado no comando a seguir:
+Usando o `New-AzWebApp` comando, você pode criar o novo aplicativo na região do Norte EUA Central e associá-lo a um plano do serviço de aplicativo existente. Além disso, você pode usar o mesmo grupo de recursos do aplicativo de origem ou definir um novo grupo de recursos, como mostrado no comando a seguir:
 
 ```powershell
 $destapp = New-AzWebApp -ResourceGroupName DestinationAzureResourceGroup -Name dest-webapp -Location "North Central US" -AppServicePlan DestinationAppServicePlan -SourceWebApp $srcapp
@@ -60,7 +60,7 @@ $destapp = New-AzWebApp -ResourceGroupName DestinationAzureResourceGroup -Name d
 Para clonar um aplicativo existente na mesma região, você precisa criar um novo grupo de recursos e um novo plano do serviço de aplicativo na mesma região e usar o comando do PowerShell a seguir para clonar o aplicativo:
 
 ```powershell
-$destapp = New-AzWebApp -ResourceGroupName NewAzureResourceGroup -Name dest-webapp -Location "South Central US" -AppServicePlan NewAppServicePlan -SourceWebApp $srcap
+$destapp = New-AzWebApp -ResourceGroupName NewAzureResourceGroup -Name dest-webapp -Location "South Central US" -AppServicePlan NewAppServicePlan -SourceWebApp $srcapp
 ```
 
 ## <a name="cloning-an-existing-app-to-an-app-service-environment"></a>Clonagem de um aplicativo existente como um Ambiente do Serviço de Aplicativo
@@ -130,7 +130,7 @@ Estas são as restrições conhecidas da clonagem de aplicativos:
 * As regras de TiP não são clonadas
 * O conteúdo do banco de dados não é clonado
 * Os endereços IP de saída são alterados em caso de clonagem para uma unidade de escala diferente
-* Não está disponível para aplicativos Linux
+* Não disponível para aplicativos do Linux
 
 ### <a name="references"></a>Referências
 * [Clonagem de Serviço de Aplicativo](app-service-web-app-cloning.md)

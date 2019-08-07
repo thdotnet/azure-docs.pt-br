@@ -5,13 +5,13 @@ author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
 ms.topic: conceptual
-ms.date: 07/01/2019
-ms.openlocfilehash: 6ab5c67129b16cde5ca74e72effdf56ec0a22711
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.date: 08/01/2019
+ms.openlocfilehash: 754e967a1be0b00f7ce7448744ec90690fd9f0c3
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67508894"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736420"
 ---
 # <a name="azure-data-catalog-frequently-asked-questions"></a>Perguntas frequentes sobre o Catálogo de Dados do Azure
 Este artigo apresenta respostas para perguntas frequentes relacionadas ao serviço de Catálogo de Dados do Azure.
@@ -25,10 +25,10 @@ O Catálogo de Dados enfrenta o desafio de descoberta de fonte de dados e os "da
 ## <a name="what-are-its-target-audiences"></a>Quais são seus públicos-alvo?
 O Catálogo de Dados é desenvolvido para usuários técnicos e não técnicos, incluindo:
 
-* Os desenvolvedores de dados e os profissionais de BI e análise: Pessoas que são responsáveis por produzir conteúdo de dados e análises para outras pessoas consumirem.
-* Administradores de dados: Pessoas que têm conhecimento sobre os dados, o que significa e como ele se destina a ser usado.
-* Consumidores de dados: As pessoas que precisam ser capazes de descobrir com facilidade, entender e conectar-se aos dados que precisam para realizar seu trabalho, usando a ferramenta de sua preferência.
-* Central IT: Pessoas que precisam tornar centenas de fontes de dados podem ser descobertos por usuários de negócios e que precisam supervisionar a maneira como os dados estão sendo usados e por quem.
+* Desenvolvedores de dados e profissionais de BI e de análise: Pessoas responsáveis por produzir conteúdo de dados e análises para que outras pessoas consumam.
+* Administradores de dados: Pessoas que têm o conhecimento sobre os dados, o que isso significa e como eles devem ser usados.
+* Consumidores de dados: As pessoas que precisam ser capazes de descobrir, entender e conectar-se facilmente aos dados de que precisam para realizar seu trabalho, usando a ferramenta de sua escolha.
+* TI central: As pessoas que precisam tornar centenas de fontes de dados detectáveis por usuários empresariais e que precisam manter a supervisão sobre como os dados estão sendo usados e por quem.
 
 ## <a name="what-is-its-availability-by-region"></a>Qual é a disponibilidade por região?
 No momento, os serviços de Catálogo de Dados estão disponíveis nos seguintes datacenters:
@@ -36,9 +36,9 @@ No momento, os serviços de Catálogo de Dados estão disponíveis nos seguintes
 * Oeste dos EUA
 * East US
 * Europa Ocidental
-* Norte da Europa
+* Europa Setentrional
 * Leste da Austrália
-* Sudeste Asiático
+* Sudeste da Ásia
 
 ## <a name="what-are-its-limits-on-the-number-of-data-assets"></a>Quais são os limites ao número de ativos de dados?
 A Edição Gratuita do Catálogo de Dados está limitada a 5 mil ativos de dados registrados.

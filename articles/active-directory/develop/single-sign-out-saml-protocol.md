@@ -12,18 +12,18 @@ ms.subservice: develop
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/19/2017
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06fd36935c1f43cc14697748666eccd9e6d31168
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 66c509b1b901889241d6837611a2c373750fdb3a
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65545957"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68834783"
 ---
 # <a name="single-sign-out-saml-protocol"></a>Protocolo SAML de Logout Único
 
@@ -47,7 +47,7 @@ O serviço de nuvem envia uma mensagem `LogoutRequest` ao Azure AD para indicar 
 O elemento `LogoutRequest` enviado ao Azure AD requer os seguintes atributos:
 
 * `ID` - isso identifica a solicitação de saída. O valor de `ID` não deve começar com um número. A prática comum é acrescentar **id** à representação de cadeia de caracteres de um GUID.
-* `Version` - Defina o valor desse elemento como **2.0**. Esse valor é obrigatório.
+* `Version` - Defina o valor desse elemento como **2.0**. Esse valor é necessário.
 * `IssueInstant` - esta é uma cadeia de caracteres `DateTime` com um valor de UTC (Tempo Universal Coordenado) e [formato de ida e volta ("o")](https://msdn.microsoft.com/library/az4se3k1.aspx). O Microsoft Azure Active Directory espera um valor desse tipo, mas não é obrigatório.
 
 ### <a name="issuer"></a>Emissor
@@ -72,7 +72,7 @@ O Azure AD envia uma `LogoutResponse` em resposta a um elemento `LogoutRequest`.
 O Azure AD define os valores `ID`, `Version` e `IssueInstant` no elemento `LogoutResponse`. Ele também define o elemento `InResponseTo` como o valor do atributo `ID` da `LogoutRequest` que emitiu a resposta.
 
 ### <a name="issuer"></a>Emissor
-Azure AD define esse valor como `https://login.microsoftonline.com/<TenantIdGUID>/` onde \<TenantIdGUID > é a ID de locatário do locatário do Azure AD.
+O Azure ad define esse valor `https://login.microsoftonline.com/<TenantIdGUID>/` como \<onde TenantIdGUID > é a ID de locatário do locatário do Azure AD.
 
 Para avaliar o valor do elemento `Issuer` , use o valor do **URI da ID do aplicativo** fornecido durante o registro do aplicativo.
 

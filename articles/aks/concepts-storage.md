@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: mlearned
-ms.openlocfilehash: eb9141d363bdb09b5773f80dfc5a1c4b9b92728f
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: fb15063e41e83b4c9a9f2e01b6ad18c8afed7f5f
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67615804"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68740999"
 ---
 # <a name="storage-options-for-applications-in-azure-kubernetes-service-aks"></a>Opções de armazenamento para aplicativos no Serviço de Kubernetes do Azure (AKS)
 
@@ -34,7 +34,9 @@ Geralmente, os aplicativos precisam ser capazes de armazenar e recuperar dados. 
 Volumes tradicionais para armazenar e recuperar os dados são criados como recursos de Kubernetes apoiados pelo Armazenamento do Microsoft Azure. Manualmente, você pode criar esses volumes de dados a serem atribuído aos pods diretamente ou fazer com que os Kubernetes criem-nos automaticamente. Esses volumes de dados podem usar discos o Azure Disks ou os Arquivos do Azure:
 
 - *Azure Disks* pode ser usado para criar um recurso de Kubernetes *DataDisk*. Os discos podem usar o armazenamento Premium do Azure, apoiados por SSDs de alto desempenho, ou o armazenamento Standard do Azure, apoiado por HDDs regulares. Para a maioria das cargas de trabalho de desenvolvimento e produção, use o Armazenamento Premium. Os discos do Azure são montados como *ReadWriteOnce*, portanto, só estão disponíveis para um único nó. Para volumes de armazenamento que podem ser acessados simultaneamente por vários nós, use Arquivos do Azure.
-- *Os Arquivos do Azure* podem ser usados para montar um compartilhamento SMB 3.0 de apoio de uma conta de Armazenamento do Microsoft Azure com os pods. Os arquivos permitem que você compartilhe dados em vários nós e pods. Atualmente, os arquivos só podem usar o armazenamento do Azure Standard apoiados por HDDs regulares.
+- *Os Arquivos do Azure* podem ser usados para montar um compartilhamento SMB 3.0 de apoio de uma conta de Armazenamento do Microsoft Azure com os pods. Os arquivos permitem que você compartilhe dados em vários nós e pods. Os arquivos podem usar o armazenamento standard do Azure apoiado por HDDs regulares ou pelo armazenamento Premium do Azure, apoiado por SSDs de alto desempenho.
+> [!NOTE] 
+> Os arquivos do Azure dão suporte ao armazenamento Premium em clusters AKS que executam o kubernetes 1,13 ou superior.
 
 No Kubernetes, os volumes podem representar mais do que apenas um disco tradicional onde as informações podem ser armazenadas e recuperadas. Volumes Kubernetes também podem ser usados como uma forma de injetar dados em um pod para uso pelos contêineres. Tipos comuns de volume adicional no Kubernetes incluem:
 
@@ -121,22 +123,22 @@ spec:
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para práticas recomendadas associadas, consulte [práticas recomendadas para armazenamento e backups no AKS][operator-best-practices-storage].
+Para obter as práticas recomendadas associadas, consulte [práticas recomendadas para armazenamento e backups em AKs][operator-best-practices-storage].
 
 Para ver como criar volumes dinâmicos e estáticos que usam Discos do Azure ou Arquivos do Azure, consulte os artigos de instruções a seguir:
 
-- [Criar um volume estático usando os discos do Azure][aks-static-disks]
-- [Criar um volume estático usando arquivos do Azure][aks-static-files]
-- [Criar um volume dinâmico usando os discos do Azure][aks-dynamic-disks]
-- [Criar um volume dinâmico usando arquivos do Azure][aks-dynamic-files]
+- [Criar um volume estático usando discos do Azure][aks-static-disks]
+- [Criar um volume estático usando os arquivos do Azure][aks-static-files]
+- [Criar um volume dinâmico usando discos do Azure][aks-dynamic-disks]
+- [Criar um volume dinâmico usando os arquivos do Azure][aks-dynamic-files]
 
 Para obter informações adicionais sobre os principais conceitos do Kubernetes e do AKS, consulte os seguintes artigos:
 
-- [Kubernetes / clusters AKS e cargas de trabalho][aks-concepts-clusters-workloads]
-- [Kubernetes / identidade do AKS][aks-concepts-identity]
-- [Kubernetes / segurança AKS][aks-concepts-security]
-- [Kubernetes / redes virtuais do AKS][aks-concepts-network]
-- [Kubernetes / escala de AKS][aks-concepts-scale]
+- [Clusters e cargas de trabalho do kubernetes/AKS][aks-concepts-clusters-workloads]
+- [Identidade kubernetes/AKS][aks-concepts-identity]
+- [Segurança do kubernetes/AKS][aks-concepts-security]
+- [Redes virtuais kubernetes/AKS][aks-concepts-network]
+- [Escala de kubernetes/AKS][aks-concepts-scale]
 
 <!-- EXTERNAL LINKS -->
 

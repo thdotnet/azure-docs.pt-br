@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e58762bd5bf4342804767a200c94b432dd152a0
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: e5dc1c3fb7ae12c36a8c1fe383290435c03ee0c4
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68562224"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68741379"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>Como: Planejar sua implementação de ingresso no Azure AD
 
@@ -68,7 +68,11 @@ Esses cenários não exigem que você configure um servidor de federação para 
 Um ambiente federado deve ter um provedor de identidade que dá suporte aos protocolos WS-Trust e WS-Fed:
 
 - **WS-Fed:** Esse protocolo é necessário para ingressar um dispositivo no Azure AD.
-- **WS-Trust:** Esse protocolo é necessário para entrar em um dispositivo ingressado no Azure AD. 
+- **WS-Trust:** Esse protocolo é necessário para entrar em um dispositivo ingressado no Azure AD.
+Quando você estiver usando AD FS, será necessário habilitar os seguintes pontos de extremidade WS-Trust:`/adfs/services/trust/2005/usernamemixed`
+ `/adfs/services/trust/13/usernamemixed`
+ `/adfs/services/trust/2005/certificatemixed`
+ `/adfs/services/trust/13/certificatemixed`
 
 Se seu provedor de identidade não oferece suporte a esses protocolos, o ingresso no Azure Active Directory não trabalha nativamente. Começando com o Windows 10 1809, seus usuários podem entrar um dispositivo ingressado do Azure Active Directory com um provedor de identidade baseado em SAML [web entrar no Windows 10](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1809#web-sign-in-to-windows-10). Atualmente, a entrada na Web é um recurso de visualização e não é recomendada para implantações de produção.
 

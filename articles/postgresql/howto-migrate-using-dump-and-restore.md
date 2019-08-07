@@ -1,17 +1,17 @@
 ---
-title: Como despejar e restaurar no banco de dados do Azure para PostgreSQL - servidor único
-description: Descreve como extrair um banco de dados PostgreSQL para um arquivo de despejo e restaurar de um arquivo criado por pg_dump no banco de dados do Azure para PostgreSQL – servidor único.
+title: Como despejar e restaurar no banco de dados do Azure para PostgreSQL-servidor único
+description: Descreve como extrair um banco de dados PostgreSQL em um arquivo de despejo e restaurá-lo a partir de um arquivo criado pelo pg_dump no banco de dados do Azure para PostgreSQL-servidor único.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: aa9485ec8fcabdc0276e0598bd3e19f04d70dfa1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 43e6fe301cf28b7a342ba2e802c9fce19bfeec4d
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65066974"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68815861"
 ---
 # <a name="migrate-your-postgresql-database-using-dump-and-restore"></a>Migrar seu banco de dados PostgreSQL usando despejar e restaurar
 Use [pg_dump](https://www.postgresql.org/docs/9.3/static/app-pgdump.html) para extrair um banco de dados PostgreSQL para um arquivo de despejo, e [pg_restore](https://www.postgresql.org/docs/9.3/static/app-pgrestore.html) para restaurar o banco de dados PostgreSQL de um arquivo criado por pg_dump.
@@ -23,7 +23,7 @@ Para seguir este guia de instruções, você precisa:
 
 Siga as etapas abaixo para despejar e restaurar seu banco de dados PostgreSQL:
 
-## <a name="create-a-dump-file-using-pgdump-that-contains-the-data-to-be-loaded"></a>Criar um arquivo de despejo usando pg_dump que contém os dados a serem carregados
+## <a name="create-a-dump-file-using-pg_dump-that-contains-the-data-to-be-loaded"></a>Criar um arquivo de despejo usando pg_dump que contém os dados a serem carregados
 Para fazer backup de um banco de dados PostgreSQL que existe localmente ou em uma VM, execute o seguinte comando:
 ```bash
 pg_dump -Fc -v --host=<host> --username=<name> --dbname=<database name> > <database>.dump
@@ -34,10 +34,10 @@ pg_dump -Fc -v --host=localhost --username=masterlogin --dbname=testdb > testdb.
 ```
 
 
-## <a name="restore-the-data-into-the-target-azure-database-for-postrgesql-using-pgrestore"></a>Restaurar os dados no banco de dados de destino do Azure para PostgreSQL usando pg_restore
+## <a name="restore-the-data-into-the-target-azure-database-for-postrgesql-using-pg_restore"></a>Restaurar os dados no banco de dados de destino do Azure para PostgreSQL usando pg_restore
 Depois de criar o banco de dados de destino, você poderá usar o comando pg_restore e o parâmetro -d, --dbname para restaurar os dados no banco de dados de destino do arquivo de despejo.
 ```bash
-pg_restore -v --no-owner –-host=<server name> --port=<port> --username=<user@servername> --dbname=<target database name> <database>.dump
+pg_restore -v --no-owner --host=<server name> --port=<port> --username=<user@servername> --dbname=<target database name> <database>.dump
 ```
 A inclusão do parâmetro --no-owner faz com que todos os objetos criados durante a restauração sejam de propriedade do usuário especificado com --username. Para obter mais informações, consulte a documentação oficial do PostgreSQL em [pg_restore](https://www.postgresql.org/docs/9.6/static/app-pgrestore.html).
 

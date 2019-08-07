@@ -1,35 +1,35 @@
 ---
-title: Solução do VMware CloudSimple - endereço IP público do Azure
-description: Saiba mais sobre endereços IP públicos e seus benefícios na solução do VMware CloudSimple
+title: Solução VMware por CloudSimple – endereço IP público do Azure
+description: Saiba mais sobre endereços IP públicos e seus benefícios na solução VMware por CloudSimple
 author: sharaths-cs
 ms.author: dikamath
 ms.date: 04/10/2019
 ms.topic: article
-ms.service: vmware
+ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: f57b7397f4a2d288cd2b8b55cf23b2d635aa5f8c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 29d2bdb75a7f4409e6b3ffee2608cfe7adde6b1f
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65209559"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68812529"
 ---
-# <a name="cloudsimple-public-ip-address-overview"></a>Visão geral CloudSimple público IP endereço
+# <a name="cloudsimple-public-ip-address-overview"></a>Visão geral do endereço IP público do CloudSimple
 
-Um endereço IP público permite que os recursos da internet para se comunicar entrada aos recursos de nuvem privada em um endereço IP privado. O endereço IP privado é uma máquina virtual ou um balanceador de carga de software. É o endereço IP privado em sua nuvem privada vCenter. O endereço IP público permite que você exponha serviços em execução em sua nuvem privada à internet.
+Um endereço IP público permite que os recursos da Internet comuniquem-se a recursos de nuvem privada em um endereço IP privado. O endereço IP privado é uma máquina virtual ou um balanceador de carga de software. O endereço IP privado está em seu vCenter de nuvem privada. O endereço IP público permite que você exponha serviços em execução na sua nuvem privada para a Internet.
 
-O endereço IP público dedicado para o endereço IP privado até que você não atribuí-lo. Um endereço IP público só pode ser atribuído a um endereço IP privado.
+O endereço IP público é dedicado ao endereço IP privado até que você o cancele. Um endereço IP público só pode ser atribuído a um endereço IP privado.
 
-Um recurso associado com um endereço IP público sempre usa o endereço IP público para acessar a internet. Por padrão, apenas acesso de internet de saída é permitido em um endereço IP público.  Tráfego de entrada no endereço IP público é negado.  Para permitir o tráfego de entrada, crie uma regra de firewall para o endereço IP público para a porta específica.
+Um recurso associado a um endereço IP público sempre usa o endereço IP público para acesso à Internet. Por padrão, somente o acesso à Internet de saída é permitido em um endereço IP público.  O tráfego de entrada no endereço IP público foi negado.  Para permitir o tráfego de entrada, crie uma regra de firewall para o endereço IP público para a porta específica.
 
 ## <a name="benefits"></a>Benefícios
 
-Usando um endereço IP público para se comunicar fornece:
+O uso de um endereço IP público para comunicar a entrada fornece:
 
-* Negação de prevenção de ataques de DDoS (serviço) distribuído. Essa proteção é habilitada automaticamente para o endereço IP público.
-* Mitigação tráfego Always on de monitoramento e em tempo real de ataques comuns de nível de rede. Essas defesas são as mesmas defesas usadas pelo Microsoft online services.
-* A escala inteira da rede global do Azure. A rede pode ser usada para distribuir e reduzir o tráfego de ataques entre regiões.  
+* Prevenção de ataque de DDoS (negação de serviço distribuído). Essa proteção é habilitada automaticamente para o endereço IP público.
+* Monitoramento de tráfego sempre ativa e mitigação em tempo real de ataques comuns em nível de rede. Essas defesas são as mesmas usadas pelo Microsoft serviços online.
+* Toda a escala da rede global do Azure. A rede pode ser usada para distribuir e atenuar o tráfego de ataque entre regiões.  
 
 ## <a name="next-steps"></a>Próximas etapas
 

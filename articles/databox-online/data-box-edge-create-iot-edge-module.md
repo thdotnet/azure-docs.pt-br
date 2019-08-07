@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 03/19/2019
+ms.date: 08/02/2019
 ms.author: alkohli
-ms.openlocfilehash: c2803ba598895834bb197f4a06ff0635354fcaca
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 734ad263356ab9f91c7cb92ab174a14e0c5dd867
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64680889"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68775184"
 ---
-# <a name="develop-a-c-iot-edge-module-to-move-files-on-data-box-edge"></a>Desenvolver um C# módulo do IoT Edge para mover arquivos de dados de caixa de borda
+# <a name="develop-a-c-iot-edge-module-to-move-files-on-data-box-edge"></a>Desenvolver um C# módulo IOT Edge para mover arquivos em data Box Edge
 
 Este artigo instrui sobre a criação de um módulo do IoT Edge para implantação com seu dispositivo Data Box Edge. O Azure Data Box Edge é uma solução de armazenamento que permite processar dados e enviá-los pela rede para o Azure.
 
@@ -48,7 +48,7 @@ Antes de começar, verifique se você tem:
 
     - O dispositivo também tem um recurso do Hub IoT associado.
     - O dispositivo tem a função Computação de borda configurada.
-    Para obter mais informações, acesse [configurar computação](data-box-edge-deploy-configure-compute.md#configure-compute) para a borda da caixa de dados.
+    Para obter mais informações, vá para [Configurar a computação](data-box-edge-deploy-configure-compute.md#configure-compute) para seu data Box Edge.
 
 - Os seguintes recursos de desenvolvimento:
 
@@ -73,7 +73,7 @@ Um registro de contêiner do Azure é um registro particular do Docker no Azure 
    5. Alterne **Usuário administrador** para **Ativar**.
    6. Defina o SKU como **Básico**.
 
-      ![Criar um registro de contêiner](./media/data-box-edge-create-iot-edge-module/create-container-registry-1.png)
+      ![Crie registro de contêiner](./media/data-box-edge-create-iot-edge-module/create-container-registry-1.png)
  
 4. Selecione **Criar**.
 5. Depois que o registro de contêiner for criado, navegue até ele e selecione **Chaves de acesso**.
@@ -123,7 +123,7 @@ Crie um modelo de solução de C# que possa ser personalizado com seu próprio c
 
 ### <a name="update-the-module-with-custom-code"></a>Atualizar o módulo com código personalizado
 
-1. No VS Code explorer, abra **módulos > FileCopyModule > Program.cs**.
+1. No VS Code Explorer, abra **modules > FileCopyModule > Program.cs**.
 2. Na parte superior do **namespace FileCopyModule**, adicione as seguinte instruções using aos tipos usados posteriormente. **Microsoft.Azure.Devices.Client.Transport.Mqtt** é um protocolo para envio de mensagens para o Hub IoT Edge.
 
     ```
@@ -140,11 +140,11 @@ Crie um modelo de solução de C# que possa ser personalizado com seu próprio c
             private const string OutputFolderPath = "/home/output";
     ```
 
-4. Adicione a classe **MessageBody** à classe Program. Essas classes definem o esquema esperado para o corpo de mensagens de entrada.
+4. Adicione a classe fileevent para definir o corpo da mensagem.
 
     ```
     /// <summary>
-    /// The MessageBody class defines the expected schema for the body of incoming messages. 
+    /// The FileEvent class defines the body of incoming messages. 
     /// </summary>
     private class FileEvent
     {
@@ -241,8 +241,8 @@ Crie um modelo de solução de C# que possa ser personalizado com seu próprio c
 
 Na seção anterior, você criou uma solução do IoT Edge e adicionou o código ao FileCopyModule para copiar arquivos do compartilhamento local para o compartilhamento na nuvem. Agora você precisa compilar a solução como uma imagem de contêiner e enviá-la por push para seu registro de contêiner.
 
-1. No VSCode, vá para o Terminal > Novo Terminal para abrir um novo terminal integrado do Visual Studio Code.
-2. Entrar no Docker, inserindo o seguinte comando no terminal integrado.
+1. Em VSCode, vá para Terminal > novo terminal para abrir um novo terminal Visual Studio Code integrado.
+2. Entre no Docker digitando o seguinte comando no terminal integrado.
 
     `docker login <ACR login server> -u <ACR username>`
 
@@ -273,4 +273,4 @@ Na seção anterior, você criou uma solução do IoT Edge e adicionou o código
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para implantar e executar esse módulo na borda da caixa de dados, consulte as etapas em [adicionar um módulo](data-box-edge-deploy-configure-compute.md#add-a-module).
+Para implantar e executar esse módulo no Data Box Edge, consulte as etapas em [Adicionar um módulo](data-box-edge-deploy-configure-compute.md#add-a-module).

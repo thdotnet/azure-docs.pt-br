@@ -1,19 +1,17 @@
 ---
 title: Como anotar fontes de dados no Catálogo de Dados do Azure
 description: Artigo de instruções que destaca como anotar ativos de dados no Catálogo de Dados do Azure, incluindo nomes amigáveis, marcas, descrições e especialistas.
-services: data-catalog
 author: JasonWHowell
 ms.author: jasonh
-ms.assetid: 5a7e6bb2-863c-4eca-b614-1c814920d9ed
 ms.service: data-catalog
 ms.topic: conceptual
-ms.date: 01/18/2018
-ms.openlocfilehash: 18dfd9eb66c1dc71ecb14bb748d9cdd6afeb00a7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/01/2019
+ms.openlocfilehash: 708c62971a20a7071accf7591a4e2914f7dbd9f3
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65953178"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736348"
 ---
 # <a name="how-to-annotate-data-sources"></a>Como anotar fontes de dados
 ## <a name="introduction"></a>Introdução
@@ -27,9 +25,9 @@ O Catálogo de Dados reconhece que diferentes usuários têm diferentes perspect
 * O administrador de banco de dados conhece a agenda de backup de cada banco de dados e as janelas de processamento de ETL permitidas.
 * O proprietário do sistema conhece o processo para que usuários solicitem acesso à fonte de dados.
 * O administrador de dados sabe como os ativos e os atributos na fonte de dados são mapeados para o modelo de dados da empresa.
-* O analista sabe como os dados são usados no contexto dos processos de negócios, que suportam a eles.
+* O analista sabe como os dados são usados no contexto dos processos de negócios aos quais eles dão suporte.
 
-Cada uma dessas perspectivas é valiosa, e o Catálogo de Dados usa uma abordagem de crowdsourcing para metadados que permitem que cada um seja capturado e usado para fornecer uma visão completa das fontes de dados registradas. Usando o portal do catálogo de dados, cada usuário pode adicionar e editar suas próprias anotações, sendo capaz de exibir anotações fornecidas por outros usuários.
+Cada uma dessas perspectivas é valiosa, e o Catálogo de Dados usa uma abordagem de crowdsourcing para metadados que permitem que cada um seja capturado e usado para fornecer uma visão completa das fontes de dados registradas. Usando o portal do catálogo de dados, cada usuário pode adicionar e editar suas próprias anotações, enquanto pode exibir anotações fornecidas por outros usuários.
 
 ## <a name="different-types-of-annotations"></a>Diferentes tipos de anotações
 O Catálogo de Dados dá suporte aos seguintes tipos de anotações:
@@ -37,7 +35,7 @@ O Catálogo de Dados dá suporte aos seguintes tipos de anotações:
 | Anotação | Observações |
 | --- | --- |
 | Nome amigável |Os nomes amigáveis podem ser fornecidos no nível do ativo de dado, para facilitar a compreensão dos ativos de dados. Os nomes amigáveis serão mais úteis quando o nome do objeto subjacente for confuso, abreviado ou não significativa para os usuários. |
-| DESCRIÇÃO |As descrições podem ser fornecidas nos níveis do atributo e do ativo de dados/coluna. As descrições são anotações de texto curto de forma livre que descrevem a perspectiva do usuário sobre o ativo de dados ou seu uso. |
+| Descrição |As descrições podem ser fornecidas nos níveis do atributo e do ativo de dados/coluna. As descrições são anotações de texto curto de forma livre que descrevem a perspectiva do usuário sobre o ativo de dados ou seu uso. |
 | Marcas (marcas de usuário) |As marcas podem ser fornecidas nos níveis do atributo e do ativo de dados/coluna As marcas de usuário são rótulos definidos pelo usuário que podem ser usados para categorizar os ativos de dados ou os atributos. |
 | Marcas (marcas de glossário) |As marcas podem ser fornecidas nos níveis do atributo e do ativo de dados/coluna Marcas de glossário são termos de glossário definidos centralmente que podem ser usados para categorizar os ativos de dados ou atributos usando uma taxonomia comum de negócios. Para saber mais, consulte [Como configurar o Glossário de Negócios para a Marcação Governada](data-catalog-how-to-business-glossary.md) |
 | Especialistas |Os especialistas podem ser fornecidos no nível do ativo de dados. Os especialistas identificam usuários ou grupos com perspectivas de especialista sobre os dados e podem servir como pontos de contato para usuários que descobrirem as fontes de dados registradas e que tenham dúvidas não respondidas pelas anotações existentes. |

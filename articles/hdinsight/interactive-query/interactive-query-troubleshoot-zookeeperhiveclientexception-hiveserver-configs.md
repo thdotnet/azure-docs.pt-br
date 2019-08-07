@@ -1,39 +1,43 @@
 ---
-title: Não é possível adicionar nós ao cluster HDInsight do Azure
-description: Não é possível adicionar nós ao cluster HDInsight do Azure
+title: Apache Hive intérprete Zeppelin fornece um erro Zookeeper no Azure HDInsight
+description: O intérprete JDBC do hive do Zeppelin está apontando para a URL errada
 ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
-ms.date: 07/31/2019
-ms.openlocfilehash: 6c2e2c7395fcc45fe74c50beb3624eabb1d395c9
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.date: 07/30/2019
+ms.openlocfilehash: f623d2516a2cf069b6347ebe8366b9b437228a87
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68828015"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68781342"
 ---
-# <a name="scenario-unable-to-add-nodes-to-azure-hdinsight-cluster"></a>Cenário: Não é possível adicionar nós ao cluster HDInsight do Azure
+# <a name="scenario-apache-hive-zeppelin-interpreter-gives-a-zookeeper-error-in-azure-hdinsight"></a>Cenário: Apache Hive intérprete Zeppelin fornece um erro Zookeeper no Azure HDInsight
 
-Este artigo descreve as etapas de solução de problemas e as possíveis resoluções para problemas ao interagir com clusters do Azure HDInsight.
+Este artigo descreve as etapas de solução de problemas e as possíveis resoluções para problemas ao usar componentes de consulta interativa em clusters do Azure HDInsight.
 
 ## <a name="issue"></a>Problema
 
-Não é possível adicionar nós ao cluster HDInsight do Azure.
+Em um cluster Apache Hive LLAP, o intérprete Zeppelin fornece a seguinte mensagem de erro ao tentar executar uma consulta:
+
+```
+java.sql.SQLException: org.apache.hive.jdbc.ZooKeeperHiveClientException: Unable to read HiveServer2 configs from ZooKeeper
+```
 
 ## <a name="cause"></a>Causa
 
-Os motivos podem variar.
+O intérprete JDBC do hive do Zeppelin está apontando para a URL errada.
 
 ## <a name="resolution"></a>Resolução
 
-Usando o recurso de [tamanho do cluster](../hdinsight-scaling-best-practices.md) , calcule o número de núcleos adicionais necessários para o cluster. Isso se baseia no número total de núcleos em novos nós de trabalho. Em seguida, tente uma ou mais das seguintes etapas:
+1. Navegue até o resumo do componente do hive e copie o "URL JDBC do hive" para a área de transferência.
 
-* Verifique se há algum núcleo disponível no local do cluster.
+1. Navegue até`https://clustername.azurehdinsight.net/zeppelin/#/interpreter`
 
-* Examine o número de núcleos disponíveis em outros locais. Considere recriar seu cluster em um local diferente com núcleos suficientes disponíveis.
+1. Edite as configurações JDBC: Atualize o valor Hive. URL para a URL JDBC do hive copiada na etapa 1
 
-* Se você quiser aumentar a cota de núcleo para um local específico, envie um tíquete de suporte para um aumento de cota de núcleo do HDInsight.
+1. Salve e repita a consulta
 
 ## <a name="next-steps"></a>Próximas etapas
 

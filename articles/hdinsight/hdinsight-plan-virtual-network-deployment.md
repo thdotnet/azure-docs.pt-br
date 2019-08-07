@@ -7,12 +7,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 07/23/2019
-ms.openlocfilehash: 9906fe5de9c24f1b1a8c3f713fa772e56ed4e13f
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.openlocfilehash: 135855ee33f783e85b398c7f9716c2c897633de9
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68441954"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779533"
 ---
 # <a name="plan-a-virtual-network-for-azure-hdinsight"></a>Planejar uma rede virtual para o Azure HDInsight
 
@@ -25,7 +25,7 @@ O uso de uma Rede Virtual do Azure permite os seguintes cenários:
 * Acessando diretamente os serviços do [Apache Hadoop](https://hadoop.apache.org/) que não estão disponíveis publicamente pela Internet. Por exemplo,APIs [Apache Kafka](https://kafka.apache.org/) ou a API Java do [Apache HBase](https://hbase.apache.org/).
 
 > [!IMPORTANT]
-> Criar um cluster HDInsight em uma VNET criará vários recursos de rede, como NICs e balanceadores de carga. Não **exclua** esses recursos de rede, pois eles são necessários para que o cluster funcione corretamente com a VNET.
+> Criar um cluster HDInsight em uma VNET criará vários recursos de rede, como NICs e balanceadores de carga. Não exclua esses recursos de rede, pois eles são necessários para que o cluster funcione corretamente com a VNET.
 >
 > Após 28 de fevereiro de 2019, os recursos de rede (como NICs, LBs, etc.) para novos clusters HDInsight criados em uma VNET serão provisionados no mesmo grupo de recursos de cluster HDInsight. Anteriormente, esses recursos eram provisionados no grupo de recursos de VNET. Não há nenhuma alteração nos clusters em execução atuais e nos clusters criados sem uma VNET.
 
@@ -117,7 +117,7 @@ O Azure fornece a resolução de nomes para os serviços do Azure instalados em 
 
 * Qualquer recurso que está disponível na Internet. Por exemplo, microsoft.com, windowsupdate.com.
 
-* Qualquer recurso que está na mesma Rede Virtual do Azure, usando o __nome DNS interno__ do recurso. Por exemplo, ao usar a resolução de nomes padrão, estes são nomes DNS internos de exemplo atribuídos aos nós de trabalho do HDInsight:
+* Qualquer recurso que está na mesma Rede Virtual do Azure, usando o __nome DNS interno__ do recurso. Por exemplo, ao usar a resolução de nome padrão, os seguintes são exemplos de nomes DNS internos atribuídos aos nós de trabalho do HDInsight:
 
   * wn0-hdinsi.0owcbllr5hze3hxdja3mqlrhhe.ex.internal.cloudapp.net
   * wn2-hdinsi.0owcbllr5hze3hxdja3mqlrhhe.ex.internal.cloudapp.net
@@ -234,7 +234,7 @@ Para obter mais informações sobre como controlar o tráfego de saída de clust
 
 #### <a name="forced-tunneling-to-on-premise"></a>Túnel forçado para on-premise
 
-O túnel forçado é uma configuração de roteamento definido pelo usuário em que todo o tráfego de uma sub-rede é forçado para uma rede ou localização específica, como a rede local. __O HDInsight__ não dá suporte ao túnel forçado de tráfego para redes locais. 
+O túnel forçado é uma configuração de roteamento definido pelo usuário em que todo o tráfego de uma sub-rede é forçado para uma rede ou localização específica, como a rede local. O HDInsight não dá suporte ao túnel forçado de tráfego para redes locais. 
 
 ## <a id="hdinsight-ip"></a> Endereços IP obrigatórios
 

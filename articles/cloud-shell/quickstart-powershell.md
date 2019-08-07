@@ -1,6 +1,6 @@
 ---
-title: Início Rápido do PowerShell no Azure Cloud Shell | Microsoft Docs
-description: Início rápido do PowerShell no Cloud Shell
+title: Guia de início rápido do Azure Cloud Shell | Microsoft Docs
+description: Início rápido para Azure Cloud Shell
 services: Azure
 documentationcenter: ''
 author: maertendmsft
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/18/2018
 ms.author: damaerte
-ms.openlocfilehash: 1fc9883e0ea35c384c3bfc83e76b8eded48cbcba
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 36683d04b6f087f1d326458a07b043a0932191f1
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60199494"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68741997"
 ---
 # <a name="quickstart-for-powershell-in-azure-cloud-shell"></a>Início rápido do PowerShell no Azure Cloud Shell
 
@@ -147,7 +147,7 @@ Com a cadeia de conexão, você pode usar o comando a seguir para montar o compa
 net use <DesiredDriveLetter>: \\<MyStorageAccountName>.file.core.windows.net\<MyFileShareName> <AccountKey> /user:Azure\<MyStorageAccountName>
 ```
 
-Para obter detalhes, consulte [Como montar um compartilhamento de arquivos do Azure e acessá-lo no Windows][azmount].
+Para obter detalhes, consulte [montar um compartilhamento de arquivos do Azure e acessar o compartilhamento no Windows][azmount].
 
 Você também pode navegar pelos diretórios no compartilhamento de arquivos do Azure da seguinte maneira:
 
@@ -267,7 +267,7 @@ Para autenticar servidores ou VMs usando o SSH, gere o par de chaves privadas/p�
 
 ### <a name="using-ssh"></a>Usando o SSH
 
-Siga as instruções [aqui](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-powershell) para criar uma nova configuração de VM usando cmdlets do PowerShell do Azure.
+Siga as instruções [aqui](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-powershell) para criar uma nova configuração de VM usando cmdlets Azure PowerShell.
 Antes de chamar em `New-AzVM` para iniciar a implantação, adicione chave pública SSH à configuração da VM.
 A VM recém-criada conterá a chave pública no local `~\.ssh\authorized_keys`, permitindo assim a sessão SSH sem credenciais para a VM.
 
@@ -296,7 +296,7 @@ Como alternativa, você pode sempre usar `Get-Command *az* -Module Az.*` para de
 
 ## <a name="install-custom-modules"></a>Instalar módulos personalizados
 
-Você pode executar `Install-Module` para instalar módulos da [Galeria do PowerShell][gallery].
+Você pode executar `Install-Module` o para instalar os módulos do [Galeria do PowerShell][gallery].
 
 ## <a name="get-help"></a>Get-Help
 
@@ -334,11 +334,11 @@ Na próxima vez que utilizar o PowerShell no Cloud Shell, o arquivo `helloworld.
 Você pode personalizar seu ambiente do PowerShell criando perfis do PowerShell - `profile.ps1` (ou `Microsoft.PowerShell_profile.ps1`).
 Salve-o em `$profile.CurrentUserAllHosts` (ou `$profile.CurrentUserAllHosts`), de modo que ele pode ser carregado em cada PowerShell na sessão do Cloud Shell.
 
-Para saber como criar um perfil, consulte [Sobre perfis][profile].
+Para saber como criar um perfil, consulte [about][profile]Profiles.
 
 ## <a name="use-git"></a>Usar o Git
 
-Para clonar um repositório Git no Cloud Shell, você precisa criar um [token de acesso pessoal][githubtoken] e usá-lo como nome de usuário. Quando tiver seu token, faça um clone do repositório da seguinte maneira:
+Para clonar um repositório git no Cloud Shell, você precisa criar um [token de acesso pessoal][githubtoken] e usá-lo como o nome de usuário. Quando tiver seu token, faça um clone do repositório da seguinte maneira:
 
 ```azurepowershell-interactive
   git clone https://<your-access-token>@github.com/username/repo.git

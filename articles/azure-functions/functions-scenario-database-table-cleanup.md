@@ -11,16 +11,16 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 10/28/2018
 ms.author: glenga
-ms.openlocfilehash: 19a5fe4c087d477ff15d2237a36d1c4ecaa0e070
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f81337cea3ece822ea05bcc94f4e05d6e177bf93
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65908137"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68735594"
 ---
 # <a name="use-azure-functions-to-connect-to-an-azure-sql-database"></a>Usar o Azure Functions para conectar a um banco de dados SQL do Azure
 
-Este artigo mostra como usar o Azure Functions para criar um trabalho agendado que se conecta a uma instância do Banco de Dados SQL do Azure. O código de função limpa as linhas em uma tabela no banco de dados. O novo C# função é criada com base em um modelo de gatilho de temporizador predefinido no Visual Studio de 2019. Para dar suporte a esse cenário, você também precisa definir uma cadeia de conexão de banco de dados como uma configuração de aplicativo no aplicativo de funções. Esse cenário usa uma operação em massa no banco de dados. 
+Este artigo mostra como usar o Azure Functions para criar um trabalho agendado que se conecta a uma instância do Banco de Dados SQL do Azure. O código de função limpa as linhas em uma tabela no banco de dados. A nova C# função é criada com base em um modelo de gatilho de temporizador predefinido no Visual Studio 2019. Para dar suporte a esse cenário, você também precisa definir uma cadeia de conexão de banco de dados como uma configuração de aplicativo no aplicativo de funções. Esse cenário usa uma operação em massa no banco de dados. 
 
 Se esta for sua primeira experiência trabalhando com funções C#, você deverá ler a [Referência do desenvolvedor de C# do Azure Functions](functions-dotnet-class-library.md).
 
@@ -64,7 +64,7 @@ Você precisa ter publicado o aplicativo anteriormente no Azure. Se você ainda 
 
 Você precisa adicionar o pacote do NuGet que contém a biblioteca do SqlClient. Essa biblioteca de acesso a dados é necessária para se conectar a um banco de dados SQL.
 
-1. Abra seu projeto de aplicativo de função local no Visual Studio de 2019.
+1. Abra seu projeto de aplicativo de função local no Visual Studio 2019.
 
 1. No Gerenciador de Soluções, clique com o botão direito do mouse no projeto do aplicativo de funções e escolha **Gerenciar Pacotes NuGet**.
 
@@ -127,7 +127,7 @@ Agora, você pode adicionar o código de função C# que conecta ao Banco de Dad
 
     Na primeira execução, você deve atualizar 32 linhas de dados. As execuções seguintes não atualizam nenhuma linha de dados, a menos que você faça alterações aos dados da tabela SalesOrderHeader para que mais linhas sejam selecionadas pela instrução `UPDATE`.
 
-Se você planeja [publicar essa função](functions-develop-vs.md#publish-to-azure), lembre-se de alterar o atributo `TimerTrigger` para uma [agenda de Cron](functions-bindings-timer.md#cron-expressions) mais razoável do que a cada 15 segundos.
+Se você planeja [publicar essa função](functions-develop-vs.md#publish-to-azure), lembre-se de alterar o atributo `TimerTrigger` para uma [agenda de Cron](functions-bindings-timer.md#ncrontab-expressions) mais razoável do que a cada 15 segundos.
 
 ## <a name="next-steps"></a>Próximas etapas
 

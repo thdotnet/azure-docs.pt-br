@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 06/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: c28cf4326593897dcbc90902737fc4846356078d
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: 4f2a34e63a870814c8d2a3ffe24c60083c9d7bb2
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67653392"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68781099"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Perguntas frequentes do Azure Disk Encryption para VMs de IaaS
 
@@ -34,28 +34,28 @@ Não há nenhum encargo para criptografar discos de VM com o Azure Disk Encrypti
 
 Para começar, leia as [visão geral do Azure Disk Encryption](azure-security-disk-encryption-overview.md).
 
-## <a name="what-vm-sizes-and-operating-systems-support-azure-disk-encryption"></a>Quais sistemas operacionais e tamanhos de VM dá suporte a Azure Disk Encryption?
+## <a name="what-vm-sizes-and-operating-systems-support-azure-disk-encryption"></a>Quais tamanhos de VM e sistemas operacionais dão suporte Azure Disk Encryption?
 
-O [pré-requisitos do Azure Disk Encryption](azure-security-disk-encryption-prerequisites.md) listas do artigo a [tamanhos de VM](azure-security-disk-encryption-prerequisites.md#supported-vm-sizes) e [sistemas operacionais VM](azure-security-disk-encryption-prerequisites.md#supported-operating-systems) que dão suporte a Azure Disk Encryption.
+O artigo [Azure Disk Encryption pré-requisitos](azure-security-disk-encryption-prerequisites.md) lista os [tamanhos de VM](azure-security-disk-encryption-prerequisites.md#supported-vm-sizes) e os [sistemas operacionais de vm](azure-security-disk-encryption-prerequisites.md#supported-operating-systems) que dão suporte a Azure Disk Encryption.
 
 ## <a name="can-i-encrypt-both-boot-and-data-volumes-with-azure-disk-encryption"></a>Posso criptografar volumes de dados e de inicialização com o Azure Disk Encryption?
 
 Sim, você pode criptografar volumes de inicialização e de dados para VMs IaaS Windows e Linux. Em VMs Windows, não é possível criptografar os dados sem primeiro criptografar o volume do SO. Para VMs Linux, é possível criptografar o volume de dados sem precisar criptografar o volume do sistema operacional primeiro. Depois de criptografar o volume do SO para Linux, não há suporte para desabilitar a criptografia em um volume do SO para VMs do Linux IaaS. Para VMs do Linux em um conjunto de dimensionamento, somente o volume de dados pode ser criptografado.
 
-## <a name="can-i-encrypt-an-unmounted-volume-with-azure-disk-encryption"></a>Para criptografar um volume desmontado com o Azure Disk Encryption?
+## <a name="can-i-encrypt-an-unmounted-volume-with-azure-disk-encryption"></a>Posso criptografar um volume não montado com Azure Disk Encryption?
 
-Não, o Azure Disk Encryption criptografa apenas volumes montados.
+Não, Azure Disk Encryption apenas criptografa volumes montados.
 
-## <a name="how-do-i-rotate-secrets-or-encryption-keys"></a>Como girar segredos ou chaves de criptografia?
+## <a name="how-do-i-rotate-secrets-or-encryption-keys"></a>Como fazer girar segredos ou chaves de criptografia?
 
-Para girar os segredos, basta chame o mesmo comando que você usou originalmente para habilitar a criptografia de disco, especificando um cofre de chave diferente. Para girar a chave de criptografia de chave, chame o mesmo comando usado originalmente para habilitar a criptografia de disco, especificando a nova chave de criptografia. 
+Para girar os segredos, basta chamar o mesmo comando usado originalmente para habilitar a criptografia de disco, especificando um Key Vault diferente. Para girar a chave de criptografia de chave, chame o mesmo comando usado originalmente para habilitar a criptografia de disco, especificando a nova criptografia de chave. 
 
 >[!WARNING]
-> - Se você já tiver usado [Azure Disk Encryption com o aplicativo do Azure AD](azure-security-disk-encryption-prerequisites-aad.md) especificando as credenciais do AD do Azure para criptografar essa VM, você precisará continuar a usar essa opção para criptografar sua VM. Não é possível usar o [Azure Disk Encryption](azure-security-disk-encryption-prerequisites.md) nessa VM criptografada pois esse cenário não tem suporte, o que significa que ainda não há suporte para alternar o aplicativo AAD por essa VM criptografada.
+> - Se você tiver usado anteriormente [Azure Disk Encryption com o aplicativo do Azure ad](azure-security-disk-encryption-prerequisites-aad.md) especificando as credenciais do Azure ad para criptografar essa VM, será necessário continuar usando essa opção para criptografar sua VM. Não é possível usar o [Azure Disk Encryption](azure-security-disk-encryption-prerequisites.md) nessa VM criptografada pois esse cenário não tem suporte, o que significa que ainda não há suporte para alternar o aplicativo AAD por essa VM criptografada.
 
-## <a name="how-do-i-add-or-remove-a-key-encryption-key-if-i-didnt-originally-use-one"></a>Como adicionar ou remover uma chave de criptografia de chave se originalmente não usar um?
+## <a name="how-do-i-add-or-remove-a-key-encryption-key-if-i-didnt-originally-use-one"></a>Como fazer adicionar ou remover uma chave de criptografia de chave se eu não utilizou originalmente uma?
 
-Para adicionar uma chave de criptografia de chave, chame o comando enable novamente passando o parâmetro de chave de criptografia de chave. Para remover uma chave de criptografia de chave, chame o comando enable novamente sem o parâmetro de chave de criptografia de chave.
+Para adicionar uma chave de criptografia de chave, chame o comando Enable novamente passando o parâmetro Key Encryption Key. Para remover uma chave de criptografia de chave, chame o comando Enable novamente sem o parâmetro Key Encryption Key.
 
 ## <a name="does-azure-disk-encryption-allow-you-to-bring-your-own-key-byok"></a>O Azure Disk Encryption permite o recurso BYOK (Bring Your Own Key)?
 
@@ -88,9 +88,9 @@ Sim. Ainda há suporte para criptografia de disco usando um aplicativo do Azure 
 Use a versão mais recente do SDK do Azure PowerShell para configurar o Azure Disk Encryption. Baixe a última versão do [Azure PowerShell](https://github.com/Azure/azure-powershell/releases). O Azure Disk Encryption *não* é suportado pela versão 1.1.0 do SDK do Azure.
 
 > [!NOTE]
-> A extensão de visualização de criptografia de disco Linux do Azure "Microsoft.OSTCExtension.AzureDiskEncryptionForLinux" foi preterida. Essa extensão foi publicada para versão de visualização do Azure disk encryption. Você não deve usar a versão prévia da extensão em sua implantação de teste ou produção.
+> A extensão de visualização de criptografia de disco do Azure do Linux "Microsoft. OSTCExtension. AzureDiskEncryptionForLinux" foi preterida. Esta extensão foi publicada para a versão de visualização do Azure Disk Encryption. Você não deve usar a versão de visualização da extensão em sua implantação de teste ou de produção.
 
-> Para cenários de implantação, como do Azure Resource Manager (ARM), em que você tiver uma necessidade de implantar a extensão de criptografia de disco do Azure para VM do Linux habilitar a criptografia na VM de IaaS do Linux, você deve usar a extensão de produção com suporte de criptografia de disco do Azure" Microsoft.Azure.Security.AzureDiskEncryptionForLinux".
+> Para cenários de implantação como o Azure Resource Manager (ARM), em que você tem a necessidade de implantar a extensão de criptografia de disco do Azure para a VM do Linux para habilitar a criptografia em sua VM IaaS Linux, você deve usar a extensão com suporte de produção do Azure Disk Encryption " Microsoft. Azure. Security. AzureDiskEncryptionForLinux ".
 
 ## <a name="can-i-apply-azure-disk-encryption-on-my-custom-linux-image"></a>Posso aplicar o Azure Disk Encryption à minha imagem personalizada do Linux?
 
@@ -98,7 +98,7 @@ Você não pode aplicar a criptografia de disco do Azure à sua imagem personali
 
 ## <a name="can-i-apply-updates-to-a-linux-red-hat-vm-that-uses-the-yum-update"></a>Posso aplicar atualizações a uma VM Red Hat Linux que usa a atualização do yum?
 
-Sim, você pode executar uma atualização do yum em uma VM do Red Hat Linux.  Para obter mais informações, consulte [gerenciamento de pacotes Linux por trás de um firewall](azure-security-disk-encryption-tsg.md#linux-package-management-behind-a-firewall).
+Sim, você pode executar uma atualização do yum em uma VM Red Hat Linux.  Para obter mais informações, consulte [Gerenciamento de pacotes do Linux por trás de um firewall](azure-security-disk-encryption-tsg.md#linux-package-management-behind-a-firewall).
 
 ## <a name="what-is-the-recommended-azure-disk-encryption-workflow-for-linux"></a>O que é o fluxo de trabalho recomendado de criptografia de disco do Azure recomendado para Linux?
 
@@ -110,7 +110,7 @@ O seguinte fluxo de trabalho é recomendado para ter os melhores resultados no L
 
 Se esse fluxo de trabalho não for possível, usar a SSE [(Criptografia do Serviço de Armazenamento)](../storage/common/storage-service-encryption.md) na camada da conta de armazenamento de plataforma poderá ser uma alternativa para a criptografia de disco completo usando dm-crypt.
 
-## <a name="what-is-the-disk-bek-volume-or-mntazurebekdisk"></a>O que é o disco "Volume Bek" ou "/mnt/azure_bek_disk"?
+## <a name="what-is-the-disk-bek-volume-or-mntazure_bek_disk"></a>O que é o disco "Volume Bek" ou "/mnt/azure_bek_disk"?
 
 "Volume de Bek" para Windows ou "/mnt/azure_bek_disk" para Linux é um volume de dados local que armazena com segurança as chaves de criptografia para VMs de IaaS do Azure criptografadas.
 > [!NOTE]
@@ -119,17 +119,17 @@ Se esse fluxo de trabalho não for possível, usar a SSE [(Criptografia do Servi
 
 ## <a name="what-encryption-method-does-azure-disk-encryption-use"></a>Qual método de criptografia é usado pela criptografia de disco do Azure?
 
-No Windows, o ADE usa o método de criptografia AES256 do BitLocker (AES256WithDiffuser em versões anteriores ao Windows Server 2012). No Linux, ADE usa o padrão de descriptografia de plain64-xts-aes com uma chave mestra de volume de 256 bits.
+No Windows, o ADE usa o método de criptografia AES256 do BitLocker (AES256WithDiffuser em versões anteriores ao Windows Server 2012). No Linux, o ADE usa o padrão de descriptografia de AES-XTS-plain64 com uma chave mestra de volume de 256 bits.
 
 ## <a name="if-i-use-encryptformatall-and-specify-all-volume-types-will-it-erase-the-data-on-the-data-drives-that-we-already-encrypted"></a>Se eu usar EncryptFormatAll e especificar todos os tipos de volume, ele apagará os dados em unidades de dados que já tivermos criptografado?
 Não, os dados não serão apagados de unidades de dados que já tiverem sido criptografadas usando o Azure Disk Encryption. Semelhante ao modo como o EncryptFormatAll não criptografou novamente a unidade do sistema operacional, ele não criptografará novamente a unidade de dados já criptografada. Para obter mais informações, veja os [critérios do EncryptFormatAll](azure-security-disk-encryption-linux.md#bkmk_EFACriteria).        
 
-## <a name="is-xfs-filesystem-supported"></a>Há suporte para sistema de arquivos XFS
-Volumes XFS têm suporte para criptografia de disco de dados apenas com o EncryptFormatAll. Reformata o volume, apagando todos os dados anteriormente lá. Para obter mais informações, veja os [critérios do EncryptFormatAll](azure-security-disk-encryption-linux.md#bkmk_EFACriteria).
+## <a name="is-xfs-filesystem-supported"></a>Há suporte para o sistema de arquivos XFS?
+Os volumes XFS têm suporte para criptografia de disco de dados somente com o EncryptFormatAll. Isso reformatará o volume, apagando todos os dados que já existiam. Para obter mais informações, veja os [critérios do EncryptFormatAll](azure-security-disk-encryption-linux.md#bkmk_EFACriteria).
 
-## <a name="can-i-backup-and-restore-an-encrypted-vm"></a>É possível fazer backup e restaurar uma VM criptografada? 
+## <a name="can-i-backup-and-restore-an-encrypted-vm"></a>Posso fazer backup e restaurar uma VM criptografada? 
 
-O Backup do Azure fornece um mecanismo para fazer backup e restaurar a VM criptografada dentro da mesma assinatura e região.  Para obter instruções, consulte [fazer backup e restaurar máquinas virtuais criptografadas com o Azure Backup](https://docs.microsoft.com/azure/backup/backup-azure-vms-encryption).  Atualmente, não há suporte para a restauração de uma VM criptografada para uma região diferente.  
+O backup do Azure fornece um mecanismo para fazer backup e restaurar VMs criptografadas na mesma assinatura e região.  Para obter instruções, consulte [fazer backup e restaurar máquinas virtuais criptografadas com o backup do Azure](https://docs.microsoft.com/azure/backup/backup-azure-vms-encryption).  Atualmente, não há suporte para a restauração de uma VM criptografada em uma região diferente.  
 
 ## <a name="where-can-i-go-to-ask-questions-or-provide-feedback"></a>Onde posso fazer perguntas ou fornecer comentários?
 
@@ -140,4 +140,4 @@ Neste documento, você aprendeu mais sobre as perguntas mais frequentes relativa
 
 - [Visão geral do Azure Disk Encryption](azure-security-disk-encryption-overview.md)
 - [Aplicar a criptografia de disco na Central de Segurança do Azure](https://docs.microsoft.com/azure/security-center/security-center-apply-disk-encryption)
-- [Criptografia de dados em repouso do Azure](https://docs.microsoft.com/azure/security/azure-security-encryption-atrest)
+- [Criptografia de dados em repouso do Azure](https://docs.microsoft.com/azure/security/fundamentals/encryption-atrest)

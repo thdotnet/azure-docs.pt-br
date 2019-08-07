@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: jomolesk
-ms.openlocfilehash: e3ee5a0aa22d1231dca7d02a77d39e0a2b569314
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 54bf4512785941ae1d09ae1436deefc032ec0037
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66753820"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68780669"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-hosting-for-uk-official-workloads"></a>Blueprint de Segurança e Conformidade do Azure: Hospedagem de Aplicativo Web de PaaS para carga de trabalho OFICIAL DO REINO UNIDO
 
@@ -51,13 +51,13 @@ Como parte da arquitetura de implantação, provisionar armazenamento seguro, mo
 
 A solução usa os serviços do Azure a seguir. Há detalhes da arquitetura de implantação na seção [arquitetura de implantação](#deployment-architecture).
 
-- Azure Active Directory
+- Active Directory do Azure
 - Serviço de Aplicativo
 - Aplicativo Web
 - Aplicativo de API
 - DNS do Azure
 - Key Vault
-- O Azure Monitor (logs)
+- Azure Monitor (logs)
 - Application Insights
 - Azure Resource Manager
 - Central de Segurança do Azure
@@ -95,11 +95,11 @@ A [Central de Segurança do Azure](https://azure.microsoft.com/services/security
 
 O [Assistente do Azure](https://docs.microsoft.com/azure/advisor/advisor-overview) é um consultor de nuvem personalizado que ajuda a seguir as melhores práticas para otimizar as implantações do Azure. Ele analisa a telemetria de uso e configuração do recurso e, depois, recomenda soluções que podem ajudar você a melhorar a economia, o desempenho, a alta disponibilidade e a segurança de seus recursos do Azure.
 
-O [Microsoft Antimalware](https://docs.microsoft.com/azure/security/azure-security-antimalware) é uma funcionalidade de proteção em tempo real que ajuda a identificar e remover vírus, spyware e outros softwares mal-intencionados. Isso por padrão é instalado na infraestrutura subjacente de máquina virtual de PaaS e é gerenciado pela malha do Azure de forma transparente para o cliente.
+O [Microsoft Antimalware](https://docs.microsoft.com/azure/security/fundamentals/antimalware) é uma funcionalidade de proteção em tempo real que ajuda a identificar e remover vírus, spyware e outros softwares mal-intencionados. Isso por padrão é instalado na infraestrutura de máquina virtual de PaaS subjacente e é gerenciado pela malha do Azure de forma transparente para o cliente.
 
 ### <a name="paas-services-in-this-blueprint"></a>Serviços de PaaS neste blueprint
 
-#### <a name="azure-app-service"></a>Serviço de aplicativo do Azure
+#### <a name="azure-app-service"></a>Serviço de Aplicativo do Azure
 
 O Serviço de Aplicativo do Azure fornece um ambiente para o aplicativo da web desenvolvido em Java, PHP, Node.js Python, HTML e C# sem a necessidade de gerenciar a infraestrutura de hospedagem da web totalmente gerenciada. Ele oferece dimensionamento automático e alta disponibilidade, compatível com Windows e Linux e permite implantações automatizadas do [Azure DevOps](https://azure.microsoft.com/services/visual-studio-team-services/) ou qualquer repositório baseado em Git.
 
@@ -126,7 +126,7 @@ Banco de dados SQL do Azure neste projeto
 A instância do Banco de Dados SQL do Azure usa as seguintes medidas de segurança de banco de dados:
 
 - [Regras de firewall no nível do servidor e o nível de banco de dados](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure), ou através dos [pontos de extremidade de serviço de rede Virtual](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) usando [regras de Rede Virtual do Microsoft Azure](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview).
-- [Criptografia de dados transparentes](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql) ajuda a proteger o Banco de Dados SQL do Microsoft Azure e o banco de dados de data warehouse do Azure contra a ameaça de atividade mal-intencionada. Ela realiza a criptografia e a descriptografia em tempo real do banco de dados, de backups associados e de arquivos de log de transações em repouso, sem a necessidade de alterações no aplicativo.
+- [Criptografia de dados transparentes](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql) ajuda a proteger o Banco de Dados SQL do Azure e o banco de dados de data warehouse do Azure contra a ameaça de atividade mal-intencionada. Ela realiza a criptografia e a descriptografia em tempo real do banco de dados, de backups associados e de arquivos de log de transações em repouso, sem a necessidade de alterações no aplicativo.
 - [Com a autenticação do Microsoft Azure Active Directory](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication), é possível gerenciar centralmente as identidades de usuários do banco de dados e outros serviços da Microsoft em uma única localização central. O gerenciamento central de IDs fornece um único local para gerenciar os usuários do banco de dados e simplifica o gerenciamento de permissões.
 - Uso do Azure Active Directory para a administração de banco de dados
 - [Logs de auditoria](https://docs.microsoft.com/azure/sql-database/sql-database-auditing) às contas de armazenamento
@@ -156,7 +156,7 @@ Informações detalhadas sobre como proteger o Armazenamento do Microsoft Azure 
 
 ### <a name="secrets-management"></a>Gerenciamento de segredos
 
-#### <a name="azure-key-vault"></a>Cofre da Chave do Azure
+#### <a name="azure-key-vault"></a>Cofre de Chaves Azure
 
 [Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-overview) é usado para proteger as chaves de aplicativo e segredos para garantir que eles não estejam acessíveis por terceiros. O Key Vault não deve ser usado como um repositório de senhas de usuário. O Key Vault permite que você crie vários contêineres seguros, chamado cofres. Esses cofres contam com HSMs (Módulos de Segurança de Hardware). Os cofres ajudam a reduzir a possibilidade de perda acidental de informações de segurança pela centralização do armazenamento de segredos do aplicativo. Os Key Vaults também controlam e registram o acesso a todas as coisas armazenadas neles. O Azure Key Vault pode tratar da solicitação e da renovação de certificados TLS, fornecendo os recursos necessários para uma solução de gerenciamento de ciclo de vida de certificados robusta.
 
@@ -170,9 +170,9 @@ Informações detalhadas sobre como proteger o Armazenamento do Microsoft Azure 
 
 #### <a name="azure-monitor-logs"></a>Logs do Azure Monitor
 
-[Os logs do Azure Monitor](https://azure.microsoft.com/services/log-analytics/) é um serviço no Azure que ajuda a coletar e analisar dados gerados pelos recursos em sua nuvem e ambientes locais.
+[Os logs de Azure monitor](https://azure.microsoft.com/services/log-analytics/) são um serviço no Azure que ajuda a coletar e analisar dados gerados pelos recursos em seus ambientes de nuvem e locais.
 
-#### <a name="azure-monitor-logs-in-this-blueprint"></a>O Azure Monitor registra esse plano gráfico
+#### <a name="azure-monitor-logs-in-this-blueprint"></a>Logs de Azure Monitor neste projeto
 
 - Avaliação do SQL
 - Diagnóstico do Cofre de Chaves
@@ -243,7 +243,7 @@ Três abordagens foram fornecidas para a implantação; Uma simples "expressa" [
 
 O [Active Directory B2C](https://azure.microsoft.com/services/active-directory-b2c/) pode ser implementado como um controle para permitir que os usuários se registrem, criem uma identidade e habilitem a autorização e o controle de acesso para o aplicativo web público.
 
-## <a name="disclaimer"></a>Isenção de responsabilidade
+## <a name="disclaimer"></a>Aviso de isenção de responsabilidade
 
 - Este documento serve apenas para fins informativos. A MICROSOFT NÃO FORNECE NENHUMA GARANTIA, EXPRESSA, IMPLÍCITA OU REGULAMENTAR, QUANTO ÀS INFORMAÇÕES PRESENTES NESTE DOCUMENTO. Este documento é fornecido "no estado em que se encontra". As informações e opiniões expressadas neste documento, incluindo URLs e outras referências a sites da Internet, podem ser alteradas sem aviso prévio. Os clientes que estão lendo este documento arcarão com o risco de usá-lo.
 - Este documento não fornece aos clientes nenhum direito legal a qualquer propriedade intelectual de qualquer produto ou solução da Microsoft.

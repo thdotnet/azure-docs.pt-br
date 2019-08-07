@@ -1,6 +1,6 @@
 ---
-title: Manter arquivos para Bash no Azure Cloud Shell | Microsoft Docs
-description: Passo a passo de como o Bash no Azure Cloud Shell mantém arquivos.
+title: Manter arquivos em Azure Cloud Shell | Microsoft Docs
+description: Passo a passo de como o Azure Cloud Shell persiste arquivos.
 services: azure
 documentationcenter: ''
 author: maertendMSFT
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/04/2018
 ms.author: damaerte
-ms.openlocfilehash: 0aa00af543a3d21db9b8ad0ed808a8bff0b534e1
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f60125123d019cbfa93bfc1b06da7ac90b54e311
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60200114"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68742033"
 ---
 [!INCLUDE [PersistingStorage-introblock](../../includes/cloud-shell-persisting-shell-storage-introblock.md)]
 
@@ -70,7 +70,7 @@ Seu compartilhamento de arquivos continuará existindo se você não o excluir m
 ![Executando o comando ' clouddrive unmount'](media/persisting-shell-storage/unmount-h.png)
 
 > [!WARNING]
-> Embora a execução desse comando não exclua todos os recursos, a exclusão manual de um grupo de recursos, de uma conta de armazenamento, ou de um compartilhamento de arquivos mapeado para o Cloud Shell apaga a imagem do disco `$Home` e todos os arquivos em seu compartilhamento de arquivos. Essa ação não pode ser desfeita.
+> Embora a execução desse comando não exclua todos os recursos, a exclusão manual de um grupo de recursos, de uma conta de armazenamento, ou de um compartilhamento de arquivos mapeado para o Cloud Shell apaga a imagem do disco `$Home` e todos os arquivos em seu compartilhamento de arquivos. Esta ação não pode ser desfeita.
 
 ### <a name="list-clouddrive"></a>Lista `clouddrive`
 Para descobrir qual compartilhamento de arquivos está montado como `clouddrive`, execute o comando `df`. 

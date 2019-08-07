@@ -1,5 +1,5 @@
 ---
-title: Monitoramento e registro em log na proteção de senha do AD do Azure - Active Directory do Azure
+title: Monitoramento e registro em log na proteção de senha do Azure AD-Azure Active Directory
 description: Entender o monitoramento e o logon na Proteção de Senha do Azure AD
 services: active-directory
 ms.service: active-directory
@@ -11,18 +11,18 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a029135da79d1a0b24b2941873a0fe3187ac9f7c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1bd6d3abc6080c0ab1b6137511af719b23e5bcd4
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60414793"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736830"
 ---
 # <a name="azure-ad-password-protection-monitoring-and-logging"></a>Monitoramento e o logon na Proteção de Senha do Azure AD
 
 Após a implantação da Proteção de Senha do Azure AD, o monitoramento e o relatório são tarefas essenciais. Este artigo apresenta detalhes para entender várias técnicas de monitoramento, incluindo o local em que cada serviço registra informações e como relatar o uso da Proteção de Senha do Azure AD.
 
-Monitoramento e emissão de relatórios são feitas por mensagens de log de eventos ou pela execução de cmdlets do PowerShell. Os controlador de domínio agente proxy serviços e ambas as mensagens de log de eventos de log. Todos os cmdlets do PowerShell descritos a seguir só estão disponíveis no servidor proxy (consulte o módulo do AzureADPasswordProtection PowerShell). O software do agente de controlador de domínio não instala um módulo do PowerShell.
+O monitoramento e os relatórios são feitos por mensagens de log de eventos ou pela execução de cmdlets do PowerShell. O agente de DC e os serviços de proxy registram mensagens de log de eventos. Todos os cmdlets do PowerShell descritos abaixo estão disponíveis somente no servidor proxy (consulte o módulo AzureADPasswordProtection PowerShell). O software do agente de controlador de domínio não instala um módulo do PowerShell.
 
 ## <a name="dc-agent-event-logging"></a>Log de eventos do agente do DC
 
@@ -96,9 +96,9 @@ PasswordSetErrors               : 1
 
 O escopo da emissão de relatórios do cmdlet pode ser influenciado usando um dos parâmetros –Forest, -Domain ou – DomainController. Não especificar um parâmetro implica – Forest.
 
-O cmdlet `Get-AzureADPasswordProtectionSummaryReport` funciona consultando o log de eventos do administrador do agente do DC e, em seguida, contando o número total de eventos que correspondem a cada categoria de resultado exibida. A tabela a seguir contém os mapeamentos entre cada resultado e a sua ID de evento correspondente:
+O cmdlet `Get-AzureADPasswordProtectionSummaryReport` funciona consultando o log de eventos do administrador do agente do DC e, em seguida, contando o número total de eventos que correspondem a cada categoria de resultado exibida. A tabela a seguir contém os mapeamentos entre cada resultado e sua ID de evento correspondente:
 
-|Propriedade Get-AzureADPasswordProtectionSummaryReport |ID de evento correspondente|
+|Propriedade Get-AzureADPasswordProtectionSummaryReport |ID do evento correspondente|
 | :---: | :---: |
 |PasswordChangesValidated |10014|
 |PasswordSetsValidated |10015|
@@ -235,7 +235,7 @@ O log de texto é desabilitado por padrão. Uma reinicialização do serviço do
 
 O software de serviço do agente DC instala um objeto de contador de desempenho denominado **Proteção de senha do Microsoft Azure Active Directory**. Atualmente, estão disponíveis os contadores de desempenho a seguir:
 
-|Nome do contador de desempenho | DESCRIÇÃO|
+|Nome do contador de desempenho | Descrição|
 | --- | --- |
 |Senhas processadas |Esse contador exibe o número total de senhas processadas (aceitas ou rejeitadas) desde o último reinício.|
 |Senhas aceitas |Esse contador exibe o número total de senhas aceitas desde o último reinício.|
@@ -270,6 +270,27 @@ O escopo da consulta do cmdlet pode ser influenciado usando os parâmetros –Fo
 Se o valor de HeartbeatUTC se torna obsoleto, isso pode ser um sintoma de que o Agente do DC de Proteção de Senha do Azure AD no controlador de domínio não está em execução ou foi desinstalado ou o computador foi rebaixado e não é mais um controlador de domínio.
 
 Se o valor de PasswordPolicyDateUTC se torna obsoleto, isso pode ser um sintoma de que tem o Agente do DC de Proteção de Senha do Azure AD neste computador não está funcionando corretamente.
+
+## <a name="dc-agent-newer-version-available"></a>Versão mais recente do agente de DC disponível
+
+O serviço de agente de controlador de domínio registrará um evento de aviso 30034 no log operacional ao detectar que uma versão mais recente do software do agente de DC está disponível, por exemplo:
+
+```text
+An update for Azure AD Password Protection DC Agent is available.
+
+If autoupgrade is enabled, this message may be ignored.
+
+If autoupgrade is disabled, refer to the following link for the latest version available:
+
+https://aka.ms/AzureADPasswordProtectionAgentSoftwareVersions
+
+Current version: 1.2.116.0
+```
+
+O evento acima não especifica a versão do software mais recente. Você deve ir para o link na mensagem de evento para obter essas informações.
+
+> [!NOTE]
+> Apesar das referências a "AutoUpgrade" na mensagem de evento acima, o software do agente de controlador de domínio não oferece suporte a esse recurso no momento.
 
 ## <a name="proxy-service-event-logging"></a>Logs de eventos do serviço de proxy
 
@@ -314,7 +335,7 @@ O log de texto é desabilitado por padrão. Uma reinicialização do serviço Pr
 
 Os cmdlets do PowerShell que podem resultar em uma alteração de estado (por exemplo, Register-AzureADPasswordProtectionProxy) normalmente registrarão um evento de saída no Log operacional.
 
-Além disso, a maioria dos cmdlets do PowerShell de proteção de senha do Azure AD irá gravar em um log de texto localizado em:
+Além disso, a maioria dos cmdlets do PowerShell de proteção por senha do Azure AD será gravada em um log de texto localizado em:
 
 `%ProgramFiles%\Azure AD Password Protection Proxy\Logs`
 
@@ -339,6 +360,27 @@ As várias propriedades são atualizadas por cada serviço de Proxy em uma base 
 O escopo da consulta do cmdlet pode ser influenciado usando os parâmetros –Forest ou –Domain.
 
 Se o valor de HeartbeatUTC se torna obsoleto, isso pode ser um sintoma de que o Proxy de Proteção de Senha do Azure AD nesse computador não está em execução ou foi desinstalado.
+
+## <a name="proxy-agent-newer-version-available"></a>Versão mais recente do agente de proxy disponível
+
+O serviço de proxy registrará um evento de aviso 20002 no log operacional ao detectar que uma versão mais recente do software proxy está disponível, por exemplo:
+
+```text
+An update for Azure AD Password Protection Proxy is available.
+
+If autoupgrade is enabled, this message may be ignored.
+
+If autoupgrade is disabled, refer to the following link for the latest version available:
+
+https://aka.ms/AzureADPasswordProtectionAgentSoftwareVersions
+
+Current version: 1.2.116.0
+.
+```
+
+O evento acima não especifica a versão do software mais recente. Você deve ir para o link na mensagem de evento para obter essas informações.
+
+Esse evento será emitido mesmo se o agente de proxy estiver configurado com a atualização autohabilitada.
 
 ## <a name="next-steps"></a>Próximas etapas
 

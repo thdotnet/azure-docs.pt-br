@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 07/25/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 20ef71f98817a57f884e9c5a3cef4ceeaebe74eb
-ms.sourcegitcommit: a0b37e18b8823025e64427c26fae9fb7a3fe355a
+ms.openlocfilehash: 8321a9dd779406b2d1de44bd4c9313e4d855548d
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68498431"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68740903"
 ---
 # <a name="integrate-your-app-with-an-azure-virtual-network"></a>Integrar seu aplicativo Web a uma Rede Virtual do Azure
 Este documento descreve o recurso de integração de rede virtual do serviço Azure App e como configurá-lo com aplicativos no [serviço Azure app](https://go.microsoft.com/fwlink/?LinkId=529714). [Redes virtuais do Azure][VNETOverview] (VNets) permitem que você coloque muitos dos seus recursos do Azure em uma rede roteável que não é da Internet.  
@@ -136,11 +136,10 @@ O gateway exigiu o recurso de integração VNet:
 * Permite que até cinco VNets sejam integradas com o em um plano do serviço de aplicativo 
 * Permite que a mesma VNet seja usada por vários aplicativos em um plano do serviço de aplicativo sem afetar o número total que pode ser usado por um plano do serviço de aplicativo.  Se você tiver 6 aplicativos usando a mesma VNet no mesmo plano do serviço de aplicativo, isso contará como uma VNet sendo usada. 
 * Requer um gateway de rede virtual configurado com VPN ponto a site
-* Não tem suporte para uso com aplicativos do Linux
 * Dá suporte a um SLA de 99,9% devido ao SLA no gateway
 
 Este recurso não oferece suporte a:
-
+* Usar com aplicativos do Linux
 * Acessando recursos no ExpressRoute 
 * Acessando recursos entre Pontos de Extremidade de Serviço 
 

@@ -10,16 +10,16 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 05/02/2019
 ms.author: robreed
-ms.openlocfilehash: 8487b8477b1837fce0b1c2c6435174c48dfbded4
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 58b6531a394db8f9d29dcc0fe9b4b40d1725e70a
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478415"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68774575"
 ---
 # <a name="custom-script-extension-for-windows"></a>Extensão de script personalizado para o Windows
 
-A extensão de script personalizado baixa e executa scripts em máquinas virtuais do Azure. Essa extensão é útil para a configuração pós-implantação, instalação de software, ou qualquer outra configuração ou tarefas de gerenciamento. Os scripts podem ser baixados do armazenamento do Azure ou do GitHub, ou fornecidos ao Portal do Azure no tempo de execução da extensão. Extensão de Script personalizado se integra com modelos do Azure Resource Manager e podem ser executado usando a CLI do Azure, PowerShell, portal do Azure ou API REST da máquina Virtual do Azure.
+A extensão de script personalizado baixa e executa scripts em máquinas virtuais do Azure. Essa extensão é útil para a configuração de pós-implantação, instalação de software ou quaisquer outras tarefas de configuração ou gerenciamento. Os scripts podem ser baixados do armazenamento do Azure ou do GitHub, ou fornecidos ao Portal do Azure no tempo de execução da extensão. A extensão de script personalizado se integra com modelos de Azure Resource Manager e pode ser executada usando o CLI do Azure, o PowerShell, o portal do Azure ou a API REST da máquina virtual do Azure.
 
 Este documento detalha como usar a Extensão de Script Personalizado usando o módulo do Azure PowerShell e modelos do Azure Resource Manager, além de detalhar as etapas da solução de problemas em sistemas Windows.
 
@@ -30,31 +30,32 @@ Este documento detalha como usar a Extensão de Script Personalizado usando o m�
 
 ### <a name="operating-system"></a>Sistema operacional
 
-A extensão de Script personalizado para o Windows será executado na extensão de extensão de suporte para sistemas operacionais, para obter mais informações, consulte este [sistemas operacionais com suporte do Azure extensão](https://support.microsoft.com/help/4078134/azure-extension-supported-operating-systems).
+A extensão de script personalizado para Windows será executada no OSs de extensão com suporte da extensão, para obter mais informações, consulte os [sistemas operacionais com suporte da extensão do Azure](https://support.microsoft.com/help/4078134/azure-extension-supported-operating-systems).
 
 ### <a name="script-location"></a>Local do script
 
-Você pode configurar a extensão para usar suas credenciais de armazenamento de BLOBs do Azure para acessar o armazenamento de BLOBs do Azure. O local do script pode ser em qualquer lugar, desde que a VM possa rotear para o ponto de extremidade, como GitHub ou em um servidor de arquivos internos.
+Você pode configurar a extensão para usar suas credenciais de armazenamento de BLOBs do Azure para acessar o armazenamento de BLOBs do Azure. O local do script pode estar em qualquer lugar, desde que a VM possa ser roteada para esse ponto de extremidade, como o GitHub ou um servidor de arquivos interno.
 
 ### <a name="internet-connectivity"></a>Conectividade com a Internet
 
-Se você precisar baixar um script externamente, como do GitHub ou do armazenamento do Azure, em seguida, adicional de firewall e portas de grupo de segurança de rede precisam ser abertas. Por exemplo, se seu script está localizado no armazenamento do Azure, você pode permitir o acesso usando marcas de serviço do Azure NSG para [armazenamento](../../virtual-network/security-overview.md#service-tags).
+Se você precisar baixar um script externamente, como do GitHub ou do armazenamento do Azure, as portas de grupo de segurança de rede e firewall adicionais precisam ser abertas. Por exemplo, se o seu script estiver localizado no armazenamento do Azure, você poderá permitir o acesso usando as marcas do serviço NSG do Azure para [armazenamento](../../virtual-network/security-overview.md#service-tags).
 
-Se seu script estiver em um servidor local, em seguida, você ainda pode precisar adicional de firewall e as portas de grupo de segurança de rede precisam ser abertas.
+Se o seu script estiver em um servidor local, talvez você ainda precise que as portas de grupo de segurança de rede e firewall adicionais precisem ser abertas.
 
 ### <a name="tips-and-tricks"></a>Dicas e truques
 
-* A taxa de falhas mais alta para essa extensão é devido a erros de sintaxe no script, teste o script é executado sem erro e também colocar registro em log para o script para torná-lo mais fácil de encontrar onde ele falha adicional.
-* Escreva scripts que são idempotentes. Isso garante que se eles são executados novamente acidentalmente, ele não fará alterações no sistema.
+* A taxa de falha mais alta para essa extensão é devido a erros de sintaxe no script, teste o script é executado sem erros e também Coloque em log adicional no script para facilitar a localização de onde ele falhou.
+* Grave scripts que são idempotentes. Isso garante que, se eles forem executados novamente acidentalmente, não causarão alterações no sistema.
 * Assegure-se de que os scripts não exigirão a entrada do usuário quando forem executados.
 * É permitido que o script seja executado em até 90 minutos e um período mais longo resultará em falha na provisão da extensão.
 * Não coloque reinicializações dentro do script, pois essa ação causará problemas com outras extensões que estão sendo instaladas. Após a reinicialização, a extensão não continuará depois de reiniciar.
-* Se você tiver um script que fazem com que uma reinicialização, em seguida, instalar aplicativos e executar scripts, você pode agendar o reinício usando uma tarefa agendada do Windows ou usar ferramentas como extensões de DSC, Chef ou Puppet.
+* Se você tiver um script que causará uma reinicialização, instale aplicativos e execute scripts, você poderá agendar a reinicialização usando uma tarefa agendada do Windows ou usar ferramentas como as extensões DSC, chefe ou Puppet.
 * A extensão executará um script somente uma vez. Se você quiser executar um script em cada inicialização, use a extensão pra criar uma Tarefa Agendada do Windows.
 * Se você quiser agendar quando um script será executado, use a extensão para criar uma Tarefa Agendada do Windows.
 * Quando o script for executado, você só verá um status da extensão 'em transição' no portal do Azure ou no CLI. Se quiser atualizações de status mais frequentes de um script em execução, será necessário criar sua própria solução.
 * A extensão de script personalizado não dá suporte nativo para servidores proxy. No entanto, é possível usar uma ferramenta de transferência de arquivos que dá suporte a servidores proxy no script, como a *Curl*
 * Esteja ciente dos locais de diretório não padrão nos quais os scripts ou comandos podem confiar e mantenha uma lógica para lidar com essa situação.
+* A extensão de script personalizado será executada na conta LocalSystem
 
 ## <a name="extension-schema"></a>Esquema de extensão
 
@@ -98,21 +99,21 @@ Esses itens devem ser tratados como dados confidenciais e especificados na confi
 ```
 
 > [!NOTE]
-> Apenas uma versão de uma extensão pode ser instalada em uma VM em um ponto no tempo, especificando o script personalizado, duas vezes no mesmo modelo do Resource Manager para a mesma VM falhará.
+> Somente uma versão de uma extensão pode ser instalada em uma VM em um ponto no tempo, especificar o script personalizado duas vezes no mesmo modelo do Resource Manager para a mesma VM falhará.
 
 ### <a name="property-values"></a>Valores de propriedade
 
-| Nome | Valor/Exemplo | Tipo de Dados |
+| Nome | Valor/Exemplo | Tipo de dados |
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
-| publisher | Microsoft.Compute | string |
-| type | CustomScriptExtension | string |
+| publisher | Microsoft.Compute | cadeia de caracteres |
+| type | CustomScriptExtension | cadeia de caracteres |
 | typeHandlerVersion | 1.9 | int |
-| fileUris (por exemplo) | https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-windows/scripts/configure-music-app.ps1 | matriz |
+| fileUris (por exemplo) | https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-windows/scripts/configure-music-app.ps1 | array |
 | timestamp (exemplo) | 123456789 | Inteiro de 32 bits |
-| commandToExecute (por exemplo) | powershell -ExecutionPolicy Unrestricted -File configure-music-app.ps1 | string |
+| commandToExecute (por exemplo) | powershell -ExecutionPolicy Unrestricted -File configure-music-app.ps1 | cadeia de caracteres |
 | storageAccountName (por exemplo) | examplestorageacct | string |
-| storageAccountKey (por exemplo) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | string |
+| storageAccountKey (por exemplo) | TmJK/1N3AbAZ3q/+hOXoi/l73zOqsaxXDhqa9Y83/v5UpXQp2DQIBuv2Tifp60cE/OaHsJZmQZ7teQfczQj8hg== | cadeia de caracteres |
 
 >[!NOTE]
 >Esses nomes de propriedade diferenciam maiúsculas de minúsculas. Para evitar problemas de implantação, use os nomes conforme mostrado aqui.
@@ -129,13 +130,13 @@ Os valores a seguir podem ser definidos nas configurações públicas ou protegi
 
 * `commandToExecute`
 
-Usar as configurações de público pode ser útil para depuração, mas é recomendável que você use as configurações protegidas.
+O uso de configurações públicas talvez seja útil para depuração, mas é recomendável que você use configurações protegidas.
 
-As configurações públicas são enviadas em texto não criptografado para a VM na qual o script será executado.  As configurações protegidas são criptografadas usando uma chave conhecida apenas pelo Azure e pela VM. As configurações são salvas na VM que foram enviadas, ou seja, se as configurações foram criptografadas elas são salvas criptografado na VM. O certificado usado para descriptografar os valores criptografados é armazenado na VM e usado para descriptografar as configurações (se necessário) no tempo de execução.
+As configurações públicas são enviadas em texto não criptografado para a VM na qual o script será executado.  As configurações protegidas são criptografadas usando uma chave conhecida apenas pelo Azure e pela VM. As configurações são salvas na VM conforme elas foram enviadas, ou seja, se as configurações foram criptografadas, elas são salvas criptografadas na VM. O certificado usado para descriptografar os valores criptografados é armazenado na VM e usado para descriptografar as configurações (se necessário) no tempo de execução.
 
 ## <a name="template-deployment"></a>Implantação de modelo
 
-Extensões de VM do Azure podem ser implantadas com modelos do Azure Resource Manager. O esquema JSON, que é detalhado na seção anterior pode ser usado em um modelo do Azure Resource Manager para executar a extensão de Script personalizado durante a implantação. Os exemplos a seguir mostram como usar a extensão de Script personalizado:
+Extensões de VM do Azure podem ser implantadas com modelos do Azure Resource Manager. O esquema JSON, que é detalhado na seção anterior, pode ser usado em um modelo de Azure Resource Manager para executar a extensão de script personalizado durante a implantação. Os exemplos a seguir mostram como usar a extensão de Script personalizado:
 
 * [Tutorial: Implantar extensões de máquina virtual com modelos do Azure Resource Manager](../../azure-resource-manager/resource-manager-tutorial-deploy-vm-extensions.md)
 * [Implante o aplicativo de duas camadas no Windows e no banco de dados SQL do Azure](https://github.com/Microsoft/dotnet-core-sample-templates/tree/master/dotnet-core-music-windows)
@@ -155,9 +156,9 @@ Set-AzVMCustomScriptExtension -ResourceGroupName <resourceGroupName> `
 
 ## <a name="additional-examples"></a>Exemplos adicionais
 
-### <a name="using-multiple-scripts"></a>Usar vários scripts
+### <a name="using-multiple-scripts"></a>Usando vários scripts
 
-Neste exemplo, você tem três scripts que são usados para criar seu servidor. O **commandToExecute** chama o primeiro script, em seguida, você tem opções sobre como os outros são chamados. Por exemplo, você pode ter um script mestre que controla a execução, com o tratamento de erro à direita, o registro em log e o gerenciamento de estado. Os scripts são baixados para o computador local para a execução. Por exemplo, em `1_Add_Tools.ps1` , você chamaria `2_Add_Features.ps1` adicionando `.\2_Add_Features.ps1` para o script e repita esse processo para outros scripts que você define no `$settings`.
+Neste exemplo, você tem três scripts que são usados para criar seu servidor. O **commandToExecute** chama o primeiro script e, em seguida, você tem opções sobre como os outros são chamados. Por exemplo, você pode ter um script mestre que controla a execução, com o tratamento de erros, o registro em log e o gerenciamento de estado corretos. Os scripts são baixados no computador local para execução. Por exemplo, `1_Add_Tools.ps1` em você chamaria `2_Add_Features.ps1` adicionando `.\2_Add_Features.ps1` ao script e repetiria esse processo para os outros scripts que você definir em `$settings`.
 
 ```powershell
 $fileUri = @("https://xxxxxxx.blob.core.windows.net/buildServer1/1_Add_Tools.ps1",
@@ -184,7 +185,7 @@ Set-AzVMExtension -ResourceGroupName <resourceGroupName> `
 
 ### <a name="running-scripts-from-a-local-share"></a>Executando scripts de um compartilhamento local
 
-Neste exemplo, você talvez queira usar um servidor SMB local para seu local de script. Ao fazer isso, você não precisa fornecer outras configurações, exceto **commandToExecute**.
+Neste exemplo, talvez você queira usar um servidor SMB local para o local do script. Ao fazer isso, você não precisa fornecer outras configurações, exceto **commandToExecute**.
 
 ```powershell
 $protectedSettings = @{"commandToExecute" = "powershell -ExecutionPolicy Unrestricted -File \\filesvr\build\serverUpdate1.ps1"};
@@ -204,14 +205,14 @@ Set-AzVMExtension -ResourceGroupName <resourceGroupName> `
 
 Se você quiser executar a extensão do script personalizado mais de uma vez, poderá executar essa ação somente sob estas condições:
 
-* A extensão **nome** parâmetro é o mesmo que a implantação anterior da extensão.
-* Atualize a configuração caso contrário, que o comando não será executado novamente. É possível adicionar uma propriedade dinâmica ao comando, como um carimbo de data/hora.
+* O parâmetro de **nome** da extensão é o mesmo que a implantação anterior da extensão.
+* Atualize a configuração, caso contrário, o comando não será executado novamente. É possível adicionar uma propriedade dinâmica ao comando, como um carimbo de data/hora.
 
-Como alternativa, você pode definir as [ForceUpdateTag](/dotnet/api/microsoft.azure.management.compute.models.virtualmachineextension.forceupdatetag) propriedade **verdadeiro**.
+Como alternativa, você pode definir a propriedade [ForceUpdateTag](/dotnet/api/microsoft.azure.management.compute.models.virtualmachineextension.forceupdatetag) como **true**.
 
 ### <a name="using-invoke-webrequest"></a>Usando Invoke-WebRequest
 
-Se você estiver usando [Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest) em seu script, você deve especificar o parâmetro `-UseBasicParsing` ou caso contrário você receberá o seguinte erro ao verificar o status detalhado:
+Se você estiver usando [Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest) em seu script, será necessário especificar o parâmetro `-UseBasicParsing` ou, caso contrário, receberá o seguinte erro ao verificar o status detalhado:
 
 ```error
 The response content cannot be parsed because the Internet Explorer engine is not available, or Internet Explorer's first-launch configuration is not complete. Specify the UseBasicParsing parameter and try again.
@@ -219,19 +220,19 @@ The response content cannot be parsed because the Internet Explorer engine is no
 
 ## <a name="classic-vms"></a>VMs clássicas
 
-Para implantar a extensão de Script personalizado em VMs clássicas, você pode usar o portal do Azure ou os cmdlets do PowerShell clássico do Azure.
+Para implantar a extensão de script personalizado em VMs clássicas, você pode usar o portal do Azure ou os cmdlets Azure PowerShell clássicos.
 
 ### <a name="azure-portal"></a>Portal do Azure
 
-Navegue até seu recurso de VM clássica. Selecione **extensões** sob **configurações**.
+Navegue até o recurso da VM clássica. Selecione **extensões** em **configurações**.
 
-Clique em **+ adicionar** e na lista de recursos, escolha **extensão de Script personalizado**.
+Clique em **+ Adicionar** e, na lista de recursos, escolha **extensão de script personalizado**.
 
-Sobre o **instalar a extensão** , selecione o arquivo local do PowerShell e preencha os argumentos e clique em **Okey**.
+Na página **instalar extensão** , selecione o arquivo local do PowerShell e preencha os argumentos e clique em **OK**.
 
 ### <a name="powershell"></a>PowerShell
 
-Use o [Set-AzureVMCustomScriptExtension](/powershell/module/servicemanagement/azure/set-azurevmcustomscriptextension) cmdlet pode ser usado para adicionar a extensão de Script personalizado para uma máquina virtual existente.
+Use o cmdlet [set-AzureVMCustomScriptExtension](/powershell/module/servicemanagement/azure/set-azurevmcustomscriptextension) pode ser usado para adicionar a extensão de script personalizado a uma máquina virtual existente.
 
 ```powershell
 # define your file URI
@@ -249,7 +250,7 @@ $vm | Update-AzureVM
 
 ## <a name="troubleshoot-and-support"></a>Solução de problemas e suporte
 
-### <a name="troubleshoot"></a>Solucionar problemas
+### <a name="troubleshoot"></a>Solução de problemas
 
 Os dados sobre o estado das implantações de extensão podem ser recuperados no Portal do Azure usando o módulo do Azure PowerShell. Para ver o estado da implantação das extensões de uma determinada VM, execute o comando a seguir:
 
@@ -257,13 +258,13 @@ Os dados sobre o estado das implantações de extensão podem ser recuperados no
 Get-AzVMExtension -ResourceGroupName <resourceGroupName> -VMName <vmName> -Name myExtensionName
 ```
 
-A saída da extensão é registrada nos arquivos localizados na seguinte pasta na máquina virtual de destino.
+A saída da extensão é registrada em arquivos encontrados na seguinte pasta na máquina virtual de destino.
 
 ```cmd
 C:\WindowsAzure\Logs\Plugins\Microsoft.Compute.CustomScriptExtension
 ```
 
-Os arquivos especificados são baixados na pasta a seguir na máquina virtual de destino.
+Os arquivos especificados são baixados para a seguinte pasta na máquina virtual de destino.
 
 ```cmd
 C:\Packages\Plugins\Microsoft.Compute.CustomScriptExtension\1.*\Downloads\<n>
@@ -279,16 +280,16 @@ Como o caminho absoluto do download pode variar ao longo do tempo, é melhor opt
 "commandToExecute": "powershell.exe . . . -File \"./scripts/myscript.ps1\""
 ```
 
-Informações de caminho após o primeiro segmento do URI é mantido para os arquivos baixados por meio de `fileUris` lista de propriedades.  Conforme mostrado na tabela a seguir, os arquivos baixados são mapeados em subdiretórios de download para refletir a estrutura dos valores `fileUris`.  
+As informações de caminho após o primeiro segmento de URI são mantidas para `fileUris` os arquivos baixados por meio da lista de propriedades.  Conforme mostrado na tabela a seguir, os arquivos baixados são mapeados em subdiretórios de download para refletir a estrutura dos valores `fileUris`.  
 
 #### <a name="examples-of-downloaded-files"></a>Exemplos de Arquivos Baixados
 
-| URI no fileUris | Localização baixada relativa | Localização baixada absoluta <sup>1</sup> |
+| URI no fileUris | Localização baixada relativa | Local baixado absoluto <sup>1</sup> |
 | ---- | ------- |:--- |
 | `https://someAcct.blob.core.windows.net/aContainer/scripts/myscript.ps1` | `./scripts/myscript.ps1` |`C:\Packages\Plugins\Microsoft.Compute.CustomScriptExtension\1.8\Downloads\2\scripts\myscript.ps1`  |
 | `https://someAcct.blob.core.windows.net/aContainer/topLevel.ps1` | `./topLevel.ps1` | `C:\Packages\Plugins\Microsoft.Compute.CustomScriptExtension\1.8\Downloads\2\topLevel.ps1` |
 
-<sup>1</sup> os caminhos de diretório absoluto mudam ao longo do tempo de vida da VM, mas não em uma única execução da extensão do CustomScript.
+<sup>1</sup> os caminhos de diretório absolutos são alterados durante o tempo de vida da VM, mas não dentro de uma única execução da extensão CustomScript.
 
 ### <a name="support"></a>Suporte
 

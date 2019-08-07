@@ -2,17 +2,17 @@
 title: Criação de locatário de área de trabalho virtual do Windows e pool de hosts-Azure
 description: Como solucionar e resolver problemas de locatário e pool de hosts durante a instalação de um ambiente de locatário de área de trabalho virtual do Windows.
 services: virtual-desktop
-author: ChJenk
+author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 07/10/2019
-ms.author: v-chjenk
-ms.openlocfilehash: 9e58c3bfc0e74f9aac61085608a843954b0923c0
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.author: helohr
+ms.openlocfilehash: 7ab8ec9536af74102d2c9384ea3d0d0503f58f63
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68249551"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68816485"
 ---
 # <a name="tenant-and-host-pool-creation"></a>Criação do pool de host e de locatário
 
@@ -24,7 +24,7 @@ Atualmente, não estamos usando casos de suporte durante a versão prévia da Á
 
 ## <a name="acquiring-the-windows-10-enterprise-multi-session-image"></a>Adquirindo a imagem de várias sessões do Windows 10 Enterprise
 
-Para usar a imagem de várias sessões do Windows 10 Enterprise, vá para o Azure Marketplace, **selecione** > introdução ao**Microsoft Windows 10** > e [Windows 10 Enterprise para desktops virtuais Preview, versão 1809](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsdesktop.windows-10?tab=PlansAndPrice).
+Para usar a imagem de várias sessões do Windows 10 Enterprise, vá para o Azure Marketplace, > selecione introdução ao**Microsoft Windows 10** > e [Windows 10 Enterprise para desktops virtuais Preview, versão 1809](https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsdesktop.windows-10?tab=PlansAndPrice).
 
 ![Uma captura de tela de seleção do Windows 10 Enterprise para desktops virtuais Preview, versão 1809.](media/AzureMarketPlace.png)
 
@@ -331,7 +331,7 @@ Exemplo de erro bruto:
 Se você estiver executando a oferta do Azure Marketplace, forneça valores para os seguintes parâmetros para se autenticar corretamente na área de trabalho virtual do Windows:
 
 - Proprietário RDS do locatário da área de trabalho virtual do Windows: Entidade de serviço
-- ID do aplicativo: A identificação do aplicativo da nova entidade de serviço que você criou
+- ID do Aplicativo: A identificação do aplicativo da nova entidade de serviço que você criou
 - Senha/Confirmar senha: O segredo de senha que você gerou para a entidade de serviço
 - ID do locatário do Azure AD: A ID de locatário do Azure AD da entidade de serviço que você criou
 

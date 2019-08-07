@@ -1,18 +1,17 @@
 ---
 title: Como exibir ativos de dados relacionados no Catálogo de Dados do Azure
 description: Este artigo explica como exibir os ativos de dados relacionados de um ativo de dados selecionado no Catálogo de Dados do Azure.
-services: data-catalog
 author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
 ms.topic: conceptual
-ms.date: 01/18/2018
-ms.openlocfilehash: b01c328812113ad721b7632978ad28e54a6a3ef1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/01/2019
+ms.openlocfilehash: 212ba647e6eb44e800a589928620f56fba65107c
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61000091"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68737025"
 ---
 # <a name="how-to-view-related-data-assets-in-azure-data-catalog"></a>Como exibir ativos de dados relacionados no Catálogo de Dados do Azure?
 O Catálogo de Dados do Azure permite que você exiba os ativos de dados relacionados a um ativo de dados selecionado exiba as relações entre eles. 
@@ -21,7 +20,7 @@ O Catálogo de Dados do Azure permite que você exiba os ativos de dados relacio
 Quando você registra os ativos de dados das fontes de dados a seguir, o Catálogo de Dados do Azure registra automaticamente metadados sobre as relações de união entre os ativos de dados selecionados. 
 
 - SQL Server
-- Banco de dados SQL do Azure
+- Banco de Dados SQL do Azure
 - MySQL
 - Oracle
 

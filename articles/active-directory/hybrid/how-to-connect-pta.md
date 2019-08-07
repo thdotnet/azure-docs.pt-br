@@ -16,12 +16,12 @@ ms.date: 10/21/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cb5733f43a2b2800d5eb5031dddaaeb7d59aadc2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 814c81b6092c4af3778617e165a0bdbce09d71d7
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67109412"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779119"
 ---
 # <a name="user-sign-in-with-azure-active-directory-pass-through-authentication"></a>Entrada do usuário com autenticação de passagem do Azure Active Directory
 
@@ -31,7 +31,7 @@ A autenticação de passagem do Azure AD (Azure Active Directory) permite que os
 
 >[!VIDEO https://www.youtube.com/embed/PyeAC85Gm7w]
 
-Esse recurso é uma alternativa à [Sincronização de Hash de Senha do Azure AD](how-to-connect-password-hash-synchronization.md), que fornece o mesmo benefício da autenticação de nuvem para as organizações. No entanto, determinadas organizações que desejam impor suas políticas de segurança e senha do Active Directory local podem optar por usar a Autenticação de Passagem. Leia [este guia](https://docs.microsoft.com/azure/security/azure-ad-choose-authn) para uma comparação entre os vários métodos de conexão do Azure AD e como escolher o método de entrada certo para a sua organização.
+Esse recurso é uma alternativa à [Sincronização de Hash de Senha do Azure AD](how-to-connect-password-hash-synchronization.md), que fornece o mesmo benefício da autenticação de nuvem para as organizações. No entanto, determinadas organizações que desejam impor suas políticas de segurança e senha do Active Directory local podem optar por usar a Autenticação de Passagem. Leia [este guia](https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn) para uma comparação entre os vários métodos de conexão do Azure AD e como escolher o método de entrada certo para a sua organização.
 
 ![O que é a Autenticação de Passagem do Azure AD](./media/how-to-connect-pta/pta1.png)
 
@@ -59,7 +59,7 @@ Você pode combinar a Autenticação de Passagem com o recurso de [SSO (logon ú
 
 - Dá suporte à entrada do usuário em todos os aplicativos baseados em navegador da Web e em aplicativos de cliente do Microsoft Office que usam [autenticação moderna](https://aka.ms/modernauthga).
 - Os nomes de usuário de entrada podem ser o nome de usuário local padrão (`userPrincipalName`) ou outro atributo configurado no Azure AD Connect (conhecido como `Alternate ID`).
-- O recurso funciona perfeitamente com [acesso condicional](../active-directory-conditional-access-azure-portal.md) recursos, como a MFA (autenticação multifator) para ajudar a proteger seus usuários.
+- O recurso funciona diretamente com recursos de [acesso condicional](../active-directory-conditional-access-azure-portal.md) , como o MFA (autenticação multifator) para ajudar a proteger seus usuários.
 - Integrado com [gerenciamento de senha de autoatendimento](../authentication/active-directory-passwords-overview.md) baseado em nuvem, incluindo write-back de senha para o Active Directory local e a proteção de senha por proibição de senhas usadas normalmente.
 - Ambientes de várias florestas têm suporte se houver relações de confiança entre suas florestas do AD e se o encaminhamento de sufixo de nome estiver configurado corretamente.
 - Essa é um recurso gratuito e você não precisa de nenhuma edição paga do Azure AD para usá-lo.

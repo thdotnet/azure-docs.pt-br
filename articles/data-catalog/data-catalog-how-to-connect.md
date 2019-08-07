@@ -1,19 +1,17 @@
 ---
 title: Como conectar-se a fontes de dados no Catálogo de Dados do Azure
 description: Artigo de instruções que destaca como se conectar a fontes de dados descobertas com o Catálogo de Dados do Azure.
-services: data-catalog
 author: JasonWHowell
 ms.author: jasonh
-ms.assetid: 4e6b27a5-cf75-4012-b88c-333c1fe638e8
 ms.service: data-catalog
 ms.topic: conceptual
-ms.date: 01/18/2018
-ms.openlocfilehash: c64340491dba11870364610a6c2ff62e25c1328a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/01/2019
+ms.openlocfilehash: c91c09da31e4ecf42257b8f9c86f25c6ec39b9df
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61001779"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68734637"
 ---
 # <a name="how-to-connect-to-data-sources"></a>Como se conectar a fontes de dados
 ## <a name="introduction"></a>Introdução
@@ -41,7 +39,7 @@ Ao usar o menu "Abrir em..." para as fontes de dados no portal do Catálogo de D
 | Excel (Top 1000) |.odc |Excel 2010 ou posterior |
 | Power Query |.xlsx |Excel 2016, Excel 2010 ou Excel 2013 com o Power Query para o suplemento do Excel instalado |
 | Power BI Desktop |.pbix |Power BI Desktop de julho de 2016 ou posterior |
-| Ferramentas de dados do SQL Server |vsweb:// |Visual Studio 2013 Atualização 4 ou posterior com ferramentas do SQL Server instaladas |
+| SQL Server Data Tools |vsweb:// |Visual Studio 2013 Atualização 4 ou posterior com ferramentas do SQL Server instaladas |
 | Gerenciador de Relatórios |http:// |Consulte [requisitos do navegador para os Serviços de Relatório do SQL Server](https://technet.microsoft.com/library/ms156511.aspx) |
 
 ## <a name="your-data-your-tools"></a>Seus dados, suas ferramentas

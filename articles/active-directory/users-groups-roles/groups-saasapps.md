@@ -9,26 +9,28 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 01/31/2019
+ms.date: 08/01/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 873863016d6dc54c7439ec1f46180b3c063bda19
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 75fdd0fcd4ceeeb0f680b2cbdb743d30d236c93d
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60470408"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736517"
 ---
 # <a name="using-a-group-to-manage-access-to-saas-applications"></a>Usar um grupo para gerenciar o acesso a aplicativos SaaS
 
-Usando o Azure AD (Azure Active Directory) com a licença do Azure AD Premium ou do Azure AD Basic, você pode usar grupos para atribuir acesso a um aplicativo SaaS que esteja integrado ao Azure AD. Por exemplo, se você quiser atribuir acesso ao departamento de marketing usar cinco aplicativos SaaS diferentes, você pode criar um grupo que contém os usuários no departamento de marketing e atribuir esse grupo a esses cinco aplicativos SaaS que são necessários para o departamento de marketing. Dessa forma, você pode poupar tempo gerenciando a associação no departamento de marketing em um único lugar. Os usuários são atribuídos ao aplicativo quando eles são adicionados como membros do grupo de marketing, e sua atribuição é removida do aplicativo quando eles são removidos do grupo de marketing. Esse recurso pode ser usado com centenas de aplicativos que você adiciona na Galeria de aplicativos do Azure AD.
+Usando o Azure Active Directory (Azure AD) com um plano de licença de Azure AD Premium, você pode usar grupos para atribuir acesso a um aplicativo SaaS integrado ao Azure AD. Por exemplo, se você quiser atribuir acesso ao departamento de marketing usar cinco aplicativos SaaS diferentes, você pode criar um grupo que contém os usuários no departamento de marketing e atribuir esse grupo a esses cinco aplicativos SaaS que são necessários para o departamento de marketing. Dessa forma, você pode poupar tempo gerenciando a associação no departamento de marketing em um único lugar. Os usuários são atribuídos ao aplicativo quando eles são adicionados como membros do grupo de marketing, e sua atribuição é removida do aplicativo quando eles são removidos do grupo de marketing. Esse recurso pode ser usado com centenas de aplicativos que você adiciona na Galeria de aplicativos do Azure AD.
 
 > [!IMPORTANT]
-> Você pode usar esse recurso somente depois que você iniciar uma avaliação do Azure AD Premium ou adquirir licenças do Azure AD Premium ou Azure AD Basic. A atribuição com base em grupo tem suporte apenas para Grupos de Segurança. No momento, as associações de grupo aninhadas não têm suporte para atribuição com base em grupo de aplicativos.
+> Você pode usar esse recurso somente depois de iniciar uma Azure AD Premium avaliação ou compra Azure AD Premium plano de licença.
+> A atribuição baseada em grupo tem suporte apenas para grupos de segurança.
+> No momento, as associações de grupo aninhadas não têm suporte para atribuição com base em grupo de aplicativos.
 
-**Para atribuir acesso de um usuário ou um grupo a um aplicativo SaaS**
+## <a name="to-assign-access-for-a-user-or-group-to-a-saas-application"></a>Para atribuir acesso a um usuário ou grupo a um aplicativo SaaS
 
 1. No [Centro de administração do Azure AD](https://aad.portal.azure.com), selecione **Aplicativos empresariais**.
 2. Selecione um aplicativo que você adicionou da Galeria de Aplicativos para abri-lo.
@@ -37,7 +39,7 @@ Usando o Azure AD (Azure Active Directory) com a licença do Azure AD Premium ou
 6. Selecione quantos grupos ou usuários desejar, em seguida, clique ou toque em **Selecione** para adicioná-los à lista de **Adicionar atribuição**. Você também pode atribuir uma função a um usuário neste estágio.
 7. Selecione **Atribuir** para atribuir usuários ou grupos ao aplicativo empresarial selecionado.
 
-### <a name="next-steps"></a>Próximas etapas
+## <a name="next-steps"></a>Próximas etapas
 Esses artigos fornecem mais informações sobre o Active Directory do Azure.
 
 * [Gerenciamento de acesso a recursos com grupos do Active Directory do Azure](../fundamentals/active-directory-manage-groups.md)

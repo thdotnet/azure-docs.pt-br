@@ -1,6 +1,6 @@
 ---
-title: Quatro etapas para uma base de identidade forte com o Azure Active Directory
-description: Este tópico descreve as quatro etapas que os clientes de identidade híbrida podem adotar para criar uma base de identidade forte.
+title: Quatro etapas para uma base de identidade forte com Azure Active Directory
+description: Este tópico descreve quatro etapas que os clientes de identidade híbrida podem tomar para criar uma base de identidade forte.
 services: active-directory
 author: martincoetzer
 manager: daveba
@@ -13,260 +13,260 @@ ms.date: 06/20/2019
 ms.subservice: hybrid
 ms.author: martinco
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a20a1a1009949aa2e6de8586040e918ae15c8d39
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: 0630e62a08314612cb08b5cb26b5a1563de4f40b
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67655938"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779695"
 ---
-# <a name="four-steps-to-a-strong-identity-foundation-with-azure-active-directory"></a>Quatro etapas para uma base de identidade forte com o Azure Active Directory
+# <a name="four-steps-to-a-strong-identity-foundation-with-azure-active-directory"></a>Quatro etapas para uma base de identidade forte com Azure Active Directory
 
-Gerenciando o acesso a aplicativos e dados não pode contar com as estratégias de limite de segurança de rede tradicionais, como firewalls e redes de perímetro por causa a movimentação rápida de aplicativos para a nuvem. Agora as organizações devem confiar que sua solução de identidade para controlar quem e o que tem acesso a dados e aplicativos da organização. Mais organizações estão permitindo que os funcionários trazem seus próprios dispositivos para trabalhar e usar seus dispositivos de qualquer lugar que eles possam se conectar à Internet. Garantir que esses dispositivos estejam em conformidade e seguro se tornou uma consideração importante em uma organização opta por implementar a solução de identidade. No espaço de trabalho digital de hoje, [identidade é o plano de controle principal](https://www.microsoft.com/security/technology/identity-access-management?rtc=1) de qualquer organização que mudar para a nuvem.
+O gerenciamento de acesso a aplicativos e dados não pode mais depender das estratégias de limite de segurança de rede tradicionais, como redes de perímetro e firewalls, devido à rápida movimentação de aplicativos para a nuvem. Agora, as organizações devem confiar em sua solução de identidade para controlar quem e o que tem acesso aos aplicativos e dados da organização. Mais organizações estão permitindo que os funcionários tragam seus próprios dispositivos para trabalhar e usar seus dispositivos em qualquer lugar em que possam se conectar à Internet. Garantir que esses dispositivos estejam em conformidade e seguro se tornou uma consideração importante na solução de identidade que uma organização opta por implementar. No local de trabalho digital de hoje, [a identidade é o plano de controle principal](https://www.microsoft.com/security/technology/identity-access-management?rtc=1) de qualquer organização que se move para a nuvem.
 
-Em adotar uma solução de identidade híbrida do Azure Active Directory (Azure AD), as organizações obtém acesso a recursos premium que desbloqueie a produtividade por meio de automação, delegação, autoatendimento, únicos e recursos de logon. Ele permite que seus funcionários acessem recursos da empresa de onde quer que eles precisam para realizar seu trabalho, permitindo que sua equipe de TI determinar que o acesso, garantindo que as pessoas certas tenham o acesso correto para os recursos certos para estabelecer a produtividade segura.
+Ao adotar uma solução de identidade híbrida do Azure Active Directory (Azure AD), as organizações têm acesso a recursos premium que desbloqueiam a produtividade por meio de recursos de automação, delegação, autoatendimento e logon único. Ele permite que os seus trabalhadores acessem os recursos da empresa em qualquer lugar onde precisem realizar seu trabalho, permitindo que sua equipe de ti administre esse acesso, garantindo que as pessoas certas tenham o acesso certo aos recursos certos para estabelecer uma produtividade segura.
 
-Com base em nossas lições aprendidas, esta lista de verificação de práticas recomendadas ajudará você a implantar rapidamente as ações recomendadas para criar uma *forte* foundation de identidade em sua organização:
+Com base em nossas aprendeções, esta lista de verificação das práticas recomendadas ajudará você a implantar rapidamente as ações recomendadas para criar uma base de identidade *forte* em sua organização:
 
-* Conectar-se facilmente aos aplicativos
-* Estabelecer uma identidade para todos os usuários automaticamente
+* Conectar-se a aplicativos facilmente
+* Estabelecer uma identidade para cada usuário automaticamente
 * Capacite seus usuários com segurança
-* Colocar suas ideias
+* Operacionalize suas ideias
 
-## <a name="step-1---connect-to-apps-easily"></a>Etapa 1: conectar-se facilmente aos aplicativos
+## <a name="step-1---connect-to-apps-easily"></a>Etapa 1-conectar-se a aplicativos facilmente
 
-Ao conectar seus aplicativos com o Azure AD, você pode melhorar a produtividade do usuário final e a segurança ao habilitar o logon único (SSO) e fazer o provisionamento do usuário. Gerenciando seus aplicativos em um único lugar, o Azure AD, você pode minimizar a sobrecarga administrativa e atingir um ponto único de controle para as políticas de segurança e conformidade.
+Conectando seus aplicativos com o Azure AD, você pode melhorar a produtividade e a segurança do usuário final habilitando o SSO (logon único) e o provisionamento do usuário. Ao gerenciar seus aplicativos em um único lugar, o Azure AD, você pode minimizar a sobrecarga administrativa e obter um único ponto de controle para suas políticas de segurança e conformidade.
 
-Esta seção aborda as opções para gerenciar o acesso de usuário aos aplicativos, habilitando o acesso remoto seguro a aplicativos internos e os benefícios de migrar seus aplicativos para o Azure AD.
+Esta seção aborda as opções para gerenciar o acesso do usuário a aplicativos, permitindo acesso remoto seguro a aplicativos internos e os benefícios de migrar seus aplicativos para o Azure AD.
 
-### <a name="make-apps-available-to-your-users-seamlessly"></a>Disponibilizar aplicativos para seus usuários diretamente
+### <a name="make-apps-available-to-your-users-seamlessly"></a>Tornar os aplicativos disponíveis para os usuários diretamente
 
-Azure AD permite que os administradores [adicionar aplicativos](https://docs.microsoft.com/azure/active-directory/manage-apps/add-application-portal) na Galeria de aplicativos empresariais na [portal do Azure](https://portal.azure.com/). Adicionar aplicativos na Galeria de aplicativos empresariais torna mais fácil para você configurar aplicativos para usar o Azure AD como provedor de identidade. Ele também permite gerenciar o acesso de usuário para o aplicativo com políticas de acesso condicional e configurar o logon único (SSO) para aplicativos para que os usuários não precisam digitar suas senhas repetidamente e são assinados automaticamente em ambos os locais e aplicativos baseados em nuvem.
+O Azure AD permite que os administradores [adicionem aplicativos](https://docs.microsoft.com/azure/active-directory/manage-apps/add-application-portal) à galeria de aplicativos empresariais no [portal do Azure](https://portal.azure.com/). Adicionar aplicativos à galeria de aplicativos empresariais facilita a configuração de aplicativos para usar o Azure AD como seu provedor de identidade. Ele também permite que você gerencie o acesso do usuário ao aplicativo com políticas de acesso condicional e configure o logon único (SSO) para aplicativos para que os usuários não precisem inserir suas senhas repetidamente e sejam automaticamente conectados ao local e aplicativos baseados em nuvem.
 
-Quando aplicativos são adicionados à Galeria do Azure AD, os usuários poderão ver os aplicativos que são atribuídos a eles e procuram e solicitarem outros aplicativos conforme necessário. O Azure AD fornece [vários métodos](https://docs.microsoft.com/azure/active-directory/manage-apps/end-user-experiences) para os usuários acessarem seus aplicativos:
+Depois que os aplicativos são adicionados à galeria do Azure AD, os usuários podem ver os aplicativos atribuídos a eles e pesquisar e solicitar outros aplicativos, conforme necessário. O Azure AD fornece [vários métodos](https://docs.microsoft.com/azure/active-directory/manage-apps/end-user-experiences) para que os usuários acessem seus aplicativos:
 
-* Painel de acesso / meus aplicativos
+* Painel de acesso/meus aplicativos
 * Iniciador de aplicativos do Office 365
 * Logon direto a aplicativos federados
 * Links diretos logon
 
-Para saber mais sobre o acesso de usuário aos aplicativos, consulte **etapa 3--Capacite seus usuários** neste artigo.
+Para saber mais sobre o acesso do usuário aos aplicativos, consulte **etapa 3 – Capacite seus usuários** neste artigo.
 
-### <a name="migrate-apps-from-active-directory-federation-services-to-azure-ad"></a>Migrar aplicativos dos serviços de Federação do Active Directory para o Azure AD
+### <a name="migrate-apps-from-active-directory-federation-services-to-azure-ad"></a>Migrar aplicativos do Serviços de Federação do Active Directory (AD FS) para o Azure AD
 
-Migração única configuração de logon do Active Directory Federation Services (ADFS) para o Azure AD permite que recursos adicionais de segurança, capacidade de gerenciamento mais consistente e colaboração. Para obter melhores resultados, recomendamos que você migre seus aplicativos do AD FS para o Azure AD. Trazer seu aplicativo autenticação e autorização do Azure AD oferece os seguintes benefícios:
+Migrar a configuração de logon único do Serviços de Federação do Active Directory (AD FS) (ADFS) para o Azure AD permite recursos adicionais de segurança, uma capacidade de gerenciamento mais consistente e colaboração. Para obter resultados ideais, recomendamos que você migre seus aplicativos do AD FS para o Azure AD. Trazer a autenticação e a autorização de seu aplicativo para o Azure AD oferece os seguintes benefícios:
 
 * Gerenciar custos
-* Gerenciamento de riscos
+* Gerenciando riscos
 * Aumentando a produtividade
-* Governança e conformidade de endereçamento
+* Lidando com a conformidade e a governança
 
-Para obter mais informações, consulte o [migrando seus aplicativos ao Azure Active Directory](https://aka.ms/migrateapps/whitepaper) white paper.
+Para saber mais, confira o White Paper [migrando seus aplicativos para Azure Active Directory](https://aka.ms/migrateapps/whitepaper) .
 
 ### <a name="enable-secure-remote-access-to-apps"></a>Habilitar acesso remoto seguro a aplicativos
 
-[O Proxy de aplicativo do Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-application-proxy) fornece uma solução simples para as organizações publicar aplicativos no local para a nuvem para usuários remotos que precisam de acesso a aplicativos internos de forma segura. Após um logon único para o Azure AD, os usuários podem acessar a aplicativos locais e de nuvem por meio de URLs externas ou um portal interno do aplicativo.
+O [Azure proxy de aplicativo do AD](https://docs.microsoft.com/azure/active-directory/manage-apps/what-is-application-proxy) fornece uma solução simples para que as organizações publiquem aplicativos locais na nuvem para usuários remotos que precisam acessar aplicativos internos de maneira segura. Após um logon único no Azure AD, os usuários podem acessar aplicativos locais e na nuvem por meio de URLs externas ou um portal de aplicativo interno.
 
-O Proxy de aplicativo do Azure AD oferece os seguintes benefícios:
+O Proxy de Aplicativo do AD do Azure oferece os seguintes benefícios:
 
 * Extensão do AD do Azure para recursos locais
   * Proteção e segurança em escala de nuvem
-  * Recursos como acesso condicional e autenticação multifator que são fáceis de habilitar
-* Nenhum componente na rede de perímetro, como VPN e as soluções tradicionais de proxy reverso
+  * Recursos como o acesso condicional e a autenticação multifator que são fáceis de habilitar
+* Nenhum componente na rede de perímetro, como VPN e soluções de proxy reverso tradicionais
 * Nenhuma conexão de entrada necessária
-* Logon único (SSO) em dispositivos, recursos e aplicativos na nuvem e locais
-* Capacita os usuários finais sejam produtivos a qualquer momento e em qualquer lugar
+* SSO (logon único) entre dispositivos, recursos e aplicativos na nuvem e no local
+* Capacita os usuários finais a serem produtivos a qualquer momento e em qualquer lugar
 
-### <a name="discover-shadow-it-with-microsoft-cloud-app-security"></a>Descobrir TI sombra com o Microsoft Cloud App Security
+### <a name="discover-shadow-it-with-microsoft-cloud-app-security"></a>Descobrir sombra com ti com Microsoft Cloud App Security
 
-Nas empresas modernas, os departamentos de TI geralmente não estão cientes de todos os aplicativos de nuvem que são usados pelos usuários para fazer seu trabalho. Quando os administradores de TI são solicitados a nuvem quantos aplicativos eles acham que seus funcionários usam, em média, eles digamos, 30 ou 40. Na realidade, a média é de mais de 1.000 aplicativos separados que estão sendo usados pelos funcionários da sua organização. 80% dos funcionários usam aplicativos não sancionados que ninguém tenha revisado e não pode estar em conformidade com as políticas de segurança e conformidade.
+Nas empresas modernas, os departamentos de ti geralmente não estão cientes de todos os aplicativos de nuvem que são usados pelos usuários para realizar seu trabalho. Quando os administradores de ti são solicitados a quantos aplicativos de nuvem eles acham que seus funcionários usam, em média, dizem 30 ou 40. Na realidade, a média é de mais de 1.000 aplicativos separados sendo usados por funcionários em sua organização. 80% dos funcionários usam aplicativos não aprovados que ninguém analisou e que podem não estar em conformidade com suas políticas de segurança e conformidade.
 
-[Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/what-is-cloud-app-security) (MCAS) pode ajudá-lo a identificar aplicativos úteis que são comuns com usuários que ele pode sancionar e adicionar à Galeria de aplicativos do Enterprise para que os usuários se beneficiam de recursos, como SSO e acesso condicional.
+[Microsoft Cloud app Security](https://docs.microsoft.com/cloud-app-security/what-is-cloud-app-security) O (MCAS) pode ajudá-lo a identificar aplicativos úteis que são populares com usuários que podem ser aprovados e adicionados à galeria de aplicativos empresariais para que os usuários se beneficiem de recursos como o SSO e o acesso condicional.
 
-*"* * Cloud App Security** nos ajuda a garantir que as pessoas estão corretamente usando nossos aplicativos de nuvem e SaaS, de maneiras que dão suporte as políticas de segurança fundamentais que ajudam a proteger a Accenture." *--- [John Blasi, gerenciando Accenture diretor, segurança de informações](https://customers.microsoft.com/story/accenture-professional-services-cloud-app-security)
+*"* * Cloud app Security** nos ajuda a garantir que nossas pessoas estejam usando adequadamente nossos aplicativos de nuvem e SaaS, de maneiras que dão suporte às políticas de segurança fundamentais que ajudam a proteger a Accenture". *--- [John Blasi, diretor de gerenciamento, segurança de informações, Accenture](https://customers.microsoft.com/story/accenture-professional-services-cloud-app-security)
 
-Além de detectar TI sombra, MCAS também pode determinar o nível de risco de aplicativos, impedir acesso não autorizado a dados corporativos, perda de dados e outros riscos de segurança inerentes nos aplicativos.
+Além de detectar a ti sombra, o MCAS também pode determinar o nível de risco dos aplicativos, impedir o acesso não autorizado a dados corporativos, possível perda de dados e outros riscos de segurança inerentes aos aplicativos.
 
-## <a name="step-2---establish-one-identity-for-every-user-automatically"></a>Etapa 2 - estabelecer uma identidade para todos os usuários automaticamente
+## <a name="step-2---establish-one-identity-for-every-user-automatically"></a>Etapa 2 – estabelecer uma identidade para cada usuário automaticamente
 
-Integração de diretórios com base em nuvem e locais em uma solução de identidade híbrida do Azure AD permitirá que você reutilize o investimento existente do Active Directory local por meio do provisionamento de suas identidades existentes na nuvem. A solução sincroniza identidades locais com o AD do Azure, enquanto mantém IT o Active Directory local em execução com qualquer solução de governança existente como a principal fonte de verdade para identidades. Solução de identidade do Microsoft Azure AD híbrido abrange locais e recursos baseados em nuvem, criando uma identidade de usuário comum para autenticação e autorização para todos os recursos, independentemente de sua localização.
+Colocar diretórios locais e baseados em nuvem juntos em uma solução de identidade híbrida do Azure AD permitirá que você reutilize seu investimento local Active Directory existente ao provisionar suas identidades existentes na nuvem. A solução sincroniza identidades locais com o Azure AD, enquanto mantém o Active Directory local em execução com qualquer solução de governança existente como a principal fonte de verdade para identidades. A solução de identidade híbrida do Azure AD da Microsoft abrange recursos locais e baseados em nuvem, criando uma identidade de usuário comum para autenticação e autorização para todos os recursos, independentemente de sua localização.
 
-Integrar seus diretórios locais ao Azure AD torna os usuários mais produtivos e impede que os usuários usando várias contas em aplicativos e serviços, fornecendo uma identidade comum para acessar a nuvem e recursos locais. Usar várias contas é um ponto problemático para os usuários finais e IT semelhante. Da perspectiva do usuário final, tendo vários meios de contas que precise se lembrar de várias senhas. Para evitar isso, muitos usuários reutilizam a mesma senha para cada conta, o que é ruim de uma perspectiva de segurança. Da perspectiva de TI, reutilização geralmente leva a mais redefinições de senha e os custos de assistência técnica, juntamente com as reclamações de usuários finais.
+A integração de seus diretórios locais ao Azure AD torna seus usuários mais produtivos e impede que os usuários usem várias contas entre aplicativos e serviços fornecendo uma identidade comum para o acesso a recursos de nuvem e locais. O uso de várias contas é um ponto problemático para os usuários finais e a ti. De uma perspectiva do usuário final, ter várias contas significa ter que se lembrar de várias senhas. Para evitar isso, muitos usuários reutilizam a mesma senha para cada conta, o que é inadequado de uma perspectiva de segurança. De uma perspectiva de ti, a reutilização geralmente leva a mais redefinições de senha e custos de assistência técnica junto com as reclamações do usuário final.
 
-O Azure AD Connect é a ferramenta que é usada para sincronizar suas identidades locais ao Azure AD, que pode ser usado para acessar aplicativos na nuvem. Depois que as identidades estão no Azure AD, eles podem provisionar para aplicativos SaaS, como o Salesforce ou o Concur.
+Azure AD Connect é a ferramenta usada para sincronizar suas identidades locais com o Azure AD, que pode ser usada para acessar aplicativos de nuvem. Depois que as identidades estiverem no Azure AD, elas poderão ser provisionadas para aplicativos SaaS como Salesforce ou concur.
 
-Nesta seção, listamos as recomendações para fornecer alta disponibilidade, a autenticação moderna para a nuvem e a redução da pegada de local.
+Nesta seção, listamos as recomendações para fornecer alta disponibilidade, autenticação moderna para a nuvem e reduzir seu espaço local.
 
 > [!NOTE]
-> Se você quiser saber mais sobre o Azure AD Connect, consulte [o que é o Azure AD Connect Sync?](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-whatis)
+> Se você quiser saber mais sobre Azure AD Connect, confira [o que é Azure ad Connect sincronização?](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-whatis)
 
-### <a name="set-up-a-staging-server-for-azure-ad-connect-and-keep-it-up-to-date"></a>Configurar um servidor de preparo para o Azure AD Connect e mantê-lo atualizado
+### <a name="set-up-a-staging-server-for-azure-ad-connect-and-keep-it-up-to-date"></a>Configurar um servidor de preparo para Azure AD Connect e mantê-lo atualizado
 
-O Azure AD Connect desempenha um papel fundamental no processo de provisionamento. Se o servidor de sincronização ficar offline por algum motivo, as alterações para o local não serão atualizadas na nuvem e causam problemas de acesso aos usuários. É importante definir uma estratégia de failover que permite que os administradores retomar a sincronização rapidamente depois que o servidor de sincronização fica offline.
+Azure AD Connect desempenha um papel fundamental no processo de provisionamento. Se o servidor de sincronização ficar offline por algum motivo, as alterações no local não serão atualizadas na nuvem e causarão problemas de acesso aos usuários. É importante definir uma estratégia de failover que permita que os administradores retomem a sincronização rapidamente depois que o servidor de sincronização ficar offline.
 
-Para fornecer alta disponibilidade no evento do Azure primário AD Connect servidor ficar offline, é recomendável que você implante um separado [servidor de preparo](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-staging-server) para o Azure AD Connect. Implantando um servidor permite que o administrador "elevar" o servidor de preparo para produção por uma opção de configuração simples. Ter um servidor em espera configurado no modo de preparo também permite que você testar e implantar novas alterações de configuração e introduzir um novo servidor, se o encerramento do antigo.
+Para fornecer alta disponibilidade no caso de seu servidor de Azure AD Connect primário ficar offline, é recomendável que você implante um [servidor de preparo](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-staging-server) separado para Azure ad Connect. A implantação de um servidor permite que o administrador "promova" o servidor de preparo para a produção por meio de uma opção de configuração simples. Ter um servidor em espera configurado no modo de preparo também permite que você teste e implante novas alterações de configuração e introduza um novo servidor se estiver encerrando o antigo.
 
 > [!TIP]
-> O Azure AD Connect é atualizado regularmente. Portanto, é altamente recomendável que você mantenha o servidor de preparo atual para aproveitar as melhorias de desempenho, correções de bugs e novos recursos que cada nova versão fornece.
+> O Azure AD Connect é atualizado regularmente. Portanto, é altamente recomendável que você mantenha o servidor de preparo atualizado para aproveitar as melhorias de desempenho, correções de bugs e novos recursos fornecidos por cada nova versão.
 
-### <a name="enable-cloud-authentication"></a>Habilitar a autenticação de nuvem
+### <a name="enable-cloud-authentication"></a>Habilitar autenticação na nuvem
 
-As organizações com o Active Directory do local devem estender seu diretório AD do Azure usando o Azure AD Connect e configurar o método de autenticação apropriado. [Escolhendo o método de autenticação correto](https://docs.microsoft.com/azure/security/azure-ad-choose-authn) para sua organização é a primeira etapa na sua jornada de migração de aplicativos para a nuvem. Ele é um componente crítico, pois ele controla o acesso a todos os dados de nuvem e recursos.
+As organizações com Active Directory local devem estender seu diretório para o AD do Azure usando Azure AD Connect e configurar o método de autenticação apropriado. [Escolher o método de autenticação correto](https://docs.microsoft.com/azure/security/fundamentals/choose-ad-authn) para sua organização é a primeira etapa em sua jornada de mover aplicativos para a nuvem. Trata-se de um componente crítico, pois controla o acesso a todos os dados e recursos da nuvem.
 
-O método mais simples e recomendado para habilitar a autenticação de nuvem no local para objetos de diretório do AD do Azure é habilitar [sincronização de Hash de senha](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-password-hash-synchronization) (PHS). Como alternativa, algumas organizações podem considerar a habilitação [autenticação de passagem](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-pta-quick-start) (PTA).
+O método mais simples e recomendado para habilitar a autenticação de nuvem para objetos de diretório locais no Azure AD é habilitar a PHS ( [sincronização de hash de senha](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-password-hash-synchronization) ). Como alternativa, algumas organizações podem considerar a habilitação da [autenticação de passagem](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-pta-quick-start) (PTA).
 
-Se você escolher PHS ou PTA, não se esqueça de habilitar [logon único contínuo](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso) para permitir que os usuários acessem aplicativos na nuvem sem constantemente inserindo seu nome de usuário e senha no aplicativo ao usar o Windows 7 e 8 dispositivos em sua empresa rede. Sem logon único, os usuários devem lembrar senhas específicas de aplicativo e entrar em cada aplicativo. Da mesma forma, a equipe de TI precisa para criar e atualizar contas de usuário para cada aplicativo, como o Office 365, Box e Salesforce. Os usuários precisam se lembrar de suas senhas, além de gastar tempo para entrar em cada aplicativo. Fornecendo um padronizado único logon mecanismo para toda a empresa é crucial para melhor experiência do usuário, redução de risco, capacidade de relatar e governança.
+Independentemente de você escolher PHS ou PTA, não se esqueça de habilitar o [logon único contínuo](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso) para permitir que os usuários acessem os aplicativos de nuvem sem inserir constantemente seu nome de usuário e senha no aplicativo ao usar o Windows 7 e 8 dispositivos em sua rede corporativa. Sem o logon único, os usuários devem se lembrar de senhas específicas do aplicativo e entrar em cada aplicativo. Da mesma forma, a equipe de ti precisa criar e atualizar contas de usuário para cada aplicativo, como Office 365, Box e Salesforce. Os usuários precisam se lembrar de suas senhas, além de gastar tempo para entrar em cada aplicativo. Fornecer um mecanismo de logon único padronizado para toda a empresa é crucial para melhor experiência do usuário, redução de risco, capacidade de relatório e governança.
 
-Para as organizações que já usam o AD FS ou outro provedor de autenticação local, o movendo para o Azure AD como provedor de identidade pode reduzir a complexidade e aumentar a disponibilidade. A menos que você tenha casos de uso específicos para usar a federação, é recomendável migrar da autenticação federada PHS e SSO contínuo ou PTA e SSO contínuo para aproveitar os benefícios de uma superfície reduzida no local e a flexibilidade que a nuvem oferece com experiências de usuário aprimorada. Para obter mais informações, consulte [migrar da federação para sincronização de hash de senha para o Azure Active Directory](https://docs.microsoft.com/azure/active-directory/hybrid/plan-migrate-adfs-password-hash-sync).
+Para as organizações que já usam AD FS ou outro provedor de autenticação local, mudar para o Azure AD como seu provedor de identidade pode reduzir a complexidade e melhorar a disponibilidade. A menos que você tenha casos de uso específicos para usar a Federação, é recomendável migrar da autenticação federada para o PHS e o SSO contínuo ou PTA e o SSO contínuo para aproveitar os benefícios de um espaço local reduzido e a flexibilidade oferecida pela nuvem com experiências de usuário aprimoradas. Para obter mais informações, consulte [migrar da Federação para a sincronização de hash de senha para Azure Active Directory](https://docs.microsoft.com/azure/active-directory/hybrid/plan-migrate-adfs-password-hash-sync).
 
-### <a name="enable-automatic-deprovisioning-of-accounts"></a>Habilitar desprovisionamento automáticos de contas
+### <a name="enable-automatic-deprovisioning-of-accounts"></a>Habilitar o desprovisionamento automático de contas
 
-Habilitar o provisionamento e desprovisionamento de usuários para seus aplicativos automatizado é a melhor estratégia para controlar o ciclo de vida de identidades em vários sistemas. Azure AD dá suporte a [automatizado, baseado em políticas de provisionamento e desprovisionamento](https://docs.microsoft.com/azure/active-directory/manage-apps/configure-automatic-user-provisioning-portal) de contas de usuário a uma variedade de aplicativos SaaS populares, como ServiceNow e o Salesforce e outras pessoas que implementam o [SCIM 2.0 protocolo](https://docs.microsoft.com/azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups). Diferentemente das soluções tradicionais de provisionamento, que exige código personalizado ou o carregamento manual de arquivos CSV, o serviço de provisionamento está hospedado na nuvem e recursos pré-integrados conectores que podem ser configurados e gerenciados usando o portal do Azure. Dos principais benefícios de desprovisionamento automático é que ele ajuda a proteger sua organização removendo instantaneamente as identidades de usuários dos principais aplicativos SaaS quando eles saírem da organização.
+A habilitação do provisionamento e desprovisionamento automatizados para seus aplicativos é a melhor estratégia para governar o ciclo de vida de identidades em vários sistemas. O Azure AD dá suporte ao [provisionamento automatizado e baseado em políticas e](https://docs.microsoft.com/azure/active-directory/manage-apps/configure-automatic-user-provisioning-portal) ao desprovisionamento de contas de usuário para uma variedade de aplicativos SaaS populares, como ServiceNow e Salesforce, e outros que implementam o [protocolo scim 2,0](https://docs.microsoft.com/azure/active-directory/manage-apps/use-scim-to-provision-users-and-groups). Ao contrário das soluções de provisionamento tradicionais, que exigem código personalizado ou carregamento manual de arquivos CSV, o serviço de provisionamento é hospedado na nuvem e apresenta conectores previamente integrados que podem ser configurados e gerenciados usando o portal do Azure. Um dos principais benefícios do desprovisionamento automático é que ele ajuda a proteger sua organização removendo instantaneamente as identidades dos usuários dos principais aplicativos SaaS quando eles deixam a organização.
 
 Para saber mais sobre o provisionamento de contas de usuário automático e como ele funciona, confira [Automatizar o provisionamento e o desprovisionamento de usuário para aplicativos SaaS com o Azure Active Directory](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
 
-## <a name="step-3---empower-your-users-securely"></a>Etapa 3 - Capacite seus usuários com segurança
+## <a name="step-3---empower-your-users-securely"></a>Etapa 3: Capacite seus usuários com segurança
 
-No espaço de trabalho digital de hoje, é importante equilibrar a segurança com a produtividade. No entanto, os usuários finais frequentemente recuado em medidas de segurança que reduzir sua produtividade e o acesso a aplicativos de nuvem. Para ajudar a lidar com isso, o Azure AD fornece recursos de autoatendimento que permitem aos usuários a permanecerem produtivos enquanto minimiza a sobrecarga administrativa.
+No local de trabalho digital de hoje, é importante balancear a segurança com a produtividade. No entanto, os usuários finais geralmente reforçam as medidas de segurança que reduzem a produtividade e o acesso aos aplicativos na nuvem. Para ajudar a resolver isso, o Azure AD fornece recursos de autoatendimento que permitem que os usuários permaneçam produtivos e, ao mesmo tempo, minimizam a sobrecarga administrativa.
 
-Esta seção lista as recomendações para remover o atrito de sua organização, capacitando seus usuários permanecendo vigilante.
+Esta seção lista as recomendações para remover o conflito de sua organização, capacitando seus usuários enquanto você ainda está atento.
 
-### <a name="enable-self-service-password-reset-for-all-users"></a>Habilitar o autoatendimento de redefinição de senha para todos os usuários
+### <a name="enable-self-service-password-reset-for-all-users"></a>Habilitar a redefinição de senha de autoatendimento para todos os usuários
 
-Do Azure [redefinição de senha de autoatendimento](https://docs.microsoft.com/azure/active-directory/authentication/quickstart-sspr) (SSPR) oferece um meio simples para os administradores de TI permitir que os usuários redefinam e desbloquear suas senhas ou contas sem intervenção do administrador. O sistema inclui relatórios detalhados que acompanham quando os usuários acessam o sistema junto com as notificações para alertá-lo para uso indevido ou um abuso.
+A SSPR (redefinição de [senha](https://docs.microsoft.com/azure/active-directory/authentication/quickstart-sspr) de autoatendimento) do Azure oferece um meio simples para os administradores de ti permitirem que os usuários redefinam e desbloqueiem suas senhas ou contas sem intervenção do administrador. O sistema inclui relatórios detalhados que acompanham quando os usuários acessam o sistema junto com as notificações para alertá-lo para uso indevido ou um abuso.
 
-Por padrão, o Azure Active Directory desbloqueia contas quando ele executa uma redefinição de senha. No entanto, quando você habilita o Azure AD Connect [integração local](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-howitworks#on-premises-integration), você também tem a opção de separar essas duas operações, que permitem aos usuários desbloquear sua conta sem precisar redefinir a senha.
+Por padrão, o Azure Active Directory desbloqueia contas quando ele executa uma redefinição de senha. No entanto, ao habilitar [a integração de Azure ad Connect local](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-howitworks#on-premises-integration), você também tem a opção de separar essas duas operações, o que permite que os usuários desbloqueiem sua conta sem precisar redefinir a senha.
 
-### <a name="ensure-all-users-are-registered-for-mfa-and-sspr"></a>Verifique se que todos os usuários estão registrados para MFA e o SSPR
+### <a name="ensure-all-users-are-registered-for-mfa-and-sspr"></a>Verifique se todos os usuários estão registrados para MFA e SSPR
 
-O Azure fornece relatórios que podem ser usados por você e sua organização para garantir que os usuários são registrados para MFA e o SSPR. Os usuários que ainda não registraram talvez precise ser instruídos sobre o processo.
+O Azure fornece relatórios que podem ser usados por você e sua organização para garantir que os usuários sejam registrados para MFA e SSPR. Os usuários que não tiverem registrado talvez precisem ser instruídos no processo.
 
-A MFA [relatório de entradas](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-reporting) inclui informações sobre o uso MFA e fornece informações sobre como a MFA está funcionando em sua organização. Ter acesso ao entrar atividade (e auditorias e eventos de risco) para o Azure AD é essencial para a solução de análise de uso e investigações legais.
+O [relatório de entradas](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-reporting) de MFA inclui informações sobre o uso de MFA e fornece uma visão sobre como a MFA está funcionando em sua organização. Ter acesso à atividade de entrada (e auditorias e eventos de risco) para o Azure AD é crucial para solução de problemas, análise de uso e investigações forenses.
 
-Da mesma forma, o [relatório de gerenciamento de senha de autoatendimento](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-reporting) pode ser usado para determinar quem tem (ou não) registrado no SSPR.
+Da mesma forma, o [relatório de gerenciamento de senhas](https://docs.microsoft.com/azure/active-directory/authentication/howto-sspr-reporting) de autoatendimento pode ser usado para determinar quem tem (ou não) registrado para SSPR.
 
 ### <a name="self-service-app-management"></a>Gerenciamento de aplicativo de autoatendimento
 
-Antes que os usuários podem descobrir por conta própria aplicativos de seu painel de acesso, você precisa habilitar [acesso a aplicativos de autoatendimento](https://docs.microsoft.com/azure/active-directory/manage-apps/access-panel-manage-self-service-access) a todos os aplicativos que você deseja permitir que os usuários a descobrir por conta própria e solicitar acesso. Acesso de aplicativo de autoatendimento é uma ótima maneira de permitir que os usuários a descobrir por conta própria aplicativos e, opcionalmente, permitir que o grupo de negócios aprovar o acesso a esses aplicativos. Você pode permitir que o grupo de negócios gerenciar as credenciais atribuídas a esses usuários para [senha de logon único em aplicativos](https://docs.microsoft.com/azure/active-directory/manage-apps/application-sign-in-problem-password-sso-gallery#configure-password-sso-for-an-azure-ad-gallery-app) diretamente de seus painéis de acesso.
+Antes que os usuários possam detectar aplicativos automaticamente no painel de acesso, você precisa habilitar o [acesso de aplicativo](https://docs.microsoft.com/azure/active-directory/manage-apps/access-panel-manage-self-service-access) de autoatendimento a todos os aplicativos que você deseja permitir que os usuários autodescubram e solicitem acesso ao. O acesso ao aplicativo de autoatendimento é uma ótima maneira de permitir que os usuários autodescubram aplicativos e, opcionalmente, permitem que o grupo de negócios aprove o acesso a esses aplicativos. Você pode permitir que o grupo de negócios gerencie as credenciais atribuídas a esses usuários para [aplicativos de logon único com senha](https://docs.microsoft.com/azure/active-directory/manage-apps/application-sign-in-problem-password-sso-gallery#configure-password-sso-for-an-azure-ad-gallery-app) diretamente em seus painéis de acesso.
 
 ### <a name="self-service-group-management"></a>Gerenciamento de grupo de autoatendimento
 
-Atribuindo usuários a aplicativos é melhor mapeado ao usar grupos, pois permitem que grande flexibilidade e capacidade de gerenciar em escala:
+A atribuição de usuários a aplicativos é melhor mapeada ao usar grupos, pois eles permitem uma grande flexibilidade e capacidade de gerenciar em escala:
 
-* Usando a associação dinâmica de grupo com base em atributo
-* Delegação para proprietários de aplicativo
+* Baseado em atributo usando a associação dinâmica de grupo
+* Delegação aos proprietários do aplicativo
 
-O Azure AD fornece a capacidade de gerenciar o acesso aos recursos usando grupos de segurança e Grupos do Office 365. Esses grupos podem ser gerenciados por um proprietário de grupo que pode aprovar ou negar solicitações de associação e delegar o controle de associação de grupo. Conhecido como [gerenciamento de grupo de autoatendimento](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-self-service-management), esse recurso poupa tempo, permitindo que os proprietários de grupo que não são atribuídos a uma função administrativa para criar e gerenciar grupos sem a necessidade de contar com os administradores para lidar com suas solicitações.
+O Azure AD fornece a capacidade de gerenciar o acesso aos recursos usando grupos de segurança e Grupos do Office 365. Esses grupos podem ser gerenciados por um proprietário de grupo que pode aprovar ou negar solicitações de associação e delegar o controle de associação de grupo. Conhecido como [Gerenciamento de grupo](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-self-service-management)de autoatendimento, esse recurso poupa tempo, permitindo que os proprietários de grupos que não são atribuídos a uma função administrativa criem e gerenciem grupos sem precisar contar com os administradores para lidar com suas solicitações.
 
-## <a name="step-4---operationalize-your-insights"></a>Etapa 4: colocar suas ideias
+## <a name="step-4---operationalize-your-insights"></a>Etapa 4-colocar suas ideias em operação
 
-Auditoria e log de eventos relacionados à segurança e alertas relacionados são componentes essenciais de uma estratégia eficiente para garantir que os usuários permanecem produtivos e sua organização é segura. Os logs de segurança e relatórios podem ajudar a responder pergunta, como:
+A auditoria e o registro em log de eventos relacionados à segurança e alertas relacionados são componentes essenciais de uma estratégia eficiente para garantir que os usuários permaneçam produtivos e sua organização seja segura. Os logs e relatórios de segurança podem ajudar a responder a perguntas como:
 
-* Você está usando está pagando?
-* Há algo suspeito ou mal-intencionado ocorrendo em meu locatário?
-* Quem foi afetado durante um incidente de segurança?
+* Você está usando o que está pagando?
+* Há alguma coisa suspeita ou mal-intencionada acontecendo em meu locatário?
+* Quem foi impactado durante um incidente de segurança?
 
-Os logs e os relatórios de segurança fornecem um registro eletrônico das atividades suspeitas e ajudam a detectar padrões que podem indicar uma tentativa de penetração externa ou uma penetração externa com êxito da rede, bem como ataques internos. Você pode usar a auditoria para monitorar a atividade de usuário, conformidade regulatória de documentos, fazer análise forense e muito mais. Os alertas fornecem notificações de eventos de segurança.
+Os logs e os relatórios de segurança fornecem um registro eletrônico das atividades suspeitas e ajudam a detectar padrões que podem indicar uma tentativa de penetração externa ou uma penetração externa com êxito da rede, bem como ataques internos. Você pode usar a auditoria para monitorar a atividade do usuário, a conformidade regulatória do documento, a análise forense e muito mais. Os alertas fornecem notificações de eventos de segurança.
 
 ### <a name="assign-least-privileged-admin-roles-for-operations"></a>Atribuir funções de administrador com privilégios mínimos para operações
 
-Pensar sobre sua abordagem de operações, há dois níveis de administração a considerar. O primeiro nível coloca o peso de administração no seu administrador global (es). Sempre usar a função de administrador global, pode ser apropriada para empresas menores. Mas para organizações maiores com a equipe de suporte técnico e administradores responsáveis por tarefas específicas, atribuir a função de administrador global pode ser um risco à segurança, pois ele fornece às pessoas com a capacidade de gerenciar as tarefas que estão acima e além o que eles devem ser capazes de fazer.
+Como você imagina sobre sua abordagem às operações, há alguns níveis de administração a serem considerados. O primeiro nível coloca a carga da administração no (s) administrador (es) global (is). Sempre usando a função de administrador global, pode ser apropriado para empresas menores. Mas, para organizações maiores com equipe de suporte técnico e administradores responsáveis por tarefas específicas, a atribuição da função de administrador global pode ser um risco de segurança, uma vez que ela fornece aos indivíduos a capacidade de gerenciar tarefas que estão acima e além o que eles devem ser capazes de fazer.
 
-Nesse caso, você deve considerar o próximo nível de administração. Usando o Azure AD, você pode designar os usuários finais como "administradores limitados", que podem gerenciar tarefas nas funções com menos privilégios. Por exemplo, você pode atribuir a ajuda a equipe de suporte técnico a [leitor de segurança](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#security-reader) função fornecê-las com a capacidade de gerenciar recursos de segurança com acesso somente leitura. Ou talvez, faz sentido atribuir a [administrador da autenticação](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#authentication-administrator) função aos indivíduos para lhes conceder a capacidade de redefinir credenciais diferente de senha ou ler e configurar o Azure Service Health.
+Nesse caso, você deve considerar o próximo nível de administração. Usando o Azure AD, você pode designar usuários finais como "administradores limitados" que podem gerenciar tarefas em funções com menos privilégios. Por exemplo, você pode atribuir a equipe de suporte técnico a função de [leitor de segurança](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#security-reader) para fornecer a capacidade de gerenciar recursos relacionados à segurança com acesso somente leitura. Ou talvez faça sentido atribuir a função de [administrador de autenticação](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#authentication-administrator) a indivíduos para dar a eles a capacidade de redefinir credenciais de não senha ou ler e configurar a integridade do serviço do Azure.
 
-Para obter mais informações, consulte [permissões de função de administrador no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).
+Para saber mais, confira [permissões de função de administrador no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles).
 
-### <a name="monitor-hybrid-components-azure-ad-connect-sync-ad-fs-using-azure-ad-connect-health"></a>Monitorar componentes híbrido (Azure AD Connect sync, o AD FS) usando o Azure AD Connect Health
+### <a name="monitor-hybrid-components-azure-ad-connect-sync-ad-fs-using-azure-ad-connect-health"></a>Monitorar componentes híbridos (Azure AD Connect sincronização AD FS) usando Azure AD Connect Health
 
-Azure AD Connect e AD FS são componentes essenciais que podem interromper a autenticação e gerenciamento de ciclo de vida e, por fim, levar a interrupções. Portanto, você deve implantar o Azure AD Connect Health para monitoramento e relatórios desses componentes.
+Azure AD Connect e AD FS são componentes críticos que podem interromper o gerenciamento do ciclo de vida e a autenticação e, finalmente, levar a interrupções. Portanto, você deve implantar Azure AD Connect Health para monitoramento e relatórios desses componentes.
 
-Para saber mais, acesse leitura [FS Monitor AD usando o Azure AD Connect Health](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-adfs).
+Para saber mais, acesse [monitorar AD FS usando Azure ad Connect Health](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-adfs).
 
-### <a name="use-azure-monitor-to-collect-data-logs-for-analytics"></a>Usar o Azure Monitor para coletar logs de dados para análise
+### <a name="use-azure-monitor-to-collect-data-logs-for-analytics"></a>Usar Azure Monitor para coletar logs de dados para análise
 
-[O Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) é um portal de monitoramento unificado para todos os logs do Azure AD, que fornece insights profundos, análises avançadas e aprendizado de máquina inteligentes. Com o Azure Monitor, você pode consumir as métricas e logs de dentro do portal e por meio de APIs para obter mais visibilidade sobre o estado e o desempenho dos seus recursos. Ele permite que um único painel de vidro a experiência dentro do portal, permitindo a criação de uma ampla gama de integrações de produtos por meio de opções de exportação de dados e as APIs que oferecem suporte a sistemas tradicionais de SIEM de terceiros. O Azure Monitor também oferece a capacidade de configurar regras de alerta para obter notificações ou tomar ações automatizadas nos problemas que afetam seus recursos.
+O [Azure monitor](https://docs.microsoft.com/azure/azure-monitor/overview) é um portal de monitoramento unificado para todos os logs do Azure AD, que fornece informações aprofundadas, análises avançadas e aprendizado inteligente de máquina. Com o Azure Monitor, você pode consumir logs e métricas no portal e via APIs para obter mais visibilidade sobre o estado e o desempenho de seus recursos. Ele permite um único painel de experiência de vidro no portal, permitindo, ao mesmo tempo, uma ampla gama de integrações de produtos por meio de APIs e opções de exportação de dados que dão suporte a sistemas SIEM de terceiros tradicionais. Azure Monitor também oferece a capacidade de configurar regras de alerta para ser notificado ou tomar ações automatizadas sobre problemas que afetam seus recursos.
 
 ![Azure Monitor](./media/four-steps/image1.png)
 
-### <a name="create-custom-dashboards-for-your-leadership-and-your-day-to-day"></a>Criar painéis personalizados para sua liderança e seu dia a dia
+### <a name="create-custom-dashboards-for-your-leadership-and-your-day-to-day"></a>Crie painéis personalizados para sua liderança e seu dia a dia
 
-As organizações que não têm uma solução SIEM podem baixar o [pacote de conteúdo do Power BI](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-power-bi-content-pack) para o Azure AD. O conteúdo de pacote contém relatórios pré-criados para ajudá-lo do Power BI entender como os usuários adotam e usam recursos do Azure AD, que permite que você obtenha informações sobre todas as atividades em seu diretório. Você também pode criar seus próprios [painel personalizado](https://docs.microsoft.com/power-bi/service-dashboards) e compartilhar com sua equipe de liderança para relatar as atividades diárias. Dashboards são uma ótima maneira de monitorar seu negócio e ver todas as suas métricas mais importantes em um relance. As visualizações em um dashboard podem vir de um conjunto de dados subjacente ou muitas e de um relatório subjacente ou muitas. Um painel combina locais e dados, fornecendo uma exibição consolidada independentemente de onde os dados residem na nuvem.
+As organizações que não têm uma solução SIEM podem baixar o [pacote de conteúdo do Power bi](https://docs.microsoft.com/azure/active-directory/reports-monitoring/howto-power-bi-content-pack) para o Azure AD. O pacote de conteúdo do Power BI contém relatórios pré-criados para ajudá-lo a entender como os usuários adotam e usam os recursos do Azure AD, o que permite obter informações sobre todas as atividades em seu diretório. Você também pode criar seu próprio [painel personalizado](https://docs.microsoft.com/power-bi/service-dashboards) e compartilhá-lo com sua equipe de liderança para relatar as atividades do dia a dia. Os painéis são uma ótima maneira de monitorar seus negócios e ver todas as métricas mais importantes em um relance. As visualizações em um painel podem vir de um conjunto de um dataset subjacente ou muitos, e de um relatório subjacente ou muitos. Um painel combina dados locais e na nuvem, fornecendo uma exibição consolidada, independentemente de onde os dados residem.
 
-![Painel personalizado do Power BI](./media/four-steps/image2.png)
+![Power BI painel personalizado](./media/four-steps/image2.png)
 
-### <a name="understand-your-support-call-drivers"></a>Entender os drivers de chamada de suporte
+### <a name="understand-your-support-call-drivers"></a>Entenda seus drivers de chamada de suporte
 
-Quando você implementa uma solução de identidade híbrida, conforme descrito neste artigo, você deve observar, por fim, uma redução em suas chamadas de suporte. Problemas comuns, como senhas esquecidas e bloqueios de conta são atenuados com a implementação de redefinição de senha de autoatendimento do Azure, permitindo o acesso a aplicativos de autoatendimento permite aos usuários descobrir por conta própria e solicitar acesso a aplicativos sem depender sua equipe de TI.
+Ao implementar uma solução de identidade híbrida conforme descrito neste artigo, você deve observar uma redução em suas chamadas de suporte. Problemas comuns, como senhas esquecidas e bloqueios de conta, são mitigados pela implementação da redefinição de senha de autoatendimento do Azure, enquanto a habilitação do acesso ao aplicativo de autoatendimento permite que os usuários autodescubram e solicitem acesso a aplicativos sem depender em sua equipe de ti.
 
-Se você não observar uma redução nas chamadas de suporte, é recomendável que você analise seus drivers de chamada de suporte em uma tentativa de confirmar se SSPR ou acesso de aplicativo de autoatendimento foi configurado corretamente ou se houver outros novos problemas que podem ser sistematicamente resolvido.
+Se você não observar uma redução nas chamadas de suporte, recomendamos que você analise seus drivers de chamada de suporte em uma tentativa de confirmar se o acesso ao aplicativo SSPR ou de autoatendimento foi configurado corretamente ou se há outros novos problemas que podem ser sistematicamente evita.
 
-*"Em nossa jornada de transformação digital, precisávamos de uma identidade confiável e o provedor de gerenciamento de acesso para facilitar a integração contínua, embora segura entre nós, parceiros e provedores de serviço de nuvem, para um ecossistema em vigor; Azure AD foi a melhor opção, oferecendo-nos recursos necessários e visibilidade que permitiu-nos detectar e responder a riscos."* --- [Aramex Yazan Almasri, diretor Global de segurança de informações](https://customers.microsoft.com/story/aramex-azure-active-directory-travel-transportation-united-arab-emirates-en)
+*"Em nossa jornada de transformação digital, precisávamos de um provedor de gerenciamento de identidades e acesso confiável para facilitar a integração direta e segura entre nós, parceiros e provedores de serviços de nuvem, para um ecossistema eficaz; O Azure AD foi a melhor opção nos oferecendo os recursos necessários e a visibilidade que nos permitia detectar e responder a riscos. "* --- [Yazan Almasri, diretor global de segurança de informações, ARAMEX](https://customers.microsoft.com/story/aramex-azure-active-directory-travel-transportation-united-arab-emirates-en)
 
-### <a name="monitor-your-usage-of-apps-to-drive-insights"></a>Monitorar o uso de aplicativos para conduzir insights
+### <a name="monitor-your-usage-of-apps-to-drive-insights"></a>Monitorar o uso de aplicativos para orientar o insights
 
-Além da descoberta de TI de sombra, monitoramento de uso do aplicativo em sua organização usando [Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/what-is-cloud-app-security) pode ajudar sua organização, ao mudar para aproveitar ao máximo a promessa de aplicativos de nuvem. Ele pode ajudar a mantê-lo no controle de seus ativos com maior visibilidade da atividade e aumentar a proteção de dados críticos em aplicativos de nuvem. Monitorando o uso do aplicativo em sua organização usando MCAS pode ajudá-lo a responder às seguintes perguntas:
+Além de descobrir a ti de sombra, monitorar o uso do aplicativo em sua organização usando [Microsoft Cloud app Security](https://docs.microsoft.com/cloud-app-security/what-is-cloud-app-security) pode ajudar sua organização à medida que você se move para aproveitar ao máximo a promessa de aplicativos em nuvem. Ele pode ajudar a manter você no controle de seus ativos por meio de visibilidade aprimorada da atividade e aumentar a proteção de dados críticos em aplicativos de nuvem. Monitorar o uso do aplicativo em sua organização usando o MCAS pode ajudá-lo a responder às seguintes perguntas:
 
-* Quais aplicativos não sancionados funcionários estão usando para armazenar dados em?
-* Onde e quando é dados confidenciais que estão sendo armazenados na nuvem?
-* Quem está acessando os dados confidenciais na nuvem?
+* Quais aplicativos não aprovados são funcionários usando para armazenar dados?
+* Onde e quando os dados confidenciais são armazenados na nuvem?
+* Quem está acessando dados confidenciais na nuvem?
 
-*"Com o Cloud App Security, podemos rapidamente identificar anomalias e agir."* --- [Sênior Eric LePenske Gerenciador, Information Security, Accenture](https://customers.microsoft.com/story/accenture-professional-services-cloud-app-security)
+*"Com Cloud App Security, podemos identificar rapidamente anomalias e tomar medidas."* --- [Eric LePenske, gerente sênior, segurança da informação, Accenture](https://customers.microsoft.com/story/accenture-professional-services-cloud-app-security)
 
 ## <a name="summary"></a>Resumo
 
-Há muitos aspectos para implementar uma solução de identidade híbrida, mas esta lista de verificação de quatro etapas ajudarão você a executar rapidamente uma infraestrutura de identidade que permitirá que os usuários sejam mais produtivos e seguros.
+Há muitos aspectos para implementar uma solução de identidade híbrida, mas esta lista de verificação em quatro etapas ajudará você a realizar rapidamente uma infraestrutura de identidade que permitirá que os usuários sejam mais produtivos e seguros.
 
-* Conectar-se facilmente aos aplicativos
-* Estabelecer uma identidade para todos os usuários automaticamente
+* Conectar-se a aplicativos facilmente
+* Estabelecer uma identidade para cada usuário automaticamente
 * Capacite seus usuários com segurança
-* Colocar suas ideias
+* Operacionalize suas ideias
 
-Esperamos que este documento é um roteiro úteis para o estabelecimento de uma base de identidade forte para a sua organização.
+Esperamos que este documento seja um roteiro útil para estabelecer uma base de identidade forte para sua organização.
 
 ## <a name="identity-checklist"></a>Lista de verificação de identidade
 
-É recomendável que você imprima a lista de verificação a seguir para referência, conforme você começa sua jornada para uma base de identidade mais sólida em sua organização.
+Recomendamos que você imprima a seguinte lista de verificação para referência ao começar sua jornada para uma base de identidade mais sólida em sua organização.
 
 ### <a name="today"></a>Hoje
 
-|Pronto?|item|
+|Pronto?|Item|
 |:-|:-|
-||Piloto Self - Service senha SSPR (redefinição) para um grupo|
-||Monitorar componentes híbrida usando o Azure AD Connect Health|
+||SSPR (redefinição de senha de autoatendimento) do piloto para um grupo|
+||Monitorar componentes híbridos usando o Azure AD Connect Health|
 ||Atribuir funções de administrador com privilégios mínimos para a operação|
-||Descobrir TI sombra com o Microsoft Cloud App Security|
-||Usar o Azure Monitor para coletar logs de dados para análise|
+||Descobrir sombra com ti com Microsoft Cloud App Security|
+||Usar Azure Monitor para coletar logs de dados para análise|
 
 ### <a name="next-two-weeks"></a>Próximas duas semanas
 
-|Pronto?|item|
+|Pronto?|Item|
 |:-|:-|
 ||Disponibilizar um aplicativo para seus usuários|
-||Criar um piloto de provisionamento do Azure AD para um aplicativo SaaS de escolha|
-||Configurar um servidor de preparo para o Azure AD Connect e mantê-lo atualizado|
-||Iniciar a migração de aplicativos do AD FS para o Azure AD|
-||Criar painéis personalizados para sua liderança e seu dia a dia|
+||Provisionamento piloto do Azure AD para um aplicativo SaaS de sua escolha|
+||Configurar um servidor de preparo para Azure AD Connect e mantê-lo atualizado|
+||Iniciar a migração de aplicativos do ADFS para o Azure AD|
+||Crie painéis personalizados para sua liderança e seu dia a dia|
 
-### <a name="next-month"></a>No próximo mês
+### <a name="next-month"></a>Próximo mês
 
-|Pronto?|item|
+|Pronto?|Item|
 |:-|:-|
-||Monitorar o uso de aplicativos para conduzir insights|
-||Piloto acesso remoto seguro aos aplicativos|
-||Verifique se que todos os usuários estão registrados para MFA e o SSPR|
-||Habilitar a autenticação de nuvem|
+||Monitorar o uso de aplicativos para orientar o insights|
+||Acesso remoto seguro ao piloto para aplicativos|
+||Verifique se todos os usuários estão registrados para MFA e SSPR|
+||Habilitar autenticação na nuvem|
 
 ### <a name="next-three-months"></a>Próximos três meses
 
-|Pronto?|item|
+|Pronto?|Item|
 |:-|:-|
 ||Habilitar o gerenciamento de aplicativo de autoatendimento|
 ||Habilitar o gerenciamento de grupo de autoatendimento|
-||Monitorar o uso de aplicativos para conduzir insights|
-||Entender os drivers de chamada de suporte|
+||Monitorar o uso de aplicativos para orientar o insights|
+||Entenda seus drivers de chamada de suporte|
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Saiba como você pode aumentar a sua situação de segurança usando os recursos do Azure Active Directory e essa lista de verificação de cinco etapas - [cinco etapas para proteger sua infraestrutura de identidade](https://aka.ms/securitysteps).
+Saiba como você pode aumentar sua postura segura usando os recursos de Azure Active Directory e esta lista de verificação de cinco [etapas – cinco passos para proteger sua infraestrutura de identidade](https://aka.ms/securitysteps).
 
-Saiba como os recursos de identidade no Azure AD podem ajudar você a Acelere sua transição para o gerenciamento controlado na nuvem, fornecendo as soluções e os recursos que permitem que as empresas a adotar rapidamente e mover mais de seu gerenciamento de identidade do tradicional em sistemas locais para o Azure AD - [como o Azure AD oferece regido gerenciamento de nuvem para cargas de trabalho local](https://aka.ms/cloudgoverned).
+Saiba como os recursos de identidade no Azure AD podem ajudá-lo a acelerar sua transição para o gerenciamento governado na nuvem, fornecendo as soluções e os recursos que permitem que as organizações adotem e movam com rapidez mais de seu gerenciamento de identidades do tradicional sistemas locais para o AD do Azure- [como o Azure ad fornece gerenciamento regido de nuvem para cargas de trabalho locais](https://aka.ms/cloudgoverned).

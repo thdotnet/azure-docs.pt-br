@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 07/08/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 7356541ed6288603a66d5caa43138284d8d4d918
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 1609931cd5fcab0977ff64f680fbb1f253f3caaf
+ms.sourcegitcommit: f7998db5e6ba35cbf2a133174027dc8ccf8ce957
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68320480"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68782184"
 ---
 # <a name="durable-functions-20-preview-azure-functions"></a>Durable Functions 2,0 Preview (Azure Functions)
 
@@ -26,7 +26,7 @@ O Durable Functions 1. x é um recurso GA (disponível para o público) de Azure
 > [!NOTE]
 > Esses recursos de visualização fazem parte de uma versão Durable Functions 2,0, que é atualmente uma **versão de qualidade de visualização** com várias alterações significativas. As compilações do pacote de extensão durável Azure Functions podem ser encontradas em nuget.org com versões na forma de **2.0.0-betaX**. Essas compilações não são destinadas a cargas de trabalho de produção, e as versões subsequentes podem conter alterações significativas adicionais.
 
-## <a name="breaking-changes"></a>Alterações de última hora
+## <a name="breaking-changes"></a>Alterações da falha
 
 Várias alterações significativas são introduzidas no Durable Functions 2,0. Os aplicativos existentes não devem ser compatíveis com o Durable Functions 2,0 sem alterações de código. Esta seção lista algumas das alterações:
 
@@ -242,6 +242,16 @@ public static async Task AddValueClient(
 ```
 
 No exemplo anterior, `proxy` o parâmetro é uma instância gerada dinamicamente do `ICounter`, que converte internamente a chamada para `Add` na chamada equivalente (não tipada) para `SignalEntityAsync`.
+
+O parâmetro de tipo `SignalEntityAsync<T>` para tem as seguintes restrições:
+
+* O parâmetro de tipo deve ser uma interface.
+* Somente métodos podem ser definidos na interface. Não há suporte para propriedades.
+* Cada método deve definir um ou nenhum parâmetro.
+* Cada método deve `void`retornar, `Task`ou `Task<T>` onde `T` é algum tipo serializável por JSON.
+* A interface deve ser implementada por exatamente um tipo dentro do assembly da interface.
+
+Na maioria dos casos, as interfaces que não atenderem a esses requisitos resultarão em uma exceção de tempo de execução.
 
 > [!NOTE]
 > É importante observar que os métodos e `ReadEntityStateAsync` `SignalEntityAsync` de priorização `IDurableOrchestrationClient` do desempenho em relação à consistência. `ReadEntityStateAsync`pode retornar um valor obsoleto e `SignalEntityAsync` pode retornar antes que a operação seja concluída.

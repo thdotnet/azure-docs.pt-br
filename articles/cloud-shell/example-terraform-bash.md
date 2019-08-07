@@ -1,6 +1,6 @@
 ---
-title: Implantar com Terraform do Bash no Azure Cloud Shell | Microsoft Docs
-description: Implantar com Terraform do Bash no Azure Cloud Shell
+title: Implantar com Terraform de Azure Cloud Shell | Microsoft Docs
+description: Implantar com Terraform de Azure Cloud Shell
 services: Azure
 documentationcenter: ''
 author: tomarchermsft
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/15/2017
 ms.author: tarcher
-ms.openlocfilehash: a08a4e7df6cf0493ab1aa6aced1abf888a61072a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f5939251729905d349b79a94411cf87e3873b279
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62119105"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68742072"
 ---
 # <a name="deploy-with-terraform-from-bash-in-azure-cloud-shell"></a>Implantar com Terraform do Bash no Azure Cloud Shell
 Este artigo mostra as etapas para criar um grupo de recursos com o [provedor do Terraform do AzureRM](https://www.terraform.io/docs/providers/azurerm/index.html). 

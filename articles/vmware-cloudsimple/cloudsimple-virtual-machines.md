@@ -1,40 +1,40 @@
 ---
-title: Solução CloudSimple - visão geral de máquinas virtuais do VMware
-description: Saiba mais sobre as máquinas virtuais de CloudSimple e seus benefícios.
+title: Solução VMware de CloudSimple – visão geral das máquinas virtuais do Azure
+description: Saiba mais sobre as máquinas virtuais CloudSimple e seus benefícios.
 author: sharaths-cs
 ms.author: dikamath
 ms.date: 04/10/2019
 ms.topic: article
-ms.service: vmware
+ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 77a2901ae2d81f42780110b1576c1f32c7ff397b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0f4967bbd12107bf6a04cb80537d4425c75c5f46
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65209497"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68812500"
 ---
-# <a name="cloudsimple-virtual-machines-overview"></a>Visão geral de máquinas virtuais CloudSimple
+# <a name="cloudsimple-virtual-machines-overview"></a>Visão geral das máquinas virtuais CloudSimple
 
-CloudSimple permite que você gerencie as VMs VMware no portal do Azure.  Um cluster ou em um pool de recursos do seu cluster do vSphere é gerenciado por meio do Azure, mapeando-o à sua assinatura.  Máquina de virtual CloudSimple traz o gerenciamento de autoatendimento de máquinas virtuais VMware do portal do Azure.  
+O CloudSimple permite que você gerencie VMs VMware do portal do Azure.  Um cluster ou um pool de recursos do seu cluster vSphere é gerenciado por meio do Azure, mapeando-o para sua assinatura.  A máquina virtual CloudSimple traz o gerenciamento de autoatendimento das VMs VMware do portal do Azure.  
 
-Para criar uma VM CloudSimple do Azure, um modelo de VM deve existir no seu vCenter de nuvem privada.  O modelo é usado para personalizar o sistema operacional e aplicativos.  O modelo de VM pode ser protegido para atender às políticas de segurança da empresa.  Você pode usar o modelo para criar VMs e consumi-los no portal do Azure usando um modelo de autoatendimento.
+Para criar uma VM CloudSimple do Azure, um modelo de VM deve existir em seu vCenter de nuvem privada.  O modelo é usado para personalizar o sistema operacional e os aplicativos.  A VM de modelo pode ser protegida para atender às políticas de segurança corporativa.  Você pode usar o modelo para criar VMs e consumi-las de portal do Azure usando um modelo de autoatendimento.
 
 ## <a name="benefits"></a>Benefícios
 
-Máquinas virtuais de CloudSimple do portal do Azure fornecem um mecanismo de autoatendimento para usuários criar e gerenciar máquinas virtuais VMware.
+As máquinas virtuais CloudSimple da portal do Azure fornecem um mecanismo de autoatendimento para que os usuários criem e gerenciem máquinas virtuais VMware.
 
-* Criar uma VM de CloudSimple no vCenter sua nuvem privada
-* Gerenciar as propriedades da VM
-  * Adicionar ou remover discos
-  * Adicionar ou remover NICs
-* Operações de energia da VM CloudSimple
+* Criar uma VM CloudSimple em sua nuvem privada vCenter
+* Gerenciar Propriedades da VM
+  * Adicionar/remover discos
+  * Adicionar/remover NICs
+* Operações de energia de sua VM CloudSimple
   * Ligar e desligar
-  * Redefinição de VM
+  * Redefinir VM
 * Excluir VM
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* Saiba como [consuma a VMs do VMware no Azure](quickstart-create-vmware-virtual-machine.md)
+* Saiba como [consumir VMs VMware no Azure](quickstart-create-vmware-virtual-machine.md)
 * Saiba como [mapear sua assinatura do Azure](https://docs.azure.cloudsimple.com/azure-subscription-mapping/)

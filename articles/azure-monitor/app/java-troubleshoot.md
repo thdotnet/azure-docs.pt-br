@@ -12,15 +12,15 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: mbullwin
-ms.openlocfilehash: c55828244d73e612da7a7da2d050252cce04aa2c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a26302b0c0b4361fe3e7aae6aba798f433c72ade
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67061145"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68742190"
 ---
 # <a name="troubleshooting-and-q-and-a-for-application-insights-for-java"></a>Solução de problemas e perguntas e respostas para o Application Insights para Java
-Dúvidas ou problemas com o [Azure Application Insights em Java][java]? Aqui estão algumas dicas.
+Perguntas ou problemas com o [aplicativo Azure insights em Java][java]? Aqui estão algumas dicas.
 
 ## <a name="build-errors"></a>Erros de compilação
 **No Eclipse ou Intellij Idea, ao adicionar o Application Insights SDK via Maven ou Gradle, eu recebo erros de validação de soma ou compilação.**
@@ -35,7 +35,7 @@ Dúvidas ou problemas com o [Azure Application Insights em Java][java]? Aqui est
 * Verifique se não há um nó `<DisableTelemetry>true</DisableTelemetry>` no arquivo xml.
 * Em seu firewall, talvez você precise abrir as portas TCP 80 e 443 para o tráfego de saída de dc.services.visualstudio.com. Consulte a [lista completa de exceções do firewall](../../azure-monitor/app/ip-addresses.md)
 * No painel inicial do Microsoft Azure, veja o mapa de status de serviço. Se houver indicações de alerta, espere até que elas tenham voltado a OK; então, feche e abra novamente a folha do Application Insights de seu aplicativo.
-* Ative o log para a janela de console do IDE adicionando um elemento `<SDKLogger />` sob o nó raiz no arquivo ApplicationInsights.xml (na pasta de recursos em seu projeto) e verifique se há entradas precedidas com AI: INFO/WARN/ERROR para quaisquer logs suspeitos.
+* [Ative o registro em log](#debug-data-from-the-sdk) adicionando `<SDKLogger />` um elemento sob o nó raiz no arquivo ApplicationInsights. XML (na pasta recursos em seu projeto) e verifique se há entradas precedidas com ia: INFO/WARN/ERROR para quaisquer logs suspeitos. 
 * Certifique-se de que o arquivo ApplicationInsights.xml correto foi carregado com êxito pelo SDK do Java, examinando as mensagens de saída do console para uma instrução "Arquivo de configuração foi descoberto com êxito".
 * Se não for encontrado no arquivo de configuração, verifique as mensagens de saída para ver onde o arquivo de configuração está sendo procurado e certifique-se de que o ApplicationInsights.xml seja localizado em um desses locais de pesquisa. Como regra geral, você pode colocar o arquivo de configuração perto dos JARs do SDK do Application Insights. Por exemplo: no Tomcat, isso poderia significar que a pasta WEB-INF/classes. Durante o desenvolvimento, você pode colocar ApplicationInsights.xml na pasta de recursos de seu projeto Web.
 * Também consulte a [página de problemas no GitHub](https://github.com/Microsoft/ApplicationInsights-Java/issues) para problemas conhecidos com o SDK.
@@ -62,9 +62,9 @@ Dúvidas ou problemas com o [Azure Application Insights em Java][java]? Aqui est
 ## <a name="no-usage-data"></a>Sem dados de uso
 **Vejo dados sobre solicitações e tempos de resposta, mas não há dados de exibição de página, de navegador ou de usuário.**
 
-Você configurou com êxito seu aplicativo para enviar telemetria do servidor. Agora, a próxima etapa é [configurar suas páginas da Web para enviar telemetria por meio do navegador da Web][usage].
+Você configurou com êxito seu aplicativo para enviar telemetria do servidor. Agora, a próxima etapa é [configurar suas páginas da Web para enviar telemetria do navegador da Web][usage].
 
-Como alternativa, se o cliente for um aplicativo em um [telefone ou outro dispositivo][platforms], você poderá enviar telemetria por meio dele.
+Como alternativa, se o cliente for um aplicativo em um [telefone ou outro dispositivo][platforms], você poderá enviar telemetria a partir daí.
 
 Use a mesma chave de instrumentação para configurar a telemetria de seu cliente e do servidor. Os dados serão exibidos no mesmo recurso do Application Insights, e você poderá correlacionar eventos do cliente e do servidor.
 
@@ -110,16 +110,16 @@ Para saber mais sobre o que está acontecendo na API, adicione `<SDKLogger/>` ao
 Você também pode instruir o agente para enviar a saída para um arquivo:
 
 ```XML
-  <SDKLogger type="FILE">
+  <SDKLogger type="FILE"><!-- or "CONSOLE" to print to stderr -->
     <Level>TRACE</Level>
     <UniquePrefix>AI</UniquePrefix>
     <BaseFolderPath>C:/agent/AISDK</BaseFolderPath>
 </SDKLogger>
 ```
 
-### <a name="spring-boot-starter"></a>Iniciador do Spring Boot
+### <a name="spring-boot-starter"></a>Iniciador do Spring boot
 
-Para habilitar o log do SDK com aplicativos do Spring Boot usando o iniciador do Spring Boot Application Insights, adicione o seguinte para o `application.properties` arquivo.:
+Para habilitar o log do SDK com aplicativos Spring boot usando o iniciador do Spring boot Application insights, adicione o `application.properties` seguinte ao arquivo:
 
 ```yaml
 azure.application-insights.logger.type=file
@@ -127,16 +127,38 @@ azure.application-insights.logger.base-folder-path=C:/agent/AISDK
 azure.application-insights.logger.level=trace
 ```
 
-### <a name="java-agent"></a>Agente de Java
+ou para imprimir para o erro padrão:
 
-Habilitar o registro em log de agente do JVM update a [arquivo AI-Agent.xml](java-agent.md).
+```yaml
+azure.application-insights.logger.type=console
+azure.application-insights.logger.level=trace
+```
+
+### <a name="java-agent"></a>Agente Java
+
+Para habilitar o log do agente JVM, atualize o [arquivo ai-Agent. xml](java-agent.md):
 
 ```xml
-<AgentLogger type="FILE">
+<AgentLogger type="FILE"><!-- or "CONSOLE" to print to stderr -->
     <Level>TRACE</Level>
     <UniquePrefix>AI</UniquePrefix>
     <BaseFolderPath>C:/agent/AIAGENT</BaseFolderPath>
 </AgentLogger>
+```
+
+### <a name="java-command-line-properties"></a>Propriedades de linha de comando Java
+_Desde a versão 2.4.0_
+
+Para habilitar o registro em log usando opções de linha de comando, sem alterar os arquivos de configuração:
+
+```
+java -Dapplicationinsights.logger.file.level=trace -Dapplicationinsights.logger.file.uniquePrefix=AI -Dapplicationinsights.logger.baseFolderPath="C:/my/log/dir" -jar MyApp.jar
+```
+
+ou para imprimir para o erro padrão:
+
+```
+java -Dapplicationinsights.logger.console.level=trace -jar MyApp.jar
 ```
 
 ## <a name="the-azure-start-screen"></a>A tela inicial do Azure
@@ -146,7 +168,7 @@ Não, ele mostra a integridade dos servidores do Azure em todo o mundo.
 
 *No painel inicial do Azure (tela inicial), como localizar dados sobre meu aplicativo?*
 
-Supondo que você tenha [configurado seu aplicativo para o Application Insights][java], clique em Procurar, selecione Application Insights e selecione o recurso de aplicativo criado para seu aplicativo. Para acessar essa opção mais rapidamente no futuro, você pode fixar o aplicativo no painel inicial.
+Supondo que você [configurou seu aplicativo para Application insights][java], clique em procurar, selecione Application insights e selecione o recurso de aplicativo que você criou para seu aplicativo. Para acessar essa opção mais rapidamente no futuro, você pode fixar o aplicativo no painel inicial.
 
 ## <a name="intranet-servers"></a>Servidores de intranet
 **Posso monitorar um servidor em minha intranet?**
@@ -158,7 +180,7 @@ Em seu firewall, você terá que abrir as portas TCP 80 e 443 para tráfego de s
 ## <a name="data-retention"></a>Retenção de dados
 **Por quanto tempo os dados são mantidos no portal? É seguro?**
 
-Consulte [Privacidade e retenção de dados][data].
+Consulte [retenção e privacidade de dados][data].
 
 ## <a name="debug-logging"></a>Registro em log de depuração
 O Application Insights usa `org.apache.http`. Isso é realocado no jars do núcleo do Application Insights no namespace `com.microsoft.applicationinsights.core.dependencies.http`. Isso habilita o Application Insights a lidar com cenários em que diferentes versões do mesmo `org.apache.http` existem em uma base de código.
@@ -171,8 +193,8 @@ O Application Insights usa `org.apache.http`. Isso é realocado no jars do núcl
 **Configurei o Application Insights para meu aplicativo de servidor Java. O que mais posso fazer?**
 
 * [Monitorar a disponibilidade de suas páginas da Web][availability]
-* [Monitorar o uso da página da Web][usage]
-* [Acompanhar o uso e diagnosticar problemas em seus aplicativos de dispositivos][platforms]
+* [Monitorar o uso de páginas da Web][usage]
+* [Acompanhar o uso e diagnosticar problemas em seus aplicativos de dispositivo][platforms]
 * [Escrever código para acompanhar o uso de seu aplicativo][track]
 * [Capturar logs de diagnóstico][javalogs]
 

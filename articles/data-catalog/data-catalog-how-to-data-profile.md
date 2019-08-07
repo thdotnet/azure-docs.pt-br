@@ -1,19 +1,17 @@
 ---
 title: Como usar fontes de dados de criação de perfil de dados no Catálogo de Dados do Azure
 description: Artigo de instruções destacando como incluir os perfis de dados nos níveis da tabela e da coluna ao registrar as fontes de dados no Catálogo de Dados do Azure e como usar os perfis de dados para entender as fontes de dados.
-services: data-catalog
 author: JasonWHowell
 ms.author: jasonh
-ms.assetid: 94a8274b-5c9c-4962-a4b1-2fed38a3d919
 ms.service: data-catalog
 ms.topic: conceptual
-ms.date: 01/18/2018
-ms.openlocfilehash: 64185a951b25b4e04ea5fc65aeede9b0e617d0c5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/01/2019
+ms.openlocfilehash: 0de7b6f0668c84c22b81cd9104a49599760143c1
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61001677"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68737043"
 ---
 # <a name="data-profile-data-sources"></a>Fontes de dados de perfil de dados
 ## <a name="introduction"></a>Introdução
@@ -83,6 +81,6 @@ Um perfil de dados no **Catálogo de Dados do Azure** mostra informações de pe
 ## <a name="summary"></a>Resumo
 A criação de perfil de dados fornece estatísticas e informações sobre ativos de dados registrados para ajudar você a determinar a adequação dos dados para solucionar problemas de negócios. Além de anotar e documentar fontes de dados, os perfis de dados podem dar aos usuários uma compreensão mais profunda dos dados.
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 * [Como registrar fontes de dados](data-catalog-how-to-register.md)
 * [Introdução ao Catálogo de Dados do Azure](data-catalog-get-started.md)

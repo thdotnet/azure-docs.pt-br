@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 66c43556e698063b95ce1c3787458e40c9d71504
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1545e2e7eba23b0bedbfe297c292fc94e1659ae3
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60365425"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68775275"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit-using-the-portal"></a>Conectar uma rede virtual a um circuito ExpressRoute usando o portal
 > [!div class="op_single_selector"]
@@ -121,7 +121,7 @@ O usuário do circuito precisa da ID do recurso e de uma chave de autorização 
 
    ![Página de Noções Básicas](./media/expressroute-howto-linkvnet-portal-resource-manager/Connection3.png)
 5. Na página **Configurações**, selecione **Gateway de rede Virtual** e marque a caixa de seleção **Resgatar autorização**.
-6. Insira a **Chave de autorização** e o **URI do circuito par** e nomeie a conexão. Clique em **OK**.
+6. Insira a **Chave de autorização** e o **URI do circuito par** e nomeie a conexão. Clique em **OK**. O **URI do circuito de mesmo nível** é a ID de recurso do circuito do expressroute (que pode ser encontrado no painel de configuração Propriedades do circuito do expressroute).
 
    ![Página Configurações](./media/expressroute-howto-linkvnet-portal-resource-manager/Connection4.png)
 7. Revise as informações na página **Resumo** e clique em **OK**.

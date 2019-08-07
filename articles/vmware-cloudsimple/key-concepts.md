@@ -1,52 +1,52 @@
 ---
-title: Principais conceitos para administrar a solução CloudSimple do VMware do Azure
-description: Descreve os principais conceitos para administrar a solução CloudSimple do VMware do Azure
+title: Principais conceitos para administrar a solução do Azure VMware por CloudSimple
+description: Descreve os principais conceitos para administrar a solução do Azure VMware por CloudSimple
 author: sharaths-cs
 ms.author: b-shsury
 ms.date: 04/24/2019
 ms.topic: article
-ms.service: vmware
+ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: 6d87871fe8faaaab2e56d4a0426cd5e5f0899c8f
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: e434065feb218b0a46220b95cc6bfd9a7033de30
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67595614"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68816115"
 ---
-# <a name="key-concepts-for-administration-of-azure-vmware-solution-by-cloudsimple"></a>Principais conceitos para administração de solução CloudSimple do VMware do Azure
+# <a name="key-concepts-for-administration-of-azure-vmware-solution-by-cloudsimple"></a>Principais conceitos para administração da solução do Azure VMware por CloudSimple
 
-Administrando a solução VMware do Azure CloudSimple requer uma compreensão dos conceitos a seguir:
+Administrar a solução do Azure VMware pelo CloudSimple requer uma compreensão dos seguintes conceitos:
 
-* Serviço CloudSimple, que é exibido como solução de VMware do Azure por CloudSimple - serviço
-* Nó CloudSimple, que é exibido como solução de VMware do Azure por CloudSimple - nó
-* CloudSimple de nuvem privada
+* Serviço CloudSimple, que é exibido como solução do Azure VMware por CloudSimple-Service
+* Nó CloudSimple, que é exibido como solução do Azure VMware por CloudSimple-node
+* Nuvem privada CloudSimple
 * Rede de serviço
-* Máquina virtual CloudSimple, que é exibida como solução de VMware do Azure por CloudSimple - Máquina Virtual
+* Máquina virtual CloudSimple, que é exibida como solução do Azure VMware por CloudSimple-máquina virtual
 
 ## <a name="cloudsimple-service"></a>Serviço CloudSimple
 
-Com o serviço CloudSimple, você pode criar e gerenciar todos os recursos associados às soluções do VMware por CloudSimple do portal do Azure. Crie um recurso de serviço em todas as regiões em que você pretende usar o serviço.
+Com o serviço CloudSimple, você pode criar e gerenciar todos os recursos associados às soluções VMware pelo CloudSimple da portal do Azure. Crie um recurso de serviço em todas as regiões em que você pretende usar o serviço.
 
-Saiba mais sobre o [CloudSimple serviço](cloudsimple-service.md).
+Saiba mais sobre o [serviço CloudSimple](cloudsimple-service.md).
 
 ## <a name="cloudsimple-node"></a>Nó CloudSimple
 
-Um nó de CloudSimple é um host de computação e armazenamento hiperconvergente dedicado e bare-metal, em que o hipervisor VMware ESXi é implantado. Esse nó, em seguida, é incorporado no VMware vSphere vCenter, vSAN e plataformas NSX. Serviços de rede CloudSimple e serviços de rede de borda também são habilitados. Cada nó serve como uma unidade de capacidade de computação e armazenamento que você pode provisionar para criar [CloudSimple de nuvens privadas](cloudsimple-private-cloud.md). Provisionar ou reserva de nós em uma região em que o serviço de CloudSimple está disponível.
+Um nó CloudSimple é um host de armazenamento e de computação com e sem sistema operacional dedicado, em que o hipervisor VMware ESXi é implantado. Esse nó é então incorporado às plataformas VMware vSphere, vCenter, vSAN e NSX. Os serviços de rede do CloudSimple e os serviços de rede de borda também estão habilitados. Cada nó serve como uma unidade de computação e capacidade de armazenamento que você pode provisionar para criar [nuvens privadas do CloudSimple](cloudsimple-private-cloud.md). Você provisiona ou reserva nós em uma região onde o serviço CloudSimple está disponível.
 
 
-Saiba mais sobre [CloudSimple nós](cloudsimple-node.md).
+Saiba mais sobre [nós CloudSimple](cloudsimple-node.md).
 
-## <a name="cloudsimple-private-cloud"></a>CloudSimple de nuvem privada
+## <a name="cloudsimple-private-cloud"></a>Nuvem privada CloudSimple
 
-Uma nuvem privada de CloudSimple é um ambiente isolado de pilha VMware gerenciado por um servidor do vCenter em seu próprio domínio de gerenciamento. A pilha do VMware inclui hosts ESXi, vSphere, vCenter, vSAN e NSX. As execuções de pilha em (hardware dedicado e isolado bare-metal) de nós dedicados e é consumido por usuários por meio de ferramentas nativas do VMware que incluem o vCenter e NSX Manager. Nós dedicados são implantados em locais do Azure e são gerenciados pelo Azure. Cada nuvem privada pode ser segmentado e protegido usando serviços de rede, como VLANs e sub-redes e tabelas de firewall. Conexões com o seu ambiente local e a rede do Azure são criadas usando seguras, privadas VPN e ExpressRoute do Azure, conexões.
+Uma nuvem privada CloudSimple é um ambiente de pilha VMware isolado gerenciado por um vCenter Server em seu próprio domínio de gerenciamento. O VMware Stack inclui hosts ESXi, vSphere, vCenter, vSAN e NSX. A pilha é executada em nós dedicados (hardware bare-metal dedicado e isolado) e é consumida pelos usuários por meio de ferramentas nativas do VMware que incluem o vCenter e o NSX Manager. Os nós dedicados são implantados em locais do Azure e são gerenciados pelo Azure. Cada nuvem privada pode ser segmentada e protegida usando serviços de rede, como VLANs e sub-redes e tabelas de firewall. As conexões com seu ambiente local e a rede do Azure são criadas usando conexões seguras, VPN privadas e Azure ExpressRoute.
 
-Saiba mais sobre [CloudSimple de nuvem privada](cloudsimple-private-cloud.md).
+Saiba mais sobre a [nuvem privada do CloudSimple](cloudsimple-private-cloud.md).
 
 ## <a name="service-networking"></a>Rede de serviço
 
-O serviço de CloudSimple fornece uma rede por região em que o seu serviço CloudSimple é implantado. A rede é um único espaço de endereço de TCP de camada 3 com roteamento ativado por padrão. Todas as nuvens privadas e as sub-redes criadas nessa região se comunicam entre si sem qualquer configuração adicional. Você pode criar grupos de portas distribuído no vCenter usando as VLANs. Você pode usar os seguintes recursos de rede para configurar e proteger seus recursos de carga de trabalho em sua nuvem privada:
+O serviço CloudSimple fornece uma rede por região em que o serviço CloudSimple é implantado. A rede é um único espaço de endereço de camada TCP 3 com roteamento habilitado por padrão. Todas as nuvens e sub-redes privadas criadas nessa região se comunicam entre si sem nenhuma configuração adicional. Você cria grupos de portas distribuídas no vCenter usando as VLANs. Você pode usar os seguintes recursos de rede para configurar e proteger seus recursos de carga de trabalho em sua nuvem privada:
 
 * [VLANs e sub-redes](cloudsimple-vlans-subnets.md)
 * [Tabelas de firewall](cloudsimple-firewall-tables.md)
@@ -54,11 +54,11 @@ O serviço de CloudSimple fornece uma rede por região em que o seu serviço Clo
 * [IP público](cloudsimple-public-ip-address.md)
 * [Conexão de rede do Azure](cloudsimple-azure-network-connection.md)
 
-## <a name="cloudsimple-virtual-machine"></a>Máquina de virtual CloudSimple
+## <a name="cloudsimple-virtual-machine"></a>Máquina virtual CloudSimple
 
-Com o serviço CloudSimple, você pode gerenciar máquinas virtuais VMware no portal do Azure. Um ou mais clusters ou pools de recursos do seu ambiente do vSphere podem ser mapeados para a assinatura na qual o serviço é criado.
+Com o serviço CloudSimple, você pode gerenciar máquinas virtuais VMware do portal do Azure. Um ou mais clusters ou pools de recursos do seu ambiente vSphere podem ser mapeados para a assinatura na qual o serviço é criado.
 
 Saiba mais sobre:
 
-* [Máquinas virtuais de CloudSimple](cloudsimple-virtual-machines.md)
+* [CloudSimple máquinas virtuais](cloudsimple-virtual-machines.md)
 * [Mapeamento de assinatura do Azure](https://docs.azure.cloudsimple.com/azure-subscription-mapping/)
