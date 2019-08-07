@@ -27,64 +27,31 @@ sections:
         style: cards
         type: list
   - items:
-      - text: 'Instale e inicie usando o serviço do Azure Machine Learning:'
+      - text: Instale e inicie usando o serviço do Azure Machine Learning.
         type: paragraph
-      - text: '<b>Guias de Início Rápido:</b>'
-        type: paragraph
-      - items:
-          - html: <a href="service/quickstart-run-cloud-notebook">Executar um experimento na nuvem</a> (nenhuma instalação é necessária)
-          - html: <a href="service/quickstart-run-local-notebook">Executar um experimento usando um servidor de notebook local</a> (instalação local do SDK)
-        style: unordered
-        type: list
-      - text: '<b>Tutorial: Treinar e implantar seu primeiro modelo de ML automatizado no portal do Azure:</b>'
+      - text: 'Use o portal do Azure, uma interface sem código e fácil de usar, para treinar, implantar e gerenciar modelos de machine learning:'
         type: paragraph
       - items:
+          - html: <a href="service/ui-tutorial-automobile-price-train-score">Treine seu primeiro experimento na interface do usuário do tipo arrastar e soltar da interface visual</a>
           - html: <a href="service/tutorial-first-experiment-automated-ml">Use o aprendizado de máquina automatizado para treinar e implantar seu primeiro modelo de classificação</a>
         style: unordered
         type: list
-      - text: '<b>Tutorial: Treinar seu primeiro modelo de ML com o SDK:</b>'
+      - text: 'Use o SDK do Python em scripts e notebooks para treinar, implantar e gerenciar modelos de machine learning:'
         type: paragraph
       - items:
-          - html: 'Parte 1: <a href="service/tutorial-1st-experiment-sdk-setup">Configurar o ambiente e o workspace</a>'
-          - html: 'Parte 2: <a href="service/tutorial-1st-experiment-sdk-train">Treinar seu primeiro modelo</a>'
+          - html: <a href="service/tutorial-1st-experiment-sdk-setup">Configurar o ambiente e treinar o primeiro experimento de aprendizado de máquina</a>
+          - html: <a href="service/tutorial-train-models-with-aml">Treinar e implantar modelos de classificação de imagens</a>
+          - html: <a href="service/tutorial-data-prep">Preparar dados e usar aprendizado de máquina automatizado para prever tarifas de táxi</a>
         style: unordered
         type: list
-      - text: '<b>Tutorial: Treinar e implantar o primeiro experimento usando a interface visual:</b>'
-        type: paragraph
-      - items:
-          - html: 'Parte 1: <a href="service/ui-tutorial-automobile-price-train-score">Treinar o modelo de regressão</a>'
-          - html: 'Parte 2: <a href="service/ui-tutorial-automobile-price-deploy">Implantar o modelo</a>'
-        style: unordered
-        type: list
-      - text: '<b>Tutorial: Classificação de imagem dos dados MNIST com SDK:</b>'
-        type: paragraph
-      - items:
-          - html: 'Parte 1: <a href="service/tutorial-train-models-with-aml">Treinar seu próprio modelo</a>'
-          - html: 'Parte 2: <a href="service/tutorial-deploy-models-with-aml">Implantar esse modelo</a>'
-        style: unordered
-        type: list
-      - text: '<b>Tutorial: Prever a tarifa de viagem de táxi usando o SDK:</b>'
-        type: paragraph
-      - items:
-          - html: 'Parte 1: <a href="service/tutorial-data-prep">Preparar dados para modelagem</a>'
-          - html: 'Parte 2: <a href="service/tutorial-auto-train-models">Deixar o ML automatizado treinar os modelos para você</a>'
-        style: unordered
-        type: list
-      - text: '<b>Tutorial: Prever o preço de automóveis com a interface visual:</b>'
-        type: paragraph
-      - items:
-          - html: 'Parte 1: <a href="service/ui-tutorial-automobile-price-train-score">Prever preços de automóveis</a>'
-          - html: 'Parte 2: <a href="service/ui-tutorial-automobile-price-deploy">Implantar o modelo de regressão</a>'
-        style: unordered
-        type: list
-      - text: '<b>Consumir seus modelos:</b>'
+      - text: 'Consumir seus modelos:'
         type: paragraph
       - items:
           - html: <a href="service/how-to-consume-web-service">Consumo de modelo de solicitação-resposta</a>
           - html: <a href="service/how-to-run-batch-predictions">Previsões em lotes com pipelines do ML</a>
         style: unordered
         type: list
-    title: Inícios Rápidos e tutoriais
+    title: Tutoriais passo a passo
   - items:
       - className: cardsM
         columns: 2

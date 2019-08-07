@@ -131,6 +131,8 @@
   items:
     - name: Gerenciar o Azure Monitor
       items:
+        - name: Criar uma implantação de workspace
+          href: platform/design-logs-deployment.md
         - name: Permissões e segurança de funções
           href: platform/roles-permissions-security.md
         - name: Endereços IP

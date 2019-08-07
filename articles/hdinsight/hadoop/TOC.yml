@@ -56,14 +56,20 @@
       maintainContext: true
     - name: Solucionar problemas
       items:
+        - name: Travamento flexível – CPU
+          href: ./hdinsight-troubleshoot-soft-lockup-cpu.md
+        - name: InvalidNetworkConfigurationErrorCode – falha na criação do cluster
+          href: ./troubleshoot-invalidnetworkconfigurationerrorcode-cluster-creation-fails.md
+        - name: InvalidNetworkSecurityGroupSecurityRules – falha na criação do cluster
+          href: ./hdinsight-troubleshoot-invalidnetworksecuritygroupsecurityrules-cluster-creation-fails.md
         - name: Não é possível fazer logon no cluster HDInsight
           href: ./hdinsight-troubleshoot-unable-log-in-cluster.md
         - name: Não é possível adicionar nós ao cluster HDInsight
           href: ./hdinsight-troubleshoot-unable-add-nodes.md
-        - name: InvalidNetworkSecurityGroupSecurityRules – falha na criação do cluster
-          href: ./hdinsight-troubleshoot-invalidnetworksecuritygroupsecurityrules-cluster-creation-fails.md
         - name: Convertendo um certificado de entidade de serviço
           href: ./hdinsight-troubleshoot-converting-service-principal-certificate.md
+        - name: HDFS local paralisado no modo de segurança
+          href: ./hdinsight-hdfs-troubleshoot-safe-mode.md
         - name: Problemas de pulsação do Apache Ambari
           href: ./apache-ambari-troubleshoot-heartbeat-issues.md
 - name: Como
