@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/22/2017
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 35f29e425fc471e4df4a037ef312af0fd041dcd7
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: da8e82652b5406cb4e5fe6438f721e3394a4cd96
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68699776"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854583"
 ---
 # <a name="develop-for-azure-files-with-net"></a>Desenvolvimento para o Arquivos do Azure com .NET
 
@@ -55,10 +55,11 @@ Todos os exemplos de código neste tutorial podem ser adicionados ao método `Ma
 Você pode usar a biblioteca de cliente de armazenamento do Azure em qualquer tipo de aplicativo .NET, incluindo um serviço de nuvem do Azure ou aplicativo Web, e aplicativos móveis e de desktop. Neste guia, usamos um aplicativo de console para simplificar.
 
 ## <a name="use-nuget-to-install-the-required-packages"></a>Use o NuGet para instalar os pacotes necessários
-Há dois pacotes que você precisará referenciar em seu projeto para concluir este tutorial:
+Estes são os pacotes que você precisa referenciar em seu projeto para concluir este tutorial:
 
 * [Armazenamento do Microsoft Azure biblioteca comum para .net](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/): Este pacote fornece acesso programático a recursos comuns em sua conta de armazenamento.
 * [Armazenamento do Microsoft Azure biblioteca de BLOBs para .net](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/): Este pacote fornece acesso programático a recursos de BLOB em sua conta de armazenamento.
+* [Biblioteca de arquivos armazenamento do Microsoft Azure para .net](https://www.nuget.org/packages/Microsoft.Azure.Storage.File/): Este pacote fornece acesso programático a recursos de arquivo em sua conta de armazenamento.
 * [Biblioteca do Gerenciador de Configuração do Microsoft Azure para .NET](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/): este pacote fornece uma classe para analisar uma cadeia de conexão em um arquivo de configuração, independentemente do local em que o aplicativo está sendo executado.
 
 Você pode usar NuGet para obter os dois pacotes. Siga estas etapas:

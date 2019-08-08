@@ -47,7 +47,8 @@
 - name: Guias de instruções
   items:
     - name: Lidar com realce de ocorrências
-      href: hit-highlighting.md
+      href: ../Bing-Web-Search/hit-highlighting.md
+      maintainContext: true
     - name: Notícias para página
       href: paging-news.md
     - name: Miniaturas de redimensionamento e corte

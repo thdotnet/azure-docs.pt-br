@@ -16,14 +16,14 @@ ms.workload: identity
 ms.date: 04/05/2019
 ms.author: ryanwi
 ms.reviewer: saeeda, sureshja, hirsin
-ms.custom: aaddev
+ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7883c32e60a09c6fdfc4146c30472cfcdb57b689
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: cedfead26bd2a82792729853a2b8d038278b75f6
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68835173"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68853291"
 ---
 # <a name="what-is-authentication"></a>O que é a autenticação?
 
@@ -106,24 +106,24 @@ As declarações presentes em qualquer token de segurança variam de acordo com 
 
 Uma breve descrição de cada tipo de declaração emitida pela plataforma de identidade da Microsoft é fornecida na tabela abaixo. Para obter informações mais detalhadas, confira os [tokens de acesso](access-tokens.md) e os [tokens de ID](id-tokens.md) emitidos pela plataforma de identidade da Microsoft.
 
-| Declaração | DESCRIÇÃO |
+| Declaração | Descrição |
 | --- | --- |
-| ID do aplicativo | Identifica o aplicativo que está usando o token. |
-| Público-alvo | Identifica o recurso de destinatário ao qual o token é destinado. |
+| ID do Aplicativo | Identifica o aplicativo que está usando o token. |
+| Audiência | Identifica o recurso de destinatário ao qual o token é destinado. |
 | Referência de classe de contexto de autenticação de aplicativo | Indica como o cliente foi autenticado (cliente público versus cliente confidencial). |
 | Instante da autenticação | Registra a data e o horário em que ocorreu a autenticação. |
-| Método de autenticação | Indica como a entidade do token foi autenticada (senha, certificado, etc.). |
+| Método de Autenticação | Indica como a entidade do token foi autenticada (senha, certificado, etc.). |
 | Nome | Apresenta o nome fornecido do usuário conforme definido no Azure AD. |
 | Grupos | Contém as IDs de objeto dos grupos do Azure AD em que o usuário é membro. |
-| Provedor de identidade | Registra o provedor de identidade que autenticou a entidade do token. |
+| Provedor de Identidade | Registra o provedor de identidade que autenticou a entidade do token. |
 | Emitido em | Registra o horário em que o token foi emitido, geralmente usado para atualização de token. |
 | Emissor | Identifica o STS que emitiu o token, bem como o locatário do Azure AD. |
 | Sobrenome | Apresenta o sobrenome fornecido do usuário conforme definido no Azure AD. |
-| NOME | Fornece um valor legível que identifica a entidade do token. |
+| Nome | Fornece um valor legível que identifica a entidade do token. |
 | ID de objeto | Contém um identificador exclusivo e imutável da entidade no Azure AD. |
 | Funções | Contém os nomes amigáveis de funções de aplicativo do Azure AD que o usuário recebeu. |
 | Escopo | Indica as permissões concedidas ao aplicativo cliente. |
-| Assunto | Indica a entidade de segurança sobre a qual o token declara informações. |
+| Subject | Indica a entidade de segurança sobre a qual o token declara informações. |
 | ID do locatário | Contém um identificador exclusivo e imutável do locatário do diretório que emitiu o token. |
 | Vida útil do token | Define o intervalo de tempo no qual um token é válido. |
 | Nome principal do usuário | Contém o nome principal de usuário da entidade. |

@@ -4,18 +4,18 @@ description: Descreve como testar a experiência do usuário para criar o Aplica
 author: tfitzmac
 ms.service: managed-applications
 ms.topic: conceptual
-ms.date: 05/26/2019
+ms.date: 08/06/2019
 ms.author: tomfitz
-ms.openlocfilehash: 99ca319910be2cb20214172826eb40361abe72f0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 91dd661cf4900512390079751f400f6a9888c452
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66257659"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68845914"
 ---
-# <a name="test-your-portal-interface-for-azure-managed-applications"></a>Teste sua interface do portal para aplicativos gerenciados do Azure
+# <a name="test-your-portal-interface-for-azure-managed-applications"></a>Testar a interface do portal para aplicativos gerenciados do Azure
 
-Após [criando o arquivo Createuidefinition](create-uidefinition-overview.md) para seu aplicativo gerenciado, você precisa testar a experiência do usuário. Para simplificar o teste, use um ambiente de área restrita que carrega o arquivo no portal. Não é necessário realmente implantar o aplicativo gerenciado. A área restrita apresenta sua interface do usuário na experiência do portal atual, a tela inteira. Ou, você pode usar um script do PowerShell para testar a interface, mas ele usa um modo de exibição herdado do portal. As duas abordagens são mostradas neste artigo. A área restrita é a maneira recomendada para a interface de visualização.
+Depois de [criar o arquivo createUiDefinition. JSON](create-uidefinition-overview.md) para seu aplicativo gerenciado, você precisará testar a experiência do usuário. Para simplificar o teste, use um ambiente de área restrita que carregue o arquivo no Portal. Não é necessário realmente implantar o aplicativo gerenciado. A área restrita apresenta a interface do usuário na experiência atual do portal de tela inteira. Ou você pode usar um script para testar a interface. As duas abordagens são mostradas neste artigo. A área restrita é a maneira recomendada para visualizar a interface.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -25,25 +25,25 @@ Após [criando o arquivo Createuidefinition](create-uidefinition-overview.md) pa
 
 ## <a name="use-sandbox"></a>Usar área restrita
 
-1. Abra o [criar área restrita de definição de interface do usuário](https://portal.azure.com/?feature.customPortal=false&#blade/Microsoft_Azure_CreateUIDef/SandboxBlade).
+1. Abra a [área restrita criar definição de interface do usuário](https://portal.azure.com/?feature.customPortal=false&#blade/Microsoft_Azure_CreateUIDef/SandboxBlade).
 
-   ![Mostrar a área restrita](./media/test-createuidefinition/show-sandbox.png)
+   ![Mostrar área restrita](./media/test-createuidefinition/show-sandbox.png)
 
-1. Substitua a definição vazia com o conteúdo do arquivo Createuidefinition. Selecione **visualização**.
+1. Substitua a definição vazia pelo conteúdo do seu arquivo createUiDefinition. JSON. Selecione **Visualização**.
 
-   ![Selecione a versão prévia](./media/test-createuidefinition/select-preview.png)
+   ![Selecionar visualização](./media/test-createuidefinition/select-preview.png)
 
-1. O formulário que você criou é exibido. Você pode percorrer a experiência do usuário e preencha os valores.
+1. O formulário que você criou é exibido. Você pode percorrer a experiência do usuário e preencher os valores.
 
-   ![Mostrar o formulário](./media/test-createuidefinition/show-ui-form.png)
+   ![Mostrar formulário](./media/test-createuidefinition/show-ui-form.png)
 
-### <a name="troubleshooting"></a>solução de problemas
+### <a name="troubleshooting"></a>Solução de problemas
 
-Se não for exibido depois de selecionar seu formulário **visualização**, você pode ter um erro de sintaxe. Procure o indicador vermelho na barra de rolagem à direita e navegue até ele.
+Se o formulário não for exibido após a seleção da **Visualização**, você poderá ter um erro de sintaxe. Procure o indicador vermelho na barra de rolagem direita e navegue até ele.
 
 ![Mostrar erro de sintaxe](./media/test-createuidefinition/show-syntax-error.png)
 
-Se o formulário não exibe e, em vez disso, você verá um ícone de uma nuvem com o descarte de desmontagem, seu formulário tem um erro, como uma propriedade ausente. Abra as ferramentas de desenvolvedor da Web em seu navegador. O **Console** exibe mensagens importantes sobre a interface.
+Se o formulário não for exibido e, em vez disso, você vir um ícone de uma nuvem com descarte solto, seu formulário terá um erro, como uma propriedade ausente. Abra o Ferramentas para Desenvolvedores da Web no navegador. O **Console** exibe mensagens importantes sobre a interface.
 
 ![Mostrar erro](./media/test-createuidefinition/show-error.png)
 
@@ -51,7 +51,8 @@ Se o formulário não exibe e, em vez disso, você verá um ícone de uma nuvem 
 
 Para testar a interface no portal, copie um dos scripts a seguir para o computador local:
 
-* [Script de sideload do PowerShell](https://github.com/Azure/azure-quickstart-templates/blob/master/SideLoad-CreateUIDefinition.ps1)
+* [Script de carregamento do PowerShell – módulo AZ](https://github.com/Azure/azure-quickstart-templates/blob/master/SideLoad-AzCreateUIDefinition.ps1)
+* [Script de carregamento do PowerShell-módulo do Azure](https://github.com/Azure/azure-quickstart-templates/blob/master/SideLoad-CreateUIDefinition.ps1)
 * [Script de sideload do Azure](https://github.com/Azure/azure-quickstart-templates/blob/master/sideload-createuidef.sh)
 
 Para ver o arquivo de interface no portal, execute o script baixado. O script cria uma conta de armazenamento na assinatura do Azure e carrega o arquivo createUiDefinition.json para a conta de armazenamento. A conta de armazenamento é criada na primeira vez que você executa o script ou em caso de exclusão da conta de armazenamento. Se a conta de armazenamento já existe em sua assinatura do Azure, o script a reutiliza. O script abre o portal e carrega o arquivo da conta de armazenamento.
@@ -61,7 +62,7 @@ Forneça um local para a conta de armazenamento e especifique a pasta que tem o 
 Para o PowerShell, use:
 
 ```powershell
-.\SideLoad-CreateUIDefinition.ps1 `
+.\SideLoad-AzCreateUIDefinition.ps1 `
   -StorageResourceGroupLocation southcentralus `
   -ArtifactsStagingDirectory .\100-Marketplace-Sample
 ```
@@ -79,7 +80,7 @@ Se o arquivo createUiDefinition.json estiver na mesma pasta que o script e você
 Para o PowerShell, use:
 
 ```powershell
-.\SideLoad-CreateUIDefinition.ps1
+.\SideLoad-AzCreateUIDefinition.ps1
 ```
 
 Para a CLI do Azure, use:
@@ -90,15 +91,13 @@ Para a CLI do Azure, use:
 
 O script abre uma nova guia no navegador. Em seguida, exibe o portal com a interface para criar o aplicativo gerenciado.
 
-![Exibir portal](./media/test-createuidefinition/view-portal.png)
-
 Forneça valores para os campos. Quando terminar, os valores que são passados para o modelo serão exibidos.
 
 ![Mostrar valores](./media/test-createuidefinition/show-json.png)
 
 Você pode usar esses valores como o arquivo de parâmetro para testar seu modelo de implantação.
 
-Se o portal para de responder na tela de resumo, pode haver um bug na seção de saída. Por exemplo, você pode ter referenciado um controle que não existe. Se um parâmetro de saída estiver vazio, o parâmetro pode fazer referência a uma propriedade que não existe. Por exemplo, a referência para o controle é válida, mas a referência da propriedade não é válida.
+Se o portal parar na tela de resumo, poderá haver um bug na seção de saída. Por exemplo, você pode ter referenciado um controle que não existe. Se um parâmetro na saída estiver vazio, o parâmetro poderá estar fazendo referência a uma propriedade que não existe. Por exemplo, a referência para o controle é válida, mas a referência da propriedade não é válida.
 
 ## <a name="test-your-solution-files"></a>Testar os arquivos de solução
 

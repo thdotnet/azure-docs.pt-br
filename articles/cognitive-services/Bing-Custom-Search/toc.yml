@@ -56,7 +56,8 @@
     - name: Configurar uma experiência de sugestão automática personalizada
       href: define-custom-suggestions.md
     - name: Lidar com realce de ocorrências
-      href: hit-highlighting.md
+      href: ../Bing-Web-Search/hit-highlighting.md
+      maintainContext: true
     - name: Percorrer páginas da Web
       href: page-webpages.md
 - name: Referência
