@@ -56,6 +56,8 @@
       maintainContext: true
     - name: Solucionar problemas
       items:
+        - name: Espaço insuficiente em disco
+          href: ./hdinsight-troubleshoot-out-disk-space.md
         - name: Travamento flexível – CPU
           href: ./hdinsight-troubleshoot-soft-lockup-cpu.md
         - name: InvalidNetworkConfigurationErrorCode – falha na criação do cluster
@@ -72,6 +74,8 @@
           href: ./hdinsight-hdfs-troubleshoot-safe-mode.md
         - name: Problemas de pulsação do Apache Ambari
           href: ./apache-ambari-troubleshoot-heartbeat-issues.md
+        - name: O Apache Ambari mostra os hosts e serviços inoperantes
+          href: ./apache-ambari-troubleshoot-down-hosts-services.md
 - name: Como
   items:
     - name: Usar área restrita do Apache Hadoop
