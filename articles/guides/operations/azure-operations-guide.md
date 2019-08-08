@@ -15,12 +15,12 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 08/24/2018
 ms.author: mibender
-ms.openlocfilehash: 1f8972c89ecb0fc7d8cc7ceb9bfdeab9e905e862
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: b6f5534bc4127e11d7be4b1a52b92a22b75cbb5a
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64570615"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68828083"
 ---
 # <a name="get-started-for-azure-it-operators"></a>Introdução para operadores de TI do Azure
 
@@ -73,7 +73,7 @@ O Azure fornece diversas ofertas de computação de PaaS, incluindo o recurso de
 
 #### <a name="saas-software-as-a-service"></a>SaaS: Software como serviço
 
-SaaS é um software que é hospedado e gerenciado centralmente. É normalmente baseado em uma arquitetura multilocatário — uma única versão do aplicativo é usada para todos os clientes. Ele pode ser escalado horizontalmente para várias instâncias para garantir o melhor desempenho em todas as localizações. Software SaaS normalmente é licenciado por meio de uma assinatura mensal ou anual. Software SaaS normalmente é licenciado por meio de uma assinatura mensal ou anual. Fornecedores de software de SaaS são responsáveis por todos os componentes da pilha de software, portanto, tudo o que você gerencia são os serviços fornecidos.
+SaaS é um software que é hospedado e gerenciado centralmente. É normalmente baseado em uma arquitetura multilocatário — uma única versão do aplicativo é usada para todos os clientes. Ele pode ser escalado horizontalmente para várias instâncias para garantir o melhor desempenho em todas as localizações. Software SaaS normalmente é licenciado por meio de uma assinatura mensal ou anual. Fornecedores de software de SaaS são responsáveis por todos os componentes da pilha de software, portanto, tudo o que você gerencia são os serviços fornecidos.
 
 O Microsoft Office 365 é um bom exemplo de uma oferta de SaaS. Os assinantes pagam uma taxa de assinatura mensal ou anual e obtêm Microsoft Exchange, Microsoft OneDrive e o restante do pacote do Microsoft Office como um serviço. Os assinantes sempre obtêm a versão mais recente e o servidor Exchange é gerenciado para você. Em comparação instalar e atualizar o Office todo ano, isso é menos dispendioso e requer menos esforço.
 

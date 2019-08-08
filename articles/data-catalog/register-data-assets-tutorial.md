@@ -5,13 +5,13 @@ author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
 ms.topic: tutorial
-ms.date: 04/08/2019
-ms.openlocfilehash: 91f7967915fd19ae47ca207913f979aa56fcd27f
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.date: 08/01/2019
+ms.openlocfilehash: 6dcf29c1bb98d15daf652671f31ed1647d66a81b
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60011689"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68734795"
 ---
 # <a name="tutorial-register-data-assets-in-azure-data-catalog"></a>Tutorial: Gerenciar ativos de dados no Catálogo de Dados do Azure
 
@@ -71,7 +71,7 @@ Agora você pode registrar ativos de dados da amostra de Banco de Dados SQL do A
 
     2. Selecione **Product**, **ProductCategory**, **ProductDescription** e **ProductModel** usando Ctrl+selecionar.
 
-    3. selecione a **seta de movimentação selecionada** (**>**). Esta ação move todos os objetos selecionados para a lista **Objetos para registrar** .
+    3. selecione a **seta de movimentação selecionada** ( **>** ). Esta ação move todos os objetos selecionados para a lista **Objetos para registrar** .
 
           ![Tutorial do Catálogo de Dados do Azure – procurar e selecionar objetos](media/register-data-assets-tutorial/data-catalog-server-hierarchy.png)
 

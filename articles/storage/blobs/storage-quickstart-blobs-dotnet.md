@@ -1,20 +1,18 @@
 ---
 title: 'Início Rápido: Biblioteca de clientes do Armazenamento de Blobs do Azure para .NET'
 description: Neste início rápido, você aprenderá a usar a biblioteca de clientes do Armazenamento de Blobs do Azure para .NET para criar um contêiner e um blob no Armazenamento de blobs (objeto). Em seguida, você aprenderá como baixar o blob para seu computador local e como listar todos os blobs em um contêiner.
-services: storage
 author: mhopkins-msft
-ms.custom: mvc
-ms.service: storage
-ms.topic: quickstart
-ms.date: 07/20/2019
 ms.author: mhopkins
+ms.date: 07/20/2019
+ms.service: storage
 ms.subservice: blobs
-ms.openlocfilehash: a030aee18303d20ccf91c6939d349285c4a4bac4
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.topic: quickstart
+ms.openlocfilehash: 40ee855aa01a9b24e35fb9863221e3607786d407
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68565941"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68722013"
 ---
 # <a name="quickstart-azure-blob-storage-client-library-for-net"></a>Início Rápido: Biblioteca de clientes do Armazenamento de Blobs do Azure para .NET
 

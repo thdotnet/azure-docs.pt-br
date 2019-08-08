@@ -5,13 +5,13 @@ author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
 ms.topic: quickstart
-ms.date: 04/05/2019
-ms.openlocfilehash: f00e9eaf56f3973b357792a8d1923a4b5998e0a2
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.date: 08/01/2019
+ms.openlocfilehash: df2f536dc95dd74dbae1c8bda1a9934a73fd1fe0
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59997726"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736484"
 ---
 # <a name="quickstart-create-an-azure-data-catalog"></a>Início Rápido: Criar um Catálogo de Dados do Azure
 

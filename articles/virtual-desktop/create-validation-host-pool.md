@@ -2,17 +2,17 @@
 title: Criar um pool de host de Visualização da Área de Trabalho Virtual do Windows para validar atualizações de serviço – Azure
 description: Como criar um pool de host de validação para monitorar atualizações de serviço antes de distribuir atualizações para a produção.
 services: virtual-desktop
-author: ChJenk
+author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 05/08/2019
-ms.author: v-chjenk
-ms.openlocfilehash: c9b2a593a6943fe2e9577acc61b1d5a7bcd98607
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: helohr
+ms.openlocfilehash: 732192e481f88c0cd3c78e9dac43970eb5be72e6
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67070655"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840526"
 ---
 # <a name="tutorial-create-a-host-pool-to-validate-service-updates"></a>Tutorial: Criar um pool de hosts para validar as atualizações de serviço
 
@@ -46,7 +46,7 @@ Set-RdsHostPool -TenantName $myTenantName -Name "contosoHostPool" -ValidationEnv
 Execute o seguinte cmdlet do PowerShell para confirmar que a propriedade de validação foi definida. Substitua os valores entre aspas pelos valores relevantes para sua sessão.
 
 ```powershell
-Get-RdsHostPool -TenantName $myTenantName -Name "contosoHostPool" -ValidationEnv $true
+Get-RdsHostPool -TenantName $myTenantName -Name "contosoHostPool"
 ```
 
 Os resultados do cmdlet devem ser semelhantes a esta saída:

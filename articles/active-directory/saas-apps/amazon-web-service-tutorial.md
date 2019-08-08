@@ -1,6 +1,6 @@
 ---
 title: 'Tutorial: Integração do Azure Active Directory à AWS (Amazon Web Services) | Microsoft Docs'
-description: Saiba como configurar o logon único entre o Azure Active Directory e a AWS (Amazon Web Services).
+description: Saiba como configurar o logon único entre o Azure Active Directory e o AWS (Amazon Web Services).
 services: active-directory
 documentationCenter: na
 author: jeevansd
@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 06/24/2019
+ms.date: 07/30/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f897653442a3e1b2d6098b3be60c85e75ca54f9a
-ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
+ms.openlocfilehash: f6640708905abc266b07b7b66f5da09aeb890f01
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551488"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68823888"
 ---
 # <a name="tutorial-integrate-amazon-web-services-aws-with-azure-active-directory"></a>Tutorial: integração da AWS (Amazon Web Services) ao Azure Active Directory
 
@@ -52,7 +52,7 @@ b. Você pode ativar o aprovisionamento de usuário com o aplicativo da AWS no A
 c. Você pode atribuir o proprietário do aplicativo individualmente para o aplicativo que pode gerenciar o aplicativo diretamente no Azure AD.
 
 > [!Note]
-> Verifique se está usando apenas o aplicativo da Galeria
+> Verifique se que você usar apenas o aplicativo da Galeria
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -65,9 +65,9 @@ Para começar, você precisará dos seguintes itens:
 
 Neste tutorial, você configurará e testará o SSO do Azure AD em um ambiente de teste. A AWS (Amazon Web Services) dá suporte ao SSO iniciado por **SP e IDP**.
 
-## <a name="adding-amazon-web-services-aws-from-the-gallery"></a>Adicionar a AWS (Amazon Web Services) da galeria
+## <a name="adding-amazon-web-services-aws-from-the-gallery"></a>Adicionar o AWS (Amazon Web Services) da galeria
 
-Para configurar a integração da AWS (Amazon Web Services) com o Azure AD, você precisa adicionar a AWS (Amazon Web Services), por meio da galeria, à sua lista de aplicativos de SaaS gerenciados.
+Para configurar a integração do AWS (Amazon Web Services) com o Azure AD, você precisa adicionar o AWS (Amazon Web Services), por meio da galeria, à sua lista de aplicativos de SaaS gerenciados.
 
 1. Entre no [portal do Azure](https://portal.azure.com) usando uma conta corporativa ou de estudante ou uma conta pessoal da Microsoft.
 1. No painel de navegação esquerdo, escolha o serviço **Azure Active Directory**.
@@ -352,7 +352,7 @@ Nesta seção, você permitirá que B.Fernandes use o logon único do Azure conc
 
     ![O link Adicionar Usuário](common/add-assign-user.png)
 
-1. Na caixa de diálogo **Usuários e grupos**, selecione **B.Fernandes** na lista Usuários e clique no botão **Selecionar**, na parte inferior da tela.
+1. Na caixa de diálogo **Usuários e grupos**, selecione **B.Fernandes** na lista Usuários e clique no botão **Selecionar** na parte inferior da tela.
 1. Se você estiver esperando um valor de função na declaração SAML, na caixa de diálogo **Selecionar Função**, escolha a função apropriada para o usuário da lista e, em seguida, clique no botão **Escolher** na parte inferior da tela.
 1. Na caixa de diálogo **Adicionar atribuição**, clique no botão **Atribuir**.
 

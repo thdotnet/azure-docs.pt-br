@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
-ms.openlocfilehash: b26133c64877bcac07d2e8ba10dbee05d4e36d34
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 762e5ae1782ee037b33156e16a0503ed1e7391ff
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67102270"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68823734"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-floqast"></a>Tutorial: Integração do Azure Active Directory ao FloQast
 
@@ -112,7 +112,7 @@ Para configurar o logon único do Azure Active Directory com o FloQast, realize 
 
     Na caixa de texto **URL de Logon**, digite uma URL: `https://go.floqast.com/login/sso`
 
-6. Seu aplicativo FloQast espera as declarações do SAML em um formato específico, o que exige que você adicione mapeamentos de atributo personalizados de acordo com a sua configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para adicionar os atributos.
+6. Seu aplicativo FloQast espera as declarações do SAML em um formato específico, o que exige que você adicione mapeamentos de atributo personalizados de acordo com a sua configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para adicionar os atributos.
 
     ![image](common/edit-attribute.png)
 
@@ -223,7 +223,7 @@ Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure
 
 ### <a name="create-floqast-test-user"></a>Criar usuário de teste FloQast
 
-Nesta seção, você criará uma usuária chamado Brenda Fernandes no FloQast. Trabalhe com a [equipe de suporte do FloQast](mailto:support@floqast.com)para adicionar os usuários à plataforma FloQast. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará uma usuária chamado Brenda Fernandes no FloQast. Trabalhe com a [equipe de suporte do FloQast](mailto:support@floqast.com) para adicionar os usuários na plataforma do FloQast. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-single-sign-on"></a>Testar logon único 
 

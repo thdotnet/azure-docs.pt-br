@@ -10,12 +10,13 @@ ms.subservice: url-preview
 ms.topic: overview
 ms.date: 03/16/2018
 ms.author: rosh
-ms.openlocfilehash: 7022c3b2d2f3618d55b0a70d2690abf1497ec6a6
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ROBOTS: NOINDEX
+ms.openlocfilehash: 022fe002057f157d4d9fe6e6cad03fc79810888c
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "61473160"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68706918"
 ---
 # <a name="what-is-project-url-preview"></a>O que é a visualização de URL do projeto?
 O ponto de extremidade da Visualização de URL usa um parâmetro de consulta de URL e retorna uma resposta JSON com o nome do recurso de destino, uma breve descrição e um link para uma imagem para exibir uma visualização. A resposta também inclui o sinalizador [isFamilyFriendly](url-preview-reference.md#query-parameters) que indica se a URL contém conteúdo adulto, pirateado ou outro conteúdo ilegal. 

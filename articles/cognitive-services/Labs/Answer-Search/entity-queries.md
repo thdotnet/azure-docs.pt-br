@@ -10,14 +10,15 @@ ms.subservice: answer-search
 ms.topic: quickstart
 ms.date: 04/16/2018
 ms.author: rosh
-ms.openlocfilehash: c9f2a476353b1807bbb1c8c13dc8b8e2cdbb4ae4
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ROBOTS: NOINDEX
+ms.openlocfilehash: b1dbfcfe85a7847b593553bd06cbc22cc62d2e2e
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57544453"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68705459"
 ---
-# <a name="quickstart-query-for-entities"></a>Início rápido: Consultar Entidades
+# <a name="quickstart-query-for-entities"></a>Início Rápido: Consultar Entidades
 
 Se a consulta solicitar informações sobre uma pessoa, lugar ou coisa, a resposta poderá conter uma resposta do `entities`.  As consultas que sempre retornam páginas da Web, [fatos](fact-queries.md) e/ou [entidades](entity-queries.md) dependem de consulta.
 

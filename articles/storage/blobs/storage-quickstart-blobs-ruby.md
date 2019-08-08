@@ -1,20 +1,18 @@
 ---
 title: Início Rápido do Azure - Criar um blob no armazenamento de objeto usando o Ruby | Microsoft Docs
 description: Neste início rápido, você criará uma conta de armazenamento e um contêiner no armazenamento de objeto (Blob). Em seguida, você deve usar a biblioteca de clientes de armazenamento para Ruby a fim de carregar um blob no Armazenamento do Azure, baixar um blob e listar os blobs em um contêiner.
-services: storage
 author: mhopkins-msft
-ms.custom: mvc
-ms.service: storage
-ms.topic: quickstart
-ms.date: 11/14/2018
 ms.author: mhopkins
-ms.reviewer: seguler
-ms.openlocfilehash: 77e8e3dd8c32545b24230512ded00e335108d802
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.date: 11/14/2018
+ms.service: storage
+ms.subservice: blobs
+ms.topic: quickstart
+ms.openlocfilehash: 8c24c5f043d17b5f0e54ca1c2c6cf41a0d3fe9bc
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65150442"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68726364"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-ruby"></a>Início Rápido: Carregar, baixar e listar blobs usando Ruby
 
@@ -115,7 +113,7 @@ blob_client.set_container_acl(container_name, "container")
 
 O Armazenamento de Blobs dá suporte a blobs de blocos, blobs de acréscimo e blobs de páginas. Os blobs de blocos são utilizados com mais frequência e são usados nesse guia de início rápido.  
 
-Para carregar um arquivo em um blob, obtenha o caminho completo do arquivo unindo o nome do diretório e o nome do arquivo na unidade local. Em seguida, você pode carregar o arquivo no caminho especificado usando o método **create\_block\_blob()**. 
+Para carregar um arquivo em um blob, obtenha o caminho completo do arquivo unindo o nome do diretório e o nome do arquivo na unidade local. Em seguida, você pode carregar o arquivo no caminho especificado usando o método **create\_block\_blob()** . 
 
 O exemplo de código cria um arquivo local a ser usado para upload e download, armazenando o arquivo a ser carregado como **file\_path\_to\_file** e o nome do blob como **local\_file\_name**. O exemplo a seguir carrega o arquivo para seu contêiner chamado **quickstartblobs**.
 
@@ -137,11 +135,11 @@ puts "\nUploading to Blob storage as blob" + local_file_name
 blob_client.create_block_blob(container.name, local_file_name, full_path_to_file)
 ```
 
-Para executar uma atualização parcial do conteúdo de um blob de blocos, use o método **create\_block\_list()**. Os blobs de bloco podem ter até 4,7 TB e podem ser qualquer coisa desde planilhas do Excel até arquivos de vídeo grandes. Os blobs de páginas são usados principalmente para os arquivos VHD usados auxiliar as VMs IaaS. Os blobs de acréscimo são usados para registro em log, como quando você quer gravar em um arquivo e depois adicionar mais informações. O acréscimo de blobs deve ser usado em um único modo de gravação. A maioria dos objetos armazenados no Armazenamento de Blobs são blobs de blocos.
+Para executar uma atualização parcial do conteúdo de um blob de blocos, use o método **create\_block\_list()** . Os blobs de bloco podem ter até 4,7 TB e podem ser qualquer coisa desde planilhas do Excel até arquivos de vídeo grandes. Os blobs de páginas são usados principalmente para os arquivos VHD usados auxiliar as VMs IaaS. Os blobs de acréscimo são usados para registro em log, como quando você quer gravar em um arquivo e depois adicionar mais informações. O acréscimo de blobs deve ser usado em um único modo de gravação. A maioria dos objetos armazenados no Armazenamento de Blobs são blobs de blocos.
 
 ### <a name="list-the-blobs-in-a-container"></a>Listar os blobs em um contêiner
 
-É possível obter uma lista de arquivos no contêiner usando o método **list\_blobs()**. O código a seguir recupera a lista de blobs e a percorre, mostrando os nomes dos blobs encontrados em um contêiner.  
+É possível obter uma lista de arquivos no contêiner usando o método **list\_blobs()** . O código a seguir recupera a lista de blobs e a percorre, mostrando os nomes dos blobs encontrados em um contêiner.  
 
 ```ruby
 # List the blobs in the container
@@ -158,7 +156,7 @@ end
 
 ### <a name="download-the-blobs"></a>Baixar os blobs
 
-Baixe os blobs para o seu disco local usando o método **get\_blob()**. O código a seguir baixa o blob carregado em uma seção anterior. "_DOWNLOADED" é adicionado como um sufixo ao nome do blob para que você possa ver ambos os arquivos no disco local. 
+Baixe os blobs para o seu disco local usando o método **get\_blob()** . O código a seguir baixa o blob carregado em uma seção anterior. "_DOWNLOADED" é adicionado como um sufixo ao nome do blob para que você possa ver ambos os arquivos no disco local. 
 
 ```ruby
 # Download the blob(s).
@@ -171,7 +169,7 @@ File.open(full_path_to_file2,"wb") {|f| f.write(content)}
 ```
 
 ### <a name="clean-up-resources"></a>Limpar recursos
-Se você não precisar mais dos blobs carregados neste guia de início rápido, poderá excluir o contêiner inteiro usando o método **delete\_container()**. Se os arquivos criados não forem mais necessárias, você usa o método **delete\_blob()** para excluir os arquivos.
+Se você não precisar mais dos blobs carregados neste guia de início rápido, poderá excluir o contêiner inteiro usando o método **delete\_container()** . Se os arquivos criados não forem mais necessárias, você usa o método **delete\_blob()** para excluir os arquivos.
 
 ```ruby
 # Clean up resources. This includes the container and the temp files

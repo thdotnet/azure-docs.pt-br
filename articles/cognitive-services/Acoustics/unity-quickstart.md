@@ -10,12 +10,13 @@ ms.subservice: acoustics
 ms.topic: quickstart
 ms.date: 03/20/2019
 ms.author: kegodin
-ms.openlocfilehash: 1c790e0fa726c719d5b888d42b5f59739777566b
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ROBOTS: NOINDEX
+ms.openlocfilehash: 93eb44bf91bc2c8346660a4d770ee6d83501c3ae
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64917114"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68706613"
 ---
 # <a name="project-acoustics-unity-quickstart"></a>Início Rápido do Unity do Projeto Acústico
 Use o conteúdo de exemplo do Projeto Acústico para Unity para fazer experimento com controles de design com suporte de simulação.
@@ -70,7 +71,7 @@ O Projeto Acústico executa o cálculo em uma caixa de “região da simulação
 * Para habilitar a transmissão através da parede, mova o controle deslizante **Transmissão (dB)** para seu nível mais baixo. 
 
 ### <a name="modify-wetness-for-a-source"></a>Modificar umidade para uma fonte
-* Para alterar como a umidade muda rapidamente com a distância, use a **Distorção de Distância Perceptiva**. O **Projeto Acústico** calcula os níveis de umidade em todo o espaço a partir da simulação, que variam levemente com a distância e fornecem dicas de distância perceptiva. Aumentar a distorção de distância exagera esse efeito aumentando os níveis de umidade relacionados à distância. Valores de distorção inferiores a 1 tornam a alteração à reverberação com base em distância mais sutil. Esse efeito também pode ser ajustado em detalhes mais refinados, ajustando a **Umidade (dB)**.
+* Para alterar como a umidade muda rapidamente com a distância, use a **Distorção de Distância Perceptiva**. O **Projeto Acústico** calcula os níveis de umidade em todo o espaço a partir da simulação, que variam levemente com a distância e fornecem dicas de distância perceptiva. Aumentar a distorção de distância exagera esse efeito aumentando os níveis de umidade relacionados à distância. Valores de distorção inferiores a 1 tornam a alteração à reverberação com base em distância mais sutil. Esse efeito também pode ser ajustado em detalhes mais refinados, ajustando a **Umidade (dB)** .
 
 * Aumente o tempo de decaimento por todo o espaço, ajustando a **Escala de Tempo de Decaimento**. Se o resultado de simulação para um par de localização de ouvinte de origem específico for um tempo de decaimento de 1,5 s e a **Escala de Tempo de Decaimento** for definida como 2, o tempo de decaimento aplicado à fonte será de 3 s.
 

@@ -10,12 +10,13 @@ ms.subservice: answer-search
 ms.topic: overview
 ms.date: 04/13/2018
 ms.author: rosh
-ms.openlocfilehash: ac1717a8e8a08fcfedc3bc21bb0f03b3e3ca2511
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ROBOTS: NOINDEX
+ms.openlocfilehash: 676b7f63b82a0e7c06264cb6dcbead8c1344a076
+ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "60721806"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68707123"
 ---
 # <a name="what-is-project-answer-search"></a>O que é a Pesquisa de Resposta de Projeto?
 A API de Pesquisa de Resposta de Projeto usa o ponto de extremidade do Bing v7 para obter respostas para consultas interrogativas. A pergunta como "Qual é a circunferência da Terra?" retorna uma resposta com informações reais.  Uma consulta sobre uma pessoa, lugar ou coisa retorna informações sobre a entidade identificada pela consulta. Esses cenários podem ser úteis em aplicativos como bots de conversa, aplicativos de mensagens, leitores, etc.  

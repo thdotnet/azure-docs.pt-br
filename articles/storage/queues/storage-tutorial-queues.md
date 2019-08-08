@@ -1,20 +1,19 @@
 ---
 title: Tutorial - Trabalhar com filas de armazenamento do Azure - Armazenamento do Microsoft Azure
 description: Um tutorial sobre como usar o serviço Fila do Azure para criar filas, bem como inserir, obter e excluir mensagens.
-services: storage
 author: mhopkins-msft
 ms.author: mhopkins
-ms.reviewer: cbrooks
+ms.date: 04/24/2019
 ms.service: storage
 ms.subservice: queues
 ms.topic: tutorial
-ms.date: 04/24/2019
-ms.openlocfilehash: 08ef140eb860637cc0c09619abe7051cc007e99f
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.reviewer: cbrooks
+ms.openlocfilehash: c8e1d5c1c11c4fdf902c7be7bc03be298e93a8b9
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67540289"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68721136"
 ---
 # <a name="tutorial-work-with-azure-storage-queues"></a>Tutorial: Trabalhar com filas de armazenamento do Azure
 
@@ -228,7 +227,7 @@ Criar um novo método para enviar uma mensagem na fila. Adicione o seguinte mét
 
 2. Salve o arquivo.
 
-Uma mensagem deve estar em um formato que possa ser incluído em uma solicitação XML com codificação UTF-8 e pode ter tamanho de até 64 KB. Se uma mensagem contém dados binários, recomendamos codificar a mensagem como Base64.
+Uma mensagem deve estar em um formato que possa ser incluído em uma solicitação XML com codificação UTF-8 e pode ter tamanho de até 64 KB. Se uma mensagem contém dados binários, recomendamos codificá-la como Base64.
 
 Por padrão, a vida útil máxima de uma mensagem é definida como 7 dias. Você pode especificar qualquer número positivo para a vida útil da mensagem. Para adicionar uma mensagem que não expira, use `Timespan.FromSeconds(-1)` em sua chamada para **AddMessageAsync**.
 
