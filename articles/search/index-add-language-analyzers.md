@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: deea16b8670623acd2ae92ba62f579f5474d12ec
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 88d229d33f549755479d7e1c7cf012d0391bccbb
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65790898"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881519"
 ---
 # <a name="add-language-analyzers-to-an-azure-search-index"></a>Adicionar analisadores de idioma a um índice do Azure Search
 
@@ -59,11 +59,11 @@ Para obter mais informações sobre campos filtráveis, confira [Criar Índice &
 ## <a name="language-analyzer-list"></a>Lista de analisador de idioma 
  Veja abaixo uma lista de idiomas com suporte juntamente com nomes de analisador da Lucene e da Microsoft.  
 
-|Linguagem|Nome do analisador da Microsoft|Nome do analisador da Lucene|  
+|Idioma|Nome do analisador da Microsoft|Nome do analisador da Lucene|  
 |--------------|-----------------------------|--------------------------|  
 |Árabe|ar.microsoft|ar.lucene|  
 |Armênia||hy.Lucene|  
-|Bangla|bn.microsoft||  
+|Bengali|bn.microsoft||  
 |Basco||Eu.Lucene|  
 |Búlgaro|bg.microsoft|BG.Lucene|  
 |Catalão|ca.microsoft|CA.Lucene|  
@@ -89,7 +89,7 @@ Para obter mais informações sobre campos filtráveis, confira [Criar Índice &
 |Irlandês||GA.Lucene|  
 |Italiano|it.microsoft|it.lucene|  
 |Japonês|ja.microsoft|ja.lucene|  
-|Canarim|kn.microsoft||  
+|canarim|kn.microsoft||  
 |Coreano|ko.Microsoft|ko.lucene|  
 |Letão|lv.microsoft|lv.lucene|  
 |Lituano|lt.microsoft||  
@@ -111,14 +111,14 @@ Para obter mais informações sobre campos filtráveis, confira [Criar Índice &
 |Espanhol|es.microsoft|es.lucene|  
 |Sueco|sv.microsoft|sv.lucene|  
 |Tâmil|ta.microsoft||  
-|Télugo|te.microsoft||  
+|Telugu|te.microsoft||  
 |Tailandês|th.microsoft|th.lucene|  
 |Turco|tr.microsoft|tr.lucene|  
 |Ucraniano|uk.microsoft||  
 |Urdu|ur.microsoft||  
 |Vietnamita|vi.microsoft||  
 
- Todos os analisadores com nomes anotados com **Lucene** são da plataforma de [analisadores de idioma do Apache Lucene](https://lucene.apache.org/core/4_9_0/core/overview-summary.html ).
+ Todos os analisadores com nomes anotados com **Lucene** são da plataforma de [analisadores de idioma do Apache Lucene](https://lucene.apache.org/core/6_6_1/core/overview-summary.html ).
 
 ## <a name="see-also"></a>Consulte também  
  [Criar índice &#40;API REST do Serviço Azure Search&#41;](https://docs.microsoft.com/rest/api/searchservice/create-index)  

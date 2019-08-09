@@ -4,7 +4,7 @@ description: Referência para a sintaxe completa do Lucene, conforme usado no Az
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 05/13/2019
+ms.date: 08/08/2019
 author: brjohnstmsft
 ms.author: brjohnst
 ms.manager: cgronlun
@@ -19,15 +19,15 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 26935b53d8f852289513a5a7b5d31e3befe3e3b2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e8e9b737676b2695b7b88430f59b0b0e79bc477a
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66002242"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883873"
 ---
 # <a name="lucene-query-syntax-in-azure-search"></a>Sintaxe de consulta Lucene no Azure Search
-Você pode escrever consultas no Azure Search com base na sintaxe avançada do [Analisador de Consultas do Lucene](https://lucene.apache.org/core/4_10_2/queryparser/org/apache/lucene/queryparser/classic/package-summary.html) para formulários de consulta especializados: curinga, pesquisa difusa, pesquisa de proximidade, expressões regulares são alguns exemplos. Grande parte da sintaxe do Analisador de Consultas do Lucene é [implementada intacta no Azure Search](search-lucene-query-architecture.md), com exceção das *pesquisas de intervalo* que são construídas na Pesquisa do Azure por meio das expressões `$filter`. 
+Você pode escrever consultas no Azure Search com base na sintaxe avançada do [Analisador de Consultas do Lucene](https://lucene.apache.org/core/6_6_1/queryparser/org/apache/lucene/queryparser/classic/package-summary.html) para formulários de consulta especializados: curinga, pesquisa difusa, pesquisa de proximidade, expressões regulares são alguns exemplos. Grande parte da sintaxe do Analisador de Consultas do Lucene é [implementada intacta no Azure Search](search-lucene-query-architecture.md), com exceção das *pesquisas de intervalo* que são construídas na Pesquisa do Azure por meio das expressões `$filter`. 
 
 ## <a name="how-to-invoke-full-parsing"></a>Como invocar a análise completa
 
@@ -79,7 +79,7 @@ O exemplo acima usa o til (~), mas o mesmo princípio se aplica a todos os opera
  Os caracteres especiais devem ser substituídos para ser usados como parte do texto da pesquisa. Você também poderá permitir a saída deles prefixando-os com uma barra invertida (\\). Os caracteres especiais que precisam ter a saída permitida incluem o seguinte:  
 `+ - && || ! ( ) { } [ ] ^ " ~ * ? : \ /`  
 
- Por exemplo, para escapar um caractere curinga, use \\ \*.
+ Por exemplo, para escapar um caractere curinga, use \\. \*
 
 ### <a name="encoding-unsafe-and-reserved-characters-in-urls"></a>Codificação de caracteres reservados e não seguros em URLs
 
@@ -95,7 +95,7 @@ O agrupamento de campo é semelhante, mas tem como escopo o agrupamento para um 
 ### <a name="searchmode-parameter-considerations"></a>Considerações sobre parâmetros de SearchMode  
  O impacto de `searchMode` nas consultas, conforme descrito na [Sintaxe de consulta simples no Azure Search](query-simple-syntax.md), aplica-se igualmente à sintaxe de consultas do Lucene. Ou seja, `searchMode` em conjunto com operadores NOT pode levar a resultados de consulta que podem parecer incomuns se você não for claro nas implicações sobre como definir o parâmetro. Se você mantiver o padrão, `searchMode=any`, e usar um operador NOT, a operação será computada como uma ação OR, de modo que "Nova Iorque" NOT "Seattle" retornará todas as cidades que não sejam Seattle.  
 
-##  <a name="bkmk_boolean"></a> Operadores boolianos (AND, OR, NOT) 
+##  <a name="bkmk_boolean"></a>Operadores boolianos (e, ou, não) 
  Sempre especifique operadores boolianos de texto (AND, OR, NOT) com tudo em maiúsculas.  
 
 ### <a name="or-operator-or-or-"></a>Operador OR `OR` ou `||`
@@ -121,8 +121,8 @@ Usar `searchMode=all` aumenta a precisão de consultas, incluindo menos resultad
 ##  <a name="bkmk_searchscoreforwildcardandregexqueries"></a> Classificar consultas de caractere curinga e regex
  O Azure Search usa a pontuação baseada em frequência ([TF-IDF](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)) para consultas de texto. No entanto, para consultas curinga e regex em que o escopo de termos pode ser potencialmente amplo, o fator de frequência é ignorado para impedir que a classificação seja direcionada para correspondências de termos mais raros. Todas as correspondências são tratadas da mesma maneira para as pesquisas de caractere curinga e regex.
 
-##  <a name="bkmk_fields"></a> Pesquisa por campo  
-Você pode definir uma operação de pesquisa por campo com o `fieldName:searchExpression` sintaxe, em que a expressão de pesquisa pode ser uma única palavra ou uma frase ou uma expressão mais complexa entre parênteses, opcionalmente com operadores boolianos. Alguns exemplos incluem o seguinte:  
+##  <a name="bkmk_fields"></a>Pesquisa em campo  
+Você pode definir uma operação de pesquisa em campo com `fieldName:searchExpression` a sintaxe, em que a expressão de pesquisa pode ser uma única palavra ou frase, ou uma expressão mais complexa entre parênteses, opcionalmente com operadores boolianos. Alguns exemplos incluem o seguinte:  
 
 - gênero:jazz NÃO histórico  
 
@@ -133,14 +133,14 @@ Coloque várias cadeias de caracteres entre aspas se quiser que ambas cadeias de
 O campo especificado em `fieldName:searchExpression` deve ser um campo `searchable`.  Confira [Criar Índice](https://docs.microsoft.com/rest/api/searchservice/create-index) para obter detalhes sobre como os atributos de índice são usados em definições de campo.  
 
 > [!NOTE]
-> Ao usar respondidas expressões de pesquisa, você precisa usar o `searchFields` parâmetro porque cada respondidas expressão de pesquisa tem um nome de campo especificado explicitamente. No entanto, você ainda pode usar o `searchFields` parâmetro se você quiser executar uma consulta em que algumas partes limitam-se a um campo específico, e o restante pode aplicar a vários campos. Por exemplo, a consulta `search=genre:jazz NOT history&searchFields=description` corresponderia `jazz` apenas ao `genre` campo, enquanto ele corresponderia `NOT history` com o `description` campo. O nome do campo fornecido na `fieldName:searchExpression` sempre tem precedência sobre a `searchFields` parâmetro, que é por isso que neste exemplo, não precisamos incluir `genre` no `searchFields` parâmetro.
+> Ao usar expressões de pesquisa em campo, você não precisa usar o `searchFields` parâmetro porque cada expressão de pesquisa em campo tem um nome de campo especificado explicitamente. No entanto, você ainda poderá `searchFields` usar o parâmetro se quiser executar uma consulta em que algumas partes têm o escopo de um campo específico, e o restante pode se aplicar a vários campos. Por exemplo, a consulta `search=genre:jazz NOT history&searchFields=description` `jazz` corresponderia apenas ao `genre` `description` campo, enquanto ela corresponderia `NOT history` ao campo. O nome do campo fornecido `fieldName:searchExpression` em sempre tem precedência `searchFields` sobre o parâmetro, que é o motivo neste exemplo, não `searchFields` precisamos incluir `genre` no parâmetro.
 
 ##  <a name="bkmk_fuzzy"></a> Pesquisa difusa  
- Uma pesquisa difusa encontra correspondências em termos com uma construção semelhante. De acordo com a [documentação do Lucene](https://lucene.apache.org/core/4_10_2/queryparser/org/apache/lucene/queryparser/classic/package-summary.html), as pesquisas imprecisas se baseiam na [distância de Damerau-Levenshtein](https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance). A pesquisa difusa pode expandir um termo até o máximo de 50 termos que atendem aos critérios de distância. 
+ Uma pesquisa difusa encontra correspondências em termos com uma construção semelhante. De acordo com a [documentação do Lucene](https://lucene.apache.org/core/6_6_1/queryparser/org/apache/lucene/queryparser/classic/package-summary.html), as pesquisas imprecisas se baseiam na [distância de Damerau-Levenshtein](https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance). A pesquisa difusa pode expandir um termo até o máximo de 50 termos que atendem aos critérios de distância. 
 
  Para fazer uma pesquisa difusa, use o símbolo til "~" no final de uma única palavra com um parâmetro opcional, um número entre 0 e 2 (padrão), que especifica a distância de edição. Por exemplo, "mar~" ou "mar~1" retornaria "mar", "amar" e "maré".
 
- Pesquisa difusa só pode ser aplicada aos termos, não frases, mas você pode acrescentar o til para cada termo individualmente em um nome de várias partes ou frase. Por exemplo, "Unviersty ~ de ~" Wshington ~ "corresponderia a"Universidade de Washington".
+ A pesquisa difusa só pode ser aplicada a termos, não a frases, mas você pode acrescentar o til a cada termo individualmente em um nome ou frase de várias partes. Por exemplo, "Unviersty ~ de ~" Wshington ~ "corresponderia em" University de Washington ".
  
 
 ##  <a name="bkmk_proximity"></a> Pesquisa por proximidade  
@@ -155,7 +155,7 @@ O exemplo a seguir ajuda a ilustrar as diferenças. Considere um perfil de pontu
  Para aumentar um termo, use o sinal de interpolação, "^", com um fator de aumento (um número) no final do termo que você está pesquisando. Você também pode aumentar as frases. Quanto maior o fator de aumento, mais relevante será o termo em relação a outros termos de pesquisa. Por padrão, o fator de aumento é 1. Embora o fator de aumento deva ser positivo, ele pode ser menor do que 1 (por exemplo, 0,20).  
 
 ##  <a name="bkmk_regex"></a> Pesquisa com expressão regular  
- Uma pesquisa de expressão regular encontra uma correspondência com base no conteúdo entre as barras "/", como documentado na [classe RegExp](https://lucene.apache.org/core/4_10_2/core/org/apache/lucene/util/automaton/RegExp.html).  
+ Uma pesquisa de expressão regular encontra uma correspondência com base no conteúdo entre as barras "/", como documentado na [classe RegExp](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/util/automaton/RegExp.html).  
 
  Por exemplo, para localizar documentos que contenham "motel" ou "hotel", especifique `/[mh]otel/`.  As pesquisas com expressões regulares são comparadas com palavras individuais.   
 

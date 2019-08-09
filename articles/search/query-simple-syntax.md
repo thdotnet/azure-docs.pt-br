@@ -4,7 +4,7 @@ description: A referência para a sintaxe de consulta simples usada para consult
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 05/02/2019
+ms.date: 08/08/2019
 author: brjohnstmsft
 ms.author: brjohnst
 ms.manager: cgronlun
@@ -19,15 +19,15 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 75e2d7c493b535c984b0ef61dd9a9fae53aee80a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 41a9c87731dcb6a2cb31e9120a0170b892c58b6f
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65024193"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68884084"
 ---
 # <a name="simple-query-syntax-in-azure-search"></a>Sintaxe de consulta simples no Azure Search
-O Azure Search implementa duas linguagens de consulta com base em Lucene: [Analisador de consulta simples](https://lucene.apache.org/core/4_7_0/queryparser/org/apache/lucene/queryparser/simple/SimpleQueryParser.html) e o [Analisador de Consulta do Lucene](https://lucene.apache.org/core/4_10_2/queryparser/org/apache/lucene/queryparser/classic/package-summary.html). No Azure Search, a sintaxe de consulta simples exclui as opções difusa/inclinada.  
+O Azure Search implementa duas linguagens de consulta com base em Lucene: [Analisador de consulta simples](https://lucene.apache.org/core/6_6_1/queryparser/org/apache/lucene/queryparser/simple/SimpleQueryParser.html) e o [Analisador de Consulta do Lucene](https://lucene.apache.org/core/6_6_1/queryparser/org/apache/lucene/queryparser/classic/package-summary.html). No Azure Search, a sintaxe de consulta simples exclui as opções difusa/inclinada.  
 
 > [!NOTE]  
 >  O Azure Search fornece como alternativa a [sintaxe de consulta Lucene](query-lucene-syntax.md) para consultas mais complexas. Para saber mais sobre a arquitetura de análise de consultas e os benefícios de cada sintaxe, consulte [Como funciona a pesquisa de texto completo no Azure Search](search-lucene-query-architecture.md).
@@ -44,9 +44,9 @@ Por mais simples que pareça, há um aspecto da execução da consulta no Azure 
 
 O normal é que você veja mais desses comportamentos em padrões de interação do usuário com aplicativos que pesquisam conteúdo, em que os usuários têm maior probabilidade de incluir um operador em uma consulta, em vez de sites de comércio eletrônico, que têm mais estruturas internas de navegação. Para obter mais informações, confira [Operador NOT](#not-operator). 
 
-## <a name="boolean-operators-and-or-not"></a>Operadores boolianos (AND, OR, NOT) 
+## <a name="boolean-operators-and-or-not"></a>Operadores boolianos (e, ou, não) 
 
-Você pode inserir os operadores em uma cadeia de caracteres de consulta para criar um rico conjunto de critérios em relação ao qual os documentos correspondentes são encontrados. 
+Você pode inserir operadores em uma cadeia de caracteres de consulta para criar um conjunto avançado de critérios em relação aos quais os documentos correspondentes são encontrados. 
 
 ### <a name="and-operator-"></a>Operador AND `+`
 
@@ -67,15 +67,15 @@ O operador NOT é um sinal de subtração. Por exemplo, `wifi –luxury` irá pr
 
 ## <a name="suffix-operator"></a>Operador de sufixo
 
-O operador de sufixo é um asterisco `*`. Por exemplo, `lux*` procura documentos que tenham um termo que começa com `lux`, ignorando maiúsculas e minúsculas.  
+O operador de sufixo é um `*`asterisco. Por exemplo, `lux*` procura documentos que tenham um termo que começa com `lux`, ignorando maiúsculas e minúsculas.  
 
-## <a name="phrase-search-operator"></a>Operador de pesquisa de frase
+## <a name="phrase-search-operator"></a>Operador de pesquisa de frases
 
-O operador de expressão inclui uma frase aspas `" "`. Por exemplo, embora `Roach Motel` (sem aspas) procuraria documentos que contenham `Roach` e/ou `Motel` em qualquer lugar e em qualquer ordem, `"Roach Motel"` (com aspas) faz a correspondência apenas com documentos que contenham essa frase inteira, junta e naquela ordem (a análise de texto ainda se aplica).
+O operador de frase fecha uma frase entre aspas `" "`. Por exemplo, embora `Roach Motel` (sem aspas) procuraria documentos que contenham `Roach` e/ou `Motel` em qualquer lugar e em qualquer ordem, `"Roach Motel"` (com aspas) faz a correspondência apenas com documentos que contenham essa frase inteira, junta e naquela ordem (a análise de texto ainda se aplica).
 
 ## <a name="precedence-operator"></a>Operador de precedência
 
-O operador de precedência inclui a cadeia de caracteres entre parênteses `( )`. Por exemplo, `motel+(wifi | luxury)` irá procurar documentos que contenham o termo motel e uma `wifi` ou `luxury` (ou ambos).  
+O operador de precedência inclui a cadeia de caracteres entre `( )`parênteses. Por exemplo, `motel+(wifi | luxury)` o `wifi` pesquisará documentos que contenham o termo Motel `luxury` e ou (ou ambos).  
 
 ## <a name="escaping-search-operators"></a>Operadores de escape de pesquisa  
 

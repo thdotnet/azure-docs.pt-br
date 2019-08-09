@@ -1,18 +1,18 @@
 ---
 title: Desenvolva para a plataforma Android Things usando SDKs de IoT do Azure | Microsoft Docs
 description: Guia do desenvolvedor – saiba mais sobre como desenvolver no Android Things usando os SDKs do Hub IoT do Azure.
-author: yzhong94
+author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 01/30/2019
-ms.author: yizhon
-ms.openlocfilehash: 8e36cee9857c00fcb618a8491595432fb0fd60fd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: robinsh
+ms.openlocfilehash: 82f6da54aec7aee94c19fd75a06d2850ca0db8b6
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64571270"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883126"
 ---
 # <a name="develop-for-android-things-platform-using-azure-iot-sdks"></a>Desenvolva para a plataforma Android Things usando SDKs de IoT do Azure
 
@@ -49,7 +49,7 @@ Um dispositivo deve ser registrado no hub IoT antes de poder se conectar. Neste 
     az iot hub device-identity create --hub-name YourIoTHubName --device-id MyAndroidThingsDevice
     ```
 
-2. Execute os seguintes comandos no Azure Cloud Shell para obter o *cadeia de conexão do dispositivo* para o dispositivo que você acabou de registrar. Substitua `YourIoTHubName` abaixo com o nome você escolher para seu hub IoT.
+2. Execute os seguintes comandos no Azure Cloud Shell para obter a *cadeia de conexão do dispositivo* para o dispositivo que você acabou de registrar. Substitua `YourIoTHubName` abaixo pelo nome que você escolher para o Hub IOT.
 
     ```azurecli-interactive
     az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyAndroidThingsDevice --output table
@@ -65,7 +65,7 @@ Um dispositivo deve ser registrado no hub IoT antes de poder se conectar. Neste 
 
 1. A primeira etapa para criar um aplicativo do Android Things é conectar-se a seus dispositivos Android Things. Conecte seu dispositivo Android Things a uma exibição e conecte-se à Internet. O Android Things fornece [documentação](https://developer.android.com/things/get-started/kits) sobre como se conectar ao WiFi. Depois de se conectar à Internet, anote o endereço IP listado em Redes.
 
-2. Use a ferramenta [adb](https://developer.android.com/studio/command-line/adb) para conectar-se ao seu dispositivo Android Things com o endereço IP observado acima. Verifique novamente a conexão usando este comando no seu terminal. Você deve ver os dispositivos listados como "conectado".
+2. Use a ferramenta [adb](https://developer.android.com/studio/command-line/adb) para conectar-se ao seu dispositivo Android Things com o endereço IP observado acima. Verifique novamente a conexão usando este comando no seu terminal. Você deve ver seus dispositivos listados como "conectado".
 
    ```
    adb devices

@@ -6,12 +6,12 @@ ms.author: jasonh
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 08/01/2019
-ms.openlocfilehash: 81e17e1e450e45e4c163ca8231a47deeb8b9ed2c
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 21b7c4e17d976a0a4099a926823f51eab1dba98d
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68734698"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68879067"
 ---
 # <a name="azure-data-catalog-developer-concepts"></a>Conceitos de desenvolvedor do Catálogo de Dados do Azure
 O **Catálogo de Dados do Microsoft Azure** é um serviço de nuvem totalmente gerenciado que fornece recursos para descoberta de fonte de dados e metadados de fonte de dados de crowdsourcing. Os desenvolvedores podem usar o serviço por meio de suas APIs REST. Entender os conceitos implementados no serviço é importante para os desenvolvedores integrarem com êxito o **Catálogo de Dados do Azure**.
@@ -19,7 +19,7 @@ O **Catálogo de Dados do Microsoft Azure** é um serviço de nuvem totalmente g
 ## <a name="key-concepts"></a>Principais conceitos
 O modelo conceitual do **Catálogo de dados do Azure** baseia-se em quatro conceitos principais: O **Catálogo**, **os usuários, os** **ativos**e as **anotações**.
 
-![conceito][1]
+![Conceitos do catálogo de dados](./media/data-catalog-developer-concepts/concept2.png)
 
 *Figura 1 - Modelo conceitual simplificado do Catálogo de Dados do Azure*
 
@@ -168,7 +168,7 @@ Tipos comuns podem ser usados como os tipos de propriedades, mas não são Itens
 <tr><td><b>Tipo comum</b></td><td><b>Propriedades</b></td><td><b>Tipo de dados</b></td><td><b>Comentários</b></td></tr>
 <tr><td>DataSourceInfo</td><td></td><td></td><td></td></tr>
 <tr><td></td><td>sourceType</td><td>cadeia de caracteres</td><td>Descreve o tipo de fonte de dados.  Por exemplo: SQL Server, Oracle Database, etc.  </td></tr>
-<tr><td></td><td>objectType</td><td>cadeia de caracteres</td><td>Descreve o tipo de objeto na fonte de dados. Por exemplo: Tabela, exibição para SQL Server.</td></tr>
+<tr><td></td><td>objectType</td><td>cadeia de caracteres</td><td>Descreve o tipo de objeto na fonte de dados. Por exemplo:  Tabela, exibição para SQL Server.</td></tr>
 
 <tr><td>DataSourceLocation</td><td></td><td></td><td></td></tr>
 <tr><td></td><td>protocolo</td><td>cadeia de caracteres</td><td>Obrigatória. Descreve um protocolo usado para se comunicar com a fonte de dados. Por exemplo: "tds" para o SQl Server, "oracle" para Oracle etc. Confira <a href="https://docs.microsoft.com/azure/data-catalog/data-catalog-dsr">Especificação de referência de fonte de dados - Estrutura DSL</a> para obter a lista de protocolos com suporte no momento.</td></tr>
@@ -286,7 +286,7 @@ A entidade de segurança especial &lt;Everyone&gt; tem a objectId "00000000-0000
 > 
 
 **Corpo**
-
+```json
     {
         "roles": [
             {
@@ -299,9 +299,11 @@ A entidade de segurança especial &lt;Everyone&gt; tem a objectId "00000000-0000
             }
         ]
     }
+```
 
   **Atribuir proprietários e restringir a visibilidade de um item raiz existente**: **Colocar** https:\//API.azuredatacatalog.com/catalogs/default/views/Tables/042297b0...1be45ecd462a?API-Version=2016-03-30
 
+```json
     {
         "roles": [
             {
@@ -343,11 +345,8 @@ A entidade de segurança especial &lt;Everyone&gt; tem a objectId "00000000-0000
             }
         ]
     }
+```
 
 > [!NOTE]
 > Em PUT, não é necessário especificar uma carga de item no corpo: PUT pode ser usado para atualizar apenas funções e/ou permissões.
 > 
-> 
-
-<!--Image references-->
-[1]: ./media/data-catalog-developer-concepts/concept2.png

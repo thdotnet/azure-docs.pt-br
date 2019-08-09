@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 05/02/2019
+ms.date: 08/07/2019
 ms.author: allensu
-ms.openlocfilehash: 833d0d0b17f7cc22b2ab37b4e225c1a8cce9c592
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 9dcc5fa201c08ca4b1e65b8aae88118731eba427
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68385554"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881061"
 ---
 # <a name="outbound-connections-in-azure"></a>Conexões de saída no Azure
 
@@ -133,6 +133,10 @@ Vários fluxos, cada um para um endereço IP, porta e protocolo de destino difer
 
 Portas SNAT UDP são gerenciadas por um algoritmo diferente do que as portas SNAT TCP.  O Load Balancer usa um algoritmo conhecido como "NAT de cone com restrição de porta" para UDP.  Uma porta SNAT é consumida para cada fluxo, independentemente do endereço IP e da porta de destino.
 
+#### <a name="snat-port-reuse"></a>Reutilização de porta SNAT
+
+Depois que uma porta for liberada, a porta estará disponível para reutilização conforme necessário.  Você pode considerar as portas SNAT como uma sequência do mais baixo para o mais alto disponível para um determinado cenário, e a primeira porta SNAT disponível é usada para novas conexões. 
+ 
 #### <a name="exhaustion"></a>Esgotamento
 
 Quando os recursos da porta SNAT estão esgotados, os fluxos de saída falham até que os fluxos existentes liberem as portas SNAT. O balanceador de carga recupera as portas SNAT quando o fluxo fecha e usa um [tempo limite de ociosidade de 4 minutos](#idletimeout) para recuperar as portas SNAT dos fluxos ociosos.

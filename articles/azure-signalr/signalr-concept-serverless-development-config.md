@@ -1,73 +1,73 @@
 ---
-title: Desenvolver e configurar aplicativos de serviço do Azure Functions SignalR
-description: Obter detalhes sobre como desenvolver e configurar aplicativos em tempo real sem servidor usando o Azure Functions e o serviço do Azure SignalR
+title: Desenvolver e configurar Azure Functions aplicativos de serviço Signalr
+description: Detalhes sobre como desenvolver e configurar aplicativos em tempo real sem servidor usando o Azure Functions e o serviço de Signaler do Azure
 author: anthonychu
 ms.service: signalr
 ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: antchu
-ms.openlocfilehash: 9b68b9d0bbac984c29759cf4b7b026a559a9d819
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: be77704f562a1e05485e6f3704dff265635b1dc2
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60809008"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68882300"
 ---
-# <a name="azure-functions-development-and-configuration-with-azure-signalr-service"></a>Desenvolvimento de funções do Azure e a configuração com o serviço do Azure SignalR
+# <a name="azure-functions-development-and-configuration-with-azure-signalr-service"></a>Azure Functions o desenvolvimento e a configuração com o serviço de Signaler do Azure
 
-Aplicativos de funções do Azure podem aproveitar o [associações de serviço do Azure SignalR](../azure-functions/functions-bindings-signalr-service.md) para adicionar recursos em tempo real. Aplicativos cliente usar SDKs de cliente disponíveis em vários idiomas para se conectar ao serviço do Azure SignalR e receber mensagens em tempo real.
+Azure Functions aplicativos podem aproveitar as [ligações de serviço do Azure signalr](../azure-functions/functions-bindings-signalr-service.md) para adicionar recursos em tempo real. Os aplicativos cliente usam SDKs de cliente disponíveis em várias linguagens para se conectar ao serviço de Signaler do Azure e receber mensagens em tempo real.
 
-Este artigo descreve os conceitos de desenvolvimento e a configuração de um aplicativo de função do Azure que esteja integrado com o SignalR Service.
+Este artigo descreve os conceitos para o desenvolvimento e a configuração de um aplicativo de funções do Azure que é integrado com o serviço Signalr.
 
-## <a name="signalr-service-configuration"></a>Configuração do SignalR Service
+## <a name="signalr-service-configuration"></a>Configuração do serviço signalr
 
-Azure SignalR Service pode ser configurado em modos diferentes. Quando usado com o Azure Functions, o serviço deve ser configurado no *Serverless* modo.
+O serviço de Signaler do Azure pode ser configurado em modos diferentes. Quando usado com Azure Functions, o serviço deve ser configurado no modo sem *servidor* .
 
-No portal do Azure, localize o *configurações* página do seu recurso do SignalR Service. Defina as *modo de serviço* para *Serverless*.
+Na portal do Azure, localize a página *configurações* do recurso de serviço do signalr. Defina o *modo de serviço* como sem *servidor*.
 
 ![Modo de Serviço do SignalR](media/signalr-concept-azure-functions/signalr-service-mode.png)
 
-## <a name="azure-functions-development"></a>Desenvolvimento de funções do Azure
+## <a name="azure-functions-development"></a>Desenvolvimento de Azure Functions
 
-Um aplicativo em tempo real sem servidor, criado com o Azure Functions e o serviço do Azure SignalR normalmente requer duas funções do Azure:
+Um aplicativo em tempo real sem servidor criado com o Azure Functions e o serviço de Signaler do Azure normalmente requer duas Azure Functions:
 
-* Token de acesso de uma função de "negotiate" que o cliente chama para obter um SignalR Service válido e URL de ponto de extremidade de serviço
-* Uma ou mais funções que enviam mensagens ou gerenciar a associação de grupo
+* Uma função "Negotiate" que o cliente chama para obter um token de acesso de serviço de sinalização válido e URL de ponto de extremidade de serviço
+* Uma ou mais funções que enviam mensagens ou gerenciam a associação de grupo
 
-### <a name="negotiate-function"></a>negociar a função
+### <a name="negotiate-function"></a>função Negotiate
 
-Um aplicativo cliente requer um token de acesso válido para se conectar ao serviço do Azure SignalR. Um token de acesso pode ser anônimos ou autenticados para uma ID de determinado usuário. Aplicativos sem servidor do SignalR Service exigem que um ponto de extremidade HTTP denominado "negotiate" para obter um token e outras informações de conexão, como a URL de ponto de extremidade do SignalR Service.
+Um aplicativo cliente requer um token de acesso válido para se conectar ao serviço de Signaler do Azure. Um token de acesso pode ser anônimo ou autenticado para uma determinada ID de usuário. Os aplicativos de serviço de Signaler sem servidor exigem um ponto de extremidade HTTP chamado "Negotiate" para obter um token e outras informações de conexão, como a URL do ponto de extremidade do serviço Signalr.
 
-Use um HTTP disparou a função do Azure e o *SignalRConnectionInfo* associação para gerar o objeto de informações de conexão de entrada. A função deve ter uma rota HTTP que termina em `/negotiate`.
+Use uma função do Azure disparada por HTTP e a associação de entrada *SignalRConnectionInfo* para gerar o objeto de informações de conexão. A função deve ter uma rota HTTP que termina em `/negotiate`.
 
-Para obter mais informações sobre como criar a função negotiate, consulte o [ *SignalRConnectionInfo* referência de associação de entrada](../azure-functions/functions-bindings-signalr-service.md#signalr-connection-info-input-binding).
+Para obter mais informações sobre como criar a função Negotiate, consulte a referência de associação de entrada do [ *SignalRConnectionInfo* ](../azure-functions/functions-bindings-signalr-service.md#signalr-connection-info-input-binding).
 
 Para saber mais sobre como criar um token autenticado, consulte [usando a autenticação do serviço de aplicativo](#using-app-service-authentication).
 
-### <a name="sending-messages-and-managing-group-membership"></a>Envio de mensagens e gerenciar a associação de grupo
+### <a name="sending-messages-and-managing-group-membership"></a>Enviando mensagens e gerenciando a associação de grupo
 
-Use o *SignalR* associação de saída para enviar mensagens para os clientes conectados ao serviço do Azure SignalR. Você pode transmitir mensagens para todos os clientes, ou você pode enviá-los a um subconjunto de clientes que são autenticados com uma ID de usuário específico ou que foram adicionados a um grupo específico.
+Use a Associação de saída do signalr para enviar mensagens aos clientes conectados ao serviço de Signaler do Azure. Você pode transmitir mensagens para todos os clientes ou pode enviá-las para um subconjunto de clientes que são autenticados com uma ID de usuário específica ou foram adicionados a um grupo específico.
 
-Os usuários podem ser adicionados a um ou mais grupos. Você também pode usar o *SignalR* associação para adicionar ou remover usuários / para grupos de saída.
+Os usuários podem ser adicionados a um ou mais grupos. Você também pode usar a Associação de saída do signalr para adicionar ou remover usuários de/para grupos.
 
-Para obter mais informações, consulte o [ *SignalR* referência de associação de saída](../azure-functions/functions-bindings-signalr-service.md#signalr-output-binding).
+Para obter mais informações, consulte a referência de associação de saída do [ *signalr* ](../azure-functions/functions-bindings-signalr-service.md#signalr-output-binding).
 
-### <a name="signalr-hubs"></a>Hubs de SignalR
+### <a name="signalr-hubs"></a>Hubs de sinalização
 
-O SignalR tem um conceito de "hubs". Cada conexão de cliente e cada mensagem enviada a partir do Azure Functions está no escopo para um hub específico. Você pode usar os hubs como uma forma de separar suas conexões e as mensagens em espaços para nome lógicos.
+O signalr tem um conceito de "hubs". Cada conexão de cliente e cada mensagem enviada de Azure Functions tem como escopo um hub específico. Você pode usar hubs como uma maneira de separar suas conexões e mensagens em namespaces lógicos.
 
 ## <a name="client-development"></a>Desenvolvimento de cliente
 
-Aplicativos de cliente do SignalR podem aproveitar o SDK em um dos vários idiomas para conectar facilmente e receber mensagens de serviço do Azure SignalR de cliente do SignalR.
+Os aplicativos cliente do signalr podem aproveitar o SDK do cliente do Signalr em uma das várias linguagens para se conectar e receber mensagens do serviço de Signaler do Azure com facilidade.
 
 ### <a name="configuring-a-client-connection"></a>Configurando uma conexão de cliente
 
-Para se conectar ao SignalR Service, um cliente deve concluir uma negociação bem-sucedida de conexão que consiste em uma dessas etapas:
+Para se conectar ao serviço Signalr, um cliente deve concluir uma negociação de conexão bem-sucedida que consiste em estas etapas:
 
-1. Fazer uma solicitação para o *negociar* ponto de extremidade HTTP discutida acima para obter informações de conexão válida
-1. Se conectar ao SignalR Service usando a URL do ponto de extremidade de serviço e token de acesso é obtido de *negociar* ponto de extremidade
+1. Faça uma solicitação para o ponto de extremidade de *negociação* http discutido acima para obter informações de conexão válidas
+1. Conectar-se ao serviço de Signalr usando a URL de ponto de extremidade de serviço e o token de acesso obtidos do ponto de extremidade *negotia*
 
-SDKs de cliente SignalR já contêm a lógica necessária para executar o handshake de negociação. Passar a URL do ponto de extremidade negotiate, menos o `negotiate` segmento, o SDK `HubConnectionBuilder`. Aqui está um exemplo no JavaScript:
+Os SDKs de cliente do signalr já contêm a lógica necessária para executar o handshake de negociação. Passe a URL do ponto de extremidade de negociação `negotiate` , menos o segmento, para `HubConnectionBuilder`o SDK. Veja um exemplo em JavaScript:
 
 ```javascript
 const connection = new signalR.HubConnectionBuilder()
@@ -75,37 +75,37 @@ const connection = new signalR.HubConnectionBuilder()
   .build()
 ```
 
-Por convenção, o SDK automaticamente anexa `/negotiate` para a URL e o utiliza para começar a negociação.
+Por convenção, o SDK acrescenta `/negotiate` automaticamente à URL e a usa para iniciar a negociação.
 
 > [!NOTE]
-> Se você estiver usando o SDK JavaScript/TypeScript em um navegador, você precisará [habilitar recursos entre origens (CORS) compartilhamento](#enabling-cors) em seu aplicativo de funções.
+> Se você estiver usando o JavaScript/TypeScript SDK em um navegador, precisará [habilitar o CORS (compartilhamento de recursos entre origens)](#enabling-cors) no seu aplicativo de funções.
 
-Para obter mais informações sobre como usar o SDK do cliente do SignalR, consulte a documentação para seu idioma:
+Para obter mais informações sobre como usar o SDK de cliente do Signalr, consulte a documentação do seu idioma:
 
 * [.NET Standard](https://docs.microsoft.com/aspnet/core/signalr/dotnet-client)
 * [JavaScript](https://docs.microsoft.com/aspnet/core/signalr/javascript-client)
 * [Java](https://docs.microsoft.com/aspnet/core/signalr/java-client)
 
-### <a name="sending-messages-from-a-client-to-the-service"></a>Enviar mensagens de um cliente para o serviço
+### <a name="sending-messages-from-a-client-to-the-service"></a>Enviando mensagens de um cliente para o serviço
 
-Embora o SDK do SignalR permite que aplicativos cliente invocar a lógica de back-end em um hub SignalR, essa funcionalidade ainda não é suportada ao usar o SignalR Service com o Azure Functions. Use HTTP solicitações para invocar funções do Azure.
+Embora o SDK do Signalr permita que os aplicativos cliente invoquem a lógica de back-end em um Hub do Signalr, essa funcionalidade ainda não é suportada quando você usa o serviço de sinalização com Azure Functions. Use solicitações HTTP para invocar Azure Functions.
 
-## <a name="azure-functions-configuration"></a>Configuração de funções do Azure
+## <a name="azure-functions-configuration"></a>Configuração de Azure Functions
 
-Aplicativos do Azure Function que se integram com o serviço do Azure SignalR podem ser implantados como qualquer aplicativo típico de função do Azure, usando técnicas como [implantação contínua](../azure-functions/functions-continuous-deployment.md), [zip implantação](../azure-functions/deployment-zip-push.md)e [execução de pacote](../azure-functions/run-functions-from-deployment-package.md).
+Os aplicativos de funções do Azure que se integram com o serviço de Signaler do Azure podem ser implantados como qualquer aplicativo de funções típico do Azure, usando técnicas como [implantação contínua](../azure-functions/functions-continuous-deployment.md), [implantação de zip](../azure-functions/deployment-zip-push.md)e [execução do pacote](../azure-functions/run-functions-from-deployment-package.md).
 
-No entanto, há algumas considerações especiais para aplicativos que usam as associações de SignalR Service. Se o cliente é executado em um navegador, o CORS deve ser habilitado. E se o aplicativo exigir autenticação, você pode integrar o ponto de extremidade negotiate com autenticação do serviço de aplicativo.
+No entanto, há algumas considerações especiais para aplicativos que usam as associações de serviço do Signalr. Se o cliente do for executado em um navegador, o CORS deverá ser habilitado. E se o aplicativo exigir autenticação, você poderá integrar o ponto de extremidade de negociação com a autenticação do serviço de aplicativo.
 
 ### <a name="enabling-cors"></a>Habilitando CORS
 
-O cliente JavaScript/TypeScript faz solicitações HTTP para a função negotiate para iniciar a negociação de conexão. Quando o aplicativo cliente está hospedado em um domínio diferente daquele que o aplicativo de funções do Azure, de recursos entre origens (CORS) compartilhamento devem estar habilitado no aplicativo de funções ou o navegador bloqueará as solicitações.
+O cliente JavaScript/TypeScript faz solicitações HTTP para a função Negotiate para iniciar a negociação de conexão. Quando o aplicativo cliente é hospedado em um domínio diferente do aplicativo de funções do Azure, o compartilhamento de recursos entre origens (CORS) deve ser habilitado no aplicativo de funções ou o navegador bloqueará as solicitações.
 
 #### <a name="localhost"></a>Localhost
 
-Ao executar o aplicativo de funções em seu computador local, você pode adicionar um `Host` seção para *Settings* para habilitar o CORS. No `Host` seção, adicione duas propriedades:
+Ao executar o aplicativo de funções em seu computador local, você pode adicionar `Host` uma seção a *local. Settings. JSON* para habilitar CORS. `Host` Na seção, adicione duas propriedades:
 
-* `CORS` -Insira a URL base que é a origem do aplicativo cliente
-* `CORSCredentials` -Defina-a como `true` para permitir solicitações de "withCredentials"
+* `CORS`-Insira a URL base que é a origem do aplicativo cliente
+* `CORSCredentials`-Defina para `true` para permitir solicitações "withCredentials"
 
 Exemplo:
 
@@ -122,25 +122,54 @@ Exemplo:
 }
 ```
 
-#### <a name="azure"></a>Azure
+#### <a name="cloud---azure-functions-cors"></a>CORS Azure Functions de nuvem
 
-Para habilitar o CORS em um aplicativo de funções do Azure, vá para a tela de configuração de CORS sob o *recursos da plataforma* guia de seu aplicativo de funções no portal do Azure.
+Para habilitar o CORS em um aplicativo de funções do Azure, vá para a tela de configuração do CORS na guia *recursos da plataforma* do seu aplicativo de funções no portal do Azure.
 
-CORS com Access-Control-Allow-Credentials deve estar habilitado para o cliente SignalR chamar a função de negotiate. Marque a caixa de seleção para habilitá-lo.
+> [!NOTE]
+> A configuração de CORS ainda não está disponível no plano de consumo Azure Functions Linux. Use o [Gerenciamento de API do Azure](#cloud---azure-api-management) para habilitar o CORS.
 
-No *origens permitidas* seção, adicione uma entrada com a URL de base de origem do seu aplicativo web.
+O CORS com Access-Control-Allow-Credentials deve estar habilitado para que o cliente do Signalr chame a função Negotiate. Marque a caixa de seleção para habilitá-la.
 
-![Configurar o CORS](media/signalr-concept-serverless-development-config/cors-settings.png)
+Na seção *origens permitidas* , adicione uma entrada com a URL base de origem do seu aplicativo Web.
+
+![Configurando CORS](media/signalr-concept-serverless-development-config/cors-settings.png)
+
+#### <a name="cloud---azure-api-management"></a>Nuvem-gerenciamento de API do Azure
+
+O gerenciamento de API do Azure fornece um gateway de API que adiciona recursos aos serviços de back-end existentes. Você pode usá-lo para adicionar CORS ao seu aplicativo de funções. Ele oferece uma camada de consumo com preços de pagamento por ação e uma concessão gratuita mensal.
+
+Consulte a documentação do gerenciamento de API para obter informações sobre como [importar um aplicativo de funções do Azure](../api-management/import-function-app-as-api.md). Depois de importado, você pode adicionar uma política de entrada para habilitar o CORS com suporte ao Access-Control-Allow-Credentials.
+
+```xml
+<cors allow-credentials="true">
+  <allowed-origins>
+    <origin>https://azure-samples.github.io</origin>
+  </allowed-origins>
+  <allowed-methods>
+    <method>GET</method>
+    <method>POST</method>
+  </allowed-methods>
+  <allowed-headers>
+    <header>*</header>
+  </allowed-headers>
+  <expose-headers>
+    <header>*</header>
+  </expose-headers>
+</cors>
+```
+
+Configure os clientes do Signalr para usar a URL de gerenciamento de API.
 
 ### <a name="using-app-service-authentication"></a>Usando a autenticação do serviço de aplicativo
 
-O Azure Functions tem a autenticação integrada, que dão suporte a provedores populares, como o Facebook, Twitter, Account da Microsoft, Google e Azure Active Directory. Esse recurso pode ser integrado com o *SignalRConnectionInfo* associação para criar conexões com o serviço do Azure SignalR que foram autenticadas em um ID de usuário. Seu aplicativo pode enviar mensagens usando o *SignalR* de saída de associação que são destinadas a esse ID de usuário.
+Azure Functions tem autenticação interna, oferecendo suporte a provedores populares como Facebook, Twitter, conta da Microsoft, Google e Azure Active Directory. Esse recurso pode ser integrado com a associação *SignalRConnectionInfo* para criar conexões com o serviço de Signaler do Azure que foram autenticados para uma ID de usuário. Seu aplicativo pode enviar mensagens usando a Associação de saída do signalr que é destinada a essa ID de usuário.
 
-No portal do Azure, em seu aplicativo de funções *recursos da plataforma* guia, abra o *autenticação/autorização* janela de configurações. Siga a documentação para [autenticação do serviço de aplicativo](../app-service/overview-authentication-authorization.md) para configurar a autenticação usando um provedor de identidade de sua escolha.
+Na portal do Azure, na guia *recursos da plataforma* do aplicativo de funções, abra a janela configurações de *autenticação/autorização* . Siga a documentação da [autenticação do serviço de aplicativo](../app-service/overview-authentication-authorization.md) para configurar a autenticação usando um provedor de identidade de sua escolha.
 
-Uma vez configurado, as solicitações HTTP autenticadas incluirá `x-ms-client-principal-name` e `x-ms-client-principal-id` cabeçalhos que contém o nome de usuário da identidade autenticada e a ID de usuário, respectivamente.
+Uma vez configuradas, as solicitações HTTP `x-ms-client-principal-name` autenticadas incluirão e `x-ms-client-principal-id` os cabeçalhos que contêm o nome de usuário e a ID da identidade autenticada, respectivamente.
 
-Você pode usar esses cabeçalhos no seu *SignalRConnectionInfo* configuração de associação para criar conexões autenticadas. Aqui está um exemplo C# negociar a função que usa o `x-ms-client-principal-id` cabeçalho.
+Você pode usar esses cabeçalhos em sua configuração de associação do *SignalRConnectionInfo* para criar conexões autenticadas. Aqui está um exemplo C# de função Negotiate que `x-ms-client-principal-id` usa o cabeçalho.
 
 ```csharp
 [FunctionName("negotiate")]
@@ -155,7 +184,7 @@ public static SignalRConnectionInfo Negotiate(
 }
 ```
 
-Em seguida, você pode enviar mensagens para esse usuário definindo o `UserId` propriedade de uma mensagem do SignalR.
+Em seguida, você pode enviar mensagens para esse usuário definindo `UserId` a propriedade de uma mensagem de sinalização.
 
 ```csharp
 [FunctionName("SendMessage")]
@@ -174,8 +203,8 @@ public static Task SendMessage(
 }
 ```
 
-Para obter informações sobre outros idiomas, consulte o [associações de serviço do Azure SignalR](../azure-functions/functions-bindings-signalr-service.md) para fazer referência a funções do Azure.
+Para obter informações sobre outras linguagens, consulte [associações de serviço do Azure signalr](../azure-functions/functions-bindings-signalr-service.md) para Azure Functions referência.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Neste artigo, você aprendeu a desenvolver e configurar aplicativos sem servidor do SignalR Service usando o Azure Functions. Tente criar um aplicativo por conta própria usando um dos tutoriais ou inícios rápidos sobre o [página de visão geral do SignalR Service](index.yml).
+Neste artigo, você aprendeu a desenvolver e configurar aplicativos de serviço de sinalização sem servidor usando o Azure Functions. Tente criar um aplicativo por conta própria usando um dos tutoriais ou inícios rápidos na [página Visão geral do serviço signalr](index.yml).

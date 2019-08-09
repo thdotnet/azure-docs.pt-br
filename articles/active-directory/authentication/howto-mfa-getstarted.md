@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 182b9da402e633033411f85eb59b31f76749f3cd
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: 776a73f8a20a3f5ad4e97a08ff3871e805a61eb3
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68666249"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68879132"
 ---
 # <a name="planning-a-cloud-based-azure-multi-factor-authentication-deployment"></a>Planejando uma implantação da autenticação multifator do Azure baseada em nuvem
 
@@ -71,7 +71,7 @@ As políticas de acesso condicional impõem o registro, exigindo que usuários n
 
 * Credenciais vazadas
 * Entradas de endereços IP anônimos
-* Viagem impossível a locais atípicos
+* Viagem impossível a localizações atípicas
 * Entradas de locais desconhecidos
 * Entradas de dispositivos infectados
 * Entradas de endereços IP com atividades suspeitas
@@ -113,7 +113,7 @@ Uma notificação por push é enviada para o aplicativo Microsoft Authenticator 
 
 Um aplicativo móvel como o Microsoft Authenticator aplicativo gera um novo código de verificação OATH a cada 30 segundos. O usuário digita o código de verificação na interface de entrada. A opção aplicativo móvel pode ser usada independentemente de o telefone ter ou não um sinal de celular ou de dados.
 
-### <a name="call-to-phone"></a>Ligue para o telefone
+### <a name="call-to-phone"></a>Ligar para o telefone
 
 Uma chamada de voz automática é colocada para o usuário. O usuário responde à chamada e pressiona **#** o teclado do telefone para aprovar sua autenticação. A chamada para Phone é um excelente método de backup para notificação ou código de verificação de um aplicativo móvel.
 
@@ -176,9 +176,6 @@ Se os usuários tiverem sido habilitados usando a autenticação multifator habi
 ```PowerShell
 # Disable MFA for all users, keeping their MFA methods intact
 Get-MsolUser -All | Disable-MFA -KeepMethods
-
-# Enforce MFA for all users
-Get-MsolUser -All | Set-MfaState -State Enforced
 
 # Wrapper to disable MFA with the option to keep the MFA methods (to avoid having to proof-up again later)
 function Disable-MFA {

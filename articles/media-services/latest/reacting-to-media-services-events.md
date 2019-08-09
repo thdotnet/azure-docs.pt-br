@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 03/12/2019
+ms.date: 08/08/2019
 ms.author: juliako
-ms.openlocfilehash: cb5d6474a0c830933c712e1008015b5220617c96
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 64bf8f5c8de5f56ee1140e91d0472a33b35570cf
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60996050"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68878787"
 ---
 # <a name="handling-event-grid-events"></a>Lidando com os eventos da Grade de Eventos
 
@@ -41,4 +41,5 @@ Aplicativos que manipulam eventos de Serviços de Mídia devem seguir algumas pr
 
 ## <a name="next-steps"></a>Próximas etapas
 
-[Obter eventos de estado do trabalho](job-state-events-cli-how-to.md)
+* [Monitorar eventos-Portal](monitor-events-portal-how-to.md)
+* [Eventos de monitor-CLI](job-state-events-cli-how-to.md)

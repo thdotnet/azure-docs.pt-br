@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: roiyz
-ms.openlocfilehash: 3f22da9eabc6f539ef37009f565f073b9de89319
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 8227aa366c8f5149d4212e6cdd00e2745db84814
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706736"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881948"
 ---
 # <a name="virtual-machine-extensions-and-features-for-linux"></a>Recursos e extensões da máquina virtual para Linux
 
@@ -86,7 +86,7 @@ Os métodos a seguir podem ser usados para executar uma extensão em uma VM exis
 
 ### <a name="azure-cli"></a>CLI do Azure
 
-As extensões da VM do Azure podem executar em uma VM existente com o comando [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set). O exemplo a seguir executa a extensão Custom Script em uma VM nomeada *myVM* em um grupo de recursos nomeado *myResourceGroup*:
+As extensões da VM do Azure podem executar em uma VM existente com o comando [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set). O exemplo a seguir executa a extensão de script personalizado em uma VM chamada *myVM* em um grupo de recursos chamado MyResource Group. Substitua o nome do grupo de recursos de exemplo, o nome da VM https://raw.githubusercontent.com/me/project/hello.sh) e o script a ser executado (com suas próprias informações. 
 
 ```azurecli
 az vm extension set `
@@ -337,7 +337,7 @@ As seguintes etapas de solução de problemas aplicam-se a todas as extensões d
 
 1. Para verificar o Log do agente do Linux, observe a atividade em que a extensão estava sendo provisionada em */var/log/waagent.log*
 
-2. Verifique os logs de extensão real para obter mais detalhes no */var/log/azure/\<extensionName >*
+2. Verifique os logs de extensão reais para obter mais detalhes em *\</var/log/Azure/ExtensionName >*
 
 3. Verifique as seções de solução de problemas da documentação específica da extensão para códigos de erro, problemas conhecidos etc.
 
@@ -404,7 +404,7 @@ Você também pode remover uma extensão no portal do Azure da seguinte maneira:
 
 ## <a name="common-vm-extension-reference"></a>Referência à extensão VM comum
 
-| Nome da extensão | DESCRIÇÃO | Mais informações |
+| Nome da extensão | Descrição | Mais informações |
 | --- | --- | --- |
 | Extensão de Script Personalizado para Linux |Executar scripts em uma máquina virtual do Azure |[Extensão de Script Personalizado para Linux](custom-script-linux.md) |
 | Extensão de acesso à VM |Restabelecer o acesso a uma máquina virtual do Azure |[Extensão de acesso à VM](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess) |

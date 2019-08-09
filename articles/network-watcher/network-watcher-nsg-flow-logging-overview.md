@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: kumud
-ms.openlocfilehash: 5c156e30f4fa0270082cd1108958c3472130a460
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 1401e378daa0c0a9258858840653899e76c9421c
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68640826"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881784"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>Introdução ao log de fluxo dos grupos de segurança da rede
 
@@ -57,7 +57,7 @@ Logs de fluxo incluem as seguintes propriedades:
             * **flows** - uma coleção de fluxos
                 * **mac** - o endereço MAC da NIC para a VM na qual o fluxo foi coletado
                 * **flowTuples** - uma cadeia de caracteres que contém várias propriedades para a tupla de fluxo no formato separado por vírgulas
-                    * **Time Stamp** - esse valor é o carimbo de hora de quando ocorreu o fluxo no formato UNIX EPOCH
+                    * **Carimbo de data/hora** -esse valor é o carimbo de data/hora de quando o fluxo ocorreu no formato de época do UNIX
                     * **Source IP** - o IP de origem
                     * **Destination IP** - o IP de destino
                     * **Source Port** - a porta de origem

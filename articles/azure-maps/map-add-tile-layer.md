@@ -9,18 +9,18 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: e288e03b9e2c02ba963595f192dea7225c6d5762
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: d872cd78b3fd04512fcaee706e54bffa1cf9fcc1
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68638992"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68882095"
 ---
 # <a name="add-a-tile-layer-to-a-map"></a>Adicionar uma camada de bloco a um mapa
 
 Este artigo mostra como você pode sobrepor uma camada de peças do mapa. Camadas lado a lado permitem que você sobreponha imagens sobre peças de mapa base do Azure Mapas. Obtenha mais informações sobre o sistema de mosaico do Azure Mapas na documentação [Níveis de Zoom e grade lado a lado](zoom-levels-and-tile-grid.md).
 
-Uma carga de camada lado a lado em blocos de um servidor. Essas imagens podem ser renderizadas previamente e armazenadas como qualquer outra imagem em um servidor usando uma convenção de nomenclatura que compreende a camada de peça ou um serviço dinâmico que gera as imagens em tempo real. Há três diferentes convenções de nomenclatura de serviço com suporte pela classe do Azure Mapas lado a lado [TileLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.tilelayer?view=azure-iot-typescript-latest); 
+Uma camada de bloco é carregada em blocos de um servidor. Essas imagens podem ser renderizadas previamente e armazenadas como qualquer outra imagem em um servidor usando uma convenção de nomenclatura que compreende a camada de peça ou um serviço dinâmico que gera as imagens em tempo real. Há três convenções de nomenclatura de serviço de bloco diferentes com suporte pela classe [TileLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.tilelayer?view=azure-iot-typescript-latest) do Azure Maps: 
 
 * X, Y, notação de Zoom - com base no nível de zoom, x é a coluna e y é a posição da linha do bloco na grade lado a lado.
 * Notação Quadkey - combinação x, y, informações de zoom em um valor de cadeia de caracteres única que é um identificador exclusivo para um bloco.
@@ -40,7 +40,7 @@ A URL do bloco passada para uma camada de peça deve ser uma URL http/https para
 
 ## <a name="add-a-tile-layer"></a>Adicionar uma camada de bloco
 
- Este exemplo mostra como criar uma camada lado a lado que aponta para um conjunto de blocos que usam o sistema lado a lado do zoom, x,y. A origem dessa camada lado a lado é uma sobreposição de radar clima da [Iowa Environmental Mesonet of Iowa State University](https://mesonet.agron.iastate.edu/ogc/).
+ Este exemplo mostra como criar uma camada lado a lado que aponta para um conjunto de blocos que usam o sistema lado a lado do zoom, x,y. A origem dessa camada lado a lado é uma sobreposição de radar clima da [Iowa Environmental Mesonet of Iowa State University](https://mesonet.agron.iastate.edu/ogc/). 
 
 <br/>
 
@@ -53,7 +53,7 @@ No segundo bloco de código, uma [TileLayer](https://docs.microsoft.com/javascri
 
 ## <a name="customize-a-tile-layer"></a>Personalizar uma camada lado a lado
 
-A camada de Bloco tem apenas algumas opções de estilo. Aqui está uma ferramenta para experimentá-las.
+A classe da camada do bloco tem muitas opções de estilo. Aqui está uma ferramenta para experimentá-las.
 
 <br/>
 

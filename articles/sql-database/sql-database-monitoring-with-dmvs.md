@@ -11,12 +11,12 @@ author: juliemsft
 ms.author: jrasnick
 ms.reviewer: carlrab
 ms.date: 12/19/2018
-ms.openlocfilehash: 5bddcb89d26566bd2024cbde086b6e35ddaf94ef
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: a630ceb1748f38dc169a4ebabcbb4e021de4273c
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567183"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881567"
 ---
 # <a name="monitoring-performance-azure-sql-database-using-dynamic-management-views"></a>Desempenho de monitoramento do Banco de Dados SQL do Azure usando exibições de gerenciamento dinâmico
 
@@ -28,7 +28,7 @@ O Banco de Dados SQL oferece suporte parcial para três categorias de exibiçõe
 - Exibições de gerenciamento dinâmico relacionadas à execução.
 - Exibições de gerenciamento dinâmico relacionadas à transação.
 
-Para obter informações detalhadas sobre exibições de gerenciamento dinâmico, consulte [Funções e exibições (Transact-SQL) de gerenciamento dinâmico](https://msdn.microsoft.com/library/ms188754.aspx) nos Manuais Online do SQL Server.
+Para obter informações detalhadas sobre exibições de gerenciamento dinâmico, consulte [Funções e exibições (Transact-SQL) de gerenciamento dinâmico](https://msdn.microsoft.com/library/ms188754.aspx) nos Manuais Online do SQL Server. 
 
 ## <a name="permissions"></a>Permissões
 
@@ -237,13 +237,13 @@ GO
 
 ## <a name="identify-tempdb-performance-issues"></a>Identificar `tempdb` problemas de desempenho
 
-Ao identificar problemas de desempenho de e/s, os principais tipos de espera de associado `tempdb` é de problemas `PAGELATCH_*` (não `PAGEIOLATCH_*`). No entanto, `PAGELATCH_*` esperas sempre significam que você tem `tempdb` contenção.  Essa espera também pode significar que você tenha a contenção de página de dados de objeto de usuário devido a solicitações simultâneas, visando a mesma página de dados. Para confirmar `tempdb` contenção, use [. DM exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) para confirmar que o valor de wait_resource começa com `2:x:y` onde é 2 `tempdb` é a id de banco de dados, `x` é a id do arquivo e `y` é a id de página.  
+Ao identificar problemas de desempenho de e/s, os principais tipos de espera de associado `tempdb` é de problemas `PAGELATCH_*` (não `PAGEIOLATCH_*`). No entanto, `PAGELATCH_*` esperas sempre significam que você tem `tempdb` contenção.  Essa espera também pode significar que você tenha a contenção de página de dados de objeto de usuário devido a solicitações simultâneas, visando a mesma página de dados. Para confirmar `tempdb` ainda mais a contenção, use [Sys. dm _exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) para confirmar que o valor de `2:x:y` wait_resource começa com `tempdb` onde 2 é a ID `x` do banco de dados, é `y` a ID do arquivo e é a ID da página.  
 
 Contenção de tempdb, de um método comum é reduzir ou reescrever o código do aplicativo que se baseia em `tempdb`.  Áreas de uso comum `tempdb` incluem:
 
 - Tabelas temporárias
 - Variáveis de tabela
-- Parâmetros de valor de tabela
+- Parâmetros com valor de tabela
 - Uso do repositório de versão (especificamente associado com transações de longa execução)
 - Consultas que têm planos de consulta que usam classificações e junções de hash spools
 
@@ -334,7 +334,7 @@ ORDER BY start_time ASC;
 
 Se o seu tipo de espera superior for `RESOURCE_SEMAHPORE` e você não tiver um problema de uso de CPU alto, você pode ter um problema de concessão de memória em espera.
 
-### <a name="determine-if-a-resourcesemahpore-wait-is-a-top-wait"></a>Determinar se um `RESOURCE_SEMAHPORE` espera for uma espera superior
+### <a name="determine-if-a-resource_semahpore-wait-is-a-top-wait"></a>Determinar se um `RESOURCE_SEMAHPORE` espera for uma espera superior
 
 Use a seguinte consulta para determinar se uma `RESOURCE_SEMAHPORE` espera é uma espera superior
 
@@ -512,7 +512,7 @@ Você também pode monitorar o uso com estes dois modos de exibição:
 - [sys.dm_db_resource_stats](https://msdn.microsoft.com/library/dn800981.aspx)
 - [sys.resource_stats](https://msdn.microsoft.com/library/dn269979.aspx)
 
-### <a name="sysdmdbresourcestats"></a>sys.dm_db_resource_stats
+### <a name="sysdm_db_resource_stats"></a>sys.dm_db_resource_stats
 
 Você pode usar a exibição [sys.dm_db_resource_stats](https://msdn.microsoft.com/library/dn800981.aspx) em cada banco de dados SQL. A exibição **sys.dm_db_resource_stats** mostra dados de uso de recursos recentes em relação à camada de serviço. A porcentagem média de CPU, E/S de dados, gravações de log e memória é registrada a cada 15 segundos e armazenada por 1 hora.
 
@@ -533,7 +533,7 @@ FROM sys.dm_db_resource_stats;
 
 Para outras consultas, consulte os exemplos em [sys.dm_db_resource_stats](https://msdn.microsoft.com/library/dn800981.aspx).
 
-### <a name="sysresourcestats"></a>sys.resource_stats
+### <a name="sysresource_stats"></a>sys.resource_stats
 
 A exibição [sys.resource_stats](https://msdn.microsoft.com/library/dn269979.aspx) no banco de dados **mestre** tem mais informações que podem ajudá-lo a monitorar o desempenho do Banco de Dados SQL em sua camada de serviço e tamanho da computação específicos. Os dados são coletados a cada 5 minutos e são mantidos por aproximadamente 14 dias. Essa exibição é útil para uma análise de histórico de longo prazo de como seu banco de dados SQL usa recursos.
 

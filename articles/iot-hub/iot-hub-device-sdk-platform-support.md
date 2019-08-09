@@ -1,18 +1,18 @@
 ---
 title: Suporte da plataforma de SDKs do dispositivo IoT do Azure | Microsoft Docs
 description: Conceitos - lista de plataformas com suporte a SDKs do dispositivo IoT do Azure
-author: yzhong94
+author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 04/01/2018
-ms.author: yizhon
-ms.openlocfilehash: 7bcc1bf6b734abe202c5fec5d515604f4bf8e4a7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: robinsh
+ms.openlocfilehash: 356962c76bf942c56ace0798ac3cca3d815bc507
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60398698"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883111"
 ---
 # <a name="azure-iot-sdks-platform-support"></a>Suporte da plataforma de SDKs do IoT do Azure
 
@@ -38,31 +38,31 @@ Há várias plataformas com suporte.
 
 ### <a name="c-sdk"></a>SDK C
 
-| SO                  | Arch | Compilador             | Biblioteca TLS       |
+| OS                  | Arch | Compilador             | Biblioteca TLS       |
 |---------------------|------|----------------------|-------------------|
 | Ubuntu 16.04 LTS    | X64  | gcc-5.4.0            | openssl  - 1.0.2g |
 | Ubuntu 18.04 LTS    | X64  | gcc-7.3              | WolfSSL – 1.13    |
 | Ubuntu 18.04 LTS    | X64  | Clang 6.0.X          | Openssl – 1.1.0g  |
 | OSX 10.13.4         | x64  | XCode 9.4.1          | OSX nativo        |
-| Windows Server 2016 | x64  | Visual Studio 14.0.X | SChannel          |
+| Windows Server 2016 | X64  | Visual Studio 14.0.X | SChannel          |
 | Windows Server 2016 | x86  | Visual Studio 14.0.X | SChannel          |
 | Debian 9 Stretch    | x64  | gcc-7.3              | Openssl – 1.1.0f  |
 
 ### <a name="python-sdk"></a>SDK do Python
 
-| SO                  | Arch | Compilador   | Biblioteca TLS |
+| OS                  | Arch | Compilador   | Biblioteca TLS |
 |---------------------|------|------------|-------------|
 | Windows Server 2016 | x86  | Python 2,7 | openssl     |
-| Windows Server 2016 | x64  | Python 2,7 | openssl     |
+| Windows Server 2016 | X64  | Python 2,7 | openssl     |
 | Windows Server 2016 | x86  | Python 3.5 | openssl     |
-| Windows Server 2016 | x64  | Python 3.5 | openssl     |
+| Windows Server 2016 | X64  | Python 3.5 | openssl     |
 | Ubuntu 18.04 LTS    | x86  | Python 2,7 | openssl     |
 | Ubuntu 18.04 LTS    | x86  | Python 3.4 | openssl     |
-| MacOS High Sierra   | x64  | Python 2,7 | openssl     |
+| MacOS High Sierra   | X64  | Python 2,7 | openssl     |
 
 ### <a name="net-sdk"></a>SDK .NET
 
-| SO                  | Arch | Framework            | Standard          |
+| OS                  | Arch | Framework            | Standard          |
 |---------------------|------|----------------------|-------------------|
 | Ubuntu 16.04 LTS    | X64  | .NET Core 2.1        | .NET Standard 2.0 |
 | Windows Server 2016 | X64  | .NET Core 2.1        | .NET Standard 2.0 |
@@ -71,19 +71,19 @@ Há várias plataformas com suporte.
 
 ### <a name="nodejs-sdk"></a>SDK do Node.js
 
-| SO                                           | Arch | Versão do nó |
+| OS                                           | Arch | Versão do nó |
 |----------------------------------------------|------|--------------|
 | Ubuntu 16.04 LTS (usando imagem de docker do nó 6) | X64  | Nó 6       |
 | Windows Server 2016                          | X64  | Nó 6       |
 
 ### <a name="java-sdk"></a>Java SDK
 
-| SO                  | Arch | Versão Java |
+| OS                  | Arch | Versão Java |
 |---------------------|------|--------------|
 | Ubuntu 16.04 LTS    | X64  | Java 8       |
 | Windows Server 2016 | X64  | Java 8       |
 | Android API 28 | X64  | Java 8       |
-| Coisas Android | X64  | Java 8      |
+| Coisas do Android | X64  | Java 8      |
 
 ## <a name="partner-supported-platforms"></a>Plataformas com suporte de parceiros
 

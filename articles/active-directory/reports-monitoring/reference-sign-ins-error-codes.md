@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 05/08/2019
+ms.date: 08/08/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6972c91a18f9deb240871d8c64a14647474d9d78
-ms.sourcegitcommit: b49431b29a53efaa5b82f9be0f8a714f668c38ab
+ms.openlocfilehash: 4cbaa8f22335da083506a76ad1a791576b109a00
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68377263"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68879777"
 ---
 # <a name="sign-in-activity-report-error-codes"></a>Códigos de erro do relatório de atividade de login 
 
@@ -127,6 +127,7 @@ Você também pode acessar programaticamente os dados de login usando a [API de 
 |50177|Desafio externo não é suportado para usuários intermediários.|
 |50178|Controle de sessão não é suportado para usuários de passagem.|
 |50180|Necessária a autenticação integrada do Windows. Habilite o locatário para um SSO contínuo.|
+|50201|Essa interrupção de prompt de mensagem será mostrada ao usuário durante o logon quando informações adicionais devem ser fornecidas ao usuário.|
 |51001|Dica de Domínio não está presente com o Identificador de Segurança Local - UPN Local.|
 |51004|A conta de usuário não existe no diretório.|
 |51006|Necessária a autenticação integrada do Windows. Usuário conectado usando o token de sessão que está faltando por meio de declaração. Solicite ao usuário que refaça o logon.|
@@ -181,6 +182,9 @@ Você também pode acessar programaticamente os dados de login usando a [API de 
 |500121| A autenticação falhou durante uma solicitação de autenticação forte.|
 |500133| A declaração não está dentro de seu intervalo de tempo válido. Certifique-se de que o token de acesso não expirou antes de usá-lo para a declaração de usuário ou antes de solicitar um novo token.|
 |530021|O aplicativo não atende aos requisitos de aplicativo aprovados para acesso condicional.|
+|530032|Bloqueado pela política de segurança.| 
+|700016|O aplicativo com o identificador ' {appIdentifier} ' não foi encontrado no diretório ' {tenantname} '. Isso poderá acontecer se o aplicativo não tiver sido instalado pelo administrador do locatário ou aceito por qualquer usuário no locatário. Você pode ter enviado sua solicitação de autenticação para o locatário incorreto.|
+|900432|Não há suporte para o cliente confidencial na solicitação de nuvem cruzada.|
 |7000218|O corpo da solicitação deve conter o seguinte parâmetro: ' client_assertion ' ou ' client_secret '.|
 
 

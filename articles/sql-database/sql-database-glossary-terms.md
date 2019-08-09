@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 04/26/2019
-ms.openlocfilehash: d940cfa91890d26a48b682a6eb09410b3b7de045
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 5fccf1ffc76c824c81f8b8b826f90bf8314ff1e3
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68568086"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883337"
 ---
 # <a name="azure-sql-database-glossary-of-terms"></a>Glossário de termos do Banco de Dados SQL do Azure
 
@@ -49,6 +49,6 @@ Objetos do banco de dados|Banco de dados SQL do Azure|Qualquer banco de dados no
 ||Quantidade de armazenamento|A quantidade de armazenamento disponível para um banco de dados individual, pool elástico ou instância gerenciada|
 ||Geração de computação|A geração do processador dentro de uma camada de serviço|
 |Regras de firewall de IP do servidor de banco de dados|Regras de firewall de IP|[Regras de firewall de IP](sql-database-firewall-configure.md)|
-||Regras de firewall de IP no nível de servidor|[Regras de firewall de IP no nível de servidor](sql-database-firewall-configure.md#overview)|
-|| Regras de firewall de IP no nível de banco de dados|[Regras de firewall de IP no nível de banco de dados](sql-database-firewall-configure.md#overview)|
+||Regras de firewall de IP no nível de servidor|[Regras de firewall de IP no nível de servidor](sql-database-firewall-configure.md)|
+|| Regras de firewall de IP no nível de banco de dados|[Regras de firewall de IP no nível de banco de dados](sql-database-firewall-configure.md)|
 ||Regras e pontos de extremidade da rede virtual|[Regras e pontos de extremidade da rede virtual](sql-database-vnet-service-endpoint-rule-overview.md)|

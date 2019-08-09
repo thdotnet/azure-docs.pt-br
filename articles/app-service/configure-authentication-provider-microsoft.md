@@ -12,15 +12,15 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: article
-ms.date: 04/19/2018
+ms.date: 08/08/2019
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: 10b661f0c4b7dc45284b907e83df3c0372f97cab
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 17410db91f55a053e5ec208492649157bb0b5034
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68561532"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881103"
 ---
 # <a name="how-to-configure-your-app-service-application-to-use-microsoft-account-login"></a>Como configurar seu aplicativo do Serviço de Aplicativo para usar o logon da Conta da Microsoft
 [!INCLUDE [app-service-mobile-selector-authentication](../../includes/app-service-mobile-selector-authentication.md)]
@@ -28,44 +28,46 @@ ms.locfileid: "68561532"
 Este tópico mostra como configurar o Serviço de Aplicativo do Azure para usar a conta da Microsoft como um provedor de autenticação. 
 
 ## <a name="register-microsoft-account"> </a>Registrar seu aplicativo na conta da Microsoft
-1. Faça logon no [portal do Azure]e navegue até o seu aplicativo. Copie a **URL**, que posteriormente você usa para configurar seu aplicativo com a conta da Microsoft.
-2. Navegue até [**registros de aplicativo**](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)e entre com sua conta Microsoft, se solicitado.
-3. Clique em **Adicionar um aplicativo** e digite um nome de aplicativo e clique em **Criar**.
-4. Anote a **ID do aplicativo**, pois você precisará dela mais tarde. 
-5. Em "Plataformas", clique em **Adicionar plataforma** e selecione "Web".
-6. Em "Redirecionar URIs", forneça o ponto de extremidade para seu aplicativo e clique em **Salvar**. 
-   
+1. Entre no [portal do Azure]e navegue até seu aplicativo. 
+
+<!-- Copy your **URL**, which you will use later to configure your app with Microsoft Account. -->
+1. Navegue até [**registros de aplicativo**](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)e entre com sua conta Microsoft, se solicitado.
+
+1. Clique em **novo registro**e digite um nome de aplicativo.
+
+1. Em **URIs**de redirecionamento, selecione **Web**e `https://<app-domain-name>/.auth/login/microsoftaccount/callback supply the endpoint for your application`, em seguida, digite. *Substitua\<app-Domain-Name >* pelo nome de domínio do seu aplicativo.  Por exemplo, `https://contoso.azurewebsites.net/.auth/login/microsoftaccount/callback`. 
+
    > [!NOTE]
-   > O URI de redirecionamento é a URL do seu aplicativo acrescentada com o caminho */.auth/login/microsoftaccount/callback*. Por exemplo, `https://contoso.azurewebsites.net/.auth/login/microsoftaccount/callback`.   
-   > Certifique-se de que você está usando o esquema HTTPS.
+   > Use o esquema HTTPS na URL.
+
+1. Selecione **registrar**. 
+
+1. Copie a **ID do aplicativo (cliente)** . Isso será necessário mais tarde. 
    
-7. Em "Segredos do Aplicativo", clique em **Gerar nova senha**. Anote o valor que aparece. Depois que você sair da página, ela não será exibida novamente.
+7. No painel de navegação à esquerda do novo registro de aplicativo, selecione **certificados & segredos** > **novo segredo do cliente**. Forneça uma descrição, selecione a duração da validade e selecione **Adicionar**.
+
+1. Copie o valor que aparece na página **certificados & segredos** . Depois que você sair da página, ela não será exibida novamente.
 
     > [!IMPORTANT]
     > A senha é uma credencial de segurança importante. Não compartilhe a senha com ninguém nem distribua-a em um aplicativo cliente.
-    
-8. Clique em **Salvar**
 
 ## <a name="secrets"> </a>Adicionar informações da conta da Microsoft ao seu aplicativo de Serviço de Aplicativo
-1. De volta ao [Portal do Azure], navegue até o aplicativo, clique em **Configurações** > **Autenticação/Autorização**.
-2. Se o recurso Autenticação/Autorização não estiver habilitado, mude-o para **Ativado**.
-3. Clique em **Conta da Microsoft**. Cole os valores de ID do Aplicativo e da Senha que você obteve anteriormente e, como alternativa, habilite os escopos exigidos pelo seu aplicativo. Clique em **OK**.
-   
-    ![][1]
-   
+1. No [Portal do Azure], navegue até o seu aplicativo. No painel de navegação esquerdo, clique em **autenticação/autorização**.
+
+2. Se o recurso autenticação/autorização não estiver habilitado, selecione **ativado**.
+
+3. Em **provedores de autenticação**, selecione **conta da Microsoft**. Cole a ID do aplicativo (cliente) e o segredo do cliente obtidos anteriormente e, opcionalmente, habilite todos os escopos exigidos pelo aplicativo. Clique em **OK**.
+
     Por padrão, o Serviço de Aplicativo fornece autenticação, mas não restringe o acesso autorizado ao conteúdo do site e às APIs. Você deve autorizar os usuários no código do aplicativo.
-4. (Opcional) Para restringir o acesso ao seu site somente para usuários autenticados pela conta da Microsoft, defina **Ação a ser executada quando a solicitação não for autenticada** como **Conta da Microsoft**. Isso exige que todas as solicitações sejam autenticadas e todas as solicitações não autenticadas sejam redirecionadas à conta da Microsoft para autenticação.
+
+4. Adicional Para restringir o acesso a conta Microsoft usuários, defina **a ação a ser tomada quando a solicitação não for autenticada** para **fazer logon com a conta da Microsoft**. Isso exige que todas as solicitações sejam autenticadas e todas as solicitações não autenticadas sejam redirecionadas à conta da Microsoft para autenticação.
+
 5. Clique em **Salvar**.
 
 Agora você está pronto para usar uma conta da Microsoft para autenticação em seu aplicativo.
 
 ## <a name="related-content"> </a>Conteúdo relacionado
 [!INCLUDE [app-service-mobile-related-content-get-started-users](../../includes/app-service-mobile-related-content-get-started-users.md)]
-
-<!-- Images. -->
-
-[0]: ./media/app-service-mobile-how-to-configure-microsoft-authentication/app-service-microsoftaccount-redirect.png
-[1]: ./media/app-service-mobile-how-to-configure-microsoft-authentication/mobile-app-microsoftaccount-settings.png
 
 <!-- URLs. -->
 

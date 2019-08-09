@@ -7,15 +7,14 @@ services: search
 ms.service: search
 ms.devlang: NA
 ms.topic: conceptual
-ms.date: 05/02/2019
+ms.date: 08/08/2019
 ms.author: jlembicz
-ms.custom: seodec2018
-ms.openlocfilehash: bc183cb8ac2155b8dd31dc603d70506ad3d5e20a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6e54bc91ff60ce4f3c2340282410923225601df4
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65797475"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883901"
 ---
 # <a name="how-full-text-search-works-in-azure-search"></a>Como funciona a pesquisa de texto completo no Azure Search
 
@@ -291,7 +290,7 @@ Para o campo **descrição**, o índice é o seguinte:
 | para | 1
 | view | 1, 2, 3
 | a pé | 1
-| por: | 3
+| with | 3
 
 
 **Correspondência de termos de consulta com os termos indexados**
@@ -351,7 +350,7 @@ search=Spacious, air-condition* +"Ocean view"
 }
 ~~~~
 
-O documento 1 foi o que melhor correspondeu à consulta, pois tanto o termo *espaçoso* como a frase solicitada *vista para o mar* ocorrem no campo descrição. Os próximos dois documentos correspondem apenas à frase *vista para o mar*. Pode ser surpreendente que as pontuações de relevância para os documentos 2 e 3 sejam diferentes, mesmo que ambos tenham correspondido à consulta da mesma maneira. Isso ocorre porque a fórmula de pontuação tem mais componentes do que simplesmente TF/IDF. Nesse caso, o documento 3 recebeu uma pontuação ligeiramente mais alta porque sua descrição é mais curta. Saiba mais sobre a [Fórmula de pontuação prática do Lucene](https://lucene.apache.org/core/4_0_0/core/org/apache/lucene/search/similarities/TFIDFSimilarity.html) para entender como o tamanho do campo e outros fatores podem influenciar a pontuação de relevância.
+O documento 1 foi o que melhor correspondeu à consulta, pois tanto o termo *espaçoso* como a frase solicitada *vista para o mar* ocorrem no campo descrição. Os próximos dois documentos correspondem apenas à frase *vista para o mar*. Pode ser surpreendente que as pontuações de relevância para os documentos 2 e 3 sejam diferentes, mesmo que ambos tenham correspondido à consulta da mesma maneira. Isso ocorre porque a fórmula de pontuação tem mais componentes do que simplesmente TF/IDF. Nesse caso, o documento 3 recebeu uma pontuação ligeiramente mais alta porque sua descrição é mais curta. Saiba mais sobre a [Fórmula de pontuação prática do Lucene](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/search/similarities/TFIDFSimilarity.html) para entender como o tamanho do campo e outros fatores podem influenciar a pontuação de relevância.
 
 Alguns tipos de consulta (caractere curinga, prefixo, regex) sempre contribuem com uma pontuação constante para a pontuação total do documento. Isso permite que as correspondências encontradas por meio da expansão de consulta sejam incluídas nos resultados, mas sem afetar a classificação. 
 

@@ -11,12 +11,12 @@ author: MashaMSFT
 ms.author: mathoma
 ms.reviewer: carlrab
 ms.date: 02/08/2019
-ms.openlocfilehash: db295f7644cae96eb00670cecf6e4eeba9bb6bed
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 86bd479eff48a7feb42557eb1d175345728f0a69
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567230"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68879048"
 ---
 # <a name="transactional-replication-with-single-pooled-and-instance-databases-in-azure-sql-database"></a>Replicação transacional do SQL Server com bancos de dados individuais, em pool e de instâncias no Banco de Dados SQL do Azure
 
@@ -27,7 +27,7 @@ A replicação transacional é um recurso do Banco de Dados SQL do Azure e SQL S
 A replicação transacional é útil nos seguintes cenários:
 - Publique as alterações feitas em uma ou mais tabelas em um banco de dados e distribua-as para um ou vários Bancos de Dados SQL do Azure ou do SQL Server que se inscreveram para as alterações.
 - Mantenha vários bancos de dados distribuídos em estado sincronizado.
-- Por meio da publicação contínua das alterações, migre bancos de dados de um SQL Server ou Instância Gerenciada para outro banco de dados.
+- Migre bancos de dados de uma instância SQL Server ou gerenciada para outro banco de dados publicando as alterações continuamente.
 
 ## <a name="overview"></a>Visão geral
 
@@ -45,7 +45,7 @@ O **publicador** é uma instância ou um servidor que publica as alterações fe
 - SQL Server 2012 SP2 CU8 (11.0.5634.0)
 - Para outras versões do SQL Server que não dão suporte à publicação para objetos no Azure, é possível utilizar o método de [republicação de dados](https://docs.microsoft.com/sql/relational-databases/replication/republish-data) para mover dados para versões mais recentes do SQL Server. 
 
-O **distribuidor** é uma instância ou um servidor que coleta as alterações nos artigos de um publicador e as distribui aos assinantes. O distribuidor pode ser uma Instância Gerenciada do Banco de Dados SQL do Azure ou um SQL Server (qualquer versão, desde que seja igual ou maior do que a versão do publicador). 
+O **distribuidor** é uma instância ou um servidor que coleta as alterações nos artigos de um publicador e as distribui aos assinantes. O distribuidor pode ser uma instância gerenciada do banco de dados SQL do Azure ou SQL Server (qualquer versão, desde que seja igual ou superior à versão do editor). 
 
 O **assinante** é uma instância ou um servidor que está recebendo as alterações feitas no publicador. Os assinantes podem ser bancos de dados individuais, em pool e de instâncias do Banco de Dados SQL do Azure ou de bancos de dados do SQL Server. Um assinante em um banco de dados individuais ou em pool precisa ser configurado como um assinante push. 
 
@@ -93,11 +93,13 @@ Existem diferentes [tipos de replicação](https://docs.microsoft.com/sql/relati
 
 - A conectividade usa Autenticação SQL entre os participantes da replicação. 
 - Um compartilhamento da Conta de Armazenamento do Azure para o diretório de trabalho usado pela replicação. 
-- A porta 445 (TCP de saída) precisa ser aberta nas regras de segurança da sub-rede Instância Gerenciada para acessar o compartilhamento de arquivos do Azure. 
-- A porta 1433 (TCP de saída) precisará ser aberta se o publicador/distribuidor estiver em uma Instância Gerenciada e o assinante for local.
+- A porta 445 (TCP de saída) precisa ser aberta nas regras de segurança da sub-rede da instância gerenciada para acessar o compartilhamento de arquivos do Azure. 
+- A porta 1433 (TCP de saída) precisa ser aberta se o Publicador/distribuidor estiver em uma instância gerenciada e o Assinante estiver no local.
 
-  >[!NOTE]
-  > Você poderá encontrar o erro 53 ao se conectar a um arquivo de armazenamento do Azure se a porta 445 de saída do grupo de segurança de rede (NSG) for bloqueada quando o distribuidor for um banco de dados de instância e o assinante for local. [Atualize a VNET NSG](/azure/storage/files/storage-troubleshoot-windows-file-connection-problems) para resolver esse problema. 
+
+>[!NOTE]
+> - Você poderá encontrar o erro 53 ao se conectar a um arquivo de armazenamento do Azure se a porta 445 de saída do grupo de segurança de rede (NSG) for bloqueada quando o distribuidor for um banco de dados de instância e o assinante for local. [Atualize a VNET NSG](/azure/storage/files/storage-troubleshoot-windows-file-connection-problems) para resolver esse problema. 
+> - Se os bancos de dados do Publicador e do distribuidor em uma instância gerenciada usarem [grupos de failover automático](sql-database-auto-failover-group.md), o administrador da instância gerenciada deverá [excluir todas as publicações no antigo primário e reconfigurá-las no novo primário após a ocorrência de um failover](sql-database-managed-instance-transact-sql-information.md#replication).
 
 ### <a name="compare-data-sync-with-transactional-replication"></a>Comparar a sincronização de dados com a replicação transacional
 
@@ -111,23 +113,23 @@ Existem diferentes [tipos de replicação](https://docs.microsoft.com/sql/relati
 
 De modo geral, o publicador e o distribuidor devem ambos estar na nuvem ou ser locais. Há suporte para as seguintes configurações: 
 
-### <a name="publisher-with-local-distributor-on-a-managed-instance"></a>Publicador com distribuidor local em uma Instância Gerenciada
+### <a name="publisher-with-local-distributor-on-a-managed-instance"></a>Publicador com distribuidor local em uma instância gerenciada
 
 ![Instância única como publicador e distribuidor](media/replication-with-sql-database-managed-instance/01-single-instance-asdbmi-pubdist.png)
 
-O publicador e o distribuidor são configurados em uma única Instância Gerenciada e estão distribuindo as alterações para outra Instância Gerenciada, banco de dados individual, banco de dados em pool ou SQL Server, localmente. Nessa configuração, a Instância Gerenciada de publicador/distribuidor não pode ser configurada com [Grupos de failover automático e replicação geográfica](sql-database-auto-failover-group.md).
+O Publicador e o distribuidor são configurados em uma única instância gerenciada e a distribuição de alterações para outra instância gerenciada, banco de dados individual, banco de dados em pool ou SQL Server local. 
 
-### <a name="publisher-with-remote-distributor-on-a-managed-instance"></a>Publicador com distribuidor remoto em uma Instância Gerenciada
+### <a name="publisher-with-remote-distributor-on-a-managed-instance"></a>Publicador com distribuidor remoto em uma instância gerenciada
 
-Nessa configuração, uma Instância Gerenciada publica alterações ao distribuidor localizado em outra Instância Gerenciada que pode atender a muitas Instâncias Gerenciadas de origem e distribuir alterações para um ou mais destinos em Instância Gerenciada, banco de dados individual, banco de dados em pool ou SQL Server.
+Nessa configuração, uma instância gerenciada publica as alterações no distribuidor colocadas em outra instância gerenciada que pode atender a muitas instâncias gerenciadas por fonte e distribuir as alterações para um ou vários destinos na instância gerenciada, banco de dados individual, banco de dados em pool ou SQL Server.
 
 ![Instâncias separadas para publicador e distribuidor](media/replication-with-sql-database-managed-instance/02-separate-instances-asdbmi-pubdist.png)
 
-O publicador e o distribuidor são configurados em duas Instâncias Gerenciadas. Nesta configuração
+O publicador e o distribuidor são configurados em duas instâncias gerenciadas. Há algumas restrições com essa configuração: 
 
-- As duas Instâncias Gerenciadas estão na mesma vNet.
-- As duas Instâncias Gerenciadas estão na mesma localização.
-- Instâncias Gerenciadas que hospedam bancos de dados do publicador e do distribuidor não podem [replicados geograficamente usando grupos de failover automático](sql-database-auto-failover-group.md).
+- Ambas as instâncias gerenciadas estão na mesma vNet.
+- As duas instâncias gerenciadas estão no mesmo local.
+
 
 ### <a name="publisher-and-distributor-on-premises-with-a-subscriber-on-a-single-pooled-and-instance-database"></a>Publicador e distribuidor locais com um assinante em um banco de dados individual, em pool e de instâncias 
 
@@ -141,13 +143,15 @@ Nessa configuração, um Banco de Dados SQL do Azure (banco de dados individual,
 1. [Configure a replicação entre duas instâncias gerenciadas](replication-with-sql-database-managed-instance.md). 
 1. [Criar uma publicação](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication).
 1. [Crie uma assinatura push](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription) usando o nome do servidor do Banco de Dados SQL do Azure como o assinante (por exemplo, `N'azuresqldbdns.database.windows.net` e o nome do Banco de Dados SQL do Azure como o banco de dados de destino (por exemplo, **AdventureWorks**. )
+1. Saiba mais sobre as [limitações da replicação transacional para uma instância gerenciada](sql-database-managed-instance-transact-sql-information.md#replication)
 
 
 
 ## <a name="see-also"></a>Consulte também  
 
+- [Replicação com um MI e um grupo de failover](sql-database-managed-instance-transact-sql-information.md#replication)
 - [Replicação para um Banco de Dados SQL](replication-to-sql-database.md)
-- [Replicação para Instância Gerenciada](replication-with-sql-database-managed-instance.md)
+- [Replicação para instância gerenciada](replication-with-sql-database-managed-instance.md)
 - [Criar uma publicação](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
 - [Criar uma Assinatura Push](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/)
 - [Tipos de Replicação](https://docs.microsoft.com/sql/relational-databases/replication/types-of-replication)

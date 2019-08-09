@@ -11,12 +11,12 @@ ms.date: 01/09/2019
 author: sharonlo101
 ms.author: shlo
 manager: craigg
-ms.openlocfilehash: 96ea8142e2f7794d3c15c6efb436eafa585bc8fd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e4d204e9bcf601bf968f06b5d9df3f36414bd5a5
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60780914"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68884200"
 ---
 # <a name="copy-or-clone-a-data-factory-in-azure-data-factory"></a>Copiar ou clonar um data factory no Azure Data Factory
 
@@ -36,7 +36,7 @@ Aqui estão algumas das circunstâncias em que você pode considerar útil copia
 
 1. Como pré-requisito, você precisará criar seu data factory de destino do portal do Azure.
 
-1. Se você tiver um SelfHosted IntegrationRuntime em sua fábrica de origem, você precisa criar previamente uma com o mesmo nome na fábrica de destino. Se você quiser compartilhar IRs SelfHosted entre fábricas diferentes, você pode usar o padrão publicado [aqui](author-visually.md#best-practices-for-git-integration).
+1. Se você tiver um SelfHosted IntegrationRuntime na fábrica de origem, você precisará precriá-lo com o mesmo nome na fábrica de destino. Se você quiser compartilhar o IRs do SelfHosted entre fábricas diferentes, poderá usar o padrão publicado [aqui](source-control.md#best-practices-for-git-integration).
 
 1. Se você estiver no modo GIT, sempre que você publicar portal, o modelo do Resource Manager do alocador será no GIT no branch adf_publish do repositório.
 

@@ -1,5 +1,5 @@
 ---
-title: Configurar a máquina virtual hospedada no Azure da Microsoft para o Azure Marketplace
+title: Configurar a VM hospedada em Microsoft Azure para o Azure Marketplace
 description: Explica como dimensionar, atualizar e generalizar uma VM hospedada no Azure.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: v-miclar
@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 10/19/2018
 ms.author: pabutler
-ms.openlocfilehash: 0637491a1d7799bcaef594123aab53f89690c86f
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: 1270dff0bcb8de117247a454ab9c144250cfb17c
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67654025"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68880356"
 ---
 # <a name="configure-the-azure-hosted-vm"></a>Configurar a VM hospedada no Azure
 
@@ -22,7 +22,7 @@ Este artigo explica como dimensionar, atualizar e generalizar uma VM (máquina v
 ## <a name="sizing-the-vhds"></a>Dimensionar os VHDs
 
 <!--TD: Check if the following assertion is true. I didn't understand the original content. -->
-Se você tiver selecionado uma das VMs pré-configuradas com um sistema operacional (e, opcionalmente, outros serviços), então você já selecionou um tamanho de VM do Azure padrão, conforme descrito em [guia SKUs de máquina Virtual](./cpp-skus-tab.md).  Iniciar sua solução com um SO pré-configurado é a abordagem recomendada.  No entanto, se você estiver instalando um sistema operacional manualmente, será necessário dimensionar o VHD principal na imagem da VM:
+Se você tiver selecionado uma das VMs pré-configuradas com um sistema operacional (e, opcionalmente, serviços adicionais), você já selecionou um tamanho de VM do Azure padrão, conforme descrito na [guia SKUs da máquina virtual](./cpp-skus-tab.md).  Iniciar sua solução com um SO pré-configurado é a abordagem recomendada.  No entanto, se você estiver instalando um sistema operacional manualmente, será necessário dimensionar o VHD principal na imagem da VM:
 
 - Para Windows, o VHD do sistema operacional deve ser criado como um VHD de formato fixo de 127-128 GB. 
 - Para Linux, esse VHD deve ser criado como um VHD de formato fixo de 30 a 50 GB.
@@ -66,11 +66,11 @@ Os discos do sistema operacional do Windows são generalizados com a [ferramenta
 > [!WARNING]
 >  Como as atualizações poderão ser executadas automaticamente após executar o sysprep, você deverá desativar a VM até que ela seja implantada.  Esse desligamento evitará atualizações subsequentes de alterações específicas da instância no sistema operacional do VHD ou serviços instalados.
 
-Para obter mais informações sobre como executar o sysprep, consulte [etapas para generalizar um VHD](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource#generalize-the-windows-vm-using-sysprep)
+Para obter mais informações sobre como executar o Sysprep, consulte [etapas para generalizar um VHD](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource#generalize-the-windows-vm-using-sysprep)
 
 ### <a name="linux"></a>Linux
 
-O processo de duas etapas a seguir generalizará uma VM do Linux e a reimplantará como uma VM separada.  Para obter mais informações, consulte [Como criar uma imagem de uma máquina virtual ou VHD](../../../virtual-machines/linux/capture-image.md). 
+O processo de duas etapas a seguir generaliza uma VM Linux e a implanta novamente como uma VM separada. Essas duas etapas são apenas os conceitos básicos do processo. Para obter mais informações sobre essas duas etapas e por que elas devem ser feitas, consulte [como criar uma imagem de uma máquina virtual ou VHD](../../../virtual-machines/linux/capture-image.md). Para fins de criação do VHD para sua oferta do Azure Marketplace, você pode parar quando chegar à seção "criar uma VM com base na imagem capturada".
 
 #### <a name="remove-the-azure-linux-agent"></a>Remover o agente Linux do Azure
 1.  Conecte-se à VM do Linux usando um cliente SSH.
@@ -95,4 +95,4 @@ A criação de cópias da VM geralmente é útil para backup, teste, failover pe
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Depois que a VM estiver configurada, você estará pronto para [implantar uma máquina virtual a partir de um disco rígido virtual](./cpp-deploy-vm-vhd.md).
+Depois que a VM for generalizada, tiver sido desalocada e você tiver criado uma imagem da VM, você estará pronto para [implantar uma máquina virtual de um disco rígido virtual](./cpp-deploy-vm-vhd.md).

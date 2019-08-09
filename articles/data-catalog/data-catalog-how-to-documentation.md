@@ -6,12 +6,12 @@ ms.author: jasonh
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 08/01/2019
-ms.openlocfilehash: 46e3780c7fc6e6a2481e774b89bfb69510865db3
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 5c0bc97e5a5b362ea78f82ea99bb967a9607093a
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68734624"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68882498"
 ---
 # <a name="document-data-sources"></a>Fontes de dados de documentos
 ## <a name="introduction"></a>Introdução
@@ -23,7 +23,7 @@ Em [Como anotar fontes de dados](data-catalog-how-to-annotate.md), você aprende
 
 Marcas e descrições são ótimas para anotações simples. No entanto, para ajudar os consumidores de dados a entender melhor o uso de uma fonte de dados e cenários de negócios para uma fonte de dados, um especialista pode fornecer documentação completa e detalhada. É fácil documentar uma fonte de dados. Selecione um ativo de dados ou um contêiner e escolha **Documentação**.
 
-![](media/data-catalog-documentation/data-catalog-documentation.png)
+![Guia de documentação em um catálogo de dados](media/data-catalog-documentation/data-catalog-documentation.png)
 
 ## <a name="documenting-data-assets"></a>Documentar ativos de dados
 O benefício da documentação do **Catálogo de Dados do Azure** permite que você use seu Catálogo de Dados como um repositório de conteúdo para criar uma narrativa completa de seus ativos de dados. Você pode explorar o conteúdo detalhado que descreve contêineres e tabelas. Se já tem conteúdo em outro repositório de conteúdo, como o SharePoint ou um compartilhamento de arquivos, você pode adicionar ao ativo links de documentação para fazer referência a esse conteúdo existente. Esse recurso torna os documentos existentes mais detectáveis.
@@ -31,9 +31,8 @@ O benefício da documentação do **Catálogo de Dados do Azure** permite que vo
 > [!NOTE]
 > A documentação não está incluída no índice de pesquisa.
 >
->
 
-![](media/data-catalog-documentation/data-catalog-documentation2.png)
+![Guia de documentação e hiperlink para link da Web](media/data-catalog-documentation/data-catalog-documentation2.png)
 
 O nível de documentação pode variar desde a descrição das características e do valor de um contêiner de ativos de dados até uma descrição detalhada do esquema de tabela em um contêiner. O nível da documentação fornecido deve ser orientado por suas necessidades comerciais. Porém, em geral, aqui estão alguns prós e contras para a documentação de ativos de dados:
 

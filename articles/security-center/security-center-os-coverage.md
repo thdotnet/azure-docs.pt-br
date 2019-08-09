@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 6/03/2019
 ms.author: v-mohabe
-ms.openlocfilehash: 02d993d760338356fa29ee58a03215e14d6583f1
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 7cd1d451b49faf2f8e3ad38f4ff780256ef2dc5d
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68295599"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883597"
 ---
 # <a name="platforms-and-features-supported-by-azure-security-center"></a>Plataformas e recursos compatíveis com a Central de Segurança do Azure
 
@@ -85,15 +85,15 @@ VMs que são executadas em um serviço de nuvem também são compatíveis. Apena
 |Alertas de detecção de ameaças VMBA|✔|✔|✔|✔ (em versões compatíveis)|✔ (em versões compatíveis)|✔|Recomendações (gratuito) detecção de ameaças (padrão)|
 |Alertas de detecção de ameaças baseadas em rede|✔|✔|X|✔|✔|X|Standard|
 |Integração com o Windows Defender ATP|✔ (em versões compatíveis)|✔ (em versões compatíveis)|✔|X|X|X|Standard|
-|Patches ausentes|✔|✔|✔|✔|✔|✔|Grátis|
-|Configurações de segurança|✔|✔|✔|✔|✔|✔|Grátis|
-|Avaliação do Endpoint Protection|✔|✔|✔|X|X|X|Grátis|
+|Patches ausentes|✔|✔|✔|✔|✔|✔|Gratuito|
+|Configurações de segurança|✔|✔|✔|✔|✔|✔|Gratuito|
+|Avaliação do Endpoint Protection|✔|✔|✔|X|X|X|Gratuito|
 |Acesso à VM JIT|✔|X|X|✔|X|X|Standard|
 |Controles de aplicativo adaptáveis|✔|X|✔|✔|X|✔|Standard|
 |FIM|✔|✔|✔|✔|✔|✔|Standard|
-|Avaliação de criptografia de disco|✔|✔|X|✔|✔|X|Grátis|
-|Implantação de terceiros|✔|X|X|✔|X|X|Grátis|
-|Avaliação do NSG|✔|✔|X|✔|✔|X|Grátis|
+|Avaliação de criptografia de disco|✔|✔|X|✔|✔|X|Gratuito|
+|Implantação de terceiros|✔|X|X|✔|X|X|Gratuito|
+|Avaliação do NSG|✔|✔|X|✔|✔|X|Gratuito|
 |Detecção de ameaças sem arquivo|✔|✔|✔|X|X|X|Standard|
 |Mapa de rede|✔|✔|X|✔|✔|X|Standard|
 |Controles de rede adaptável|✔|✔|X|✔|✔|X|Standard|
@@ -108,15 +108,17 @@ A tabela a seguir fornece uma matriz de:
 
 Para obter informações sobre quando as recomendações são geradas para cada uma dessas proteções, consulte [Endpoint Protection avaliação e recomendações](security-center-endpoint-protection.md).
 
-| Proteção do ponto de extremidade| Plataformas | Instalação da Central de Segurança | Descoberta da Central de Segurança |
+| Endpoint Protection| Plataformas | Instalação da Central de Segurança | Descoberta da Central de Segurança |
 |------|------|-----|-----|
 | Windows Defender (Microsoft Antimalware)| Windows Server 2016| Não, Integrado no SO| Sim |
 | System Center Endpoint Protection (antimalware da Microsoft) | Windows Server 2012 R2, 2012, 2008 R2 (consulte a observação abaixo) | Via extensão | Sim |
 | Trend Micro – Todas as versões | Família Windows Server  | Não | Sim |
 | Symantec v12.1.1100+| Família Windows Server  | Não | Sim |
 | McAfee v10+ | Família Windows Server  | Não | Sim |
-| Kaspersky| Família Windows Server  | Não | Não  |
-| Sophos| Família Windows Server  | Não | Não  |
+| McAfee v10+ | Família de servidores Linux  | Não | Ok **\*** |
+| Sophos v9 +| Família de servidores Linux  | Não | Ok **\***  |
+
+ **\*** O estado de cobertura e os dados de suporte estão disponíveis no momento apenas no espaço de trabalho Log Analytics associado às suas assinaturas protegidas e não são refletidos no portal da central de segurança do Azure.
 
 > [!NOTE]
 > - A detecção do System Center Endpoint Protection (SCEP) em uma máquina virtual do Windows Server 2008 R2 exige que o SCEP seja instalado após o PowerShell 3.0 (ou uma versão superior).
@@ -130,26 +132,26 @@ Para obter informações sobre quando as recomendações são geradas para cada 
 |PostGreSQL*|✔| ✔|
 |MySQL*|✔| ✔|
 |Contas de armazenamento de BLOBs do Azure|✔| ✔|
-|Serviços de aplicativos|✔| ✔|
+|Serviços de Aplicativos|✔| ✔|
 |Serviços de Nuvem|✔| X|
-|VNets|✔| ND|
-|Sub-redes|✔| ND|
-|NICs|✔| ND|
-|NSGs|✔| ND|
+|VNets|✔| N/A|
+|Sub-redes|✔| N/A|
+|NICs|✔| N/A|
+|NSGs|✔| N/A|
 |Assinatura|✔ **| ✔|
-|Lote|✔| ND|
-|Service fabric|✔| ND|
-|Conta de automação|✔| ND|
-|Balanceador de carga|✔| ND|
-|Pesquisar|✔| ND|
-|Barramento de Serviço|✔| ND|
-|Stream Analytics|✔| ND|
-|Hub de Eventos|✔| ND|
-|Aplicativos lógicos|✔| ND|
-|Conta de armazenamento|✔| ND|
-|Redis|✔| ND|
-|Data Lake Analytics|✔| ND|
-|Cofre de chaves|✔| ND|
+|Lote|✔| N/A|
+|Service fabric|✔| N/A|
+|Conta de automação|✔| N/A|
+|Balanceador de carga|✔| N/A|
+|Pesquisar|✔| N/A|
+|Barramento de serviço|✔| N/A|
+|Stream Analytics|✔| N/A|
+|Hub de eventos|✔| N/A|
+|Aplicativos lógicos|✔| N/A|
+|Conta de armazenamento|✔| N/A|
+|Redis|✔| N/A|
+|Data Lake Analytics|✔| N/A|
+|Cofre de chaves|✔| N/A|
 
 
 
