@@ -166,6 +166,8 @@
       items:
         - name: Criar visualmente as fábricas de dados
           href: author-visually.md
+        - name: Controle do código-fonte
+          href: source-control.md
         - name: Integração e entrega contínuas
           href: continuous-integration-deployment.md
         - name: Desenvolvimento iterativo e depuração
