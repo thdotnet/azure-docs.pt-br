@@ -68,7 +68,7 @@ Defina a **authenticationType** na propriedade **Básico**. Além das propriedad
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
 | userName | O nome de usuário a ser usado para acessar o ponto de extremidade REST. | Sim |
-| Senha | A senha do usuário (o **nome de usuário** valor). Marque esse campo como um tipo **SecureString** para armazená-lo com segurança no Data Factory. Você também pode [referenciar um segredo armazenado no Cofre de Chaves do Azure](store-credentials-in-key-vault.md). | Sim |
+| Senha | A senha do usuário (o **userName** valor). Marque esse campo como um tipo **SecureString** para armazená-lo com segurança no Data Factory. Você também pode [referenciar um segredo armazenado no Cofre de Chaves do Azure](store-credentials-in-key-vault.md). | Sim |
 
 **Exemplo**
 
