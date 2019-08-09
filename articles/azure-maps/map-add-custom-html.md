@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 65777a87cd042a4d8b3b14255dbf99241cd42e18
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: f8777a3d0eb9b97fff6f492f181a432d98d9341c
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68638756"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68849298"
 ---
 # <a name="add-html-markers-to-the-map"></a>Adicionar marcadores HTML ao mapa
 
@@ -47,6 +47,9 @@ O padrão `htmlContent` de um marcador HTML é um modelo de SVG contendo as past
 
 <iframe height='500' scrolling='no' title='Marcador HTML com modelo de SVG personalizado' src='//codepen.io/azuremaps/embed/LXqMWx/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Consulte a Caneta <a href='https://codepen.io/azuremaps/pen/LXqMWx/'>Marcador HTML com modelo de SVG personalizado</a> pelo Azure Mapas (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) em <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+> [!TIP]
+> O SDK da Web do Azure Maps fornece vários modelos de imagem SVG que podem ser usados com marcadores de HTML. Consulte o documento [como usar modelos de imagem](how-to-use-image-templates-web-sdk.md) para obter mais informações.
 
 ## <a name="add-a-css-styled-html-marker"></a>Adicionar um marcador HTML com estilo CSS
 
@@ -91,7 +94,10 @@ Saiba mais sobre as classes e métodos usados neste artigo:
 Para obter mais exemplos de código para adicionar aos seus mapas, consulte os seguintes artigos:
 
 > [!div class="nextstepaction"]
-> [Adicionar uma camada de símbolos](./map-add-pin.md)
+> [Como usar modelos de imagem](how-to-use-image-templates-web-sdk.md)
+
+> [!div class="nextstepaction"]
+> [Adicionar uma camada de símbolo](./map-add-pin.md)
 
 > [!div class="nextstepaction"]
 > [Adicionar uma camada de bolhas](./map-add-bubble-layer.md)

@@ -1,6 +1,6 @@
 ---
-title: Referência de token do Microsoft identity platform ID | Microsoft Docs
-description: Saiba como usar id_tokens emitida pelo AD do Azure v1.0 e pontos de extremidade do Microsoft identity platform (v2.0).
+title: Referência de token da ID da plataforma de identidade da Microsoft | Microsoft Docs
+description: Saiba como usar o id_tokens emitido pelos pontos de extremidade do Azure AD v 1.0 e da plataforma Microsoft Identity (v 2.0).
 services: active-directory
 documentationcenter: ''
 author: rwike77
@@ -14,25 +14,25 @@ ms.topic: conceptual
 ms.date: 04/13/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
-ms.custom: aaddev
+ms.custom: aaddev, identityplatformtop40
 ms:custom: fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25408b2120a9ac9f38e7959ef8e9dbbb34df7c2b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 85145d4a81eb4d12910758e01dda675ea378a46b
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65962572"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68853187"
 ---
-# <a name="microsoft-identity-platform-id-tokens"></a>Tokens de ID do Microsoft identity platform
+# <a name="microsoft-identity-platform-id-tokens"></a>Tokens de ID da plataforma Microsoft Identity
 
 `id_tokens` são enviados para o aplicativo cliente como parte de um fluxo do [OpenID Connect](v1-protocols-openid-connect-code.md). Eles podem ser enviados com um token de acesso ou em vez de um, e são usados pelo cliente para autenticar o usuário.
 
-## <a name="using-the-idtoken"></a>Usando o id_token
+## <a name="using-the-id_token"></a>Usando o id_token
 
-Tokens de ID deve ser usados para validar se um usuário é quem eles alegam ser e obter informações adicionais úteis sobre eles - ele não deve ser usado para autorização no lugar de um [token de acesso](access-tokens.md). As declarações que ele fornece podem ser usadas para a experiência do usuário dentro de seu aplicativo, emitindo uma chave para o banco de dados e fornecendo acesso ao aplicativo cliente.
+Os tokens de ID devem ser usados para validar que um usuário é quem alega ser e obter informações úteis adicionais sobre eles – ele não deve ser usado para autorização no lugar de um [token de acesso](access-tokens.md). As declarações que ele fornece podem ser usadas para a experiência do usuário dentro de seu aplicativo, emitindo uma chave para o banco de dados e fornecendo acesso ao aplicativo cliente.
 
-## <a name="claims-in-an-idtoken"></a>Declarações em um id_token
+## <a name="claims-in-an-id_token"></a>Declarações em um id_token
 
 `id_tokens` para uma identidade da Microsoft são [JWTs](https://tools.ietf.org/html/rfc7519), o que significa que são compostos pelas partes de cabeçalho, de conteúdo e de assinatura. Você pode usar o cabeçalho e a assinatura para verificar a autenticidade do token, enquanto o conteúdo tem informações sobre o usuário solicitado pelo cliente. Exceto quando observado, todas as declarações listadas aqui aparecem nos tokens de v1.0 e v2.0.
 
@@ -54,44 +54,44 @@ Exiba esse token de exemplo de v2.0 em [jwt.ms](https://jwt.ms/#id_token=eyJ0eXA
 
 ### <a name="header-claims"></a>Declarações de cabeçalho
 
-|Declaração | Formatar | DESCRIÇÃO |
+|Declaração | Formatar | Descrição |
 |-----|--------|-------------|
 |`typ` | Cadeia de caracteres – sempre "JWT" | Indica que o token é um JWT.|
-|`alg` | Cadeia de caracteres | Indica o algoritmo que foi usado para assinar o token. Exemplo: "RS256" |
-|`kid` | Cadeia de caracteres | Impressão digital da chave pública usada para assinar esse token. Emitido em `id_tokens` v1.0 e v2.0. |
-|`x5t` | Cadeia de caracteres | O mesmo (em uso e valor) que `kid`. No entanto, essa é uma declaração herdada emitida somente em `id_tokens` v1.0 para fins de compatibilidade. |
+|`alg` | Cadeia | Indica o algoritmo que foi usado para assinar o token. Exemplo: "RS256" |
+|`kid` | Cadeia | Impressão digital da chave pública usada para assinar esse token. Emitido em `id_tokens` v1.0 e v2.0. |
+|`x5t` | Cadeia | O mesmo (em uso e valor) que `kid`. No entanto, essa é uma declaração herdada emitida somente em `id_tokens` v1.0 para fins de compatibilidade. |
 
 ### <a name="payload-claims"></a>Declarações de conteúdo
 
-Esta lista mostra as declarações que são na maioria dos id_tokens por padrão (exceto onde observado).  No entanto, o aplicativo pode usar [declarações opcionais](active-directory-optional-claims.md) para solicitar declarações adicionais no id_token.  Isso pode variar do `groups` de declaração para obter informações sobre o nome do usuário.
+Essa lista mostra as declarações que estão na maioria dos id_tokens por padrão (exceto quando indicado).  No entanto, seu aplicativo pode usar [declarações opcionais](active-directory-optional-claims.md) para solicitar declarações adicionais no id_token.  Elas podem variar da `groups` declaração para informações sobre o nome do usuário.
 
-|Declaração | Formatar | DESCRIÇÃO |
+|Declaração | Formatar | Descrição |
 |-----|--------|-------------|
 |`aud` |  Cadeia de caracteres, um URI da ID do Aplicativo | Identifica o destinatário pretendido do token. Em `id_tokens`, o público-alvo é a ID de Aplicativo de seu aplicativo, atribuída a ele no portal do Azure. O aplicativo deve validar esse valor e rejeitar o token, caso o valor não seja correspondente. |
 |`iss` |  Cadeia de caracteres, um URI STS | Identifica o STS (Serviço de Token de Segurança) que constrói e retorna o token e o locatário do Azure AD no qual o usuário foi autenticado. Se o token tiver sido emitido pelo ponto de extremidade v2.0, o URI terminará com `/v2.0`.  O GUID que indica que o usuário é um consumidor da conta da Microsoft é `9188040d-6c67-4c5b-b112-36a304b66dad`. O aplicativo deve usar a parte do GUID da declaração para restringir o conjunto de locatários que podem entrar no aplicativo, se aplicável. |
 |`iat` |  int, um carimbo de data/hora UNIX | "Emitido em" indica quando ocorreu a autenticação desse token.  |
-|`idp`|Cadeia de caracteres, normalmente um URI de STS | Registra o provedor de identidade que autenticou a entidade do token. Esse valor é idêntico ao valor da declaração Emissor, a menos que a conta de usuário não esteja no mesmo locatário que o emissor – convidados, por exemplo. Se a declaração não estiver presente, isso significa que o valor de `iss` pode ser usado em vez disso.  Para as contas pessoais usadas em um contexto organizacional (por exemplo, uma conta pessoal convidada para um locatário do Azure AD), a declaração `idp`pode ser 'live.com' ou um URI de STS que contém o locatário da conta Microsoft`9188040d-6c67-4c5b-b112-36a304b66dad`. |
+|`idp`|Cadeia de caracteres, normalmente um URI de STS | Registra o provedor de identidade que autenticou a entidade do token. Esse valor é idêntico ao valor da declaração Emissor, a menos que a conta de usuário não esteja no mesmo locatário que o emissor – convidados, por exemplo. Se a declaração não estiver presente, significa que o valor de `iss` pode ser usado em vez disso.  Para as contas pessoais usadas em um contexto organizacional (por exemplo, uma conta pessoal convidada para um locatário do Azure AD), a declaração `idp`pode ser 'live.com' ou um URI de STS que contém o locatário da conta Microsoft`9188040d-6c67-4c5b-b112-36a304b66dad`. |
 |`nbf` |  int, um carimbo de data/hora UNIX | A declaração "nbf" (não antes) identifica a hora antes da qual o JWT NÃO DEVE ser aceito para processamento.|
-|`exp` |  int, um carimbo de data/hora UNIX | A declaração "exp" (hora de expiração) identifica a hora de expiração ou a hora após ela na qual o JWT NÃO DEVE ser aceito para processamento.  É importante observar que um recurso pode rejeitar o token antes dessa hora também - se, por exemplo, uma alteração na autenticação é necessária ou se uma revogação do token foi detectada. |
-| `c_hash`| Cadeia de caracteres |O hash de código é incluído em tokens de ID apenas quando eles são emitidos com um código de autorização OAuth 2.0. Ele pode ser usado para validar a autenticidade de um código de autorização. Para obter detalhes sobre como realizar essa validação, confira a [Especificação OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html). |
-|`at_hash`| Cadeia de caracteres |O hash do token de acesso é incluído em tokens de ID apenas quando eles são emitidos com um token de acesso OAuth 2.0. Ele pode ser usado para validar a autenticidade de um token de acesso. Para obter detalhes sobre como realizar essa validação, confira a [Especificação OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html). |
+|`exp` |  int, um carimbo de data/hora UNIX | A declaração "exp" (hora de expiração) identifica a hora de expiração ou a hora após ela na qual o JWT NÃO DEVE ser aceito para processamento.  É importante observar que um recurso pode rejeitar o token antes dessa hora também, se, por exemplo, uma alteração na autenticação for necessária ou se uma revogação de token tiver sido detectada. |
+| `c_hash`| Cadeia |O hash de código é incluído em tokens de ID apenas quando eles são emitidos com um código de autorização OAuth 2.0. Ele pode ser usado para validar a autenticidade de um código de autorização. Para obter detalhes sobre como realizar essa validação, confira a [Especificação OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html). |
+|`at_hash`| Cadeia |O hash do token de acesso é incluído em tokens de ID apenas quando eles são emitidos com um token de acesso OAuth 2.0. Ele pode ser usado para validar a autenticidade de um token de acesso. Para obter detalhes sobre como realizar essa validação, confira a [Especificação OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html). |
 |`aio` | Cadeia de caracteres opaca | Uma declaração interna usada pelo Azure AD para registrar os dados para reutilização de token. Deve ser ignorado.|
-|`preferred_username` | Cadeia de caracteres | O nome de usuário principal que representa o usuário. Ele pode ser um endereço de email, número de telefone ou nome de usuário genérico sem um formato especificado. Seu valor é mutável e pode ser alterado ao longo do tempo. Uma vez que é mutável, esse valor não deve ser usado para tomar decisões de autorização. O `profile` escopo é necessário para receber essa declaração.|
-|`email` | Cadeia de caracteres | O `email` declaração está presente por padrão para contas de convidados que possuem um endereço de email.  O aplicativo pode solicitar a declaração de email para usuários gerenciados (aquelas do mesmo locatário do recurso) usando o `email` [declaração opcional](active-directory-optional-claims.md).  No ponto de extremidade v 2.0, seu aplicativo também pode solicitar o `email` escopo da OpenID Connect - você não precisa solicitar a declaração opcional e o escopo para obter a declaração.  A declaração de email só dá suporte a emails endereçável de informações de perfil do usuário. |
-|`name` | Cadeia de caracteres | A declaração `name` fornece um valor legível por humanos que identifica o assunto do token. O valor não é garantido que seja exclusivo, ele é mutável e foi projetada para ser usado apenas para fins de exibição. O `profile` escopo é necessário para receber essa declaração. |
-|`nonce`| Cadeia de caracteres | O nonce corresponde ao parâmetro incluído na solicitação original /authorize para o IDP. Se esses itens não corresponderem, seu aplicativo deverá rejeitar o token. |
-|`oid` | Cadeia de caracteres, um GUID | O identificador imutável de um objeto do sistema de identidade da Microsoft, nesse caso, uma conta de usuário. Essa ID identifica exclusivamente o usuário entre os aplicativos - dois aplicativos diferentes autenticando o mesmo usuário receberão o mesmo valor na declaração `oid`. O Microsoft Graph retornará essa ID como a propriedade `id` para uma determinada conta de usuário. Porque o `oid` permite que vários aplicativos correlacionem usuários, o `profile` escopo é necessário para receber essa declaração. Observe que, se um único usuário existir em vários locatários, o usuário conterá uma ID de objeto diferente em cada locatário - são consideradas contas diferentes, mesmo que o usuário faz logon em cada conta com as mesmas credenciais. |
-|`roles`| Matriz de cadeias de caracteres | O conjunto de funções que foram atribuídas ao usuário que está se conectando. |
+|`preferred_username` | Cadeia | O nome de usuário principal que representa o usuário. Ele pode ser um endereço de email, número de telefone ou nome de usuário genérico sem um formato especificado. Seu valor é mutável e pode ser alterado ao longo do tempo. Uma vez que é mutável, esse valor não deve ser usado para tomar decisões de autorização. O `profile` escopo é necessário para receber essa declaração.|
+|`email` | Cadeia | O `email` declaração está presente por padrão para contas de convidados que possuem um endereço de email.  O aplicativo pode solicitar a declaração de email para usuários gerenciados (aquelas do mesmo locatário do recurso) usando o `email` [declaração opcional](active-directory-optional-claims.md).  No ponto de extremidade v 2.0, seu aplicativo também pode solicitar o `email` escopo da OpenID Connect - você não precisa solicitar a declaração opcional e o escopo para obter a declaração.  A declaração de email só dá suporte a emails endereçável de informações de perfil do usuário. |
+|`name` | Cadeia | A declaração `name` fornece um valor legível por humanos que identifica o assunto do token. O valor não é garantido como exclusivo, é mutável e foi projetado para ser usado somente para fins de exibição. O `profile` escopo é necessário para receber essa declaração. |
+|`nonce`| Cadeia | O nonce corresponde ao parâmetro incluído na solicitação original /authorize para o IDP. Se esses itens não corresponderem, seu aplicativo deverá rejeitar o token. |
+|`oid` | Cadeia de caracteres, um GUID | O identificador imutável de um objeto do sistema de identidade da Microsoft, nesse caso, uma conta de usuário. Essa ID identifica exclusivamente o usuário entre os aplicativos - dois aplicativos diferentes autenticando o mesmo usuário receberão o mesmo valor na declaração `oid`. O Microsoft Graph retornará essa ID como a propriedade `id` para uma determinada conta de usuário. Como o `oid` permite que vários aplicativos correlacionem os usuários `profile` , o escopo é necessário para receber essa declaração. Observe que, se um único usuário existir em vários locatários, o usuário conterá uma ID de objeto diferente em cada locatário. eles são considerados contas diferentes, mesmo que o usuário faça logon em cada conta com as mesmas credenciais. |
+|`roles`| Matriz de cadeias de caracteres | O conjunto de funções que foram atribuídas ao usuário que está fazendo logon. |
 |`rh` | Cadeia de caracteres opaca |Uma declaração interna usada pelo Azure para revalidar tokens. Deve ser ignorado. |
-|`sub` | Cadeia de caracteres, um GUID | O item mais importante sobre o qual o token declara informações, como o usuário de um aplicativo. Esse valor é imutável e não pode ser reatribuído nem reutilizado. O assunto é um identificador de paridade e é exclusivo a uma ID de aplicativo específica. Se um único usuário entra em dois aplicativos diferentes usando duas IDs de cliente diferentes, esses aplicativos receberão dois valores diferentes para a declaração do assunto. Isso pode ou não ser desejável dependendo dos requisitos de arquitetura e a privacidade. |
+|`sub` | Cadeia de caracteres, um GUID | O item mais importante sobre o qual o token declara informações, como o usuário de um aplicativo. Esse valor é imutável e não pode ser reatribuído nem reutilizado. O assunto é um identificador de paridade e é exclusivo a uma ID de aplicativo específica. Se um único usuário entrar em dois aplicativos diferentes usando duas IDs de cliente diferentes, esses aplicativos receberão dois valores diferentes para a declaração de assunto. Isso pode ou não ser desejado dependendo dos requisitos de arquitetura e privacidade. |
 |`tid` | Cadeia de caracteres, um GUID | Um GUID que representa o locatário do Azure AD do qual o usuário é proveniente. Para contas corporativas e de estudante, o GUID é a ID de locatário imutável da organização à qual o usuário pertence. Para contas pessoais, o valor é `9188040d-6c67-4c5b-b112-36a304b66dad`. O `profile` escopo é necessário para receber essa declaração. |
-|`unique_name` | Cadeia de caracteres | Fornece um valor legível que identifica a entidade do token. Esse valor não é garantido que seja exclusivo dentro de um locatário e deve ser usado apenas para fins de exibição. Emitido somente no `id_tokens` v1.0. |
+|`unique_name` | Cadeia | Fornece um valor legível que identifica a entidade do token. Esse valor não tem garantia de ser exclusivo em um locatário e deve ser usado somente para fins de exibição. Emitido somente no `id_tokens` v1.0. |
 |`uti` | Cadeia de caracteres opaca | Uma declaração interna usada pelo Azure para revalidar tokens. Deve ser ignorado. |
 |`ver` | Cadeia de caracteres, 1.0 ou 2.0 | Indica a versão do id_token. |
 
-## <a name="validating-an-idtoken"></a>Validação de um id_token
+## <a name="validating-an-id_token"></a>Validação de um id_token
 
-Validando um `id_token` é semelhante à primeira etapa [validar um token de acesso](access-tokens.md#validating-tokens) - seu cliente deve validar que o emissor correto foi enviada de volta o token e que não foi adulterada. Como `id_tokens` sempre são um JWT, há muitas bibliotecas para validar esses tokens – recomendamos que você use uma delas em vez de fazer isso por conta própria.
+A validação `id_token` de um é semelhante à primeira etapa da [validação de um token de acesso](access-tokens.md#validating-tokens) : seu cliente deve validar que o emissor correto enviou o token e que ele não foi adulterado. Como `id_tokens` sempre são um JWT, há muitas bibliotecas para validar esses tokens – recomendamos que você use uma delas em vez de fazer isso por conta própria.
 
 Para validar o token manualmente, consulte os detalhes das etapas em [validar um token de acesso](access-tokens.md#validating-tokens). Depois de validar a assinatura no token, as seguintes declarações deverão ser validadas no id_token (elas também podem ser feitas pela sua biblioteca de validação de token):
 
@@ -101,5 +101,5 @@ Para validar o token manualmente, consulte os detalhes das etapas em [validar um
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* Saiba mais sobre [tokens de acesso](access-tokens.md)
-* Personalizar as declarações em seu usando id_token [declarações opcionais](active-directory-optional-claims.md).
+* Saiba mais sobre tokens de [acesso](access-tokens.md)
+* Personalize as declarações em seu id_token usando [declarações opcionais](active-directory-optional-claims.md).

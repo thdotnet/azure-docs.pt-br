@@ -10,12 +10,12 @@ ms.author: robreed
 ms.date: 09/24/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 347ff3d4290350708200fe78806fb38caabf7fae
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 010c6b00161c7a0a004932528fa4f608aa7c5e23
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67477744"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68850675"
 ---
 # <a name="my-first-powershell-workflow-runbook"></a>Meu primeiro runbook de Fluxo de Trabalho do PowerShell
 
@@ -33,7 +33,7 @@ Para concluir este tutorial, você precisará do seguinte:
 
 * Assinatura do Azure. Se você ainda não tiver uma, poderá [ativar os benefícios de assinante do MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) ou inscrever-se em uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * [Conta de automação](automation-offering-get-started.md) para manter o runbook e se autenticar nos recursos do Azure.  Esta conta deve ter permissão para iniciar e parar a máquina virtual.
-* Uma máquina virtual do Azure. Pare e inicia essa máquina, portanto, não deve ser uma VM de produção.
+* Uma máquina virtual do Azure. Você pára e inicia esse computador para que ele não seja uma VM de produção.
 
 ## <a name="step-1---create-new-runbook"></a>Etapa 1: criar o novo runbook
 
@@ -77,24 +77,24 @@ Você pode digitar o código diretamente no runbook, ou você pode selecionar cm
 Antes de publicar o runbook para disponibilizá-lo na produção, teste-o para verificar se ele funciona corretamente. Quando você testa um runbook, executa sua versão de **Rascunho** e vê sua saída interativamente.
 
 1. Clique em **Painel de teste** para abrir o Painel de teste.
-1. Clique em **Iniciar** para iniciar o teste. Esta opção deve ser a única opção habilitada.
+1. Clique em **Iniciar** para iniciar o teste. Essa opção deve ser a única opção habilitada.
 1. Um [trabalho de runbook](automation-runbook-execution.md) é criado e seu status é exibido.
 
-   O status do trabalho será iniciado como *enfileirado* indicando que ele está aguardando um runbook worker na nuvem ficar disponível. E ele muda para *Iniciando* quando um trabalhador reivindica o trabalho e para *Executando* quando o runbook realmente começa a ser executado.  
+   O status do trabalho será iniciado como *na fila* , indicando que está aguardando que um runbook Worker na nuvem fique disponível. E ele muda para *Iniciando* quando um trabalhador reivindica o trabalho e para *Executando* quando o runbook realmente começa a ser executado.
 
 1. Quando o trabalho do runbook é concluído, sua saída é exibida. No seu caso, você deve ver *Olá, Mundo*.
 
-   ![Olá Mundo](media/automation-first-runbook-textual/test-output-hello-world.png)
+   ![Hello World](media/automation-first-runbook-textual/test-output-hello-world.png)
 
 1. Feche o Painel de teste para retornar à tela.
 
 ## <a name="step-4---publish-and-start-the-runbook"></a>Etapa 4: publicar e iniciar o runbook
 
-O runbook criado ainda está em modo de Rascunho. Você deve publicá-lo antes de você pode executá-lo em produção. Quando você publica um runbook, substitui a versão Publicada existente pela versão de Rascunho. No seu caso, ainda não há uma versão publicada porque você acabou de criar o runbook.
+O runbook criado ainda está em modo de Rascunho. Você deve publicá-lo antes de poder executá-lo em produção. Quando você publica um runbook, substitui a versão Publicada existente pela versão de Rascunho. No seu caso, ainda não há uma versão publicada porque você acabou de criar o runbook.
 
 1. Clique em **Publicar** para publicar o runbook e em **Sim** quando solicitado.
 1. Se você rolar para a esquerda para exibir o runbook no painel **Runbooks**, ele mostrará o **Status de Criação** **Publicado**.
-1. Role para a direita para exibir o painel de **MyFirstRunbook-Workflow**.  
+1. Role para a direita para exibir o painel de **MyFirstRunbook-Workflow**.
    As opções na parte superior nos permitem iniciar o runbook, agendá-lo para iniciar em algum momento no futuro ou criar um [webhook](automation-webhooks.md) para que ele possa ser iniciado por meio de uma chamada de HTTP.
 1. Você quer apenas iniciar o runbook, então clique em **Iniciar** e em **Sim** quando solicitado.
 
@@ -103,27 +103,27 @@ O runbook criado ainda está em modo de Rascunho. Você deve publicá-lo antes d
 1. Um painel de trabalho é aberto para o trabalho de runbook criado. Você pode fechar esse painel, mas neste caso, deixe-o aberto para acompanhar o progresso do trabalho.
 1. O status do trabalho é mostrado em **Resumo do trabalho** e corresponde aos status que você viu quando testou o runbook.
 
-   ![Resumo do trabalho](media/automation-first-runbook-textual/job-pane-status-blade-jobsummary.png)
+   ![Resumo do Trabalho](media/automation-first-runbook-textual/job-pane-status-blade-jobsummary.png)
 
 1. Assim que o status do runbook mostrar *Concluído*, clique em **Saída**. O painel Saída é aberto e você pode ver seu *Olá, Mundo*.
 
-   ![Resumo do trabalho](media/automation-first-runbook-textual/job-pane-status-blade-outputtile.png)  
+   ![Resumo do Trabalho](media/automation-first-runbook-textual/job-pane-status-blade-outputtile.png)
 
 1. Feche o painel Saída.
-1. Clique em **Todos os Logs** para abrir o painel Fluxos do trabalho do runbook. Você só verá *Olá, mundo* na saída do fluxo, mas este modo de exibição pode mostrar outros fluxos de um trabalho de runbook como detalhado e erro se o runbook grava neles.
+1. Clique em **Todos os Logs** para abrir o painel Fluxos do trabalho do runbook. Você só deve ver *Olá, mundo* no fluxo de saída, mas essa exibição pode mostrar outros fluxos para um trabalho de runbook, como detalhado e erro se o runbook gravar neles.
 
-   ![Resumo do trabalho](media/automation-first-runbook-textual/job-pane-status-blade-alllogstile.png)
+   ![Resumo do Trabalho](media/automation-first-runbook-textual/job-pane-status-blade-alllogstile.png)
 
 1. Feche a página fluxos e a página trabalho para retornar à página MyFirstRunbook.
-1. Clique em **trabalhos** para abrir a página de trabalhos para este runbook. Esta página lista todos os trabalhos criados por esse runbook. Você deve ver apenas um trabalho listado, já que executou o trabalho apenas uma vez.
+1. Clique em **trabalhos** para abrir a página trabalhos para este runbook. Esta página lista todos os trabalhos criados por esse runbook. Você deve ver apenas um trabalho listado, já que executou o trabalho apenas uma vez.
 
-   ![Trabalhos](media/automation-first-runbook-textual/runbook-control-job-tile.png)
+   ![Tarefas (Jobs)](media/automation-first-runbook-textual/runbook-control-job-tile.png)
 
-1. Você pode clicar neste trabalho para abrir a mesma página do trabalho exibido ao iniciar o runbook. Esta ação permite que você volte no tempo e veja os detalhes de qualquer trabalho que foi criado para um determinado runbook.
+1. Você pode clicar nesse trabalho para abrir a mesma página de trabalho que você exibiu quando iniciou o runbook. Esta ação permite que você volte no tempo e veja os detalhes de qualquer trabalho que foi criado para um determinado runbook.
 
 ## <a name="step-5---add-authentication-to-manage-azure-resources"></a>Etapa 5: adicionar autenticação para gerenciar recursos do Azure
 
-Você testou e publicou seu runbook, mas, até o momento, ele não faz nada útil. Você gostaria que ele gerencie recursos do Azure. Ele não pode fazer isso no entanto, a menos que você foi autenticado usando as credenciais que são referenciadas nos [pré-requisitos](#prerequisites). Você faz isso com o cmdlet **Connect-AzureRmAccount**.
+Você testou e publicou seu runbook, mas, até o momento, ele não faz nada útil. Você gostaria que ele gerencie recursos do Azure. Isso não pode fazer isso, a menos que você tenha autenticado usando as credenciais que são mencionadas nos [pré-requisitos](#prerequisites). Você faz isso com o cmdlet **Connect-AzureRmAccount**.
 
 1. Abra o editor gráfico clicando em **Editar** no painel MyFirstRunbook-Workflow.
 2. Você não precisa mais da linha **Write-Output**, então vamos continuar e excluí-la.
@@ -154,9 +154,9 @@ Você testou e publicou seu runbook, mas, até o momento, ele não faz nada úti
 
 ## <a name="step-6---add-code-to-start-a-virtual-machine"></a>Etapa 6: adicionar código para iniciar uma máquina virtual
 
-Agora que o seu runbook está se autenticando na sua assinatura do Azure, você pode gerenciar os recursos. Você adiciona um comando para iniciar uma máquina virtual. Você pode escolher qualquer máquina virtual em sua assinatura do Azure, e agora você está codificará esse nome no runbook. Se você estiver gerenciando recursos entre várias assinaturas, você precisará usar o **- AzureRmContext** parâmetro junto com [Get-AzureRmContext](/powershell/module/azurerm.profile/get-azurermcontext).
+Agora que o seu runbook está se autenticando na sua assinatura do Azure, você pode gerenciar os recursos. Você adiciona um comando para iniciar uma máquina virtual. Você pode escolher qualquer máquina virtual em sua assinatura do Azure e, por enquanto, você está codificando esse nome no runbook. Se você estiver gerenciando recursos em várias assinaturas, precisará usar o parâmetro **-AzureRmContext** junto com [Get-AzureRmContext](/powershell/module/azurerm.profile/get-azurermcontext).
 
-1. Após o *Connect-AzureRmAccount*, digite *Start-AzureRmVM -Name 'VMName' -ResourceGroupName 'NameofResourceGroup'* fornecendo o nome e o nome do Grupo de Recursos da máquina virtual para iniciar.  
+1. Após o *Connect-AzureRmAccount*, digite *Start-AzureRmVM -Name 'VMName' -ResourceGroupName 'NameofResourceGroup'* fornecendo o nome e o nome do Grupo de Recursos da máquina virtual para iniciar.
 
    ```powershell-interactive
    workflow MyFirstRunbook-Workflow
@@ -188,7 +188,7 @@ No momento, o seu runbook inicia a máquina virtual que você codificou no runbo
     Param(
      [string]$VMName,
      [string]$ResourceGroupName
-    )  
+    )
    # Ensures you do not inherit an AzureRMContext in your runbook
    Disable-AzureRmContextAutosave –Scope Process
 
@@ -206,10 +206,11 @@ No momento, o seu runbook inicia a máquina virtual que você codificou no runbo
 
    ![Iniciar Runbook](media/automation-first-runbook-textual/automation-pass-params.png)
 
-7. Quando o runbook for concluído, verifique se a máquina virtual foi iniciada.  
+7. Quando o runbook for concluído, verifique se a máquina virtual foi iniciada.
 
 ## <a name="next-steps"></a>Próximas etapas
 
+* Para obter mais informações sobre o PowerShell, incluindo referência de linguagem e módulos de aprendizado, consulte os [documentos do PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview).
 * Para começar a usar os runbooks Gráficos, consulte [Meu primeiro runbook gráfico](automation-first-runbook-graphical.md)
 * Para começar a usar os runbooks do PowerShell, veja [Meu primeiro runbook do PowerShell](automation-first-runbook-textual-powershell.md)
 * Para aprender mais sobre os tipos de runbook, suas vantagens e limitações, veja [Tipos de runbook da Automação do Azure](automation-runbook-types.md)

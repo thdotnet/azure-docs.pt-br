@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: jeffya
-ms.openlocfilehash: c809077b0ec14240d231e9b281285080f68596b3
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: b1aac19885e2b640063e4840f047916ad51e9656
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67439498"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68855740"
 ---
 # <a name="use-azure-iot-hub-device-provisioning-service-auto-provisioning-to-register-the-mxchip-iot-devkit-with-iot-hub"></a>Use o provisionamento automático do Serviço de Provisionamento de Dispositivos no Hub IoT do Azure para registrar o MXChip IoT DevKit com o Hub IoT
 
@@ -30,7 +30,7 @@ O [ Kit de Desenvolvimento da IoT para MXChip](https://aka.ms/iot-devkit) é uma
 
 Para concluir as etapas neste tutorial, faça primeiro as tarefas a seguir:
 
-* Configurar o Wi-Fi do seu kit de desenvolvimento e prepare seu ambiente de desenvolvimento seguindo a seção "Preparar o ambiente de desenvolvimento" etapas em [conectar IoT DevKit AZ3166 ao Hub do IoT do Azure na nuvem](/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started#prepare-the-development-environment).
+* Configure o Wi-Fi de seu DevKit e prepare seu ambiente de desenvolvimento seguindo a seção "preparar o ambiente de desenvolvimento" em [conectar o IOT DEVKIT AZ3166 ao Hub IOT do Azure na nuvem](/azure/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started#prepare-the-development-environment).
 * Atualize para o firmware mais recente (1.3.0 ou posterior) com o tutorial [Atualização do firmware do Kit de Desenvolvimento](https://microsoft.github.io/azure-iot-developer-kit/docs/firmware-upgrading/).
 * Crie e vincule um Hub IoT a uma instância do serviço de provisionamento de dispositivo seguindo as etapas em [Configurar o serviço de provisionamento de dispositivo do Hub IoT com o portal do Azure](/azure/iot-dps/quick-setup-auto-provision).
 
@@ -79,7 +79,7 @@ No código de dispositivo, você precisará especificar o [ponto de extremidade 
 1. No portal do Azure, selecione a **visão geral** painel de seu serviço de provisionamento de dispositivos e anote o **ponto de extremidade do dispositivo Global** e **escopo da ID** valores.
   ![Endpoint global e escopo de ID do serviço de provisionamento de dispositivo](media/how-to-connect-mxchip-iot-devkit/dps-global-endpoint.png)
 
-1. Abra **DeKitDPS.ino**. Localize e substitua `[Global Device Endpoint]` e `[ID Scope]` pelos valores anotados.
+1. Abra **DevKitDPS.ino**. Localize e substitua `[Global Device Endpoint]` e `[ID Scope]` pelos valores anotados.
   ![Ponto de extremidade de serviço de provisionamento do dispositivo](media/how-to-connect-mxchip-iot-devkit/endpoint.png)
 
 1. Preencha a `registrationId` variável no código. Somente alfanuméricas, minúsculas, e é permitida a combinação de hífen com um máximo de 128 caracteres. Também anotou o valor.

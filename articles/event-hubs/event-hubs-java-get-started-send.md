@@ -1,6 +1,6 @@
 ---
-title: Enviar e receber eventos usando Java - Hubs de eventos do Azure | Microsoft Docs
-description: Este artigo fornece um passo a passo da criação de um aplicativo Java que envia eventos para Hubs de eventos do Azure.
+title: Enviar e receber eventos usando Java – hubs de eventos do Azure | Microsoft Docs
+description: Este artigo fornece uma explicação da criação de um aplicativo Java que envia eventos para os hubs de eventos do Azure.
 services: event-hubs
 author: ShubhaVijayasarathy
 manager: timlt
@@ -10,18 +10,18 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 04/15/2019
 ms.author: shvija
-ms.openlocfilehash: 0487cac6a0cf7d37befdf0d7cfab33ad6a62cf7f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 00107d99f69fcec086f9692a5ba31a9d9970d089
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60822870"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68848525"
 ---
-# <a name="send-events-to-or-receive-events-from-azure-event-hubs-using-java"></a>Enviar eventos para ou receber eventos de Hubs de eventos do Azure usando Java
+# <a name="send-events-to-or-receive-events-from-azure-event-hubs-using-java"></a>Enviar eventos para ou receber eventos de hubs de eventos do Azure usando Java
 
 Os Hubs de Eventos do Azure são uma plataforma de streaming de Big Data e um serviço de ingestão de eventos capaz de receber e processar milhões de eventos por segundo. Os Hubs de Eventos podem processar e armazenar eventos, dados ou telemetria produzidos pelos dispositivos e software distribuídos. Os dados enviados para um Hub de Eventos podem ser transformados e armazenados usando qualquer provedor de análise em tempo real ou adaptadores de envio em lote/armazenamento. Para obter uma visão detalhada dos Hubs de Eventos, confira [Visão geral de Hubs de Eventos](event-hubs-about.md) e [Recursos de Hubs de Eventos](event-hubs-features.md).
 
-Este tutorial mostra como criar aplicativos Java para enviar eventos para ou receber eventos de um hub de eventos. 
+Este tutorial mostra como criar aplicativos Java para enviar eventos ou receber eventos de um hub de eventos. 
 
 > [!NOTE]
 > Você pode baixar do [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/Java/Basic/SimpleSend) este início rápido como um exemplo, substituir as cadeias de caracteres `EventHubConnectionString` e `EventHubName` pelos valores do hub de eventos e executá-lo. Como alternativa, é possível seguir as etapas deste tutorial para criar sua própria solução.
@@ -32,10 +32,10 @@ Para concluir este tutorial, você precisará dos seguintes pré-requisitos:
 
 - Uma conta ativa do Azure. Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) antes de começar.
 - Um ambiente de desenvolvimento Java. Este tutorial usa o [Eclipse](https://www.eclipse.org/).
-- **Criar um namespace de Hubs de eventos e um hub de eventos**. A primeira etapa é usar o [portal do Azure](https://portal.azure.com) para criar um namespace do tipo Hubs de eventos e obter as credenciais de gerenciamento das quais que seu aplicativo precisa para se comunicar com o hub de eventos. Para criar um namespace e um hub de eventos, siga o procedimento [nesse artigo](event-hubs-create.md). Em seguida, obtenha o valor da chave de acesso para o hub de eventos seguindo as instruções do artigo: [Obter a cadeia de conexão](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). A chave de acesso será usada no código que você escreverá posteriormente no tutorial. O nome da chave padrão é: **RootManageSharedAccessKey**.
+- **Crie um namespace de hubs de eventos e um hub de eventos**. A primeira etapa é usar o [portal do Azure](https://portal.azure.com) para criar um namespace do tipo Hubs de eventos e obter as credenciais de gerenciamento das quais que seu aplicativo precisa para se comunicar com o hub de eventos. Para criar um namespace e um hub de eventos, siga o procedimento [nesse artigo](event-hubs-create.md). Em seguida, obtenha o valor da chave de acesso para o Hub de eventos seguindo as instruções do artigo: [Obter a cadeia de conexão](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). A chave de acesso será usada no código que você escreverá posteriormente no tutorial. O nome da chave padrão é: **RootManageSharedAccessKey**.
 
 ## <a name="send-events"></a>Enviar eventos 
-Esta seção mostra como criar um aplicativo Java para enviar eventos um hub de eventos. 
+Esta seção mostra como criar um aplicativo Java para enviar eventos para um hub de eventos. 
 
 ### <a name="add-reference-to-azure-event-hubs-library"></a>Adicionar a referência à biblioteca de Hubs de Eventos do Azure
 
@@ -178,12 +178,12 @@ O código neste tutorial se baseia no [código de EventProcessorSample no GitHub
 
 Para usar o EventProcessorHost, você deve ter uma [conta de armazenamento do Azure] [conta de armazenamento do Azure]:
 
-1. Entrar a [portal do Azure](https://portal.azure.com)e clique em **+ criar um recurso** no lado esquerdo da tela.
-2. Clique em **Armazenamento** e em **conta de Armazenamento**. Na janela **Criar conta de armazenamento**, digite um nome para a conta de armazenamento. Preencha o restante dos campos, selecione a região desejada e clique em **Criar**.
+1. Conecte-se à [portal do Azure](https://portal.azure.com)e selecione **criar um recurso** no lado esquerdo da tela.
+2. Selecione **armazenamento**e, em seguida, selecione **conta de armazenamento**. Na janela **Criar conta de armazenamento**, digite um nome para a conta de armazenamento. Preencha o restante dos campos, selecione a região desejada e, em seguida, selecione **criar**.
    
-    ![Criar Conta de Armazenamento](./media/event-hubs-dotnet-framework-getstarted-receive-eph/create-storage2.png)
+    ![Criar conta de armazenamento](./media/event-hubs-dotnet-framework-getstarted-receive-eph/create-storage2.png)
 
-3. Clique na conta de armazenamento criada recentemente e, em seguida, clique em **Chaves de Acesso**:
+3. Selecione a conta de armazenamento recém-criada e, em seguida, selecione **chaves de acesso**:
    
     ![Obter chaves de acesso](./media/event-hubs-dotnet-framework-getstarted-receive-eph/create-storage3.png)
 
@@ -206,7 +206,7 @@ A biblioteca de cliente Java para os Hubs de Eventos está disponível para uso 
 </dependency>
 ```
 
-Para diferentes tipos de ambientes de compilação, é possível obter explicitamente os arquivos JAR liberados mais do [repositório Central Maven] [https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-eventhubs-eph%22 ].  
+Para diferentes tipos de ambientes de compilação, você pode obter explicitamente os arquivos JAR liberados mais recentemente do [repositório central do https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-eventhubs-eph%22 Maven] [].  
 
 1. Para o exemplo a seguir, primeiro crie um novo projeto do Maven para um aplicativo de console/shell em seu ambiente de desenvolvimento Java favorito. A classe é chamada `ErrorNotificationHandler`.     
    
@@ -414,7 +414,7 @@ Crie uma classe que implementa a interface com.microsoft.azure.eventprocessorhos
 
 Use sua implementação personalizada do gerenciador de ponto de verificação (com.microsoft.azure.eventprocessorhost.ICheckpointManager)
 
-Dentro de sua implementação, você pode substituir o mecanismo de ponto de verificação padrão e implementar nossos próprio pontos de verificação com base em seu próprio armazenamento de dados (como o SQL Server, CosmosDB e o Cache do Azure para Redis). É recomendável que o armazenamento usado para fazer sua implementação do gerenciador de ponto de verificação seja acessível para todas as instâncias do EPH que estejam processando eventos para o grupo de consumidores.
+Em sua implementação, você pode substituir o mecanismo de ponto de verificação padrão e implementar nossos próprios pontos de verificação com base em seu próprio armazenamento de dados (como SQL Server, CosmosDB e cache do Azure para Redis). É recomendável que o armazenamento usado para fazer sua implementação do gerenciador de ponto de verificação seja acessível para todas as instâncias do EPH que estejam processando eventos para o grupo de consumidores.
 
 Você pode usar qualquer armazenamento de dados que estiver disponível em seu ambiente.
 
@@ -425,6 +425,6 @@ A classe com.microsoft.azure.eventprocessorhost.EventProcessorHos fornece dois c
 Leia os seguintes artigos: 
 
 - [EventProcessorHost](event-hubs-event-processor-host.md)
-- [Recursos e a terminologia nos Hubs de eventos do Azure](event-hubs-features.md)
+- [Recursos e terminologia nos Hubs de Eventos do Azure](event-hubs-features.md)
 - [Perguntas frequentes sobre os Hubs de Eventos](event-hubs-faq.md)
 

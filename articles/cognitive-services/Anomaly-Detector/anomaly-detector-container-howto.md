@@ -10,12 +10,12 @@ ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: 8d107aed75904c27b9ed231d50c884f96318a324
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: e3f6ad4338863fcbb35bad4f286b71993cf6fa2a
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68321422"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854828"
 ---
 # <a name="install-and-run-anomaly-detector-containers"></a>Instalar e executar contêineres de detector de anomalias
 
@@ -34,7 +34,7 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 Você deve atender aos seguintes pré-requisitos antes de usar contêineres de detector de anomalias:
 
-|Obrigatório|Finalidade|
+|Necessário|Finalidade|
 |--|--|
 |Mecanismo Docker| É necessário ter o Mecanismo Docker instalado em um [computador host](#the-host-computer). O Docker fornece pacotes que configuram o ambiente do Docker no [macOS](https://docs.docker.com/docker-for-mac/), no [Windows](https://docs.docker.com/docker-for-windows/) e no [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Para instruções sobre conceitos básicos do Docker e de contêiner, consulte a [visão geral do Docker](https://docs.docker.com/engine/docker-overview/).<br><br> O Docker deve ser configurado para permitir que os contêineres conectem-se e enviem dados de cobrança para o Azure. <br><br> **No Windows**, o Docker também deve ser configurado para dar suporte a contêineres do Linux.<br><br>|
 |Familiaridade com o Docker | É necessário ter uma compreensão básica de conceitos do Docker, como registros, repositórios, contêineres e imagens de contêiner, bem como conhecimento dos comandos básicos do `docker`.| 
@@ -98,7 +98,7 @@ Depois que o contêiner estiver no [computador host](#the-host-computer), use o 
 
 Use o comando [docker run](https://docs.docker.com/engine/reference/commandline/run/) para executar qualquer um dos três contêineres. O comando usa os seguintes parâmetros:
 
-| Placeholder | Valor |
+| Espaço reservado | Valor |
 |-------------|-------|
 |{API_KEY} | Essa chave é usada para iniciar o contêiner e está disponível na página de chaves do detector de anomalias do portal do Azure.  |
 |{ENDPOINT_URI} | O valor do URI do ponto de extremidade de cobrança está disponível na página Visão geral do detector de anomalias do portal do Azure.|
@@ -198,4 +198,5 @@ Neste artigo, você aprendeu os conceitos e o fluxo de trabalho para baixar, ins
 ## <a name="next-steps"></a>Próximas etapas
 
 * Revise [Configurar contêineres](anomaly-detector-container-configuration.md) para configurações
+* [Implantar um contêiner de detector de anomalias nas instâncias de contêiner do Azure](how-to/deploy-anomaly-detection-on-container-instances.md)
 * [Saiba mais sobre o serviço de API do detector de anomalias](https://go.microsoft.com/fwlink/?linkid=2080698&clcid=0x409)

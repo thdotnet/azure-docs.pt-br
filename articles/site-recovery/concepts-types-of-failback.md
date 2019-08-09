@@ -1,21 +1,20 @@
 ---
 title: Failback durante a recuperação de desastre com o Azure Site Recovery | Microsoft Docs
 description: Este artigo fornece uma visão geral dos vários tipos de failback e advertências a serem considerados durante o failback no local durante a recuperação de desastre com o serviço Azure Site Recovery.
-services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 05/19/2019
+ms.date: 08/07/2019
 ms.author: raynew
-ms.openlocfilehash: 1e5dc91018df822c72381e4a162c5af5d74ed83c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c0eaf28f9aeb4050fd35a6036a53e3e91d00f3eb
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66399482"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68847478"
 ---
-# <a name="failback-after-disaster-recovery-of-vmware-vms"></a>Failback após a recuperação de desastre de VMs VMware
+# <a name="failback-of-vmware-vms-after-disaster-recovery-to-azure"></a>Failback de VMs VMware após a recuperação de desastre para o Azure
 
 Depois de fazer o failover para o Azure como parte de seu processo de recuperação de falhas, você poderá fazer failback em seu site local. Há dois tipos diferentes de failback que são possíveis com o Azure Site Recovery: 
 
@@ -25,7 +24,7 @@ Depois de fazer o failover para o Azure como parte de seu processo de recuperaç
 Se você fez failover de uma máquina virtual VMware, você pode executar failback para a mesma máquina de virtual do local de origem se ele ainda existe. Nessa situação, apenas as alterações passarão por failback. Esse cenário é conhecido como **recuperação no local original**. Se não houver máquina virtual local, o cenário será uma **recuperação de local alternativo**.
 
 > [!NOTE]
-> Você só pode executar failback para o servidor de configuração e Vcentre original. Você não poderá implantar um novo servidor de Configuração e usá-lo em failback. Além disso, não será possível adicionar um novo vCenter ao servidor de Configuração existente e o failback no novo vCenter.
+> Você só pode realizar failback para o vCenter e o servidor de configuração originais. Você não poderá implantar um novo servidor de Configuração e usá-lo em failback. Além disso, não será possível adicionar um novo vCenter ao servidor de Configuração existente e o failback no novo vCenter.
 
 ## <a name="original-location-recovery-olr"></a>OLR (Recuperação no Local Original)
 Se você optar por executar failback para a máquina virtual original, as condições a seguir deverão ser atendidas:

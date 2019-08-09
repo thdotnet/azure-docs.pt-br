@@ -1,29 +1,28 @@
 ---
-title: Transferir dados para ou dos arquivos do Azure usando AzCopy v10 | Microsoft Docs
-description: Transferir dados com o armazenamento de arquivos e o AzCopy.
-services: storage
+title: Transferir dados de ou para arquivos do Azure usando AzCopy v10 | Microsoft Docs
+description: Transferir dados com o AzCopy e o armazenamento de arquivos.
 author: normesta
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/14/2019
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 69d7136396c3d989e63b8956d3e703cc7f9666c8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: eeac35cb96f5001e9ad318d8fe03927d0cd9394e
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66687938"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68844822"
 ---
-# <a name="transfer-data-with-azcopy-and-file-storage"></a>Transferir dados com o armazenamento de arquivos e AzCopy 
+# <a name="transfer-data-with-azcopy-and-file-storage"></a>Transferir dados com o AzCopy e o armazenamento de arquivos 
 
-O AzCopy é um utilitário de linha de comando que você pode usar para copiar blobs ou arquivos de ou para uma conta de armazenamento. Este artigo contém comandos de exemplo que funcionam com arquivos do Azure.
+AzCopy é um utilitário de linha de comando que você pode usar para copiar BLOBs ou arquivos de ou para uma conta de armazenamento. Este artigo contém comandos de exemplo que funcionam com os arquivos do Azure.
 
-Antes de começar, consulte a [começar com o AzCopy](storage-use-azcopy-v10.md) artigo para baixar o AzCopy e familiarizar-se com a ferramenta.
+Antes de começar, consulte o artigo [introdução ao AzCopy](storage-use-azcopy-v10.md) para baixar o AzCopy e se familiarizar com a ferramenta.
 
 ## <a name="create-file-shares"></a>Criar compartilhamentos de arquivos
 
-Você pode usar o AzCopy `make` comando para criar um compartilhamento de arquivos. O exemplo nesta seção cria um compartilhamento de arquivos chamado `myfileshare`.
+Você pode usar o comando `make` AzCopy para criar um compartilhamento de arquivos. O exemplo nesta seção cria um compartilhamento de arquivos chamado `myfileshare`.
 
 |    |     |
 |--------|-----------|
@@ -32,17 +31,17 @@ Você pode usar o AzCopy `make` comando para criar um compartilhamento de arquiv
 
 ## <a name="upload-files"></a>Carregar arquivos
 
-Você pode usar o AzCopy `copy` comando para carregar arquivos e diretórios do seu computador local.
+Você pode usar o comando `copy` AzCopy para carregar arquivos e diretórios do seu computador local.
 
 Esta seção contém os seguintes exemplos:
 
 > [!div class="checklist"]
 > * Carregar um arquivo
 > * Carregar um diretório
-> * Carregar arquivos usando curingas
+> * Carregar arquivos usando caracteres curinga
 
 > [!NOTE]
-> O AzCopy não calcular e armazenar o código de hash md5 do arquivo automaticamente. Se você quiser AzCopy para fazer isso, em seguida, acrescente o `--put-md5` sinalizador para cada comando de cópia. Dessa forma, quando o arquivo é baixado, AzCopy calcula um hash MD5 para dados baixados e verifica que o hash MD5 armazenado no arquivo de `Content-md5` propriedade corresponda ao hash calculado.
+> AzCopy não calcula e armazena automaticamente o código hash MD5 do arquivo. Se você quiser que o AzCopy faça isso, anexe o `--put-md5` sinalizador a cada comando de cópia. Dessa forma, quando o arquivo for baixado, AzCopy calculará um hash MD5 para dados baixados e verificará se o hash MD5 armazenado na Propriedade do `Content-md5` arquivo corresponde ao hash calculado.
 
 ### <a name="upload-a-file"></a>Carregar um arquivo
 
@@ -60,17 +59,17 @@ Este exemplo copia um diretório (e todos os arquivos nesse diretório) para um 
 | **Sintaxe** | `azcopy copy "<local-directory-path>" "https://<storage-account-name>.file.core.windows.net/<file-share-name>?<SAS-token>" --recursive` |
 | **Exemplo** | `azcopy copy "C:\myDirectory" "https://mystorageaccount.file.core.windows.net/myfileshare?sv=2018-03-28&ss=bjqt&srs=sco&sp=rjklhjup&se=2019-05-10T04:37:48Z&st=2019-05-09T20:37:48Z&spr=https&sig=%2FSOVEFfsKDqRry4bk3qz1vAQFwY5DDzp2%2B%2F3Eykf%2FJLs%3D" --recursive` |
 
-Para copiar um diretório dentro do compartilhamento de arquivos, especifique o nome do diretório em sua cadeia de caracteres de comando.
+Para copiar para um diretório dentro do compartilhamento de arquivos, basta especificar o nome desse diretório na cadeia de caracteres de comando.
 
 |    |     |
 |--------|-----------|
 | **Exemplo** | `azcopy copy "C:\myDirectory" "https://mystorageaccount.file.core.windows.net/myfileshare/myFileShareDirectory?sv=2018-03-28&ss=bjqt&srs=sco&sp=rjklhjup&se=2019-05-10T04:37:48Z&st=2019-05-09T20:37:48Z&spr=https&sig=%2FSOVEFfsKDqRry4bk3qz1vAQFwY5DDzp2%2B%2F3Eykf%2FJLs%3D" --recursive` |
 
-Se você especificar o nome de um diretório que não existe no compartilhamento de arquivos, o AzCopy cria um novo diretório com esse nome.
+Se você especificar o nome de um diretório que não existe no compartilhamento de arquivos, o AzCopy criará um novo diretório com esse nome.
 
 ### <a name="upload-the-contents-of-a-directory"></a>Carregar o conteúdo de um diretório
 
-Você pode carregar o conteúdo de um diretório sem copiar o diretório que contém em si, usando o símbolo de caractere curinga (*).
+Você pode carregar o conteúdo de um diretório sem copiar o próprio diretório contido usando o símbolo curinga (*).
 
 |    |     |
 |--------|-----------|
@@ -78,21 +77,21 @@ Você pode carregar o conteúdo de um diretório sem copiar o diretório que con
 | **Exemplo** | `azcopy copy "C:\myDirectory\*" "https://mystorageaccount.file.core.windows.net/myfileshare/myFileShareDirectory?sv=2018-03-28&ss=bjqt&srs=sco&sp=rjklhjup&se=2019-05-10T04:37:48Z&st=2019-05-09T20:37:48Z&spr=https&sig=%2FSOVEFfsKDqRry4bk3qz1vAQFwY5DDzp2%2B%2F3Eykf%2FJLs%3D"` |
 
 > [!NOTE]
-> Acrescente a `--recursive` sinalizador para carregar arquivos em todos os subdiretórios.
+> Acrescente o `--recursive` sinalizador para carregar arquivos em todos os subdiretórios.
 
 ## <a name="download-files"></a>Baixar arquivos
 
-Você pode usar o AzCopy `copy` compartilhamentos de comando para baixar arquivos, diretórios e arquivos em seu computador local.
+Você pode usar o comando `copy` AzCopy para baixar arquivos, diretórios e compartilhamentos de arquivos em seu computador local.
 
 Esta seção contém os seguintes exemplos:
 
 > [!div class="checklist"]
 > * Baixar um arquivo
-> * Baixe um diretório
-> * Baixar arquivos usando curingas
+> * Baixar um diretório
+> * Baixar arquivos usando caracteres curinga
 
 > [!NOTE]
-> Se o `Content-md5` valor de propriedade de um arquivo contém um hash, o AzCopy calcula um hash MD5 para dados baixados e verifica que o hash MD5 armazenado no arquivo de `Content-md5` propriedade corresponda ao hash calculado. Se esses valores não corresponderem, o download falhar, a menos que você substituir esse comportamento por meio do acréscimo `--check-md5=NoCheck` ou `--check-md5=LogOnly` para o comando Copiar.
+> Se o `Content-md5` valor da propriedade de um arquivo contiver um hash, AzCopy calculará um hash MD5 para os dados baixados e verificará se o hash MD5 armazenado `Content-md5` na Propriedade do arquivo corresponde ao hash calculado. Se esses valores não corresponderem, o download falhará, a menos que você `--check-md5=NoCheck` substitua `--check-md5=LogOnly` esse comportamento acrescentando ou ao comando de cópia.
 
 ### <a name="download-a-file"></a>Baixar um arquivo
 
@@ -101,7 +100,7 @@ Esta seção contém os seguintes exemplos:
 | **Sintaxe** | `azcopy copy "https://<storage-account-name>.file.core.windows.net/<file-share-name>/<file-path>?<SAS-token>" "<local-file-path>"` |
 | **Exemplo** | `azcopy copy "https://mystorageaccount.file.core.windows.net/myfileshare/myTextFile.txt?sv=2018-03-28&ss=bjqt&srs=sco&sp=rjklhjup&se=2019-05-10T04:37:48Z&st=2019-05-09T20:37:48Z&spr=https&sig=%2FSOVEFfsKDqRry4bk3qz1vAQFwY5DDzp2%2B%2F3Eykf%2FJLs%3D" "C:\myDirectory\myTextFile.txt"` |
 
-### <a name="download-a-directory"></a>Baixe um diretório
+### <a name="download-a-directory"></a>Baixar um diretório
 
 |    |     |
 |--------|-----------|
@@ -112,7 +111,7 @@ Este exemplo resulta em um diretório chamado `C:\myDirectory\myFileShareDirecto
 
 ### <a name="download-the-contents-of-a-directory"></a>Baixar o conteúdo de um diretório
 
-Você pode baixar o conteúdo de um diretório sem copiar o diretório que contém em si, usando o símbolo de caractere curinga (*).
+Você pode baixar o conteúdo de um diretório sem copiar o próprio diretório contido usando o símbolo curinga (*).
 
 |    |     |
 |--------|-----------|
@@ -120,11 +119,11 @@ Você pode baixar o conteúdo de um diretório sem copiar o diretório que cont�
 | **Exemplo** | `azcopy copy "https://mystorageaccount.file.core.windows.net/myfileshare/myFileShareDirectory/*?sv=2018-03-28&ss=bjqt&srs=sco&sp=rjklhjup&se=2019-05-10T04:37:48Z&st=2019-05-09T20:37:48Z&spr=https&sig=%2FSOVEFfsKDqRry4bk3qz1vAQFwY5DDzp2%2B%2F3Eykf%2FJLs%3D" "C:\myDirectory"` |
 
 > [!NOTE]
-> Acrescente a `--recursive` sinalizador para baixar os arquivos em todos os subdiretórios.
+> Acrescente o `--recursive` sinalizador para baixar arquivos em todos os subdiretórios.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Encontre mais exemplos em qualquer um dos seguintes artigos:
+Encontre mais exemplos em qualquer um destes artigos:
 
 - [Introdução ao AzCopy](storage-use-azcopy-v10.md)
 

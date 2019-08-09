@@ -1,22 +1,22 @@
 ---
-title: Visão geral da autenticação do Azure Active Directory por SMB para arquivos do Azure (versão prévia) – Armazenamento do Azure
-description: Os Arquivos do Azure dão suporte à autenticação baseada em identidade via SMB (versão prévia) por meio do Azure AD (Azure Active Directory) Domain Services. As máquinas virtuais Windows (VMs) associadas ao domínio podem acessar os compartilhamentos de arquivos do Azure usando as credenciais do Azure AD.
+title: Visão geral da autenticação de Azure Active Directory sobre o SMB para arquivos do Azure – armazenamento do Azure
+description: Os arquivos do Azure oferecem suporte à autenticação baseada em identidade sobre SMB (protocolo de mensagens do servidor) por meio dos serviços de domínio do Azure Active Directory (AD do Azure). As máquinas virtuais Windows (VMs) associadas ao domínio podem acessar os compartilhamentos de arquivos do Azure usando as credenciais do Azure AD.
 author: roygara
 ms.service: storage
-ms.topic: conceptual
-ms.date: 06/18/2019
+ms.topic: article
+ms.date: 07/30/2019
 ms.author: rogarana
-ms.openlocfilehash: b1bc7385751fbd1829b4aee2713621448f8aa505
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 604cf2bbe0cf8ab036c76ee9223d1ee34fd4bd3d
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68699729"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854569"
 ---
-# <a name="overview-of-azure-files-azure-active-directory-domain-service-aad-ds-authentication-support-for-smb-access-preview"></a>Visão geral do suporte à autenticação do AAD DS (serviço de domínio Azure Active Directory do Azure Files) para acesso SMB (versão prévia)
+# <a name="overview-of-azure-files-azure-active-directory-domain-service-azure-ad-ds-authentication-support-for-smb-access"></a>Visão geral do suporte à autenticação do Azure AD DS (serviço de domínio Azure Active Directory) de arquivos do Azure para acesso SMB
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
 
-Para saber como habilitar a autenticação do AAD DS para arquivos do Azure, consulte [habilitar a autenticação do serviço de domínio Azure Active Directory sobre SMB para arquivos do Azure (versão prévia)](storage-files-active-directory-enable.md).
+Para saber como habilitar a autenticação de AD DS do Azure para arquivos do Azure, consulte [habilitar a autenticação do serviço de domínio Azure Active Directory sobre SMB para arquivos do Azure](storage-files-active-directory-enable.md).
 
 ## <a name="glossary"></a>Glossário 
 É útil entender alguns termos-chave relacionados à autenticação do serviço de domínio do Azure AD sobre SMB para arquivos do Azure:
@@ -41,7 +41,7 @@ Para saber como habilitar a autenticação do AAD DS para arquivos do Azure, con
 A autenticação do serviço de domínio do Azure AD para arquivos do Azure oferece vários benefícios em relação ao uso da autenticação de chave compartilhada:
 
 -   **Estenda a experiência tradicional de acesso ao compartilhamento de arquivos baseado em identidade para a nuvem com o Azure AD e o serviço de domínio do Azure AD**  
-    Se você planeja "aumentar e deslocar" seu aplicativo para a nuvem, substituindo os servidores de arquivos tradicionais pelos arquivos do Azure, convém que seu aplicativo seja autenticado com as credenciais do Azure AD para acessar os dados do arquivo. Os arquivos do Azure dão suporte ao uso de credenciais do Azure AD para acessar arquivos do Azure por SMB de VMs do Windows ingressadas no domínio do AAD DS. Você também pode optar por sincronizar todos os seus objetos do Active Directory locais ao Azure AD para preservar os nomes de usuário, senhas e outras atribuições de grupo.
+    Se você planeja "aumentar e deslocar" seu aplicativo para a nuvem, substituindo os servidores de arquivos tradicionais pelos arquivos do Azure, convém que seu aplicativo seja autenticado com as credenciais do Azure AD para acessar os dados do arquivo. Os arquivos do Azure dão suporte ao uso de credenciais do Azure AD para acessar os arquivos do Azure via SMB do Azure AD DS VMs do Windows ingressadas no domínio. Você também pode optar por sincronizar todos os seus objetos do Active Directory locais ao Azure AD para preservar os nomes de usuário, senhas e outras atribuições de grupo.
 
 -   **Impor o controle de acesso granular em compartilhamentos de arquivos do Azure**  
     Você pode conceder permissões a uma identidade específica no nível de compartilhamento, diretório ou arquivo. Por exemplo, suponha que você tenha várias equipes usando um compartilhamento de arquivos do Azure único para colaboração em projetos. Você pode conceder acesso para todas as equipes a diretórios não confidenciais, ao mesmo tempo em que limita o acesso a diretórios que contenham dados financeiros confidenciais apenas para sua equipe de Finanças. 
@@ -61,18 +61,15 @@ Você pode habilitar a autenticação do serviço de domínio do Azure AD para a
 
 Antes de habilitar esse recurso, verifique se Azure AD Domain Services foi implantado para o locatário primário do Azure AD ao qual sua conta de armazenamento está associada. Se você ainda não configurou o Azure AD Domain Services, siga as orientações passo a passo fornecidas em [Habilitar o Azure Active Directory Domain Services usando o portal do Azure](../../active-directory-domain-services/create-instance.md).
 
-A implantação do Azure AD Domain Services geralmente leva de 10 a 15 minutos. Após a implantação do Azure AD Domain Services, você pode habilitar a autenticação do Azure AD por SMB para os Arquivos do Azure. Para obter mais informações, consulte [habilitar a autenticação do serviço de domínio Azure Active Directory sobre SMB para arquivos do Azure (versão prévia)](storage-files-active-directory-enable.md). 
+A implantação do Azure AD Domain Services geralmente leva de 10 a 15 minutos. Após a implantação do Azure AD Domain Services, você pode habilitar a autenticação do Azure AD por SMB para os Arquivos do Azure. Para obter mais informações, consulte [habilitar a autenticação do serviço de domínio Azure Active Directory sobre SMB para arquivos do Azure](storage-files-active-directory-enable.md). 
 
 ### <a name="configure-share-level-permissions-for-azure-files"></a>Configurar permissões no nível de compartilhamento para Arquivos do Azure
 Depois que a autenticação do serviço de domínio do Azure AD tiver sido habilitada, você poderá configurar funções RBAC personalizadas para identidades do Azure AD e atribuir direitos de acesso a qualquer compartilhamento de arquivo na conta de armazenamento.
 
-Quando um aplicativo em execução em uma VM ingressada no domínio tenta montar um compartilhamento de arquivos do Azure ou acessar um diretório ou arquivo, as credenciais do aplicativo do Azure AD são verificadas para garantir que as permissões no nível de compartilhamento e de NTFS adequadas. Para obter informações sobre como configurar permissões de nível de compartilhamento, consulte [habilitar a autenticação do serviço de domínio Azure Active Directory sobre SMB (versão prévia)](storage-files-active-directory-enable.md).
+Quando um aplicativo em execução em uma VM ingressada no domínio tenta montar um compartilhamento de arquivos do Azure ou acessar um diretório ou arquivo, as credenciais do aplicativo do Azure AD são verificadas para garantir que as permissões no nível de compartilhamento e de NTFS adequadas. Para obter informações sobre como configurar permissões de nível de compartilhamento, consulte [habilitar a autenticação do serviço de domínio Azure Active Directory sobre SMB](storage-files-active-directory-enable.md).
 
 ### <a name="configure-directory--or-file-level-permissions-for-azure-files"></a>Configurar permissões no nível do diretório ou do arquivo para Arquivos do Azure 
-Os Arquivos do Azure impõem permissões de arquivo NTFS padrão no nível do diretório e do arquivo, incluindo no diretório raiz. A configuração de permissões no nível de diretório ou de arquivo é compatível apenas por SMB. Monte o compartilhamento de arquivo de destino da sua VM e configure as permissões usando o comando [icacls](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls) ou [Set-ACL](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-acl) do Windows. 
-
-> [!NOTE]
-> Não há suporte para configurar permissões NTFS por meio do Explorador de Arquivos do Windows na versão prévia.
+Os Arquivos do Azure impõem permissões de arquivo NTFS padrão no nível do diretório e do arquivo, incluindo no diretório raiz. A configuração de permissões no nível de diretório ou de arquivo é compatível apenas por SMB. Monte o compartilhamento de arquivos de destino de sua VM e configure permissões usando o explorador de arquivos do Windows, o Windows [icacls](https://docs.microsoft.com/windows-server/administration/windows-commands/icacls) ou o comando [Set-ACL](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-acl) . 
 
 ### <a name="use-the-storage-account-key-for-superuser-permissions"></a>Use a chave de conta de armazenamento para permissões de superusuário 
 Um usuário que possui a chave de conta de armazenamento pode acessar Arquivos do Azure com permissões de superusuário. As permissões de superusuário ultrapassam todas as restrições de controle de acesso configuradas no nível de compartilhamento com o RBAC e impostas pelo Azure AD. As permissões de superusuário são necessárias para montar um compartilhamento de arquivos do Azure. 
@@ -90,5 +87,5 @@ Não há nenhum custo adicional de serviço para habilitar a autenticação do A
 Para obter mais informações sobre a autenticação de Arquivos do Azure e do Azure AD por SMB, consulte estes recursos:
 
 - [Introdução aos Arquivos do Azure](storage-files-introduction.md)
-- [Habilitar a autenticação do Azure Active Directory por SMB para Arquivos do Azure (Versão prévia)](storage-files-active-directory-enable.md)
+- [Habilitar a autenticação de Azure Active Directory sobre o SMB para arquivos do Azure](storage-files-active-directory-enable.md)
 - [Perguntas frequentes](storage-files-faq.md)

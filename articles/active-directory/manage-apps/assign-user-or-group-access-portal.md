@@ -12,12 +12,12 @@ ms.date: 04/11/2019
 ms.author: mimart
 ms.reviewer: luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 249dfeeb231c61b05af2e89f0dc02822cc18e627
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 15f7e830079c224e9e15dd45d14c1741376f8762
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67702186"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68851706"
 ---
 # <a name="assign-a-user-or-group-to-an-enterprise-app-in-azure-active-directory"></a>Atribuir um usuário ou um grupo a um aplicativo empresarial no Azure Active Directory
 
@@ -31,16 +31,16 @@ Para atribuir um usuário ou grupo a um aplicativo corporativo, você deverá te
 1. Entre no [Portal do Azure](https://portal.azure.com) com uma conta que seja um administrador global do diretório.
 1. Selecione **Todos os serviços**, insira Azure Active Directory na caixa de texto e, em seguida, selecione **Enter**.
 1. Selecione **Aplicativos empresariais**.
-1. Sobre o **aplicativos empresariais – todos os aplicativos** painel, você ver uma lista de aplicativos você pode gerenciar. Selecione um aplicativo.
-1. Sobre o ***appname*** painel (ou seja, o painel com o nome do aplicativo selecionado no título), selecione **usuários e grupos**.
-1. Sobre o ***appname*** **-grupos e usuários** painel, selecione **adicionar usuário**.
-1. Sobre o **Adicionar atribuição** painel, selecione **usuários e grupos**.
+1. No painel **aplicativos empresariais – todos os aplicativos** , você vê uma lista dos aplicativos que você pode gerenciar. Selecione um aplicativo.
+1. No painel ***AppName*** (ou seja, o painel com o nome do aplicativo selecionado no título), selecione **usuários & grupos**.
+1. No painel ***AppName*** **– usuário e grupos** , selecione **Adicionar usuário**.
+1. No painel **Adicionar atribuição** , selecione **usuários e grupos**.
 
    ![Atribuir um usuário ou um grupo ao aplicativo](./media/assign-user-or-group-access-portal/assign-users.png)
 
-1. No **usuários e grupos** painel, selecione um ou mais usuários ou grupos na lista e, em seguida, escolha o **selecione** botão na parte inferior do painel.
-1. Sobre o **Adicionar atribuição** painel, selecione **função**. Em seguida, na **Selecionar função** painel, selecione uma função para aplicar a usuários ou grupos selecionados, em seguida, selecione **Okey** na parte inferior do painel.
-1. Sobre o **Adicionar atribuição** painel, selecione o **atribuir** botão na parte inferior do painel. Os usuários ou os grupos atribuídos têm as permissões definidas pela função selecionada para esse aplicativo empresarial.
+1. No painel **usuários e grupos** , selecione um ou mais usuários ou grupos na lista e, em seguida, escolha o botão **selecionar** na parte inferior do painel.
+1. No painel **Adicionar atribuição** , selecione **função**. Em seguida, no painel **selecionar função** , selecione uma função a ser aplicada aos usuários ou grupos selecionados e, em seguida, selecione **OK** na parte inferior do painel.
+1. No painel **Adicionar atribuição** , selecione o botão **atribuir** na parte inferior do painel. Os usuários ou os grupos atribuídos têm as permissões definidas pela função selecionada para esse aplicativo empresarial.
 
 ## <a name="allow-all-users-to-access-an-app---portal"></a>Permitir que todos os usuários acessem um aplicativo - portal
 
@@ -49,14 +49,16 @@ Para atribuir um usuário ou grupo a um aplicativo corporativo, você deverá te
 1. Selecione **Aplicativos empresariais**.
 1. No painel **Aplicativos empresariais**, selecione **Todos os aplicativos**. Lista os aplicativos que você pode gerenciar.
 1. No painel **Aplicativos empresariais – Todos os aplicativos**, selecione um aplicativo.
-1. Sobre o ***appname*** painel, selecione **propriedades**.
-1. Sobre o  ***appname* -propriedades** painel, defina o **atribuição de usuário necessária?** definindo como **não**.
+1. No painel ***AppName*** , selecione **Propriedades**.
+1. No painel  ***AppName* -Properties** , defina a **atribuição de usuário necessária?** definindo como **não**.
 
 **Atribuição de usuário obrigatória?** opção:
 
-- Não afeta se um aplicativo é exibida no painel de acesso do aplicativo. Para mostrar o aplicativo no painel de acesso, você precisará atribuir um grupo ou usuário apropriado para o aplicativo.
-- Funciona apenas com os aplicativos de nuvem que estão configurados para logon único SAML e aplicativos locais configurados com o Proxy do Aplicativo. Consulte [logon único para aplicativos](what-is-single-sign-on.md).
-- Requer os usuários de consentimento para um aplicativo. Um administrador pode conceder consentimento para todos os usuários.  Consulte [Configurar a forma com que os usuários finais concedem um aplicativo](configure-user-consent.md).
+- Se essa opção for definida como Sim, os usuários deverão primeiro ser atribuídos a esse aplicativo antes de poder acessá-lo.
+- Se essa opção for definida como não, todos os usuários que navegarem para a URL de link profundo do aplicativo ou URL do aplicativo receberão acesso diretamente
+- Não afeta se um aplicativo aparece ou não no painel de acesso do aplicativo. Para mostrar o aplicativo no painel de acesso, você precisará atribuir um grupo ou usuário apropriado para o aplicativo.
+- Somente o funciona com os aplicativos de nuvem configurados para logon único do SAML, aplicativos de proxy de aplicativo que usam Azure Active Directory pré-autenticação ou aplicativos criados diretamente na plataforma de aplicativo do Azure AD que usam o OAuth 2,0/ Autenticação do OpenID Connect depois que um usuário ou administrador tiver consentido o aplicativo. Consulte [logon único para aplicativos](what-is-single-sign-on.md). Consulte [Configurar a forma com que os usuários finais concedem um aplicativo](configure-user-consent.md).
+- Essa opção não tem efeito quando um aplicativo é configurado para qualquer um dos outros modos de logon único.
 
 ## <a name="assign-a-user-to-an-app---powershell"></a>Atribuir um usuário a um aplicativo - PowerShell
 
@@ -109,7 +111,7 @@ Este exemplo atribui a usuária Brenda Fernandes ao aplicativo [Microsoft Workpl
 
 1. Execute o comando `$sp.AppRoles` para exibir as funções disponíveis para o aplicativo Workplace Analytics. Neste exemplo, queremos atribuir a Brenda Fernandes a função de Analista (acesso limitado).
 
-   ![Mostra as funções disponíveis para um usuário usando a função do Workplace Analytics](./media/assign-user-or-group-access-portal/workplace-analytics-role.png)
+   ![Mostra as funções disponíveis para um usuário usando a função de análise de local de trabalho](./media/assign-user-or-group-access-portal/workplace-analytics-role.png)
 
 1. Atribua o nome de função à variável `$app_role_name`.
 

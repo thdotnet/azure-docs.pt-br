@@ -16,12 +16,12 @@ ms.workload: iaas-sql-server
 ms.date: 04/30/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 13d698cfbc0241248a77fd5f3b148a9393320c64
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e7de54f7da8cef5942a8d8f41031eaf3e2565580
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67075990"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68846240"
 ---
 # <a name="configure-azure-key-vault-integration-for-sql-server-on-azure-virtual-machines-resource-manager"></a>Configurar a Integração do Azure Key Vault para SQL Server em Máquinas Virtuais do Azure (Resource Manager)
 
@@ -50,20 +50,20 @@ Se você estiver provisionando uma nova máquina de virtual do SQL Server com o 
 
 ![Integração do Cofre da Chave do SQL Azure](./media/virtual-machines-windows-ps-sql-keyvault/azure-sql-arm-akv.png)
 
-Para obter uma explicação detalhada de provisionamento, consulte [provisionar uma máquina virtual do SQL Server no portal do Azure](virtual-machines-windows-portal-sql-server-provision.md).
+Para obter uma explicação detalhada do provisionamento, consulte provisionar [um SQL Server máquina virtual no portal do Azure](virtual-machines-windows-portal-sql-server-provision.md).
 
 ### <a name="existing-vms"></a>VMs existentes
 
 [!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
 
-Para máquinas virtuais do SQL Server existentes, abra sua [recurso de máquinas virtuais do SQL](virtual-machines-windows-sql-manage-portal.md#access-sql-virtual-machine-resource) e selecione **Security** sob **configurações**. Selecione **habilitar** para habilitar a integração do Azure Key Vault. 
+Para máquinas virtuais SQL Server existentes, abra o [recurso de máquinas virtuais do SQL](virtual-machines-windows-sql-manage-portal.md#access-the-sql-virtual-machines-resource) e selecione **segurança** em **configurações**. Selecione **habilitar** para habilitar a integração de Azure Key Vault. 
 
 ![Integração de AKV do SQL para VMs existentes](./media/virtual-machines-windows-ps-sql-keyvault/azure-sql-rm-akv-existing-vms.png)
 
-Quando terminar, selecione a **Apply** botão na parte inferior da **segurança** página para salvar suas alterações.
+Quando terminar, selecione o botão **aplicar** na parte inferior da página **segurança** para salvar as alterações.
 
 > [!NOTE]
-> O nome de credencial que criamos aqui será mapeado para um logon SQL mais tarde. Isso permite que o logon do SQL acesse o cofre de chaves. 
+> O nome da credencial que criamos aqui será mapeado para um logon do SQL posteriormente. Isso permite que o logon do SQL acesse o cofre de chaves. 
 
 
 > [!NOTE]

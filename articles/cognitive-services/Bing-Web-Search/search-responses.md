@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 06/25/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 5380713af17a751ab695fee90895b4f6b0d2369b
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: f19454868ad7be21777d725f61e09a84f6c7a313
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67542824"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854720"
 ---
 # <a name="bing-web-search-api-response-structure-and-answer-types"></a>Estrutura de resposta da API do Bing Web Search e tipos de resposta  
 
@@ -123,7 +123,7 @@ A resposta [relatedSearches](https://docs.microsoft.com/rest/api/cognitiveservic
 
 Use a cadeia de caracteres de consulta `displayText` e a URL `webSearchUrl` para criar um hiperlink que leva o usuário para a página de resultados da pesquisa do Bing para a consulta relacionada. Também é possível usar a cadeia de caracteres de consulta `text` em sua própria consulta da API de Pesquisa na Web do Bing exibir os resultados por conta própria.
 
-Para obter informações sobre como lidar com o realce de marcadores em `displayText`, consulte [Realce de ocorrências](./hit-highlighting.md).
+Para obter informações sobre como lidar com o realce de marcadores em `displayText`, consulte [Realce de ocorrências](../bing-web-search/hit-highlighting.md).
 
 Veja a seguir um exemplo do uso de consultas relacionadas no Bing.com.
 
@@ -290,7 +290,7 @@ Encoded query: 8^2%2B11^2-2*8*11*cos%2837%29
 
 Uma expressão matemática pode conter os seguintes símbolos:
 
-|Símbolo|DESCRIÇÃO|
+|Símbolo|Descrição|
 |------------|-----------------|
 |+|Adição|
 |-|Subtração|
@@ -304,7 +304,7 @@ Uma expressão matemática pode conter os seguintes símbolos:
 
 Uma expressão matemática pode conter as seguintes constantes:
 
-|Símbolo|DESCRIÇÃO|
+|Símbolo|Descrição|
 |------------|-----------------|
 |Pi|3,14159...|
 |Grau|Grau|
@@ -314,7 +314,7 @@ Uma expressão matemática pode conter as seguintes constantes:
 
 Uma expressão matemática pode conter as seguintes funções:
 
-|Símbolo|DESCRIÇÃO|
+|Símbolo|Descrição|
 |------------|-----------------|
 |Classificar|Raiz quadrada|
 |Sin[x], Cos[x], Tan[x]<br />Csc[x], Sec[x], Cot[x]|Funções trigonométricas (com argumentos em radianos)|
@@ -332,7 +332,7 @@ Se o usuário inserir uma consulta de data ou hora, a resposta poderá conter um
 
 A resposta `timeZone` fornece o nome do local, a data e a hora UTC atual no local especificado, e a diferença UTC. Se o limite do local estiver dentro de vários fusos horários, a resposta conterá a data e a hora UTC atual de todos os fusos horários dentro dos limites. Por exemplo, como o estado da Flórida está dentro de dois fusos horários, a resposta conteria a data e hora local em ambos os fusos horários.  
 
-Se a consulta solicita a hora de um estado ou país/região, o Bing determina a cidade primária dentro do limite da localização geográfica e retorna-o no `primaryCityTime` campo. Se o limite contiver vários fusos horários, os fusos horários restantes serão retornados no campo `otherCityTimes`.
+Se a consulta solicitar a hora de um Estado ou país/região, o Bing determinará a cidade principal dentro do limite geográfico do local e a `primaryCityTime` retornará no campo. Se o limite contiver vários fusos horários, os fusos horários restantes serão retornados no campo `otherCityTimes`.
 
 O exemplo a seguir mostra consultas de exemplo que retornam a resposta `timeZone`.
 

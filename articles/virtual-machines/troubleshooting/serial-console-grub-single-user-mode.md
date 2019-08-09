@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 05/08/2019
+ms.date: 08/06/2019
 ms.author: alsin
-ms.openlocfilehash: 8a3be6420a91093e060850459ff22fc5823b8cf2
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 656bc8329d6273695e4da24a7e7d13c9df6a1080
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67710595"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68846599"
 ---
 # <a name="use-serial-console-to-access-grub-and-single-user-mode"></a>Usar o Console Serial para acessar GRUB e Modo de Usuário Único
 GRUB é o GRand Unified Bootloader, que provavelmente será a primeira informação que você verá ao inicializar uma VM. Como é exibido antes do sistema operacional ser iniciado, ele não é acessível via SSH. Com o GRUB, você consegue modificar sua configuração de inicialização para inicializar no modo de usuário único, entre outras coisas.
@@ -132,6 +132,7 @@ Por padrão, as imagens do Ubuntu não podem mostrar automaticamente a tela de G
 1. Altere o valor `GRUB_TIMEOUT` para um valor diferente de zero
 1. Abra `/etc/default/grub` em um editor de texto da sua escolha
 1. Comente na linha `GRUB_HIDDEN_TIMEOUT=1`
+1. Verifique se há uma linha que diz`GRUB_TIMEOUT_STYLE=menu`
 1. Execute `sudo update-grub`
 
 ### <a name="single-user-mode-in-ubuntu"></a>Modo de usuário único no Ubuntu
@@ -184,7 +185,7 @@ O acesso ao GRUB no SLES requer a configuração do carregador de inicializaçã
 Você será automaticamente direcionado para o shell de emergência se o SLES não puder ser inicializado normalmente. Para entrar manualmente no shell de emergência, siga estas instruções:
 
 1. No GRUB, pressione 'e' para editar sua entrada de inicialização (a entrada do SLES)
-1. Procure a linha de kernel – ele começará com `linux`
+1. Procure a linha de kernel-ela começará com`linux`
 1. Acrescente `systemd.unit=emergency.target` ao fim da linha
 1. Pressione Ctrl + X para reinicializar com essas configurações e entrar no shell de emergência
    > Observe que ocorrerá a alternância para o shell de emergência com um sistema de arquivos _somente leitura_. Se quiser fazer todas as edições em todos os arquivos, você precisará montar novamente o sistema de arquivos com permissões de leitura-gravação. Para fazer isso, insira `mount -o remount,rw /` no shell
@@ -193,7 +194,7 @@ Você será automaticamente direcionado para o shell de emergência se o SLES n�
 Muito semelhante ao Red Hat Enterprise Linux, o modo de usuário único no Oracle Linux requer que o GRUB e o usuário raiz estejam habilitados.
 
 ### <a name="grub-access-in-oracle-linux"></a>Acesso ao GRUB no Oracle Linux
-O Oracle Linux vem com o GRUB habilitado pronto para uso. Para acessar o GRUB, reinicialize a VM com `sudo reboot` e pressione “Esc”. Você verá a tela GRUB aparecer.
+O Oracle Linux vem com o GRUB habilitado pronto para uso. Para acessar o GRUB, reinicialize a VM com `sudo reboot` e pressione “Esc”. Você verá a tela GRUB aparecer. Se você não vir o grub, verifique se o valor da `GRUB_TERMINAL` linha contém "console serial", desta forma:. `GRUB_TERMINAL="serial console"`
 
 ### <a name="single-user-mode-in-oracle-linux"></a>Modo de usuário único no Oracle Linux
 Siga as instruções para RHEL acima para habilitar o modo de usuário único no Oracle Linux.

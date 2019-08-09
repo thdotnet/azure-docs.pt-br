@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 54146927bf344eed63e24a3df073aa13f7fa0676
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 98a339f3fe9d5318b71ef60ac916bc4dcc6112fb
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68319922"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68853748"
 ---
 # <a name="how-to-require-two-step-verification-for-a-user"></a>Como exigir a verificação em duas etapas para um usuário
 
@@ -41,7 +41,7 @@ Habilitado pelo Azure AD Identity Protection - Esse método usa a política de r
 
 As contas de usuário na Autenticação Multifator do Azure apresentam os três estados distintos a seguir:
 
-| Status | DESCRIÇÃO | Aplicativos que não usam navegador afetados | Aplicativos que usam o navegador afetados | Autenticação moderna afetada |
+| Status | Descrição | Aplicativos que não usam navegador afetados | Aplicativos que usam o navegador afetados | Autenticação moderna afetada |
 |:---:|:---:|:---:|:--:|:--:|
 | Desabilitado |O estado padrão para um novo usuário não inscrito na MFA do Azure. |Não |Não |Não |
 | Enabled |O usuário foi inscrito no MFA do Azure, mas não foi registrado. Eles receberão uma solicitação para se registrarem na próxima vez que entrarem. |Nº  Eles continuarão a trabalhar até o processo ser concluído. | Sim. Depois que a sessão expirar, será exigido o registro da MFA do Azure.| Sim. Depois que o token de acesso expirar, será exigido o registro da MFA do Azure. |
@@ -142,11 +142,7 @@ O PowerShell a seguir pode ajudá-lo a fazer a conversão para o acesso condicio
 # Disable MFA for all users, keeping their MFA methods intact
 Get-MsolUser -All | Disable-MFA -KeepMethods
 
-# Enforce MFA for all users
-Get-MsolUser -All | Set-MfaState -State Enforced
-
-# Wrapper to disable MFA with the option to keep the MFA
-# methods (to avoid having to proof-up again later)
+# Wrapper to disable MFA with the option to keep the MFA methods (to avoid having to proof-up again later)
 function Disable-Mfa {
 
     [CmdletBinding()]

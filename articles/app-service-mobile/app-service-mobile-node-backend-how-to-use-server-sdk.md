@@ -14,12 +14,12 @@ ms.devlang: node
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
-ms.openlocfilehash: 831f6b4bdc99e63859b390f8a9bb88d74301284e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6eaaeba8a36bcba8134d605889185fb8827dd05c
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62128093"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68851182"
 ---
 # <a name="how-to-use-the-mobile-apps-nodejs-sdk"></a>Como usar o SDK do Node.js para Aplicativos Móveis
 
@@ -135,7 +135,7 @@ O Visual Studio 2015 exige uma extensão para desenvolver aplicativos Node.js no
 
     Salve o arquivo.
 
-1. Execute o aplicativo localmente (a API é fornecida em `http://localhost:3000`) ou publique no Azure.
+1. Execute o aplicativo localmente (a API é servida `http://localhost:3000`) ou publique no Azure.
 
 ### <a name="create-node-backend-portal"></a>Criar um back-end do Node.js usando o Portal do Azure
 
@@ -192,7 +192,7 @@ Se você quiser apenas essa opção disponível ao desenvolver localmente, é po
 
 O SDK do servidor do Node.js do azure-mobile-apps fornece mecanismos para expor tabelas de dados armazenadas no Banco de Dados SQL do Azure como uma API Web. Ele fornece cinco operações:
 
-| Operação | DESCRIÇÃO |
+| Operação | Descrição |
 | --- | --- |
 | GET /tables/*tablename* |Obter todos os registros na tabela. |
 | GET /tables/*tablename*/:id |Obter um registro específico na tabela. |
@@ -340,7 +340,7 @@ Os Aplicativos Móveis leem um arquivo JavaScript chamado *azureMobile.js* no si
 
 O arquivo azureMobile.js deve exportar um objeto de configuração. As configurações mais comuns são:
 
-* Configurações de banco de dados
+* Configurações do banco de dados
 * Configurações de registro em log de diagnóstico
 * Configurações de CORS alternativas
 
@@ -370,15 +370,15 @@ Recomendamos que você adicione **azureMobile.js** ao arquivo **.gitignore** (ou
 
 A maioria das configurações no arquivo azureMobile.js tem uma Configuração do Aplicativo equivalente no [Portal do Azure]. Use a lista a seguir para configurar seu aplicativo nas **Configurações de Aplicativo**:
 
-| Configurações de aplicativo | Configuração azureMobile.js | DESCRIÇÃO | Valores válidos |
+| Configurações de aplicativo | Configuração azureMobile.js | Descrição | Valores válidos |
 |:--- |:--- |:--- |:--- |
-| **MS_MobileAppName** |Nome |Nome do aplicativo |cadeia de caracteres |
+| **MS_MobileAppName** |name |Nome do aplicativo |cadeia de caracteres |
 | **MS_MobileLoggingLevel** |logging.level |Nível de log mínimo das mensagens a serem registradas |erro, aviso, informações, detalhado, depuração, simples |
-| **MS_DebugMode** |depurar |Habilita ou desabilita o modo de depuração |verdadeiro, falso |
+| **MS_DebugMode** |depurar |Habilita ou desabilita o modo de depuração |true, false |
 | **MS_TableSchema** |data.schema |Nome do esquema padrão para tabelas SQL |cadeia de caracteres (padrão: dbo) |
-| **MS_DynamicSchema** |data.dynamicSchema |Habilita ou desabilita o modo de depuração |verdadeiro, falso |
-| **MS_DisableVersionHeader** |versão (definido como indefinido) |Desabilita o cabeçalho X-ZUMO-Server-Version |verdadeiro, falso |
-| **MS_SkipVersionCheck** |skipversioncheck |Desabilita a verificação de versão de API do cliente |verdadeiro, falso |
+| **MS_DynamicSchema** |data.dynamicSchema |Habilita ou desabilita o modo de depuração |true, false |
+| **MS_DisableVersionHeader** |versão (definido como indefinido) |Desabilita o cabeçalho X-ZUMO-Server-Version |true, false |
+| **MS_SkipVersionCheck** |skipversioncheck |Desabilita a verificação de versão de API do cliente |true, false |
 
 Para definir uma configuração de Aplicativo:
 
@@ -410,7 +410,7 @@ O uso do Banco de Dados SQL do Azure como armazenamento de dados é idêntico em
 
    c. Selecione um tipo de preço apropriado para o serviço. Selecione **Exibir tudo** para exibir mais opções de preço, como **Gratuito** e **Compartilhado**.
 
-   d. Clique no botão **Selecionar**.
+   d. Clique o **selecionar** botão.
 
    e. De volta ao painel do **Plano do Serviço de Aplicativo**, selecione **OK**.
 1. Selecione **Criar**.
@@ -891,7 +891,7 @@ api.get.access = 'authenticated';
 module.exports = api;
 ```
 
-## <a name="Debugging"></a>Depuração, Tabelas Fáceis e APIs Fáceis
+## <a name="Debugging"></a>Pura
 
 ### <a name="howto-diagnostic-logs"></a>Depurar, diagnosticar e solucionar problemas dos Aplicativos Móveis
 
@@ -903,47 +903,6 @@ Para a introdução em solução de problemas de back-end de Aplicativos Móveis
 * [Solucionar problemas de Serviço de Aplicativo do Azure no Visual Studio]
 
 Os aplicativos Node.js têm acesso a uma ampla gama de ferramentas de log de diagnóstico. Internamente, o SDK do Node.js dos Aplicativos Móveis usa o [Winston] para o registro em log de diagnóstico. O registro em log é habilitado automaticamente quando você habilita o modo de depuração ou define a configuração do aplicativo `MS_DebugMode` como verdadeiro no [Portal do Azure]. Logs gerados aparecem nos logs de diagnóstico no [Portal do Azure].
-
-### <a name="in-portal-editing"></a><a name="work-easy-tables"></a>Trabalhar com Tabelas Fáceis no Portal do Azure
-
-Você pode usar Tabelas Fáceis para criar e trabalhar com tabelas diretamente no portal. Você pode carregar o conjunto de dados para tabelas fáceis no formato CSV. Observe que você não pode usar nomes de propriedades (no conjunto de dados CSV) que estejam em conflito com nomes de propriedades do sistema de back-end de Aplicativos Móveis. Os nomes de propriedades do sistema são:
-* createdAt
-* updatedAt
-* deleted
-* version
-
-Você ainda pode editar operações de tabela usando Editor do Serviço de Aplicativo. Ao selecionar **Tabelas fáceis** em suas configurações de site de back-end, você poderá adicionar, modificar ou excluir uma tabela. Você também pode ver dados na tabela.
-
-![Trabalhar com Tabelas fáceis](./media/app-service-mobile-node-backend-how-to-use-server-sdk/mobile-apps-easy-tables.png)
-
-Os comandos a seguir estão disponíveis na barra de comandos de uma tabela:
-
-* **Alterar as permissões**: Modifique a permissão para operações de leitura, inserção, atualização e exclusão na tabela.
- As opções são permitir acesso anônimo, exigir autenticação ou desabilitar todo o acesso à operação.
-* **Editar Script**: O arquivo de script da tabela é aberto no Editor do Serviço de Aplicativo.
-* **Gerenciar o esquema**: Adicione ou exclua colunas ou altere o índice da tabela.
-* **Limpar tabela**: Truncar uma tabela existente excluindo todas as linhas de dados, mas deixando o esquema inalterado.
-* **Excluir linhas**: Excluir linhas individuais de dados.
-* **Exibir &Logs de Streaming**: Conectar ao serviço de log de streaming de seu site.
-
-### <a name="work-easy-apis"></a>Trabalhar com APIs fáceis no Portal do Azure
-
-É possível usar as APIs fáceis para criar e trabalhar com APIs personalizadas diretamente no portal. Você pode editar scripts de API usando o Editor do Serviço de Aplicativo.
-
-Ao selecionar **APIs fáceis** em suas configurações de site de back-end, você poderá adicionar, modificar ou excluir um ponto de extremidade de API.
-
-![Trabalhar com APIs fáceis](./media/app-service-mobile-node-backend-how-to-use-server-sdk/mobile-apps-easy-apis.png)
-
-No Portal, você pode alterar as permissões de acesso de uma determinada ação HTTP, editar o arquivo de script da API no Editor do Serviço de Aplicativo ou exibir os logs de streaming.
-
-### <a name="online-editor"></a>Editar o código no Editor do Serviço de Aplicativo
-
-Ao usar o Portal do Azure, você poderá editar seus arquivos de script de back-end do Node.js no Editor do Serviço de Aplicativo sem ter que baixar o projeto para seu computador local. Para editar arquivos de script no editor online:
-
-1. No painel para seu back-end de Aplicativos Móveis, selecione **Todas as configurações** > ou **Tabelas fáceis** ou **APIs fáceis**. Selecione uma tabela ou API e, em seguida, selecione **Editar script**. O arquivo de script é aberto no Editor do Serviço de Aplicativo.
-
-   ![Editor de Serviço de Aplicativo](./media/app-service-mobile-node-backend-how-to-use-server-sdk/mobile-apps-visual-studio-editor.png)
-1. Faça as alterações no arquivo de código no editor online. As alterações são salvas automaticamente enquanto você digita.
 
 <!-- Images -->
 [0]: ./media/app-service-mobile-node-backend-how-to-use-server-sdk/npm-init.png

@@ -4,12 +4,12 @@ ms.author: crdun
 ms.service: app-service-mobile
 ms.topic: include
 ms.date: 08/23/2018
-ms.openlocfilehash: c664b089f316255fabc4c8dc36b291d7d63e6280
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 675ad278cb8bdc0ced4eff3bd77572f44c9808fc
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67172423"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68857314"
 ---
 Nesta seção, você aprenderá a atualizar o código em seu projeto de back-end de Aplicativos Móveis para enviar uma notificação por push sempre que um novo item for adicionado. Esse processo é alimentado pelo recurso [modelo](../articles/notification-hubs/notification-hubs-templates-cross-platform-push-messages.md) dos Hubs de Notificações do Microsoft Azure, que permite pushes de plataforma cruzada. Os vários clientes são registrados para notificações por push usando modelos, e um único envio por push universal pode chegar a todas as plataformas clientes.
 
@@ -70,7 +70,7 @@ Escolha um dos procedimentos abaixo que corresponda ao seu tipo de projeto de ba
 
 ### <a name="nodejs"></a>Projeto de back-end do Node.js
 
-1. Se você ainda não fez isso, [baixe o projeto de back-end de início rápido](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#download-quickstart) ou, caso contrário, use o [editor online no portal do Azure](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#online-editor).
+1. Configure seu projeto de back-end.
 2. Substitua o código existente em todoitem.js pelo código a seguir:
 
     ```javascript

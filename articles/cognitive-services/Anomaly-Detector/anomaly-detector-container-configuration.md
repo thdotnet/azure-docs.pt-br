@@ -10,22 +10,22 @@ ms.subservice: anomaly-detector
 ms.topic: conceptual
 ms.date: 06/19/2019
 ms.author: dapine
-ms.openlocfilehash: 617a8fc823b7c40d047e5825dc31b095da132f29
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 886c93871a719770cbcbbcef2f536fd7515da34e
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68321442"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854211"
 ---
 # <a name="configure-anomaly-detector-containers"></a>Configurar contêineres de detector de anomalias
 
 O ambiente de tempo de execução de contêiner do **detector** de `docker run` anomalias é configurado usando os argumentos de comando. Esse contêiner tem várias configurações obrigatórias e outras configurações opcionais. Há vários [exemplos](#example-docker-run-commands) do comando disponíveis. As configurações específicas do contêiner são as configurações de cobrança. 
 
-# <a name="configuration-settings"></a>Definições de configuração
+# <a name="configuration-settings"></a>Parâmetros de configuração
 
 Esse contêiner tem as seguintes configurações:
 
-|Obrigatório|Configuração|Finalidade|
+|Necessário|Configuração|Finalidade|
 |--|--|--|
 |Sim|[ApiKey](#apikey-configuration-setting)|Usado para rastrear informações de cobrança.|
 |Não|[ApplicationInsights](#applicationinsights-setting)|Permite que você adicione suporte a dados telemétricos do [Azure Application Insights](https://docs.microsoft.com/azure/application-insights) para seu contêiner.|
@@ -59,9 +59,9 @@ Essa configuração pode ser localizada no seguinte local:
 
 * Portal do Azure: **Detector de anomalias** Visão geral, rotulada`Endpoint`
 
-|Obrigatório| NOME | Tipo de dados | DESCRIÇÃO |
+|Necessário| Nome | Tipo de dados | Descrição |
 |--|------|-----------|-------------|
-|Sim| `Billing` | Cadeia de caracteres | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westus2.api.cognitive.microsoft.com` |
+|Sim| `Billing` | Cadeia | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westus2.api.cognitive.microsoft.com` |
 
 ## <a name="eula-setting"></a>Configuração de EULA
 
@@ -88,10 +88,10 @@ Os contêineres do detector de anomalias não usam montagens de entrada ou saíd
 
 A sintaxe exata do local da montagem do host varia de acordo com o sistema operacional do host. Além disso, a localização de montagem do [computador host](anomaly-detector-container-howto.md#the-host-computer) pode não estar acessível devido a um conflito entre as permissões usadas pela conta de serviço do Docker e as permissões da localização de montagem do host. 
 
-|Opcional| Nome | Tipo de dados | DESCRIÇÃO |
+|Opcional| Nome | Tipo de dados | Descrição |
 |-------|------|-----------|-------------|
-|Não permitido| `Input` | Cadeia de caracteres | Os contêineres do detector de anomalias não usam isso.|
-|Opcional| `Output` | Cadeia de caracteres | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Não permitido| `Input` | Cadeia | Os contêineres do detector de anomalias não usam isso.|
+|Opcional| `Output` | Cadeia | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Comandos docker run de exemplo 
 
@@ -102,7 +102,7 @@ Os exemplos a seguir usam as definições de configuração para ilustrar como e
 
 Substitua o valor entre colchetes `{}`,, com seus próprios valores:
 
-| Placeholder | Valor | Formato ou exemplo |
+| Espaço reservado | Valor | Formato ou exemplo |
 |-------------|-------|---|
 |{API_KEY} | A chave do ponto de extremidade do recurso de detector de anomalias. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
 |{ENDPOINT_URI} | O valor de ponto de extremidade cobrança, incluindo a região.|`https://westus2.api.cognitive.microsoft.com`|
@@ -134,3 +134,8 @@ Os exemplos do Docker a seguir são para o contêiner do detector de anomalias.
   Billing={ENDPOINT_URI} ApiKey={API_KEY} \
   Logging:Console:LogLevel:Default=Information
   ```
+
+## <a name="next-steps"></a>Próximas etapas
+
+* [Implantar um contêiner de detector de anomalias nas instâncias de contêiner do Azure](how-to/deploy-anomaly-detection-on-container-instances.md)
+* [Saiba mais sobre o serviço de API do detector de anomalias](https://go.microsoft.com/fwlink/?linkid=2080698&clcid=0x409)

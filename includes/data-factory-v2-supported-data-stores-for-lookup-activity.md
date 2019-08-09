@@ -5,17 +5,17 @@ services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: include
-ms.date: 05/24/2019
+ms.date: 08/06/2019
 ms.author: jingwang
 ms.custom: include file
-ms.openlocfilehash: 2b250f9f722bb1992d72b0555207a64dbc2dd972
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1b7a44a0707a3680aff7d93354f616c5d8ee7cd4
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66271586"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68843130"
 ---
-| Categoria | Armazenamento de dados |
+| Categoria | Repositório de dados |
 |:--- |:--- |
 | **As tabelas** |[Armazenamento de Blobs do Azure](../articles/data-factory/connector-azure-blob-storage.md) |
 | &nbsp; |[Azure Cosmos DB (API do SQL)](../articles/data-factory/connector-azure-cosmos-db.md) |
@@ -27,7 +27,7 @@ ms.locfileid: "66271586"
 | &nbsp; |[Banco de Dados do Azure para PostgreSQL](../articles/data-factory/connector-azure-database-for-postgresql.md) |
 | &nbsp; |[Arquivos do Azure](../articles/data-factory/connector-azure-file-storage.md) |
 | &nbsp; |[Banco de Dados SQL do Azure](../articles/data-factory/connector-azure-sql-database.md) |
-| &nbsp; |[Instância Gerenciada do Banco de Dados SQL do Azure](../articles/data-factory/connector-azure-sql-database-managed-insance.md) |
+| &nbsp; |[Instância Gerenciada do Banco de Dados SQL do Azure](../articles/data-factory/connector-azure-sql-database-managed-instance.md) |
 | &nbsp; |[SQL Data Warehouse do Azure](../articles/data-factory/connector-azure-sql-data-warehouse.md) |
 | &nbsp; |[Armazenamento de Tabelas do Azure](../articles/data-factory/connector-azure-table-storage.md) |
 | **Banco de dados** |[Amazon Redshift](../articles/data-factory/connector-amazon-redshift.md) |
@@ -38,9 +38,9 @@ ms.locfileid: "66271586"
 | &nbsp; |[HBase](../articles/data-factory/connector-hbase.md) |
 | &nbsp; |[Hive](../articles/data-factory/connector-hive.md) |
 | &nbsp; |[Apache Impala (versão prévia)](../articles/data-factory/connector-impala.md) |
-| &nbsp; |[Informix](../articles/data-factory/connector-odbc.md#ibm-informix-source) 
+| &nbsp; |[Informix](../articles/data-factory/connector-informix.md) 
 | &nbsp; |[MariaDB](../articles/data-factory/connector-mariadb.md) |
-| &nbsp; |[Microsoft Access](../articles/data-factory/connector-odbc.md#microsoft-access-source) |
+| &nbsp; |[Microsoft Access](../articles/data-factory/connector-microsoft-access.md) |
 | &nbsp; |[MySQL](../articles/data-factory/connector-mysql.md) |
 | &nbsp; |[Netezza](../articles/data-factory/connector-netezza.md) |
 | &nbsp; |[Oracle](../articles/data-factory/connector-oracle.md) |
@@ -84,7 +84,7 @@ ms.locfileid: "66271586"
 | &nbsp; |[PayPal (versão prévia)](../articles/data-factory/connector-paypal.md) |
 | &nbsp; |[QuickBooks (versão prévia)](../articles/data-factory/connector-quickbooks.md) |
 | &nbsp; |[Salesforce](../articles/data-factory/connector-salesforce.md) |
-| &nbsp; |[Nuvem de serviço Salesforce](../articles/data-factory/connector-salesforce.md) |
+| &nbsp; |[Nuvem de serviço Salesforce](../articles/data-factory/connector-salesforce-service-cloud.md) |
 | &nbsp; |[Nuvem de Marketing Salesforce (versão prévia)](../articles/data-factory/connector-salesforce-marketing-cloud.md) |
 | &nbsp; |[SAP Cloud for Customer (C4C)](../articles/data-factory/connector-sap-cloud-for-customer.md) |
 | &nbsp; |[SAP ECC](../articles/data-factory/connector-sap-ecc.md) |

@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: edc0da77fc1c2813c2485fca18d50952e3060db8
-ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
+ms.openlocfilehash: f7cd0125de886eed4b3e5c31503fdd4b7cbb76dd
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68370477"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68847813"
 ---
 # <a name="log-metrics-during-training-runs-in-azure-machine-learning"></a>Métricas de log durante execuções de treinamento no Azure Machine Learning
 
@@ -49,7 +49,7 @@ Se você quiser acompanhar ou monitorar seu experimento, deverá adicionar códi
 ## <a name="set-up-the-workspace"></a>Configurar o workspace
 Antes de adicionar o registro em log e enviar um experimento, você deve configurar o workspace.
 
-1. Carregar o workspace. Para saber mais sobre como definir a configuração do espaço de trabalho, siga as etapas em [criar um Azure Machine Learning espaço de trabalho de serviço](setup-create-workspace.md#sdk).
+1. Carregar o workspace. Para saber mais sobre como definir a configuração do espaço de trabalho, consulte [arquivo de configuração do espaço de trabalho](how-to-configure-environment.md#workspace).
 
    ```python
    from azureml.core import Experiment, Run, Workspace
@@ -58,7 +58,7 @@ Antes de adicionar o registro em log e enviar um experimento, você deve configu
    ws = Workspace.from_config()
    ```
   
-## <a name="option-1-use-startlogging"></a>Opção 1: Usar o start_logging
+## <a name="option-1-use-start_logging"></a>Opção 1: Usar o start_logging
 
 **start_logging** cria uma execução interativa para uso em cenários como blocos de anotações. Qualquer métrica registrada em log durante a sessão é adicionada ao registro de execução no experimento.
 

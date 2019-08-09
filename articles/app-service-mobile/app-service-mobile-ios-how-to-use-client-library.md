@@ -13,27 +13,27 @@ ms.devlang: objective-c
 ms.topic: article
 ms.date: 06/25/2019
 ms.author: emalani
-ms.openlocfilehash: 38d992e55a8e1f0a057a96f3e13c93c9dbd0c4a9
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 898bf082874a1e9bf26dd094a6a0fe55417c9d8e
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67440379"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68851072"
 ---
 # <a name="how-to-use-ios-client-library-for-azure-mobile-apps"></a>Como usar a Biblioteca de Cliente iOS para os Aplicativos Móveis do Azure
 
 [!INCLUDE [app-service-mobile-selector-client-library](../../includes/app-service-mobile-selector-client-library.md)]
 
 > [!NOTE]
-> Visual Studio App Center está investindo em novos e integrados serviços essenciais para o desenvolvimento de aplicativos móveis. Os desenvolvedores podem usar **construir**, **teste** e **distribuir** services para configurar o pipeline de integração contínua e entrega. Depois que o aplicativo é implantado, os desenvolvedores podem monitorar o status e o uso do seu aplicativo usando o **Analytics** e **diagnóstico** serviços e entre em contato com usuários usando o **enviar por Push** serviço. Os desenvolvedores também podem aproveitar **Auth** autenticar seus usuários e **dados** serviço para manter e sincronizar dados do aplicativo na nuvem. Fazer check-out [App Center](https://appcenter.ms/?utm_source=zumo&utm_campaign=/app-service-mobile-ios-how-to-use-client-library) hoje mesmo.
+> Visual Studio App Center está investindo em serviços novos e integrados central para o desenvolvimento de aplicativos móveis. Os desenvolvedores podem usar **Compilar**, **testar** e **distribuir** serviços para configurar o pipeline de integração e entrega contínua. Depois que o aplicativo é implantado, os desenvolvedores podem monitorar o status e o uso de seus aplicativos usando os serviços de **análise** e **diagnóstico** e se envolver com os usuários usando o serviço de **envio por push** . Os desenvolvedores também podem aproveitar a **autenticação** para autenticar seus usuários e o serviço de **dados** para manter e sincronizar dados de aplicativos na nuvem. Confira [app Center](https://appcenter.ms/?utm_source=zumo&utm_campaign=/app-service-mobile-ios-how-to-use-client-library) hoje.
 >
 
-## <a name="overview"></a>Visão Geral
-Este guia ensina a executar cenários comuns usando a versão mais recente [SDK do iOS de aplicativos móveis do Azure][1]. Se você for novo nos Aplicativos Móveis do Azure, primeiro conclua o [Início Rápido dos Aplicativos Móveis do Azure] para criar um back-end, criar uma tabela e baixar um projeto Xcode iOS pré-criado. Neste guia, abordaremos o SDK para iOS do lado do cliente. Para saber mais sobre o SDK do lado do servidor para o back-end, confira os TUTORIAIS do SDK do Servidor.
+## <a name="overview"></a>Visão geral
+Este guia ensina a executar cenários comuns usando o SDK do [Ios dos aplicativos móveis do Azure][1]mais recentes. Se você for novo nos Aplicativos Móveis do Azure, primeiro conclua o [Início Rápido dos Aplicativos Móveis do Azure] para criar um back-end, criar uma tabela e baixar um projeto Xcode iOS pré-criado. Neste guia, abordaremos o SDK para iOS do lado do cliente. Para saber mais sobre o SDK do lado do servidor para o back-end, confira os TUTORIAIS do SDK do Servidor.
 
 ## <a name="reference-documentation"></a>Documentação de referência
 
-A documentação de referência para SDK do cliente para iOS está localizada aqui: [Referência de cliente iOS no Azure aplicativos móveis][2].
+A documentação de referência para SDK do cliente para iOS está localizada aqui: [Referência de cliente Ios dos aplicativos móveis do Azure][2].
 
 ## <a name="supported-platforms"></a>Plataformas com suporte
 
@@ -438,9 +438,9 @@ No mínimo, o atributo `id` deve ser definido quando você faz exclusões.
 
 ## <a name="customapi"></a>Como: Chamar à API personalizada
 
-Com uma API personalizada, você pode expor qualquer funcionalidade de back-end. Ele não precisa mapear para uma operação de tabela. Não só você obtém mais controle sobre mensagens, mas pode até mesmo ler/definir os cabeçalhos e alterar o formato do corpo da resposta. Para saber como criar uma API personalizada no back-end, leia [APIs personalizadas](app-service-mobile-node-backend-how-to-use-server-sdk.md#work-easy-apis)
+Com uma API personalizada, você pode expor qualquer funcionalidade de back-end. Ele não precisa mapear para uma operação de tabela. Não só você obtém mais controle sobre mensagens, mas pode até mesmo ler/definir os cabeçalhos e alterar o formato do corpo da resposta.
 
-Para chamar uma API personalizada, chame `MSClient.invokeAPI`. O conteúdo de solicitação e resposta de conteúdo é tratado como JSON. Para usar outros tipos de mídia [usar outra sobrecarga de `invokeAPI` ][5].  Para fazer uma solicitação `GET` em vez de uma solicitação `POST`, defina o parâmetro de `HTTPMethod` como `"GET"` e o parâmetro `body` como `nil` (já que as solicitações GET não têm corpos de mensagem). Se sua API personalizada dá suporte a outros verbos HTTP, altere o `HTTPMethod` adequadamente.
+Para chamar uma API personalizada, chame `MSClient.invokeAPI`. O conteúdo de solicitação e resposta de conteúdo é tratado como JSON. Para usar outros tipos de mídia, [use a outra sobrecarga `invokeAPI`do ][5].  Para fazer uma solicitação `GET` em vez de uma solicitação `POST`, defina o parâmetro de `HTTPMethod` como `"GET"` e o parâmetro `body` como `nil` (já que as solicitações GET não têm corpos de mensagem). Se sua API personalizada dá suporte a outros verbos HTTP, altere o `HTTPMethod` adequadamente.
 
 **Objective-C**:
 
@@ -515,13 +515,13 @@ NSDictionary *iOSTemplate = @{ @"templateName": @{ @"body": @{ @"aps": @{ @"aler
 let iOSTemplate = ["templateName": ["body": ["aps": ["alert": "$(message)"]]]]
 ```
 
-Todas as marcações são eliminadas da solicitação de segurança.  Para adicionar marcas a instalações ou modelos dentro de instalações, consulte [Trabalhar com o SDK do servidor de back-end do .NET para Aplicativos Móveis do Azure][4].  Para enviar notificações usando esses modelos registrados, trabalhe com [APIs de Hubs de notificação][3].
+Todas as marcações são eliminadas da solicitação de segurança.  Para adicionar marcas a instalações ou modelos dentro de instalações, consulte [Trabalhar com o SDK do servidor de back-end do .NET para Aplicativos Móveis do Azure][4].  Para enviar notificações usando esses modelos registrados, trabalhe com [APIs de hubs de notificação][3].
 
 ## <a name="errors"></a>Como: Tratar erros
 
 Quando você chama um back-end móvel do Serviço de Aplicativo do Azure, o bloco de conclusão contém um parâmetro `NSError` . Quando ocorre um erro, esse parâmetro é não nulo. No seu código, você deve marcar esse parâmetro e tratar o erro conforme necessário, conforme demonstrado nos snippets de código anteriores.
 
-O arquivo [ `<WindowsAzureMobileServices/MSError.h>` ][6] define as constantes `MSErrorResponseKey`, `MSErrorRequestKey`, e `MSErrorServerItemKey`. Para obter mais dados relacionados ao erro:
+O arquivo [`<WindowsAzureMobileServices/MSError.h>`][6] define as constantes `MSErrorResponseKey`, `MSErrorRequestKey`e `MSErrorServerItemKey`. Para obter mais dados relacionados ao erro:
 
 **Objective-C**:
 
@@ -553,7 +553,7 @@ if (error.code == MSErrorPreconditionFailed) {
 
 Você pode usar a ADAL (Biblioteca de autenticação do Active Directory) para conectar os usuários ao seu aplicativo usando o Active Directory do Azure. É melhor usar a autenticação de fluxo de cliente usando SDK do provedor de identidade do que usar o método `loginWithProvider:completion:` .  Autenticação de fluxo de cliente fornece uma aparência mais nativa do UX e permite uma maior personalização.
 
-1. Configure o seu back-end de aplicativo móvel para entrada no AAD seguindo o tutorial [Como configurar o Serviço de Aplicativo para logon no Active Directory][7] . Complete a etapa opcional de registrar um aplicativo cliente nativo. Para iOS, recomendamos que o URI de redirecionamento tenha o formato `<app-scheme>://<bundle-id>`. Para obter mais informações, consulte o [início rápido da ADAL para iOS][8].
+1. Configure o seu back-end de aplicativo móvel para entrada no AAD seguindo o tutorial [Como configurar o Serviço de Aplicativo para logon no Active Directory][7] . Complete a etapa opcional de registrar um aplicativo cliente nativo. Para iOS, recomendamos que o URI de redirecionamento tenha o formato `<app-scheme>://<bundle-id>`. Para obter mais informações, consulte o guia de [início rápido do IOS para Adal][8].
 2. Instale o ADAL usando o Cocoapods. Edite o Podfile para incluir a seguinte definição, substituindo **YOUR-PROJECT** pelo nome de seu projeto do Xcode:
 
         source 'https://github.com/CocoaPods/Specs.git'
@@ -640,8 +640,8 @@ func authenticate(parent: UIViewController, completion: (MSUser?, NSError?) -> V
 
 Você pode usar o SDK do Facebook para iOS para conectar os usuários ao seu aplicativo usando o Facebook.  É melhor usar a autenticação de fluxo de cliente do que usar o método `loginWithProvider:completion:` .  A autenticação do fluxo de cliente fornece uma aparência mais nativa de UX e permite uma maior personalização.
 
-1. Configurar seu back-end do aplicativo móvel para entrar no Facebook seguindo o [como configurar o serviço de aplicativo para logon do Facebook][9] tutorial.
-2. Instale o SDK do Facebook para iOS seguindo a [Facebook SDK para iOS - Introdução][10] documentação. Em vez de criar um aplicativo, você pode adicionar a plataforma do iOS ao seu registro existente.
+1. Configure seu back-end de aplicativo móvel para entrada no Facebook seguindo o tutorial [como configurar o serviço de aplicativo para logon no Facebook][9] .
+2. Instale o SDK do Facebook para iOS seguindo a documentação [do SDK do Facebook para IOS-introdução][10] . Em vez de criar um aplicativo, você pode adicionar a plataforma do iOS ao seu registro existente.
 3. A documentação do Facebook inclui algum código Objective-C no Representante do Aplicativo. Se você estiver usando **Swift**, poderá usar as seguintes conversões para AppDelegate.swift:
 
     ```swift

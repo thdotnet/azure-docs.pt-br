@@ -7,12 +7,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 08/05/2019
 ms.author: raynew
-ms.openlocfilehash: da68c0ae1dc92f5b854c30c90b93856248c43281
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 105cbf173a9abe1adf0999f63740d47b3da51a29
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68828342"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68856296"
 ---
 # <a name="support-matrix-for-hyper-v-assessment-and-migration"></a>Matriz de suporte para avaliação e migração do Hyper-V
 
@@ -27,9 +27,9 @@ A tabela resume os cenários com suporte para VMs do Hyper-V.
 **Implantação** | **Ver***
 --- | ---
 **Avaliar VMs do Hyper-V locais** | [Configure](tutorial-prepare-hyper-v.md) sua primeira avaliação.<br/><br/> [Execute](scale-hyper-v-assessment.md) uma avaliação em larga escala.
-**Migrar VMs do Hyper-V para o Azure** | [Experimente](tutorial-migrate-hyper-v.md) a migração para o Azure.
+**Migrar VMs do Hyper-V para o Azure** | [Experimente](tutorial-migrate-hyper-v.md) a migração para o Azure. 
 
-
+A migração de servidores Hyper-V gerenciados com o System Center Virtual Machine Manager (VMM) não tem suporte da migração de servidor de migrações para Azure. 
 
 ## <a name="azure-migrate-projects"></a>Projetos de migrações para Azure
 

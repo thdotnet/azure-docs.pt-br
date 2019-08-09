@@ -1,7 +1,6 @@
 ---
 title: Diretrizes de ajuste de desempenho do Hive do Azure Data Lake Storage Gen2 | Microsoft Docs
 description: Diretrizes de ajuste de desempenho do Hive do Azure Data Lake Storage Gen2
-services: storage
 author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
@@ -9,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: b44c615396fbd526efb687977d303facd5d5d607
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1290174fb87306b34be81ed7fa4fb5de3bfba43c
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64939426"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68847134"
 ---
 # <a name="performance-tuning-guidance-for-hive-on-hdinsight-and-azure-data-lake-storage-gen2"></a>Diretrizes de ajuste de desempenho do Hive no HDInsight e Azure Data Lake Storage Gen2
 
@@ -28,7 +27,7 @@ As configurações padrão foram definidas para fornecer bom desempenho em muito
 * **Execução do Hive no HDInsight**.  Para saber mais sobre como executar trabalhos de Hive no HDInsight, confira [Usar Hive no HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-use-hive)
 * **Diretrizes de ajuste de desempenho no Data Lake Storage Gen2**.  Para obter os conceitos gerais de desempenho, confira [Diretrizes de ajuste de desempenho do Data Lake Storage Gen2](data-lake-storage-performance-tuning-guidance.md)
 
-## <a name="parameters"></a>parâmetros
+## <a name="parameters"></a>Parâmetros
 
 Aqui estão as configurações mais importantes para melhorar o desempenho do Data Lake Storage Gen2:
 

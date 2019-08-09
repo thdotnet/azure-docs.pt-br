@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.topic: conceptual
 ms.date: 07/31/2019
 ms.custom: seodec18
-ms.openlocfilehash: efe5829ffbe4db304f9ffab0a259ab9d10279b27
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: d2f60b496594946e9175ecf5c1948b08c9065b1b
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68772702"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68848195"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Configurar um ambiente de desenvolvimento para Azure Machine Learning
 
@@ -40,7 +40,7 @@ Este artigo também fornece dicas de uso adicionais para as seguintes ferramenta
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Um workspace de serviço do Azure Machine Learning. Para criar o espaço de trabalho, consulte [criar um Azure Machine Learning espaço de trabalho de serviço](setup-create-workspace.md). Um espaço de trabalho é tudo o que você precisa para começar com seu próprio [servidor de bloco de anotações baseado em nuvem](#notebookvm), um [DSVM](#dsvm), um [Azure Databricks](#aml-databricks)ou um [Azure notebooks](#aznotebooks).
+Um workspace de serviço do Azure Machine Learning. Para criar o espaço de trabalho, consulte [criar um Azure Machine Learning espaço de trabalho de serviço](how-to-manage-workspace.md). Um espaço de trabalho é tudo o que você precisa para começar com seu próprio [servidor de bloco de anotações baseado em nuvem](#notebookvm), um [DSVM](#dsvm), um [Azure Databricks](#aml-databricks)ou um [Azure notebooks](#aznotebooks).
 
 Para instalar o ambiente do SDK do [computador local](#local), [Jupyter Notebook Server](#jupyter) ou [Visual Studio Code](#vscode) você também precisa:
 
@@ -377,7 +377,7 @@ Para usar esse arquivo de seu código, use `ws=Workspace.from_config()`. Esse c�
 
 É possível criar o arquivo de configuração de três maneiras:
 
-* **Siga as etapas em [criar um espaço de trabalho de serviço de Azure Machine Learning](setup-create-workspace.md#sdk)** : Um arquivo *config.json* é criado na biblioteca do Azure Notebooks. O arquivo contém as informações de configuração do workspace. É possível baixar ou copiar o *config.json* para outros ambientes de desenvolvimento.
+* **Use [WS. write_config](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)** : para gravar um arquivo *config. JSON* . O arquivo contém as informações de configuração do workspace. É possível baixar ou copiar o *config.json* para outros ambientes de desenvolvimento.
 
 * **Baixe o arquivo**: No [portal do Azure](https://ms.portal.azure.com), selecione **Baixar config.json** na seção **Visão geral** do seu espaço de trabalho.
 

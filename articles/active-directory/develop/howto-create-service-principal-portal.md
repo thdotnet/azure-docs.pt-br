@@ -14,14 +14,14 @@ ms.workload: na
 ms.date: 05/17/2019
 ms.author: ryanwi
 ms.reviewer: tomfitz
-ms.custom: aaddev, seoapril2019
+ms.custom: aaddev, seoapril2019, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 825966fbb0db537aad8de39e69e17418e6432b44
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: a28354f54978e8ba776d8b0da294652ff462a05f
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68324672"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68853447"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>Como: Usar o portal para criar um aplicativo e uma entidade de serviço do Microsoft Azure Active Directory que possa acessar recursos
 
@@ -78,11 +78,11 @@ Ao entrar de modo programático, você precisa passar a ID de locatário com a s
 1. Em **Registros de aplicativo** no Azure AD, selecione seu aplicativo.
 1. Copie a ID do diretório (locatário) e armazene-a no código do aplicativo.
 
-    ![Copie o diretório (ID do locatário) e armazene-o no código do aplicativo](./media/howto-create-service-principal-portal/copy-tenant-id.png)
+    ![Copiar o diretório (ID do locatário) e armazene-o no código do aplicativo](./media/howto-create-service-principal-portal/copy-tenant-id.png)
 
 1. Copie a **ID do aplicativo** e armazene-a no código do aplicativo.
 
-   ![Copiar a ID do aplicativo (cliente)](./media/howto-create-service-principal-portal/copy-app-id.png)
+   ![Copiar a ID (de cliente) do aplicativo](./media/howto-create-service-principal-portal/copy-app-id.png)
 
 ## <a name="certificates-and-secrets"></a>Certificados e segredos
 Os aplicativos daemon podem usar duas formas de credenciais para autenticar com o Azure AD: certificados e segredos do aplicativo.  É recomendável usar um certificado, mas você também pode criar um novo segredo do aplicativo.
@@ -93,7 +93,7 @@ Você pode usar um certificado existente se tiver um.  Opcionalmente, você pode
 
 Para carregar o certificado:
 
-1. Selecione **certificados & segredos**.
+1. Selecione **Certificados e segredos**.
 1. Selecione **carregar certificado** e selecione o certificado (um certificado existente ou o certificado autoassinado que você exportou).
 
     ![Selecione carregar certificado e selecione aquele que você deseja adicionar](./media/howto-create-service-principal-portal/upload-cert.png)
@@ -106,13 +106,13 @@ Depois de registrar o certificado com seu aplicativo no portal de registro de ap
 
 Se você optar por não usar um certificado, poderá criar um novo segredo do aplicativo.
 
-1. Selecione **certificados & segredos**.
-1. Selecione os **segredos do cliente-> novo segredo do cliente**.
-1. Forneça uma descrição do segredo e uma duração. Quando terminar, selecione **Adicionar**.
+1. Selecione **Certificados e segredos**.
+1. Selecione **Segredos do cliente > Novo segredo do cliente**.
+1. Forneça uma descrição do segredo e uma duração. Ao terminar, selecione **Adicionar**.
 
    Depois de salvar o segredo do cliente, o valor do segredo do cliente é exibido. Copie este valor, pois não é possível recuperar a chave posteriormente. Forneça o valor da chave com a ID do aplicativo para fazer logon como o aplicativo. Armazene o valor da chave onde seu aplicativo possa recuperá-lo.
 
-   ![Copiar o valor secreto porque você não pode recuperá-lo mais tarde](./media/howto-create-service-principal-portal/copy-secret.png)
+   ![Copiar o valor do segredo porque você não pode recuperá-lo mais tarde](./media/howto-create-service-principal-portal/copy-secret.png)
 
 ## <a name="required-permissions"></a>Permissões necessárias
 

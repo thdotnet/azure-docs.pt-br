@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 05/03/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: d03d4bd86367aa29bbf93062f7cc03f57f4cad83
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: cd97b50dbfded314cbf37f53a33955a51d36469f
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67075970"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68846225"
 ---
 # <a name="automated-backup-v2-for-azure-virtual-machines-resource-manager"></a>Backup Automatizado v2 para Máquinas Virtuais do Azure (Resource Manager)
 
@@ -52,7 +52,7 @@ Para usar o Backup Automatizado v2, examine os seguintes pré-requisitos:
 
 - Os bancos de dados de destino devem usar o modelo de recuperação completa. Para obter mais informações sobre o impacto do modelo de recuperação completa em backups, consulte [Backup com o modelo de recuperação completa](https://technet.microsoft.com/library/ms190217.aspx).
 - Os bancos de dados do sistema não precisam usar o modelo de recuperação completa. No entanto, se você precisar que os backups de log sejam considerados para o Modelo ou MSDB, será necessário usar o modelo de recuperação completa.
-- Bancos de dados de destino devem estar em qualquer um da padrão instância do SQL Server, ou um [corretamente instalado](virtual-machines-windows-sql-server-iaas-faq.md#administration) instância nomeada. 
+- Os bancos de dados de destino devem estar na instância de SQL Server padrão ou em uma instância nomeada [corretamente instalada](virtual-machines-windows-sql-server-iaas-faq.md#administration) . 
 
 > [!NOTE]
 > O Backup Automatizado conta com a **Extensão do agente IaaS do SQL Server**. As imagens atuais da galeria da máquina virtual do SQL adicionam essa extensão por padrão. Para obter mais informações, consulte [Extensão do agente IaaS do SQL Server](virtual-machines-windows-sql-server-agent-extension.md).
@@ -62,17 +62,17 @@ A tabela a seguir descreve as opções que podem ser configuradas para o Backup 
 
 ### <a name="basic-settings"></a>Configurações Básicas
 
-| Configuração | Intervalo (Padrão) | DESCRIÇÃO |
+| Configuração | Intervalo (Padrão) | Descrição |
 | --- | --- | --- |
 | **Backup Automatizado** | Habilitar/desabilitar (Desabilitado) | Habilita ou desabilita o Backup Automatizado para uma VM do Azure em execução no SQL Server 2016/2017 Developer, Standard ou Enterprise. |
 | **Período de retenção** | Um a 30 dias (30 dias) | O número de dias para manter os backups. |
 | **Conta de armazenamento** | Conta de Armazenamento do Azure | Uma conta de armazenamento do Azure a ser usada para armazenar arquivos de Backup Automatizado no armazenamento de blobs. Um contêiner é criado neste local para armazenar todos os arquivos de backup. A convenção de nomenclatura do arquivo de backup inclui a data, a hora e o GUID do banco de dados. |
-| **Criptografia** |Habilitar/desabilitar (Desabilitado) | Habilita ou desabilita a criptografia. Quando a criptografia está habilitada, os certificados usados para restaurar o backup ficam na conta de armazenamento especificada. Ele usa as mesmas **backup automático** contêiner com a mesma convenção de nomenclatura. Se a senha for alterada, um novo certificado será gerado com essa senha, mas o certificado antigo permanece para restaurar backups anteriores. |
+| **Criptografia** |Habilitar/desabilitar (Desabilitado) | Habilita ou desabilita a criptografia. Quando a criptografia está habilitada, os certificados usados para restaurar o backup ficam na conta de armazenamento especificada. Ele usa o mesmo contêiner de **backup automático** com a mesma convenção de nomenclatura. Se a senha for alterada, um novo certificado será gerado com essa senha, mas o certificado antigo permanece para restaurar backups anteriores. |
 | **Senha** |Texto da senha | Uma senha para as chaves de criptografia. A senha só é necessária quando a criptografia está habilitada. Para restaurar um backup criptografado, você deverá ter a senha correta e o certificado relacionado que foi usado no momento em que o backup foi feito. |
 
 ### <a name="advanced-settings"></a>Configurações avançadas
 
-| Configuração | Intervalo (Padrão) | DESCRIÇÃO |
+| Configuração | Intervalo (Padrão) | Descrição |
 | --- | --- | --- |
 | **Backups de Banco de Dados do Sistema** | Habilitar/desabilitar (Desabilitado) | Quando habilitado, esse recurso também faz backup dos bancos de dados do sistema: Mestre, MSDB e Modelo. Para os bancos de dados Modelo e MSDB, verifique se eles estão no modo de recuperação completa se desejar que os backups de log sejam executados. Os backups de log nunca são feitos para o Mestre. E não é feito nenhum backup para o TempDB. |
 | **Agendamento de Backup** | Manual/Automatizado (Automatizado) | Por padrão, o agendamento de backup é automaticamente determinado com base no crescimento do log. O agendamento de backup manual permite que o usuário especifique a janela de tempo para backups. Nesse caso, os backups ocorrem apenas na frequência especificada e durante a janela de tempo especificada de determinado dia. |
@@ -127,7 +127,7 @@ Em seguida, na terça-feira às 22h, por seis horas, os backups completos de tod
 
 Use o portal do Azure para configurar o Backup Automatizado v2 ao criar uma nova Máquina Virtual do SQL Server 2016 ou 2017 no modelo de implantação do Azure Resource Manager.
 
-No **configurações do SQL Server** guia, selecione **habilitar** sob **backup automatizado**. A captura de tela do portal do Azure a seguir mostra as configurações do **Backup Automatizado do SQL**.
+Na guia **configurações de SQL Server** , selecione **habilitar** em **backup automatizado**. A captura de tela do portal do Azure a seguir mostra as configurações do **Backup Automatizado do SQL**.
 
 ![Configuração de Backup Automatizado do SQL no portal do Azure](./media/virtual-machines-windows-sql-automated-backup-v2/automated-backup-blade.png)
 
@@ -138,12 +138,12 @@ No **configurações do SQL Server** guia, selecione **habilitar** sob **backup 
 
 [!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
 
-Para máquinas virtuais do SQL Server existentes, navegue até a [recurso de máquinas virtuais do SQL](virtual-machines-windows-sql-manage-portal.md#access-sql-virtual-machine-resource) e, em seguida, selecione **Backups** para configurar seus backups automatizados.
+Para máquinas virtuais SQL Server existentes, navegue até o [recurso de máquinas virtuais do SQL](virtual-machines-windows-sql-manage-portal.md#access-the-sql-virtual-machines-resource) e , em seguida, selecione backups para configurar os backups automatizados.
 
 ![Backup Automatizado do SQL para VMs existentes](./media/virtual-machines-windows-sql-automated-backup-v2/sql-server-configuration.png)
 
 
-Quando terminar, clique o **Apply** botão na parte inferior da **Backups** página de configurações para salvar suas alterações.
+Quando terminar, clique no botão **aplicar** na parte inferior da página Configurações de **backups** para salvar as alterações.
 
 Se você for habilitar o Backup Automatizado pela primeira vez, o Azure configurará o Agente IaaS do SQL Server em segundo plano. Durante esse tempo, o portal do Azure pode não mostrar que o Backup Automatizado está configurado. Aguarde alguns minutos para que o agente seja instalado e configurado. Depois disso, o portal do Azure refletirá as novas configurações.
 
@@ -316,11 +316,11 @@ Set-AzVMSqlServerExtension -AutoBackupSettings $autobackupconfig `
     -VMName $vmname -ResourceGroupName $resourcegroupname
 ```
 
-## <a name="monitoring"></a>Monitoramento
+## <a name="monitoring"></a>Monitorando
 
 Para monitorar o Backup Automatizado no SQL Server 2016/2017, há duas opções principais. Como o Backup Automatizado usa o recurso de Backup gerenciado do SQL Server, as mesmas técnicas de monitoramentos se aplicam a ambos.
 
-Primeiro, é possível pesquisar o status chamando [msdb.managed_backup.sp_get_backup_diagnostics](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/managed-backup-sp-get-backup-diagnostics-transact-sql). Ou consultar a [msdb.managed_backup.fn_get_health_status](https://docs.microsoft.com/sql/relational-databases/system-functions/managed-backup-fn-get-health-status-transact-sql) função com valor de tabela.
+Primeiro, é possível pesquisar o status chamando [msdb.managed_backup.sp_get_backup_diagnostics](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/managed-backup-sp-get-backup-diagnostics-transact-sql). Ou consulte a função com valor de tabela [msdb. managed_backup. fn_get_health_status](https://docs.microsoft.com/sql/relational-databases/system-functions/managed-backup-fn-get-health-status-transact-sql) .
 
 Outra opção é aproveitar o recurso integrado Database Mail para notificações.
 

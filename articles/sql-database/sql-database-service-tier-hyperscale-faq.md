@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/06/2019
-ms.openlocfilehash: 70ba6c5507cf31732d679a61c3e185a520b4c5f3
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 94894126be98f0d3d4d404d97d0a4a39fff2e665
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68566672"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68847402"
 ---
 # <a name="faq-about-azure-sql-hyperscale-databases"></a>Perguntas frequentes sobre bancos de dados SQL do Azure da Hiperescala
 
@@ -44,7 +44,7 @@ As camadas de serviço baseadas em vCore são basicamente diferenciadas com base
 - A camada de serviço Business Critical é apropriada para cargas de trabalho de negócios em que a latência de I/O é uma prioridade.
 
 | | Tipo de recurso | Uso Geral |  Hiperescala | Essencial Para os Negócios |
-|:---|:---:|:---:|:---:|:---:|:---:|
+|:---:|:---:|:---:|:---:|:---:|
 | **Mais adequado para** |Todas|  A maioria das cargas de trabalho comerciais. Oferece opções equilibradas de computação e armazenamento orientadas ao orçamento. | Aplicativos de dados com grandes requisitos de capacidade de dados e a capacidade de dimensionar e armazenar em escala automática os recursos de computação. | Aplicativos OLTP com alta taxa de transação e menor I/O de latência. Oferece maior resiliência a falhas usando várias réplicas isoladas.|
 |  **Tipo de recurso** ||Banco de dados único / Elástico pool / instância gerenciada | Banco de dados individual | Banco de dados único / Elástico pool / instância gerenciada |
 | **Tamanho da computação**|Banco de dados único / Elástico pool * | 1 a 80 vCores | 1 a 80 vCores * | 1 a 80 vCores |
@@ -55,7 +55,7 @@ As camadas de serviço baseadas em vCore são basicamente diferenciadas com base
 | **Taxa de transferência de e/s** | Banco de dados único ** | 500 IOPS por vCore com máximo de 7.000 IOPS | O hiperscale é uma arquitetura de várias camadas com cache em vários níveis. O IOPs efetivo dependerá da carga de trabalho. | 5000 IOPS com 200.000 IOPS máximo|
 | | Instância gerenciada | Depende do tamanho do arquivo | N/D | Instância Gerenciada: Depende do tamanho do arquivo|
 |**Disponibilidade**|Todas|1 réplica, sem escala de leitura, sem cache local | Múltiplas réplicas, até 15 cache local parcial em escala de leitura | 3 réplicas, 1 HA de escala de leitura, com redundância de zona, cache local completo |
-|**Backups**|Todas|RA-GRS, 7-35 dias (7 dias por padrão)| RA-GRS, 7-35 dias (7 dias por padrão), tempo constante de recuperação pontual (PITR) | RA-GRS, 7-35 dias (7 dias por padrão) |
+|**Backups**|Todas|RA-GRS, 7-35 dias (7 dias por padrão)| RA-GRS, 7 dias, tempo constante de recuperação point-in-time (PITR) | RA-GRS, 7-35 dias (7 dias por padrão) |
 
 \* Pools Elásticos não tem suportados na camada de serviço em Hiperescala
 

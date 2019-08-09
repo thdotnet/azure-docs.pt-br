@@ -4,12 +4,12 @@ ms.author: crdun
 ms.service: app-service-mobile
 ms.topic: include
 ms.date: 08/23/2018
-ms.openlocfilehash: d1dcd7895025ea608e5f6c4db5e0967817934f2a
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 3c6147cc24f285fc32dce145e594f743c9633c20
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67172435"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68857316"
 ---
 Use o procedimento abaixo, que corresponde ao seu tipo de projeto de back-end&mdash;, um [back-end .NET](#dotnet) ou um [back-end Node.js](#nodejs).
 
@@ -69,7 +69,7 @@ Use o procedimento abaixo, que corresponde ao seu tipo de projeto de back-end&md
 
 ### <a name="nodejs"></a>Projeto de back-end do Node.js
 
-1. Se você ainda não fez isso, [baixe o projeto de início rápido](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#download-quickstart) ou, caso contrário, use o [editor online no Portal do Azure](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#online-editor).
+1. Configure seu projeto de back-end.
 2. Substitua o código existente no arquivo todoitem.js pelo código a seguir:
 
     ```javascript

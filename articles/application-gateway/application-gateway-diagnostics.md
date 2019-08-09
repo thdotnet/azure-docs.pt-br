@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 3/28/2019
 ms.author: victorh
-ms.openlocfilehash: 39317c0448168bc2ed8fdd0455a210254887d496
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: 3acae8f7d34bb02905e6e8d479b7de5ccab1bb7a
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67655398"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68850994"
 ---
 # <a name="back-end-health-diagnostic-logs-and-metrics-for-application-gateway"></a>Integridade do back-end, logs de diagnóstico e métricas do Gateway de Aplicativo
 
@@ -131,7 +131,7 @@ O log de atividade é habilitado automaticamente para todos os recursos do Resou
 
 ### <a name="enable-logging-through-the-azure-portal"></a>Habilitar o log por meio do portal do Azure
 
-1. No portal do Azure, localize seu recurso e selecione **configurações de diagnóstico**.
+1. No portal do Azure, localize o recurso e selecione **configurações de diagnóstico**.
 
    Para o Gateway de Aplicativo, três logs estão disponíveis:
 
@@ -139,7 +139,7 @@ O log de atividade é habilitado automaticamente para todos os recursos do Resou
    * Log de desempenho
    * Log de firewall
 
-2. Para iniciar a coleta de dados, selecione **ativar o diagnóstico**.
+2. Para começar a coletar dados, selecione **Ativar diagnóstico**.
 
    ![Ativando o diagnóstico][1]
 
@@ -155,9 +155,9 @@ O Azure gera o log de atividades por padrão. Os logs são preservados por 90 di
 
 ### <a name="access-log"></a>Log de acesso
 
-O log de acesso é gerado apenas se você o habilitou em cada instância do Gateway de Aplicativo, conforme detalhado nas etapas anteriores. Os dados são armazenados na conta de armazenamento especificada quando o log foi habilitado. Cada acesso do Gateway de aplicativo é registrado no formato JSON, conforme mostrado no exemplo a seguir para v1:
+O log de acesso é gerado apenas se você o habilitou em cada instância do Gateway de Aplicativo, conforme detalhado nas etapas anteriores. Os dados são armazenados na conta de armazenamento especificada quando o log foi habilitado. Cada acesso do gateway de aplicativo é registrado no formato JSON, conforme mostrado no exemplo a seguir para V1:
 
-|Valor  |DESCRIÇÃO  |
+|Valor  |Descrição  |
 |---------|---------|
 |instanceId     | Instância do Gateway de Aplicativo que atendeu à solicitação.        |
 |clientIP     | IP de origem da solicitação.        |
@@ -172,52 +172,8 @@ O log de acesso é gerado apenas se você o habilitou em cada instância do Gate
 |sentBytes| Tamanho do pacote enviado, em bytes.|
 |timeTaken| Duração (em milissegundos) necessária para que uma solicitação seja processada e sua resposta seja enviada. Isso é calculado como o intervalo a partir da hora em que o Gateway de Aplicativo recebe o primeiro byte de uma solicitação HTTP até a hora em que a operação de envio de resposta é concluída. É importante observar que o campo Time-Taken geralmente inclui a hora em que os pacotes de solicitação e resposta são transmitidos pela rede. |
 |sslEnabled| Indica se a comunicação com os pools de back-end usou o SSL. Os valores válidos são ativado e desativado.|
-```json
-{
-    "resourceId": "/SUBSCRIPTIONS/{subscriptionId}/RESOURCEGROUPS/PEERINGTEST/PROVIDERS/MICROSOFT.NETWORK/APPLICATIONGATEWAYS/{applicationGatewayName}",
-    "operationName": "ApplicationGatewayAccess",
-    "time": "2017-04-26T19:27:38Z",
-    "category": "ApplicationGatewayAccessLog",
-    "properties": {
-        "instanceId": "ApplicationGatewayRole_IN_0",
-        "clientIP": "191.96.249.97",
-        "clientPort": 46886,
-        "httpMethod": "GET",
-        "requestUri": "/phpmyadmin/scripts/setup.php",
-        "requestQuery": "X-AzureApplicationGateway-CACHE-HIT=0&SERVER-ROUTED=10.4.0.4&X-AzureApplicationGateway-LOG-ID=874f1f0f-6807-41c9-b7bc-f3cfa74aa0b1&SERVER-STATUS=404",
-        "userAgent": "-",
-        "httpStatus": 404,
-        "httpVersion": "HTTP/1.0",
-        "receivedBytes": 65,
-        "sentBytes": 553,
-        "timeTaken": 205,
-        "sslEnabled": "off"
-    }
-}
-```
-Para o Gateway de aplicativo e WAF v2, os logs de mostram mais algumas informações:
-
-|Valor  |DESCRIÇÃO  |
-|---------|---------|
-|instanceId     | Instância do Gateway de Aplicativo que atendeu à solicitação.        |
-|clientIP     | IP de origem da solicitação.        |
-|clientPort     | Porta de origem da solicitação.       |
-|httpMethod     | Método HTTP usado pela solicitação.       |
-|requestUri     | URI da solicitação recebida.        |
-|RequestQuery     | **Server-Routed**: Instância do pool de back-end que recebeu a solicitação.</br>**X-AzureApplicationGateway-LOG-ID**: ID de correlação usado para a solicitação. Ela pode ser usada para solucionar problemas de tráfego nos servidores back-end. </br>**SERVER-STATUS**: Código de resposta HTTP que o Gateway de Aplicativo recebeu do back-end.       |
-|UserAgent     | Agente do usuário do cabeçalho da solicitação HTTP.        |
-|httpStatus     | Código de status HTTP retornado ao cliente do Gateway de Aplicativo.       |
-|httpVersion     | Versão HTTP da solicitação.        |
-|receivedBytes     | Tamanho do pacote recebido, em bytes.        |
-|sentBytes| Tamanho do pacote enviado, em bytes.|
-|timeTaken| Duração (em milissegundos) necessária para que uma solicitação seja processada e sua resposta seja enviada. Isso é calculado como o intervalo a partir da hora em que o Gateway de Aplicativo recebe o primeiro byte de uma solicitação HTTP até a hora em que a operação de envio de resposta é concluída. É importante observar que o campo Time-Taken geralmente inclui a hora em que os pacotes de solicitação e resposta são transmitidos pela rede. |
-|sslEnabled| Indica se a comunicação com os pools de back-end usou o SSL. Os valores válidos são ativado e desativado.|
-|sslCipher| Pacote de criptografia que está sendo usado para comunicação SSL (se o SSL estiver habilitado).|
-|sslProtocol| Protocolo SSL que está sendo usado (se o SSL estiver habilitado).|
-|serverRouted| O servidor de back-end esse gateway de aplicativo roteia a solicitação.|
-|serverStatus| Código de status HTTP do servidor back-end.|
-|serverResponseLatency| Latência da resposta do servidor de back-end.|
-|host| Endereço listado no cabeçalho do host da solicitação.|
+|host| O nome do host com o qual a solicitação foi enviada para o servidor de back-end. Se o nome de host de back-end estiver sendo substituído, este deverá refletir isso.|
+|originalHost| O nome do host com o qual a solicitação foi recebida pelo gateway de aplicativo do cliente.|
 ```json
 {
     "resourceId": "/SUBSCRIPTIONS/{subscriptionId}/RESOURCEGROUPS/PEERINGTEST/PROVIDERS/MICROSOFT.NETWORK/APPLICATIONGATEWAYS/{applicationGatewayName}",
@@ -238,12 +194,58 @@ Para o Gateway de aplicativo e WAF v2, os logs de mostram mais algumas informaç
         "sentBytes": 553,
         "timeTaken": 205,
         "sslEnabled": "off",
+        "host": "www.contoso.com",
+        "originalHost": "www.contoso.com"
+    }
+}
+```
+Para o gateway de aplicativo e o WAF v2, os logs mostram um pouco mais de informações:
+
+|Valor  |Descrição  |
+|---------|---------|
+|instanceId     | Instância do Gateway de Aplicativo que atendeu à solicitação.        |
+|clientIP     | IP de origem da solicitação.        |
+|clientPort     | Porta de origem da solicitação.       |
+|httpMethod     | Método HTTP usado pela solicitação.       |
+|requestUri     | URI da solicitação recebida.        |
+|UserAgent     | Agente do usuário do cabeçalho da solicitação HTTP.        |
+|httpStatus     | Código de status HTTP retornado ao cliente do Gateway de Aplicativo.       |
+|httpVersion     | Versão HTTP da solicitação.        |
+|receivedBytes     | Tamanho do pacote recebido, em bytes.        |
+|sentBytes| Tamanho do pacote enviado, em bytes.|
+|timeTaken| Duração (em milissegundos) necessária para que uma solicitação seja processada e sua resposta seja enviada. Isso é calculado como o intervalo a partir da hora em que o Gateway de Aplicativo recebe o primeiro byte de uma solicitação HTTP até a hora em que a operação de envio de resposta é concluída. É importante observar que o campo Time-Taken geralmente inclui a hora em que os pacotes de solicitação e resposta são transmitidos pela rede. |
+|sslEnabled| Indica se a comunicação com os pools de back-end usou o SSL. Os valores válidos são ativado e desativado.|
+|sslCipher| Conjunto de codificação que está sendo usado para comunicação SSL (se o SSL estiver habilitado).|
+|sslProtocol| Protocolo SSL que está sendo usado (se o SSL estiver habilitado).|
+|serverRouted| O servidor back-end para o qual o gateway de aplicativo roteia a solicitação.|
+|serverStatus| Código de status HTTP do servidor de back-end.|
+|serverResponseLatency| Latência da resposta do servidor de back-end.|
+|host| Endereço listado no cabeçalho do host da solicitação.|
+```json
+{
+    "resourceId": "/SUBSCRIPTIONS/{subscriptionId}/RESOURCEGROUPS/PEERINGTEST/PROVIDERS/MICROSOFT.NETWORK/APPLICATIONGATEWAYS/{applicationGatewayName}",
+    "operationName": "ApplicationGatewayAccess",
+    "time": "2017-04-26T19:27:38Z",
+    "category": "ApplicationGatewayAccessLog",
+    "properties": {
+        "instanceId": "appgw_1",
+        "clientIP": "191.96.249.97",
+        "clientPort": 46886,
+        "httpMethod": "GET",
+        "requestUri": "/phpmyadmin/scripts/setup.php",
+        "userAgent": "-",
+        "httpStatus": 404,
+        "httpVersion": "HTTP/1.0",
+        "receivedBytes": 65,
+        "sentBytes": 553,
+        "timeTaken": 205,
+        "sslEnabled": "off",
         "sslCipher": "",
         "sslProtocol": "",
         "serverRouted": "104.41.114.59:80",
         "serverStatus": "200",
         "serverResponseLatency": "0.023",
-        "host": "52.231.230.101"
+        "host": "www.contoso.com",
     }
 }
 ```
@@ -253,13 +255,13 @@ Para o Gateway de aplicativo e WAF v2, os logs de mostram mais algumas informaç
 O log de desempenho é gerado apenas se você o habilitou em cada instância do Gateway de Aplicativo, conforme detalhado nas etapas anteriores. Os dados são armazenados na conta de armazenamento especificada quando o log foi habilitado. Os dados do log de desempenho são gerados em intervalos de 1 minuto. Os seguintes dados são registrados em log:
 
 
-|Valor  |DESCRIÇÃO  |
+|Valor  |Descrição  |
 |---------|---------|
 |instanceId     |  Instância do Gateway de Aplicativo para a qual os dados de desempenho estão sendo gerados. Para um gateway de aplicativo de várias instâncias, há uma linha por instância.        |
 |healthyHostCount     | Número de hosts íntegros no pool de back-end.        |
 |unHealthyHostCount     | Número de hosts não íntegros no pool de back-end.        |
 |requestCount     | Número de solicitações atendidas.        |
-|latency | Latência média (em milissegundos) de solicitações da instância para o back-end que atende às solicitações. |
+|latência | Latência média (em milissegundos) de solicitações da instância para o back-end que atende às solicitações. |
 |failedRequestCount| Número de solicitações com falha.|
 |throughput| Vazão de dados média desde o último log, medida em bytes por segundo.|
 
@@ -290,7 +292,7 @@ O log de desempenho é gerado apenas se você o habilitou em cada instância do 
 O log de firewall é gerado apenas se você o habilitou em cada gateway de aplicativo, conforme detalhado nas etapas anteriores. Esse log também exige a configuração de um firewall de aplicativo Web em um gateway de aplicativo. Os dados são armazenados na conta de armazenamento especificada quando o log foi habilitado. Os seguintes dados são registrados em log:
 
 
-|Valor  |DESCRIÇÃO  |
+|Valor  |Descrição  |
 |---------|---------|
 |instanceId     | Instância do Gateway de Aplicativo para a qual os dados de firewall estão sendo gerados. Para um gateway de aplicativo de várias instâncias, há uma linha por instância.         |
 |clientIp     |   IP de origem da solicitação.      |
@@ -379,7 +381,7 @@ Métricas são um recurso para alguns recursos do Azure, nas quais você pode ex
 
    É possível filtrar por pool de back-end para mostrar hosts íntegros/não íntegros em um pool de back-end específico.
 
-Procure um gateway de aplicativo, sob **Monitoring** selecionar **métricas**. Para exibir os valores disponíveis, selecione a lista suspensa **MÉTRICA**.
+Navegue até um gateway de aplicativo, em **monitoramento** selecione **métricas**. Para exibir os valores disponíveis, selecione a lista suspensa **MÉTRICA**.
 
 Na imagem a seguir, você pode ver um exemplo com três métricas exibidas para os últimos 30 minutos:
 
@@ -393,11 +395,11 @@ Você pode iniciar as regras de alerta com base nas métricas de um recurso. Por
 
 O seguinte exemplo orientará você pela criação de uma regra de alerta que envia um email para um administrador após um limite de vazão de dados ter sido violado:
 
-1. Selecione **adicionar alerta de métrica** para abrir o **Adicionar regra** página. Você também pode acessar essa página da página de métricas.
+1. Selecione **adicionar alerta de métrica** para abrir a página **Adicionar regra** . Você também pode acessar essa página na página métricas.
 
    ![Botão “Adicionar alerta de métrica”][6]
 
-2. Sobre o **Adicionar regra** página, insira o nome, condição e notificar seções e selecione **Okey**.
+2. Na página **Adicionar regra** , preencha as seções nome, condição e notificar e selecione **OK**.
 
    * No seletor **Condição**, selecione um dos quatro valores: **Maior que**, **Maior ou igual a**, **Menor que**, ou **Menor ou igual a**.
 
@@ -405,7 +407,7 @@ O seguinte exemplo orientará você pela criação de uma regra de alerta que en
 
    * Se você selecionar **Proprietários, colaboradores e leitores de email**, o email poderá ser dinâmico com base nos usuários que têm acesso a esse recurso. Caso contrário, você poderá fornecer uma lista separada por vírgula de usuários na caixa **Emails de administrador adicionais**.
 
-   ![Adicionar página de regra][7]
+   ![Página Adicionar regra][7]
 
 Se o limite for violado, um email semelhante ao mostrado na seguinte imagem chegará:
 

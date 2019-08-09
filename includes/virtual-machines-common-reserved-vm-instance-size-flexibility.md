@@ -4,12 +4,12 @@ ms.author: banders
 ms.service: virtual-machines-windows
 ms.topic: include
 ms.date: 11-20-2018
-ms.openlocfilehash: 05820cc5f7b7d61d83f73ea5b62b05f8712e0997
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 790fb39c3d8964c053ffe1d7ee04418fcbc0913c
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67171888"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68857307"
 ---
 # <a name="virtual-machine-size-flexibility-with-reserved-vm-instances"></a>Flexibilidade de tamanho de máquina virtual com Instâncias de VM Reservadas
 
@@ -131,6 +131,14 @@ Para obter mais informações, consulte [Gerações anteriores de tamanhos de m�
 
 Para obter mais informações, consulte [Gerações anteriores de tamanhos de máquinas virtuais](../articles/virtual-machines/windows/sizes-previous-gen.md).
 
+## <a name="dsv2-high-memory-isolated-series"></a>Série isolada de memória alta DSv2
+
+| Tamanho | Proporção|
+|---|---|
+|Standard_DS15i_v2|1|
+
+Para obter mais informações, consulte [Gerações anteriores de tamanhos de máquinas virtuais](../articles/virtual-machines/windows/sizes-previous-gen.md).
+
 ## <a name="dsv3-series"></a>Série DSv3
 
 | Tamanho | Proporção|
@@ -168,6 +176,15 @@ Para obter mais informações, consulte [Gerações anteriores de tamanhos de m�
 
 Para obter mais informações, consulte [Gerações anteriores de tamanhos de máquinas virtuais](../articles/virtual-machines/windows/sizes-previous-gen.md).
 
+## <a name="dv2--high-memory-isolated-series"></a>Série isolada de memória alta Dv2
+
+| Tamanho | Proporção|
+|---|---|
+|Standard_D15i_v2|1|
+
+Para obter mais informações, consulte [Gerações anteriores de tamanhos de máquinas virtuais](../articles/virtual-machines/windows/sizes-previous-gen.md).
+
+
 ## <a name="dv3-series"></a>Dv3-series
 
 | Tamanho | Proporção|
@@ -198,23 +215,37 @@ Para obter mais informações, consulte [Tamanhos das máquinas virtuais para us
 |Standard_E32s_v3|16|
 |Standard_E32-8s_v3|16|
 |Standard_E32 16s_v3|16|
-|Standard_E64s_v3|28.8|
-|Standard_E64-16s_v3|28.8|
-|Standard_E64-32s_v3|28.8|
+|Standard_E64s_v3|28,8|
+|Standard_E64-16s_v3|28,8|
+|Standard_E64-32s_v3|28,8|
 
 Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizados para memória](../articles/virtual-machines/windows/sizes-memory.md#esv3-series).
+
+## <a name="esv3-series-isolated-series"></a>Série isolada da série ESv3
+
+| Tamanho | Proporção|
+|---|---|
+|Standard_E64is_v3|1|
 
 ## <a name="ev3-series"></a>Ev3-series
 
 | Tamanho | Proporção|
 |---|---|
-| Standard_E2_v3|1|
+|Standard_E2_v3|1|
 |Standard_E4_v3|2|
 |Standard_E8_v3|4|
 |Standard_E16_v3|8|
 |Standard_E20_v3|10|
 |Standard_E32_v3|16|
 |Standard_E64_v3|32|
+
+Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizados para memória](../articles/virtual-machines/windows/sizes-memory.md#ev3-series).
+
+## <a name="ev3-series-isolated-series"></a>Série isolada da série Ev3
+
+| Tamanho | Proporção|
+|---|---|
+|Standard_E64i_v3|1|
 
 Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizados para memória](../articles/virtual-machines/windows/sizes-memory.md#ev3-series).
 
@@ -274,16 +305,69 @@ Para obter mais informações, consulte [Tamanhos de VM de computação de alto 
 
 Para obter mais informações, consulte [Tamanhos de VM de computação de alto desempenho](../articles/virtual-machines/windows/sizes-hpc.md).
 
-## <a name="ls-series"></a>Série Ls
+
+## <a name="hcs-series"></a>Série HCS
 
 | Tamanho | Proporção|
 |---|---|
-| Standard_L4s|1|
-|Standard_L8s|2|
-|Standard_L16s|4|
-|Standard_L32s|8|
+|Standard_HC44rs|1|
+
+Para obter mais informações, consulte [Tamanhos de VM de computação de alto desempenho](../articles/virtual-machines/windows/sizes-hpc.md).
+
+## <a name="hbs-series"></a>Série HBS
+
+| Tamanho | Proporção|
+|---|---|
+|Standard_HB60rs|1|
+
+Para obter mais informações, consulte [Tamanhos de VM de computação de alto desempenho](../articles/virtual-machines/windows/sizes-hpc.md).
+
+## <a name="hbs-series"></a>Série HBS
+
+| Tamanho | Proporção|
+|---|---|
+|Standard_HB60rs|1|
+
+Para obter mais informações, consulte [Tamanhos de VM de computação de alto desempenho](../articles/virtual-machines/windows/sizes-hpc.md).
+
+## <a name="h-series-low-latency-series"></a>Série H de baixa latência – séries
+
+| Tamanho | Proporção|
+|---|---|
+|Standard_H16r|1|
 
 Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizados para armazenamento](../articles/virtual-machines/windows/sizes-storage.md).
+
+## <a name="h-series-high-memory-low-latency-series"></a>Série H de alta latência de memória insuficiente
+
+| Tamanho | Proporção|
+|---|---|
+|Standard_H16mr|1|
+
+Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizados para armazenamento](../articles/virtual-machines/windows/sizes-storage.md).
+
+## <a name="h-series"></a>Série H
+
+| Tamanho | Proporção|
+|---|---|
+|Standard_H8|1|
+|Standard_H16|2|
+
+Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizados para armazenamento](../articles/virtual-machines/windows/sizes-storage.md).
+
+## <a name="lsv2-series-series"></a>Série série LSv2
+
+| Tamanho | Proporção|
+|---|---|
+|Standard_L8s_v2|1|
+|Standard_L16s_v2|2|
+|Standard_L32s_v2|4|
+|Standard_L48s_v2|6|
+|Standard_L64s_v2|8|
+|Standard_L80s_v2|10|
+|Standard_L96s_v2|12|
+
+Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizados para armazenamento](../articles/virtual-machines/windows//sizes-storage.md#lsv2-series).
 
 ## <a name="m-series"></a>Série M
 
@@ -323,7 +407,7 @@ Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizad
 
 | Tamanho | Proporção|
 |---|---|
-| Standard_M32ls|1|
+|Standard_M32ls|1|
 |Standard_M64ls|2|
 
 Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizados para memória](../articles/virtual-machines/windows/sizes-memory.md#m-series).
@@ -332,7 +416,7 @@ Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizad
 
 | Tamanho | Proporção|
 |---|---|
-| Standard_M64ms|1|
+|Standard_M64ms|1|
 |Standard_M64-16ms|1|
 |Standard_M64 32ms|1|
 |Standard_M128ms|2|
@@ -341,11 +425,37 @@ Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizad
 
 Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizados para memória](../articles/virtual-machines/windows/sizes-memory.md#m-series).
 
+## <a name="ms-series-fractional-tiny"></a>Série MS Fracionária Minúscula
+
+| Tamanho | Proporção|
+|---|---|
+|Standard_M32ls|1|
+
+Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizados para memória](../articles/virtual-machines/windows/sizes-memory.md#m-series).
+
+## <a name="msv2-series-high-memory-series"></a>Série MSv2 de memória alta
+
+| Tamanho | Proporção|
+|---|---|
+|Standard_M208ms_v2|1|
+|Standard_M416ms_v2|2|
+
+Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizados para memória](../articles/virtual-machines/windows/sizes-memory.md#m-series).
+
+## <a name="msv2-series"></a>Série MSv2
+
+| Tamanho | Proporção|
+|---|---|
+|Standard_M208s_v2|1|
+|Standard_M416s_v2|2|
+
+Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizados para memória](../articles/virtual-machines/windows/sizes-memory.md#m-series).
+
 ## <a name="nc-series"></a>Série NC
 
 | Tamanho | Proporção|
 |---|---|
-| Standard_NC6|1|
+|Standard_NC6|1|
 |Standard_NC12|2|
 |Standard_NC24|4|
 
@@ -389,6 +499,45 @@ Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizad
 |Standard_NV12|2|
 |Standard_NV24|4|
 
-Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizados para GPU](../articles/virtual-machines/windows//sizes-gpu.md#nv-series).
+## <a name="nvsv3-series"></a>Série NVSv3
+
+| Tamanho | Proporção|
+|---|---|
+|Standard_NV12s_v3|1|
+|Standard_NV24s_v3|2|
+|Standard_NV48s_v3|4|
+
+## <a name="nds-series-low-latency-series"></a>Série NDS-séries de baixa latência
+
+| Tamanho | Proporção|
+|---|---|
+|Standard_ND24rs|1|
+
+## <a name="ncsv3-series-low-latency-series"></a>Série NCSv3 de baixa latência – séries
+
+| Tamanho | Proporção|
+|---|---|
+|Standard_NC24rs_v3|1|
+
+Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizados para GPU](../articles/virtual-machines/windows//sizes-gpu.md#ncv3-series).
+
+## <a name="ncsv2-series-low-latency-series"></a>Série NCSv2 de baixa latência – séries
+
+| Tamanho | Proporção|
+|---|---|
+|Standard_NC24rs_v2|1|
+
+Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizados para GPU](../articles/virtual-machines/windows//sizes-gpu.md#ncv2-series).
+
+## <a name="nc-series-low-latency-series"></a>Série NC de baixa latência-séries
+
+| Tamanho | Proporção|
+|---|---|
+|Standard_NC24r|1|
+
+Para obter mais informações, consulte [Tamanhos de máquinas virtuais otimizados para GPU](../articles/virtual-machines/windows//sizes-gpu.md#ncv2-series).
+
+
+
 
 

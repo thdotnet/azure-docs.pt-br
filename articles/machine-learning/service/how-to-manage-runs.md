@@ -11,12 +11,12 @@ author: rastala
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 07/12/2019
-ms.openlocfilehash: a33ed7e5584e216fac07c5ad6b38d3754b9bca0f
-ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
+ms.openlocfilehash: 701c266705c16198f35cddc36cdf1d431331c2d2
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67868854"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68847950"
 ---
 # <a name="start-monitor-and-cancel-training-runs-in-python"></a>Iniciar, monitorar e cancelar execuções de treinamento em Python
 
@@ -35,7 +35,7 @@ Você precisará dos seguintes itens:
 
 * Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de começar. Experimente a [versão gratuita ou paga do Serviço do Azure Machine Learning](https://aka.ms/AMLFree) hoje mesmo.
 
-* Um [espaço de trabalho de serviço do Azure Machine Learning](setup-create-workspace.md).
+* Um [espaço de trabalho de serviço do Azure Machine Learning](how-to-manage-workspace.md).
 
 * O SDK do Azure Machine Learning para Python (versão 1.0.21 ou posterior). Para instalar ou atualizar para a versão mais recente do SDK, consulte [instalar ou atualizar o SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
 

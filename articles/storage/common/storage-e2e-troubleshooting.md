@@ -1,21 +1,19 @@
 ---
 title: Solucionando problemas do Armazenamento do Azure com Analisador de Mensagem e Diagnóstico | Microsoft Docs
 description: Um tutorial que demonstra a solução de problemas ponta a ponta com Análise de Armazenamento do Azure, AzCopy e Analisador de Mensagem da Microsoft
-services: storage
 author: normesta
 ms.service: storage
-ms.devlang: dotnet
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/15/2017
 ms.author: normesta
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 2707081adafa74237e3fb7730837f581e0c8b790
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2ca81280bed52508c606a5a693fe0162837ac117
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65154232"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854618"
 ---
 # <a name="end-to-end-troubleshooting-using-azure-storage-metrics-and-logging-azcopy-and-message-analyzer"></a>Solução de problemas ponta a ponta usando Métricas de Armazenamento do Azure e Registro em Log, AzCopy e Analisador de Mensagem
 [!INCLUDE [storage-selector-portal-e2e-troubleshooting](../../../includes/storage-selector-portal-e2e-troubleshooting.md)]
@@ -80,7 +78,7 @@ Neste tutorial, usaremos o Analisador de Mensagem para trabalhar com três tipos
 * O **log de rastreamento de rede HTTP**que coleta dados nos dados de solicitação e resposta HTTP/HTTPS, inclusive para as operações no Armazenamento do Azure. Neste tutorial, vamos gerar o rastreamento de rede por meio do Analisador de Mensagem.
 
 ### <a name="configure-server-side-logging-and-metrics"></a>Configurar o log de servidor e métricas
-Primeiro, precisaremos configurar o log de armazenamento do Azure e métricas, para que tenhamos dados do lado do serviço para analisar. É possível configurar o log e as métricas de diversas maneiras, por meio do [portal do Azure](https://portal.azure.com), usando o PowerShell ou de forma programática. Ver [habilitar as métricas](storage-analytics-metrics.md#enable-metrics-using-the-azure-portal) e [habilitar registro em log](storage-analytics-logging.md#enable-storage-logging) para obter detalhes sobre como configurar o registro em log e métricas.
+Primeiro, precisaremos configurar o log e as métricas do armazenamento do Azure para que tenhamos dados do lado do serviço para análise. É possível configurar o log e as métricas de diversas maneiras, por meio do [portal do Azure](https://portal.azure.com), usando o PowerShell ou de forma programática. Consulte [habilitar métricas](storage-analytics-metrics.md#enable-metrics-using-the-azure-portal) e [habilitar o registro em log](storage-analytics-logging.md#enable-storage-logging) para obter detalhes sobre como configurar o log e as métricas.
 
 ### <a name="configure-net-client-side-logging"></a>Configurar o log de cliente .NET
 Para configurar o log do cliente de um aplicativo .NET, habilite o diagnóstico do .NET no arquivo de configuração do aplicativo (Web.config ou App.config). Confira [Registro em log do Cliente usando a Biblioteca do Cliente de Armazenamento do .NET](https://msdn.microsoft.com/library/azure/dn782839.aspx) e [Registro em log do Cliente com o SDK de Armazenamento do Microsoft Azure para Java](https://msdn.microsoft.com/library/azure/dn782844.aspx) no MSDN para obter detalhes.
@@ -303,14 +301,14 @@ Agora que você está familiarizado com o uso do Analisador de Mensagem para ana
 | Atrasos inesperados na entrega de mensagens em uma fila |AzureStorageClientDotNetV4.Description contém "Repetindo a operação que falhou". |Cliente |
 | Aumento de HTTP no PercentThrottlingError |HTTP.Response.StatusCode   == 500 &#124;&#124; HTTP.Response.StatusCode == 503 |Rede |
 | Aumento em PercentTimeoutError |HTTP.Response.StatusCode   == 500 |Rede |
-| Aumento em PercentTimeoutError (todos) |*StatusCode   == 500 |Todos |
+| Aumento em PercentTimeoutError (todos) |*StatusCode   == 500 |Todas |
 | Aumento em PercentNetworkError |AzureStorageClientDotNetV4.EventLogEntry.Level   < 2 |Cliente |
 | Mensagens HTTP 403 (Proibido) |HTTP.Response.StatusCode   == 403 |Rede |
 | Mensagens HTTP 404 (Não encontrado) |HTTP.Response.StatusCode   == 404 |Rede |
-| 404 (todos) |*StatusCode   == 404 |Todos |
+| 404 (todos) |*StatusCode   == 404 |Todas |
 | Problema de autorização de SAS (Assinatura de Acesso Compartilhado) |AzureStorageLog.RequestStatus ==  "SASAuthorizationError" |Rede |
 | Mensagens HTTP 409 (Conflito) |HTTP.Response.StatusCode   == 409 |Rede |
-| 409 (todos) |*StatusCode   == 409 |Todos |
+| 409 (todos) |*StatusCode   == 409 |Todas |
 | Baixo PercentSuccess ou as entradas de log analíticas têm operações com status de transação de ClientOtherErrors |AzureStorageLog.RequestStatus ==   "ClientOtherError" |Servidor |
 | Aviso Nagle |((AzureStorageLog.EndToEndLatencyMS   - AzureStorageLog.ServerLatencyMS) > (AzureStorageLog.ServerLatencyMS *   1.5)) and (AzureStorageLog.RequestPacketSize <1460) and (AzureStorageLog.EndToEndLatencyMS -   AzureStorageLog.ServerLatencyMS >= 200) |Servidor |
 | Intervalo de horas nos logs de Servidor e Rede |#Timestamp   >= 2014-10-20T16:36:38 e #Timestamp <= 2014-10-20T16:36:39 |Servidor, Rede |

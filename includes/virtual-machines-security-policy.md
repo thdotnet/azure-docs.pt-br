@@ -4,18 +4,18 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: f289da08c63f655006801d89f82640c6e3c6b7be
-ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
+ms.openlocfilehash: 5c90d7b5eefdf8357c0f6f8efb619bd69af12b06
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68621964"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68843123"
 ---
 É importante proteger a sua máquina virtual (VM) para os aplicativos que são executados. Proteger suas VMs pode incluir um ou mais serviços do Azure e recursos que abrangem o acesso seguro a suas máquinas virtuais e armazenamento seguro de seus dados. Este artigo fornece informações que permite que você mantenha sua VM e aplicativos seguros.
 
 ## <a name="antimalware"></a>Antimalware
 
-O panorama atual de ameaças a ambientes de nuvem é dinâmico, aumentando a pressão para manter uma proteção eficaz e atender aos requisitos de conformidade e segurança na nuvem. O [Microsoft Antimalware para Azure](../articles/security/fundamentals/antimalware.md) é uma funcionalidade de proteção em tempo real que ajuda a identificar e remover vírus, spyware e outros softwares mal-intencionados. Os alertas podem ser configurados para notificar você quando se sabe que software mal-intencionado ou indesejado tenta se instalar ou ser executado em sua VM.
+O panorama atual de ameaças a ambientes de nuvem é dinâmico, aumentando a pressão para manter uma proteção eficaz e atender aos requisitos de conformidade e segurança na nuvem. O [Microsoft Antimalware para Azure](../articles/security/fundamentals/antimalware.md) é uma funcionalidade de proteção em tempo real que ajuda a identificar e remover vírus, spyware e outros softwares mal-intencionados. Os alertas podem ser configurados para notificar você quando se sabe que software mal-intencionado ou indesejado tenta se instalar ou ser executado em sua VM. Não há suporte para ele em VMs que executam o Linux ou o Windows Server 2008.
 
 ## <a name="azure-security-center"></a>Central de Segurança do Azure
 

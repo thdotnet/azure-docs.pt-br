@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/10/2019
 ms.author: iainfou
-ms.openlocfilehash: ecf38543b2c4e5187aa5c6593c3bccf6668b8a8a
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 8829f16e580d0b926781ce0a3e9f8e6a63cf3110
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67472757"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68853770"
 ---
 # <a name="password-and-account-lockout-policies-on-managed-domains"></a>Políticas de senha e de bloqueio de conta em domínios gerenciados
 Este artigo explica as políticas de senha padrão em domínios gerenciados. Ele também aborda como configurar essas políticas.
@@ -80,7 +80,7 @@ Além disso, você também pode criar políticas de senha refinadas personalizad
 * Para definir uma configuração de vida útil da senha padrão para o domínio gerenciado.
 
 Para criar uma FGPP personalizada no domínio gerenciado:
-1. Entre na VM do Windows usada para administrar seu domínio gerenciado. Se você não tiver uma, siga as instruções para [gerenciar um domínio do Azure AD Domain Services](manage-domain.md).
+1. Entre na VM do Windows que você usa para administrar seu domínio gerenciado (deve ser no mínimo o Windows Server 2012 R2). Se você não tiver uma, siga as instruções para [gerenciar um domínio de Azure AD Domain Services](manage-domain.md).
 2. Inicie o **Centro Administrativo do Active Directory** na VM.
 3. Clique no nome de domínio (por exemplo, “contoso100.com”).
 4. Clique duas vezes em **Sistema** para abrir o contêiner do sistema.
@@ -98,7 +98,7 @@ Para criar uma FGPP personalizada no domínio gerenciado:
 
 9. Em **Aplica-se Diretamente se a**, clique no botão **Adicionar**. Na caixa de diálogo **Selecionar Usuários ou Grupos**, clique no botão **Locais**.
 
-   ![Selecionar Usuários e grupos](./media/how-to/fgpp-applies-to.png)
+   ![Selecionar usuários e grupos](./media/how-to/fgpp-applies-to.png)
 
 10. Na caixa de diálogo **Locais**, expanda o nome de domínio e clique em **Usuários do AADDC**. Agora você pode selecionar um grupo na UO de usuários internos aos quais aplicar a FGPP.
 

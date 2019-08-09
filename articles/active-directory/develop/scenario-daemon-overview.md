@@ -1,6 +1,6 @@
 ---
-title: O daemon aplicativo chamar APIs da web (visão geral) – plataforma de identidade da Microsoft
-description: Saiba como criar um aplicativo daemon que chama as APIs da web
+title: Aplicativo de daemon chamando APIs Web (visão geral)-plataforma de identidade da Microsoft
+description: Saiba como criar um aplicativo daemon que chama APIs da Web
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -14,18 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
-ms.custom: aaddev
+ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 578b7cdb38b7df3fab5885d773354a36f76a4cfb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1b86841cc6889eb8e716df3f6d1ac9bc7b158992
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65075874"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68852715"
 ---
-# <a name="scenario-daemon-application-that-calls-web-apis"></a>Cenário: Aplicativo daemon que chamadas às APIs da web
+# <a name="scenario-daemon-application-that-calls-web-apis"></a>Cenário: Aplicativo daemon que chama APIs da Web
 
-Aprenda tudo o que você precisa para compilar um aplicativo daemon que chama as APIs da web.
+Saiba tudo o que você precisa para criar um aplicativo daemon que chama APIs da Web.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -33,38 +33,38 @@ Aprenda tudo o que você precisa para compilar um aplicativo daemon que chama as
 
 ## <a name="overview"></a>Visão geral
 
-Seu aplicativo pode adquirir um token para chamar uma API da web em nome próprio (não em nome do usuário). Esse cenário é útil para aplicativos de daemon. Ele está usando o OAuth 2.0 padrão [as credenciais do cliente](v2-oauth2-client-creds-grant-flow.md) conceder.
+Seu aplicativo pode adquirir um token para chamar uma API da Web em nome de si mesmo (não em nome de um usuário). Esse cenário é útil para aplicativos de daemon. Ele está usando a concessão de [credenciais de cliente](v2-oauth2-client-creds-grant-flow.md) OAuth 2,0 padrão.
 
 ![Aplicativos Daemon](./media/scenario-daemon-app/daemon-app.svg)
 
-Aqui estão alguns exemplos de casos de uso para aplicativos daemon:
+Aqui estão alguns exemplos de casos de uso para aplicativos de daemon:
 
-- Aplicativos da Web que são usados para provisionar ou administrar os usuários ou processos em um diretório do lote
-- Aplicativos da área de trabalho, como (serviços do windows no Windows) ou processos de daemons no Linux que executam trabalhos em lotes ou um serviço de sistema operacional em execução em segundo plano
-- APIs da Web que precise manipular diretórios, os usuários não específicos
+- Aplicativos Web que são usados para provisionar ou administrar usuários, ou processos em lote em um diretório
+- Aplicativos de área de trabalho (como serviços do Windows no Windows ou processos de daemons no Linux) que executam trabalhos em lotes ou um serviço de sistema operacional em execução em segundo plano
+- APIs Web que precisam manipular diretórios, não usuários específicos
 
-Há outro caso comum em que aplicativos não-daemon usam as credenciais do cliente: mesmo quando eles atuam em nome dos usuários, eles precisam acessar uma API da web ou um recurso com sua identidade por motivos técnicos. Um exemplo é o acesso aos segredos no cofre de chaves ou um banco de dados SQL do Azure para um cache.
+Há outro caso comum em que aplicativos não daemon usam credenciais de cliente: mesmo quando eles atuam em nome dos usuários, eles precisam acessar uma API da Web ou um recurso com sua identidade por motivos técnicos. Um exemplo é o acesso a segredos no keyvault ou um banco de dados SQL do Azure para um cache.
 
 Aplicativos que adquirem um token para suas próprias identidades:
 
-- São aplicativos cliente confidencial. Esses aplicativos, considerando que acessarem recursos independentemente de um usuário precisam provar sua identidade. Eles também são aplicativos confidenciais em vez disso, o que eles precisam ser aprovadas por administradores de locatários do Azure Active Directory (Azure AD).
-- Ter registrado um segredo (senha de aplicativo ou certificado) com o Azure AD. Esse segredo é passado durante a chamada para o Azure AD para obter um token.
+- São aplicativos cliente confidenciais. Esses aplicativos, Considerando que acessam recursos independentemente de um usuário, precisam provar sua identidade. Eles também são aplicativos confidenciais, que precisam ser aprovados pelos administradores de locatário do Azure Active Directory (AD do Azure).
+- Registrou um segredo (senha de aplicativo ou certificado) com o Azure AD. Esse segredo é passado durante a chamada para o Azure AD para obter um token.
 
-## <a name="specifics"></a>Informações específicas
+## <a name="specifics"></a>Especificações
 
 > [!IMPORTANT]
 >
-> - Interação do usuário não é possível com um aplicativo daemon. Um aplicativo daemon requer sua própria identidade. Esse tipo de aplicativo solicita um token de acesso usando sua identidade de aplicativo e apresentando sua ID do aplicativo, credenciais (senha ou certificado) e aplicativo URI da ID do Azure AD. Após a autenticação bem-sucedida, o daemon recebe um token de acesso (e um token de atualização) do ponto de extremidade de plataforma Microsoft identity, que é usada para chamar a API web (e é atualizada conforme necessário).
-> - Como a interação do usuário não for possível, consentimento incremental não será possível. Todas as permissões de API necessárias precisam ser configurados no momento do registro do aplicativo e o código do aplicativo apenas solicita permissões definidas estaticamente. Isso também significa que aplicativos daemon não dará suporte ao consentimento incremental.
+> - A interação do usuário não é possível com um aplicativo daemon. Um aplicativo daemon requer sua própria identidade. Esse tipo de aplicativo solicita um token de acesso usando sua identidade de aplicativo e apresentando sua ID de aplicativo, credencial (senha ou certificado) e URI de ID do aplicativo para o Azure AD. Após a autenticação bem-sucedida, o daemon recebe um token de acesso (e um token de atualização) do ponto de extremidade da plataforma de identidade da Microsoft, que é usado para chamar a API da Web (e é atualizado conforme necessário).
+> - Como a interação do usuário não é possível, o consentimento incremental não será possível. Todas as permissões de API necessárias precisam ser configuradas no registro do aplicativo, e o código do aplicativo apenas solicita permissões definidas estaticamente. Isso também significa que os aplicativos daemon não oferecerão suporte a consentimento incremental.
 
-Para desenvolvedores, a experiência de ponta a ponta para este cenário tem os seguintes aspectos:
+Para os desenvolvedores, a experiência de ponta a ponta para esse cenário tem os seguintes aspectos:
 
-- Aplicativos daemon só podem funcionar em locatários do Azure AD. Não faria sentido criar um aplicativo daemon que tenta manipular contas pessoais da Microsoft. Se você for um desenvolvedor de aplicativo do linha de negócios (LOB), você criará seu aplicativo de daemon em seu locatário. Se você for um ISV, você talvez queira criar um aplicativo de daemon de vários locatários. Ele precisará ser consentida por cada administrador de locatário.
-- Durante o [registro de aplicativo](./scenario-daemon-app-registration.md), o **URI de resposta** não é necessária. Você precisa compartilhar segredos ou certificados com o Azure AD e você precisará solicitar permissões de aplicativos e conceder consentimento do administrador para usar essas permissões de aplicativo.
-- O [configuração de aplicativo](./scenario-daemon-app-configuration.md) precisará fornecer as credenciais de cliente como compartilhado com o Azure AD durante o registro de aplicativo.
-- O [escopo](scenario-daemon-acquire-token.md#scopes-to-request) usado para adquirir um token com as credenciais do cliente fluxo precisa ser um escopo estático.
+- Os aplicativos daemon só podem funcionar em locatários do Azure AD. Não faz sentido criar um aplicativo daemon que tente manipular contas pessoais da Microsoft. Se você for um desenvolvedor de aplicativos LOB (linha de negócios), criará seu aplicativo daemon em seu locatário. Se você for um ISV, talvez queira criar um aplicativo de daemon multilocatário. Ele precisará ser consentido por cada administrador de locatários.
+- Durante o [registro do aplicativo](./scenario-daemon-app-registration.md), o **URI de resposta** não é necessário. Você precisa compartilhar segredos ou certificados com o Azure AD e precisa solicitar permissões de aplicativos e conceder consentimento de administrador para usar essas permissões de aplicativo.
+- A [configuração do aplicativo](./scenario-daemon-app-configuration.md) precisa fornecer credenciais de cliente como compartilhadas com o Azure ad durante o registro do aplicativo.
+- O [escopo](scenario-daemon-acquire-token.md#scopes-to-request) usado para adquirir um token com o fluxo de credenciais do cliente precisa ser um escopo estático.
 
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
-> [Aplicativo daemon - registro de aplicativo](./scenario-daemon-app-registration.md)
+> [Aplicativo daemon-registro de aplicativo](./scenario-daemon-app-registration.md)

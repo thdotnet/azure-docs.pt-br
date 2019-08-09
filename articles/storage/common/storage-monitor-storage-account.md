@@ -1,20 +1,19 @@
 ---
 title: Como monitorar uma conta de Armazenamento do Azure | Microsoft Docs
 description: Saiba como monitorar uma conta de armazenamento no Azure usando o portal do Azure.
-services: storage
 author: normesta
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/31/2018
 ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: 5a28d69ae5ba9f3b7eeb28b6824ad9a458832bb3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 912c1c3403191f40dac054f99f29ac60ba84ce8f
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65153629"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68844925"
 ---
 # <a name="monitor-a-storage-account-in-the-azure-portal"></a>Monitorar uma conta de armazenamento no portal do Azure
 
@@ -42,7 +41,7 @@ ms.locfileid: "65153629"
    Para definir a política de retenção de dados, mova o controle deslizante **Retenção (dias)** ou insira o número de dias de dados devem ser retidos, de 1 a 365. O padrão para novas contas de armazenamento é de sete dias. Se não desejar definir uma política de retenção, digite zero. Se não houver nenhuma política de retenção, cabe a você excluir os dados de monitoramento.
 
    > [!WARNING]
-   > Você é cobrado quando exclui manualmente dados de métricas. Dados de análise obsoletos (dados anteriores à política de retenção) são excluídos pelo sistema sem custo. É recomendável configurar uma política de retenção com base no tempo pelo qual você deseja manter os dados de análise de armazenamento para sua conta. Ver [as métricas de armazenamento de cobrança](storage-analytics-metrics.md#billing-on-storage-metrics) para obter mais informações.
+   > Você é cobrado quando exclui manualmente dados de métricas. Dados de análise obsoletos (dados anteriores à política de retenção) são excluídos pelo sistema sem custo. É recomendável configurar uma política de retenção com base no tempo pelo qual você deseja manter os dados de análise de armazenamento para sua conta. Consulte [cobrança sobre métricas de armazenamento](storage-analytics-metrics.md#billing-on-storage-metrics) para obter mais informações.
    >
 
 1. Ao concluir a configuração de monitoramento, selecione **Salvar**.
@@ -139,7 +138,7 @@ Você pode instruir o Armazenamento do Azure a salvar logs de diagnóstico para 
 
 Os logs de diagnóstico são salvos em um contêiner de blob denominado *$logs* em sua conta de armazenamento. Você pode exibir os dados de log usando um gerenciador de armazenamento como o [Gerenciador de Armazenamento da Microsoft](https://storageexplorer.com) ou de forma programática, usando a biblioteca de cliente de armazenamento ou o PowerShell.
 
-Para obter informações sobre como acessar o contêiner $logs, consulte [log do Storage analytics](storage-analytics-logging.md).
+Para obter informações sobre como acessar o contêiner de $logs, consulte [log de análise de armazenamento](storage-analytics-logging.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -1,6 +1,6 @@
 ---
-title: Protegido de API Web - visão geral | Azure
-description: Saiba como compilar uma API (visão geral) de web protegido.
+title: API Web protegida-visão geral | Azure
+description: Saiba como criar uma API Web protegida (visão geral).
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -13,29 +13,29 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
-ms.custom: aaddev
+ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c5bc0075e6604bd1f94531040f2e4a0628e70667
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 02bd4b84cc7542714f6db45c12c4b5b13a7fb449
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65074884"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68852590"
 ---
 # <a name="scenario-protected-web-api"></a>Cenário: API Web protegida
 
-Nesse cenário, vamos mostrar como você pode expor uma API da web e como você pode protegê-lo para que somente usuários autenticados pode acessar a API. Você vai querer permitir que usuários autenticados com o trabalho e contas de estudante ou pessoas contas pessoais da Microsoft usar sua API da web.
+Neste cenário, mostraremos como você pode expor uma API da Web e como você pode protegê-la para que somente usuários autenticados possam acessar a API. Você desejará habilitar usuários autenticados com contas corporativas e de estudante ou contas pessoais pessoais da Microsoft para usar sua API Web.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 [!INCLUDE [Pre-requisites](../../../includes/active-directory-develop-scenarios-prerequisites.md)]
 
-## <a name="specifics"></a>Informações específicas
+## <a name="specifics"></a>Especificações
 
-Aqui estão algumas informações específicas que você precisa saber para proteger as APIs da web:
+Aqui estão algumas especificações que você precisa saber para proteger as APIs da Web:
 
-- O registro do aplicativo deverá expor pelo menos um escopo. A versão do token aceito pela sua API da web depende do público-alvo de entrada.
-- A configuração do código para a API da web deve validar o token que é usado ao chamar a API da web.
+- O registro do aplicativo deve expor pelo menos um escopo. A versão do token aceita pela sua API da Web depende do público-alvo.
+- A configuração do código para a API Web deve validar o token que é usado ao chamar a API da Web.
 
 ## <a name="next-steps"></a>Próximas etapas
 

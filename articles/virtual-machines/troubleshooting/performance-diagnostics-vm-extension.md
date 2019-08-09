@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 769305cc3d838832f8f445ac9623a1724603f968
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f9a50b0e5dd4e96c9235348bbfaae1d8a6e54d53
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60307824"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68846612"
 ---
 # <a name="azure-performance-diagnostics-vm-extension-for-windows"></a>Extensão de VM de Diagnóstico de Desempenho do Azure para Windows
 
@@ -70,10 +70,10 @@ O JSON a seguir mostra o esquema para a Extensão da VM de Diagnóstico de Desem
 |   **Nome**   |**Valor/Exemplo**|       **Descrição**      |
 |--------------|-------------------|----------------------------|
 |apiVersion|2015-06-15|A versão da API.
-|publicador|Microsoft.Azure.Performance.Diagnostics|O namespace do publicador para a extensão.
+|publisher|Microsoft.Azure.Performance.Diagnostics|O namespace do publicador para a extensão.
 |type|AzurePerformanceDiagnostics|O tipo da extensão de VM.
 |typeHandlerVersion|1.0|A versão do manipulador de extensão.
-|performanceScenario|básico|O cenário de desempenho para o qual capturar dados. Os valores válidos são: **basic**, **vmslow**, **azurefiles** e **custom**.
+|performanceScenario|básica|O cenário de desempenho para o qual capturar dados. Os valores válidos são: **basic**, **vmslow**, **azurefiles** e **custom**.
 |traceDurationInSeconds|300|A duração dos rastreamentos se qualquer uma das opções de rastreamento estiver selecionada.
 |perfCounterTrace|p|Opção para habilitar o rastreamento do contador de desempenho. Os valores válidos são **p** ou valor vazio. Se você não deseja capturar esse rastreamento, deixe o valor como vazio.
 |networkTrace|n|Opção para habilitar o Rastreamento de Rede. Os valores válidos são **n** ou um valor vazio. Se você não deseja capturar esse rastreamento, deixe o valor como vazio.
@@ -81,7 +81,7 @@ O JSON a seguir mostra o esquema para a Extensão da VM de Diagnóstico de Desem
 |storPortTrace|s|Opção para habilitar o rastreamento do StorPort. Os valores válidos são **s** ou valor vazio. Se você não deseja capturar esse rastreamento, deixe o valor como vazio.
 |srNumber|123452016365929|O número do tíquete de suporte, se disponível. Deixe o valor como vazio se você não o tiver.
 |requestTimeUtc|2017-09-28T22:08:53.736Z|Data e hora atual em Utc. Caso esteja usando o portal para instalar essa extensão, você não precisará fornecer esse valor.
-|ResourceId|/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}|Identificador exclusivo de uma VM.
+|resourceId|/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}|Identificador exclusivo de uma VM.
 |storageAccountName|mystorageaccount|O nome da conta de armazenamento para armazenar os logs de diagnóstico e os resultados.
 |storageAccountKey|lDuVvxuZB28NNP…hAiRF3voADxLBTcc==|A chave da conta de armazenamento.
 
@@ -99,7 +99,7 @@ Siga estas instruções para instalar a extensão em máquinas virtuais do Windo
 4. Selecione **Diagnóstico de Desempenho do Azure**, leia os termos e condições e selecione **Criar**.
 
     ![Captura de tela da tela Novo recurso, com a opção Diagnóstico de Desempenho do Azure realçada](media/performance-diagnostics-vm-extension/create-azure-performance-diagnostics-extension.png)
-5. Forneça os valores de parâmetro para a instalação e selecione **OK** para instalar a extensão. Para obter mais informações sobre os cenários com suporte, consulte [Como usar o PerfInsights](how-to-use-perfInsights.md#supported-troubleshooting-scenarios). 
+5. Forneça os valores de parâmetro para a instalação e selecione **OK** para instalar a extensão. Para obter mais informações sobre os cenários com suporte, consulte [Como usar o PerfInsights](how-to-use-perfinsights.md#supported-troubleshooting-scenarios). 
 
     ![Captura de tela da Caixa de diálogo Instalar extensão](media/performance-diagnostics-vm-extension/install-the-extension.png)
 6. Quando a instalação for concluída com êxito, você verá uma mensagem indicando que esse status.

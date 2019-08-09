@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 01/29/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 88e3c0514861da0bd11acffd26cced54717e4418
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 6f41263bfb930d3aab41fd8ace86cd6afb0ace26
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478496"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68850579"
 ---
 # <a name="running-runbooks-on-a-hybrid-runbook-worker"></a>Executar runbooks em um Hybrid Runbook Worker
 
@@ -271,7 +271,7 @@ sudo gpg --generate-key
 
 O GPG guiará você pelas etapas para criar o par de chaves. Você precisará fornecer um nome, um endereço de email, uma data de validade, uma frase secreta e aguardar entropia suficiente no computador para a chave ser gerada.
 
-Como o diretório do GPG foi gerado com sudo, você precisará alterar seu proprietário para `nxautomation`. 
+Como o diretório do GPG foi gerado com sudo, você precisará alterar seu proprietário para `nxautomation`.
 
 Execute o seguinte comando para alterar o proprietário.
 
@@ -312,3 +312,4 @@ O runbook assinado agora pode ser carregado na Automação do Azure e pode ser e
 * Para saber mais sobre os diferentes métodos que podem ser usados para iniciar um runbook, confira [Como iniciar um Runbook na Automação do Azure](automation-starting-a-runbook.md).
 * Para entender as várias maneiras de trabalhar com runbooks do PowerShell na Automação do Azure usando o editor de texto, confira [Editar um runbook na Automação do Azure](automation-edit-textual-runbook.md)
 * Se os runbooks não estiverem sendo concluídos com êxito, revise o guia de solução de problemas em [falhas de execução do runbook](troubleshoot/hybrid-runbook-worker.md#runbook-execution-fails).
+* Para obter mais informações sobre o PowerShell, incluindo referência de linguagem e módulos de aprendizado, consulte os [documentos do PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview).

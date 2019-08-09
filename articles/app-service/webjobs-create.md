@@ -16,12 +16,12 @@ ms.date: 10/16/2018
 ms.author: glenga
 ms.reviewer: msangapu;david.ebbo;suwatch;pbatum;naren.soni
 ms.custom: seodec18
-ms.openlocfilehash: 47a068ac6a7941c8ce71cf5c6745d2958c75fe74
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 55d040e96b92f73a632fd415220f9cf135335736
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736587"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68851003"
 ---
 # <a name="run-background-tasks-with-webjobs-in-azure-app-service"></a>Executar tarefas em segundo plano com o WebJobs no Serviço de Aplicativo do Azure
 
@@ -173,9 +173,9 @@ when making changes in one don't forget the other two.
 
    ![Lista de WebJobs](./media/web-sites-create-web-jobs/listallwebjobs.png)
 
-## <a name="cron-expressions"></a>Expressões CRON
+## <a name="ncrontab-expressions"></a>Expressões NCRONTAB
 
-Insira uma [expressão CRON](../azure-functions/functions-bindings-timer.md#ncrontab-expressions) no portal ou inclua um arquivo `settings.job` na raiz do arquivo *.zip* do WebJob, como no seguinte exemplo:
+Você pode inserir uma [expressão NCRONRAB](../azure-functions/functions-bindings-timer.md#ncrontab-expressions) no portal ou incluir um `settings.job` arquivo na raiz do seu arquivo WebJob *. zip* , como no exemplo a seguir:
 
 ```json
 {

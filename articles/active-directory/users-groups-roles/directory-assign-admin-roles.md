@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e139b274ab8a1f7d91d46ec56171b84db4f5025e
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: a4d692110a304cbfbbfda69bb2b10e3a065b2450
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68812840"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68851537"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Permissões da função de administrador no Azure Active Directory
 
@@ -200,9 +200,7 @@ Além disso, o usuário pode acessar relatórios relacionados à adoção & uso 
   > [!NOTE]
   > Na API do Microsoft Graph, na API do Graph do Azure AD e no Azure AD PowerShell, essa função é identificada como "Administrador do Serviço do Power BI". É "Administrador do Power BI" no [portal do Azure](https://portal.azure.com).
 
-* **[Administrador de autenticação privilegiada](#privileged-authentication-administrator)** : Os usuários com essa função podem definir ou redefinir credenciais de não senha para todos os usuários, incluindo administradores globais, e podem atualizar senhas para todos os usuários. Os administradores de autenticação privilegiada podem forçar os usuários a se registrarem novamente em relação à credencial não-senha existente (por exemplo, MFA, FIDO) e revogar "lembrar MFA no dispositivo", solicitando a MFA no próximo logon de todos os usuários. Os administradores de autenticação privilegiada podem:
-  * Forçar os usuários a se registrar novamente em relação a credenciais de não senha existentes (por exemplo, MFA, FIDO)
-  * REVOKE ' lembrar MFA no dispositivo ', solicitando a MFA no próximo logon
+* **[Administrador de autenticação privilegiada](#privileged-authentication-administrator)** : Os usuários com essa função podem definir ou redefinir credenciais de não senha para todos os usuários, incluindo administradores globais, e podem atualizar senhas para todos os usuários. Os administradores de autenticação privilegiada podem forçar os usuários a se registrarem novamente em relação à credencial não-senha existente (por exemplo, MFA, FIDO) e revogar "lembrar MFA no dispositivo", solicitando a MFA no próximo logon de todos os usuários.
 
 * **[Administrador com Função com Privilégios](#privileged-role-administrator)** : Usuários com essa função podem gerenciar as atribuições de função no Azure Active Directory, bem como Azure Active Directory Privileged Identity Management. Além disso, essa função permite o gerenciamento de todos os aspectos de Privileged Identity Management e de unidades administrativas.
 
@@ -670,7 +668,7 @@ Pode ler informações básicas do diretório. Para conceder acesso a aplicativo
 | microsoft.aad.directory/administrativeUnits/members/read | Ler a propriedade administrativeUnits.members no Azure Active Directory. |
 | microsoft.aad.directory/applications/basic/read | Ler as propriedades básicas em aplicativos no Azure Active Directory. |
 | Microsoft.AAD.Directory/Applications/Owners/Read | Ler a propriedade applications.owners no Azure Active Directory. |
-| microsoft.aad.directory/applications/policies/read | Ler a propriedade applications.policies no Azure Active Directory. |
+| microsoft.aad.directory/applications/policies/read | Leia a propriedade applications.policies no Active Directory do Azure. |
 | microsoft.aad.directory/contacts/basic/read | Ler as propriedades básicas em contatos no Azure Active Directory. |
 | microsoft.aad.directory/contacts/memberOf/read | Ler a propriedade contacts.memberOf no Azure Active Directory. |
 | microsoft.aad.directory/contracts/basic/read | Ler as propriedades básicas em contratos do Azure Active Directory. |

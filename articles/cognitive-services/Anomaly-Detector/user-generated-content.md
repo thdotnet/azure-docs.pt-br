@@ -10,16 +10,21 @@ ms.subservice: anomaly-detector
 ms.topic: article
 ms.date: 06/17/2019
 ms.author: aahi
-ms.openlocfilehash: 7fc1ed9928bd988faca4537202ac57fee74b0b00
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 1aa4497b80b744476c83e459ab4ba41cbf7e5cc7
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67721411"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854129"
 ---
 # <a name="featured-user-generated-content-for-the-anomaly-detector-api"></a>Conteúdo gerado pelo usuário em destaque para a API do Detector de Anomalias
 
 Use este artigo para descobrir como os outros clientes estão pensando e usando a API do Detector de Anomalias. Os seguintes recursos foram criados pela comunidade de usuários do Detector de Anomalias. Eles incluem blogs técnicos, projetos de software livre e outras contribuições criadas pela Microsoft e os usuários de produtos de terceiros. Alguns dos links a seguir são hospedados em sites externos e a Microsoft não é responsável por esse conteúdo. Tenha cuidado ao consultar esses recursos.
+
+## <a name="demos"></a>Demonstrações
+
+* [Demonstração interativa com animação](https://aka.ms/adDemo)
+* [Demonstração do bloco de notas do Azure](https://aka.ms/adNotebook)
 
 ## <a name="technical-blogs"></a>Blogs técnicos
 

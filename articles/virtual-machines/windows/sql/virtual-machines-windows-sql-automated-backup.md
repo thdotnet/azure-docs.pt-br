@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 05/03/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 2d30d044a26e6a092eba267f223be9b10c3a238b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5c9d2acf3e58d233bd789e335c585f61511b975d
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67075853"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68846202"
 ---
 # <a name="automated-backup-for-sql-server-2014-virtual-machines-resource-manager"></a>Backup Automatizado para em máquinas virtuais do SQL Server 2014 (Resource Manager)
 
@@ -61,7 +61,7 @@ Para usar o Backup Automatizado, considere os seguintes pré-requisitos:
 
 A tabela a seguir descreve as opções que podem ser configuradas para Backup Automatizado. As etapas de configuração reais variam dependendo de se você usar os comandos do Portal do Azure ou do Azure Windows PowerShell.
 
-| Configuração | Intervalo (Padrão) | DESCRIÇÃO |
+| Configuração | Intervalo (Padrão) | Descrição |
 | --- | --- | --- |
 | **Backup Automatizado** | Habilitar/desabilitar (Desabilitado) | Habilita ou desabilita o Backup Automatizado de uma VM do Azure que executa o SQL Server 2014 Standard ou Enterprise. |
 | **Período de retenção** | Um a 30 dias (30 dias) | O número de dias para manter um backup. |
@@ -77,7 +77,7 @@ Você pode usar o Portal do Azure para configurar o Backup Automatizado durante 
 
 Use o Portal do Azure para configurar o Backup Automatizado quando criar uma nova Máquina Virtual do SQL Server 2014 no modelo de implantação do Resource Manager.
 
-No **configurações do SQL Server** guia, role para baixo até **backup automatizado** e selecione **habilitar**. Você também pode especificar o período de retenção e conta de armazenamento, bem como habilitar a criptografia, fazendo backup de bancos de dados do sistema e configurar um agendamento de backup.  A captura de tela do portal do Azure a seguir mostra as configurações do **Backup Automatizado do SQL**.
+Na guia **configurações de SQL Server** , role para baixo até **backup automatizado** e selecione **habilitar**. Você também pode especificar o período de retenção e a conta de armazenamento, bem como habilitar a criptografia, fazer backup de bancos de dados do sistema e configurar um agendamento de backup.  A captura de tela do portal do Azure a seguir mostra as configurações do **Backup Automatizado do SQL**.
 
 ![Configuração de Backup Automatizado do SQL no portal do Azure](./media/virtual-machines-windows-sql-automated-backup/azure-sql-arm-autobackup.png)
 
@@ -85,11 +85,11 @@ No **configurações do SQL Server** guia, role para baixo até **backup automat
 
 [!INCLUDE [windows-virtual-machines-sql-use-new-management-blade](../../../../includes/windows-virtual-machines-sql-new-resource.md)]
 
-Para máquinas virtuais do SQL Server existentes, navegue até a [recurso de máquinas virtuais do SQL](virtual-machines-windows-sql-manage-portal.md#access-sql-virtual-machine-resource) e, em seguida, selecione **Backups**. 
+Para máquinas virtuais SQL Server existentes, navegue até o [recurso de máquinas virtuais do SQL](virtual-machines-windows-sql-manage-portal.md#access-the-sql-virtual-machines-resource) e, em seguida, selecione backups. 
 
 ![Backup Automatizado do SQL para VMs existentes](./media/virtual-machines-windows-sql-automated-backup/azure-sql-rm-autobackup-existing-vms.png)
 
-Quando terminar, selecione a **Apply** botão na parte inferior da **Backups** página para salvar suas alterações.
+Quando terminar, selecione o botão **aplicar** na parte inferior da página **backups** para salvar as alterações.
 
 Se você for habilitar o Backup Automatizado pela primeira vez, o Azure configurará o Agente IaaS do SQL Server em segundo plano. Durante esse tempo, o portal do Azure pode não mostrar que o Backup Automatizado está configurado. Aguarde alguns minutos para que o agente seja instalado e configurado. Depois disso, o portal do Azure refletirá as novas configurações.
 
@@ -260,7 +260,7 @@ Set-AzVMSqlServerExtension -AutoBackupSettings $autobackupconfig `
     -VMName $vmname -ResourceGroupName $resourcegroupname
 ```
 
-## <a name="monitoring"></a>Monitoramento
+## <a name="monitoring"></a>Monitorando
 
 Para monitorar o Backup Automatizado no SQL Server 2014, há duas opções principais. Como o Backup Automatizado usa o recurso de Backup gerenciado do SQL Server, as mesmas técnicas de monitoramentos se aplicam a ambos.
 

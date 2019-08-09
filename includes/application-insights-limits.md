@@ -5,28 +5,28 @@ services: application-insights
 author: mrbullwinkle
 ms.service: application-insights
 ms.topic: include
-ms.date: 06/20/2019
+ms.date: 08/06/2019
 ms.author: mbullwin
 ms.custom: include file
-ms.openlocfilehash: 708421feca879ade26a1488541fa7fbf8a601358
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: dd678fb784fa7587912f113a7c00bebca76efce8
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67303852"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68857312"
 ---
 Há alguns limites no número de métricas e eventos por aplicativo, ou seja, por chave de instrumentação. Os limites dependem do [plano de preços](https://azure.microsoft.com/pricing/details/application-insights/) que você escolher.
 
-| Resource | Limite padrão | Observação
+| Recurso | Limite padrão | Observação
 | --- | --- | --- |
-| Total de dados por dia | 100 GB | Você pode reduzir os dados ao definir um limite. Caso precise de mais dados, é possível aumentar o limite até 1.000 GB. Para capacidades maiores que 1.000 GB, envie um email para AIDataCap@microsoft.com.
+| Total de dados por dia | 100 GB | Você pode reduzir os dados ao definir um limite. Caso precise de mais dados, é possível aumentar o limite até 1.000 GB. Para capacidades maiores que 1.000 GB, envie um email AIDataCap@microsoft.compara.
 | Limitação | 32.000 eventos/segundo | O limite é medido em um minuto.
 | Retenção de dados | 90 dias | Este recurso destina-se a [Pesquisa](../articles/azure-monitor/app/diagnostic-search.md), [Análise](../articles/azure-monitor/app/analytics.md) e [Metrics Explorer](../articles/azure-monitor/app/metrics-explorer.md).
 | Retenção de resultados detalhados do [Teste de disponibilidade de várias etapas](../articles/azure-monitor/app/availability-multistep.md) | 90 dias | Esse recurso fornece resultados detalhados de cada etapa.
 | Tamanho máximo de evento | 64.000 |
-| Tamanho dos nomes de propriedade e métrica | 150 | Veja [esquemas de tipo](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/EndpointSpecs/Schemas/Docs/).
-| Tamanho da cadeia de caracteres do valor da propriedade | 8\.192 | Veja [esquemas de tipo](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/EndpointSpecs/Schemas/Docs/).
-| Comprimento da mensagem de rastreamento e de exceção | 32.768  | Veja [esquemas de tipo](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/EndpointSpecs/Schemas/Docs/).
+| Tamanho dos nomes de propriedade e métrica | 150 | Veja [esquemas de tipo](https://github.com/microsoft/ApplicationInsights-Home/tree/master/EndpointSpecs/Schemas/Bond).
+| Tamanho da cadeia de caracteres do valor da propriedade | 8\.192  | Veja [esquemas de tipo](https://github.com/microsoft/ApplicationInsights-Home/tree/master/EndpointSpecs/Schemas/Bond).
+| Comprimento da mensagem de rastreamento e de exceção | 32.768  | Veja [esquemas de tipo](https://github.com/microsoft/ApplicationInsights-Home/tree/master/EndpointSpecs/Schemas/Bond).
 | Contagem de [testes de disponibilidade](../articles/azure-monitor/app/monitor-web-app-availability.md) por aplicativo | 100 |
 | Retenção de dados do [criador de perfil](../articles/azure-monitor/app/profiler.md) | 5 dias |
 | Dados do [criador de perfil](../articles/azure-monitor/app/profiler.md) enviados por dia | 10 GB |

@@ -17,10 +17,10 @@ ms.workload: infrastructure-services
 ms.date: 04/30/2019
 ms.author: sedusch
 ms.openlocfilehash: 16f88790d96a1e46f60db368f69155b3ad7afbef
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 08/08/2019
 ms.locfileid: "67797501"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-for-sap-applications"></a>Alta disponibilidade do SAP NetWeaver em VMs do Azure no SUSE Linux Enterprise Server para aplicativos SAP
@@ -54,7 +54,7 @@ ms.locfileid: "67797501"
 [nfs-ha]:high-availability-guide-suse-nfs.md
 
 Este artigo descreve como implantar as máquinas virtuais, configurar as máquinas virtuais, instalar a estrutura de cluster e instalar um sistema SAP NetWeaver 7.50 com alta disponibilidade.
-Nas configurações de exemplo, comandos de instalação etc. O número da instância ASCS 00, o número da instância ERS 02 e a ID do sistema SAP NW1 são usados. Os nomes dos recursos (por exemplo, máquinas virtuais, redes virtuais) no exemplo pressupõem que você tenha usado o [modelo convergido][template-converged] com ID NW1 para criar os recursos do sistema.
+Nas configurações de exemplo, comandos de instalação etc. O número da instância ASCS 00, o número da instância ERS 02 e a ID do sistema SAP NW1 são usados. Os nomes dos recursos (por exemplo, máquinas virtuais, redes virtuais) no exemplo pressupõem que você usou o [modelo convergido][template-converged] com a ID do sistema SAP NW1 para criar os recursos.
 
 Primeiro, leia os seguintes documentos e Notas SAP
 
@@ -73,11 +73,11 @@ Primeiro, leia os seguintes documentos e Notas SAP
 * A Nota SAP [1984787] tem informações gerais sobre o SUSE Linux Enterprise Server 12.
 * A Nota SAP [1999351] tem informações de solução de problemas adicionais para a Extensão de Monitoramento Avançado do Azure para SAP.
 * [WIKI da comunidade do SAP](https://wiki.scn.sap.com/wiki/display/HOME/SAPonLinuxNotes) tem todas as Notas SAP necessárias para Linux.
-* [Máquinas virtuais de planejamento e implementação para SAP no Linux do Azure][planning-guide]
+* [Planejamento e implementação de máquinas virtuais do Azure para SAP no Linux][planning-guide]
 * [Implantação de máquinas virtuais do Azure para SAP no Linux][deployment-guide]
 * [Implantação de DBMS de máquinas virtuais do Azure para SAP no Linux][dbms-guide]
-* [SUSE SAP HA guias de melhores práticas][suse-ha-guide] os guias contêm todas as informações necessárias para configurar o Netweaver HA e replicação de sistema do SAP HANA no local. Use esses guias como uma linha de base geral. Eles fornecem informações muito mais detalhadas.
-* [Notas de versão do SP3 com a extensão de alta disponibilidade do SUSE 12][suse-ha-12sp3-relnotes]
+* Guias de práticas recomendadas do [SuSE SAP ha][suse-ha-guide] Os guias contêm todas as informações necessárias para configurar o NetWeaver HA e a replicação de sistema SAP HANA no local. Use esses guias como uma linha de base geral. Eles fornecem informações muito mais detalhadas.
+* [Notas de versão da extensão de alta disponibilidade do SUSE 12 SP3][suse-ha-12sp3-relnotes]
 
 ## <a name="overview"></a>Visão geral
 
@@ -88,7 +88,7 @@ Para obter alta disponibilidade, o SAP NetWeaver requer um servidor NFS. O servi
 O servidor NFS, ASCS do SAP NetWeaver, SCS do SAP NetWeaver, ERS do SAP NetWeaver e o banco de dados SAP HANA usam um nome do host virtual e endereços IP virtuais. No Azure, um balanceador de carga é necessário para usar um endereço IP virtual. A lista a seguir mostra a configuração do balanceador de carga (A) SCS e ERS.
 
 > [!IMPORTANT]
-> Clustering de multi-SID de ASCS/ERS do SAP com o SUSE Linux como sistema operacional convidado em VMs do Azure está **não tem suporte**. Clustering de vários SID descreve a instalação de várias instâncias do SAP ASCS/ERS com SIDs diferentes em um cluster do Pacemaker
+> **Não há suporte para**clustering de vários SIDs do SAP ASCS/ers com o SuSE Linux como sistema operacional convidado em VMs do Azure. Clustering de vários SIDs descreve a instalação de várias instâncias do SAP ASCS/ERS com SIDs diferentes em um cluster pacemaker
 
 ### <a name="ascs"></a>(A)SCS
 
@@ -125,7 +125,7 @@ O servidor NFS, ASCS do SAP NetWeaver, SCS do SAP NetWeaver, ERS do SAP NetWeave
 
 ## <a name="setting-up-a-highly-available-nfs-server"></a>Configuração de um servidor NFS altamente disponível
 
-O SAP NetWeaver requer um armazenamento compartilhado para o diretório de perfil e transporte. Leia [alta disponibilidade para NFS em VMs do Azure no SUSE Linux Enterprise Server][nfs-ha] sobre como configurar um servidor NFS para SAP NetWeaver.
+O SAP NetWeaver requer um armazenamento compartilhado para o diretório de perfil e transporte. Leia [alta disponibilidade para NFS em VMs do Azure em SuSE Linux Enterprise Server][nfs-ha] sobre como configurar um servidor NFS para SAP NetWeaver.
 
 ## <a name="setting-up-ascs"></a>Configuração do (A)SCS
 
@@ -137,8 +137,8 @@ O Azure Marketplace contém uma imagem para SUSE Linux Enterprise Server for SAP
 
 Você pode usar um dos modelos de início rápido no GitHub para implantar todos os recursos necessários. O modelo implanta as máquinas virtuais, o balanceador de carga, o conjunto de disponibilidade etc. Siga estas etapas para implantar o modelo:
 
-1. Abra o [modelo multi-SID do ASCS/SCS][template-multisid-xscs] or the [converged template][template-converged] on the Azure portal. 
-   The ASCS/SCS template only creates the load-balancing rules for the SAP NetWeaver ASCS/SCS and ERS (Linux only) instances whereas the converged template also creates the load-balancing rules for a database (for example Microsoft SQL Server or SAP HANA). If you plan to install an SAP NetWeaver based system and you also want to install the database on the same machines, use the [converged template][template-converged].
+1. Abra o [modelo de vários Sid ASCS/SCS][template-multisid-xscs] ou o [modelo convergido][template-converged] no portal do Azure. 
+   O modelo ASCS/SCS cria apenas as regras de balanceamento de carga para as instâncias do SAP NetWeaver ASCS/SCS e ERS (somente Linux), enquanto o modelo convergido também cria as regras de balanceamento de carga para um banco de dados (por exemplo Microsoft SQL Server ou SAP HANA). Se você planeja instalar um sistema baseado no SAP NetWeaver e também deseja instalar o banco de dados nos mesmos computadores, use o [modelo convergido][template-converged].
 1. Defina os seguintes parâmetros
    1. Prefixo de recurso (somente modelo multi-SID do ASCS/SCS)  
       Digite o prefixo que você deseja usar. O valor é usado como um prefixo para os recursos que serão implantados.
@@ -206,7 +206,7 @@ Primeiro, você precisa criar as máquinas virtuais para este cluster NFS. Poste
          * Repita as etapas acima para criar uma investigação de integridade para ERS (por exemplo, 621**02** e **nw1-aers-hp**)
    1. Regras de balanceamento de carga
       1. 32**00** TCP para ASCS
-         1. Abra o balanceador de carga, selecione as regras de balanceamento de carga e clique em Adicionar
+         1. Abra o balanceador de carga, selecione regras de balanceamento de carga e clique em Adicionar
          1. Insira o nome da nova regra do balanceador de carga (por exemplo, **nw1-lb-3200**)
          1. Selecione o endereço IP de front-end, o pool de back-end e a investigação de integridade criados anteriormente (por exemplo, **nw1-ascs-frontend**)
          1. Mantenha o protocolo **TCP**, insira a porta **3200**
@@ -219,7 +219,7 @@ Primeiro, você precisa criar as máquinas virtuais para este cluster NFS. Poste
          * Repita as etapas acima para portas 33**02**, 5**02**13, 5**02**14, 5**02**16 e TCP para o ERS do ASCS
 
 > [!IMPORTANT]
-> Não habilite os carimbos de hora do TCP em VMs do Azure colocadas por trás do balanceador de carga do Azure. Habilitar TCP carimbos de hora fará com que as investigações de integridade falha. Defina o parâmetro **net.ipv4.tcp_timestamps** à **0**. Para obter detalhes, consulte [investigações de integridade do balanceador de carga](https://docs.microsoft.com/azure/load-balancer/load-balancer-custom-probe-overview).
+> Não habilite carimbos de data/hora TCP em VMs do Azure colocadas por trás Azure Load Balancer. Habilitar carimbos de data/hora TCP fará com que as investigações de integridade falhem. Defina o parâmetro **net. IPv4. TCP _timestamps** como **0**. Para obter detalhes, consulte [Load Balancer investigações de integridade](https://docs.microsoft.com/azure/load-balancer/load-balancer-custom-probe-overview).
 
 ### <a name="create-pacemaker-cluster"></a>Criar cluster do Pacemaker
 
@@ -512,7 +512,7 @@ Os itens a seguir são prefixados com **[A]** – aplicável a todos os nós, **
 
 1. **[A]** Configurar Keep Alive
 
-   A comunicação entre o servidor de aplicativos do SAP NetWeaver e o ASCS/SCS é roteada por meio de um balanceador de carga de software. O balanceador de carga desconecta conexões inativas após um tempo limite configurável. Para evitar isso, você precisa definir um parâmetro no perfil do SAP NetWeaver ASCS/SCS e alterar as configurações do sistema Linux. Leia [nota SAP 1410736][1410736] para obter mais informações.
+   A comunicação entre o servidor de aplicativos do SAP NetWeaver e o ASCS/SCS é roteada por meio de um balanceador de carga de software. O balanceador de carga desconecta conexões inativas após um tempo limite configurável. Para evitar isso, você precisa definir um parâmetro no perfil do SAP NetWeaver ASCS/SCS e alterar as configurações do sistema Linux. Leia a [Observação do SAP 1410736][1410736] para obter mais informações.
 
    O parâmetro enque/encni/set_so_keepalive do perfil do ASCS/SCS já foi adicionado na última etapa.
 
@@ -536,7 +536,7 @@ Os itens a seguir são prefixados com **[A]** – aplicável a todos os nós, **
 
 1. **[1]** Criar os recursos de cluster do SAP
 
-Se usando uma arquitetura de servidor 1 enqueue (ENSA1), defina os recursos da seguinte maneira:
+Se estiver usando a arquitetura do enqueue Server 1 (ENSA1), defina os recursos da seguinte maneira:
 
    <pre><code>sudo crm configure property maintenance-mode="true"
    
@@ -564,8 +564,8 @@ Se usando uma arquitetura de servidor 1 enqueue (ENSA1), defina os recursos da s
    sudo crm configure property maintenance-mode="false"
    </code></pre>
 
-  Enfileirar servidor 2, incluindo a replicação, a partir do SAP NW 7.52 introduziu o suporte do SAP. Começando com o ABAP plataforma 1809, enfileirar o servidor 2 é instalado por padrão. Consulte SAP Observação [2630416](https://launchpad.support.sap.com/#/notes/2630416) para enfileirar o suporte do servidor 2.
-Se usando uma arquitetura de servidor 2 enqueue ([ENSA2](https://help.sap.com/viewer/cff8531bc1d9416d91bb6781e628d4e0/1709%20001/en-US/6d655c383abf4c129b0e5c8683e7ecd8.html)), defina os recursos da seguinte maneira:
+  O SAP introduziu o suporte para o enqueue Server 2, incluindo a replicação, a partir do SAP NW 7,52. A partir do ABAP Platform 1809, o enqueue Server 2 é instalado por padrão. Consulte o SAP Note [2630416](https://launchpad.support.sap.com/#/notes/2630416) para suporte ao servidor de enfileiramento 2.
+Se estiver usando a arquitetura do enqueue Server 2 ([ENSA2](https://help.sap.com/viewer/cff8531bc1d9416d91bb6781e628d4e0/1709%20001/en-US/6d655c383abf4c129b0e5c8683e7ecd8.html)), defina os recursos da seguinte maneira:
 
 <pre><code>sudo crm configure property maintenance-mode="true"
    
@@ -591,7 +591,7 @@ Se usando uma arquitetura de servidor 2 enqueue ([ENSA2](https://help.sap.com/vi
    sudo crm configure property maintenance-mode="false"
    </code></pre>
 
-  Se você estiver atualizando de uma versão mais antiga e alternar para o servidor de enfileiramento 2, consulte SAP Observação [2641019](https://launchpad.support.sap.com/#/notes/2641019). 
+  Se você estiver atualizando de uma versão mais antiga e alternando para o servidor de enfileiramento 2, consulte a observação do SAP [2641019](https://launchpad.support.sap.com/#/notes/2641019). 
 
    Verifique se o status do cluster é ok e se todos os recursos estão iniciados. Não importa em qual nó os recursos estão sendo executados.
 
@@ -710,7 +710,7 @@ As etapas abaixo pressupõem que você instale o servidor de aplicativos em um s
 
 ## <a name="install-database"></a>Instalar banco de dados
 
-Neste exemplo, o SAP NetWeaver está instalado no SAP HANA. Você pode usar todos os bancos de dados com suporte para esta instalação. Para obter mais informações sobre como instalar o SAP HANA no Azure, consulte [alta disponibilidade do SAP HANA em máquinas virtuais do Azure (VMs)][sap-hana-ha]. For a list of supported databases, see [SAP Note 1928533][1928533].
+Neste exemplo, o SAP NetWeaver está instalado no SAP HANA. Você pode usar todos os bancos de dados com suporte para esta instalação. Para obter mais informações sobre como instalar SAP HANA no Azure,. For a list of supported databases, see [SAP Note 1928533][1928533]consulte [alta disponibilidade de SAP Hana em VMS (máquinas virtuais) do Azure][sap-hana-ha].
 
 1. Executar a instalação da instância do banco de dados SAP
 
@@ -999,7 +999,7 @@ Os testes a seguir são uma cópia dos casos de teste nos guias de melhores prá
         rsc_sap_NW1_ERS02  (ocf::heartbeat:SAPInstance):   Started nw1-cl-0
    </code></pre>
 
-   Crie um bloqueio de enfileiramento, por exemplo, editando um usuário na transação su01. Execute os seguintes comandos como \<sapsid>adm no nó onde a instância do ASCS está sendo executada. Os comandos interromperão a instância do ASCS e a iniciarão novamente. Se usando uma arquitetura de servidor 1 enqueue, o bloqueio de enfileiramento deve ser perdida neste teste. Se usando uma arquitetura de servidor 2 enqueue, o enfileiramento será mantido. 
+   Crie um bloqueio de enfileiramento, por exemplo, editando um usuário na transação su01. Execute os seguintes comandos como \<sapsid>adm no nó onde a instância do ASCS está sendo executada. Os comandos interromperão a instância do ASCS e a iniciarão novamente. Se você estiver usando a arquitetura enqueue Server 1, espera-se que o bloqueio de enfileiramento seja perdido neste teste. Se estiver usando a arquitetura do Queue Server 2, o enfileiramento será retido. 
 
    <pre><code>nw1-cl-1:nw1adm 54> sapcontrol -nr 00 -function StopWait 600 2
    </code></pre>
@@ -1199,8 +1199,8 @@ Os testes a seguir são uma cópia dos casos de teste nos guias de melhores prá
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Máquinas virtuais de planejamento e implementação para o SAP do Azure][planning-guide]
+* [Planejamento e implementação de máquinas virtuais do Azure para SAP][planning-guide]
 * [Implantação de máquinas virtuais do Azure para SAP][deployment-guide]
 * [Implantação de DBMS de máquinas virtuais do Azure para SAP][dbms-guide]
 * Para saber como estabelecer a alta disponibilidade e o plano de recuperação de desastres do SAP HANA no Azure (instâncias grandes), confira [Alta disponibilidade e recuperação de desastres do SAP HANA (instâncias grandes) no Azure](hana-overview-high-availability-disaster-recovery.md).
-* Para saber como estabelecer a alta disponibilidade e o plano de recuperação de desastre do SAP HANA em VMs do Azure, consulte [alta disponibilidade do SAP HANA em máquinas virtuais do Azure (VMs)][sap-hana-ha]
+* Para saber como estabelecer alta disponibilidade e planejar a recuperação de desastre de SAP HANA em VMs do Azure, consulte [alta disponibilidade de SAP Hana em VMS (máquinas virtuais) do Azure][sap-hana-ha]

@@ -1,6 +1,6 @@
 ---
-title: API da Web que chama downstream web APIs (visão geral) – plataforma de identidade da Microsoft
-description: Saiba como criar uma API que chamadas downstream APIs da web (visão geral) da web.
+title: API Web que chama APIs da Web downstream (visão geral) – plataforma de identidade da Microsoft
+description: Saiba como criar uma API Web que chama APIs da Web downstream (visão geral).
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
@@ -13,34 +13,34 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
-ms.custom: aaddev
+ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 497134b7f3cc535f7b3f180db13cd04ef56787db
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1ef9fc121b16d81eed932d1ab55ca38d2a2f1057
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65075394"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68852492"
 ---
 # <a name="scenario-web-api-that-calls-web-apis"></a>Cenário: API Web que chama as APIs Web
 
-Aprenda tudo o que você precisa para compilar uma API web que chama APIs web.
+Saiba tudo o que você precisa para criar uma API Web que chama APIs da Web.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Nesse cenário, a API web protegida que chamadas de web APIs, se baseia no cenário de "Proteger uma API da web". Para saber mais sobre esse cenário fundamental, consulte [API Web protegida - cenário](scenario-protected-web-api-overview.md) primeiro.
+Esse cenário, a API Web protegida que chama APIs da Web, se baseia no cenário "proteger uma API Web". Para saber mais sobre esse cenário básico, confira [API Web protegida-cenário](scenario-protected-web-api-overview.md) primeiro.
 
 ## <a name="overview"></a>Visão geral
 
-- Um cliente (web, área de trabalho, aplicativo móvel ou de página única) - não representado no diagrama a seguir - chama uma API web protegida e fornece um token de portador JWT no cabeçalho Http "Autorização".
-- A API web protegida valida o token e usa a MSAL `AcquireTokenOnBehalfOf` método solicitar (do Azure AD) outro token para que ele pode, em si, chamar uma segunda API da web (chamado a API web downstream) em nome do usuário.
-- A API web protegida usa esse token para chamar uma API downstream. Ele também pode chamar `AcquireTokenSilent`posteriormente para solicitar tokens para outras APIs de downstream (mas ainda em nome do usuário mesmo). `AcquireTokenSilent` atualiza o token quando necessário.
+- Um cliente (Web, desktop, móvel ou aplicativo de página única) – não representado no diagrama abaixo – chama uma API Web protegida e fornece um token de portador JWT em seu cabeçalho http "Authorization".
+- A API da Web protegida valida o token e usa o método `AcquireTokenOnBehalfOf` MSAL para solicitar (do Azure AD) outro token para que ele possa, por sua vez, chamar uma segunda API da Web (chamada de API da Web downstream) em nome do usuário.
+- A API Web protegida usa esse token para chamar uma API downstream. Ele também pode chamar `AcquireTokenSilent`mais tarde para solicitar tokens para outras APIs downstream (mas ainda em nome do mesmo usuário). `AcquireTokenSilent`atualiza o token quando necessário.
 
-![Chamar uma API web de API da Web](media/scenarios/web-api.svg)
+![API Web chamando uma API Web](media/scenarios/web-api.svg)
 
-## <a name="specifics"></a>Informações específicas
+## <a name="specifics"></a>Especificações
 
-A parte de registro de aplicativo relacionado às permissões de API é clássica. A configuração do aplicativo envolve o uso de fluxo OAuth 2.0 on-behalf-of para trocar o token de portador JWT em relação a um token para a API downstream. Esse token é adicionado ao cache de token, onde ele está disponível nos controladores da API web e pode adquirir um token silenciosamente para chamar as APIs de downstream.
+A parte do registro de aplicativo relacionada às permissões de API é clássica. A configuração do aplicativo envolve o uso do fluxo em nome de do OAuth 2,0 para trocar o token de portador JWT em relação a um token para uma API downstream. Esse token é adicionado ao cache de token, onde está disponível nos controladores da API Web e pode adquirir um token silenciosamente para chamar as APIs de downstream.
 
 ## <a name="next-steps"></a>Próximas etapas
 

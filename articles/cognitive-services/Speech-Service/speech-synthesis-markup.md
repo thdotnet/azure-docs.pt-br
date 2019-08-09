@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 1bd1882218630aca0707a792d120045c06dea127
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 89b8b5f8c574de033fabf6861e24fc7d2b31e171
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68552685"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68855094"
 ---
 # <a name="speech-synthesis-markup-language-ssml"></a>Linguagem de marcação de síntese de fala (SSML)
 
@@ -413,8 +413,8 @@ Somente um arquivo de áudio de segundo plano é permitido por documento SSML. N
 |-----------|-------------|---------------------|
 | src | Especifica o local/URL do arquivo de áudio de segundo plano. | Necessário se estiver usando áudio de fundo em seu documento SSML. |
 | volume | Especifica o volume do arquivo de áudio de segundo plano. **Valores**aceitos `0` : `100` para inclusivo. O valor padrão é `1`. | Opcional |
-| FadeIn | Especifica a duração da fade in de áudio em segundo plano. **Valores**aceitos `0` : `10000` para inclusivo.  | Opcional |
-| FadeOut | Especifica a duração da fade out de áudio em segundo plano. **Valores**aceitos `0` : `10000` para inclusivo.  | Opcional |
+| FadeIn | Especifica a duração do áudio em segundo plano desaparecer em milissegundos. O valor padrão é `0`, que é o equivalente a sem fade in. **Valores**aceitos `0` : `10000` para inclusivo.  | Opcional |
+| FadeOut | Especifica a duração do esmaecimento de áudio em segundo plano em milissegundos. O valor padrão é `0`, que é o equivalente a sem desaparecer. **Valores**aceitos `0` : `10000` para inclusivo.  | Opcional |
 
 **Exemplo**
 

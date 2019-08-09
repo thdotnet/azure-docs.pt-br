@@ -1,24 +1,23 @@
 ---
 title: Configurar um nome de domínio personalizado para sua conta de armazenamento do Azure | Microsoft Docs
 description: Use o portal do Azure para mapear seu próprio nome canônico (CNAME) para o armazenamento de Blob ou o ponto de extremidade da Web em uma conta de armazenamento do Azure.
-services: storage
 author: normesta
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/26/2018
 ms.author: normesta
-ms.reviewer: seguler
+ms.reviewer: dineshm
 ms.subservice: blobs
-ms.openlocfilehash: c0fb3551b14a2239f26c54f639b90400277fab25
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+ms.openlocfilehash: ae809dd4841d6df8caabebfaded263b52f386834
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67501940"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68845038"
 ---
 # <a name="configure-a-custom-domain-name-for-your-azure-storage-account"></a>Configurar um nome de domínio personalizado para sua conta de armazenamento do Azure
 
-Você pode configurar um domínio personalizado para acessar os dados de blob em sua conta de armazenamento do Azure. O endpoint padrão do armazenamento de Blobs do Azure é *\<nome da conta de armazenamento>.blob.core.windows.net*. Você também pode usar o ponto de extremidade da web que é gerado como parte de [recurso sites estáticos](storage-blob-static-website.md). Se você mapear um domínio e subdomínio personalizados, como *www\.contoso.com*, para o ponto de extremidade da web ou de blob para sua conta de armazenamento, os usuários podem usar esse domínio para acessar dados de blob em sua conta de armazenamento.
+Você pode configurar um domínio personalizado para acessar os dados de blob em sua conta de armazenamento do Azure. O endpoint padrão do armazenamento de Blobs do Azure é *\<nome da conta de armazenamento>.blob.core.windows.net*. Você também pode usar o ponto de extremidade da Web que é gerado como parte do [recurso de sites estáticos](storage-blob-static-website.md). Se você mapear um domínio e subdomínio personalizados, como *www\.contoso.com*, para o BLOB ou ponto de extremidade da Web para sua conta de armazenamento, os usuários poderão usar esse domínio para acessar dados de BLOB em sua conta de armazenamento.
 
 > [!IMPORTANT]
 > O Armazenamento do Azure ainda não dá suporte nativo a HTTPS com domínios personalizados. Você pode atualmente [Usar o CDN do Azure para acessar blobs usando domínios personalizados em HTTPS](storage-https-custom-domain-cdn.md).
@@ -28,29 +27,29 @@ Você pode configurar um domínio personalizado para acessar os dados de blob em
 > Contas de armazenamento atualmente suportam a apenas um nome de domínio personalizado por conta. Você não pode mapear um nome de domínio personalizado para os pontos de extremidade de serviços da Web e de blob.
 > 
 > [!NOTE]
-> O mapeamento só funcionam para subdomínios (por exemplo, www\.contoso.com). Se você quiser ter seu ponto de extremidade da web disponível no domínio raiz (por exemplo, contoso.com), você precisa [usar a CDN do Azure com domínios personalizados](storage-https-custom-domain-cdn.md)
+> O mapeamento só funciona para subdomínios (por exemplo, www\.contoso.com). Se você quiser ter o ponto de extremidade da Web disponível no domínio raiz (por exemplo, contoso.com), precisará [usar a CDN do Azure com domínios personalizados](storage-https-custom-domain-cdn.md)
 
-A tabela a seguir mostra algumas URLs de amostra para dados de blobs localizados em uma conta de armazenamento denominada *mystorageaccount*. O subdomínio personalizado que está registrado para a conta de armazenamento é *www\.contoso.com*:
+A tabela a seguir mostra algumas URLs de amostra para dados de blobs localizados em uma conta de armazenamento denominada *mystorageaccount*. O subdomínio personalizado registrado para a conta de armazenamento é *contoso.com da\.Web*:
 
 | Tipo de recurso | URL padrão | URL de domínio personalizada |
 | --- | --- | --- |
 | Conta de armazenamento | http:\//mystorageaccount.blob.core.windows.net | http:\//www.contoso.com |
-| Blob |http:\//mystorageaccount.blob.core.windows.net/mycontainer/myblob | http:\//www.contoso.com/mycontainer/myblob |
-| Contêiner raiz | http:\//mystorageaccount.blob.core.windows.net/myblob ou http:\//mystorageaccount.blob.core.windows.net/$root/myblob | http:\//www.contoso.com/myblob ou http:\//www.contoso.com/$ raiz/myblob |
-| Web |  http:\//mystorageaccount. [ Zone].Web.Core.Windows.NET/$Web/[indexdoc] ou http:\//mystorageaccount. [ Zone].Web.Core.Windows.NET/[indexdoc] ou http:\//mystorageaccount. [ Zone].Web.Core.Windows.NET/$Web ou http:\//mystorageaccount. [ Zone].Web.Core.Windows.NET/ | http:\/web de $ /www.contoso.com/ ou http:\//www.contoso.com/ ou http:\//www.contoso.com/ web de $/ [indexdoc] ou http:\//www.contoso.com/ [indexdoc] |
+| Blob |http:\//mystorageaccount.blob.core.windows.net/mycontainer/myblob | http:\//www.contoso.com/MyContainer/myblob |
+| Contêiner raiz | http:\//mystorageaccount.blob.Core.Windows.net/myblob ou http:\//mystorageaccount.blob.Core.Windows.net/$root/myblob | http:\//www.contoso.com/myblob ou http:\//www.contoso.com/$root/myblob |
+| Web |  http:\//mystorageaccount. [ Zone]. Web. Core. Windows. NET/$Web/[indexdoc] ou http:\//mystorageaccount. [ Zone]. Web. Core. Windows. net/[indexdoc] ou http:\//mystorageaccount. [ Zone]. Web. Core. Windows. NET/$Web ou http:\//mystorageaccount. [ Zone]. Web. Core. Windows. net/ | http:\//www.contoso.com/$Web ou http:\//www.contoso.com/ou http:\//www.contoso.com/$Web/[indexdoc] ou http:\//www.contoso.com/[indexdoc] |
 
 > [!NOTE]  
 > Conforme mostrado nas seções a seguir, todos os exemplos para o terminal de serviço de blob também se aplicam ao terminal de serviço da web.
 
-## <a name="direct-vs-intermediary-cname-mapping"></a>Direto versus intermediário mapeamento de CNAME
+## <a name="direct-vs-intermediary-cname-mapping"></a>Mapeamento de CNAME direto vs. intermediário
 
-Você pode apontar seu domínio personalizado, prefixado com um subdomínio (por exemplo, www\.contoso.com) para o ponto de extremidade de blob para sua conta de armazenamento em qualquer uma das duas maneiras: 
+Você pode apontar seu domínio personalizado prefixado com um subdomínio (por exemplo\., www contoso.com) para o ponto de extremidade de BLOB para sua conta de armazenamento de uma das duas maneiras: 
 * Use o mapeamento de CNAME direto.
 * Use o subdomínio intermediário *asverify*.
 
 ### <a name="direct-cname-mapping"></a>Mapeamento direto de CNAME
 
-O primeiro método, que é também o mais simples, é criar um registro de nome canônico (CNAME) que mapeia seu domínio e subdomínio personalizados diretamente para o ponto de extremidade do blob. Um registro CNAME é um recurso de DNS que mapeia um domínio de origem a um domínio de destino. Em nosso exemplo, o domínio de origem é seu próprio domínio e subdomínio personalizados (*www\.contoso.com*, por exemplo). O domínio de destino é o ponto de extremidade de serviço de blob (*mystorageaccount.blob.core.windows.net*, por exemplo).
+O primeiro método, que é também o mais simples, é criar um registro de nome canônico (CNAME) que mapeia seu domínio e subdomínio personalizados diretamente para o ponto de extremidade do blob. Um registro CNAME é um recurso de DNS que mapeia um domínio de origem a um domínio de destino. Em nosso exemplo, o domínio de origem é seu próprio domínio e subdomínio personalizados *(\.www contoso.com*, por exemplo). O domínio de destino é o ponto de extremidade de serviço de blob (*mystorageaccount.blob.core.windows.net*, por exemplo).
 
 O método direto é coberto na seção "Registrar um domínio personalizado".
 
@@ -86,11 +85,11 @@ Normalmente, você pode gerenciar as configurações de DNS do seu domínio no s
 1. Localize a seção de gerenciamento de CNAMEs.  
    Talvez seja necessário acessar uma página de configurações avançadas e procurar **CNAME**, **Alias** ou **Subdomínios**.
 
-1. Criar um novo registro CNAME, insira um alias de subdomínio, como **www** ou **fotos** (subdomínio é obrigatório, não há suporte para domínios raiz) e, em seguida, forneça um nome de host.  
+1. Crie um novo registro CNAME, insira um alias de subdomínio, como **www** ou **photos** (subdomínio é necessário, não há suporte para domínios raiz) e forneça um nome de host.  
    O nome do host é o ponto de extremidade de serviço de blob. Seu formato é *\<mystorageaccount>.blob.core.windows.net*, onde *mystorageaccount* é o nome da sua conta de armazenamento. O nome do host a ser usado aparece no item #1 do painel **Domínio personalizado** no [portal do Microsoft Azure](https://portal.azure.com). 
 
 1. No painel **Domínio personalizado**, na caixa de texto, insira o nome do seu domínio personalizado, incluindo o subdomínio.  
-   Por exemplo, se seu domínio está *contoso.com* e é o alias de subdomínio *www*, insira **www\.contoso.com**. Se o seu subdomínio for *photos*, digite **photos.contoso.com**.
+   Por exemplo, se seu domínio for *contoso.com* e o alias de subdomínio for *www*, **digite\.www contoso.com**. Se o seu subdomínio for *photos*, digite **photos.contoso.com**.
 
 1. Para registrar seu domínio personalizado, selecione **Salvar**.  
    Se o registro for bem-sucedido, o portal notificará que sua conta de armazenamento foi atualizada com sucesso.
@@ -117,7 +116,7 @@ O subdomínio *asverify* é um subdomínio especial reconhecido pelo Azure. Ao a
    O nome do host é o ponto de extremidade de serviço de blob. Seu formato é *asverify.\<mystorageaccount> .blob.core.windows.net*, onde *mystorageaccount* é o nome da sua conta de armazenamento. O nome de host a ser usado aparece no item #2 dos *domínio personalizado* painel na [portal do Azure](https://portal.azure.com).
 
 1. No painel **Domínio personalizado**, na caixa de texto, insira o nome do seu domínio personalizado, incluindo o subdomínio.  
-   Não inclua *asverify*. Por exemplo, se seu domínio está *contoso.com* e é o alias de subdomínio *www*, insira **www\.contoso.com**. Se o seu subdomínio for *photos*, digite **photos.contoso.com**.
+   Não inclua *asverify*. Por exemplo, se seu domínio for *contoso.com* e o alias de subdomínio for *www*, **digite\.www contoso.com**. Se o seu subdomínio for *photos*, digite **photos.contoso.com**.
 
 1. Selecione a caixa de seleção **Usar validação de CNAME indireta**.
 

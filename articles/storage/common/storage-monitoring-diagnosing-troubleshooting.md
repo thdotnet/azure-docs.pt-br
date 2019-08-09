@@ -1,20 +1,19 @@
 ---
 title: Monitorar, diagnosticar e solucionar problemas do Armazenamento do Azure | Microsoft Docs
 description: Use recursos como análise de armazenamento, registro em log do lado do cliente e outras ferramentas de terceiros para identificar, diagnosticar e solucionar problemas relacionados ao Armazenamento do Azure.
-services: storage
 author: normesta
 ms.service: storage
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/11/2017
 ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: ccafa3431e12b036346c4fd654b2978dc9021471
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 08c19daa0af226834ea70db8847e1637c2373351
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65912448"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68855362"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Monitoramento, diagnóstico e solução de problemas de Armazenamento do Microsoft Azure
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -247,7 +246,7 @@ A Biblioteca de Clientes de Armazenamento gera automaticamente uma ID de solicit
 >
 
 ### <a name="server-request-id"></a>ID de solicitação do servidor
-O serviço de armazenamento automaticamente gera IDs de solicitação do servidor.
+O serviço de armazenamento gera automaticamente IDs de solicitação do servidor.
 
 * No log de armazenamento do lado do servidor, a ID de solicitação do servidor aparece na coluna **Cabeçalho da ID de solicitação**.
 * Em um rastreamento de rede tal como um capturado pelo Fiddler, a ID de solicitação do servidor aparece em mensagens de solicitação como o valor do cabeçalho HTTP **x-ms-request-id**.
@@ -426,7 +425,7 @@ Se a métrica de **PercentThrottlingError** mostra um aumento na porcentagem de 
 Um aumento em **PercentThrottlingError** frequentemente acontece ao mesmo tempo que há um aumento no número de solicitações de armazenamento ou quando você está fazendo um teste de carga inicial do seu aplicativo. Isso pode também manifestar no cliente como mensagens de status HTTP "503 Server Busy" ou "500 Operation Timeout" a partir das operações de armazenamento.
 
 #### <a name="transient-increase-in-PercentThrottlingError"></a>Aumento transitório em PercentThrottlingError
-Se estiver vendo picos no valor do **PercentThrottlingError** que coincidam com períodos de alta atividade para o aplicativo, você deverá implementar uma estratégia de retirada exponencial (não linear) para novas tentativas em seu cliente. As novas tentativas de retirada reduzem a carga imediata na partição e ajudam seu aplicativo a atenuar os picos no tráfego. Para obter mais informações sobre como implementar políticas de repetição usando a biblioteca de cliente de armazenamento, consulte o [Microsoft.Azure.Storage.RetryPolicies namespace](/dotnet/api/microsoft.azure.storage.retrypolicies).
+Se estiver vendo picos no valor do **PercentThrottlingError** que coincidam com períodos de alta atividade para o aplicativo, você deverá implementar uma estratégia de retirada exponencial (não linear) para novas tentativas em seu cliente. As novas tentativas de retirada reduzem a carga imediata na partição e ajudam seu aplicativo a atenuar os picos no tráfego. Para obter mais informações sobre como implementar políticas de repetição usando a biblioteca de cliente de armazenamento, consulte o [namespace Microsoft. Azure. Storage. RetryPolicies](/dotnet/api/microsoft.azure.storage.retrypolicies).
 
 > [!NOTE]
 > Você também pode ver os picos no valor de **PercentThrottlingError** que não coincidem com períodos de alta atividade para o aplicativo: a causa mais provável aqui é o serviço de armazenamento estar movendo partições para melhorar o balanceamento de carga.
@@ -467,16 +466,16 @@ A causa mais comum desse erro é um cliente desconectando antes do tempo limite 
 ### <a name="the-client-is-receiving-403-messages"></a>O cliente está recebendo mensagens HTTP 403 (Proibido)
 Se o seu aplicativo do cliente está emitindo erros HTTP 403 (Proibido), uma possível causa é que o cliente esteja usando uma assinatura de acesso compartilhado (SAS) expirada quando envia uma solicitação de armazenamento (embora outras causas possíveis incluem distorção de relógio, chaves inválidas e cabeçalhos vazios). Se uma chave SAS expirada for a causa, você não verá nenhuma entrada nos dados de registro de log de armazenamento do lado do servidor. A tabela a seguir mostra um exemplo de log do lado do cliente gerado pela biblioteca do cliente de armazenamento que ilustra esse problema acontecendo:
 
-| Fonte | Detalhamento | Detalhamento | ID de solicitação do cliente | Texto de operação |
+| Origem | Detalhamento | Verbosity | ID da solicitação do cliente | Texto de operação |
 | --- | --- | --- | --- | --- |
-| Microsoft.Azure.Storage |Informações |3 |85d077ab-… |Inicialização da operação com o local principal por modo de local PrimaryOnly. |
-| Microsoft.Azure.Storage |Informações |3 |85d077ab -… |Iniciando solicitação síncrona para <https://domemaildist.blob.core.windows.netazureimblobcontainer/blobCreatedViaSAS.txt?sv=2014-02-14&sr=c&si=mypolicy&sig=OFnd4Rd7z01fIvh%2BmcR6zbudIH2F5Ikm%2FyhNYZEmJNQ%3D&api-version=2014-02-14> |
-| Microsoft.Azure.Storage |Informações |3 |85d077ab -… |Esperando uma resposta. |
+| Microsoft.Azure.Storage |Information |3 |85d077ab-… |Inicialização da operação com o local principal por modo de local PrimaryOnly. |
+| Microsoft.Azure.Storage |Information |3 |85d077ab -… |Iniciando solicitação síncrona para<https://domemaildist.blob.core.windows.netazureimblobcontainer/blobCreatedViaSAS.txt?sv=2014-02-14&sr=c&si=mypolicy&sig=OFnd4Rd7z01fIvh%2BmcR6zbudIH2F5Ikm%2FyhNYZEmJNQ%3D&api-version=2014-02-14> |
+| Microsoft.Azure.Storage |Information |3 |85d077ab -… |Esperando uma resposta. |
 | Microsoft.Azure.Storage |Aviso |2 |85d077ab -… |Exceção acionada ao aguardar a resposta: O servidor remoto retornou um erro: (403) Proibido. |
-| Microsoft.Azure.Storage |Informações |3 |85d077ab -… |Resposta recebida. Status code = 403, Request ID = 9d67c64a-64ed-4b0d-9515-3b14bbcdc63d, Content-MD5 = , ETag = . |
+| Microsoft.Azure.Storage |Information |3 |85d077ab -… |Resposta recebida. Status code = 403, Request ID = 9d67c64a-64ed-4b0d-9515-3b14bbcdc63d, Content-MD5 = , ETag = . |
 | Microsoft.Azure.Storage |Aviso |2 |85d077ab -… |Exceção gerada durante a operação: O servidor remoto retornou um erro: (403) Proibido. |
-| Microsoft.Azure.Storage |Informações |3 |85d077ab -… |Verificando se a operação deve ser repetida. Contagem de repetição = 0, Código de status HTTP = 403, Exceção = O servidor remoto retornou um erro: (403) Proibido. |
-| Microsoft.Azure.Storage |Informações |3 |85d077ab -… |O próximo local deve ser definido como principal, com base no modo de local. |
+| Microsoft.Azure.Storage |Information |3 |85d077ab -… |Verificando se a operação deve ser repetida. Contagem de repetição = 0, Código de status HTTP = 403, Exceção = O servidor remoto retornou um erro: (403) Proibido. |
+| Microsoft.Azure.Storage |Information |3 |85d077ab -… |O próximo local deve ser definido como principal, com base no modo de local. |
 | Microsoft.Azure.Storage |Erro |1 |85d077ab -… |A política de repetição não permitiu uma nova tentativa. Falha com o servidor remoto retornou um erro: (403) Proibido. |
 
 Nesse cenário, você deve investigar porque o token de SAS está expirando antes do cliente enviar o token para o servidor:
@@ -505,7 +504,7 @@ Você pode usar o log do lado do cliente a partir da biblioteca do cliente de ar
 
 O seguinte log do lado do cliente gerado pela biblioteca do cliente de armazenamento ilustra o problema quando o cliente não pode encontrar o contêiner para o blob que está criando. Esse log inclui detalhes das seguintes operações de armazenamento:
 
-| ID de solicitação | Operação |
+| ID da Solicitação | Operação |
 | --- | --- |
 | 07b26a5d-... |**DeleteIfExists** para excluir o contêiner do blob. Observe que essa operação inclui uma solicitação **HEAD** para verificar a existência do contêiner. |
 | e2d06d78… |**CreateIfNotExists** para criar o contêiner do blob. Observe que essa operação inclui uma solicitação **HEAD** que verifica a existência do contêiner. **HEAD** retorna uma mensagem 404, porém continua. |
@@ -521,7 +520,7 @@ Entradas de log:
 | 07b26a5d-... |Resposta recebida. Status code = 200, Request ID = eeead849-...Content-MD5 = , ETag =    &quot;0x8D14D2DC63D059B&quot;. |
 | 07b26a5d-... |Cabeçalhos da resposta foram processados com êxito, procedendo com o resto da operação. |
 | 07b26a5d-... |Baixar o corpo da resposta. |
-| 07b26a5d-... |Operação concluída com sucesso. |
+| 07b26a5d-... |Operação concluída com êxito. |
 | 07b26a5d-... |Iniciando solicitação síncrona para https://domemaildist.blob.core.windows.net/azuremmblobcontainer. |
 | 07b26a5d-... |StringToSign = DELETE............x-ms-client-request-id:07b26a5d-....x-ms-date:Tue, 03 Jun 2014 10:33:12    GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer.restype:container. |
 | 07b26a5d-... |Esperando uma resposta. |
@@ -539,7 +538,7 @@ Entradas de log:
 | e2d06d78-... |Resposta recebida. Status code = 404, Request ID = 353ae3bc-..., Content-MD5 = , ETag = . |
 | e2d06d78-... |Cabeçalhos da resposta foram processados com êxito, procedendo com o resto da operação. |
 | e2d06d78-... |Baixar o corpo da resposta. |
-| e2d06d78-... |Operação concluída com sucesso. |
+| e2d06d78-... |Operação concluída com êxito. |
 | e2d06d78-... |Iniciando solicitação assíncrona para https://domemaildist.blob.core.windows.net/azuremmblobcontainer. |
 | e2d06d78-... |StringToSign = PUT...0.........x-ms-client-request-id:e2d06d78-....x-ms-date:Tue, 03 Jun 2014 10:33:12 GMT.x-ms-version:2014-02-14./domemaildist/azuremmblobcontainer.restype:container. |
 | e2d06d78-... |Esperando uma resposta. |
@@ -561,7 +560,7 @@ Se o aplicativo do cliente tentar usar uma chave de SAS que não inclui as permi
 
 A tabela a seguir mostra um exemplo de mensagem d log do lado do servidor a partir do arquivo de registro de log de armazenamento:
 
-| NOME | Valor |
+| Nome | Valor |
 | --- | --- |
 | Hora de início da solicitação | 2014-05-30T06:17:48.4473697Z |
 | Tipo de operação     | GetBlobProperties            |
@@ -569,7 +568,7 @@ A tabela a seguir mostra um exemplo de mensagem d log do lado do servidor a part
 | Código de status HTTP   | 404                          |
 | Tipo de autenticação.| Sas                          |
 | Tipo de serviço       | Blob                         |
-| URL de Solicitação        | https://domemaildist.blob.core.windows.net/azureimblobcontainer/blobCreatedViaSAS.txt |
+| URL da solicitação        | https://domemaildist.blob.core.windows.net/azureimblobcontainer/blobCreatedViaSAS.txt |
 | &nbsp;                 |   ?sv=2014-02-14&sr=c&si=mypolicy&sig=XXXXX&;api-version=2014-02-14 |
 | Cabeçalho da ID de solicitação  | a1f348d5-8032-4912-93ef-b393e5252a3b |
 | ID de solicitação do cliente  | 2d064953-8436-4ee0-aa0c-65cb874f7929 |
@@ -626,7 +625,7 @@ Se esse problema ocorre com frequência, investigue porque o cliente não está 
 ### <a name="the-client-is-receiving-409-messages"></a>O cliente está recebendo mensagens HTTP 409 (Conflito)
 A tabela a seguir mostra um trecho do log do lado do servidor para duas operações de cliente: **DeleteIfExists** seguida imediatamente por **CreateIfNotExists** usando o mesmo nome de contêiner de blob. Cada operação do cliente resulta em duas solicitações enviadas para o servidor, primeiro uma solicitação **GetContainerProperties** para verificar se o contêiner existe, seguida por uma solicitação de **DeleteContainer** ou **CreateContainer**.
 
-| Timestamp | Operação | Result | Nome do contêiner | ID de solicitação do cliente |
+| Carimbo de data/hora | Operação | Resultado | Nome do contêiner | ID da solicitação do cliente |
 | --- | --- | --- | --- | --- |
 | 05:10:13.7167225 |GetContainerProperties |200 |mmcont |c9f52c89-… |
 | 05:10:13.8167325 |DeleteContainer |202 |mmcont |c9f52c89-… |
@@ -810,14 +809,14 @@ Você pode encontrar mais informações em [O que é o Application Insights](../
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para obter mais informações sobre a análise no armazenamento do Azure, consulte estes recursos:
+Para obter mais informações sobre análise no armazenamento do Azure, consulte estes recursos:
 
 * [Monitorar uma conta de armazenamento no portal do Azure](storage-monitor-storage-account.md)
 * [Análise de armazenamento](storage-analytics.md)
-* [Métricas do Storage analytics](storage-analytics-metrics.md)
-* [Esquema de tabela de métricas do Storage analytics](/rest/api/storageservices/storage-analytics-metrics-table-schema)
+* [Métricas de análise de armazenamento](storage-analytics-metrics.md)
+* [Esquema de tabela de métricas da análise de armazenamento](/rest/api/storageservices/storage-analytics-metrics-table-schema)
 * [Logs de análise de armazenamento](storage-analytics-logging.md)
-* [Formato de log de análise de armazenamento](/rest/api/storageservices/storage-analytics-log-format)
+* [Formato de log da análise de armazenamento](/rest/api/storageservices/storage-analytics-log-format)
 
 <!--Anchors-->
 [Introdução]: #introduction

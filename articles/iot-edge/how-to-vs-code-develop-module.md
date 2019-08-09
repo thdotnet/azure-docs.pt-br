@@ -4,23 +4,22 @@ description: Use o código do Visual Studio Code para desenvolver, criar e depur
 services: iot-edge
 keywords: ''
 author: shizn
-manager: philmea
 ms.author: xshi
-ms.date: 07/23/2019
+ms.date: 08/07/2019
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: 39b8485ac3f98cb7ca6739fe31378726bea3452b
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 2efda0e506cf0525b1a8ea868acca48a929f8f41
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68565343"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68848308"
 ---
 # <a name="use-visual-studio-code-to-develop-and-debug-modules-for-azure-iot-edge"></a>Use o código do Visual Studio Code para desenvolver e depurar módulos para o Azure IoT Edge
 
 Você pode transformar sua lógica de negócios em módulos do Azure IoT Edge. Este artigo mostra como usar o código do Visual Studio Code como a principal ferramenta para desenvolver e depurar módulos.
 
-Para módulos escritos em C#, Node. js ou Java, há duas maneiras para depurar seu módulo no Visual Studio Code: Você pode anexar um processo em um contêiner de módulo ou inicializar o código do módulo no modo de depuração. Para os módulos escritos em Python ou C, eles só podem ser depurados, anexando a um processo em contêineres do Linux amd64.
+Há duas maneiras de depurar módulos escritos em C#, Node. js ou Java no Visual Studio Code: Você pode anexar um processo em um contêiner de módulo ou inicializar o código do módulo no modo de depuração. Para depurar módulos escritos em Python ou C, você só pode anexar a um processo em contêineres do Linux AMD64.
 
 Se você não estiver familiarizado com os recursos de depuração do Visual Studio Code, leia sobre [Depuração](https://code.visualstudio.com/Docs/editor/debugging).
 
@@ -43,7 +42,7 @@ Instale primeiramente o [Visual Studio Code](https://code.visualstudio.com/) e, 
   - Java: [Pacote de extensão Java para Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
   - C: [Extensão C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 
-Você também precisará instalar algumas ferramentas adicionais, específicas da linguagem para desenvolver seu módulo:
+Você também precisará instalar algumas ferramentas adicionais específicas do idioma para desenvolver seu módulo:
 
 - C#, incluindo o Azure Functions: [SDK do .NET Core 2.1](https://www.microsoft.com/net/download)
 
@@ -53,7 +52,7 @@ Você também precisará instalar algumas ferramentas adicionais, específicas d
 
 - Java: [Java SE Development Kit 10](https://aka.ms/azure-jdks) e [Maven](https://maven.apache.org/). Você precisará [definir o `JAVA_HOME` ambiente variável](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/) para apontar para a sua instalação JDK.
 
-Para criar e implantar a sua imagem do módulo, você precisará do Docker para criar a imagem do módulo e um registro de contêiner para manter a imagem do módulo:
+Para criar e implantar a imagem do módulo, você precisa do Docker para criar a imagem do módulo e um registro de contêiner para manter a imagem do módulo:
 
 - [Docker Community Edition](https://docs.docker.com/install/) no computador de desenvolvimento.
 
@@ -107,7 +106,7 @@ Há quatro itens na solução:
   > [!NOTE]
   > O arquivo de ambiente será criado somente se você fornecer um repositório de imagens para o módulo. Se você aceitou os padrões do localhost para testar e depurar localmente, não será necessário declarar variáveis de ambiente.
 
-- Um arquivo **deployment.template.json** lista o novo módulo em conjunto com um módulo **tempSensor** de exemplo que simula dados que podem ser usados para teste. Para obter mais informações sobre o funcionamento dos manifestos de implantação, consulte [Saiba como usar manifestos de implantação para implantar módulos e estabelecer rotas](module-composition.md).
+- Um arquivo. **Template. JSON de implantação** lista o novo módulo junto com um módulo **SimulatedTemperatureSensor** de exemplo que simula os dados que você pode usar para teste. Para obter mais informações sobre o funcionamento dos manifestos de implantação, consulte [Saiba como usar manifestos de implantação para implantar módulos e estabelecer rotas](module-composition.md).
 
 ## <a name="add-additional-modules"></a>Adicionar módulos adicionais
 
@@ -124,7 +123,7 @@ O código padrão do módulo que vem com a solução está localizado em:
 - Java: **módulos > *&lt;o nome do módulo&gt;* > src > principal > java > com > edgemodulemodules > App. Java**
 - C: **módulos > *&lt;nome do módulo&gt;* > main. c**
 
-O módulo e o arquivo deployment.template.json são configurados de forma que você possa compilar a solução, enviá-la por push ao registro de contêiner e implantá-la em um dispositivo para iniciar os testes sem lidar com nenhum código. O módulo é criado para apenas receber entradas de uma fonte (nesse caso, o módulo tempSensor que simula dados) e redirecioná-las ao Hub IoT.
+O módulo e o arquivo deployment.template.json são configurados de forma que você possa compilar a solução, enviá-la por push ao registro de contêiner e implantá-la em um dispositivo para iniciar os testes sem lidar com nenhum código. O módulo é criado para simplesmente pegar a entrada de uma fonte (nesse caso, o módulo SimulatedTemperatureSensor que simula dados) e redirecioná-lo ao Hub IoT.
 
 Quando você estiver pronto para personalizar o modelo com seu próprio código, use os [SDKs do Hub IoT](../iot-hub/iot-hub-devguide-sdks.md) para criar módulos que atendam às principais necessidades de soluções de IoT, como segurança, gerenciamento de dispositivos e confiabilidade.
 
@@ -227,7 +226,7 @@ No computador de desenvolvimento, é possível iniciar o simulador do IoT Edge, 
 
 1. Na exibição do Visual Studio Code Explorer, clique com botão direito no `deployment.debug.template.json` arquivo para sua solução e, em seguida, selecione **solução de compilação e execução do IoT Edge no simulador**. É possível observar todos os logs de contêiner de módulo na mesma janela. Você também pode navegar para a exibição do Docker para observar o status do contêiner.
 
-   ![Observar variáveis](media/how-to-develop-csharp-module/view-log.png)
+   ![Observar variáveis](media/how-to-vs-code-develop-module/view-log.png)
 
 1. Navegue até a exibição de Depuração do Visual Studio Code e selecione o arquivo de configuração de depuração para o seu módulo. O nome da opção de depuração deve ser semelhante a ***&lt;seu nome de módulo&gt;* Depuração Remota**
 

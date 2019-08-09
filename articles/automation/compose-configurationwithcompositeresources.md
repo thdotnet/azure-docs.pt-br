@@ -10,18 +10,19 @@ ms.author: robreed
 ms.date: 08/21/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 64588829cec964e52dcb44465869e0090f36f9f1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e153186a3917be3aa94cb663dec58bc3db46aae9
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61303915"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68850406"
 ---
 # <a name="composing-dsc-configurations-in-azure-automation-state-configuration-dsc-using-composite-resources"></a>Compor configurações de DSC na configuração do estado de automação do Azure (DSC) usando recursos compostos
 
 Quando um recurso precisa ser gerenciado com mais de uma configuração de configuração de estado desejado (DSC), o melhor caminho é usar [recursos compostos](/powershell/dsc/authoringresourcecomposite). Um recurso composto é uma configuração aninhada e parametrizada sendo usada como um recurso DSC em outra configuração. Isso permite a criação de configurações complexas, permitindo que os recursos compostos subjacentes (configurações parametrizadas) sejam gerenciados e construídos individualmente.
 
-A Automação do Azure permite a [importação e a compilação de recursos compostos](automation-dsc-compile.md#composite-resources). Depois que os recursos compostos tiverem sido importados para sua conta de automação, você poderá usar a experiência **Compor configuração** na página **Configuração do estado (DSC)** .
+A Automação do Azure permite a [importação e a compilação de recursos compostos](automation-dsc-compile.md#compiling-configurations-in-azure-automation-that-contain-composite-resources).
+Depois que os recursos compostos tiverem sido importados para sua conta de automação, você poderá usar a experiência **Compor configuração** na página **Configuração do estado (DSC)** .
 
 ## <a name="composing-a-configuration-from-composite-resources"></a>Compor uma configuração a partir de recursos compostos
 
@@ -35,7 +36,7 @@ Antes de atribuir uma configuração feita a partir de recursos compostos no por
    ![Captura de tela da etapa básica da página de configuração de composição](./media/compose-configurationwithcompositeresources/compose-configuration-basics.png)
 1. O **código-fonte** etapa mostra a aparência a configuração composta dos recursos de composição selecionados. Você pode ver a mesclagem de todos os parâmetros e como eles são passados para o recurso composto. Quando você terminar de revisar o novo código-fonte, clique em **Próximo** ou clique na etapa **Parâmetros**.
    ![Captura de tela da etapa de código de origem da página de configuração de composição](./media/compose-configurationwithcompositeresources/compose-configuration-sourcecode.png)
-1. Na etapa **Parâmetros**, o parâmetro que cada recurso composto possui está exposto para que eles possam ser fornecidos. Se um parâmetro tiver uma descrição, ele será exibido ao lado do campo do parâmetro. Se um campo for um parâmetro do tipo **PSCredential**, o menu suspenso a configurar fornecerá uma lista de objetos **Credential** na conta de automação atual. Uma opção **+ adicionar uma credencial** é também estar disponível. Depois que todos os parâmetros necessários tiverem sido fornecidos, clique em **Salvar e compilar**.
+1. Na etapa **Parâmetros**, o parâmetro que cada recurso composto possui está exposto para que eles possam ser fornecidos. Se um parâmetro tiver uma descrição, ele será exibido ao lado do campo do parâmetro. Se um campo for um parâmetro do tipo **PSCredential**, o menu suspenso a configurar fornecerá uma lista de objetos **Credential** na conta de automação atual. Uma opção **+ Adicionar uma credencial** também está disponível. Depois que todos os parâmetros necessários tiverem sido fornecidos, clique em **Salvar e compilar**.
    ![Captura de tela da etapa de parâmetros da página de configuração de composição](./media/compose-configurationwithcompositeresources/compose-configuration-parameters.png)
 
 Depois que a nova configuração é salva, ela é enviada para compilação. O status do trabalho de compilação pode ser visualizado como qualquer configuração importada. Para mais informações, consulte [Visualizando um trabalho de compilação](automation-dsc-getting-started.md#viewing-a-compilation-job).

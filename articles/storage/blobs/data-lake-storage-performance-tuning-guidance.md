@@ -1,7 +1,6 @@
 ---
 title: Diretrizes de ajuste de desempenho do Azure Data Lake Storage Gen2 | Microsoft Docs
 description: Diretrizes de ajuste de desempenho do Azure Data Lake Storage Gen2
-services: storage
 author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
@@ -9,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 6f831dd0cde4641eb48f3c23e010f8c5e8aa3fa2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b134842303bebdf10efdf388057c8ad7b3be61be
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64939369"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68855583"
 ---
 # <a name="tuning-azure-data-lake-storage-gen2-for-performance"></a>Ajustando o desempenho do Azure Data Lake Storage Gen2
 
@@ -44,10 +43,10 @@ A conectividade de rede entre os dados de origem e o Data Lake Storage Gen2 às 
 
 Depois que você tiver resolvido os gargalos de hardware de origem e conectividade de rede acima, você estará pronto para configurar as ferramentas de ingestão. A tabela a seguir resume as configurações de chave para diversas ferramentas de ingestão populares e fornece artigos detalhados de ajuste de desempenho para eles.  Para saber mais sobre qual ferramenta usar para seu cenário, visite este [artigo](data-lake-storage-data-scenarios.md).
 
-| Ferramenta               | Configurações     | Mais detalhes                                                                 |
+| Ferramenta               | Configurações     | Mais Detalhes                                                                 |
 |--------------------|------------------------------------------------------|------------------------------|
 | DistCp            | -m (mapper)   | [Link](data-lake-storage-use-distcp.md#performance-considerations-while-using-distcp)                             |
-| Fábrica de dados do Azure| parallelCopies    | [Link](../../data-factory/copy-activity-performance.md)                          |
+| Azure Data Factory| parallelCopies    | [Link](../../data-factory/copy-activity-performance.md)                          |
 | Sqoop           | fs.azure.block.size, -m (mapper)    |   [Link](https://blogs.msdn.microsoft.com/bigdatasupport/2015/02/17/sqoop-job-performance-tuning-in-hdinsight-hadoop/)        |
 
 ## <a name="structure-your-data-set"></a>Estruturar seu conjunto de dados
@@ -132,7 +131,7 @@ Dependendo de sua carga de trabalho, sempre haverá um tamanho de contêiner YAR
 
 Além das diretrizes gerais acima, cada aplicativo tem diferentes parâmetros disponíveis para ajustar para esse aplicativo específico. A tabela a seguir lista alguns dos parâmetros e links para começar com o ajuste de desempenho para cada aplicativo.
 
-| Carga de trabalho | Parâmetro para definir tarefas |
+| Carga de Trabalho | Parâmetro para definir tarefas |
 |----------|------------------------|
 | [Spark no HDInsight](data-lake-storage-performance-tuning-spark.md) | <ul><li>Num-executors</li><li>Executor-memory</li><li>Executor-cores</li></ul> |
 | [Hive no HDInsight](data-lake-storage-performance-tuning-hive.md) | <ul><li>hive.tez.container.size</li></ul> |

@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 05/23/2019
-ms.openlocfilehash: 31a367fcde909f393efa4fea65b25716f95c56ee
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: dbdd088e5a78a4f78eec27b5ee74856c6aecc209
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68828439"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68847916"
 ---
 # <a name="explore-and-prepare-data-with-the-dataset-class-preview"></a>Explorar e preparar dados com a classe DataSet (visualização)
 
@@ -31,7 +31,7 @@ Para explorar e preparar seus dados, você precisará de:
 
 * Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, crie uma conta gratuita antes de começar. Experimente a [versão gratuita ou paga do Serviço do Azure Machine Learning](https://aka.ms/AMLFree) hoje mesmo.
 
-* Um workspace de serviço do Azure Machine Learning. Consulte [criar um Azure Machine Learning espaço de trabalho de serviço](https://docs.microsoft.com/azure/machine-learning/service/setup-create-workspace).
+* Um workspace de serviço do Azure Machine Learning. Consulte [criar um Azure Machine Learning espaço de trabalho de serviço](how-to-manage-workspace.md).
 
 * O SDK do Azure Machine Learning para Python (versão 1.0.21 ou posterior), que inclui o pacote de conjuntos de linhas do azureml. Para instalar ou atualizar para a versão mais recente do SDK, consulte [instalar ou atualizar o SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
 
@@ -117,7 +117,7 @@ sample_dataset.to_pandas_dataframe()
 dataset.get_profile()
 ```
 
-||Tipo|Min.|Máx|Contagem|Contagem faltando|Sem contagem faltando|Percentual faltando|Contagem de erros|Contagem vazia|0,1% quantil|1% quantil|5% quantil|25% quantil|50% quantil|75% quantil|95% quantil|99% quantil|99,9% quantil|Média|Desvio Padrão|Variação|Distorção|Curtose
+||Tipo|Min.|Máx|Count|Contagem faltando|Sem contagem faltando|Percentual faltando|Contagem de erros|Contagem vazia|0,1% quantil|1% quantil|5% quantil|25% quantil|50% quantil|75% quantil|95% quantil|99% quantil|99,9% quantil|Média|Desvio Padrão|Variação|Distorção|Curtose
 -|----|---|---|-----|-------------|-----------------|---------------|-----------|-----------|-------------|-----------|-----------|------------|------------|------------|------------|------------|--------------|----|------------------|--------|--------|--------
 ID|FieldType.INTEGER|1.04986 e + 07|1.05351 e + 07|10.0|0.0|10.0|0.0|0.0|0.0|1.04986 e + 07|1.04992 e + 07|1.04986 e + 07|1.05166 e + 07|1.05209 e + 07|1.05259 e + 07|1.05351 e + 07|1.05351 e + 07|1.05351 e + 07|1.05195 e + 07|12302,7|1.51358 e + 08|-0,495701|-1, 2814
 Número do Caso|FieldType.STRING|HZ239907|HZ278872|10.0|0.0|10.0|0.0|0.0|0.0||||||||||||||
@@ -256,7 +256,7 @@ ds_def = ds_def.assert_value('Longitude', (value <= 180) & (value >= -87), error
 ds_def.get_profile()
 ```
 
-||Tipo|Min.|Máx|Contagem|Contagem faltando|Sem contagem faltando|Percentual faltando|Contagem de erros|Contagem vazia|0,1% quantil|1% quantil|5% quantil|25% quantil|50% quantil|75% quantil|95% quantil|99% quantil|99,9% quantil|Média|Desvio Padrão|Variação|Distorção|Curtose
+||Tipo|Min.|Máx|Count|Contagem faltando|Sem contagem faltando|Percentual faltando|Contagem de erros|Contagem vazia|0,1% quantil|1% quantil|5% quantil|25% quantil|50% quantil|75% quantil|95% quantil|99% quantil|99,9% quantil|Média|Desvio Padrão|Variação|Distorção|Curtose
 -|----|---|---|-----|-------------|-----------------|---------------|-----------|-----------|-------------|-----------|-----------|------------|------------|------------|------------|------------|--------------|----|------------------|--------|--------|--------
 ID|FieldType.INTEGER|1.04986 e + 07|1.05351 e + 07|10.0|0.0|10.0|0.0|0.0|0.0|1.04986 e + 07|1.04992 e + 07|1.04986 e + 07|1.05166 e + 07|1.05209 e + 07|1.05259 e + 07|1.05351 e + 07|1.05351 e + 07|1.05351 e + 07|1.05195 e + 07|12302,7|1.51358 e + 08|-0,495701|-1, 2814
 Detenção|FieldType. BOOLEAN|False|False|10.0|0.0|10.0|0.0|0.0|0.0||||||||||||||

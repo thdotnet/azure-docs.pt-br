@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: cb414abcbbf2db7b7cd6a3d724e50010beeef647
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 26301e9a8aef29f1ff786f4fcd28b806eb10b8df
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60318270"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68846829"
 ---
 # <a name="how-to-use-perfinsights"></a>Como usar o PerfInsights
 
@@ -35,7 +35,7 @@ O PerfInsights pode coletar e analisar vários tipos de informações. As seçõ
 
 Este cenário coleta a configuração do disco e outras informações importantes, incluindo:
 
--   Logs de eventos
+-   Logs de evento
 
 -   Status da rede para todas as conexões de entrada e saída
 
@@ -77,13 +77,13 @@ Este cenário executa uma captura de contador de desempenho especial junto com u
 | IOPS         | Solicitações de dados/s             |
 |              | Solicitações de leitura/s             |
 |              | Solicitações de gravação/s            |
-| Latency      | Média de solicitação de dados/s         |
+| Latência      | Média de solicitação de dados/s         |
 |              | Média de leitura/s                 |
 |              | Média de gravação/s                |
 | Tamanho de E/S      | Média Bytes/solicitação de dados       |
 |              | Média Bytes/leitura               |
 |              | Média Bytes/gravação              |
-| Produtividade   | Bytes de dados/s                |
+| Taxa de transferência   | Bytes de dados/s                |
 |              | Bytes de leitura/s                |
 |              | Bytes de gravação/s               |
 | Comprimento da fila | Média Tamanho da fila de leitura        |
@@ -105,20 +105,20 @@ São coletadas informações sobre a VM do Windows, a configuração de discos o
 |Dados coletados                              |  |  | Cenários de desempenho |  |  | |
 |----------------------------------|----------------------------|------------------------------------|--------------------------|--------------------------------|----------------------|----------------------|
 |                               | Análise rápida de desempenho | Parâmetros de comparação | Análise de desempenho | Análise de Arquivos do Azure | Análise de desempenho avançado |
-| Informações de logs de eventos       | Sim                        | sim                                | sim                      | sim                  | Sim                  |
-| Informações do sistema                | Sim                        | sim                                | sim                      | sim                  | Sim                  |
-| Mapa de volume                        | Sim                        | sim                                | sim                      | sim                  | Sim                  |
-| Mapa do disco                          | Sim                        | sim                                | sim                      | sim                  | Sim                  |
-| Tarefas em execução                     | Sim                        | sim                                | sim                      | sim                  | Sim                  |
-| Contadores de confiabilidade do armazenamento      | Sim                        | sim                                | sim                      | sim                  | Sim                  |
-| Informações de armazenamento               | Sim                        | sim                                | sim                      | sim                  | Sim                  |
-| Saída do fsutil                     | Sim                        | sim                                | sim                      | sim                  | Sim                  |
-| Informações do driver de filtro                | Sim                        | sim                                | sim                      | sim                  | Sim                  |
-| Saída de Netstat                    | Sim                        | sim                                | sim                      | sim                  | Sim                  |
-| Configuração de rede             | Sim                        | sim                                | sim                      | sim                  | Sim                  |
-| Configuração do firewall            | Sim                        | sim                                | sim                      | sim                  | Sim                  |
-| Configuração do SQL Server          | Sim                        | sim                                | sim                      | sim                  | Sim                  |
-| Rastreamentos de diagnóstico de desempenho *  | Sim                        | sim                                | sim                      | sim                  | Sim                  |
+| Informações de logs de eventos       | Sim                        | Sim                                | Sim                      | Sim                  | Sim                  |
+| Informações do sistema                | Sim                        | Sim                                | Sim                      | Sim                  | Sim                  |
+| Mapa de volume                        | Sim                        | Sim                                | Sim                      | Sim                  | Sim                  |
+| Mapa do disco                          | Sim                        | Sim                                | Sim                      | Sim                  | Sim                  |
+| Executando tarefas                     | Sim                        | Sim                                | Sim                      | Sim                  | Sim                  |
+| Contadores de confiabilidade do armazenamento      | Sim                        | Sim                                | Sim                      | Sim                  | Sim                  |
+| Informações de armazenamento               | Sim                        | Sim                                | Sim                      | Sim                  | Sim                  |
+| Saída do fsutil                     | Sim                        | Sim                                | Sim                      | Sim                  | Sim                  |
+| Informações do driver de filtro                | Sim                        | Sim                                | Sim                      | Sim                  | Sim                  |
+| Saída de Netstat                    | Sim                        | Sim                                | Sim                      | Sim                  | Sim                  |
+| Configuração de rede             | Sim                        | Sim                                | Sim                      | Sim                  | Sim                  |
+| Configuração do firewall            | Sim                        | Sim                                | Sim                      | Sim                  | Sim                  |
+| Configuração do SQL Server          | Sim                        | Sim                                | Sim                      | Sim                  | Sim                  |
+| Rastreamentos de diagnóstico de desempenho *  | Sim                        | Sim                                | Sim                      | Sim                  | Sim                  |
 | Rastreamento do contador de desempenho **      |                            |                                    | Sim                      |                      | Sim                  |
 | Rastreamento do contador SMB **              |                            |                                    |                          | Sim                  |                      |
 | Rastreamento do contador do SQL Server **       |                            |                                    | Sim                      |                      | Sim                  |
@@ -132,10 +132,10 @@ São coletadas informações sobre a VM do Windows, a configuração de discos o
 
 Executa um mecanismo baseado em regras no segundo plano para coletar dados e diagnosticar problemas de desempenho em andamento. No momento, há suporte para regras a seguir:
 
-- Regra de HighCpuUsage: Detecta os períodos de uso elevado da CPU e mostra os principais consumidores de uso da CPU durante esses períodos.
-- Regra de HighDiskUsage: Detecta os períodos de uso elevado de disco em discos físicos e mostra o disco principais consumidores de uso durante esses períodos.
-- Regra de HighResolutionDiskMetric: Mostra as métricas de latência IOPS, taxa de transferência e e/s por 50 milissegundos para cada disco físico. Isso ajuda a identificar rapidamente os períodos de limitação de disco.
-- Regra de HighMemoryUsage: Detecta os períodos de uso de memória alta e mostra a memória principais consumidores de uso durante esses períodos.
+- Regra HighCpuUsage: Detecta períodos altos de uso da CPU e mostra os principais consumidores de uso da CPU durante esses períodos.
+- Regra HighDiskUsage: Detecta períodos de alto uso do disco em discos físicos e mostra os principais consumidores de uso do disco durante esses períodos.
+- Regra HighResolutionDiskMetric: Mostra IOPS, taxa de transferência e métricas de latência de e/s por 50 milissegundos para cada disco físico. Isso ajuda a identificar rapidamente os períodos de limitação de disco.
+- Regra HighMemoryUsage: Detecta períodos de alto uso de memória e mostra os principais consumidores de uso de memória durante esses períodos.
 
 > [!NOTE] 
 > Atualmente, há suporte para versões do Windows que incluem .NET Framework 4.5 ou versões posteriores.
@@ -194,7 +194,7 @@ Para executar a ferramenta PerfInsights, siga estas etapas:
 
 2. Desbloqueie o arquivo PerfInsights.zip. Para fazer isso, clique com o botão direito do mouse no arquivo PerfInsights.zip e selecione **Propriedades**. Na guia **Geral**, selecione **Desbloquear** e, em seguida, selecione **OK**. Isso garante que a ferramenta é executada sem prompts de segurança adicionais.  
 
-    ![Captura de tela das propriedades do PerfInsights, com opção Desbloquear destacada](media/how-to-use-perfInsights/unlock-file.png)
+    ![Captura de tela das propriedades do PerfInsights, com opção Desbloquear destacada](media/how-to-use-perfInsights/pi-unlock-file.png)
 
 3.  Expanda o arquivo PerfInsights.zip compactado na unidade temporária (por padrão, ela costuma ser a unidade D). 
 
@@ -204,7 +204,7 @@ Para executar a ferramenta PerfInsights, siga estas etapas:
     cd <the path of PerfInsights folder>
     PerfInsights
     ```
-    ![Captura de tela da saída de linha de comando do PerfInsights](media/how-to-use-perfInsights/PerfInsightsCommandline.png)
+    ![Captura de tela da saída de linha de comando do PerfInsights](media/how-to-use-perfInsights/pi-commandline.png)
     
     A sintaxe básica para execução de cenários do PerfInsights é:
     
@@ -253,8 +253,8 @@ No arquivo **PerformanceDiagnostics\_yyyy-MM-dd\_hh-mm-ss-fff.zip**, é possíve
 
 Selecione a guia **Descobertas**.
 
-![Captura de tela do relatório PerfInsights](media/how-to-use-perfInsights/findingtab.png)
-![Captura de tela do relatório PerfInsights](media/how-to-use-perfInsights/findings.PNG)
+![Captura de tela do relatório PerfInsights](media/how-to-use-perfInsights/pi-finding-tab.png)
+![Captura de tela do relatório PerfInsights](media/how-to-use-perfInsights/pi-findings.png)
 
 > [!NOTE] 
 > Constatações categorizadas como altas são problemas conhecidos que podem causar problemas de desempenho. Constatações categorizadas como médias representam configurações não adequadas que não necessariamente causam problemas de desempenho. Constatações categorizadas como lentas são declarações apenas informativas.
@@ -269,17 +269,17 @@ As seções **DiskMap** e **VolumeMap** descrevem como volumes lógicos e discos
 
 Na perspectiva do disco físico (DiskMap), a tabela mostra todos os volumes lógicos que estão em execução no disco. No exemplo a seguir, **PhysicalDrive2** executa dois volumes lógicos criados em várias partições (J e H):
 
-![Captura de tela da guia do disco](media/how-to-use-perfInsights/disktab.png)
+![Captura de tela da guia do disco](media/how-to-use-perfInsights/pi-disk-tab.png)
 
 Na perspectiva do volume (VolumeMap), as tabelas mostram todos os discos físicos em cada volume lógico. Observe que, para discos RAID/Dinâmicos, você poderá executar um volume lógico em vários discos físicos. No exemplo a seguir *C:\\mount* é um ponto de montagem configurado como *SpannedDisk* nos discos físicos 2 e 3:
 
-![Captura de tela da guia de volume](media/how-to-use-perfInsights/volumetab.png)
+![Captura de tela da guia de volume](media/how-to-use-perfInsights/pi-volume-tab.png)
 
 ### <a name="sql-tab"></a>Guia SQL
 
 Se a VM de destino hospedar instâncias do SQL Server, você verá uma guia adicional no relatório chamada **SQL**:
 
-![Captura de tela da guia do SQL](media/how-to-use-perfInsights/sqltab.png)
+![Captura de tela da guia do SQL](media/how-to-use-perfInsights/pi-sql-tab.png)
 
 Esta seção contém uma guia **Conclusões** e guias adicionais para cada uma das instâncias do SQL Server hospedadas na VM.
 
@@ -287,7 +287,7 @@ A guia **Conclusões** contém uma lista de todos os problemas de desempenho rel
 
 No exemplo a seguir, **PhysicalDrive0** (executando a unidade C) é exibido. Isso ocorre porque os arquivos **modeldev** e **modellog** estão localizados na unidade C e são de tipos diferentes (como o arquivo de dados e o log de transações, respectivamente).
 
-![Captura de tela de informações de log](media/how-to-use-perfInsights/loginfo.png)
+![Captura de tela de informações de log](media/how-to-use-perfInsights/pi-log-info.png)
 
 As guias para instâncias específicas do SQL Server contêm uma seção geral que exibe informações básicas sobre a instância selecionada. As guias também contêm seções adicionais para obter informações avançadas, incluindo ajustes, configurações e opções do usuário.
 
@@ -310,7 +310,7 @@ Você pode carregar relatórios e logs de diagnóstico para o Suporte da Microso
 
 A captura de tela a seguir mostra uma mensagem semelhante à qual você poderá receber:
 
-![Captura de tela da mensagem de exemplo do Suporte da Microsoft](media/how-to-use-perfInsights/supportemail.png)
+![Captura de tela da mensagem de exemplo do Suporte da Microsoft](media/how-to-use-perfInsights/pi-support-email.png)
 
 Siga as instruções na mensagem para acessar o workspace de transferência de arquivo. Para mais segurança, você deve alterar sua senha no primeiro uso.
 
