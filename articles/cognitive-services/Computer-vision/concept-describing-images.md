@@ -1,5 +1,5 @@
 ---
-title: Descrevendo imagens – pesquisa Visual computacional
+title: Descrições de imagem-Pesquisa Visual Computacional
 titleSuffix: Azure Cognitive Services
 description: Conceitos relacionados ao recurso de descrição de imagem da API da Pesquisa Visual Computacional.
 services: cognitive-services
@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 91618b211fdd869daf74491b175d6359ffa3f30c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: dcf61c642a9f8ad7aa68d72736ce8fdb0e9a6e3c
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60368367"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945257"
 ---
 # <a name="describe-images-with-human-readable-language"></a>Descrever imagens com linguagem legível por humanos
 
-A Pesquisa Visual Computacional pode analisar uma imagem e gerar uma sentença legível por humanos que descreve seu conteúdo. De fato, o algoritmo retorna várias descrições com base em recursos visuais diferentes, e cada descrição recebe uma pontuação de confiança. A saída final é uma lista de descrições ordenadas do maior para o menor nível de confiança.
+A Pesquisa Visual Computacional pode analisar uma imagem e gerar uma sentença legível por humanos que descreve seu conteúdo. O algoritmo realmente retorna várias descrições com base em diferentes recursos visuais, e cada descrição recebe uma pontuação de confiança. A saída final é uma lista de descrições ordenadas do maior para o menor nível de confiança.
 
 ## <a name="image-description-example"></a>Exemplo de descrição de imagem
 

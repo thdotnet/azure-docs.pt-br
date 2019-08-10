@@ -8,15 +8,15 @@ ms.custom: seodec18
 services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/08/2019
 ms.author: diberry
-ms.openlocfilehash: 10ddbed710d3055e66bd3cb0b06cfa7949a9a1c5
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 72a7b383d224936e3d22ee9e7acb5db28fe63c4e
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68563370"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945137"
 ---
 # <a name="use-microsoft-azure-traffic-manager-to-manage-endpoint-quota-across-keys"></a>Usar o Gerenciador de Tráfego do Microsoft Azure para gerenciar a cota do ponto de extremidade entre chaves
 O LUIS (Reconhecimento vocal) oferece a capacidade de aumentar a cota de solicitação do ponto de extremidade além da cota de uma única chave. Isso é feito criando mais chaves para o LUIS e adicionando-as ao aplicativo LUIS na página **Publicar** na seção **Recursos e Chaves**. 
@@ -58,7 +58,7 @@ O Gerenciador de Tráfego cria um novo ponto de acesso do DNS para seus pontos d
 ### <a name="polling-uses-luis-endpoint"></a>A sondagem usa o ponto de extremidade LUIS
 O Gerenciador de Tráfego sonda os pontos de extremidade periodicamente para garantir que o ponto de extremidade ainda está disponível. A URL do Gerenciador de Tráfego sondado precisa estar acessível com uma solicitação GET e retornar um 200. A URL do ponto de extremidade na página **Publicar** faz isso. Como cada chave de ponto de extremidade tem um roteamento e parâmetros de cadeia de caracteres de consulta diferentes, cada chave de ponto de extremidade precisa de um caminho de pesquisa diferente. Cada vez que o Gerenciador de Tráfego faz uma sondagem, custa uma solicitação de cota. O parâmetro de cadeia de caracteres de consulta **q** do ponto de extremidade LUIS é a declaração enviada ao LUIS. Esse parâmetro, em vez de enviar uma declaração, é usado para adicionar a sondagem do Gerenciador de Tráfego ao log do ponto de extremidade LUIS como uma técnica de depuração ao configurar o Gerenciador de Tráfego.
 
-Como cada ponto de extremidade LUIS precisa do seu próprio caminho, ele precisa do seu próprio perfil do Gerenciador de Tráfego. Para gerenciar entre perfis, crie uma arquitetura [_aninhada_ do Gerenciador de Tráfego](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-nested-profiles). Um perfil pai aponta para os perfis filho e gerencia o tráfego entre eles.
+Como cada ponto de extremidade LUIS precisa do seu próprio caminho, ele precisa do seu próprio perfil do Gerenciador de Tráfego. Para gerenciar entre perfis, crie uma arquitetura [ _ do Gerenciador de Tráfego](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-nested-profiles). Um perfil pai aponta para os perfis filho e gerencia o tráfego entre eles.
 
 Depois que o Gerenciador de Tráfego for configurado, lembre-se de alterar o caminho para usar o parâmetro da cadeia de caracteres de consulta logging=false para seu log não ser preenchido com sondagem.
 

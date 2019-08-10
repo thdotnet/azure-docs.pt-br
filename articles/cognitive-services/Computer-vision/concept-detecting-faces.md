@@ -1,7 +1,7 @@
 ---
-title: Detecção facial - Pesquisa Visual Computacional
+title: Detecção facial-Pesquisa Visual Computacional
 titleSuffix: Azure Cognitive Services
-description: Aprenda os conceitos relacionados ao recurso de detecção de face da API de visão do computador.
+description: Conheça os conceitos relacionados ao recurso de detecção facial do API da Pesquisa Visual Computacional.
 services: cognitive-services
 author: PatrickFarley
 manager: nitinme
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 699192aba87bb009d7dbddddcc9579883bb71db9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3675acf59c6889dd00c8f26089f509bbcd3c724e
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60368096"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945240"
 ---
 # <a name="face-detection-with-computer-vision"></a>Detecção facial com Pesquisa Visual Computacional
 

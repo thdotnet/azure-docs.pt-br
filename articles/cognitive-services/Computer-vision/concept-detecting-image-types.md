@@ -1,5 +1,5 @@
 ---
-title: Detectar tipos de imagem - Pesquisa Visual Computacional
+title: Detecção de tipo de imagem-Pesquisa Visual Computacional
 titleSuffix: Azure Cognitive Services
 description: Conceitos relacionados adetecção do tipo de imagem da API da Pesquisa Visual Computacional.
 services: cognitive-services
@@ -11,22 +11,22 @@ ms.topic: conceptual
 ms.date: 03/11/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 37cdac16a51a30bdaf1ba0266bab7fdd1f2990f0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e89fd977129113fa88af1acccd6b05f0bbe90243
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60368268"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945203"
 ---
 # <a name="detecting-image-types-with-computer-vision"></a>Detectar tipos de imagem com a Pesquisa Visual Computacional
 
-Com o [analisar imagem](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) API, pesquisa Visual computacional pode analisar o tipo de conteúdo de imagens, que indica se uma imagem é clip-art ou um desenho de linha.
+Com a API de [análise de imagem](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) , pesquisa Visual computacional pode analisar o tipo de conteúdo de imagens, indicando se uma imagem é uma clip-art ou um desenho de linha.
 
 ## <a name="detecting-clip-art"></a>Detectar clip-art
 
 A Pesquisa Visual Computacional analisa uma imagem e classifica a probabilidade da imagem ser clip-art em uma escala de 0 a 3, conforme descrito na tabela a seguir.
 
-| Value | Significado |
+| Valor | Significado |
 |-------|---------|
 | 0 | Non-clip-art |
 | 1 | Ambíguo |
@@ -115,4 +115,4 @@ As respostas JSON a seguir ilustram o que a Pesquisa Visual Computacional retorn
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Consulte a [analisar imagem](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) documentação para aprender a detectar tipos de imagem de referência.
+Consulte a documentação de referência de [imagem de análise](https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) para saber como detectar tipos de imagem.

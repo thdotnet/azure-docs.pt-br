@@ -1,5 +1,5 @@
 ---
-title: Detectando esquemas de cores - Computer Vision
+title: Detecção de esquema de cores-Pesquisa Visual Computacional
 titleSuffix: Azure Cognitive Services
 description: Conceitos relacionados à detecção do esquema de cores em imagens usando a API do Computer Vision.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: ff7af2204f9e05a1ba4ef800c63c3ad462242350
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e0fa85b8a90ea57d9b81bd2eeaa6d080b7582acd
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60368550"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945286"
 ---
 # <a name="detect-color-schemes-in-images"></a>Detectar esquemas de cores em imagens
 
@@ -30,7 +30,7 @@ A Pesquisa Visual Computacional também retorna um valor booliano que indica se 
 
 O exemplo a seguir ilustra a resposta JSON retornada pela visão do computador ao detectar o esquema de cores da imagem de exemplo. Nesse caso, a imagem de exemplo não é em preto e branco, mas as cores de primeiro plano e da tela de fundo predominantes são pretas e as cores predominantes da imagem inteira são em preto e branco.
 
-![Com visibilidade em exteriores Mountain em pôr do sol, com a silhueta da pessoa](./Images/mountain_vista.png)
+![Montanhas de ar no pôr do sol, com a silhueta de uma pessoa](./Images/mountain_vista.png)
 
 ```json
 {
@@ -75,8 +75,8 @@ A tabela a seguir mostra a avaliação de preto e branco da Pesquisa Visual Comp
 
 | Image | Preto e branco? |
 |-------|----------------|
-|![Uma imagem em preto e branco dos edifícios em Manhattan](./Images/bw_buildings.png) | verdadeiro |
-|![Uma casa azul e o jardim da frente](./Images/house_yard.png) | falso |
+|![Uma imagem em preto e branco dos edifícios em Manhattan](./Images/bw_buildings.png) | true |
+|![Uma casa azul e o jardim da frente](./Images/house_yard.png) | false |
 
 ## <a name="next-steps"></a>Próximas etapas
 

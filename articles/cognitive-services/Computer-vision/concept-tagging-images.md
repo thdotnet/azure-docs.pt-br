@@ -1,5 +1,5 @@
 ---
-title: Aplicando as marcas de conteúdo para imagens – Pesquisa Visual Computacional
+title: Marcas de conteúdo-Pesquisa Visual Computacional
 titleSuffix: Azure Cognitive Services
 description: Aprenda mais sobre conceitos relacionados ao recurso de marcação de imagem da API da Pesquisa Visual Computacional.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: aeb03566a650fe46286d77913e0d36dcbb19f436
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ad01751f7f7c573352c8fd15cc0f8cc2ebbbe700
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60759666"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945115"
 ---
 # <a name="applying-content-tags-to-images"></a>Aplicando as marcas de conteúdo para imagens
 

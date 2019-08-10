@@ -1,5 +1,5 @@
 ---
-title: Detectar conteúdo específico do domínio - Pesquisa Visual Computacional
+title: Conteúdo específico do domínio-Pesquisa Visual Computacional
 titleSuffix: Azure Cognitive Services
 description: Saiba como especificar um domínio de categorização de imagem para retornar informações mais detalhadas sobre uma imagem.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: e4b64e00f71768a8821c83a73b019f77089e1b3a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8d6dc91ae7bb0f6d7a24064749d9295558a7d39c
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60368061"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68946332"
 ---
 # <a name="detect-domain-specific-content"></a>Detectar conteúdo específico de um domínio
 
@@ -30,7 +30,7 @@ Você pode analisar uma imagem usando apenas o modelo de domínio específico es
 
 A seguir está um exemplo de resposta JSON retornada pela API **modelos/celebridades/analisar** para determinada imagem:
 
-![Satya Nadella aguardando, e sorrindo](./images/satya.jpeg)
+![Satya Nadella pé, sorrindo](./images/satya.jpeg)
 
 ```json
 {
@@ -100,7 +100,7 @@ A resposta JSON a seguir mostra como a análise de domínio específico pode ser
 
 Atualmente, a Pesquisa Visual Computacional suporta os seguintes modelos de domínio específico para detectar conteúdo de domínio específico:
 
-| NOME | DESCRIÇÃO |
+| Nome | Descrição |
 |------|-------------|
 | Celebridades | Reconhecimento de celebridades, compatível com imagens classificadas na categoria `people_` |
 | Pontos de referência | Reconhecimento de pontos de referência, com suporte para imagens classificado na `outdoor_` ou `building_` categorias |
