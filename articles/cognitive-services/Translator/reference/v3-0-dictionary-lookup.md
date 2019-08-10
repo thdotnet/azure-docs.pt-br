@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 03/29/2018
 ms.author: swmachan
-ms.openlocfilehash: 9a06c8e3b50c3f54971694f8d3924a3a5ba5f071
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 0bbdba343888bc91521245d0c9a0e4eaa87c5538
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68595043"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932014"
 ---
 # <a name="translator-text-api-30-dictionary-lookup"></a>API de Tradução de Texto 3.0: Pesquisa no dicionário
 
@@ -140,13 +140,9 @@ Uma resposta com êxito é uma matriz JSON com um resultado para cada cadeia de 
 
 Este exemplo mostra como pesquisar traduções alternativas em espanhol do termo em inglês `fly`.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
-
-```
+```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0&from=en&to=es" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'fly'}]"
 ```
-
----
 
 O corpo da resposta (abreviado para maior clareza) é:
 
@@ -191,13 +187,9 @@ O corpo da resposta (abreviado para maior clareza) é:
 
 Este exemplo mostra o que acontece quando o termo que está sendo pesquisado não existe para o par de dicionários válido.
 
-# <a name="curltabcurl"></a>[curl](#tab/curl)
-
-```
+```curl
 curl -X POST "https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0&from=en&to=es" -H "X-ClientTraceId: 875030C7-5380-40B8-8A03-63DACCF69C11" -H "Ocp-Apim-Subscription-Key: <client-secret>" -H "Content-Type: application/json" -d "[{'Text':'fly123456'}]"
 ```
-
----
 
 Uma vez que o termo não foi encontrado no dicionário, o corpo da resposta inclui uma lista `translations` vazia.
 

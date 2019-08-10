@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: e70e7b79be7dd4ea55c56898eaf8007d25732366
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f222d9d4cf6c56dea0832938dcb132cf711491bc
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60513964"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934073"
 ---
 # <a name="troubleshooting-bing-speech"></a>Solução de problemas da API de Fala do Bing
 
@@ -44,7 +44,7 @@ Se estiver usando o token de autorização para autenticação, os motivos a seg
 
 Para obter mais informações sobre autenticação, consulte a página [Autenticação](How-to/how-to-authentication.md).
 
-### <a name="troubleshooting-steps"></a>Etapas para solucionar problemas
+### <a name="troubleshooting-steps"></a>Etapas de solução de problemas
 
 #### <a name="verify-that-your-subscription-key-is-valid"></a>Verifique se a chave de assinatura é válida
 
@@ -53,7 +53,7 @@ Para obter mais informações sobre autenticação, consulte a página [Autentic
 > [!NOTE]
 > Substitua `YOUR_SUBSCRIPTION_KEY` pela sua própria chave de assinatura.
 
-# <a name="powershelltabazure-powershell"></a>[Powershell](#tab/azure-powershell)
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```Powershell
 $FetchTokenHeader = @{
@@ -89,7 +89,7 @@ Esta etapa será necessária apenas se você usar o token de autorização para 
 > [!NOTE]
 > Substitua `YOUR_AUDIO_FILE` pelo caminho do arquivo de áudio gravado previamente e `YOUR_ACCESS_TOKEN` pelo token de autorização retornado na etapa anterior.
 
-# <a name="powershelltabazure-powershell"></a>[Powershell](#tab/azure-powershell)
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```Powershell
 

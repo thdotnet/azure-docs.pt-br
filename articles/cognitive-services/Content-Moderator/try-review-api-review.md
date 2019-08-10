@@ -7,15 +7,15 @@ author: sanjeev3
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/18/2019
 ms.author: sajagtap
-ms.openlocfilehash: 581ab488337cfecae3f5dd97610c7f92c75af8b5
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: ec45f182e24f44c2222d64f18e2aa0aeea845727
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564342"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68882336"
 ---
 # <a name="create-human-reviews-rest"></a>Criar análises humanas (REST)
 
@@ -139,13 +139,13 @@ Na [ferramenta revisão](https://contentmoderator.cognitive.microsoft.com), sele
 
 ![Imagem da ferramenta de análise de uma bola de futebol](images/test-drive-review-5.PNG)
 
-## <a name="get-review-details"></a>Obter detalhes da revisão
+## <a name="get-review-details"></a>Obter detalhes de revisão
 
 Para recuperar detalhes sobre uma revisão existente, acesse a página de referência de API de [revisão](https://westus2.dev.cognitive.microsoft.com/docs/services/580519463f9b070e5c591178/operations/580519483f9b0709fc47f9c2) e selecione o botão da sua região (a região em que sua chave é administrada).
 
 ![Seleção de região de Fluxo de trabalho - Get](images/test-drive-region.png)
 
-Insira os parâmetros de chamada REST como na seção acima. Para esta etapa,  REVIEWID é a cadeia de caracteres de ID exclusiva que você recebeu quando criou a revisão.
+Insira os parâmetros de chamada REST como na seção acima. Para esta etapa, REVIEWID é a cadeia de caracteres de ID exclusiva que você recebeu quando criou a revisão.
 
 ![Análise - Criar console Obter resultados](images/test-drive-review-3.PNG)
   

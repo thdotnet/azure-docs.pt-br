@@ -7,15 +7,15 @@ author: sanjeev3
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: cf1dc352068747ab2f77beec8802407d15699d17
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2692dc5fea1b9ec60d930a9fdf9e54f624b31bdc
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60607158"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881082"
 ---
 # <a name="language-support-for-content-moderator-api"></a>Suporte de idioma para a API do Content Moderator
 
@@ -28,24 +28,24 @@ ms.locfileid: "60607158"
 | Detecção de idioma | Conteúdo ofensivo   | OCR    | Correção automática     | |
 | -------------------- |-------------|--------|---------------------|---|
 | Árabe (romanizado)   | Africâner   | Árabe   | Árabe | |
-| Balinês | Albanês | Chinês (Simplificado)    | Dinamarquês | |
-| Bengalês | Amárico | Chinês (Tradicional)     | Holandês | |
+| Balinês | Albanês | Chinês (simplificado)    | Dinamarquês | |
+| Bengali | Amárico | Chinês (tradicional)     | Holandês | |
 | Bugi | Árabe | Tcheco                     | Inglês | |
-| Buhid | Armênia | Dinamarquês                     | Finlandês | |
+| Buhid | Armênio | Dinamarquês                     | Finlandês | |
 | Cariano | Assamês | Holandês                     | Francês | |
-| Chinês (Simplificado) | Azerbaidjano | Inglês  | Grego (moderno) | |
-| Chinês (Tradicional) | Bengali - Bangladesh | Finlandês  | Italiano | |
+| Chinês (simplificado) | Azerbaidjano | Inglês  | Grego (moderno) | |
+| Chinês (tradicional) | Bengali - Bangladesh | Finlandês  | Italiano | |
 | Eclesiástico (eslavo) | Bangla - Índia | Francês     | Coreano | |
-| Copta | Basco | Alemão                      | Norueguês | |
+| Copta | basco | Alemão                      | Norueguês | |
 | Tcheco |  Bielorrusso | Grego (moderno)         | Polonês | |
 | Dhivehi | Bósnio - Cirílico | Húngaro      | Português | |
 | Holandês | Bósnio - Latim | Italiano             | Romeno | |
 | Inglês | (Crioulo) | Bretão [não GeoPol] | Japonês  | Russo |
-| Farsi | Búlgaro | Coreano                        | Eslovaco | |
+| Persa | Búlgaro | Coreano                        | Eslovaco | |
 | Francês | Catalão | Norueguês                        | Espanhol ||
 | Alemão | Curdo Central | Polonês        | Turco | |
-| Grego | Cherokee | Português | | |
-| Haitiano | Chinês (Simplificado) | Romeno | | |
+| Grego | Cheroqui | Português | | |
+| haitiano | Chinês (simplificado) | Romeno | | |
 | Hebraico | Chinês (Tradicional) - RAE de Hong Kong | Russo | | |
 | Híndi | Chinês (Tradicional) - Taiwan | Sérvio cirílico | | |
 | Hmong | Croata | Sérvio latino | | |
@@ -63,7 +63,7 @@ ms.locfileid: "60607158"
 | Micênico (grego) | Alemão | | | |
 | Nko | Grego | | | |
 | Norueguês (Bokmal) | Guzerate | | | |
-| Norueguês (Nynorsk) |  Hausa | | | |
+| Norueguês (Nynorsk) |  Hauçá | | | |
 | Persa (Antigo) | Hebraico | | | |
 | Pashto | Híndi | | | |
 | Polonês | Húngaro | | | |
@@ -72,23 +72,23 @@ ms.locfileid: "60607158"
 | Rejang | Indonésio | | | |
 | Russo | Inuktitut | | | |
 | Santali | Irlandês | | | |
-| Sasak | isiXhosa | | | |
+| Sasak | IsiXhosa | | | |
 | Saurashtra | isiZulu | | | |
-| Sérvio (cirílico) | Italiano | | | |
-| Sérvio (latino) | Japonês | | | |
-| Sinhala | Canarim | | | |
+| Sérvio (Cirílico) | Italiano | | | |
+| Sérvio (Latino) | Japonês | | | |
+| Sinhala | canarim | | | |
 | Esloveno | Cazaque | | | |
 | Espanhol | Khmer | | | |
-| Sueco | K'iche | | | |
+| Sueco | Quiché | | | |
 | Sylheti | Quiniaruanda | | | |
-| Siríaco | Suaíli | | | |
+| Siríaco | Quissuaíle | | | |
 | Tagbanwa | Konkani | | | |
 | Tai (Nua) | Coreano | | | |
-| Tamashek | Kyrgyz | | | |
-| Turco | Laosiano | | | |
+| Tamashek | Quirguiz | | | |
+| Turco | Lao | | | |
 | Ugarítico | Letão | | | |
-| Uzbeque (cirílico) | Lituano | | | |
-| Uzbeque (latino) | Luxemburguês | | | |
+| Uzbeque (Cirílico) | Lituano | | | |
+| Uzbeque (Latino) | Luxemburguês | | | |
 | Vai | Macedônio | | | |
 | Yi | Malaio | | | |
 | Zhuang, Chuang | Malaiala | | | |
@@ -108,13 +108,13 @@ ms.locfileid: "60607158"
 | | Pulaar | | | |
 | | Panjabi | | | |
 | | Panjabi (Paquistão) | | | |
-| | Quechua (Peru) | | | |
+| | Quíchua (Peru) | | | |
 | | Romeno | | | |
 | | Russo | | | |
-| | Gaélico escocês | | | |
-| | Sérvio (cirílico) | | | |
+| | Gaélico Escocês | | | |
+| | Sérvio (Cirílico) | | | |
 | | Sérvio (cirílico, Bósnia e Herzegovina) | | | |
-| | Sérvio (latino) | | | |
+| | Sérvio (Latino) | | | |
 | | Soto do sul | | | |
 | | Soto setentrional | | | |
 | | Setsuana | | | |
@@ -124,17 +124,17 @@ ms.locfileid: "60607158"
 | | Esloveno | | | |
 | | Espanhol | | | |
 | | Sueco | | | |
-| | Tajik | | | |
+| | Tadjique | | | |
 | | Tâmil | | | |
 | | Tártaro | | | |
-| | Télugo | | | |
+| | Telugu | | | |
 | | Tailandês | | | |
 | | Tigrinya | | | |
 | | Turco | | | |
 | | Turcomeno | | | |
 | | Ucraniano | | | |
 | | Urdu | | | |
-| | Uyghur | | | |
+| | Uigur | | | |
 | | Uzbek | | | |
 | | Catalão | | | |
 | | Vietnamita | | | |

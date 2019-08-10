@@ -10,20 +10,20 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/11/2019
 ms.author: dapine
-ms.openlocfilehash: 8a8b0e18c1db7a2e2fc08819aa2f2d64d650ded6
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: c4598e5e99012694a798e44c0d37e9578486751b
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68321364"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932116"
 ---
 # <a name="configure-speech-service-containers"></a>Configurar contêineres de serviço de fala
 
 Os contêineres de fala permitem que os clientes criem uma arquitetura de aplicativo de fala otimizada para aproveitar os recursos robustos de nuvem e a localidade de borda. Os dois contêineres de fala para os quais damos suporte agora são **fala-para-texto** e **conversão de texto em fala**. 
 
-O  ambiente de tempo de execução do contêiner de `docker run` fala é configurado usando os argumentos do comando. Esse contêiner tem várias configurações obrigatórias e outras configurações opcionais. Há vários [exemplos](#example-docker-run-commands) do comando disponíveis. As configurações específicas do contêiner são as configurações de cobrança. 
+O ambiente de tempo de execução do contêiner de `docker run` fala é configurado usando os argumentos do comando. Esse contêiner tem várias configurações obrigatórias e outras configurações opcionais. Há vários [exemplos](#example-docker-run-commands) do comando disponíveis. As configurações específicas do contêiner são as configurações de cobrança. 
 
-# <a name="configuration-settings"></a>Definições de configuração
+## <a name="configuration-settings"></a>Parâmetros de configuração
 
 [!INCLUDE [Container shared configuration settings table](../../../includes/cognitive-services-containers-configuration-shared-settings-table.md)]
 
@@ -50,9 +50,9 @@ Essa configuração pode ser localizada no seguinte local:
 
 * Portal do Azure: **Da fala** Visão geral, rotulada`Endpoint`
 
-|Obrigatório| NOME | Tipo de dados | DESCRIÇÃO |
+|Necessário| Nome | Tipo de dados | Descrição |
 |--|------|-----------|-------------|
-|Sim| `Billing` | Cadeia de caracteres | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westus.api.cognitive.microsoft.com/sts/v1.0` |
+|Sim| `Billing` | Cadeia | URI do ponto de extremidade de cobrança<br><br>Exemplo:<br>`Billing=https://westus.api.cognitive.microsoft.com/sts/v1.0` |
 
 ## <a name="eula-setting"></a>Configuração de EULA
 
@@ -78,10 +78,10 @@ Os contêineres de fala não usam montagens de entrada ou de saída para armazen
 
 A sintaxe exata do local da montagem do host varia de acordo com o sistema operacional do host. Além disso, o local de montagem do [computador host](speech-container-howto.md#the-host-computer) pode não estar acessível devido a um conflito entre as permissões usadas pela conta de serviço do Docker e as permissões do local de montagem do host. 
 
-|Opcional| Nome | Tipo de dados | DESCRIÇÃO |
+|Opcional| Nome | Tipo de dados | Descrição |
 |-------|------|-----------|-------------|
-|Não permitido| `Input` | Cadeia de caracteres | Os contêineres de fala não usam isso.|
-|Opcional| `Output` | Cadeia de caracteres | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
+|Não permitido| `Input` | Cadeia | Os contêineres de fala não usam isso.|
+|Opcional| `Output` | Cadeia | O destino de montagem de saída. O valor padrão é `/output`. Esse é o local dos logs. Isso inclui logs de contêiner. <br><br>Exemplo:<br>`--mount type=bind,src=c:\output,target=/output`|
 
 ## <a name="example-docker-run-commands"></a>Comandos docker run de exemplo 
 
@@ -90,9 +90,9 @@ Os exemplos a seguir usam as definições de configuração para ilustrar como e
 * **Caractere de continuação de linha**: Os comandos do Docker nas seções a seguir usam a barra invertida, `\`, como um caractere de continuação de linha. Substitua ou remova essa barra com base nos requisitos do sistema operacional de seu computador host. 
 * **Ordem do argumento**: Não altere a ordem dos argumentos, a menos que você esteja familiarizado com contêineres do Docker.
 
-Substitua {_argument_name_} pelos seus próprios valores:
+Substitua { _} pelos seus próprios valores:
 
-| Placeholder | Valor | Formato ou exemplo |
+| Espaço reservado | Valor | Formato ou exemplo |
 |-------------|-------|---|
 |{API_KEY} | A chave de API do recurso de fala. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
 |{ENDPOINT_URI} | O valor do ponto de extremidade incluindo a região.|`https://westus.api.cognitive.microsoft.com/sts/v1.0`|

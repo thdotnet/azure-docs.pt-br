@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: noelc
 ROBOTS: NOINDEX
-ms.openlocfilehash: dffef5062e89ef725abcfda187f5e6159c676b9c
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 54bc98e0ddba0292c6a5dbb07f2bbdfce6a1cb45
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68854316"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68933155"
 ---
 # <a name="project-acoustics-unity-integration"></a>Integração do Unity da acústica do projeto
 Este "como" explica a integração do plug-in de Unity do acústica do projeto em seu projeto do Unity.
@@ -32,6 +32,10 @@ Importe a acústica UnityPackage para o seu projeto.
     ![Captura de tela do menu do pacote de importação do Unity](media/import-package.png)  
 
 * Escolha **ProjectAcoustics.unitypackage**
+
+* Clique no botão **importar** para integrar o pacote do Unity ao seu projeto  
+
+    ![Captura de tela da caixa de diálogo Importar pacote do Unity](media/import-dialog.png)  
 
 Se você estiver importando o plug-in para um projeto existente, seu projeto já pode ter um arquivo **mcs.rsp** na raiz do projeto, que especifica opções para o compilador C#. Você precisará mesclar o conteúdo desse arquivo com o arquivo de MCS que vem com o plug-in do projeto acústica.
 

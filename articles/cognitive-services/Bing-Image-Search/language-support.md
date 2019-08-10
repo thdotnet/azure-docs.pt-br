@@ -7,15 +7,15 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-image-search
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: aahi
-ms.openlocfilehash: 6f4c354c89fa00d5fc65c635f5f6315761be2f01
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ca3821b6088e45730334d1b0971e270b1d86dfce
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66384152"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881916"
 ---
 # <a name="language-and-region-support-for-the-bing-image-search-api"></a>Suporte de idioma e região para a API de Pesquisa de Imagem do Bing
 
@@ -32,25 +32,25 @@ Como alternativa, é possível especificar o país/região usando o parâmetro d
 > - en-AU (inglês, Austrália)
 > - zh-CN (chinês, China)
 
-## <a name="countriesregions"></a>Países/regiões
+## <a name="countriesregions"></a>Países/Regiões
 
-|País/Região|Código|
+|País/região|Código|
 |-------|----|
 |Argentina|AR|
 |Austrália|AU|
 |Áustria|AT|
 |Bélgica|BE|
 |Brasil|BR|
-|Canadá|CA|
+|Canadá|AC|
 |Chile|CL|
 |Dinamarca|DK|
 |Finlândia|FI|
 |França|FR|
 |Alemanha|DE|
-|RAE de Hong Kong|HK|
+|Região Administrativa Especial de Hong Kong|HK|
 |Índia|IN|
 |Indonésia|ID|
-|Itália|IT|
+|Itália|it|
 |Japão|JP|
 |Coreia do Sul|KR|
 |Malásia|MY|
@@ -76,7 +76,7 @@ Como alternativa, é possível especificar o país/região usando o parâmetro d
 
 ## <a name="markets"></a>Mercados
 
-|País/Região|Linguagem|Código de mercado|
+|País/região|Idioma|Código de mercado|
 |-------|--------|-----------|
 |Argentina|Espanhol|es-AR|
 |Austrália|Inglês|en-AU|
@@ -91,7 +91,7 @@ Como alternativa, é possível especificar o país/região usando o parâmetro d
 |Finlândia|Finlandês|fi-FI|
 |França|Francês|fr-FR|
 |Alemanha|Alemão|de-DE|
-|RAE de Hong Kong|Chinês tradicional|zh-HK|
+|Região Administrativa Especial de Hong Kong|Chinês Tradicional|zh-HK|
 |Índia|Inglês|en-IN|
 |Indonésia|Inglês|en-ID|
 |Itália|Italiano|it-IT|
@@ -112,10 +112,10 @@ Como alternativa, é possível especificar o país/região usando o parâmetro d
 |Suécia|Sueco|sv-SE|
 |Suíça|Francês|fr-CH|
 |Suíça|Alemão|de-CH|
-|Taiwan|Chinês tradicional|zh-TW|
+|Taiwan|Chinês Tradicional|zh-TW|
 |Turquia|Turco|tr-TR|
 |Reino Unido|Inglês|en-GB|
-|Estados Unidos|Inglês|en-US|
+|Estados Unidos|Inglês|pt-BR|
 |Estados Unidos|Espanhol|es-US|
 
 ## <a name="next-steps"></a>Próximas etapas

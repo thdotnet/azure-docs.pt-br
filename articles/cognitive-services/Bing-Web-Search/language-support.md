@@ -7,15 +7,15 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: aahi
-ms.openlocfilehash: 18b124ca7f6f270488fa8e010d2b1c0404f8e9e2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9425de6e75a9a46d71ff85ce49b0650c8e7a9a16
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66384771"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68882683"
 ---
 # <a name="language-and-region-support-for-the-bing-web-search-api"></a>Suporte de idioma e região para a API de Pesquisa na Web do Bing
 
@@ -27,23 +27,23 @@ Como alternativa, você pode especificar o mercado usando o parâmetro de consul
 
 ## <a name="countriesregions"></a>Países/regiões
 
-|País/Região|Código|
+|País/região|Código|
 |-------|----|
 |Argentina|AR|
 |Austrália|AU|
 |Áustria|AT|
 |Bélgica|BE|
 |Brasil|BR|
-|Canadá|CA|
+|Canadá|AC|
 |Chile|CL|
 |Dinamarca|DK|
 |Finlândia|FI|
 |França|FR|
 |Alemanha|DE|
-|RAE de Hong Kong|HK|
+|Região Administrativa Especial de Hong Kong|HK|
 |Índia|IN|
 |Indonésia|ID|
-|Itália|IT|
+|Itália|it|
 |Japão|JP|
 |Coreia do Sul|KR|
 |Malásia|MY|
@@ -68,7 +68,7 @@ Como alternativa, você pode especificar o mercado usando o parâmetro de consul
 
 ## <a name="markets"></a>Mercados
 
-|País/Região|Linguagem|Código de mercado|
+|País/região|Idioma|Código de mercado|
 |-------|--------|-----------|
 |Argentina|Espanhol|es-AR|
 |Austrália|Inglês|en-AU|
@@ -83,7 +83,7 @@ Como alternativa, você pode especificar o mercado usando o parâmetro de consul
 |Finlândia|Finlandês|fi-FI|
 |França|Francês|fr-FR|
 |Alemanha|Alemão|de-DE|
-|RAE de Hong Kong|Chinês tradicional|zh-HK|
+|Região Administrativa Especial de Hong Kong|Chinês Tradicional|zh-HK|
 |Índia|Inglês|en-IN|
 |Indonésia|Inglês|en-ID|
 |Itália|Italiano|it-IT|
@@ -105,10 +105,10 @@ Como alternativa, você pode especificar o mercado usando o parâmetro de consul
 |Suécia|Sueco|sv-SE|
 |Suíça|Francês|fr-CH|
 |Suíça|Alemão|de-CH|
-|Taiwan|Chinês tradicional|zh-TW|
+|Taiwan|Chinês Tradicional|zh-TW|
 |Turquia|Turco|tr-TR|
 |Reino Unido|Inglês|en-GB|
-|Estados Unidos|Inglês|en-US|
+|Estados Unidos|Inglês|pt-BR|
 |Estados Unidos|Espanhol|es-US|
 
 ## <a name="next-steps"></a>Próximas etapas

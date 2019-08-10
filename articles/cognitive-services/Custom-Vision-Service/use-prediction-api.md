@@ -7,15 +7,15 @@ author: anrothMSFT
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/02/2019
 ms.author: anroth
-ms.openlocfilehash: 8564095cc84a3f124ca41efd2e19787cd16902ab
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 22955ba4b885b264210dc8788f2a410b785b28b4
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564129"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883974"
 ---
 # <a name="use-your-model-with-the-prediction-api"></a>Usar seu modelo com a API de previsão
 
@@ -26,7 +26,7 @@ Depois de treinar seu modelo, você pode testar imagens programaticamente envian
 
 ## <a name="publish-your-trained-iteration"></a>Publicar sua iteração treinada
 
-Na [página da Web Visão Personalizada](https://customvision.ai), selecione o projeto e então selecione a guia __Desempenho__.
+Na [página da Web Visão Personalizada](https://customvision.ai), selecione o projeto e então selecione a guia __Desempenho__ .
 
 Para enviar imagens para a API de previsão, primeiro você precisará publicar sua iteração para previsão, o que pode ser feito selecionando __publicar__ e especificando um nome para a iteração publicada. Isso tornará seu modelo acessível para a API de previsão de seu Visão Personalizada recurso do Azure.
 
@@ -38,7 +38,7 @@ Depois que o modelo tiver sido publicado com êxito, você verá que um rótulo 
 
 ## <a name="get-the-url-and-prediction-key"></a>Obter a chave de URL e previsão
 
-Depois que o modelo tiver sido publicado, você poderá recuperar as informações necessárias selecionando __URL de previsão__. Isso abrirá uma caixa de diálogo com informações para usar a API de previsão, incluindo a __URL de previsão__ e a __chave de previsão__.
+Depois que o modelo tiver sido publicado, você poderá recuperar as informações necessárias selecionando __URL de previsão__ . Isso abrirá uma caixa de diálogo com informações para usar a API de previsão, incluindo a __URL de previsão__ e a __chave de previsão__ .
 
 ![A guia desempenho é mostrada com um retângulo vermelho ao redor do botão URL de previsão.](./media/use-prediction-api/published-iteration-prediction-url.png)
 
@@ -53,7 +53,7 @@ Neste guia, você usará uma imagem local, portanto, copie a URL em **se você t
 
 1. No Visual Studio, crie um novo C# aplicativo de console.
 
-1. Use o código a seguir como o corpo do arquivo __Program.cs__.
+1. Use o código a seguir como o corpo do arquivo __Program.cs__ .
 
     ```csharp
     using System;
