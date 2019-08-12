@@ -114,7 +114,7 @@ Para copiar dados do SAP Cloud for Customer, defina o tipo de origem na atividad
 | Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **SapCloudForCustomerSource**  | Sim |
-| consultar | Especifique a consulta OData personalizada para ler dados. | Não |
+| query | Especifique a consulta OData personalizada para ler dados. | Não |
 
 Consulta de exemplo para obter dados de um dia específico:`"query": "$filter=CreatedOn ge datetimeoffset'2017-07-31T10:02:06.4202620Z' and CreatedOn le datetimeoffset'2017-08-01T10:02:06.4202620Z'"`
 
@@ -157,7 +157,7 @@ Para copiar dados do SAP Cloud for Customer, defina o tipo de coletor na ativida
 | Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **SapCloudForCustomerSink**  | Sim |
-| writeBehavior | O comportamento da operação de gravação. Pode ser “Inserir”, “Atualizar”. | Nº Padrão “Inserir”. |
+| writeBehavior | O comportamento da operação de gravação. Pode ser “Insert”, “Update”. | Nº Padrão “Insert”. |
 | writeBatchSize | O tamanho do lote da operação de gravação. O tamanho do lote para obter o melhor desempenho pode ser diferente da tabela ou do servidor diferente. | Nº Padrão 10. |
 
 **Exemplo:**
