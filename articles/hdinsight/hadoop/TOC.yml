@@ -41,30 +41,6 @@
       href: ../hdinsight-hadoop-compare-storage-options.md?toc=/azure/hdinsight/hadoop/toc.json&bc=/azure/hdinsight/hadoop/breadcrumb/toc.json
     - name: Entender identidades gerenciadas
       href: ../hdinsight-managed-identities.md?toc=/azure/hdinsight/hadoop/toc.json&bc=/azure/hdinsight/hadoop/breadcrumb/toc.json
-    - name: Solucionar problemas
-      items:
-        - name: Falhas na criação de cluster
-          href: ./hdinsight-troubleshoot-cluster-creation-fails.md
-        - name: Espaço insuficiente em disco
-          href: ./hdinsight-troubleshoot-out-disk-space.md
-        - name: Travamento flexível – CPU
-          href: ./hdinsight-troubleshoot-soft-lockup-cpu.md
-        - name: InvalidNetworkConfigurationErrorCode – falha na criação do cluster
-          href: ./troubleshoot-invalidnetworkconfigurationerrorcode-cluster-creation-fails.md
-        - name: InvalidNetworkSecurityGroupSecurityRules – falha na criação do cluster
-          href: ./hdinsight-troubleshoot-invalidnetworksecuritygroupsecurityrules-cluster-creation-fails.md
-        - name: Não é possível fazer logon no cluster HDInsight
-          href: ./hdinsight-troubleshoot-unable-log-in-cluster.md
-        - name: Não é possível adicionar nós ao cluster HDInsight
-          href: ./hdinsight-troubleshoot-unable-add-nodes.md
-        - name: Convertendo um certificado de entidade de serviço
-          href: ./hdinsight-troubleshoot-converting-service-principal-certificate.md
-        - name: HDFS local paralisado no modo de segurança
-          href: ./hdinsight-hdfs-troubleshoot-safe-mode.md
-        - name: Problemas de pulsação do Apache Ambari
-          href: ./apache-ambari-troubleshoot-heartbeat-issues.md
-        - name: O Apache Ambari mostra os hosts e serviços inoperantes
-          href: ./apache-ambari-troubleshoot-down-hosts-services.md
 - name: Como
   items:
     - name: Usar área restrita do Apache Hadoop
@@ -310,6 +286,30 @@
     - name: Solucionar problemas
       href: ../hdinsight-troubleshoot-guide.md?toc=/azure/hdinsight/hadoop/toc.json&bc=/azure/hdinsight/hadoop/breadcrumb/toc.json
       items:
+        - name: Falhas na criação de cluster
+          href: ./hdinsight-troubleshoot-cluster-creation-fails.md
+        - name: Espaço insuficiente em disco
+          href: ./hdinsight-troubleshoot-out-disk-space.md
+        - name: Travamento flexível – CPU
+          href: ./hdinsight-troubleshoot-soft-lockup-cpu.md
+        - name: InvalidNetworkConfigurationErrorCode – falha na criação do cluster
+          href: ./troubleshoot-invalidnetworkconfigurationerrorcode-cluster-creation-fails.md
+        - name: InvalidNetworkSecurityGroupSecurityRules – falha na criação do cluster
+          href: ./hdinsight-troubleshoot-invalidnetworksecuritygroupsecurityrules-cluster-creation-fails.md
+        - name: Não é possível fazer logon no cluster HDInsight
+          href: ./hdinsight-troubleshoot-unable-log-in-cluster.md
+        - name: Não é possível adicionar nós ao cluster HDInsight
+          href: ./hdinsight-troubleshoot-unable-add-nodes.md
+        - name: Convertendo um certificado de entidade de serviço
+          href: ./hdinsight-troubleshoot-converting-service-principal-certificate.md
+        - name: HDFS local paralisado no modo de segurança
+          href: ./hdinsight-hdfs-troubleshoot-safe-mode.md
+        - name: Problemas de pulsação do Apache Ambari
+          href: ./apache-ambari-troubleshoot-heartbeat-issues.md
+        - name: Erro 502 da interface de usuário do Apache Ambari
+          href: ./apache-ambari-troubleshoot-fivezerotwo-error.md
+        - name: O Apache Ambari mostra os hosts e serviços inoperantes
+          href: ./apache-ambari-troubleshoot-down-hosts-services.md
         - name: Solucionar problemas de um cluster HDInsight lento ou falhando
           href: ../hdinsight-troubleshoot-failed-cluster.md?toc=/azure/hdinsight/hadoop/toc.json&bc=/azure/hdinsight/hadoop/breadcrumb/toc.json
         - name: Solução de problemas de HDFS do Apache Hadoop

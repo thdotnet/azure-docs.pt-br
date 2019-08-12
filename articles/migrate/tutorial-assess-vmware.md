@@ -7,12 +7,12 @@ ms.service: azure-migrate
 ms.topic: tutorial
 ms.date: 07/12/2019
 ms.author: hamusa
-ms.openlocfilehash: 5f70037b1e6ce284b55ff5ff0ae38eb50c320122
-ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
+ms.openlocfilehash: 7b27637ca63ec69d7f4c33f05e7c037d67676b2d
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67868670"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68828292"
 ---
 # <a name="assess-vmware-vms-with-azure-migrate-server-assessment"></a>Avalie as VMs do VMware com as Migrações para Azure: Avaliação de Servidor
 
@@ -104,12 +104,12 @@ Verifique se o arquivo OVA é seguro antes de implantá-lo.
 2. Execute o seguinte comando para gerar o hash para o arquivo OVA:
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
     - Exemplo de uso: ```C:\>CertUtil -HashFile C:\AzureMigrate\AzureMigrate.ova SHA256```
-3. Para a versão 1.19.06.27, o hash gerado deve corresponder a estes valores. 
+3. Para a versão 2.19.07.30, o hash gerado deve corresponder a esses valores. 
 
   **Algoritmo** | **Valor de hash**
   --- | ---
-  MD5 | 605d208ac5f4173383f616913441144e
-  SHA256 | 447d16bd55f20f945164a1189381ef6e98475b573d6d1c694f3e5c172cfc30d4
+  MD5 | 27230f3b012187860281b912ee661709
+  SHA256 | c0a5b5998b7f38ac6e57ea9a808ecc4295795e18f9ca99c367585068883f06e7
 
 
 ### <a name="create-the-appliance-vm"></a>Criar a VM do dispositivo

@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 04/30/2018
 ms.author: kumud
 ms.custom: mvc
-ms.openlocfilehash: bba263b65344672808487ae6de4c3f475a871842
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: 3bc06a8903fbc431d991e6ef2a4aad8fbaff2365
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65523935"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736861"
 ---
 # <a name="tutorial-log-network-traffic-to-and-from-a-virtual-machine-using-the-azure-portal"></a>Tutorial: Registrar em log o tráfego de rede bidirecionalmente em uma máquina virtual usando o portal do Azure
 
@@ -48,9 +48,9 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
     |NOME|myVm|
     |Nome de usuário| Insira um nome de usuário de sua escolha.|
     |Senha| Insira uma senha de sua escolha. A senha deve ter no mínimo 12 caracteres e atender a [requisitos de complexidade definidos](../virtual-machines/windows/faq.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json#what-are-the-password-requirements-when-creating-a-vm).|
-    |Assinatura| Selecione sua assinatura.|
+    |Subscription| Selecione sua assinatura.|
     |Grupo de recursos| Selecione **Criar novo** e insira **myResourceGroup**.|
-    |Local padrão| Selecione **Leste dos EUA**|
+    |Location| Selecione **Leste dos EUA**|
 
 4. Selecione um tamanho para a VM e selecione **Selecionar**.
 5. Em **Configurações**, aceite todos os padrões e selecione **OK**.
@@ -89,10 +89,10 @@ O log de fluxo do NSG exige o provedor **Microsoft.Insights**. Para registrar o 
     | Configuração        | Valor                                                        |
     | ---            | ---   |
     | NOME           | 3 a 24 caracteres, pode conter apenas letras minúsculas e números e deve ser exclusivo em todas as contas do Armazenamento do Azure.                                                               |
-    | Local padrão       | Selecione **Leste dos EUA**                                           |
-    | Grupo de recursos | Clique em **Usar existente** e selecione **myResourceGroup** |
+    | Location       | Selecione **Leste dos EUA**                                           |
+    | Resource group | Clique em **Usar existente** e selecione **myResourceGroup** |
 
-    A conta de armazenamento pode levar cerca de um minuto para ser criada. Não continue com as etapas restantes até que a conta de armazenamento seja criada. Se você usar uma conta de armazenamento existente em vez de criar uma, selecione uma conta de armazenamento que tem a opção **Todas as redes** (padrão) selecionada para **Firewalls e redes virtuais**, nas **CONFIGURAÇÕES** da conta de armazenamento.
+    A conta de armazenamento pode levar cerca de um minuto para ser criada. Não continue com as etapas restantes até que a conta de armazenamento seja criada. Se você usar uma conta de armazenamento existente em vez de criar uma, selecione uma conta de armazenamento que tem a opção **Todas as redes** (padrão) selecionada para **Firewalls e redes virtuais**, nas **CONFIGURAÇÕES** da conta de armazenamento. Em todos os incidentes, a conta de armazenamento deve estar na mesma região do NSG. 
     
     > [!NOTE]
     > Embora atualmente haja suporte para os provedores Microsoft.Insight e Microsoft.Network no Armazenamento do Azure como Serviços confiáveis da Microsoft, os logs do NSG Flow ainda não estão totalmente integrados. Para habilitar o log de fluxo do NSG, a opção **Todas as Redes** ainda precisa ser selecionada até que esse recurso esteja totalmente integrado. 
@@ -209,7 +209,7 @@ O valor de **mac** na saída anterior é o endereço MAC do adaptador de rede qu
 | 443         | Porta de destino       | A porta de destino à qual o fluxo foi destinado. Como o tráfego era destinado à porta 443, a regra nomeada **UserRule_default-allow-rdp** no arquivo de log processou o fluxo.                                                |
 | T            | Protocolo               | Indica se o protocolo do fluxo era TCP (T) ou UDP (U).                                  |
 | O            | Direção              | Indica se o tráfego era de entrada (I) ou de saída (O).                                     |
-| O             | Ação                 | Indica se o tráfego foi permitido (A) ou negado (D).  
+| O            | Ação                 | Indica se o tráfego foi permitido (A) ou negado (D).  
 | C            | Estado de fluxo da **Versão 2 somente** | Captura o estado do fluxo. Os possíveis estados são **B**: Iniciar, quando um fluxo é criado. As estatísticas não são fornecidas. **C**: Continuando um fluxo contínuo. As estatísticas são fornecidas em intervalos de 5 minutos. **E**: Encerrar, quando um fluxo é encerrado. Estatísticas são fornecidas. |
 | 30 | Pacotes enviados – Origem ao destino **Versão 2 somente** | A quantidade total de pacotes TCP ou UDP enviados da origem ao destino desde a última atualização. |
 | 16978 | Bytes enviados – Origem ao destino **Versão 2 somente** | A quantidade total de bytes de pacote TCP ou UDP enviados da origem para o destino desde a última atualização. O número total de bytes de pacote TCP e UDP enviados da origem para o destino desde os últimos bytes updatePacket inclui o cabeçalho e a carga útil do pacote. | 

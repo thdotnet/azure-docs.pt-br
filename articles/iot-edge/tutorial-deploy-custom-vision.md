@@ -9,12 +9,12 @@ ms.date: 06/25/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 629b484d27d863727d180bb3e2d01b605ca539a6
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: 63485a41016033b00f787fc8c938b8da7135d657
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67850131"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840144"
 ---
 # <a name="tutorial-perform-image-classification-at-the-edge-with-custom-vision-service"></a>Tutorial: Realizar a classificação de imagem na borda com o Serviço de Visão Personalizada
 
@@ -369,9 +369,9 @@ A extensão do IoT Edge para Visual Studio Code fornece um modelo em cada soluç
 
 1. Abra o arquivo **deployment.template.json** na pasta da solução. 
 
-2. Localize a seção **modules**, que deve conter três módulos: os dois que você criou, classifier e cameraCapture, e um terceiro que é incluído por padrão, tempSensor. 
+2. Localize a seção **modules**, que deve conter três módulos: os dois que você criou, classifier e cameraCapture, e um terceiro que é incluído por padrão, SimulatedTemperatureSensor. 
 
-3. Exclua o módulo **tempSensor** com todos os seus parâmetros. Esse módulo é incluído para fornecer dados de exemplo para cenários de teste, mas ele não é necessário nesta implantação. 
+3. Exclua o módulo **SimulatedTemperatureSensor** com todos os seus parâmetros. Esse módulo é incluído para fornecer dados de exemplo para cenários de teste, mas ele não é necessário nesta implantação. 
 
 4. Se você não nomeou o módulo de classificação de imagem **classifier**, verifique agora se o nome está todo em minúsculas. O módulo cameraCapture chama o módulo classifier usando uma biblioteca de solicitações que formata todas as solicitações em letras minúsculas, e o IoT Edge diferencia maiúsculas de minúsculas. 
 

@@ -7,14 +7,14 @@ ms.service: managed-applications
 ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
-ms.date: 10/04/2018
+ms.date: 08/06/2019
 ms.author: tomfitz
-ms.openlocfilehash: 1f80d7e63d994f0e3eb3733b99afaa1b056f4686
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 7682670131b0ef50a1480285bc379b634169e49e
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48804898"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840627"
 ---
 # <a name="publish-an-azure-managed-application-definition"></a>Publicar uma definição de aplicativo gerenciado do Azure
 
@@ -41,7 +41,7 @@ Ao definir o aplicativo gerenciado, você deve selecionar um usuário, grupo ou 
 Para obter a ID de objeto de sua identidade, forneça seu nome de usuário principal no comando a seguir:
 
 ```azurecli-interactive
-userid=$(az ad user show --upn-or-object-id example@contoso.org --query objectId --output tsv)
+userid=$(az ad user show --id example@contoso.org --query objectId --output tsv)
 ```
 
 Em seguida, é necessária a ID de definição de função da função RBAC interna para conceder acesso ao usuário. O comando a seguir mostra como obter a ID de definição de função para a função Proprietário:
@@ -69,8 +69,8 @@ Quando o comando for concluído, você tem uma definição de aplicativo gerenci
 Alguns dos parâmetros usados no exemplo anterior são:
 
 * **resource-group**: o nome do grupo de recursos no qual a definição de aplicativo gerenciado é criada.
-* **lock-level**: o tipo de bloqueio colocado no grupo de recursos gerenciado. Ela impede que o cliente execute operações indesejáveis no grupo de recursos. Atualmente, ReadOnly é o único nível de bloqueio com suporte. Quando ReadOnly é especificado, o cliente pode ler somente os recursos presentes no grupo de recursos gerenciados. As identidades do publicador que concedem acesso ao grupo de recursos gerenciado são isentas de bloqueio.
-* **authorizations**: descreve a ID da entidade e a ID de definição de função que são usadas para conceder permissão ao grupo de recursos gerenciado. Ele é especificado no formato `<principalId>:<roleDefinitionId>`. Se for necessário mais de um valor, especifique-os no formato `<principalId1>:<roleDefinitionId1> <principalId2>:<roleDefinitionId2>`. Os valores são separados por um espaço.
+* **lock-level**: o tipo de bloqueio colocado no grupo de recursos gerenciados. Ela impede que o cliente execute operações indesejáveis no grupo de recursos. Atualmente, ReadOnly é o único nível de bloqueio com suporte. Quando ReadOnly é especificado, o cliente pode ler somente os recursos presentes no grupo de recursos gerenciados. As identidades do publicador que concedem acesso ao grupo de recursos gerenciado são isentas de bloqueio.
+* **authorizations**: descreve a ID da entidade e a ID de definição de função que são usadas para conceder permissão ao grupo de recursos gerenciados. Ele é especificado no formato `<principalId>:<roleDefinitionId>`. Se for necessário mais de um valor, especifique-os no formato `<principalId1>:<roleDefinitionId1> <principalId2>:<roleDefinitionId2>`. Os valores são separados por um espaço.
 * **package-file-uri**: o local de um pacote .zip que contém os arquivos necessários. O pacote deve ter os arquivos **mainTemplate.json** e **createUiDefinition.json**. O **mainTemplate.json** define os recursos do Azure que são criados como parte do aplicativo gerenciado. O modelo não é diferente de um modelo normal do Resource Manager. O **createUiDefinition.json** gera a interface do usuário para os usuários que criam o aplicativo gerenciado por meio do portal.
 
 ## <a name="next-steps"></a>Próximas etapas

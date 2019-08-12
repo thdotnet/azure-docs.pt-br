@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8babf2a6a4f4a15c6d2979ea0d5ce558dfb0cd6a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6c9de4a9b72e446a7d2b6687af380ee910b58980
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67052139"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68741283"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-joined-devices-manually"></a>Tutorial: configurar manualmente dispositivos ingressados no Azure Active Directory híbrido
 
@@ -83,7 +83,7 @@ Use a tabela a seguir para ter uma visão geral das etapas necessárias para o s
 | Configurar o ponto de conexão de serviço | ![Verificação][1] | ![Verificação][1] | ![Verificação][1] |
 | Configurar a emissão de declarações |     | ![Verificação][1] | ![Verificação][1] |
 | Permitir que dispositivos não Windows 10 |       |        | ![Verificação][1] |
-| Verificar dispositivos ingressados | ![Verificação][1] | ![Verificação][1] | [Marca de seleção][1] |
+| Verificar dispositivos ingressados | ![Verificação][1] | ![Verificação][1] | [Verificação][1] |
 
 ## <a name="configure-a-service-connection-point"></a>Configurar um ponto de conexão de serviço
 
@@ -174,10 +174,19 @@ Em uma configuração do Azure AD federada, os dispositivos dependem do AD FS ou
 
 Os dispositivos atuais do Windows são autenticados usando a Autenticação Integrada do Windows com um ponto de extremidade WS-Trust ativo (versões 1.3 ou 2005) hospedado pelo serviço de federação local.
 
+Quando você estiver usando o AD FS, será necessário habilitar os pontos de extremidade WS-Trust a seguir
+- `/adfs/services/trust/2005/windowstransport`
+- `/adfs/services/trust/13/windowstransport`
+- `/adfs/services/trust/2005/usernamemixed`
+- `/adfs/services/trust/13/usernamemixed`
+- `/adfs/services/trust/2005/certificatemixed`
+- `/adfs/services/trust/13/certificatemixed`
+
+> [!WARNING]
+> O **adfs/services/trust/2005/windowstransport** e também o **adfs/services/trust/13/windowstransport** devem ser habilitados como pontos de extremidade voltados para a intranet e NÃO devem ser expostos como pontos de extremidade voltados a uma extranet por meio do proxy de aplicativo Web. Para saber mais sobre como desabilitar os pontos de extremidade do Windows do WS-Trust, confira [Desabilitar pontos de extremidade do Windows do WS-Trust no proxy](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet). Veja quais pontos de extremidade estão habilitados por meio do console de gerenciamento do AD FS em **Serviço** > **Pontos de extremidade**.
+
 > [!NOTE]
-> Se você estiver usando o AD FS, o **adfs/services/trust/13/windowstransport** ou o **adfs/services/trust/2005/windowstransport** precisará ser habilitado. Se você estiver usando o Proxy de Autenticação na Web, verifique também se esse ponto de extremidade foi publicado por meio do proxy. Veja quais pontos de extremidade estão habilitados por meio do console de gerenciamento do AD FS em **Serviço** > **Pontos de extremidade**.
->
-> Se o AD FS não for seu serviço de federação local, siga as instruções do fornecedor para garantir que ele dê suporte aos pontos de extremidade WS-Trust 1.3 ou 2005 e que sejam publicados por meio do MEX (Arquivo de Troca de Metadados).
+>Se o AD FS não for seu serviço de federação local, siga as instruções do fornecedor para garantir que ele dê suporte aos pontos de extremidade WS-Trust 1.3 ou 2005 e que sejam publicados por meio do MEX (Arquivo de Troca de Metadados).
 
 Para que o registro do dispositivo seja concluído, as seguintes declarações precisam existir no token recebido pelo DRS do Azure. O DRS do Azure criará um objeto de dispositivo no Azure AD com algumas dessas informações. Em seguida, o Azure AD Connect usará essas informações para associar o objeto de dispositivo recém-criado à conta de computador local.
 

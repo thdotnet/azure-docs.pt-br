@@ -8,14 +8,14 @@ ms.subservice: core
 ms.topic: overview
 author: j-martens
 ms.author: jmartens
-ms.date: 05/02/2019
+ms.date: 08/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: c1ec9db2b026dd1853eceb1f110878d6b2beb4d4
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 5323c996b8d974c9db11a508503f767cfee80301
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68678016"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68828113"
 ---
 # <a name="what-is-azure-machine-learning-service"></a>O que é o serviço Azure Machine Learning?
 
@@ -29,7 +29,7 @@ As estimativas ou previsões de aprendizado de máquina podem tornar aplicativos
 
 ## <a name="what-is-azure-machine-learning-service"></a>O que é o serviço Azure Machine Learning?
 
-O Serviço do Azure Machine Learning fornece um ambiente baseado em nuvem que você pode usar para preparar dados, treinar, testar, implantar, gerenciar e acompanhar modelos de machine learning. Inicie o treinamento do seu computador local e expanda para a nuvem. O serviço dá suporte total a tecnologias open-source como PyTorch, TensorFlow e Scikit-learn e pode ser usado para qualquer tipo de aprendizado de máquina, do ML clássico ao aprendizado profundo, supervisionado e não supervisionado. 
+O Serviço do Azure Machine Learning fornece um ambiente baseado em nuvem que você pode usar para preparar dados, treinar, testar, implantar, gerenciar e acompanhar modelos de machine learning. Inicie o treinamento do seu computador local e expanda para a nuvem. O serviço dá suporte total a tecnologias open-source como PyTorch, TensorFlow e Scikit-learn e pode ser usado para qualquer tipo de aprendizado de máquina, do ML clássico ao aprendizado profundo, supervisionado e não supervisionado.
 
 Explore e prepare dados, treine e teste modelos e implante-os usando ferramentas avançadas como:
 + Uma [interface visual](ui-tutorial-automobile-price-train-score.md) na qual você pode arrastar e soltar módulos para criar seus testes e, em seguida, implantar modelos
@@ -55,20 +55,25 @@ Também é possível [automatizar o treinamento e o ajuste do modelo](tutorial-a
 Para o treinamento sem código, experimente:
 
 + a interface visual para teste e implantação do tipo arrastar e soltar
-    
+
     ![Interface visual para o serviço do Azure Machine Learning](media/overview-what-is-azure-ml/visual-interface.png)
 
 + A opção do portal do Azure para testes de ML automatizados
 
 ### <a name="operationalization-mlops"></a>Operacionalização (MLOps)
 
-Quando você tem o modelo certo, é possível usá-lo facilmente em um serviço Web, em um dispositivo IoT ou do Power BI. Para obter mais informações, confira o artigo [Como e onde implantar](how-to-deploy-and-where.md). 
+Quando você tem o modelo certo, é possível usá-lo facilmente em um serviço Web, em um dispositivo IoT ou do Power BI. Para obter mais informações, confira o artigo [Como e onde implantar](how-to-deploy-and-where.md).
 
-Em seguida, você pode gerenciar seus modelos implantados usando o [portal do Azure](https://aka.ms/aml-sdk) ou o [SDK do Azure Machine Learning para Python](https://portal.azure.com/). 
+Em seguida, você pode gerenciar seus modelos implantados usando o [portal do Azure](https://aka.ms/aml-sdk) ou o [SDK do Azure Machine Learning para Python](https://portal.azure.com/).
 
 Esses modelos podem ser consumidos e retornar previsões em [tempo real](how-to-consume-web-service.md) ou [assincronamente](how-to-run-batch-predictions.md) em grandes quantidades de dados.
 
-E com [pipelines de aprendizado de máquina](concept-ml-pipelines.md) avançados, é possível colaborar em cada etapa desde a preparação de dados, do treinamento do modelo e da avaliação, por meio da implantação.
+E com [pipelines de aprendizado de máquina](concept-ml-pipelines.md) avançados, é possível colaborar em cada etapa desde a preparação de dados, do treinamento do modelo e da avaliação, por meio da implantação. Os pipelines permitem:
+
+* automatizar o processo de aprendizado de máquina de ponta a ponta na nuvem
+* reutilizar os componentes e apenas executar as etapas novamente quando precisar
+* usar diferentes recursos de computação em cada etapa
+* executar tarefas de pontuação de lote
 
 Para começar a usar o Serviço do Azure Machine Learning, confira [Próximas etapas](#next-steps).
 
@@ -86,7 +91,7 @@ Veja uma comparação rápida.
 |Módulos de interface| Muitos | Conjunto inicial de módulos populares|
 |Destinos de computação de treinamento| Destino de computação proprietário, apenas suporte à CPU| Dá suporte à computação do Azure Machine Learning, GPU ou CPU.<br/>(Outros serviços de computação com suporte no SDK)|
 |Destinos de computação de implantação| Formato do serviço Web proprietário, não personalizável | Opções de segurança empresariais e Serviço de Kubernetes do Azure. <br/>([Outros serviços de computação](how-to-deploy-and-where.md) com suporte no SDK) |
-|Treinamento de modelo automatizado e ajuste de hiperparâmetro | Não | Ainda não está na interface visual. <br/> (Suporte no SDK e no portal do Azure). | 
+|Treinamento de modelo automatizado e ajuste de hiperparâmetro | Não | Ainda não está na interface visual. <br/> (Suporte no SDK e no portal do Azure). |
 
 Experimente a interface visual (versão prévia) com o [Tutorial: Prever o preço de automóveis com a interface visual](ui-tutorial-automobile-price-train-score.md).
 
@@ -103,8 +108,8 @@ Você recebe créditos para gastar em serviços do Azure. Depois que eles forem 
 
 - [Crie um workspace de serviço do Machine Learning](setup-create-workspace.md) para começar a usar.
 
-- Siga os tutoriais completos: 
-  + [Treinar um modelo de classificação de imagem com o Serviço do Azure Machine Learning](tutorial-train-models-with-aml.md) 
+- Siga os tutoriais completos:
+  + [Treinar um modelo de classificação de imagem com o Serviço do Azure Machine Learning](tutorial-train-models-with-aml.md)
   + [Preparar os dados e usar o aprendizado de máquina automatizado para treinar um modelo de regressão automaticamente](tutorial-data-prep.md)
 
 - Saiba mais sobre [pipelines de aprendizado de máquina](/azure/machine-learning/service/concept-ml-pipelines) para compilar, otimizar e gerenciar cenários de aprendizado de máquina.

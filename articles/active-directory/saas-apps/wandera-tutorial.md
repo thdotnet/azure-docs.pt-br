@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 07/04/2019
+ms.date: 07/30/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e556ce95107e820dc04d34c05bea3a2840aab7e8
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: d4f5004571c849d90b7d811906684e66c10ee487
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67798540"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68825295"
 ---
 # <a name="tutorial-integrate-wandera-with-azure-active-directory"></a>Tutorial: Integrar o Wandera ao Azure Active Directory
 
@@ -37,7 +37,7 @@ Para saber mais sobre a integração de aplicativos SaaS ao Azure AD, confira [O
 
 Para começar, você precisará dos seguintes itens:
 
-* Uma assinatura do Azure AD. Caso você não tenha uma assinatura, obtenha uma avaliação gratuita de um mês [aqui](https://azure.microsoft.com/pricing/free-trial/).
+* Uma assinatura do Azure AD. Caso você não tenha uma assinatura, obtenha uma [conta gratuita](https://azure.microsoft.com/free/).
 * Assinatura habilitada para SSO (logon único) do Wandera.
 
 ## <a name="scenario-description"></a>Descrição do cenário
@@ -66,9 +66,9 @@ Para configurar e testar o SSO do Azure AD com o Wandera, conclua os seguintes b
 
 1. **[Configurar o SSO do Azure AD](#configure-azure-ad-sso)** – para permitir que os usuários usem esse recurso.
 2. **[Configurar o SSO do Wandera](#configure-wandera-sso)** – para definir as configurações de logon único no lado do aplicativo.
-3. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** – para testar o logon único do Azure AD com Brenda Fernandes.
-4. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que Brenda Fernandes use o logon único do Azure AD.
-5. **[Criar um usuário de teste do Wandera](#create-wandera-test-user)** – para ter um equivalente de Brenda Fernandes no Wandera que esteja vinculado à representação de usuário no Azure AD.
+3. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** para testar o logon único do Azure AD com B.Fernandes.
+4. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que B.Fernandes use o logon único do Azure AD.
+5. **[Criar um usuário de teste do Wandera](#create-wandera-test-user)** – para ter um equivalente de B.Fernandes no Wandera que esteja vinculado à representação de usuário no Azure AD.
 6. **[Testar o SSO](#test-sso)** – para verificar se a configuração funciona.
 
 ### <a name="configure-azure-ad-sso"></a>Configurar o SSO do Azure AD
@@ -88,7 +88,7 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
     > [!NOTE]
     > O valor não é real. Atualize o valor com a URL de Resposta real. Para obter o valor, entre em contato com a [equipe de suporte ao cliente do Wandera](https://www.wandera.com/about-wandera/contact/#supportsection). Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
 
-1. Na página **Configurar Logon Único com SAML**, na seção **Certificado de Assinatura SAML**, localize **XML de Metadados** e selecione **Baixar** para baixar o certificado e salvá-lo em seu computador.
+1. Na página **Configurar o Logon Único com SAML**, na seção **Certificado de Autenticação SAML**, localize **XML de Metadados de Federação** e selecione **Baixar** para baixar o certificado e salvá-lo no computador.
 
     ![O link de download do Certificado](common/metadataxml.png)
 
@@ -106,7 +106,27 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
 ### <a name="configure-wandera-sso"></a>Configurar SSO do Wandera
 
-Para configurar o logon único no lado do **Wandera**, é necessário enviar o **XML de metadados** baixado e as URLs copiadas apropriadas do portal do Azure para a [equipe de suporte do Wandera](https://www.wandera.com/about-wandera/contact/#supportsection). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
+1. Para automatizar a configuração no Wandera, é necessário instalar a **Extensão do navegador de Entrada Segura dos Meus Aplicativos**, clicando em **Instalar a extensão**.
+
+    ![Extensão Meus Aplicativos](common/install-myappssecure-extension.png)
+
+2. Após adicionar a extensão ao navegador, clicar em **Configurar Wandera** direcionará você ao aplicativo do Wandera. Então, forneça as credenciais de administrador para entrar no Wandera. A extensão do navegador configurará automaticamente o aplicativo e automatizará as etapas de 3 a 4.
+
+    ![Configuração da instalação](common/setup-sso.png)
+
+3. Se quiser configurar o Wandera manualmente, abra uma nova janela do navegador da Web, entre no site da empresa do Wandera como administrador e execute as seguintes etapas:
+
+4. No canto superior direito da página, clique em **Configurações** > **Administração** > **Logon único** e, em seguida, marque a opção **Habilitar SAML 2.0** para executar as etapas a seguir.
+
+    ![Configuração do Wandera](./media/wandera-tutorial/config01.png)
+
+    a. Clique em **Ou inserir manualmente os campos obrigatórios**.
+
+    b. Na caixa de texto **ID da Entidade do IdP**, cole o valor do **Identificador do Azure AD** copiado do portal do Azure.
+
+    c. Abra o XML de Metadados de Federação no bloco de notas, copie o conteúdo e cole-o na caixa de texto **Certificado Público X.509 do IdP**.
+
+    d. Clique em **Save** (Salvar).
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
@@ -140,7 +160,7 @@ Nesta seção, você permitirá que B.Fernandes use o logon único do Azure conc
 
 ### <a name="create-wandera-test-user"></a>Criar usuário de teste do Wandera
 
-Nesta seção, você criará um usuário chamado Brenda Fernandes no Wandera. Trabalhe com a [equipe de suporte do Wandera](https://www.wandera.com/about-wandera/contact/#supportsection) para adicionar os usuários na plataforma do Wandera. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará um usuário chamado B.Fernandes no Wandera. Trabalhe com a [equipe de suporte do Wandera](https://www.wandera.com/about-wandera/contact/#supportsection) para adicionar os usuários na plataforma do Wandera. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-sso"></a>Testar o SSO
 

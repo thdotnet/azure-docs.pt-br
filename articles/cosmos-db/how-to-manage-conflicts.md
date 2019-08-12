@@ -4,14 +4,14 @@ description: Saiba como gerenciar conflitos no Azure Cosmos DB
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 06/25/2019
+ms.date: 08/05/2019
 ms.author: mjbrown
-ms.openlocfilehash: 96171d4729187ca03f1e9529551a7fb6a26c6976
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 77fb0e195cee03405c4a601fe8c57d4a2690a4b2
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360367"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68815081"
 ---
 # <a name="manage-conflict-resolution-policies-in-azure-cosmos-db"></a>Gerenciar políticas de resolução de conflitos no Azure Cosmos DB
 
@@ -19,7 +19,7 @@ Com gravações de várias regiões, quando vários clientes gravam no mesmo ite
 
 ## <a name="create-a-last-writer-wins-conflict-resolution-policy"></a>Crie uma política de resolução de conflitos do tipo “última gravação ganha”
 
-Estes exemplos mostram como configurar um contêiner com uma política de resolução de conflitos do tipo “última gravação ganha”. O caminho padrão para last-writer-wins é o campo de carimbo de data/hora ou a propriedade `_ts`. Isso também pode ser definido como um caminho definido pelo usuário para um tipo numérico. Em um conflito, o valor mais alto ganha. Se o caminho não estiver definido ou for inválido, o padrão será `_ts`. Conflitos resolvidos com essa política não aparecem no feed de conflito. Essa política pode ser usada por todas as APIs.
+Estes exemplos mostram como configurar um contêiner com uma política de resolução de conflitos do tipo “última gravação ganha”. O caminho padrão para last-writer-wins é o campo de carimbo de data/hora ou a propriedade `_ts`. Para a API do SQL, isso também pode ser definido como um caminho definido pelo usuário com um tipo numérico. Em um conflito, o valor mais alto ganha. Se o caminho não estiver definido ou for inválido, o padrão será `_ts`. Conflitos resolvidos com essa política não aparecem no feed de conflito. Essa política pode ser usada por todas as APIs.
 
 ### <a id="create-custom-conflict-resolution-policy-lww-dotnet"></a>SDK do .NET V2
 
@@ -114,7 +114,6 @@ Procedimentos de armazenados de resolução de conflitos personalizados devem se
 
 > [!IMPORTANT]
 > Assim como com qualquer procedimento armazenado, um procedimento de resolução de conflitos personalizado pode acessar todos os dados com a mesma chave de partição e executar qualquer operação de inserir, atualizar ou excluir para resolver conflitos.
-
 
 Esse exemplo procedimento armazenado resolve conflitos selecionando o valor mais baixo do caminho de `/myCustomId`.
 
@@ -273,7 +272,6 @@ udp_collection = self.try_create_document_collection(
 
 Depois que o contêiner é criado, você deve criar o `resolver` procedimento armazenado.
 
-
 ## <a name="create-a-custom-conflict-resolution-policy"></a>Criar uma política de resolução de conflitos personalizada
 
 Estes exemplos mostram como configurar um contêiner com uma política de resolução de conflitos personalizada. Esses conflitos aparecem no feed de conflitos.
@@ -428,10 +426,10 @@ while conflict:
 
 Saiba mais sobre os conceitos do Azure Cosmos DB a seguir:
 
-* [Distribuição global – nos bastidores](global-dist-under-the-hood.md)
-* [Como configurar vários mestres em seus aplicativos](how-to-multi-master.md)
-* [Configurar clientes para multihoming](how-to-manage-database-account.md#configure-multiple-write-regions)
-* [Como adicionar/remover regiões da conta do Azure Cosmos DB](how-to-manage-database-account.md#addremove-regions-from-your-database-account)
-* [Como configurar vários mestres nos aplicativos](how-to-multi-master.md).
-* [Particionamento e distribuição de dados](partition-data.md)
-* [Indexação no Azure Cosmos DB](indexing-policies.md)
+- [Distribuição global – nos bastidores](global-dist-under-the-hood.md)
+- [Como configurar vários mestres em seus aplicativos](how-to-multi-master.md)
+- [Configurar clientes para multihoming](how-to-manage-database-account.md#configure-multiple-write-regions)
+- [Como adicionar/remover regiões da conta do Azure Cosmos DB](how-to-manage-database-account.md#addremove-regions-from-your-database-account)
+- [Como configurar vários mestres nos aplicativos](how-to-multi-master.md).
+- [Particionamento e distribuição de dados](partition-data.md)
+- [Indexação no Azure Cosmos DB](indexing-policies.md)

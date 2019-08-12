@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 05/30/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: cb2ca7229524cf8d84041140129c7b9ca6876ea3
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: 87216317a965e85d83aede468163f43b1716c45a
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66417817"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68827243"
 ---
 # <a name="prepare-azure-resources-for-disaster-recovery-of-on-premises-machines"></a>Preparar recursos do Azure para recuperação de desastre de computadores locais
 
@@ -55,7 +55,7 @@ Para concluir essas tarefas, sua conta deve receber a função interna de Colabo
 ## <a name="create-a-recovery-services-vault"></a>Criar um cofre dos Serviços de Recuperação
 
 1. No portal do Azure, clique em **+Criar um recurso** e pesquise **Recuperação** no Marketplace.
-2. Clique em **Backup e Site Recovery (OMS)** e, na página Backup e Site Recovery, clique em **Criar**. 
+2. Clique em **Backup e Site Recovery** e, na página de Backup e Site Recovery, clique em **Criar**. 
 1. No **cofre dos Serviços de Recuperação** > **Nome**, insira um nome amigável para identificar o cofre. Para este conjunto de tutoriais estamos usando **ContosoVMVault**.
 2. No **Grupo de recursos**, selecione um grupo de recursos existente ou crie um. Para este tutorial, estamos usando **contosoRG**.
 3. Em **Local**, selecione a região na qual o cofre deve estar localizado. Estamos usando **Europa Ocidental**.

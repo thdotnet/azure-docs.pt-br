@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 7/25/2019
 ms.author: rkarlin
-ms.openlocfilehash: cdfe22b67585221e2d7e17f47c6a09ba929d68ef
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: cd3288e308308729cf9b97e3c699d489857840a8
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599021"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68780367"
 ---
 # <a name="tutorial-set-up-automated-threat-responses-in-azure-sentinel-preview"></a>Tutorial: Configurar respostas de ameaças automatizado na visualização do Azure Sentinel
 
@@ -90,7 +90,7 @@ Você pode executar um Guia estratégico sob demanda.
 
 Executar um Guia estratégico sob demanda:
 
-1. Na página **Casos**, selecione um caso e clique em **Exibir detalhes completos**.
+1. Na página **incidentes**, selecione um incidente e clique em **Exibir detalhes completos**.
 
 2. Na guia **Alertas**, clique no alerta que você deseja executar o Guia estratégico e role até a direita e clique em **Exibir Guias estratégicos** e selecione um Guia estratégico para **Executar** das lista de Guias estratégicos disponíveis na assinatura. 
 

@@ -9,12 +9,12 @@ ms.date: 03/28/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: b77b44856e9623235051470bc087885765ee12c9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 872c6f0af9695628f2821c8859d0b582534efd45
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67080441"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840083"
 ---
 # <a name="tutorial-store-data-at-the-edge-with-sql-server-databases"></a>Tutorial: Armazenar dados na borda com os bancos de dados do SQL Server
 
@@ -219,7 +219,7 @@ Um [Manifesto de implantação](module-composition.md) declara quais módulos o 
 
 6. Na pasta da solução, abra o arquivo **deployment.template.json**. 
 
-7. Localize a seção de **módulos**. Você deverá ver três módulos. O módulo *tempSensor* está incluído por padrão em novas soluções e fornece dados de teste para usar com seus outros módulos. O módulo *sqlFunction* é o módulo que você criou inicialmente e que foi atualizado com o novo código. Por fim, o módulo *sql* foi importado do Azure Marketplace. 
+7. Localize a seção de **módulos**. Você deverá ver três módulos. O módulo *SimulatedTemperatureSensor* está incluído por padrão em novas soluções e fornece dados de teste para usar com seus outros módulos. O módulo *sqlFunction* é o módulo que você criou inicialmente e que foi atualizado com o novo código. Por fim, o módulo *sql* foi importado do Azure Marketplace. 
 
    >[!Tip]
    >O módulo do SQL Server vem com uma senha padrão definida nas variáveis de ambiente do manifesto de implantação. Sempre que você criar um contêiner do SQL Server em um ambiente de produção, será necessário [alterar a senha do administrador do sistema padrão](https://docs.microsoft.com/sql/linux/quickstart-install-connect-docker).
@@ -244,7 +244,7 @@ Nas seções anteriores, você criou uma solução com um módulo e depois adici
 
 Quando você solicitar ao Visual Studio Code para compilar sua solução, primeiro ele usará as informações no modelo de implantação e gerará um arquivo deployment.json em uma nova pasta chamada **config**. Em seguida, ele executará dois comandos no terminal integrado: `docker build` e `docker push`. Esses dois comandos compilam seu código, conteinerizam o módulo e depois efetuam o push do código para o registro de contêiner que você especificou ao inicializar a solução. 
 
-Você pode verificar que o módulo sqlFunction foi envido por push com êxito ao registro de contêiner. No Portal do Azure, navegue até o registro de contêiner. Selecione **repositórios** e pesquise **sqlFunction**. Os outros dois módulos, tempSensor e sql, não serão enviados por push ao registro de contêiner porque você já está apontando para os repositórios nos registros da Microsoft.
+Você pode verificar que o módulo sqlFunction foi envido por push com êxito ao registro de contêiner. No Portal do Azure, navegue até o registro de contêiner. Selecione **repositórios** e pesquise **sqlFunction**. Os outros dois módulos, SimulatedTemperatureSensor e sql, não serão enviados por push ao registro de contêiner porque você já está apontando para os repositórios nos Registros da Microsoft.
 
 ## <a name="deploy-the-solution-to-a-device"></a>Implantar a solução a um dispositivo
 
@@ -268,7 +268,7 @@ Atualize o status do seu dispositivo na seção Dispositivos Azure Hub IoT do VS
 
 ## <a name="create-the-sql-database"></a>Criar o banco de dados SQL
 
-Ao aplicar o manifesto de implantação para seu dispositivo, você obtém três módulos em execução. O módulo tempSensor gera dados de ambiente simulado. O módulo sqlFunction obtém os dados e os formata para um banco de dados. Esta seção orienta-o através da configuração do banco de dados SQL para armazenar os dados de temperatura. 
+Ao aplicar o manifesto de implantação para seu dispositivo, você obtém três módulos em execução. O módulo SimulatedTemperatureSensor gera dados de ambiente simulado. O módulo sqlFunction obtém os dados e os formata para um banco de dados. Esta seção orienta-o através da configuração do banco de dados SQL para armazenar os dados de temperatura. 
 
 Execute os seguintes comandos em seu dispositivo IoT Edge. Esses comandos fazem a conexão com o módulo **sql** em execução em seu dispositivo e criam um banco de dados e uma tabela para manter os dados de temperatura que estão sendo enviados a ele. 
 

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 2b4ba646a037b2f5561dabf97dee14454c07c573
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 3ff93d006b7599eaa3f97c33efb047ce480c301c
+ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67614223"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68740945"
 ---
 # <a name="tutorial-prepare-an-application-for-azure-kubernetes-service-aks"></a>Tutorial: Preparar um aplicativo para o AKS (Serviço de Kubernetes do Azure)
 
@@ -34,7 +34,7 @@ Em tutoriais adicionais, a imagem de contêiner será carregada para um Registro
 
 Este tutorial assume uma compreensão básica dos conceitos fundamentais do Docker como contêineres, imagens de contêiner e comandos do `docker`. Consulte [Introdução ao Docker][docker-get-started] para conhecer os conceitos básicos de contêiner.
 
-Para concluir este tutorial, você precisa de um ambiente de desenvolvimento local do Docker que executa contêineres do Linux. O Docker fornece pacotes que o configuram o Docker em um sistema [Mac][docker-for-mac], [Windows][docker-for-windows] ou [Linux][docker-for-linux].
+Para concluir este tutorial, você precisa de um ambiente de desenvolvimento local do Docker que executa contêineres do Linux. O Docker fornece pacotes que o configuram facilmente em qualquer sistema [Mac][docker-for-mac], [Windows][docker-for-windows] ou [Linux][docker-for-linux].
 
 O Azure Cloud Shell não inclui os componentes do Docker necessários para concluir as etapas destes tutoriais. Portanto, é recomendável usar um ambiente de desenvolvimento completo do Docker.
 
@@ -103,7 +103,7 @@ Pare e remova as instâncias de contêiner e os recursos com o comando [docker-c
 docker-compose down
 ```
 
-Quando o aplicativo local tiver sido removido, você terá uma imagem do Docker que contém o aplicativo Azure Vote, *azure-front-front*, para usar no próximo tutorial.
+Quando o aplicativo local tiver sido removido, você terá uma imagem do Docker que contém o aplicativo Azure Vote, *azure-vote-front*, para usar no próximo tutorial.
 
 ## <a name="next-steps"></a>Próximas etapas
 

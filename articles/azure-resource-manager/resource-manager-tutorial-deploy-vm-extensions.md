@@ -4,8 +4,6 @@ description: Aprenda a implantar extensões de máquina virtual do Azure com mod
 services: azure-resource-manager
 documentationcenter: ''
 author: mumian
-manager: dougeby
-editor: ''
 ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
@@ -13,12 +11,12 @@ ms.devlang: na
 ms.date: 11/13/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 5657ebb2a5b29e4ec5360480c1fef6cb92dad9c8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a6d0c3e9daba6f4f37778fabde161751944e174a
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60388516"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68774869"
 ---
 # <a name="tutorial-deploy-virtual-machine-extensions-with-azure-resource-manager-templates"></a>Tutorial: Implantar extensões de máquina virtual com modelos do Azure Resource Manager
 
@@ -108,7 +106,7 @@ Adicione um recurso de extensão de máquina virtual ao modelo existente com o s
 
 Para obter mais informações sobre essa definição de recurso, veja [referência de extensão](https://docs.microsoft.com/azure/templates/microsoft.compute/virtualmachines/extensions). Abaixo estão alguns elementos importantes:
 
-* **nome**: como o recurso de extensão é um recurso filho do objeto de máquina virtual, o nome deve ter o prefixo do nome da máquina virtual. Confira [Recursos filho](./resource-group-authoring-templates.md#child-resources).
+* **nome**: como o recurso de extensão é um recurso filho do objeto de máquina virtual, o nome deve ter o prefixo do nome da máquina virtual. Confira [Definir o nome e o tipo de recursos filho](child-resource-name-type.md).
 * **dependsOn**: Crie o recurso de extensão depois de criar a máquina virtual.
 * **fileUris**: os locais em que os arquivos de script são armazenados. Se você optar por não usar o local fornecido, precisará atualizar os valores.
 * **commandToExecute**: esse comando chama o script.  

@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/28/2019
 ms.author: rkarlin
-ms.openlocfilehash: 2c730c240ed5ff68a1d48ef17d15de1aaa73ab1e
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 15cf770a372c9a1386dd0293abeac01fd3cacf63
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67619916"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779740"
 ---
 # <a name="what-is-azure-sentinel-preview"></a>O que é a versão prévia do Azure Sentinel?
 
@@ -63,7 +63,7 @@ Os painéis fornecem visualização interativa usando análise avançada para aj
 
 ## <a name="analytics"></a>Análise
 
-Para ajudar a reduzir o ruído e minimizar o número de alertas que você precisa revisar e investigar, o Azure Sentinel usa [análise para correlacionar alertas a casos](tutorial-detect-threats.md). **Casos** são grupos de alertas relacionados que, juntos, criam uma ameaça acionável possível que você pode investigar e resolver. Use as regras de correlação internas no estado em que se encontram ou use-as como ponto de partida para criar suas próprias. O Azure Sentinel também fornece regras de aprendizado de máquina para mapear o comportamento da rede e, em seguida, buscar anomalias em todos os seus recursos. Essas análises ligam os pontos, pois combinam alertas de baixa fidelidade sobre diferentes entidades em possíveis incidentes de segurança de alta fidelidade.
+Para ajudar a reduzir o ruído e a minimizar o número de alertas que você precisa examinar e investigar, o Azure Sentinel usa [análise para correlacionar os alertas aos incidentes](tutorial-detect-threats.md). **Incidentes** são grupos de alertas relacionados que, juntos, criam uma possível ameaça acionável que você pode investigar e resolver. Use as regras de correlação internas no estado em que se encontram ou use-as como ponto de partida para criar suas próprias. O Azure Sentinel também fornece regras de aprendizado de máquina para mapear o comportamento da rede e, em seguida, buscar anomalias em todos os seus recursos. Essas análises ligam os pontos, pois combinam alertas de baixa fidelidade sobre diferentes entidades em possíveis incidentes de segurança de alta fidelidade.
 
 ![Casos](./media/overview/cases.png)
 

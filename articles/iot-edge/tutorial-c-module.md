@@ -9,12 +9,12 @@ ms.date: 04/23/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: dcf15130b1b720277fcb6f551f1e19229a6c5e7c
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: fa8730c43adb37fa9f62682beec9baeb7e95dfcf
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66239718"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68839602"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-linux-devices"></a>Tutorial: Desenvolver um módulo do IoT Edge em C para dispositivos Linux
 
@@ -306,7 +306,7 @@ Verifique se seu dispositivo IoT Edge está em funcionamento.
 
 3. Selecione o arquivo **deployment.json** na pasta **config** e clique em **Selecionar Manifesto de Implantação do Edge**. Não use o arquivo deployment.template.json.
 
-4. Clique no botão Atualizar. Você deve ver o novo **CModule** sendo executado junto com o módulo **TempSensor** em **$edgeAgent** e **$edgeHub**.
+4. Clique no botão Atualizar. Você deve ver o novo **CModule** sendo executado junto com o módulo **SimulatedTemperatureSensor** e **$edgeAgent** e **$edgeHub**.
 
 ## <a name="view-generated-data"></a>Exibir os dados gerados
 

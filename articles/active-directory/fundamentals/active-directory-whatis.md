@@ -10,12 +10,12 @@ ms.date: 07/31/2019
 ms.author: ajburnle
 ms.custom: it-pro, seodec18, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3087f0ac69126c6d509eee77abe15cc35319dfb
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: eda457747a6a3e374e7fdea571f64446e15ded21
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68693912"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68774170"
 ---
 # <a name="what-is-azure-active-directory"></a>O que é o Active Directory do Azure?
 
@@ -33,7 +33,7 @@ O Azure AD destina-se a:
 
 - **Administradores de TI.** Como administrador de TI, você pode usar o Azure AD para controlar o acesso aos seus aplicativos e recursos de aplicativos com base em suas necessidades comerciais. Por exemplo, você pode usar o Azure AD para exigir a autenticação multifator ao acessar recursos importantes da organização. Além disso, você pode usar o Azure AD para automatizar o provisionamento de usuários entre o Windows Server AD existente e seus aplicativos de nuvem, incluindo o Office 365. Por fim, o Azure AD fornece ferramentas avançadas para ajudar a proteger automaticamente as credenciais e identidades de usuário e para atender aos seus requisitos de controle de acesso. Para começar, inscreva-se em uma [avaliação gratuita de 30 dias do Azure Active Directory Premium](https://azure.microsoft.com/trial/get-started-active-directory/).
 
-- **Desenvolvedores de aplicativos.** Como desenvolvedor de aplicativos, o Azure AD fornece uma abordagem baseada em padrões para adicionar SSO (logon único) ao seu aplicativo, permitindo que ele funcione com as credenciais pré-existentes de um usuário. O Azure AD também fornece APIs que podem ajudar você a criar experiências de aplicativo personalizadas usando os dados organizacionais existentes. Para começar, inscreva-se em uma [avaliação gratuita de 30 dias do Azure Active Directory Premium](https://azure.microsoft.com/trial/get-started-active-directory/). Para saber mais, confira também o [Azure Active Directory para desenvolvedores](../develop/index.yml).
+- **Desenvolvedores de aplicativos.** Como desenvolvedor de aplicativos, você pode usar o Azure AD como uma abordagem baseada em padrões para adicionar SSO (logon único) ao seu aplicativo, permitindo que ele funcione com as credenciais pré-existentes de um usuário. O Azure AD também fornece APIs que podem ajudar você a criar experiências de aplicativo personalizadas usando os dados organizacionais existentes. Para começar, inscreva-se em uma [avaliação gratuita de 30 dias do Azure Active Directory Premium](https://azure.microsoft.com/trial/get-started-active-directory/). Para saber mais, confira também o [Azure Active Directory para desenvolvedores](../develop/index.yml).
 
 - **Assinantes do Microsoft 365, do Office 365, do Azure ou do Dynamics CRM Online.** Como assinante, você já está usando o Azure AD. Cada locatário do Microsoft 365, do Office 365, do Azure e do Dynamics CRM Online é automaticamente um locatário do Azure AD. Comece imediatamente a gerenciar o acesso aos seus aplicativos de nuvem integrados.
 

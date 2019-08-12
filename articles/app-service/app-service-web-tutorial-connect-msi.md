@@ -1,6 +1,6 @@
 ---
 title: Proteger a conexão do Banco de Dados SQL com identidade gerenciada – Serviço de Aplicativo do Azure | Microsoft Docs
-description: Saiba como proteger a conectividade do banco de dados usando uma identidade gerenciada e também como aplicá-la a outros serviços do Azure.
+description: Saiba como proteger a conectividade do banco de dados usando uma identidade gerenciada e também como aplicar isso a outros serviços do Azure.
 services: app-service\web
 documentationcenter: dotnet
 author: cephalin
@@ -11,25 +11,33 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 06/21/2019
+ms.date: 08/06/2019
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 31535642526c608ad0ae29e5c0e3c93368e184ad
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 2cf5e0f6da52670d383a1d1508dc7bcc7847831f
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67481009"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68824557"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Tutorial: proteger a conexão do Banco de Dados SQL do Azure no Serviço de Aplicativo usando uma identidade gerenciada
 
-O [Serviço de Aplicativo](overview.md) fornece um serviço de hospedagem na Web altamente escalonável e com aplicação automática de patches no Azure. Ele também fornece uma [identidade gerenciada](overview-managed-identity.md) para seu aplicativo, que é uma solução perfeita para proteger o acesso ao [Banco de Dados SQL do Azure](/azure/sql-database/) e a outros serviços do Azure. As identidades gerenciadas no Serviço de Aplicativo tornam seu aplicativo mais seguro, eliminando os segredos do aplicativo, como as credenciais nas cadeias de conexão. Neste tutorial, você adicionará a identidade gerenciada ao aplicativo Web ASP.NET de exemplo criado no [Tutorial: criar um aplicativo ASP.NET no Azure com Banco de Dados SQL](app-service-web-tutorial-dotnet-sqldatabase.md). Quando você terminar, seu aplicativo de exemplo se conectará ao Banco de Dados SQL com segurança sem a necessidade de nomes de usuário e senhas.
+O [Serviço de Aplicativo](overview.md) fornece um serviço de hospedagem na Web altamente escalonável e com aplicação automática de patches no Azure. Ele também fornece uma [identidade gerenciada](overview-managed-identity.md) para seu aplicativo, que é uma solução perfeita para proteger o acesso ao [Banco de Dados SQL do Azure](/azure/sql-database/) e a outros serviços do Azure. As identidades gerenciadas no Serviço de Aplicativo tornam seu aplicativo mais seguro, eliminando os segredos do aplicativo, como as credenciais nas cadeias de conexão. Neste tutorial, você adicionará a identidade gerenciada ao aplicativo Web de exemplo criado em um dos tutoriais a seguir: 
+
+- [Tutorial: criar um aplicativo ASP.NET no Azure com Banco de Dados SQL](app-service-web-tutorial-dotnet-sqldatabase.md)
+- [Tutorial: criar um aplicativo ASP.NET Core e do Banco de Dados SQL no Serviço de Aplicativo do Azure](app-service-web-tutorial-dotnetcore-sqldb.md)
+
+Quando você terminar, seu aplicativo de exemplo se conectará ao Banco de Dados SQL com segurança sem a necessidade de nomes de usuário e senhas.
 
 > [!NOTE]
-> Atualmente, este cenário tem suporte do .NET Framework 4.7.2 e versão posterior. O [.NET Core 2.2](https://www.microsoft.com/net/download/dotnet-core/2.2) suporta o cenário, mas ainda não está incluído nas imagens padrão no Serviço de Aplicativo. 
+> As etapas abordadas neste tutorial são compatíveis com as versões a seguir:
+> 
+> - .NET Framework 4.7.2 e versões posteriores.
+> - .NET Core 2.2 e versões posteriores.
 >
 
-Você aprenderá a:
+O que você aprenderá:
 
 > [!div class="checklist"]
 > * Habilitar identidades gerenciadas
@@ -44,9 +52,9 @@ Você aprenderá a:
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Este artigo continua do ponto em que você parou no [Tutorial: criar um aplicativo ASP.NET no Azure com Banco de Dados SQL](app-service-web-tutorial-dotnet-sqldatabase.md). Se você ainda não fez isso, siga o tutorial primeiro. Como alternativa, você pode adaptar as etapas ao seu próprio aplicativo ASP.NET com o Banco de Dados SQL.
+Este artigo continua do ponto em que você parou no [Tutorial: Criar um aplicativo ASP.NET no Azure com o Banco de Dados SQL](app-service-web-tutorial-dotnet-sqldatabase.md) ou no [Tutorial: Criar um aplicativo ASP.NET Core e do Banco de Dados SQL no Serviço de Aplicativo do Azure](app-service-web-tutorial-dotnetcore-sqldb.md). Caso ainda não o tenha feito, primeiro siga um dos dois tutoriais. Como alternativa, você pode adaptar as etapas ao seu próprio aplicativo .NET com o Banco de Dados SQL.
 
-Para depurar seu aplicativo usando o banco de dados SQL como back-end, verifique se você [permitiu a conexão do cliente no seu computador ](app-service-web-tutorial-dotnet-sqldatabase.md#allow-client-connection-from-your-computer).
+Para depurar seu aplicativo usando o banco de dados SQL como back-end, verifique se você permitiu a conexão do cliente no seu computador. Caso contrário, adicione o IP do cliente seguindo as etapas descritas em [Gerenciar regras de firewall de IP no nível do servidor usando o portal do Azure](../sql-database/sql-database-firewall-configure.md#manage-server-level-ip-firewall-rules-using-the-azure-portal).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -79,12 +87,19 @@ Para definir o usuário do Azure AD para autenticação de serviço do Azure, se
 
 Agora você está pronto para desenvolver e depurar seu aplicativo com o banco de dados SQL como back-end, usando a autenticação do Azure AD.
 
-## <a name="modify-aspnet-project"></a>Modificar o projeto do ASP.NET
+## <a name="modify-your-project"></a>Modifique seu projeto
+
+As etapas que você seguirá em seu projeto dependerão de ele ser um projeto ASP.NET ou ASP.NET Core.
+
+- [Modificar ASP.NET](#modify-aspnet)
+- [Modificar ASP.NET Core](#modify-aspnet-core)
+
+### <a name="modify-aspnet"></a>Modificar ASP.NET
 
 No Visual Studio, abra o Console do Gerenciador de Pacotes e adicione o pacote NuGet [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication):
 
 ```powershell
-Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.2.0
+Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.3.0
 ```
 
 Em *Web.config*, comece pela parte superior do arquivo e faça as seguintes alterações:
@@ -107,7 +122,57 @@ Em *Web.config*, comece pela parte superior do arquivo e faça as seguintes alte
 
 - Localizar a cadeia de caracteres de conexão chamada `MyDbConnection` e substitua seu valor `connectionString` por `"server=tcp:<server-name>.database.windows.net;database=<db-name>;UID=AnyString;Authentication=Active Directory Interactive"`. Substitua _\<server-name >_ e _\<db-name>_ pelo nome do servidor e do banco de dados.
 
-Digite `Ctrl+F5` para executar o aplicativo novamente. Agora, o mesmo aplicativo CRUD em seu navegador está se conectando diretamente ao Banco de Dados SQL do Azure, usando a autenticação do Azure AD. Essa configuração permite que você execute migrações de banco de dados. Posteriormente, quando você implantar suas alterações no Serviço de Aplicativo, as mesmas configurações funcionarão com a identidade gerenciada do aplicativo.
+Isso é tudo de que você precisa para se conectar ao Banco de Dados SQL. Ao depurar no Visual Studio, seu código utiliza o usuário do Azure AD que você configurou na seção [Configurar Visual Studio](#set-up-visual-studio). Você configurará o servidor do Banco de dados SQL posteriormente para permitir a conexão da identidade gerenciada do seu aplicativo do Serviço de Aplicativo.
+
+Digite `Ctrl+F5` para executar o aplicativo novamente. Agora, o mesmo aplicativo CRUD em seu navegador está se conectando diretamente ao Banco de Dados SQL do Azure, usando a autenticação do Azure AD. Essa configuração permite que você execute migrações de banco de dados do Visual Studio.
+
+### <a name="modify-aspnet-core"></a>Modificar ASP.NET Core
+
+No Visual Studio, abra o Console do Gerenciador de Pacotes e adicione o pacote NuGet [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication):
+
+```powershell
+Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.3.0
+```
+
+No [tutorial do ASP.NET Core e do Banco de Dados SQL](app-service-web-tutorial-dotnetcore-sqldb.md), a cadeia de conexão `MyDbConnection` não é usada porque o ambiente de desenvolvimento local usa um arquivo de banco de dados do SQLite e o ambiente de produção do Azure usa uma cadeia de conexão do Serviço de Aplicativo. Com a autenticação do Active Directory, o ideal é que ambos os ambientes usem a mesma cadeia de conexão. Em *appsettings.json*, substitua o valor da cadeia de conexão `MyDbConnection` por:
+
+```json
+"Server=tcp:<server-name>.database.windows.net,1433;Database=<database-name>;"
+```
+
+Em *Startup.cs*, remova a seção de código que você adicionou anteriormente:
+
+```csharp
+// Use SQL Database if in Azure, otherwise, use SQLite
+if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+    services.AddDbContext<MyDatabaseContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+else
+    services.AddDbContext<MyDatabaseContext>(options =>
+            options.UseSqlite("Data Source=localdatabase.db"));
+
+// Automatically perform database migration
+services.BuildServiceProvider().GetService<MyDatabaseContext>().Database.Migrate();
+```
+
+E substitua pelo código a seguir:
+
+```csharp
+services.AddDbContext<MyDatabaseContext>(options => {
+    options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection"));
+});
+```
+
+Em seguida, você fornece o contexto de banco de dados do Entity Framework com o token de acesso para o Banco de Dados SQL. Em *Data\MyDatabaseContext.cs*, adicione o código a seguir dentro das chaves do construtor `MyDatabaseContext (DbContextOptions<MyDatabaseContext> options)` vazio:
+
+```csharp
+var conn = (System.Data.SqlClient.SqlConnection)Database.GetDbConnection();
+conn.AccessToken = (new Microsoft.Azure.Services.AppAuthentication.AzureServiceTokenProvider()).GetAccessTokenAsync("https://database.windows.net/").Result;
+```
+
+Isso é tudo de que você precisa para se conectar ao Banco de Dados SQL. Ao depurar no Visual Studio, seu código utiliza o usuário do Azure AD que você configurou na seção [Configurar Visual Studio](#set-up-visual-studio). Você configurará o servidor do Banco de dados SQL posteriormente para permitir a conexão da identidade gerenciada do seu aplicativo do Serviço de Aplicativo.
+
+Digite `Ctrl+F5` para executar o aplicativo novamente. Agora, o mesmo aplicativo CRUD em seu navegador está se conectando diretamente ao Banco de Dados SQL do Azure, usando a autenticação do Azure AD. Essa configuração permite que você execute migrações de banco de dados do Visual Studio.
 
 ## <a name="use-managed-identity-connectivity"></a>Usar conectividade de identidade gerenciada
 
@@ -134,7 +199,7 @@ Veja um exemplo da saída:
 
 ### <a name="add-managed-identity-to-an-azure-ad-group"></a>Adicionar identidade gerenciada a um grupo do Azure AD
 
-Para conceder esse acesso de identidade ao seu Banco de Dados SQL, você precisará adicioná-lo a um [grupo do Azure AD](../active-directory/fundamentals/active-directory-manage-groups.md). No Cloud Shell, adicione-o a um novo grupo chamado _myAzureSQLDBAccessGroup_, conforme mostrado no seguinte script:
+Para conceder esse acesso de identidade ao seu Banco de Dados SQL, você precisará adicioná-lo a um [grupo do Azure AD](../active-directory/fundamentals/active-directory-manage-groups.md). No Cloud Shell, adicione-o a um novo grupo chamado _myAzureSQLDBAccessGroup_ , conforme mostrado no seguinte script:
 
 ```azurecli-interactive
 groupid=$(az ad group create --display-name myAzureSQLDBAccessGroup --mail-nickname myAzureSQLDBAccessGroup --query objectId --output tsv)
@@ -167,7 +232,7 @@ Digite `EXIT` para retornar ao prompt do Cloud Shell.
 
 ### <a name="modify-connection-string"></a>Modificar cadeia de conexão
 
-Lembre-se de que as mesmas alterações feitas em `Web.config` funcionam com a identidade gerenciada, portanto, o que você pode fazer é remover a cadeia de conexão existente no aplicativo, que o Visual Studio criou ao implantar seu aplicativo pela primeira vez. Use o comando a seguir, mas substitua *\<app-name>* pelo nome de seu aplicativo.
+Lembre-se de que as mesmas alterações feitas em *Web.config* ou *appsettings.json* funcionam com a identidade gerenciada, portanto, o que resta fazer é remover a cadeia de conexão existente no Serviço de Aplicativo, criada pela Visual Studio ao implantar seu aplicativo pela primeira vez. Use o comando a seguir, mas substitua *\<app-name>* pelo nome de seu aplicativo.
 
 ```azurecli-interactive
 az webapp config connection-string delete --resource-group myResourceGroup --name <app-name> --setting-names MyDbConnection
@@ -177,11 +242,20 @@ az webapp config connection-string delete --resource-group myResourceGroup --nam
 
 Agora, só falta publicar suas alterações no Azure.
 
-No **Gerenciador de Soluções**, clique com botão direito no projeto **DotNetAppSqlD** e selecione **Publicar**.
+**Se você veio do [Tutorial: Criar um aplicativo ASP.NET no Azure com o Banco de Dados SQL](app-service-web-tutorial-dotnet-sqldatabase.md)** , publique suas alterações no Visual Studio. No **Gerenciador de Soluções**, clique com botão direito no projeto **DotNetAppSqlD** e selecione **Publicar**.
 
 ![Publicar no Gerenciador de Soluções](./media/app-service-web-tutorial-dotnet-sqldatabase/solution-explorer-publish.png)
 
-Na página de publicação, clique em **Publicar**. Quando a nova página da Web mostra a lista de tarefas pendentes, seu aplicativo se conecta ao banco de dados usando a identidade gerenciada.
+Na página de publicação, clique em **Publicar**. 
+
+**Se você veio do [Tutorial: Criar um aplicativo ASP.NET Core e do Banco de Dados SQL no Serviço de Aplicativo do Azure](app-service-web-tutorial-dotnetcore-sqldb.md)** , publique suas alterações usando o Git, com os comandos a seguir:
+
+```bash
+git commit -am "configure managed identity"
+git push azure master
+```
+
+Quando a nova página da Web mostra a lista de tarefas pendentes, seu aplicativo se conecta ao banco de dados usando a identidade gerenciada.
 
 ![Aplicativo do Azure após Migração do Code First](./media/app-service-web-tutorial-dotnet-sqldatabase/this-one-is-done.png)
 

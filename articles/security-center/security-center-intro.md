@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 6/06/2019
 ms.author: v-mohabe
-ms.openlocfilehash: 28e85f2e9caacc0cc30dcc1a073414c34bc2ab0e
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7bd18ab0cedf94f0ecc08c3523a608a8d554e6b2
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67064321"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68827928"
 ---
 # <a name="what-is-azure-security-center"></a>O que é a Central de Segurança do Azure?
 
@@ -34,7 +34,7 @@ A Central de Segurança do Azure aborda os três desafios de segurança mais urg
 
 -   **Ataques cada vez mais sofisticados**  – onde quer que você execute suas cargas de trabalho, os ataques continuam a ficar cada vez mais sofisticados. Você precisará proteger suas cargas de trabalho de nuvem pública, que são, na verdade, uma carga de trabalho voltada para a Internet que poderão deixá-lo ainda mais vulnerável se você não seguir as melhores práticas de segurança.
 
--   **Habilidades de segurança são escassas**  – o número de alertas de segurança e sistemas de alertas ultrapassa muito o número de administradores com experiência e preparação necessárias para garantir a proteção dos seus ambientes. Permanecer atualizado quanto aos ataques mais recentes é um desafio constante, tornando impossível permanecer em vigor enquanto o mundo de segurança é um front em constante mudança.
+-   **Habilidades de segurança são escassas**  – o número de alertas de segurança e sistemas de alertas ultrapassa em muito o número de administradores com experiência e preparação necessárias para verificar se seus ambientes estão protegidos. Permanecer atualizado quanto aos ataques mais recentes é um desafio constante, tornando impossível permanecer em vigor enquanto o mundo de segurança é um front em constante mudança.
 
 Para ajudá-lo a se proteger contra esses desafios, a Central de Segurança fornece ferramentas para:
 
@@ -126,9 +126,9 @@ A Central de Segurança ajuda a limitar a exposição a ataques de força bruta.
 
 A Central de Segurança inclui funcionalidades que ajudam você a realizar a classificação automática dos seus dados no SQL Azure. Você também pode obter avaliações de possíveis vulnerabilidades nos serviços de Armazenamento e SQL do Azure e recomendações de como mitigá-las.
 
-### <a name="protect-iot-and-hybrid-cloud-workloads-preview"></a>Proteger cargas de trabalho de nuvem da híbrida e da IoT (versão prévia)
+### <a name="protect-iot-and-hybrid-cloud-workloads"></a>Proteger IoT e cargas de trabalho de nuvem híbrida
 
-A Central de Segurança do Azure para IoT (Internet das Coisas) simplifica a proteção de carga de trabalho híbridas, oferecendo visibilidade unificada e controle, prevenção de ameaças adaptável, além de resposta e detecção de ameaças inteligente em cargas de trabalho em execução na borda, no local, no Azure e em outras nuvens. Para saber mais, consulte [Central de Segurança do Azure para IoT (Versão prévia)](https://docs.microsoft.com/azure/asc-for-iot/).
+A Central de Segurança do Azure para IoT (Internet das Coisas) simplifica a proteção de carga de trabalho híbridas, oferecendo visibilidade unificada e controle, prevenção de ameaças adaptável, além de resposta e detecção de ameaças inteligente em cargas de trabalho em execução na borda, no local, no Azure e em outras nuvens. Para saber mais, confira [Central de Segurança do Azure para IoT](https://docs.microsoft.com/azure/asc-for-iot/).
 
 ## <a name="get-secure-faster"></a>Ficar seguro com mais rapidez
 

@@ -9,12 +9,12 @@ ms.date: 07/29/2019
 ms.author: dpalled
 manager: cshankar
 ms.custom: seodec18
-ms.openlocfilehash: 921528c50bae03b67800bf3ccab8b5cd9bb704f6
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 4c81daa1f55167fa868c69f3bff388dbaa4887cd
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68677744"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68725750"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-environment"></a>Tutorial: Criar um ambiente do Azure Time Series Insights
 
@@ -34,7 +34,7 @@ Este tutorial orientará você pelo processo de criação de um ambiente do Azur
 
 * Sua conta de entrada do Azure também precisa ser um membro da função **Proprietário** da assinatura. Para obter mais informações, confira [Gerenciar o acesso usando o controle de acesso baseado em função e o portal do Azure](../role-based-access-control/role-assignments-portal.md).
 
-## <a name="video"></a>Vídeo
+## <a name="review-video"></a>Ver um vídeo
 
 ### <a name="learn-how-to-use-an-azure-iot-solution-accelerator-to-generate-data-and-get-started-with-time-series-insights-br"></a>Saiba como usar um acelerador de solução de IoT do Azure para gerar dados e começar a usar o Time Series Insights. </br>
 
@@ -116,7 +116,7 @@ Em segundo lugar, crie um ambiente do Time Series Insights em sua assinatura do 
 
    [![Implantação do ambiente do Time Series Insights bem-sucedida](media/tutorial-create-populate-tsi-environment/ap-create-resource-tsi-deployment-succeeded.png)](media/tutorial-create-populate-tsi-environment/ap-create-resource-tsi-deployment-succeeded.png#lightbox)
 
-## <a name="run-device-simulation-to-stream-data"></a>Executar simulação de dispositivo para transmitir dados
+## <a name="run-device-simulation"></a>Executar simulação de dispositivo
 
 Agora que a implantação e a configuração inicial foram concluídas, popule o ambiente do Time Series Insights com dados de exemplo dos [dispositivos simulados criados pelo acelerador](#create-a-device-simulation).
 

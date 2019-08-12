@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 12/13/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 080d1d68c2f2fb757bb51471b91a807b2f00fa2d
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 7fade5e73d7c571cea46c91cb952b590aca4b3c2
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67709516"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68780305"
 ---
 # <a name="tutorial-create-a-custom-image-of-an-azure-vm-with-the-azure-cli"></a>Tutorial: Criar uma imagem personalizada de uma VM do Azure com a CLI do Azure
 
@@ -51,6 +51,9 @@ Para criar uma imagem de uma máquina virtual, você precisará preparar a VM de
 ### <a name="deprovision-the-vm"></a>Desprovisionar a VM 
 
 Desprovisionar generaliza a VM removendo informações específicas da máquina. Essa generalização permite implantar várias VMs de uma única imagem. Durante o desprovisionamento, o nome do host é redefinido como *localhost.localdomain*. As chaves de host de SSH, as configurações de nameserver, a senha raiz e as concessões de DHCP em cache também são excluídas.
+
+> [!WARNING]
+> Desprovisionar e marcar a VM como generalizada tornarão a VM de origem inutilizável e ela não poderá ser reiniciada. 
 
 Para desprovisionar a máquina virtual, use o agente de VM do Azure (waagent). O agente de VM do Azure está instalado na VM e gerencia o provisionamento e a interação com o Azure Fabric Controller. Para saber mais, confira o [Guia do usuário do agente Linux para o Azure](../extensions/agent-linux.md).
 

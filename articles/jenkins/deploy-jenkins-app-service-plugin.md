@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: 29a842f7dfcf720f29fcff80d2e736893c824f5a
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 9f7e0e23a04c6b141c6e0c5ff88b3d5ff2d76e1d
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65949561"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840437"
 ---
 # <a name="deploy-to-azure-app-service-by-using-the-jenkins-plugin"></a>Implantar no Serviço de Aplicativo do Azure usando o plugin Jenkins 
 
@@ -35,7 +35,7 @@ Se você ainda não tiver um mestre do Jenkins, comece com o [modelo de soluçã
 * [Credenciais do Azure](https://plugins.jenkins.io/azure-credentials) versão 1.2
 * [Serviço de Aplicativo do Azure](https://plugins.jenkins.io/azure-app-service) versão 0.1
 
-Você pode usar o plugin Jenkins para implantar um aplicativo web em qualquer linguagem que tem suporte com aplicativos Web, como C#, PHP, Java e Node.js. Neste tutorial, usamos um [aplicativo Web de Java simples para o Azure](https://github.com/azure-devops/javawebappsample). Para bifurcar o repositório para sua conta do GitHub, selecione o botão **Bifurcação** no canto superior direito da interface GitHub.  
+Você pode usar o plugin Jenkins para implantar um aplicativo Web em qualquer linguagem compatível com aplicativos Web, como C#, PHP, Python, Java e Node.js. Neste tutorial, usamos um [aplicativo Web de Java simples para o Azure](https://github.com/azure-devops/javawebappsample). Para bifurcar o repositório para sua conta do GitHub, selecione o botão **Bifurcação** no canto superior direito da interface GitHub.  
 
 > [!NOTE]
 > O Java JDK e o Maven são necessários para compilar o projeto Java. Instale esses componentes no mestre do Jenkins ou no agente de VM, caso você use o agente para a integração contínua. Se você estiver implantando um aplicativo Java SE, ZIP também é necessário no servidor de build.
@@ -56,7 +56,7 @@ Para implantar Aplicativos Web para Contêineres, instale o Docker no Jenkins me
 
 
 1. Para criar uma entidade de serviço do Azure, use a [CLI do Azure](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json) ou o [portal do Azure](/azure/azure-resource-manager/resource-group-create-service-principal-portal).
-2. No painel do Jenkins, selecione **Credenciais** > **Sistema**. Em seguida, selecione **Credenciais globais (irrestrito)**.
+2. No painel do Jenkins, selecione **Credenciais** > **Sistema**. Em seguida, selecione **Credenciais globais (irrestrito)** .
 3. Para adicionar uma entidade de serviço do Microsoft Azure, selecione **Adicionar credenciais**. Forneça valores para os campos **ID de assinatura**, **ID do cliente**, **Segredo do cliente** e **Ponto de extremidade de token do OAuth 2.0**. Defina o campo **ID** como **mySp**. Usaremos essa ID em etapas subsequentes nesse artigo.
 
 

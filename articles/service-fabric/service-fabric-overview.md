@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 04/22/2019
 ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: 55bcce3c5a4b0dd00d9217d6cb3cc2cfbe6d5828
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.openlocfilehash: da7e41ae77226c2a18b92329507855ac30891058
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66753811"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68816095"
 ---
 # <a name="overview-of-azure-service-fabric"></a>Visão geral do Azure Service Fabric
 O Azure Service Fabric é uma plataforma de sistemas distribuídos que facilita o empacotamento, implantação e gerenciamento de microsserviços e contêineres escalonáveis e confiáveis. O Service Fabric resolve os desafios significativos de desenvolvimento e gerenciamento de aplicativos em nuvem nativos. Desenvolvedores e administradores podem evitar problemas complexos de infraestrutura e se concentrarem na implementação de cargas de trabalho essenciais e exigentes que são escalonáveis, confiáveis e gerenciáveis. O Service Fabric representa a plataforma de última geração para criação e gerenciamento de aplicativos escalonáveis de nuvem de camada 1 e nível corporativo.
@@ -67,7 +67,7 @@ O Service Fabric oferece suporte para o gerenciamento de todo o ciclo de vida e 
 
 As funcionalidades de gerenciamento de ciclo de vida do aplicativo do Service Fabric permitem que os administradores de aplicativos e os operadores de TI usem fluxos de trabalho simples com pouco envolvimento humano para provisionar, implantar e aplicar patch e monitorar aplicativos. Esses fluxos de trabalho internos reduzem enormemente a carga em operações de TI para manter os aplicativos disponíveis continuamente.
 
-A maioria dos aplicativos consiste em uma combinação de microsserviços com e sem estado, contêineres e outros executáveis que são implantados juntos. Tendo tipos fortes nos aplicativos, o Service Fabric permite a implantação de várias instâncias de aplicativo. Cada instância é gerenciada e atualizada independentemente. Vale destacar que o Service Fabric pode implantar contêineres ou qualquer executável e torná-los confiáveis. Por exemplo, o Service Fabric implanta .NET, ASP.NET Core, node.js, contêineres do Windows, contêineres do Linux, máquinas virtuais Java, scripts, Angular ou literalmente qualquer outro item que componha seu aplicativo.
+A maioria dos aplicativos consiste em uma combinação de microsserviços com e sem estado, contêineres e outros executáveis que são implantados juntos. Tendo tipos fortes nos aplicativos, o Service Fabric permite a implantação de várias instâncias de aplicativo. Cada instância é gerenciada e atualizada independentemente. Vale destacar que o Service Fabric pode implantar contêineres ou qualquer executável e torná-los confiáveis. Por exemplo, o Service Fabric pode implantar .NET, ASP.NET Core, Python, Node.js, contêineres do Windows, contêineres do Linux, máquinas virtuais Java, scripts, Angular ou literalmente qualquer outro item que componha seu aplicativo.
 
 O Service Fabric é integrado com as ferramentas de CI/CD como [Azure Pipelines](https://www.visualstudio.com/team-services/), [Jenkins](https://jenkins.io/index.html) e [Octopus Deploy](https://octopus.com/) e pode ser usado com qualquer outra ferramenta de CI/CD popular.
 
