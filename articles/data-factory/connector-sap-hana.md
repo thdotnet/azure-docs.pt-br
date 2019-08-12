@@ -176,8 +176,8 @@ Para copiar dados de SAP HANA, as propriedades a seguir têm suporte na seção 
 | Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type da fonte da atividade de cópia deve ser definida como: **SapHanaSource** | Sim |
-| consultar | Especifica a consulta SQL para ler dados da instância do SAP HANA. | Sim |
-| Tamanho | Especifica o tamanho do pacote de rede (em kilobytes) para dividir os dados em vários blocos. Se você tiver uma grande quantidade de dados a serem copiados, aumentar o tamanho do pacote poderá aumentar a velocidade de leitura de SAP HANA na maioria dos casos. O teste de desempenho é recomendado ao ajustar o tamanho do pacote. | Nº<br>O valor padrão é 2048 (2MB). |
+| query | Especifica a consulta SQL para ler dados da instância do SAP HANA. | Sim |
+| packetSize | Especifica o tamanho do pacote de rede (em kilobytes) para dividir os dados em vários blocos. Se você tiver uma grande quantidade de dados a serem copiados, aumentar o tamanho do pacote poderá aumentar a velocidade de leitura de SAP HANA na maioria dos casos. O teste de desempenho é recomendado ao ajustar o tamanho do pacote. | Nº<br>O valor padrão é 2048 (2MB). |
 
 **Exemplo:**
 
@@ -221,29 +221,29 @@ Ao copiar dados do SAP HANA, os seguintes mapeamentos são usados de tipos de da
 | ------------------ | ------------------------------ |
 | ALPHANUM           | String                         |
 | BIGINT             | Int64                          |
-| BINÁRIO             | Byte[]                         |
-| BINTEXT            | Cadeia                         |
+| BINARY             | Byte[]                         |
+| BINTEXT            | String                         |
 | BLOB               | Byte[]                         |
 | BOOL               | Byte                           |
 | CLOB               | String                         |
-| DATA               | DateTime                       |
-| Decimal            | Decimal                        |
-| Double             | Double                         |
-| FLOAT              | Duplo                         |
+| DATE               | DateTime                       |
+| DECIMAL            | Decimal                        |
+| DOUBLE             | Double                         |
+| FLOAT              | Double                         |
 | INTEGER            | Int32                          |
-| NCLOB              | Cadeia                         |
+| NCLOB              | String                         |
 | NVARCHAR           | String                         |
-| REAL               | Simples                         |
+| REAL               | Single                         |
 | SECONDDATE         | DateTime                       |
-| SHORTTEXT          | Cadeia                         |
+| SHORTTEXT          | String                         |
 | SMALLDECIMAL       | Decimal                        |
 | SMALLINT           | Int16                          |
 | STGEOMETRYTYPE     | Byte[]                         |
-| PONTO DE EXTREMIDADE        | Byte[]                         |
-| TEXT               | Cadeia                         |
-| TEMPO               | TimeSpan                       |
+| STPOINTTYPE        | Byte[]                         |
+| TEXT               | String                         |
+| TIME               | TimeSpan                       |
 | TINYINT            | Byte                           |
-| VARCHAR            | Cadeia                         |
+| VARCHAR            | String                         |
 | TIMESTAMP          | DateTime                       |
 | VARBINARY          | Byte[]                         |
 
