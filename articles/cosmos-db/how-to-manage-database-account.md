@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 05/23/2019
 ms.author: mjbrown
-ms.openlocfilehash: 0abeb3235f296e2dc873bcfe88910cdd12555d71
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: a5ba45fce2870b44a6ebb1be43cc1f36b3cda311
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67476207"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68815153"
 ---
 # <a name="manage-an-azure-cosmos-account"></a>Gerenciar uma conta do Azure Cosmos
 
@@ -28,7 +28,7 @@ Este artigo descreve como gerenciar várias tarefas em uma conta do Azure Cosmos
 ```azurecli-interactive
 # Create an account
 $resourceGroupName = 'myResourceGroup'
-$accountName = 'myaccountname' # must be lower case.
+$accountName = 'myaccountname' # must be lower case and < 31 characters
 
 az cosmosdb create \
    --name $accountName \
@@ -45,7 +45,7 @@ az cosmosdb create \
 # Create an Azure Cosmos account for Core (SQL) API
 $resourceGroupName = "myResourceGroup"
 $location = "West US"
-$accountName = "mycosmosaccount" # must be lower case.
+$accountName = "mycosmosaccount" # must be lower case and < 31 characters
 
 $locations = @(
     @{ "locationName"="West US"; "failoverPriority"=0 },
@@ -98,7 +98,7 @@ Em um modo de gravação de várias regiões, você poderá adicionar ou remover
 
 ```azurecli-interactive
 $resourceGroupName = 'myResourceGroup'
-$accountName = 'myaccountname'
+$accountName = 'myaccountname' # must be lower case and <31 characters
 
 # Create an account with 1 region
 az cosmosdb create --name $accountName --resource-group $resourceGroupName --locations regionName=westus failoverPriority=0 isZoneRedundant=False
@@ -116,7 +116,7 @@ az cosmosdb update --name $accountName --resource-group $resourceGroupName --loc
 # Create an account with 1 region
 $resourceGroupName = "myResourceGroup"
 $location = "West US"
-$accountName = "mycosmosaccount" # must be lower case.
+$accountName = "mycosmosaccount" # must be lower case and <31 characters
 
 $locations = @( @{ "locationName"="West US"; "failoverPriority"=0 } )
 $consistencyPolicy = @{ "defaultConsistencyLevel"="Session" }
@@ -201,7 +201,7 @@ Set-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
 
 ### <a id="configure-multiple-write-regions-arm"></a>modelo do Resource Manager
 
-Uma conta pode ser migrada de mestre único para vários mestres com a implantação do modelo do Resource Manager usado para criar a conta e a configuração `enableMultipleWriteLocations: true`. O modelo do Azure Resource Manager a seguir é um modelo mínimo possível que implantará uma conta do Azure Cosmos para a API do SQL com uma única região e vários mestres habilitados.
+Uma conta pode ser migrada de mestre único para vários mestres com a implantação do modelo do Resource Manager usado para criar a conta e a configuração `enableMultipleWriteLocations: true`. O modelo do Azure Resource Manager a seguir é um modelo mínimo possível que implantará uma conta do Azure Cosmos para a API do SQL com duas regiões e vários locais de gravação habilitados.
 
 ```json
 {
@@ -214,6 +214,18 @@ Uma conta pode ser migrada de mestre único para vários mestres com a implanta�
         "location": {
             "type": "String",
             "defaultValue": "[resourceGroup().location]"
+        },
+        "primaryRegion":{
+            "type":"string",
+            "metadata": {
+                "description": "The primary replica region for the Cosmos DB account."
+            }
+        },
+        "secondaryRegion":{
+            "type":"string",
+            "metadata": {
+              "description": "The secondary replica region for the Cosmos DB account."
+          }
         }
     },
     "resources": [
@@ -227,10 +239,15 @@ Uma conta pode ser migrada de mestre único para vários mestres com a implanta�
             "properties": {
                 "databaseAccountOfferType": "Standard",
                 "consistencyPolicy": { "defaultConsistencyLevel": "Session" },
-                "locations": [
+                "locations":
+                [
                     {
-                        "locationName": "[parameters('location')]",
+                        "locationName": "[parameters('primaryRegion')]",
                         "failoverPriority": 0
+                    },
+                    {
+                        "locationName": "[parameters('secondaryRegion')]",
+                        "failoverPriority": 1
                     }
                 ],
                 "enableMultipleWriteLocations": true

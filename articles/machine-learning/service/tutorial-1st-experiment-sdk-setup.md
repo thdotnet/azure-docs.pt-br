@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Configurar o ambiente e o workspace.'
 titleSuffix: Azure Machine Learning service
-description: Neste tutorial, você concluirá as etapas de ponta a ponta para começar a usar o SDK de Python do Azure Machine Learning em execução em notebooks Jupyter.
+description: Nesta série de tutoriais, você concluirá as etapas de ponta a ponta para começar a usar o SDK de Python do Azure Machine Learning em execução em notebooks Jupyter.  A parte um abrange a criação de um ambiente de servidor de notebook de nuvem, bem como a criação de um workspace para gerenciar seus experimentos e modelos de machine learning.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,12 +10,12 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 07/20/2019
-ms.openlocfilehash: e17d9286453aeb5c7eac688555177c2c42faad21
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: b3fdcfbb9869c0199c91f5bbc6ca1f02fec996cf
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68668593"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68828640"
 ---
 # <a name="tutorial-setup-environment-and-workspace"></a>Tutorial: Configurar o ambiente e o workspace
 
@@ -25,7 +25,7 @@ Neste tutorial, você irá:
 
 > [!div class="checklist"]
 > * Criar um workspace do machine learning para usar no próximo tutorial.
-> * Criar um ambiente de servidor de notebook em nuvem.
+> * Crie uma VM de notebook, um servidor de Jupyter notebook baseado em nuvem com o SDK do Python do Azure Machine Learning pré-instalado e pré-configurado.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -49,14 +49,12 @@ Em seu workspace, você cria um recurso de nuvem para começar a usar notebooks 
 
 1. Selecione **+Novo** para criar uma VM de notebook.
 
-     ![Selecione Nova VM](./media/quickstart-run-cloud-notebook/add-workstation.png)
+     ![Selecione Nova VM](./media/tutorial-1st-experiment-sdk-setup/add-workstation.png)
 
 1. Forneça um nome para sua VM. Em seguida, selecione **Criar**.
 
     > [!NOTE]
     > O nome da VM do seu Notebook deve ter entre 2 e 16 caracteres. Os caracteres válidos são letras, dígitos e o caractere -.  O nome também deve ser exclusivo em toda a sua assinatura do Azure.
-
-    ![Criar uma nova VM](media/quickstart-run-cloud-notebook/create-new-workstation.png)
 
 1. Aguarde até que o status seja alterado para **Em execução**.
 
@@ -66,7 +64,7 @@ Depois que sua VM estiver em execução, use a seção **VMs de Notebook** para 
 
 1. Selecione **Jupyter** na coluna **URI** para sua VM.
 
-    ![Iniciar o servidor do Jupyter notebook](./media/quickstart-run-cloud-notebook/start-server.png)
+    ![Iniciar o servidor do Jupyter notebook](./media/tutorial-1st-experiment-sdk-setup/start-server.png)
 
     O link inicia seu servidor de notebook e abre a página da Web do Jupyter notebook em uma nova guia do navegador.  O link só funcionará para a pessoa que cria a VM. Cada usuário do workspace deve criar sua própria VM.
 
@@ -87,7 +85,7 @@ Se você usou um servidor de notebook de nuvem, pare a VM quando não a estiver 
 
 1. Em seu workspace, selecione **VMs de Notebook**.
 
-   ![Interromper o servidor da VM](./media/quickstart-run-cloud-notebook/stop-server.png)
+   ![Interromper o servidor da VM](./media/tutorial-1st-experiment-sdk-setup/stop-server.png)
 
 1. Selecione a VM na lista.
 

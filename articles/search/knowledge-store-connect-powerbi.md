@@ -4,16 +4,17 @@ description: Crie um repositório de conhecimento usando o assistente para impor
 author: heidisteen
 services: search
 ms.service: search
+ms.subservice: cognitive-search
 ms.devlang: NA
 ms.topic: tutorial
 ms.date: 07/30/2019
 ms.author: heidist
-ms.openlocfilehash: 04b04e8080590aa6e9fe1c17369e83fa5bb6b894
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: 518a96ae8ace5c9630d594fe70487635b6ec1d2c
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68668226"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840847"
 ---
 # <a name="create-an-azure-search-knowledge-store-and-connect-using-power-bi"></a>Criar um repositório de conhecimento do Azure Search e conectar-se usando o Power BI
 
@@ -156,7 +157,7 @@ Use o assistente para importar dados para criar o repositório de conhecimento. 
 
 1. Clique em **Fechar e Aplicar** na extrema esquerda da barra de comandos do Power Query.
 
-1. Valide se o Power BI reconhece as relações que o repositório de conhecimento criou em seus dados. Clique no bloco de relações no painel de navegação à esquerda. Todas as três tabelas devem estar relacionadas.
+1. Valide se o Power BI reconhece as relações que o repositório de conhecimento criou em seus dados. Clique no bloco de relações no painel de navegação à esquerda. Todas as três tabelas devem estar relacionadas. Edite as relações e verifique se a “Direção entre filtros” foi definida como ambos; com isso, todos os seus visuais serão atualizados quando um filtro for aplicado.
 
    ![Validar relações](media/knowledge-store-howto-powerbi/powerbi-relationships.png "Validar relações")
 

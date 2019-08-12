@@ -8,12 +8,12 @@ ms.devlang: php
 ms.topic: quickstart
 ms.date: 01/05/2019
 ms.author: lbosq
-ms.openlocfilehash: 15d312ff4dfdb789cb0d9ee85941ea8760ddb08f
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: e38f3e2029bdc8dc8c13ce330e37053d491317f3
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66480607"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68736640"
 ---
 # <a name="quickstart-create-a-graph-database-in-azure-cosmos-db-using-php-and-the-azure-portal"></a>Início Rápido: Criar um banco de dados de grafo no Azure Cosmos DB usando PHP e o portal do Azure
 
@@ -113,7 +113,7 @@ Agora, volte ao Portal do Azure para obter as informações de conexão e copiá
 
     ```php
     $db = new Connection([
-        'host' => 'testgraphacct.graphs.azure.com',
+        'host' => 'testgraphacct.gremlin.cosmosdb.azure.com',
         'username' => '/dbs/<db>/colls/<coll>',
         'password' => 'your_primary_key'
         ,'port' => '443'
@@ -123,9 +123,7 @@ Agora, volte ao Portal do Azure para obter as informações de conexão e copiá
     ]);
     ```
 
-3. Se sua conta de banco de dados do gráfico foi criada em 20 de dezembro de 20, 2017 ou depois dessa data, altere `graphs.azure.com` no nome do host para `gremlin.cosmosdb.azure.com`.
-
-4. Altere o parâmetro `username` no objeto de Conexão com o banco de dados e o nome do gráfico. Se você utilizou os valores recomendados de `sample-database` e `sample-graph`, ele devem ser semelhantes ao código ao seguir:
+3. Altere o parâmetro `username` no objeto de Conexão com o banco de dados e o nome do gráfico. Se você utilizou os valores recomendados de `sample-database` e `sample-graph`, ele devem ser semelhantes ao código ao seguir:
 
     `'username' => '/dbs/sample-database/colls/sample-graph'`
 
@@ -133,7 +131,7 @@ Agora, volte ao Portal do Azure para obter as informações de conexão e copiá
 
     ```php
     $db = new Connection([
-        'host' => 'testgraphacct.graphs.azure.com',
+        'host' => 'testgraphacct.gremlin.cosmosdb.azure.com',
         'username' => '/dbs/sample-database/colls/sample-graph',
         'password' => 'your_primary_key',
         'port' => '443'
@@ -143,7 +141,7 @@ Agora, volte ao Portal do Azure para obter as informações de conexão e copiá
     ]);
     ```
 
-5. No Portal do Azure, utilize o botão de cópia para copiar a CHAVE PRIMÁRIA e cole-a sobre `your_primary_key` no parâmetro de senha.
+4. No Portal do Azure, utilize o botão de cópia para copiar a CHAVE PRIMÁRIA e cole-a sobre `your_primary_key` no parâmetro de senha.
 
     Agora, a inicialização do objeto de Conexão deve ser semelhante ao código a seguir:
 
@@ -159,7 +157,7 @@ Agora, volte ao Portal do Azure para obter as informações de conexão e copiá
     ]);
     ```
 
-6. Salve o arquivo `connect.php`.
+5. Salve o arquivo `connect.php`.
 
 ## <a name="run-the-console-app"></a>Execute o aplicativo de console
 
@@ -206,13 +204,13 @@ Agora, você pode voltar para o Data Explorer, ver os vértices adicionados ao g
 
 4. Digite um rótulo de *pessoa*.
 
-5. Clique em **Adicionar propriedade** para adicionar cada uma das propriedades a seguir. Observe que você pode criar propriedades exclusivas para cada pessoa no grafo. Somente a chave da id é necessária.
+5. Clique em **Adicionar propriedade** para adicionar cada uma das propriedades a seguir. Observe que você pode criar propriedades exclusivas para cada pessoa no grafo. Somente a chave **id** é necessária.
 
-    chave|value|Observações
+    Chave | Valor | Observações
     ----|----|----
-    ID|ashley|O identificador exclusivo do vértice. Se você não especificar uma ID, ela será gerada para você.
-    gender|feminino| 
-    técnico | java | 
+    **ID** | ashley | O identificador exclusivo do vértice. Se você não especificar uma ID, ela será gerada para você.
+    **gender** | feminino | 
+    **tech** | java | 
 
     > [!NOTE]
     > Neste início rápido, você criou uma coleção não particionada. No entanto, se você criar uma coleção particionada especificando uma chave de partição durante a criação da coleção, então, precisará incluir a chave de partição como uma chave em cada novo vértice. 
@@ -224,12 +222,12 @@ Agora, você pode voltar para o Data Explorer, ver os vértices adicionados ao g
 8. Digite um rótulo de *pessoa*.
 
 9. Clique em **Adicionar propriedade** para adicionar cada uma das propriedades a seguir:
-
-    chave|value|Observações
+    
+    Chave | Valor | Observações
     ----|----|----
-    ID|rakesh|O identificador exclusivo do vértice. Se você não especificar uma ID, ela será gerada para você.
-    gender|masculino| 
-    escola|MIT| 
+    **ID** | rakesh | O identificador exclusivo do vértice. Se você não especificar uma ID, ela será gerada para você.
+    **gender** | masculino | 
+    **school** | MIT | 
 
 10. Clique em **OK**. 
 

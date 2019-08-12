@@ -8,12 +8,12 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 01/22/2019
 ms.author: lbosq
-ms.openlocfilehash: 18f54e64498c7809e662ceb71d1e497a0f275ad6
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: 545f679b11295485567a817d144225b361a262ce
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66480457"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68815200"
 ---
 # <a name="quickstart-create-a-graph-database-in-azure-cosmos-db-using-python-and-the-azure-portal"></a>Início Rápido: Criar um banco de dados de grafo no Azure Cosmos DB usando o Python e o portal do Azure
 
@@ -173,13 +173,13 @@ Agora, volte ao Portal do Azure para obter as informações de conexão e copiá
 <a id="add-sample-data"></a>
 ## <a name="review-and-add-sample-data"></a>Revisar e adicionar dados de exemplo
 
-Agora, você pode voltar para o Data Explorer, ver os vértices adicionados ao grafo e acrescentar pontos de dados adicionais.
+Após a inserção dos vértices e das bordas, você pode voltar para o Data Explorer, ver os vértices adicionados ao grafo e acrescentar pontos de dados adicionais.
 
 1. Clique em **Data Explorer**, expanda **grafo de exemplo**, clique em **Grafo** e em **Aplicar Filtro**. 
 
    ![Criar novos documentos no Data Explorer no portal do Azure](./media/create-graph-python/azure-cosmosdb-data-explorer-expanded.png)
 
-2. Na lista **Resultados**, observe os novos usuários adicionados ao grafo. Selecione **ben** e observe que ele está conectado a robin. Você pode mover os vértices arrastando e soltando, ampliar e reduzir rolando o botão de rolagem do mouse e expandir o tamanho do grafo com a seta dupla. 
+2. Na lista **Resultados**, observe que três novos usuários são adicionados ao grafo. Você pode mover os vértices arrastando e soltando, ampliar e reduzir rolando o botão de rolagem do mouse e expandir o tamanho do grafo com a seta dupla. 
 
    ![Novos vértices no grafo no Data Explorer no portal do Azure](./media/create-graph-python/azure-cosmosdb-graph-explorer-new.png)
 
@@ -193,6 +193,7 @@ Agora, você pode voltar para o Data Explorer, ver os vértices adicionados ao g
 
     chave|value|Observações
     ----|----|----
+    pk|/pk| 
     ID|ashley|O identificador exclusivo do vértice. Se você não especificar uma ID, ela será gerada para você.
     gender|feminino| 
     técnico | java | 
@@ -210,6 +211,7 @@ Agora, você pode voltar para o Data Explorer, ver os vértices adicionados ao g
 
     chave|value|Observações
     ----|----|----
+    pk|/pk| 
     ID|rakesh|O identificador exclusivo do vértice. Se você não especificar uma ID, ela será gerada para você.
     gender|masculino| 
     escola|MIT| 

@@ -1,5 +1,5 @@
 ---
-title: Desenvolver com Node.js no Kubernetes usando o Azure Dev Spaces
+title: Depurar e iterar com o Visual Studio Code e o Node.js no Kubernetes usando o Azure Dev Spaces
 titleSuffix: Azure Dev Spaces
 author: zr-msft
 services: azure-dev-spaces
@@ -10,14 +10,14 @@ ms.topic: quickstart
 description: Desenvolvimento rápido de Kubernetes com contêineres, microsserviços e Node.js no Azure
 keywords: Docker, Kubernetes, Azure, AKS, Serviço de Kubernetes do Azure, contêineres, Helm, malha de serviço, roteamento de malha de serviço, kubectl, k8s
 manager: gwallace
-ms.openlocfilehash: 3da6c015d46d2c83dd74c625e1e8eeaee81da2ae
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 4ee11b4bebe32ff4a9af38a0789823178f388e10
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67707119"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68725785"
 ---
-# <a name="quickstart-develop-with-nodejs-on-kubernetes-using-azure-dev-spaces"></a>Início Rápido: Desenvolver com Node.js no Kubernetes usando o Azure Dev Spaces
+# <a name="quickstart-debug-and-iterate-with-visual-studio-code-and-nodejs-on-kubernetes-using-azure-dev-spaces"></a>Início Rápido: Depurar e iterar com o Visual Studio Code e o Node.js no Kubernetes usando o Azure Dev Spaces
 
 Neste guia, você aprenderá a:
 
@@ -77,7 +77,7 @@ git clone https://github.com/Azure/dev-spaces
 
 Abra o Visual Studio Code, clique em *Arquivo*, *Abrir...* e, em seguida, navegue até o diretório *dev-spaces/samples/nodejs/getting-started/webfrontend* e clique em *Abrir*.
 
-Agora você tem o projeto *webfrontend* aberto no Visual Studio Code. Para executar o aplicativo em seu espaço de desenvolvimento, gere os ativos de gráfico do Helm e do Docker usando a extensão Azure Dev Spaces na paleta de comando.
+Agora você tem o projeto *webfrontend* aberto no Visual Studio Code. Para executar o aplicativo em seu espaço de desenvolvimento, gere os ativos de gráfico do Helm e do Docker usando a extensão Azure Dev Spaces na paleta de comandos.
 
 Para abrir a paleta de comandos no Visual Studio Code, clique em *Exibir* e, em seguida, *Paleta de Comandos*. Comece digitando `Azure Dev Spaces` e clique em `Azure Dev Spaces: Prepare configuration files for Azure Dev Spaces`.
 
@@ -106,7 +106,7 @@ Clique em *Depurar* e, em seguida, *Parar Depuração* para parar o depurador.
 
 ## <a name="update-code"></a>Atualizar código
 
-Para implantar uma versão atualizada do serviço, atualize qualquer arquivo no projeto e execute *Iniciar Servidor* novamente. Por exemplo: 
+Para implantar uma versão atualizada do serviço, atualize qualquer arquivo no projeto e execute *Iniciar Servidor* novamente. Por exemplo:
 
 1. Se o aplicativo ainda estiver em execução, clique em *Depurar* e, em seguida, em *Parar Depuração* para interrompê-lo.
 1. Atualize a [linha 13 em `server.js`](https://github.com/Azure/dev-spaces/blob/master/samples/nodejs/getting-started/webfrontend/server.js#L13) para:
@@ -122,7 +122,7 @@ Para implantar uma versão atualizada do serviço, atualize qualquer arquivo no 
 
 ## <a name="setting-and-using-breakpoints-for-debugging"></a>Definir e usar pontos de interrupção para depuração
 
-Inicie o serviço usando *Iniciar Servidor (AZDS)*.
+Inicie o serviço usando *Iniciar Servidor (AZDS)* .
 
 Navegue de volta para a exibição *Explorer* clicando em *Exibir* e, em seguida, *Explorer*. Abra `server.js` e clique em algum lugar da linha 13 para colocar o cursor nela. Para definir um ponto de interrupção, pressione *F9* ou clique em *Depurar* e, em seguida, *Ativar/Desativar Pontos de Interrupção*.
 
@@ -144,7 +144,7 @@ Este comando compila e executa o serviço no Azure Dev Spaces. E também inicia 
 
 Depois que o serviço é iniciado, navegue até ele usando o navegador e interaja com ele.
 
-Enquanto o serviço estiver em execução, retorne ao VS Code e atualize a linha 13 em `server.js`. Por exemplo: 
+Enquanto o serviço estiver em execução, retorne ao VS Code e atualize a linha 13 em `server.js`. Por exemplo:
 ```javascript
     res.send('Hello from webfrontend in Azure while debugging!');
 ```

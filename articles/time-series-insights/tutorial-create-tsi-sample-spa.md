@@ -8,12 +8,12 @@ ms.date: 06/29/2019
 ms.author: dpalled
 manager: cshankar
 ms.custom: seodec18
-ms.openlocfilehash: bd50fb4a28aa0ab71c1fb0aeba772a2bd7d1df9d
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 4d9af918c222107cfca5863309efb391b8e6d2e0
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68677736"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68720877"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-single-page-web-app"></a>Tutorial: Criar um aplicativo Web de página única do Azure Time Series Insights
 
@@ -38,7 +38,7 @@ Inscreva-se em uma [assinatura do Azure gratuita](https://azure.microsoft.com/fr
 
 * Os componentes das principais ferramentas do IIS Express, da Implantação da Web e dos Serviços de Nuvem do Azure para o Visual Studio. Adicione os componentes modificando sua instalação do Visual Studio.
 
-## <a name="application-design"></a>Design do aplicativo
+## <a name="understand-application-design"></a>Entender o design do aplicativo
 
 O SPA de exemplo do Time Series Insights é a base para o design e o código usados neste tutorial. O código usa a biblioteca de clientes JavaScript do Time Series Insights. A biblioteca de clientes do Time Series Insights fornece uma abstração para duas categorias principais de API:
 
@@ -48,11 +48,11 @@ O SPA de exemplo do Time Series Insights é a base para o design e o código usa
 
 Este tutorial também usa os dados do ambiente do Time Series Insights do aplicativo de exemplo. Para saber detalhes sobre a estrutura do aplicativo de exemplo e como ele usa a biblioteca de clientes do Time Series Insights, confira o tutorial [Explorar a biblioteca de clientes JavaScript do Azure Time Series Insights](tutorial-explore-js-client-lib.md).
 
-## <a name="register-the-application-with-azure-ad"></a>Registrar o aplicativo no Azure AD
+## <a name="register-with-azure-ad"></a>Registrar com o Azure AD
 
 [!INCLUDE [Azure Active Directory app registration](../../includes/time-series-insights-aad-registration.md)]
 
-## <a name="build-and-publish-the-web-application"></a>Compilar e publicar o aplicativo Web
+## <a name="build-and-publish"></a>Criar e publicar
 
 1. Crie um diretório para armazenar os arquivos do projeto de aplicativo. Em seguida, acesse cada uma das URLs a seguir. Clique com o botão direito do mouse no link **Bruto** no canto superior direito da página e selecione **Salvar como** para salvar os arquivos no diretório do projeto.
 
@@ -101,7 +101,7 @@ Este tutorial também usa os dados do ambiente do Time Series Insights do aplica
       <link rel="stylesheet" type="text/css" href="../../dist/tsiclient.css"> -->
       ```
 
-   1. Para configurar o aplicativo a fim de usar a ID de registro do aplicativo do Azure AD, altere o valor de `clientID` para usar a **ID do aplicativo** copiada na **etapa 3** ao [registrar o aplicativo para usar o Azure AD](#register-the-application-with-azure-ad). Se você tiver criado uma **URL de logoff** no Azure Active Directory, defina esse valor como `postLogoutRedirectUri`.
+   1. Para configurar o aplicativo a fim de usar a ID de registro do aplicativo do Azure AD, altere o valor de `clientID` para usar a **ID do aplicativo** copiada na **etapa 3** ao [registrar o aplicativo para usar o Azure AD](#register-with-azure-ad). Se você tiver criado uma **URL de logoff** no Azure Active Directory, defina esse valor como `postLogoutRedirectUri`.
 
       [!code-javascript[head-sample](~/samples-javascript/pages/tutorial/index.html?range=147-153&highlight=4-5)]
 
@@ -141,9 +141,9 @@ Este tutorial também usa os dados do ambiente do Time Series Insights do aplica
 
 Condição/código de erro | DESCRIÇÃO
 ---------------------| -----------
-*AADSTS50011: Nenhum endereço de resposta está registrado para o aplicativo.* | O registro do Azure AD não tem a propriedade **URL de resposta**. Acesse **Configurações** > **URLs de Resposta** do registro de aplicativo do Azure AD. Verifique se no **URI de redirecionamento** havia a opção de especificar na **etapa 2** ao [registrar o aplicativo para usar o Azure Active Directory](#register-the-application-with-azure-ad).
-*AADSTS50011: A URL de resposta especificada na solicitação não corresponde às URLs de resposta configuradas para o aplicativo: '\<GUID da ID de Aplicativo>'.* | O `postLogoutRedirectUri` especificado na **etapa 6** de [Compilar e publicar o aplicativo Web](#build-and-publish-the-web-application) deve corresponder ao valor especificado em **Configurações** > **URLs de Resposta** no registro de aplicativo do Azure AD. Também não se esqueça de alterar o valor da **URL de destino** para usar *https* de acordo com a **etapa 5** em [Compilar e publicar o aplicativo Web](#build-and-publish-the-web-application).
-O aplicativo Web é carregado, mas tem uma página de entrada somente texto e sem estilo, com uma tela de fundo branca. | Verifique se os caminhos discutidos na **etapa 4** de [Compilar e publicar o aplicativo Web](#build-and-publish-the-web-application) estão corretos. Se o aplicativo Web não puder localizar os arquivos .css, a página não será estilizada corretamente.
+*AADSTS50011: Nenhum endereço de resposta está registrado para o aplicativo.* | O registro do Azure AD não tem a propriedade **URL de resposta**. Acesse **Configurações** > **URLs de Resposta** do registro de aplicativo do Azure AD. Verifique se o **URI de redirecionamento** que você teve a opção de especificar na **etapa 2** ou **etapa 4** ao [registrar o aplicativo para usar o Azure AD](#register-with-azure-ad) está presente.
+*AADSTS50011: A URL de resposta especificada na solicitação não corresponde às URLs de resposta configuradas para o aplicativo: '\<GUID da ID de Aplicativo>'.* | O `postLogoutRedirectUri` especificado na **etapa 6.b** de [Criar e publicar o aplicativo Web](#build-and-publish) deve corresponder ao valor especificado em **Configurações** > **URLs de Resposta** no registro de aplicativo do Azure AD. |
+O aplicativo Web é carregado, mas tem uma página de entrada somente texto e sem estilo, com uma tela de fundo branca. | Verifique se os caminhos discutidos na **etapa 6** de [Criar e publicar o aplicativo Web](#build-and-publish) estão corretos. Se o aplicativo Web não puder localizar os arquivos .css, a página não será estilizada corretamente.
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 

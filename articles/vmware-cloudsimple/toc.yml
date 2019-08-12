@@ -62,6 +62,8 @@
           items:
             - name: Provisionar nós
               href: create-nodes.md
+            - name: Excluir nós
+              href: delete-nodes.md
         - name: Gerenciar recursos de nuvem privada
           items:
             - name: Criar uma nuvem privada
@@ -76,6 +78,8 @@
               href: azure-subscription-mapping.md
             - name: Escalonar privilégios
               href: escalate-private-cloud-privileges.md
+            - name: Excluir uma nuvem privada
+              href: delete-private-cloud.md
         - name: Monitorar atividade da CloudSimple
           href: 'https://docs.azure.cloudsimple.com/activity/'
         - name: Configurar rede da nuvem privada

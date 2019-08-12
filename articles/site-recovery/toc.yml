@@ -155,6 +155,8 @@
           items:
             - name: Preparar a rede para a recuperação de desastre da VM do Azure
               href: azure-to-azure-about-networking.md
+            - name: Personalizar as configurações de rede da VM do Azure de destino
+              href: azure-to-azure-customize-networking.md
             - name: Configurar o mapeamento de rede e manter os endereços IP após o failover
               href: azure-to-azure-network-mapping.md
             - name: Exemplos para manter os endereços IP após o failover

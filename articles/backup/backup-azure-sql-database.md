@@ -1,5 +1,5 @@
 ---
-title: Fazer backup de bancos de dados SQL Server para o Azure | Microsoft Docs
+title: Fazer backup de bancos de dados do SQL Server para o Azure
 description: Este tutorial explica como fazer backup do SQL Server para o Azure. O artigo também explica a recuperação do SQL Server.
 author: dcurwin
 manager: carmonm
@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: tutorial
 ms.date: 06/18/2019
 ms.author: dacurwin
-ms.openlocfilehash: cddb540eb0d6892426c4857b152ab6caa746f6da
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 7312821320084c766f5b3357fe64c061df83673b
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68639810"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68827653"
 ---
 # <a name="about-sql-server-backup-in-azure-vms"></a>Sobre o Backup do SQL Server nas VMs do Azure
 
@@ -25,7 +25,7 @@ Essa solução aproveita as APIs nativas do SQL para fazer backups dos bancos de
 * Depois que você especificar a VM do SQL Server que você deseja proteger e na qual consultar os bancos de dados, o serviço de Backup do Azure instalará uma extensão de backup de carga de trabalho na VM pelo nome da extensão `AzureBackupWindowsWorkload` .
 * Essa extensão consiste em um coordenador e um plugin do SQL. Ao passo que o coordenador é responsável por disparar fluxos de trabalho para várias operações, como configurar o backup, backup e restauração, o plugin é responsável por fluxo de dados real.
 * Para poder descobrir bancos de dados nesta VM, o Backup do Microsoft Azure cria a conta `NT SERVICE\AzureWLBackupPluginSvc`. Essa conta é usada para backup e restauração e exige permissões de sysadmin do SQL. O Backup do Microsoft Azure aproveita a conta  `NT AUTHORITY\SYSTEM`  para descoberta/consulta de banco de dados e, portanto, essa conta precisa ser um logon público no SQL. Se você não criou a VM do SQL Server no Azure Marketplace, talvez você receba um erro  **UserErrorSQLNoSysadminMembership**. Se isso ocorrer,  [siga essas instruções](backup-azure-sql-database.md).
-* Depois que o gatilho configurar a proteção nos bancos de dados selecionados, o serviço de backup configura o coordenador com as agendas de backup e outros detalhes da política, que aumenta os caches localmente na VM 
+* Depois que o gatilho configurar a proteção nos bancos de dados selecionados, o serviço de backup configura o coordenador com as agendas de backup e outros detalhes da política, que aumenta os caches localmente na VM.
 * No horário agendado, o coordenador se comunica com o plugin e ele começa a transmissão dos dados de backup do SQL Server usando o VDI.  
 * O plugin envia os dados diretamente para o cofre de serviços de recuperação, eliminando a necessidade de um local de preparo. Os dados são criptografados e armazenados pelo serviço de Backup do Microsoft Azure em contas de armazenamento.
 * Quando a transferência de dados for concluída, o coordenador confirma com o serviço de backup.
@@ -45,7 +45,7 @@ Antes de começar, verifique o que está descrito abaixo:
 **Suporte** | **Detalhes**
 --- | ---
 **Implantações com suporte** | Há suporte para VMs do Azure no Marketplace do SQL e VMs que não são do Marketplace (do SQL Server instaladas manualmente).
-**Áreas geográficas com suporte** | Sudeste da Austrália (ASE), Leste da Austrália (AE) <br> Sul do Brasil (BRS)<br> Canadá Central (CNC), Leste do Canadá (CE)<br> Sudeste Asiático (SEA), Ásia Oriental (EA) <br> Leste dos EUA (EUS), Leste dos EUA 2 (EUS2), Centro-Oeste dos EUA (WCUS), Oeste dos EUA (WUS); Oeste dos EUA 2 (WUS 2) Centro-Norte dos EUA (NCUS) EUA Central (CUS) Centro-Sul dos EUA (SCUS) <br> Índia Central (INC), Sul da Índia (INS) <br> Oeste do Japão (JPE), Leste do Japão (JPW) <br> Coreia Central (KRC), Sul da Coreia (KRS) <br> Norte da Europa (NE), Oeste da Europa <br> Sul do Reino Unido (UKS), Oeste do Reino Unido (UKW)
+**Áreas geográficas com suporte** | Sudeste da Austrália (ASE), Leste da Austrália (AE) <br> Sul do Brasil (BRS)<br> Canadá Central (CNC), Leste do Canadá (CE)<br> Sudeste Asiático (SEA), Ásia Oriental (EA) <br> Leste dos EUA (EUS), Leste dos EUA 2 (EUS2), Centro-Oeste dos EUA (WCUS), Oeste dos EUA (WUS); Oeste dos EUA 2 (WUS 2) Centro-Norte dos EUA (NCUS) EUA Central (CUS) Centro-Sul dos EUA (SCUS) <br> Índia Central (INC), Sul da Índia (INS) <br> Oeste do Japão (JPE), Leste do Japão (JPW) <br> Coreia Central (KRC), Sul da Coreia (KRS) <br> Norte da Europa (NE), Oeste da Europa <br> Sul do Reino Unido (UKS), Oeste do Reino Unido (UKW) <br> US Gov – Arizona, US Gov – Virgínia, US Gov – Texas, US DoD Central, US DoD Leste
 **Sistemas operacionais com suporte** | Windows Server 2016, Windows Server 2012 R2 e Windows Server 2012<br/><br/> Não há suporte para Linux no momento.
 **Versões do SQL Server com suporte** | SQL Server 2017, conforme detalhado [aqui](https://support.microsoft.com/lifecycle/search?alpha=SQL%20server%202017), SQL Server 2016 e SPs, conforme detalhado [aqui](https://support.microsoft.com/lifecycle/search?alpha=SQL%20server%202016%20service%20pack), SQL Server 2014 e SQL Server 2012.<br/><br/> Enterprise, Standard, Web, Developer e Express.
 **Versões do .NET com suporte** | .NET Framework 4.5.2 e superior instalado na VM

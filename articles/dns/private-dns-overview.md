@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: overview
 ms.date: 6/12/2019
 ms.author: victorh
-ms.openlocfilehash: aedace031eaedf2709993b5185979e8777821759
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 0921a1ac7aa1192fae78f168c2eb51ee3e74e24a
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67444836"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68774615"
 ---
 # <a name="what-is-azure-private-dns"></a>O que é o DNS privado do Azure?
 
@@ -71,10 +71,11 @@ Os seguintes itens são bugs e problemas conhecidos na versão prévia:
 
 O DNS do Azure tem as seguintes limitações:
 
-* Uma rede virtual específica pode ser vinculada a apenas uma zona privada como se o registro automático dos registros DNS da VM estivessem habilitados. No entanto, você pode vincular várias redes virtuais a uma única zona DNS.
+* Uma rede virtual específica pode ser vinculada a apenas uma zona privada se o registro automático dos registros DNS da VM estão habilitados. No entanto, você pode vincular várias redes virtuais a uma única zona DNS.
 * O DNS reverso funciona apenas para o espaço de IP privado na rede virtual vinculada
 * O DNS reverso de um IP privado para uma rede virtual vinculada retorna "internal.cloudapp.net" como o sufixo padrão para a máquina virtual. Para redes virtuais que estão vinculadas a uma zona privada com o registro automático habilitado, o DNS reverso para um IP privado retorna 2 FQDNs, um com o padrão de sufixo *internal.cloudapp.net* e outro com o sufixo de zona privada.
-* O encaminhamento condicional não é permitido no momento. Para habilitar a resolução entre as redes locais e o Azure. Veja [Resolução de nomes para VMs e instâncias de função](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md)
+* O encaminhamento condicional não é permitido no momento. Para habilitar a resolução entre o Azure e redes locais, confira [Resolução de nomes para VMs e instâncias de função](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
+
  
 ## <a name="pricing"></a>Preços
 

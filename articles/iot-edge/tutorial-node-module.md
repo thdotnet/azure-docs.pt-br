@@ -9,12 +9,12 @@ ms.date: 01/04/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 6c94ca3a82095736ef7d242987d1fbf66a825950
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: f6304c554858a29e8c6c886bcdec3b51efd635b6
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66306511"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840085"
 ---
 # <a name="tutorial-develop-and-deploy-a-nodejs-iot-edge-module-for-linux-devices"></a>Tutorial: Desenvolver e implantar um módulo do IoT Edge em Node.js para dispositivos Linux
 
@@ -108,7 +108,7 @@ No momento, o Visual Studio Code pode desenvolver módulos do Node.js para dispo
 
 ### <a name="update-the-module-with-custom-code"></a>Atualizar o módulo com código personalizado
 
-Cada modelo é fornecido com código de exemplo incluído, que usa dados de sensor simulados do módulo **tempSensor** e os encaminha para o Hub IoT. Nesta seção, adicione código para fazer o NodeModule analisar as mensagens antes de enviá-las. 
+Cada modelo é fornecido com código de exemplo incluído, que usa dados de sensor simulados do módulo **SimulatedTemperatureSensor** e os encaminha para o Hub IoT. Nesta seção, adicione código para fazer o NodeModule analisar as mensagens antes de enviá-las. 
 
 1. No explorador do VS Code, abra **modules** > **NodeModule** > **app.js**.
 
@@ -212,7 +212,7 @@ Verifique se seu dispositivo IoT Edge está em funcionamento.
 
 3. Selecione o arquivo **deployment.json** na pasta **config** e clique em **Selecionar Manifesto de Implantação do Edge**. Não use o arquivo deployment.template.json.
 
-4. Clique no botão Atualizar. Você deve ver o novo **NodeModule** sendo executado junto com o módulo **TempSensor** em **$edgeAgent** e **$edgeHub**.
+4. Clique no botão Atualizar. Você deve ver o novo **NodeModule** sendo executado junto com o módulo **SimulatedTemperatureSensor** e **$edgeAgent** e **$edgeHub**.
 
 ## <a name="view-generated-data"></a>Exibir os dados gerados
 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 738b4f47054081f0fb1b1a530bdf21cbf07a7726
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 05c81b5cde9e9c64d2d69bea1d14a18394f31e2a
+ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204706"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68774594"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Tutorial: Configurar o ingresso no Azure Active Directory híbrido para os domínios federados
 
@@ -26,12 +26,23 @@ Como um usuário na sua organização, um dispositivo é uma identidade importan
 - Ingresso no Azure AD Híbrido
 - Registro do Azure AD
 
-Colocar os dispositivos no Azure AD maximiza a produtividade do usuário por meio do logon único (SSO) em recursos locais e na nuvem. Você pode proteger o acesso aos recursos locais e na nuvem com o [Acesso Condicional](../active-directory-conditional-access-azure-portal.md) ao mesmo tempo.
+Colocar os dispositivos no Azure AD maximiza a produtividade do usuário por meio de SSO (logon único) em recursos locais e na nuvem. Você pode proteger o acesso aos recursos locais e na nuvem com o [Acesso Condicional](../active-directory-conditional-access-azure-portal.md) ao mesmo tempo.
 
-Neste tutorial, você aprenderá a configurar o ingresso, no Azure AD híbrido, de dispositivos de computadores unidos ao domínio do Active Directory em um ambiente federado, usando os Serviços de Federação do Active Directory (AD FS).
+Um ambiente federado deve ter um provedor de identidade que dá suporte aos requisitos a seguir. Se você tem um ambiente federado usando o AD FS (Serviços de Federação do Active Directory), os requisitos abaixo já são compatíveis.
 
-> [!NOTE]
-> Se seu ambiente federado usa um provedor de identidade diferente do AD FS, é preciso verificar se esse provedor dá suporte protocolo WS-Trust. O WS-Trust é um requisito para autenticar seus dispositivos ingressados no Azure AD híbrido atuais do Windows com o Azure AD. Se você tiver dispositivos de nível inferior do Windows que precise ingressar no Azure AD híbrido, seu provedor de identidade precisará dar suporte à declaração WIAORMULTIAUTHN. 
+- **Declaração WIAORMULTIAUTHN:** Essa declaração é necessária para fazer o ingresso de dispositivos de nível inferior do Windows no Azure AD híbrido.
+- **Protocolo WS-Trust:** Esse protocolo é um requisito para autenticar os dispositivos atuais do Windows ingressados no Azure AD híbrido com o Azure AD.
+  Quando você estiver usando o AD FS, será necessário habilitar os seguintes pontos de extremidade WS-Trust: `/adfs/services/trust/2005/windowstransport`
+   `/adfs/services/trust/13/windowstransport`
+   `/adfs/services/trust/2005/usernamemixed`
+   `/adfs/services/trust/13/usernamemixed`
+   `/adfs/services/trust/2005/certificatemixed`
+   `/adfs/services/trust/13/certificatemixed` 
+
+> [!WARNING] 
+> O **adfs/services/trust/2005/windowstransport** e também o **adfs/services/trust/13/windowstransport** devem ser habilitados como pontos de extremidade voltados para a intranet e NÃO devem ser expostos como pontos de extremidade voltados a uma extranet por meio do proxy de aplicativo Web. Para saber mais sobre como desabilitar os pontos de extremidade do Windows do WS-Trust, confira [Desabilitar pontos de extremidade do Windows do WS-Trust no proxy](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet). Veja quais pontos de extremidade estão habilitados por meio do console de gerenciamento do AD FS em **Serviço** > **Pontos de extremidade**.
+
+Neste tutorial, você aprenderá como configurar o ingresso no Azure AD híbrido para dispositivos de computadores ingressados no domínio do Active Directory em um ambiente federado, usando o AD FS.
 
 Você aprenderá como:
 
@@ -107,7 +118,7 @@ Para configurar um ingresso no Azure AD híbrido usando o Azure AD Connect, ser�
 
    ![Conecte-se ao AD do Azure](./media/hybrid-azuread-join-federated-domains/14.png)
 
-1. Na página **Opções do dispositivo**, selecione **Configurar o ingresso ao Azure AD híbrido** e selecione **Avançar**.
+1. Na página **Opções do dispositivo**, selecione **Configurar ingresso no Azure AD Híbrido** e, em seguida,selecione **Avançar**.
 
    ![Opções do dispositivo](./media/hybrid-azuread-join-federated-domains/15.png)
 
@@ -158,7 +169,7 @@ Para registrar dispositivos de nível inferior do Windows, as organizações dev
 
 É possível implantar o pacote usando um sistema de distribuição de software como o [System Center Configuration Manager](https://www.microsoft.com/cloud-platform/system-center-configuration-manager). O pacote dá suporte às opções de instalação silenciosa padrão com o parâmetro `quiet`. O atual branch do Configuration Manager oferece benefícios adicionais em relação às versões anteriores, como a capacidade de rastrear registros concluídos.
 
-O instalador cria uma tarefa agendada no sistema que é executada no contexto do usuário. A tarefa é disparada quando o usuário entra no Windows. A tarefa ingressa silenciosamente o dispositivo com o Azure AD usando as credenciais do usuário depois que ele é autenticado com o Azure AD.
+O instalador cria uma tarefa agendada no sistema que é executada no contexto do usuário. A tarefa é disparada quando o usuário entra no Windows. A tarefa une silenciosamente o dispositivo com o Azure AD usando as credenciais do usuário depois que ele se autentica com o Azure AD.
 
 ## <a name="verify-the-registration"></a>Verificar o registro
 
@@ -179,7 +190,7 @@ Ao usar o cmdlet **Get-MSolDevice** para verificar os detalhes do serviço:
 
 ## <a name="troubleshoot-your-implementation"></a>Solucionar problemas de implementação
 
-Se tiver problemas para concluir o ingresso de dispositivos Windows unidos ao domínio no Azure AD híbrido, confira:
+Se estiver com problemas para concluir o ingresso no Azure AD híbrido de dispositivos Windows unidos ao domínio, confira:
 
 - [Solucionar problemas de ingresso no Azure AD híbrido para dispositivos atuais do Windows](troubleshoot-hybrid-join-windows-current.md)
 - [Solucionar problemas de ingresso no Azure AD híbrido para dispositivos de nível inferior do Windows](troubleshoot-hybrid-join-windows-legacy.md)

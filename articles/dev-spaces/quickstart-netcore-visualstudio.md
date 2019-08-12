@@ -1,5 +1,5 @@
 ---
-title: Desenvolver com o .NET Core no AKS com o Azure Dev Spaces e o Visual Studio
+title: Depurar e iterar com o Visual Studio e o .NET Core no AKS usando o Azure Dev Spaces
 titleSuffix: Azure Dev Spaces
 author: zr-msft
 services: azure-dev-spaces
@@ -12,14 +12,14 @@ keywords: Docker, Kubernetes, Azure, AKS, Serviço de Kubernetes do Azure, cont�
 manager: gwallace
 ms.custom: vs-azure
 ms.workload: azure-vs
-ms.openlocfilehash: bb23de0dfe2d717ee2e41d69eec211f1fde26687
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: ece47c86fba6bc975a4146f596fa001014352a4f
+ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67707193"
+ms.lasthandoff: 08/01/2019
+ms.locfileid: "68725854"
 ---
-# <a name="quickstart-develop-with-net-core-on-kubernetes-with-azure-dev-spaces-visual-studio"></a>Início Rápido: Desenvolver com o .NET Core no Kubernetes com o Azure Dev Spaces (Visual Studio)
+# <a name="quickstart-debug-and-iterate-with-visual-studio-and-net-core-on-kubernetes-with-azure-dev-spaces"></a>Início Rápido: Depurar e iterar com o Visual Studio e o .NET Core no Kubernetes usando o Azure Dev Spaces
 
 Neste guia, você aprenderá a:
 
@@ -38,7 +38,7 @@ Você deve criar um cluster do AKS em uma [região com suporte][supported-region
 
 1. Entre no [Portal do Azure](https://portal.azure.com)
 1. Selecione *+ Criar um recurso > Serviço de Kubernetes*. 
-1. Insira a _Assinatura_, o _Grupo de Recursos_, o _nome do cluster Kubernetes_, a _Região_, a _versão do Kubernetes_ e o _prefixo de nome DNS_.
+1. Insira a _Assinatura_ , o _Grupo de Recursos_ , o _nome do cluster Kubernetes_ , a _Região_ , a _versão do Kubernetes_ e o _prefixo de nome DNS_ .
 
     ![Criar AKS no portal do Azure](media/get-started-netcore-visualstudio/create-aks-portal.png)
 

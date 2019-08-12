@@ -4,7 +4,7 @@
   items:
     - name: O que é o Banco de Dados SQL?
       href: sql-database-technical-overview.md
-    - name: Escolher uma versão do SQL do Azure
+    - name: Qual opção do SQL devo escolher?
       href: sql-database-paas-vs-sql-server-iaas.md
     - name: Notas de versão
       href: sql-database-release-notes.md
@@ -280,14 +280,18 @@
               href: sql-vulnerability-assessment.md
             - name: Proteção Avançada contra Ameaças
               href: sql-database-threat-detection-overview.md
-        - name: Regras de firewall de IP no nível de servidor
+        - name: Segurança de rede
           items:
-            - name: Criar e gerenciar
+            - name: Visão geral de controles de acesso à rede
+              href: sql-database-networkaccess-overview.md
+            - name: Firewall baseado em IP
               href: sql-database-firewall-configure.md
-            - name: Pontos de extremidade da rede virtual
-              href: sql-database-vnet-service-endpoint-rule-overview.md
-            - name: Pontos de extremidade da rede virtual - PowerShell
-              href: sql-database-vnet-service-endpoint-rule-powershell.md
+            - name: Regras de firewall de rede virtual
+              items:
+                - name: Pontos de extremidade da rede virtual
+                  href: sql-database-vnet-service-endpoint-rule-overview.md
+                - name: Pontos de extremidade da rede virtual - PowerShell
+                  href: sql-database-vnet-service-endpoint-rule-powershell.md
         - name: Controle de acesso
           items:
             - name: Controle de acesso

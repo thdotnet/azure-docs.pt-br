@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: noelc
 ROBOTS: NOINDEX
-ms.openlocfilehash: a70d9ea1090f1c518f804dd28f3461918af965cd
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 37084480423de90f50beced187eda202b39f8bf1
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68854278"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68933056"
 ---
 # <a name="project-acoustics-known-issues"></a>Problemas conhecidos do projeto acústicos
 Você pode encontrar os seguintes problemas conhecidos ao usar o Designer Preview for Project Acoustics.
@@ -24,10 +24,6 @@ Você pode encontrar os seguintes problemas conhecidos ao usar o Designer Previe
 ## <a name="acoustic-parameters-are-lost-when-you-rename-a-scene"></a>Parâmetros acústicos são perdidos quando você renomeia uma cena
 
 Se você renomear uma cena, todos os parâmetros acústicos que pertencem a essa cena não serão transferidos automaticamente para a nova cena. No entanto, eles ainda existirão no arquivo de ativo antigo. Procure o arquivo **SceneName_AcousticParameters.asset** dentro do diretório **Editor** ao lado do seu arquivo de cena. Renomeie o arquivo para refletir o novo nome da cena.
-
-## <a name="unity-crashes-when-closing-project"></a>Falha de Unity ao fechar projeto
-
-Nas versões mais recentes do Unity (2018.2+), há um bug conhecido no qual o Unity travará quando você fechar o projeto. Isso é controlado por [esse problema Unity](https://issuetracker.unity3d.com/issues/crash-on-assetdatabase-getassetimporterversions-when-closing-a-specific-unity-project).
 
 ## <a name="deploying-to-android-from-some-unity-versions"></a>Implantando no Android de algumas versões do Unity
 

@@ -15,17 +15,17 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/02/2018
 ms.author: rkarlin
-ms.openlocfilehash: 9f4e001909fb739aa368e5201649e85cce9906d3
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: 110dcb1531390b207ae741af07fe0ad18964aae1
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59521913"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68816127"
 ---
 # <a name="quickstart-onboard-linux-computers-to-azure-security-center"></a>Início Rápido: Integrar computadores Linux à Central de Segurança do Azure
-Depois de integrar suas assinaturas do Azure, é possível habilitar a Central de Segurança para recursos Linux sendo executados fora do Azure, por exemplo, no local ou em outras nuvens, por meio do provisionamento do Agente do Linux.
+Depois de integrar suas assinaturas do Azure, é possível habilitar a Central de Segurança para recursos Linux que estão sendo executados fora do Azure, por exemplo, localmente ou em outras nuvens, por meio do provisionamento de um agente. O agente é chamado de MMA (Microsoft Monitoring Agent), mas também é conhecido como agente do OMS.
 
-Este guia de início rápido mostra como instalar o agente do Linux em um computador Linux.
+Este início rápido mostra como instalar o agente em um computador Linux.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 Para começar a usar a Central de Segurança, você deve ter uma assinatura do Microsoft Azure. Se você não tiver uma assinatura, pode se inscrever em uma [conta gratuita](https://azure.microsoft.com/pricing/free-trial/).
@@ -57,7 +57,7 @@ Você deverá estar no tipo de preço Standard da Central de Segurança antes de
 
    ![Instalar o agente][5]
 
-Os logs para o Agente da Central de Segurança para Linux podem ser encontrados em: */var/opt/microsoft/omsagent/\<ID do workspace>/log/*
+Os logs para o agente podem ser encontrados em: */var/opt/microsoft/omsagent/\<ID do workspace>/log/*
 
   ![Logs para agente][6]
 

@@ -1,6 +1,6 @@
 ---
 title: Modelos do Azure Resource Manager para o Backup do Azure
-description: Amostras do PowerShell do Backup do Azure
+description: Modelos do Azure Resource Manager para uso nos cofres dos Serviços de Recuperação e nos recursos do Backup do Azure
 author: dcurwin
 manager: carmonm
 ms.service: backup
@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 01/31/2019
 ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: 0675d511fefba000ee6db4b45202bd1c72522cfe
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: eac7f0050dd819a8ab8d8d453307c7d1ab190fb7
+ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68639611"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68737111"
 ---
 # <a name="azure-resource-manager-templates-for-azure-backup"></a>Modelos do Azure Resource Manager para o Backup do Azure
 

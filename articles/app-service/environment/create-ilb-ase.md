@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 05/28/2019
+ms.date: 08/05/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 5b05755502ad5836a21080a122d2e1721825f10c
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.openlocfilehash: 4b41772a4e904603309f45244cf4df22af876a32
+ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66734682"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68812750"
 ---
 # <a name="create-and-use-an-internal-load-balancer-app-service-environment"></a>Criar e usar um Ambiente do Serviço de Aplicativo de Balanceador de Carga Interno 
 
@@ -109,14 +109,14 @@ Para configurar seu DNS:
 
 - crie uma zona para *&lt;nome do ASE&gt;.appserviceenvironment.net*
 - crie um registro A nessa zona que aponte * para o endereço IP do ILB 
-- crie uma zona em *&lt;nome do ASE&gt;.scm.appserviceenvironment.net* chamada scm
+- crie uma zona em *&lt;nome do ASE&gt;.appserviceenvironment.net* chamada scm
 - crie um registro A na zona scm que aponte para o endereço IP do ILB
 
 ## <a name="publish-with-an-ilb-ase"></a>Publicação com um ASE ILB
 
 Para cada aplicativo criado, há dois pontos de extremidade. Em um ILB ASE, você tem *&lt;nome do aplicativo&gt;.&lt;Domínio ILB ASE&gt;* e *&lt;nome do aplicativo&gt;.scm.&lt;Domínio ILB ASE&gt;* . 
 
-O nome do site SCM leva você para o console do Kudu, que é chamado de **Portal avançado** no portal do Azure. O console do Kudu lhe permite visualizar as variáveis de ambiente, explorar o disco, usar um console e muito mais. Para obter mais informações, consulte [Console do Kudu para o Serviço de Aplicativo do Azure][Kudu]. 
+O nome do site SCM leva você para o console do Kudu, que é chamado de **Portal avançado** no portal do Azure. O console do Kudu lhe permite visualizar as variáveis de ambiente, explorar o disco, usar um console e muito mais. Para obter mais informações, confira [Console do Kudu para o Serviço de Aplicativo do Azure][Kudu]. 
 
 Sistemas CI baseados na internet, como o GitHub e o Azure DevOps ainda funcionam com uma ASE ILB se o agente de build for acessível pela internet e na mesma rede como ASE ILB. Dessa forma, no caso do Azure DevOps, se o agente de build for criado na mesma VNET como ILB ASE (sub-rede diferente é adequada), poderá extrair o código do git do Azure DevOps e implantar ao ASE ILB. Se você não quiser criar seu próprio agente de build, você precisa usar um sistema de CI que usa um modelo de pull, como o Dropbox.
 
@@ -126,7 +126,7 @@ Os pontos de extremidade de publicação para aplicativos em um ASE ILB usam o d
 
 Você pode combinar um dispositivo WAF (firewall do aplicativo Web) com seu ILB ASE para expor para a internet somente os aplicativos que você quiser e manter o restante acessível apenas na VNet. Isso permite que você crie aplicativos seguros de várias camadas, entre outras coisas.
 
-Para saber mais sobre como configurar o ILB ASE com um dispositivo WAF, confira [Configuração de um firewall do aplicativo Web com o Ambiente do Serviço de Aplicativo][ASEWAF]. Este artigo mostra como usar uma solução de virtualização Barracuda com o seu ASE. Outra opção é usar o gateway de aplicativo do Azure. O gateway de aplicativo usa as regras básicas do OWASP para proteger os aplicativos colocados atrás dele. Para obter mais informações sobre o gateway de aplicativo do Azure, confira [Introdução ao firewall de aplicativo Web do Azure][AppGW].
+Para saber mais sobre como configurar o ILB ASE com um dispositivo WAF, confira [Configuração de um firewall do aplicativo Web com o Ambiente do Serviço de Aplicativo][ASEWAF]. Este artigo mostra como usar uma solução de virtualização Barracuda com o seu ASE. Outra opção é usar o gateway de aplicativo do Azure. O gateway de aplicativo usa as regras básicas do OWASP para proteger os aplicativos colocados atrás dele. Para obter mais informações sobre o Gateway de Aplicativo do Azure, confira [Introdução ao firewall de aplicativo Web do Azure][AppGW].
 
 ## <a name="ilb-ases-made-before-may-2019"></a>ILB ASEs criados antes de maio de 2019
 

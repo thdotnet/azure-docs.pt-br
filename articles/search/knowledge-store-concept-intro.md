@@ -1,20 +1,21 @@
 ---
-title: Introdução e visão geral do Repositório de Dados de Conhecimento (versão prévia) – Azure Search
+title: Introdução ao repositório de conhecimento (versão prévia) – Azure Search
 description: Envie documentos enriquecidos ao armazenamento do Azure onde você pode exibir, reformatar e consumir documentos enriquecidos no Azure Search e em outros aplicativos.
 manager: cgronlun
 author: HeidiSteen
 services: search
 ms.service: search
+ms.subservice: cognitive-search
 ms.devlang: NA
 ms.topic: overview
 ms.date: 08/02/2019
 ms.author: heidist
-ms.openlocfilehash: 6cbf8dfe51e8b553fd84e9eb81a2ea37a65c387e
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: 107478f7e2d3c6726d3b8fb9c503ef13271c6571
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68668269"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68840826"
 ---
 # <a name="what-is-knowledge-store-in-azure-search"></a>O que é o repositório de dados de conhecimento no Azure Search?
 

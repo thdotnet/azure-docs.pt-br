@@ -11,20 +11,20 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 01/31/2019
+ms.date: 08/06/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: ad211eef673731a856c4db99fe0b4712217b23e5
-ms.sourcegitcommit: f9448a4d87226362a02b14d88290ad6b1aea9d82
+ms.openlocfilehash: 800454c3a8037d4562ae80d1093519733472c89c
+ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66808490"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68824644"
 ---
 # <a name="tutorial-build-an-aspnet-core-and-sql-database-app-in-azure-app-service"></a>Tutorial: Criar um aplicativo ASP.NET Core e do Banco de Dados SQL no Serviço de Aplicativo do Azure
 
 > [!NOTE]
-> Este artigo implanta um aplicativo no Serviço de Aplicativo no Windows. Para implantar no Serviço de Aplicativo no _Linux_, confira [Criar um aplicativo .NET Core e com Banco de Dados SQL no Serviço de Aplicativo do Azure no Linux](./containers/tutorial-dotnetcore-sqldb-app.md).
+> Este artigo implanta um aplicativo no Serviço de Aplicativo no Windows. Para implantar no Serviço de Aplicativo no _Linux_ , confira [Criar um aplicativo .NET Core e com Banco de Dados SQL no Serviço de Aplicativo do Azure no Linux](./containers/tutorial-dotnetcore-sqldb-app.md).
 >
 
 O [Serviço de Aplicativo](overview.md) fornece um serviço de hospedagem na Web altamente escalonável e com aplicação automática de patches no Azure. Este tutorial mostra como criar um aplicativo .NET Core e conectá-lo a um Banco de Dados SQL. Quando terminar, você terá um aplicativo MVC .NET Core em execução no Serviço de Aplicativo.
@@ -77,7 +77,7 @@ dotnet ef database update
 dotnet run
 ```
 
-Navegue até `http://localhost:5000` em um navegador. Selecione o link **Criar novo** e crie alguns itens _de tarefas_.
+Navegue até `http://localhost:5000` em um navegador. Selecione o link **Criar novo** e crie alguns itens _de tarefas_ .
 
 ![conecta-se com êxito ao Banco de Dados SQL](./media/app-service-web-tutorial-dotnetcore-sqldb/local-app-in-browser.png)
 
@@ -131,7 +131,7 @@ Quando o servidor lógico do Banco de Dados SQL é criado, a CLI do Azure mostra
 Crie uma [regra de firewall no nível de servidor do Banco de Dados SQL do Azure](../sql-database/sql-database-firewall-configure.md) usando o comando [`az sql server firewall create`](/cli/azure/sql/server/firewall-rule?view=azure-cli-latest#az-sql-server-firewall-rule-create). Quando o IP inicial e o IP final estiverem definidos como 0.0.0.0, o firewall estará aberto somente para outros recursos do Azure. 
 
 ```azurecli-interactive
-az sql server firewall-rule create --resource-group myResourceGroup --server <server_name> --name AllowYourIp --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0
+az sql server firewall-rule create --resource-group myResourceGroup --server <server_name> --name AllowAllIps --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0
 ```
 
 > [!TIP] 
@@ -172,7 +172,7 @@ Nesta etapa, você implantará seu aplicativo .NET Core conectado ao Banco de Da
 
 [!INCLUDE [Create web app](../../includes/app-service-web-create-web-app-dotnetcore-win-no-h.md)] 
 
-### <a name="configure-an-environment-variable"></a>Configurar um variável de ambiente
+### <a name="configure-connection-string"></a>Configurar a cadeia de conexão
 
 Para definir as cadeias de conexão para o aplicativo do Azure, use o comando [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) no Cloud Shell. No comando a seguir, substitua *\<app name>* , bem como o parâmetro *\<connection_string>* , pela cadeia de conexão criada anteriormente.
 
@@ -180,13 +180,21 @@ Para definir as cadeias de conexão para o aplicativo do Azure, use o comando [`
 az webapp config connection-string set --resource-group myResourceGroup --name <app name> --settings MyDbConnection='<connection_string>' --connection-string-type SQLServer
 ```
 
-Em seguida, defina a configuração de aplicativo `ASPNETCORE_ENVIRONMENT` como _Produção_. Essa configuração permite saber se o aplicativo está em execução no Azure, porque você usa o SQLite para o ambiente de desenvolvimento local e o Banco de Dados SQL para o ambiente do Azure.
+No ASP.NET Core, você poderá usar essa cadeia de conexão nomeada (`MyDbConnection`) empregando o modelo padrão, como qualquer cadeia de conexão especificada em *appsettings.json*. Nesse caso, `MyDbConnection` também é definido em seu *appsettings.json*. Durante a execução no Serviço de Aplicativo, a cadeia de conexão definida no Serviço de Aplicativo tem precedência sobre a cadeia de conexão definida no seu *appsettings.json*. O código usa o valor *appsettings.json* durante o desenvolvimento local e o mesmo código usa o valor do Serviço de Aplicativo quando implantado.
+
+Para ver como a cadeia de conexão é referenciada em seu código, consulte [Conectar-se ao Banco de Dados SQL em produção](#connect-to-sql-database-in-production).
+
+### <a name="configure-environment-variable"></a>Configurar variável de ambiente
+
+Em seguida, defina a configuração de aplicativo `ASPNETCORE_ENVIRONMENT` como _Produção_ . Essa configuração permite saber se o aplicativo está em execução no Azure, porque você usa o SQLite para o ambiente de desenvolvimento local e o Banco de Dados SQL para o ambiente do Azure.
 
 O exemplo a seguir define uma configuração de aplicativo `ASPNETCORE_ENVIRONMENT` no aplicativo do Azure. Substitua o espaço reservado *\<app_name>* .
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app_name> --resource-group myResourceGroup --settings ASPNETCORE_ENVIRONMENT="Production"
 ```
+
+Para ver como a variável de ambiente é referenciada em seu código, consulte [Conectar-se ao Banco de Dados SQL em produção](#connect-to-sql-database-in-production).
 
 ### <a name="connect-to-sql-database-in-production"></a>Conectar-se ao Banco de Dados SQL em produção
 
@@ -301,7 +309,7 @@ dotnet ef database update
 
 Faça algumas alterações em seu código para usar a propriedade `Done`. Para simplificar este tutorial, somente as exibições `Index` e `Create` serão alteradas para observar a propriedade em ação.
 
-Abra _Controllers\TodosController.cs_.
+Abra _Controllers\TodosController.cs_ .
 
 Localize o `Create([Bind("ID,Description,CreatedDate")] Todo todo)` método e adicione `Done` à lista de propriedades no atributo `Bind`. Quando terminar, a assinatura do método `Create()` deverá ter o seguinte código:
 
@@ -309,7 +317,7 @@ Localize o `Create([Bind("ID,Description,CreatedDate")] Todo todo)` método e ad
 public async Task<IActionResult> Create([Bind("ID,Description,CreatedDate,Done")] Todo todo)
 ```
 
-Abra _Views\Todos\Create.cshtml_.
+Abra _Views\Todos\Create.cshtml_ .
 
 No código do Razor, você deve ver um elemento `<div class="form-group">` para `Description` e, em seguida, outro elemento `<div class="form-group">` para `CreatedDate`. Imediatamente após esses dois elementos, adicione outro elemento `<div class="form-group">` para `Done`:
 
@@ -323,7 +331,7 @@ No código do Razor, você deve ver um elemento `<div class="form-group">` para 
 </div>
 ```
 
-Abra _Views\Todos\Index.cshtml_.
+Abra _Views\Todos\Index.cshtml_ .
 
 Procure o elemento vazio `<th></th>`. Logo acima desse elemento, adicione o seguinte código do Razor:
 
@@ -361,7 +369,7 @@ git commit -m "added done field"
 git push azure master
 ```
 
-Quando `git push` estiver completo, navegue até seu aplicativo de Serviço de Aplicativo e tente a nova funcionalidade.
+Quando `git push` estiver concluído, navegue até seu aplicativo do Serviço de Aplicativo e tente adicionar um item de tarefa pendente e marcar **Concluído**.
 
 ![Aplicativo do Azure após Migração do Code First](./media/app-service-web-tutorial-dotnetcore-sqldb/this-one-is-done.png)
 
@@ -374,9 +382,9 @@ Enquanto o aplicativo ASP.NET Core é executado no serviço de aplicativo do Azu
 O projeto de exemplo já segue as diretrizes em [Registro do ASP.NET Core no Azure](https://docs.microsoft.com/aspnet/core/fundamentals/logging#azure-app-service-provider) com duas alterações de configuração:
 
 - Inclui uma referência a `Microsoft.Extensions.Logging.AzureAppServices` em *DotNetCoreSqlDb.csproj*.
-- Chamadas `loggerFactory.AddAzureWebAppDiagnostics()` em *Startup.cs*.
+- Chama `loggerFactory.AddAzureWebAppDiagnostics()` em *Program.cs*.
 
-Para definir o [nível de log](https://docs.microsoft.com/aspnet/core/fundamentals/logging#log-level) do ASP.NET Core no Serviço de Aplicativo para `Information` do nível padrão `Warning`, use o comando [`az webapp log config`](/cli/azure/webapp/log?view=azure-cli-latest#az-webapp-log-config) no Cloud Shell.
+Para definir o [nível de log](https://docs.microsoft.com/aspnet/core/fundamentals/logging#log-level) do ASP.NET Core no Serviço de Aplicativo para `Information` do nível padrão `Error`, use o comando [`az webapp log config`](/cli/azure/webapp/log?view=azure-cli-latest#az-webapp-log-config) no Cloud Shell.
 
 ```azurecli-interactive
 az webapp log config --name <app_name> --resource-group myResourceGroup --application-logging true --level information
