@@ -323,17 +323,17 @@ Ao copiar dados do Salesforce, os seguintes mapeamentos são usados de tipos de 
 | Date/Time |DateTime |
 | Email |String |
 | Id |String |
-| Relação de pesquisa |String |
-| Lista de seleção múltipla |String |
+| Lookup Relationship |String |
+| Multi-Select Picklist |String |
 | Number |Decimal |
 | Percent |Decimal |
-| Telefone |String |
-| Lista de seleção |String |
-| Texto |String |
-| Área de texto |String |
-| Área de texto (longo) |String |
-| Área de texto (Rich) |String |
-| Texto (criptografado) |String |
+| Phone |String |
+| Picklist |String |
+| Text |String |
+| Text Area |String |
+| Text Area (Long) |String |
+| Text Area (Rich) |String |
+| Text (Encrypted) |String |
 | URL |String |
 
 ## <a name="next-steps"></a>Próximas etapas
