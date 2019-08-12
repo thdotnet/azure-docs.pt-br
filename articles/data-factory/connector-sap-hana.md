@@ -227,8 +227,8 @@ Ao copiar dados do SAP HANA, os seguintes mapeamentos são usados de tipos de da
 | BOOL               | Byte                           |
 | CLOB               | String                         |
 | DATE               | DateTime                       |
-| DECIMAL            | Decimal                        |
-| DOUBLE             | Double                         |
+| DECIMAL            | DECIMAL                        |
+| DOUBLE             | DOUBLE                         |
 | FLOAT              | Double                         |
 | INTEGER            | Int32                          |
 | NCLOB              | String                         |
@@ -236,7 +236,7 @@ Ao copiar dados do SAP HANA, os seguintes mapeamentos são usados de tipos de da
 | REAL               | Single                         |
 | SECONDDATE         | DateTime                       |
 | SHORTTEXT          | String                         |
-| SMALLDECIMAL       | Decimal                        |
+| SMALLDECIMAL       | DECIMAL                        |
 | SMALLINT           | Int16                          |
 | STGEOMETRYTYPE     | Byte[]                         |
 | STPOINTTYPE        | Byte[]                         |

@@ -11,30 +11,31 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 11/22/2017
+ms.date: 08/01/2019
 ms.author: apimpm
-ms.openlocfilehash: 76a509c1cb9277ac72f99ec9ebfc239bfd71390c
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: db341a2075238ccef214ea151d2b2d2860eb6f3a
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53969175"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68837953"
 ---
 # <a name="import-a-logic-app-as-an-api"></a>Importar um aplicativo lógico como uma API
 
-Este artigo mostra como importar um aplicativo lógico como uma API. O artigo também mostra como testar a API do APIM.
+Este artigo mostra como importar um Aplicativo Lógico como uma API e testar a API importada.
 
 Neste artigo, você aprenderá a:
 
 > [!div class="checklist"]
-> * Importar um aplicativo lógico como uma API
-> * Testar a API no Portal do Azure
-> * Testar a API no Portal do desenvolvedor
+>
+> -   Importar um aplicativo lógico como uma API
+> -   Testar a API no Portal do Azure
+> -   Testar a API no Portal do desenvolvedor
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Conclua o início rápido a seguir: [Criar uma instância do Gerenciamento de API do Azure](get-started-create-service-instance.md)
-* Verifique se há um aplicativo lógico em sua assinatura, que expõe um ponto de extremidade HTTP. Para obter mais informações, confira [Disparar fluxos de trabalho com pontos de extremidade HTTP](../logic-apps/logic-apps-http-endpoint.md)
+-   Conclua o início rápido a seguir: [Criar uma instância do Gerenciamento de API do Azure](get-started-create-service-instance.md)
+-   Verifique se há um aplicativo lógico em sua assinatura, que expõe um ponto de extremidade HTTP. Para obter mais informações, confira [Disparar fluxos de trabalho com pontos de extremidade HTTP](../logic-apps/logic-apps-http-endpoint.md)
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]
 
@@ -44,55 +45,60 @@ Neste artigo, você aprenderá a:
 2. Selecione **Aplicativo Lógico** na lista **Adicionar uma nova API**.
 
     ![Aplicativo lógico](./media/import-logic-app-as-api/logic-app-api.png)
-3. Pressione **Procurar** para ver a lista de Aplicativos Lógicos que podem ser chamados em sua assinatura.
-4. Selecione o aplicativo. O APIM localiza o swagger associado ao aplicativo selecionado, busca-o e importa-o. 
-5. Adicione um sufixo da URL da API. O sufixo é um nome que identifica essa API específica nesta instância do APIM. Ele deve ser exclusivo nesta instância de APIM.
-6. Publica a API associando-a a um produto. Nesse caso, o produto "*Ilimitado*" é usado.  Se você deseja que a API seja publicada e fique disponível para os desenvolvedores, adicione-a a um produto. Você pode fazer isso durante a criação da API ou configurá-lo mais tarde.
 
-    Os produtos são associações de uma ou mais APIs. Você pode incluir várias APIs e oferecê-las aos desenvolvedores por meio do portal do desenvolvedor. Primeiro, os desenvolvedores devem assinar um produto para obter acesso à API. Com a assinatura, eles obtêm uma chave de assinatura que funciona para qualquer API no produto. Se você criou a instância do APIM, já é um administrador e, portanto, está inscrito em cada produto por padrão.
+3. Pressione **Procurar** para ver a lista de Aplicativos Lógicos com gatilho HTTP em sua assinatura. (Observe que os Aplicativos Lógicos sem gatilho HTTP não serão exibidos na lista.)
+4. Selecione o aplicativo. O Gerenciamento de API localiza o Swagger associado ao aplicativo selecionado, busca-o e importa-o.
+5. Adicione um sufixo da URL da API. O sufixo é um nome que identifica a API específica messa instância do Gerenciamento de API. Ele deve ser exclusivo nessa instância do Gerenciamento de API.
+6. Publica a API associando-a a um produto. Nesse caso, o produto " _" é usado. Se você deseja que a API seja publicada e fique disponível para os desenvolvedores, adicione-a a um produto. Você pode fazer isso durante a criação da API ou configurá-lo mais tarde.
+
+    Os produtos são associações de uma ou mais APIs. Você pode incluir várias APIs e oferecê-las aos desenvolvedores por meio do portal do desenvolvedor. Primeiro, os desenvolvedores devem assinar um produto para obter acesso à API. Com a assinatura, eles obtêm uma chave de assinatura que funciona para qualquer API no produto. Se você criou a instância do Gerenciamento de API, você já é um administrador, portanto, está inscrito em cada produto, por padrão.
 
     Por padrão, cada instância de Gerenciamento de API é fornecida com dois produtos função Web:
 
-    * **Inicial**
-    * **Ilimitado**   
+    - **Inicial**
+    - **Ilimitado**
+
 7. Selecione **Criar**.
 
-## <a name="test-the-new-apim-api-in-the-azure-portal"></a>Testar a nova API do APIM no portal do Azure
+## <a name="test-the-imported-api-in-the-azure-portal"></a>Testar a API importada no portal do Azure
 
-As operações podem ser chamadas diretamente do portal do Azure, o que oferece uma maneira fácil de exibir e testar as operações de uma API.  
+As operações podem ser chamadas diretamente do portal do Azure, o que oferece uma maneira fácil de exibir e testar as operações de uma API.
 
 1. Selecione a API que você criou na etapa anterior.
 2. Pressione a guia **Testar**.
 3. Selecione alguma operação.
 
-    A página exibe os campos dos parâmetros de consulta e os campos dos cabeçalhos. Um dos cabeçalhos é "Ocp-Apim-Subscription-Key", para a chave de assinatura do produto que está associado a essa API. Se você criou a instância do APIM, já é um administrador e, portanto, a chave é preenchida automaticamente. 
-1. Pressione **Enviar**.
+    A página exibe os campos dos parâmetros de consulta e os campos dos cabeçalhos. Um dos cabeçalhos é "Ocp-Apim-Subscription-Key", para a chave de assinatura do produto que está associado a essa API. Se você criou a instância do Gerenciamento de API, já é um administrador e, portanto, a chave é preenchida automaticamente.
+
+4. Pressione **Enviar**.
 
     O back-end responde com **200 OK** e alguns dados.
 
 ## <a name="call-operation"> </a>Chamar uma operação no portal do desenvolvedor
 
-As operações também podem ser chamadas do **Portal do desenvolvedor** para testar APIs. 
+As operações também podem ser chamadas do **Portal do desenvolvedor** para testar APIs.
 
 1. Selecione a API que você criou na etapa "Importar e publicar uma API de back-end".
 2. Pressione **Portal do desenvolvedor**.
 
     O site "Portal do desenvolvedor" é aberto.
+
 3. Selecione a **API** que você criou.
 4. Clique na operação que deseja testar.
 5. Pressione **Experimentar**.
 6. Pressione **Enviar**.
-    
+
     Após invocar uma operação, o portal do desenvolvedor exibe o **Status de resposta**, os **Cabeçalhos de resposta** e o **Conteúdo de resposta**.
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-append-apis.md)]
 
 >[!NOTE]
-> Cada aplicativo lógico tem uma operação **manual-invoke**. Se você desejar compor sua API de vários aplicativos lógicos para não ter uma colisão, será necessário renomear a função.
+>Cada aplicativo lógico tem uma operação **manual-invoke**. Se você desejar compor sua API de vários aplicativos lógicos para não ter uma colisão, será necessário renomear a função.
 
 [!INCLUDE [api-management-define-api-topics.md](../../includes/api-management-define-api-topics.md)]
 
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
+>
 > [Transformar e proteger uma API publicada](transform-api.md)

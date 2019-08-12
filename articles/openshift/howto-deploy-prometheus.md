@@ -182,7 +182,7 @@ Para que o Prometheus para coletar métricas de si mesma, aplique as permissões
 
 ## <a name="optional-deploy-example-application"></a>Opcional: Implantar o aplicativo de exemplo
 
-Tudo está funcionando, mas não há nenhuma fonte de métricas. Vá para a URL do Prometheus (https://prom-prometheus-project.apps. *id aleatório*. *região*.azmosa.io/). Você pode localizá-la usando o seguinte comando:
+Tudo está funcionando, mas não há nenhuma fonte de métricas. Vá para a URL do Prometheus (https://prom-prometheus-project.apps.*id aleatório*.*região*.azmosa.io/). Você pode localizá-la usando o seguinte comando:
 
 ```
 oc get route prom -n prometheus-project
