@@ -9,10 +9,14 @@
   items:
     - name: 'Usando C#'
       href: Quickstart.md
+    - name: Usando o Swift (iOS)
+      href: ios-quickstart.md
 - name: Tutoriais
   items:
     - name: Iniciar a Leitura Avançada (Node.js)
       href: tutorial.md
+    - name: Imagem para a Leitura Avançada (Swift)
+      href: ios-picture-immersive-reader-tutorial.md
 - name: Instruções
   items:
     - name: Autenticação do Azure Active Directory
@@ -21,6 +25,8 @@
   items:
     - name: Referência do SDK
       href: reference.md
+    - name: Referência de SDK do iOS
+      href: ios-reference.md
 - name: Recursos
   items:
     - name: Roteiro do Azure

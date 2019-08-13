@@ -137,6 +137,8 @@
           items:
             - name: Níveis de acesso
               href: storage-blob-storage-tiers.md
+            - name: Reidratar dados do Armazenamento de Arquivos
+              href: storage-blob-rehydration.md
             - name: Gerenciar ciclo de vida do Armazenamento de Blobs do Azure
               href: storage-lifecycle-management-concepts.md
         - name: Desempenho e dimensionamento
