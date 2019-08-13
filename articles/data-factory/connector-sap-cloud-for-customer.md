@@ -157,7 +157,7 @@ Para copiar dados do SAP Cloud for Customer, defina o tipo de coletor na ativida
 | Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **SapCloudForCustomerSink**  | Sim |
-| writeBehavior | O comportamento da operação de gravação. Pode ser “Insert”, “Update”. | Nº Padrão “Insert”. |
+| writeBehavior | O comportamento da operação de gravação. Pode ser “Inserir”, “Atualizar”. | Nº Padrão “Inserir”. |
 | writeBatchSize | O tamanho do lote da operação de gravação. O tamanho do lote para obter o melhor desempenho pode ser diferente da tabela ou do servidor diferente. | Nº Padrão 10. |
 
 **Exemplo:**

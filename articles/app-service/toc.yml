@@ -63,8 +63,6 @@
       href: samples-resource-manager-templates.md
 - name: Conceitos
   items:
-    - name: Como funciona o Serviço de Aplicativo
-      href: app-service-how-works-readme.md
     - name: Planos do Serviço de Aplicativo
       href: overview-hosting-plans.md
     - name: Funcionalidade de SO
