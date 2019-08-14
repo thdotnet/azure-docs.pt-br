@@ -7,16 +7,16 @@ author: diberry
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 006170b2030b6511ba732a1b12aa5b5b811d8900
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 1342616a0d32d8ac68965bc04f1fd3ca60146369
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67447486"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68966760"
 ---
 # <a name="edit-a-knowledge-base-in-qna-maker"></a>Editar uma base de dados de conhecimento no QnA Maker
 
@@ -36,14 +36,14 @@ O QnA Maker permite que você gerencie o conteúdo de sua base de dados de conhe
  
 1. Escolha a opção **Configurações**. Aqui você pode editar o campo obrigatório Nome do Serviço.
   
-    |Objetivo|Ação|
+    |Meta|Action|
     |--|--|
     |Adicionar URL|Você pode adicionar novos URLs para adicionar novos conteúdos de perguntas frequentes à base de conhecimento clicando em **Gerenciar base de conhecimento -> link "+ Adicionar URL"** .|
     |Excluir URL|Você pode excluir URLs existentes selecionando o ícone de exclusão, a lixeira.|
     |Atualizar o conteúdo da URL|Se você quiser que sua base de conhecimento rastreie o conteúdo mais recente de URLs existentes, marque a caixa de seleção **Atualizar**. Isso atualizará a base de conhecimento com o conteúdo mais recente da URL.|
     |Adicionar arquivo|Você pode adicionar um documento de arquivo suportado para fazer parte de uma base de conhecimento, selecionando **Gerenciar base de conhecimento** e, em seguida, selecionando **+ Adicionar Arquivo**|
     |Importar|Você também pode importar qualquer base de conhecimento existente, selecionando o botão **Base de dados de Conhecimento Ímport**. |
-    |Atualizar|A atualização da base de conhecimento depende do **nível de preço de gerenciamento** usado durante a criação do serviço QnA Maker associado à sua base de conhecimento. Você também pode atualizar o tipo de gerenciamento no portal do Azure, se necessário.
+    |Atualização|A atualização da base de conhecimento depende do **nível de preço de gerenciamento** usado durante a criação do serviço QnA Maker associado à sua base de conhecimento. Você também pode atualizar o tipo de gerenciamento no portal do Azure, se necessário.
 
 1. Quando terminar de fazer alterações na base de conhecimento, selecione **Salvar e treinar** no canto superior direito da página para manter as alterações.    
 
@@ -54,7 +54,7 @@ O QnA Maker permite que você gerencie o conteúdo de sua base de dados de conhe
 
 ## <a name="add-a-qna-pair"></a>Adicionar um par de QnA
 
-Sobre o **as configurações** página, selecione **QnA adicionar par** para adicionar uma nova linha à tabela de base de Conhecimento.
+Na página **configurações** , selecione **Adicionar par de QnA** para adicionar uma nova linha à tabela base de dados de conhecimento.
 
 ![Adicionar par QnA](../media/qnamaker-how-to-edit-kb/add-qnapair.png)
 
@@ -72,7 +72,7 @@ Adicione perguntas alternativas para um par de QnA existente para melhorar a pro
 
 ## <a name="add-metadata"></a>Adicionar metadados
 
-Adicionar pares de metadados, selecionando primeiro **as opções de exibição**, em seguida, selecionando **Mostrar metadados**. Isso exibe a coluna de metadados. Em seguida, selecione a **+** para adicionar um par de metadados. Esse par consiste em uma chave e um valor.
+Adicione pares de metadados selecionando primeiro **as opções de exibição**e, em seguida, selecionando **Mostrar metadados**. Isso exibe a coluna de metadados. Em seguida, selecione **+** o sinal para adicionar um par de metadados. Esse par consiste em uma chave e um valor.
 
 ![Adicionar Metadados](../media/qnamaker-how-to-edit-kb/add-metadata.png)
 
