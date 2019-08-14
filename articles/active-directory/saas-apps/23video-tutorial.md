@@ -4,252 +4,169 @@ description: Saiba como configurar o logon único entre o Active Directory do Az
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 5e73dd1d-3995-4a73-b9cf-1b2318d49cb3
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 05/26/2017
+ms.topic: tutorial
+ms.date: 08/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ec0cfaaf0d4ae692581d63c7745660ffeacfb11f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: b5061c2e4c627e7919683bbf00970b626554df43
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60439335"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68879791"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-23-video"></a>Tutorial: Integração do Azure Active Directory com o 23 Video
+# <a name="tutorial-integrate-23-video-with-azure-active-directory"></a>Tutorial: Integrar o 23 Video ao Azure Active Directory
 
-Neste tutorial, você aprenderá a integrar o 23 Video ao Azure AD (Azure Active Directory).
+Neste tutorial, você aprenderá a integrar o 23 Video ao Azure AD (Azure Active Directory). Quando integrar o 23 Video ao Azure AD, você poderá:
 
-A integração do 23 Video ao Azure AD oferece os seguintes benefícios:
+* Controlar no Azure AD quem tem acesso ao 23 Video.
+* Permitir que os usuários sejam conectados automaticamente ao 23 Video com suas contas do Azure AD.
+* Gerenciar suas contas em um local central: o portal do Azure.
 
-- Você pode controlar no AD do Azure quem tem acesso ao 23 Video
-- Você pode habilitar seus usuários a fazerem logon automaticamente no 23 Video (logon único) com suas contas do AD do Azure
-- Você pode gerenciar suas contas em um única localização: o Portal do Azure
-
-Para conhecer mais detalhadamente a integração de aplicativos de SaaS ao Azure AD, consulte [o que é o acesso a aplicativos e logon único com o Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Para saber mais sobre a integração de aplicativos SaaS ao Azure AD, confira [O que é o acesso de aplicativos e o logon único com o Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-Para configurar a integração do AD do Azure com o 23 Video, você precisa dos seguintes itens:
+Para começar, você precisará dos seguintes itens:
 
-- Uma assinatura do Azure AD
-- Uma assinatura habilitada para logon único do 23 Video
-
-> [!NOTE]
-> Para testar as etapas deste tutorial, nós não recomendamos o uso de um ambiente de produção.
-
-Para testar as etapas deste tutorial, você deve seguir estas recomendações:
-
-- Não use o ambiente de produção, a menos que seja necessário.
-- Se não tiver um ambiente de avaliação do AD do Azure, você pode obter uma versão de avaliação de um mês [aqui](https://azure.microsoft.com/pricing/free-trial/).
+* Uma assinatura do Azure AD. Caso você não tenha uma assinatura, obtenha uma [conta gratuita](https://azure.microsoft.com/free/).
+* Assinatura com SSO (logon único) do 23 Video habilitado.
 
 ## <a name="scenario-description"></a>Descrição do cenário
-Neste tutorial, você testará o logon único do Azure AD em um ambiente de teste. O cenário descrito neste tutorial consiste em dois blocos de construção principais:
 
-1. Adicionando o 23 Video por meio da galeria
-2. configurar e testar o logon único do AD do Azure
+Neste tutorial, você configurará e testará o SSO do Azure AD em um ambiente de teste.
+
+* O 23 Video é compatível com o SSO iniciado por **SP**
 
 ## <a name="adding-23-video-from-the-gallery"></a>Adicionando o 23 Video por meio da galeria
+
 Para configurar a integração do 23 Video ao AD do Azure, você precisa adicionar o 23 Video por meio da galeria à sua lista de aplicativos SaaS gerenciados.
 
-**Para adicionar o 23 Video por meio da galeria, realize as seguintes etapas:**
+1. Entre no [portal do Azure](https://portal.azure.com) usando uma conta corporativa ou de estudante ou uma conta pessoal da Microsoft.
+1. No painel de navegação esquerdo, escolha o serviço **Azure Active Directory**.
+1. Navegue até **Aplicativos Empresariais** e, em seguida, escolha **Todos os Aplicativos**.
+1. Para adicionar um novo aplicativo, escolha **Novo aplicativo**.
+1. Na seção **Adicionar por meio da galeria**, digite **23 Video** na caixa de pesquisa.
+1. Selecione **23 Video** no painel de resultados e adicione o aplicativo. Aguarde alguns segundos enquanto o aplicativo é adicionado ao seu locatário.
 
-1. No **[Portal do Azure](https://portal.azure.com)** , no painel navegação à esquerda, clique no ícone **Azure Active Directory**. 
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Configurar e testar logon único do Azure AD
 
-    ![Active Directory][1]
+Configure e teste o SSO do Azure AD com o 23 Video usando um usuário de teste chamado **B.Fernandes**. Para que o SSO funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do 23 Video.
 
-2. Navegue até **aplicativos empresariais**. Em seguida, vá para **todos os aplicativos**.
+Para configurar e testar o SSO do Azure AD com o 23 Video, conclua os seguintes blocos de construção:
 
-    ![APLICATIVOS][2]
-    
-3. Clique no botão **Novo aplicativo** na parte superior da caixa de diálogo para adicionar o novo aplicativo.
+1. **[Configurar o SSO do Azure AD](#configure-azure-ad-sso)** – para permitir que os usuários usem esse recurso.
+2. **[Configurar o SSO do 23 Video](#configure-23-video-sso)** – para definir as configurações de logon único no lado do aplicativo.
+3. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** para testar o logon único do Azure AD com B.Fernandes.
+4. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** – para permitir que B.Fernandes use o logon único do Azure AD.
+5. **[Criar usuário de teste do 23 Video](#create-23-video-test-user)** – para ter um equivalente de B. Fernandes no 23 Video que esteja vinculado à representação do usuário no Azure AD.
+6. **[Testar o SSO](#test-sso)** – para verificar se a configuração funciona.
 
-    ![Aplicativos][3]
+### <a name="configure-azure-ad-sso"></a>Configurar o SSO do Azure AD
 
-4. Na caixa de pesquisa, digite **23 Video**.
+Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
-    ![Criação de um usuário de teste do AD do Azure](./media/23video-tutorial/tutorial_23video_search.png)
+1. No [portal do Azure](https://portal.azure.com/), na página de integração de aplicativos do **23 Video**, localize a seção **Gerenciar** e selecione **Logon único**.
+1. Na página **Escolher um método de logon único**, escolha **SAML**.
+1. Na página **Configurar o Logon Único com SAML**, clique no ícone editar/de caneta da **Configuração Básica de SAML** para editar as configurações.
 
-5. No painel de resultados, selecione **23 Video** e, em seguida, clique no botão **Adicionar** para adicionar o aplicativo.
+   ![Editar a Configuração Básica de SAML](common/edit-urls.png)
 
-    ![Criação de um usuário de teste do AD do Azure](./media/23video-tutorial/tutorial_23video_addfromgallery.png)
-
-##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>configurar e testar o logon único do AD do Azure
-Nesta seção, você configurará e testará o logon único do Azure AD com o 23 Video, com base em um usuário de teste chamado “Brenda Fernandes”.
-
-Para que o logon único funcione, o Azure AD precisa saber qual usuário do 23 Video é equivalente a um usuário do Azure AD. Em outras palavras, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do 23 Video.
-
-No 23 Video, atribua o valor do **nome de usuário** no Azure AD como o valor do **Nome de usuário** para estabelecer a relação de vínculo.
-
-Para configurar e testar o logon único do AD do Azure com o 23 Video, você precisa concluir os seguintes blocos de construção:
-
-1. **[Configuração do logon único do AD do Azure](#configuring-azure-ad-single-sign-on)** - para habilitar seus usuários a usar esse recurso.
-2. **[Criação de um usuário de teste do AD do Azure](#creating-an-azure-ad-test-user)** – para testar o logon único do AD do Azure com Brenda Fernandes.
-3. **[Criando um usuário de teste do 23 Video](#creating-a-23-video-test-user)** – para ter um equivalente de Brenda Fernandes no 23 Video que esteja vinculado à representação do usuário no Azure AD.
-4. **[Atribuição do usuário de teste do AD do Azure](#assigning-the-azure-ad-test-user)** – para permitir que Brenda Fernandes use o logon único do AD do Azure.
-5. **[Teste do logon único](#testing-single-sign-on)** : para verificar se a configuração funciona.
-
-### <a name="configuring-azure-ad-single-sign-on"></a>Configuração do logon único do Azure AD
-
-Nesta seção, você vai habilitar o logon único do Azure AD no Portal do Azure e configurar o logon único em seu aplicativo 23 Video.
-
-**Para configurar o logon único do AD do Azure com o 23 Video, realize as seguintes etapas:**
-
-1. No Portal do Azure, na página de integração de aplicativos do **23 Video**, clique em **Logon único**.
-
-    ![Configurar o logon único][4]
-
-2. Na caixa de diálogo **Logon único**, selecione **Modo** como **Logon baseado em SAML** para habilitar o logon único.
- 
-    ![Configurar o logon único](./media/23video-tutorial/tutorial_23video_samlbase.png)
-
-3. Na seção **URLs e Domínio do 23 Video**, execute as seguintes etapas:
-
-    ![Configurar o logon único](./media/23video-tutorial/tutorial_23video_url.png)
+1. Na seção **Configuração Básica do SAML**, insira os valores para os seguintes campos:
 
     a. Na caixa de texto **URL de Logon**, digite uma URL usando o seguinte padrão: `https://<subdomain>.23video.com`
 
-    b. Na caixa de texto **Identificador**, digite uma URL usando o seguinte padrão: `https://www.23video.com/saml/trust/<uniqueid>`
+    b. Na caixa de texto **Identificador (ID da Entidade)** , digite uma URL usando o seguinte padrão: `https://www.23video.com/saml/trust/<uniqueid>`
 
-    > [!NOTE] 
-    > Esses valores não são reais. Atualize esses valores com a URL de Entrada e o Identificador reais. Contate a [equipe de suporte do Cliente 23 Video](mailto:support@23company.com) para obter esses valores. 
- 
-4. Na seção **Certificado de Autenticação SAML**, clique em **Certificado (Base64)** e, em seguida, salve o arquivo do certificado em seu computador.
+    > [!NOTE]
+    > Esses valores não são reais. Atualize esses valores com a URL de Entrada e o Identificador reais. Contate a [equipe de suporte do Cliente 23 Video](mailto:support@23company.com) para obter esses valores. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
 
-    ![Configurar o logon único](./media/23video-tutorial/tutorial_23video_certificate.png) 
+1. Na página **Configurar Logon Único com SAML**, na seção **Certificado de Autenticação SAML**, localize **Certificado (Base64)** e escolha **Baixar** para baixar o certificado e salvá-lo no computador.
 
-5. Clique no botão **Salvar** .
+    ![O link de download do Certificado](common/certificatebase64.png)
 
-    ![Configurar o logon único](./media/23video-tutorial/tutorial_general_400.png)
+1. Na seção **Configurar o 23 Video**, copie as URLs apropriadas de acordo com suas necessidades.
 
-6. Na seção **Configuração do 23 Video**, clique em **Configurar o 23 Video** para abrir a janela **Configurar logon**. Copie a **URL de saída, a ID da Entidade SAML e a URL do Serviço de Logon Único SAML** da **seção de Referência Rápida.**
+    ![Copiar URLs de configuração](common/copy-configuration-urls.png)
 
-    ![Configurar o logon único](./media/23video-tutorial/tutorial_23video_configure.png) 
+### <a name="configure-23-video-sso"></a>Configurar SSO do 23 Video
 
-7. Para configurar o logon único no lado do **23 Video**, você precisará enviar o **Certificado (Base64)** baixado e a **ID de Entidade SAML, URL do Serviço de Logon Único SAML e URL de Saída** para a [equipe de suporte do 23 Video](mailto:support@23company.com). 
+Para configurar o logon único no lado do **23 Video**, é necessário enviar o **Certificado (Base64)** baixado e as URLs apropriadas copiadas do portal do Azure para a [equipe de suporte do 23 Video](mailto:support@23company.com). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
 
+### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
-> [!TIP]
-> É possível ler uma versão concisa dessas instruções no [Portal do Azure](https://portal.azure.com), enquanto você estiver configurando o aplicativo!  Depois de adicionar esse aplicativo da seção **Active Directory > Aplicativos Empresariais**, basta clicar na guia **Logon Único** e acessar a documentação inserida por meio da seção **Configuração** na parte inferior. Saiba mais sobre o recurso de documentação inserida aqui: [Documentação inserida do Microsoft Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985)
+Nesta seção, você criará um usuário de teste no portal do Azure chamado B.Fernandes.
 
-### <a name="creating-an-azure-ad-test-user"></a>Criação de um usuário de teste do AD do Azure
-O objetivo desta seção é criar um usuário de teste no Portal do Azure chamado Brenda Fernandes.
+1. No painel esquerdo do portal do Azure, escolha **Azure Active Directory**, **Usuários** e, em seguida, **Todos os usuários**.
+1. Selecione **Novo usuário** na parte superior da tela.
+1. Nas propriedades do **Usuário**, siga estas etapas:
+   1. No campo **Nome**, insira `B.Simon`.  
+   1. No campo **Nome de usuário**, insira username@companydomain.extension. Por exemplo, `B.Simon@contoso.com`.
+   1. Marque a caixa de seleção **Mostrar senha** e, em seguida, anote o valor exibido na caixa **Senha**.
+   1. Clique em **Criar**.
 
-![Criar um usuário do AD do Azure][100]
+### <a name="assign-the-azure-ad-test-user"></a>Atribuir o usuário de teste do Azure AD
 
-**Para criar um usuário de teste no AD do Azure, execute as seguintes etapas:**
+Nesta seção, você permitirá que B.Fernandes use o logon único do Azure concedendo a ela acesso ao 23 Video.
 
-1. No **Portal do Azure**, no painel de navegação esquerdo, clique no ícone **Azure Active Directory**.
+1. No portal do Azure, selecione **Aplicativos empresariais** e, em seguida, selecione **Todos os aplicativos**.
+1. Na lista de aplicativos, selecione **23 Video**.
+1. Na página de visão geral do aplicativo, localize a seção **Gerenciar** e escolha **Usuários e grupos**.
 
-    ![Criação de um usuário de teste do AD do Azure](./media/23video-tutorial/create_aaduser_01.png) 
+   ![O link “Usuários e grupos”](common/users-groups-blade.png)
 
-2. Vá para **Usuários e grupos** e clique em **Todos os usuários** para exibir a lista de usuários.
-    
-    ![Criação de um usuário de teste do AD do Azure](./media/23video-tutorial/create_aaduser_02.png) 
+1. Escolha **Adicionar usuário** e, em seguida, **Usuários e grupos** na caixa de diálogo **Adicionar Atribuição**.
 
-3. Para abrir a caixa de diálogo **Usuário**, clique em **Adicionar** na parte superior da caixa de diálogo.
- 
-    ![Criação de um usuário de teste do AD do Azure](./media/23video-tutorial/create_aaduser_03.png) 
+    ![O link Adicionar Usuário](common/add-assign-user.png)
 
-4. Na página do diálogo **Usuário**, execute as seguintes etapas:
- 
-    ![Criação de um usuário de teste do AD do Azure](./media/23video-tutorial/create_aaduser_04.png) 
+1. Na caixa de diálogo **Usuários e grupos**, selecione **B.Fernandes** na lista Usuários e clique no botão **Selecionar** na parte inferior da tela.
+1. Se você estiver esperando um valor de função na declaração SAML, na caixa de diálogo **Selecionar Função**, escolha a função apropriada para o usuário da lista e, em seguida, clique no botão **Escolher** na parte inferior da tela.
+1. Na caixa de diálogo **Adicionar atribuição**, clique no botão **Atribuir**.
 
-    a. Na caixa de texto **Nome**, digite **Brenda Fernandes**.
+### <a name="create-23-video-test-user"></a>Criar um usuário de teste do 23 Video
 
-    b. Na caixa de texto **Nome de usuário**, digite o **endereço de email** da conta de Brenda Fernandes.
+O objetivo desta seção é criar um usuário chamado B.Fernandes no 23 Video.
 
-    c. Selecione **Mostrar senha** e anote o valor de **senha**.
-
-    d. Clique em **Criar**.
- 
-### <a name="creating-a-23-video-test-user"></a>Criando um usuário de teste do 23 Video
-
-O objetivo desta seção é criar um usuário chamado Brenda Fernandes no 23 Video.
-
-**Para criar um usuário chamado Brenda Fernandes no 23 Video, realize as seguintes etapas:**
+**Para criar um usuário chamado B. Fernandes no 23 Video, realize as seguintes etapas:**
 
 1. Faça logon no site da empresa 23 Video como administrador.
 
 2. Vá para **Configurações**.
- 
-3. Na seção **Usuários**, clique em **Configurar**.
-   
-    ![Atribuir usuário][400]
 
-4. Clique em **Adicionar um novo usuário**. 
-   
-    ![Atribuir usuário][401]
+3. Na seção **Usuários**, clique em **Configurar**.
+
+    ![Atribuir usuário](./media/23video-tutorial/tutorial-23video-10.png)
+
+4. Clique em **Adicionar um novo usuário**.
+
+    ![Atribuir usuário](./media/23video-tutorial/tutorial-23video-11.png)
 
 5. Na seção **Convidar alguém para participar deste site** , execute as seguintes etapas:
-   
-    ![Atribuir usuário][402]
 
-    a. Na caixa de texto **Endereços de email** , digite o endereço de email de Brenda Fernandes no AD do Azure.  
- 
-    b. Clique em **Adicionar o usuário**.   
+    ![Atribuir usuário](./media/23video-tutorial/tutorial-23video-12.png)
 
-### <a name="assigning-the-azure-ad-test-user"></a>Atribuição do usuário de teste do AD do Azure
+    a. Na caixa de texto **Endereço de email**, digite o endereço de email de um usuário, como B.Simon@contoso.com.  
 
-Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure concedendo acesso ao 23 Video.
+    b. Clique em **Adicionar o usuário**.
 
-![Atribuir usuário][200] 
+### <a name="test-sso"></a>Testar o SSO
 
-**Para atribuir Brenda Fernandes ao 23 Video, realize as seguintes etapas:**
+Nesta seção, você testará sua configuração de logon único do Azure AD usando o Painel de Acesso.
 
-1. No Portal do Azure, abra a exibição de aplicativos e, em seguida, navegue até a exibição de diretório e vá para **Aplicativos Empresariais** e clique em **Todos os aplicativos**.
-
-    ![Atribuir usuário][201] 
-
-2. Na lista de aplicativos, selecione **23 Video**.
-
-    ![Configurar o logon único](./media/23video-tutorial/tutorial_23video_app.png) 
-
-3. No menu à esquerda, clique em **usuários e grupos**.
-
-    ![Atribuir usuário][202] 
-
-4. Clique no botão **Adicionar**. Em seguida, selecione **usuários e grupos** na **Adicionar atribuição** caixa de diálogo.
-
-    ![Atribuir usuário][203]
-
-5. Em **usuários e grupos** caixa de diálogo, selecione **Britta Simon** na lista de usuários.
-
-6. Clique em **selecione** botão **usuários e grupos** caixa de diálogo.
-
-7. Clique em **atribuir** botão **Adicionar atribuição** caixa de diálogo.
-    
-### <a name="testing-single-sign-on"></a>Teste do logon único
-
-O objetivo desta seção é testar sua configuração de SSO do Azure AD usando o Painel de Acesso.
-
-Quando você clica no bloco 23 Video no Painel de Acesso, você deve ser conectado automaticamente ao seu aplicativo 23 Video. 
+Ao clicar no bloco do 23 Video no Painel de Acesso, você deverá ser conectado automaticamente ao 23 Video, para o qual você configurou o SSO. Para saber mais sobre o Painel de Acesso, veja [Introdução ao Painel de Acesso](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* [Lista de tutoriais sobre como integrar aplicativos SaaS com o Active Directory do Azure](tutorial-list.md)
-* [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [ Lista de tutoriais sobre como integrar aplicativos SaaS com o Active Directory do Azure ](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-<!--Image references-->
+- [O que é o acesso a aplicativos e logon único com o Azure Active Directory? ](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-[1]: ./media/23video-tutorial/tutorial_general_01.png
-[2]: ./media/23video-tutorial/tutorial_general_02.png
-[3]: ./media/23video-tutorial/tutorial_general_03.png
-[4]: ./media/23video-tutorial/tutorial_general_04.png
-
-[100]: ./media/23video-tutorial/tutorial_general_100.png
-
-[200]: ./media/23video-tutorial/tutorial_general_200.png
-[201]: ./media/23video-tutorial/tutorial_general_201.png
-[202]: ./media/23video-tutorial/tutorial_general_202.png
-[203]: ./media/23video-tutorial/tutorial_general_203.png
-
-[400]: ./media/23video-tutorial/tutorial_23video_10.png
-[401]: ./media/23video-tutorial/tutorial_23video_11.png
-[402]: ./media/23video-tutorial/tutorial_23video_12.png
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

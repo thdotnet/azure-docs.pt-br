@@ -51,7 +51,9 @@ sections:
       - type: list
         style: unordered
         items:
-          - html: <a href="tutorial.md">Inicie a Leitura Avançada usando o Node.js</a>
+          - html: <a href="tutorial-nodejs.md">Inicie a Leitura Avançada usando o Node.js</a>
+          - html: <a href="tutorial-python.md">Inicie a Leitura Avançada usando o Python</a>
+          - html: <a href="tutorial-ios-picture-immersive-reader.md">Inicie a Leitura Avançada usando o Swift</a>
   - title: Referência
     items:
       - type: list
