@@ -5,15 +5,15 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: article
-ms.date: 04/15/2019
+ms.date: 08/12/2019
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 4d002a82e3968e0462e5f6e775ec147669c01b0d
-ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.openlocfilehash: 448d416ce4915aeae048639f6021197ed8c1d334
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67147945"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967867"
 ---
 # <a name="azure-importexport-system-requirements"></a>Requisitos do sistema para Importação/Exportação do Azure
 
@@ -41,7 +41,7 @@ Para preparar os discos rígidos usando a ferramenta WAImportExport, os seguinte
 
 O serviço de importação/exportação do Azure é compatível com os seguintes tipos de contas de armazenamento:
 
-- Contas de armazenamento do padrão de uso geral v2 (recomendadas na maioria dos cenários)
+- Contas de armazenamento Standard Uso Geral v2 (recomendado para a maioria dos cenários)
 - Contas de Armazenamento de Blobs
 - Contas de armazenamento v1 de Uso Geral (implantações clássicas ou do Azure Resource Manager) 
 
@@ -59,8 +59,8 @@ Os tipos de armazenamento na lista a seguir têm suporte com o serviço de Impor
 
 |Trabalho  |Serviço de Armazenamento |Com suporte  |Sem suporte  |
 |---------|---------|---------|---------|
-|Importar     |  Armazenamento de Blobs do Azure <br><br> Armazenamento de arquivos do Azure       | Blobs de página e Blobs de bloco com suporte <br><br> Arquivos com suporte          |
-|Exportação     |   Armazenamento de Blobs do Azure       | Blobs de blocos, blobs de páginas e blobs de acréscimo com suporte         | Arquivos do Azure sem suporte
+|Importar     |  Armazenamento de Blob do Azure <br><br> Armazenamento de arquivos do Azure       | Blobs de página e Blobs de bloco com suporte <br><br> Arquivos com suporte          |
+|Exportar     |   Armazenamento de Blob do Azure       | Blobs de blocos, blobs de páginas e blobs de acréscimo com suporte         | Arquivos do Azure sem suporte
 
 
 ## <a name="supported-hardware"></a>Hardware com suporte 
@@ -72,11 +72,15 @@ Para o serviço de Importação/Exportação do Azure, você precisa de discos c
 Os discos na lista a seguir têm suporte para uso com o serviço de Importação/Exportação.
 
 
-|Tipo de disco  |Tamanho  |Com suporte |Sem suporte  |
-|---------|---------|---------|---------|
-|SSD    |   2,5"      |SATA III          |  USB       |
-|HDD     |  2,5"<br>3,5"       |SATA II, SATA III         |HDD externo com adaptador interno de USB <br> Disco dentro de um invólucro de HDD externo         |
+|Tipo de disco  |Tamanho  |Com suporte |
+|---------|---------|---------|
+|SSD    |   2,5"      |SATA III          | 
+|HDD     |  2,5"<br>3,5"       |SATA II, SATA III         |
 
+Não há suporte para os seguintes tipos de disco:
+- USBs.
+- HDD externo com adaptador USB interno.
+- Discos que estão dentro dos compartimentos de uma HDD externa.
 
 Um trabalho de importação/exportação único pode ter:
 - No máximo 10 HDD/SSDs.

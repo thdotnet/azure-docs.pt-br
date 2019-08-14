@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08be09f7bee3aa17ff9d1baae4271e994fa235cb
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 3b7265f8d5ec4b7336253787e9cb881900a52b79
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68248873"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68963457"
 ---
 # <a name="best-practices-for-conditional-access-in-azure-active-directory"></a>Práticas recomendadas para acesso condicional no Azure Active Directory
 
@@ -31,7 +31,7 @@ Este artigo pressupõe que você esteja familiarizado com os conceitos e a termi
 
 Ao criar uma nova política, não há usuários, grupos, aplicativos ou controles de acesso selecionados.
 
-![Aplicativos na nuvem](./media/best-practices/02.png)
+![Aplicativos de nuvem](./media/best-practices/02.png)
 
 Para que a política funcione, você deve configurar:
 
@@ -50,9 +50,10 @@ Mais de uma política de acesso condicional pode ser aplicada quando você acess
 Todas as políticas são impostas em duas fases:
 
 - Na **primeira** fase, todas as políticas são avaliadas e todos os controles de acesso que não forem atendidos serão coletados. 
-- Na **segunda** fase, você é solicitado a atender aos requisitos que não atendeu. Se qualquer uma das políticas bloquear o acesso, você será bloqueado e não será solicitado a atender a outros controles de política. Se as políticas bloquearem você, você será solicitado a atender a outros controles de política na seguinte ordem:
 
-   ![Classificar](./media/best-practices/06.png)
+- Na **segunda** fase, você é solicitado a atender aos requisitos que não atendeu. Se qualquer uma das políticas bloquear o acesso, você será bloqueado e não será solicitado a atender a outros controles de política. Se nenhuma das políticas bloquear você, você será solicitado a atender a outros controles de política na seguinte ordem:
+
+   ![Ordem](./media/best-practices/06.png)
     
    Os provedores de MFA externos e os termos de uso vêm em seguida.
 

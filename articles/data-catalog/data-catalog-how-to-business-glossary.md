@@ -6,12 +6,12 @@ ms.author: jasonh
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 08/01/2019
-ms.openlocfilehash: 6ecb481245484332221e45b8f27c776291ea532d
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 1065abecb1f0ef57eb13b1ec3f194f07ae01eaee
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736401"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976801"
 ---
 # <a name="set-up-the-business-glossary-for-governed-tagging"></a>Como configurar o glossário de negócios para marcação controlada
 
@@ -36,11 +36,11 @@ O glossário de negócios está disponível somente na Standard Edition do Catá
 
 Você pode acessar o glossário de negócios por meio da opção **Glossário** no menu de navegação do portal do Catálogo de Dados.  
 
-![Acessando o glossário de negócios](./media/data-catalog-how-to-business-glossary/01-portal-menu.png)
+![Catálogo de dados-acessar o Glossário de negócios](./media/data-catalog-how-to-business-glossary/01-portal-menu.png)
 
 Os administradores do Catálogo de Dados e os membros da função de administradores de glossário podem criar, editar e excluir os termos do glossário no glossário de negócios. Todos os usuários do Catálogo de Dados podem exibir as definições de termos e marcar ativos com os termos do glossário.
 
-![Adicionar um novo termo de glossário](./media/data-catalog-how-to-business-glossary/02-new-term.png)
+![Catálogo de dados-adicionar um novo termo de Glossário](./media/data-catalog-how-to-business-glossary/02-new-term.png)
 
 ## <a name="creating-glossary-terms"></a>Criar termos do glossário
 

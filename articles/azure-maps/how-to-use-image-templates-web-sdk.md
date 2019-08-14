@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
 ms.custom: codepen
-ms.openlocfilehash: 1ca29fafae1269b21f4e39a9d2594f84af035d25
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: b9b1543ca37c636f4a82ff9ada3dfe212fa9b8d0
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68856683"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976663"
 ---
 # <a name="how-to-use-image-templates"></a>Como usar modelos de imagem
 
@@ -203,7 +203,10 @@ Consulte os artigos a seguir para obter mais exemplos de código em que modelos 
 > [Adicionar uma camada de símbolo](map-add-pin.md)
 
 > [!div class="nextstepaction"]
-> [ Adicione uma forma ](map-add-shape.md)
+> [Adicionar uma camada de linha](map-add-line-layer.md)
+
+> [!div class="nextstepaction"]
+> [Adicionar uma camada de polígono](map-add-shape.md)
 
 > [!div class="nextstepaction"]
 > [Adicionar marcadores HTML](map-add-bubble-layer.md)

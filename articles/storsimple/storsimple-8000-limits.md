@@ -15,14 +15,16 @@ ms.workload: TBD
 ms.date: 03/28/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a0053f950b36351b06d08630cbf9977f53f2ed47
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 70f2d9542082ddf7ecf1d1e7361b0ecdb14c5ef8
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64721699"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68963381"
 ---
 # <a name="what-are-storsimple-8000-series-system-limits"></a>O que são limites do sistema do StorSimple série 8000?
+
+[!INCLUDE [storsimple-8000-eol-banner](../../includes/storsimple-8000-eol-banner.md)]
 
 ## <a name="overview"></a>Visão geral
 
@@ -45,7 +47,7 @@ O StorSimple fornece armazenamento escalonável e flexível para seu datacenter.
 | Número máximo de backups retidos por programação (em uma política de backup) |64 | |
 | Número máximo de agendas por política de backup |10 | |
 | Número máximo de instantâneos de qualquer tipo que podem ser retidos por volume |256 |Esse número inclui instantâneos locais e na nuvem. |
-| Número máximo de instantâneos que podem estar presentes em qualquer dispositivo |10\.000 | |
+| Número máximo de instantâneos que podem estar presentes em qualquer dispositivo |10.000 | |
 | Número máximo de volumes que podem ser processados paralelamente para backup, restauração e clonagem |16 |<ul><li>Se houver mais de 16 volumes, eles serão processados sequencialmente conforme os slots de processamento ficarem disponíveis.</li><li>Novos backups de um volume clonado ou restaurado em camadas não poderão ocorrer até que a operação seja finalizada. No entanto, para um volume local, há permissão para backups quando o volume estiver online.</li></ul> |
 | Tempo de recuperação de clonagem e restauração para volumes em camadas |Menos de 2 minutos |<ul><li>O volume é disponibilizado em até 2 minutos durante a operação de restauração ou clonagem, independentemente do tamanho do volume.</li><li>Inicialmente, o desempenho do volume pode ser mais lento do que o normal, pois a maioria dos dados e metadados ainda reside na nuvem. O desempenho pode aumentar à medida que os dados fluem da nuvem para o dispositivo StorSimple.</li><li>O tempo total para baixar metadados depende do tamanho do volume alocado. Os metadados são automaticamente colocados no dispositivo em segundo plano a uma taxa de 5 minutos por TB de dados de volume alocados. Essa taxa pode ser afetada pela largura de banda da Internet para a nuvem.</li><li>A operação de restauração ou clonagem será concluída quando todos os metadados estiverem no dispositivo.</li><li>As operações de backup não podem ser executadas até que a operação de restauração ou clonagem seja totalmente concluída. |
 | Tempo de recuperação de restauração para volumes localmente fixados |Menos de 2 minutos |<ul><li>O volume é disponibilizado em até 2 minutos durante a operação de restauração, independentemente do tamanho do volume.</li><li>Inicialmente, o desempenho do volume pode ser mais lento do que o normal, pois a maioria dos dados e metadados ainda reside na nuvem. O desempenho pode aumentar à medida que os dados fluem da nuvem para o dispositivo StorSimple.</li><li>O tempo total para baixar metadados depende do tamanho do volume alocado. Os metadados são automaticamente colocados no dispositivo em segundo plano a uma taxa de 5 minutos por TB de dados de volume alocados. Essa taxa pode ser afetada pela largura de banda da Internet para a nuvem.</li><li>Ao contrário de volumes em camadas, para volumes localmente afixados, os dados do volume também serão baixados localmente no dispositivo. A operação de restauração é concluída quando todos os dados de volume são colocados no dispositivo.</li><li>As operações de restauração podem ser longas. O tempo total para concluir a restauração dependerá do tamanho do volume local provisionado, da largura de banda da Internet e dos dados existentes no dispositivo. Operações de backup em volume localmente afixado são permitidas enquanto a operação de restauração está em andamento. |

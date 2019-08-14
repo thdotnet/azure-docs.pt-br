@@ -1,8 +1,7 @@
 ---
-title: Gerenciar configurações de verificação em duas etapas – Azure Active Directory | Microsoft Docs
-description: Gerencie como usar Autenticação Multifator do Azure incluindo alterar suas informações de contato ou configurar seus dispositivos.
+title: Gerenciar configurações de verificação de dois fatores-Azure Active Directory | Microsoft Docs
+description: Saiba como alterar os detalhes do método de verificação de segurança, pois ele se relaciona com a verificação de dois fatores.
 services: active-directory
-keywords: autenticação multifator do cliente, problema de autenticação, ID de correlação
 author: eross-msft
 manager: daveba
 ms.reviewer: richagi
@@ -11,72 +10,131 @@ ms.workload: identity
 ms.service: active-directory
 ms.subservice: user-help
 ms.topic: conceptual
-ms.date: 05/23/2017
+ms.date: 08/06/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 433c2d712ca4867a5ec59f86c333511070b6d507
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7acfa31434534eb3618b8a279ea6cff543fae076
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60334449"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68949778"
 ---
-# <a name="manage-your-settings-for-two-step-verification"></a>Gerenciar as configurações de verificação em duas etapas
-Este artigo responde a perguntas sobre como atualizar as configurações de autenticação multifator ou de verificação em duas etapas. Se você estiver tendo problemas ao se conectar à sua conta, confira [Tendo problemas com a verificacão em duas etapas](multi-factor-authentication-end-user-troubleshoot.md) para a resolução de problemas.
+# <a name="manage-your-two-factor-verification-method-settings"></a>Gerenciar as configurações do método de verificação de dois fatores
 
-## <a name="where-to-find-the-settings-page"></a>Onde encontrar a página de configurações
-Dependendo de como a sua empresa usa a Autenticação Multifator do Azure, há alguns lugares onde você pode alterar as configurações, como o número de seu telefone.
+Depois de configurar seus métodos de verificação de segurança para sua conta corporativa ou de estudante, você pode atualizar qualquer um dos detalhes relacionados, incluindo:
 
-Se o suporte da empresa envia uma URL específica ou etapas para gerenciar a verificação em duas etapas, siga as instruções. Caso contrário, as instruções a seguir devem funcionar para todos os outros. Se você seguir estas etapas, mas não vê as mesmas opções, isso significa que sua empresa ou escola personalizaram o próprio portal. Peça ao administrador o link para o portal de Autenticação Multifator do Azure.
+- Escolhendo o método de verificação de segurança padrão.
 
-**Vá para a página Verificação de segurança adicional**
+- Adicionar ou atualizar os detalhes do método de verificação de segurança, como seu número de telefone.
 
-- Vá para https://aka.ms/MFASetup.
+- Configurando um novo aplicativo autenticador ou excluindo um dispositivo do aplicativo autenticador.
 
-    ![Prova](./media/multi-factor-authentication-end-user-manage-settings/proofup.png)
+## <a name="using-the-additional-security-verification-page"></a>Usando a página de verificação de segurança adicional
 
-Se clicar nesse link não funcionar para você, você também pode acessar a página **Verificação de segurança adicional** seguindo estas etapas:
+Se sua organização forneceu etapas específicas sobre como ativar e gerenciar sua verificação de dois fatores, você deve seguir essas instruções. Caso contrário, você pode obter as configurações do método de verificação de segurança na página de [verificação de segurança adicional](https://aka.ms/mfasetup) .
 
-1. Entrar no [https://myapps.microsoft.com](https://myapps.microsoft.com)  
+>[!Note]
+>Se o que você está vendo na tela não corresponde ao que está sendo abordado neste artigo, significa que o administrador ativou a experiência de informações de segurança (versão prévia) ou que sua organização tem seu próprio portal personalizado. Para obter mais informações sobre a experiência de informações de segurança, consulte [visão geral de informações de segurança (versão prévia)](user-help-security-info-overview.md). Para obter mais informações sobre o portal personalizado de sua organização, você deve entrar em contato com o suporte técnico.
 
-2. Selecione o nome da conta no canto superior direito e selecione **perfil**.
+### <a name="to-get-to-the-additional-security-verification-page"></a>Para acessar a página de verificação de segurança adicional
 
-3. Escolha **Verificação de segurança adicional**.  
+- Vá para https://aka.ms/mfasetup.
 
-    ![Myapps](./media/multi-factor-authentication-end-user-manage-settings/myapps1.png)
+    ![Tela de verificação de segurança adicional, com os detalhes do método de verificação de segurança disponível](./media/multi-factor-authentication-end-user-manage-settings/mfa-security-verification-page.png)
 
-4. A página de Verificação de segurança adicional carrega com suas configurações.
+    Se clicar nesse link não funcionar para você, você também pode acessar a página **Verificação de segurança adicional** seguindo estas etapas:
 
-    ![Prova](./media/multi-factor-authentication-end-user-manage-settings/proofup.png)
+    1. Entre em [https://myapps.microsoft.com](https://myapps.microsoft.com).
 
-## <a name="i-want-to-change-my-phone-number-or-add-a-secondary-number"></a>Desejo alterar meu número de telefone ou adicionar um número secundário
-É importante configurar um número de telefone de autenticação secundário.  Como seu número de telefone principal e seu aplicativo móvel provavelmente estão no mesmo telefone, o número de telefone secundário é a maneira mais rápida, você poderá voltar à sua conta se o seu telefone for perdido ou roubado.
+    2. Selecione o nome da conta no canto superior direito e selecione **perfil**.
 
-> [!NOTE]
-> Se você não tem acesso ao seu número de telefone principal e precisa de ajuda para entrar em sua conta, confira os o artigo [Tendo problemas com a verificação em duas etapas](multi-factor-authentication-end-user-troubleshoot.md) para obter mais ajuda.  
+    3. Escolha **Verificação de segurança adicional**.  
 
-**Para alterar o número de telefone principal:**  
+        ![Link meus aplicativos para a página de verificação de segurança adicional](./media/multi-factor-authentication-end-user-manage-settings/mfa-myapps-link.png)
 
-1. Na página de **Verificação de segurança** adicional, marque a caixa de texto com seu número de telefone atual e edite com o seu novo número de telefone.  
-2. Clique em **Salvar**.  
-3. Se este é o número que você usa para a opção de verificação preferencial, você precisa verificar o novo número antes de salvá-lo.  
+>[!Note]
+>Para obter informações sobre como usar a seção de **senhas de aplicativo** de uma página de **verificação de segurança adicional** , consulte [gerenciar senhas de aplicativo para verificação de dois fatores](multi-factor-authentication-end-user-app-passwords.md). As senhas de aplicativo só devem ser usadas para aplicativos que ainda não dão suporte à verificação de dois fatores.
 
-**Para adicionar um número de telefone secundário:**  
+## <a name="change-your-default-security-verification-method"></a>Alterar o método de verificação de segurança padrão
 
-1. Na página de Verificação de segurança adicional, marque a caixa ao lado de **Telefone de autenticação alternativo.**  
-2. Insira o número de telefone secundário na caixa de texto.  
-3. Selecione **Salvar** e suas alterações são concluídas.  
+Depois de entrar em sua conta corporativa ou de estudante com seu nome de usuário e senha, você será automaticamente apresentado com o método de verificação de segurança escolhido. Dependendo dos requisitos da sua organização, isso pode ser um código de notificação ou verificação por meio de um aplicativo autenticador, uma mensagem de texto ou uma chamada telefônica.
 
-## <a name="require-two-step-verification-again-on-a-device-youve-marked-as-trusted"></a>Exigir verificação em duas etapas novamente em um dispositivo que você marcou como confiável
+Se você decidir que deseja alterar o método de verificação de segurança padrão que está usando, poderá fazer isso aqui.
 
-Dependendo das configurações de sua organização, uma caixa de seleção "Não pergunte novamente por **X** dias" pode ser exibida quando você executa a verificação em duas etapas em seu navegador. Se você marcar essa caixa de seleção e perder seu dispositivo ou achar que sua conta foi comprometida, restaure a verificação em duas etapas para todos os seus dispositivos.
+### <a name="to-change-your-default-security-verification-method"></a>Para alterar o método de verificação de segurança padrão
 
-1. Na página Verificação de segurança adicional, selecione **Restaurar autenticação multifator em dispositivos anteriormente confiáveis**.
-2. Na próxima vez que você entrar em qualquer dispositivo, receberá uma solicitação para executar a verificação de duas etapas.
+1. Na página de **verificação de segurança adicional** , selecione o método a ser usado na lista suspensa **o que é sua opção preferida** . Você verá todas as opções, mas só poderá escolher aquelas que estão disponíveis para você pela sua organização do.
 
-## <a name="how-do-i-clean-up-microsoft-authenticator-from-my-old-device-and-move-to-a-new-one"></a>Como limpar o Microsoft Authenticator de meu dispositivo antigo e movê-lo para um novo?
-Quando você desinstala o aplicativo do dispositivo ou reinicia o dispositivo, ele não remove a ativação no back-end. Para saber mais, veja [Microsoft Authenticator](user-help-auth-app-download-install.md).
+    - **Notifique-me por meio do aplicativo.** Você será notificado por meio de seu aplicativo autenticador de que você tem um prompt de verificação em espera.
+
+    - **Chame meu telefone de autenticação.** Você receberá uma chamada telefônica em seu dispositivo móvel, solicitando que você verifique suas informações.
+
+    - **Código de texto para meu telefone de autenticação.** Você obterá um código de verificação como parte de uma mensagem de texto em seu dispositivo móvel. Você deve inserir esse código no prompt de verificação para sua conta corporativa ou de estudante.
+
+    - **Ligue para o meu telefone comercial.** Você receberá uma chamada telefônica em seu telefone comercial, solicitando que você verifique suas informações.
+
+    - **Use o código de verificação do aplicativo.** Você usará seu aplicativo autenticador para obter um código de verificação que digitará no prompt de sua conta corporativa ou de estudante.
+
+2. Clique em **Salvar**.
+
+## <a name="add-or-change-your-phone-number"></a>Adicionar ou alterar seu número de telefone
+
+Você pode adicionar novos números de telefone ou atualizar números existentes, na página de **verificação de segurança adicional** .
+
+>[!Important]
+>É altamente recomendável que você adicione um número de telefone secundário para ajudar a evitar que ele seja bloqueado se o seu telefone principal for perdido ou roubado, ou se você receber um novo telefone e não tiver mais seu número de telefone principal original.
+
+### <a name="to-change-your-phone-numbers"></a>Para alterar seus números de telefone
+
+1. Na seção **como você gostaria de responder?** da página de **verificação de segurança adicional** , atualize as informações de número de telefone do seu **telefone de autenticação** (seu dispositivo móvel primário) e seu **telefone comercial**.
+
+2. Selecione a caixa ao lado da opção **telefone de autenticação alternativo** e digite um número de telefone secundário no qual você poderá receber mensagens de texto ou chamadas telefônicas se não puder acessar o dispositivo primário.
+
+3. Clique em **Salvar**.
+
+## <a name="add-a-new-account-to-the-microsoft-authenticator-app"></a>Adicionar uma nova conta ao aplicativo Microsoft Authenticator
+
+Você pode configurar sua conta corporativa ou de estudante no aplicativo Microsoft Authenticator para [Android](https://play.google.com/store/apps/details?id=com.azure.authenticator) ou [Ios](https://apps.apple.com/app/microsoft-authenticator/id983156458).
+
+Se você tiver configurado anteriormente sua conta corporativa ou de estudante no aplicativo Microsoft Authenticator, não será necessário fazer isso novamente.
+
+1. Na seção **como você deseja responder?** da página de verificação de **segurança adicional** , selecione o botão **Configurar aplicativo autenticador** .
+
+    ![Configurar sua conta corporativa ou de estudante no aplicativo Microsoft Authenticator](./media/multi-factor-authentication-end-user-manage-settings/mfa-security-verification-page-auth-app.png)
+
+2. Siga as instruções na tela, incluindo o uso de seu dispositivo móvel para digitalizar o código QR e, em seguida, selecione **Avançar**.
+
+    Você será solicitado a aprovar uma notificação por meio do aplicativo Microsoft Authenticator, para verificar suas informações.
+
+3. Clique em **Salvar**.
+
+## <a name="delete-your-account-or-device-from-the-microsoft-authenticator-app"></a>Excluir sua conta ou dispositivo do aplicativo Microsoft Authenticator
+
+Você pode excluir sua conta do aplicativo Microsoft Authenticator e pode excluir seu dispositivo de sua conta corporativa ou de estudante. Normalmente, você exclui o dispositivo para remover permanentemente um dispositivo perdido, roubado ou antigo de sua conta e exclui sua conta para tentar corrigir alguns problemas de conexão ou para resolver uma alteração de conta, como um novo nome de usuário.
+
+### <a name="to-delete-your-device-from-your-work-or-school-account"></a>Para excluir seu dispositivo de sua conta corporativa ou de estudante
+
+1. Na seção **como você deseja responder?** da página de verificação de **segurança adicional** , selecione o botão **Configurar aplicativo autenticador** .
+
+2. Clique em **Salvar**.
+
+### <a name="to-delete-your-account-from-the-microsoft-authenticator-app"></a>Para excluir sua conta do aplicativo Microsoft Authenticator
+
+- No aplicativo Microsoft Authenticator, selecione o botão **excluir** ao lado do dispositivo que você deseja excluir.
+
+## <a name="turn-on-two-factor-verification-prompts-on-a-trusted-device"></a>Ativar prompts de verificação de dois fatores em um dispositivo confiável
+
+Dependendo das configurações da sua organização, você poderá ver uma caixa de seleção que diz **não perguntar novamente por X dias** quando executar a verificação de dois fatores no navegador. Se você marcou essa caixa para interromper as solicitações de verificação de dois fatores e perder o dispositivo ou se o dispositivo estiver potencialmente comprometido, você deverá ativar os prompts de verificação de dois fatores novamente para ajudar a proteger sua conta. Infelizmente, você não pode ativar os prompts novamente para um único dispositivo. Você deve ativar os prompts para todos os seus dispositivos ao mesmo tempo.
+
+### <a name="to-turn-two-factor-verification-prompts-back-on-for-your-devices"></a>Para ativar novamente os prompts de verificação de dois fatores para seus dispositivos
+
+- Na página **verificação de segurança adicional** , selecione **restaurar autenticação multifator em dispositivos confiáveis anteriormente**.
+
+    Na próxima vez que você entrar em qualquer dispositivo, será solicitado que você execute a verificação de dois fatores.
 
 ## <a name="next-steps"></a>Próximas etapas
-* Obter dicas de solução de problemas e ajuda em [Tendo problemas com a verificação em duas etapas](multi-factor-authentication-end-user-troubleshoot.md)
-* Configure [senhas de aplicativo](multi-factor-authentication-end-user-app-passwords.md) para quaisquer aplicativos que não dão suporte à verificação em duas etapas.
+
+- Obtenha dicas de solução de problemas e ajude a [ter problemas com a verificação de dois fatores](multi-factor-authentication-end-user-troubleshoot.md)
+
+- [Gerencie senhas de aplicativo para verificação de dois fatores](multi-factor-authentication-end-user-app-passwords.md) para qualquer aplicativo que não ofereça suporte à verificação de dois fatores.

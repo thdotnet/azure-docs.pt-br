@@ -11,16 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/07/2018
+ms.date: 08/12/2019
 ms.author: cephalin
 ms.reviewer: sisirap
 ms.custom: seodec18
-ms.openlocfilehash: 6cf46f96e84e8a00a478c3ad3edece10a36ce0bd
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 470caa37067b8429fd16e508c43383e4d3db3d41
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67616997"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954072"
 ---
 # <a name="deploy-your-app-to-azure-app-service-with-a-zip-or-war-file"></a>Implantar seu aplicativo no Serviço de Aplicativo do Azure com um arquivo ZIP ou WAR
 
@@ -32,7 +32,7 @@ Essa implantação de arquivo zip usa o mesmo serviço Kudu que alimenta impleme
 - Opção para ativar o processo de compilação padrão que inclui a restauração do pacote.
 - [Personalização da implantação](https://github.com/projectkudu/kudu/wiki/Configurable-settings#repository-and-deployment-related-settings), incluindo execução de scripts de implantação.  
 - Logs de implantação. 
-- Um limite de tamanho do arquivo de 2048 MB.
+- Um limite de tamanho de arquivo de 2048 MB.
 
 Para obter mais informações, consulte [Documentação do Kudu](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file).
 
@@ -82,7 +82,7 @@ az webapp deployment source config-zip --resource-group myResourceGroup --name <
 
 Esse comando implanta os arquivos e diretórios do arquivo zip para sua pasta de aplicativo do Serviço de Aplicativo do Azure padrão (`\home\site\wwwroot`) e reinicia o aplicativo.
 
-Por padrão, o mecanismo de implantação presume que um arquivo ZIP está pronto para ser executado como-está e não executa qualquer automação de compilação. Para habilitar o mesmo criar automação como em uma [implantação do Git](deploy-local-git.md), defina o `SCM_DO_BUILD_DURING_DEPLOYMENT` configuração de aplicativo, executando o seguinte comando na [Cloud Shell](https://shell.azure.com):
+Por padrão, o mecanismo de implantação assume que um arquivo ZIP está pronto para ser executado no estado em que se encontra e não executa nenhuma automação de compilação. Para habilitar a mesma automação de compilação que em uma [implantação do git](deploy-local-git.md), `SCM_DO_BUILD_DURING_DEPLOYMENT` defina a configuração do aplicativo executando o seguinte comando no [Cloud Shell](https://shell.azure.com):
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <resource-group-name> --name <app-name> --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
@@ -96,29 +96,24 @@ Para obter mais informações, consulte [Documentação do Kudu](https://github.
 
 ## <a name="deploy-war-file"></a>Implantar arquivo WAR
 
-Para implantar um arquivo WAR ao serviço de aplicativo, envie uma solicitação POST para `https://<app_name>.scm.azurewebsites.net/api/wardeploy`. A solicitação POST deve conter o arquivo .war no corpo da mensagem. As credenciais de implantação para seu aplicativo são fornecidas na solicitação usando a autenticação BÁSICA HTTP.
+Para implantar um arquivo WAR no serviço de aplicativo, envie uma solicitação POST `https://<app_name>.scm.azurewebsites.net/api/wardeploy`para. A solicitação POST deve conter o arquivo .war no corpo da mensagem. As credenciais de implantação para seu aplicativo são fornecidas na solicitação usando a autenticação BÁSICA HTTP.
 
 Para a autenticação HTTP BÁSICA, você precisa das credenciais de implantação do Serviço de Aplicativo. Para ver como definir as credenciais de implantação, consulte [Definir e redefinir as credenciais de usuário](deploy-configure-credentials.md#userscope).
 
 ### <a name="with-curl"></a>Com o cURL
 
-O exemplo a seguir usa a ferramenta cURL para implantar um arquivo .war. Substitua os espaços reservados `<username>`, `<war_file_path>` e `<app_name>`. Quando solicitado pelo cURL, digite a senha.
+O exemplo a seguir usa a ferramenta cURL para implantar um arquivo .war. Substitua os espaços reservados `<username>`, `<war-file-path>` e `<app-name>`. Quando solicitado pelo cURL, digite a senha.
 
 ```bash
-curl -X POST -u <username> --data-binary @"<war_file_path>" https://<app_name>.scm.azurewebsites.net/api/wardeploy
+curl -X POST -u <username> --data-binary @"<war-file-path>" https://<app_name>.scm.azurewebsites.net/api/wardeploy
 ```
 
 ### <a name="with-powershell"></a>Com o PowerShell
 
-O exemplo a seguir usa [Invoke-RestMethod](/powershell/module/microsoft.powershell.utility/invoke-restmethod) para enviar uma solicitação que contém o arquivo .war. Substitua os espaços reservados `<deployment_user>`, `<deployment_password>`, `<zip_file_path>` e `<app_name>`.
+O exemplo a seguir usa [Publish-AzWebapp](/powershell/module/az.websites/publish-azwebapp) para carregar o arquivo. War. Substitua os espaços reservados `<group-name>`, `<app-name>` e `<war-file-path>`.
 
 ```powershell
-$username = "<deployment_user>"
-$password = "<deployment_password>"
-$filePath = "<war_file_path>"
-$apiUrl = "https://<app_name>.scm.azurewebsites.net/api/wardeploy"
-$base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $username, $password)))
-Invoke-RestMethod -Uri $apiUrl -Headers @{Authorization=("Basic {0}" -f $base64AuthInfo)} -Method POST -InFile $filePath -ContentType "application/octet-stream"
+Publish-AzWebapp -ResourceGroupName <group-name> -Name <app-name> -ArchivePath <war-file-path>
 ```
 
 [!INCLUDE [What happens to my app during deployment?](../../includes/app-service-deploy-atomicity.md)]

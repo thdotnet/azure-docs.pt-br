@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 01/30/2019
 ms.author: dacurwin
-ms.openlocfilehash: 0c762054ed0df3a3781dda7057ff8793dbf82565
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 71070a778e54e51cdb528041f746489bb64e979c
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689296"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954703"
 ---
 # <a name="prepare-to-back-up-workloads-to-azure-with-system-center-dpm"></a>Preparar-se para fazer backup de cargas de trabalho no Azure com o System Center DPM
 
@@ -91,13 +91,13 @@ Você usa credenciais do cofre quando registra o servidor DPM no cofre.
 
 ### <a name="best-practices-for-vault-credentials"></a>Melhores práticas para credenciais do cofre
 
-Para obter as credenciais, você faz o download do arquivo da credencial do cofre por meio de um canal seguro no Portal do Azure:
+Para obter as credenciais, baixe o arquivo de credencial do cofre por meio de um canal seguro do portal do Azure:
 
 - As credenciais do cofre são usadas somente durante o fluxo de trabalho de registro.
 - É sua responsabilidade garantir que o arquivo de credenciais do cofre esteja seguro e não seja comprometido.
     - Se o controle das credenciais for perdido, as credenciais do cofre poderão ser usadas para registrar outros computadores no cofre.
     - No entanto, os dados de backup são criptografados usando uma frase secreta que pertence ao cliente, por isso os dados de backup existentes não poderão ser comprometidos.
-- Salve o arquivo em um local que possa ser acessado no servidor DPM. Se forem armazenadas em um compartilhamento de arquivos/SMB, verifique as permissões de acesso.
+- Certifique-se de que o arquivo seja salvo em um local que possa ser acessado pelo servidor DPM. Se forem armazenadas em um compartilhamento de arquivos/SMB, verifique as permissões de acesso.
 - As credenciais do cofre expiram após 48 horas. Você pode fazer o download das novas credenciais do cofre tantas vezes quantas forem necessárias. No entanto, apenas o último arquivo de credencial de cofre pode ser usado durante o fluxo de trabalho de registro.
 - O serviço de Backup do Azure não tem ciência da chave privada do certificado e a chave privada não está disponível no portal ou no serviço.
 
@@ -183,7 +183,7 @@ O arquivo de credenciais do cofre é válido somente por 48 horas (após o downl
 
 ### <a name="access-error"></a>Erro de acesso
 
-Certifique-se de que o arquivo de credenciais do cofre esteja disponível em um local que pode ser acessado pelo aplicativo de instalação. Se você encontrar erros relacionados a acesso, copie o arquivo de credenciais do cofre para um local temporário nesse computador e repita a operação.
+Verifique se o arquivo de credenciais do cofre está disponível em um local que pode ser acessado pelo aplicativo de instalação. Se você encontrar erros relacionados a acesso, copie o arquivo de credenciais do cofre para um local temporário nesse computador e repita a operação.
 
 ### <a name="invalid-credentials-error"></a>Erro de credenciais inválidas
 

@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: aliceku
 ms.author: aliceku
 ms.reviewer: vanto
-ms.date: 04/19/2019
-ms.openlocfilehash: 1d5baf4b7f8a28638c5dbd50fb407035a5b9ea89
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.date: 08/12/2019
+ms.openlocfilehash: 07fcd0f1ec33aa9a7520e35eb7e53a76295009ba
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68566119"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967910"
 ---
 # <a name="transparent-data-encryption-for-sql-database-and-data-warehouse"></a>Transparent Data Encryption para Data Warehouse e Banco de Dados SQL do Azure
 
@@ -37,7 +37,7 @@ No Azure, a configuração padrão para Transparent Data Encryption é a chave d
 A Microsoft também move e gerencia as chaves conforme necessário para replicação geográfica e restaurações.
 
 > [!IMPORTANT]
-> Todos os bancos de dados SQL criados recentemente são criptografados por padrão usando Transparent Data Encryption de serviço gerenciado. Os bancos de dados de Instância Gerenciada do SQL Azure, bancos de dados SQL existentes criados antes de maio de 2017 e bancos de dados SQL criados por meio da restauração, replicação geográfica e cópia de banco de dados não são criptografados por padrão.
+> Todos os bancos de dados SQL criados recentemente e bancos de dado Instância Gerenciada são criptografados por padrão usando a Transparent Data Encryption gerenciada por serviço. Os bancos de dados SQL existentes criados antes de 2017 de maio e de SQL criados por meio da restauração, da replicação geográfica e da cópia do banco de dados não são criptografados por padrão. Os bancos de dados Instância Gerenciada existentes criados antes de fevereiro de 2019 não são criptografados por padrão. Instância Gerenciada bancos de dados criados por meio da restauração herdam o status de criptografia da origem.
 
 ## <a name="customer-managed-transparent-data-encryption---bring-your-own-key"></a>Transparent Data Encryption gerenciada pelo cliente – Bring Your Own Key
 

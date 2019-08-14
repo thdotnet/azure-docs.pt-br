@@ -14,14 +14,17 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 01/09/2018
 ms.author: alkohli
-ms.openlocfilehash: b367b6e7126a442dc68646ff52a29c955f50b798
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 0b2301c1c9b846e2ea005f049c5aadb3d4634a81
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60631100"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68963594"
 ---
 # <a name="unpack-rack-mount-and-cable-your-storsimple-8100-device"></a>Desembalar, montar em rack e cabear o dispositivo StorSimple 8100.
+
+[!INCLUDE [storsimple-8000-eol-banner](../../includes/storsimple-8000-eol-banner.md)]
+
 ## <a name="overview"></a>Visão geral
 Seu Microsoft Azure StorSimple 8100 é um dispositivo único de compartimento montado em rack. Este tutorial explica como desempacotar, montar em rack e cabear o hardware do dispositivo StorSimple 8100 para que seja possível configurar e implantar o dispositivo StorSimple.
 
@@ -46,11 +49,11 @@ Conclua as etapas a seguir para desempacotar o dispositivo.
    
     **Exibição do dispositivo de armazenamento desempacotado**
    
-   | Rotular | DESCRIÇÃO |
+   | Rotular | Descrição |
    | --- | --- |
    |   1 |Embalagem |
    |   2 |Espuma inferior |
-   |   3 |Dispositivo |
+   |   3 |Dispositivos |
    |   4 |Espuma superior |
    |   5 |Caixa de acessório |
 3. Depois de abrir a caixa, verifique se você tem estes itens:
@@ -108,7 +111,7 @@ Um conjunto de trilhos de montagem é fornecido para ser usado com o gabinete de
 
     **Fixando corrediças do trilho interno às laterais do compartimento**
    
-    Rótulo | DESCRIÇÃO
+    Rótulo | Descrição
     ----- | -----------
     1     | Parafusos de cabeça abaulada M 3x4
     2     | Corrediças dos chassis
@@ -122,7 +125,7 @@ Um conjunto de trilhos de montagem é fornecido para ser usado com o gabinete de
    
     **Fixando os conjuntos de trilhos internos ao rack**
    
-   | Rotular | DESCRIÇÃO |
+   | Rotular | Descrição |
    | --- | --- |
    |   1 |Parafuso de travamento |
    |   2 |Parafuso da coluna do rack frontal para orifício quadrado |
@@ -148,7 +151,7 @@ Usando os trilhos do rack que acabaram de ser instalados, execute as etapas a se
    
     **Instalando as tampas do flange**
    
-   | Rotular | DESCRIÇÃO |
+   | Rotular | Descrição |
    | --- | --- |
    |   1 |Parafuso de fixação do compartimento |
 
@@ -188,7 +191,7 @@ Para oferecer suporte a este failover de controlador redundante, você precisa c
    
     **Parte traseira do dispositivo mostrando as portas de dados**
    
-   | Rotular | DESCRIÇÃO |
+   | Rotular | Descrição |
    | --- | --- |
    |   0,1,4,5 |Interfaces de rede de 1 GbE |
    |   2,3 |Interfaces de rede de 10 GbE |
@@ -199,9 +202,9 @@ Para oferecer suporte a este failover de controlador redundante, você precisa c
 
     **Cabeamento de rede para o dispositivo**
 
-   |Rotular | DESCRIÇÃO |
+   |Rotular | Descrição |
    |----- | ----------- |
-   | O    | LAN com acesso à Internet |
+   | A    | LAN com acesso à Internet |
    | B    | Controlador 0 |
    | C    | PCM 0 |
    | D    | Controlador 1 |
@@ -236,11 +239,11 @@ Execute as etapas a seguir para cabear a porta serial.
 2. Identifique o controlador ativo no backplane do dispositivo. Um LED azul piscante indica que o controlador está ativo.
 3. Use os cabos seriais fornecidos (se necessário, o conversor serial USB para seu laptop) e conecte o console ou o computador (com emulação de terminal para o dispositivo) com a porta serial do controlador ativo.
 4. Instale os drivers de USB seriais (fornecidos com o dispositivo) em seu computador.
-5. Configure a conexão serial como se segue: 115.200 bauds, 8 bits de dados, 1 bit de parada, sem paridade e fluxo de controlam definida como nenhum.
+5. Configure a conexão serial como se segue: 115.200 baud, 8 bits de dados, 1 bit de parada, sem paridade e controle de fluxo definidos como nenhum.
 6. Verifique se a conexão está funcionando pressionando Enter no console. Um menu de console serial deve aparecer.
 
 > [!NOTE]
-> **Gerenciamento noturno**: Quando o dispositivo é instalado em um data center remoto ou em uma sala de computadores com acesso limitado, certifique-se de que as conexões seriais com ambos os controladores sempre são conectadas a um comutador de console serial ou equipamento similar. Isso permite operações de suporte e controle remoto fora de banda se houver interrupções na rede ou falhas inesperadas.
+> **Gerenciamento de luzes**: Quando o dispositivo for instalado em um datacenter remoto ou em uma sala de computadores com acesso limitado, verifique se as conexões de série para ambos os controladores estão sempre conectadas a um comutador de console serial ou equipamento semelhante. Isso permite operações de suporte e controle remoto fora de banda se houver interrupções na rede ou falhas inesperadas.
 > 
 > 
 

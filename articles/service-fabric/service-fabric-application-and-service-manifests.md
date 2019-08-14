@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 12/19/2018
+ms.date: 8/12/2019
 ms.author: atsenthi
-ms.openlocfilehash: e5fb28b176ce14a9b871b2a6a775e0017fcc993d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a5e452bf3dc9f35c345a5f27af829904b4839ece
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67052674"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977123"
 ---
 # <a name="service-fabric-application-and-service-manifests"></a>Manifestos de serviço e aplicativo do Service Fabric
 Este artigo descreve como os serviços e aplicativos do Service Fabric são definidos e atualizados usando os arquivos. ServiceManifest.xml e ApplicationManifest.xml.  Para obter exemplos mais detalhados, confira [Exemplos de manifesto de aplicativo e de serviço](service-fabric-manifest-examples.md).  O esquema XML para esses arquivos de manifesto está documentado em [documentação do esquema ServiceFabricServiceModel.xsd](service-fabric-service-model-schema.md).
@@ -96,8 +96,12 @@ Para obter mais informações sobre como configurar o SetupEntryPoint, consulte 
 </Settings>
 ```
 
-Um serviço do Service Fabric **ponto de extremidade** é um exemplo de um recurso de malha do serviço. Um recurso de malha de serviço podem ser declarados/alterados sem alterar o código compilado. O acesso aos recursos do Service Fabric que são especificados no manifesto do serviço pode ser controlado por meio do **SecurityGroup** no manifesto do aplicativo. Quando um recurso de ponto de extremidade é definido no manifesto do serviço, o Service Fabric atribui portas do intervalo de portas reservadas do aplicativo quando uma porta não é explicitamente especificada. Leia mais sobre [especificar ou substituir os recursos de endpoint](service-fabric-service-manifest-resources.md).
+Um ponto de **extremidade** de serviço Service Fabric é um exemplo de um recurso de Service Fabric. Um recurso de Service Fabric pode ser declarado/alterado sem alterar o código compilado. O acesso aos recursos do Service Fabric que são especificados no manifesto do serviço pode ser controlado por meio do **SecurityGroup** no manifesto do aplicativo. Quando um recurso de ponto de extremidade é definido no manifesto do serviço, o Service Fabric atribui portas do intervalo de portas reservadas do aplicativo quando uma porta não é explicitamente especificada. Leia mais sobre [especificar ou substituir os recursos de endpoint](service-fabric-service-manifest-resources.md).
 
+ 
+> [!WARNING]
+> As portas estáticas de design não devem se sobrepor ao intervalo de portas de aplicativo especificado em ClusterManifest. Se você especificar uma porta estática, atribua-a fora do intervalo de portas do aplicativo, caso contrário, isso resultará em conflitos de porta. Com a versão 6.5 CU2, emitiremos um **aviso de integridade** quando detectarmos esse conflito, mas permitirá que a implantação continue em sincronia com o comportamento 6,5 enviado. No entanto, poderemos impedir a implantação do aplicativo nas próximas versões principais.
+>
 
 <!--
 For more information about other features supported by service manifests, refer to the following articles:
@@ -147,6 +151,7 @@ Portanto, um manifesto de aplicativo descreve os elementos no nível do aplicati
     <Service Name="VotingWeb" ServicePackageActivationMode="ExclusiveProcess">
       <StatelessService ServiceTypeName="VotingWebType" InstanceCount="[VotingWeb_InstanceCount]">
         <SingletonPartition />
+         <PlacementConstraints>(NodeType==NodeType0)</PlacementConstraints
       </StatelessService>
     </Service>
   </DefaultServices>
@@ -163,10 +168,12 @@ Manifestos de serviço, como atributos **Versão** , são cadeias de caracteres 
 
 **Certificados** (não definido no exemplo anterior) declara os certificados usados para [configurar endpoints HTTPS](service-fabric-service-manifest-resources.md#example-specifying-an-https-endpoint-for-your-service) ou [criptografar segredos no manifesto do aplicativo](service-fabric-application-secret-management.md).
 
-**As políticas** (não definido no exemplo anterior) descreve a coleta de log [executar como padrão](service-fabric-application-runas-security.md), [integridade](service-fabric-health-introduction.md#health-policies), e [acesso de segurança](service-fabric-application-runas-security.md) políticas definir no nível de aplicativo, incluindo se os serviços têm acesso ao tempo de execução do Service Fabric.
+As **restrições de posicionamento** são as instruções que definem onde os serviços devem ser executados. Essas instruções são anexadas a serviços individuais que você seleciona para uma ou mais propriedades de nó. Para obter mais informações, consulte [restrição de posicionamento e sintaxe de propriedade de nó](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-cluster-description#placement-constraints-and-node-property-syntax)
+
+**Políticas** do (não definido no exemplo anterior) descreve a coleta de log, [execução padrão](service-fabric-application-runas-security.md), [integridade](service-fabric-health-introduction.md#health-policies)e políticas de [acesso de segurança](service-fabric-application-runas-security.md) para definir no nível do aplicativo, incluindo se os serviços têm acesso ao tempo de execução de Service Fabric.
 
 > [!NOTE] 
-> Por padrão, os aplicativos do Service Fabric têm acesso ao tempo de execução do Service Fabric, na forma de um ponto de extremidade aceitando solicitações específicas do aplicativo e as variáveis de ambiente que aponta para os caminhos de arquivo no host que contém arquivos específicos do aplicativo e malha . Considere desabilitar esse acesso quando o aplicativo hospeda o código não confiável (ou seja, código cujo provenance é desconhecido ou que sabe que o proprietário do aplicativo não deve para ser seguro para execução). Para obter mais informações, consulte [práticas recomendadas de segurança no Service Fabric](service-fabric-best-practices-security.md#platform-isolation). 
+> Por padrão, os aplicativos Service Fabric têm acesso ao tempo de execução do Service Fabric, na forma de um ponto de extremidade que aceita solicitações específicas do aplicativo e variáveis de ambiente apontando para caminhos de arquivo no host que contém arquivos específicos de aplicativo e de malha . Considere desabilitar esse acesso quando o aplicativo hospedar código não confiável (ou seja, código cuja comprovação é desconhecida ou que o proprietário do aplicativo sabe que não deve ser seguro de ser executado). Para obter mais informações, consulte [práticas recomendadas de segurança em Service Fabric](service-fabric-best-practices-security.md#platform-isolation). 
 >
 
 **Entidades** (não definido no exemplo anterior) descrevem as entidades de segurança (usuários ou grupos) necessárias para [executar serviços e proteger recursos do serviço](service-fabric-application-runas-security.md).  As entidades de segurança são referenciadas nas seções de **Políticas**.

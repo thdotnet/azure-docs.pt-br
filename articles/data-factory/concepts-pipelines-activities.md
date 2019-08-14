@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 06/12/2018
 ms.author: shlo
-ms.openlocfilehash: 63a86fb9498c7c1b1cd527accca84c83a28e01c3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5e34dae5570c64ec2c9fdc478ba8ec1bf4bce9d2
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65788666"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976739"
 ---
 # <a name="pipelines-and-activities-in-azure-data-factory"></a>Pipelines e atividades no Azure Data Factory
 > [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
@@ -56,16 +56,18 @@ Atividades de transformação de dados | Ambiente de computação
 [Spark](transform-data-using-spark.md) | HDInsight [Hadoop]
 [Atividades de Machine Learning: Execução de lote e Recurso de atualização](transform-data-using-machine-learning.md) | Azure VM
 [Procedimento armazenado](transform-data-using-stored-procedure.md) | SQL Azure, Azure SQL Data Warehouse ou SQL Server
-[U-SQL](transform-data-using-data-lake-analytics.md) | Análise Azure Data Lake
+[U-SQL](transform-data-using-data-lake-analytics.md) | Azure Data Lake Analytics
 [Código Personalizado](transform-data-using-dotnet-custom-activity.md) | Lote do Azure
 [Databricks Notebook](transform-data-databricks-notebook.md) | Azure Databricks
+[Atividade de jar do databricks](transform-data-databricks-jar.md) | Azure Databricks
+[Atividade de Python do databricks](transform-data-databricks-python.md) | Azure Databricks
 
 Para obter mais informações, confira o artigo [Atividades de transformação de dados](transform-data.md).
 
 ## <a name="control-activities"></a>Atividades de controle
 Há suporte para as seguintes atividades de fluxo de controle:
 
-Atividade de controle | DESCRIÇÃO
+Atividade de controle | Descrição
 ---------------- | -----------
 [Atividade de execução de pipeline](control-flow-execute-pipeline-activity.md) | A atividade de execução de pipeline permite que um pipeline do Data Factory invoque outro pipeline.
 [ForEachActivity](control-flow-for-each-activity.md) | A atividade ForEach define um fluxo de controle repetitivo no seu pipeline. Essa atividade é usada para iterar em uma coleção e executa atividades especificadas em um loop. A implementação dessa atividade em loop é semelhante à estrutura em loop Foreach nas linguagens de programação.
@@ -94,11 +96,11 @@ Veja como um pipeline é definido no formato JSON:
 }
 ```
 
-Marca | DESCRIÇÃO | Type | Obrigatório
+Marca | Descrição | Tipo | Necessário
 --- | ----------- | ---- | --------
 name | Nome do pipeline. Especifique um nome que represente a ação executada pelo pipeline. <br/><ul><li>Número máximo de caracteres: 140</li><li>Deve começar com uma letra, um número ou um sublinhado (\_)</li><li>Os seguintes caracteres não são permitidos: “.”, “+”, “?”, “/”, “<”,”>”,”*”,”%”,”&”,”:”,”\”</li></ul> | String | Sim
 description | Especifique o texto descrevendo para que o pipeline é usado. | String | Não
-activities | A seção **Atividades** pode ter uma ou mais atividades definidas dentro dela. Confira a seção [Atividade JSON](#activity-json) para obter detalhes sobre o elemento das atividades JSON. | Matriz | Sim
+activities | A seção **Atividades** pode ter uma ou mais atividades definidas dentro dela. Confira a seção [Atividade JSON](#activity-json) para obter detalhes sobre o elemento das atividades JSON. | Array | Sim
 parameters | A seção **parâmetros** pode ter um ou mais parâmetros definidos no pipeline, tornando seu pipeline flexível para reutilização. | List | Não
 
 ## <a name="activity-json"></a>Atividade JSON
@@ -127,7 +129,7 @@ As atividades de execução incluem [atividades de movimentação de dados](#dat
 
 A seguinte tabela descreve as propriedades na definição de JSON da atividade:
 
-Marca | DESCRIÇÃO | Obrigatório
+Marca | Descrição | Obrigatório
 --- | ----------- | ---------
 name | Nome da atividade. Especifique um nome que represente a ação executada pela atividade. <br/><ul><li>Número máximo de caracteres: 55</li><li>Deve começar com uma letra, um número ou um sublinhado (\_)</li><li>Os seguintes caracteres não são permitidos: “.”, “+”, “?”, “/”, “<”,”>”,”*”,”%”,”&”,”:”,”\” | Sim</li></ul>
 description | Texto que descreve para que a atividade é usada | Sim
@@ -168,11 +170,11 @@ Políticas afetam o comportamento de tempo de execução de uma atividade, ofere
 }
 ```
 
-Nome JSON | DESCRIÇÃO | Valores Permitidos | Obrigatório
+Nome JSON | Descrição | Valores Permitidos | Necessário
 --------- | ----------- | -------------- | --------
-timeout | Especifica o tempo limite para a atividade ser executada. | Timespan | Não. O tempo limite padrão é 7 dias.
-retry | Número máximo de novas tentativas | Número inteiro | Não. O padrão é 0
-retryIntervalInSeconds | O intervalo entre tentativas de repetição em segundos | Número inteiro | Não. O padrão é de 30 segundos
+timeout | Especifica o tempo limite para a atividade ser executada. | Intervalo de tempo | Não. O tempo limite padrão é 7 dias.
+retry | Número máximo de novas tentativas | Inteiro | Não. O padrão é 0
+retryIntervalInSeconds | O intervalo entre tentativas de repetição em segundos | Inteiro | Não. O padrão é de 30 segundos
 secureOutput | Quando definido como true, a saída da atividade é considerada segura e não será registrada em log para monitoramento. | Boolean | Não. O padrão é falso.
 
 ### <a name="control-activity"></a>Atividade de controle
@@ -192,7 +194,7 @@ As atividades de controle têm a seguinte estrutura de nível superior:
 }
 ```
 
-Marca | DESCRIÇÃO | Obrigatório
+Marca | Descrição | Obrigatório
 --- | ----------- | --------
 name | Nome da atividade. Especifique um nome que represente a ação executada pela atividade.<br/><ul><li>Número máximo de caracteres: 55</li><li>Deve começar com uma letra, um número ou um sublinhado (\_)</li><li>Os seguintes caracteres não são permitidos: “.”, “+”, “?”, “/”, “<”,”>”,”*”,”%”,”&”,”:”,”\” | Sim</li><ul>
 description | Texto que descreve para que a atividade é usada | Sim

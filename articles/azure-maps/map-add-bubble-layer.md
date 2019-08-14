@@ -1,6 +1,6 @@
 ---
 title: Adicionar uma camada de bolha para o Azure Mapas | Microsoft Docs
-description: Como adicionar uma camada de bolha ao mapa em Javascript
+description: Como adicionar uma camada de bolha ao SDK da Web do Azure Maps.
 author: rbrundritt
 ms.author: richbrun
 ms.date: 07/29/2019
@@ -9,47 +9,65 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 516e4f35c88ae9c0e2d63e8a4ee40eb57c05ac29
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 5cc5dbdc89f629c09d47ef683b7ff7fff61d2f49
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68639046"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976569"
 ---
 # <a name="add-a-bubble-layer-to-a-map"></a>Adicionar uma camada de bolha a um mapa
 
-Este artigo mostra como você pode renderizar os dados de ponto de uma fonte de dados como uma camada de bolha em um mapa. As camadas de bolhas renderizam pontos como círculos no mapa com raio de pixel fixo. 
+Este artigo mostra como você pode renderizar dados de ponto de uma fonte de dados como uma camada de bolha em um mapa. As camadas de bolhas renderizam pontos como círculos no mapa com raio de pixel fixo. 
 
 > [!TIP]
 > As camadas de bolha por padrão processarão as coordenadas de todas as geometrias em uma fonte de dados. Para limitar a camada de modo que ela só processe os recursos de geometria de `filter` ponto, defina a propriedade `['==', ['geometry-type'], 'Point']` da `['any', ['==', ['geometry-type'], 'Point'], ['==', ['geometry-type'], 'MultiPoint']]` camada como ou se você quiser incluir recursos do MultiPoint também.
 
 ## <a name="add-a-bubble-layer"></a>Adicionar uma camada de bolha
 
+O código a seguir carrega uma matriz de pontos em uma fonte de dados e conecta-o a uma [camada de bolha](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.bubblelayer?view=azure-iot-typescript-latest). A camada de bolha recebe opções para renderizar o raio de cada bolha em cinco pixels, uma cor de preenchimento branca, uma cor de traço de azul e largura de traço de seis pixels. 
+
+```javascript
+//Add point locations.
+var points = [
+    new atlas.data.Point([-73.985708, 40.75773]),
+    new atlas.data.Point([-73.985600, 40.76542]),
+    new atlas.data.Point([-73.985550, 40.77900]),
+    new atlas.data.Point([-73.975550, 40.74859]),
+    new atlas.data.Point([-73.968900, 40.78859])
+];
+
+//Create a data source and add it to the map.
+var dataSource = new atlas.source.DataSource();
+map.sources.add(dataSource);
+
+//Add multiple points to the data source.
+dataSource.add(points);
+
+//Create a bubble layer to render the filled in area of the circle, and add it to the map.
+map.layers.add(new atlas.layer.BubbleLayer(dataSource, null, {
+    radius: 5,
+    strokeColor: "#4288f7",
+    strokeWidth: 6, 
+    color: "white" 
+}));
+```
+
+Abaixo está o exemplo de código completo em execução da funcionalidade acima.
+
+<br/>
+
 <iframe height='500' scrolling='no' title='DataSource BubbleLayer' src='//codepen.io/azuremaps/embed/mzqaKB/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Veja a Caneta <a href='https://codepen.io/azuremaps/pen/mzqaKB/'>DataSource BubbleLayer</a> pelos Azure Mapas (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) em <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-No código acima, o primeiro bloco do código constrói um objeto de mapa. Você pode ver [criar um mapa](./map-create.md) para obter instruções.
-
-No segundo bloco de código, uma matriz de objetos de [Ponto](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.point?view=azure-iot-typescript-latest) é definida e adicionada ao objeto do [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest).
-
-Uma [camada de bolha](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.bubblelayer?view=azure-iot-typescript-latest) renderiza dados baseados em ponto encapsulados na [fonte de dados](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) como círculos no mapa. O último bloco de código cria uma camada de bolha e adiciona-a ao mapa. Confira as propriedades de uma camada de bolha em [BubbleLayerOptions](/javascript/api/azure-maps-control/atlas.bubblelayeroptions).
-
-A matriz de objetos de Ponto, a fonte de dados e a camada de bolha são criados e adicionados ao mapa dentro da função [ouvinte de evento](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) para garantir que o círculo seja exibido depois de o mapa ser completamente carregado.
-
 ## <a name="show-labels-with-a-bubble-layer"></a>Mostrar rótulos de uma camada de bolha
+
+O código a seguir mostra como usar uma camada de bolha para renderizar um ponto no mapa e uma camada de símbolo para renderizar um rótulo. Para ocultar o ícone da camada de símbolo, defina a `image` propriedade das opções de ícone como `'none'`.
+
+<br/>
 
 <iframe height='500' scrolling='no' title='DataSource MultiLayer' src='//codepen.io/azuremaps/embed/rqbQXy/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Veja a Caneta <a href='https://codepen.io/azuremaps/pen/rqbQXy/'>DataSource MultiLayer</a> pelos Azure Mapas (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) em <a href='https://codepen.io'>CodePen</a>.
 </iframe>
-
-O código acima mostra como visualizar e rotular dados no mapa. O primeiro bloco de código acima constrói um objeto de mapa. Você pode ver [criar um mapa](./map-create.md) para obter instruções.
-
-O segundo bloco de código cria um objeto [point](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data.point?view=azure-iot-typescript-latest). Em seguida, ele cria um objeto de fonte de dados usando a classe [fonte de dados](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) e adiciona o ponto à fonte de dados.
-
-Uma [camada de bolha](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.bubblelayer?view=azure-iot-typescript-latest) renderiza dados baseados em ponto encapsulados na [fonte de dados](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) como círculos no mapa. O terceiro bloco de código cria uma camada de bolha e adiciona-a ao mapa. Confira as propriedades de uma camada de bolha em [BubbleLayerOptions](/javascript/api/azure-maps-control/atlas.bubblelayeroptions).
-
-Uma [camada de símbolo](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.symbollayer?view=azure-iot-typescript-latest) usa texto ou ícones para renderizar dados com base em ponto encapsulados na [DataSource](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.source.datasource?view=azure-iot-typescript-latest) como símbolos no mapa. O último bloco de código cria e adiciona uma camada de símbolo ao mapa que renderiza o rótulo de texto para a bolha. Veja as propriedades de uma camada de símbolo em [SymbolLayerOptions](/javascript/api/azure-maps-control/atlas.symbollayeroptions).
-
-A fonte de dados e as camadas são criadas e adicionados ao mapa dentro da função [ouvinte de evento](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#events) para garantir que os dados sejam exibidos após o mapa ser totalmente carregado.
 
 ## <a name="customize-a-bubble-layer"></a>Personalizar uma camada de bolha
 
@@ -73,7 +91,13 @@ Saiba mais sobre as classes e métodos usados neste artigo:
 Consulte os artigos a seguir para obter mais exemplos de código para adicionar aos seus mapas:
 
 > [!div class="nextstepaction"]
+> [Criar uma fonte de dados](create-data-source-web-sdk.md)
+
+> [!div class="nextstepaction"]
 > [Adicionar uma camada de símbolo](map-add-pin.md)
 
 > [!div class="nextstepaction"]
 > [Usar expressões de estilo controladas por dados](data-driven-style-expressions-web-sdk.md)
+
+> [!div class="nextstepaction"]
+> [Exemplos de código](https://docs.microsoft.com/samples/browse/?products=azure-maps)

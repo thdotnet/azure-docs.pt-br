@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 04/26/2019
 ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8163b2261601b701913e07d703f5db0ac6fa7c0
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 13c9003baaca11dce5a2192a8183674faddfa6dc
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68688083"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967290"
 ---
 # <a name="assign-users-and-groups-to-an-application-in-azure-active-directory"></a>Atribuir usuários e grupos a um aplicativo no Azure Active Directory
 Este artigo mostra como atribuir usuários ou grupos a um aplicativo no Azure AD (Azure Active Directory). Primeiro os usuários devem ser atribuídos a um aplicativo para que um administrador possa conceder a eles acesso para fazer o seguinte:
@@ -82,7 +82,7 @@ Para atribuir um ou mais usuários diretamente a um aplicativo, siga as etapas a
 
 15. Clique no botão **Atribuir** para atribuir o aplicativo aos usuários selecionados.
 
-Após um breve período, os usuários que você selecionou poderão iniciar esses aplicativos usando os métodos descritos na seção de descrição da solução.
+Após um curto período de tempo, os usuários selecionados poderão iniciar esses aplicativos usando os métodos descritos na seção Descrição da solução.
 
 ## <a name="assign-groups"></a>Atribuir grupos
 
@@ -120,7 +120,7 @@ Para atribuir um ou mais usuários diretamente a um aplicativo, siga as etapas a
 
 15. Clique no botão **Atribuir** para atribuir o aplicativo aos grupos selecionados.
 
-Após um breve período, os usuários nos grupos que você selecionou poderão iniciar esses aplicativos usando os métodos descritos na seção de descrição da solução. Se esses grupos forem dinâmicos, pode haver algum atraso de processamento adicional nessas atribuições que aparecem para os usuários nesses grupos atribuídos.
+Após um curto período de tempo, os usuários dentro dos grupos que você selecionou poderão iniciar esses aplicativos usando os métodos descritos na seção Descrição da solução. Se esses grupos forem dinâmicos, pode haver algum atraso de processamento adicional nessas atribuições que aparecem para os usuários nesses grupos atribuídos.
 
 ## <a name="enable-self-service-application-access"></a>Habilitar acesso a aplicativo de autoatendimento
 

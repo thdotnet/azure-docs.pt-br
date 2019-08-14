@@ -7,12 +7,12 @@ ms.date: 1/31/2017
 ms.topic: article
 ms.service: azure
 ms.assetid: 58a0ca9d-86d2-469a-9714-3b8320c33cf5
-ms.openlocfilehash: d98d0637c6d520193b11f4267c59016772ef063a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3cf17f6e391608af9d17591a81c579a1db779a6a
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60809926"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967804"
 ---
 # <a name="azure-role-based-access-control-rbac-to-control-access-rights-to-create-and-manage-support-requests"></a>O Controle de Acesso Baseado em Função (RBAC) do Azure para controlar os direitos de acesso para criação e gerenciamento de solicitações de suporte
 
@@ -20,7 +20,7 @@ O [RBAC (Controle de Acesso Baseado em Função)](https://docs.microsoft.com/azu
 A criação de solicitação de suporte no portal do Azure [portal.azure.com](https://portal.azure.com) usa o modelo RBAC do Azure para definir quem pode criar e gerenciar solicitações de suporte.
 O acesso é concedido ao atribuir a função RBAC apropriada a usuários, grupos e aplicativos em determinado escopo, que pode ser uma assinatura, um recurso ou um grupo de recursos.
 
-Vejamos um exemplo: Como um proprietário do grupo de recursos com permissões de leitura no escopo da assinatura, você pode gerenciar todos os recursos no grupo de recursos, como sites, máquinas virtuais e sub-redes.
+Vamos pegar um exemplo: Como proprietário de um grupo de recursos com permissões de leitura no escopo da assinatura, você pode gerenciar todos os recursos no grupo de recursos, como sites, máquinas virtuais e sub-redes.
 No entanto, se tentar criar uma solicitação de suporte relativa ao recurso de máquina virtual, você vai encontrar o seguinte erro
 
 ![Erro de assinatura](./media/create-manage-support-requests-using-access-control/subscription-error.png)
@@ -29,7 +29,7 @@ No gerenciamento de solicitações de suporte, você precisa de permissão de gr
 
 O seguinte artigo explica como você pode usar o Controle de Acesso Baseado em Função (RBAC) do Azure para criar e gerenciar solicitações de suporte no portal do Azure.
 
-## <a name="getting-started"></a>Introdução
+## <a name="getting-started"></a>Guia de Introdução
 
 Usando o exemplo acima, será possível criar uma solicitação de suporte para seu recurso se uma função RBAC personalizada na assinatura tiver sido atribuída a você pelo proprietário da assinatura.
 É possível criar [funções RBAC personalizadas](https://azure.microsoft.com/documentation/articles/role-based-access-control-custom-roles/) usando o Azure PowerShell, a interface de linha de comando (CLI) do Azure e a API REST.
@@ -65,7 +65,7 @@ Vejamos um exemplo – você é o proprietário da assinatura "Assinatura MSDN d
 Joe, seu colega, é proprietário de recursos em alguns grupos de recursos dessa assinatura e tem permissão de leitura na assinatura.
 Você deseja conceder a Joe o acesso necessário à capacidade de criar e gerenciar tíquetes de suporte para os recursos dessa assinatura.
 
-1. A primeira etapa é ir para a assinatura e ver uma lista de usuários em "Configurações". Clique no usuário Joe, que tem acesso de leitura na assinatura, para atribuir uma nova função personalizada para ele.
+1. A primeira etapa é ir para a assinatura. Em **configurações**, você verá uma lista de usuários. Selecione o usuário Joe, que tem acesso de leitor na assinatura. Vamos atribuir uma nova função personalizada para Joe.
 
     ![Adicionar função](./media/create-manage-support-requests-using-access-control/add-role.png)
 
@@ -85,7 +85,7 @@ Você deseja conceder a Joe o acesso necessário à capacidade de criar e gerenc
 
     ![Usuário adicionado](./media/create-manage-support-requests-using-access-control/user-added.png)
 
-    Quando Joe fizer logon no portal, ele verá a assinatura à qual foi adicionado.
+    Quando Joe entra no portal, Joe vê a assinatura à qual Joe foi adicionado.
 
 7. Joe clica em "Nova solicitação de suporte" na folha "Ajuda e suporte" e pode criar solicitações de suporte para "Visual Studio Ultimate com MSDN"
 
@@ -96,15 +96,15 @@ Você deseja conceder a Joe o acesso necessário à capacidade de criar e gerenc
 ## <a name="remove-support-request-access-in-the-azure-portal"></a>Remover o acesso a solicitação de suporte no portal do Azure
 
 Assim como é possível conceder acesso a um usuário para criar e gerenciar solicitações de suporte, também é possível removê-lo.
-Para remover a capacidade de criar e gerenciar solicitações de suporte, vá para a assinatura, clique em "Configurações" e clique no usuário (nesse caso, Joe).
-Clique com o botão direito no nome da função "Colaborador de Solicitação de Suporte" e clique em "Remover"
+
+Para remover a capacidade de criar e gerenciar solicitações de suporte, vá para a assinatura, clique em "Configurações" e clique no usuário (nesse caso, Joe). Clique com o botão direito no nome da função "Colaborador de Solicitação de Suporte" e clique em "Remover"
 
 ![Remover acesso a solicitação de suporte](./media/create-manage-support-requests-using-access-control/remove-support-request-access.png)
 
-Quando Joe faz logon no portal e tenta criar uma solicitação de suporte, ele encontra o seguinte erro
+Quando Joe fizer logon no portal e tentar criar uma solicitação de suporte, Joe encontrará o seguinte erro:
 
 ![Erro de assinatura-2](./media/create-manage-support-requests-using-access-control/subscription-error-2.png)
 
-Joe não conseguirá ver as solicitações suporte quando clicar em "Todas as solicitações de suporte"
+Joe não pode ver nenhuma solicitação de suporte quando Joe seleciona "todas as solicitações de suporte"
 
 ![exibição de detalhes do caso-2](./media/create-manage-support-requests-using-access-control/case-details-view-2.png)

@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 11/17/2018
 ms.author: pabutler
-ms.openlocfilehash: fa0a88ce3f74c20ab36931a6a78f8265bdb9d8be
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 98d33dd1aad726d4da8499006166dfd2c043378f
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876248"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977161"
 ---
 # <a name="azure-partner-customer-usage-attribution"></a>Atribuição de uso do cliente do parceiro do Azure
 
@@ -123,7 +123,7 @@ Quando você usa a CLI do Azure para anexar seu GUID, defina a variável de ambi
 ```
 export AZURE_HTTP_USER_AGENT='pid-eb7927c8-dd66-43e1-b0cf-c346a422063'
 ```
-Para obter mais informações, consulte [SDK do Azure para linguagem go](https://docs.microsoft.com/go/azure/).
+Para obter mais informações, consulte [SDK do Azure para linguagem go](https://docs.microsoft.com/azure/go/).
 
 ## <a name="use-terraform"></a>Usar Terraform
 
@@ -265,7 +265,7 @@ Quando você implanta esse modelo, a Microsoft consegue identificar a instalaç�
 
 Quando você implanta o software \<PARTNER>, a Microsoft pode identificar a instalação do software \< PARTNER> com os recursos do Azure implantados. Microsoft é capaz de correlacionar os recursos do Azure que são usados para dar suporte ao software. A Microsoft coleta essas informações para fornecer as melhores experiências com seus produtos e operar seus negócios. Os dados são coletados e regidos pelas políticas de privacidade da Microsoft, que podem ser encontradas em https://www.microsoft.com/trustcenter.
 
-## <a name="get-support"></a>Obtenha suporte
+## <a name="get-support"></a>Obter suporte
 
 Há dois canais de suporte, dependendo dos problemas que você está enfrentando.
 

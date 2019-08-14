@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 53bc9f14b91bafd69d3c67745f6b981f4faea991
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: c8e3f16b939d05a4c055fba3a9f1ab5e47e54070
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68881657"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976588"
 ---
 # <a name="add-a-shape-to-a-map-using-azure-maps-android-sdk"></a>Adicionar uma forma a um mapa usando o Azure Maps SDK do Android
 
@@ -355,7 +355,13 @@ Se você executar seu aplicativo agora, você deverá ver um polígono no mapa, 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Consulte o artigo a seguir para saber mais sobre maneiras de definir estilos de mapa
+Para adicionar mais dados ao seu mapa:
+
+> [!div class="nextstepaction"]
+> [Adicionar uma camada de símbolo](how-to-add-symbol-to-android-map.md)
 
 > [!div class="nextstepaction"]
 > [Adicionar uma camada de bloco](how-to-add-tile-layer-android-map.md)
+
+> [!div class="nextstepaction"]
+> [Exibir informações do recurso](display-feature-information-android.md)

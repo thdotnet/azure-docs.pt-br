@@ -14,14 +14,17 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 07/10/2017
 ms.author: timlt
-ms.openlocfilehash: 5a3800cfdf36bdc2e042eec860310a508204ba11
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 2a6650cac975c575415a329361da00d4fbfcaa9d
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876446"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68965109"
 ---
 # <a name="storsimple-8000-series-a-hybrid-cloud-storage-solution"></a>Série 8000 StorSimple: uma solução de armazenamento em nuvem híbrida
+
+[!INCLUDE [storsimple-8000-eol-banner](../../includes/storsimple-8000-eol-banner.md)]
+
 ## <a name="overview"></a>Visão geral
 Bem-vindo ao Microsoft Azure StorSimple, uma solução de armazenamento integrado que gerencia as tarefas de armazenamento entre os dispositivos local e o armazenamento em nuvem do Microsoft Azure. O StorSimple é uma solução de rede de área de armazenamento (SAN) eficiente, econômica e facilmente gerenciável que elimina vários problemas e despesas associados à proteção de dados e ao armazenamento empresarial. Ele usa o dispositivo proprietário StorSimple 8000 series, é integrado aos serviços de nuvem e oferece um conjunto de ferramentas de gerenciamento para proporcionar uma exibição perfeita de todo o armazenamento empresarial, incluindo o armazenamento em nuvem. (As informações de implantação do StorSimple publicadas no site do Microsoft Azure se aplicam apenas aos dispositivos StorSimple 8000 series. Se você estiver usando um dispositivo StorSimple 5000/7000 series, acesse [Ajuda do StorSimple](http://onlinehelp.storsimple.com/)).
 
@@ -96,7 +99,7 @@ O Dispositivo de Nuvem StorSimple está disponível em dois modelos: o dispositi
 
 Para obter mais informações sobre o Dispositivo de Nuvem StorSimple, acesse [Implantar e gerenciar um Dispositivo de Nuvem StorSimple no Azure](storsimple-8000-cloud-appliance-u2.md).
 
-## <a name="storsimple-device-manager-service"></a>Serviço do Gerenciador de Dispositivos StorSimple
+## <a name="storsimple-device-manager-service"></a>Serviço de Gerenciador de Dispositivos do StorSimple
 O Microsoft Azure StorSimple fornece uma interface do usuário baseada na Web (o serviço do Gerenciador de Dispositivos do StorSimple) que permite gerenciar de modo centralizado o data center e o armazenamento em nuvem. Você pode usar o serviço Gerenciador de Dispositivos StorSimple para executar as seguintes tarefas:
 
 * Definir configurações do sistema para dispositivos StorSimple.
@@ -205,7 +208,7 @@ A eliminação de duplicação reduz a quantidade geral de dados armazenados, el
 ## <a name="storsimple-workload-summary"></a>Resumo de carga de trabalho do StorSimple
 Confira na tabela abaixo um resumo das cargas de trabalho do StorSimple com suporte.
 
-| Cenário | Carga de trabalho | Com suporte | Restrições | Versão |
+| Cenário | Carga de Trabalho | Com suporte | Restrições | Versão |
 | --- | --- | --- | --- | --- |
 | Colaboração |Compartilhamento de arquivos |Sim | |Todas as versões |
 | Colaboração |Compartilhamento de arquivos distribuído |Sim | |Todas as versões |
@@ -232,9 +235,9 @@ As cargas de trabalho a seguir não têm suporte de dispositivos da série StorS
 
 Veja a seguir uma lista dos componentes da infraestrutura com suporte do StorSimple.
 
-| Cenário | Carga de trabalho | Com suporte | Restrições | Versão |
+| Cenário | Carga de Trabalho | Com suporte | Restrições | Versão |
 | --- | --- | --- | --- | --- |
-| Geral |ExpressRoute |Sim | |Todas as versões |
+| Geral |Rota Expressa |Sim | |Todas as versões |
 | Geral |DataCore FC |Sim* |Suporte com DataCore SANsymphony |Todas as versões |
 | Geral |DFSR |Sim* |Com suporte somente com volumes afixados localmente |Todas as versões |
 | Geral |Indexação |Sim* |Para volumes em camadas, somente a indexação de metadados tem suporte (sem dados).<br>Para volumes afixados localmente, a indexação completa tem suporte. |Todas as versões |
@@ -255,7 +258,7 @@ A seguir está uma lista de outros aplicativos de software usados com o StorSimp
 Antes de implantar sua solução de Microsoft Azure StorSimple, recomendamos que você revise os seguintes termos e definições.
 
 ### <a name="key-terms-and-definitions"></a>Principais termos e definições
-| Termo (sigla ou abreviação) | DESCRIÇÃO |
+| Termo (sigla ou abreviação) | Descrição |
 | --- | --- |
 | Registro de controle de acesso (ACR) |Um registro associado a um volume no dispositivo Microsoft Azure StorSimple que determina quais hosts podem se conectar a ele. A determinação se baseia no iSCSI IQN (nome qualificado) dos hosts (contidos no ACR) que estão se conectando ao dispositivo StorSimple. |
 | AES-256 |Um algoritmo de AES (padrão de criptografia avançado) de 256 bits para criptografar dados enquanto eles se movem de e para a nuvem. |
@@ -297,9 +300,9 @@ Antes de implantar sua solução de Microsoft Azure StorSimple, recomendamos que
 | chave de registro do serviço |Uma chave que ajuda a registrar o dispositivo StorSimple com o serviço Gerenciador de Dispositivos StorSimple para que ele apareça no portal do Azure para outras ações de gerenciamento. |
 | Small Computer System Interface (SCSI) |Conjunto de padrões para conectar computadores fisicamente e transmitir dados entre eles. |
 | unidade de estado sólido (SSD) |Disco que não contém peças móveis; por exemplo, uma unidade flash. |
-| do Azure |Conjunto de credenciais de acesso vinculadas à sua conta de armazenamento para determinado provedor de serviço de nuvem. |
+| Conta de Armazenamento |Conjunto de credenciais de acesso vinculadas à sua conta de armazenamento para determinado provedor de serviço de nuvem. |
 | StorSimple Adapter for SharePoint |Componente do Microsoft Azure StorSimple que estende transparentemente a proteção de dados e o armazenamento do StorSimple para farms de servidores do SharePoint. |
-| Serviço do Gerenciador de Dispositivos StorSimple |Uma extensão do portal do Azure que permite que você gerencie seus dispositivos locais e virtuais do Azure StorSimple. |
+| Serviço de Gerenciador de Dispositivos do StorSimple |Uma extensão do portal do Azure que permite que você gerencie seus dispositivos locais e virtuais do Azure StorSimple. |
 | StorSimple Snapshot Manager |Snap-in do console de gerenciamento Microsoft (MMC)  para gerenciar operações de backup e restauração no Microsoft Azure StorSimple. |
 | fazer backup |Recurso que permite ao usuário fazer um backup interativo de um volume. É uma maneira alternativa de fazer o backup manual de um volume em vez de fazer um backup automatizado por meio de uma política definida. |
 | Provisionamento dinâmico |Método de otimizar a eficiência com a qual o espaço de armazenamento disponível é usado em sistemas de armazenamento. No provisionamento dinâmico, o armazenamento é alocado entre vários usuários com base no espaço mínimo exigido por cada usuário em determinado momento. Veja também *provisionamento estático*. |

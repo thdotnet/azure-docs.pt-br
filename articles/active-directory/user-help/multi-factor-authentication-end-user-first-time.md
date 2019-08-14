@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2df72d03bae8987de4998276a0be0f3ce1ec0333
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 75bc067bfe8a98ef2337f368243b3221be1677d6
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65230050"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68949901"
 ---
 # <a name="set-up-my-account-for-two-step-verification"></a>Configurar minha conta para verificação em duas etapas
 A verificação em duas etapas é uma etapa adicional de segurança que ajuda a proteger sua conta, tornando mais difícil para outras pessoas invadi-la. Se você está lendo este artigo, é provável que tenha um email de seu administrador do trabalho ou escola sobre Autenticação Multifator. Ou talvez você tenha tentado entrar e recebido uma mensagem pedindo para configurar uma verificação de segurança adicional. Se esse for o caso, **você não poderá entrar até concluir o processo de registro automático**.
@@ -34,7 +34,7 @@ Quando o suporte da sua empresa exigir que você comece a usar a verificação e
 
 Para começar, selecione **Configurar agora.**
 
-Se você não vir uma tela assim ao entrar, siga as instruções em [Gerenciar as configurações de verificação em duas etapas](multi-factor-authentication-end-user-manage-settings.md#where-to-find-the-settings-page) para localizar a página de configurações, em que você pode gerenciar as opções de verificação.
+Se você não vir uma tela assim ao entrar, siga as instruções em [Gerenciar as configurações de verificação em duas etapas](multi-factor-authentication-end-user-manage-settings.md#using-the-additional-security-verification-page) para localizar a página de configurações, em que você pode gerenciar as opções de verificação.
 
 ## <a name="decide-how-you-want-to-verify-your-sign-ins"></a>Decida como você deseja verificar suas entradas
 
@@ -69,7 +69,7 @@ Usar esse método requer que você instale um aplicativo autenticador em seu tel
    ![Caixa para inserir um PIN](./media/multi-factor-authentication-end-user-first-time/scan3.png)
 
 8. Após digitar o PIN, selecione **Fechar**. Nesse ponto, sua verificação deve ter sido bem-sucedida.
-9. É recomendável inserir o número de seu telefone celular caso você perca acesso ao aplicativo móvel. Especifique seu país/região na lista suspensa e insira seu número de telefone celular na caixa ao lado do nome de país/região. Selecione **Avançar**.
+9. É recomendável inserir o número de seu telefone celular caso você perca acesso ao aplicativo móvel. Especifique seu país/região na lista suspensa e insira seu número de telefone celular na caixa ao lado do nome do país/região. Selecione **Avançar**.
 10. Neste ponto, você precisará configurar senhas de aplicativo para aplicativos que não são navegador assim como o Outlook 2010 ou anterior, ou o aplicativo de email nativo em dispositivos da Apple. Isso ocorre porque alguns aplicativos não dão suporte à verificação em duas etapas. Se você não usar esses aplicativos, clique em **Concluído** e ignore o restante das etapas.
 11. Se estiver usando esses aplicativos, copie a senha de aplicativo fornecida e cole-a no aplicativo no lugar de sua senha regular. Você pode usar a mesma senha de aplicativo para vários aplicativos. Para obter mais informações, [ajuda com senhas de aplicativo].
 12. Clique em **Concluído**.

@@ -10,20 +10,20 @@ ms.topic: conceptual
 ms.date: 08/03/2018
 ms.author: dacurwin
 ms.assetid: b234533e-ac51-4482-9452-d97444f98b38
-ms.openlocfilehash: a8ba5727dea214343e7696ff3193aba13922be03
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: b10283c2946d01101b941d53b6bf03be3a12e99e
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689464"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954922"
 ---
 # <a name="track-backup-and-restore-jobs-using-rest-api"></a>Acompanhe as tarefas de backup e restauração usando a API REST
 
-O serviço de Backup do Azure aciona tarefas executadas em segundo plano em vários cenários, como disparar o backup, restaurar operações, desativar o backup. Esses trabalhos podem ser rastreados usando seus IDs.
+O serviço de backup do Azure dispara trabalhos que são executados em segundo plano em vários cenários, como o disparo de backup, operações de restauração, desabilitando o backup. Esses trabalhos podem ser rastreados usando seus IDs.
 
 ## <a name="fetch-job-information-from-operations"></a>Buscar informações de trabalho de operações
 
-Uma operação como o acionamento de backup sempre retornará um jobID. Por exemplo: A resposta final de uma [operação de API REST de backup de gatilho](backup-azure-arm-userestapi-backupazurevms.md#example-responses-3) é a seguinte:
+Uma operação como o acionamento de backup sempre retornará um jobID. Por exemplo:  A resposta final de uma [operação de API REST de backup de gatilho](backup-azure-arm-userestapi-backupazurevms.md#example-responses-3) é a seguinte:
 
 ```http
 {

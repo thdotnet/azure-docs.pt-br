@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: d7fb9fadcfac0b57fb98dc54f40ff0d2f07c6827
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: eb4f0e26d1795abc3392e9736e71093fab79aae2
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68728402"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967939"
 ---
 # <a name="security-frame-authentication--mitigations"></a>Quadro de segurança: Autenticação | Mitigações 
 
@@ -435,7 +435,7 @@ Observe que, para testar a eficácia dessa configuração, faça logon no aplica
 | **Tecnologias aplicáveis** | Genérico |
 | **Atributos**              | N/D  |
 | **Referências**              | [ADAL](https://azure.microsoft.com/documentation/articles/active-directory-authentication-libraries/) |
-| **Etapas** | <p>A Biblioteca de autenticação do AD do Azure (ADAL) permite que os desenvolvedores de aplicativo cliente autentiquem facilmente os usuários no Active Directory (AD) local ou em nuvem e daí obtenham tokens de acesso para proteger chamadas de API.</p><p>A ADAL tem muitos recursos que tornam a autenticação mais fácil para os desenvolvedores, como o suporte assíncrono, um cache de token configurável que armazena os tokens de acesso e de atualização, atualização automática de token quando um token de acesso expira e um token de atualização está disponível, e muito mais.</p><p>Controlando a maior parte da complexidade, a ADAL pode ajudar o desenvolvedor a se concentrar na lógica de negócios em seus aplicativos e a proteger facilmente os recursos sem ser um especialista em segurança. Bibliotecas separadas estão disponíveis para .NET, JavaScript (cliente e Node.js), iOS, Android e Java.</p>|
+| **Etapas** | <p>A Biblioteca de autenticação do AD do Azure (ADAL) permite que os desenvolvedores de aplicativo cliente autentiquem facilmente os usuários no Active Directory (AD) local ou em nuvem e daí obtenham tokens de acesso para proteger chamadas de API.</p><p>A ADAL tem muitos recursos que tornam a autenticação mais fácil para os desenvolvedores, como o suporte assíncrono, um cache de token configurável que armazena os tokens de acesso e de atualização, atualização automática de token quando um token de acesso expira e um token de atualização está disponível, e muito mais.</p><p>Controlando a maior parte da complexidade, a ADAL pode ajudar o desenvolvedor a se concentrar na lógica de negócios em seus aplicativos e a proteger facilmente os recursos sem ser um especialista em segurança. Bibliotecas separadas estão disponíveis para .NET, JavaScript (cliente e node. js), Python, iOS, Android e Java.</p>|
 
 ## <a id="authn-devices-field"></a>Autentique dispositivos que se conectam ao Gateway de Campo
 

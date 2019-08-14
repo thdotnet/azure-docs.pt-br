@@ -7,12 +7,12 @@ ms.service: storage
 ms.topic: article
 ms.date: 07/10/2019
 ms.author: tamram
-ms.openlocfilehash: bd745c54fb659729b1e31f9975b2e4e0b6a97a83
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: 35883b0c34503ca16f2b10fc061f94af514e10a9
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68235243"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68986921"
 ---
 # <a name="manage-container-properties-and-metadata-with-net"></a>Gerenciar Propriedades de contêiner e metadados com o .NET
 
@@ -24,7 +24,7 @@ Os contêineres de blob dão suporte a propriedades do sistema e metadados defin
 
 - **Metadados definidos pelo usuário**: Os metadados definidos pelo usuário consistem em um ou mais pares de nome-valor que você especifica para um recurso de armazenamento de BLOBs. Você pode usar metadados para armazenar valores adicionais com o recurso. Os valores de metadados são apenas para suas próprias finalidades e não afetam o comportamento do recurso.
 
-A recuperação de valores de propriedade e metadados para um recurso de armazenamento de BLOBs é um processo de duas etapas. Antes de poder ler esses valores, será necessário buscá-los explicitamente, chamando o método **FetchAttributes** ou **FetchAttributesAsync**. A exceção a essa regra é que os  métodos Exists e **ExistsAsync** chamam o  método fetchattributes apropriado nos bastidores. Ao chamar um desses métodos, você também não precisa chamar **fetchattributes**.
+A recuperação de valores de propriedade e metadados para um recurso de armazenamento de BLOBs é um processo de duas etapas. Antes de poder ler esses valores, será necessário buscá-los explicitamente, chamando o método **FetchAttributes** ou **FetchAttributesAsync**. A exceção a essa regra é que os métodos Exists e **ExistsAsync** chamam o método fetchattributes apropriado nos bastidores. Ao chamar um desses métodos, você também não precisa chamar **fetchattributes**.
 
 > [!IMPORTANT]
 > Se você achar que a propriedade ou os valores de metadados de um recurso de armazenamento não foram preenchidos, verifique se o código chama o método **FetchAttributes** ou **FetchAttributesAsync**.
@@ -125,7 +125,7 @@ public static async Task ReadContainerMetadataAsync(CloudBlobContainer container
 }
 ```
 
-[!INCLUDE [storage-blob-dotnet-resources](../../../includes/storage-blob-dotnet-resources.md)]
+[!INCLUDE [storage-blob-dotnet-resources-include](../../../includes/storage-blob-dotnet-resources-include.md)]
 
 ## <a name="see-also"></a>Consulte também
 

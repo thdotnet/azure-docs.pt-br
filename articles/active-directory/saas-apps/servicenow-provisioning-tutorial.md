@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/26/2018
+ms.date: 08/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 19b3e4cc5ba4bc0173721947bd1e1a680ca7b3a3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 85783339c7d1348f598f924f14d9b40cd0c8cd22
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60869820"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967177"
 ---
 # <a name="tutorial-configure-servicenow-for-automatic-user-provisioning-with-azure-active-directory"></a>Tutorial: Configurar o ServiceNow para provisionamento automático de usuários com o Azure Active Directory
 
@@ -44,8 +44,7 @@ Para configurar a integração do Azure AD ao ServiceNow, você precisará dos s
 Para testar as etapas deste tutorial, você deve seguir estas recomendações:
 
 - Não use o ambiente de produção, a menos que seja necessário.
-- Se não tiver um ambiente de avaliação do Azure AD, você pode [obter uma versão de avaliação de um mês](https://azure.microsoft.com/pricing/free-trial/).
-
+- Se você não tiver um ambiente de avaliação do Azure AD, poderá obter uma [conta gratuita](https://azure.microsoft.com/free/).
 
 ## <a name="assigning-users-to-servicenow"></a>Atribuir usuários ao ServiceNow
 
@@ -57,6 +56,7 @@ Antes de configurar e habilitar o serviço de provisionamento, você precisa dec
 > [!IMPORTANT]
 >*   Recomendamos a atribuição de um único usuário do Azure AD ao ServiceNow para testar a configuração de provisionamento. Outros usuários e/ou grupos podem ser atribuídos mais tarde.
 >*   Ao atribuir um usuário ao ServiceNow, você deve selecionar uma função de usuário válida. A função de "Acesso Padrão" não funciona para provisionamento.
+>*   Para obter mais informações sobre como criar e configurar funções no Azure AD, consulte este [link](https://docs.microsoft.com/azure/active-directory/develop/active-directory-enterprise-app-role-management)
 
 ## <a name="enable-automated-user-provisioning"></a>Habilitar o provisionamento automatizado de usuários
 

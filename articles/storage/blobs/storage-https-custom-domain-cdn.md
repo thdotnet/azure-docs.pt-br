@@ -8,12 +8,12 @@ ms.date: 06/26/2018
 ms.author: normesta
 ms.reviewer: dineshm
 ms.subservice: blobs
-ms.openlocfilehash: 3ad599182191e41ea43d38260692a7ab46e1af6f
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: f3386d04cd3316b38a094524d0d5d4f3c5ab36bb
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68845005"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68986853"
 ---
 # <a name="use-azure-cdn-to-access-blobs-with-custom-domains-over-https"></a>Usar a CDN do Azure para acessar blobs com domínios personalizados por HTTPS
 
@@ -40,7 +40,7 @@ Para habilitar HTTPS do ponto de extremidade do armazenamento de Blobs personali
 
 ## <a name="shared-access-signatures"></a>Assinaturas de acesso compartilhado
 
-Por padrão, os pontos de extremidade de armazenamento de Blobs não permitem acesso de leitura anônimo. Se o ponto de extremidade do armazenamento de Blobs estiver configurado para não permitir o acesso anônimo de leitura, forneça um token de [assinatura de acesso compartilhado](../common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) em cada solicitação que fizer ao domínio personalizado. Para obter mais informações, confira [Gerenciar acesso anônimo de leitura aos contêineres e blobs](storage-manage-access-to-resources.md).
+Por padrão, os pontos de extremidade de armazenamento de Blobs não permitem acesso de leitura anônimo. Se o ponto de extremidade do armazenamento de Blobs estiver configurado para não permitir o acesso anônimo de leitura, forneça um token de [assinatura de acesso compartilhado](../common/storage-sas-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) em cada solicitação que fizer ao domínio personalizado. Para obter mais informações, confira [Gerenciar acesso anônimo de leitura aos contêineres e blobs](storage-manage-access-to-resources.md).
 
 A CDN do Azure não respeita nenhuma restrição adicionada ao token de assinatura de acesso compartilhado. Por exemplo, todos os tokens de assinatura de acesso compartilhado expiram. Você ainda pode acessar o conteúdo com uma assinatura de acesso compartilhado expirada até que esse conteúdo seja limpo dos nós de borda da CDN do Azure. Você pode controlar por quanto tempo os dados são armazenados em cache na CDN do Azure definindo o cabeçalho de resposta do cache. Para saber como, consulte [Gerenciar a expiração dos blobs de Armazenamento do Microsoft Azure na CDN do Azure](../../cdn/cdn-manage-expiration-of-blob-content.md).
 

@@ -14,14 +14,16 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 05/18/2018
 ms.author: alkohli
-ms.openlocfilehash: 734b0cf9373ea98ab33c06b45ad53b46a3355dd6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 31c432b884ce92c508dd7f893c12ba13acff28e8
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62117018"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68963524"
 ---
 # <a name="storsimple-security-and-data-protection"></a>Proteção de dados e segurança de StorSimple
+
+[!INCLUDE [storsimple-8000-eol-banner](../../includes/storsimple-8000-eol-banner.md)]
 
 ## <a name="overview"></a>Visão geral
 
@@ -198,7 +200,7 @@ O StorSimple usa os seguintes algoritmos de criptografia para proteger os dados 
 
 | Algoritmo | Comprimento da chave | Aplicativos/protocolos/comentários |
 | --- | --- | --- |
-| RSA |2\.048 |A RSA PKCS 1 v1.5 é usada pelo portal do Azure para criptografar dados de configuração enviados ao dispositivo: por exemplo, credenciais da conta de armazenamento, configuração do dispositivo StorSimple e chaves de criptografia de armazenamento em nuvem. |
+| RSA |2048 |A RSA PKCS 1 v1.5 é usada pelo portal do Azure para criptografar dados de configuração enviados ao dispositivo: por exemplo, credenciais da conta de armazenamento, configuração do dispositivo StorSimple e chaves de criptografia de armazenamento em nuvem. |
 | AES |256 |O AES com CBC é usado para criptografar a parte pública da chave de criptografia de dados de serviço antes de ela ser enviada para o portal do Azure por meio do dispositivo StorSimple. Também é usado pelo dispositivo StorSimple para criptografar os dados antes sejam enviados para a conta de armazenamento em nuvem. |
 
 ## <a name="storsimple-cloud-appliance-security"></a>Segurança do Dispositivo de Nuvem StorSimple
@@ -236,7 +238,7 @@ A seguir estão algumas perguntas e respostas sobre segurança e o Microsoft Azu
 
 **P:** Perdi minha chave de criptografia de dados de serviço. O que devo fazer?
 
-**R:** Contatar Suporte da Microsoft Eles podem fazer logon em uma sessão de suporte no seu dispositivo e ajudar você a recuperar a chave (contanto que pelo menos um dispositivo esteja online). Imediatamente depois de obter a chave de criptografia de dados de serviço, você deve alterá-la para garantir que a nova chave seja conhecida apenas por você. Para obter instruções, vá para:
+**R:** Contate o Suporte da Microsoft. Eles podem fazer logon em uma sessão de suporte no seu dispositivo e ajudar você a recuperar a chave (contanto que pelo menos um dispositivo esteja online). Imediatamente depois de obter a chave de criptografia de dados de serviço, você deve alterá-la para garantir que a nova chave seja conhecida apenas por você. Para obter instruções, vá para:
 
 * [Alterar a chave de criptografia de dados do serviço](storsimple-8000-manage-service.md#change-the-service-data-encryption-key)
 
