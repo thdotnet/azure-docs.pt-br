@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 07/02/2019
+ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: 5a54892c1d6e05e27e349e519d41ebd937ff64c7
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: 30bad3dd519d622d7e224da7bd53e7c6625014f6
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67509209"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68966469"
 ---
 # <a name="copy-data-from-an-odata-source-by-using-azure-data-factory"></a>Copiar dados de uma fonte OData usando o Azure Data Factory
 
@@ -36,6 +36,10 @@ Especificamente, este conector OData dá suporte:
 - OData versão 3.0 e 4.0.
 - Cópia de dados usando uma das seguintes autenticações: **Anônima**, **Básica**, **Windows**, **entidade de serviço do AAD** e **identidades gerenciadas para recursos do Azure**.
 
+## <a name="prerequisites"></a>Pré-requisitos
+
+[!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
+
 ## <a name="get-started"></a>Introdução
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
@@ -46,7 +50,7 @@ As seções a seguir fornecem detalhes sobre propriedades que você pode usar pa
 
 As propriedades a seguir são compatíveis com o serviço vinculado do OData:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade **type** precisa ser definida como **OData**. |Sim |
 | url | A URL raiz do serviço OData. |Sim |
@@ -60,7 +64,7 @@ As propriedades a seguir são compatíveis com o serviço vinculado do OData:
 | servicePrincipalEmbeddedCertPassword | Especifique a senha de seu certificado se o certificado for protegido por senha. Marque esse campo como **SecureString** para armazená-lo com segurança no Data Factory ou [referencie um segredo armazenado no Cofre de Chaves do Azure](store-credentials-in-key-vault.md).  | Não|
 | tenant | Especifique as informações de locatário (domínio nome ou ID do Locatário) em que o aplicativo reside. Para recuperá-lo, passe o mouse no canto superior direito do portal do Azure. | Não |
 | aadResourceId | Especifique o recurso do AAD para o qual você está solicitando autorização.| Não |
-| connectVia | O [Tempo de Integração](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. Você pode escolher o Azure Integration Runtime ou o Integration Runtime auto-hospedado (se o armazenamento de dados estiver localizado em uma rede privada). Se não especificado, o Tempo de Execução de Integração do Azure padrão será usado. |Não |
+| connectVia | O [Tempo de Integração](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. Saiba mais na seção de [pré-requisitos](#prerequisites) . Se não especificado, o Tempo de Execução de Integração do Azure padrão será usado. |Não |
 
 **Exemplo 1: usando a autenticação anônima**
 
@@ -195,7 +199,7 @@ Para obter uma lista completa de seções e propriedades disponíveis para defin
 
 Para copiar dados do OData, defina a propriedade **type** do conjunto de dados como **ODataResource**. Há suporte para as seguintes propriedades:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade **type** do conjunto de dados precisa ser definida como **ODataResource**. | Sim |
 | path | O caminho para o recurso OData. | Sim |
@@ -230,7 +234,7 @@ Para obter uma lista completa de seções e propriedades que estão disponíveis
 
 Para copiar dados do OData, defina o tipo de **origem** na Atividade de Cópia como **RelationalSource**. As seguintes propriedades são suportadas na seção **source** da atividade de cópia:
 
-| Propriedade | DESCRIÇÃO | Obrigatório |
+| Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade **type** da fonte da Atividade de Cópia precisa ser definida como **RelationalSource**. | Sim |
 | query | Opções de consulta OData para filtrar dados. Exemplo: `"$select=Name,Description&$top=5"`.<br/><br/>**Observação**: o conector do OData copia os dados da URL combinada: `[URL specified in linked service]/[path specified in dataset]?[query specified in copy activity source]`. Para saber mais, confira as [Componentes da URL do OData](https://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Não |
@@ -279,7 +283,7 @@ Ao copiar dados do OData, os seguintes mapeamentos são usados entre os tipos de
 | Edm.DateTime | DateTime |
 | Edm.Decimal | Decimal |
 | Edm.Double | Double |
-| Edm.Single | Single |
+| Edm.Single | Simples |
 | Edm.Guid | Guid |
 | Edm.Int16 | Int16 |
 | Edm.Int32 | Int32 |

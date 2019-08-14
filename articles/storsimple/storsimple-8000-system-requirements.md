@@ -14,16 +14,18 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 09/28/2017
 ms.author: alkohli
-ms.openlocfilehash: f05e3e85d36ffc23a193a6771a0271c71b2f8544
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2e7c1eedf02c8a7783ee90f403dbd77ec2ee53ea
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60631896"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68963337"
 ---
 # <a name="storsimple-8000-series-software-high-availability-and-networking-requirements"></a>Requisitos de software, de alta disponibilidade e de rede do StorSimple série 8000
 
 ## <a name="overview"></a>Visão geral
+
+[!INCLUDE [storsimple-8000-eol-banner](../../includes/storsimple-8000-eol-banner.md)]
 
 Bem-vindo ao Microsoft Azure StorSimple. Este artigo descreve os requisitos do sistema importantes e as práticas recomendadas para seu dispositivo StorSimple e para os clientes de armazenamento acessarem o dispositivo. Recomendamos que você examine as informações com atenção antes de implantar o sistema StorSimple e consulte-as, quando necessário, durante a implantação e operação subsequente.
 
@@ -61,13 +63,13 @@ Os seguintes requisitos de software são para os componentes opcionais do StorSi
 
 Seu dispositivo StorSimple é um dispositivo bloqueado. No entanto, é preciso abrir portas no firewall para permitir o tráfego de gerenciamento, de nuvem e iSCSI. A tabela a seguir lista as portas que precisam estar abertas no firewall. Nesta tabela, *entrada* ou *de entrada* refere-se à direção a partir da qual as solicitações de cliente acessam o dispositivo. *Saída* ou *de saída* refere-se à direção na qual seu dispositivo StorSimple envia dados externamente, além da implantação: por exemplo, saída para a Internet.
 
-| Nº da porta<sup>1,2</sup> | Entrada ou saída | Escopo da porta | Obrigatório | Observações |
+| Nº da porta<sup>1,2</sup> | Entrada ou saída | Escopo da porta | Necessário | Observações |
 | --- | --- | --- | --- | --- |
-| TCP 80 (HTTP)<sup>3</sup> |Saída |WAN |Não |<ul><li>A porta de saída é usada para acesso à Internet para recuperar atualizações.</li><li>O proxy Web de saída é configurável pelo usuário.</li><li>Para permitir atualizações do sistema, esta porta também deve estar aberta para o IPs fixos do controlador.</li></ul> |
-| TCP 443 (HTTPS)<sup>3</sup> |Saída |WAN |Sim |<ul><li>A porta de saída é usada para acessar dados na nuvem.</li><li>O proxy Web de saída é configurável pelo usuário.</li><li>Para permitir atualizações do sistema, esta porta também deve estar aberta para o IPs fixos do controlador.</li><li>Esta porta também é usada em ambos os controladores para coleta de lixo.</li></ul> |
-| UDP 53 (DNS) |Saída |WAN |Em alguns casos; consulte as observações. |Esta porta só será necessária se você estiver usando um servidor DNS baseado na Internet. |
-| UDP 123 (NTP) |Saída |WAN |Em alguns casos; consulte as observações. |Esta porta é necessária apenas se você estiver usando um servidor NTP baseado na Internet. |
-| TCP 9354 |Saída |WAN |Sim |A porta de saída é usada pelo dispositivo StorSimple para se comunicar com o serviço StorSimple Device Manager. |
+| TCP 80 (HTTP)<sup>3</sup> |Out |WAN |Não |<ul><li>A porta de saída é usada para acesso à Internet para recuperar atualizações.</li><li>O proxy Web de saída é configurável pelo usuário.</li><li>Para permitir atualizações do sistema, esta porta também deve estar aberta para o IPs fixos do controlador.</li></ul> |
+| TCP 443 (HTTPS)<sup>3</sup> |Out |WAN |Sim |<ul><li>A porta de saída é usada para acessar dados na nuvem.</li><li>O proxy Web de saída é configurável pelo usuário.</li><li>Para permitir atualizações do sistema, esta porta também deve estar aberta para o IPs fixos do controlador.</li><li>Esta porta também é usada em ambos os controladores para coleta de lixo.</li></ul> |
+| UDP 53 (DNS) |Out |WAN |Em alguns casos; consulte as observações. |Esta porta só será necessária se você estiver usando um servidor DNS baseado na Internet. |
+| UDP 123 (NTP) |Out |WAN |Em alguns casos; consulte as observações. |Esta porta é necessária apenas se você estiver usando um servidor NTP baseado na Internet. |
+| TCP 9354 |Out |WAN |Sim |A porta de saída é usada pelo dispositivo StorSimple para se comunicar com o serviço StorSimple Device Manager. |
 | 3260 (iSCSI) |Em |LAN |Não |Esta porta é usada para acessar dados em iSCSI. |
 | 5985 |Em |LAN |Não |A porta de entrada é usada pelo StorSimple Snapshot Manager para se comunicar com o dispositivo do StorSimple.<br>Essa porta também é usada quando você se conecta remotamente ao Windows PowerShell para o StorSimple via HTTP. |
 | 5986 |Em |LAN |Não |Esta porta é usada quando você se conecta remotamente ao Windows PowerShell para StorSimple via HTTPS. |
@@ -96,7 +98,7 @@ Os administradores de rede geralmente podem configurar regras avançadas de fire
 
 | Padrão de URL | Componente/funcionalidade | IPs de dispositivo |
 | --- | --- | --- |
-| `https://*.storsimple.windowsazure.com/*`<br>`https://*.accesscontrol.windows.net/*`<br>`https://*.servicebus.windows.net/*`<br>`https://login.windows.net` |Serviço do Gerenciador de Dispositivos StorSimple<br>Access Control Service<br>Barramento de Serviço do Azure<br>Serviço de autenticação |Interfaces de rede habilitadas para nuvem |
+| `https://*.storsimple.windowsazure.com/*`<br>`https://*.accesscontrol.windows.net/*`<br>`https://*.servicebus.windows.net/*`<br>`https://login.windows.net` |Serviço de Gerenciador de Dispositivos do StorSimple<br>Serviço Controle de Acesso<br>Barramento de Serviço do Azure<br>Serviço de autenticação |Interfaces de rede habilitadas para nuvem |
 | `https://*.backup.windowsazure.com` |Registro de dispositivos |Somente DATA 0 |
 | `https://crl.microsoft.com/pki/*`<br>`https://www.microsoft.com/pki/*` |Revogação de certificado |Interfaces de rede habilitadas para nuvem |
 | `https://*.core.windows.net/*` <br>`https://*.data.microsoft.com`<br>`http://*.msftncsi.com` |Contas de armazenamento e monitoramento do Azure |Interfaces de rede habilitadas para nuvem |
@@ -108,7 +110,7 @@ Os administradores de rede geralmente podem configurar regras avançadas de fire
 
 | Padrão de URL | Componente/funcionalidade | IPs de dispositivo |
 | --- | --- | --- |
-| `https://*.storsimple.windowsazure.us/*`<br>`https://*.accesscontrol.usgovcloudapi.net/*`<br>`https://*.servicebus.usgovcloudapi.net/*`<br>`https://login.microsoftonline.us` |Serviço do Gerenciador de Dispositivos StorSimple<br>Access Control Service<br>Barramento de Serviço do Azure<br>Serviço de autenticação |Interfaces de rede habilitadas para nuvem |
+| `https://*.storsimple.windowsazure.us/*`<br>`https://*.accesscontrol.usgovcloudapi.net/*`<br>`https://*.servicebus.usgovcloudapi.net/*`<br>`https://login.microsoftonline.us` |Serviço de Gerenciador de Dispositivos do StorSimple<br>Serviço Controle de Acesso<br>Barramento de Serviço do Azure<br>Serviço de autenticação |Interfaces de rede habilitadas para nuvem |
 | `https://*.backup.windowsazure.us` |Registro de dispositivos |Somente DATA 0 |
 | `https://crl.microsoft.com/pki/*`<br>`https://www.microsoft.com/pki/*` |Revogação de certificado |Interfaces de rede habilitadas para nuvem |
 | `https://*.core.usgovcloudapi.net/*` <br>`https://*.data.microsoft.com`<br>`http://*.msftncsi.com` |Contas de armazenamento e monitoramento do Azure |Interfaces de rede habilitadas para nuvem |
@@ -127,7 +129,7 @@ O algoritmo da métrica de roteamento usado para a Atualização 2 e versões po
 * Um conjunto de valores predeterminados foi atribuído a interfaces de rede.
 * Considere uma tabela de exemplo mostrada abaixo, com valores atribuídos às várias interfaces de rede quando são habilitadas ou desabilitadas para a nuvem, mas com um gateway configurado. Observe que os valores atribuídos aqui são apenas exemplos.
 
-    | interface de rede | Habilitado para nuvem | Desabilitado para a nuvem com o gateway |
+    | Interface de rede | Habilitado para nuvem | Desabilitado para a nuvem com o gateway |
     |-----|---------------|---------------------------|
     | Dados 0  | 1            | -                        |
     | Dados 1  | 2            | 20                       |
@@ -155,7 +157,7 @@ O algoritmo da métrica de roteamento usado para a Atualização 2 e versões po
 * Um alerta também será gerado no dispositivo do StorSimple quando houver uma falha de VIP. Para saber mais, acesse a [referência rápida de alerta](storsimple-8000-manage-alerts.md).
 * Quanto às repetições, o iSCSI terá precedência sobre a nuvem.
   
-    Considere o exemplo a seguir: Um dispositivo do StorSimple tem duas interfaces de rede habilitadas, Data 0 e Data 1. Data 0 é habilitado para a nuvem, enquanto Data 1 é habilitado para a nuvem e para iSCSI. Nenhuma outra interface de rede neste dispositivo é habilitada para a nuvem ou para iSCSI.
+    Considere o exemplo a seguir: Um dispositivo StorSimple tem duas interfaces de rede habilitadas, data 0 e data 1. Data 0 é habilitado para a nuvem, enquanto Data 1 é habilitado para a nuvem e para iSCSI. Nenhuma outra interface de rede neste dispositivo é habilitada para a nuvem ou para iSCSI.
   
     Se Data 1 falhar, por ser a última interface de rede do iSCSI, isso resultará em um failover do controlador para Data 1 no outro controlador.
 
@@ -239,7 +241,7 @@ O modelo do dispositivo StorSimple 8600 inclui um compartimento EBOD (Extended B
 
 Leia com atenção essas práticas recomendadas para garantir a alta disponibilidade dos hosts conectados ao dispositivo StorSimple.
 
-* Defina o StorSimple com as [configurações de cluster de servidores de arquivos com dois nós][1]. Ao remover os pontos individuais de falha e criando redundância no lado do host, a solução inteira se torna altamente disponível.
+* Configure o StorSimple com [configurações de cluster de servidor de arquivos de dois nós][1]. Ao remover os pontos individuais de falha e criando redundância no lado do host, a solução inteira se torna altamente disponível.
 * Use compartilhamentos CA (disponíveis continuamente) disponíveis no Windows Server 2012 (SMB 3.0) para alta disponibilidade durante o failover dos controladores de armazenamento. Para obter informações adicionais sobre a configuração de clusters de servidor de arquivos e compartilhamentos Disponíveis Continuamente com o Windows Server 2012, consulte esta [demonstração em vídeo](https://channel9.msdn.com/Events/IT-Camps/IT-Camps-On-Demand-Windows-Server-2012/DEMO-Continuously-Available-File-Shares).
 
 ## <a name="next-steps"></a>Próximas etapas

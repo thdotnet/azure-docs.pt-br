@@ -8,18 +8,18 @@ ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
 ms.subservice: common
-ms.openlocfilehash: cf1cba6f6d26d66fc560c86ea42459fa276cc880
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2ba09496ed8c110e3bf0e431da20f09c82d5ea0b
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66114917"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68985579"
 ---
 # <a name="frequently-asked-questions-about-azure-storage-migration"></a>Perguntas frequentes sobre a migração do Armazenamento do Azure
 
 Este artigo responde perguntas frequentes sobre a migração do Armazenamento do Azure. 
 
-## <a name="faq"></a>Perguntas frequentes
+## <a name="faq"></a>Perguntas Frequentes
 
 **Como criar um script para copiar arquivos de um contêiner para outro?**
 
@@ -37,7 +37,7 @@ O script de automação destina-se à implantação do Azure Resource Manager, n
 
 **Há algum encargo para cópia de dados entre dois compartilhamentos de arquivo na mesma conta de armazenamento dentro da mesma região?**
 
-Não. Não há encargos para esse processo.
+Nº Não há encargos para esse processo.
 
 **Como fazer backup de toda minha conta de armazenamento para outra conta de armazenamento?**
 
@@ -193,7 +193,7 @@ Use o [Gerenciador de Armazenamento](https://azure.microsoft.com/features/storag
 
 **Existem pré-requisitos para alterar a replicação de uma conta de armazenamento, de armazenamento com redundância geográfica para armazenamento com redundância local?**
 
-Não. 
+Nº 
 
 **Como acessar o armazenamento com redundância dos Arquivos do Azure?**
 
@@ -280,9 +280,9 @@ Para dar a outras pessoas acesso aos meus recursos de armazenamento:
      
       https://storageaccountname-secondary.blob.core.windows.net/vhds/BlobName.vhd
 
-    - **Token SAS**: Use um Token SAS para acessar dados do ponto de extremidade. Para obter mais informações, confira [Como usar assinaturas de acesso compartilhado](storage-dotnet-shared-access-signature-part-1.md).
+    - **Token SAS**: Use um Token SAS para acessar dados do ponto de extremidade. Para obter mais informações, confira [Como usar assinaturas de acesso compartilhado](storage-sas-overview.md).
 
-**Como usar um domínio personalizado de HTTPS com minha conta de armazenamento? Por exemplo, como fazer "https:\//mystorageaccountname.blob.core.windows.net/images/image.gif" aparecem como "https:\//www.contoso.com/images/image.gif"?**
+**Como usar um domínio personalizado de HTTPS com minha conta de armazenamento? Por exemplo, como fazer com que "https:\//mystorageaccountname.blob.Core.Windows.net/images/Image.gif" apareça como "https:\//www.contoso.com/images/Image.gif"?**
 
 No momento, o SSL não é compatível com contas de armazenamento com domínios personalizados.
 Mas você pode usar domínios personalizados não HTTPS. Para saber mais, confira [Configurar um nome de domínio personalizado para seu ponto de extremidade do Armazenamento de Blobs](../blobs/storage-custom-domain-name.md).
@@ -291,7 +291,7 @@ Mas você pode usar domínios personalizados não HTTPS. Para saber mais, confir
 
 Não é possível acessar uma conta de armazenamento diretamente por meio de FTP. No entanto, você pode configurar uma máquina virtual do Azure e, depois, instalar um servidor FTP na máquina virtual. Você pode fazer com que o servidor FTP armazene arquivos em um compartilhamento dos Arquivos do Azure ou em um disco de dados que está disponível para a máquina virtual.
 
-Se você quiser só baixar os dados sem a necessidade de usar o Gerenciador de Armazenamento ou um aplicativo semelhante, talvez seja possível usar um token SAS. Para obter mais informações, confira [Como usar assinaturas de acesso compartilhado](storage-dotnet-shared-access-signature-part-1.md).
+Se você quiser só baixar os dados sem a necessidade de usar o Gerenciador de Armazenamento ou um aplicativo semelhante, talvez seja possível usar um token SAS. Para obter mais informações, confira [Como usar assinaturas de acesso compartilhado](storage-sas-overview.md).
 
 **Como fazer para migrar Blobs de uma conta de armazenamento para outra?**
 

@@ -8,18 +8,17 @@ manager: timlt
 editor: ''
 ms.assetid: 919dd781-4dc6-4e50-bda8-9632966c5458
 ms.service: cloud-services
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 9/20/2017
 ms.author: raiye
-ms.openlocfilehash: ce66d44c0ddb84ed8c2908d02b8062195d6b461d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fbe9b3379799fe3cf0a56d921ab257bc87606ca9
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61215832"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945446"
 ---
 # <a name="azure-guest-os-supportability-and-retirement-policy"></a>Capacidade de suporte e política de desativação do SO convidado do Azure
 As informações nesta página se relacionam ao sistema operacional convidado do Azure[(SO Convidado)](cloud-services-guestos-update-matrix.md)para serviços de nuvem funções web e de trabalho (PaaS). Não se aplicam às Máquinas Virtuais (IaaS).
@@ -55,9 +54,9 @@ Versões do SO convidado são lançadas a cada mês. Devido aos lançamentos reg
 
 Aos 60 dias da vida útil, uma versão é "*desabilitada*". "Desabilitada" significa que a versão é removida do portal. A versão não pode mais ser definida no arquivo de configuração CSCFG. As implantações existentes são mantidas em execução. Mas novas implantações e atualizações de código e a configuração para as implantações existentes não serão permitidas.
 
-Em algum momento depois de se tornar "desabilitada," a versão do sistema operacional convidado "expirará" e todas as instalações que ainda estiverem executando essa versão expirada estão expostas a problemas de segurança e vulnerabilidade. Em geral, expiração é feita em lotes, portanto, o período de desativação para a validade pode variar.
+Algum tempo depois de se tornar "desabilitado", a versão do sistema operacional convidado "expira" e todas as instalações que ainda estiverem executando essa versão expirada serão expostas a problemas de segurança e vulnerabilidade. Geralmente, a expiração é feita em lotes e, portanto, o período de desativação para expiração pode variar.
 
-Os clientes que configurarem seus serviços para atualizar o sistema operacional convidado manualmente, deve garantir que seus serviços estão em execução em um sistema de operacional convidado com suporte. Se um serviço estiver configurado para atualizar o sistema operacional convidado automaticamente, a plataforma subjacente será garantir a conformidade e será atualizado para o sistema operacional convidado mais recente.
+Os clientes que configuram seus serviços para atualizar o SO convidado manualmente devem garantir que seus serviços estejam em execução em um SO convidado com suporte. Se um serviço estiver configurado para atualizar o SO convidado automaticamente, a plataforma subjacente garantirá a conformidade e será atualizada para o SO convidado mais recente.
 
 Esses períodos podem ser mais longos, a critério da Microsoft, para facilitar as transições do cliente. Quaisquer alterações serão comunicadas na [Matriz de compatibilidade do SDK e lançamentos do SO convidado do Azure](cloud-services-guestos-update-matrix.md).
 

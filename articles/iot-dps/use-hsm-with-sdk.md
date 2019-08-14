@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: 7dd93298c96842e4e5417a0b2ba023bb71a4e7ba
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: fd974ad81a641afb1c93fffb0a12a147c55b3a73
+ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68884431"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68951889"
 ---
 # <a name="how-to-use-different-attestation-mechanisms-with-device-provisioning-service-client-sdk-for-c"></a>Como usar mecanismo de atestado diferentes com o SDK do Cliente de Serviço de Provisionamento de Dispositivos para C
 
@@ -35,11 +35,11 @@ Para saber mais, confira os [Conceitos de segurança](concepts-security.md) e [c
 
 ## <a name="enable-authentication-for-supported-attestation-mechanisms"></a>Habilitar a autenticação para mecanismos de atestado com suporte
 
-O modo de autenticação do SDK (X **.** 509 ou TPM) deve estar habilitado para o simulador ou dispositivo físico antes que eles possam ser registrados no portal do Azure. Primeiro, navegue até a pasta raiz de azure-iot-sdk-c. Execute o comando especificado, dependendo do modo de autenticação escolhido:
+O modo de autenticação do SDK (X. 509 ou TPM) deve ser habilitado para o dispositivo físico ou simulador antes que eles possam ser registrados no portal do Azure. Primeiro, navegue até a pasta raiz de azure-iot-sdk-c. Execute o comando especificado, dependendo do modo de autenticação escolhido:
 
-### <a name="use-x509-with-simulator"></a>Usar X **.** 509 com simulador
+### <a name="use-x509-with-simulator"></a>Usar X. 509 com simulador
 
-O serviço de provisionamento é fornecido com o emulador DICE (Device Identity Composition Engine), que gera um certificado X **.** 509 para autenticar o dispositivo. Para habilitar a autenticação X **.** 509, execute o comando a seguir: 
+O serviço de provisionamento é fornecido com um emulador do mecanismo de composição de identidade do dispositivo que gera um certificado **X. 509** para autenticar o dispositivo. Para habilitar a autenticação **X. 509** , execute o seguinte comando: 
 
 ```
 cmake -Ddps_auth_type=x509 ..
@@ -47,9 +47,9 @@ cmake -Ddps_auth_type=x509 ..
 
 Informações sobre hardware com DICE podem ser encontradas [aqui](https://azure.microsoft.com/blog/azure-iot-supports-new-security-hardware-to-strengthen-iot-security/).
 
-### <a name="use-x509-with-hardware"></a>Usar X **.** 509 com hardware
+### <a name="use-x509-with-hardware"></a>Usar X. 509 com hardware
 
-O serviço de provisionamento pode ser usado com X **.** 509 em outro hardware. Uma interface entre o hardware e o SDK é necessária para estabelecer conexão. Fale com o fabricante do HSM para obter informações sobre a interface.
+O serviço de provisionamento pode ser usado com **X. 509** em outro hardware. Uma interface entre o hardware e o SDK é necessária para estabelecer conexão. Fale com o fabricante do HSM para obter informações sobre a interface.
 
 ### <a name="use-tpm"></a>Usar TPM
 
@@ -141,15 +141,15 @@ Crie o SDK antes de criar o registro do dispositivo.
 ### <a name="tpm"></a>TPM
 Se você estiver usando o TPM, siga as instruções em ["Criar e provisionar um dispositivo simulado usando o Serviço de Provisionamento de Dispositivos no Hub IoT"](./quick-create-simulated-device.md) para criar uma entrada de registro de dispositivo no Serviço de Provisionamento de Dispositivos e simular a primeira inicialização.
 
-### <a name="x509"></a>X **.** 509
+### <a name="x509"></a>X.509
 
 1. Para registrar um dispositivo no serviço de provisionamento, você precisa anotar a Chave de Endosso e a ID de Registro para cada dispositivo, que são exibidas na Ferramenta de Provisionamento fornecida pelo SDK do Cliente. Execute o seguinte comando para imprimir o certificado de Autoridade de Certificação raiz (para grupos de registro) e o certificado da folha (para registro individual):
       ```
       ./azure-iot-sdk-c/dps_client/tools/x509_device_provision/x509_device_provision.exe
       ```
 2. Entre no portal do Azure, clique no botão **Todos os recursos** no menu esquerdo e abra o serviço de Provisionamento de Dispositivos.
-   - X **.** 509 registro individual: Na folha de resumo do serviço de provisionamento, selecione **gerenciar registros**. Selecione a guia **Registros Individuais** guia e clique no botão **Adicionar** na parte superior. Selecione **X**. **509** como o *Mecanismo* de atestado de identidade e carregue o certificado do signatário conforme exigido pela folha. Uma vez concluído, clique no botão **Salvar**. 
-   - X **.** 509 registro de Grupo: Na folha de resumo do serviço de provisionamento, selecione **gerenciar registros**. Selecione a guia **Registros em grupo** e clique no botão **Adicionar** na parte superior. Selecione **X**. **509** como o *Mecanismo* de atestado de identidade, insira o nome do grupo e o nome da certificação e carregue o certificado de Autoridade de Certificação/Intermediário conforme exigido pela folha. Uma vez concluído, clique no botão **Salvar**. 
+   - **Registro individual de X. 509**: Na folha de resumo do serviço de provisionamento, selecione **gerenciar registros**. Selecione a guia **Registros Individuais** guia e clique no botão **Adicionar** na parte superior. Selecione **X. 509** como o *mecanismo*de atestado de identidade, carregue o certificado de folha conforme exigido pela folha. Uma vez concluído, clique no botão **Salvar**. 
+   - **Registro do grupo X. 509**: Na folha de resumo do serviço de provisionamento, selecione **gerenciar registros**. Selecione a guia **Registros em grupo** e clique no botão **Adicionar** na parte superior. Selecione **X. 509** como o *mecanismo*de atestado de identidade, insira um nome de grupo e um nome de certificação, carregue o certificado de CA/intermediário conforme exigido pela folha. Uma vez concluído, clique no botão **Salvar**. 
 
 ## <a name="enable-authentication-for-devices-using-a-custom-attestation-mechanism-optional"></a>Habilitar a autenticação para dispositivos usando um mecanismo de atestado personalizado (opcional)
 
@@ -181,7 +181,7 @@ Depois que a biblioteca se cria sozinha com êxito, você precisa integrá-la ao
 
 ## <a name="connecting-to-iot-hub-after-provisioning"></a>Conectar-se ao Hub IoT após a configuração
 
-Depois que o dispositivo foi configurado com o serviço de provisionamento, essa API usará o modo de autenticação (X **.** 509 ou TPM) para se conectar ao Hub IoT: 
+Depois que o dispositivo tiver sido provisionado com o serviço de provisionamento, essa API usará o modo de autenticação especificado (**X. 509** ou TPM) para se conectar ao Hub IOT: 
   ```
   IOTHUB_CLIENT_LL_HANDLE handle = IoTHubClient_LL_CreateFromDeviceAuth(iothub_uri, device_id, iothub_transport);
   ```

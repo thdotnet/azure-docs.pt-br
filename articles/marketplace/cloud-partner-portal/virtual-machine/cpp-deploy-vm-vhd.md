@@ -2,17 +2,17 @@
 title: Implantar uma VM de seus VHDs para o Azure Marketplace
 description: Explica como registrar uma VM de um VHD do Azure implantado.
 services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: qianw211
 ms.service: marketplace
 ms.topic: article
-ms.date: 11/30/2018
-ms.author: pabutler
-ms.openlocfilehash: a393620f28d45ec494c4e899f01e7e9a92b3ceba
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/08/2019
+ms.author: evansma
+ms.openlocfilehash: 1aa946c813de41423d4fb2ba5b3aa5274db90f39
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64938298"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934958"
 ---
 # <a name="deploy-a-vm-from-your-vhds"></a>Implantar uma VM por meio dos seus VHDs
 
@@ -59,12 +59,12 @@ Depois que a VM for implantada, você estará pronto para [certificar a imagem d
    |  -------------              |   ---------------                                                            |
    | Nome de Conta de Armazenamento do Usuário   | Nome da conta de armazenamento onde se encontra o VHD generalizado                    |
    | Nome do Contêiner de Armazenamento de Usuário | Nome do contêiner onde se encontra o VHD generalizado                          |
-   | Nome DNS para o IP público      | Nome DNS do IP público                                                           |
+   | Nome DNS para o IP público      | Nome DNS do IP público. O nome DNS é da VM, você irá defini-lo no portal do Azure, depois que a oferta for implantada.  |
    | Nome de Usuário do Administrador             | Nome de usuário da conta do administrador para a nova VM                                  |
    | Senha do Administrador              | Senha da conta Administrador para nova VM                                  |
-   | Tipo de sistema operacional                     | Sistema operacional da VM: `Windows` \| `Linux`                                    |
+   | Tipo do OS                     | Sistema operacional da VM: `Windows` \| `Linux`                                    |
    | ID da assinatura             | Identificador para a assinatura selecionada                                      |
-   | Local padrão                    | Localização geográfica da implantação                                        |
+   | Location                    | Localização geográfica da implantação                                        |
    | Tamanho da VM                     | [Tamanho da VM do Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes), por exemplo `Standard_A2` |
    | Nome do endereço IP público      | Nome do seu endereço IP público                                               |
    | Nome da VM                     | Nome da nova VM                                                           |

@@ -7,14 +7,16 @@ ms.service: storsimple
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: alkohli
-ms.openlocfilehash: d727ed62f5a869f6eb67400281d2660607756abf
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9456d975ffb6d7726166f9badbcb8fe0ccbe5256
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60637494"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68965356"
 ---
 # <a name="compare-storsimple-with-azure-file-sync-and-data-box-edge-data-transfer-options"></a>Comparar opções de transferência de dados do StorSimple com a Sincronização de Arquivos do Azure e Data Box Edge 
+
+[!INCLUDE [storsimple-8000-eol-banner](../../includes/storsimple-8000-eol-banner.md)]
  
 Este documento fornece uma visão geral das opções de transferência de dados locais para o Azure, comparando: Data Box Edge vs. Azure File Sync vs. Série StorSimple 8000.
 
@@ -28,7 +30,7 @@ Este documento fornece uma visão geral das opções de transferência de dados 
 |---------------------------|----------------------------------------|-------------------------------|-----------------------------------------|
 |Visão geral         |Armazenamento híbrido em camadas e arquivamento|Armazenamento do servidor de arquivos gerais com a sincronização de vários sites e em camadas de nuvem.  |Solução de armazenamento para pré-processar os dados e enviá-lo pela rede para o Azure.        |
 |Cenários        |Servidor de arquivos, arquivamento, destino de backup |Servidor de arquivos, arquivamento (multi-site)   |Transferência de dados, pré-processamento de dados, incluindo inferência de ML, IoT, arquivamento    |
-|Azure Data Box Edge     |Não disponível |Não disponível |Suporta a execução de contêineres usando o Azure IoT Edge    |
+|Computação de borda     |Não disponível |Não disponível |Suporta a execução de contêineres usando o Azure IoT Edge    |
 |Fator forma      |Dispositivo físico   |Agente instalado no Windows Server |Dispositivo físico   |
 |Hardware         |Dispositivo físico fornecido pela Microsoft como parte do serviço | Fornecida pelo cliente |Dispositivo físico fornecido pela Microsoft como parte do serviço  |
 |Formato de dados      |Formato personalizado   |Arquivos         |Os BLOBs ou arquivos    |

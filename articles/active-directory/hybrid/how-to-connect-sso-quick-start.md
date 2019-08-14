@@ -16,14 +16,14 @@ ms.date: 04/16/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06566ab81b6af847a7eb174731105b7f43a7197f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 87764ed30182dc548fc3a260582174f121e27e24
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60242627"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68965225"
 ---
-# <a name="azure-active-directory-seamless-single-sign-on-quick-start"></a>Logon Único Contínuo do Azure Active Directory: Início rápido
+# <a name="azure-active-directory-seamless-single-sign-on-quick-start"></a>Logon Único Contínuo do Azure Active Directory: Início Rápido
 
 ## <a name="deploy-seamless-single-sign-on"></a>Implantar Logon Único Contínuo
 
@@ -93,10 +93,10 @@ Siga estas instruções para verificar se você habilitou o SSO Contínuo corret
 ![Portal do Azure: painel do Azure AD Connect](./media/how-to-connect-sso-quick-start/sso10.png)
 
 >[!IMPORTANT]
-> O SSO contínuo cria uma conta de computador denominada `AZUREADSSOACC` em seu local do Active Directory (AD) em cada floresta do AD. O `AZUREADSSOACC` conta de computador precisa ser fortemente protegido por motivos de segurança. Somente os administradores de domínio deve ser capazes de gerenciar a conta de computador. Certifique-se de que a delegação Kerberos na conta de computador está desabilitada e que nenhuma outra conta no Active Directory tem permissões de delegação `AZUREADSSOACC` conta de computador. Store a conta de computador em uma UO (unidade organizacional) onde eles estejam protegidos contra exclusões acidentais e somente os administradores de domínio têm acesso.
+> O SSO contínuo cria uma conta de `AZUREADSSOACC` computador chamada no seu AD (Active Directory local) em cada floresta do AD. A `AZUREADSSOACC` conta do computador precisa estar fortemente protegida por motivos de segurança. Somente administradores de domínio devem ser capazes de gerenciar a conta de computador. Verifique se a delegação de Kerberos na conta do computador está desabilitada e se nenhuma outra conta no Active Directory tem permissões de `AZUREADSSOACC` delegação na conta do computador. Armazene a conta de computador em uma UO (unidade organizacional) em que elas estão protegidas contra exclusões acidentais e em que somente administradores de domínio têm acesso.
 
 >[!NOTE]
-> Se você estiver usando arquiteturas de Pass-the-Hash e atenuação de roubo de credencial em seu ambiente local, faça as alterações apropriadas para garantir que o `AZUREADSSOACC` conta de computador não acaba no contêiner de quarentena. 
+> Se você estiver usando as arquiteturas de mitigação de roubo de credencial e de passagem de hash no seu ambiente local, faça as alterações apropriadas para `AZUREADSSOACC` garantir que a conta de computador não acabe no contêiner de quarentena. 
 
 ## <a name="step-3-roll-out-the-feature"></a>Etapa 3: Distribuir o recurso
 
@@ -115,7 +115,7 @@ Por padrão, o navegador calcula automaticamente a zona correta, Internet ou Int
 
 Há duas maneiras de modificar as configurações de zona de Intranet dos usuários:
 
-| Opção | Consideração de administração | Experiência do usuário |
+| Opção | Consideração de administração | Experiência de usuário |
 | --- | --- | --- |
 | Política de grupo | O administrador bloqueia a edição das configurações da zona da Intranet | Os usuários não podem modificar as próprias configurações |
 | Preferência de política de grupo |  O administrador permite edição nas configurações da zona de Intranet | Os usuários podem modificar as próprias configurações |
@@ -124,7 +124,7 @@ Há duas maneiras de modificar as configurações de zona de Intranet dos usuár
 
 1. Abra a ferramenta Editor de Gerenciamento de Política de Grupo.
 2. Edite a política de grupo que é aplicada a alguns ou todos os seus usuários. Este exemplo usa a **Política de domínio padrão**.
-3. Navegue até **configuração do usuário** > **política** > **modelos administrativos** > **Windows Componentes** > **Internet Explorer** > **painel de controle da Internet** > **página segurança**. Em seguida, selecione **Lista de atribuição de sites a zonas**.
+3. Navegue até > **política** > deconfiguraçãode usuário**modelos administrativos** **componentes** > doWindowsInternetExplorerInternet >  >  > **Página segurança**do painel de controle. Em seguida, selecione **Lista de atribuição de sites a zonas**.
     ![Logon Único](./media/how-to-connect-sso-quick-start/sso6.png)
 4. Habilite a política e insira os valores a seguir na caixa de diálogo:
    - **Nome do valor**: A URL do Azure AD para a qual os tíquetes do Kerberos são encaminhados.
@@ -144,7 +144,7 @@ Há duas maneiras de modificar as configurações de zona de Intranet dos usuár
 
     ![Logon único](./media/how-to-connect-sso-quick-start/sso7.png)
 
-6. Navegue até **configuração do usuário** > **modelos administrativos** **política** > * * > **componentes do Windows**  >  **Internet Explorer** > **painel de controle da Internet** > **página segurança**  >   **Zona da intranet**. Em seguida, selecione **Permitir atualizações à barra de status por meio de script**.
+6. Navegue até > **política** > deconfiguraçãode usuário**modelos administrativos** **componentes** > doWindowsInternetExplorerInternet >  >  > **Zona de intranet**da**página** > de segurança do painel de controle. Em seguida, selecione **Permitir atualizações à barra de status por meio de script**.
 
     ![Logon único](./media/how-to-connect-sso-quick-start/sso11.png)
 

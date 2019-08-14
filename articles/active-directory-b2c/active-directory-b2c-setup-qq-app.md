@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 7744d99bb97d11b7702c8ee388cf27bc0cc087cc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9679e3216184c0dc5b8dee241c30fc69d5423aeb
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66508339"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68963750"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-qq-account-using-azure-active-directory-b2c"></a>Configurar a inscrição e entrada com a conta do QQ usando o Azure Active Directory B2C
 
@@ -30,14 +30,14 @@ Para usar uma conta do QQ como um provedor de identidade no Azure AD (Azure Acti
 ### <a name="register-for-the-qq-developer-program"></a>Registrar-se no programa de desenvolvedores do QQ
 
 1. Entre no [portal do desenvolvedor do QQ](http://open.qq.com) com suas credenciais de conta do QQ.
-2. Após a autenticação, acesse [http://open.qq.com/reg](http://open.qq.com/reg) para registrar-se como desenvolvedor.
+2. Após a autenticação, acesse [https://open.qq.com/reg](https://open.qq.com/reg) para registrar-se como desenvolvedor.
 3. Selecione **个人** (desenvolvedor individual).
 4. Insira as informações necessárias e selecione **下一步** (próxima etapa).
 5. Conclua o processo de verificação de email. Você precisará aguardar alguns dias para ser aprovado depois de registrar-se como desenvolvedor. 
 
 ### <a name="register-a-qq-application"></a>Registrar um aplicativo do QQ
 
-1. Vá para [https://connect.qq.com/index.html](https://connect.qq.com/index.html).
+1. Acesse [https://connect.qq.com/index.html](https://connect.qq.com/index.html).
 2. Selecione **应用管理**(gerenciamento de aplicativos).
 5. Selecione **创建应用** (criar aplicativo) e insira as informações necessárias.
 7. Insira `https://your-tenant-name.b2clogin.com/your-tenant-name}.onmicrosoft.com/oauth2/authresp` em **授权回调域** (URL de retorno de chamada). Por exemplo, se `tenant_name` for contoso, defina a URL para ser `https://contoso.b2clogin.com/contoso.onmicrosoft.com/oauth2/authresp`.

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/07/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: ee216bd4d6994179e347465c30039f2f8e293c85
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: 48a5484e2b2b663d0046fc628c02e656c5bd7a25
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68233005"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68985163"
 ---
 # <a name="microsoft-azure-storage-performance-and-scalability-checklist"></a>Lista de verificação de desempenho e escalabilidade do Armazenamento do Microsoft Azure
 
@@ -39,14 +39,14 @@ Este artigo organiza as práticas comprovadas nos grupos a seguir. As práticas 
 | &nbsp; | Todos os serviços |Rede |[O aplicativo cliente está "próximo" à conta de armazenamento?](#subheading4) |
 | &nbsp; | Todos os serviços |Distribuição de conteúdo |[Você usa um CDN para distribuir conteúdo?](#subheading5) |
 | &nbsp; | Todos os serviços |Acesso direto do cliente |[Você usa SAS e CORS para permitir o acesso direto ao armazenamento, em vez de usar um proxy?](#subheading6) |
-| &nbsp; | Todos os serviços |Cache |[Seu aplicativo armazena em cache os dados que são usados com frequência e que raramente mudam?](#subheading7) |
-| &nbsp; | Todos os serviços |Cache |[Seu aplicativo compila atualizações, armazenando-as em cache no cliente e carregando-as em grandes conjuntos?](#subheading8) |
+| &nbsp; | Todos os serviços |Caching |[Seu aplicativo armazena em cache os dados que são usados com frequência e que raramente mudam?](#subheading7) |
+| &nbsp; | Todos os serviços |Caching |[Seu aplicativo compila atualizações, armazenando-as em cache no cliente e carregando-as em grandes conjuntos?](#subheading8) |
 | &nbsp; | Todos os serviços |Configuração .NET |[Você configurou seu cliente para usar uma quantidade suficiente de conexões simultâneas?](#subheading9) |
 | &nbsp; | Todos os serviços |Configuração .NET |[Você configurou o .NET para usar uma quantidade suficiente de threads?](#subheading10) |
 | &nbsp; | Todos os serviços |Configuração .NET |[Você usa o .NET 4.5 ou posterior, versões com recurso aprimorado de coleta de lixo?](#subheading11) |
 | &nbsp; | Todos os serviços |Paralelismo |[Você garantiu a associação adequada do paralelismo para não carregar as funcionalidades do cliente nem as metas de escalabilidade?](#subheading12) |
 | &nbsp; | Todos os serviços |Ferramentas |[Você está usando a última versão das bibliotecas e ferramentas fornecidas pela Microsoft?](#subheading13) |
-| &nbsp; | Todos os serviços |Novas tentativas |[Você usa uma política de nova tentativa de retirada exponencial para diminuir os erros e a ocorrência de tempos limite?](#subheading14) |
+| &nbsp; | Todos os serviços |Tentativas |[Você usa uma política de nova tentativa de retirada exponencial para diminuir os erros e a ocorrência de tempos limite?](#subheading14) |
 | &nbsp; | Todos os serviços |Novas tentativas |[Seu aplicativo evita novas tentativas para erros que não admitem novas tentativas?](#subheading15) |
 | &nbsp; | Blobs |Metas de escalabilidade |[Você tem um grande número de clientes que acessam um único objeto simultaneamente?](#subheading46) |
 | &nbsp; | Blobs |Metas de escalabilidade |[Seu aplicativo segue a meta de largura de banda ou escalabilidade operacional para um único blob?](#subheading16) |
@@ -123,7 +123,7 @@ Os links a seguir apresentam mais detalhes sobre as metas de escalabilidade:
 
 ### <a name="subheading47"></a>Convenção de nomenclatura de partição
 
-O Armazenamento do Azure usa um esquema de particionamento baseado em intervalo para dimensionar e balancear a carga do sistema. A chave de partição (conta + contêiner + BLOB) é usada para particionar dados em intervalos e esses intervalos têm balanceamento de carga no sistema. Isso significa que as convenções de nomenclatura, como a ordenação lexical (por exemplo, mypayroll, myperformance, MyEmployees etc.) ou o uso de carimbos de data/hora (*log20160101*, *log20160102*, *log20160102*etc.), serão   em si, as partições estão potencialmente colocalizadas no mesmo servidor de partição, até que uma operação de balanceamento de carga as divida em intervalos menores. Por exemplo, todos os BLOBs dentro de um contêiner podem ser servidos por um único servidor até que a carga nesses BLOBs exija um novo balanceamento dos intervalos de partição. Da mesma forma, um grupo de contas pouco carregados com seus nomes organizados em ordem léxica pode ser atendido por um único servidor até que a carga em uma ou em todas essas contas exija a ser dividida em vários servidores de partições. Cada operação de balanceamento de carga pode afetar a latência das chamadas de armazenamento durante a operação. A capacidade do sistema de lidar com uma intermitência repentina de tráfego para uma partição é limitada pela escalabilidade de um único servidor de partição até que a operação de balanceamento de carga seja iniciada e rebalancee o intervalo de chaves de partição.
+O Armazenamento do Azure usa um esquema de particionamento baseado em intervalo para dimensionar e balancear a carga do sistema. A chave de partição (conta + contêiner + BLOB) é usada para particionar dados em intervalos e esses intervalos têm balanceamento de carga no sistema. Isso significa que as convenções de nomenclatura, como a ordenaçãolexical (por exemplo, mypayroll, myperformance, MyEmployees etc.) ou o uso de carimbos de data/hora (*log20160101*, *log20160102*, *log20160102*etc.), serão em si, as partições estão potencialmente colocalizadas no mesmo servidor de partição, até que uma operação de balanceamento de carga as divida em intervalos menores. Por exemplo, todos os BLOBs dentro de um contêiner podem ser servidos por um único servidor até que a carga nesses BLOBs exija um novo balanceamento dos intervalos de partição. Da mesma forma, um grupo de contas pouco carregados com seus nomes organizados em ordem léxica pode ser atendido por um único servidor até que a carga em uma ou em todas essas contas exija a ser dividida em vários servidores de partições. Cada operação de balanceamento de carga pode afetar a latência das chamadas de armazenamento durante a operação. A capacidade do sistema de lidar com uma intermitência repentina de tráfego para uma partição é limitada pela escalabilidade de um único servidor de partição até que a operação de balanceamento de carga seja iniciada e rebalancee o intervalo de chaves de partição.
 
 Você pode seguir algumas práticas recomendadas para reduzir a frequência de tais operações.  
 
@@ -172,11 +172,11 @@ As duas tecnologias podem ajudar você a evitar cargas e gargalos desnecessário
 
 #### <a name="useful-resources"></a>Recursos úteis
 
-Para saber mais sobre SAS, confira [Shared Access Signatures, Part 1: Understanding the SAS Model](../storage-dotnet-shared-access-signature-part-1.md) (Assinaturas de Acesso Compartilhado, Parte 1: noções básicas sobre o modelo de SAS)  
+Para obter mais informações sobre SAS, consulte [conceder acesso limitado aos recursos de armazenamento do Azure usando SAS (assinaturas de acesso compartilhado)](storage-sas-overview.md).  
 
 Para saber mais sobre o CORS, consulte [Suporte a CORS (Compartilhamento de Recursos entre Origens) para os serviços de Armazenamento do Azure](https://msdn.microsoft.com/library/azure/dn535601.aspx).  
 
-### <a name="caching"></a>Cache
+### <a name="caching"></a>Caching
 
 #### <a name="subheading7"></a>Obtendo dados
 
@@ -234,7 +234,7 @@ Embora o paralelismo possa ser ótimo para o desempenho, tenha cuidado ao usar o
 
 Sempre use a última versão das bibliotecas e ferramentas fornecidas pela Microsoft. No momento da gravação, há bibliotecas cliente disponíveis para .NET, Windows Phone, Tempo de Execução do Windows, Java e C++, além de bibliotecas de visualização em outras linguagens. Além disso, a Microsoft liberou cmdlets do PowerShell e os comandos da CLI do Azure para trabalhar com o Armazenamento do Azure. A Microsoft desenvolve ativamente essas ferramentas pesando no desempenho, além de mantê-las atualizadas com as últimas versões do serviço e garantir que elas gerenciem muitas das práticas de desempenho comprovadas internamente.  
 
-### <a name="retries"></a>Novas tentativas
+### <a name="retries"></a>Tentativas
 
 #### <a name="subheading14"></a>Limitação e erros de servidor ocupado
 

@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 07/09/2019
 ms.author: dacurwin
-ms.openlocfilehash: 75916655f1b46cd1b84220cba9db441d54486927
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 875c2002d477a95b44ad1491cb716e2ef70697e7
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68735657"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954844"
 ---
 # <a name="back-up-a-sharepoint-farm-to-azure-with-dpm"></a>Fazer backup de um farm do SharePoint no Azure com o DPM
 Faça backup de um farm do SharePoint para o Microsoft Azure usando o DPM (System Center Data Protection Manager) da mesma maneira que o backup de outras fontes de dados. O Backup do Azure fornece flexibilidade no agendamento de backup para criar pontos de backup diariamente, semanalmente, mensalmente ou anualmente e fornece opções de política de retenção para diversos pontos de backup. O DPM fornece a capacidade de armazenar cópias de disco locais para obter RTOs (Objetivos de Tempo de Recuperação) rápidos e armazenar cópias no Azure para uma retenção econômica e de longo prazo.
@@ -43,7 +43,7 @@ O DPM é executado como uma conta LocalSystem. Para fazer backup de bancos de da
 Se o farm do SharePoint tiver bancos de dados do SQL Server configurados com aliases do SQL Server, instale os componentes de cliente do SQL Server no servidor Web front-end que o DPM protegerá.
 
 ### <a name="sharepoint-server"></a>SharePoint Server
-Embora o desempenho dependa de muitos fatores, tais como o tamanho do farm do SharePoint, como orientação geral, um servidor DPM pode ser usado para proteger um farm do SharePoint de 25 TB.
+Embora o desempenho dependa de muitos fatores, como o tamanho do farm do SharePoint, como orientação geral, um servidor DPM pode proteger um farm do SharePoint de 25 TB.
 
 ### <a name="dpm-update-rollup-5"></a>Pacote Cumulativo de Atualizações 5 do DPM
 Para iniciar a proteção de um farm do SharePoint no Azure, você precisa instalar o Pacote Cumulativo de Atualizações 5 ou posterior do DPM. O Pacote Cumulativo de Atualizações 5 fornecerá a capacidade de proteger um farm do SharePoint no Azure se o farm estiver configurado usando o SQL AlwaysOn.

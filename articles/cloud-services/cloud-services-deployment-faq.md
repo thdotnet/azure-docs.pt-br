@@ -11,18 +11,17 @@ ms.assetid: 84985660-2cfd-483a-8378-50eef6a0151d
 ms.service: cloud-services
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 08d74f866fe28a4c424ba504795b4a22f09785ca
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: fff70cc0c80d26d5454e54e43a6ef6c0b39b5cac
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60337316"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68941718"
 ---
-# <a name="deployment-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Problemas de implantação para serviços de nuvem do Azure: Perguntas frequentes (FAQs)
+# <a name="deployment-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Problemas de implantação para os serviços de nuvem do Azure: Perguntas frequentes (FAQs)
 
 Este artigo inclui perguntas frequentes sobre problemas de implantação para [Serviços de Nuvem do Microsoft Azure](https://azure.microsoft.com/services/cloud-services). Você também pode consultar a [página de tamanho de VM de Serviços de Nuvem](cloud-services-sizes-specs.md) para obter informações de tamanho.
 
@@ -33,29 +32,29 @@ Se um serviço de nuvem tiver uma implantação em cada slot, todo o serviço de
 
 Falhas de alocação de ocorrerem quando o cluster em que se encontra o serviço de nuvem não tem recursos físicos de computação suficientes para atender à sua solicitação de implantação.
 
-Para obter ajuda a reduzir essas falhas de alocação, consulte [falha de alocação do serviço de nuvem: Soluções](cloud-services-allocation-failures.md#solutions).
+Para obter ajuda para atenuar essas falhas de [alocação, consulte falha de alocação do serviço de nuvem: Soluções](cloud-services-allocation-failures.md#solutions).
 
 ## <a name="why-does-scaling-up-or-scaling-out-a-cloud-service-deployment-sometimes-result-in-allocation-failure"></a>Por que escalar vertical ou horizontalmente uma implantação do serviço de nuvem às vezes resulta em falha de alocação?
 Quando um serviço de nuvem é implantado, ele geralmente é fixado a um cluster específico. Isso significa que escalar vertical/horizontalmente um serviço de nuvem existente deve alocar novas instâncias no mesmo cluster. Se o cluster estiver se aproximando da capacidade ou se o tamanho/tipo de VM desejado não estiver disponível, a solicitação poderá falhar.
 
-Para obter ajuda a reduzir essas falhas de alocação, consulte [falha de alocação do serviço de nuvem: Soluções](cloud-services-allocation-failures.md#solutions).
+Para obter ajuda para atenuar essas falhas de [alocação, consulte falha de alocação do serviço de nuvem: Soluções](cloud-services-allocation-failures.md#solutions).
 
 ## <a name="why-does-deploying-a-cloud-service-into-an-affinity-group-sometimes-result-in-allocation-failure"></a>Por que implantar um serviço de nuvem em um grupo de afinidades às vezes resulta em falha de alocação?
 Uma nova implantação para um serviço de nuvem vazio pode ser alocada pela malha em qualquer cluster nessa região, a menos que o serviço de nuvem esteja fixado em um grupo de afinidades. As implantações no mesmo grupo de afinidade serão tentadas no mesmo cluster. Se o cluster estiver se aproximando da capacidade, a solicitação poderá falhar.
 
-Para obter ajuda a reduzir essas falhas de alocação, consulte [falha de alocação do serviço de nuvem: Soluções](cloud-services-allocation-failures.md#solutions).
+Para obter ajuda para atenuar essas falhas de [alocação, consulte falha de alocação do serviço de nuvem: Soluções](cloud-services-allocation-failures.md#solutions).
 
 ## <a name="why-does-changing-vm-size-or-adding-a-new-vm-to-an-existing-cloud-service-sometimes-result-in-allocation-failure"></a>Por que alterar o tamanho da VM ou adicionar uma nova VM a um serviço de nuvem existente às vezes resulta em falha de alocação?
 Os clusters em um datacenter podem ter configurações diferentes de tipos de computador (por exemplo, série A, série Av2, série D, série Dv2, série G, série H etc.). Porém, nem todos os clusters necessariamente terão todos os tipos de VMs. Por exemplo, se você tentar adicionar uma VM da série D a um serviço de nuvem que já esteja implantado em um cluster somente da série A, ocorrerá uma falha de alocação. Isso também ocorrerá se você tentar alterar os tamanhos de SKU da VM (por exemplo, trocar da série A para a série D).
 
-Para obter ajuda a reduzir essas falhas de alocação, consulte [falha de alocação do serviço de nuvem: Soluções](cloud-services-allocation-failures.md#solutions).
+Para obter ajuda para atenuar essas falhas de [alocação, consulte falha de alocação do serviço de nuvem: Soluções](cloud-services-allocation-failures.md#solutions).
 
 Para verificar os tamanhos disponíveis em sua região, consulte [Microsoft Azure: Produtos disponíveis por região](https://azure.microsoft.com/regions/services).
 
 ## <a name="why-does-deploying-a-cloud-service-sometime-fail-due-to-limitsquotasconstraints-on-my-subscription-or-service"></a>Por que implantar um serviço de nuvem às vezes falha devido a limites/cotas/restrições em minha assinatura ou o serviço?
 A implantação de um serviço de nuvem poderá falhar se os recursos que precisam ser alocados excederem a cota padrão ou máxima permitida para o serviço no nível da região/do datacenter. Para obter mais informações, consulte [Limites de Serviços de Nuvem](../azure-subscription-service-limits.md#azure-cloud-services-limits).
 
-Também é possível controlar a cota/uso atual para sua assinatura no portal: Portal do Azure = > assinaturas = > \<assinatura adequada > = > "Uso + cota".
+Você também pode acompanhar o uso/cota atual de sua assinatura no Portal: Portal do Azure = assinaturas > = > \<assinatura apropriada > = > "uso + cota".
 
 Informações relacionadas ao uso/consumo de recursos também podem ser recuperadas por meio das APIs de Cobrança do Azure. Confira [API de uso de recursos do Azure (versão prévia)](../billing/billing-usage-rate-card-overview.md#azure-resource-usage-api-preview).
 

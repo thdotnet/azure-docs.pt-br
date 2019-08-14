@@ -6,15 +6,15 @@ manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 06/05/2019
+ms.date: 08/09/2019
 ms.author: v-adgera
 ms.custom: seodec18
-ms.openlocfilehash: c61544ce10c5a7d16b3ffc0009039e27f5feecb1
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 61c09435606612377781fb382d2d31144e96b07b
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67670809"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68965992"
 ---
 # <a name="add-blobs-to-objects-in-azure-digital-twins"></a>Adicionar blobs a objetos nos Gêmeos Digitais do Azure
 
@@ -30,7 +30,7 @@ Você pode usar solicitações multipartes para fazer o upload de blobs para pon
 
 [!INCLUDE [Digital Twins multipart requests](../../includes/digital-twins-multipart.md)]
 
-### <a name="blob-metadata"></a>Metadados de blob
+### <a name="blob-metadata"></a>Metadados do blob
 
 Além de **Content-Type** e **Content-Disposition**, as solicitações multipartes de blob dos Gêmeos Digitais do Azure devem especificar o corpo JSON correto. Qual corpo JSON a ser enviado depende do tipo de operação de solicitação HTTP que está sendo executada.
 
@@ -51,16 +51,16 @@ Metadados de blobs JSON são compatíveis com o seguinte modelo:
   }
 ```
 
-| Atributo | Tipo | DESCRIÇÃO |
+| Atributo | Tipo | Descrição |
 | --- | --- | --- |
-| **parentId** | string | A entidade pai a ser associada ao blob (espaços, dispositivos ou usuários) |
-| **name** |string | Um nome amigável para humanos para o blob |
-| **type** | string | O tipo de blob – não é possível usar *type* e *typeId*  |
+| **parentId** | Cadeia | A entidade pai a ser associada ao blob (espaços, dispositivos ou usuários) |
+| **name** |Cadeia | Um nome amigável para humanos para o blob |
+| **type** | Cadeia | O tipo de blob – não é possível usar *type* e *typeId*  |
 | **typeId** | Inteiro | A ID do tipo de blob – não é possível usar *type* e *typeId* |
-| **subtype** | string | O subtipo do blob – não é possível usar *subtype* e *subtypeId* |
+| **subtype** | Cadeia | O subtipo do blob – não é possível usar *subtype* e *subtypeId* |
 | **subtypeId** | Inteiro | A ID do subtipo do blob – não é possível usar *subtype* e *subtypeId* |
-| **description** | string | Descrição personalizada do blob |
-| **sharing** | string | Se o blob pode ser compartilhado – enum [`None`, `Tree`, `Global`] |
+| **description** | Cadeia | Descrição personalizada do blob |
+| **sharing** | Cadeia | Se o blob pode ser compartilhado – enum [`None`, `Tree`, `Global`] |
 
 Metadados de blob sempre são fornecidos como a primeira parte, com **Content-Type** `application/json` ou como um arquivo `.json`. Dados de arquivo são fornecidos na segunda parte e podem ser de qualquer tipo MIME com suporte.
 
@@ -108,20 +108,20 @@ Blobs retornados individualmente estão em conformidade com o seguinte esquema J
 }
 ```
 
-| Atributo | Tipo | DESCRIÇÃO |
+| Atributo | Tipo | Descrição |
 | --- | --- | --- |
-| **id** | string | O identificador exclusivo do blob |
-| **name** |string | Um nome amigável para humanos para o blob |
-| **parentId** | string | A entidade pai a ser associada ao blob (espaços, dispositivos ou usuários) |
-| **type** | string | O tipo de blob – não é possível usar *type* e *typeId*  |
+| **id** | Cadeia | O identificador exclusivo do blob |
+| **name** |Cadeia | Um nome amigável para humanos para o blob |
+| **parentId** | Cadeia | A entidade pai a ser associada ao blob (espaços, dispositivos ou usuários) |
+| **type** | Cadeia | O tipo de blob – não é possível usar *type* e *typeId*  |
 | **typeId** | Inteiro | A ID do tipo de blob – não é possível usar *type* e *typeId* |
-| **subtype** | string | O subtipo do blob – não é possível usar *subtype* e *subtypeId* |
+| **subtype** | Cadeia | O subtipo do blob – não é possível usar *subtype* e *subtypeId* |
 | **subtypeId** | Inteiro | A ID do subtipo do blob – não é possível usar *subtype* e *subtypeId* |
-| **sharing** | string | Se o blob pode ser compartilhado – enum [`None`, `Tree`, `Global`] |
-| **description** | string | Descrição personalizada do blob |
+| **sharing** | Cadeia | Se o blob pode ser compartilhado – enum [`None`, `Tree`, `Global`] |
+| **description** | Cadeia | Descrição personalizada do blob |
 | **contentInfos** | Array | Especifica as informações de metadados não estruturados, incluindo a versão |
-| **fullName** | string | O nome completo do blob |
-| **spacePaths** | string | O caminho de espaço |
+| **fullName** | Cadeia | O nome completo do blob |
+| **spacePaths** | Cadeia | O caminho de espaço |
 
 Metadados de blob sempre são fornecidos como a primeira parte, com **Content-Type** `application/json` ou como um arquivo `.json`. Dados de arquivo são fornecidos na segunda parte e podem ser de qualquer tipo MIME com suporte.
 
@@ -191,7 +191,7 @@ curl
  -H "Authorization: Bearer YOUR_TOKEN"
  -H "Accept: application/json"
  -H "Content-Type: multipart/form-data"
- -F "meta={\"ParentId\": \"YOUR_SPACE_ID\",\"Name\":\"My CURL Blob",\"Type\":\"Map\",\"SubType\":\"GenericMap\",\"Description\": \"A well chosen description\", \"Sharing\": \"None\"};type=application/json"
+ -F "meta={\"ParentId\":\"YOUR_SPACE_ID\",\"Name\":\"My CURL Blob\",\"Type\":\"Map\",\"SubType\":\"GenericMap\",\"Description\":\"A well chosen description\",\"Sharing\":\"None\"};type=application/json"
  -F "text=PATH_TO_FILE;type=text/plain"
 ```
 
@@ -249,7 +249,7 @@ Uma solicitação PATCH para o mesmo ponto de extremidade atualiza descrições 
 
 Você pode anexar os blobs aos modelos do usuário (por exemplo, para associar uma imagem de perfil). A imagem abaixo exibe os pontos de extremidade relevantes da API de usuários e quaisquer parâmetros de caminho obrigatório, como `id`:
 
-[![Blobs de usuário](media/how-to-add-blobs/blobs-users-api-img.png)](media/how-to-add-blobs/blobs-users-api-img.png#lightbox)
+[![BLOBs do usuário](media/how-to-add-blobs/blobs-users-api-img.png)](media/how-to-add-blobs/blobs-users-api-img.png#lightbox)
 
 Por exemplo, para buscar um blob anexado a um usuário, faça uma solicitação HTTP GET autenticada com todos os dados de formulário necessários para:
 

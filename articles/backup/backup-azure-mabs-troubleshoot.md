@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: dacurwin
-ms.openlocfilehash: c08acaf65cd42abd9db97fab1267ce5628595b78
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 0f9c2d1d2081ec22898ed3a4fbc73305ff0995e3
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689263"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954676"
 ---
 # <a name="troubleshoot-azure-backup-server"></a>Solucionar problemas de Servidor de Backup do Azure
 
@@ -55,13 +55,13 @@ Recomendamos que você execute a validação abaixo antes de iniciar a solução
 
 | Operação | Detalhes do erro | Solução alternativa |
 | --- | --- | --- |
-| Restaurar | **Erro de código**: CBPServerRegisteredVaultDontMatchWithCurrent/Vault Credentials Error: 100110 <br/> <br/>**Mensagem de erro**: As credenciais fornecidas para o cofre são diferentes das do cofre no qual o servidor está registrado | **Causa**: Esse problema ocorre quando você está tentando restaurar arquivos para o servidor alternativo do servidor original usando a opção de recuperação do DPM externo e se o servidor que está sendo recuperado e o servidor original de onde é realizado o backup dos dados não estiverem associados ao mesmo cofre de Serviço de Recuperação.<br/> <br/>**Solução alternativa** Para resolver esse problema, certifique-se de que o servidor original e o alternativo estejam registrados no mesmo cofre.|
+| Restaurar | **Erro de código**: CBPServerRegisteredVaultDontMatchWithCurrent/Vault Credentials Error: 100110 <br/> <br/>**Mensagem de erro**: As credenciais fornecidas para o cofre são diferentes das do cofre no qual o servidor está registrado | **Causa**: Esse problema ocorre quando você está tentando restaurar arquivos para o servidor alternativo a partir do servidor original usando a opção de recuperação externa do DPM e se o servidor que está sendo recuperado e o servidor original do qual o backup dos dados é feito não estão associados ao mesmo Cofre do serviço de recuperação.<br/> <br/>**Solução alternativa** Para resolver esse problema, certifique-se de que o servidor original e o alternativo estejam registrados no mesmo cofre.|
 
 ## <a name="online-recovery-point-creation-jobs-for-vmware-vm-fail"></a>Falha em trabalhos de criação de ponto de recuperação online para VM do VMware
 
 | Operação | Detalhes do erro | Solução alternativa |
 | --- | --- | --- |
-| Backup | Falha em trabalhos de criação de ponto de recuperação online para VM do VMware. O DPM encontrou um erro de VMware ao tentar obter informações de ChangeTracking. ErrorCode - FileFaultFault (ID 33621 ) |  <ol><li> Redefinir o CTK no VMware para as VMs afetadas.</li> <li>Verificar se o disco independente não está em vigor no VMware.</li> <li>Interromper a proteção para as VMs afetadas e proteger novamente com o botão **Atualizar**. </li><li>Executar uma CC para as VMs afetadas.</li></ol>|
+| Backup | Falha em trabalhos de criação de ponto de recuperação online para VM do VMware. O DPM encontrou um erro de VMware ao tentar obter informações de ChangeTracking. ErrorCode-FileFaultFault (ID 33621) |  <ol><li> Redefinir o CTK no VMware para as VMs afetadas.</li> <li>Verificar se o disco independente não está em vigor no VMware.</li> <li>Interrompa a proteção para as VMs afetadas e proteja novamente com o botão **Atualizar** . </li><li>Executar uma CC para as VMs afetadas.</li></ol>|
 
 
 ## <a name="the-agent-operation-failed-because-of-a-communication-error-with-the-dpm-agent-coordinator-service-on-the-server"></a>A operação do agente falhou devido a um erro de comunicação com o serviço Coordenador de Agentes do DPM no Servidor
@@ -102,7 +102,7 @@ Recomendamos que você execute a validação abaixo antes de iniciar a solução
 | Backup | Erro inesperado durante a execução do trabalho. O dispositivo não está pronto. | **Se a ação recomendada exibida no produto não funcionar, realize as seguintes etapas:** <br> <ul><li>Defina o Espaço de Armazenamento de Cópia de Sombra para ilimitado nos itens no grupo de proteção e execute a verificação de consistência.<br></li> (OU) <li>Tente excluir o grupo de proteção existente e criar vários grupos novos. Cada novo grupo de proteção deve ter um item individual dentro dele.</li></ul> |
 | Backup | Se você estiver fazendo backup somente do estado do sistema, verifique se há espaço livre suficiente no computador protegido para armazenar o backup do estado do sistema. | <ol><li>Verifique se o Backup do Windows Server está instalado no computador protegido.</li><li>Verifique se há espaço suficiente no computador protegido para o estado do sistema. A maneira mais fácil de verificar isso é acessar o computador protegido, abrir o Backup do Windows Server, clicar nas seleções e, em seguida, selecionar a BMR. A interface do usuário lhe mostrará quanto espaço é necessário. Abra **WSB** > **Backup local** > **Agendamento de backup** > **Selecionar configuração de backup**  >  **Servidor completo** (o tamanho é exibido). Use esse tamanho para verificação.</li></ol>
 | Backup | Falha de backup para BMR | Se o tamanho de BMR for grande, mova alguns arquivos do aplicativo para a unidade do sistema operacional e tente novamente. |
-| Backup | A opção de proteger novamente uma VM do VMware em um novo Servidor de Backup do Azure não aparece como disponível para adicionar. | As propriedades do VMware são apontadas para uma instância antiga e obsoleta do Servidor de Backup do Azure. Para resolver esse problema:<br><ol><li>No VCenter (equivalente do SC-VMM), vá para a guia **Resumo** e então **Atributos Personalizados**.</li>  <li>Exclua o antigo nome do Servidor de Backup do Azure do valor **DPMServer**.</li>  <li>Volte para o novo Servidor de Backup do Azure e modifique o PG.  Depois de selecionar o botão **Atualizar**, a VM é exibida com uma caixa de seleção conforme disponível para adicionar para proteção.</li></ol> |
+| Backup | A opção de proteger novamente uma VM do VMware em um novo Backup do Microsoft Azure Server não é mostrada como disponível para adicionar. | As propriedades do VMware são apontadas para uma instância antiga e obsoleta do Servidor de Backup do Azure. Para resolver esse problema:<br><ol><li>No VCenter (equivalente do SC-VMM), vá para a guia **Resumo** e então **Atributos Personalizados**.</li>  <li>Exclua o antigo nome do Servidor de Backup do Azure do valor **DPMServer**.</li>  <li>Volte para o novo Servidor de Backup do Azure e modifique o PG.  Depois de selecionar o botão **Atualizar**, a VM é exibida com uma caixa de seleção conforme disponível para adicionar para proteção.</li></ol> |
 | Backup | Erro ao acessar pastas/arquivos compartilhados | Tente modificar as configurações de antivírus conforme sugerido no artigo da TechNet [Executar um software antivírus no servidor DPM](https://technet.microsoft.com/library/hh757911.aspx).|
 
 

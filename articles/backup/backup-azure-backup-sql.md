@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 01/30/2019
 ms.author: dacurwin
-ms.openlocfilehash: 744c954c9192f75489911f09a1ef7195c5bbd1fa
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: d564cc16a1261cdf71d783ce9f40e577177ff74c
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689367"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954796"
 ---
 # <a name="back-up-sql-server-to-azure-as-a-dpm-workload"></a>Fazer backup do SQL Server no Azure como uma carga de trabalho do DPM
 Este artigo guia você pelas etapas de configuração para o backup de bancos de dados do SQL Server usando o Backup do Azure.
@@ -43,10 +43,10 @@ Antes de começar, verifique se todos os [pré-requisitos](backup-azure-dpm-intr
     ![Selecione o banco de dados SQL](./media/backup-azure-backup-sql/pg-databases.png)
 6. Forneça um nome para o grupo de proteção e marque a caixa de seleção **Desejo proteção online** .
 
-    ![Método de proteção de dados: disco de curto prazo e Azure Online](./media/backup-azure-backup-sql/pg-name.png)
+    ![Método de proteção de dados – disco de curto prazo e Azure Online](./media/backup-azure-backup-sql/pg-name.png)
 7. Na tela **Especificar Objetivos de Curto Prazo** , inclua as entradas necessárias para criar pontos de backup em disco.
 
-    Aqui vemos que o **intervalo de retenção** está definido como *5 dias* e a **Frequência de sincronização** está definida como uma vez cada *15 minutos*, que é a frequência na qual o backup é feito. **Backup Completo Expresso** é definido como *20h*.
+    Aqui vemos que o **período de retenção** está definido *como 5 dias*, a **frequência de sincronização** é definida como uma vez a cada *15 minutos*, que é a frequência na qual o backup é feito. **Backup Completo Expresso** é definido como *20h*.
 
     ![Objetivos de curto prazo](./media/backup-azure-backup-sql/pg-shortterm.png)
 
@@ -131,7 +131,7 @@ Embora as etapas anteriores tenham criado uma política de backup, um "ponto de 
 ## <a name="recover-a-sql-server-database-from-azure"></a>Recuperar um banco de dados SQL Server no Azure
 As seguintes etapas são necessárias para recuperar uma entidade protegida (banco de dados SQL Server) do Azure.
 
-1. Abra o Console de gerenciamento do servidor DPM. Navegue até o workspace **Recuperação**, onde é possível ver os servidores incluídos no backup pelo DPM. Procure o banco de dados necessário (nesse caso, ReportServer$MSDPM2012). Selecione uma hora para **Recuperar de** que termine com **Online**.
+1. Abra o Console de gerenciamento do servidor DPM. Navegue até o workspace **Recuperação**, onde é possível ver os servidores incluídos no backup pelo DPM. Procure o banco de dados necessário (nesse caso, ReportServer$MSDPM2012). Selecione uma **recuperação de** tempo que termina com **online**.
 
     ![Selecione um ponto de recuperação](./media/backup-azure-backup-sql/sqlbackup-restorepoint.png)
 2. Clique com o botão direito do mouse no nome do banco de dados e clique em **Recuperar**.
