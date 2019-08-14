@@ -6,49 +6,49 @@ ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 06/27/2019
-ms.openlocfilehash: a2f9b7597022822272692d20976e1da654b9d524
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: b363a994024b4a53703b6107ef4190129e900547
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67462048"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68950644"
 ---
 # <a name="performance-recommendations-in-azure-database-for-mariadb"></a>Recomendações de desempenho no banco de dados do Azure para MariaDB
 
-**Aplica-se a:** Banco de dados do Azure para MariaDB 10.2
+**Aplica-se a:** Banco de dados do Azure para MariaDB 10,2
 
-> [!NOTE]
-> Recomendações de desempenho está em visualização.
+> [!IMPORTANT]
+> As recomendações de desempenho estão em versão prévia.
 
-O recurso de recomendações de desempenho analisa seus bancos de dados para criar sugestões personalizados para melhorar o desempenho. Para produzir as recomendações, a análise examina várias características do banco de dados, incluindo o esquema. Habilitar [Store consulta](concepts-query-store.md) no seu servidor para utilizar totalmente o recurso de recomendações de desempenho. Se o esquema de desempenho for OFF, ativar a consulta Store permite performance_schema e um subconjunto de instrumentos de esquema de desempenho necessária para o recurso. Depois de implementar qualquer recomendação de desempenho, você deve testar o desempenho para avaliar o impacto dessas alterações.
+O recurso de recomendações de desempenho analisa seus bancos de dados para criar sugestões personalizadas para melhorar o desempenho. Para produzir as recomendações, a análise examina várias características do banco de dados, incluindo o esquema. Habilite [repositório de consultas](concepts-query-store.md) no seu servidor para utilizar totalmente o recurso de recomendações de desempenho. Se o esquema de desempenho estiver desativado, ativar Repositório de Consultas habilita o performance_schema e um subconjunto de instrumentos de esquema de desempenho necessários para o recurso. Depois de implementar qualquer recomendação de desempenho, você deve testar o desempenho para avaliar o impacto dessas alterações.
 
 ## <a name="permissions"></a>Permissões
 
 **Permissões de Proprietário** ou **Colaborador** necessárias para executar a análise usando o recurso de recomendações de desempenho.
 
-## <a name="performance-recommendations"></a>Recomendações do desempenho
+## <a name="performance-recommendations"></a>Recomendações de desempenho
 
 O recurso das [Recomendações de Desempenho](concepts-performance-recommendations.md) recurso analisa as cargas de trabalho entre seu servidor para identificar os índices com o potencial de melhorar o desempenho.
 
-Abra **recomendações de desempenho** da **desempenho inteligente** seção da barra de menus, na página do portal do Azure para seu servidor do MariaDB.
+Abra **recomendações de desempenho** na seção de **desempenho inteligente** da barra de menus na página de portal do Azure para seu servidor do MariaDB.
 
 ![Página das Recomendações de Desempenho](./media/concepts-performance-recommendations/performance-recommendations-page.png)
 
-Selecione **analisar** e escolha um banco de dados, que iniciará a análise. Dependendo de sua carga de trabalho, a análise pode levar vários minutos para ser concluída. Quando a análise for concluída, haverá uma notificação no portal. Análise realiza um exame detalhado de seu banco de dados. Recomendamos que você execute análise durante períodos de pico.
+Selecione **analisar** e escolha um banco de dados, que iniciará a análise. Dependendo de sua carga de trabalho, a análise pode levar vários minutos para ser concluída. Quando a análise for concluída, haverá uma notificação no portal. A análise executa um exame profundo do seu banco de dados. Recomendamos que você execute a análise fora dos períodos de pico.
 
-O **recomendações** janela mostrará uma lista de recomendações, caso seja encontrado e a ID da consulta relacionados que gerou essa recomendação. Com a ID da consulta, você pode usar o [mysql.query_store](concepts-query-store.md#mysqlquery_store) exibição para saber mais sobre a consulta.
+A janela **recomendações** mostrará uma lista de recomendações, se forem encontradas e a ID de consulta relacionada que gerou essa recomendação. Com a ID de consulta, você pode usar a exibição [MySQL. query_store](concepts-query-store.md#mysqlquery_store) para saber mais sobre a consulta.
 
 ![Nova página de recomendações de desempenho](./media/concepts-performance-recommendations/performance-recommendations-result.png)
 
-As recomendações não serão aplicadas automaticamente. Para aplicar a recomendação, copie o texto da consulta e executá-lo do seu cliente de escolha. Lembre-se de testar e monitorar para avaliar a recomendação.
+As recomendações não são aplicadas automaticamente. Para aplicar a recomendação, copie o texto da consulta e execute-o do seu cliente de sua escolha. Lembre-se de testar e monitorar para avaliar a recomendação.
 
 ## <a name="recommendation-types"></a>Tipos de recomendação
 
-Atualmente, apenas *Create Index* recomendações têm suporte.
+Atualmente, há suporte apenas para criar recomendações de *índice* .
 
 ### <a name="create-index-recommendations"></a>Criar recomendações de índice
 
-*Criar índice* recomendações sugerem índices novos para agilizar as consultas na carga de trabalho com mais frequência executadas ou demoradas. Esse tipo de recomendação requer [Store consulta](concepts-query-store.md) esteja habilitado. Consulta Store coleta informações de consulta e fornece as estatísticas de tempo de execução e a frequência de consulta detalhados que a análise usa para fazer a recomendação.
+*Criar* recomendações de índice sugerem novos índices para acelerar a execução com mais frequência ou as consultas demoradas na carga de trabalho. Este tipo de recomendação requer que [repositório de consultas](concepts-query-store.md) seja habilitado. Repositório de Consultas coleta informações de consulta e fornece as estatísticas detalhadas de tempo de execução de consulta e frequência que a análise usa para fazer a recomendação.
 
 ## <a name="next-steps"></a>Próximas etapas
 

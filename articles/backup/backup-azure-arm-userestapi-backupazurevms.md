@@ -10,16 +10,16 @@ ms.topic: conceptual
 ms.date: 08/03/2018
 ms.author: dacurwin
 ms.assetid: b80b3a41-87bf-49ca-8ef2-68e43c04c1a3
-ms.openlocfilehash: 7a69fc7c9077fa10ddf808f1cd953f6739eabe20
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 701972c32f3e80682e2a20d04b02bcd555532e08
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68688717"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954988"
 ---
 # <a name="back-up-an-azure-vm-using-azure-backup-via-rest-api"></a>Fazer backup de uma VM do Azure usando o Backup do Azure por meio da API REST
 
-Este artigo descreve como gerenciar backups para uma VM do Azure usando o Backup do Azure por meio da API REST. Configure a proteção pela primeira vez para uma VM do Azure que ficava desprotegida, dispare um backup sob demanda para uma VM do Azure protegida e modifique as propriedades de backup de uma VM que passou por backup usando a API REST, conforme explicado aqui.
+Este artigo descreve como gerenciar backups para uma VM do Azure usando o Backup do Azure por meio da API REST. Configure a proteção pela primeira vez para uma VM do Azure desprotegida anteriormente, dispare um backup sob demanda para uma VM do Azure protegida e modifique as propriedades de backup de uma VM com backup por meio da API REST, conforme explicado aqui.
 
 Veja os tutoriais [criar cofre](backup-azure-arm-userestapi-createorupdatevault.md) e [criar política](backup-azure-arm-userestapi-createorupdatepolicy.md) da API REST para criar novos cofres e políticas.
 
@@ -98,7 +98,7 @@ X-Powered-By: ASP.NET
 
 ### <a name="selecting-the-relevant-azure-vm"></a>Selecionar a VM do Azure relevante
 
- Você pode confirmar que o "armazenamento em cache" foi concluído [listando todos os itens que podem ser protegidos](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list) na assinatura e localizando a VM desejada na resposta. [A resposta dessa operação](#example-responses-1) também oferece informações sobre como os Serviços de Recuperação identificam uma VM.  Quando estiver familiarizado com o padrão, você poderá ignorar esta etapa e ir diretamente para a etapa de [habilitar a proteção](#enabling-protection-for-the-azure-vm).
+ Você pode confirmar que o "armazenamento em cache" foi concluído [listando todos os itens que podem ser protegidos](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list) na assinatura e localizando a VM desejada na resposta. [A resposta dessa operação](#example-responses-1) também fornece informações sobre como os serviços de recuperação identificam uma VM.  Quando estiver familiarizado com o padrão, você poderá ignorar esta etapa e ir diretamente para a etapa de [habilitar a proteção](#enabling-protection-for-the-azure-vm).
 
 Esta operação é uma operação *GET*.
 
@@ -393,7 +393,7 @@ Como a tarefa de backup é uma operação longa, ela precisa ser rastreada confo
 
 ### <a name="changing-the-policy-of-protection"></a>Alterar a política de proteção
 
-Para alterar a política com que a VM é protegida, você pode usar o mesmo formato que para [habilitar a proteção](#enabling-protection-for-the-azure-vm). Basta fornecer a ID da nova política no [corpo da solicitação](#example-request-body) e enviar a solicitação. Por exemplo: Para alterar a política de testVM de ' DefaultPolicy ' para ' ProdPolicy ', forneça a ID ' ProdPolicy ' no corpo da solicitação.
+Para alterar a política com que a VM é protegida, você pode usar o mesmo formato que para [habilitar a proteção](#enabling-protection-for-the-azure-vm). Basta fornecer a ID da nova política no [corpo da solicitação](#example-request-body) e enviar a solicitação. Por exemplo:  Para alterar a política de testVM de ' DefaultPolicy ' para ' ProdPolicy ', forneça a ID ' ProdPolicy ' no corpo da solicitação.
 
 ```http
 {

@@ -12,12 +12,12 @@ ms.date: 01/24/2019
 ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d7a039f25339d91d77d5b6924674ea36a16c15b
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: e1521d2b3d47667466636a1ac15f107826e40942
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68880806"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68942940"
 ---
 # <a name="add-your-non-microsoft-accounts"></a>Adicionar contas não Microsoft
 
@@ -33,6 +33,9 @@ Em geral, para todas as suas contas pessoais, você deverá:
 1. Entre em sua conta e habilite a verificação de dois fatores usando seu dispositivo ou computador.
 
 2. Adicionar a conta ao aplicativo Microsoft Authenticator. Você pode ser solicitado a digitalizar um código QR como parte desse processo.
+
+    >[!Note]
+    >Se esta for a primeira vez que você estiver configurando o aplicativo Microsoft Authenticator, você poderá receber um prompt perguntando se deseja permitir que o aplicativo acesse sua câmera (iOS) ou permitir que o aplicativo tire fotos e grave vídeo (Android). Você deve selecionar **permitir** para que o aplicativo autenticador possa acessar sua câmera para tirar uma imagem do código QR na próxima etapa. Se você não permitir a câmera, ainda poderá configurar o aplicativo autenticador, mas precisará adicionar as informações de código manualmente. Para obter informações sobre como adicionar o código manualmente, consulte [adicionar manualmente uma conta ao aplicativo](user-help-auth-app-add-account-manual.md).
 
 Estamos fornecendo o processo aqui para suas contas do Facebook, do Google, do GitHub e da Amazon, mas esse processo é o mesmo para qualquer outro aplicativo, como Adobe, Netflix ou Instagram.
 
@@ -168,9 +171,6 @@ Adicione sua conta da Amazon ativando a verificação de dois fatores e, em segu
     As página muda para mostrar a você um código QR. Não feche esta página.
 
 5. Abra o aplicativo Microsoft Authenticator, selecione **Adicionar conta** do ícone **Personalizar e controlar** na parte superior direita e selecione **Outra conta (Google, Facebook etc.)** .
-
-    >[!Note]
-    >Se esta for a primeira vez que você estiver configurando o aplicativo Microsoft Authenticator, você poderá receber um prompt perguntando se deseja permitir que o aplicativo acesse sua câmera (iOS) ou permitir que o aplicativo tire fotos e grave vídeo (Android). Você deve selecionar **permitir** para que o aplicativo autenticador possa acessar sua câmera para tirar uma imagem do código QR na próxima etapa. Se você não permitir a câmera, ainda poderá configurar o aplicativo autenticador, mas precisará adicionar as informações de código manualmente. Para obter informações sobre como adicionar o código manualmente, consulte [adicionar manualmente uma conta ao aplicativo](user-help-auth-app-add-account-manual.md).
 
 6. No computador, use a câmera do dispositivo para ler o código QR da página **Escolha como você vai receber códigos**.
 

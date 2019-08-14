@@ -2,18 +2,17 @@
 title: Entender cotas e limitação do Hub IoT do Azure | Microsoft Docs
 description: Guia do desenvolvedor ‑ Descrição das cotas que se aplicam ao Hub IoT e o comportamento de limitação esperado.
 author: robinsh
-manager: philmea
 ms.author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 07/17/2019
-ms.openlocfilehash: 1c19696b10584bc55989b9270978486d7f5aa157
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.date: 08/08/2019
+ms.openlocfilehash: 184cdaddc638461d50f322292d5cfaf28ab93093
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68326737"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68950535"
 ---
 # <a name="reference---iot-hub-quotas-and-throttling"></a>Referência - Cotas e limitação do Hub IoT
 
@@ -40,7 +39,7 @@ A tabela a seguir mostra as limitações impostas. Os valores referem-se a um hu
 | Envios do dispositivo para a nuvem | Mais alto de 100 operações de envio/s ou 12 operações de envio/s/unidade <br/> Por exemplo, duas unidades S1 são 2\*12 = 24/s, mas você tem pelo menos 100 operações de envio/s em suas unidades. Com nove unidades S1, você tem 108 operações de envio/s (\*9 12) em suas unidades. | 120 operações de envio/s/unidade | 6\.000 operações de envio/s/unidade |
 | Envios de nuvem para dispositivo<sup>1</sup> | 1,67 operações de envio/s/unidade (100 mensagens/min/unidade) | 1,67 operações de envio/s/unidade (100 operações de envio/min/unidade) | 83,33 operações de envio/s/unidade (5.000 operações de envio/min/unidade) |
 | Recebimentos de nuvem para dispositivo<sup>1</sup> <br/> (somente quando o dispositivo usar HTTPS)| 16,67 operações de recebimento/s/unidade (1.000 operações de recebimento/min/unidade) | 16,67 operações de recebimento/s/unidade (1.000 operações de recebimento/min/unidade) | 833,33 operações de recebimento/s/unidade (50.000 operações de recebimento/min/unidade) |
-| Upload de arquivos | 1,67 notificações de carregamento de arquivo/s/unidade (100/min/unidade) | 1,67 notificações de carregamento de arquivo/s/unidade (100/min/unidade) | 83,33 notificações de upload de arquivo/s/unidade (5000/min/unidade) |
+| Upload de arquivo | 1,67 notificações de carregamento de arquivo/s/unidade (100/min/unidade) | 1,67 notificações de carregamento de arquivo/s/unidade (100/min/unidade) | 83,33 notificações de upload de arquivo/s/unidade (5000/min/unidade) |
 | Métodos diretos<sup>1</sup> | 160KB/seg/unidade<sup>2</sup> | 480KB/seg/unidade<sup>2</sup> | 24MB/seg/unidade<sup>2</sup> | 
 | Consultas | 20/min/unidade | 20/min/unidade | 1000/min/unidade |
 | Leituras de (dispositivos e módulos) gêmeos <sup>1</sup> | 100/s | Maior de 100/s ou 10/s/unidade | 500/s/unidade |
@@ -96,7 +95,8 @@ IoT Hub impõe outros limites operacionais:
 | Carregamentos de arquivos | 10 carregamentos de arquivo simultâneos por dispositivo. |
 | Trabalhos<sup>1</sup> | O máximo de trabalhos simultâneos é 1 (para gratuito e S1), 5 (para S2) e 10 (para S3). No entanto, o máximo de trabalhos simultâneos de [importação/exportação de dispositivo](iot-hub-bulk-identity-mgmt.md) é 1 para todas as camadas. <br/>O histórico de trabalhos é mantido em até 30 dias. |
 | Pontos de extremidade adicionais | Hubs SKU pagos podem ter 10 pontos de extremidade adicionais. Hubs SKU gratuitos podem ter um ponto de extremidade adicional. |
-| Regras de roteamento de mensagem | Hubs SKU pagos podem ter 100 regras de roteamento. Hubs SKU gratuitos podem ter cinco regras de roteamento. |
+| Consultas de roteamento de mensagens | Os hubs de SKU pagos podem ter 100 consultas de roteamento. Os hubs SKU gratuitos podem ter cinco consultas de roteamento. |
+| Aprimoramentos de mensagem | Os hubs de SKU pagos podem ter até 10 aprimoramentos de mensagens. Os hubs de SKU gratuitos podem ter até 2 aprimoramentos de mensagens.|
 | Mensagens do dispositivo para a nuvem | Tamanho máximo da mensagem 256 KB |
 | Mensagens de nuvem para dispositivo<sup>1</sup> | Tamanho máximo da mensagem 64 KB. O máximo de mensagens pendentes para entrega é de 50 por dispositivo. |
 | Método direto<sup>1</sup> | O tamanho de payload do método direto máximo é 128 KB. |
@@ -110,7 +110,7 @@ IoT Hub impõe outros limites operacionais:
 
 A qualquer momento, você pode aumentar as cotas ou os limites de limitação [aumentando o número de unidades provisionadas em um hub IOT](iot-hub-upgrade.md).
 
-## <a name="latency"></a>Latency
+## <a name="latency"></a>Latência
 
 O Hub IoT busca oferecer baixa latência para todas as operações. No entanto, devido a condições de rede e outros fatores imprevisíveis, ele não pode garantir uma determinada latência. Ao projetar sua solução, você deve:
 

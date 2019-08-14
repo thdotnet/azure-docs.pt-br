@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 06/25/2019
 ms.author: zarhoads
-ms.openlocfilehash: a9cf3db3a15fab5a2f067a146950e02923a20379
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: b5bbc2951e10e132b407e1651a2c146cf22184a5
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "67476800"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68949661"
 ---
 # <a name="preview---use-a-standard-sku-load-balancer-in-azure-kubernetes-service-aks"></a>Visualização-usar um balanceador de carga de SKU padrão no serviço de kubernetes do Azure (AKS)
 
@@ -92,6 +92,7 @@ As seguintes limitações se aplicam quando você cria e gerencia clusters AKS q
 
 * Ao usar o SKU *Standard* para um balanceador de carga, você deve permitir endereços públicos e evitar a criação de qualquer Azure Policy que banimentos a criação de IP. O cluster AKS cria automaticamente um IP público de SKU *padrão* no mesmo grupo de recursos criado para o cluster AKs, que geralmente é nomeado com *MC_* no início. AKS atribui o IP público ao balanceador de carga SKU *padrão* . O IP público é necessário para permitir o tráfego de saída do cluster AKS. Esse IP público também é necessário para manter a conectividade entre o plano de controle e os nós de agente, bem como para manter a compatibilidade com as versões anteriores do AKS.
 * Ao usar o SKU *Standard* para um balanceador de carga, você deve usar o kubernetes versão 1.13.5 ou superior.
+* Se estiver usando o [recurso de IP público do nó](use-multiple-node-pools.md#assign-a-public-ip-per-node-in-a-node-pool) com balanceadores de carga padrão, você poderá definir uma regra de saída SLB ou um IP público para o nó. Você deve selecionar um ou outro porque uma VM não pode ser anexada a uma regra de saída SLB e a um IP público simultaneamente.
 
 Embora esse recurso esteja em versão prévia, as seguintes limitações adicionais se aplicam:
 

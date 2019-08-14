@@ -8,15 +8,15 @@ ms.service: batch
 ms.devlang: multiple
 ms.topic: article
 ms.workload: na
-ms.date: 11/19/2018
+ms.date: 08/09/2019
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: edf4ce2be451672ecbd4f732c3110617dc122ca0
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: a7de2ba66ccfb5e3f3bce688e68698d90fe2eaf6
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68323597"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68941330"
 ---
 # <a name="run-container-applications-on-azure-batch"></a>Executar aplicativos de contêiner no Lote do Azure
 
@@ -228,7 +228,7 @@ CloudPool pool = batchClient.PoolOperations.CreatePool(
 
 Para executar uma tarefa de contêiner em um pool habilitado para contêiner, especifique as configurações específicas do contêiner. As configurações incluem a imagem a ser usada, o registro e as opções de execução do contêiner.
 
-* Use a propriedade `ContainerSettings` das classes de tarefa para definir configurações específicas ao contêiner. Essas configurações são definidas pela classe [TaskContainerSettings](/dotnet/api/microsoft.azure.batch.taskcontainersettings).
+* Use a propriedade `ContainerSettings` das classes de tarefa para definir configurações específicas ao contêiner. Essas configurações são definidas pela classe [TaskContainerSettings](/dotnet/api/microsoft.azure.batch.taskcontainersettings). Observe que a `--rm` opção de contêiner não requer uma `--runtime` opção adicional, pois ela é encarregada pelo lote. 
 
 * Se você executar tarefas em imagens de contêiner, a [tarefa nuvem](/dotnet/api/microsoft.azure.batch.cloudtask) e a [tarefa do gerenciador de trabalho](/dotnet/api/microsoft.azure.batch.cloudjob.jobmanagertask) exigirão configurações de contêiner. No entanto, [iniciar tarefa](/dotnet/api/microsoft.azure.batch.starttask), [tarefa de preparação de trabalho](/dotnet/api/microsoft.azure.batch.cloudjob.jobpreparationtask) e [tarefa de liberação de trabalho](/dotnet/api/microsoft.azure.batch.cloudjob.jobreleasetask) não exigem configurações de contêiner (ou seja, podem ser executados em um contexto de contêiner ou diretamente no nó).
 

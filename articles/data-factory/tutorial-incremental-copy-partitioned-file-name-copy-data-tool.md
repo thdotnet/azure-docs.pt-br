@@ -1,6 +1,6 @@
 ---
-title: Apenas usando o Azure Data Factory para copiar novos arquivos de maneira incremental com base no nome de arquivos particionado de tempo | Microsoft Docs
-description: Crie um Azure data factory e, em seguida, use a ferramenta Copy Data para carregar incrementalmente os novos arquivos apenas com base no nome de arquivo particionada de tempo.
+title: Usando Azure Data Factory para copiar incrementalmente novos arquivos somente com base no tempo de nome de arquivo particionado | Microsoft Docs
+description: Crie um data factory do Azure e, em seguida, use a ferramenta Copiar Dados para carregar incrementalmente novos arquivos com base no nome do arquivo particionado.
 services: data-factory
 documentationcenter: ''
 author: dearandyxu
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 1/24/2019
-ms.openlocfilehash: c89764d746f07e6100b1f250d4c107bb700fe014
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8081d7112d67e3bb4e72c6f6e88d765a159e047f
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61098291"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68933910"
 ---
-# <a name="incrementally-copy-new-files-based-on-time-partitioned-file-name-by-using-the-copy-data-tool"></a>Copiar incrementalmente os novos arquivos com base no nome de arquivo particionada de tempo usando a ferramenta Copy Data
+# <a name="incrementally-copy-new-files-based-on-time-partitioned-file-name-by-using-the-copy-data-tool"></a>Copiar incrementalmente novos arquivos com base no nome do arquivo particionado usando a ferramenta de Copiar Dados
 
-Neste tutorial, você pode usar o portal do Azure para criar um Data Factory. Em seguida, você deve usar a ferramenta Copy Data para criar um pipeline que copia incrementalmente novos arquivos com base no nome de arquivo particionada tempo do armazenamento de BLOBs do Azure para o armazenamento de BLOBs do Azure. 
+Neste tutorial, você pode usar o portal do Azure para criar um Data Factory. Em seguida, você usa a ferramenta Copiar Dados para criar um pipeline que copia incrementalmente novos arquivos com base no nome de arquivo particionado do armazenamento de BLOBs do Azure para o armazenamento de BLOBs do Azure. 
 
 > [!NOTE]
 > Se estiver se familiarizando com o Azure Data Factory, confira [Introdução ao Azure Data Factory](introduction.md).
@@ -37,34 +37,32 @@ Neste tutorial, você executa as seguintes etapas:
 ## <a name="prerequisites"></a>Pré-requisitos
 
 * **Assinatura do Azure**: Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/) antes de começar.
-* **Conta de Armazenamento do Azure**: Usar o armazenamento de Blob como o _fonte_ e _coletor_ armazenamento de dados. Se você não tiver uma conta de armazenamento do Azure, confira as instruções em [Criar uma conta de armazenamento](../storage/common/storage-quickstart-create-account.md).
+* **Conta de Armazenamento do Azure**: Use o armazenamento de BLOBs como o armazenamento de dados de _origem_ e de _coletor_ . Se você não tiver uma conta de armazenamento do Azure, confira as instruções em [Criar uma conta de armazenamento](../storage/common/storage-quickstart-create-account.md).
 
-### <a name="create-two-containers-in-blob-storage"></a>Crie dois contêineres no armazenamento de Blob
+### <a name="create-two-containers-in-blob-storage"></a>Criar dois contêineres no armazenamento de BLOBs
 
-Prepare seu armazenamento de BLOBs para o tutorial executando as seguintes etapas.
+Prepare o armazenamento de BLOBs para o tutorial executando estas etapas.
 
-1. Crie um contêiner denominado **fonte**.  Criar um caminho de pasta como **2019/02/26/14** em seu contêiner. Crie um arquivo de texto vazio e nomeie-o como **file1.txt**. Carregar o file1.txt para o caminho da pasta **fonte/2019/02/26/14** em sua conta de armazenamento.  É possível usar várias ferramentas para executar essas tarefas, como o [Azure Storage Explorer](https://storageexplorer.com/).
+1. Crie um contêiner chamado **origem**.  Crie um caminho de pasta como **2019/02/26/14** em seu contêiner. Crie um arquivo de texto vazio e nomeie-o como **arquivo1. txt**. Carregue o arquivo1. txt no caminho da pasta **Source/2019/02/26/14** em sua conta de armazenamento.  É possível usar várias ferramentas para executar essas tarefas, como o [Azure Storage Explorer](https://storageexplorer.com/).
     
     ![upload de arquivos](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/upload-file.png)
     
     > [!NOTE]
-    > Ajuste o nome da pasta com a hora UTC.  Por exemplo, se a hora UTC atual for 2:03 PM em 26 de fevereiro de 2019, você pode criar o caminho da pasta como **fonte/2019/02/26/14/** pela regra de **origem / {ano} / {Month} / {Day} / {hora} /** .
+    > Ajuste o nome da pasta com a hora UTC.  Por exemplo, se a hora UTC atual for 2:03 PM em fevereiro de 26, 2019, você poderá criar o caminho da pasta como **Source/2019/02/26/14/** pela regra de **origem/{ano}/{month}/{Day}/{hora}/** .
 
-2. Crie um contêiner denominado **destino**. É possível usar várias ferramentas para executar essas tarefas, como o [Azure Storage Explorer](https://storageexplorer.com/).
+2. Crie um contêiner chamado **destino**. É possível usar várias ferramentas para executar essas tarefas, como o [Azure Storage Explorer](https://storageexplorer.com/).
 
 ## <a name="create-a-data-factory"></a>Criar um data factory
 
 1. No menu à esquerda, selecione **Criar um recurso** > **Dados + Análise** > **Data Factory**: 
    
-   ![Seleção de Data Factory no painel "Novo"](./media/quickstart-create-data-factory-portal/new-azure-data-factory-menu.png)
+   ![Seleção de Data Factory no painel "Novo"](./media/doc-common-process/new-azure-data-factory-menu.png)
 
 2. Na página **Novo data factory**, em **Nome**, insira **ADFTutorialDataFactory**. 
-      
-    ![Novo data factory](./media/tutorial-copy-data-tool/new-azure-data-factory.png)
     
     O nome do seu data factory deve ser _globalmente exclusivo_. Você deve ver a seguinte mensagem de erro:
    
-   ![Mensagem de erro do novo data factory](./media/tutorial-copy-data-tool/name-not-available-error.png)
+   ![Mensagem de erro do novo data factory](./media/doc-common-process/name-not-available-error.png)
    
    Se você receber uma mensagem de erro sobre o valor do nome, insira um nome diferente para o data factory. Por exemplo, use o nome _**seunome**_ **ADFTutorialDataFactory**. Para ver as regras de nomenclatura de artefatos do Data Factory, confira [Regras de nomenclatura do Data Factory](naming-rules.md).
 3. Selecione a **assinatura** do Azure na qual deseja criar o novo data factory. 
@@ -85,24 +83,24 @@ Prepare seu armazenamento de BLOBs para o tutorial executando as seguintes etapa
     ![Bloco Como implantar o Data Factory](media/tutorial-copy-data-tool/deploying-data-factory.png)
 10. Depois de finalizada a criação, a home page do **Data Factory** é exibida.
    
-    ![Página inicial do data factory](./media/tutorial-copy-data-tool/data-factory-home-page.png)
+    ![Página inicial do data factory](./media/doc-common-process/data-factory-home-page.png)
 11. Para iniciar a interface do usuário do Azure Data Factory em uma guia separada, selecione o bloco **Criar e Monitorar**. 
 
 ## <a name="use-the-copy-data-tool-to-create-a-pipeline"></a>Use a ferramenta Copy Data para criar um pipeline
 
-1. Sobre o **vamos começar** página, selecione o **copiar dados** title para iniciar a ferramenta Copy Data. 
+1. Na página introdução, selecione o título de **copiar dados** para iniciar a ferramenta de copiar dados. 
 
-   ![Bloco Ferramenta Copy Data](./media/tutorial-copy-data-tool/copy-data-tool-tile.png)
+   ![Bloco Ferramenta Copy Data](./media/doc-common-process/get-started-page.png)
    
-2. Sobre o **propriedades** página, execute as seguintes etapas:
+2. Na página **Propriedades** , execute as seguintes etapas:
 
-    a. Sob **nome da tarefa**, insira **DeltaCopyFromBlobPipeline**.
+    a. Em **nome da tarefa**, insira **DeltaCopyFromBlobPipeline**.
 
-    b. Sob **cadência de tarefa ou agendamento de tarefa**, selecione **executados regularmente em programação**.
+    b. Em **cadência da tarefa ou no agendamento da tarefa**, selecione **executar regularmente na agenda**.
 
-    c. Sob **o tipo de disparador**, selecione **janela em cascata**.
+    c. Em **tipo de gatilho**, selecione **janela em cascata**.
     
-    d. Sob **recorrência**, insira **1 hora (s)** . 
+    d. Em **recorrência**, insira **1 hora (s)** . 
     
     e. Selecione **Avançar**. 
     
@@ -111,48 +109,48 @@ Prepare seu armazenamento de BLOBs para o tutorial executando as seguintes etapa
     ![Página Propriedades](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/copy-data-tool-properties-page.png)
 3. Na página **Configurações do armazenamento de dados**, conclua as seguintes etapas:
 
-    a. Clique em **+ criar nova conexão**, para adicionar uma conexão.
+    a. Clique em **+ criar nova conexão**para adicionar uma conexão.
 
     ![Página Armazenamento de dados de origem](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/source-data-store-page.png)
     
-    b. Selecione **armazenamento de BLOBs do Azure** na galeria e, em seguida, clique **continuar**.
+    b. Selecione **armazenamento** de BLOBs do Azure na galeria e clique em **continuar**.
 
     ![Página Armazenamento de dados de origem](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/source-data-store-page-select-blob.png)
     
-    c. Sobre o **novo serviço vinculado** , selecione sua conta de armazenamento do **nome da conta de armazenamento** e, em seguida, clique **concluir**.
+    c. Na página **novo serviço vinculado** , selecione sua conta de armazenamento na lista **nome da conta de armazenamento** e clique em **concluir**.
     
     ![Página Armazenamento de dados de origem](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/source-data-store-page-linkedservice.png)
     
-    d. Selecione o serviço vinculado criado recentemente, clique **próxima**. 
+    d. Selecione o serviço vinculado recém-criado e clique em **Avançar**. 
     
    ![Página Armazenamento de dados de origem](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/source-data-store-page-select-linkedservice.png)
 4. Na página **Escolher o arquivo ou a pasta de entrada**, execute as etapas a seguir:
     
-    a. Procure e selecione o **fonte** contêiner, em seguida, selecione **escolha**.
+    a. Procure e selecione o contêiner de **origem** e selecione **escolher**.
     
     ![Escolha o arquivo ou a pasta de entrada](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/choose-input-file-folder.png)
     
-    b. Sob **comportamento de carregamento de arquivo**, selecione **carga Incremental: nomes de pasta/arquivo particionada por tempo**.
+    b. Em **comportamento de carregamento de arquivo**, selecione **carga incremental: nomes de pasta/arquivo particionados por tempo**.
     
     ![Escolha o arquivo ou a pasta de entrada](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/choose-loading-behavior.png)
     
-    c. Gravar o caminho de pasta dinâmicos conforme **fonte / {ano} / {month} / {day} / {hora} /** e altere o formato como o seguinte:
+    c. Grave o caminho da pasta dinâmica como **fonte/{ano}/{mês}/{dia}/{hora}/** e altere o formato da seguinte maneira:
     
     ![Escolha o arquivo ou a pasta de entrada](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/input-file-name.png)
     
-    d. Verifique **cópia binária** e clique em **próxima**.
+    d. Marque **cópia binária** e clique em **Avançar**.
     
     ![Escolha o arquivo ou a pasta de entrada](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/check-binary-copy.png)     
-5. Sobre o **armazenamento de dados de destino** página, selecione o **AzureBlobStorage**, que é o mesmo armazenamento de conta como o armazenamento de dados de origem e, em seguida, clique em **próxima**.
+5. Na página **armazenamento de dados de destino** , selecione o **AzureBlobStorage**, que é a mesma conta de armazenamento que o armazenamento de fonte de dados e clique em **Avançar**.
 
     ![Página Armazenamento de dados de destino](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/destination-data-store-page-select-linkedservice.png) 
-6. Sobre o **escolha o arquivo de saída ou a pasta** página, faça as seguintes etapas:
+6. Na página **escolher o arquivo de saída ou a pasta** , execute as seguintes etapas:
     
-    a. Procure e selecione o **destino** pasta, em seguida, clique em **escolha**.
+    a. Procure e selecione a pasta de **destino** e clique em **escolher**.
     
     ![Escolha o arquivo ou a pasta de saída](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/choose-output-file-folder.png)   
     
-    b. Gravar o caminho de pasta dinâmicos conforme **fonte / {ano} / {month} / {day} / {hora} /** e altere o formato como o seguinte:
+    b. Grave o caminho da pasta dinâmica como **fonte/{ano}/{mês}/{dia}/{hora}/** e altere o formato da seguinte maneira:
     
     ![Escolha o arquivo ou a pasta de saída](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/input-file-name2.png)    
     
@@ -169,36 +167,36 @@ Prepare seu armazenamento de BLOBs para o tutorial executando as seguintes etapa
 9. Na **página Implantação**, selecione **Monitorar** para monitorar o pipeline (tarefa).
     ![Página de implantação](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/deployment-page.png)
     
-10. Observe que a guia **Monitor** à esquerda é selecionada automaticamente.  Você precisa aguardar o pipeline de execução quando ele é acionado automaticamente (sobre após uma hora).  Quando ele é executado, o **ações** coluna inclui links para exibir detalhes da execução da atividade e executar novamente o pipeline. Selecione **Refresh** para atualizar a lista e, em seguida, selecione o **exibir execuções de atividade** link no **ações** coluna. 
+10. Observe que a guia **Monitor** à esquerda é selecionada automaticamente.  Você precisa aguardar a execução do pipeline quando ele é disparado automaticamente (aproximadamente uma hora).  Quando ele é executado, a coluna Actions inclui links para exibir detalhes da execução da atividade e executar novamente o pipeline. Selecione **Atualizar** para atualizar a lista e selecione o link **Exibir execuções de atividade** na coluna **ações** . 
 
     ![Monitorar execuções de pipeline](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/monitor-pipeline-runs1.png)
-11. Há apenas uma atividade (atividade de cópia) no pipeline, assim, você vê apenas uma entrada. Você pode ver o arquivo de origem (file1.txt) foram copiado do **fonte/2019/02/26/14/** à **destino/2019/02/26/14/** com o mesmo nome de arquivo.  
+11. Há apenas uma atividade (atividade de cópia) no pipeline. Assim, você vê apenas uma entrada. Você pode ver o arquivo de origem (file1. txt) foi copiado de **Source/2019/02/26/14/** para **Destination/2019/02/26/14/** com o mesmo nome de arquivo.  
 
     ![Monitorar execuções de pipeline](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/monitor-pipeline-runs2.png)
     
-    Você também pode verificar o mesmo usando o Gerenciador de armazenamento do Azure (https://storageexplorer.com/) para examinar os arquivos.
+    Você também pode verificar o mesmo usando Gerenciador de armazenamento do Azure (https://storageexplorer.com/) para verificar os arquivos.
     
     ![Monitorar execuções de pipeline](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/monitor-pipeline-runs3.png)
-12. Crie outro arquivo de texto vazia com o novo nome como **file2.txt**. Carregue o arquivo de file2.txt para o caminho da pasta **origem2019/02/26/15/** em sua conta de armazenamento.   É possível usar várias ferramentas para executar essas tarefas, como o [Azure Storage Explorer](https://storageexplorer.com/).   
+12. Crie outro arquivo de texto vazio com o novo nome como **file2. txt**. Carregue o arquivo File2. txt no caminho da pasta **Source/2019/02/26/15** em sua conta de armazenamento.   É possível usar várias ferramentas para executar essas tarefas, como o [Azure Storage Explorer](https://storageexplorer.com/).   
     
     ![Monitorar execuções de pipeline](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/monitor-pipeline-runs4.png)
     
     > [!NOTE]
-    > Você pode estar ciente de que um novo caminho de pasta é necessário a ser criado. Ajuste o nome da pasta com a hora UTC.  Por exemplo, se a hora UTC atual é 3:20 PM em 26 de fevereiro de 2019, você pode criar o caminho da pasta como **fonte/2019/02/26/15/** pela regra de **{ano} / {Month} / {Day} / {hora} /** .
+    > Você pode estar ciente de que um novo caminho de pasta deve ser criado. Ajuste o nome da pasta com a hora UTC.  Por exemplo, se a hora UTC atual for 3:20 PM em Fev 26, 2019, você poderá criar o caminho da pasta como **Source/2019/02/26/15/** pela regra de **{year}/{month}/{Day}/{Hour}/** .
     
-13. Para voltar para o **as execuções de Pipeline** exibição, selecione **todas as execuções de Pipelines**e aguarde até que o mesmo canal que está sendo disparado novamente automaticamente após a outra de uma hora.  
+13. Para voltar para a exibição **execuções de pipeline** , selecione **todos os pipelines são executados**e aguarde até que o mesmo pipeline seja disparado novamente automaticamente após outra hora.  
 
     ![Monitorar execuções de pipeline](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/monitor-pipeline-runs5.png)
 
-14. Selecione **modo de exibição de execução da atividade** para o segundo pipeline executado quando ele é fornecido e fazer o mesmo para examinar os detalhes.  
+14. Selecione **Exibir execução da atividade** para a segunda execução do pipeline quando ele vier e faça o mesmo para examinar os detalhes.  
 
     ![Monitorar execuções de pipeline](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/monitor-pipeline-runs6.png)
     
-    Você pode ver o arquivo de origem (file2.txt) foram copiado do **fonte/2019/02/26/15/** à **destino/2019/02/26/15/** com o mesmo nome de arquivo.
+    Você pode ver o arquivo de origem (arquivo2. txt) foi copiado de **Source/2019/02/26/15/** para **Destination/2019/02/26/15/** com o mesmo nome de arquivo.
     
     ![Monitorar execuções de pipeline](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/monitor-pipeline-runs7.png) 
     
-    Você também pode verificar o mesmo usando o Gerenciador de armazenamento do Azure (https://storageexplorer.com/) para examinar os arquivos no **destino** contêiner
+    Você também pode verificar o mesmo usando Gerenciador de armazenamento do Azure (https://storageexplorer.com/) para examinar os arquivos no contêiner de **destino**
     
     ![Monitorar execuções de pipeline](./media/tutorial-incremental-copy-partitioned-file-name-copy-data-tool/monitor-pipeline-runs8.png)
 

@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: c45c42077d6f07ef847d2b95d4c24310f51abca4
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 19c9448b6a743302eb81bb208444336d6435f114
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67621834"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68947055"
 ---
 # <a name="get-started-using-azure-stream-analytics-real-time-fraud-detection"></a>Introdução ao uso do Stream Analytics do Azure: Detecção de fraude em tempo real
 
@@ -30,7 +30,7 @@ Este tutorial usa o exemplo de detecção de fraudes em tempo real com base nos 
 
 ## <a name="scenario-telecommunications-and-sim-fraud-detection-in-real-time"></a>Cenário: Detecção de fraudes de telecomunicações e SIM em tempo real
 
-Uma empresa de telecomunicações tem um grande volume de dados para as chamadas de entrada. A empresa deseja detectar chamadas fraudulentas em tempo real para que eles possam notificar clientes ou desligar o serviço para um número específico. Um tipo de fraude SIM envolve várias chamadas da mesma identidade ao mesmo tempo, mas em locais geograficamente diferentes. Para detectar esse tipo de fraude, a empresa precisa analisar registros de telefone de entrada e procurar padrões específicos – nesse caso, para chamadas feitas ao mesmo tempo em diferentes países ou regiões. Os registros de telefone que entram nesta categoria são gravados no armazenamento para análise posterior.
+Uma empresa de telecomunicações tem um grande volume de dados para as chamadas de entrada. A empresa deseja detectar chamadas fraudulentas em tempo real para que eles possam notificar clientes ou desligar o serviço para um número específico. Um tipo de fraude SIM envolve várias chamadas da mesma identidade ao mesmo tempo, mas em locais geograficamente diferentes. Para detectar esse tipo de fraude, a empresa precisa examinar os registros de telefone de entrada e procurar padrões específicos — nesse caso, para chamadas feitas ao mesmo tempo em diferentes países/regiões. Os registros de telefone que entram nesta categoria são gravados no armazenamento para análise posterior.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -138,13 +138,13 @@ Antes de iniciar o aplicativo TelcoGenerator, você deve configurá-lo para que 
    telcodatagen.exe 1000 0.2 2
    ```
 
-    Os parâmetros são: 
+   Os parâmetros são: 
 
-    * Número de CDRs por hora. 
-    * Probabilidade de fraude de cartão SIM: Frequência, como uma porcentagem de todas as chamadas, que o aplicativo deve simular uma chamada fraudulenta. O valor 0,2 significa que cerca de 20% dos registros de chamada parecerão ser fraudulentos.
-    * Duração em horas. O número de horas que o aplicativo deve ser executado. Você também pode interromper o aplicativo a qualquer momento pressionando Ctrl + C na linha de comando.
+   * Número de CDRs por hora. 
+   * Probabilidade de fraude de cartão SIM: Frequência, como uma porcentagem de todas as chamadas, que o aplicativo deve simular uma chamada fraudulenta. O valor 0,2 significa que cerca de 20% dos registros de chamada parecerão ser fraudulentos.
+   * Duração em horas. O número de horas que o aplicativo deve ser executado. Você também pode interromper o aplicativo a qualquer momento pressionando Ctrl + C na linha de comando.
 
-    Depois de alguns segundos, o aplicativo é iniciado exibindo registros de chamada telefônica na tela, enquanto envia para o hub de eventos.
+   Depois de alguns segundos, o aplicativo é iniciado exibindo registros de chamada telefônica na tela, enquanto envia para o hub de eventos.
 
 Alguns dos campos-chave que você vai usar neste aplicativo de detecção de fraudes em tempo real são os seguintes:
 
@@ -189,9 +189,9 @@ Agora que você tem um fluxo de eventos de chamada, você pode configurar um tra
    |---------|---------|---------|
    |Alias de entrada  |  CallStream   |  Insira um nome para identificar a entrada do trabalho.   |
    |Assinatura   |  \<Sua assinatura\> |  Selecione a assinatura do Azure com o Hub de Eventos que você criou.   |
-   |Namespace do Hub de Eventos  |  asa-eh-ns-demo |  Insira o nome do namespace de Hub de Eventos.   |
+   |Namespace de Hub de Eventos  |  asa-eh-ns-demo |  Insira o nome do namespace de Hub de Eventos.   |
    |Nome do Hub de Eventos  | asa-eh-frauddetection-demo | Selecione o nome do Hub de Eventos.   |
-   |Nome da política do Hub de Eventos  | asa-policy-manage-demo | Selecione a política de acesso que você criou anteriormente.   |
+   |Nome de política do Hub de Eventos  | asa-policy-manage-demo | Selecione a política de acesso que você criou anteriormente.   |
 
     </br>
     <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-sa-input-new-portal.png" alt="Create Stream Analytics input in portal" width="300px"/>
@@ -277,7 +277,7 @@ Em muitos casos, a análise não precisa de todas as colunas do fluxo de entrada
 
 Suponha que você deseja contar o número de chamadas de entrada por região. No fluxo de dados, quando você deseja executar funções de agregação como contagem, você precisa segmentar o fluxo em unidades temporais (desde que o fluxo de dados seja efetivamente uma infinidade). Você faz isso usando a [função de janela](stream-analytics-window-functions.md) do Streaming Analytics. Em seguida, você pode trabalhar com os dados dentro dessa janela como uma unidade.
 
-Para essa transformação, você deseja uma sequência de janelas temporais que não se sobrepõem — cada janela terá um conjunto discreto de dados que você pode agrupar e agregar. Esse tipo de janela é conhecido como uma *janela em cascata*. Dentro da janela em cascata, você pode obter uma contagem das chamadas de entrada agrupadas por `SwitchNum`, que representa o país/região em que a chamada foi originada. 
+Para essa transformação, você deseja uma sequência de janelas temporais que não se sobrepõem — cada janela terá um conjunto discreto de dados que você pode agrupar e agregar. Esse tipo de janela é conhecido como uma *janela em cascata*. Na janela em cascata, você pode obter uma contagem das chamadas de entrada agrupadas por `SwitchNum`, que representa o país/região onde a chamada foi originada. 
 
 1. Altere a consulta no editor de código para a seguinte:
 
@@ -293,7 +293,7 @@ Para essa transformação, você deseja uma sequência de janelas temporais que 
 
     A projeção inclui `System.Timestamp`, que retorna um carimbo de data/hora para o final de cada janela. 
 
-    Para especificar que você deseja usar uma janela em cascata, você deve usar o [TUMBLINGWINDOW](https://docs.microsoft.com/stream-analytics-query/tumbling-window-azure-stream-analytics) funcionar a `GROUP BY` cláusula. Na função, você especifica uma unidade de tempo (em qualquer lugar de um microssegundos a um dia) e um tamanho de janela (quantas unidades). Neste exemplo, a janela em cascata consiste em intervalos de 5 segundos, para que você obterá uma contagem por país/região para cada segundos 5 de chamadas.
+    Para especificar que você deseja usar uma janela em cascata, use a função [TUMBLINGWINDOW](https://docs.microsoft.com/stream-analytics-query/tumbling-window-azure-stream-analytics) na `GROUP BY` cláusula. Na função, você especifica uma unidade de tempo (em qualquer lugar de um microssegundos a um dia) e um tamanho de janela (quantas unidades). Neste exemplo, a janela em cascata consiste em intervalos de 5 segundos, portanto, você receberá uma contagem por país/região para cada 5 segundos de chamadas.
 
 2. Clique em **Testar** novamente. Nos resultados, observe que os carimbos de data/hora em **WindowEnd** estão em incrementos de 5 segundos.
 
@@ -303,7 +303,7 @@ Para essa transformação, você deseja uma sequência de janelas temporais que 
 
 Neste exemplo, considere o uso fraudulento como sendo chamadas que se originam do mesmo usuário, mas em diferentes locais dentro de 5 segundos uma da outra. Por exemplo, o mesmo usuário não pode legitimamente fazer uma chamada da Austrália e dos Estados Unidos ao mesmo tempo. 
 
-Para verificar nesses casos, você pode usar uma autojunção do fluxo de dados para associar o fluxo à mesma com base no valor `CallRecTime`. Você pode analisar para chamada de registros em que o `CallingIMSI` valor (o número de origem) é o mesmo, mas o `SwitchNum` valor (país/região de origem) não é o mesmo.
+Para verificar nesses casos, você pode usar uma autojunção do fluxo de dados para associar o fluxo à mesma com base no valor `CallRecTime`. Em seguida, você pode procurar registros de chamada `CallingIMSI` em que o valor (o número de origem) é o mesmo `SwitchNum` , mas o valor (país/região de origem) não é o mesmo.
 
 Quando você usa uma associação com o fluxo de dados, a junção deve fornecer alguns limites sobre quão distante as linhas correspondentes podem ser separadas no tempo. (Como observado anteriormente, o fluxo de dados é efetivamente uma infinidade.) Os limites de tempo para a relação são especificados dentro de cláusula `ON` da junção, usando a função `DATEDIFF`. Nesse caso, a junção é baseada em um intervalo de 5 segundos de dados de chamada.
 
@@ -404,7 +404,7 @@ No entanto, se estiver pronto e não precisar dos recursos que você criou, voc�
 5. Exclua o hub de evento.
 6. Exclua o namespace do hub de eventos.
 
-## <a name="get-support"></a>Obtenha suporte
+## <a name="get-support"></a>Obter suporte
 
 Para obter mais assistência, experimente o [fórum do Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/azure/home?forum=AzureStreamAnalytics).
 

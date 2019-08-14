@@ -7,17 +7,17 @@ author: msmbaldwin
 ms.author: mbaldwin
 manager: barbkess
 ms.date: 03/01/2019
-ms.openlocfilehash: 9b6089aa828b5667f100c1a8cbff3e69345e4512
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 708c34347966eee7817ca04e0552dcba233765cb
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66150417"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934509"
 ---
 # <a name="azure-key-vault-managed-storage-account---powershell"></a>Conta de armazenamento gerenciado do Azure Key Vault - PowerShell
 
 > [!NOTE]
-> [Integração de armazenamento do Azure com o Microsoft Azure Active Directory (Azure AD) agora está em versão prévia](https://docs.microsoft.com/azure/storage/common/storage-auth-aad). É recomendável usar o Microsoft Azure Active Directory para autenticação e autorização, que fornece acesso baseado em token OAuth2 no armazenamento do Azure, assim como o Azure Key Vault. Isso permite que você:
+> [Integração de armazenamento do Azure com o Microsoft Azure Active Directory (Azure AD) agora está em versão prévia](../storage/common/storage-auth-aad.md). É recomendável usar o Microsoft Azure Active Directory para autenticação e autorização, que fornece acesso baseado em token OAuth2 no armazenamento do Azure, assim como o Azure Key Vault. Isso permite que você:
 > - Autentique seu aplicativo cliente usando um aplicativo ou identidade do usuário, em vez de credenciais da conta de armazenamento. 
 > - Use uma [identidade gerenciada do Microsoft Azure Active Directory](/azure/active-directory/managed-identities-azure-resources/) ao executar no Azure. Gerenciar identidades remove a necessidade de autenticação de cliente tudo junto e armazenar credenciais no ou com seu aplicativo.
 > - Use o Controle de Acesso com Base da Função (RBAC) para gerenciar a autorização, que também é compatível com o Azure Key Vault.

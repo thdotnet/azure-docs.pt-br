@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.date: 05/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 63b64df457af5b7d3d2bd5901f73d89ccd3c913a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 82e40f756e0d8e0b5627b7c8856bd25fa98adbcb
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65506967"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932290"
 ---
 # <a name="asynchronous-refresh-with-the-rest-api"></a>Atualização assíncrona com a API REST
 
 Ao usar qualquer linguagem de programação que seja compatível com chamadas REST, você pode executar operações de atualização de dados assíncronas em seus modelos de tabela do Azure Analysis Services. Isso inclui a sincronização de réplicas somente leitura para expansão de consulta. 
 
-As operações de atualização de dados podem demorar algum tempo, dependendo de uma série de fatores, incluindo o volume de dados, o nível de otimização usando partições, etc. Essas operações têm sido tradicionalmente invocadas com métodos existentes, como o uso de [TOM](https://docs.microsoft.com/sql/analysis-services/tabular-model-programming-compatibility-level-1200/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo) (Tabular Object Model), de cmdlets do [PowerShell](https://docs.microsoft.com/sql/analysis-services/powershell/analysis-services-powershell-reference) ou de [TMSL](https://docs.microsoft.com/sql/analysis-services/tabular-model-scripting-language-tmsl-reference) (Tabular Model Scripting Language). No entanto, esses métodos geralmente exigem conexões HTTP não confiáveis de execução longa.
+As operações de atualização de dados podem demorar algum tempo, dependendo de uma série de fatores, incluindo o volume de dados, o nível de otimização usando partições, etc. Essas operações têm sido tradicionalmente invocadas com métodos existentes, como o uso de [TOM](https://docs.microsoft.com/bi-reference/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo) (Tabular Object Model), de cmdlets do [PowerShell](https://docs.microsoft.com/analysis-services/powershell/analysis-services-powershell-reference) ou de [TMSL](https://docs.microsoft.com/bi-reference/tmsl/tabular-model-scripting-language-tmsl-reference) (Tabular Model Scripting Language). No entanto, esses métodos geralmente exigem conexões HTTP não confiáveis de execução longa.
 
 A API REST do Azure Analysis Services permite que as operações de atualização de dados sejam realizadas de forma assíncrona. Ao usar a API REST, as conexões HTTP de execução longa de aplicativos cliente não são necessárias. Também há outros recursos internos para a confiabilidade, como repetições automáticas e confirmações em lote.
 
@@ -57,7 +57,7 @@ Por exemplo, você pode usar o verbo POST na coleção Refreshes para executar u
 https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refreshes
 ```
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Autenticação
 
 Todas as chamadas devem ser autenticadas com um token do Azure Active Directory (OAuth 2) válido no cabeçalho Authorization e devem atender aos seguintes requisitos:
 
@@ -94,16 +94,16 @@ O corpo pode ser semelhante ao seguinte:
 }
 ```
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
 Não é necessário especificar parâmetros. O padrão será aplicado.
 
-| NOME             | Type  | DESCRIÇÃO  |Padrão  |
+| Nome             | Tipo  | Descrição  |Padrão  |
 |------------------|-------|--------------|---------|
-| `Type`           | Enum  | O tipo de processamento a ser executado. Os tipos são alinhados com os tipos de [comandos de atualização](https://docs.microsoft.com/sql/analysis-services/tabular-models-scripting-language-commands/refresh-command-tmsl) da TMSL: full, clearValues, calculate, dataOnly, automatic e defragment. Não há suporte para a adição de tipo.      |   automático      |
+| `Type`           | Enum  | O tipo de processamento a ser executado. Os tipos são alinhados com os tipos de [comandos de atualização](https://docs.microsoft.com/bi-reference/tmsl/refresh-command-tmsl) da TMSL: full, clearValues, calculate, dataOnly, automatic e defragment. Não há suporte para a adição de tipo.      |   automático      |
 | `CommitMode`     | Enum  | Determina se os objetos serão confirmados em lotes ou somente na conclusão. Os modos incluem: default, transactional, partialBatch.  |  transacional       |
-| `MaxParallelism` | Int   | Esse valor determina o número máximo de threads nos quais executar comandos de processamento em paralelo. Esse valor é alinhado com a propriedade MaxParallelism, que pode ser definida no [comando Sequence](https://docs.microsoft.com/sql/analysis-services/tabular-models-scripting-language-commands/sequence-command-tmsl) da TMSL ou com o uso de outros métodos.       | 10        |
-| `RetryCount`     | Int   | Indica o número de vezes que a operação será repetida antes de falhar.      |     0    |
+| `MaxParallelism` | int   | Esse valor determina o número máximo de threads nos quais executar comandos de processamento em paralelo. Esse valor é alinhado com a propriedade MaxParallelism, que pode ser definida no [comando Sequence](https://docs.microsoft.com/bi-reference/tmsl/sequence-command-tmsl) da TMSL ou com o uso de outros métodos.       | 10        |
+| `RetryCount`     | int   | Indica o número de vezes que a operação será repetida antes de falhar.      |     0    |
 | `Objects`        | Array | Uma matriz de objetos a serem processados. Cada objeto inclui: "table" ao processar a tabela inteira ou "table" e "partition" ao processar uma partição. Se nenhum objeto for especificado, todo o modelo será atualizado. |   Processar todo o modelo      |
 
 O CommitMode é igual ao partialBatch. Ele é usado ao fazer uma carga inicial de grandes conjuntos de dados, que pode levar horas. Se a operação de atualização falhar depois de confirmar com êxito um ou mais lotes, os lotes confirmados com êxito permanecerão confirmados (ela não reverterá lotes confirmadas com êxito).
@@ -201,7 +201,7 @@ Aqui está um exemplo de código em C# para você começar, [RestApiSample on Gi
 1.  Clone ou baixe o repositório. Abra a solução RestApiSample.
 2.  Localize a linha **client.BaseAddress = …** e forneça sua [URL base](#base-url).
 
-O exemplo de código utiliza [entidade de serviço](#service-principal) autenticação.
+O exemplo de código usa a autenticação de [entidade de serviço](#service-principal) .
 
 ### <a name="service-principal"></a>Entidade de serviço
 

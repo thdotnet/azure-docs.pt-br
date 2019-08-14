@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 12/11/2018
 ms.author: dacurwin
-ms.openlocfilehash: c53e2c383739b717a5ce94c872b4616bbd1b3f26
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 88adf54ab26055f97534abb4d56d098079116248
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68639943"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954931"
 ---
 # <a name="back-up-vmware-vms-with-azure-backup-server"></a>Faça backup de VMs VMware com o Servidor de Backup do Azure
 
@@ -41,7 +41,7 @@ Por padrão, o Servidor de Backup do Azure se comunica com servidores VMware via
 - Se você não quiser usar HTTPS, poderá [desabilitar a validação de certificado HTTPS para todos os servidores VMware](backup-azure-backup-server-vmware.md#disable-https-certificate-validation).
 - Você normalmente se conecta de um navegador no computador do Servidor de Backup do Azure para o servidor vCenter/ESXi usando o cliente Web vSphere. Na primeira vez em que você fizer isso, a conexão não será segura e mostrará o seguinte.
 - É importante entender como o Servidor de Backup do Azure lida com backups.
-    - Como uma primeira etapa, o Servidor de Backup do Azure faz backup dos dados para armazenamento em disco local. O Servidor de Backup do Azure usa um pool de armazenamento, um conjunto de discos e volumes nos quais o Servidor de Backup do Azure armazena os pontos de recuperação de disco para seus dados protegidos. O pool de armazenamento pode ser DAS (armazenamento diretamente anexado), uma SAN Fibre Channel ou uma SAN ou dispositivo de armazenamento iSCSI. É importante garantir que você tenha armazenamento suficiente para backup local dos seus dados de VM do VMware.
+    - Como uma primeira etapa, o Servidor de Backup do Azure faz backup dos dados para armazenamento em disco local. O Servidor de Backup do Azure usa um pool de armazenamento, um conjunto de discos e volumes nos quais o Servidor de Backup do Azure armazena os pontos de recuperação de disco para seus dados protegidos. O pool de armazenamento pode ser DAS (armazenamento diretamente anexado), uma SAN Fibre Channel ou uma SAN ou dispositivo de armazenamento iSCSI. É importante garantir que você tenha armazenamento suficiente para o backup local de seus dados de VM do VMware.
     - O Servidor de Backup do Azure então faz backup do armazenamento em disco local para o Azure.
     - [Obtenha ajuda](https://docs.microsoft.com/system-center/dpm/create-dpm-protection-groups?view=sc-dpm-1807#figure-out-how-much-storage-space-you-need) para descobrir de quanto espaço de armazenamento você precisa. As informações são para DPM, mas também podem ser usadas para o Servidor de Backup do Azure.
 
@@ -289,7 +289,7 @@ Adicione VMs do VMware para o backup. Grupos de proteção reúnem várias VMs e
 1. Em **Selecionar membros do grupo** > selecione as VMs (ou pastas VM) de que você deseja fazer backup. Clique em **Avançar**.
 
     - Quando você seleciona uma pasta, VMs ou pastas dentro dessa pasta também são selecionadas para backup. Você pode desmarcar as pastas ou VMs das quais não deseja fazer backup.
-1. Se já estiver sendo feito backup de uma VM ou pasta, você não poderá selecioná-la. Isso assegura que não sejam criados pontos de recuperação duplicados para uma VM. .
+1. Se já estiver sendo feito backup de uma VM ou pasta, você não poderá selecioná-la. Isso garante que os pontos de recuperação duplicados não sejam criados para uma VM.
 
      ![Selecionar membros do grupo](./media/backup-azure-backup-server-vmware/server-add-selected-members.png)
 
@@ -301,7 +301,7 @@ Adicione VMs do VMware para o backup. Grupos de proteção reúnem várias VMs e
 1. Em **Especificar Metas de Curto Prazo**, especifique por quanto tempo deseja manter os dados submetidos a backup em disco.
    - Em **Período de Retenção**, especifique por quantos dias os pontos de recuperação de disco devem ser mantidos.
    - Em **Frequência de sincronização**, especifique a frequência com que os pontos de recuperação de disco serão criados.
-       - Se você não quiser configurar um intervalo de backup, poderá marcar **Logo antes de um ponto de recuperação** para que um backup seja executado antes de cada ponto de recuperação ser agendado.
+       - Se você não quiser definir um intervalo de backup, poderá verificar **logo antes de um ponto de recuperação** para que um backup seja executado logo antes de cada ponto de recuperação ser agendado.
        - Backups de curto prazo são backups completos e não incrementais.
        - Clique em **Modificar** para alterar as datas/horários em que ocorrem os backups de curto prazo.
 

@@ -15,19 +15,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/26/2018
 ms.author: manayar
-ms.openlocfilehash: 2415d0dc2b9a2c4229d9910b42eb8ec9309ac7a7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2ed75a72360253996471034b001e12e8190cf733
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64869105"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68935274"
 ---
 # <a name="add-a-custom-image-to-an-azure-scale-set-template"></a>Adicionar uma imagem personalizada a um modelo de conjunto de dimensionamento do Azure
 
-Este artigo mostra como modificar a [modelo de conjunto de dimensionamento básico](virtual-machine-scale-sets-mvss-start.md) para implantar a partir da imagem personalizada.
+Este artigo mostra como modificar o [modelo de conjunto de dimensionamento básico](virtual-machine-scale-sets-mvss-start.md) para implantar a partir de uma imagem personalizada.
 
 ## <a name="change-the-template-definition"></a>Alterar a definição do modelo
-Em um [artigo anterior](virtual-machine-scale-sets-mvss-start.md) tivéssemos criado um modelo de conjunto de dimensionamento básico. Agora podemos usar esse modelo anterior e modificá-lo para criar um modelo que implanta um conjunto de dimensionamento de uma imagem personalizada.  
+Em um [artigo anterior](virtual-machine-scale-sets-mvss-start.md) , criamos um modelo de conjunto de dimensionamento básico. Agora vamos usar esse modelo anterior e modificá-lo para criar um modelo que implanta um conjunto de dimensionamento de uma imagem personalizada.  
 
 ### <a name="creating-a-managed-disk-image"></a>Criando uma imagem de disco gerenciada
 
@@ -97,15 +97,11 @@ No recurso de conjunto de dimensionamento, adicione uma cláusula `dependsOn` re
 
 Na `imageReference` do conjunto de dimensionamento `storageProfile`, em vez especificar o editor, a oferta, o SKU e a versão de uma imagem de plataforma, especifique o `id` do recurso `Microsoft.Compute/images`:
 
-```diff
+```json
          "virtualMachineProfile": {
            "storageProfile": {
              "imageReference": {
--              "publisher": "Canonical",
--              "offer": "UbuntuServer",
--              "sku": "16.04-LTS",
--              "version": "latest"
-+              "id": "[resourceId('Microsoft.Compute/images', 'myCustomImage')]"
+              "id": "[resourceId('Microsoft.Compute/images', 'myCustomImage')]"
              }
            },
            "osProfile": {

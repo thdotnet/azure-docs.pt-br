@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 02/14/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 2303d385d3d688050a8d82c07e78a68588f41e88
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 357e7975b1c4fe44d86b7e29e96a9abb6ab63c35
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66142572"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932262"
 ---
 # <a name="setup-diagnostic-logging"></a>Configurar o log de diagnósticos
 
@@ -27,9 +27,9 @@ Uma parte importante de qualquer solução do Analysis Services é o monitoramen
 
 Você pode selecionar as categorias **Mecanismo**, **Serviço** e **Métricas**.
 
-### <a name="engine"></a>Motor
+### <a name="engine"></a>Mecanismo
 
-Selecionar **Mecanismo** registra todos [xEvents](https://docs.microsoft.com/sql/analysis-services/instances/monitor-analysis-services-with-sql-server-extended-events). Não é possível selecionar eventos individuais. 
+Selecionar **Mecanismo** registra todos [xEvents](https://docs.microsoft.com/analysis-services/instances/monitor-analysis-services-with-sql-server-extended-events). Não é possível selecionar eventos individuais. 
 
 |Categorias de XEvent |Nome do evento  |
 |---------|---------|
@@ -83,7 +83,7 @@ A categoria Métricas registra as mesmas [Métricas de servidor](analysis-servic
 
     * **Arquivar em uma conta de armazenamento**. Para usar essa opção, você precisa de uma conta de armazenamento existente à qual se conectar. Consulte [Criar uma conta de armazenamento](../storage/common/storage-create-storage-account.md). Siga as instruções para criar um Gerenciador de Recursos, uma conta de finalidade geral, em seguida, selecione sua conta de armazenamento retornando para esta página no portal. Pode levar alguns minutos para que as contas de armazenamento recém-criadas sejam exibidas no menu suspenso.
     * **Transmitir para um hub de eventos**. Para usar essa opção, é necessário ter um namespace existente do Hub de Eventos e um hub de evento ao qual se conectar. Para saber mais, consulte [Criar um namespace de Hubs de Eventos e um hub de eventos usando o Portal do Azure](../event-hubs/event-hubs-create.md). Em seguida, retorne a esta página no portal para selecionar o namespace e o nome da política do Hub de Eventos.
-    * **Enviar para o Azure Monitor (workspace do Log Analytics)** . Para usar essa opção, use um workspace existente ou [crie um novo recurso de workspace](../azure-monitor/learn/quick-create-workspace.md) no portal. Para obter mais informações sobre como exibir os logs, confira [Exibir logs no espaço de trabalho do Log Analytics](#view-logs-in-log-analytics-workspace) neste artigo.
+    * **Enviar para o Azure Monitor (espaço de trabalho do Log Analytics)** . Para usar essa opção, use um workspace existente ou [crie um novo recurso de workspace](../azure-monitor/learn/quick-create-workspace.md) no portal. Para obter mais informações sobre como exibir os logs, confira [Exibir logs no espaço de trabalho do Log Analytics](#view-logs-in-log-analytics-workspace) neste artigo.
 
     * **Mecanismo**. Selecione esta opção para registrar xEvents. Se você estiver arquivando em uma conta de armazenamento, poderá selecionar o período de retenção para os logs de diagnóstico. Os logs são excluídos automaticamente depois que o período de retenção expira.
     * **Serviço**. Selecione esta opção para registrar eventos de nível de serviço. Se você estiver arquivando em uma conta de armazenamento, poderá selecionar o período de retenção para os logs de diagnóstico. Os logs são excluídos automaticamente depois que o período de retenção expira.
@@ -188,7 +188,7 @@ Há centenas de consultas que você pode usar. Para saber mais sobre as consulta
 
 ## <a name="turn-on-logging-by-using-powershell"></a>Ativar o registro em log usando o PowerShell
 
-Neste tutorial rápido, você cria uma conta de armazenamento na mesma assinatura e mesmo grupo de recursos que o servidor do Analysis Services. Você, em seguida, usar Set-AzDiagnosticSetting para ativar o log de diagnósticos, enviando a saída para a nova conta de armazenamento.
+Neste tutorial rápido, você cria uma conta de armazenamento na mesma assinatura e mesmo grupo de recursos que o servidor do Analysis Services. Em seguida, use set-AzDiagnosticSetting para ativar o log de diagnósticos, enviando a saída para a nova conta de armazenamento.
 
 ### <a name="prerequisites"></a>Pré-requisitos
 Para concluir este tutorial, você deve ter os seguintes recursos:
@@ -242,9 +242,9 @@ $account = Get-AzResource -ResourceGroupName awsales_resgroup `
 -ResourceName awsales -ResourceType "Microsoft.AnalysisServices/servers"
 ```
 
-### <a name="enable-logging"></a>Habilitar o registro em log
+### <a name="enable-logging"></a>Habilite o registro em logs
 
-Para habilitar o registro em log, use o cmdlet Set-AzDiagnosticSetting junto com as variáveis para a nova conta de armazenamento, a conta do servidor e a categoria. Execute o seguinte comando, definindo o sinalizador **-Enabled** como **$true**:
+Para habilitar o registro em log, use o cmdlet Set-AzDiagnosticSetting junto com as variáveis para a nova conta de armazenamento, conta de servidor e a categoria. Execute o seguinte comando, definindo o sinalizador **-Enabled** como **$true**:
 
 ```powershell
 Set-AzDiagnosticSetting  -ResourceId $account.ResourceId -StorageAccountId $sa.Id -Enabled $true -Categories Engine
@@ -303,4 +303,4 @@ Set-AzDiagnosticSetting -ResourceId $account.ResourceId`
 
 Saiba mais sobre [o registro em log de diagnóstico de recurso do Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
 
-Ver [AzDiagnosticSetting conjunto](https://docs.microsoft.com/powershell/module/az.monitor/set-azdiagnosticsetting) na Ajuda do PowerShell.
+Consulte [set-AzDiagnosticSetting](https://docs.microsoft.com/powershell/module/az.monitor/set-azdiagnosticsetting) na ajuda do PowerShell.

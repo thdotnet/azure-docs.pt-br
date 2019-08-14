@@ -6,15 +6,17 @@ ms.author: jasonh
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 08/01/2019
-ms.openlocfilehash: 708c62971a20a7071accf7591a4e2914f7dbd9f3
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: c1e022591ce1aee073330055744fbd78d97c0b1d
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736348"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68950254"
 ---
-# <a name="how-to-annotate-data-sources"></a>Como anotar fontes de dados
+# <a name="how-to-annotate-data-sources-in-azure-data-catalog"></a>Como anotar fontes de dados no Catálogo de Dados do Azure
+
 ## <a name="introduction"></a>Introdução
+
 **Catálogo de Dados do Microsoft Azure** é um serviço de nuvem totalmente gerenciado que atua como um sistema de registro e sistema de descoberta em fontes de dados da empresa. Em outras palavras, o Catálogo de Dados ajuda as pessoas a descobrir, entender e usar fontes de dados, ajudando as empresas a obter mais valor de seus dados existentes. Quando uma fonte de dados é registrada no Catálogo de Dados, seus metadados são copiados e indexados pelo serviço, mas a história não para por aí. O Catálogo de Dados permite que os usuários forneçam seus próprios metadados descritivos – como descrições e marcas – para complementar os metadados extraídos da fonte de dados e fazer com que a fonte de dados fique mais compreensível para mais pessoas.
 
 ## <a name="annotation-and-crowdsourcing"></a>Anotação e crowdsourcing

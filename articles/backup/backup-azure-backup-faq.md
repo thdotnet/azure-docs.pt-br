@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 07/07/2019
 ms.author: dacurwin
-ms.openlocfilehash: c41381dd3e53c80e74da3dc0d0a08e1ac83daec6
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 415a25dbe63b8942509827cd8434cc0f50fde87a
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827623"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954807"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Backup do Azure — Perguntas frequentes
 Este artigo responde às perguntas frequentes sobre o serviço de Backup do Azure.
@@ -36,7 +36,7 @@ Você só pode ter até 200 políticas por cofre.
 Os dados do servidor que você deseja recuperar juntos devem usar a mesma frase secreta ao configurar o backup. Se você quiser isolar a recuperação para um servidor ou servidores específicos, use uma frase secreta somente para esse servidor ou servidores. Por exemplo, os servidores de recursos humanos podem usar uma senha de criptografia, os servidores de contabilidade podem usar outra senha e os outros servidores de armazenamento podem usar uma terceira senha.
 
 ### <a name="can-i-move-my-vault-between-subscriptions"></a>Posso mover meu cofre entre assinaturas?
-Sim. Para mover um Cofre dos Serviços de Recuperação, consulte este [artigo](backup-azure-move-recovery-services-vault.md)
+Sim. Para mover um cofre dos serviços de recuperação, consulte este [artigo](backup-azure-move-recovery-services-vault.md)
 
 ### <a name="can-i-move-backup-data-to-another-vault"></a>Posso mover dados de backup para outro cofre?
 Nº Os dados de backup armazenados em um cofre não podem ser movidos para um cofre diferente.
@@ -45,7 +45,7 @@ Nº Os dados de backup armazenados em um cofre não podem ser movidos para um co
 Nº Um cofre do Recovery Services só pode alterar as opções de armazenamento antes que os backups sejam armazenados.
 
 ### <a name="can-i-do-an-item-level-restore-ilr-for-vms-backed-up-to-a-recovery-services-vault"></a>Posso criar uma ILR (restauração no nível do item) para VMs com backup em um cofre dos Serviços de Recuperação?
-- O ILR tem suporte para VMs do Azure com backup pelo backup de VM do Azure. Para saber mais, confira este [artigo](backup-azure-restore-files-from-vm.md)
+- O ILR tem suporte para VMs do Azure com backup pelo backup de VM do Azure. Para obter mais informações, consulte o [artigo](backup-azure-restore-files-from-vm.md)
 - Não há suporte para ILR para pontos de recuperação online de VMs locais com backup feito pelo servidor de backup do Azure ou pelo System Center DPM.
 
 
@@ -54,7 +54,7 @@ Nº Um cofre do Recovery Services só pode alterar as opções de armazenamento 
 ### <a name="where-can-i-find-common-questions-about-the-azure-backup-agent-for-azure-vm-backup"></a>Onde posso encontrar perguntas comuns sobre o agente do Backup do Azure para o backup da VM do Azure?
 
 - Para o agente em execução nas VMs do Azure, leia estas [Perguntas frequentes](backup-azure-vm-backup-faq.md).
-- Para o agente usado para fazer backup de pastas de arquivos do Azure, leia estas [Perguntas frequentes](backup-azure-file-folder-backup-faq.md).
+- Para o agente usado para fazer backup de pastas de arquivos do Azure, leia estas [perguntas frequentes](backup-azure-file-folder-backup-faq.md).
 
 
 ## <a name="general-backup"></a>Backup geral
@@ -125,7 +125,7 @@ Nº Todos os dados transferidos para o cofre, antes do cancelamento do trabalho 
 
 - O Backup do Azure usa um mecanismo de ponto de verificação para, ocasionalmente, adicionar pontos de verificação aos dados de backup durante o backup.
 - Como há pontos de verificação nos dados de backup, o próximo processo de backup pode validar a integridade dos arquivos.
-- O próximo trabalho de backup será incremental para os dados cujo backup foi realizado anteriormente. Os backups incrementais transferem apenas dados novos ou alterados, que equivalem à melhor utilização da largura de banda.
+- O próximo trabalho de backup será incremental para os dados cujo backup foi realizado anteriormente. Os backups incrementais só transferem dados novos ou alterados, o que equivale a melhorar a utilização da largura de banda.
 
 Se você cancelar um trabalho de backup para uma VM do Azure, os dados transferidos serão ignorados. O próximo trabalho de backup transfere dados incrementais do último trabalho de backup bem-sucedido.
 
@@ -138,7 +138,7 @@ Sim, ambos têm políticas de retenção diárias, semanais, mensais e anuais.
 Sim, você pode personalizar políticas. Por exemplo, você pode configurar os requisitos de retenção semanais e diários, mas não anuais e mensais.
 
 ### <a name="can-i-use-different-times-for-backup-scheduling-and-retention-policies"></a>Posso usar períodos diferentes para agendamento de backup e políticas de retenção?
-Nº As políticas de retenção só podem ser aplicadas em pontos de backup. Por exemplo, essas imagens mostram uma política de retenção para backups feitos às 12h e às 18h.
+Nº As políticas de retenção só podem ser aplicadas em pontos de backup. Por exemplo, essa imagem mostra uma política de retenção para backups feitos em 12am e 18:00.
 
 ![Retenção e agendamento de Backup](./media/backup-azure-backup-faq/Schedule.png)
 

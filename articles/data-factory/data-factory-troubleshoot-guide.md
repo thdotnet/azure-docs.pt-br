@@ -2,19 +2,18 @@
 title: Solucionar problemas Azure Data Factory | Microsoft Docs
 description: Saiba como solucionar problemas de atividades de controle externo no Azure Data Factory.
 services: data-factory
-author: abnarain
-manager: craigg
+author: nabhishek
 ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 6/26/2019
 ms.author: abnarain
 ms.reviewer: craigg
-ms.openlocfilehash: c76242c176ba4f4c9ffc0d6934f6b645743d77f4
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: 1995ce2a91bfbc115f80c99687cc84b52ef614ec
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68234575"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68950104"
 ---
 # <a name="troubleshoot-azure-data-factory"></a>Solucionar problemas Azure Data Factory
 
@@ -22,7 +21,7 @@ Este artigo explora métodos comuns de solução de problemas para atividades de
 
 ## <a name="azure-databricks"></a>Azure Databricks
 
-| Código do erro | Mensagem de erro                                          | DESCRIÇÃO                             | Recomendações                             |
+| Código de erro | Mensagem de erro                                          | Descrição                             | Recomendação                             |
 | -------------- | ----------------------------------------------------- | --------------------------------------------------------------| :----------------------------------------------------------- |
 | 3200           | Erro 403.                                                    | O token de acesso do databricks expirou.                         | Por padrão, o token de acesso do databricks é válido por 90 dias.  Crie um novo token e atualize o serviço vinculado. |
 | 3201           | Campo obrigatório ausente: Settings. Task. notebook_task. notebook_path | Criação inadequada: Caminho do bloco de anotações não especificado corretamente. | Especifique o caminho do bloco de anotações na atividade databricks. |
@@ -40,14 +39,14 @@ Este artigo explora métodos comuns de solução de problemas para atividades de
 
 
 
-## <a name="azure-data-lake-analytics"></a>Análise Azure Data Lake
+## <a name="azure-data-lake-analytics"></a>Azure Data Lake Analytics
 
 A tabela a seguir se aplica ao U-SQL.
 
-| Código do erro         | Mensagem de erro                                                | DESCRIÇÃO                                          | Recomendações                            |
+| Código de erro         | Mensagem de erro                                                | Descrição                                          | Recomendação                            |
 | -------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 2709                 | O token de acesso é do locatário incorreto.                    | Locatário incorreto do Azure Active Directory (AD do Azure).                                         | A entidade de serviço usada para acessar o Azure Data Lake Analytics pertence a outro locatário do Azure AD. Crie uma nova entidade de serviço no mesmo locatário que a conta de Data Lake Analytics. |
-| 2711,   2705,   2704 | Negado. Falha na verificação da ACL. Ou o recurso não existe ou o usuário não está autorizado a executar a operação solicitada.<br/><br/>O usuário não consegue acessar Data Lake Store.  <br/><br/>O usuário não está autorizado a usar Data Lake Analytics. | A entidade de serviço ou o certificado não tem acesso ao arquivo no armazenamento. | Verifique se a entidade de serviço ou o certificado que o usuário fornece para Data Lake Analytics trabalhos tem acesso à conta de Data Lake Analytics e à instância de Data Lake Storage padrão da pasta raiz. |
+| 2711,   2705,   2704 | Negado. Falha na verificação de ACL. Ou o recurso não existe ou o usuário não está autorizado a executar a operação solicitada.<br/><br/>O usuário não consegue acessar Data Lake Store.  <br/><br/>O usuário não está autorizado a usar Data Lake Analytics. | A entidade de serviço ou o certificado não tem acesso ao arquivo no armazenamento. | Verifique se a entidade de serviço ou o certificado que o usuário fornece para Data Lake Analytics trabalhos tem acesso à conta de Data Lake Analytics e à instância de Data Lake Storage padrão da pasta raiz. |
 | 2711                 | Não é possível localizar o arquivo ou a pasta ' Azure Data Lake Store '.       | O caminho para o arquivo U-SQL está errado ou as credenciais do serviço vinculado não têm acesso. | Verifique o caminho e as credenciais fornecidas no serviço vinculado. |
 | 2707                 | Não é possível resolver a conta de AzureDataLakeAnalytics. Verifique ' AccountName ' e ' DataLakeAnalyticsUri '. | A conta de Data Lake Analytics no serviço vinculado está incorreta.                  | Verifique se a conta certa é fornecida.             |
 | 2703                 | ID do erro: E_CQO_SYSTEM_INTERNAL_ERROR (ou qualquer erro que comece com "ID do erro:"). | O erro é de Data Lake Analytics.                                    | Um erro como o exemplo significa que o trabalho foi enviado para Data Lake Analytics, e o script falhou. Investigue no Data Lake Analytics. No portal, vá para a conta de Data Lake Analytics e procure o trabalho usando a ID de execução de atividade de Data Factory (não a ID de execução de pipeline). O trabalho fornece mais informações sobre o erro e irá ajudá-lo a solucionar problemas. Se a resolução não estiver clara, entre em contato com a equipe de suporte do Data Lake Analytics e forneça a URL do trabalho, que inclui o nome da conta e a ID do trabalho. |
@@ -58,10 +57,10 @@ A tabela a seguir se aplica ao U-SQL.
 
 ## <a name="azure-functions"></a>Azure Functions
 
-| Código do erro | Mensagem de erro                           | DESCRIÇÃO                                                  | Recomendações                           |
+| Código de erro | Mensagem de erro                           | Descrição                                                  | Recomendação                           |
 | ------------ | --------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 3600         | O conteúdo da resposta não é um JObject válido. | A função do Azure que foi chamada não retornou uma carga JSON na resposta. A atividade de funções do Azure no Data Factory dá suporte apenas ao conteúdo de resposta JSON. | Atualize a função do Azure para retornar uma carga JSON válida. Por exemplo, uma C# função pode retornar `(ActionResult)new<OkObjectResult("{` \"a\"ID\":\"123`}");`. |
-| 3600         | HttpMethod inválido: '... '.               | O método HTTP especificado na carga da atividade não é suportado pela atividade da função do Azure. | Use um método HTTP com suporte, como PUT, POST, GET, DELETE, opções, HEAD ou TRACE. |
+| 3\.600         | O conteúdo da resposta não é um JObject válido. | A função do Azure que foi chamada não retornou uma carga JSON na resposta. A atividade de funções do Azure no Data Factory dá suporte apenas ao conteúdo de resposta JSON. | Atualize a função do Azure para retornar uma carga JSON válida. Por exemplo, uma C# função pode retornar `(ActionResult)new<OkObjectResult("{` \"a\"ID\":\"123`}");`. |
+| 3\.600         | HttpMethod inválido: '... '.               | O método HTTP especificado na carga da atividade não é suportado pela atividade da função do Azure. | Use um método HTTP com suporte, como PUT, POST, GET, DELETE, opções, HEAD ou TRACE. |
 
 
 
@@ -69,7 +68,7 @@ A tabela a seguir se aplica ao U-SQL.
 
 A tabela a seguir se aplica ao lote do Azure.
 
-| Código do erro | Mensagem de erro                                                | DESCRIÇÃO                                                  | Recomendações                          |
+| Código de erro | Mensagem de erro                                                | Descrição                                                  | Recomendação                          |
 | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 2500         | Clique em exceção inesperada e a execução falhou.             | Não é possível iniciar o comando ou o programa retornou um código de erro. | Verifique se o arquivo executável existe. Se o programa foi iniciado, certifique-se de que *stdout. txt* e *stderr. txt* foram carregados para a conta de armazenamento. É uma boa prática emitir logs de grandes em seu código para depuração. |
 | 2501         | Não é possível acessar a conta do lote do usuário; Verifique as configurações da conta do lote. | Chave de acesso do lote ou nome do pool incorreto.            | Verifique o nome do pool e a chave de acesso do lote no serviço vinculado. |
@@ -85,13 +84,13 @@ A tabela a seguir se aplica ao lote do Azure.
 
 A tabela a seguir aplica-se ao Spark, Hive, MapReduce, Pig e streaming do Hadoop.
 
-| Código de erro | Mensagem de erro                                                | DESCRIÇÃO                                                  | Recomendações                           |
+| Código de erro | Mensagem de erro                                                | Descrição                                                  | Recomendação                           |
 | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 2300,   2310 | Falha no envio do trabalho do Hadoop. Erro: O nome remoto não pôde ser resolvido. <br/><br/>O cluster não foi encontrado. | O URI de cluster fornecido é inválido.                              | Verifique se o cluster não foi excluído e se o URI fornecido está correto. Ao abrir o URI em um navegador, você deverá ver a interface do usuário do amAmbari. Se o cluster estiver em uma rede virtual, o URI deverá ser o URI privado. Para abri-lo, use uma VM que faça parte da mesma rede virtual. Para obter mais informações, consulte [conectar-se diretamente a serviços de Apache Hadoop](https://docs.microsoft.com/azure/hdinsight/hdinsight-extend-hadoop-virtual-network#directly-connect-to-apache-hadoop-services). |
 | 2\.300         | Falha no envio do trabalho do Hadoop. Trabalho:..., cluster:.../. Erro: Uma tarefa foi cancelada. | O envio do trabalho atingiu o tempo limite.                         | O problema pode ser a conectividade geral do HDInsight ou a conectividade de rede. Primeiro, confirme se a interface do usuário do HDInsight Ambari está disponível em qualquer navegador. Confirme se suas credenciais ainda são válidas. Se você estiver usando o IR (tempo de execução integrado) auto-hospedado, certifique-se de fazer isso na VM ou computador em que o IR auto-hospedado está instalado. Em seguida, tente enviar o trabalho de Data Factory novamente. Se ainda falhar, contate a equipe de Data Factory para obter suporte. |
 | 2\.300         | Não autorizado   O nome de usuário ou a senha do Ambari está incorreto  <br/><br/>Não autorizado   O administrador do usuário está bloqueado no Ambari.   <br/><br/>403-Proibido: Acesso negado. | As credenciais do HDInsight estão incorretas ou expiradas. | Corrija as credenciais e reimplante o serviço vinculado. Primeiro, verifique se as credenciais funcionam no HDInsight abrindo o URI do cluster em qualquer navegador e tentando entrar. Se as credenciais não funcionarem, você poderá redefini-las do portal do Azure. |
 | 2300,   2310 | 502 – O servidor Web recebeu uma resposta inválida ao atuar como gateway ou servidor proxy.       <br/>Gateway inadequado. | Este erro é do HDInsight.                               | Esse erro é do cluster HDInsight. Para obter mais informações, consulte [erro do Ambari UI 502](https://hdinsight.github.io/ambari/ambari-ui-502-error.html), [502 erros ao se conectar ao servidor spark Thrift](https://hdinsight.github.io/spark/spark-thriftserver-errors.html), [502 erros ao se conectar ao servidor Spark Thrift](https://hdinsight.github.io/spark/spark-thriftserver-errors.html)e [solucionar erros de gateway inválidos no gateway de aplicativo](https://docs.microsoft.com/azure/application-gateway/application-gateway-troubleshooting-502). |
-| 2\.300         | Falha no envio do trabalho do Hadoop. Trabalho:..., cluster:... Erro: {\"Error\":\"não é possível atender à solicitação de envio do trabalho, pois o serviço Templeton está ocupado com muitas solicitações de trabalho de envio. Aguarde algum tempo antes de repetir a operação. Consulte a configuração Templeton. parallellism. Job. Submit para configurar solicitações simultâneas.  <br/><br/>Falha no envio do trabalho do Hadoop. Trabalho 161da5d4-6fa8-4ef4-a240-6b6428c5ae2f, Cluster: `https://abc-analytics-prod-hdi-hd-trax-prod01.azurehdinsight.net/`.   Erro: {\"erro\":\"Java. IO. IOException: org. Apache. Hadoop. yarn. Exceptions. YarnException: Falha ao enviar application_1561147195099_3730 para YARN: org. Apache. Hadoop. Security. AccessControlexception: A fila raiz. joblauncher já tem 500 aplicativos, não é possível aceitar o envio do aplicativo: application_1561147195099_3730 \ | Muitos trabalhos estão sendo enviados ao HDInsight ao mesmo tempo. | Considere limitar o número de trabalhos simultâneos enviados ao HDInsight. Consulte Data Factory a simultaneidade de atividade se os trabalhos estiverem sendo enviados pela mesma atividade. Altere os gatilhos para que as execuções de pipeline simultâneas sejam distribuídas com o passar do tempo. Consulte a documentação do HDInsight para `templeton.parallellism.job.submit` ajustar conforme o erro sugere. |
+| 2\.300         | Falha no envio do trabalho do Hadoop. Trabalho:..., cluster:... Erro: {\"Error\":\"não é possível atender à solicitação de envio do trabalho, pois o serviço Templeton está ocupado com muitas solicitações de trabalho de envio. Aguarde algum tempo antes de repetir a operação. Consulte a configuração Templeton. parallellism. Job. Submit para configurar solicitações simultâneas.  <br/><br/>Falha no envio do trabalho do Hadoop. Trabalho: 161da5d4-6fa8-4ef4-a240-6b6428c5ae2f, Cluster: `https://abc-analytics-prod-hdi-hd-trax-prod01.azurehdinsight.net/`.   Erro: {\"erro\":\"Java. IO. IOException: org. Apache. Hadoop. yarn. Exceptions. YarnException: Falha ao enviar application_1561147195099_3730 para YARN: org. Apache. Hadoop. Security. AccessControlexception: A fila raiz. joblauncher já tem 500 aplicativos, não é possível aceitar o envio do aplicativo: application_1561147195099_3730 \ | Muitos trabalhos estão sendo enviados ao HDInsight ao mesmo tempo. | Considere limitar o número de trabalhos simultâneos enviados ao HDInsight. Consulte Data Factory a simultaneidade de atividade se os trabalhos estiverem sendo enviados pela mesma atividade. Altere os gatilhos para que as execuções de pipeline simultâneas sejam distribuídas com o passar do tempo. Consulte a documentação do HDInsight para `templeton.parallellism.job.submit` ajustar conforme o erro sugere. |
 | 2303,   2347 | O trabalho do Hadoop falhou com o código de saída ' 5 '. Consulte 'wasbs://adfjobs@adftrialrun.blob.core.windows.net/StreamingJobs/da4afc6d-7836-444e-bbd5-635fce315997/18_06_2019_05_36_05_050/stderr' para obter mais detalhes.  <br/><br/>Falha na execução do hive com o código de erro ' UserErrorHiveOdbcCommandExecutionFailure '.   Consulte 'wasbs://adfjobs@eclsupplychainblobd.blob.core.windows.net/HiveQueryJobs/16439742-edd5-4efe-adf6-9b8ff5770beb/18_06_2019_07_37_50_477/Status/hive.out' para obter mais detalhes. | O trabalho foi enviado para o HDInsight e falhou no HDInsight. | O trabalho foi enviado para o HDInsight com êxito. Ele falhou no cluster. Abra o trabalho e os logs na interface do usuário do HDInsight Ambari ou abra o arquivo do armazenamento, como sugere a mensagem de erro. O arquivo mostra os detalhes do erro. |
 | 2328         | Erro interno do servidor ao processar a solicitação. Repita a solicitação ou contate o suporte. | Esse erro ocorre no HDInsight sob demanda.                              | Esse erro é proveniente do serviço do HDInsight quando o provisionamento do HDInsight falha. Entre em contato com a equipe do HDInsight e forneça o nome do cluster sob demanda. |
 | 2310         | java.lang.NullPointerException                               | Esse erro ocorre quando o trabalho é enviado a um cluster Spark.      | Essa exceção é proveniente do HDInsight. Ele oculta o problema real. Entre em contato com a equipe do HDInsight para obter suporte. Forneça o nome do cluster e o intervalo de tempo de execução da atividade. |
@@ -101,7 +100,7 @@ A tabela a seguir aplica-se ao Spark, Hive, MapReduce, Pig e streaming do Hadoop
 
 ## <a name="web-activity"></a>Atividade da Web
 
-| Código do erro | Mensagem de erro                                                | DESCRIÇÃO                                                  | Recomendações                          |
+| Código de erro | Mensagem de erro                                                | Descrição                                                  | Recomendação                          |
 | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 2108         | HttpMethod inválido: '... '.                                    | A atividade da Web não dá suporte ao método HTTP especificado na carga da atividade. | Os métodos HTTP com suporte são PUT, POST, GET e DELETE. |
 | 2108         | Erro de servidor inválido 500.                                     | Erro interno no ponto de extremidade.                               | Use o Fiddler ou o postmaster para verificar a funcionalidade na URL. |

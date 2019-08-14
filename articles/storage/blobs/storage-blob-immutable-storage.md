@@ -9,12 +9,12 @@ ms.date: 06/01/2019
 ms.author: tamram
 ms.reviewer: hux
 ms.subservice: blobs
-ms.openlocfilehash: c0b4a83b2c950683926be7fb3be3b0cbe977fef8
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.openlocfilehash: 06e1d881a14367c579bd58ffae04dc0970eb041a
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68618402"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68941945"
 ---
 # <a name="store-business-critical-data-in-azure-blob-storage"></a>Armazenar dados comercialmente críticos no Armazenamento de Blobs do Azure
 
@@ -175,7 +175,7 @@ Sim. Para documentar a conformidade, a Microsoft manteve uma importante empresa 
 
 **O recurso se aplica apenas a blobs de bloco ou a páginas e acréscimos de blobs também?**
 
-O armazenamento imutável pode ser usado com qualquer tipo de blob, mas é mais recomendado usá-lo para blobs de blocos. Ao contrário dos blobs de bloco, os blobs de página e os blobs de acréscimo precisam ser criados fora de um contêiner WORM e depois copiados. Depois de copiar esses BLOBs em um contêiner de WORM, não são permitidos acréscimos adicionais a um blob de acréscimo ou alterações em um blob de páginas.
+O armazenamento imutável pode ser usado com qualquer tipo de blob como definido no nível de contêiner, mas recomendamos que você use WORM para contêineres que armazenam principalmente blobs de bloco. Ao contrário de blobs de bloco, todos os blobs de página e blobs de acréscimo precisam ser criados fora de um contêiner de WORM e, em seguida, copiados no. Depois de copiar esses BLOBs em um contêiner de WORM, não são permitidos acréscimos adicionais a um blob de acréscimo ou alterações em um blob de páginas. Portanto, a definição de uma política de WORM em um contêiner que armazena VHDs (BLOBs de páginas) para qualquer máquina virtual ativa é fortemente desencorajada, pois bloqueará o disco da VM.
 
 **É necessário criar uma nova conta de armazenamento para usar esse recurso?**
 

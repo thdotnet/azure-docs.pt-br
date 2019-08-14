@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/12/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 23386139364a72b0275936cdc458c8cd2a5771c9
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 0e3f996ab2a42057198368759c75f10e911d5f54
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68386807"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68936741"
 ---
 ### <a name="is-bgp-supported-on-all-azure-vpn-gateway-skus"></a>O BGP tem suporte em todas as SKUs de Gateway de VPN do Azure?
 Não, BGP tem suporte nos gateways de VPN do Azure **VpnGw1**, **VpnGw2**, **VpnGw3**, **Standard** e **HighPerformance**. **Basic** não tem suporte.
@@ -39,6 +39,13 @@ Não é possível especificar esses ASNs para seus dispositivos VPN locais ao co
 Sim, os ASNs a seguir são [reservados pelo IANA](http://www.iana.org/assignments/iana-as-numbers-special-registry/iana-as-numbers-special-registry.xhtml) e não podem ser configurados em seu Gateway de VPN do Azure:
 
 23456, 64496-64511, 65535-65551 e 429496729
+
+### <a name="what-private-asns-can-i-use"></a>Que ASNs privado posso usar?
+O intervalo utilizável de ASNs privado que podem ser usados são:
+
+* 64512-65514, 65521-65534
+
+Esses ASNs não são reservados pelo IANA ou pelo Azure para uso e, portanto, podem ser usados para atribuir ao gateway de VPN do Azure.
 
 ### <a name="can-i-use-the-same-asn-for-both-on-premises-vpn-networks-and-azure-vnets"></a>Posso usar o mesmo ASN para redes de VPN locais e VNets do Azure?
 Não, você deverá atribuir ASNs diferentes entre suas redes locais e as VNets do Azure se os estiver conectando junto com o BGP. Os Gateways de VPN do Azure têm um ASN padrão de 65515 atribuído, quer o BGP esteja habilitado ou não para a conectividade entre locais. Você pode substituir esse padrão atribuindo um ASN diferente ao criar o gateway de VPN ou alterar o ASN depois de criar o gateway. Você precisará atribuir ASNs locais aos Gateways de Rede Local do Azure correspondentes.

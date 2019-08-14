@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/06/2019
 ms.author: terrylan
-ms.openlocfilehash: 4df024f9ff37121df4d9be51ae1fa540028ddd3d
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 83b4f2fce3dbae2168627194a45e62a2d4479936
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68727426"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934742"
 ---
 # <a name="azure-data-security-and-encryption-best-practices"></a>Melhores práticas de segurança de dados e criptografia do Azure
 Este artigo descreve as práticas recomendadas para segurança e criptografia de dados.
@@ -97,7 +97,7 @@ Organizações que não impõem criptografia de dados estão mais expostas a pro
 
 A proteção dos dados em trânsito deve ser parte essencial de sua estratégia de proteção de dados. Uma vez que os dados se movem de e para trás em vários locais, geralmente recomendamos que você sempre use protocolos SSL/TLS para trocar dados entre diferentes locais. Em algumas circunstâncias, convém isolar o canal de toda comunicação entre seu local e nuvem infra-estruturas usando uma VPN.
 
-Para dados que se movem entre sua infraestrutura local e o Azure, considere proteções adequadas, como HTTPS ou VPN. Ao enviar tráfego criptografado entre uma rede virtual do Azure e um local na Internet pública, use [Gateway de VPN do Azure](https://docs.microsoft.com/azure/vpn-gateway/).
+Para dados que se movem entre sua infraestrutura local e o Azure, considere proteções adequadas, como HTTPS ou VPN. Ao enviar tráfego criptografado entre uma rede virtual do Azure e um local na Internet pública, use [Gateway de VPN do Azure](../../vpn-gateway/index.yml).
 
 Estas são melhores práticas específicas para o uso de HTTPS, SSL/TLS e o Gateway de VPN do Azure.
 

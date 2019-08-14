@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 1/9/2018
+ms.date: 08/09/2019
 ms.author: rkarlin
-ms.openlocfilehash: b6babf7d5d5a0f5796efa9418044366c6a135ed9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ae7c130df40ea0553bd9e3ae117534fe98466f26
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60909257"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68934899"
 ---
 # <a name="provide-security-contact-details-in-azure-security-center"></a>Fornecer detalhes de contato de segurança na Central de segurança do Azure
 A Central de Segurança do Azure recomendará que você forneça detalhes de contato de segurança para sua assinatura do Azure se ainda não fez isso. Essas informações serão usadas pela Microsoft para contatá-lo se o MSRC (Microsoft Security Response Center) descobrir que os dados do cliente têm sido acessados por uma pessoa não autorizada ou ilegal. O MSRC executa determinado monitoramento de segurança da rede e da infraestrutura do Azure e recebe reclamações de inteligência e abuso de ameaça de terceiros.
@@ -33,20 +33,20 @@ Notificações de email de alerta são enviadas:
 - Cada mensagem de email contém um único alerta, não uma agregação de alertas
  
 Por exemplo, se uma mensagem de email já foi enviada para alertá-lo sobre um ataque de RDP, você não receberá outra mensagem de email sobre um ataque de RDP no mesmo dia, mesmo se outro alerta for disparado. 
- 
 
 > [!NOTE]
 > Este documento apresenta o serviço usando uma implantação de exemplo.  Ela não é um guia passo a passo.
->
->
 
-## <a name="implement-the-recommendation"></a>Implementar a recomendação
-1. Em **Recomendações**, selecione **Fornecer detalhes de contato de segurança**.
-   ![Fornecer contato de segurança][1]
-2. Selecione a assinatura do Azure para fornecer informações de contato em.
-3. Isso abre **Notificações por email**.
+## Configurar notificações por email para alertas<a name="email"></a>
 
-   ![Fornecer detalhes de contato de segurança][2]
+1. No portal, selecione **preços & configurações**.
+1. Clique na assinatura.
+1. Clique em **Notificações por email**.
+
+> [!NOTE]
+> Se você estiver implementando uma recomendação, em **recomendações**, selecione **fornecer detalhes de contato de segurança**, selecione a assinatura do Azure para fornecer informações de contato. Isso abre **Notificações por email**.
+
+   ![Fornecer detalhes de contatos de segurança][2]
 
    * Insira o endereço de email de contato de segurança ou endereços separados por vírgulas. Não há um limite para o número de endereços de email que você pode inserir.
    * Insira um número de telefone internacional de contato de segurança.

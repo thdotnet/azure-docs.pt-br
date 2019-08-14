@@ -11,12 +11,12 @@ ms.date: 04/16/2019
 ms.author: marsma
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 6b5157a71ce15d4dfd199b6826be22235e61df97
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 0e60bedcf1324b443d9b9cd34e8dc695fdb0b372
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68848538"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68931748"
 ---
 # <a name="web-sign-in-with-openid-connect-in-azure-active-directory-b2c"></a>Entrada na Web com o OpenID Connect no Azure Active Directory B2C
 
@@ -76,14 +76,14 @@ client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6
 | Parâmetro | Obrigatório | Descrição |
 | --------- | -------- | ----------- |
 | client_id | Sim | A ID do aplicativo que o [portal do Azure](https://portal.azure.com/) atribuído ao seu aplicativo. |
-| response_type | Sim | Deve incluir um token de ID para o OpenID Connect. Se o aplicativo Web também precisar de tokens para chamar uma API da Web, `code+id_token`você poderá usar o. |
-| redirect_uri | Não | O `redirect_uri` parâmetro do seu aplicativo, em que as respostas de autenticação podem ser enviadas e recebidas pelo seu aplicativo. Ele deve corresponder exatamente a `redirect_uri` um dos parâmetros que você registrou na portal do Azure, exceto que ele deve ser codificado por URL. |
-| scope | Sim | Uma lista de escopos separados por espaços. O escopo `openid` indica uma permissão para entrar no usuário e obter dados sobre ele na forma de tokens de ID. O `offline_access` escopo é opcional para aplicativos Web. Isso indica que seu aplicativo precisará de um *token de atualização* para acesso estendido aos recursos. |
-| response_mode | Não | O método usado para enviar o código de autorização resultante de volta para seu aplicativo. Ele pode ser `query`, `form_post` ou `fragment`.  O modo de resposta `form_post` é recomendado para maior segurança. |
-| state | Não | Um valor incluído na solicitação que também é retornado na resposta do token. Pode ser uma cadeia de caracteres de qualquer conteúdo desejado. Um valor exclusivo gerado aleatoriamente que normalmente é usado para impedir ataques de solicitação intersite forjada. O estado também é usado para codificar informações sobre o estado do usuário no aplicativo antes que a solicitação de autenticação ocorra, como a página em que eles estavam. |
 | nonce | Sim | Um valor incluído na solicitação (gerado pelo aplicativo) que é incluído no token de ID resultante como uma declaração. O aplicativo pode, então, verificar esse valor para atenuar os ataques de reprodução de token. Normalmente, o valor é uma cadeia de caracteres aleatória e exclusiva que pode ser usada para identificar a origem da solicitação. |
 | p | Sim | O fluxo do usuário que é executado. É o nome de um fluxo de usuário que é criado em seu locatário Azure AD B2C. O nome do fluxo do usuário deve começar com `b2c\_1\_`. |
+| response_type | Sim | Deve incluir um token de ID para o OpenID Connect. Se o aplicativo Web também precisar de tokens para chamar uma API da Web, `code+id_token`você poderá usar o. |
+| scope | Sim | Uma lista de escopos separados por espaços. O escopo `openid` indica uma permissão para entrar no usuário e obter dados sobre ele na forma de tokens de ID. O `offline_access` escopo é opcional para aplicativos Web. Isso indica que seu aplicativo precisará de um *token de atualização* para acesso estendido aos recursos. |
 | prompt | Não | O tipo de interação do usuário que é necessária. O único valor válido no momento é `login`, que força o usuário a inserir suas credenciais nessa solicitação. |
+| redirect_uri | Não | O `redirect_uri` parâmetro do seu aplicativo, em que as respostas de autenticação podem ser enviadas e recebidas pelo seu aplicativo. Ele deve corresponder exatamente a `redirect_uri` um dos parâmetros que você registrou na portal do Azure, exceto que ele deve ser codificado por URL. |
+| response_mode | Não | O método usado para enviar o código de autorização resultante de volta para seu aplicativo. Ele pode ser `query`, `form_post` ou `fragment`.  O modo de resposta `form_post` é recomendado para maior segurança. |
+| state | Não | Um valor incluído na solicitação que também é retornado na resposta do token. Pode ser uma cadeia de caracteres de qualquer conteúdo desejado. Um valor exclusivo gerado aleatoriamente que normalmente é usado para impedir ataques de solicitação intersite forjada. O estado também é usado para codificar informações sobre o estado do usuário no aplicativo antes que a solicitação de autenticação ocorra, como a página em que eles estavam. |
 
 Neste ponto, o usuário é solicitado a concluir o fluxo de trabalho. O usuário pode precisar inserir seu nome de usuário e senha, entrar com uma identidade social ou inscrever-se no diretório. Pode haver qualquer outro número de etapas, dependendo de como o fluxo do usuário é definido.
 
@@ -169,13 +169,13 @@ grant_type=authorization_code&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&sco
 
 | Parâmetro | Obrigatório | Descrição |
 | --------- | -------- | ----------- |
-| p | Sim | O fluxo de usuário que foi usado para adquirir o código de autorização. Você não pode usar um fluxo de usuário diferente nesta solicitação. Adicione esse parâmetro à cadeia de caracteres de consulta, não ao corpo da POSTAgem. |
 | client_id | Sim | A ID do aplicativo que o [portal do Azure](https://portal.azure.com/) atribuído ao seu aplicativo. |
-| grant_type | Sim | O tipo de concessão, que deve ser `authorization_code` para o fluxo do código de autorização. |
-| scope | Não | Uma lista de escopos separados por espaços. O escopo `openid` indica uma permissão para conectar o usuário e obter dados sobre ele na forma de parâmetros de id_token. Ele pode ser usado para obter tokens para a própria API Web de back-end do seu aplicativo, que é representada pela mesma ID do aplicativo que o cliente. O `offline_access` escopo indica que seu aplicativo precisa de um token de atualização para acesso estendido aos recursos. |
-| code | Sim | O código de autorização que você adquiriu no início do fluxo do usuário. |
-| redirect_uri | Sim | O parâmetro `redirect_uri` do aplicativo em que você recebeu o código de autorização. |
 | client_secret | Sim | O segredo do aplicativo que foi gerado no [portal do Azure](https://portal.azure.com/). O segredo do aplicativo é um artefato de segurança importante. Você deve armazená-lo com segurança no servidor. Altere esse segredo do cliente periodicamente. |
+| code | Sim | O código de autorização que você adquiriu no início do fluxo do usuário. |
+| grant_type | Sim | O tipo de concessão, que deve ser `authorization_code` para o fluxo do código de autorização. |
+| p | Sim | O fluxo de usuário que foi usado para adquirir o código de autorização. Você não pode usar um fluxo de usuário diferente nesta solicitação. Adicione esse parâmetro à cadeia de caracteres de consulta, não ao corpo da POSTAgem. |
+| redirect_uri | Sim | O parâmetro `redirect_uri` do aplicativo em que você recebeu o código de autorização. |
+| scope | Não | Uma lista de escopos separados por espaços. O escopo `openid` indica uma permissão para conectar o usuário e obter dados sobre ele na forma de parâmetros de id_token. Ele pode ser usado para obter tokens para a própria API Web de back-end do seu aplicativo, que é representada pela mesma ID do aplicativo que o cliente. O `offline_access` escopo indica que seu aplicativo precisa de um token de atualização para acesso estendido aos recursos. |
 
 Uma resposta de token bem-sucedida tem a seguinte aparência:
 
@@ -236,13 +236,13 @@ grant_type=refresh_token&client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6&scope=op
 
 | Parâmetro | Obrigatório | Descrição |
 | --------- | -------- | ----------- |
-| p | Sim | O fluxo de usuário que foi usado para adquirir o token de atualização original. Você não pode usar um fluxo de usuário diferente nesta solicitação. Adicione esse parâmetro à cadeia de caracteres de consulta, não ao corpo da POSTAgem. |
 | client_id | Sim | A ID do aplicativo que o [portal do Azure](https://portal.azure.com/) atribuído ao seu aplicativo. |
-| grant_type | Sim | O tipo de concessão, que deve ser um token de atualização para esta parte do fluxo do código de autorização. |
-| scope | Não | Uma lista de escopos separados por espaços. O escopo `openid` indica uma permissão para entrar no usuário e obter dados sobre ele na forma de tokens de ID. Ele pode ser usado para enviar tokens para a própria API Web de back-end do seu aplicativo, que é representada pela mesma ID do aplicativo que o cliente. O `offline_access` escopo indica que seu aplicativo precisa de um token de atualização para acesso estendido aos recursos. |
-| redirect_uri | Não | O parâmetro `redirect_uri` do aplicativo em que você recebeu o código de autorização. |
-| refresh_token | Sim | O token de atualização original que foi adquirido na segunda parte do fluxo. O `offline_access` escopo deve ser usado tanto na autorização quanto nas solicitações de token para receber um token de atualização. |
 | client_secret | Sim | O segredo do aplicativo que foi gerado no [portal do Azure](https://portal.azure.com/). O segredo do aplicativo é um artefato de segurança importante. Você deve armazená-lo com segurança no servidor. Altere esse segredo do cliente periodicamente. |
+| grant_type | Sim | O tipo de concessão, que deve ser um token de atualização para esta parte do fluxo do código de autorização. |
+| refresh_token | Sim | O token de atualização original que foi adquirido na segunda parte do fluxo. O `offline_access` escopo deve ser usado tanto na autorização quanto nas solicitações de token para receber um token de atualização. |
+| p | Sim | O fluxo de usuário que foi usado para adquirir o token de atualização original. Você não pode usar um fluxo de usuário diferente nesta solicitação. Adicione esse parâmetro à cadeia de caracteres de consulta, não ao corpo da POSTAgem. |
+| redirect_uri | Não | O parâmetro `redirect_uri` do aplicativo em que você recebeu o código de autorização. |
+| scope | Não | Uma lista de escopos separados por espaços. O escopo `openid` indica uma permissão para entrar no usuário e obter dados sobre ele na forma de tokens de ID. Ele pode ser usado para enviar tokens para a própria API Web de back-end do seu aplicativo, que é representada pela mesma ID do aplicativo que o cliente. O `offline_access` escopo indica que seu aplicativo precisa de um token de atualização para acesso estendido aos recursos. |
 
 Uma resposta de token bem-sucedida tem a seguinte aparência:
 

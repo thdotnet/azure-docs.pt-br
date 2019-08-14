@@ -9,18 +9,17 @@ editor: ''
 tags: top-support-issue
 ms.assetid: 674b2faf-26d7-4f54-99ea-a9e02ef0eb2f
 ms.service: cloud-services
-ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 06/15/2018
 ms.author: v-six
-ms.openlocfilehash: d2daae2a3317d3b48748262d87ab8d7f7e13f2b0
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9e1ae9ca6106a6a55e0cfc933ad47a5944ed5abb
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60653331"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945403"
 ---
 # <a name="troubleshoot-cloud-service-roles-that-fail-to-start"></a>Solução de problemas de funções do serviço de nuvem com falha de inicialização
 Veja alguns problemas comuns e soluções relacionadas às funções do serviço de nuvem do Azure com falha na inicialização.
@@ -75,8 +74,8 @@ Você pode usar a Área de Trabalho Remota para acessar a função e exibir info
 Navegar até o site agora retornará mensagens de erro mais explícitas:
 
 * Erro de servidor no aplicativo '/'.
-* Descrição: Ocorreu uma exceção sem tratamento durante a execução da solicitação da web atual. Examine o rastreamento de pilha para obter mais informações sobre o erro e em que ponto ele ocorreu no código.
-* Detalhes da exceção: System.IO.FIleNotFoundException: Não foi possível carregar arquivo ou assembly ' Microsoft.WindowsAzure.StorageClient, versão Version=1.1.0.0, Culture = neutral, PublicKeyToken = 31bf856ad364e35' ou uma de suas dependências. O sistema não pode encontrar o arquivo especificado.
+* Descrição: Ocorreu uma exceção sem tratamento durante a execução da solicitação da Web atual. Examine o rastreamento de pilha para obter mais informações sobre o erro e em que ponto ele ocorreu no código.
+* Detalhes da exceção: System.IO.FIleNotFoundException: Não foi possível carregar o arquivo ou assembly ' Microsoft. WindowsAzure. StorageClient, Version = 1.1.0.0, Culture = neutral, PublicKeyToken = 31bf856ad364e35 ' ou uma de suas dependências. O sistema não encontrou o arquivo especificado.
 
 Por exemplo:
 

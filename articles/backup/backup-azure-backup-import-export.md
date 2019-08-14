@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/17/2018
 ms.author: dacurwin
-ms.openlocfilehash: a59cff3b2edc4d5b94cc0a44472665c95652f868
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 1d3dc50d141a4e1d2864a56aff5c3adb3d2ca0b1
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736681"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954866"
 ---
 # <a name="offline-backup-workflow-in-azure-backup"></a>Fluxo de trabalho de backup offline no Backup do Azure
 O Backup do Azure tem vários mecanismos internos eficientes que reduzem os custos de armazenamento e de rede durante os primeiros backups 'completos' de dados no Azure. Os primeiros backups "completos" transferem grandes quantidades de dados e, portanto, exigem mais largura de banda em comparação com os backups subsequentes, que transferem apenas os deltas/incrementais. Durante o processo de propagação offline, o Backup do Azure pode usar discos para carregar os dados de backup offline no Azure.
@@ -93,7 +93,7 @@ Esta seção descreve o fluxo de trabalho de backup offline para que os dados po
 
 4. Na página de confirmação do assistente, clique em **Fazer Backup**. O backup inicial é gravado na área de preparo como parte da instalação.
 
-   ![Confirme que você está pronto para fazer o Backup agora](./media/backup-azure-backup-import-export/backupnow-confirmation.png)
+   ![Confirme que você está pronto para fazer backup agora](./media/backup-azure-backup-import-export/backupnow-confirmation.png)
 
     Quando a operação for concluída, o local de preparo estará pronto para ser usado na preparação de disco.
 

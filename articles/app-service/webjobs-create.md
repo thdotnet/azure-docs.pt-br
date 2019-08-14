@@ -2,26 +2,22 @@
 title: Executar tarefas em segundo plano com o WebJobs – Serviço de Aplicativo do Azure
 description: Saiba como usar o WebJobs para executar tarefas em segundo plano em aplicativos Web, aplicativos de API ou aplicativos móveis do Serviço de Aplicativo do Azure.
 services: app-service
-documentationcenter: ''
 author: ggailey777
 manager: jeconnoc
 editor: jimbe
 ms.assetid: af01771e-54eb-4aea-af5f-f883ff39572b
 ms.service: app-service
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/16/2018
 ms.author: glenga
 ms.reviewer: msangapu;david.ebbo;suwatch;pbatum;naren.soni
 ms.custom: seodec18
-ms.openlocfilehash: 55d040e96b92f73a632fd415220f9cf135335736
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 66c1b62dc94fc071d3b04fc0d4e89220df74d1f8
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68851003"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945798"
 ---
 # <a name="run-background-tasks-with-webjobs-in-azure-app-service"></a>Executar tarefas em segundo plano com o WebJobs no Serviço de Aplicativo do Azure
 
@@ -165,7 +161,7 @@ when making changes in one don't forget the other two.
    | **Upload de Arquivo** | ConsoleApp.zip | Um arquivo *.zip* que contém o executável ou o arquivo de script, bem como os arquivos de suporte necessários para executar o programa ou o script. Os tipos de executável ou arquivo de script com suporte são listados na seção [Tipos de arquivo com suporte](#acceptablefiles). |
    | **Tipo** | Disparado | Os [tipos do WebJob](#webjob-types) foram descritos anteriormente neste artigo. |
    | **Gatilhos** | Agendado | Para que o agendamento funcione de modo confiável, habilite o recurso AlwaysOn. O AlwaysOn está disponível apenas nos tipos de preço Básico, Standard e Premium.|
-   | **Expressão CRON** | 0 0/20 * * * * | As [expressões CRON](#cron-expressions) são descritas na seção a seguir. |
+   | **Expressão CRON** | 0 0/20 * * * * | As [expressões CRON](#ncrontab-expressions) são descritas na seção a seguir. |
 
 4. Clique em **OK**.
 

@@ -1,20 +1,20 @@
 ---
 title: Implantar o módulo de armazenamento de BLOBs do Azure em dispositivos-Azure IoT Edge | Microsoft Docs
 description: Implante um módulo do Armazenamento de Blobs do Azure no dispositivo do IoT Edge para armazenar dados na borda.
-author: arduppal
-ms.author: arduppal
+author: kgremban
+ms.author: kgremban
 ms.date: 08/07/2019
 ms.topic: article
 ms.service: iot-edge
 ms.custom: seodec18
-ms.reviewer: arduppal
+ms.reviewer: kgremban
 manager: mchad
-ms.openlocfilehash: 6cb50270eff779d7302a4676dab328046b1d50b4
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 089c90abb999751db77bbe1d89d1d118ae712b52
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68883187"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68947073"
 ---
 # <a name="deploy-the-azure-blob-storage-on-iot-edge-module-to-your-device"></a>Implantar o armazenamento de BLOBs do Azure no módulo IoT Edge em seu dispositivo
 

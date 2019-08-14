@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/05/2019
 ms.author: barclayn
-ms.openlocfilehash: 5e449ae33b19b27c3ea50d982ed84f681a0beb8f
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: c04d5fc5b455c798ffc8cb4a88948deaea0cf348
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68727280"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68927920"
 ---
 # <a name="security-best-practices-for-iaas-workloads-in-azure"></a>Práticas recomendadas de segurança para as cargas de trabalho IaaS no Azure
 Este artigo descreve as melhores práticas de segurança para VMs e sistemas operacionais.
@@ -79,7 +79,7 @@ Você deve instalar a proteção antimalware para ajudar a identificar e remover
 
 O Antimalware da Microsoft inclui recursos como proteção em tempo real, verificação agendada, correção de malware, atualizações de assinatura, atualizações de mecanismo, relatórios de exemplos e coleção de eventos de exclusão. Para ambientes que são hospedados separadamente do ambiente de produção, é possível usar uma extensão antimalware para ajudar a proteger as VMs e os serviços de nuvem.
 
-Você pode integrar o Antimalware da Microsoft e as soluções de parceiros com a [Central de Segurança do Azure](https://docs.microsoft.com/azure/security-center/) para facilidade de implantação e detecções internas (alertas e incidentes).
+Você pode integrar o Antimalware da Microsoft e as soluções de parceiros com a [Central de Segurança do Azure](../../security-center/index.yml) para facilidade de implantação e detecções internas (alertas e incidentes).
 
 **Melhor prática**: instalar uma solução antimalware para proteger contra malware.   
 **Detalhes**: [instale uma solução de parceiro da Microsoft ou Antimalware da Microsoft](../../security-center/security-center-install-endpoint-protection.md)

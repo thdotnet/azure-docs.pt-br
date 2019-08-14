@@ -8,14 +8,14 @@ manager: cshankar
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 05/06/2019
+ms.date: 08/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: bbf682df2df7a8cdc9fedb36aa4244fc5c0e9488
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 29418345aaa8042e50b1297541cac3af0a3c1504
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66244010"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68935205"
 ---
 # <a name="data-querying"></a>Consultas de dados
 
@@ -35,7 +35,7 @@ A [linguagem TSX (expressão de série de tempo)](https://docs.microsoft.com/res
 
 Há suporte para as APIs principais a seguir.
 
-[![Visão geral de consulta de série de tempo](media/v2-update-tsq/tsq.png)](media/v2-update-tsq/tsq.png#lightbox)
+[![Visão geral de consulta de série temporal](media/v2-update-tsq/tsq.png)](media/v2-update-tsq/tsq.png#lightbox)
 
 ## <a name="environment-apis"></a>APIs de ambiente
 
@@ -75,8 +75,8 @@ As seguintes APIs de consulta do Time Series estão disponíveis:
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Saiba mais sobre [armazenamento e a entrada](./time-series-insights-update-storage-ingress.md) na visualização de Insights de série de tempo do Azure.
+- Saiba mais sobre o [armazenamento e a entrada](./time-series-insights-update-storage-ingress.md) na versão prévia do Azure Time Series insights.
 
-- A visualização de Insights de série de tempo de leitura [modelagem de dados](./time-series-insights-update-tsm.md) artigo.
+- Leia o artigo Time Series Insights Preview [Data Modeling](./time-series-insights-update-tsm.md) .
 
-- Descubra [práticas recomendadas ao escolher uma ID de série de tempo](./time-series-insights-update-how-to-id.md).
+- Descubra [as práticas recomendadas ao escolher uma ID de série temporal](./time-series-insights-update-how-to-id.md).

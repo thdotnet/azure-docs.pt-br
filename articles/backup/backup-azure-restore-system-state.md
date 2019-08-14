@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 8/18/2017
 ms.author: dacurwin
-ms.openlocfilehash: 6dc478f569b94450921e56c05b148bae357fef8e
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 70cd7a1e77e6154b6406c82344b82f230eeb7b3c
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689140"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954637"
 ---
 # <a name="restore-system-state-to-windows-server"></a>Restaurar o Estado do Sistema para Windows Server
 
@@ -171,7 +171,7 @@ O backup de estado do sistema inclui dados do Active Directory. Use as etapas a 
 
 ## <a name="troubleshoot-failed-system-state-restore"></a>Solucionar problemas de restauração de estado do sistema com falha
 
-Se o processo anterior de aplicação de estado do sistema não for concluído com êxito, use o ambiente de recuperação do Windows (Windows RE) para recuperar o Windows Server. As etapas a seguir explicam como recuperar usando o Win RE. Use esta opção somente se o Windows Server não inicia normalmente após uma restauração de estado do sistema. O processo a seguir apaga dados que não são do sistema, tenha cuidado.
+Se o processo anterior de aplicação de estado do sistema não for concluído com êxito, use o ambiente de recuperação do Windows (Windows RE) para recuperar o Windows Server. As etapas a seguir explicam como recuperar usando o Win RE. Use esta opção somente se o Windows Server não inicializar normalmente após uma restauração do estado do sistema. O processo a seguir apaga dados que não são do sistema, tenha cuidado.
 
 1. Inicialização do Windows Server para o ambiente de recuperação do Windows (Windows RE).
 

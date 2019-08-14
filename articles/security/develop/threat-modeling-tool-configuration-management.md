@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: dbe3526444bc35815dd4323a3a5290696619e3f9
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 986bed758229d639bb40d0803f7be4a89a0f6e49
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68728341"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934818"
 ---
 # <a name="security-frame-configuration-management--mitigations"></a>Estrutura de segurança: gerenciamento de configurações | Atenuações 
 | Produto/Serviço | Artigo |
@@ -563,7 +563,7 @@ Para desabilitar o CORS para um controlador ou uma ação, use o atributo [Disab
 | **Fase do SDL**               | Build |  
 | **Tecnologias aplicáveis** | Genérico |
 | **Atributos**              | Opção de gateway - Hub IoT do Azure |
-| **Referências**              | [Visão geral do gerenciamento de dispositivos do Hub IoT](https://azure.microsoft.com/documentation/articles/iot-hub-device-management-overview/), [Como atualizar o firmware do dispositivo](https://docs.microsoft.com/azure/iot-hub/tutorial-firmware-update) |
+| **Referências**              | [Visão geral do gerenciamento de dispositivos do Hub IoT](https://azure.microsoft.com/documentation/articles/iot-hub-device-management-overview/), [Como atualizar o firmware do dispositivo](../../iot-hub/tutorial-firmware-update.md) |
 | **Etapas** | O LWM2M é um protocolo da Open Mobile Alliance destinado ao gerenciamento de dispositivos IoT. O gerenciamento de dispositivos IoT do Azure permite que você interaja com dispositivos físicos usando os trabalhos do dispositivo. Certifique-se de que o Gateway de Nuvem implemente um processo para manter constantemente atualizados o dispositivo e outros dados de configuração usando o gerenciamento de dispositivos do Hub IoT do Azure. |
 
 ## <a id="controls-policies"></a>Garantir que os controles de segurança de ponto de extremidade estejam configurados nos dispositivos de acordo com as políticas organizacionais

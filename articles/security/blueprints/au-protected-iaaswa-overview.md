@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 08/23/2018
 ms.author: meladie
-ms.openlocfilehash: 1cceecba59b4cd1a70fc6f152020757e137f4d45
-ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
+ms.openlocfilehash: 50e410fc439be7b3a5f4c1e8d4bab5d60c3c4f52
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68778973"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68946934"
 ---
 # <a name="azure-security-and-compliance-blueprint---iaas-web-application-for-australia-protected"></a>Blueprint de Segurança e Conformidade do Azure - Aplicativo Web de IaaS Protegido para Austrália
 
@@ -76,8 +76,8 @@ A seção a seguir fornece detalhes sobre os elementos de implantação e implem
 
 Essa solução cria uma máquina virtual como um host bastião ingressado em domínio com as seguintes configurações:
 -   [Extensão de antimalware](https://docs.microsoft.com/azure/security/fundamentals/antimalware)
--   [Extensão de Diagnóstico do Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-diagnostics-template)
--   [Azure Disk Encryption](https://docs.microsoft.com/azure/security/azure-security-disk-encryption) usando o Azure Key Vault
+-   [Extensão de Diagnóstico do Azure](../../virtual-machines/windows/extensions-diagnostics-template.md)
+-   [Azure Disk Encryption](../azure-security-disk-encryption-overview.md) usando o Azure Key Vault
 -   Uma [política de desligamento automático](https://azure.microsoft.com/blog/announcing-auto-shutdown-for-vms-using-azure-resource-manager/) para reduzir o consumo de recursos de máquina virtual quando eles não estiverem em uso
 
 ### <a name="virtual-network"></a>Rede virtual
@@ -85,7 +85,7 @@ A arquitetura define uma rede virtual privada com um espaço de endereço de 10.
 
 **Grupos de segurança de rede**: Esta solução implanta recursos em uma arquitetura com uma sub-rede separada e Web, sub-rede do banco de dados, sub-rede do Active Directory e sub-rede de gerenciamento em uma rede virtual. Sub-redes são separadas logicamente pelas regras do grupo de segurança de rede aplicadas a sub-redes individuais para restringir o tráfego entre as sub-redes para somente o que é necessário para a funcionalidade de gerenciamento e de sistema.
 
-Consulte a configuração dos [grupos de segurança de rede](https://github.com/Azure/fedramp-iaas-webapp/blob/master/nestedtemplates/virtualNetworkNSG.json) implantada com esta solução. As organizações podem configurar grupo de segurança de rede editando o arquivo acima usando [esta documentação](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg) como guia.
+Consulte a configuração dos [grupos de segurança de rede](https://github.com/Azure/fedramp-iaas-webapp/blob/master/nestedtemplates/virtualNetworkNSG.json) implantada com esta solução. As organizações podem configurar grupo de segurança de rede editando o arquivo acima usando [esta documentação](../../virtual-network/virtual-network-vnet-plan-design-arm.md) como guia.
 
 Cada uma das sub-redes tem um grupo de segurança de rede dedicado:
 - 1 grupo de segurança de rede para o Gateway de Aplicativo (LBNSG)
@@ -103,9 +103,9 @@ Além disso, todas as transações do Azure por meio do portal de gerenciamento 
 ### <a name="data-at-rest"></a>Dados em repouso
 A arquitetura protege dados em repouso usando criptografia, auditoria de banco de dados e outras medidas.
 
-**Armazenamento do Azure**: Para atender aos requisitos de criptografia de dados em repouso, o [Armazenamento do Azure](https://azure.microsoft.com/services/storage/) usa [Criptografia do Serviço de Armazenamento](https://docs.microsoft.com/azure/storage/storage-service-encryption). Isso ajuda a proteger e preservar os dados em suporte aos compromissos de segurança organizacional e aos requisitos de conformidade definidos pelo ISM do Governo Australiano.
+**Armazenamento do Azure**: Para atender aos requisitos de criptografia de dados em repouso, o [Armazenamento do Azure](https://azure.microsoft.com/services/storage/) usa [Criptografia do Serviço de Armazenamento](../../storage/common/storage-service-encryption.md). Isso ajuda a proteger e preservar os dados em suporte aos compromissos de segurança organizacional e aos requisitos de conformidade definidos pelo ISM do Governo Australiano.
 
-**Azure Disk Encryption**: O [Azure Disk Encryption](https://docs.microsoft.com/azure/security/azure-security-disk-encryption) utiliza o recurso BitLocker do Windows para fornecer criptografia de volume para discos de dados. A solução é integrada ao Azure Key Vault para ajudar a controlar e gerenciar as chaves de criptografia de disco.
+**Azure Disk Encryption**: O [Azure Disk Encryption](../azure-security-disk-encryption-overview.md) utiliza o recurso BitLocker do Windows para fornecer criptografia de volume para discos de dados. A solução é integrada ao Azure Key Vault para ajudar a controlar e gerenciar as chaves de criptografia de disco.
 
 **Microsoft SQL Server**: a instância do SQL Server usa as seguintes medidas de segurança de banco de dados:
 -   [Auditoria do SQL Server](https://docs.microsoft.com/sql/relational-databases/security/auditing/sql-server-audit-database-engine?view=sql-server-2017) rastreia eventos do banco de dados e grava-os em logs de auditoria.
@@ -115,13 +115,13 @@ A arquitetura protege dados em repouso usando criptografia, auditoria de banco d
 - A [Máscara de dados dinâmicos](https://docs.microsoft.com/sql/relational-databases/security/dynamic-data-masking?view=sql-server-2017) limita a exposição a dados confidenciais ao mascarar os dados para usuários ou aplicativos sem privilégios. A Máscara de Dados Dinâmicos pode descobrir automaticamente dados potencialmente confidenciais e sugerir as máscaras apropriadas a serem aplicadas. Isso ajuda a reduzir o acesso de forma que os dados confidenciais não saiam do banco de dados por meio de acesso não autorizado. **Os clientes são responsáveis por ajustar as configurações de máscara de dados dinâmicos para aderir ao esquema do banco de dados.**
 
 ### <a name="identity-management"></a>Gerenciamento de identidades
-Os clientes podem utilizar os Serviços Federados do Active Directory local para federar com [Azure Active Directory](https://azure.microsoft.com/services/active-directory/), que é o serviço de gerenciamento de identidades e diretório baseado em nuvem multilocatário da Microsoft. O [Azure Active Directory Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect) integra diretórios locais com Azure Active Directory. Todos os usuários nessa solução requerem contas do Azure Active Directory. Com logon federado, os usuários podem entrar no Azure Active Directory e se autenticarem nos recursos do Azure usando credenciais locais.
+Os clientes podem utilizar os Serviços Federados do Active Directory local para federar com [Azure Active Directory](https://azure.microsoft.com/services/active-directory/), que é o serviço de gerenciamento de identidades e diretório baseado em nuvem multilocatário da Microsoft. O [Azure Active Directory Connect](../../active-directory/hybrid/whatis-hybrid-identity.md) integra diretórios locais com Azure Active Directory. Todos os usuários nessa solução requerem contas do Azure Active Directory. Com logon federado, os usuários podem entrar no Azure Active Directory e se autenticarem nos recursos do Azure usando credenciais locais.
 
 Além disso, os seguintes recursos do Azure Active Directory ajudam a gerenciar o acesso aos dados no ambiente do Azure:
-- A autenticação no aplicativo é executada usando o Azure Active Directory. Para obter mais informações, confira [Integrando aplicativos com o Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications).
-- O [controle de acesso baseado em função do Azure](https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure) permite que os administradores definam permissões de acesso refinadas para conceder apenas a quantidade de acesso de que os usuários precisam para realizar seus trabalhos. Em vez de conceder permissão irrestrita aos recursos do Azure a todos os usuários, os administradores podem permitir apenas determinadas ações para acessar os dados. O acesso à assinatura é limitado ao administrador da assinatura.
-- O [Azure Active Directory Privileged Identity Management](https://docs.microsoft.com/azure/active-directory/active-directory-privileged-identity-management-getting-started) permite que os clientes minimizem o número de usuários que tenham acesso a determinadas informações. Os administradores podem usar o Azure Active Directory Privileged Identity Management para descobrir, restringir e monitorar identidades privilegiadas e seu acesso aos recursos. Essa funcionalidade também pode ser usada para impor o acesso administrativo sob demanda Just-In-Time quando necessário.
-- O [Azure Active Directory Identity Protection](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection) detecta possíveis vulnerabilidades que afetam as identidades de uma organização, configura respostas automatizadas para detectar ações suspeitas relacionadas a essas identidades e investiga incidentes suspeitos para tomar medidas apropriadas para resolvê-los.
+- A autenticação no aplicativo é executada usando o Azure Active Directory. Para obter mais informações, confira [Integrando aplicativos com o Azure Active Directory](../../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md).
+- O [controle de acesso baseado em função do Azure](../../role-based-access-control/role-assignments-portal.md) permite que os administradores definam permissões de acesso refinadas para conceder apenas a quantidade de acesso de que os usuários precisam para realizar seus trabalhos. Em vez de conceder permissão irrestrita aos recursos do Azure a todos os usuários, os administradores podem permitir apenas determinadas ações para acessar os dados. O acesso à assinatura é limitado ao administrador da assinatura.
+- O [Azure Active Directory Privileged Identity Management](../../active-directory/privileged-identity-management/pim-getting-started.md) permite que os clientes minimizem o número de usuários que tenham acesso a determinadas informações. Os administradores podem usar o Azure Active Directory Privileged Identity Management para descobrir, restringir e monitorar identidades privilegiadas e seu acesso aos recursos. Essa funcionalidade também pode ser usada para impor o acesso administrativo sob demanda Just-In-Time quando necessário.
+- O [Azure Active Directory Identity Protection](../../active-directory/identity-protection/overview.md) detecta possíveis vulnerabilidades que afetam as identidades de uma organização, configura respostas automatizadas para detectar ações suspeitas relacionadas a essas identidades e investiga incidentes suspeitos para tomar medidas apropriadas para resolvê-los.
 
 **Autenticação Multifator do Azure**: Para proteger identidades, a autenticação multifator deve ser implementada. A [Autenticação Multifator do Microsoft Azure](https://azure.microsoft.com/services/multi-factor-authentication/) é uma solução fácil de usar, escalonável e confiável que fornece um segundo método de autenticação para proteger os usuários. A Autenticação Multifator do Microsoft Azure usa o poder da nuvem e integra-se ao Active Directory local e aos aplicativos personalizados. Essa proteção é estendida a cenários críticos e de alto volume.
 
@@ -152,12 +152,12 @@ Além disso, essa arquitetura de referência usa a [avaliação de vulnerabilida
 **Gateway de Aplicativo do Azure**: A arquitetura reduz o risco de vulnerabilidades de segurança usando um Gateway de Aplicativo do Azure com um firewall de aplicativo Web configurado e o conjunto de regras OWASP habilitado. Dentre outros recursos estão:
 
 - [SSL de ponta a ponta](https://docs.microsoft.com/azure/application-gateway/application-gateway-end-to-end-ssl-powershell)
-- Habilitar [Descarregamento SSL](https://docs.microsoft.com/azure/application-gateway/application-gateway-ssl-portal)
+- Habilitar [Descarregamento SSL](../../application-gateway/create-ssl-portal.md)
 - Desabilitar [TLS versões 1.0 e 1.1](https://docs.microsoft.com/azure/application-gateway/application-gateway-end-to-end-ssl-powershell)
-- [Firewall do aplicativo Web](https://docs.microsoft.com/azure/application-gateway/application-gateway-web-application-firewall-overview) (modo de prevenção)
+- [Firewall do aplicativo Web](../../application-gateway/waf-overview.md) (modo de prevenção)
 - [Modo de prevenção](https://docs.microsoft.com/azure/application-gateway/application-gateway-web-application-firewall-portal) com conjunto de regras OWASP 3.0
 - [Habilitar o registro em log de diagnóstico](https://docs.microsoft.com/azure/application-gateway/application-gateway-diagnostics)
-- [Investigações de integridade personalizadas](https://docs.microsoft.com/azure/application-gateway/application-gateway-create-gateway-portal)
+- [Investigações de integridade personalizadas](../../application-gateway/quick-create-portal.md)
 - A [Central de Segurança do Azure](https://azure.microsoft.com/services/security-center) e o [Assistente do Azure](https://docs.microsoft.com/azure/advisor/advisor-security-recommendations) fornecer proteção e notificações adicionais. A Central de Segurança do Azure também fornece um sistema de reputação.
 
 ### <a name="business-continuity"></a>Continuidade dos negócios
@@ -169,18 +169,18 @@ Além disso, essa arquitetura de referência usa a [avaliação de vulnerabilida
 
 ### <a name="logging-and-auditing"></a>Registro em log e auditoria
 Os serviços do Azure registram em log de forma extensiva as atividades do sistema e do usuário, bem como a integridade do sistema:
-- **Logs de atividades**: Os [logs de atividades](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) fornecem insights sobre as operações executadas em recursos em uma assinatura. Os logs de atividade podem ajudar a determinar o iniciador, o horário da ocorrência e o status de uma operação.
-- **Logs de diagnóstico**: Os [Logs de diagnóstico](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs) incluem todos os registros emitidos por todos os recursos. Esses logs são logs do sistema de eventos do Windows, logs de Armazenamento do Azure, logs de auditoria do Key Vault e logs de acesso e firewall do Gateway de Aplicativo. Todos os logs de diagnóstico são gravados em uma conta de armazenamento do Azure centralizada e criptografada para arquivamento. A retenção é configurável pelo usuário, de até 730 dias, para atender aos requisitos de retenção específicos da organização.
+- **Logs de atividades**: Os [logs de atividades](../../azure-monitor/platform/activity-logs-overview.md) fornecem insights sobre as operações executadas em recursos em uma assinatura. Os logs de atividade podem ajudar a determinar o iniciador, o horário da ocorrência e o status de uma operação.
+- **Logs de diagnóstico**: Os [Logs de diagnóstico](../../azure-monitor/platform/diagnostic-logs-overview.md) incluem todos os registros emitidos por todos os recursos. Esses logs são logs do sistema de eventos do Windows, logs de Armazenamento do Azure, logs de auditoria do Key Vault e logs de acesso e firewall do Gateway de Aplicativo. Todos os logs de diagnóstico são gravados em uma conta de armazenamento do Azure centralizada e criptografada para arquivamento. A retenção é configurável pelo usuário, de até 730 dias, para atender aos requisitos de retenção específicos da organização.
 
 **Logs do Azure Monitor**: Esses logs são consolidados em [logs de Azure monitor](https://azure.microsoft.com/services/log-analytics/) para processamento, armazenamento e relatórios de Dashboard. Depois de coletados, os dados são organizados em tabelas separadas para cada tipo de dados, o que permite que todos os dados sejam analisados em conjunto, independentemente de sua fonte. Além disso, a central de segurança do Azure integra-se aos logs de Azure Monitor, permitindo que os clientes usem consultas Kusto para acessar seus dados de eventos de segurança e combiná-los com dados de outros serviços.
 
-As seguintes [soluções de monitoramento](https://docs.microsoft.com/azure/log-analytics/log-analytics-add-solutions) do Azure estão incluídas como parte dessa arquitetura:
--   [Avaliação do Active Directory](https://docs.microsoft.com/azure/log-analytics/log-analytics-ad-assessment): A solução de Verificação de Integridade do Active Directory avalia o risco e a integridade dos ambientes de servidor em intervalos regulares e fornece uma lista priorizada de recomendações específicas para a infraestrutura de servidor implantada.
-- [Avaliação do SQL](https://docs.microsoft.com/azure/log-analytics/log-analytics-sql-assessment): A solução de Verificação de Integridade do SQL avalia o risco e a integridade dos ambientes do servidor em intervalos regulares e fornece aos clientes uma lista priorizada de recomendações específicas para a infraestrutura de servidor implantada.
-- [Integridade do Agente](https://docs.microsoft.com/azure/operations-management-suite/oms-solution-agenthealth): A solução de Integridade do Agente informa quantos agentes são implantados e sua distribuição geográfica, além de quantos agentes sem resposta e o número de agentes que estão enviando dados operacionais.
--   [Análise do Log de Atividades](https://docs.microsoft.com/azure/log-analytics/log-analytics-activity): A solução de Análise do Log de Atividades auxilia na análise dos logs de atividades do Azure em todas as assinaturas do Azure para um cliente.
+As seguintes [soluções de monitoramento](../../monitoring/monitoring-solutions.md) do Azure estão incluídas como parte dessa arquitetura:
+-   [Avaliação do Active Directory](../../azure-monitor/insights/ad-assessment.md): A solução de Verificação de Integridade do Active Directory avalia o risco e a integridade dos ambientes de servidor em intervalos regulares e fornece uma lista priorizada de recomendações específicas para a infraestrutura de servidor implantada.
+- [Avaliação do SQL](../../azure-monitor/insights/sql-assessment.md): A solução de Verificação de Integridade do SQL avalia o risco e a integridade dos ambientes do servidor em intervalos regulares e fornece aos clientes uma lista priorizada de recomendações específicas para a infraestrutura de servidor implantada.
+- [Integridade do Agente](../../monitoring/monitoring-solution-agenthealth.md): A solução de Integridade do Agente informa quantos agentes são implantados e sua distribuição geográfica, além de quantos agentes sem resposta e o número de agentes que estão enviando dados operacionais.
+-   [Análise do Log de Atividades](../../azure-monitor/platform/collect-activity-logs.md): A solução de Análise do Log de Atividades auxilia na análise dos logs de atividades do Azure em todas as assinaturas do Azure para um cliente.
 
-**Automação do Azure**: A [Automação do Azure](https://docs.microsoft.com/azure/automation/automation-hybrid-runbook-worker) armazena, executa e gerencia runbooks. Nessa solução, os runbooks ajudam a coletar logs do Azure SQL Server. A solução [Controle de Alterações](https://docs.microsoft.com/azure/automation/automation-change-tracking) da Automação permite que os clientes identifiquem com facilidade as alterações no ambiente.
+**Automação do Azure**: A [Automação do Azure](https://docs.microsoft.com/azure/automation/automation-hybrid-runbook-worker) armazena, executa e gerencia runbooks. Nessa solução, os runbooks ajudam a coletar logs do Azure SQL Server. A solução [Controle de Alterações](../../automation/change-tracking.md) da Automação permite que os clientes identifiquem com facilidade as alterações no ambiente.
 
 **Azure Monitor**: O [Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/) ajuda os usuários a acompanhar o desempenho, manter a segurança e identificar tendências, permitindo que as organizações façam auditoria, criem alertas e arquivem dados, incluindo o rastreamento de chamadas à API nos recursos do Azure.
 
@@ -218,16 +218,16 @@ Para ajudar a proteger dados classificados, seja usando a Internet ou o Azure Ex
 As opções de configuração para dispositivos VPN e parâmetros IPSec/IKE estão [disponíveis](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-devices) para revisão.
 
 ### <a name="azure-active-directory-setup"></a>Configuração do Azure Active Directory
-O [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-whatis) é essencial para gerenciar a implantação e provisionar acesso para pessoas que interagem com o ambiente. Um Windows Server Active Directory existente pode ser integrado ao Azure Active Directory com [quatro cliques](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-get-started-express).
+O [Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md) é essencial para gerenciar a implantação e provisionar acesso para pessoas que interagem com o ambiente. Um Windows Server Active Directory existente pode ser integrado ao Azure Active Directory com [quatro cliques](../../active-directory/hybrid/how-to-connect-install-express.md).
 
-Além disso, o [Azure Active Directory Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect) permite que os clientes configurem a federação com [Serviços de Federação do Active Directory (AD FS)]( https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-azure-adfs) e Azure Active Directory local. Com logon federado, os clientes podem permitir que os usuários entrem nos serviços baseados no Azure Active Directory com suas senhas locais e sem a necessidade de inserir as senhas novamente enquanto estiverem na rede corporativa. Usando a opção de federação com Serviços de Federação do Active Directory (AD FS), é possível implantar uma nova instalação dos Serviços de Federação do Active Directory (AD FS) ou especificar uma instalação existente em um farm do Windows Server 2012 R2.
+Além disso, o [Azure Active Directory Connect](../../active-directory/hybrid/whatis-hybrid-identity.md) permite que os clientes configurem a federação com [Serviços de Federação do Active Directory (AD FS)]( ../../active-directory/hybrid/how-to-connect-fed-azure-adfs.md) e Azure Active Directory local. Com logon federado, os clientes podem permitir que os usuários entrem nos serviços baseados no Azure Active Directory com suas senhas locais e sem a necessidade de inserir as senhas novamente enquanto estiverem na rede corporativa. Usando a opção de federação com Serviços de Federação do Active Directory (AD FS), é possível implantar uma nova instalação dos Serviços de Federação do Active Directory (AD FS) ou especificar uma instalação existente em um farm do Windows Server 2012 R2.
 
 Para impedir que dados classificados sejam sincronizados com Active Directory do Azure, os clientes podem restringir os atributos que são replicados para o Azure Active Directory, aplicando as seguintes configurações no Azure Active Directory Connect:
-- [Habilitar filtragem](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-configure-filtering)
-- [Desabilitar sincronização de hash de senha](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-implement-password-hash-synchronization)
+- [Habilitar filtragem](../../active-directory/hybrid/how-to-connect-sync-configure-filtering.md)
+- [Desabilitar sincronização de hash de senha](../../active-directory/hybrid/how-to-connect-password-hash-synchronization.md)
 - [Desabilitar write-back de senha](https://docs.microsoft.com/azure/active-directory/authentication/quickstart-sspr)
-- [Desabilitar write-back de dispositivo](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-feature-device-writeback)
-- Deixe as configurações padrão para [evitar exclusões acidentais](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-feature-prevent-accidental-deletes) e [atualização automática](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-feature-automatic-upgrade)
+- [Desabilitar write-back de dispositivo](../../active-directory/hybrid/how-to-connect-device-writeback.md)
+- Deixe as configurações padrão para [evitar exclusões acidentais](../../active-directory/hybrid/how-to-connect-sync-feature-prevent-accidental-deletes.md) e [atualização automática](../../active-directory/hybrid/how-to-connect-install-automatic-upgrade.md)
 
 ## <a name="disclaimer"></a>Aviso de isenção de responsabilidade
 - Este documento serve apenas para fins informativos. A MICROSOFT NÃO FORNECE NENHUMA GARANTIA, EXPRESSA, IMPLÍCITA OU REGULAMENTAR, QUANTO ÀS INFORMAÇÕES PRESENTES NESTE DOCUMENTO. Este documento é fornecido "no estado em que se encontra". As informações e opiniões expressadas neste documento, incluindo URLs e outras referências a sites da Internet, podem ser alteradas sem aviso prévio. Os clientes que estão lendo este documento arcarão com o risco de usá-lo.

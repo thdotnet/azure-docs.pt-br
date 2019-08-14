@@ -1,18 +1,18 @@
 ---
 title: Usar o Backup do Azure para substituir a infraestrutura de fita
-description: Saiba como o Backup do Azure fornece semântica semelhante à fita que permite fazer backup e restaurar dados no Azure
+description: Saiba como o backup do Azure fornece semântica semelhante à fita que permite que você faça backup e restaure dados no Azure
 author: dcurwin
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 04/30/2017
 ms.author: dacurwin
-ms.openlocfilehash: d768f0fae9487a555f6ace12303f8a4bd7cb8bd1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 3be3a2e3355793a8d0b4fcaf0e7f62668f78f0c8
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65146015"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954889"
 ---
 # <a name="move-your-long-term-storage-from-tape-to-the-azure-cloud"></a>Mover o armazenamento de longo prazo da fita para a nuvem do Azure
 Os clientes do Backup do Azure e do System Center Data Protection Manager podem:
@@ -35,17 +35,17 @@ Os clientes também podem agendar um backup semanal. Por exemplo, as configuraç
 ## <a name="what-is-the-retention-policy"></a>O que é a política de retenção?
 A política de retenção especifica durante quanto tempo o backup deve ser armazenado. Em vez de especificar apenas uma “política simples” para todos os pontos de backup, os clientes podem especificar diferentes políticas de retenção com base em quando o backup é feito. Por exemplo, o ponto de backup feito diariamente (que funciona como um ponto de recuperação operacional) é preservado por 90 dias. O ponto de backup feito no final de cada trimestre para fins de auditoria é preservado por mais tempo.
 
-![Política de retenção](./media/backup-azure-backup-cloud-as-tape/retentionpolicy.png)
+![Política de Retenção](./media/backup-azure-backup-cloud-as-tape/retentionpolicy.png)
 
 O número total de “pontos de retenção” especificado nessa política é de 90 (pontos diários) + 40 (um a cada trimestre por 10 anos) = 130.
 
 ## <a name="example--putting-both-together"></a>Exemplo – Juntando ambos
 ![Tela de exemplo](./media/backup-azure-backup-cloud-as-tape/samplescreen.png)
 
-1. **Política de retenção diária**: Backups diários são armazenados por sete dias.
-2. **Política de retenção semanal**: Backups feitos diariamente às meia-noite e às 18H sábado são preservados por quatro semanas
-3. **Política de retenção mensal**: Backups feitos à meia-noite e às 18h no último sábado de cada mês são preservados por 12 meses
-4. **Política de retenção anual**: Backups feitos à meia-noite no último sábado de cada mês de março são preservados por 10 anos
+1. **Política de retenção diária**: Os backups feitos diariamente são armazenados por sete dias.
+2. **Política de retenção semanal**: Os backups feitos todos os dias à meia-noite e às 18:00 sábado são preservados por quatro semanas
+3. **Política de retenção mensal**: Os backups feitos à meia-noite e 18:00 no último sábado de cada mês são preservados por 12 meses
+4. **Política de retenção anual**: Os backups feitos à meia-noite no último sábado de cada março são preservados por 10 anos
 
 O número total de “pontos de retenção” (dos quais um cliente pode restaurar dados) no diagrama anterior é calculado da seguinte forma:
 
@@ -57,7 +57,7 @@ O número total de “pontos de retenção” (dos quais um cliente pode restaur
 O número total de pontos de recuperação é 56.
 
 > [!NOTE]
-> Usando o Backup do Azure, você pode criar até 9999 pontos de recuperação por instância protegida. Uma instância protegida é um computador, servidor (físico ou virtual) ou carga de trabalho que faz backup de dados no Azure.
+> Usando o backup do Azure, você pode criar até 9999 pontos de recuperação por instância protegida. Uma instância protegida é um computador, servidor (físico ou virtual) ou carga de trabalho que faz backup de dados no Azure.
 >
 
 ## <a name="advanced-configuration"></a>Configuração avançada
