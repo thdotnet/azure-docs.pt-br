@@ -13,13 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
-ms.author: milanga;cenkdin;juliako
-ms.openlocfilehash: c688169dc21304f234aead7196f377a3fa5fd633
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.author: juliako
+ms.reviewer: milanga;cenkdin
+ms.openlocfilehash: 1cebe0fda7da97933fc94082a62c671535fe689b
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60407223"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "69015797"
 ---
 # <a name="update-media-services-after-rolling-storage-access-keys"></a>Atualizar os Serviços de Mídia após implantar chaves de acesso de armazenamento 
 
@@ -44,7 +45,7 @@ Os Serviços de Mídia dependem de uma chave de armazenamento fornecida a eles. 
 ## <a name="steps-to-rotate-storage-keys"></a>Etapas para revezar as chaves de armazenamento 
  
  1. Altere a Chave primária da conta de armazenamento por meio do cmdlet do powershell ou do Portal do [Azure](https://portal.azure.com/).
- 2. Chame o cmdlet Sync-AzMediaServiceStorageKeys com os parâmetros apropriados para forçar a conta de mídia a obter chaves da conta de armazenamento
+ 2. Chame o cmdlet Sync-AzMediaServiceStorageKeys com os parâmetros apropriados para forçar a conta de mídia a escolher as chaves da conta de armazenamento
  
     O exemplo a seguir mostra como sincronizar chaves para contas de armazenamento.
   
@@ -52,7 +53,7 @@ Os Serviços de Mídia dependem de uma chave de armazenamento fornecida a eles. 
   
  3. Aguarde uma hora mais ou menos. Verifique se os cenários de transmissão estão funcionando.
  4. Altere a chave secundária da conta de armazenamento por meio do cmdlet do powershell ou do portal do Azure.
- 5. Chame Sync-AzMediaServiceStorageKeys powershell com os parâmetros apropriados para forçar a conta de mídia a obter novas chaves de conta de armazenamento. 
+ 5. Chame Sync-AzMediaServiceStorageKeys PowerShell com os parâmetros apropriados para forçar a conta de mídia a escolher novas chaves de conta de armazenamento. 
  6. Aguarde uma hora mais ou menos. Verifique se os cenários de transmissão estão funcionando.
  
 ### <a name="a-powershell-cmdlet-example"></a>Um exemplo de cmdlet do powershell 

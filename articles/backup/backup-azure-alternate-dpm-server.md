@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 07/09/2019
 ms.author: dacurwin
-ms.openlocfilehash: e3d38e9b5e1b9b9f827476acf7e2e2ecab632424
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 0a6d1fd73d99cf15137e937dbfe2336d49a63d90
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68688808"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68955053"
 ---
 # <a name="recover-data-from-azure-backup-server"></a>Recuperar dados do Servidor de Backup do Azure
 Você pode usar o Servidor de Backup do Azure para recuperar os dados de que fez backup em um cofre dos Serviços de Recuperação. O processo para fazer isso é integrado ao console de gerenciamento do Servidor de Backup do Azure e é semelhante ao fluxo de trabalho de recuperação para outros componentes do Backup do Azure.
@@ -45,7 +45,7 @@ Para recuperar dados de um Servidor de Backup do Azure:
     Uma lista de arquivos e pastas será exibida no painel inferior, que pode ser pesquisado e recuperado em qualquer local.
 
     ![Pontos de recuperação de servidor DPM externo](./media/backup-azure-alternate-dpm-server/external-dpm-recoverypoint.png)
-5. Clique com o botão direito do mouse no item apropriado e clique em **Recuperar**.
+5. Clique com o botão direito do mouse no item apropriado e clique em **recuperar**.
 
     ![Recuperação do DPM externo](./media/backup-azure-alternate-dpm-server/recover.png)
 6. Examine **Recuperar seleção**. Verifique a data e a hora da cópia de backup que está sendo recuperada, bem como a fonte da qual a cópia de backup foi criada. Se a seleção estiver incorreta, clique em **Cancelar** para voltar à guia de recuperação e selecionar o ponto de recuperação apropriado. Se a seleção estiver correta, clique em **Avançar**.
@@ -57,7 +57,7 @@ Para recuperar dados de um Servidor de Backup do Azure:
 8. Escolha a opção relacionada a **criar cópia**, **Ignorar** ou **Substituir**.
 
    * **Criar cópia** – cria uma cópia do arquivo em caso de colisão de nomes.
-   * **Ignorar** – se não houver uma colisão de nomes, não recuperará o arquivo que mantém o arquivo original.
+   * **Ignorar** – se houver uma colisão de nomes, o não recuperará o arquivo, o que deixará o arquivo original.
    * **Substituir** – se houver uma colisão de nomes, substitui a cópia existente do arquivo.
 
      Escolha a opção apropriada para **Restaurar a segurança**. Você pode aplicar as configurações de segurança do computador de destino onde os dados serão recuperados ou as configurações de segurança que eram aplicáveis ao produto no momento em que o ponto de recuperação foi criado.

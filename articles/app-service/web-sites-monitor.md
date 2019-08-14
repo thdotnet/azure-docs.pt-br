@@ -16,10 +16,10 @@ ms.date: 01/11/2019
 ms.author: byvinyal
 ms.custom: seodec18
 ms.openlocfilehash: a5d4d13d8e60cd7f273363a9bc385098e15cbb71
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "60832520"
 ---
 # <a name="monitor-apps-in-azure-app-service"></a>Monitorar aplicativos no Serviço de Aplicativo do Azure
@@ -39,7 +39,7 @@ Se o aplicativo estiver hospedado em um plano *Básico*, *Standard* ou *Premium*
 
 As cotas para aplicativos Gratuitos ou Compartilhados são:
 
-| Quota | DESCRIÇÃO |
+| Cota | Descrição |
 | --- | --- |
 | **CPU (Curto)** | A quantidade de CPU permitida para esse aplicativo em um intervalo de cinco minutos. Essa cota é definida novamente a cada cinco minutos. |
 | **CPU (Dia)** | A quantidade total de CPU permitida para esse aplicativo em um dia. Essa cota é definida novamente a cada 24 horas, à meia-noite UTC. |
@@ -69,7 +69,7 @@ Métricas fornecem informações sobre o aplicativo ou sobre o comportamento do 
 
 Para um aplicativo, as métricas disponíveis são:
 
-| Métrica | DESCRIÇÃO |
+| Métrica | Descrição |
 | --- | --- |
 | **Tempo Médio de Resposta** | O tempo médio necessário para o aplicativo atender às solicitações em milissegundos. |
 | **Conjunto de trabalho de memória média** | A quantidade média de memória usada pelo aplicativo em megabytes (MiB). |
@@ -111,7 +111,7 @@ Para um Plano do Serviço de Aplicativo, as métricas disponíveis são:
 > As métricas do Plano do Serviço de Aplicativo só estão disponíveis para os planos *Básico*, *Standard* e *Premium*.
 > 
 
-| Métrica | DESCRIÇÃO |
+| Métrica | Descrição |
 | --- | --- |
 | **Porcentagem de CPU** | A média de CPU usada em todas as instâncias do plano. |
 | **Porcentagem de Memória** | A média de memória usada em todas as instâncias do plano. |

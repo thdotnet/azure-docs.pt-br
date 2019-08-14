@@ -2,18 +2,18 @@
 author: rothja
 ms.service: billing
 ms.topic: include
-ms.date: 11/09/2018
+ms.date: 08/09/2019
 ms.author: jroth
-ms.openlocfilehash: ce64047fd7490106790ea8bb1ad7963d82a87c24
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 203f0eda7e2e9d1545e7bf5cc2bb6eff9c2c3c55
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67172299"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68936742"
 ---
-| Resource | Grátis | Compartilhado | Basic | Standard | Premium (v2) | Isolado </th> |
+| Recurso | Gratuito | Compartilhado | Basic | Standard | Premium (v2) | Isolado </th> |
 | --- | --- | --- | --- | --- | --- | --- |
-| [Aplicativos Web, móveis ou de API](https://azure.microsoft.com/services/app-service/) por [plano do serviço de aplicativo do Azure](../articles/app-service/overview-hosting-plans.md)<sup>1</sup> |10 |100 |Ilimitado<sup>2</sup> |Ilimitado<sup>2</sup> |Ilimitado<sup>2</sup> |Ilimitado<sup>2</sup>|
+| [Aplicativos Web, móveis ou de API](https://azure.microsoft.com/services/app-service/) por [Azure app plano de serviço](../articles/app-service/overview-hosting-plans.md)<sup>1</sup> |10 |100 |Ilimitado<sup>2</sup> |Ilimitado<sup>2</sup> |Ilimitado<sup>2</sup> |Ilimitado<sup>2</sup>|
 | [Plano do Serviço de Aplicativo](../articles/app-service/overview-hosting-plans.md) |10 por região |10 por grupo de recursos |100 por grupo de recursos |100 por grupo de recursos |100 por grupo de recursos |100 por grupo de recursos|
 | Tipo de instância de computação |Compartilhado |Compartilhado |Dedicado<sup>3</sup> |Dedicado<sup>3</sup> |Dedicado<sup>3</sup></p> |Dedicado<sup>3</sup>|
 | [Escalar horizontalmente](../articles/app-service/web-sites-scale.md) (máximo de instâncias) |1 compartilhada |1 compartilhada |3 dedicados<sup>3</sup> |10 dedicados<sup>3</sup> |20 dedicados<sup>3</sup>|100 dedicados<sup>4</sup>|
@@ -23,28 +23,28 @@ ms.locfileid: "67172299"
 | Memória (1 hora) |1\.024 MB por plano do serviço de aplicativo |1\.024 MB por aplicativo |N/D |N/D |N/D |N/D |
 | Largura de banda |165 MB |Ilimitada, aplicam-se [taxas de transferência de dados](https://azure.microsoft.com/pricing/details/data-transfers/) |Ilimitada, aplicam-se [taxas de transferência de dados](https://azure.microsoft.com/pricing/details/data-transfers/) |Ilimitada, aplicam-se [taxas de transferência de dados](https://azure.microsoft.com/pricing/details/data-transfers/) |Ilimitada, aplicam-se [taxas de transferência de dados](https://azure.microsoft.com/pricing/details/data-transfers/) |Ilimitada, aplicam-se [taxas de transferência de dados](https://azure.microsoft.com/pricing/details/data-transfers/) |
 | Arquitetura do aplicativo |32 bits |32 bits |32 bits/64 bits |32 bits/64 bits |32 bits/64 bits |32 bits/64 bits |
-| Web sockets por instância<sup>7</sup> |5 |35 |350 |Ilimitado |Ilimitado |Ilimitado |
+| Web Sockets por instância<sup>7</sup> |5 |35 |350 |Ilimitado |Ilimitado |Ilimitado |
 | [Conexões do depurador](../articles/app-service/troubleshoot-dotnet-visual-studio.md) simultâneas por aplicativo |1 |1 |1 |5 |5 |5 |
-| Certificados de serviço de aplicativo por assinatura<sup>10</sup>| Sem suporte | Sem suporte |10 |10 |10 |10 |
+| Certificados do serviço de aplicativo por assinatura<sup>10</sup>| Sem suporte | Sem suporte |10 |10 |10 |10 |
 | Domínios personalizados por aplicativo</a> |0 (somente subdomínio do azurewebsites.net)|500 |500 |500 |500 |500 |
-| domínio personalizado [Suporte a SSL](../articles/app-service/app-service-web-tutorial-custom-ssl.md) |Sem suporte, o certificado curinga para *. azurewebsites.net disponível por padrão|Sem suporte, o certificado curinga para *. azurewebsites.net disponível por padrão|Conexões SSL de SNI ilimitadas |Conexões SSL de SNI ilimitadas e IP SSL incluídas |Conexões SSL de SNI ilimitadas e IP SSL incluídas | Conexões SSL de SNI ilimitadas e IP SSL incluídas|
-| Balanceador de carga integrados | |X |X |X |X |X<sup>9</sup> |
+| domínio personalizado [Suporte a SSL](../articles/app-service/app-service-web-tutorial-custom-ssl.md) |Sem suporte, certificado curinga para *. azurewebsites.net disponível por padrão|Sem suporte, certificado curinga para *. azurewebsites.net disponível por padrão|Conexões SSL de SNI ilimitadas |Conexões SSL de SNI ilimitadas e IP SSL incluídas |Conexões SSL de SNI ilimitadas e IP SSL incluídas | Conexões SSL de SNI ilimitadas e IP SSL incluídas|
+| Balanceador de carga integrado | |X |X |X |X |X<sup>9</sup> |
 | [Sempre ativo](../articles/app-service/configure-common.md) | | |X |X |X |X |
-| [Backups agendados](../articles/app-service/manage-backup.md) | | | | Backups agendados a cada 2 horas, um máximo de 12 backups por dia (manual + agendado) | Backups agendados a cada hora, um máximo de 50 backups por dia (manual + agendado) | Backups agendados a cada hora, um máximo de 50 backups por dia (manual + agendado) |
+| [Backups agendados](../articles/app-service/manage-backup.md) | | | | Backups agendados a cada 2 horas, no máximo 12 backups por dia (manual + agendado) | Backups agendados a cada hora, um máximo de 50 backups por dia (manual + agendado) | Backups agendados a cada hora, um máximo de 50 backups por dia (manual + agendado) |
 | [Autoescala](../articles/app-service/web-sites-scale.md) | | | |X |X |X |
 | [WebJobs](../articles/app-service/webjobs-create.md)<sup>8</sup> |X |X |X |X |X |X |
 | [Agendador do Azure](https://azure.microsoft.com/services/scheduler/) | |X |X |X |X |X |
 | [Monitoramento do ponto de extremidade](../articles/app-service/web-sites-monitor.md) | | |X |X |X |X |
 | [Slots de preparo](../articles/app-service/deploy-staging-slots.md) | | | |5 |20 |20 |
-| Contrato de Nível de Serviço | |  |99,9 % |99,95%|99,95%|99,95%|  
+| SLA | |  |99,95%|99,95%|99,95%|99,95%|  
 
 <sup>1</sup>Aplicativos e cotas de armazenamento são oferecidos por plano de Serviço de Aplicativo, a menos que haja indicação contrária.  
 <sup>2</sup>O número real de aplicativos que podem ser hospedados nesses computadores depende da atividade dos aplicativos, do tamanho das instâncias do computador e da utilização do recurso correspondente.  
 <sup>3</sup>As instâncias dedicadas podem ter tamanhos diferentes. Para saber mais, veja [Preços do Serviço de Aplicativo](https://azure.microsoft.com/pricing/details/app-service/).  
-<sup>4</sup>sejam permitidas mais mediante solicitação.  
+<sup>4</sup> Mais permissões são permitidas mediante solicitação.  
 <sup>5</sup>O limite de armazenamento é o tamanho total do conteúdo em todos os aplicativos no mesmo plano de Serviço de Aplicativo.  
 <sup>6</sup>Esses recursos são limitados pelos recursos físicos nas instâncias dedicadas (o tamanho de instância e o número de instâncias).  
-<sup>7</sup>Ao escalar um aplicativo na camada Basic para duas instâncias, você tem 350 conexões simultâneas para cada uma das duas instâncias.  
-<sup>8</sup>Execute os executáveis personalizados e/ou os scripts sob demanda, por agendamento ou continuamente como uma tarefa em segundo plano na instância do Serviço de Aplicativo. Para a execução contínua de Trabalhos Web, a opção Sempre Ativado é obrigatória. Trabalhos Web agendados requerem o Agendador do Azure Gratuito ou Standard. Não há nenhum limite predefinido no número de trabalhos Web que pode ser executados em uma instância de serviço de aplicativo. Há limites práticos que dependem do que o código do aplicativo está tentando fazer.  
-<sup>9</sup>SKUs isolados do serviço de aplicativo têm a capacidade de ser internamente de carga balanceada (ILB) com o Azure Load Balancer, portanto, não há nenhuma conectividade pública da internet. Como resultado, alguns recursos do Serviço de Aplicativo Isolado de ILB devem ser usados de computadores com acesso direto ao ponto de extremidade de rede de ILB.  
-<sup>10</sup>pode ser aumentado o limite de cota o certificado do serviço de aplicativo por assinatura por meio de uma solicitação de suporte a um limite máximo de 200.  
+<sup>7</sup>Ao escalar um aplicativo na camada Basic para duas instâncias, você tem 350 conexões simultâneas para cada uma das duas instâncias. Para a camada Standard e superior, não há limites teóricos para os soquetes da Web, mas outros fatores podem limitar o número de soquetes da Web. Por exemplo, as solicitações simultâneas máximas permitidas `maxConcurrentRequestsPerCpu`(definidas por) são: 7.500 por VM pequena, 15.000 por VM média (7.500 x 2 núcleos) e 75.000 por VM grande (18.750 x 4 núcleos).  
+<sup>8</sup>Execute os executáveis personalizados e/ou os scripts sob demanda, por agendamento ou continuamente como uma tarefa em segundo plano na instância do Serviço de Aplicativo. Para a execução contínua de Trabalhos Web, a opção Sempre Ativado é obrigatória. Trabalhos Web agendados requerem o Agendador do Azure Gratuito ou Standard. Não há nenhum limite predefinido para o número de trabalhos Web que podem ser executados em uma instância do serviço de aplicativo. Há limites práticos que dependem do que o código do aplicativo está tentando fazer.  
+<sup>9</sup> Serviço do Aplicativo Isolado SKUs podem ter balanceamento de carga internamente (ILB) com Azure Load Balancer, portanto, não há conectividade pública da Internet. Como resultado, alguns recursos do Serviço de Aplicativo Isolado de ILB devem ser usados de computadores com acesso direto ao ponto de extremidade de rede de ILB.  
+<sup>10</sup> O limite de cota de Certificado do Serviço de Aplicativo por assinatura pode ser aumentado por meio de uma solicitação de suporte para um limite máximo de 200.  

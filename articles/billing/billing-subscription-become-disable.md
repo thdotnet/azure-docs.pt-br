@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/01/2019
 ms.author: banders
-ms.openlocfilehash: bfe11a8cbb6dd2de77bbac9d14c294c3f93438f3
-ms.sourcegitcommit: ac1cfe497341429cf62eb934e87f3b5f3c79948e
+ms.openlocfilehash: 484a7344185efa17731f5c35c7c4dec109608b67
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67490416"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68933071"
 ---
 # <a name="reactivate-a-disabled-azure-subscription"></a>Reativar uma assinatura do Azure desabilitada
 
-Sua assinatura do Azure pode ter sido desabilitada porque seu crédito expirou, você atingiu seu limite de gastos, tem uma conta vencida, atingiu seu limite do cartão de crédito ou porque a assinatura foi cancelada pelo administrador da conta. Confira o problema que se aplica a você e siga as etapas neste artigo para reativar sua assinatura.
+Sua assinatura do Azure pode ser desabilitada porque seu crédito expirou, você atingiu seu limite de gastos, tem uma conta vencida, atingiu seu limite de cartão de crédito ou porque a assinatura foi cancelada pelo administrador da conta. Confira o problema que se aplica a você e siga as etapas neste artigo para reativar sua assinatura.
 
 ## <a name="your-credit-is-expired"></a>Seu crédito expirou
 
@@ -32,7 +32,7 @@ Ao se inscrever para uma conta gratuita do Azure, você obtém uma assinatura de
 As assinaturas do Azure com crédito, como a Avaliação Gratuita e o Microsoft Visual Studio Enterprise, têm limites de gastos. Isso significa que você somente poderá usar os serviços até o crédito incluído. Quando seu uso atingir o limite de gastos, o Azure desativará sua assinatura pelo restante desse período de cobrança. Sua assinatura é desativada para protegê-lo de incorrer acidentalmente em cobrança devido ao uso além do crédito incluído com a assinatura. Para remover seu limite de gastos, consulte [Remover o limite de gastos no Centro de Contas](billing-spending-limit.md#remove).
 
 > [!NOTE]
-> Se você tiver uma assinatura de avaliação gratuita e remover o limite de gastos, sua assinatura se converterá em uma assinatura individual com taxas pagas conforme o uso do final da avaliação gratuita. Você manterá o crédito restante durante 30 dias após a criação da assinatura. Além disso, também terá acesso a serviços gratuitos por 12 meses.
+> Se você tiver uma assinatura de avaliação gratuita e remover o limite de gastos, sua assinatura será convertida em uma assinatura individual com tarifas pagas conforme o uso no final da avaliação gratuita. Você manterá o crédito restante durante 30 dias após a criação da assinatura. Além disso, também terá acesso a serviços gratuitos por 12 meses.
 
 Para monitorar e gerenciar a atividade de cobrança do Azure, confira [Impedir custos inesperados com o gerenciamento de custos e de cobrança do Azure](billing-getting-started.md).
 
@@ -45,9 +45,9 @@ Para resolver um saldo vencido, consulte [Resolver o saldo vencido de sua assina
 
 Para resolver esse problema, [mude para outro cartão de crédito](billing-how-to-change-credit-card.md). Ou se você está representando uma empresa, pode [mudar para o pagamento por fatura](billing-how-to-pay-by-invoice.md).
 
-## <a name="the-subscription-was-accidentally-canceled"></a>A assinatura foi acidentalmente cancelada
+## <a name="the-subscription-was-accidentally-canceled"></a>A assinatura foi cancelada acidentalmente
 
-Se você for o administrador da conta e acidentalmente cancelou uma assinatura individual com taxas pagas conforme o uso, você pode reativá-la no Centro de contas.
+Se você for o administrador da conta e tiver cancelado acidentalmente uma assinatura individual com tarifas pagas conforme o uso, poderá reativá-la no centro de contas.
 
 1. Entre no [Centro de Contas](https://account.windowsazure.com/Subscriptions).
 1. Escolha a assinatura cancelada.
@@ -59,7 +59,7 @@ Para outros tipos de assinatura, [entre em contato com o suporte](https://portal
 
 ## <a name="need-help-contact-us"></a>Precisa de ajuda? Entre em contato conosco.
 
-Se você tiver dúvidas ou precisar de Ajuda, [criar uma solicitação de suporte](https://go.microsoft.com/fwlink/?linkid=2083458).
+Se você tiver dúvidas ou precisar de ajuda, [crie uma solicitação de suporte](https://go.microsoft.com/fwlink/?linkid=2083458).
 
-# <a name="next-steps"></a>Próximas etapas
-- Saiba como [monitorar e gerenciar atividades de cobrança para o Azure](billing-getting-started.md).
+## <a name="next-steps"></a>Próximas etapas
+- Saiba como [monitorar e gerenciar a atividade de cobrança do Azure](billing-getting-started.md).

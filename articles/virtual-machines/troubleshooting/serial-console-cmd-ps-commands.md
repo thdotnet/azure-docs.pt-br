@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: alsin
-ms.openlocfilehash: f286881341e527d3f01e57768cd48405c85a9a69
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 77fe6f1ce416df049928697d2c166e2aba0abfe2
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67710604"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68935227"
 ---
 # <a name="windows-commands---cmd-and-powershell"></a>Comandos do Windows – CMD e PowerShell
 
@@ -102,7 +102,7 @@ Instalar o cliente Telnet
 
 `dism /online /Enable-Feature /FeatureName:TelnetClient`
 
-Testar a conectividade
+Testar conectividade
 
 `telnet bing.com 80`
 
@@ -118,7 +118,7 @@ Quando limitado a métodos disponíveis no Windows por padrão, o PowerShell pod
 ### <a name="disable-windows-firewall"></a>Desabilitar Firewall do Windows
 `netsh advfirewall set allprofiles state off`
 
-É possível usar esse comando ao solucionar problemas para excluir temporariamente o Firewall do Windows. Ele será habilitar na próxima reinício ou quando você habilitá-la usando o comando a seguir. Não pare o serviço do Firewall do Windows (MPSSVC) ou o BFE (Mecanismo de Filtragem Base) como forma de excluir o Firewall do Windows. Parar o MPSSVC ou BFE resultará no bloqueio de toda a conectividade.
+É possível usar esse comando ao solucionar problemas para excluir temporariamente o Firewall do Windows. Ele será habilitado na próxima reinicialização ou quando você habilitá-lo usando o comando a seguir. Não pare o serviço do Firewall do Windows (MPSSVC) ou o BFE (Mecanismo de Filtragem Base) como forma de excluir o Firewall do Windows. Parar o MPSSVC ou BFE resultará no bloqueio de toda a conectividade.
 ### <a name="enable-windows-firewall"></a>Habilitar Firewall do Windows
 `netsh advfirewall set allprofiles state on`
 ## <a name="manage-users-and-groups"></a>Gerenciar usuários e grupos
@@ -241,7 +241,7 @@ Adicionar `/f` forçará o fechamento dos aplicativos em execução sem avisar o
 ### <a name="detect-safe-mode-boot"></a>Detectar modo de inicialização segura
 `bcdedit /enum | find /i "safeboot"` 
 
-# <a name="windows-commands---powershell"></a>Comandos do Windows - PowerShell
+## <a name="windows-commands---powershell"></a>Comandos do Windows - PowerShell
 
 Para executar o PowerShell no SAC, depois de chegar a um prompt do CMD, digite:
 

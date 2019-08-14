@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 07/29/2019
 ms.author: dacurwin
-ms.openlocfilehash: 34484c309cb186aabec519e54269fefae316165e
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 5f44e9b386f5d05b75f6fdf6cf8b55360e4c5dae
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68639901"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954775"
 ---
 # <a name="delete-a-recovery-services-vault"></a>Excluir um cofre dos Serviços de Recuperação
 
@@ -51,7 +51,7 @@ Antes de continuar, leia **[esta](#before-you-start)** seção para entender as 
 
 Para interromper a proteção e excluir os dados de backup, execute o seguinte:
 
-1. No portal >**itens de backup** do **cofre** > de serviços de recuperação escolha os itens protegidos na nuvem (exemplo de máquina AzureVirtual, armazenamento do Azure (arquivos do Azure), VM do SQL do Azure e assim por diante).
+1. No portal >**itens de backup** do **cofre** > de serviços de recuperação escolha os itens protegidos na nuvem (exemplo de máquina AzureVirtual, armazenamento do Azure (arquivos do Azure), SQL na VM do Azure e assim por diante).
 
     ![selecione o tipo de backup](./media/backup-azure-delete-vault/azure-storage-selected.png)
 
@@ -131,7 +131,7 @@ Para excluir itens de backup do console de gerenciamento do MARS
 
   ![PIN de segurança](./media/backup-azure-delete-vault/security-pin.png)
 
-- No assistente de **modificação de progresso de backup** , *você verá que os dados de backup excluídos serão mantidos por 14 dias. Após esse período, os dados de backup serão excluídos permanentemente.*  
+- No assistente de **modificação de progresso de backup** , você *verá que os dados de backup excluídos serão mantidos por 14 dias. Após esse período, os dados de backup serão excluídos permanentemente.*  
 
     ![Excluir infraestrutura de backup](./media/backup-azure-delete-vault/deleted-backup-data.png)
 
@@ -159,7 +159,7 @@ O status do membro protegido agora é alterado para **réplica inativa disponív
 
     ![Remover réplicas em disco e online](./media/backup-azure-delete-vault/remove-replica-on-disk-and-online.png)
 
-**Método 2** Inicie o console de **Gerenciamento do mAbs** . Na seção **selecionar método de proteção de dados** , cancele a seleção **desejo proteção online**.
+**Método 2** Inicie o console de **Gerenciamento do mAbs** . Na seção **selecionar método de proteção de dados** , desmarque **eu quero proteção online**.
 
   ![selecionar método de proteção de dados](./media/backup-azure-delete-vault/data-protection-method.png)
 
@@ -183,7 +183,7 @@ Esta opção para excluir o cofre dos serviços de recuperação só é recomend
 
 - No painel **Essentials** no menu do cofre, verifique se não há itens de **backup**, **servidores de gerenciamento de backup**ou **itens replicados** listados. Se houver itens de backup, consulte a seção [antes de começar](#before-you-start) .
 - Tente [excluir o cofre do portal](#delete-the-recovery-services-vault)novamente.
-- Se todas as dependências forem removidas e você ainda estiver recebendo o *erro de exclusão do cofre* , use a ferramenta ARMClient para executar as etapas abaixo;
+- Se todas as dependências forem removidas e você ainda estiver recebendo o *erro de exclusão do cofre*, use a ferramenta ARMClient para executar as etapas abaixo;
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 

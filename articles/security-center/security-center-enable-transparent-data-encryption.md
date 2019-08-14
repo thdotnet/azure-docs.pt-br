@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 10/28/2018
 ms.author: rkarlin
 ms.openlocfilehash: d5ddec40a1b20e377ec18ce871018f674557e7b4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "60703962"
 ---
 # <a name="enable-transparent-data-encryption-in-azure-security-center"></a>Habilitar Transparent Data Encryption na Central de Segurança do Azure
@@ -41,7 +41,7 @@ Essa recomendação se aplica apenas ao serviço do SQL Azure, não incluindo o 
 
    Quando a TDE for habilitada no banco de dados SQL selecionado, o **Status da criptografia** será alterado para **Criptografado**.    
 
-   ![Status de criptografia][4]
+   ![Status da criptografia][4]
 
 ## <a name="see-also"></a>Consulte também
 Este artigo mostrou como implementar a recomendação da Central de Segurança "Habilitar a Transparent Data Encryption". Para saber mais sobre a TDE do SQL, consulte o seguinte:

@@ -13,13 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/20/2019
-ms.author: milanga;juliako;
-ms.openlocfilehash: 0fcacf68f4b41ed8945a6a40d7da125aef499947
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: juliako
+ms.reviewer: milanga
+ms.openlocfilehash: e7a99ffdd42c02e5a18dc14c4774b428232b8293
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60825516"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "69015991"
 ---
 # <a name="use-azure-media-video-thumbnails-to-create-a-video-summarization"></a>Usar as Miniaturas de Vídeo de Mídia do Azure para criar um resumo de vídeo  
 ## <a name="overview"></a>Visão geral
@@ -53,7 +54,7 @@ Ao criar uma tarefa de miniatura de vídeo com as **Miniaturas de Vídeo de Míd
 
 No momento, é possível alterar os seguintes parâmetros:
 
-| Param | DESCRIÇÃO |
+| Param | Descrição |
 | --- | --- |
 | outputAudio |Especifica se o vídeo resultante conterá áudio. <br/>Valores permitidos são: Verdadeiro ou falso. Padrão: True. |
 | fadeInFadeOut |Especifica se as transições de esmaecimento serão usadas entre as miniaturas de movimento separadas.  <br/>Valores permitidos são: Verdadeiro ou falso.  Padrão: True. |

@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 02/02/2017
 ms.author: rkarlin
 ms.openlocfilehash: 0a889de79b6a5921007614dac8d610c1be0222d2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "60704485"
 ---
 # <a name="azure-security-center-and-azure-sql-database-service"></a>Central de Segurança do Azure e serviço do Banco de Dados SQL do Azure
@@ -67,7 +67,7 @@ A Central de Segurança analisa periodicamente o estado de segurança de seus re
 
 Depois de definir uma política de segurança, a Central de Segurança analisa o estado de segurança de seus recursos para identificar possíveis vulnerabilidades. As recomendações são mostradas em um formato de tabela, em que cada linha representa uma recomendação específica. Use a tabela a seguir como referência para ajudar você a entender as recomendações disponíveis para o Banco de Dados SQL do Azure e o que faz cada recomendação se você aplicá-la. A seleção de uma recomendação leva você até um artigo que explica como implementar a recomendação na Central de Segurança.
 
-| Recomendações | DESCRIÇÃO |
+| Recomendações | Descrição |
 | --- | --- |
 | [Habilitar a detecção de ameaças e auditoria em servidores SQL](security-center-enable-auditing-on-sql-servers.md) |Recomenda que você ative a detecção de ameaças e a auditoria para servidores do Banco de Dados SQL. (Somente o serviço do Banco de Dados SQL. Não inclui o Microsoft SQL Server em execução nas máquinas virtuais.) |
 | [Habilitar a detecção de ameaças e auditoria em Bancos de Dados SQL](security-center-enable-auditing-on-sql-databases.md) |Recomenda que você ative a detecção de ameaças e a auditoria para bancos de dados do Banco de Dados SQL. (Somente o serviço do Banco de Dados SQL. Não inclui o Microsoft SQL Server em execução nas máquinas virtuais.) |

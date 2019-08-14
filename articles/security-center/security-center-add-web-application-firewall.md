@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 12/13/2018
 ms.author: rkarlin
 ms.openlocfilehash: 63852ccab842f11f30bcbe695206fedf72931911
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "60706151"
 ---
 # <a name="add-a-web-application-firewall-in-azure-security-center"></a>Adicionar um Firewall do Aplicativo Web na Central de Segurança do Azure
@@ -51,7 +51,7 @@ A Central de Segurança recomenda que você provisione um WAF para ajudar a prot
    
 8. Volte para **Novo Firewall do Aplicativo Web** e selecione **Informações do WAF**. Em **Informações do WAF**, você configura o WAF. A Etapa 7 permite configurar a máquina virtual na qual o WAF será executado e a Etapa 8 permite provisionar o WAF em si.
 
-## <a name="finalize-application-protection"></a>Finalizar a proteção do aplicativo
+## <a name="finalize-application-protection"></a>Finalizar proteção do aplicativo
 1. Retorne a **Recomendações**. Uma nova entrada foi gerada depois que você criou o WAF, chamada **Finalizar a proteção do aplicativo**. Essa entrada informa o que é necessário para concluir o processo de conectar o WAF dentro da Rede Virtual do Azure para que ele possa proteger o aplicativo.
 
    ![Finalizar a proteção do aplicativo][5]

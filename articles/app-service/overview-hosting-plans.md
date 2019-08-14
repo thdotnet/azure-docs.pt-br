@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/09/2017
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: fef509d705d0b904586a86b7dc58decc54e7023d
-ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
+ms.openlocfilehash: 4ea983255463080592181cda321ef6b6d1ff147f
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68716633"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932349"
 ---
 # <a name="azure-app-service-plan-overview"></a>Visão geral do plano do Serviço de Aplicativo do Azure
 
@@ -32,14 +32,13 @@ Quando você cria um plano de serviço de aplicativo em uma determinada região 
 - Região (Oeste dos EUA, Leste dos EUA, etc.)
 - Número de instâncias de máquina virtual
 - Tamanho de instâncias de máquina virtual (pequeno, médio, grande)
-- Tipo de preço (Gratuito, Compartilhado, Básico, Standard, Premium, PremiumV2, Isolado, Consumo)
+- Tipo de preço (gratuito, compartilhado, básico, Standard, Premium, PremiumV2, isolado)
 
 O _tipo de preço_ de um plano de serviço de aplicativo determina quais recursos do serviço de aplicativo que você obtém e quanto você paga pelo plano. Há algumas categorias de tipos de preços:
 
 - **Computação compartilhada**: **Grátis** e **Compartilhada**, os dois tipos base, executam um aplicativo na mesma máquina virtual do Azure como outros aplicativos do serviço de aplicativo, incluindo aplicativos de outros clientes. Esses tipos alocam cotas de CPU para cada aplicativo que é executado em recursos compartilhados, e não é possível expandir os recursos.
 - **Computação dedicada**: Os tipos **Básico**, **Standard**, **Premium**, e **PremiumV2** executam aplicativos em máquinas virtuais dedicadas do Azure. Somente os aplicativos no mesmo plano do serviço de aplicativo compartilham os mesmos recursos de computação. Quanto maior o nível, mais instâncias de máquina virtual estão disponíveis para a sua expansão.
-- **Isolado**: Esse tipo executa máquinas virtuais dedicadas do Azure em redes virtuais dedicadas do Azure, que fornece isolamento de rede além do isolamento de computação para os seus aplicativos. Ele fornece a capacidade máxima de expansão.
-- **Consumo**: Esse tipo está disponível apenas para [aplicativos de funções](../azure-functions/functions-overview.md). Ele dimensiona as funções dinamicamente, dependendo da carga de trabalho. Para obter mais informações, consulte [Comparação dos planos de hospedagem do Azure Functions](../azure-functions/functions-scale.md).
+- **Isolado**: Essa camada executa VMs do Azure dedicadas em redes virtuais do Azure dedicadas. Ele fornece isolamento de rede na parte superior do isolamento de computação para seus aplicativos. Ele fornece a capacidade máxima de expansão.
 
 [!INCLUDE [app-service-dev-test-note](../../includes/app-service-dev-test-note.md)]
 
@@ -79,9 +78,8 @@ Esta seção descreve como os aplicativos do serviço de aplicativo são cobrado
 Exceto para o tipo **Grátis**, um plano de Serviço de Aplicativo carrega uma carga horária sobre os recursos de computação que usa.
 
 - No tipo **Compartilhado**, cada aplicativo recebe uma cota de minutos de CPU, portanto _cada aplicativo_ é cobrado por hora para a cota de CPU.
-- Nos tipos dedicados de computação (**Básico**, **Standard**, **Premium**, **PremiumV2**), o plano do serviço de aplicativo define o número de instâncias de máquina virtual para os quais os aplicativos são dimensionados, portanto _cada instância de máquina virtual_ no plano do serviço de aplicativo tem uma taxa por hora. Essas instâncias de máquina virtual são cobradas da mesma forma, independentemente de quantos aplicativos forem executados nelas. Para evitar cobranças inesperadas, consulte [Limpar um plano do serviço de aplicativo](app-service-plan-manage.md#delete).
-- No tipo **Isolado**, o ambiente do serviço de aplicativo define o número de trabalhadores isolados que executam seus aplicativos, e _cada trabalhador_ é cobrado por hora. Além disso, há um valor base por hora para a execução do ambiente do serviço de aplicativo em si. 
-- (Somente para o Azure Functions) O tipo de **consumo** aloca dinamicamente as instâncias de máquina virtual para cargas de trabalho de uma função do aplicativo de serviço, e é cobrado dinamicamente por segundo pelo Azure. Para saber mais, confira [Preços do Azure Functions](https://azure.microsoft.com/pricing/details/functions/).
+- Nas camadas de computação dedicadas (**Basic**, **Standard**, **Premium**, **PremiumV2**), o plano do serviço de aplicativo define o número de instâncias de VM para as quais os aplicativos são dimensionados, de modo que _cada instância de VM_ no plano do serviço de aplicativo tem um custo por hora. Essas instâncias de máquina virtual são cobradas da mesma forma, independentemente de quantos aplicativos forem executados nelas. Para evitar cobranças inesperadas, consulte [Limpar um plano do serviço de aplicativo](app-service-plan-manage.md#delete).
+- No tipo **Isolado**, o ambiente do serviço de aplicativo define o número de trabalhadores isolados que executam seus aplicativos, e _cada trabalhador_ é cobrado por hora. Além disso, há um valor base por hora para a execução do ambiente do serviço de aplicativo em si.
 
 Você não é cobrado por usar os recursos do serviço de aplicativo que estão disponíveis para você (como configurar domínios personalizados, certificados SSL, slots de implantação, backups, etc.). As exceções são:
 

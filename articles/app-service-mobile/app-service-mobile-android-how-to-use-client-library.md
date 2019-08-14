@@ -14,16 +14,16 @@ ms.topic: article
 ms.date: 06/25/2019
 ms.author: emalani
 ms.openlocfilehash: 6a6db136926a7f9d631c717f5cab6c025d97fb48
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "67443535"
 ---
 # <a name="how-to-use-the-azure-mobile-apps-sdk-for-android"></a>Como usar o SDK de Aplicativos Móveis do Azure para Android
 
 > [!NOTE]
-> Visual Studio App Center está investindo em novos e integrados serviços essenciais para o desenvolvimento de aplicativos móveis. Os desenvolvedores podem usar **construir**, **teste** e **distribuir** services para configurar o pipeline de integração contínua e entrega. Depois que o aplicativo é implantado, os desenvolvedores podem monitorar o status e o uso do seu aplicativo usando o **Analytics** e **diagnóstico** serviços e entre em contato com usuários usando o **enviar por Push** serviço. Os desenvolvedores também podem aproveitar **Auth** autenticar seus usuários e **dados** serviço para manter e sincronizar dados do aplicativo na nuvem. Fazer check-out [App Center](https://appcenter.ms/?utm_source=zumo&utm_campaign=app-service-mobile-android-how-to-use-client-library) hoje mesmo.
+> Visual Studio App Center está investindo em serviços novos e integrados central para o desenvolvimento de aplicativos móveis. Os desenvolvedores podem usar **Compilar**, **testar** e **distribuir** serviços para configurar o pipeline de integração e entrega contínua. Depois que o aplicativo é implantado, os desenvolvedores podem monitorar o status e o uso de seus aplicativos usando os serviços de **análise** e **diagnóstico** e se envolver com os usuários usando o serviço de **envio por push** . Os desenvolvedores também podem aproveitar a **autenticação** para autenticar seus usuários e o serviço de **dados** para manter e sincronizar dados de aplicativos na nuvem. Confira [app Center](https://appcenter.ms/?utm_source=zumo&utm_campaign=app-service-mobile-android-how-to-use-client-library) hoje.
 >
 
 Este guia mostra como usar o SDK de cliente Android para Aplicativos Móveis a fim de implementar cenários comuns, como:
@@ -33,11 +33,11 @@ Este guia mostra como usar o SDK de cliente Android para Aplicativos Móveis a f
 * Tratamento de erros.
 * Personalização do cliente.
 
-Este guia destaca o SDK do Android no lado do cliente.  Para saber mais sobre os SDKs do lado do servidor para aplicativos móveis, consulte [trabalhar com o back-end do SDK do .NET][10] or [How to use the Node.js backend SDK][11].
+Este guia destaca o SDK do Android no lado do cliente.  Para saber mais sobre os SDKs do lado do servidor para aplicativos móveis, confira [trabalhar com o SDK de back-end do .net][10] ou [como usar o SDK de back-end do node. js][11].
 
 ## <a name="reference-documentation"></a>Documentação de referência
 
-Você pode encontrar o [referência de API do Javadocs][12] para a biblioteca de cliente Android no GitHub.
+Você pode encontrar a [referência de API de Javadoc][12] para a biblioteca de cliente Android no github.
 
 ## <a name="supported-platforms"></a>Plataformas com suporte
 
@@ -49,7 +49,7 @@ Conclua o tutorial [Início rápido de Aplicativos Móveis](app-service-mobile-a
 
 Se você decidir não concluir o tutorial de Início Rápido, conclua as seguintes tarefas:
 
-* [criar um back-end do aplicativo móvel][13] para usar com seu aplicativo Android.
+* [crie um back-end de aplicativo móvel][13] para usar com seu aplicativo Android.
 * No Android Studio, [atualizar os arquivos de compilação do Gradle](#gradle-build).
 * [Habilitar a permissão de Internet](#enable-internet).
 
@@ -57,7 +57,7 @@ Se você decidir não concluir o tutorial de Início Rápido, conclua as seguint
 
 Altere ambos os arquivos **build.gradle** :
 
-1. Adicione este código para o *Project* nível **gradle** arquivo:
+1. Adicione este código ao arquivo **Build. gradle** de nível de *projeto* :
 
     ```gradle
     buildscript {
@@ -81,7 +81,7 @@ Altere ambos os arquivos **build.gradle** :
     implementation 'com.microsoft.azure:azure-mobile-android:3.4.0@aar'
     ```
 
-    Atualmente, a versão mais recente é a 3.4.0. As versões com suporte estão listadas [no bintray][14].
+    Atualmente, a versão mais recente é a 3.4.0. As versões com suporte são listadas [em bintray][14].
 
 ### <a name="enable-internet"></a>Habilitar a permissão de Internet
 
@@ -201,17 +201,17 @@ public final void setPriority(Integer priority) {
 }
 ```
 
-Para saber como criar tabelas adicionais no seu back-end de aplicativos móveis, consulte [Como: Definir um controlador de tabela][15] (.NET backend) or [Define Tables using a Dynamic Schema][16] (back-end do Node. js).
+Para saber como criar tabelas adicionais no seu back-end de aplicativos móveis, consulte [Como: Defina um controlador][15] de tabela (back-end do .net) ou [defina tabelas usando um esquema dinâmico][16] (back-end do node. js).
 
 Uma tabela de back-end dos Aplicativos Móveis do Azure define cinco campos especiais, quatro deles disponíveis para clientes:
 
-* `String id`: A ID globalmente exclusiva para o registro.  Como prática recomendada, verifique a id a representação de cadeia de caracteres de um [UUID][17] objeto.
+* `String id`: A ID globalmente exclusiva para o registro.  Como prática recomendada, torne a ID a representação de cadeia de caracteres de um objeto [UUID][17] .
 * `DateTimeOffset updatedAt`: A data/hora da última atualização.  O campo updatedAt é definido pelo servidor e nunca deve ser definido pelo código do cliente.
 * `DateTimeOffset createdAt`: A data /hora da criação do objeto.  O campo createdAt é definido pelo servidor e nunca deve ser definido pelo código do cliente.
 * `byte[] version`: Normalmente é representado como uma cadeia de caracteres, a versão também é definida pelo servidor.
 * `boolean deleted`: Indica que o registro foi excluído, mas ainda não foi limpo.  Não use `deleted` como uma propriedade em sua classe.
 
-O campo `id` é obrigatório.  O campo `updatedAt` e o campo `version` são usados para sincronização offline (para sincronização incremental e resolução de conflitos, respectivamente).  O campo `createdAt` é um campo de referência e não é usado pelo cliente.  Os nomes são nomes "across-the-wire" nomes das propriedades e não são ajustáveis.  No entanto, você pode criar um mapeamento entre seu objeto e os nomes "across-the-wire" usando o [gson][3] biblioteca.  Por exemplo:
+O campo `id` é obrigatório.  O campo `updatedAt` e o campo `version` são usados para sincronização offline (para sincronização incremental e resolução de conflitos, respectivamente).  O campo `createdAt` é um campo de referência e não é usado pelo cliente.  Os nomes são nomes "across-the-wire" nomes das propriedades e não são ajustáveis.  No entanto, você pode criar um mapeamento entre o objeto e os nomes "através do fio" usando a biblioteca [Gson][3] .  Por exemplo:
 
 ```java
 package com.example.zumoappname;
@@ -271,7 +271,7 @@ public class ToDoItem
 
 ### <a name="create-a-table-reference"></a>Criar uma referência de tabela
 
-Para acessar uma tabela, primeiro crie uma [MobileServiceTable][8] objeto chamando o **getTable** método sobre o [MobileServiceClient][9].  Esse método tem duas sobrecargas:
+Para acessar uma tabela, primeiro crie um objeto [função mobileservicetable][8] chamando o método **GetTable** no [MobileServiceClient][9].  Esse método tem duas sobrecargas:
 
 ```java
 public class MobileServiceClient {
@@ -314,7 +314,7 @@ List<MyDataTable> results = mDataTable
     .get()              // Converts the async into a sync result
 ```
 
-O exemplo anterior retorna todos os resultados (até o tamanho máximo da página definida pelo servidor).  O método `.execute()` executa a consulta no back-end.  A consulta é convertida em uma [OData v3][19] consulta antes da transmissão para o back-end de aplicativos móveis.  Após o recebimento, o back-end dos Aplicativos Móveis converte a consulta em uma instrução SQL antes de executá-la na instância do SQL Azure.  Uma vez que a atividade de rede demora algum tempo, o `.execute()` método retorna um [ `ListenableFuture<E>` ][18].
+O exemplo anterior retorna todos os resultados (até o tamanho máximo da página definida pelo servidor).  O método `.execute()` executa a consulta no back-end.  A consulta é convertida em uma consulta [OData v3][19] antes da transmissão para o back-end dos aplicativos móveis.  Após o recebimento, o back-end dos Aplicativos Móveis converte a consulta em uma instrução SQL antes de executá-la na instância do SQL Azure.  Como a atividade de rede leva algum tempo `.execute()` , o método [`ListenableFuture<E>`][18]retorna um.
 
 ### <a name="filtering"></a>Filtrar dados retornados
 
@@ -613,7 +613,7 @@ Agora você está pronto para usar a associação de dados. O código a seguir m
 
 Chame o adaptador sempre que modificar a tabela **ToDoItem** . Como as modificações são feitas de registro em registro, você trata de uma única linha em vez de uma coleção. Ao inserir um item, chame o método **add** no adaptador e, ao excluir, chame o método **remove**.
 
-Você pode encontrar um exemplo completo na [projeto de início rápido do Android][21].
+Você pode encontrar um exemplo completo no [projeto de início rápido do Android][21].
 
 ## <a name="inserting"></a>Inserir dados no back-end
 
@@ -701,7 +701,7 @@ mJsonToDoTable = mClient.getTable("ToDoItem");
 Depois de criar uma instância do **MobileServiceJsonTable**, ela tem praticamente a mesma API disponível que o modelo de programação tipado. Em alguns casos, os métodos usam um parâmetro não tipado em vez de um parâmetro tipado.
 
 ### <a name="json_insert"></a>Inserir em uma tabela não tipada
-O código a seguir mostra como fazer uma inserção. A primeira etapa é criar uma [JsonObject][1] , which is part of the [gson][3] biblioteca.
+O código a seguir mostra como fazer uma inserção. A primeira etapa é criar um [jsonobject][1], que faz parte da biblioteca [Gson][3] .
 
 ```java
 JsonObject jsonItem = new JsonObject();
@@ -1007,7 +1007,7 @@ Obtenha a ID do usuário conectado de um **MobileServiceUser** usando o método 
 
 ### <a name="caching"></a>Armazenar tokens de autenticação em cache
 
-Armazenar em cache os tokens de autenticação exige que você armazene uma ID de usuário e o token de autenticação localmente no dispositivo. Na próxima vez que o aplicativo iniciar, você verificará o cache e, se esses valores estiverem presentes, poderá ignorar o procedimento de logon e reidratar o cliente com esses dados. No entanto, esses dados são confidenciais e, para segurança, devem ser armazenados criptografados caso o telefone seja roubado.  Você pode ver um exemplo completo de como a tokens de autenticação de cache no [seção de tokens de autenticação de Cache][7].
+Armazenar em cache os tokens de autenticação exige que você armazene uma ID de usuário e o token de autenticação localmente no dispositivo. Na próxima vez que o aplicativo iniciar, você verificará o cache e, se esses valores estiverem presentes, poderá ignorar o procedimento de logon e reidratar o cliente com esses dados. No entanto, esses dados são confidenciais e, para segurança, devem ser armazenados criptografados caso o telefone seja roubado.  Você pode ver um exemplo completo de como armazenar em cache tokens de autenticação na seção de tokens de [autenticação de cache][7].
 
 Ao tentar usar um token expirado, você receberá uma resposta *401 não autorizado* . Você pode tratar erros de autenticação usando filtros.  Filtros interceptam as solicitações para o back-end do Serviço de Aplicativo. O código do filtro testa a resposta para um 401, dispara o processo de logon e retoma a solicitação que gerou o 401.
 
@@ -1280,7 +1280,7 @@ private class CustomHeaderFilter implements ServiceFilter {
 
 ### <a name="conversions"></a>Configurar a Serialização Automática
 
-Você pode especificar uma estratégia de conversão que se aplica a todas as colunas usando o [gson][3] API. A biblioteca de cliente Android usa [gson][3] nos bastidores para serializar objetos Java para dados JSON antes que os dados são enviados ao serviço de aplicativo do Azure.  O código a seguir usa o método **setFieldNamingStrategy ()** para definir a estratégia. Esse exemplo excluirá o caractere inicial (um "m") e, em seguida, a minúscula do próximo caractere, para cada nome de campo. Por exemplo, ele poderia transformar "mId" em "id".  Implementar uma estratégia de conversão para reduzir a necessidade de anotações `SerializedName()` na maioria dos campos.
+Você pode especificar uma estratégia de conversão que se aplica a todas as colunas usando a API [Gson][3] . A biblioteca de cliente Android usa [Gson][3] nos bastidores para serializar objetos Java para dados JSON antes que os dados sejam enviados para Azure app serviço.  O código a seguir usa o método **setFieldNamingStrategy ()** para definir a estratégia. Esse exemplo excluirá o caractere inicial (um "m") e, em seguida, a minúscula do próximo caractere, para cada nome de campo. Por exemplo, ele poderia transformar "mId" em "id".  Implementar uma estratégia de conversão para reduzir a necessidade de anotações `SerializedName()` na maioria dos campos.
 
 ```java
 FieldNamingStrategy namingStrategy = new FieldNamingStrategy() {

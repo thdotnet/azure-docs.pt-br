@@ -14,17 +14,17 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
-ms.openlocfilehash: c5dd0146fe59e7dc85787f146b10cfde7d6addb4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 45089c77ff2fed7ea5903333514f4d4edbad7cb3
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64867904"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "69015556"
 ---
 # <a name="overview-of-live-streaming-using-media-services"></a>Visão geral da transmissão ao vivo usando os Serviços de Mídia
 
 > [!NOTE]
-> Não estão sendo adicionados novos recursos ou funcionalidades aos Serviços de Mídia v2. <br/>Confira a versão mais recente, [Serviços de Mídia v3](https://docs.microsoft.com/azure/media-services/latest/). Consulte também [diretrizes de migração da v2 para v3](../latest/migrate-from-v2-to-v3.md)
+> Não estão sendo adicionados novos recursos ou funcionalidades aos Serviços de Mídia v2. <br/>Confira a versão mais recente, [Serviços de Mídia v3](https://docs.microsoft.com/azure/media-services/latest/). Além disso, consulte [diretrizes de migração de v2 para v3](../latest/migrate-from-v2-to-v3.md)
 
 ## <a name="overview"></a>Visão geral
 
@@ -44,12 +44,12 @@ Ao distribuir eventos de transmissão ao vivo com os Serviços de Mídia do Azur
 
 O AMS **(Serviços de Mídia do Microsoft Azure)** fornece a capacidade de ingerir, codificar, visualizar, armazenar e fornecer o conteúdo de transmissão ao vivo.
 
-Com os serviços de mídia, você pode aproveitar [empacotamento dinâmico](media-services-dynamic-packaging-overview.md), que permite a difundir suas transmissões ao vivo em MPEG DASH, HLS, e Smooth Streaming formata a partir da feed de contribuição que está sendo enviada para o serviço. Seus espectadores podem reproduzir a transmissão ao vivo com qualquer player compatível com HLS, DASH ou Smooth Streaming. Você pode usar o Player de mídia do Azure em seus aplicativos móveis ou web para entregar sua transmissão em qualquer um desses protocolos.
+Com os serviços de mídia, você pode aproveitar o [empacotamento dinâmico](media-services-dynamic-packaging-overview.md), que permite que você transmita suas transmissões ao vivo nos formatos MPEG Dash, HLS e Smooth streaming do feed de contribuição que está sendo enviado para o serviço. Seus espectadores podem reproduzir a transmissão ao vivo com qualquer player compatível com HLS, DASH ou Smooth Streaming. Você pode usar Player de Mídia do Azure em seus aplicativos Web ou móveis para entregar seu fluxo em qualquer um desses protocolos.
 
 > [!NOTE]
 > A partir de 12 de maio de 2018, os canais ao vivo não darão mais suporte ao protocolo de ingestão de fluxo de transporte RTP/MPEG-2. Faça a migração de RTP/MPEG-2 para protocolos de ingestão RTMP ou MP4 fragmentado (Smooth Streaming).
 
-## <a name="streaming-endpoints-channels-programs"></a>Pontos de extremidade, canais, programas de streaming
+## <a name="streaming-endpoints-channels-programs"></a>Pontos de extremidade de streaming, canais, programas
 
 Nos Serviços de Mídia do Azure, **Canais** e **Programas**, e **StreamingEndpoints** tratam de todas as funcionalidades de transmissão ao vivo, incluindo ingestão, formatação, DVR, segurança, escalabilidade e redundância.
 
@@ -151,7 +151,7 @@ A tabela a seguir mostra como os estados de canal são mapeados para o modo de c
 | Estado do Canal | Indicadores da interface do usuário do portal | Trata-se de cobrança? |
 | --- | --- | --- |
 | Iniciando |Iniciando |Nenhum (estado transitório) |
-| Executando |Pronto (nenhum programa em execução)<br/>ou o<br/>Streaming (há pelo menos um programa em execução) |SIM |
+| Em execução |Pronto (nenhum programa em execução)<br/>ou<br/>Streaming (há pelo menos um programa em execução) |SIM |
 | Parando |Parando |Nenhum (estado transitório) |
 | Parado |Parado |Não |
 
@@ -162,7 +162,7 @@ A tabela a seguir mostra como os estados de canal são mapeados para o modo de c
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-topics"></a>Tópicos relacionados
-[Especificação de ingestão dinâmica de MP4 fragmentado dos Serviços de Mídia do Azure](media-services-fmp4-live-ingest-overview.md)
+[Especificação de ingestão dinâmica de MP4 fragmentado dos Serviços de Mídia do Azure](../media-services-fmp4-live-ingest-overview.md)
 
 [Trabalhando com canais habilitados a executar codificação ao vivo com os Serviços de Mídia do Azure](media-services-manage-live-encoder-enabled-channels.md)
 

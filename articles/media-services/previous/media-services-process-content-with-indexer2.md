@@ -12,13 +12,14 @@ ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/19/2019
-ms.author: adsolank;juliako;
-ms.openlocfilehash: 304ecda320e1fdd9573bc961fde74efe03400aa3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: juliako
+ms.reviewer: adsolank
+ms.openlocfilehash: 8aa3082b15886234905edaebbbc9e1458bd7e3f8
+ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64712963"
+ms.lasthandoff: 07/07/2019
+ms.locfileid: "69015029"
 ---
 # <a name="indexing-media-files-with-azure-media-indexer-2-preview"></a>Indexando arquivos de mídia com a Preview do Azure Media Indexer 2
 ## <a name="overview"></a>Visão geral
@@ -87,7 +88,7 @@ A Preview do Azure Media Indexer 2 dá suporte à conversão de fala em texto pa
 * Japonês [JaJp]
 * Russo [RuRu]
 * Inglês britânico [EnGb]
-* Espanhol (México) [México EsMx] 
+* Espanhol (México) [EsMx] 
 
 ## <a name="supported-file-types"></a>Tipos de arquivo com suporte
 

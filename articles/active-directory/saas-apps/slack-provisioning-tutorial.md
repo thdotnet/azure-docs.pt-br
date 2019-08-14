@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/27/2019
 ms.author: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 036112027fcf210f0ac2ff1e631c8b0bd4b5e9ef
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4a294254bd52db89179c5644ea7a0f0f04027f30
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65964385"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932482"
 ---
 # <a name="tutorial-configure-slack-for-automatic-user-provisioning"></a>Tutorial: Configurar Slack para provisionamento automático de usuário
 
@@ -120,7 +120,9 @@ Para saber mais sobre como ler os logs de provisionamento do Azure AD, consulte 
   
   * Apenas atualiza se essas duas configurações estiverem configuradas no local de trabalho / organização do Slack - **A sincronização de perfil está ativada** e **Os usuários não podem alterar seu nome de exibição**.
   
-  * O atributo **userName** do Slack precisa ter menos de 21 caracteres e ter um valor exclusivo.
+* O atributo **userName** do Slack precisa ter menos de 21 caracteres e ter um valor exclusivo.
+
+* A margem de atraso só permite correspondência com os atributos **username** e **email**.  
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

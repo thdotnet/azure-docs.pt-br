@@ -1,61 +1,61 @@
 ---
-title: Store consulta no banco de dados do Azure para MariaDB
-description: Este artigo descreve o recurso de Store de consulta no banco de dados do Azure para MariaDB
+title: Repositório de Consultas no banco de dados do Azure para MariaDB
+description: Este artigo descreve o recurso Repositório de Consultas no banco de dados do Azure para MariaDB
 author: ajlam
 ms.author: andrela
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 06/27/2019
-ms.openlocfilehash: 883f780059e38c53dedda309dd059cc714539f80
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: 5d4d01f9f85c78d0e864ec9d11c1d8cd43542e57
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67462083"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68950629"
 ---
-# <a name="monitor-azure-database-for-mariadb-performance-with-query-store"></a>Monitorar o banco de dados do Azure para desempenho MariaDB com consulta Store
+# <a name="monitor-azure-database-for-mariadb-performance-with-query-store"></a>Monitorar o desempenho do banco de dados do Azure para MariaDB com o Repositório de Consultas
 
-**Aplica-se a:**  banco de dados do Azure para MariaDB 10.2
+**Aplica-se a:**  banco de dados do Azure para MariaDB 10,2
 
-> [!NOTE]
-> Consulta Store está em visualização.
+> [!IMPORTANT]
+> Repositório de Consultas está em versão prévia.
 
-O recurso de Store de consulta no banco de dados do Azure para Mariadb fornece uma maneira de acompanhar o desempenho de consulta ao longo do tempo. O Repositório de Consultas simplifica a solução de problemas ajudando você a rapidamente localizar as consultas de execução mais longa e que consomem mais recursos. O Repositório de Consultas captura automaticamente um histórico das estatísticas de tempo de execução e consultas e o retém para sua análise. Ele separa os dados por janelas de tempo para que você possa ver padrões de uso do banco de dados. Dados para todos os usuários, bancos de dados e consultas são armazenados na **mysql** banco de dados de esquema no banco de dados do Azure para MariaDB de instância.
+O recurso Repositório de Consultas no banco de dados do Azure para MariaDB fornece uma maneira de controlar o desempenho de consulta ao longo do tempo. O Repositório de Consultas simplifica a solução de problemas ajudando você a rapidamente localizar as consultas de execução mais longa e que consomem mais recursos. O Repositório de Consultas captura automaticamente um histórico das estatísticas de tempo de execução e consultas e o retém para sua análise. Ele separa os dados por janelas de tempo para que você possa ver padrões de uso do banco de dados. Todos os usuários, bancos de dados e consultas são armazenados no banco de dados de esquema do **MySQL** no banco de dados do Azure para a instância MariaDB.
 
-## <a name="common-scenarios-for-using-query-store"></a>Cenários comuns para usar a consulta Store
+## <a name="common-scenarios-for-using-query-store"></a>Cenários comuns para usar o Repositório de Consultas
 
-Repositório de consultas pode ser usado em vários cenários, incluindo o seguinte:
+O repositório de consultas pode ser usado em vários cenários, incluindo o seguinte:
 
-- Detectando as consultas retornadas
+- Detectando consultas regressadas
 - Determinação do número de vezes que uma consulta foi executada em uma determinada janela de tempo
 - Comparar o tempo médio de execução de uma consulta entre janelas de tempo para ver grandes deltas
 
 ## <a name="enabling-query-store"></a>Habilitando o Repositório de Consultas
 
-O Repositório de Consultas é um recurso que requer aceitação, portanto, ele não está ativo em um servidor por padrão. O repositório de consultas está habilitado ou desabilitado globalmente para todos os bancos de dados em um determinado servidor e não pode ser ativado ou desativado por banco de dados.
+O Repositório de Consultas é um recurso que requer aceitação, portanto, ele não está ativo em um servidor por padrão. O repositório de consultas é habilitado ou desabilitado globalmente para todos os bancos de dados em um determinado servidor e não pode ser ativado ou desativado por banco de dado.
 
 ### <a name="enable-query-store-using-the-azure-portal"></a>Habilitar o Repositório de Consultas usando o portal do Azure
 
-1. Entre portal do Azure e selecione seu banco de dados do Azure para MariaDB.
-1. Selecione **parâmetros de servidor** no **configurações** seção do menu.
+1. Entre no portal do Azure e selecione o banco de dados do Azure para o servidor MariaDB.
+1. Selecione **parâmetros** de servidor na seção **configurações** do menu.
 1. Procure o parâmetro query_store_capture_mode.
-1. Defina o valor para todos e **salvar**.
+1. Defina o valor como todos e **salve**.
 
-Para habilitar as estatísticas de espera em sua consulta Store:
+Para habilitar as estatísticas de espera no seu Repositório de Consultas:
 
 1. Procure o parâmetro query_store_wait_sampling_capture_mode.
-1. Defina o valor para todos e **salvar**.
+1. Defina o valor como todos e **salve**.
 
-Permitir até 20 minutos para o primeiro lote de dados para persistir no banco de dados mysql.
+Aguarde até 20 minutos para que o primeiro lote de dados persista no banco de dado MySQL.
 
 ## <a name="information-in-query-store"></a>Informações no Repositório de Consultas
 
 O Repositório de Consultas tem dois repositórios:
 
-- Armazenar uma estatística de tempo de execução para manter as informações de estatísticas de execução de consulta.
+- Um repositório de estatísticas de tempo de execução para manter as informações de estatísticas de execução de consulta.
 - Um repositório de estatísticas de espera para manter informações de estatísticas de espera.
 
-Para minimizar o uso de espaço, as estatísticas de execução de tempo de execução no repositório de estatísticas de tempo de execução são agregadas em uma janela de tempo fixo, configurável. As informações nesses repositórios são visíveis consultando as exibições do repositório de consultas.
+Para minimizar o uso de espaço, as estatísticas de execução de tempo de execução no repositório de estatísticas de tempo de execução são agregadas em uma janela de tempo fixa e configurável. As informações nesses repositórios são visíveis consultando as exibições do repositório de consultas.
 
 A consulta a seguir retorna informações sobre consultas no Repositório de Consultas:
 
@@ -63,7 +63,7 @@ A consulta a seguir retorna informações sobre consultas no Repositório de Con
 SELECT * FROM mysql.query_store;
 ```
 
-Essa consulta ou para as estatísticas de espera:
+Ou esta consulta para estatísticas de espera:
 
 ```sql
 SELECT * FROM mysql.query_store_wait_stats;
@@ -78,8 +78,8 @@ Aqui estão alguns exemplos de como você pode obter mais insights sobre sua car
 | **Observação** | **Ação** |
 |---|---|
 |Esperas de bloqueio alto | Verifique os textos de consulta para as consultas afetadas e identifique as entidades de destino. Procure no Repositório de Consultas outras consultas que modificam a mesma entidade, que é executada com frequência e/ou têm alta duração. Depois de identificar essas consultas, considere alterar a lógica do aplicativo para melhorar a simultaneidade ou use um nível de isolamento menos restritivo. |
-|Esperas de E/S de buffer alto | Localize as consultas com um grande número de leituras físicas no Repositório de Consultas. Se eles corresponderem às consultas com esperas de e/s, considere a possibilidade de introduzir um índice na entidade subjacente, fazer buscas em vez de verificações. Isso minimizaria a sobrecarga de E/S das consultas. Verifique as **recomendações de desempenho** para seu servidor no portal para ver se há recomendações de índice para o servidor que seria otimizar as consultas. |
-|Esperas de memória alta | Localize as consultas que consomem mais memória no Repositório de Consultas. Essas consultas estão provavelmente atrasando o andamento das consultas afetadas. Verifique as **recomendações de desempenho** para seu servidor no portal para ver se há recomendações de índice que seriam otimizar essas consultas.|
+|Esperas de E/S de buffer alto | Localize as consultas com um grande número de leituras físicas no Repositório de Consultas. Se eles corresponderem às consultas com altas esperas de e/s, considere a introdução de um índice na entidade subjacente, para fazer buscas em vez de verificações. Isso minimizaria a sobrecarga de E/S das consultas. Verifique as **recomendações** de desempenho para o servidor no portal para ver se há recomendações de índice para esse servidor que otimizaria as consultas. |
+|Esperas de memória alta | Localize as consultas que consomem mais memória no Repositório de Consultas. Essas consultas estão provavelmente atrasando o andamento das consultas afetadas. Verifique as **recomendações** de desempenho para seu servidor no portal para ver se há recomendações de índice que otimizarão essas consultas.|
 
 ## <a name="configuration-options"></a>Opções de configuração
 
@@ -89,93 +89,93 @@ As opções a seguir estão disponíveis para configurar os parâmetros do Repos
 
 | **Parâmetro** | **Descrição** | **Padrão** | **Range** |
 |---|---|---|---|
-| query_store_capture_mode | Ative o recurso de repositório de consultas ON/OFF com base no valor. Observação: Se performance_schema for OFF, ativando query_store_capture_mode ativará performance_schema e um subconjunto de instrumentos de esquema de desempenho necessários para esse recurso. | ALL | NENHUM, TODOS |
-| query_store_capture_interval | O repositório de consultas captura de intervalo em minutos. Permite especificar o intervalo no qual as métricas de consulta são agregadas | 15 | 5 - 60 |
-| query_store_capture_utility_queries | A ativação ON ou OFF para capturar todas as consultas de utilitário que está em execução no sistema. | NÃO | SIM, NÃO |
+| query_store_capture_mode | Ativar/desativar o recurso de repositório de consultas com base no valor. Observação: Se performance_schema estiver OFF, ativar o query_store_capture_mode ativará performance_schema e um subconjunto de instrumentos de esquema de desempenho necessários para esse recurso. | TODOS | NENHUM, TUDO |
+| query_store_capture_interval | O intervalo de captura do repositório de consultas em minutos. Permite especificar o intervalo no qual as métricas de consulta são agregadas | 15 | 5 - 60 |
+| query_store_capture_utility_queries | Ativar ou desativar o para capturar todas as consultas do utilitário que estão sendo executadas no sistema. | NÃO | SIM, NÃO |
 | query_store_retention_period_in_days | Janela de tempo em dias para manter os dados no repositório de consultas. | 7 | 1 a 30 |
 
 As opções a seguir se aplicam especificamente às estatísticas de espera.
 
 | **Parâmetro** | **Descrição** | **Padrão** | **Range** |
 |---|---|---|---|
-| query_store_wait_sampling_capture_mode | Permite a ativação ON / OFF as estatísticas de espera. | NENHUM | NENHUM, TODOS |
-| query_store_wait_sampling_frequency | Frequência de altera de amostragem de espera em segundos. 5 a 300 segundos. | 30 | 5-300 |
+| query_store_wait_sampling_capture_mode | Permite ativar/desativar as estatísticas de espera. | NENHUM | NENHUM, TUDO |
+| query_store_wait_sampling_frequency | Altera a frequência de amostragem de espera em segundos. 5 a 300 segundos. | 30 | 5-300 |
 
 > [!NOTE]
-> No momento **query_store_capture_mode** prevalece sobre essa configuração, o que significa que ambos **query_store_capture_mode** e **query_store_wait_sampling_capture_mode** precisa ser habilitado para todas as estatísticas de espera trabalhar. Se **query_store_capture_mode** estiver desativada, as estatísticas de espera será desligada, bem como as estatísticas de espera utiliza o performance_schema habilitado e o query_text capturados pelo repositório de consultas.
+> Atualmente, o **query_store_capture_mode** substitui essa configuração, o que significa que **query_store_capture_mode** e **query_store_wait_sampling_capture_mode** precisam ser habilitados para que todas as estatísticas de espera funcionem. Se **query_store_capture_mode** for desativado, as estatísticas de espera serão desativadas, já que as estatísticas de espera utilizam o performance_schema habilitado e o query_text capturado pelo repositório de consultas.
 
 Use o [portal do Azure](howto-server-parameters.md) para obter ou definir um valor diferente para um parâmetro.
 
 ## <a name="views-and-functions"></a>Exibições e funções
 
-Exiba e gerencie o Repositório de Consultas usando as seguintes exibições e funções. Qualquer pessoa a [função pública de privilégio selecione](howto-create-users.md#create-additional-admin-users) pode usar esses modos de exibição para ver os dados na consulta Store. Essas exibições estão disponíveis somente na **mysql** banco de dados.
+Exiba e gerencie o Repositório de Consultas usando as seguintes exibições e funções. Qualquer pessoa na [função pública selecionar privilégio](howto-create-users.md#create-additional-admin-users) pode usar essas exibições para ver os dados em repositório de consultas. Essas exibições estão disponíveis somente no banco de dados **MySQL** .
 
 Consultas são normalizadas examinando sua estrutura após a remoção de literais e constantes. Se duas consultas forem idênticas, exceto por valores literais, elas terão o mesmo hash.
 
-### <a name="mysqlquerystore"></a>mysql.query_store
+### <a name="mysqlquery_store"></a>mysql.query_store
 
 Essa exibição retorna todos os dados no Repositório de Consultas. Há uma linha para cada ID de banco de dados, ID de usuário e ID de consulta distinta.
 
-| **Name** | **Tipo de dados** | **IS_NULLABLE** | **Descrição** |
+| **Nome** | **Tipo de dados** | **IS_NULLABLE** | **Descrição** |
 |---|---|---|---|
 | `schema_name`| varchar(64) | NÃO | Nome do esquema |
-| `query_id`| bigint(20) | NÃO| ID exclusiva gerada para a consulta específica, se a mesma consulta for executada em um esquema diferente, uma nova ID será gerado |
-| `timestamp_id` | timestamp| NÃO| O carimbo de hora em que a consulta é executada. Isso se baseia na configuração query_store_interval|
-| `query_digest_text`| longtext| NÃO| O texto da consulta normalizado após a remoção de todos os literais|
-| `query_sample_text` | longtext| NÃO| Primeira aparição de consulta real com literais|
-| `query_digest_truncated` | bit| SIM| Se o texto da consulta foi truncado. Valor será Sim, se a consulta for maior que 1 KB|
-| `execution_count` | bigint(20)| NÃO| O número de vezes que a consulta foi executada para esta ID de carimbo de hora / durante o período de intervalo configurado|
-| `warning_count` | bigint(20)| NÃO| Número de avisos que esta consulta gerada durante o interno|
-| `error_count` | bigint(20)| NÃO| Número de erros que esta consulta gerada durante o intervalo|
-| `sum_timer_wait` | double| SIM| Tempo total de execução dessa consulta durante o intervalo|
-| `avg_timer_wait` | double| SIM| Tempo médio de execução para esta consulta durante o intervalo|
-| `min_timer_wait` | double| SIM| Mínimo de tempo de execução para esta consulta|
-| `max_timer_wait` | double| SIM| Tempo de execução máximo|
-| `sum_lock_time` | bigint(20)| NÃO| Quantidade total de tempo gasto para todos os bloqueios para essa execução de consulta durante a janela de tempo|
+| `query_id`| bigint(20) | NÃO| ID exclusiva gerada para a consulta específica, se a mesma consulta for executada em um esquema diferente, uma nova ID será gerada |
+| `timestamp_id` | timestamp| NÃO| Carimbo de data/hora em que a consulta é executada. Isso se baseia na configuração do query_store_interval|
+| `query_digest_text`| longtext| NÃO| O texto de consulta normalizado após a remoção de todos os literais|
+| `query_sample_text` | longtext| NÃO| Primeira aparência da consulta real com literais|
+| `query_digest_truncated` | bit| SIM| Se o texto da consulta foi truncado. O valor será Sim se a consulta tiver mais de 1 KB|
+| `execution_count` | bigint(20)| NÃO| O número de vezes que a consulta foi executada para esta ID de carimbo de data/hora durante o período de intervalo configurado|
+| `warning_count` | bigint(20)| NÃO| Número de avisos que esta consulta gerou durante a|
+| `error_count` | bigint(20)| NÃO| Número de erros que esta consulta gerou durante o intervalo|
+| `sum_timer_wait` | duplo| SIM| Tempo de execução total desta consulta durante o intervalo|
+| `avg_timer_wait` | duplo| SIM| Tempo médio de execução para esta consulta durante o intervalo|
+| `min_timer_wait` | duplo| SIM| Tempo mínimo de execução para esta consulta|
+| `max_timer_wait` | duplo| SIM| Tempo de execução máximo|
+| `sum_lock_time` | bigint(20)| NÃO| Quantidade total de tempo gasto para todos os bloqueios para esta execução de consulta durante esta janela de tempo|
 | `sum_rows_affected` | bigint(20)| NÃO| Número de linhas afetadas|
 | `sum_rows_sent` | bigint(20)| NÃO| Número de linhas enviadas ao cliente|
 | `sum_rows_examined` | bigint(20)| NÃO| Número de linhas verificadas|
-| `sum_select_full_join` | bigint(20)| NÃO| Número de junções completos|
-| `sum_select_scan` | bigint(20)| NÃO| Número de exames de select |
+| `sum_select_full_join` | bigint(20)| NÃO| Número de junções completas|
+| `sum_select_scan` | bigint(20)| NÃO| Número de verificações selecionadas |
 | `sum_sort_rows` | bigint(20)| NÃO| Número de linhas classificadas|
-| `sum_no_index_used` | bigint(20)| NÃO| Número de vezes quando a consulta não tiver usado todos os índices|
-| `sum_no_good_index_used` | bigint(20)| NÃO| Número de vezes quando o mecanismo de execução de consulta não tiver usado qualquer bons índices|
+| `sum_no_index_used` | bigint(20)| NÃO| Número de vezes em que a consulta não usou nenhum índice|
+| `sum_no_good_index_used` | bigint(20)| NÃO| Número de vezes em que o mecanismo de execução de consulta não usou índices bons|
 | `sum_created_tmp_tables` | bigint(20)| NÃO| Número total de tabelas temporárias criadas|
 | `sum_created_tmp_disk_tables` | bigint(20)| NÃO| Número total de tabelas temporárias criadas no disco (gera e/s)|
 | `first_seen` | timestamp| NÃO| A primeira ocorrência (UTC) da consulta durante a janela de agregação|
-| `last_seen` | timestamp| NÃO| A última ocorrência (UTC) da consulta durante a janela de agregação|
+| `last_seen` | timestamp| NÃO| A última ocorrência (UTC) da consulta durante esta janela de agregação|
 
-### <a name="mysqlquerystorewaitstats"></a>mysql.query_store_wait_stats
+### <a name="mysqlquery_store_wait_stats"></a>mysql.query_store_wait_stats
 
 Essa exibição retorna os dados de eventos de espera no Repositório de Consultas. Há uma linha para cada ID de banco de dados, ID de usuário, ID de consulta e evento distinto.
 
-| **Name**| **Tipo de dados** | **IS_NULLABLE** | **Descrição** |
+| **Nome**| **Tipo de dados** | **IS_NULLABLE** | **Descrição** |
 |---|---|---|---|
 | `interval_start` | timestamp | NÃO| Início do intervalo (incremento de 15 minutos)|
-| `interval_end` | timestamp | NÃO| Final do intervalo (incremento de 15 minutos)|
-| `query_id` | bigint(20) | NÃO| ID exclusiva gerada na consulta normalizada (a partir do repositório de consultas)|
-| `query_digest_id` | varchar(32) | NÃO| O texto da consulta normalizado após a remoção de todos os literais (a partir do repositório de consultas) |
-| `query_digest_text` | longtext | NÃO| Primeira aparição de consulta real com literais (a partir do repositório de consultas) |
+| `interval_end` | timestamp | NÃO| Fim do intervalo (incremento de 15 minutos)|
+| `query_id` | bigint(20) | NÃO| ID exclusiva gerada na consulta normalizada (do repositório de consultas)|
+| `query_digest_id` | varchar(32) | NÃO| O texto de consulta normalizado após a remoção de todos os literais (do repositório de consultas) |
+| `query_digest_text` | longtext | NÃO| Primeira aparência da consulta real com literais (do repositório de consultas) |
 | `event_type` | varchar(32) | NÃO| Categoria do evento de espera |
 | `event_name` | varchar(128) | NÃO| Nome do evento de espera |
-| `count_star` | bigint(20) | NÃO| Número de eventos de espera durante o intervalo para a consulta de amostra |
-| `sum_timer_wait_ms` | double | NÃO| Tempo de espera total (em milissegundos) dessa consulta durante o intervalo |
+| `count_star` | bigint(20) | NÃO| Número de eventos de espera amostrados durante o intervalo para a consulta |
+| `sum_timer_wait_ms` | duplo | NÃO| Tempo de espera total (em milissegundos) desta consulta durante o intervalo |
 
 ### <a name="functions"></a>Funções
 
-| **Name**| **Descrição** |
+| **Nome**| **Descrição** |
 |---|---|
-| `mysql.az_purge_querystore_data(TIMESTAMP)` | Limpa todos os dados de repositório de consulta antes do carimbo de hora determinada |
-| `mysql.az_procedure_purge_querystore_event(TIMESTAMP)` | Espera de removerá todos os dados de evento antes do carimbo de hora determinada |
-| `mysql.az_procedure_purge_recommendation(TIMESTAMP)` | Recomendações de limpezas cuja validade está antes do carimbo de hora determinada |
+| `mysql.az_purge_querystore_data(TIMESTAMP)` | Limpa todos os dados do repositório de consultas antes do carimbo de data/hora fornecido |
+| `mysql.az_procedure_purge_querystore_event(TIMESTAMP)` | Limpa todos os dados de evento de espera antes do carimbo de data/hora fornecido |
+| `mysql.az_procedure_purge_recommendation(TIMESTAMP)` | Limpa as recomendações cuja expiração é anterior ao carimbo de data/hora especificado |
 
 ## <a name="limitations-and-known-issues"></a>Limitações e problemas conhecidos
 
-- Se um servidor MariaDB tem o parâmetro `default_transaction_read_only` , consulta Store não é possível capturar dados.
-- Funcionalidade de Store de consulta pode ser interrompida se ele encontrar consultas longas de Unicode (\>= 6000 bytes).
-- O período de retenção de estatísticas de espera é de 24 horas.
-- As estatísticas de espera usa captura de ti de exemplo uma fração dos eventos. A frequência pode ser modificada usando o parâmetro `query_store_wait_sampling_frequency`.
+- Se um servidor MariaDB tiver o parâmetro `default_transaction_read_only` ativado, repositório de consultas não poderá capturar dados.
+- Repositório de consultas funcionalidade poderá ser interrompida se encontrar consultas longas de Unicode\>(= 6000 bytes).
+- O período de retenção para estatísticas de espera é de 24 horas.
+- Estatísticas de espera usa a captura de ti de exemplo uma fração de eventos. A frequência pode ser modificada usando o `query_store_wait_sampling_frequency`parâmetro.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Saiba mais sobre [análises de desempenho de consulta](concepts-query-performance-insight.md)
+- Saiba mais sobre as [informações de desempenho de consulta](concepts-query-performance-insight.md)

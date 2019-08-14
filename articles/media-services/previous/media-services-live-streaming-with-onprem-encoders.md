@@ -13,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
 ms.date: 03/18/2019
-ms.author: cenkd;juliako
-ms.openlocfilehash: da20e4601b75bcb22546d21f6ad218ac9ba2728b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: juliako
+ms.openlocfilehash: a299c050be37d53acd01ddc2db580c4881eeae07
+ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61463775"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "69015476"
 ---
-# <a name="working-with-channels-that-receive-multi-bitrate-live-stream-from-on-premises-encoders"></a>Trabalhando com canais que recebam transmissão ao vivo de múltiplas taxas de bits de codificadores locais
+# <a name="working-with-channels-that-receive-multi-bitrate-live-stream-from-on-premises-encoders"></a>Trabalhando com canais que recebem transmissão ao vivo de múltiplas taxas de bits de codificadores locais
 
 > [!NOTE]
 > A partir de 12 de maio de 2018, os canais ao vivo não darão mais suporte ao protocolo de ingestão de fluxo de transporte RTP/MPEG-2. Faça a migração de RTP/MPEG-2 para protocolos de ingestão RTMP ou MP4 fragmentado (Smooth Streaming).
@@ -45,7 +45,7 @@ A partir da versão 2.10 dos Serviços de Mídia, quando você cria um canal, po
 > [!NOTE]
 > Este artigo aborda os atributos de canais que não estão habilitados para executar a codificação ativa. Para obter informações sobre como trabalhar com canais habilitados a realizar a codificação ativa, confira [Trabalhando com canais habilitados a executar codificação ao vivo com os Serviços de Mídia do Azure](media-services-manage-live-encoder-enabled-channels.md).
 >
->Para obter informações sobre como recomendado em codificadores local, consulte [recomendado em codificadores local](media-services-recommended-encoders.md).
+>Para obter informações sobre codificadores locais recomendados, consulte [codificadores locais recomendados](media-services-recommended-encoders.md).
 
 O diagrama a seguir representa um fluxo de trabalho de transmissão ao vivo que usa um codificador ativo local para gerar fluxos RTMP com múltiplas taxas de bits ou MP4 fragmentado (Smooth Streaming).
 
@@ -187,7 +187,7 @@ A tabela a seguir mostra como os estados de canal são mapeados para o modo de c
 | Estado de canal | Indicadores de interface do usuário do portal | Cobrado? |
 | --- | --- | --- |
 | **Iniciando** |**Iniciando** |Nenhum (estado transitório) |
-| **Executando** |**Pronto** (nenhum programa em execução)<p><p>ou o<p>**Streaming** (há pelo menos um programa em execução) |Sim |
+| **Executando** |**Pronto** (nenhum programa em execução)<p><p>ou<p>**Streaming** (há pelo menos um programa em execução) |Sim |
 | **Parando** |**Parando** |Nenhum (estado transitório) |
 | **Interrompido** |**Interrompido** |Não |
 
@@ -229,9 +229,9 @@ Confira outras considerações relacionadas ao trabalho com canais e componentes
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ## <a name="related-topics"></a>Tópicos relacionados
-[Recomendado em codificadores local](media-services-recommended-encoders.md)
+[Codificadores locais recomendados](media-services-recommended-encoders.md)
 
-[Especificação de ingestão dinâmica de MP4 fragmentado dos Serviços de Mídia do Azure](media-services-fmp4-live-ingest-overview.md)
+[Especificação de ingestão dinâmica de MP4 fragmentado dos Serviços de Mídia do Azure](../media-services-fmp4-live-ingest-overview.md)
 
 [Visão geral e cenários comuns do Serviços de Mídia do Azure](media-services-overview.md)
 

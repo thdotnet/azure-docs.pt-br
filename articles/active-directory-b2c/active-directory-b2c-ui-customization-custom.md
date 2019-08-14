@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 12/18/2018
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 0a051b0e853b60dfc1f5b6c3453d9ed8361f1748
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 0c6186334820d0e419a06b9c60a8279825bf54c2
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67438828"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68927304"
 ---
 # <a name="customize-the-user-interface-of-your-application-using-a-custom-policy-in-azure-active-directory-b2c"></a>Personalizar a interface do usuário do aplicativo usando uma política personalizada no Azure Active Directory B2C
 
@@ -53,6 +53,9 @@ Crie conteúdo em HTML com o nome da marca de seu produto no título.
 
 2. Cole o snippet copiado em um editor de texto e salve o arquivo como *customize-ui.html*.
 
+> [!NOTE]
+> Os elementos de formulário HTML serão removidos devido a restrições de segurança se você usar login.microsoftonline.com. Use b2clogin.com se você quiser usar elementos de formulário HTML em seu conteúdo HTML personalizado. Consulte [usar b2clogin.com](b2clogin.md) para obter outros benefícios.
+
 ## <a name="create-an-azure-blob-storage-account"></a>Criar uma conta de Armazenamento de Blobs do Azure
 
 >[!NOTE]
@@ -79,26 +82,26 @@ Para hospedar esse conteúdo HTML no Armazenamento de Blobs, faça o seguinte:
 
 Para criar um contêiner público no armazenamento de Blobs, faça o seguinte:
 
-1. Sob **serviço Blob** no menu à esquerda, selecione **Blobs**.
+1. Em **serviço blob** no menu à esquerda, selecione BLOBs.
 2. Clique em **+ contêiner**.
-3. Para **nome**, insira *raiz*. Isso pode ser um nome de sua escolha, por exemplo *wingtiptoys*, mas usamos *raiz* neste exemplo, para manter a simplicidade.
-4. Para **nível de acesso público**, selecione **Blob**, em seguida, **Okey**.
+3. Para **nome**, insira *raiz*. Isso pode ser um nome de sua escolha, por exemplo, *wingtiptoys*, mas usamos *root* neste exemplo para simplificar.
+4. Para **nível de acesso público**, selecione **blob**e **OK**.
 5. Clique em **raiz** para abrir o novo contêiner.
 6. Clique em **Carregar**.
 7. Clique no ícone de pasta ao lado de **Selecionar um arquivo**.
-8. Navegue até e selecione **UI personalizar** que você criou anteriormente na seção de personalização da UI Page.
-9. Se você deseja carregar em uma subpasta, expanda **Advanced** e insira um nome de pasta na **carregar pasta**.
+8. Navegue até e selecione **Customize-UI. html** que você criou anteriormente na seção personalização da interface do usuário da página.
+9. Se você quiser carregar para uma subpasta, expanda **avançado** e insira um nome de pasta em **carregar para a pasta**.
 10. Escolha **Carregar**.
-11. Selecione o **UI personalizar** blob carregado.
-12. À direita do **URL** caixa de texto, selecione o **copiar para área de transferência** ícone para copiar a URL para a área de transferência.
-13. No navegador da web, navegue até a URL que você copiou para verificar se o blob carregado é acessível. Se não estiver acessível, por exemplo, se você encontrar um `ResourceNotFound` erro, verifique se o tipo de acesso do contêiner é definido como **blob**.
+11. Selecione o blob **Customize-UI. html** que você carregou.
+12. À direita da caixa de texto **URL** , selecione o ícone **copiar para área de transferência** para copiar a URL para a área de transferência.
+13. No navegador da Web, navegue até a URL que você copiou para verificar se o blob que você carregou está acessível. Se ele estiver inacessível, por exemplo, se você encontrar `ResourceNotFound` um erro, verifique se o tipo de acesso do contêiner está definido como **blob**.
 
 ## <a name="configure-cors"></a>Configurar o CORS
 
 Configure o Armazenamento de nlobs para o Compartilhamento de Recursos entre Origens do Azure fazendo o seguinte:
 
 1. No menu, selecione **CORS**.
-2. Para **origens permitidas**, insira `https://your-tenant-name.b2clogin.com`. Substitua `your-tenant-name` pelo nome de seu locatário do Azure AD B2C. Por exemplo: `https://fabrikam.b2clogin.com`. Você precisa usar todas as letras minúsculas ao digitar o nome do seu locatário.
+2. Para **origens permitidas**, insira `https://your-tenant-name.b2clogin.com`. Substitua `your-tenant-name` pelo nome de seu locatário do Azure AD B2C. Por exemplo, `https://fabrikam.b2clogin.com`. Você precisa usar todas as letras minúsculas ao digitar o nome do seu locatário.
 3. Para **métodos permitidos**, selecione ambos `GET` e `OPTIONS`.
 4. Para **cabeçalhos permitidos**, digite um asterisco (*).
 5. Para **cabeçalhos expostos**, digite um asterisco (*).
@@ -122,7 +125,7 @@ Para configurar a personalização da interface do usuário, você deve copiar o
 3. Abra o arquivo de extensão. Por exemplo, *TrustFrameworkExtensions.xml*. Pesquise o elemento **BuildingBlocks**. Se o elemento não existir, adicione-o.
 4. Cole todo o conteúdo do elemento **ContentDefinitions** que você copiou como filho do elemento **BuildingBlocks**. 
 5. Pesquise o elemento **ContentDefinition** que contém `Id="api.signuporsignin"` no XML copiado.
-6. Altere o valor de **LoadUri** para a URL do arquivo HTML que você carregou no armazenamento. Por exemplo: `https://your-storage-account.blob.core.windows.net/your-container/customize-ui.html`.
+6. Altere o valor de **LoadUri** para a URL do arquivo HTML que você carregou no armazenamento. Por exemplo, `https://your-storage-account.blob.core.windows.net/your-container/customize-ui.html`.
     
     Sua política personalizada deverá ter a seguinte aparência:
 
@@ -169,7 +172,7 @@ git clone https://github.com/azureadquickstarts/b2c-azureblobstorage-client
 
 A pasta sample_templates/wingtip contém os seguintes arquivos HTML:
 
-| Modelo do HTML5 | DESCRIÇÃO |
+| Modelo do HTML5 | Descrição |
 |----------------|-------------|
 | *phonefactor.html* | Use esse arquivo como modelo para uma página de autenticação multifator. |
 | *resetpassword.html* | Use esse arquivo como modelo para uma página de esquecimento de senha. |
@@ -178,18 +181,18 @@ A pasta sample_templates/wingtip contém os seguintes arquivos HTML:
 | *updateprofile.html* | Use esse arquivo como modelo para uma página de atualização de perfil. |
 
 Aqui estão as etapas sobre como usar o exemplo. 
-1. Clone o repositório em seu computador local. Escolha uma pasta de modelo na pasta sample_templates. Você pode usar `wingtip` ou `contoso`.
-2. Carregar todos os arquivos sob o `css`, `fonts`, e `images` pastas no armazenamento de Blob, conforme descrito nas seções anteriores. 
-3. Em seguida, abra cada \*no arquivo. HTML na raiz de um `wingtip` ou `contoso` (o que você escolheu na primeira etapa) e substitua todas as instâncias de "http://localhost" com as URLs dos arquivos css, imagens e as fontes que você carregou na etapa 2.
-4. Salve o \*. HTML, arquivos e carregá-los para o armazenamento de BLOBs.
-5. Agora, modifique o arquivo de extensões como mencionado anteriormente na [modificar o arquivo de extensões](#modify-the-extensions-file).
-6. Se você vir a ausência de fontes, imagens ou css, verifique se suas referências na política de extensões e a \*arquivos. HTML.
+1. Clone o repositório em seu computador local. Escolha uma pasta de modelo em sample_templates. Você pode usar `wingtip` o `contoso`ou o.
+2. Carregue todos os arquivos nas `css`pastas, e `images` no armazenamento de BLOBs, `fonts`conforme descrito nas seções anteriores. 
+3. Em seguida, abra \*cada arquivo. html na raiz de ou `wingtip` `contoso` (o que você selecionou na primeira etapa) e substitua todas as instâncias de http://localhost"" pelas URLs do CSS, imagens e arquivos de fontes que você carregou na etapa 2.
+4. Salve os \*arquivos. html e carregue-os no armazenamento de BLOBs.
+5. Agora, modifique o arquivo de extensões conforme mencionado anteriormente em [Modificar o arquivo de extensões](#modify-the-extensions-file).
+6. Se você vir fontes, imagens ou CSS ausentes, verifique suas referências na política de extensões e nos \*arquivos. html.
 
 ### <a name="content-defintion-ids"></a>IDs de definição de conteúdo
 
 Na seção Modificar sua política personalizada de inscrição ou entrada, você configurou a definição de conteúdo para `api.idpselections`. O conjunto completo de IDs de definição de conteúdo reconhecidas pelo framework de experiência de identidade do Azure AD B2C e suas descrições estão na tabela a seguir:
 
-| ID de definição de conteúdo | DESCRIÇÃO | 
+| ID de definição de conteúdo | Descrição | 
 |-----------------------|-------------|
 | *api.error* | **Página de erro**. Essa página é exibida quando uma exceção ou um erro é encontrado. |
 | *api.idpselections* | **Página de seleção de provedor de identidade**. Esta página contém uma lista de provedores de identidade que o usuário pode escolher durante a inscrição. Essas opções são os provedores de identidade empresarial, provedores de identidade social, como Facebook e Google+, ou contas locais. |

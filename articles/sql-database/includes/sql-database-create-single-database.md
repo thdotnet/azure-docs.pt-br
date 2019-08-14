@@ -5,12 +5,12 @@ ms.subservice: single-database
 ms.topic: include
 ms.date: 06/19/2019
 ms.author: mathoma
-ms.openlocfilehash: dd511375c6b007222185f25610aecbd9931a742b
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: ffa48d55703347883edf96a0a27ee52d19189976
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68640062"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68935026"
 ---
 Nesta etapa, você criará o grupo de recursos e um banco de dados individual do Banco de Dados SQL do Azure.
 
@@ -19,7 +19,7 @@ Nesta etapa, você criará o grupo de recursos e um banco de dados individual do
 >
 > Para obter informações, confira [Criar uma regra de firewall de nível de banco de dados](/sql/relational-databases/system-stored-procedures/sp-set-database-firewall-rule-azure-sql-database) ou, para determinar o endereço IP usado para a regra de firewall de nível de servidor para seu computador, confira [Criar um firewall de nível de servidor](../sql-database-server-level-firewall-rule.md).  
 
-# <a name="azure-portaltabazure-portal"></a>[Portal do Azure](#tab/azure-portal)
+# <a name="portaltabazure-portal"></a>[Portal](#tab/azure-portal)
 
 Crie o grupo de recursos e o banco de dados individual usando o portal do Azure.
 
@@ -75,7 +75,7 @@ Crie o grupo de recursos e o banco de dados individual usando o portal do Azure.
 
 9. No formulário **Banco de Dados SQL**, selecione **Criar** para implantar e provisionar o grupo de recursos, o servidor e o banco de dados.
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -141,7 +141,7 @@ Crie o grupo de recursos e o banco de dados individual usando o PowerShell.
    $database
    ```
 
-# <a name="az-clitabbash"></a>[CLI do Azure](#tab/bash)
+# <a name="azure-clitabazure-cli"></a>[CLI do Azure](#tab/azure-cli)
 
 Crie o grupo de recursos e o banco de dados individual usando a CLI do Azure.
 

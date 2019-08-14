@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: glenga
 ms.custom: 80e4ff38-5174-43
-ms.openlocfilehash: f0f00745f2f7781bda0e636167b1cf1a4045f7cd
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 481e6c5f2271651627577af3d03f9dd4da725146
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68881369"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68949919"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Trabalhar com o Azure Functions Core Tools
 
@@ -93,7 +93,7 @@ As etapas a seguir usam o Homebrew para instalar as ferramentas principais em ma
 
 As etapas a seguir usma [APT](https://wiki.debian.org/Apt) para instalar as ferramentas principais em sua distribuição Ubuntu/Debian Linux. Para outras distribuições do Linux, confira o [arquivo Leiame das ferramentas principais](https://github.com/Azure/azure-functions-core-tools/blob/master/README.md#linux).
 
-1. Registre a chave do produto da Microsoft como confiável:
+1. Instale a chave GPG do repositório de pacotes da Microsoft para validar a integridade do pacote:
 
     ```bash
     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -135,15 +135,19 @@ func init MyFunctionProj
 ```
 
 Quando você fornece um nome de projeto, uma nova pasta com esse nome é criada e inicializada. Caso contrário, a pasta atual é inicializada.  
-Na versão 2.x, quando você executar o comando você deve escolher um tempo de execução para o seu projeto. Se você pretende desenvolver funções do JavaScript, escolha **nó**:
+Na versão 2.x, quando você executar o comando você deve escolher um tempo de execução para o seu projeto. 
 
 ```output
 Select a worker runtime:
 dotnet
 node
+python (preview)
+powershell (preview)
 ```
 
-Use cima/para baixo de teclas de direção para escolher um idioma, em seguida, pressione Enter. A saída se parece com o seguinte exemplo para um projeto JavaScript:
+Use cima/para baixo de teclas de direção para escolher um idioma, em seguida, pressione Enter. Se você planeja desenvolver funções JavaScript ou TypeScript, escolha **nó**e, em seguida, selecione o idioma. O TypeScript tem [alguns requisitos adicionais](functions-reference-node.md#typescript). 
+
+A saída se parece com o seguinte exemplo para um projeto JavaScript:
 
 ```output
 Select a worker runtime: node
@@ -269,15 +273,40 @@ func new --template "Queue Trigger" --name QueueTriggerJS
 
 ## <a name="start"></a>Executar funções localmente
 
-Para executar um projeto de funções, execute o host de funções. O host permite os gatilhos para todas as funções no projeto:
+Para executar um projeto de funções, execute o host de funções. O host habilita gatilhos para todas as funções no projeto. 
 
-```bash
+### <a name="version-2x"></a>Versão 2.x
+
+Na versão 2. x do tempo de execução, o comando Start varia, dependendo da linguagem do seu projeto.
+
+#### <a name="c"></a>C\#
+
+```command
+func start --build
+```
+
+#### <a name="javascript"></a>JavaScript
+
+```command
+func start
+```
+
+#### <a name="typescript"></a>TypeScript
+
+```command
+npm install
+npm start     
+```
+
+### <a name="version-1x"></a>Versão 1.x
+
+A versão 1. x do tempo de execução do `host` Functions requer o comando, como no exemplo a seguir:
+
+```command
 func host start
 ```
 
-O `host` comando apenas é necessário na versão 1. x.
-
-`func host start` dá suporte para as seguintes opções:
+`func start` dá suporte para as seguintes opções:
 
 | Opção     | Descrição                            |
 | ------------ | -------------------------------------- |
@@ -293,8 +322,6 @@ O `host` comando apenas é necessário na versão 1. x.
 | **`--script-root --prefix`** | Usado para especificar o caminho para a raiz do aplicativo de funções que deve ser executado ou implantado. Usado para projetos compilados que geram arquivos de projeto para uma subpasta. Por exemplo, quando você cria um projeto de biblioteca de classes C#, os arquivos host.json, local.settings.json e function.json são gerados em uma subpasta *raiz* com um caminho como `MyProject/bin/Debug/netstandard2.0`. Nesse caso, defina o prefixo como `--script-root MyProject/bin/Debug/netstandard2.0`. Essa é a raiz do aplicativo de funções durante a execução no Azure. |
 | **`--timeout -t`** | O tempo limite para o host de funções ser iniciado, em segundos. Padrão: 20 segundos.|
 | **`--useHttps`** | Associar a `https://localhost:{port}` em vez de `http://localhost:{port}`. Por padrão, essa opção cria um certificado confiável no computador.|
-
-Para um C# projeto biblioteca de classes (. csproj), você deve incluir o `--build` opção para gerar o arquivo. dll de biblioteca.
 
 Quando o host de funções é iniciado, ele gera as funções acionadas por URL de HTTP:
 

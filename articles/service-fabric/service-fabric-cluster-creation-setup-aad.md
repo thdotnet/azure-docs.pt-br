@@ -15,17 +15,17 @@ ms.workload: NA
 ms.date: 6/28/2019
 ms.author: atsenthi
 ms.openlocfilehash: 6c195357c4a037534307571a53589b2ae861d88b
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "67486015"
 ---
 # <a name="set-up-azure-active-directory-for-client-authentication"></a>Configurar o Azure Active Directory para autenticação de cliente
 
 Para clusters em execução no Azure, o Azure AD (Azure Active Directory) é recomendado para proteger o acesso a pontos de extremidade de gerenciamento.  Este artigo descreve como configurar o Azure AD para autenticar clientes para um cluster do Service Fabric, que deve ser feito antes de [criar o cluster](service-fabric-cluster-creation-via-arm.md).  O Azure AD permite que as organizações (conhecidas como locatários) gerenciem o acesso dos usuários aos aplicativos. Os aplicativos são divididos entre os que têm IU de entrada na Web e os que têm experiência de cliente nativa. 
 
-Um cluster do Service Fabric oferece vários pontos de entrada para a funcionalidade de gerenciamento, incluindo baseado na web [Service Fabric Explorer][service-fabric-visualizing-your-cluster] and [Visual Studio][service-fabric-manage-application-in-visual-studio]. Como resultado, você criará dois aplicativos do Azure AD para controlar o acesso ao cluster, um aplicativo Web e um aplicativo nativo.  Depois que os aplicativos forem criados, você atribuirá usuários a funções de administrador e somente leitura.
+Um cluster do Service Fabric oferece vários pontos de entrada para a funcionalidade de gerenciamento, incluindo o [Service Fabric Explorer][service-fabric-visualizing-your-cluster] e o [Visual Studio][service-fabric-manage-application-in-visual-studio] baseados na Web. Como resultado, você criará dois aplicativos do Azure AD para controlar o acesso ao cluster, um aplicativo Web e um aplicativo nativo.  Depois que os aplicativos forem criados, você atribuirá usuários a funções de administrador e somente leitura.
 
 > [!NOTE]
 > Você deve concluir as etapas a seguir para poder criar o cluster. Como os scripts esperam pontos de extremidade e nomes de cluster, os valores devem ser planejados, não os valores que você já tinha criado.
@@ -40,7 +40,7 @@ Para simplificar algumas das etapas envolvidas na configuração do Azure AD com
 
 ## <a name="create-azure-ad-applications-and-assign-users-to-roles"></a>Criar aplicativos do Azure AD e atribuir usuários a funções
 
-Vamos usar os scripts para criar dois aplicativos do Azure AD para controlar o acesso ao cluster: um aplicativo web e um aplicativo nativo. Depois de criar aplicativos para representar seu cluster, você criará os usuários para o [funções com suporte no Service Fabric](service-fabric-cluster-security-roles.md): somente leitura e administrador.
+Usaremos os scripts para criar dois aplicativos do Azure AD para controlar o acesso ao cluster: um aplicativo Web e um aplicativo nativo. Depois de criar aplicativos para representar o cluster, você criará usuários para as [funções com suporte pelo Service Fabric](service-fabric-cluster-security-roles.md): somente leitura e administrador.
 
 Execute `SetupApplications.ps1` e forneça a ID de locatário, o nome do cluster e a URL de resposta do aplicativo Web como parâmetros.  Especifique também nomes de usuário e senhas para os usuários. Por exemplo:
 
@@ -85,7 +85,7 @@ Depois de entrar no Azure AD no Service Fabric Explorer, o navegador retornará 
 
 ![Caixa de diálogo do certificado SFX][sfx-select-certificate-dialog]
 
-#### <a name="reason"></a>Motivo
+#### <a name="reason"></a>Reason
 O usuário não recebeu uma função no aplicativo de cluster do Azure AD. Assim, a autenticação do Azure AD falha no cluster do Service Fabric. O Service Fabric Explorer reverterá para autenticação de certificado.
 
 #### <a name="solution"></a>Solução
@@ -104,7 +104,7 @@ Quando você tenta entrar no Azure AD, no Service Fabric Explorer, a página ret
 
 ![O endereço de resposta SFX não corresponde][sfx-reply-address-not-match]
 
-#### <a name="reason"></a>Motivo
+#### <a name="reason"></a>Reason
 O aplicativo do cluster (Web) que representa o Service Fabric Explorer tenta se autenticar no Azure AD como parte da solicitação que ele fornece à URL de retorno de redirecionamento. Mas a URL não está listada na lista **URL DE RESPOSTA** do aplicativo Azure AD.
 
 #### <a name="solution"></a>Solução
@@ -125,7 +125,7 @@ Para saber mais, consulte o cmdlet [Connect-ServiceFabricCluster](https://docs.m
 Sim. Mas lembre-se de adicionar a URL do Service Fabric Explorer ao aplicativo do cluster (Web). Caso contrário, o Service Fabric Explorer não funcionará.
 
 ### <a name="why-do-i-still-need-a-server-certificate-while-azure-ad-is-enabled"></a>Por que eu ainda preciso de um certificado de servidor quando o Azure AD está habilitado?
-FabricClient e FabricGateway realizam autenticação mútua. Durante a autenticação do Azure AD, a integração dele fornece uma identidade de cliente para o servidor e o certificado do servidor é usado para verificar a identidade do servidor. Para obter mais informações sobre certificados de Service Fabric, consulte [certificados X.509 e Service Fabric][x509-certificates-and-service-fabric].
+FabricClient e FabricGateway realizam autenticação mútua. Durante a autenticação do Azure AD, a integração dele fornece uma identidade de cliente para o servidor e o certificado do servidor é usado para verificar a identidade do servidor. Para obter mais informações sobre certificados Service Fabric, consulte [certificados X. 509 e Service Fabric][x509-certificates-and-service-fabric].
 
 ## <a name="next-steps"></a>Próximas etapas
 Depois de configurar os aplicativos do Azure Active Directory e definir as funções para os usuários, [configure e implante um cluster](service-fabric-cluster-creation-via-arm.md).

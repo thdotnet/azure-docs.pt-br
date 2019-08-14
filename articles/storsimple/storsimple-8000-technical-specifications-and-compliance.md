@@ -14,16 +14,18 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/02/2017
 ms.author: alkohli
-ms.openlocfilehash: 33becd46747f957cce67fb7b2ace170a9aa402ff
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 061194422a8c1bc449dbef0c4f04bb8e1db10dea
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65606927"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68965284"
 ---
 # <a name="technical-specifications-and-compliance-for-the-storsimple-device"></a>Especificações técnicas e conformidade para o dispositivo StorSimple
 
 ## <a name="overview"></a>Visão geral
+
+[!INCLUDE [storsimple-8000-eol-banner](../../includes/storsimple-8000-eol-banner.md)]
 
 Os componentes de hardware do dispositivo Microsoft Azure StorSimple aderem às especificações técnicas e aos padrões regulatórios descritos neste artigo. As especificações técnicas descrevem os PCMs (Módulos de Alimentação e de Refrigeração), as unidades de disco, a capacidade de armazenamento e os compartimentos. As informações de conformidade abrangem itens como padrões internacionais, segurança e emissões e cabeamento.
 
@@ -149,7 +151,7 @@ O dispositivo Microsoft Azure StorSimple está em conformidade com os seguintes 
 
 O dispositivo Microsoft Azure StorSimple atende às seguintes classificações de segurança:
 
-* Aprovação de tipo de produto do sistema: UL, cUL, CE
+* Aprovação do tipo de produto do sistema: UL, cUL, CE
 * Conformidade de segurança: UL 60950, IEC 60950, EN 60950
 
 ## <a name="emc-compliance"></a>Conformidade com EMC
@@ -160,8 +162,8 @@ O dispositivo Microsoft Azure StorSimple atende às classificações EMC a segui
 
 O dispositivo é compatível com EMC em relação aos níveis de emissões conduzidas e irradiadas.
 
-* Níveis de limite de emissões de realizada: CFR 47 Parte 15B classe A EN55022 Classe A CISPR classe A
-* Por radiação níveis de limite de emissões: CFR 47 Parte 15B classe A EN55022 Classe A CISPR classe A
+* Níveis de limite de emissões conduzidos: CFR 47 parte 15B classe A EN55022 classe A CISPR classe a
+* Níveis de limite de emissões radiadas: CFR 47 parte 15B classe A EN55022 classe A CISPR classe a
 
 ### <a name="harmonics-and-flicker"></a>Harmônicas e cintilação
 
@@ -173,7 +175,7 @@ O dispositivo é compatível com EN55024.
 
 ## <a name="ac-power-cord-compliance"></a>Conformidade do cabo de alimentação de CA
 
-O plugue e o assembly de cabo de alimentação devem atender aos padrões apropriados para o país/região em que o dispositivo está sendo usado e eles devem ter aprovações de segurança aceitáveis nesse país/região. As tabelas a seguir listam os padrões para os EUA e a Europa.
+O plug e o conjunto completo do cabo de alimentação devem atender aos padrões apropriados para o país/região em que o dispositivo está sendo usado, e eles devem ter aprovações de segurança aceitáveis nesse país/região. As tabelas a seguir listam os padrões para os EUA e a Europa.
 
 ### <a name="ac-power-cords---usa-must-be-nrtl-listed"></a>Cabos de alimentação de CA - EUA (devem estar listados no NRTL)
 

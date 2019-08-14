@@ -6,12 +6,12 @@ ms.author: jasonh
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 08/01/2019
-ms.openlocfilehash: c91c09da31e4ecf42257b8f9c86f25c6ec39b9df
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 1190a0f34206004b72730a6af85bbe5db7d9961a
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68734637"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976781"
 ---
 # <a name="how-to-connect-to-data-sources"></a>Como se conectar a fontes de dados
 ## <a name="introduction"></a>Introdução
@@ -28,7 +28,7 @@ Quando o modo de exibição de bloco padrão for usado, esse menu estará dispon
 
 Quando o modo de exibição de lista for usado, o menu estará disponível na barra de pesquisa na parte superior da janela do portal.
 
- ![Abrindo um relatório do SQL Server Reporting Services no Gerenciador de Relatórios desde a barra de pesquisa](./media/data-catalog-how-to-connect/data-catalog-how-to-connect2.png)
+ ![Abrir um relatório de SQL Server Reporting Services no Report Manager](./media/data-catalog-how-to-connect/data-catalog-how-to-connect2.png)
 
 ## <a name="supported-client-applications"></a>Aplicativos do Cliente com Suporte
 Ao usar o menu "Abrir em..." para as fontes de dados no portal do Catálogo de Dados do Azure, o aplicativo cliente correto deve ser instalado no computador do cliente.

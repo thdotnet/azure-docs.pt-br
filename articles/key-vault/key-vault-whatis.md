@@ -1,6 +1,6 @@
 ---
 title: O que é o Cofre da Chave do Azure? | Microsoft Docs
-description: Saiba como o Azure Key Vault protege chaves criptográficas e segredos que aplicativos e serviços de nuvem usam.
+description: Saiba como o Azure Key Vault protege chaves criptográficas e segredos usados por aplicativos e serviços de nuvem.
 services: key-vault
 author: barclayn
 manager: barbkess
@@ -9,23 +9,23 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 01/18/2019
 ms.author: barclayn
-ms.openlocfilehash: 43794b8ef4e0272362c7695eda75f5af36a77d1e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2786ec387d528e1593e2687d906060f8a2673a8c
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64683469"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934468"
 ---
 # <a name="what-is-azure-key-vault"></a>O que é o Cofre da Chave do Azure?
 
-Serviços e aplicativos de nuvem usam chaves de criptografia e seguro de segredos para ajudar a manter as informações. Azure Key Vault protege essas chaves e segredos. Quando você usa o Cofre de chaves, você pode criptografar chaves de autenticação, chaves de conta de armazenamento, chaves de criptografia de dados, arquivos. pfx e senhas usando chaves que são protegidas por módulos de segurança de hardware (HSMs).
+Os aplicativos e serviços de nuvem usam chaves criptográficas e segredos para ajudar a manter as informações seguras. Azure Key Vault protege essas chaves e segredos. Ao usar Key Vault, você pode criptografar chaves de autenticação, chaves de conta de armazenamento, chaves de criptografia de dados, arquivos. pfx e senhas usando chaves que são protegidas por HSMs (módulos de segurança de hardware).
 
-Key Vault ajuda a resolver os problemas a seguir:
+Key Vault ajuda a resolver os seguintes problemas:
 
-- **Gerenciamento de segredos**: Armazene com segurança e controlar o acesso à tokens, senhas, certificados, chaves de API e outros segredos.
-- **Gerenciamento de chaves**: Criar e controlar as chaves de criptografia para criptografam seus dados. 
-- **Gerenciamento de certificado**: Provisionar, gerenciar e implantar certificados de Secure Sockets Layer/Transport Layer Security (SSL/TLS) públicos e privados para uso com o Azure e seus recursos internos de conectada. 
-- **Store segredos apoiados por HSMs**: Use o software ou certificação FIPS 140-2 nível 2 HSMs para ajudar a proteger segredos e chaves.
+- **Gerenciamento de segredos**: Armazene com segurança e controle rigidamente o acesso a tokens, senhas, certificados, chaves de API e outros segredos.
+- **Gerenciamento de chaves**: Crie e controle as chaves de criptografia que criptografam seus dados. 
+- **Gerenciamento de certificados**: Provisione, gerencie e implante certificados de SSL/TLS (segurança de camada de transporte) e de protocolo SSL pública e privada para uso com o Azure e seus recursos internos conectados. 
+- **Armazene os segredos apoiados por HSMs**: Use os HSMs validados por software ou FIPS 140-2 nível 2 para ajudar a proteger segredos e chaves.
 
 ## <a name="basic-concepts"></a>Conceitos básicos
 
@@ -33,45 +33,45 @@ O Azure Key Vault é uma ferramenta para armazenar e acessar segredos de forma s
 
 Aqui estão outros termos importantes:
 
-- **Tenant**: um locatário é a organização que possui e gerencia uma instância específica de serviços em nuvem da Microsoft. Ele geralmente é usado para referir-se ao conjunto de serviços do Azure e do Office 365 para uma organização.
+- **Tenant**: um locatário é a organização que possui e gerencia uma instância específica de serviços em nuvem da Microsoft. Geralmente, é usado para se referir ao conjunto de serviços do Azure e do Office 365 para uma organização.
 
 - **Proprietário do cofre**: pode criar um cofre de chaves e obter acesso e controle totais sobre ele. O proprietário do cofre também pode configurar a auditoria para registrar quem acessa os segredos e as chaves. Os administradores podem controlar o ciclo de vida da chave. Eles podem reverter para uma nova versão da chave, fazer o backup e tarefas relacionadas.
 
 - **Consumidor do cofre**: pode executar ações nos ativos dentro do cofre de chaves quando seu proprietário concede acesso ao cliente. As ações disponíveis dependem das permissões concedidas.
 
-- **Recurso**: Trata-se de um item gerenciável que está disponível por meio do Azure. Exemplos comuns são a máquina virtual, conta de armazenamento, aplicativo web, banco de dados e rede virtual. Há muito mais.
+- **Recurso**: Trata-se de um item gerenciável que está disponível por meio do Azure. Exemplos comuns são máquina virtual, conta de armazenamento, aplicativo Web, banco de dados e rede virtual. Há muito mais.
 
-- **Grupo de recursos**: Um grupo de recursos é um contêiner que mantém os recursos relacionados a uma solução do Azure. O grupo de recursos pode incluir todos os recursos para a solução ou apenas os recursos que você deseja gerenciar como um grupo. Você decide como deseja alocar recursos para grupos de recursos com base no que faz mais sentido para sua organização.
+- **Grupo de recursos**: Um grupo de recursos é um contêiner que armazena recursos relacionados para uma solução do Azure. O grupo de recursos pode incluir todos os recursos para a solução ou apenas os recursos que você deseja gerenciar como um grupo. Você decide como deseja alocar recursos para grupos de recursos com base no que faz mais sentido para sua organização.
 
-- **Entidade de serviço**: Uma entidade de serviço do Azure é uma identidade de segurança criados pelo usuário de aplicativos, serviços e ferramentas de automação usam para acessar recursos específicos do Azure. Pense nela como uma "identidade de usuário" (nome de usuário e senha ou certificado) com uma função específica e permissões rigidamente controladas. Uma entidade de serviço só precisa fazer coisas específicas, ao contrário de uma identidade de usuário geral. Ele melhora a segurança se você conceder apenas o nível mínimo de permissão que ele precisa para realizar suas tarefas de gerenciamento.
+- **Entidade de serviço**: Uma entidade de serviço do Azure é uma identidade de segurança que os aplicativos, serviços e ferramentas de automação criados pelo usuário usam para acessar recursos específicos do Azure. Imagine-o como uma "identidade do usuário" (nome de usuários e senha ou certificado) com uma função específica e permissões rigidamente controladas. Uma entidade de serviço só precisa fazer coisas específicas, ao contrário de uma identidade de usuário geral. Ele melhora a segurança se você conceder apenas o nível mínimo de permissão necessário para executar suas tarefas de gerenciamento.
 
 - [Azure AD (Azure Active Directory)](../active-directory/active-directory-whatis.md): o Azure AD é o serviço do Active Directory de um locatário. Cada diretório tem um ou mais domínios. Um diretório pode ter várias assinaturas associadas a ele, mas apenas um locatário.
 
 - **ID de Locatário do Azure**: uma ID de locatário é uma maneira exclusiva para identificar uma instância do Azure AD dentro de uma assinatura do Azure.
 
-- **Identidades gerenciadas**: O Azure Key Vault fornece uma maneira de armazenar com segurança as credenciais e outras chaves e segredos, mas seu código precisa autenticar para o Key Vault para recuperá-los. Usar a identidade gerenciada torna a solução desse problema mais simples, fornecendo aos serviços do Azure uma identidade gerenciada automaticamente no Microsoft Azure Active Directory. Você pode usar essa identidade para autenticar o Key Vault ou qualquer serviço que dê suporte à autenticação do Azure AD sem ter as credenciais no código. Para obter mais informações, consulte a imagem a seguir e o [visão geral das identidades gerenciadas para recursos do Azure](../active-directory/managed-identities-azure-resources/overview.md).
+- **Identidades gerenciadas**: O Azure Key Vault fornece uma maneira de armazenar com segurança as credenciais e outras chaves e segredos, mas seu código precisa autenticar para o Key Vault para recuperá-los. Usar a identidade gerenciada torna a solução desse problema mais simples, fornecendo aos serviços do Azure uma identidade gerenciada automaticamente no Microsoft Azure Active Directory. Você pode usar essa identidade para autenticar o Key Vault ou qualquer serviço que dê suporte à autenticação do Azure AD sem ter as credenciais no código. Para obter mais informações, consulte a imagem a seguir e a [visão geral de identidades gerenciadas para recursos do Azure](../active-directory/managed-identities-azure-resources/overview.md).
 
-    ![Diagrama de identidades como gerenciados para o trabalho de recursos do Azure](./media/key-vault-whatis/msi.png)
+    ![Diagrama de como as identidades gerenciadas dos recursos do Azure funcionam](./media/key-vault-whatis/msi.png)
 
-## <a name="authentication"></a>Authentication
-Para fazer todas as operações com o Key Vault, você primeiro precisará autenticar-se a ele. Há três maneiras de se autenticar no Key Vault:
+## <a name="authentication"></a>Autenticação
+Para realizar operações com Key Vault, primeiro você precisa se autenticar nele. Há três maneiras de se autenticar no Key Vault:
 
-- [Identidades gerenciadas para recursos do Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview): Quando você implanta um aplicativo em uma máquina virtual no Azure, você pode atribuir uma identidade para sua máquina virtual que tem acesso ao Cofre de chaves. Você também pode atribuir identidades [outros recursos do Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview). O benefício dessa abordagem é que o aplicativo ou serviço não estiver gerenciando a rotação do segredo primeiro. Azure gira automaticamente a identidade. Recomendamos essa abordagem como uma prática recomendada. 
-- **Entidade de segurança e certificado de serviço**: Você pode usar uma entidade de serviço e um certificado associado que tem acesso ao Cofre de chaves. Não recomendamos essa abordagem porque o proprietário do aplicativo ou o desenvolvedor deve girar o certificado.
-- **Entidade de serviço e o segredo**: Embora você possa usar uma entidade de serviço e um segredo para autenticar para o Key Vault, não é recomendável. É difícil Girar automaticamente o bootstrap segredo que é usado para autenticar para o Cofre de chaves.
+- [Identidades gerenciadas para recursos do Azure](../active-directory/managed-identities-azure-resources/overview.md): Ao implantar um aplicativo em uma máquina virtual no Azure, você pode atribuir uma identidade à sua máquina virtual que tem acesso ao Key Vault. Você também pode atribuir identidades a [outros recursos do Azure](../active-directory/managed-identities-azure-resources/overview.md). O benefício dessa abordagem é que o aplicativo ou serviço não está gerenciando a rotação do primeiro segredo. Azure gira automaticamente a identidade. Recomendamos essa abordagem como uma prática recomendada. 
+- **Entidade de serviço e certificado**: Você pode usar uma entidade de serviço e um certificado associado que tenha acesso ao Key Vault. Não recomendamos essa abordagem porque o proprietário do aplicativo ou o desenvolvedor deve girar o certificado.
+- **Entidade de serviço e segredo**: Embora você possa usar uma entidade de serviço e um segredo para autenticar para Key Vault, não é recomendável. É difícil girar automaticamente o segredo de inicialização que é usado para autenticar para Key Vault.
 
 
 ## <a name="key-vault-roles"></a>Funções do Key Vault
 
 Use a tabela a seguir para entender melhor como o Cofre da Chave pode ajudar a atender às necessidades de desenvolvedores e administradores de segurança.
 
-| Função | Problema declarado | Solucionado pelo Cofre da Chave do Azure |
+| Role | Problema declarado | Solucionado pelo Cofre da Chave do Azure |
 | --- | --- | --- |
-| Desenvolvedor de um aplicativo do Azure |"Eu quero escrever um aplicativo do Azure que usa chaves de assinatura e criptografia. Mas quero que as chaves sejam externas ao aplicativo para que a solução seja adequada para um aplicativo distribuído geograficamente. <br/><br/>Quero que essas chaves e segredos sejam protegidos, sem precisar escrever o código sozinho. E também que essas chaves e segredos sejam fáceis de usar em meu aplicativo, com desempenho ideal.” |√ As chaves são armazenadas em um cofre e invocadas pelo URI quando necessário.<br/><br/> √ As chaves são protegidas pelo Azure, usando módulos de segurança de hardware, comprimentos da chave e algoritmos padrão da indústria.<br/><br/> √ As chaves são processadas em HSMs que residem nos mesmos datacenters do Azure que os aplicativos. Esse método permite uma maior confiabilidade e uma latência reduzida em comparação às chaves que residem em um local separado, como no local. |
-| Desenvolvedor de SaaS (software como serviço) |"Eu não quero a responsabilidade ou ser o possível culpado por problemas com as chaves e segredos de locatário dos meus clientes. <br/><br/>Quero que os clientes tenham e gerenciem suas chaves para que eu possa me concentrar em fazer o que faço melhor, que é fornecer os recursos centrais do software." |√ Os clientes podem importar suas próprias chaves para o Azure e gerenciá-las. Quando um aplicativo de SaaS precisa executar operações criptográficas usando as chaves dos clientes, o Cofre de chaves faz essas operações em nome do aplicativo. O aplicativo não vê as chaves dos clientes. |
+| Desenvolvedor de um aplicativo do Azure |"Desejo escrever um aplicativo para o Azure que usa chaves para assinatura e criptografia. Mas quero que essas chaves sejam externas do meu aplicativo para que a solução seja adequada para um aplicativo distribuído geograficamente. <br/><br/>Quero que essas chaves e segredos sejam protegidos, sem precisar escrever o código sozinho. E também que essas chaves e segredos sejam fáceis de usar em meu aplicativo, com desempenho ideal.” |√ As chaves são armazenadas em um cofre e invocadas pelo URI quando necessário.<br/><br/> √ As chaves são protegidas pelo Azure, usando módulos de segurança de hardware, comprimentos da chave e algoritmos padrão da indústria.<br/><br/> √ As chaves são processadas em HSMs que residem nos mesmos datacenters do Azure que os aplicativos. Esse método permite uma maior confiabilidade e uma latência reduzida em comparação às chaves que residem em um local separado, como no local. |
+| Desenvolvedor de SaaS (software como serviço) |"Eu não quero a responsabilidade ou ser o possível culpado por problemas com as chaves e segredos de locatário dos meus clientes. <br/><br/>Quero que os clientes tenham e gerenciem suas chaves para que eu possa me concentrar em fazer o que faço melhor, que é fornecer os recursos centrais do software." |√ Os clientes podem importar suas próprias chaves para o Azure e gerenciá-las. Quando um aplicativo SaaS precisa executar operações criptográficas usando as chaves dos clientes, Key Vault realiza essas operações em nome do aplicativo. O aplicativo não vê as chaves dos clientes. |
 | Diretor-chefe de segurança (CSO) |"Quero saber que nossos aplicativos estão em conformidade com HSMs FIPS 140-2 Nível 2, para um gerenciamento de chaves seguro. <br/><br/>Quero garantir que minha organização controle o ciclo de vida da chave e possa monitorar seu uso. <br/><br/>E embora usemos vários recursos e serviços do Azure, quero gerenciar as chaves de um único local no Azure. |√ Os HSMs têm certificação FIPS 140-2 Nível 2.<br/><br/>√ O Cofre de Chaves foi projetado para que a Microsoft não veja nem extraia suas chaves.<br/><br/>√ Uso de chave é registrado praticamente em tempo real.<br/><br/>√ O cofre fornece uma única interface, independentemente de quantos cofres você tenha no Azure, quais sejam as regiões com suporte e quais aplicativos as usem. |
 
-Qualquer pessoa com uma assinatura do Azure pode criar e usar cofres de chaves. Embora o Cofre de chaves beneficie os desenvolvedores e administradores de segurança, pode ser implementado e gerenciado pelo administrador de uma organização que gerencia outros serviços do Azure. Por exemplo, esse administrador poderá entrar com uma assinatura do Azure, crie um cofre para a organização na qual armazenar as chaves e, em seguida, ser responsável por tarefas operacionais como estes:
+Qualquer pessoa com uma assinatura do Azure pode criar e usar cofres de chaves. Embora Key Vault beneficia os desenvolvedores e administradores de segurança, eles podem ser implementados e gerenciados pelo administrador de uma organização que gerencia outros serviços do Azure. Por exemplo, esse administrador pode entrar com uma assinatura do Azure, criar um cofre para a organização na qual armazenar chaves e, em seguida, ser responsável por tarefas operacionais como estas:
 
 - Criar ou importar uma chave ou segredo
 - Revogar ou excluir uma chave ou segredo
@@ -79,7 +79,7 @@ Qualquer pessoa com uma assinatura do Azure pode criar e usar cofres de chaves. 
 - Configurar o uso de chaves (por exemplo, assinar ou criptografar)
 - Monitorar o uso de chaves
 
-Esse administrador, em seguida, fornece aos desenvolvedores URIs a serem chamados de seus aplicativos. Esse administrador também fornece informações de log de uso de chave para o administrador de segurança. 
+Esse administrador então fornece aos desenvolvedores os URIs para chamar de seus aplicativos. Esse administrador também fornece informações de log de uso de chave para o administrador de segurança. 
 
 ![Visão geral do funcionamento do Azure Key Vault][1]
 
