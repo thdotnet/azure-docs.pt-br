@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 07/09/2019
 ms.author: gregman
-ms.openlocfilehash: 8275bceca1a18f49eb7eeece66a3866d77c47635
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: f4bab6ab837b746c6a569cc6de95a95023bf83f4
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67796168"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68987001"
 ---
 # <a name="run-azure-iot-edge-on-ubuntu-virtual-machines"></a>Executar Azure IoT Edge em Máquinas Virtuais do Ubuntu
 
@@ -59,9 +59,9 @@ No portal do Azure, pesquise "Azure IoT Edge" e selecione **Ubuntu Server 16.04 
       az account list --output table
       ```
     
-   1. Copie o campo SubscriptionID para a assinatura que você deseja usar.
+   1. Copie o campo SubscriptionId da assinatura que você deseja usar.
 
-   1. Defina sua assinatura do trabalho com a ID que você acabou de copiar:
+   1. Defina sua assinatura de trabalho com a ID que você acabou de copiar:
     
       ```azurecli-interactive 
       az account set -s {SubscriptionId}
@@ -73,7 +73,7 @@ No portal do Azure, pesquise "Azure IoT Edge" e selecione **Ubuntu Server 16.04 
    az group create --name IoTEdgeResources --location westus2
    ```
 
-1. Aceite os termos de uso para a máquina virtual. Se você quiser revisar os termos primeiro, siga as etapas em [implantar no Azure Marketplace](#deploy-from-the-azure-marketplace).
+1. Aceite os termos de uso da máquina virtual. Se você quiser revisar os termos primeiro, siga as etapas em [implantar do Azure Marketplace](#deploy-from-the-azure-marketplace).
 
    ```azurecli-interactive
    az vm image accept-terms --urn microsoft_iot_edge:iot_edge_vm_ubuntu:ubuntu_1604_edgeruntimeonly:latest
@@ -98,6 +98,8 @@ Se você quiser SSH nessa VM após a instalação, use o publicIpAddress com o c
 
 Agora que você tem um dispositivo IoT Edge provisionado com o tempo de execução instalado, é possível [implantar os módulos do IoT Edge](how-to-deploy-modules-portal.md).
 
-Se você estiver tendo problemas com o tempo de execução do IoT Edge instalado corretamente, confira a [solução de problemas](troubleshoot.md) página.
+Se você estiver tendo problemas com o tempo de execução do IoT Edge sendo instalado corretamente, confira a página de [solução de problemas](troubleshoot.md) .
 
 Para atualizar uma instalação existente para a versão mais recente do IoT Edge, consulte [Atualizar o IoT Edge de segurança e o tempo de execução do IoT Edge](how-to-update-iot-edge.md).
+
+Se você quiser abrir portas para acessar a VM por meio de SSH ou de outras conexões de entrada, consulte a documentação da máquina virtual do Azure [para abrir portas e pontos de extremidade em uma VM do Linux](../virtual-machines/linux/nsg-quickstart.md)

@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/21/2017
 ms.author: cshoe
-ms.openlocfilehash: 53626c1d8fe0b9301883280a9f0925eb38ad1d99
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 4aadac343e023e68432741c1f1231bc0ec9fe0ea
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480445"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68990195"
 ---
 # <a name="azure-functions-http-triggers-and-bindings"></a>Gatilhos e associações HTTP do Azure Functions
 
@@ -42,7 +42,7 @@ As associações de HTTP são fornecidas no pacote NuGet, versão 3.x. [Microsof
 
 [!INCLUDE [functions-package](../../includes/functions-package-auto.md)]
 
-## <a name="trigger"></a>Gatilho
+## <a name="trigger"></a>Disparador
 
 Um gatilho de HTTP permite invocar uma função com uma solicitação HTTP. Você pode usar um gatilho de HTTP para criar APIs sem servidor e responder a webhooks.
 
@@ -159,7 +159,7 @@ public class Person {
 }
 ```
 
-### <a name="trigger---f-example"></a>Gatilho - exemplo F#
+### <a name="trigger---f-example"></a>Gatilho - Exemplo F#
 
 O exemplo a seguir mostra uma associação de gatilho em um arquivo *function.json* e uma [função F#](functions-reference-fsharp.md) que usa a associação. A função procura um parâmetro `name` na cadeia de consulta ou no corpo da solicitação HTTP.
 
@@ -561,8 +561,8 @@ A tabela a seguir explica as propriedades de configuração de associação que 
 |Propriedade function.json | Propriedade de atributo |DESCRIÇÃO|
 |---------|---------|----------------------|
 | **type** | n/d| Obrigatório – deve ser definido como `httpTrigger`. |
-| **direction** | n/d| Obrigatório – deve ser definido como `in`. |
-| **name** | n/d| Obrigatório – o nome da variável usado no código da função da solicitação ou do corpo da solicitação. |
+| **direction** | N/D| Obrigatório – deve ser definido como `in`. |
+| **name** | N/D| Obrigatório – o nome da variável usado no código da função da solicitação ou do corpo da solicitação. |
 | <a name="http-auth"></a>**authLevel** |  **AuthLevel** |Determina quais chaves, se houver, precisam estar presentes na solicitação para invocar a função. O nível de autorização pode ser um dos seguintes valores: <ul><li><code>anonymous</code>&mdash;Nenhuma chave API é obrigatória.</li><li><code>function</code>&mdash;Uma chave de API específica de função é obrigatória. Esse será o valor padrão se nenhum for fornecido.</li><li><code>admin</code>&mdash;A chave mestra é obrigatória.</li></ul> Para saber mais informações, veja a seção sobre [chaves de autorização](#authorization-keys). |
 | **methods** |**Métodos** | Uma matriz dos métodos HTTP para a qual a função responde. Se não for especificada, a função responderá a todos os métodos HTTP. Consulte [personalização do ponto de extremidade http](#customize-the-http-endpoint). |
 | **route** | **Route** | Define o modelo da rota, controlando para quais URLs de solicitação sua função responde. O valor padrão se nenhum for fornecido será `<functionname>`. Para saber mais informações, consulte [personalização do ponto de extremidade http](#customize-the-http-endpoint). |
@@ -785,7 +785,7 @@ A autorização de webhook é tratada pelo componente receptor do webhook, parte
 
 O tamanho da solicitação HTTP é limitado a 100 MB (104.857.600 bytes) e o tamanho da URL é limitado a 4 KB (4.096 bytes). Esses limites são especificados pelo `httpRuntime` elemento do [arquivo Web.config](https://github.com/Azure/azure-webjobs-sdk-script/blob/v1.x/src/WebJobs.Script.WebHost/Web.config) do tempo de execução.
 
-Se uma função que usa o gatilho HTTP não for concluída em aproximadamente 2,5 minutos, o gateway atingirá o tempo limite e retornará o erro de HTTP 502. A função continuará em execução, mas não poderá retornar uma resposta HTTP. Para funções de longa execução, é recomendável que você siga os padrões async e retorna um local onde você pode executar ping do status da solicitação. Para obter informações sobre o tempo que uma função pode executar, consulte [Dimensionamento e hospedagem - planejar o consumo](functions-scale.md#consumption-plan).
+Se uma função que usa o gatilho HTTP não for concluída em aproximadamente 2,5 minutos, o gateway atingirá o tempo limite e retornará o erro de HTTP 502. A função continuará em execução, mas não poderá retornar uma resposta HTTP. Para funções de longa execução, é recomendável que você siga os padrões async e retorna um local onde você pode executar ping do status da solicitação. Para obter informações sobre o tempo que uma função pode executar, consulte [Dimensionamento e hospedagem - planejar o consumo](functions-scale.md#timeout).
 
 ## <a name="trigger---hostjson-properties"></a>Gatilho - propriedades de host.json
 
@@ -793,7 +793,7 @@ O arquivo [host.json](functions-host-json.md) contém configurações que contro
 
 [!INCLUDE [functions-host-json-http](../../includes/functions-host-json-http.md)]
 
-## <a name="output"></a>Output
+## <a name="output"></a>Saída
 
 Use a associação de saída HTTP para responder ao remetente da solicitação HTTP. Essa associação requer um gatilho HTTP e permite que você personalize a resposta associada à solicitação do gatilho. Se uma saída HTTP vinculada não é fornecida, um gatilho HTTP retorna HTTP 200 OK com um corpo vazio em funções de 1. x ou HTTP 204 sem conteúdo com um corpo vazio em funções 2. x.
 

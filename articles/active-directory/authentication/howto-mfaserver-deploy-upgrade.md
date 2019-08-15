@@ -1,5 +1,5 @@
 ---
-title: Atualizando o servidor MFA do Azure - Active Directory do Azure
+title: Atualizando o servidor MFA do Azure-Azure Active Directory
 description: Etapas e diretrizes para atualizar o Servidor de Autenticação Multifator do Azure para uma versão mais nova.
 services: multi-factor-authentication
 ms.service: active-directory
@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dcafa3e2f2665e84856b80cc0911d2e83df1aa65
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 19ca6d82b80a9ed77a842b638ff8e9ff346342e8
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67057344"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68988551"
 ---
 # <a name="upgrade-to-the-latest-azure-multi-factor-authentication-server"></a>Atualizar para o último Servidor de Autenticação Multifator do Azure
 
@@ -25,7 +25,7 @@ Este artigo descreve o processo de atualização do Servidor do Azure MFA (Auten
 Se estiver atualizando da v6.x ou anterior para a v7.x ou mais nova, todos os componentes serão alterados do .NET 2.0 para o .NET 4.5. Todos os componentes também exigem os Pacotes Redistribuíveis do Microsoft Visual C++ 2015 Atualização 1 ou posterior. O instalador do Servidor MFA instala as versões x86 e x64 desses componentes, caso ainda não estejam instalados. Se o Portal do Usuário e o Serviço Web do Aplicativo Móvel forem executados em servidores separados, você precisará instalar esses pacotes antes de atualizar esses componentes. É possível pesquisar a última atualização dos Pacotes Redistribuíveis do Microsoft Visual C++ 2015 no [Centro de Download da Microsoft](https://www.microsoft.com/download/). 
 
 > [!IMPORTANT]
-> A partir de 1 de julho de 2019, Microsoft não oferecerá o servidor MFA para novas implantações. Novos clientes que gostariam de exigir a autenticação multifator de seus usuários devem usar a autenticação de multifator do Azure baseado em nuvem. Os clientes existentes que ativaram o servidor de MFA antes de 1 de julho será capazes de baixar a versão mais recente, as atualizações futuras e gerar credenciais de ativação como de costume.
+> A partir de 1º de julho de 2019, a Microsoft não oferecerá mais o servidor MFA para novas implantações. Novos clientes que queiram exigir a autenticação multifator de seus usuários devem usar a autenticação multifator do Azure baseada em nuvem. Os clientes existentes que ativaram o servidor MFA antes de 1º de julho poderão baixar a versão mais recente, futuras atualizações e gerar credenciais de ativação como de costume.
 
 Etapas rápidas de atualização:
 
@@ -66,7 +66,7 @@ Se você tiver o Portal do Usuário em vários servidores, repita a instalação
 ## <a name="upgrade-the-mobile-app-web-service"></a>Atualizar o Serviço Web do Aplicativo Móvel
 
 > [!NOTE]
-> Ao fazer upgrade de uma versão do Azure MFA Server mais antiga do que 8.0 a 8.0+ que o serviço Web de aplicativos móveis pode ser desinstalado após o upgrade
+> Ao atualizar de uma versão do servidor MFA do Azure com mais de 8,0 para 8.0 +, o serviço Web de aplicativos móveis pode ser desinstalado após a atualização
 
 ## <a name="upgrade-the-ad-fs-adapters"></a>Atualizar os adaptadores do AD FS
 

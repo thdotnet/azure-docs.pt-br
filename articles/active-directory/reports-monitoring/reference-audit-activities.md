@@ -3,7 +3,7 @@ title: Referência de atividades de auditoria do Azure AD (Azure AD) | Microsoft
 description: Obtenha uma visão geral das atividades de auditoria que podem ser registradas em log nos seus logs de auditoria do Azure AD (Azure Active Directory).
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: a1f93126-77d1-4345-ab7d-561066041161
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 01/24/2019
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66dd017e8f78f1e93c96262b42dc084c165cdef7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a687823d1344ca11864523cb9187f48d7373fd41
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60285481"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989631"
 ---
 # <a name="azure-ad-audit-activity-reference"></a>Referência das atividades de auditoria do Azure AD
 
@@ -40,40 +40,40 @@ A arquitetura de relatório no Azure AD consiste nos seguintes componentes:
 
 Este artigo lista as atividades de auditoria que podem ser registradas nos logs de auditoria.
 
-## <a name="access-reviews"></a>Análises de acesso
+## <a name="access-reviews"></a>Revisões de acesso
 
 |Auditar categoria|Atividade|
 |---|---|
-|Revisões de acesso|Revisão de acesso encerrada|
-|Revisões de acesso|Adicionar aprovador para a aprovação de solicitação|
-|Revisões de acesso|Adicionar revisor para a revisão de acesso|
-|Revisões de acesso|Aplicar revisão de acesso|
-|Revisões de acesso|Criar a revisão de acesso|
-|Revisões de acesso|Criar programa|
-|Revisões de acesso|Criar solicitação de aprovação|
-|Revisões de acesso|Excluir revisão de acesso|
-|Revisões de acesso|Excluir programa|
-|Revisões de acesso|Vincular controle do programa|
-|Revisões de acesso|Integrar com as Revisões de Acesso do Azure AD|
-|Revisões de acesso|Remover revisor da revisão de acesso|
-|Revisões de acesso|Solicitar interrupção da análise|
-|Revisões de acesso|Solicitar aplicação dos resultados da análise|
-|Revisões de acesso|Examinar associação de função RBAC|
-|Revisões de acesso|Revisar atribuição do aplicativo|
-|Revisões de acesso|Revisar associação ao grupo|
-|Revisões de acesso|Revisar solicitação de aprovação de solicitação|
-|Revisões de acesso|Desvincular controle do programa|
-|Revisões de acesso|Atualizar revisão de acesso|
-|Revisões de acesso|Atualizar o status de Integração das Revisões de Acesso do Azure AD|
-|Revisões de acesso|Atualizar configurações de notificação de email da revisão de acesso|
-|Revisões de acesso|Atualizar a configuração de contagem de recorrências da revisão de acesso|
-|Revisões de acesso|Atualizar a duração de recorrência da revisão de acesso na configuração de dias|
-|Revisões de acesso|Atualizar a configuração do tipo final de recorrência da revisão de acesso|
-|Revisões de acesso|Atualizar a configuração do tipo de recorrência da revisão de acesso|
-|Revisões de acesso|Atualizar configurações de lembrete de revisão de acesso|
-|Revisões de acesso|Atualizar programa|
-|Revisões de acesso|Atualizar aprovação de solicitação|
-|Revisões de acesso|Usuário desabilitado|
+|Revisões de Acesso|Revisão de acesso encerrada|
+|Revisões de Acesso|Adicionar aprovador para a aprovação de solicitação|
+|Revisões de Acesso|Adicionar revisor para a revisão de acesso|
+|Revisões de Acesso|Aplicar revisão do acesso|
+|Revisões de Acesso|Criar revisão do acesso|
+|Revisões de Acesso|Criar programa|
+|Revisões de Acesso|Criar solicitação de aprovação|
+|Revisões de Acesso|Excluir a revisão de acesso|
+|Revisões de Acesso|Excluir programa|
+|Revisões de Acesso|Vincular controle do programa|
+|Revisões de Acesso|Integrar com as Revisões de Acesso do Azure AD|
+|Revisões de Acesso|Remover revisor da revisão de acesso|
+|Revisões de Acesso|Solicitar interrupção da análise|
+|Revisões de Acesso|Solicitação de aplicação do resultado da revisão|
+|Revisões de Acesso|Examinar associação de função RBAC|
+|Revisões de Acesso|Revisar atribuição do aplicativo|
+|Revisões de Acesso|Revisar associação ao grupo|
+|Revisões de Acesso|Revisar solicitação de aprovação de solicitação|
+|Revisões de Acesso|Desvincular controle do programa|
+|Revisões de Acesso|Atualizar revisão de acesso|
+|Revisões de Acesso|Atualizar o status de Integração das Revisões de Acesso do Azure AD|
+|Revisões de Acesso|Atualizar configurações de notificação de email de análise de acesso|
+|Revisões de Acesso|Atualizar a configuração de contagem de recorrências da revisão de acesso|
+|Revisões de Acesso|Atualizar a duração de recorrência da revisão de acesso na configuração de dias|
+|Revisões de Acesso|Atualizar a configuração do tipo final de recorrência da revisão de acesso|
+|Revisões de Acesso|Atualizar a configuração do tipo de recorrência da revisão de acesso|
+|Revisões de Acesso|Atualizar configurações de lembrete de análise de acesso|
+|Revisões de Acesso|Atualizar programa|
+|Revisões de Acesso|Atualizar aprovação de solicitação|
+|Revisões de Acesso|Usuário desabilitado|
 
 ## <a name="account-provisioning"></a>Provisionamento de conta
 
@@ -87,7 +87,7 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |Gerenciamento de Aplicativos|Adicionar Oauth2Permissiongrant|
 |Gerenciamento de Aplicativos|Adicionar atribuição de função de aplicativo à entidade de serviço|
 
-## <a name="application-proxy"></a>Proxy de aplicativo
+## <a name="application-proxy"></a>Proxy do aplicativo
 
 |Auditar categoria|Atividade|
 |---|---|
@@ -95,17 +95,17 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |Gerenciamento de Aplicativos|Adicionar proprietário ao aplicativo|
 |Gerenciamento de Aplicativos|Adicionar proprietário à entidade de serviço|
 |Gerenciamento de Aplicativos|Adicionar política à entidade de serviço|
-|Gerenciamento de diretórios|Adicionar entidade de serviço|
-|Gerenciamento de diretórios|Adicionar credenciais de entidade de serviço|
-|Gerenciamento de diretórios|Autorizar aplicativo|
-|Gerenciamento de diretórios|Excluir aplicativo|
-|Gerenciamento de diretórios|Excluir aplicativo irreversivelmente|
-|Gerenciamento de diretórios|Remover OAuth2PermissionGrant|
-|Gerenciamento de diretórios|Remover a atribuição de função de aplicativo da entidade de serviço|
-|Gerenciamento de diretórios|Remover proprietário do aplicativo|
-|Resource|Remover proprietário da entidade de serviço|
-|Resource|Remover política da entidade de serviço|
-|Resource|Remover entidade de serviço|
+|Gerenciamento de Diretório|Adicionar entidade de serviço|
+|Gerenciamento de Diretório|Adicionar credenciais de entidade de serviço|
+|Gerenciamento de Diretório|Autorizar aplicativo|
+|Gerenciamento de Diretório|Excluir aplicativo|
+|Gerenciamento de Diretório|Excluir aplicativo irreversivelmente|
+|Gerenciamento de Diretório|Remover OAuth2PermissionGrant|
+|Gerenciamento de Diretório|Remover a atribuição de função de aplicativo da entidade de serviço|
+|Gerenciamento de Diretório|Remover proprietário do aplicativo|
+|Recurso|Remover proprietário da entidade de serviço|
+|Recurso|Remover política da entidade de serviço|
+|Recurso|Remover entidade de serviço|
 
 
 ## <a name="automated-password-rollover"></a>Substituição de senha automática
@@ -135,11 +135,11 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |Gerenciamento de Aplicativos|AdminPolicyDatas-SetResources|
 |Gerenciamento de Aplicativos|AdminUserJourneys-GetResources|
 |Gerenciamento de Aplicativos|AdminUserJourneys-RemoveResources|
-|Authentication|AdminUserJourneys-SetResources|
-|Authentication|Criar IdentityProvider|
-|Authentication|Criar aplicativo V1|
-|Authentication|Criar aplicativo V2|
-|Authentication|Criar um domínio personalizado no locatário|
+|Autenticação|AdminUserJourneys-SetResources|
+|Autenticação|Criar IdentityProvider|
+|Autenticação|Criar aplicativo V1|
+|Autenticação|Criar aplicativo V2|
+|Autenticação|Criar um domínio personalizado no locatário|
 |Autorização|Criar um novo AdminUserJourney|
 |Autorização|Criar json de recurso localizado|
 |Autorização|Criar novo IDP personalizado|
@@ -223,7 +223,7 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |Autorização|Recuperar entidades de serviço de aplicativo V2 no locatário atual|
 |Autorização|Atualizar IDP personalizado|
 |Autorização|Atualizar IDP|
-|Autorização|Atualizar IDP local|
+|Autorização|Atualizar IDP Local|
 |Autorização|Atualizar aplicativo V1|
 |Autorização|Atualizar aplicativo V2|
 |Autorização|Atualizar concessão de permissão de aplicativo V2|
@@ -249,13 +249,13 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |Gerenciamento de diretórios|Habilitar SSO da Área de Trabalho para um domínio específico|
 |Gerenciamento de diretórios|Habilitar proxy de aplicativo|
 |Gerenciamento de diretórios|Habilitar autenticação de passagem|
-|Gerenciamento de diretórios|Criar um domínio personalizado no locatário|
-|Gerenciamento de diretórios|Habilitar recurso do B2C|
-|Gerenciamento de diretórios|Obter uma lista de domínios personalizados no locatário|
-|Gerenciamento de diretórios|Obter propriedades de recurso de um locatário|
-|Gerenciamento de diretórios|Obter informações do locatário|
+|Gerenciamento de Diretório|Criar um domínio personalizado no locatário|
+|Gerenciamento de Diretório|Habilitar recurso do B2C|
+|Gerenciamento de Diretório|Obter uma lista de domínios personalizados no locatário|
+|Gerenciamento de Diretório|Obter propriedades de recurso de um locatário|
+|Gerenciamento de Diretório|Obter informações do locatário|
 |Gerenciamento de diretórios|Obter recursos permitidos para o locatário|
-|Gerenciamento de diretórios|Obter tenantDomains|
+|Gerenciamento de Diretório|Obter tenantDomains|
 |Chave|Obtém o tipo de locatário|
 |Chave|Verificar se o recurso B2C está habilitado|
 |Chave|Verificar se o recurso está habilitado|
@@ -269,79 +269,79 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |Chave|Diretório excluído|
 |Outros|Diretório excluído permanentemente|
 |Outros|Diretório agendado para exclusão|
-|Resource|Promover empresa à condição de parceira|
-|Resource|Limpar propriedades de gerenciamento de direitos|
-|Resource|Remover parceiro da empresa|
-|Resource|Remover domínio não verificado|
-|Resource|Remover domínio verificado|
-|Resource|Definir informações da empresa|
-|Resource|Definir recurso DirSync|
-|Resource|Definir sinalizador DirSyncEnabled|
-|Resource|Definir parceria|
-|Resource|Definir limite de exclusão acidental|
-|Resource|Definir local de dados permitido da empresa|
-|Resource|Definir recurso multinacional de empresa como habilitado|
-|Resource|Definir recurso de diretório no locatário|
-|Resource|Definir a autenticação de domínio|
-|Resource|Definir configurações de federação no domínio|
-|Resource|Definir política de senha|
-|Resource|Definir propriedades de gerenciamento de direitos|
-|Resource|Atualizar empresa|
-|Resource|Atualizar configurações da empresa|
-|Resource|Domínio de atualização|
-|Resource|Verificar domínio|
-|Resource|Verificar domínio por email|
-|Resource|Integração|
-|Resource|Atualizar configurações de alerta|
-|Resource|Atualizar configurações de resumo semanal|
-|Resource|Desabilitar write-back de senha para o diretório|
-|Resource|Habilitar write-back de senha para o diretório|
-|Resource|Adicionar atribuição de função de aplicativo ao grupo|
-|Resource|Adicionar grupo|
-|Resource|Adicionar membro ao grupo|
-|Resource|Adicionar proprietário ao grupo|
-|Resource|Criar configurações de grupo|
-|Resource|Excluir grupo|
-|Resource|Excluir configurações de grupo|
-|Resource|Concluir a aplicação de licença com base em grupo aos usuários|
-|Resource|Excluir grupo irreversivelmente|
-|Resource|Remover atribuição de função de aplicativo do grupo|
-|Resource|Remover membro do grupo|
-|Resource|Remover proprietário do grupo|
-|Resource|Restaurar grupo|
-|Resource|Definir licença de grupo|
-|Resource|Definir grupo a ser gerenciado pelo usuário|
-|Resource|Iniciar a aplicação de licença com base em grupo aos usuários|
-|Resource|Disparar recálculo de licença do grupo|
-|Resource|Atualizar grupo|
-|Resource|Atualizar configurações de grupo|
-|Resource|Adicionar membro|
-|Resource|Criar Grupo|
-|Resource|Excluir grupo|
-|Resource|Remover membro|
-|Resource|Atualizar grupo|
-|Resource|Aprovar uma solicitação pendente para ingressar em um grupo|
-|Resource|Cancelar uma solicitação pendente para ingressar em um grupo|
-|Resource|Criar política de gerenciamento de ciclo de vida|
-|Resource|Excluir uma solicitação pendente para ingressar em um grupo|
-|Resource|Rejeitar uma solicitação pendente para ingressar em um grupo|
-|Resource|Renovar grupo|
-|Resource|Solicitar ingresso em um grupo|
-|Resource|Definir propriedades de grupo dinâmico|
-|Resource|Atualizar política de gerenciamento de ciclo de vida|
-|Resource|Adicionar uma chave baseada em segredo ASCII a um contêiner de chave CPIM|
-|Resource|Adicionar uma chave a um contêiner de chave CPIM|
-|Resource|Excluir um contêiner de chave CPIM|
-|Resource|Excluir contêiner de chave|
-|Resource|Obter metadados de chave ativa do contêiner de chave em JWK|
-|Resource|Obter metadados do contêiner de chave|
-|Resource|Obtém um contêiner de chave CPIM em formato jwk|
-|Resource|Obtém uma lista de contêineres de chave no locatário|
-|Resource|Restaurar um backup de contêiner de chave CPIM|
-|Resource|Salvar contêiner de chave|
-|Resource|Carregar uma chave CPIM criptografada|
-|Resource|Emitir um código de autorização para o aplicativo|
-|Resource|Emitir um id_token para o aplicativo|
+|Recurso|Promover empresa à condição de parceira|
+|Recurso|Limpar propriedades de gerenciamento de direitos|
+|Recurso|Remover parceiro da empresa|
+|Recurso|Remover domínio não verificado|
+|Recurso|Remover domínio verificado|
+|Recurso|Definir informações da empresa|
+|Recurso|Definir recurso DirSync|
+|Recurso|Definir sinalizador DirSyncEnabled|
+|Recurso|Definir parceria|
+|Recurso|Definir limite de exclusão acidental|
+|Recurso|Definir local de dados permitido da empresa|
+|Recurso|Definir recurso multinacional de empresa como habilitado|
+|Recurso|Definir recurso de diretório no locatário|
+|Recurso|Definir a autenticação de domínio|
+|Recurso|Definir configurações de federação no domínio|
+|Recurso|Definir política de senha|
+|Recurso|Definir propriedades de gerenciamento de direitos|
+|Recurso|Atualizar empresa|
+|Recurso|Atualizar configurações da empresa|
+|Recurso|Domínio de atualização|
+|Recurso|Verificar domínio|
+|Recurso|Verificar domínio por email|
+|Recurso|Integração|
+|Recurso|Atualizar configurações de alerta|
+|Recurso|Atualizar configurações de resumo semanal|
+|Recurso|Desabilitar write-back de senha para o diretório|
+|Recurso|Habilitar write-back de senha para o diretório|
+|Recurso|Adicionar atribuição de função de aplicativo ao grupo|
+|Recurso|Adicionar grupo|
+|Recurso|Adicionar membro ao grupo|
+|Recurso|Adicionar proprietário ao grupo|
+|Recurso|Criar configurações de grupo|
+|Recurso|Excluir grupo|
+|Recurso|Excluir configurações de grupo|
+|Recurso|Concluir a aplicação de licença com base em grupo aos usuários|
+|Recurso|Excluir grupo irreversivelmente|
+|Recurso|Remover atribuição de função de aplicativo do grupo|
+|Recurso|Remover membro do grupo|
+|Recurso|Remover proprietário do grupo|
+|Recurso|Restaurar grupo|
+|Recurso|Definir licença de grupo|
+|Recurso|Definir grupo a ser gerenciado pelo usuário|
+|Recurso|Iniciar a aplicação de licença com base em grupo aos usuários|
+|Recurso|Disparar recálculo de licença do grupo|
+|Recurso|Atualizar grupo|
+|Recurso|Atualizar configurações de grupo|
+|Recurso|Adicionar Membro|
+|Recurso|Criar Grupo|
+|Recurso|Excluir Grupo|
+|Recurso|Remover Membro|
+|Recurso|Atualizar Grupo|
+|Recurso|Aprovar uma solicitação pendente para ingressar em um grupo|
+|Recurso|Cancelar uma solicitação pendente para ingressar em um grupo|
+|Recurso|Criar política de gerenciamento de ciclo de vida|
+|Recurso|Excluir uma solicitação pendente para ingressar em um grupo|
+|Recurso|Rejeitar uma solicitação pendente para ingressar em um grupo|
+|Recurso|Renovar o grupo|
+|Recurso|Solicitar ingresso em um grupo|
+|Recurso|Definir propriedades de grupo dinâmico|
+|Recurso|Atualizar política de gerenciamento de ciclo de vida|
+|Recurso|Adicionar uma chave baseada em segredo ASCII a um contêiner de chave CPIM|
+|Recurso|Adicionar uma chave a um contêiner de chave CPIM|
+|Recurso|Excluir um contêiner de chave CPIM|
+|Recurso|Excluir contêiner de chave|
+|Recurso|Obter metadados de chave ativa do contêiner de chave em JWK|
+|Recurso|Obter metadados do contêiner de chave|
+|Recurso|Obtém um contêiner de chave CPIM em formato jwk|
+|Recurso|Obtém uma lista de contêineres de chave no locatário|
+|Recurso|Restaurar um backup de contêiner de chave CPIM|
+|Recurso|Salvar contêiner de chave|
+|Recurso|Carregar uma chave CPIM criptografada|
+|Recurso|Emitir um código de autorização para o aplicativo|
+|Recurso|Emitir um id_token para o aplicativo|
 
 
 ## <a name="core-directory"></a>Diretório principal
@@ -376,125 +376,125 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |Gerenciamento de Aplicativos|AdminPolicyDatas-RemoveResources|
 |Gerenciamento de Aplicativos|AdminPolicyDatas-SetResources|
 |Gerenciamento de Aplicativos|AdminUserJourneys-GetResources|
-|Gerenciamento de diretórios|AdminUserJourneys-RemoveResources|
-|Gerenciamento de diretórios|AdminUserJourneys-SetResources|
-|Gerenciamento de diretórios|Criar IdentityProvider|
-|Gerenciamento de diretórios|Criar um novo AdminUserJourney|
-|Gerenciamento de diretórios|Criar json de recurso localizado|
-|Gerenciamento de diretórios|Criar novo IDP personalizado|
-|Gerenciamento de diretórios|Criar novo IDP|
-|Gerenciamento de diretórios|Criar ou atualizar um recurso de diretório do B2C|
-|Gerenciamento de diretórios|Criar política|
-|Gerenciamento de diretórios|Criar política trustFramework|
-|Gerenciamento de diretórios|Criar política trustFramework com prefixo configurável|
-|Gerenciamento de diretórios|Criar atributo de usuário|
-|Gerenciamento de diretórios|CreateTrustFrameworkPolicy|
-|Gerenciamento de diretórios|Excluir IDP|
-|Gerenciamento de diretórios|Excluir IdentityProvider|
-|Gerenciamento de diretórios|Excluir um recurso do diretório do B2C|
-|Gerenciamento de diretórios|Excluir política trustFramework|
-|Gerenciamento de diretórios|Excluir atributo de usuário|
-|Gerenciamento de diretórios|Obter recursos de diretório do B2C em um grupo de recursos|
-|Gerenciamento de diretórios|Obter os recursos de diretório do B2C em uma assinatura|
-|Gerenciamento de diretórios|Obter IDP personalizado|
-|Gerenciamento de diretórios|Obter IDP|
-|Gerenciamento de diretórios|Obter recurso do Active Directory B2C|
-|Gerenciamento de diretórios|Obter um Percurso do Usuário|
-|Gerenciamento de diretórios|Obter declarações do aplicativo permitidas para o Percurso do Usuário|
-|Gerenciamento de diretórios|Obter declarações autodeclaradas permitidas para o Percurso do Usuário|
-|Gerenciamento de diretórios|Obter declarações autodeclaradas permitidas de política|
-|Gerenciamento de diretórios|Obter lista de declarações de saída disponíveis|
-|Gerenciamento de diretórios|Obter definições de conteúdo para o Percurso do Usuário|
-|Gerenciamento de diretórios|Obter IDPs para um fluxo específico do administrador|
-|Gerenciamento de diretórios|Obter lista de todos os fluxos de administrador|
-|Gerenciamento de diretórios|Obter lista de marcas de todos os fluxos de administrador para todos os usuários|
-|Gerenciamento de grupos|Obter lista de locatários de um usuário|
-|Gerenciamento de grupos|Obter declarações autodeclaradas das contas locais|
-|Gerenciamento de grupos|Obter json de recurso localizado|
-|Gerenciamento de grupos|Obter operações do provedor de recursos Microsoft.AzureActiveDirectory|
-|Gerenciamento de grupos|Obter políticas|
-|Gerenciamento de grupos|Obter política|
-|Gerenciamento de grupos|Obter lista de IDP com suporte|
-|Gerenciamento de grupos|Obter lista de IDP com suporte do Percurso do Usuário|
-|Gerenciamento de grupos|Obter lista de IDPs personalizadas definida pelo locatário|
-|Gerenciamento de grupos|Obter lista de IDPs definida pelo locatário|
-|Gerenciamento de grupos|Obter lista de IDPs locais definida pelo locatário|
-|Gerenciamento de grupos|Obter detalhes do locatário de um usuário para a criação de recursos|
-|Gerenciamento de grupos|Obter a cultura com suporte padrão para CPIM|
-|Gerenciamento de grupos|Obter os detalhes de um fluxo de administrador|
-|Gerenciamento de grupos|Obter a lista de UserJourneys para o locatário|
-|Gerenciamento de grupos|Obter o conjunto de culturas com suporte disponíveis para CPIM|
-|Gerenciamento de grupos|Obter política trustFramework|
-|Gerenciamento de grupos|Obter política trustFramework como xml|
-|Gerenciamento de grupos|Editar atributo de usuário|
-|Gerenciamento de política|Obter atributos de usuário|
-|Gerenciamento de política|Obter lista de Percurso do Usuário|
-|Gerenciamento de política|GetIEFPolicies|
-|Gerenciamento de política|GetIdentityProviders|
-|Gerenciamento de política|GetTrustFrameworkPolicy|
-|Resource|MigrateTenantMetadata|
-|Resource|Mover recursos|
-|Resource|Fazer patch de IdentityProvider|
-|Resource|PutTrustFrameworkPolicy|
-|Resource|PutTrustFrameworkpolicy|
-|Resource|Remover um Percurso do Usuário|
-|Resource|Atualizar IDP personalizado|
-|Resource|Atualizar IDP|
-|Resource|Atualizar IDP local|
-|Resource|Exibir um recurso de diretório do B2C|
-|Resource|Atualizar política|
-|Resource|Atualizar status da assinatura|
+|Gerenciamento de Diretório|AdminUserJourneys-RemoveResources|
+|Gerenciamento de Diretório|AdminUserJourneys-SetResources|
+|Gerenciamento de Diretório|Criar IdentityProvider|
+|Gerenciamento de Diretório|Criar um novo AdminUserJourney|
+|Gerenciamento de Diretório|Criar json de recurso localizado|
+|Gerenciamento de Diretório|Criar novo IDP personalizado|
+|Gerenciamento de Diretório|Criar novo IDP|
+|Gerenciamento de Diretório|Criar ou atualizar um recurso de diretório do B2C|
+|Gerenciamento de Diretório|Criar política|
+|Gerenciamento de Diretório|Criar política trustFramework|
+|Gerenciamento de Diretório|Criar política trustFramework com prefixo configurável|
+|Gerenciamento de Diretório|Criar atributo de usuário|
+|Gerenciamento de Diretório|CreateTrustFrameworkPolicy|
+|Gerenciamento de Diretório|Excluir IDP|
+|Gerenciamento de Diretório|Excluir IdentityProvider|
+|Gerenciamento de Diretório|Excluir um recurso do diretório do B2C|
+|Gerenciamento de Diretório|Excluir política trustFramework|
+|Gerenciamento de Diretório|Excluir atributo de usuário|
+|Gerenciamento de Diretório|Obter recursos de diretório do B2C em um grupo de recursos|
+|Gerenciamento de Diretório|Obter os recursos de diretório do B2C em uma assinatura|
+|Gerenciamento de Diretório|Obter IDP personalizado|
+|Gerenciamento de Diretório|Obter IDP|
+|Gerenciamento de Diretório|Obter recurso do Active Directory B2C|
+|Gerenciamento de Diretório|Obter um Percurso do Usuário|
+|Gerenciamento de Diretório|Obter declarações do aplicativo permitidas para o Percurso do Usuário|
+|Gerenciamento de Diretório|Obter declarações autodeclaradas permitidas para o Percurso do Usuário|
+|Gerenciamento de Diretório|Obter declarações autodeclaradas permitidas de política|
+|Gerenciamento de Diretório|Obter lista de declarações de saída disponíveis|
+|Gerenciamento de Diretório|Obter definições de conteúdo para o Percurso do Usuário|
+|Gerenciamento de Diretório|Obter IDPs para um fluxo específico do administrador|
+|Gerenciamento de Diretório|Obter lista de todos os fluxos de administrador|
+|Gerenciamento de Diretório|Obter lista de marcas de todos os fluxos de administrador para todos os usuários|
+|Gerenciamento de Grupo|Obter lista de locatários de um usuário|
+|Gerenciamento de Grupo|Obter declarações autodeclaradas das contas locais|
+|Gerenciamento de Grupo|Obter json de recurso localizado|
+|Gerenciamento de Grupo|Obter operações do provedor de recursos Microsoft.AzureActiveDirectory|
+|Gerenciamento de Grupo|Obter políticas|
+|Gerenciamento de Grupo|Obter política|
+|Gerenciamento de Grupo|Obter lista de IDP com suporte|
+|Gerenciamento de Grupo|Obter lista de IDP com suporte do Percurso do Usuário|
+|Gerenciamento de Grupo|Obter lista de IDPs personalizadas definida pelo locatário|
+|Gerenciamento de Grupo|Obter lista de IDPs definida pelo locatário|
+|Gerenciamento de Grupo|Obter lista de IDPs locais definida pelo locatário|
+|Gerenciamento de Grupo|Obter detalhes do locatário de um usuário para a criação de recursos|
+|Gerenciamento de Grupo|Obter a cultura com suporte padrão para CPIM|
+|Gerenciamento de Grupo|Obter os detalhes de um fluxo de administrador|
+|Gerenciamento de Grupo|Obter a lista de UserJourneys para o locatário|
+|Gerenciamento de Grupo|Obter o conjunto de culturas com suporte disponíveis para CPIM|
+|Gerenciamento de Grupo|Obter política trustFramework|
+|Gerenciamento de Grupo|Obter política trustFramework como xml|
+|Gerenciamento de Grupo|Editar atributo de usuário|
+|Gerenciamento de Política|Obter atributos de usuário|
+|Gerenciamento de Política|Obter lista de Percurso do Usuário|
+|Gerenciamento de Política|GetIEFPolicies|
+|Gerenciamento de Política|GetIdentityProviders|
+|Gerenciamento de Política|GetTrustFrameworkPolicy|
+|Recurso|MigrateTenantMetadata|
+|Recurso|Mover recursos|
+|Recurso|Fazer patch de IdentityProvider|
+|Recurso|PutTrustFrameworkPolicy|
+|Recurso|PutTrustFrameworkpolicy|
+|Recurso|Remover um Percurso do Usuário|
+|Recurso|Atualizar IDP personalizado|
+|Recurso|Atualizar IDP|
+|Recurso|Atualizar IDP Local|
+|Recurso|Exibir um recurso de diretório do B2C|
+|Recurso|Atualizar política|
+|Recurso|Atualizar status da assinatura|
 |Gerenciamento de funções|Atualizar atributo de usuário|
 |Gerenciamento de funções|Validar movimentação de recursos|
 |Gerenciamento de funções|Adicionar dispositivo|
 |Gerenciamento de funções|Adicionar configuração do dispositivo|
 |Gerenciamento de funções|Adicionar proprietário registrado ao dispositivo|
 |Gerenciamento de funções|Adicionar usuários registrados ao dispositivo|
-|Gerenciamento de funções|Excluir um dispositivo|
+|Gerenciamento de funções|Excluir dispositivo|
 |Gerenciamento de funções|Excluir configuração de dispositivo|
 |Gerenciamento de funções|O dispositivo não é mais compatível|
 |Gerenciamento de funções|O dispositivo não é mais gerenciado|
-|Gerenciamento de Usuários|Remover proprietário registrado do dispositivo|
-|Gerenciamento de Usuários|Remover usuários registrados do dispositivo|
-|Gerenciamento de Usuários|Atualizar dispositivo|
-|Gerenciamento de Usuários|Atualizar configuração do dispositivo|
-|Gerenciamento de Usuários|Adicionar membro qualificado à função|
-|Gerenciamento de Usuários|Adicionar membro à função|
-|Gerenciamento de Usuários|Adicionar atribuição de função à definição de função|
-|Gerenciamento de Usuários|Adicionar função originada no modelo|
-|Gerenciamento de Usuários|Adicionar membro no escopo à função|
-|Gerenciamento de Usuários|Remover membro qualificado da função|
-|Gerenciamento de Usuários|Remover membro da função|
-|Gerenciamento de Usuários|Remover atribuição de função da definição de função|
-|Gerenciamento de Usuários|Remover membro no escopo da função|
-|Gerenciamento de Usuários|Atualizar função|
-|Gerenciamento de Usuários|AccessReview_Review|
-|Gerenciamento de Usuários|AccessReview_Update|
-|Gerenciamento de Usuários|ActivationAborted|
-|Gerenciamento de Usuários|ActivationApproved|
-|Gerenciamento de Usuários|ActivationCanceled|
-|Gerenciamento de Usuários|ActivationRequested|
-|Gerenciamento de Usuários|Added|
-|Gerenciamento de Usuários|Assign|
+|Gerenciamento do Usuário|Remover proprietário registrado do dispositivo|
+|Gerenciamento do Usuário|Remover usuários registrados do dispositivo|
+|Gerenciamento do Usuário|Atualizar dispositivo|
+|Gerenciamento do Usuário|Atualizar configuração do dispositivo|
+|Gerenciamento do Usuário|Adicionar membro qualificado à função|
+|Gerenciamento do Usuário|Adicionar membro à função|
+|Gerenciamento do Usuário|Adicionar atribuição de função à definição de função|
+|Gerenciamento do Usuário|Adicionar função originada no modelo|
+|Gerenciamento do Usuário|Adicionar membro no escopo à função|
+|Gerenciamento do Usuário|Remover membro qualificado da função|
+|Gerenciamento do Usuário|Remover o membro da função|
+|Gerenciamento do Usuário|Remover atribuição de função da definição de função|
+|Gerenciamento do Usuário|Remover membro no escopo da função|
+|Gerenciamento do Usuário|Atualizar função|
+|Gerenciamento do Usuário|AccessReview_Review|
+|Gerenciamento do Usuário|AccessReview_Update|
+|Gerenciamento do Usuário|ActivationAborted|
+|Gerenciamento do Usuário|ActivationApproved|
+|Gerenciamento do Usuário|ActivationCanceled|
+|Gerenciamento do Usuário|ActivationRequested|
+|Gerenciamento do Usuário|Added|
+|Gerenciamento do Usuário|Atribuir|
 
 
 ## <a name="identity-protection"></a>Identity Protection
 
 |Auditar categoria|Atividade|
 |---|---|
-|Gerenciamento de diretórios|Elevate|
-|Gerenciamento de diretórios|Removed|
-|Gerenciamento de diretórios|Alterações na configuração de função|
+|Gerenciamento de Diretório|Elevar|
+|Gerenciamento de Diretório|Removido|
+|Gerenciamento de Diretório|Alterações na configuração de função|
 |Outros|ScanAlertsNow|
-|Outros|Inscrever-se|
+|Outros|Inscrição|
 |Outros|Unelevate|
 |Outros|UpdateAlertSettings|
 |Outros|UpdateCurrentState|
-|Gerenciamento de política|Revisão de acesso encerrada|
-|Gerenciamento de política|Adicionar aprovador para a aprovação de solicitação|
-|Gerenciamento de política|Adicionar revisor para a revisão de acesso|
-|Gerenciamento de Usuários|Aplicar revisão de acesso|
-|Gerenciamento de Usuários|Criar a revisão de acesso|
+|Gerenciamento de Política|Revisão de acesso encerrada|
+|Gerenciamento de Política|Adicionar aprovador para a aprovação de solicitação|
+|Gerenciamento de Política|Adicionar revisor para a revisão de acesso|
+|Gerenciamento do Usuário|Aplicar revisão do acesso|
+|Gerenciamento do Usuário|Criar revisão do acesso|
 
 
 ## <a name="invited-users"></a>Usuários convidados
@@ -502,26 +502,26 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |Auditar categoria|Atividade|
 |---|---|
 |Outros|Criar solicitação de aprovação|
-|Outros|Excluir revisão de acesso|
-|Gerenciamento de Usuários|Remover revisor da revisão de acesso|
-|Gerenciamento de Usuários|Solicitar aplicação dos resultados da análise|
-|Gerenciamento de Usuários|Solicitar interrupção da análise|
-|Gerenciamento de Usuários|Revisar atribuição do aplicativo|
-|Gerenciamento de Usuários|Revisar associação ao grupo|
-|Gerenciamento de Usuários|Examinar associação de função RBAC|
+|Outros|Excluir a revisão de acesso|
+|Gerenciamento do Usuário|Remover revisor da revisão de acesso|
+|Gerenciamento do Usuário|Solicitação de aplicação do resultado da revisão|
+|Gerenciamento do Usuário|Solicitar interrupção da análise|
+|Gerenciamento do Usuário|Revisar atribuição do aplicativo|
+|Gerenciamento do Usuário|Revisar associação ao grupo|
+|Gerenciamento do Usuário|Examinar associação de função RBAC|
 
 
 ## <a name="microsoft-identity-manager-mim"></a>MIM (Microsoft Identity Manager)
 
 |Auditar categoria|Atividade|
 |---|---|
-|Gerenciamento de grupos|Revisar solicitação de aprovação de solicitação|
-|Gerenciamento de grupos|Atualizar revisão de acesso|
-|Gerenciamento de grupos|Atualizar configurações de notificação de email da revisão de acesso|
-|Gerenciamento de grupos|Atualizar a configuração de contagem de recorrências da revisão de acesso|
-|Gerenciamento de grupos|Atualizar a duração de recorrência da revisão de acesso na configuração de dias|
-|Gerenciamento de Usuários|Atualizar a configuração do tipo final de recorrência da revisão de acesso|
-|Gerenciamento de Usuários|Atualizar a configuração do tipo de recorrência da revisão de acesso|
+|Gerenciamento de Grupo|Revisar solicitação de aprovação de solicitação|
+|Gerenciamento de Grupo|Atualizar revisão de acesso|
+|Gerenciamento de Grupo|Atualizar configurações de notificação de email de análise de acesso|
+|Gerenciamento de Grupo|Atualizar a configuração de contagem de recorrências da revisão de acesso|
+|Gerenciamento de Grupo|Atualizar a duração de recorrência da revisão de acesso na configuração de dias|
+|Gerenciamento do Usuário|Atualizar a configuração do tipo final de recorrência da revisão de acesso|
+|Gerenciamento do Usuário|Atualizar a configuração do tipo de recorrência da revisão de acesso|
 
 
 
@@ -536,16 +536,16 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 |PIM|ActivationRequested|
 |PIM|Added|
 |PIM|AddedOutsidePIM|
-|PIM|Assign|
+|PIM|Atribuir|
 |PIM|DismissAlert|
-|PIM|Elevate|
+|PIM|Elevar|
 |PIM|ReactivateAlert|
-|PIM|Removed|
+|PIM|Removido|
 |PIM|RemovedOutsidePIM|
 |PIM|Solicitar interrupção da análise|
 |PIM|Alterações na configuração de função|
 |PIM|ScanAlertsNow|
-|PIM|Inscrever-se|
+|PIM|Inscrição|
 |PIM|Unassign|
 |PIM|Unelevate|
 |PIM|UpdateAlertSettings|
@@ -556,31 +556,31 @@ Este artigo lista as atividades de auditoria que podem ser registradas nos logs 
 
 |Auditar categoria|Atividade|
 |---|---|
-|Gerenciamento de grupos|Redefinir senha de usuário|
-|Gerenciamento de grupos|Restaurar usuário|
-|Gerenciamento de grupos|Definir alteração forçada de senha de usuário|
-|Gerenciamento de grupos|Definir gerenciador de usuários|
-|Gerenciamento de grupos|Definir metadados de token OAuth de usuários como habilitados|
-|Gerenciamento de grupos|Atualizar carimbo de data/hora StsRefreshTokenValidFrom|
-|Gerenciamento de grupos|Atualizar segredos externos|
-|Gerenciamento de grupos|Atualizar usuário|
-|Gerenciamento de grupos|O administrador gera uma senha temporária|
+|Gerenciamento de Grupo|Redefinir senha de usuário|
+|Gerenciamento de Grupo|Restaurar usuário|
+|Gerenciamento de Grupo|Definir alteração forçada de senha de usuário|
+|Gerenciamento de Grupo|Definir gerenciador de usuários|
+|Gerenciamento de Grupo|Definir metadados de token OAuth de usuários como habilitados|
+|Gerenciamento de Grupo|Atualizar carimbo de data/hora StsRefreshTokenValidFrom|
+|Gerenciamento de Grupo|Atualizar segredos externos|
+|Gerenciamento de Grupo|Atualizar usuário|
+|Gerenciamento de Grupo|O administrador gera uma senha temporária|
 
 
 ## <a name="self-service-password-management"></a>Gerenciamento de senhas de autoatendimento
 
 |Auditar categoria|Atividade|
 |---|---|
-|Gerenciamento de diretórios|Os administradores exigem que o usuário redefina a senha|
-|Gerenciamento de diretórios|Atribuir usuário externo ao aplicativo|
-|Gerenciamento de Usuários|Email não enviado; o usuário cancelou a assinatura|
-|Gerenciamento de Usuários|Convidar usuário externo|
-|Gerenciamento de Usuários|Resgatar convite para usuário externo|
-|Gerenciamento de Usuários|Criação de locatário viral|
-|Gerenciamento de Usuários|Criação de usuário viral|
-|Gerenciamento de Usuários|Registro de senha do usuário|
-|Gerenciamento de Usuários|Redefinição de senha do usuário|
-|Gerenciamento de Usuários|Impedido de executar a redefinição de senha de autoatendimento|
+|Gerenciamento de Diretório|Os administradores exigem que o usuário redefina a senha|
+|Gerenciamento de Diretório|Atribuir usuário externo ao aplicativo|
+|Gerenciamento do Usuário|Email não enviado; o usuário cancelou a assinatura|
+|Gerenciamento do Usuário|Convidar usuário externo|
+|Gerenciamento do Usuário|Resgatar convite para usuário externo|
+|Gerenciamento do Usuário|Criação de locatário viral|
+|Gerenciamento do Usuário|Criação de usuário viral|
+|Gerenciamento do Usuário|Registro de senha do usuário|
+|Gerenciamento do Usuário|Redefinição de senha do usuário|
+|Gerenciamento do Usuário|Impedido de executar a redefinição de senha de autoatendimento|
 
 
 ## <a name="terms-of-use"></a>Termos de uso

@@ -6,15 +6,15 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 06/06/2019
+ms.date: 08/12/2019
 ms.author: alinast
 ms.custom: seodec18
-ms.openlocfilehash: b5e230f45fd5889e216f2993f58adf6940ef7679
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6853ebf16c1a9d6b0d363277b22c7dd2583d37e5
+ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67072903"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69013964"
 ---
 # <a name="how-to-create-user-defined-functions-in-azure-digital-twins"></a>Como criar funções definidas pelo usuário em Gêmeos Digitais do Azure
 
@@ -67,7 +67,7 @@ Com o corpo JSON:
 }
 ```
 
-| Value | Substitua por |
+| Valor | Substitua por |
 | --- | --- |
 | YOUR_SPACE_IDENTIFIER | Em qual região do servidor de sua instância está hospedada |
 
@@ -107,7 +107,7 @@ function process(telemetry, executionContext) {
 --USER_DEFINED_BOUNDARY--
 ```
 
-| Value | Substitua por |
+| Valor | Substitua por |
 | --- | --- |
 | USER_DEFINED_BOUNDARY | Um nome de limite de conteúdo com diversas partes |
 | YOUR_SPACE_IDENTIFIER | O identificador de espaço  |
@@ -212,7 +212,7 @@ Crie uma atribuição de função para que a função definida pelo usuário sej
     YOUR_MANAGEMENT_API_URL/spaces?name=YOUR_SPACE_NAME&includes=fullpath
     ```
 
-    | Value | Substitua por |
+    | Valor | Substitua por |
     | --- | --- |
     | YOUR_SPACE_NAME | O nome do espaço que você deseja usar |
 
@@ -232,7 +232,7 @@ Crie uma atribuição de função para que a função definida pelo usuário sej
     }
     ```
 
-    | Value | Substitua por |
+    | Valor | Substitua por |
     | --- | --- |
     | YOUR_DESIRED_ROLE_IDENTIFIER | O identificador para a função desejada |
     | YOUR_USER_DEFINED_FUNCTION_ID | A ID da função definida pelo usuário que você deseja usar |

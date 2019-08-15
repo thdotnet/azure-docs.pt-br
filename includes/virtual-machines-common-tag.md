@@ -5,20 +5,20 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: ccc2b574ea054a1b0ecf32a1e59691050fb66fcf
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "67171862"
 ---
 ## <a name="tagging-a-virtual-machine-through-templates"></a>Marcando uma máquina virtual por meio de modelos
-Primeiramente, vamos observar uma marcação por meio de modelos. [Este modelo](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-tags) coloca marcas nos seguintes recursos: Computação (Máquina Virtual), armazenamento (conta de armazenamento) e rede (endereço IP público, rede Virtual e adaptador de rede). Esse modelo destina-se a uma VM do Windows, mas pode ser adaptada para VMs do Linux.
+Primeiramente, vamos observar uma marcação por meio de modelos. [Este modelo](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-tags) coloca marcas nos seguintes recursos: Computação (máquina virtual), armazenamento (conta de armazenamento) e rede (endereço IP público, rede virtual e interface de rede). Esse modelo destina-se a uma VM do Windows, mas pode ser adaptada para VMs do Linux.
 
 Clique no botão **Implantar no Azure** no [link do modelo](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-tags). Você será direcionado para o [Portal do Azure](https://portal.azure.com/) , onde poderá implantar esse modelo.
 
 ![Implantação simples com marcas](./media/virtual-machines-common-tag/deploy-to-azure-tags.png)
 
-Esse modelo inclui as seguintes marcas: *Departamento*, *aplicativo*, e *criado pelo*. Você pode adicionar/editar essas marcas diretamente no modelo se desejar diferentes nomes de marca.
+Este modelo inclui as seguintes marcas: *Departamento*, *aplicativo*e *criado por*. Você pode adicionar/editar essas marcas diretamente no modelo se desejar diferentes nomes de marca.
 
 ![Marcas do Azure em um modelo](./media/virtual-machines-common-tag/azure-tags-in-a-template.png)
 

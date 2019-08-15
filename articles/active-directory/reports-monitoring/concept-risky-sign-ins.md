@@ -2,7 +2,7 @@
 title: Relatório de entradas de risco no portal do Azure Active Directory | Microsoft Docs
 description: Saiba mais sobre o relatório de entradas de risco no portal do Azure Active Directory
 services: active-directory
-author: MarkusVi
+author: cawrites
 manager: daveba
 ms.assetid: 7728fcd7-3dd5-4b99-a0e4-949c69788c0f
 ms.service: active-directory
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 11/13/2018
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40e125f8e1e7909c5866a03c0571f49ec42d690a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 629e7bf8ee7100b5927483ecfd4efa1d9223c151
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60287337"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989917"
 ---
 # <a name="risky-sign-ins-report-in-the-azure-active-directory-portal"></a>Relatório de entradas de risco no portal do Azure Active Directory
 
@@ -42,9 +42,9 @@ Para saber como configurar as políticas que disparam esses eventos de risco, co
 
 Os relatórios de entradas de risco estão disponíveis para usuários nas funções a seguir:
 
-- Administrador de segurança
-- Administrador global
-- Leitor de segurança
+- Administrador de Segurança
+- Administrador Global
+- Leitor de Segurança
 
 Para saber como atribuir funções administrativas a um usuário no Azure Active Directory, veja [Exibir e atribuir funções de administrador no Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-manage-roles-portal).
 
@@ -81,7 +81,7 @@ Com base na investigação de entrada arriscada, você poderá fornecer feedback
 
 Este relatório também fornece uma opção para:
 
-- Recursos do Search
+- Pesquisar recursos
 - Baixar os dados do relatório
 
 ![Entradas de risco](./media/concept-risky-sign-ins/93.png)

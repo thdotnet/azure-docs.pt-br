@@ -3,7 +3,7 @@ title: Eventos de risco do Azure Active Directory | Microsoft Docs
 description: Este artigo fornece uma visão geral detalhada de quais são os eventos de risco.
 services: active-directory
 keywords: proteção de identidade do azure active directory, segurança, risco, nível de risco, vulnerabilidade, política de segurança
-author: MarkusVi
+author: cawrites
 manager: daveba
 ms.assetid: fa2c8b51-d43d-4349-8308-97e87665400b
 ms.service: active-directory
@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.subservice: report-monitor
 ms.date: 11/13/2018
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e50cc4ca9c98cb6a8e0f19cfcf6c1f86f1949beb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5711d900653ae7786899ce1c53f22cf181f5b8bf
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67107692"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68988265"
 ---
 # <a name="azure-active-directory-risk-events"></a>Eventos de risco do Azure Active Directory
 
@@ -52,9 +52,9 @@ Atualmente, o Azure Active Directory detecta seis tipos de eventos de risco:
 O insight obtido para um evento de risco detectado está vinculado à sua assinatura do Microsoft Azure AD. 
 
 * Com o **Azure AD Premium P2 Edition**, você obtém as informações mais detalhadas sobre todas as detecções subjacentes. 
-* Com o **edição do Azure AD Premium P1**avançado detecções (como propriedades de entrada desconhecidas) não são cobertas por sua licença e aparecerá sob o nome **entrar com risco adicional detectado** . Além disso, o nível de risco e campos de detalhes do risco estão ocultos.
+* Com a **edição P1 do Azure ad Premium**, as detecções avançadas (como propriedades de entrada desconhecidas) não são cobertas por sua licença e aparecerão sob a entrada do nome **com risco adicional detectado**. Além disso, os campos nível de risco e detalhe de risco estão ocultos.
 
-Embora a detecção de eventos de risco já represente um aspecto importante da proteção de suas identidades, você também tem a opção para resolvê-los ou implementar respostas automatizadas por meio da configuração de políticas de acesso condicional manualmente. Para obter mais informações, consulte [Azure Active Directory Identity Protection](../active-directory-identityprotection.md).
+Embora a detecção de eventos de risco já represente um aspecto importante da proteção de suas identidades, você também tem a opção de solucioná-los manualmente ou implementar respostas automatizadas Configurando políticas de acesso condicional. Para obter mais informações, consulte [Azure Active Directory Identity Protection](../active-directory-identityprotection.md).
 
 ## <a name="risk-event-types"></a>Tipos de evento de risco
 
@@ -80,7 +80,7 @@ Quando o serviço obtém pares de nome de usuário / senha, eles são verificado
 
 Esse tipo de evento de risco identifica os usuários que entraram com êxito de um endereço IP que foi identificado como um endereço IP de proxy anônimo. Esses proxies geralmente são usados por usuários que desejam ocultar o endereço IP de seu dispositivo e podem ser usados com objetivos mal-intencionados.
 
-### <a name="impossible-travel-to-atypical-locations"></a>Viagem impossível a locais atípicos
+### <a name="impossible-travel-to-atypical-locations"></a>Viagem impossível a localizações atípicas
 
 Esse tipo de evento de risco identifica duas entradas provenientes de locais geograficamente distantes, onde pelo menos um deles também pode ser atípico para o usuário, considerando seu comportamento anterior. Entre muitos outros fatores, esse algoritmo de aprendizado de máquina leva em consideração o tempo entre as duas entradas e o tempo que seria necessário para o usuário ir do primeiro até o segundo local, indicando que um usuário diferente está usando as mesmas credenciais.
 
@@ -115,12 +115,12 @@ Para os tipos de evento de risco que o Azure Active Directory detecta, os tipos 
 
 | Tipo de evento de risco | Tipo de detecção |
 | :-- | --- | 
-| [Usuários com credenciais vazadas](#leaked-credentials) | Off-line |
+| [Usuários com credenciais vazadas](#leaked-credentials) | Offline |
 | [Entradas de endereços de IP anônimos](#sign-ins-from-anonymous-ip-addresses) | Tempo real |
-| [Viagem impossível a locais atípicos](#impossible-travel-to-atypical-locations) | Off-line |
+| [Viagem impossível a locais atípicos](#impossible-travel-to-atypical-locations) | Offline |
 | [Entradas de locais desconhecidos](#sign-in-from-unfamiliar-locations) | Tempo real |
-| [Entradas de dispositivos infectados](#sign-ins-from-infected-devices) | Off-line |
-| [Entradas de endereços de IP com atividade suspeita](#sign-ins-from-ip-addresses-with-suspicious-activity) | Off-line|
+| [Entradas de dispositivos infectados](#sign-ins-from-infected-devices) | Offline |
+| [Entradas de endereços de IP com atividade suspeita](#sign-ins-from-ip-addresses-with-suspicious-activity) | Offline|
 
 
 ## <a name="risk-level"></a>Nível de risco
@@ -148,7 +148,7 @@ Eventos de risco de credenciais vazadas recebem uma classificação **Alta**, po
 O nível de risco desse tipo de evento de risco é **Médio** porque um endereço IP anônimo não é por si só uma indicação forte de um comprometimento de conta. Recomendamos contatar o usuário imediatamente para verificar se ele estava usando endereços IP anônimos.
 
 
-### <a name="impossible-travel-to-atypical-locations"></a>Viagem impossível a locais atípicos
+### <a name="impossible-travel-to-atypical-locations"></a>Viagem impossível a localizações atípicas
 
 Viagens impossíveis geralmente são um bom indicativo de que um hacker conseguiu entrar com êxito. No entanto, podem ocorrer falsos positivos quando um usuário estiver viajando usando um novo dispositivo ou usando uma VPN que normalmente não é usada por outros usuários na organização. Outra fonte de falsos positivos são os aplicativos que transmitem IPs de servidor incorretamente como IPs de cliente, o que pode dar a entender que as entradas estão ocorrendo do datacenter em que o aplicativo de back-end está hospedado (geralmente são datacenters Microsoft, o que dá a entender que as entradas estão ocorrendo de endereços IP de propriedade da Microsoft). Como resultado desses falsos positivos, o nível de risco desse evento de risco é **Médio**.
 

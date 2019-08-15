@@ -1,9 +1,9 @@
 ---
-title: Logs de atividades do Active Directory do Azure no Azure Monitor | Microsoft Docs
-description: Introdução à atividade do Azure Active Directory registra em log no Azure Monitor
+title: Azure Active Directory logs de atividades em Azure Monitor | Microsoft Docs
+description: Introdução à Azure Active Directory de logs de atividades no Azure Monitor
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: 4b18127b-d1d0-4bdc-8f9c-6a4c991c5f75
@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 04/22/2019
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d38035031c32c512a55293ba125fdcc4535b9833
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: e8fb570d328c7391c269d4a2aa91c69003b1cfc8
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204373"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989880"
 ---
 # <a name="azure-ad-activity-logs-in-azure-monitor"></a>Logs de atividades do Azure AD no Azure Monitor
 
-Você pode rotear os logs de atividade do Azure Active Directory (Azure AD) para vários pontos de extremidade de longo prazo dados e retenção insights. Esse recurso permite que você:
+Você pode rotear logs de atividade do Azure Active Directory (Azure AD) para vários pontos de extremidade para retenção de longo prazo e insights de dados. Esse recurso permite que você:
 
 * Arquive os logs de atividades do Azure AD em uma conta de armazenamento do Azure para reter os dados por um longo período.
 * Transmita os logs de atividade do Azure AD para um hub de eventos do Azure para análise, usando ferramentas populares de SIEM (Gerenciamento de Eventos e Informações de Segurança) como Splunk e QRadar.
@@ -78,8 +78,8 @@ A tabela a seguir contém uma estimativa de custo, dependendo do tamanho do loca
 
 | Categoria do log | Número de usuários | Eventos por dia | Volume de dados por mês (est.) | Custo por mês (est.) | Custo por ano (est.) |
 |--------------|-----------------|----------------------|--------------------------------------|----------------------------|---------------------------|
-| Audit | 100.000 | 1,5&nbsp;milhão | 90 GB | US$ 1,93 | US$ 23,12 |
-| Audit | 1\.000 | 15.000 | 900 MB | US$ 0,02 | US$ 0,24 |
+| Auditoria | 100.000 | 1,5&nbsp;milhão | 90 GB | US$ 1,93 | US$ 23,12 |
+| Auditoria | 1\.000 | 15.000 | 900 MB | US$ 0,02 | US$ 0,24 |
 | Entradas | 1\.000 | 34.800 | 4 GB | US$ 0,13 | US$ 1,56 |
 | Entradas | 100.000 | 15&nbsp;milhões | 1.7 TB | US$ 35,41 | US$ 424,92 |
  
@@ -102,19 +102,19 @@ A tabela a seguir contém custos estimados por mês para um hub de eventos bási
 
 | Categoria do log | Número de usuários | Eventos por segundo | Eventos por intervalo de cinco minutos | Volume por intervalo | Mensagens por intervalo | Mensagens por mês | Custo por mês (est.) |
 |--------------|-----------------|-------------------------|----------------------------------------|---------------------|---------------------------------|------------------------------|----------------------------|
-| Audit | 100.000 | 18 | 5\.400 | 10.8 MB | 43 | 371.520 | US$ 10,83 |
-| Audit | 1\.000 | 0,1 | 52 | 104 KB | 1 | 8\.640 | US$ 10,80 |
+| Auditoria | 100.000 | 18 | 5\.400 | 10.8 MB | 43 | 371.520 | US$ 10,83 |
+| Auditoria | 1\.000 | 0,1 | 52 | 104 KB | 1 | 8\.640 | US$ 10,80 |
 | Entradas | 1\.000 | 178 | 53.400 | 106.8&nbsp;MB | 418 | 3\.611.520 | US$ 11,06 |  
 
 ### <a name="azure-monitor-logs-cost-considerations"></a>Considerações de custo dos logs do Azure Monitor
 
 
 
-| Categoria do log       | Número de usuários | Eventos por dia | Eventos por mês (30 dias) | Custo por mês em USD (est). |
+| Categoria do log       | Número de usuários | Eventos por dia | Eventos por mês (30 dias) | Custo por mês em USD (est.) |
 | :--                | ---             | ---            | ---                        | --:                          |
-| Auditoria e entradas | 100.000         | 16,500,000     | 495,000,000                |  $1093.00                       |
-| Audit              | 100.000         | 1,500,000      | 45.000.000                 |  $246.66                     |
-| Entradas           | 100.000         | 15.000.000     | 450,000,000                |  $847.28                     |
+| Auditoria e entradas | 100.000         | 16,5 milhões     | 495 milhões                |  $1093                       |
+| Auditoria              | 100.000         | 1,5 milhões      | 45.000.000                 |  $246.66                     |
+| Entradas           | 100.000         | 15.000.000     | 450 milhões                |  $847.28                     |
 
 
 
@@ -149,7 +149,7 @@ Esta seção responde a perguntas frequentes e discute problemas conhecidos com 
 
 ---
 
-**P: O que acontece se um administrador alterar o período de retenção de uma configuração de diagnóstico?**
+**P: O que acontece se um administrador altera o período de retenção de uma configuração de diagnóstico?**
 
 **R**: A nova política de retenção será aplicada a logs coletados após a alteração. Os logs coletados antes da alteração da política não serão afetados.
 

@@ -9,24 +9,24 @@ ms.date: 03/21/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 3d5bfa2426d58fa5a09d2203272536eec7fa9c55
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 548f37d6a0d4390fb98ceaee7b59314400debb38
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65789951"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68986562"
 ---
 # <a name="azure-storage-security-guide"></a>Guia de segurança do Armazenamento do Azure
 
 O Armazenamento do Azure fornece um conjunto abrangente de recursos de segurança que, juntos, permitem aos desenvolvedores criar aplicativos seguros:
 
-- Todos os dados (incluindo metadados) gravados no armazenamento do Azure são criptografados automaticamente usando [criptografia de serviço de armazenamento (SSE)](storage-service-encryption.md). Veja mais informações em [Anúncio da criptografia padrão para o armazenamento de Blobs, arquivos, tabelas e filas do Azure](https://azure.microsoft.com/blog/announcing-default-encryption-for-azure-blobs-files-table-and-queue-storage/).
+- Todos os dados (incluindo metadados) gravados no armazenamento do Azure são criptografados automaticamente usando o [criptografia do serviço de armazenamento (SSE)](storage-service-encryption.md). Veja mais informações em [Anúncio da criptografia padrão para o armazenamento de Blobs, arquivos, tabelas e filas do Azure](https://azure.microsoft.com/blog/announcing-default-encryption-for-azure-blobs-files-table-and-queue-storage/).
 - O Azure AD (Azure Active Directory) e o RBAC (controle de acesso baseado em função) têm suporte para o Armazenamento do Azure em relação a operações de gerenciamento de recursos e operações de dados, da seguinte maneira:   
     - Você pode atribuir funções RBAC, no escopo da conta de armazenamento, a entidades de segurança e usar o Azure AD para autorizar operações de gerenciamento de recursos, por exemplo, gerenciamento de chaves.
-    - Integração do Azure AD é suportada para operações de dados de blob e fila. É possível atribuir funções RBAC, no escopo de uma assinatura, um grupo de recursos, uma conta de armazenamento ou um contêiner individual ou fila, a uma entidade de segurança ou a uma identidade gerenciada para recursos do Azure. Para saber mais, confira [Autenticar o acesso ao Armazenamento do Azure usando o Azure Active Directory](storage-auth-aad.md).   
+    - A integração do Azure AD tem suporte para operações de dados de BLOB e de fila. É possível atribuir funções RBAC, no escopo de uma assinatura, um grupo de recursos, uma conta de armazenamento ou um contêiner individual ou fila, a uma entidade de segurança ou a uma identidade gerenciada para recursos do Azure. Para saber mais, confira [Autenticar o acesso ao Armazenamento do Azure usando o Azure Active Directory](storage-auth-aad.md).   
 - Os dados podem ser protegidos em trânsito, entre um aplicativo e o Azure usando a [Criptografia do cliente](../storage-client-side-encryption.md), HTTPS ou SMB 3.0.  
-- Os discos do SO e de dados usados pelas máquinas virtuais do Azure podem ser criptografados usando o [Azure Disk Encryption](../../security/azure-security-disk-encryption.md). 
-- O acesso delegado aos objetos de dados no Armazenamento do Microsoft Azure pode ser concedido usando [Assinaturas de Acesso Compartilhado](../storage-dotnet-shared-access-signature-part-1.md).
+- Os discos do SO e de dados usados pelas máquinas virtuais do Azure podem ser criptografados usando o [Azure Disk Encryption](../../security/azure-security-disk-encryption.md).
+- O acesso delegado aos objetos de dados no armazenamento do Azure pode ser concedido usando uma assinatura de acesso compartilhado. Para obter mais informações, consulte [conceder acesso limitado aos recursos de armazenamento do Azure usando assinaturas de acesso compartilhado (SAS)](storage-sas-overview.md).
 
 Este artigo apresenta uma visão geral de cada um desses recursos de segurança que podem ser usados com o Armazenamento do Azure. São fornecidos links para artigos que darão detalhes de cada recurso, para que você possa investigar mais cada tópico mais aprofundadamente.
 
@@ -156,7 +156,7 @@ A Segurança do Plano de Dados refere-se aos métodos usados para proteger os ob
 
 Você tem três opções para autorizar o acesso a objetos de dados no Armazenamento do Azure, incluindo:
 
-- Usando o Azure AD para autorizar o acesso aos contêineres e filas. O Azure AD oferece vantagens em relação a outras abordagens para autorização, incluindo a eliminação da necessidade de armazenar segredos em seu código. Para saber mais, confira [Autenticar o acesso ao Armazenamento do Azure usando o Azure Active Directory](storage-auth-aad.md). 
+- Usando o Azure AD para autorizar o acesso a contêineres e filas. O Azure AD oferece vantagens em relação a outras abordagens para autorização, incluindo a eliminação da necessidade de armazenar segredos em seu código. Para saber mais, confira [Autenticar o acesso ao Armazenamento do Azure usando o Azure Active Directory](storage-auth-aad.md). 
 - Usar as chaves da conta de armazenamento para autorizar o acesso via Chave Compartilhada. A autorização via Chave Compartilhada requer o armazenamento das chaves da conta de armazenamento em seu aplicativo e, portanto, a Microsoft recomenda usar o Azure AD sempre que possível.
 - Usar Assinaturas de Acesso Compartilhado para conceder permissões controladas a objetos de dados específicos por um determinado período de tempo.
 
@@ -239,11 +239,6 @@ Obtenha informações mais detalhadas sobre como usar as Assinatura de Acesso Co
   * [Constructing a service SAS (Criação de uma SAS de serviço)](https://msdn.microsoft.com/library/dn140255.aspx)
   * [Constructing an account SAS (Criação de uma SAS de conta)](https://msdn.microsoft.com/library/mt584140.aspx)
 
-* Este é um tutorial para usar a biblioteca de cliente .NET para criar assinaturas de acesso compartilhado e políticas de acesso armazenado.
-  * [Usando assinaturas de acesso compartilhado (SAS)](../storage-dotnet-shared-access-signature-part-1.md)
-
-    Esse artigo inclui uma explicação do modelo SAS, exemplos de Assinatura de Acesso Compartilhado e recomendações para uso da prática recomendada de SAS. Também é abordada a revogação da permissão concedida.
-
 * Autenticação
 
   * [Autenticação para os Serviços de Armazenamento do Azure](https://msdn.microsoft.com/library/azure/dd179428.aspx)
@@ -302,7 +297,7 @@ Para a criptografia em si, você pode gerar e gerenciar suas próprias chaves de
   Esse artigo fornece uma explicação da criptografia do cliente, bem como exemplos de como usar a biblioteca de cliente de armazenamento para criptografar e descriptografar recursos dos quatro serviços de armazenamento. Ele também fala sobre o Cofre de Chaves do Azure.
 
 ### <a name="using-azure-disk-encryption-to-encrypt-disks-used-by-your-virtual-machines"></a>Usando o Azure Disk Encryption para criptografar discos usados pelas máquinas virtuais
-O Azure Disk Encryption permite criptografar os discos do sistema operacional e discos de dados usados por uma máquina Virtual IaaS. No Windows, as unidades são criptografadas usando a tecnologia de criptografia BitLocker padrão do setor. No Linux, os discos são criptografados usando a tecnologia DM-Crypt. Esse recurso é integrado ao Cofre de Chaves do Azure para permitir que você controle e gerencie as chaves de criptografia de disco.
+Azure Disk Encryption permite criptografar os discos do sistema operacional e os discos de dados usados por uma máquina virtual IaaS. No Windows, as unidades são criptografadas usando a tecnologia de criptografia BitLocker padrão do setor. No Linux, os discos são criptografados usando a tecnologia DM-Crypt. Esse recurso é integrado ao Cofre de Chaves do Azure para permitir que você controle e gerencie as chaves de criptografia de disco.
 
 A solução dá suporte aos seguintes cenários para VMs IaaS quando habilitados no Microsoft Azure:
 

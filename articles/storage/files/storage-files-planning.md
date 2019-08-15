@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: eece1520a4b7e3bf37e1d209c58b5019921fdb98
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 7591cefddd6e7217c885293a2f5c878d7a82e158
+ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68884373"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69015954"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Planejando uma implantação de Arquivos do Azure
 
@@ -155,7 +155,7 @@ Novos compartilhamentos de arquivos começam com o número total de créditos em
 
 ## <a name="file-share-redundancy"></a>Redundância de compartilhamento de arquivo
 
-Os compartilhamentos padrão do Azure files dão suporte a três opções de redundância de dados: LRS (armazenamento com redundância local), ZRS (armazenamento com redundância de zona) e GRS (armazenamento com redundância geográfica).
+Compartilhamentos padrão do Azure files oferece suporte a três opções de redundância de dados: LRS (armazenamento com redundância local), ZRS (armazenamento com redundância de zona), GRS (armazenamento com redundância geográfica) e GZRS (armazenamento com redundância de zona geográfica) (versão prévia).
 
 Os compartilhamentos Premium dos arquivos do Azure oferecem suporte apenas ao LRS (armazenamento com redundância local).
 
@@ -186,6 +186,7 @@ Ambas as regiões primárias e secundárias gerenciam réplicas entre domínios 
 
 Lembre-se esses pontos ao decidir qual opção de replicação para usar:
 
+* O armazenamento com redundância de zona geográfica (GZRS) (visualização) fornece alta disponibilidade junto com a durabilidade máxima, replicando os dados de forma síncrona em três zonas de disponibilidade do Azure e, em seguida, replicando os dados de maneira assíncrona para a região secundária. Você também pode habilitar o acesso de leitura para a região secundária. O GZRS foi projetado para fornecer pelo menos a durabilidade de objetos de 99.99999999999999% (16 9) em um determinado ano. Para obter mais informações sobre o GZRS, consulte [armazenamento com redundância de zona geográfica para alta disponibilidade e durabilidade máxima (versão prévia)](../common/storage-redundancy-gzrs.md).
 * O ZRS (armazenamento com redundância de zona) fornece alta disponibilidade com replicação síncrona e pode ser uma opção melhor para alguns cenários do que GRS. Para obter mais informações sobre o ZRS, consulte [ZRS](../common/storage-redundancy-zrs.md).
 * A replicação assíncrona envolve um atraso entre a hora em que dados são gravados na região primária e quando são replicados na região secundária. Caso ocorra um desastre na região, as alterações que ainda não foram replicadas para a região secundária poderão ser pedidas se os dados não puderem ser recuperados na região primária.
 * Com o GRS, a réplica não está disponível para acesso de leitura ou gravação, a menos que a Microsoft inicie um failover na região secundária. Em caso de failover, você terá acesso de leitura e gravação aos dados após o failover ter sido concluído. Para obter mais informações, confira [Guia de recuperação de desastre](../common/storage-disaster-recovery-guidance.md).
@@ -198,7 +199,7 @@ Esta seção se aplica somente aos compartilhamentos de arquivos padrão. Todos 
 
 - Os [termos](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) de visualização do Azure se aplicam a compartilhamentos de arquivos grandes enquanto estão em visualização, incluindo quando usados com sincronização de arquivos do Azure implantações.
 - Exige que você crie uma nova conta de armazenamento de uso geral (não é possível expandir as contas de armazenamento existentes).
-- A conversão de conta de LRS/ZRS para GRS não será possível em nenhuma nova conta de armazenamento criada depois que a assinatura for aceita para a versão prévia de compartilhamentos de arquivo maior.
+- A conversão de conta de LRS/ZRS para GRS/GZRS não será possível em nenhuma nova conta de armazenamento criada depois que a assinatura for aceita para a versão prévia de compartilhamentos de arquivo maior.
 
 
 ### <a name="regional-availability"></a>Disponibilidade regional
@@ -214,7 +215,7 @@ Os compartilhamentos de arquivos padrão estão disponíveis em todas as regiõe
 |Europa Ocidental     |LRS, ZRS|Não    |Sim|
 |Oeste dos EUA 2       |LRS, ZRS|Não    |Sim|
 
-\* Para regiões sem suporte ao portal, você ainda pode usar o PowerShell ou a CLI (interface de linha de comando) do Azure para criar mais de 5 compartilhamentos TiB. Altenatively, crie um novo compartilhamento por meio do portal sem especificar a cota. Isso criará um compartilhamento com o tamanho padrão de 100 TiB, que pode ser atualizado posteriormente por meio do PowerShell ou CLI do Azure.
+\* Para regiões sem suporte ao portal, você ainda pode usar o PowerShell ou a CLI (interface de linha de comando) do Azure para criar mais de 5 compartilhamentos TiB. Como alternativa, crie um novo compartilhamento por meio do portal sem especificar a cota. Isso criará um compartilhamento com o tamanho padrão de 100 TiB, que pode ser atualizado posteriormente por meio do PowerShell ou CLI do Azure.
 
 Para nos ajudar a priorizar novas regiões e recursos, preencha esta [pesquisa](https://aka.ms/azurefilesatscalesurvey).
 

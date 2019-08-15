@@ -3,7 +3,7 @@ title: Azure Active Directory o esquema de log de entrada no Azure Monitor | Mic
 description: Descrever o esquema de logon de entrada do Azure AD para uso no Azure Monitor
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: 4b18127b-d1d0-4bdc-8f9c-6a4c991c5f75
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 04/18/2019
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e7ae7e90642a6adfd35e71765e2753334660c56
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 7a82cc4da3b9f4f0c654c95b9889a8bf73fd8ec5
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68261857"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989617"
 ---
 # <a name="interpret-the-azure-ad-sign-in-logs-schema-in-azure-monitor"></a>Interpretar o esquema de logs de entrada do Azure AD no Azure Monitor
 
@@ -143,7 +143,7 @@ Este artigo descreve o esquema de log de logon do Microsoft Azure Active Directo
 
 ## <a name="field-descriptions"></a>Descrições de campo
 
-| Nome do campo | DESCRIÇÃO |
+| Nome do campo | Descrição |
 |------------|-------------|
 | Time | Data e hora em UTC. |
 | resourceId | Esse valor não é mapeado e você pode ignorar esse campo com segurança.  |
