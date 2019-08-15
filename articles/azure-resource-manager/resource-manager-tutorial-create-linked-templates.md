@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 03/18/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: de2e848bd587f3b9bf2efe3fa8df3710e24243e4
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 11eae0e3bae501cdf39d7fe1d5d39524c1f83e6c
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66241394"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035995"
 ---
 # <a name="tutorial-create-linked-azure-resource-manager-templates"></a>Tutorial: Criar modelos do Azure Resource Manager vinculados
 
@@ -227,7 +227,7 @@ echo "Linked template URI with SAS token: $templateURI"
 4. Anote os dois valores (Nome do Grupo de Recursos e URI do modelo vinculado) no final do painel do shell. Mais tarde, você precisará desses valores neste tutorial.
 5. Selecione **Sair do modo de foco** para fechar o painel do shell.
 
-Na prática, você gera um token SAS quando implanta o modelo principal e dá ao término do token SAS uma janela menor para torná-lo mais seguro. Para obter mais informações, confira [Fornecer token de SAS durante a implantação](./resource-manager-powershell-sas-token.md#provide-sas-token-during-deployment).
+Na prática, você gera um token SAS quando implanta o modelo principal e dá ao término do token SAS uma janela menor para torná-lo mais seguro. Para obter mais informações, confira [Fornecer token de SAS durante a implantação](./secure-template-with-sas-token.md#provide-sas-token-during-deployment).
 
 ## <a name="call-the-linked-template"></a>Chamar o modelo vinculado
 
@@ -327,7 +327,7 @@ Quando os recursos do Azure já não forem necessários, limpe os recursos impla
 Para melhorar o projeto, faça as seguintes alterações adicionais ao projeto concluído:
 
 1. Modifique o modelo principal (azuredeploy.json) para que ele use o valor do URI do modelo vinculado por meio de um parâmetro.
-2. Em vez de gerar um token SAS ao carregar o modelo vinculado, gere o token quando você implanta o modelo principal. Para obter mais informações, confira [Fornecer token de SAS durante a implantação](./resource-manager-powershell-sas-token.md#provide-sas-token-during-deployment).
+2. Em vez de gerar um token SAS ao carregar o modelo vinculado, gere o token quando você implanta o modelo principal. Para obter mais informações, confira [Fornecer token de SAS durante a implantação](./secure-template-with-sas-token.md#provide-sas-token-during-deployment).
 
 ## <a name="next-steps"></a>Próximas etapas
 
