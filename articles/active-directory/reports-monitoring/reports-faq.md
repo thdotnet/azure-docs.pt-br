@@ -3,7 +3,7 @@ title: Perguntas frequentes sobre os relatórios do Azure Active Directory | Mic
 description: Perguntas frequentes sobre os relatórios do Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 ms.assetid: 534da0b1-7858-4167-9986-7a62fbd10439
 ms.service: active-directory
@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.subservice: report-monitor
 ms.date: 11/13/2018
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 09270d89ecaff02716d9916527d21ba2c5d30716
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0a9b1144e3ef1f1a49c39d694f465653da5881cb
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67107546"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68987913"
 ---
 # <a name="frequently-asked-questions-around-azure-active-directory-reports"></a>Perguntas frequentes sobre os relatórios do Azure Active Directory
 
@@ -29,13 +29,13 @@ Este artigo inclui respostas a perguntas frequentes sobre os relatórios do Azur
 
 ## <a name="getting-started"></a>Introdução 
 
-**P: Posso usar atualmente o `https://graph.windows.net/<tenant-name>/reports/` ponto de extremidade de APIs para auditoria de pull do Azure AD e o uso do aplicativo integrado relatórios para os sistemas relatórios programaticamente. Para qual devo mudar?**
+**P: Atualmente, uso as `https://graph.windows.net/<tenant-name>/reports/` APIs de ponto de extremidade para extrair relatórios de uso de aplicativos integrados e auditoria do Azure AD em nossos sistemas de relatórios de forma programática. Para qual devo mudar?**
 
 **R:** Consulte a [Referência de API](https://developer.microsoft.com/graph/) para saber como é possível [usar as APIs para acessar relatórios de atividades](concept-reporting-api.md). Esse ponto de extremidade tem dois relatórios (**Auditoria** e **Entradas**) que fornecem todos os dados que você obteve no ponto de extremidade de API antigo. Esse novo ponto de extremidade também tem um relatório de entradas com a licença do Azure AD Premium que você pode usar para obter informações de uso de aplicativo uso de dispositivo e conexão do usuário.
 
 ---
 
-**P: Posso usar atualmente o `https://graph.windows.net/<tenant-name>/reports/` ponto de extremidade de APIs para efetuar pull de relatórios de segurança do Azure AD (tipos específicos de detecções, como credenciais vazadas ou entradas de endereços IP anônimos) para os sistemas relatórios programaticamente. Para qual devo mudar?**
+**P: Atualmente, uso as `https://graph.windows.net/<tenant-name>/reports/` APIs de ponto de extremidade para efetuar pull de relatórios de segurança do Azure AD (tipos específicos de detecções, como credenciais vazadas ou entradas de endereços IP anônimos) em nossos sistemas de relatórios programaticamente. Para qual devo mudar?**
 
 **R:** Você pode usar a [API de eventos de risco do Identity Protection](../identity-protection/graph-get-started.md) para acessar detecções de segurança através do Microsoft Graph. Esse novo formato oferece maior flexibilidade ao modo de consultar os dados, com filtragem avançada, seleção de campo e mais, além de padronizar eventos de risco em um tipo para integração mais fácil ao SIEMs e outras ferramentas de coleta de dados. Uma vez que os dados estão em um formato diferente, você não pode substituir uma nova consulta para suas consultas antigas. No entanto, [a nova API usa o Microsoft Graph](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/identityriskevent), que é o padrão da Microsoft para essas APIs, como O365 ou Azure AD. Para que o trabalho necessário possa estender seus investimentos atuais no MS Graph ou ajudá-lo a começar a fazer a transição para essa nova plataforma padrão.
 
@@ -73,7 +73,7 @@ Este artigo inclui respostas a perguntas frequentes sobre os relatórios do Azur
 
 **R:** A tabela a seguir lista o período de retenção de dados para logs de atividades. Para obter mais informações, consulte as [políticas de retenção de dados para relatórios do Azure AD](reference-reports-data-retention.md).
 
-| Relatório                 | AD do Azure Gratuito | Azure AD Premium P1 | Azure AD Premium P2 |
+| Relatório                 | Azure AD Gratuito | Azure AD Premium P1 | Azure AD Premium P2 |
 | :--                    | :--           | :--                 | :--                 |
 | Logs de auditoria             | 7 dias        | 30 dias             | 30 dias             |
 | Entradas               | N/D           | 30 dias             | 30 dias             |
@@ -89,7 +89,7 @@ Este artigo inclui respostas a perguntas frequentes sobre os relatórios do Azur
 
 **P: Posso obter informações do log de atividades do Office 365 por meio do portal do Azure?**
 
-**R:** Apesar de atividades do Office 365 e logs de atividade do Azure AD compartilhem muitos dos recursos de diretório, se você quiser uma exibição completa dos logs de atividades do Office 365, você deve ir para o [Centro de administração do Microsoft 365](https://admin.microsoft.com) ao obter o log de atividades do Office 365 informações.
+**R:** Embora a atividade do Office 365 e os logs de atividades do Azure AD compartilhem muitos recursos de diretório, se você quiser uma exibição completa dos logs de atividade do Office 365, vá para o [centro de administração Microsoft 365](https://admin.microsoft.com) para obter informações sobre o log de atividades do Office 365.
 
 ---
 
@@ -105,7 +105,7 @@ Este artigo inclui respostas a perguntas frequentes sobre os relatórios do Azur
 
 ---
 
-## <a name="risky-sign-ins"></a>Entradas de risco
+## <a name="risky-sign-ins"></a>Entradas arriscadas
 
 **P: Há um evento de risco no Identity Protection, mas não vejo a entrada correspondente no relatório de entradas. Isso é esperado?**
 
@@ -135,7 +135,7 @@ Este artigo inclui respostas a perguntas frequentes sobre os relatórios do Azur
 
 **P: Quais são as novidades com esse recurso?**
 
-**R:** Os clientes agora podem solucionar problemas de políticas de acesso condicional por meio do relatório de todas as entradas. Os clientes podem analisar o status de acesso condicional e informações detalhadas sobre os detalhes das políticas que são aplicadas na entrada e o resultado para cada política.
+**R:** Agora, os clientes podem solucionar problemas de políticas de acesso condicional por meio de todos os relatórios de entradas. Os clientes podem examinar o status de acesso condicional e aprofundar-se nos detalhes das políticas aplicadas à entrada e ao resultado de cada política.
 
 **P: Como fazer para começar?**
 
@@ -143,17 +143,17 @@ Este artigo inclui respostas a perguntas frequentes sobre os relatórios do Azur
 
 * Navegue até o relatório de logins no [Portal do Azure](https://portal.azure.com).
 * Clique no login que você deseja solucionar.
-* Navegue até a **acesso condicional** guia. Aqui, você pode exibir todas as políticas que afetados na entrada e o resultado para cada política. 
+* Navegue até a guia **acesso condicional** . Aqui, você pode exibir todas as políticas que afetados na entrada e o resultado para cada política. 
     
-**P: Quais são todos os valores possíveis para o status de acesso condicional?**
+**P: Quais são os valores possíveis para o status de acesso condicional?**
 
-**R:** Status de acesso condicional pode ter os seguintes valores:
+**R:** O status de acesso condicional pode ter os seguintes valores:
 
 * **Não aplicado**: Isso significa que não havia uma política de Autoridade de Certificação com o usuário e o aplicativo no escopo. 
 * **Êxito**: Isso significa que havia uma política de Autoridade de Certificação com o usuário e o aplicativo no escopo e as políticas de Autoridade de Certificação foram atendidas com êxito. 
 * **Falha**: Isso significa que havia uma política de Autoridade de Certificação com o usuário e o aplicativo no escopo e as políticas de Autoridade de Certificação não foram atendidas. 
     
-**P: Quais são todos os valores possíveis para o resultado da política de acesso condicional?**
+**P: Quais são os valores possíveis para o resultado da política de acesso condicional?**
 
 **R:** Uma política de acesso condicional pode ter os seguintes resultados:
 
@@ -168,4 +168,4 @@ Este artigo inclui respostas a perguntas frequentes sobre os relatórios do Azur
 
 **P: Minha entrada foi bloqueada devido a uma política de acesso condicional, mas o relatório de atividade de entrada mostra que a entrada foi bem-sucedida. Por quê?**
 
-**R:** Atualmente, o relatório de entrada não pode mostrar resultados precisos para cenários do Exchange ActiveSync ao acesso condicional é aplicado. Pode haver casos quando o resultado de entrar no relatório mostra uma entrada bem-sucedida, mas a entrada do realmente falhou devido a uma política de acesso condicional. 
+**R:** No momento, o relatório de entrada pode não mostrar resultados precisos para cenários do Exchange ActiveSync quando o acesso condicional é aplicado. Pode haver casos em que o resultado da entrada no relatório mostra uma entrada bem-sucedida, mas a entrada realmente falhou devido a uma política de acesso condicional. 
