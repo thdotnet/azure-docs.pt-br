@@ -8,29 +8,28 @@ manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
-ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: 54cb9f604e9d1b817947990e657390387df6c881
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 34e6fc0d4e6e0817f9312a6565a2dd5dd99fdab9
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60556583"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035243"
 ---
 # <a name="sfctl-property"></a>sfctl property
 Propriedades de armazenamento e a consulta em nomes do Service Fabric.
 
 ## <a name="commands"></a>Comandos
 
-|Comando|DESCRIÇÃO|
+|Comando|Descrição|
 | --- | --- |
 | delete | Exclui a propriedade especificada do Service Fabric. |
 | get | Obtém a propriedade especificada do Service Fabric. |
-| list | Obtém informações sobre todas as propriedades de malha do serviço em um determinado nome. |
+| lista | Obtém informações sobre todas as propriedades de malha do serviço em um determinado nome. |
 | put | Cria ou atualiza uma propriedade de malha do serviço. |
 
 ## <a name="sfctl-property-delete"></a>exclusão de propriedade sfctl
@@ -38,9 +37,9 @@ Exclui a propriedade especificada do Service Fabric.
 
 Exclui a propriedade do Service Fabric especificada em um determinado nome. Uma propriedade deve ser criada antes que possa ser excluído.
 
-### <a name="arguments"></a>Argumentos
+### <a name="arguments"></a>Arguments
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | – id de nome [requerido] | Nome da malha do serviço, sem o ' malha\:' esquema de URI. |
 | -nome de propriedade [requerido] | Especifica o nome da propriedade a ser obtida. |
@@ -52,7 +51,7 @@ Exclui a propriedade do Service Fabric especificada em um determinado nome. Uma 
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -63,7 +62,7 @@ Obtém a propriedade do Service Fabric especificada em um determinado nome. Isso
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | – id de nome [requerido] | Nome da malha do serviço, sem o ' malha\:' esquema de URI. |
 | -nome de propriedade [requerido] | Especifica o nome da propriedade a ser obtida. |
@@ -75,7 +74,7 @@ Obtém a propriedade do Service Fabric especificada em um determinado nome. Isso
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -86,7 +85,7 @@ Um nome de malha do serviço pode ter um ou mais propriedades nomeadas que armaz
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | – id de nome [requerido] | Nome da malha do serviço, sem o ' malha\:' esquema de URI. |
 | --continuation-token | O parâmetro do token de continuação é usado para obter o próximo conjunto de resultados. Um token de continuação com um valor não vazio será incluso na resposta da API quando os resultados do sistema não couberem em uma única resposta. Quando esse valor for passado para a próxima chamada de API, a API retornará o próximo conjunto de resultados. Se não houver mais resultados, o token de continuação não conterá um valor. O valor desse parâmetro não deve ser codificado em URL. |
@@ -99,7 +98,7 @@ Um nome de malha do serviço pode ter um ou mais propriedades nomeadas que armaz
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -110,7 +109,7 @@ Cria ou atualiza a propriedade de malha do serviço especificada em um determina
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | – id de nome [requerido] | Nome da malha do serviço, sem o ' malha\:' esquema de URI. |
 | -nome de propriedade [requerido] | O nome da propriedade do Service Fabric. |
@@ -124,7 +123,7 @@ Cria ou atualiza a propriedade de malha do serviço especificada em um determina
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 

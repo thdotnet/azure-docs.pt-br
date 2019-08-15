@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/02/2019
 ms.author: barclayn
-ms.openlocfilehash: c91c8de35dcf3f1bc8fd5f41bd2356336c3fe450
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 89acc86526d1017e97efbf1812e02cfb6a240953
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68927963"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035416"
 ---
 # <a name="azure-data-encryption-at-rest"></a>Criptografia de dados em repouso no Azure
 
@@ -61,7 +61,7 @@ Conforme descrito anteriormente, a meta da criptografia em repouso é que os dad
 
 ![Componentes](./media/encryption-atrest/azure-security-encryption-atrest-fig1.png)
 
-### <a name="azure-key-vault"></a>Cofre de Chaves Azure
+### <a name="azure-key-vault"></a>Azure Key Vault
 
 O local de armazenamento das chaves de criptografia e controle de acesso a essas chaves é central para um modelo de criptografia em repouso. As chaves precisam ser altamente seguras, mas gerenciáveis por usuários especificados e disponíveis para serviços específicos. Para os serviços do Azure, o Azure Key Vault é a solução de armazenamento de chave recomendada e fornece uma experiência de gerenciamento comum em todos os serviços. As chaves são armazenadas e gerenciadas em cofres de chaves e o acesso a um cofre de chave pode ser fornecido para usuários ou serviços. O Azure Key Vault fornece suporte a criação de chaves do cliente ou importação de chaves do cliente para uso em cenários de chave de criptografia de cliente gerenciado.
 
@@ -274,7 +274,7 @@ A criptografia do cliente dos dados do Banco de Dados SQL do Azure tem suporte p
 | Serviço de Kubernetes do Azure         | Sim                | -                  | -                  |
 | Registro de contêiner               | Sim                | -                  | -                  |
 | **Computação**                      |                    |                    |                    |
-| Máquinas Virtuais                 | Sim                | Sim, RSA 2048-bit  | -                  |
+| Máquinas virtuais                 | Sim                | Sim, RSA 2048-bit  | -                  |
 | Conjunto de Escalas da Máquina Virtual        | Sim                | Sim, RSA 2048-bit  | -                  |
 | SAP HANA                         | Sim                | Sim, RSA 2048-bit  | -                  |
 | **Bancos de dados**                    |                    |                    |                    |
@@ -298,7 +298,7 @@ A criptografia do cliente dos dados do Banco de Dados SQL do Azure tem suporte p
 | Grade do Evento                       | Sim                | -                  | -                  |
 | Gerenciamento de API                   | Sim                | -                  | -                  |
 | **Serviços de IoT**                 |                    |                    |                    |
-| Hub IoT                          | -                  | -                  | Sim                |
+| Hub IoT                          | Sim                | -                  | Sim                |
 | **Gerenciamento e governança**    |                    |                    |                    |
 | do Azure Site Recovery              | Sim                | Sim, RSA 2048-bit  | Sim                |
 | **Meio**                        |                    |                    |                    |

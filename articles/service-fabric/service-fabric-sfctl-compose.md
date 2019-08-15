@@ -8,18 +8,17 @@ manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
-ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: 4b5cbb4a24b61de7e64a52ef950deedab3eec263
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dab844246d99b0ab80e1e86219c2064c79e74e4f
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60837259"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035114"
 ---
 # <a name="sfctl-compose"></a>composição sfctl
 Criar, excluir e gerenciar aplicativos do Docker Compose.
@@ -28,9 +27,9 @@ Criar, excluir e gerenciar aplicativos do Docker Compose.
 
 |Comando|DESCRIÇÃO|
 | --- | --- |
-| create | Cria uma implantação de composição do Service Fabric. |
-| list | Obtém a lista de implantação de composição criada no cluster do Service Fabric. |
-| remove | Exclui uma implantação de composição existente do Service Fabric do cluster. |
+| criar | Cria uma implantação de composição do Service Fabric. |
+| lista | Obtém a lista de implantação de composição criada no cluster do Service Fabric. |
+| Remover | Exclui uma implantação de composição existente do Service Fabric do cluster. |
 | status | Obtém informações sobre um aplicativo de implantação do Service Fabric. |
 | upgrade | Começa a atualização de uma implantação de composição no cluster do Service Fabric. |
 | upgrade-rollback | Começa a reversão de uma atualização de implantação de composição no cluster do Service Fabric. |
@@ -41,7 +40,7 @@ Cria uma implantação de composição do Service Fabric.
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --nome de implantação [obrigatório] | O nome da implantação. |
 | -caminho de arquivo [requerido] | Caminho para o arquivo de destino do Docker Compose. |
@@ -56,7 +55,7 @@ Cria uma implantação de composição do Service Fabric.
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -65,9 +64,9 @@ Obtém a lista de implantação de composição criada no cluster do Service Fab
 
 Obtém o status sobre as implantações de redação que foram criadas ou no processo de criação do cluster do Service Fabric. A resposta inclui o nome, o status e outros detalhes sobre a implantação de composição. Se a lista de implantações não couber em uma página, uma página de resultados é retornada, bem como um token de continuação que pode ser usado para a próxima página.
 
-### <a name="arguments"></a>Argumentos
+### <a name="arguments"></a>Arguments
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --continuation-token | O parâmetro do token de continuação é usado para obter o próximo conjunto de resultados. Um token de continuação com um valor não vazio será incluso na resposta da API quando os resultados do sistema não couberem em uma única resposta. Quando esse valor for passado para a próxima chamada de API, a API retornará o próximo conjunto de resultados. Se não houver mais resultados, o token de continuação não conterá um valor. O valor desse parâmetro não deve ser codificado em URL. |
 | --max-results | O número máximo de resultados a serem retornados como parte das consultas paginadas. Esse parâmetro define o limite superior no número de resultados retornados. Os resultados retornados podem ser inferiores aos resultados máximos especificados se não couberem na mensagem, de acordo com as restrições de tamanho máximo de mensagem definidas na configuração. Se esse parâmetro for zero, ou não for especificado, a consulta paginada incluirá o máximo de resultados possível na mensagem de retorno. |
@@ -79,7 +78,7 @@ Obtém o status sobre as implantações de redação que foram criadas ou no pro
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -88,9 +87,9 @@ Exclui uma implantação de composição existente do Service Fabric do cluster.
 
 Exclui uma implantação de composição existente do Service Fabric.
 
-### <a name="arguments"></a>Argumentos
+### <a name="arguments"></a>Arguments
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --nome de implantação [obrigatório] | A identidade da implantação. |
 | --timeout -t | Tempo limite do servidor em segundos.  Padrão\: 60. |
@@ -101,7 +100,7 @@ Exclui uma implantação de composição existente do Service Fabric.
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -112,7 +111,7 @@ Retorna o status da implantação de composição que foi criada ou em processo 
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --nome de implantação [obrigatório] | A identidade da implantação. |
 | --timeout -t | Tempo limite do servidor em segundos.  Padrão\: 60. |
@@ -123,7 +122,7 @@ Retorna o status da implantação de composição que foi criada ou em processo 
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -132,9 +131,9 @@ Começa a atualização de uma implantação de composição no cluster do Servi
 
 Valida os parâmetros de atualização fornecidos e inicia a atualização da implantação, se os parâmetros são válidos.
 
-### <a name="arguments"></a>Argumentos
+### <a name="arguments"></a>Arguments
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --deployment-name [Obrigatório] | O nome da implantação. |
 | --caminho do arquivo [obrigatório] | Caminho para o arquivo de destino do Docker Compose. |
@@ -163,7 +162,7 @@ Valida os parâmetros de atualização fornecidos e inicia a atualização da im
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -172,9 +171,9 @@ Começa a reversão de uma atualização de implantação de composição no clu
 
 Reversão de uma atualização de implantação de composição do Service Fabric.
 
-### <a name="arguments"></a>Argumentos
+### <a name="arguments"></a>Arguments
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --nome de implantação [obrigatório] | A identidade da implantação. |
 | --timeout -t | Tempo limite do servidor em segundos.  Padrão\: 60. |
@@ -185,7 +184,7 @@ Reversão de uma atualização de implantação de composição do Service Fabri
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -196,7 +195,7 @@ Retorna as informações sobre o estado da atualização de implantação de red
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --nome de implantação [obrigatório] | A identidade da implantação. |
 | --timeout -t | Tempo limite do servidor em segundos.  Padrão\: 60. |
@@ -207,7 +206,7 @@ Retorna as informações sobre o estado da atualização de implantação de red
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 

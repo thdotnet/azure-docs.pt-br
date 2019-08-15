@@ -8,34 +8,33 @@ manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
-ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: d0a7199ff0e9cb17c3fbc179a9b37a6620f521f9
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: d5563dc2d1b2caaa85645b037d6bf93426cc0b23
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60544663"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035262"
 ---
 # <a name="sfctl-replica"></a>réplica sfctl
 Gerenciar as réplicas que pertencem a partições de serviço.
 
 ## <a name="commands"></a>Comandos
 
-|Comando|DESCRIÇÃO|
+|Comando|Descrição|
 | --- | --- |
 | deployed | Obtém os detalhes da réplica implantada em um nó do Service Fabric. |
 | deployed-list | Obtém a lista de réplicas implantadas em um nó do Service Fabric. |
 | health | Obtém a integridade de uma réplica de instância de serviço com estado ou de serviço sem estado do Service Fabric. |
 | info | Obtém as informações sobre uma réplica de uma partição do Service Fabric. |
-| list | Obtém as informações sobre réplicas de uma partição de serviço do Service Fabric. |
+| lista | Obtém as informações sobre réplicas de uma partição de serviço do Service Fabric. |
 | remove | Remove uma réplica de serviço em execução em um nó. |
 | report-health | Envia um relatório de integridade sobre a réplica do Service Fabric. |
-| restart | Reinicia uma réplica de serviço de um serviço persistente em execução em um nó. |
+| reiniciar | Reinicia uma réplica de serviço de um serviço persistente em execução em um nó. |
 
 ## <a name="sfctl-replica-deployed"></a>sfctl replica deployed
 Obtém os detalhes da réplica implantada em um nó do Service Fabric.
@@ -44,7 +43,7 @@ Obtém os detalhes da réplica implantada em um nó do Service Fabric. As inform
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --node-name                [Obrigatório] | O nome do nó. |
 | --partition-id [Obrigatório] | A identidade da partição. |
@@ -57,7 +56,7 @@ Obtém os detalhes da réplica implantada em um nó do Service Fabric. As inform
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -66,7 +65,7 @@ Obtém a lista de réplicas implantadas em um nó do Service Fabric.
 
 Obtém a lista que contém as informações sobre réplicas implantado em um nó de malha do serviço. As informações incluem a ID de partição, o ID da réplica, o status da réplica, o nome do serviço, nome do tipo de serviço e outras informações. Use PartitionId ou ServiceManifestName parâmetros de consulta para retornar informações sobre as réplicas implantadas os valores especificados para os parâmetros de correspondência.
 
-### <a name="arguments"></a>Argumentos
+### <a name="arguments"></a>Arguments
 
 |Argumento|DESCRIÇÃO|
 | --- | --- |
@@ -82,7 +81,7 @@ Obtém a lista que contém as informações sobre réplicas implantado em um nó
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -93,7 +92,7 @@ Obtém a integridade de uma réplica do Service Fabric. Use EventsHealthStateFil
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --partition-id [Obrigatório] | A identidade da partição. |
 | --replica-id   [Obrigatório] | O identificador da réplica. |
@@ -106,7 +105,7 @@ Obtém a integridade de uma réplica do Service Fabric. Use EventsHealthStateFil
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -115,9 +114,9 @@ Obtém as informações sobre uma réplica de uma partição do Service Fabric.
 
 A resposta inclui o ID, a função, o status, a integridade, o nome do nó, o tempo de atividade e outros detalhes sobre a réplica.
 
-### <a name="arguments"></a>Argumentos
+### <a name="arguments"></a>Arguments
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --partition-id [Obrigatório] | A identidade da partição. |
 | --replica-id   [Obrigatório] | O identificador da réplica. |
@@ -129,7 +128,7 @@ A resposta inclui o ID, a função, o status, a integridade, o nome do nó, o te
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -140,7 +139,7 @@ O ponto de extremidade GetReplicas retorna informações sobre as réplicas da p
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --partition-id [Obrigatório] | A identidade da partição. |
 | --continuation-token | O parâmetro do token de continuação é usado para obter o próximo conjunto de resultados. Um token de continuação com um valor não vazio será incluso na resposta da API quando os resultados do sistema não couberem em uma única resposta. Quando esse valor for passado para a próxima chamada de API, a API retornará o próximo conjunto de resultados. Se não houver mais resultados, o token de continuação não conterá um valor. O valor desse parâmetro não deve ser codificado em URL. |
@@ -152,7 +151,7 @@ O ponto de extremidade GetReplicas retorna informações sobre as réplicas da p
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -163,7 +162,7 @@ Essa API simula uma falha de réplica do Service Fabric removendo uma réplica d
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --node-name                [Obrigatório] | O nome do nó. |
 | --partition-id [Obrigatório] | A identidade da partição. |
@@ -177,7 +176,7 @@ Essa API simula uma falha de réplica do Service Fabric removendo uma réplica d
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -186,9 +185,9 @@ Envia um relatório de integridade sobre a réplica do Service Fabric.
 
 Relata o estado de integridade da réplica de malha do serviço especificado. O relatório deve conter as informações sobre a origem do relatório de integridade e propriedade na qual ele será relatado. O relatório é enviado a um gateway do Service Fabric réplica, que encaminha para o repositório de integridade. O relatório pode ser aceito pelo gateway, mas rejeitado pelo repositório de integridade após validação adicional. Por exemplo, o repositório de integridade pode rejeitar o relatório devido a um parâmetro inválido, como um número de sequência obsoleto. Para ver se o relatório foi aplicado no repositório de integridade, execute para obter a integridade da réplica e verifique se o relatório é exibido na seção HealthEvents.
 
-### <a name="arguments"></a>Argumentos
+### <a name="arguments"></a>Arguments
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --health-property [Obrigatório] | A propriedade das informações de integridade. <br><br> Uma entidade pode ter relatórios de integridade para propriedades diferentes. A propriedade é uma cadeia de caracteres e não uma enumeração fixa para permitir ao relator flexibilidade para categorizar a condição de estado que dispara o relatório. Por exemplo, um relator com SourceId "LocalWatchdog" pode monitorar o estado do disco disponível em um nó, para poder relatar a propriedade "AvailableDisk" nesse nó. O mesmo relator pode monitorar a conectividade do nó, para que ele possa relatar a "Conectividade" de uma propriedade no mesmo nó. No repositório de integridade, esses relatórios são tratados como eventos de integridade distintos para o nó especificado. Junto com a SourceId, a propriedade identifica exclusivamente as informações de integridade. |
 | --health-state    [Obrigatório] | Os valores possíveis são\: 'Invalid', 'Ok', 'Warning', 'Error', 'Unknown'. |
@@ -209,7 +208,7 @@ Relata o estado de integridade da réplica de malha do serviço especificado. O 
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -220,7 +219,7 @@ Reinicia uma réplica de serviço de um serviço persistente em execução em um
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --node-name                [Obrigatório] | O nome do nó. |
 | --partition-id [Obrigatório] | A identidade da partição. |
@@ -233,7 +232,7 @@ Reinicia uma réplica de serviço de um serviço persistente em execução em um
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
