@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/9/2019
 ms.author: mlearned
-ms.openlocfilehash: e9b654fc49a953f8fdbc9125c6f12486e0ab7b13
-ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
+ms.openlocfilehash: ffdb11420e239125ac3320964a7071c2ab2bdc7e
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68949501"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019112"
 ---
 # <a name="preview---create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Visualização – criar e gerenciar vários pools de nós para um cluster no serviço kubernetes do Azure (AKS)
 
@@ -90,7 +90,7 @@ Embora esse recurso esteja em versão prévia, as seguintes limitações adicion
 
 ## <a name="create-an-aks-cluster"></a>Criar um cluster AKS
 
-Para começar, crie um cluster AKS com um único pool de nós. O exemplo a seguir usa o comando [AZ Group Create][az-group-create] para criar um grupo de recursos chamado MyResource Group na região *eastus* . Um cluster AKS chamado *myAKSCluster* é então criado usando o comando [AZ AKs Create][az-aks-create] . A *--kubernetes-Version* de *1.13.5* é usada para mostrar como atualizar um pool de nós em uma etapa seguinte. Você pode especificar qualquer [versão do kubernetes com suporte][supported-versions].
+Para começar, crie um cluster AKS com um único pool de nós. O exemplo a seguir usa o comando [AZ Group Create][az-group-create] para criar um grupo de recursos chamado MyResource Group na região *eastus* . Um cluster AKS chamado *myAKSCluster* é então criado usando o comando [AZ AKs Create][az-aks-create] . A *--kubernetes-Version* de *1.13.9* é usada para mostrar como atualizar um pool de nós em uma etapa seguinte. Você pode especificar qualquer [versão do kubernetes com suporte][supported-versions].
 
 ```azurecli-interactive
 # Create a resource group in East US
@@ -103,7 +103,7 @@ az aks create \
     --enable-vmss \
     --node-count 1 \
     --generate-ssh-keys \
-    --kubernetes-version 1.13.5
+    --kubernetes-version 1.13.9
 ```
 
 São necessários alguns minutos para criar o cluster.
@@ -124,56 +124,96 @@ az aks nodepool add \
     --cluster-name myAKSCluster \
     --name mynodepool \
     --node-count 3 \
-    --kubernetes-version 1.12.6
+    --kubernetes-version 1.12.7
 ```
 
 Para ver o status dos pools de nós, use o comando [AZ AKs node pool List][az-aks-nodepool-list] e especifique o grupo de recursos e o nome do cluster:
 
 ```azurecli-interactive
-az aks nodepool list --resource-group myResourceGroup --cluster-name myAKSCluster -o table
+az aks nodepool list --resource-group myResourceGroup --cluster-name myAKSCluster
 ```
 
 A saída de exemplo a seguir mostra que *mynodepool* foi criado com êxito com três nós no pool de nós. Quando o cluster AKS foi criado na etapa anterior, um *nodepool1* padrão foi criado com uma contagem de nós de *1*.
 
 ```console
-$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster -o table
+$ az aks nodepool list --resource-group myResourceGroup --cluster-name myAKSCluster
 
-AgentPoolType            Count    MaxPods    Name        OrchestratorVersion    OsDiskSizeGb    OsType    ProvisioningState    ResourceGroup    VmSize
------------------------  -------  ---------  ----------  ---------------------  --------------  --------  -------------------  ---------------  ---------------
-VirtualMachineScaleSets  3        110        mynodepool  1.13.5                 100             Linux     Succeeded            myResourceGroup  Standard_DS2_v2
-VirtualMachineScaleSets  1        110        nodepool1   1.13.5                 100             Linux     Succeeded            myResourceGroup  Standard_DS2_v2
+[
+  {
+    ...
+    "count": 3,
+    ...
+    "name": "mynodepool",
+    "orchestratorVersion": "1.12.7",
+    ...
+    "vmSize": "Standard_DS2_v2",
+    ...
+  },
+  {
+    ...
+    "count": 1,
+    ...
+    "name": "nodepool1",
+    "orchestratorVersion": "1.13.9",
+    ...
+    "vmSize": "Standard_DS2_v2",
+    ...
+  }
+]
 ```
 
 > [!TIP]
-> Se nenhum *OrchestratorVersion* ou *VmSize* for especificado quando você adicionar um pool de nós, os nós serão criados com base nos padrões para o cluster AKs. Neste exemplo, foi kubernetes a versão *1.13.5* e o tamanho do nó de *Standard_DS2_v2*.
+> Se nenhum *OrchestratorVersion* ou *VmSize* for especificado quando você adicionar um pool de nós, os nós serão criados com base nos padrões para o cluster AKs. Neste exemplo, foi kubernetes a versão *1.13.9* e o tamanho do nó de *Standard_DS2_v2*.
 
 ## <a name="upgrade-a-node-pool"></a>Atualizar um pool de nós
 
-Quando o cluster AKs foi criado na primeira etapa, um `--kubernetes-version` de *1.13.5* foi especificado. Isso define a versão kubernetes para o plano de controle e o pool de nós inicial. Há comandos diferentes para atualizar a versão kubernetes do plano de controle e o pool de nós. O `az aks upgrade` comando é usado para atualizar o plano de controle, enquanto `az aks nodepool upgrade` o é usado para atualizar um pool de nós individual.
+Quando o cluster AKs foi criado na primeira etapa, um `--kubernetes-version` de *1.13.9* foi especificado. Isso define a versão kubernetes para o plano de controle e o pool de nós inicial. Há comandos diferentes para atualizar a versão kubernetes do plano de controle e o pool de nós. O `az aks upgrade` comando é usado para atualizar o plano de controle, enquanto `az aks nodepool upgrade` o é usado para atualizar um pool de nós individual.
 
-Vamos atualizar o *mynodepool* para kubernetes *1.13.7*. Use o comando [AZ AKs node pool upgrade][az-aks-nodepool-upgrade] para atualizar o pool de nós, conforme mostrado no exemplo a seguir:
+Vamos atualizar o *mynodepool* para kubernetes *1.13.9*. Use o comando [AZ AKs node pool upgrade][az-aks-nodepool-upgrade] para atualizar o pool de nós, conforme mostrado no exemplo a seguir:
 
 ```azurecli-interactive
 az aks nodepool upgrade \
     --resource-group myResourceGroup \
     --cluster-name myAKSCluster \
     --name mynodepool \
-    --kubernetes-version 1.13.7 \
+    --kubernetes-version 1.13.9 \
     --no-wait
 ```
 
 > [!Tip]
-> Para atualizar o plano de controle para *1.13.7*, `az aks upgrade -k 1.13.7`execute.
+> Para atualizar o plano de controle para *1.14.5*, `az aks upgrade -k 1.14.5`execute.
 
-Liste o status dos pools de nós novamente usando o comando [AZ AKs node pool List][az-aks-nodepool-list] . O exemplo a seguir mostra que *mynodepool* está no estado *atualizando* para *1.13.7*:
+Liste o status dos pools de nós novamente usando o comando [AZ AKs node pool List][az-aks-nodepool-list] . O exemplo a seguir mostra que *mynodepool* está no estado *atualizando* para *1.13.9*:
 
 ```console
-$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster -o table
+$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
 
-AgentPoolType            Count    MaxPods    Name        OrchestratorVersion    OsDiskSizeGb    OsType    ProvisioningState    ResourceGroup    VmSize
------------------------  -------  ---------  ----------  ---------------------  --------------  --------  -------------------  ---------------  ---------------
-VirtualMachineScaleSets  3        110        mynodepool  1.13.7                 100             Linux     Upgrading            myResourceGroup  Standard_DS2_v2
-VirtualMachineScaleSets  1        110        nodepool1   1.13.5                 100             Linux     Succeeded            myResourceGroup  Standard_DS2_v2
+[
+  {
+    ...
+    "count": 3,
+    ...
+    "name": "mynodepool",
+    "orchestratorVersion": "1.13.9",
+    ...
+    "provisioningState": "Upgrading",
+    ...
+    "vmSize": "Standard_DS2_v2",
+    ...
+  },
+  {
+    ...
+    "count": 1,
+    ...
+    "name": "nodepool1",
+    "orchestratorVersion": "1.13.9",
+    ...
+    "provisioningState": "Succeeded",
+    ...
+    "vmSize": "Standard_DS2_v2",
+    ...
+  }
+]
 ```
 
 Leva alguns minutos para atualizar os nós para a versão especificada.
@@ -209,12 +249,34 @@ az aks nodepool scale \
 Liste o status dos pools de nós novamente usando o comando [AZ AKs node pool List][az-aks-nodepool-list] . O exemplo a seguir mostra que *mynodepool* está no estado de *dimensionamento* com uma nova contagem de *5* nós:
 
 ```console
-$ az aks nodepool list -g myResourceGroupPools --cluster-name myAKSCluster -o table
+$ az aks nodepool list -g myResourceGroupPools --cluster-name myAKSCluster
 
-AgentPoolType            Count    MaxPods    Name        OrchestratorVersion    OsDiskSizeGb    OsType    ProvisioningState    ResourceGroup    VmSize
------------------------  -------  ---------  ----------  ---------------------  --------------  --------  -------------------  ---------------  ---------------
-VirtualMachineScaleSets  5        110        mynodepool  1.13.7                 100             Linux     Scaling              myResourceGroup  Standard_DS2_v2
-VirtualMachineScaleSets  1        110        nodepool1   1.13.5                 100             Linux     Succeeded            myResourceGroup  Standard_DS2_v2
+[
+  {
+    ...
+    "count": 5,
+    ...
+    "name": "mynodepool",
+    "orchestratorVersion": "1.13.9",
+    ...
+    "provisioningState": "Scaling",
+    ...
+    "vmSize": "Standard_DS2_v2",
+    ...
+  },
+  {
+    ...
+    "count": 1,
+    ...
+    "name": "nodepool1",
+    "orchestratorVersion": "1.13.9",
+    ...
+    "provisioningState": "Succeeded",
+    ...
+    "vmSize": "Standard_DS2_v2",
+    ...
+  }
+]
 ```
 
 Leva alguns minutos para que a operação de dimensionamento seja concluída.
@@ -237,12 +299,34 @@ az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster --name myn
 A saída de exemplo a seguir do comando [AZ AKs node pool List][az-aks-nodepool-list] mostra que *mynodepool* está no estado *excluindo* :
 
 ```console
-$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster -o table
+$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
 
-AgentPoolType            Count    MaxPods    Name        OrchestratorVersion    OsDiskSizeGb    OsType    ProvisioningState    ResourceGroup    VmSize
------------------------  -------  ---------  ----------  ---------------------  --------------  --------  -------------------  ---------------  ---------------
-VirtualMachineScaleSets  5        110        mynodepool  1.13.7                 100             Linux     Deleting             myResourceGroup  Standard_DS2_v2
-VirtualMachineScaleSets  1        110        nodepool1   1.13.5                 100             Linux     Succeeded            myResourceGroup  Standard_DS2_v2
+[
+  {
+    ...
+    "count": 5,
+    ...
+    "name": "mynodepool",
+    "orchestratorVersion": "1.13.9",
+    ...
+    "provisioningState": "Deleting",
+    ...
+    "vmSize": "Standard_DS2_v2",
+    ...
+  },
+  {
+    ...
+    "count": 1,
+    ...
+    "name": "nodepool1",
+    "orchestratorVersion": "1.13.9",
+    ...
+    "provisioningState": "Succeeded",
+    ...
+    "vmSize": "Standard_DS2_v2",
+    ...
+  }
+]
 ```
 
 Leva alguns minutos para excluir os nós e o pool de nós.
@@ -268,12 +352,34 @@ az aks nodepool add \
 A saída de exemplo a seguir do comando [AZ AKs node pool List][az-aks-nodepool-list] mostra que *gpunodepool* está *criando* nós com o *VmSize*especificado:
 
 ```console
-$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster -o table
+$ az aks nodepool list -g myResourceGroup --cluster-name myAKSCluster
 
-AgentPoolType            Count    MaxPods    Name         OrchestratorVersion    OsDiskSizeGb    OsType    ProvisioningState    ResourceGroup    VmSize
------------------------  -------  ---------  -----------  ---------------------  --------------  --------  -------------------  ---------------  ---------------
-VirtualMachineScaleSets  1        110        gpunodepool  1.13.5                 100             Linux     Creating             myResourceGroup  Standard_NC6
-VirtualMachineScaleSets  1        110        nodepool1    1.13.5                 100             Linux     Succeeded            myResourceGroup  Standard_DS2_v2
+[
+  {
+    ...
+    "count": 1,
+    ...
+    "name": "gpunodepool",
+    "orchestratorVersion": "1.13.9",
+    ...
+    "provisioningState": "Creating",
+    ...
+    "vmSize": "Standard_NC6",
+    ...
+  },
+  {
+    ...
+    "count": 1,
+    ...
+    "name": "nodepool1",
+    "orchestratorVersion": "1.13.9",
+    ...
+    "provisioningState": "Succeeded",
+    ...
+    "vmSize": "Standard_DS2_v2",
+    ...
+  }
+]
 ```
 
 Leva alguns minutos para que o *gpunodepool* seja criado com êxito.
@@ -286,8 +392,8 @@ Agora você tem dois pools de nós no cluster – o pool de nós padrão inicial
 $ kubectl get nodes
 
 NAME                                 STATUS   ROLES   AGE     VERSION
-aks-gpunodepool-28993262-vmss000000  Ready    agent   4m22s   v1.13.5
-aks-nodepool1-28993262-vmss000000    Ready    agent   115m    v1.13.5
+aks-gpunodepool-28993262-vmss000000  Ready    agent   4m22s   v1.13.9
+aks-nodepool1-28993262-vmss000000    Ready    agent   115m    v1.13.9
 ```
 
 O Agendador Kubernetes pode usar taints e tolerations para restringir quais cargas de trabalho podem ser executados em nós.
@@ -364,7 +470,7 @@ Ao usar um modelo de Azure Resource Manager para criar e gerenciar recursos, voc
 Crie um modelo, `aks-agentpools.json` como e cole o exemplo de manifesto a seguir. Este modelo de exemplo define as seguintes configurações:
 
 * Atualiza o pool de agentes do *Linux* chamado *myagentpool* para executar três nós.
-* Define os nós no pool de nós para executar o kubernetes versão *1.13.5*.
+* Define os nós no pool de nós para executar o kubernetes versão *1.13.9*.
 * Define o tamanho do nó como *Standard_DS2_v2*.
 
 Edite esses valores conforme necessário para atualizar, adicionar ou excluir pools de nós conforme necessário:
@@ -429,7 +535,7 @@ Edite esses valores conforme necessário para atualizar, adicionar ou excluir po
             "storageProfile": "ManagedDisks",
       "type": "VirtualMachineScaleSets",
             "vnetSubnetID": "[variables('agentPoolProfiles').vnetSubnetId]",
-            "orchestratorVersion": "1.13.5"
+            "orchestratorVersion": "1.13.9"
       }
     }
   ]
@@ -454,7 +560,7 @@ Os nós AKS não exigem seus próprios endereços IP públicos para comunicaçã
 az feature register --name NodePublicIPPreview --namespace Microsoft.ContainerService
 ```
 
-Após o registro bem-sucedido, implante um modelo de Azure Resource Manager seguindo as mesmas instruções [acima](##manage-node-pools-using-a-resource-manager-template) e adicionando a propriedade de valor booliano a seguir "enableNodePublicIP" no agentPoolProfiles. Defina como, por padrão, será definido como `false` se não for especificado. `true` Esta é uma propriedade somente de tempo de criação e requer uma versão de API mínima de 2019-06-01. Isso pode ser aplicado a pools de nós do Linux e do Windows.
+Após o registro bem-sucedido, implante um modelo de Azure Resource Manager seguindo as mesmas instruções [acima](#manage-node-pools-using-a-resource-manager-template) e adicionando a propriedade de valor booliano a seguir "enableNodePublicIP" no agentPoolProfiles. Defina como, por padrão, será definido como `false` se não for especificado. `true` Esta é uma propriedade somente de tempo de criação e requer uma versão de API mínima de 2019-06-01. Isso pode ser aplicado a pools de nós do Linux e do Windows.
 
 ```
 "agentPoolProfiles":[  
@@ -464,7 +570,7 @@ Após o registro bem-sucedido, implante um modelo de Azure Resource Manager segu
       "agentCount": 3,
       "agentVmSize": "Standard_DS2_v2",
       "osType": "Linux",
-      "vnetSubnetId": "[parameters('vnetSubnetId')]"
+      "vnetSubnetId": "[parameters('vnetSubnetId')]",
       "enableNodePublicIP":true
     }
 ```

@@ -1,9 +1,9 @@
 ---
-title: Analisar logs de atividade do Azure Active Directory usando os logs do Azure Monitor | Microsoft Docs
-description: Saiba como analisar logs de atividade do Azure Active Directory usando os logs do Azure Monitor
+title: Analisar Azure Active Directory logs de atividades usando logs de Azure Monitor | Microsoft Docs
+description: Saiba como analisar Azure Active Directory logs de atividades usando logs de Azure Monitor
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: 4535ae65-8591-41ba-9a7d-b7f00c574426
@@ -14,17 +14,17 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 04/18/2019
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4145ea2162cdd56deb8bbdcfa81d5a90a2ed9382
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 77eb03089d956d0fb32ef0463b3d1cdb49ff0dbb
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67611564"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989822"
 ---
-# <a name="analyze-azure-ad-activity-logs-with-azure-monitor-logs"></a>Azure AD de analisar os logs de atividade com logs do Azure Monitor
+# <a name="analyze-azure-ad-activity-logs-with-azure-monitor-logs"></a>Analisar logs de atividades do Azure AD com logs de Azure Monitor
 
 Depois de [integrar os logs de atividades do Azure AD com os logs do Azure Monitor](howto-integrate-activity-logs-with-log-analytics.md), você pode usar o poder dos logs do Azure Monitor para obter insights sobre seu ambiente. Você também pode instalar as [exibições do Log Analytics para logs de atividade do Azure AD](howto-install-use-log-analytics-views.md) para obter acesso a relatórios pré-criados em torno de eventos de auditoria e entrada em seu ambiente.
 

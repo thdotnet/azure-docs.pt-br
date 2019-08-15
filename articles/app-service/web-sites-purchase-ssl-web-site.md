@@ -16,12 +16,12 @@ ms.date: 10/16/2018
 ms.author: cephalin
 ms.reviewer: apurvajo
 ms.custom: seodec18
-ms.openlocfilehash: e7768eb29caf66fd8f666a9475ac0787826a47e0
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 7675a22b4b2d8b13524f06f45d6bb805c1e2fad1
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67618911"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019143"
 ---
 # <a name="buy-and-configure-an-ssl-certificate-for-azure-app-service"></a>Comprar e configurar um certificado SSL para o Serviço de Aplicativo do Azure
 
@@ -48,14 +48,14 @@ Inicie um pedido de certificado de Serviço de Aplicativo na <a href="https://po
 
 Use a tabela a seguir para ajudá-lo a configurar o certificado. Ao terminar, clique em **Criar**.
 
-| Configuração | DESCRIÇÃO |
+| Configuração | Descrição |
 |-|-|
 | Nome | Um nome amigável para o seu certificado de Serviço de Aplicativo. |
-| Nome do Host do Domínio Raiz | Se você especificar o domínio raiz aqui, você obtém um certificado que protege *os dois*: o domínio raiz e o subdomínio `www`. Para proteger apenas um subdomínio qualquer, especifique aqui o nome de domínio totalmente qualificado do subdomínio (por exemplo, `mysubdomain.contoso.com`). |
+| Nome do Host do Domínio Raiz | Especifique o domínio raiz aqui. O certificado emitido protege o domínio raiz e o `www` subdomínio. No certificado emitido, o campo nome comum contém o domínio raiz e o campo nome alternativo da entidade contém o `www` domínio. Para proteger apenas um subdomínio qualquer, especifique aqui o nome de domínio totalmente qualificado do subdomínio (por exemplo, `mysubdomain.contoso.com`).|
 | Assinatura | O datacenter onde o aplicativo Web está hospedado. |
 | Grupo de recursos | O grupo de recursos que contém o certificado. Você pode usar um novo grupo de recursos ou selecionar o mesmo grupo de recursos que seu aplicativo de Serviço de Aplicativo, por exemplo. |
-| Certificado SKU | Determina o tipo de certificado para criar, se um certificado padrão ou uma [certificado curinga](https://wikipedia.org/wiki/Wildcard_certificate). |
-| Termos legais | Clique para confirmar que você concorda com os termos legais. Os certificados são obtidos do GoDaddy. |
+| SKU do Certificado | Determina o tipo de certificado para criar, se um certificado padrão ou uma [certificado curinga](https://wikipedia.org/wiki/Wildcard_certificate). |
+| Termos legais | Clique para confirmar que você concorda com os termos legais. Os certificados são obtidos de GoDaddy. |
 
 ## <a name="store-in-azure-key-vault"></a>Armazenar no Azure Key Vault
 
@@ -69,9 +69,9 @@ O [Cofre da Chave](https://docs.microsoft.com/azure/key-vault/key-vault-whatis) 
 
 Na página **Status do Key Vault**, clique em **Repositório do Key Vault** para criar um novo cofre ou escolher um cofre existente. Se você optar por criar um novo cofre, use a tabela a seguir para ajudá-lo a configurar o cofre e clique em Criar. veja para criar novo Key Vault no mesmo grupo de recursos e assinatura.
 
-| Configuração | DESCRIÇÃO |
+| Configuração | Descrição |
 |-|-|
-| NOME | Um nome exclusivo que consiste em caracteres alfanuméricos e traços. |
+| Nome | Um nome exclusivo que consiste em caracteres alfanuméricos e traços. |
 | Grupo de recursos | Como recomendação, selecione o mesmo grupo de recursos do seu certificado de Serviço de Aplicativo. |
 | Location | Selecione o mesmo local que o aplicativo de Serviço de Aplicativo. |
 | Tipo de preço | Para obter mais informações, confira [Detalhes de preços do Azure Key Vault](https://azure.microsoft.com/pricing/details/key-vault/). |
@@ -80,7 +80,7 @@ Na página **Status do Key Vault**, clique em **Repositório do Key Vault** para
 
 Depois de selecionar o cofre, feche a página **Repositório do Key Vault**. A opção **Armazenar** deve mostrar uma marca de seleção verde para sucesso. Mantenha a página aberta para a próxima etapa.
 
-## <a name="verify-domain-ownership"></a>Verificar a propriedade de domínio
+## <a name="verify-domain-ownership"></a>Verificar a propriedade do domínio
 
 Na mesma página **Configuração do Certificado** usada na última etapa, clique em **Etapa 2: verificar**.
 
@@ -112,7 +112,7 @@ Agora que o certificado foi importado, você precisa associá-lo a um nome de do
 
 Use a tabela a seguir para ajudá-lo a configurar a associação na caixa de diálogo **Associações SSL** e, em seguida, clique em **Adicionar Associação**.
 
-| Configuração | DESCRIÇÃO |
+| Configuração | Descrição |
 |-|-|
 | Nome do host | O nome de domínio ao qual adicionar a associação SSL. |
 | Impressão Digital do Certificado Privado | O certificado a ser associado. |
@@ -124,18 +124,18 @@ Visite seu aplicativo usando `HTTPS://<domain_name>`, em vez de `HTTP://<domain_
 
 ## <a name="rekey-certificate"></a>Certificado de rechaveamento
 
-Se você achar que seu certificado 's privado chave estiver comprometida, você pode fazer o rechaveamento da seu certificado. Selecione o certificado na [certificados do serviço de aplicativo](https://portal.azure.com/#blade/HubsExtension/Resources/resourceType/Microsoft.CertificateRegistration%2FcertificateOrders) página e, em seguida, selecione **rechaveamento e sincronização** na navegação à esquerda.
+Se você considerar que a chave privada do certificado está comprometida, poderá refazer o seu certificado. Selecione o certificado na página [certificados do serviço de aplicativo](https://portal.azure.com/#blade/HubsExtension/Resources/resourceType/Microsoft.CertificateRegistration%2FcertificateOrders) e, em seguida, selecione rechaveamento **e sincronização** no painel de navegação esquerdo.
 
-Clique em **rechaveamento** para iniciar o processo. Esse processo pode demorar de um a 10 minutos para ser concluído.
+Clique em rechaveamento para iniciar o processo. Esse processo pode demorar de um a 10 minutos para ser concluído.
 
 ![inserir imagem de Rechaveamento SSL](./media/app-service-web-purchase-ssl-web-site/Rekey.png)
 
 A criação de uma nova chave para o certificado causará a emissão de um novo certificado pela autoridade de certificação.
 
-Depois que a operação de rechaveamento for concluída, clique em **sincronização**. A operação de sincronização atualiza automaticamente as associações de nome de host para o certificado no serviço de aplicativo sem causar nenhum tempo de inatividade para seus aplicativos.
+Quando a operação de rechaveamento for concluída, clique em **sincronizar**. A operação de sincronização atualiza automaticamente as associações de nome de host para o certificado no serviço de aplicativo sem causar nenhum tempo de inatividade para seus aplicativos.
 
 > [!NOTE]
-> Se você não clicar **sincronização**, serviço de aplicativo sincroniza automaticamente seu certificado dentro de 48 horas.
+> Se você não clicar em **sincronizar**, o serviço de aplicativo sincronizará automaticamente seu certificado dentro de 48 horas.
 
 ## <a name="renew-certificate"></a>Renovar certificado
 
@@ -143,14 +143,14 @@ Para ativar a renovação automática do seu certificado a qualquer momento, sel
 
 Selecione **Ativado** e clique em **Salvar**. Os certificados poderão iniciar automaticamente renovação 60 dias antes do término se você tiver ativado a renovação automática.
 
-![renovar o certificado automaticamente](./media/app-service-web-purchase-ssl-web-site/auto-renew.png)
+![renovar certificado automaticamente](./media/app-service-web-purchase-ssl-web-site/auto-renew.png)
 
 Para renovar manualmente o certificado, clique em **Renovação Manual**. Você pode solicitar renovar manualmente o certificado de 60 dias antes da expiração.
 
-Depois que a operação de renovação for concluída, clique em **sincronização**. A operação de sincronização atualiza automaticamente as associações de nome de host para o certificado no serviço de aplicativo sem causar nenhum tempo de inatividade para seus aplicativos.
+Quando a operação de renovação for concluída, clique em **sincronizar**. A operação de sincronização atualiza automaticamente as associações de nome de host para o certificado no serviço de aplicativo sem causar nenhum tempo de inatividade para seus aplicativos.
 
 > [!NOTE]
-> Se você não clicar **sincronização**, serviço de aplicativo sincroniza automaticamente seu certificado dentro de 48 horas.
+> Se você não clicar em **sincronizar**, o serviço de aplicativo sincronizará automaticamente seu certificado dentro de 48 horas.
 
 ## <a name="automate-with-scripts"></a>Automatizar com scripts
 

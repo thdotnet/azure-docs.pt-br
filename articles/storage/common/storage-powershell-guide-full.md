@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 08/16/2018
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 082033cebc68fc97f7cff9ce80eb02acbbf5f4b0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ac210a03f8b1a0a5f7fff07cbc68b4cd6bc98632
+ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65145888"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69016339"
 ---
 # <a name="using-azure-powershell-with-azure-storage"></a>Usando o PowerShell do Azure com o Armazenamento do Azure
 
@@ -131,7 +131,7 @@ Para alterar as configurações de uma conta de armazenamento, use [Set-AzStorag
 
 * A **marca** atribuída à conta de armazenamento. Geralmente, as marcas são usadas para categorizar recursos para fins de cobrança.
 
-* A **SKU** é a configuração de replicação da conta de armazenamento, como LRS para armazenamento com redundância local. Por exemplo, é possível alterar o \_LRS Padrão\_ para o \_GRS Padrão ou RAGRS Padrão. Observe que não é possível alterar o ZRS\_Standard ou o LRS\_Premium para outras SKUs ou vice-versa.
+* A **SKU** é a configuração de replicação da conta de armazenamento, como LRS para armazenamento com redundância local. Por exemplo, é possível alterar o \_LRS Padrão\_ para o \_GRS Padrão ou RAGRS Padrão. Observe que você não pode alterar\_as ZRS padrão\_, GZRS padrão\_, Standard RAGZRS ou\_Premium LRS para outras SKUs ou alterar outras SKUs para elas.
 
 * A **camada de acesso** das contas de armazenamento de Blobs. O valor da camada de acesso está definido como **ativa** ou **moderada**, e permite reduzir custos selecionando a camada de acesso que se alinha com o uso que você faz da conta de armazenamento. Para saber mais, consulte [Camada de acesso aos arquivos ativa e moderada](../blobs/storage-blob-storage-tiers.md).
 
@@ -199,7 +199,7 @@ O **Registro em Log da Análise de Armazenamento** ocorre no lado do servidor e 
 > É possível habilitar a análise de minuto usando o PowerShell. Essa funcionalidade não está disponível no portal.
 >
 
-* Para saber como habilitar e exibir dados de métricas de armazenamento usando o PowerShell, consulte [métricas do Storage analytics](storage-analytics-metrics.md).
+* Para saber como habilitar e exibir dados de métricas de armazenamento usando o PowerShell, consulte métricas de [análise de armazenamento](storage-analytics-metrics.md).
 
 * Para saber como habilitar e recuperar dados de log de armazenamento usando o PowerShell, confira [How to enable Storage Logging using PowerShell](/rest/api/storageservices/Enabling-Storage-Logging-and-Accessing-Log-Data) (Como habilitar o log de armazenamento usando o PowerShell) e [Finding your Storage Logging log data](/rest/api/storageservices/Enabling-Storage-Logging-and-Accessing-Log-Data) (Localizando os dados do log de armazenamento).
 
@@ -223,7 +223,7 @@ A API de Tabela do Azure Cosmos DB fornece recursos premium para o armazenamento
 A maioria das pessoas usa a Nuvem Pública do Azure em suas implantações globais do Azure. Há também algumas implantações independentes do Microsoft Azure por motivos de soberania e assim por diante. Essas implantações independentes são chamadas de “ambientes”. Estes são os ambientes disponíveis:
 
 * [Nuvem do Azure Governamental](https://azure.microsoft.com/features/gov/)
-* [Nuvem do Azure de 21Vianet na China operada pela 21Vianet na China](http://www.windowsazure.cn/)
+* [Nuvem do Azure China 21Vianet operada pela 21Vianet na China](http://www.windowsazure.cn/)
 * [Nuvem Alemã do Azure](../../germany/germany-welcome.md)
 
 Para saber mais sobre como acessar essas nuvens e seu armazenamento com o PowerShell, veja [Gerenciamento de Armazenamento nas nuvens independentes do Azure usando o PowerShell](storage-powershell-independent-clouds.md).

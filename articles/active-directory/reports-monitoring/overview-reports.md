@@ -3,7 +3,7 @@ title: O que são os relatórios do Azure Active Directory? | Microsoft Docs
 description: Uma visão geral dos relatórios do Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: 6141a333-38db-478a-927e-526f1e7614f4
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 11/13/2018
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 66ccf8014938e813676e9338e9bfc4eaa18f63f9
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.openlocfilehash: 8cf5770cf052a478ea56f906efc19698554a1cd0
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58436941"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989715"
 ---
 # <a name="what-are-azure-active-directory-reports"></a>O que são os relatórios do Azure Active Directory?
 
@@ -63,9 +63,9 @@ Todas as edições do Azure AD fornecem relatórios de usuários sinalizados com
 
 Os relatórios de atividade ajudam você a compreender o comportamento de usuários em sua organização. Há dois tipos de relatórios de atividade no Azure AD:
 
-- **Trilhas de auditoria**: o [relatório de atividade das trilhas de auditoria](concept-audit-logs.md) fornece acesso ao histórico de todas as tarefas executadas em seu locatário.
+- **Logs de auditoria**: o [relatório de atividade dos logs de auditoria](concept-audit-logs.md) fornece acesso ao histórico de todas as tarefas executadas em seu locatário.
 
-- **Entradas**: com o [relatório de atividades de entradas](concept-sign-ins.md), você pode determinar quem realizou as tarefas indicadas pelo relatório das trilhas de auditoria.
+- **Entradas**: com o [relatório de atividades de entradas](concept-sign-ins.md), você pode determinar quem realizou as tarefas indicadas pelo relatório dos logs de auditoria.
 
 
 ### <a name="audit-logs-report"></a>Relatório de logs de auditoria 
@@ -102,5 +102,5 @@ Além da interface do usuário, o Azure AD também oferece a você [acesso progr
 ## <a name="next-steps"></a>Próximas etapas
 
 - [Relatório de entradas de risco](concept-risky-sign-ins.md)
-- [Relatório de trilhas de auditoria](concept-audit-logs.md)
+- [Relatório de logs de auditoria](concept-audit-logs.md)
 - [Relatório de logs de entrada](concept-sign-ins.md)

@@ -6,15 +6,15 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: article
-ms.date: 06/06/2019
+ms.date: 08/12/2019
 ms.author: alinast
 ms.custom: seodec18
-ms.openlocfilehash: be05cec8e3d755f1b04e5ecc5ec7c740053a74d4
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 14c153a6e5837da28060122a629c8cc5df8262cf
+ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67073046"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69013766"
 ---
 # <a name="user-defined-functions-client-library-reference"></a>Biblioteca de clientes com funções definidas pelo usuário
 
@@ -30,7 +30,7 @@ Dado um identificador de espaço, essa função recupera o espaço do grafo.
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ---------- | ------------------- | ------------ |
 | *id*  | `guid` | Identificador de espaço |
 
@@ -40,7 +40,7 @@ Dado um identificador de sensor, essa função recupera o sensor do grafo.
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ---------- | ------------------- | ------------ |
 | *id*  | `guid` | Identificador de sensor |
 
@@ -50,7 +50,7 @@ Dado um identificador de dispositivo, essa função recupera o dispositivo do gr
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *id* | `guid` | Identificador de dispositivo |
 
@@ -60,7 +60,7 @@ Dado um identificador de sensor e o tipo de dados, essa função recupera o valo
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *sensorId*  | `guid` | Identificador de sensor |
 | *dataType*  | `string` | Tipo de dados de sensor |
@@ -71,7 +71,7 @@ Dado um identificador de espaço e o nome do valor, essa função recupera o val
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *spaceId*  | `guid` | Identificador de espaço |
 | *valueName* | `string` | Nome da propriedade de espaço |
@@ -82,7 +82,7 @@ Dado um identificador de sensor e o tipo de dados, essa função recupera os val
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *sensorId* | `guid` | Identificador de sensor |
 | *dataType* | `string` | Tipo de dados de sensor |
@@ -93,7 +93,7 @@ Dado um identificador de espaço e o nome do valor, essa função recupera os va
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *spaceId* | `guid` | Identificador de espaço |
 | *valueName* | `string` | Nome da propriedade de espaço |
@@ -104,7 +104,7 @@ Dado um identificador de espaço, essa função recupera os espaços filhos para
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *spaceId* | `guid` | Identificador de espaço |
 
@@ -114,7 +114,7 @@ Dado um identificador de espaço, essa função recupera os sensores filhos para
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *spaceId* | `guid` | Identificador de espaço |
 
@@ -124,7 +124,7 @@ Dado um identificador de espaço, essa função recupera os dispositivos filhos 
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *spaceId* | `guid` | Identificador de espaço |
 
@@ -134,7 +134,7 @@ Dado um identificador de dispositivo, essa função recupera os sensores filhos 
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *deviceId* | `guid` | Identificador de dispositivo |
 
@@ -144,7 +144,7 @@ Dado um identificador de espaço, essa função recupera o espaço pai.
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *childSpaceId* | `guid` | Identificador de espaço |
 
@@ -154,7 +154,7 @@ Dado um identificador de sensor, essa função recupera o espaço pai.
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *childSensorId* | `guid` | Identificador de sensor |
 
@@ -164,7 +164,7 @@ Dado um identificador de dispositivo, essa função recupera o espaço pai.
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *childDeviceId* | `guid` | Identificador de dispositivo |
 
@@ -174,7 +174,7 @@ Dado um identificador de sensor, essa função recupera o dispositivo pai.
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *childSensorId* | `guid` | Identificador de sensor |
 
@@ -184,7 +184,7 @@ Dado um identificador de espaço, essa função recupera a propriedade e o valor
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *spaceId* | `guid` | Identificador de espaço |
 | *propertyName* | `string` | Nome da propriedade de espaço |
@@ -195,7 +195,7 @@ Dado um identificador de sensor, esta função recupera a propriedade e o valor 
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *sensorId* | `guid` | Identificador de sensor |
 | *propertyName* | `string` | Nome da propriedade do sensor |
@@ -206,7 +206,7 @@ Dado um identificador de dispositivo, essa função recupera a propriedade e o v
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *deviceId* | `guid` | Identificador de dispositivo |
 | *propertyName* | `string` | Nome da propriedade do dispositivo |
@@ -217,11 +217,11 @@ Essa função define um valor no objeto sensor com o tipo de dados dado.
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *sensorId* | `guid` | Identificador de sensor |
 | *dataType*  | `string` | Tipo de dados de sensor |
-| *valor*  | `string` | Value |
+| *value*  | `string` | Valor |
 
 ### <a name="setspacevaluespaceid-datatype-value"></a>setSpaceValue(spaceId, dataType, value)
 
@@ -229,11 +229,11 @@ Essa função define um valor no objeto de espaço com o tipo de dados fornecido
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *spaceId* | `guid` | Identificador de espaço |
 | *dataType* | `string` | Tipo de dados |
-| *valor* | `string` | Value |
+| *value* | `string` | Valor |
 
 ### <a name="logmessage"></a>log(message)
 
@@ -241,7 +241,7 @@ Essa função registra a seguinte mensagem dentro da função definida pelo usu�
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *message* | `string` | Mensagem a ser registrada em log |
 
@@ -251,7 +251,7 @@ Essa função envia uma notificação personalizada a ser despachada.
 
 **Tipo**: função global
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *topologyObjectId*  | `guid` | Identificador de objeto do grafo. Exemplos são espaço, sensor e ID do dispositivo.|
 | *topologyObjectType*  | `string` | Exemplos são sensor e dispositivo.|
@@ -292,7 +292,7 @@ Essa função retorna os dispositivos filhos do espaço atual.
 
 Essa função retorna a propriedade estendida e o valor para o espaço atual.
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *propertyName* | `string` | Nome da propriedade estendida |
 
@@ -300,7 +300,7 @@ Essa função retorna a propriedade estendida e o valor para o espaço atual.
 
 Essa função retorna o valor do espaço atual.
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *valueName* | `string` | Nome do valor |
 
@@ -308,7 +308,7 @@ Essa função retorna o valor do espaço atual.
 
 Essa função retorna os valores históricos do espaço atual.
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *valueName* | `string` | Nome do valor |
 
@@ -316,11 +316,11 @@ Essa função retorna os valores históricos do espaço atual.
 
 Essa função envia uma notificação com a carga especificada.
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *payload* | `string` | payload JSON a ser incluído na notificação |
 
-### <a name="device"></a>Dispositivo
+### <a name="device"></a>Dispositivos
 
 ```JSON
 {
@@ -352,7 +352,7 @@ Essa função retorna os sensores filhos do dispositivo atual.
 
 Essa função retorna a propriedade estendida e o valor para o dispositivo atual.
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *propertyName* | `string` | Nome da propriedade estendida |
 
@@ -360,7 +360,7 @@ Essa função retorna a propriedade estendida e o valor para o dispositivo atual
 
 Essa função envia uma notificação com a carga especificada.
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *payload* | `string` | payload JSON a ser incluído na notificação |
 
@@ -400,7 +400,7 @@ Essa função retorna o dispositivo pai do sensor atual.
 
 Essa função retorna a propriedade estendida e o valor para o sensor atual.
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *propertyName* | `string` | Nome da propriedade estendida |
 
@@ -416,11 +416,11 @@ Esta função retorna os valores históricos do sensor atual.
 
 Essa função envia uma notificação com a carga especificada.
 
-| Parâmetro  | Type                | DESCRIÇÃO  |
+| Parâmetro  | Tipo                | Descrição  |
 | ------ | ------------------- | ------------ |
 | *payload* | `string` | payload JSON a ser incluído na notificação |
 
-### <a name="value"></a>Value
+### <a name="value"></a>Valor
 
 ```JSON
 {

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
-ms.openlocfilehash: c1da9ec6098864d4f17ac668db6411c1dd0e3afe
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 371ad2a8530de7b20427327d939bf164d871ab74
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67095649"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68944036"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ontrack"></a>Tutorial: Integração do Azure Active Directory ao OnTrack
 
@@ -120,7 +120,7 @@ Para configurar o logon único do Azure AD com o OnTrack, realize as seguintes e
     > [!NOTE]
     > Esses valores não são reais. Atualize esses valores com o Identificador e a URL de Resposta reais. Contate a [equipe de suporte ao cliente do OnTrack](mailto:CustomerService@insigniagroup.com) para obter esses valores. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
 
-5. O aplicativo OnTrack espera as declarações SAML em um formato específico, o que requer que você inclua mapeamentos de atributos personalizados na configuração de atributos de token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para abrir a caixa de diálogo **Atributos de Usuário** .
+5. O aplicativo OnTrack espera as declarações SAML em um formato específico, o que requer que você inclua mapeamentos de atributos personalizados na configuração de atributos de token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para abrir a caixa de diálogo **Atributos de Usuário**.
 
     ![image](common/edit-attribute.png)
 
@@ -223,7 +223,7 @@ Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure
 
 ### <a name="create-ontrack-test-user"></a>Criar usuário de teste do OnTrack
 
-Nesta seção, você criará um usuário chamado Brenda Fernandes no OnTrack. Trabalhe com a  [equipe de suporte do OnTrack](mailto:CustomerService@insigniagroup.com) para adicionar os usuários à plataforma do OnTrack. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará um usuário chamado Brenda Fernandes no OnTrack. Trabalhe com a [equipe de suporte do OnTrack](mailto:CustomerService@insigniagroup.com) para adicionar os usuários na plataforma do OnTrack. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-single-sign-on"></a>Testar logon único 
 
@@ -237,5 +237,5 @@ Ao clicar no bloco do OnTrack no Painel de Acesso, você deverá ser conectado a
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

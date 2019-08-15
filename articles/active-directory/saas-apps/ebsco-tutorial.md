@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/01/2019
 ms.author: jeedes
-ms.openlocfilehash: b6f1198334d8bd4ba58b4fbba02942fc8c54c578
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 35cb408473da8c6397c5034ae20ac0a50b0953ea
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67442855"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68944714"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ebsco"></a>Tutorial: Integração do Azure Active Directory ao EBSCO
 
@@ -124,7 +124,7 @@ Para configurar o logon único do Azure AD com o EBSCO, execute as seguintes eta
 
     o   **Profile** = Clientes podem personalizar o link para direcionar usuários a um perfil específico (dependendo do que adquirirem do EBSCO). Eles podem digitar uma ID de perfil específica. As IDs principais são eds (Serviço de descoberta de EBSCO) e ehost (bancos de dados do EBSOCOhost). Instruções para isso são fornecidas [aqui](https://help.ebsco.com/interfaces/EBSCOhost/EBSCOhost_FAQs/How_do_I_set_up_direct_links_to_EBSCOhost_profiles_and_or_databases#profile).
 
-6. O aplicativo EBSCO espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para abrir a caixa de diálogo **Atributos de Usuário** .
+6. O aplicativo EBSCO espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para abrir a caixa de diálogo **Atributos de Usuário**.
 
     ![image](common/edit-attribute.png)
 
@@ -257,5 +257,5 @@ Para saber mais sobre o Painel de Acesso, veja [Introdução ao Painel de Acesso
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

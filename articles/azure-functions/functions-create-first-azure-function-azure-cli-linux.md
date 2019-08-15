@@ -11,12 +11,12 @@ ms.service: azure-functions
 ms.custom: mvc, fasttrack-edit
 ms.devlang: javascript
 manager: jeconnoc
-ms.openlocfilehash: 857646bb1b9b317f1e51218d258616e775056b43
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 84e05b7afa2746587f2ea5008d493730ccbfad7e
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67442270"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68950033"
 ---
 # <a name="create-your-first-function-hosted-on-linux-using-core-tools-and-the-azure-cli-preview"></a>Criar sua primeira função hospedada no Linux usando o Core Tools e a CLI do Azure (versão prévia)
 
@@ -38,34 +38,7 @@ Antes de executar este exemplo, você deve ter o seguinte:
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="create-the-local-function-app-project"></a>Criar o projeto de aplicativo de funções local
-
-Execute o comando a seguir na linha de comando para criar um projeto de aplicativo de funções na pasta `MyFunctionProj` do diretório local atual. Um repositório GitHub também é criado em `MyFunctionProj`.
-
-```bash
-func init MyFunctionProj
-```
-
-Quando solicitado, use as teclas de direção para selecionar um tempo de execução do trabalho entre as seguintes opções de linguagem:
-
-+ `dotnet`: cria um projeto de biblioteca de classes do .NET (.csproj).
-+ `node`: cria um projeto de JavaScript ou TypeScript. Quando solicitado, escolha `JavaScript`.
-+ `python`: cria um projeto do Python. Para as funções do Python, confira o [Início rápido do Python](functions-create-first-function-python.md).
-
-Quando o comando for executado, você verá algo parecido com a seguinte saída:
-
-```output
-Writing .gitignore
-Writing host.json
-Writing local.settings.json
-Initialized empty Git repository in C:/functions/MyFunctionProj/.git/
-```
-
-Use o comando a seguir para navegar até a nova pasta do projeto `MyFunctionProj`.
-
-```bash
-cd MyFunctionProj
-```
+[!INCLUDE [functions-create-function-app-cli](../../includes/functions-create-function-app-cli.md)]
 
 ## <a name="enable-extension-bundles"></a>Habilitar pacotes de extensão
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: 8d1f974b7fea72bede2ead2e9d971419d5e83cb2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4267b75be72c1d162b4abaf7184afcdd02c38720
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67087537"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68943101"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-vibe-hcm"></a>Tutorial: Integração do Azure Active Directory com o Vibe HCM
 
@@ -101,7 +101,7 @@ Para configurar o logon único do Azure AD com o Vibe HCM, execute as seguintes 
 
     ![Editar a Configuração Básica de SAML](common/edit-urls.png)
 
-4. Na seção **Configuração Básica de SAML**, se você desejar configurar o aplicativo no modo iniciado pelo **IDP** , o usuário não precisará executar nenhuma etapa, pois o aplicativo já estará pré-integrado ao Azure.
+4. Na seção **Configuração Básica de SAML**, se você desejar configurar o aplicativo no modo iniciado pelo **IDP**, o usuário não precisará executar nenhuma etapa, pois o aplicativo já estará pré-integrado ao Azure.
 
     ![Informações de logon único de Domínio e URLs do HCM](common/preintegrated.png)
 
@@ -174,7 +174,7 @@ Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure
 
 ### <a name="create-vibe-hcm-test-user"></a>Criar usuário de teste de Vibe HCM
 
-Nesta seção, você criará uma usuária chamado Brenda Fernandes no Vibe HCM. Trabalhe com a  [equipe de suporte do Vibe HCM ](mailto:support@vibehcm.com) para adicionar os usuários na plataforma do Vibe HCM. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará uma usuária chamado Brenda Fernandes no Vibe HCM. Trabalhar com a [equipe de suporte de Vibe HCM ](mailto:support@vibehcm.com) para adicionar os usuários à plataforma de Vibe HCM. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-single-sign-on"></a>Testar logon único 
 
@@ -188,5 +188,5 @@ Ao clicar no bloco do Vibe HCM no Painel de Acesso, você deverá ser conectado 
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

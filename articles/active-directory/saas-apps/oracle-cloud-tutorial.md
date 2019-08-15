@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 07/26/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e0725988ff88baea2458f0a5e459440874e66088
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 579a553f151cf34215af3188cfddada6da42e691
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68596431"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68943625"
 ---
 # <a name="tutorial-integrate-oracle-cloud-infrastructure-console-with-azure-active-directory"></a>Tutorial: Integrar o Console da Infraestrutura de Nuvem da Oracle com o Azure Active Directory
 
@@ -101,11 +101,11 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
    ![O link de download do Certificado](common/metadataxml.png)
 
-1. O aplicativo Console da Infraestrutura de Nuvem da Oracle espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone  **Editar** para abrir a caixa de diálogo Atributos do usuário.
+1. O aplicativo Console da Infraestrutura de Nuvem da Oracle espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para abrir a caixa de diálogo Atributos de usuário.
 
    ![image](common/edit-attribute.png)
 
-1. Além do indicado acima, o aplicativo Console da Infraestrutura de Nuvem da Oracle espera que mais alguns atributos sejam passados novamente na resposta SAML. Na seção **Atributos e Declarações de Usuário** da caixa de diálogo **Declarações de Grupo (Versão Prévia)**  , execute as seguintes etapas:
+1. Além do indicado acima, o aplicativo Console da Infraestrutura de Nuvem da Oracle espera que mais alguns atributos sejam passados novamente na resposta SAML. Na seção**Atributos e Declarações de Usuário** na caixa de diálogo **Declarações de Grupo (Versão Prévia)** , execute as seguintes etapas:
 
    1. Clique na **caneta** ao lado do **Valor do identificador de nome**.
 

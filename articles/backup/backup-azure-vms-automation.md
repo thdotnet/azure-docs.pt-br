@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 07/31/2019
 ms.author: dacurwin
-ms.openlocfilehash: 1cbd0f649bd5e89c1ed424604697afa179964175
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 23492133035f27aa3e1217269022565e0ff217a9
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68689013"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69018770"
 ---
 # <a name="back-up-and-restore-azure-vms-with-powershell"></a>Fazer backup e restaurar VMs do Azure com o PowerShell
 
@@ -217,7 +217,7 @@ NewPolicy           AzureVM            AzureVM              4/24/2016 1:30:00 AM
 Depois de definir a política de proteção, você deve habilitar a política para um item. Use [Enable-AzRecoveryServicesBackupProtection](https://docs.microsoft.com/powershell/module/az.recoveryservices/enable-azrecoveryservicesbackupprotection) para habilitar a proteção. Habilitar a proteção envolve dois objetos – o item e a política. Depois de a política ter sido associada ao cofre, o fluxo de trabalho de backup será disparado no momento definido no agendamento da política.
 
 > [!IMPORTANT]
-> Ao usar o PS para habilitar o backup para várias VMs de uma vez, verifique se uma única política não tem mais de 100 VMs associadas a ela. Essa é uma [prática](https://docs.microsoft.com/azure/backup/backup-azure-vm-backup-faq#is-there-a-limit-on-number-of-vms-that-can-beassociated-with-a-same-backup-policy)recomendada. Atualmente, o cliente PS não bloqueia explicitamente se há mais de 100 VMs, mas a verificação está planejada para ser adicionada no futuro.
+> Ao usar o PS para habilitar o backup para várias VMs de uma vez, verifique se uma única política não tem mais de 100 VMs associadas a ela. Essa é uma [melhor prática recomendada](https://docs.microsoft.com/azure/backup/backup-azure-vm-backup-faq#is-there-a-limit-on-number-of-vms-that-can-beassociated-with-a-same-backup-policy). Atualmente, o cliente PS não bloqueia explicitamente se houver mais de 100 VMs, mas há planos de adicionar essa verificação no futuro.
 
 Os exemplos a seguir permitem a proteção do item, V2VM, usando a política NewPolicy. Os exemplos diferem com base em se a VM está criptografada e em qual tipo de criptografia.
 
@@ -340,7 +340,7 @@ V2VM              Backup              InProgress          4/23/2016             
 
 ### <a name="change-policy-for-backup-items"></a>Alterar política para itens de backup
 
-O usuário pode modificar a política existente ou alterar a política do item de backup de Policy1 para Policy2. Para alternar as políticas para um item de backup, basta buscar a política relevante e fazer backup do item e usar o comando [Enable-AzRecoveryServices](https://docs.microsoft.com/powershell/module/az.recoveryservices/Enable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) com o item de backup como o parâmetro.
+O usuário pode modificar a política existente ou alterar a política do item de backup de Policy1 para Policy2. Para alternar políticas para um item de backup, busque a política relevante e faça backup do item e use o comando [Enable-AzRecoveryServices](https://docs.microsoft.com/powershell/module/az.recoveryservices/Enable-AzRecoveryServicesBackupProtection?view=azps-1.5.0) com o item de backup como o parâmetro.
 
 ````powershell
 $TargetPol1 = Get-AzRecoveryServicesBackupProtectionPolicy -Name <PolicyName>
@@ -511,7 +511,7 @@ Depois de restaurar os discos, use as seguintes etapas para criar e configurar a
 > [!NOTE]
 > Após a restauração dos discos, você pode obter um modelo de implantação para criar diretamente uma nova VM. Não há mais cmdlets diferentes do PS para criar VMs gerenciadas/não gerenciadas que são criptografadas/descriptografadas.
 
-Os detalhes do trabalho resultante fornecem o URI do modelo, o qual pode ser consultado e implantado.
+Os detalhes do trabalho resultante fornecem o URI do modelo que pode ser consultado e implantado.
 
 ```powershell
    $properties = $details.properties
@@ -653,7 +653,7 @@ A seção a seguir lista as etapas necessárias para criar uma VM usando o arqui
 
    * **VMs gerenciadas e criptografadas com o Azure AD (BEK e KEK)** ‒ para VMs criptografadas gerenciadas com o Azure AD (criptografadas usando BEK e KEK), anexe os discos gerenciados restaurados. Para obter informações detalhadas, confira [Anexar um disco de dados a uma VM do Windows usando o PowerShell](../virtual-machines/windows/attach-disk-ps.md).
 
-   * **VMs criptografadas e gerenciadas sem o Azure AD (apenas BEK)** – para VMs criptografadas e gerenciadas sem o Azure AD (criptografadas usando apenas BEK), se **keyVault/segredo de origem não estiverem disponíveis**, restaure os segredos para o cofre de chaves usando o procedimento em [Restore an non-encrypted virtual machine from an Azure Backup recovery point (Restaurar uma máquina virtual não criptografada de um ponto de recuperação do Backup do Azure)](backup-azure-restore-key-secret.md).Em seguida, execute os seguintes scripts para definir os detalhes de criptografia no disco do sistema operacional restaurado (esta etapa não é necessária para o disco de dados). O $dekurl pode ser buscado do keyVault restaurado.
+   * **VMs gerenciadas e criptografadas sem o AD do Azure (somente Bek)** – para VMs criptografadas e gerenciadas sem o Azure AD (criptografado usando apenas Bek), se o **keyvault/segredo de origem não estiver disponível** , restaure os segredos para o Key Vault usando o procedimento em [restaurar um máquina virtual não criptografada de um ponto de recuperação de backup do Azure](backup-azure-restore-key-secret.md). Em seguida, execute os seguintes scripts para definir detalhes de criptografia no disco do sistema operacional restaurado (essa etapa não é necessária para o disco de dados). O $dekurl pode ser buscado do keyVault restaurado.
 
      O script abaixo precisará ser executado somente quando o keyVault/segredo de origem não estiver disponível.  
 
@@ -667,7 +667,7 @@ A seção a seguir lista as etapas necessárias para criar uma VM usando o arqui
 
      Depois que os segredos estiverem disponíveis e os detalhes da criptografia forem definidos no disco do sistema operacional, para anexar os discos gerenciados restaurados, confira [Anexar um disco de dados a uma VM do Windows com o PowerShell](../virtual-machines/windows/attach-disk-ps.md).
 
-   * **VMs criptografadas e gerenciadas sem o Azure AD (BEK e KEK)** – para VMs criptografadas e gerenciadas sem o Azure AD (criptografadas usando BEK e KEK), se **keyVault/chave/segredo de origem não estiverem disponíveis**, restaure a chave e os segredos para o cofre de chaves usando o procedimento em [Restore an non-encrypted virtual machine from an Azure Backup recovery point (Restaurar uma máquina virtual não criptografada de um ponto de recuperação do Backup do Azure)](backup-azure-restore-key-secret.md). Em seguida, execute os seguintes scripts para definir detalhes de criptografia no disco do sistema operacional restaurado (essa etapa não é necessária para o disco de dados). O $dekurl e $kekurl podem ser buscados do keyVault restaurado.
+   * **VMs gerenciadas e criptografadas sem o Azure AD (Bek e Kek)** – para VMs criptografadas e gerenciadas sem o Azure AD (criptografado usando Bek & Kek), se o keyvault de origem **/chave/segredo não estiverem disponíveis** , restaure a chave e os segredos para o Key Vault usando o procedimento em [Restaurar uma máquina virtual não criptografada de um ponto de recuperação do backup do Azure](backup-azure-restore-key-secret.md). Em seguida, execute os seguintes scripts para definir detalhes de criptografia no disco do sistema operacional restaurado (essa etapa não é necessária para o disco de dados). O $dekurl e $kekurl podem ser buscados do keyVault restaurado.
 
    O script abaixo precisará ser executado somente quando o keyVault/chave/segredo de origem não estiver disponível.
 
@@ -720,7 +720,7 @@ A seção a seguir lista as etapas necessárias para criar uma VM usando o arqui
 
    * **Para VM sem Azure AD** – Use o seguinte comando para habilitar manualmente a criptografia dos discos de dados.
 
-     Se, durante a execução do comando, AADClientID for solicitado, então será necessário atualizar seu Azure PowerShell.
+     Se durante a execução do comando solicitar AADClientID, você precisará atualizar seu Azure PowerShell.
 
      **Somente BEK**
 
@@ -806,7 +806,7 @@ OsType  Password        Filename
 Windows e3632984e51f496 V2VM_wus2_8287309959960546283_451516692429_cbd6061f7fc543c489f1974d33659fed07a6e0c2e08740.exe
 ```
 
-Execute o script no computador em que deseja recuperar os arquivos. Para executar o script, você deve inserir a senha fornecida. Depois que os discos estiverem conectados, use o Windows File Explorer para procurar os novos volumes e arquivos. Para obter mais informações, consulte o artigo Backup, [Recuperar arquivos do backup da máquina virtual do Azure](backup-azure-restore-files-from-vm.md).
+Execute o script no computador em que deseja recuperar os arquivos. Para executar o script, você deve inserir a senha fornecida. Depois que os discos estiverem conectados, use o Windows File Explorer para procurar os novos volumes e arquivos. Para obter mais informações, consulte o artigo de backup, [recuperar arquivos do backup de máquina virtual do Azure](backup-azure-restore-files-from-vm.md).
 
 ### <a name="unmount-the-disks"></a>Desmonte os discos
 

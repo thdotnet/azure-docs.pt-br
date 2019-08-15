@@ -14,12 +14,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: apimpm
-ms.openlocfilehash: 9b9a691cb2bce2357d184420912ab340aee534e8
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 8840c85e35a371b8c7a0a76dbee6353a20b212be
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205313"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881121"
 ---
 # <a name="mock-api-responses"></a>Simular respostas de API
 
@@ -79,7 +79,7 @@ As etapas nesta seção mostram como criar uma API em branco sem back-end. Elas 
 5. Selecione **200 OK** na lista.
 6. Sob o cabeçalho **Representações** à direita, selecione **+ Adicionar representação**.
 7. Insira "*application/json*" na caixa de pesquisa e selecione o tipo de conteúdo **application/json**.
-8. Na caixa de texto **Exemplo**, insira `{ 'sampleField' : 'test' }`.
+8. Na caixa de texto **Exemplo**, insira `{ "sampleField" : "test" }`.
 9. Selecione **Criar**.
 
 ## <a name="enable-response-mocking"></a>Habilitar a simulação de resposta

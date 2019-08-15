@@ -12,16 +12,20 @@ ms.date: 5/14/2019
 author: swinarko
 ms.author: sawinark
 manager: craigg
-ms.openlocfilehash: 1e55d1878b1a5616d467f2fa27b1b20132d5e77c
-ms.sourcegitcommit: f5cc71cbb9969c681a991aa4a39f1120571a6c2e
+ms.openlocfilehash: 51f67667caa9e0e564709de40c145b107c619b59
+ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68516999"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69016001"
 ---
 # <a name="enable-azure-active-directory-authentication-for-azure-ssis-integration-runtime"></a>Habilitar a autenticação do Azure Active Directory para o Azure-SSIS Integration Runtime
 
-Este artigo mostra como habilitar a autenticação do Azure Active Directory (AD do Azure) com a identidade gerenciada para seu Azure Data Factory (ADF) e usá-la em vez da autenticação do SQL para criar um IR (Azure-SSIS Integration Runtime) que, por sua vez, provisionará Banco de dados de catálogo do SSIS (SSISDB) no servidor de banco de dados SQL do Azure/Instância Gerenciada em seu nome.
+Este artigo mostra como habilitar a autenticação do Azure Active Directory (Azure AD) com a identidade gerenciada para seu Azure Data Factory (ADF) e usá-la em vez de métodos de autenticação convencionais (como a autenticação do SQL) para:
+
+- Crie um Integration Runtime do Azure-SSIS (IR) que, por sua vez, provisionará o SSISDB (banco de dados do catálogo do SSIS) no servidor de banco de dados SQL do Azure/Instância Gerenciada em seu nome.
+
+- Conecte-se a vários recursos do Azure ao executar pacotes do SSIS no IR do Azure-SSIS.
 
 Para obter mais informações sobre a identidade gerenciada para o ADF, consulte [Managed identiy for Data Factory](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity).
 
@@ -214,4 +218,14 @@ Para provisionar seu IR do Azure-SSIS com o PowerShell, faça o seguinte:
     Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
                                                  -DataFactoryName $DataFactoryName `
                                                  -Name $AzureSSISName
-   ```
+    ```
+
+## <a name="run-ssis-packages-with-managed-identity-authentication"></a>Executar pacotes do SSIS com a autenticação de identidade gerenciada
+
+Ao executar pacotes SSIS no IR do Azure-SSIS, você pode usar a autenticação de identidade gerenciada para se conectar a vários recursos do Azure. No momento, já há suporte para a autenticação de identidade gerenciada nos gerenciadores de conexões a seguir.
+
+- [Gerenciador de conexões OLE DB](https://docs.microsoft.com/sql/integration-services/connection-manager/ole-db-connection-manager#managed-identities-for-azure-resources-authentication)
+
+- [Gerenciador de conexões ADO.NET](https://docs.microsoft.com/sql/integration-services/connection-manager/ado-net-connection-manager#managed-identities-for-azure-resources-authentication)
+
+- [Gerenciador de conexões do armazenamento do Azure](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-storage-connection-manager#managed-identities-for-azure-resources-authentication)

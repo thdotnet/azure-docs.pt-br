@@ -1,6 +1,6 @@
 ---
 title: Visão Geral da Comunidade dos Serviços de Mídia do Azure | Microsoft Docs
-description: Esta página da comunidade de serviços de mídia do Azure aborda diferentes maneiras de fazer perguntas, comentários e obter atualizações sobre os serviços de mídia.
+description: Esta página da Comunidade dos serviços de mídia do Azure discute diferentes maneiras que você pode fazer perguntas, fornecer comentários e obter atualizações sobre os serviços de mídia.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -11,18 +11,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 04/19/2019
+ms.date: 08/08/2019
 ms.author: juliako
-ms.openlocfilehash: 6a3c02c1f14c37317a03cb6ebe63bcddc92f3253
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b8d3a26d015c129a04e54ba9633aa5d1ccfcacf8
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64710172"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "69016105"
 ---
 # <a name="azure-media-services-community"></a>Comunidade dos Serviços de Mídia do Azure  
 
-Esta página da comunidade de serviços de mídia do Azure aborda diferentes maneiras de fazer perguntas, comentários e obter atualizações sobre os serviços de mídia.
+Esta página da Comunidade dos serviços de mídia do Azure discute diferentes maneiras que você pode fazer perguntas, fornecer comentários e obter atualizações sobre os serviços de mídia.
 
 ## <a name="provide-feedback-and-make-suggestions"></a>Fornecer comentários e fazer sugestões
 
@@ -32,7 +32,7 @@ Esta página da comunidade de serviços de mídia do Azure aborda diferentes man
 
 ### <a name="twitter"></a>Twitter
 
-Você pode usar o [ @MSFTAzureMedia ](https://twitter.com/MSFTAzureMedia) identificador do twitter para entre em contato conosco ou seguir as atualizações no Twitter. Use o [ @AzureSupport ](https://twitter.com/azuresupport) identificador do twitter para solicitar suporte no Twitter.  
+Você pode usar o [@MSFTAzureMedia](https://twitter.com/MSFTAzureMedia) identificador do Twitter para entrar em contato conosco ou seguir as atualizações no Twitter. Use o [@AzureSupport](https://twitter.com/azuresupport) identificador do Twitter para solicitar suporte no Twitter.  
 
 ### <a name="online-forums"></a>Fóruns online
 
@@ -48,17 +48,8 @@ A equipe também monitora perguntas marcadas com 'azure-media-services' no Stack
 
 ## <a name="contact-the-team"></a>Entre em contato com a equipe
 
-Os serviços de mídia do Azure é o email de suporte primário: **amshelp\@microsoft.com**.
-
-A tabela a seguir lista email das subequipes de recursos:
-
-| Recurso | Email |
-| --- | --- |
-| Player de Mídia do Azure |ampinfo@microsoft.com |
-| Azure Media Explorer |amse@microsoft.com |
-| Designer de Fluxo de Trabalho |mepd@microsoft.com |
-| Transmissão ao Vivo e Empacotamento |amslived@microsoft.com |
+O email de suporte principal dos serviços de mídia do Azure é: **amshelp\@Microsoft.com**.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-[Visão geral de serviços de mídia do Azure](media-services-overview.md)
+[Visão geral dos serviços de mídia do Azure](media-services-overview.md)

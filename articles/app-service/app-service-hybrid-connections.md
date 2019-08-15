@@ -16,20 +16,20 @@ ms.date: 06/06/2019
 ms.author: ccompy
 ms.custom: seodec18
 ms.openlocfilehash: 4b125649dee51680625ac5a92b31bdc9f6830529
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "67069586"
 ---
 # <a name="azure-app-service-hybrid-connections"></a>Conexões Híbridas do Serviço de Aplicativo do Azure #
 
-Conexões Híbridas é um serviço no Azure e uma funcionalidade no Serviço de Aplicativo do Azure. Como um serviço, ele tem uso e recursos além daqueles usados no Serviço de Aplicativo do Azure. Para saber mais sobre Conexões Híbridas e seu uso fora do Serviço de Aplicativo do Azure, confira [Conexões Híbridas da Retransmissão do Azure][HCService].
+Conexões Híbridas é um serviço no Azure e uma funcionalidade no Serviço de Aplicativo do Azure. Como um serviço, ele tem uso e recursos além daqueles usados no Serviço de Aplicativo do Azure. Para saber mais sobre Conexões Híbridas e seu uso fora do serviço de aplicativo, confira [conexões híbridas de retransmissão do Azure][HCService].
 
 Com o Serviço de Aplicativo, as Conexões Híbridas podem ser usadas para acessar recursos do aplicativo em outras redes. Ele fornece acesso de seu aplicativo para um ponto de extremidade do aplicativo. Ele não permite que uma funcionalidade alternativa acesse seu aplicativo. Conforme usado no Serviço de Aplicativo, cada conexão híbrida se correlaciona com uma única combinação de host e de porta TCP. Isso significa que o ponto de extremidade de Conexões Híbridas pode estar em qualquer sistema operacional e em qualquer aplicativo, desde que você esteja acessando uma porta de escuta TCP. O recurso Conexões Híbridas não sabe e nem se importa com o protocolo de aplicativo ou o que você está acessando. Ele simplesmente fornece acesso à rede.  
 
 
-## <a name="how-it-works"></a>Como ele funciona ##
+## <a name="how-it-works"></a>Como funciona ##
 O recurso Conexões Híbridas consiste em duas chamadas de saída para a Retransmissão do Barramento de Serviço do Azure. Há uma conexão de uma biblioteca no host em que seu aplicativo está em execução no Serviço de Aplicativo. Também há uma conexão do HCM (Gerenciador de Conexões Híbridas) para a Retransmissão do Barramento de Serviço. O HCM e um serviço de retransmissão que você implanta dentro da rede que hospeda o recurso que você está tentando acessar. 
 
 Por meio de duas conexões ingressadas, seu aplicativo tem um túnel TCP para uma combinação fixa de host:porta no outro lado do HCM. A conexão usa o protocolo TLS 1.2 para segurança e as chaves de SAS (Assinatura de Acesso Compartilhado) para autenticação e autorização.    
@@ -66,7 +66,7 @@ Coisas que você não pode fazer com conexões híbridas incluem:
 
 ## <a name="add-and-create-hybrid-connections-in-your-app"></a>Adicionar e criar Conexões Híbridas em seu aplicativo ##
 
-Para criar uma Conexão Híbrida, acesse o [Portal do Azure][portal] e selecione seu aplicativo. Selecione **Rede** > **Configurar seus pontos de extremidade de Conexão Híbrida**. Aqui você pode ver as conexões híbridas que são configuradas para seu aplicativo.  
+Para criar uma conexão híbrida, vá para a [portal do Azure][portal] e selecione seu aplicativo. Selecione **Rede** > **Configurar seus pontos de extremidade de Conexão Híbrida**. Aqui você pode ver as conexões híbridas que são configuradas para seu aplicativo.  
 
 ![Captura de tela da lista de Conexões Híbridas][2]
 
@@ -119,11 +119,11 @@ Há um limite no número de pontos de extremidade de Conexão Híbrida que pode 
 
 ### <a name="pricing"></a>Preços ###
 
-Além de haver um requisito de SKU do plano de serviço de aplicativo, há um custo adicional para o uso de conexões híbridas. Há uma taxa para cada ouvinte usado por uma conexão híbrida. O ouvinte é o Gerenciador de Conexão híbrida. Se você tivesse cinco conexões híbridas suportadas por dois gerentes de conexão híbridos, seriam 10 ouvintes. Para obter mais informações, consulte [preços do Barramento de Serviço][sbpricing].
+Além de haver um requisito de SKU do plano de serviço de aplicativo, há um custo adicional para o uso de conexões híbridas. Há uma taxa para cada ouvinte usado por uma conexão híbrida. O ouvinte é o Gerenciador de Conexão híbrida. Se você tivesse cinco conexões híbridas suportadas por dois gerentes de conexão híbridos, seriam 10 ouvintes. Para obter mais informações, consulte [Preços de Barramento de Serviço][sbpricing].
 
 ## <a name="hybrid-connection-manager"></a>Gerenciador de Conexão Híbrida ##
 
-O recurso Conexões Híbridas exige um agente de retransmissão na rede que hospeda o seu ponto de extremidade de Conexão Híbrida. Esse agente de retransmissão é chamado de HCM (Gerenciador de Conexão Híbrida). Parabaixar o HCM, no seu aplicativo no [portal do Azure][portal], selecione **Rede** > **Configurar seus pontos de extremidade de Conexões Híbridas**.  
+O recurso Conexões Híbridas exige um agente de retransmissão na rede que hospeda o seu ponto de extremidade de Conexão Híbrida. Esse agente de retransmissão é chamado de HCM (Gerenciador de Conexão Híbrida). Para baixar a HCM, em seu aplicativo na [portal do Azure][portal], selecione **rede** > **configurar seus pontos de extremidade de conexão híbrida**.  
 
 Essa ferramenta é executada no Windows Server 2012 e versões posteriores. O HCM é executado como um serviço e conecta-se de saída para retransmissão do Azure na porta 443.  
 
@@ -139,7 +139,7 @@ Para adicionar uma ou mais Conexões Híbridas a seu HCM:
 2. Selecione **Configurar outra Conexão Híbrida**.
 ![Captura de tela de Configurar novas Conexões Híbridas][8]
 
-1. Entrar com sua conta do Azure para obter suas conexões híbridas disponíveis com suas assinaturas. O HCM não continuar a usar sua conta do Azure Além disso. 
+1. Entre com sua conta do Azure para colocar seu Conexões Híbridas disponível com suas assinaturas. A HCM não continua a usar sua conta do Azure além disso. 
 1. Escolha uma assinatura.
 1. Selecione as Conexões Híbridas que você deseja que o HCM retransmita.
 ![Captura de tela de Conexões Híbridas][9]
@@ -166,7 +166,7 @@ Cada HCM pode ser compatível com várias Conexões Híbridas. Além disso, qual
 
 ### <a name="manually-add-a-hybrid-connection"></a>Adicionar uma Conexão Híbrida manualmente ###
 
-Para permitir que alguém fora da sua assinatura hospede uma instância HCM para uma determinada Conexão Híbrida, compartilhe a cadeia de conexão de gateway para a Conexão Híbrida. Você pode ver a cadeia de conexão do gateway nas propriedades da Conexão Híbrida no [Portal do Azure][portal]. Para usar essa cadeia de caracteres, selecione **Inserir Manualmente** no HCM e cole-o na cadeia de conexão de gateway.
+Para permitir que alguém fora da sua assinatura hospede uma instância HCM para uma determinada Conexão Híbrida, compartilhe a cadeia de conexão de gateway para a Conexão Híbrida. Você pode ver a cadeia de conexão do gateway nas propriedades de conexão híbrida no [portal do Azure][portal]. Para usar essa cadeia de caracteres, selecione **Inserir Manualmente** no HCM e cole-o na cadeia de conexão de gateway.
 
 ![Adicionar uma Conexão Híbrida manualmente][11]
 
@@ -197,7 +197,7 @@ O objeto JSON associado a uma conexão híbrida é semelhante a:
       }
     }
 
-Uma maneira de usar essas informações é com o armclient, que pode ser obtido do projeto [ARMClient][armclient] do GitHub. Aqui está um exemplo sobre como anexar uma conexão híbrida pré-existente ao seu aplicativo. Crie um arquivo JSON de acordo com o esquema acima, como:
+Uma maneira de usar essas informações é com o armclient, que pode ser obtido do projeto GitHub do [armclient][armclient] . Aqui está um exemplo sobre como anexar uma conexão híbrida pré-existente ao seu aplicativo. Crie um arquivo JSON de acordo com o esquema acima, como:
 
     {
       "name": "relay-demo-hc",
@@ -219,15 +219,15 @@ Para usar essa API, você precisa da chave de envio e do ID do recurso de retran
     armclient login
     armclient put /subscriptions/ebcidic-asci-anna-nath-rak1111111/resourceGroups/myapp-rg/providers/Microsoft.Web/sites/myhcdemoapp/hybridConnectionNamespaces/demo-relay/relays/relay-demo-hc?api-version=2016-08-01 @hctest.json
 
-## <a name="troubleshooting"></a>solução de problemas ##
+## <a name="troubleshooting"></a>Solução de problemas ##
 
 O status “Conectado” significa que pelo menos um HCM está configurado com essa Conexão Híbrida e é capaz de alcançar o Azure. Se o status da sua Conexão Híbrida não indica **Conectado**, sua Conexão Híbrida não está configurada em nenhum HCM com acesso ao Azure.
 
 O principal motivo pelo qual os clientes não podem se conectar ao ponto de extremidade é porque o ponto de extremidade foi especificado usando um endereço IP em vez de um nome DNS. Se seu aplicativo não puder acessar o ponto de extremidade desejado e você tiver usado um endereço IP, mude e passe a usar um nome DNS válido no host em que o HCM está em execução. Verifique também se o nome DNS resolve corretamente no host onde o HCM está em execução. Confirme se há conectividade entre o host onde a HCM está em execução no ponto de extremidade de Conexão Híbrida.  
 
-No serviço de aplicativo, o **tcpping** ferramenta de linha de comando pode ser invocada a partir do console de ferramentas avançadas (Kudu). Essa ferramenta pode informar se você tem acesso a um ponto de extremidade TCP, mas ela não diz se você tem acesso a um ponto de extremidade de Conexão Híbrida. Quando você usar a ferramenta no console em relação a um ponto de extremidade de Conexão Híbrida, apenas confirmará que ele usa uma combinação host:porta.  
+No serviço de aplicativo, a ferramenta de linha de comando **tcpping** pode ser invocada no console de ferramentas avançadas (kudu). Essa ferramenta pode informar se você tem acesso a um ponto de extremidade TCP, mas ela não diz se você tem acesso a um ponto de extremidade de Conexão Híbrida. Quando você usar a ferramenta no console em relação a um ponto de extremidade de Conexão Híbrida, apenas confirmará que ele usa uma combinação host:porta.  
 
-Se você tiver um cliente de linha de comando para seu ponto de extremidade, você pode testar a conectividade do console do aplicativo. Por exemplo, você pode testar o acesso aos pontos de extremidade de servidor web usando o curl.
+Se você tiver um cliente de linha de comando para seu ponto de extremidade, poderá testar a conectividade no console do aplicativo. Por exemplo, você pode testar o acesso a pontos de extremidade do servidor Web usando a ondulação.
 
 ## <a name="biztalk-hybrid-connections"></a>Conexões Híbridas do BizTalk ##
 

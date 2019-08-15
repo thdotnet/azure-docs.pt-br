@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 05/22/2019
 ms.author: jgao
-ms.openlocfilehash: 802c0409fe3ac88f73c383958d2337be09ef7992
-ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
+ms.openlocfilehash: b27caa3d91d67ad63bfbf5e7c549d690980cdd7b
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66016471"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934433"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-resource-manager-template"></a>Início Rápido: Definir e recuperar um segredo do Azure Key Vault usando o modelo do Resource Manager
 
@@ -102,6 +102,6 @@ Remove-AzResourceGroup -Name $resourceGroupName
 ## <a name="next-steps"></a>Próximas etapas
 
 * [Página inicial do Azure Key Vault](https://azure.microsoft.com/services/key-vault/)
-* [Documentação do Azure Key Vault](https://docs.microsoft.com/azure/key-vault/)
+* [Documentação do Azure Key Vault](index.yml)
 * [SDK do Azure para Node](https://docs.microsoft.com/javascript/api/overview/azure/key-vault)
 * [Referência de API REST do Azure](https://docs.microsoft.com/rest/api/keyvault/)

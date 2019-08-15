@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/09/2019
 ms.author: cherylmc
-ms.openlocfilehash: 22fa0ba52c346b8331fd6895cf87f3e15ee68ac6
-ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
+ms.openlocfilehash: bd0ed971b84baae3b85badfcc669bbad657d1551
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68950085"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69018949"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Locais de emparelhamento e parceiros do ExpressRoute
 
@@ -123,7 +123,7 @@ As **regiões locais do Azure** são aquelas que o [ExpressRoute local](expressr
 | **São Paulo** | Equinix | Sul do Brasil | Aryaka Networks, Ascenty Data Centers, British Telecom, Equinix, Level 3 Communications, Neutrona Networks, Orange, Tata Communications, Telefonica, UOLDIVEO |
 | **Seattle** | Equinix | Oeste dos EUA 2 | Redes aryaka Networks, Equinix, comunicações de nível 3, Megaport, Telus, Zayo |
 | **Seul** | KINX | Coreia Central | KINX, LG CNS, Sejong Telecom |
-| **Vale do Silício** | Equinix | Oeste dos EUA | Redes aryaka networkss, em & T netbonde, British Telecom, CenturyLink Cloud Connect, Comcast, Coresite, Equinix, internuvem, IX REACH, pacote, PacketFabric, comunicações de nível 3, Megaport, laranja, Sprint, Tata Communications, Telia Carrier, Verizon, Zayo |
+| **Vale do Silício** | Equinix | Oeste dos EUA | Redes aryaka networkss, em & T netbonde, British Telecom, CenturyLink Cloud Connect, Comcast, Coresite, Equinix, internuvem, Internet2, IX REACH, pacote, PacketFabric, comunicações de nível 3, Megaport, Orange, Sprint, Tata Communications, Telia Carrier, Verizon, Zayo |
 | **Valley2 de silício** | Coresite | Oeste dos EUA | Coresite | 
 | **Singapura** | Equinix | Sudeste da Ásia | Aryaka Networks, AT&T NetBond, British Telecom, Epsilon Global Communications, Equinix, InterCloud, Level 3 Communications, Megaport, NTT Communications, Orange, SingTel, Tata Communications, Telstra Corporation, Verizon, Vodafone |
 | **Cingapura2** | Global Switch | Sudeste da Ásia | Colt, Épsilon Global Communications, Megaport, SingTel |

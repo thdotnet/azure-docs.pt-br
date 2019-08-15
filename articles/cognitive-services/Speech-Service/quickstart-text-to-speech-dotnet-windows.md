@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 07/05/2019
 ms.author: yinhew
-ms.openlocfilehash: 3c925e0160a4c57f7e43c3463fc1db7098a6e606
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 65db847c5df1a05671e3b1c0ac4541f00506c8fd
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68553595"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854690"
 ---
 # <a name="quickstart-synthesize-speech-with-the-speech-sdk-for-net-framework-windows"></a>Início Rápido: Sintetizar fala com o SDK de Fala para .NET Framework (Windows)
 
@@ -31,7 +31,7 @@ Obter a versão mais recente dos [Exemplos do SDK de Fala dos Serviços Cognitiv
 
 Para concluir este projeto, você precisará de:
 
-* [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
+* [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
 * Uma chave de assinatura para o Serviço de Fala. [Obtenha uma gratuitamente](get-started.md).
 * Um alto-falante (ou um fone de ouvido) disponíveis.
 

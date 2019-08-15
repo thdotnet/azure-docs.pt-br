@@ -3,7 +3,7 @@ title: Encontrar relatórios de atividade de usuário do Azure Active Directory 
 description: Saiba onde os relatórios de atividade do usuário do Azure Active Directory estão no portal do Azure.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.service: active-directory
@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 11/13/2018
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d47072713c57576abe780134792c3a5cbc27127c
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 356412bfca19e72d09338faf8c8bcac5ec8f273a
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60438256"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68988298"
 ---
 # <a name="find-activity-reports-in-the-azure-portal"></a>Localizar relatórios de atividade no Portal do Azure
 
@@ -41,24 +41,24 @@ O relatório de logs de auditoria consolida os seguintes relatórios:
 * Atividade de redefinição de senha
 * Atividade de registro de redefinição de senha
 * Atividade dos grupos de autoatendimento
-* Alterações de nome do grupo do Office365
+* Alterações no Nome do Grupo do Office365
 * Atividade de provisionamento de conta
 * Status de substituição de senha
 * Erros de provisionamento de conta
 
 ### <a name="filtering-on-audit-logs"></a>Filtragem em logs de auditoria
 
-Você pode usar a filtragem avançada no relatório de auditoria para acessar uma categoria específica de dados de auditoria, especificando-na **categoria** filtro. Por exemplo, para exibir todas as atividades relacionadas aos usuários, selecione a **UserManagement** categoria. 
+Você pode usar a filtragem avançada no relatório de auditoria para acessar uma categoria específica de dados de auditoria, especificando-a no filtro de **categoria** . Por exemplo, para exibir todas as atividades relacionadas a usuários, selecione a categoria usermanagement. 
 
 As categorias incluem:
 
-- Todos
+- Todas
 - AdministrativeUnit
 - ApplicationManagement
-- Authentication
+- Autenticação
 - Autorização
 - Contato
-- Dispositivo
+- Dispositivos
 - DeviceConfiguration
 - DirectoryManagement
 - EntitlementManagement
@@ -69,25 +69,25 @@ As categorias incluem:
 - RoleManagement
 - UserManagement
 
-Você também pode filtrar em um serviço específico usando o **serviço** filtro de lista suspensa. Por exemplo, para obter todos os eventos de auditoria relacionados ao gerenciamento de senha de autoatendimento, selecione a **gerenciamento de senha de autoatendimento** filtro.
+Você também pode filtrar em um serviço específico usando o filtro suspenso de **serviço** . Por exemplo, para obter todos os eventos de auditoria relacionados ao gerenciamento de senhas de autoatendimento, selecione o filtro de **Gerenciamento de senhas** de autoatendimento.
 
 Os serviços incluem:
 
-- Todos
-- Revisões de acesso
-- Provisionamento de conta de usuário 
-- Aplicativo de SSO
+- Todas
+- Revisões de Acesso
+- Provisionamento de Conta 
+- SSO de aplicativo
 - Métodos de autenticação
 - B2C
 - Acesso Condicional
 - Diretório principal
-- Gerenciamento de direitos
+- Gerenciamento de Direitos
 - Identity Protection
 - Usuários Convidados
 - PIM
-- Gerenciamento de grupos de autoatendimento
+- Gerenciamento de Grupo de Autoatendimento
 - Gerenciamento de senhas de auto-atendimento
-- Termos de Uso
+- Termos de uso
 
 ## <a name="sign-ins-report"></a>Relatório de entradas 
 
@@ -120,7 +120,7 @@ A tabela a seguir lista os relatórios de segurança de atividades anômalas do 
 | Relatório de atividades anômalas do Azure AD |  Tipo de evento de risco do Identity Protection|
 | :--- | :--- |
 | Usuários com credenciais vazadas | Credenciais vazadas |
-| Atividades de entrada irregulares | Viagem impossível a locais atípicos |
+| Atividades de entrada irregulares | Viagem impossível a localizações atípicas |
 | Entradas de dispositivos possivelmente infectados | Entradas de dispositivos infectados|
 | Entradas de fontes desconhecidas | Entradas de endereços IP anônimos |
 | Entradas de endereços IP com atividade suspeita | Entradas de endereços IP com atividade suspeita |
@@ -149,11 +149,11 @@ Você pode acessar relatórios sobre eventos de risco detectados na seção **Se
 
 Baixei os logs de atividade (auditoria ou entradas) e não vejo todos os registros para o momento que escolhi. Por quê? 
 
- ![Relatórios](./media/troubleshoot-missing-data-download/01.png)
+ ![Relatório](./media/troubleshoot-missing-data-download/01.png)
  
 #### <a name="cause"></a>Causa
 
-Quando você baixar os logs de atividade no portal do Azure, limitamos a escala para 250000 registros, classificados pelos mais recentes primeiro. 
+Quando você baixa os logs de atividade no portal do Azure, limitamos a escala a 250000 registros, classificados por mais recentes primeiro. 
 
 #### <a name="resolution"></a>Resolução
 
@@ -186,7 +186,7 @@ Aguarde de 15 minutos a duas horas e verifique se as ações aparecem no log. Se
 
 Eu entrei recentemente no portal do Azure e esperava ver os logs de auditoria para essas ações na folha `Activity logs > Sign-ins`, mas não é possível encontrá-los.
 
- ![Relatórios](./media/troubleshoot-missing-audit-data/02.png)
+ ![Relatório](./media/troubleshoot-missing-audit-data/02.png)
  
 #### <a name="cause"></a>Causa
 
@@ -207,13 +207,13 @@ Aguarde de 15 minutos a duas horas e verifique se as ações aparecem no log. Se
 
 Não consigo exibir mais de 30 dias de dados de entrada e de auditoria no portal do Azure. Por quê? 
 
- ![Relatórios](./media/troubleshoot-missing-audit-data/03.png)
+ ![Relatório](./media/troubleshoot-missing-audit-data/03.png)
 
 #### <a name="cause"></a>Causa
 
 Dependendo da sua licença, as Ações do Azure Active Directory armazenam relatórios de atividades para as durações a seguir:
 
-| Relatório           | &nbsp; |  AD do Azure Gratuito | Azure AD Premium P1 | Azure AD Premium P2 |
+| Relatório           | &nbsp; |  Azure AD Gratuito | Azure AD Premium P1 | Azure AD Premium P2 |
 | ---              | ----   |  ---           | ---                 | ---                 |
 | Auditoria de Diretório  | &nbsp; |   7 dias     | 30 dias             | 30 dias             |
 | Atividade de Entrada | &nbsp; | Não disponível. Você pode acessar sua própria atividade de entrada por 7 dias na folha de perfil do usuário individual | 30 dias | 30 dias             |

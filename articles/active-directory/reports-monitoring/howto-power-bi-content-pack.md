@@ -2,7 +2,7 @@
 title: Como usar o pacote de conteúdo do Power BI do Azure Active Directory | Microsoft Docs
 description: Aprenda a usar o Pacote de Conteúdo do Power BI do Azure Active Directory
 services: active-directory
-author: MarkusVi
+author: cawrites
 manager: daveba
 ms.assetid: addd60fe-d5ac-4b8b-983c-0736c80ace02
 ms.service: active-directory
@@ -12,15 +12,15 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 11/13/2018
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 934562147fedcc81b16fd1ad2534af5662ef4b78
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4d56802e96028b6b01b6be749405c56df2648161
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60437575"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68988245"
 ---
 # <a name="how-to-use-the-azure-active-directory-power-bi-content-pack"></a>Como usar o pacote de conteúdo do Power BI do Azure Active Directory
 
@@ -57,9 +57,9 @@ Também é possível filtrar os resultados, selecionando uma data ou local espec
 
 **Entradas de dispositivo**: Esse relatório ajuda a reconhecer os vários perfis de dispositivos usados na organização e a determinar políticas de dispositivos com base no uso. Ele fornece dados sobre o tipo de sistema operacional e navegadores usados para entrar nos aplicativos, além de informações detalhadas sobre os usuários, incluindo:
 
-- Nome do Usuário
+- Nome de Usuário
 - Endereço IP
-- Local padrão 
+- Location 
 - Status de entrada 
 
 **Funil SSPR**: Esse relatório ajuda a reconhecer como a ferramenta SSPR é usada na organização. É possível exibir quantas redefinições de senha foram tentadas através da ferramenta SSPR e quantas delas foram realizadas com êxito. Também é possível obter detalhes nas falhas de redefinição de senha e reconhecer por que algumas falhas ocorreram. 
@@ -112,7 +112,7 @@ Ao trabalhar com o pacote de conteúdo, é possível encontrar os seguintes erro
 
 Para obter ajuda geral com o Power BI, confira esses [artigos de ajuda](https://powerbi.microsoft.com/documentation/powerbi-service-get-started/).
 
-### <a name="refresh-failed"></a>Falha na atualização 
+### <a name="refresh-failed"></a>Falha ao atualizar 
  
 **Como esse erro ocorre**: Email do Power BI ou status com falha no histórico de atualizações. 
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: bf4f1a08c4356a68db5315b7563adb3b6c884d41
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2e25c615e040dd4359e278b95045fbc71ca60ef1
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67095498"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68943949"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-optimizely"></a>Tutorial: Integração do Azure Active Directory com o Optimizely
 
@@ -112,7 +112,7 @@ Para configurar o logon único do Azure Active Directory com o Optimizely, execu
     > [!NOTE]
     > Esses não são os valores reais. Você atualizará o valor com a URL de logon real e o identificador, o que é explicado no tutorial posteriormente. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
 
-5. Seu aplicativo Optimizely espera as declarações do SAML em um formato específico, o que exige que você adicione mapeamentos de atributo personalizados para a sua configuração de atributos de token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para abrir a caixa de diálogo **Atributos de Usuário** .
+5. Seu aplicativo Optimizely espera as declarações do SAML em um formato específico, o que exige que você adicione mapeamentos de atributo personalizados para a sua configuração de atributos de token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para abrir a caixa de diálogo **Atributos de Usuário**.
 
     ![image](common/edit-attribute.png)
 
@@ -255,5 +255,5 @@ Ao clicar no bloco do Optimizely no Painel de Acesso, você deverá ser conectad
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

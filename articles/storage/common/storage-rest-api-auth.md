@@ -9,22 +9,22 @@ ms.date: 03/21/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 38a120747734cbe4af8804a3e7596fc11a2c2eb3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2149bfb68697129680c45f15c6cce359863fbc59
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66306653"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989936"
 ---
 # <a name="using-the-azure-storage-rest-api"></a>Usando a API REST de Armazenamento do Azure
 
-Este artigo mostra como usar as APIs REST do serviço Armazenamento de Blobs e como autenticar a chamada ao serviço. Ele foi escrito do ponto de vista de um desenvolvedor que não sabe nada sobre REST e não sabe como fazer uma chamada REST. Vamos examinar a documentação de referência para uma chamada REST e ver como transformá-la em uma chamada REST real; quais campos vão onde? Depois de aprender a configurar uma chamada REST, você poderá aproveitar esse conhecimento para usar outras APIs REST do serviço de armazenamento.
+Este artigo mostra como usar as APIs REST do serviço Armazenamento de Blobs e como autenticar a chamada ao serviço. Ele é escrito a partir do ponto de vista de um desenvolvedor que não conhece nada sobre REST e sem ideia de como fazer uma chamada REST. Vamos examinar a documentação de referência para uma chamada REST e ver como transformá-la em uma chamada REST real; quais campos vão onde? Depois de aprender a configurar uma chamada REST, você poderá aproveitar esse conhecimento para usar outras APIs REST do serviço de armazenamento.
 
 ## <a name="prerequisites"></a>Pré-requisitos 
 
 O aplicativo lista os contêineres no armazenamento de blobs de uma conta de armazenamento. Para testar o código neste artigo, você precisa dos seguintes itens: 
 
-* Instale [Visual Studio de 2019](https://www.visualstudio.com/visual-studio-homepage-vs.aspx) com a carga de trabalho a seguir:
+* Instale o [Visual Studio 2019](https://www.visualstudio.com/visual-studio-homepage-vs.aspx) com a seguinte carga de trabalho:
     - Desenvolvimento do Azure
 
 * Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
@@ -49,9 +49,9 @@ Este comando clona o repositório para sua pasta do git local. Para abrir a solu
 
 REST significa *Transferência de Estado Representacional*. Para obter uma definição específica, confira a[Wikipédia](https://en.wikipedia.org/wiki/Representational_state_transfer).
 
-Basicamente, REST é uma arquitetura que pode ser usada a fim de chamar APIs ou disponibilizar APIs para chamadas. É independente do que está acontecendo em ambos os lados, e qual outro software é usado ao enviar ou receber o REST chama. Você pode escrever um aplicativo que é executado em Mac, Windows, Linux, telefone Android ou tablet, iPhone, iPod ou site da Web, e usar a mesma API REST para todas as plataformas. Dados podem ser passados de e/ou para quando a API REST é chamada. A API REST não se importa com o nome da plataforma chamada; o importante é a informação passada na solicitação e os dados fornecidos na resposta.
+Basicamente, REST é uma arquitetura que pode ser usada a fim de chamar APIs ou disponibilizar APIs para chamadas. É independente do que está acontecendo em ambos os lados e de qual outro software é usado ao enviar ou receber as chamadas REST. Você pode escrever um aplicativo que é executado em Mac, Windows, Linux, telefone Android ou tablet, iPhone, iPod ou site da Web, e usar a mesma API REST para todas as plataformas. Dados podem ser passados de e/ou para quando a API REST é chamada. A API REST não se importa com o nome da plataforma chamada; o importante é a informação passada na solicitação e os dados fornecidos na resposta.
 
-Saber como usar REST é uma técnica útil. A equipe de produto do Azure lança de novos recursos frequentemente. Muitas vezes, os novos recursos são acessíveis por meio da interface REST. Às vezes, no entanto, os recursos ainda não apresentadas por meio **todos os** de bibliotecas de cliente do armazenamento ou a interface do usuário (como o portal do Azure). Se você quiser sempre usar o melhor e mais recente, aprender REST é um requisito. Além disso, se você quiser codificar sua própria biblioteca para interagir com o Armazenamento do Azure ou para acessar o Armazenamento do Azure com uma linguagem de programação que não tem uma biblioteca de cliente de armazenamento ou SDK, poderá usar a API REST.
+Saber como usar REST é uma técnica útil. A equipe de produto do Azure lança de novos recursos frequentemente. Muitas vezes, os novos recursos podem ser acessados por meio da interface REST. Às vezes, no entanto, os recursos não surgiram em **todas** as bibliotecas de cliente de armazenamento ou na interface do usuário (como o portal do Azure). Se você quiser sempre usar o melhor e mais recente, aprender REST é um requisito. Além disso, se você quiser codificar sua própria biblioteca para interagir com o Armazenamento do Azure ou para acessar o Armazenamento do Azure com uma linguagem de programação que não tem uma biblioteca de cliente de armazenamento ou SDK, poderá usar a API REST.
 
 ## <a name="about-the-sample-application"></a>Sobre o aplicativo de exemplo
 
@@ -61,7 +61,7 @@ Se você observar a [API REST do serviço Blob](/rest/api/storageservices/Blob-S
 
 ## <a name="rest-api-reference-list-containers-api"></a>Referência da API REST: API de lista de contêineres
 
-Vamos examinar a página na referência da API REST para o [ListContainers](/rest/api/storageservices/List-Containers2) operação. Essas informações ajudarão você a entender onde alguns dos campos vêm na solicitação e resposta.
+Vamos examinar a página na referência da API REST para a operação [ListContainers](/rest/api/storageservices/List-Containers2) . Essas informações ajudarão você a entender onde vêm alguns dos campos na solicitação e na resposta.
 
 **Método de solicitação**: GET. Esse verbo é o método HTTP que você especifica como uma propriedade do objeto de solicitação. Outros valores para esse verbo incluem HEAD, PUT e DELETE, dependendo da API chamada.
 
@@ -79,19 +79,19 @@ Para usar outros parâmetros, acrescente-os à cadeia de caracteres do recurso c
 
 [Cabeçalhos de solicitação](/rest/api/storageservices/List-Containers2#request-headers) **:** Essa seção lista os cabeçalhos de solicitação obrigatórios e opcionais. Três dos cabeçalhos são obrigatórios: um cabeçalho de *Autorização*, *x-ms-date* (contém a hora de UTC para a solicitação) e *x-ms-version* (especifica a versão da API REST a ser usada). A inclusão de *x-ms-client-request-id* nos cabeçalhos é opcional; você pode definir o valor para esse campo como qualquer coisa; ele é gravado nos logs de análise de armazenamento quando o registro em log está habilitado.
 
-[Corpo da solicitação](/rest/api/storageservices/List-Containers2#request-body) **:** Não há corpo da solicitação para ListContainers. O corpo da solicitação é usado em todas as operações PUT ao carregar blobs, bem como SetContainerAccessPolicy, que permite que você envie em uma lista XML de políticas de acesso armazenadas para aplicar. As políticas de acesso armazenadas são discutidas no artigo [Usando SAS (assinaturas de acesso compartilhado)](storage-dotnet-shared-access-signature-part-1.md).
+[Corpo da solicitação](/rest/api/storageservices/List-Containers2#request-body) **:** Não há corpo da solicitação para ListContainers. O corpo da solicitação é usado em todas as operações PUT ao carregar blobs, bem como SetContainerAccessPolicy, que permite que você envie em uma lista XML de políticas de acesso armazenadas para aplicar. As políticas de acesso armazenadas são discutidas no artigo [Usando SAS (assinaturas de acesso compartilhado)](storage-sas-overview.md).
 
 [Código de status de resposta](/rest/api/storageservices/List-Containers2#status-code) **:** Indica os códigos de status que você precisa saber. Neste exemplo, um código de status HTTP 200 é OK. Para obter uma lista completa de códigos de status HTTP, confira [Definições de código de status](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html). Para ver os códigos de erro específicos das APIs REST do Armazenamento, confira [Códigos de erro da API REST comuns](/rest/api/storageservices/common-rest-api-error-codes)
 
-[Cabeçalhos de resposta](/rest/api/storageservices/List-Containers2#response-headers) **:** Eles incluem *tipo de conteúdo*; *x-ms-request-id*, que é a id de solicitação que foi passada; *x-ms-version*, que indica a versão do serviço Blob usado; e o *data*, que é em UTC e informa a hora da solicitação foi feita.
+[Cabeçalhos de resposta](/rest/api/storageservices/List-Containers2#response-headers) **:** Isso inclui o *tipo de conteúdo*; *x-MS-Request-ID*, que é a ID da solicitação que você passou; *x-MS-Version*, que indica a versão do serviço blob usado; e a *Data*, que está em UTC e informa a hora em que a solicitação foi feita.
 
 [Corpo da resposta](/rest/api/storageservices/List-Containers2#response-body): Esse campo é uma estrutura XML que fornece os dados solicitados. Neste exemplo, a resposta é uma lista de contêineres e suas propriedades.
 
 ## <a name="creating-the-rest-request"></a>Criando a solicitação REST
 
-Algumas observações antes de começar: por segurança, ao executar em produção, sempre use HTTPS em vez de HTTP. Para os fins deste exercício, você deve usar HTTP para poder exibir os dados de solicitação e resposta. Para exibir as informações de solicitação e resposta nas chamadas REST reais, você pode baixar o [Fiddler](https://www.telerik.com/fiddler) ou um aplicativo semelhante. No Visual Studio a solução, o nome da conta de armazenamento e a chave são codificadas na classe. O método ListContainersAsyncREST transmite o nome da conta de armazenamento e a chave de conta de armazenamento para os métodos que são usados para criar os vários componentes da solicitação REST. Em um aplicativo do mundo real, o nome da conta de armazenamento e a chave devem residir em um arquivo de configuração, em variáveis de ambiente ou ser recuperados de um Azure Key Vault.
+Algumas observações antes de começar: por segurança, ao executar em produção, sempre use HTTPS em vez de HTTP. Para os fins deste exercício, você deve usar HTTP para poder exibir os dados de solicitação e resposta. Para exibir as informações de solicitação e resposta nas chamadas REST reais, você pode baixar o [Fiddler](https://www.telerik.com/fiddler) ou um aplicativo semelhante. Na solução do Visual Studio, o nome da conta de armazenamento e a chave são codificados na classe. O método ListContainersAsyncREST passa o nome da conta de armazenamento e a chave da conta de armazenamento para os métodos usados para criar os vários componentes da solicitação REST. Em um aplicativo do mundo real, o nome da conta de armazenamento e a chave devem residir em um arquivo de configuração, em variáveis de ambiente ou ser recuperados de um Azure Key Vault.
 
-Em nosso projeto de exemplo, o código para criar o cabeçalho de autorização está em uma classe separada. A ideia é que você pode usar a classe inteira e adicioná-lo à sua própria solução e usá-lo "como"está. O código de cabeçalho de autorização funciona para a maioria das chamadas da API REST ao Armazenamento do Azure.
+Em nosso projeto de exemplo, o código para criar o cabeçalho de autorização está em uma classe separada. A ideia é que você poderia pegar a classe inteira e adicioná-la à sua própria solução e usá-la "como está". O código de cabeçalho de autorização funciona para a maioria das chamadas da API REST ao Armazenamento do Azure.
 
 Para criar a solicitação, que é um objeto HttpRequestMessage, vá para ListContainersAsyncREST em Program.cs. As etapas para criar a solicitação são: 
 
@@ -267,7 +267,7 @@ Agora que você entende como criar a solicitação, chame o serviço e analise o
 ## <a name="creating-the-authorization-header"></a>Criando o cabeçalho de autorização
 
 > [!TIP]
-> O armazenamento do Azure agora dá suporte a integração do Active Directory do Azure (AD Azure) para blobs e filas. O Azure AD oferece uma experiência mais simples para autorizar uma solicitação para o Armazenamento do Azure. Para obter mais informações sobre como usar o Azure AD para autorizar operações REST, consulte [autenticar com o Azure Active Directory](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory). Para obter uma visão geral da integração do Azure AD com o armazenamento do Azure, consulte [autenticar o acesso ao armazenamento do Azure usando o Azure Active Directory](storage-auth-aad.md).
+> O armazenamento do Azure agora dá suporte à integração do Azure Active Directory (Azure AD) para BLOBs e filas. O Azure AD oferece uma experiência mais simples para autorizar uma solicitação para o Armazenamento do Azure. Para obter mais informações sobre como usar o Azure AD para autorizar operações REST, consulte [autenticar com Azure Active Directory](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory). Para obter uma visão geral da integração do Azure AD com o armazenamento do Azure, consulte autenticar o [acesso ao armazenamento do Azure usando Azure Active Directory](storage-auth-aad.md).
 
 Há um artigo que explica conceitualmente (sem código) como executar a [Autenticação para o serviço Armazenamento do Azure](/rest/api/storageservices/Authorization-for-the-Azure-Storage-Services).
 Vamos ver o artigo até exatamente o for é necessário e mostrar o código.
@@ -358,7 +358,7 @@ Esta parte da cadeia de caracteres de assinatura representa a conta de armazenam
 /contosorest/\ncomp:list
 ```
 
-Se você tiver parâmetros de consulta, este exemplo inclui esses parâmetros também. Aqui está o código, que também lida com parâmetros de consulta adicionais e parâmetros de consulta com vários valores. Lembre-se de que você está criando esse código funcione para todas as APIs REST. Você deseja incluir todas as possibilidades, mesmo se o método ListContainers não precisa de todas elas.
+Se você tiver parâmetros de consulta, este exemplo também incluirá esses parâmetros. Aqui está o código, que também lida com parâmetros de consulta adicionais e parâmetros de consulta com vários valores. Lembre-se de que você está criando esse código para funcionar para todas as APIs REST. Você deseja incluir todas as possibilidades, mesmo que o método ListContainers não precise de todas elas.
 
 ```csharp 
 private static string GetCanonicalizedResource(Uri address, string storageAccountName)
@@ -414,7 +414,7 @@ internal static AuthenticationHeaderValue GetAuthorizationHeader(
 }
 ```
 
-Quando você executa esse código, o MessageSignature resultante se parece com este exemplo:
+Quando você executa esse código, o MessageSignature resultante é semelhante a este exemplo:
 
 ```
 GET\n\n\n\n\n\n\n\n\n\n\n\nx-ms-date:Fri, 17 Nov 2017 01:07:37 GMT\nx-ms-version:2017-07-29\n/contosorest/\ncomp:list
@@ -428,11 +428,11 @@ SharedKey contosorest:Ms5sfwkA8nqTRw7Uury4MPHqM6Rj2nfgbYNvUKOa67w=
 
 O AuthorizationHeader é o último cabeçalho colocado nos cabeçalhos de solicitação antes de enviar a resposta.
 
-Que aborda tudo o que você precisa saber para criar uma classe com a qual você pode criar uma solicitação para chamar as APIs de REST de serviços de armazenamento.
+Isso abrange tudo o que você precisa saber para reunir uma classe com a qual você pode criar uma solicitação para chamar as APIs REST dos serviços de armazenamento.
 
 ## <a name="how-about-another-example"></a>Que tal outro exemplo? 
 
-Vamos dar uma olhada em como alterar o código para chamar ListBlobs para o contêiner *container-1*. Esse código é quase idêntico ao código para listar os contêineres, as únicas diferenças são o URI e como analisar a resposta. 
+Vamos dar uma olhada em como alterar o código para chamar ListBlobs para o contêiner *container-1*. Esse código é quase idêntico ao código para listar contêineres, as únicas diferenças são o URI e como você analisa a resposta. 
 
 Se você examinar a documentação de referência de [ListBlobs](/rest/api/storageservices/List-Blobs), verá que o método é *obter* e o RequestURI é:
 
@@ -564,7 +564,7 @@ Content-Length: 1135
 
 ## <a name="summary"></a>Resumo
 
-Neste artigo, você aprendeu a fazer uma solicitação para o API REST do armazenamento de blob. Com a solicitação, você pode recuperar uma lista de contêineres ou uma lista de blobs em um contêiner. Você aprendeu como criar a assinatura de autorização para a chamada à API REST e como usá-lo na solicitação REST. Por fim, você aprendeu a examinar a resposta.
+Neste artigo, você aprendeu como fazer uma solicitação para a API REST do armazenamento de BLOBs. Com a solicitação, você pode recuperar uma lista de contêineres ou uma lista de BLOBs em um contêiner. Você aprendeu como criar a assinatura de autorização para a chamada à API REST e como usá-la na solicitação REST. Por fim, você aprendeu a examinar a resposta.
 
 ## <a name="next-steps"></a>Próximas etapas
 

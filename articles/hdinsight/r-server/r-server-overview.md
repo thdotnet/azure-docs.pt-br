@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: overview
 ms.date: 06/12/2019
-ms.openlocfilehash: a5e4c7acd407cef1bb5fc43d7e40014a6b088a0a
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 5108424c4e39c1c47710c0e25e4e22c4474e68ad
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448898"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68941687"
 ---
 # <a name="what-is-ml-services-in-azure-hdinsight"></a>O que são os Serviços de ML no Azure HDInsight
 
@@ -90,7 +90,7 @@ Para pontuar no HDInsight, escreva uma função R que chame seu modelo para faze
 
 ### <a name="score-in-azure-machine-learning-aml"></a>Pontuação no AML (Azure Machine Learning)
 
-Para pontuar usando um Azure Machine Learning, use o pacote R do Azure Machine Learning de software livre conhecido como [AzureML](https://cran.r-project.org/web/packages/AzureML/vignettes/getting_started.html) para publicar seu modelo como um serviço Web do Azure. Para sua conveniência, este pacote é pré-instalado no nó de borda. Em seguida, use os recursos no Azure Machine Learning para criar uma interface de usuário para o serviço Web e chame o serviço Web conforme necessidade para pontuação.
+Para pontuar usando um Azure Machine Learning, use o pacote R do Azure Machine Learning de software livre conhecido como [AzureML](https://cran.r-project.org/src/contrib/Archive/AzureML/) para publicar seu modelo como um serviço Web do Azure. Para sua conveniência, este pacote é pré-instalado no nó de borda. Em seguida, use os recursos no Azure Machine Learning para criar uma interface de usuário para o serviço Web e chame o serviço Web conforme necessidade para pontuação.
 
 Se você escolher essa opção, será preciso converter qualquer objeto de modelo do ScaleR em objeto de modelo de software livre equivalente para uso com o serviço Web. Use as funções de coerção do ScaleR, tais como `as.randomForest()` para modelos baseados em combinação, para essa conversão.
 

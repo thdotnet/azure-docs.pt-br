@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 12/11/2018
 ms.author: dacurwin
-ms.openlocfilehash: 88adf54ab26055f97534abb4d56d098079116248
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 9ae21e2bf71789d0b0dd19e3dd7a65ad10fae241
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68954931"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69018964"
 ---
 # <a name="back-up-vmware-vms-with-azure-backup-server"></a>Faça backup de VMs VMware com o Servidor de Backup do Azure
 
@@ -102,10 +102,10 @@ Configure um canal seguro da seguinte maneira:
 
 ### <a name="disable-https-certificate-validation"></a>Desabilitar validação de certificado HTTPS
 
-Se você tiver limites de segurança dentro da sua organização e não quiser usar o protocolo HTTPS entre servidores VMware e o computador do Servidor de Backup do Azure, desabilite HTTPS da seguinte maneira:
+Se você tiver limites de segurança em sua organização e não quiser usar o protocolo HTTPS entre servidores VMware e o computador Servidor de Backup do Azure, desabilite o HTTPS da seguinte maneira: 
 1. Copie e cole o texto a seguir em um aquivo .txt.
 
-      ```
+      ```text
       Windows Registry Editor Version 5.00
       [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Data Protection Manager\VMWare]
       "IgnoreCertificateValidation"=dword:00000001
@@ -221,7 +221,7 @@ Na guia **Gerenciar** no painel **Permissões Globais**, a nova conta de usuári
 
     ![Caixa de diálogo Gerenciar Credenciais do Servidor de Backup do Azure](./media/backup-azure-backup-server-vmware/mabs-manage-credentials-dialog.png)
 
-4. Em **Adicionar Credencial**, insira um nome e uma descrição para a nova credencial e especifique o nome de usuário e senha que você definiu no servidor do VMware. O nome *Credencial do Contoso Vcenter* é utilizado para identificar a credencial neste procedimento. Se o servidor VMware e o Servidor de Backup do Azure não estiverem no mesmo domínio, especifique o domínio no nome de usuário.
+4. Em **Adicionar credencial**, insira um nome e uma descrição para a nova credencial e especifique o nome de usuário e a senha que você definiu no servidor VMware. O nome *Credencial do Contoso Vcenter* é utilizado para identificar a credencial neste procedimento. Se o servidor VMware e o Servidor de Backup do Azure não estiverem no mesmo domínio, especifique o domínio no nome de usuário.
 
     ![Caixa de diálogo Adicionar Credencial do Servidor de Backup do Azure](./media/backup-azure-backup-server-vmware/mabs-add-credential-dialog2.png)
 
@@ -286,7 +286,7 @@ Adicione VMs do VMware para o backup. Grupos de proteção reúnem várias VMs e
 
 1. Na página **Selecionar tipo de grupo de Proteção**, selecione **Servidores** e, depois, clique em **Avançar**. A página **Selecionar membros do grupo** é exibida.
 
-1. Em **Selecionar membros do grupo** > selecione as VMs (ou pastas VM) de que você deseja fazer backup. Clique em **Avançar**.
+1. Em **selecionar membros do grupo**, selecione as VMs (ou pastas de VM) das quais você deseja fazer backup. Clique em **Avançar**.
 
     - Quando você seleciona uma pasta, VMs ou pastas dentro dessa pasta também são selecionadas para backup. Você pode desmarcar as pastas ou VMs das quais não deseja fazer backup.
 1. Se já estiver sendo feito backup de uma VM ou pasta, você não poderá selecioná-la. Isso garante que os pontos de recuperação duplicados não sejam criados para uma VM.

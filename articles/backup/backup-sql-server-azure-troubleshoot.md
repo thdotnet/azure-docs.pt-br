@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: article
 ms.date: 06/18/2019
 ms.author: dacurwin
-ms.openlocfilehash: 323470adfe56ee20fe0fb64aeba38b6af4330351
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: c456dfec72f98dc4ae06f1d7d5d9fb461182d579
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827590"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69018990"
 ---
 # <a name="troubleshoot-sql-server-database-backup-by-using-azure-backup"></a>Solucionar problemas SQL Server backup de banco de dados usando o backup do Azure
 
@@ -130,7 +130,7 @@ A operação está bloqueada porque o limite de certos recursos permitidos em 24
 
 | Mensagem de erro | Possíveis causas | Ação recomendada |
 |---|---|---|
-A operação está bloqueada porque o cofre atingiu seu limite máximo para essas operações permitidas em um intervalo de 24 horas. | Quando você atingir o limite máximo permitido para uma operação em um intervalo de 24 horas, esse erro será fornecido. Esse erro geralmente é fornecido em caso de operações em escala, como modificar política ou proteção automática. Ao contrário do caso do CloudDosAbsoluteLimitReached, não há muito que você possa fazer para resolver esse estado. na verdade, o serviço de backup do Azure tentará novamente as operações internamente para todos os itens em questão.<br> Por exemplo: Se você tiver um grande número de fontes de trabalho protegidas por uma política e tentar modificar essa política, ela irá disparar configurar trabalhos de proteção para cada um dos itens protegidos e, às vezes, poderá atingir o limite máximo permitido para essas operações por dia.| O serviço de backup do Azure repetirá essa operação automaticamente após 24 horas. 
+A operação está bloqueada porque o cofre atingiu seu limite máximo para essas operações permitidas em um intervalo de 24 horas. | Quando você atingir o limite máximo permitido para uma operação em um intervalo de 24 horas, esse erro será fornecido. Esse erro geralmente é fornecido em caso de operações em escala, como modificar política ou proteção automática. Ao contrário do caso do CloudDosAbsoluteLimitReached, não há muito que você possa fazer para resolver esse estado. na verdade, o serviço de backup do Azure tentará novamente as operações internamente para todos os itens em questão.<br> Por exemplo:  Se você tiver um grande número de fontes de trabalho protegidas por uma política e tentar modificar essa política, ela irá disparar configurar trabalhos de proteção para cada um dos itens protegidos e, às vezes, poderá atingir o limite máximo permitido para essas operações por dia.| O serviço de backup do Azure repetirá essa operação automaticamente após 24 horas. 
 
 
 ## <a name="re-registration-failures"></a>Falhas de novo registro
@@ -163,7 +163,7 @@ Nos cenários anteriores, recomendamos que você dispare uma operação de novo 
 
 O tamanho total da cadeia de caracteres de arquivos depende não apenas do número de arquivos, mas também de seus nomes e caminhos. Para cada arquivo de banco de dados, obtenha o nome de arquivo lógico e o caminho físico. Você pode usar esta consulta SQL:
 
-```
+```sql
 SELECT mf.name AS LogicalName, Physical_Name AS Location FROM sys.master_files mf
                INNER JOIN sys.databases db ON db.database_id = mf.database_id
                WHERE db.name = N'<Database Name>'"
@@ -171,13 +171,13 @@ SELECT mf.name AS LogicalName, Physical_Name AS Location FROM sys.master_files m
 
 Agora, organize-os no seguinte formato:
 
-```
+```json
 [{"path":"<Location>","logicalName":"<LogicalName>","isDir":false},{"path":"<Location>","logicalName":"<LogicalName>","isDir":false}]}
 ```
 
 Veja um exemplo:
 
-```
+```json
 [{"path":"F:\\Data\\TestDB12.mdf","logicalName":"TestDB12","isDir":false},{"path":"F:\\Log\\TestDB12_log.ldf","logicalName":"TestDB12_log","isDir":false}]}
 ```
 
@@ -188,7 +188,7 @@ Se o tamanho da cadeia de caracteres do conteúdo exceder 20.000 bytes, os arqui
 Você pode substituir o caminho do arquivo de restauração de destino durante a operação de restauração, colocando um arquivo JSON que contém o mapeamento do arquivo de banco de dados para o caminho de restauração de destino. Crie um `database_name.json` arquivo e coloque-o no local *C:\Program programas\azure Workload Backup\bin\plugins\SQL*.
 
 O conteúdo do arquivo deve estar neste formato:
-```
+```json
 [
   {
     "Path": "<Restore_Path>",
@@ -205,7 +205,7 @@ O conteúdo do arquivo deve estar neste formato:
 
 Veja um exemplo:
 
-```
+```json
 [
   {
    "Path": "F:\\Data\\testdb2_1546408741449456.mdf",
@@ -222,7 +222,7 @@ Veja um exemplo:
 
 No conteúdo anterior, você pode obter o nome lógico do arquivo de banco de dados usando a seguinte consulta SQL:
 
-```
+```sql
 SELECT mf.name AS LogicalName FROM sys.master_files mf
                 INNER JOIN sys.databases db ON db.database_id = mf.database_id
                 WHERE db.name = N'<Database Name>'"

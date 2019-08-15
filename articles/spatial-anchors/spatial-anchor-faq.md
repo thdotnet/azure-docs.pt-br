@@ -8,12 +8,12 @@ ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: overview
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 435ad986a9f0b96d42c88d450f40e5900ad33b7c
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: 06936a196813dacfc1fc9d02945bee4119b7eea8
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67653243"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68927503"
 ---
 # <a name="frequently-asked-questions-about-azure-spatial-anchors"></a>Perguntas frequentes sobre as Âncoras Espaciais do Azure
 
@@ -121,10 +121,6 @@ Introdução ao [desenvolvimento aqui](index.yml).
 **P: Ele funciona com Unreal?**
 
 **R:** O suporte para Unreal será considerado no futuro.
-
-**P: Funciona com Xamarin?**
-
-**R:** O suporte para Xamarin será considerado no futuro.
 
 **P: Quais portas e protocolos usam Âncoras Espaciais do Azure?**
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: mbaldwin
 ms.custom: mvc
-ms.openlocfilehash: 3bb4647b39a276e2dd54260c17eca1d700d5ba16
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: e2e730c623b6ee802938b930c4874f6c4920cc64
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67874978"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934410"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-windows-virtual-machine-in-net"></a>Tutorial: Usar o Azure Key Vault com uma máquina virtual do Windows no .NET
 
@@ -105,9 +105,9 @@ Esse segredo armazena o valor **MySecret**.
 ### <a name="create-a-virtual-machine"></a>Criar uma máquina virtual
 Crie uma máquina virtual usando um dos seguintes métodos:
 
-* [A CLI do Azure](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-cli)
-* [PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-powershell)
-* [O portal do Azure](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal)
+* [A CLI do Azure](../virtual-machines/windows/quick-create-cli.md)
+* [PowerShell](../virtual-machines/windows/quick-create-powershell.md)
+* [O portal do Azure](../virtual-machines/windows/quick-create-portal.md)
 
 ### <a name="assign-an-identity-to-the-vm"></a>Atribuir uma identidade à VM
 Crie uma identidade atribuída pelo sistema para a máquina virtual com o comando [az vm identity assign](/cli/azure/vm/identity?view=azure-cli-latest#az-vm-identity-assign):
@@ -134,7 +134,7 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <VMSystemAssigned
 
 ### <a name="sign-in-to-the-virtual-machine"></a>Entrar na máquina virtual
 
-Para entrar na máquina virtual, siga as instruções em [Conectar e entrar em uma máquina virtual do Azure executando o Windows](https://docs.microsoft.com/azure/virtual-machines/windows/connect-logon).
+Para entrar na máquina virtual, siga as instruções em [Conectar e entrar em uma máquina virtual do Azure executando o Windows](../virtual-machines/windows/connect-logon.md).
 
 ## <a name="set-up-the-console-app"></a>Configurar o aplicativo de console
 

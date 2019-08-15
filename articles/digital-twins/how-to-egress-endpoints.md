@@ -6,14 +6,14 @@ manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 06/06/2019
+ms.date: 08/12/2019
 ms.author: alinast
-ms.openlocfilehash: 478fe1859dd9067e8097df0384657793602c1378
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 3c33992ce3c130d6c06e0709a9c4ddcab4fff159
+ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67071452"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69013934"
 ---
 # <a name="egress-and-endpoints"></a>Pontos de extremidade e de saída
 
@@ -47,23 +47,23 @@ Eventos são enviados por objetos de IoT (por exemplo, dispositivos e sensores) 
 }
 ```
 
-| Atributo | Type | DESCRIÇÃO |
+| Atributo | Tipo | Descrição |
 | --- | --- | --- |
-| id | string | Identificador exclusivo do evento. |
-| subject | string | Caminho definido pelo fornecedor para o assunto do evento. |
-| data | objeto | Dados do evento específicos ao provedor de recursos. |
-| eventType | string | Um dos tipos de evento registrados para a origem do evento. |
-| eventTime | string | A hora em que o evento é gerado com base na hora UTC do provedor. |
-| dataVersion | string | A versão do esquema do objeto de dados. O fornecedor define a versão do esquema. |
-| metadataVersion | string | A versão do esquema do metadados de evento. Grade de Eventos define o esquema de propriedades de nível superior. Grade de Eventos fornece esse valor. |
-| topic | string | Caminho de recurso completo para a origem do evento. Este campo não é gravável. Grade de Eventos fornece esse valor. |
+| id | cadeia de caracteres | Identificador exclusivo do evento. |
+| assunto | cadeia de caracteres | Caminho definido pelo fornecedor para o assunto do evento. |
+| dados | objeto | Dados do evento específicos ao provedor de recursos. |
+| eventType | cadeia de caracteres | Um dos tipos de evento registrados para a origem do evento. |
+| eventTime | cadeia de caracteres | A hora em que o evento é gerado com base na hora UTC do provedor. |
+| dataVersion | cadeia de caracteres | A versão de esquema do objeto de dados. O fornecedor define a versão do esquema. |
+| metadataVersion | cadeia de caracteres | A versão do esquema dos metadados de eventos. Grade de Eventos define o esquema de propriedades de nível superior. Grade de Eventos fornece esse valor. |
+| topic | cadeia de caracteres | Caminho de recurso completo para a origem do evento. Este campo não é gravável. Grade de Eventos fornece esse valor. |
 
 Para obter mais informações sobre o esquema de evento da Grade de Eventos:
 
 - Examine a [Referência de esquema de evento de Grade de Eventos do Azure](../event-grid/event-schema.md).
 - Leia a [Referência do Azure EventGrid Node.js SDK EventGridEvent](https://docs.microsoft.com/javascript/api/azure-eventgrid/eventgridevent?view=azure-node-latest).
 
-## <a name="event-types"></a>Tipos de evento
+## <a name="event-types"></a>Tipos de eventos
 
 Os tipos de eventos classificam a natureza do evento e são definidos no campo **eventType**. Tipos de evento disponíveis são fornecidos pela lista a seguir:
 
@@ -79,7 +79,7 @@ Formatos de eventos para cada um dos tipos de eventos são descritos nas seçõe
 
 **TopologyOperation** aplica-se a alterações no gráfico. O **assunto** propriedade especifica o tipo de objeto afetado. Os seguintes tipos de objetos podem acionar este evento:
 
-- Dispositivo
+- Dispositivos
 - DeviceBlobMetadata
 - DeviceExtendedProperty
 - ExtendedPropertyKey
@@ -96,7 +96,7 @@ Formatos de eventos para cada um dos tipos de eventos são descritos nas seçõe
 - SpaceResource
 - SpaceRoleAssignment
 - Sistema
-- Usuário
+- User
 - UserBlobMetadata
 - UserExtendedProperty
 
@@ -122,7 +122,7 @@ Formatos de eventos para cada um dos tipos de eventos são descritos nas seçõe
 }
 ```
 
-| Value | Substitua por |
+| Valor | Substitua por |
 | --- | --- |
 | YOUR_TOPIC_NAME | O nome do seu tópico personalizado |
 
@@ -153,7 +153,7 @@ Formatos de eventos para cada um dos tipos de eventos são descritos nas seçõe
 }
 ```
 
-| Value | Substitua por |
+| Valor | Substitua por |
 | --- | --- |
 | YOUR_TOPIC_NAME | O nome do seu tópico personalizado |
 
@@ -188,7 +188,7 @@ Formatos de eventos para cada um dos tipos de eventos são descritos nas seçõe
 }
 ```
 
-| Value | Substitua por |
+| Valor | Substitua por |
 | --- | --- |
 | YOUR_TOPIC_NAME | O nome do seu tópico personalizado |
 
@@ -223,7 +223,7 @@ Formatos de eventos para cada um dos tipos de eventos são descritos nas seçõe
 }
 ```
 
-| Value | Substitua por |
+| Valor | Substitua por |
 | --- | --- |
 | YOUR_TOPIC_NAME | O nome do seu tópico personalizado |
 
@@ -246,7 +246,7 @@ Os exemplos a seguir demonstram como configurar os pontos de extremidade suporta
 >[!IMPORTANT]
 > Preste muita atenção ao atributo **eventTypes**. Ele define quais tipos de evento são manipulados pelo ponto de extremidade e assim, determinam seu roteamento.
 
-Uma solicitação HTTP POST autenticada mediante
+Uma solicitação HTTP POST autenticada em relação a:
 
 ```plaintext
 YOUR_MANAGEMENT_API_URL/endpoints
@@ -268,7 +268,7 @@ YOUR_MANAGEMENT_API_URL/endpoints
   }
   ```
 
-    | Value | Substitua por |
+    | Valor | Substitua por |
     | --- | --- |
     | YOUR_NAMESPACE | O namespace do seu ponto de extremidade |
     | YOUR_PRIMARY_KEY | A cadeia de conexão primária usada para autenticar |
@@ -291,7 +291,7 @@ YOUR_MANAGEMENT_API_URL/endpoints
   }
   ```
 
-    | Value | Substitua por |
+    | Valor | Substitua por |
     | --- | --- |
     | YOUR_PRIMARY_KEY | A cadeia de conexão primária usada para autenticar|
     | YOUR_SECONDARY_KEY | A cadeia de conexão secundária usada para autenticar |
@@ -313,7 +313,7 @@ YOUR_MANAGEMENT_API_URL/endpoints
   }
   ```
 
-    | Value | Substitua por |
+    | Valor | Substitua por |
     | --- | --- |
     | YOUR_NAMESPACE | O namespace do seu ponto de extremidade |
     | YOUR_PRIMARY_KEY | A cadeia de conexão primária usada para autenticar |
@@ -334,7 +334,7 @@ YOUR_MANAGEMENT_API_URL/endpoints
   }
   ```
 
-    | Value | Substitua por |
+    | Valor | Substitua por |
     | --- | --- |
     | YOUR_NAMESPACE | O namespace do seu ponto de extremidade |
     | YOUR_PRIMARY_KEY | A cadeia de conexão primária usada para autenticar |

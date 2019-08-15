@@ -1,9 +1,9 @@
 ---
-title: Como integrar os logs do Azure Active Directory ao ArcSight usando o Azure Monitor | Microsoft Docs
-description: Saiba como integrar os logs do Azure Active Directory ao ArcSight usando o Azure Monitor
+title: Como integrar logs de Azure Active Directory com o ArcSight usando Azure Monitor | Microsoft Docs
+description: Saiba como integrar logs de Azure Active Directory com o ArcSight usando Azure Monitor
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: b37bef0d-982e-4e28-86b2-6c61ca524ae1
@@ -14,17 +14,17 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 04/19/2019
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08a265637274f396497da37706391bf44e0c9107
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 6e4f0f81c5f135e885fe06d4fb4fa67514e8781b
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60437015"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68988152"
 ---
-# <a name="integrate-azure-active-directory-logs-with-arcsight-using-azure-monitor"></a>Integrar logs do Azure Active Directory ArcSight usando o Azure Monitor
+# <a name="integrate-azure-active-directory-logs-with-arcsight-using-azure-monitor"></a>Integrar logs de Azure Active Directory com o ArcSight usando Azure Monitor
 
 [Micro Focus ArcSight](https://software.microfocus.com/products/siem-security-information-event-management/overview) uma solução SIEM (gerenciamento de eventos e informações de segurança) que ajuda a detectar e responder a ameaças de segurança na plataforma. Agora você pode rotear os logs do Azure AD (Azure Active Directory) para ArcSight usando o Azure Monitor usando o conector ArcSight para Azure AD. Esse recurso permite que você monitore o locatário por comprometimento de segurança usando o ArcSight.  
 

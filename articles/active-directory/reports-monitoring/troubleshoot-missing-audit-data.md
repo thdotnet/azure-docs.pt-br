@@ -3,7 +3,7 @@ title: Solução de problema de Dados ausentes nos logs de atividades do Azure A
 description: Fornece uma resolução para dados ausentes nos logs de atividades do Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: 7cbe4337-bb77-4ee0-b254-3e368be06db7
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 01/15/2018
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4b25c09b140102c0788a939c48f48300242fc6ee
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: a04de319a17255e3b61378cbd716828a237317b3
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60285043"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989509"
 ---
 # <a name="troubleshoot-missing-data-in-the-azure-active-directory-activity-logs"></a>Solucionar problemas: dados ausentes nos logs de atividades do Azure Active Directory 
 
@@ -53,7 +53,7 @@ Aguarde de 15 minutos a duas horas e verifique se as ações aparecem no log. Se
 
 Eu entrei recentemente no portal do Azure e esperava ver os logs de auditoria para essas ações na folha `Activity logs > Sign-ins`, mas não é possível encontrá-los.
 
- ![Relatórios](./media/troubleshoot-missing-audit-data/02.png)
+ ![Relatório](./media/troubleshoot-missing-audit-data/02.png)
  
 ### <a name="cause"></a>Causa
 
@@ -74,13 +74,13 @@ Aguarde de 15 minutos a duas horas e verifique se as ações aparecem no log. Se
 
 Não consigo exibir mais de 30 dias de dados de entrada e de auditoria no portal do Azure. Por quê? 
 
- ![Relatórios](./media/troubleshoot-missing-audit-data/03.png)
+ ![Relatório](./media/troubleshoot-missing-audit-data/03.png)
 
 ### <a name="cause"></a>Causa
 
 Dependendo da sua licença, as Ações do Azure Active Directory armazenam relatórios de atividades para as durações a seguir:
 
-| Relatório           | &nbsp; |  AD do Azure Gratuito | Azure AD Premium P1 | Azure AD Premium P2 |
+| Relatório           | &nbsp; |  Azure AD Gratuito | Azure AD Premium P1 | Azure AD Premium P2 |
 | ---              | ----   |  ---           | ---                 | ---                 |
 | Auditoria de Diretório  | &nbsp; |   7 dias     | 30 dias             | 30 dias             |
 | Atividade de Entrada | &nbsp; | Não disponível. Você pode acessar sua própria atividade de entrada por 7 dias na folha de perfil do usuário individual | 30 dias | 30 dias             |

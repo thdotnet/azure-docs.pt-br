@@ -9,12 +9,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 12/04/2018
-ms.openlocfilehash: d8438f5ddbbb3744811448aeb563be602b04516d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 257a2d78a54e292faecda836811f0a58fabd584d
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58009101"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854511"
 ---
 # <a name="create-a-kubernetes-cluster-with-azure-kubernetes-service-and-terraform"></a>Criar um cluster do Kubernetes com o Serviço do Azure Kubernetes e o Terraform
 [ O Azure Kubernetes Service (AKS) ](/azure/aks/) gerencia seu ambiente hospedado do Kubernetes, tornando rápido e fácil implantar e gerenciar aplicativos em contêiner sem a experiência em orquestração de contêineres. Também elimina a sobrecarga das operações em andamento e a manutenção provisionando, atualizando e dimensionamento os recursos sob demanda, sem colocar seus aplicativos offline.
@@ -110,9 +110,14 @@ Crie o arquivo de configuração do Terraform que declara os recursos para o clu
         name     = "${var.resource_group_name}"
         location = "${var.location}"
     }
+    
+    resource "random_id" "log_analytics_workspace_name_suffix" {
+        byte_length = 8
+    }
 
     resource "azurerm_log_analytics_workspace" "test" {
-        name                = "${var.log_analytics_workspace_name}"
+        # The WorkSpace name has to be unique across the whole of azure, not just the current subscription/tenant.
+        name                = "${var.log_analytics_workspace_name}-${random_id.log_analytics_workspace_name_suffix.dec}"
         location            = "${var.log_analytics_workspace_location}"
         resource_group_name = "${azurerm_resource_group.k8s.name}"
         sku                 = "${var.log_analytics_workspace_sku}"
@@ -165,7 +170,7 @@ Crie o arquivo de configuração do Terraform que declara os recursos para o clu
             }
         }
 
-        tags {
+        tags = {
             Environment = "Development"
         }
     }

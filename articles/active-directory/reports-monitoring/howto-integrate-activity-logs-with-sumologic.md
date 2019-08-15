@@ -1,9 +1,9 @@
 ---
-title: Stream de logs do Azure Active Directory ao SumoLogic usando o Azure Monitor | Microsoft Docs
-description: Saiba como integrar os logs do Azure Active Directory ao SumoLogic usando o Azure Monitor
+title: Transmitir logs de Azure Active Directory para SumoLogic usando Azure Monitor | Microsoft Docs
+description: Saiba como integrar logs de Azure Active Directory com o SumoLogic usando Azure Monitor
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: 2c3db9a8-50fa-475a-97d8-f31082af6593
@@ -14,17 +14,17 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 04/18/2019
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ccf9cd550b3848be841f193f4ab8a6094cf671d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 1645415a8cfd86b142c25dc145c60e8b986d1013
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60437841"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989750"
 ---
-# <a name="integrate-azure-active-directory-logs-with-sumologic-using-azure-monitor"></a>Integrar logs do Azure Active Directory ao SumoLogic usando o Azure Monitor
+# <a name="integrate-azure-active-directory-logs-with-sumologic-using-azure-monitor"></a>Integrar logs de Azure Active Directory com o SumoLogic usando Azure Monitor
 
 Neste artigo, você aprenderá como integrar logs do Microsoft Azure Active Directory (Azure AD) ao SumoLogic usando o Monitor do Azure. Você primeiro encaminhar os logs para um hub de eventos do Azure e, em seguida, integre o hub de eventos com o SumoLogic.
 
@@ -40,7 +40,7 @@ Para usar esse recurso, você precisa de:
 2. Configurar a instância de SumoLogic [coletar logs do Azure Active Directory](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory/Collect_Logs_for_Azure_Active_Directory).
 3. [Instalar o aplicativo do Azure AD SumoLogic](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory/Install_the_Azure_Active_Directory_App_and_View_the_Dashboards) para usar os painéis pré-configurados que fornecem uma análise em tempo real de seu ambiente.
 
-   ![painel](./media/howto-integrate-activity-logs-with-sumologic/overview-dashboard.png)
+   ![Painel](./media/howto-integrate-activity-logs-with-sumologic/overview-dashboard.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c9de4a9b72e446a7d2b6687af380ee910b58980
-ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
+ms.openlocfilehash: a56fcc45d4efb21c4904380d731d9e95584c39fd
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68741283"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68879405"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-joined-devices-manually"></a>Tutorial: configurar manualmente dispositivos ingressados no Azure Active Directory híbrido
 
@@ -71,6 +71,8 @@ Se sua organização usar a instalação gerenciada (não federada) com o Active
 Para dispositivos Windows 10 na versão 1703 ou anterior, se a sua organização exigir acesso à Internet por meio de um proxy de saída, será necessário implementar a WPAD (Descoberta Automática de Proxy da Web) para permitir que computadores com Windows 10 sejam registrados no Azure AD.
 
 A partir do Windows 10 1803, mesmo se a tentativa de ingresso no Azure AD híbrido por um dispositivo em um domínio federado usando o AD FS falhar e se o Azure AD Connect estiver configurado para sincronizar os objetos de computador/dispositivo com o Azure AD, o dispositivo tentará concluir o ingresso no Azure AD híbrido usando o computador/dispositivo sincronizado.
+
+Para verificar se o dispositivo é capaz de acessar os recursos da Microsoft mencionados acima na conta do sistema, você pode usar o script de [conectividade de registro de dispositivo de teste](https://gallery.technet.microsoft.com/Test-Device-Registration-3dc944c0).
 
 ## <a name="verify-configuration-steps"></a>Etapas para verificar a configuração
 

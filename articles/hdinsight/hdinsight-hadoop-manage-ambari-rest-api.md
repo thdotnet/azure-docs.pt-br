@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/07/2019
 ms.author: hrasheed
-ms.openlocfilehash: 301ad4f940e6bd4eedb3a4df64e4740d29effe03
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: 5836dda186c7bd9baeafa193052b0b75d63e291b
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68406230"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019613"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-apache-ambari-rest-api"></a>Gerenciar clusters HDInsight usando a API REST do Apache Ambari
 
@@ -37,11 +37,13 @@ O [Apache Ambari](https://ambari.apache.org) simplifica o gerenciamento e o moni
 
 ## <a name="base-uri-for-ambari-rest-api"></a>Base de URI para a API de Rest do Ambari
 
- O URI (Uniform Resource Identifier base) para a API REST do Ambari no HDInsight `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME`é, `CLUSTERNAME` em que é o nome do cluster.  Os nomes de cluster nos URIs diferenciam maiúsculas de minúsculas.  Embora o nome do cluster na parte do FQDN (nome de domínio totalmente qualificado) do URI`CLUSTERNAME.azurehdinsight.net`() não diferencia maiúsculas de minúsculas, outras ocorrências no URI diferenciam maiúsculas de minúsculas.
+ O URI (Uniform Resource Identifier base) para a API REST do Ambari no HDInsight `https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME`é, `CLUSTERNAME` em que é o nome do cluster.  Os nomes de cluster nosURIs diferenciam maiúsculas de minúsculas.  Embora o nome do cluster na parte do FQDN (nome de domínio totalmente qualificado) do URI`CLUSTERNAME.azurehdinsight.net`() não diferencia maiúsculas de minúsculas, outras ocorrências no URI diferenciam maiúsculas de minúsculas.
 
 ## <a name="authentication"></a>Autenticação
 
 Conectar-se ao Ambari no HDInsight requer HTTPS. Use o nome da conta do administrador (o padrão é **admin**) e a senha fornecidos durante a criação do cluster.
+
+Para Enterprise Security Package clusters, em vez `admin`de, use um nome de usuário `username@domain.onmicrosoft.com`totalmente qualificado como.
 
 ## <a name="examples"></a>Exemplos
 

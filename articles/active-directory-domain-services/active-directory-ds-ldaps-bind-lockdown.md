@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: iainfou
-ms.openlocfilehash: df0b3d27eec478280a33be831a2431eccdf05a74
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: cbc5bee0f4cc59f59af6e3f57219279cd8fcb030
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67483378"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68988575"
 ---
 # <a name="bind-to-an-azure-ad-domain-services-managed-domain-using-secure-ldap-ldaps"></a>Associar a um domínio gerenciado do Azure Active Directory Domain Services usando LDAP seguro (LDAPS)
 
@@ -36,7 +36,7 @@ Primeiro, abra o LDP e conecte-se ao domínio gerenciado. Clique em **Conexão**
 Em seguida, vincule o domínio gerenciado. Clique em **Conexão** e clique em **vincular...**  no menu. Forneça as credenciais de uma conta de usuário que pertencem ao grupo 'Administradores de controlador de domínio do AAD'.
 
 > [!IMPORTANT]
-> Os usuários (e contas de serviço) não é possível executar associações simples de LDAP, se você tiver desabilitado a sincronização de hash de senha NTLM em sua instância do Azure AD Domain Services.  Para obter mais informações sobre como desativar a sincronização de hash de senha NTLM, leia [proteger o domínio gerenciado do Azure AD DOmain Services](secure-your-domain.md).
+> Os usuários (e as contas de serviço) não poderão executar associações LDAP simples se você tiver desabilitado a sincronização de hash de senha NTLM em sua instância de Azure AD Domain Services.  Para obter mais informações sobre como desabilitar a sincronização de hash de senha NTLM, leia [proteger seu Azure AD Domain Services domínio gerenciado](secure-your-domain.md).
 >
 >
 
@@ -70,9 +70,9 @@ O exemplo de NSG na tabela a seguir bloqueia o acesso LDAP seguro pela internet.
 
 ## <a name="related-content"></a>Conteúdo relacionado
 * [Serviços de Domínio do Azure AD - guia de Introdução](create-instance.md)
-* [Gerenciar um domínio do Azure AD Domain Services](manage-domain.md)
+* [Gerenciar um domínio de Azure AD Domain Services](manage-domain.md)
 * [Noções básicas de consulta LDAP](https://docs.microsoft.com/windows/desktop/ad/creating-a-query-filter)
-* [Gerenciar política de grupo para o Azure AD Domain Services](manage-group-policy.md)
+* [Gerenciar Política de Grupo para Azure AD Domain Services](manage-group-policy.md)
 * [Grupos de segurança de rede](../virtual-network/security-overview.md)
 * [Criar um Grupo de Segurança de Rede](../virtual-network/tutorial-filter-network-traffic.md)
 

@@ -1,9 +1,9 @@
 ---
-title: Como instalar e usar os modos de exibição do log analytics do Azure Active Directory | Microsoft Docs
-description: Saiba como instalar e usar os modos de exibição do log analytics do Azure Active Directory
+title: Como instalar e usar as exibições do log Analytics para Azure Active Directory | Microsoft Docs
+description: Saiba como instalar e usar as exibições do log Analytics para Azure Active Directory
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: 2290de3c-2858-4da0-b4ca-a00107702e26
@@ -14,22 +14,22 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 04/18/2019
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92a5d9539d254eb7d52e3277691c9d8ff5a41821
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7cb1241387144b691b76ec330a5f90b762ebc11f
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60286803"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989781"
 ---
 # <a name="install-and-use-the-log-analytics-views-for-azure-active-directory"></a>Instalar e usar os modos de exibição do Log Analytics do Azure Active Directory
 
 As exibições do Log Analytics do Azure Active Directory ajuda você a analisar e pesquisar os logs de atividades do Azure AD no locatário do Azure AD. Logs de atividade do Azure AD incluem:
 
 * Logs de auditoria: O [relatório de atividade de logs de auditoria](concept-audit-logs.md) dá acesso ao histórico de todas as tarefas executadas em seu locatário.
-* Logs de entrada: Com o [relatório de atividades de entrada](concept-sign-ins.md), você pode determinar quem realizou as tarefas indicadas pelo relatório das trilhas de auditoria.
+* Logs de entrada: Com o [relatório de atividades de entrada](concept-sign-ins.md), você pode determinar quem realizou as tarefas indicadas pelo relatório dos logs de auditoria.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -61,7 +61,7 @@ Para usar as exibições do Log Analytics, você precisará de:
 
 4. Selecione **Definir Alerta** e, em seguida, **Sempre que a pesquisa de logs personalizada for &lt;lógica não definida&gt;** na seção **Critérios de alerta**. Como queremos alertar sempre que houver um erro de conexão, defina o **Limite** da lógica de alerta padrão como **1** e, em seguida, selecione **Concluído**. 
 
-    ![Configurar sinal lógico](./media/howto-install-use-log-analytics-views/configure-signal-logic.png)
+    ![Configurar sinal lógica](./media/howto-install-use-log-analytics-views/configure-signal-logic.png)
 
 5. Insira um nome e uma descrição para o alerta e defina a gravidade como **Aviso**.
 

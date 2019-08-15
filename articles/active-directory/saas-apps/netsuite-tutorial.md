@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/17/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2600989273d6ebfe4319a048cc65c8c3ff9ecdbc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e462197bac854004aaf2d2f0f96e121ed081581a
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67096311"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967247"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-netsuite"></a>Tutorial: Integração do Azure Active Directory ao NetSuite
 
@@ -122,7 +122,7 @@ Para configurar o logon único do Azure AD com o NetSuite, execute as seguintes 
     `https://<tenant-name>.na2.sandbox.NetSuite.com/saml2/acs`
 
     > [!NOTE]
-    > O valor não é real. Atualize o valor com a URL de Resposta real. Contate a [equipe de suporte ao Cliente do NetSuite](http://www.netsuite.com/portal/services/support-services/suitesupport.shtml) para obter o valor. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
+    > O valor não é real. Atualize o valor com a URL de Resposta real. Contate a [equipe de suporte ao Cliente do NetSuite](https://www.netsuite.com/portal/services/support-services/suitesupport.shtml) para obter o valor. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
 
 5. O aplicativo NetSuite espera que as declarações SAML estejam em um formato específico. Configure as declarações a seguir para este aplicativo. Você pode gerenciar os valores desses atributos da seção **Atributos de Usuário** na página de integração de aplicativos. Na página **Definir Logon Único com SAML**, clique no botão **Editar** para abrir a caixa de diálogo **Atributos do Usuário**.
 

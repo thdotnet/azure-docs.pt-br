@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/14/2018
 ms.author: aschhab
-ms.openlocfilehash: a14e03c21de0b5388040943fbe5e9434271b567f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d2cd7c8e24571f66fa73ceaa9a70ce33d6105e9c
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66258809"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69017749"
 ---
 # <a name="service-bus-access-control-with-shared-access-signatures"></a>Controle de acesso do Barramento de Serviço com Assinaturas de Acesso Compartilhado
 
@@ -51,13 +51,13 @@ O direito de 'Gerenciar' inclui os direitos de 'Enviar' e 'Receber'.
 
 Uma política de namespace ou entidade pode armazenar até 12 regras de Autorização de Acesso Compartilhado, fornecendo espaço para três conjuntos de regras, cada um abrangendo os direitos básicos e a combinação de Enviar e Escutar. Esse limite ressalta que o armazenamento da política de SAS não é pretendida como armazenamento de conta de usuário ou serviço. Se seu aplicativo precisa conceder acesso ao Barramento de Serviço com base no usuário ou em identidades de serviço, ele deve implementar um serviço de token de segurança que emite tokens SAS após uma verificação de acesso e autenticação.
 
-Uma regra de autorização recebe uma *Chave primária* e uma *Chave secundária*. Essas chaves são criptograficamente fortes. Não as perca ou divulgue - elas sempre estarão disponíveis no [portal do Azure][Azure portal]. Você pode usar qualquer uma das chaves geradas e pode gerá-las novamente a qualquer momento. Se você gerar novamente ou alterar uma chave na política, todos os tokens emitidos anteriormente com base na chave tornam-se inválidos instantaneamente. No entanto, conexões contínuas criadas com base em tais tokens continuarão funcionando até o token expirar.
+Uma regra de autorização recebe uma *Chave primária* e uma *Chave secundária*. Essas chaves são criptograficamente fortes. Não perca-os ou vazando-os, eles estarão sempre disponíveis no [portal do Azure][Azure portal]. Você pode usar qualquer uma das chaves geradas e pode gerá-las novamente a qualquer momento. Se você gerar novamente ou alterar uma chave na política, todos os tokens emitidos anteriormente com base na chave tornam-se inválidos instantaneamente. No entanto, conexões contínuas criadas com base em tais tokens continuarão funcionando até o token expirar.
 
 Quando você cria um namespace do Barramento de Serviço, é criada automaticamente uma regra de política chamada **RootManageSharedAccessKey** para o namespace. Essa política tem permissões de Gerenciar para todo o namespace. É recomendável que você trate essa regra como conta de **raiz** administrativa e não use-a em seu aplicativo. É possível criar regras de políticas adicionais na guia **Configurar** para o namespace no portal, via Powershell ou CLI do Azure.
 
 ## <a name="configuration-for-shared-access-signature-authentication"></a>Configuração da autenticação de Assinatura de Acesso Compartilhado
 
-Você pode configurar a regra [SharedAccessAuthorizationRule](/dotnet/api/microsoft.servicebus.messaging.sharedaccessauthorizationrule) em namespaces, filas ou tópicos do Barramento de Serviço. A configuração de um [SharedAccessAuthorizationRule](/dotnet/api/microsoft.servicebus.messaging.sharedaccessauthorizationrule) em uma assinatura do Barramento de Serviço não tem suporte no momento, mas você pode usar regras configuradas em um namespace ou em um tópico para proteger o acesso a assinaturas. Para obter um exemplo funcional que ilustre este procedimento, confira o exemplo [Usando a autenticação de Assinatura de Acesso Compartilhado (SAS) com assinaturas do Barramento de Serviço](https://code.msdn.microsoft.com/Using-Shared-Access-e605b37c) .
+Você pode configurar a regra [SharedAccessAuthorizationRule](/dotnet/api/microsoft.servicebus.messaging.sharedaccessauthorizationrule) em namespaces, filas ou tópicos do Barramento de Serviço. A configuração de um [SharedAccessAuthorizationRule](/dotnet/api/microsoft.servicebus.messaging.sharedaccessauthorizationrule) em uma assinatura do Barramento de Serviço não tem suporte no momento, mas você pode usar regras configuradas em um namespace ou em um tópico para proteger o acesso a assinaturas. Para obter um exemplo funcional que ilustra esse procedimento, consulte o exemplo [Gerenciando filas do barramento de serviço do Azure](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/ManagingEntities/SASAuthorizationRule) .
 
 ![SAS](./media/service-bus-sas/service-bus-namespace.png)
 
@@ -88,7 +88,7 @@ O token contém os valores não hash para que o destinatário possa recalcular o
 
 O URI do recurso é o URI completo do recurso do Barramento de Serviço ao qual o acesso é solicitado. Por exemplo, `http://<namespace>.servicebus.windows.net/<entityPath>` ou `sb://<namespace>.servicebus.windows.net/<entityPath>`; ou seja, `http://contoso.servicebus.windows.net/contosoTopics/T1/Subscriptions/S3`. 
 
-**O URI deve ser [codificado por percentual](https://msdn.microsoft.com/library/4fkewx0t.aspx).**
+**O URI deve ser [codificado por percentual](/dotnet/api/system.web.httputility.urlencode?view=netframework-4.8).**
 
 A regra de autorização de acesso compartilhado usada para assinar deve ser configurada na entidade especificada por esse URI ou por um de seus pais hierárquicos. Por exemplo, `http://contoso.servicebus.windows.net/contosoTopics/T1` ou `http://contoso.servicebus.windows.net` no exemplo anterior.
 
@@ -104,8 +104,8 @@ Se você souber ou suspeitar de uma chave comprometida e se você precisar revog
 
 Os cenários descritos a seguir incluem a configuração de regras de autorização, a geração de tokens SAS e a autorização de cliente.
 
-Para um exemplo funcional completo de um aplicativo do Barramento de Serviço que ilustre a configuração e use a autorização SAS, confira [Autenticação de Assinatura de Acesso Compartilhado com o Barramento de Serviço](https://code.msdn.microsoft.com/Shared-Access-Signature-0a88adf8). Há um exemplo relacionado que ilustra o uso de regras de autorização SAS configuradas em namespaces ou em tópicos para proteger assinaturas do Barramento de Serviço disponível aqui: [Usando a autenticação de Assinatura de Acesso Compartilhado (SAS) com as assinaturas do Barramento de Serviço](https://code.msdn.microsoft.com/Using-Shared-Access-e605b37c).
-
+Para obter um exemplo funcional completo de um aplicativo do barramento de serviço que ilustra a configuração e usa a autorização SAS, consulte o exemplo a seguir em nosso repositório GitHub: [Gerenciando filas do barramento de serviço do Azure](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/ManagingEntities/SASAuthorizationRule).
+ 
 ## <a name="access-shared-access-authorization-rules-on-an-entity"></a>Acessar regras de Autorização de Acesso Compartilhado em uma entidade
 
 Com o .NET Framework do Barramento de Serviço, é possível acessar um objeto [Microsoft.ServiceBus.Messaging.SharedAccessAuthorizationRule](/dotnet/api/microsoft.servicebus.messaging.sharedaccessauthorizationrule) configurado em uma fila ou tópico do Barramento de Serviço por meio da coleção [AuthorizationRules](/dotnet/api/microsoft.servicebus.messaging.authorizationrules) na [QueueDescription](/dotnet/api/microsoft.servicebus.messaging.queuedescription) ou na [TopicDescription](/dotnet/api/microsoft.servicebus.messaging.topicdescription).
@@ -185,7 +185,7 @@ Na seção anterior, você viu como usar o token SAS com uma solicitação HTTP 
 
 Antes de começar a enviar dados ao Barramento de Serviço, o editor precisa enviar o token SAS dentro de uma mensagem AMQP para um nó AMQP bem definido chamado **$cbs** (veja-o como uma fila "especial" usada pelo serviço para adquirir e validar todos os tokens SAS). O editor deve especificar o campo **ReplyTo** dentro da mensagem AMQP; esse é o nó em que o serviço responde ao editor com o resultado da validação do token (um padrão simples de solicitação/resposta entre o editor e o serviço). Esse nó de resposta é criado "dinamicamente", falando sobre "criação dinâmica de nó remoto", como descrito pela especificação do AMQP 1.0. Depois de verificar a validade do token SAS, o editor poderá começar a enviar dados ao serviço.
 
-As etapas a seguir mostram como enviar o token SAS com o protocolo AMQP usando o [AMQP.NET Lite](https://github.com/Azure/amqpnetlite) biblioteca. Isso será útil se você não pode usar o SDK do barramento de serviço (por exemplo no WinRT, .NET Compact Framework, Mono e .NET Micro Framework) oficial desenvolver em C\#. Obviamente, essa biblioteca é útil para entender como funciona a segurança baseada em declarações no nível do AMQP, como você viu que funciona no nível HTTP (com uma solicitação HTTP POST e o token SAS enviados dentro do cabeçalho "Authorization"). Se você não precisar desse conhecimento avançado sobre AMQP, você pode usar o SDK oficial do barramento de serviço com aplicativos do .NET Framework, o que fará isso para você.
+As etapas a seguir mostram como enviar o token SAS com o protocolo AMQP usando a biblioteca [AMQP.net Lite](https://github.com/Azure/amqpnetlite) . Isso é útil se você não pode usar o SDK oficial do barramento de serviço (por exemplo, em WinRT, .NET Compact Framework, .NET micro Framework e mono\#) desenvolvendo em C. Obviamente, essa biblioteca é útil para entender como funciona a segurança baseada em declarações no nível do AMQP, como você viu que funciona no nível HTTP (com uma solicitação HTTP POST e o token SAS enviados dentro do cabeçalho "Authorization"). Se você não precisar desse conhecimento profundo sobre o AMQP, poderá usar o SDK oficial do barramento de serviço com .NET Framework aplicativos, o que fará isso para você.
 
 ### <a name="c35"></a>C&#35;
 

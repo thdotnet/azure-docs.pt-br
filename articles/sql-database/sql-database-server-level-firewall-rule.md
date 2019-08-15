@@ -11,12 +11,12 @@ author: sachinpMSFT
 ms.author: sachinp
 ms.reviewer: vanto, carlrab
 ms.date: 02/11/2019
-ms.openlocfilehash: 7adced4088b1e155d6776f71e8f23a9eceae2297
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: d13ee8c46df9433530df1d26a86978daab709a52
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68566794"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68883063"
 ---
 # <a name="quickstart-create-a-server-level-firewall-rule-for-single-and-pooled-databases-using-the-azure-portal"></a>Início Rápido: Criar uma regra de firewall no nível do servidor para bancos de dados individuais e em pool usando o portal do Azure
 
@@ -37,7 +37,7 @@ O serviço de Banco de Dados SQL cria um firewall no nível do servidor de banco
 > [!NOTE]
 > O Banco de Dados SQL se comunica pela porta 1433. Se você estiver tentando se conectar de dentro de uma rede corporativa, o tráfego de saída pela porta 1433 talvez não seja permitido pelo firewall da rede. Se isto acontecer, você não poderá conectar o servidor do Banco de Dados SQL do Azure, a menos que o departamento de TI abra a porta 1433.
 > [!IMPORTANT]
-> Uma regra de firewall igual a 0.0.0.0 permite que todos os serviços do Azure passem pela regra de firewall no nível do servidor e tentem se conectar a um banco de dados individual ou em pool por meio do servidor. Para saber mais sobre como usar regras da rede virtual, confira [Regras da rede virtual como alternativas às regras de IP](sql-database-firewall-configure.md#virtual-network-rules-as-alternatives-to-ip-rules).
+> Uma regra de firewall igual a 0.0.0.0 permite que todos os serviços do Azure passem pela regra de firewall no nível do servidor e tentem se conectar a um banco de dados individual ou em pool por meio do servidor. 
 
 Execute essas etapas para criar uma regra de firewall de IP no nível do servidor para o endereço IP do cliente e habilite a conectividade externa por meio do firewall do Banco de Dados SQL somente para seu endereço IP.
 

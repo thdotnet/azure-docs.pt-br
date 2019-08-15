@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/12/2019
 ms.author: atsenthi
-ms.openlocfilehash: c20e782423c60985adb9e18e275fde59e57e00a2
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.openlocfilehash: 08864d6a965921f7f6d284dc53bd2586d30fedd1
+ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68599888"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69014436"
 ---
 # <a name="customize-service-fabric-cluster-settings"></a>Saiba como personalizar algumas das configurações de cluster do Service Fabric
 Este artigo descreve as várias configurações de malha para o cluster do Service Fabric que você pode personalizar. Para clusters hospedados no Azure, você pode personalizá-los através do [portal do Azure](https://portal.azure.com) ou utilizando um modelo do Azure Resource Manager. Para obter mais informações, consulte [Atualizar a configuração de um cluster do Azure](service-fabric-cluster-config-upgrade-azure.md). Para clusters independentes, você customiza as configurações atualizando o arquivo *ClusterConfig.json* e executando uma atualização de configuração em seu cluster. Para obter mais informações, consulte [atualizar a configuração de um cluster autônomo](service-fabric-cluster-config-upgrade-windows-server.md).
@@ -411,6 +411,11 @@ A seguir, é apresentada uma lista de configurações de Malha que você pode pe
 |WriteBufferMemoryPoolMaximumInKB | Int, o padrão é 0 |Dinâmico|O número de KB até o qual o pool de memória do buffer de gravação tem permissão para crescer. Use 0 para não indicar nenhum limite. |
 |WriteBufferMemoryPoolMinimumInKB |Int, o padrão é 8388608 |Dinâmico|O número de KB para serem inicialmente alocados para o pool de memória do buffer de gravação. Use 0 para indicar que nenhum padrão de limite deve ser consistente com SharedLogSizeInMB abaixo. |
 
+## <a name="managedidentitytokenservice"></a>ManagedIdentityTokenService
+| **Parâmetro** | **Valores permitidos** | **Política de Atualização** | **Diretrizes ou descrição resumida** |
+| --- | --- | --- | --- |
+|IsEnabled|bool, o padrão é FALSE|Estático|Sinalizador que controla a presença e o status do serviço de token de identidade gerenciado no cluster; esse é um pré-requisito para usar a funcionalidade de identidade gerenciada de aplicativos Service Fabric.|
+
 ## <a name="management"></a>Gerenciamento
 
 | **Parâmetro** | **Valores permitidos** | **Política de Atualização** | **Diretrizes ou descrição resumida** |
@@ -501,7 +506,7 @@ A seguir, é apresentada uma lista de configurações de Malha que você pode pe
 
 | **Parâmetro** | **Valores permitidos** | **Política de Atualização** | **Diretrizes ou descrição resumida** |
 | --- | --- | --- | --- |
-|Contadores |Cadeia de caracteres | Dinâmico |Lista separada por vírgulas dos contadores de desempenho a serem coletados. |
+|Contadores |Cadeia | Dinâmico |Lista separada por vírgulas dos contadores de desempenho a serem coletados. |
 |IsEnabled |Bool, o padrão é true | Dinâmico |O sinalizador indica se a coleta do contador de desempenho no nó local está habilitada. |
 |MaxCounterBinaryFileSizeInMB |Int, o padrão é 1 | Dinâmico |Tamanho máximo (em MB) para cada arquivo binário de contador de desempenho. |
 |NewCounterBinaryFileCreationIntervalInMinutes |Int, o padrão é 10 | Dinâmico |Intervalo máximo (em segundos) após o qual um novo arquivo binário de contador de desempenho é criado. |
@@ -610,7 +615,7 @@ A seguir, é apresentada uma lista de configurações de Malha que você pode pe
 |RunAsAccountType|cadeia de caracteres, o padrão é "" |Dinâmico|Indica o tipo de conta RunAs. Isso é necessário para qualquer seção RunAs Os valores válidos são "DomainUser/NetworkService/ManagedServiceAccount/LocalSystem".|
 |RunAsPassword|cadeia de caracteres, o padrão é "" |Dinâmico|Indica a senha da conta RunAs. Isso só é necessário para o tipo de conta "DomainUser". |
 
-## <a name="runasdca"></a>RunAs_DCA
+## <a name="runas_dca"></a>RunAs_DCA
 
 | **Parâmetro** | **Valores permitidos** | **Política de Atualização** | **Diretrizes ou descrição resumida** |
 | --- | --- | --- | --- |
@@ -618,7 +623,7 @@ A seguir, é apresentada uma lista de configurações de Malha que você pode pe
 |RunAsAccountType|cadeia de caracteres, o padrão é "" |Dinâmico|Indica o tipo de conta RunAs. Isso é necessário para qualquer seção RunAs Os valores válidos são "LocalUser/DomainUser/NetworkService/ManagedServiceAccount/LocalSystem". |
 |RunAsPassword|cadeia de caracteres, o padrão é "" |Dinâmico|Indica a senha da conta RunAs. Isso só é necessário para o tipo de conta "DomainUser". |
 
-## <a name="runasfabric"></a>RunAs_Fabric
+## <a name="runas_fabric"></a>RunAs_Fabric
 
 | **Parâmetro** | **Valores permitidos** | **Política de Atualização** | **Diretrizes ou descrição resumida** |
 | --- | --- | --- | --- |
@@ -626,7 +631,7 @@ A seguir, é apresentada uma lista de configurações de Malha que você pode pe
 |RunAsAccountType|cadeia de caracteres, o padrão é "" |Dinâmico|Indica o tipo de conta RunAs. Isso é necessário para qualquer seção RunAs Os valores válidos são "LocalUser/DomainUser/NetworkService/ManagedServiceAccount/LocalSystem". |
 |RunAsPassword|cadeia de caracteres, o padrão é "" |Dinâmico|Indica a senha da conta RunAs. Isso só é necessário para o tipo de conta "DomainUser". |
 
-## <a name="runashttpgateway"></a>RunAs_HttpGateway
+## <a name="runas_httpgateway"></a>RunAs_HttpGateway
 
 | **Parâmetro** | **Valores permitidos** | **Política de Atualização** | **Diretrizes ou descrição resumida** |
 | --- | --- | --- | --- |
@@ -780,7 +785,7 @@ A seguir, é apresentada uma lista de configurações de Malha que você pode pe
 |UpgradeApplication |cadeia de caracteres, o padrão é "Admin" |Dinâmico| Configuração de segurança para iniciar ou interromper atualizações do aplicativo. |
 |UpgradeComposeDeployment|cadeia de caracteres, o padrão é "Admin"| Dinâmico|Atualiza a implantação de redação |
 |UpgradeFabric |cadeia de caracteres, o padrão é "Admin" |Dinâmico| Configuração de segurança para iniciar atualizações do cluster. |
-|Carregar |cadeia de caracteres, o padrão é "Admin" | Dinâmico|Configuração de segurança para operação de upload do repositório de imagens. |
+|Upload |cadeia de caracteres, o padrão é "Admin" | Dinâmico|Configuração de segurança para operação de upload do repositório de imagens. |
 
 ## <a name="securityclientcertificateissuerstores"></a>Security/ClientCertificateIssuerStores
 
@@ -824,10 +829,10 @@ A seguir, é apresentada uma lista de configurações de Malha que você pode pe
 | --- | --- | --- | --- |
 |ContainerNetworkName|cadeia de caracteres, o padrão é ""| Estático |O nome de rede a ser usado ao configurar uma rede de contêineres.|
 |ContainerNetworkSetup|bool, o padrão é FALSE| Estático |Se configurar ou não uma rede de contêiner.|
-|FabricDataRoot |Cadeia de caracteres | Não Permitido |Diretório raiz de dados do Service Fabric. O padrão para o Azure é d:\svcfab |
-|FabricLogRoot |Cadeia de caracteres | Não Permitido |Diretório raiz de log do Service Fabric. É nele que logs e os rastreamentos do SF são colocados. |
+|FabricDataRoot |Cadeia | Não Permitido |Diretório raiz de dados do Service Fabric. O padrão para o Azure é d:\svcfab |
+|FabricLogRoot |Cadeia | Não Permitido |Diretório raiz de log do Service Fabric. É nele que logs e os rastreamentos do SF são colocados. |
 |NodesToBeRemoved|cadeia de caracteres, o padrão é ""| Dinâmico |Os nós que devem ser removidos como parte da atualização de configuração. (Somente para implantações autônomas)|
-|ServiceRunAsAccountName |Cadeia de caracteres | Não Permitido |O nome da conta na qual executar o serviço de host de malha. |
+|ServiceRunAsAccountName |Cadeia | Não Permitido |O nome da conta na qual executar o serviço de host de malha. |
 |SkipContainerNetworkResetOnReboot|bool, o padrão é FALSE|NotAllowed|Se deseja ignorar a redefinição da rede de contêiner na reinicialização.|
 |SkipFirewallConfiguration |Bool, o padrão é false | Não Permitido |Especifica se as configurações do firewall precisam ou não ser definidas pelo sistema. Isso se aplicará apenas se você estiver usando o Firewall do Windows. Se você estiver usando firewalls de terceiros, deverá abrir as portas para o sistema e aplicativos a utilizar |
 
