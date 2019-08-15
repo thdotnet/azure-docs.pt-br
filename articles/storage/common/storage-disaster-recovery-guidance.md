@@ -9,12 +9,12 @@ ms.date: 02/25/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: f9d68af12f6b2e98c77d0bd1b65a82c69588f203
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7785c6b5c575bf862b1ba0edccc75fc1c6031b08
+ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65147628"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69015652"
 ---
 # <a name="disaster-recovery-and-storage-account-failover-preview-in-azure-storage"></a>Recuperação de desastre e failover de conta de armazenamento (versão prévia) no Armazenamento do Azure
 
@@ -37,8 +37,11 @@ O **Armazenamento com redundância geográfica com acesso de leitura (RA-GRS)** 
 
 Outras opções de redundância de armazenamento do Azure incluem o armazenamento com redundância de zona (ZRS), que replica seus dados entre zonas de disponibilidade em uma única região e o armazenamento localmente redundante (LRS), que replica seus dados em um único data center em uma única região. Se sua conta de armazenamento for configurada para o ZRS ou o LRS, será possível converter essa conta para usar o GRS ou o RA-GRS. Configurar sua conta para o armazenamento com redundância geográfica acarretará custos adicionais. Para obter mais informações, consulte [Replicação do Armazenamento do Azure](storage-redundancy.md).
 
+> [!NOTE]
+> O GZRS (armazenamento com redundância de zona geográfica) e o armazenamento com redundância de acesso de leitura (RA-GZRS) estão atualmente em versão prévia, mas ainda não estão disponíveis nas mesmas regiões que o failover de conta gerenciada pelo cliente. Por esse motivo, os clientes não podem atualmente gerenciar eventos de failover de conta com contas GZRS e RA-GZRS. Durante a versão prévia, a Microsoft gerenciará qualquer evento de failover que afete contas GZRS/RA-GZRS.
+
 > [!WARNING]
-> O Armazenamento com redundância geográfica envolve risco de perda de dados. Os dados são replicados para a região secundária de forma assíncrona, o que significa que há um atraso entre o momento em que os dados são gravados na região primária e o momento em que são gravados na região secundária. Caso ocorra uma interrupção, as operações de gravação no ponto de extremidade primário que ainda não tenham sido replicadas no ponto de extremidade secundário serão perdidas. 
+> O Armazenamento com redundância geográfica envolve risco de perda de dados. Os dados são replicados para a região secundária de forma assíncrona, o que significa que há um atraso entre o momento em que os dados são gravados na região primária e o momento em que são gravados na região secundária. Caso ocorra uma interrupção, as operações de gravação no ponto de extremidade primário que ainda não tenham sido replicadas no ponto de extremidade secundário serão perdidas.
 
 ## <a name="design-for-high-availability"></a>Projetando para a alta disponibilidade
 
@@ -114,10 +117,10 @@ Para evitar uma grande perda de dados, verifique o valor da propriedade **Hora d
 
 ## <a name="about-the-preview"></a>Sobre a visualização
 
-O failover de conta está disponível em versão prévia para todos os clientes que utilizam o GRS ou o RA-GRS com implantações do Azure Resource Manager. Há suporte para uso geral v1, uso geral v2 e os tipos de conta de armazenamento de Blob. O failover de conta está disponível atualmente nestas regiões:
+O failover de conta está disponível em versão prévia para todos os clientes que usam GRS ou RA-GRS com implantações Azure Resource Manager. Há suporte para uso geral v1, uso geral v2 e os tipos de conta de armazenamento de Blob. O failover de conta está disponível atualmente nestas regiões:
 
 - Oeste dos EUA 2
-- Centro-Oeste dos EUA
+- Centro-oeste dos EUA
 
 A versão prévia é destinada apenas para uso não produtivo. SLAs (Contratos de Nível de Serviço) não estão disponíveis atualmente.
 
@@ -168,7 +171,7 @@ Não há suporte aos seguintes recursos ou serviços para o failover de conta na
 - Não é possível realizar failover nas contas de armazenamento usando o namespace hierárquico do Azure Data Lake Storage Gen2.
 - Não é possível fazer failover em uma conta de armazenamento que contenha blobs. Mantenha os blobs arquivados em uma conta de armazenamento separada na qual não planeje fazer failover.
 - Não é possível realizar failover em uma conta de armazenamento que contenha blob de blocos premium. As contas de armazenamento que dão suporte a blobs de bloco premium atualmente não são compatíveis com a redundância geográfica.
-- Após o failover estiver concluído os recursos a seguir deixará de funcionar se originalmente habilitado: [As assinaturas de eventos](https://docs.microsoft.com/azure/storage/blobs/storage-blob-event-overview), [políticas de ciclo de vida](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts), [o log de análise de armazenamento](https://docs.microsoft.com/rest/api/storageservices/about-storage-analytics-logging).
+- Depois que o failover for concluído, os seguintes recursos deixarão de funcionar se originalmente habilitados: [Assinaturas de evento](https://docs.microsoft.com/azure/storage/blobs/storage-blob-event-overview), [políticas de ciclo de vida](https://docs.microsoft.com/azure/storage/blobs/storage-lifecycle-management-concepts) [análise de armazenamento log](https://docs.microsoft.com/rest/api/storageservices/about-storage-analytics-logging).
 
 ## <a name="copying-data-as-an-alternative-to-failover"></a>Copiando dados como uma alternativa ao failover
 

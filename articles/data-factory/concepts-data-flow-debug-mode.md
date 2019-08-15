@@ -7,54 +7,78 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 10/04/2018
-ms.openlocfilehash: d86725718217caf7fd1d9dd6d5d67362e5de7270
-ms.sourcegitcommit: 72f1d1210980d2f75e490f879521bc73d76a17e1
+ms.openlocfilehash: 945d123c0901722a527e7cc8181c91f09e4e95ec
+ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67147384"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69014515"
 ---
 # <a name="mapping-data-flow-debug-mode"></a>Modo de Depuração do Fluxo de Dados de Mapeamento
 
 [!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
 
-Modo de depuração do Azure Data Factory de mapeamento de fluxo de dados pode ser alternado com o botão "Dados de fluxo Debug" na parte superior da superfície de design. Quando projetar fluxos de dados, ativar o modo de depuração será permitem que você assista interativamente os dados de forma a transformação enquanto você compila e depurar seus fluxos de dados. A sessão de depuração pode ser usada tanto em sessões de design de fluxo de dados, bem como durante a execução do pipeline depuração de fluxos de dados.
-
-![Botão de depuração](media/data-flow/debugbutton.png "no botão depurar")
-
 ## <a name="overview"></a>Visão geral
-Quando o modo de depuração está ativado, você compilará interativamente seu fluxo de dados com um cluster Spark do Active Directory. A sessão fecha quando você desativa a depuração no Azure Data Factory. Você deve estar ciente das cobranças por hora incorridas pelo Azure Databricks durante o tempo em que a sessão de depuração está ativa.
 
-Na maioria dos casos, é uma boa prática para criar seus fluxos de dados no modo de depuração para que você possa validar sua lógica de negócios e exibir suas transformações de dados antes de publicar seu trabalho no Azure Data Factory. Use o botão de "Debug" no painel de pipeline para testar o fluxo de dados dentro de um pipeline.
+O modo de depuração do fluxo de dados de mapeamento de Azure Data Factory pode ser ativado com o botão "depuração de fluxo de dados" na parte superior da superfície de design. Ao criar fluxos de dados, ativar o modo de depuração permite que você assista interativamente à transformação de forma de dados enquanto cria e depura seus fluxos de dados. A sessão de depuração pode ser usada em sessões de design de fluxo de dados, bem como durante a execução de depuração de pipeline de fluxos de dados.
+
+![Botão de depuração](media/data-flow/debugbutton.png "Botão de depuração")
+
+Quando o modo de depuração estiver ativado, você criará interativamente seu fluxo de dados com um cluster do Spark ativo. A sessão fecha quando você desativa a depuração no Azure Data Factory. Você deve estar ciente das cobranças por hora incorridas pelo Azure Databricks durante o tempo em que a sessão de depuração está ativa.
+
+Na maioria dos casos, é uma boa prática criar seus fluxos de dados no modo de depuração para que você possa validar sua lógica de negócios e exibir suas transformações de dados antes de publicar seu trabalho em Azure Data Factory. Use o botão "depurar" no painel de pipeline para testar o fluxo de dados em um pipeline.
 
 > [!NOTE]
-> Embora a luz do modo de depuração é verde na barra de ferramentas do Data Factory, você será cobrado na taxa de fluxo de dados de depuração de 8 núcleos/horas de computação geral com um minuto 60 time-to-live 
-
-> [!NOTE]
->Ao executar no Modo de Depuração no Fluxo de Dados, seus dados não são gravados na transformação de Coletor. Uma sessão de depuração destina-se a servir como um agente de teste para transformações. Os coletores não são necessários durante a depuração e são ignorados no fluxo de dados. Se você quiser testar a gravação dos dados no seu coletor, execute o fluxo de dados de um Pipeline do Azure Data Factory e usar a depuração de execução de um pipeline.
-
-## <a name="debug-settings"></a>Configurações de depuração
-Depurar configurações podem ser editadas clicando em "Configurações de depuração" na barra de ferramentas tela de fluxo de dados. Você pode selecionar os limites de e/ou a fonte de arquivo a ser usado para cada uma das transformações do código-fonte aqui. Os limites de linha nesta configuração são apenas para a sessão de depuração atual. Você também pode selecionar o serviço vinculado de preparo a serem usadas para uma fonte de SQL DW. 
-
-![Configurações de depuração](media/data-flow/debug-settings.png "configurações de depuração")
+> Embora a luz do modo de depuração esteja verde na barra de ferramentas Data Factory, você será cobrado pela taxa de depuração de fluxo de dados de 8 núcleos/h de computação geral com um tempo de vida de 60 minutos 
 
 ## <a name="cluster-status"></a>Status do cluster
-Há um indicador de status do cluster na parte superior da superfície de design que ficará verde quando o cluster está pronto para depuração. Se o seu cluster já está em estado passivo, o indicador verde aparece quase que instantaneamente. Se o cluster já não estava em execução quando você entrar no modo de depuração, em seguida, você terá de esperar minutos de 5 a 7 para o cluster acelerar. O indicador girará até seu pronto.
 
-Quando tiver terminado com a sua depuração, desative a opção de depuração para que seu cluster do Databricks do Azure possa ser encerrado e você não será cobrado para a atividade de depuração.
+O indicador de status do cluster na parte superior da superfície de design fica verde quando o cluster está pronto para depuração. Se o seu cluster já está em estado passivo, o indicador verde aparece quase que instantaneamente. Se o cluster ainda não estava em execução quando você inseriu o modo de depuração, você terá que aguardar 5-7 minutos para que o cluster seja girado. O indicador será girado até seu pronto.
+
+Quando terminar de usar a depuração, desative a opção de depuração para que seu Azure Databricks cluster possa ser encerrado e você não será mais cobrado pela atividade de depuração.
+
+## <a name="debug-settings"></a>Configurações de depuração
+
+As configurações de depuração podem ser editadas clicando em "configurações de depuração" na barra de ferramentas da tela fluxo de dados. Você pode selecionar o limite de linha ou a fonte de arquivo a ser usada para cada uma das transformações de origem aqui. Os limites de linha nessa configuração são apenas para a sessão de depuração atual. Você também pode selecionar o serviço vinculado de preparo a ser usado para uma fonte do SQL DW. 
+
+![Configurações de depuração](media/data-flow/debug-settings.png "Configurações de depuração")
+
+Se você tiver parâmetros em seu fluxo de dados ou em qualquer um de seus DataSets referenciados, poderá especificar quais valores usar durante a depuração, selecionando a guia **parâmetros** .
+
+![Parâmetros de configurações de depuração](media/data-flow/debug-settings2.png "Parâmetros de configurações de depuração")
 
 ## <a name="data-preview"></a>Visualização de dados
-Com a depuração ativa, a guia Visualização dos Dados fica destacada no painel inferior. Sem o modo de depuração ativo, o Fluxo de Dados mostra apenas os metadados atuais dentro e fora de cada uma de suas transformações na guia Inspecionar. A visualização de dados só consultará o número de linhas que você definiu como seu limite em suas configurações de depuração. Talvez seja necessário clicar em "Buscar dados" para atualizar a visualização dos dados.
 
-![Visualização de dados](media/data-flow/datapreview.png "visualização de dados")
+Com a depuração ativa, a guia Visualização dos Dados fica destacada no painel inferior. Sem o modo de depuração ativo, o Fluxo de Dados mostra apenas os metadados atuais dentro e fora de cada uma de suas transformações na guia Inspecionar. A visualização de dados somente consultará o número de linhas que você definiu como seu limite nas configurações de depuração. Clique em **Atualizar** para buscar a visualização de dados.
 
-## <a name="data-profiles"></a>Perfis de dados
-Selecionar colunas individuais em sua guia de visualização de dados exibirá um gráfico na extremidade direita da sua grade de dados com estatísticas detalhadas sobre cada campo. O Azure Data Factory faz uma determinação com base na amostragem de dados do tipo de gráfico a ser exibido. Campos de alta cardinalidade padrão serão /NOT NULL gráficos enquanto dados categóricos e numéricos com baixa cardinalidade exibirá os gráficos de barras que mostra a frequência de valor de dados. Você também verá máx/com comprimento de campos de cadeia de caracteres, valores mínimos/máximos em campos numéricos, desenvolvimento padrão, percentuais, contagens e média. 
+![Visualização de dados](media/data-flow/datapreview.png "Visualização de dados")
 
-![Estatísticas de coluna](media/data-flow/stats.png "estatísticas de coluna")
+Ao executar no Modo de Depuração no Fluxo de Dados, seus dados não são gravados na transformação de Coletor. Uma sessão de depuração destina-se a servir como um equipamento de teste para suas transformações. Os coletores não são necessários durante a depuração e são ignorados no fluxo de dados. Se você quiser testar a gravação dos dados em seu coletor, execute o fluxo de dados de um pipeline Azure Data Factory e use a execução de depuração de um pipeline.
+
+### <a name="quick-actions"></a>Ações rápidas
+
+Depois de ver a visualização de dados, você pode gerar uma transformação rápida para conversão, remover ou fazer uma modificação em uma coluna. Clique no cabeçalho da coluna e selecione uma das opções da barra de ferramentas de visualização de dados.
+
+![Ações rápidas](media/data-flow/quick-actions1.png "Ações rápidas")
+
+Depois de selecionar uma modificação, a visualização de dados será atualizada imediatamente. Clique em **confirmar** no canto superior direito para gerar uma nova transformação.
+
+![Ações rápidas](media/data-flow/quick-actions2.png "Ações rápidas")
+
+**Conversão** e **Modify** irão gerar uma transformação de coluna derivada e **Remove** irá gerar uma transformação SELECT.
+
+![Ações rápidas](media/data-flow/quick-actions3.png "Ações rápidas")
+
+> [!NOTE]
+> Se você editar o fluxo de dados, precisará buscar novamente a visualização de dados antes de adicionar uma transformação rápida.
+
+### <a name="data-profiling"></a>Criação de perfil de dados
+
+Selecionar colunas na guia Visualização de dados e clicar em **estatísticas** na barra de ferramentas visualização de dados exibirá um gráfico na extrema direita da grade de dados com estatísticas detalhadas sobre cada campo. O Azure Data Factory faz uma determinação com base na amostragem de dados do tipo de gráfico a ser exibido. Os campos de alta cardinalidade serão padronizados para gráficos nulos/não nulos enquanto dados categóricos e numéricos com baixa cardinalidade exibirão gráficos de barras mostrando a frequência do valor de dados. Você também verá o comprimento máximo/Len dos campos de cadeia de caracteres, os valores mínimo/máximo em campos numéricos, desenvolvimento padrão, percentils, contagens e média.
+
+![Estatísticas de coluna](media/data-flow/stats.png "Estatísticas de coluna")
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Depois que tiver terminado de compilação e depuração de fluxo de dados, [executá-lo em um pipeline.](control-flow-execute-data-flow-activity.md)
-
-Ao testar seu pipeline com um fluxo de dados, usar o pipeline [depuração executa a opção de execução.](iterative-development-debugging.md)
+* Depois de concluir a criação e a depuração do fluxo de dados, [Execute-o em um pipeline.](control-flow-execute-data-flow-activity.md)
+* Ao testar seu pipeline com um fluxo de dados, use a [opção de execução de depuração](iterative-development-debugging.md) de pipeline.

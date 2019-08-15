@@ -13,13 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
 ms.date: 03/14/2019
-ms.author: juliako;cenkdin;anilmur
-ms.openlocfilehash: 01bb628a6520488dcebf49a1e868213b955abc31
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: juliako
+ms.reviewer: cenkdin;anilmur
+ms.openlocfilehash: 09d9bdffefe9204e9f58b8f07af5b21228269f6c
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61465865"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "69016747"
 ---
 # <a name="use-the-fmle-encoder-to-send-a-single-bitrate-live-stream"></a>Usar o codificador FMLE para enviar uma transmissão ao vivo de taxa de bits única 
 > [!div class="op_single_selector"]
@@ -103,7 +104,7 @@ Neste tutorial, são usadas as configurações de saída abaixo. O restante dest
 2. Selecione o ícone de chave inglesa ao lado de Formato, essas configurações adicionais devem ser:
 
    * Perfil: Principal
-   * Nível: 4,0
+   * Nível: 4.0
    * Frequência de Quadros-chave: 2 segundos
 
      ![FMLE](./media/media-services-fmle-live-encoder/media-services-fmle4.png)
@@ -160,7 +161,7 @@ Se um erro for recebido, será necessário redefinir o canal e ajustar as config
 
 A transmissão agora está pronta para ser inserida em um player ou distribuída para um público para a exibição ao vivo.  
 
-## <a name="troubleshooting"></a>solução de problemas
+## <a name="troubleshooting"></a>Solução de problemas
 Confira o artigo de [solução de problemas](media-services-troubleshooting-live-streaming.md) para obter diretrizes.
 
 ## <a name="media-services-learning-paths"></a>Roteiros de aprendizagem dos Serviços de Mídia

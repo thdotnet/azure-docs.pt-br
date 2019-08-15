@@ -3,7 +3,7 @@ title: Pré-requisitos para acessar a API de relatório do Azure Active Director
 description: Aprenda sobre os pré-requisitos para acessar a API de relatório do Azure AD
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: ada19f69-665c-452a-8452-701029bf4252
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 11/13/2018
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ab30dfeccc4ae1c7b09a8f48846ffb9e71cfc23
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f925a86504d68fd08b83c63e4da8b37b4aa25f85
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60438854"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989913"
 ---
 # <a name="prerequisites-to-access-the-azure-active-directory-reporting-api"></a>Pré-requisitos para acessar a API de relatório do Azure Active Directory
 
@@ -41,11 +41,11 @@ Para preparar seu acesso à API de relatório, você precisa:
 
 Para obter acesso aos dados de relatórios por meio da API, você precisa ter uma das seguintes funções atribuídas:
 
-- Leitor de segurança
+- Leitor de Segurança
 
-- Administrador de segurança
+- Administrador de Segurança
 
-- Administrador global
+- Administrador Global
 
 
 ## <a name="register-an-application"></a>Registrar um aplicativo
@@ -91,7 +91,7 @@ Dependendo da API que deseja acessar, você precisa garantir ao seu aplicativo a
 
 | API | Permissão |
 | --- | --- |
-| Windows Azure Active Directory | Ler dados do diretório |
+| Microsoft Azure Active Directory | Ler dados do diretório |
 | Microsoft Graph | Ler todos os dados de log de auditoria |
 
 

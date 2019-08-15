@@ -1,20 +1,20 @@
 ---
 title: Usando o Armazenamento do Azure com uma solução de integração contínua do Jenkins
-description: Este tutorial mostra como usar o serviço Blob do Azure como um repositório para artefatos de compilação criados por uma solução de integração contínua Jenkins.
+description: Este tutorial mostra como usar o serviço blob do Azure como um repositório para artefatos de compilação criados por uma solução de integração contínua Jenkins.
 ms.topic: article
 ms.author: tarcher
 author: tarcher
 services: devops
 ms.service: storage
 custom: jenkins
-ms.date: 07/31/2018
+ms.date: 08/13/2019
 ms.subservice: common
-ms.openlocfilehash: d9ef6f5056fdbd7187c92c98d1c884a5314c29a0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dc62696700a5c34c28f5f8c4f347dbb4c5183cab
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65153657"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68986539"
 ---
 # <a name="using-azure-storage-with-a-jenkins-continuous-integration-solution"></a>Usando o Armazenamento do Azure com uma solução de integração contínua do Jenkins
 
@@ -67,9 +67,9 @@ Para usar o serviço Blob com a Jenkins, você precisará instalar o plug-in do 
 1. No painel do Jenkins, selecione **gerenciar Jenkins**.
 2. No **gerenciar o Jenkins** página, selecione **configurar o sistema**.
 3. Na seção **Configuração da Conta de Armazenamento do Microsoft Azure** :
-   1. Insira o nome da conta de armazenamento, que pode ser obtido no [portal do Azure](https://portal.azure.com).
-   2. Insira a chave de conta de armazenamento, que também pode ser obtida no [portal do Azure](https://portal.azure.com).
-   3. Use o valor padrão para **URL de ponto de extremidade de serviço Blob** se você estiver usando a nuvem global do Azure. Se estiver usando uma nuvem do Azure diferente, use o ponto de extremidade como especificado no [portal do Azure](https://portal.azure.com) para a sua conta de armazenamento. 
+   1. Insira o nome da conta de armazenamento, que pode ser obtido do [portal do Azure](https://portal.azure.com).
+   2. Insira sua chave de conta de armazenamento, também obtida do [portal do Azure](https://portal.azure.com).
+   3. Use o valor padrão para **URL de ponto de extremidade de serviço Blob** se você estiver usando a nuvem global do Azure. Se você estiver usando uma nuvem do Azure diferente, use o ponto de extremidade conforme especificado no [portal do Azure](https://portal.azure.com) para sua conta de armazenamento. 
    4. Selecione **Validar credenciais de armazenamento** para validar sua conta de armazenamento. 
    5. [Opcional] Se você tiver contas de armazenamento adicionais que você deseja que estarão disponíveis para a CI Jenkins, selecione **adicionar mais contas de armazenamento**.
    6. Selecione **salvar** para salvar suas configurações.
@@ -97,7 +97,7 @@ Para fins de instrução, primeiro você precisa criar um trabalho que criará v
     **Dica**
    
     Abaixo da seção **Comando** em que você inseriu um script para **Executar comando em lote do Windows**, existe um link para as variáveis de ambiente reconhecidas pelo Jenkins. Selecione o link para saber os nomes de variáveis de ambiente e as descrições. Variáveis de ambiente que contêm caracteres especiais, como o **BUILD_URL** variável de ambiente não são permitidas como um nome de contêiner ou o caminho virtual comum.
-8. Selecione **Tornar novo contêiner público por padrão** para este exemplo. (Se você quiser usar um contêiner particular, você precisará criar uma assinatura de acesso compartilhado para permitir o acesso, o que está além do escopo deste artigo. Você pode saber mais sobre assinaturas de acesso compartilhado em [Uso de SAS (Assinaturas de Acesso Compartilhado)](../storage-dotnet-shared-access-signature-part-1.md).
+8. Selecione **Tornar novo contêiner público por padrão** para este exemplo. (Se você quiser usar um contêiner particular, você precisará criar uma assinatura de acesso compartilhado para permitir o acesso, o que está além do escopo deste artigo. Você pode saber mais sobre assinaturas de acesso compartilhado em [Uso de SAS (Assinaturas de Acesso Compartilhado)](storage-sas-overview.md).
 9. [Opcional] Selecione **Limpar recipiente antes de fazer o upload** se quiser que o contêiner seja limpo do conteúdo antes que os artefatos de construção sejam carregados (deixe-o desmarcado se não quiser limpar o conteúdo do contêiner).
 10. Para **lista de artefatos a serem carregados**, insira `text/*.txt`.
 11. Para **caminho virtual comum para artefatos carregados**, para fins deste tutorial, insira `${BUILD\_ID}/${BUILD\_NUMBER}`.
@@ -118,7 +118,7 @@ As etapas a seguir ilustram para configurar uma etapa de compilação para baixa
 1. Na seção **Criar** da configuração do trabalho, selecione **Adicionar etapa de compilação** e selecione **Fazer o download do armazenamento do Azure Blob**.
 2. Em **Nome de conta de armazenamento**, selecione a conta de armazenamento a ser usada.
 3. Em **Nome do contêiner**, especifique o nome do contêiner que contém os blobs que você quer baixar. É possível usar variáveis de ambiente.
-4. Em **Nome do blob**, especifique o nome do blob. É possível usar variáveis de ambiente. Além disso, você pode usar um asterisco como um curinga depois de especificar a letra inicial do nome do blob. Por exemplo, **project\\** * especificaria todos os blobs cujos nomes começam com **projeto**.
+4. Em **Nome do blob**, especifique o nome do blob. É possível usar variáveis de ambiente. Além disso, você pode usar um asterisco como um curinga depois de especificar a letra inicial do nome do blob. Por exemplo, **Project\\** * especificaria todos os BLOBs cujos nomes começam com **Project**.
 5. [Opcional] Em **Caminho de download**, especifique o caminho no computador do Jenkins onde você quer baixar arquivos do armazenamento de blob do Azure. Também é possível usar variáveis de ambiente. (Se você não fornecer um valor para **Caminho do download**, os arquivos no armazenamento de blob do Azure serão baixados no workspace da tarefa.)
 
 Se houver itens adicionais que deseja baixar do armazenamento de blobs do Azure, você poderá criar etapas de compilação adicionais.
@@ -135,7 +135,7 @@ Esta seção fornece uma visão geral dos componentes do serviço Blob.
   
     `http://storageaccount.blob.core.windows.net/container_name/blob_name`
   
-    (O formato acima aplica-se para a nuvem global do Azure. Se estiver usando uma nuvem do Azure diferente, use o ponto de extremidade localizado no [portal do Azure](https://portal.azure.com) para determinar o ponto de extremidade de sua URL).
+    (O formato acima aplica-se para a nuvem global do Azure. Se você estiver usando uma nuvem do Azure diferente, use o ponto de extremidade dentro do [portal do Azure](https://portal.azure.com) para determinar o ponto de extremidade da URL.)
   
     No formato acima, `storageaccount` representa o nome da sua conta de armazenamento, `container_name` representa o nome do seu contêiner e `blob_name` representa o nome do seu blob, respectivamente. Dentro do nome do contêiner, é possível ter vários caminhos, separados por uma barra, **/** . O nome do contêiner de exemplo usado para este tutorial foi **MyJob**, e **${BUILD\_ID} / ${BUILD\_número}** foi usado para o caminho virtual comum, resultando no blob tivesse uma URL no seguinte formato:
   

@@ -12,13 +12,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2019
-ms.author: willzhan;kilroyh;yanmf;juliako
-ms.openlocfilehash: 336552c142e504ae7296314512f00688e30d032e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: willzhan
+ms.reviewer: kilroyh;yanmf;juliako
+ms.openlocfilehash: 6004e08f5f30c7f3c63bb87437147db15da5e335
+ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61466347"
+ms.lasthandoff: 07/15/2019
+ms.locfileid: "69016773"
 ---
 # <a name="design-of-a-content-protection-system-with-access-control-using-azure-media-services"></a>Criação de um sistema de proteção de conteúdo com controle de acesso usando os serviços de mídia do Azure 
 
@@ -89,7 +90,7 @@ Um subsistema de DRM pode conter os seguintes componentes:
 * Entrega de licença do DRM
 * Verificação de autorização
 * Autenticação/autorização
-* Jogador
+* Player
 * Origem/CDN (rede de distribuição de conteúdo)
 
 O diagrama a seguir ilustra a interação de alto nível entre os componentes em um subsistema de DRM:
@@ -149,7 +150,7 @@ A tabela abaixo mostra o mapeamento.
 | --- | --- |
 | **Player** |[Player de Mídia do Azure](https://azure.microsoft.com/services/media-services/media-player/) |
 | **IdP (provedor de identidade)** |Active Directory do Azure (Azure AD) |
-| **STS (serviço de token de segurança)** |AD do Azure |
+| **STS (serviço de token de segurança)** |Azure AD |
 | **Fluxo de trabalho de proteção de DRM** |Proteção dinâmica dos Serviços de Mídia |
 | **Entrega de licença do DRM** |* Entrega de licença dos Serviços de Mídia (PlayReady, Widevine, FairPlay) <br/>* Servidor de licença Axinom <br/>* Servidor de licença do PlayReady personalizado |
 | **Origem** |Ponto de extremidade de streaming dos Serviços de Mídia |
@@ -214,10 +215,10 @@ A implementação inclui as seguintes etapas:
 
     | **DRM** | **Navegador** | **Resultado para usuário autorizado** | **Resultado para usuário não autorizado** |
     | --- | --- | --- | --- |
-    | **PlayReady** |Microsoft Edge ou Internet Explorer 11 no Windows 10 |Êxito |Reprovado |
-    | **Widevine** |Chrome, Firefox, Opera |Êxito |Reprovado |
-    | **FairPlay** |Safari no macOS      |Êxito |Reprovado |
-    | **AES-128** |Navegadores mais modernos  |Êxito |Reprovado |
+    | **PlayReady** |Microsoft Edge ou Internet Explorer 11 no Windows 10 |Bem-sucedido(a) |Falha |
+    | **Widevine** |Chrome, Firefox, Opera |Bem-sucedido(a) |Falha |
+    | **FairPlay** |Safari no macOS      |Bem-sucedido(a) |Falha |
+    | **AES-128** |Navegadores mais modernos  |Bem-sucedido(a) |Falha |
 
 Para obter informações sobre como configurar o Azure AD para um aplicativo player do ASP.NET MVC, consulte [Integrar um aplicativo OWIN com base em MVC dos Serviços de Mídia do Azure com o Azure Active Directory e restringir o fornecimento da chave de conteúdo com base em declarações JWT](http://gtrifonov.com/2015/01/24/mvc-owin-azure-media-services-ad-integration/).
 

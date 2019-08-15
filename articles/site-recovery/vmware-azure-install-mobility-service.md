@@ -1,19 +1,19 @@
 ---
-title: Preparar as máquinas de origem para instalar o serviço de mobilidade por meio da instalação por push para a recuperação de desastre de VMs VMware e servidores físicos no Azure | Microsoft Docs
-description: Saiba como preparar seu servidor para instalar o agente de mobilidade por meio da instalação por push para a recuperação de desastre de VMs VMware e servidores físicos no Azure usando o serviço Azure Site Recovery.
+title: Preparar computadores de origem para instalar o serviço de mobilidade por meio da instalação por push para recuperação de desastre de VMs VMware e servidores físicos no Azure | Microsoft Docs
+description: Saiba como preparar seu servidor para instalar o agente de mobilidade por meio da instalação por push para recuperação de desastre de VMs VMware e servidores físicos no Azure usando o serviço Azure Site Recovery.
 author: Rajeswari-Mamilla
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
-ms.openlocfilehash: 628be573d03d42ec62a358071074facfe228852d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: f1a96302d180f3b4b179f42013232f3b48d4e2b0
+ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60318150"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69016360"
 ---
-# <a name="prepare-source-machine-for-push-installation-of-mobility-agent"></a>Preparar o computador de origem para instalação por push do agente de mobilidade
+# <a name="prepare-source-machine-for-push-installation-of-mobility-agent"></a>Preparar o computador de origem para a instalação por push do agente de mobilidade
 
 Quando você configura a recuperação de desastre para VMs VMware e servidores físicos usando [Azure Site Recovery](site-recovery-overview.md), instale o [Serviço Mobilidade de Recuperação do Site](vmware-physical-mobility-service-overview.md) em cada VM VMware local e servidor físico.  O serviço Mobility captura gravação de dados na máquina e as encaminha para o servidor do processo de Recuperação do Site.
 
@@ -66,6 +66,6 @@ Se as máquinas que você deseja replicar tiverem o software antivírus ativo em
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Depois que o Mobility Service for instalado, no portal do Azure, selecione **+ Replicate** para começar a proteger essas VMs. Saiba mais sobre como habilitar a replicação para [VMware VMs (vmware-azure-enable-replication.md) e [servidores físicos](physical-azure-disaster-recovery.md#enable-replication).
+Depois que o Mobility Service for instalado, no portal do Azure, selecione **+ Replicate** para começar a proteger essas VMs. Saiba mais sobre como habilitar a replicação para [VMs VMware](vmware-azure-enable-replication.md) e [servidores físicos](physical-azure-disaster-recovery.md#enable-replication).
 
 

@@ -1,9 +1,9 @@
 ---
-title: Stream de logs do Azure Active Directory para os logs do Azure Monitor | Microsoft Docs
-description: Saiba como integrar logs do Active Directory do Azure com logs do Azure Monitor
+title: Transmitir logs de Azure Active Directory para Azure Monitor logs | Microsoft Docs
+description: Saiba como integrar logs de Azure Active Directory com logs de Azure Monitor
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: 2c3db9a8-50fa-475a-97d8-f31082af6593
@@ -14,17 +14,17 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 04/18/2019
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 213fb6e73ae2fc4314320d0e3e593632d8eb7f85
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: bffe16d604ac6b86b489092f50fbdc0b856867b3
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60437297"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989763"
 ---
-# <a name="integrate-azure-ad-logs-with-azure-monitor-logs"></a>Integrar logs do Azure AD com os logs do Azure Monitor
+# <a name="integrate-azure-ad-logs-with-azure-monitor-logs"></a>Integrar logs do Azure AD com logs de Azure Monitor
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -60,7 +60,7 @@ Para usar esse recurso, você precisa de:
 * Um usuário que seja *administrador global* ou *administrador de segurança* do locatário do Azure AD.
 * Um espaço de trabalho do Log Analytics em sua assinatura do Azure. Saiba como [criar um espaço de trabalho do Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace).
 
-## <a name="send-logs-to-azure-monitor"></a>Enviar logs para o Azure Monitor
+## <a name="send-logs-to-azure-monitor"></a>Enviar logs para Azure Monitor
 
 1. Entre no [Portal do Azure](https://portal.azure.com). 
 

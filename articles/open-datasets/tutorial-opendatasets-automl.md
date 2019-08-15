@@ -9,12 +9,12 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 05/02/2019
-ms.openlocfilehash: 963e4f7e9db638450a89dd4ae0091019fc58e2a4
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 6f72daa4a601df0e3592910645c2f9b35ab64431
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68359437"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68845822"
 ---
 # <a name="tutorial-build-a-regression-model-with-automated-machine-learning-and-open-datasets"></a>Tutorial: Criar um modelo de regressão com aprendizado de máquina automatizado e conjuntos de dados abertos
 
@@ -37,7 +37,7 @@ Este tutorial requer os seguintes pré-requisitos.
 
 ### <a name="create-a-workspace"></a>Criar um workspace
 
-Siga as [instruções](https://docs.microsoft.com/azure/machine-learning/service/setup-create-workspace#portal) para criar um workspace por meio do portal do Azure, se você ainda não tiver um. Após a criação, anote o nome do workspace, o nome do grupo de recursos e a ID da assinatura.
+Siga as [instruções](https://docs.microsoft.com/azure/machine-learning/service/how-to-manage-workspace) para criar um workspace por meio do portal do Azure, se você ainda não tiver um. Após a criação, anote o nome do workspace, o nome do grupo de recursos e a ID da assinatura.
 
 ### <a name="create-a-python-environment"></a>Criar um ambiente de Python
 

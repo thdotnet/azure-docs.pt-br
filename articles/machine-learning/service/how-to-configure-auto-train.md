@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: adca67152c33f4c6a3ec272b63c4c8157a777f36
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 6e29e0f89d9270a143d48cf6e85b479813e19d9d
+ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68856182"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69013654"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Configurar experimentos de ML automatizados em Python
 
@@ -72,6 +72,11 @@ automl_config = AutoMLConfig(task="classification")
 O aprendizado de máquina automatizado é compatível com os dados que residem na área de trabalho local ou na nuvem no Armazenamento de Blobs do Azure. Os dados podem ser lidos nos formatos de dados compatíveis com scikit-learn. É possível ler os dados para:
 * Matrizes numpy X (recursos) e y (variável de destino ou também conhecido como rótulo)
 * Dataframe do Pandas
+
+>[!Important]
+> Requisitos para dados de treinamento:
+>* Os dados devem estar no formato de tabela.
+>* O valor que você deseja prever (coluna de destino) deve estar presente nos dados.
 
 Exemplos:
 

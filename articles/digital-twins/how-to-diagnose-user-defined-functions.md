@@ -6,15 +6,15 @@ manager: deshner
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 06/05/2019
+ms.date: 08/12/2019
 ms.author: stegaw
 ms.custom: seodec18
-ms.openlocfilehash: 577467a6322b7f6d3cd7f199d80963f2f1a98ed6
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: 61c3f033fbe3febe7b0d048b247cc1fe8d597698
+ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67849319"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69014181"
 ---
 # <a name="how-to-debug-user-defined-functions-in-azure-digital-twins"></a>Como depurar funções definidas pelo usuário em Gêmeos Digitais do Azure
 
@@ -45,7 +45,7 @@ Para rastrear telemetria do sensor, verifique se as configurações de diagnóst
 
 Para corresponder a uma mensagem de telemetria do sensor para seus respectivos logs, você pode especificar uma ID de Correlação nos dados de evento que estão sendo enviados. Para fazer isso, defina a propriedade `x-ms-client-request-id` para um GUID.
 
-Depois de enviar telemetria, abra o log Analytics para consultar logs usando a ID de correlação do conjunto:
+Depois de enviar telemetria, abra Azure Monitor log Analytics para consultar logs usando a ID de correlação do conjunto:
 
 ```Kusto
 AzureDiagnostics
@@ -81,7 +81,7 @@ Verifique se existe uma atribuição de função para sua função definida pelo
 GET YOUR_MANAGEMENT_API_URL/roleassignments?path=/&traverse=Down&objectId=YOUR_USER_DEFINED_FUNCTION_ID
 ```
 
-| Valor de parâmetro | Substitua por |
+| Valor do parâmetro | Substitua por |
 | --- | --- |
 | YOUR_USER_DEFINED_FUNCTION_ID | A ID da função definida pelo usuário para a qual serão recuperadas as atribuições de função|
 

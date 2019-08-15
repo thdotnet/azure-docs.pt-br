@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/26/2019
 ms.author: bwren
-ms.openlocfilehash: 836a17051aee4e6a9ac3089f60da30673783e408
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: a80f99bc37d3a92a794a78f1f47ce32fbaae75a3
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67875978"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989179"
 ---
 # <a name="azure-monitor-overview"></a>Visão geral do Azure Monitor
 
@@ -66,7 +66,7 @@ O Azure Monitor pode coletar dados de log de qualquer cliente REST usando a [API
 
 
 
-## <a name="insights"></a>Insights
+## <a name="insights"></a>Informações
 Os dados de monitoramento só serão úteis se puderem aumentar sua visibilidade em relação ao funcionamento do ambiente de computação. O Azure Monitor inclui vários recursos e ferramentas que fornecem insights valiosos sobre seus aplicativos e outros recursos dos quais eles dependem. [Soluções de monitoramento](insights/solutions.md) e recursos como o [Application Insights](app/app-insights-overview.md) e o [Azure Monitor para contêineres](insights/container-insights-overview.md) fornecem insights aprofundados sobre diferentes aspectos do aplicativo e de serviços específicos do Azure. 
 
 ### <a name="application-insights"></a>Application Insights
@@ -101,10 +101,10 @@ As regras de alerta no Azure Monitor usam [grupos de ação](platform/action-gro
 
 ![Alertas](media/overview/alerts.png)
 
-### <a name="autoscale"></a>Autoscale
+### <a name="autoscale"></a>Dimensionamento automático
 O dimensionamento automático permite ter a quantidade certa de recursos em execução para lidar com a carga em seu aplicativo. Ele permite que você crie regras que usam métricas coletadas pelo Azure Monitor para determinar quando adicionar recursos automaticamente para lidar com aumentos de carga e também economizar dinheiro removendo recursos que estão ociosos. Especifique um número mínimo e máximo de instâncias e a lógica de quando aumentar ou diminuir os recursos.
 
-![Autoscale](media/overview/autoscale.png)
+![Dimensionamento automático](media/overview/autoscale.png)
 
 ## <a name="visualizing-monitoring-data"></a>Visualizando dados de monitoramento
 As [Visualizações](visualizations.md), como tabelas e gráficos, são ferramentas eficientes para resumir dados de monitoramento e apresentá-los para públicos diferentes. O Azure Monitor tem seus próprios recursos para visualizar os dados de monitoramento e aproveita outros serviços do Azure para mostrá-los a públicos diferentes.
@@ -112,7 +112,7 @@ As [Visualizações](visualizations.md), como tabelas e gráficos, são ferramen
 ### <a name="dashboards"></a>Painéis
 Os [painéis do Azure](../azure-portal/azure-portal-dashboards.md) permitem combinar diferentes tipos de dados, incluindo métricas e logs, em um único painel no [portal do Azure](https://portal.azure.com). Você pode compartilhar o painel com outros usuários do Azure. Podem ser adicionados elementos de todo o Azure Monitor a um painel do Azure, além da saída de qualquer gráfico de métricas ou de consulta de log. Por exemplo, é possível criar um painel que combine blocos que mostrem um gráfico de métricas, uma tabela de logs de atividades, um gráfico de uso do Application Insights e a saída de uma consulta de log.
 
-![painel](media/overview/dashboard.png)
+![Painel](media/overview/dashboard.png)
 
 ### <a name="views"></a>Exibições
 Os [Modos de Exibição](../log-analytics/log-analytics-view-designer.md) apresentam os dados de log visualmente no Azure Monitor.  Cada modo de exibição inclui um único bloco que detalha uma combinação de visualizações, como gráficos de barras e de linhas, além de listas que resumem dados críticos.  As soluções de monitoramento incluem exibições que resumem dados para um aplicativo específico e você pode criar seus próprios modos de exibição para apresentar dados de qualquer consulta de log. Assim como outros elementos no Azure Monitor, os modos de exibição podem ser adicionados a painéis do Azure.
@@ -129,7 +129,7 @@ O [Power BI](https://powerbi.microsoft.com) é um serviço de análise de negóc
 ## <a name="integrate-and-export-data"></a>Integrar e exportar dados
 Geralmente, você terá o requisito de integrar o Azure Monitor a outros sistemas e de criar soluções personalizadas que usam os dados de monitoramento. Outros serviços do Azure funcionam com o Azure Monitor para fornecer essa integração.
 
-### <a name="event-hub"></a>Hub de evento
+### <a name="event-hub"></a>Hub de Eventos
 Os [Hubs de Eventos do Azure](https://docs.microsoft.com/azure/event-hubs) são um serviço de ingestão de eventos e plataforma de streaming que pode transformar e armazenar dados usando qualquer provedor de análise em tempo real ou adaptadores de envio em lote/armazenamento. Use os hubs de eventos para [transmitir dados de Azure monitor](platform/stream-monitoring-data-event-hubs.md) para o Siem do parceiro e ferramentas de monitoramento.
 
 
@@ -146,3 +146,4 @@ Saiba mais sobre:
 * [Métricas e logs](platform/data-platform.md) para os dados coletados pelo Azure Monitor.
 * [Fontes de dados](platform/data-sources.md) para a maneira como os diferentes componentes do seu aplicativo enviam telemetria.
 * [Consultas de log](log-query/log-query-overview.md) para analisar dados coletados.
+* [Práticas recomendadas](https://docs.microsoft.com/azure/architecture/best-practices/monitoring) para monitorar serviços e aplicativos de nuvem.
