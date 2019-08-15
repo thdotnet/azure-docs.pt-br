@@ -57,7 +57,7 @@ As propriedades a seguir têm suporte para o serviço vinculado do Sybase:
 | type | A propriedade type deve ser definida como: **Sybase** | Sim |
 | server | Nome do servidor do Sybase. |Sim |
 | database | Nome do banco de dados do Sybase. |Sim |
-| authenticationType | Tipo de autenticação usado para se conectar ao banco de dados Sybase.<br/>Valores permitidos são: **Básico** e **Windows**. |Sim |
+| authenticationType | Tipo de autenticação usado para se conectar ao banco de dados Sybase.<br/>Valores permitidos são: **Basic** e **Windows**. |Sim |
 | username | Especifique o nome de usuário para se conectar ao banco de dados Sybase. |Sim |
 | password | Especifique a senha da conta de usuário que você especificou para o nome de usuário. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). |Sim |
 | connectVia | O [Integration Runtime](concepts-integration-runtime.md) a ser usado para se conectar ao armazenamento de dados. É necessário um Integration Runtime auto-hospedado, conforme mencionado nos [Pré-requisitos](#prerequisites). |Sim |
