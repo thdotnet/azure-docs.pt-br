@@ -461,6 +461,8 @@
               href: ./partner-center-portal/pc-saas-fulfillment-api-v1.md
             - name: APIs de cumprimento de SaaS – perguntas frequentes
               href: ./partner-center-portal/saas-fulfillment-apis-faq.md
+        - name: Teste sua oferta
+          href: ./partner-center-portal/test-drive.md
     - name: Status de publicação
       href: ./partner-center-portal/publishing-status.md
     - name: Atualizar ofertas existentes

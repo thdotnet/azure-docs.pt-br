@@ -25,6 +25,8 @@
       items:
         - name: Configurar uma cerca geográfica
           href: tutorial-geofence.md
+        - name: Análise espacial
+          href: tutorial-iot-hub-maps.md
 - name: Conceitos
   items:
     - name: Autenticação com Azure Mapas
