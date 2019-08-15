@@ -14,12 +14,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.date: 4/27/2018
 ms.author: shhurst
-ms.openlocfilehash: 5aa5ea2a39a0fb9f969e965fed14063522197cda
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4a37345cf33cbb02a6bd9a70b0253a55ee4c9478
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60303752"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035595"
 ---
 # <a name="handle-large-messages-with-chunking-in-azure-logic-apps"></a>Tratar mensagens grandes com agrupamentos nos Aplicativos Lógicos do Azure
 
@@ -117,7 +117,7 @@ Estas etapas descrevem o processo detalhado que os Aplicativos Lógicos usam par
 
 1. Seu aplicativo lógico envia uma solicitação HTTP POST ou PUT inicial com o corpo da mensagem vazio. O cabeçalho de solicitação, inclui essas informações sobre o conteúdo que seu aplicativo lógico quer carregar em partes:
 
-   | Campo de cabeçalho de solicitação de Aplicativos Lógicos | Value | Type | DESCRIÇÃO |
+   | Campo de cabeçalho de solicitação de Aplicativos Lógicos | Valor | Tipo | Descrição |
    |---------------------------------|-------|------|-------------|
    | **x-ms-transfer-mode** | em partes | String | Indica que o conteúdo é carregado em partes |
    | **x-ms-content-length** | <*content-length*> | Integer | O tamanho do conteúdo inteiro em bytes antes da divisão em partes |
@@ -125,7 +125,7 @@ Estas etapas descrevem o processo detalhado que os Aplicativos Lógicos usam par
 
 2. O ponto de extremidade responde com o código de status de êxito “200” e essas informações opcionais:
 
-   | Campo de cabeçalho de resposta do ponto de extremidade | Type | Obrigatório | DESCRIÇÃO |
+   | Campo de cabeçalho de resposta do ponto de extremidade | Tipo | Necessário | Descrição |
    |--------------------------------|------|----------|-------------|
    | **x-ms-chunk-size** | Integer | Não | O tamanho da parte sugerido em bytes |
    | **Localidade** | String | Não | O local da URL para a qual enviar as mensagens HTTP PATCH |
@@ -137,14 +137,20 @@ Estas etapas descrevem o processo detalhado que os Aplicativos Lógicos usam par
 
    * Esses detalhes de cabeçalho sobre a parte do conteúdo enviados em cada mensagem PATCH:
 
-     | Campo de cabeçalho de solicitação de Aplicativos Lógicos | Value | Type | DESCRIÇÃO |
+     | Campo de cabeçalho de solicitação de Aplicativos Lógicos | Valor | Tipo | Descrição |
      |---------------------------------|-------|------|-------------|
      | **Content-Range** | <*range*> | String | O intervalo de bytes da parte do conteúdo atual, incluindo o valor inicial, o valor final e o tamanho total do conteúdo, por exemplo, "bytes=0-1023/10100" |
      | **Content-Type** | <*content-type*> | String | O tipo de conteúdo em partes |
      | **Content-Length** | <*content-length*> | String | O comprimento do tamanho em bytes da parte atual |
      |||||
 
-4. Depois de cada solicitação PATCH, o ponto de extremidade confirma o recebimento para cada parte respondendo com o código de status “200”.
+4. Após cada solicitação de PATCH, o ponto de extremidade confirma o recebimento de cada parte respondendo com o código de status "200" e os seguintes cabeçalhos de resposta:
+
+   | Campo de cabeçalho de resposta do ponto de extremidade | Tipo | Necessário | Descrição |
+   |--------------------------------|------|----------|-------------|
+   | **Range** | Cadeia | Sim | O intervalo de bytes para o conteúdo recebido pelo ponto de extremidade, por exemplo: "bytes = 0-1023" |   
+   | **x-ms-chunk-size** | Integer | Não | O tamanho da parte sugerido em bytes |
+   ||||
 
 Por exemplo, esta definição de ação mostra uma solicitação HTTP POST para carregar o conteúdo em partes para um ponto de extremidade. Na propriedade `runTimeConfiguration` da ação, a propriedade `contentTransfer` define `transferMode` como `chunked`:
 

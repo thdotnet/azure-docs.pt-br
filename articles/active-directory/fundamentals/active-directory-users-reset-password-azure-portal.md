@@ -14,12 +14,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 382ffab090613a2b14ce710a45be10b4c36e5222
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: b4fdbbd4d71a9c97259678413cd9e59ee8aeae6b
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68561745"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69032661"
 ---
 # <a name="reset-a-users-password-using-azure-active-directory"></a>Redefinir a senha de um usuário usando o Azure Active Directory
 
@@ -43,7 +43,8 @@ Como um administrador, você pode redefinir a senha de um usuário se a senha fo
 
 3. Na página **Redefinir senha**, selecione **Redefinir senha**.
 
-    Uma senha temporária é gerada automaticamente para o usuário.
+    > [!Note]
+    > Ao usar Azure Active Directory, uma senha temporária é gerada automaticamente para o usuário. Ao usar Active Directory local, você cria a senha para o usuário.
 
 4. Copie a senha e entregue ao usuário. O usuário será solicitado a alterar a senha durante o próximo processo de entrada.
 

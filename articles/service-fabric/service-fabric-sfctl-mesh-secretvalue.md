@@ -8,28 +8,27 @@ manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
-ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: 3f8e46f063d3e725e2174fd907169f3e0167586a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 5200c40afe62ce3a236a3a16b59b64deb8d24ced
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60836936"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035923"
 ---
 # <a name="sfctl-mesh-secretvalue"></a>sfctl mesh secretvalue
 Obtém e exclui recursos de valor secreto da malha.
 
 ## <a name="commands"></a>Comandos
 
-|Comando|DESCRIÇÃO|
+|Comando|Descrição|
 | --- | --- |
 | delete | Exclui o valor especificado do recurso de segredo nomeado. |
-| list | Lista os nomes de todos os valores do recurso de segredo especificado. |
+| lista | Lista os nomes de todos os valores do recurso de segredo especificado. |
 | mostrar | Recupera o valor de uma versão especificada de um recurso de segredo. |
 
 ## <a name="sfctl-mesh-secretvalue-delete"></a>sfctl mesh secretvalue delete
@@ -39,7 +38,7 @@ Exclui o recurso de valor secreto identificado pelo nome. O nome do recurso norm
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --secret-name -n [Obrigatório] | O nome do recurso de segredo. |
 | --version -v     [Obrigatório] | O nome da versão do segredo. |
@@ -50,7 +49,7 @@ Exclui o recurso de valor secreto identificado pelo nome. O nome do recurso norm
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -61,7 +60,7 @@ Obtém informações sobre todos os recursos de valor secreto do recurso de segr
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --secret-name -n [Obrigatório] | O nome do recurso de segredo. |
 
@@ -71,7 +70,7 @@ Obtém informações sobre todos os recursos de valor secreto do recurso de segr
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -80,7 +79,7 @@ Recupera o valor de uma versão especificada de um recurso de segredo.
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --secret-name -n [Obrigatório] | O nome do recurso de segredo. |
 | --version -v     [Obrigatório] | O nome da versão do segredo. |
@@ -92,7 +91,7 @@ Recupera o valor de uma versão especificada de um recurso de segredo.
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 

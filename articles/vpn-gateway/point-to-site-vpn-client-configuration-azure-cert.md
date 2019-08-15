@@ -5,14 +5,14 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 03/20/2019
+ms.date: 08/13/2019
 ms.author: cherylmc
-ms.openlocfilehash: b590dabbe4b2c6526f2c602aeed64667348eefa9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 624c1648bc709e1ca6ee9c4120350a606df67df5
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66114046"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035753"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-native-azure-certificate-authentication-p2s-configurations"></a>Criar e instalar arquivos de configuração de cliente VPN para configurações P2S da autenticação de certificado nativa do Azure
 
@@ -74,7 +74,7 @@ Use as seguintes etapas para configurar o cliente VPN do Windows nativo para aut
 
 ## <a name="installmac"></a>Mac (OS X)
 
- Você precisa configurar manualmente o cliente VPN IKEv2 nativo em cada Mac que se conecta ao Azure. O Azure não oferece arquivo mobileconfig para autenticação de certificado do Azure nativa. A **Generic** contém todas as informações que você precisa para configuração. Caso não veja a pasta Genérico em seu download, talvez o IKEv2 não tenha sido selecionado como um tipo de túnel. Observe que o gateway de VPN SKU básica não dá suporte a IKEv2. Depois que o IKEv2 for selecionado, gere o arquivo zip novamente para recuperar a pasta Genérico.<br>A pasta Genérico contém os seguintes arquivos:
+ Você precisa configurar manualmente o cliente VPN IKEv2 nativo em cada Mac que se conecta ao Azure. O Azure não oferece arquivo mobileconfig para autenticação de certificado do Azure nativa. A **Generic** contém todas as informações que você precisa para configuração. Caso não veja a pasta Genérico em seu download, talvez o IKEv2 não tenha sido selecionado como um tipo de túnel. Observe que o SKU básico do gateway de VPN não oferece suporte a IKEv2. Depois que o IKEv2 for selecionado, gere o arquivo zip novamente para recuperar a pasta Genérico.<br>A pasta Genérico contém os seguintes arquivos:
 
 * **VpnSettings.xml**, que contém configurações importantes, como o tipo de túnel e o endereço do servidor. 
 * **VpnServerRoot.cer**, que contém o certificado raiz necessário para validar o Gateway de VPN do Azure durante a instalação de conexão P2S.
@@ -106,7 +106,7 @@ Use as seguintes etapas para configurar o cliente VPN nativo do Mac para autenti
    ![certificado](./media/point-to-site-vpn-client-configuration-azure-cert/certificate.png)
 7. **Escolha uma identidade** exibe uma lista de certificados de sua escolha. Selecione o certificado apropriado e, em seguida, clique em **Continuar**.
 
-   ![identidade](./media/point-to-site-vpn-client-configuration-azure-cert/identity.png)
+   ![identity](./media/point-to-site-vpn-client-configuration-azure-cert/identity.png)
 8. No campo **ID local**, especifique o nome do certificado (da Etapa 6). Neste exemplo, é "ikev2Client.com". Em seguida, clique no botão **Aplicar** para salvar as alterações.
 
    ![aplicar](./media/point-to-site-vpn-client-configuration-azure-cert/applyconnect.png)
@@ -114,23 +114,15 @@ Use as seguintes etapas para configurar o cliente VPN nativo do Mac para autenti
 
 ## <a name="linuxgui"></a>Linux (GUI strongSwan)
 
-### <a name="extract-the-key-and-certificate"></a>Extrair a chave e o certificado
+### <a name="installstrongswan"></a>Instalar o strongSwan
 
-Para strongSwan, é necessário extrair a chave e o certificado do certificado do cliente (arquivo .pfx) e salvá-los em arquivos .pem individuais.
-Siga as etapas abaixo:
+[!INCLUDE [install strongSwan](../../includes/vpn-gateway-strongswan-install-include.md)]
 
-1. Baixe e instale o OpenSSL do [OpenSSL](https://www.openssl.org/source/).
-2. Abra uma janela de linha de comando e vá para o diretório em que o OpenSSL está instalado, por exemplo, 'c:\OpenSLL-Win64\bin\'.
-3. Execute o comando a seguir para extrair a chave privada e salve-a em um novo arquivo chamado 'privatekey.pem' do seu certificado de cliente:
+### <a name="genlinuxcerts"></a>Gerar certificados
 
-   ```
-   C:\ OpenSLL-Win64\bin> openssl pkcs12 -in clientcert.pfx -nocerts -out privatekey.pem -nodes
-   ```
-4. Agora, execute o comando a seguir para extrair o certificado público e salvá-lo em um novo arquivo:
+Se você ainda não gerou certificados, use as seguintes etapas:
 
-   ```
-   C:\ OpenSLL-Win64\bin> openssl pkcs12 -in clientcert.pfx -nokeys -out publiccert.pem -nodes
-   ```
+[!INCLUDE [strongSwan certificates](../../includes/vpn-gateway-strongswan-certificates-include.md)]
 
 ### <a name="install"></a>Instalar e configurar
 
@@ -163,10 +155,13 @@ As instruções a seguir foram criadas por meio do forteSwan 5.5.1 no Ubuntu 17.
 
 ### <a name="install-strongswan"></a>Instalar o strongSwan
 
-Para instalar o strongSwan, você pode usar os seguintes comandos da CLI ou usar as etapas do strongSwan na [GUI](#install).
+[!INCLUDE [install strongSwan](../../includes/vpn-gateway-strongswan-install-include.md)]
 
-1. `apt-get install strongswan-ikev2 strongswan-plugin-eap-tls`
-2. `apt-get install libstrongswan-standard-plugins`
+### <a name="generate-certificates"></a>Gerar certificados
+
+Se você ainda não gerou certificados, use as seguintes etapas:
+
+[!INCLUDE [strongSwan certificates](../../includes/vpn-gateway-strongswan-certificates-include.md)]
 
 ### <a name="install-and-configure"></a>Instalar e configurar
 

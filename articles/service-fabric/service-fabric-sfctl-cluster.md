@@ -8,25 +8,24 @@ manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
-ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: 7bb399472d7e0ab14e6399fc8652d2eb132a866a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 305b1e11841dd2da4aa6c0bdeb3df2c76addad87
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60837295"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69036512"
 ---
 # <a name="sfctl-cluster"></a>cluster sfctl
 Selecionar, gerenciar e operar clusters do Service Fabric.
 
 ## <a name="commands"></a>Comandos
 
-|Comando|DESCRIÇÃO|
+|Comando|Descrição|
 | --- | --- |
 | versões de código | Obtém uma lista de versões de códigos de malha que são provisionadas em um cluster do Service Fabric. |
 | versões de configurações | Obtém uma lista de versões de configurações de malha que são provisionadas em um cluster do Service Fabric. |
@@ -53,7 +52,7 @@ Obtém uma lista de informações sobre a malha versões de código que são pro
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --versão do código | A versão de produto do Service Fabric. |
 | --timeout -t | Tempo limite do servidor em segundos.  Padrão\: 60. |
@@ -64,7 +63,7 @@ Obtém uma lista de informações sobre a malha versões de código que são pro
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -75,7 +74,7 @@ Obtém uma lista de informações sobre a malha versões de configuração que s
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --versão de configuração | A versão de configuração do Service Fabric. |
 | --timeout -t | Tempo limite do servidor em segundos.  Padrão\: 60. |
@@ -86,7 +85,7 @@ Obtém uma lista de informações sobre a malha versões de configuração que s
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -97,7 +96,7 @@ Use EventsHealthStateFilter para filtrar o conjunto de eventos de integridade re
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --filtro do estado de integridade dos aplicativos | Permite filtrar os objetos de estado de integridade do aplicativo retornados no resultado da consulta de integridade do cluster com base em seu estado de integridade. Os valores possíveis para este parâmetro incluem valor inteiro obtido de membros ou operações bit a bit em membros da enumeração HealthStateFilter. São retornados apenas aplicativos que correspondem ao filtro. Todos os aplicativos são usados para avaliar o estado de integridade agregada. Se não for especificado, retorna todas as entradas. Os valores de estado são enumerações baseadas no sinalizador. Assim, o valor pode ser uma combinação desses valores obtidos, usando o operador 'OR' bit a bit. Por exemplo, se o valor fornecido for 6, o estado de integridade dos aplicativos com valor HealthState de OK (2) e Aviso (4) será retornado.  <br> – Default – Valor padrão. Corresponde a qualquer HealthState. O valor é zero.  <br> -None- Filtro que não corresponde a qualquer valor de HealthState. Usado para não retornar qualquer resultado em um determinado conjunto de estados. O valor é 1.  <br> - Ok - Filtro que corresponde à entrada com o valor de HealthState Ok. O valor é 2.  <br> -Warning- Filtro que corresponde à entrada com o valor de HealthState Warning. O valor é 4.  <br> -Error- Filtro que corresponde a entrada com o valor de HealthState Error. O valor é 8.  <br> - All - Filtro que corresponde à entrada com qualquer valor de HealthState. O valor é 65535. |
 | --events-health-state-filter | Permite filtrar a coleção de objetos HealthEvent retornados com base no estado de integridade. Os valores possíveis para esse parâmetro incluem o valor de inteiro de um dos seguintes estados de integridade. Somente os eventos que correspondem ao filtro são retornados. Todos os eventos são usados para avaliar o estado de integridade agregado. Se não for especificado, retorna todas as entradas. Os valores de estado são enumerações baseadas no sinalizador. Assim, o valor pode ser uma combinação desses valores obtidos, usando o operador “OR” bit a bit. Por exemplo, se o valor fornecido for 6, serão retornados todos os eventos com o valor de HealthState de OK (2) e de Aviso (4).  <br> – Default – Valor padrão. Corresponde a qualquer HealthState. O valor é zero.  <br> -None- Filtro que não corresponde a qualquer valor de HealthState. Usado para não retornar qualquer resultado em um determinado conjunto de estados. O valor é 1.  <br> - Ok - Filtro que corresponde à entrada com o valor de HealthState Ok. O valor é 2.  <br> -Warning- Filtro que corresponde à entrada com o valor de HealthState Warning. O valor é 4.  <br> -Error- Filtro que corresponde a entrada com o valor de HealthState Error. O valor é 8.  <br> - All - Filtro que corresponde à entrada com qualquer valor de HealthState. O valor é 65535. |
@@ -112,7 +111,7 @@ Use EventsHealthStateFilter para filtrar o conjunto de eventos de integridade re
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -123,7 +122,7 @@ Obter o manifesto do cluster do Service Fabric. O manifesto do cluster contém p
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --timeout -t | Tempo limite do servidor em segundos.  Padrão\: 60. |
 
@@ -133,23 +132,23 @@ Obter o manifesto do cluster do Service Fabric. O manifesto do cluster contém p
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
 ## <a name="sfctl-cluster-operation-cancel"></a>operação de cluster sfctl cancelamento
 Cancela uma operação com falha induzida pelo usuário.
 
-As seguintes APIs iniciar operações com falha que podem ser canceladas usando CancelOperation\: StartDataLoss, StartQuorumLoss, StartPartitionRestart, StartNodeTransition. Se forçar for false, em seguida, a operação especificada induzido pelo usuário será normalmente interrompida e limpos.  Se forçar for true, o comando será anulado e algum estado interno pode ser deixado para trás.  Especificar force como verdadeiro deve ser usada com cuidado. Não é permitido chamar essa API com force definido como verdadeiro, até que essa API já foi chamada no mesmo comando de teste com force definido como false, ou a menos que o comando de teste já tem um OperationState de OperationState.RollingBack. 
+As APIs a seguir iniciam as operações de falha que podem ser\: canceladas usando CancelOperation StartDataLoss, StartQuorumLoss, StartPartitionRestart, StartNodeTransition. Se forçar for false, em seguida, a operação especificada induzido pelo usuário será normalmente interrompida e limpos.  Se forçar for true, o comando será anulado e algum estado interno pode ser deixado para trás.  Especificar force como verdadeiro deve ser usada com cuidado. Não é permitido chamar essa API com force definido como verdadeiro, até que essa API já foi chamada no mesmo comando de teste com force definido como false, ou a menos que o comando de teste já tem um OperationState de OperationState.RollingBack. 
 
 Esclarecimento\: significa OperationState.RollingBack que o sistema será/está limpando interno do sistema de estado causado pela execução do comando.  Ele não irá restaurar os dados se o comando de teste foi causar perda de dados.  Por exemplo, se você chamar StartDataLoss chamar esta API, o sistema só limpará o estado interno da execução do comando. Ele não irá restaurar os dados da partição de destino, se o comando progrediu distante o suficiente para causar perda de dados. 
 
 > [!NOTE]
 > Se essa API é invocada com a equipe = = true, interno de estado pode ser deixado para trás.
 
-### <a name="arguments"></a>Argumentos
+### <a name="arguments"></a>Arguments
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --id da operação [requerido] | Um GUID que identifica uma chamada dessa API.  Isso é passado para a API GetProgress correspondente. |
 | -Force | Indica se deve normalmente revertê-lo e limpar o estado do sistema interno modificado executando a operação induzido pelo usuário. |
@@ -161,7 +160,7 @@ Esclarecimento\: significa OperationState.RollingBack que o sistema será/está 
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -170,9 +169,9 @@ Obtém uma lista de operações com falha induzidas pelo usuário e filtradas po
 
 Obtém a lista de operações com falha induzido pelo usuário filtrados por entrada fornecida.
 
-### <a name="arguments"></a>Argumentos
+### <a name="arguments"></a>Arguments
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | -filtro de estado | Usado para filtrar do OperationState para operações induzido pelo usuário. <br> 65535 - Selecionar tudo <br> 1 - selecionar em execução <br> 2 - selecione RollingBack <br>8 - Selecione concluído <br>16 - selecionar com falha <br>32 - selecione cancelado <br>64 - selecione ForceCancelled.  <br>Padrão\: 65535. |
 | --timeout -t | Tempo limite do servidor em segundos.  Padrão\: 60. |
@@ -184,7 +183,7 @@ Obtém a lista de operações com falha induzido pelo usuário filtrados por ent
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -195,7 +194,7 @@ Valide e provisione o código ou os pacotes de configuração de um cluster do S
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --caminho do arquivo do manifesto do cluster | O caminho do arquivo do manifesto do cluster. |
 | --caminho do arquivo do código | O caminho do pacote de código do cluster. |
@@ -207,7 +206,7 @@ Valide e provisione o código ou os pacotes de configuração de um cluster do S
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -218,7 +217,7 @@ Indica ao cluster do Service Fabric que ele deve tentar recuperar os serviços d
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --timeout -t | Tempo limite do servidor em segundos.  Padrão\: 60. |
 
@@ -228,18 +227,18 @@ Indica ao cluster do Service Fabric que ele deve tentar recuperar os serviços d
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
 ## <a name="sfctl-cluster-report-health"></a>relatório de cluster sfctl integridade
 Envia um relatório de integridade sobre o cluster do Service Fabric.
 
-O relatório deve conter as informações sobre a origem do relatório de integridade e a propriedade na qual ele será relatado. O relatório é enviado a um nó de gateway do Service Fabric, que encaminha para o repositório de integridade. O relatório pode ser aceito pelo gateway, mas rejeitado pelo repositório de integridade após validação adicional. Por exemplo, o repositório de integridade pode rejeitar o relatório devido a um parâmetro inválido, como um número de sequência obsoleto. Para ver se o relatório foi aplicado no health store, verifique se o relatório é exibido na HealthEvents do cluster.
+O relatório deve conter as informações sobre a origem do relatório de integridade e propriedade na qual ele será relatado. O relatório é enviado a um nó de gateway do Service Fabric, que encaminha para o repositório de integridade. O relatório pode ser aceito pelo gateway, mas rejeitado pelo repositório de integridade após validação adicional. Por exemplo, o repositório de integridade pode rejeitar o relatório devido a um parâmetro inválido, como um número de sequência obsoleto. Para ver se o relatório foi aplicado no health store, verifique se o relatório é exibido na HealthEvents do cluster.
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --health-property [Obrigatório] | A propriedade das informações de integridade. <br><br> Uma entidade pode ter relatórios de integridade para propriedades diferentes. A propriedade é uma cadeia de caracteres e não uma enumeração fixa para permitir ao relator flexibilidade para categorizar a condição de estado que dispara o relatório. Por exemplo, um relator com SourceId "LocalWatchdog" pode monitorar o estado do disco disponível em um nó, para poder relatar a propriedade "AvailableDisk" nesse nó. O mesmo relator pode monitorar a conectividade do nó, para que ele possa relatar a "Conectividade" de uma propriedade no mesmo nó. No repositório de integridade, esses relatórios são tratados como eventos de integridade distintos para o nó especificado. Junto com a SourceId, a propriedade identifica exclusivamente as informações de integridade. |
 | --health-state    [Obrigatório] | Os valores possíveis são\: 'Invalid', 'Ok', 'Warning', 'Error', 'Unknown'. |
@@ -257,7 +256,7 @@ O relatório deve conter as informações sobre a origem do relatório de integr
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -266,9 +265,9 @@ Se conecta a um ponto de extremidade do cluster do Service Fabric.
 
 Se estiver se conectando ao cluster seguro, especifique um caminho absoluto para um certificado (. crt) e o arquivo de chave (chave) ou um único arquivo com ambos (. PEM). Não especifique ambos. Opcionalmente, se estiver se conectando a um cluster seguro, especifique também um caminho absoluto para um arquivo de pacote de autoridade de certificação ou o diretório de certificados de autoridade de certificação confiáveis. Se um diretório de Certificados de Autoridade de Certificação estiver sendo usado, o `c_rehash <directory>` fornecido pelo OpenSSL precisará ser executado primeiro para computar os hashes de certificado e criar os links simbólicos apropriados.
 
-### <a name="arguments"></a>Argumentos
+### <a name="arguments"></a>Arguments
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --ponto de extremidade [obrigatório] | URL do ponto de extremidade, incluindo o prefixo HTTPS ou HTTPS e porta do cluster. |
 | --aad | Usar o Azure Active Directory para autenticação. |
@@ -284,7 +283,7 @@ Se estiver se conectando ao cluster seguro, especifique um caminho absoluto para
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -297,7 +296,7 @@ Mostre qual cluster do Service Fabric essa instância sfctl está conectada.
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -308,7 +307,7 @@ Há suporte para desprovisionar o código e a configuração separadamente.
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --versão do código | A versão do pacote de código do cluster. |
 | --versão de configuração | A versão do manifesto de cluster. |
@@ -320,7 +319,7 @@ Há suporte para desprovisionar o código e a configuração separadamente.
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -329,9 +328,9 @@ Começar a realizar os upgrades da versão do código ou configuração de um cl
 
 Valide os parâmetros de upgrade fornecidos e comece a atualizar o código ou a versão de configuração de um cluster do Service Fabric se os parâmetros forem válidos.
 
-### <a name="arguments"></a>Argumentos
+### <a name="arguments"></a>Arguments
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --mapa de integridade do aplicativo | O JSON codificava o dicionário de pares de nome de aplicativo e percentual máximo não íntegro antes de gerar o erro. |
 | --mapa de integridade do tipo do aplicativo | O JSON codificava o dicionário de pares de nome de tipo de aplicativo e percentual máximo não íntegro antes de gerar o erro. |
@@ -360,7 +359,7 @@ Valide os parâmetros de upgrade fornecidos e comece a atualizar o código ou a 
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -371,7 +370,7 @@ Mude cluster configuração ou código de atualização para o próximo domínio
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | – domínio de atualização [requerido] | O próximo domínio de atualização para essa atualização de cluster. |
 | --timeout -t | Tempo limite do servidor em segundos.  Padrão\: 60. |
@@ -382,7 +381,7 @@ Mude cluster configuração ou código de atualização para o próximo domínio
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -393,7 +392,7 @@ Reverta a atualização de configuração ou código de um cluster do Service Fa
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --timeout -t | Tempo limite do servidor em segundos.  Padrão\: 60. |
 
@@ -403,7 +402,7 @@ Reverta a atualização de configuração ou código de um cluster do Service Fa
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -414,7 +413,7 @@ Obtém o progresso atual da atualização do cluster em andamento. Se nenhuma at
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --timeout -t | Tempo limite do servidor em segundos.  Padrão\: 60. |
 
@@ -424,7 +423,7 @@ Obtém o progresso atual da atualização do cluster em andamento. Se nenhuma at
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -433,7 +432,7 @@ Atualize os parâmetros de upgrade de um upgrade de cluster do Service Fabric.
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --mapa de integridade do aplicativo | O JSON codificava o dicionário de pares de nome de aplicativo e percentual máximo não íntegro antes de gerar o erro. |
 | --mapa de integridade do tipo do aplicativo | O JSON codificava o dicionário de pares de nome de tipo de aplicativo e percentual máximo não íntegro antes de gerar o erro. |
@@ -461,7 +460,7 @@ Atualize os parâmetros de upgrade de um upgrade de cluster do Service Fabric.
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 

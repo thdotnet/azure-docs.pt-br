@@ -14,18 +14,21 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/06/2018
 ms.author: rapatchi
-ms.openlocfilehash: c33ecce5610dbef0dce13aa95f04ae4f0620603b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c15ca6d68512bc79ce4e5a27f5ce4f7ea6bc3080
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60949942"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035436"
 ---
 # <a name="service-fabric-plug-in-for-eclipse-java-application-development"></a>Plug-in do Service Fabric para o desenvolvimento de aplicativos Eclipse Java
 O Eclipse é um dos IDEs (ambientes de desenvolvimento integrado) mais amplamente usados para desenvolvedores de Java. Neste artigo, descreveremos como configurar seu ambiente de desenvolvimento do Eclipse para trabalhar com o Azure Service Fabric. Saiba como instalar o plug-in do Service Fabric e criar e implantar o aplicativo do Service Fabric em um cluster do Service Fabric local ou remoto no Eclipse. 
 
 > [!NOTE]
 > Atualmente, não há suporte para o plugin Eclipse no Windows. 
+
+> [!IMPORTANT]
+> Verifique se o JDK 8 está instalado no sistema e selecionado no Eclipse.
 
 ## <a name="install-or-update-the-service-fabric-plug-in-in-eclipse"></a>Instalar ou atualizar o plug-in do Service Fabric no Eclipse
 Você pode instalar um plug-in do Service Fabric no Eclipse. O plug-in pode ajudar a simplificar o processo de criação e implantação de serviços Java.
@@ -37,12 +40,12 @@ Você pode instalar um plug-in do Service Fabric no Eclipse. O plug-in pode ajud
 
 Instale o Eclipse Neon ou posterior do [site do Eclipse](https://www.eclipse.org).  Instale também a versão 2.2.1 ou posterior do Buildship (plug-in do Service Fabric não é compatível com versões anteriores do Buildship):
 -   Para verificar as versões dos componentes instalados, no Eclipse, acesse **Ajuda** > **Sobre o Eclipse** > **Detalhes da Instalação**.
--   Para atualizar o Buildship, confira [Eclipse Buildship: Plug-ins do Eclipse para o Gradle][buildship-update].
+-   Para atualizar o Buildship, confira [Eclipse Buildship: Plug-ins do Eclipse para][buildship-update]gradle.
 -   Para verificar e instalar atualizações para o Eclipse, acesse **Ajuda** > **Verificar se há Atualizações**.
 
 Instale o plug-in do Service Fabric, no Eclipse, acesse **Ajuda** > **Instalar Novo Software**.
-1. No **trabalhar com** , digite https:\//dl.microsoft.com/eclipse.
-2. Clique em **Adicionar**.
+1. Na caixa **trabalhar com** , digite https:\//DL.Microsoft.com/eclipse.
+2. Clique em **Adicionar** .
 
    ![Plug-in do Service Fabric para Eclipse][sf-eclipse-plugin-install]
 3. Selecione o plug-in do Service Fabric e clique em **Avançar**.
@@ -54,7 +57,7 @@ Se você já tiver o plug-in do Service Fabric instalado, instale a versão mais
 3. Após a atualização do plug-in do Service Fabric, atualize também o projeto Gradle.  Clique com botão direito em **build.gradle** e selecione **Atualizar**.
 
 > [!NOTE]
-> Se a instalação ou atualização do plug-in do Service Fabric estiver lenta, isso poderá ser devido a uma configuração do Eclipse. O Eclipse coleta metadados sobre todas as alterações para atualizar sites que estão registrados com a instância do Eclipse. Para acelerar o processo de verificar e instalar uma atualização de plug-in do Service Fabric, acesse **Sites de Software Disponível**. Desmarque as caixas de seleção para todos os sites, exceto aquele que aponta para o local do plug-in do Service Fabric (https:\//dl.microsoft.com/eclipse/azure/servicefabric).
+> Se a instalação ou atualização do plug-in do Service Fabric estiver lenta, isso poderá ser devido a uma configuração do Eclipse. O Eclipse coleta metadados sobre todas as alterações para atualizar sites que estão registrados com a instância do Eclipse. Para acelerar o processo de verificar e instalar uma atualização de plug-in do Service Fabric, acesse **Sites de Software Disponível**. Desmarque as caixas de seleção de todos os sites, exceto aquele que aponta para o local de plug-in Service Fabric\/(https:/dl.Microsoft.com/Eclipse/Azure/servicefabric).
 
 > [!NOTE]
 >Se o Eclipse não está funcionando conforme o esperado no seu Mac ou você precisa executar como superusuário), vá para a pasta **ECLIPSE_INSTALLATION_PATH** e navegue até a subpasta **Eclipse.app/Contents/MacOS**. Inicie o Eclipse executando `./eclipse`.

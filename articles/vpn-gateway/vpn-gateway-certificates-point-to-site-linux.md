@@ -5,20 +5,25 @@ services: vpn-gateway
 author: anzaman
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 01/31/2019
+ms.date: 08/14/2019
 ms.author: alzam
-ms.openlocfilehash: 79840010561746f2885909123012ffb4efbea5f6
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 2544df920580745e42aee1fc5e681d40bd1e74f9
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68990305"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69036017"
 ---
 # <a name="generate-and-export-certificates"></a>Gerar e exportar certificados
 
 Conexões ponto a site usam certificados para se autenticar. Este artigo mostra como criar um certificado raiz autoassinado e gerar certificados do cliente usando a CLI do Linux e o strongSwan. Se você estiver procurando por instruções de certificado diferentes, confira os artigos [PowerShell](vpn-gateway-certificates-point-to-site.md) ou [MakeCert](vpn-gateway-certificates-point-to-site-makecert.md). Para obter mais informações sobre como instalar o strongSwan usando a GUI em vez da CLI, confira as etapas no artigo [Configuração do cliente](point-to-site-vpn-client-configuration-azure-cert.md#install).
 
-## <a name="generate-and-export"></a>Gerar e exportar
+## <a name="install-strongswan"></a>Instalar o strongSwan
+
+[!INCLUDE [strongSwan Install](../../includes/vpn-gateway-strongswan-install-include.md)]
+
+## <a name="generate-and-export-certificates"></a>Gerar e exportar certificados
+
 [!INCLUDE [strongSwan certificates](../../includes/vpn-gateway-strongswan-certificates-include.md)]
 
 ## <a name="next-steps"></a>Próximas etapas

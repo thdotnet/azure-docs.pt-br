@@ -8,39 +8,38 @@ manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
-ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: f7c9bcc51757100cb1fc957dee12213bc8bf2eec
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 54cf0a60c86e82880573dd18dcb80ece8e1e51f2
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60556584"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035010"
 ---
 # <a name="sfctl-partition"></a>partição sfctl
 Consultar e gerenciar partições para qualquer serviço.
 
 ## <a name="commands"></a>Comandos
 
-|Comando|DESCRIÇÃO|
+|Comando|Descrição|
 | --- | --- |
 | data-loss | Essa API induzirá a perda de dados para a partição especificada. |
 | data-loss-status | Obtém o progresso de uma operação de perda de dados de partição iniciada, utilizando a API StartDataLoss. |
 | health | Obtém a integridade da partição do Service Fabric especificado. |
 | info | Obtém as informações sobre uma partição do Service Fabric. |
-| list | Obtém a lista de partições de um serviço do Service Fabric. |
-| load | Obtém as informações de carga da partição do Service Fabric especificado. |
+| lista | Obtém a lista de partições de um serviço do Service Fabric. |
+| carga | Obtém as informações de carga da partição do Service Fabric especificado. |
 | load-reset | Redefine a carga atual de uma partição do Service Fabric. |
 | quorum-loss | Induz a perda de quorum de uma determinada partição de serviço com estado. |
 | quorum-loss-status | Obtém o progresso de uma operação de perda de quorum em uma partição iniciada utilizando a API StartQuorumLoss. |
 | recover | Indica ao cluster do Service Fabric que deve tentar recuperar uma partição específica que está atualmente paralisada na perda de quorum. |
 | recover-all | Indica ao cluster do Service Fabric que ele deve tentar recuperar quaisquer serviços (incluindo serviços do sistema) que estão atualmente paralisados na perda de quorum. |
 | report-health | Envia um relatório de integridade na partição do Service Fabric. |
-| restart | Essa API reiniciará algumas ou todas as réplicas ou instâncias da partição especificada. |
+| reiniciar | Essa API reiniciará algumas ou todas as réplicas ou instâncias da partição especificada. |
 | restart-status | Obtém o progresso de uma operação PartitionRestart iniciada utilizando StartPartitionRestart. |
 | svc-name | Obtém o nome do serviço do Service Fabric para uma partição. |
 
@@ -54,7 +53,7 @@ Ele acionará uma chamada à API OnDataLossAsync da partição.  Essa API induzi
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --data-loss-mode [Obrigatório] | Essa enumeração é passada para a API StartDataLoss para indicar qual tipo de perda de dados induzir. |
 | --operation-id   [Obrigatório] | Um GUID que identifica uma chamada dessa API.  Isso é passado para a API GetProgress correspondente. |
@@ -68,7 +67,7 @@ Ele acionará uma chamada à API OnDataLossAsync da partição.  Essa API induzi
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -77,9 +76,9 @@ Obtém o progresso de uma operação de perda de dados de partição iniciada, u
 
 Obtém o progresso de uma operação de perda de dados iniciada com StartDataLoss, usando a OperationId.
 
-### <a name="arguments"></a>Argumentos
+### <a name="arguments"></a>Arguments
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --id da operação [requerido] | Um GUID que identifica uma chamada dessa API.  Isso é passado para a API GetProgress correspondente. |
 | --partition-id [Obrigatório] | A identidade da partição. |
@@ -92,7 +91,7 @@ Obtém o progresso de uma operação de perda de dados iniciada com StartDataLos
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -103,7 +102,7 @@ Use EventsHealthStateFilter para filtrar o conjunto de eventos de integridade re
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --partition-id      [Obrigatório] | A identidade da partição. |
 | --events-health-state-filter | Permite filtrar a coleção de objetos HealthEvent retornados com base no estado de integridade. Os valores possíveis para esse parâmetro incluem o valor de inteiro de um dos seguintes estados de integridade. Somente os eventos que correspondem ao filtro são retornados. Todos os eventos são usados para avaliar o estado de integridade agregado. Se não for especificado, retorna todas as entradas. Os valores de estado são enumerações baseadas no sinalizador. Assim, o valor pode ser uma combinação desses valores obtidos, usando o operador “OR” bit a bit. Por exemplo, se o valor fornecido for 6, serão retornados todos os eventos com o valor de HealthState de OK (2) e de Aviso (4).  <br> – Default – Valor padrão. Corresponde a qualquer HealthState. O valor é zero.  <br> -None- Filtro que não corresponde a qualquer valor de HealthState. Usado para não retornar qualquer resultado em um determinado conjunto de estados. O valor é 1.  <br> - Ok - Filtro que corresponde à entrada com o valor de HealthState Ok. O valor é 2.  <br> -Warning- Filtro que corresponde à entrada com o valor de HealthState Warning. O valor é 4.  <br> -Error- Filtro que corresponde a entrada com o valor de HealthState Error. O valor é 8.  <br> - All - Filtro que corresponde à entrada com qualquer valor de HealthState. O valor é 65535. |
@@ -117,7 +116,7 @@ Use EventsHealthStateFilter para filtrar o conjunto de eventos de integridade re
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -126,9 +125,9 @@ Obtém as informações sobre uma partição do Service Fabric.
 
 Obtém as informações sobre a partição especificada. A resposta inclui a ID da partição, informações do esquema de particionamento, chaves suportadas pela partição, status, integridade e outros detalhes sobre a partição.
 
-### <a name="arguments"></a>Argumentos
+### <a name="arguments"></a>Arguments
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --partition-id [Obrigatório] | A identidade da partição. |
 | --timeout -t | Tempo limite do servidor em segundos.  Padrão\: 60. |
@@ -139,7 +138,7 @@ Obtém as informações sobre a partição especificada. A resposta inclui a ID 
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -148,9 +147,9 @@ Obtém a lista de partições de um serviço do Service Fabric.
 
 A resposta inclui a ID da partição, informações do esquema de particionamento, chaves suportadas pela partição, status, integridade e outros detalhes sobre a partição.
 
-### <a name="arguments"></a>Argumentos
+### <a name="arguments"></a>Arguments
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --service-id [Obrigatório] | A identidade do serviço. Essa ID normalmente é o nome completo do serviço sem o ' malha\:' esquema de URI. A partir da versão 6.0, nomes hierárquicos são delimitados pelo caractere "\~". Por exemplo, se o nome do serviço for "fabric\:/myapp/app1/svc1", a identidade do serviço será "myapp\~app1\~svc1" na versão 6.0 e superiores, e "myapp/app1/svc1" em versões anteriores. |
 | --continuation-token | O parâmetro do token de continuação é usado para obter o próximo conjunto de resultados. Um token de continuação com um valor não vazio será incluso na resposta da API quando os resultados do sistema não couberem em uma única resposta. Quando esse valor for passado para a próxima chamada de API, a API retornará o próximo conjunto de resultados. Se não houver mais resultados, o token de continuação não conterá um valor. O valor desse parâmetro não deve ser codificado em URL. |
@@ -162,7 +161,7 @@ A resposta inclui a ID da partição, informações do esquema de particionament
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -173,7 +172,7 @@ Retorna informações sobre carga de uma partição especificada. A resposta inc
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --partition-id [Obrigatório] | A identidade da partição. |
 | --timeout -t | Tempo limite do servidor em segundos.  Padrão\: 60. |
@@ -184,7 +183,7 @@ Retorna informações sobre carga de uma partição especificada. A resposta inc
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -195,7 +194,7 @@ Redefine a carga atual de uma partição do Service Fabric para a carga padrão 
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --partition-id [Obrigatório] | A identidade da partição. |
 | --timeout -t | Tempo limite do servidor em segundos.  Padrão\: 60. |
@@ -206,7 +205,7 @@ Redefine a carga atual de uma partição do Service Fabric para a carga padrão 
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -215,9 +214,9 @@ Induz a perda de quorum de uma determinada partição de serviço com estado.
 
 Essa API é útil em uma situação de perda de quorum temporária em seu serviço. Chame a API de GetQuorumLossProgress com a mesma OperationId para retornar informações sobre a operação iniciada com essa API. Isso só pode ser chamado em serviços com estado persistente (HasPersistedState = = true).  Não use essa API em serviços sem estado ou em serviços com estado na memória apenas.
 
-### <a name="arguments"></a>Argumentos
+### <a name="arguments"></a>Arguments
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --operation-id         [Obrigatório] | Um GUID que identifica uma chamada dessa API.  Isso é passado para a API GetProgress correspondente. |
 | --partition-id         [Obrigatório] | A identidade da partição. |
@@ -232,7 +231,7 @@ Essa API é útil em uma situação de perda de quorum temporária em seu servi�
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -241,9 +240,9 @@ Obtém o progresso de uma operação de perda de quorum em uma partição inicia
 
 Obtém o progresso de uma operação de perda de quorum iniciada com StartQuorumLoss, usando a OperationId fornecida.
 
-### <a name="arguments"></a>Argumentos
+### <a name="arguments"></a>Arguments
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --id da operação [requerido] | Um GUID que identifica uma chamada dessa API.  Isso é passado para a API GetProgress correspondente. |
 | --partition-id [Obrigatório] | A identidade da partição. |
@@ -256,7 +255,7 @@ Obtém o progresso de uma operação de perda de quorum iniciada com StartQuorum
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -267,7 +266,7 @@ Esta operação somente deve ser realizada se souber que as réplicas inativas n
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --partition-id [Obrigatório] | A identidade da partição. |
 | --timeout -t | Tempo limite do servidor em segundos.  Padrão\: 60. |
@@ -278,7 +277,7 @@ Esta operação somente deve ser realizada se souber que as réplicas inativas n
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -289,7 +288,7 @@ Esta operação somente deve ser realizada se souber que as réplicas inativas n
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --timeout -t | Tempo limite do servidor em segundos.  Padrão\: 60. |
 
@@ -299,7 +298,7 @@ Esta operação somente deve ser realizada se souber que as réplicas inativas n
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -310,7 +309,7 @@ Relata o estado de integridade da partição do Service Fabric especificada. O r
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --health-property [Obrigatório] | A propriedade das informações de integridade. <br><br> Uma entidade pode ter relatórios de integridade para propriedades diferentes. A propriedade é uma cadeia de caracteres e não uma enumeração fixa para permitir ao relator flexibilidade para categorizar a condição de estado que dispara o relatório. Por exemplo, um relator com SourceId "LocalWatchdog" pode monitorar o estado do disco disponível em um nó, para poder relatar a propriedade "AvailableDisk" nesse nó. O mesmo relator pode monitorar a conectividade do nó, para que ele possa relatar a "Conectividade" de uma propriedade no mesmo nó. No repositório de integridade, esses relatórios são tratados como eventos de integridade distintos para o nó especificado. Junto com a SourceId, a propriedade identifica exclusivamente as informações de integridade. |
 | --health-state    [Obrigatório] | Os valores possíveis são\: 'Invalid', 'Ok', 'Warning', 'Error', 'Unknown'. |
@@ -329,7 +328,7 @@ Relata o estado de integridade da partição do Service Fabric especificada. O r
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -340,7 +339,7 @@ Essa API é útil para teste de failover. Se usada para segmentar uma partição
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --operation-id           [Obrigatório] | Um GUID que identifica uma chamada dessa API.  Isso é passado para a API GetProgress correspondente. |
 | --partition-id           [Obrigatório] | A identidade da partição. |
@@ -354,7 +353,7 @@ Essa API é útil para teste de failover. Se usada para segmentar uma partição
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -365,7 +364,7 @@ Obtém o progresso de uma PartitionRestart iniciada utilizando StartPartitionRes
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --id da operação [requerido] | Um GUID que identifica uma chamada dessa API.  Isso é passado para a API GetProgress correspondente. |
 | --partition-id [Obrigatório] | A identidade da partição. |
@@ -378,7 +377,7 @@ Obtém o progresso de uma PartitionRestart iniciada utilizando StartPartitionRes
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -389,7 +388,7 @@ Obtém o nome do serviço para a partição especificada. Um erro 404 retornará
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --partition-id [Obrigatório] | A identidade da partição. |
 | --timeout -t | Tempo limite do servidor em segundos.  Padrão\: 60. |
@@ -400,7 +399,7 @@ Obtém o nome do serviço para a partição especificada. Um erro 404 retornará
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 

@@ -8,18 +8,17 @@ manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
-ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: e6b484dabd77a142961db2d97242896790fa3d8b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b3f506b46ef563f47fc7c67b759d3fcd08b7509d
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60836939"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035182"
 ---
 # <a name="sfctl-mesh-deployment"></a>sfctl mesh deployment
 Criar recursos da Malha do Service Fabric.
@@ -28,14 +27,14 @@ Criar recursos da Malha do Service Fabric.
 
 |Comando|DESCRIÇÃO|
 | --- | --- |
-| create | Cria uma implantação de Recursos da Malha do Service Fabric. |
+| criar | Cria uma implantação de Recursos da Malha do Service Fabric. |
 
 ## <a name="sfctl-mesh-deployment-create"></a>sfctl mesh deployment create
 Cria uma implantação de Recursos da Malha do Service Fabric.
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --input-yaml-files [Obrigatório] | Caminhos de arquivo relativos/absolutos separados por vírgula de todos os arquivos YAML ou o caminho relativo/absoluto do diretório (recursivo) que contêm arquivos YAML. |
 | --parameters | Um caminho relativo/absoluto para o arquivo YAML ou um objeto JSON que contém os parâmetros que precisam ser substituídos. |
@@ -46,7 +45,7 @@ Cria uma implantação de Recursos da Malha do Service Fabric.
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 

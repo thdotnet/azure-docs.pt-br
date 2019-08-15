@@ -15,17 +15,17 @@ ms.topic: article
 ms.date: 02/20/2019
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: d687e770fae6c32ee351a597e12d1aca6094e5cb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a77a41500a9c22aa25d3de396e73a5b2e4c0c419
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60851337"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69033885"
 ---
 # <a name="configure-your-app-service-app-to-use-azure-active-directory-sign-in"></a>Configurar seu aplicativo do Serviço de Aplicativo para usar as credenciais do Azure Active Directory
 
 > [!NOTE]
-> Neste momento, o AAD V2 (incluindo MSAL) não há suporte para serviços de aplicativo do Azure e o Azure Functions. Verifique se há atualizações.
+> Neste momento, o AAD v2 (incluindo MSAL) não tem suporte para serviços Azure App e Azure Functions. Verifique novamente se há atualizações.
 >
 
 [!INCLUDE [app-service-mobile-selector-authentication](../../includes/app-service-mobile-selector-authentication.md)]
@@ -41,6 +41,10 @@ Este artigo mostra como configurar os Serviços de Aplicativos do Azure para usa
    Clique no registro do aplicativo para selecioná-lo e clique em **OK**. Em seguida, clique em **OK** na página de configurações do Azure Active Directory.
    Por padrão, o Serviço de Aplicativo fornece autenticação, mas não restringe o acesso autorizado ao conteúdo do site e às APIs. Você deve autorizar os usuários no código do aplicativo.
 5. (Opcional) Para restringir o acesso ao seu site somente para usuários autenticados pelo Azure Active Directory, defina a **Ação a ser executada quando a solicitação não for autenticada** como **Logon com o Azure Active Directory**. Isso exige que todas as solicitações sejam autenticadas e todas as solicitações não autenticadas sejam redirecionadas ao Active Directory do Azure para autenticação.
+
+> [!CAUTION]
+> Restringir o acesso dessa maneira se aplica a todas as chamadas para seu aplicativo, o que pode não ser desejável para aplicativos que querem um home page publicamente disponível, como em muitos aplicativos de página única. Para tais aplicativos, **Permitir solicitações anônimas (nenhuma ação)** pode ser preferível, com o aplicativo iniciando o logon manualmente, conforme descrito [aqui](overview-authentication-authorization.md#authentication-flow).
+
 6. Clique em **Salvar**.
 
 ## <a name="advanced"> </a>Configurar com configurações avançadas
@@ -55,10 +59,10 @@ Você também pode fornecer as configurações manualmente. Essa é a solução 
 4. Em alguns segundos, você deverá visualizar o novo registro do aplicativo que você acabou de criar.
 5. Depois que o registro do aplicativo for adicionado, clique no nome do registro do aplicativo, clique em **Configurações** na parte superior e clique em **Propriedades** 
 6. Cole a URL do Aplicativo (da etapa 1) na caixa **URI da ID do aplicativo**, cole a URL do Aplicativo (da etapa 1) também na **URL da Home Page** e clique em **Salvar**
-7. Agora, clique na **URLs de resposta**, edite o **URL de resposta**, cole a URL do aplicativo (da etapa 1) e, em seguida, acrescente-o ao final da URL, */.auth/login/aad/callback* (para o exemplo, `https://contoso.azurewebsites.net/.auth/login/aad/callback`). Clique em **Salvar**.
+7. Agora, clique nas **URLs de resposta**, edite a **URL de resposta**, cole na URL do aplicativo (da etapa 1) e, em seguida, anexe-a ao final da URL, `https://contoso.azurewebsites.net/.auth/login/aad/callback` */.auth/login/AAD/callback* (por exemplo,). Clique em **Salvar**.
 
    > [!NOTE]
-   > Você pode usar o mesmo registro do aplicativo para vários domínios, adicionando adicionais **URLs de resposta**. Certifique-se cada instância de serviço de aplicativo com seu próprio registro de modelo para que ele tenha suas próprias permissões e consentimento. Também considere o uso de registros de aplicativo separados para os slots de sites separados. Isso é para evitar permissões que estão sendo compartilhadas entre ambientes, para que um bug no novo código em que teste não afeta a produção.
+   > Você pode usar o mesmo registro de aplicativo para vários domínios adicionando **URLs de resposta**adicionais. Certifique-se de modelar cada instância do serviço de aplicativo com seu próprio registro, para que tenha suas próprias permissões e consentimento. Considere também o uso de registros de aplicativo separados para slots de site separados. Isso é para evitar que as permissões sejam compartilhadas entre ambientes, de modo que um bug no novo código que você está testando não afete a produção.
     
 8. Neste ponto, copie a **ID do Aplicativo** para o aplicativo. Guarde para uso posterior. Isso será necessário para configurar seu aplicativo do Serviço de Aplicativo.
 9. Feche a página **Aplicativo registrado**. Na página **Registros de aplicativo**, clique no botão **Pontos de Extremidade** na parte superior e, em seguida, copie a URL do **PONTO DE EXTREMIDADE DE LOGON DO WS-FEDERATION**, mas remova a parte final `/wsfed` da URL. O resultado final deve ser semelhante a `https://login.microsoftonline.com/00000000-0000-0000-0000-000000000000`. O nome de domínio pode ser diferente para uma nuvem soberana. Isso servirá como a URL do emissor para uso posterior.
@@ -68,7 +72,7 @@ Você também pode fornecer as configurações manualmente. Essa é a solução 
 1. Retorne ao [Portal do Azure], navegue até o aplicativo do Serviço de Aplicativo. Clique em **Autenticação/Autorização**. Se o recurso Autenticação/Autorização não estiver habilitado, mude a opção para **Ativado**. Clique em **Azure Active Directory**, em Provedores de Autenticação, para configurar seu aplicativo.
 
     (Opcional) Por padrão, o Serviço de Aplicativo fornece autenticação, mas não restringe o acesso autorizado ao conteúdo do site e às APIs. Você deve autorizar os usuários no código do aplicativo. Configure **Ação a ser tomada quando a solicitação não for autenticada** para **Logon com o Azure Active Directory**. Essa opção exige que todas as solicitações sejam autenticadas e todas as solicitações não autenticadas sejam redirecionadas para o Azure Active Directory para autenticação.
-2. Na configuração da Autenticação do Active Directory, clique em **Avançado** em **Modo de Gerenciamento**. Cole a ID do aplicativo na caixa ID do Cliente (da etapa 8) e cole a URL (da etapa 9) no valor de URL do Emissor. Em seguida, clique em **OK**.
+2. Na configuração da Autenticação do Active Directory, clique em **Avançado** em **Modo de Gerenciamento**. Cole a ID do aplicativo na caixa ID do Cliente (da etapa 8) e cole a URL (da etapa 9) no valor de URL do Emissor. Clique em **OK**.
 3. Na página de configuração da Autenticação do Active Directory, clique em **Salvar**.
 
 Agora você está pronto para usar o Azure Active Directory para autenticação no aplicativo do Serviço de Aplicativo.

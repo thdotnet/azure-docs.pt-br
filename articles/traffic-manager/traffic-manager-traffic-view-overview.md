@@ -12,12 +12,12 @@ ms.workload: infrastructure
 ms.date: 03/16/2018
 ms.author: allensu
 ms.custom: ''
-ms.openlocfilehash: 39d6090b14a16f505413154df2a78d42b3fb3f3c
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: 5b451378fcc14106cb8731a89bcf6ccf415d0a92
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68333699"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035478"
 ---
 # <a name="traffic-manager-traffic-view"></a>Exibição do Tráfego do Gerenciador de Tráfego
 
@@ -44,6 +44,8 @@ A frequência da atualização de dados da exibição de tráfego depende de vá
 ## <a name="visual-overview"></a>Visão geral do visual
 
 Ao navegar para a seção **Exibição de Tráfego** da página do Gerenciador de Tráfego, você verá um mapa geográfico com uma sobreposição dos insights da Exibição de Tráfego. O mapa fornece informações sobre a base de usuários e os pontos de extremidade para seu perfil do Gerenciador de Tráfego.
+
+![Exibição geográfica de Exibição de Tráfego do Traffic Manager][1]
 
 ### <a name="user-base-information"></a>Informações da base de usuários
 
@@ -94,3 +96,5 @@ Ao usar a Exibição do Tráfego, você é cobrado com base no número de pontos
 - Saiba mais sobre os [métodos de roteamento do tráfego](traffic-manager-routing-methods.md) com suporte pelo Gerenciador de Tráfego
 - Aprenda a [criar um perfil do Gerenciador de Tráfego](traffic-manager-create-profile.md)
 
+<!--Image references-->
+[1]: ./media/traffic-manager-traffic-view-overview/trafficview.png

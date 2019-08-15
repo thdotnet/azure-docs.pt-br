@@ -8,27 +8,26 @@ manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
-ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: 1e0955ef2a52a6313f0449b956229e03f0a5b5e8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6819bb32eecf8477e2c0727b50641858db21c784
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61038441"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035910"
 ---
 # <a name="sfctl-mesh-service-replica"></a>sfctl mesh service-replica
 Obtenha detalhes da réplica e listar as réplicas de um determinado serviço em um recurso de aplicativo.
 
 ## <a name="commands"></a>Comandos
 
-|Comando|DESCRIÇÃO|
+|Comando|Descrição|
 | --- | --- |
-| list | Lista todas as réplicas de um serviço. |
+| lista | Lista todas as réplicas de um serviço. |
 | mostrar | Obtém a réplica fornecida do serviço de um aplicativo. |
 
 ## <a name="sfctl-mesh-service-replica-list"></a>sfctl mesh service-replica list
@@ -36,9 +35,9 @@ Lista todas as réplicas de um serviço.
 
 Obtém as informações sobre todas as replicas de um serviço. As informações incluem a descrição e outras propriedades da réplica do serviço.
 
-### <a name="arguments"></a>Argumentos
+### <a name="arguments"></a>Arguments
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --app-name --application-name [Obrigatório] | O nome do aplicativo. |
 | --service-name                [Obrigatório] | O nome do serviço. |
@@ -49,7 +48,7 @@ Obtém as informações sobre todas as replicas de um serviço. As informações
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 
@@ -60,7 +59,7 @@ Obtém as informações sobre a réplica do serviço com o nome fornecido. As in
 
 ### <a name="arguments"></a>Argumentos
 
-|Argumento|DESCRIÇÃO|
+|Argumento|Descrição|
 | --- | --- |
 | --app-name --application-name [Obrigatório] | O nome do aplicativo. |
 | --name -n                     [Obrigatório] | O nome da réplica do serviço. |
@@ -72,7 +71,7 @@ Obtém as informações sobre a réplica do serviço com o nome fornecido. As in
 | --- | --- |
 | --debug | Aumentar o nível de detalhes do log para mostrar todos os logs de depuração. |
 | --help -h | Mostrar esta mensagem de ajuda e sair. |
-| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, tabela, tsv.  Padrão\: json. |
+| --output -o | O formato da saída.  Valores permitidos\: json, jsonc, table, tsv.  Padrão\: json. |
 | --query | Cadeia de caracteres de consulta JMESPath. Veja http\://jmespath.org/ para saber mais e obter exemplos. |
 | --verbose | Aumentar o nível de detalhes do log. Use --debug para logs de depuração completos. |
 

@@ -11,17 +11,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/17/2019
+ms.date: 08/13/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.custom: H1Hack27Feb2017, it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 545906af882be6e53297bf7a9ff2cd12e86d55f0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ab378fe1e06de49df0fe6481a1aa475d426648dc
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65859616"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69032564"
 ---
 # <a name="kerberos-constrained-delegation-for-single-sign-on-to-your-apps-with-application-proxy"></a>Delegação restrita de Kerberos para logon único em seus aplicativos com o Proxy de Aplicativo
 
@@ -30,15 +30,15 @@ Você pode fornecer o logon único para aplicativos locais, publicados por meio 
 Você pode habilitar o logon único para seus aplicativos usando a IWA (Autenticação Integrada do Windows) concedendo permissão aos conectores do Proxy de Aplicativo no Active Directory para representar usuários. Os conectores usam essa permissão para enviar e receber tokens em seu nome.
 
 ## <a name="how-single-sign-on-with-kcd-works"></a>Como funciona o logon único com a KCD
-Este diagrama explica o fluxo quando um usuário tenta acessar um aplicativo no local que usa IWA.
+Este diagrama explica o fluxo quando um usuário tenta acessar um aplicativo local que usa IWA.
 
 ![Diagrama de fluxo de autenticação do Microsoft AAD](./media/application-proxy-configure-single-sign-on-with-kcd/AuthDiagram.png)
 
-1. O usuário insere a URL para acessar o aplicativo no local por meio do Proxy de aplicativo.
+1. O usuário insere a URL para acessar o aplicativo local por meio do proxy de aplicativo.
 2. O Proxy de Aplicativo redireciona a solicitação para serviços de autenticação do AD do Azure para pré-autenticação. Neste ponto, o AD do Azure se aplica a qualquer política de autenticação e autorização aplicável, tal como autenticação multifator. Se o usuário for validado, o AD do Azure cria um token e o envia para o usuário.
 3. O usuário passa o token para o Proxy de Aplicativo.
-4. O Proxy de aplicativo valida o token e recupera o nome Principal de usuário (UPN) dele e, em seguida, o conector extrai o UPN e o nome Principal de serviço (SPN) por meio de um canal seguro duplamente autenticado.
-5. O conector realiza a negociação de delegação restrita de Kerberos (KCD) com o AD, representando o usuário para obter um token Kerberos para o aplicativo local.
+4. O proxy de aplicativo valida o token e recupera o UPN (nome principal do usuário) dele e, em seguida, o conector recebe o UPN e o SPN (nome da entidade de serviço) por meio de um canal seguro com autenticação dupla.
+5. O conector executa a negociação de KCD (delegação restrita de Kerberos) com o AD local, representando o usuário para obter um token Kerberos para o aplicativo.
 6. O Active Directory envia o token Kerberos para o aplicativo para o Conector.
 7. O Conector envia a solicitação original para o servidor de aplicativos usando o token Kerberos recebido do AD.
 8. O aplicativo envia a resposta para o Conector, que é retornada para o serviço de Proxy de Aplicativo e, finalmente, para o usuário.
@@ -78,7 +78,7 @@ Get-ADComputer sharepointserviceaccount -Properties PrincipalsAllowedToDelegateT
 
 `sharepointserviceaccount` pode ser a conta do computador do SPS ou uma conta de serviço sob a qual o pool de aplicativos do SPS está sendo executado.
 
-## <a name="configure-single-sign-on"></a>Configurar o logon único 
+## <a name="configure-single-sign-on"></a>Configurar logon único 
 1. Publique seu aplicativo seguindo as instruções descritas em [Publicar aplicativos com o Proxy de Aplicativo](application-proxy-add-on-premises-application.md). Certifique-se de selecionar **Azure Active Directory** como o **Método de Pré-autenticação**.
 2. Depois que o aplicativo aparecer na lista de aplicativos empresariais, selecione-o e clique em **Logon único**.
 3. Defina o modo de logon único como **Autenticação Integrada do Windows**.  
@@ -112,7 +112,7 @@ Para obter mais informações sobre o Kerberos, consulte [Tudo o que você desej
 Os aplicativos que não são do Windows normalmente utilizam nomes de usuário ou nomes de conta SAM em vez de endereços de email de domínio. Se essa situação se aplicar aos seus aplicativos, você precisará configurar o campo de identificação de logon delegada para conectar as identidades de nuvem às identidades de aplicativo. 
 
 ## <a name="working-with-different-on-premises-and-cloud-identities"></a>Trabalhando com identidades diferentes de nuvem e local
-O Proxy do Aplicativo pressupõe que os usuários têm a mesma identidade na nuvem e localmente. Se esse não é o caso, você ainda pode usar a KCD para o logon único. Configure uma **Identificação de logon delegada** para cada aplicativo a fim de especificar qual identidade deve ser usada ao realizar o logon único.  
+O Proxy do Aplicativo pressupõe que os usuários têm a mesma identidade na nuvem e localmente. Mas, em alguns ambientes, devido a políticas corporativas ou dependências de aplicativos, as organizações podem precisar usar IDs alternativas para entrar. Nesses casos, você ainda pode usar o KCD para logon único. Configure uma **Identificação de logon delegada** para cada aplicativo a fim de especificar qual identidade deve ser usada ao realizar o logon único.  
 
 Essa capacidade permite que muitas organizações com identidades diferentes localmente e na nuvem usem o SSO da nuvem para aplicativos locais, sem exigir que os usuários insiram senhas e nomes de usuários diferentes. Isso inclui as organizações que:
 

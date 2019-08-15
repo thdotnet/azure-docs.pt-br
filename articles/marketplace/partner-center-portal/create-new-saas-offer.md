@@ -1,18 +1,18 @@
 ---
 title: Criar uma nova oferta de SaaS no Marketplace comercial
 description: Como criar uma nova oferta de SaaS (software como serviço) para listagem ou venda no Azure Marketplace, AppSource ou por meio do programa CSP (provedor de soluções na nuvem) usando o portal do Marketplace comercial no Microsoft Partner Center.
-author: mattwojo
+author: qianw211
 manager: evansma
-ms.author: mattwoj
+ms.author: v-qiwe
 ms.service: marketplace
 ms.topic: conceptual
-ms.date: 06/27/2019
-ms.openlocfilehash: 6bf22bce28972e1f3a43efea3b33446ab2a81761
-ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
+ms.date: 08/14/2019
+ms.openlocfilehash: 3d3fc1541fb99d8d1219392158c3b87cd6ff99aa
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69019586"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69033531"
 ---
 # <a name="create-a-new-saas-offer"></a>Criar uma nova oferta de SaaS
 
@@ -22,7 +22,7 @@ Para começar a criar ofertas de SaaS (software como serviço), certifique-se de
 
 Selecione a **nova oferta + novo...** , selecione o item de menu **software como um serviço** . 
 
-Se você selecionar um dos outros tipos de oferta, será redirecionado para o [portal do Cloud Partner](https://cloudpartner.azure.com/)mais antigo.  Somente as ofertas de SaaS estão disponíveis no portal do Marketplace comercial no Partner Center no momento. 
+Se você selecionar outro tipo de oferta, poderá ser redirecionado para o [portal do Cloud Partner](https://cloudpartner.azure.com/)mais antigo. Somente as ofertas de SaaS e Dynamics 365 estão disponíveis no portal do Marketplace comercial no Partner Center no momento.
 
 ![Criar janela de oferta no Partner Center](./media/new-offer-click.png)
 

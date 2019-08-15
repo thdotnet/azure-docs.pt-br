@@ -8,24 +8,23 @@ manager: chackdan
 editor: ''
 ms.assetid: ''
 ms.service: service-fabric
-ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: 4901630509eb60cb1bbe88a46b51277af244c8f8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 0774a933bb109ffc66c7f4673d2803f0631f9b82
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60556824"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035320"
 ---
 # <a name="sfctl-mesh"></a>sfctl mesh
 Excluir e gerenciar aplicativos de Malha do Service Fabric.
 
 ## <a name="subgroups"></a>Subgrupos
-|Subgrupo|DESCRIÇÃO|
+|Subgrupo|Descrição|
 | --- | --- |
 | [app](service-fabric-sfctl-mesh-app.md) | Obter e excluir os recursos do aplicativo. |
 | [code-package-log](service-fabric-sfctl-mesh-code-package-log.md) | Obter os logs para o contêiner do pacote de código especificado para a réplica de um determinado serviço. |

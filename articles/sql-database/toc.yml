@@ -107,6 +107,8 @@
       items:
         - name: Migrar online usando DMS
           href: ../dms/tutorial-sql-server-to-managed-instance.md?toc=/azure/sql-database/toc.json
+        - name: Adicionar a um grupo de failover
+          href: sql-database-managed-instance-failover-group-tutorial.md
         - name: Configurar replicação transacional
           href: replication-with-sql-database-managed-instance.md
     - name: Segurança no Banco de Dados SQL
