@@ -8,12 +8,12 @@ author: eamonoreilly
 ms.author: eamono
 ms.topic: conceptual
 ms.date: 10/30/2018
-ms.openlocfilehash: bee414ada61e2cfcf7609b02ef1da7323a0fe0e3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 75341fa2df6972dbf05542577d56ab35315919e6
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61304569"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989242"
 ---
 # <a name="create-an-azure-automation-watcher-tasks-to-track-file-changes-on-a-local-machine"></a>Criar tarefas de observador de Automação do Azure para controlar alterações de arquivo em um computador local
 
@@ -38,11 +38,18 @@ Para concluir este tutorial, os itens a seguir são necessários:
 * Um [Hybrid Runbook Worker](automation-hybrid-runbook-worker.md) no qual a tarefa do observador é executada.
 
 > [!NOTE]
-> Tarefas do Inspetor não têm suporte no Azure China.
+> Não há suporte para tarefas do Inspetor no Azure China.
 
 ## <a name="import-a-watcher-runbook"></a>Importar um runbook observador
 
-Este tutorial usa um runbook observador chamado **Watch-NewFile** para procurar novos arquivos em um diretório. O runbook observador recupera a última hora de gravação conhecido dos arquivos de uma pasta e examina todos os arquivos que sejam mais recentes do que essa marca-d'água. Nesta etapa, você importará esse runbook na sua conta de automação.
+Este tutorial usa um runbook observador chamado **Watch-NewFile** para procurar novos arquivos em um diretório. O runbook observador recupera a última hora de gravação conhecido dos arquivos de uma pasta e examina todos os arquivos que sejam mais recentes do que essa marca-d'água.
+
+Esse processo de importação pode ser feito por meio do [Galeria do PowerShell](https://www.powershellgallery.com).
+
+1. Navegue até a página da galeria para [Watch-newfile. ps1](https://gallery.technet.microsoft.com/scriptcenter/Watcher-runbook-that-looks-36fc82cd).
+2. Na guia **automação do Azure** , clique em **implantar na automação do Azure**.
+
+Você também pode importar esse runbook para sua conta de automação do portal usando as etapas a seguir.
 
 1. Abra a sua conta da Automação e clique na página **Runbooks**.
 2. Clique no botão **Procurar na galeria**.
@@ -62,7 +69,14 @@ Uma [variável de automação](automation-variables.md) é usada para armazenar 
 
 ## <a name="create-an-action-runbook"></a>Criar um runbook de ação
 
-Um runbook de ação é usado em uma tarefa de observador para realizar ação nos dados passados para ela, provenientes de um runbook observador. Runbooks de Fluxo de Trabalho do PowerShell não são compatíveis com tarefas de observador, você deve usar os runbooks do PowerShell. Nesta etapa, você atualiza a importação de um runbook de ação predefinido chamado "Process-NewFile".
+Um runbook de ação é usado em uma tarefa de observador para realizar ação nos dados passados para ela, provenientes de um runbook observador. Runbooks de Fluxo de Trabalho do PowerShell não são compatíveis com tarefas de observador, você deve usar os runbooks do PowerShell. Você deve importar um runbook de ação predefinido chamado **process-NewFile**.
+
+Esse processo de importação pode ser feito por meio do [Galeria do PowerShell](https://www.powershellgallery.com).
+
+1. Navegue até a página da galeria para [process-newfile. ps1](https://gallery.technet.microsoft.com/scriptcenter/Watcher-action-that-b4ff7cdf).
+2. Na guia **automação do Azure** , clique em **implantar na automação do Azure**.
+
+Você também pode importar esse runbook para sua conta de automação do portal usando as etapas a seguir.
 
 1. Navegue até a sua conta de automação e selecione **Runbooks** na categoria **AUTOMAÇÃO DE PROCESSO**.
 1. Clique no botão **Procurar na galeria**.
@@ -92,7 +106,7 @@ A tarefa de observador de contém duas partes. O observador e a ação. O observ
 1. Selecione **Configurar ação** e o runbook "Process-NewFile".
 1. Digite os seguintes valores para os parâmetros:
 
-   * **EVENTDATA** – deixe em branco. Os dados são passados do runbook de observador.  
+   * **EVENTDATA** – deixe em branco. Os dados são passados do runbook de observador.
    * **Run Settings** – deixe como Azure, pois este runbook é executado no serviço da Automação.
 
 1. Clique em **OK** e, sem seguida, em Selecionar para voltar à página do observador.
@@ -105,7 +119,7 @@ A tarefa de observador de contém duas partes. O observador e a ação. O observ
 Para testar se o observador está funcionando conforme o esperado, você precisa criar um arquivo de teste.
 
 Deixe remoto para o Hybrid Worker. Abra o **PowerShell** e crie um arquivo de teste na pasta.
-  
+
 ```azurepowerShell-interactive
 New-Item -Name ExampleFile1.txt
 ```

@@ -1,7 +1,7 @@
 ---
 title: Suporte a contêiner
 titleSuffix: Azure Cognitive Services
-description: Saiba como criar um recurso de instância de contêiner do Azure da CLI do Azure.
+description: Saiba como criar um recurso de instância de contêiner do Azure no CLI do Azure.
 services: cognitive-services
 author: IEvangelist
 manager: nitinme
@@ -9,16 +9,16 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 7/5/2019
 ms.author: dapine
-ms.openlocfilehash: 5e7a3d849f726ae4dbbd559d541464404e427775
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 2080d283c6cb7466dcb4847a81d76a4c3109217a
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67717108"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "69012036"
 ---
-## <a name="create-an-azure-container-instance-resource-from-the-azure-cli"></a>Criar um recurso de instância de contêiner do Azure da CLI do Azure
+## <a name="create-an-azure-container-instance-resource-from-the-azure-cli"></a>Criar um recurso de instância de contêiner do Azure no CLI do Azure
 
-O YAML a seguir define o recurso de instância de contêiner do Azure. Copie e cole o conteúdo em um novo arquivo, chamado `my-aci.yaml` e substitua os valores comentados com seus próprios. Consulte o [formato de modelo] [modelo Formatar] para YAML válido. Consulte a [contêiner repositórios e imagens][repositories-and-images] para os nomes de imagem disponível e seu repositório correspondente.
+O YAML abaixo define o recurso de instância de contêiner do Azure. Copie e cole o conteúdo em um novo arquivo, chamado `my-aci.yaml` e substitua os valores comentados pelos seus próprios. Consulte o [formato de modelo][template-format] para YAML válido. Consulte os [repositórios e as imagens do contêiner][repositories-and-images] para obter os nomes de imagem disponíveis e seu repositório correspondente.
 
 ```YAML
 apiVersion: 2018-10-01
@@ -58,18 +58,18 @@ type: Microsoft.ContainerInstance/containerGroups
 ```
 
 > [!NOTE]
-> Nem todos os locais têm a mesma disponibilidade de CPU e memória. Consulte a [local e recursos][location-to-resource] tabela para obter uma lista de recursos disponíveis para contêineres por local e o sistema operacional.
+> Nem todos os locais têm a mesma disponibilidade de CPU e memória. Consulte a tabela [local e recursos][location-to-resource] para obter a lista de recursos disponíveis para contêineres por local e so.
 
-Vamos utilizar o arquivo YAML que criamos para o [ `az container create` ][azure-container-create] comando. Na CLI do Azure, execute as `az container create` comando substituindo o `<resource-group>` pelos seus próprios. Além disso, para proteger os valores dentro de um YAML implantação consultem [proteger valores][secure-values].
+Vamos contar com o arquivo YAML que criamos para o [`az container create`][azure-container-create] comando. No CLI do Azure, execute o `az container create` comando substituindo o `<resource-group>` pelo seu próprio. Além disso, para proteger valores em uma implantação do YAML, consulte [valores seguros][secure-values].
 
 ```azurecli
 az container create -g <resource-group> -f my-aci.yaml
 ```
 
-A saída do comando é `Running...` se válido, após algum tempo a saída será alterado para uma cadeia de caracteres JSON que representa o recurso ACI recém-criado. A imagem de contêiner é mais provável que não de estar disponível por algum tempo, mas o recurso está implantado.
+A saída do comando é se `Running...` válida, após algum tempo, a saída é alterada para uma cadeia de caracteres JSON que representa o recurso ACI recém-criado. A imagem de contêiner está mais do que provavelmente não está disponível por um tempo, mas o recurso agora está implantado.
 
 > [!TIP]
-> Preste muita atenção aos locais das ofertas de serviços Cognitivos do Azure de visualização pública, como o YAML precisava ser ajustados adequadamente para corresponder ao local.
+> Preste muita atenção aos locais de ofertas de serviço cognitiva do Azure de visualização pública, pois o YAML precisará ser ajustado adequadamente para corresponder ao local.
 
 [azure-container-create]: https://docs.microsoft.com/cli/azure/container?view=azure-cli-latest#az-container-create
 [template-format]: https://docs.microsoft.com/azure/templates/Microsoft.ContainerInstance/2018-10-01/containerGroups#template-format

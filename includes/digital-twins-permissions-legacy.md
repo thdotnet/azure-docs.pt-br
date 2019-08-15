@@ -5,21 +5,21 @@ services: digital-twins
 author: alinamstanciu
 ms.service: digital-twins
 ms.topic: include
-ms.date: 06/26/2019
+ms.date: 08/12/2019
 ms.author: alinast
 ms.custom: include file
-ms.openlocfilehash: 9a5b3b04287a8b732d01bd8fe4610e073332da0d
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 9f4bf6fb92b590e274e8880b5f900e5469f85727
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67478960"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "69012032"
 ---
 1. No [portal do Azure](https://portal.azure.com), abra **Azure Active Directory** no painel esquerdo e, em seguida, abra o painel **Propriedades**. Cópia da **ID de diretório** em um arquivo temporário. Você usará esse valor para configurar o aplicativo de exemplo na próxima seção.
 
     ![ID do diretório do Azure Active Directory](./media/digital-twins-permissions-legacy/aad-app-reg-tenant.png)
 
-1. No [portal do Azure](https://portal.azure.com), abra **Azure Active Directory** no painel esquerdo e, em seguida, abra o **registros do aplicativo (herdado)** painel. Selecione o **novo registro de aplicativo** botão.
+1. Na [portal do Azure](https://portal.azure.com), abra **Azure Active Directory** no painel esquerdo e, em seguida, abra o painel **registros de aplicativo (Herdado)** . Selecione o botão **novo registro de aplicativo** .
 
 1. Dê um nome amigável para esse registro de aplicativo na caixa **Nome**. Escolha **Tipo de aplicativo** como **Nativo** e **URI de Redirecionamento** como `https://microsoft.com`. Selecione **Criar**.
 
@@ -41,7 +41,7 @@ ms.locfileid: "67478960"
 
    e. Selecione **Concluído** no painel **Adicionar acesso à API**.
 
-   f. No painel **Permissões necessárias**, selecione o botão **Conceder permissões** e, em seguida, aceite a confirmação que aparece. Se a permissão não é concedida para esta API, contate o administrador.
+   f. No painel **Permissões necessárias**, selecione o botão **Conceder permissões** e, em seguida, aceite a confirmação que aparece. Se a permissão não for concedida para essa API, contate o administrador.
 
       ![Painel Permissões necessárias](./media/digital-twins-permissions-legacy/aad-app-req-permissions.png)
 

@@ -12,14 +12,14 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: TBD
-ms.date: 02/15/2018
+ms.date: 08/13/2019
 ms.author: alkohli
-ms.openlocfilehash: c83326212dc84348a04d54f04348a6c4c7699bde
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 046558007f1a2f2c86f80af610be56b77fa63da1
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60631508"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68990382"
 ---
 # <a name="storsimple-solution-support"></a>Suporte da solução StorSimple
 
@@ -42,7 +42,7 @@ A Microsoft oferece opções de suporte flexíveis para clientes de armazenament
 | Envio de tíquetes do portal do Azure                                                                          | ✓                                                                               | ✓                                                                              |
 | Acesso ao portal de suporte online                                                                            | ✓                                                                               | ✓                                                                              |
 | Alerta de provisionamento e gerenciamento                                                                       | ✓                                                                               | ✓                                                                              |
-| Envio de tíquete 24x7 com tempo de resposta inicial do suporte técnico <br> Inicial de tempo de resposta com base na Gravidade <sup>2 | Gravidade a: Dentro de 2 horas <br> Gravidade b: Dentro de 4 horas <br> Gravidade c: Dentro de 8 horas | Gravidade a: Dentro de 60 minutos <br> Gravidade b: Dentro de 2 horas <br> Gravidade c: Dentro de 4 horas |
+| Envio de tíquete 24x7 com tempo de resposta inicial do suporte técnico <br> Inicial de tempo de resposta com base na Gravidade <sup>2 | Gravidade A: Dentro de 2 horas <br> Severidade B: Dentro de 4 horas <br> Gravidade C: Dentro de 8 horas | Gravidade A: Dentro de 60 minutos <br> Severidade B: Dentro de 2 horas <br> Gravidade C: Dentro de 4 horas |
 | Suporte telefônico (retornos de chamada)                                                                               | ✓                                                                               | ✓                                                                              |
 | Substituição de peças avançada (somente para StorSimple 8000 series) <sup>3</sup>                                              | Próximo dia útil <sup>4                                                              | Dentro de 4 horas                                                                 |
 | Engenheiro de serviços de campo no local (somente para StorSimple 8000 series) <sup>3</sup>                                         | Não disponível                                                                   | Dentro de 4 horas                                                                 |
@@ -60,13 +60,13 @@ A Microsoft oferece opções de suporte flexíveis para clientes de armazenament
 
 <sup>2</sup> As gravidades são definidas da seguinte maneira: 
 
-* Gravidade a: Uma perda significativa ou degradação de serviços
+* Gravidade A: Perda significativa ou degradação de serviços
 
 
-* Gravidade b: Perda moderada ou degradação mas trabalho pode continuar de modo razoável sem prejuízo
+* Severidade B: Perda ou degradação moderada, mas o trabalho pode continuar de maneira prejudicada
 
 
-* Gravidade c: Funcionando substancialmente com impedimentos menores ou nenhuma impedimentos da funcionalidade do sistema
+* Gravidade C: Funcionamento substancial com pequenos ou nenhum impedimento da funcionalidade do sistema
 
     A Microsoft poderá fazer um downgrade do nível de uma Gravidade A se o cliente não puder fornecer recursos adequados ou respostas para permitir que a Microsoft continue com seus esforços de resolução de problemas. Tempo de resposta esperado com base no suporte de 24x7 para Gravidade A, horário comercial local para Gravidade B e C. 
 
@@ -81,7 +81,7 @@ A Microsoft oferece opções de suporte flexíveis para clientes de armazenament
 Se seu contrato de suporte expirou, lembre-se de que, dependendo do tempo expirado, pode levar até três semanas após a conclusão do processo de renovação para que uma peça seja entregue, pois o seu local de inventário do contrato pode não ter peças de reposição em estoque para seu dispositivo antes que o contrato seja processado.
 
 ## <a name="local-language-support"></a>Suporte no idioma local
-Além do inglês, o suporte ao idioma local é fornecido nos seguintes idiomas durante o horário comercial: Japonês, coreano, Taiwanês e chinês tradicional.
+Além do inglês, o suporte ao idioma local é fornecido nos seguintes idiomas durante o horário comercial: Espanhol, Português, japonês, coreano, dólar taiwanês e chinês tradicional.
 
 ## <a name="support-scope"></a>Escopo do suporte 
 O suporte para questões de faturamento e gerenciamento de assinatura está disponível em todos os níveis de suporte. Para receber suporte da StorSimple, o cliente deve estar registrado ativamente para planos de suporte do StorSimple Standard ou Premium. A equipe de suporte StorSimple será responsável por resolver todos os problemas que afetam a solução StorSimple. Para receber suporte para problemas relacionados ao Azure que não estão diretamente relacionadas ao StorSimple, o cliente precisará ser registrado em um plano de suporte apropriado do Azure. Consulte [aqui](https://azure.microsoft.com/support/plans/) para obter detalhes. A equipe de suporte envia casos de suporte que não são StorSimple para a equipe do Azure acompanhar com base nos direitos do cliente para o suporte do Azure. 
@@ -89,13 +89,13 @@ O suporte para questões de faturamento e gerenciamento de assinatura está disp
 
 | **GRAVIDADE** |**SITUAÇÃO DO CLIENTE**                                                                                                                                | RESPOSTA ESPERADA DA MICROSOFT<sup>2                                                                                       | RESPOSTA ESPERADA DO CLIENTE                                                                                                                                                       |
 |----------|-----------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| O        | Impacto comercial crítico: <ul> <br> <li> O negócio do cliente sofre uma perda significativa ou degradação dos serviços. <sup>1</sup> <br> <li> Requer atenção imediata.                          | Resposta inicial: <sup>1</sup> <ul><br> <li>1 hora ou menos para Premium. <br> <li> 2 horas ou menos para Standard. <br> <li> Esforço contínuo o dia todo, todos os dias. | <ul><li> Alocação de recursos apropriados para manter um esforço contínuo o dia todo, todos os dias. <br> <li> Informações de contato precisas sobre o proprietário do caso.                                                |
-| b        | Impacto comercial moderado: <ul><br> <li> O negócio do cliente sofre perda moderada ou degradação de serviços, mas o trabalho pode continuar de modo razoável sem prejuízo. | Resposta inicial: <sup>1</sup><ul><br> <li> 2 horas ou menos para Premium. <br> <li> 4 horas ou menos para Standard.                                      | <ul><li> Alocação de recursos apropriados para manter o esforço contínuo durante o horário comercial, a menos que o cliente solicite a recusa de 24 horas por dia, 7 dias por semana. <br> <li> Informações de contato precisas sobre o proprietário do caso. |
+| A        | Impacto comercial crítico: <ul> <br> <li> O negócio do cliente sofre uma perda significativa ou degradação dos serviços. <sup>1</sup> <br> <li> Requer atenção imediata.                          | Resposta inicial: <sup>1</sup> <ul><br> <li>1 hora ou menos para Premium. <br> <li> 2 horas ou menos para Standard. <br> <li> Esforço contínuo o dia todo, todos os dias. | <ul><li> Alocação de recursos apropriados para manter um esforço contínuo o dia todo, todos os dias. <br> <li> Informações de contato precisas sobre o proprietário do caso.                                                |
+| B        | Impacto comercial moderado: <ul><br> <li> O negócio do cliente sofre perda moderada ou degradação de serviços, mas o trabalho pode continuar de modo razoável sem prejuízo. | Resposta inicial: <sup>1</sup><ul><br> <li> 2 horas ou menos para Premium. <br> <li> 4 horas ou menos para Standard.                                      | <ul><li> Alocação de recursos apropriados para manter o esforço contínuo durante o horário comercial, a menos que o cliente solicite a recusa de 24 horas por dia, 7 dias por semana. <br> <li> Informações de contato precisas sobre o proprietário do caso. |
 | C        | Impacto comercial mínimo: <ul><br> <li> O negócio do cliente está funcionando substancialmente com impedimentos menores ou nenhum impedimento do serviço.                                 | Resposta inicial: <sup>1</sup><ul> <br> <li> 4 horas ou menos para Premium. <br> <li> 8 horas ou menos para Standard.                                      | <ul><li>Informações de contato precisas sobre o proprietário do caso                                                                                                                                    |
  
 <sup>1 </sup> A Microsoft poderá fazer um downgrade do nível de uma Gravidade A se o cliente não puder fornecer recursos adequados ou respostas para permitir que a Microsoft continue com seus esforços de resolução de problemas.
 
-<sup>2</sup> tempos de resposta esperados são com base no suporte de 24x7 em inglês para severidade A e horário comercial local para gravidade B e C, e o horário comercial local suporte nos idiomas locais restantes: Japonês, Taiwanês, chinês tradicional e coreano.
+<sup>2</sup> os tempos de resposta esperados se baseiam no suporte 24x7 em inglês para A gravidade A e horário comercial local para a severidade B e C, e o suporte horário comercial local nos idiomas locais restantes: Japonês, dólar taiwanês, chinês tradicional e coreano.
 
 ## <a name="cancellation-policy"></a>Política de cancelamento
 Para receber suporte do StorSimple, o cliente deve adquirir planos de suporte Standard ou Premium durante o período da assinatura. O cancelamento não resultará em reembolso proporcional. Os planos de suporte do StorSimple tem redução no vencimento EA. No entanto, a Microsoft não pode dar suporte aos clientes StorSimple sem contratos de suporte válidos.
@@ -119,7 +119,7 @@ O suporte a matrizes de armazenamento do StorSimple 8000 Series é fornecido com
 
 
 
-*<text> * Cobertura Premium não está disponível em todos os locais. Entre em contato com a Microsoft em SSSupOps\@microsoft.com para a cobertura geográfica antes de adquirir o suporte da StorSimple Premium.*
+*<text> * Cobertura Premium não está disponível em todos os locais. Entre em contato com\@a Microsoft em SSSupOps Microsoft.com para cobertura geográfica antes de comprar o suporte do StorSimple Premium.*
 
 ***O dispositivo StorSimple deve ser implantado em uma região em que o cliente está coberto pelo suporte Premier para qualificar-se para uma atualização gratuita ao suporte da StorSimple premium.*
 

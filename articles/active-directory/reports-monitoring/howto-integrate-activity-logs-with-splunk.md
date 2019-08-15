@@ -1,9 +1,9 @@
 ---
-title: Integrar logs do Azure Active Directory com o Splunk usando o Azure Monitor | Microsoft Docs
-description: Saiba como integrar os logs do Azure Active Directory ao SumoLogic usando o Azure Monitor
+title: Integrar logs de Azure Active Directory com o Splunk usando Azure Monitor | Microsoft Docs
+description: Saiba como integrar logs de Azure Active Directory com o SumoLogic usando Azure Monitor
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: 2c3db9a8-50fa-475a-97d8-f31082af6593
@@ -14,17 +14,17 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 05/13/2019
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f30e19a351f7b25f995a85cfd566bcba091ac27
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a26df2b37a249f808cc044b41960ca1e210a311a
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65597815"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68988228"
 ---
-# <a name="how-to-integrate-azure-active-directory-logs-with-splunk-using-azure-monitor"></a>Como: Integrar logs do Azure Active Directory com o Splunk usando o Azure Monitor
+# <a name="how-to-integrate-azure-active-directory-logs-with-splunk-using-azure-monitor"></a>Como: Integrar logs de Azure Active Directory com o Splunk usando Azure Monitor
 
 Neste artigo, você aprenderá a integrar os logs do Azure Active Directory (Microsoft Azure AD) ao Splunk usando o Azure Monitor. Primeiro encaminhe os logs para um hub de eventos do Azure e, em seguida, integre o hub de eventos Splunk.
 
@@ -34,7 +34,7 @@ Para usar esse recurso, você precisa de:
 * Um hub de eventos do azure contendo logs de atividades do Microsoft Azure AD. Saiba como [enviar seus logs de atividades para um hub de eventos](quickstart-azure-monitor-stream-logs-to-event-hub.md). 
 * Complemento Azure Monitor para Splunk. [Baixar e configurar sua instância do Splunk](https://github.com/Microsoft/AzureMonitorAddonForSplunk/blob/master/README.md).
 
-## <a name="integrate-azure-active-directory-logs"></a>Integrar logs do Active Directory do Azure 
+## <a name="integrate-azure-active-directory-logs"></a>Integrar logs de Azure Active Directory 
 
 1. Abra sua instância do Splunk e clique em **Resumo dos dados**.
 

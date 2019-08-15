@@ -3,7 +3,7 @@ title: Solução de erros do pacote de conteúdo dos Logs de atividades do Azure
 description: Fornece uma lista de mensagens de erro do pacote de conteúdo de Atividades do Azure Active Directory e as etapas para corrigi-las.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: ffce7eb1-99da-4ea7-9c4d-2322b755c8ce
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 06/07/2019
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6ee49ae56122fe596a4490914677d91d2f0348f6
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 54a0a5b5306414eb50a1928ec8a1854f56055681
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66807532"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68987892"
 ---
 # <a name="troubleshooting-azure-active-directory-activity-logs-content-pack-errors"></a>Solução de erros do pacote de conteúdo dos Logs de atividades do Azure Active Directory 
 
@@ -39,7 +39,7 @@ Ao trabalhar com o Pacote de Conteúdo do Power BI para Azure AD (Azure Active D
 
 Este artigo fornece informações sobre as possíveis causas e como corrigir esses erros.
  
-## <a name="refresh-failed"></a>Falha na atualização 
+## <a name="refresh-failed"></a>Falha ao atualizar 
  
 **Como esse erro ocorre**: Email do Power BI ou status com falha no histórico de atualizações. 
 
@@ -47,7 +47,7 @@ Este artigo fornece informações sobre as possíveis causas e como corrigir ess
 | Causa | Como corrigir |
 | ---   | ---        |
 | Erros de falha na atualização podem ser causados quando as credenciais dos usuários que se conectam ao pacote de conteúdo foram redefinidas, mas não atualizadas nas configurações de conexão do pacote de conteúdo. | No Power BI, localize o conjunto de dados correspondente ao painel de logs de atividades do Azure AD (**Logs de atividades do Azure Active Directory**), escolha programar atualização e insira as credenciais do Azure AD. |
-| Uma atualização pode falhar devido a grandes conjuntos de dados. | Atualmente, o pacote de conteúdo do Azure AD com o Power BI pode dar suporte a apenas pequenos conjuntos de dados (linhas menor que 500,00) devido às limitações em torno de tempos limite no serviço do Power BI. Se você encontrar erros de limitação ou se a atualização falhar devido a problemas de tempo limite, isso pode ser porque você está tentando buscar um grande conjunto de dados. Reduza o período de tempo na consulta e tente novamente.|
+| Uma atualização pode falhar devido a grandes conjuntos de altos. | Atualmente, o pacote de conteúdo do Azure AD com o Power BI pode dar suporte apenas a pequenos conjuntos de dados (menos de 500, 00 linhas) devido a algumas limitações em relação aos tempos limite no serviço Power BI. Se você encontrar erros de limitação ou se a atualização falhar devido a problemas de tempo limite, isso pode ocorrer porque você está tentando buscar um grande conjunto de grandes. Reduza o período de tempo na consulta e tente novamente.|
  
  
 ## <a name="failed-to-update-data-source-credentials"></a>Falha ao atualizar as credenciais de fonte de dados 
@@ -71,6 +71,6 @@ Este artigo fornece informações sobre as possíveis causas e como corrigir ess
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Instalar o pacote de conteúdo do Power BI para relatórios do Azure AD](quickstart-install-power-bi-content-pack.md).
+* [Instale o pacote de conteúdo do Power bi para relatórios do Azure ad](quickstart-install-power-bi-content-pack.md).
 * [Usar o pacote de conteúdo do Power BI para relatórios do Azure AD para visualizar os dados](howto-power-bi-content-pack.md)
 * [Como obter suporte para o Azure Active Directory](../fundamentals/active-directory-troubleshooting-support-howto.md)

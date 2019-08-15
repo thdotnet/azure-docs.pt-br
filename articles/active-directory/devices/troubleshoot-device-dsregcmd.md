@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 189e4f280e8aba28c4d1af449aa8a3428e303911
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 4aa8f9a7c6807a2f9505559ea13fb0b4f410346d
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68298406"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68987160"
 ---
 # <a name="troubleshooting-devices-using-the-dsregcmd-command"></a>Solucionando problemas de dispositivos usando o comando dsregcmd
 
@@ -29,7 +29,7 @@ Esta seção lista os parâmetros de estado de ingresso no dispositivo. A tabela
 | AzureAdJoined | EnterpriseJoined | DomainJoined | Estado do dispositivo |
 | ---   | ---   | ---   | ---   |
 | SIM | NÃO | NÃO | Ingressado no Azure AD |
-| NÃO | NÃO | SIM | Ingressado no domínio |
+| NÃO | NÃO | SIM | Ingressado no Domínio |
 | SIM | NÃO | SIM | Ingressado no AD híbrido |
 | NÃO | SIM | SIM | DRS local Unido |
 
@@ -54,7 +54,7 @@ Esta seção lista os parâmetros de estado de ingresso no dispositivo. A tabela
 +----------------------------------------------------------------------+
 ```
 
-## <a name="device-details"></a>Detalhes do Dispositivo
+## <a name="device-details"></a>Detalhes do dispositivo
 
 Exibido somente quando o dispositivo for ingressado no Azure ad ou ingressado no Azure AD híbrido (não o Azure AD registrado). Esta seção lista os detalhes de identificação de dispositivo armazenados na nuvem.
 
@@ -295,6 +295,9 @@ Esta seção exibe a saída de verificações de sanidade executadas em um dispo
 ## <a name="ngc-prerequisite-check"></a>Verificação de pré-requisitos do NGC
 
 Esta seção executa as verificações de perquisite para o provisionamento de uma chave do NGC. 
+
+> [!NOTE]
+> Talvez você não veja detalhes de verificação de pré-requisito do NGC em dsregcmd/status se o usuário já tiver configurado com êxito as credenciais do NGC.
 
 ### <a name="sample-ngc-prerequisite-check-output"></a>Exemplo de saída de verificação de pré-requisitos de NGC
 

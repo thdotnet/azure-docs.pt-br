@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: reference
 ms.date: 05/23/2019
 ms.author: evansma
-ms.openlocfilehash: a8196370a93a6ce8eed83002397c2f09efbc777f
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 276699b9316a0c4fd428038f2c967bdf934f449c
+ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68358589"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69016037"
 ---
 # <a name="saas-fulfillment-apis-version-2"></a>APIs de preenchimento de SaaS, versão 2 
 
@@ -282,7 +282,7 @@ Response Body:
           "term": { //This gives the free trial term start and end date
             "startDate": "2019-05-31",
             "endDate": "2019-06-29",
-            "termUnit": "P1M"
+            "termUnit": "P1M" //where P1M: Monthly, P1Y: Yearly 
         },
 }
 ```
@@ -790,6 +790,8 @@ Código: 500<br> Erro no servidor interno.
 
 O Publicador deve implementar um webhook nesse serviço SaaS para notificar os usuários de alterações em seu serviço proativamente. Espera-se que o serviço SaaS chame a API de operações para validar e autorizar antes de tomar uma ação na notificação de webhook.
 
+Para garantir comunicações seguras, a Microsoft inclui o token Azure Active Directory JWT no cabeçalho de autorização como parte da chamada. Os provedores de SaaS são incentivados a validar o token JWT, conforme descrito no artigo tokens de [acesso da plataforma de identidade da Microsoft](https://docs.microsoft.com/azure/active-directory/develop/access-tokens) , para garantir que apenas as chamadas válidas sejam aceitas.
+
 ```json
 {
   "id": "<this is a GUID operation id, you can call operations API with this to get status>",
@@ -819,7 +821,7 @@ Em que o status pode ser um dos seguintes:
 - **Com falha** <br>
 - **Houver** <br>
 
-Em uma notificação de webhook, os status acionáveis são **bem-sucedidos** e **falharam**. O ciclo de vida de uma operação é de não ser **iniciado** para um estado de terminal como **êxito**, **falha**ou **conflito**. Se você receber  não inicializado ou estiver inprogredindo, continue solicitando o status por meio da API Get até que a operação alcance um estado terminal antes de tomar uma ação. 
+Em uma notificação de webhook, os status acionáveis são **bem-sucedidos** e **falharam**. O ciclo de vida de uma operação é de não ser **iniciado** para um estado de terminal como **êxito**, **falha**ou **conflito**. Se você receber não inicializado ou estiver inprogredindo, continue solicitando o status por meio da API Get até que a operação alcance um estado terminal antes de tomar uma ação. 
 
 ## <a name="mock-apis"></a>APIs de simulação
 
