@@ -11,16 +11,16 @@ author: johnpaulkee
 ms.author: joke
 ms.reviwer: sstein
 ms.date: 03/13/2019
-ms.openlocfilehash: 064d55b96c8817f4b7ccc5f0925eeecfaf310424
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 0d64bd150a43666679253f8244d80411e25dfdcd
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68550525"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68935051"
 ---
 # <a name="create-an-elastic-job-agent-using-powershell"></a>Criar um agente de Trabalho Elástico usando o PowerShell
 
-Os [trabalhos elásticos](sql-database-job-automation-overview.md#elastic-database-jobs) habilitam a execução de um ou mais scripts T-SQL (Transact-SQL) em paralelo entre vários bancos de dados.
+Os [trabalhos elásticos](sql-database-job-automation-overview.md#elastic-database-jobs-preview) habilitam a execução de um ou mais scripts T-SQL (Transact-SQL) em paralelo entre vários bancos de dados.
 
 Neste tutorial, você aprenderá as etapas necessárias para executar uma consulta em vários bancos de dados:
 

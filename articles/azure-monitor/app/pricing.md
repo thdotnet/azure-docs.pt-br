@@ -11,14 +11,14 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.reviewer: mbullwin
-ms.date: 05/29/2019
+ms.date: 08/13/2019
 ms.author: dalek
-ms.openlocfilehash: 188911fa3fb872c8db1612406bf3d4e9b36d837b
-ms.sourcegitcommit: 82efacfaffbb051ab6dc73d9fe78c74f96f549c2
+ms.openlocfilehash: abf23eda2474ecbcfcaf0dadb26327225213a9a6
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67303832"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989223"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Gerenciar o uso e os custos do Application Insights
 
@@ -26,22 +26,22 @@ ms.locfileid: "67303832"
 > Este artigo descreve como analisar o uso de dados Insights de aplicativos.  Consulte os artigos a seguir para informações relacionadas.
 > - [Monitorando o uso e os custos estimados](../../monitoring-and-diagnostics/monitoring-usage-and-estimated-costs.md) descreve como visualizar o uso e os custos estimados em vários recursos de monitoramento do Azure para diferentes modelos de preços. Também descreve como alterar seu modelo de preços.
 
-Se tiver dúvidas sobre como os preços são aplicados ao Application Insights, você poderá postar uma pergunta em nosso [fórum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=ApplicationInsights).
+Se tiver dúvidas sobre como os preços são aplicados ao Application Insights, você poderá postar uma pergunta em nosso [fórum](https://social.msdn.microsoft.com/Forums/home?forum=ApplicationInsights).
 
 ## <a name="pricing-model"></a>Modelo de preços
 
-Os preços para [Azure Application Insights][start] baseia-se no volume de dados ingerido. Cada recurso do Application Insights é cobrado como um serviço separado e contribui para a cobrança da sua assinatura do Azure.
+O preço do [aplicativo Azure][start] insights é baseado no volume de dados ingerido. Cada recurso do Application Insights é cobrado como um serviço separado e contribui para a cobrança da sua assinatura do Azure.
 
 ### <a name="data-volume-details"></a>Detalhes do volume de dados
 
 * O volume de dados é o número de bytes de telemetria recebidos pelo Application Insights. O volume de dados é medido como o tamanho do pacote de dados JSON descompactado recebido pelo Application Insights do seu aplicativo. Para [dados tabulares importados para o Analytics](https://docs.microsoft.com/azure/application-insights/app-insights-analytics-import), o volume de dados é medido como o tamanho descompactado de arquivos enviados ao Application Insights.
-* Seus encargos de volume de dados do seu aplicativo agora são relatados em um novo medidor de cobrança denominado **Ingestão de Dados** a partir de abril de 2018. Esse novo medidor é compartilhado entre tecnologias, como aplicativos de Insights e Log Analytics de monitoramento e está atualmente sob o nome do serviço **do Log Analytics**. 
+* Seus encargos de volume de dados do seu aplicativo agora são relatados em um novo medidor de cobrança denominado **Ingestão de Dados** a partir de abril de 2018. Esse novo medidor é compartilhado entre tecnologias de monitoramento, como o Application insights e o Log Analytics e, no momento, está sob o nome do serviço **log Analytics**. 
 * Os dados de [Live Metrics Stream](../../azure-monitor/app/live-stream.md) não são contatos para fins de preços.
 
 > [!NOTE]
-> Por exemplo, todos os preços exibidos nas capturas de tela neste artigo são apenas para fins. Para preços atuais em sua moeda e região, consulte [Preços do Application Insights][pricing].
+> Todos os preços exibidos nas capturas de tela neste artigo são apenas para fins de exemplo. Para preços atuais em sua moeda e região, consulte [Preços do Application Insights][pricing].
 
-### <a name="multi-step-web-tests"></a>Testes na Web com diversas etapas
+### <a name="multi-step-web-tests"></a>Testes da Web de várias etapas
 
 Há uma cobrança adicional para [testes na Web de várias etapas](../../azure-monitor/app/availability-multistep.md). Testes na Web de várias etapas se referem a testes na Web que executam uma sequência de ações.
 
@@ -133,56 +133,64 @@ Para descobrir a taxa de amostragem real, independentemente de onde ela tiver si
 
 Em cada registro mantido, `itemCount` indica o número de registros originais que ele representa. É igual a 1 + o número de registros descartados anteriormente. 
 
+## <a name="change-the-data-retention-period"></a>Alterar o período de retenção de dados
+
+Agora, Application Insights está integrando um número limitado de clientes Application Insights à nossa visualização de retenção de variável. Informações sobre como participar deste programa de visualização estão disponíveis [aqui](https://feedback.azure.com/forums/357324-azure-monitor-application-insights/suggestions/17454031).
+
+A retenção padrão para recursos de Application Insights é de 90 dias. Diferentes períodos de retenção podem ser selecionados para cada recurso de Application Insights. O conjunto completo de períodos de retenção disponíveis é 30, 60, 120, 180, 270, 365, 550 ou 730 dias. 
+
+Quando a cobrança está habilitada para maior retenção, os dados mantidos por mais de 90 dias serão cobrados como a mesma taxa que é cobrada no momento para a retenção de dados do Azure Log Analytics. Saiba mais na [página de preços do Azure monitor](https://azure.microsoft.com/pricing/details/monitor/).  Mantenha-se atualizado sobre o progresso da retenção de variáveis [votando essa sugestão](https://feedback.azure.com/forums/357324-azure-monitor-application-insights/suggestions/17454031). 
+
 ## <a name="limits-summary"></a>Resumo de limites
 
 [!INCLUDE [application-insights-limits](../../../includes/application-insights-limits.md)]
 
 ## <a name="disable-daily-cap-e-mails"></a>Desabilitar os emails de limite diário
 
-Para desabilitar os emails de limite diário, na seção **Configurar** do recurso Application Insights, no painel **Uso e custos estimados**, selecione **Limite Diário**. Há configurações para enviar email quando o limite é alcançado, bem como quando um nível de aviso ajustável é atingido. Se você quiser desabilitar todos os diário cap relacionado a volume emails desmarque ambas as caixas.
+Para desabilitar os emails de limite diário, na seção **Configurar** do recurso Application Insights, no painel **Uso e custos estimados**, selecione **Limite Diário**. Há configurações para enviar email quando o limite é alcançado, bem como quando um nível de aviso ajustável é atingido. Se você quiser desabilitar todos os emails relacionados a volume de limite diário desmarque ambas as caixas.
 
-## <a name="legacy-enterprise-per-node-pricing-tier"></a>Legacy Enterprise (por nó) tipo de preço
+## <a name="legacy-enterprise-per-node-pricing-tier"></a>Tipo de preço corporativo herdado (por nó)
 
-Para pioneiros do Azure Application Insights, ainda há dois tipos de preço possíveis: Básico e Enterprise. O tipo de preço básico é o mesmo descrito acima e é a camada padrão. Ele inclui todos os recursos de camada empresariais, sem nenhum custo adicional. As listas de camada básica principalmente no volume de dados ingeridos. 
+Para os pioneiros do Aplicativo Azure insights, ainda existem dois tipos de preço possíveis: Básico e Enterprise. O tipo de preço básico é o mesmo descrito acima e é a camada padrão. Ele inclui todos os recursos da camada Enterprise, sem custo adicional. A camada básica cobra principalmente do volume de dados que é ingerido. 
 
 > [!NOTE]
-> Esses tipos de preço herdados foram renomeados. Agora é chamado de camada de preços Enterprise **por nó** e o tipo de preço básico agora é chamado **por GB**. Esses novos nomes são usados abaixo e no portal do Azure.  
+> Esses tipos de preço herdados foram renomeados. O tipo de preço Enterprise agora é chamado **por nó** e o tipo de preço básico agora é chamado **por GB**. Esses novos nomes são usados abaixo e na portal do Azure.  
 
-A camada por nó (anteriormente conhecido como Enterprise) tem um encargo por nó, e cada nó recebe uma franquia diária de dados. O tipo de preço por nó, será cobrado pelos dados ingeridos acima da permissão inclusa. Se você estiver usando o Operations Management Suite, você deve escolher a camada por nó. 
+A camada por nó (anteriormente Enterprise) tem um encargo por nó e cada nó recebe uma concessão de dados diária. No tipo de preço por nó, você será cobrado pelos dados ingeridos acima da bonificação incluída. Se você estiver usando o Operations Management Suite, deverá escolher a camada por nó. 
 
 Para preços atuais em sua moeda e região, consulte [Preços do Application Insights](https://azure.microsoft.com/pricing/details/application-insights/).
 
 > [!NOTE]
 > Em abril de 2018, [introduzimos](https://azure.microsoft.com/blog/introducing-a-new-way-to-purchase-azure-monitoring-services/) um novo modelo de preços para monitoramento do Azure. Esse modelo adota um modelo de "pagamento conforme o uso" simples no portfólio completo de serviços de monitoramento. Saiba mais sobre o [novo modelo de preços](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs), como a [avaliar o impacto de migrar para esse modelo](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs#assessing-the-impact-of-the-new-pricing-model) com base nos seus padrões de uso e [como aceitar o novo modelo](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs#moving-to-the-new-pricing-model)
 
-### <a name="per-node-tier-and-operations-management-suite-subscription-entitlements"></a>Por tipo de nó e direitos de assinatura do Operations Management Suite
+### <a name="per-node-tier-and-operations-management-suite-subscription-entitlements"></a>Direitos por camada de nó e de assinatura do Operations Management Suite
 
-Os clientes que compram o Operations Management Suite E1 e E2 podem obter Insights por nó de aplicativo como um componente adicional sem custo adicional como [anunciado anteriormente](https://blogs.technet.microsoft.com/msoms/2017/05/19/azure-application-insights-enterprise-as-part-of-operations-management-suite-subscription/). Especificamente, cada unidade do Operations Management Suite E1 e E2 tem direito a um nó da camada de aplicativo Insights por nó. Cada nó do Application Insights inclui até 200 MB de dados ingeridos por dia (separado de ingestão de dados do Log Analytics), com a retenção de dados de 90 dias sem nenhum custo adicional. A camada é descrita mais detalhados posteriormente neste artigo. 
+Os clientes que comprarem o Operations Management Suite E1 e E2 poderão obter Application Insights por nó como um componente adicional sem custo adicional como [anunciado anteriormente](https://blogs.technet.microsoft.com/msoms/2017/05/19/azure-application-insights-enterprise-as-part-of-operations-management-suite-subscription/). Especificamente, cada unidade do Operations Management Suite E1 e E2 inclui um direito a um nó do Application Insights por camada de nó. Cada nó do Application Insights inclui até 200 MB de dados ingeridos por dia (separado de ingestão de dados do Log Analytics), com a retenção de dados de 90 dias sem nenhum custo adicional. A camada é descrita mais detalhadamente mais adiante neste artigo. 
 
-Como essa camada é aplicável somente para clientes com uma assinatura do Operations Management Suite, os clientes que não tem uma assinatura do Operations Management Suite não veem uma opção para selecionar essa camada.
+Como essa camada é aplicável somente a clientes com uma assinatura do Operations Management Suite, os clientes que não têm uma assinatura do Operations Management Suite não veem uma opção para selecionar essa camada.
 
 > [!NOTE]
-> Para garantir que você obtenha este direito, seus recursos do Application Insights devem estar no tipo de preço por nó. Esse direito se aplica apenas como nós. Recursos do Application Insights na camada por GB não têm nenhum benefício. Esse direito não será visível nos custos estimados mostrados no painel **Uso e custo estimado**. Além disso, se você mover uma assinatura do Azure novo modelo de preços de monitoramento em abril de 2018, a camada por GB é a única camada disponível. Migrar uma assinatura para o novo modelo de preços de monitoramento do Azure não será recomendado se você tiver uma assinatura do Operations Management Suite.
+> Para garantir que você obtenha esse direito, seus recursos de Application Insights devem estar no tipo de preço por nó. Esse direito se aplica apenas como nós. Application Insights recursos na camada por GB não percebem nenhum benefício. Esse direito não será visível nos custos estimados mostrados no painel **Uso e custo estimado**. Além disso, se você mover uma assinatura para o novo modelo de preços de monitoramento do Azure em abril de 2018, a camada por GB será a única camada disponível. Migrar uma assinatura para o novo modelo de preços de monitoramento do Azure não será recomendado se você tiver uma assinatura do Operations Management Suite.
 
-### <a name="how-the-per-node-tier-works"></a>Como funciona a camada por nó
+### <a name="how-the-per-node-tier-works"></a>Como a camada por nó funciona
 
-* Você paga por cada nó que envia a telemetria para todos os aplicativos na camada por nó.
+* Você paga por cada nó que envia telemetria para todos os aplicativos na camada por nó.
   * Um *nó* é um computador de servidor físico ou virtual ou uma instância de função de plataforma como serviço que hospeda o aplicativo.
   * Computadores de desenvolvimento, navegadores do cliente e dispositivos móveis não contam como nós.
   * Se o aplicativo tiver vários componentes que enviam telemetria, como um serviço Web e um trabalhado de back-end, os componentes serão contados separadamente.
   * Os dados de [Live Metrics Stream](../../azure-monitor/app/live-stream.md) não são contatos para fins de preços. Em uma assinatura, seus encargos são por nó, não por aplicativo. Se você tiver cinco nós que enviam telemetria para 12 aplicativos, o encargo será de cinco nós.
 * Embora as cobrança sejam cotadas por mês, você é cobrado apenas por aquelas horas em que um nó envia telemetria de um aplicativo. O encargo por hora é a cobrança mensal cotada dividida por 744 (o número de horas em um mês de 31 dias).
 * Uma alocação de volume de dados de 200 MB por dia é fornecida para cada nó detectado (com granularidade por hora). A alocação de dados não utilizada não é transportada de um dia para o outro.
-  * Se você escolher o tipo de preço por nó, cada assinatura recebe uma franquia diária de dados com base no número de nós que enviam telemetria para recursos do Application Insights nessa assinatura. Portanto, se você tiver cinco nós que enviam dados todos os dias, você terá uma permissão em pool de 1 GB aplicada a todos os recursos do Application Insights nessa assinatura. Não importa se determinados nós enviam mais dados que outros nós, porque os dados incluídos são compartilhados entre todos os nós. Se em um determinado dia, os recursos do Application Insights recebem mais dados do que está incluído na alocação de dados diária para esta assinatura, os encargos de dados excedentes por GB se aplicam. 
+  * Se você escolher o tipo de preço por nó, cada assinatura receberá uma concessão diária de dados com base no número de nós que enviam telemetria para os recursos de Application Insights nessa assinatura. Portanto, se você tiver cinco nós que enviam dados todos os dias, você terá uma permissão em pool de 1 GB aplicada a todos os recursos do Application Insights nessa assinatura. Não importa se determinados nós enviam mais dados que outros nós, porque os dados incluídos são compartilhados entre todos os nós. Se estiver em um determinado dia, os Application Insights recursos receberão mais dados do que o que está incluído na alocação de dados diária para essa assinatura, os encargos excedentes por GB de dados serão aplicados. 
   * A permissão de dados diária é calculada como o número de horas por dia (usando o UTC) que cada nó envia telemetria dividido por 24, multiplicado por 200 MB. Portanto, se você tiver quatro nós que enviam telemetria durante 15 das 24 horas do dia, os dados incluídos para esse dia serão ((4 &#215; 15) / 24) &#215; 200 MB = 500 MB. Pelo preço de US$ 2,30 por GB de dados excedentes, o valor a cobrar seria de US$ 1,15 se os nós enviassem 1 GB de dados naquele dia.
-  * A franquia diária de camada por nó não sejam compartilhada com aplicativos para os quais você escolheu a camada por GB. A permissão não utilizada não é herdada do dia a dia. 
+  * A bonificação diária por nível de nó não é compartilhada com aplicativos para os quais você escolheu a camada por GB. A permissão não utilizada não é herdada do dia a dia. 
 
 ### <a name="examples-of-how-to-determine-distinct-node-count"></a>Exemplos de como determinar a contagem de nós distinta
 
 | Cenário                               | Contagem de nós diária total |
 |:---------------------------------------|:----------------:|
 | 1 aplicativo usando 3 instâncias do Serviço de Aplicativo do Azure e 1 servidor virtual | 4 |
-| 3 aplicativos em execução em 2 VMs; recursos do Application Insights para esses aplicativos estão na mesma assinatura e na camada por nó | 2 | 
+| 3 aplicativos em execução em 2 VMs; os recursos de Application Insights para esses aplicativos estão na mesma assinatura e na camada por nó | 2 | 
 | 4 aplicativos cujos recursos do Applications Insights estão na mesma assinatura; cada aplicativo executando 2 instâncias durante 16 horas fora de pico e 4 instâncias durante 8 horas de pico | 13.33 | 
 | Serviços de nuvem com uma função de trabalho e uma função web, cada uma executando duas instâncias | 4 | 
 | Um cluster do Azure Service Fabric de 5 nós que executa 50 microsserviços; cada microsserviço executando 3 instâncias | 5|

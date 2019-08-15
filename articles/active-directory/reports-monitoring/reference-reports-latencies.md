@@ -3,7 +3,7 @@ title: Latências de relatórios do Azure Active Directory | Microsoft Docs
 description: Saiba quanto tempo leva para que os eventos de relatório sejam exibidos no seu portal do Azure
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: cawrites
 manager: daveba
 editor: ''
 ms.assetid: 9b88958d-94a2-4f4b-a18c-616f0617a24e
@@ -14,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
 ms.date: 05/13/2019
-ms.author: markvi
+ms.author: chadam
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8d4d02f9e99acb68db126ccde465f73cc2294e06
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0f57f09f146e542768c83fa034f0b4e65bc6b2ae
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65594025"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68987929"
 ---
 # <a name="azure-active-directory-reporting-latencies"></a>Latências de relatórios do Azure Active Directory
 
@@ -59,10 +59,10 @@ Há dois tipos de relatórios de segurança:
 
 A tabela a seguir lista as informações de latência para relatórios de segurança.
 
-| Relatório | Mínimo | Média | Máximo |
+| Relatório | Mínimo | Average | Máximo |
 | :-- | --- | --- | --- |
 | Usuários em risco          | 5 minutos   | 15 minutos  | 2 horas  |
-| Entradas de risco         | 5 minutos   | 15 minutos  | 2 horas  |
+| Entradas arriscadas         | 5 minutos   | 15 minutos  | 2 horas  |
 
 ## <a name="risk-events"></a>Eventos de risco
 
@@ -70,12 +70,12 @@ O Azure AD usa algoritmos de aprendizado de máquina e heurística adaptáveis p
 
 A tabela a seguir lista as informações de latência para eventos de risco.
 
-| Relatório | Mínimo | Média | Máximo |
+| Relatório | Mínimo | Average | Máximo |
 | :-- | --- | --- | --- |
 | Entradas de endereços IP anônimos |5 minutos |15 minutos |2 horas |
 | Entradas de locais desconhecidos |5 minutos |15 minutos |2 horas |
 | Usuários com credenciais vazadas |2 horas |4 horas |8 horas |
-| Viagem impossível a locais atípicos |5 minutos |1 hora |8 horas  |
+| Viagem impossível a localizações atípicas |5 minutos |1 hora |8 horas  |
 | Entradas de dispositivos infectados |2 horas |4 horas |8 horas  |
 | Entradas de endereços IP com atividade suspeita |2 horas |4 horas |8 horas  |
 

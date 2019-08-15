@@ -9,12 +9,12 @@ ms.date: 09/11/2018
 ms.topic: conceptual
 description: Desenvolvimento rápido de Kubernetes com contêineres e microsserviços no Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, Serviço de Kubernetes do Azure, contêineres, Helm, malha de serviço, roteamento de malha de serviço, kubectl, k8s '
-ms.openlocfilehash: 2434507ac89d631bb96ae9633403075801879a37
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: 6ab2e0866c4e6c5cc8f89cb490504f6ca6a076fc
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68277410"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019641"
 ---
 # <a name="troubleshooting-guide"></a>Guia de Solução de Problemas
 
@@ -445,7 +445,14 @@ Atualize a instalação do [CLI do Azure](/cli/azure/install-azure-cli?view=azur
 
 ### <a name="reason"></a>Reason
 
-Quando você executa um serviço em um espaço de desenvolvimento, o Pod do serviço é [injetado com contêineres adicionais para instrumentação](how-dev-spaces-works.md#prepare-your-aks-cluster). Esses contêineres não têm solicitações de recursos ou limites definidos, o que faz com que o autodimensionamento de Pod horizontal seja desabilitado para o pod.
+Quando você executa um serviço em um espaço de desenvolvimento, o Pod do serviço é [injetado com contêineres adicionais para instrumentação](how-dev-spaces-works.md#prepare-your-aks-cluster) e todos os contêineres em um pod precisam ter limites de recursos e solicitações definidas para dimensionamento automático de Pod horizontal. 
+
+
+As solicitações de recursos e os limites podem ser aplicados ao contêiner injetado (devspaces-proxy) adicionando `azds.io/proxy-resources` a anotação à especificação do pod. O valor deve ser definido como um objeto JSON que representa a seção de recursos da especificação do contêiner para o proxy.
 
 ### <a name="try"></a>Experimente
-Execute o dimensionador vertical Pod horizontal em um namespace que não tenha espaços de desenvolvimento habilitados.
+
+Abaixo está um exemplo de uma anotação de recursos de proxy que deve ser aplicada à sua especificação de Pod.
+```
+azds.io/proxy-resources: "{\"Limits\": {\"cpu\": \"300m\",\"memory\": \"400Mi\"},\"Requests\": {\"cpu\": \"150m\",\"memory\": \"200Mi\"}}"
+```

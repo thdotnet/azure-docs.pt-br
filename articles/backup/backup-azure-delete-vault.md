@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 07/29/2019
 ms.author: dacurwin
-ms.openlocfilehash: 5f44e9b386f5d05b75f6fdf6cf8b55360e4c5dae
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 9c63170b60a871182042acab8a35e505c603f260
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68954775"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69018880"
 ---
 # <a name="delete-a-recovery-services-vault"></a>Excluir um cofre dos Serviços de Recuperação
 
@@ -51,11 +51,11 @@ Antes de continuar, leia **[esta](#before-you-start)** seção para entender as 
 
 Para interromper a proteção e excluir os dados de backup, execute o seguinte:
 
-1. No portal >**itens de backup** do **cofre** > de serviços de recuperação escolha os itens protegidos na nuvem (exemplo de máquina AzureVirtual, armazenamento do Azure (arquivos do Azure), SQL na VM do Azure e assim por diante).
+1. No portal >**itens de backup**do **cofre** > de serviços de recuperação, escolha os itens protegidos na nuvem (por exemplo, máquina AzureVirtual, armazenamento do Azure (arquivos do Azure), SQL na VM do Azure e assim por diante).
 
     ![selecione o tipo de backup](./media/backup-azure-delete-vault/azure-storage-selected.png)
 
-2. Clique com o botão direito do mouse no item de backup, dependendo se o item de backup está protegido ou não, se o menu exibirá **parar backup** ou **excluir dados de backup**.
+2. Clique com o botão direito do mouse no item de backup. Dependendo se o item de backup estiver protegido ou não, o menu exibirá **parar backup** ou **excluir dados de backup**.
 
     - Para **parar o backup**, selecione **excluir dados de backup** na lista suspensa. Insira o **nome** do item de backup (diferencia maiúsculas de minúsculas), selecione um **motivo**, insira **comentários**e clique em **parar backup**.
 
@@ -126,7 +126,7 @@ Para excluir itens de backup do console de gerenciamento do MARS
 - Você será solicitado a inserir um PIN de segurança. Para gerar o PIN, execute as etapas a seguir:
   - Entre no Portal do Azure.
   - Navegue até **Cofre dos Serviços de Recuperação** > **Configurações** > **Propriedades**.
-  - Em **PIN de Segurança**, clique em **Gerar**. Copie este PIN. (Esse PIN é válido por apenas cinco minutos)
+  - Em **PIN de Segurança**, clique em **Gerar**. Copie este PIN. (Esse PIN é válido por apenas cinco minutos.)
 - No console de gerenciamento (aplicativo cliente), Cole o PIN e clique em **OK**.
 
   ![PIN de segurança](./media/backup-azure-delete-vault/security-pin.png)
@@ -202,12 +202,12 @@ Para obter mais informações sobre o comando ARMClient, consulte este [document
 
 1. Execute o comando a seguir usando sua ID de assinatura, o nome do grupo de recursos e o nome do cofre. Quando você executar o comando, ele excluirá o cofre se você não tiver nenhuma dependência.
 
-   ```
+   ```azurepowershell
    ARMClient.exe delete /subscriptions/<subscriptionID>/resourceGroups/<resourcegroupname>/providers/Microsoft.RecoveryServices/vaults/<recovery services vault name>?api-version=2015-03-15
    ```
 2. Se o cofre não estiver vazio, você receberá o erro "o cofre não pode ser excluído, pois há recursos existentes neste cofre". Para remover um contêiner/itens protegidos em um cofre, faça o seguinte:
 
-   ```
+   ```azurepowershell
    ARMClient.exe delete /subscriptions/<subscriptionID>/resourceGroups/<resourcegroupname>/providers/Microsoft.RecoveryServices/vaults/<recovery services vault name>/registeredIdentities/<container name>?api-version=2016-06-01
    ```
 
