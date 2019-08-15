@@ -1,20 +1,19 @@
 ---
 title: Monitorar e solucionar problemas de um aplicativo de armazenamento de nuvem no Azure | Microsoft Docs
 description: Use ferramentas de diagnóstico, métricas e alertas para solucionar problemas e monitorar um aplicativo em nuvem.
-services: storage
 author: normesta
 ms.service: storage
+ms.subservice: blobs
 ms.topic: tutorial
 ms.date: 07/20/2018
 ms.author: normesta
 ms.reviewer: fryu
-ms.custom: mvc
-ms.openlocfilehash: 1383ccd570e23d80343ccdfd586d08ee25ebbc8d
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 3a2381302a378e7b2635b84c32a87e844e4605a7
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65148232"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68844890"
 ---
 # <a name="monitor-and-troubleshoot-a-cloud-storage-application"></a>Monitorar e solucionar problemas de um aplicativo de armazenamento de nuvem
 
@@ -40,7 +39,7 @@ Faça logon no [Portal do Azure](https://portal.azure.com)
 
 No menu à esquerda, selecione **Grupos de Recursos**, selecione **myResourceGroup** e, em seguida, selecione sua conta de armazenamento na lista de recursos.
 
-Em **Configurações de diagnóstico (clássico)**, defina **Status** para **Ativado**. Verifique se todas as opções em **Propriedades de blob** estão habilitadas.
+Em **Configurações de diagnóstico (clássico)** , defina **Status** para **Ativado**. Verifique se todas as opções em **Propriedades de blob** estão habilitadas.
 
 Quando concluir, clique em **Salvar**
 
@@ -52,7 +51,7 @@ Os alertas fornecem uma maneira de enviar email aos administradores ou disparar 
 
 ### <a name="navigate-to-the-storage-account-in-the-azure-portal"></a>Navegar até sua conta de armazenamento no Portal do Azure
 
-Na seção **Monitoramento**, selecione **Alertas (clássico)**.
+Na seção **Monitoramento**, selecione **Alertas (clássico)** .
 
 Selecione **Adicionar alerta de métrica (clássico)** e preencha o formulário **Adicionar regra** com as informações necessárias. Na lista suspensa **Métrica**, selecione `SASClientOtherError`. Para permitir que o alerta dispare após o primeiro erro, na lista suspensa **Condição** selecione **Maior que ou igual a**.
 
