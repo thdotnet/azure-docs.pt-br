@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 09/04/2018
 ms.author: glenga
 ms.openlocfilehash: 49ac1a7585ddf2a6500c7e9382880109c3f7f431
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67171693"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534277"
 ---
 ## <a name="export-an-api-definition"></a>Exportar uma definição de API
 Você tem uma definição de OpenAPI para sua função, em [Criar uma definição de OpenAPI para uma função](../articles/azure-functions/functions-openapi-definition.md). A próxima etapa neste processo é exportar a definição de API para que o PowerApps e o Microsoft Flow possam usá-la em uma API personalizada.
@@ -19,7 +19,7 @@ Você tem uma definição de OpenAPI para sua função, em [Criar uma definiçã
 
 1. No [portal do Azure](https://portal.azure.com), clique no nome do aplicativo de funções (como **function-demo-energy**) > **Recursos de plataforma** > **Definição de API**.
 
-    ![Definição da API](media/functions-export-api-definition/api-definition.png)
+    ![Definição de API](media/functions-export-api-definition/api-definition.png)
 
 1. Clique em **Exportar PowerApps + Flow**.
 
@@ -27,7 +27,7 @@ Você tem uma definição de OpenAPI para sua função, em [Criar uma definiçã
 
 1. No painel direito, use as configurações, conforme especificado na tabela.
 
-    |Configuração|DESCRIÇÃO|
+    |Configuração|Descrição|
     |--------|------------|
     |**Modo de exportação**|Selecione **Express** para gerar automaticamente a API personalizada. Selecionar **Manual** exporta a definição de API, mas, em seguida, você deverá importá-la no PowerApps e no Microsoft Flow manualmente. Para saber mais, veja [Exportar para o PowerApps e Microsoft Flow](../articles/azure-functions/app-service-export-api-to-powerapps-and-flow.md).|
     |**Ambiente**|Selecione o ambiente no qual a API personalizada deve ser salva. Para saber mais, veja [Visão geral de ambientes (PowerApps)](https://powerapps.microsoft.com/tutorials/environments-overview/) ou [Visão geral de ambientes (Microsoft Flow)](https://us.flow.microsoft.com/documentation/environments-overview-admin/).|

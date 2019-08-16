@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: cynthn
-ms.openlocfilehash: bd5eeb3bc3864dc0203c558228dce2f54dbaa79d
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 157cc706da34281ec7bb36a9b9e16a4192b3bd96
+ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67708815"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69543866"
 ---
 # <a name="how-to-use-ssh-keys-with-windows-on-azure"></a>Como usar chaves SSH com o Windows no Azure
 
@@ -48,7 +48,7 @@ Também é possível usar os utilitários SSH disponíveis no Bash no [Azure Clo
 * Acesse o Cloud Shell como um terminal de dentro do Visual Studio Code instalando a [extensão de Conta do Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account).
 
 ## <a name="create-an-ssh-key-pair"></a>Criar um par de chaves SSH
-As seguintes seções descrevem duas opções para criar um par de chaves SSH no Windows. É possível usar um comando shell (`ssh-keygen`) ou uma ferramenta de GUI (PuTTYgen).
+As seguintes seções descrevem duas opções para criar um par de chaves SSH no Windows. É possível usar um comando shell (`ssh-keygen`) ou uma ferramenta de GUI (PuTTYgen). Observe também que, ao usar o PowerShell para criar uma chave, carregue a chave pública como o formato SSH. com (SECSH). Ao usar a CLI, converta a chave no formato OpenSSH antes de carregar. 
 
 ### <a name="create-ssh-keys-with-ssh-keygen"></a>Criar chaves SSH com ssh-keygen
 

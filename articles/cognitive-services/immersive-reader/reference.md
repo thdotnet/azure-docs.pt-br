@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: reference
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: 1a616bce8c161825853b1966769d9505595d95de
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 1d9fc20055fe3adb571b5a77330cc6537998cb5f
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68688323"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534476"
 ---
 # <a name="immersive-reader-sdk-reference"></a>Referência do SDK do leitor de imersão
 
@@ -42,7 +42,7 @@ launchAsync(token: string, subdomain: string, content: Content, options?: Option
 | `content` | [Conteúdo](#content) | Um objeto que contém o conteúdo a ser mostrado no leitor de imersão. |
 | `options` | [Opções](#options) | Opções para configurar determinados comportamentos do leitor de imersão. Opcional. |
 
-#### <a name="returns"></a>Retornos
+#### <a name="returns"></a>Retorna
 
 Retorna um `Promise<HTMLDivElement>` que resolve quando o leitor de imersão é carregado. O `Promise` resolve para um `div` elemento cujo único filho é um `iframe` elemento que contém a página do leitor de imersão.
 
@@ -73,6 +73,7 @@ Contém o conteúdo a ser mostrado no leitor de imersão.
 | --------- | ----------- |
 | texto/sem formatação | Texto sem formatação. |
 | aplicativo/MathML + XML | MathML (matematica Markup Language). [Saiba mais](https://developer.mozilla.org/en-US/docs/Web/MathML).
+| application/vnd. openxmlformats-officeDocument. WordprocessingML. Document | Documento de formato Microsoft Word. docx.
 
 ### <a name="options"></a>Opções
 
@@ -104,7 +105,8 @@ Contém informações sobre o erro.
 | ---- | ----------- |
 | BadArgument | O argumento fornecido é inválido, `message` consulte para obter detalhes. |
 | Tempo limite | Falha ao carregar o leitor de imersão no tempo limite especificado. |
-| TokenExpired| O token fornecido expirou. |
+| TokenExpired | O token fornecido expirou. |
+| Limitado | O limite de taxa de chamada foi excedido. |
 
 ## <a name="launching-the-immersive-reader"></a>Iniciando o leitor de imersão
 

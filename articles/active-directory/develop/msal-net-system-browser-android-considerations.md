@@ -1,9 +1,9 @@
 ---
-title: Considerações sobre o Xamarin Android (biblioteca de autenticação do Microsoft para .NET) | Azure
-description: Saiba mais sobre as considerações específicas ao usar o Xamarin Android com a biblioteca de autenticação da Microsoft para .NET (MSAL.NET).
+title: Considerações sobre o Xamarin Android (biblioteca de autenticação da Microsoft para .NET) | Azure
+description: Saiba mais sobre considerações específicas ao usar o Xamarin Android com a MSAL.NET (biblioteca de autenticação da Microsoft para .NET).
 services: active-directory
 documentationcenter: dev-center-name
-author: rwike77
+author: TylerMSFT
 manager: CelesteDG
 editor: ''
 ms.service: active-directory
@@ -13,66 +13,66 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/24/2019
-ms.author: ryanwi
+ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c57feb33967732481d78e0ddaba5e90f4f82f327
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1b0c810097913e896027245b15600ed75aabcd25
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65544434"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69532580"
 ---
-# <a name="xamarin-android-specific-considerations-with-msalnet"></a>Considerações sobre o Xamarin Android específicos com MSAL.NET
-Este artigo discute considerações específicas ao usar o navegador do sistema no Xamarin Android com a biblioteca de autenticação da Microsoft para .NET (MSAL.NET).
+# <a name="xamarin-android-specific-considerations-with-msalnet"></a>Considerações específicas do Xamarin Android com MSAL.NET
+Este artigo discute considerações específicas ao usar o navegador do sistema no Xamarin Android com a MSAL.NET (biblioteca de autenticação da Microsoft para .NET).
 
-Começando com o MSAL.NET 2.4.0-preview, MSAL.NET dá suporte a navegadores diferentes do Chrome e não requer mais Chrome ser instalado no dispositivo Android para autenticação.
+A partir do MSAL.NET 2.4.0-Preview, o MSAL.NET dá suporte a navegadores diferentes do Chrome e não requer mais que o Chrome seja instalado no dispositivo Android para autenticação.
 
-É recomendável que você use navegadores que oferecem suporte a guias personalizadas, como estes:
+Recomendamos que você use navegadores que dão suporte a guias personalizadas, como estas:
 
-| Navegadores com suporte de guias personalizadas | Nome do Pacote |
+| Navegadores com suporte a guias personalizadas | Nome do pacote |
 |------| ------- |
 |Chrome | com.android.chrome|
 |Microsoft Edge | com.microsoft.emmx|
 |Firefox | org.mozilla.firefox|
 |Ecosia | com.ecosia.android|
-|Kiwi | com.kiwibrowser.browser|
+|Produtor kiwis | com.kiwibrowser.browser|
 |Corajoso | com.brave.browser|
 
-Além de navegadores com suporte de guias personalizadas, com base em nossos testes, alguns navegadores que não dão suporte a guias personalizadas também funcionará para autenticação: Opera, Opera Mini InBrowser e Maxthon. Para obter mais informações, leia [tabela de resultados do teste](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Android-system-browser#devices-and-browsers-tested).
+Além dos navegadores com suporte a guias personalizados, com base em nossos testes, alguns navegadores que não dão suporte a guias personalizadas também funcionarão para autenticação: Opera, Opera Mini, inbrowser e Maxthon. Para obter mais informações, leia [tabela para resultados de teste](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Android-system-browser#devices-and-browsers-tested).
 
 ## <a name="known-issues"></a>Problemas conhecidos
 
-- Se o usuário não tiver nenhum navegador habilitado no dispositivo, MSAL.NET lançará um `AndroidActivityNotFound` exceção. 
-  - **Atenuação**: Informar ao usuário que eles devem habilitar um navegador (preferencialmente um com o suporte de guias personalizadas) em seu dispositivo.
+- Se o usuário não tiver um navegador habilitado no dispositivo, o MSAL.NET gerará `AndroidActivityNotFound` uma exceção. 
+  - **Atenuação**: Informe ao usuário que ele deve habilitar um navegador (preferencialmente um com suporte a guias personalizados) em seu dispositivo.
 
-- Se a autenticação falhar (por exemplo autenticação é iniciado com DuckDuckGo), MSAL.NET retornará um `AuthenticationCanceled MsalClientException`. 
-  - **Raiz do problema**: Um navegador com suporte de guias personalizadas não foi habilitado no dispositivo. Autenticação é iniciado com um navegador alternativo, que não conseguiu concluir a autenticação. 
-  - **Atenuação**: Informar ao usuário que eles devem instalar um navegador (preferencialmente um com o suporte da guia personalizada) em seu dispositivo.
+- Se a autenticação falhar (por exemplo, a autenticação é iniciada com DuckDuckGo), o `AuthenticationCanceled MsalClientException`MSAL.net retornará um. 
+  - **Problema raiz**: Um navegador com suporte a guias personalizado não foi habilitado no dispositivo. A autenticação foi iniciada com um navegador alternativo, que não conseguiu concluir a autenticação. 
+  - **Atenuação**: Informe ao usuário que ele deve instalar um navegador (preferencialmente um com suporte à guia personalizada) em seu dispositivo.
 
 ## <a name="devices-and-browsers-tested"></a>Dispositivos e navegadores testados
 A tabela a seguir lista os dispositivos e navegadores que foram testados.
 
-| | Navegador&ast;     |  Result  | 
+| | Navegador&ast;     |  Resultado  | 
 | ------------- |:-------------:|:-----:|
-| Huawei um + | Chrome&ast; | Aprovado|
-| Huawei um + | Edge&ast; | Aprovado|
-| Huawei um + | Firefox&ast; | Aprovado|
-| Huawei um + | Brave&ast; | Aprovado|
+| Huawei/um + | Monocromático&ast; | Aprovado|
+| Huawei/um + | Perímetro&ast; | Aprovado|
+| Huawei/um + | Firefox&ast; | Aprovado|
+| Huawei/um + | Corajoso&ast; | Aprovado|
 | Um + | Ecosia&ast; | Aprovado|
 | Um + | Kiwi&ast; | Aprovado|
-| Huawei um + | Opera | Aprovado|
+| Huawei/um + | Opera | Aprovado|
 | Huawei | OperaMini | Aprovado|
-| Huawei um + | InBrowser | Aprovado|
+| Huawei/um + | Navegador | Aprovado|
 | Um + | Maxthon | Aprovado|
-| Huawei um + | DuckDuckGo | Autenticação de usuário cancelada|
-| Huawei um + | Navegador UC | Autenticação de usuário cancelada|
-| Um + | Dolphin | Autenticação de usuário cancelada|
-| Um + | Navegador de CM | Autenticação de usuário cancelada|
-| Huawei um + | Nenhuma instalada | AndroidActivityNotFound ex|
+| Huawei/um + | DuckDuckGo | Usuário cancelou autenticação|
+| Huawei/um + | Navegador de UC | Usuário cancelou autenticação|
+| Um + | Dolphin | Usuário cancelou autenticação|
+| Um + | Navegador CM | Usuário cancelou autenticação|
+| Huawei/um + | nenhum instalado | AndroidActivityNotFound ex|
 
-&ast; Dá suporte a guias personalizadas
+&ast;Dá suporte a guias personalizadas
 
 ## <a name="next-steps"></a>Próximas etapas
-Para o código de trechos de código e informações adicionais sobre como usar o navegador de sistema com o Xamarin Android, leia esta [guia](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/MSAL.NET-uses-web-browser#choosing-between-embedded-web-browser-or-system-browser-on-xamarinandroid).  
+Para obter trechos de código e informações adicionais sobre como usar o navegador do sistema com o Xamarin Android, leia este [guia](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/MSAL.NET-uses-web-browser#choosing-between-embedded-web-browser-or-system-browser-on-xamarinandroid).  

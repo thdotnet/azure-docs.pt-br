@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 05/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 51ef55247d3262d8707403ed09cc8643403dda23
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 393c66f57cd4a7621ad660774a95502c0f5ad8c4
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68952977"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534713"
 ---
 # <a name="update-management-solution-in-azure"></a>Solução Gerenciamento de Atualizações no Azure
 
@@ -250,6 +250,15 @@ Para criar uma nova implantação de atualização, selecione **Agendar implanta
 | Reinicialize o controle| Determina como as reinicializações devem ser tratadas. As opções disponíveis são:</br>Reinicialização, se necessário (Padrão)</br>Sempre reinicializar</br>Nunca reinicializar</br>Somente reinicialização - não instalará as atualizações|
 
 As implantações de atualização também podem ser criadas programaticamente. Para aprender a criar uma Implantação de atualização com a API REST, consulte [Configurações de atualização de software - Criar](/rest/api/automation/softwareupdateconfigurations/create). Também é um exemplo de runbook que pode ser usado para criar uma implantação de atualização semanal. Para saber mais sobre este runbook, consulte [Criar uma implantação de atualização semanal para uma ou mais VMs em um grupo de recursos](https://gallery.technet.microsoft.com/scriptcenter/Create-a-weekly-update-2ad359a1).
+
+### <a name="maintenance-windows"></a>Janelas de manutenção
+
+As janelas de manutenção controlam a quantidade de tempo permitida para a instalação das atualizações. Considere os detalhes a seguir ao especificar uma janela de manutenção.
+
+* As janelas de manutenção controlam quantas atualizações foram tentadas para serem instaladas.
+* Gerenciamento de Atualizações não interromperá a instalação de novas atualizações se o final de uma janela de manutenção estiver se aproximando.
+* Gerenciamento de Atualizações não terminará as atualizações em andamento se a janela de manutenção for excedida.
+* Se a janela de manutenção for excedida no Windows, isso geralmente ocorre devido a uma atualização service pack demorando muito para ser instalada.
 
 ### <a name="multi-tenant"></a>Implantações de Atualização entre locatários
 

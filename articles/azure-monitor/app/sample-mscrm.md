@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 03/16/2018
 ms.reviewer: mazhar
 ms.author: mbullwin
-ms.openlocfilehash: 6119f1116d255f7cd2a2bfc20e86eeca9e5dfe82
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 470f723782ca29409549e0df8e900edf86cd446e
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60523039"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534285"
 ---
 # <a name="walkthrough-enabling-telemetry-for-microsoft-dynamics-crm-online-using-application-insights"></a>Passo a passo: Habilitar a Telemetria do Microsoft Dynamics CRM Online usando Application Insights
 Este artigo mostra como obter dados de telemetria no [Microsoft Dynamics CRM Online](https://www.dynamics.com/) usando o [Azure Application Insights](https://azure.microsoft.com/services/application-insights/). Percorreremos o processo completo de adição de um script do Application Insights ao seu aplicativo, captura de dados e visualização de dados.
@@ -38,7 +38,7 @@ Para monitorar seu aplicativo, você adiciona um SDK do Application Insights a e
     ![Clique em +, Serviços de Desenvolvedor, Application Insights.](./media/sample-mscrm/01.png)
 
     Escolha ASP.NET como o tipo de aplicativo.
-3. Siga as instruções para [obter o script de SDK JavaScript para seu aplicativo](../../azure-monitor/app/javascript.md#set-up-application-insights-for-your-web-page), copie o trecho de JavaScript e substitua a Chave de Instrumentação pelo valor correto para seu recurso do Application Insights.
+3. Siga as instruções para [obter o script de SDK JavaScript para seu aplicativo](../../azure-monitor/app/javascript.md), copie o trecho de JavaScript e substitua a Chave de Instrumentação pelo valor correto para seu recurso do Application Insights.
 
 ### <a name="create-a-javascript-web-resource-in-microsoft-dynamics-crm"></a>Criar um recurso da Web em JavaScript no Microsoft Dynamics CRM
 1. Abra sua instância do CRM Online e faça logon com privilégios de administrador.
@@ -123,7 +123,7 @@ Clique no gráfico para obter mais detalhes:
 
 ![Páginas por sessão](./media/sample-mscrm/30.png)
 
-## <a name="sample-code"></a>Exemplo de código
+## <a name="sample-code"></a>Código de exemplo
 [Procurar no código de amostra](https://dynamicsandappinsights.codeplex.com/).
 
 ## <a name="power-bi"></a>Power BI

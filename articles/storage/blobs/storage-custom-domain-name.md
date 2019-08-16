@@ -8,12 +8,12 @@ ms.date: 06/26/2018
 ms.author: normesta
 ms.reviewer: dineshm
 ms.subservice: blobs
-ms.openlocfilehash: ae809dd4841d6df8caabebfaded263b52f386834
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 2359befc05bff867a8f8b17943ed67d906ff4971
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68845038"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534331"
 ---
 # <a name="configure-a-custom-domain-name-for-your-azure-storage-account"></a>Configurar um nome de domínio personalizado para sua conta de armazenamento do Azure
 
@@ -27,7 +27,7 @@ Você pode configurar um domínio personalizado para acessar os dados de blob em
 > Contas de armazenamento atualmente suportam a apenas um nome de domínio personalizado por conta. Você não pode mapear um nome de domínio personalizado para os pontos de extremidade de serviços da Web e de blob.
 > 
 > [!NOTE]
-> O mapeamento só funciona para subdomínios (por exemplo, www\.contoso.com). Se você quiser ter o ponto de extremidade da Web disponível no domínio raiz (por exemplo, contoso.com), precisará [usar a CDN do Azure com domínios personalizados](storage-https-custom-domain-cdn.md)
+> O mapeamento só funciona para subdomínios (por exemplo, www\.contoso.com). Se você quiser ter o ponto de extremidade da Web disponível no domínio raiz (por exemplo, contoso.com), precisará [Adicionar um domínio personalizado ao ponto de extremidade da CDN do Azure](https://docs.microsoft.com/azure/cdn/cdn-map-content-to-custom-domain).
 
 A tabela a seguir mostra algumas URLs de amostra para dados de blobs localizados em uma conta de armazenamento denominada *mystorageaccount*. O subdomínio personalizado registrado para a conta de armazenamento é *contoso.com da\.Web*:
 

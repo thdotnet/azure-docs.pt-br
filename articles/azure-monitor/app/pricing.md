@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 08/13/2019
 ms.author: dalek
-ms.openlocfilehash: abf23eda2474ecbcfcaf0dadb26327225213a9a6
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 4029a9e46b9c9bb7cbd677deff4a172d8fc982f8
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68989223"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534598"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Gerenciar o uso e os custos do Application Insights
 
@@ -41,7 +41,7 @@ O preço do [aplicativo Azure][start] insights é baseado no volume de dados ing
 > [!NOTE]
 > Todos os preços exibidos nas capturas de tela neste artigo são apenas para fins de exemplo. Para preços atuais em sua moeda e região, consulte [Preços do Application Insights][pricing].
 
-### <a name="multi-step-web-tests"></a>Testes da Web de várias etapas
+### <a name="multi-step-web-tests"></a>Testes na Web com diversas etapas
 
 Há uma cobrança adicional para [testes na Web de várias etapas](../../azure-monitor/app/availability-multistep.md). Testes na Web de várias etapas se referem a testes na Web que executam uma sequência de ações.
 
@@ -92,7 +92,7 @@ Você pode usar uma das opções a seguir para ver a quantidade de dados sendo e
 Veja abaixo o que é possível fazer para reduzir o volume de dados:
 
 * Use a [Amostragem](../../azure-monitor/app/sampling.md). Essa tecnologia reduz a taxa de dados sem distorcer sua métrica. Você não perderá a capacidade de navegar entre os itens relacionados em Pesquisar. Em aplicativos de servidor, a amostragem funciona automaticamente.
-* [Limite o número de chamadas do Ajax que podem ser informadas](../../azure-monitor/app/javascript.md#detailed-configuration) em cada modo de exibição de página ou desative o relatório de Ajax.
+* [Limite o número de chamadas do Ajax que podem ser informadas](../../azure-monitor/app/javascript.md#configuration) em cada modo de exibição de página ou desative o relatório de Ajax.
 * [Edite Applicationinsights](../../azure-monitor/app/configuration-with-applicationinsights-config.md) para desativar os módulos de coleção desnecessários. Por exemplo, você pode decidir que os contadores de desempenho ou dados de dependência não são essenciais.
 * Divida a telemetria em chaves de instrumentação separadas. 
 * Métricas de pré-agregação. Se tiver feito chamadas para o TrackMetric no seu aplicativo, você poderá reduzir o tráfego usando a sobrecarga que aceita o cálculo do desvio médio e padrão de um lote de medições. Ou você pode usar um [pacote de pré-agregação](https://www.myget.org/gallery/applicationinsights-sdk-labs).

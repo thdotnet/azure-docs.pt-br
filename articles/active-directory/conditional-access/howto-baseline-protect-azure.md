@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: aab2aa4415345747a0e87b90ef0a7ee770ef3465
-ms.sourcegitcommit: 6cff17b02b65388ac90ef3757bf04c6d8ed3db03
+ms.openlocfilehash: e8095b4fa6e52b7c34cedaea35b129ab68dddc65
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68608128"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69532943"
 ---
 # <a name="baseline-policy-require-mfa-for-service-management-preview"></a>Política de linha de base: Exigir MFA para gerenciamento de serviços (versão prévia)
 
@@ -32,21 +32,21 @@ O uso de Azure Resource Manager para gerenciar seus serviços é uma ação alta
 
 Depois que essa política estiver habilitada em um locatário, todos os usuários que fizerem logon nos recursos de gerenciamento do Azure serão desafiados com a autenticação multifator. Se o usuário não estiver registrado para MFA, o usuário será solicitado a se registrar usando o aplicativo Microsoft Authenticator para continuar.
 
-Para executar a entrada interativa usando o [Azure PowerShell](https://docs.microsoft.com/powershell/azure/authenticate-azureps), use o cmdlet [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount) .
+Para executar a entrada interativa usando o [Azure PowerShell](https://docs.microsoft.com/powershell/azure/authenticate-azureps), use o cmdlet [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/connect-azaccount) .
 
 ```PowerShell
 Connect-AzAccount
 ```
 
-Quando executado, esse cmdlet apresentará uma cadeia de caracteres de token. Para entrar, copie essa cadeia de caracteres e cole- [https://microsoft.com/devicelogin](https://microsoft.com/devicelogin)  a em um navegador. Sua sessão do PowerShell será autenticada para conectar o Azure.
+Quando executado, esse cmdlet apresentará uma cadeia de caracteres de token. Para entrar, copie essa cadeia de caracteres e cole- [https://microsoft.com/devicelogin](https://microsoft.com/devicelogin) a em um navegador. Sua sessão do PowerShell será autenticada para conectar o Azure.
 
-Para executar a entrada interativa usando o [CLI do Azure](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest), execute o comando [AZ login](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest#az-login) .
+Para executar a entrada interativa usando o [CLI do Azure](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest), execute o comando [AZ login](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest#az-login) .
 
 ```azurecli
 az login
 ```
 
-Se a CLI pode abrir seu navegador padrão, ela irá fazê-lo e carregar uma página de entrada. Caso contrário, você precisa abrir uma página do navegador e seguir as instruções na linha de comando para inserir um código de autorização depois [https://aka.ms/devicelogin](https://aka.ms/devicelogin) de navegar até no navegador. Em seguida, entre com suas credenciais de conta no navegador.
+Se a CLI pode abrir seu navegador padrão, ela irá fazê-lo e carregar uma página de entrada. Caso contrário, você precisa abrir uma página do navegador e seguir as instruções na linha de comando para inserir um código de autorização depois [https://aka.ms/devicelogin](https://aka.ms/devicelogin) de navegar até no navegador. Em seguida, entre com suas credenciais de conta no navegador.
 
 ## <a name="deployment-considerations"></a>Considerações de implantação
 
@@ -58,11 +58,11 @@ A política **de linha de base de política: Exigir MFA para gerenciamento de se
 
 Para habilitar essa política e proteger seus administradores:
 
-1. Entre no **portal do Azure** como administrador global, administrador de segurança ou administrador de acesso condicional.
+1. Entre no **portal do Azure** como administrador global, administrador de segurança ou administrador de acesso condicional.
 1. Navegue até **Azure Active Directory** > **acesso condicional**.
 1. Na lista de políticas, selecione **política de linha de base: Exigir MFA para gerenciamento de serviços (versão**prévia).
 1. Defina **habilitar política** para **usar a política imediatamente**.
-1. Clique em **salvar**.
+1. Clique em **Salvar**.
 
 ## <a name="next-steps"></a>Próximas etapas
 

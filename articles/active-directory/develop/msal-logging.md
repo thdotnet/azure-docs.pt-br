@@ -3,7 +3,7 @@ title: Registro em log em aplicativos da MSAL | Azure
 description: Saiba como fazer registro em log em aplicativos da MSAL (Biblioteca de Autenticação da Microsoft).
 services: active-directory
 documentationcenter: dev-center-name
-author: rwike77
+author: TylerMSFT
 manager: CelesteDG
 editor: ''
 ms.service: active-directory
@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/22/2019
-ms.author: ryanwi
+ms.author: twhitney
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 475b692a29edf5cdd05552e7b5c3dc5fde210275
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 2f52ca8062ed1ed196a67d25385b712451afe8ae
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69512533"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69532736"
 ---
 # <a name="logging"></a>Registrando em log
 Os aplicativos da MSAL (Biblioteca de Autenticação da Microsoft) geram mensagens de log que podem ajudar a diagnosticar problemas e fornecer detalhes. Um aplicativo pode configurar o registro em log com algumas linhas de código, ter um controle personalizado sobre o nível de detalhes e determinar se dados pessoais e organizacionais serão registrados. É recomendável que você defina um retorno de chamada de registro em log da MSAL e forneça uma maneira para os usuários enviarem logs quando estiverem com problemas de autenticação.

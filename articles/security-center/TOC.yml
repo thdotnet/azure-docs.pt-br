@@ -6,8 +6,6 @@
       href: security-center-intro.md
     - name: Plataformas e recursos compatíveis da Central de Segurança
       href: security-center-os-coverage.md
-    - name: Recomendações e avaliação de Endpoint Protection
-      href: security-center-endpoint-protection.md
 - name: Guia de início rápido
   expanded: true
   items:
@@ -45,6 +43,24 @@
       href: security-center-incident-response.md
     - name: Gerenciamento entre locatários
       href: security-center-cross-tenant-management.md
+    - name: Alertas de detecção de ameaças
+      items:
+        - name: Visão geral de alertas de segurança
+          href: security-center-alerts-overview.md
+        - name: Detecção de ameaças para VMs e servidores
+          href: security-center-alerts-iaas.md
+        - name: Detecção de ameaças para computação nativa de nuvem
+          href: security-center-alerts-compute.md
+        - name: Detecção de ameaças para serviços de dados
+          href: security-center-alerts-data-services.md
+        - name: Detecção de ameaças para serviços de camadas do Azure
+          href: security-center-alerts-service-layer.md
+        - name: Integração com Produtos de Segurança do Azure
+          href: security-center-alerts-integration.md
+        - name: Correlação de alertas inteligentes de nuvem (incidentes)
+          href: security-center-alerts-cloud-smart.md
+        - name: Validação de alerta (arquivo de teste EICAR)
+          href: security-center-alert-validation.md
 - name: Guias de instruções
   items:
     - name: Melhorar sua pontuação segura
@@ -105,42 +121,16 @@
           href: security-center-file-integrity-monitoring.md
         - name: Proteção de rede adaptável
           href: security-center-adaptive-network-hardening.md
-    - name: Alertas de detecção de ameaças
-      items:
-        - name: Visão geral de alertas de segurança
-          href: security-center-alerts-overview.md
-        - name: Detecção de ameaças para VMs e servidores
-          href: security-center-alerts-iaas.md
-        - name: Detecção de ameaças para computação nativa de nuvem
-          href: security-center-alerts-compute.md
-        - name: Detecção de ameaças para serviços de dados
-          href: security-center-alerts-data-services.md
-        - name: Detecção de ameaças para serviços de camadas do Azure
-          href: security-center-alerts-service-layer.md
-        - name: Integração com Produtos de Segurança do Azure
-          href: security-center-alerts-integration.md
-        - name: Correlação de alertas inteligentes de nuvem (incidentes)
-          href: security-center-alerts-cloud-smart.md
-        - name: Validação de alerta (arquivo de teste EICAR)
-          href: security-center-alert-validation.md
     - name: Arquivo
       items:
         - name: Aplicar a criptografia de disco
           href: security-center-apply-disk-encryption.md
         - name: Aplicar atualizações do sistema
           href: security-center-apply-system-updates.md
-        - name: Habilitar a criptografia para a conta de armazenamento
-          href: security-center-enable-encryption-for-storage-account.md
-        - name: Habilitar o Agente de VM
-          href: security-center-enable-vm-agent.md
         - name: Instalar proteção do ponto de extremidade
           href: security-center-install-endpoint-protection.md
         - name: Reinicializar após as atualizações do sistema
           href: 'security-center-apply-system-updates.md#reboot-after-system-updates'
-        - name: Corrigir as configurações de segurança
-          href: security-center-remediate-os-vulnerabilities.md
-        - name: Atualizar a versão do sistema operacional
-          href: security-center-update-os-version.md
         - name: Avaliação de vulnerabilidade não instalada
           href: security-center-vulnerability-assessment-recommendations.md
         - name: Adicione um firewall do aplicativo Web
@@ -191,6 +181,8 @@
       href: 'https://azure.microsoft.com/updates/?product=security-center'
     - name: Recursos e desativação da API (julho de 2019)
       href: security-center-features-retirement-july2019.md
+    - name: Recomendações e avaliação de Endpoint Protection
+      href: security-center-endpoint-protection.md
 - name: Recursos
   items:
     - name: Desenvolva suas habilidades com o Microsoft Learn

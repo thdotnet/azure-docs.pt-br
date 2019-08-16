@@ -11,17 +11,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/04/2018
+ms.date: 08/15/2019
 ms.author: mimart
-ms.reviewer: harshja
+ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e6d85fc7ed16f397cb91232e9648df4e8741b37a
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.openlocfilehash: aa0dc2081aff5a24fb830b756131cccd5c6ce810
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68705793"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69533691"
 ---
 # <a name="redirect-hardcoded-links-for-apps-published-with-azure-ad-application-proxy"></a>Redirecione os links inseridos no código para aplicativos publicados com o Proxy de Aplicativo do Azure AD
 
@@ -30,13 +30,16 @@ O Proxy de Aplicativo do Azure AD disponibiliza seus aplicativos locais para usu
 A melhor maneira de garantir que os links funcionem corretamente dentro e fora de sua rede corporativa é configurar as URLs externas de seus aplicativos para que sejam as mesmas que as URLs internas. Use [domínios personalizados](application-proxy-configure-custom-domain.md) para configurar suas URLs externas para que tenham o nome de domínio corporativo em vez do domínio padrão do proxy de aplicativo.
 
 
-Se você não pode usar domínios personalizados em seu locatário, há várias outras opções para fornecer essa funcionalidade. Todos esses também são compatíveis com domínios personalizados e entre si, assim você pode configurar domínios personalizados e outras soluções, se necessário. 
+Se você não pode usar domínios personalizados em seu locatário, há várias outras opções para fornecer essa funcionalidade. Todos esses também são compatíveis com domínios personalizados e entre si, assim você pode configurar domínios personalizados e outras soluções, se necessário.
+
+> [!NOTE]
+> A conversão de link não tem suporte para URLs internas embutidas em código geradas por meio de JavaScript.
 
 **Opção 1: Use o Managed browser ou o Microsoft** Edge – essa solução só será aplicável se você planeja recomendar ou exigir que os usuários acessem o aplicativo por meio do navegador Intune Managed browser ou Microsoft Edge. Ele manipulará todas as URLs publicadas. 
 
 **Opção 2: usar a extensão do MyApps**. Essa solução exige que os usuários instalem uma extensão de navegador no lado do cliente que manipula todas as URLs publicadas e funciona com os navegadores mais populares. 
 
-**Opção 3: usar a configuração de conversão de link**. Essa é uma configuração do lado do administrador que é invisível para os usuários. No entanto, ela apenas manipulará URLs em HTML e CSS. URLs internas inseridas no código geradas por meio de Javascript (por exemplo) não funcionarão.  
+**Opção 3: usar a configuração de conversão de link**. Essa é uma configuração do lado do administrador que é invisível para os usuários. No entanto, ela apenas manipulará URLs em HTML e CSS.   
 
 Esses três recursos mantêm seus vínculos de trabalho, independentemente de onde os usuários estão. Quando você tem aplicativos que apontam diretamente para portas ou pontos de extremidade internos, pode mapear essas URLs internas para as URLs de Proxy de Aplicativo externas publicadas. 
 

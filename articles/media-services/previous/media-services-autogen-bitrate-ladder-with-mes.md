@@ -1,5 +1,5 @@
 ---
-title: Usar o Codificador de Mídia do Azure Standard para gerar automaticamente uma escada de taxa de bits | Microsoft Docs
+title: Usar Media Encoder Standard para gerar automaticamente uma escada de taxa de bits-Azure | Microsoft Docs
 description: Este tópico mostra como usar o Media Encoder Standard (MES) para gerar automaticamente uma escada de taxa de bits com base na resolução de entrada e na taxa de bits. A resolução de entrada e a taxa de bits nunca serão excedidas. Por exemplo, se a entrada for 720p em 3Mbps, a saída continuará 720p na melhor das hipóteses e iniciará com taxas menores que 3Mbps.
 services: media-services
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
-ms.openlocfilehash: bbaf4d490fcebb4cd741a9b83ffc5d7e85699755
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 14575e0c95acf1345fc3358b323083d86d8eedee
+ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61224337"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69543543"
 ---
-#  <a name="use-azure-media-encoder-standard-to-auto-generate-a-bitrate-ladder"></a>Usar o Codificador de Mídia do Azure Standard para gerar automaticamente uma escada de taxa de bits  
+#  <a name="use-media-encoder-standard-to-auto-generate-a-bitrate-ladder"></a>Usar Media Encoder Standard para gerar automaticamente uma escada de taxa de bits  
 
 ## <a name="overview"></a>Visão geral
 
@@ -194,7 +194,7 @@ Fonte com altura "720" e taxa de quadros "23.970" produz cinco camadas de vídeo
 |4|270|480|600|
 |5|180|320|320|
 
-### <a name="example-3"></a>Exemplo 3
+### <a name="example-3"></a>Exemplo 3:
 Fonte com altura "360" e taxa de quadros "29.970" produz três camadas de vídeo:
 
 |Camada|Altura|Largura|Taxa de bits (Kbps)|
@@ -208,6 +208,6 @@ Fonte com altura "360" e taxa de quadros "29.970" produz três camadas de vídeo
 ## <a name="provide-feedback"></a>Fornecer comentários
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
-## <a name="see-also"></a>Veja também
+## <a name="see-also"></a>Consulte também
 [Visão geral da codificação de serviços de mídia](media-services-encode-asset.md)
 

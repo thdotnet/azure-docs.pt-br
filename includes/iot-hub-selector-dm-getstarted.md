@@ -4,12 +4,12 @@ ms.author: wesmc
 ms.service: iot-hub
 ms.topic: include
 ms.date: 10/26/2018
-ms.openlocfilehash: 60c0c700dde5afda2ca93a92b334cbc4f0134043
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.openlocfilehash: 239ea2eb4d5bc8d326d5ca503a18b149252dc1be
+ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68667975"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69558788"
 ---
 > [!div class="op_single_selector"]
 > * [Node.js](../articles/iot-hub/iot-hub-node-node-device-management-get-started.md)
@@ -24,7 +24,9 @@ Os aplicativos de back-end podem usar primitivos do Hub IoT do Azure, como [disp
 Use um método direto para iniciar as ações de gerenciamento do dispositivo (como a reinicialização, redefinição de fábrica e atualização do firmware) a partir de um aplicativo de back-end na nuvem. O dispositivo é responsável por:
 
 * Lidar com a solicitação do método enviada a partir do Hub IoT.
+
 * Iniciar a ação específica do dispositivo correspondente no dispositivo.
+
 * Fornecimento de atualizações de status por meio das *propriedades relatadas* para o Hub IoT.
 
 Você pode usar um aplicativo de back-end na nuvem para executar consultas do dispositivo gêmeo para relatar o progresso de suas ações de gerenciamento do dispositivo.

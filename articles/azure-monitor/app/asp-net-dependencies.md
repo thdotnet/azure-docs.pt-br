@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 06/25/2019
 ms.author: mbullwin
-ms.openlocfilehash: c2f115564c81f38dd437f1d3ff1e33d7d162a42f
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: 858508e949f8a880498e1a3d983dc76224010c31
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68326441"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534610"
 ---
 # <a name="dependency-tracking-in-azure-application-insights"></a>Rastreamento de dependência no insights Aplicativo Azure 
 
@@ -90,7 +90,7 @@ Se você quiser desativar o módulo de rastreamento de dependência padrão, rem
 
 ## <a name="tracking-ajax-calls-from-web-pages"></a>Controlando chamadas AJAX de páginas da Web
 
-Para páginas da Web, Application Insights SDK do JavaScript coleta automaticamente chamadas AJAX como dependências, conforme descrito [aqui](javascript.md#ajax-performance). Este documento se concentra em dependências de componentes de servidor.
+Para páginas da Web, Application Insights SDK do JavaScript coleta automaticamente chamadas AJAX como dependências.
 
 ## <a name="advanced-sql-tracking-to-get-full-sql-query"></a>Acompanhamento de SQL avançado para obter a consulta SQL completa
 
@@ -113,7 +113,7 @@ Nos casos acima, a maneira correta de validar esse mecanismo de instrumentação
 
 * O [Mapa do Aplicativo](app-map.md) visualiza as dependências entre seu aplicativo e os componentes de vizinhança.
 * O [diagnóstico de transação](transaction-diagnostics.md) mostra dados unificados e correlacionados do servidor.
-* [Guia navegadores](javascript.md#ajax-performance) mostra chamadas AJAX dos navegadores dos seus usuários.
+* [Guia navegadores](javascript.md) mostra chamadas AJAX dos navegadores dos seus usuários.
 * Clique pelas solicitações com falha ou lentas para verificar a dependência de chamadas.
 * O [Analytics](#logs-analytics) pode ser usado para consultar dados de dependência.
 
@@ -137,17 +137,17 @@ Clique no botão **amostras** azuis na parte inferior direita e, em seguida, em 
 
 Não sabe para onde o tempo vai? O [criador de perfil Application insights](../../azure-monitor/app/profiler.md) RASTREIA chamadas http para seu site ativo e mostra as funções em seu código que levaram a hora mais longa.
 
-## <a name="failed-requests"></a>Solicitações falhas
+## <a name="failed-requests"></a>Solicitações com falha
 
 As solicitações com falha também podem ser associadas a chamadas com falha para as dependências.
 
-Podemos ir até a guia **falhas** à esquerda e, em seguida, clicar na  guia dependências na parte superior.
+Podemos ir até a guia **falhas** à esquerda e, em seguida, clicar na guia dependências na parte superior.
 
 ![Clique no gráfico de solicitações com falha](./media/asp-net-dependencies/4-fail.png)
 
 Aqui você poderá ver a contagem de dependências com falha. Para obter mais detalhes sobre uma ocorrência com falha ao tentar clicar em um nome de dependência na tabela inferior. Você pode clicar no botão de **dependências** azuis na parte inferior direita para obter os detalhes da transação de ponta a ponta.
 
-## <a name="logs-analytics"></a>Logs (análise)
+## <a name="logs-analytics"></a>Logs (Análise)
 
 Você pode rastrear dependências na [linguagem de consulta Kusto](/azure/kusto/query/). Veja alguns exemplos.
 

@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2018
-ms.author: rkarlin
-ms.openlocfilehash: ebd9939128d1f2b870541e82710792d13b69728e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: v-mohabe
+ms.openlocfilehash: 7f9c5b702c0da8de4476508114be911a9d74f78a
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62095432"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69531456"
 ---
 # <a name="apply-system-updates-in-azure-security-center"></a>Aplicar atualizações do sistema na Central de Segurança do Azure
 A Central de Segurança do Azure monitora diariamente VMs (máquinas virtuais) e computadores Windows e Linux para saber se faltam atualizações do sistema operacional. A Central de Segurança recupera uma lista de atualizações críticas e de segurança disponíveis no Windows Update ou no WSUS (Windows Server Update Services), dependendo de qual serviço está configurado em um computador Windows. A Central de Segurança também verifica as atualizações mais recentes em sistemas Linux. Se faltar uma atualização do sistema em sua VM ou seu computador, a Central de Segurança recomendará que você aplique as atualizações do sistema.
@@ -63,23 +63,13 @@ Neste exemplo, usaremos **Computação**.
 
    ![Atualização de segurança ausente][3]
 
-4. Selecione o ícone **Pesquisar** na faixa de opções superior.  Uma consulta de pesquisa de logs do Azure Monitor é aberta, filtrada para os computadores sem a atualização.
+4. Selecione o ícone **Pesquisar** na faixa de opções superior.  Uma consulta de pesquisa de logs de Azure Monitor é aberta e filtrada para os computadores que não têm a atualização.
 
-   ![Pesquisa de logs do Azure Monitor][4]
+   ![Pesquisa de logs de Azure Monitor][4]
 
 5. Selecione um computador da lista para obter mais informações. Outro resultado da pesquisa é aberto com informações filtradas para esse computador.
 
-    ![Pesquisa de logs do Azure Monitor][5]
-
-## <a name="reboot-after-system-updates"></a>Reinicializar após as atualizações do sistema
-1. Volte para a folha **Recomendações** . Uma nova entrada foi gerada depois que você aplicou atualizações do sistema, chamada **Reinicializar após as atualizações do sistema**. Essa entrada permite que você saiba que é necessário reinicializar a máquina virtual para concluir o processo de aplicação de atualizações de sistema.
-
-   ![Reinicializar após as atualizações do sistema][6]
-2. Selecione **Reinicializar após as atualizações do sistema**. Isso abre a folha **Uma reinicialização está pendente para concluir as atualizações do sistema** exibindo uma lista de máquinas virtuais que você precisa reiniciar para concluir o processo de aplicar atualizações d sistema.
-
-   ![Reinicialização pendente][7]
-
-Reinicie a VM do Azure para concluir o processo.
+    ![Pesquisa de logs de Azure Monitor][5]
 
 ## <a name="next-steps"></a>Próximas etapas
 Para saber mais sobre a Central de Segurança, confira o seguinte:
@@ -98,5 +88,3 @@ Para saber mais sobre a Central de Segurança, confira o seguinte:
 [3]: ./media/security-center-apply-system-updates/detail-on-missing-update.png
 [4]: ./media/security-center-apply-system-updates/log-search.png
 [5]: ./media/security-center-apply-system-updates/search-details.png
-[6]: ./media/security-center-apply-system-updates/reboot-after-system-updates.png
-[7]: ./media/security-center-apply-system-updates/restart-pending.png

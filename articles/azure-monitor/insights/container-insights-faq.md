@@ -8,14 +8,14 @@ editor: tysonn
 ms.service: azure-monitor
 ms.topic: article
 ms.workload: infrastructure-services
-ms.date: 08/02/2019
+ms.date: 08/14/2019
 ms.author: magoedte
-ms.openlocfilehash: 3644b40311c037df800eb89ca26d1285fbf1e082
-ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
+ms.openlocfilehash: f8d763f8bb228a0d4d83a3776f818d59939b942d
+ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68741516"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69559069"
 ---
 # <a name="azure-monitor-for-containers-frequently-asked-questions"></a>Perguntas frequentes sobre o Azure Monitor para contêineres
 
@@ -33,7 +33,7 @@ Se não for possível ver dados no espaço de trabalho Log Analytics em um deter
 
 A tabela ContainerInventory contém informações sobre contêineres parados e em execução. A tabela é preenchida por um fluxo de trabalho dentro do agente que consulta o docker por todos os contêineres (em execução e parados) e encaminha esses dados ao espaço de trabalho do Log Analytics.
  
-## <a name="how-do-i-resolve-missing-subscription-registration-error"></a>Como fazer resolver erro de **registro de assinatura ausente** ?
+## <a name="how-do-i-resolve-missing-subscription-registration-error"></a>Como fazer resolver erro de *registro de assinatura ausente* ?
 
 Se você receber o erro **registro de assinatura ausente para Microsoft. OperationsManagement**, você poderá resolvê-lo registrando o provedor de recursos **Microsoft. OperationsManagement** na assinatura em que o espaço de trabalho está definido. A documentação para saber como fazer isso pode ser encontrada [aqui](../../azure-resource-manager/resource-manager-register-provider-errors.md).
 
@@ -71,7 +71,7 @@ LogEntry : ({“Hello": "This example has multiple lines:","Docker/Moby": "will 
 
 ```
 
-Para detalhes sobre esse problema, examine o seguinte [link do github](https://github.com/moby/moby/issues/22920).
+Para obter uma visão detalhada do problema, examine o [link do GitHub](https://github.com/moby/moby/issues/22920)a seguir.
 
 ## <a name="how-do-i-resolve-azure-ad-errors-when-i-enable-live-logs"></a>Como fazer resolver erros do Azure AD quando habilito logs dinâmicos? 
 
@@ -86,6 +86,9 @@ Se, depois de habilitar Azure Monitor para contêineres para um cluster AKS, voc
 - *. oms.opinsights.azure.com 443
 - *.blob.core.windows.net      443
 - dc.services.visualstudio.com 443
+- *. microsoftonline.com 443
+- *. monitoring.azure.com 443
+- login.microsoftonline.com 443
 
 ## <a name="next-steps"></a>Próximas etapas
 

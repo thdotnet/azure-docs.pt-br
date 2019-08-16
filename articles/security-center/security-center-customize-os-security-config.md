@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 3/20/2019
-ms.author: rkarlin
-ms.openlocfilehash: 8216aee1c27fd5bcb722648aa6380044e1431452
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
+ms.date: 08/15/2019
+ms.author: v-mohabe
+ms.openlocfilehash: df4f51f97798048b28c0193dbc61e07fc55c9adc
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68662486"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69535065"
 ---
 # <a name="customize-os-security-configurations-in-azure-security-center-retired"></a>Personalizar as configurações de segurança do sistema operacional na central de segurança do Azure (desativado)
 
@@ -317,4 +317,4 @@ Este artigo explicou como personalizar as avaliações de configuração de segu
 
 - [Regras de linhas de base e identificadores de configuração comum da Central de Segurança](https://gallery.technet.microsoft.com/Azure-Security-Center-a789e335).
 - A Central de Segurança usa a CCE (Common Configuration Enumeration) para atribuir identificadores exclusivos a regras de configuração. Para obter mais informações, consulte [CCE](https://nvd.nist.gov/config/cce/index).
-- Para resolver vulnerabilidades quando a configuração do sistema operacional não corresponde às regras de configuração de segurança recomendadas, consulte [Corrigir configurações de segurança](security-center-remediate-os-vulnerabilities.md).
+- Para resolver vulnerabilidades quando a configuração do sistema operacional não corresponde às regras de configuração de segurança recomendadas, consulte [Corrigir configurações de segurança](security-center-virtual-machine-protection.md).

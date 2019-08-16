@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 3/29/2019
 ms.author: sutalasi
-ms.openlocfilehash: 844563e03529e472624b35d2b545c3e432e4ea17
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: c642640d590e1f568fb6f6c5072decd75575ab2d
+ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876292"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69543644"
 ---
 # <a name="about-networking-in-azure-to-azure-replication"></a>Informações sobre rede para replicação do Azure para o Azure
 
@@ -71,16 +71,16 @@ Os intervalos de endereços IP do Site Recovery são como os demonstrados a segu
    **Destino** | **IP do Site Recovery** |  **Monitoramento de Recuperação de site IP**
    --- | --- | ---
    Ásia Oriental | 52.175.17.132 | 13.94.47.61
-   Sudeste Asiático | 52.187.58.193 | 13.76.179.223
+   Sudeste da Ásia | 52.187.58.193 | 13.76.179.223
    Índia Central | 52.172.187.37 | 104.211.98.185
    Sul da Índia | 52.172.46.220 | 104.211.224.190
    Centro-Norte dos EUA | 23.96.195.247 | 168.62.249.226
-   Norte da Europa | 40.69.212.238 | 52.169.18.8
+   Europa Setentrional | 40.69.212.238 | 52.169.18.8
    Europa Ocidental | 52.166.13.64 | 40.68.93.145
    East US | 13.82.88.226 | 104.45.147.24
    Oeste dos EUA | 40.83.179.48 | 104.40.26.199
-   Centro-Sul dos Estados Unidos | 13.84.148.14 | 104.210.146.250
-   Centro dos EUA | 40.69.144.231 | 52.165.34.144
+   Centro-Sul dos EUA | 13.84.148.14 | 104.210.146.250
+   EUA Central | 40.69.144.231 | 52.165.34.144
    Leste dos EUA 2 | 52.184.158.163 | 40.79.44.59
    Leste do Japão | 52.185.150.140 | 138.91.1.105
    Oeste do Japão | 52.175.146.69 | 138.91.17.38
@@ -89,7 +89,7 @@ Os intervalos de endereços IP do Site Recovery são como os demonstrados a segu
    Sudeste da Austrália | 13.70.159.158 | 191.239.160.45
    Canadá Central | 52.228.36.192 | 40.85.226.62
    Leste do Canadá | 52.229.125.98 | 40.86.225.142
-   Centro-Oeste dos EUA | 52.161.20.168 | 13.78.149.209
+   Centro-oeste dos EUA | 52.161.20.168 | 13.78.149.209
    Oeste dos EUA 2 | 52.183.45.166 | 13.66.228.204
    Oeste do Reino Unido | 51.141.3.203 | 51.141.14.113
    Sul do Reino Unido | 51.140.43.158 | 51.140.189.52
@@ -97,18 +97,23 @@ Os intervalos de endereços IP do Site Recovery são como os demonstrados a segu
    Norte do Reino Unido | 51.142.209.167 | 13.87.102.68
    Coreia Central | 52.231.28.253 | 52.231.32.85
    Sul da Coreia | 52.231.198.185 | 52.231.200.144
-   França Central | 52.143.138.106 | 52.143.136.55
+   Centro da França | 52.143.138.106 | 52.143.136.55
    Sul da França | 52.136.139.227 |52.136.136.62
    Austrália central| 20.36.34.70 | 20.36.46.142
    Austrália Central 2| 20.36.69.62 | 20.36.74.130
-   Sul da África do Sul | 102.133.72.51 | 102.133.26.128
+   Oeste da África do Sul | 102.133.72.51 | 102.133.26.128
    Norte da África do Sul | 102.133.160.44 | 102.133.154.128
-   Gov. dos EUA – Virgínia | 52.227.178.114 | 23.97.0.197
+   US Gov - Virgínia | 52.227.178.114 | 23.97.0.197
    US Gov Iowa | 13.72.184.23 | 23.97.16.186
-   Governo dos EUA do Arizona | 52.244.205.45 | 52.244.48.85
-   Governo dos EUA do Texas | 52.238.119.218 | 52.238.116.60
-   DoD do Leste dos EUA | 52.181.164.103 | 52.181.162.129
-   DoD Central dos EUA | 52.182.95.237 | 52.182.90.133
+   US Gov – Arizona | 52.244.205.45 | 52.244.48.85
+   US Gov – Texas | 52.238.119.218 | 52.238.116.60
+   US DoD — Leste | 52.181.164.103 | 52.181.162.129
+   US DoD — Região Central | 52.182.95.237 | 52.182.90.133
+   Norte da China | 40.125.202.254 | 42.159.4.151
+   Norte da China 2 | 40.73.35.193 | 40.73.33.230
+   Leste da China | 42.159.205.45 | 42.159.132.40
+   Leste da China 2 | 40.73.118.52| 40.73.100.125
+  
 ## <a name="example-nsg-configuration"></a>Exemplo de Configuração do NSG
 
 Este exemplo mostra como configurar regras de NSG para uma VM a ser replicada.
@@ -130,7 +135,7 @@ Este exemplo mostra como configurar regras de NSG para uma VM a ser replicada.
 
    **Localidade** | **Endereço IP do Site Recovery** |  **Endereço IP de monitoramento do Site Recovery**
     --- | --- | ---
-   Centro dos EUA | 40.69.144.231 | 52.165.34.144
+   EUA Central | 40.69.144.231 | 52.165.34.144
 
 ### <a name="nsg-rules---central-us"></a>Regras de NSG – EUA Central
 
@@ -144,7 +149,7 @@ Essas regras são necessárias para que a replicação possa ser ativada da regi
 
    **Localidade** | **Endereço IP do Site Recovery** |  **Endereço IP de monitoramento do Site Recovery**
     --- | --- | ---
-   Centro dos EUA | 13.82.88.226 | 104.45.147.24
+   EUA Central | 13.82.88.226 | 104.45.147.24
 
 ## <a name="network-virtual-appliance-configuration"></a>Configuração da solução de virtualização de rede
 

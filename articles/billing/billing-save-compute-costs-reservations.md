@@ -7,12 +7,12 @@ ms.service: billing
 ms.topic: conceptual
 ms.date: 08/06/2019
 ms.author: banders
-ms.openlocfilehash: 2e595fbee90b710ec6b8090a770d93e688a04818
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 2122b6bd5fbd6b15bd5a2e411898d957708bf4c9
+ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68839985"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69558874"
 ---
 # <a name="what-are-azure-reservations"></a>O que são Reservas do Azure?
 
@@ -36,7 +36,7 @@ Para as máquinas virtuais do Windows e banco de Dados SQL, você pode cobrir os
 
 ## <a name="whos-eligible-to-purchase-a-reservation"></a>Quem é elegível para comprar uma reserva?
 
-Para comprar um plano, você deve ter uma função de proprietário de assinatura em uma assinatura Enterprise (MS-AZR-0017P ou MS-AZR-0148P) ou de pagamento conforme o uso (MS-AZR-003P ou MS-AZR-0023P). Os provedores de soluções de nuvem podem usar o portal do Azure ou o [Partner Center](/partner-center/azure-reservations) para comprar reservas do Azure.
+Para comprar um plano, você deve ter uma função de proprietário de assinatura em uma assinatura Enterprise (MS-AZR-0017P ou MS-AZR-0148P) ou de pagamento conforme o uso (MS-AZR-0003P ou MS-AZR-0023P). Os provedores de soluções de nuvem podem usar o portal do Azure ou o [Partner Center](/partner-center/azure-reservations) para comprar reservas do Azure.
 
 Os clientes Enterprise Agreement (EA) podem limitar as compras a administradores de EA desabilitando a opção **adicionar instâncias reservadas** no portal de ea. Os administradores de EA devem ser um proprietário de assinatura para pelo menos uma assinatura de EA para comprar uma reserva. A opção é útil para empresas que desejam que uma equipe centralizada compre reservas para diferentes centros de custo. Após a compra, as equipes centralizadas podem adicionar proprietários de centro de custo às reservas. Os proprietários podem então fazer o escopo da reserva para suas assinaturas. A equipe central não precisa ter acesso de proprietário de assinatura onde a reserva é comprada.
 

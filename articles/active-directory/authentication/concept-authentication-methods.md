@@ -1,6 +1,6 @@
 ---
-title: Métodos de autenticação - Azure Active Directory
-description: Métodos de autenticação disponíveis no Azure AD para MFA e o SSPR
+title: Métodos de autenticação-Azure Active Directory
+description: Métodos de autenticação disponíveis no Azure AD para MFA e SSPR
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
@@ -11,31 +11,31 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry, michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1322c919906dc2d0dd23de538fa2c1992fbe5da0
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 22c25c0a2b2f48baa3b57a8ad39ed4514c884826
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67164837"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69533146"
 ---
 # <a name="what-are-authentication-methods"></a>Quais são os métodos de autenticação?
 
-Como administrador, escolher métodos de autenticação para redefinição de senha de autoatendimento (SSPR) é recomendável que você exija que os usuários registrem os vários métodos de autenticação e de autenticação multifator do Azure. Quando um método de autenticação não está disponível para um usuário, eles podem optar por autenticar com outro método.
+Como administrador, escolhendo métodos de autenticação para a autenticação multifator do Azure e redefinição de senha de autoatendimento (SSPR) é recomendável que você exija que os usuários registrem vários métodos de autenticação. Quando um método de autenticação não está disponível para um usuário, ele pode optar por autenticar com outro método.
 
-Os administradores podem definir na política quais métodos de autenticação estão disponíveis para usuários do SSPR e do MFA. Alguns métodos de autenticação podem não estar disponíveis para todos os recursos. Para obter mais informações sobre como configurar suas políticas consulte os artigos [como distribuir com sucesso a redefinição de senha de autoatendimento](howto-sspr-deployment.md) e [planejamento baseados em nuvem do Azure a autenticação multifator](howto-mfa-getstarted.md)
+Os administradores podem definir na política quais métodos de autenticação estão disponíveis para usuários do SSPR e do MFA. Alguns métodos de autenticação podem não estar disponíveis para todos os recursos. Para obter mais informações sobre como configurar suas políticas, consulte os artigos [como distribuir com êxito](howto-sspr-deployment.md) a redefinição de senha de autoatendimento e [planejar uma autenticação multifator do Azure baseada em nuvem](howto-mfa-getstarted.md)
 
 A Microsoft recomenda que os administradores habilitem os usuários a selecionar mais do que o número mínimo necessário de métodos de autenticação, caso eles não tenham acesso a um.
 
-|Método de autenticação|Uso|
+|Método de Autenticação|Uso|
 | --- | --- |
 | Senha | MFA e o SSPR |
 | Perguntas de segurança | Somente o SSPR |
 | Endereço de email | Somente o SSPR |
 | Aplicativo Microsoft Authenticator | MFA e versão prévia pública para SSPR |
 | Token OATH de hardware | Versão prévia pública para MFA e SSPR |
-| sms | MFA e o SSPR |
+| SMS | MFA e o SSPR |
 | Chamada de voz | MFA e o SSPR |
-| Senhas de aplicativo | MFA somente em determinados casos |
+| Senhas do aplicativo | MFA somente em determinados casos |
 
 ![Métodos de autenticação em uso na tela de login](media/concept-authentication-methods/overview-login.png)
 
@@ -60,15 +60,15 @@ Se você usar perguntas de segurança, é recomendável usá-las em conjunto com
 
 ### <a name="predefined-questions"></a>Perguntas predefinidas
 
-* Em qual cidade você conheceu seu primeiro cônjuge/parceiro?
+* Em que cidade você conheceu seu primeiro cônjuge?
 * Em qual cidade seus pais se conheceram?
 * Em qual cidade seu irmão mais próximo mora?
 * Em qual cidade seu pai nasceu?
 * Em qual cidade você teve seu primeiro emprego?
 * Em qual cidade sua mãe nasceu?
-* Em qual cidade você estava no ano de 2000?
-* Qual era o sobrenome de seu professor favorito no ensino médio?
-* Qual é o nome de uma faculdade que você tentou entrar, mas que não frequentou?
+* Em qual cidade você estava no Ano Novo de 2000?
+* Qual o sobrenome de seu professor favorito no ensino médio?
+* Diga o nome de uma faculdade à qual você se candidatou, mas que não frequentou?
 * Qual é o nome do lugar em que você realizou sua primeira festa de casamento?
 * Qual é o segundo nome de seu pai?
 * Qual é sua comida favorita?
@@ -94,7 +94,7 @@ Se você usar perguntas de segurança, é recomendável usá-las em conjunto com
 * Qual foi seu primeiro emprego?
 * Quais eram os últimos quatro dígitos de seu primeiro número de telefone?
 * Quando criança, o que você queria ser quando crescesse?
-* Quem é a pessoa mais famosa que você já conheceu?
+* Qual a pessoa mais famosa que você já conheceu?
 
 Todas as questões de segurança predefinidas são traduzidas e localizadas no conjunto completo de idiomas do Office 365 com base na localidade do navegador do usuário.
 
@@ -142,9 +142,9 @@ O aplicativo Microsoft Authenticator pode ajudar a impedir o acesso não autoriz
 Se você ativar o uso da notificação por meio do aplicativo móvel e do código de verificação do aplicativo para dispositivos móveis, os usuários que registrarem o aplicativo Microsoft Authenticator usando uma notificação poderão usar a notificação e o código para confirmar sua identidade.
 
 > [!NOTE]
-> Se sua organização tiver funcionários trabalhando em ou em trânsito para a China, os **notificação pelo aplicativo móvel** método **dispositivos Android** não funciona nesse país. Métodos alternativos devem ser disponibilizados para os usuários.
+> Se sua organização tiver funcionários trabalhando ou viajando para a China, a **notificação por meio** do método de aplicativo móvel em **dispositivos Android** não funcionará nesse país. Os métodos alternativos devem ser disponibilizados para esses usuários.
 
-### <a name="verification-code-from-mobile-app"></a>Código de verificação de aplicativo móvel
+### <a name="verification-code-from-mobile-app"></a>Código de verificação do aplicativo móvel
 
 O aplicativo Microsoft Authenticator ou outros aplicativos de terceiros podem ser usados como um token de software para gerar um código de verificação OATH. Depois de inserir seu nome de usuário e senha, insira o código fornecido pelo aplicativo na tela de login. O código de verificação oferece uma segunda forma de autenticação.
 
@@ -152,13 +152,13 @@ O aplicativo Microsoft Authenticator ou outros aplicativos de terceiros podem se
 > Para redefinição de senha de autoatendimento quando apenas um método é necessário para redefinir, o código de verificação é a única opção disponível para os usuários **garantirem o mais alto nível de segurança**.
 >
 
-Os usuários podem ter uma combinação de até cinco tokens OATH de hardware ou aplicativos de autenticador, como o aplicativo Microsoft Authenticator configurado para uso a qualquer momento.
+Os usuários podem ter uma combinação de até cinco tokens de hardware OATH ou aplicativos autenticadores, como o Microsoft Authenticator aplicativo configurado para uso a qualquer momento.
 
 ## <a name="oath-hardware-tokens-public-preview"></a>Tokens OATH de hardware (versão prévia pública)
 
-O OATH é um padrão livre que especifica os códigos de OTP (senha única) são gerados. O Azure AD será compatível com o uso de tokens OATH-TOTP SHA-1 das variedades de 30 segundos ou 60 segundos. Os clientes podem adquirir esses tokens do fornecedor de sua escolha. Chaves secretas são limitadas a 128 caracteres, que podem não ser compatíveis com todos os tokens.
+O OATH é um padrão livre que especifica os códigos de OTP (senha única) são gerados. O Azure AD será compatível com o uso de tokens OATH-TOTP SHA-1 das variedades de 30 segundos ou 60 segundos. Os clientes podem adquirir esses tokens do fornecedor de sua escolha. As chaves secretas são limitadas a 128 caracteres, que podem não ser compatíveis com todos os tokens. As chaves secretas precisam ser codificadas em Base32.
 
-![Carregando tokens OATH até a folha de tokens OATH do servidor de MFA](media/concept-authentication-methods/oath-tokens-azure-ad.png)
+![Carregando tokens OATH para a folha de tokens OATH do servidor MFA](media/concept-authentication-methods/oath-tokens-azure-ad.png)
 
 Os tokens OATH de hardware agora são compatíveis como parte de uma versão prévia pública. Para obter mais informações sobre versões prévias, consulte os [Termos de Uso Complementares para Visualizações do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
 
@@ -178,7 +178,7 @@ Dependendo do tamanho do arquivo CSV, ele poderá levar alguns minutos para ser 
 
 Depois que os erros forem resolvidos, o administrador poderá ativar cada chave clicando em **Ativar** para o token a ser ativado e inserindo a OTP exibido no token.
 
-Os usuários podem ter uma combinação de até cinco tokens OATH de hardware ou aplicativos de autenticador, como o aplicativo Microsoft Authenticator configurado para uso a qualquer momento.
+Os usuários podem ter uma combinação de até cinco tokens de hardware OATH ou aplicativos autenticadores, como o Microsoft Authenticator aplicativo configurado para uso a qualquer momento.
 
 ## <a name="phone-options"></a>Opções de telefone
 
@@ -195,16 +195,16 @@ Para funcionarem adequadamente, os números de telefone devem estar no formato *
 >
 > A redefinição de senha não dá suporte a ramais telefônicos. Mesmo no formato +1 4255551234X12345, as extensões são removidas antes que a chamada seja completada.
 
-#### <a name="text-message"></a>mensagem de texto
+#### <a name="text-message"></a>Mensagem de texto
 
 Um SMS é enviado para o número do celular que contém um código de verificação. Digite o código de verificação fornecido na interface de login para continuar.
 
-#### <a name="phone-call"></a>chamada telefônica
+#### <a name="phone-call"></a>Telefonema
 
 Uma chamada de voz automatizada é feita para o número de telefone que você fornece. Atenda a chamada e pressione # no teclado do telefone para autenticar
 
 > [!IMPORTANT]
-> A partir de março de 2019 as opções de chamada telefônica não estará disponível para os usuários do MFA e o SSPR em locatários gratuitos/avaliação do Azure AD. Mensagens SMS não são afetadas por essa alteração. Chamada telefônica continuará disponível para os usuários no pago locatários do Azure AD. Essa alteração só afeta o locatários gratuitos/avaliação do Azure AD.
+> A partir de março de 2019, as opções de chamada telefônica não estarão disponíveis para os usuários de MFA e SSPR em locatários gratuitos/de avaliação do Azure AD. As mensagens SMS não são afetadas por essa alteração. A chamada telefônica continuará disponível para os usuários em locatários pagos do Azure AD. Essa alteração afeta apenas os locatários gratuitos/de avaliação do Azure AD.
 
 ### <a name="office-phone"></a>Telefone comercial
 
@@ -215,33 +215,33 @@ Para funcionarem adequadamente, os números de telefone devem estar no formato *
 O atributo de telefone do escritório é gerenciado pelo seu administrador.
 
 > [!IMPORTANT]
-> A partir de março de 2019 as opções de chamada telefônica não estará disponível para os usuários do MFA e o SSPR em locatários gratuitos/avaliação do Azure AD. Mensagens SMS não são afetadas por essa alteração. Chamada telefônica continuará disponível para os usuários no pago locatários do Azure AD. Essa alteração só afeta o locatários gratuitos/avaliação do Azure AD.
+> A partir de março de 2019, as opções de chamada telefônica não estarão disponíveis para os usuários de MFA e SSPR em locatários gratuitos/de avaliação do Azure AD. As mensagens SMS não são afetadas por essa alteração. A chamada telefônica continuará disponível para os usuários em locatários pagos do Azure AD. Essa alteração afeta apenas os locatários gratuitos/de avaliação do Azure AD.
 
 > [!NOTE]
 > Precisa haver um espaço entre o código do país e o número de telefone.
 >
 > A redefinição de senha não dá suporte a ramais telefônicos. Mesmo no formato +1 4255551234X12345, as extensões são removidas antes que a chamada seja completada.
 
-### <a name="troubleshooting-phone-options"></a>Opções de telefone de solução de problemas
+### <a name="troubleshooting-phone-options"></a>Solucionando problemas de opções de telefone
 
-Problemas comuns relacionados aos métodos de autenticação usando um número de telefone:
+Problemas comuns relacionados a métodos de autenticação usando um número de telefone:
 
-* ID do chamador bloqueados em um único dispositivo
+* ID de chamador bloqueada em um único dispositivo
    * Solucionar problemas de dispositivo
-* Número de telefone incorreto, o código do país incorreto, o número de telefone residencial versus o número de telefone de trabalho
-   * Solucionar problemas de objeto de usuário e configurado os métodos de autenticação. Certifique-se de que os números de telefone correto são registrados.
-* PIN incorreto inserido
-   * Confirme se o usuário usou o PIN correto registrado no servidor de MFA do Azure.
+* Número de telefone errado, código de país incorreto, número de telefone residencial versus número de telefone comercial
+   * Solucionar problemas de objeto de usuário e métodos de autenticação configurados. Verifique se os números de telefone corretos estão registrados.
+* PIN inserido incorreto
+   * Confirmar que o usuário usou o PIN correto registrado no servidor Azure MFA.
 * Chamada encaminhada para a caixa postal
-   * Verifique se o usuário tem o telefone ativado e que o serviço está disponível em sua área ou usar método alternativo.
+   * Verifique se o usuário tem o telefone ativado e se o serviço está disponível em sua área ou use um método alternativo.
 * Usuário está bloqueado
-   * Ter o administrador de desbloquear o usuário no portal do Azure.
-* SMS não está inscrito no dispositivo
-   * Solicite ao usuário alterar os métodos ou ativar SMS no dispositivo.
-* Provedores de telecomunicações com defeito (nenhuma entrada de telefone detectados, problemas de tons DTMF, ID de chamadas bloqueadas em vários dispositivos, ou bloqueado SMS em vários dispositivos)
-   * A Microsoft usa vários provedores de telecomunicações para rotear chamadas telefônicas e mensagens SMS para autenticação. Se você estiver vendo a qualquer um dos problemas acima têm uma usuário tentar usar o método de pelo menos 5 vezes dentro de 5 minutos e ter informações do usuário disponíveis ao contatar o suporte da Microsoft.
+   * Fazer com que o administrador desbloqueie o usuário na portal do Azure.
+* O SMS não está inscrito no dispositivo
+   * Faça com que o usuário altere os métodos ou ative o SMS no dispositivo.
+* Provedores de telecomunicações com falha (nenhuma entrada de telefone detectada, problemas de tons DTMF ausentes, ID de chamador bloqueada em vários dispositivos ou SMS bloqueado em vários dispositivos)
+   * A Microsoft usa vários provedores de telecomunicações para rotear chamadas telefônicas e mensagens SMS para autenticação. Se você estiver vendo qualquer um dos problemas acima, faça com que o usuário tente usar o método pelo menos 5 vezes em 5 minutos e tenha as informações do usuário disponíveis ao entrar em contato com o suporte da Microsoft.
 
-## <a name="app-passwords"></a>Senhas de aplicativo
+## <a name="app-passwords"></a>Senhas de Aplicativo
 
 Alguns aplicativos que não são de navegador não oferecem suporte à autenticação de vários fatores. Se um usuário tiver sido habilitado para autenticação de vários fatores e tentar usar aplicativos sem navegador, eles não poderão se autenticar. Uma senha de aplicativo permite que os usuários continuem a autenticar
 
@@ -261,6 +261,6 @@ Se sua organização for federada para o SSO com o Azure AD e você pretender us
 
 [Ativar a autenticação de vários fatores do Azure para sua organização](howto-mfa-getstarted.md)
 
-[Habilite o registro combinado no seu locatário](howto-registration-mfa-sspr-combined.md)
+[Habilitar o registro combinado em seu locatário](howto-registration-mfa-sspr-combined.md)
 
 [Documentação de configuração do método de autenticação do usuário final](https://aka.ms/securityinfoguide)
