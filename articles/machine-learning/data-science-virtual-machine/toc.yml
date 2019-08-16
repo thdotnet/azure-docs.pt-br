@@ -2,6 +2,7 @@
   href: index.yml
   items: null
 - name: Visão geral
+  expanded: true
   items:
     - name: O que é a VM de Ciência de Dados?
       href: overview.md
@@ -12,15 +13,15 @@
 - name: Guia de início rápido
   expanded: true
   items:
-    - name: Criar uma VM de Ciência de Dados do Windows
+    - name: Criar uma DSVM do Windows
       href: provision-vm.md
-    - name: Criar uma VM de Ciência de Dados do Ubuntu
+    - name: Criar uma DSVM do Ubuntu
       href: dsvm-ubuntu-intro.md
-    - name: Criar uma VM de Ciência de Dados do CentOS
+    - name: Criar uma DSVM do CentOS
       href: linux-dsvm-intro.md
     - name: Criar uma VM de Aprendizado Profundo
       href: provision-deep-learning-dsvm.md
-    - name: Criar uma VM de Ciência de Dados de IA geográfica
+    - name: Criar uma DSVM de IA geográfica
       href: provision-geo-ai-dsvm.md
 - name: Conceitos
   items:
@@ -28,45 +29,43 @@
       href: dsvm-tools-overview.md
     - name: Estruturas de Aprendizado Profundo e de AI
       href: dsvm-deep-learning-ai-frameworks.md
-    - name: Ferramentas de ciência de dados e de aprendizado de máquina
-      href: dsvm-ml-data-science-tools.md
-    - name: Languages
+    - name: Linguagens de programação
       href: dsvm-languages.md
     - name: Ferramentas de desenvolvimento
       href: dsvm-tools-development.md
-    - name: Ferramentas de ingestão de dados
-      href: dsvm-tools-ingestion.md
-    - name: Ferramentas de visualização e exploração de dados
-      href: dsvm-tools-explore-and-visualize.md
+    - name: Ferramentas de ciência de dados e de aprendizado de máquina
+      href: dsvm-ml-data-science-tools.md
     - name: Plataformas de dados
       href: dsvm-data-platforms.md
-    - name: Exemplos e explicações passo a passo
-      href: dsvm-samples-and-walkthroughs.md
+    - name: Ferramentas de ingestão de dados
+      href: dsvm-tools-ingestion.md
+    - name: Ferramentas de exploração e visualização de dados
+      href: dsvm-tools-explore-and-visualize.md
+    - name: Segurança e diretrizes para empresas
+      href: dsvm-enterprise-overview.md
+- name: Exemplos
+  href: dsvm-samples-and-walkthroughs.md
 - name: Guias de instruções
   items:
-    - name: Usar uma VM de Ciência de Dados do Windows
+    - name: Usar uma DSVM do Windows
       href: vm-do-ten-things.md
-    - name: Usar uma VM de Ciência de Dados do Linux
+    - name: Usar uma DSVM do Linux
       href: linux-dsvm-walkthrough.md
     - name: Usar uma VM de Aprendizado Profundo
       href: use-deep-learning-dsvm.md
-    - name: Usar uma VM de Ciência de Dados de IA geográfica
+    - name: Usar uma DSVM de IA geográfica
       href: use-geo-ai-dsvm.md
-    - name: Orientação do Enterprise
-      items:
-        - name: Visão geral
-          href: dsvm-enterprise-overview.md
-        - name: Dimensionamento
-          href: dsvm-pools.md
-        - name: Integração do Active Directory
-          href: dsvm-common-identity.md
-        - name: Proteger credenciais de acesso de recursos
-          href: dsvm-secure-access-keys.md
+    - name: Criar um pool de DSVMs com dimensionamento automático
+      href: dsvm-pools.md
+    - name: Integre-se com o Active Directory
+      href: dsvm-common-identity.md
+    - name: Proteger credenciais de acesso de recursos
+      href: dsvm-secure-access-keys.md
 - name: Recursos
   items:
-    - name: Guia do desenvolvedor R
-      href: /azure/architecture/data-guide/technology-choices/r-developers-guide?context=azure/machine-learning/data-science-virtual-machine/context/ml-context
     - name: Fórum do MSDN
       href: 'https://social.microsoft.com/Forums/home?forum=dsvm'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/search?q=dsvm'
+    - name: Guia do desenvolvedor R
+      href: /azure/architecture/data-guide/technology-choices/r-developers-guide?context=azure/machine-learning/data-science-virtual-machine/context/ml-context

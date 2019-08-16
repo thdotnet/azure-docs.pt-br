@@ -79,10 +79,12 @@
           href: batch-pool-vm-sizes.md
         - name: Configurar o acesso a nós de computação
           href: pool-endpoint-configuration.md
-        - name: Criar um pool com uma imagem personalizada
+        - name: Criar um pool com a Galeria de Imagens Compartilhadas
           href: batch-custom-images.md
         - name: Criar um pool em uma rede virtual
           href: batch-virtual-network.md
+        - name: Montar um sistema de arquivos virtual
+          href: virtual-file-mount.md
         - name: Montar um compartilhamento de arquivos do Azure
           href: pool-file-shares.md
         - name: Usar instâncias de RDMA ou GPU

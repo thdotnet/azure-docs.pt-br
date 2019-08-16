@@ -120,12 +120,8 @@
         - name: Implantar – API REST
           displayName: 'deployment,rollback on error,redeploy'
           href: resource-group-template-deploy-rest.md
-        - name: Proteger modelos com o token SAS
-          items:
-            - name: Usar a CLI do Azure
-              href: resource-manager-cli-sas-token.md
-            - name: Usar PowerShell do Azure
-              href: resource-manager-powershell-sas-token.md
+        - name: Proteger o modelo com o token SAS
+          href: secure-template-with-sas-token.md
         - name: Implantar vários grupos de recursos ou assinaturas
           href: resource-manager-cross-resource-group-deployment.md
     - name: CI/CD

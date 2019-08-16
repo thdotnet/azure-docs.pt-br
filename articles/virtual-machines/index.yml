@@ -3,7 +3,7 @@ documentType: LandingData
 title: Documentação de Máquinas Virtuais
 metadata:
   document_id: na
-  title: 'Documentação das Máquinas Virtuais do Azure Linux - Tutoriais, Referência de API | Microsoft Docs'
+  title: 'Documentação das Máquinas Virtuais do Azure – Tutoriais, Referência de API | Microsoft Docs'
   meta.description: 'Learn how to create, deploy, and manage Windows or Linux virtual machines. Tutorials, API references, and other documentation.'
   services: virtual-machines
   author: georgewallace
