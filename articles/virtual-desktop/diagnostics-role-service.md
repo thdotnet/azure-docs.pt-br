@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: f5869cbb51cf1c968ee8ca1e2286416fd263d647
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: d6cde04d122d20c4aad5920c29995d9d33165163
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68224630"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69515528"
 ---
 # <a name="identify-issues-with-the-diagnostics-feature"></a>Identificar problemas com o recurso de diagnóstico
 
@@ -136,7 +136,7 @@ A tabela a seguir lista os erros comuns que seus administradores podem encontrar
 
 ### <a name="external-management-error-codes"></a>Códigos de erro de gerenciamento externo
 
-|Código numérico|Código do erro|Solução sugerida|
+|Código numérico|Código de erro|Solução sugerida|
 |---|---|---|
 |3|UnauthorizedAccess|O usuário que tentou executar o cmdlet administrador do PowerShell não tem permissões para fazer isso ou digitar seu nome de usuário indigitadamente.|
 |1000|TenantNotFound|O nome do locatário que você inseriu não corresponde a nenhum locatário existente. Examine o nome do locatário para erros de digitação e tente novamente.|
@@ -153,11 +153,11 @@ A tabela a seguir lista os erros comuns que seus administradores podem encontrar
 |8000|InvalidAuthorizationRoleScope|O nome da função que você inseriu não corresponde aos nomes de função existentes. Revise o nome da função para erros de digitação e tente novamente. |
 |8001|UserNotFound |O nome de usuário que você inseriu não corresponde aos nomes de usuário existentes. Revise o nome para erros de digitação e tente novamente.|
 |8005|UserNotFoundInAAD |O nome de usuário que você inseriu não corresponde aos nomes de usuário existentes. Revise o nome para erros de digitação e tente novamente.|
-|8008|TenantConsentRequired|Siga as instruções [aqui](tenant-setup-azure-active-directory.md#grant-azure-active-directory-permissions-to-the-windows-virtual-desktop-preview-service) para fornecer consentimento para seu locatário.|
+|8008|TenantConsentRequired|Siga as instruções [aqui](tenant-setup-azure-active-directory.md#grant-permissions-to-windows-virtual-desktop) para fornecer consentimento para seu locatário.|
 
 ### <a name="external-connection-error-codes"></a>Códigos de erro de conexão externa
 
-|Código numérico|Código do erro|Solução sugerida|
+|Código numérico|Código de erro|Solução sugerida|
 |---|---|---|
 |-2147467259|ConnectionFailedAdTrustedRelationshipFailure|O host da sessão não está ingressado corretamente no Active Directory.|
 |-2146233088|ConnectionFailedUserHasValidSessionButRdshIsUnhealthy|As conexões falharam porque o host da sessão não está disponível. Verifique a integridade do host da sessão.|

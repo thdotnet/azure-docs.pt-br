@@ -1,7 +1,7 @@
 ---
-title: Diagnóstico do Azure Standard Load Balancer
+title: Diagnóstico de Standard Load Balancer do Azure com métricas, alertas e integridade de recursos
 titlesuffix: Azure Load Balancer
-description: Use as métricas e informações de integridade disponíveis para diagnóstico para o Azure Load Balancer Standard.
+description: Use as informações disponíveis sobre métricas, alertas e recursos de integridade para diagnosticar sua Standard Load Balancer do Azure.
 services: load-balancer
 documentationcenter: na
 author: asudbring
@@ -11,21 +11,22 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/11/2019
+ms.date: 08/14/2019
 ms.author: allensu
-ms.openlocfilehash: e0329f5f975b67460796bf7dd9429752549a3483
-ms.sourcegitcommit: 9a699d7408023d3736961745c753ca3cec708f23
+ms.openlocfilehash: b241f753c0de6e14282c679c5aec3c32be68e348
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68274473"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69516263"
 ---
-# <a name="metrics-and-health-diagnostics-for-standard-load-balancer"></a>Diagnóstico de métricas e integridade para o Load Balancer Standard
+# <a name="standard-load-balancer-diagnostics-with-metrics-alerts-and-resource-health"></a>Diagnóstico de Standard Load Balancer com métricas, alertas e integridade de recursos
 
-O Balanceador de Carga Padrão do Azure expõe o Balanceador de Carga Padrão do Azure que fornece aos recursos os seguintes recursos de diagnóstico:
-* **Métricas multidimensionais**: Fornece novas funcionalidades de diagnóstico multidimensionais por meio do [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) para configurações de balanceadores de carga públicos e internos. É possível monitorar, gerenciar e resolver problemas dos seus recursos de balanceador de carga.
+O Standard Load Balancer do Azure expõe os seguintes recursos de diagnóstico:
 
-* **Resource Health**: A página do Load Balancer no portal do Azure e a página do Resource Health (em Monitor) expõem a seção Resource Health para a configuração do balanceador de carga público do Standard Load Balancer.
+* **Métricas e alertas**multidimensionais: Fornece novos recursos de diagnóstico multidimensionais por meio de [Azure monitor](https://docs.microsoft.com/azure/azure-monitor/overview) para configurações padrão do Load Balancer. Você pode monitorar, gerenciar e solucionar problemas de seus recursos padrão do Load Balancer.
+
+* **Integridade de recursos**: A página Load Balancer na portal do Azure e a página Resource Health (em monitor) expõem a seção Resource Health para Standard Load Balancer. 
 
 Este artigo fornece um tour rápido dessas funcionalidades e oferece maneiras de usá-las para o Load Balancer Standard.
 
@@ -35,7 +36,7 @@ O Azure Load Balancer fornece novas métricas multidimensionais por meio das nov
 
 As várias configurações do Load Balancer Standard oferecem as seguintes métricas:
 
-| Métrica | Tipo de recurso | DESCRIÇÃO | Agregação recomendada |
+| Métrica | Tipo de recurso | Descrição | Agregação recomendada |
 | --- | --- | --- | --- |
 | Disponibilidade do caminho de dados (disponibilidade VIP)| Balanceador de carga público e interno | O Load Balancer Standard usa continuamente o caminho de dados de dentro de uma região para o front-end do balanceador de carga e até a pilha do SDN compatível com a sua VM. Contanto que instâncias íntegras permaneçam, a medição seguirá o mesmo caminho que o tráfego com balanceamento de carga do seu aplicativo. O caminho de dados que seus clientes usam também é validado. A medição é invisível para seu aplicativo e não interfere com outras operações.| Average |
 | Status da investigação de integridade (disponibilidade DIP) | Balanceador de carga público e interno | O Load Balancer Standard usa um serviço de investigação de integridade distribuído que monitora a integridade do ponto de extremidade do aplicativo de acordo com as definições de configuração. Essa métrica fornece uma exibição agregada ou por ponto de extremidade filtrado de cada ponto de extremidade de instância no pool do balanceador de carga. É possível ver como o Load Balancer exibe a integridade de seu aplicativo conforme indicado pela configuração de sua investigação de integridade. |  Average |
@@ -172,9 +173,6 @@ O gráfico permite que os clientes resolvam problemas da implantação sozinhos 
 
 O status de integridade para os recursos do Load Balancer Standard é exposto por meio do **Recursos de integridade** existente em **Monitor > Integridade do Serviço**.
 
->[!NOTE]
->No momento, o status da integridade do recurso do Load Balancer está disponível apenas para configuração pública ou para o Load Balancer Standard. Os recursos de balanceador de carga internos ou os SKUs básicos de recursos do Load Balancer não expõem a integridade do recurso.
-
 Para exibir a integridade dos seus recursos do Load Balancer Standard:
 1. Selecione **Monitorar** > **Integridade do Serviço**.
 
@@ -184,7 +182,7 @@ Para exibir a integridade dos seus recursos do Load Balancer Standard:
 
 2. Selecione **Resource Health** e certifique-se de que a **ID da assinatura** e o **Tipo de recurso = Load Balancer** estão selecionados.
 
-   ![Status de integridade de recurso](./media/load-balancer-standard-diagnostics/LBHealth3.png)
+   ![Status de integridade do recurso](./media/load-balancer-standard-diagnostics/LBHealth3.png)
 
    *Figura: Selecionar recurso para exibição de integridade*
 
@@ -196,15 +194,11 @@ Para exibir a integridade dos seus recursos do Load Balancer Standard:
  
 Os vários status da integridade do recurso e suas descrições estão listadas na seguinte tabela: 
 
-| Status de integridade de recurso | DESCRIÇÃO |
+| Status de integridade do recurso | Descrição |
 | --- | --- |
-| Disponível | O recurso do balanceador de carga padrão público está íntegro e disponível. |
-| Indisponível | O recurso do balanceador de carga padrão público não está íntegro. Faça o diagnóstico da integridade selecionando **Azure Monitor** > **Métricas**.<br>(O status *Não disponível* também pode significar que o recurso não está conectado ao balanceador de carga padrão público.) |
-| Unknown | O status da integridade do recurso do seu recurso de balanceador de carga padrão público ainda não foi atualizado.<br>(O status *Desconhecido* também pode significar que o recurso não está conectado ao balanceador de carga padrão público.)  |
-
-## <a name="limitations"></a>Limitações 
-
-- A disponibilidade do caminho de dados (disponibilidade VIP) não está disponível para front-ends internos do Load Balancer.
+| Disponível | O recurso padrão do Load Balancer está íntegro e disponível. |
+| Não Disponível | O recurso padrão do Load Balancer não está íntegro. Faça o diagnóstico da integridade selecionando **Azure Monitor** > **Métricas**.<br>( O status indisponível também pode significar que o recurso não está conectado ao balanceador de carga padrão.) |
+| Unknown | O status de integridade do recurso para o recurso padrão do Load Balancer ainda não foi atualizado.<br>(O status*desconhecido* também pode significar que o recurso não está conectado ao balanceador de carga padrão.)  |
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -212,5 +206,3 @@ Os vários status da integridade do recurso e suas descrições estão listadas 
 - Saiba mais sobre a [Conectividade de saída do balanceador de carga](https://aka.ms/lboutbound).
 - Saiba mais sobre [o Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview).
 - Saiba mais sobre o [API de REST do Azure Monitor](https://docs.microsoft.com/rest/api/monitor/) e [como recuperar as métricas por meio da API REST](/rest/api/monitor/metrics/list).
-
-

@@ -3,7 +3,7 @@ title: Habilitar a conexão de Área de Trabalho Remota para uma função nos Se
 description: Como configurar seu aplicativo de serviço de nuvem do Azure para permitir conexões de Área de Trabalho Remota
 services: cloud-services
 author: ghogen
-manager: douge
+manager: jillfra
 ms.assetid: f5727ebe-9f57-4d7d-aff1-58761e8de8c1
 ms.prod: visual-studio-dev15
 ms.technology: vs-azure
@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.workload: azure-vs
 ms.date: 03/06/2018
 ms.author: ghogen
-ms.openlocfilehash: 924719a8371f4d41cb9ead09252d8f3d3424326a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6a6d045513e3e91c5a8b2004e47378a097be8963
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64717746"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69515910"
 ---
 # <a name="enable-remote-desktop-connection-for-a-role-in-azure-cloud-services-using-visual-studio"></a>Habilitar a Conexão de Área de Trabalho Remota para uma função nos Serviços de Nuvem do Azure usando o Visual Studio
 
@@ -95,7 +95,7 @@ Para usar a extensão RDP do Azure DevOps Services, inclua os seguintes detalhes
 
 1. Após as etapas de compilação, adicione a etapa **Implantação de Serviço de Nuvem do Azure** e defina suas propriedades.
 
-1. Após a etapa de implantação, adicione uma **Azure Powershell** etapa, defina seu **nome de exibição** propriedade como "implantação do Azure: Habilitar extensão RDP"(ou outro nome adequado) e selecione sua assinatura do Azure apropriada.
+1. Após a etapa de implantação, adicione uma etapa **do Azure PowerShell** , defina sua propriedade **nome de exibição** como "implantação do Azure: Habilite a extensão RDP "(ou outro nome adequado) e selecione sua assinatura do Azure apropriada.
 
 1. Defina o **Tipo de Script** para "Embutido" e cole o código abaixo no campo **Script embutido**. (Você também pode criar um arquivo `.ps1` em seu projeto com esse script, defina **Tipo de Script** para "Caminho do arquivo de Script" e defina **Caminho de Script** para apontar para o arquivo.)
 

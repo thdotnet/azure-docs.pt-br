@@ -12,12 +12,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: cfa9d6a1a287281bec91facf04c73506db81f84a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4962070d69af98d0c7b10dc6f931612766529dce
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64711563"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69515713"
 ---
 # <a name="customize-setup-for-the-azure-ssis-integration-runtime"></a>Personalizar configuração do tempo de execução de integração do Azure-SSIS
 
@@ -39,6 +39,8 @@ Você pode instalar componentes livres ou não licenciados e componentes pagos o
 -   Se você precisa unir o IR do Azure-SSIS com a instalação personalizada para uma rede virtual, há suporte apenas para a rede virtual do Azure Resource Manager. Não há suporte à rede virtual clássica.
 
 -   Atualmente, não há suporte para o compartilhamento administrativo no IR do Azure-SSIS.
+
+-   Não há suporte para o driver ODBC para acesso IBM iSeries no Azure-SSIS IR. Você poderá ver o erro de instalação durante a instalação personalizada. Entre em contato com o suporte da IBM para obter assistência.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -82,7 +84,7 @@ Para personalizar o IR do Azure-SSIS, você precisa do seguinte:
 
       ![Criar um contêiner de blob](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image4.png)
 
-   1. Selecione o novo contêiner e carregue o script de instalação personalizado e seus arquivos associados. Carregue o `main.cmd` no nível superior de seu contêiner e não em qualquer pasta. Verifique também se em seu contêiner há somente os arquivos de instalação personalizados necessários; pois assim, baixá-los em seu IR do Azure-SSIS mais tarde não levará muito tempo. O período máximo de instalação personalizada é atualmente definido 45 minutos antes de atingir o tempo limite e isso inclui o tempo para baixar todos os arquivos de seu contêiner e instalá-los em Ir Azure-SSIS. Se for necessário um período mais longo, gere um tíquete de suporte.
+   1. Selecione o novo contêiner e carregue o script de instalação personalizado e seus arquivos associados. Carregue o `main.cmd` no nível superior de seu contêiner e não em qualquer pasta. Verifique também se em seu contêiner há somente os arquivos de instalação personalizados necessários; pois assim, baixá-los em seu IR do Azure-SSIS mais tarde não levará muito tempo. O período máximo para a instalação personalizada está definido atualmente em 45 minutos antes de expirar e isso inclui o tempo para baixar todos os arquivos do seu contêiner e instalá-los no IR do Azure-SSIS. Se um período mais longo for necessário, gere um tíquete de suporte.
 
       ![Carregar arquivos no contêiner de blobs](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image5.png)
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/2/2018
 ms.author: rkarlin
-ms.openlocfilehash: ac3d1a55a707349873132befb25a38358b563138
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: bb54221dedc3bfd5ddc84098d5309d26abcfa305
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67875570"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69515569"
 ---
 # <a name="azure-security-center-detection-capabilities"></a>Recursos de detecção da Central de Segurança do Azure
 Este documento aborda os recursos de detecção avançada da Central de Segurança do Azure, que ajuda a identificar ameaças ativas aos recursos do Microsoft Azure, Windows e Linux e fornece as informações necessárias para uma resposta rápida.
@@ -83,7 +83,7 @@ Neste documento, você aprendeu como funcionam os recursos de detecção da Cent
 
 * [Guia de planejamento e operações da Central de Segurança do Azure](security-center-planning-and-operations-guide.md)
 * [Gerenciando e respondendo a alertas de segurança na Central de segurança do Azure](security-center-managing-and-responding-alerts.md)
-* [Alertas de Segurança por Tipo na Central de Segurança do Azure](security-center-alerts-type.md)
+* [Alertas de segurança na central de segurança do Azure](security-center-alerts-overview.md)
 * [Monitoramento da integridade de segurança na Central de Segurança do Azure](security-center-monitoring.md) : saiba como monitorar a integridade dos recursos do Azure.
 * [Monitorando as soluções de parceiros com a Central de Segurança do Azure](security-center-partner-solutions.md) – saiba como monitorar o status de integridade de suas soluções de parceiros.
 * [Perguntas frequentes da Central de Segurança do Azure](security-center-faq.md) : encontre as perguntas frequentes sobre como usar o serviço.

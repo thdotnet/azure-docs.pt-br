@@ -3,7 +3,7 @@ title: Introdução ao Armazenamento de Tabelas do Azure e aos Serviços Conecta
 description: Como começar a usar o Armazenamento de Tabelas do Azure em um projeto do ASP.NET no Visual Studio após a conexão a uma conta de armazenamento usando os Serviços Conectados do Visual Studio
 services: storage
 author: ghogen
-manager: douge
+manager: jillfra
 ms.assetid: af81a326-18f4-4449-bc0d-e96fba27c1f8
 ms.prod: visual-studio-dev15
 ms.technology: vs-azure
@@ -12,12 +12,12 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/21/2016
 ms.author: ghogen
-ms.openlocfilehash: ea50506df53bfd586656d0030be4536d9d3b907d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6f0858d3c2e3f79dda58710031c105e83418058e
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62122968"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69511174"
 ---
 # <a name="get-started-with-azure-table-storage-and-visual-studio-connected-services-aspnet"></a>Introdução ao Armazenamento de Tabelas do Azure e aos Serviços Conectados do Visual Studio (ASP.NET)
 [!INCLUDE [storage-try-azure-tools-tables](../../includes/storage-try-azure-tools-tables.md)]
@@ -169,9 +169,9 @@ As etapas a seguir ilustram como criar uma tabela:
     <li>@Html.ActionLink("Create table", "CreateTable", "Tables")</li>
     ```
 
-1. Execute o aplicativo e selecione **criar tabela** para ver resultados semelhantes à seguinte captura de tela:
+1. Execute o aplicativo e selecione **criar tabela** para ver resultados semelhantes à captura de tela a seguir:
   
-    ![Criar Tabela](./media/vs-storage-aspnet-getting-started-tables/create-table-results.png)
+    ![Criar tabela](./media/vs-storage-aspnet-getting-started-tables/create-table-results.png)
 
     Conforme mencionado anteriormente, o método **CloudTable.CreateIfNotExists** retornará **true** apenas quando a tabela não existir e for criada. Portanto, se você executar o aplicativo quando a tabela existir, o método retornará **false**. Para executar o aplicativo várias vezes, você deverá excluir a tabela antes de executar o aplicativo novamente. É possível excluir a tabela por meio do método **CloudTable.Delete**. Também é possível excluir a tabela usando o [Portal do Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040) ou o [Gerenciador de Armazenamento do Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md).  
 
@@ -271,7 +271,7 @@ A classe da entidade *deve* declarar um construtor público sem parâmetros.
     <li>@Html.ActionLink("Add entity", "AddEntity", "Tables")</li>
     ```
 
-1. Execute o aplicativo e selecione **Adicionar entidade** para ver resultados semelhantes à seguinte captura de tela:
+1. Execute o aplicativo e selecione **Adicionar entidade** para ver resultados semelhantes à captura de tela a seguir:
   
     ![Adicionar entidade](./media/vs-storage-aspnet-getting-started-tables/add-entity-results.png)
 
@@ -391,7 +391,7 @@ Além de poder [adicionar uma entidade por vez a uma tabela](#add-an-entity-to-a
     <li>@Html.ActionLink("Add entities", "AddEntities", "Tables")</li>
     ```
 
-1. Execute o aplicativo e selecione **adicionar entidades** para ver resultados semelhantes à seguinte captura de tela:
+1. Execute o aplicativo e selecione **adicionar entidades** para ver resultados semelhantes à captura de tela a seguir:
   
     ![Adicionar entidades](./media/vs-storage-aspnet-getting-started-tables/add-entities-results.png)
 
@@ -493,7 +493,7 @@ Esta seção mostra como obter uma única entidade de uma tabela usando a chave 
     <li>@Html.ActionLink("Get single", "GetSingle", "Tables")</li>
     ```
 
-1. Execute o aplicativo e selecione **obter único** para ver resultados semelhantes à seguinte captura de tela:
+1. Execute o aplicativo e selecione **obter único** para ver resultados semelhantes à captura de tela a seguir:
   
     ![Obter um único](./media/vs-storage-aspnet-getting-started-tables/get-single-results.png)
 
@@ -537,7 +537,7 @@ Conforme mencionado na seção [Adicionar uma entidade a uma tabela](#add-an-ent
     CloudTable table = tableClient.GetTableReference("TestTable");
     ```
 
-1. Crie uma instância de um objeto **TableQuery** que especifica a consulta na cláusula **Where**. Usando o **CustomerEntity** classe e os dados apresentados na seção [adicionar um lote de entidades a uma tabela](#add-a-batch-of-entities-to-a-table), o trecho de código a seguir consulta a tabela de todas as entidades em que o **PartitionKey**  (Sobrenome do cliente) tem um valor de "Rodrigues":
+1. Crie uma instância de um objeto **TableQuery** que especifica a consulta na cláusula **Where**. Usando a classe **CustomerEntity** e os dados apresentados na seção [Adicionar um lote de entidades a uma tabela](#add-a-batch-of-entities-to-a-table), o trecho de código a seguir consulta a tabela em busca de todas as entidades em que o **PartitionKey** (sobrenome do cliente) tem um valor de "Smith":
 
     ```csharp
     TableQuery<CustomerEntity> query = 
@@ -603,7 +603,7 @@ Conforme mencionado na seção [Adicionar uma entidade a uma tabela](#add-an-ent
     <li>@Html.ActionLink("Get partition", "GetPartition", "Tables")</li>
     ```
 
-1. Execute o aplicativo e selecione **obter partição** para ver resultados semelhantes à seguinte captura de tela:
+1. Execute o aplicativo e selecione **obter partição** para ver resultados semelhantes à captura de tela a seguir:
   
     ![Obter Partição](./media/vs-storage-aspnet-getting-started-tables/get-partition-results.png)
 
@@ -703,7 +703,7 @@ Esta seção ilustra como excluir uma entidade de uma tabela.
     <li>@Html.ActionLink("Delete entity", "DeleteEntity", "Tables")</li>
     ```
 
-1. Execute o aplicativo e selecione **excluir entidade** para ver resultados semelhantes à seguinte captura de tela:
+1. Execute o aplicativo e selecione **excluir entidade** para ver resultados semelhantes à captura de tela a seguir:
   
     ![Obter um único](./media/vs-storage-aspnet-getting-started-tables/delete-entity-results.png)
 

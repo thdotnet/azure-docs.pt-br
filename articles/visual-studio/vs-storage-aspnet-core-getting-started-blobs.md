@@ -3,8 +3,8 @@ title: Introdução ao armazenamento de blobs do Azure e aos Serviços Conectado
 description: Como começar a usar o armazenamento de blobs do Azure em um projeto ASP.NET Core no Visual Studio após a conexão a uma conta de armazenamento usando os Serviços Conectados do Visual Studio
 services: storage
 documentationcenter: ''
-author: camsoper
-manager: wpickett
+author: ghogen
+manager: jillfra
 editor: ''
 ms.service: storage
 ms.workload: web
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: vs-getting-started
 ms.devlang: na
 ms.topic: article
 ms.date: 12/07/2017
-ms.author: casoper
-ms.openlocfilehash: f8de7f7a263a087abb16ed48d05b2cae9834b4ad
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.author: ghogen
+ms.openlocfilehash: 8ae82548d4976e505dae055445c71a5c12cbf263
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62110496"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69516176"
 ---
 # <a name="get-started-with-azure-blob-storage-and-visual-studio-connected-services-aspnet-core"></a>Introdução ao Armazenamento de Blobs do Azure e aos Serviços Conectados do Visual Studio (ASP.NET Core)
 
@@ -27,7 +27,7 @@ ms.locfileid: "62110496"
 > - [ASP.NET](./vs-storage-aspnet-getting-started-blobs.md)
 > - [ASP.NET Core](./vs-storage-aspnet-core-getting-started-blobs.md)
 
-O Armazenamento de Blobs do Azure é um serviço que armazena dados não estruturados na nuvem como objetos ou blobs. O Armazenamento de Blobs pode conter qualquer tipo de texto ou de dados binários, como um documento, um arquivo de mídia ou um instalador de aplicativo. O Armazenamento de Blobs também é chamado de armazenamento de objeto. Para saber mais sobre Armazenamento de Blobs, consulte [Introdução ao Armazenamento de Blobs](../storage/blobs/storage-blobs-introduction.md).
+O Armazenamento de Blobs do Azure é um serviço que armazena dados não estruturados na nuvem como objetos ou blobs. O Armazenamento de Blobs pode armazenar qualquer tipo de texto ou dados binários, como um documento, um arquivo de mídia ou um instalador de aplicativo. O Armazenamento de Blobs também é conhecido como armazenamento de objeto. Para saber mais sobre Armazenamento de Blobs, consulte [Introdução ao Armazenamento de Blobs](../storage/blobs/storage-blobs-introduction.md).
 
 Esse tutorial exibe como gravar o código ASP.NET Core para alguns cenários comuns que usam o Armazenamento de Blobs do Azure. Entre os cenários estão a criação de um contêiner de blobs, bem como carregamento, listagem, download e exclusão de blobs.
 

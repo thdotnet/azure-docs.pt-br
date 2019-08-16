@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 07/25/2019
+ms.date: 08/15/2019
 ms.author: diberry
-ms.openlocfilehash: 78c75e69be5521660937e34da0d7261dba1de385
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: a3e1853e587f2f1632641cbb896eba59f8dc9455
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68955552"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69515796"
 ---
 # <a name="data-sources-for-qna-maker-content"></a>Fontes de dados para conteúdo do QnA Maker
 
@@ -133,9 +133,21 @@ QnAs na forma de arquivos *.txt*, *.tsv* ou *.xls* estruturados também podem se
 
 As colunas adicionais no arquivo de origem são ignoradas.
 
+### <a name="example-of-structured-excel-file"></a>Exemplo de arquivo do Excel estruturado
+
 Abaixo está um exemplo de arquivo *.xls* de QnA estruturada, com conteúdo HTML:
 
  ![Exemplo do QnA estruturado em uma base de dados de conhecimento](../media/qnamaker-concepts-datasources/structured-qna-xls.png)
+
+### <a name="example-of-alternate-questions-for-single-answer-in-excel-file"></a>Exemplo de perguntas alternativas para uma única resposta no arquivo do Excel
+
+Veja abaixo um exemplo de um arquivo QnA *. xls* estruturado, com várias perguntas alternativas para uma única resposta:
+
+ ![Exemplo de perguntas alternativas para uma única resposta no arquivo do Excel](../media/qnamaker-concepts-datasources/xls-alternate-question-example.png)
+
+Depois que o arquivo for importado, o par de perguntas e respostas estará na base de dados de conhecimento, conforme mostrado abaixo:
+
+ ![Captura de tela de perguntas alternativas para uma única resposta importada na base de dados de conhecimento](../media/qnamaker-concepts-datasources/xls-alternate-question-example-after-import.png)
 
 ## <a name="structured-data-format-through-import"></a>Formato de dados estruturados por meio de importação
 

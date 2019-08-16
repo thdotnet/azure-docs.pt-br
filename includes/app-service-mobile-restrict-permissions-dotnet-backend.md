@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 08/23/2018
 ms.author: crdun
 ms.openlocfilehash: b609a708a987194398c53bdf83f0d6e1f281808d
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
+ms.lasthandoff: 08/15/2019
 ms.locfileid: "67172415"
 ---
 Por padrão, APIs em um back-end de Aplicativos Móveis podem ser chamadas de forma anônima. Em seguida, você precisa restringir o acesso somente aos clientes autenticados.  
@@ -29,4 +29,4 @@ Por padrão, APIs em um back-end de Aplicativos Móveis podem ser chamadas de fo
 
         table.access = 'authenticated';
 
-    Para obter mais detalhes, consulte [como: Exigir autenticação para acesso às tabelas](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#howto-tables-auth). Para saber como baixar o projeto de código de início rápido do seu site, consulte [como: Baixe o projeto de código de início rápido do Node. js back-end usando o Git](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#download-quickstart).
+    Para obter mais detalhes, [consulte Como: Exigir autenticação para acesso a tabelas](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#howto-tables-auth). Para saber como baixar o projeto de código de início rápido do seu site [, consulte Como: Baixe o projeto de código de início rápido do back-](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#download-quickstart)end do node. js usando o git.

@@ -4,7 +4,7 @@ services: cloud-services
 description: Investigar problemas de desempenho nos serviços de nuvem com o criador de perfil do Visual Studio
 documentationcenter: ''
 author: mikejo
-manager: douge
+manager: jillfra
 editor: ''
 tags: ''
 ms.assetid: 25e40bf3-eea0-4b0b-9f4a-91ffe797f6c3
@@ -15,17 +15,17 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 11/18/2016
 ms.author: mikejo
-ms.openlocfilehash: 40ba5814bce08037b9e4d0787defbab4d02e58df
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4844e07b83f7e529d7e3de2c5bac1dadb5414391
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62128559"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69515955"
 ---
 # <a name="testing-the-performance-of-a-cloud-service-locally-in-the-azure-compute-emulator-using-the-visual-studio-profiler"></a>Testando o desempenho de um serviço de nuvem localmente no emulador de computação do Azure usando o criador de perfis do Visual Studio
 Várias técnicas e ferramentas estão disponíveis para testar o desempenho de serviços de nuvem.
-Quando publica um serviço de nuvem no Azure, você pode fazer com que o Visual Studio colete dados de criação de perfil e, em seguida, os analise localmente, conforme descrito em [Criar o perfil de um aplicativo do Azure][1].
-Você também pode usar o diagnóstico para acompanhar vários contadores de desempenho, conforme descrito em [Usar contadores de desempenho no Azure][2].
+Quando você publica um serviço de nuvem no Azure, pode fazer com que o Visual Studio colete dados de criação de perfil e, em seguida, analise-os localmente, conforme descrito em [criação de perfil de um aplicativo Azure][1].
+Você também pode usar o diagnóstico para acompanhar uma variedade de contadores de desempenho, conforme descrito em [usando contadores de desempenho no Azure][2].
 Também convém criar o perfil de seu aplicativo localmente no emulador de computação antes de implantá-lo na nuvem.
 
 Este artigo aborda o método de Amostragem de CPU de criação de perfil, que pode ser executado localmente no emulador. A Amostragem de CPU é um método de criação de perfil que não é muito invasivo. Em um intervalo de amostragem designado, o criador de perfis tira um instantâneo da pilha de chamadas. Os dados são coletados durante um período de tempo e mostrados em um relatório. Esse método de criação de perfis tende a indicar onde está sendo feita a maior parte do trabalho em um aplicativo que utiliza muitos recursos de computação.  Isso oferece a oportunidade de focalizar o "afunilamento" onde seu aplicativo está gastando mais tempo.
@@ -156,16 +156,16 @@ Os relatórios destacam as diferenças entre as duas execuções.
 
 Parabéns! Você começou a usar o criador de perfis.
 
-## <a name="troubleshooting"></a>solução de problemas
+## <a name="troubleshooting"></a>Solução de problemas
 * Verifique se você está criando o perfil de uma compilação de versão e inicie sem depurar.
 * Se a opção Conectar/Desconectar não estiver habilitada no menu Criador de Perfis, execute o Assistente de Desempenho.
 * Use a interface do usuário do Emulador de Computação para exibir o status do seu aplicativo. 
 * Se tiver problemas para iniciar aplicativos no emulador ou para conectar o criador de perfis, desligue e reinicie o emulador de computação. Se isso não resolver o problema, tente reinicializar. Esse problema pode ocorrer se você usar o Emulador de Computação para suspender e remover implantações em execução.
 * Se você tiver usado qualquer um dos comandos de criação de perfil na linha de comando, especialmente as configurações globais, verifique se VSPerfClrEnv / globaloff foi chamado e se VsPerfMon.exe foi desligado.
-* Se durante a amostragem, você verá a mensagem "PRF0025: "Nenhum dado foi coletado, verifique se o processo anexado ao tem atividade da CPU. Os aplicativos que não estão fazendo nenhum trabalho de computação podem não produzir nenhum dado de amostragem.  Também é possível que o processo tenha sido encerrado antes de qualquer amostra ter sido feita. Verifique se o método Run para uma função para a qual você esteja criando um perfil não é encerrado.
+* Se, durante a amostragem, você vir a mensagem "PRF0025: Nenhum dado foi coletado "Verifique se o processo que você anexou tem atividade de CPU. Os aplicativos que não estão fazendo nenhum trabalho de computação podem não produzir nenhum dado de amostragem.  Também é possível que o processo tenha sido encerrado antes de qualquer amostra ter sido feita. Verifique se o método Run para uma função para a qual você esteja criando um perfil não é encerrado.
 
 ## <a name="next-steps"></a>Próximas etapas
-A instrumentação de binários do Azure no emulador não tem suporte no criador de perfis do Visual Studio, mas para testar a alocação de memória, você poderá escolher essa opção ao criar um perfil. Você também pode escolher a criação de perfis simultânea, que ajuda a determinar se os threads estão perdendo tempo competindo por bloqueios, ou a criação de perfis de interação de camadas, que ajuda a rastrear problemas de desempenho ao interagir entre camadas de um aplicativo, mais frequentemente entre a camada de dados e uma função de trabalho.  Você pode exibir as consultas do banco de dados que seu aplicativo gera e usar os dados da criação de perfis para melhorar o uso do banco de dados. Para obter informações sobre a criação de perfil de interação de camadas, consulte o postagem no blog [passo a passo: Usar o Profiler de interação de camada no Visual Studio Team System 2010][3].
+A instrumentação de binários do Azure no emulador não tem suporte no criador de perfis do Visual Studio, mas para testar a alocação de memória, você poderá escolher essa opção ao criar um perfil. Você também pode escolher a criação de perfis simultânea, que ajuda a determinar se os threads estão perdendo tempo competindo por bloqueios, ou a criação de perfis de interação de camadas, que ajuda a rastrear problemas de desempenho ao interagir entre camadas de um aplicativo, mais frequentemente entre a camada de dados e uma função de trabalho.  Você pode exibir as consultas do banco de dados que seu aplicativo gera e usar os dados da criação de perfis para melhorar o uso do banco de dados. Para obter informações sobre a criação de perfil de interação de camada [, consulte a postagem do blog passo a passos: Usando o criador de perfil de interação de camada no Visual][3]Studio Team System 2010.
 
 [1]: https://docs.microsoft.com/azure/application-insights/app-insights-profiler
 [2]: https://msdn.microsoft.com/library/azure/hh411542.aspx

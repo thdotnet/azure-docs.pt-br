@@ -6,21 +6,21 @@ ms.topic: include
 ms.date: 06/19/2019
 ms.author: mathoma
 ms.openlocfilehash: eff121cfaf4473607110de4553a9bb8021990caf
-ms.sourcegitcommit: a874064e903f845d755abffdb5eac4868b390de7
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
+ms.lasthandoff: 08/15/2019
 ms.locfileid: "68444676"
 ---
-Nesta etapa, você criará seu grupo de recursos e um banco de dados SQL do Azure. 
+Nesta etapa, você criará o grupo de recursos e um banco de dados individual do Banco de Dados SQL do Azure. 
 
 > [!IMPORTANT]
-> Certifique-se de configurar as regras de firewall para usar o endereço IP público do computador no qual você está executando as etapas neste artigo. As regras de firewall no nível do banco de dados serão replicadas automaticamente para o servidor secundário.
+> Não se esqueça de configurar regras de firewall para usar o endereço IP público do computador em que você está executando as etapas neste artigo. As regras de firewall no nível do banco de dados serão replicadas automaticamente para o servidor secundário.
 >
 > Para obter informações, confira [Criar uma regra de firewall de nível de banco de dados](/sql/relational-databases/system-stored-procedures/sp-set-database-firewall-rule-azure-sql-database) ou, para determinar o endereço IP usado para a regra de firewall de nível de servidor para seu computador, confira [Criar um firewall de nível de servidor](../articles/sql-database/sql-database-server-level-firewall-rule.md).  
 
 # <a name="azure-portaltabazure-portal"></a>[Portal do Azure](#tab/azure-portal)
-Crie seu grupo de recursos e um banco de dados individual usando o portal do Azure. 
+Crie o grupo de recursos e o banco de dados individual usando o portal do Azure. 
 
 1. Selecione **Criar um recurso** no canto superior esquerdo do portal do Azure.
 2. Selecione **Bancos de Dados** e, em seguida, **Banco de Dados SQL** para abrir a página **Criar Banco de Dados SQL**.
@@ -80,7 +80,7 @@ Crie seu grupo de recursos e um banco de dados individual usando o portal do Azu
 
 [!INCLUDE [updated-for-az](updated-for-az.md)]
 
-Crie seu grupo de recursos e um banco de dados individual usando o PowerShell. 
+Crie o grupo de recursos e o banco de dados individual usando o PowerShell. 
 
    ```powershell-interactive
    # Set variables for your server and database
@@ -129,8 +129,8 @@ Crie seu grupo de recursos e um banco de dados individual usando o PowerShell.
       -SampleName "AdventureWorksLT"
    ```
 
-# <a name="az-clitabbash"></a>[AZ CLI](#tab/bash)
-Crie seu grupo de recursos e um banco de dados individual usando AZ CLI. 
+# <a name="az-clitabbash"></a>[CLI do Azure](#tab/bash)
+Crie o grupo de recursos e o banco de dados individual usando a CLI do Azure. 
 
 
    ```azurecli-interactive

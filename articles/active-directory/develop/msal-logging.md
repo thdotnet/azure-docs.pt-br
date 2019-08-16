@@ -17,14 +17,14 @@ ms.author: ryanwi
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 09590fbd340ac3945f05346f99254ec0b76dcd76
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 475b692a29edf5cdd05552e7b5c3dc5fde210275
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68834988"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69512533"
 ---
-# <a name="logging"></a>Registro em log
+# <a name="logging"></a>Registrando em log
 Os aplicativos da MSAL (Biblioteca de Autenticação da Microsoft) geram mensagens de log que podem ajudar a diagnosticar problemas e fornecer detalhes. Um aplicativo pode configurar o registro em log com algumas linhas de código, ter um controle personalizado sobre o nível de detalhes e determinar se dados pessoais e organizacionais serão registrados. É recomendável que você defina um retorno de chamada de registro em log da MSAL e forneça uma maneira para os usuários enviarem logs quando estiverem com problemas de autenticação.
 
 ## <a name="logging-levels"></a>Níveis de registro de log
@@ -40,6 +40,10 @@ Agente da MSAL permite que vários níveis de detalhes sejam capturados:
 Por padrão, o agente da MSAL não captura dados pessoais ou organizacionais altamente confidenciais. A biblioteca oferece a opção para habilitar o registro em log de dados pessoais e organizacionais, se você optar por fazer isso.
 
 ## <a name="logging-in-msalnet"></a>Registro em log no MSAL.NET
+
+ > [!NOTE]
+ > Para obter mais informações sobre MSAL.NET, confira o [wiki do MSAL.net](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki). Obtenha exemplos de registro em log do MSAL.NET e muito mais. 
+ 
 Na MSAL 3.x, o registro em log é definido por aplicativo na criação do aplicativo usando o modificador de construtor `.WithLogging`. Esse método usa parâmetros opcionais:
 
 - *Level* permite que você decida qual nível de registro em log deseja. Configurá-lo como Erros só registrará erros

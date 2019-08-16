@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/26/2019
 ms.author: allensu
-ms.openlocfilehash: 37f1a0d9c70afc0a3a86ac76b682ee7b2adb253d
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: 86376983f98abd241783f456cb9b41ab5d93ae51
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68335800"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69511009"
 ---
 # <a name="traffic-manager-frequently-asked-questions-faq"></a>Perguntas frequentes sobre o Gerenciador de Tráfego
 
@@ -322,9 +322,9 @@ O Gerenciador de Tráfego responde com o nome DNS ou endereço IP do ponto de ex
 
 Normalmente, o Gerenciador de Tráfego é usado para direcionar o tráfego para os aplicativos implantados em regiões diferentes. No entanto, ele também pode ser usado onde um aplicativo tem mais de uma implantação na mesma região. Os pontos de extremidade do Gerenciador de Tráfego do Azure não permitem adicionar mais de um ponto de extremidade do Aplicativo Web da mesma região do Azure ao mesmo perfil do Gerenciador de Tráfego.
 
-### <a name="how-do-i-move-my-traffic-manager-profiles-azure-endpoints-to-a-different-resource-group"></a>Como faço para mover os pontos de extremidade do Azure do meu perfil do Gerenciador de Tráfego para um grupo de recursos diferente?
+### <a name="how-do-i-move-my-traffic-manager-profiles-azure-endpoints-to-a-different-resource-group-or-subscription"></a>Como fazer mover os pontos de extremidade do Azure do meu perfil do Gerenciador de tráfego para um grupo de recursos ou assinatura diferente?
 
-Os pontos de extremidade do Azure associados a um perfil do Gerenciador de Tráfego são rastreados com suas IDs de recurso. Quando um recurso do Azure sendo usado como um ponto de extremidade (por exemplo, IP Público, Serviço de Nuvem Clássico, WebApp ou outro perfil do Gerenciador de Tráfego usado de forma aninhada) é movido para um grupo de recursos diferentes, sua ID de recurso é alterada. Neste cenário, no momento, você deve atualizar o perfil do Gerenciador de Tráfego primeiro excluindo e então adicionando novamente os pontos de extremidade ao perfil.
+Os pontos de extremidade do Azure associados a um perfil do Gerenciador de Tráfego são rastreados com suas IDs de recurso. Quando um recurso do Azure que está sendo usado como um ponto de extremidade (por exemplo, IP público, serviço de nuvem clássico, WebApp ou outro perfil do Gerenciador de tráfego usado de maneira aninhada) é movido para um grupo de recursos ou assinatura diferente, sua ID de recurso é alterada. Neste cenário, no momento, você deve atualizar o perfil do Gerenciador de Tráfego primeiro excluindo e então adicionando novamente os pontos de extremidade ao perfil.
 
 ## <a name="traffic-manager-endpoint-monitoring"></a>Monitoramento de ponto de extremidade do Gerenciador de Tráfego
 
@@ -484,7 +484,7 @@ Para obter detalhes completos, consulte a [página de preços do Gerenciador de 
 
 ### <a name="is-there-a-performance-impact-for-nested-profiles"></a>Há impacto no desempenho para perfis aninhados?
 
-Nº Não há nenhum impacto no desempenho ao usar perfis aninhados.
+Não. Não há nenhum impacto no desempenho ao usar perfis aninhados.
 
 Os servidores de nomes do Gerenciador de Tráfego atravessam a hierarquia de perfil internamente durante o processamento de cada consulta DNS. Uma consulta DNS a um perfil pai pode receber uma resposta DNS com um ponto de extremidade de um perfil filho. Um único registro CNAME é usado se você está usando um único perfil ou perfis aninhados. Não é necessário criar um registro CNAME para cada perfil na hierarquia.
 

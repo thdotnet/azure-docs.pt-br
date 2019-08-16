@@ -3,7 +3,7 @@ title: Introdução ao Armazenamento de Filas do Azure e aos Serviços Conectado
 description: Como começar a usar o Armazenamento de Filas do Azure em um projeto do ASP.NET no Visual Studio após a conexão a uma conta de armazenamento usando os Serviços Conectados do Visual Studio
 services: storage
 author: ghogen
-manager: douge
+manager: jillfra
 ms.assetid: 94ca3413-5497-433f-abbe-836f83a9de72
 ms.prod: visual-studio-dev15
 ms.technology: vs-azure
@@ -12,12 +12,12 @@ ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 12/23/2016
 ms.author: ghogen
-ms.openlocfilehash: 3f3a649308449a8ba4e1dbaebd4db4afbf731c5b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 19cf2dd912968d0a5df8743c1e720776b8a949f0
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62110478"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69515975"
 ---
 # <a name="get-started-with-azure-queue-storage-and-visual-studio-connected-services-aspnet"></a>Introdução ao Armazenamento de Filas do Azure e aos Serviços Conectados do Visual Studio (ASP.NET)
 
@@ -137,7 +137,7 @@ As etapas a seguir ilustram como criar uma fila:
     <li>@Html.ActionLink("Create queue", "CreateQueue", "Queues")</li>
     ```
 
-1. Execute o aplicativo e selecione **criar fila** para ver resultados semelhantes à seguinte captura de tela:
+1. Execute o aplicativo e selecione **criar fila** para ver resultados semelhantes à captura de tela a seguir:
   
     ![Criar fila](./media/vs-storage-aspnet-getting-started-queues/create-queue-results.png)
 
@@ -226,7 +226,7 @@ Depois que você tiver [criado uma fila](#create-a-queue), poderá adicionar men
     <li>@Html.ActionLink("Add message", "AddMessage", "Queues")</li>
     ```
 
-1. Execute o aplicativo e selecione **Adicionar mensagem** para ver resultados semelhantes à seguinte captura de tela:
+1. Execute o aplicativo e selecione **Adicionar mensagem** para ver resultados semelhantes à captura de tela a seguir:
   
     ![Adicionar mensagem](./media/vs-storage-aspnet-getting-started-queues/add-message-results.png)
 
@@ -278,7 +278,7 @@ As etapas a seguir ilustram como espiar uma mensagem enfileirada (ler a primeira
     CloudQueueMessage message = queue.PeekMessage();
     ```
 
-1. Atualize **ViewBag** com dois valores: o nome da fila e a mensagem que foi lida. O **CloudQueueMessage** objeto expõe duas propriedades para obter o valor do objeto: **CloudQueueMessage. Asbytes** e **Asstring**. **AsString** (usado neste exemplo) retorna uma cadeia de caracteres, enquanto **AsBytes** retorna uma matriz de bytes.
+1. Atualize **ViewBag** com dois valores: o nome da fila e a mensagem que foi lida. O objeto **CloudQueueMessage** expõe duas propriedades para obter o valor do objeto: **CloudQueueMessage. AsBytes** e **CloudQueueMessage. AsString**. **AsString** (usado neste exemplo) retorna uma cadeia de caracteres, enquanto **AsBytes** retorna uma matriz de bytes.
 
     ```csharp
     ViewBag.QueueName = queue.Name; 
@@ -312,7 +312,7 @@ As etapas a seguir ilustram como espiar uma mensagem enfileirada (ler a primeira
     <li>@Html.ActionLink("Peek message", "PeekMessage", "Queues")</li>
     ```
 
-1. Execute o aplicativo e selecione **espiar mensagem** para ver resultados semelhantes à seguinte captura de tela:
+1. Execute o aplicativo e selecione **Inspecionar mensagem** para ver resultados semelhantes à captura de tela a seguir:
   
     ![Espiar mensagem](./media/vs-storage-aspnet-getting-started-queues/peek-message-results.png)
 
@@ -403,7 +403,7 @@ Nesta seção, você aprenderá como ler e remover uma mensagem de uma fila.
     <li>@Html.ActionLink("Read/Delete message", "ReadMessage", "Queues")</li>
     ```
 
-1. Execute o aplicativo e selecione **ler/excluir mensagem** para ver resultados semelhantes à seguinte captura de tela:
+1. Execute o aplicativo e selecione **ler/Excluir mensagem** para ver resultados semelhantes à captura de tela a seguir:
   
     ![Ler e excluir a mensagem](./media/vs-storage-aspnet-getting-started-queues/read-message-results.png)
 
@@ -490,7 +490,7 @@ Esta seção ilustra como obter o tamanho da fila (número de mensagens).
     <li>@Html.ActionLink("Get queue length", "GetQueueLength", "Queues")</li>
     ```
 
-1. Execute o aplicativo e selecione **obter tamanho da fila** para ver resultados semelhantes à seguinte captura de tela:
+1. Execute o aplicativo e selecione **obter comprimento da fila** para ver resultados semelhantes à captura de tela a seguir:
   
     ![Obter o tamanho da fila](./media/vs-storage-aspnet-getting-started-queues/get-queue-length-results.png)
 
@@ -570,7 +570,7 @@ Esta seção ilustra como excluir uma fila.
     <li>@Html.ActionLink("Delete queue", "DeleteQueue", "Queues")</li>
     ```
 
-1. Execute o aplicativo e selecione **obter tamanho da fila** para ver resultados semelhantes à seguinte captura de tela:
+1. Execute o aplicativo e selecione **obter comprimento da fila** para ver resultados semelhantes à captura de tela a seguir:
   
     ![Excluir fila](./media/vs-storage-aspnet-getting-started-queues/delete-queue-results.png)
 
