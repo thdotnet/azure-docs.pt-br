@@ -13,18 +13,16 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 04/16/2018
 ms.author: glenga
-ms.openlocfilehash: ec42693fe42f35d728a4a5018776867f07403f81
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: 0cdd7f291b43f442b8471a19f515e4a2d12b4e74
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68226867"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69562883"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Guia do desenvolvedor de Python para o Azure Functions
 
 Este artigo é uma introdução ao desenvolvimento do Azure Functions usando Python. O conteúdo abaixo pressupõe que você já tenha lido o [Guia de desenvolvedores do Azure Functions](functions-reference.md).
-
-[!INCLUDE [functions-python-preview-note](../../includes/functions-python-preview-note.md)]
 
 ## <a name="programming-model"></a>Modelo de programação
 
@@ -165,7 +163,7 @@ def main(req: func.HttpRequest,
 Quando a função é invocada, a solicitação HTTP é transmitida para a função como `req`. Uma entrada será recuperada do armazenamento de BLOBs do Azure com base na _ID_ na URL de rota e disponibilizada como `obj` no corpo da função.  Aqui, a conta de armazenamento especificada é a cadeia de `AzureWebJobsStorage` conexão encontrada em que é a mesma conta de armazenamento usada pelo aplicativo de funções.
 
 
-## <a name="outputs"></a>outputs
+## <a name="outputs"></a>Saídas
 
 A saída pode ser expressa em parâmetros de saída e em valores retornados. Se houver apenas uma saída, recomendamos usar o valor retornado. Para múltiplas saídas, você precisará usar parâmetros de saída.
 
@@ -227,7 +225,7 @@ def main(req):
 
 Há outros métodos de registro em log disponíveis que permitem a gravação no console em níveis de rastreamento diferentes:
 
-| Método                 | DESCRIÇÃO                                |
+| Método                 | Descrição                                |
 | ---------------------- | ------------------------------------------ |
 | logging.**critical(_message_)**   | Grava uma mensagem com nível CRÍTICO no agente raiz.  |
 | logging.**error(_message_)**   | Grava uma mensagem com nível ERRO no agente raiz.    |

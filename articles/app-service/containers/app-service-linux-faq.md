@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: ec571555415a912a31b094722bd47f67210a0372
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 10452590c9415291cb2a5913aeef5c8a00cdfe12
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67617362"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69562989"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Perguntas frequentes sobre o Serviço de Aplicativo do Azure no Linux
 
@@ -39,15 +39,15 @@ Se você tiver qualquer dúvida, comente este artigo.
 
 **Quais são os valores esperados para a seção Arquivo de Inicialização quando configuro a pilha de tempo de execução?**
 
-| Pilha           | Valor esperado                                                                         |
+| Pilha           | Valor Esperado                                                                         |
 |-----------------|----------------------------------------------------------------------------------------|
 | Java SE         | o comando para iniciar seu aplicativo JAR (por exemplo, `java -jar my-app.jar --server.port=80`) |
-| Tomcat, Wildfly | o local de um script para executar todas as configurações necessárias (por exemplo, `/home/site/deployments/tools/startup_script.sh`)          |
-| Node.js         | o arquivo de configuração de PM2 ou o arquivo de script                                |
-| .NET Core       | o nome da DLL compilada como `dotnet <myapp>.dll`                                 |
-| Ruby            | o script Ruby que você deseja inicializar o aplicativo                     |
+| Tomcat, Wildfly | o local de um script para executar as configurações necessárias (por exemplo, `/home/site/deployments/tools/startup_script.sh`)          |
+| Node.js         | o arquivo de configuração PM2 ou o arquivo de script                                |
+| .NET Core       | o nome da DLL compilada como`dotnet <myapp>.dll`                                 |
+| Ruby            | o script Ruby com o qual você deseja inicializar seu aplicativo                     |
 
-Esses comandos ou scripts são executados depois que o contêiner do Docker interno é iniciado, mas antes que seu aplicativo o código é iniciado.
+Esses comandos ou scripts são executados depois que o contêiner interno do Docker é iniciado, mas antes do código do aplicativo ser iniciado.
 
 ## <a name="management"></a>Gerenciamento
 
@@ -60,7 +60,7 @@ Esta ação é igual a um reinício do Docker.
 Sim, você pode fazer isso por meio do site de gerenciamento do controle de origem (SCM) .
 
 > [!NOTE]
-> Você também pode se conectar ao contêiner de aplicativo diretamente do seu computador de desenvolvimento local usando SSH, SFTP ou Visual Studio Code (para aplicativos do Node.js de depuração ao vivo). Para obter mais informações, consulte [Depuração remota e SSH no Serviço de Aplicativo no Linux](https://aka.ms/linux-debug).
+> Você também pode se conectar ao contêiner de aplicativo diretamente do seu computador de desenvolvimento local usando SSH, SFTP ou Visual Studio Code (para aplicativos do Node.js de depuração ao vivo). Para obter mais informações, consulte [Depuração remota e SSH no Serviço de Aplicativo no Linux](https://azure.github.io/AppService/2018/05/07/New-SSH-Experience-and-Remote-Debugging-for-Linux-Web-Apps.html).
 >
 
 **Como criar um plano de Serviço de Aplicativo Linux por meio de um SDK ou um modelo do Azure Resource Manager?**
@@ -85,7 +85,7 @@ Sim, você precisa definir uma configuração de aplicativo chamada `WEBSITE_WEB
 
 Se a implantação do Git falhar no aplicativo Web do Linux, escolha uma das opções a seguir para implantar o código do aplicativo:
 
-- Usar o recurso de Entrega Contínua (Versão Prévia): Você pode armazenar o código-fonte do seu aplicativo em um repositório Git de DevOps do Azure ou o repositório do GitHub para usar a entrega contínua do Azure. Para obter mais informações, consulte [Como configurar a Entrega Contínua para aplicativos Web do Linux](https://blogs.msdn.microsoft.com/devops/2017/05/10/use-azure-portal-to-setup-continuous-delivery-for-web-app-on-linux/).
+- Usar o recurso de Entrega Contínua (Versão Prévia): Você pode armazenar o código-fonte do aplicativo em um repositório Git do Azure DevOps ou no repositório GitHub para usar a entrega contínua do Azure. Para obter mais informações, consulte [Como configurar a Entrega Contínua para aplicativos Web do Linux](https://blogs.msdn.microsoft.com/devops/2017/05/10/use-azure-portal-to-setup-continuous-delivery-for-web-app-on-linux/).
 
 - Use a [API de implantação via arquivo ZIP](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file): Para usar essa API, [adicione o SSH ao seu aplicativo Web](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-ssh-support) e vá para a pasta onde você deseja implantar seu código. Execute o código a seguir:
 
@@ -95,7 +95,7 @@ Se a implantação do Git falhar no aplicativo Web do Linux, escolha uma das op�
 
    Se você receber uma mensagem de erro informando que o comando `curl` não foi encontrado, instale a ondulação usando `apt-get install curl` antes de executar o comando `curl` anterior.
 
-## <a name="language-support"></a>Suporte ao idioma
+## <a name="language-support"></a>Suporte de idioma
 
 **Eu quero usar websockets no aplicativo Node.js, há definições ou configurações especiais a serem definidas?**
 
@@ -119,7 +119,7 @@ Sim, durante uma implantação do Git, o Kudu deve detectar que você está impl
 
 **Estou usando meu próprio contêiner personalizado. Quero que a plataforma monte um compartilhamento SMB para o diretório `/home/`.**
 
-Se `WEBSITES_ENABLE_APP_SERVICE_STORAGE` configuração é **não especificado** ou definido como *verdadeira*, o `/home/` diretório **serão compartilhados** entre instâncias de escala e arquivos gravados **persistirão** entre as reinicializações. Definindo explicitamente `WEBSITES_ENABLE_APP_SERVICE_STORAGE` à *falso* desabilitará a montagem.
+Se `WEBSITES_ENABLE_APP_SERVICE_STORAGE` a configuração não for **especificada** ou definida como *true*, `/home/` o diretório **será compartilhado** entre as instâncias de escala e os arquivos gravados **persistirão** entre as reinicializações. Definir `WEBSITES_ENABLE_APP_SERVICE_STORAGE` explicitamente como *false* desabilitará a montagem.
 
 **Meu contêiner personalizado demora para iniciar e a plataforma o reinicia antes que ele termine a inicialização.**
 
@@ -135,7 +135,7 @@ Adicione o nome de imagem completa, incluindo a URL de registro particular (por 
 
 **Posso expor mais de uma porta em minha imagem de contêiner personalizados?**
 
-Não damos suporte a exposição de mais de uma porta.
+Não há suporte para expor mais de uma porta.
 
 **Posso colocar meu próprio armazenamento?**
 
@@ -153,16 +153,16 @@ Temos a detecção automática de porta. Também é possível especificar uma co
 
 Não, a plataforma manipula a terminação HTTPS nos front-ends compartilhados.
 
-## <a name="multi-container-with-docker-compose"></a>Vários contêineres com o Docker Compose
+## <a name="multi-container-with-docker-compose"></a>Vários contêineres com Docker Compose
 
 **Como fazer para configurar o ACR (Registro de Contêiner do Azure) para usá-lo com vários contêineres?**
 
-Para usar o ACR com vários contêineres, **todas as imagens de contêiner** precisam estar hospedadas no mesmo servidor de registro do ACR. Quando estiverem no mesmo servidor do registro, você precisará criar configurações do aplicativo e, em seguida, atualize o arquivo de configuração do Docker Compose para incluir o nome de imagem ACR.
+Para usar o ACR com vários contêineres, **todas as imagens de contêiner** precisam estar hospedadas no mesmo servidor de registro do ACR. Quando estiverem no mesmo servidor do registro, você precisará criar configurações do aplicativo e, em seguida, atualizar o arquivo de configuração Docker Compose para incluir o nome da imagem ACR.
 
 Crie as seguintes configurações de aplicativo:
 
 - DOCKER_REGISTRY_SERVER_USERNAME
-- DOCKER_REGISTRY_SERVER_URL (total de URL, por exemplo: `https://<server-name>.azurecr.io`)
+- DOCKER_REGISTRY_SERVER_URL (URL completa, ex: `https://<server-name>.azurecr.io`)
 - DOCKER_REGISTRY_SERVER_PASSWORD (habilite o acesso de administrador nas configurações do ACR)
 
 No arquivo de configuração, referencie a imagem do ACR como o seguinte exemplo:

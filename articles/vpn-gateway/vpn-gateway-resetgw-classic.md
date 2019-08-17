@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 07/05/2019
 ms.author: cherylmc
-ms.openlocfilehash: 359773dad53f333b2f052dd5b5481645c72746da
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 92978815af22e3ce1a549b9ca3e335befca8c918
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/16/2019
-ms.locfileid: "69533926"
+ms.locfileid: "69563037"
 ---
 # <a name="reset-a-vpn-gateway"></a>Redefinir um Gateway de VPN
 
@@ -69,10 +69,12 @@ Ao receber um resultado de retorno, você poderá assumir que a redefinição do
 
 ### <a name="resetclassic"></a> Modelo de implantação clássico
 
-O cmdlet para redefinição de um gateway é **Reset-AzureVNetGateway**. Os cmdlets Azure PowerShell para o gerenciamento de serviços devem ser instalados localmente na sua área de trabalho. Você não pode usar Azure Cloud Shell. Antes de realizar uma redefinição, certifique-se de que possui a última versão dos [cmdlets do PowerShell do Gerenciamento de Serviços (SM) ](https://docs.microsoft.com/powershell/azure/servicemanagement/install-azure-ps?view=azuresmps-4.0.0#azure-service-management-cmdlets). O exemplo a seguir redefine o gateway para uma rede virtual nomeada "ContosoVNet":
+O cmdlet para redefinição de um gateway é **Reset-AzureVNetGateway**. Os cmdlets Azure PowerShell para o gerenciamento de serviços devem ser instalados localmente na sua área de trabalho. Você não pode usar Azure Cloud Shell. Antes de realizar uma redefinição, certifique-se de que possui a última versão dos [cmdlets do PowerShell do Gerenciamento de Serviços (SM) ](https://docs.microsoft.com/powershell/azure/servicemanagement/install-azure-ps?view=azuresmps-4.0.0#azure-service-management-cmdlets). Ao usar esse comando, verifique se você está usando o nome completo da rede virtual. Os VNets clássicos que foram criados usando o portal têm um nome longo que é necessário para o PowerShell. Você pode exibir o nome longo usando ' Get-AzureVNetConfig-ExportToFile C:\Myfoldername\NetworkConfig.xml '.
+
+O exemplo a seguir redefine o gateway para uma rede virtual chamada "Group TestRG1 TestVNet1" (que mostra simplesmente "TestVNet1" no Portal):
 
 ```powershell
-Reset-AzureVNetGateway –VnetName “ContosoVNet”
+Reset-AzureVNetGateway –VnetName 'Group TestRG1 TestVNet1'
 ```
 
 Resultado:

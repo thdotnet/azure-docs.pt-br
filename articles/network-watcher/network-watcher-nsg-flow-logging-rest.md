@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: kumud
-ms.openlocfilehash: ab4b283449ec6c0174f380b0231dd2e78dea419d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 88173b24ecfca72e05d6f930b45d732aefad0e56
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64688038"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69563426"
 ---
 # <a name="configuring-network-security-group-flow-logs-using-rest-api"></a>Configurar logs de fluxo do Grupo de segurança de rede usando a API REST
 
@@ -216,6 +216,9 @@ Se uma conta de armazenamento for especificada, os arquivos de captura de pacote
 ```
 https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecuritygroupflowevent/resourceId=/SUBSCRIPTIONS/{subscriptionID}/RESOURCEGROUPS/{resourceGroupName}/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/{nsgName}/y={year}/m={month}/d={day}/h={hour}/m=00/macAddress={macAddress}/PT1H.json
 ```
+
+> [!IMPORTANT]
+> Atualmente, há um problema em que [os logs de fluxo do NSG (grupo de segurança de rede)](network-watcher-nsg-flow-logging-overview.md) para o observador de rede não são automaticamente excluídos do armazenamento de BLOBs com base nas configurações da política de retenção. Se você tiver uma política de retenção diferente de zero, recomendamos que você exclua periodicamente os blobs de armazenamento que ultrapassaram seu período de retenção para evitar qualquer cobrança incorrida. Para obter mais informações sobre como excluir o blog de armazenamento de log de fluxo do NSG, consulte [excluir blobs de armazenamento de log de fluxo NSG](network-watcher-delete-nsg-flow-log-blobs.md).
 
 ## <a name="next-steps"></a>Próximas etapas
 

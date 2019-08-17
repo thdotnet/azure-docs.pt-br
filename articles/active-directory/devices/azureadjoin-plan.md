@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 906ab4da941c6a0e1bc98f2f724141c719d04b89
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: c739e827589a9fd6adeb10255f869acef29a4f16
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68879430"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69562213"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>Como: Planejar sua implementação de ingresso no Azure AD
 
@@ -69,7 +69,8 @@ Um ambiente federado deve ter um provedor de identidade que dá suporte aos prot
 
 - **WS-Fed:** Esse protocolo é necessário para ingressar um dispositivo no Azure AD.
 - **WS-Trust:** Esse protocolo é necessário para entrar em um dispositivo ingressado no Azure AD.
-Quando você estiver usando AD FS, será necessário habilitar os seguintes pontos de extremidade WS-Trust:`/adfs/services/trust/2005/usernamemixed`
+
+Quando você estiver usando o AD FS, será necessário habilitar os seguintes pontos de extremidade WS-Trust: `/adfs/services/trust/2005/usernamemixed`
  `/adfs/services/trust/13/usernamemixed`
  `/adfs/services/trust/2005/certificatemixed`
  `/adfs/services/trust/13/certificatemixed`

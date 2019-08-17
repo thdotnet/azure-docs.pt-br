@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/31/2019
-ms.openlocfilehash: a0da13e82811d500dee50c2231500245c7e011a6
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: 3b242ff8ee3e635493cd501cf37ffc7c78a57d91
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68383439"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69563310"
 ---
 # <a name="understand-outputs-from-azure-stream-analytics"></a>Entender as saídas do Azure Stream Analytics
 
@@ -57,7 +57,7 @@ A tabela a seguir lista os nomes de propriedade e sua descrição para a criaç�
 | Nome da propriedade | Descrição |
 | --- | --- |
 | Alias de saída |Um nome amigável utilizado em consultas para direcionar a saída da consulta para esse banco de dados. |
-| Banco de dados | O nome do banco de dados no qual você está enviando a saída. |
+| Banco de Dados | O nome do banco de dados no qual você está enviando a saída. |
 | Nome do servidor | Nome do servidor do Banco de Dados SQL do Azure. |
 | Nome de usuário | O nome de usuário que tem acesso de gravação ao banco de dados. Stream Analytics dá suporte apenas à autenticação do SQL. |
 | Senha | A senha para se conectar ao banco de dados. |
@@ -250,7 +250,7 @@ A tabela a seguir descreve as propriedades para a criação de uma saída do Azu
 | Importar opção | Escolha **selecionar Cosmos DB da sua assinatura** ou **forneça as configurações de Cosmos DB manualmente**.
 | ID da Conta | O nome ou o URI do ponto de extremidade da conta do Azure Cosmos DB. |
 | Chave da conta | A chave de acesso compartilhado da conta do Azure Cosmos DB. |
-| Banco de dados | O nome do banco de dados do Azure Cosmos DB. |
+| Banco de Dados | O nome do banco de dados do Azure Cosmos DB. |
 | Nome do contêiner | O nome do contêiner a ser usado, que deve existir no Cosmos DB. Exemplo:  <br /><ul><li> _MyContainer_: Deve existir um contêiner chamado "MyContainer".</li>|
 | ID do Documento |Opcional. O nome do campo em eventos de saída que é usado para especificar a chave primária na qual as operações de inserção ou atualização são baseadas.
 
@@ -270,6 +270,9 @@ O Azure Stream Analytics chama o Azure Functions por meio de gatilhos de HTTP. O
 | Contagem de lote máxima  |Uma propriedade que permite especificar o número máximo de eventos em cada lote enviado para Azure Functions. O valor padrão é 100. |
 
 Quando Azure Stream Analytics recebe uma exceção de 413 ("entidade de solicitação HTTP muito grande") de uma função do Azure, ela reduz o tamanho dos lotes que ele envia para Azure Functions. Em seu código de função do Azure, use essa exceção para certificar-se de que o Azure Stream Analytics não envie lotes muito grandes. Além disso, certifique-se de que a contagem máxima de lotes e os valores de tamanho usados na função sejam consistentes com os valores inseridos no portal de Stream Analytics.
+
+> [!NOTE]
+> Durante a conexão de teste, Stream Analytics envia um lote vazio para Azure Functions para testar se a conexão entre os dois funciona. Certifique-se de que seu aplicativo de funções manipule solicitações em lote vazias para garantir que os testes de conexão sejam aprovados.
 
 Além disso, em uma situação em que não há nenhuma aterrissagem de evento em uma janela de tempo, nenhuma saída é gerada. Como resultado, a função **computeResult** não é chamada. Esse comportamento é consistente com as funções de agregação em janelas internas.
 

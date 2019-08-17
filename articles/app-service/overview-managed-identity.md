@@ -9,20 +9,17 @@ ms.service: app-service
 ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: article
-ms.date: 11/20/2018
+ms.date: 08/15/2019
 ms.author: mahender
 ms.reviewer: yevbronsh
-ms.openlocfilehash: 8bc30d50772dffddca32d9f6e22c3d7cec566c70
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: a2b8a4e496094c6275710328e70a09376ce0e5fc
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68297148"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69563036"
 ---
 # <a name="how-to-use-managed-identities-for-app-service-and-azure-functions"></a>Como usar identidades gerenciadas para o Serviço de Aplicativo e o Azure Functions
-
-> [!NOTE] 
-> O suporte à identidade gerenciada para o Serviço de Aplicativo Web para Contêineres e o Linux está atualmente em versão prévia.
 
 > [!Important] 
 > Identidades gerenciadas para Serviço de Aplicativo e Azure Functions não se comportarão conforme o esperado se seu aplicativo for migrado entre assinaturas/locatários. O aplicativo precisará obter uma nova identidade, que pode ser feito ao desabilitar e reabilitar o recurso. Consulte [removendo uma identidade](#remove) abaixo. Recursos de downstream também precisarão ter políticas de acesso atualizadas para usar a nova identidade.
@@ -30,8 +27,8 @@ ms.locfileid: "68297148"
 Este tópico mostra como criar uma identidade gerenciada para aplicativos do Serviço de Aplicativo e do Azure Functions e como usá-la para acessar outros recursos. Uma identidade gerenciada do Azure Active Directory permite que o aplicativo acesse facilmente os outros recursos protegidos pelo AAD, como o Azure Key Vault. A identidade é gerenciada pela plataforma do Azure e não exige provisionamento ou alternância de nenhum segredo. Para obter mais informações sobre identidades gerenciadas no AAD, veja [Identidades gerenciadas para recursos do Azure](../active-directory/managed-identities-azure-resources/overview.md).
 
 Seu aplicativo pode receber dois tipos de identidades: 
-- Uma **identidade atribuída pelo sistema** é vinculada ao seu aplicativo e é excluída se o seu aplicativo for excluído. Um aplicativo só pode ter uma identidade atribuída pelo sistema. O suporte de identidade atribuído pelo sistema geralmente está disponível para aplicativos do Windows. 
-- Uma **identidade atribuída pelo usuário** é um recurso do Azure independente que pode ser atribuído ao seu aplicativo. Um aplicativo pode ter várias identidades atribuídas pelo usuário. O suporte de identidade atribuído pelo usuário está em pré-visualização para todos os tipos de aplicativos.
+- Uma **identidade atribuída pelo sistema** é vinculada ao seu aplicativo e é excluída se o seu aplicativo for excluído. Um aplicativo só pode ter uma identidade atribuída pelo sistema.
+- Uma **identidade atribuída pelo usuário** é um recurso do Azure independente que pode ser atribuído ao seu aplicativo. Um aplicativo pode ter várias identidades atribuídas pelo usuário.
 
 ## <a name="adding-a-system-assigned-identity"></a>Adicionando uma identidade designada pelo sistema
 
@@ -158,17 +155,11 @@ Quando o site é criado, ele tem as seguintes propriedades adicionais:
 No qual `<TENANTID>` e `<PRINCIPALID>` são substituídos por GUIDs. A propriedade tenantId identifica a qual locatário do AAD a identidade pertence. O principalId é um identificador exclusivo para a nova identidade do aplicativo. No AAD, a entidade de serviço tem o mesmo nome que você deu à sua instância do Serviço de Aplicativo ou das Funções do Azure.
 
 
-## <a name="adding-a-user-assigned-identity-preview"></a>Adicionando uma identidade atribuída pelo usuário (versão prévia)
-
-> [!NOTE] 
-> As identidades atribuídas pelo usuário estão atualmente em pré-visualização. Nuvens soberanas ainda não são compatíveis.
+## <a name="adding-a-user-assigned-identity"></a>Adicionando uma identidade atribuída pelo usuário
 
 Criar um aplicativo com uma identidade atribuída pelo usuário exige que você crie a identidade e, em seguida, adicione seu identificador de recursos à configuração do aplicativo.
 
 ### <a name="using-the-azure-portal"></a>Usando o portal do Azure
-
-> [!NOTE] 
-> Essa experiência do portal está sendo implantada e pode ainda não estar disponível em todas as regiões.
 
 Primeiro, você precisará criar um recurso de identidade atribuído pelo usuário.
 
@@ -180,7 +171,7 @@ Primeiro, você precisará criar um recurso de identidade atribuído pelo usuár
 
 4. Selecione **Identidade gerenciada**.
 
-5. Dentro de **usuário atribuído (versão prévia)** , clique em **Add**.
+5. Na guia **atribuído pelo usuário** , clique em **Adicionar**.
 
 6. Procure a identidade que você criou anteriormente e selecione-a. Clique em **Adicionar** .
 
@@ -314,16 +305,16 @@ Um aplicativo com uma identidade gerenciada tem duas variáveis de ambiente defi
 
 A **MSI_ENDPOINT** é uma URL local da qual o aplicativo pode solicitar tokens. Para obter um token para um recurso, solicite uma HTTP GET para esse ponto de extremidade, incluindo os seguintes parâmetros:
 
-> |Nome do parâmetro|No|DESCRIÇÃO|
+> |Nome do parâmetro|Em|Descrição|
 > |-----|-----|-----|
-> |resource|Consultar|O URI do recurso do AAD do recurso para o qual um token deve ser obtido. Pode ser um dos [serviços do Azure que dão suporte à autenticação do Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) ou a qualquer outro URI de recurso.|
-> |api-version|Consultar|A versão da API do token a ser usada. Atualmente, a única versão com suporte é 2017-09-01.|
+> |resource|Consulta|O URI do recurso do AAD do recurso para o qual um token deve ser obtido. Pode ser um dos [serviços do Azure que dão suporte à autenticação do Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) ou a qualquer outro URI de recurso.|
+> |api-version|Consulta|A versão da API do token a ser usada. Atualmente, a única versão com suporte é 2017-09-01.|
 > |secret|Cabeçalho|O valor da variável de ambiente MSI_SECRET. Esse cabeçalho é usado para ajudar a reduzir os ataques de falsificação da solicitação do lado do servidor (SSRF).|
-> |clientid|Consultar|(Opcional) O ID da identidade atribuída pelo usuário a ser usada. Se omitido, a identidade atribuída pelo sistema é usada.|
+> |clientid|Consulta|(Opcional) O ID da identidade atribuída pelo usuário a ser usada. Se omitido, a identidade atribuída pelo sistema é usada.|
 
 Uma resposta bem-sucedida de 200 OK inclui um corpo JSON com as seguintes propriedades:
 
-> |Nome da propriedade|DESCRIÇÃO|
+> |Nome da propriedade|Descrição|
 > |-------------|----------|
 > |access_token|O token de acesso solicitado. O serviço Web de chamada pode usar esse token para se autenticar no serviço Web de recebimento.|
 > |expires_on|A hora de expiração do token de acesso. A data é representada como o número de segundos de 1970-01-01T0:0:0Z UTC até a hora de expiração. Esse valor é usado para determinar o tempo de vida de tokens em cache.|
@@ -388,6 +379,25 @@ const getToken = function(resource, apiver, cb) {
     rp(options)
         .then(cb);
 }
+```
+
+<a name="token-python"></a>Em Python:
+
+```python
+import os
+import requests
+
+msi_endpoint = os.environ["MSI_ENDPOINT"]
+msi_secret = os.environ["MSI_SECRET"]
+
+def get_bearer_token(resource_uri, token_api_version):
+    token_auth_uri = f"{msi_endpoint}?resource={resource_uri}&api-version={token_api_version}"
+    head_msi = {'Secret':msi_secret}
+
+    resp = requests.get(token_auth_uri, headers=head_msi)
+    access_token = resp.json()['access_token']
+
+    return access_token
 ```
 
 <a name="token-powershell"></a>No PowerShell:

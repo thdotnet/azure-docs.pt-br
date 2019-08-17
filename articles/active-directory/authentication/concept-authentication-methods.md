@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 06/17/2019
+ms.date: 08/16/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry, michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 22c25c0a2b2f48baa3b57a8ad39ed4514c884826
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: d18c74e908f6d5c4c3d2eefb0518add380fa1324
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/16/2019
-ms.locfileid: "69533146"
+ms.locfileid: "69561309"
 ---
 # <a name="what-are-authentication-methods"></a>Quais são os métodos de autenticação?
 
@@ -31,7 +31,7 @@ A Microsoft recomenda que os administradores habilitem os usuários a selecionar
 | Senha | MFA e o SSPR |
 | Perguntas de segurança | Somente o SSPR |
 | Endereço de email | Somente o SSPR |
-| Aplicativo Microsoft Authenticator | MFA e versão prévia pública para SSPR |
+| Aplicativo Microsoft Authenticator | MFA e o SSPR |
 | Token OATH de hardware | Versão prévia pública para MFA e SSPR |
 | SMS | MFA e o SSPR |
 | Chamada de voz | MFA e o SSPR |
@@ -41,7 +41,7 @@ A Microsoft recomenda que os administradores habilitem os usuários a selecionar
 
 |     |
 | --- |
-| Tokens OATH de hardware para MFA, SSPR e notificação de aplicativo móvel ou código de aplicativo móvel como métodos para a redefinição de senha de autoatendimento do Azure AD são recursos de versão prévia pública do Azure Active Directory. Para obter mais informações sobre versões prévias, consulte os [Termos de Uso Complementares para Visualizações do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)|
+| Os tokens de hardware OATH para MFA e SSPR são recursos de visualização pública de Azure Active Directory. Para obter mais informações sobre versões prévias, consulte os [Termos de Uso Complementares para Visualizações do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)|
 |     |
 
 ## <a name="password"></a>Senha

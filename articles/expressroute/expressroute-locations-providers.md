@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/14/2019
 ms.author: cherylmc
-ms.openlocfilehash: ae397c077ac87618b646883f9125c9da2df81bfd
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: cce14a2f6e7f8aeca6c7f716d66520cef9484dde
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69036575"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69562641"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Locais de emparelhamento e parceiros do ExpressRoute
 
@@ -188,7 +188,7 @@ Se seu provedor de conectividade não estiver listado em seções anteriores, vo
 ## <a name="c1partners"></a>Conectividade por meio de provedores de serviço adicionais
 | **Localidade** | **Exchange** | **Provedores de conectividade** |
 | --- | --- | --- |
-| **Amsterdã** | Equinix, Interxion, comunicações de nível 3, telecity | BICS, CloudXpress, Eurofiber, Fastweb S. p. A, ponte do Golfo internacional, Kalaam Telecom Bahrein B. S. C, MainOne, Nianet, post, Proximus, TDC erhverv, telecomunicações Italia Sparkle, Telekom Deutschland GmbH, Telia |
+| **Amsterdã** | Equinix, Interxion, comunicações de nível 3, telecity | BICS, CloudXpress, Eurofiber, Fastweb S. p. A, The Golfo Bridge International, Kalaam Telecom Bahrein B. S. C, MainOne, Nianet, POST Telecom Luxemburgo, Proximus, TDC erhverv, Telecom Italia Sparkle, Telekom Deutschland GmbH, Telia |
 | **Atlanta** | Equinix| Castle de coroa
 | **Cidade do Cabo** | Teraco | MTN |
 | **Chicago** | Equinix| Coroa Castle, espectro Enterprise, windstream |

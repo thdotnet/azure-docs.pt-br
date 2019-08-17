@@ -1,31 +1,26 @@
 ---
-title: Mergulho profundo – Azure Active Directory de redefinição de senha de autoatendimento
+title: Aprofundamento de redefinição de senha de autoatendimento – Azure Active Directory
 description: Como a redefinição de senha de autoatendimento funciona
 services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/30/2019
+ms.date: 08/16/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 47a6f475b5f1152850ec918b196883c6974f4d95
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2c31867f4de0e49e2c82733dc859f17ba060bdaa
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60415586"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69561352"
 ---
 # <a name="how-it-works-azure-ad-self-service-password-reset"></a>Como funciona: Redefinição de senha self-service do Azure AD
 
 Como funciona a SSPR (redefinição de senha por autoatendimento)? O que essa opção significa na interface? Continue lendo para saber mais sobre a SSPR do Azure AD (Azure Active Directory).
-
-|     |
-| --- |
-| Notificação de aplicativo móvel e código de aplicativo móvel como métodos para a redefinição de senha de autoatendimento do Azure AD são recursos de visualização pública do Azure Active Directory. Para obter mais informações sobre versões prévias, consulte os [Termos de Uso Complementares para Visualizações do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)|
-|     |
 
 ## <a name="how-does-the-password-reset-portal-work"></a>Como funciona o portal de redefinição de senha?
 
@@ -59,10 +54,10 @@ Leia as etapas abaixo para saber mais sobre a lógica por trás da página de re
 
 ## <a name="authentication-methods"></a>Métodos de autenticação
 
-Se a SSPR estiver habilitada, você deve selecionar pelo menos uma das seguintes opções para os métodos de autenticação. Às vezes, essas opções referidas como "portões." É altamente recomendável que você **escolha dois ou mais métodos de autenticação** para que seus usuários tenham mais flexibilidade caso não consigam acessar um quando precisarem. Detalhes adicionais sobre os métodos listados abaixo podem ser encontrados no artigo [quais são os métodos de autenticação?](concept-authentication-methods.md).
+Se a SSPR estiver habilitada, você deve selecionar pelo menos uma das seguintes opções para os métodos de autenticação. Às vezes, essas opções referidas como "portões." É altamente recomendável que você **escolha dois ou mais métodos de autenticação** para que seus usuários tenham mais flexibilidade caso não consigam acessar um quando precisarem. Detalhes adicionais sobre os métodos listados abaixo podem ser encontrados no artigo [o que são métodos de autenticação?](concept-authentication-methods.md).
 
-* Notificação de aplicativos para dispositivos móveis (visualização)
-* Código de aplicativo móvel (visualização)
+* Notificação do aplicativo móvel
+* Código do aplicativo móvel
 * Email
 * Telefone celular
 * Telefone comercial
@@ -71,7 +66,7 @@ Se a SSPR estiver habilitada, você deve selecionar pelo menos uma das seguintes
 Os usuários só podem redefinir sua senha se tiverem dados presentes nos métodos de autenticação que o administrador habilitou.
 
 > [!IMPORTANT]
-> A partir de março de 2019 as opções de chamada telefônica não estará disponível para os usuários do MFA e o SSPR em locatários gratuitos/avaliação do Azure AD. Mensagens SMS não são afetadas por essa alteração. Chamada telefônica continuará disponível para os usuários no pago locatários do Azure AD. Essa alteração só afeta o locatários gratuitos/avaliação do Azure AD.
+> A partir de março de 2019, as opções de chamada telefônica não estarão disponíveis para os usuários de MFA e SSPR em locatários gratuitos/de avaliação do Azure AD. As mensagens SMS não são afetadas por essa alteração. A chamada telefônica continuará disponível para os usuários em locatários pagos do Azure AD. Essa alteração afeta apenas os locatários gratuitos/de avaliação do Azure AD.
 
 > [!WARNING]
 > Contas atribuídas a funções de administrador do Azure será necessárias para usar métodos conforme definido na seção [diferenças de política de redefinição de administrador](concept-sspr-policy.md#administrator-reset-policy-differences).
@@ -86,14 +81,14 @@ Os usuários podem optar por fornecer mais métodos de autenticação se o admin
 
 Se um usuário não tiver os métodos mínimos necessários registrados, ele verá uma página de erro que o direcionará para solicitar a um administrador para redefinir sua senha.
 
-#### <a name="mobile-app-and-sspr-preview"></a>Aplicativo para dispositivos móveis e SSPR (visualização)
+#### <a name="mobile-app-and-sspr"></a>Aplicativo móvel e SSPR
 
 Ao usar um aplicativo móvel, como o aplicativo Microsoft Authenticator, como um método de redefinição de senha, você deve estar ciente das seguintes advertências:
 
 * Quando os administradores exigem que um método seja usado para redefinir uma senha, o código de verificação é a única opção disponível.
 * Quando os administradores exigem dois métodos a ser usado para redefinir uma senha, os usuários são capazes de usar **um** notificação **ou** habilitado de código de verificação além de quaisquer outros métodos.
 
-| Número de métodos necessários para redefinir | Um | Dois |
+| Número de métodos necessários para a redefinição | Um | Dois |
 | :---: | :---: | :---: |
 | Recursos de aplicativos para dispositivos móveis disponíveis | Código | Código ou notificação |
 
@@ -106,7 +101,7 @@ Usuários não têm a opção de registrar seu aplicativo móvel ao se registrar
 
 Se você iniciar com uma política que tenha apenas um método de autenticação requerido para reiniciar ou desbloquear registrado e você alterar esse número para dois métodos, o que acontece?
 
-| Número de métodos registrados | Número de métodos necessários | Result |
+| Número de métodos registrados | Número de métodos necessários | Resultado |
 | :---: | :---: | :---: |
 | 1 ou mais | 1 | **Capaz** de redefinir ou desbloquear |
 | 1 | 2 | **Incapaz** de redefinir ou desbloquear |
@@ -160,7 +155,7 @@ Exemplo: Há quatro administradores em um ambiente. O administrador A redefine s
 
 Se você instalar, configurar e habilitar o Azure Active Directory Connect, você terá as seguintes opções adicionais para integrações no local. Se essas opções estiverem esmaecidas, o write-back não foi configurado corretamente. Para obter mais informações, consulte [Configurar write-back de senha](howto-sspr-writeback.md).
 
-![Validar o write-back de senha está habilitado e funcionando][Writeback]
+![A validação do write-back de senha está habilitada e funcionando][Writeback]
 
 Esta página fornece um status rápido do cliente de write-back no local, uma das seguintes mensagens é exibida com base na configuração atual:
 

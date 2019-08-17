@@ -1,6 +1,6 @@
 ---
-title: Azure Blockchain Service suporte para versões do razão, aplicação de patch e atualização
-description: Visão geral das versões razões com suporte no serviço de Blockchain do Azure, incluindo as políticas em relação a atualizações gerenciadas pelo usuário e de sistemas para aplicação de patches e gerenciado pelo sistema.
+title: Versões, aplicação de patch e atualização do razão com suporte do serviço Blockchain do Azure
+description: Visão geral das versões de razões com suporte no serviço Blockchain do Azure, incluindo políticas relacionadas à aplicação de patches de sistemas e atualizações gerenciadas pelo usuário e pelo sistema.
 services: azure-blockchain
 keywords: blockchain
 author: PatAltimore
@@ -10,33 +10,33 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: janders
 manager: femila
-ms.openlocfilehash: 53f65ec91a1e0f1e5a6322f0125bf83cd3e400b2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 6cded49f14ae90f84b18c0a37059677c6c1fed99
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66399100"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69562792"
 ---
-# <a name="supported-azure-blockchain-service-ledger-versions"></a>Versões com suporte de razão do serviço do Azure Blockchain
+# <a name="supported-azure-blockchain-service-ledger-versions"></a>Versões do razão do serviço Blockchain do Azure com suporte
 
-Azure Blockchain Service usa o Ethereum baseado [Quorum](https://www.goquorum.com/developers) razão projetado para o processamento de transações privadas dentro de um grupo de participantes conhecidos, identificado como um consórcio no serviço de Blockchain do Azure.
+O serviço Blockchain do Azure usa o razão de [Quorum](https://www.goquorum.com/developers) baseado em Ethereum projetado para o processamento de transações privadas dentro de um grupo de participantes conhecidos, identificado como um consórcio no serviço Blockchain do Azure.
 
-Atualmente, o serviço de Blockchain do Azure suporta [Quorum versão 2.2.1](https://github.com/jpmorganchase/quorum/releases/tag/v2.2.1) e [Gerenciador de transações Tessera](https://github.com/jpmorganchase/tessera).
+Atualmente, o serviço Blockchain do Azure dá suporte à [versão de quorum 2.2.3](https://github.com/jpmorganchase/quorum/releases/tag/v2.2.3) e [Tessera Transaction Manager](https://github.com/jpmorganchase/tessera).
 
 ## <a name="managing-updates-and-upgrades"></a>Gerenciar atualizações e upgrades
 
-Controle de versão do Quorum é feito por meio de um principal, secundário e versões de patch. Por exemplo, se a versão de Quorum é 2.0.1, tipo de versão seria categorizado da seguinte maneira:
+O controle de versão em quorum é feito por meio de versões principais, secundárias e patches. Por exemplo, se a versão de quorum for 2.0.1, o tipo de versão será Categorizado da seguinte maneira:
 
 |Principal | Secundária  | Patch  |
 | :--- | :----- | :----- |
 | 2 | 0 | 1 | 
 
-Azure Blockchain Service atualiza automaticamente as versões de patch do Quorum para os membros existentes em execução dentro de 30 dias do que está sendo disponibilizado de Quorum.
+O serviço Blockchain do Azure atualiza automaticamente as versões de patch do quorum para os membros em execução existentes dentro de 30 dias após serem disponibilizados do quorum.
 
 ## <a name="availability-of-new-ledger-versions"></a>Disponibilidade de novas versões do razão
 
-Azure Blockchain Service fornece as mais recentes versões principais e secundárias do razão Quorum dentro de 60 dias de estarem disponíveis do fabricante do Quorum. Um máximo de quatro versões secundárias são fornecidos para consórcios de escolha ao provisionamento de um novo membro e consortium. Atualizando a partir de um principal ou secundária de versão não é suportada atualmente.
+O serviço Blockchain do Azure fornece as últimas versões principais e secundárias do razão de quorum dentro de 60 dias de disponibilidade do fabricante do quorum. No máximo quatro versões secundárias são fornecidas para que consortia escolha ao provisionar um novo membro e consórcio. No momento, não há suporte para a atualização do para uma versão principal ou secundária.
 
 ## <a name="next-steps"></a>Próximas etapas
 
-[Limites de serviço de Blockchain do Azure](limits.md)
+[Limites no serviço Blockchain do Azure](limits.md)
