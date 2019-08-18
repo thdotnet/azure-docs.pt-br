@@ -45,7 +45,7 @@ As propriedades a seguir têm suporte para o serviço vinculado do Zoho:
 | Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type deve ser definida como: **Zoho** | Sim |
-| ponto de extremidade | O endpoint do servidor do Zoho (`crm.zoho.com/crm/private`). | Sim |
+| endpoint | O endpoint do servidor do Zoho (`crm.zoho.com/crm/private`). | Sim |
 | accessToken | O token de acesso para autenticação Zoho. Marque este campo como uma SecureString para armazená-la com segurança no Data Factory ou [faça referência a um segredo armazenado no Azure Key Vault](store-credentials-in-key-vault.md). | Sim |
 | useEncryptedEndpoints | Especifica se os endpoints de fonte de dados são criptografados usando HTTPS. O valor padrão é true.  | Não |
 | useHostVerification | Especifica se é necessário o nome do host no certificado do servidor para corresponder ao nome de host do servidor ao se conectar via SSL. O valor padrão é true.  | Não |
