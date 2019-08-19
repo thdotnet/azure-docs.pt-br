@@ -3,16 +3,17 @@ title: Referência das Tarefas do Registro de Contêiner do Azure – YAML
 description: Referência para definir tarefas na YAML para tarefas do ACR, incluindo propriedades da tarefa, tipos de etapas, propriedades das etapas e variáveis internas.
 services: container-registry
 author: dlepow
+manager: gwallace
 ms.service: container-registry
 ms.topic: article
-ms.date: 03/28/2019
+ms.date: 07/12/2019
 ms.author: danlep
-ms.openlocfilehash: bdf88657c11bdb5ab5bcde97c155780328065c7e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 27c38f51104dfb170c59860c96a8e3a86973bb1e
+ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65954462"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68638925"
 ---
 # <a name="acr-tasks-reference-yaml"></a>Referência das Tarefas do ACR: YAML
 
@@ -22,11 +23,11 @@ Este artigo contém uma referência para criar arquivos YAML de tarefas com vár
 
 ## <a name="acr-taskyaml-file-format"></a>Formato de arquivo acr-task.yaml
 
-As Tarefas do ACR dão suporte à declaração de tarefas com várias etapas na sintaxe YAML padrão. Você define as etapas de uma tarefa em um arquivo YAML. Você pode executar a tarefa manualmente, passando o arquivo para o [acr az executado] [ az-acr-run] comando. Ou, use o arquivo para criar uma tarefa com [criar tarefa de acr az] [ az-acr-task-create] que é disparado automaticamente em uma atualização de imagem de confirmação ou base de Git. Embora este artigo se refira a `acr-task.yaml` como o arquivo que contém as etapas, as Tarefas do ACR dão suporte a qualquer nome de arquivo válido com uma [extensão com suporte](#supported-task-filename-extensions).
+As Tarefas do ACR dão suporte à declaração de tarefas com várias etapas na sintaxe YAML padrão. Você define as etapas de uma tarefa em um arquivo YAML. Em seguida, você pode executar a tarefa manualmente passando o arquivo para o comando [AZ ACR Run][az-acr-run] . Ou use o arquivo para criar uma tarefa com [AZ ACR tarefa Create][az-acr-task-create] que é disparada automaticamente em uma confirmação git ou em uma atualização de imagem base. Embora este artigo se refira a `acr-task.yaml` como o arquivo que contém as etapas, as Tarefas do ACR dão suporte a qualquer nome de arquivo válido com uma [extensão com suporte](#supported-task-filename-extensions).
 
 Os primitivos `acr-task.yaml` de nível superior são **propriedades das tarefas**, **tipos de etapas** e **propriedades das etapas**:
 
-* As [propriedades das tarefas](#task-properties) se aplicam a todas as etapas em toda a execução da tarefa. Há várias propriedades de tarefa global, incluindo:
+* As [propriedades das tarefas](#task-properties) se aplicam a todas as etapas em toda a execução da tarefa. Há várias propriedades globais da tarefa, incluindo:
   * `version`
   * `stepTimeout`
   * `workingDirectory`
@@ -61,13 +62,13 @@ YAML é o único formato de arquivo com suporte, no momento, pelas Tarefas do AC
 
 ## <a name="run-the-sample-tasks"></a>Executar as tarefas de exemplo
 
-Vários arquivos de tarefas de exemplo são referenciados nas próximas seções deste artigo. As tarefas de exemplo estão em um repositório público do GitHub, [Azure-Samples/acr-tasks][acr-tasks]. É possível executá-las com o comando da CLI do Azure [az acr run][az-acr-run]. Os comandos de exemplo são semelhantes a:
+Vários arquivos de tarefas de exemplo são referenciados nas próximas seções deste artigo. As tarefas de exemplo estão em um repositório GitHub público, [Azure-Samples/ACR-Tasks][acr-tasks]. Você pode executá-los com o comando de CLI do Azure [AZ ACR Run][az-acr-run]. Os comandos de exemplo são semelhantes a:
 
 ```azurecli
 az acr run -f build-push-hello-world.yaml https://github.com/Azure-Samples/acr-tasks.git
 ```
 
-A formatação dos comandos de exemplo pressupõe que você configurou um Registro padrão na CLI do Azure; portanto, o parâmetro `--registry` é omitido. Para configurar um Registro padrão, use o comando [az configure][az-configure] com o parâmetro `--defaults`, que aceita um valor `acr=REGISTRY_NAME`.
+A formatação dos comandos de exemplo pressupõe que você configurou um Registro padrão na CLI do Azure; portanto, o parâmetro `--registry` é omitido. Para configurar um registro padrão, use o comando [AZ configure][az-configure] com o `--defaults` parâmetro, que aceita um `acr=REGISTRY_NAME` valor.
 
 Por exemplo, para configurar a CLI do Azure com um Registro padrão denominado "myregistry":
 
@@ -77,48 +78,48 @@ az configure --defaults acr=myregistry
 
 ## <a name="task-properties"></a>Propriedades das tarefas
 
-Propriedades da tarefa normalmente são exibidos na parte superior de um `acr-task.yaml` de arquivo e são as propriedades globais que se aplicam durante a execução completa de etapas do. Algumas dessas propriedades globais podem ser substituídas em uma etapa individual.
+Normalmente, as propriedades da tarefa aparecem na parte `acr-task.yaml` superior de um arquivo e são propriedades globais que se aplicam durante a execução completa das etapas da tarefa. Algumas dessas propriedades globais podem ser substituídas em uma etapa individual.
 
-| Propriedade | Type | Opcional | DESCRIÇÃO | Substituição com suporte | Valor padrão |
+| Propriedade | Tipo | Opcional | Descrição | Substituição com suporte | Valor padrão |
 | -------- | ---- | -------- | ----------- | ------------------ | ------------- |
-| `version` | cadeia de caracteres | Sim | A versão do arquivo `acr-task.yaml` conforme analisado pelo serviço de Tarefas do ACR. Enquanto as Tarefas do ACR se esforçam para manter a compatibilidade com versões anteriores, esse valor permite que as Tarefas do ACR mantenham a compatibilidade dentro de uma versão definida. Se não for especificado, assume como padrão para a versão mais recente. | Não | Nenhum |
-| `stepTimeout` | int (segundos) | Sim | O número máximo de segundos em que uma etapa pode ser executada. Se a propriedade é especificada em uma tarefa, ele define o padrão `timeout` propriedade de todas as etapas. Se o `timeout` propriedade é especificada em uma etapa, ela substitui a propriedade fornecida pela tarefa. | Sim | 600 (10 minutos) |
-| `workingDirectory` | cadeia de caracteres | Sim | O diretório de trabalho do contêiner durante o tempo de execução. Se a propriedade é especificada em uma tarefa, ele define o padrão `workingDirectory` propriedade de todas as etapas. Se especificado em uma etapa, ele substitui a propriedade fornecida pela tarefa. | Sim | `$HOME` |
-| `env` | [string, string, ...] | Sim |  Matriz de cadeias de caracteres em `key=value` formato que define as variáveis de ambiente para a tarefa. Se a propriedade é especificada em uma tarefa, ele define o padrão `env` propriedade de todas as etapas. Se especificado em uma etapa, ele substitui quaisquer variáveis de ambiente herdadas da tarefa. | Nenhum |
-| `secrets` | [segredo, segredo,...] | Sim | Matriz de [segredo](#secret) objetos. | Nenhum |
-| `networks` | [network, rede,...] | Sim | Matriz de [rede](#network) objetos. | Nenhum |
+| `version` | cadeia de caracteres | Sim | A versão do arquivo `acr-task.yaml` conforme analisado pelo serviço de Tarefas do ACR. Enquanto as Tarefas do ACR se esforçam para manter a compatibilidade com versões anteriores, esse valor permite que as Tarefas do ACR mantenham a compatibilidade dentro de uma versão definida. Se não for especificado, o padrão será a versão mais recente. | Não | Nenhum |
+| `stepTimeout` | int (segundos) | Sim | O número máximo de segundos em que uma etapa pode ser executada. Se a propriedade for especificada em uma tarefa, ela definirá a `timeout` propriedade padrão de todas as etapas. Se a `timeout` propriedade for especificada em uma etapa, ela substituirá a propriedade fornecida pela tarefa. | Sim | 600 (10 minutos) |
+| `workingDirectory` | cadeia de caracteres | Sim | O diretório de trabalho do contêiner durante o tempo de execução. Se a propriedade for especificada em uma tarefa, ela definirá a `workingDirectory` propriedade padrão de todas as etapas. Se especificado em uma etapa, ele substituirá a propriedade fornecida pela tarefa. | Sim | `$HOME` |
+| `env` | [string, string, ...] | Sim |  Matriz de cadeias `key=value` de caracteres no formato que definem as variáveis de ambiente para a tarefa. Se a propriedade for especificada em uma tarefa, ela definirá a `env` propriedade padrão de todas as etapas. Se especificado em uma etapa, ele substituirá as variáveis de ambiente herdadas da tarefa. | Nenhum |
+| `secrets` | [segredo, segredo,...] | Sim | Matriz de objetos [secretos](#secret). | Nenhum |
+| `networks` | [rede, rede,...] | Sim | Matriz de objetos de [rede](#network) . | Nenhum |
 
 ### <a name="secret"></a>secret
 
-O objeto de segredo tem as seguintes propriedades.
+O objeto secreto tem as propriedades a seguir.
 
-| Propriedade | Type | Opcional | DESCRIÇÃO | Valor padrão |
+| Propriedade | Tipo | Opcional | Descrição | Valor padrão |
 | -------- | ---- | -------- | ----------- | ------- |
 | `id` | cadeia de caracteres | Não | O identificador do segredo. | Nenhum |
-| `keyvault` | cadeia de caracteres | Sim | A URL de segredo do Cofre de chaves do Azure. | Nenhum |
-| `clientID` | cadeia de caracteres | Sim | ID do cliente do que o usuário atribuído gerenciado de identidade para recursos do Azure. | Nenhum |
+| `keyvault` | cadeia de caracteres | Sim | A URL do segredo do Azure Key Vault. | Nenhum |
+| `clientID` | cadeia de caracteres | Sim | A ID do cliente da [identidade gerenciada atribuída pelo usuário](container-registry-tasks-authentication-managed-identity.md) para recursos do Azure. | Nenhum |
 
 ### <a name="network"></a>rede
 
-O objeto de rede tem as seguintes propriedades.
+O objeto de rede tem as propriedades a seguir.
 
-| Propriedade | Type | Opcional | DESCRIÇÃO | Valor padrão |
+| Propriedade | Tipo | Opcional | Descrição | Valor padrão |
 | -------- | ---- | -------- | ----------- | ------- | 
 | `name` | cadeia de caracteres | Não | O nome da rede. | Nenhum |
 | `driver` | cadeia de caracteres | Sim | O driver para gerenciar a rede. | Nenhum |
 | `ipv6` | bool | Sim | Se a rede IPv6 está habilitada. | `false` |
-| `skipCreation` | bool | Sim | Se deseja ignorar a criação de rede. | `false` |
+| `skipCreation` | bool | Sim | Se a criação da rede deve ser ignorada. | `false` |
 | `isDefault` | bool | Sim | Se a rede é uma rede padrão fornecida com o registro de contêiner do Azure | `false` |
 
 ## <a name="task-step-types"></a>Tipos de etapas das tarefas
 
 As Tarefas do ACR dão suporte a três tipos de etapas. Cada tipo de etapa dá suporte a várias propriedades, detalhadas na seção para cada tipo de etapa.
 
-| Tipo de etapa | DESCRIÇÃO |
+| Tipo de etapa | Descrição |
 | --------- | ----------- |
 | [`build`](#build) | Compila uma imagem de contêiner usando a sintaxe `docker build` familiar. |
 | [`push`](#push) | Executa um `docker push` de imagens recentemente compiladas ou remarcadas em um registro de contêiner. Há suporte para o Registro de Contêiner do Azure, outros Registros privados e o Hub do Docker público. |
-| [`cmd`](#cmd) | Executa um contêiner como comando, com os parâmetros passados para o `[ENTRYPOINT]` do contêiner. O `cmd` tipo de etapa dá suporte a parâmetros, como `env`, `detach`e outro familiar `docker run` opções de comando, permitindo testes de unidade e funcional com execução simultânea de contêiner. |
+| [`cmd`](#cmd) | Executa um contêiner como comando, com os parâmetros passados para o `[ENTRYPOINT]` do contêiner. O `cmd` tipo de etapa oferece suporte `env`a `detach`parâmetros como, e `docker run` outras opções de comando familiares, permitindo testes de unidade e funcionais com a execução simultânea de contêiner. |
 
 ## <a name="build"></a>compilar
 
@@ -135,15 +136,15 @@ steps:
 
 O tipo de etapa `build` suporta os parâmetros na tabela a seguir. O tipo de etapa `build` também suporta todas as opções de construção do comando [docker build](https://docs.docker.com/engine/reference/commandline/build/), como `--build-arg` para definir variáveis de tempo de criação.
 
-| Parâmetro | DESCRIÇÃO | Opcional |
+| Parâmetro | Descrição | Opcional |
 | --------- | ----------- | :-------: |
-| `-t` &#124; `--image` | Define o `image:tag` totalmente qualificado da imagem compilada.<br /><br />Como as imagens podem ser utilizadas para validações de tarefas internas, como testes funcionais, nem todas as imagens exigem `push` para um Registro. No entanto, para criar uma instância de uma imagem dentro de uma execução de Tarefa, a imagem precisa de um nome para fazer referência.<br /><br />Ao contrário de `az acr build`, executando tarefas de ACR não fornece o comportamento de envio por push padrão. Com as Tarefas do ACR, o cenário padrão pressupõe a capacidade de compilar, validar e efetuar push de uma imagem. Confira [push](#push) para saber como efetuar push de imagens compiladas opcionalmente. | Sim |
-| `-f` &#124; `--file` | Especifica o Dockerfile passado para `docker build`. Se não for especificado, o Dockerfile padrão na raiz do contexto será considerado. Para especificar um Dockerfile, passe o nome do arquivo relativo à raiz do contexto. | Sim |
+| `-t` &#124; `--image` | Define o `image:tag` totalmente qualificado da imagem compilada.<br /><br />Como as imagens podem ser utilizadas para validações de tarefas internas, como testes funcionais, nem todas as imagens exigem `push` para um Registro. No entanto, para criar uma instância de uma imagem dentro de uma execução de Tarefa, a imagem precisa de um nome para fazer referência.<br /><br />Ao `az acr build`contrário de, a execução de tarefas ACR não fornece o comportamento de push padrão. Com as Tarefas do ACR, o cenário padrão pressupõe a capacidade de compilar, validar e efetuar push de uma imagem. Confira [push](#push) para saber como efetuar push de imagens compiladas opcionalmente. | Sim |
+| `-f` &#124; `--file` | Especifica o Dockerfile passado para `docker build`. Se não for especificado, o Dockerfile padrão na raiz do contexto será considerado. Para especificar um Dockerfile, passe o nome de arquivo relativo à raiz do contexto. | Sim |
 | `context` | O diretório raiz passado para `docker build`. O diretório raiz de cada tarefa é definido como um [workingDirectory](#task-step-properties) compartilhado e inclui a raiz do diretório clonado Git associado. | Não |
 
 ### <a name="properties-build"></a>Propriedades: compilar
 
-O tipo de etapa `build` dá suporte às propriedades a seguir. Encontrar detalhes sobre essas propriedades na [propriedades da etapa de tarefa](#task-step-properties) seção deste artigo.
+O tipo de etapa `build` dá suporte às propriedades a seguir. Encontre detalhes dessas propriedades na seção [Propriedades da etapa da tarefa](#task-step-properties) deste artigo.
 
 | | | |
 | -------- | ---- | -------- |
@@ -215,7 +216,7 @@ steps:
 
 ### <a name="properties-push"></a>Propriedades: efetuar push
 
-O tipo de etapa `push` dá suporte às propriedades a seguir. Encontrar detalhes sobre essas propriedades na [propriedades da etapa de tarefa](#task-step-properties) seção deste artigo.
+O tipo de etapa `push` dá suporte às propriedades a seguir. Encontre detalhes dessas propriedades na seção [Propriedades da etapa da tarefa](#task-step-properties) deste artigo.
 
 | | | |
 | -------- | ---- | -------- |
@@ -334,7 +335,7 @@ steps:
   - cmd: docker.io/bash:3.0 echo hello world
 ```
 
-Usando o padrão `docker run` convenção de referência de imagem `cmd` pode executar imagens de qualquer registro privado ou Hub do Docker público. Se estiver fazendo referência a imagens no mesmo Registro em que uma Tarefa do ACR estiver em execução, você não precisará especificar credenciais do Registro.
+Usando a Convenção de `docker run` referência de imagem padrão `cmd` , o pode executar imagens de qualquer registro privado ou do Hub do Docker público. Se estiver fazendo referência a imagens no mesmo Registro em que uma Tarefa do ACR estiver em execução, você não precisará especificar credenciais do Registro.
 
 * Executar uma imagem que é de um registro de contêiner do Azure
 
@@ -362,26 +363,26 @@ Usando o padrão `docker run` convenção de referência de imagem `cmd` pode ex
 
 Cada tipo de etapa dá suporte a várias propriedades apropriadas para seu tipo. A tabela a seguir define todas as propriedades das etapas disponíveis. Nem todos os tipos de etapas dão suporte a todas as propriedades. Para ver quais dessas propriedades estão disponíveis para cada tipo de etapa, confira as seções de referência de tipo de etapa [cmd](#cmd), [compilar](#build) e [efetuar push](#push).
 
-| Propriedade | Type | Opcional | DESCRIÇÃO | Valor padrão |
+| Propriedade | Tipo | Opcional | Descrição | Valor padrão |
 | -------- | ---- | -------- | ----------- | ------- |
 | `detach` | bool | Sim | Se o contêiner deve ser desanexado quando está em execução. | `false` |
-| `disableWorkingDirectoryOverride` | bool | Sim | Se deseja desabilitar `workingDirectory` substituir a funcionalidade. Use isso em combinação com `workingDirectory` ter controle total sobre o diretório de trabalho do contêiner. | `false` |
+| `disableWorkingDirectoryOverride` | bool | Sim | Se a funcionalidade `workingDirectory` de substituição deve ser desabilitada. Use isso em combinação com `workingDirectory` para ter controle total sobre o diretório de trabalho do contêiner. | `false` |
 | `entryPoint` | cadeia de caracteres | Sim | Substitui o `[ENTRYPOINT]` do contêiner de uma etapa. | Nenhum |
 | `env` | [string, string, ...] | Sim | Matriz de cadeias de caracteres no formato `key=value` que definem as variáveis de ambiente para a etapa. | Nenhum |
-| `expose` | [string, string, ...] | Sim | Matriz de portas que são expostas a partir do contêiner. |  Nenhum |
-| [`id`](#example-id) | cadeia de caracteres | Sim | Identifica a etapa dentro da tarefa com exclusividade. Outras etapas na tarefa podem fazer referência ao `id` da etapa, como para verificação de dependência com `when`.<br /><br />O `id` também é o nome do contêiner em execução. Processos em execução em outros contêineres na tarefa podem consultar o `id` como seu nome de host DNS ou para acessá-lo com logs de docker [id], por exemplo. | `acb_step_%d`, onde `%d` é o índice de base 0 da etapa de cima para baixo no arquivo YAML |
-| `ignoreErrors` | bool | Sim | Se marcar a etapa como bem-sucedida, independentemente se ocorreu um erro durante a execução do contêiner. | `false` |
+| `expose` | [string, string, ...] | Sim | Matriz de portas que são expostas do contêiner. |  Nenhum |
+| [`id`](#example-id) | cadeia de caracteres | Sim | Identifica a etapa dentro da tarefa com exclusividade. Outras etapas na tarefa podem fazer referência ao `id` da etapa, como para verificação de dependência com `when`.<br /><br />O `id` também é o nome do contêiner em execução. Processos em execução em outros contêineres na tarefa podem consultar o `id` como seu nome de host DNS ou para acessá-lo com logs de docker [id], por exemplo. | `acb_step_%d`, em `%d` que é o índice baseado em 0 da etapa de cima para baixo no arquivo YAML |
+| `ignoreErrors` | bool | Sim | Indica se a etapa será marcada como bem-sucedida, independentemente de ocorrer um erro durante a execução do contêiner. | `false` |
 | `isolation` | cadeia de caracteres | Sim | O nível de isolamento do contêiner. | `default` |
 | `keep` | bool | Sim | Se o contêiner da etapa deve ser mantido após a execução. | `false` |
 | `network` | objeto | Sim | Identifica uma rede na qual o contêiner é executado. | Nenhum |
-| `ports` | [string, string, ...] | Sim | Matriz de portas que são publicados do contêiner para o host. |  Nenhum |
-| `pull` | bool | Sim | Se deseja forçar um pull do contêiner antes de executá-la para evitar qualquer comportamento de cache. | `false` |
-| `privileged` | bool | Sim | Se deseja executar o contêiner no modo privilegiado. | `false` |
+| `ports` | [string, string, ...] | Sim | Matriz de portas que são publicadas do contêiner para o host. |  Nenhum |
+| `pull` | bool | Sim | Se deve forçar um pull do contêiner antes de executá-lo para evitar qualquer comportamento de cache. | `false` |
+| `privileged` | bool | Sim | Se o contêiner deve ser executado no modo privilegiado. | `false` |
 | `repeat` | int | Sim | O número de tentativas para repetir a execução de um contêiner. | 0 |
-| `retries` | int | Sim | O número de tentativas de repetição se a falha de um contêiner de sua execução. Uma nova tentativa será tentada somente se o código de saída do contêiner for diferente de zero. | 0 |
-| `retryDelay` | int (segundos) | Sim | O atraso em segundos entre as tentativas de execução do contêiner. | 0 |
-| `secret` | objeto | Sim | Identifica um segredo do Cofre de chaves do Azure ou uma identidade gerenciada para recursos do Azure. | Nenhum |
-| `startDelay` | int (segundos) | Sim | Número de segundos para atrasar a execução do contêiner. | 0 |
+| `retries` | int | Sim | O número de tentativas para tentar se um contêiner falhar na sua execução. Uma nova tentativa só será tentada se o código de saída de um contêiner for diferente de zero. | 0 |
+| `retryDelay` | int (segundos) | Sim | O atraso em segundos entre as tentativas da execução de um contêiner. | 0 |
+| `secret` | objeto | Sim | Identifica um segredo Azure Key Vault ou [identidade gerenciada para recursos do Azure](container-registry-tasks-authentication-managed-identity.md). | Nenhum |
+| `startDelay` | int (segundos) | Sim | Número de segundos para atrasar a execução de um contêiner. | 0 |
 | `timeout` | int (segundos) | Sim | Número máximo de segundos em que uma etapa poderá ser executada antes de terminar. | 600 |
 | [`when`](#example-when) | [string, string, ...] | Sim | Configura a dependência de uma etapa em relação a uma ou mais etapas diferentes dentro da tarefa. | Nenhum |
 | `user` | cadeia de caracteres | Sim | O nome de usuário ou UID de um contêiner | Nenhum |
@@ -427,7 +428,7 @@ az acr run -f when-sequential-id.yaml https://github.com/Azure-Samples/acr-tasks
 <!-- SOURCE: https://github.com/Azure-Samples/acr-tasks/blob/master/when-sequential-id.yaml -->
 [!code-yml[task](~/acr-tasks/when-sequential-id.yaml)]
 
-Compilação de imagens paralelas:
+Build de imagens paralelas:
 
 ```azurecli
 az acr run -f when-parallel.yaml https://github.com/Azure-Samples/acr-tasks.git
@@ -481,13 +482,13 @@ steps:
 
 O horário UTC atual em que a execução começou.
 
-### <a name="runcommit"></a>Run.Commit
+### <a name="runcommit"></a>Executar. Commit
 
-Para uma tarefa disparada por uma confirmação para um repositório do GitHub, o identificador de confirmação.
+Para uma tarefa disparada por uma confirmação para um repositório GitHub, o identificador de confirmação.
 
-### <a name="runbranch"></a>Run.Branch
+### <a name="runbranch"></a>Executar. Branch
 
-Para uma tarefa disparada por uma confirmação para um repositório do GitHub, o nome do branch.
+Para uma tarefa disparada por uma confirmação para um repositório GitHub, o nome da ramificação.
 
 ## <a name="next-steps"></a>Próximas etapas
 

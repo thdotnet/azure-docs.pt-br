@@ -18,10 +18,10 @@ ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: b4e107da9d8e5019ba51769d283f3faa34839380
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "67709250"
 ---
 # <a name="prepare-the-azure-infrastructure-for-sap-ha-by-using-a-windows-failover-cluster-and-shared-disk-for-sap-ascsscs"></a>Prepare a infraestrutura do Azure para alta disponibilidade do SAP usando o cluster de failover do Windows e o disco compartilhado para a instância SAP ASCS/SCS
@@ -169,7 +169,7 @@ Este artigo descreve as etapas para preparar a infraestrutura do Azure para inst
 
 Antes de começar a instalação, analise este artigo:
 
-* [Guia de arquitetura: Uma instância do SAP ASCS/SCS de cluster em um cluster de failover do Windows usando um disco compartilhado de cluster][sap-high-availability-guide-wsfc-shared-disk]
+* [Guia de arquitetura: Cluster de uma instância do SAP ASCS/SCS em um cluster de failover do Windows usando um disco compartilhado do cluster][sap-high-availability-guide-wsfc-shared-disk]
 
 ## <a name="prepare-the-infrastructure-for-architectural-template-1"></a>Preparar a infraestrutura para o Modelo Arquitetônico 1
 Os modelos do Azure Resource Manager para SAP ajudam a simplificar a implantação dos recursos necessários.
@@ -224,7 +224,7 @@ _**Figura 1:** Definir os parâmetros de SAP de alta disponibilidade do Azure Re
 >
 
 ## <a name="c87a8d3f-b1dc-4d2f-b23c-da4b72977489"></a> Implantar máquinas virtuais com conectividade de rede corporativa (entre locais) para uso na produção
-Para sistemas SAP de produção, implante máquinas virtuais do Azure com [conectividade de rede corporativa (entre instalações)][planning-guide-2.2] usando o Gateway de VPN do Azure ou Azure ExpressRoute.
+Para sistemas SAP de produção, implante máquinas virtuais do Azure com [conectividade de rede corporativa (entre instalações)][planning-guide-2.2] usando o gateway de VPN do Azure ou o Azure ExpressRoute.
 
 > [!NOTE]
 > Você pode usar a instância da Rede Virtual do Azure. A rede virtual e a sub-rede já foram criadas e preparadas.
@@ -279,7 +279,7 @@ Aqui é onde você pode obter os modelos do Azure Resource Manager para esse cen
 
 ## <a name="prepare-the-infrastructure-for-architectural-template-3"></a>Preparar a infraestrutura para o Modelo Arquitetônico 3
 
-Você pode preparar a infraestrutura e configurar SAP para vários SID. Por exemplo, você pode adicionar uma instância SAP ASCS/SCS adicional em uma configuração de cluster *existente*. Para obter mais informações, consulte [configurar uma instância do SAP ASCS/SCS adicional para uma configuração de cluster existente criar uma configuração de multi-SID do SAP no Azure Resource Manager][sap-ha-multi-sid-guide].
+Você pode preparar a infraestrutura e configurar SAP para vários SID. Por exemplo, você pode adicionar uma instância SAP ASCS/SCS adicional em uma configuração de cluster *existente*. Para obter mais informações, consulte [Configurar uma instância adicional do SAP ASCS/SCS para uma configuração de cluster existente para criar uma configuração de vários SID do SAP no Azure Resource Manager][sap-ha-multi-sid-guide].
 
 Se você quiser criar um novo cluster com múltiplos SID, use os [modelos de início rápido de vários SID no GitHub](https://github.com/Azure/azure-quickstart-templates).
 
@@ -295,7 +295,7 @@ As seções a seguir têm mais detalhes sobre os modelos e os parâmetros que vo
 
 O modelo de ASCS/SCS implanta duas máquinas virtuais que podem ser usadas para criar um cluster de failover do Windows Server que hospeda várias instâncias de ASCS/SCS.
 
-Para configurar o modelo de vários SID de ASCS/SCS, nos [modelo de vários SID de ASCS/SCS][sap-templates-3-tier-multisid-xscs-marketplace-image] or [ASCS/SCS multi-SID template by using Managed Disks][sap-templates-3-tier-multisid-xscs-marketplace-image-md], insira valores para os seguintes parâmetros:
+Para configurar o modelo de vários SID do ASCS/SCS, no modelo de vários SID do [ASCS/SCS][sap-templates-3-tier-multisid-xscs-marketplace-image] ou no [modelo de vários SID do ASCS/SCS usando Managed disks][sap-templates-3-tier-multisid-xscs-marketplace-image-md], insira valores para os seguintes parâmetros:
 
 - **Prefixo do recurso**:  Defina o prefixo do recurso, que é usado para prefixar todos os recursos que são criados durante a implantação. Como os recursos não pertencem apenas a um sistema SAP, o prefixo do recurso não é o SID de um sistema SAP.  O prefixo deve ter entre três e seis caracteres.
 - **Tipo de pilha**: Selecione o tipo de pilha do sistema SAP. Dependendo do tipo de pilha, o Azure Load Balancer tem um (ABAP ou Java apenas) ou dois (ABAP+Java) endereços IP privados por sistema de SAP.
@@ -333,7 +333,7 @@ O balanceador de carga será configurado para usar as seguintes portas de invest
 
 O modelo de banco de dados implanta uma ou duas máquinas virtuais que você pode usar para instalar o RDBMS (sistema de gerenciamento de banco de dados relacional) para um sistema SAP. Se, por exemplo, você implantou um modelo ASCS/SCS para cinco sistemas SAP, precisará implantar esse modelo cinco vezes.
 
-Para configurar o modelo de vários SID de banco de dados, além de [modelo de vários SID de banco de dados][sap-templates-3-tier-multisid-db-marketplace-image] or [database multi-SID template by using Managed Disks][sap-templates-3-tier-multisid-db-marketplace-image-md], insira valores para os seguintes parâmetros:
+Para configurar o modelo de vários Sid de banco de dados, no [modelo de vários Sid de banco de dados][sap-templates-3-tier-multisid-db-marketplace-image] ou [modelo de vários Sid de banco de dados usando Managed disks][sap-templates-3-tier-multisid-db-marketplace-image-md], insira valores para os seguintes parâmetros:
 
 - **ID do sistema SAP**: insira a ID do sistema SAP relativa ao sistema SAP que você deseja instalar. A ID é usada como um prefixo para os recursos que serão implantados.
 - **Tipo de SO**: Selecione o sistema operacional das máquinas virtuais.
@@ -350,7 +350,7 @@ Para configurar o modelo de vários SID de banco de dados, além de [modelo de v
 
 O modelo de servidores de aplicativo implanta duas ou mais máquinas virtuais que podem ser usadas como instâncias do Servidor de Aplicativos SAP para um sistema SAP. Se, por exemplo, você implantou um modelo ASCS/SCS para cinco sistemas SAP, precisará implantar esse modelo cinco vezes.
 
-Para configurar o modelo de vários SID de servidores de aplicativos, além de [modelo de multi-SID de servidores de aplicativos][sap-templates-3-tier-multisid-apps-marketplace-image] or [application servers multi-SID template  by using Managed Disks][sap-templates-3-tier-multisid-apps-marketplace-image-md], insira valores para os seguintes parâmetros:
+Para configurar o modelo de vários SID de servidores de aplicativos, no modelo de vários Sid de [servidores de aplicativos][sap-templates-3-tier-multisid-apps-marketplace-image] ou [no modelo de vários Sid de servidores de aplicativos usando Managed disks][sap-templates-3-tier-multisid-apps-marketplace-image-md], insira valores para os seguintes parâmetros:
 
   -  **ID do sistema SAP**: insira a ID do sistema SAP relativa ao sistema SAP que você deseja instalar. A ID é usada como um prefixo para os recursos que serão implantados.
   -  **Tipo de SO**: Selecione o sistema operacional das máquinas virtuais.
@@ -481,7 +481,7 @@ Para criar os pontos de extremidade de balanceamento interno de carga, crie esse
 | Nome da regra do balanceamento de carga/serviço | Números de porta padrão | Portas concretas para (instância do ASCS com número de instância 00) (ERS com 10) |
 | --- | --- | --- |
 | Enfileirar Servidor / *lbrule3200* |32\<InstanceNumber\> |3200 |
-| Servidor de Mensagens ABAP / *lbrule3600* |36\<InstanceNumber\> |3600 |
+| Servidor de Mensagens ABAP / *lbrule3600* |36\<InstanceNumber\> |3\.600 |
 | Mensagem interna ABAP / *lbrule3900* |39\<InstanceNumber\> |3900 |
 | HTTP do Servidor de Mensagens / *Lbrule8100* |81\<InstanceNumber\> |8100 |
 | HTTP do SAP para Iniciar Serviço ASCS / *Lbrule50013* |5\<InstanceNumber\>13 |50013 |
@@ -525,7 +525,7 @@ Se você quiser usar números diferentes para as instâncias SAP ASCS ou SCS, pr
 1. No Portal do Azure, selecione **\<SID\>-lb-ascs**  > **Regras de Balanceamento de Carga**.
 2. Para todas as regras de balanceamento de carga que pertencem à instância do SAP ASCS ou SCS, altere estes valores:
 
-   * NOME
+   * Nome
    * Porta
    * Porta de back-end
 
@@ -652,7 +652,7 @@ Configurar um cluster Windows Server Failover Clustering para uma instância do 
 
    _**Figura 18:** *Não* marque a caixa de seleção_
 
-   Você pode ignorar os avisos sobre quorum e discos. Você configurará o quorum e compartilhará o disco mais tarde, conforme descrito em [instalar o SIOS DataKeeper Cluster Edition para um disco de compartilhamento de cluster SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-shared-disk-install-sios].
+   Você pode ignorar os avisos sobre quorum e discos. Você definirá o quorum e compartilhará o disco mais tarde, conforme descrito em [instalar o sios Datakeeper Cluster Edition para um disco de compartilhamento de cluster do SAP ASCS/SCS][sap-high-availability-infrastructure-wsfc-shared-disk-install-sios].
 
    ![Figura 19: Ignorar os avisos sobre o quorum de disco][sap-ha-guide-figure-3018]
 
@@ -737,7 +737,7 @@ Configurar a testemunha de compartilhamento de arquivos do cluster envolve as se
 
    _**Figura 28:** Confirmação de que você reconfigurou o cluster_
 
-Depois de instalar com êxito o Cluster de Failover do Windows, é necessário alterar alguns limites para adaptar a detecção de failover às condições no Azure. Os parâmetros a serem alterados estão documentados em [ajuste os limites de rede de cluster de failover][tuning-failover-cluster-network-thresholds]. Supondo que as duas VMs que criam a configuração de Cluster do Windows para ASCS/SCS estejam na mesma sub-rede, os parâmetros a seguir precisam ser alterados para estes valores:
+Depois de instalar com êxito o Cluster de Failover do Windows, é necessário alterar alguns limites para adaptar a detecção de failover às condições no Azure. Os parâmetros a serem alterados estão documentados em [ajustando limites de rede de cluster de failover][tuning-failover-cluster-network-thresholds]. Supondo que as duas VMs que criam a configuração de Cluster do Windows para ASCS/SCS estejam na mesma sub-rede, os parâmetros a seguir precisam ser alterados para estes valores:
 
 - SameSubNetDelay = 2000
 - SameSubNetThreshold = 15
@@ -891,4 +891,4 @@ Depois de instalar o SIOS DataKeeper em ambos os nós, você precisará iniciar 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Instalar o SAP NetWeaver HA usando um cluster de failover do Windows e disco compartilhado para uma instância do SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk]
+* [Instalar o SAP NetWeaver HA usando um cluster de failover do Windows e um disco compartilhado para uma instância do SAP ASCS/SCS][sap-high-availability-installation-wsfc-shared-disk]

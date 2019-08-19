@@ -5,22 +5,21 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 12/19/2018
+ms.date: 07/29/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 25eb111871bbe3b18f59b0d6c123c72f3e55c859
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: eb5248d374fa6212398ad652b4db1496833473ae
+ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60498673"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68696300"
 ---
 # <a name="manage-server-administrators"></a>Gerenciar administradores de servidor
 
 Os administradores do servidor devem ser um usuário ou grupo de segurança válido no Azure AD (Azure Active Directory) para o locatário no qual o servidor reside. É possível usar **Administradores do Analysis Services** para o servidor no portal do Azure, Propriedades do Servidor no SSMS, PowerShell ou API REST para gerenciar administradores do servidor. 
 
-> [!NOTE]
-> Grupos de segurança devem ter a propriedade `MailEnabled` definida como `True`.
+Os**grupos de segurança** devem ser [habilitados para email](https://docs.microsoft.com/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups) com a propriedade `MailEnabled` definida como `True`. Ao especificar um grupo por endereço de email `obj:groupid@tenantid`, use.
 
 ## <a name="to-add-server-administrators-by-using-azure-portal"></a>Para adicionar administradores do servidor usando o Portal do Azure
 
@@ -42,8 +41,8 @@ Os administradores do servidor devem ser um usuário ou grupo de segurança vál
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Use [New-AzAnalysisServicesServer](https://docs.microsoft.com/powershell/module/az.analysisservices/new-azanalysisservicesserver) cmdlet para especificar o parâmetro de administrador ao criar um novo servidor. <br>
-Use [AzAnalysisServicesServer conjunto](https://docs.microsoft.com/powershell/module/az.analysisservices/set-azanalysisservicesserver) cmdlet para modificar o parâmetro de administrador para um servidor existente.
+Use o cmdlet [New-AzAnalysisServicesServer](https://docs.microsoft.com/powershell/module/az.analysisservices/new-azanalysisservicesserver) para especificar o parâmetro de administrador ao criar um novo servidor. <br>
+Use o cmdlet [set-AzAnalysisServicesServer](https://docs.microsoft.com/powershell/module/az.analysisservices/set-azanalysisservicesserver) para modificar o parâmetro de administrador de um servidor existente.
 
 ## <a name="rest-api"></a>API REST
 

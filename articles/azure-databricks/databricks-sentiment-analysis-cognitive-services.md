@@ -152,7 +152,7 @@ Neste tutorial, você usará as APIs do Twitter para enviar tweets aos Hubs de E
 
 4. No menu do cluster, verifique se ambas as bibliotecas estão instaladas e anexadas corretamente.
 
-    ![Verificar bibliotecas]Check libraries(./media/databricks-sentiment-analysis-cognitive-services/databricks-add-library-check.png "")
+    ![Verificar bibliotecas](./media/databricks-sentiment-analysis-cognitive-services/databricks-add-library-check.png "Check libraries")
 
 6. Repita essas etapas para o pacote do Twitter, `twitter4j-core:4.0.7`.
 

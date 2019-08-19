@@ -9,12 +9,12 @@ ms.date: 05/13/2019
 ms.author: tamram
 ms.reviewer: wielriac
 ms.subservice: blobs
-ms.openlocfilehash: 88bf81852a4501f4fc5807d865214d57dbc0aab3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 060e1d01e5f078bad9852ae35d0af9142192a7b6
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65794506"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68985627"
 ---
 # <a name="overview-of-azure-page-blobs"></a>Visão geral de blobs de páginas do Azure
 
@@ -22,7 +22,7 @@ O Armazenamento do Microsoft Azure oferece três tipos de armazenamento de blobs
 
 Blobs de páginas são uma coleção de páginas de 512 bytes, que fornecem a capacidade de ler/gravar intervalos arbitrários de bytes. Portanto, os blobs de páginas são ideais para armazenar estruturas de dados esparsos e baseados em índice como discos do sistema operacional e de dados para Máquinas Virtuais e Bancos de Dados. Por exemplo, o BD SQL do Azure usa blobs de páginas como o armazenamento persistente subjacente para seus bancos de dados. Além disso, os blobs de páginas também costumam ser usados para arquivos com atualizações Baseadas em Intervalo.  
 
-Os principais recursos dos blobs de páginas do Azure são sua interface REST, a durabilidade do armazenamento subjacente e as funcionalidades de migração direta para o Azure. Esses recursos são discutidos mais detalhadamente na próxima seção. Além disso, no momento, os blobs de páginas do Azure são compatíveis com dois tipos de armazenamento: Armazenamento Premium e Armazenamento Standard. O armazenamento Premium foi projetado especificamente para cargas de trabalho que exigem alto desempenho consistente e baixa latência, tornando os blobs de páginas premium ideais para cenários de armazenamento de alto desempenho. Contas de armazenamento padrão são mais econômica para executar cargas de trabalho insensíveis a latência.
+Os principais recursos dos blobs de páginas do Azure são sua interface REST, a durabilidade do armazenamento subjacente e as funcionalidades de migração direta para o Azure. Esses recursos são discutidos mais detalhadamente na próxima seção. Além disso, no momento, os blobs de páginas do Azure são compatíveis com dois tipos de armazenamento: Armazenamento Premium e Armazenamento Standard. O armazenamento Premium é projetado especificamente para cargas de trabalho que exigem alto desempenho e baixa latência consistentes, tornando os blobs de páginas Premium ideais para cenários de armazenamento de alto desempenho. As contas de armazenamento standard são mais econômicas para executar cargas de trabalho que não fazem distinção de latência.
 
 ## <a name="sample-use-cases"></a>Casos de uso de exemplo
 
@@ -31,8 +31,8 @@ Vamos discutir alguns casos de uso para blobs de página, começando com os disc
 Os serviços da Microsoft de primeira ordem, como o Azure Site Recovery, o Azure Backup, bem como muitos desenvolvedores de terceiros, implementaram inovações líderes do setor usando a interface REST do blob da página. Estes são alguns dos cenários exclusivos implementados no Azure: 
 
 * Gerenciamento de instantâneos incrementais direcionados ao aplicativo: os aplicativos podem aproveitar os instantâneos e as APIs REST do blob de páginas para salvar os pontos de verificação do aplicativo sem incorrer em custos elevados de duplicação de dados. O Armazenamento do Azure oferece suporte a instantâneos locais para blobs de páginas, que não exigem a cópia do blob inteiro. Essas APIs públicas de instantâneos também permitem o acesso e a cópia de deltas entre instantâneos.
-* Migração dinâmica de aplicativos e dados do local para a nuvem: Copiar dados no local e usar APIs REST para gravar diretamente em um blob de páginas do Azure enquanto a VM continua em execução local. Depois que o destino for atualizado, faça failover rapidamente para a VM do Azure usando esses dados. Dessa forma, você pode migrar suas VMs e discos virtuais do local para a nuvem com tempo de inatividade mínimo, uma vez que a migração de dados ocorre em segundo plano enquanto você continua a usar a VM e o tempo de inatividade necessário para o failover será curtos (em minutos).
-* Acesso compartilhado [baseado em SAS](../common/storage-dotnet-shared-access-signature-part-1.md), que permite cenários como vários leitores e um único gravador com suporte para o controle de simultaneidade.
+* Migração dinâmica de aplicativos e dados do local para a nuvem: Copie os dados locais e use as APIs REST para gravar diretamente em um blob de páginas do Azure enquanto a VM local continua a ser executada. Depois que o destino for atualizado, faça failover rapidamente para a VM do Azure usando esses dados. Dessa forma, você pode migrar suas VMs e discos virtuais do local para a nuvem com tempo de inatividade mínimo, já que a migração de dados ocorre em segundo plano enquanto você continua a usar a VM e o tempo de inatividade necessário para o failover será curto (em minutos).
+* Acesso compartilhado [baseado em SAS](../common/storage-sas-overview.md), que permite cenários como vários leitores e um único gravador com suporte para o controle de simultaneidade.
 
 ## <a name="page-blob-features"></a>Recursos do blob de páginas
 
@@ -42,11 +42,11 @@ Veja o documento a seguir para começar a [desenvolver o uso de blobs de página
 
 O diagrama a seguir descreve as relações gerais entre a conta, os contêineres e os blobs de páginas.
 
-![Captura de tela mostrando as relações entre a conta, contêineres e blobs de página](./media/storage-blob-pageblob-overview/storage-blob-pageblob-overview-figure1.png)
+![Captura de tela mostrando relações entre a conta, os contêineres e os blobs de páginas](./media/storage-blob-pageblob-overview/storage-blob-pageblob-overview-figure1.png)
 
 #### <a name="creating-an-empty-page-blob-of-a-specified-size"></a>Criando um blob de páginas vazio de um tamanho específico
 
-Para criar um blob de página, é necessário criar um objeto **CloudBlobClient**, com o URI básico para acessar o armazenamento de Blobs para sua conta de armazenamento (*pbaccount* na figura 1) juntamente com o objeto **StorageCredentialsAccountAndKey**, conforme mostrado no exemplo a seguir. O exemplo, em seguida, mostra a criação de uma referência a um objeto **CloudBlobContainer** e, em seguida, a criação do contêiner (*testvhds*), se ele ainda não existir. Em seguida, usando o objeto **CloudBlobContainer**, crie uma referência para um objeto **CloudPageBlob** especificando o nome do blob de páginas (os4.vhd) para acessar. Para criar o blob de páginas, chame [Cloudpageblob](/dotnet/api/microsoft.azure.storage.blob.cloudpageblob.create), passando o tamanho máximo para o blob a ser criado. O *blobSize* deve ser um múltiplo de 512 bytes.
+Para criar um blob de página, é necessário criar um objeto **CloudBlobClient**, com o URI básico para acessar o armazenamento de Blobs para sua conta de armazenamento (*pbaccount* na figura 1) juntamente com o objeto **StorageCredentialsAccountAndKey**, conforme mostrado no exemplo a seguir. O exemplo, em seguida, mostra a criação de uma referência a um objeto **CloudBlobContainer** e, em seguida, a criação do contêiner (*testvhds*), se ele ainda não existir. Em seguida, usando o objeto **CloudBlobContainer**, crie uma referência para um objeto **CloudPageBlob** especificando o nome do blob de páginas (os4.vhd) para acessar. Para criar o blob de páginas, chame [CloudPageBlob. Create](/dotnet/api/microsoft.azure.storage.blob.cloudpageblob.create), passando o tamanho máximo do blob a ser criado. O *blobSize* deve ser um múltiplo de 512 bytes.
 
 ```csharp
 using Microsoft.Azure;
@@ -73,7 +73,7 @@ pageBlob.Create(16 * OneGigabyteAsBytes);
 
 #### <a name="resizing-a-page-blob"></a>Redimensionando um blob de páginas
 
-Para redimensionar um blob de página após a criação, use o [redimensionar](/dotnet/api/microsoft.azure.storage.blob.cloudpageblob.resize) método. O tamanho solicitado deve ser um múltiplo de 512 bytes.
+Para redimensionar um blob de páginas após a criação, use o método [redimensionar](/dotnet/api/microsoft.azure.storage.blob.cloudpageblob.resize). O tamanho solicitado deve ser um múltiplo de 512 bytes.
 
 ```csharp
 pageBlob.Resize(32 * OneGigabyteAsBytes);
@@ -105,7 +105,7 @@ byte[] buffer = new byte[rangeSize];
 pageBlob.DownloadRangeToByteArray(buffer, bufferOffset, pageBlobOffset, rangeSize); 
 ```
 
-A figura a seguir mostra uma operação de leitura com um deslocamento de 256 e um tamanho de intervalo igual a 4.352. Os dados retornados são realçados em laranja. Zeros são retornados para páginas NULL.
+A figura a seguir mostra uma operação de leitura com um deslocamento de 256 e um tamanho de intervalo de 4352. Os dados retornados são realçados em laranja. Zeros são retornados para páginas NUL.
 
 ![](./media/storage-blob-pageblob-overview/storage-blob-pageblob-overview-figure3.png)
 
@@ -133,7 +133,7 @@ foreach (PageRange range in pageRanges)
 
 A operação Lease Blob estabelece e gerencia um bloqueio em um blob para operações de gravação e exclusão. Essa operação é útil em cenários em que um blob de páginas está sendo acessado em vários clientes, para garantir que apenas um cliente possa gravar no blob por vez. Os Discos do Azure, por exemplo, aproveitam este mecanismo de concessão para garantir que o disco seja gerenciado apenas por uma única VM. A duração do bloqueio pode ser de 15 a 60 segundos, ou pode ser infinita. Consulte a documentação [aqui](/rest/api/storageservices/lease-blob) para obter mais detalhes.
 
-Além das APIs REST avançadas, blobs de páginas também fornecem acesso compartilhado, durabilidade e segurança aprimorada. Abordaremos esses benefícios mais detalhadamente nos próximos parágrafos. 
+Além das APIs REST avançadas, os blobs de páginas também fornecem acesso compartilhado, durabilidade e segurança aprimorada. Abordaremos esses benefícios mais detalhadamente nos próximos parágrafos. 
 
 ### <a name="concurrent-access"></a>Acesso simultâneo
 
@@ -143,7 +143,7 @@ Uma opção alternativa é usar os blobs de páginas diretamente por meio das AP
 
 ### <a name="durability-and-high-availability"></a>Durabilidade e alta disponibilidade
 
-O armazenamento Standard e Premium são um armazenamento durável, no qual os dados do blob de páginas são sempre replicados para garantir durabilidade e alta disponibilidade. Para obter mais informações sobre a Redundância do Armazenamento do Azure, consulte esta [documentação](../common/storage-redundancy.md). Azure ofereceu consistentemente a durabilidade de nível empresarial para discos de IaaS e blobs de páginas, com um líder do setor zero por cento [taxa de falha anualizada](https://en.wikipedia.org/wiki/Annualized_failure_rate).
+O armazenamento Standard e Premium são um armazenamento durável, no qual os dados do blob de páginas são sempre replicados para garantir durabilidade e alta disponibilidade. Para obter mais informações sobre a Redundância do Armazenamento do Azure, consulte esta [documentação](../common/storage-redundancy.md). O Azure fornece consistentemente a durabilidade de nível empresarial para discos de IaaS e blobs de páginas, com uma [taxa de falha anual](https://en.wikipedia.org/wiki/Annualized_failure_rate)de porcentagem de zero por cento no setor.
 
 ### <a name="seamless-migration-to-azure"></a>Migração direta para o Azure
 

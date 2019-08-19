@@ -203,7 +203,7 @@ Você pode especificar cópia -> atividade `translator`  ->  `schemaMapping` par
 
 | Propriedade | DESCRIÇÃO | Obrigatório |
 |:--- |:--- |:--- |
-| Tipo | A propriedade type do tradutor da atividade de cópia deve ser definida como: **TabularTranslator** | Sim |
+| type | A propriedade type do tradutor da atividade de cópia deve ser definida como: **TabularTranslator** | Sim |
 | schemaMapping | Uma coleção de pares chave-valor, que representa a relação de mapeamento **do lado do código-fonte para o coletor lado**.<br/>- **Chave:** fonte representa. Para **origem tabular**, especifique o nome da coluna conforme definido na estrutura do conjunto de dados; para **origem hierárquica**, especifique a expressão de caminho JSON para cada campo extrair e mapear.<br>- **Valor:** coletor representa. Para **coletor tabular**, especifique o nome da coluna conforme definido na estrutura do conjunto de dados; para **coletor hierárquica**, especifique a expressão de caminho JSON para cada campo extrair e mapear. <br>No caso de dados hierárquicos, campos sob o objeto raiz, o caminho JSON começa com root $; para os campos dentro da matriz escolhidos pela `collectionReference` propriedade, o caminho JSON começa do elemento de matriz.  | Sim |
 | collectionReference | Se você quiser fazer uma iteração e extrair dados de objetos **dentro de um campo de matriz** com o mesmo padrão e converter para por linha por objeto, especifique o caminho JSON da matriz para realizar a aplicação cruzada. Essa propriedade só terá suporte quando os dados hierárquicos forem a origem. | Não |
 

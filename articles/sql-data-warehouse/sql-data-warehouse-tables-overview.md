@@ -2,7 +2,7 @@
 title: Criação de tabelas - SQL Data Warehouse do Azure | Microsoft Docs
 description: Introdução à criação de tabelas no SQL Data Warehouse do Azure.
 services: sql-data-warehouse
-author: XiaoyuL-Preview
+author: XiaoyuMSFT
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
@@ -10,12 +10,12 @@ ms.subservice: development
 ms.date: 03/15/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: c22caa4b3da69d46241dfbaa7556d0209130415c
-ms.sourcegitcommit: c0419208061b2b5579f6e16f78d9d45513bb7bbc
+ms.openlocfilehash: d97326430eebcaea64770e99c26ab593b51d5847
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67626139"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68476747"
 ---
 # <a name="designing-tables-in-azure-sql-data-warehouse"></a>Criação de tabelas no SQL Data Warehouse do Azure
 
@@ -32,7 +32,7 @@ Um [esquema em estrela](https://en.wikipedia.org/wiki/Star_schema) organiza dado
 - As **Tabelas de integrações** oferecem um local para dados de preparo ou integração. Você pode criar uma tabela de integração como uma tabela regular, uma tabela externa ou uma tabela temporária. Por exemplo, é possível carregar dados em uma tabela de preparo, executar transformações nos dados de preparo e, em seguida, inserir os dados em uma tabela de produção.
 
 ## <a name="schema-and-table-names"></a>Nomes de tabelas e esquemas
-Esquemas são uma boa forma de tabelas do grupo, usados de maneira semelhante, em conjunto.  Se você estiver migrando vários bancos de dados de uma solução local para o SQL Data Warehouse, ele funciona melhor se para migrar todas as tabelas de fatos, dimensões e integração para um esquema no SQL Data Warehouse. Por exemplo, você pode armazenar todas as tabelas do data warehouse de exemplo [WideWorldImportersDW](/sql/sample/world-wide-importers/database-catalog-wwi-olap) em um esquema chamado wwi. O código a seguir cria um [esquema definido pelo usuário](/sql/t-sql/statements/create-schema-transact-sql) chamado wwi.
+Os esquemas são uma boa maneira de agrupar tabelas, usadas de maneira semelhante, em conjunto.  Se você estiver migrando vários bancos de dados de uma solução local para SQL Data Warehouse, funcionará melhor migrar todas as tabelas de fatos, dimensões e integração para um esquema no SQL Data Warehouse. Por exemplo, você pode armazenar todas as tabelas do data warehouse de exemplo [WideWorldImportersDW](/sql/sample/world-wide-importers/database-catalog-wwi-olap) em um esquema chamado wwi. O código a seguir cria um [esquema definido pelo usuário](/sql/t-sql/statements/create-schema-transact-sql) chamado wwi.
 
 ```sql
 CREATE SCHEMA wwi;
@@ -42,8 +42,8 @@ Para mostrar a organização das tabelas no SQL Data Warehouse, você pode usar 
 
 | WideWorldImportersDW table  | Tipo de tabela | SQL Data Warehouse |
 |:-----|:-----|:------|:-----|
-| City | Dimensão | wwi.DimCity |
-| Classificar | Fato | wwi.FactOrder |
+| Cidade | Dimensão | wwi.DimCity |
+| Ordem | Fato | wwi.FactOrder |
 
 
 ## <a name="table-persistence"></a>Persistência da tabela 
@@ -59,7 +59,7 @@ CREATE TABLE MyTable (col1 int, col2 int );
 ```
 
 ### <a name="temporary-table"></a>Tabela temporária
-Uma tabela temporária só existe durante a sessão. Você pode usar uma tabela temporária para impedir que outros usuários vejam os resultados temporários e também para reduzir a necessidade de limpeza.  Tabelas temporárias utilizam o armazenamento local para oferecer um desempenho rápido.  Para obter mais informações, confira [Tabelas temporárias](sql-data-warehouse-tables-temporary.md).
+Uma tabela temporária só existe durante a sessão. Você pode usar uma tabela temporária para impedir que outros usuários vejam resultados temporários e também para reduzir a necessidade de limpeza.  As tabelas temporárias utilizam o armazenamento local para oferecer um desempenho rápido.  Para obter mais informações, confira [Tabelas temporárias](sql-data-warehouse-tables-temporary.md).
 
 ### <a name="external-table"></a>Tabela externa
 Uma tabela externa aponta para dados localizados no Azure Storage Blob ou Azure Data Lake Store. Quando usada em conjunto com a instrução CREATE TABLE AS SELECT, selecionar a partir de uma tabela externa importa dados no SQL Data Warehouse. Ou seja, as tabelas externas são úteis para carregar dados. Para ver um tutorial de carregamento, confira [Usar o PolyBase para carregar dados do Armazenamento de Blobs do Azure](load-data-from-azure-blob-storage-using-polybase.md).
@@ -68,10 +68,10 @@ Uma tabela externa aponta para dados localizados no Azure Storage Blob ou Azure 
 O SQL Data Warehouse oferece suporte aos tipos comuns de dados usados. Para obter uma lista dos tipos de dados com suporte, consulte [tipos de dados na referência CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse#DataTypes) na instrução CREATE TABLE. Para obter diretrizes sobre o uso dos tipos de dados, consulte [Tipos de dados](sql-data-warehouse-tables-data-types.md).
 
 ## <a name="distributed-tables"></a>Tabelas distribuídas
-Um recurso fundamental do SQL Data Warehouse é a maneira como ele pode armazenar e operar em tabelas em [distribuições](massively-parallel-processing-mpp-architecture.md#distributions).  SQL Data Warehouse dá suporte a três métodos para a distribuição de dados, o round-robin (padrão), o hash e replicados.
+Um recurso fundamental do SQL Data Warehouse é a maneira como ele pode armazenar e operar em tabelas entre [distribuições](massively-parallel-processing-mpp-architecture.md#distributions).  O SQL Data Warehouse dá suporte a três métodos de distribuição de dados, Round-Robin (padrão), hash e replicados.
 
 ### <a name="hash-distributed-tables"></a>Tabelas distribuídas em hash
-Uma tabela distribuída por hash distribui linhas com base no valor na coluna de distribuição. Uma tabela de hash distribuída foi projetada para alcançar alto desempenho para consultas em tabelas grandes. Há vários fatores a considerar ao escolher uma coluna de distribuição. 
+Uma tabela distribuída por hash distribui linhas com base no valor na coluna de distribuição. Uma tabela distribuída por hash foi projetada para alcançar alto desempenho para consultas em tabelas grandes. Há vários fatores a serem considerados ao escolher uma coluna de distribuição. 
 
 Para obter mais informações, consulte [Criação de diretrizes para tabelas distribuídas](sql-data-warehouse-tables-distribute.md).
 
@@ -92,27 +92,27 @@ A categoria da tabela geralmente determina qual opção escolher para a distribu
 |:---------------|:--------------------|
 | Fato           | Use a distribuição de hash com índice columnstore clusterizado. O desempenho melhora quando duas tabelas de hash são unidas na mesma coluna de distribuição. |
 | Dimensão      | Use a replicada para tabelas menores. Se as tabelas forem grandes demais para serem armazenadas em cada nó de computação, use a distribuição de hash. |
-| Staging        | Use um round robin para a tabela de preparo. A carga com CTAS é rápida. Quando os dados estiverem na tabela de preparo, use INSERT... Selecione para mover os dados para tabelas de produção. |
+| Preparo        | Use um round robin para a tabela de preparo. A carga com CTAS é rápida. Depois que os dados estiverem na tabela de preparo, use INSERT... Selecione para mover os dados para tabelas de produção. |
 
 ## <a name="table-partitions"></a>Partições de tabela
-Uma tabela particionada armazena e executa operações nas linhas da tabela de acordo com os intervalos de dados. Por exemplo, uma tabela pode ser particionada por dia, mês ou ano. Você pode melhorar o desempenho de consultas através da eliminação da partição, o que limita a verificação de uma consulta para dados dentro de uma partição. Você também pode manter os dados por meio de alternância de partição. Como os dados no SQL Data Warehouse já foram distribuídos, um número excessivo de partições pode diminuir o desempenho da consulta. Para saber mais informações, confira [Diretrizes de particionamento](sql-data-warehouse-tables-partition.md).  Quando particiona ativando na tabela de partição que não estão vazias, considere o uso da opção TRUNCATE_TARGET em seu [ALTER TABLE](https://docs.microsoft.com/sql/t-sql/statements/alter-table-transact-sql) instrução se os dados existentes para ser truncado. O abaixo de comutadores de código nos dados diários transformados no SalesFact substituindo todos os dados existentes. 
+Uma tabela particionada armazena e executa operações nas linhas da tabela de acordo com os intervalos de dados. Por exemplo, uma tabela pode ser particionada por dia, mês ou ano. Você pode melhorar o desempenho de consultas através da eliminação da partição, o que limita a verificação de uma consulta para dados dentro de uma partição. Você também pode manter os dados por meio de alternância de partição. Como os dados no SQL Data Warehouse já foram distribuídos, um número excessivo de partições pode diminuir o desempenho da consulta. Para saber mais informações, confira [Diretrizes de particionamento](sql-data-warehouse-tables-partition.md).  Quando a partição muda para partições de tabela que não estão vazias, considere usar a opção TRUNCATE_TARGET na instrução [ALTER TABLE](https://docs.microsoft.com/sql/t-sql/statements/alter-table-transact-sql) se os dados existentes forem truncados. O código abaixo alterna os dados diários transformados para o SalesFact, substituindo os dados existentes. 
 
 ```sql
 ALTER TABLE SalesFact_DailyFinalLoad SWITCH PARTITION 256 TO SalesFact PARTITION 256 WITH (TRUNCATE_TARGET = ON);  
 ```
 
 ## <a name="columnstore-indexes"></a>Índices ColumnStore
-Por padrão, o SQL Data Warehouse armazena uma tabela como um índice columnstore clusterizado. Essa forma de armazenamento de dados atinge a alta compactação de dados e o desempenho de consultas em tabelas grandes.  Normalmente, o índice columnstore clusterizado é a melhor opção, mas existem alguns casos onde um índice clusterizado ou um heap são estruturas de armazenamento mais adequadas.  Uma tabela de heap pode ser especialmente útil para carregar dados transitórios, como uma tabela de preparo que é transformado em uma tabela final.
+Por padrão, o SQL Data Warehouse armazena uma tabela como um índice columnstore clusterizado. Essa forma de armazenamento de dados atinge a alta compactação de dados e o desempenho de consultas em tabelas grandes.  Normalmente, o índice columnstore clusterizado é a melhor opção, mas existem alguns casos onde um índice clusterizado ou um heap são estruturas de armazenamento mais adequadas.  Uma tabela de heap pode ser especialmente útil para carregar dados transitórios, como uma tabela de preparo que é transformada em uma tabela final.
 
 Para obter uma lista de recursos columnstore, confira [Quais são as novidades dos índices columnstores](/sql/relational-databases/indexes/columnstore-indexes-what-s-new). Para melhorar o desempenho do índice columnstore, confira [Como maximizar a qualidade do rowgroup para índices columnstore](sql-data-warehouse-memory-optimizations-for-columnstore-compression.md).
 
 ## <a name="statistics"></a>Estatísticas
-O otimizador de consulta usa estatísticas de nível de coluna quando cria o plano para executar uma consulta. Para melhorar o desempenho da consulta, é importante ter estatísticas em colunas individuais, especialmente nas colunas usadas em junções de consulta. [Criando estatísticas](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-statistics#automatic-creation-of-statistic) ocorre automaticamente.  No entanto, a atualização de estatísticas não acontece automaticamente. Atualize as estatísticas depois que um número significativo de linhas for adicionado ou alterado. Por exemplo, atualize as estatísticas depois de uma carga. Para obter mais informações, confira [Diretrizes sobre estatísticas](sql-data-warehouse-tables-statistics.md).
+O otimizador de consulta usa estatísticas de nível de coluna quando cria o plano para executar uma consulta. Para melhorar o desempenho da consulta, é importante ter estatísticas em colunas individuais, especialmente colunas usadas em junções de consulta. A [criação de estatísticas](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-statistics#automatic-creation-of-statistic) ocorre automaticamente.  No entanto, a atualização de estatísticas não ocorre automaticamente. Atualize as estatísticas depois que um número significativo de linhas for adicionado ou alterado. Por exemplo, atualize as estatísticas depois de uma carga. Para obter mais informações, confira [Diretrizes sobre estatísticas](sql-data-warehouse-tables-statistics.md).
 
 ## <a name="commands-for-creating-tables"></a>Comandos para a criação de tabelas
 Você pode criar uma tabela como uma nova tabela vazia. Você também pode criar e popular uma tabela com os resultados de uma instrução de seleção. A seguir estão os comandos T-SQL para criar uma tabela.
 
-| Instruções T-SQL | DESCRIÇÃO |
+| Instruções T-SQL | Descrição |
 |:----------------|:------------|
 | [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse) | Cria uma tabela vazia com a definição de todas as opções e colunas da tabela. |
 | [CREATE EXTERNAL TABLE](/sql/t-sql/statements/create-external-table-transact-sql) | Cria uma tabela externa. A definição da tabela é armazenada no SQL Data Warehouse. Os dados da tabela são armazenados no Armazenamento de Blobs do Azure ou do Azure Data Lake Store. |

@@ -8,18 +8,17 @@ manager: chackdan
 editor: ''
 ms.assetid: bf84458f-4b87-4de1-9844-19909e368deb
 ms.service: service-fabric
-ms.devlang: linux
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/17/2017
 ms.author: suhuruli
-ms.openlocfilehash: 84d1f52b5fb8f18d3578bad28930f74534b1409f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2ce8d944e7334b071a4a48f38f8c4fafaeff4c47
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60947563"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69035290"
 ---
 # <a name="set-up-your-development-environment-on-mac-os-x"></a>Configurar seu ambiente de desenvolvimento no Mac OS X
 > [!div class="op_single_selector"]
@@ -174,8 +173,9 @@ O Service Fabric fornece ferramentas de scaffolding que ajudarão a criar um apl
     brew install gradle
     ```
 
-    >[!TIP]
-    > Lembre-se de verificar se você tem a versão correta do JDK instalada. 
+    > [!IMPORTANT]
+    > As versões atuais `brew cask install java` do podem instalar uma versão mais recente do JDK.
+    > Certifique-se de instalar o JDK 8.
 
 ## <a name="deploy-your-application-on-your-mac-from-the-terminal"></a>Implantar seu aplicativo no Mac desde o terminal
 

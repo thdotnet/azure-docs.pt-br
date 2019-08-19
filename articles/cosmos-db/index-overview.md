@@ -4,24 +4,24 @@ description: Entenda como funciona a indexação no Azure Cosmos DB.
 author: ThomasWeiss
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/23/2019
+ms.date: 07/22/2019
 ms.author: thweiss
-ms.openlocfilehash: 633d0f619132ee93951cfe0dc329a7514a38ef57
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c8e21ea89f3e23709d636ab8af4716bff76d7217
+ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66240748"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68479281"
 ---
-# <a name="indexing-in-azure-cosmos-db---overview"></a>Indexação no Azure Cosmos DB – visão geral
+# <a name="indexing-in-azure-cosmos-db---overview"></a>Indexação em Azure Cosmos DB-visão geral
 
-O Azure Cosmos DB é um banco de dados independente de esquema permite que você itere em seu aplicativo sem ter que lidar com o gerenciamento de esquema ou índice. Por padrão, o Azure Cosmos DB indexa automaticamente todas as propriedades para todos os itens em sua [contêiner](databases-containers-items.md#azure-cosmos-containers) sem a necessidade de definir qualquer esquema ou índices secundários de configurar.
+Azure Cosmos DB é um banco de dados independente de esquema que permite iterar em seu aplicativo sem precisar lidar com o gerenciamento de esquema ou de índice. Por padrão, Azure Cosmos DB indexa automaticamente cada propriedade para todos os itens em seu [contêiner](databases-containers-items.md#azure-cosmos-containers) sem precisar definir qualquer esquema ou configurar índices secundários.
 
-O objetivo deste artigo é explicar como o Azure Cosmos DB indexa dados e como ele usa índices para melhorar o desempenho da consulta. É recomendável passar por essa seção antes de explorar como personalizar [políticas de indexação](index-policy.md).
+O objetivo deste artigo é explicar como Azure Cosmos DB os dados de índices e como ele usa índices para melhorar o desempenho da consulta. É recomendável percorrer esta seção antes de explorar como personalizar políticas de [indexação](index-policy.md).
 
-## <a name="from-items-to-trees"></a>De itens de árvores
+## <a name="from-items-to-trees"></a>De itens para árvores
 
-Sempre que um item é armazenado em um contêiner, seu conteúdo é projetado como um documento JSON, então convertido em uma representação em árvore. Isso significa que todas as propriedades de um item é representada como um nó em uma árvore. Um nó de raiz de pseudo é criado como um pai para todas as propriedades de primeiro nível do item. Os nós folha contêm os valores escalares reais realizados por um item.
+Toda vez que um item é armazenado em um contêiner, seu conteúdo é projetado como um documento JSON e, em seguida, convertido em uma representação de árvore. Isso significa que cada propriedade desse item é representada como um nó em uma árvore. Um pseudo nó raiz é criado como um pai para todas as propriedades de primeiro nível do item. Os nós folha contêm os valores escalares reais transportados por um item.
 
 Por exemplo, considere este item:
 
@@ -37,15 +37,15 @@ Por exemplo, considere este item:
         ]
     }
 
-Ele seria representado pela árvore do seguinte:
+Ele seria representado pela seguinte árvore:
 
-![O item anterior, representado como uma árvore](./media/index-overview/item-as-tree.png)
+![O item anterior representado como uma árvore](./media/index-overview/item-as-tree.png)
 
-Observe como as matrizes são codificadas na árvore: cada entrada em uma matriz obtém um nó intermediário rotulado com o índice da entrada de dentro da matriz (0, 1 etc.).
+Observe como as matrizes são codificadas na árvore: cada entrada em uma matriz Obtém um nó intermediário rotulado com o índice dessa entrada dentro da matriz (0, 1 etc.).
 
-## <a name="from-trees-to-property-paths"></a>Das árvores de caminhos de propriedade
+## <a name="from-trees-to-property-paths"></a>De árvores para caminhos de propriedade
 
-O motivo por que o Azure Cosmos DB transforma itens em árvores é porque ela permite que propriedades sejam referenciadas por seus caminhos dentro essas árvores. Para obter o caminho para uma propriedade, podemos percorrer a árvore do nó raiz para essa propriedade e concatenar os rótulos de cada nó atravessado.
+O motivo pelo qual Azure Cosmos DB transforma itens em árvores é porque permite que as propriedades sejam referenciadas por seus caminhos nessas árvores. Para obter o caminho para uma propriedade, podemos percorrer a árvore do nó raiz para essa propriedade e concatenar os rótulos de cada nó atravessado.
 
 Aqui estão os caminhos para cada propriedade do item de exemplo descrito acima:
 
@@ -58,60 +58,75 @@ Aqui estão os caminhos para cada propriedade do item de exemplo descrito acima:
     /exports/0/city: "Moscow"
     /exports/1/city: "Athens"
 
-Quando um item é escrito, o Azure Cosmos DB indexa efetivamente o caminho de cada propriedade e seu valor correspondente.
+Quando um item é gravado, Azure Cosmos DB indexa efetivamente o caminho de cada propriedade e seu valor correspondente.
 
 ## <a name="index-kinds"></a>Tipos de índice
 
-Atualmente, o Azure Cosmos DB dá suporte a dois tipos de índices:
+O Azure Cosmos DB atualmente dá suporte a três tipos de índices:
 
-O **intervalo** tipo de índice é usado para:
+O tipo de índice de **intervalo** é usado para:
 
-- consultas de igualdade: 
+- Consultas de igualdade:
 
-   ```sql SELECT * FROM container c WHERE c.property = 'value'```
+    ```sql
+   SELECT * FROM container c WHERE c.property = 'value'
+    ```
 
-- Consultas de intervalo: 
+- Consultas de intervalo:
 
-   ```sql SELECT * FROM container c WHERE c.property > 'value'``` (funciona para `>`, `<`, `>=`, `<=`, `!=`)
+   ```sql
+   SELECT * FROM container c WHERE c.property > 'value'
+   ``` 
+  (funciona para `>`, `<`, `>=` ,`<=`, )`!=`
 
-- `ORDER BY` consultas:
+- `ORDER BY`procura
 
-   ```sql SELECT * FROM container c ORDER BY c.property```
+   ```sql 
+   SELECT * FROM container c ORDER BY c.property
+   ```
 
-- `JOIN` consultas: 
+- `JOIN`procura
 
-   ```sql SELECT child FROM container c JOIN child IN c.properties WHERE child = 'value'```
+   ```sql
+   SELECT child FROM container c JOIN child IN c.properties WHERE child = 'value'
+   ```
 
-Índices de intervalo podem ser usados em valores escalares (cadeia de caracteres ou número).
+Os índices de intervalo podem ser usados em valores escalares (cadeia de caracteres ou número).
 
-O **espacial** tipo de índice é usado para:
+O tipo de índice **espacial** é usado para:
 
-- consultas de distância geoespaciais: 
+- Consultas de distância geoespaciais: 
 
-   ```sql SELECT * FROM container c WHERE ST_DISTANCE(c.property, { "type": "Point", "coordinates": [0.0, 10.0] }) < 40```
+   ```sql
+   SELECT * FROM container c WHERE ST_DISTANCE(c.property, { "type": "Point", "coordinates": [0.0, 10.0] }) < 40
+   ```
 
-- geoespacial dentro de consultas: 
+- Geoespacial em consultas: 
 
-   ```sql SELECT * FROM container c WHERE ST_WITHIN(c.property, {"type": "Point", "coordinates": [0.0, 10.0] } })```
+   ```sql
+   SELECT * FROM container c WHERE ST_WITHIN(c.property, {"type": "Point", "coordinates": [0.0, 10.0] } })
+   ```
 
-Índices espaciais podem ser usados em corretamente formatado [GeoJSON](geospatial.md) objetos. Atualmente, há suporte para pontos, LineStrings e polígonos.
+Os índices espaciais podem ser usados em objetos [geojson](geospatial.md) formatados corretamente. Pontos, LineStrings e polígonos atualmente têm suporte.
 
-O **composto** tipo de índice é usado para:
+O tipo de índice **composto** é usado para:
 
-- `ORDER BY` consultas em várias propriedades: 
+- `ORDER BY`consultas em várias propriedades: 
 
-   ```sql SELECT * FROM container c ORDER BY c.firstName, c.lastName```
+   ```sql
+   SELECT * FROM container c ORDER BY c.firstName, c.lastName
+   ```
 
 ## <a name="querying-with-indexes"></a>Consultar com índices
 
-Os caminhos extraídos do durante a indexação de dados facilitam a pesquisar o índice quando uma consulta de processamento. Correspondendo a `WHERE` cláusula de uma consulta com a lista de caminhos indexados, é possível identificar os itens que correspondem ao predicado de consulta muito rapidamente.
+Os caminhos extraídos ao indexar dados facilitam a pesquisa do índice durante o processamento de uma consulta. Ao corresponder a `WHERE` cláusula de uma consulta com a lista de caminhos indexados, é possível identificar os itens que correspondem ao predicado de consulta muito rapidamente.
 
-Por exemplo, considere a seguinte consulta: `SELECT location FROM location IN company.locations WHERE location.country = 'France'`. O predicado da consulta (filtragem de itens, onde qualquer local tem "França" como seu país) seria corresponder ao caminho realçado em vermelho abaixo:
+Por exemplo, considere a seguinte consulta: `SELECT location FROM location IN company.locations WHERE location.country = 'France'`. O predicado de consulta (filtragem em itens, onde qualquer local tem "França" como seu país) corresponderia ao caminho realçado em vermelho abaixo:
 
-![Um caminho específico dentro de uma árvore de correspondência](./media/index-overview/matching-path.png)
+![Correspondência de um caminho específico dentro de uma árvore](./media/index-overview/matching-path.png)
 
 > [!NOTE]
-> Uma `ORDER BY` cláusula ordena por uma única propriedade *sempre* precisa de um intervalo de índice e falhará se o caminho que faz referência a ele não tiver um. Da mesma forma, uma de várias `ORDER BY` consulta *sempre* precisa de um índice composto.
+> Uma `ORDER BY` cláusula que ordena por uma única propriedade *sempre* precisa de um índice de intervalo e falhará se o caminho referenciado não tiver um. Da mesma forma, `ORDER BY` uma consulta múltipla *sempre* precisa de um índice composto.
 
 ## <a name="next-steps"></a>Próximas etapas
 

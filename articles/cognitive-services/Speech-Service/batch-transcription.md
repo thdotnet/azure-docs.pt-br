@@ -1,6 +1,6 @@
 ---
-title: Como usar a Transcrição de Lote – Serviços de Fala
-titlesuffix: Azure Cognitive Services
+title: Como usar a transcrição do lote – serviço de fala
+titleSuffix: Azure Cognitive Services
 description: A transcrição de lote é ideal se você quer transcrever uma grande quantidade de áudio em armazenamento, como Blobs do Azure. Usando a API REST dedicada, você pode apontar para arquivos de áudio por um URI de SAS (assinatura de acesso compartilhado) e transcrições de recebimento de forma assíncrona.
 services: cognitive-services
 author: PanosPeriorellis
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: panosper
-ms.openlocfilehash: b71400c3ae3c1cc6737d9194b4d94bf0b9c7efa9
-ms.sourcegitcommit: f10ae7078e477531af5b61a7fe64ab0e389830e8
-ms.translationtype: MT
+ms.openlocfilehash: e98ac335f475e4a6db6b17d5954512f5749e6aec
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67606736"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881146"
 ---
 # <a name="why-use-batch-transcription"></a>Por que usar a transcrição do lote?
 
@@ -84,29 +84,29 @@ Parâmetros de configuração são fornecidos como JSON:
 
 Use essas propriedades opcionais para configurar a transcrição:
 
-| Parâmetro | DESCRIÇÃO |
+| Parâmetro | Descrição |
 |-----------|-------------|
-| `ProfanityFilterMode` | Especifica como lidar com palavrões em resultados de reconhecimento. Os valores aceitos são `none`, o que desativa a filtragem de profanação, `masked` que substitui a profanidade por asteriscos, `removed` que remove todos os palavrões do resultado ou `tags`, que adiciona tags de "profanidade". A configuração padrão é `masked`. |
-| `PunctuationMode` | Especifica como manipular a pontuação nos resultados do reconhecimento. Os valores aceitos são `none`, o que desativa a pontuação, `dictated` que implica pontuação explícita, `automatic` que permite ao decodificador lidar com pontuação ou `dictatedandautomatic`, o que implica em sinais de pontuação ditados ou automáticos. |
+| `ProfanityFilterMode` | Especifica como lidar com palavrões em resultados de reconhecimento. Os valores aceitos são `None`, o que desativa a filtragem de profanação, `masked` que substitui a profanidade por asteriscos, `removed` que remove todos os palavrões do resultado ou `tags`, que adiciona tags de "profanidade". A configuração padrão é `masked`. |
+| `PunctuationMode` | Especifica como manipular a pontuação nos resultados do reconhecimento. Os valores aceitos são `None`, o que desativa a pontuação, `dictated` que implica pontuação explícita, `automatic` que permite ao decodificador lidar com pontuação ou `dictatedandautomatic`, o que implica em sinais de pontuação ditados ou automáticos. |
  | `AddWordLevelTimestamps` | Especifica se os carimbos de data/hora no nível da palavra devem ser adicionados à saída. Os valores aceitos são `true`, o que habilita os carimbos de data/hora no nível da palavra e `false` (o valor padrão) para desabilitá-los. |
- | `AddSentiment` | Especifica o sentimento deve ser adicionado à declaração. Os valores aceitos são `true` que permite que o sentimento por expressão e `false` (o valor padrão) para desabilitá-lo. |
- | `AddDiarization` | Especifica que alalysis diarization deve ser executada na entrada que deve ser contendo duas vozes de canal mono. Os valores aceitos são `true` que permite que diarization e `false` (o valor padrão) para desabilitá-lo. Ele também requer `AddWordLevelTimestamps` a ser definido como true.|
+ | `AddSentiment` | Especifica um sentimentos que deve ser adicionado ao expressão. Os valores aceitos são `true` que habilitam a expressão de sentimentos e `false` (o valor padrão) para desabilitá-lo. |
+ | `AddDiarization` | Especifica que diarization alalysis deve ser executado na entrada que é esperada como canal mono contendo duas vozes. Os valores aceitos são `true` que habilita diarization e `false` (o valor padrão) para desabilitá-lo. Ele também precisa `AddWordLevelTimestamps` ser definido como true.|
 
 ### <a name="storage"></a>Armazenamento
 
-O lote dá suporte a transcrição [armazenamento de BLOBs do Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview) para a leitura de áudio e transcrições de gravação para o armazenamento.
+A transcrição do lote dá suporte ao [armazenamento de BLOBs do Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-overview) para leitura de áudio e gravação de transcrições no armazenamento.
 
 ## <a name="webhooks"></a>webhooks
 
-Sondagem de status de transcrição pode não tenha o melhor desempenho, ou fornecer a melhor experiência de usuário. Para sondar o status, você pode registrar retornos de chamada, o qual o cliente serão notificado quando tem concluído a tarefas de transcrição de longa execução.
+A sondagem do status de transcrição pode não ser a mais eficaz ou fornecer a melhor experiência do usuário. Para sondar o status, você pode registrar retornos de chamada, que notificarão o cliente quando tarefas de transcrição de execução longa forem concluídas.
 
-Para obter mais detalhes, consulte [Webhooks](webhooks.md).
+Para obter mais detalhes, consulte [WebHooks](webhooks.md).
 
-## <a name="speaker-separation-diarization"></a>Separação de alto-falante (Diarization)
+## <a name="speaker-separation-diarization"></a>Separação de alto-falantes (Diarization)
 
-Diarization é o processo de separar os alto-falantes em uma parte de áudio. Nosso pipeline de lote dá suporte a Diarization e é capaz de reconhecer dois alto-falantes em gravações de canal mono.
+Diarization é o processo de separar os alto-falantes em um pedaço de áudio. Nosso pipeline de lote dá suporte a Diarization e é capaz de reconhecer dois alto-falantes em gravações de canal mono.
 
-Para solicitar que a sua solicitação de transcrição de áudio é processada para diarization, você simplesmente precisa adicionar o parâmetro relevante na solicitação HTTP, conforme mostrado abaixo.
+Para solicitar que sua solicitação de transcrição de áudio seja processada para diarization, basta adicionar o parâmetro relevante na solicitação HTTP, conforme mostrado abaixo.
 
  ```json
 {
@@ -122,30 +122,30 @@ Para solicitar que a sua solicitação de transcrição de áudio é processada 
 }
 ```
 
-Carimbos de hora de nível do Word também teria que ser ' Ativado ' pois indicam os parâmetros na solicitação acima.
+Os carimbos de data/hora de nível de palavra também teriam que ser ' ativados ', uma vez que os parâmetros na solicitação acima indicam.
 
-O áudio correspondente conterá os alto-falantes identificados por um número (atualmente, damos suporte a apenas duas vozes, para que os alto-falantes serão identificados como ' 1 de alto-falante ' e 'Alto-falante 2') seguido pela saída de transcrição.
+O áudio correspondente conterá os alto-falantes identificados por um número (atualmente, damos suporte apenas a duas vozes, de modo que os alto-falantes serão identificados como ' orador 1 ' e ' orador 2 ') seguidos da saída da transcrição.
 
-Observe também que Diarization não está disponível em gravações em estéreo. Além disso, todos os JSON saída conterá a marca de alto-falante. Se diarization não for usado, ele mostrará ' alto-falante: Nulo ' na saída JSON.
+Observe também que o Diarization não está disponível em gravações de estéreo. Além disso, toda a saída JSON conterá a marca do orador. Se diarization não for usado, ele mostrará ' Palestrante: NULL ' na saída JSON.
 
 > [!NOTE]
-> Diarization está disponível em todas as regiões e para todas as localidades!
+> O Diarization está disponível em todas as regiões e em todas as localidades!
 
 ## <a name="sentiment"></a>Sentimento
 
-Sentimento é um novo recurso na API de transcrição de lote e é um recurso importante no domínio do Centro de chamada. Os clientes podem usar o `AddSentiment` parâmetros às suas solicitações para
+O sentimentos é um novo recurso da API de transcrição do lote e é um recurso importante no domínio do Call Center. Os clientes podem usar `AddSentiment` os parâmetros para suas solicitações para
 
 1.  Obtenha informações sobre a satisfação do cliente
-2.  Obter informações sobre o desempenho dos agentes (levando as chamadas de equipe)
-3.  Identificar o ponto no tempo quando uma chamada levou um turno em uma direção negativa
-4.  Identificar o que deu bem ao transformar chamadas negativas positivo
-5.  Identificar clientes como e quais não gosto sobre um produto ou um serviço
+2.  Obtenha informações sobre o desempenho dos agentes (equipe fazendo as chamadas)
+3.  Identifique o ponto exato no tempo em que uma chamada levou uma direção negativa
+4.  Identifique o que deu certo ao transformar chamadas negativas em positivos
+5.  Identificar o que os clientes gostam e o que eles não gostam sobre um produto ou um serviço
 
-Sentimento foi classificado por segmento de áudio, onde um segmento de áudio é definido como a janela de tempo entre o início da declaração (deslocamento) e a latência de detecção do final do fluxo de bytes. Todo o texto dentro desse segmento é usado para calcular o sentimento. Nós não calculará nenhum valor de sentimento agregado para a chamada inteira ou a fala inteira de cada canal. Essas agregações são deixadas para o proprietário do domínio ainda mais se aplicam.
+A notação é pontuada por segmento de áudio em que um segmento de áudio é definido como o tempo se sobrepõe entre o início do expressão (deslocamento) e o silêncio de detecção do fluxo de fim de byte. O texto inteiro dentro desse segmento é usado para calcular as opiniões. NÃO calculamos valores de opiniões agregados para toda a chamada ou toda a fala de cada canal. Essas agregações são deixadas para o proprietário do domínio para serem aplicadas.
 
-Sentimento foi aplicado a forma léxica.
+As opiniões são aplicadas no formato léxico.
 
-Um exemplo de saída JSON é semelhante a abaixo:
+Um exemplo de saída JSON é semelhante ao seguinte:
 
 ```json
 {
@@ -180,11 +180,11 @@ Um exemplo de saída JSON é semelhante a abaixo:
   ]
 }
 ```
-O recurso usa um modelo de sentimento, que está atualmente em versão Beta.
+O recurso usa um modelo de sentimentos, que está atualmente em versão beta.
 
-## <a name="sample-code"></a>Exemplo de código
+## <a name="sample-code"></a>Código de exemplo
 
-Exemplos completos estão disponíveis na [repositório de exemplo do GitHub](https://aka.ms/csspeech/samples) dentro de `samples/batch` subdiretório.
+Exemplos completos estão disponíveis no [repositório de exemplo do GitHub](https://aka.ms/csspeech/samples) dentro `samples/batch` do subdiretório.
 
 Você precisa personalizar o código de exemplo com as informações de assinatura, a região de serviço, o URI de SAS que aponta para o arquivo de áudio a transcrever e IDs de modelo caso deseje usar um modelo de linguagem ou acústico personalizado.
 
