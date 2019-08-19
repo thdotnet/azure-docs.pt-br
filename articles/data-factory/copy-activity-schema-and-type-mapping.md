@@ -92,10 +92,10 @@ As propriedades a seguir têm suporte sob `translator`  ->  `mappings` -> objeto
 | -------- | ------------------------------------------------------------ | -------- |
 | name     | Nome da coluna de origem ou o coletor.                           | Sim      |
 | ordinal  | Índice da coluna. Começam com 1. <br>Aplicar e necessário ao usar delimitado por texto sem a linha de cabeçalho. | Não       |
-| cpath     | Expressão de caminho JSON para cada campo extrair ou mapear. Se aplicam a dados hierárquicos, por exemplo, o MongoDB/REST.<br>Para os campos sob o objeto raiz, o caminho JSON começa com root $; para os campos dentro da matriz escolhidos pela `collectionReference` propriedade, o caminho JSON começa do elemento de matriz. | Não       |
-| Tipo     | Tipo de dados provisórios da fábrica de dados da coluna de origem ou o coletor. | Não       |
+| path     | Expressão de caminho JSON para cada campo extrair ou mapear. Se aplicam a dados hierárquicos, por exemplo, o MongoDB/REST.<br>Para os campos sob o objeto raiz, o caminho JSON começa com root $; para os campos dentro da matriz escolhidos pela `collectionReference` propriedade, o caminho JSON começa do elemento de matriz. | Não       |
+| type     | Tipo de dados provisórios da fábrica de dados da coluna de origem ou o coletor. | Não       |
 | culture  | Cultura da coluna de origem ou o coletor. <br>Aplicar quando o tipo é `Datetime` ou `Datetimeoffset`. O padrão é `en-us`. | Não       |
-| formato   | Formatar cadeia de caracteres a ser usado quando o tipo é `Datetime` ou `Datetimeoffset`. Consulte [Data personalizada e cadeias de caracteres de formato de hora](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings) sobre como formatar a data e hora. | Não       |
+| format   | Formatar cadeia de caracteres a ser usado quando o tipo é `Datetime` ou `Datetimeoffset`. Consulte [Data personalizada e cadeias de caracteres de formato de hora](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings) sobre como formatar a data e hora. | Não       |
 
 As propriedades a seguir têm suporte sob `translator`  ->  `mappings` além do objeto com `source` e `sink`:
 
