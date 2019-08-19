@@ -1,106 +1,110 @@
 ---
 title: Anexar um recurso dos Serviços Cognitivos a um conjunto de habilidades – Azure Search
-description: Instruções para anexar uma assinatura do all-in-one de serviços Cognitivos para um pipeline de enriquecimento cognitivos no Azure Search.
+description: Instruções para anexar uma assinatura All-in-One de serviços cognitivas a um pipeline de enriquecimento avançado no Azure Search.
 manager: cgronlun
 author: LuisCabrer
 services: search
 ms.service: search
+ms.subservice: cognitive-search
 ms.devlang: NA
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: ffce8a2bd8a04e73acdeac037be0b10ba1a9a887
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 1a8bf1eaf37dbbd4462b0ebd93f74502f89f9d7b
+ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67672379"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68841357"
 ---
 # <a name="attach-a-cognitive-services-resource-with-a-skillset-in-azure-search"></a>Anexar um recurso dos Serviços Cognitivos a um conjunto de habilidades no Azure Search 
 
-Unidade de algoritmos de inteligência Artificial a [pipelines de indexação cognitivas](cognitive-search-concept-intro.md) usado para aprimoramento de documento no Azure Search. Esses algoritmos são com base nos recursos de serviços Cognitivos do Azure, incluindo [computacional](https://azure.microsoft.com/services/cognitive-services/computer-vision/) para análise de imagem e reconhecimento óptico de caracteres (OCR) e [análise de texto](https://azure.microsoft.com/services/cognitive-services/text-analytics/) para o reconhecimento de entidade extração de frases-chave e outros aprimoramentos. Conforme usado pelo Azure Search para fins de aprimoramento de documento, os algoritmos são encapsulados dentro de um *habilidade*, colocado em um *conjunto de qualificações*e referenciado por uma *indexador* durante a indexação.
+Os algoritmos de ia orientam os pipelines de [indexação cognitiva](cognitive-search-concept-intro.md) usados para o enriquecimento de documentos no Azure Search. Esses algoritmos são baseados nos recursos de serviços cognitivas do Azure, incluindo [Pesquisa Visual computacional](https://azure.microsoft.com/services/cognitive-services/computer-vision/) para análise de imagem e OCR (reconhecimento óptico de caracteres) e [análise de texto](https://azure.microsoft.com/services/cognitive-services/text-analytics/) para reconhecimento de entidade, extração de frases-chave e outros aprimoramentos . Conforme usado pelo Azure Search para fins de enriquecimento de documentos, os algoritmos são encapsulados dentro de uma *habilidade*, colocados em um configurador de *qualificações*e referenciados por um *indexador* durante a indexação.
 
-Você pode aprimorar gratuitamente um número limitado de documentos. Ou, você pode anexar a um recurso de serviços Cognitivos faturável para uma *conjunto de qualificações* para cargas de trabalho maiores e mais frequentes. Neste artigo, você aprenderá como anexar um recurso dos serviços Cognitivos faturável para enriquecer documentos durante o Azure Search [indexação](search-what-is-an-index.md).
+Você pode enriquecer um número limitado de documentos gratuitamente. Ou então, você pode anexar um recurso de serviços de cognitiva Faturável a um conconhecimento para cargas de trabalho maiores e mais frequentes. Neste artigo, você aprenderá a anexar um recurso de serviços de cognitiva Faturável para enriquecer documentos durante a [indexação](search-what-is-an-index.md) de Azure Search.
 
 > [!NOTE]
-> Eventos passíveis de cobrança incluem chamadas para APIs de serviços Cognitivos e imagem extração como parte do estágio de decodificação de documentos no Azure Search. Não há nenhum custo para extração de texto de documentos ou para as habilidades que não chamam serviços Cognitivos.
+> Os eventos faturáveis incluem chamadas para API de Serviços Cognitivos e extração de imagem como parte do estágio de quebra de documento no Azure Search. Não há nenhum encargo para a extração de texto de documentos ou para habilidades que não chamam serviços cognitivas.
 >
-> A execução de habilidades faturáveis é na [dos serviços Cognitivos pagamento medida que vá preços](https://azure.microsoft.com/pricing/details/cognitive-services/). Para obter os preços de extração de imagem, consulte o [página de preços do Azure Search](https://go.microsoft.com/fwlink/?linkid=2042400).
+> A execução de habilidades faturáveis é o [preço pago pelo uso dos serviços cognitivas](https://azure.microsoft.com/pricing/details/cognitive-services/). Para obter os preços de extração de imagem, consulte a [página de preços do Azure Search](https://go.microsoft.com/fwlink/?linkid=2042400).
 
 ## <a name="same-region-requirement"></a>Requisito de mesma região
 
-É necessário que o Azure Search e serviços Cognitivos do Azure existem na mesma região. Caso contrário, você receberá esta mensagem em tempo de execução: `"Provided key is not a valid CognitiveServices type key for the region of your search service."` 
+Exigimos que Azure Search e os serviços cognitivas do Azure existam na mesma região. Caso contrário, você receberá essa mensagem em tempo de execução:`"Provided key is not a valid CognitiveServices type key for the region of your search service."` 
 
-Não há nenhuma maneira de mover um serviço entre regiões. Se você receber esse erro, você deve criar um novo recurso de serviços Cognitivos na mesma região do Azure Search.
+Não é possível mover um serviço entre regiões. Se você receber esse erro, deverá criar um novo recurso de serviços cognitivas na mesma região que Azure Search.
+
+> [!NOTE]
+> Algumas habilidades internas se baseiam em serviços cognitivas não regionais (por exemplo, a [habilidade de tradução de texto](cognitive-search-skill-text-translation.md)). Lembre-se de que, se você adicionar qualquer uma dessas habilidades ao seu skillr de que seus dados não têm garantia de permanecer na mesma região que o Azure Search ou o recurso de serviços cognitivas. Consulte a [página status do serviço](https://aka.ms/allinoneregioninfo) para obter mais detalhes.
 
 ## <a name="use-free-resources"></a>Usar recursos gratuitos
 
 Você pode usar uma opção de processamento limitado e gratuito para concluir os exercícios do início rápido e o tutorial de pesquisa cognitiva.
 
-Recursos gratuitos (aprimoramentos limitado) são restritos a 20 documentos por dia, por assinatura.
+Recursos gratuitos (aprimoramentos limitados) são restritos a 20 documentos por dia, por assinatura.
 
-1. Abra o Assistente de importação de dados:
+1. Abra o assistente de importação de dados:
 
-   ![Abra o Assistente de importação de dados](media/search-get-started-portal/import-data-cmd.png "abrir o Assistente de importação de dados")
+   ![Abrir o assistente de importação de dados](media/search-get-started-portal/import-data-cmd.png "Abrir o assistente de importação de dados")
 
-1. Escolha uma fonte de dados e continuar **adicionar de pesquisa cognitiva (opcional)** . Para obter uma explicação passo a passo deste assistente, consulte [importação, índice e consulta usando as ferramentas de portal](search-get-started-portal.md).
+1. Escolha uma fonte de dados e continue a **Adicionar pesquisa cognitiva (opcional)** . Para obter uma explicação passo a passo deste assistente, consulte [importar, indexar e consultar usando as ferramentas do portal](search-get-started-portal.md).
 
-1. Expandir **anexar serviços Cognitivos** e, em seguida, selecione **gratuito (aprimoramentos de limitado)** :
+1. Expanda **anexar serviços cognitivas** e, em seguida, selecione **gratuito (aprimoramentos limitados)** :
 
-   ![Expandido da seção de anexar os serviços Cognitivos](./media/cognitive-search-attach-cognitive-services/attach1.png "seção expandida anexar serviços Cognitivos")
+   ![Seção de serviços cognitivas de anexo expandida](./media/cognitive-search-attach-cognitive-services/attach1.png "Seção de serviços cognitivas de anexo expandida")
 
-1. Continuar para a próxima etapa, **aprimoramentos de adicionar**. Para obter uma descrição das habilidades disponíveis no portal, consulte [etapa 2: Adicionar habilidades cognitivas](cognitive-search-quickstart-blob.md#create-the-enrichment-pipeline) no início rápido de pesquisa cognitiva.
+1. Prossiga para a próxima etapa, **Adicionar aprimoramentos**. Para obter uma descrição das habilidades disponíveis no portal, consulte [etapa 2: Adicione habilidades](cognitive-search-quickstart-blob.md#create-the-enrichment-pipeline) cognitivas no início rápido da pesquisa cognitiva.
 
 ## <a name="use-billable-resources"></a>Usar recursos faturáveis
 
-Para cargas de trabalho que cria os aprimoramentos de mais de 20 por dia, certifique-se de anexar a um recurso de serviços Cognitivos faturável. É recomendável que você sempre pode anexar um recurso dos serviços Cognitivos faturável, mesmo se você pretende nunca chamar APIs de serviços Cognitivos. Anexar um recurso substitui o limite diário.
+Para cargas de trabalho que criam mais de 20 aprimoramentos por dia, lembre-se de anexar um recurso de serviços cognitivas cobráveis. É recomendável que você sempre anexe um recurso de serviços de cognitiva Faturável, mesmo que você nunca pretenda chamar API de Serviços Cognitivos. A anexação de um recurso substitui o limite diário.
 
-Você será cobrado somente pelos habilidades que chamam as APIs de serviços Cognitivos. Você não será cobrado por [habilidades personalizadas](cognitive-search-create-custom-skill-example.md), ou, como as habilidades [fusão de texto](cognitive-search-skill-textmerger.md), [divisor de texto](cognitive-search-skill-textsplit.md), e [shaper](cognitive-search-skill-shaper.md), que não são baseadas em API.
+Você é cobrado apenas por habilidades que chamam o API de Serviços Cognitivos. Você não é cobrado por [habilidades personalizadas](cognitive-search-create-custom-skill-example.md)ou habilidades como [fusão de texto](cognitive-search-skill-textmerger.md), [divisor de texto](cognitive-search-skill-textsplit.md)e [modelador](cognitive-search-skill-shaper.md), que não são baseados em API.
 
-1. Abra o Assistente de importação de dados, escolha uma fonte de dados e continuar **adicionar de pesquisa cognitiva (opcional)** .
+1. Abra o assistente para importar dados, escolha uma fonte de dados e continue a **Adicionar pesquisa cognitiva (opcional)** .
 
-1. Expandir **anexar serviços Cognitivos** e, em seguida, selecione **criar novo recurso de serviços Cognitivos**. Uma nova guia é aberta para que você possa criar o recurso:
+1. Expanda **anexar serviços cognitivas** e, em seguida, selecione **criar novo recurso de serviços cognitivas**. Uma nova guia é aberta para que você possa criar o recurso:
 
-   ![Criar um recurso de serviços Cognitivos](./media/cognitive-search-attach-cognitive-services/cog-services-create.png "criar um recurso de serviços Cognitivos")
+   ![Criar um recurso de Serviços Cognitivos](./media/cognitive-search-attach-cognitive-services/cog-services-create.png "Criar um recurso de Serviços Cognitivos")
 
-1. No **local** , selecione a região onde se encontra o serviço Azure Search. Certifique-se de usar esta região por motivos de desempenho. Também usar esta região anula os encargos de largura de banda de saída entre regiões.
+1. Na lista **local** , selecione a região onde o serviço de Azure Search está localizado. Certifique-se de usar essa região por motivos de desempenho. O uso dessa região também anula os encargos de largura de banda de saída entre regiões.
 
-1. No **tipo de preço** lista, selecione **S0** para obter a coleção em um dos recursos de serviços Cognitivos, incluindo os recursos de visão e a linguagem que faça as habilidades predefinidas usadas pelo Azure Search.
+1. Na lista **tipo de preço** , selecione **S0** para obter a coleção All-in-One de recursos de serviços cognitivas, incluindo os recursos de visão e linguagem que retornam as habilidades predefinidas usadas pelo Azure Search.
 
-   Para a camada S0, você pode encontrar as taxas para cargas de trabalho específicas na [página de preços dos serviços Cognitivos](https://azure.microsoft.com/pricing/details/cognitive-services/).
+   Para a camada S0, você pode encontrar taxas para cargas de trabalho específicas na [página de preços de serviços cognitivas](https://azure.microsoft.com/pricing/details/cognitive-services/).
   
-   + No **selecionar oferecem** lista, certifique-se **dos serviços Cognitivos** está selecionado.
-   + Sob **linguagem** apresenta as taxas **padrão de análise de texto** se aplicam a indexação de inteligência Artificial.
-   + Sob **Vision** apresenta as taxas **S1 de visão do computador** se aplicam.
+   + Na lista **selecionar oferta** , verifique se **Serviços cognitivas** está selecionado.
+   + Em recursos de **linguagem** , as taxas para **análise de texto Standard** se aplicam à indexação de ia.
+   + Em recursos de **visão** , as taxas para **Pesquisa Visual computacional S1** se aplicam.
 
-1. Selecione **criar** para provisionar o novo recurso de serviços Cognitivos.
+1. Selecione **criar** para provisionar o novo recurso de serviços cognitivas.
 
-1. Retornar à guia anterior, que contém o Assistente de importação de dados. Selecione **Refresh** para mostrar o recurso de serviços Cognitivos e, em seguida, selecione o recurso:
+1. Retorne à guia anterior, que contém o assistente de importação de dados. Selecione **Atualizar** para mostrar o recurso serviços cognitivas e, em seguida, selecione o recurso:
 
-   ![Selecione o recurso de serviços Cognitivos](./media/cognitive-search-attach-cognitive-services/attach2.png "selecione o recurso de serviços Cognitivos")
+   ![Selecione o recurso serviços cognitivas](./media/cognitive-search-attach-cognitive-services/attach2.png "Selecione o recurso serviços cognitivas")
 
-1. Expanda o **aprimoramentos de adicionar** seção para selecionar as habilidades cognitivas específicas que você deseja executar em seus dados. Conclua o restante do assistente. Para obter uma descrição das habilidades disponíveis no portal, consulte [etapa 2: Adicionar habilidades cognitivas](cognitive-search-quickstart-blob.md#create-the-enrichment-pipeline) no início rápido de pesquisa cognitiva.
+1. Expanda a seção **Adicionar aprimoramentos** para selecionar as habilidades cognitivas específicas que você deseja executar em seus dados. Conclua o restante do assistente. Para obter uma descrição das habilidades disponíveis no portal, consulte [etapa 2: Adicione habilidades](cognitive-search-quickstart-blob.md#create-the-enrichment-pipeline) cognitivas no início rápido da pesquisa cognitiva.
 
 ## <a name="attach-an-existing-skillset-to-a-cognitive-services-resource"></a>Anexar um conjunto de habilidades existente a um recurso de Serviços Cognitivos
 
 Se você tiver um conjunto de habilidades existente, poderá anexá-lo a um recurso de Serviços Cognitivos novo ou diferente.
 
-1. Sobre o **visão geral do serviço** página, selecione **conjuntos de habilidades**:
+1. Na página **visão geral do serviço** , selecione **habilidades**:
 
    ![Guia Conjuntos de Habilidades](./media/cognitive-search-attach-cognitive-services/attach-existing1.png "Guia Conjuntos de Habilidades")
 
-1. Selecione o nome do conjunto de qualificações e, em seguida, selecione um recurso existente ou crie um novo. Selecione **OK** para confirmar as alterações.
+1. Selecione o nome do conconhecedor e, em seguida, selecione um recurso existente ou crie um novo. Selecione **OK** para confirmar as alterações.
 
    ![Lista de recursos do conjunto de habilidades](./media/cognitive-search-attach-cognitive-services/attach-existing2.png "Lista de recursos do conjunto de habilidades")
 
-   Lembre-se de que o **gratuito (aprimoramentos de limitado)** opção limita você a 20 documentos diariamente, e que você pode usar **criar novo recurso de serviços Cognitivos** para provisionar um novo recurso faturável. Se você criar um novo recurso, selecione **Atualizar** para atualizar a lista de recursos dos Serviços cognitivos e, em seguida, selecione o recurso.
+   Lembre-se de que a opção **gratuito (aprimoramentos limitados)** limita-se a 20 documentos diariamente, e que você pode usar **criar novos recursos de serviços cognitivas** para provisionar um novo recurso faturável. Se você criar um novo recurso, selecione **Atualizar** para atualizar a lista de recursos dos Serviços cognitivos e, em seguida, selecione o recurso.
 
 ## <a name="attach-cognitive-services-programmatically"></a>Anexar Serviços Cognitivos de modo programático
 
-Ao definir o conjunto de habilidades de forma programática, adicione uma seção `cognitiveServices` ao conjunto de habilidades. Nesta seção, inclua a chave do recurso dos serviços Cognitivos que você deseja associar o conjunto de habilidades. Lembre-se de que o recurso deve ser na mesma região que seu recurso de Azure Search. Também inclua `@odata.type`e defina como `#Microsoft.Azure.Search.CognitiveServicesByKey`.
+Ao definir o conjunto de habilidades de forma programática, adicione uma seção `cognitiveServices` ao conjunto de habilidades. Nessa seção, inclua a chave do recurso de serviços cognitivas que você deseja associar ao skillset. Lembre-se de que o recurso deve estar na mesma região que o recurso de Azure Search. Também inclua `@odata.type`e defina como `#Microsoft.Azure.Search.CognitiveServicesByKey`.
 
-O exemplo a seguir mostra esse padrão. Observe que o `cognitiveServices` seção no final da definição.
+O exemplo a seguir mostra esse padrão. Observe a `cognitiveServices` seção no final da definição.
 
 ```http
 PUT https://[servicename].search.windows.net/skillsets/[skillset name]?api-version=2019-05-06
@@ -138,24 +142,24 @@ Content-Type: application/json
 
 ## <a name="example-estimate-costs"></a>Exemplo: Estimar custos
 
-Para estimar os custos associados ao cognitiva indexação de pesquisa, comece com uma ideia de um documento médio semelhante ao seguinte para que você possa executar alguns números. Por exemplo, você pode aproximar:
+Para estimar os custos associados à indexação de pesquisa cognitiva, comece com uma ideia da aparência de um documento médio para que você possa executar alguns números. Por exemplo, você pode aproximar:
 
 + 1\.000 PDFs.
 + Seis páginas cada.
-+ Uma imagem por página (6.000 imagens).
++ Uma imagem por página (imagens de 6.000).
 + 3\.000 caracteres por página.
 
-Suponha que um pipeline que consiste de decodificação de documentos de cada extração PDF, imagem e texto, reconhecimento óptico de caracteres (OCR) de imagens e reconhecimento de entidade de organizações.
+Suponha um pipeline que consiste na quebra de documento de cada PDF, extração de imagem e texto, OCR (reconhecimento óptico de caracteres) de imagens e reconhecimento de entidades de organizações.
 
-Os preços mostrados neste artigo são hipotéticos. Eles são usados para ilustrar o processo de estimativa. Seus custos pode ser inferiores. Para obter os preços reais das transações, consulte [preços dos serviços Cognitivos](https://azure.microsoft.com/pricing/details/cognitive-services).
+Os preços mostrados neste artigo são hipotéticos. Eles são usados para ilustrar o processo de estimativa. Seus custos podem ser menores. Para obter os preços reais das transações, consulte Confira [preços de serviços cognitivas](https://azure.microsoft.com/pricing/details/cognitive-services).
 
-1. Para decifração de documento com conteúdo de texto e imagem, a extração de texto atualmente é gratuita. Para imagens de 6.000, suponha que US $1 para cada 1.000 imagens extraídas. Isso é um custo de US $6.00 para esta etapa.
+1. Para decifração de documento com conteúdo de texto e imagem, a extração de texto atualmente é gratuita. Para imagens 6.000, suponha $1 para cada 1.000 imagens extraídas. Esse é um custo de $6 para esta etapa.
 
 2. Para OCR de 6.000 imagens em inglês, a habilidade cognitiva do OCR usa o melhor algoritmo (DescribeText). Supondo um custo de US$ 2,50 por 1.000 imagens a serem analisadas, pagaríamos US$ 15,00 para essa etapa.
 
-3. Para extração de entidade, você teria um total de três registros de texto por página. Cada registro tem 1.000 caracteres. Três registros de texto por página multiplicado por páginas de 6.000 é igual a 18.000 registros de texto. Supondo US$ 2,00 por 1.000 registros de texto, essa etapa custaria US$36,00.
+3. Para extração de entidade, você teria um total de três registros de texto por página. Cada registro tem 1.000 caracteres. Três registros de texto por página multiplicados por 6.000 páginas são iguais a 18.000 registros de texto. Supondo US$ 2,00 por 1.000 registros de texto, essa etapa custaria US$36,00.
 
-Juntando as peças, você pagaria cerca de US $57,00 a ingestão de 1.000 documentos em PDF deste tipo com o conjunto de qualificações descrito.
+Juntando tudo isso, você pagaria cerca de $57 para ingerir documentos PDF de 1.000 desse tipo com o conjunto de qualificações descrito.
 
 ## <a name="next-steps"></a>Próximas etapas
 + [Página de preços do Azure Search](https://azure.microsoft.com/pricing/details/search/)

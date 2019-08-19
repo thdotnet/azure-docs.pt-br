@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: 91104b36b4821d8b1e0350d4eeb20d652de1242b
-ms.sourcegitcommit: 9dc7517db9c5817a3acd52d789547f2e3efff848
+ms.openlocfilehash: 934300351c05b1709dc9df38909edb1bb4ae73ea
+ms.sourcegitcommit: 6cbf5cc35840a30a6b918cb3630af68f5a2beead
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/23/2019
-ms.locfileid: "68406241"
+ms.lasthandoff: 08/05/2019
+ms.locfileid: "68779578"
 ---
 # <a name="connect-to-hdinsight-apache-hadoop-using-ssh"></a>Conectar o HDInsight (Apache Hadoop) usando SSH
 
@@ -52,7 +52,7 @@ Por padrão, o Microsoft Windows não instala clientes SSH. Os clientes `ssh` e 
 
 * [Git](https://git-scm.com/).
 
-Também há vários clientes SSH gráficos, como reproduzida [e](https://www.chiark.greenend.org.uk/~sgtatham/putty/) [MobaXterm](https://mobaxterm.mobatek.net/). Embora esses clientes possam ser usados para se conectar ao HDInsight, o processo de conexão é diferente do que usa o utilitário `ssh`. Para obter mais informações, confira a documentação do cliente gráfico que você está usando.
+Também há vários clientes SSH gráficos, como [reproduzida](https://www.chiark.greenend.org.uk/~sgtatham/putty/) e [MobaXterm](https://mobaxterm.mobatek.net/). Embora esses clientes possam ser usados para se conectar ao HDInsight, o processo de conexão é diferente do que usa o utilitário `ssh`. Para obter mais informações, confira a documentação do cliente gráfico que você está usando.
 
 ## <a id="sshkey"></a>Autenticação: Chaves SSH
 
@@ -171,7 +171,9 @@ Os nós de trabalho e de Zookeeper não podem ser acessados pela Internet direta
 
 2. Da conexão SSH para o nó de cabeçalho ou de borda, use o comando `ssh` para se conectar a um nó de trabalho no cluster:
 
+        ```bash
         ssh sshuser@wn0-myhdi
+        ```
 
     Para recuperar uma lista dos nomes dos nós, consulte o documento [Gerenciar HDInsight usando a API REST do Apache Ambari](hdinsight-hadoop-manage-ambari-rest-api.md#example-get-the-fqdn-of-cluster-nodes).
 

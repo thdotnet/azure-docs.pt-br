@@ -67,6 +67,8 @@
       href: overview-hosting-plans.md
     - name: Funcionalidade de SO
       href: operating-system-functionality.md
+    - name: Melhores práticas de implantação
+      href: deploy-best-practices.md
     - name: Segurança
       items:
         - name: Recomendações
@@ -217,6 +219,8 @@
       href: /azure/templates/microsoft.web/allversions
 - name: Recursos
   items:
+    - name: Blog do Serviço de Aplicativo
+      href: 'https://aka.ms/appserviceblog'
     - name: Desenvolva suas habilidades com o Microsoft Learn
       href: /learn/browse/
     - name: Roteiro do Azure

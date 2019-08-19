@@ -8,43 +8,46 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 52936b14264bd4fe1846ae365e1de447d594b612
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: eb667c398be0bd51e05a6b65d416d5bce54e4386
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68639050"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881978"
 ---
 # <a name="choose-a-map-style-in-azure-maps"></a>Escolha um estilo de mapa no Azure Mapas
 
-O Azure Mapas tem quatro estilos de mapas diferentes para escolher. Para saber mais sobre estilos de mapa, consulte [estilos de mapa com suporte no Azure Mapas](./supported-map-styles.md). Este artigo mostra como usar as funcionalidades relacionadas ao estilo para definir um estilo no carregamento do mapa, definir um novo estilo e usar o controle selecionador de estilos.
+Muitos dos [estilos de mapa com suporte no mapas do Azure](./supported-map-styles.md) estão disponíveis no SDK da Web. Este artigo mostra como usar as funcionalidades relacionadas ao estilo para definir um estilo no carregamento do mapa, definir um novo estilo e usar o controle selecionador de estilos.
 
 ## <a name="set-style-on-map-load"></a>Definir estilo no carregamento do mapa
+
+No código a seguir, a `style` opção do mapa é definida como `grayscale_dark` na inicialização.
+
+<br/>
 
 <iframe height='500' scrolling='no' title='Configurando o estilo no carregamento do mapa' src='//codepen.io/azuremaps/embed/WKOQRq/?height=265&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Consulte a Caneta <a href='https://codepen.io/azuremaps/pen/WKOQRq/'>Configurar estilo no carregamento do mapa</a> pelo Azure Mapas (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) em <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-O bloco de código acima define uma chave de assinatura e cria um objeto de Mapa, com o estilo definido como grayscale_dark. Consulte [criar um mapa](./map-create.md) para obter instruções sobre como criar um mapa.
-
 ## <a name="update-the-style"></a>Atualizar o estilo
+
+No código a seguir, depois que uma instância de mapa é carregada, o estilo de mapa  é atualizado de `road` para `satellite` usando a função [SetStyle](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) do mapa.
+
+<br/>
 
 <iframe height='500' scrolling='no' title='Atualizar o estilo' src='//codepen.io/azuremaps/embed/yqXYzY/?height=265&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Consulte a Caneta <a href='https://codepen.io/azuremaps/pen/yqXYzY/'>Atualizar o estilo</a> pelo Azure Mapas (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) em <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-O bloco de código acima define a chave de assinatura e cria um objeto de Mapa sem pré-definir o estilo. Consulte [criar um mapa](./map-create.md) para obter instruções sobre como criar um mapa.
-
-O segundo bloco de código usa o método [setStyle](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) do mapa para definir o estilo do mapa para satélite.
-
 ## <a name="add-the-style-picker"></a>Adicionar o selecionador de estilos
+
+O código a seguir adiciona um [StyleControl](/javascript/api/azure-maps-control/atlas.control.stylecontrol) ao mapa para que o usuário possa alternar facilmente entre os diferentes estilos de mapa. 
+
+<br/>
 
 <iframe height='500' scrolling='no' title='Adicionar o selecionador de estilos' src='//codepen.io/azuremaps/embed/OwgyvG/?height=265&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Consulte a Caneta <a href='https://codepen.io/azuremaps/pen/OwgyvG/'>Atualizar o selecionador de estilos</a> pelo Azure Mapas (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) em <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
-O primeiro bloco de código no código acima define a chave de assinatura e cria um objeto de Mapa, o estilo de mapa é pré-configurado para grayscale_dark. Consulte [criar um mapa](./map-create.md) para obter instruções sobre como criar um mapa.
-
-O segundo bloco de código constrói um selecionador de estilos usando o construtor [StyleControl](/javascript/api/azure-maps-control/atlas.control.stylecontrol) atlas.
-
-Um selecionador de estilos permite a seleção de estilo para o mapa. O terceiro bloco de código adiciona o selecionador de estilos ao mapa usando o método [controls.add](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest). O seletor de estilo está dentro do **ouvinte de eventos** para garantir que seja carregado após o carregamento total do mapa.
+> [!TIP]
+> Por padrão, o controle seletor de estilo lista todos os estilos disponíveis ao usar o tipo de preço S0 de mapas do Azure por padrão. Se você quiser reduzir o número de estilos nessa lista, passe uma matriz dos estilos que você deseja que apareça na lista `mapStyle` na opção do seletor de estilo. Se você estiver usando S1 e quiser mostrar todos os estilos disponíveis, defina a `mapStyles` opção do seletor de estilo como. `"all"`
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -53,12 +56,10 @@ Para saber mais sobre as classes e os métodos usados neste artigo:
 > [!div class="nextstepaction"]
 > [Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest)
 
-Adicione controle aos mapas:
+Adicione controles aos seus mapas:
 
 > [!div class="nextstepaction"]
-> [Adicionar controles de mapa](./map-add-controls.md)
-
-Adicione um PIN ao mapa:
+> [Adicionar controles de mapa](map-add-controls.md)
 
 > [!div class="nextstepaction"]
-> [Adicionar um PIN](./map-add-pin.md)
+> [Adicionar um PIN](map-add-pin.md)

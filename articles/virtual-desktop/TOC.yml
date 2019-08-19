@@ -32,6 +32,8 @@
       href: create-host-pools-arm-template.md
     - name: Criar um pool de host com o PowerShell
       href: create-host-pools-powershell.md
+    - name: Aplicar licença do Windows a hosts da sessão da Área de Trabalho Virtual do Windows
+      href: apply-windows-license.md
     - name: Configurar um compartilhamento de perfil do usuário para um pool de host
       href: create-host-pools-user-profile.md
     - name: Configurar o método de balanceamento de carga da Área de Trabalho Virtual do Windows
@@ -48,6 +50,8 @@
       href: customize-feed-for-virtual-desktop-users.md
     - name: Personalizar as propriedades RDP
       href: customize-rdp-properties.md
+    - name: Implantar a ferramenta de diagnóstico
+      href: deploy-diagnostics.md
 - name: Conceitos
   items:
     - name: Ambiente da Área de Trabalho Virtual do Windows
