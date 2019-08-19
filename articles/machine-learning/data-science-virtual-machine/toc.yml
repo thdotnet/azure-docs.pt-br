@@ -6,8 +6,6 @@
   items:
     - name: O que é a VM de Ciência de Dados?
       href: overview.md
-    - name: O que é a VM de aprendizado profundo?
-      href: deep-learning-dsvm-overview.md
     - name: O que é a VM de Ciência de Dados de IA geográfica?
       href: geo-ai-dsvm-overview.md
 - name: Guia de início rápido
@@ -23,8 +21,6 @@
       href: provision-geo-ai-dsvm.md
 - name: Conceitos
   items:
-    - name: Descobrir DSVM
-      href: dsvm-tools-overview.md
     - name: Estruturas de Aprendizado Profundo e de AI
       href: dsvm-deep-learning-ai-frameworks.md
     - name: Linguagens de programação
@@ -49,8 +45,6 @@
       href: vm-do-ten-things.md
     - name: Usar uma DSVM do Linux
       href: linux-dsvm-walkthrough.md
-    - name: Usar uma VM de Aprendizado Profundo
-      href: use-deep-learning-dsvm.md
     - name: Usar uma DSVM de IA geográfica
       href: use-geo-ai-dsvm.md
     - name: Criar um pool de DSVMs com dimensionamento automático

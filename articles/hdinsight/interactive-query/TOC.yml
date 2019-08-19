@@ -193,6 +193,8 @@
       items:
         - name: O aplicativo Apache Tez para de responder
           href: ./interactive-query-troubleshoot-tez-hangs.md
+        - name: O carregamento da exibição do Apache Ambari Tez está lento
+          href: ./interactive-query-troubleshoot-tez-view-slow.md
         - name: Desempenho da consulta do Apache Hive LLAP
           href: ./interactive-query-troubleshoot-query-performance.md
         - name: Redutor lento
@@ -203,24 +205,14 @@
           href: ./interactive-query-troubleshoot-permission-error-create-table.md
         - name: Limite de sobrecarga de GC excedido
           href: ./interactive-query-troubleshoot-outofmemory-overhead-exceeded.md
-        - name: O carregamento da exibição do Apache Ambari Tez está lento
-          href: ./interactive-query-troubleshoot-tez-view-slow.md
         - name: Mensagem de erro não mostrada na exibição do Apache Hive
           href: ./interactive-query-troubleshoot-error-message-hive-view.md
         - name: Exibição do Apache Hive inacessível
           href: ./interactive-query-troubleshoot-inaccessible-hive-view.md
         - name: ZooKeeperHiveClientException – Configurações do HiveServer2
           href: ./interactive-query-troubleshoot-zookeeperhiveclientexception-hiveserver-configs.md
-        - name: Desempenho da consulta do Apache Hive LLAP
-          href: ./interactive-query-troubleshoot-query-performance.md
         - name: Solucionar problemas de um cluster HDInsight lento ou falhando
           href: ../hdinsight-troubleshoot-failed-cluster.md
-        - name: Solução de problemas de HDFS do Apache Hadoop
-          href: ../hdinsight-troubleshoot-hdfs.md
-        - name: Solução de problemas do Apache HIVE
-          href: ../hdinsight-troubleshoot-hive.md
-        - name: Solução de problemas de YARN do Apache Hadoop
-          href: ../hdinsight-troubleshoot-yarn.md
         - name: Solução de problemas de HDFS do Apache Hadoop
           href: ../hdinsight-troubleshoot-hdfs.md?toc=/azure/hdinsight/interactive-query/toc.json&bc=/azure/hdinsight/interactive-query/breadcrumb/toc.json
         - name: Solução de problemas do Apache HIVE
