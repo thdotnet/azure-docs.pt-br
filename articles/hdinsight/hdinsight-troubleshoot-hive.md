@@ -3,24 +3,22 @@ title: Solucionar problemas do Hive usando o Azure HDInsight
 description: Obtenha respostas para perguntas comuns sobre como trabalhar com o Apache Hive e o Azure HDInsight.
 keywords: Azure HDInsight, Hive, perguntas frequentes, guia de solução de problemas, perguntas comuns
 ms.service: hdinsight
-author: dharmeshkakadia
-ms.author: dkakadia
-ms.topic: conceptual
-ms.date: 11/2/2017
-ms.openlocfilehash: 91e6803e0a1302a33a3bf176ad84d0b0e0c8c5b6
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+author: hrasheed-msft
+ms.author: hrasheed
+ms.topic: troubleshooting
+ms.date: 08/15/2019
+ms.openlocfilehash: ca1e3e11ad5458e8e7f7072b7d3dd561853029fe
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67875936"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69575703"
 ---
 # <a name="troubleshoot-apache-hive-by-using-azure-hdinsight"></a>Solucionar problemas do Apache Hive usando o Azure HDInsight
 
 Saiba mais sobre as principais perguntas e suas resoluções ao trabalhar com cargas de Apache Hive no Apache Ambari.
 
-
 ## <a name="how-do-i-export-a-hive-metastore-and-import-it-on-another-cluster"></a>Como fazer para exportar um metastore do Hive e importá-lo em outro cluster?
-
 
 ### <a name="resolution-steps"></a>Etapas de resolução
 
@@ -36,16 +34,15 @@ Saiba mais sobre as principais perguntas e suas resoluções ao trabalhar com ca
 
 3. Copie o arquivo alltables.sql para o novo cluster do HDInsight e execute o seguinte comando:
 
-   ```apache
-   hive -f alltables.sql
-   ```
+    ```apache
+    hive -f alltables.sql
+    ```
 
-O código nas etapas de resolução supõe que os caminhos de dados no novo cluster sejam iguais aos caminhos de dados no cluster antigo. Se os caminhos de dados forem diferentes, você poderá editar manualmente o arquivo alltables.sql gerado para refletir as alterações.
+O código nas etapas de resolução supõe que os caminhos de dados no novo cluster sejam iguais aos caminhos de dados no cluster antigo. Se os caminhos de dados forem diferentes, você poderá editar manualmente o `alltables.sql` arquivo gerado para refletir as alterações.
 
 ### <a name="additional-reading"></a>Leitura adicional
 
 - [Conectar-se a um cluster HDInsight usando SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
-
 
 ## <a name="how-do-i-locate-hive-logs-on-a-cluster"></a>Como fazer para localizar logs do Hive em um cluster?
 
@@ -56,25 +53,24 @@ O código nas etapas de resolução supõe que os caminhos de dados no novo clus
 2. Para exibir logs de cliente do Hive, use o seguinte comando:
 
    ```apache
-   /tmp/<username>/hive.log 
+   /tmp/<username>/hive.log
    ```
 
 3. Para exibir logs de metastore do Hive, use o seguinte comando:
 
    ```apache
-   /var/log/hive/hivemetastore.log 
+   /var/log/hive/hivemetastore.log
    ```
 
-4. Para exibir logs do Hiveserver, use o seguinte comando:
+4. Para exibir os logs do servidor do hive, use o seguinte comando:
 
    ```apache
-   /var/log/hive/hiveserver2.log 
+   /var/log/hive/hiveserver2.log
    ```
 
 ### <a name="additional-reading"></a>Leitura adicional
 
 - [Conectar-se a um cluster HDInsight usando SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
-
 
 ## <a name="how-do-i-launch-the-hive-shell-with-specific-configurations-on-a-cluster"></a>Como fazer para inicializar o shell do Hive com configurações específicas em um cluster?
 
@@ -83,7 +79,7 @@ O código nas etapas de resolução supõe que os caminhos de dados no novo clus
 1. Especifique um par chave-valor de configuração quando iniciar o shell do Hive. Para obter mais informações, consulte [Leituras adicionais](#additional-reading-end).
 
    ```apache
-   hive -hiveconf a=b 
+   hive -hiveconf a=b
    ```
 
 2. Para listar todas as configurações efetivas no shell de Hive, use o seguinte comando:
@@ -95,23 +91,21 @@ O código nas etapas de resolução supõe que os caminhos de dados no novo clus
    Por exemplo, use o seguinte comando para iniciar o shell do Hive com o registro em log de depuração habilitado no console:
 
    ```apache
-   hive -hiveconf hive.root.logger=ALL,console 
+   hive -hiveconf hive.root.logger=ALL,console
    ```
 
 ### <a name="additional-reading"></a>Leitura adicional
 
 - [Propriedades de configuração do Hive](https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties)
 
-
 ## <a name="how-do-i-analyze-tez-dag-data-on-a-cluster-critical-path"></a>Como fazer para analisar dados de DAG do Apache Tez em um caminho crítico do cluster?
 
-
 ### <a name="resolution-steps"></a>Etapas de resolução
- 
+
 1. Para analisar um DAG (Grafo Direcionado Acíclico) do Apache Tez em um grafo crítico do cluster, conecte-se ao cluster do HDInsight usando SSH. Para saber mais, veja [Leituras adicionais](#additional-reading-end).
 
 2. No prompt de comando, execute o comando a seguir:
-   
+
    ```apache
    hadoop jar /usr/hdp/current/tez-client/tez-job-analyzer-*.jar CriticalPath --saveResults --dagId <DagId> --eventFileName <DagData.zip> 
    ```
@@ -137,31 +131,28 @@ O código nas etapas de resolução supõe que os caminhos de dados no novo clus
     - **TaskConcurrencyAnalyzer**: imprimir os detalhes de simultaneidade de tarefa em um DAG
     - **VertexLevelCriticalPathAnalyzer**: Localizar o caminho crítico no nível do vértice em um DAG
 
-
 ### <a name="additional-reading"></a>Leitura adicional
 
 - [Conectar-se a um cluster HDInsight usando SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 
-
 ## <a name="how-do-i-download-tez-dag-data-from-a-cluster"></a>Como fazer para baixar dados de DAG do Tez de um cluster?
-
 
 #### <a name="resolution-steps"></a>Etapas de resolução
 
 Há duas maneiras de coletar os dados de DAG do Tez:
 
 - Na linha de comando:
- 
+
     Conectar-se ao cluster HDInsight usando SSH. No prompt de comando, execute o comando a seguir:
 
   ```apache
-  hadoop jar /usr/hdp/current/tez-client/tez-history-parser-*.jar org.apache.tez.history.ATSImportTool -downloadDir . -dagId <DagId> 
+  hadoop jar /usr/hdp/current/tez-client/tez-history-parser-*.jar org.apache.tez.history.ATSImportTool -downloadDir . -dagId <DagId>
   ```
 
 - Use o modo de exibição Tez do Ambari:
-   
-  1. Vá para o Ambari. 
-  2. Vá para o modo de exibição do Tez (sob o ícone de blocos no canto superior direito). 
+
+  1. Vá para o Ambari.
+  2. Vá para o modo de exibição do Tez (sob o ícone de blocos no canto superior direito).
   3. Selecione o DAG que você deseja exibir.
   4. Selecione **Baixar dados**.
 
@@ -169,10 +160,12 @@ Há duas maneiras de coletar os dados de DAG do Tez:
 
 [Conectar-se a um cluster HDInsight usando SSH](hdinsight-hadoop-linux-use-ssh-unix.md)
 
+## <a name="next-steps"></a>Próximas etapas
 
-### <a name="see-also"></a>Consulte também
-[Solucionar problemas usando o Azure HDInsight](hdinsight-troubleshoot-guide.md)
+Se você não encontrou seu problema ou não conseguiu resolver seu problema, visite um dos seguintes canais para obter mais suporte:
 
+- Obtenha respostas de especialistas do Azure por meio do [suporte da Comunidade do Azure](https://azure.microsoft.com/support/community/).
 
+- Conecte- [@AzureSupport](https://twitter.com/azuresupport) se com a conta de Microsoft Azure oficial para melhorar a experiência do cliente. Conectando a Comunidade do Azure aos recursos certos: respostas, suporte e especialistas.
 
-
+- Se precisar de mais ajuda, você poderá enviar uma solicitação de suporte do [portal do Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade/). Selecione **suporte** na barra de menus ou abra o Hub **ajuda + suporte** . Para obter informações mais detalhadas, consulte [como criar uma solicitação de suporte do Azure](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request). O acesso ao gerenciamento de assinaturas e ao suporte de cobrança está incluído na sua assinatura do Microsoft Azure, e o suporte técnico é fornecido por meio de um dos [planos de suporte do Azure](https://azure.microsoft.com/support/plans/).

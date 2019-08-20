@@ -6,12 +6,12 @@ ms.service: managed-applications
 ms.topic: conceptual
 ms.date: 08/06/2019
 ms.author: tomfitz
-ms.openlocfilehash: 91dd661cf4900512390079751f400f6a9888c452
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 54eb2df06df56c33e1a3cd74e7a4a93c07aab682
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68845914"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69575672"
 ---
 # <a name="test-your-portal-interface-for-azure-managed-applications"></a>Testar a interface do portal para aplicativos gerenciados do Azure
 
@@ -91,7 +91,7 @@ Para a CLI do Azure, use:
 
 O script abre uma nova guia no navegador. Em seguida, exibe o portal com a interface para criar o aplicativo gerenciado.
 
-Forneça valores para os campos. Quando terminar, os valores que são passados para o modelo serão exibidos.
+Forneça valores para os campos. Quando terminar, você verá os valores passados para o modelo que podem ser encontrados no console de ferramentas de desenvolvimento do navegador.
 
 ![Mostrar valores](./media/test-createuidefinition/show-json.png)
 

@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 7/29/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 04d63b2c1583228a274c0ba21c87df08886f5cdb
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.openlocfilehash: a6a6fdf6e63bf8c063f8dd6f23ae380e9ce7b98d
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68619074"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69575517"
 ---
 # <a name="troubleshooting-azure-sql-data-warehouse"></a>Solução de problemas do Azure SQL Data Warehouse
 Este artigo lista perguntas de solução de problemas comuns.
@@ -34,7 +34,7 @@ Este artigo lista perguntas de solução de problemas comuns.
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | O Pesquisador de objetos do Visual Studio não tem usuários de AAD           | Este é um problema conhecido.  Como alternativa, exiba os usuários em [sys.database_principals][sys.database_principals].  Confira [Autenticação do Azure SQL Data Warehouse][Authentication to Azure SQL Data Warehouse] para saber mais sobre como usar o Azure Active Directory com o SQL Data Warehouse. |
 | O script manual, o uso do assistente para criação de scripts ou a conexão via SSMS são lentos, não respondem ou produzem erros | Certifique-se de que os usuários foram criados no banco de dados mestre. Nas opções de script, certifique-se também de que a edição do mecanismo está definida como "Edição do SQL Data Warehouse do Microsoft Azure" e o tipo de mecanismo é "Banco de Dados SQL do Microsoft Azure". |
-| Gerar falhas de script no SSMS                               | Gerar um script do SQL data warehouse falhará se a opção "Gerar script para objetos dependentes" for definida como "True". Como alternativa, os usuários manualmente devem ir para Ferramentas -> Opções -> SQL Pesquisador de Objetos do SQL Server -> Gerar script para opções dependentes e definidas como false |
+| Gerar falhas de script no SSMS                               | A geração de um script para SQL Data Warehouse falhará se a opção "gerar script para objetos dependentes" estiver definida como "true". Como alternativa, os usuários manualmente devem ir para Ferramentas -> Opções -> SQL Pesquisador de Objetos do SQL Server -> Gerar script para opções dependentes e definidas como false |
 
 ## <a name="performance"></a>Desempenho
 | Problema                                                        | Resolução                                                   |

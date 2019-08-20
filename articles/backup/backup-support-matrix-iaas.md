@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 07/02/2019
 ms.author: dacurwin
-ms.openlocfilehash: 9b0cbe8126a01a64e35b2fcfeca400aed5aef0cc
-ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
+ms.openlocfilehash: df9e60c8d517c35029e425d50dba81a18c2f1114
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68952024"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69617356"
 ---
 # <a name="support-matrix-for-azure-vm-backup"></a>Matriz de suporte para backup de VM do Azure
 Você pode usar o [serviço de backup do Azure](backup-overview.md) para fazer backup de máquinas locais e cargas de trabalho e VMs (máquinas virtuais) do Azure. Este artigo resume as configurações de suporte e as limitações ao fazer backup de VMs do Azure com o backup do Azure.
@@ -157,7 +157,7 @@ Restauração de VMs fixadas por zona | Com suporte (para a VM que é submetida 
 
 **Componente** | **Suporte**
 --- | ---
-Discos de dados de VM do Azure | Faça o backup de uma VM com 16 discos de dados ou menos. <br/><br/> Suporte a tamanhos de disco de até 4 TB.<br/><br/>Para se inscrever em uma visualização pública limitada de suporte de disco grande do backup do Azure para discos com mais de 4 TB e até 30 TB de tamanho, consulte [uma visão geral do backup de VM do Azure](backup-azure-vms-introduction.md#limited-public-preview-backup-of-vm-with-disk-sizes-up-to-30tb).
+Discos de dados de VM do Azure | Faça o backup de uma VM com 16 discos de dados ou menos. <br/><br/> Suporte a tamanhos de disco de até 4 TB.<br/><br/>Para se inscrever em uma visualização pública limitada de suporte de disco grande do backup do Azure para discos com mais de 4 TB e até 30 TB de tamanho, consulte este [artigo](backup-azure-vms-introduction.md#limited-public-preview-backup-of-vm-with-disk-sizes-up-to-30tb).
 Tamanho do disco de dados | O disco individual pode ter até 4.095 GB.<br/><br/>Para se inscrever para uma visualização pública limitada do suporte de disco grande do backup do Azure para discos com mais de 4 TB até 30TB de tamanho, consulte este [artigo](backup-azure-vms-introduction.md#limited-public-preview-backup-of-vm-with-disk-sizes-up-to-30tb).
 Tipo de armazenamento | HDD Standard, SSD Standard SSD Premium.
 Discos gerenciados | Com suporte.

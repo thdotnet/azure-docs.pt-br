@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: sngun
-ms.openlocfilehash: 352cd23f00e911b895e52aacaced1bfba38f7f84
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b859d01a39f906f518a82d468c3c9267545b9a07
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66257245"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616892"
 ---
 # <a name="connect-to-azure-cosmos-db-using-bi-analytics-tools-with-the-odbc-driver"></a>Conectar ao Azure Cosmos DB usando ferramentas de análise de BI com o driver ODBC
 
@@ -23,9 +23,9 @@ O driver ODBC do Azure Cosmos DB está em conformidade com o ODBC 3.8 e dá supo
 > Conectar-se ao Azure Cosmos DB com o driver ODBC no momento, há suporte para apenas para contas de API de SQL do Azure Cosmos DB.
 
 ## <a name="why-do-i-need-to-normalize-my-data"></a>Por que preciso normalizar meus dados?
-O Azure Cosmos DB é um banco de dados sem esquema, que permite usar o método RAD e a capacidade de iterar em modelos de dados sem estar confinado a um esquema rígido. Um único banco de dados do Azure Cosmos DB pode conter documentos JSON de várias estruturas. Isso é ótimo para o método RAD, mas quando você deseja analisar e criar relatórios de dados usando ferramentas de BI e análise de dados, os dados geralmente precisam ser nivelados e aderir a um esquema específico.
+O Azure Cosmos DB é um banco de dados sem esquema, que permite usar o método RAD e a capacidade de iterar em modelos de dados sem estar confinado a um esquema rígido. Um único banco de dados Cosmos do Azure pode conter documentos JSON de várias estruturas. Isso é ótimo para o método RAD, mas quando você deseja analisar e criar relatórios de dados usando ferramentas de BI e análise de dados, os dados geralmente precisam ser nivelados e aderir a um esquema específico.
 
-Esse é o ponto em que o driver ODBC entra. Ao usar o driver ODBC, você pode agora renormalizar dados no Azure Cosmos DB em tabelas e visualizações ajustadas às suas necessidades de relatórios e análise de dados. Os esquemas renormalizados não têm impacto sobre os dados subjacentes e não confinam os desenvolvedores para aderir a eles. Em vez disso, eles permitem utilizar ferramentas em conformidade com ODBC para acessar os dados. Agora seu banco de dados do Azure Cosmos DB não será apenas um favorito de sua equipe de desenvolvimento, mas seus analistas de dados vão adorá-lo também.
+Esse é o ponto em que o driver ODBC entra. Ao usar o driver ODBC, você pode agora renormalizar dados no Azure Cosmos DB em tabelas e visualizações ajustadas às suas necessidades de relatórios e análise de dados. Os esquemas renormalizados não têm impacto sobre os dados subjacentes e não confinam os desenvolvedores para aderir a eles. Em vez disso, eles permitem utilizar ferramentas em conformidade com ODBC para acessar os dados. Portanto, agora seu banco de dados Cosmos do Azure não será apenas um favorito para sua equipe de desenvolvimento, mas os analistas de data também vão adorar isso.
 
 Vamos começar com o driver ODBC.
 
@@ -48,7 +48,7 @@ Vamos começar com o driver ODBC.
 
     ![Administrador de fonte de dados ODBC do Azure Cosmos DB](./media/odbc-driver/odbc-driver.png)
 
-## <a id="connect"></a>Etapa 2: Conectar ao banco de dados do Azure Cosmos DB
+## <a id="connect"></a>Etapa 2: Conectar-se ao banco de dados Cosmos do Azure
 
 1. Depois de [Instalar o driver ODBC do Azure Cosmos DB](#install), na janela **Administrador de Fonte de Dados ODBC**, clique em **Adicionar**. Você pode criar um DSN de usuário ou de sistema. Neste exemplo, estamos criando um DSN de usuário.
 
@@ -82,7 +82,7 @@ Vamos começar com o driver ODBC.
 
 Há dois tipos de métodos de amostragem que você pode usar: **mapeamento de coleção** ou **delimitadores de tabela**. Uma sessão de amostragem pode utilizar ambos os métodos de amostragem, mas cada coleta pode usar apenas um método de amostragem específico. As etapas a seguir criam um esquema para os dados em uma ou mais coleções usando o método de mapeamento de coleção. Esse método de amostragem recupera os dados na página de uma coleção para determinar a estrutura dos dados. Ele transpõe uma coleção para uma tabela no lado do ODBC. Esse método de amostragem é eficiente e rápido quando os dados em uma coleção são homogêneos. Se uma coleção contiver o tipo heterogêneo de dados, será recomendável usar o [método de mapeamento de delimitadores de tabela](#table-mapping) uma vez que ele fornece um método de amostragem mais robusto para determinar as estruturas de dados na coleção. 
 
-1. Depois de concluir as etapas 1 a 4, em [Conectar-se ao seu banco de dados do Azure Cosmos DB](#connect), clique em **Editor de Esquema** na janela **Instalação de DSN do Driver ODBC do Azure Cosmos DB**.
+1. Depois de concluir as etapas 1-4 em [conectar-se ao banco de dados Cosmos do Azure](#connect), clique em **Editor de esquema** na janela **instalação de DSN do driver ODBC do Azure Cosmos DB** .
 
     ![Botão do editor de esquema na janela Instalação de DSN do Driver ODBC do Azure Cosmos DB](./media/odbc-driver/odbc-driver-schema-editor.png)
 1. Na janela **Editor de Esquema**, clique em **Criar Novo**.
@@ -97,7 +97,7 @@ Há dois tipos de métodos de amostragem que você pode usar: **mapeamento de co
 
 1. Quando você terminar de definir o esquema, clique em **Arquivo** | **Salvar**, navegue até o diretório para salvar o esquema e clique em **Salvar**.
 
-1. Para usar este esquema com um DSN, abra o **janela de instalação de DSN do Driver ODBC do Azure Cosmos DB** (por meio de ODBC administrador fonte de dados), clique em **opções avançadas**e, em seguida, no **doarquivodeesquema** , navegue até o esquema salvo. Salvar um arquivo de esquema em um DSN existente modifica a conexão DSN de escopo para os dados e a estrutura definidos pelo esquema.
+1. Para usar esse esquema com um DSN, abra a **janela instalação de DSN do driver ODBC do Azure Cosmos DB** (por meio do administrador de fonte de dados ODBC), clique em **Opções avançadas**e, em seguida, na caixa **arquivo de esquema** , navegue até o esquema salvo. Salvar um arquivo de esquema em um DSN existente modifica a conexão DSN de escopo para os dados e a estrutura definidos pelo esquema.
 
 ## <a id="table-mapping"></a>Etapa 4: Criar uma definição de esquema usando o método de mapeamento de delimitadores de tabela
 
@@ -105,7 +105,7 @@ Há dois tipos de métodos de amostragem que você pode usar: **mapeamento de co
 
 As etapas a seguir criam um esquema para os dados em uma ou mais coleções usando o método de mapeamento de **delimitadores de tabela**. É recomendável que você use esse método de amostragem quando suas coleções contiverem tipos heterogêneos de dados. Você pode usar esse método para definir o escopo de amostragem para um conjunto de atributos e seus valores correspondentes. Por exemplo, se um documento contém uma propriedade "Type", você pode definir o escopo de amostragem para os valores dessa propriedade. O resultado final da amostragem seria um conjunto de tabelas para cada um dos valores de Type especificados. Por exemplo, Type = Carro gerará uma tabela Carro, enquanto Type = Avião gerará uma tabela Avião.
 
-1. Depois de concluir as etapas 1 a 4, em [Conectar-se ao seu banco de dados do Azure Cosmos DB](#connect), clique em **Editor de Esquema** na janela Instalação de DSN do Driver ODBC do Azure Cosmos DB.
+1. Depois de concluir as etapas 1-4 em [conectar-se ao banco de dados Cosmos do Azure](#connect), clique em **Editor de esquema** na janela instalação de DSN do driver ODBC do Azure Cosmos DB.
 
 1. Na janela **Editor de Esquema**, clique em **Criar Novo**.
     A janela **Gerar Esquema** exibe todas as coleções na conta do Azure Cosmos DB. 
@@ -229,7 +229,7 @@ Você pode usar o novo DSN para conectar o Azure Cosmos DB com qualquer ferramen
 
 1. Agora você pode criar elementos visuais usando o Power BI clicando na guia Relatório ![guia Relatório no Power BI Desktop](./media/odbc-driver/odbc-driver-report-tab.png), em **Visual Novo** e personalizando o bloco. Para obter mais informações sobre como criar visualizações no Power BI Desktop, consulte [Tipos de visualização no Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-visualization-types-for-reports-and-q-and-a/).
 
-## <a name="troubleshooting"></a>solução de problemas
+## <a name="troubleshooting"></a>Solução de problemas
 
 Se você receber o seguinte erro, verifique se os valores de **Host** e **Tecla de Acesso** copiados do Portal do Azure na [Etapa 2](#connect) estão corretos e tente novamente. Use os botões de cópia à direita dos valores de **Host** e **Tecla de Acesso** no Portal do Azure para copiar os valores sem erros.
 

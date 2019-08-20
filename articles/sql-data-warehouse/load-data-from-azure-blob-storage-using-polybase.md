@@ -10,12 +10,12 @@ ms.subservice: load-data
 ms.date: 04/26/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 5f2830b524c554a6988bfc873cd0f6c54e5c56a4
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: e3bef20a92322b07219e42c4f7fe8443917eae32
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67839673"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69575209"
 ---
 # <a name="tutorial-load-new-york-taxicab-data-to-azure-sql-data-warehouse"></a>Tutorial: Carregar dados dos táxis de Nova York para o SQL Data Warehouse do Azure
 
@@ -42,11 +42,11 @@ Antes de iniciar este tutorial, baixe e instale a versão mais recente do [SSMS]
 
 Faça logon no [Portal do Azure](https://portal.azure.com/).
 
-## <a name="create-a-blank-sql-data-warehouse"></a>Criar um SQL data warehouse em branco
+## <a name="create-a-blank-sql-data-warehouse"></a>Criar um SQL Data Warehouse em branco
 
-Um SQL Data Warehouse do Azure é criado com um conjunto definido de [recursos de computação](memory-and-concurrency-limits.md). O banco de dados é criado dentro de um [grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md) e em um [servidor lógico SQL do Azure](../sql-database/sql-database-features.md). 
+Uma SQL Data Warehouse do Azure é criada com um conjunto definido de [recursos de computação](memory-and-concurrency-limits.md). O banco de dados é criado dentro de um [grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md) e em um [servidor lógico SQL do Azure](../sql-database/sql-database-features.md). 
 
-Siga estas etapas para criar um SQL data warehouse em branco. 
+Siga estas etapas para criar um SQL Data Warehouse em branco. 
 
 1. Clique em **Criar um recurso** no canto superior esquerdo do Portal do Azure.
 
@@ -80,7 +80,7 @@ Siga estas etapas para criar um SQL data warehouse em branco.
 
 6. Clique em **Nível de desempenho** para especificar se o data warehouse é Gen1 ou Gen2 e o número de unidades do data warehouse. 
 
-7. Para este tutorial, selecione **Gen2** do SQL Data Warehouse. O controle deslizante é definido como **DW1000c** por padrão.  Experimente movê-lo para cima e para baixo para ver como ele funciona. 
+7. Para este tutorial, selecione **Gen2** de SQL data warehouse. O controle deslizante é definido como **DW1000c** por padrão.  Experimente movê-lo para cima e para baixo para ver como ele funciona. 
 
     ![configurar o desempenho](media/load-data-from-azure-blob-storage-using-polybase/configure-performance.png)
 
@@ -561,8 +561,8 @@ O script usa a instrução T-SQL [CTAS (CREATE TABLE AS SELECT)](/sql/t-sql/stat
 
     ![Exibir tabelas carregadas](media/load-data-from-azure-blob-storage-using-polybase/view-loaded-tables.png)
 
-## <a name="authenticate-using-managed-identities-to-load-optional"></a>Autenticação usando identidades gerenciadas para carregar (opcional)
-Carregar usando o PolyBase e autenticando por meio de identidades gerenciadas é o mecanismo mais seguro e permite que você aproveite os pontos de extremidade de serviço de rede virtual com armazenamento do Azure. 
+## <a name="authenticate-using-managed-identities-to-load-optional"></a>Autenticar usando identidades gerenciadas para carregar (opcional)
+O carregamento usando o polybase e a autenticação por meio de identidades gerenciadas é o mecanismo mais seguro e permite que você aproveite os pontos de extremidade do serviço de VNet com o armazenamento do Azure. 
 
 ### <a name="prerequisites"></a>Pré-requisitos
 1.  Instalar o Azure PowerShell usando este [guia](https://docs.microsoft.com/powershell/azure/install-az-ps).
@@ -583,27 +583,27 @@ Carregar usando o PolyBase e autenticando por meio de identidades gerenciadas é
    > [!NOTE]
    > - Se você tiver uma conta de armazenamento de blobs ou de uso geral v1, será necessário **primeiro atualizar para v2** usando este [guia](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade).
     
-1. Em sua conta de armazenamento, navegue até **Controle de acesso (IAM)** e clique em **Adicionar atribuição de função**. Atribua **Colaborador de dados de Blob de armazenamento** função RBAC ao seu servidor de banco de dados SQL.
+1. Em sua conta de armazenamento, navegue até **Controle de acesso (IAM)** e clique em **Adicionar atribuição de função**. Atribuir função de RBAC de **colaborador de dados de blob de armazenamento** ao servidor do banco de dados SQL.
 
    > [!NOTE] 
    > Somente membros com o privilégio Proprietário podem executar essa etapa. Para várias funções internas de recursos do Azure, confira este [guia](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles).
   
 1. **Conectividade do Polybase com a conta de Armazenamento do Azure:**
     
-   1. Criar sua credencial no escopo do banco de dados com **identidade = 'Identidade de serviço gerenciado'** :
+   1. Crie a credencial no escopo do banco de dados com **Identity = ' identidade de serviço gerenciada '** :
 
        ```SQL
        CREATE DATABASE SCOPED CREDENTIAL msi_cred WITH IDENTITY = 'Managed Service Identity';
        ```
        > [!NOTE] 
        > - Não é necessário especificar SECRET com a chave de acesso de Armazenamento do Azure, porque esse mecanismo usa [Identidade gerenciada](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) nos bastidores.
-       > - Nome de identidade deve ser **'Identidade de serviço gerenciado'** para conectividade do PolyBase funcionar com a conta de armazenamento do Azure.
+       > - O nome da identidade deve ser **' identidade de serviço gerenciada '** para que a conectividade do polybase funcione com a conta de armazenamento do Azure.
     
-   1. Crie a fonte de dados externa, especificando a credencial no escopo do banco de dados com a identidade de serviço gerenciado.
+   1. Crie a fonte de dados externa especificando a credencial no escopo do banco de dado com o Identidade de Serviço Gerenciada.
         
    1. Consulte normalmente usando [tabelas externas](https://docs.microsoft.com/sql/t-sql/statements/create-external-table-transact-sql).
 
-Consulte os seguintes [documentação](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview) se você quiser configurar pontos de extremidade de serviço de rede virtual para o SQL Data Warehouse. 
+Consulte a [documentação](https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview) a seguir se desejar configurar pontos de extremidade de serviço de rede virtual para SQL data warehouse. 
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 
@@ -640,7 +640,7 @@ Você fez essas coisas:
 > * Exibiu o andamento dos dados enquanto eles estão sendo carregados
 > * Criou estatísticas sobre os dados recém-carregados
 
-Avance para a visão geral do desenvolvimento para saber como migrar um banco de dados existente para o SQL Data Warehouse.
+Avance para a visão geral de desenvolvimento para saber como migrar um banco de dados existente para SQL Data Warehouse.
 
 > [!div class="nextstepaction"]
->[Decisões de design para migrar um banco de dados existente para o SQL Data Warehouse](sql-data-warehouse-overview-migrate.md)
+>[Decisões de design para migrar um banco de dados existente para SQL Data Warehouse](sql-data-warehouse-overview-migrate.md)

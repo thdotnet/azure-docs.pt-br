@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: dharmas
 ms.reviewer: sngun
-ms.openlocfilehash: af1b3dba0ac73ef30a4be20cab795ce6de595970
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 35c8841220c116cc34ba670eaa9ac7b36dc4cd7a
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66239696"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69615527"
 ---
 # <a name="compliance-in-azure-cosmos-db"></a>Conformidade no Azure Cosmos DB 
 
@@ -20,7 +20,7 @@ O Microsoft Azure Cosmos DB está disponível em todas as regiões do Azure por 
 
 * **Nuvem pública do Azure**, que está disponível globalmente.
 
-* **21Vianet do Azure na China** está disponível por meio de uma parceria exclusiva entre a Microsoft e 21Vianet, um dos maiores provedores de internet do país.
+* O **Azure China 21vianet** está disponível por meio de uma parceria exclusiva entre a Microsoft e a 21vianet, um dos maiores provedores de Internet do país.
 
 * **Azure Alemão** fornece serviços sob um modelo de truste de dados, que garante que os dados de clientes permaneçam na Alemanha sob o controle da T-Systems International GmbH, uma subsidiária da Deutsche Telecom, atuando como depositária de dados alemã.
 
@@ -28,7 +28,7 @@ O Microsoft Azure Cosmos DB está disponível em todas as regiões do Azure por 
 
 * **Azure Governamental para o Departamento de Defesa (DoD)** está disponível em duas regiões dos Estados Unidos para o Departamento de Defesa dos EUA.
 
-Para ajudar os clientes a cumprirem suas próprias obrigações de conformidade em setores regulamentados e mercados em todo o mundo, o Azure mantém o maior portfólio de conformidade do setor em termos de largura (número total de ofertas) e profundidade (número de serviços voltados ao cliente no escopo de avaliação).  Ofertas de conformidade do Azure são agrupadas em quatro segmentos - globalmente aplicáveis, governo dos EUA, específico, do setor e região ou país/região específico.  As oferta de conformidade são baseadas em nos vários tipos de garantia, incluindo certificações formais, atestados, validações, autorizações e avaliações produzidas por empresas de auditoria independentes, bem como emendas contratuais, autoavaliações e documentos de orientação para clientes produzidos pela Microsoft.
+Para ajudar os clientes a cumprirem suas próprias obrigações de conformidade em setores regulamentados e mercados em todo o mundo, o Azure mantém o maior portfólio de conformidade do setor em termos de largura (número total de ofertas) e profundidade (número de serviços voltados ao cliente no escopo de avaliação).  As ofertas de conformidade do Azure são agrupadas em quatro segmentos: globalmente aplicável, governo dos EUA, específico do setor e região ou país/região específico.  As oferta de conformidade são baseadas em nos vários tipos de garantia, incluindo certificações formais, atestados, validações, autorizações e avaliações produzidas por empresas de auditoria independentes, bem como emendas contratuais, autoavaliações e documentos de orientação para clientes produzidos pela Microsoft.
 
 ## <a name="azure-cosmos-db-certifications"></a>Certificações do Microsoft Azure Cosmos DB  
 
@@ -54,7 +54,7 @@ A tabela a seguir lista as certificações com suporte do Azure Cosmos DB no Azu
 | --- | --- | --- | --- |
 | Certificação CSA STAR | CJIS| HIPAA BAA | 
 | Atestado CSA STAR| SRG DoD Nível 2| HITRUST  | 
-| ISO 20000-1:2011 | SRG do DoD nível 4 | PCI DSS | 
+| ISO 20000-1:2011 | DoD SRG nível 4 | PCI DSS | 
 | ISO 9001:2012 | SRG DoD Nível 5 | | 
 | ISO 27001:2013 | FedRAMP Alto | |
 | ISO 9001:2015 | IRS 1075|  |
@@ -69,6 +69,6 @@ Para saber mais sobre as certificações do Azure, consulte os artigos a seguir:
 
 * Para descobrir as certificações de conformidade mais recentes do Microsoft Azure Cosmos DB, consulte a [Visão geral de conformidade do Azure](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942).  
 
-* Para obter uma visão geral da segurança do Microsoft Azure Cosmos DB e as últimas melhorias, consulte [Segurança de banco de dados do Microsoft Azure Cosmos DB](database-security.md).
+* Para obter uma visão geral da segurança Azure Cosmos DB e os aprimoramentos mais recentes, consulte o artigo [segurança do banco de dados Cosmos do Azure](database-security.md) .
 
 * Para obter mais informações sobre as certificações da Microsoft, confira a [Central de Confiabilidade do Azure](https://azure.microsoft.com/support/trust-center/).

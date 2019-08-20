@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: iainfou
-ms.openlocfilehash: 676efa155c85ab371ec41c49ad0c15eb2bd5a24a
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: 4978f7b782271daff996807172a24103bd8d9860
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68233999"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69617288"
 ---
 # <a name="resolve-mismatched-directory-errors-for-existing-azure-ad-domain-services-managed-domains"></a>Resolva erros de diretórios incompatíveis para domínios gerenciados existentes do Azure AD Domain Services
 Você tem um domínio gerenciado dos Azure AD Domain Services. Quando navega para o portal do Azure e exibe o domínio gerenciado, você vê a seguinte mensagem de erro:
@@ -63,5 +63,5 @@ Você tem duas opções para resolver o erro de diretórios incompatíveis. Voc�
 
 
 ## <a name="related-content"></a>Conteúdo relacionado
-* [Serviços de Domínio do Azure AD - guia de Introdução](create-instance.md)
+* [Serviços de Domínio do Azure AD - guia de Introdução](tutorial-create-instance.md)
 * [Guia de solução de problemas – Azure AD Domain Services](troubleshoot.md)

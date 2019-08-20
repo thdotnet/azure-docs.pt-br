@@ -1,17 +1,17 @@
 ---
 title: Dicas de desempenho do Microsoft Azure Cosmos DB para .NET
-description: Saiba mais sobre as opções de configuração do cliente para melhorar o desempenho de banco de dados do Azure Cosmos DB
+description: Aprenda as opções de configuração do cliente para melhorar o desempenho do banco de dados Cosmos do Azure
 author: SnehaGunda
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: sngun
-ms.openlocfilehash: 21886c11bea6ff09cf97362e06c6d304aaa0d8cc
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 3c4dbd38edaf36461578e087010d978a25450d06
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68250053"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69614918"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net"></a>Dicas de desempenho para o Azure Cosmos DB e .NET
 
@@ -48,8 +48,8 @@ Assim, se você estiver se perguntando "Como posso melhorar o desempenho do meu 
      |Modo da conexão  |Protocolo com Suporte  |SDKs com suporte  |Porta/serviço de API  |
      |---------|---------|---------|---------|
      |Gateway  |   HTTPS    |  Todos os SDKS    |   SQL (443), Mongo (10250, 10255, 10256), tabela (443), Cassandra (10350), grafo (443)    |
-     |Direta    |    HTTPS     |  SDK do .NET e do Java    |   Portas dentro do intervalo de 10.000-20.000    |
-     |Direta    |     TCP    |  SDK .NET    | Portas dentro do intervalo de 10.000-20.000 |
+     |Direto    |    HTTPS     |  SDK do .NET e do Java    |   Portas dentro do intervalo de 10.000-20.000    |
+     |Direto    |     TCP    |  SDK .NET    | Portas dentro do intervalo de 10.000-20.000 |
 
      O Cosmos DB oferece um modelo de programação RESTful simples e aberto via HTTPS. Além disso, ele oferece um protocolo TCP eficiente que também é RESTful em seu modelo de comunicação e está disponível por meio do SDK do cliente .NET. Tanto TCP direto quanto HTTPS usam SSL para criptografar tráfego e autenticação inicial. Para ter um melhor desempenho, use o protocolo TCP quando possível.
 
@@ -78,7 +78,7 @@ Assim, se você estiver se perguntando "Como posso melhorar o desempenho do meu 
    <a id="same-region"></a>
 3. **Colocar os clientes na mesma região do Azure para o desempenho**
 
-    Quando possível, coloque aplicativos que chamam o Azure Cosmos DB na mesma região do banco de dados do Azure Cosmos DB. Para obter uma comparação aproximada, as chamadas para o Azure Cosmos DB na mesma região são concluídas de 1 a 2 ms, mas a latência entre a Costa Leste e a Oeste dos EUA é maior que 50 ms. Provavelmente, essa latência pode variar entre as solicitações dependendo da rota seguida pela solicitação conforme ela passa do cliente para o limite de datacenter do Azure. A menor latência possível é alcançada garantindo que o aplicativo de chamada está localizado na mesma região do Azure do ponto de extremidade do Azure Cosmos DB provisionado. Para obter uma lista de regiões disponíveis, consulte [Regiões do Azure](https://azure.microsoft.com/regions/#services).
+    Quando possível, coloque todos os aplicativos que chamam Azure Cosmos DB na mesma região que o banco de dados Cosmos do Azure. Para obter uma comparação aproximada, as chamadas para o Azure Cosmos DB na mesma região são concluídas de 1 a 2 ms, mas a latência entre a Costa Leste e a Oeste dos EUA é maior que 50 ms. Provavelmente, essa latência pode variar entre as solicitações dependendo da rota seguida pela solicitação conforme ela passa do cliente para o limite de datacenter do Azure. A menor latência possível é alcançada garantindo que o aplicativo de chamada está localizado na mesma região do Azure do ponto de extremidade do Azure Cosmos DB provisionado. Para obter uma lista de regiões disponíveis, consulte [Regiões do Azure](https://azure.microsoft.com/regions/#services).
 
     ![Ilustração da política de conexão do Azure Cosmos DB](./media/performance-tips/same-region.png)
    <a id="increase-threads"></a>
@@ -168,7 +168,7 @@ Assim, se você estiver se perguntando "Como posso melhorar o desempenho do meu 
 
     - Para aplicativos Web ASP.NET implantados no Azure, isso pode ser feito escolhendo o **plataforma de 64 bits** no **configurações do aplicativo** no portal do Azure.
 
-## <a name="indexing-policy"></a>Política de indexação
+## <a name="indexing-policy"></a>Política de Indexação
  
 1. **Excluir caminhos não utilizados da indexação para ter gravações mais rápidas**
 

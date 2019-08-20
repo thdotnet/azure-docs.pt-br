@@ -9,18 +9,18 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: barclayn
-ms.openlocfilehash: f510fa09d30f942f4e26a3a41fd8faa77a37e32a
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 16aebf2bb2e0c4d495aa8e3a45d3398a9aa9b9ed
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205977"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69575060"
 ---
 # <a name="how-to-generate-and-transfer-hsm-protected-keys-for-azure-key-vault"></a>Como gerar e transferir chaves de HSM protegido para o Cofre da Chave do Azure
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Para garantia extra, ao usar o Cofre da Chave do Azure, você pode importar ou gerar chaves em módulos de segurança de hardware (HSM) que nunca extrapolam o limite do HSM. Normalmente, este cenário é conhecido como *Trazer a sua própria chave*ou BYOK. Os HSMs têm certificação FIPS 140-2 Nível 2. O Azure Key Vault usa a família do nCipher nShield de HSMs para proteger suas chaves.
+Para garantia extra, ao usar o Cofre da Chave do Azure, você pode importar ou gerar chaves em módulos de segurança de hardware (HSM) que nunca extrapolam o limite do HSM. Normalmente, este cenário é conhecido como *Trazer a sua própria chave*ou BYOK. Os HSMs têm certificação FIPS 140-2 Nível 2. Azure Key Vault usa a família de HSMs nCipher nShield para proteger suas chaves.
 
 Use as informações neste tópico para ajudá-lo a planejar, gerar e transferir as suas próprias chaves de HSM protegido para usar com o Cofre de Chaves do Azure.
 
@@ -34,16 +34,16 @@ Para mais informações sobre como gerar e transferir uma chave de HSM protegido
 
 * Gerar a chave por meio de uma estação de trabalho offline, o que reduz a superfície de ataque.
 * A chave é criptografada com uma Chave de Troca de Chaves (KEK), que permanece criptografada até que seja transferida para os HSMs do Cofre da Chave do Azure. Apenas a versão criptografada da sua chave deixa a estação de trabalho original.
-* O conjunto de ferramentas define as propriedades em sua chave de locatário que associa a sua chave ao universo de segurança do Cofre da Chave do Azure. Então, após os HSMs do Cofre da Chave do Azure receberem e descriptografarem a chave, somente esses HSMs poderão usá-la. A chave não pode ser exportada. Essa associação é imposta pelo nCipher HSMs.
-* A Chave de Troca de Chaves (KEK) que é usada para criptografar a sua chave é gerada dentro dos HSMs do Cofre da Chave do Azure e não é exportável. Os HSMs exigem que não possa haver nenhuma versão clara da KEK fora dos HSMs. Além disso, o conjunto de ferramentas inclui atestado de nCipher que a KEK não é exportável e foi gerada dentro de um HSM original que foi fabricado pela nCipher.
-* O conjunto de ferramentas inclui Atestado da nCipher que o mundo de segurança do Azure Key Vault também foi gerado em um HSM original fabricado pela nCipher. Essa certificação comprova que a Microsoft está usando hardware original.
+* O conjunto de ferramentas define as propriedades em sua chave de locatário que associa a sua chave ao universo de segurança do Cofre da Chave do Azure. Então, após os HSMs do Cofre da Chave do Azure receberem e descriptografarem a chave, somente esses HSMs poderão usá-la. A chave não pode ser exportada. Essa associação é imposta pelos HSMs nCipher.
+* A Chave de Troca de Chaves (KEK) que é usada para criptografar a sua chave é gerada dentro dos HSMs do Cofre da Chave do Azure e não é exportável. Os HSMs exigem que não possa haver nenhuma versão clara da KEK fora dos HSMs. Além disso, o conjunto de ferramentas inclui o atestado de nCipher que o KEK não é exportável e foi gerado dentro de um HSM autêntico que foi fabricado pelo nCipher.
+* O conjunto de ferramentas inclui atestado de nCipher que o mundo de segurança de Azure Key Vault também foi gerado em um HSM autêntico fabricado pelo nCipher. Essa certificação comprova que a Microsoft está usando hardware original.
 * A Microsoft usa KEKs separadas e separa os universos de segurança em cada região geográfica. Essa separação garante que a chave pode ser usada somente em data centers na região em que você a criptografou. Por exemplo, uma chave de um cliente europeu não pode ser usada em data centers na América do Norte ou na Ásia.
 
-## <a name="more-information-about-ncipher-hsms-and-microsoft-services"></a>Mais informações sobre nCipher HSMs e serviços da Microsoft
+## <a name="more-information-about-ncipher-hsms-and-microsoft-services"></a>Mais informações sobre HSMs nCipher e serviços da Microsoft
 
-nCipher segurança é um provedor global líder de criptografia de dados e soluções de segurança cibernética para os serviços financeiros, alta tecnologia, manufatura, governo e setores de tecnologia. Com um 40 anos histórico de proteção corporativa e informações do governo, soluções de criptografia de segurança nCipher são usadas por quatro das cinco maiores de energia e aeroespacial empresas. Suas soluções também são usadas por 22 países/regiões de OTAN e proteger mais de 80 por cento de transações de pagamento em todo o mundo.
+a nCipher Security é um provedor global líder de criptografia de dados e soluções de segurança cibernéticos para os setores de serviços financeiros, alta tecnologia, manufatura, governo e tecnologia. Com um histórico de 40 anos de proteção de informações corporativas e governamentais, as soluções de criptografia de segurança do nCipher são usadas por quatro das cinco maiores empresas de energia e aeroespacial. Suas soluções também são usadas por 22 países/regiões OTAN e protegem mais de 80 por cento de transações de pagamento mundiais.
 
-Microsoft tem colaborado com nCipher segurança para aprimorar o estado da arte para HSMs. Essas melhorias permitem obter os benefícios típicos dos serviços hospedados sem abrir mão do controle sobre as chaves. Especificamente, essas melhorias permitem que a Microsoft gerencie os HSMs para que você não precise fazer isso. Como um serviço de nuvem, o Cofre da Chave do Azure escala verticalmente a curto prazo para atender aos picos de uso da sua organização. Ao mesmo tempo, sua chave é protegida dentro dos HSMs da Microsoft: Você mantém o controle sobre o ciclo de vida da chave, pois gera a chave e a transfere para HSMs da Microsoft.
+A Microsoft colaborau com a nCipher Security para aprimorar o estado da arte para HSMs. Essas melhorias permitem obter os benefícios típicos dos serviços hospedados sem abrir mão do controle sobre as chaves. Especificamente, essas melhorias permitem que a Microsoft gerencie os HSMs para que você não precise fazer isso. Como um serviço de nuvem, o Cofre da Chave do Azure escala verticalmente a curto prazo para atender aos picos de uso da sua organização. Ao mesmo tempo, sua chave é protegida dentro dos HSMs da Microsoft: Você mantém o controle sobre o ciclo de vida da chave, pois gera a chave e a transfere para HSMs da Microsoft.
 
 ## <a name="implementing-bring-your-own-key-byok-for-azure-key-vault"></a>Implementando o Traga a sua própria chave (BYOK) para o Cofre da Chave do Azure
 
@@ -57,8 +57,8 @@ Consulte a tabela a seguir para obter uma lista de pré-requisitos para o Traga 
 | --- | --- |
 | Uma assinatura do Azure |Para criar um Azure Key Vault, você precisa de uma assinatura do Azure: [Inscreva-se em uma avaliação gratuita](https://azure.microsoft.com/pricing/free-trial/) |
 | A camada de serviço Premium do Cofre de Chaves do Azure dá suporte a chaves protegidas por HSM |Para obter mais informações sobre os recursos e as camadas de serviço para o Cofre da Chave do Azure, consulte o site [Preços do Cofre da Chave do Azure](https://azure.microsoft.com/pricing/details/key-vault/) . |
-| nCipher nShield HSMs, smartcards e software de suporte |Você deve ter acesso a um Hardware Security Module nCipher e conhecimento operacional básico dos nCipher nShield HSMs. Ver [nCipher nShield Hardware Security Module](https://www.ncipher.com/products/key-management/cloud-microsoft-azure/how-to-buy) para obter a lista de modelos compatíveis ou para comprar um HSM, se você não tiver um. |
-| O hardware e o software a seguir:<ol><li>X64 offline estação de trabalho com um sistema de operacional Windows mínimo do software Windows 7 e nCipher nShield que seja pelo menos versão 11.50 ou posterior.<br/><br/>Se essa estação de trabalho executa o Windows 7, você deve [instalar o Microsoft .NET Framework 4.5](https://download.microsoft.com/download/b/a/4/ba4a7e71-2906-4b2d-a0e1-80cf16844f5f/dotnetfx45_full_x86_x64.exe).</li><li>Uma estação de trabalho que está conectada à Internet e tem, no mínimo, um sistema de operacional Windows 7 e o [Azure PowerShell](/powershell/azure/overview?view=azps-1.2.0), **no mínimo, a versão 1.1.0** instalada.</li><li>Uma unidade USB ou outro dispositivo de armazenamento portátil que tenha pelo menos 16 MB de espaço livre.</li></ol> |Por motivos de segurança, é recomendável que a primeira estação de trabalho não seja conectada a uma rede. No entanto, essa recomendação não é programaticamente aplicada.<br/><br/>Nas instruções a seguir, essa estação de trabalho é chamada de estação de trabalho desconectada.</p></blockquote><br/>Além disso, se a chave de locatário destina-se a uma rede de produção, recomendamos que você use uma segunda estação de trabalho separada para baixar o conjunto de ferramentas e carregar a chave de locatário. Porém, para fins de teste, você pode usar a mesma estação de trabalho que o primeiro.<br/><br/>Nas instruções a seguir, essa segunda estação de trabalho é chamada de estação de trabalho conectada à Internet.</p></blockquote><br/> |
+| nCipher nShield HSMs, cartões inteligentes e software de suporte |Você deve ter acesso a um módulo de segurança de hardware nCipher e o conhecimento operacional básico de nCipher nShield HSMs. Consulte [módulo de segurança de hardware do NCipher nShield](https://www.ncipher.com/products/key-management/cloud-microsoft-azure/how-to-buy) para obter a lista de modelos compatíveis ou para comprar um HSM se você não tiver um. |
+| O hardware e o software a seguir:<ol><li>Uma estação de trabalho x64 offline com um sistema operacional Windows mínimo do Windows 7 e do nCipher nShield software que seja pelo menos a versão 11,50.<br/><br/>Se essa estação de trabalho executa o Windows 7, você deve [instalar o Microsoft .NET Framework 4.5](https://download.microsoft.com/download/b/a/4/ba4a7e71-2906-4b2d-a0e1-80cf16844f5f/dotnetfx45_full_x86_x64.exe).</li><li>Uma estação de trabalho que está conectada à Internet e tem, no mínimo, um sistema de operacional Windows 7 e o [Azure PowerShell](/powershell/azure/overview?view=azps-1.2.0), **no mínimo, a versão 1.1.0** instalada.</li><li>Uma unidade USB ou outro dispositivo de armazenamento portátil que tenha pelo menos 16 MB de espaço livre.</li></ol> |Por motivos de segurança, é recomendável que a primeira estação de trabalho não seja conectada a uma rede. No entanto, essa recomendação não é programaticamente aplicada.<br/><br/>Nas instruções a seguir, essa estação de trabalho é chamada de estação de trabalho desconectada.</p></blockquote><br/>Além disso, se a chave de locatário destina-se a uma rede de produção, recomendamos que você use uma segunda estação de trabalho separada para baixar o conjunto de ferramentas e carregar a chave de locatário. Porém, para fins de teste, você pode usar a mesma estação de trabalho que o primeiro.<br/><br/>Nas instruções a seguir, essa segunda estação de trabalho é chamada de estação de trabalho conectada à Internet.</p></blockquote><br/> |
 
 ## <a name="generate-and-transfer-your-key-to-azure-key-vault-hsm"></a>Gerar e transferir sua chave para o HSM do Cofre da Chave do Azure
 
@@ -148,7 +148,7 @@ KeyVault-BYOK-Tools-SouthAfrica.zip
 C41060C5C0170AAAAD896DA732E31433D14CB9FC83AC3C67766F46D98620784A
 
 ---
-**EMIRADOS ÁRABES UNIDOS:**
+**DOS EAU**
 
 KeyVault-BYOK-Tools-UAE.zip
 
@@ -190,6 +190,13 @@ KeyVault-BYOK-Tools-Germany.zip
 5385E615880AAFC02AFD9841F7BADD025D7EE819894AA29ED3C71C3F844C45D6
 
 ---
+**Público da Alemanha:**
+
+KeyVault-BYOK-Tools-Germany-Public. zip
+
+54534936D0A0C99C8117DB724C34A5E50FD204CFCBD75C78972B785865364A29
+
+---
 **Índia:**
 
 KeyVault-BYOK-Tools-India.zip
@@ -211,6 +218,14 @@ KeyVault-BYOK-Tools-UnitedKingdom.zip
 432746BD0D3176B708672CCFF19D6144FCAA9E5EB29BB056489D3782B3B80849
 
 ---
+**Suíça:**
+
+KeyVault-BYOK-Tools-Switzerland. zip
+
+88CF8D39899E26D456D4E0BC57E5C94913ABF1D73A89013FCE3BBD9599AD2FE9
+
+---
+
 
 Para validar a integridade do seu conjunto de ferramentas BYOK baixado, na sua sessão do Azure PowerShell, use o cmdlet [Get-FileHash](https://technet.microsoft.com/library/dn520872.aspx) .
 
@@ -232,17 +247,17 @@ Copie o pacote para uma unidade USB ou outro armazenamento portátil.
 
 Para essa segunda etapa, siga os procedimentos a seguir na estação de trabalho que não está conectado a uma rede (Internet ou rede interna).
 
-### <a name="step-21-prepare-the-disconnected-workstation-with-ncipher-nshield-hsm"></a>Etapa 2.1: Preparar a estação de trabalho desconectada com nCipher nShield HSM
+### <a name="step-21-prepare-the-disconnected-workstation-with-ncipher-nshield-hsm"></a>Etapa 2.1: Preparar a estação de trabalho desconectada com o nCipher nShield HSM
 
-Instale o software de suporte nCipher em um computador Windows e, em seguida, anexe um HSM do nShield nCipher a esse computador.
+Instale o software de suporte do nCipher em um computador Windows e, em seguida, anexe um nCipher nShield HSM a esse computador.
 
-Certifique-se de que as ferramentas de nCipher estão no caminho ( **%nfast_home%\bin**). Por exemplo, digite o seguinte:
+Verifique se as ferramentas nCipher estão em seu caminho ( **%nfast_home%\bin**). Por exemplo, digite o seguinte:
 
   ```cmd
   set PATH=%PATH%;"%nfast_home%\bin"
   ```
 
-Para obter mais informações, consulte o guia do usuário fornecido com o HSM nShield.
+Para obter mais informações, consulte o guia do usuário incluído no nShield HSM.
 
 ### <a name="step-22-install-the-byok-toolset-on-the-disconnected-workstation"></a>Etapa 2.2: Instalar o conjunto de ferramentas BYOK na estação de trabalho desconectada
 
@@ -258,11 +273,11 @@ Para a terceira etapa, execute os seguintes procedimentos na estação de trabal
 
 ### <a name="step-31-change-the-hsm-mode-to-i"></a>Etapa 3.1: Alterar o modo HSM para 'I'
 
-Se você estiver usando um nCipher nShield Edge, para alterar o modo: 1. Use o botão Modo para realçar o modo solicitado. 2. Em poucos segundos, pressione e mantenha pressionado o botão Limpar por alguns segundos. Se o modo for alterado, o LED do novo modo parará de piscar e permanecerá aceso. O LED de Status poderá piscar de forma irregular por alguns segundos e, em seguida, piscar com regularidade quando o dispositivo estiver pronto. Caso contrário, o dispositivo permanecerá no modo atual, com o LED do modo apropriado aceso.
+Se você estiver usando o nCipher nShield Edge, para alterar o modo: 1. Use o botão Modo para realçar o modo solicitado. 2. Em poucos segundos, pressione e mantenha pressionado o botão Limpar por alguns segundos. Se o modo for alterado, o LED do novo modo parará de piscar e permanecerá aceso. O LED de Status poderá piscar de forma irregular por alguns segundos e, em seguida, piscar com regularidade quando o dispositivo estiver pronto. Caso contrário, o dispositivo permanecerá no modo atual, com o LED do modo apropriado aceso.
 
 ### <a name="step-32-create-a-security-world"></a>Etapa 3.2: Criar um universo de segurança
 
-Inicie um prompt de comando e execute o programa de novo mundo nCipher.
+Inicie um prompt de comando e execute o programa New-World do nCipher.
 
    ```cmd
     new-world.exe --initialize --cipher-suite=DLf3072s256mRijndael --module=1 --acs-quorum=2/3
@@ -279,14 +294,14 @@ Faremos o seguinte:
 
 ### <a name="step-33-change-the-hsm-mode-to-o"></a>Etapa 3.3: Alterar o modo HSM para 'O'
 
-Se você estiver usando um nCipher nShield Edge, para alterar o modo: 1. Use o botão Modo para realçar o modo solicitado. 2. Em poucos segundos, pressione e mantenha pressionado o botão Limpar por alguns segundos. Se o modo for alterado, o LED do novo modo parará de piscar e permanecerá aceso. O LED de Status poderá piscar de forma irregular por alguns segundos e, em seguida, piscar com regularidade quando o dispositivo estiver pronto. Caso contrário, o dispositivo permanecerá no modo atual, com o LED do modo apropriado aceso.
+Se você estiver usando o nCipher nShield Edge, para alterar o modo: 1. Use o botão Modo para realçar o modo solicitado. 2. Em poucos segundos, pressione e mantenha pressionado o botão Limpar por alguns segundos. Se o modo for alterado, o LED do novo modo parará de piscar e permanecerá aceso. O LED de Status poderá piscar de forma irregular por alguns segundos e, em seguida, piscar com regularidade quando o dispositivo estiver pronto. Caso contrário, o dispositivo permanecerá no modo atual, com o LED do modo apropriado aceso.
 
 ### <a name="step-34-validate-the-downloaded-package"></a>Etapa 3.4: Validar o pacote baixado
 
 Esta etapa é opcional, mas recomendada, para que você possa validar o seguinte:
 
-* A chave de troca de chave que está incluído no conjunto de ferramentas foi gerada para um HSM do nShield nCipher original.
-* O hash do universo de segurança que está incluído no conjunto de ferramentas tem foi gerado em um HSM do nShield nCipher original.
+* A chave de troca de chave que está incluída no conjunto de ferramentas foi gerada de um nCipher nShield HSM autêntico.
+* O hash do mundo de segurança que está incluído no conjunto de ferramentas foi gerado em um nCipher nShield HSM autêntico.
 * A Chave de Troca de Chaves é não exportável.
 
 > [!NOTE]
@@ -317,7 +332,7 @@ Para validar o pacote baixado:
    * Para a África do Sul:
 
          "%nfast_home%\python\bin\python" verifykeypackage.py -k BYOK-KEK-pkg-SA-1 -w BYOK-SecurityWorld-pkg-SA-1
-   * Para Emirados Árabes Unidos:
+   * Para dos EAU:
 
          "%nfast_home%\python\bin\python" verifykeypackage.py -k BYOK-KEK-pkg-UAE-1 -w BYOK-SecurityWorld-pkg-UAE-1
    * Para a Austrália:
@@ -335,6 +350,9 @@ Para validar o pacote baixado:
    * Para a Alemanha:
 
          "%nfast_home%\python\bin\python" verifykeypackage.py -k BYOK-KEK-pkg-GERMANY-1 -w BYOK-SecurityWorld-pkg-GERMANY-1
+   * Para a Alemanha pública:
+
+         "%nfast_home%\python\bin\python" verifykeypackage.py -k BYOK-KEK-pkg-GERMANY-1 -w BYOK-SecurityWorld-pkg-GERMANY-1
    * Para a Índia:
 
          "%nfast_home%\python\bin\python" verifykeypackage.py -k BYOK-KEK-pkg-INDIA-1 -w BYOK-SecurityWorld-pkg-INDIA-1
@@ -344,20 +362,23 @@ Para validar o pacote baixado:
    * Para o Reino Unido:
 
          "%nfast_home%\python\bin\python" verifykeypackage.py -k BYOK-KEK-pkg-UK-1 -w BYOK-SecurityWorld-pkg-UK-1
+   * Para a Suíça:
+
+         "%nfast_home%\python\bin\python" verifykeypackage.py -k BYOK-KEK-pkg-SUI-1 -w BYOK-SecurityWorld-pkg-SUI-1
 
      > [!TIP]
-     > O software de nCipher nShield inclui python em %NFAST_HOME%\python\bin
+     > O software nCipher nShield inclui Python em%NFAST_HOME%\python\bin
      >
      >
 2. Confirme que você vê o seguinte, que indica a validação bem-sucedida: **Resultado: SUCESSO**
 
-Este script valida a cadeia do signatário até a chave de raiz nShield. O hash dessa chave raiz é inserido no script e o seu valor deve ser **59178a47 de508c3f 291277ee 184f46c4 f1d9c639**. Você também pode confirmar esse valor separadamente visitando o [nCipher site](https://www.ncipher.com/products/key-management/cloud-microsoft-azure/validation).
+Esse script valida a cadeia de signatários até a chave raiz nShield. O hash dessa chave raiz é inserido no script e o seu valor deve ser **59178a47 de508c3f 291277ee 184f46c4 f1d9c639**. Você também pode confirmar esse valor separadamente visitando o [site do nCipher](https://www.ncipher.com/products/key-management/cloud-microsoft-azure/validation).
 
 Agora você está pronto para criar uma nova chave.
 
 ### <a name="step-35-create-a-new-key"></a>Etapa 3.5: Criar uma nova chave
 
-Gere uma chave usando o nCipher nShield **generatekey** programa.
+Gere uma chave usando o programa nCipher nShield **GenerateKey** .
 
 Execute o seguinte comando para gerar a chave:
 
@@ -367,14 +388,14 @@ Quando você executar esse comando, use estas instruções:
 
 * O parâmetro *protect* deve ser definido com o valor **module**, como mostrado. Isso cria uma chave protegida pelo módulo. O conjunto de ferramentas BYOK não oferece suporte a chaves protegidas por OCS.
 * Substitua o valor de *contosokey* para a **ident** e **plainname** por qualquer valor de cadeia de caracteres. Para minimizar os custos administrativos e reduzir o risco de erros, recomendamos que você use o mesmo valor para ambos. O valor de **ident** deve conter somente números, traços, letras minúsculas.
-* O pubexp é deixado em branco (padrão) neste exemplo, mas você pode especificar valores específicos. Para obter mais informações, consulte o [nCipher documentação.](https://www.ncipher.com/resources/solution-briefs/protect-sensitive-data-rest-and-use-across-premises-and-azure-based)
+* O pubexp é deixado em branco (padrão) neste exemplo, mas você pode especificar valores específicos. Para obter mais informações, consulte a [documentação do nCipher.](https://www.ncipher.com/resources/solution-briefs/protect-sensitive-data-rest-and-use-across-premises-and-azure-based)
 
 Este comando cria um arquivo de Chave com Token na sua pasta %NFAST_KMDATA%\local com um nome iniciado por **key_simple_** seguido pela **ident** que foi especificada no comando. Por exemplo: **key_simple_contosokey**. Esse arquivo contém uma chave criptografada.
 
 Faça backup deste arquivo de Chave com Token em um local seguro.
 
 > [!IMPORTANT]
-> Posteriormente, quando transferir a sua chave para o Cofre da Chave do Azure, a Microsoft não poderá exportar esta chave novamente para você, por isso é extremamente importante fazer backup da sua chave e da segurança do Universo de segurança. Entre em contato com [nCipher](https://www.ncipher.com/about-us/contact-us) para obter orientação e práticas recomendadas para fazer backup de sua chave.
+> Posteriormente, quando transferir a sua chave para o Cofre da Chave do Azure, a Microsoft não poderá exportar esta chave novamente para você, por isso é extremamente importante fazer backup da sua chave e da segurança do Universo de segurança. Entre em contato com [nCipher](https://www.ncipher.com/about-us/contact-us) para obter diretrizes e práticas recomendadas para fazer backup de sua chave.
 >
 
 
@@ -409,7 +430,7 @@ Abra um novo prompt de comando e altere o diretório atual para a localização 
 * Para a África do Sul:
 
         KeyTransferRemote.exe -ModifyAcls -KeyAppName simple -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-SA-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-SA-1
-* Para Emirados Árabes Unidos:
+* Para dos EAU:
 
         KeyTransferRemote.exe -ModifyAcls -KeyAppName simple -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-UAE-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-UAE-1
 * Para a Austrália:
@@ -427,6 +448,9 @@ Abra um novo prompt de comando e altere o diretório atual para a localização 
 * Para a Alemanha:
 
         KeyTransferRemote.exe -ModifyAcls -KeyAppName simple -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-GERMANY-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-GERMANY-1
+* Para a Alemanha pública:
+
+        KeyTransferRemote.exe -ModifyAcls -KeyAppName simple -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-GERMANY-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-GERMANY-1
 * Para a Índia:
 
         KeyTransferRemote.exe -ModifyAcls -KeyAppName simple -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-INDIA-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-INDIA-1
@@ -436,14 +460,17 @@ Abra um novo prompt de comando e altere o diretório atual para a localização 
 * Para o Reino Unido:
 
         KeyTransferRemote.exe -ModifyAcls -KeyAppName simple -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-UK-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-UK-1
+* Para a Suíça:
+
+        KeyTransferRemote.exe -ModifyAcls -KeyAppName simple -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-SUI-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-SUI-1
 
 Quando você executar esse comando, substitua *contosokey* pelo mesmo valor especificado na **Etapa 3.5: Criar uma nova chave** na etapa [Gerar sua chave](#step-3-generate-your-key).
 
 Você é solicitado a conectar seus cartões de admin do Universo de segurança.
 
-Após a conclusão do comando, você verá **Resultado: SUCESSO** e a cópia da sua chave com permissões reduzidas estão no arquivo nomeado key_xferacid _\<contosokey >.
+Após a conclusão do comando, você verá **Resultado: O** sucesso e a cópia da sua chave com permissões reduzidas estão no arquivo chamado\<key_xferacId_ contosokey pelo >.
 
-Inspecione as ACLS usando comandos usando nCipher nShield utilitários a seguir:
+Você pode inspecionar as ACLS usando os seguintes comandos usando os utilitários nCipher nShield:
 
 * aclprint.py:
 
@@ -478,7 +505,7 @@ Execute um dos comandos a seguir, dependendo da sua região geográfica ou da in
 * Para a África do Sul:
 
         KeyTransferRemote.exe -Package -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-SA-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-SA-1 -SubscriptionId SubscriptionID -KeyFriendlyName ContosoFirstHSMkey
-* Para Emirados Árabes Unidos:
+* Para dos EAU:
 
         KeyTransferRemote.exe -Package -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-UAE-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-UAE-1 -SubscriptionId SubscriptionID -KeyFriendlyName ContosoFirstHSMkey
 * Para a Austrália:
@@ -496,6 +523,9 @@ Execute um dos comandos a seguir, dependendo da sua região geográfica ou da in
 * Para a Alemanha:
 
         KeyTransferRemote.exe -Package -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-GERMANY-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-GERMANY-1 -SubscriptionId SubscriptionID -KeyFriendlyName ContosoFirstHSMkey
+* Para a Alemanha pública:
+
+        KeyTransferRemote.exe -Package -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-GERMANY-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-GERMANY-1 -SubscriptionId SubscriptionID -KeyFriendlyName ContosoFirstHSMkey
 * Para a Índia:
 
         KeyTransferRemote.exe -Package -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-INDIA-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-INDIA-1 -SubscriptionId SubscriptionID -KeyFriendlyName ContosoFirstHSMkey
@@ -505,6 +535,10 @@ Execute um dos comandos a seguir, dependendo da sua região geográfica ou da in
 * Para o Reino Unido:
 
         KeyTransferRemote.exe -Package -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-UK-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-UK-1 -SubscriptionId SubscriptionID -KeyFriendlyName ContosoFirstHSMkey
+* Para a Suíça:
+
+        KeyTransferRemote.exe -Package -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-SUI-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-SUI-1 -SubscriptionId SubscriptionID -KeyFriendlyName ContosoFirstHSMkey
+
 
 Quando você executar esse comando, use estas instruções:
 
@@ -530,4 +564,4 @@ Se o upload for bem-sucedido, você verá exibidas as propriedades da chave que 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Agora você pode usar essa chave de HSM protegido no Cofre da Chave. Para obter mais informações, consulte esse preço e o recurso [comparação](https://azure.microsoft.com/pricing/details/key-vault/).
+Agora você pode usar essa chave de HSM protegido no Cofre da Chave. Para obter mais informações, consulte esta [comparação](https://azure.microsoft.com/pricing/details/key-vault/)de preço e recurso.

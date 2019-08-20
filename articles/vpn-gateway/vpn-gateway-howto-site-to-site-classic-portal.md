@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 08/15/2019
 ms.author: cherylmc
-ms.openlocfilehash: 77cfde8cc9c6556b907f1185f451c70c8c8e888d
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: 2e6036c5f29614f2e91278b693c07dc3dc8595f2
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69534043"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69575472"
 ---
 # <a name="create-a-site-to-site-connection-using-the-azure-portal-classic"></a>Criar uma conexão Site a Site usando o portal do Azure (clássico)
 
@@ -39,7 +39,7 @@ Verifique se você atende aos seguintes critérios antes de iniciar a configura�
 * Verifique se você possui um dispositivo VPN compatível e alguém que possa configurá-lo. Para obter mais informações sobre dispositivos VPN compatíveis e a configuração de dispositivo, confira [Sobre dispositivos VPN](vpn-gateway-about-vpn-devices.md).
 * Verifique se você possui um endereço IPv4 público voltado para o exterior para seu dispositivo VPN.
 * Se não estiver familiarizado com os intervalos de endereços IP localizados na configuração de rede local, você precisará trabalhar em conjunto com alguém que possa lhe fornecer os detalhes. Ao criar essa configuração, você deve especificar os prefixos de intervalo de endereços IP que o Azure roteará para seu local. Nenhuma das sub-redes da rede local podem se sobrepor às sub-redes de rede virtual às quais você deseja se conectar.
-* No momento, o PowerShell é necessário para especificar a chave compartilhada e criar a conexão de gateway de VPN. Instale a versão mais recente dos cmdlets do PowerShell do SM (Gerenciamento de Serviços) do Azure. Para obter mais informações, confira [Como instalar e configurar o Azure PowerShell](/powershell/azure/overview). Ao trabalhar com o PowerShell para essa configuração, verifique se você está executando como administrador.
+* No momento, o PowerShell é necessário para especificar a chave compartilhada e criar a conexão de gateway de VPN. Instale a versão mais recente dos cmdlets do PowerShell do SM (Gerenciamento de Serviços) do Azure. Para instalar os cmdlets, consulte [Gerenciamento de serviços](/powershell/azure/servicemanagement/install-azure-ps). Para obter mais informações sobre as instalações do PowerShell em geral, consulte [como instalar e configurar o Azure PowerShell](/powershell/azure/overview). Ao trabalhar com o PowerShell para essa configuração, verifique se você está executando como administrador.
 
 ### <a name="values"></a>Exemplo de valores de configuração para este exercício
 
@@ -159,6 +159,12 @@ Nesta etapa, defina a chave compartilhada e crie a conexão. A chave que você d
 
 ### <a name="step-1-connect-to-your-azure-account"></a>Etapa 1. Conectar-se à sua conta do Azure
 
+Você deve executar esses comandos localmente usando o módulo de gerenciamento de serviços do PowerShell. Para alternar para o gerenciamento de serviços, use este comando:
+
+```powershell
+azure config mode asm
+```
+
 1. Abra o console do PowerShell com direitos elevados e conecte-se à sua conta. Use o exemplo a seguir para ajudar a se conectar:
 
    ```powershell
@@ -177,18 +183,14 @@ Nesta etapa, defina a chave compartilhada e crie a conexão. A chave que você d
 
 ### <a name="step-2-set-the-shared-key-and-create-the-connection"></a>Etapa 2. Definir a chave compartilhada e criar a conexão
 
-Ao trabalhar com o PowerShell e com o modelo de implantação clássica, às vezes, os nomes de recursos no portal não são os nomes esperados pelo Azure ao usar o PowerShell. As etapas a seguir ajudam a exportar o arquivo de configuração de rede para obter os valores exatos dos nomes. Você deve executar esses comandos localmente usando o módulo de gerenciamento de serviços do PowerShell. Para alternar para o gerenciamento de serviços, use este comando:
-
-```powershell
-azure config mode asm
-```
+Quando você cria uma VNet clássica no portal (não usando o PowerShell), o Azure adiciona o nome do grupo de recursos ao nome curto. Por exemplo, de acordo com o Azure, o nome da VNet que você criou para este exercício é "Group TestRG1 TestVNet1", não "TestVNet1". O PowerShell requer o nome completo da rede virtual, não o nome curto que aparece no Portal. O nome longo não é visível no Portal. As etapas a seguir ajudam a exportar o arquivo de configuração de rede para obter os valores exatos para o nome da rede virtual. 
 
 1. Crie um diretório em seu computador e exporte o arquivo de configuração de rede para o diretório. Neste exemplo, o arquivo de configuração de rede é exportado para C:\AzureNet.
 
    ```powershell
    Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
    ```
-2. Abra o arquivo de configuração de rede com um editor de xml e verifique os valores de 'Nome de LocalNetworkSite' e 'Nome de VirtualNetworkSite'. Modifique o exemplo para refletir os valores necessários. Ao especificar um nome que contenha espaços, use aspas simples ao redor do valor.
+2. Abra o arquivo de configuração de rede com um editor de xml e verifique os valores de 'Nome de LocalNetworkSite' e 'Nome de VirtualNetworkSite'. Modifique o exemplo deste exercício para refletir os valores no XML. Ao especificar um nome que contenha espaços, use aspas simples ao redor do valor.
 
 3. Defina a chave compartilhada e crie a conexão. '-SharedKey' é um valor que você pode gerar e especificar. Neste exemplo, usamos ‘abc123’, mas você pode (e deve) gerar e usar algo mais complexo. O importante é que o valor especificado aqui deve ser o mesmo valor especificado ao configurar seu dispositivo VPN.
 

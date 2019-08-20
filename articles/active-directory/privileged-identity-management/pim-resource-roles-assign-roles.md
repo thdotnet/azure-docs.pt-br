@@ -1,5 +1,5 @@
 ---
-title: Atribuir funções de recurso do Azure no PIM - Azure Active Directory | Microsoft Docs
+title: Atribuir funções de recurso do Azure em PIM-Azure Active Directory | Microsoft Docs
 description: Saiba como atribuir funções de recurso do Azure no Azure AD PIM (Privileged Identity Management).
 services: active-directory
 documentationcenter: ''
@@ -15,25 +15,25 @@ ms.date: 04/09/2019
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 610aeec9e4c40d0aad0c28f02697e2cf01edbe4a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5919c9ab53761649c55e67ceacec0409174e9120
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60438594"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69617041"
 ---
 # <a name="assign-azure-resource-roles-in-pim"></a>Atribuir funções de recurso do Azure no PIM
 
-Azure Active Directory (Azure AD) PIM Privileged Identity Management () pode gerenciar as funções de recurso do Azure internas, bem como funções personalizadas, incluindo (mas não limitado a):
+O Azure Active Directory (Azure AD) Privileged Identity Management (PIM) pode gerenciar as funções de recurso internas do Azure, bem como as funções personalizadas, incluindo (mas não se limitando a):
 
 - Proprietário
 - Administrador de Acesso do Usuário
-- Colaborador
-- Administrador de Segurança
+- Contribuidor
+- Admin de Segurança
 - Gerenciador de Segurança e muito mais
 
 > [!NOTE]
-> Os usuários ou membros de um grupo atribuído às funções de Administrador de Acesso de Usuário ou Proprietário e Administradores Globais que permitem o gerenciamento de assinatura no Azure AD são Administradores de Recursos. Esses administradores podem atribuir funções, definir configurações de função e revisar o acesso ao usar o PIM para recursos do Azure. Exiba a lista de [funções internas para recursos do Azure](../../role-based-access-control/built-in-roles.md).
+> Os usuários ou membros de um grupo atribuído às funções de Administrador de Acesso de Usuário ou Proprietário e Administradores Globais que permitem o gerenciamento de assinatura no Azure AD são Administradores de Recursos. Esses administradores podem atribuir funções, definir configurações de função e revisar o acesso ao usar o PIM para recursos do Azure. Ou seja, a conta não terá os direitos de gerenciar o PIM para recursos se o usuário não tiver uma função de administrador de recursos. Exiba a lista de [funções internas para recursos do Azure](../../role-based-access-control/built-in-roles.md).
 
 ## <a name="assign-a-role"></a>Atribuir uma função
 

@@ -1,87 +1,93 @@
 ---
-title: 'Azure Active Directory Domain Services: Guia de administração | Microsoft Docs'
-description: Criar uma UO (Unidade Organizacional) em um domínio gerenciado dos Serviços de Domínio do Azure AD
+title: Criar uma UO (unidade organizacional) no Azure AD Domain Services | Microsoft Docs '
+description: Saiba como criar e gerenciar uma UO (unidade organizacional) personalizada em um Azure AD Domain Services domínio gerenciado.
 services: active-directory-ds
-documentationcenter: ''
 author: iainfoulds
 manager: daveba
-editor: curtand
 ms.assetid: 52602ad8-2b93-4082-8487-427bdcfa8126
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/10/2019
+ms.date: 08/07/2019
 ms.author: iainfou
-ms.openlocfilehash: b2bdad25d676d65494fdd5b6a314f8c3381254de
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: a3f9ad20e4bfba6e0bb858c82ccce73bb687a826
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67473672"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69613130"
 ---
-# <a name="create-an-organizational-unit-ou-on-an-azure-ad-domain-services-managed-domain"></a>Criar uma Unidade Organizacional (UO) em um domínio gerenciado dos Serviços de Domínio do Azure AD
-Domínios gerenciados dos Serviços de Domínio do Azure AD incluem dois contêineres internos chamados 'Computadores do AADDC' e 'Usuários do AADDC', respectivamente. O contêiner 'Computadores do AADDC' tem objetos de computador para todos os computadores ingressados no domínio gerenciado. O contêiner 'Usuários do AADDC' inclui usuários e grupos no locatário do Azure AD. Ocasionalmente, pode ser necessário criar contas de serviço no domínio gerenciado para implantar cargas de trabalho. Para essa finalidade, você pode criar uma UO (unidade organizacional) personalizada no domínio gerenciado e criar contas de serviço dentro dessa UO. Este artigo mostra como criar uma UO em seu domínio gerenciado.
+# <a name="create-an-organizational-unit-ou-in-an-azure-ad-domain-services-managed-domain"></a>Criar uma UO (unidade organizacional) em um domínio gerenciado Azure AD Domain Services
+
+As UOs (unidades organizacionais) no Active Directory Domain Services (AD DS) permitem agrupar logicamente objetos, como contas de usuário, contas de serviço ou contas de computador. Em seguida, você pode atribuir administradores a UOs específicas e aplicar a política de grupo para impor as definições de configuração de destino.
+
+Os domínios gerenciados do Azure AD DS incluem dois *computadores AADDC* e *AADDC usuários*internos. A UO *computadores AADDC* contém objetos de computador para todos os computadores que ingressaram no domínio gerenciado. A UO *usuários do AADDC* inclui usuários e grupos sincronizados no do locatário do Azure AD. Conforme você cria e executa cargas de trabalho que usam o Azure AD DS, talvez seja necessário criar contas de serviço para que os aplicativos se autentiquem. Para organizar essas contas de serviço, você geralmente cria uma UO personalizada no domínio gerenciado AD DS do Azure e, em seguida, cria contas de serviço dentro dessa UO.
+
+Este artigo mostra como criar uma UO em seu domínio gerenciado AD DS do Azure.
 
 [!INCLUDE [active-directory-ds-prerequisites.md](../../includes/active-directory-ds-prerequisites.md)]
 
 ## <a name="before-you-begin"></a>Antes de começar
-Para executar as tarefas listadas neste artigo, você precisa do seguinte:
 
-1. Uma **assinatura do Azure**válida.
-2. Um **diretório do AD do Azure** - seja sincronizado com um diretório local ou com um diretório somente na nuvem.
-3. **Serviços de Domínio do Azure AD** devem ser habilitados para o diretório do Azure AD. Se você ainda não tiver feito isso, execute todas as tarefas descritas no [guia de Introdução](create-instance.md).
-4. Uma máquina virtual ingressada no domínio por meio da qual você administra o domínio gerenciado do Azure AD Domain Services. Se você não tiver esse tipo de máquina virtual, execute todas as tarefas descritas no artigo [Ingressar uma máquina virtual do Windows em um domínio gerenciado](active-directory-ds-admin-guide-join-windows-vm.md).
-5. Você precisa das credenciais de uma **conta de usuário que pertença ao grupo “Administradores do controlador de domínio do AAD”** em seu diretório para criar uma UO personalizada em seu domínio gerenciado.
+Para concluir este artigo, você precisa dos seguintes recursos e privilégios:
 
-## <a name="install-ad-administration-tools-on-a-domain-joined-virtual-machine-for-remote-administration"></a>Instalar ferramentas de administração do AD em uma máquina virtual ingressada no domínio para administração remota
-Domínios gerenciados dos Serviços de Domínio do Azure AD podem ser gerenciados remotamente usando as ferramentas administrativas familiares do Active Directory, como o ADAC (Centro Administrativo do Active Directory) ou o AD PowerShell. Os administradores de locatários não têm privilégios para conectar-se a controladores de domínio no domínio gerenciado por meio da Área de Trabalho Remota. Para administrar o domínio gerenciado, instale o recurso de ferramentas de administração do AD em uma máquina virtual ingressada no domínio gerenciado. Consulte o artigo intitulado [gerenciar um domínio do Azure AD Domain Services](manage-domain.md) para obter instruções.
+* Uma assinatura ativa do Azure.
+    * Se você não tiver uma assinatura do Azure, [crie uma conta](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* Um locatário Azure Active Directory associado à sua assinatura, seja sincronizado com um diretório local ou um diretório somente em nuvem.
+    * Se necessário, [crie um locatário Azure Active Directory][create-azure-ad-tenant] ou [associe uma assinatura do Azure à sua conta][associate-azure-ad-tenant].
+* Um Azure Active Directory Domain Services domínio gerenciado habilitado e configurado em seu locatário do Azure AD.
+    * Se necessário, conclua o tutorial para [criar e configurar uma instância de Azure Active Directory Domain Services][create-azure-ad-ds-instance].
+* Uma VM de gerenciamento do Windows Server que é unida ao domínio gerenciado AD DS do Azure.
+    * Se necessário, conclua o tutorial para [criar uma VM de gerenciamento][tutorial-create-management-vm].
+* Uma conta de usuário que é membro do grupo de *Administradores de DC do Azure ad* em seu locatário do Azure AD.
 
-## <a name="create-an-organizational-unit-on-the-managed-domain"></a>Criar uma Unidade Organizacional no domínio gerenciado
-Agora que as Ferramentas Administrativas do AD estão instaladas na máquina virtual ingressada no domínio, podemos usar essas ferramentas para criar uma unidade organizacional no domínio gerenciado. Execute as seguintes etapas:
+## <a name="custom-ou-considerations-and-limitations"></a>Considerações e limitações de UO personalizadas
+
+Ao criar UOs personalizadas em um domínio gerenciado AD DS do Azure, você obterá flexibilidade de gerenciamento adicional para o gerenciamento de usuários e a aplicação da diretiva de grupo. Em comparação com um ambiente de AD DS local, há algumas limitações e considerações ao criar e gerenciar uma estrutura de UO personalizada no Azure AD DS:
+
+* Para criar UOs personalizadas, os usuários devem ser membros do grupo de *Administradores do AAD DC* .
+* Um usuário que cria uma UO personalizada recebe privilégios administrativos (controle total) nessa UO e é o proprietário do recurso.
+    * Por padrão, o grupo de *Administradores de DC do AAD* também tem controle total da UO personalizada.
+* Uma UO padrão para *usuários AADDC* é criada contendo as contas de usuário sincronizadas do seu locatário do Azure AD.
+    * Não é possível mover usuários ou grupos da UO *usuários do AADDC* para as UOs personalizadas que você criar. Somente contas de usuário ou recursos criados no domínio gerenciado AD DS do Azure podem ser movidos para UOs personalizadas.
+* Contas de usuário, grupos, contas de serviço e objetos de computador que você cria em UOs personalizadas não estão disponíveis no seu locatário do Azure AD.
+    * Esses objetos não aparecem usando o API do Graph do Azure AD ou na interface do usuário do Azure AD; Eles estão disponíveis somente em seu domínio gerenciado AD DS do Azure.
+
+## <a name="create-a-custom-ou"></a>Criar uma UO personalizada
+
+Para criar uma UO personalizada, use as ferramentas administrativas Active Directory de uma VM ingressada no domínio. O Centro Administrativo do Active Directory permite exibir, editar e criar recursos em um domínio gerenciado do Azure AD DS, incluindo UOs.
 
 > [!NOTE]
-> Somente os membros do grupo 'Administradores de DC do AAD' têm os privilégios necessários para criar uma nova UO. Certifique-se de executar as etapas a seguir como um usuário pertencente a esse grupo.
->
->
+> Para criar uma UO personalizada em um domínio gerenciado AD DS do Azure, você deve estar conectado a uma conta de usuário que seja membro do grupo de *Administradores de DC do AAD* .
 
-1. Na tela inicial, clique em **Ferramentas Administrativas**. Você deve ver as ferramentas administrativas do AD instaladas na máquina virtual.
+1. Na tela iniciar, selecione **Ferramentas administrativas**. É mostrada uma lista de ferramentas de gerenciamento disponíveis que foram instaladas no tutorial para [criar uma VM de gerenciamento][tutorial-create-management-vm].
+1. Para criar e gerenciar UOs, selecione **centro administrativo do Active Directory** na lista de ferramentas administrativas.
+1. No painel esquerdo, escolha seu domínio gerenciado AD DS do Azure, como *contoso.com*. Uma lista de UOs e recursos existentes é mostrada:
 
-    ![Ferramentas Administrativas instaladas no servidor](./media/active-directory-domain-services-admin-guide/install-rsat-admin-tools-installed.png)
-2. Clique em **Centro Administrativo do Active Directory**.
+    ![Selecione seu domínio gerenciado do Azure AD DS no Centro Administrativo do Active Directory](./media/active-directory-domain-services-admin-guide/create-ou-adac-overview.png)
 
-    ![Centro Administrativo do Active Directory](./media/active-directory-domain-services-admin-guide/adac-overview.png)
-3. Para exibir o domínio, clique no nome de domínio no painel à esquerda (por exemplo, 'contoso100.com').
+1. O painel **tarefas** é mostrado no lado direito da centro administrativo do Active Directory. No domínio, como *contoso.com*, selecione **novo > unidade organizacional**.
 
-    ![ADAC - exibir domínio](./media/active-directory-domain-services-admin-guide/create-ou-adac-overview.png)
-4. No lado direito do painel **Tarefas**, clique em **Novo** no nó de nome de domínio. Neste exemplo, vamos clicar em **Novo** no nó 'contoso100(local)' no lado direito do painel **Tarefas**.
+    ![Selecione a opção para criar uma nova UO no Centro Administrativo do Active Directory](./media/active-directory-domain-services-admin-guide/create-ou-adac-new-ou.png)
 
-    ![ADAC - nova UO](./media/active-directory-domain-services-admin-guide/create-ou-adac-new-ou.png)
-5. Você deve ver a opção de criar uma unidade organizacional. Clique em **Unidade Organizacional** para iniciar o diálogo **Criar Unidade Organizacional**.
-6. Na caixa de diálogo **Criar Unidade Organizacional**, especifique um **Nome** para a nova UO. Forneça uma descrição curta para a UO. Você também pode definir o campo **Gerenciado Por** da UO. Para criar a UO personalizada, clique em **OK**.
+1. Na caixa de diálogo **criar unidade organizacional** , especifique um **nome** para a nova UO, como *MyCustomOu*. Forneça uma breve descrição para a UO, como *UO personalizada para contas de serviço*. Se desejar, você também pode definir o campo **gerenciado por** para a UO. Para criar a UO personalizada, selecione **OK**.
 
-    ![ADAC - criar caixa de diálogo da UO](./media/active-directory-domain-services-admin-guide/create-ou-dialog.png)
-7. A UO recém-criada agora deve aparecer no ADAC (Centro Administrativo do AD).
+    ![Criar uma UO personalizada da Centro Administrativo do Active Directory](./media/active-directory-domain-services-admin-guide/create-ou-dialog.png)
 
-    ![ADAC - UO criada](./media/active-directory-domain-services-admin-guide/create-ou-done.png)
+1. De volta ao Centro Administrativo do Active Directory, a UO personalizada agora está listada e está disponível para uso:
 
-## <a name="permissionssecurity-for-newly-created-ous"></a>Permissões/segurança para UOs recém-criadas
-Por padrão, são concedidos ao usuário (membro do grupo 'Administradores de DC do AAD') que criou a UO personalizada privilégios administrativos (controle total) sobre a UO. O usuário pode, em seguida, continuar e conceder privilégios a outros usuários ou ao grupo 'Administradores do AAD DC', conforme desejado. Como visto na captura de tela a seguir, o usuário ‘bob@domainservicespreview.onmicrosoft.com’ que criou a nova unidade organizacional ‘MyCustomOU’ recebe controle total sobre ela.
+    ![UO personalizada disponível para uso no Centro Administrativo do Active Directory](./media/active-directory-domain-services-admin-guide/create-ou-done.png)
 
- ![ADAC - segurança da nova UO](./media/active-directory-domain-services-admin-guide/create-ou-permissions.png)
+## <a name="next-steps"></a>Próximas etapas
 
-## <a name="notes-on-administering-custom-ous"></a>Notas sobre como administrar UOs personalizadas
-Agora que você criou uma UO personalizada, pode criar usuários, grupos, computadores e contas de serviço nessa UO. Você não pode mover usuários ou grupos da UO 'Usuários de DC do AAD' para as UOs personalizadas.
+Para obter mais informações sobre como usar as ferramentas administrativas ou criar e usar contas de serviço, consulte os seguintes artigos:
 
-> [!WARNING]
-> As contas de usuário, de grupos, as contas de serviço e de objetos de computador que você criar em OUs personalizadas não ficam disponíveis no seu locatário do Azure AD. Em outras palavras, esses objetos não aparecem usando a API do Azure AD Graph ou na interface do usuário do Azure AD. Esses objetos só estarão disponíveis no seu domínio gerenciado dos Azure AD Domain Services.
->
->
-
-## <a name="related-content"></a>Conteúdo relacionado
-* [Gerenciar um domínio do Azure AD Domain Services](manage-domain.md)
-* [Gerenciar política de grupo para o Azure AD Domain Services](manage-group-policy.md)
 * [Centro Administrativo do Active Directory: Introdução](https://technet.microsoft.com/library/dd560651.aspx)
 * [Guia passo a passo de contas de serviço](https://technet.microsoft.com/library/dd548356.aspx)
+
+<!-- INTERNAL LINKS -->
+[create-azure-ad-tenant]: ../active-directory/fundamentals/sign-up-organization.md
+[associate-azure-ad-tenant]: ../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md
+[create-azure-ad-ds-instance]: tutorial-create-instance.md
+[tutorial-create-management-vm]: tutorial-create-management-vm.md

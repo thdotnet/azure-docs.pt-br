@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/01/2019
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: f800560aa4ddef52c2274fa8b3f5c98d68189f0f
-ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
+ms.openlocfilehash: 1dc4120ec9f1db8ac34800096ae407b5581758a4
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68717530"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69614153"
 ---
 # <a name="understand-your-azure-cosmos-db-bill"></a>Entendendo sua fatura do Azure Cosmos DB
 
@@ -90,7 +90,7 @@ Se você aumentar a taxa de transferência provisionada para um contêiner ou um
 
 ## <a name="billing-examples-with-geo-replication-and-multi-master"></a>Exemplos de cobrança com replicação geográfica e de vários mestres  
 
-É possível adicionar/remover regiões do Azure em qualquer lugar do mundo da sua conta de banco de dados do Azure Cosmos DB a qualquer momento. A taxa de transferência que você configurou para vários bancos de dados e contêineres do Azure Cosmos DB estará reservada em cada região do Azure associada à sua conta de banco de dados do Azure Cosmos DB. Se a soma das taxas de transferência provisionadas (RU/s) configuradas em todos os bancos de dados e contêineres dentro da conta do banco de dados Azure Cosmos (provisionadas por hora) for T e o número de regiões do Azure associadas à conta do banco de dados for N, o total da taxa de transferência provisionada para qualquer hora, para sua conta de banco de dados, (a) configurada com uma única região de gravação será igual a T x N RU/s e (b) configurada com todas as regiões sendo capazes de processar gravações será igual a T x (N + 1) RU/s, respectivamente. A taxa de transferência provisionada (região de gravação única) custa US$ 0,008 por hora por 100 RU/s e a taxa de transferência provisionada com várias regiões graváveis (configuração de vários mestres) custa US$ 0,016 / por hora por 100 RU/s (consulte a [página de preços](https://azure.microsoft.com/pricing/details/cosmos-db/)). Seja com região de gravação única ou várias regiões de gravação, o Azure Cosmos DB permite a leitura de dados de qualquer região.
+Você pode adicionar/remover regiões do Azure em qualquer lugar do mundo para sua conta de banco de dados Cosmos do Azure a qualquer momento. A taxa de transferência que você configurou para vários contêineres e bancos de dados Cosmos do Azure será reservada em cada uma das regiões do Azure associadas à sua conta de banco de dados Cosmos do Azure. Se a soma das taxas de transferência provisionadas (RU/s) configuradas em todos os bancos de dados e contêineres dentro da conta do banco de dados Azure Cosmos (provisionadas por hora) for T e o número de regiões do Azure associadas à conta do banco de dados for N, o total da taxa de transferência provisionada para qualquer hora, para sua conta de banco de dados, (a) configurada com uma única região de gravação será igual a T x N RU/s e (b) configurada com todas as regiões sendo capazes de processar gravações será igual a T x (N + 1) RU/s, respectivamente. A taxa de transferência provisionada (região de gravação única) custa US$ 0,008 por hora por 100 RU/s e a taxa de transferência provisionada com várias regiões graváveis (configuração de vários mestres) custa US$ 0,016 / por hora por 100 RU/s (consulte a [página de preços](https://azure.microsoft.com/pricing/details/cosmos-db/)). Seja com região de gravação única ou várias regiões de gravação, o Azure Cosmos DB permite a leitura de dados de qualquer região.
 
 ### <a name="billing-example-multi-region-azure-cosmos-account-single-region-writes"></a>Exemplo de cobrança: conta do Azure Cosmos multirregiões, com gravação em uma única região
 
@@ -228,7 +228,7 @@ Custo mensal total = custo mensal pelo armazenamento + custo mensal pela taxa de
 
 ## <a name="billing-with-azure-cosmos-db-reserved-capacity"></a>Cobrança com capacidade reservada do Azure Cosmos DB
 
-A capacidade reservada do Azure Cosmos DB permite que você adquira taxa de transferência provisionada com antecedência (uma capacidade reservada, ou uma reserva) que pode ser aplicada a todos os bancos de dados e contêineres do Azure Cosmos DB (para qualquer API ou modelo de dados) em todas as regiões do Azure. Visto que o preço da taxa de transferência provisionada varia de acordo com a região, vale pensar na capacidade reservada como um crédito monetário adquirido com desconto, que pode ser utilizado na taxa de transferência provisionada pelo preço respectivo de cada região. Por exemplo, digamos que você tenha uma conta do Azure Cosmos com um único contêiner provisionado com 50 mil RU/s e replicou globalmente duas regiões: Leste dos EUA e Leste do Japão. Se você escolher a opção de pagamento conforme o uso, pagará:  
+Azure Cosmos DB capacidade reservada permite que você compre a taxa de transferência provisionada antecipadamente (uma capacidade reservada ou uma reserva) que pode ser aplicada a todos os bancos de dados e contêineres do Azure Cosmos (para qualquer API ou modelo de dado) em todas as regiões do Azure. Visto que o preço da taxa de transferência provisionada varia de acordo com a região, vale pensar na capacidade reservada como um crédito monetário adquirido com desconto, que pode ser utilizado na taxa de transferência provisionada pelo preço respectivo de cada região. Por exemplo, digamos que você tenha uma conta do Azure Cosmos com um único contêiner provisionado com 50 mil RU/s e replicou globalmente duas regiões: Leste dos EUA e Leste do Japão. Se você escolher a opção de pagamento conforme o uso, pagará:  
 
 * No Leste dos EUA: por 50 mil RU/s à taxa de US$ 0,008 por 100 RU/s nessa região 
 

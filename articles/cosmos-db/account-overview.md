@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/23/2019
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: 617d19b0dd9da926eb49170c1566febc6f6280ba
-ms.sourcegitcommit: c72ddb56b5657b2adeb3c4608c3d4c56e3421f2c
+ms.openlocfilehash: 833d8533ff3289693e1744db2d77d4bed6a9ea69
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68467807"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69617006"
 ---
 # <a name="work-with-azure-cosmos-account"></a>Como trabalhar com a conta do Azure Cosmos
 
@@ -25,7 +25,7 @@ Para gerenciar com segurança o acesso a todos os dados em sua conta do Azure Co
 
 ## <a name="elements-in-an-azure-cosmos-account"></a>Elementos em uma conta do Azure Cosmos
 
-O contêiner do Azure Cosmos DB é a unidade fundamental de escalabilidade. Você pode virtualmente ter uma taxa de transferência provisionada ilimitada (RU/s) e armazenamento em um contêiner. O Azure Cosmos DB particiona de forma transparente seu contêiner usando a chave de partição lógica que você especifica para dimensionar de forma elástica sua taxa de transferência e armazenamento provisionados. Para obter mais informações, consulte [trabalhando com contêineres do Azure Cosmos e itens](databases-containers-items.md).
+O contêiner Cosmos do Azure é a unidade fundamental de escalabilidade. Você pode virtualmente ter uma taxa de transferência provisionada ilimitada (RU/s) e armazenamento em um contêiner. O Azure Cosmos DB particiona de forma transparente seu contêiner usando a chave de partição lógica que você especifica para dimensionar de forma elástica sua taxa de transferência e armazenamento provisionados. Para obter mais informações, consulte [trabalhando com contêineres do Azure Cosmos e itens](databases-containers-items.md).
 
 Atualmente, você pode criar no máximo 100 contas do Azure Cosmos sob uma assinatura do Azure. Uma única conta do Azure Cosmos pode gerenciar virtualmente uma quantidade ilimitada de dados e uma taxa de transferência provisionada. Para gerenciar seus dados e a taxa de transferência provisionada, você pode criar um ou mais bancos de dados do Azure Cosmos em sua conta e, nesse banco de dados, pode criar um ou mais contêineres. A imagem a seguir mostra a hierarquia de elementos em uma conta do Azure Cosmos:
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: a8265496c475566ec7a87a19eab6d975838e9da4
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 23ae7b5cfec26fb2483a3e4ac13a1220888d76ee
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68966398"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69614257"
 ---
 # <a name="copy-activity-in-azure-data-factory"></a>Atividade de cópia no Azure Data Factory
 
@@ -144,7 +144,7 @@ O modelo a seguir de uma atividade de cópia contém uma lista exaustiva das pro
 
 ## <a name="monitoring"></a>Monitorando
 
-É possível monitorar a atividade de cópia em execução na interface do usuário "Autor e Monitor" do Azure Data Factory ou programaticamente. Você pode comparar o desempenho e a configuração do seu cenário com a [referência de desempenho](copy-activity-performance.md#performance-reference) da atividade de cópia de testes internos.
+É possível monitorar a atividade de cópia em execução na interface do usuário "Autor e Monitor" do Azure Data Factory ou programaticamente.
 
 ### <a name="monitor-visually"></a>Monitorar visualmente
 

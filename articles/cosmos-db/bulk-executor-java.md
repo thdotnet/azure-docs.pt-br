@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: ramkris
 ms.reviewer: sngun
-ms.openlocfilehash: f8cb7458deddc95f33fa5e4582ffa7c25c3c64e6
-ms.sourcegitcommit: 08d3a5827065d04a2dc62371e605d4d89cf6564f
+ms.openlocfilehash: ef006e94ee22886f1129c7c9ca31e20503312fe3
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68619820"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616925"
 ---
 # <a name="use-bulk-executor-java-library-to-perform-bulk-operations-on-azure-cosmos-db-data"></a>Use a biblioteca bulk executor Java para executar operações em massa no Azure Cosmos DB
 
-Este tutorial fornece instruções sobre como usar a biblioteca BulkExecutor Java do Azure Cosmos DB para importar e atualizar documentos do Azure Cosmos DB. Para saber mais sobre a biblioteca bulk executor e como ela ajuda a aproveitar armazenamento e taxa de transferência em massa, consulte o artigo [visão geral da Biblioteca bulk executor](bulk-executor-overview.md). Neste tutorial, você cria um aplicativo Java que gera documentos aleatórios a serem importados em massa para um contêiner do Azure Cosmos DB. Após a importação, você será em massa atualizar algumas propriedades de um documento. 
+Este tutorial fornece instruções sobre como usar a biblioteca BulkExecutor Java do Azure Cosmos DB para importar e atualizar documentos do Azure Cosmos DB. Para saber mais sobre a biblioteca bulk executor e como ela ajuda a aproveitar armazenamento e taxa de transferência em massa, consulte o artigo [visão geral da Biblioteca bulk executor](bulk-executor-overview.md). Neste tutorial, você cria um aplicativo Java que gera documentos aleatórios e eles são importados em massa em um contêiner Cosmos do Azure. Após a importação, você será em massa atualizar algumas propriedades de um documento. 
 
 Atualmente, a biblioteca de executores em massa tem suporte apenas por Azure Cosmos DB contas da API do SQL e da API do Gremlin. Este artigo descreve como usar a biblioteca Java do executor em massa com contas da API do SQL. Para saber mais sobre como usar a biblioteca do .NET de executor em massa com a API do Gremlin, consulte [executar operações em massa na API do Gremlin do Azure Cosmos DB](bulk-executor-graph-dotnet.md).
 
@@ -88,7 +88,7 @@ O repositório clonado contém dois exemplos "bulkimport" e "bulkupdate" relativ
    client.getConnectionPolicy().getRetryOptions().setMaxRetryAttemptsOnThrottledRequests(0);
    ```
 
-4. Chame a API importAll que gera documentos aleatórios para importar em massa para um contêiner do Azure Cosmos DB. Você pode configurar as configurações de linha de comando no arquivo CmdLineConfiguration.java.
+4. Chame a API importl que gera documentos aleatórios para importação em massa em um contêiner Cosmos do Azure. Você pode configurar as configurações de linha de comando no arquivo CmdLineConfiguration.java.
 
    ```java
    BulkImportResponse bulkImportResponse = bulkExecutor.importAll(documents, false, true, null);
@@ -155,7 +155,7 @@ Você pode atualizar os documentos existentes usando a API BulkUpdateAsync. Nest
     }).collect(Collectors.toCollection(() -> updateItems));
    ```
 
-2. Chame a API updateAll que gera documentos aleatórios a serem importados em massa para um contêiner do Azure Cosmos DB. Você pode configurar as configurações de linha de comando a serem passadas no arquivo CmdLineConfiguration.java.
+2. Chame a API updateAll que gera documentos aleatórios a serem importados em massa em um contêiner Cosmos do Azure. Você pode configurar as configurações de linha de comando a serem passadas no arquivo CmdLineConfiguration.java.
 
    ```java
    BulkUpdateResponse bulkUpdateResponse = bulkExecutor.updateAll(updateItems, null)
@@ -206,7 +206,7 @@ Considere os seguintes pontos para melhor desempenho ao usar a biblioteca bulk e
    * Defina o tamanho do heap da JVM para um número grande o suficiente para evitar qualquer problema de memória na manipulação de número grande de documentos. Tamanho do heap sugerido: max (3GB, 3 * tamanho de (todos os documentos passados para API de importação em massa em um lote)).  
    * Há um tempo de pré-processamento, devido ao qual você obterá maior taxa de transferência ao executar operações em massa com um grande número de documentos. Portanto, se você deseja importar 10.000.000 documentos, executar a importação em massa 10 vezes em 10 lotes de documentos, cada um de tamanho 1.000.000, é preferível do que a execução da importação em massa 100 vezes em 100 lotes de documentos, cada um de tamanho 100.000 documentos.  
 
-* É recomendado criar uma instância de um único objeto DocumentBulkExecutor para o aplicativo inteiro em uma única máquina virtual que corresponda a um contêiner do Azure Cosmos DB específico.  
+* É recomendável criar uma instância de um único objeto DocumentBulkExecutor para todo o aplicativo em uma única máquina virtual que corresponda a um contêiner Cosmos do Azure específico.  
 
 * Como uma execução de API de operação em massa única consome uma grande parte de ES de CPU e de rede do computador cliente. Isso acontece por geração de várias tarefas internamente, evite a geração de várias tarefas simultâneas no processo de aplicativo executando chamadas de API de operação em massa. Se uma única chamada à API de operação em massa em execução em uma única máquina virtual não puder consumir a produtividade inteira do contêiner (se a produtividade do contêiner for de mais de 1 milhão de RU/s), prefira criar máquinas virtuais separadas para executar as chamadas à API de operação em massa simultaneamente.
 

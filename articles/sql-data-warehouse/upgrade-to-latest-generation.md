@@ -10,12 +10,12 @@ ms.subservice: manage
 ms.date: 02/19/2019
 ms.author: martinle
 ms.reviewer: jrasnick
-ms.openlocfilehash: a8bd260db7a141ce845ce7fb5b7e10f642907b82
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2864e3d29a0beccd2ef52732a85ea1495e1efab8
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60310242"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69575292"
 ---
 # <a name="optimize-performance-by-upgrading-sql-data-warehouse"></a>Otimize o desempenho ao fazer upgrade do SQL Data Warehouse
 
@@ -63,7 +63,7 @@ Esta atualização se aplica a data warehouses na camada de Computação Otimiza
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 > [!NOTE]
-> Migração de Gen1 para Gen2 por meio do portal do Azure é permanente. Não é um processo para retornar para Gen1.  
+> A migração de Gen1 para Gen2 por meio da portal do Azure é permanente. Não há um processo para retornar ao Gen1.  
 
 ## <a name="sign-in-to-the-azure-portal"></a>Entre no Portal do Azure
 
@@ -198,7 +198,7 @@ WHERE  idx.type_desc = 'CLUSTERED COLUMNSTORE';
 ## <a name="restore-an-active-or-paused-database-using-the-azure-portal"></a>Restaurar um banco de dados ativo ou pausado usando o portal do Azure
 
 1. Entre no [Portal do Azure](https://portal.azure.com/).
-2. Navegue até o SQL Data Warehouse do qual você quer restaurar.
+2. Navegue até o SQL Data Warehouse do qual você deseja restaurar.
 3. Na parte superior da seção Visão Geral, selecione **Restaurar**.
 
     ![ Visão Geral de Restauração](./media/sql-data-warehouse-restore-database-portal/restoring_0.png)
@@ -215,7 +215,7 @@ WHERE  idx.type_desc = 'CLUSTERED COLUMNSTORE';
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Para recuperar um banco de dados, use o [AzSqlDatabase restauração](/powershell/module/az.sql/restore-azsqldatabase) cmdlet.
+Para recuperar um banco de dados, use o cmdlet [Restore-AzSqlDatabase](/powershell/module/az.sql/restore-azsqldatabase) .
 
 > [!NOTE]
 > Você pode executar uma restauração geográfica para Gen2! Para fazer isso, especifique um ServiceObjectiveName de Gen2 (por exemplo, DW1000**c**) como parâmetro opcional.

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: iainfou
-ms.openlocfilehash: 475817985885cdd6023e72f20ecf35a3ca582924
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 1c52ac967d241f31d96988fa5ead8b4e049f6f4c
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67472440"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69617093"
 ---
 # <a name="synchronization-in-an-azure-ad-domain-services-managed-domain"></a>Sincronização em um domínio gerenciado dos Serviços de Domínio do Azure AD
 O diagrama a seguir ilustra o funcionamento da sincronização nos domínios gerenciados dos Serviços de Domínio do Azure AD.
@@ -60,7 +60,7 @@ Os seguintes atributos ou objetos não são sincronizados para seu locatário do
 ## <a name="how-specific-attributes-are-synchronized-to-your-managed-domain"></a>Como os atributos específicos são sincronizados com o domínio gerenciado
 A tabela a seguir lista alguns atributos comuns e descreve como eles serão sincronizados com o domínio gerenciado.
 
-| O atributo em seu domínio gerenciado | source | Observações |
+| O atributo em seu domínio gerenciado | Origem | Observações |
 |:--- |:--- |:--- |
 | UPN |Atributo UPN do usuário no seu locatário do Azure AD |O atributo UPN do seu locatário do Azure AD é sincronizado como ele está para o domínio gerenciado. Portanto, a maneira mais confiável para entrar no seu domínio gerenciado é usando seu UPN. |
 | SAMAccountName |O atributo mailNickname do usuário no seu locatário do Azure AD ou gerado automaticamente |O atributo SAMAccountName é originado do atributo mailNickname no seu locatário do Azure AD. Se várias contas de usuário tiverem o mesmo atributo mailNickname, SAMAccountName será gerado automaticamente. Se o mailNickname ou o prefixo UPN do usuário tiver mais de 20 caracteres, o SAMAccountName será gerado automaticamente para satisfazer o limite de 20 caracteres em atributos SAMAccountName. |
@@ -69,7 +69,7 @@ A tabela a seguir lista alguns atributos comuns e descreve como eles serão sinc
 | Histórico de SID para usuários e grupos |SID de usuário e grupo primário local |O atributo SidHistory para usuários e grupos no domínio gerenciado é definido para corresponder ao SID do grupo ou usuário primário correspondente em seu domínio local. Esse recurso ajuda a facilitar o arrastar e deslocar de aplicativos no local para o domínio gerenciado, já que você não precisa reaplicar a ACL nos recursos. |
 
 > [!NOTE]
-> **Entrar no domínio gerenciado usando o formato UPN:** o atributo SAMAccountName pode ser gerado automaticamente para algumas contas de usuário em seu domínio gerenciado. Se vários usuários tiverem o mesmo atributo mailNickname ou os usuários tiverem prefixos UPN excessivamente longos, o SAMAccountName para esses usuários poderá ser gerado automaticamente. Portanto, o formato de SAMAccountName (por exemplo, ' CONTOSO100\pedrousuario') nem sempre é uma maneira confiável de entrar no domínio. O SAMAccountName gerado automaticamente dos usuários pode diferir do seu prefixo UPN. Use o formato UPN (por exemplo, 'joeuser@contoso100.com') para entrar no domínio gerenciado de forma confiável.
+> **Entrar no domínio gerenciado usando o formato UPN:** o atributo SAMAccountName pode ser gerado automaticamente para algumas contas de usuário em seu domínio gerenciado. Se vários usuários tiverem o mesmo atributo mailNickname ou os usuários tiverem prefixos UPN excessivamente longos, o SAMAccountName para esses usuários poderá ser gerado automaticamente. Portanto, o formato SAMAccountName (por exemplo, ' CONTOSO\dee ') nem sempre é uma maneira confiável de entrar no domínio. O SAMAccountName gerado automaticamente dos usuários pode diferir do seu prefixo UPN. Use o formato UPN (por exemplo, 'dee@contoso.com') para entrar no domínio gerenciado de forma confiável.
 
 ### <a name="attribute-mapping-for-user-accounts"></a>Mapeamento de atributos para contas de usuário
 A tabela a seguir ilustra como os atributos específicos de objetos de usuário em seu locatário do Azure AD são sincronizados com os atributos correspondentes em seu domínio gerenciado.
@@ -84,7 +84,7 @@ A tabela a seguir ilustra como os atributos específicos de objetos de usuário 
 | facsimileTelephoneNumber |facsimileTelephoneNumber |
 | givenName |givenName |
 | jobTitle |título |
-| mail |mail |
+| email |email |
 | mailNickname |msDS-AzureADMailNickname |
 | mailNickname |SAMAccountName (às vezes pode ser gerado automaticamente) |
 | Serviço Móvel |Serviço Móvel |
@@ -107,7 +107,7 @@ A tabela a seguir ilustra como os atributos específicos de objetos de grupo em 
 |:--- |:--- |
 | displayName |displayName |
 | displayName |SAMAccountName (às vezes pode ser gerado automaticamente) |
-| mail |mail |
+| email |email |
 | mailNickname |msDS-AzureADMailNickname |
 | objectid |msDS-AzureADObjectId |
 | onPremiseSecurityIdentifier |sidHistory |
@@ -116,7 +116,7 @@ A tabela a seguir ilustra como os atributos específicos de objetos de grupo em 
 ## <a name="password-hash-synchronization-and-security-considerations"></a>Considerações de segurança e sincronização de hash de senha
 Quando você habilita o Azure AD Domain Services, seu diretório do Azure AD gera e armazena hashes de senha em formatos compatíveis com NTLM e Kerberos. 
 
-Para contas de usuário de nuvem existentes, como o Azure AD nunca armazena suas senhas de texto não criptografado, esses hashes não podem ser gerados automaticamente. Portanto, a Microsoft exige que os [usuários de nuvem redefinam/alterem as senhas](active-directory-ds-getting-started-password-sync.md) para que seus hashes de senha possam ser gerados e armazenados no Azure AD. Para qualquer conta de usuário de nuvem criada no Azure AD depois de habilitar o Azure AD Domain Services, os hashes de senha são gerados e armazenados nos formatos compatíveis com NTLM e Kerberos. 
+Para contas de usuário de nuvem existentes, como o Azure AD nunca armazena suas senhas de texto não criptografado, esses hashes não podem ser gerados automaticamente. Portanto, a Microsoft exige que os [usuários de nuvem redefinam/alterem as senhas](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds) para que seus hashes de senha possam ser gerados e armazenados no Azure AD. Para qualquer conta de usuário de nuvem criada no Azure AD depois de habilitar o Azure AD Domain Services, os hashes de senha são gerados e armazenados nos formatos compatíveis com NTLM e Kerberos. 
 
 Para contas de usuário sincronizadas do AD local usando o Sincronização do Azure AD Connect, é necessário [configurar o Azure AD Connect para sincronizar os hashes de senha nos formatos compatíveis com Kerberos e NTLM](active-directory-ds-getting-started-password-sync-synced-tenant.md).
 
@@ -126,7 +126,6 @@ Os hashes de senha compatíveis com Kerberos e NTLM são sempre armazenados de f
 Conforme descrito em uma seção anterior deste artigo, há uma sincronização de seu domínio gerenciado para seu locatário do Azure AD. Você pode optar por [criar uma UO (unidade organizacional) personalizada](create-ou.md) em seu domínio gerenciado. Além disso, você pode criar outras OUs, usuários, grupos ou contas de serviço nessas OUs personalizadas. Nenhum dos objetos criados em OUs personalizadas é sincronizado de volta para seu locatário do Azure AD. Esses objetos estão disponíveis para uso somente dentro de seu domínio gerenciado. Portanto, esses objetos não são visíveis usando cmdlets do PowerShell do Azure AD, a API do Graph do Azure AD ou usando o interface do usuário de gerenciamento do Azure AD.
 
 ## <a name="related-content"></a>Conteúdo relacionado
-* [Recursos – Azure AD Domain Services](active-directory-ds-features.md)
 * [Cenários de implantação – Azure AD Domain Services](scenarios.md)
 * [Considerações de rede para Serviços de Domínio do Azure AD](network-considerations.md)
-* [Introdução aos Serviços de Domínio do Azure AD](create-instance.md)
+* [Introdução aos Serviços de Domínio do Azure AD](tutorial-create-instance.md)

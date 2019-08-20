@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/01/2019
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 1c2bf53a610c566ac58df588f6d96389f2206563
-ms.sourcegitcommit: a52f17307cc36640426dac20b92136a163c799d0
+ms.openlocfilehash: 700cd6c0c75b25d56e812a394d6bdd193e4fb57c
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68717543"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69614062"
 ---
 # <a name="stored-procedures-triggers-and-user-defined-functions"></a>Procedimentos armazenados, gatilhos e funções definidas pelo usuário
 
@@ -79,11 +79,11 @@ O Azure Cosmos DB dá suporte a dois tipos de gatilhos:
 
 ### <a name="pre-triggers"></a>Pré-gatilhos
 
-O Azure Cosmos DB fornece gatilhos que podem ser invocados com a execução de uma operação em um item do Azure Cosmos DB. Por exemplo, você pode especificar um pré-gatilho ao criar um item. Nesse caso, o pré-gatilho será executado antes da criação do item. Pré-gatilhos não podem ter parâmetros de entrada. Se necessário, o objeto de solicitação pode ser usado para atualizar o corpo do documento na solicitação original. Quando os gatilhos são registrados, os usuários podem especificar as operações com as quais eles podem ser executados. Se um gatilho foi criado com `TriggerOperation.Create`, isso significa que o uso do gatilho em uma operação de substituição não será permitido. Para obter exemplos, confira o artigo [Como escrever gatilhos](how-to-write-stored-procedures-triggers-udfs.md#triggers).
+Azure Cosmos DB fornece gatilhos que podem ser invocados executando uma operação em um item Cosmos do Azure. Por exemplo, você pode especificar um pré-gatilho ao criar um item. Nesse caso, o pré-gatilho será executado antes da criação do item. Pré-gatilhos não podem ter parâmetros de entrada. Se necessário, o objeto de solicitação pode ser usado para atualizar o corpo do documento na solicitação original. Quando os gatilhos são registrados, os usuários podem especificar as operações com as quais eles podem ser executados. Se um gatilho foi criado com `TriggerOperation.Create`, isso significa que o uso do gatilho em uma operação de substituição não será permitido. Para obter exemplos, confira o artigo [Como escrever gatilhos](how-to-write-stored-procedures-triggers-udfs.md#triggers).
 
 ### <a name="post-triggers"></a>Pós-gatilhos
 
-Assim como os pré-gatilhos, os pós-gatilhos também estão associados a uma operação em um item do Azure Cosmos DB e não exigem nenhum parâmetro de entrada. Eles são executados *após* a conclusão da operação e têm acesso à mensagem de resposta enviada ao cliente. Para obter exemplos, confira o artigo [Como escrever gatilhos](how-to-write-stored-procedures-triggers-udfs.md#triggers).
+Semelhantes aos pré-gatilhos, pós-gatilhos, também são associados a uma operação em um item Cosmos do Azure e não exigem nenhum parâmetro de entrada. Eles são executados *após* a conclusão da operação e têm acesso à mensagem de resposta enviada ao cliente. Para obter exemplos, confira o artigo [Como escrever gatilhos](how-to-write-stored-procedures-triggers-udfs.md#triggers).
 
 > [!NOTE]
 > Os gatilhos registrados não são executados automaticamente quando suas operações correspondentes (criar/excluir/substituir/atualizar) acontecem. Eles precisam ser chamados explicitamente ao executar essas operações. Para saber mais, consulte [o artigo como executar gatilhos](how-to-use-stored-procedures-triggers-udfs.md#pre-triggers) .

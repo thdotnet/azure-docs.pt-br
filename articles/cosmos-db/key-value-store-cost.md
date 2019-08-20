@@ -7,24 +7,24 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 757366f1d1f94d11438be4df0772ce1155f71cee
-ms.sourcegitcommit: 5cb0b6645bd5dff9c1a4324793df3fdd776225e4
+ms.openlocfilehash: 3758766b1051acb9321ec67727eecef249971065
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/21/2019
-ms.locfileid: "67310580"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69615087"
 ---
 # <a name="azure-cosmos-db-as-a-key-value-store--cost-overview"></a>Azure Cosmos DB como um repositório de valores de chave – Visão geral do custo
 
 O Azure Cosmos DB é um serviço de multimodelo de banco de dados distribuído globalmente para a criação fácil de aplicativos altamente disponíveis de grande escala. Por padrão, o Azure Cosmos DB indexa automaticamente e com eficiência todos os dados ingeridos. Isso permite consultas [SQL](how-to-sql-query.md) (e [JavaScript](stored-procedures-triggers-udfs.md)) rápidas e consistentes em qualquer tipo de dados. 
 
-Este artigo descreve o custo do Azure Cosmos DB para operações simples de gravação e leitura quando ele é usado como um repositório de chaves/valores. Operações de gravação incluem inserções, substituições, exclusões e upserts de documentos. Além de garantir uma 99,99% SLA de disponibilidade para todas as contas de região única e todas as contas de várias regiões com consistência amena e 99,999% de disponibilidade de leitura em todas as contas de banco de dados de várias regiões do Azure Cosmos DB oferece garantidamente < latência de 10 ms para lê e para (indexadas) respectivamente, grava no percentil 99. 
+Este artigo descreve o custo do Azure Cosmos DB para operações simples de gravação e leitura quando ele é usado como um repositório de chaves/valores. Operações de gravação incluem inserções, substituições, exclusões e upserts de documentos. Além de garantir um SLA de disponibilidade de 99,99% para todas as contas de região única e todas as contas de várias regiões com consistência reduzida e 99,999% de disponibilidade de leitura em todas as contas de banco de dados de várias regiões, Azure Cosmos DB oferece garantia de < latência de 10 ms para lê e para as gravações (indexadas) respectivamente, no 99 º percentil. 
 
 ## <a name="why-we-use-request-units-rus"></a>Por que usamos RUs (Unidades de Solicitação)
 
 O desempenho do Azure Cosmos DB se baseia na quantidade de [RUs](request-units.md) (Unidades de Solicitação) provisionadas para a partição. O provisionamento ocorre a uma granularidade de segundos e é adquirido em RUs/s ([não deve ser confundido com a cobrança por hora](https://azure.microsoft.com/pricing/details/cosmos-db/)). RUs devem ser considerados como uma moeda que simplifica o provisionamento da taxa de transferência necessária para o aplicativo. Nossos clientes não precisam pensar em diferenciar unidades de capacidade de leitura e gravação. O modelo de moeda única de RUs cria eficiência no compartilhamento da capacidade provisionada entre leituras e gravações. Esse modelo de capacidade provisionada permite que o serviço forneça uma taxa de transferência previsível e consistente, além de garantia de baixa latência e alta disponibilidade. Finalmente, usamos o RU para modelar a taxa de transferência, mas cada RU provisionado também tem uma quantidade definida de recursos (Memória, Núcleo). RU/s não é apenas o IOPS.
 
-Por ser um sistema de banco de dados distribuído globalmente, o Cosmos DB é o único serviço do Azure que fornece um SLA para latência, produtividade e consistência, além de alta disponibilidade. A produtividade que você provisiona é aplicada a cada uma das regiões associadas à sua conta de banco de dados do Cosmos DB. Para leituras, o Cosmos DB oferece vários [níveis de consistência](consistency-levels.md) bem definidos para sua escolha. 
+Por ser um sistema de banco de dados distribuído globalmente, o Cosmos DB é o único serviço do Azure que fornece um SLA para latência, produtividade e consistência, além de alta disponibilidade. A taxa de transferência que você provisiona é aplicada a cada uma das regiões associadas à sua conta de banco de dados Cosmos. Para leituras, o Cosmos DB oferece vários [níveis de consistência](consistency-levels.md) bem definidos para sua escolha. 
 
 A tabela a seguir mostra o número de RUs necessários para realizar transações de leitura e gravação com base no tamanho de documento de 1 KB e 100 KBs.
 

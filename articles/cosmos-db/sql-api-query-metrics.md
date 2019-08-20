@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: sngun
-ms.openlocfilehash: d61d3d00de5b46f7dad44625509eabe6836ca7cf
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: ae1773ec1d470b9cff2efb00c200427b7b4c2fb4
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67447267"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69614829"
 ---
 # <a name="tuning-query-performance-with-azure-cosmos-db"></a>Ajustando o desempenho de consulta com o Azure Cosmos DB
 
@@ -38,13 +38,13 @@ Quando você emitir uma consulta ao Azure Cosmos DB, o SDK executa essas etapas 
 
 Os SDKs fornecem várias opções para a execução da consulta. Por exemplo, no .NET essas opções estão disponíveis na classe `FeedOptions`. A tabela a seguir descreve essas opções e como elas afetam o tempo de execução de consulta. 
 
-| Opção | DESCRIÇÃO |
+| Opção | Descrição |
 | ------ | ----------- |
 | `EnableCrossPartitionQuery` | Deve ser definido como true para qualquer consulta que requer ser executada em mais de uma partição. Este é um sinalizador explícito para que você possa fazer as compensações de desempenho consciente durante o tempo de desenvolvimento. |
 | `EnableScanInQuery` | Deve ser definido como true se você rejeitou a indexação, mas deseja executar a consulta por meio de uma verificação mesmo assim. Só aplicável se a indexação para o caminho de filtro solicitado estiver desabilitada. | 
 | `MaxItemCount` | O número máximo de itens a serem retornados por viagem de ida e volta ao servidor. Definindo como -1, você pode deixar o servidor gerenciar o número de itens. Ou, você pode diminuir esse valor para recuperar um pequeno número de itens por viagem de ida e volta. 
 | `MaxBufferedItemCount` | Isso é uma opção do lado do cliente e usado para limitar o consumo de memória ao executar entre partições ORDER BY. Um valor mais alto ajuda a reduzir a latência de classificação entre partições. |
-| `MaxDegreeOfParallelism` | Obtém ou define o número de operações simultâneas executados do lado do cliente durante a execução de consulta paralela no serviço de banco de dados do Azure Cosmos DB. Um valor de propriedade positivo limita o número de operações simultâneas para o valor do conjunto. Se ele for definido como menor que 0, o sistema decide automaticamente o número de operações simultâneas para executar. |
+| `MaxDegreeOfParallelism` | Obtém ou define o número de operações simultâneas executadas no lado do cliente durante a execução de consulta paralela no serviço de banco de dados Cosmos do Azure. Um valor de propriedade positivo limita o número de operações simultâneas para o valor do conjunto. Se ele for definido como menor que 0, o sistema decide automaticamente o número de operações simultâneas para executar. |
 | `PopulateQueryMetrics` | Habilita o log detalhado de estatísticas de tempo gasto em várias fases de execução da consulta como tempo de compilação, o tempo de loop de índice e o documento de tempo de carregamento. Você pode compartilhar a saída de estatísticas de consulta com Azure Support para diagnosticar problemas de desempenho de consulta. |
 | `RequestContinuation` | Você pode retomar a execução de consulta, passando o token de continuação opaco retornado por qualquer consulta. O token de continuação encapsula todos os estados necessários para a execução de consulta. |
 | `ResponseContinuationTokenLimitInKb` | Você pode limitar o tamanho máximo do token de continuação retornado pelo servidor. Talvez seja necessário definir essa opção se seu host de aplicativo tem limites de tamanho do cabeçalho de resposta. Essa configuração pode aumentar a duração geral e o RUs consumidos para a consulta.  |
@@ -124,7 +124,7 @@ Date: Tue, 27 Jun 2017 21:59:49 GMT
 
 Os cabeçalhos de resposta de chave retornados da consulta incluem o seguinte:
 
-| Opção | DESCRIÇÃO |
+| Opção | Descrição |
 | ------ | ----------- |
 | `x-ms-item-count` | O número de itens retornados na resposta. Isso é dependente de fornecido `x-ms-max-item-count`, o número de itens que podem ser encaixados em tempo de execução de consulta, a taxa de transferência fornecida e o tamanho máximo de resposta da carga. |  
 | `x-ms-continuation:` | O token de continuação para retomar a execução da consulta, se houver mais resultados disponíveis. | 
@@ -168,7 +168,7 @@ Para saber mais sobre particionamento e chaves de partição, consulte [Particio
 Consulte [Dicas de Desempenho](performance-tips.md) e [Testes de Desempenho](performance-testing.md) para saber como obter o melhor desempenho do lado do cliente do Azure Cosmos DB. Isso inclui usar os mais recentes SDKs, definir configurações específicas de plataforma como o número padrão de conexões, a frequência da coleta de lixo e usar as opções de conectividade leve como Direct/TCP. 
 
 
-#### <a name="max-item-count"></a>Contagem máxima de itens
+#### <a name="max-item-count"></a>Contagem Máxima de Itens
 Em consultas, o valor de `MaxItemCount` pode ter um impacto significativo no tempo de consulta de ponta a ponta. Cada viagem de ida e volta para o servidor retornará somente o número de itens em `MaxItemCount` (padrão de 100 itens). A definição para um valor mais alto (-1 é o máximo, e o recomendado) melhora a duração de consulta geral, limitando o número de viagens de ida e volta entre servidor e cliente, especialmente para consultas com grandes conjuntos de resultados.
 
 ```cs
@@ -216,7 +216,7 @@ A seção sobre métricas de execução de consulta explica como recuperar o tem
 ### <a name="indexing-policy"></a>Política de indexação
 Consulte [Configurando a política de indexação](index-policy.md) para indexação de caminhos, tipos e os modos e como elas afetam a execução da consulta. Por padrão, a política de indexação usa a indexação de Hash para cadeias de caracteres, que é eficiente para consultas de igualdade, mas não para consultas de intervalo/ordem através de consultas. Se você precisar de consultas de intervalo para cadeias de caracteres, é recomendável especificar o tipo de índice de intervalo para todas as cadeias de caracteres. 
 
-Por padrão, o Azure Cosmos DB aplicará a indexação automática para todos os dados. Para alto desempenho inserir cenários, considere excluir os caminhos como isso reduzirá o custo de RU para cada operação de inserção. 
+Por padrão, Azure Cosmos DB aplicará a indexação automática a todos os dados. Para cenários de inserção de alto desempenho, considere a exclusão de caminhos, pois isso reduzirá o custo de RU para cada operação de inserção. 
 
 ## <a name="query-execution-metrics"></a>Métricas de execução da consulta
 Você pode obter métricas detalhadas na execução da consulta, passando no cabeçalho `x-ms-documentdb-populatequerymetrics` opcional (`FeedOptions.PopulateQueryMetrics` no SDK do .NET). O valor retornado em `x-ms-documentdb-query-metrics` tem os seguintes pares chave-valor destinados para solução de problemas avançados de execução de consulta. 
@@ -237,7 +237,7 @@ IReadOnlyDictionary<string, QueryMetrics> metrics = result.QueryMetrics;
 
 ```
 
-| Métrica | Unidade | DESCRIÇÃO | 
+| Métrica | Unidade | Descrição | 
 | ------ | -----| ----------- |
 | `totalExecutionTimeInMs` | milissegundos | Tempo de execução da consulta | 
 | `queryCompileTimeInMs` | milissegundos | Tempo de compilação de consulta  | 
@@ -249,9 +249,9 @@ IReadOnlyDictionary<string, QueryMetrics> metrics = result.QueryMetrics;
 | `documentLoadTimeInMs` | milissegundos | Tempo gasto no carregamento de documentos  | 
 | `systemFunctionExecuteTimeInMs` | milissegundos | Tempo total gasto executando funções de sistema (interno) em milissegundos  | 
 | `userFunctionExecuteTimeInMs` | milissegundos | Tempo total gasto executando funções definidas pelo usuário (interno) em milissegundos | 
-| `retrievedDocumentCount` | count | Número total de documentos recuperados  | 
+| `retrievedDocumentCount` | Contagem | Número total de documentos recuperados  | 
 | `retrievedDocumentSize` | bytes | Tamanho total dos documentos recuperados em bytes  | 
-| `outputDocumentCount` | count | Número de documentos de saída | 
+| `outputDocumentCount` | Contagem | Número de documentos de saída | 
 | `writeOutputTimeInMs` | milissegundos | Tempo de execução da consulta em milissegundos | 
 | `indexUtilizationRatio` | taxa de (< = 1) | Taxa do número de documentos para correspondência com o filtro para o número de documentos carregados  | 
 
@@ -259,7 +259,7 @@ Os SDKs de cliente internamente podem fazer várias operações de consulta para
 
 Aqui estão alguns exemplos de consultas e como interpretar algumas das métricas retornadas da execução da consulta: 
 
-| Consulta | Métrica de exemplo | DESCRIÇÃO | 
+| Consulta | Métrica de exemplo | Descrição | 
 | ------ | -----| ----------- |
 | `SELECT TOP 100 * FROM c` | `"RetrievedDocumentCount": 101` | O número de documentos recuperados é 100 +1 para coincidir com a cláusula TOP. Tempo de consulta é gasto principalmente `WriteOutputTime` e `DocumentLoadTime` porque é uma verificação. | 
 | `SELECT TOP 500 * FROM c` | `"RetrievedDocumentCount": 501` | RetrievedDocumentCount agora é mais alto (500+1 para coincidir com a cláusula TOP). | 

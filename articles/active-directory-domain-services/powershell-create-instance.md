@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/24/2019
 ms.author: iainfou
-ms.openlocfilehash: daddb2d13aee08fe7294ab2d7f0892bab761562b
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: c6572ab8bc2a10039f327233f983c2e822fba3b0
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67472678"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69617227"
 ---
 # <a name="enable-azure-active-directory-domain-services-using-powershell"></a>Habilitar o Azure Active Directory Domain Services usando PowerShell
 Este artigo mostra como habilitar o Azure Active Directory (AD) Domain Services usando o PowerShell.
@@ -62,7 +62,7 @@ $GroupObjectId = Get-AzureADGroup `
 
 # Now, retrieve the object ID of the user you'd like to add to the group.
 $UserObjectId = Get-AzureADUser `
-  -Filter "UserPrincipalName eq 'admin@contoso100.onmicrosoft.com'" | `
+  -Filter "UserPrincipalName eq 'admin@contoso.onmicrosoft.com'" | `
   Select-Object ObjectId
 
 # Add the user to the 'AAD DC Administrators' group.
@@ -124,7 +124,7 @@ Digite o seguinte comando do PowerShell para habilitar o Azure AD Domain Service
 
 ```powershell
 $AzureSubscriptionId = "YOUR_AZURE_SUBSCRIPTION_ID"
-$ManagedDomainName = "contoso100.com"
+$ManagedDomainName = "contoso.com"
 $ResourceGroupName = "ContosoAaddsRg"
 $VnetName = "DomainServicesVNet_WUS"
 $AzureLocation = "westus"
@@ -140,9 +140,9 @@ New-AzResource -ResourceId "/subscriptions/$AzureSubscriptionId/resourceGroups/$
 > [!WARNING]
 > **Não se esqueça das etapas de configuração adicionais depois de provisionar o domínio gerenciado.**
 > Após o provisionamento do domínio gerenciado, você ainda precisará concluir as seguintes tarefas:
-> * **[Atualizar as configurações de DNS](active-directory-ds-getting-started-dns.md)** para a rede virtual, de modo que as máquinas virtuais possam encontrar o domínio gerenciado para ingresso no domínio ou autenticação.
-> * **[Habilite a sincronização de senha para o Azure AD Domain Services](active-directory-ds-getting-started-password-sync.md)** para que os usuários possam entrar no domínio gerenciado usando suas credenciais corporativas.
-
+> * Atualize as configurações de DNS da rede virtual, de modo que as máquinas virtuais possam encontrar o domínio gerenciado para ingresso no domínio ou autenticação. Para configurar o DNS, selecione seu domínio gerenciado AD DS do Azure no Portal. Na janela **visão geral** , é solicitado que você defina automaticamente essas configurações de DNS.
+> * Crie as regras necessárias do grupo de segurança de rede para restringir a entrada de tráfego para o domínio gerenciado. Para criar as regras do grupo de segurança de rede, selecione seu domínio gerenciado AD DS do Azure no Portal. Na janela **visão geral** , é solicitado que você crie automaticamente as regras apropriadas do grupo de segurança de rede.
+> * **[Habilite a sincronização de senha para o Azure AD Domain Services](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds)** para que os usuários possam entrar no domínio gerenciado usando suas credenciais corporativas.
 
 ## <a name="powershell-script"></a>Script do PowerShell
 Confira abaixo o script do PowerShell usado para executar todas as tarefas listadas neste artigo. Copie o script e salve-o em um arquivo com uma extensão ".ps1". Execute o script no PowerShell ou usando o ISE (ambiente de script integrado) do PowerShell.
@@ -153,9 +153,9 @@ Confira abaixo o script do PowerShell usado para executar todas as tarefas lista
 
 ```powershell
 # Change the following values to match your deployment.
-$AaddsAdminUserUpn = "admin@contoso100.onmicrosoft.com"
+$AaddsAdminUserUpn = "admin@contoso.onmicrosoft.com"
 $AzureSubscriptionId = "YOUR_AZURE_SUBSCRIPTION_ID"
-$ManagedDomainName = "contoso100.com"
+$ManagedDomainName = "contoso.com"
 $ResourceGroupName = "ContosoAaddsRg"
 $VnetName = "DomainServicesVNet_WUS"
 $AzureLocation = "westus"
@@ -224,11 +224,12 @@ New-AzResource -ResourceId "/subscriptions/$AzureSubscriptionId/resourceGroups/$
 > [!WARNING]
 > **Não se esqueça das etapas de configuração adicionais depois de provisionar o domínio gerenciado.**
 > Após o provisionamento do domínio gerenciado, você ainda precisará concluir as seguintes tarefas:
-> * Atualize as configurações de DNS da rede virtual, de modo que as máquinas virtuais possam encontrar o domínio gerenciado para ingresso no domínio ou autenticação.
-> * Habilite a sincronização de senha para o Azure AD Domain Services para que os usuários possam entrar no domínio gerenciado usando suas credenciais corporativas.
+> * Atualize as configurações de DNS da rede virtual, de modo que as máquinas virtuais possam encontrar o domínio gerenciado para ingresso no domínio ou autenticação. Para configurar o DNS, selecione seu domínio gerenciado AD DS do Azure no Portal. Na janela **visão geral** , é solicitado que você defina automaticamente essas configurações de DNS.
+> * Crie as regras necessárias do grupo de segurança de rede para restringir a entrada de tráfego para o domínio gerenciado. Para criar as regras do grupo de segurança de rede, selecione seu domínio gerenciado AD DS do Azure no Portal. Na janela **visão geral** , é solicitado que você crie automaticamente as regras apropriadas do grupo de segurança de rede.
+> * **[Habilite a sincronização de senha para o Azure AD Domain Services](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds)** para que os usuários possam entrar no domínio gerenciado usando suas credenciais corporativas.
 
 ## <a name="next-steps"></a>Próximas etapas
 Após a criação do domínio gerenciado, execute as seguintes tarefas de configuração para que você possa usar o domínio gerenciado:
 
-* [Atualizar as configurações do servidor DNS para a rede virtual a fim de apontar para o seu domínio gerenciado](active-directory-ds-getting-started-dns.md)
-* [Habilitar a sincronização de senhas para o domínio gerenciado](active-directory-ds-getting-started-password-sync.md)
+* [Atualizar as configurações do servidor DNS para a rede virtual a fim de apontar para o seu domínio gerenciado](tutorial-create-instance.md#update-dns-settings-for-the-azure-virtual-network)
+* [Habilitar a sincronização de senhas para o domínio gerenciado](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds)

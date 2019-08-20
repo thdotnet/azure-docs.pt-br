@@ -14,18 +14,19 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 8dca94f0200f6bd41dfdc199b41bf69981a960da
-ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
+ms.openlocfilehash: 22cf2be8eaed47a9440c6798acfb4383bd84c916
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69562703"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69611711"
 ---
 # <a name="azure-event-hubs---geo-disaster-recovery"></a>Hubs de Eventos do Azure – Recuperação de desastre geográfico 
 
 Quando datacenters ou regiões inteiras do Azure (se nenhuma [zona de disponibilidade](../availability-zones/az-overview.md) for usada) enfrentam tempo de inatividade, é essencial para o processamento de dados continuar a operar em uma região ou datacenter diferente. Como tal, *a recuperação de desastre em área geográfica* e a *replicação geográfica* são recursos importantes para qualquer empresa. Os Hubs de Eventos do Azure dão suporte à recuperação de desastre de área geográfica e à replicação geográfica no nível do namespace. 
 
-O recurso de recuperação de desastres geograficamente está globalmente disponível para os hubs de eventos Standard e SKU dedicado. Observe que você só pode emparelhar namespaces geograficamente na mesma camada de SKU. Por exemplo, se você tiver um namespace em um cluster que é oferecido somente em nosso SKU dedicado, ele só poderá ser emparelhado com um namespace em outro cluster. 
+> [!NOTE]
+> O recurso de recuperação de desastres geograficamente só está disponível para [SKUs padrão e dedicados](https://azure.microsoft.com/pricing/details/event-hubs/).  
 
 ## <a name="outages-and-disasters"></a>Interrupções e desastres
 
@@ -37,7 +38,9 @@ O recurso de recuperação de desastre de área geográfica dos Hubs de Eventos 
 
 ## <a name="basic-concepts-and-terms"></a>Termos e conceitos básicos
 
-O recurso de recuperação de desastre implementa a recuperação de desastre dos metadados e se baseia em namespaces de recuperação de desastre primário e secundário. Observe que o recurso de recuperação de desastres geograficamente está disponível apenas para os [SKUs padrão e dedicados](https://azure.microsoft.com/pricing/details/event-hubs/) . Você não precisa fazer nenhuma alteração de cadeia de conexão, já que a conexão é feita por meio de um alias.
+O recurso de recuperação de desastre implementa a recuperação de desastre dos metadados e se baseia em namespaces de recuperação de desastre primário e secundário. 
+
+O recurso de recuperação de desastres geograficamente está disponível apenas para os [SKUs padrão e dedicados](https://azure.microsoft.com/pricing/details/event-hubs/) . Você não precisa fazer nenhuma alteração de cadeia de conexão, já que a conexão é feita por meio de um alias.
 
 Os seguintes termos são usados neste artigo:
 
@@ -48,6 +51,19 @@ Os seguintes termos são usados neste artigo:
 -  *Metadados*: entidades, como hubs de eventos e os grupos de consumidores; e suas propriedades do serviço que são associadas ao namespace. Observe que somente entidades e suas configurações são replicadas automaticamente. Mensagens e eventos não são replicados. 
 
 -  *Failover*: o processo de ativação do namespace secundário.
+
+## <a name="supported-namespace-pairs"></a>Pares de namespace com suporte
+Há suporte para as seguintes combinações de namespaces primários e secundários:  
+
+| Namespace primário | Namespace secundário | Há suporte | 
+| ----------------- | -------------------- | ---------- |
+| Standard | Standard | Sim | 
+| Standard | Dedicado | Sim | 
+| Dedicado | Dedicado | Sim | 
+| Dedicado | Standard | Não | 
+
+> [!NOTE]
+> Não é possível emparelhar namespaces que estão no mesmo cluster dedicado. Você pode emparelhar namespaces que estão em clusters separados. 
 
 ## <a name="setup-and-failover-flow"></a>Instalação e fluxo de failover
 

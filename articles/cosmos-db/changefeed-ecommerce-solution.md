@@ -7,16 +7,16 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: sngun
-ms.openlocfilehash: 7923ce10912ebb6f09c1c3d8390dd51b4f876bea
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 86d4dd706b097891db155214e4edb7e85e054858
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68552006"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616941"
 ---
 # <a name="use-azure-cosmos-db-change-feed-to-visualize-real-time-data-analytics"></a>Usar feed de alterações do Azure Cosmos DB para visualizar análise de dados em tempo real
 
-O feed de alterações do Azure Cosmos DB é um mecanismo para obter um feed contínuo e incremental de registros de um contêiner do Azure Cosmos DB à medida que esses registros são criados ou modificados. O suporte do feed de alterações funciona através de escuta de contêiner para quaisquer alterações. Ele gera a lista classificada de documentos que foram alterados na ordem em que eles foram modificados. Para saber mais sobre o feed de alterações, consulte o artigo [trabalhando com feed de alterações](change-feed.md). 
+O feed de alteração Azure Cosmos DB é um mecanismo para obter um feed contínuo e incremental de registros de um contêiner Cosmos do Azure, pois esses registros estão sendo criados ou modificados. O suporte do feed de alterações funciona através de escuta de contêiner para quaisquer alterações. Ele gera a lista classificada de documentos que foram alterados na ordem em que eles foram modificados. Para saber mais sobre o feed de alterações, consulte o artigo [trabalhando com feed de alterações](change-feed.md). 
 
 Este artigo descreve como o feed de alterações pode ser usado por uma empresa de comércio eletrônico para reconhecer padrões de usuário, executar análise de dados em tempo real e visualização. Você analisará eventos como um usuário visualizando um item, adicionando um item ao carrinho ou comprando um item. Quando um desses eventos ocorre, um novo registro é criado e o feed de alterações registra em log esse registro. O feed de alterações dispara uma série de etapas, resultando na visualização de métricas que analisam o desempenho e a atividade da empresa. As métricas de exemplo possíveis de serem visualizadas incluem receita, visitantes do site exclusivo, itens mais populares e preço médio dos itens que são visualizados versus adicionados a um carrinho versus comprados. Essas métricas de exemplo podem ajudar uma empresa de comércio eletrônico a avaliar a popularidade do site, desenvolver estratégias de preços e publicidade e tomar decisões sobre qual estoque investir.
 
@@ -41,9 +41,9 @@ O diagrama a seguir representa o fluxo de dados e os componentes envolvidos na s
    }
    ```
 
-2. **Cosmos DB:** Os dados gerados são armazenados em uma coleção de Azure Cosmos DB.  
+2. **Cosmos DB:** Os dados gerados são armazenados em um contêiner Cosmos do Azure.  
 
-3. **Feed de alterações:** o feed de alterações escutará as alterações na coleção do Azure Cosmos DB. Todas as vezes que um novo documento for adicionado à coleção (ou seja, quando um evento ocorrer como um usuário visualizando um item, adicionando um item ao carrinho ou comprando um item), o feed de alterações disparará um [Azure Functions](../azure-functions/functions-overview.md).  
+3. **Feed de alterações:** O feed de alterações escutará as alterações no contêiner Cosmos do Azure. Todas as vezes que um novo documento for adicionado à coleção (ou seja, quando um evento ocorrer como um usuário visualizando um item, adicionando um item ao carrinho ou comprando um item), o feed de alterações disparará um [Azure Functions](../azure-functions/functions-overview.md).  
 
 4. **Função do Azure:** a Função do Azure processa os novos dados e os envia para um [Hub de Eventos do Azure](../event-hubs/event-hubs-about.md).  
 
@@ -143,7 +143,7 @@ Um Hub de Eventos do Azure recebe os dados do evento, armazena, processa e encam
 
 ## <a name="set-up-azure-function-to-read-the-change-feed"></a>Configurar o Azure Functions para ler o feed de alterações
 
-Quando um novo documento é criado ou um documento atual é modificado em uma coleção do Cosmos DB, o feed de alterações adiciona automaticamente esse documento modificado ao histórico de alterações da coleção. Agora, você criará e executará um Azure Functions que processará o feed de alterações. Quando um documento for criado ou modificado na coleção criada, o Azure Functions será disparado pelo feed de alterações. Em seguida, o Azure Functions enviará o documento modificado para o Hub de Eventos.
+Quando um novo documento é criado ou um documento atual é modificado em um contêiner Cosmos, o feed de alterações adiciona automaticamente esse documento modificado ao seu histórico de alterações de coleção. Agora, você criará e executará um Azure Functions que processará o feed de alterações. Quando um documento for criado ou modificado na coleção criada, o Azure Functions será disparado pelo feed de alterações. Em seguida, o Azure Functions enviará o documento modificado para o Hub de Eventos.
 
 1. Retorne para o repositório que você clonou no dispositivo.  
 
@@ -318,7 +318,7 @@ O Power BI é um conjunto de ferramentas de análise de negócios para analisar 
 
 ## <a name="optional-visualize-with-an-e-commerce-site"></a>Opcional: visualizar com um site de comércio eletrônico
 
-Agora, você observará como é possível usar a nova ferramenta de análise de dados para conectar um site de comércio eletrônico real. Para criar o site de comércio eletrônico, use um banco de dados do Azure Cosmos DB para armazenar a lista de categorias de produtos (Femininos, Masculinos, Unissex), o catálogo de produtos e uma lista dos itens mais populares.
+Agora, você observará como é possível usar a nova ferramenta de análise de dados para conectar um site de comércio eletrônico real. Para criar o site de comércio eletrônico, use um banco de dados Cosmos do Azure para armazenar a lista de categorias de produtos (mulheres, homens, unissex), o catálogo de produtos e uma lista dos itens mais populares.
 
 1. Navegue de volta para o [portal do Azure](https://portal.azure.com/), depois para a **conta do Cosmos DB** e, em seguida, para **Data Explorer**.  
 

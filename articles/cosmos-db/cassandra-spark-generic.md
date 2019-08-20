@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 75d2930363b6ad1aeace22d7529df04f31deefe5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cc28cf590a1fd2c3fdfe8651f136526188801c04
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60893615"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69615636"
 ---
 # <a name="connect-to-azure-cosmos-db-cassandra-api-from-spark"></a>Conecte-se à API do Cassandra do Azure Cosmos DB usando o Spark
 
@@ -40,14 +40,14 @@ Este artigo está entre uma série de artigos sobre a integração da API do Cas
 
 A tabela a seguir lista os parâmetros de configuração de taxa de transferência específicos da API do Cassandra do Azure Cosmos DB fornecidos pelo conector. Para obter uma lista detalhada de todos os parâmetros de configuração, veja a página [referência de configuração](https://github.com/datastax/spark-cassandra-connector/blob/master/doc/reference.md) do repositório GitHub do Conector do Cassandra do Spark.
 
-| **Nome da Propriedade** | **Valor padrão** | **Descrição** |
+| **Nome da propriedade** | **Valor padrão** | **Descrição** |
 |---------|---------|---------|
 | spark.cassandra.output.batch.size.rows |  1 |Número de linhas por lote único. Defina esse parâmetro como 1. Esse parâmetro é usado para atingir uma taxa de transferência maior para cargas de trabalho pesadas. |
 | spark.cassandra.connection.connections_per_executor_max  | Nenhum | Número máximo de conexões por nó por executor. 10*n é equivalente a 10 conexões por nó em um cluster do Cassandra de n nós. Assim, se você precisar de cinco conexões por nó por executor para um cluster do Cassandra de cinco nós, deverá definir essa configuração como 25. Modifique esse valor com base no grau de paralelismo ou no número de executores para os quais seus trabalhos do Spark estão configurados.   |
 | spark.cassandra.output.concurrent.writes  |  100 | Define o número de gravações paralelas que podem ocorrer por executor. Uma vez que você define "batch.size.rows" como 1, aumente esse valor de acordo. Modifique esse valor com base no grau de paralelismo ou na taxa de transferência que você deseja alcançar para sua carga de trabalho. |
 | spark.cassandra.concurrent.reads |  512 | Define o número de leituras paralelas que podem ocorrer por executor. Modifique esse valor com base no grau de paralelismo ou na taxa de transferência que você deseja alcançar para sua carga de trabalho  |
-| spark.cassandra.output.throughput_mb_per_sec  | Nenhum | Define a taxa de transferência de gravação total por executor. Esse parâmetro pode ser usado como um limite superior limite para a taxa de transferência do trabalho do Spark e a baseará na produtividade provisionada da Coleção do Cosmos DB.   |
-| spark.cassandra.input.reads_per_sec| Nenhum   | Define a taxa de transferência de leitura total por executor. Esse parâmetro pode ser usado como um limite superior limite para a taxa de transferência do trabalho do Spark e a baseará na produtividade provisionada da Coleção do Cosmos DB.  |
+| spark.cassandra.output.throughput_mb_per_sec  | Nenhum | Define a taxa de transferência de gravação total por executor. Esse parâmetro pode ser usado como um limite superior para a taxa de transferência do trabalho do Spark e baseá-lo na taxa de transferência provisionada do seu contêiner Cosmos.   |
+| spark.cassandra.input.reads_per_sec| Nenhum   | Define a taxa de transferência de leitura total por executor. Esse parâmetro pode ser usado como um limite superior para a taxa de transferência do trabalho do Spark e baseá-lo na taxa de transferência provisionada do seu contêiner Cosmos.  |
 | spark.cassandra.output.batch.grouping.buffer.size |  1000  | Define o número de lotes por tarefa única do Spark que podem ser armazenados na memória antes do envio à API do Cassandra |
 | spark.cassandra.connection.keep_alive_ms | 60000 | Define o período até o qual as conexões não usadas estão disponíveis. | 
 

@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/17/2019
 ms.author: sngun
-ms.openlocfilehash: 3bf89cd3ec0822cee2a3ebcf76de4193046462f9
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: e1014c710d892e45f09999db22b1f59c0bb36300
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68335895"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69614592"
 ---
 # <a name="serverless-database-computing-using-azure-cosmos-db-and-azure-functions"></a>Computação de banco de dados sem servidor usando o Azure Cosmos DB e o Azure Functions
 
@@ -23,9 +23,9 @@ Com a integração nativa entre o [Azure Cosmos DB](https://azure.microsoft.com/
 
 O Azure Cosmos DB e o Azure Functions permitem integrar bancos de dados e aplicativos sem servidor das seguintes maneiras:
 
-* Crie um **gatilho de Azure Functions controlado por evento para Cosmos DB**. Esse gatilho depende de fluxos do [feed de alterações](change-feed.md) para monitorar o contêiner do Azure Cosmos DB em busca de alterações. Quando alterações forem feitas em um contêiner, o fluxo do feed de alterações é enviado para o gatilho, que invoca o Azure Function.
-* Como alternativa, associe um Azure Function a um contêiner do Azure Cosmos DB usando uma **associação de entrada**. As associações de entrada leem dados de um contêiner quando uma função é executada.
-* Associe uma função a um contêiner do Azure Cosmos DB usando uma **associação de saída**. As associações de saída gravam dados em um contêiner quando uma função é concluída.
+* Crie um **gatilho de Azure Functions controlado por evento para Cosmos DB**. Esse gatilho depende de fluxos de [feed de alterações](change-feed.md) para monitorar o contêiner Cosmos do Azure em busca de alterações. Quando alterações forem feitas em um contêiner, o fluxo do feed de alterações é enviado para o gatilho, que invoca o Azure Function.
+* Como alternativa, associe uma função do Azure a um contêiner Cosmos do Azure usando uma **Associação de entrada**. As associações de entrada leem dados de um contêiner quando uma função é executada.
+* Associe uma função a um contêiner Cosmos do Azure usando uma **Associação de saída**. As associações de saída gravam dados em um contêiner quando uma função é concluída.
 
 > [!NOTE]
 > Atualmente, Azure Functions gatilho, associações de entrada e associações de saída para Cosmos DB têm suporte para uso somente com a API do SQL. Para todas as outras APIs do Azure Cosmos DB, você deve acessar o banco de dados a partir de sua função usando o cliente estático para sua API.
@@ -37,9 +37,9 @@ O seguinte diagrama ilustra cada uma destas três integrações:
 
 O gatilho Azure Functions, a associação de entrada e a associação de saída para Azure Cosmos DB podem ser usados nas seguintes combinações:
 
-* Um gatilho de Azure Functions para Cosmos DB pode ser usado com uma associação de saída para um contêiner de Azure Cosmos DB diferente. Depois que uma função executa uma ação em um item no feed de alterações, você pode gravá-la em outro contêiner (sua gravação no mesmo contêiner de origem efetivamente criará um loop recursivo). Ou você pode usar um gatilho Azure Functions para Cosmos DB a fim de migrar efetivamente todos os itens alterados de um contêiner para um contêiner diferente, com o uso de uma associação de saída.
+* Um gatilho Azure Functions para Cosmos DB pode ser usado com uma associação de saída para um contêiner Cosmos do Azure diferente. Depois que uma função executa uma ação em um item no feed de alterações, você pode gravá-la em outro contêiner (sua gravação no mesmo contêiner de origem efetivamente criará um loop recursivo). Ou você pode usar um gatilho Azure Functions para Cosmos DB a fim de migrar efetivamente todos os itens alterados de um contêiner para um contêiner diferente, com o uso de uma associação de saída.
 * As associações de entrada e as associações de saída do Azure Cosmos DB podem ser usadas no mesmo Azure Function. Isso funciona bem em casos em que você deseja localizar determinados dados com a associação de entrada, modificá-los no Azure Function e, em seguida, salvá-los no mesmo contêiner ou em um contêiner diferente, após a modificação.
-* Uma associação de entrada a um contêiner Azure Cosmos DB pode ser usada na mesma função que um gatilho de Azure Functions para Cosmos DB e também pode ser usada com ou sem uma associação de saída. Use essa combinação para aplicar informações de moeda atualizadas (extraídas com uma associação de entrada a um contêiner de câmbio) ao feed de alterações de novos pedidos em seu serviço de carrinho de compras. O total do carrinho de compras atualizado, com a conversão de moeda atual aplicada, pode ser gravado em um terceiro contêiner usando uma associação de saída.
+* Uma associação de entrada para um contêiner Cosmos do Azure pode ser usada na mesma função que um gatilho Azure Functions para Cosmos DB e também pode ser usada com ou sem uma associação de saída. Use essa combinação para aplicar informações de moeda atualizadas (extraídas com uma associação de entrada a um contêiner de câmbio) ao feed de alterações de novos pedidos em seu serviço de carrinho de compras. O total do carrinho de compras atualizado, com a conversão de moeda atual aplicada, pode ser gravado em um terceiro contêiner usando uma associação de saída.
 
 ## <a name="use-cases"></a>Casos de uso
 
@@ -57,7 +57,7 @@ Em implementações de IoT, você pode invocar uma função quando a luz do meca
 4. O gatilho é invocado em cada alteração de dados para a coleta de dados do sensor, pois todas as alterações são transmitidas por meio do feed de alterações.
 5. Uma condição de limite é usada na função para enviar os dados do sensor para o departamento de garantia.
 6. Se a temperatura também estiver acima de determinado valor, um alerta também será enviado para o proprietário.
-7. A **associação de saída** na função atualiza o registro do carro em outro contêiner do Azure Cosmos DB para armazenar informações sobre o evento do mecanismo de verificação.
+7. A **Associação de saída** na função atualiza o registro de carro em outro contêiner Cosmos do Azure para armazenar informações sobre o evento do mecanismo de verificação.
 
 A imagem a seguir mostra o código gravado no portal do Azure para esse gatilho.
 
@@ -69,7 +69,7 @@ Em implementações financeiras, você pode invocar uma função quando um saldo
 
 **Implementação:** Um gatilho de temporizador com uma associação de entrada do Azure Cosmos DB
 
-1. Usando um [gatilho de temporizador](../azure-functions/functions-bindings-timer.md), recupere as informações de saldo de conta bancária armazenadas em um contêiner do Azure Cosmos DB em intervalos de tempo usando uma **associação de entrada**.
+1. Usando um [gatilho](../azure-functions/functions-bindings-timer.md)de temporizador, você pode recuperar as informações de saldo da conta bancária armazenadas em um contêiner Cosmos do Azure em intervalos de tempo usando uma **Associação de entrada**.
 2. Se o saldo estiver abaixo do limite de saldo baixo definido pelo usuário, acompanhe com uma ação do Azure Function.
 3. A associação de saída pode ser uma [integração do SendGrid](../azure-functions/functions-bindings-sendgrid.md), que envia um email de uma conta de serviço para os endereços de email identificados para cada uma das contas de saldo baixo.
 
@@ -118,7 +118,7 @@ A integração nativa entre Azure Cosmos DB e Azure Functions está disponível 
 
 ## <a name="why-choose-azure-functions-integration-for-serverless-computing"></a>Por que escolher a integração do Azure Functions para a computação sem servidor?
 
-O Azure Functions fornece a capacidade de criar unidades de trabalho escalonáveis ou partes concisas de lógica que podem ser executadas sob demanda, sem provisionamento nem gerenciamento de infraestrutura. Usando o Azure Functions, você não precisa criar um aplicativo completo para responder a alterações no banco de dados do Azure Cosmos DB; você pode criar pequenas funções reutilizáveis para tarefas específicas. Além disso, também use dados do Azure Cosmos DB como entrada ou saída para um Azure Function em resposta a um evento como solicitações HTTP ou um gatilho de tempo.
+O Azure Functions fornece a capacidade de criar unidades de trabalho escalonáveis ou partes concisas de lógica que podem ser executadas sob demanda, sem provisionamento nem gerenciamento de infraestrutura. Usando Azure Functions, você não precisa criar um aplicativo completo para responder às alterações no banco de dados Cosmos do Azure, você pode criar pequenas funções reutilizáveis para tarefas específicas. Além disso, também use dados do Azure Cosmos DB como entrada ou saída para um Azure Function em resposta a um evento como solicitações HTTP ou um gatilho de tempo.
 
 O Azure Cosmos DB é o banco de dados recomendado para a arquitetura de computação sem servidor pelos seguintes motivos:
 

@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: rimman
-ms.openlocfilehash: ddbec882675dba4724406ad1ea8079df377c34fc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8829c2534184bc14e82dfbf30d2170a7a1b8add0
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65967310"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69614997"
 ---
 # <a name="optimize-provisioned-throughput-cost-in-azure-cosmos-db"></a>Otimizar a taxa de transferência provisionada no Azure Cosmos DB
 
@@ -29,11 +29,11 @@ Você pode provisionar a taxa de transferência em bancos de dados ou contêiner
 
 Abaixo estão algumas diretrizes para a escolha de uma estratégia de taxa de transferência provisionada:
 
-**Considere provisionar a taxa de transferência em um banco de dados do Azure Cosmos DB (que contém um conjunto de contêineres) se**:
+**Considere provisionar a taxa de transferência em um banco de dados Cosmos do Azure (que contém um conjunto de contêineres) se**:
 
 1. Você tem algumas dezenas de contêineres do Azure Cosmos e deseja compartilhar a taxa de transferência entre alguns ou todos eles. 
 
-2. Você está migrando de um banco de dados de um único locatário projetado para ser executado em VMs hospedadas IaaS ou locais, por exemplo, bancos de dados relacionais ou NoSQL, para o Azure Cosmos DB. E se você tiver muitos coleções/tabelas/gráficos e você não deseja fazer nenhuma alteração ao seu modelo de dados. Observe que talvez seja necessário comprometer alguns dos benefícios oferecidos pelo Azure Cosmos DB, se você não está atualizando seu modelo de dados durante a migração de um banco de dados local. É recomendável sempre reavaliar o modelo de dados para obter o máximo em termos de desempenho e também para otimizar os custos. 
+2. Você está migrando de um banco de dados de um único locatário projetado para ser executado em VMs hospedadas IaaS ou locais, por exemplo, bancos de dados relacionais ou NoSQL, para o Azure Cosmos DB. E se você tiver muitas coleções/tabelas/grafos e não quiser fazer alterações no modelo de dados. Observe que talvez você precise comprometer alguns dos benefícios oferecidos pelo Azure Cosmos DB se não estiver atualizando seu modelo de dados ao migrar de um banco de dado local. É recomendável sempre reavaliar o modelo de dados para obter o máximo em termos de desempenho e também para otimizar os custos. 
 
 3. Você deseja absorver picos não planejados em cargas de trabalho ocorridos quando uma taxa de transferência em pool no nível do banco de dados é sujeitada a picos inesperados em cargas de trabalho. 
 
@@ -55,11 +55,11 @@ Conforme mostrado na tabela a seguir, dependendo da opção de API, você pode p
 
 |API|Na taxa de transferência **compartilhada**, configure |Na taxa de transferência **dedicada**, configure |
 |----|----|----|
-|API do SQL|Banco de dados|Contêiner|
-|API do Azure Cosmos DB para MongoDB|Banco de dados|Coleção|
+|API do SQL|Banco de Dados|Contêiner|
+|API do Azure Cosmos DB para MongoDB|Banco de Dados|Collection|
 |API Cassandra|Keyspace|Tabela|
-|API do Gremlin|Conta de banco de dados|Grafo|
-|API de Tabela|Conta de banco de dados|Tabela|
+|API do Gremlin|Conta do banco de dados|Grafo|
+|API de Tabela|Conta do banco de dados|Tabela|
 
 Ao provisionar a produtividade em níveis diferentes, você pode otimizar seus custos com base nas características da carga de trabalho. Como mencionado anteriormente, você pode, programaticamente e a qualquer hora, aumentar ou diminuir a taxa de transferência fornecida para os contêineres individuais ou, coletivamente, em um conjunto de contêineres. Ao escalar a taxa de transferência com flexibilidade de acordo com as alterações da carga de trabalho, você paga apenas pela taxa de transferência configurada. Se o contêiner, ou um conjunto de contêineres, está distribuído entre várias regiões, a taxa de transferência que você configura no contêiner ou conjunto de contêineres tem a disponibilidade garantida em todas as regiões.
 
@@ -113,7 +113,7 @@ Além disso, se você está usando o Azure Cosmos DB e sabe que não vai pesquis
 
 ## <a name="optimize-by-changing-indexing-policy"></a>Otimizar através da alteração da política de indexação 
 
-Por padrão, o Azure Cosmos DB indexa automaticamente todas as propriedades de cada registro. Isso serve para facilitar o desenvolvimento e garantir um desempenho excelente em muitos tipos diferentes de consultas ad hoc. Se você tiver grandes registros com milhares de propriedades, pagar o custo da taxa de transferência para indexar todas as propriedades pode não ser útil, especialmente se você faz consulta apenas em relação a 10 ou 20 dessas propriedades. À medida que você for ficando mais familiarizado com sua carga de trabalho específica, nossa diretriz é a de ajustar sua política de índice. Obtenha detalhes completos sobre a política de indexação do Azure Cosmos DB [aqui](indexing-policies.md). 
+Por padrão, o Azure Cosmos DB indexa automaticamente todas as propriedades de cada registro. Isso destina-se a facilitar o desenvolvimento e garantir um desempenho excelente entre vários tipos diferentes de consultas ad hoc. Se você tiver grandes registros com milhares de propriedades, pagar o custo da taxa de transferência para indexar todas as propriedades pode não ser útil, especialmente se você faz consulta apenas em relação a 10 ou 20 dessas propriedades. À medida que você for ficando mais familiarizado com sua carga de trabalho específica, nossa diretriz é a de ajustar sua política de índice. Obtenha detalhes completos sobre a política de indexação do Azure Cosmos DB [aqui](indexing-policies.md). 
 
 ## <a name="monitoring-provisioned-and-consumed-throughput"></a>Monitoramento provisionado e taxa de transferência consumida 
 
@@ -159,7 +159,7 @@ As etapas a seguir ajudam a tornar as suas soluções altamente escalonáveis e 
 
 2. Um método para estimar a quantidade de produtividade reservada exigida pelo aplicativo é registrar o encargo de RUs ( unidades de solicitação) associado à execução de operações comuns em relação a um banco de dados ou contêiner do Azure Cosmos representativo usado pelo aplicativo e, em seguida, estimar o número de operações que você prevê que executará a cada segundo. Meça e inclua consultas comuns e seu uso também. Para saber como estimar os custos de RU de consultas programaticamente ou usando o portal, consulte [Otimizar o custo de consultas](online-backup-and-restore.md). 
 
-3. É outra maneira de obter as operações e seus custos em RUs, habilitando os logs do Azure Monitor, que lhe dará a divisão de operação/duração e o encargo de solicitação. O Azure Cosmos DB fornece encargos de solicitação para cada operação, ou seja, o encargo de cada operação pode ser armazenado a partir da resposta e usado para análise. 
+3. Outra maneira de obter operações e seus custos no RUs é habilitar os logs de Azure Monitor, o que lhe dará a divisão de operação/duração e o encargo da solicitação. O Azure Cosmos DB fornece encargos de solicitação para cada operação, ou seja, o encargo de cada operação pode ser armazenado a partir da resposta e usado para análise. 
 
 4. Você pode escalar e reduzir a taxa de transferência provisionada verticalmente, conforme necessário, para atender às suas necessidades de carga de trabalho. 
 

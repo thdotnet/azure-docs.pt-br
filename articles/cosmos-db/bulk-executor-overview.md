@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/28/2019
 ms.author: ramkris
 ms.reviewer: sngun
-ms.openlocfilehash: 1716bd64286f1882b9fc224712d227967d78058a
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 8d2cb30e0f18485d500344e571b3ac5f2cde008f
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68637782"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69615699"
 ---
 # <a name="azure-cosmos-db-bulk-executor-library-overview"></a>Visão geral da biblioteca bulk executor do Azure Cosmos DB
  
@@ -36,7 +36,7 @@ A biblioteca de executor em massa ajuda você a aproveitar essa enorme produtivi
  
 * Pode importar em massa mais de um terabyte de dados em uma hora usando uma arquitetura de expansão.  
 
-* Pode atualizar em massa dados existentes nos contêineres do Azure Cosmos DB como patches. 
+* Ele pode atualizar dados existentes em massa em contêineres de Cosmos do Azure como patches. 
  
 ## <a name="how-does-the-bulk-executor-operate"></a>Como funciona o executor em massa? 
 

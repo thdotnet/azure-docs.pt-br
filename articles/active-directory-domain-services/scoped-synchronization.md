@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/20/2019
 ms.author: iainfou
-ms.openlocfilehash: bb96e7ccbc38a71d24178c31f8eb9a077c06b8f0
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 7d3bd8c6c62c0b8a1be6203e426337fcee7d2126
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67472517"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69617122"
 ---
 # <a name="configure-scoped-synchronization-from-azure-ad-to-your-managed-domain"></a>Configurar a sincronização no escopo do Microsoft Azure Active Directory para seu domínio gerenciado
 Este artigo mostra como configurar apenas contas de usuários específicos para serem sincronizadas entre seu diretório do Azure AD e o domínio gerenciado do Azure AD Domain Services.
@@ -47,7 +47,7 @@ A tabela a seguir ajuda a determinar como usar a sincronização no escopo:
 
 ## <a name="create-a-new-managed-domain-and-enable-group-based-scoped-synchronization-using-azure-portal"></a>Criar um novo domínio gerenciado e habilitar a sincronização com escopo baseada em grupo usando o portal do Azure
 
-1. Siga a [Guia Primeiros passos](create-instance.md) para criar um domínio gerenciado.
+1. Siga a [Guia Primeiros passos](tutorial-create-instance.md) para criar um domínio gerenciado.
 2. Escolha com **escopo** durante a seleção do estilo de sincronização no assistente de criação dos Serviços de Domínio do Azure AD.
 
 ## <a name="create-a-new-managed-domain-and-enable-group-based-scoped-synchronization-using-powershell"></a>Criar um novo domínio gerenciado e habilitar a sincronização com escopo baseada em grupo usando o PowerShell
@@ -58,7 +58,7 @@ Conclua as seguintes etapas para configurar a sincronização de escopo com base
 1. Conclua as seguintes tarefas:
    * [Tarefa 1: Instalar os módulos do PowerShell exigidos](powershell-create-instance.md#task-1-install-the-required-powershell-modules).
    * [Tarefa 2: Criar a entidade de serviço exigida em seu diretório do Azure AD](powershell-create-instance.md#task-2-create-the-required-service-principal-in-your-azure-ad-directory).
-   * [Tarefa 3: Criar e configurar o 'AAD DC Administrators"group]powershell-create-instance.md#task-3-create-and-configure-the-aad-dc-administrators-group).
+   * [Tarefa 3: Crie e configure o ' grupo de administradores de controlador de domínio do AAD '] PowerShell-Create-instance. MD # tarefa-3-Create-and-configure-The-AAD-DC-Administrators-Group).
    * [Tarefa 4: Registrar o provedor de recursos do Azure AD Domain Services](powershell-create-instance.md#task-4-register-the-azure-ad-domain-services-resource-provider).
    * [Tarefa 5: Criar um grupo de recursos](powershell-create-instance.md#task-5-create-a-resource-group).
    * [Tarefa 6: Criar e configurar a rede virtual](powershell-create-instance.md#task-6-create-and-configure-the-virtual-network).
@@ -81,7 +81,7 @@ Conclua as seguintes etapas para configurar a sincronização de escopo com base
 
    ```powershell
    $AzureSubscriptionId = "YOUR_AZURE_SUBSCRIPTION_ID"
-   $ManagedDomainName = "contoso100.com"
+   $ManagedDomainName = "contoso.com"
    $ResourceGroupName = "ContosoAaddsRg"
    $VnetName = "DomainServicesVNet_WUS"
    $AzureLocation = "westus"

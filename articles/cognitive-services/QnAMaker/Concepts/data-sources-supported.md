@@ -8,18 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
-ms.date: 08/15/2019
+ms.date: 08/16/2019
 ms.author: diberry
-ms.openlocfilehash: a3e1853e587f2f1632641cbb896eba59f8dc9455
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 5175dee24542c716b3d087412864ae7e6f056d18
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69515796"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69615976"
 ---
 # <a name="data-sources-for-qna-maker-content"></a>Fontes de dados para conteúdo do QnA Maker
 
 O QnA Maker extrai automaticamente pares de pergunta-resposta do conteúdo semiestruturado, como perguntas frequentes, manuais de produto, diretrizes, documentos de suporte e políticas armazenadas como arquivos de documentos do Microsoft Word, arquivos PDF ou páginas da Web. O conteúdo também pode ser adicionado à base de conhecimento dos arquivos de conteúdo QnA estruturados. 
+
+## <a name="data-types"></a>Tipos de dados
 
 A tabela a seguir resume os tipos de conteúdo e formatos de arquivo com suporte no QnA Maker.
 
@@ -32,11 +34,21 @@ A tabela a seguir resume os tipos de conteúdo e formatos de arquivo com suporte
 
 ## <a name="data-source-locations"></a>Locais de origem de dados
 
-A maioria dos locais de fonte de dados precisa fornecer URLs ou arquivos públicos, que não exigem autenticação. 
+Os locais de fonte de dados são **URLs ou arquivos públicos**, que não exigem autenticação. 
 
-Os [locais de fonte de dados do SharePoint](../How-to/add-sharepoint-datasources.md) têm permissão para fornecer arquivos autenticados. Os recursos do SharePoint devem ser arquivos, não páginas da Web. 
+Se você precisar de autenticação para sua fonte de dados, considere os seguintes métodos para obter esses dados em QnA Maker:
 
-Se você tiver um arquivo ou URL autenticados, uma opção alternativa é baixar o arquivo do site autenticado para o computador local e, em seguida, adicionar o arquivo do computador local à base de dados de conhecimento. 
+* [Baixar o arquivo manualmente](#download-file-from-authenticated-data-source-location) e importar para o QnA Maker
+* Importar arquivo para o [local do SharePoint](#import-file-from-authenticated-sharepoint) autenticado 
+
+### <a name="download-file-from-authenticated-data-source-location"></a>Baixar arquivo do local da fonte de dados autenticada
+
+Se você tiver um arquivo autenticado (não em um local do SharePoint autenticado) ou URL, uma opção alternativa é baixar o arquivo do site autenticado para o computador local e, em seguida, adicionar o arquivo do seu computador local à base de dados de conhecimento.
+
+### <a name="import-file-from-authenticated-sharepoint"></a>Importar arquivo do SharePoint autenticado 
+
+Os [locais de fonte de dados do SharePoint](../How-to/add-sharepoint-datasources.md) têm permissão para fornecer **arquivos**autenticados. Os recursos do SharePoint devem ser arquivos, não páginas da Web. Se a URL terminar com uma extensão da Web, como **. ASPX**, ele não será importado para o QnA Maker do SharePoint.
+
 
 ## <a name="faq-urls"></a>URLs de perguntas frequentes
 

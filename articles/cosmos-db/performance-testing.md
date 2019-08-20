@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/23/2019
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: a5842d590a4597253bac39c0b7a6f62e6acad908
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0ac257d4eb9fb9e26739f1a63049751f9298efb5
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66243527"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616777"
 ---
 # <a name="performance-and-scale-testing-with-azure-cosmos-db"></a>Teste de desempenho e escala com o Azure Cosmos DB
 
@@ -42,7 +42,7 @@ A maneira mais rápida de começar é compilar e executar o exemplo do .NET, con
 **Etapa 2:** Modifique as configurações de EndpointUrl, AuthorizationKey, CollectionThroughput e DocumentTemplate (opcional) em App.config.
 
 > [!NOTE]
-> Antes de provisionar as coleções com alta produtividade, consulte a [Página de preços](https://azure.microsoft.com/pricing/details/cosmos-db/) para estimar os custos por coleção. O Azure Cosmos DB cobra o armazenamento e a produtividade de forma independente por hora. Você pode reduzir os custos excluindo ou diminuindo a produtividade de suas coleções de Azure Cosmos DB após o teste.
+> Antes de provisionar as coleções com alta produtividade, consulte a [Página de preços](https://azure.microsoft.com/pricing/details/cosmos-db/) para estimar os custos por coleção. O Azure Cosmos DB cobra o armazenamento e a produtividade de forma independente por hora. Você pode economizar custos excluindo ou reduzindo a taxa de transferência de seus contêineres de Cosmos do Azure após o teste.
 > 
 > 
 
@@ -94,7 +94,7 @@ A maneira mais rápida de começar é compilar e executar o exemplo do .NET, con
 Uma vez que o aplicativo estiver em execução, você poderá experimentar [Políticas de indexação](index-policy.md) e [Níveis de consistência](consistency-levels.md) diferentes para entender seu impacto na produtividade e na latência. Você também pode examinar o código-fonte e implementar configurações semelhantes no seus pacotes de teste ou aplicativos de produção.
 
 ## <a name="next-steps"></a>Próximas etapas
-Neste artigo, analisamos como você pode realizar testes de desempenho e escala com o Azure Cosmos DB usando um aplicativo de console .NET. Para obter mais informações, consulte os seguintes artigos:
+Neste artigo, analisamos como você pode realizar testes de desempenho e escala com o Azure Cosmos DB usando um aplicativo de console .NET. Para obter mais informações, confira os seguintes artigos:
 
 * [Amostra de teste de desempenho do Azure Cosmos DB](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/documentdb-benchmark)
 * [Opções de configuração do cliente para melhorar o desempenho do Azure Cosmos DB](performance-tips.md)

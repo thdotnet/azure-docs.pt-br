@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/22/2019
 ms.author: iainfou
-ms.openlocfilehash: 63f2e12b9b769e806f8bd052af5bc78aed6a1fe0
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 5a8f3401de0dc452193efbcf79aef87a19aed081
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67472300"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69617079"
 ---
 # <a name="azure-ad-domain-services---troubleshoot-alerts"></a>Azure AD Domain Services – Alertas de solução de problemas
 Este artigo fornece guias de solução de problemas para quaisquer alertas que podem ocorrer em seu domínio gerenciado.
@@ -81,7 +81,7 @@ Para restaurar seu serviço, siga estas etapas:
 
 1. [Exclua seu domínio gerenciado](delete-aadds.md) do seu diretório do Azure AD existente.
 2. Crie um novo diretório que não é um diretório do Azure AD B2C.
-3. Siga o guia [Introdução](create-instance.md) para recriar um domínio gerenciado.
+3. Siga o guia [Introdução](tutorial-create-instance.md) para recriar um domínio gerenciado.
 
 ## <a name="aadds103-address-is-in-a-public-ip-range"></a>AADDS103: Endereço está em um intervalo de IP público
 
@@ -106,11 +106,11 @@ Dentro da rede virtual, as máquinas podem fazer solicitações para recursos do
    1. Navegue até a [página de Redes Virtuais no portal do Azure](https://portal.azure.com/?feature.canmodifystamps=true&Microsoft_AAD_DomainServices=preview#blade/HubsExtension/Resources/resourceType/Microsoft.Network%2FvirtualNetworks).
    2. Selecione a rede virtual que você planeja usar para os Serviços de Domínio do Azure AD.
    3. Clique em **Espaço de Endereço** em Configurações
-   4. Atualize o intervalo de endereços clicando no intervalo de endereços existente e editando-o ou adicionando um intervalo de endereços adicional. Verifique se o novo intervalo de endereço está em um intervalo IP privado. Salve suas alterações.
+   4. Atualize o intervalo de endereços clicando no intervalo de endereços existente e editando-o ou adicionando um intervalo de endereços adicional. Verifique se o novo intervalo de endereço está em um intervalo IP privado. Salve as alterações.
    5. Clique em **Sub-redes** no menu de navegação esquerdo.
    6. Clique na sub-rede que deseja editar na tabela.
    7. Atualize o intervalo de endereços e salve suas alterações.
-3. Siga [o guia Introdução ao Uso dos Serviços de Domínio do Azure AD](create-instance.md) para recriar seu domínio gerenciado. Certifique-se de escolher uma rede virtual com um intervalo de endereços IP privados.
+3. Siga [o guia Introdução ao Uso dos Serviços de Domínio do Azure AD](tutorial-create-instance.md) para recriar seu domínio gerenciado. Certifique-se de escolher uma rede virtual com um intervalo de endereços IP privados.
 4. Para associar domínio às suas máquinas virtuais para seu novo domínio, siga [este guia](join-windows-vm.md).
 8. Para garantir que o alerta seja resolvido, verifique a integridade do seu domínio em duas horas.
 
@@ -124,9 +124,9 @@ Dentro da rede virtual, as máquinas podem fazer solicitações para recursos do
 
 Serviços de domínio do Azure Active Directory Domain Services requerem uma assinatura de função e não podem ser movidos para uma assinatura diferente. Uma vez que a assinatura do Azure que seu domínio gerenciado foi associado foi excluída, você precisará recriar uma assinatura do Azure e o Azure AD Domain Services.
 
-1. Cria uma assinatura do Azure
+1. Criar uma assinatura do Azure
 2. [Exclua seu domínio gerenciado](delete-aadds.md) do seu diretório do Azure AD existente.
-3. Siga o guia [Introdução](create-instance.md) para recriar um domínio gerenciado.
+3. Siga o guia [Introdução](tutorial-create-instance.md) para recriar um domínio gerenciado.
 
 ## <a name="aadds107-your-azure-subscription-is-disabled"></a>AADDS107: Sua assinatura do Azure está desabilitada
 
@@ -177,7 +177,7 @@ O Azure Active Directory Domain Services cria recursos específicos ao implantar
 
 **Resolução:**
 
-Esse erro é irrecuperável. Para resolver, você deve [excluir seu domínio gerenciado existente](delete-aadds.md) e [recriar seu domínio gerenciado](create-instance.md)
+Esse erro é irrecuperável. Para resolver, você deve [excluir seu domínio gerenciado existente](delete-aadds.md) e [recriar seu domínio gerenciado](tutorial-create-instance.md)
 
 ## <a name="aadds111-service-principal-unauthorized"></a>AADDS111: Entidade de serviço não autorizada
 
@@ -206,7 +206,7 @@ Nossas entidades de serviço precisam de acesso para poder gerenciar e criar rec
    1. Navegue até a [página de Redes Virtuais no portal do Azure](https://portal.azure.com/?feature.canmodifystamps=true&Microsoft_AAD_DomainServices=preview#blade/HubsExtension/Resources/resourceType/Microsoft.Network%2FvirtualNetworks).
    2. Selecione a rede virtual que você planeja usar para os Serviços de Domínio do Azure AD.
    3. Clique em **Espaço de Endereço** em Configurações
-   4. Atualize o intervalo de endereços clicando no intervalo de endereços existente e editando-o ou adicionando um intervalo de endereços adicional. Salve suas alterações.
+   4. Atualize o intervalo de endereços clicando no intervalo de endereços existente e editando-o ou adicionando um intervalo de endereços adicional. Salve as alterações.
    5. Clique em **Sub-redes** no menu de navegação esquerdo.
    6. Clique na sub-rede que deseja editar na tabela.
    7. Atualize o intervalo de endereços e salve suas alterações.
@@ -222,7 +222,7 @@ Nossas entidades de serviço precisam de acesso para poder gerenciar e criar rec
 
 **Resolução:**
 
-Esse erro é irrecuperável. Para resolver, você deve [excluir seu domínio gerenciado existente](delete-aadds.md) e [recriar seu domínio gerenciado](create-instance.md).
+Esse erro é irrecuperável. Para resolver, você deve [excluir seu domínio gerenciado existente](delete-aadds.md) e [recriar seu domínio gerenciado](tutorial-create-instance.md).
 
 ## <a name="aadds114-subnet-invalid"></a>AADDS114: Sub-rede inválida
 
@@ -232,7 +232,7 @@ Esse erro é irrecuperável. Para resolver, você deve [excluir seu domínio ger
 
 **Resolução:**
 
-Esse erro é irrecuperável. Para resolver, você deve [excluir seu domínio gerenciado existente](delete-aadds.md) e [recriar seu domínio gerenciado](create-instance.md).
+Esse erro é irrecuperável. Para resolver, você deve [excluir seu domínio gerenciado existente](delete-aadds.md) e [recriar seu domínio gerenciado](tutorial-create-instance.md).
 
 ## <a name="aadds115-resources-are-locked"></a>AADDS115: Os recursos estão bloqueados
 
@@ -270,7 +270,7 @@ Esse erro é irrecuperável. Para resolver, você deve [excluir seu domínio ger
 
 Veja alguns motivos comuns pelos quais a sincronização é interrompida em domínios gerenciados:
 - A conexão de rede é bloqueada no domínio gerenciado. Para saber mais sobre a verificação da rede para localizar problemas, leia como a [solucionar problemas de Grupos de Segurança de Rede](alert-nsg.md) e [requisitos de rede para o Azure AD Domain Services](network-considerations.md).
--  A sincronização de senha nunca foi configurada ou concluída. Para configurar a sincronização de senha, leia [este artigo](active-directory-ds-getting-started-password-sync.md).
+-  A sincronização de senha nunca foi configurada ou concluída. Para configurar a sincronização de senha, leia [este artigo](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds).
 
 ## <a name="aadds501-a-backup-has-not-been-taken-in-a-while"></a>AADDS501: O backup não é realizado há algum tempo
 
@@ -310,5 +310,5 @@ Para restaurar seu serviço, [renove sua assinatura do Azure](https://docs.micro
 [Verifique a integridade do seu domínio](check-health.md) para todos os alertas que possam indicar problemas na configuração do seu domínio gerenciado. Se puder resolver esses alertas, resolva. Depois, contate o suporte para habilitar novamente a sua assinatura.
 
 
-## <a name="contact-us"></a>Fale conosco
+## <a name="contact-us"></a>Contate-nos
 Entre em contato com a equipe de produto do Azure Active Directory Domain Services para [compartilhar comentários ou obter suporte](contact-us.md).

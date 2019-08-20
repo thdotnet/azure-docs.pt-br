@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/21/2019
 ms.author: sngun
-ms.openlocfilehash: 76531de279dfe6e9b73b3895f0ef63c4c88b63cd
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1dbdd428a54ebf38c7b880bb9530935c0f748226
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65979002"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616819"
 ---
 # <a name="visualize-azure-cosmos-db-data-by-using-the-power-bi-connector"></a>Visualizar dados do Azure Cosmos DB usando o conector do Power BI
 
@@ -32,7 +32,7 @@ Antes de seguir as instruções neste tutorial do Power BI, certifique-se de ter
 
 * Baixe os [dados do vulcão de exemplo](https://github.com/Azure-Samples/azure-cosmos-db-sample-data/blob/master/SampleData/VolcanoData.json) do GitHub.
 
-* [Crie uma conta do banco de dados do Azure Cosmos DB](https://azure.microsoft.com/documentation/articles/create-account/) e importe os dados do vulcão usando a [ferramenta de migração de dados do Azure Cosmos DB](import-data.md). Ao importar dados, considere as seguintes configurações para a origem e os destinos na ferramenta de migração de dados:
+* [Crie uma conta de banco de dados Cosmos do Azure](https://azure.microsoft.com/documentation/articles/create-account/) e importe os dados do vulcão usando a [ferramenta de migração de Azure Cosmos DB data](import-data.md). Ao importar dados, considere as seguintes configurações para a origem e os destinos na ferramenta de migração de dados:
 
    * **Parâmetros da origem** 
 
@@ -122,7 +122,7 @@ Você recuperará os dados do vulcão da conta do Azure Cosmos DB e visualizará
 8. Forneça um nome para a nova coluna, por exemplo, LatLong.
 9. Em seguida, especifique a fórmula personalizada para a nova coluna.  Para nosso exemplo, os valores de Latitude e Longitude, separados por uma vírgula, serão concatenados com a seguinte fórmula, como mostrado abaixo: `Text.From([coordinates]{1})&","&Text.From([coordinates]{0})`. Clique em **OK**.
    
-    Para obter mais informações sobre expressões DAX (Data Analysis) incluindo as funções DAX, visite [Noções básicas do DAX no Power BI Desktop](https://docs.microsoft.com/power-bi/desktop-quickstart-learn-dax-basics).
+    Para obter mais informações sobre o DAX (Data Analysis Expressions) incluindo funções DAX, visite [noções básicas do Dax em Power bi desktop](https://docs.microsoft.com/power-bi/desktop-quickstart-learn-dax-basics).
    
     ![Tutorial do Power BI para o conector do Azure Cosmos DB para Power BI – Adicionar Coluna Personalizada](./media/powerbi-visualize/power_bi_connector_pbicustomlatlong.png)
 

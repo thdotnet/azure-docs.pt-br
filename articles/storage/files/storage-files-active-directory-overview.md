@@ -6,12 +6,12 @@ ms.service: storage
 ms.topic: article
 ms.date: 08/07/2019
 ms.author: rogarana
-ms.openlocfilehash: addb97d71da1ceac8717ae77204c87a8197dac86
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 6cdee8f1ad59962822e9e0394547c395c13e4bd8
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68935162"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69611785"
 ---
 # <a name="overview-of-azure-files-azure-active-directory-domain-service-azure-ad-ds-authentication-support-for-smb-access"></a>Visão geral do suporte à autenticação do Azure AD DS (serviço de domínio Azure Active Directory) de arquivos do Azure para acesso SMB
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -59,7 +59,7 @@ Quando uma identidade associada a um aplicativo em execução em uma VM tenta ac
 ### <a name="enable-azure-ad-domain-service-authentication-for-smb-access"></a>Habilitar a autenticação do serviço de domínio do Azure AD para acesso SMB
 Você pode habilitar a autenticação do serviço de domínio do Azure AD para arquivos do Azure em suas contas de armazenamento novas e existentes criadas após 24 de setembro de 2018. 
 
-Antes de habilitar esse recurso, verifique se Azure AD Domain Services foi implantado para o locatário primário do Azure AD ao qual sua conta de armazenamento está associada. Se você ainda não configurou o Azure AD Domain Services, siga as orientações passo a passo fornecidas em [Habilitar o Azure Active Directory Domain Services usando o portal do Azure](../../active-directory-domain-services/create-instance.md).
+Antes de habilitar esse recurso, verifique se Azure AD Domain Services foi implantado para o locatário primário do Azure AD ao qual sua conta de armazenamento está associada. Se você ainda não configurou o Azure AD Domain Services, siga as orientações passo a passo fornecidas em [Habilitar o Azure Active Directory Domain Services usando o portal do Azure](../../active-directory-domain-services/tutorial-create-instance.md).
 
 A implantação do Azure AD Domain Services geralmente leva de 10 a 15 minutos. Após a implantação do Azure AD Domain Services, você pode habilitar a autenticação do Azure AD por SMB para os Arquivos do Azure. Para obter mais informações, consulte [habilitar a autenticação do serviço de domínio Azure Active Directory sobre SMB para arquivos do Azure](storage-files-active-directory-enable.md). 
 
