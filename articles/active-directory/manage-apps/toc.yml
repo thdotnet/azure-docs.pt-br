@@ -29,6 +29,8 @@
           items:
             - name: Introdução à integração de aplicativos
               href: plan-an-application-integration.md
+            - name: Planejar uma implantação do painel de acesso
+              href: access-panel-deployment-plan.md
             - name: Diretrizes para desenvolvedores
               href: developer-guidance-for-integrating-applications.md
         - name: Logon único

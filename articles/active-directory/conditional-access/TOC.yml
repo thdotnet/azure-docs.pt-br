@@ -19,6 +19,10 @@
 - name: Conceitos
   expanded: false
   items:
+    - name: Adoção do Acesso Condicional
+      href: howto-conditional-access-adoption-kit.md
+    - name: Políticas de Acesso Condicional Comum
+      href: concept-conditional-access-policy-common.md
     - name: Condições
       href: conditions.md
     - name: Condições do local
@@ -38,6 +42,22 @@
       href: plan-conditional-access.md
     - name: Práticas recomendadas
       href: best-practices.md
+    - name: Modelos de política comum
+      items:
+        - name: Exigir MFA para administradores
+          href: howto-conditional-access-policy-admin-mfa.md
+        - name: Exigir MFA para gerenciamento do Azure
+          href: howto-conditional-access-policy-azure-management.md
+        - name: Bloquear a autenticação herdada
+          href: howto-conditional-access-policy-block-legacy.md
+        - name: Acesso condicional baseado em risco
+          href: howto-conditional-access-policy-risk.md
+        - name: Exigir local confiável para registro de MFA
+          href: howto-conditional-access-policy-registration.md
+        - name: Bloquear o acesso por local
+          href: howto-conditional-access-policy-location.md
+        - name: Exigir dispositivos em conformidade
+          href: howto-conditional-access-policy-compliant-device.md
     - name: Bloquear a autenticação herdada
       href: block-legacy-authentication.md
     - name: Acesso condicional para registro de MFA

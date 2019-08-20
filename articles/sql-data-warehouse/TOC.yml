@@ -273,6 +273,8 @@
       items:
         - name: Atualizar para Gen2
           href: upgrade-to-latest-generation.md
+        - name: Gerenciar a computação
+          href: manage-compute-with-azure-functions.md
         - name: Monitorar sua carga de trabalho – Portal
           href: sql-data-warehouse-monitor-workload-portal.md
         - name: Monitorar sua carga de trabalho – DMVs

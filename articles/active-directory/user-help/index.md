@@ -11,12 +11,12 @@ ms.topic: landing-page
 ms.date: 07/30/2018
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a6908a26e1d513261094be28620c3c9a2d86b48
-ms.sourcegitcommit: 04ec7b5fa7a92a4eb72fca6c6cb617be35d30d0c
+ms.openlocfilehash: a065f275321d16b9eaf82a02cb7da45c15aa82cc
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68383098"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616324"
 ---
 # <a name="user-help-for-authentication-apps-and-device-management"></a>Ajuda do usuário para autenticação, aplicativos e gerenciamento de dispositivo
 
@@ -92,8 +92,11 @@ Criamos esse conteúdo para ajudar você a configurar e usar informações de se
                     <div class="cardText">
                         <h3>Ajuda da verificação em duas etapas</h3>
                         <p>
-                        <a href="/azure/active-directory/user-help/multi-factor-authentication-end-user-first-time">Verificação em duas etapas</a><br/>
+                        <a href="/azure/active-directory/user-help/multi-factor-authentication-setup-auth-app">Configurar um aplicativo autenticador</a><br/>
+                        <a href="/azure/active-directory/user-help/multi-factor-authentication-setup-phone-number">Configurar um dispositivo móvel</a><br/>
+                        <a href="/azure/active-directory/user-help/multi-factor-authentication-setup-office-phone">Configurar um telefone comercial</a><br/>
                         <a href="/azure/active-directory/user-help/multi-factor-authentication-end-user-manage-settings">Gerenciar suas configurações</a><br/>
+                        <a href="/azure/active-directory/user-help/multi-factor-authentication-end-user-troubleshoot">Obter ajuda com problemas comuns</a><br/>
                         <a href="/azure/active-directory/user-help/user-help-sign-in">Como entrar</a>
                         </p>
                     </div>
