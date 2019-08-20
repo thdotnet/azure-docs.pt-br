@@ -43,12 +43,12 @@ A tabela a seguir fornece descrições de propriedades retornadas pelo cmdlet pa
 
 | Propriedade | Descrição |
 -------- | ------------- | 
-| NOME | Nome do tempo de execução de integração do Azure. |  
-| Estado | Status do tempo de execução de integração do Azure. | 
-| Local padrão | Local do tempo de execução de integração do Azure. Para obter detalhes sobre o local de um tempo de execução de integração do Azure, consulte [Introdução ao tempo de execução de integração](concepts-integration-runtime.md). |
+| Name | Nome do tempo de execução de integração do Azure. |  
+| State | Status do tempo de execução de integração do Azure. | 
+| Location | Local do tempo de execução de integração do Azure. Para obter detalhes sobre o local de um tempo de execução de integração do Azure, consulte [Introdução ao tempo de execução de integração](concepts-integration-runtime.md). |
 | DataFactoryName | Nome do Data Factory ao qual o tempo de execução de integração do Azure pertence. | 
 | ResourceGroupName | Nome do grupo de recursos ao qual o data factory pertence.  |
-| DESCRIÇÃO | Descrição do tempo de execução de integração.  |
+| Description | Descrição do tempo de execução de integração.  |
 
 ### <a name="status"></a>Status
 A tabela a seguir fornece os possíveis status de um tempo de execução de integração do Azure:
