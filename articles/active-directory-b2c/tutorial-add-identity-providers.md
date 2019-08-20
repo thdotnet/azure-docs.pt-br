@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 07/08/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: eee881e6d4e446e07867261545a90dfacaa93712
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 388ef66351140dab18bd7c92290d84f0f4d734ac
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69512204"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69622783"
 ---
 # <a name="tutorial-add-identity-providers-to-your-applications-in-azure-active-directory-b2c"></a>Tutorial: Adicionar provedores de identidade a seus aplicativos no Azure Active Directory B2C
 
@@ -94,13 +94,11 @@ Depois de criar o aplicativo para o provedor de identidade que você deseja adic
 
 ### <a name="add-the-azure-active-directory-identity-provider"></a>Adicionar o provedor de identidade do Azure Active Directory
 
-1. Verifique se você está usando o diretório que contém seu locatário do Azure AD B2C clicando nos **filtros de pastas e de assinatura** no menu superior e escolhendo o diretório que contém seu locatário do Azure AD B2C.
+1. Verifique se você está usando o diretório que contém Azure AD B2C locatário. Selecione o **diretório +** filtro de assinatura no menu superior e escolha o diretório que contém seu locatário de Azure ad B2C.
 1. Escolha **Todos os serviços** no canto superior esquerdo do Portal do Azure, pesquise **Azure AD B2C** e selecione-o.
-1. Escolha **Provedores de identidade** e escolha **Adicionar**.
+1. Selecione **provedores de identidade**e, em seguida, selecione **novo provedor do OpenID Connect**.
 1. Insira um **Nome**. Por exemplo, insira *Contoso Azure AD*.
-1. Selecione **tipo de provedor de identidade**, selecione **OpenID Connect**e clique em **OK**.
-1. Clique em **Configurar este provedor de identidade**
-1. Para a **URL de metadados**, insira a URL a `your-AD-tenant-domain` seguir, substituindo pelo nome de domínio do seu locatário do Azure AD.
+1. Para a **URL de metadados**, insira a seguinte `your-AD-tenant-domain` URL substituindo pelo nome de domínio do seu locatário do Azure AD:
 
     ```
     https://login.microsoftonline.com/your-AD-tenant-domain/.well-known/openid-configuration
@@ -108,28 +106,27 @@ Depois de criar o aplicativo para o provedor de identidade que você deseja adic
 
     Por exemplo, `https://login.microsoftonline.com/contoso.onmicrosoft.com/.well-known/openid-configuration`.
 
-1. Para **ID do cliente**, insira a *ID do aplicativo (cliente)* que você registrou anteriormente.
-1. Para **segredo do cliente**, insira o valor de *segredo do cliente* que você registrou anteriormente.
-1. Opcionalmente, digite um valor para **Domain_hint**. Por exemplo, `ContosoAD`. [Dicas de domínio](../active-directory/manage-apps/configure-authentication-for-federated-users-portal.md) são diretivas que são incluídas na solicitação de autenticação de um aplicativo. Elas podem ser usadas para agilizar o usuário até a página de entrada IdP. Ou elas podem ser usadas por um aplicativo multilocatário para agilizar o usuário diretamente para a página de entrada do Azure AD da marca do locatário.
-1. Selecione **OK**.
-1. Selecione **Mapear declarações do provedor de identidade** e defina as seguintes declarações:
+1. Para **ID do cliente**, insira a ID do aplicativo que você registrou anteriormente.
+1. Para **segredo do cliente**, insira o segredo do cliente que você registrou anteriormente.
+1. Deixe os valores padrão para **escopo**, **tipo de resposta**e **modo de resposta**.
+1. Adicional Insira um valor para **Domain_hint**. Por exemplo, *ContosoAD*. [Dicas de domínio](../active-directory/manage-apps/configure-authentication-for-federated-users-portal.md) são diretivas que são incluídas na solicitação de autenticação de um aplicativo. Elas podem ser usadas para agilizar o usuário até a página de entrada IdP. Ou elas podem ser usadas por um aplicativo multilocatário para agilizar o usuário diretamente para a página de entrada do Azure AD da marca do locatário.
+1. Em **mapeamento de declarações do provedor de identidade**, insira os seguintes valores de mapeamento de declarações:
 
-    - Para **ID de usuário**, digite `oid`.
-    - Para **Nome de exibição**, digite `name`.
-    - Para **Nome**, digite `given_name`.
-    - Para **Sobrenome**, digite `family_name`.
-    - Para **Email**, digite `unique_name`.
+    * **ID de usuário**: *OID*
+    * **Nome de exibição**: *nome*
+    * **Nome fornecido**: *given_name*
+    * **Sobrenome**: *family_name*
+    * **Email**: *unique_name*
 
-1. Selecione **OK**e, em seguida, selecione **criar** para salvar sua configuração.
+1. Clique em **Salvar**.
 
 ### <a name="add-the-facebook-identity-provider"></a>Adicionar o provedor de identidade do Facebook
 
-1. Escolha **Provedores de identidade** e escolha **Adicionar**.
-1. Insira um **Nome**. Por exemplo, insira *Facebook*.
-1. Selecione **tipo de provedor de identidade**, selecione **Facebook**e, em seguida, selecione **OK**.
-1. Selecione **configurar este provedor de identidade** e insira a *ID do aplicativo* que você registrou anteriormente como a **ID do cliente**.
-1. Insira o *segredo do aplicativo* que você registrou como o **segredo do cliente**.
-1. Selecione **OK** e, em seguida, selecione **criar** para salvar a configuração do Facebook.
+1. Selecione **provedores de identidade**e, em seguida, selecione **Facebook**.
+1. Insira um **Nome**. Por exemplo, *Facebook*.
+1. Para a **ID do cliente**, insira a ID do aplicativo do Facebook que você criou anteriormente.
+1. Para o **segredo do cliente**, insira o segredo do aplicativo que você registrou.
+1. Clique em **Salvar**.
 
 ## <a name="update-the-user-flow"></a>Atualizar o fluxo de usuário
 

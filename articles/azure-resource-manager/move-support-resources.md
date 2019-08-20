@@ -4,14 +4,14 @@ description: Lista os tipos de recursos do Azure que podem ser movidos para um n
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 7/9/2019
+ms.date: 07/09/2019
 ms.author: tomfitz
-ms.openlocfilehash: 22493ad7998e9014c88c79e6ac5eee3bf1216119
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: 73f4b6fe4714d21c12d2c7bd387cd30f6f711d5a
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68226809"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624317"
 ---
 # <a name="move-operation-support-for-resources"></a>Mover o suporte de operação para recursos
 Este artigo lista se um tipo de recurso do Azure é compatível com a operação de movimentação. Ele também fornece informações sobre condições especiais a serem consideradas ao mover um recurso.
@@ -167,7 +167,7 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsoftanalysisservices"></a>Microsoft.AnalysisServices
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| servers | Sim | Sim |
+| servidores | Sim | Sim |
 
 ## <a name="microsoftapimanagement"></a>Microsoft.ApiManagement
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -229,7 +229,7 @@ Ir para um namespace do provedor de recursos:
 | ------------- | ----------- | ---------- |
 | clusters | Não | Não |
 | fileservers | Não | Não |
-| jobs | Não | Não |
+| trabalhos | Não | Não |
 | workspaces | Não | Não |
 
 ## <a name="microsoftbingmaps"></a>Microsoft.BingMaps
@@ -263,7 +263,7 @@ Ir para um namespace do provedor de recursos:
 | redis | Sim | Sim |
 
 > [!IMPORTANT]
-> Se o cache do Azure para instância Redis estiver configurado com uma rede virtual, a instância não poderá ser movida para uma assinatura diferente. Consulte [limitações de movimentação de redes virtuais](./move-limitations/virtual-network-move-limitations.md).
+> Se o cache do Azure para instância Redis estiver configurado com uma rede virtual, a instância não poderá ser movida para uma assinatura diferente. Consulte [limitações de movimentação de redes virtuais](./move-limitations/networking-move-limitations.md).
 
 ## <a name="microsoftcdn"></a>Microsoft.Cdn
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -309,24 +309,24 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsoftcognitiveservices"></a>Microsoft.CognitiveServices
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| accounts | Sim | Sim |
+| contas | Sim | Sim |
 
 ## <a name="microsoftcompute"></a>Microsoft.Compute
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
 | availabilitysets | Sim | Sim |
-| disks | Sim | Sim |
+| discos | Sim | Sim |
 | galleries | Não | Não |
 | galleries/images | Não | Não |
 | galleries/images/versions | Não | Não |
 | hosts | Não | Não |
 | hosts/hosts | Não | Não |
-| images | Sim | Sim |
+| imagens | Sim | Sim |
 | proximityplacementgroups | Não | Não |
 | restorepointcollections | Não | Não |
 | sharedvmimages | Não | Não |
 | sharedvmimages/versions | Não | Não |
-| snapshots | Sim | Sim |
+| instantâneos | Sim | Sim |
 | virtualmachines | Sim | Sim |
 | virtualmachines/extensions | Sim | Sim |
 | virtualmachinescalesets | Sim | Sim |
@@ -363,12 +363,12 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsoftcontentmoderator"></a>Microsoft.ContentModerator
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| de dimensionamento da Web | Sim | Sim |
+| aplicativos | Sim | Sim |
 
 ## <a name="microsoftcortanaanalytics"></a>Microsoft.CortanaAnalytics
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| accounts | Não | Não |
+| contas | Não | Não |
 
 ## <a name="microsoftcostmanagement"></a>Microsoft.CostManagement
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -383,7 +383,7 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsoftdatabox"></a>Microsoft.DataBox
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| jobs | Não | Não |
+| trabalhos | Não | Não |
 
 ## <a name="microsoftdataboxedge"></a>Microsoft.DataBoxEdge
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -426,12 +426,12 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsoftdatalakeanalytics"></a>Microsoft.DataLakeAnalytics
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| accounts | Sim | Sim |
+| contas | Sim | Sim |
 
 ## <a name="microsoftdatalakestore"></a>Microsoft.DataLakeStore
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| accounts | Sim | Sim |
+| contas | Sim | Sim |
 
 ## <a name="microsoftdatamigration"></a>Microsoft.DataMigration
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -443,18 +443,18 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsoftdbformariadb"></a>Microsoft.DBforMariaDB
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| servers | Sim | Sim |
+| servidores | Sim | Sim |
 
 ## <a name="microsoftdbformysql"></a>Microsoft.DBforMySQL
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| servers | Sim | Sim |
+| servidores | Sim | Sim |
 
 ## <a name="microsoftdbforpostgresql"></a>Microsoft.DBforPostgreSQL
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
 | servergroups | Não | Não |
-| servers | Sim | Sim |
+| servidores | Sim | Sim |
 | serversv2 | Sim | Sim |
 
 ## <a name="microsoftdeploymentmanager"></a>Microsoft.DeploymentManager
@@ -533,7 +533,7 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsoftgenomics"></a>Microsoft.Genomics
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| accounts | Não | Não |
+| contas | Não | Não |
 
 ## <a name="microsofthanaonazure"></a>Microsoft.HanaOnAzure
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -558,7 +558,7 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsofthybridcompute"></a>Microsoft.HybridCompute
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| maquina | Não | Não |
+| computadores | Não | Não |
 
 ## <a name="microsofthybriddata"></a>Microsoft.HybridData
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -568,12 +568,12 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsoftimportexport"></a>Microsoft.ImportExport
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| jobs | Sim | Sim |
+| trabalhos | Sim | Sim |
 
 ## <a name="microsoftinsights"></a>microsoft.insights
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| accounts | Não | Não |
+| contas | Não | Não |
 | actiongroups | Sim | Sim |
 | activitylogalerts | Não | Não |
 | alertrules | Sim | Sim |
@@ -585,7 +585,7 @@ Ir para um namespace do provedor de recursos:
 | notificationrules | Não | Não |
 | scheduledqueryrules | Sim | Sim |
 | webtests | Sim | Sim |
-| workbooks | Sim | Sim |
+| pastas de trabalho | Sim | Sim |
 
 > [!IMPORTANT]
 > Certifique-se de que a mudança para a nova assinatura não exceda as cotas de [assinatura](../azure-subscription-service-limits.md#azure-monitor-limits).
@@ -623,12 +623,12 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsoftlocationbasedservices"></a>Microsoft.LocationBasedServices
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| accounts | Sim | Sim |
+| contas | Sim | Sim |
 
 ## <a name="microsoftlocationservices"></a>Microsoft.LocationServices
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| accounts | Não | Não |
+| contas | Não | Não |
 
 ## <a name="microsoftlogic"></a>Microsoft.Logic
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -654,7 +654,7 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsoftmachinelearningexperimentation"></a>Microsoft.MachineLearningExperimentation
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| accounts | Não | Não |
+| contas | Não | Não |
 | accounts/workspaces | Não | Não |
 | accounts/workspaces/projects | Não | Não |
 | teamaccounts | Não | Não |
@@ -664,7 +664,7 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsoftmachinelearningmodelmanagement"></a>Microsoft.MachineLearningModelManagement
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| accounts | Sim | Sim |
+| contas | Sim | Sim |
 
 ## <a name="microsoftmachinelearningoperationalization"></a>Microsoft.MachineLearningOperationalization
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -684,7 +684,7 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsoftmaps"></a>Microsoft.Maps
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| accounts | Sim | Sim |
+| contas | Sim | Sim |
 
 ## <a name="microsoftmarketplaceapps"></a>Microsoft.MarketplaceApps
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -722,7 +722,7 @@ Ir para um namespace do provedor de recursos:
 | applicationsecuritygroups | Sim | Sim |
 | azurefirewalls | Sim | Sim |
 | bastionhosts | Não | Não |
-| connections | Sim | Sim |
+| conexões | Sim | Sim |
 | ddoscustompolicies | Sim | Sim |
 | ddosprotectionplans | Não | Não |
 | dnszones | Sim | Sim |
@@ -765,7 +765,7 @@ Ir para um namespace do provedor de recursos:
 | webapplicationfirewallpolicies | Sim | Sim |
 
 > [!IMPORTANT]
-> Consulte [diretrizes de movimentação de redes virtuais](./move-limitations/virtual-network-move-limitations.md).
+> Consulte [diretrizes de movimentação de rede](./move-limitations/networking-move-limitations.md).
 
 ## <a name="microsoftnotificationhubs"></a>Microsoft.NotificationHubs
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -785,8 +785,8 @@ Ir para um namespace do provedor de recursos:
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
 | managementconfigurations | Sim | Sim |
-| solutions | Sim | Sim |
-| Modos de exibição | Sim | Sim |
+| soluções | Sim | Sim |
+| exibições | Sim | Sim |
 
 ## <a name="microsoftpeering"></a>Microsoft.Peering
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -816,7 +816,7 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsoftprojectoxford"></a>Microsoft.ProjectOxford
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| accounts | Não | Não |
+| contas | Não | Não |
 
 ## <a name="microsoftrecoveryservices"></a>Microsoft.RecoveryServices
 | Tipo de recurso | Grupo de recursos | Assinatura |
@@ -834,12 +834,12 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsoftsaas"></a>Microsoft.SaaS
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| de dimensionamento da Web | Sim | Não |
+| aplicativos | Sim | Não |
 
 ## <a name="microsoftscheduler"></a>Microsoft.Scheduler
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| flows | Sim | Sim |
+| fluxos | Sim | Sim |
 | jobcollections | Sim | Sim |
 
 ## <a name="microsoftsearch"></a>Microsoft.Search
@@ -869,22 +869,22 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsoftservicefabric"></a>Microsoft.ServiceFabric
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| de dimensionamento da Web | Não | Não |
+| aplicativos | Não | Não |
 | clusters | Sim | Sim |
 | containergroups | Não | Não |
 | containergroupsets | Não | Não |
 | edgeclusters | Não | Não |
-| networks | Não | Não |
+| redes | Não | Não |
 | secretstores | Não | Não |
 | volumes | Não | Não |
 
 ## <a name="microsoftservicefabricmesh"></a>Microsoft.ServiceFabricMesh
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| de dimensionamento da Web | Sim | Sim |
+| aplicativos | Sim | Sim |
 | containergroups | Não | Não |
 | gateways | Sim | Sim |
-| networks | Sim | Sim |
+| redes | Sim | Sim |
 | segredos | Sim | Sim |
 | volumes | Sim | Sim |
 
@@ -907,7 +907,7 @@ Ir para um namespace do provedor de recursos:
 | appliancedefinitions | Não | Não |
 | appliances | Não | Não |
 | applicationdefinitions | Não | Não |
-| de dimensionamento da Web | Não | Não |
+| aplicativos | Não | Não |
 | jitrequests | Não | Não |
 
 ## <a name="microsoftsql"></a>Microsoft.Sql
@@ -916,7 +916,7 @@ Ir para um namespace do provedor de recursos:
 | instancepools | Não | Não |
 | managedinstances | Não | Não |
 | managedinstances/databases | Não | Não |
-| servers | Sim | Sim |
+| servidores | Sim | Sim |
 | servers/databases | Sim | Sim |
 | servidores/elasticpools | Sim | Sim |
 | virtualclusters | Sim | Sim |
@@ -978,7 +978,7 @@ Ir para um namespace do provedor de recursos:
 | ------------- | ----------- | ---------- |
 | environments | Não | Não |
 | environments/eventsources | Não | Não |
-| instances | Não | Não |
+| Instâncias | Não | Não |
 | instances/environments | Não | Não |
 | instances/environments/eventsources | Não | Não |
 
@@ -1025,9 +1025,9 @@ Ir para um namespace do provedor de recursos:
 ## <a name="microsoftweb"></a>Microsoft.Web
 | Tipo de recurso | Grupo de recursos | Assinatura |
 | ------------- | ----------- | ---------- |
-| certificates | Não | Sim |
+| certificados | Não | Sim |
 | connectiongateways | Sim | Sim |
-| connections | Sim | Sim |
+| conexões | Sim | Sim |
 | customapis | Sim | Sim |
 | hostingenvironments | Não | Não |
 | serverfarms | Sim | Sim |

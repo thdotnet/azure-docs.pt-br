@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/11/2019
+ms.date: 08/19/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7463b86ea20a712937b8ccba7997c2551aae5be6
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 4d7a23ed0a84ebd671c69744dfec145763ef6897
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68879102"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69622727"
 ---
 # <a name="licensing-requirements-for-azure-ad-self-service-password-reset"></a>Requisitos de licenciamento para redefinição da senha de autoatendimento do Azure AD
 
@@ -34,7 +34,7 @@ A redefinição de senha de autoatendimento do Azure AD é licenciada por usuár
 * Redefinição de senha por autoatendimento para usuários de nuvem
    * Eu sou um **usuário somente na nuvem** e esqueci minha senha.
       * Eu queria **alterar** minha senha para algo que eu saiba.
-   * Essa funcionalidade está incluída nas edições do Azure AD Premium P1 ou P2 ou Microsoft 365 Business.
+   * Essa funcionalidade está incluída em Azure AD Premium P1 ou P2, Microsoft 365 Business ou Office 365.
 
 * Redefinição/Alteração/Desbloqueio da Senha de Autoatendimento **com write-back local**
    * Eu sou um **usuário híbrido**, minha conta de usuário do Active Directory local está sincronizada com minha conta do Azure AD usando o Azure AD Connect. Eu queria alterar minha senha, esqueci minha senha ou ela foi bloqueada.

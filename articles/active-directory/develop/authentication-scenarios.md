@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda, sureshja, hirsin
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cedfead26bd2a82792729853a2b8d038278b75f6
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 79f462b8903033784f186032c715cc966dfae7b4
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68853291"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69622699"
 ---
 # <a name="what-is-authentication"></a>O que é a autenticação?
 
@@ -53,7 +53,7 @@ Isto é o que você precisa saber sobre os vários componentes mostrados no diag
   * Para criar rapidamente um aplicativo e adicionar funcionalidades como obtenção de tokens, atualização de tokens, conexão do usuário, exibição de algumas informações do usuário e muito mais, confira a seção **Inícios Rápidos** da documentação.
   * Para obter procedimentos detalhados baseados em cenário para as principais tarefas do desenvolvedor de autenticação, como obtenção de tokens de acesso e seu uso em chamadas à API do Microsoft Graph e a outras APIs, implementação da entrada com a Microsoft com um aplicativo baseado em navegador da Web tradicional usando o OpenID Connect e muito mais, confira a seção **Tutoriais** da documentação.
   * Para baixar exemplos de código, acesse o [GitHub](https://github.com/Azure-Samples?q=active-directory).
-* O fluxo de solicitações e respostas do processo de autenticação é determinado pelo protocolo de autenticação que foi usado, como OAuth 2.0, OpenID Connect, Web Services Federation ou SAML 2.0. Para obter mais informações sobre protocolos, confira a seção **Conceitos > Protocolos** da documentação.
+* O fluxo de solicitações e respostas do processo de autenticação é determinado pelo protocolo de autenticação que foi usado, como OAuth 2.0, OpenID Connect, Web Services Federation ou SAML 2.0. Para obter mais informações sobre protocolos, consulte a seção **conceitos > Protocolo de autenticação** da documentação do.
 
 No cenário de exemplo acima, você pode classificar os aplicativos de acordo com estas duas funções:
 
@@ -127,7 +127,7 @@ Uma breve descrição de cada tipo de declaração emitida pela plataforma de id
 | ID do locatário | Contém um identificador exclusivo e imutável do locatário do diretório que emitiu o token. |
 | Vida útil do token | Define o intervalo de tempo no qual um token é válido. |
 | Nome principal do usuário | Contém o nome principal de usuário da entidade. |
-| Versão | Contém o número de versão do token. |
+| Version | Contém o número de versão do token. |
 
 ## <a name="next-steps"></a>Próximas etapas
 
