@@ -70,7 +70,7 @@ A tabela a seguir apresenta descrições das Propriedades de monitoramento para 
 
 | Propriedade | Descrição | 
 | -------- | ----------- | 
-| NOME | Nome do tempo de execução de integração auto-hospedado e nós associados a ele. O nó é um computador local do Windows em que o tempo de execução de integração auto-hospedado está instalado. |  
+| Name | Nome do tempo de execução de integração auto-hospedado e nós associados a ele. O nó é um computador local do Windows em que o tempo de execução de integração auto-hospedado está instalado. |  
 | Status | O status do tempo de execução de integração auto-hospedado geral e de cada nó. Exemplo: Online/Offline/Limitado/etc. Para obter informações sobre esses status, consulte a próxima seção. | 
 | Versão | A versão do tempo de execução de integração auto-hospedado geral e de cada nó. A versão do tempo de execução de integração auto-hospedado é determinada com base na versão da maioria dos nós no grupo. Se há nós com versões diferentes na configuração do tempo de execução de integração auto-hospedado, somente os nós com o mesmo número de versão que o tempo de execução de integração auto-hospedado funcionam corretamente. Os outros estão no modo limitado e precisam ser atualizados manualmente (somente caso a atualização automática falhe). | 
 | Memória disponível | Memória disponível em um nó de tempo de execução de integração auto-hospedado. Esse valor é um instantâneo quase em tempo real. | 
@@ -92,7 +92,7 @@ Você pode substituir o valor padrão calculado no portal do Azure. Selecione Au
 ### <a name="status-per-node"></a>Status (por nó)
 A tabela a seguir fornece os possíveis status de um nó de tempo de execução de integração auto-hospedado:
 
-| Status | DESCRIÇÃO |
+| Status | Description |
 | ------ | ------------------ | 
 | Online | O nó está conectado ao serviço Data Factory. |
 | Off-line | O nó está offline. |
@@ -105,7 +105,7 @@ Um nó pode ficar inativo quando ele não pode se conectar a outros nós.
 ### <a name="status-overall-self-hosted-integration-runtime"></a>Status (tempo de execução de integração auto-hospedado geral)
 A tabela a seguir fornece os possíveis status de um tempo de execução de integração auto-hospedado. Esse status depende dos status de todos os nós que pertencem ao tempo de execução. 
 
-| Status | DESCRIÇÃO |
+| Status | Description |
 | ------ | ----------- | 
 | Precisa de registro | Nenhum nó está registrado a esse tempo de execução de integração auto-hospedado. |
 | Online | Todos os nós estão online. |
@@ -157,14 +157,14 @@ O tempo de execução de integração do SSIS do Azure é um cluster totalmente 
 
 ### <a name="properties"></a>propriedades
 
-| Propriedade/Status | DESCRIÇÃO |
+| Propriedade/Status | Description |
 | --------------- | ----------- |
 | CreateTime | A hora UTC em que o tempo de execução de integração do Azure-SSIS foi criado. |
 | Nós | Os nós alocados/disponíveis de seu tempo de execução de integração do Azure-SSIS com status específicos dos nós (iniciando/disponível/reciclando/indisponível) e erros acionáveis. |
 | OtherErrors | Os erros acionáveis não específicos dos nós em seu tempo de execução de integração do Azure-SSIS. |
 | LastOperation | O resultado da última operação de iniciar/parar em seu tempo de execução de integração do Azure-SSIS com erros acionáveis se houve falha. |
-| Estado | O status geral (inicial/iniciando/iniciado/parando/parado) de seu tempo de execução de integração do Azure-SSIS. |
-| Local padrão | O local do seu tempo de execução de integração do Azure-SSIS. |
+| State | O status geral (inicial/iniciando/iniciado/parando/parado) de seu tempo de execução de integração do Azure-SSIS. |
+| Location | O local do seu tempo de execução de integração do Azure-SSIS. |
 | NodeSize | O tamanho de cada nó do seu tempo de execução de integração do Azure-SSIS. |
 | NodeCount | O número de nós em seu tempo de execução de integração do Azure-SSIS. |
 | MaxParallelExecutionsPerNode | O número de execuções paralelas por nó em seu tempo de execução de integração do Azure-SSIS. |
@@ -178,13 +178,13 @@ O tempo de execução de integração do SSIS do Azure é um cluster totalmente 
 | Type | O tipo (Gerenciado/Auto-hospedado) de seu tempo de execução de integração do Azure-SSIS. |
 | ResourceGroupName | O nome do seu grupo de recursos do Azure, no qual seu data factory e o tempo de execução de integração do Azure-SSIS foram criados. |
 | DataFactoryName | O nome de seu data factory do Azure. |
-| NOME | O nome do seu tempo de execução de integração do Azure-SSIS. |
-| DESCRIÇÃO | A descrição do seu tempo de execução de integração do Azure-SSIS. |
+| Name | O nome do seu tempo de execução de integração do Azure-SSIS. |
+| Description | A descrição do seu tempo de execução de integração do Azure-SSIS. |
 
   
 ### <a name="status-per-node"></a>Status (por nó)
 
-| Status | DESCRIÇÃO |
+| Status | Description |
 | ------ | ----------- | 
 | Iniciando | Este nó está sendo preparado. |
 | Disponível | Este nó está pronto para implantar/executar pacotes do SSIS. |
@@ -193,7 +193,7 @@ O tempo de execução de integração do SSIS do Azure é um cluster totalmente 
 
 ### <a name="status-overall-azure-ssis-integration-runtime"></a>Status (tempo de execução de integração do Azure-SSIS geral)
 
-| Status geral | DESCRIÇÃO | 
+| Status geral | Description | 
 | -------------- | ----------- | 
 | Inicial | Os nós de seu tempo de execução de integração do Azure-SSIS não foram alocados/preparados. | 
 | Iniciando | Os nós de seu tempo de execução de integração do Azure-SSIS estão sendo alocados/preparados e a cobrança foi iniciada. |

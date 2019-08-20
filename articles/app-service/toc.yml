@@ -170,7 +170,7 @@
     - name: Escalar aplicativo
       items:
         - name: Escalar verticalmente a capacidade do servidor
-          href: web-sites-scale.md
+          href: manage-scale-up.md
         - name: Configurar a camada PremiumV2
           href: app-service-configure-premium-tier.md
         - name: Escalar horizontalmente em várias instâncias

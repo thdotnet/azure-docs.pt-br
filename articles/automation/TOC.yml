@@ -216,9 +216,6 @@
         - name: Solucionar problemas de alterações em uma VM
           href: automation-tutorial-troubleshoot-changes.md
           displayName: inventory
-        - name: Gerenciar VM com uma coleção de inventários
-          href: automation-vm-inventory.md
-          displayName: inventory
     - name: Solucionar problemas
       items:
         - name: Integração
