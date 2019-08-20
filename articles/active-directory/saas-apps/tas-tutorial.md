@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 279f6970c34acbfea645366f7e965c830873fdbf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: efd64830c0d9afa83838adef96cf1c103b4485e8
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67089186"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68943269"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tas"></a>Tutorial: Integração do Azure Active Directory ao TAS
 
@@ -150,7 +150,7 @@ Para configurar o logon único do Azure Active Directory com o TAS, execute as s
 
     c. Na caixa de texto **Inserir URL**, cole o valor de **URL de logon**, copiado do portal do Azure.
 
-    d. No Bloco de Notas, abra o certificado codificado em base 64 baixado no portal do Azure, copie o conteúdo e cole-o na caixa  **Inserir Certificação** .
+    d. No Bloco de Notas, abra o certificado codificado em base 64 baixado no portal do Azure, copie o conteúdo e cole-o na caixa **Inserir Certificação**.
 
     e. Na caixa de texto **Inserir novo IP**, digite o endereço IP.
 
@@ -216,7 +216,7 @@ Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure
 
 ### <a name="create-tas-test-user"></a>Criar um usuário de teste no TAS
 
-Nesta seção, você criará uma usuária chamada Brenda Fernandes no TAS. Trabalhe com a  [equipe de suporte do TAS](mailto:support@combtas.com) para adicionar os usuários na plataforma do TAS. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará uma usuária chamada Brenda Fernandes no TAS. Trabalhe com a [equipe de suporte do TAS](mailto:support@combtas.com) para adicionar os usuários na plataforma do TAS. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-single-sign-on"></a>Testar logon único 
 
@@ -230,5 +230,5 @@ Ao clicar no bloco do TAS no Painel de Acesso, você deverá ser conectado autom
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -8,14 +8,14 @@ manager: daauld
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: quickstart
-ms.date: 07/15/2019
+ms.date: 08/08/2019
 ms.author: areddish
-ms.openlocfilehash: 306f812ab10c0ef247fdc1201e7df2a23b949a54
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 7f43507566109a52b914f27e37e5392345ec2eaf
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68564170"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68946155"
 ---
 # <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-nodejs-sdk"></a>Início Rápido: Criar um projeto de detecção de objeto com o SDK do Node.js para Visão Personalizada
 
@@ -87,7 +87,7 @@ Para criar marcas de classificação para o projeto, adicione o seguinte código
 
 Ao marcar imagens em projetos de detecção de objeto, você precisa especificar a região de cada objeto marcado usando coordenadas normalizadas.
 
-Para adicionar imagens, marcas e regiões ao projeto, insira o código a seguir após a criação da marca. Observe que, para este tutorial, as regiões são codificadas embutidas no código. As regiões de especificam a caixa delimitadora em coordenadas normalizadas e as coordenadas são fornecidas na ordem: esquerda, superior, largura e altura.
+Para adicionar imagens, marcas e regiões ao projeto, insira o código a seguir após a criação da marca. Observe que, para este tutorial, as regiões são codificadas embutidas no código. As regiões de especificam a caixa delimitadora em coordenadas normalizadas e as coordenadas são fornecidas na ordem: esquerda, superior, largura e altura. Você pode carregar até 64 imagens em um único lote.
 
 ```javascript
 const forkImageRegions = {

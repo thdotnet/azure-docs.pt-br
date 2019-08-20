@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 02/18/2019
 ms.author: jeedes
-ms.openlocfilehash: 499b7f5761c97f6986ca0291af2242d694b609d2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a7c1a59e3b0650badd75a1170a4daaa6561bd23c
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67101749"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945057"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-getthere"></a>Tutorial: Integração do Azure Active Directory com o GetThere
 
@@ -120,7 +120,7 @@ Para configurar o logon único do Azure AD com o GetThere, execute as seguintes 
     | `https://gtx2-gcte2.getthere.net/login/saml/ssoaasvalidate.act` |
     | `https://wx1.getthere.net/login/saml/ssoaavalidate.act` |
 
-5. O aplicativo GetThere espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone  **Editar** para abrir a caixa de diálogo Atributos do usuário.
+5. O aplicativo GetThere espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para abrir a caixa de diálogo Atributos de usuário.
 
     ![image](common/edit-attribute.png)
 
@@ -220,7 +220,7 @@ Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure
 
 ### <a name="create-getthere-test-user"></a>Criar um usuário de teste do GetThere
 
-Nesta seção, você criará uma usuária chamada Brenda Fernandes no GetThere. Trabalhe com a [equipe de suporte do GetThere](mailto:dataintegration@sabre.com) para adicionar os usuários à plataforma GetThere. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará uma usuária chamada Brenda Fernandes no GetThere. Trabalhe com a [equipe de suporte do GetThere](mailto:dataintegration@sabre.com) para adicionar os usuários à plataforma GetThere. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-single-sign-on"></a>Testar logon único 
 

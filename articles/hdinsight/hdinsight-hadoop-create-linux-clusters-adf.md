@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.service: hdinsight
 ms.topic: tutorial
 ms.date: 04/18/2019
-ms.openlocfilehash: e9773c2e8f6f8de3a44e45989aa577a5d8c2dcee
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 7af70de91a7f7696be3b003fec11390d6db9ba60
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67433834"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854978"
 ---
 # <a name="tutorial-create-on-demand-apache-hadoop-clusters-in-hdinsight-using-azure-data-factory"></a>Tutorial: Criar clusters do Apache Hadoop sob demanda no HDInsight usando o Azure Data Factory
 [!INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
@@ -294,7 +294,7 @@ Nesta seção, você pode criar dois serviços vinculados no data factory.
 
         ![Forneça detalhes de script do Hive para o pipeline](./media/hdinsight-hadoop-create-linux-clusters-adf/hdinsight-data-factory-provide-script-path.png "Forneça detalhes de script do Hive para o pipeline")
 
-    1. Em **Parâmetros** > **Avançado**, selecione **Preenchimento automático de script**. Essa opção procura todos os parâmetros de script do Hive que exigem valores em tempo de execução. O script que você usa (**partitionweblogs.hql**) tem um parâmetro de **Saída**. Proporcione o **valor** no formato `wasb://adfgetstarted@<StorageAccount>.blob.core.windows.net/outputfolder/` para apontá-lo para uma pasta existente no seu Armazenamento do Azure. O caminho diferencia maiúsculas de minúsculas. Este é o caminho onde a saída do script será armazenada.
+    1. Em **Parâmetros** > **Avançado**, selecione **Preenchimento automático de script**. Essa opção procura todos os parâmetros de script do Hive que exigem valores em tempo de execução. O script que você usa (**partitionweblogs.hql**) tem um parâmetro de **Saída**. Proporcione o **valor** no formato `wasbs://adfgetstarted@<StorageAccount>.blob.core.windows.net/outputfolder/` para apontá-lo para uma pasta existente no seu Armazenamento do Azure. O caminho diferencia maiúsculas de minúsculas. Este é o caminho onde a saída do script será armazenada. O esquema `wasbs` é necessário porque as contas de armazenamento agora têm a transferência segura necessária habilitada por padrão.
     
         ![Forneça parâmetros para o script do Hive](./media/hdinsight-hadoop-create-linux-clusters-adf/hdinsight-data-factory-provide-script-parameters.png "Forneça parâmetros para o script de Hive")
 

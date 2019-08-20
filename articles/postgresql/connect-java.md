@@ -1,19 +1,19 @@
 ---
-title: Use o Java para se conectar ao Banco de Dados do Azure para PostgreSQL – Servidor único
+title: 'Início Rápido: Use o Java para conectar-se ao Banco de Dados do Azure para PostgreSQL – Servidor único'
 description: Este início rápido fornece um exemplo de código de Java que você pode usar para se conectar e consultar os dados do Banco de Dados do Azure para PostgreSQL – Servidor único.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
-ms.custom: mvc
+ms.custom: seo-java-august2019
 ms.devlang: java
 ms.topic: quickstart
 ms.date: 05/06/2019
-ms.openlocfilehash: 6984cd456c0c119e86fec0960160e93e79d4d361
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: acb59c75441c729aabaea8b33b5253f4df7c1fc0
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68359340"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68845845"
 ---
 # <a name="azure-database-for-postgresql---single-server-use-java-to-connect-and-query-data"></a>Banco de Dados do Azure para PostgreSQL – Servidor único: Usar o Java para se conectar e consultar dados
 Este guia de início rápido demonstra como se conectar a um banco de dados do Azure para PostgreSQL usando aplicativo Java. Ele mostra como usar instruções SQL para consultar, inserir, atualizar e excluir dados no banco de dados. As etapas neste artigo pressupõem que você está familiarizado com o desenvolvimento usando Java e que começou recentemente a trabalhar com o Banco de Dados do Azure para PostgreSQL.
@@ -31,8 +31,8 @@ Você também precisará:
 Obtenha as informações de conexão necessárias para se conectar ao Banco de Dados do Azure para PostgreSQL. Você precisa das credenciais de logon e do nome do servidor totalmente qualificado.
 
 1. Faça logon no [Portal do Azure](https://portal.azure.com/).
-2. No menu à esquerda no portal do Azure, clique em **Todos os recursos** e pesquise o servidor que você criou (como **mydemoserver**).
-3. Clique no nome do servidor.
+2. No menu à esquerda no portal do Azure, selecione **Todos os recursos** e pesquise o servidor que você criou (como **mydemoserver**).
+3. Selecione o nome do servidor.
 4. No painel **Visão Geral** do servidor, anote o **Nome do servidor** e **Nome de logon do administrador do servidor**. Se você esquecer sua senha, também poderá redefini-la nesse painel.
  ![Nome do servidor do Banco de Dados do Azure para PostgreSQL](./media/connect-java/1-connection-string.png)
 

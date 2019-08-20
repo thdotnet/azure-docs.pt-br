@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/08/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9fc2cb6e3aa23ffef03dc129f1f8cea520d1025
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: eda55cbdaf87d80d239ed284919394f83c7e69b4
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67105254"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68944764"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cobalt"></a>Tutorial: Integração do Azure Active Directory ao Cobalt
 
@@ -111,7 +111,7 @@ Para configurar o logon único do Azure AD com o Cobalt, execute as seguintes et
     > [!NOTE]
     > O valor não é real. Atualize o valor com a URL de Logon real. Contate a [equipe de suporte ao cliente do Cobalt](https://www.cobalt.net/support/) para obter o valor. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
 
-5. O aplicativo Cobalt espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone  **Editar** para abrir a caixa de diálogo Atributos do usuário.
+5. O aplicativo Cobalt espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para abrir a caixa de diálogo Atributos de usuário.
 
     ![image](common/edit-attribute.png)
 
@@ -210,7 +210,7 @@ Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure
 
 ### <a name="create-cobalt-test-user"></a>Criar um usuário de teste do Cobalt
 
-Nesta seção, você criará um usuário chamado Brenda Fernandes no Cobalt. Trabalhe com a [equipe de suporte do Cobalt](https://www.cobalt.net/support/) para adicionar os usuários à plataforma Cobalt. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará um usuário chamado Brenda Fernandes no Cobalt. Trabalhe com a [equipe de suporte do Cobalt](https://www.cobalt.net/support/) para adicionar os usuários à plataforma Cobalt. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-single-sign-on"></a>Testar logon único 
 
@@ -224,5 +224,5 @@ Ao clicar no bloco do Cobalt no Painel de Acesso, você deverá ser conectado au
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

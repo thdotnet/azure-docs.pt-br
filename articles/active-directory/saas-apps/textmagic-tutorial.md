@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 1184e282c8dc52cb616bcc47068d96fe61651da9
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 53711a80f35177c911b754a0ce3f189ac106adb2
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67088870"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68943313"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-textmagic"></a>Tutorial: Integração do Azure Active Directory ao TextMagic
 
@@ -166,13 +166,13 @@ Para configurar o logon único do Azure AD com o TextMagic, siga estas etapas:
 
     ![Configuração do TextMagic](./media/textmagic-tutorial/config2.png)
 
-    a. Na caixa de texto **Provedor de Identidade ID de Entidade** , cole o valor do **Identificador do Microsoft Azure Active Directory**, que você copiou do portal do Azure.
+    a. Na caixa de texto **ID da Entidade do Provedor de Identidade:** , cole o valor de **Identificador do Azure AD**, copiado do portal do Azure.
 
-    b. Na caixa de texto **URL SSO do provedor de identidade:**  , cole o valor da **URL de Login**, que você copiou do portal do Azure.
+    b. Na caixa de texto **URL de SSO do Provedor de Identidade:** , cole o valor da **URL de Logon** que você copiou do portal do Azure.
 
-    c. Na caixa de texto **URL SSO do provedor de identidade:**  , cole o valor da **URL de Logout**, que você copiou do portal do Azure.
+    c. Na caixa de texto **URL de SLO do Provedor de Identidade:** , cole o valor da **URL de Logoff** que você copiou do portal do Azure.
 
-    d. Abra seu certificado codificado em **base-64** no bloco de notas baixado do portal do Azure, copie o conteúdo dele para a área de transferência e cole-o na caixa de texto  **Certificado Público x509** .
+    d. Abra seu certificado codificado em **base-64** no bloco de notas baixado do portal do Azure, copie o conteúdo dele para a área de transferência e cole-o na caixa de texto **Certificado Público x509**.
 
     e. Clique em **Save** (Salvar).
 
@@ -243,4 +243,4 @@ Ao clicar no bloco do TextMagic no Painel de Acesso, você deverá entrar automa
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

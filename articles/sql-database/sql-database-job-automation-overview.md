@@ -10,12 +10,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: carlr
 ms.date: 01/25/2019
-ms.openlocfilehash: 677d9b5a8ca837288755ab098fbccd8a5b7ddacd
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: f4d2afd65ec06c331498ce974e933fe08c8e67dd
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567866"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68935183"
 ---
 # <a name="automate-management-tasks-using-database-jobs"></a>Automatizar tarefas de gerenciamento usando trabalhos de banco de dados
 
@@ -44,7 +44,7 @@ Há vários cenários, quando você pode usar a automação de trabalhos:
 As tecnologias de agendamento de trabalhos a seguir estão disponíveis no Banco de Dados SQL do Azure:
 
 - Os **Trabalhos do SQL Agent** são um componente de agendamento de trabalho do SQL Server clássico e eficaz disponível na Instância Gerenciada. Os Trabalhos do SQL Agent não estão disponíveis em bancos de dados individuais.
-- Os **Trabalhos de banco de dados elástico** são o serviço de agendamento de trabalhos que executa trabalhos personalizados em um ou vários Bancos de Dados SQL do Azure.
+- Os **Trabalhos de banco de dados elástico (versão prévia)** são os serviços de Agendamento de Trabalhos que executam trabalhos personalizados em um ou muitos Bancos de Dados SQL do Azure.
 
 Vale a pena observar algumas diferenças entre o SQL Agent (disponível localmente e como parte da Instância Gerenciada do Banco de Dados SQL) e o agente Trabalho Elástico do Banco de Dados (disponível para bancos de dados individuais no Banco de Dados SQL do Azure e para bancos de dados no SQL Data Warehouse).
 
@@ -55,13 +55,13 @@ Vale a pena observar algumas diferenças entre o SQL Agent (disponível localmen
 
 ## <a name="sql-agent-jobs"></a>Trabalhos do SQL Agent
 
-Os trabalhos do SQL Agent são séries especificadas de scripts T-SQL com relação ao seu banco de dados. Use trabalhos para definir uma tarefa administrativa que pode ser executada uma ou mais vezes e monitorada quanto a êxito ou falha.
-Um trabalho pode ser executado em um servidor local ou em vários servidores remotos. O Trabalho do SQL Agent é um componente interno do Mecanismo de Banco de Dados executado dentro do serviço de Instância Gerenciada.
+Os trabalhos do SQL Agent são uma série especificada de scripts T-SQL com relação ao seu banco de dados. Use trabalhos para definir uma tarefa administrativa que pode ser executada uma ou mais vezes e monitorada quanto a êxito ou falha.
+Um trabalho pode ser executado em um servidor local ou em vários servidores remotos. Os Trabalhos do SQL Agent são um componente interno do Mecanismo de Banco de Dados executado dentro do serviço de Instância Gerenciada.
 Há vários conceitos importantes em Trabalhos do SQL Agent:
 
 - **Etapas de trabalho** conjunto de uma ou mais etapas que devem ser executadas dentro do trabalho. Para cada etapa de trabalho, é possível definir a estratégia de repetição e a ação que deverá acontecer se a etapa de trabalho tiver êxito ou falhar.
 - **Agendas** definem quando o trabalho deve ser executado.
-- **Notificações** permitem que você defina regras que serão usadas para notificar operadores por meio de emails após a conclusão do trabalho.
+- **Notificações** permitem que você defina regras que serão usadas para notificar operadores por email após a conclusão do trabalho.
 
 ### <a name="job-steps"></a>Etapas de trabalho
 
@@ -90,11 +90,11 @@ Uma agenda pode definir as condições a seguir para a hora em que um trabalho �
 - Em uma agenda recorrente.
 
 > [!Note]
-> No momento, a Instância Gerenciada não permitirá que você inicie um trabalho quando a instância estiver “ociosa”.
+> No momento, a Instância Gerenciada não permite que você inicie um trabalho quando a instância estiver “ociosa”.
 
 ### <a name="job-notifications"></a>Notificações de trabalho
 
-Os trabalhos do SQL Agent permitem que você receba notificações quando o trabalho for concluído com êxito ou com falha. É possível receber a notificação por email.
+Os trabalhos do SQL Agent permitem que você receba notificações quando o trabalho é concluído com êxito ou com falha. É possível receber a notificações por email.
 
 Primeiro, você precisaria configurar a conta de email que será usada para enviar as notificações por email e atribuir a conta ao perfil do email chamado `AzureManagedInstance_dbmail_profile`, conforme mostrado no exemplo a seguir:
 
@@ -134,7 +134,7 @@ GO
 RECONFIGURE 
 ```
 
-É possível notificar o operador de que algo aconteceu com seus trabalhos do SQL Agent. Um operador define uma informação de contato para um indivíduo responsável pela manutenção de uma ou mais Instâncias Gerenciadas. Em algum momento, as responsabilidades do operador são atribuídas a um indivíduo.
+É possível notificar o operador de que algo aconteceu com seus trabalhos do SQL Agent. Um operador define informações de contato para um indivíduo responsável pela manutenção de uma ou mais Instâncias Gerenciadas. Algumas vezes, as responsabilidades do operador são atribuídas a um indivíduo.
 Em sistemas com várias Instâncias Gerenciadas ou SQL Servers, muitos indivíduos podem compartilhar as responsabilidades do operador. Um operador não contém informações de segurança nem define uma entidade de segurança.
 
 É possível criar operadores usando o SSMS ou o script Transact-SQL mostrado no exemplo a seguir:
@@ -146,7 +146,7 @@ EXEC msdb.dbo.sp_add_operator
         @email_address=N'mihajlo.pupin@contoso.com'
 ```
 
-É possível modificar qualquer trabalho e atribuir um operador que será notificado por email se o trabalho for concluído, falhar ou tiver êxito usando o SSMS ou o seguinte script Transact-SQL:
+É possível modificar qualquer trabalho e atribuir operadores que serão notificado por email se o trabalho for concluído, falhar ou tiver êxito usando o SSMS ou o seguinte script Transact-SQL:
 
 ```sql
 EXEC msdb.dbo.sp_update_job @job_name=N'Load data using SSIS', 
@@ -158,17 +158,17 @@ EXEC msdb.dbo.sp_update_job @job_name=N'Load data using SSIS',
 
 Alguns recursos do SQL Agent disponíveis no SQL Server não são compatíveis com a Instância Gerenciada:
 - As configurações do agente SQL são somente leitura. O procedimento `sp_set_agent_properties` não tem suporte na Instância Gerenciada.
-- No momento, não há suporte para habilitar/desabilitar o Agent na Instância Gerenciada. O SQL Agent sempre está em execução.
+- No momento, não há suporte para habilitar/desabilitar o SQL Agent na Instância Gerenciada. O SQL Agent sempre está em execução.
 - As notificações são parcialmente suportadas
   - Não há suporte para pager.
   - Não há suporte a NetSend.
-  - Ainda não há suporte para alertas.
+  - Não há suporte para alertas.
 - Não há suporte para proxies.
 - Não há suporte para Eventlog.
 
 Para obter informações sobre o SQL Server Agent, consulte [SQL Server Agent](https://docs.microsoft.com/sql/ssms/agent/sql-server-agent).
 
-## <a name="elastic-database-jobs"></a>Trabalhos de Banco de Dados Elástico
+## <a name="elastic-database-jobs-preview"></a>Trabalhos de Banco de Dados Elástico (versão prévia)
 
 Os **Trabalhos de Banco de Dados Elástico** permitem executar um ou mais scripts T-SQL em paralelo, em um grande número de bancos de dados, seja com agendamento ou sob demanda.
 
@@ -198,7 +198,7 @@ O agente de Trabalho Elástico é gratuito. O banco de dados de trabalhos usa a 
 
 #### <a name="job-database"></a>Banco de dados de trabalhos
 
-O *banco de dados de trabalhos* é usado para definir os trabalhos e rastrear o status e o histórico das execuções de trabalho. O *banco de dados de trabalhos* também é usado para armazenar metadados de agente, logs, resultados e definições de trabalho. Além disso, ele contém muitos procedimentos armazenados úteis e outros objetos de banco de dados usados para criar, executar e gerenciar trabalhos usando o T-SQL.
+O *banco de dados de trabalhos* é usado para definir os trabalhos e rastrear o status e o histórico das execuções de trabalho. O *Banco de dados de trabalhos* também é usado para armazenar metadados de agente, logs, resultados e definições de trabalho. Além disso, ele contém muitos procedimentos armazenados úteis e outros objetos de banco de dados usados para criar, executar e gerenciar trabalhos usando o T-SQL.
 
 Na versão prévia atual, um banco de dados existente SQL do Azure (S0 ou superior) é necessário para criar um agente de Trabalho Elástico.
 

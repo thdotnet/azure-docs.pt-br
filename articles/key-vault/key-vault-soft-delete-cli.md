@@ -1,18 +1,19 @@
 ---
 title: Azure Key Vault – Como usar a exclusão reversível com a CLI
 description: Usar exemplos de caso de exclusão reversível com trechos de código da CLI
+services: key-vault
 author: msmbaldwin
-manager: barbkess
+manager: rkarlin
 ms.service: key-vault
-ms.topic: conceptual
-ms.date: 02/01/2019
+ms.topic: tutorial
+ms.date: 08/12/2019
 ms.author: mbaldwin
-ms.openlocfilehash: aa9b89b9afec069e97236b7652e0f1d37644f5cf
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
-ms.translationtype: MT
+ms.openlocfilehash: aef4061a8349e6602ac4394cb31bbe76b6cb63c0
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60640473"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976304"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-cli"></a>Como usar a exclusão reversível do Key Vault com a CLI
 
@@ -94,7 +95,7 @@ Você pode exibir cofres de chave no estado excluído, associados à sua assinat
 ```azurecli
 az keyvault list-deleted
 ```
-- *ID* pode ser usado para identificar o recurso de recuperação ou limpeza. 
+- *ID* pode ser usado para identificar o recurso durante a recuperação ou limpeza. 
 - *ID do recurso* é a ID do recurso original desse cofre. Como este cofre de chaves está em um estado excluído, não há um recurso com essa ID de recurso. 
 - *Data de eliminação agendada* é quando o cofre será eliminado permanentemente, se nenhuma ação for realizada. O período de retenção padrão, usado para calcular a *Data de Limpeza Agendada*, é de 90 dias.
 
@@ -195,7 +196,7 @@ Como as chaves, segredos sejam gerenciados com seus próprios comandos:
 > [!IMPORTANT]
 > Limpar um cofre de chaves ou um de seus objetos contidos o excluirá permanentemente, ou seja, ele não poderá ser recuperado!
 
-A função de limpeza é usada para excluir permanentemente um objeto de Cofre de chaves ou um cofre de chaves inteiro, que foi anteriormente excluídos. Conforme demonstrado na seção anterior, os objetos armazenados em um cofre de chaves com o recurso de exclusão reversível habilitado podem passar por vários estados:
+A função de limpeza é usada para excluir permanentemente um objeto do cofre de chaves que tenha sofrido uma exclusão reversível, ou todo ele. Conforme demonstrado na seção anterior, os objetos armazenados em um cofre de chaves com o recurso de exclusão reversível habilitado podem passar por vários estados:
 
 - **Ativo**: antes da exclusão.
 - **Exclusão reversível**: após a exclusão, ele pode ser listado e retornado ao estado ativo.
@@ -223,19 +224,19 @@ A listagem de objetos de cofre de chaves excluídos também mostra quando eles e
 >[!IMPORTANT]
 >Um objeto de cofre limpo, disparado pelo campo *Data de Limpeza Agendada*, será excluído permanentemente. Não é recuperável!
 
-## <a name="enabling-purge-protection"></a>Habilitar a proteção de limpeza
+## <a name="enabling-purge-protection"></a>Habilitando a proteção de limpeza
 
-Quando a proteção de limpeza é ativada em um cofre ou em um objeto excluída não é possível limpar estado até que o período de retenção de 90 dias. Ainda é possível recuperar tal cofre ou objeto. Esse recurso oferece garantia extra que um cofre ou um objeto nunca pode ser permanentemente excluído até que o período de retenção tenha passado.
+Quando a proteção de limpeza está ativada, um cofre ou um objeto no estado excluído não pode ser limpo até que tenha passado o período de retenção de 90 dias. Ainda é possível recuperar tal cofre ou objeto. Esse recurso fornece uma garantia extra de que um cofre ou objeto não pode ser excluído permanentemente até que tenha passado o período de retenção.
 
-Você pode habilitar a proteção de limpeza somente se a exclusão reversível também está habilitada. 
+Você poderá habilitar a proteção de limpeza somente se a exclusão reversível também estiver habilitada. 
 
-Para ativar ambos os exclusão reversível e limpar a proteção durante a criação de um cofre, use o [az creata](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create) comando:
+Para ativar a exclusão reversível e a proteção de limpeza ao criar um cofre, use o comando [az keyvault create](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create):
 
 ```
 az keyvault create --name ContosoVault --resource-group ContosoRG --location westus --enable-soft-delete true --enable-purge-protection true
 ```
 
-Para adicionar a proteção de limpeza para um cofre existente (que já tem exclusão reversível habilitada), use o [atualização de keyvault az](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-update) comando:
+Para adicionar a proteção de limpeza a um cofre existente (que já tem a exclusão reversível habilitada), use o comando [az keyvault update](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-update):
 
 ```
 az keyvault update --name ContosoVault --resource-group ContosoRG --enable-purge-protection true

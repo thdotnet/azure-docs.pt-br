@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 04/05/2018
 author: wmengmsft
 ms.author: wmeng
-ms.openlocfilehash: 977b59c3344eaf2c4877f51afea176455d22ecc9
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 45925b1c4252b0ff0080a2c287e7ed2fae444168
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59546680"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68986289"
 ---
 # <a name="how-to-use-azure-table-storage-or-the-azure-cosmos-db-table-api-from-nodejs"></a>Como usar o Armazenamento de Tabelas do Azure e a API da Tabela do Azure Cosmos DB do Node.js
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
@@ -68,7 +68,7 @@ var tableSvc = azure.createTableService('myaccount', 'myaccesskey');
 ```
 
 ## <a name="add-an-azure-cosmos-db-connection"></a>Adicionar uma conexão do Azure Cosmos DB
-Para adicionar uma conexão do Azure Cosmos DB, crie um objeto **TableService** e especifique o nome da conta, a chave primária e o ponto de extremidade. Copie esses valores em **Configurações** > **Cadeia de Conexão** no Portal do Azure da sua conta do Cosmos DB. Por exemplo: 
+Para adicionar uma conexão do Azure Cosmos DB, crie um objeto **TableService** e especifique o nome da conta, a chave primária e o ponto de extremidade. Copie esses valores em **Configurações** > **Cadeia de Conexão** no Portal do Azure da sua conta do Cosmos DB. Por exemplo:
 
 ```javascript
 var tableSvc = azure.createTableService('myaccount', 'myprimarykey', 'myendpoint');
@@ -198,7 +198,7 @@ tableSvc.replaceEntity('mytable', updatedTask, function(error, result, response)
 > Por padrão, a atualização de uma entidade não verifica se os dados que estão sendo atualizados foram modificados anteriormente por outro processo. Para suporte a atualizações simultâneas:
 >
 > 1. Obtenha a ETag do objeto que está sendo atualizado. Isso é retornado como parte de `response` para qualquer operação relacionada à entidade e pode ser recuperado por meio de `response['.metadata'].etag`.
-> 2. Ao realizar uma operação de atualização em uma entidade, adicione as informações de ETag obtidas anteriormente para a nova entidade. Por exemplo: 
+> 2. Ao realizar uma operação de atualização em uma entidade, adicione as informações de ETag obtidas anteriormente para a nova entidade. Por exemplo:
 >
 >       entity2['.metadata'].etag = currentEtag;
 > 3. Realize a operação de atualização. Se a entidade foi modificada desde a recuperação do valor de ETag, como outra instância do seu aplicativo, um `error` será retornado informando que a condição da atualização especificada na solicitação não foi atendida.
@@ -394,7 +394,7 @@ var host = tableSvc.host;
 
 Observe que você também deve fornecer as informações do host, já que elas são necessárias quando o titular da SAS tenta acessar a tabela.
 
-O aplicativo cliente usa a SAS com **TableServiceWithSAS** para executar operações na tabela. O exemplo a seguir conecta à tabela e executa uma consulta. Confira o artigo [Usar assinaturas de acesso compartilhado](../storage/common/storage-dotnet-shared-access-signature-part-1.md#examples-of-sas-uris) para obter o formato de tableSAS. 
+O aplicativo cliente usa a SAS com **TableServiceWithSAS** para executar operações na tabela. O exemplo a seguir conecta à tabela e executa uma consulta. Confira o artigo [Conceder acesso limitado a recursos de Armazenamento do Azure usando SAS (assinaturas de acesso compartilhado)](../storage/common/storage-sas-overview.md) sobre o formato de tableSAS. 
 
 ```javascript
 // Note in the following command, host is in the format: `https://<your_storage_account_name>.table.core.windows.net` and the tableSAS is in the format: `sv=2018-03-28&si=saspolicy&tn=mytable&sig=9aCzs76n0E7y5BpEi2GvsSv433BZa22leDOZXX%2BXXIU%3D`;

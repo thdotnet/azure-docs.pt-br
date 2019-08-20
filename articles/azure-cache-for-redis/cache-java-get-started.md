@@ -1,5 +1,5 @@
 ---
-title: Início Rápido para aprender a usar o Cache do Azure para Redis com Java | Microsoft Docs
+title: 'Início Rápido: Usar o Cache do Azure para Redis com Java'
 description: Neste guia de início rápido você criará um novo aplicativo Java que usa o Cache do Azure para Redis
 services: cache
 documentationcenter: ''
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: cache
 ms.workload: tbd
 ms.date: 05/23/2018
 ms.author: yegu
-ms.custom: mvc
-ms.openlocfilehash: 01fb6f66ce71599a70a127a2b73eba6f848bf365
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.custom: mvc, seo-java-august2019
+ms.openlocfilehash: 230bd4c0d53404ca5ac8d7e1385e8b0533880ca7
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68324136"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68881143"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-with-java"></a>Início Rápido: Usar o Cache do Azure para Redis com Java
 
@@ -147,13 +147,13 @@ Caso contrário, se você não for mais usar o aplicativo de exemplo do início 
 > A exclusão de um grupo de recursos é irreversível, e o grupo de recursos e todos os recursos contidos nele são excluídos permanentemente. Não exclua acidentalmente o grupo de recursos ou os recursos incorretos. Se tiver criado os recursos para hospedar este exemplo dentro de um grupo de recursos existente que contém recursos que você quer manter, exclua cada recurso individualmente de suas respectivas folhas, em vez de excluir o grupo de recursos.
 >
 
-Entre no [portal do Azure](https://portal.azure.com) e clique em **Grupos de recursos**.
+1. Entre no [portal do Azure](https://portal.azure.com) e selecione **Grupos de recursos**.
 
-Na caixa de texto **Filtrar por nome...** , digite o nome do seu grupo de recursos. As instruções deste artigo usaram um grupo de recursos chamado *TestResources*. Em seu grupo de recursos, na lista de resultados, clique em **...** , depois em **Excluir grupo de recursos**.
+1. Na caixa de texto **Filtrar por nome**, digite o nome do seu grupo de recursos. As instruções deste artigo usaram um grupo de recursos chamado *TestResources*. Em seu grupo de recursos, na lista de resultados, selecione **...** e então **Excluir grupo de recursos**.
 
-![Excluir](./media/cache-java-get-started/cache-delete-resource-group.png)
+   ![Excluir](./media/cache-java-get-started/cache-delete-resource-group.png)
 
-Você receberá uma solicitação para confirmar a exclusão do grupo de recursos. Digite o nome do grupo de recursos para confirmar e clique em **Excluir**.
+1. Você receberá uma solicitação para confirmar a exclusão do grupo de recursos. Digite o nome do grupo de recursos para confirmar e selecione **Excluir**.
 
 Após alguns instantes, o grupo de recursos, e todos os recursos contidos nele, serão excluídos.
 

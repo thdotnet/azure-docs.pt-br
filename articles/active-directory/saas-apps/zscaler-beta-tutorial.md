@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/24/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07341c1ad30f1242bdff430826fdc82c45e09dac
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 07b0f8112f724c857ffb46378f7aa7ef605b9bbb
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67086065"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68943284"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-beta"></a>Tutorial: Integração do Azure Active Directory ao Zscaler Beta
 
@@ -112,9 +112,9 @@ Para configurar o logon único do Azure AD com Zscaler Beta, siga estas etapas.
     > [!NOTE]
     > O valor não é real. Atualize o valor com o valor da URL de Entrada real. Para obtê-lo, entre em contato com a [equipe de suporte ao cliente do Zscaler Beta](https://www.zscaler.com/company/contact).
 
-5. O aplicativo Zscaler Beta espera que as declarações SAML estejam em um formato específico. Você deve adicionar mapeamentos de atributos personalizados à configuração de atributos de token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Selecione  **Editar** para abrir a caixa de diálogo **Atributos do Usuário** .
+5. O aplicativo Zscaler Beta espera que as declarações SAML estejam em um formato específico. Você deve adicionar mapeamentos de atributos personalizados à configuração de atributos de token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Selecione **Editar** para abrir a caixa de diálogo **Atributos do Usuário**.
 
-    ![Caixa de diálogo Atributos do Usuário](common/edit-attribute.png)
+    ![A caixa de diálogo Atributos do Usuário](common/edit-attribute.png)
 
 6. O aplicativo Zscaler Beta espera que mais alguns atributos sejam passados novamente na resposta SAML. Na seção **Declarações de Usuário** da caixa de diálogo **Atributos de Usuário**, siga as seguintes etapas para adicionar o atributo de token SAML, conforme mostrado na tabela abaixo.
     
@@ -295,7 +295,7 @@ Permita que Brenda Fernandes use o logon único do Azure concedendo acesso ao Zs
 Nesta seção, a usuária Brenda Fernandes será criada no Zscaler Beta. O Zscaler Beta dá suporte ao **provisionamento de usuário Just-In-Time**, que está habilitado por padrão. Não há nada a fazer nesta seção. Se um usuário ainda não existir no Zscaler Beta, um novo será criado após a autenticação.
 
 >[!Note]
->Para criar um usuário manualmente, entre em contato com a [Equipe de suporte do Zscaler Beta](https://www.zscaler.com/company/contact).
+>Para criar um usuário manualmente, contate a [Equipe de suporte do Zscaler Beta](https://www.zscaler.com/company/contact).
 
 ### <a name="test-single-sign-on"></a>Testar logon único 
 
@@ -307,5 +307,5 @@ Ao selecionar a peça do Zscaler Beta no Painel de Acesso, você deverá ser con
 
 - [Lista de tutoriais sobre como integrar aplicativos SaaS ao Active Directory do Azure](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 05/21/2019
+ms.date: 08/14/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c890288539a8abebe688ca4571ffa6c152e992ee
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: aefa6d21488b617b26ddefe5fa4fc61cdd203f96
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68694051"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69032531"
 ---
 # <a name="tutorial-add-an-on-premises-application-for-remote-access-through-application-proxy-in-azure-active-directory"></a>Tutorial: Adicionar um aplicativo local para acesso remoto por meio do Proxy de Aplicativo no Azure Active Directory
 
@@ -96,7 +96,7 @@ Permita o acesso às seguintes URLs:
 | mscrl.microsoft.com:80<br>crl.microsoft.com:80<br>ocsp.msocsp.com:80<br>www.microsoft.com:80 | O Azure usa essas URLs para verificar certificados. |
 | login.windows.net<br>login.microsoftonline.com<br>Secure.aadcdn.microsoftonline p.com  | O conector usa essas URLs durante o processo de registro. |
 
-Se o firewall ou o proxy permitir a configuração de listas de permissões de DNS, você poderá permitir conexões ao \*.msappproxy.net e \*.servicebus.windows.net. Caso contrário, você precisará permitir o acesso aos [intervalos IP do Datacenter do Azure](https://www.microsoft.com/download/details.aspx?id=41653). Os intervalos de IP são atualizados a cada semana.
+Se o firewall ou o proxy permitir a configuração de listas de permissões de DNS, você poderá permitir conexões ao \*.msappproxy.net e \*.servicebus.windows.net. Caso contrário, você precisa permitir o acesso aos [Intervalos de IP e Marcas de Serviço – Nuvem Pública do Azure](https://www.microsoft.com/download/details.aspx?id=56519). Os intervalos de IP são atualizados a cada semana.
 
 ## <a name="install-and-register-a-connector"></a>Instalar e registrar um conector
 

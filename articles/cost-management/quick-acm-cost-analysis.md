@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.service: cost-management
 manager: micflan
 ms.custom: seodec18
-ms.openlocfilehash: d07a52a3cd07c69b9b7e2ef43331ddd9fb455b10
-ms.sourcegitcommit: 441e59b8657a1eb1538c848b9b78c2e9e1b6cfd5
+ms.openlocfilehash: 2ca0c0741ea543b30695303d473389979f2e1045
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67827823"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68855042"
 ---
 # <a name="quickstart-explore-and-analyze-costs-with-cost-analysis"></a>Início Rápido: Explorar e analisar os custos com a análise de custo
 
@@ -128,7 +128,7 @@ A imagem a seguir mostra nomes de grupo de recursos. Você pode agrupar por tag 
 
 ![Dados completos para a exibição atual, mostrando os nomes de grupos de recursos](./media/quick-acm-cost-analysis/full-data-set.png)
 
-Ao agrupar os custos segundo um atributo específico, os 10 principais colaboradores de custo são mostrados do mais alto para o mais baixo. Se houver mais de dez grupos, os nove principais colaboradores de custos serão mostrados no grupo **Outros**. Esse grupo cobre todos os grupos restantes. Ao agrupar por marcas, você também poderá ver que o grupo **Sem marca** é exibido para custos sem a chave de marca aplicada. Os custos **Sem marca** aparecem sempre por último, mesmo que os custos sem marca sejam maiores do que os com marca. Os custos sem marca farão parte da categoria **Outros** se houver 10 ou mais valores de marca.
+Ao agrupar os custos segundo um atributo específico, os 10 principais colaboradores de custo são mostrados do mais alto para o mais baixo. Se houver mais de 10, os nove principais colaboradores de custo serão mostrados com um grupo **Outros** que representa todos os grupos restantes combinados. Ao agrupar por marcas, você também poderá ver que o grupo **Sem marca** é exibido para custos sem a chave de marca aplicada. Os custos **Sem marca** aparecem sempre por último, mesmo que os custos sem marca sejam maiores do que os com marca. Os custos sem marca farão parte da categoria **Outros** se houver 10 ou mais valores de marca. Alterne para o modo de exibição de tabela e mude a granularidade para **Nenhum** para ver todos os valores classificados do maior para o menor custo.
 
 As máquinas virtuais clássicas, as redes e os recursos de armazenamento não compartilham dados detalhados de cobrança. Eles são mesclados como **Serviços clássicos** quando os custos são agrupados.
 

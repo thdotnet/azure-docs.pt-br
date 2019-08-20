@@ -1,7 +1,7 @@
 ---
-title: Extração de dados
-titleSuffix: Language Understanding - Azure Cognitive Services
-description: Extrai dados de texto de expressão com as intenções e entidades. Saiba que tipo de dados pode ser extraído da linguagem Luis (reconhecimento vocal).
+title: Extração de dados-LUIS
+titleSuffix: Azure Cognitive Services
+description: Extraia dados de texto expressão com intenções e entidades. Saiba que tipo de dados pode ser extraído de Reconhecimento vocal (LUIS).
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -9,16 +9,16 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 04/01/2019
+ms.date: 07/24/2019
 ms.author: diberry
-ms.openlocfilehash: 15d6b0d28f926bdb39b35b763b89422cddcccc84
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 055cd25f534de5d3cc3ccbe44df88e7111e101a3
+ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65150691"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68560752"
 ---
-# <a name="extract-data-from-utterance-text-with-intents-and-entities"></a>Extrair dados de texto de expressão com as intenções e entidades
+# <a name="extract-data-from-utterance-text-with-intents-and-entities"></a>Extrair dados de texto expressão com intenções e entidades
 O LUIS oferece a capacidade de obter informações de declarações de idioma natural de um usuário. As informações são extraídas de forma que possam ser usadas por um programa, aplicativo ou chat bot para executar uma ação. Nas seções a seguir, saiba quais dados são retornados de intenções e entidades com exemplos de JSON.
 
 Os dados mais difíceis de extrair são dados de aprendizado de máquina, porque eles não são uma correspondência exata do texto. A extração de dados das [entidades](luis-concept-entity-types.md) de aprendizado de máquina precisa fazer parte do [ciclo de criação](luis-concept-app-iteration.md) até que você esteja confiante de receber os dados esperados.
@@ -46,9 +46,9 @@ Os dados primários são o **nome da intenção** da pontuação mais alta. Usan
 }
 ```
 
-|Objeto de dados|Tipo de Dados|Local dos dados|Value|
+|Objeto de dados|Tipo de dados|Local dos dados|Valor|
 |--|--|--|--|
-|Intenção|Cadeia de caracteres|topScoringIntent.intent|"GetStoreInfo"|
+|Intenção|Cadeia|topScoringIntent.intent|"GetStoreInfo"|
 
 Se o chatbot ou o aplicativo que chama o LUIS tomar uma decisão com base em mais de uma pontuação de intenção, retorne as pontuações de todas as intenções definindo o parâmetro querystring, `verbose=true`. A resposta do ponto de extremidade é:
 
@@ -75,10 +75,10 @@ Se o chatbot ou o aplicativo que chama o LUIS tomar uma decisão com base em mai
 
 As intenções são ordenadas da pontuação mais alta para a mais baixa.
 
-|Objeto de dados|Tipo de Dados|Local dos dados|Value|Pontuação|
+|Objeto de dados|Tipo de dados|Local dos dados|Valor|Pontuação|
 |--|--|--|--|:--|
-|Intenção|Cadeia de caracteres|intents[0].intent|"GetStoreInfo"|0,984749258|
-|Intenção|Cadeia de caracteres|intents[1].intent|"None"|0,0168218873|
+|Intenção|Cadeia|intents[0].intent|"GetStoreInfo"|0,984749258|
+|Intenção|Cadeia|intents[1].intent|"None"|0,0168218873|
 
 Se você adicionar domínios predefinidos, o nome da intenção indicará o domínio, como `Utilties` ou `Communication`, assim como a intenção:
 
@@ -106,11 +106,11 @@ Se você adicionar domínios predefinidos, o nome da intenção indicará o dom�
 }
 ```
 
-|Domínio|Objeto de dados|Tipo de Dados|Local dos dados|Value|
+|Domínio|Objeto de dados|Tipo de dados|Local dos dados|Valor|
 |--|--|--|--|--|
-|Utilidades|Intenção|Cadeia de caracteres|intents[0].intent|"<b>Utilities</b>.ShowNext"|
-|Comunicação|Intenção|Cadeia de caracteres|intents[1].intent|<b>Communication</b>.StartOver"|
-||Intenção|Cadeia de caracteres|intents[2].intent|"None"|
+|Utilidades|Intenção|Cadeia|intents[0].intent|"<b>Utilities</b>.ShowNext"|
+|Comunicação|Intenção|Cadeia|intents[1].intent|<b>Communication</b>.StartOver"|
+||Intenção|Cadeia|intents[2].intent|"None"|
 
 
 ## <a name="data-from-entities"></a>Dados de entidades
@@ -148,141 +148,15 @@ Por exemplo, em alemão, a palavra `das Bauernbrot` é indexado em `das bauern b
 
 ## <a name="simple-entity-data"></a>Dados de entidade simples
 
-Uma [entidade simples](luis-concept-entity-types.md) é um valor de aprendizado de máquina. Ele pode ser uma palavra ou frase.
-
-`Bob Jones wants 3 meatball pho`
-
-Na declaração anterior, `Bob Jones` é rotulado como uma entidade `Customer` simples.
-
-Os dados retornados do ponto de extremidade incluem o nome da entidade, o texto descoberto da declaração, o local do texto descoberto e a pontuação:
-
-```JSON
-"entities": [
-  {
-  "entity": "bob jones",
-  "type": "Customer",
-  "startIndex": 0,
-  "endIndex": 8,
-  "score": 0.473899543
-  }
-]
-```
-
-|Objeto de dados|Nome da entidade|Value|
-|--|--|--|
-|Entidade simples|`Customer`|`bob jones`|
+Uma [entidade simples](reference-entity-simple.md) é um valor de aprendizado de máquina. Ele pode ser uma palavra ou frase.
 
 ## <a name="composite-entity-data"></a>Dados da entidade composta
-Entidades [compostas](luis-concept-entity-types.md) são de aprendizado de máquina e podem incluir uma palavra ou frase. Por exemplo, considere uma entidade composta de `number` e `Location::ToLocation` predefinidos com a seguinte declaração:
 
-`book 2 tickets to paris`
-
-Observe que `2`, o número e `paris`, o ToLocation tem palavras entre eles que não fazem parte de nenhuma entidade. O sublinhado verde, usado em um enunciado rotulado no site do [LUIS](luis-reference-regions.md), indica uma entidade composta.
-
-![Entidade composta](./media/luis-concept-data-extraction/composite-entity.png)
-
-Entidades compostas são retornadas em uma matriz `compositeEntities` e todas as entidades com a composta também são retornadas na matriz `entities`:
-
-```JSON
-
-"entities": [
-    {
-    "entity": "2 tickets to cairo",
-    "type": "ticketInfo",
-    "startIndex": 0,
-    "endIndex": 17,
-    "score": 0.67200166
-    },
-    {
-    "entity": "2",
-    "type": "builtin.number",
-    "startIndex": 0,
-    "endIndex": 0,
-    "resolution": {
-        "subtype": "integer",
-        "value": "2"
-    }
-    },
-    {
-    "entity": "cairo",
-    "type": "builtin.geographyV2",
-    "startIndex": 13,
-    "endIndex": 17
-    }
-],
-"compositeEntities": [
-    {
-    "parentType": "ticketInfo",
-    "value": "2 tickets to cairo",
-    "children": [
-        {
-        "type": "builtin.geographyV2",
-        "value": "cairo"
-        },
-        {
-        "type": "builtin.number",
-        "value": "2"
-        }
-    ]
-    }
-]
-```    
-
-|Objeto de dados|Nome da entidade|Value|
-|--|--|--|
-|Entidade predefinida – número|"builtin.number"|"2"|
-|Entidade predefinida - GeographyV2|"Location::ToLocation"|"paris"|
+Uma [entidade composta](reference-entity-composite.md) é composta por outras entidades, como entidades predefinidas, expressão simples, regular e entidades de lista. As entidades separadas formam uma entidade inteira. 
 
 ## <a name="list-entity-data"></a>Dados da entidade Lista
 
-Uma entidade [lista](luis-concept-entity-types.md) não é de aprendizado de máquina. É uma correspondência exata do texto. Uma lista representa os itens na lista junto com os sinônimos desses itens. O LUIS marca qualquer correspondência a um item em qualquer lista como uma entidade na resposta. Um sinônimo pode estar em mais de uma lista.
-
-Suponha que o aplicativo tem uma lista, chamada `Cities`, que permite variações de nomes de cidade que incluem a cidade do aeroporto (SEA), o código do aeroporto (SEA), o CEP (98101) e o código da área de telefone (206).
-
-|Item de lista|Sinônimos do item|
-|---|---|
-|`Seattle`|`sea-tac`, `sea`, `98101`, `206`, `+1` |
-|`Paris`|`cdg`, `roissy`, `ory`, `75001`, `1`, `+33`|
-
-`book 2 tickets to paris`
-
-Na declaração anterior, a palavra `paris` é mapeada para o item paris como parte da entidade de lista `Cities`. A entidade de lista corresponde ao nome normalizado do item, assim como aos sinônimos do item.
-
-```JSON
-"entities": [
-  {
-    "entity": "paris",
-    "type": "Cities",
-    "startIndex": 18,
-    "endIndex": 22,
-    "resolution": {
-      "values": [
-        "Paris"
-      ]
-    }
-  }
-]
-```
-
-Outra declaração de exemplo, que usa um sinônimo para Paris:
-
-`book 2 tickets to roissy`
-
-```JSON
-"entities": [
-  {
-    "entity": "roissy",
-    "type": "Cities",
-    "startIndex": 18,
-    "endIndex": 23,
-    "resolution": {
-      "values": [
-        "Paris"
-      ]
-    }
-  }
-]
-```
+As [entidades de lista](reference-entity-list.md) representam um conjunto fixo e fechado de palavras relacionadas junto com seus sinônimos. O LUIS não descobre valores adicionais para entidades de lista. Use o recurso **Recomendado** para consultar sugestões de novas palavras com base na lista atual. Se houver mais de uma entidade de lista com o mesmo valor, cada entidade será retornada na consulta de ponto de extremidade. 
 
 ## <a name="prebuilt-entity-data"></a>Dados de entidade predefinida
 Entidades [predefinidas](luis-concept-entity-types.md) são descobertas com base em uma correspondência de expressão regular usando o projeto [Recognizers-Text](https://github.com/Microsoft/Recognizers-Text) de software livre. Entidades predefinidas são retornadas na matriz de entidades e usam o nome do tipo que começa com `builtin::`. O texto a seguir é uma declaração de exemplo com as entidades predefinidas retornadas:
@@ -369,35 +243,8 @@ Entidades [predefinidas](luis-concept-entity-types.md) são descobertas com base
 ```
 
 ## <a name="regular-expression-entity-data"></a>Dados de entidade de expressão regular
-Entidades de [expressão regular](luis-concept-entity-types.md) são descobertas com base em uma correspondência de expressão regular usando uma expressão que você fornece ao criar a entidade. Ao usar o `kb[0-9]{6}` como a definição de entidade de expressão regular, a resposta JSON a seguir é uma declaração de exemplo com as entidades de expressão regular retornadas para a consulta `When was kb123456 published?`:
 
-```JSON
-{
-  "query": "when was kb123456 published?",
-  "topScoringIntent": {
-    "intent": "FindKBArticle",
-    "score": 0.933641255
-  },
-  "intents": [
-    {
-      "intent": "FindKBArticle",
-      "score": 0.933641255
-    },
-    {
-      "intent": "None",
-      "score": 0.04397359
-    }
-  ],
-  "entities": [
-    {
-      "entity": "kb123456",
-      "type": "KB number",
-      "startIndex": 9,
-      "endIndex": 16
-    }
-  ]
-}
-```
+Uma [entidade de expressão regular](reference-entity-regular-expression.md) extrai uma entidade com base em um padrão de expressão regular fornecido por você.
 
 ## <a name="extracting-names"></a>Extraindo nomes
 Obter nomes de uma declaração é difícil, porque um nome pode ser quase qualquer combinação de letras e palavras. Dependendo de qual tipo de nome você está extraindo, haverá várias opções. As sugestões a seguir não são regras, mas mais diretrizes.
@@ -408,17 +255,17 @@ As entidades [PersonName](luis-reference-prebuilt-person.md) e [GeographyV2](lui
 
 ### <a name="names-of-people"></a>Nomes de pessoas
 
-Os nomes de pessoas podem ter um formato pequeno dependendo do idioma e da cultura. Usar qualquer um **[personName](luis-reference-prebuilt-person.md)** entidade ou uma **[entidade simples](luis-concept-entity-types.md#simple-entity)** com [funções](luis-concept-roles.md) da primeira e Sobrenome. 
+Os nomes de pessoas podem ter um formato pequeno dependendo do idioma e da cultura. Use uma entidade **[PersonName](luis-reference-prebuilt-person.md)** predefinida ou uma **[entidade simples](luis-concept-entity-types.md#simple-entity)** com [ funções ](luis-concept-roles.md) de First e Last Name. 
 
-Se você usar a entidade simple, certifique-se dar exemplos que usam o primeiro e último nome em diferentes partes da expressão, em declarações de comprimentos diferentes e declarações entre todas as intenções, incluindo a nenhum intencionais. [Examine](luis-how-to-review-endoint-utt.md) declarações de ponto de extremidade regularmente para rotular nomes que não foram previstos corretamente.
+Se você usar a entidade simples, certifique-se de fornecer exemplos que usam o nome e o sobrenome em diferentes partes do expressão, em declarações de comprimentos diferentes e declarações em todas as intenções, incluindo a intenção de nenhum. [Examine](luis-how-to-review-endoint-utt.md) declarações de ponto de extremidade regularmente para rotular nomes que não foram previstos corretamente.
 
 ### <a name="names-of-places"></a>Nomes de locais
 
-Nomes de localização são definidos e conhecidos, como cidades, municípios, estados, províncias e países/regiões. Usar a entidade predefinida **[geographyV2](luis-reference-prebuilt-geographyv2.md)** para extrair informações de localização.
+Os nomes de local são definidos e conhecidos como cidades, municípios, Estados, províncias e países/regiões. Use a entidade predefinida **[geographyV2](luis-reference-prebuilt-geographyv2.md)** para extrair informações de localização.
 
 ### <a name="new-and-emerging-names"></a>Nomes novos e emergentes
 
-Alguns aplicativos precisam poder encontrar nomes novos e emergentes, como produtos ou empresas. Esses tipos de nomes são o tipo mais difícil de extração de dados. Começar com uma **[entidade simples](luis-concept-entity-types.md#simple-entity)** e adicione um [lista de frases](luis-concept-feature.md). [Examine](luis-how-to-review-endoint-utt.md) declarações de ponto de extremidade regularmente para rotular nomes que não foram previstos corretamente.
+Alguns aplicativos precisam poder encontrar nomes novos e emergentes, como produtos ou empresas. Esses tipos de nomes são o tipo mais difícil de extração de dados. Comece com uma **[entidade simples](luis-concept-entity-types.md#simple-entity)** e adicione uma [lista de frases](luis-concept-feature.md). [Examine](luis-how-to-review-endoint-utt.md) declarações de ponto de extremidade regularmente para rotular nomes que não foram previstos corretamente.
 
 ## <a name="pattern-roles-data"></a>Dados de funções de padrão
 Funções são diferenças contextuais de entidades.
@@ -482,51 +329,10 @@ Funções são diferenças contextuais de entidades.
 ```
 
 ## <a name="patternany-entity-data"></a>Dados de entidade pattern.any
-Entidades pattern.any são entidades de comprimento variável usadas em declarações de modelo de um [padrão](luis-concept-patterns.md).
 
-```JSON
-{
-  "query": "where is the form Understand your responsibilities as a member of the community and who needs to sign it after I read it?",
-  "topScoringIntent": {
-    "intent": "FindForm",
-    "score": 0.999999464
-  },
-  "intents": [
-    {
-      "intent": "FindForm",
-      "score": 0.999999464
-    },
-    {
-      "intent": "GetEmployeeBenefits",
-      "score": 4.883697E-06
-    },
-    {
-      "intent": "None",
-      "score": 1.02040713E-06
-    },
-    {
-      "intent": "GetEmployeeOrgChart",
-      "score": 9.278342E-07
-    },
-    {
-      "intent": "MoveAssetsOrPeople",
-      "score": 9.278342E-07
-    }
-  ],
-  "entities": [
-    {
-      "entity": "understand your responsibilities as a member of the community",
-      "type": "FormName",
-      "startIndex": 18,
-      "endIndex": 78,
-      "role": ""
-    }
-  ]
-}
-```
+[Padrão. any](reference-entity-pattern-any.md) é um espaço reservado de comprimento variável usado somente no modelo de um padrão expressão para marcar onde a entidade começa e termina.  
 
-
-## <a name="sentiment-analysis"></a>Análise de sentimento
+## <a name="sentiment-analysis"></a>Análise de Sentimento
 Se a análise de sentimento estiver configurada, a resposta JSON do LUIS incluirá a análise de sentimento. Saiba mais sobre a análise de sentimento na documentação [Análise de Texto](https://docs.microsoft.com/azure/cognitive-services/text-analytics/).
 
 ### <a name="sentiment-data"></a>Dados de sentimento

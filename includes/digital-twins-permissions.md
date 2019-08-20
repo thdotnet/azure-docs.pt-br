@@ -5,15 +5,15 @@ services: digital-twins
 author: dsk-2015
 ms.service: digital-twins
 ms.topic: include
-ms.date: 06/28/2019
+ms.date: 08/12/2019
 ms.author: dkshir
 ms.custom: include file
-ms.openlocfilehash: 324f41055cf333081f308a3ff533ff7df6b33038
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: fc2e2fc05de66de6f428e6b8ca7c94f82003ba2a
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "67479152"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "69012028"
 ---
 >[!NOTE]
 >Esta seção fornece instruções para o [novo registro do aplicativo do Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app). Se você ainda tiver o registro de aplicativo nativo herdado, poderá usá-lo, desde que seja compatível. Além disso, se por algum motivo a nova forma de registro de aplicativo não estiver funcionando em sua configuração, você poderá tentar criar um aplicativo Azure Active Directory nativo legado. Leia [Registrar seu aplicativo Gêmeos Digitais do Azure com o legado do Azure Active Directory](../articles/digital-twins/how-to-use-legacy-aad.md) para obter mais instruções. 
@@ -37,9 +37,18 @@ ms.locfileid: "67479152"
 
     ![ID do aplicativo do Azure Active Directory](./media/digital-twins-permissions/aad-app-reg-app-id.png)
 
-1. Abra o painel **Permissões de API** para o registro do aplicativo. Selecione o botão **Adicionar uma permissão**. No painel **Solicitar permissões de API**, selecione a guia **APIs que a minha organização usa** e pesquise **Azure Smart Spaces**. Selecione a API **Azure Smart Spaces Service**.
+1. Abra o painel **Permissões de API** para o registro do aplicativo. Selecione o botão **Adicionar uma permissão**. No painel **Solicitar permissões de API**, selecione a guia **APIs que a minha organização usa** e pesquise por:
+    
+    1. **Gêmeos Digitais do Azure**. Selecione a **API de Gêmeos Digitais do Azure**.
 
-    ![API de Pesquisa](./media/digital-twins-permissions/aad-app-search-api.png)
+        ![API de Pesquisa ou Gêmeos Digitais do Azure](./media/digital-twins-permissions/aad-aap-search-api-dt.png)
+
+    1. Como alternativa, pesquise **Espaços Inteligentes do Azure**. Selecione a API **Azure Smart Spaces Service**.
+
+        ![Pesquisar a API para Espaços Inteligentes do Azure](./media/digital-twins-permissions/aad-app-search-api.png)
+
+    > [!NOTE]
+    > O nome exato que aparecerá quando pesquisado pode variar dependendo de a qual locatário do Azure você pertence.
 
 1. A API selecionada é exibida como **Gêmeos Digitais do Azure** no mesmo painel **Solicitar permissões de API**. Selecione a lista suspensa **Ler (1)** e a caixa de seleção **Read.Write**. Selecione o botão **Adicionar permissões**.
 

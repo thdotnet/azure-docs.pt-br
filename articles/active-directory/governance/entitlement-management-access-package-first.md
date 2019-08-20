@@ -16,12 +16,12 @@ ms.date: 07/23/2019
 ms.author: ajburnle
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1688651466ba6748e1254c9d33bb24435602868b
-ms.sourcegitcommit: bafb70af41ad1326adf3b7f8db50493e20a64926
+ms.openlocfilehash: 76ba284ec1a30322a24c762a1829b399f2583c6c
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/25/2019
-ms.locfileid: "68489161"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69032927"
 ---
 # <a name="tutorial-create-your-first-access-package-in-azure-ad-entitlement-management-preview"></a>Tutorial: Criar seu primeiro pacote de acesso no gerenciamento de direitos do Azure AD (Versão Prévia)
 
@@ -44,7 +44,9 @@ Neste tutorial, você aprenderá como:
 > * Demonstrar como um usuário interno pode solicitar o pacote de acesso
 > * Aprovar a solicitação de acesso
 
-Se você não tiver uma licença P2 do Azure AD Premium ou E5 do Enterprise Mobility + Security, crie uma [avaliação gratuita do E5 do Enterprise Mobility + Security](https://signup.microsoft.com/Signup?OfferId=87dd2714-d452-48a0-a809-d2f58c4f68b7&ali=1).
+Para obter uma demonstração passo a passo do processo de implantação do gerenciamento de direitos do Azure Active Directory, incluindo a criação de seu primeiro pacote de acesso, veja o vídeo a seguir:
+
+>[!VIDEO https://www.youtube.com/embed/zaaKvaaYwI4]
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -52,6 +54,8 @@ Para usar o gerenciamento de direitos do Azure AD (Versão Prévia), é necessá
 
 - Azure AD Premium P2
 - Licença do Enterprise Mobility + Security (EMS) E5
+
+Se você não tiver uma licença P2 do Azure AD Premium ou E5 do Enterprise Mobility + Security, crie uma [avaliação gratuita do E5 do Enterprise Mobility + Security](https://signup.microsoft.com/Signup?OfferId=87dd2714-d452-48a0-a809-d2f58c4f68b7&ali=1).
 
 ## <a name="step-1-set-up-users-and-group"></a>Etapa 1: Configurar usuários e grupo
 

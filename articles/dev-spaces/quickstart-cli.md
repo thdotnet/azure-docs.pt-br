@@ -11,10 +11,10 @@ description: Implantar um microsserviço no AKS com o Azure Dev Spaces
 keywords: Docker, Kubernetes, Azure, AKS, Serviço de Kubernetes do Azure, contêineres, Helm, malha de serviço, roteamento de malha de serviço, kubectl, k8s
 manager: gwallace
 ms.openlocfilehash: 39fb7658140a2eda948cd0dc0e58d71b0b9a053b
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "67710669"
 ---
 # <a name="quickstart-develop-an-application-on-kubernetes-using-azure-dev-spaces"></a>Início Rápido: Desenvolver um aplicativo no Kubernetes usando o Azure Dev Spaces
@@ -72,7 +72,7 @@ cd dev-spaces/samples/nodejs/getting-started/webfrontend
 
 ## <a name="prepare-the-application"></a>Preparar o aplicativo
 
-Para executar o aplicativo no Azure Dev Spaces, você precisará de um Dockerfile e de um gráfico do Helm. Para algumas linguagens, como [Java][java-quickstart], [.NET core][netcore-quickstart] e [Node.js][nodejs-quickstart], as ferramentas de cliente do Azure Dev Spaces podem gerar todos os ativos necessários. Para muitas outras linguagens, como Go, PHP e Python, as ferramentas de cliente podem gerar o gráfico do Helm, desde que você possa fornecer um Dockerfile válido.
+Para executar o aplicativo no Azure Dev Spaces, você precisará de um Dockerfile e de um gráfico do Helm. Para algumas linguagens, como [Java][java-quickstart], [.NET Core][netcore-quickstart] e [Node.js][nodejs-quickstart], as ferramentas de cliente do Azure Dev Spaces podem gerar todos os ativos necessários. Para muitas outras linguagens, como Go, PHP e Python, as ferramentas de cliente podem gerar o gráfico do Helm, desde que você possa fornecer um Dockerfile válido.
 
 Gerar os ativos de gráfico do Helm e do Docker para executar o aplicativo no Kubernetes usando o comando `azds prep`:
 
@@ -108,13 +108,13 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 ...
 ```
 
-Veja o serviço em execução abrindo a URL pública que é exibida na saída do comando `azds up`. Neste exemplo, a URL pública é *http://webfrontend.1234567890abcdef1234.eus.azds.io/*.
+Veja o serviço em execução abrindo a URL pública que é exibida na saída do comando `azds up`. Neste exemplo, a URL pública é *http://webfrontend.1234567890abcdef1234.eus.azds.io/* .
 
 Se você parar o comando `azds up` usando *Ctrl + c*, o serviço continuará a executar no AKS e a URL pública permanecerá disponível.
 
 ## <a name="update-code"></a>Atualizar código
 
-Para implantar uma versão atualizada do serviço, você pode atualizar qualquer arquivo em seu projeto e executar novamente o comando `azds up`. Por exemplo: 
+Para implantar uma versão atualizada do serviço, você pode atualizar qualquer arquivo em seu projeto e executar novamente o comando `azds up`. Por exemplo:
 
 1. Se `azds up` ainda estiver em execução, pressione *Ctrl + c*.
 1. Atualize a [linha 13 em `server.js`](https://github.com/Azure/dev-spaces/blob/master/samples/nodejs/getting-started/webfrontend/server.js#L13) para:

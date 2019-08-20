@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: yexu
-ms.openlocfilehash: 52dee0ee60c111c56c42e0452f8f8750ea9ea4e6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 117b6d53a3392e8a4f75d5d1966e3f48fb66d5ce
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66167538"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68966404"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information"></a>Carregar incrementalmente os dados do Banco de Dados SQL do Azure para o Armazenamento de Blobs do Azure usando informações de controle de alterações 
 Neste tutorial, você cria um data factory do Azure com um pipeline que carrega dados delta com base em informações de  **controle de alterações** no Banco de Dados SQL do Azure de origem para um armazenamento de blobs do Azure.  
@@ -216,7 +216,7 @@ Nesta etapa, você vincula a Conta de Armazenamento do Azure ao data factory.
         }
     }
     ```
-2. No **Azure PowerShell**, alterne para a pasta **C:\ADFTutorials\IncCopyChgTrackingTutorial**.
+2. No **Azure PowerShell**, alterne para a pasta **C:\ADFTutorials\IncCopyChangeTrackingTutorial**.
 3. Execute o cmdlet **Set-AzDataFactoryV2LinkedService** para criar o serviço vinculado: **AzureStorageLinkedService**. No exemplo a seguir, você passa valores para os parâmetros **ResourceGroupName** e **DataFactoryName**. 
 
     ```powershell
@@ -235,7 +235,7 @@ Nesta etapa, você vincula a Conta de Armazenamento do Azure ao data factory.
 ### <a name="create-azure-sql-database-linked-service"></a>Crie um serviço vinculado do Banco de Dados SQL do Azure.
 Nesta etapa, você vincula o banco de dados SQL do Azure ao data factory.
 
-1. Crie um arquivo JSON chamado **AzureSQLDatabaseLinkedService.json** na pasta **C:\ADFTutorials\IncCopyChangeTrackingTutorial** usando o conteúdo a seguir: Substitua servidor, nome do banco de dados **, &lt;id do usuário&gt; e &lt;senha&gt;** pelo nome do seu servidor SQL, nome do seu banco de dados, ID do usuário e senha do Azure antes de salvar o arquivo. 
+1. Crie um arquivo JSON chamado **AzureSQLDatabaseLinkedService.json** na pasta **C:\ADFTutorials\IncCopyChangeTrackingTutorial** usando o conteúdo a seguir: Substitua **&lt;servidor&gt;, &lt;nome do banco de dados **, &lt;id do usuário&gt; e &lt;senha&gt;** pelo nome do seu servidor SQL, nome do seu banco de dados, ID do usuário e senha do Azure antes de salvar o arquivo. 
 
     ```json
     {
@@ -370,7 +370,7 @@ Nesta etapa, você cria um conjunto de dados para armazenar a versão do control
     ```
 
     Você pode criar a tabela table_store_ChangeTracking_version como parte dos pré-requisitos.
-2.  Execute o cmdlet Set-AzDataFactoryV2Dataset para criar o conjunto de dados: WatermarkDataset
+2.  Execute o cmdlet Set-AzDataFactoryV2Dataset para criar o conjunto de dados: ChangeTrackingDataset
     
     ```powershell
     Set-AzDataFactoryV2Dataset -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "ChangeTrackingDataset" -File ".\ChangeTrackingDataset.json"

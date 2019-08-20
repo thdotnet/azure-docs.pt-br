@@ -7,12 +7,12 @@ ms.topic: sample
 ms.date: 08/05/2019
 ms.author: mjbrown
 ms.custom: seodec18
-ms.openlocfilehash: 79302fc0f9addc70461d21c03b02416d15a6fa6c
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 45f5e21e05cf627d418cb66418cf305833a73891
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68814931"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68965100"
 ---
 # <a name="manage-azure-cosmos-db-sql-api-resources-using-powershell"></a>Gerenciar recursos da API de SQL do Azure Cosmos DB usando PowerShell
 
@@ -116,16 +116,15 @@ Esse comando permite que você atualize as propriedades de sua conta de banco de
 
 * Adicionar ou remover regiões
 * Alterar a política de consistência padrão
-* Alterar a política de Failover
 * Alterar o filtro de intervalo de IP
 * Alterar as configurações de Rede Virtual
 * Habilitar vários mestres
 
 > [!NOTE]
-> Esse comando permite adicionar e remover regiões, mas não permite modificar as prioridades de failover. Para modificar a prioridade de failover, confira [Modificar a prioridade de failover para uma conta do Azure Cosmos](#modify-failover-priority).
+> Esse comando permite adicionar e remover regiões, mas não permite modificar as prioridades de failover ou alterar a região com `failoverPriority=0`. Para modificar a prioridade de failover, confira [Modificar a prioridade de failover para uma conta do Azure Cosmos](#modify-failover-priority).
 
 ```azurepowershell-interactive
-# Update an Azure Cosmos Account and set Consistency level to Session
+# Get an Azure Cosmos Account (assume it has two regions currently West US 2 and East US 2) and add a third region
 
 $resourceGroupName = "myResourceGroup"
 $accountName = "myaccountname"
@@ -133,9 +132,13 @@ $accountName = "myaccountname"
 $account = Get-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
     -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName -Name $accountName
 
-$consistencyPolicy = @{ "defaultConsistencyLevel"="Session" }
+$locations = @(
+    @{ "locationName"="West US 2"; "failoverPriority"=0 },
+    @{ "locationName"="East US 2"; "failoverPriority"=1 },
+    @{ "locationName"="South Central US"; "failoverPriority"=2 }
+)
 
-$account.Properties.consistencyPolicy = $consistencyPolicy
+$account.Properties.locations = $locations
 $CosmosDBProperties = $account.Properties
 
 Set-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
@@ -235,9 +238,9 @@ Select-Object $keys
 
 ### <a id="modify-failover-priority"></a> Modificar a prioridade de failover
 
-Para contas de banco de dados de várias regiões, você pode alterar a ordem em que uma conta do Cosmos promoverá réplicas de leitura secundárias caso ocorra um failover regional na réplica de gravação primária. Quando a região com `failoverPriority=0` é modificada, esse comando pode também ser usado para iniciar uma simulação de recuperação de desastre para testar o planejamento de recuperação de desastre.
+Para contas de banco de dados de várias regiões, você pode alterar a ordem em que uma conta do Cosmos promoverá réplicas de leitura secundárias caso ocorra um failover regional na réplica de gravação primária. A modificação de `failoverPriority=0` também pode ser usada para iniciar uma análise de recuperação de desastre para testar o planejamento de recuperação de desastre.
 
-Para o exemplo a seguir, suponha que a conta tenha uma prioridade de failover atual de westus=0 e eastus=1 e inverta as regiões.
+Para o exemplo abaixo, suponha que a conta tem uma prioridade de failover atual de `West US 2 = 0` e `East US 2 = 1` e inverta as regiões.
 
 > [!CAUTION]
 > Alterar `locationName` para `failoverPriority=0` disparará um failover manual para uma conta do Azure Cosmos. Nenhuma outra alteração de prioridade disparará um failover.
@@ -248,10 +251,14 @@ Para o exemplo a seguir, suponha que a conta tenha uma prioridade de failover at
 $resourceGroupName = "myResourceGroup"
 $accountName = "mycosmosaccount"
 
-$failoverPolicies = @(
-    @{ "locationName"="East US"; "failoverPriority"=0 },
-    @{ "locationName"="West US"; "failoverPriority"=1 }
+$failoverRegions = @(
+    @{ "locationName"="East US 2"; "failoverPriority"=0 },
+    @{ "locationName"="West US 2"; "failoverPriority"=1 }
 )
+
+$failoverPolicies = @{
+    "failoverPolicies"= $failoverRegions
+}
 
 Invoke-AzResourceAction -Action failoverPriorityChange `
     -ResourceType "Microsoft.DocumentDb/databaseAccounts" -ApiVersion "2015-04-08" `

@@ -1,33 +1,44 @@
 ---
 title: Introdução ao Azure Search – Azure Search
-description: O Azure Search é um serviço de pesquisa em nuvem hospedado totalmente gerenciado da Microsoft. Examine as descrições de recursos, um fluxo de trabalho de desenvolvimento, como o Azure Search se compara a outros produtos de pesquisa da Microsoft e como começar.
-manager: cgronlun
+description: O Azure Search é um serviço de pesquisa em nuvem hospedado totalmente gerenciado da Microsoft. Examine as descrições de recursos, o fluxo de trabalho de desenvolvimento, comparações com outro produtos de pesquisa da Microsoft e como começar.
+manager: nitinme
 author: HeidiSteen
 services: search
 ms.service: search
 ms.topic: overview
-ms.date: 05/02/2019
+ms.date: 08/13/2019
 ms.author: heidist
-ms.custom: seodec2018
-ms.openlocfilehash: 7a12c9153332e9d6fc70512bc55fe0a53f7c78fc
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: eefa0eb5d1e15df34089d7baa3241cbbed4724c2
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827160"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69034843"
 ---
 # <a name="what-is-azure-search"></a>O que é o Azure Search?
-O Azure Search é uma solução de pesquisa como serviço na nuvem que oferece aos desenvolvedores APIs e ferramentas para adicionar uma experiência de pesquisa avançada para conteúdo privado e heterogêneo em aplicativos Web, móveis e empresariais. A execução de consulta ocorre sobre um índice definido pelo usuário.
 
-+ Crie um índice de pesquisa que contém apenas seus dados, provenientes de várias plataformas e tipos de conteúdo. 
+O Azure Search é uma solução de pesquisa como serviço na nuvem que oferece aos desenvolvedores APIs e ferramentas para adicionar uma experiência de pesquisa avançada para conteúdo privado e heterogêneo em aplicativos Web, móveis e empresariais. Seu código personalizado invoca a ingestão de dados (indexação), emite solicitações de consulta e processa respostas. A experiência de pesquisa é definida no código do cliente usando a funcionalidade do Azure Search, com a execução da consulta em um índice persistente que você cria, tem e armazena em Azure Search.
 
-+ Aproveite os enriquecimentos por IA para extrair texto e recursos de arquivos de imagem, ou entidades e frases-chave de texto não processado.
+![Arquitetura do Azure Search](media/search-what-is-azure-search/azure-search-diagram.png "Arquitetura do Azure Search")
 
-+ Crie experiências de pesquisa intuitivas com navegação por faceta e filtros, sinônimos, preenchimento automático e análises de texto para termos de pesquisa corrigidos automaticamente por "você quis dizer". Obtenha relevância ajustando as funções e aumentando a lógica.
-
-+ Crie aplicativos de pesquisa para casos de uso específicos. A pesquisa geográfica oferece suporte a uma experiência de "encontrar nas proximidades". A pesquisa multilíngue é compatível com os analisadores de idioma para pesquisa de texto completo que não seja o inglês.
+<!-- + Build a search index containing only your data, sourced from multiple content types and platforms. 
++ Leverage AI enrichments to extract text and features from image files, or entities and key phrases from raw text.
++ Create intuitive search experiences with facet navigation and filters, synonyms, autocomplete, and text analysis for "did you mean" autocorrected search terms. Get relevance tuning through functions and boosting logic.
++ Create search apps for specific use-cases. Geo-search supports a "find near me" experience. Multi-lingual search is supported through language analyzers for non-English full text search. -->
 
 A funcionalidade é exposta por meio de uma [API REST](/rest/api/searchservice/) ou um [SDK do .NET](search-howto-dotnet-sdk.md) simples que mascara a complexidade inerente da tecnologia de pesquisa. Além das APIs, o portal do Azure fornece suporte de administração e gerenciamento de conteúdo, com as ferramentas de criação para protótipos e consultas de seus índices. Porque o serviço é executado na nuvem, infraestrutura e disponibilidade são gerenciados pela Microsoft.
+
+## <a name="when-to-use-azure-search"></a>Quando usar o Azure Search
+
+O Azure Search é adequado para os seguintes cenários de aplicativo:
+
++ Consolidação de tipos de conteúdo heterogêneo em um índice privado, único e pesquisável. As consultas são sempre em um índice que você cria e carrega com documentos e o índice sempre reside na nuvem no serviço do Azure Search. Você pode popular um índice com fluxos de documentos JSON de qualquer fonte ou plataforma. Como alternativa, para o conteúdo originado no Azure, você pode usar um *indexador* para efetuar o pull de dados em um índice. A definição de índice e gerenciamento/propriedade é um motivo importante para usar o Azure Search.
+
++ Implementação fácil de recursos relacionados à pesquisa. As APIs do Azure Search simplificam a construção da consulta, a faceted navigation, os filtros (incluindo a pesquisa geoespacial), o mapeamento de sinônimos, as consultas de digitação antecipada e o ajuste de relevância. Usando recursos internos, você pode satisfazer as expectativas do usuário final para uma experiência de pesquisa semelhante aos mecanismos de pesquisa da Web comercial.
+
++ Indexação de texto não estruturado ou extração de texto e informações de arquivos de imagem. O recurso de pesquisa cognitiva do Azure Search adiciona o processamento de IA a um pipeline de indexação. Alguns casos de uso comuns incluem OCR sobre documentos digitalizados, reconhecimento de entidade e extração de frases-chave em documentos grandes, detecção de idioma e tradução de texto e análise de sentimentos.
+
++ Requisitos linguísticos atendidos usando os analisadores personalizados e de idioma do Azure Search. Se você tiver conteúdo que não está em inglês, o Azure Search será compatível com os analisadores Lucene e com os processadores de linguagem natural da Microsoft. Você também pode configurar analisadores para obter processamento especializado de conteúdo bruto, como filtragem de marcas diacríticas.
 
 <a name="feature-drilldown"></a>
 
@@ -101,6 +112,7 @@ As principais vantagens incluem:
 + Integração dos dados do Azure (rastreadores) na camada de indexação
 + Portal do Azure para o gerenciamento central
 + Escala do Azure, confiabilidade e disponibilidade superior
++ O processamento de AI de dados brutos para torná-los mais pesquisáveis, incluindo texto de imagens ou localização de padrões em conteúdo não estruturado.
 + Análise linguística e personalizada, com analisadores para a pesquisa sólida de texto completo em 56 idiomas
 + [Principais recursos comuns aos aplicativos centrados em pesquisa](#feature-drilldown): pontuação, facetamento, sugestões, sinônimos, pesquisa geográfica e outros.
 

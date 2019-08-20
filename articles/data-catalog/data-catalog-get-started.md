@@ -1,17 +1,17 @@
 ---
 title: Criar um Catálogo de Dados do Azure
-description: Um guia de início rápido sobre como criar um Catálogo de Dados do Azure.
+description: Este início rápido descreve como criar um Catálogo de Dados do Azure usando o portal do Azure.
 author: JasonWHowell
 ms.author: jasonh
 ms.service: data-catalog
 ms.topic: quickstart
 ms.date: 08/01/2019
-ms.openlocfilehash: df2f536dc95dd74dbae1c8bda1a9934a73fd1fe0
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 854760ea0158d356cc5449c9f1fdab6161588640
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736484"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976868"
 ---
 # <a name="quickstart-create-an-azure-data-catalog"></a>Início Rápido: Criar um Catálogo de Dados do Azure
 
@@ -36,7 +36,7 @@ Você somente pode provisionar um catálogo de dados por organização (domínio
 
 1. Vá para [portal do Azure](https://portal.azure.com) > **Criar um recurso** e selecione **Catálogo de Dados**.
 
-    ![Criar Catálogo de Dados](media/data-catalog-get-started/data-catalog-create.png)
+    ![Botão Criar Catálogo de Dados do Azure](media/data-catalog-get-started/data-catalog-create.png)
 
 2. Especifique um **nome** para o catálogo de dados, a **assinatura** que você deseja usar e o **local** do catálogo e o **tipo de preço**. Em seguida, selecione **Criar**.
 

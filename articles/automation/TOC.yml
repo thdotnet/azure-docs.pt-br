@@ -276,6 +276,22 @@
         - name: Solucionar problemas de DSC (Desired State Configuration)
           href: troubleshoot/desired-state-configuration.md
           displayName: 'Desired State Configuration, troubleshoot'
+    - name: Referência
+      items:
+        - name: Soluções da comunidade
+          items:
+            - name: Dados de configuração em escala
+              href: automation-dsc-config-data-at-scale.md
+              displayName: 'DSC, Configuration Data, ConfigData'
+            - name: Criar configurações nos servidores
+              href: automation-dsc-config-from-server.md
+              displayName: 'DSC, ReverseDSC'
+            - name: Configuração baseada em STIG
+              href: automation-dsc-configuration-based-on-stig.md
+              displayName: 'DSC, Configuration'
+            - name: Converter configurações em recursos de composição
+              href: automation-dsc-create-composite.md
+              displayName: 'DSC, composite'
 - name: Gerenciar recursos compartilhados
   items:
     - name: Certificados

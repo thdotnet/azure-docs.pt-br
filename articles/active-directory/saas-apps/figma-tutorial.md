@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
-ms.openlocfilehash: 6b91ab53ba7b5ce30c1dfa4a2bd90390875b8615
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1bcf3964fb289be9b7410938f9e2eac843e795d4
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67102688"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68945190"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-figma"></a>Tutorial: Integração do Azure Active Directory ao Figma
 
@@ -122,7 +122,7 @@ Para configurar o logon único do Azure AD com o Figma, execute as seguintes eta
     > [!NOTE]
     > Esses valores não são reais. Atualize esses valores com o Identificador, a URL de Resposta e a URL de Logon reais. Você obterá `TENANT ID` da etapa 11 do artigo do Figma [Configurar o processo de SSO de SAML do Azure Active Directory](https://help.figma.com/article/243-configure-azure-active-directory-saml-sso).
 
-6. O aplicativo Figma espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar**para abrir a caixa de diálogo  **Atributos de Usuário** .
+6. O aplicativo Figma espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique em no ícone **Editar** para abrir a caixa de diálogo **Atributos do Usuário**.
 
     ![image](common/edit-attribute.png)
 
@@ -231,5 +231,5 @@ Ao clicar no bloco do Figma no Painel de Acesso, você deverá ser conectado aut
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

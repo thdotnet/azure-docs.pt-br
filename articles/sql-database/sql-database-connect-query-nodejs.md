@@ -10,12 +10,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: v-masebo
 ms.date: 03/25/2019
-ms.openlocfilehash: 4a99acaaae0c0efee61d97605a81d74549e02509
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 72e509a9a7f820c26895bdfac9216b0373729f6c
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68569197"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68947090"
 ---
 # <a name="quickstart-use-nodejs-to-query-an-azure-sql-database"></a>Início Rápido: Usar o Node.js para consultar um banco de dados SQL do Azure
 
@@ -62,7 +62,7 @@ Obtenha as informações de conexão necessárias para se conectar ao Banco de D
 
 ## <a name="create-the-project"></a>Criar o projeto
 
-Abra um prompt de comando e crie uma pasta chamada *sqltest*. Navegue até a pasta que você criou e execute o seguinte comando:
+Abra um prompt de comando e crie uma pasta chamada *sqltest*. Abra a pasta que você criou e execute o seguinte comando:
 
   ```bash
   npm init -y

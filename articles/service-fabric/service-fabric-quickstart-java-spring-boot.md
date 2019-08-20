@@ -1,5 +1,5 @@
 ---
-title: Criar um aplicativo Spring Boot no Service Fabric no Azure | Microsoft Docs
+title: 'Início Rápido: Criar um aplicativo Spring Boot no Azure Service Fabric'
 description: Neste guia de início rápido, você implanta um aplicativo Spring Boot para o Azure Service Fabric usando um aplicativo Spring Boot de exemplo.
 services: service-fabric
 documentationcenter: java
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/29/2019
 ms.author: suhuruli
-ms.custom: mvc, devcenter
-ms.openlocfilehash: f7cf3f4cc0ceba89c031f5c36e90bbd6ef3dd20a
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.custom: mvc, devcenter, seo-java-august2019
+ms.openlocfilehash: 403eec7bf4d45b5b210009588c783cc244d24387
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68327164"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68977080"
 ---
 # <a name="quickstart-deploy-a-java-spring-boot-application-to-service-fabric"></a>Início Rápido: Implantar um aplicativo Java Spring Boot no Service Fabric
 
@@ -149,7 +149,7 @@ Neste estágio, você criou um aplicativo Service Fabric para o Guia de Introdu�
     
     ![Integridade do cluster local](./media/service-fabric-quickstart-java-spring-boot/sfxlocalhost.png)
 
-1. Navegue até a pasta `gs-spring-boot/SpringServiceFabric`.
+1. Abra a pasta `gs-spring-boot/SpringServiceFabric`.
 1. Execute o seguinte comando para se conectar ao cluster local.
 
     ```bash
@@ -176,13 +176,13 @@ O Service Fabric Explorer é executado em todos os clusters do Service Fabric e 
 Para dimensionar o serviço de front-end da Web, faça o seguinte:
 
 1. Abra o Service Fabric Explorer no cluster – por exemplo, `http://localhost:19080`.
-1. Clique nas reticências (três pontos) ao lado do nó **fabric:/SpringServiceFabric/SpringGettingStarted** no modo de exibição de árvore e escolha **Dimensionar Serviço**.
+1. Selecione as reticências ( **...** ) ao lado do nó **fabric:/SpringServiceFabric/SpringGettingStarted** no modo de exibição de árvore e selecione **Dimensionar Serviço**.
 
     ![Dimensionar Serviço do Service Fabric Explorer](./media/service-fabric-quickstart-java-spring-boot/sfxscaleservicehowto.png)
 
     Agora é possível optar por dimensionar o número de instâncias do serviço.
 
-1. Altere o número para **3** e clique em **Dimensionar Serviço**.
+1. Altere o número para **3** e selecione **Dimensionar Serviço**.
 
     Uma maneira alternativa de dimensionar o serviço usando a linha de comando é a seguinte.
 
@@ -194,7 +194,7 @@ Para dimensionar o serviço de front-end da Web, faça o seguinte:
     sfctl service update --service-id 'SpringServiceFabric~SpringGettingStarted' --instance-count 3 --stateless 
     ``` 
 
-1. Clique no nó **fabric:/SpringServiceFabric/SpringGettingStarted** do modo de exibição de árvore e expanda o nó de partição (representado por um GUID).
+1. Selecione o nó **fabric:/SpringServiceFabric/SpringGettingStarted** no modo de exibição de árvore e expanda o nó de partição (representado por um GUID).
 
     ![Serviço de colocação em escala do Service Fabric Explorer concluído](./media/service-fabric-quickstart-java-spring-boot/sfxscaledservice.png)
 
@@ -207,7 +207,7 @@ Com essa tarefa de gerenciamento simples, você dobrou o número de recursos dis
 Para demonstrar o failover do serviço, é possível simular uma reinicialização do nó usando o Service Fabric Explorer. Verifique se apenas uma instância do seu serviço está em execução.
 
 1. Abra o Service Fabric Explorer no cluster – por exemplo, `http://localhost:19080`.
-1. Clique nas reticências (três pontos) ao lado do nó que está executando a instância do serviço e reinicie o nó.
+1. Clique nas reticências ( **...** ) ao lado do nó que está executando a instância do serviço e reinicie o nó.
 
     ![Reiniciar o nó do Service Fabric Explorer](./media/service-fabric-quickstart-java-spring-boot/sfxhowtofailover.png)
 1. Agora a instância do serviço é movida para um nó diferente, e seu aplicativo não passa por nenhum tempo de inatividade.

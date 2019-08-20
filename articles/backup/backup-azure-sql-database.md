@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: tutorial
 ms.date: 06/18/2019
 ms.author: dacurwin
-ms.openlocfilehash: 7312821320084c766f5b3357fe64c061df83673b
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 647ab76760d0c5ce5315a60d0a671163b902be0f
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827653"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954549"
 ---
 # <a name="about-sql-server-backup-in-azure-vms"></a>Sobre o Backup do SQL Server nas VMs do Azure
 
@@ -58,7 +58,7 @@ O Backup do Azure anunciou recentemente o suporte para [EOS SQL Servers](https:/
 2. .NET Framework 4.5.2 e superior precisa estar instalado na VM
 3. Não há suporte para o backup para FCI e bancos de dados espelhados
 
-Os usuários não serão cobrados por esse recurso até a hora em que ele estiver disponível. Todas as outras [considerações e limitações de recursos](#feature-consideration-and-limitations) aplicam-se também a essas versões. Confira os [pré-requisitos](backup-sql-server-database-azure-vms.md#prerequisites) antes de configurar a proteção no SQL Server 2008 e no SQL Server 2008 R2, que inclui a configuração da [chave do registro](backup-sql-server-database-azure-vms.md#add-registry-key-to-enable-registration) (essa etapa não será necessária quando o recurso estiver disponível para o público em geral).
+Os usuários não serão cobrados por esse recurso até a hora em que ele estiver em disponibilidade geral. Todas as outras [considerações e limitações de recursos](#feature-consideration-and-limitations) aplicam-se também a essas versões. Confira os [pré-requisitos](backup-sql-server-database-azure-vms.md#prerequisites) antes de configurar a proteção no SQL Server 2008 e no SQL Server 2008 R2, que incluem a configuração da [chave do Registro](backup-sql-server-database-azure-vms.md#add-registry-key-to-enable-registration) (essa etapa não será necessária quando o recurso estiver em disponibilidade geral).
 
 
 ## <a name="feature-consideration-and-limitations"></a>Considerações e limitações de recurso
@@ -74,8 +74,8 @@ Os usuários não serão cobrados por esse recurso até a hora em que ele estive
 - Bancos de dados com um grande número de arquivos não podem ser protegidos. O número máximo de arquivos com suporte não é **~1000**.  
 - É possível fazer backup de até **~2000** bancos de dados do SQL Server em um cofre. Caso você tenha um número maior de bancos de dados, poderá criar vários cofres.
 - Você pode configurar o backup de até **50** bancos de dados de uma vez; essa restrição ajuda a otimizar cargas de backup.
-- Damos suporte a bancos de dados de até **2TB** em tamanho; para tamanhos maiores do que isso, poderá haver problemas de desempenho.
-- Para ter uma ideia de sobre quantos bancos de dados podem ser protegidos por servidor, precisamos considerar fatores como a largura de banda, tamanho da VM, frequência de backup, tamanho do banco de dados, etc. [Baixe](http://download.microsoft.com/download/A/B/5/AB5D86F0-DCB7-4DC3-9872-6155C96DE500/SQL%20Server%20in%20Azure%20VM%20Backup%20Scale%20Calculator.xlsx) o planejador de recursos que fornece o número aproximado de bancos de dados que você pode ter por servidor com base nos recursos da VM e na política de backup.
+- Damos suporte a bancos de dados de até **2 TB** em tamanho; para tamanhos maiores do que isso, poderá haver problemas de desempenho.
+- Para ter uma ideia de sobre quantos bancos de dados podem ser protegidos por servidor, precisamos considerar fatores como a largura de banda, tamanho da VM, frequência de backup, tamanho do banco de dados, etc. [Baixe](https://download.microsoft.com/download/A/B/5/AB5D86F0-DCB7-4DC3-9872-6155C96DE500/SQL%20Server%20in%20Azure%20VM%20Backup%20Scale%20Calculator.xlsx) o planejador de recursos que fornece o número aproximado de bancos de dados que você pode ter por servidor com base nos recursos da VM e na política de backup.
 - No caso de grupos de disponibilidade, os backups são feitos de nós diferentes com base em alguns fatores. O comportamento de backup para um grupo de disponibilidade está resumido abaixo.
 
 ### <a name="back-up-behavior-in-case-of-always-on-availability-groups"></a>Faça backup do comportamento no caso de grupos de disponibilidade Always On

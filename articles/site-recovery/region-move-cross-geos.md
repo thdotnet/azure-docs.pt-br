@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 04/16/2019
 ms.author: rajanaki
 ms.custom: MVC
-ms.openlocfilehash: fe2620c7a07389b2a86d36420eadd2ef5883f5da
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 63150b8924438df8d77fdd088811d9fbe3ec2d84
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60012730"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68967304"
 ---
 # <a name="move-azure-vms-between-azure-government-and-public-regions"></a>Mover VMs do Azure entre regiões públicas e do Azure Governamental 
 
@@ -47,7 +47,7 @@ Este tutorial mostra como mover VMs do Azure entre regiões públicas e do Azure
 - Verifique se os servidores que você deseja replicar estão em conformidade com os [requisitos de VM do Azure](vmware-physical-secondary-support-matrix.md#replicated-vm-support).
 - Prepare uma conta para a instalação automática do serviço de Mobilidade em cada servidor que você deseja replicar.
 
-- Observe que, depois de fazer failover para a região de destino no Azure, você não pode executar um failback diretamente de volta para a região de origem. Você precisará configurar a replicação novamente para o destino.
+- Observe que, depois de fazer failover para a região de destino no Azure, você não poderá executar um failback diretamente de volta para a região de origem. Você precisará configurar a replicação novamente para o destino.
 
 ### <a name="verify-azure-account-permissions"></a>Verificar as permissões de conta do Azure
 
@@ -115,7 +115,7 @@ As etapas abaixo mostrarão como usar o Azure Site Recovery para copiar dados pa
 3. Em **Nome**, especifique o nome amigável **ContosoVMVault**. Caso você tenha mais de uma a. assinatura, selecione a assinatura apropriada.
 4. Crie um grupo de recursos **ContosoRG**.
 5. Especifique uma região do Azure. Para verificar as regiões com suporte, confira a disponibilidade geográfica nos [Detalhes dos Preços de Azure Site Recovery](https://azure.microsoft.com/pricing/details/site-recovery/).
-6. Nos cofres dos Serviços de Recuperação, clique em **Visão Geral** > **ConsotoVMVault** > **+Replicar**
+6. Nos cofres dos Serviços de Recuperação, clique em **Visão Geral** > **ConsotoVMVault** >  **+Replicar**
 7. Selecione **Para o Azure** > **Não virtualizado/Outro**.
 
 ### <a name="set-up-the-configuration-server-to-discover-vms"></a>Configure o servidor de configuração para descobrir VMs.
@@ -169,7 +169,7 @@ Selecione e verifique os recursos de destino.
 
 ### <a name="create-a-replication-policy"></a>Criar uma política de replicação
 
-1. Para criar uma nova política de replicação, clique em **Infraestrutura de Site Recovery** > **Políticas de Replicação** > **+Política de Replicação**.
+1. Para criar uma nova política de replicação, clique em **Infraestrutura de Site Recovery** > **Políticas de Replicação** >  **+Política de Replicação**.
 2. Em **Criar política de replicação**, especifique um nome de política.
 3. Em **Limite de RPO**, especifique o limite de RPO (objetivo de pontos de recuperação). Esse valor especifica com que frequência os pontos de recuperação de dados são criados. Um alerta será gerado se a replicação contínua exceder esse limite.
 4. Em **Retenção do ponto de recuperação**, especifique qual será a duração (em horas) da janela de retenção para cada ponto de recuperação. VMs replicadas podem ser recuperadas para qualquer ponto em uma janela. Há suporte para retenção de até 24 horas para máquinas replicadas para armazenamento premium e 72 horas para o armazenamento padrão.

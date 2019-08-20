@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/05/2019
 ms.author: TomSh
-ms.openlocfilehash: a821ce5d9e545db2dee2adbe942eab5edcfdb01f
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 09caffcfdad4b132858b6ec52b36fe037f488b3a
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68726946"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934719"
 ---
 # <a name="azure-best-practices-for-network-security"></a>Práticas recomendadas do Azure para segurança de rede
 Este artigo discute uma coleção de práticas recomendadas do Azure para aprimorar sua segurança de rede. Essas práticas recomendadas derivam da nossa experiência de rede do Azure e da experiência de clientes como você.
@@ -35,7 +35,7 @@ Para cada prática recomendada, este artigo explica:
 Essas práticas recomendadas baseiam-se em uma opinião de consenso, bem como em recursos e conjuntos de recursos da plataforma Azure, como existem no momento em que este artigo foi escrito. As opiniões e as tecnologias mudam ao longo do tempo e este artigo será atualizado regularmente para refletir essas alterações.
 
 ## <a name="use-strong-network-controls"></a>Usar controles de rede fortes
-Você pode conectar [máquinas virtuais (VMs) do Azure](https://azure.microsoft.com/services/virtual-machines/) e dispositivos a outros dispositivos em rede, colocando-os em [redes virtuais do Azure](https://docs.microsoft.com/azure/virtual-network/). Ou seja, você pode conectar cartões de interface de rede virtual a uma rede virtual para permitir comunicações baseadas em TCP / IP entre dispositivos habilitados para rede. Máquinas virtuais conectadas a uma rede virtual do Azure podem se conectar a dispositivos na mesma rede virtual, em diferentes redes virtuais, na Internet ou em suas próprias redes locais.
+Você pode conectar [máquinas virtuais (VMs) do Azure](https://azure.microsoft.com/services/virtual-machines/) e dispositivos a outros dispositivos em rede, colocando-os em [redes virtuais do Azure](../../virtual-network/index.yml). Ou seja, você pode conectar cartões de interface de rede virtual a uma rede virtual para permitir comunicações baseadas em TCP / IP entre dispositivos habilitados para rede. Máquinas virtuais conectadas a uma rede virtual do Azure podem se conectar a dispositivos na mesma rede virtual, em diferentes redes virtuais, na Internet ou em suas próprias redes locais.
 
 Ao planejar sua rede e a segurança de sua rede, recomendamos que você centralize:
 
@@ -114,7 +114,7 @@ Os dispositivos de segurança de rede do Azure podem oferecer uma segurança mel
 Para encontrar dispositivos de segurança de rede virtual do Azure disponíveis, vá para [Azure Marketplace](https://azure.microsoft.com/marketplace/) e pesquise por "segurança" e "segurança de rede".
 
 ## <a name="deploy-perimeter-networks-for-security-zones"></a>Implantação de redes de perímetro para zonas de segurança
-Uma [rede de perímetro](https://docs.microsoft.com/azure/best-practices-network-security) (também conhecida como DMZ) é um segmento de rede físico ou lógico que fornece uma camada adicional de segurança entre seus ativos e a Internet. Os dispositivos especializados de controle de acesso à rede na extremidade de uma rede de perímetro permitem apenas o tráfego desejado na sua rede virtual.
+Uma [rede de perímetro](./https://docs.microsoft.com/azure/architecture/vdc/networking-virtual-datacenter) (também conhecida como DMZ) é um segmento de rede físico ou lógico que fornece uma camada adicional de segurança entre seus ativos e a Internet. Os dispositivos especializados de controle de acesso à rede na extremidade de uma rede de perímetro permitem apenas o tráfego desejado na sua rede virtual.
 
 As redes de perímetro são úteis porque você pode concentrar seu gerenciamento, monitoramento, registro e geração de relatórios de controle de acesso de rede nos dispositivos na borda da rede virtual do Azure. Uma rede de perímetro é onde você geralmente habilita A prevenção de DDoS (negação de serviço distribuído), a detecção de invasão/sistemas de prevenção de intrusão (IDS/IPS), regras de firewall e políticas, filtragem da Web, Antimalware de rede e muito mais. Os dispositivos de segurança de rede ficam entre a Internet e sua rede virtual do Azure e têm uma interface nas duas redes.
 

@@ -1,53 +1,53 @@
 ---
-title: Log do Cofre de chaves do Azure | Microsoft Docs
+title: Registro em Log do Azure Key Vault | Microsoft Docs
 description: Use este tutorial para ajudá-lo a começar a usar os logs do Cofre da Chave do Azure.
 services: key-vault
-author: barclayn
-manager: barbkess
+author: msmbaldwin
+manager: rkarlin
 tags: azure-resource-manager
 ms.service: key-vault
-ms.topic: conceptual
-ms.date: 01/18/2019
-ms.author: barclayn
-ms.openlocfilehash: 0ae977215e52883e190ad3859eefac9e97462968
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
-ms.translationtype: MT
+ms.topic: tutorial
+ms.date: 08/12/2019
+ms.author: mbaldwin
+ms.openlocfilehash: fc0f259a4866f7eb2438938c7a10989db9200aa4
+ms.sourcegitcommit: 62bd5acd62418518d5991b73a16dca61d7430634
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205957"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68976968"
 ---
 # <a name="azure-key-vault-logging"></a>Log do Azure Key Vault
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-Depois de criar um ou mais cofres de chaves, você provavelmente desejará monitorar como e quando os cofres de chaves são acessados e por quem. Você pode fazer isso habilitando o registro em log para o Azure Key Vault, que salva as informações em uma conta de armazenamento do Azure que você fornecer. Um novo contêiner denominado **insights-logs-auditevent** é criado automaticamente para sua conta de armazenamento especificado. Você pode usar essa mesma conta de armazenamento para coletar logs para vários cofres da chave.
+Depois de criar um ou mais cofres de chaves, provavelmente você desejará monitorar como e quando os cofres de chaves serão acessados e por quem. Você pode fazer isso habilitando o registro em log do Azure Key Vault, que salva as informações em uma conta de armazenamento do Azure fornecida por você. Um novo contêiner chamado **insights-logs-auditevent** é criado automaticamente para a conta de armazenamento especificada. Você pode usar essa mesma conta de armazenamento para coletar logs de vários cofres de chaves.
 
-Você pode acessar suas informações de log 10 minutos (no máximo) após a operação do Cofre de chaves. Na maioria dos casos, será mais rápido do que isso.  Cabe a você gerenciar os logs em sua conta de armazenamento:
+Você pode acessar suas informações de log 10 minutos (no máximo) após a operação do cofre de chaves. Na maioria dos casos, será mais rápido do que isso.  Cabe a você gerenciar os logs em sua conta de armazenamento:
 
 * Use os métodos de controle de acesso padrão do Azure para proteger seus logs ao restringir quem pode acessá-los.
 * Exclua os logs que você não deseja manter em sua conta de armazenamento.
 
-Use este tutorial para ajudá-lo a começar a usar os logs do Cofre da Chave do Azure. Você vai criar uma conta de armazenamento, habilitar registro em log e interpretar as informações de log coletados.  
+Use este tutorial para ajudá-lo a começar a usar os logs do Cofre da Chave do Azure. Você criará uma conta de armazenamento, habilitará o registro em log e interpretará as informações de log coletadas.  
 
 > [!NOTE]
-> Este tutorial não inclui instruções sobre como criar cofres da chave, chaves ou segredos. Para obter essa informação, confira [O que é o Azure Key Vault?](key-vault-overview.md). Ou, para obter instruções de CLI do Azure de plataforma cruzada, consulte [este tutorial equivalente](key-vault-manage-with-cli2.md).
+> Este tutorial não inclui instruções sobre como criar cofres da chave, chaves ou segredos. Para obter essa informação, confira [O que é o Azure Key Vault?](key-vault-overview.md). Ou, para obter instruções de plataforma cruzada da CLI do Azure, confira [este tutorial equivalente](key-vault-manage-with-cli2.md).
 >
-> Este artigo fornece instruções de Azure PowerShell para atualizar o log de diagnóstico. Você também pode atualizar o log de diagnóstico usando o Azure Monitor na **logs de diagnóstico** seção do portal do Azure. 
+> Este artigo fornece instruções do Azure PowerShell para atualizar o log de diagnósticos. Você também pode atualizar o log de diagnósticos usando o Azure Monitor na seção **Logs de Diagnóstico** do portal do Azure. 
 >
 
-Para obter informações gerais sobre o Key Vault, consulte [o que é o Azure Key Vault?](key-vault-whatis.md). Para obter informações sobre onde o Cofre de chaves está disponível, consulte o [página de preços](https://azure.microsoft.com/pricing/details/key-vault/).
+Para obter informações de visão geral sobre o Key Vault, consulte [O que é o Azure Key Vault?](key-vault-whatis.md). Para obter informações sobre onde o Key Vault está disponível, consulte a [página de preços](https://azure.microsoft.com/pricing/details/key-vault/).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
 Para concluir este tutorial, você precisará do seguinte:
 
 * Um cofre da chave existente que você esteja usando.  
-* O Azure PowerShell, versão mínima do 1.0.0. Para instalar o Azure PowerShell e associá-lo à sua assinatura do Azure, consulte [Como instalar e configurar o Azure PowerShell](/powershell/azure/overview). Se você já tiver instalado o Azure PowerShell e não souber a versão do console do PowerShell do Azure, insira `$PSVersionTable.PSVersion`.  
+* Azure PowerShell, versão mínima 1.0.0. Para instalar o Azure PowerShell e associá-lo à sua assinatura do Azure, consulte [Como instalar e configurar o Azure PowerShell](/powershell/azure/overview). Se você já tiver instalado o Azure PowerShell e não souber a versão, no console do Azure PowerShell, insira `$PSVersionTable.PSVersion`.  
 * Armazenamento suficiente no Azure para seus logs do Cofre da Chave.
 
-## <a id="connect"></a>Conectar-se à sua assinatura do Cofre de chaves
+## <a id="connect"></a>Conectar-se com sua assinatura do cofre de chaves
 
-A primeira etapa na configuração de log de chave é apontar o Azure PowerShell para o Cofre de chaves que você deseja registrar.
+A primeira etapa para configurar o registro em log das chaves é apontar o Azure PowerShell para o cofre de chaves que você deseja registrar em log.
 
 Inicie uma sessão do Azure PowerShell e entre em sua conta do Azure usando o seguinte comando:  
 
@@ -55,40 +55,40 @@ Inicie uma sessão do Azure PowerShell e entre em sua conta do Azure usando o se
 Connect-AzAccount
 ```
 
-Na janela pop-up do navegador, insira o nome de usuário e a senha da sua conta do Azure. O Azure PowerShell obtém todas as assinaturas que estão associadas essa conta. Por padrão, o PowerShell usa o primeiro deles.
+Na janela pop-up do navegador, insira o nome de usuário e a senha da sua conta do Azure. O Azure PowerShell obtém todas as assinaturas associadas a essa conta. Por padrão, o PowerShell usa a primeira.
 
-Você terá que especificar a assinatura que você usou para criar o Cofre de chaves. Insira o seguinte comando para ver as assinaturas da sua conta:
+Talvez seja necessário especificar a assinatura que você usou para criar o cofre de chaves. Insira o seguinte comando para ver as assinaturas da sua conta:
 
 ```powershell
 Get-AzSubscription
 ```
 
-Em seguida, para especificar a assinatura que está associada com o Cofre de chaves que você vai estar fazendo o logon, digite:
+Em seguida, para especificar a assinatura associada ao cofre de chaves do qual os logs serão registrados, digite:
 
 ```powershell
 Set-AzContext -SubscriptionId <subscription ID>
 ```
 
-Apontando o PowerShell para a assinatura correta é uma etapa importante, especialmente se você tiver várias assinaturas associadas à sua conta. Para saber mais sobre a configuração PowerShell do Azure, consulte [Como instalar e configurar o PowerShell do Azure](/powershell/azure/overview).
+Apontar o PowerShell para a assinatura correta é uma etapa importante, especialmente se você tiver várias assinaturas associadas à sua conta. Para saber mais sobre a configuração PowerShell do Azure, consulte [Como instalar e configurar o PowerShell do Azure](/powershell/azure/overview).
 
 ## <a id="storage"></a>Criar uma conta de armazenamento para seus logs
 
-Embora você possa usar uma conta de armazenamento existente para seus logs, vamos criar uma conta de armazenamento que será dedicada aos logs do Cofre de chaves. Para sua conveniência quando tivermos de especificar isso posteriormente, armazenaremos os detalhes em uma variável chamada **sa**.
+Embora você possa usar uma conta de armazenamento existente para seus logs, criaremos uma conta de armazenamento que será dedicada aos logs do Key Vault. Para conveniência quando tivermos de especificar isso posteriormente, armazenaremos os detalhes em uma variável chamada **sa**.
 
-Para facilidade de gerenciamento adicional, também usaremos o mesmo grupo de recursos que contém o Cofre de chaves. Dos [tutorial de Introdução](key-vault-get-started.md), esse grupo de recursos é denominado **ContosoResourceGroup**, e continuaremos a usar o local Ásia Oriental. Substitua esses valores pelos seus próprios, conforme aplicável:
+Para facilidade de gerenciamento, também usaremos o mesmo grupo de recursos que contém o cofre de chaves. No [tutorial de introdução](key-vault-get-started.md), esse grupo de recursos é denominado **ContosoResourceGroup** e continuaremos a usar o local Ásia Oriental. Substitua esses valores pelos seus, conforme aplicável:
 
 ```powershell
  $sa = New-AzStorageAccount -ResourceGroupName ContosoResourceGroup -Name contosokeyvaultlogs -Type Standard_LRS -Location 'East Asia'
 ```
 
 > [!NOTE]
-> Se você decidir usar uma conta de armazenamento existente, ele deve usar a mesma assinatura como o Cofre de chaves. E ele deve usar o modelo de implantação do Azure Resource Manager, em vez do modelo de implantação clássico.
+> Se você decidir usar uma conta de armazenamento existente, ela deverá usar a mesma assinatura que seu cofre de chaves. E ela deve usar o modelo de implantação do Azure Resource Manager em vez do modelo de implantação clássico.
 >
 >
 
 ## <a id="identify"></a>Identificar o cofre da chave para seus logs
 
-No [tutorial de Introdução](key-vault-get-started.md), o nome do Cofre de chaves era **ContosoKeyVault**. Continuaremos a usar esse nome e armazena os detalhes em uma variável chamada **kv**:
+No [tutorial de introdução](key-vault-get-started.md), o nome do cofre de chaves era **ContosoKeyVault**. Continuaremos usando esse nome e armazenaremos os detalhes em uma variável chamada **kv**:
 
 ```powershell
 $kv = Get-AzKeyVault -VaultName 'ContosoKeyVault'
@@ -96,7 +96,7 @@ $kv = Get-AzKeyVault -VaultName 'ContosoKeyVault'
 
 ## <a id="enable"></a>Habilitar o registro em log
 
-Para habilitar o registro em log para o Cofre de chaves, vamos usar o **AzDiagnosticSetting conjunto** cmdlet, junto com as variáveis que criamos para a nova conta de armazenamento e o Cofre de chaves. Também vamos definir a **-habilitado** sinalizador como **$true** e defina a categoria como **AuditEvent** (a única categoria para registro em log do Cofre de chaves):
+Para habilitar o registro em log para o Key Vault, usaremos o cmdlet **Set-AzDiagnosticSetting**, juntamente com as variáveis que criamos para a nova conta de armazenamento e o cofre de chaves. Também definiremos o sinalizador **-Enabled** como **$true** e definiremos a categoria como **AuditEvent** (a única categoria para o registro em log do Key Vault):
 
 ```powershell
 Set-AzDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Enabled $true -Category AuditEvent
@@ -114,9 +114,9 @@ A saída se parece com esta:
         Enabled : False
         Days    : 0
 
-Essa saída confirma que o log está habilitado para o Cofre de chaves, ele salvará informações em sua conta de armazenamento.
+Essa saída confirma que o registro em log está habilitado para o cofre de chaves e salva as informações em sua conta de armazenamento.
 
-Opcionalmente, você pode definir uma política de retenção para os logs, de modo que os logs mais antigos são excluídos automaticamente. Por exemplo, definir a política de retenção, definindo o **- RetentionEnabled** sinalizador como **$true**e defina o **- RetentionInDays** parâmetro **90**para que os logs de mais de 90 dias sejam automaticamente excluídos.
+Opcionalmente, você pode definir uma política de retenção para os logs, de modo que os logs mais antigos sejam automaticamente excluídos. Por exemplo, defina a política de retenção definindo o sinalizador **-RetentionEnabled** como **$true** e defina o parâmetro **-RetentionInDays** como **90** para que os logs de mais de 90 dias sejam automaticamente excluídos.
 
 ```powershell
 Set-AzDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Enabled $true -Category AuditEvent -RetentionEnabled $true -RetentionInDays 90
@@ -124,24 +124,24 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Ena
 
 O que é registrado em log:
 
-* Todos os autenticados solicitações da API REST, incluindo solicitações que falharam devido a permissões de acesso, erros de sistema ou solicitações inválidas.
-* Operações na chave do cofre em si, incluindo criação, exclusão, políticas de acesso do Cofre de chaves de configuração e atualizar os atributos de Cofre de chaves, como marcas.
+* Todas as solicitações à API REST autenticadas, incluindo solicitações que falharam devido a permissões de acesso, erros do sistema ou solicitações inválidas.
+* As operações do próprio cofre de chaves, incluindo a criação, a exclusão, a configuração de políticas de acesso ao cofre de chaves e a atualização dos atributos do cofre de chaves, como as marcas.
 * Operações em chaves e segredos no cofre de chaves, incluindo:
-  * Criar, modificar ou excluir essas chaves ou segredos.
-  * Assinatura, verificando, criptografar, descriptografar, encapsular e descodificar chaves, obter segredos e listagem de chaves e segredos (e suas versões).
-* Solicitações não autenticadas que resultam em uma resposta 401. Os exemplos são as solicitações que não têm um token de portador, que estão malformadas ou expiradas ou que têm um token inválido.  
+  * A criação, modificação ou exclusão dessas chaves ou segredos.
+  * A assinatura, verificação, criptografia, descriptografia, encapsulamento e desencapsulamento de chaves, obtenção de segredos e listagem de chaves e segredos (e suas versões).
+* Solicitações não autenticadas que resultam em uma resposta 401. Por exemplo, solicitações que não têm um token de portador estão malformadas ou expiradas ou têm um token inválido.  
 
 ## <a id="access"></a>Acessar seus logs
 
-Logs do Cofre de chaves são armazenados do **insights-logs-auditevent** contêiner na conta de armazenamento que você forneceu. Para exibir os logs, você precisará baixar blobs.
+Os logs do Key Vault são armazenados no contêiner **insights-logs-auditevent** na conta de armazenamento que você forneceu. Para exibir os logs, você precisa baixar blobs.
 
-Primeiro, crie uma variável para o nome do contêiner. Você usará essa variável em todo o restante do passo a passo.
+Primeiro, crie uma variável para o nome do contêiner. Você usará essa variável em todo o restante do guia.
 
 ```powershell
 $container = 'insights-logs-auditevent'
 ```
 
-Para listar todos os blobs nesse contêiner, digite:
+Para listar todos os blobs nesse contêiner, insira:
 
 ```powershell
 Get-AzStorageBlob -Container $container -Context $sa.Context
@@ -166,7 +166,7 @@ Como você pode ver neste resultado, os blobs seguem uma convenção de nomencla
 
 Os valores de data e hora usam UTC.
 
-Como você pode usar a mesma conta de armazenamento para coletar logs de vários recursos, a ID do recurso completa no nome do blob é útil para acessar ou baixar apenas os blobs que você precisa. Mas, antes de fazer isso, primeiro vamos mostrar como baixar todos os blobs.
+Como a mesma conta de armazenamento pode ser usada para coletar logs de vários recursos, a ID do recurso completa no nome do blob será muito útil para acessar ou baixar apenas os blobs que você precisa. Mas, antes de fazer isso, primeiro vamos mostrar como baixar todos os blobs.
 
 Crie uma pasta para baixar os blobs. Por exemplo:
 
@@ -180,7 +180,7 @@ Em seguida, obtenha uma lista de todos os blobs:
 $blobs = Get-AzStorageBlob -Container $container -Context $sa.Context
 ```
 
-Redirecione essa lista pelo **Get-AzStorageBlobContent** para baixar os blobs para a pasta de destino:
+Redirecione essa lista por **Get-AzStorageBlobContent** para baixar os blobs para nossa pasta de destino:
 
 ```powershell
 $blobs | Get-AzStorageBlobContent -Destination C:\Users\username\ContosoKeyVaultLogs'
@@ -208,7 +208,7 @@ Use caracteres curinga para baixar seletivamente os blobs. Por exemplo:
   Get-AzStorageBlob -Container $container -Context $sa.Context -Blob '*/year=2016/m=01/*'
   ```
 
-Agora você está pronto para começar a examinar o conteúdo dos logs. Mas, antes de passarmos para que, você deve saber mais dois:
+Agora você está pronto para começar a examinar o conteúdo dos logs. Mas, antes de passarmos para isso, você precisa conhecer mais dois comandos:
 
 * Para consultar o status das configurações de diagnóstico do recurso cofre de chaves: `Get-AzDiagnosticSetting -ResourceId $kv.ResourceId`
 * Para desabilitar o log do recurso cofre de chaves: `Set-AzDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Enabled $false -Category AuditEvent`
@@ -221,7 +221,7 @@ Os blobs individuais são armazenados como texto, formatados como um blob JSON. 
 Get-AzKeyVault -VaultName 'contosokeyvault'`
 ```
 
-Retorna uma entrada de log de maneira semelhante a esta:
+Ele retorna uma entrada de log semelhante a esta:
 
 ```json
     {
@@ -246,7 +246,7 @@ Retorna uma entrada de log de maneira semelhante a esta:
     }
 ```
 
-A tabela a seguir lista os nomes de campo e descrições:
+A tabela a seguir lista os nomes e as descrições de campo:
 
 | Nome do campo | DESCRIÇÃO |
 | --- | --- |
@@ -254,27 +254,27 @@ A tabela a seguir lista os nomes de campo e descrições:
 | **resourceId** |ID do Recurso do Azure Resource Manager. Para os logs do Cofre da Chave, isso sempre será a ID do recurso do Cofre da Chave. |
 | **operationName** |Nome da operação, como documentado na tabela a seguir. |
 | **operationVersion** |Versão da API REST solicitada pelo cliente. |
-| **category** |Tipo de resultado. Para logs do Cofre de chaves **AuditEvent** é o único valor disponível. |
-| **resultType** |Resultado da solicitação da API REST. |
+| **category** |Tipo de resultado. Para logs do Key Vault, **AuditEvent** é o único valor disponível. |
+| **resultType** |Resultado da solicitação à API REST. |
 | **resultSignature** |Código de status HTTP. |
 | **resultDescription** |Descrição adicional sobre o resultado, quando disponível. |
 | **durationMs** |Tempo necessário para atender à solicitação da API REST, em milissegundos. Isso não inclui a latência de rede e, portanto, o tempo medido no lado cliente pode não corresponder a esse tempo. |
-| **callerIpAddress** |Endereço IP do cliente que fez a solicitação. |
+| **callerIpAddress** |Endereço IP do cliente que fez o a solicitação. |
 | **correlationId** |Um GUID opcional que o cliente pode passar para correlacionar os logs do lado do cliente aos logs do lado do serviço (Chave do Cofre). |
-| **identidade** |Identidade do token que foi apresentado na solicitação de API REST. Isso geralmente é um "usuário", uma "entidade de serviço" ou a combinação "usuário + appId," como no caso de uma solicitação que é resultante de um cmdlet do PowerShell do Azure. |
-| **properties** |Informações que variam de acordo com a operação (**operationName**). Na maioria dos casos, esse campo contém informações de cliente (a sequência de agente usuário passada pelo cliente), o URI de solicitação de API REST exato e o código de status HTTP. Além disso, quando um objeto é retornado como resultado de uma solicitação (por exemplo, **KeyCreate** ou **VaultGet**), ele também contém a chave URI (como "id"), URI ou o URI do segredo do cofre. |
+| **identidade** |Identidade do token que foi apresentado na solicitação à API REST. Geralmente, é um "usuário", uma "entidade de serviço" ou uma combinação "usuário+appId" como no caso de uma solicitação resultante de um cmdlet do Azure PowerShell. |
+| **properties** |Informações que variam de acordo com a operação (**operationName**). Na maioria dos casos, este campo contém informações de cliente (a cadeia de caracteres do agente do usuário passada pelo cliente), o URI exato de solicitação da API REST e o código de status HTTP. Além disso, quando um objeto é retornado como resultado de uma solicitação (por exemplo, **KeyCreate** ou **VaultGet**), também conterá o URI da Chave (como "id"), o URI do Cofre ou o URI do Segredo. |
 
-O **operationName** valores de campo são na *ObjectVerb* formato. Por exemplo:
+Os valores do campo **operationName** estão no formato *ObjectVerb*. Por exemplo:
 
-* Todas as operações do Cofre de chaves têm o `Vault<action>` Formatar, como `VaultGet` e `VaultCreate`.
-* Todas as operações de chave têm o `Key<action>` Formatar, como `KeySign` e `KeyList`.
-* Todas as operações do segredo têm o `Secret<action>` Formatar, como `SecretGet` e `SecretListVersions`.
+* Todas as operações do cofre de chaves têm o formato `Vault<action>`, como `VaultGet` e `VaultCreate`.
+* Todas as operações de chave têm o formato `Key<action>`, como `KeySign` e `KeyList`.
+* Todas as operações de segredo têm o formato `Secret<action>`, como `SecretGet` e `SecretListVersions`.
 
-A seguinte tabela lista os **operationName** valores e comandos da API REST correspondentes:
+A tabela a seguir lista os valores de **operationName** e os comandos da API REST correspondentes:
 
 | operationName | Comando da API REST |
 | --- | --- |
-| **Autenticação** |Autenticar por meio do ponto de extremidade do Azure Active Directory |
+| **Autenticação** |Autenticação via ponto de extremidade do Azure Active Directory |
 | **VaultGet** |[Obter informações sobre um cofre de chaves](https://msdn.microsoft.com/library/azure/mt620026.aspx) |
 | **VaultPut** |[Criar ou atualizar um cofre de chaves](https://msdn.microsoft.com/library/azure/mt620025.aspx) |
 | **VaultDelete** |[Excluir um cofre de chaves](https://msdn.microsoft.com/library/azure/mt620022.aspx) |
@@ -304,16 +304,16 @@ A seguinte tabela lista os **operationName** valores e comandos da API REST corr
 
 ## <a id="loganalytics"></a>Usar logs do Azure Monitor
 
-Você pode usar a solução de Cofre de chaves nos logs do Azure Monitor para examinar o Key Vault **AuditEvent** logs. Nos logs do Azure Monitor, você pode usar consultas de log para analisar dados e obter as informações que necessárias. 
+Você pode usar a solução do Key Vault em logs do Azure Monitor para examinar logs de **AuditEvent** do Key Vault. Nos logs do Azure Monitor, você usa consultas de log para analisar dados e obter as informações necessárias. 
 
-Para obter mais informações, incluindo como configurar isso, consulte [solução de Cofre de chaves do Azure nos logs do Azure Monitor](../azure-monitor/insights/azure-key-vault.md). Este artigo também contém instruções se você precisar migrar da solução antiga de Key Vault que foi oferecida durante os logs do Azure Monitor de visualização, onde você primeiramente roteado seus logs para uma conta de armazenamento do Azure e logs de Monitor do Azure configurado para ler a partir daí.
+Para obter mais informações, incluindo como configurar isso, consulte [Solução do Azure Key Vault em logs do Azure Monitor](../azure-monitor/insights/azure-key-vault.md). Este artigo também contém instruções se você precisar migrar da solução do Key Vault antiga que era oferecida durante a versão prévia dos logs do Azure Monitor, em que primeiro você roteava os logs para uma conta de armazenamento do Azure e configurava os logs do Azure Monitor para ler daquela conta.
 
 ## <a id="next"></a>Próximas etapas
 
-Para obter um tutorial que usa o Azure Key Vault em um aplicativo da web .NET, consulte [usar o Azure Key Vault de um aplicativo web](tutorial-net-create-vault-azure-web-app.md).
+Para obter um tutorial que usa o Azure Key Vault em um aplicativo Web .NET, confira [Usar o Azure Key Vault em um aplicativo Web](tutorial-net-create-vault-azure-web-app.md).
 
 Para referências de programação, consulte [Guia do desenvolvedor do Cofre da Chave do Azure](key-vault-developers-guide.md).
 
-Para obter uma lista dos cmdlets do Azure PowerShell 1.0 para o Azure Key Vault, consulte [cmdlets do Azure Key Vault](/powershell/module/az.keyvault/?view=azps-1.2.0#key_vault).
+Para obter uma lista dos cmdlets do Azure PowerShell 1.0 para o Azure Key Vault, confira [Cmdlets do Azure Key Vault](/powershell/module/az.keyvault/?view=azps-1.2.0#key_vault).
 
-Para obter um tutorial sobre rotação de chaves e o log de auditoria com o Azure Key Vault, consulte [configurar o Cofre de chaves com a rotação de chaves de ponta a ponta e auditoria](key-vault-key-rotation-log-monitoring.md).
+Para obter um tutorial sobre a rotação de chaves e o log de auditoria com o Azure Key Vault, confira [Configurar o Azure Key Vault com a rotação de chaves e auditoria de ponta a ponta](key-vault-key-rotation-log-monitoring.md).

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: quickstart
-ms.date: 07/15/2019
+ms.date: 08/08/2019
 ms.author: daauld
-ms.openlocfilehash: fd305c0fa9f046e6601f1d94ad4ebb1677f1787d
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 3831f89842f969ecce582c5b5d7a5f8a54c5e7a1
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68561037"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68946220"
 ---
 # <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-go-sdk"></a>Início Rápido: Criar um projeto de detecção de objeto com o SDK do Go para Visão Personalizada
 
@@ -48,7 +48,7 @@ Crie um arquivo chamado *sample.go* no diretório de seu projeto de preferência
 
 ### <a name="create-the-custom-vision-service-project"></a>Criar o projeto do Serviço de Visão Personalizada
 
-Adicione o código a seguir ao seu script para criar um novo projeto do Serviço de Visão Personalizada. Insira as chaves de assinatura nas definições pertinentes. Observe que a diferença entre criar uma detecção de objeto e um projeto de classificação de imagem é o domínio especificado na chamada **create_project**.
+Adicione o código a seguir ao seu script para criar um novo projeto do Serviço de Visão Personalizada. Insira as chaves de assinatura nas definições pertinentes. Confira o método [CreateProject](https://docs.microsoft.com/java/api/com.microsoft.azure.cognitiveservices.vision.customvision.training.trainings.createproject?view=azure-java-stable#com_microsoft_azure_cognitiveservices_vision_customvision_training_Trainings_createProject_String_CreateProjectOptionalParameter_) para especificar outras opções ao criar seu projeto (explicado no guia do portal da Web [Criar um detector](get-started-build-detector.md)).
 
 ```go
 import(
@@ -157,7 +157,7 @@ scissorsImageRegions := map[string][4]float64{
     "scissors_20.jpg": [4]float64{ 0.158088237, 0.04047389, 0.6691176, 0.843137264 },
 }
 ```
-Em seguida, use esse mapa de associações para carregar cada imagem de exemplo com suas coordenadas de região. Adicione os códigos a seguir.
+Em seguida, use esse mapa de associações para carregar cada imagem de exemplo com suas coordenadas de região (você pode carregar até 64 imagens em um único lote). Adicione os códigos a seguir.
 
 > [!NOTE]
 > Você precisará alterar o caminho para as imagens com base no local em que baixou o projeto Amostras do SDK do Go para os Serviços Cognitivos anteriormente.

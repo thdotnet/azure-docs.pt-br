@@ -15,13 +15,13 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 03/16/2018
-ms.openlocfilehash: 8a19f414f31c307111edad876ed973ff4027d907
-ms.sourcegitcommit: fe6b91c5f287078e4b4c7356e0fa597e78361abe
+ms.date: 08/13/2019
+ms.openlocfilehash: 6d79bfa8f390d145bfd963b40497030140a3d135
+ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/29/2019
-ms.locfileid: "68591924"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69013584"
 ---
 # <a name="provision-the-data-science-virtual-machine-for-linux-ubuntu"></a>Provisionar a Máquina Virtual de Ciência de Dados para Linux (Ubuntu)
 
@@ -86,32 +86,35 @@ Antes de criar uma Máquina Virtual de Ciência de Dados para Linux, você deve 
 Veja as etapas para criar uma instância da Máquina Virtual de Ciência de Dados para Linux:
 
 1. Navegue até a listagem de máquinas virtuais no [Portal do Azure](https://portal.azure.com/#create/microsoft-dsvm.linux-data-science-vm-ubuntulinuxdsvmubuntu). Você pode ser solicitado a entrar na sua conta do Azure, caso ainda não esteja conectado. 
-1. Clique em **Criar** (na parte inferior) para abrir o assistente. ![configure-data-science-vm](./media/dsvm-ubuntu-intro/configure-data-science-virtual-machine.png)
-1. As seções a seguir fornecem as entradas para cada uma das etapas no assistente (enumeradas à direita da figura acima) que são usadas para criar a Máquina Virtual de Ciência de Dados da Microsoft. Aqui estão as entradas necessárias para configurar cada uma das seguintes etapas:
+1. Clique em **Criar** para abrir o assistente.
+    ![configure-data-science-vm](./media/dsvm-ubuntu-intro/configure-data-science-virtual-machine.png)
+1. As seções a seguir fornecem as entradas para cada uma das etapas no assistente que são usadas para criar a Máquina Virtual de Ciência de Dados da Microsoft. Aqui estão as entradas necessárias para configurar cada uma das seguintes etapas:
 
-   a. **Noções básicas**:
-
-   * **Nome**: O nome do servidor de ciência de dados que você está criando.
-   * **Tipo de disco da VM**: Escolha **SSD Premium** se preferir uma unidade de estado sólido (SSD). Caso contrário, escolha **HDD Standard**. 
-   * **Nome de usuário**: A primeira ID de entrada da conta.
-   * **Senha**: Primeira senha da conta (você pode usar a chave pública SSH, em vez de senha).
-   * **Assinatura**: Se você tiver mais de uma assinatura, selecione aquela em que o computador será criado e cobrado. Você deve ter privilégios de criação de recurso nessa assinatura.
-   * **Grupo de recursos**: Você pode criar um grupo novo ou usar um grupo existente.
-   * **Localização**: Selecione o data center mais apropriado. Normalmente, é o datacenter que contém a maioria dos seus dados ou que está mais próximo de sua localização física para o acesso mais rápido à rede.
-
-   b. **Tamanho**:
-
-   * Selecione um dos tipos de servidor que atenda aos seus requisitos funcionais e restrições de custo. Selecione uma VM de classe NC ou ND para instâncias de VMs com base em GPU. A página [Produtos disponíveis por região](https://azure.microsoft.com/global-infrastructure/services/) lista as regiões com GPUs.
-
-   c. **Configurações**:
-
-   * Na maioria dos casos, você pode simplesmente usar os valores padrão. Passe o ponteiro do mouse sobre o link informativo para obter ajuda sobre um campo específico, caso você queira considerar o uso de valores não padrão.
-
-   d. **Resumo**:
-
-   * Verifique se todas as informações inseridas estão corretas. Um link é fornecido para os termos de uso. A VM não tem encargos adicionais além dos de computação para o tamanho do servidor que você escolheu na etapa **Tamanho** . Para iniciar o provisionamento, clique em **Criar**. 
-
-O provisionamento deve demorar cerca de 5 minutos. O status do provisionamento é exibido no Portal do Azure.
+    a. **Noções básicas**:
+    
+    * **Assinatura**: Se você tiver mais de uma assinatura, selecione aquela em que o computador será criado e cobrado. Você deve ter privilégios de criação de recurso nessa assinatura.
+    * **Grupo de recursos**: Você pode criar um grupo novo ou usar um grupo existente.
+    * **Nome da máquina virtual**: O nome do servidor de ciência de dados que você está criando.
+    * **Região**: Selecione o data center mais apropriado. Normalmente, é o datacenter que contém a maioria dos seus dados ou que está mais próximo de sua localização física para o acesso mais rápido à rede.
+    * **Opções de disponibilidade**: Defina isso se você quiser usar essa VM em conjuntos de disponibilidade/zonas, caso contrário, deixe o padrão.
+    * **Imagem**: Deixar o valor padrão
+    * **Tamanho**: Selecione um dos tipos de servidor que atenda aos seus requisitos funcionais e restrições de custo. Selecione uma VM de classe NC ou ND para instâncias de VMs com base em GPU. 
+    * **Nome de Usuário**: Nome de usuário administrador
+    * **Chave pública SSH**: Chave pública RSA em formato de linha única (você pode usar a senha em vez da chave SSH).
+    
+    b. **Discos**:
+    
+    * **Tipo de disco de SO**: Escolha **SSD Premium** se preferir uma unidade de estado sólido (SSD). Caso contrário, escolha **HDD Standard**.
+    
+    c. Para o restante das configurações, você pode usar apenas os valores padrão. Passe o ponteiro do mouse sobre o link informativo para obter ajuda sobre um campo específico, caso você queira considerar o uso de valores não padrão.
+    
+    Por fim, selecione **Examinar + criar**
+    
+    d. **Examinar + criar**:
+    
+    * Depois que a validação for aprovada, verifique se todas as informações inseridas estão corretas. Um link é fornecido para os termos de uso. A VM não tem encargos adicionais além dos de computação para o tamanho do servidor que você escolheu na entrada Tamanho. Para iniciar o provisionamento, clique em **Criar**.
+    
+    O provisionamento deve demorar cerca de 5 minutos. O status do provisionamento é exibido no Portal do Azure.
 
 ## <a name="how-to-access-the-data-science-virtual-machine-for-linux"></a>Como acessar uma Máquina Virtual de Ciência de Dados para Linux
 

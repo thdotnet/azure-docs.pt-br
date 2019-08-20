@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/22/2019
 ms.author: jeedes
-ms.openlocfilehash: e18c5dfe3649f74a9f84c605785ca99748298bea
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cc78b08c25ada2bf1ed67f4c27246bc873823516
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67086127"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68943115"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zivver"></a>Tutorial: Integração do Azure Active Directory com ZIVVER
 
@@ -107,7 +107,7 @@ Para configurar o logon único do Azure AD com o ZIVVER, execute as seguintes et
 
     Na caixa de texto **Identificador**, digite uma URL: `https://app.zivver.com/SAML/Zivver`
 
-5. O aplicativo ZIVVER espera as declarações do SAML em um formato específico, o que exige que você adicione mapeamentos de atributo personalizados de acordo com a sua configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão, em que **nameidentifier** é mapeado com **user.userprincipalname**. O aplicativo do ZIVVER espera que **nameidentifier** seja mapeado com **user.mail**. Portanto, é necessário editar o mapeamento de atributo clicando no ícone **Editar** e alterar o mapeamento de atributo.
+5. O aplicativo ZIVVER espera as declarações do SAML em um formato específico, o que exige que você adicione mapeamentos de atributo personalizados de acordo com a sua configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão, em que **nameidentifier** é mapeado com **user.userprincipalname**. O aplicativo ZIVVER espera que **nameidentifier** seja mapeado com **user.mail**. Portanto, você precisa editar o mapeamento de atributo clicando no ícone **Editar** e alterar o mapeamento de atributo.
 
     ![image](common/edit-attribute.png)
 
@@ -218,7 +218,7 @@ Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure
 
 ### <a name="create-zivver-test-user"></a>Criar usuário de teste do ZIVVER
 
-Nesta seção, você criará uma usuária chamada Brenda Fernandes no ZIVVER. Trabalhe com a [equipe de suporte do ZIVVER](https://support.zivver.com/) para adicionar os usuários na plataforma do ZIVVER. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará uma usuária chamada Brenda Fernandes no ZIVVER. Trabalhe com a [equipe de suporte do ZIVVER](https://support.zivver.com/) para adicionar os usuários na plataforma do ZIVVER. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-single-sign-on"></a>Testar logon único 
 
@@ -232,5 +232,5 @@ Ao clicar no bloco do ZIVVER no Painel de Acesso, você deverá ser conectado au
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

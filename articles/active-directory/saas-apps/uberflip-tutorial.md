@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: fb55840a3423f32d2d6d6d2531628ae4361a0cc3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8760606c981f494b38d4eb8ac1b2cd50ceb8582c
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67088203"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68852100"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-uberflip"></a>Tutorial: Integração do Azure Active Directory com o Uberflip
 
@@ -122,7 +122,7 @@ Para configurar o logon único do Azure AD com o Uberflip, realize as seguintes 
 
    ![A opção de download do XML de Metadados de Federação](common/metadataxml.png)
 
-1. No painel **Configurar o Uberflip**, copie a URL ou URLs que você precisa:
+1. No painel **Configurar o Uberflip**, copie uma ou mais URLs de que você precise:
 
    * **URL de logon**
    * **Identificador do Azure AD**
@@ -203,4 +203,4 @@ Quando você seleciona **Uberflip** no portal meus aplicativos, você deverá se
 
 * [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-* [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+* [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

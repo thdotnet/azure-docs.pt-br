@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 61946f77ddffe999e55acd09e3957d91c621492b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 557f07f3e99365bbfca7f0b0d70c0c0cd928c2e6
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67103229"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68944399"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-eplatform"></a>Tutorial: Integração do Azure Active Directory com ePlatform
 
@@ -117,7 +117,7 @@ Para configurar o logon único do Azure AD com o ePlatform, execute as seguintes
 
     ![Copiar o valor da Impressão Digital](common/copy-thumbprint.png)
 
-7. O aplicativo ePlatform espera as declarações SAML em um formato específico, o que exige que você inclua mapeamentos de atributos personalizados na configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para abrir a caixa de diálogo **Atributos de Usuário** .
+7. O aplicativo ePlatform espera as declarações SAML em um formato específico, o que exige que você inclua mapeamentos de atributos personalizados na configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para abrir a caixa de diálogo **Atributos de Usuário**.
 
     ![image](common/edit-attribute.png)
 
@@ -212,7 +212,7 @@ Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure
 
 ### <a name="create-eplatform-test-user"></a>Criar usuário de teste do ePlatform
 
-Nesta seção, você criará uma usuária chamada Brenda Fernandes no ePlatform. Trabalhe com a [equipe de suporte do ePlatform](https://help.eplatform.co/hc/en-us) para adicionar os usuários na plataforma ePlatform. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você criará uma usuária chamada Brenda Fernandes no ePlatform. Trabalhe com a [equipe de suporte do ePlatform](https://help.eplatform.co/hc/en-us) para adicionar os usuários na plataforma ePlatform. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-single-sign-on"></a>Testar logon único 
 

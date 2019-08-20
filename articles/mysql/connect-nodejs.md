@@ -8,12 +8,12 @@ ms.custom: mvc
 ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 11/21/2018
-ms.openlocfilehash: 9806855aff54e72da6ac8336338c63f82ffda736
-ms.sourcegitcommit: 87bd7bf35c469f84d6ca6599ac3f5ea5545159c9
+ms.openlocfilehash: ad022f6ac9cebbe92cdca3a4b368524d828a9cbb
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58351500"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68931568"
 ---
 # <a name="azure-database-for-mysql-use-nodejs-to-connect-and-query-data"></a>Banco de Dados do Azure para MySQL: Usar o Node.js para se conectar e consultar dados
 Este guia de início rápido mostra como se conectar a um banco de dados do Azure para MySQL usando [Node.js](https://nodejs.org/) de plataformas Mac, Ubuntu Linux e Windows. Ele mostra como usar instruções SQL para consultar, inserir, atualizar e excluir dados no banco de dados. Este tópico pressupõe que você está familiarizado com o desenvolvimento usando Node.js e começou recentemente a trabalhar com o Banco de Dados do Azure para MySQL.
@@ -33,7 +33,7 @@ Dependendo de sua plataforma, siga as instruções na seção apropriada para in
 ### <a name="windows"></a>**Windows**
 1. Acesse a [página de downloads do Node. js](https://nodejs.org/en/download/) e selecione a opção do Windows Installer desejada.
 2. Crie uma pasta de projeto local, como `nodejsmysql`. 
-3. Inicie o prompt de comando e, em seguida, altere o diretório na pasta do projeto, como `cd c:\nodejsmysql\`
+3. Abra o prompt de comando e, em seguida, altere o diretório na pasta do projeto, como `cd c:\nodejsmysql\`
 4. Execute a ferramenta NPM para instalar a biblioteca do mysql na pasta de projeto.
 
    ```cmd
@@ -83,15 +83,15 @@ Dependendo de sua plataforma, siga as instruções na seção apropriada para in
 Obtenha as informações de conexão necessárias para se conectar ao Banco de Dados do Azure para MySQL. Você precisa das credenciais de logon e do nome do servidor totalmente qualificado.
 
 1. Faça logon no [Portal do Azure](https://portal.azure.com/).
-2. No menu à esquerda no portal do Azure, clique em **Todos os recursos** e pesquise o servidor que você criou (como **mydemoserver**).
-3. Clique no nome do servidor.
+2. No menu à esquerda no portal do Azure, selecione **Todos os recursos** e pesquise o servidor que você criou (como **mydemoserver**).
+3. Selecione o nome do servidor.
 4. No painel **Visão Geral** do servidor, anote o **Nome do servidor** e **Nome de logon do administrador do servidor**. Se você esquecer sua senha, também poderá redefini-la nesse painel.
  ![Nome do servidor do Banco de Dados do Azure para MySQL](./media/connect-nodejs/1_server-overview-name-login.png)
 
 ## <a name="running-the-javascript-code-in-nodejs"></a>Executar o código JavaScript no Node.js
 1. Cole o código JavaScript em arquivos de texto e salve-o em uma pasta de projeto com extensão de arquivo .js (como C:\nodejsmysql\createtable.js ou /home/username/nodejsmysql/createtable.js).
-2. Inicie o prompt de comando ou shell do Bash e altere o diretório para a pasta do projeto `cd nodejsmysql`.
-3. Para executar o aplicativo, digite o comando de nó seguido pelo nome do arquivo, como `node createtable.js`.
+2. Abra o prompt de comando ou shell do Bash e altere o diretório para a pasta do projeto `cd nodejsmysql`.
+3. Para executar o aplicativo, insira o comando de nó seguido pelo nome do arquivo, como `node createtable.js`.
 4. No Windows, se o aplicativo de nó não está em seu caminho de variável de ambiente, você precisará usar o caminho completo para iniciar o aplicativo de nó, como `"C:\Program Files\nodejs\node.exe" createtable.js`
 
 ## <a name="connect-create-table-and-insert-data"></a>Conectar-se, criar tabela e inserir dados

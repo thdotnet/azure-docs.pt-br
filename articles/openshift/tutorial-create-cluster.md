@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 05/14/2019
-ms.openlocfilehash: 9fd37a8343858f44719fe4422b3b9994db42f8af
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 4c186787af08a565dc100dfbd79d166688d89d8f
+ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67672476"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69013432"
 ---
 # <a name="tutorial-create-an-azure-red-hat-openshift-cluster"></a>Tutorial: Criar um cluster do Red Hat OpenShift no Azure
 
@@ -140,7 +140,7 @@ az openshift create --resource-group $CLUSTER_NAME --name $CLUSTER_NAME -l $LOCA
 ```
 
 > [!NOTE]
-> Caso você receba um erro que o nome do host não está disponível, talvez seja porque o nome do cluster não é exclusivo. Tente excluir o registro do aplicativo original e refazer as etapas com um nome de cluster diferente em [Criar um novo registro do aplicativo] (howto-aad-app-configuration.md#create-a-new-app-registration), omitindo a etapa final de criação de um novo usuário e grupo de segurança.
+> Caso você receba um erro que o nome do host não está disponível, talvez seja porque o nome do cluster não é exclusivo. Tente excluir o registro do aplicativo original e refazer as etapas com um nome de cluster diferente em [Criar um novo registro do aplicativo](howto-aad-app-configuration.md#create-an-azure-ad-app-registration), omitindo a etapa final de criação de um novo usuário e grupo de segurança.
 
 Depois de alguns minutos, `az openshift create` será concluído.
 

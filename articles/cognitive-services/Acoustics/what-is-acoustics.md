@@ -3,20 +3,20 @@ title: Visão geral do Projeto Acústico
 titlesuffix: Azure Cognitive Services
 description: O Projeto Acústico é um mecanismo acústico para experiências interativas 3D, integrando simulação de ondas preparadas com controles de design interativo.
 services: cognitive-services
-author: kegodin
+author: NoelCross
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: acoustics
 ms.topic: overview
 ms.date: 03/20/2019
-ms.author: kegodin
+ms.author: noelc
 ROBOTS: NOINDEX
-ms.openlocfilehash: a654dd966c40b5b079f92b910ade52f4eda10344
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.openlocfilehash: f0685b65ce9204221e93a1ea4aa47a5e09eaac9f
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68704747"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68932972"
 ---
 # <a name="what-is-project-acoustics"></a>O que é Projeto Acústico?
 Projeto Acústico é um mecanismo de acústica de onda para experiências interativas 3D. Ele modela os efeitos de onda como difração, portaling e efeitos de reverberação em cenas complexas sem a necessidade de marcação de zona. Também inclui o mecanismo de jogo e a integração de áudio de middleware. A filosofia do Projeto Acústico é semelhante à iluminação estática: preparar a física detalhada offline para fornecer uma linha de base física e usar um tempo de execução leve com controles de design expressivos para atender às suas metas artísticas.
@@ -40,11 +40,17 @@ A [Integração do Unreal do Projeto Acústico](unreal-integration.md) inclui pl
 * **Bake:** Uma etapa de análise é executada localmente, o que faz voxelização e outras análises geométricas na cena com base nas seleções acima. Os resultados são visualizados no editor para verificar a configuração da cena. No envio de bake, os dados de voxel são enviados para o Azure e você obtém de volta no ativo do jogo de acústica.
 * **Tempo de execução:** Carregue o ativo em seu nível e você estará pronto para ouvir a acústica em seu nível. Projete a acústica em tempo real no editor usando os controles do código-fonte granulares. Os controles também podem ser obtidos a partir do nível de script.
 
-## <a name="platforms"></a>Plataformas
+## <a name="runtime-platforms"></a>Plataformas de tempo de execução
 Os plug-ins do tempo de execução do Projeto Acústico podem atualmente ser implantados nas seguintes plataformas:
 * Windows
+* MacOS
 * Android
 * Xbox One
+
+## <a name="editor-platforms"></a>Plataformas do editor
+O plug-in do editor de Projeto Acústico está disponível para as seguintes plataformas:
+* Windows
+* MacOS (somente Unity)
 
 ## <a name="download"></a>Baixar
 * [Plug-in e amostras do Unity do Projeto Acústico](https://www.microsoft.com/en-us/download/details.aspx?id=57346)

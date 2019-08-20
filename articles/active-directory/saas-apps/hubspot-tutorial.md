@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3b2c765778fc2bdd8425cc3f375831c0d317e753
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c4b235426a7029abb9bb79ba56e582cccc3b14a6
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67100888"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68944440"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hubspot"></a>Tutorial: Integração do Azure Active Directory ao HubSpot
 
@@ -161,7 +161,7 @@ Nesta seção, você configurará o logon único do Azure AD com o HubSpot no po
 
     1. No HubSpot, na caixa **URL de logon único do Provedor de Identidade**, cole o valor da **URL de logon** que você copiou do portal do Azure.
 
-    1. No bloco de notas do Windows, abra o arquivo do Certificado (Base64) baixado. Selecione e copie o conteúdo do arquivo. Em seguida, no HubSpot, cole-o na caixa **Certificado X.509**.
+    1. No Bloco de Notas do Windows, abra o arquivo do Certificate(Base64) baixado. Selecione e copie o conteúdo do arquivo. Em seguida, no HubSpot, cole-o na caixa **Certificado X.509**.
 
     1. Selecione **Verificar**.
 

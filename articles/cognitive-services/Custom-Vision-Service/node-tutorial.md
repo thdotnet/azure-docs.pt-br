@@ -8,14 +8,14 @@ manager: daauld
 ms.service: cognitive-services
 ms.subservice: custom-vision
 ms.topic: quickstart
-ms.date: 07/15/2019
+ms.date: 08/08/2019
 ms.author: areddish
-ms.openlocfilehash: 2fe02bd48097b6e051f0203b4615c8c5683224cd
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 2fd9ccff68eb368107a299af02a54ae6fc6cc0e2
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68560973"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68946138"
 ---
 # <a name="quickstart-create-an-image-classification-project-with-the-custom-vision-nodejs-sdk"></a>Início Rápido: criar um projeto de classificação de imagem com o SDK da Visão Personalizada do Node.js
 
@@ -82,7 +82,7 @@ const cherryTag = await trainer.createTag(sampleProject.id, "Japanese Cherry");
 
 ### <a name="upload-and-tag-images"></a>Carregar e marcar imagens
 
-Para adicionar imagens de exemplo ao projeto, insira o código a seguir após a criação da marca. Esse código carrega cada imagem com sua marca correspondente. Você precisará inserir o caminho do arquivo de imagem base de acordo com o local em que baixou o projeto Amostras de SDK de Node.js dos Serviços Cognitivos.
+Para adicionar imagens de exemplo ao projeto, insira o código a seguir após a criação da marca. Esse código carrega cada imagem com sua marca correspondente. Você pode carregar até 64 imagens em um único lote.
 
 > [!NOTE]
 > Você precisará alterar *sampleDataRoot* para o caminho até as imagens com base no local em que você baixou o projeto Amostras de SDK de Node.js dos Serviços Cognitivos anteriormente.

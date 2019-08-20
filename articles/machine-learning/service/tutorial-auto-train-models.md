@@ -9,14 +9,14 @@ ms.topic: tutorial
 author: nacharya1
 ms.author: nilesha
 ms.reviewer: trbye
-ms.date: 04/11/2019
+ms.date: 08/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: bbb9653173925e1443504aa3f2e9c5e6edbfc486
-ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
+ms.openlocfilehash: 060257ef144309e37208db80c7731ed96b995b2c
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68371044"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68990471"
 ---
 # <a name="tutorial-use-automated-machine-learning-to-build-your-regression-model"></a>Tutorial: Usar o aprendizado de máquina automatizado para compilar o modelo de regressão
 
@@ -54,7 +54,7 @@ Vá para [Configurar seu ambiente de desenvolvimento](#start) para ler as etapas
 
 Obtenha todos esses pré-requisitos de qualquer uma das seções a seguir.
 
-* Usar um [servidor de notebook de nuvem em seu workspace](#azure) 
+* Usar um [servidor de notebook de nuvem em seu workspace](#azure)
 * Usar [seu próprio servidor de notebook](#server)
 
 ### <a name="azure"></a>Usar um servidor de notebook de nuvem em seu workspace
@@ -688,6 +688,9 @@ automated_ml_config = AutoMLConfig(task='regression',
                                    **automl_settings)
 ```
 
+> [!NOTE]
+> As etapas de pré-processamento automatizado de machine learning (normalização de recursos, manipulação de dados ausentes, conversão de texto em números etc.) tornam-se parte do modelo subjacente. Ao usar o modelo para previsões, as mesmas etapas de pré-processamento aplicadas durante o treinamento são aplicadas aos dados de entrada automaticamente.
+
 ### <a name="train-the-automatic-regression-model"></a>Treinar o modelo de regressão automática
 
 Inicie o experimento a ser executado localmente. Passe o objeto `automated_ml_config` definido para o experimento. Defina a saída `True` para exibir o progresso durante o experimento:
@@ -764,7 +767,7 @@ Os mesmos resultados são armazenados no seu workspace.  Você pode obter um lin
 ```
 local_run.get_portal_url()
 ```
-  
+
 
 ### <a name="option-2-get-and-examine-all-run-iterations-in-python"></a>Opção 2: Obter e examinar todas as iterações de execução no Python
 

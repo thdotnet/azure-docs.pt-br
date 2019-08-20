@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Integração do Azure Active Directory ao Cisco Webex | Microsoft Docs'
+title: 'Tutorial: Integração SSO (logon único) do Azure Active Directory com o Cisco Webex | Microsoft Docs'
 description: Saiba como configurar o logon único entre o Azure Active Directory e o Cisco Webex.
 services: active-directory
 documentationCenter: na
@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 06/24/2019
+ms.date: 08/09/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9bf8b4d696a3784988a92fc24de1ae6964786e07
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 99e6839443a75376224fe6a1007802b6b948a395
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67836426"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989457"
 ---
-# <a name="tutorial-integrate-cisco-webex-with-azure-active-directory"></a>Tutorial: Integrar o Cisco Webex com o Azure Active Directory
+# <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-cisco-webex"></a>Tutorial: Integração SSO (logon único) do Azure Active Directory com o Cisco Webex
 
 Neste tutorial, você aprenderá a integrar o Cisco Webex ao Azure AD (Azure Active Directory). Com a integração do Cisco Webex ao Azure AD, você poderá:
 
@@ -42,7 +42,7 @@ Para começar, você precisará dos seguintes itens:
 
 ## <a name="scenario-description"></a>Descrição do cenário
 
-Neste tutorial, você configurará e testará o SSO do Azure AD em um ambiente de teste. O Cisco Webex é compatível com o SSO iniciado por **SP e IDP** e com o provisionamento de usuário **Automatizado**.
+Neste tutorial, você configurará e testará o SSO do Azure AD em um ambiente de teste. O Cisco Webex é compatível com o SSO iniciado por **SP** e com o provisionamento de usuário **Automatizado**.
 
 ## <a name="adding-cisco-webex-from-the-gallery"></a>Adicionando o Cisco Webex da galeria
 
@@ -55,18 +55,18 @@ Para configurar a integração do Cisco Webex ao Azure Active Directory, você p
 1. Na seção **Adicionar por meio da galeria**, digite **Cisco Webex** na caixa de pesquisa.
 1. Selecione **Cisco Webex** no painel de resultados e, depois, adicione o aplicativo. Aguarde alguns segundos enquanto o aplicativo é adicionado ao seu locatário.
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Configurar e testar logon único do Azure AD
+## <a name="configure-and-test-azure-ad-single-sign-on-for-cisco-webex"></a>Configurar e testar o logon único do Azure AD para Cisco WebEx
 
 Configure e teste o SSO do Azure AD com o Cisco Webex usando um usuário de teste chamado **B.Fernandes**. Para que o SSO funcione, é necessário estabelecer uma relação de vínculo entre um usuário do Azure AD e o usuário relacionado do Cisco Webex.
 
 Para configurar e testar o SSO do Azure AD com o Cisco Webex, conclua os seguintes blocos de construção:
 
 1. **[Configure o SSO do Azure AD](#configure-azure-ad-sso)** para permitir que os usuários usem esse recurso.
+    1. **[Criar um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** para testar o logon único do Azure AD com B. Fernandes.
+    1. **[Atribuir o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** para permitir que B. Fernandes use o logon único do Azure AD.
 2. **[Configure o Cisco Webex](#configure-cisco-webex)** para definir as configurações de SSO no lado do aplicativo.
-3. **[Crie um usuário de teste do Azure AD](#create-an-azure-ad-test-user)** para testar o logon único do Azure AD com B.Fernandes.
-4. **[Atribua o usuário de teste do Azure AD](#assign-the-azure-ad-test-user)** para permitir que B.Fernandes use o logon único do Azure AD.
-5. **[Crie um usuário de teste do Cisco Webex](#create-cisco-webex-test-user)** para ter um equivalente de B.Fernandes no Cisco Webex que esteja vinculado à representação de usuário do Azure AD.
-6. **[Teste o SSO](#test-sso)** para verificar se a configuração funciona.
+    1. **[Crie um usuário de teste do Cisco Webex](#create-cisco-webex-test-user)** para ter um equivalente de B.Fernandes no Cisco Webex que esteja vinculado à representação de usuário do Azure AD.
+3. **[Teste o SSO](#test-sso)** para verificar se a configuração funciona.
 
 ### <a name="configure-azure-ad-sso"></a>Configurar o SSO do Azure AD
 
@@ -81,7 +81,7 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 4. Na seção **Configuração Básica do SAML**, carregue o arquivo **Metadados do Provedor de Serviços** baixado e configure o aplicativo executando as seguintes etapas:
 
     >[!Note]
-    >Você obterá o arquivo de metadados do Provedor de Serviços no portal do **Cisco Webex**. 
+    >Você obterá o arquivo de Metadados do Provedor de Serviços na seção **Configurar Cisco Webex**, que é explicada mais adiante neste tutorial. 
 
     a. Clique em **Carregar arquivo de metadados**.
 
@@ -91,7 +91,7 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
     Na caixa de texto **URL de logon**, cole o valor da **URL de Resposta** que é preenchida automaticamente com o upload do arquivo de metadados de SP.
 
-5. O aplicativo Cisco Webex espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para adicionar os atributos.
+5. O aplicativo Cisco Webex espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone  **Editar** para abrir a caixa de diálogo Atributos do usuário.
 
     ![image](common/edit-attribute.png)
 
@@ -127,24 +127,6 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
    ![Copiar URLs de configuração](common/copy-configuration-urls.png)
 
-### <a name="configure-cisco-webex"></a>Configurar o Cisco Webex
-
-1. Entre no [Gerenciamento de Colaboração de Nuvem da Cisco](https://admin.ciscospark.com/) com suas credenciais completas de administrador.
-
-2. Escolha **Configurações** e, na seção **Autenticação**, clique em **Modificar**.
-
-    ![Configurar o logon único](./media/cisco-spark-tutorial/tutorial-cisco-spark-10.png)
-  
-3. Escolha **Integrar um provedor de identidade de terceiros. (Avançado)** e vá para a próxima tela.
-
-4. Na página **Importar Metadados Idp**, arrastre e solte o arquivo de metadados do Azure AD na página ou use a opção de navegador de arquivos para localizar e carregar o arquivo de metadados do Azure AD. Em seguida, escolha **Exigir certificado assinado por uma autoridade de certificação em Metadados (mais seguro)** e clique em **Avançar**.
-
-    ![Configurar o logon único](./media/cisco-spark-tutorial/tutorial-cisco-spark-11.png)
-
-5. Escolha **Testar Conexão SSO** e, quando uma nova guia do navegador for aberta, autentique-se com o Azure AD conectando-se.
-
-6. Volte para a guia do navegador **Gerenciamento de Colaboração de Nuvem da Cisco**. Se o teste tiver sido bem-sucedido, escolha a opção **Este teste foi executado com êxito. Habilitar Logon Único** e clique em **Avançar**.
-
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
 Nesta seção, você criará um usuário de teste no portal do Azure chamado B.Fernandes.
@@ -174,9 +156,27 @@ Nesta seção, você permitirá que B.Fernandes use o logon único do Azure perm
 1. Na caixa de diálogo **Usuários e grupos**, selecione **B.Fernandes** na lista Usuários e clique no botão **Selecionar** na parte inferior da tela.
 1. Na caixa de diálogo **Adicionar atribuição**, clique no botão **Atribuir**.
 
+## <a name="configure-cisco-webex"></a>Configurar o Cisco Webex
+
+1. Entre no [Gerenciamento de Colaboração de Nuvem da Cisco](https://admin.ciscospark.com/) com suas credenciais completas de administrador.
+
+2. Escolha **Configurações** e, na seção **Autenticação**, clique em **Modificar**.
+
+    ![Configurar o logon único](./media/cisco-spark-tutorial/tutorial-cisco-spark-10.png)
+  
+3. Escolha **Integrar um provedor de identidade de terceiros. (Avançado)** e vá para a próxima tela.
+
+4. Na página **Importar Metadados Idp**, arrastre e solte o arquivo de metadados do Azure AD na página ou use a opção de navegador de arquivos para localizar e carregar o arquivo de metadados do Azure AD. Em seguida, escolha **Exigir certificado assinado por uma autoridade de certificação em Metadados (mais seguro)** e clique em **Avançar**.
+
+    ![Configurar o logon único](./media/cisco-spark-tutorial/tutorial-cisco-spark-11.png)
+
+5. Escolha **Testar Conexão SSO** e, quando uma nova guia do navegador for aberta, autentique-se com o Azure AD conectando-se.
+
+6. Volte para a guia do navegador **Gerenciamento de Colaboração de Nuvem da Cisco**. Se o teste tiver sido bem-sucedido, escolha a opção **Este teste foi executado com êxito. Habilitar Logon Único** e clique em **Avançar**.
+
 ### <a name="create-cisco-webex-test-user"></a>Criar um usuário de teste do Cisco Webex
 
-Nesta seção, você criará um usuário chamado Brenda Fernandes no Cisco Webex. Nesta seção, você criará um usuário chamado Brenda Fernandes no Cisco Webex.
+Nesta seção, você criará um usuário chamado B. Fernandes no Cisco Webex. Nesta seção, você criará um usuário chamado B. Fernandes no Cisco Webex.
 
 1. Acesse o [Gerenciamento de Colaboração de Nuvem da Cisco](https://admin.ciscospark.com/) com suas credenciais completas de administrador.
 
@@ -196,11 +196,11 @@ Nesta seção, você criará um usuário chamado Brenda Fernandes no Cisco Webex
 
     c. Na caixa de texto **Endereço de email**, digite o endereço de email do usuário como b.simon@contoso.com.
 
-5. Clique no sinal de mais para adicionar Brenda Fernandes. Em seguida, clique em **Avançar**.
+5. Clique no sinal de mais para adicionar B. Fernandes. Em seguida, clique em **Avançar**.
 
 6. Na janela **Adicionar Serviços para Usuários**, clique em **Salvar** e em **Concluir**.
 
-### <a name="test-sso"></a>Testar o SSO
+## <a name="test-sso"></a>Testar o SSO
 
 Ao selecionar o bloco do Cisco Webex no Painel de Acesso, você entrará automaticamente no Cisco Webex, para o qual você configurou o SSO. Para saber mais sobre o Painel de Acesso, veja [Introdução ao Painel de Acesso](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
@@ -211,3 +211,5 @@ Ao selecionar o bloco do Cisco Webex no Painel de Acesso, você entrará automat
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+
+- [Experimentar o Cisco Webex com o Azure AD](https://aad.portal.azure.com)

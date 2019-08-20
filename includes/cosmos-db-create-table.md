@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 04/13/2018
 ms.author: sngun
 ms.custom: include file
-ms.openlocfilehash: a91c42ca32fb356b418dcd412c0690b01ff85789
-ms.sourcegitcommit: 0ebc62257be0ab52f524235f8d8ef3353fdaf89e
+ms.openlocfilehash: 5743d785afb87aef6b3a89af6dc8eb18f66b164d
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67172463"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854635"
 ---
 Agora, você pode usar a ferramenta Data Explorer no Portal do Azure para criar um banco de dados e uma tabela. 
 
-1. Clique em **Data Explorer** > **Nova Tabela**. 
+1. Selecione **Data Explorer** > **Nova Tabela**. 
     
     A área **Adicionar Tabela** é exibida à direita, talvez seja necessário rolar para a direita para vê-la.
 
@@ -30,7 +30,7 @@ Agora, você pode usar a ferramenta Data Explorer no Portal do Azure para criar 
     Id da Tabela|tabela de exemplo|A ID da nova tabela. Os nomes de tabela possuem os mesmos requisitos de caractere que os ids de banco de dados. Os nomes de banco de dados devem ter entre um e 255 caracteres e não podem conter `/ \ # ?` nem espaços à direita.
     Produtividade|400 RUs|Altere a taxa de transferência para 400 unidades de solicitação por segundo (RU/s). Se quiser reduzir a latência, você poderá escalar verticalmente a taxa de transferência mais tarde.
 
-3. Clique em **OK**.
+3. Selecione **OK**.
 
 4. O Data Explorer exibe o novo banco de dados e a tabela.
 

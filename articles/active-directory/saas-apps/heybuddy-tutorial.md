@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/21/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a29d20c434a7306b016fe9a549415242f5977a2
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e00cc46385f5d60b28607bfc08b9ca9540f152c6
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67101118"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68944971"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-heybuddy"></a>Tutorial: Integração do Azure Active Directory ao HeyBuddy
 
@@ -113,7 +113,7 @@ Para configurar o logon único do Azure AD com o HeyBuddy, execute as seguintes 
     > [!NOTE]
     > Esses valores não são reais. Atualize esses valores com a URL de Entrada e o Identificador reais (ID de entidade). O valor `Entity ID` na URL de Entrada é gerado automaticamente para cada organização. Contate a [equipe de suporte do Cliente HeyBuddy](mailto:support@heybuddy.com) para obter esses valores.
 
-5. O aplicativo HeyBuddy espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone  **Editar** para abrir a caixa de diálogo Atributos do usuário.
+5. O aplicativo HeyBuddy espera as declarações SAML em um formato específico, o que exige a adição de mapeamentos de atributo personalizado à configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão. Clique no ícone **Editar** para abrir a caixa de diálogo Atributos de usuário.
 
     ![image](common/edit-attribute.png)
 
@@ -209,7 +209,7 @@ Nesta seção, você permitirá que o Brenda Fernandes use o logon único do Azu
 Nesta seção, um usuário chamado Brenda Fernandes será criado no HeyBuddy. O HeyBuddy dá suporte ao provisionamento de usuário Just-In-Time, que está habilitado por padrão. Não há itens de ação para você nesta seção. Se um usuário ainda não existir no HeyBuddy, um novo será criado após a autenticação.
 
 > [!Note]
-> Se for necessário criar um usuário manualmente, contate a  [equipe de suporte do HeyBuddy](mailto:support@heybuddy.com).
+> Se precisar criar um usuário manualmente, contate a [equipe de suporte do HeyBuddy](mailto:support@heybuddy.com).
 
 ### <a name="test-single-sign-on"></a>Testar logon único
 
@@ -223,4 +223,4 @@ Ao clicar no bloco do HeyBuddy no Painel de Acesso, você deverá ser conectado 
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

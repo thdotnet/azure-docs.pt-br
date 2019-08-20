@@ -9,13 +9,13 @@ ms.date: 05/06/2019
 ms.author: mlearned
 ms.custom: mvc
 ms.openlocfilehash: 5515951a9bde596935f4c603ffd9e088f74dee45
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
+ms.lasthandoff: 08/12/2019
 ms.locfileid: "67615159"
 ---
-# <a name="azure-kubernetes-service-aks"></a>AKS (Serviço de Kubernetes do Azure) 
+# <a name="azure-kubernetes-service-aks"></a>AKS (Serviço de Kubernetes do Azure)
 
 O AKS (Serviço de Kubernetes do Azure) simplifica a implantação de um cluster do Kubernetes gerenciado no Azure. O AKS reduz a complexidade e a sobrecarga operacional de gerenciar o Kubernetes passando grande parte dessa responsabilidade para o Azure. Como um serviço Kubernetes hospedado, o Azure lida com as tarefas críticas para você, como o monitoramento da integridade e a manutenção. Os mestres de Kubernetes são gerenciados pelo Azure. Você gerencia e mantém apenas os nós de agente. Como um serviço do Kubernetes gerenciado, o AKS é gratuito: você paga apenas pelos nós de agentes dentro dos clusters, não pelos mestres.
 
@@ -23,7 +23,7 @@ Você pode criar um cluster do AKS no portal do Azure, com a CLI do Azure, ou op
 
 Para obter mais informações sobre os conceitos básicos do Kubernetes, confira [Conceitos básicos do Kubernetes para o AKS][concepts-clusters-workloads].
 
-Para começar, conclua o início rápido do AKS [no portal do Azure][aks-portal] or [with the Azure CLI][aks-cli].
+Para começar, conclua o início rápido do AKS [no portal do Azure][aks-portal] ou [com a CLI do Azure][aks-cli].
 
 ## <a name="access-security-and-monitoring"></a>Acesso, segurança e monitoramento
 
@@ -57,7 +57,7 @@ Para obter mais informações, confira [Dimensionar um cluster do AKS (Serviço 
 
 O Serviço de Kubernetes do Azure oferece várias versões de Kubernetes. Conforme novas versões ficam disponíveis no AKS, o cluster pode ser atualizado pelo Portal do Azure ou pela CLI do Azure. Durante o processo de atualização, os nós são cuidadosamente isolados e esvaziados para minimizar as interrupções nos aplicativos em execução.
 
-Para saber mais sobre as versões do ciclo de vida, confira [Versões do Kubernetes compatíveis com o AKS][aks-supported versions]. For steps on how to upgrade, see [Upgrade an Azure Kubernetes Service (AKS) cluster][aks-upgrade].
+Para saber mais sobre as versões do ciclo de vida, confira [Versões do Kubernetes compatíveis com o AKS][aks-supported versions]. Para obter etapas sobre como atualizar, confira [Atualizar um cluster do AKS (Serviço de Kubernetes do Azure)][aks-upgrade].
 
 ### <a name="gpu-enabled-nodes"></a>Nós habilitados para GPU
 
@@ -71,7 +71,7 @@ Para dar suporte a cargas de trabalho do aplicativo, você pode montar volumes d
 
 Para obter mais informações, confira [Opções de armazenamento para aplicativos no AKS][concepts-storage].
 
-Comece com volumes dinâmicos persistentes usando [Discos do Azure][azure-disk] or [Azure Files][azure-files].
+Comece com volumes dinâmicos e persistentes usando [Discos do Azure][azure-disk] ou [Arquivos do Azure][azure-files].
 
 ## <a name="virtual-networks-and-ingress"></a>Entrada e redes virtuais
 

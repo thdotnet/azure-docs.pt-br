@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 04/30/2018
 ms.author: kumud
 ms.custom: mvc
-ms.openlocfilehash: 3bc06a8903fbc431d991e6ef2a4aad8fbaff2365
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: f254572f5c26a809f401e99f527ccd3d30451c3d
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736861"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68931579"
 ---
 # <a name="tutorial-log-network-traffic-to-and-from-a-virtual-machine-using-the-azure-portal"></a>Tutorial: Registrar em log o tráfego de rede bidirecionalmente em uma máquina virtual usando o portal do Azure
 
@@ -108,6 +108,11 @@ O log de fluxo do NSG exige o provedor **Microsoft.Insights**. Para registrar o 
    ![Selecione a versão Logs de fluxo](./media/network-watcher-nsg-flow-logging-portal/select-flow-log-version.png)
 
 9. Selecione a conta de armazenamento criada na etapa 3.
+   > [!NOTE]
+   > Os Logs de Fluxo do NSG não funcionarão com contas de armazenamento se:
+   > * As contas de armazenamento tiverem um firewall habilitado.
+   > * As contas de armazenamento tiverem o [namespace hierárquico](https://docs.microsoft.com/azure/storage/blobs/data-lake-storage-namespace) habilitado.
+1. No canto superior esquerdo do portal, selecione **Todos os serviços**. Na caixa **Filtro**, digite *Observador de Rede*. Quando os resultados da pesquisa exibirem **Observador de Rede**, selecione essa opção.
 10. Defina **Retenção (dias)** como 5 e, em seguida, selecione **Salvar**.
 
 ## <a name="download-flow-log"></a>Baixar log de fluxo
@@ -212,7 +217,7 @@ O valor de **mac** na saída anterior é o endereço MAC do adaptador de rede qu
 | O            | Ação                 | Indica se o tráfego foi permitido (A) ou negado (D).  
 | C            | Estado de fluxo da **Versão 2 somente** | Captura o estado do fluxo. Os possíveis estados são **B**: Iniciar, quando um fluxo é criado. As estatísticas não são fornecidas. **C**: Continuando um fluxo contínuo. As estatísticas são fornecidas em intervalos de 5 minutos. **E**: Encerrar, quando um fluxo é encerrado. Estatísticas são fornecidas. |
 | 30 | Pacotes enviados – Origem ao destino **Versão 2 somente** | A quantidade total de pacotes TCP ou UDP enviados da origem ao destino desde a última atualização. |
-| 16978 | Bytes enviados – Origem ao destino **Versão 2 somente** | A quantidade total de bytes de pacote TCP ou UDP enviados da origem para o destino desde a última atualização. O número total de bytes de pacote TCP e UDP enviados da origem para o destino desde os últimos bytes updatePacket inclui o cabeçalho e a carga útil do pacote. | 
+| 16978 | Bytes enviados – Origem ao destino **Versão 2 somente** | A quantidade total de bytes de pacote TCP ou UDP enviados da origem para o destino desde a última atualização. O número total de bytes de pacote TCP e UDP enviados da origem para o destino desde os últimos bytes updatePacket inclui o cabeçalho e a carga útil do pacote. |
 | 24 | Pacotes enviados – Destino para origem **Versão 2 somente** | A quantidade total de pacotes TCP ou UDP enviados do destino para a origem desde a última atualização. |
 | 14008| Bytes enviados – Destino para origem **Versão 2 somente** | Os bytes de pacote incluem cabeçalho de pacote e carga útil. Os bytes de pacote incluem cabeçalho de pacote e carga útil.|
 

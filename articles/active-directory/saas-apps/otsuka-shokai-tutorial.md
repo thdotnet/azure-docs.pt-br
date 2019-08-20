@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 06/14/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd06eafca2c508bc73fa2b327235621797be417c
-ms.sourcegitcommit: a52d48238d00161be5d1ed5d04132db4de43e076
+ms.openlocfilehash: f558b33079821efcf56731eb95073e0170a72795
+ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67274202"
+ms.lasthandoff: 08/10/2019
+ms.locfileid: "68943543"
 ---
 # <a name="tutorial-integrate-otsuka-shokai-with-azure-active-directory"></a>Tutorial: Integrar o Otsuka Shokai ao Azure Active Directory
 
@@ -80,7 +80,7 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
 1. Na página **Configurar o Logon Único com o SAML**, o aplicativo é pré-configurado e as URLs necessárias já são pré-populadas com o Azure. É necessário que o usuário salve a configuração, clicando no botão **Salvar**.
 
-1. Seu aplicativo Otsuka Shokai espera as declarações do SAML em um formato específico, o que exige que você adicione mapeamentos de atributo personalizados de acordo com a sua configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão, em que **nameidentifier** é mapeado com **user.userprincipalname**. O aplicativo Otsuka Shokai espera que **nameidentifier** seja mapeado com **user.objectid**. Portanto, é necessário editar o mapeamento de atributo clicando no ícone **Editar** e alterar o mapeamento de atributo.
+1. Seu aplicativo Otsuka Shokai espera as declarações do SAML em um formato específico, o que exige que você adicione mapeamentos de atributo personalizados de acordo com a sua configuração de atributos do token SAML. A captura de tela a seguir mostra a lista de atributos padrão, em que **nameidentifier** é mapeado com **user.userprincipalname**. O aplicativo Otsuka Shokai espera que **nameidentifier** seja mapeado com **user.objectid**. Portanto, você precisa editar o mapeamento de atributo clicando no ícone **Editar** e alterar o mapeamento de atributo.
 
     ![image](common/edit-attribute.png)
 
@@ -165,4 +165,4 @@ Ao selecionar o bloco do Otsuka Shokai no Painel de Acesso, você deverá entrar
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

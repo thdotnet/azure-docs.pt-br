@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: overview
-ms.date: 07/17/2019
+ms.date: 08/07/2019
 ms.author: helohr
-ms.openlocfilehash: 03105232cb92a65f8c38d6d755910739a3fc4720
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: 7c331a4a7395069dc4dc3ab1dcfc89415be0898c
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68305061"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854448"
 ---
 # <a name="what-is-windows-virtual-desktop-preview"></a>O que é a Versão Prévia da Área de Trabalho Virtual do Windows? 
 
@@ -29,9 +29,11 @@ Estas são as tarefas que você pode realizar ao executar a Área de Trabalho Vi
 
 ## <a name="introductory-video"></a>Vídeo de introdução
 
-No vídeo a seguir, Scott Manchester demonstra alguns dos recursos da Área de Trabalho Virtual do Windows:
+Saiba mais sobre a Área de Trabalho Virtual do Windows, por que ela é única e o que há de novo neste vídeo:
 
-<br></br><iframe src="https://www.youtube-nocookie.com/embed/30dOLcZ4_9U" width="640" height="320" allowFullScreen="true" frameBorder="0"></iframe>
+<br></br><iframe src="https://www.youtube.com/embed/NQFtI3JLtaU" width="640" height="320" allowFullScreen="true" frameBorder="0"></iframe>
+
+Para obter mais vídeos sobre a Área de Trabalho Virtual do Windows, confira [nossa playlist](https://www.youtube.com/watch?v=NQFtI3JLtaU&list=PLXtHYVsvn_b8KAKw44YUpghpD6lg-EHev).
 
 ## <a name="key-capabilities"></a>Principais recursos
 

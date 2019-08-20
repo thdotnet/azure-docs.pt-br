@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: 3d418d9f18c98e1b6fdf39924ab41dae77fba291
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 062b815315d7bcdd5d55a86c2447a0b21295e8b6
+ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204747"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69014082"
 ---
 # <a name="tutorial-create-a-tenant-in-windows-virtual-desktop-preview"></a>Tutorial: Criar um locatário na Versão Prévia da Área de Trabalho Virtual do Windows
 
@@ -42,17 +42,25 @@ A concessão de permissões ao serviço da Área de Trabalho Virtual do Windows 
 
 Para conceder as permissões de serviço:
 
-1. Abra um navegador e conecte-se à [página de consentimento da Área de Trabalho Virtual do Windows](https://rdweb.wvd.microsoft.com).
-2. Para **Opção de Consentimento** > **Aplicativo de Servidor**, insira o nome do locatário ou a ID de diretório do Azure Active Directory e, em seguida, selecione **Enviar**.
-        
-   Para clientes do Provedor de Soluções na Nuvem, a ID é a ID da Microsoft do cliente no Portal do Partner. Para clientes do Enterprise, a ID está localizada em **Azure Active Directory** > **Propriedades** > **ID de Diretório**.
-3. Entre na página de consentimento da Área de Trabalho Virtual do Windows com uma conta de administrador global. Por exemplo, se você fosse entrar com a organização Contoso, sua conta poderia ser admin@contoso.com ou admin@contoso.onmicrosoft.com.  
-4. Selecione **Aceitar**.
-5. Aguarde um minuto.
-6. Vá novamente para a [página de consentimento da Área de Trabalho Virtual do Windows](https://rdweb.wvd.microsoft.com).
-7. Acesse **Opção de Consentimento** > **Aplicativo Cliente**, insira o mesmo nome de locatário ou ID de diretório do Azure Active Directory e, em seguida, selecione **Enviar**.
-8. Entre na página de consentimento da Área de Trabalho Virtual do Windows como administrador global, como fez na etapa 3.
-9. Selecione **Aceitar**.
+1. Abra um navegador e inicie o fluxo de consentimento do administrador para o [aplicativo do servidor de Área de Trabalho Virtual do Windows](https://login.microsoftonline.com/common/adminconsent?client_id=5a0aa725-4958-4b0c-80a9-34562e23f3b7&redirect_uri=https%3A%2F%2Frdweb.wvd.microsoft.com%2FRDWeb%2FConsentCallback).
+   > [!NOTE]
+   > Se você gerenciar um cliente e precisar conceder consentimento do administrador para o diretório do cliente, insira a seguinte URL no navegador e substitua {tenant} pelo nome de domínio do Azure AD do cliente. Por exemplo, se a organização do cliente tiver registrado o nome de domínio do Azure AD de contoso.onmicrosoft.com, substitua {tenant} por contoso.onmicrosoft.com.
+   >```
+   >https://login.microsoftonline.com/{tenant}/adminconsent?client_id=5a0aa725-4958-4b0c-80a9-34562e23f3b7&redirect_uri=https%3A%2F%2Frdweb.wvd.microsoft.com%2FRDWeb%2FConsentCallback
+   >```
+
+2. Entre na página de consentimento da Área de Trabalho Virtual do Windows com uma conta de administrador global. Por exemplo, se você fosse entrar com a organização Contoso, sua conta poderia ser admin@contoso.com ou admin@contoso.onmicrosoft.com.  
+3. Selecione **Aceitar**.
+4. Aguarde um minuto para que o Azure AD possa registrar o consentimento.
+5. Abra um navegador e inicie o fluxo de consentimento do administrador para o [aplicativo do cliente de Área de Trabalho Virtual do Windows](https://login.microsoftonline.com/common/adminconsent?client_id=fa4345a4-a730-4230-84a8-7d9651b86739&redirect_uri=https%3A%2F%2Frdweb.wvd.microsoft.com%2FRDWeb%2FConsentCallback).
+   >[!NOTE]
+   > Se você gerenciar um cliente e precisar conceder consentimento do administrador para o diretório do cliente, insira a seguinte URL no navegador e substitua {tenant} pelo nome de domínio do Azure AD do cliente. Por exemplo, se a organização do cliente tiver registrado o nome de domínio do Azure AD de contoso.onmicrosoft.com, substitua {tenant} por contoso.onmicrosoft.com.
+   >```
+   > https://login.microsoftonline.com/{tenant}/adminconsent?client_id=fa4345a4-a730-4230-84a8-7d9651b86739&redirect_uri=https%3A%2F%2Frdweb.wvd.microsoft.com%2FRDWeb%2FConsentCallback
+   >```
+
+6. Entre na página de consentimento da Área de Trabalho Virtual do Windows como administrador global, como fez na etapa 2.
+7. Selecione **Aceitar**.
 
 ## <a name="assign-the-tenantcreator-application-role-to-a-user-in-your-azure-active-directory-tenant"></a>Atribuir a função de aplicativo TenantCreator a um usuário em seu locatário do Azure Active Directory
 

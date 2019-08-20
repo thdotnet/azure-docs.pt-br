@@ -8,20 +8,20 @@ ms.topic: include
 ms.date: 04/13/2018
 ms.author: sngun
 ms.custom: include file
-ms.openlocfilehash: 4341d06f09c60933bfc0512f54e024b35a19d8dd
-ms.sourcegitcommit: 0ebc62257be0ab52f524235f8d8ef3353fdaf89e
+ms.openlocfilehash: 1ebd645b740ab0f454d006d003518fbb8cb5e9e7
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67172464"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854669"
 ---
 Agora é possível adicionar dados à sua nova tabela usando o Data Explorer.
 
-1. No Data Explorer, expanda **sample-table**, clique em **Entidades** e clique em **Adicionar Entidade**.
+1. No Data Explorer, expanda **sample-table**, selecione **Entidades** e selecione **Adicionar Entidade**.
 
    ![Criar novas entidades no Data Explorer no portal do Azure](./media/cosmos-db-create-table-add-sample-data/azure-cosmosdb-data-explorer-new-document.png)
 
-2. Agora, adicione dados às caixas de valor PartitionKey e RowKey e clique em **Adicionar Entidade**.
+2. Agora, adicione dados às caixas de valor PartitionKey e RowKey e selecione **Adicionar Entidade**.
 
    ![Definir a chave de partição e a chave de linha para uma nova entidade](./media/cosmos-db-create-table-add-sample-data/azure-cosmosdb-data-explorer-new-entity.png)
   

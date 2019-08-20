@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: quickstart
 ms.date: 06/20/2019
 ms.author: metan
-ms.openlocfilehash: 978b56f5c38a154c79544c7deb5d49396b1deff9
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 0d67385975db13539c28745eede4fb288a0daedd
+ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68688857"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68989138"
 ---
 # <a name="quickstart-create-a-web-app-that-launches-the-immersive-reader-c"></a>Início Rápido: Criar um aplicativo Web que inicia a Leitura Avançada (C#)
 
@@ -223,5 +223,7 @@ Ao clicar no botão "Leitura Avançada", você verá a Leitura Avançada iniciad
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* Confira o [tutorial](./tutorial.md) para ver o que mais você pode fazer com o SDK da Leitura Avançada
+* Confira o [tutorial do Node.js](./tutorial-nodejs.md) para ver o que mais você pode fazer com o SDK de Leitura Avançada usando Node.js
+* Confira o [tutorial do Python](./tutorial-python.md) para ver o que mais você pode fazer com o SDK de Leitura Avançada usando Python
+* Confira o [tutorial do iOS](./tutorial-ios-picture-immersive-reader.md) para ver o que mais você pode fazer com o SDK de Leitura Avançada usando Swift
 * Explore o [SDK da Leitura Avançada](https://github.com/microsoft/immersive-reader-sdk) e a [Referência de SDK da Leitura Avançada](./reference.md)

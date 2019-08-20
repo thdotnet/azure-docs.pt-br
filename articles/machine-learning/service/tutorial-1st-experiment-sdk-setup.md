@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Configurar o ambiente e o workspace.'
+title: 'Tutorial: Configurar ambiente e workspace.'
 titleSuffix: Azure Machine Learning service
 description: Nesta série de tutoriais, você concluirá as etapas de ponta a ponta para começar a usar o SDK de Python do Azure Machine Learning em execução em notebooks Jupyter.  A parte um abrange a criação de um ambiente de servidor de notebook de nuvem, bem como a criação de um workspace para gerenciar seus experimentos e modelos de machine learning.
 services: machine-learning
@@ -10,14 +10,14 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 07/20/2019
-ms.openlocfilehash: b3fdcfbb9869c0199c91f5bbc6ca1f02fec996cf
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 70fee90fb82618a409d2566a3235ad8ca42e1760
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68828640"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68934425"
 ---
-# <a name="tutorial-setup-environment-and-workspace"></a>Tutorial: Configurar o ambiente e o workspace
+# <a name="tutorial-set-up-environment-and-workspace"></a>Tutorial: Configurar ambiente e workspace
 
 Neste tutorial, você concluirá as etapas de ponta a ponta para começar a usar o SDK de Python do Azure Machine Learning em execução em notebooks Jupyter. Este tutorial é **parte um de uma série de tutoriais de duas partes** e aborda a configuração e instalação do ambiente Python, bem como a criação de um workspace para gerenciar seus experimentos e modelos de machine learning. [**A parte dois**](tutorial-1st-experiment-sdk-train.md) se baseia nisso para treinar vários modelos de machine learning e apresentar o processo de gerenciamento de modelos usando o portal do Azure e o SDK.
 
@@ -25,7 +25,7 @@ Neste tutorial, você irá:
 
 > [!div class="checklist"]
 > * Criar um workspace do machine learning para usar no próximo tutorial.
-> * Crie uma VM de notebook, um servidor de Jupyter notebook baseado em nuvem com o SDK do Python do Azure Machine Learning pré-instalado e pré-configurado.
+> * Criar uma VM de Jupyter Notebook baseada em nuvem com o SDK do Python do Azure Machine Learning instalado e pré-configurado.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

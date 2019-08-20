@@ -8,12 +8,12 @@ ms.custom: mvc, devcenter
 ms.devlang: nodejs
 ms.topic: quickstart
 ms.date: 5/6/2019
-ms.openlocfilehash: 5ebcb3151bf9b6eaca4a726553a3c8f1d93c08aa
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 7e59e9b53143dcbea1c78f4c6131080ec8e9ea2c
+ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65067118"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68966741"
 ---
 # <a name="azure-database-for-postgresql---single-server-use-nodejs-to-connect-and-query-data"></a>Banco de Dados do Azure para PostgreSQL – Servidor único: Usar o Node.js para se conectar e consultar dados
 Este guia de início rápido demonstra como se conectar a Banco de Dados do Azure para PostgreSQL usando um aplicativo [Node.js](https://nodejs.org/). Ele mostra como usar instruções SQL para consultar, inserir, atualizar e excluir dados no banco de dados. As etapas neste artigo pressupõem que você está familiarizado com o desenvolvimento usando Node.js e que começou recentemente a trabalhar com o Banco de Dados do Azure para PostgreSQL.
@@ -43,8 +43,8 @@ npm list
 Obtenha as informações de conexão necessárias para se conectar ao Banco de Dados do Azure para PostgreSQL. Você precisa das credenciais de logon e do nome do servidor totalmente qualificado.
 
 1. Faça logon no [Portal do Azure](https://portal.azure.com/).
-2. No menu à esquerda no portal do Azure, clique em **Todos os recursos** e pesquise o servidor que você criou (como **mydemoserver**).
-3. Clique no nome do servidor.
+2. No menu à esquerda no portal do Azure, selecione **Todos os recursos** e pesquise o servidor que você criou (como **mydemoserver**).
+3. Selecione o nome do servidor.
 4. No painel **Visão Geral** do servidor, anote o **Nome do servidor** e **Nome de logon do administrador do servidor**. Se você esquecer sua senha, também poderá redefini-la nesse painel.
  ![Nome do servidor do Banco de Dados do Azure para PostgreSQL](./media/connect-nodejs/1-connection-string.png)
 

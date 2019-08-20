@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: mlearned
 ms.custom: mvc
-ms.openlocfilehash: 5a942aa10f36df55ac232defa610102700e3995b
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 9bccd826a37b66f7f89e70c57260a0db08342421
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67614191"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019182"
 ---
 # <a name="tutorial-scale-applications-in-azure-kubernetes-service-aks"></a>Tutorial: Dimensionar aplicativos no AKS (Serviço de Kubernetes do Azure)
 
@@ -70,18 +70,19 @@ azure-vote-front-3309479140-qphz8   1/1       Running   0          3m
 
 ## <a name="autoscale-pods"></a>Dimensionamento automático de pods
 
-O Kubernetes dá suporte ao [dimensionamento automático de pods horizontais][kubernetes-hpa] to adjust the number of pods in a deployment depending on CPU utilization or other select metrics. The [Metrics Server][metrics-server] é usado para fornecer a utilização de recursos ao Kubernetes e é implantado automaticamente nos clusters do AKS versões 1.10 e superiores. Para ver a versão do cluster do AKS, use o comando [az aks show][az-aks-show], conforme mostrado no seguinte exemplo:
+O Kubernetes dá suporte a [dimensionamento automático horizontal de pods][kubernetes-hpa], para ajustar o número de pods em uma implantação dependendo da utilização da CPU ou de outras métricas selecionadas. O [Servidor de Métricas][metrics-server] é usado para fornecer a utilização de recursos para Kubernetes e é implantado automaticamente em clusters AKS versões 1.10 e superior. Para ver a versão do cluster do AKS, use o comando [az aks show][az-aks-show] conforme mostrado no exemplo a seguir:
 
 ```azurecli
 az aks show --resource-group myResourceGroup --name myAKSCluster --query kubernetesVersion
 ```
 
-Se o cluster do AKS for menor do que *1.10*, instale o Servidor de Métricas, caso contrário, ignore esta etapa. Para instalar, clone o repositório do GitHub `metrics-server` e instale as definições de recurso de exemplo. Para exibir o conteúdo dessas definições YAML, confira [Servidor de Medição para o Kubernetes 1.8 e posterior][metrics-server-github].
-
-```console
-git clone https://github.com/kubernetes-incubator/metrics-server.git
-kubectl create -f metrics-server/deploy/1.8+/
-```
+> [!NOTE]
+> Se o cluster AKs for menor que *1.10*, o Servidor de Métricas não será instalado automaticamente. Para instalar, clone o repositório do GitHub `metrics-server` e instale as definições de recurso de exemplo. Para exibir o conteúdo dessas definições YAML, confira [Servidor de Medição para o Kubernetes 1.8 e posterior][metrics-server-github].
+> 
+> ```console
+> git clone https://github.com/kubernetes-incubator/metrics-server.git
+> kubectl create -f metrics-server/deploy/1.8+/
+> ```
 
 Para usar o dimensionador automático, todos os contêineres em seus pods devem ter limites e solicitações de CPU definidos. Na implantação, `azure-vote-front` o contêiner de front-end já solicita 0,25 CPU, com um limite de 0,5 CPU. Essas solicitações e limites de recursos são definidos como mostrado no snippet de exemplo a seguir:
 

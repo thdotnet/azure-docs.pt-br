@@ -7,12 +7,12 @@ ms.date: 02/08/2019
 ms.topic: overview
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 5f403ee7d2bf4a0730ceaa9b5a95b3e7b11f3695
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: be7e3043172f988a429bbf02dec08bfbbc1a70b7
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67428767"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68848434"
 ---
 # <a name="overview-of-the-azure-blueprints-service"></a>Visão geral do serviço do Azure Blueprints
 
@@ -54,7 +54,7 @@ Um plano gráfico é composto por _artefatos_. Plantas atualmente dão suporte o
 
 |Recurso  | Opções de hierarquia| DESCRIÇÃO  |
 |---------|---------|---------|
-|Grupos de recursos | Assinatura | Crie um novo grupo de recursos para uso por outros artefatos no blueprint.  Esses grupos de recursos de espaço reservado permitem que você organize os recursos exatamente da maneira que você deseja que eles sejam estruturados e fornece um limitador de escopo para os artefatos de atribuição de diretivas e funções incluídos, além dos modelos do Azure Resource Manager. |
+|Grupos de recursos | Subscription | Crie um novo grupo de recursos para uso por outros artefatos no blueprint.  Esses grupos de recursos de espaço reservado permitem que você organize os recursos exatamente da maneira que você deseja que eles sejam estruturados e fornece um limitador de escopo para os artefatos de atribuição de diretivas e funções incluídos, além dos modelos do Azure Resource Manager. |
 |Modelo do Azure Resource Manager | Assinatura, Grupo de Recursos | Modelos são usados para compor ambientes complexos. Ambientes de exemplo: um farm do SharePoint, uma configuração de estado da Automação do Azure ou um espaço de trabalho do Log Analytics. |
 |Atribuição de política | Assinatura, Grupo de Recursos | Permite a atribuição de uma política ou iniciativa à assinatura a qual o blueprint está atribuído. A política ou iniciativa deve estar dentro do escopo do local de definição do blueprint. Se a política ou iniciativa tiver parâmetros, esses parâmetros serão atribuídos na criação do blueprint ou durante a atribuição do blueprint. |
 |Atribuição de função | Assinatura, Grupo de Recursos | Adicione um usuário ou grupo existente a uma função interna para fazer com que as pessoas certas tenham sempre o acesso correto aos seus recursos. Atribuições de função podem ser definidas para a assinatura inteira ou aninhadas em um grupo de recursos específico incluído no blueprint. |
@@ -79,7 +79,7 @@ Quando um plano gráfico é criado, ele é considerado para estar no modo **rasc
 
 ## <a name="blueprint-assignment"></a>Atribuição de planta
 
-Cada **versão** **publicada** de um blueprint pode ser atribuída a uma assinatura existente. No portal, o blueprint usará como padrão a **Versão** em vez do que foi **Publicado** mais recentemente. Se houver parâmetros de artefatos (ou parâmetros de blueprint), os parâmetros serão definidos durante o processo de atribuição.
+Cada **Versão** **Publicada** de um blueprint pode ser atribuída (com um comprimento de nome máximo de 90 caracteres) a uma assinatura existente. No portal, o blueprint usará como padrão a **Versão** em vez do que foi **Publicado** mais recentemente. Se houver parâmetros de artefatos (ou parâmetros de blueprint), os parâmetros serão definidos durante o processo de atribuição.
 
 ## <a name="permissions-in-azure-blueprints"></a>Permissões nos Blueprints do Azure
 
@@ -110,6 +110,17 @@ Todas as permissões acima são incluídas na função **Proprietário**. A fun�
 
 > [!NOTE]
 > Se estiver usando uma identidade gerenciada atribuída pelo sistema, a entidade de serviço para o Azure BluePrints requer a função **Proprietário** na assinatura atribuída para habilitar a implantação. Se estiver usando o portal, essa função é concedida automaticamente e revogada para a implantação. Se usando a API REST, essa função deve ser concedida manualmente, mas é revogada ainda automaticamente após a conclusão da implantação. Se estiver usando uma identidade gerenciada atribuída pelo usuário, somente o usuário que está criando a atribuição de especificação técnica precisa de permissões de **Proprietário**.
+
+## <a name="naming-limits"></a>Limites de nomenclatura
+
+A seguir está uma lista de limitações que existem para determinados campos:
+
+|Objeto|Campo|Caracteres Permitidos|Máx. Comprimento|
+|-|-|-|-|
+|Blueprint|NOME|letras, números, hifens e pontos|48|
+|Blueprint|Versão|letras, números, hifens e pontos|20|
+|Atribuição de planta|NOME|letras, números, hifens e pontos|90|
+|Artefato de blueprint|NOME|letras, números, hifens e pontos|48|
 
 ## <a name="video-overview"></a>Visão geral em vídeo
 

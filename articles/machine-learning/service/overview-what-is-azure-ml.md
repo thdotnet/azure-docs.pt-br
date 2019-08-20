@@ -1,6 +1,5 @@
 ---
-title: O que é
-titleSuffix: Azure Machine Learning service
+title: O que é o Serviço do Azure Machine Learning
 description: Visão geral do Serviço do Azure Machine Learning – Uma solução integrada de ciência de dados de ponta a ponta para cientistas profissionais desenvolverem, experimentarem e implantarem aplicativos de análise avançada em escala de nuvem.
 services: machine-learning
 ms.service: machine-learning
@@ -10,12 +9,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 08/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 5323c996b8d974c9db11a508503f767cfee80301
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 1dea5e174c66685f889595ab15b3edf57dd02493
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68828113"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69018237"
 ---
 # <a name="what-is-azure-machine-learning-service"></a>O que é o serviço Azure Machine Learning?
 
@@ -50,15 +49,15 @@ Inicie o treinamento em seu computador local usando o <a href="https://aka.ms/am
 
 Também é possível [automatizar o treinamento e o ajuste do modelo](tutorial-auto-train-models.md) usando o SDK.
 
-### <a name="code-free--low-code-experience"></a>Experiência sem código/com pouco código
+### <a name="ui-based-low-code-experience"></a>Experiência de baixo código baseada na interface do usuário
 
 Para o treinamento sem código, experimente:
 
-+ a interface visual para teste e implantação do tipo arrastar e soltar
++ Como criar [experimentos de ML automatizados](tutorial-first-experiment-automated-ml.md) na interface fácil de usar.
++ A [experimentação do recurso do tipo "arrastar e soltar" na interface visual](ui-tutorial-automobile-price-train-score.md).
+  ![Interface visual para o serviço do Azure Machine Learning](media/overview-what-is-azure-ml/visual-interface.png)
 
-    ![Interface visual para o serviço do Azure Machine Learning](media/overview-what-is-azure-ml/visual-interface.png)
 
-+ A opção do portal do Azure para testes de ML automatizados
 
 ### <a name="operationalization-mlops"></a>Operacionalização (MLOps)
 
@@ -70,10 +69,10 @@ Esses modelos podem ser consumidos e retornar previsões em [tempo real](how-to-
 
 E com [pipelines de aprendizado de máquina](concept-ml-pipelines.md) avançados, é possível colaborar em cada etapa desde a preparação de dados, do treinamento do modelo e da avaliação, por meio da implantação. Os pipelines permitem:
 
-* automatizar o processo de aprendizado de máquina de ponta a ponta na nuvem
-* reutilizar os componentes e apenas executar as etapas novamente quando precisar
-* usar diferentes recursos de computação em cada etapa
-* executar tarefas de pontuação de lote
+* Automatizar o processo de aprendizado de máquina de ponta a ponta na nuvem
+* Reutilizar os componentes e apenas executar as etapas novamente quando necessário
+* Usar diferentes recursos de computação em cada etapa
+* Executar tarefas de pontuação em lote
 
 Para começar a usar o Serviço do Azure Machine Learning, confira [Próximas etapas](#next-steps).
 
@@ -106,7 +105,7 @@ Você recebe créditos para gastar em serviços do Azure. Depois que eles forem 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Crie um workspace de serviço do Machine Learning](setup-create-workspace.md) para começar a usar.
+- [Crie um workspace de serviço do Machine Learning](how-to-manage-workspace.md) para começar a usar.
 
 - Siga os tutoriais completos:
   + [Treinar um modelo de classificação de imagem com o Serviço do Azure Machine Learning](tutorial-train-models-with-aml.md)

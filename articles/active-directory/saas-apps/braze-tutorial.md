@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bd8d4a4bd21e0f7a7f483e139beb1840b5c3cc7f
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 3a32548bdafa999fe72e8b2f8e3b80961ebe3c9a
+ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165081"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69032907"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-braze"></a>Tutorial: Integração do Azure Active Directory ao Braze
 
@@ -115,7 +115,7 @@ Para configurar o logon único do Azure AD com o Braze, execute as seguintes eta
     Na caixa de texto **URL de logon**, digite um URL usando o seguinte padrão: `https://<SUBDOMAIN>.braze.com/sign_in`
 
     > [!NOTE]
-    > Esses valores não são reais. Atualize esses valores com a URL de Resposta e a URL de Logon reais. Contate a [equipe de suporte ao Cliente do Braze](mailto:support@braze.com) para obter esses valores. Você também pode consultar os padrões exibidos na seção **Configuração Básica de SAML** no portal do Azure.
+    > Para o subdomínio, use o subdomínio de coordenação listado em sua URL da instância do Braze. Por exemplo, se sua instância for US-01, sua URL será https://dashboard-01.braze.com. Isso significa que o seu subdomínio será o painel-01.
 
 6. O aplicativo Braze espera as declarações SAML em um formato específico. Configure as declarações a seguir para este aplicativo. Você pode gerenciar os valores desses atributos da seção **Atributos de Usuário** na página de integração de aplicativos. Na página **Definir Logon Único com SAML**, clique no botão **Editar** para abrir a caixa de diálogo **Atributos do Usuário**.
 
@@ -164,7 +164,7 @@ Para configurar o logon único do Azure AD com o Braze, execute as seguintes eta
 
 ### <a name="configure-braze-single-sign-on"></a>Configurar o Logon Único do Braze
 
-Para configurar o logon único no lado do **Braze**, é necessário enviar o **Certificado (Base64)** baixado e as URLs apropriadas copiadas do portal do Azure para a [equipe de suporte do Braze](mailto:support@braze.com). Eles definem essa configuração para ter a conexão de SSO de SAML definida corretamente em ambos os lados.
+Para configurar o logon único no lado do **Braze**, você precisará garantir que um Gerente de Conta do Braze tenha o SSO de SAML habilitado para sua conta. Uma vez habilitado, você pode ir para Configurações da Empresa > Configurações de Segurança e mude a seção SSO de SAML para ATIVO. Nesta seção, você precisará copiar e colar o **Certificado (Base64)** , juntamente com a adição de um Nome de SAML. 
 
 ### <a name="create-an-azure-ad-test-user"></a>Criar um usuário de teste do Azure AD
 
@@ -218,7 +218,7 @@ Nesta seção, você permitirá que Brenda Fernandes use o logon único do Azure
 
 ### <a name="create-braze-test-user"></a>Criar usuário de teste do Braze
 
-Nesta seção, você cria um usuário chamado Brenda Fernandes no Braze. Trabalhe com a  [equipe de suporte do Braze](mailto:support@braze.com) para adicionar os usuários à plataforma do Braze. Os usuários devem ser criados e ativados antes de usar o logon único.
+Nesta seção, você cria um usuário chamado Brenda Fernandes no Braze. Você pode adicionar os usuários na plataforma Braze. Os usuários devem ser criados e ativados antes de usar o logon único.
 
 ### <a name="test-single-sign-on"></a>Testar logon único
 
@@ -232,4 +232,4 @@ Ao clicar no bloco do Braze no Painel de Acesso, você deverá ser conectado aut
 
 - [O que é o acesso a aplicativos e logon único com o Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [O que é o Acesso Condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [O que é o acesso condicional no Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

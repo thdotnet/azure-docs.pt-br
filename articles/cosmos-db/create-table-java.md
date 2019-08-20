@@ -1,5 +1,5 @@
 ---
-title: 'Início Rápido: API de Tabela com Java – Azure Cosmos DB'
+title: Usar o API de Tabela e o Java para criar um aplicativo – Azure Cosmos DB
 description: Este guia de início rápido mostra como usar a API de Tabela do Azure Cosmos DB para criar um aplicativo com o Portal do Azure e o Java
 author: SnehaGunda
 ms.service: cosmos-db
@@ -8,12 +8,13 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 04/10/2018
 ms.author: sngun
-ms.openlocfilehash: 3610a5be356f306e4f92ea35d399a888f568d6d3
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.custom: seo-java-august2019
+ms.openlocfilehash: d1eade1b5bdbbce2bc47c5e6177d21c7ff835936
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68326191"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68933946"
 ---
 # <a name="quickstart-build-a-table-api-app-with-java-and-azure-cosmos-db"></a>Início Rápido: Criar um aplicativo de API de Tabela com Java e Azure Cosmos DB
 
@@ -84,7 +85,7 @@ Agora, clonaremos um aplicativo de Tabela do GitHub, definiremos a cadeia de con
 
 Agora, volte ao portal do Azure para obter informações sobre a cadeia de conexão e copiá-las para o aplicativo. Isso permite que seu aplicativo se comunique com o banco de dados hospedado. 
 
-1. No [Portal do Azure](https://portal.azure.com/), clique em **Cadeia de Conexão**. 
+1. No [portal do Azure](https://portal.azure.com/), selecione **Cadeia de Conexão**. 
 
    ![Exibir e copiar as informações necessárias da cadeia de conexão do painel da Cadeia de Conexão](./media/create-table-java/connection-string.png)
 

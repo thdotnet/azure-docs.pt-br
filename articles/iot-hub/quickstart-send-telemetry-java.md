@@ -1,5 +1,5 @@
 ---
-title: 'Início Rápido: Enviar telemetria ao Hub IoT do Azure (Java) | Microsoft Docs'
+title: 'Início Rápido: Enviar telemetria ao Hub IoT do Azure com Java'
 description: Neste início rápido, você executará dois aplicativos Java de exemplo para enviar telemetria simulada para um Hub IoT e ler telemetria do Hub IoT para processamento na nuvem.
 author: wesmc7777
 manager: philmea
@@ -8,14 +8,14 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: java
 ms.topic: quickstart
-ms.custom: mvc
+ms.custom: mvc, seo-java-august2019
 ms.date: 06/21/2019
-ms.openlocfilehash: 52e221088a7b12551636ecdc81532448f38eb26c
-ms.sourcegitcommit: 08138eab740c12bf68c787062b101a4333292075
+ms.openlocfilehash: 15d9447d7078fd4858a7957448dd30d07049d6e9
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/22/2019
-ms.locfileid: "67330460"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68958628"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-java"></a>Início Rápido: Enviar a telemetria de um dispositivo para um hub IoT e lê-la com um back-end (Java)
 

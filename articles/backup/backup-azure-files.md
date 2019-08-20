@@ -1,5 +1,5 @@
 ---
-title: Fazer backup e restaurar compartilhamentos de arquivos do Azure
+title: Fazer backup e restaurar Compartilhamentos de Arquivo do Azure
 description: Este artigo fornece detalhes sobre como fazer backup e restaurar seus compartilhamentos de arquivos do Azure e explica as tarefas de gerenciamento.
 author: dcurwin
 ms.author: dacurwin
@@ -7,12 +7,12 @@ ms.date: 07/29/2019
 ms.topic: tutorial
 ms.service: backup
 manager: carmonm
-ms.openlocfilehash: c2e78f6925ae8ff72e7f603c886376b32e40cd94
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 03b65c71201ba125cb3924a52e8760a088374aa6
+ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68737249"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68954730"
 ---
 # <a name="back-up-and-restore-azure-file-shares"></a>Fazer backup e restaurar compartilhamentos de arquivos do Azure
 Este artigo explica como usar o Portal do Azure para fazer backup e restaurar [compartilhamentos de arquivos do Azure](../storage/files/storage-files-introduction.md) no Azure.
@@ -188,7 +188,7 @@ Para retomar a proteção do compartilhamento de arquivos, vá até o Item de Ba
 
 ### <a name="delete-backup-data"></a>Excluir dados de backup
 
-Você pode excluir o backup de um compartilhamento de arquivos durante a interrupção do trabalho de backup ou a qualquer momento depois de interromper a proteção. Pode até mesmo ser benéfico aguardar dias ou semanas antes de excluir os pontos de recuperação. Ao contrário de restaurar os pontos de recuperação, ao excluir os dados do backup, você não pode escolher os pontos de recuperação específicos para excluir. Se você escolher excluir os dados de backup, apagará todos os pontos de recuperação associados ao item.
+Você pode excluir o backup de um compartilhamento de arquivo durante a interrupção do trabalho de backup ou a qualquer momento depois de interromper a proteção. Pode até mesmo ser benéfico aguardar dias ou semanas antes de excluir os pontos de recuperação. Ao contrário de restaurar os pontos de recuperação, ao excluir os dados do backup, você não pode escolher os pontos de recuperação específicos para excluir. Se você escolher excluir os dados de backup, apagará todos os pontos de recuperação associados ao item.
 
 O procedimento a seguir pressupõe que o trabalho de backup da máquina virtual foi interrompido. Depois que o trabalho de backup for interrompido, as opções Retomar Backup e Excluir Dados do Backup ficam disponíveis no painel de itens do backup. Clique em Excluir Dados de Backup e digite o nome do compartilhamento de arquivos para confirmar a exclusão. Como opção, forneça um Motivo para a exclusão ou Comentário.
 

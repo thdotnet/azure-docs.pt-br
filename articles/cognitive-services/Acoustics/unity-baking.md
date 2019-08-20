@@ -3,26 +3,26 @@ title: Tutorial de bake do Projeto Acústico do Unity
 titlesuffix: Azure Cognitive Services
 description: Este tutorial descreve a preparação de acústica com o Projeto Acústico no Unity.
 services: cognitive-services
-author: kegodin
+author: NoelCross
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: acoustics
 ms.topic: tutorial
 ms.date: 03/20/2019
-ms.author: kegodin
+ms.author: noelc
 ROBOTS: NOINDEX
-ms.openlocfilehash: 2362b3916d1b1f430350d975dc0b61914a777be2
-ms.sourcegitcommit: ad9120a73d5072aac478f33b4dad47bf63aa1aaa
+ms.openlocfilehash: b7249c3048ba3af3adbaac01f43770482a0d38ad
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68706684"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68933234"
 ---
 # <a name="project-acoustics-unity-bake-tutorial"></a>Tutorial de bake do Projeto Acústico do Unity
 Este tutorial descreve a preparação de acústica com o Projeto Acústico no Unity.
 
 Requisitos de software:
-* [Unity 2018.2+](https://unity3d.com) para Windows
+* [Unity 2018.2+](https://unity3d.com) para Windows ou MacOS
 * [Plugin do Projeto Acústico integrado em seu projeto do Unity](unity-integration.md) ou o [conteúdo de exemplo do Projeto Acústico do Unity](unity-quickstart.md)
 * Opcional: Uma [conta do Lote do Azure](create-azure-account.md) para acelerar os bakes usando a computação em nuvem
 
@@ -179,6 +179,25 @@ Depois de iniciar um assar, você pode fechar o Unity. Dependendo do projeto, do
 
 As credenciais do Azure são armazenadas com segurança em sua máquina local e associadas ao seu editor do Unity. Eles são usados exclusivamente para estabelecer uma conexão segura com o Azure.
 
+## <a name="to-find-the-status-of-a-running-job-on-the-azure-portal"></a>Para localizar o status de um trabalho em execução no portal do Azure
+
+1. Localize a ID do trabalho do bake na guia bake:
+
+![Captura de tela da ID do trabalho bake do Unity](media/unity-job-id.png)  
+
+2. Abra o [portal do Azure](https://portal.azure.com), navegue até a conta de Lote usada para a bake e selecione **Trabalhos**
+
+![Captura de tela do link de Trabalhos](media/azure-batch-jobs.png)  
+
+3. Pesquisar a ID do trabalho na lista de trabalhos
+
+![Captura de tela do status do trabalho bake](media/azure-bake-job-status.png)  
+
+4. Clique na ID do trabalho para ver o status das tarefas relacionadas e o status geral do trabalho
+
+![Captura de tela do status da tarefa bake](media/azure-batch-task-state.png)  
+
+
 ### <a name="Estimating-bake-cost"></a> Estimar o custo do bake do Azure
 
 Para estimar o custo de um dado bake, pegue o valor mostrado para **Estimated Compute Cost**, que é uma duração, e multiplique-o pelo custo por hora em sua moeda local do **VM Node Type** você selecionou. O resultado não incluirá o tempo de nó necessárias para colocar os nós e em execução. Por exemplo, se você selecionar **Standard_F8s_v2** para seu tipo de nó, que tem um custo de US$ 0,40/h, e o custo estimado de computação for de 3 horas e 57 minutos, o custo estimado para executar o trabalho será de US$ 0,40 * ~ 4 horas = ~ US$ 1,60. O custo real provavelmente será um pouco maior devido ao tempo extra para iniciar os nós. Você pode encontrar o custo de nó por hora na página [Preço do lote do Azure](https://azure.microsoft.com/pricing/details/virtual-machines/linux) (selecione "Computar otimizado" ou "Computação de alto desempenho" para a categoria).
@@ -188,6 +207,7 @@ Você pode preparar sua cena em seu próprio computador. Isso pode ser útil par
 
 ### <a name="minimum-hardware-requirements"></a>Requisitos mínimos de hardware
 * Um processador x86-64 com pelo menos 8 núcleos e 32 GB de RAM
+* [Hyper-V habilitado](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v) para executar o Docker
 
 Por exemplo, em nosso teste em uma máquina de 8 núcleos com Intel Xeon E5-1660 @ 3 GHz e 32 GB RAM -
 * Uma cena pequena com 100 investigações leva cerca de 2 horas em um bake grosso e cerca de 32 horas em um bake fino.
@@ -195,13 +215,15 @@ Por exemplo, em nosso teste em uma máquina de 8 núcleos com Intel Xeon E5-1660
 
 ### <a name="setup-docker"></a>Configurar Docker
 Instalar e configurar o Docker no PC que processará a simulação -
-1. Instalar o [conjunto de ferramentas do Docker](https://www.docker.com/products/docker-desktop).
-2. Inicie as configurações do Docker, navegue até as opções "Avançadas" e configure os recursos para terem pelo menos 8 GB de RAM. Quanto mais CPUs você puder alocar para o Docker, mais rápido será o bake. ![Captura de tela do exemplo de configurações do Docker](media/docker-settings.png)
-3. Navegue até "Unidades Compartilhadas" e ative o compartilhamento para a unidade usada no processamento.![Captura de tela de opções do drive compartilhado do Docker](media/docker-shared-drives.png)
+1. Instalar a [Área de Trabalho do Docker](https://www.docker.com/products/docker-desktop).
+2. Inicie as configurações do Docker, navegue até as opções "Avançadas" e configure os recursos para terem pelo menos 8 GB de RAM. Quanto mais CPUs você puder alocar para o Docker, mais rápido será o bake.  
+![Captura de tela do exemplo de configurações do Docker](media/docker-settings.png)
+1. Navegue até "Unidades Compartilhadas" e ative o compartilhamento para a unidade usada no processamento.  
+![Captura de tela de opções do drive compartilhado do Docker](media/docker-shared-drives.png)
 
 ### <a name="run-local-bake"></a>Executar um bake local
 1. Clique no botão "Preparar Bake Local" na guia **Bake** e selecione uma pasta onde os arquivos de entrada e scripts de execução serão salvos. É possível executar o bake em qualquer máquina, desde que ela atenda aos requisitos mínimos de hardware e tenha o Docker instalado, copiando a pasta para essa máquina.
-2. Inicie a simulação usando o script “runlocalbake.bat”. Esse script buscará a imagem do Docker do Project Acoustics com o conjunto de ferramentas necessário para o processamento da simulação e dará início a ela. 
+2. Inicie a simulação usando o script "runlocalbake.bat" no Windows ou usando o script "runlocalbake.sh" no MacOS. Esse script buscará a imagem do Docker do Project Acoustics com o conjunto de ferramentas necessário para o processamento da simulação e dará início a ela. 
 3. Quando a simulação terminar, copie o arquivo .ace resultante de volta para seu projeto Unity. Para garantir que o Unity reconheça o arquivo como binário, acrescente “.bytes” à extensão do arquivo (por exemplo, “Scene1.ace.bytes”). Os logs detalhados da simulação são armazenados em “AcousticsLog.txt”. Se você tiver algum problema, compartilhe esse arquivo para ajudar com o diagnóstico.
 
 ## <a name="Data-Files"></a> Arquivos de dados adicionados pelo processo de bake

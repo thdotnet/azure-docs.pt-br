@@ -10,12 +10,12 @@ ms.subservice: anomaly-detector
 ms.topic: overview
 ms.date: 03/26/2019
 ms.author: aahi
-ms.openlocfilehash: 80e0984deff83726fd96a462a1ae8a4375db9d2e
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 70cb4a008391ad55562bc55fb45d877988e68643
+ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67721614"
+ms.lasthandoff: 08/08/2019
+ms.locfileid: "68854769"
 ---
 # <a name="what-is-the-anomaly-detector-api"></a>O que é a API do Detector de Anomalias?
 
@@ -38,15 +38,22 @@ Com o Detector de Anomalias, você pode detectar anomalias automaticamente em to
 
 ## <a name="demo"></a>Demonstração
 
-Para começar rapidamente a usar a API do Detector de Anomalias, experimente uma [demonstração online](https://notebooks.azure.com/AzureAnomalyDetection/projects/anomalydetector) que pode ser executada em seu navegador. Essa demonstração é executada em um Jupyter Notebook hospedado na Web e mostra como enviar uma solicitação à API e visualizar o resultado.
+Confira esta [demonstração interativa](https://aka.ms/adDemo) para entender como funciona o Detector de Anomalias.
+Para executar a demonstração, você precisa criar um recurso de Detector de Anomalias e obter a chave de API e o ponto de extremidade.
 
-Para executar a demonstração, conclua as seguintes etapas:
+## <a name="notebook"></a>Bloco de notas
 
-1. Obtenha uma chave de assinatura válida da API do Detector de Anomalias e um ponto de extremidade de API. A seção a seguir tem instruções para inscrever-se. 
-2. Entre e clique em Clonar no canto superior direito.
-3. Clique em **Executar em computação gratuita**
-4. Selecione um dos notebooks para este exemplo.
-5. Adicione sua chave de assinatura de API do Detector de Anomalias válida à variável `subscription_key`. Altere a variável `endpoint` para seu ponto de extremidade. Por exemplo: `https://westus2.api.cognitive.microsoft.com`
+Para saber como chamar a API do Detector de Anomalias, experimente este [Notebook do Azure](https://aka.ms/adNotebook). Este Jupyter Notebook hospedado na Web mostra como enviar uma solicitação à API e visualizar o resultado.
+
+Para executar o Notebook, conclua as seguintes etapas:
+
+1. Obtenha uma chave de assinatura válida da API do Detector de Anomalias e um ponto de extremidade de API. A seção a seguir tem instruções para inscrever-se.
+1. Entre e clique em Clonar no canto superior direito.
+1. Desmarque a opção "público" na caixa de diálogo antes de concluir a operação de clonagem, caso contrário, o notebook, incluindo as chaves de assinatura, será público.
+1. Clique em **Executar em computação gratuita**
+1. Selecione um dos notebooks.
+1. Adicione sua chave de assinatura de API do Detector de Anomalias válida à variável `subscription_key`. 
+1. Altere a variável `endpoint` para seu ponto de extremidade. Por exemplo: `https://westus2.api.cognitive.microsoft.com/anomalydetector/v1.0/timeseries/last/detect`
 1. Na barra de menus superior, clique em **Célula** e, em seguida, **Executar Tudo**.
 
 ## <a name="workflow"></a>Fluxo de trabalho
@@ -62,6 +69,13 @@ Após a inscrição:
 1. Pegue seus dados de série temporal e converta-os em um formato JSON válido. Use as [melhores práticas](concepts/anomaly-detection-best-practices.md) ao preparar seus dados para obter os melhores resultados.
 1. Envie uma solicitação à API do Detector de Anomalias com seus dados.
 1. Processe a resposta da API analisando a mensagem JSON retornada.
+
+## <a name="algorithms"></a>Algoritmos
+
+* Veja este blog técnico [Introdução à API do Detector de Anomalias do Azure](https://techcommunity.microsoft.com/t5/AI-Customer-Engineering-Team/Introducing-Azure-Anomaly-Detector-API/ba-p/490162) sobre os algoritmos nos bastidores.
+* Confira este artigo, [Serviço de detecção de anomalias da série temporal na Microsoft](https://arxiv.org/abs/1906.03821) (aceito por KDD 2019) para os algoritmos SR-CNN de ponta desenvolvidos pela Microsoft.
+
+> [!VIDEO https://www.youtube.com/embed/ERTaAnwCarM]
 
 ## <a name="next-steps"></a>Próximas etapas
 

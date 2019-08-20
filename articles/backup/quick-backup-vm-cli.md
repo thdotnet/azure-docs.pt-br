@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 01/31/2019
 ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: 21178c3b8555879f13686164a4eee922997933dd
-ms.sourcegitcommit: d585cdda2afcf729ed943cfd170b0b361e615fae
+ms.openlocfilehash: 38e18a79888853383e7966464402408087817f01
+ms.sourcegitcommit: b12a25fc93559820cd9c925f9d0766d6a8963703
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68688486"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69019006"
 ---
 # <a name="back-up-a-virtual-machine-in-azure-with-the-cli"></a>Fazer backup de uma máquina virtual no Azure com a CLI
 A CLI do Azure é usada para criar e gerenciar recursos do Azure da linha de comando ou em scripts. Você pode proteger seus dados fazendo backups em intervalos regulares. O Backup do Azure cria pontos de recuperação que são armazenados em cofres de recuperação com redundância geográfica. Este artigo fornece detalhes sobre como fazer backup de uma máquina virtual (VM) no Azure com a CLI do Azure. Você também pode executar essas etapas usando o [Azure PowerShell](quick-backup-vm-powershell.md) ou o [portal do Azure](quick-backup-vm-portal.md).
@@ -140,7 +140,7 @@ az group delete --name myResourceGroup
 
 
 ## <a name="next-steps"></a>Próximas etapas
-Neste início rápido, você criou um cofre dos Serviços de Recuperação, habilitou a proteção em uma máquina virtual e criou o ponto de recuperação inicial. Para saber mais sobre os Serviços de Recuperação e o Backup do Azure, prossiga para os tutoriais.
+Neste início rápido, você criou um cofre dos Serviços de Recuperação, habilitou a proteção em uma VM e criou o ponto de recuperação inicial. Para saber mais sobre os Serviços de Recuperação e o Backup do Azure, prossiga para os tutoriais.
 
 > [!div class="nextstepaction"]
 > [Fazer backup de várias VMs do Azure](./tutorial-backup-vm-at-scale.md)

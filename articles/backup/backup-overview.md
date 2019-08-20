@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 04/24/2019
 ms.author: dacurwin
 ms.custom: mvc
-ms.openlocfilehash: a4fbfeb96d2316ce6af100cb16fcbf0d13f230f2
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 526c60916854d4918607a1fd1b887ac9d27cd1c7
+ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68737126"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68950023"
 ---
 # <a name="what-is-the-azure-backup-service"></a>O que é o serviço de Backup do Azure?
 
@@ -66,7 +66,7 @@ O Backup do Azure pode fazer backup de computadores locais e VMs do Azure.
 **Computador** | **Cenário de backup**
 --- | ---
 **Backup local** |  1) Execute o agente do MARS (Serviços de Recuperação do Microsoft Azure) do Backup do Azure em computadores Windows locais para fazer backup do estado do sistema e de arquivos individuais. <br/><br/>2) Faça backup de computadores locais em um servidor de backup (System Center DPM [Data Protection Manager] ou MABS [Servidor de Backup do Microsoft Azure]) e, em seguida, configure o servidor de backup para fazer backup em um cofre dos Serviços de Recuperação do Backup do Azure no Azure.
-**VMs do Azure** | 1) Habilite o backup para VMs individuais do Azure. Quando você habilita o backup, o Backup do Azure instala uma extensão no agente de VM do Azure em execução na VM. O agente faz backup de toda a VM.<br/><br/> 2) Execute o agente do MARS em uma VM do Azure. Isso é útil se você deseja fazer backup de arquivos e pastas individuais na VM.<br/><br/> 3) Faça backup de uma VM do Azure em um servidor DPM ou no MABS em execução no Azure. Em seguida, faça backup do servidor DPM/MABS em um cofre usando o Backup do Azure.
+**VMs do Azure** | 1) Habilite o backup para VMs individuais do Azure. Quando você habilita o backup, o Backup do Azure instala uma extensão no agente de VM do Azure em execução na VM. O agente faz backup de toda a VM.<br/><br/> 2) Execute o agente do MARS em uma VM do Azure. Isso é útil se você deseja fazer backup de arquivos e pastas individuais na VM.<br/><br/> 
 
 
 ## <a name="why-use-a-backup-server"></a>Por que usar um servidor de backup?
@@ -116,7 +116,7 @@ O Backup do Azure tem um limite de 9999 pontos de recuperação, também conheci
 - Uma instância protegida é um computador, servidor (físico ou virtual) ou carga de trabalho configurado para fazer backup de dados no Azure. Uma instância está protegida depois que uma cópia de backup de dados foi salva.
 - A cópia de backup de dados é a proteção. Se a fonte de dados foi perdida ou corrompida, a cópia de backup pode restaurar os dados de origem.
 
-A tabela a seguir mostra a frequência máxima de backup de cada componente. A configuração da política de backup determina a rapidez com a qual você consome os pontos de recuperação. Por exemplo, se você criar um ponto de recuperação por dia, poderá depois retê-los por 27 anos antes de executá-los. Se você usar um ponto de recuperação por mês, poderá depois retê-los por 833 anos antes de executá-los. O serviço de Backup não define um limite de tempo de validade em um ponto de recuperação.
+A tabela a seguir mostra a frequência de backup máxima para cada componente. A configuração da política de backup determina a rapidez com a qual você pode consumir os pontos de recuperação. Por exemplo, se você criar um ponto de recuperação por dia, poderá depois retê-los por 27 anos antes de executá-los. Se você usar um ponto de recuperação por mês, poderá depois retê-los por 833 anos antes de executá-los. O serviço de Backup não define um limite de tempo de validade em um ponto de recuperação.
 
 |  | Agente de Backup do Azure | System Center DPM | Servidor de Backup do Azure | Backup de VM IaaS do Azure |
 | --- | --- | --- | --- | --- |

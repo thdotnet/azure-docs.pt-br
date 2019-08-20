@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 07/30/2019
+ms.date: 08/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf5bf49538823ea50bca197a78ec54d4ddcae1ff
-ms.sourcegitcommit: 6ad03fa28a0f60cb6dce6144f728c2ceb56ff6e2
+ms.openlocfilehash: e078cb7daa787b9fe5e8bc996b36f0fef198f41c
+ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68708439"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68879695"
 ---
 # <a name="tutorial-integrate-carbonite-endpoint-backup-with-azure-active-directory"></a>Tutorial: Integrar o Carbonite Endpoint Backup com o Azure Active Directory
 
@@ -125,27 +125,35 @@ Siga estas etapas para habilitar o SSO do Azure AD no portal do Azure.
 
 ### <a name="configure-carbonite-endpoint-backup-sso"></a>Configurar o SSO do Carbonite Endpoint Backup
 
-1. Em uma janela diferente do navegador da Web, entre no site da sua empresa do Carbonite Endpoint Backup como administrador.
+1. Para automatizar a configuração no Backup do Ponto de Extremidade do Carbonite, é necessário instalar a **Extensão do navegador de Entrada Segura dos Meus Aplicativos** clicando em **Instalar a extensão**.
 
-1. Clique em **Empresa** no painel esquerdo.
+    ![Extensão Meus Aplicativos](common/install-myappssecure-extension.png)
+
+2. Depois de adicionar a extensão ao navegador, clicar em **Configurar o Backup do Ponto de Extremidade do Carbonite** o direcionará para o aplicativo de Backup do Ponto de Extremidade do Carbonite. Daí em diante, forneça as credenciais de administrador para entrar no Backup do Ponto de Extremidade do Carbonite. A extensão do navegador configurará automaticamente o aplicativo e automatizará as etapas de 3 a 7.
+
+    ![Configuração da instalação](common/setup-sso.png)
+
+3. Se você quiser configurar o Backup do Ponto de Extremidade do Carbonite manualmente, abra uma nova janela do navegador da Web e entre no site da empresa do Backup do Ponto de Extremidade do Carbonite como administrador e execute as seguintes etapas:
+
+4. Clique em **Empresa** no painel esquerdo.
 
     ![Configuração do Carbonite Endpoint Backup ](media/carbonite-endpoint-backup-tutorial/configure1.png)
 
-1. Clique em **Logon único**.
+5. Clique em **Logon único**.
 
     ![Configuração do Carbonite Endpoint Backup ](media/carbonite-endpoint-backup-tutorial/configure2.png)
 
-1. Clique em **Habilitar** e depois em **Editar configurações** para configurar.
+6. Clique em **Habilitar** e depois em **Editar configurações** para configurar.
 
     ![Configuração do Carbonite Endpoint Backup ](media/carbonite-endpoint-backup-tutorial/configure3.png)
 
-1. Na página **Configurações de logon único**, realize as seguintes etapas:
+7. Na página **Configurações de logon único**, realize as seguintes etapas:
 
     ![Configuração do Carbonite Endpoint Backup ](media/carbonite-endpoint-backup-tutorial/configure4.png)
 
-    1. Na caixa de texto **Nome do provedor de identidade**, insira o nome do provedor de identidade como **Microsoft Azure AD**.
+    1. Na caixa de texto **Nome do provedor de identidade**, cole o valor do **Identificador do Azure AD** copiado do portal do Azure.
 
-    1. Na caixa de texto **URL do provedor de identidade**, cole o valor do **Identificador do Azure AD** copiado do portal do Azure.
+    1. Na caixa de texto **URL do provedor de identidade**, cole o valor da **URL de Logon** copiado do portal do Azure.
 
     1. Clique em **Escolher arquivo** para carregar o **Certificado (Base64)** que você baixou do portal do Azure.
 
