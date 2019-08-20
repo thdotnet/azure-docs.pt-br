@@ -16,12 +16,12 @@ ms.date: 09/24/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7c34d8de3dfd06540dd50542ab19da0c1d9b1567
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 86895ab315784c49c2b240badb249dce57ae958a
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60242260"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69622568"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on"></a>Logon Único Contínuo do Azure Active Directory
 
@@ -53,8 +53,8 @@ O SSO Contínuo pode ser combinado com o método de entrada de [Sincronização 
 
 - O nome de usuário de conexão pode ser o nome de usuário local padrão (`userPrincipalName`) ou outro atributo configurado no Azure AD Connect (`Alternate ID`). Ambos casos de uso funcionam porque o SSO Contínuo usa a declaração `securityIdentifier` no tíquete do Kerberos para pesquisar o objeto de usuário correspondente no Azure AD.
 - O SSO Contínuo é um recurso oportunista. Se ele falhar por qualquer motivo, a experiência de entrada do usuário retornará ao comportamento normal, ou seja, o usuário precisará digitar sua senha na página de entrada.
-- Se um aplicativo (por exemplo, `https://myapps.microsoft.com/contoso.com`) encaminha uma `domain_hint` (OpenID Connect) ou `whr` parâmetro (SAML) - identificando seu locatário, ou `login_hint` parâmetro - identificando o usuário em sua solicitação do Azure AD entrar, os usuários são automaticamente conectados sem inserirem nomes de usuário ou senhas.
-- Os usuários também terão uma experiência de logon silenciosa se um aplicativo (por exemplo, `https://contoso.sharepoint.com`) envia solicitações de entrada para pontos de extremidade do Azure AD configurado como locatários – ou seja, `https://login.microsoftonline.com/contoso.com/<..>` ou `https://login.microsoftonline.com/<tenant_ID>/<..>` - em vez ponto de extremidade comum do Azure AD - ou seja, `https://login.microsoftonline.com/common/<...>` .
+- Se um aplicativo (por exemplo, `https://myapps.microsoft.com/contoso.com`) encaminhar um `domain_hint` parâmetro (OpenID Connect) `whr` ou (SAML)-identificando seu locatário, `login_hint` ou o parâmetro-identificando o usuário, em sua solicitação de entrada do Azure AD, os usuários serão conectado automaticamente sem que eles insiram nomes de acessações ou senhas.
+- Os usuários também terão uma experiência de logon silenciosa se um aplicativo (por exemplo, `https://contoso.sharepoint.com`) enviar solicitações de entrada para os pontos de extremidade do Azure ad configurados como locatários – ou seja `https://login.microsoftonline.com/contoso.com/<..>` , `https://login.microsoftonline.com/<tenant_ID>/<..>` ou-em vez do ponto de extremidade comum do Azure ad `https://login.microsoftonline.com/common/<...>` – ou seja, .
 - Há suporte para saída. Isso permite que os usuários escolham outra conta do Azure AD para conectar, em vez de conectar automaticamente usando o SSO contínuo automaticamente.
 - Clientes do Office 365 Win32 (Outlook, Word, Excel e outros) com as versões 16.0.8730.xxxx e superiores têm suporte com o uso de um fluxo não interativo. Para o OneDrive, você precisará ativar o [recurso de Configuração silenciosa do OneDrive](https://techcommunity.microsoft.com/t5/Microsoft-OneDrive-Blog/Previews-for-Silent-Sync-Account-Configuration-and-Bandwidth/ba-p/120894) para uma experiência de logon silenciosa.
 - Isso pode ser habilitado por meio do Azure AD Connect.
@@ -83,7 +83,7 @@ O SSO Contínuo pode ser combinado com o método de entrada de [Sincronização 
 ## <a name="next-steps"></a>Próximas etapas
 
 - [**Início Rápido** ](how-to-connect-sso-quick-start.md) – colocar o SSO Contínuo do Azure AD em funcionamento.
-- [**Plano de Implantação**](https://aka.ms/AuthenticationDeploymentPlan) - Plano de implantação passo a passo.
+- [**Plano de Implantação**](https://aka.ms/deploymentplans/sso) - Plano de implantação passo a passo.
 - [**Aprofundamento técnico**](how-to-connect-sso-how-it-works.md) – entenda como esse recurso funciona.
 - [**Perguntas frequentes**](how-to-connect-sso-faq.md) – respostas para perguntas frequentes.
 - [**Solução de problemas**](tshoot-connect-sso.md) – Saiba como resolver problemas comuns do recurso.

@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3d1a8afdbad1878f4ce134edeeb95dad79e98a1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: dedb60a2a5d3681198fbc8a21af1dce1778e43eb
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65784827"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69622647"
 ---
 # <a name="azure-ad-connect-health-agent-installation"></a>Instalação do Agente do Azure AD Connect Health
 
@@ -30,7 +30,7 @@ Este documento explica como instalar e configurar os Agentes do Azure AD Connect
 
 A tabela a seguir é uma lista de requisitos para o uso do Azure AD Connect Health.
 
-| Requisito | DESCRIÇÃO |
+| Requisito | Descrição |
 | --- | --- |
 | Azure AD Premium |O Azure AD Connect Health é um recurso do Azure AD Premium e requer o Azure AD Premium. <br /><br />Para saber mais, consulte [Introdução ao AD Premium do Azure](../fundamentals/active-directory-get-started-premium.md) <br />Para iniciar uma avaliação gratuita de 30 dias, confira [Iniciar uma avaliação.](https://azure.microsoft.com/trial/get-started-active-directory/) |
 | Você deve ser um administrador global do Azure AD para começar a usar o Azure AD Connect Health |Por padrão, somente os administradores globais podem instalar e configurar os agentes de integridade para começar, acessar o portal e realizar operações no Azure AD Connect Health. Para saber mais, consulte [Administrar seu diretório do Azure AD](../fundamentals/active-directory-administer.md). <br /><br /> Usando o Controle de Acesso com Base em Funções, você pode permitir acesso ao Azure AD Connect Health para outros usuários em sua organização. Para saber mais, confira [Controle de Acesso com Base em Função para o Azure AD Connect Health.](how-to-connect-health-operations.md#manage-access-with-role-based-access-control) <br /><br />**Importante:** A conta usada ao instalar os agentes deve ser uma conta corporativa ou de estudante. Não pode ser uma conta da Microsoft. Para saber mais, confira [Inscrever-se no Azure como uma organização](../fundamentals/sign-up-organization.md) |
@@ -51,7 +51,7 @@ A tabela a seguir é uma lista de requisitos para o uso do Azure AD Connect Heal
 | --- | --- |
 | Público geral | <li>&#42;.blob.core.windows.net </li><li>&#42;.aadconnecthealth.azure.com </li><li>&#42;.servicebus.windows.net – Porta: 5671 </li><li>&#42;.adhybridhealth.azure.com/</li><li>https:\//management.azure.com </li><li>https:\//policykeyservice.dc.ad.msft.net/</li><li>https:\//login.windows.net</li><li>https:\//login.microsoftonline.com</li><li>https:\//secure.aadcdn.microsoftonline-p.com </li><li>https:\//www.office.com *esse ponto de extremidade é usado somente para fins de descoberta durante o registro.</li> |
 | Azure Alemanha | <li>&#42;.blob.core.cloudapi.de </li><li>&#42;.servicebus.cloudapi.de </li> <li>&#42;.aadconnecthealth.microsoftazure.de </li><li>https:\//management.microsoftazure.de </li><li>https:\//policykeyservice.aadcdi.microsoftazure.de </li><li>https:\//login.microsoftonline.de </li><li>https:\//secure.aadcdn.microsoftonline-p.de </li><li>https:\//www.office.de *esse ponto de extremidade é usado somente para fins de descoberta durante o registro.</li> |
-| Azure Government | <li>&#42;.blob.core.usgovcloudapi.net </li> <li>&#42;.servicebus.usgovcloudapi.net </li> <li>&#42;.aadconnecthealth.microsoftazure.us </li> <li>https:\//management.usgovcloudapi.net </li><li>https:\//policykeyservice.aadcdi.azure.us </li><li>https:\//login.microsoftonline.us </li><li>https:\//secure.aadcdn.microsoftonline-p.com </li><li>https:\//www.office.com *esse ponto de extremidade é usado somente para fins de descoberta durante o registro.</li> |
+| Azure Governamental | <li>&#42;.blob.core.usgovcloudapi.net </li> <li>&#42;.servicebus.usgovcloudapi.net </li> <li>&#42;.aadconnecthealth.microsoftazure.us </li> <li>https:\//management.usgovcloudapi.net </li><li>https:\//policykeyservice.aadcdi.azure.us </li><li>https:\//login.microsoftonline.us </li><li>https:\//secure.aadcdn.microsoftonline-p.com </li><li>https:\//www.office.com *esse ponto de extremidade é usado somente para fins de descoberta durante o registro.</li> |
 
 
 ## <a name="download-and-install-the-azure-ad-connect-health-agent"></a>Baixar e instalar o Agente do Azure AD Connect Health
@@ -249,12 +249,12 @@ Se você tiver concluído a configuração, esses serviços já deverão estar e
 
 ![Verifique o Azure AD Connect Health](./media/how-to-connect-health-agent-install/aadconnect-health-adds-agent-install5.png)
 
-### <a name="quick-agent-installation-in-multiple-servers"></a>Instalação do agente rápida em vários servidores
+### <a name="quick-agent-installation-in-multiple-servers"></a>Instalação rápida de agente em vários servidores
 
 1. Crie uma conta de usuário no Azure AD com uma senha.
-2. Atribuir a **proprietário** função para a conta local do AAD no Azure AD Connect Health no portal. Siga as etapas [aqui](how-to-connect-health-operations.md#manage-access-with-role-based-access-control). Atribua a função para todas as instâncias de serviço. 
-3. Baixe o arquivo MSI .exe no controlador de domínio local para instalação.
-4. Execute o seguinte script para o registro. Substitua os parâmetros com a nova conta de usuário criada e sua senha. 
+2. Atribua a função de **proprietário** para esta conta local do AAD em Azure ad Connect Health por meio do Portal. Siga as etapas [aqui](how-to-connect-health-operations.md#manage-access-with-role-based-access-control). Atribua a função a todas as instâncias de serviço. 
+3. Baixe o arquivo MSI. exe no controlador de domínio local para instalação.
+4. Execute o script a seguir no registro. Substitua os parâmetros pela nova conta de usuário criada e sua senha. 
 
 ```powershell
 AdHealthAddsAgentSetup.exe /quiet
@@ -268,9 +268,9 @@ Register-AzureADConnectHealthADDSAgent -UserPrincipalName $USERNAME -Credential 
 
 ```
 
-1. Quando terminar, você poderá remover o acesso para a conta local seguindo um ou mais destes procedimentos: 
+1. Quando terminar, você poderá remover o acesso à conta local seguindo um ou mais destes procedimentos: 
     * Remover a atribuição de função para a conta local para o AAD Connect Health
-    * Circule a senha para a conta local. 
+    * Gire a senha da conta local. 
     * Desabilitar a conta local do AAD
     * Excluir a conta local do AAD  
 
@@ -312,8 +312,8 @@ Você pode configurar agentes do Azure AD Connect Health para trabalhar com um H
 Você tem as seguintes opções para configurar o agente do Azure AD Connect Health para usar um HTTP Proxy.
 
 > [!NOTE]
-> Todos os serviços do agente do Azure AD Connect Health devem ser reiniciados para que as configurações de proxy sejam atualizadas. Execute o comando a seguir:<br />
-> Restart-Service AdHealth*
+> Todos os serviços do agente do Azure AD Connect Health devem ser reiniciados para que as configurações de proxy sejam atualizadas. Execute o seguinte comando:<br />
+> Restart-Service AzureADConnectHealth *
 >
 >
 

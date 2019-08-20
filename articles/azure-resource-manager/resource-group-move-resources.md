@@ -4,14 +4,14 @@ description: Use o Azure Resource Manager para mover recursos para um novo grupo
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 07/09/2019
+ms.date: 08/19/2019
 ms.author: tomfitz
-ms.openlocfilehash: 53482fdd760517967c9a4a976b43b64ba745c637
-ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
+ms.openlocfilehash: 114e0d8e935aa8e6ac3f70a34a8050b19758fb42
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69542969"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624553"
 ---
 # <a name="move-resources-to-a-new-resource-group-or-subscription"></a>Mover recursos para um novo grupo de recursos ou assinatura
 
@@ -32,9 +32,11 @@ Há algumas etapas importantes a serem executadas antes de mover um recurso. Ao 
    * [Diretrizes de movimentação de serviços de aplicativos](./move-limitations/app-service-move-limitations.md)
    * [Diretrizes de movimentação de Azure DevOps Services](/azure/devops/organizations/billing/change-azure-subscription?toc=/azure/azure-resource-manager/toc.json)
    * [Diretrizes de movimentação do modelo de implantação clássica](./move-limitations/classic-model-move-limitations.md) -computação clássica, armazenamento clássico, redes virtuais clássicas e serviços de nuvem
+   * [Diretrizes de movimentação de rede](./move-limitations/networking-move-limitations.md)
    * [Diretrizes de movimentação dos serviços de recuperação](../backup/backup-azure-move-recovery-services-vault.md?toc=/azure/azure-resource-manager/toc.json)
    * [Diretrizes de movimentação de máquinas virtuais](./move-limitations/virtual-machines-move-limitations.md)
-   * [Diretrizes de movimentação de redes virtuais](./move-limitations/virtual-network-move-limitations.md)
+
+   Se o grupo de recursos de destino contiver uma rede virtual, o estado de seus recursos dependentes poderá bloquear a movimentação, mesmo quando esses recursos não estiverem envolvidos na movimentação. Para obter mais informações, consulte [diretrizes de movimentação de rede](./move-limitations/virtual-network-move-limitations.md).
 
 1. As assinaturas de origem e de destino devem estar ativas. Se você tiver problemas para habilitar uma conta que tenha sido desabilitada [crie uma solicitação de Suporte do Azure](../azure-supportability/how-to-create-azure-support-request.md). Selecione **Subscription Management** para o tipo de problema.
 
@@ -97,10 +99,11 @@ Há algumas etapas importantes a serem executadas antes de mover um recurso. Ao 
 1. **Para uma movimentação entre assinaturas, o recurso e seus recursos dependentes devem estar localizados no mesmo grupo de recursos e devem ser movidos juntos.** Por exemplo, uma VM com discos gerenciados exigiria que a VM e os discos gerenciados fossem movidos juntos, juntamente com outros recursos dependentes.
 
    Se você estiver movendo um recurso para uma nova assinatura, verifique se o recurso tem quaisquer recursos dependentes e se eles estão localizados no mesmo grupo de recursos. Se os recursos não estiverem no mesmo grupo de recursos, verifique se os recursos podem ser consolidados no mesmo grupo de recursos. Nesse caso, coloque todos esses recursos no mesmo grupo de recursos usando uma operação de movimentação entre grupos de recursos.
-    
-Para obter mais informações, consulte [cenário para mover entre assinaturas](#scenario-for-move-across-subscriptions).
+
+   Para obter mais informações, consulte [cenário para mover entre assinaturas](#scenario-for-move-across-subscriptions).
 
 ## <a name="scenario-for-move-across-subscriptions"></a>Cenário para mover entre assinaturas
+
 Mover recursos de uma assinatura para outra é um processo de três etapas:
 
 ![cenário de movimentação entre assinaturas](./media/resource-group-move-resources/cross-subscription-move-scenario.png)

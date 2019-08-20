@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 12/13/2018
+ms.date: 08/19/2019
 ms.author: magoedte
-ms.openlocfilehash: 0e4268cb3a8d6ac62da12f689560338eee7e6935
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 376259686d1668d62cc79f340e2161ef11be5e12
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65071814"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624361"
 ---
 # <a name="how-to-stop-monitoring-your-azure-kubernetes-service-aks-with-azure-monitor-for-containers"></a>Como interromper o monitoramento do Azure Monitor do Serviço de Kubernetes do Azure (AKS) para contêineres
 
@@ -26,7 +26,8 @@ Após habilitar o monitoramento do cluster do AKS você poderá parar o monitora
 
 
 ## <a name="azure-cli"></a>CLI do Azure
-Use o comando [az aks disable-complementos](https://docs.microsoft.com/cli/azure/aks?view=azure-cli-latest#az-aks-disable-addons) para desabilitar o Azure Monitor para contêineres. O comando remove o agente do nó de cluster, ele não remove a solução ou os dados já coletados e armazenados em seu recurso do Azure Monitor.  
+
+Use o comando [az aks disable-complementos](https://docs.microsoft.com/cli/azure/aks?view=azure-cli-latest#az-aks-disable-addons) para desabilitar o Azure Monitor para contêineres. O comando Remove o agente dos nós de cluster, ele não remove a solução ou os dados já coletados e armazenados em seu recurso de Azure Monitor.  
 
 ```azurecli
 az aks disable-addons -a monitoring -n MyExistingManagedCluster -g MyExistingManagedClusterRG
@@ -35,6 +36,7 @@ az aks disable-addons -a monitoring -n MyExistingManagedCluster -g MyExistingMan
 Para habilitar novamente o monitoramento para seu cluster, consulte [Habilitar o monitoramento usando a CLI do Azure](container-insights-enable-new-cluster.md#enable-using-azure-cli).
 
 ## <a name="azure-resource-manager-template"></a>Modelo do Azure Resource Manager
+
 São fornecido dois modelos do Azure Resource Manager para dar suporte para remover os recursos de solução de forma consistente e repetida no seu grupo de recursos. Um é um modelo JSON especificando a configuração para parar o monitoramento e o outro contém valores de parâmetros que você configura para especificar a ID do recurso de cluster do AKS e o grupo de recursos no qual o cluster está implementado. 
 
 Se você não estiver familiarizado com o conceito de implantação de recursos usando um modelo, veja:
@@ -42,7 +44,7 @@ Se você não estiver familiarizado com o conceito de implantação de recursos 
 * [Implantar recursos com modelos do Resource Manager e a CLI do Azure](../../azure-resource-manager/resource-group-template-deploy-cli.md)
 
 >[!NOTE]
->O modelo precisa ser implantado no mesmo grupo de recursos que o cluster. Se você omitir quaisquer outras propriedades ou complementos ao usar esse modelo, isso poderá resultar na remoção do cluster. Por exemplo, *enableRBAC*.  
+>O modelo precisa ser implantado no mesmo grupo de recursos do cluster. Se você omitir quaisquer outras propriedades ou complementos ao usar esse modelo, isso poderá resultar na remoção do cluster. Por exemplo, *enableRBAC* para políticas RBAC implementadas em seu cluster ou *aksResourceTagValues* se as marcas forem especificadas para o cluster AKs.  
 >
 
 Se você optar por usar a CLI do Azure, primeiro precisará instalar e usar a CLI localmente. Você deve estar executando a CLI do Azure versão 2.0.27 ou posterior. Para identificar sua versão, execute `az --version`. Caso precise instalar ou atualizar a CLI do Azure, veja [Instalar a CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli). 
@@ -68,12 +70,19 @@ Se você optar por usar a CLI do Azure, primeiro precisará instalar e usar a CL
            "description": "Location of the AKS resource e.g. \"East US\""
          }
        }
+       },
+    "aksResourceTagValues": {
+      "type": "object",
+      "metadata": {
+        "description": "Existing all tags on AKS Cluster Resource"
+      }
     },
     "resources": [
       {
         "name": "[split(parameters('aksResourceId'),'/')[8]]",
         "type": "Microsoft.ContainerService/managedClusters",
         "location": "[parameters('aksResourceLocation')]",
+        "tags": "[parameters('aksResourceTagValues')]"
         "apiVersion": "2018-03-31",
         "properties": {
           "mode": "Incremental",
@@ -91,18 +100,26 @@ Se você optar por usar a CLI do Azure, primeiro precisará instalar e usar a CL
     ```
 
 2. Salve esse arquivo como **OptOutTemplate.json** em uma pasta local.
+
 3. Cole a seguinte sintaxe JSON em seu arquivo:
 
     ```json
     {
-     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-     "contentVersion": "1.0.0.0",
-     "parameters": {
-       "aksResourceId": {
-         "value": "/subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroup>/providers/Microsoft.ContainerService/managedClusters/<ResourceName>"
-      },
-      "aksResourceLocation": {
-        "value": "<aksClusterRegion>"
+      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "aksResourceId": {
+          "value": "/subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroup>/providers/Microsoft.ContainerService/managedClusters/<ResourceName>"
+        },
+        "aksResourceLocation": {
+          "value": "<aksClusterRegion>"
+        },
+        "aksResourceTagValues": {
+          "value": {
+            "<existing-tag-name1>": "<existing-tag-value1>",
+            "<existing-tag-name2>": "<existing-tag-value2>",
+            "<existing-tag-nameN>": "<existing-tag-valueN>"
+          }
         }
       }
     }
@@ -114,10 +131,14 @@ Se você optar por usar a CLI do Azure, primeiro precisará instalar e usar a CL
 
     Enquanto você estiver na página **Propriedades**, copie também a **ID do Recurso de Workspace**. Esse valor será necessário se você decidir que deseja excluir o espaço de trabalho do Log Analytics posteriormente. A exclusão do espaço de trabalho do Log Analytics não é executada como parte desse processo. 
 
+    Edite os valores de **aksResourceTagValues** para corresponder aos valores de marca existentes especificados para o cluster AKs.
+
 5. Salve esse arquivo como **OptOutParam.json** em uma pasta local.
+
 6. Você está pronto para implantar o modelo. 
 
 ### <a name="remove-the-solution-using-azure-cli"></a>Remover a solução usando a CLI do Azure
+
 Execute o comando a seguir com a CLI do Azure no Linux para remover a solução e limpar a configuração no cluster do AKS.
 
 ```azurecli

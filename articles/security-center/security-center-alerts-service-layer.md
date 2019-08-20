@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 7/02/2019
+ms.date: 8/18/2019
 ms.author: v-mohabe
-ms.openlocfilehash: f795822d76def4a6695a4746fba7e8566041cb2b
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 70b43c65703316e5dee8e9cf2cf86fe982a49592
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68295544"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624779"
 ---
 # <a name="threat-detection-for-azure-service-layer-in-azure-security-center"></a>Detecção de ameaças para a camada de serviço do Azure na central de segurança do Azure
 
@@ -37,7 +37,7 @@ A central de segurança rede – a análise de camada baseia-se nos [dados IPFIX
 
 > [!div class="mx-tableFixed"]
 
-|Alerta|DESCRIÇÃO|
+|Alerta|Descrição|
 |---|---|
 |**Atividade de rede RDP de saída suspeita**|A análise de tráfego de rede de amostra detectou comunicação de saída anômala protocolo RDP (RDP) proveniente de um recurso em sua implantação. Essa atividade é considerada anormal para esse ambiente e pode indicar que o recurso foi comprometido e está sendo usado agora para um ponto de extremidade RDP externo de força bruta. Observe que esse tipo de atividade poderia possivelmente fazer com que seu IP fosse sinalizado como mal-intencionado por entidades externas.|
 |**Atividade de rede RDP de saída suspeita para vários destinos**|A análise de tráfego de rede de amostra detectou comunicação de saída anômala protocolo RDP (RDP) proveniente de um recurso em sua implantação para vários destinos. Essa atividade é considerada anormal para esse ambiente e pode indicar que o recurso foi comprometido e está sendo usado agora para pontos de extremidade externos de RDP de força bruta. Observe que esse tipo de atividade poderia possivelmente fazer com que seu IP fosse sinalizado como mal-intencionado por entidades externas.|
@@ -47,6 +47,7 @@ A central de segurança rede – a análise de camada baseia-se nos [dados IPFIX
 |**Atividade de rede SSH de entrada suspeita**|A análise de tráfego de rede de amostra detectou comunicação de SSH de entrada anômala para um recurso em sua implantação. Um número relativamente alto de conexões de entrada para seu recurso é considerado anormal para esse ambiente. Essa atividade pode indicar uma tentativa de forçar a força bruta da sua interface SSH.
 |**Atividade de rede RDP de entrada suspeita de várias fontes**|A análise de tráfego de rede de amostra detectou comunicações de RDP de entrada anômalas de várias fontes para um recurso em sua implantação. Vários IPs exclusivos que se conectam ao seu recurso são considerados anormais para esse ambiente. Essa atividade pode indicar uma tentativa de forçar a força bruta da interface RDP de vários hosts (botnet).|
 |**Atividade de rede RDP de entrada suspeita**|A análise de tráfego de rede de amostra detectou comunicação de RDP de entrada anômala para um recurso em sua implantação. Um número relativamente alto de conexões de entrada para seu recurso é considerado anormal para esse ambiente. Essa atividade pode indicar uma tentativa de forçar a força bruta da sua interface SSH.|
+|**A comunicação de rede com um endereço mal-intencionado foi detectada**|A análise de tráfego de rede de amostra detectou a comunicação proveniente de um recurso em sua implantação com um servidor de comando e controle (C & C) possível. Observe que esse tipo de atividade poderia possivelmente fazer com que seu IP fosse sinalizado como mal-intencionado por entidades externas.|
 
 Para entender como a central de segurança pode usar sinais relacionados à rede para aplicar a proteção contra ameaças, confira [detecções heurísticas de DNS na central de segurança do Azure](https://azure.microsoft.com/blog/heuristic-dns-detections-in-azure-security-center/).
 ## Camada de gerenciamento do Azure (Azure Resource Manager) (visualização)<a name ="management-layer"></a>
@@ -58,7 +59,7 @@ A central de segurança oferece uma camada adicional de proteção, aproveitando
 
 > [!div class="mx-tableFixed"]
 
-|Alerta|DESCRIÇÃO|
+|Alerta|Descrição|
 |---|---|
 |**Execução do kit de ferramentas de microburst**|Foi detectada uma execução conhecida do kit de ferramentas de reconhecimento de ambiente de nuvem em seu ambiente. A ferramenta "microburst" (consulte https://github.com/NetSPI/MicroBurst) pode ser usada por um invasor (ou testador de penetração) para mapear seus recursos de assinatura, identificar configurações inseguras e vazar informações confidenciais.|
 |**Execução do kit de ferramentas azurite**|Foi detectada uma execução conhecida do kit de ferramentas de reconhecimento de ambiente de nuvem em seu ambiente. A ferramenta "azurite" (consulte https://github.com/mwrlabs/Azurite) pode ser usada por um invasor (ou testador de penetração) para mapear seus recursos de assinatura e identificar configurações inseguras.|
@@ -77,4 +78,4 @@ A central de segurança oferece uma camada adicional de proteção, aproveitando
 > 3. Emb **Habilitar integrações**, desmarque a opção **Permitir que o Microsoft Cloud App Security acesse meus dados** e clique em **Salvar**.
 
 >[!NOTE]
->A central de segurança do Azure armazena dados de clientes relacionados à segurança na mesma área geográfica de seu recurso. Se a Microsoft ainda não tiver implantado a central de segurança do Azure na área geográfica do recurso, ele armazenará os dados no Estados Unidos. Quando Microsoft Cloud App Security (MCAS) está habilitado, essas informações são armazenadas de acordo com as regras de localização geográfica de MCAS. Consulte [armazenamento de dados para serviços não regionais para obter mais informações](http://azuredatacentermap.azurewebsites.net/).
+>A central de segurança do Azure armazena dados de clientes relacionados à segurança na mesma área geográfica de seu recurso. Se a Microsoft ainda não tiver implantado a central de segurança do Azure na área geográfica do recurso, ele armazenará os dados no Estados Unidos. Quando Microsoft Cloud App Security (MCAS) está habilitado, essas informações são armazenadas de acordo com as regras de localização geográfica de MCAS. Consulte [armazenamento de dados para serviços não regionais para obter mais informações](https://azuredatacentermap.azurewebsites.net/).

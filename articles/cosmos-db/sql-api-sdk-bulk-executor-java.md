@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: reference
 ms.date: 11/21/2018
 ms.author: ramkris
-ms.openlocfilehash: 134a4e42b779c199b7846dabd1f5158c86c5a146
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 018c8f7895669d437b129d92a840a393e2453a79
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68638608"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624661"
 ---
 # <a name="java-bulk-executor-library-download-information"></a>Biblioteca do executor em massa Java: Baixar informações
 
@@ -33,9 +33,9 @@ ms.locfileid: "68638608"
 
 | |  |
 |---|---|
-|**Descrição**|A biblioteca bulk executor permite que aplicativos cliente executem operações em massa em contas do Azure Cosmos DB. a biblioteca bulk executor fornece os namespaces BulkImport e BulkUpdate. O módulo BulkImport pode importar em massa documentos de forma otimizada, de modo que a taxa de transferência provisionada para uma coleção seja consumida até seu limite máximo. O módulo BulkUpdate pode atualizar em massa dados existentes nos contêineres do Azure Cosmos DB como patches.|
+|**Descrição**|A biblioteca bulk executor permite que aplicativos cliente executem operações em massa em contas do Azure Cosmos DB. a biblioteca bulk executor fornece os namespaces BulkImport e BulkUpdate. O módulo BulkImport pode importar em massa documentos de forma otimizada, de modo que a taxa de transferência provisionada para uma coleção seja consumida até seu limite máximo. O módulo BulkUpdate pode atualizar dados existentes em massa em contêineres Cosmos do Azure como patches.|
 |**Baixe o SDK**|[Maven](https://search.maven.org/#search%7Cga%7C1%7Cdocumentdb-bulkexecutor)|
-|**Biblioteca BulkExecutor no GitHub**|[GitHub](https://github.com/Azure/azure-cosmosdb-bulkexecutor-java-getting-started)|
+|**Biblioteca de executor em massa no GitHub**|[GitHub](https://github.com/Azure/azure-cosmosdb-bulkexecutor-java-getting-started)|
 | **Documentação da API**| [Documentação de referência de API .NET](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb.bulkexecutor)|
 |**Introdução**|[Introdução ao SDK Java da biblioteca bulk executor](bulk-executor-java.md)|
 |**Tempo de execução mínimo com suporte**|[Java Development Kit (JDK) 7 +](https://aka.ms/azure-jdks)|

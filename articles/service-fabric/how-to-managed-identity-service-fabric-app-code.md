@@ -8,14 +8,14 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 7/25/2019
 ms.author: atsenthi
-ms.openlocfilehash: 528e1b0a353cdcd716f9bca63c423af7a6f12641
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: d5593da4f874688fa099827e418b12e41363f4bd
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68958233"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624887"
 ---
-# <a name="how-to-leverage-a-service-fabric-applications-managed-identity-to-access-azure-services"></a>Como aproveitar a identidade gerenciada de um aplicativo Service Fabric para acessar os serviços do Azure
+# <a name="how-to-leverage-a-service-fabric-applications-managed-identity-to-access-azure-services-preview"></a>Como aproveitar a identidade gerenciada de um aplicativo Service Fabric para acessar os serviços do Azure (versão prévia)
 
 Service Fabric aplicativos podem aproveitar identidades gerenciadas para acessar outros recursos do Azure que dão suporte à autenticação baseada em Azure Active Directory. Um aplicativo pode obter um [token de acesso](../active-directory/develop/developer-glossary.md#access-token) que representa sua identidade, que pode ser atribuído pelo sistema ou atribuído pelo usuário, e usá-lo como um token de "portador" para se autenticar em outro serviço, também conhecido como um [servidor de recursos protegido](../active-directory/develop/developer-glossary.md#resource-server). O token representa a identidade atribuída ao aplicativo Service Fabric e será emitido somente para recursos do Azure (incluindo aplicativos da it) que compartilham essa identidade. Consulte a documentação [visão geral da identidade gerenciada](../active-directory/managed-identities-azure-resources/overview.md) para obter uma descrição detalhada das identidades gerenciadas, bem como a distinção entre identidades atribuídas pelo sistema e pelo usuário. Vamos nos referir a um aplicativo de Service Fabric habilitado para identidade gerenciada como o [aplicativo cliente](../active-directory/develop/developer-glossary.md#client-application) em todo este artigo.
 
@@ -286,7 +286,7 @@ A seguir está uma lista de erros típicos de Service Fabric específicos para i
 | ManagedIdentityNotFound | Identidade gerenciada não encontrada para o host de aplicativo especificado. | O aplicativo não tem nenhuma identidade ou o código de autenticação é desconhecido. |
 | ArgumentNullOrEmpty | O parâmetro ' Resource ' não deve ser uma cadeia de caracteres nula ou vazia. | O recurso (público) não foi fornecido na solicitação. |
 | InvalidApiVersion | Não há suporte para a versão de API ' '. A versão com suporte é ' 2019-07-01-preview '. | Versão de API ausente ou sem suporte especificada no URI de solicitação. |
-| InternalServerError | Erro. | Foi encontrado um erro no subsistema de identidade gerenciada, possivelmente fora da pilha de Service Fabric. A causa mais provável é um valor incorreto especificado para o recurso (verifique se há '/' à direita?) | 
+| InternalServerError | Ocorreu um erro. | Foi encontrado um erro no subsistema de identidade gerenciada, possivelmente fora da pilha de Service Fabric. A causa mais provável é um valor incorreto especificado para o recurso (verifique se há '/' à direita?) | 
 
 ## <a name="retry-guidance"></a>Repita a orientação 
 

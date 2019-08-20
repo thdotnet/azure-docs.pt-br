@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: reference
 ms.date: 07/01/2019
 ms.author: moderakh
-ms.openlocfilehash: 3cafa4d5aecaa4c8f3863c3269ec02793340e3e6
-ms.sourcegitcommit: 79496a96e8bd064e951004d474f05e26bada6fa0
+ms.openlocfilehash: 3bee473adde9c4762cf400dff6190eb76a4cc8d7
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67509270"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624698"
 ---
 # <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>SDK do Java Async do Azure Cosmos DB para a API do SQL: Notas sobre a versão e recursos
 > [!div class="op_single_selector"]
@@ -27,8 +27,8 @@ ms.locfileid: "67509270"
 > * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Provedor de recursos REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
 > * [SQL](sql-api-query-reference.md)
-> * [BulkExecutor - .NET](sql-api-sdk-bulk-executor-dot-net.md)
-> * [BulkExecutor - Java](sql-api-sdk-bulk-executor-java.md)
+> * [Executor em massa-.NET](sql-api-sdk-bulk-executor-dot-net.md)
+> * [Executor em massa – Java](sql-api-sdk-bulk-executor-java.md)
 
 O SDK Java Assíncrono de API SQL difere do SDK Java de API SQL fornecendo operações assíncronas com o suporte da [biblioteca Netty](https://netty.io/). O [SDK Java de API SQL](sql-api-sdk-java.md) preexistente não oferece suporte a operações assíncronas. 
 
@@ -45,25 +45,25 @@ O SDK Java Assíncrono de API SQL difere do SDK Java de API SQL fornecendo opera
 ## <a name="release-notes"></a>Notas de versão
 
 ### <a name="a-name250250"></a><a name="2.5.0"/>2.5.0
-* Modo TCP agora em por padrão
-* Métricas de consulta na partição cruzada agora retorna todas as partições
-* Forte global agora funciona corretamente
-* Failover para consultas não corretamente repetirá para vários mestres
-* Dependência impactos para os hotfixes de segurança
+* Modo TCP agora ativado por padrão
+* As métricas de consulta na partição cruzada agora retorna todas as partições
+* O Strong global agora funciona corretamente
+* Failover para consultas que não são repetidas corretamente para vários mestres
+* Choques de dependência para hotfixes de segurança
 
 ### <a name="a-name245245"></a><a name="2.4.5"/>2.4.5
-* Correção de bug para suporte a Hash V2
+* Bugfix para suporte a hash v2
 
 ### <a name="a-name243243"></a><a name="2.4.3"/>2.4.3
-* Correção de bug para vazamento de recursos em client#close() ([github 88 #](https://github.com/Azure/azure-cosmosdb-java/issues/88)).
+* Bugfix para vazamento de recurso no cliente # Close () ([github #88](https://github.com/Azure/azure-cosmosdb-java/issues/88)).
 
 ### <a name="a-name242242"></a><a name="2.4.2"/>2.4.2
-* Continuação adicionado suporte para token para consultas entre partições.
+* Adicionado suporte de token de continuação para consultas entre partições.
 
 ### <a name="a-name241241"></a><a name="2.4.1"/>2.4.1
-* Corrigimos alguns bugs no modo direto.
+* Correção de alguns bugs no modo direto.
 * Log aprimorado no modo direto.
-* Gerenciamento aprimorado de conexão.
+* Gerenciamento de conexão aprimorado.
 
 ### <a name="a-name240240"></a><a name="2.4.0"/>2.4.0
 * Agora a conectividade de modo direto está GA (Geralmente Disponível). Para obter um exemplo que usa a conectividade de modo direto, consulte o repositório do GitHub [azure-cosmosdb-java](https://github.com/Azure/azure-cosmosdb-java).
@@ -154,10 +154,10 @@ Qualquer solicitação feita ao Cosmos DB com o uso de um SDK desativado será r
 
 <br/>
 
-| Versão | Data do lançamento | Data de desativação |
+| Version | Data do lançamento | Data de desativação |
 | --- | --- | --- |
 | [2.4.3](#2.4.3) |5 de março de 2019|--- |
-| [2.4.2](#2.4.2) |1 de março de 2019|--- |
+| [2.4.2](#2.4.2) |1º de março de 2019|--- |
 | [2.4.1](#2.4.1) |20 de fevereiro de 2019|--- |
 | [2.4.0](#2.4.0) |8 de fevereiro de 2019|--- |
 | [2.4.0-beta-1](#2.4.0-beta-1) |4 de fevereiro de 2019|--- |
@@ -173,7 +173,7 @@ Qualquer solicitação feita ao Cosmos DB com o uso de um SDK desativado será r
 | [1.0.1](#1.0.1) |20 de abril de 2018|--- |
 | [1.0.0](#1.0.0) |27 de fevereiro de 2018|--- |
 
-## <a name="faq"></a>Perguntas frequentes
+## <a name="faq"></a>Perguntas Frequentes
 [!INCLUDE [cosmos-db-sdk-faq](../../includes/cosmos-db-sdk-faq.md)]
 
 ## <a name="see-also"></a>Consulte também
