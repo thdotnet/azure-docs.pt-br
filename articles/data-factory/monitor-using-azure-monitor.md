@@ -277,19 +277,19 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 
 | Propriedade | Tipo | DESCRIÇÃO | Exemplo |
 | --- | --- | --- | --- |
-| Nível |Cadeia de caracteres | Nível dos logs de diagnóstico. O nível 4 sempre é o caso para logs de execução de atividade. | `4`  |
-| correlationId |Cadeia de caracteres | ID exclusiva para acompanhar uma solicitação específica ponta a ponta | `319dc6b4-f348-405e-b8d7-aafc77b73e77` |
-| time | Cadeia de caracteres | Hora do evento em TimeSpan, formato UTC`YYYY-MM-DDTHH:MM:SS.00000Z` | `2017-06-28T21:00:27.3534352Z` |
-|activityRunId| Cadeia de caracteres| ID da execução de atividade | `3a171e1f-b36e-4b80-8a54-5625394f4354` |
-|pipelineRunId| Cadeia de caracteres| ID da execução de pipeline | `9f6069d6-e522-4608-9f99-21807bfc3c70` |
-|resourceId| Cadeia de caracteres | ID de recursos associado para o recurso de data factory | `/SUBSCRIPTIONS/<subID>/RESOURCEGROUPS/<resourceGroupName>/PROVIDERS/MICROSOFT.DATAFACTORY/FACTORIES/<dataFactoryName>` |
-|category| Cadeia de caracteres | Categoria dos Logs de Diagnóstico. Defina essa propriedade para "ActivityRuns" | `ActivityRuns` |
-|level| Cadeia de caracteres | Nível dos logs de diagnóstico. Defina essa propriedade para "Informational" | `Informational` |
-|operationName| Cadeia de caracteres |Nome da atividade com status. Se o status for a pulsação de início, será `MyActivity -`. Se o status for a pulsação final, será `MyActivity - Succeeded` com status final | `MyActivity - Succeeded` |
-|pipelineName| Cadeia de caracteres | Nome do pipeline | `MyPipeline` |
-|activityName| Cadeia de caracteres | Nome da atividade | `MyActivity` |
-|start| Cadeia de caracteres | Início da execução de atividade no período de tempo, formato UTC | `2017-06-26T20:55:29.5007959Z`|
-|end| Cadeia de caracteres | Fim da execução de atividade no período de tempo, formato UTC. Se a atividade não foi finalizada ainda (log de diagnóstico para uma atividade que está sendo iniciada), um valor padrão de `1601-01-01T00:00:00Z` será definido.  | `2017-06-26T20:55:29.5007959Z` |
+| Nível |String | Nível dos logs de diagnóstico. O nível 4 sempre é o caso para logs de execução de atividade. | `4`  |
+| correlationId |String | ID exclusiva para acompanhar uma solicitação específica ponta a ponta | `319dc6b4-f348-405e-b8d7-aafc77b73e77` |
+| time | String | Hora do evento em TimeSpan, formato UTC`YYYY-MM-DDTHH:MM:SS.00000Z` | `2017-06-28T21:00:27.3534352Z` |
+|activityRunId| String| ID da execução de atividade | `3a171e1f-b36e-4b80-8a54-5625394f4354` |
+|pipelineRunId| String| ID da execução de pipeline | `9f6069d6-e522-4608-9f99-21807bfc3c70` |
+|resourceId| String | ID de recursos associado para o recurso de data factory | `/SUBSCRIPTIONS/<subID>/RESOURCEGROUPS/<resourceGroupName>/PROVIDERS/MICROSOFT.DATAFACTORY/FACTORIES/<dataFactoryName>` |
+|category| String | Categoria dos Logs de Diagnóstico. Defina essa propriedade para "ActivityRuns" | `ActivityRuns` |
+|level| String | Nível dos logs de diagnóstico. Defina essa propriedade para "Informational" | `Informational` |
+|operationName| String |Nome da atividade com status. Se o status for a pulsação de início, será `MyActivity -`. Se o status for a pulsação final, será `MyActivity - Succeeded` com status final | `MyActivity - Succeeded` |
+|pipelineName| String | Nome do pipeline | `MyPipeline` |
+|activityName| String | Nome da atividade | `MyActivity` |
+|start| String | Início da execução de atividade no período de tempo, formato UTC | `2017-06-26T20:55:29.5007959Z`|
+|end| String | Fim da execução de atividade no período de tempo, formato UTC. Se a atividade não foi finalizada ainda (log de diagnóstico para uma atividade que está sendo iniciada), um valor padrão de `1601-01-01T00:00:00Z` será definido.  | `2017-06-26T20:55:29.5007959Z` |
 
 #### <a name="pipeline-run-logs-attributes"></a>Atributos de logs de execução de pipeline
 
@@ -323,18 +323,18 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 
 | Propriedade | Tipo | DESCRIÇÃO | Exemplo |
 | --- | --- | --- | --- |
-| Nível |Cadeia de caracteres | Nível dos logs de diagnóstico. O nível 4 é o caso para logs de execução de atividade. | `4`  |
-| correlationId |Cadeia de caracteres | ID exclusiva para acompanhar uma solicitação específica ponta a ponta | `319dc6b4-f348-405e-b8d7-aafc77b73e77` |
-| time | Cadeia de caracteres | Hora do evento em TimeSpan, formato UTC`YYYY-MM-DDTHH:MM:SS.00000Z` | `2017-06-28T21:00:27.3534352Z` |
-|runId| Cadeia de caracteres| ID da execução de pipeline | `9f6069d6-e522-4608-9f99-21807bfc3c70` |
-|resourceId| Cadeia de caracteres | ID de recursos associado para o recurso de data factory | `/SUBSCRIPTIONS/<subID>/RESOURCEGROUPS/<resourceGroupName>/PROVIDERS/MICROSOFT.DATAFACTORY/FACTORIES/<dataFactoryName>` |
-|category| Cadeia de caracteres | Categoria dos Logs de Diagnóstico. Defina essa propriedade para "PipelineRuns" | `PipelineRuns` |
-|level| Cadeia de caracteres | Nível dos logs de diagnóstico. Defina essa propriedade para "Informational" | `Informational` |
-|operationName| Cadeia de caracteres |Nome do pipeline com status. "Pipeline – bem-sucedido" com status final quando a execução do pipeline é concluída| `MyPipeline - Succeeded` |
-|pipelineName| Cadeia de caracteres | Nome do pipeline | `MyPipeline` |
-|start| Cadeia de caracteres | Início da execução de atividade no período de tempo, formato UTC | `2017-06-26T20:55:29.5007959Z`|
-|end| Cadeia de caracteres | Fim das execuções de atividade no período de tempo, formato UTC. Se a atividade não foi finalizada ainda (log de diagnóstico para uma atividade que está sendo iniciada), um valor padrão de `1601-01-01T00:00:00Z` será definido.  | `2017-06-26T20:55:29.5007959Z` |
-|status| Cadeia de caracteres | Status final da execução do pipeline (Bem-sucedido ou Falha) | `Succeeded`|
+| Nível |String | Nível dos logs de diagnóstico. O nível 4 é o caso para logs de execução de atividade. | `4`  |
+| correlationId |String | ID exclusiva para acompanhar uma solicitação específica ponta a ponta | `319dc6b4-f348-405e-b8d7-aafc77b73e77` |
+| time | String | Hora do evento em TimeSpan, formato UTC`YYYY-MM-DDTHH:MM:SS.00000Z` | `2017-06-28T21:00:27.3534352Z` |
+|runId| String| ID da execução de pipeline | `9f6069d6-e522-4608-9f99-21807bfc3c70` |
+|resourceId| String | ID de recursos associado para o recurso de data factory | `/SUBSCRIPTIONS/<subID>/RESOURCEGROUPS/<resourceGroupName>/PROVIDERS/MICROSOFT.DATAFACTORY/FACTORIES/<dataFactoryName>` |
+|category| String | Categoria dos Logs de Diagnóstico. Defina essa propriedade para "PipelineRuns" | `PipelineRuns` |
+|level| String | Nível dos logs de diagnóstico. Defina essa propriedade para "Informational" | `Informational` |
+|operationName| String |Nome do pipeline com status. "Pipeline – bem-sucedido" com status final quando a execução do pipeline é concluída| `MyPipeline - Succeeded` |
+|pipelineName| String | Nome do pipeline | `MyPipeline` |
+|start| String | Início da execução de atividade no período de tempo, formato UTC | `2017-06-26T20:55:29.5007959Z`|
+|end| String | Fim das execuções de atividade no período de tempo, formato UTC. Se a atividade não foi finalizada ainda (log de diagnóstico para uma atividade que está sendo iniciada), um valor padrão de `1601-01-01T00:00:00Z` será definido.  | `2017-06-26T20:55:29.5007959Z` |
+|status| String | Status final da execução do pipeline (Bem-sucedido ou Falha) | `Succeeded`|
 
 #### <a name="trigger-run-logs-attributes"></a>Atributos de logs de execução do gatilho
 
@@ -367,19 +367,19 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 
 | Propriedade | Tipo | DESCRIÇÃO | Exemplo |
 | --- | --- | --- | --- |
-| Nível |Cadeia de caracteres | Nível dos logs de diagnóstico. Defina o nível 4 para logs de execução da atividade. | `4`  |
-| correlationId |Cadeia de caracteres | ID exclusiva para acompanhar uma solicitação específica ponta a ponta | `319dc6b4-f348-405e-b8d7-aafc77b73e77` |
-| time | Cadeia de caracteres | Hora do evento em TimeSpan, formato UTC`YYYY-MM-DDTHH:MM:SS.00000Z` | `2017-06-28T21:00:27.3534352Z` |
-|triggerId| Cadeia de caracteres| ID da execução do gatilho | `08587023010602533858661257311` |
-|resourceId| Cadeia de caracteres | ID de recursos associado para o recurso de data factory | `/SUBSCRIPTIONS/<subID>/RESOURCEGROUPS/<resourceGroupName>/PROVIDERS/MICROSOFT.DATAFACTORY/FACTORIES/<dataFactoryName>` |
-|category| Cadeia de caracteres | Categoria dos Logs de Diagnóstico. Defina essa propriedade para "PipelineRuns" | `PipelineRuns` |
-|level| Cadeia de caracteres | Nível dos logs de diagnóstico. Defina essa propriedade para "Informational" | `Informational` |
-|operationName| Cadeia de caracteres |Nome do gatilho com status final se ele foi disparado com êxito. "MyTrigger – Bem-sucedido" se a pulsação foi bem-sucedida| `MyTrigger - Succeeded` |
-|triggerName| Cadeia de caracteres | Nome do gatilho | `MyTrigger` |
-|triggerType| Cadeia de caracteres | Tipo de gatilho (gatilho Manual ou gatilho de Agendamento) | `ScheduleTrigger` |
-|triggerEvent| Cadeia de caracteres | Evento do gatilho | `ScheduleTime - 2017-07-06T01:50:25Z` |
-|start| Cadeia de caracteres | Início do acionamento do gatilho no período de tempo, formato UTC | `2017-06-26T20:55:29.5007959Z`|
-|status| Cadeia de caracteres | Status final se o gatilho foi acionado com êxito (Bem-sucedido ou Falha) | `Succeeded`|
+| Nível |String | Nível dos logs de diagnóstico. Defina o nível 4 para logs de execução da atividade. | `4`  |
+| correlationId |String | ID exclusiva para acompanhar uma solicitação específica ponta a ponta | `319dc6b4-f348-405e-b8d7-aafc77b73e77` |
+| time | String | Hora do evento em TimeSpan, formato UTC`YYYY-MM-DDTHH:MM:SS.00000Z` | `2017-06-28T21:00:27.3534352Z` |
+|triggerId| String| ID da execução do gatilho | `08587023010602533858661257311` |
+|resourceId| String | ID de recursos associado para o recurso de data factory | `/SUBSCRIPTIONS/<subID>/RESOURCEGROUPS/<resourceGroupName>/PROVIDERS/MICROSOFT.DATAFACTORY/FACTORIES/<dataFactoryName>` |
+|category| String | Categoria dos Logs de Diagnóstico. Defina essa propriedade para "PipelineRuns" | `PipelineRuns` |
+|level| String | Nível dos logs de diagnóstico. Defina essa propriedade para "Informational" | `Informational` |
+|operationName| String |Nome do gatilho com status final se ele foi disparado com êxito. "MyTrigger – Bem-sucedido" se a pulsação foi bem-sucedida| `MyTrigger - Succeeded` |
+|triggerName| String | Nome do gatilho | `MyTrigger` |
+|triggerType| String | Tipo de gatilho (gatilho Manual ou gatilho de Agendamento) | `ScheduleTrigger` |
+|triggerEvent| String | Evento do gatilho | `ScheduleTime - 2017-07-06T01:50:25Z` |
+|start| String | Início do acionamento do gatilho no período de tempo, formato UTC | `2017-06-26T20:55:29.5007959Z`|
+|status| String | Status final se o gatilho foi acionado com êxito (Bem-sucedido ou Falha) | `Succeeded`|
 
 ### <a name="log-analytics-schema"></a>Esquema de Log Analytics
 
