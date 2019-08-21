@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: robb
 ms.subservice: diagnostic-extension
-ms.openlocfilehash: 8a287f118c126967d2cf8cad77a434cfecc098eb
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e0325a3bda912c95d8d27646bc1e80fff5ce10a8
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60236242"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69639420"
 ---
 # <a name="what-is-azure-diagnostics-extension"></a>O que é a extensão Diagnóstico do Azure
 A extensão Diagnóstico do Azure é um agente no Azure que permite a coleta de dados de diagnóstico em um aplicativo implantado. Você pode usar a extensão de diagnóstico de várias fontes diferentes. As que têm suporte no momento são as Funções de Trabalho ou Web do Serviço de Nuvem do Azure (clássico), as Máquinas Virtuais, os conjuntos de dimensionamento de Máquinas Virtuais e o Service Fabric. Outros serviços do Azure têm métodos diferentes de diagnósticos. Consulte [Visão geral do monitoramento no Azure](../../azure-monitor/overview.md).
@@ -23,13 +23,13 @@ Uma [versão do Linux da extensão](../../virtual-machines/extensions/diagnostic
 ## <a name="data-you-can-collect"></a>Dados que você pode coletar
 A extensão Diagnóstico do Azure pode coletar os seguintes tipos de dados:
 
-| Fonte de dados | DESCRIÇÃO |
+| Fonte de Dados | Descrição |
 | --- | --- |
 | Métricas do contador de desempenho |Contadores de desempenho personalizados e do Sistema Operacional |
 | Logs de aplicativo |Rastreio de mensagens gravadas pelo seu aplicativo |
 | Logs de Eventos do Windows |Informações enviadas ao sistema de log de eventos do Windows |
 | Logs do .NET EventSource |Eventos de gravação de código usando a classe [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx) do .NET |
-| Logs IIS |Informações sobre sites do IIS |
+| Logs do IIS |Informações sobre sites do IIS |
 | [Logs do ETW baseados no manifesto](https://docs.microsoft.com/windows/desktop/etw/about-event-tracing) |Rastreamento de Eventos para eventos do Windows gerados por qualquer processo.(1) |
 | Despejos de memória (logs) |Informações sobre o estado do processo se um aplicativo falhar |
 | Logs de erros personalizados |Logs criados por seu aplicativo ou serviço |
@@ -52,7 +52,7 @@ Você também tem a opção de envio de dados para o banco de dados de série te
 Para saber mais sobre como configurar esse coletor, confira a [documentação do esquema de diagnóstico do Azure.](diagnostics-extension-schema-1dot3.md)
 
 ## <a name="costs"></a>Custos
-Cada uma das opções acima pode incorrer em custos. Certifique-se de pesquisá-los para evitar cobranças inesperadas.  Application Insights, hub de eventos, e o armazenamento do Azure tem custos separados associados à ingestão e a hora armazenados. Em particular, o armazenamento do Azure manterá todos os dados para sempre para que você talvez queira limpar os dados mais antigos após um determinado período de tempo para manter os custos baixos.    
+Cada uma das opções acima pode incorrer em custos. Não se esqueça de Pesquisar para evitar faturas inesperadas.  Application Insights, o Hub de eventos e o armazenamento do Azure têm custos separados associados à ingestão e à hora armazenada. Em particular, o armazenamento do Azure manterá todos os dados para sempre, para que você possa desejar limpar os dados mais antigos após um determinado período de tempo para manter os custos inativos.    
 
 ## <a name="versioning-and-configuration-schema"></a>Controle de versão e esquema de configuração
 Confira [Histórico de versão e esquema do Diagnóstico do Azure](diagnostics-extension-schema.md).
@@ -74,7 +74,7 @@ Para tópicos mais avançados, veja
 
 ## <a name="virtual-machines"></a>Máquinas Virtuais
 * Se estiver usando o Visual Studio, veja [Usar o Visual Studio para rastrear Máquinas Virtuais do Azure](/visualstudio/azure/vs-azure-tools-debug-cloud-services-virtual-machines) para começar. Caso contrário, veja
-* [Configurar o Diagnóstico do Azure em uma Máquina Virtual do Azure](/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines)
+* [Configurar o Diagnóstico do Azure em uma Máquina Virtual do Azure](/azure/virtual-machines/extensions/diagnostics-windows)
 
 Para tópicos mais avançados, veja
 

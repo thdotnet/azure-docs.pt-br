@@ -17,12 +17,12 @@ ms.topic: article
 ms.date: 09/06/2016
 ms.author: rclaus
 ms.subservice: disks
-ms.openlocfilehash: bd59257c1136f52beaf217c1f983c8aeb7bd81d5
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: ea8f3f1860223e102aeccf81f72b5294283b83f6
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67671119"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640753"
 ---
 # <a name="optimize-your-linux-vm-on-azure"></a>Otimizar sua VM do Linux no Azure
 É fácil criar uma máquina virtual (VM) Linux desde a linha de comando ou do portal. Este tutorial mostra como garantir que você configurou uma VM para otimizar o desempenho na plataforma Microsoft Azure. Este tópico usa uma VM do Ubuntu Server, mas é possível também criar uma máquina virtual do Linux usando [suas próprias imagens como modelos](create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).  
@@ -60,9 +60,9 @@ Nas Imagens de nuvem do Ubuntu, use a inicialização de nuvem para configurar a
 
 Para imagens sem suporte à inicialização de nuvem, as imagens de VM implantadas no Azure Marketplace têm um agente Linux de VM integrado com o sistema operacional. Esse agente permite que a VM interaja com vários serviços do Azure. Supondo que você implantou uma imagem padrão do Azure Marketplace, você precisaria fazer o seguinte para configurar corretamente as configurações de arquivo de permuta do Linux:
 
-Localizar e modificar duas entradas no arquivo **/etc/waagent.conf** . Eles controlam a existência de um arquivo de permuta dedicado e o tamanho do arquivo de permuta. Os parâmetros que você quer modificar são `ResourceDisk.EnableSwap=N` e `ResourceDisk.SwapSizeMB=0` 
+Localizar e modificar duas entradas no arquivo **/etc/waagent.conf** . Eles controlam a existência de um arquivo de permuta dedicado e o tamanho do arquivo de permuta. Os parâmetros que você precisa verificar são `ResourceDisk.EnableSwap` e`ResourceDisk.SwapSizeMB` 
 
-Altere os parâmetros para as seguintes configurações:
+Para habilitar um disco habilitado corretamente e o arquivo de permuta montado, verifique se os parâmetros têm as seguintes configurações:
 
 * ResourceDisk.EnableSwap=Y
 * ResourceDisk.SwapSizeMB={tamanho em MB para atender às suas necessidades} 

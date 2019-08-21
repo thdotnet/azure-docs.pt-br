@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/25/2019
 ms.author: genli
-ms.openlocfilehash: 5354ebc8c25125f86a0208382d176c84372cadc1
-ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
+ms.openlocfilehash: 75d6c10ded4038297689835d5ff012f344540e6f
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68369870"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69638847"
 ---
 # <a name="reset-local-windows-password-for-azure-vm-offline"></a>Redefina a senha local do Windows para a VM do Azure offline
 Você pode redefinir a senha local do Windows de uma VM no Azure usando o [portal do Azure ou Azure PowerShell](reset-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json), desde que o agente convidado do Azure esteja instalado. Esse método é a principal maneira de redefinir uma senha para uma VM do Azure. Caso encontre problemas com o agente convidado do Azure, como não responder ou falhar na instalação após carregamento de uma imagem personalizada, você poderá redefinir manualmente uma senha do Windows. Este artigo fornece detalhes sobre como redefinir uma senha de conta local anexando o disco virtual do SO de origem a outra VM. As etapas descritas neste artigo não se aplicam aos controladores de domínio do Windows. 
@@ -29,73 +29,23 @@ Você pode redefinir a senha local do Windows de uma VM no Azure usando o [porta
 ## <a name="overview-of-the-process"></a>Visão geral do processo
 As principais etapas para redefinir uma senha local para uma VM do Windows no Azure quando não há acesso ao agente convidado do Azure são as seguintes:
 
-1. Exclua a VM de origem. Os discos virtuais são mantidos.
+1. Pare a VM afetada.
+1. Crie um instantâneo para o disco do sistema operacional da VM.
+1. Crie uma cópia do disco do sistema operacional a partir do instantâneo.
+1. Anexe e monte o disco do sistema operacional copiado em outra VM do Windows e, em seguida, crie alguns arquivos de configuração no disco. Os arquivos irão ajudá-lo a redefinir a senha.
+1. Desmonte e desanexe o disco do sistema operacional copiado da VM de solução de problemas.
+1. Troque o disco do sistema operacional da VM afetada.
 
-2. Anexe o disco do sistema operacional da VM de origem a outra VM na mesma localização em sua assinatura do Azure. Essa VM é conhecida como a VM para solução de problemas.
-
-3. Usando a VM para solução de problemas, crie alguns arquivos de configuração no disco do SO da VM de origem.
-
-4. Desanexe da VM para solução de problemas o disco do SO da VM.
-
-5. Use um modelo do Resource Manager para criar uma VM usando o disco virtual original.
-
-6. Quando a nova VM é inicializada, os arquivos de configuração que você cria atualizam a senha do usuário exigido.
-
-> [!NOTE]
-> Você pode automatizar os processos a seguir:
->
-> - Criação da VM de solução de problemas
-> - Anexação do disco de SO
-> - Recriação da VM original
-> 
-> Para fazer isso, use os [Scripts de Recuperação de VM do Azure](https://github.com/Azure/azure-support-scripts/blob/master/VMRecovery/ResourceManager/README.md). Se você optar por usar os Scripts de Recuperação de VM do Azure, use o seguinte processo na seção “Etapas detalhadas”:
-> 1. Ignore as etapas 1 e 2 usando os scripts para anexar o disco do SO da VM afetada a uma VM de recuperação.
-> 2. Siga as etapas 3 a 6 para aplicar as mitigações.
-> 3. Ignore as etapas 7 a 9 usando os scripts para recompilar a VM.
-> 4. Siga as etapas 10 e 11.
-
-## <a name="detailed-steps-for-resource-manager"></a>Etapas detalhadas para o Gerenciador de recursos
+## <a name="detailed-steps-for-the-vm-with-resource-manager-deployment"></a>Etapas detalhadas para a VM com a implantação do Gerenciador de recursos
 
 > [!NOTE]
 > As etapas não se aplicam aos controladores de domínio do Windows. Ela só funciona no servidor autônomo ou em um servidor que seja membro de um domínio.
 
-Sempre tentar redefinir uma senha usando o [portal do Azure ou Azure PowerShell](reset-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) antes de tentar as etapas seguintes. Verifique se você tem um backup da VM antes de iniciar. 
+Sempre tentar redefinir uma senha usando o [portal do Azure ou Azure PowerShell](reset-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) antes de tentar as etapas seguintes. Verifique se você tem um backup da VM antes de iniciar.
 
-1. Exclua a VM afetada no portal do Azure. A exclusão da VM exclui apenas os metadados, a referência da VM dentro do Azure. Os discos virtuais são mantidos quando a VM é excluída:
-   
-   * Escolha a VM no portal do Azure e clique em *Excluir*:
-     
-     ![Excluir VM existente](./media/reset-local-password-without-agent/delete-vm.png)
-
-2. Anexe o disco do SO da VM de origem à VM para solução de problemas. A VM para solução de problemas deve estar na mesma região que o disco do SO da VM de origem (como `West US`):
-   
-   1. Escolha a VM para solução de problemas no portal do Azure. Clique em *Discos* | *Anexar existente*:
-     
-     ![Anexar disco existente](./media/reset-local-password-without-agent/disks-attach-existing.png)
-     
-   2. Escolha *Arquivo VHD* e, em seguida, a conta de armazenamento que contém sua VM de origem:
-     
-     ![Escolher conta de armazenamento](./media/reset-local-password-without-agent/disks-select-storage-account.png)
-     
-   3. Escolha o contêiner de origem. O contêiner de origem normalmente é *vhds*:
-     
-     ![Escolher contêiner de armazenamento](./media/reset-local-password-without-agent/disks-select-container.png)
-     
-   4. Escolha o vhd do SO a ser anexado. Clique em *Selecionar* para concluir o processo:
-     
-     ![Escolher o disco virtual de origem](./media/reset-local-password-without-agent/disks-select-source-vhd.png)
-
-3. Conecte-se à VM para solução de problemas usando a Área de Trabalho Remota e assegure-se de que o disco do SO da VM de origem esteja visível:
-   
-   1. Escolha a VM para solução de problemas no portal do Azure e clique em *Conectar*.
-
-   2. Abra o arquivo RDP que foi baixado. Insira o nome de usuário e a senha da VM para solução de problemas.
-
-   3. No Explorador de Arquivos, procure o disco de dados anexado. Se o VHD da VM de origem for o único disco de dados anexado à VM para solução de problemas, ele deverá ser a unidade F:
-     
-     ![Exibir o disco de dados anexado](./media/reset-local-password-without-agent/troubleshooting-vm-file-explorer.png)
-
-4. Crie `gpt.ini` em `\Windows\System32\GroupPolicy` na unidade da VM de origem (se gpt.ini existir, renomeie para gpt.ini.bak):
+1. Tire um instantâneo do disco do sistema operacional da VM afetada, crie um disco do instantâneo e, em seguida, anexe o disco a uma VM de solução de problemas. Para obter mais informações, consulte [solucionar problemas de uma VM do Windows anexando o disco do sistema operacional a uma VM de recuperação usando o portal do Azure](troubleshoot-recovery-disks-portal-windows.md).
+2. Conecte-se à VM de solução de problemas usando Área de Trabalho Remota.
+3. Crie `gpt.ini` em `\Windows\System32\GroupPolicy` na unidade da VM de origem (se gpt.ini existir, renomeie para gpt.ini.bak):
    
    > [!WARNING]
    > Tome cuidado para não criar acidentalmente os arquivos a seguir em C:\Windows, a unidade do SO da VM para solução de problemas. Crie os arquivos a seguir na unidade do SO da VM de origem que está anexada como um disco de dados.
@@ -111,7 +61,7 @@ Sempre tentar redefinir uma senha usando o [portal do Azure ou Azure PowerShell]
      
      ![Criar gpt.ini](./media/reset-local-password-without-agent/create-gpt-ini.png)
 
-5. Crie `scripts.ini` em `\Windows\System32\GroupPolicy\Machines\Scripts\`. Verifique se as pastas ocultas são mostradas. Se necessário, crie as pastas`Machine` ou `Scripts`.
+4. Crie `scripts.ini` em `\Windows\System32\GroupPolicy\Machines\Scripts\`. Verifique se as pastas ocultas são mostradas. Se necessário, crie as pastas`Machine` ou `Scripts`.
    
    * Adicione as seguintes linhas ao arquivo `scripts.ini` que você criou:
      
@@ -123,7 +73,7 @@ Sempre tentar redefinir uma senha usando o [portal do Azure ou Azure PowerShell]
      
      ![Criar scripts.ini](./media/reset-local-password-without-agent/create-scripts-ini.png)
 
-6. Crie `FixAzureVM.cmd` em `\Windows\System32` com o seguinte conteúdo, substituindo `<username>` e `<newpassword>` por seus próprios valores:
+5. Crie `FixAzureVM.cmd` em `\Windows\System32` com o seguinte conteúdo, substituindo `<username>` e `<newpassword>` por seus próprios valores:
    
     ```
     net user <username> <newpassword> /add
@@ -135,39 +85,13 @@ Sempre tentar redefinir uma senha usando o [portal do Azure ou Azure PowerShell]
    
     Você deve atender aos requisitos de complexidade de senha configurada para sua VM ao definir a nova senha.
 
-7. No portal do Azure, desanexe o disco da VM para solução de problemas:
-   
-   1. Escolha a VM para solução de problemas no portal do Azure e clique em *Discos*.
+6. Em portal do Azure, desanexe o disco da VM de solução de problemas.
 
-   2. Selecione o disco de dados anexado na etapa 2 e clique em *Desanexar*:
-     
-     ![Desanexar disco](./media/reset-local-password-without-agent/detach-disk.png)
+7. [Altere o disco do sistema operacional para a VM afetada](troubleshoot-recovery-disks-portal-windows.md#swap-the-os-disk-for-the-vm).
 
-8. Antes de criar uma VM, obtenha o URI para o disco do SO de origem:
-   
-   1. Escolha a conta de armazenamento no portal do Azure e clique em *Blobs*.
+8. Depois que a nova VM estiver em execução, conecte-se à ela usando a Área de Trabalho Remota com a nova senha que você especificou no script `FixAzureVM.cmd`.
 
-   2. Escolha o contêiner. O contêiner de origem normalmente é *vhds*:
-     
-     ![Selecionar o blob da conta de armazenamento](./media/reset-local-password-without-agent/select-storage-details.png)
-     
-   3. Escolha o VHD do SO da VM de origem e clique no botão *Copiar* ao lado do nome da *URL*:
-     
-     ![Copiar URI do disco](./media/reset-local-password-without-agent/copy-source-vhd-uri.png)
-
-9. Crie uma VM usando o disco do SO da VM de origem:
-   
-   1. Use [este modelo do Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-specialized-vhd-new-or-existing-vnet) para criar uma VM de um VHD especializado. Clique no botão `Deploy to Azure` para abrir o portal do Azure com os detalhes do modelo que você populou.
-
-   2. Se quiser manter todas as configurações anteriores para a VM, escolha *Editar modelo* para fornecer a VNet, a sub-rede, o adaptador de rede ou o IP público existentes.
-
-   3. Na caixa de texto do parâmetro `OSDISKVHDURI`, cole o URI do VHD de origem obtido na etapa anterior:
-     
-     ![Criar uma VM usando o modelo](./media/reset-local-password-without-agent/create-new-vm-from-template.png)
-
-10. Depois que a nova VM estiver em execução, conecte-se à ela usando a Área de Trabalho Remota com a nova senha que você especificou no script `FixAzureVM.cmd`.
-
-11. Na sessão remota para a nova VM, remova os seguintes arquivos para limpar o ambiente:
+9. Na sessão remota para a nova VM, remova os seguintes arquivos para limpar o ambiente:
     
     * De %windir%\System32
       * remova FixAzureVM.cmd
@@ -267,7 +191,7 @@ Sempre tentar redefinir uma senha usando o [portal do Azure ou Azure PowerShell]
    
    1. Escolha a VM para solução de problemas no portal do Azure e clique em *Discos*.
    
-   2. Selecione o disco de dados anexado na etapa 2, clique em *desanexar:* e, em seguida, clique em *OK*.
+   2. Selecione o disco de dados anexado na etapa 2,clique em desanexar e, em seguida, clique em **OK**.
 
      ![Desanexar disco](./media/reset-local-password-without-agent/data-disks-classic.png)
      

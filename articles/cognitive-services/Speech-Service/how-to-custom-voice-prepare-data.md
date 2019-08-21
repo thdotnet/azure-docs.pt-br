@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: 6a29117ff6e5173063bc2aced87f08f1a6aea425
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 8b4b5553605042499a9a8f3343ac4e6678e7006f
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68559578"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640438"
 ---
 # <a name="prepare-data-to-create-a-custom-voice"></a>Preparar dados para criar uma voz personalizada
 
@@ -62,7 +62,7 @@ Siga estas diretrizes ao preparar o áudio.
 | Formato de arquivo | RIFF (. wav), agrupado em um arquivo. zip |
 | Taxa de amostragem | Pelo menos 16.000 Hz |
 | Formato de exemplo | PCM, 16 bits |
-| Nome do arquivo | Numeric, com extensão. wav. Nenhum nome de arquivo duplicado é permitido. |
+| Nome do Arquivo | Numeric, com extensão. wav. Nenhum nome de arquivo duplicado é permitido. |
 | Comprimento do áudio | Menos de 15 segundos |
 | Formato de arquivo | .zip |
 | Tamanho máximo de arquivo | 200 MB |
@@ -107,7 +107,7 @@ Siga estas diretrizes ao preparar o áudio para segmentação.
 | Propriedade | Valor |
 | -------- | ----- |
 | Formato de arquivo | RIFF (. wav) com uma taxa de amostragem de pelo menos 16 kHz-16 bits em PCM ou. mp3 com uma taxa de bits de pelo menos 256 KBps, agrupados em um arquivo. zip |
-| Nome do arquivo | Somente caracteres ASCII. Os caracteres Unicode no nome falharão (por exemplo, os caracteres chineses ou símbolos como "–"). Nenhum nome duplicado é permitido. |
+| Nome do Arquivo | Somente caracteres ASCII. Os caracteres Unicode no nome falharão (por exemplo, os caracteres chineses ou símbolos como "–"). Nenhum nome duplicado é permitido. |
 | Comprimento do áudio | Mais de 20 segundos |
 | Formato de arquivo | .zip |
 | Tamanho máximo de arquivo | 200 MB |
@@ -121,10 +121,10 @@ Transcrições devem estar preparados para as especificações listadas nesta ta
 | Propriedade | Valor |
 | -------- | ----- |
 | Formato de arquivo | Texto sem formatação (. txt), agrupado em um. zip |
-| Nome do arquivo | Usar o mesmo nome que o arquivo de áudio correspondente |
+| Nome do Arquivo | Usar o mesmo nome que o arquivo de áudio correspondente |
 | Formato de codificação | UTF-8-somente BOM |
 | Nº de enunciados por linha | Sem limite |
-| Tamanho máximo do arquivo | 50 MILHÕES |
+| Tamanho máximo do arquivo | 50 MB |
 
 Todos os arquivos de transcrições nesse tipo de dados devem ser agrupados em um arquivo zip. Nenhuma subpasta é permitida no arquivo zip. Por exemplo, você carregou um arquivo ZIP contendo um arquivo de áudio chamado ' kingstory. wav ', 45 segundos de comprimento e outro chamado ' queenstory. mp3 ', 200 segundos de comprimento. Será necessário carregar outro arquivo ZIP contendo duas transcrições, uma denominada ' kingstory. txt ', a outra ' queenstory. txt '. Em cada arquivo de texto sem formatação, você fornecerá a transcrição correta completa para o áudio correspondente.
 
@@ -142,7 +142,7 @@ Siga estas diretrizes ao preparar o áudio.
 | Propriedade | Valor |
 | -------- | ----- |
 | Formato de arquivo | RIFF (. wav) com uma taxa de amostragem de pelo menos 16 kHz-16 bits em PCM ou. mp3 com uma taxa de bits de pelo menos 256 KBps, agrupados em um arquivo. zip |
-| Nome do arquivo | Somente caracteres ASCII. Os caracteres Unicode no nome falharão (por exemplo, os caracteres chineses ou símbolos como "–"). Nenhum nome duplicado é permitido. |
+| Nome do Arquivo | Somente caracteres ASCII. Os caracteres Unicode no nome falharão (por exemplo, os caracteres chineses ou símbolos como "–"). Nenhum nome duplicado é permitido. |
 | Comprimento do áudio | Mais de 20 segundos |
 | Formato de arquivo | .zip |
 | Tamanho máximo de arquivo | 200 MB |

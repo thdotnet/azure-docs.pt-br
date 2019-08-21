@@ -17,12 +17,12 @@ ms.topic: article
 ms.date: 08/03/2016
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 2d17991854f13f889c4e8c3a8c6f18e933655546
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 02a214c10c5b111070127e4a823682989f24b20b
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62128442"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69637734"
 ---
 # <a name="troubleshoot-slow-app-performance-issues-in-azure-app-service"></a>Solucionar problemas de desempenho de aplicativo lento no Serviço de Aplicativo do Azure
 Este artigo ajuda você a solucionar problemas de desempenho de aplicativo lento no [Serviço de Aplicativo do Azure](https://go.microsoft.com/fwlink/?LinkId=529714).
@@ -40,7 +40,7 @@ Esse problema geralmente é causado por questões no nível de aplicativo, como:
 * aplicativo usando muita memória/CPU
 * aplicativo falhando devido a uma exceção
 
-## <a name="troubleshooting-steps"></a>Etapas para solucionar problemas
+## <a name="troubleshooting-steps"></a>Etapas de solução de problemas
 A solução de problemas pode ser dividida em três tarefas distintas, em ordem sequencial:
 
 1. [Observar e monitorar o comportamento do aplicativo](#observe)
@@ -64,7 +64,7 @@ Algumas das métricas que você talvez queira monitorar para o aplicativo são
 * Tempo médio de resposta
 * Tempo de CPU
 * Conjunto de trabalho de memória
-* Requests
+* Solicitações
 
 ![monitorar o desempenho do aplicativo](./media/app-service-web-troubleshoot-performance-degradation/1-monitor-metrics.png)
 
@@ -155,14 +155,14 @@ Para saber mais sobre recursos disponíveis no Kudu, confira [Ferramentas do Azu
 #### <a name="scale-the-app"></a>Escalar o aplicativo
 No Serviço de Aplicativo do Azure, para um melhor desempenho e taxa de transferência, você pode ajustar a escala na qual você está executando seu aplicativo. Escalar verticalmente aplicativos envolve duas ações relacionadas: alterar seu plano do Serviço de Aplicativo para um tipo de preço mais alto e definir certas configurações depois de ter mudado para o tipo de preço mais alto.
 
-Para saber mais sobre como dimensionar, consulte [Escalar um aplicativo no Serviço de Aplicativo do Azure](web-sites-scale.md).
+Para saber mais sobre como dimensionar, consulte [Escalar um aplicativo no Serviço de Aplicativo do Azure](manage-scale-up.md).
 
 Além disso, você pode optar por executar o aplicativo em mais de uma instância. Escalar horizontalmente não apenas fornece mais capacidade de processamento, como também oferece alguma quantidade de tolerância a falhas. Se o processo falhar em uma instância, as outras instâncias ainda continuarão atendendo a solicitações.
 
 Você pode definir a escala para ser Manual ou Automática.
 
 #### <a name="use-autoheal"></a>Usar AutoHeal
-O AutoHeal recicla o processo de trabalho para seu aplicativo com base nas configurações que você escolher (como alterações de configuração, solicitações, limites baseados na memória ou o tempo necessário para executar uma solicitação). Na maioria das vezes, reciclar o processo é a maneira mais rápida de resolver um problema. Embora você possa sempre reiniciar o aplicativo diretamente no portal do Azure, o AutoHeal faz isso automaticamente. Tudo que você precisa fazer é adicionar alguns gatilhos na raiz web.config do seu aplicativo. Essas configurações devem funcionar da mesma forma, mesmo se seu aplicativo não é um aplicativo .NET.
+O AutoHeal recicla o processo de trabalho para seu aplicativo com base nas configurações que você escolher (como alterações de configuração, solicitações, limites baseados na memória ou o tempo necessário para executar uma solicitação). Na maioria das vezes, reciclar o processo é a maneira mais rápida de resolver um problema. Embora você possa sempre reiniciar o aplicativo diretamente no portal do Azure, o AutoHeal faz isso automaticamente. Tudo que você precisa fazer é adicionar alguns gatilhos na raiz web.config do seu aplicativo. Essas configurações funcionarão da mesma maneira mesmo que seu aplicativo não seja um aplicativo .NET.
 
 Para saber mais, consulte [AutoHeal em sites do Azure](https://azure.microsoft.com/blog/auto-healing-windows-azure-web-sites/).
 

@@ -14,20 +14,20 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 3/26/2019
 ms.author: v-mohabe
-ms.openlocfilehash: 60bb1c3b81ef990993a2ce659a2b189c9d8a0eba
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 79a5f9a1269bdfc63d9d0b6fffd8458d011b777b
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65967978"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640870"
 ---
 # <a name="use-azure-security-center-recommendations-to-enhance-security"></a>Usar as recomendações da Central de Segurança do Azure para aprimorar a segurança
 Você pode reduzir as chances de um evento de segurança significativo configurando uma política de segurança e implementando as recomendações fornecidas pela Central de Segurança do Azure. Esse artigo mostra como usar as políticas de segurança e as recomendações da Central de Segurança para ajudar a atenuar uma violação de segurança. 
 
-A Central de segurança é executada automaticamente verificações contínuas para analisar o estado de segurança dos recursos do Azure. Quando a Central de Segurança identifica possíveis vulnerabilidades de segurança, ela cria recomendações que guiam você pelo processo de configuração dos controles de segurança necessários. A Central de segurança atualiza suas recomendações dentro de 24 horas, com as seguintes exceções:
+A central de segurança executa verificações contínuas automaticamente para analisar o estado de segurança de seus recursos do Azure. Quando a Central de Segurança identifica possíveis vulnerabilidades de segurança, ela cria recomendações que guiam você pelo processo de configuração dos controles de segurança necessários. A central de segurança atualiza suas recomendações dentro de 24 horas, com as seguintes exceções:
 
-- Recomendações de configuração de segurança do sistema operacional são atualizadas dentro de 48 horas
-- Recomendações de problemas de proteção de ponto de extremidade são atualizadas dentro de 8 horas
+- As recomendações de configuração de segurança do sistema operacional são atualizadas dentro de 48 horas
+- As recomendações de Endpoint Protection problemas são atualizadas dentro de 8 horas
 
 ## <a name="scenario"></a>Cenário
 Este cenário mostra como usar a Central de Segurança para ajudar a reduzir as chances de um incidente de segurança monitorando as recomendações da Central de Segurança e executando ações. O cenário usa a empresa fictícia Contoso e funções apresentadas no [guia de planejamento e operações](security-center-planning-and-operations-guide.md#security-roles-and-access-controls) da Central de Segurança. Neste cenário, estamos nos concentrando nas funções das seguintes personas:
@@ -41,30 +41,30 @@ David, da segurança de TI da Contoso, já optou por integrar a Central de Segur
 
 A Central de Segurança analisa o estado de segurança dos recursos do Azure da Contoso e aplica as políticas de segurança padrão automaticamente. Quando a Central de Segurança identifica possíveis vulnerabilidades de segurança, ela cria **recomendações** com base nos controles definidos na política de segurança. 
 
-David executa a camada padrão de segurança do Azure em todas as suas assinaturas para obter o conjunto completo de recomendações e recursos de segurança disponíveis. Jeff também integra todos os seus servidores locais existentes que ainda não foram migrados para a nuvem para que possa tirar proveito do suporte híbrido da Central de Segurança em seus servidores [Windows](quick-onboard-windows-computer.md) e [Linux](quick-onboard-linux-computer.md).
+David executa a camada Standard de segurança do Azure, em todas as suas assinaturas, para obter o pacote completo de recomendações e recursos de segurança disponíveis. Jeff também integra todos os servidores locais existentes que ainda não foram migrados para a nuvem para que eles possam aproveitar o suporte híbrido da central de segurança em seus servidores [Windows](quick-onboard-windows-computer.md) e [Linux](quick-onboard-linux-computer.md) .
 
 Jeff é proprietário da carga de trabalho de nuvem. Jeff é responsável por aplicar controles de segurança de acordo com as políticas de segurança da Contoso. 
 
 Jeff realiza as seguintes tarefas:
 
 - Monitorar as recomendações de segurança fornecidas pela Central de Segurança
-- Avaliar as recomendações de segurança e decidir quais ele deve aplicar ou ignorar
+- Avalie as recomendações de segurança e decida se elas devem aplicar ou ignorar as recomendações.
 - Aplicar as recomendações de segurança
 
 ### <a name="remediate-threats-using-recommendations"></a>Corrigir ameaças usando recomendações
-Como parte de suas atividades diárias de monitoramento, Jeff entra no Azure e abre a Central de Segurança. 
+Como parte de suas atividades diárias de monitoramento, Jeff entra no Azure e abre a central de segurança. 
 
-1. Jeff seleciona assinaturas da sua carga de trabalho.
+1. Jeff seleciona as assinaturas da carga de trabalho.
 
-2. Jeff verifica sua **classificação de segurança** para ter uma visão geral do quanto as assinaturas são seguras e vê que a sua classificação é de 548.
+2. Jeff verifica a **Pontuação segura** para obter uma visão geral de como as assinaturas são seguras e vê que a pontuação é 548.
 
 3. Jeff precisa decidir com quais recomendações deseja lidar primeiro. Sendo assim, Jeff clica na classificação de segurança e começa a lidar com as recomendações com base no quanto elas melhoram o [impacto da classificação de segurança](security-center-secure-score.md).
 
 4. Como Jeff tem muitos servidores e VMs conectadas, ele decide se concentrar em **Computação e aplicativos**.
 
-5. Quando clica em **Computação e aplicativos**, Jeff vê uma lista de recomendações e trata delas de acordo com o impacto sobre a classificação de segurança.
+5. Quando Jeff clica em **computação e aplicativos**, eles veem uma lista de recomendações e manipula-os de acordo com o impacto de Pontuação segura.
 
-6. Jeff tem inúmeras VMs voltadas para a Internet e, como suas portas são expostas, ele tem medo de que um invasor possa obter controle dos servidores. Portanto, Jeff opta por usar o (**acesso a VM Just-In-Time**) [security-center-just-in-time.md].
+6. Jeff tem várias VMs voltadas para a Internet e, como suas portas são expostas, eles estão preocupados com o fato de um invasor poder ter controle sobre os servidores. Portanto, Jeff opta por usar o (**acesso a VM Just-In-Time**) [security-center-just-in-time.md].
 
 Jeff continua a seguir as recomendações de alta e média prioridade, tomando decisões quanto à implementação. Para cada recomendação, ele analisa as informações detalhadas fornecidas pela Central de Segurança para entender quais recursos são afetados, qual é o impacto sobre a classificação de segurança, o que cada recomendação significa e quais são as etapas de correção para atenuar cada problema.
 

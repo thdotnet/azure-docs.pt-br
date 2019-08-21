@@ -11,14 +11,14 @@ ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.topic: troubleshooting
-ms.date: 06/15/2018
+ms.date: 08/20/2019
 ms.author: delhan
-ms.openlocfilehash: d96d75f4f2623476f7af4e6eea930c1f2c503e3a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8fc51dfb90158316b3fe6c11b5265f1cf3251505
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60306944"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69641043"
 ---
 # <a name="how-to-reset-local-linux-password-on-azure-vms"></a>Como redefinir a senha local do Linux em VMs do Azure
 
@@ -30,11 +30,14 @@ Você não consegue fazer logon na VM, e recebe uma mensagem indicando que a sen
 
 ## <a name="manual-password-reset-procedure"></a>Procedimento de redefinição de senha manual
 
-1.  Exclua a VM e mantenha os discos conectados.
+> [!NOTE]
+> As etapas a seguir não se aplicam à VM com disco não gerenciado.
 
-2.  Anexe a Unidade do sistema operacional como um disco de dados à outra VM temporal no mesmo local.
+1. Tire um instantâneo do disco do sistema operacional da VM afetada, crie um disco do instantâneo e, em seguida, anexe o disco a uma VM de solução de problemas. Para obter mais informações, consulte [solucionar problemas de uma VM do Windows anexando o disco do sistema operacional a uma VM de recuperação usando o portal do Azure](troubleshoot-recovery-disks-portal-linux.md).
 
-3.  Execute o seguinte comando SSH na VM temporal para se tornar um superusuário.
+2. Conecte-se à VM de solução de problemas usando Área de Trabalho Remota.
+
+3.  Execute o seguinte comando SSH na VM de solução de problemas para se tornar um superusuário.
 
     ```bash
     sudo su
@@ -98,12 +101,12 @@ Você não consegue fazer logon na VM, e recebe uma mensagem indicando que a sen
     umount /tempmount
     ```
 
-11. Desanexe o disco do portal de gerenciamento.
+11. Em portal do Azure, desanexe o disco da VM de solução de problemas.
 
-12. Recrie a VM.
+12. [Altere o disco do sistema operacional para a VM afetada](troubleshoot-recovery-disks-portal-linux.md#swap-the-os-disk-for-the-vm).
 
 ## <a name="next-steps"></a>Próximas etapas
 
 * [Solucionar problemas com VM do Azure anexando o disco de SO para outra VM do Azure](https://social.technet.microsoft.com/wiki/contents/articles/18710.troubleshoot-azure-vm-by-attaching-os-disk-to-another-azure-vm.aspx)
 
-* [CLI do Azure: Como excluir e reimplantar uma VM de VHD](https://blogs.msdn.microsoft.com/linuxonazure/2016/07/21/azure-cli-how-to-delete-and-re-deploy-a-vm-from-vhd/)
+* [CLI do Azure: Como excluir e reimplantar uma VM do VHD](https://blogs.msdn.microsoft.com/linuxonazure/2016/07/21/azure-cli-how-to-delete-and-re-deploy-a-vm-from-vhd/)

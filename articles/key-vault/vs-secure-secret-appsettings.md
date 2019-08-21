@@ -7,14 +7,14 @@ manager: paulyuk
 editor: ''
 ms.service: key-vault
 ms.topic: conceptual
-ms.date: 01/07/2019
+ms.date: 07/17/2019
 ms.author: cawa
-ms.openlocfilehash: 3f5196c81550446221a4524330e355c595b65c6a
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: d5662fa3cae8ba0cec0fd76965597ccac7c83889
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68934366"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69639473"
 ---
 # <a name="securely-save-secret-application-settings-for-a-web-application"></a>Salvar com segurança as configurações de aplicativo secretas para um aplicativo Web
 
@@ -23,7 +23,7 @@ Este artigo descreve como salvar com segurança os parâmetros secretos de confi
 
 Tradicionalmente, todas as configurações de aplicativos Web são salvas em arquivos de configuração como Web.config. Essa prática leva a fazer check-in de configurações secretas, como credenciais de nuvem, em sistemas públicos de controle do código-fonte, como o GitHub. Enquanto isso, pode ser difícil seguir a melhor prática de segurança devido à sobrecarga necessária para mudar o código-fonte e redefinir as configurações de desenvolvimento.
 
-Para verificar se o processo de desenvolvimento é seguro, bibliotecas de ferramentas e de estruturas são criadas para salvar as configurações de aplicativo secretas com segurança com pouca ou nenhuma alteração de código-fonte.
+Para garantir que o processo de desenvolvimento seja seguro, as bibliotecas de ferramentas e estruturas são criadas para salvar as configurações de segredo do aplicativo com segurança, com pouca ou nenhuma alteração de código-fonte.
 
 ## <a name="aspnet-and-net-core-applications"></a>Aplicativos ASP.NET e .NET Core
 
@@ -45,12 +45,12 @@ Se você estiver desenvolvendo um projeto e precisar compartilhar com segurança
 
     ![Adicionar Política de acesso ao Key Vault](./media/vs-secure-secret-appsettings/add-keyvault-access-policy.png)
 
-3. Adicione o segredo para o Key Vault no portal do Azure. Para definições de configuração aninhadas, substitua ':' por '-' para que o nome de segredo do Key Vault seja válido. ':' não pode ser usado no nome de um segredo do Key Vault.
+3. Adicione seu segredo a Key Vault no portal do Azure. Para definições de configuração aninhadas, substitua ':' por '-' para que o nome de segredo do Key Vault seja válido. ':' não pode ser usado no nome de um segredo do Key Vault.
 
     ![Adicionar segredo do Key Vault](./media/vs-secure-secret-appsettings/add-keyvault-secret.png)
 
     > [!NOTE] 
-    > Antes do Visual Studio 2017 V 15.6, nós usamos para recomendar a instalação da extensão de autenticação dos serviços do Azure para Visual Studio. Mas ele é preterido agora, já que o funcionalidade está integrado no Visual Studio. Portanto, se você estiver em uma versão mais antiga do Visual Studio 2017, sugerimos que você atualize para pelo menos VS 2017 15,6 ou superior para que você possa usar essa funcionalidade nativamente e acessar o cofre de chaves usando a própria identidade de entrada do Visual Studio.
+    > Antes do Visual Studio 2017 V 15.6, nós usamos para recomendar a instalação da extensão de autenticação dos serviços do Azure para Visual Studio. Mas ele foi preterido agora, já que a funcionalidade está integrada no Visual Studio. Portanto, se você estiver em uma versão mais antiga do Visual Studio 2017, sugerimos que você atualize para pelo menos VS 2017 15,6 ou superior para que você possa usar essa funcionalidade nativamente e acessar o cofre de chaves usando a própria identidade de entrada do Visual Studio.
     >
  
 4. Adicione os seguintes pacotes NuGet ao seu projeto:
@@ -97,7 +97,7 @@ Se você estiver escrevendo um protótipo rápido e não quiser provisionar recu
 
 1. Instale o pacote NuGet a seguir no seu projeto.
     ```
-    Microsoft.Configuration.ConfigurationBuilders.Basic
+    Microsoft.Configuration.ConfigurationBuilders.Base
     ```
 
 2. Crie um arquivo semelhante ao seguinte. Salve-o em um local fora da sua pasta de projeto.
@@ -123,7 +123,7 @@ Se você estiver escrevendo um protótipo rápido e não quiser provisionar recu
     </configBuilders>
     ```
 
-4. Especifique se a seção appSettings está usando o construtor de configuração secreta. Verifique se que há alguma entrada para a configuração secreta com valor fictício.
+4. Especifique se a seção appSettings está usando o construtor de configuração secreta. Verifique se há uma entrada para a configuração secreta com um valor fictício.
 
     ```xml
         <appSettings configBuilders="Secrets">

@@ -15,12 +15,12 @@ ms.date: 04/04/2018
 ms.author: aelnably
 ms.reviewer: nicking
 ms.custom: seodec18
-ms.openlocfilehash: ed659e95289665b6ce63ba6961e9f63650b4accf
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: 4b3b10177b119c9362f807206a915d4b0b367e16
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67617538"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69639744"
 ---
 # <a name="restore-an-app-in-azure-from-a-snapshot"></a>Restaurar um aplicativo no Azure a partir de um instantâneo
 Este artigo mostra como restaurar um aplicativo no [Serviço de Aplicativo do Azure](../app-service/overview.md) a partir de um instantâneo. Você pode restaurar seu aplicativo para um estado anterior, com base em um dos instantâneos do seu aplicativo. Você não precisa habilitar o backup de instantâneos, a plataforma salva automaticamente um instantâneo de todos os aplicativos para fins de recuperação de dados.
@@ -30,7 +30,7 @@ Os instantâneos são cópias de sombra incrementais e oferecem diversas vantage
 - Não há limitação de tamanho de armazenamento.
 - Nenhuma configuração é necessária.
 
-A restauração usando instantâneos está disponível para aplicativos que são executados na camada **Premium** ou superior. Para obter informações sobre como escalar verticalmente seu aplicativo, veja [Escalar verticalmente um aplicativo Web no Serviço de Aplicativo do Azure](web-sites-scale.md).
+A restauração usando instantâneos está disponível para aplicativos que são executados na camada **Premium** ou superior. Para obter informações sobre como escalar verticalmente seu aplicativo, veja [Escalar verticalmente um aplicativo Web no Serviço de Aplicativo do Azure](manage-scale-up.md).
 
 ## <a name="limitations"></a>Limitações
 

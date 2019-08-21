@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 08/13/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: bb4ac9953bcadd9e49cee5b7b99e853705b6567c
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 9609a886bdcbf093cffaf888f9aeaff0d61acec1
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68990279"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69636663"
 ---
 # <a name="configure-an-app-service-app-in-the-azure-portal"></a>Configurar um aplicativo do serviço de aplicativo no portal do Azure
 
@@ -167,7 +167,7 @@ Na [portal do Azure], navegue até a página de gerenciamento do aplicativo. No 
 
 ![Configurações gerais](./media/configure-common/open-general.png)
 
-Aqui, você pode definir algumas configurações comuns para o aplicativo. Algumas configurações exigem que você [Escale verticalmente para os tipos de preço mais altos](web-sites-scale.md).
+Aqui, você pode definir algumas configurações comuns para o aplicativo. Algumas configurações exigem que você [Escale verticalmente para os tipos de preço mais altos](manage-scale-up.md).
 
 - **Configurações de pilha**: A pilha de software para executar o aplicativo, incluindo as versões de linguagem e SDK. Para aplicativos do Linux e aplicativos de contêiner personalizados, você também pode definir um arquivo ou comando de inicialização opcional.
 - **Configurações da plataforma**: Permite que você defina as configurações para a plataforma de hospedagem, incluindo:
@@ -268,4 +268,4 @@ Consulte [configurar um contêiner personalizado do Linux para o serviço Azure 
 [How to: Monitor web endpoint status]: https://go.microsoft.com/fwLink/?LinkID=279906
 [Conceitos básicos de monitoramento no Serviço de Aplicativo do Azure]: ./web-sites-monitor.md
 [modo de pipeline]: https://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application
-[Dimensionar um aplicativo no Serviço de Aplicativo do Azure]: ./web-sites-scale.md
+[Dimensionar um aplicativo no Serviço de Aplicativo do Azure]: ./manage-scale-up.md

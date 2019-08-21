@@ -1,7 +1,7 @@
 ---
 title: Atualizar o serviço do QnA Maker – QnA Maker
 titleSuffix: Azure Cognitive Services
-description: Compartilhar ou atualizar os serviços do QnA Maker para gerenciar os recursos melhor.
+description: Compartilhe ou atualize seus serviços de QnA Maker para gerenciar melhor os recursos.
 services: cognitive-services
 author: diberry
 manager: nitinme
@@ -10,27 +10,27 @@ ms.subservice: qna-maker
 ms.topic: article
 ms.date: 03/25/2019
 ms.author: diberry
-ms.openlocfilehash: 2fdbb245f838d92e84d1247faa610a2f1a66c532
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: df4aa2d6a3c4690fb1fc38b0f4f7d49afccdd657
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67439758"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640476"
 ---
-# <a name="share-or-upgrade-your-qna-maker-service"></a>Compartilhar ou atualize o seu serviço QnA Maker
-Compartilhar ou atualizar os serviços do QnA Maker para gerenciar os recursos melhor. 
+# <a name="share-or-upgrade-your-qna-maker-service"></a>Compartilhar ou atualizar seu serviço de QnA Maker
+Compartilhe ou atualize seus serviços de QnA Maker para gerenciar melhor os recursos. 
 
 Você pode optar por fazer upgrade dos componentes individuais da pilha QnA Maker após a criação inicial. Consulte os detalhes dos componentes dependentes e da seleção de SKU [aqui](https://aka.ms/qnamaker-docs-capacity).
 
-## <a name="share-existing-services-with-qna-maker"></a>Compartilhar os serviços existentes com o QnA Maker
+## <a name="share-existing-services-with-qna-maker"></a>Compartilhar serviços existentes com o QnA Maker
 
-O QnA Maker cria vários recursos do Azure. Para reduzir o gerenciamento e se beneficiar do custo de compartilhamento, use a tabela a seguir para entender o que você pode e não é possível compartilhar:
+QnA Maker cria vários recursos do Azure. Para reduzir o gerenciamento e beneficiar-se do compartilhamento de custos, use a tabela a seguir para entender o que você pode e não consegue compartilhar:
 
 |Serviço|Compartilhar|
 |--|--|
 |Serviços Cognitivos|X|
-|Plano do serviço de aplicativo|✔|
-|serviço de aplicativo|X|
+|Plano de serviço de aplicativo|✔|
+|Serviço de aplicativo|X|
 |Application Insights|✔|
 |Serviço Search|✔|
 
@@ -52,7 +52,7 @@ Para fazer upgrade da SKU de gerenciamento do QnA Maker:
 
  Quando sua base de dados de conhecimento precisar fornecer mais solicitações do aplicativo cliente, atualize o tipo de preço do serviço de aplicativo.
 
-Você pode [escalar verticalmente](https://docs.microsoft.com/azure/app-service/web-sites-scale) ou reduzir verticalmente o serviço Aplicativo.
+Você pode [escalar verticalmente](https://docs.microsoft.com/azure/app-service/manage-scale-up) ou reduzir verticalmente o serviço Aplicativo.
 
 1. Vá para o recurso de serviço Aplicativo no portal do Azure e selecione as opções **escalar verticalmente** ou **reduzir verticalmente** conforme necessário.
 

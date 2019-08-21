@@ -1,24 +1,26 @@
 ---
-title: Visão geral dos logs do Firewall do Azure
-description: Este artigo é uma visão geral dos logs de diagnóstico do Firewall do Azure.
+title: Visão geral dos logs e das métricas do firewall do Azure
+description: Este artigo é uma visão geral dos logs e das métricas de diagnóstico do firewall do Azure.
 services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 9/24/2018
+ms.date: 08/21/2019
 ms.author: victorh
-ms.openlocfilehash: c129c394f3d694b832722287027c1f9e58028a33
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8524c8f05a5d48755ab1ccca62f0fd53870190bb
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61065845"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640236"
 ---
-# <a name="azure-firewall-logs"></a>Logs do Firewall do Azure
+# <a name="azure-firewall-logs-and-metrics"></a>Métricas e logs de firewall do Azure
 
 Você pode monitorar o Firewall do Azure usando os logs de firewall. Você também pode usar os logs de atividades para auditar operações nos recursos do Firewall do Azure.
 
 Você pode acessar alguns desses logs por meio do portal. Os logs podem ser enviados para os [logs do Azure Monitor](../azure-monitor/insights/azure-networking-analytics.md), o Armazenamento e os Hubs de Eventos e analisados nos logs do Azure Monitor ou por ferramentas diferentes, como Excel e Power BI.
+
+As métricas são leves e podem dar suporte a cenários quase em tempo real, tornando-as úteis para alertas e detecção rápida de problemas. 
 
 ## <a name="diagnostic-logs"></a>Logs de diagnóstico
 
@@ -26,7 +28,7 @@ Você pode acessar alguns desses logs por meio do portal. Os logs podem ser envi
 
 * **Log de regra de aplicativo**
 
-   O log de regra de aplicativo é salvo em uma conta de armazenamento, transmitidos para hubs de eventos e/ou enviados para os logs do Azure Monitor somente se você tiver habilitado ele para cada Firewall do Azure. Cada nova conexão que corresponda a uma de suas regras de aplicativo configurado gera um log para a conexão aceita/negada. Os dados são registrados no formato JSON, conforme mostrado no seguinte exemplo:
+   O log de regras de aplicativo é salvo em uma conta de armazenamento, transmitida para os hubs de eventos e/ou enviados para Azure Monitor logs somente se você o tiver habilitado para cada Firewall do Azure. Cada nova conexão que corresponda a uma de suas regras de aplicativo configurado gera um log para a conexão aceita/negada. Os dados são registrados no formato JSON, conforme mostrado no seguinte exemplo:
 
    ```
    Category: application rule logs.
@@ -49,7 +51,7 @@ Você pode acessar alguns desses logs por meio do portal. Os logs podem ser envi
 
 * **Log de regra de rede**
 
-   O log de regra de rede é salvo em uma conta de armazenamento, transmitidos para hubs de eventos e/ou enviados para os logs do Azure Monitor somente se você tiver habilitado ele para cada Firewall do Azure. Cada nova conexão que corresponda a uma de suas regras de rede configuradas gera um log para a conexão aceita/negada. Os dados são registrados no formato JSON, conforme mostrado no seguinte exemplo:
+   O log de regras de rede é salvo em uma conta de armazenamento, transmitida para os hubs de eventos e/ou enviados para Azure Monitor logs somente se você o tiver habilitado para cada Firewall do Azure. Cada nova conexão que corresponda a uma de suas regras de rede configuradas gera um log para a conexão aceita/negada. Os dados são registrados no formato JSON, conforme mostrado no seguinte exemplo:
 
    ```
    Category: network rule logs.
@@ -81,9 +83,45 @@ Você tem três opções para armazenar os logs:
 
    As entradas do log de atividades são coletadas por padrão e podem ser exibidas no portal do Azure.
 
-   Você pode usar os [logs de atividades do Azure](../azure-resource-manager/resource-group-audit.md) (anteriormente conhecidos como logs operacionais e logs de auditoria) para exibir todas as operações que estão sendo enviadas à sua assinatura do Azure.
+   Você pode usar [os logs de atividades do Azure](../azure-resource-manager/resource-group-audit.md) (anteriormente conhecidos como logs operacionais e logs de auditoria) para exibir todas as operações enviadas à sua assinatura do Azure.
+
+## <a name="metrics"></a>metrics
+
+As métricas em Azure Monitor são valores numéricos que descrevem algum aspecto de um sistema em um determinado momento. As métricas são coletadas a cada minuto e são úteis para alertas porque podem ser amostradas com frequência. Um alerta pode ser acionado rapidamente com lógica relativamente simples.
+
+As seguintes métricas estão disponíveis para o Firewall do Azure:
+
+- **Contagem** de ocorrências de regras de aplicativo-o número de vezes que uma regra de aplicativo foi atingida.
+
+    Unidade: contagem
+
+- **Dados processados** -quantidade de dados atravessando o firewall.
+
+    Unidade: bytes
+
+- **Estado de integridade do firewall** – indica a integridade do firewall.
+
+    Unidade: porcentagem
+
+   Essa métrica tem duas dimensões:
+  - **Status**: Os valores possíveis são *íntegro*, *degradado*, não *íntegro*.
+  - **Motivo**: Indica o motivo do status correspondente do firewall. Por exemplo, ele pode indicar *portas SNAT* se o status do firewall for degradado ou não íntegro.
+
+
+
+- **Contagem** de ocorrências de regras de rede-o número de vezes que uma regra de rede foi atingida.
+
+    Unidade: contagem
+
+- **Utilização da porta SNAT** -a porcentagem de portas SNAT que foram utilizadas pelo firewall.
+
+    Unidade: porcentagem
+
+   Quando você adiciona mais endereços IP públicos ao firewall, mais portas SNAT estão disponíveis, reduzindo a utilização de portas SNAT. Além disso, quando o firewall é dimensionado por diferentes motivos (por exemplo, CPU ou taxa de transferência) portas SNAT adicionais também ficam disponíveis. De modo eficaz, um determinado percentual de utilização de portas SNAT pode ficar inativo sem a adição de endereços IP públicos, apenas porque o serviço foi expandido. Você pode controlar diretamente o número de endereços IP públicos disponíveis para aumentar as portas disponíveis no firewall. Mas, você não pode controlar diretamente o dimensionamento de firewall. Atualmente, as portas SNAT são adicionadas somente aos cinco primeiros endereços IP públicos.   
 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Para saber como monitorar as métricas e logs de Firewall do Azure, consulte [Tutorial: Monitorar os logs do Firewall do Azure](tutorial-diagnostics.md).
+- Para saber como monitorar os logs e as métricas do firewall do [Azure, consulte o tutorial: Monitorar os logs do Firewall do Azure](tutorial-diagnostics.md).
+
+- Para saber mais sobre as métricas em Azure Monitor, consulte [métricas em Azure monitor](../azure-monitor/platform/data-platform-metrics.md).

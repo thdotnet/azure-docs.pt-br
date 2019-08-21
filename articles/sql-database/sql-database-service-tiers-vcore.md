@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake, carlrab
 ms.date: 06/26/2019
-ms.openlocfilehash: e5af3803ebb4cb0a88a082d3c85d0df68da8d1b8
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: a23f71a38324d9751846f1308f79d3a4e746fd85
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68566624"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69637280"
 ---
 # <a name="choose-among-the-vcore-service-tiers-and-migrate-from-the-dtu-service-tiers"></a>Escolha entre as camadas de serviço vCore e migre das camadas de serviço de DTU
 
@@ -28,7 +28,7 @@ O modelo de compra baseado no núcleo virtual (vCore) permite que você dimensio
 Hardware Ger 4 oferece substancialmente mais memória por vCore. No entanto, o hardware Gen5 permite que você amplie recursos de computação muito maiores.
 
 > [!IMPORTANT]
-> Novos bancos de dados Gen4 não têm mais suporte na região AustraliaEast.
+> Novos bancos de dados Gen4 não têm mais suporte nas regiões leste da Austrália ou sul do Brasil.
 > [!NOTE]
 > Para obter informações sobre as camadas de serviço baseadas em DTU, consulte [camadas de serviço para o modelo de compra baseado em DTU](sql-database-service-tiers-dtu.md). Para obter informações sobre as diferenças entre as camadas de serviço para os modelos de compra baseados em DTU e com base em vCore, consulte [modelos de compra do banco de dados SQL do Azure](sql-database-purchase-models.md).
 
@@ -49,7 +49,7 @@ A tabela a seguir explica as diferenças entre as três camadas:
 |Taxa de transferência de e/s (aproximada)|**Banco de dados individual**: 500 IOPS por vCore com 7000 IOPS máximo.<br/>**Instância gerenciada**: Depende [do tamanho do arquivo](../virtual-machines/windows/premium-storage-performance.md#premium-storage-disk-sizes).|5000 IOPS por núcleo com máximo de 200.000 IOPS|O hiperscale é uma arquitetura de várias camadas com cache em vários níveis. O IOPs efetivo dependerá da carga de trabalho.|
 |Disponibilidade|1 réplica, sem réplicas de escala de leitura|3 réplicas, 1 [réplica em escala de leitura](sql-database-read-scale-out.md),<br/>alta disponibilidade com redundância de zona (HA)|1 réplica de leitura/gravação, além [de 0-4 réplicas de escala de leitura](sql-database-read-scale-out.md)|
 |Backups|[Armazenamento com redundância geográfica com acesso de leitura (ra-grs)](../storage/common/storage-designing-ha-apps-with-ragrs.md), 7-35 dias (7 dias por padrão)|[RA-GRS](../storage/common/storage-designing-ha-apps-with-ragrs.md), 7-35 dias (7 dias por padrão)|Backups baseados em instantâneo no armazenamento remoto do Azure. As restaurações usam esses instantâneos para recuperação rápida. Os backups são instantâneos e não afetam O desempenho de e/s de computação. As restaurações são rápidas e não são uma operação de tamanho de dados (levando minutos em vez de horas ou dias).|
-|Na memória|Sem suporte|Com suporte|Sem suporte|
+|Na memória|Sem suporte|Suportado|Sem suporte|
 |||
 
 > [!NOTE]
