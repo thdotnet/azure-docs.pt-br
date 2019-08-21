@@ -149,6 +149,8 @@
           href: display-feature-information-android.md
         - name: Adicionar uma camada de bloco
           href: how-to-add-tile-layer-android-map.md
+    - name: Fornecer feedback de dados
+      href: how-to-use-feedback-tool.md
 - name: Referência
   items:
     - name: Extensões de API e parâmetro
