@@ -35,7 +35,7 @@ No portal do Azure, clique em **Conta de Automação**
 
 ![Logs do Azure Monitor](media/migrate-oms-update-deployments/log-analytics.png)
 
-Na Conta de Automação, clique em **	Gerenciamento de Atualizações** para abrir o Gerenciamento de Atualizações.
+Na Conta de Automação, clique em **Gerenciamento de Atualizações** para abrir o Gerenciamento de Atualizações.
 
 ![Gerenciamento de atualizações](media/migrate-oms-update-deployments/azure-automation.png)
 
