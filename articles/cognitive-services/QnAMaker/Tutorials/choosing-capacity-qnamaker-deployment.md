@@ -8,28 +8,28 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 01/24/2019
+ms.date: 08/20/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 3126613a9dca00d221610dc46116dd409c65d53d
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 2b2879a1ebcf01a0433873e8da77c4ce55a078cd
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67446635"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69647008"
 ---
 # <a name="choosing-capacity-for-your-qna-maker-deployment"></a>Escolher a capacidade para sua implantação do QnA Maker
 
 O serviço QnA Maker depende de três recursos do Azure:
 1.  Serviço de Aplicativo (para o tempo de execução)
-2.  Azure Search (para armazenar QnAs)
+2.  Azure Search (para armazenar e Pesquisar QnAs)
 3.  App Insights (opcional, para armazenar telemetria e logs de chat)
 
 Antes de criar seu serviço QnA Maker, é preciso decidir qual camada dos serviços acima são adequadas para você. 
 
 Normalmente, há três parâmetros que você precisa considerar:
 
-1. **A taxa de transferência que você precisa do serviço**: selecione o [Plano de aplicativo](https://azure.microsoft.com/pricing/details/app-service/plans/) apropriado para o serviço de aplicativo com base em suas necessidades. Você pode [escalar verticalmente](https://docs.microsoft.com/azure/app-service/web-sites-scale) ou reduzir verticalmente o Aplicativo. Isso também deve influenciar a seleção da SKU do Azure Search, veja mais detalhes [aqui](https://docs.microsoft.com/azure/search/search-sku-tier).
+1. **A taxa de transferência que você precisa do serviço**: selecione o [Plano de aplicativo](https://azure.microsoft.com/pricing/details/app-service/plans/) apropriado para o serviço de aplicativo com base em suas necessidades. Você pode [escalar verticalmente](https://docs.microsoft.com/azure/app-service/manage-scale-up) ou reduzir verticalmente o Aplicativo. Isso também deve influenciar a seleção da SKU do Azure Search, veja mais detalhes [aqui](https://docs.microsoft.com/azure/search/search-sku-tier).
 
 1. **Tamanho e número de bases de dados de conhecimento**: Escolha o [SKU do Azure Search](https://azure.microsoft.com/pricing/details/search/) apropriado para seu cenário. Você pode publicar as bases de dados de conhecimento N-1 em uma camada específica, onde N representa os índices máximos permitidos na camada. Verifique também o tamanho máximo e o número de documentos permitidas por camada.
 
