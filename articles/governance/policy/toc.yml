@@ -249,9 +249,6 @@
         - name: Assegurar a criptografia de arquivo de armazenamento
           displayName: 'deny, all'
           href: samples/ensure-storage-file-encryption.md
-        - name: Exigir criptografia de conta de armazenamento
-          displayName: 'deny, builtin'
-          href: samples/require-storage-account-encryption.md
 - name: Conceitos
   items:
     - name: Estrutura de definição da Política do Azure
