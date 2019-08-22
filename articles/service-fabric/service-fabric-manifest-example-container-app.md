@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 06/08/2018
 ms.author: pepogors
-ms.openlocfilehash: 622e6f7552d91cdb9ccf3668c302496c68a5920f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ece0b763a2dbe501b0f46d026c59e1294a448c59
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60719236"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69650617"
 ---
 # <a name="multi-container-application-and-service-manifest-examples"></a>Exemplos de aplicativo multicontêiner e manifesto do serviço
 A seguir estão exemplos dos manifestos do serviço e do aplicativo para um aplicativo do Service Fabric de vários contêineres. O objetivo desses exemplos é mostrar quais configurações estão disponíveis e como usá-las. Esses manifestos do serviço e do aplicativo se baseiam nos manifestos de [Exemplo de contêiner do Windows Server 2016](https://github.com/Azure-Samples/service-fabric-containers/tree/master/Windows).
@@ -28,7 +28,7 @@ Os seguintes recursos são mostrados:
 
 |Manifesto|Recursos|
 |---|---|
-|[Manifesto do aplicativo](#application-manifest)| [substituir variáveis de ambiente](service-fabric-get-started-containers.md#configure-and-set-environment-variables), [configurar o mapeamento de porta para host do contêiner](service-fabric-get-started-containers.md#configure-container-port-to-host-port-mapping-and-container-to-container-discovery), [configurar a autenticação de registro de contêiner](service-fabric-get-started-containers.md#configure-container-registry-authentication), [governança de recursos](service-fabric-resource-governance.md), [definir o modo de isolamento](service-fabric-get-started-containers.md#configure-isolation-mode), [especificar imagens de contêiner de build específicas do sistema operacional](service-fabric-get-started-containers.md#specify-os-build-specific-container-images)| 
+|[Manifesto do aplicativo](#application-manifest)| [substituir variáveis de ambiente](service-fabric-get-started-containers.md#configure-and-set-environment-variables), [configurar o mapeamento de porta para host do contêiner](service-fabric-get-started-containers.md#configure-container-port-to-host-port-mapping-and-container-to-container-discovery), [configurar a autenticação de registro de contêiner](service-fabric-get-started-containers.md#configure-container-repository-authentication), [governança de recursos](service-fabric-resource-governance.md), [definir o modo de isolamento](service-fabric-get-started-containers.md#configure-isolation-mode), [especificar imagens de contêiner de build específicas do sistema operacional](service-fabric-get-started-containers.md#specify-os-build-specific-container-images)| 
 |[Manifesto do serviço FrontEndService](#frontendservice-service-manifest)| [definir variáveis de ambiente](service-fabric-get-started-containers.md#configure-and-set-environment-variables), [configurar um ponto de extremidade](service-fabric-get-started-containers.md#configure-communication), passar comandos para o contêiner, [importar um certificado para um contêiner](service-fabric-securing-containers.md)| 
 |[Manifesto do serviço BackEndService](#backendservice-service-manifest)|[definir variáveis de ambiente](service-fabric-get-started-containers.md#configure-and-set-environment-variables), [configurar um ponto de extremidade](service-fabric-get-started-containers.md#configure-communication), [configurar o driver de volume](service-fabric-containers-volume-logging-drivers.md)| 
 

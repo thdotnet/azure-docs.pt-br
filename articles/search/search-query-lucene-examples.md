@@ -2,7 +2,7 @@
 title: Exemplos de consulta do Lucene – Azure Search
 description: Sintaxe de consulta Lucene para pesquisa difusa, pesquisa por proximidade, aumento de termos, pesquisa com expressão regular e pesquisas com curinga em um serviço do Azure Search.
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 tags: Lucene query analyzer syntax
 services: search
 ms.service: search
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/13/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 53a1f09fcc9897f4def565a9119ad97ca365cae3
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: 3f6a39129db9e8c43a5e2de68d919ba1037c3f5c
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68882745"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69648231"
 ---
 # <a name="query-examples-using-full-lucene-search-syntax-advanced-queries-in-azure-search"></a>Exemplos de consulta usando a sintaxe de pesquisa "completa" do Lucene (consultas avançadas no Azure Search)
 

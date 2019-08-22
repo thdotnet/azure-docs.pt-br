@@ -7,12 +7,12 @@ ms.date: 08/10/2018
 ms.service: storage
 ms.subservice: common
 ms.topic: conceptual
-ms.openlocfilehash: 9e0e024a5bd3c9cf16879bb9ea93727a338ddbf4
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
-ms.translationtype: MT
+ms.openlocfilehash: ee8dd9da186013dc168e20e6b8b842cca85de172
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68986400"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69877636"
 ---
 # <a name="use-the-azure-storage-emulator-for-development-and-testing"></a>Usar o Emulador de Armazenamento do Azure para desenvolvimento e teste
 
@@ -221,9 +221,21 @@ Não existem diferenças específicas para o armazenamento de fila no emulador.
 
 ## <a name="storage-emulator-release-notes"></a>Notas de versão do emulador de armazenamento
 
+### <a name="version-510"></a>Versão 5,10
+
+* O emulador de armazenamento não rejeitará a versão 2019-07-07 dos serviços de armazenamento em pontos de extremidade de serviço de BLOB, fila e tabela.
+
+### <a name="version-59"></a>Versão 5,9
+
+* O emulador de armazenamento não rejeitará a versão 2019-02-02 dos serviços de armazenamento em pontos de extremidade de serviço de BLOB, fila e tabela.
+
+### <a name="version-58"></a>Versão 5,8
+
+* O emulador de armazenamento não rejeitará a versão 2018-11-09 dos serviços de armazenamento em pontos de extremidade de serviço de BLOB, fila e tabela.
+
 ### <a name="version-57"></a>Versão 5.7
 
-Corrigido um erro que causaria uma falha se o log fosse ativado.
+* Corrigido um erro que causaria uma falha se o log fosse ativado.
 
 ### <a name="version-56"></a>Versão 5.6
 
@@ -236,11 +248,11 @@ Corrigido um erro que causaria uma falha se o log fosse ativado.
 
 ### <a name="version-54"></a>Versão 5.4
 
-Para melhorar a estabilidade da instalação, o emulador não tenta mais reservar portas no momento da instalação. Se as reservas de porta forem desejadas, use a opção *-reserveports* do comando **init** para especificá-las.
+* Para melhorar a estabilidade da instalação, o emulador não tenta mais reservar portas no momento da instalação. Se as reservas de porta forem desejadas, use a opção *-reserveports* do comando **init** para especificá-las.
 
 ### <a name="version-53"></a>Versão 5.3
 
-O emulador de armazenamento agora dá suporte à versão 2017-07-29 dos serviços de armazenamento dos pontos de extremidade dos serviços de Blob, Fila e Tabela.
+* O emulador de armazenamento agora dá suporte à versão 2017-07-29 dos serviços de armazenamento dos pontos de extremidade dos serviços de Blob, Fila e Tabela.
 
 ### <a name="version-52"></a>Versão 5.2
 
@@ -249,7 +261,7 @@ O emulador de armazenamento agora dá suporte à versão 2017-07-29 dos serviço
 
 ### <a name="version-51"></a>Versão 5.1
 
-Corrigido um bug em que o emulador de armazenamento estava retornando o cabeçalho `DataServiceVersion` em algumas respostas em que o serviço não estava.
+* Corrigido um bug em que o emulador de armazenamento estava retornando o cabeçalho `DataServiceVersion` em algumas respostas em que o serviço não estava.
 
 ### <a name="version-50"></a>Versão 5.0
 

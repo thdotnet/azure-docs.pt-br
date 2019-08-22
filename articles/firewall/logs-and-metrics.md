@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: article
-ms.date: 08/21/2019
+ms.date: 08/22/2019
 ms.author: victorh
-ms.openlocfilehash: 8524c8f05a5d48755ab1ccca62f0fd53870190bb
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: fea00358fc21cf6f57673e14ebd0feafe532b620
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640236"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876554"
 ---
 # <a name="azure-firewall-logs-and-metrics"></a>Métricas e logs de firewall do Azure
 
@@ -95,6 +95,10 @@ As seguintes métricas estão disponíveis para o Firewall do Azure:
 
     Unidade: contagem
 
+- **Contagem** de ocorrências de regras de rede-o número de vezes que uma regra de rede foi atingida.
+
+    Unidade: contagem
+
 - **Dados processados** -quantidade de dados atravessando o firewall.
 
     Unidade: bytes
@@ -109,9 +113,7 @@ As seguintes métricas estão disponíveis para o Firewall do Azure:
 
 
 
-- **Contagem** de ocorrências de regras de rede-o número de vezes que uma regra de rede foi atingida.
 
-    Unidade: contagem
 
 - **Utilização da porta SNAT** -a porcentagem de portas SNAT que foram utilizadas pelo firewall.
 

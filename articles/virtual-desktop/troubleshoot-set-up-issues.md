@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: troubleshooting
 ms.date: 07/10/2019
 ms.author: helohr
-ms.openlocfilehash: 7ab8ec9536af74102d2c9384ea3d0d0503f58f63
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: efc721f7852d50e431be38f52e27d72ad7f3ae76
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68816485"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69877580"
 ---
 # <a name="tenant-and-host-pool-creation"></a>Criação do pool de host e de locatário
 
@@ -331,7 +331,7 @@ Exemplo de erro bruto:
 Se você estiver executando a oferta do Azure Marketplace, forneça valores para os seguintes parâmetros para se autenticar corretamente na área de trabalho virtual do Windows:
 
 - Proprietário RDS do locatário da área de trabalho virtual do Windows: Entidade de serviço
-- ID do Aplicativo: A identificação do aplicativo da nova entidade de serviço que você criou
+- ID do aplicativo: A identificação do aplicativo da nova entidade de serviço que você criou
 - Senha/Confirmar senha: O segredo de senha que você gerou para a entidade de serviço
 - ID do locatário do Azure AD: A ID de locatário do Azure AD da entidade de serviço que você criou
 
@@ -348,7 +348,7 @@ Se você estiver executando o modelo de Azure Resource Manager do GitHub, forne�
 - Para solucionar problemas durante a configuração de uma VM (máquina virtual) na área de trabalho virtual do Windows, consulte [configuração de máquina virtual do host de sessão](troubleshoot-vm-configuration.md).
 - Para solucionar problemas com conexões de cliente de área de trabalho virtual do Windows, consulte [área de trabalho remota conexões de cliente](troubleshoot-client-connection.md).
 - Para solucionar problemas ao usar o PowerShell com a área de trabalho virtual do Windows, consulte [PowerShell da área de trabalho virtual do Windows](troubleshoot-powershell.md).
-- Para saber mais sobre o serviço de visualização, consulte [ambiente do Windows Desktop Preview](https://docs.microsoft.com/azure/virtual-desktop/environment-setup).
+- Para saber mais sobre o serviço de visualização, consulte [ambiente de visualização de área de trabalho virtual do Windows](https://docs.microsoft.com/azure/virtual-desktop/environment-setup).
 - Para percorrer um tutorial de solução de problemas, confira [Tutorial: Solucionar problemas de implantações](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-tutorial-troubleshoot)de modelo do Resource Manager.
 - Para saber sobre as ações de auditoria, consulte [Auditar operações com o Gerenciador de Recursos](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-audit).
 - Para saber sobre as ações para determinar os erros durante a implantação, consulte [Exibir operações de implantação](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-operations).

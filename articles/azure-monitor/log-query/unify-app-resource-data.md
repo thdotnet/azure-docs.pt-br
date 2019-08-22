@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: magoedte
-ms.openlocfilehash: 190b7f15a8ae0a5b9472188129f7116050fc831f
-ms.sourcegitcommit: c63e5031aed4992d5adf45639addcef07c166224
+ms.openlocfilehash: d441b72b34da6146eba523563a09c2908cdcbbf4
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67466831"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69650127"
 ---
 # <a name="unify-multiple-azure-monitor-application-insights-resources"></a>Unificar vários recursos do Application Insights do Azure Monitor 
-Este artigo descreve como consultar e exibir todos os seus dados de log de aplicativo do Application Insights em um só lugar, mesmo quando eles estiverem em diferentes assinaturas do Azure, como uma substituição para a desativação do Conector do Application Insights. O número de recursos do Application Insights que você pode incluir em uma única consulta está limitado a 100.  
+Este artigo descreve como consultar e exibir todos os seus Application Insights dados de log em um único local, mesmo quando eles estão em assinaturas diferentes do Azure, como uma substituição para a reprovação da Conector do Application Insights. O número de recursos de Application Insights que você pode incluir em uma única consulta é limitado a 100.
 
 ## <a name="recommended-approach-to-query-multiple-application-insights-resources"></a>Abordagem recomendada para consultar vários recursos do Application Insights 
 Listar vários recursos do Application Insights em uma consulta pode ser complicado e difícil de manter. Em vez disso, você pode aproveitar a função para separar a lógica da consulta do escopo dos aplicativos.  
@@ -32,7 +32,14 @@ ApplicationInsights
 | summarize by ApplicationName
 ```
 
-Crie uma função usando o operador de união com a lista de aplicativos e, em seguida, salve a consulta em seu espaço de trabalho como uma função com o alias *applicationsScoping*.  
+Crie uma função usando o operador de união com a lista de aplicativos e, em seguida, salve a consulta em seu espaço de trabalho como uma função com o alias *applicationsScoping*. 
+
+Você pode modificar os aplicativos listados a qualquer momento navegando até o Gerenciador de consultas no seu espaço de trabalho e selecionando a função para editar e salvar, ou então, usando o cmdlet `SavedSearch` do PowerShell. 
+
+>[!NOTE]
+>Esse método não pode ser usado com alertas de log porque a validação de acesso dos recursos de regra de alerta, incluindo espaços de trabalho e aplicativos, é executada no momento da criação do alerta. Não há suporte para a adição de novos recursos à função após a criação do alerta. Se preferir usar a função para o escopo de recursos em alertas de log, você precisará editar a regra de alerta no portal ou com um modelo do Resource Manager para atualizar os recursos com escopo. Como alternativa, você pode incluir a lista de recursos na consulta de alerta de log.
+
+O comando `withsource= SourceApp` adiciona aos resultados uma coluna que designa o aplicativo que enviou o log. O operador Parse é opcional neste exemplo e usa para extrair o nome do aplicativo da propriedade SourceApp. 
 
 ```
 union withsource=SourceApp 
@@ -43,13 +50,6 @@ app('Contoso-app4').requests,
 app('Contoso-app5').requests 
 | parse SourceApp with * "('" applicationName "')" *  
 ```
-
->[!NOTE]
->Você pode modificar os aplicativos listados a qualquer momento navegando até o Gerenciador de consultas no seu espaço de trabalho e selecionando a função para editar e salvar, ou então, usando o cmdlet `SavedSearch` do PowerShell. O comando `withsource= SourceApp` adiciona aos resultados uma coluna que designa o aplicativo que enviou o log. 
->
->A consulta usa o esquema do Application Insights, embora ela seja executada no workspace, pois a função applicationsScoping retorna a estrutura de dados do Application Insights. 
->
->O operador de análise é opcional neste exemplo; ele extrai o nome do aplicativo da propriedade SourceApp. 
 
 Agora você pode usar a função applicationsScoping na consulta entre recursos:  
 
@@ -62,7 +62,7 @@ applicationsScoping
 | render timechart
 ```
 
-O alias de função retorna a união das solicitações de todos os aplicativos definidos. A consulta então filtra solicitações com falha e visualiza as tendências por aplicativo.
+A consulta usa o esquema do Application Insights, embora ela seja executada no workspace, pois a função applicationsScoping retorna a estrutura de dados do Application Insights. O alias de função retorna a união das solicitações de todos os aplicativos definidos. A consulta então filtra solicitações com falha e visualiza as tendências por aplicativo.
 
 ![Exemplo de resultados de consulta cruzada](media/unify-app-resource-data/app-insights-query-results.png)
 
@@ -103,17 +103,17 @@ A tabela a seguir mostra as diferenças de esquema entre o Log Analytics e o App
 | ApplicationName | appName|
 | ApplicationTypeVersion | application_Version |
 | AvailabilityCount | itemCount |
-| AvailabilityDuration | duration |
-| AvailabilityMessage | message |
-| AvailabilityRunLocation | location |
+| AvailabilityDuration | duração |
+| AvailabilityMessage | mensagem |
+| AvailabilityRunLocation | localização |
 | AvailabilityTestId | id |
 | AvailabilityTestName | name |
 | AvailabilityTimestamp | timestamp |
 | Browser | client_browser |
-| City | client_city |
+| Cidade | client_city |
 | ClientIP | client_IP |
-| Computador | cloud_RoleInstance | 
-| País/Região | client_CountryOrRegion | 
+| Computer | cloud_RoleInstance | 
+| Country | client_CountryOrRegion | 
 | CustomEventCount | itemCount | 
 | CustomEventDimensions | customDimensions |
 | CustomEventName | name | 
@@ -121,22 +121,22 @@ A tabela a seguir mostra as diferenças de esquema entre o Log Analytics e o App
 | DeviceType | client_Type | 
 | ExceptionCount | itemCount | 
 | ExceptionHandledAt | handledAt |
-| ExceptionMessage | message | 
+| ExceptionMessage | mensagem | 
 | ExceptionType | type |
 | OperationID | operation_id |
 | OperationName | operation_Name | 
-| SO | client_OS | 
+| OS | client_OS | 
 | PageViewCount | itemCount |
-| PageViewDuration | duration | 
+| PageViewDuration | duração | 
 | PageViewName | name | 
 | ParentOperationID | operation_Id | 
 | RequestCount | itemCount | 
-| RequestDuration | duration | 
+| RequestDuration | duração | 
 | RequestID | id | 
 | RequestName | name | 
-| RequestSuccess | sucesso | 
+| RequestSuccess | success | 
 | ResponseCode | resultCode | 
-| Função | cloud_RoleName |
+| Role | cloud_RoleName |
 | RoleInstance | cloud_RoleInstance |
 | SessionId | session_Id | 
 | SourceSystem | operation_SyntheticSource |

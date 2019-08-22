@@ -2,17 +2,17 @@
 title: API de preenchimento de SaaS v2 | Azure Marketplace
 description: Este artigo explica como criar e gerenciar uma oferta de SaaS no AppSource e no Azure Marketplace usando as APIs de cumprimento associado v2.
 services: Azure, Marketplace, Cloud Partner Portal,
-author: v-miclar
+author: qianw211
 ms.service: marketplace
 ms.topic: reference
 ms.date: 05/23/2019
 ms.author: evansma
-ms.openlocfilehash: 276699b9316a0c4fd428038f2c967bdf934f449c
-ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
+ms.openlocfilehash: a2041aefcfdcb1746e64f50c7cb53b3bfaec3299
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69016037"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69872799"
 ---
 # <a name="saas-fulfillment-apis-version-2"></a>APIs de preenchimento de SaaS, versão 2 
 
@@ -140,7 +140,7 @@ Código: 404<br>
 Não encontrado.
 
 Código: 500<br>
-Erro no servidor interno.
+Erro interno do servidor.
 
 ```json
 {
@@ -222,7 +222,7 @@ Código: 403 <br>
 Não autorizado. O token de autenticação não foi fornecido ou é inválido ou a solicitação está tentando acessar uma aquisição que não pertence ao Publicador atual. 
 
 Código: 500<br>
-Erro no servidor interno.
+Erro interno do servidor.
 
 ```json
 {
@@ -294,7 +294,7 @@ Código: 404<br>
 Não encontrado.<br> 
 
 Código: 500<br>
-Erro no servidor interno.<br>
+Erro interno do servidor.<br>
 
 ```json
 {
@@ -347,7 +347,7 @@ Código: 403<br>
 Não autorizado. O token de autenticação não foi fornecido ou é inválido ou a solicitação está tentando acessar uma aquisição que não pertence ao Publicador atual. <br> 
 
 Código: 500<br>
-Erro no servidor interno.<br>
+Erro interno do servidor.<br>
 
 ```json
 { 
@@ -401,7 +401,7 @@ Código: 404<br>
 Não encontrado.
 
 Código: 500<br>
-Erro no servidor interno.
+Erro interno do servidor.
 
 ```json
 {
@@ -464,7 +464,7 @@ Código: 404<br>
 Não encontrado.
 
 Código: 500<br>
-Erro no servidor interno.
+Erro interno do servidor.
 
 ```json
 {
@@ -531,7 +531,7 @@ Código: 404<br>
 Não encontrado.
 
 Código: 500<br>
-Erro no servidor interno.
+Erro interno do servidor.
 
 ```json
 {
@@ -582,7 +582,7 @@ Código: 404<br>
 Não encontrado.
 
 Código: 500<br>
-Erro no servidor interno.
+Erro interno do servidor.
 
 ```json
 {
@@ -650,7 +650,7 @@ Código: 404<br>
 Não encontrado.
 
 Código: 500<br>
-Erro no servidor interno.
+Erro interno do servidor.
 
 ```json
 {
@@ -713,7 +713,7 @@ Não autorizado. O token de autenticação não foi fornecido ou é inválido ou
 Código: 404<br>
 Não encontrado.
 
-Código: 500<br> Erro no servidor interno.
+Código: 500<br> Erro interno do servidor.
 
 ```json
 {
@@ -774,7 +774,7 @@ Não encontrado.
 Código: 409<br>
 Houver. Por exemplo, uma transação mais recente já foi cumprida.
 
-Código: 500<br> Erro no servidor interno.
+Código: 500<br> Erro interno do servidor.
 
 ```json
 {
@@ -790,7 +790,6 @@ Código: 500<br> Erro no servidor interno.
 
 O Publicador deve implementar um webhook nesse serviço SaaS para notificar os usuários de alterações em seu serviço proativamente. Espera-se que o serviço SaaS chame a API de operações para validar e autorizar antes de tomar uma ação na notificação de webhook.
 
-Para garantir comunicações seguras, a Microsoft inclui o token Azure Active Directory JWT no cabeçalho de autorização como parte da chamada. Os provedores de SaaS são incentivados a validar o token JWT, conforme descrito no artigo tokens de [acesso da plataforma de identidade da Microsoft](https://docs.microsoft.com/azure/active-directory/develop/access-tokens) , para garantir que apenas as chamadas válidas sejam aceitas.
 
 ```json
 {

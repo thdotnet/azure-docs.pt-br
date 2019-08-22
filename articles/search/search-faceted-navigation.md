@@ -2,26 +2,26 @@
 title: Como implementar a faceted navigation em uma hierarquia de categoria – Azure Search
 description: Adicione a navegação de faceta aos aplicativos integrados ao Azure Search, um serviço de pesquisa hospedado na nuvem do Microsoft Azure.
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 services: search
 ms.service: search
 ms.topic: conceptual
 ms.date: 05/13/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 6fc1e1aaaa3b2489dd4083f56d45ab0abc2b6892
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 8e325abf1f58458d2fa035c8c8f081173efb0e65
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165964"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69649903"
 ---
 # <a name="how-to-implement-faceted-navigation-in-azure-search"></a>Como implementar a navegação facetada no Azure Search
 A navegação facetada é um mecanismo de filtragem que fornece navegação de busca detalhada autodirigida em aplicativos de pesquisa. O termo 'navegação facetada' pode não ser familiar, mas provavelmente você já a usou antes. Como mostra o exemplo a seguir, a navegação facetada é nada mais do que as categorias usadas para filtrar resultados.
 
- ![Demonstração de Portal de trabalho do Azure Search](media/search-faceted-navigation/azure-search-faceting-example.png "demonstração de Portal de trabalho do Azure Search")
+ ![Demonstração do portal de trabalho Azure Search](media/search-faceted-navigation/azure-search-faceting-example.png "Demonstração do portal de trabalho Azure Search")
 
-A navegação facetada é um ponto de entrada alternativo para a pesquisa. Ela oferece uma alternativa conveniente para digitar expressões de pesquisa complexas manualmente. As facetas podem ajudar a encontrar o que você está procurando, garantindo que você não obterá zero resultados. Como desenvolvedor, facetas permitem que você exponha os critérios de pesquisa mais úteis para navegar em seu índice de pesquisa. Em aplicativos de varejo online, a navegação facetada geralmente é criada sobre marcas, departamentos (sapatos infantis), tamanho, preço, popularidade e classificações. 
+A navegação facetada é um ponto de entrada alternativo para a pesquisa. Ela oferece uma alternativa conveniente para digitar expressões de pesquisa complexas manualmente. As facetas podem ajudar a encontrar o que você está procurando, garantindo que você não obterá zero resultados. Como desenvolvedor, as facetas permitem que você exponha os critérios de pesquisa mais úteis para navegar no índice de pesquisa. Em aplicativos de varejo online, a navegação facetada geralmente é criada sobre marcas, departamentos (sapatos infantis), tamanho, preço, popularidade e classificações. 
 
 A implementação da navegação facetada varia entre diferentes tecnologias de pesquisa. No Azure Search, a navegação facetada baseia-se no tempo da consulta, usando os campos atribuídos especificados anteriormente no seu esquema.
 
@@ -321,7 +321,7 @@ Em determinadas circunstâncias, você pode achar que as contagens de faceta nã
 
 As contagens de faceta podem ser imprecisas devido à arquitetura de fragmentação. Cada índice de pesquisa tem vários fragmentos, e cada um deles relata as N facetas com maior classificação por contagem de documento, que em seguida são combinadas em um único resultado. Se alguns fragmentos têm muitos valores correspondentes enquanto outros têm menos, você poderá descobrir que alguns valores de faceta estão faltando ou com contagem reduzida nos resultados.
 
-Embora esse comportamento possa mudar a qualquer momento, se você encontrar esse problema hoje, você pode contorná-lo artificialmente aumentando count:\<número > para um número grande para impor a emissão de relatórios completos de cada fragmento. Se o valor de contagem: é maior que ou igual ao número de valores exclusivos no campo, você tem a garantia de resultados precisos. No entanto, quando as contagens de documento são altas há uma penalidade de desempenho, portanto, use essa opção criteriosamente.
+Embora esse comportamento possa mudar a qualquer momento, se você encontrar esse comportamento hoje, poderá contorná-lo artificialmente intensamente a contagem:\<número > a um grande número para impor relatórios completos de cada fragmento. Se o valor de contagem: é maior que ou igual ao número de valores exclusivos no campo, você tem a garantia de resultados precisos. No entanto, quando as contagens de documento são altas há uma penalidade de desempenho, portanto, use essa opção criteriosamente.
 
 ### <a name="user-interface-tips"></a>Dicas da interface do usuário
 **Adicionar rótulos para cada campo na navegação facetada**
@@ -341,7 +341,7 @@ Para definir facetas de preço em incrementos de US$ 10, você deve especificar:
 **Abordagem 2: Usar uma lista de valores**  
 Para dados numéricos, você pode usar uma lista de valores.  Considere o intervalo da faceta para um campo `listPrice`, renderizado como a seguir:
 
-  ![Lista de valores de exemplo](media/search-faceted-navigation/Facet-5-Prices.PNG "lista de valores de exemplo")
+  ![Lista de valores de exemplo](media/search-faceted-navigation/Facet-5-Prices.PNG "Lista de valores de exemplo")
 
 Para especificar um intervalo da faceta como a mostrada na captura de tela anterior, use uma lista de valores:
 
@@ -352,7 +352,7 @@ Cada intervalo é criado usando 0 como ponto de partida, um valor da lista como 
 ### <a name="build-a-filter-for-a-range"></a>Criar um filtro para um intervalo
 Para filtrar os documentos com base em um intervalo selecionado por você, será possível usar os operadores de filtragem `"ge"` e `"lt"` em uma expressão de duas partes que defina os pontos de extremidade do intervalo. Por exemplo, se você escolher o intervalo 10-25 para uma `listPrice` campo, o filtro será `$filter=listPrice ge 10 and listPrice lt 25`. No código de exemplo, a expressão de filtro usa os parâmetros **priceFrom** e **priceTo** para definir os pontos de extremidade. 
 
-  ![Consultar um intervalo de valores](media/search-faceted-navigation/Facet-6-buildfilter.PNG "consulta para um intervalo de valores")
+  ![Consultar um intervalo de valores](media/search-faceted-navigation/Facet-6-buildfilter.PNG "Consultar um intervalo de valores")
 
 <a name="geofacets"></a> 
 
@@ -385,11 +385,11 @@ Ao trabalhar com os resultados da pesquisa, monitore a URL quanto a alterações
    
    Uma estrutura de navegação facetada também é retornada com os resultados da pesquisa. Na página de resultados de pesquisa, a estrutura de navegação facetada inclui contagens para cada resultado da faceta. Nenhuma faceta está selecionada, todos os resultados correspondentes são retornados.
    
-   ![Resultados da pesquisa antes de selecionar facetas](media/search-faceted-navigation/faceted-search-before-facets.png "resultados da pesquisa antes de selecionar facetas")
+   ![Resultados da pesquisa antes de selecionar facetas](media/search-faceted-navigation/faceted-search-before-facets.png "Resultados da pesquisa antes de selecionar facetas")
 
 4. Clique em um Cargo, Local ou Salário Mínimo. As facetas eram nulas na pesquisa inicial, mas já que elas recebem valores, os resultados da pesquisa são recortados eliminando-se os itens que não correspondem mais.
    
-   ![Resultados da pesquisa depois de selecionar facetas](media/search-faceted-navigation/faceted-search-after-facets.png "resultados da pesquisa depois de selecionar facetas")
+   ![Resultados da pesquisa depois de selecionar facetas](media/search-faceted-navigation/faceted-search-after-facets.png "Resultados da pesquisa depois de selecionar facetas")
 
 5. Para limpar a consulta facetada para que você possa tentar comportamentos de consulta diferentes, clique o `[X]` após as facetas selecionadas para limpar as facetas.
    
@@ -401,5 +401,5 @@ Assista [Aprofundamento no Azure Search](https://channel9.msdn.com/Events/TechEd
 Para obter mais informações sobre princípios de design para navegação facetada, recomendamos os seguintes links:
 
 * [Padrões de design: Faceted Navigation](https://alistapart.com/article/design-patterns-faceted-navigation)
-* [Preocupações de Front-End ao implementar uma pesquisa facetada – parte 1](https://articles.uie.com/faceted_search2/)
+* [Preocupações de front-end ao implementar pesquisa facetada – parte 1](https://articles.uie.com/faceted_search2/)
 

@@ -2,19 +2,19 @@
 title: Segurança e privacidade de dados – Azure Search
 description: O Azure Search está em conformidade com as certificações SOC 2, HIPAA e outras. Conexão e criptografia de dados, autenticação e acesso de identidade por meio de identificadores de segurança do grupo e usuário nos filtros do Azure Search.
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 services: search
 ms.service: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: f366726f539a817f515a78fbc35bfeaa3b65514e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: fbad9624d6b76593ac4e77283f63904e9c006bcd
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65024509"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69647786"
 ---
 # <a name="security-and-data-privacy-in-azure-search"></a>Segurança e privacidade de dados no Azure Search
 
@@ -40,11 +40,11 @@ A conformidade com padrões se aplica a recursos geralmente disponíveis. As ver
 
 A criptografia se estende em todo o pipeline de indexação: de conexões, à transmissão, até dados armazenados indexados no Azure Search.
 
-| Camada de segurança | DESCRIÇÃO |
+| Camada de segurança | Descrição |
 |----------------|-------------|
 | Criptografia em trânsito <br>(HTTPS/SSL/TLS) | O Azure Search escuta na porta HTTPS 443. Na plataforma, as conexões com os serviços do Azure são criptografadas. <br/><br/>Todas as interações do cliente com o serviço do Azure Search são compatíveis com SSL/TLS 1.2.  Certifique-se de usar o TLSv1.2 para conexões SSL ao seu serviço.|
 | Criptografia em repouso <br>Chaves gerenciadas pela Microsoft | A criptografia é totalmente internalizada no processo de indexação, sem nenhum impacto mensurável no tempo para conclusão da indexação ou no tamanho do índice. Isso ocorre automaticamente em toda a indexação, incluindo em atualizações incrementais em um índice que não está totalmente criptografado (criado antes de janeiro de 2018).<br><br>Internamente, a criptografia é baseada na [Criptografia do Serviço de Armazenamento do Azure](https://docs.microsoft.com/azure/storage/common/storage-service-encryption), usando a [criptografia AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) do 256 bits.<br><br> A criptografia é interna no Azure Search, com certificados e chaves de criptografia gerenciados internamente pela Microsoft e aplicados universalmente. Não é possível ativar ou desativar a criptografia, gerenciar ou substituir suas próprias chaves ou exibir configurações de criptografia no portal ou de forma programática.<br><br>A criptografia em repouso foi divulgada em 24 de janeiro de 2018 e se aplica a todas as camadas de serviço, incluindo serviços compartilhados (gratuitos), em todas as regiões. Para a criptografia completa, os índices criados antes dessa data precisam ser removidos e recompilados para que a criptografia ocorra. Caso contrário, somente os novos dados adicionados após 24 de janeiro são criptografados.|
-| Criptografia em repouso <br>Chaves gerenciadas do cliente | A criptografia com chaves gerenciadas pelo cliente é um **visualização** serviços de recurso que não está disponível gratuitamente. Para serviços pagos, ele só está disponível para os serviços de pesquisa criados em ou depois de janeiro de 2019, usando a versão mais recente visualização versão da api (api-version = 2019-05-06-Preview).<br><br>Mapas de sinônimo e índices de pesquisa do Azure agora podem ser criptografados em repouso com chaves gerenciadas de chaves de cliente no Azure Key Vault. Para obter mais informações, consulte [gerenciar chaves de criptografia no Azure Search](search-security-manage-encryption-keys.md).<br>Esse recurso não está substituindo a criptografia padrão em repouso, mas em vez disso, são aplicadas além-lo.<br>Habilitar esse recurso, aumentar o tamanho do índice e prejudicar o desempenho da consulta. Com base nas observações para data, você pode esperar ver um aumento de 30 a 60% nos tempos de consulta, embora o desempenho real varia dependendo da definição de índice e tipos de consultas. Devido a esse impacto no desempenho, é recomendável que você apenas habilita esse recurso em índices que realmente necessitem desse.
+| Criptografia em repouso <br>Chaves gerenciadas do cliente | A criptografia com chaves gerenciadas pelo cliente é um recurso de **Visualização** que não está disponível para serviços gratuitos. Para serviços pagos, ele só estará disponível para os serviços de pesquisa criados em ou após janeiro de 2019, usando a versão mais recente da API de visualização (API-Version = 2019-05-06-Preview).<br><br>Os índices de Azure Search e os mapas de sinônimos agora podem ser criptografados em repouso com chaves gerenciadas por chaves do cliente no Azure Key Vault. Para saber mais, consulte [gerenciar chaves de criptografia em Azure Search](search-security-manage-encryption-keys.md).<br>Esse recurso não substitui a criptografia padrão em repouso, mas sim aplicado além dela.<br>Habilitar esse recurso aumentará o tamanho do índice e diminuirá o desempenho da consulta. Com base nas observações até a data, você pode esperar um aumento de 30%-60% nos tempos de consulta, embora o desempenho real varie dependendo da definição de índice e dos tipos de consultas. Devido a esse impacto no desempenho, recomendamos que você habilite apenas esse recurso em índices que realmente o exigem.
 
 ## <a name="azure-wide-user-access-controls"></a>Controles de acesso do usuário em todo o Azure
 
@@ -64,11 +64,11 @@ Embora o Azure Search herde as garantias de segurança da plataforma Azure, ele 
 Há dois níveis de acesso ao seu serviço de pesquisa, habilitado por dois tipos de chaves:
 
 * Acesso admin (válido para qualquer operação de leitura e gravação do serviço)
-* Acesso de consulta (válida para operações somente leitura, como consultas em relação à coleção de documentos de um índice)
+* Acesso à consulta (válido para operações somente leitura, como consultas, em relação à coleção de documentos de um índice)
 
-As *Chaves admin* são criadas quando o serviço é provisionado. Há duas chaves de administração, designadas como *primária* e *secundária* para mantê-las de forma linear, mas na verdade elas são intercambiáveis. Cada serviço tem duas chaves admin para que você possa derrubar uma sem perder o acesso ao seu serviço. Você pode [chave de administração regenerar](search-security-api-keys.md#regenerate-admin-keys) periodicamente por segurança do Azure as práticas recomendadas, mas você não pode adicionar a contagem de chaves de administrador total. Há um máximo de duas chaves admin por serviço de pesquisa.
+As *Chaves admin* são criadas quando o serviço é provisionado. Há duas chaves de administração, designadas como *primária* e *secundária* para mantê-las de forma linear, mas na verdade elas são intercambiáveis. Cada serviço tem duas chaves admin para que você possa derrubar uma sem perder o acesso ao seu serviço. Você pode [regenerar a chave de administração](search-security-api-keys.md#regenerate-admin-keys) periodicamente por práticas recomendadas de segurança do Azure, mas não pode adicionar à contagem total de chaves de administração. Há um máximo de duas chaves de administração por serviço de pesquisa.
 
-*Chaves de consulta* são criadas conforme necessário e são projetados para aplicativos cliente que emitem consultas. Você pode criar até 50 chaves de consulta. No código do aplicativo, você pode especificar a URL de pesquisa e uma chave de api de consulta para permitir o acesso somente leitura para a coleção de documentos de um índice específico. Juntos, o ponto de extremidade, uma chave de api para acesso somente leitura e um índice de destino definem o nível de acesso e escopo da conexão de seu aplicativo cliente.
+*As chaves de consulta* são criadas conforme necessário e são projetadas para aplicativos cliente que emitem consultas. Você pode criar até 50 chaves de consulta. No código do aplicativo, você especifica a URL de pesquisa e uma chave de API de consulta para permitir acesso somente leitura à coleção de documentos de um índice específico. Juntos, o ponto de extremidade, uma chave de api para acesso somente leitura e um índice de destino definem o nível de acesso e escopo da conexão de seu aplicativo cliente.
 
 A autenticação é necessária em cada solicitação, em que cada solicitação é composta por uma chave obrigatória, uma operação e um objeto. Quando encadeados, os dois níveis de permissão (completo e somente leitura) e o contexto (por exemplo, uma operação de consulta em um índice) são suficientes para fornecer segurança completa nas operações de serviço. Para obter mais informações sobre chaves, consulte [Criar e gerenciar api-keys](search-security-api-keys.md).
 
@@ -84,7 +84,7 @@ Para soluções de multilocação que exigem limites de segurança no nível do 
 
 ## <a name="admin-access"></a>Acesso de administrador
 
-[Acesso baseado em função (RBAC)](https://docs.microsoft.com/azure/role-based-access-control/overview) determina se você tem acesso aos controles sobre o serviço e seu conteúdo. Se você for um proprietário ou colaborador em um serviço de Azure Search, você pode usar o portal ou o PowerShell **Az.Search** módulo para criar, atualizar ou excluir objetos no serviço. Você também pode usar o [API de REST de gerenciamento do Azure Search](https://docs.microsoft.com/rest/api/searchmanagement/search-howto-management-rest-api).
+O [RBAC (acesso baseado em função)](https://docs.microsoft.com/azure/role-based-access-control/overview) determina se você tem acesso a controles sobre o serviço e seu conteúdo. Se você for um proprietário ou colaborador em um serviço de Azure Search, poderá usar o portal ou o módulo **AZ. Search** do PowerShell para criar, atualizar ou excluir objetos no serviço. Você também pode usar a [API REST de gerenciamento de Azure Search](https://docs.microsoft.com/rest/api/searchmanagement/search-howto-management-rest-api).
 
 ## <a name="user-access"></a>Acesso do usuário
 
@@ -92,7 +92,7 @@ Por padrão, o acesso de usuário a um índice é determinado pela chave de aces
 
 Se você preferir o acesso granular, o controle do conteúdo por usuário, pode construir filtros de segurança em suas consultas, retornando os documentos associados a uma identidade de segurança fornecida. Em vez de funções predefinidas e atribuições de função, o controle de acesso baseado em identidade é implementado como um *filtro* que corta os resultados da pesquisa de documentos e conteúdo com base nas identidades. A tabela a seguir descreve duas abordagens para cortar resultados da pesquisa com conteúdo não autorizado.
 
-| Abordagem | DESCRIÇÃO |
+| Abordagem | Descrição |
 |----------|-------------|
 |[Filtragem de segurança com base nos filtros de identidade](search-security-trimming-for-azure-search.md)  | Documenta o fluxo de trabalho básico para implementar o controle de acesso de identidade do usuário. Ele aborda a adição de identificadores de segurança a um índice e explica a filtragem em relação a esse campo para cortar resultados de conteúdo proibido. |
 |[Filtragem de segurança com base em Identidades do Azure Active Directory](search-security-trimming-for-azure-search-with-aad.md)  | Este artigo aprofunda o artigo anterior, fornecendo etapas para recuperar identidades do Azure Active Directory (AAD), um dos [serviços gratuitos](https://azure.microsoft.com/free/) na plataforma de nuvem do Azure. |

@@ -2,19 +2,19 @@
 title: Filtros de faceta para navegação de pesquisa em aplicativos – Azure Search
 description: Critérios de filtro por identidade de segurança do usuário, localização geográfica ou valores numéricos para reduzir os resultados da pesquisa em consultas no Azure Search, um serviço de pesquisa de nuvem hospedado no Microsoft Azure.
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 services: search
 ms.service: search
 ms.topic: conceptual
 ms.date: 5/13/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 88171487fd180931d4659390f0db3c8619fb2d62
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: a2fe29cf1d7c183aa62e6b86a4b29479d1f34ff8
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67653449"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69649879"
 ---
 # <a name="how-to-build-a-facet-filter-in-azure-search"></a>Como criar um filtro de faceta no Azure Search 
 
@@ -35,26 +35,26 @@ Novo com navegação por faceta e deseja mais detalhes? Consulte [Como implement
 
 ## <a name="choose-fields"></a>Selecionar campos
 
-As facetas podem ser calculadas por campos de valor único e por coleções. Campos que funcionam melhor em navegação facetada têm baixa cardinalidade: um pequeno número de valores distintos que se repetem em documentos em seu corpo de pesquisa (por exemplo, uma lista de nomes de marca, países/regiões ou cores). 
+As facetas podem ser calculadas por campos de valor único e por coleções. Os campos que funcionam melhor na navegação facetada têm baixa cardinalidade: um pequeno número de valores distintos que se repetem em documentos em seu corpus de pesquisa (por exemplo, uma lista de cores, países/regiões ou nomes de marca). 
 
-A facetagem está habilitada em uma base campo por campo quando você cria o índice, definindo o `facetable` atributo `true`. Você geralmente deve também definir a `filterable` atributo `true` para tal campos para que seu aplicativo de pesquisa pode filtrar esses campos com base em facetas que o usuário final seleciona. 
+A facetação é habilitada em uma base de campo por campo quando você cria o índice definindo o `facetable` atributo como `true`. Em geral, você também deve `filterable` definir o `true` atributo como para esses campos para que o aplicativo de pesquisa possa filtrar esses campos com base em facetas que o usuário final seleciona. 
 
-Ao criar um índice usando a API REST, qualquer [tipo de campo](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) que poderiam ser usados na navegação facetada são marcados como `facetable` por padrão:
+Ao criar um índice usando a API REST, qualquer [tipo de campo](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) que possivelmente possa ser usado na navegação facetada é marcado `facetable` como por padrão:
 
 + `Edm.String`
 + `Edm.DateTimeOffset`
 + `Edm.Boolean`
-+ Tipos de campo numérico: `Edm.Int32`, `Edm.Int64`, `Edm.Double`
-+ Coleções dos tipos acima (por exemplo, `Collection(Edm.String)` ou `Collection(Edm.Double)`)
++ Tipos de campo numéricos `Edm.Int64`: `Edm.Int32`,,`Edm.Double`
++ Coleções dos tipos acima (por exemplo, `Collection(Edm.String)` ou) `Collection(Edm.Double)`
 
-Não é possível usar `Edm.GeographyPoint` ou `Collection(Edm.GeographyPoint)` campos no painel de navegação facetada. Facetas funcionam melhor em campos com baixa cardinalidade. Devido à resolução de coordenadas geográficas, é raro que quaisquer dois conjuntos de coordenadas será iguais em um determinado conjunto de dados. Dessa maneira, as facetas não têm suporte para coordenadas geográficas. Seria necessário um campo de cidade ou região para facetar por local.
+Você não pode `Edm.GeographyPoint` usar `Collection(Edm.GeographyPoint)` os campos ou na navegação facetada. As facetas funcionam melhor em campos com baixa cardinalidade. Devido à resolução de coordenadas geográficas, é raro que quaisquer dois conjuntos de coestações sejam iguais em um determinado conjunto de dados. Dessa maneira, as facetas não têm suporte para coordenadas geográficas. Seria necessário um campo de cidade ou região para facetar por local.
 
 ## <a name="set-attributes"></a>Definir atributos
 
-Atributos de índice que controlam como um campo é usado são adicionados às definições de campo individual no índice. No exemplo a seguir, os campos com baixa cardinalidade, úteis para a faceta, consistem em: `category` (hotel, motel, hostel), `tags`, e `rating`. Esses campos têm o `filterable` e `facetable` atributos conjunto explicitamente no exemplo a seguir para fins ilustrativos. 
+Atributos de índice que controlam como um campo é usado são adicionados às definições de campo individual no índice. No exemplo a seguir, os campos com baixa cardinalidade, úteis para facetar, consistem em `category` : (Hotel, motel, Hostel) `tags`, e `rating`. Esses campos têm os `filterable` atributos `facetable` e definidos explicitamente no exemplo a seguir para fins ilustrativos. 
 
 > [!Tip]
-> Como uma prática recomendada para o desempenho e otimização de armazenamento, desative a faceta para os campos que nunca devem ser usados como uma faceta. Em particular, os campos de cadeia de caracteres para valores exclusivos, como uma ID ou nome de produto, devem ser definidos `"facetable": false` para evitar seu uso acidental (e ineficaz) na navegação facetada.
+> Como uma prática recomendada para o desempenho e otimização de armazenamento, desative a faceta para os campos que nunca devem ser usados como uma faceta. Em particular, os campos de cadeia de caracteres para valores exclusivos, como uma ID ou nome de produto, `"facetable": false` devem ser definidos como para evitar seu uso acidental (e ineficaz) na navegação facetada.
 
 
 ```json
@@ -78,7 +78,7 @@ Atributos de índice que controlam como um campo é usado são adicionados às d
 ```
 
 > [!Note]
-> Esta definição de índice é copiada de [Criar um índice do Azure Search usando a API REST](https://docs.microsoft.com/azure/search/search-create-index-rest-api). Ela é idêntica, exceto por diferenças superficiais nas definições de campo. O `filterable` e `facetable` atributos são adicionados explicitamente nos `category`, `tags`, `parkingIncluded`, `smokingAllowed`, e `rating` campos. Na prática, `filterable` e `facetable` seriam habilitados por padrão, esses campos ao usar a API REST. Ao usar o SDK do .NET, esses atributos devem ser habilitados explicitamente.
+> Esta definição de índice é copiada de [Criar um índice do Azure Search usando a API REST](https://docs.microsoft.com/azure/search/search-create-index-rest-api). Ela é idêntica, exceto por diferenças superficiais nas definições de campo. Os `filterable` `facetable` `tags` `parkingIncluded`atributos e são explicitamente adicionados aos campos `smokingAllowed` ,,`rating` , e. `category` Na prática, `filterable` e `facetable` seria habilitado por padrão nesses campos ao usar a API REST. Ao usar o SDK do .NET, esses atributos devem ser habilitados explicitamente.
 
 ## <a name="build-and-load-an-index"></a>Criar e carregar um índice
 
@@ -99,7 +99,7 @@ var sp = new SearchParameters()
 
 ### <a name="return-filtered-results-on-click-events"></a>Retornar resultados filtrados em eventos de clique
 
-Quando o usuário final clica em um valor de faceta, o manipulador para o evento de clique deve usar uma expressão de filtro para perceber a intenção do usuário. Considerando um `category` faceta, clicando na categoria "motel" é implementado com um `$filter` expressão que seleciona acomodações desse tipo. Quando um usuário clica em "motel" para indicar que somente motéis devem ser mostrados, a próxima consulta que o aplicativo envia inclui `$filter=category eq 'motel'`.
+Quando o usuário final clica em um valor de faceta, o manipulador para o evento de clique deve usar uma expressão de filtro para perceber a intenção do usuário. Dada uma `category` faceta, clicar na categoria "Motel" é implementada com `$filter` uma expressão que seleciona acomodações desse tipo. Quando um usuário clica em "Motel" para indicar que apenas motéis deve ser mostrado, a próxima consulta que o aplicativo `$filter=category eq 'motel'`envia inclui.
 
 O seguinte snippet de código adiciona a categoria ao filtro se um usuário seleciona um valor usando a faceta de categoria.
 
@@ -108,7 +108,7 @@ if (!String.IsNullOrEmpty(categoryFacet))
     filter = $"category eq '{categoryFacet}'";
 ```
 
-Se o usuário clica em um valor de faceta para um campo de coleção como `tags`, por exemplo, o "grupo" de valor, seu aplicativo deve usar a seguinte sintaxe de filtro: `$filter=tags/any(t: t eq 'pool')`
+Se o usuário clicar em um valor de faceta para um campo de `tags`coleção como, por exemplo, o valor "pool", seu aplicativo deverá usar a seguinte sintaxe de filtro:`$filter=tags/any(t: t eq 'pool')`
 
 ## <a name="tips-and-workarounds"></a>Dicas e soluções alternativas
 

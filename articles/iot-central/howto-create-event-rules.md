@@ -8,16 +8,18 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 4754e6b571845d286ef22014f87b86fae2f6633d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c931cfbcff750d96828641669c4aaa15e7932970
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67053023"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69877404"
 ---
 # <a name="create-an-event-rule-and-set-up-notifications-in-your-azure-iot-central-application"></a>Criar uma regra de Eventos e configurar notificações no aplicativo Azure IoT Central
 
 *Este artigo aplica-se a operadores, construtores e administradores.*
+
+[!INCLUDE [iot-central-original-pnp](../../includes/iot-central-original-pnp-note.md)]
 
 É possível usar a Azure IoT Central para monitorar remotamente os dispositivos conectados. As regras do Azure IoT Central permitem monitorar os dispositivos quase em tempo real e invocar ações automaticamente, como enviar um email ou disparar o Microsoft Flow. Com apenas alguns cliques, você pode definir a condição para monitorar os dados do dispositivo e configurar a ação correspondente. Este artigo explica como criar regras para monitorar eventos enviados pelo dispositivo.
 
@@ -27,21 +29,21 @@ Dispositivos podem usar a medição de evento para enviar eventos de dispositivo
 
 Para criar uma regra de evento, o modelo do dispositivo deve ter pelo menos um evento de medida definido. Este exemplo usa um dispositivo de máquina de venda refrigerada que relata um evento de erro do motor da ventoinha. A regra monitora o evento relatado pelo dispositivo e enviará um email sempre que o evento for relatado.
 
-1. Usando o **modelos de dispositivo** página, navegue até o modelo de dispositivo para o qual você está adicionando a regra para.
+1. Usando a página **modelos de dispositivo** , navegue até o modelo de dispositivo para o qual você está adicionando a regra.
 
 1. Se você ainda não criou regras, a tela a seguir será exibida:
 
     ![Não há regras](media/howto-create-event-rules/rules_landing_page1.png)
 
-1. Sobre o **regras** guia, selecione **+ nova regra** para ver os tipos de regras que você pode criar.
+1. Na guia **regras** , selecione **+ nova regra** para ver os tipos de regras que você pode criar.
 
-1. Escolha o **evento** lado a lado para criar uma regra de monitoramento de evento.
+1. Escolha o bloco de **eventos** para criar uma regra de monitoramento de eventos.
 
     ![Tipos de regras](media/howto-create-event-rules/rule_types1.png)
 
 1. Digite um nome que o ajude a identificar a regra neste modelo de dispositivo.
 
-1. Para habilitar imediatamente a regra para todos os dispositivos criados com base neste modelo, ativar/desativar **Habilitar regra para todos os dispositivos deste modelo**.
+1. Para habilitar imediatamente a regra para todos os dispositivos criados com base neste modelo, alterne **habilitar regra para todos os dispositivos deste modelo**.
 
     ![Detalhe da Regra](media/howto-create-event-rules/rule_detail1.png)
 
@@ -59,15 +61,15 @@ A condição define os critérios que são monitorados pela regra.
 
 1. Opcionalmente, você também pode definir **Contagem** como **Agregação** e fornecer o limite correspondente.
 
-   - Sem agregação, a regra dispara para cada ponto de dados de evento que atenda à condição. Por exemplo, se você configurar a regra de condição para disparar quando uma **erro de Motor do ventilador** evento ocorre em seguida, a regra dispara quase que imediatamente quando o dispositivo relata que o evento.
-   - Se a Contagem for usada como uma função de agregação, você precisará fornecer um **Limite** e uma **Janela de tempo de agregação** por meio dos quais a condição precisa ser avaliada. Nesse caso, a contagem de eventos é agregada e a regra dispara apenas se a contagem de eventos agregados com o limite.
+   - Sem agregação, a regra dispara para cada ponto de dados de evento que atenda à condição. Por exemplo, se você configurar a condição da regra para disparar quando ocorrer um evento de **erro do motor do ventilador** , a regra será disparada quase imediatamente quando o dispositivo relatar esse evento.
+   - Se a Contagem for usada como uma função de agregação, você precisará fornecer um **Limite** e uma **Janela de tempo de agregação** por meio dos quais a condição precisa ser avaliada. Nesse caso, a contagem de eventos é agregada e a regra será disparada somente se a contagem de eventos agregados corresponder ao limite.
 
      Por exemplo, se você quiser alertar quando há mais de três eventos de dispositivo em cinco minutos, selecione o evento e defina a função de agregação como "contagem", o operador como "maior que" e "limite" como 3. Defina "Período de tempo de agregação" como "5 minutos". A regra dispara quando mais de três eventos são enviados pelo dispositivo em cinco minutos. A frequência de avaliação da regra é igual à **Janela de tempo de agregação**, o que significa que, neste exemplo, a regra é avaliada uma vez a cada cinco minutos.
 
      ![Adicionar a condição de evento](media/howto-create-event-rules/aggregate_condition_filled_out1.png)
 
      >[!NOTE]
-     >Mais de uma medida de evento pode ser adicionada em **Condição**. Quando várias condições são especificadas, todas as condições devem ser atendidas para que a regra seja disparada. Cada condição obtém unida por uma cláusula 'AND' implicitamente. Ao usar a agregação, cada medida deve ser agregada.
+     >Mais de uma medida de evento pode ser adicionada em **Condição**. Quando várias condições são especificadas, todas as condições devem ser atendidas para que a regra seja disparada. Cada condição é unida por uma cláusula ' AND ' implicitamente. Ao usar a agregação, cada medida deve ser agregada.
 
 ### <a name="configure-actions"></a>Configurar ações
 
@@ -113,5 +115,5 @@ Agora que você aprendeu como criar regras no aplicativo Azure IoT Central, esta
 
 - [Adicionar ação do Microsoft Flow em regras](howto-add-microsoft-flow.md)
 - [Adicionar ação de Webhook em regras](howto-create-webhooks.md)
-- [Várias ações para executar a partir de uma ou mais regras de grupo](howto-use-action-groups.md)
+- [Agrupar várias ações para executar a partir de uma ou mais regras](howto-use-action-groups.md)
 - [Como gerenciar seus dispositivos](howto-manage-devices.md)

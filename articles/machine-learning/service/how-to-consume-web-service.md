@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 08/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 9b7157cd58abc7f1fecf288e72b0232c8a67b7ee
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 4aa948a785153dd0d70a9af41ae0ed25036827f8
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69512593"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69656261"
 ---
 # <a name="consume-an-azure-machine-learning-model-deployed-as-a-web-service"></a>Consumir um modelo de Azure Machine Learning implantado como um serviço web
 
@@ -43,7 +43,7 @@ A classe [azureml.core.Webservice](https://docs.microsoft.com/python/api/azureml
 * `auth_enabled`-Se a autenticação de chave estiver `True`habilitada, `False`caso contrário,.
 * `token_auth_enabled`-Se a autenticação de token estiver `True`habilitada, `False`caso contrário,.
 * `scoring_uri` -O endereço da API REST.
-
+* `swagger_uri`-O endereço da especificação OpenAPI. Esse URI estará disponível se você tiver habilitado a geração de esquema automática. Para obter mais informações, consulte [implantar modelos com o serviço de Azure Machine Learning](how-to-deploy-and-where.md#schema).
 
 Existem três maneiras de recuperar essas informações para serviços da Web implementados:
 
@@ -56,6 +56,7 @@ Existem três maneiras de recuperar essas informações para serviços da Web im
                                            image_config=image_config,
                                            workspace=ws)
     print(service.scoring_uri)
+    print(service.swagger_uri)
     ```
 
 * Você pode usar `Webservice.list` para recuperar uma lista de serviços da Web implementados para modelos em sua área de trabalho. Você pode adicionar filtros para restringir a lista de informações retornadas. Para obter mais informações sobre o que pode ser filtrado, consulte a documentação de referência do [Webservice.list](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice.webservice?view=azure-ml-py).
@@ -63,6 +64,7 @@ Existem três maneiras de recuperar essas informações para serviços da Web im
     ```python
     services = Webservice.list(ws)
     print(services[0].scoring_uri)
+    print(services[0].swagger_uri)
     ```
 
 * Se você souber o nome do serviço implantado, você pode criar uma nova instância de `Webservice` e fornecer o nome do espaço de trabalho e o serviço como parâmetros. O novo objeto contém informações sobre o serviço implantado.
@@ -70,11 +72,12 @@ Existem três maneiras de recuperar essas informações para serviços da Web im
     ```python
     service = Webservice(workspace=ws, name='myservice')
     print(service.scoring_uri)
+    print(service.swagger_uri)
     ```
 
 ### <a name="authentication-for-services"></a>Autenticação para serviços
 
-O Azure Machine Learning fornece duas maneiras de controlar o acesso aos serviços Web. 
+O Azure Machine Learning fornece duas maneiras de controlar o acesso aos serviços Web.
 
 |Método de Autenticação|ACI|AKS|
 |---|---|---|

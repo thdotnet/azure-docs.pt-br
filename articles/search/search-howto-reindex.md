@@ -3,18 +3,18 @@ title: Recompilar um índice do Azure Search ou atualizar o conteúdo pesquisáv
 description: Adicione novos elementos, atualize elementos ou documentos existentes ou exclua documentos obsoletos em uma indexação de recompilação completa ou incremental parcial para atualizar um índice do Azure Search.
 services: search
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 ms.service: search
 ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 2595912732389c8a415d1854a84a7b9c182e4dc7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8a03472b72ea7c2dc69d79400e33d5ec65cc6126
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60871141"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69647685"
 ---
 # <a name="how-to-rebuild-an-azure-search-index"></a>Como recompilar um índice do Azure Search
 
@@ -26,7 +26,7 @@ Em contraste com as recompilações que recebem um índice offline, a *atualiza�
 
 ## <a name="rebuild-conditions"></a>Recompilar condições
 
-| Condição | DESCRIÇÃO |
+| Condição | Descrição |
 |-----------|-------------|
 | Alterar uma definição de campo | A revisão de um nome de campo, de um tipo de dados ou de [atributos de índice](https://docs.microsoft.com/rest/api/searchservice/create-index) específicos (pesquisáveis, filtráveis, classificáveis, com faceta) exige uma recompilação completa. |
 | Atribuir um analisador a um campo | Os [analisadores](search-analyzers.md) são definidos em um índice e, em seguida, são atribuídos aos campos. É possível adicionar uma nova definição de analisador a um índice a qualquer momento, mas só é possível *atribuir* um analisador quando o campo é criado. Isso é verdadeiro para as propriedades **analyzer** e **indexAnalyzer**. A propriedade **searchAnalyzer** é uma exceção (é possível atribuir essa propriedade a um campo existente). |

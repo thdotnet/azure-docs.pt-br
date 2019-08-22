@@ -1,27 +1,27 @@
 ---
-title: Trocas de declarações da API REST como validação no Azure Active Directory B2C | Microsoft Docs
-description: Um tópico sobre as políticas personalizadas do Azure Active Directory B2C.
+title: Trocas de declarações da API REST como validação no Azure Active Directory B2C
+description: Uma explicação sobre como criar uma jornada de usuário Azure AD B2C que interage com os serviços RESTful.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 04/24/2017
+ms.date: 08/21/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 0779e4a93230a90b8eee76f1898154c1a5b82661
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 45fad1fab419c448febb3f3b760996fba278e154
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66508737"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69644964"
 ---
 # <a name="walkthrough-integrate-rest-api-claims-exchanges-in-your-azure-ad-b2c-user-journey-as-validation-on-user-input"></a>Passo a passo: Integrar as trocas de declarações da API REST no percurso do usuário do Azure AD B2C como validação na entrada do usuário
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-A IEF (Estrutura de Experiência de Identidade) subjacente ao Azure AD B2C (Azure Active Directory B2C) permite que o desenvolvedor de identidade integre uma interação com uma API RESTful em um percurso do usuário.  
+A IEF (Estrutura de Experiência de Identidade) subjacente ao Azure AD B2C (Azure Active Directory B2C) permite que o desenvolvedor de identidade integre uma interação com uma API RESTful em um percurso do usuário.
 
 Ao final deste passo a passo, você estará apto a criar um percurso do usuário do Azure AD B2C que interage com serviços RESTful.
 
@@ -91,8 +91,10 @@ Um perfil técnico é a configuração completa da troca desejada com o serviço
             <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
             <Metadata>
                 <Item Key="ServiceUrl">https://wingtipb2cfuncs.azurewebsites.net/api/CheckPlayerTagWebHook?code=L/05YRSpojU0nECzM4Tp3LjBiA2ZGh3kTwwp1OVV7m0SelnvlRVLCg==</Item>
-                <Item Key="AuthenticationType">None</Item>
                 <Item Key="SendClaimsIn">Body</Item>
+                <!-- Set AuthenticationType to Basic or ClientCertificate in production environments -->
+                <Item Key="AuthenticationType">None</Item>
+                <!-- REMOVE the following line in production environments -->
                 <Item Key="AllowInsecureAuthInProduction">true</Item>
             </Metadata>
             <InputClaims>
@@ -110,6 +112,8 @@ Um perfil técnico é a configuração completa da troca desejada com o serviço
 ```
 
 O elemento `InputClaims` define as declarações que serão enviadas pela IEF para o serviço REST. Neste exemplo, o conteúdo da declaração `givenName` será enviado para o serviço REST como `playerTag`. Neste exemplo, o IEF não espera declarações novamente. Em vez disso, ele aguarda uma resposta do serviço REST e age de acordo com os códigos de status recebidos.
+
+Os comentários acima `AuthenticationType` e `AllowInsecureAuthInProduction` especificam as alterações que você deve fazer ao mudar para um ambiente de produção. Para saber como proteger suas APIs RESTful para produção, consulte [proteger APIs RESTful com autenticação básica](active-directory-b2c-custom-rest-api-netfw-secure-basic.md) e [proteger APIs RESTful com autenticação de certificado](active-directory-b2c-custom-rest-api-netfw-secure-cert.md).
 
 ## <a name="step-3-include-the-restful-service-claims-exchange-in-self-asserted-technical-profile-where-you-want-to-validate-the-user-input"></a>Etapa 3: Incluir a troca de declarações do serviço RESTful no perfil técnico autodeclarado no qual você deseja validar a entrada do usuário
 
@@ -132,3 +136,10 @@ Para adicionar a troca de declarações ao perfil técnico autodeclarado:
 [Modificar a edição de perfil e o registro de usuário para coletar informações adicionais dos usuários](active-directory-b2c-create-custom-attributes-profile-edit-custom.md)
 
 [Passo a passo: Integrar as trocas de declarações da API REST no percurso do usuário do Azure AD B2C como uma etapa de orquestração](active-directory-b2c-rest-api-step-custom.md)
+
+[Referência: Perfil técnico RESTful](restful-technical-profile.md)
+
+Para saber como proteger suas APIs, consulte os seguintes artigos:
+
+* [Proteja sua API RESTful com a autenticação básica (nome de usuário e senha)](active-directory-b2c-custom-rest-api-netfw-secure-basic.md)
+* [Proteja sua API RESTful com certificados de cliente](active-directory-b2c-custom-rest-api-netfw-secure-cert.md)

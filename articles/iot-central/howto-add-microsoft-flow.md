@@ -8,21 +8,23 @@ ms.date: 04/25/2019
 ms.topic: conceptual
 ms.service: iot-central
 manager: hegate
-ms.openlocfilehash: e8bc8b8d4e3585ea4c0505f2e36abc6d1da7f8eb
-ms.sourcegitcommit: 66237bcd9b08359a6cce8d671f846b0c93ee6a82
+ms.openlocfilehash: 5f5353d0d85d6af4e74c48c80c790449852b43ef
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67797717"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876280"
 ---
 # <a name="build-workflows-with-the-iot-central-connector-in-microsoft-flow"></a>Criar fluxos de trabalho com o conector da IoT Central no Microsoft Flow
 
 *Este tópico aplica-se a construtores e administradores.*
 
-Use o Microsoft Flow para automatizar fluxos de trabalho entre os vários aplicativos e serviços dos quais os usuários empresariais dependem. Usando o conector de IoT Central no Microsoft Flow, você pode disparar fluxos de trabalho quando uma regra é acionada na IoT Central. Em um fluxo de trabalho disparado por Central da IoT ou qualquer outro aplicativo, você pode usar as ações no conector Central da IoT para:
+[!INCLUDE [iot-central-original-pnp](../../includes/iot-central-original-pnp-note.md)]
+
+Use o Microsoft Flow para automatizar fluxos de trabalho entre os vários aplicativos e serviços dos quais os usuários empresariais dependem. Usando o conector de IoT Central no Microsoft Flow, você pode disparar fluxos de trabalho quando uma regra é acionada na IoT Central. Em um fluxo de trabalho disparado por IoT Central ou qualquer outro aplicativo, você pode usar as ações no conector de IoT Central para:
 - Criar um dispositivo
 - Obter informações do dispositivo
-- Atualizar propriedades e configurações de um dispositivo
+- Atualizar as propriedades e configurações de um dispositivo
 - Executar um comando em um dispositivo
 - Excluir um dispositivo
 
@@ -31,43 +33,43 @@ Confira [estes modelos do Microsoft Flow](https://aka.ms/iotcentralflowtemplates
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Um aplicativo com pagamento conforme o uso
-- Uma conta da Microsoft pessoal ou de trabalho ou escola usar o Microsoft Flow ([Saiba mais sobre os planos do Microsoft Flow](https://aka.ms/microsoftflowplans))
-- Uma conta corporativa ou de estudante para usar o conector do Azure IoT Central
+- Uma conta pessoal ou corporativa ou de estudante da Microsoft para usar Microsoft Flow ([saiba mais sobre planos de Microsoft Flow](https://aka.ms/microsoftflowplans))
+- Uma conta corporativa ou de estudante para usar o conector de IoT Central do Azure
 
 ## <a name="trigger-a-workflow"></a>Disparar um fluxo de trabalho
 
-Esta seção mostra como disparar uma notificação móvel em que o aplicativo móvel do Flow quando uma regra disparar no IoT Central. Você pode criar esse fluxo de trabalho inteiro dentro de seu aplicativo de Central da IoT usando o designer incorporado do Microsoft Flow.
+Esta seção mostra como disparar uma notificação móvel no aplicativo móvel do Flow quando uma regra é disparada no IoT Central. Você pode criar todo o fluxo de trabalho em seu aplicativo IoT Central usando o designer de Microsoft Flow incorporado.
 
-1. Comece [criando uma regra na IoT Central](howto-create-telemetry-rules.md). Depois de salvar as condições de regra, selecione a **ação do Microsoft Flow** como uma nova ação. Uma janela de diálogo será aberta para que você configure seu fluxo de trabalho. A conta de usuário Central da IoT que você está conectado ao será usada para entrar no Microsoft Flow.
+1. Comece [criando uma regra na IoT Central](howto-create-telemetry-rules.md). Depois de salvar as condições de regra, selecione a **ação Microsoft Flow** como uma nova ação. Uma janela de diálogo será aberta para que você configure seu fluxo de trabalho. A conta de usuário IoT Central à qual você está conectado será usada para entrar no Microsoft Flow.
 
     ![Criar uma nova ação do Microsoft Flow](media/howto-add-microsoft-flow/createflowaction.png)
 
-1. Você verá uma lista de fluxos de trabalho que têm acesso a e são anexados a essa regra de IoT Central. Clique em **Explore modelos** ou **Novo > Criar do modelo** e você pode escolher entre qualquer um dos modelos disponíveis. 
+1. Você verá uma lista de fluxos de trabalho aos quais você tem acesso e está anexado a esta regra de IoT Central. Clique em **explorar modelos** ou em **novo > criar a partir do modelo** e você pode escolher entre qualquer um dos modelos disponíveis. 
 
-    ![Modelos disponíveis do Microsoft Flow](media/howto-add-microsoft-flow/flowtemplates1.png)
+    ![Modelos de Microsoft Flow disponíveis](media/howto-add-microsoft-flow/flowtemplates1.png)
 
-1. Você será solicitado a entrar nos conectores no modelo que você escolheu. 
-
-    > [!NOTE]
-    > Para usar o conector do Azure IoT Central, você deve entrar usando uma conta do Azure Active Directory (conta corporativa ou de estudante). Uma conta pessoal, como abc@outlook.com ou abc@live.com não são compatíveis com o conector do Azure IoT Central.
-
-    Depois de entrar nos conectores, você será levado no designer para criar seu fluxo de trabalho. O fluxo de trabalho tem um gatilho da IoT Central que contém seu aplicativo e a regra já preenchidos.
-
-1. Você pode personalizar o fluxo de trabalho Personalizando as informações transmitidas para a ação e a adição de novas ações. Neste exemplo, a ação é **notificações - enviar-me uma notificação móvel**. Você pode incluir *conteúdo dinâmico* da regra da IoT Central, passando informações importantes como o nome do dispositivo e o carimbo de data/hora para a notificação.
+1. Você será solicitado a entrar nos conectores no modelo escolhido. 
 
     > [!NOTE]
-    > Selecione o **ver mais** texto na janela de conteúdo dinâmico para obter valores de propriedade e de medição que disparou a regra.
+    > Para usar o conector de IoT Central do Azure, você deve entrar usando uma conta de Azure Active Directory (conta corporativa ou de estudante). Uma conta pessoal, como abc@outlook.com ou abc@live.com , não é suportada pelo conector do IOT central do Azure.
+
+    Depois de entrar nos conectores, você será levado ao designer para criar seu fluxo de trabalho. O fluxo de trabalho tem um gatilho da IoT Central que contém seu aplicativo e a regra já preenchidos.
+
+1. Você pode personalizar o fluxo de trabalho Personalizando as informações passadas para a ação e adicionando novas ações. Neste exemplo, a ação é **notificações-envie-me uma notificação móvel**. Você pode incluir *conteúdo dinâmico* da regra da IoT Central, passando informações importantes como o nome do dispositivo e o carimbo de data/hora para a notificação.
+
+    > [!NOTE]
+    > Selecione a janela **Ver mais** texto no conteúdo dinâmico para obter valores de medição e propriedade que dispararam a regra.
 
     ![Flow editando a ação com o painel dinâmico aberto](./media/howto-add-microsoft-flow/flowdynamicpane1.png)
 
-1. Quando você terminar sua ação de edição, selecione **salvar**. Você será direcionado à página de visão geral do fluxo de trabalho. Aqui você pode ver o histórico de execução e compartilhá-lo com outros colegas.
+1. Quando terminar de editar sua ação, selecione **salvar**. Você será direcionado à página de visão geral do fluxo de trabalho. Aqui você pode ver o histórico de execução e compartilhá-lo com outros colegas.
 
     > [!NOTE]
     > Se desejar que outros usuários em seu aplicativo de Central da IoT editem essa regra, você precisará compartilhá-la com eles no Microsoft Flow. Adicione as contas do Microsoft Flow deles como proprietários em seu fluxo de trabalho.
 
-1. Se você voltar ao seu aplicativo IoT Central, você verá que essa regra tem uma ação do Microsoft Flow na área de ações.
+1. Se voltar para seu aplicativo IoT Central, você verá que essa regra tem uma ação Microsoft Flow na área ações.
 
-Você também pode criar fluxos de trabalho usando o conector de IoT Central diretamente do Microsoft Flow. Em seguida, você pode escolher qual aplicativo Central da IoT para se conectar ao.
+Você também pode criar fluxos de trabalho usando o conector de IoT Central diretamente do Microsoft Flow. Em seguida, você pode escolher a qual aplicativo IoT Central se conectar.
 
 ## <a name="create-a-device-in-a-workflow"></a>Criar um dispositivo em um fluxo de trabalho
 
@@ -83,7 +85,7 @@ Esta seção mostra como criar um novo dispositivo na IoT Central por meio de um
 
 1. Escolha seu aplicativo e escolha um modelo de dispositivo do qual criar um dispositivo nas listas suspensas. Você verá a ação se expandir para mostrar todas as propriedades e configurações do dispositivo.
 
-1. Selecione o campo Nome do Dispositivo. No painel de conteúdo dinâmico, escolha **Nome do Dispositivo**. Esse valor é passado da entrada de usuário entra por meio do aplicativo móvel e é o nome do seu novo dispositivo na IoT Central. Neste exemplo, o único campo obrigatório é o nome do dispositivo, indicado por um asterisco vermelho. Outro modelo de dispositivo pode ter vários campos obrigatórios que precisam ser preenchidos para criar um novo dispositivo.
+1. Selecione o campo Nome do Dispositivo. No painel de conteúdo dinâmico, escolha **Nome do Dispositivo**. Esse valor é passado da entrada que o usuário insere por meio do aplicativo móvel e é o nome do novo dispositivo no IoT Central. Neste exemplo, o único campo obrigatório é o nome do dispositivo, indicado por um asterisco vermelho. Outro modelo de dispositivo pode ter vários campos obrigatórios que precisam ser preenchidos para criar um novo dispositivo.
 
     ![Painel dinâmico da ação de criar dispositivo do Flow](./media/howto-add-microsoft-flow/flowcreatedevice1.png)
 
@@ -110,9 +112,9 @@ Esta seção mostra como atualizar as configurações e propriedades de um dispo
 1. Selecione o aplicativo na lista suspensa. Agora, você precisará da ID do dispositivo existente que deseja atualizar. 
 
     > [!NOTE] 
-    > **Você deve usar a ID encontrada na URL** na página de detalhes do dispositivo do dispositivo que você deseja atualizar. A ID do dispositivo encontrada na lista do Gerenciador de dispositivo dos dispositivos não é a correta para usar no Microsoft Flow.
+    > **Você deve usar a ID encontrada na URL** na página de detalhes do dispositivo do dispositivo que você deseja atualizar. A ID do dispositivo encontrada na lista de dispositivos do Gerenciador de dispositivos não é a correta a ser usada no Microsoft Flow.
 
-    ![ID da IoT Central da URL](./media/howto-add-microsoft-flow/iotcdeviceidurl.png)
+    ![ID de IoT Central da URL](./media/howto-add-microsoft-flow/iotcdeviceidurl.png)
 
 1. Você pode atualizar o nome do dispositivo. Para atualizar qualquer uma das configurações e propriedades do dispositivo, você precisa selecionar o modelo de dispositivo do dispositivo que você deseja atualizar na lista suspensa **Modelo de Dispositivo**. O bloco de ação se expande para mostrar todas as propriedades e configurações que você pode atualizar.
 
@@ -124,32 +126,32 @@ Esta seção mostra como atualizar as configurações e propriedades de um dispo
 
 1. Experimente o fluxo de trabalho no aplicativo móvel do Microsoft Flow. Navegue até a guia **botões** no aplicativo. Você deverá ver o Botão -> Atualizar um fluxo de trabalho do dispositivo. Insira as entradas e veja o dispositivo ser atualizado na IoT Central!
 
-## <a name="get-device-information-in-a-workflow"></a>Obter informações de dispositivo em um fluxo de trabalho
+## <a name="get-device-information-in-a-workflow"></a>Obter informações do dispositivo em um fluxo de trabalho
 
-Você pode obter informações de dispositivo usando sua ID de **Central de IoT do Azure – obter um dispositivo** ação. 
+Você pode obter informações de dispositivo por sua ID usando a **IOT central do Azure-obter uma** ação de dispositivo. 
 > [!NOTE] 
-> **Você deve usar a ID encontrada na URL** na página de detalhes do dispositivo do dispositivo que você deseja atualizar. A ID do dispositivo encontrada na lista do Gerenciador de dispositivo dos dispositivos não é a correta para usar no Microsoft Flow.
+> **Você deve usar a ID encontrada na URL** na página de detalhes do dispositivo do dispositivo que você deseja atualizar. A ID do dispositivo encontrada na lista de dispositivos do Gerenciador de dispositivos não é a correta a ser usada no Microsoft Flow.
 
-Você pode obter informações como o nome do dispositivo, nome do modelo de dispositivo, os valores de propriedade e valores de configurações para passar para a ação posterior no fluxo de trabalho. Aqui está um fluxo de trabalho de exemplo que passa o valor da propriedade nome do cliente de um dispositivo para o Microsoft Teams.
+Você pode obter informações como nome do dispositivo, nome do modelo de dispositivo, valores de propriedade e valores de configurações para passar para ações posteriores no fluxo de trabalho. Veja um exemplo de fluxo de trabalho que passa o valor da propriedade Customer Name de um dispositivo para o Microsoft Teams.
 
-   ![Fluxo de trabalho do dispositivo do fluxo de get](./media/howto-add-microsoft-flow/flowgetdevice1.png)
+   ![Fluxo de trabalho do dispositivo obter fluxo](./media/howto-add-microsoft-flow/flowgetdevice1.png)
 
 
 ## <a name="run-a-command-on-a-device-in-a-workflow"></a>Executar um comando em um dispositivo em um fluxo de trabalho
-Você pode executar um comando em um dispositivo especificado por seu ID usando o **do Azure IoT Central - os executar um comando** ação. 
+Você pode executar um comando em um dispositivo especificado por sua ID usando o **IOT central do Azure-executar uma** ação de comando. 
 
 > [!NOTE] 
-> **Você deve usar a ID encontrada na URL** na página de detalhes do dispositivo do dispositivo que você deseja atualizar. A ID do dispositivo encontrada na lista do Gerenciador de dispositivo dos dispositivos não é a correta para usar no Microsoft Flow.
+> **Você deve usar a ID encontrada na URL** na página de detalhes do dispositivo do dispositivo que você deseja atualizar. A ID do dispositivo encontrada na lista de dispositivos do Gerenciador de dispositivos não é a correta a ser usada no Microsoft Flow.
     
-Você pode escolher o comando para executar e passar os parâmetros do comando por meio dessa ação. Aqui está um fluxo de trabalho de exemplo que executa um comando de reinicialização do dispositivo a partir de um botão no aplicativo móvel Microsoft Flow.
+Você pode escolher o comando a ser executado e passar os parâmetros do comando por meio desta ação. Veja um exemplo de fluxo de trabalho que executa um comando de reinicialização de dispositivo de um botão no aplicativo Microsoft Flow móvel.
 
-   ![Fluxo de trabalho do dispositivo do fluxo de get](./media/howto-add-microsoft-flow/flowrunacommand1.png)
+   ![Fluxo de trabalho do dispositivo obter fluxo](./media/howto-add-microsoft-flow/flowrunacommand1.png)
 
 ## <a name="delete-a-device-in-a-workflow"></a>Excluir um dispositivo em um fluxo de trabalho
 
-Você pode excluir um dispositivo usando sua ID de **Central de IoT do Azure – excluir um dispositivo** ação. 
+Você pode excluir um dispositivo por sua ID usando a ação **IOT central do Azure-excluir um dispositivo** . 
 > [!NOTE] 
-> **Você deve usar a ID encontrada na URL** na página de detalhes do dispositivo do dispositivo que você deseja atualizar. A ID do dispositivo encontrada na lista do Gerenciador de dispositivo dos dispositivos não é a correta para usar no Microsoft Flow.
+> **Você deve usar a ID encontrada na URL** na página de detalhes do dispositivo do dispositivo que você deseja atualizar. A ID do dispositivo encontrada na lista de dispositivos do Gerenciador de dispositivos não é a correta a ser usada no Microsoft Flow.
 
 Aqui está um fluxo de trabalho de exemplo que exclui um dispositivo apenas pressionando um botão no aplicativo móvel Microsoft Flow.
 
@@ -159,11 +161,11 @@ Aqui está um fluxo de trabalho de exemplo que exclui um dispositivo apenas pres
 
 Se você está tendo problemas ao criar uma conexão para o conector do Azure IoT Central, aqui estão algumas dicas para ajudá-lo.
 
-1. Contas pessoais da Microsoft (assim como os domínios @hotmail.com, @live.com, @outlook.com) não são compatíveis no momento. Você deve usar um trabalho do Azure Active Directory (AD) ou de estudante da conta.
+1. Contas pessoais da Microsoft (assim como os domínios @hotmail.com, @live.com, @outlook.com) não são compatíveis no momento. Você deve usar uma conta corporativa ou de estudante do Azure Active Directory (AD).
 
 2. Para usar o conector da IoT Central no Microsoft Flow, você precisa ter entrado no aplicativo da IoT Central pelo menos uma vez. Caso contrário, o aplicativo não aparecerá nas listas suspensas de aplicativos.
 
-3. Se você estiver recebendo um erro enquanto estiver usando uma conta do AD do Azure, tente abrir o Windows PowerShell e execute os seguintes commandlets como administrador.
+3. Se você estiver recebendo um erro ao usar uma conta do Azure AD, tente abrir o Windows PowerShell e execute o commandlets a seguir como administrador.
 
     ``` PowerShell
     Install-Module AzureAD
@@ -173,5 +175,5 @@ Se você está tendo problemas ao criar uma conexão para o conector do Azure Io
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Agora que você aprendeu como usar o Microsoft Flow para criar fluxos de trabalho, a próxima etapa sugerida é [gerenciar dispositivos](howto-manage-devices.md).
+Agora que você aprendeu a usar Microsoft Flow para criar fluxos de trabalho, a próxima etapa sugerida é [gerenciar dispositivos](howto-manage-devices.md).
 

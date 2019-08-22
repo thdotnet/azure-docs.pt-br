@@ -7,14 +7,16 @@ author: viv-liu
 ms.author: viviali
 ms.date: 06/09/2019
 ms.topic: conceptual
-ms.openlocfilehash: 16d7691d59e0805c7f8cf565a599ca5e6a78a7cf
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 897b72dd7b292492e45cdc7401fe1acc5c86ca20
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67053036"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69877465"
 ---
 # <a name="visualize-and-analyze-your-azure-iot-central-data-in-a-power-bi-dashboard"></a>Visualize e analise seus dados do Azure IoT Central em um painel do Power BI
+
+[!INCLUDE [iot-central-original-pnp](../../includes/iot-central-original-pnp-note.md)]
 
 *Este tópico aplica-se aos administradores.*
 
@@ -57,13 +59,13 @@ Todos os recursos criados podem ser acessados no portal do Azure. Tudo deve esta
 
 As especificidades de cada recurso e de como ele é usado são descritas abaixo.
 
-### <a name="azure-functions"></a>Funções do Azure
+### <a name="azure-functions"></a>Verificação de
 O aplicativo Azure Functions é disparado sempre que um novo arquivo é gravado no Armazenamento de Blobs. As funções extraem os campos dentro de cada arquivo de medidas, de dispositivos e de modelos de dispositivo e popula várias tabelas intermediárias do SQL a serem usadas pelo Azure Data Factory.
 
-### <a name="azure-data-factory"></a>Fábrica de dados do Azure
+### <a name="azure-data-factory"></a>Azure Data Factory
 O Azure Data Factory se conecta ao Banco de Dados SQL como um serviço vinculado. Ele executa as atividades de procedimento armazenado que processa os dados e os armazena nas tabelas de análise.
 
-### <a name="azure-sql-database"></a>Banco de dados SQL do Azure
+### <a name="azure-sql-database"></a>Banco de Dados SQL do Azure
 Essas tabelas são criadas automaticamente para popular os relatórios padrão. Explore esses esquemas no Power BI e será possível criar suas próprias visualizações nesses dados.
 
 | Nome da tabela |

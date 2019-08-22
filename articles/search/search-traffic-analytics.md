@@ -2,19 +2,19 @@
 title: Implementar análise de tráfego de pesquisa — Azure Search
 description: Habilite a análise de tráfego de pesquisa do Azure Search para adicionar a telemetria e eventos iniciados pelo usuário em arquivos de log.
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 services: search
 ms.service: search
 ms.topic: conceptual
 ms.date: 01/25/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: b15ae30151b22509a78b9a39d258991363a05e5b
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: bb12ed2f18df100ab3f679e7a8a3ef1e7c1aca45
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67295433"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69647809"
 ---
 # <a name="implement-search-traffic-analytics-in-azure-search"></a>Implementar análise de tráfego de pesquisa no Azure Search
 Análise de tráfego de pesquisa é um padrão de implementação de um loop de comentários para seu serviço de pesquisa. Esse padrão descreve os dados necessários e como coletá-los usando o Application Insights, líder no setor de serviços de monitoramento em várias plataformas.
@@ -98,7 +98,7 @@ Para outras plataformas e linguagens, consulte a [lista completa](https://docs.m
 
 Sempre que uma solicitação de pesquisa é emitida por um usuário, você deve registrá-la como um evento de pesquisa com o esquema a seguir em um evento personalizado do Application Insights:
 
-**SearchServiceName**: nome do serviço search (string) **SearchId**: o identificador exclusivo (guid) da consulta de pesquisa (vem na resposta da pesquisa) **IndexName**: índice de serviço de pesquisa (string) para ser consultado **QueryTerms**: os termos de pesquisa (string) inseridos pelo usuário **ResultCount**: (int) número de documentos que foram retornados (vem na resposta da pesquisa)  **ScoringProfile**: nome (cadeia de caracteres) do perfil de pontuação usado, se houver
+**SearchServiceName**: (String) nome do serviço de pesquisa **searchId**: (GUID) identificador exclusivo da consulta de pesquisa (vem na resposta depesquisa) IndexName: (String) índice do serviço de pesquisa a ser consultado **QueryTerms**: (cadeia de caracteres) pesquisa termos inseridos pelo usuário **ResultCount**: (int) número de documentos que foram retornados (vem na resposta de pesquisa) **ScoringProfile**: (cadeia de caracteres) nome do perfil de Pontuação usado, se houver
 
 > [!NOTE]
 > Solicite a contagem de consultas geradas pelo usuário adicionando $count=true à consulta de pesquisa. Confira mais informações [aqui](https://docs.microsoft.com/rest/api/searchservice/search-documents#request)

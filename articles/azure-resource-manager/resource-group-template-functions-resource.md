@@ -4,14 +4,14 @@ description: Descreve as funções a serem usadas em um modelo do Azure Resource
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 08/06/2019
+ms.date: 08/20/2019
 ms.author: tomfitz
-ms.openlocfilehash: 2ec6e58438e7be953e1f672fb815ff3f68a7f252
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 2cd37405176eefa8f4445942b9fbf1afc2a7404a
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68839262"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69650426"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Funções de recursos para modelos do Azure Resource Manager
 
@@ -159,7 +159,7 @@ Para determinar quais tipos de recursos têm uma operação de lista, use as seg
   az provider operation show --namespace Microsoft.Storage --query "resourceTypes[?name=='storageAccounts'].operations[].name | [?contains(@, 'list')]"
   ```
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 O objeto retornado varia de acordo com a função de lista que você usa. Por exemplo, o listKeys para uma conta de armazenamento retorna o seguinte formato:
 
@@ -270,7 +270,7 @@ Retorna informações sobre um provedor de recursos e seus tipos de recursos com
 | providerNamespace |Sim |cadeia de caracteres |Namespace do provedor |
 | resourceType |Não |cadeia de caracteres |O tipo de recurso no namespace especificado. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Cada tipo com suporte é retornado no seguinte formato: 
 
@@ -346,7 +346,7 @@ Retorna um objeto que representa o estado de tempo de execução de um recurso.
 | apiVersion |Não |cadeia de caracteres |Versão da API do recurso especificado. Inclua esse parâmetro quando o recurso não estiver provisionado no mesmo modelo. Normalmente, no formato **aaaa-mm-dd**. Para obter as versões de API válidas para seu recurso, consulte [referência de modelo](/azure/templates/). |
 | 'Full' |Não |cadeia de caracteres |Valor que especifica se o objeto de recurso completo deve ser retornado. Se você não especificar `'Full'`, apenas o objeto de propriedades do recurso será retornado. O objeto completo inclui valores como a ID do recurso e o local. |
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 Cada tipo de recurso retorna propriedades diferentes para a função de referência. A função não retorna um único formato predefinido. Além disso, o valor retornado será diferente caso você tenha especificado o objeto completo. Para ver as propriedades de um tipo de recurso, retorne o objeto na seção de saída, conforme mostra o exemplo.
 
@@ -559,7 +559,7 @@ O [modelo de exemplo](https://github.com/Azure/azure-docs-json-samples/blob/mast
 
 Retorna um objeto que representa o grupo de recursos atual. 
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 O objeto retornado está no seguinte formato:
 
@@ -634,7 +634,7 @@ O exemplo anterior retorna um objeto no seguinte formato:
 
 ## <a name="resourceid"></a>resourceId
 
-`resourceId([subscriptionId], [resourceGroupName], resourceType, resourceName1, [resourceName2]...)`
+`resourceId([subscriptionId], [resourceGroupName], resourceType, resourceName1, [resourceName2], ...)`
 
 Retorna o identificador exclusivo de um recurso. Você pode usar essa função quando o nome do recurso é ambíguo ou não provisionado no mesmo modelo. 
 
@@ -646,43 +646,46 @@ Retorna o identificador exclusivo de um recurso. Você pode usar essa função q
 | resourceGroupName |Não |cadeia de caracteres |O valor padrão é o grupo de recursos atual. Especifique esse valor quando você precisar recuperar um recurso em outro grupo de recursos. |
 | resourceType |Sim |cadeia de caracteres |Tipo de recurso, incluindo o namespace do provedor de recursos. |
 | resourceName1 |Sim |cadeia de caracteres |Nome do recurso. |
-| resourceName2 |Não |cadeia de caracteres |Próximo segmento de nome do recurso se o recurso está aninhado. |
+| resourceName2 |Não |cadeia de caracteres |Próximo segmento de nome de recurso, se necessário. |
 
-### <a name="return-value"></a>Valor de retorno
+Continue adicionando nomes de recursos como parâmetros quando o tipo de recurso incluir mais segmentos.
+
+### <a name="return-value"></a>Valor retornado
 
 O identificador é retornado no seguinte formato:
 
-```json
-/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}
-```
+**/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{resourceType}/{resourceName}**
+
 
 ### <a name="remarks"></a>Comentários
 
-Quando usada com uma [implantação no nível da assinatura](deploy-to-subscription.md), a função `resourceId()` só pode recuperar a ID de recursos implantados nesse nível. Por exemplo, você pode obter a ID de uma definição de política ou uma definição de função, mas não a ID de uma conta de armazenamento. Para implantações em um grupo de recursos, o oposto é verdadeiro. Não é possível obter a ID de recurso dos recursos implantados no nível da assinatura.
+O número de parâmetros que você fornece varia dependendo de o recurso ser um recurso pai ou filho e se o recurso está na mesma assinatura ou grupo de recursos.
 
-Os valores de parâmetro que você especifica dependem se o recurso está na mesma assinatura e grupo de recursos que a implantação atual. Para obter a ID de recurso de uma conta de armazenamento na mesma assinatura e grupo de recursos, use:
-
-```json
-"[resourceId('Microsoft.Storage/storageAccounts','examplestorage')]"
-```
-
-Para obter a ID de recurso de uma conta de armazenamento na mesma assinatura, mas em um grupo de recursos diferente, use:
+Para obter a ID de recurso de um recurso pai na mesma assinatura e grupo de recursos, forneça o tipo e o nome do recurso.
 
 ```json
-"[resourceId('otherResourceGroup', 'Microsoft.Storage/storageAccounts','examplestorage')]"
+"[resourceId('Microsoft.ServiceBus/namespaces', 'namespace1')]"
 ```
 
-Para obter a ID de recurso de uma conta de armazenamento em uma assinatura e grupo de recursos diferentes, use:
+Para obter a ID de recurso de um recurso filho, preste atenção ao número de segmentos no tipo de recurso. Forneça um nome de recurso para cada segmento do tipo de recurso. O nome do segmento corresponde ao recurso que existe para essa parte da hierarquia.
+
+```json
+"[resourceId('Microsoft.ServiceBus/namespaces/queues/authorizationRules', 'namespace1', 'queue1', 'auth1')]"
+```
+
+Para obter a ID de recurso de um recurso na mesma assinatura, mas em um grupo de recursos diferente, forneça o nome do grupo de recursos.
+
+```json
+"[resourceId('otherResourceGroup', 'Microsoft.Storage/storageAccounts', 'examplestorage')]"
+```
+
+Para obter a ID de recurso de um recurso em uma assinatura e um grupo de recursos diferentes, forneça a ID da assinatura e o nome do grupo de recursos.
 
 ```json
 "[resourceId('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', 'otherResourceGroup', 'Microsoft.Storage/storageAccounts','examplestorage')]"
 ```
 
-Para obter a ID de recurso para um banco de dados em um grupo de recursos diferente, use:
-
-```json
-"[resourceId('otherResourceGroup', 'Microsoft.SQL/servers/databases', parameters('serverName'), parameters('databaseName'))]"
-```
+Quando usada com uma [implantação no nível da assinatura](deploy-to-subscription.md), a função `resourceId()` só pode recuperar a ID de recursos implantados nesse nível. Por exemplo, você pode obter a ID de uma definição de política ou uma definição de função, mas não a ID de uma conta de armazenamento. Para implantações em um grupo de recursos, o oposto é verdadeiro. Não é possível obter a ID de recurso dos recursos implantados no nível da assinatura.
 
 Para obter a ID de um recurso no nível da assinatura durante a implantação no escopo da assinatura, use:
 
@@ -779,7 +782,7 @@ A saída do exemplo anterior com os valores padrão é:
 
 Retorna detalhes sobre a assinatura da implantação atual. 
 
-### <a name="return-value"></a>Valor de retorno
+### <a name="return-value"></a>Valor retornado
 
 A função retorna o seguinte formato:
 

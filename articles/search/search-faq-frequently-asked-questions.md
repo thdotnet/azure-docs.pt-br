@@ -2,19 +2,19 @@
 title: Perguntas frequentes – Azure Search
 description: Obtenha respostas para perguntas comuns sobre o Serviço Microsoft Azure Search, um serviço de pesquisa hospedado na nuvem do Microsoft Azure.
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 services: search
 ms.service: search
 ms.topic: conceptual
 ms.date: 08/03/2017
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: c77f26187914b2c6e52426bb2a07303b22ccb2b0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d4aae2f2ef9ccbc645647125682d999c11c99ab6
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65023987"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69649823"
 ---
 # <a name="azure-search---frequently-asked-questions-faq"></a>Azure Search - FAQ (perguntas frequentes)
 
@@ -64,7 +64,7 @@ Não há nenhuma restrição quanto ao uso de réplicas primárias ou secundári
 
 Não, essa operação não tem suporte. A pesquisa sempre está no escopo para um único índice.
 
-### <a name="can-i-restrict-search-index-access-by-user-identity"></a>Pode restringir o acesso de índice de pesquisa por identidade do usuário?
+### <a name="can-i-restrict-search-index-access-by-user-identity"></a>Posso restringir o acesso ao índice de pesquisa por identidade do usuário?
 
 Você pode implementar [filtros de segurança](https://docs.microsoft.com/azure/search/search-security-trimming-for-azure-search) com filtro `search.in()`. O filtro integra-se bem com [serviços de gerenciamento de identidade como o Microsoft Azure Active Directory (AAD)](https://docs.microsoft.com/azure/search/search-security-trimming-for-azure-search-with-aad) para selecionar resultados de pesquisa com base em associação de grupos de usuários definidas.
 
@@ -80,7 +80,7 @@ A maioria das consultas de pesquisa com caractere curinga, como prefixo, difusa 
 
 ### <a name="why-is-the-search-rank-a-constant-or-equal-score-of-10-for-every-hit"></a>Por que a classificação é uma pontuação igual ou constante de 1,0 para cada ocorrência?
 
-Por padrão, os resultados da pesquisa são pontuados com base nas [propriedades estatísticas dos termos de correspondência](search-lucene-query-architecture.md#stage-4-scoring) e classificados do mais alto para o mais baixo do conjunto de resultados. No entanto, alguns tipos de consulta (caractere curinga, prefixo, regex) sempre contribuem com uma pontuação constante para a pontuação total do documento. Este comportamento ocorre por design. O Azure Search impõe uma pontuação constante para permitir que as correspondências encontradas pela expansão de consulta sejam incluídas nos resultados sem afetar a classificação.
+Por padrão, os resultados da pesquisa são pontuados com base nas [propriedades estatísticas dos termos de correspondência](search-lucene-query-architecture.md#stage-4-scoring) e classificados do mais alto para o mais baixo do conjunto de resultados. No entanto, alguns tipos de consulta (caractere curinga, prefixo, regex) sempre contribuem com uma pontuação constante para a pontuação total do documento. Esse comportamento é padrão. O Azure Search impõe uma pontuação constante para permitir que as correspondências encontradas pela expansão de consulta sejam incluídas nos resultados sem afetar a classificação.
 
 Por exemplo, suponha que uma entrada de "turnê*" em uma pesquisa com curinga produz correspondências em "turim", "turrão" e "turmalina". Dada a natureza desses resultados, não é possível inferir de forma razoável quais termos são mais valiosos do que outros. Por esse motivo, podemos ignorar as frequências dos termos ao pontuar resultados em consultas dos tipos caractere curinga, prefixo e regex. Os resultados da pesquisa com base em uma entrada parcial recebem uma pontuação constante para evitar a tendência de correspondências possivelmente inesperadas.
 

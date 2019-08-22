@@ -8,14 +8,14 @@ ms.author: sahubbar
 ms.date: 07/08/2019
 ms.topic: conceptual
 manager: peterpr
-ms.openlocfilehash: 298770b1b2da816ddef9154fafb20d7c6cb82df3
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: 6c18a244ceae2ccd9a536abeb6bc2d85760bb0a6
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67849035"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69875919"
 ---
-# <a name="create-and-run-a-job-in-your-azure-iot-central-application"></a>Criar e executar trabalhos em seu aplicativo Azure IoT Central
+# <a name="create-and-run-a-job-in-your-azure-iot-central-application"></a>Criar e executar um trabalho em seu aplicativo de IoT Central do Azure
 
 É possível usar o Microsoft Azure IoT Central para gerenciar seus dispositivos conectados em escala usando trabalhos. Os trabalhos permitem que você faça atualizações em massa nas propriedades, configurações e comandos do dispositivo. Este artigo explica como começar a usar trabalhos em seu próprio aplicativo.
 
@@ -75,17 +75,17 @@ Depois que um trabalho é criado, a coluna **status** é atualizada com a mensag
 | Mensagem de status       | Significado do status                                          |
 | -------------------- | ------------------------------------------------------- |
 | Concluído            | Este trabalho foi executado em todos os dispositivos.              |
-| Com falha               | Esse trabalho falhou e não foi totalmente executado nos dispositivos.  |
+| Falhou               | Esse trabalho falhou e não foi totalmente executado nos dispositivos.  |
 | Pendente              | Esse trabalho ainda não começou a ser executado em dispositivos.         |
-| Executando              | Esse trabalho está sendo executado nos dispositivos.             |
+| Em execução              | Esse trabalho está sendo executado nos dispositivos.             |
 | Parado              | Este trabalho foi interrompido manualmente por um usuário.           |
 
 A mensagem de status é seguida por uma visão geral dos dispositivos no trabalho. A tabela a seguir lista os possíveis valores de status do dispositivo:
 
 | Mensagem de status       | Significado do status                                                     |
 | -------------------- | ------------------------------------------------------------------ |
-| Bem-sucedida            | O número de dispositivos em que o trabalho foi executado com êxito.       |
-| Com falha               | O número de dispositivos nos quais o trabalho falhou ao ser executado.       |
+| Bem-sucedido            | O número de dispositivos em que o trabalho foi executado com êxito.       |
+| Falhou               | O número de dispositivos nos quais o trabalho falhou ao ser executado.       |
 
 ### <a name="view-the-device-status"></a>Exibir o status do dispositivo
 
@@ -94,7 +94,7 @@ Para exibir o status do trabalho e de todos os dispositivos afetados, selecione 
 | Mensagem de status       | Significado do status                                                                |
 | -------------------- | ----------------------------------------------------------------------------- |
 | Concluído            | O trabalho foi executado neste dispositivo.                                     |
-| Com falha               | A execução do trabalho falhou neste dispositivo. A mensagem de erro mostra mais informações.  |
+| Falhou               | A execução do trabalho falhou neste dispositivo. A mensagem de erro mostra mais informações.  |
 | Pendente              | O trabalho ainda não foi executado neste dispositivo.                                   |
 
 > [!NOTE]

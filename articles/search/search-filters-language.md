@@ -2,7 +2,7 @@
 title: Filtros de idioma para conteúdo em vários idiomas em um índice de pesquisa – Azure Search
 description: Critérios de filtragem para dar suporte à pesquisa em vários idiomas, definindo o escopo da execução de consulta para campos específicos a um idioma.
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 services: search
 ms.service: search
 ms.workload: search
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/23/2017
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 695fdfba1573ff97b05f8e8b50a05bef9dbf48de
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1eced868b180a916355d6f9fbfc8cd47a5d7d6e2
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61289597"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69649859"
 ---
 # <a name="how-to-filter-by-language-in-azure-search"></a>Como filtrar por idioma no Azure Search 
 
@@ -23,7 +23,7 @@ Um requisito importante em um aplicativo de pesquisa multilíngue é a capacidad
 
 Os parâmetros de consulta na solicitação são usados para definir o escopo da operação de pesquisa e, em seguida, para cortar os resultados de todos os campos que não fornecem conteúdo compatível com a experiência de pesquisa que você deseja entregar.
 
-| parâmetros | Finalidade |
+| Parâmetros | Finalidade |
 |-----------|--------------|
 | **searchFields** | Limita a pesquisa de texto completo à lista de campos nomeados. |
 | **$select** | Corta a resposta para incluir apenas os campos especificados. Por padrão, todos os campos recuperáveis são retornados. O parâmetro **$select** permite que você escolha quais deseja retornar. |

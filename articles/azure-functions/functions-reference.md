@@ -12,12 +12,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 10/12/2017
 ms.author: glenga
-ms.openlocfilehash: 737da27fd8da292b6c1f8997d4bd300bbec8740e
-ms.sourcegitcommit: d2785f020e134c3680ca1c8500aa2c0211aa1e24
+ms.openlocfilehash: 2715aeae5d10241703fa876557d1edcea1723874
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67565523"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69874965"
 ---
 # <a name="azure-functions-developers-guide"></a>Guia do desenvolvedor do Azure Functions
 No Azure Functions, funções específicas compartilham alguns componentes e conceitos técnicos, independentemente da linguagem ou da associação usada. Antes de aprender detalhes específicos de uma determinada linguagem ou binding, leia esta visão geral que se aplica a todos eles.
@@ -44,15 +44,17 @@ O arquivo function.json define o gatilho, as associações e outras definições
 }
 ```
 
+Para obter mais exemplos, consulte a [página wiki do function. JSON](https://github.com/Azure/azure-functions-host/wiki/function.json).
+
 A propriedade `bindings` é onde você configura gatilhos e associações. Cada binding compartilha algumas configurações comuns e outras que são específicas para um determinado tipo de binding. Todas as associações exigem as seguintes configurações:
 
 | Propriedade | Valores/Tipos | Comentários |
 | --- | --- | --- |
-| `type` |string |Tipo de binding. Por exemplo: `queueTrigger`. |
+| `type` |cadeia de caracteres |Tipo de binding. Por exemplo: `queueTrigger`. |
 | `direction` |'in', 'out' |Indica se a associação é para receber dados na função ou enviar dados a partir da função. |
-| `name` |string |O nome que é usado para os dados associados na função. Em C#, esse é um nome de um argumento. Em JavaScript, é a chave em uma lista de chaves/valores. |
+| `name` |cadeia de caracteres |O nome que é usado para os dados associados na função. Em C#, esse é um nome de um argumento. Em JavaScript, é a chave em uma lista de chaves/valores. |
 
-## <a name="function-app"></a>Aplicativo de funções
+## <a name="function-app"></a>Aplicativo de função
 O aplicativo de funções fornece um contexto de execução no Azure no qual suas funções são executadas. Um aplicativo de funções é composto por uma ou mais funções individuais que são gerenciadas, implantadas e dimensionadas em conjunto. Todas as funções em um aplicativo de funções compartilham o mesmo plano de preços, a implantação contínua e a versão de tempo de execução. Pense em um aplicativo de funções como uma forma de organizar e gerenciar coletivamente suas funções. 
 
 > [!NOTE]
@@ -61,7 +63,7 @@ O aplicativo de funções fornece um contexto de execução no Azure no qual sua
 ## <a name="folder-structure"></a>Estrutura de pastas
 [!INCLUDE [functions-folder-structure](../../includes/functions-folder-structure.md)]
 
-A estrutura de pastas acima é a estrutura padrão (e recomendada) de um aplicativo de funções. Se você quiser alterar o local do arquivo do código de uma função, modifique a seção `scriptFile` do arquivo _function.json_. Também recomendamos usar a [implantação de pacote](deployment-zip-push.md) para implantar o projeto no aplicativo de funções no Azure. Você também pode usar ferramentas existentes, como [integração contínua e implantação](functions-continuous-deployment.md) e Azure DevOps.
+A estrutura de pastas acima é a estrutura padrão (e recomendada) de um aplicativo de funções. Se você quiser alterar o local do arquivo do código de uma função, modifique a seção `scriptFile` do arquivo _function.json_. Também recomendamos usar a [implantação de pacote](deployment-zip-push.md) para implantar seu projeto em seu aplicativo de funções no Azure. Você também pode usar ferramentas existentes, como [integração contínua e implantação](functions-continuous-deployment.md) e Azure DevOps.
 
 > [!NOTE]
 > Ao implantar um pacote manualmente, implante seu arquivo _host.json_ e pastas da função diretamente na pasta `wwwroot`. Não inclua a pasta `wwwroot` nas implantações. Caso contrário, você acabará com pastas `wwwroot\wwwroot`.
@@ -102,7 +104,7 @@ Está tendo problemas com erros provenientes de associações? Examine a documen
 [!INCLUDE [Reporting Issues](../../includes/functions-reporting-issues.md)]
 
 ## <a name="next-steps"></a>Próximas etapas
-Para saber mais, consulte os recursos a seguir:
+Para obter mais informações, consulte os seguintes recursos:
 
 * [Gatilhos e associações de Azure Functions](functions-triggers-bindings.md)
 * [Codificar e testar o Azure Functions localmente](./functions-develop-local.md)

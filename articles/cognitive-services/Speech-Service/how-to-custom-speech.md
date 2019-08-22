@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: erhopf
-ms.openlocfilehash: a5ced51eabe708dc7883fc91e5b6fa67f9211381
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: f2b95affd08c989a9d1cdee53c0a4e6df16af106
+ms.sourcegitcommit: a3a40ad60b8ecd8dbaf7f756091a419b1fe3208e
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68559641"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69892046"
 ---
 # <a name="what-is-custom-speech"></a>O que é Fala Personalizada?
 
-[Fala personalizada](https://aka.ms/custom-speech) é um conjunto de ferramentas online que permite avaliar e aprimorar a precisão de fala para texto da Microsoft para seus aplicativos, ferramentas e produtos. Tudo o que é necessário para começar são alguns arquivos de áudio de teste. Siga os links abaixo para começar a criar uma experiência de fala em texto Personalizada.
+[Fala personalizada](https://aka.ms/customspeech) é um conjunto de ferramentas online que permite avaliar e aprimorar a precisão de fala para texto da Microsoft para seus aplicativos, ferramentas e produtos. Tudo o que é necessário para começar são alguns arquivos de áudio de teste. Siga os links abaixo para começar a criar uma experiência de fala em texto Personalizada.
 
 ## <a name="whats-in-custom-speech"></a>O que há de Fala Personalizada?
 

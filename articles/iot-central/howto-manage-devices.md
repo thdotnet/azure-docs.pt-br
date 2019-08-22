@@ -8,14 +8,16 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: a4a22cc2161af444ba2169cc2f83124e80c7ec11
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 364bd4dd0781c5fd74d0e4bdbfe3b4372a3d3ca0
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67052983"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876010"
 ---
 # <a name="manage-devices-in-your-azure-iot-central-application"></a>Gerenciar dispositivos no aplicativo Azure IoT Central
+
+[!INCLUDE [iot-central-original-pnp](../../includes/iot-central-original-pnp-note.md)]
 
 Este artigo descreve como, como operador, gerenciar dispositivos no seu Microsoft IoT Central. Como um operador, você pode:
 
@@ -94,7 +96,7 @@ Se você registrar dispositivos iniciando a importação em **Dispositivos não 
 
     ![Associar Dispositivos](./media/howto-manage-devices/unassociateddevices2a.png)
 
-1. Escolha o modelo da lista de modelos disponíveis e selecione **associar**.
+1. Escolha o modelo na lista de modelos disponíveis e selecione **associar**.
 
 1. Os dispositivos selecionados estão associados ao modelo de dispositivo que você escolheu.
 
@@ -103,7 +105,7 @@ Se você registrar dispositivos iniciando a importação em **Dispositivos não 
 
 ## <a name="export-devices"></a>Exportar dispositivos
 
-Para conectar um dispositivo real à IoT Central, você precisa de sua cadeia de conexão. Você pode exportar os detalhes do dispositivo em massa para obter as informações necessárias criar cadeias de caracteres de conexão de dispositivo. O processo de exportação cria um arquivo CSV com a identidade do dispositivo, nome do dispositivo e chaves para todos os dispositivos selecionados.
+Para conectar um dispositivo real à IoT Central, você precisa de sua cadeia de conexão. Você pode exportar detalhes do dispositivo em massa para obter as informações necessárias para criar cadeias de conexão de dispositivo. O processo de exportação cria um arquivo CSV com a identidade do dispositivo, o nome do dispositivo e as chaves para todos os dispositivos selecionados.
 
 Para exportar em massa os dispositivos do seu aplicativo:
 
@@ -111,15 +113,15 @@ Para exportar em massa os dispositivos do seu aplicativo:
 
 1. No painel esquerdo, escolha o modelo de dispositivo para o qual você deseja exportar os dispositivos.
 
-1. Selecione os dispositivos que você deseja exportar e, em seguida, selecione a **exportar** ação.
+1. Selecione os dispositivos que você deseja exportar e, em seguida, selecione a ação **Exportar** .
 
-    ![Exportação](./media/howto-manage-devices/export1a.png)
+    ![Exportar](./media/howto-manage-devices/export1a.png)
 
 1. O processo de exportação tem início. Você pode acompanhar o status na parte superior da grade.
 
 1. Quando a exportação for concluída, será mostrada uma mensagem com um link para baixar o arquivo gerado.
 
-1. Selecione o **mensagem de êxito** para baixar o arquivo em uma pasta local no disco.
+1. Selecione a **mensagem de êxito** para baixar o arquivo em uma pasta local no disco.
 
     ![Exportação bem-sucedida](./media/howto-manage-devices/export2a.png)
 
@@ -132,7 +134,7 @@ Para exportar em massa os dispositivos do seu aplicativo:
     * IOTC_X509THUMBPRINT_PRIMARY
     * IOTC_X509THUMBPRINT_SECONDARY
 
-Ver [conectividade do dispositivo no Azure IoT Central](concepts-connectivity.md), para obter mais informações sobre cadeias de caracteres de conexão e está se conectando dispositivos reais para seu aplicativo IoT Central.
+Consulte [conectividade do dispositivo no Azure IOT central](concepts-connectivity.md), para obter mais informações sobre cadeias de conexão e conectar dispositivos reais ao seu aplicativo IOT central.
 
 ## <a name="delete-a-device"></a>Excluir um dispositivo
 

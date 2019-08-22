@@ -1,36 +1,36 @@
 ---
-title: Azure Active Directory B2C - as trocas de declarações da API REST
-description: Adicione trocas de declarações da API REST para políticas personalizadas no B2C do Active Directory.
+title: Trocas de declarações da API REST-Azure Active Directory B2C
+description: Adicione trocas de declarações da API REST a políticas personalizadas no Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 05/20/2019
+ms.date: 08/21/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 0bdef508e12a3b11143149b330da73838b53f860
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: 42129870c6ab2bb5e58bdf9aaa323a3d64b479f8
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67439010"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69644919"
 ---
-# <a name="add-rest-api-claims-exchanges-to-custom-policies-in-azure-active-directory-b2c"></a>Adicionar trocas de declarações da API REST para políticas personalizadas no Azure Active Directory B2C
+# <a name="add-rest-api-claims-exchanges-to-custom-policies-in-azure-active-directory-b2c"></a>Adicionar trocas de declarações da API REST a políticas personalizadas no Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Você pode adicionar a interação com uma API RESTful para seus [políticas personalizadas](active-directory-b2c-overview-custom.md) no Azure Active Directory (Azure AD) B2C. Este artigo mostra como criar um percurso do usuário do Azure AD B2C que interage com serviços RESTful.
+Você pode adicionar interação com uma API RESTful às suas [políticas personalizadas](active-directory-b2c-overview-custom.md) no Azure Active Directory (Azure AD) B2C. Este artigo mostra como criar uma jornada de usuário Azure AD B2C que interage com os serviços RESTful.
 
-A interação inclui uma troca de declarações de informações entre as declarações da API REST e Azure AD B2C. As trocas de declarações têm as seguintes características:
+A interação inclui uma troca de declarações de informações entre as declarações da API REST e a Azure AD B2C. As trocas de declarações têm as seguintes características:
 
 - Pode ser projetada como uma etapa de orquestração.
 - Pode disparar uma ação externa. Por exemplo, ela pode registrar um evento em um banco de dados externo.
 - Pode ser usada para buscar um valor e, em seguida, armazená-lo no banco de dados do usuário.
 - Pode alterar o fluxo de execução.
 
-O cenário que é representado neste artigo inclui as seguintes ações:
+O cenário representado neste artigo inclui as seguintes ações:
 
 1. Procurar pelo usuário em um sistema externo.
 2. Obter a cidade em que o usuário está registrado.
@@ -39,13 +39,13 @@ O cenário que é representado neste artigo inclui as seguintes ações:
 ## <a name="prerequisites"></a>Pré-requisitos
 
 - Conclua as etapas em [Introdução às políticas personalizadas](active-directory-b2c-get-started-custom.md).
-- Um ponto de extremidade de API REST com o qual se irá interagir. Este artigo utilizará uma simple Azure funcione como um exemplo. Para criar a função do Azure, consulte [criar sua primeira função no portal do Azure](../azure-functions/functions-create-first-azure-function.md).
+- Um ponto de extremidade de API REST com o qual se irá interagir. Este artigo usa uma função simples do Azure como um exemplo. Para criar a função do Azure, consulte [criar sua primeira função no portal do Azure](../azure-functions/functions-create-first-azure-function.md).
 
 ## <a name="prepare-the-api"></a>Preparar a API
 
-Nesta seção, você prepara a função do Azure para receber um valor para `email`e, em seguida, retornar o valor para `city` que pode ser usado pelo Azure AD B2C como uma declaração.
+Nesta seção, você prepara a função do Azure para receber um valor de `email`e, em seguida, retorna o `city` valor para que pode ser usado pelo Azure ad B2C como uma declaração.
 
-Altere o arquivo Run. CSx para a função do Azure que você criou para usar o código a seguir:
+Altere o arquivo run. CSX para a função do Azure que você criou para usar o seguinte código:
 
 ```csharp
 #r "Newtonsoft.Json"
@@ -86,7 +86,7 @@ public class ResponseContent
 
 Um perfil técnico fornece a configuração para a troca de declarações.
 
-Abra o *trustframeworkextensions. XML* do arquivo e adicione o seguinte **ClaimsProvider** elemento XML dentro a **ClaimsProviders** elemento.
+Abra o arquivo *TrustFrameworkExtensions. xml* e adicione o seguinte elemento XML claimprovider dentro do elemento **ClaimsProviders** .
 
 ```XML
 <ClaimsProvider>
@@ -97,8 +97,10 @@ Abra o *trustframeworkextensions. XML* do arquivo e adicione o seguinte **Claims
       <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
       <Metadata>
         <Item Key="ServiceUrl">https://myfunction.azurewebsites.net/api/HttpTrigger1?code=bAZ4lLy//ZHZxmncM8rI7AgjQsrMKmVXBpP0vd9smOzdXDDUIaLljA==</Item>
-        <Item Key="AuthenticationType">None</Item>
         <Item Key="SendClaimsIn">Body</Item>
+        <!-- Set AuthenticationType to Basic or ClientCertificate in production environments -->
+        <Item Key="AuthenticationType">None</Item>
+        <!-- REMOVE the following line in production environments -->
         <Item Key="AllowInsecureAuthInProduction">true</Item>
       </Metadata>
       <InputClaims>
@@ -113,11 +115,13 @@ Abra o *trustframeworkextensions. XML* do arquivo e adicione o seguinte **Claims
 </ClaimsProvider>
 ```
 
-O **InputClaims** elemento define as declarações que são enviadas para o serviço REST. Neste exemplo, o valor da declaração `givenName` é enviada para o serviço REST como a declaração `email`. O **OutputClaims** elemento define as declarações que são esperadas do serviço REST.
+O elemento **InputClaims** define as declarações que são enviadas para o serviço REST. Neste exemplo, o valor da Declaração `givenName` é enviado para o serviço REST como a declaração. `email` O elemento **OutputClaims** define as declarações que são esperadas do serviço REST.
 
-## <a name="add-the-claim-definition"></a>Adicione a definição de declaração
+Os comentários acima `AuthenticationType` e `AllowInsecureAuthInProduction` especificam as alterações que você deve fazer ao mudar para um ambiente de produção. Para saber como proteger suas APIs RESTful para produção, consulte [proteger APIs RESTful com autenticação básica](active-directory-b2c-custom-rest-api-netfw-secure-basic.md) e [proteger APIs RESTful com autenticação de certificado](active-directory-b2c-custom-rest-api-netfw-secure-cert.md).
 
-Adicione uma definição para `city` dentro de **BuildingBlocks** elemento. Você encontra esse elemento no início do arquivo TrustFrameworkExtensions.xml.
+## <a name="add-the-claim-definition"></a>Adicionar a definição de declaração
+
+Adicione uma definição para `city` dentro do elemento **BuildingBlocks** . Você encontra esse elemento no início do arquivo TrustFrameworkExtensions.xml.
 
 ```XML
 <BuildingBlocks>
@@ -136,7 +140,7 @@ Adicione uma definição para `city` dentro de **BuildingBlocks** elemento. Voc�
 
 Há muitos casos de uso em que a chamada à API REST pode ser usada como uma etapa de orquestração. Como uma etapa de orquestração, ela pode ser usada como uma atualização para um sistema externo depois que um usuário tenha concluído uma tarefa com êxito, como o primeiro registro, ou como uma atualização de perfil para manter as informações sincronizadas. Nesse caso, ela é usada para aumentar as informações fornecidas para o aplicativo depois da edição do perfil.
 
-Adicione uma etapa para o percurso de usuário de edição de perfil. Depois que o usuário é autenticado (etapas de orquestração 1 a 4 no XML a seguir) e o usuário tenha fornecido as informações de perfil atualizado (etapa 5). Copie o perfil de edição de código XML do percurso de usuário da *Trustframeworkbase* do arquivo para seu *trustframeworkextensions. XML* dentro do arquivo a **UserJourneys** elemento. Em seguida, fazer a modificação como a etapa 6.
+Adicione uma etapa à jornada do usuário de edição de perfil. Depois que o usuário é autenticado (etapas de orquestração 1-4 no XML a seguir), e o usuário forneceu as informações de perfil atualizadas (etapa 5). Copie o código XML de jornada do usuário de edição de perfil do arquivo *TrustFrameworkBase. xml* para o arquivo *TrustFrameworkExtensions. xml* dentro do elemento userjornadas. Em seguida, faça a modificação como etapa 6.
 
 ```XML
 <OrchestrationStep Order="6" Type="ClaimsExchange">
@@ -146,7 +150,7 @@ Adicione uma etapa para o percurso de usuário de edição de perfil. Depois que
 </OrchestrationStep>
 ```
 
-O XML final para o percurso do usuário deve parecer com este exemplo:
+O XML final da jornada do usuário deve ser semelhante a este exemplo:
 
 ```XML
 <UserJourney Id="ProfileEdit">
@@ -204,11 +208,11 @@ O XML final para o percurso do usuário deve parecer com este exemplo:
 </UserJourney>
 ```
 
-## <a name="add-the-claim"></a>Adicione a declaração
+## <a name="add-the-claim"></a>Adicionar a declaração
 
-Editar o *Profileedit* arquivo e adicione `<OutputClaim ClaimTypeReferenceId="city" />` para o **OutputClaims** elemento.
+Edite o arquivo *ProfileEdit. xml* e `<OutputClaim ClaimTypeReferenceId="city" />` adicione ao elemento **OutputClaims** .
 
-Depois de adicionar a nova declaração, o perfil técnico se parece com este exemplo:
+Depois de adicionar a nova declaração, o perfil técnico é semelhante a este exemplo:
 
 ```XML
 <TechnicalProfile Id="PolicyProfile">
@@ -225,13 +229,13 @@ Depois de adicionar a nova declaração, o perfil técnico se parece com este ex
 
 ## <a name="upload-your-changes-and-test"></a>carregar suas alterações e testar
 
-1. (Opcional:) Salve a versão existente (Baixando) dos arquivos antes de continuar.
-2. Carregar o *trustframeworkextensions. XML* e *Profileedit* e selecione para substituir o arquivo existente.
+1. (Opcional:) Salve a versão existente (baixando) dos arquivos antes de continuar.
+2. Carregue o *TrustFrameworkExtensions. xml* e o *ProfileEdit. xml* e selecione para substituir o arquivo existente.
 3. Selecione **B2C_1A_ProfileEdit**.
-4. Para **selecione o aplicativo** na página de visão geral da política personalizada, selecione o aplicativo web chamado *webapp1* que você registrou anteriormente. Certifique-se de que o **URL de resposta** é `https://jwt.ms`.
-4. Selecione **executar agora**. Entre com suas credenciais de conta e, em seguida, clique em **continuar**.
+4. Para **Selecionar aplicativo** na página Visão geral da política personalizada, selecione o aplicativo Web chamado *webapp1* que você registrou anteriormente. Verifique se a **URL de resposta** é `https://jwt.ms`.
+4. Selecione **executar agora**. Entre com suas credenciais de conta e clique em **continuar**.
 
-Se tudo está configurado corretamente, o token inclui a nova declaração `city`, com o valor `Redmond`.
+Se tudo estiver configurado corretamente, o token incluirá a nova declaração `city`, com o valor `Redmond`.
 
 ```JSON
 {
@@ -251,5 +255,13 @@ Se tudo está configurado corretamente, o token inclui a nova declaração `city
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- Você também pode projetar a interação como um perfil de validação. Para saber mais, confira [Passo a passo: integrar as trocas de declarações da API REST no percurso do usuário do Azure AD B2C como validação na entrada do usuário](active-directory-b2c-rest-api-validation-custom.md).
-- [Modificar a edição de perfil para coletar informações adicionais de seus usuários](active-directory-b2c-create-custom-attributes-profile-edit-custom.md)
+Você também pode projetar a interação como um perfil de validação. Para saber mais, confira [Passo a passo: integrar as trocas de declarações da API REST no percurso do usuário do Azure AD B2C como validação na entrada do usuário](active-directory-b2c-rest-api-validation-custom.md).
+
+[Modificar a edição de perfil para coletar informações adicionais de seus usuários](active-directory-b2c-create-custom-attributes-profile-edit-custom.md)
+
+[Referência: Perfil técnico RESTful](restful-technical-profile.md)
+
+Para saber como proteger suas APIs, consulte os seguintes artigos:
+
+* [Proteja sua API RESTful com a autenticação básica (nome de usuário e senha)](active-directory-b2c-custom-rest-api-netfw-secure-basic.md)
+* [Proteja sua API RESTful com certificados de cliente](active-directory-b2c-custom-rest-api-netfw-secure-cert.md)

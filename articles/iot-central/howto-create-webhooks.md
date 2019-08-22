@@ -8,22 +8,24 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: fdeefdc1ec5372d6ac17f0f985ee0c50ce902e56
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 508e8b4b3a909e87f538f67b1ad9a5efdbcd9551
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67165316"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876032"
 ---
 # <a name="create-webhook-actions-on-rules-in-azure-iot-central"></a>Criar ações de webhook em regras no Microsoft Azure IoT Central
 
 *Este tópico aplica-se a construtores e administradores.*
 
-Webhooks permitem que você conecte o aplicativo IoT Central a outros aplicativos e serviços de monitoramento remoto e notificações. Webhooks notificam automaticamente os outros aplicativos e serviços conectados sempre que uma regra é acionada no aplicativo IoT Central. O aplicativo de Central da IoT envia uma solicitação POST ao ponto de extremidade HTTP do outro aplicativo sempre que uma regra é disparada. A carga contém detalhes do dispositivo e os detalhes de gatilho de regra.
+[!INCLUDE [iot-central-original-pnp](../../includes/iot-central-original-pnp-note.md)]
+
+Webhooks permitem que você conecte o aplicativo IoT Central a outros aplicativos e serviços de monitoramento remoto e notificações. Webhooks notificam automaticamente os outros aplicativos e serviços conectados sempre que uma regra é acionada no aplicativo IoT Central. Seu aplicativo IoT Central envia uma solicitação POST para o ponto de extremidade HTTP do outro aplicativo sempre que uma regra é disparada. A carga contém detalhes do dispositivo e detalhes do gatilho da regra.
 
 ## <a name="set-up-the-webhook"></a>Configurar o webhook
 
-Neste exemplo, conecte-se para o RequestBin para ser notificado quando as regras de acionam usando webhooks.
+Neste exemplo, você se conecta ao RequestBin para ser notificado quando as regras forem acionadas usando WebHooks.
 
 1. Abra [RequestBin](https://requestbin.net/).
 
@@ -31,17 +33,17 @@ Neste exemplo, conecte-se para o RequestBin para ser notificado quando as regras
 
 1. Crie uma [regra de telemetria](howto-create-telemetry-rules.md) ou uma [regra de evento](howto-create-event-rules.md). Salve a regra e adicione uma nova ação.
 
-    ![Tela de criação do Webhook](media/howto-create-webhooks/webhookcreate.png)
+    ![Tela de criação do webhook](media/howto-create-webhooks/webhookcreate.png)
 
 1. Escolha a ação do webhook, forneça um nome de exibição e cole a URL do Compartimento como URL de Retorno de Chamada.
 
 1. Salve a regra.
 
-Agora quando a regra é disparada, você verá uma nova solicitação aparecem no RequestBin.
+Agora, quando a regra for disparada, você verá que uma nova solicitação aparecerá em RequestBin.
 
-## <a name="payload"></a>Carga útil
+## <a name="payload"></a>Conteúdo
 
-Quando uma regra é acionada, uma solicitação HTTP POST é feita para a URL de retorno de chamada que contém uma carga json com as medidas, dispositivo, regra e detalhes do aplicativo. Para uma regra de telemetria, a carga é semelhante ao seguinte:
+Quando uma regra é acionada, uma solicitação HTTP POST é feita para a URL de retorno de chamada que contém uma carga json com as medidas, dispositivo, regra e detalhes do aplicativo. Para uma regra de telemetria, o conteúdo é semelhante ao seguinte:
 
 ```json
 {
@@ -97,4 +99,4 @@ Se você tiver algumas ideias para melhorar esse recurso, poste suas sugestões 
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Agora que você aprendeu como configurar e usar webhooks, a próxima etapa sugerida é explorar [criação de fluxos de trabalho no Microsoft Flow](howto-add-microsoft-flow.md).
+Agora que você aprendeu como configurar e usar WebHooks, a próxima etapa sugerida é explorar a [criação de fluxos de trabalho em Microsoft Flow](howto-add-microsoft-flow.md).

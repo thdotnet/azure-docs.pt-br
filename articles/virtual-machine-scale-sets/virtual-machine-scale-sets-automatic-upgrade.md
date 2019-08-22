@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/16/2019
 ms.author: manayar
-ms.openlocfilehash: ac754acd61700dc39ebc633da4274c74d8463824
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: a9829f380200e616d242f5406b72593014f0efc2
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68884177"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69656557"
 ---
 # <a name="azure-virtual-machine-scale-set-automatic-os-image-upgrades"></a>Atualizações automáticas de imagem do sistema operacional do conjunto de dimensionamento de máquinas virtuais do Azure
 
@@ -56,7 +56,7 @@ No momento, há suporte apenas determinadas imagens de plataforma do sistema ope
 
 Os seguintes SKUs são compatíveis atualmente (e mais são adicionados periodicamente):
 
-| Editor               | Oferta de sistema operacional      |  Sku               |
+| Publicador               | Oferta de sistema operacional      |  Sku               |
 |-------------------------|---------------|--------------------|
 | Canônico               | UbuntuServer  | 16.04-LTS          |
 | Canônico               | UbuntuServer  | 18.04-LTS          |
@@ -69,6 +69,7 @@ Os seguintes SKUs são compatíveis atualmente (e mais são adicionados periodic
 | Microsoft Corporation   | WindowsServer | 2019-Datacenter |
 | Microsoft Corporation   | WindowsServer | 2019-datacenter-Smalldisk |
 | Microsoft Corporation   | WindowsServer | 2019-Datacenter-with-Containers |
+| Microsoft Corporation   | WindowsServer | Datacenter-Core-1903-com-containers-smalldisk |
 
 
 ## <a name="requirements-for-configuring-automatic-os-image-upgrade"></a>Requisitos para configurar a atualização automática de imagem do sistema operacional

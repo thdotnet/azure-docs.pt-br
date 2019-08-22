@@ -2,19 +2,19 @@
 title: Como gerenciar gravações simultâneas em recursos – Azure Search
 description: Use a simultaneidade otimista para evitar colisões de ar intermediário em atualizações ou exclusões para os índices do Azure Search, indexadores e fontes de dados.
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 services: search
 ms.service: search
 ms.topic: conceptual
 ms.date: 07/21/2017
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 7e569fa30727f2df7411eee5fa6d48f9b9454460
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 67f2dad016d3958dc10ba87e785d31694a1c94f5
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65025332"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69656732"
 ---
 # <a name="how-to-manage-concurrency-in-azure-search"></a>Como gerenciar a simultaneidade no Azure Search
 
@@ -23,7 +23,7 @@ Ao gerenciar recursos do Azure Search, como índices e fontes de dados, é impor
 > [!Tip]
 > Código conceitual em uma [solução C# de exemplo](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetETagsExplainer) explica como funciona o controle de simultaneidade no Azure Search. O código cria condições que invocam o controle de simultaneidade. Ler o [fragmento de código a seguir](#samplecode) é provavelmente suficiente para a maioria dos desenvolvedores, mas se você deseja executar, edite appsettings.json para adicionar o nome do serviço e uma chave de api de administração. Dado um URL de serviço de `http://myservice.search.windows.net`, o nome do serviço é `myservice`.
 
-## <a name="how-it-works"></a>Como ele funciona
+## <a name="how-it-works"></a>Como funciona
 
 A simultaneidade otimista é implementada por meio de verificações de condição de acesso nas chamadas à API gravando índices, indexadores, fontes de dados e recursos synonymMap.
 
@@ -170,7 +170,7 @@ O código a seguir demonstra verificações accessCondition para operações de 
 
 Um padrão de design para implementar simultaneidade otimista deve incluir um loop que repete a verificação da condição de acesso, um teste para a condição de acesso e, opcionalmente, recupera um recurso atualizado antes de tentar aplicar novamente as alterações.
 
-Este snippet de código mostra a adição de um synonymMap para um índice que já existe. Esse código é do [sinônimo C# exemplo para o Azure Search](search-synonyms-tutorial-sdk.md).
+Este snippet de código mostra a adição de um synonymMap para um índice que já existe. Esse código é do [exemplo de C# sinônimo para Azure Search](search-synonyms-tutorial-sdk.md).
 
 O snippet de código obtém o índice "hotéis", verifica a versão do objeto em uma operação de atualização, gera uma exceção se a condição falha e, em seguida, repete a operação (até três vezes), iniciando com a recuperação de índice do servidor para obter a versão mais recente.
 

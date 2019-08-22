@@ -15,12 +15,12 @@ ms.workload: azure-vs
 ms.date: 02/18/2019
 ms.author: glenga
 ms.reviewer: david.ebbo;suwatch;pbatum;naren.soni
-ms.openlocfilehash: d50acc50880229626c847d41d9abe9a9e13d9c6e
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: 58d03d80c82fbf58803f7fefa8ef60c19f99bced
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736126"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876879"
 ---
 # <a name="develop-and-deploy-webjobs-using-visual-studio---azure-app-service"></a>Desenvolver e implantar o WebJobs usando o Visual Studio – Serviço de Aplicativo do Azure
 
@@ -37,7 +37,7 @@ Ao usar a versão 3. x dos trabalhos Web, você pode criar e publicar trabalhos 
 > [!NOTE]
 > Os webjobs do .NET Core não podem ser vinculados a projetos da Web. Se você precisar implantar seu WebJob com um aplicativo Web, deverá [criar seu webjob como um aplicativo de console .NET Framework](#webjobs-as-net-framework-console-apps).  
 
-### <a name="deploy-to-azure-app-service"></a>Implantar no serviço Azure App
+### <a name="deploy-to-azure-app-service"></a>Implantar no Serviço de Aplicativo do Azure
 
 A publicação de um WebJob do .NET Core no serviço de aplicativo do Visual Studio usa as mesmas ferramentas que a publicação de um aplicativo ASP.NET Core.
 
@@ -90,7 +90,7 @@ Um projeto habilitado para Trabalhos Web tem os seguintes itens adicionados:
 
 Se estiver usando o Visual Studio 2015, instale o [SDK do Azure para .NET (Visual Studio 2015)](https://azure.microsoft.com/downloads/).
 
-Se você estiver usando o Visual Studio 2019, instale a [carga de trabalho de desenvolvimento do Azure](https://docs.microsoft.com/visualstudio/install/install-visual-studio#step-4---choose-workloads).
+Se estiver usando o Visual Studio 2017, instale a [carga de trabalho de desenvolvimento do Azure](https://docs.microsoft.com/visualstudio/install/install-visual-studio#step-4---choose-workloads).
 
 ### <a id="convert"></a> Habilitar a implantação do WebJobs em um projeto existente do Aplicativo de Console
 

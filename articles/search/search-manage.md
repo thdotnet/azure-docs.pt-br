@@ -2,7 +2,7 @@
 title: Administração de serviço do Azure Search no portal – Azure Search
 description: Gerencie um serviço do Azure Search, um serviço de pesquisa hospedado na nuvem do Microsoft Azure, usando o portal do Azure.
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 tags: azure-portal
 services: search
 ms.service: search
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/08/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: d5820c927b88eba37eaf092dfd4b209180bfc8eb
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2c4b2a03e7e5c818453eaf4ad6881b2caba3b93c
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60565422"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69647671"
 ---
 # <a name="service-administration-for-azure-search-in-the-azure-portal"></a>Administração do serviço do Azure Search no portal do Azure
 > [!div class="op_single_selector"]
@@ -60,7 +60,7 @@ Em termos de informações gerais sobre o serviço, você pode obter informaçõ
 <a id="sub-5"></a>
 
 ## <a name="monitor-resource-usage"></a>Monitorar o uso de recursos
-No painel, o monitoramento de recursos é limitado às informações mostradas no painel de serviço e a algumas métricas que você pode obter ao consultar o serviço. No painel do serviço, na seção Uso, é possível determinar rapidamente se os níveis de recurso da partição estão adequados para o seu aplicativo. Você pode provisionar recursos externos, como o monitoramento do Azure, se você deseja capturar e manter os eventos registrados em log. Para obter mais informações, consulte [de monitoramento do Azure Search](search-monitor-usage.md).
+No painel, o monitoramento de recursos é limitado às informações mostradas no painel de serviço e a algumas métricas que você pode obter ao consultar o serviço. No painel do serviço, na seção Uso, é possível determinar rapidamente se os níveis de recurso da partição estão adequados para o seu aplicativo. Você pode provisionar recursos externos, como o monitoramento do Azure, se desejar capturar e persistir eventos registrados. Para obter mais informações, consulte [monitoring Azure Search](search-monitor-usage.md).
 
 Usando a API REST do Serviço Search, você pode obter uma contagem dos documentos e índices: 
 

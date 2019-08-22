@@ -1,8 +1,8 @@
 ---
-title: Exemplos de consulta usando a sintaxe de pesquisa "simples" - Azure Search
+title: Exemplos de consulta usando a sintaxe de pesquisa "simples"-Azure Search
 description: Exemplos de consulta simples para pesquisa de texto completo, pesquisa de filtro, pesquisa geográfica, pesquisa facetada e outras cadeias de caracteres de consulta usadas para consultar um índice do Azure Search.
 author: HeidiSteen
-manager: cgronlun
+manager: nitinme
 tags: Simple query analyzer syntax
 services: search
 ms.service: search
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 6b7451371fe1562a6763643cd90e5646bd255018
-ms.sourcegitcommit: cf438e4b4e351b64fd0320bf17cc02489e61406a
+ms.openlocfilehash: df84686e512db90351d5a9815706890bce49848b
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67653520"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69647627"
 ---
 # <a name="query-examples-using-the-simple-search-syntax-in-azure-search"></a>Exemplos de consulta usando a sintaxe de pesquisa "simples" no Azure Search
 
@@ -55,9 +55,9 @@ A composição de URL possui os elementos a seguir:
 
 ## <a name="send-your-first-query"></a>Enviar a primeira consulta
 
-Como uma etapa de verificação, cole a solicitação a seguir no GET e clique em **Enviar**. Os resultados são retornados como documentos JSON detalhados. Documentos inteiros são retornados, que permite que você veja todos os campos e todos os valores.
+Como uma etapa de verificação, cole a solicitação a seguir no GET e clique em **Enviar**. Os resultados são retornados como documentos JSON detalhados. Documentos inteiros são retornados, o que permite que você veja todos os campos e todos os valores.
 
-Cole essa URL em um cliente REST como uma etapa de validação e exibir a estrutura do documento.
+Cole essa URL em um cliente REST como uma etapa de validação e exiba a estrutura do documento.
 
   ```http
   https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&$count=true&search=*
@@ -211,7 +211,7 @@ POST /indexes/nycjobs/docs/search?api-version=2019-05-06
       "count": "true"
     }
 ```
-Para obter resultados mais legíveis, os resultados da pesquisa são cortados para incluir uma ID de trabalho, cargo e o local de trabalho. As coordenadas iniciais foram obtidas de um documento aleatório no índice (nesse caso, para um local de trabalho em Staten Island).
+Para obter resultados mais legíveis, os resultados da pesquisa são cortados para incluir uma ID do trabalho, um cargo e o local de trabalho. As coordenadas iniciais foram obtidas de um documento aleatório no índice (nesse caso, para um local de trabalho em Staten Island).
 
 Também é possível experimentar isso em Postman usando GET:
 

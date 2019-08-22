@@ -6,14 +6,14 @@ manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 08/09/2019
+ms.date: 08/20/2019
 ms.author: v-adgera
-ms.openlocfilehash: 7ceb36d818c84642461372f0df70c8088908550c
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.openlocfilehash: 66dbfd09ef07740c07ddb010b73e33e783340e5a
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68965794"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69873631"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Como configurar o Postman para os Gêmeos Digitais do Azure
 
@@ -53,7 +53,9 @@ Configurar seu aplicativo Azure Active Directory para usar o fluxo de concessão
 
 ## <a name="obtain-an-oauth-20-token"></a>Obter um token do OAuth 2.0
 
-Em seguida, configure e instale o Postman para obter um token do Azure Active Directory. Em seguida, faça uma solicitação HTTP autenticada para os Gêmeos Digitais do Azure usando o token adquirido:
+[!INCLUDE [digital-twins-management-api](../../includes/digital-twins-management-api.md)]
+
+Configure e configure o postmaster para obter um token de Azure Active Directory. Em seguida, faça uma solicitação HTTP autenticada para os Gêmeos Digitais do Azure usando o token adquirido:
 
 1. Vá para [www.getpostman.com](https://www.getpostman.com/) para baixar o aplicativo.
 1. Verifique se sua **URL de Autorização** está correta. Deve pegar o formato:

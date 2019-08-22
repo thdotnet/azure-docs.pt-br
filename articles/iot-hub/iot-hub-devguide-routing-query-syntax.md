@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 08/13/2018
 ms.author: asrastog
-ms.openlocfilehash: 94d3599fe919cf648be7115be68002d2aa458ee3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 7f6439d79e5d46621b92b1c24ba5caf87889f443
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60400636"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69877070"
 ---
 # <a name="iot-hub-message-routing-query-syntax"></a>Sintaxe de consulta do roteamento de mensagens do Hub IoT
 
@@ -51,12 +51,13 @@ O Hub IoT define um [formato comum](iot-hub-devguide-messages-construct.md) para
 
 As propriedades do sistema ajudam a identificar o conteúdo e a origem das mensagens. 
 
-| Propriedade | Type | DESCRIÇÃO |
+| Propriedade | Tipo | Descrição |
 | -------- | ---- | ----------- |
 | contentType | cadeia de caracteres | O usuário especifica o tipo de conteúdo da mensagem. Para permitir a consulta no corpo da mensagem, esse valor deve ser definido como application/JSON. |
 | contentEncoding | cadeia de caracteres | O usuário especifica o tipo de codificação da mensagem. Os valores permitidos são UTF-8, UTF-16, UTF-32 se o contentType for definido como application/JSON. |
 | iothub-connection-device-id | cadeia de caracteres | Esse valor é definido pelo Hub IoT e identifica a ID do dispositivo. Para consultar, use `$connectionDeviceId`. |
 | iothub-enqueuedtime | cadeia de caracteres | Esse valor é definido pelo Hub IoT e representa a hora real de enfileiramento da mensagem em UTC. Para consultar, use `enqueuedTime`. |
+| iothub-interface-nome | cadeia de caracteres | Esse valor é definido pelo usuário e representa o nome da interface de entrelaçamento digital que implementa a mensagem de telemetria. Para consultar, use `$interfaceName`. Esse recurso está disponível como parte da [Visualização pública do IoT plug and Play](../iot-pnp/overview-iot-plug-and-play.md). |
 
 Conforme descrito nas [Mensagens do Hub IoT](iot-hub-devguide-messages-construct.md), há propriedades de sistema adicionais em uma mensagem. Além de **contentType**, **contentEncoding** e **enqueuedTime**, a **connectionDeviceId** e a  **connectionModuleId** também podem ser consultadas.
 
@@ -86,7 +87,7 @@ Para combinar essas consultas, é possível usar expressões e funções boolian
 $contentEncoding = 'UTF-8' AND processingPath = 'hot'
 ```
 
-Uma lista completa de funções e operadores com suporte está relacionada em [Expressão e condições](iot-hub-devguide-query-language.md#expressions-and-conditions)
+Uma lista completa de operadores e funções com suporte é mostrada em [expressão e condições](iot-hub-devguide-query-language.md#expressions-and-conditions).
 
 ## <a name="message-routing-query-based-on-message-body"></a>Consulta de roteamento de mensagens com base no corpo da mensagem 
 
@@ -163,7 +164,7 @@ $body.Weather.Temperature = 50 AND processingPath = 'hot'
 
 ## <a name="message-routing-query-based-on-device-twin"></a>Consulta de roteamento de mensagens com base em dispositivo gêmeo 
 
-O roteamento de mensagens permite a você consultar marcas e propriedades de [Dispositivo Gêmeo](iot-hub-devguide-device-twins.md), que são objetos JSON. Observe que não há suporte para consultas no módulo gêmeo. Abaixo está um exemplo de marcas e propriedades do Dispositivo Gêmeo.
+O roteamento de mensagens permite a você consultar marcas e propriedades de [Dispositivo Gêmeo](iot-hub-devguide-device-twins.md), que são objetos JSON. Não há suporte para a consulta no módulo e. Abaixo está um exemplo de marcas e propriedades do Dispositivo Gêmeo.
 
 ```JSON
 {

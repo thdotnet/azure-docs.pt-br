@@ -9,24 +9,22 @@ ms.date: 11/06/2017
 ms.topic: conceptual
 ms.service: azure-monitor
 ms.subservice: ''
-ms.openlocfilehash: e9a20aba84e79e87f84d63e4bdae3ba1aac062f5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b9a9d0a16a31d06d0d4edc1b6f0617a5771b179e
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66387185"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69872837"
 ---
 # <a name="monitor-your-azure-services-in-grafana"></a>Monitorar os serviços do Azure no Grafana
 Agora você pode monitorar os serviços e aplicativos do Azure do [Grafana](https://grafana.com/) usando o [plug-in da fonte de dados do Monitor do Azure](https://grafana.com/plugins/grafana-azure-monitor-datasource). O plug-in reúne os dados de desempenho do aplicativo coletados pelo Azure Monitor, incluindo vários logs e métricas. Em seguida, exiba esses dados no painel do Grafana.
-
-Atualmente, o plug-in está em versão prévia.
 
 Use as etapas a seguir para configurar um servidor Grafana e criar painéis para métricas e logs do Monitor do Azure.
 
 ## <a name="set-up-a-grafana-server"></a>Configurar um servidor do Grafana
 
 ### <a name="set-up-grafana-locally"></a>Configurar o Grafana localmente
-Para configurar um servidor Grafana local, [baixe e instale o Grafana em seu ambiente local](https://grafana.com/grafana/download). Para usar a integração do Azure Monitor do plug-in, instale o Grafana versão 5.3 ou superior.
+Para configurar um servidor Grafana local, [baixe e instale o Grafana em seu ambiente local](https://grafana.com/grafana/download). Para usar a integração de Azure Monitor do plug-in, instale o Grafana versão 5,3 ou superior.
 
 ### <a name="set-up-grafana-on-azure-through-the-azure-marketplace"></a>Configurar o Grafana no Azure por meio do Azure Marketplace
 1. Acesse o Azure Marketplace e escolha Grafana da Grafana Labs.
@@ -53,7 +51,7 @@ Para configurar um servidor Grafana local, [baixe e instale o Grafana em seu amb
 
     ![Tela de logon do Grafana](./media/grafana-plugin/grafana-login-screen.png)
 
-2. Entrar com o nome de usuário *admin* e a senha de administrador do servidor do Grafana criada anteriormente. Se você estiver usando uma configuração local, a senha padrão será *admin* e você deverá alterá-la no primeiro login.
+2. Entre com o *administrador* de nome de usuário e a senha de administrador do servidor Grafana que você criou anteriormente. Se você estiver usando uma configuração local, a senha padrão será *admin* e você deverá alterá-la no primeiro login.
 
 ## <a name="configure-data-source-plugin"></a>Configurar o plug-in de fonte de dados
 
@@ -71,7 +69,7 @@ Depois de fazer logon com êxito, você deverá ver que o plug-in de fonte de da
     A API do Log Analytics requer a função [ Log Analytics Reader ](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#log-analytics-reader), que inclui as permissões da função Leitor e adiciona a ela.
 
 4. Forneça os detalhes da conexão para as APIs que você deseja usar. Você pode se conectar a todos ou alguns deles. 
-    * Se você se conectar para métricas e logs no Azure Monitor, você pode reutilizar as mesmas credenciais, selecionando **mesmo detalhes como a API do Azure Monitor**.
+    * Se você se conectar a métricas e logs em Azure Monitor, poderá reutilizar as mesmas credenciais selecionando os **mesmos detalhes que Azure monitor API**.
     * Ao configurar o plug-in, você pode indicar qual nuvem do Azure você gostaria que o plug-in monitorasse (público, governo dos EUA do Azure, Alemanha do Azure ou China do Azure).
     * Se você usar o Application Insights, também poderá incluir a API do Application Insights e a ID do aplicativo para coletar métricas baseadas no Application Insights. Para obter mais informações, consulte [Obtendo sua chave de API e a ID do Aplicativo](https://dev.applicationinsights.io/documentation/Authorization/API-key-and-App-ID).
 
@@ -98,7 +96,7 @@ Depois de fazer logon com êxito, você deverá ver que o plug-in de fonte de da
 4. Selecione a fonte de dados do Azure Monitor que você configurou.
    * Coletando métricas do Monitor do Azure - selecione **Azure Monitor** na lista suspensa de serviços. Uma lista de seletores é exibida, onde você pode selecionar os recursos e a métrica a serem monitorados neste gráfico. Para coletar métricas de uma VM, use o namespace **Microsoft.Compute / VirtualMachines**. Depois de selecionar VMs e métricas, você pode começar a visualizar os dados no painel.
      ![Configuração de gráfico do Grafana para o Monitor do Azure](./media/grafana-plugin/grafana-graph-config-for-azure-monitor-dark.png)
-   * Azure Monitor coleta de dados de log - selecione **Azure Log Analytics** na lista suspensa de serviço. Selecione o espaço de trabalho que você deseja consultar e defina o texto da consulta. Você pode copiar aqui qualquer consulta de log que você já tem ou crie um novo. À medida que você digita sua consulta, o IntelliSense aparecerá e sugerirá opções de preenchimento automático. Selecione o tipo de visualização **Série temporal** **Tabela** e execute a consulta.
+   * Coletando dados de log de Azure Monitor-selecione **log Analytics do Azure** na lista suspensa serviço. Selecione o espaço de trabalho que você deseja consultar e defina o texto da consulta. Você pode copiar aqui qualquer consulta de log que já tenha ou criar uma nova. À medida que você digita sua consulta, o IntelliSense aparecerá e sugerirá opções de preenchimento automático. Selecione o tipo de visualização **Série temporal** **Tabela** e execute a consulta.
     
      > [!NOTE]
      >
@@ -127,7 +125,7 @@ Esta é uma imagem de um painel completo do Grafana que contém métricas do Azu
 
 ## <a name="advanced-grafana-features"></a>Recursos avançados do Grafana
 
-### <a name="variables"></a>variáveis
+### <a name="variables"></a>Variáveis
 Alguns valores de consulta podem ser selecionados por meio de menus suspensos da interface do usuário e atualizados na consulta. Considere a seguinte consulta como um exemplo:
 ```
 Usage 

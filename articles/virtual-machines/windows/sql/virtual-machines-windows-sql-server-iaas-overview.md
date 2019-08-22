@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 12/12/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 99c4f0f99af61196cf1a12f2f68a7d10d8b2e6c7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ece55cdad04e71d339944b5fcda5a16d35630c16
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61477154"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69877763"
 ---
 # <a name="what-is-sql-server-on-azure-virtual-machines-windows"></a>O que é o SQL Server nas Máquinas Virtuais do Azure? (Windows)
 
@@ -97,6 +97,30 @@ Depois de criar sua VM do SQL Server, conecte-se a ela de aplicativos ou ferrame
 
 ### <a name="migrate-your-data"></a>Migrar seus dados
 Se você tiver um banco de dados existente, deverá movê-lo para a VM do SQL recentemente provisionada. Para obter uma lista das opções de migração e diretrizes, consulte [Migrar um Banco de Dados para o SQL Server em uma VM do Azure](virtual-machines-windows-migrate-sql.md).
+
+## <a name="create-and-manage-azure-sql-resources-with-the-azure-portal"></a>Criar e gerenciar recursos do SQL Azure com o portal do Azure
+
+O portal do Azure fornece uma única página onde você pode gerenciar [todos os seus recursos SQL do Azure](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Sql%2Fazuresql) , incluindo suas máquinas virtuais do SQL.
+
+Para acessar a página de **recursos do SQL do Azure** , selecione **SQL do Azure** no menu à esquerda da portal do Azure. Se o **SQL do Azure** não estiver na lista, selecione **todos os serviços**e, em seguida, digite *SQL do Azure* na caixa de pesquisa.
+
+> [!NOTE]
+> O **SQL do Azure** fornece uma maneira rápida e fácil de acessar todos os seus bancos de dados SQL, pools elásticos, servidores de banco de dados, instâncias gerenciadas do SQL e máquinas virtuais do SQL. O SQL do Azure não é um serviço ou recurso. 
+
+Para gerenciar os recursos existentes, selecione o item desejado na lista. Para criar novos recursos do SQL Azure, selecione **+ Adicionar**. 
+
+![Página do portal SQL do Azure](./media/quickstart-sql-vm-create-portal/azure-sql.png)
+
+Depois de selecionar **+ Adicionar**, exiba informações adicionais sobre as diferentes opções selecionando **Mostrar detalhes** em qualquer bloco.
+
+![detalhes do bloco bancos de dados](./media/quickstart-sql-vm-create-portal/sql-vm-details.png)
+
+Para obter detalhes, consulte:
+
+- [Criar um banco de dados individual](../../../sql-database/sql-database-single-database-get-started.md)
+- [Criar um pool elástico](../../../sql-database/sql-database-elastic-pool.md#creating-a-new-sql-database-elastic-pool-using-the-azure-portal)
+- [Criar uma instância gerenciada](../../../sql-database/sql-database-managed-instance-get-started.md)
+- [Criar uma máquina virtual do SQL](quickstart-sql-vm-create-portal.md)
 
 ## <a id="lifecycle"></a> Política de atualização de imagem de VM SQL
 O Azure mantém apenas uma imagem de máquina virtual para cada combinação de sistema operacional, versão e edição com suporte. Isso significa que, ao longo do tempo, as imagens são atualizadas e as imagens mais antigas são removidas. Para saber mais, confira a seção **Imagens** das [Perguntas frequentes sobre VMs SQL Server](virtual-machines-windows-sql-server-iaas-faq.md#images).

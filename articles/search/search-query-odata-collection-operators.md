@@ -1,13 +1,13 @@
 ---
-title: Referência de operador de coleção OData - Azure Search
-description: Operadores de coleção OData, toda e qualquer e as expressões lambda em consultas de pesquisa do Azure.
+title: Referência do operador de coleção OData-Azure Search
+description: Operadores de coleção OData, any e All e expressões lambda em Azure Search consultas.
 ms.date: 06/13/2019
 services: search
 ms.service: search
 ms.topic: conceptual
 author: brjohnstmsft
 ms.author: brjohnst
-ms.manager: cgronlun
+manager: nitinme
 translation.priority.mt:
 - de-de
 - es-es
@@ -19,20 +19,20 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 7afafe158732b14ebe314eeee5d015acddc55b72
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e057d0b57162d10aab13d8b1f77e0eaddca2ec2a
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67079932"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69647645"
 ---
-# <a name="odata-collection-operators-in-azure-search---any-and-all"></a>Operadores de coleção OData no Azure Search - `any` e `all`
+# <a name="odata-collection-operators-in-azure-search---any-and-all"></a>Operadores de coleção OData no Azure Search `any` -e`all`
 
-Ao escrever uma [expressão de filtro OData](query-odata-filter-orderby-syntax.md) para usar com o Azure Search, geralmente é útil filtrar em campos da coleção. Você pode conseguir isso usando o `any` e `all` operadores.
+Ao escrever uma [expressão de filtro OData](query-odata-filter-orderby-syntax.md) para usar com Azure Search, geralmente é útil filtrar nos campos de coleção. Você pode conseguir isso usando os `any` operadores `all` e.
 
 ## <a name="syntax"></a>Sintaxe
 
-A seguir EBNF ([Extended Backus-Naur Form](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) define a gramática de uma expressão de OData que usa `any` ou `all`.
+O EBNF a seguir ([formulário Backus-Naur Estendido](https://en.wikipedia.org/wiki/Extended_Backus–Naur_form)) define a gramática de uma expressão OData `any` que `all`usa ou.
 
 <!-- Upload this EBNF using https://bottlecaps.de/rr/ui to create a downloadable railroad diagram. -->
 
@@ -48,53 +48,53 @@ lambda_expression ::= identifier ':' boolean_expression
 Um diagrama de sintaxe interativa também está disponível:
 
 > [!div class="nextstepaction"]
-> [Diagrama de sintaxe do OData para o Azure Search](https://azuresearch.github.io/odata-syntax-diagram/#collection_filter_expression)
+> [Diagrama de sintaxe do OData para Azure Search](https://azuresearch.github.io/odata-syntax-diagram/#collection_filter_expression)
 
 > [!NOTE]
-> Ver [referência de sintaxe de expressão OData para o Azure Search](search-query-odata-syntax-reference.md) para o EBNF completa.
+> Consulte [referência de sintaxe de expressão OData para Azure Search](search-query-odata-syntax-reference.md) para o EBNF completo.
 
-Há três formas de expressão que filtram as coleções.
+Há três formas de expressão que filtram coleções.
 
-- As duas primeiras iterar sobre um campo de coleção, aplicando um predicado fornecido na forma de uma expressão lambda para cada elemento da coleção.
-  - Uma expressão que usa `all` retorna `true` se o predicado é verdadeiro para todos os elementos da coleção.
-  - Uma expressão que usa `any` retorna `true` se o predicado é verdadeiro para pelo menos um elemento da coleção.
-- O terceiro formulário de coleção de filtro usa `any` sem uma expressão lambda para testar se um campo de coleção está vazio. Se a coleção tem todos os elementos, ele retorna `true`. Se a coleção está vazia, ele retorna `false`.
+- As duas primeiras iteram em um campo de coleção, aplicando um predicado fornecido na forma de uma expressão lambda para cada elemento da coleção.
+  - Uma expressão que `all` usa `true` retorna se o predicado é verdadeiro para cada elemento da coleção.
+  - Uma expressão que `any` usa `true` retorna se o predicado é true para pelo menos um elemento da coleção.
+- A terceira forma de filtro de coleção `any` usa sem uma expressão lambda para testar se um campo de coleção está vazio. Se a coleção tiver qualquer elemento, ela retornará `true`. Se a coleção estiver vazia, ela retornará `false`.
 
-Um **expressão lambda** em uma coleção de filtro é como o corpo de um loop em uma linguagem de programação. Ele define uma variável chamada a **variável de intervalo**, que contém o elemento atual da coleção durante a iteração. Ele também define outra expressão booliana que é o critério de filtro para aplicar a variável de intervalo para cada elemento da coleção.
+Uma **expressão lambda** em um filtro de coleção é como o corpo de um loop em uma linguagem de programação. Ele define uma variável, chamada **variável de intervalo**, que contém o elemento atual da coleção durante a iteração. Ele também define outra expressão booliana que é o critério de filtro a ser aplicado à variável de intervalo para cada elemento da coleção.
 
 ## <a name="examples"></a>Exemplos
 
-Correspondência de documentos cuja `tags` campo contém exatamente é a cadeia de caracteres "wifi":
+Corresponder documentos cujo `tags` campo contém exatamente a cadeia de caracteres "WiFi":
 
     tags/any(t: t eq 'wifi')
 
-Correspondência de documentos em que todos os elementos do `ratings` campo se encaixa entre 3 e 5, inclusive:
+Corresponder documentos em que cada elemento do `ratings` campo cai entre 3 e 5, inclusive:
 
     ratings/all(r: r ge 3 and r le 5)
 
-Documentos de correspondência onde qualquer uma da área geográfica coordena no `locations` campo está dentro do polígono determinado:
+Corresponder documentos em que qualquer uma das coordenadas geográficas no `locations` campo esteja dentro do polígono determinado:
 
     locations/any(loc: geo.intersects(loc, geography'POLYGON((-122.031577 47.578581, -122.031577 47.678581, -122.131577 47.678581, -122.031577 47.578581))'))
 
-Correspondência de documentos em que o `rooms` campo está vazio:
+Corresponder documentos onde o `rooms` campo está vazio:
 
     not rooms/any()
 
-Corresponde a documentos em que, para todas as salas, o `rooms/amenities` campo contém "tv" e `rooms/baseRate` é menor que 100:
+Corresponder documentos em que para todas as salas `rooms/amenities` , o campo conterá " `rooms/baseRate` TV" e menor que 100:
 
     rooms/all(room: room/amenities/any(a: a eq 'tv') and room/baseRate lt 100.0)
 
 ## <a name="limitations"></a>Limitações
 
-Não, todos os recursos de expressões de filtro estão disponível dentro do corpo de uma expressão lambda. As limitações são diferentes dependendo do tipo de dados do campo de coleção que você deseja filtrar. A tabela a seguir resume as limitações.
+Nem todos os recursos de expressões de filtro estão disponíveis no corpo de uma expressão lambda. As limitações são diferentes dependendo do tipo de dados do campo de coleção que você deseja filtrar. A tabela a seguir resume as limitações.
 
 [!INCLUDE [Limitations on OData lambda expressions in Azure Search](../../includes/search-query-odata-lambda-limitations.md)]
 
-Para obter mais detalhes sobre essas limitações, bem como exemplos, consulte [solução de problemas de filtros de coleção no Azure Search](search-query-troubleshoot-collection-filters.md). Para obter informações mais detalhadas sobre por que essas limitações existe, consulte [Noções básicas sobre filtros de coleção no Azure Search](search-query-understand-collection-filters.md).
+Para obter mais detalhes sobre essas limitações, bem como exemplos, consulte [solução de problemas de filtros de coleta no Azure Search](search-query-troubleshoot-collection-filters.md). Para obter informações mais detalhadas sobre por que essas limitações existem, consulte [noções básicas sobre filtros de coleta no Azure Search](search-query-understand-collection-filters.md).
 
 ## <a name="next-steps"></a>Próximas etapas  
 
 - [Filtros no Azure Search](search-filters.md)
-- [Visão geral de linguagem de expressão do OData para o Azure Search](query-odata-filter-orderby-syntax.md)
-- [Referência de sintaxe de expressão OData para o Azure Search](search-query-odata-syntax-reference.md)
+- [Visão geral da linguagem de expressão OData para Azure Search](query-odata-filter-orderby-syntax.md)
+- [Referência de sintaxe de expressão OData para Azure Search](search-query-odata-syntax-reference.md)
 - [Pesquisar documentos &#40;API REST do Serviço do Azure Search&#41;](https://docs.microsoft.com/rest/api/searchservice/Search-Documents)

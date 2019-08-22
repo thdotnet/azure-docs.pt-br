@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: b1fd31a758501620129fdbbc532b8defcf927045
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4ed9e4aced7983cce10a577b38c1c170474cf83d
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60648492"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876870"
 ---
 # <a name="checkpoints-and-replay-in-durable-functions-azure-functions"></a>Pontos de verificação e reprodução nas Funções Duráveis (Azure Functions)
 
@@ -78,7 +78,7 @@ Quando o ponto de verificação for concluído, a função de orquestrador estar
 
 Após a conclusão, o histórico da função mostrado anteriormente se parece com o seguinte no Armazenamento de Tabelas do Azure (abreviado para fins de ilustração):
 
-| PartitionKey (InstanceId)                     | EventType             | Timestamp               | Entrada | NOME             | Result                                                    | Status |
+| PartitionKey (InstanceId)                     | EventType             | Carimbo de data/hora               | Entrada | Nome             | Resultado                                                    | Status |
 |----------------------------------|-----------------------|----------|--------------------------|-------|------------------|-----------------------------------------------------------|
 | eaee885b | OrchestratorStarted   | 2017-05-05T18:45:32.362Z |       |                  |                                                           |                     |
 | eaee885b | ExecutionStarted      | 2017-05-05T18:45:28.852Z | nulo  | E1_HelloSequence |                                                           |                     |
@@ -145,7 +145,7 @@ O comportamento de reprodução cria restrições quanto ao tipo do código que 
 
   Se o orquestrador precisar de um atraso, ele poderá usar a API [CreateTimer](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CreateTimer_) (.NET) ou `createTimer` (JavaScript).
 
-* O código do orquestrador **nunca deve iniciar nenhuma operação assíncrona**, exceto usando a API [DurableOrchestrationContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html) ou a API do objeto `context.df`. Por exemplo, sem `Task.Run`, `Task.Delay` ou `HttpClient.SendAsync` no .NET ou sem `setTimeout()` e `setInterval()` no JavaScript. O Framework de Tarefa Durável executa o código do orquestrador em um único thread e não pode interagir com outros threads que poderiam ser agendados por outras APIs assíncronas.
+* O código do orquestrador **nunca deve iniciar nenhuma operação assíncrona**, exceto usando a API [DurableOrchestrationContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html) ou a API do objeto `context.df`. Por exemplo, sem `Task.Run`, `Task.Delay` ou `HttpClient.SendAsync` no .NET ou sem `setTimeout()` e `setInterval()` no JavaScript. O Framework de Tarefa Durável executa o código do orquestrador em um único thread e não pode interagir com outros threads que poderiam ser agendados por outras APIs assíncronas. Caso isso ocorra, `InvalidOperationException` a exceção será lançada.
 
 * **Loops infinitos devem ser evitados** no código do orquestrador. Como o Framework de Tarefa Durável salva o histórico de execução durante o andamento da função de orquestração, um loop infinito pode fazer com que uma instância do orquestrador fique sem memória. Para cenários com loop infinito, use APIs como [ContinueAsNew](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_ContinueAsNew_) (.NET) ou `continueAsNew` (JavaScript) para reiniciar a execução da função e descartar o histórico de execução anterior.
 

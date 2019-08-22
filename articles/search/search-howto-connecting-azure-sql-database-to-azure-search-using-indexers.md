@@ -3,19 +3,19 @@ title: Conecte-se ao conteúdo do Banco de Dados SQL do Azure e indexe-o usando 
 description: Saiba como rastrear dados no Banco de Dados SQL do Azure usando indexadores para pesquisa de texto completo no Azure Search. Este artigo aborda conexões, configuração do indexador e ingestão de dados.
 ms.date: 05/02/2019
 author: mgottein
-manager: cgronlun
+manager: nitinme
 ms.author: magottei
 services: search
 ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 59a45791676f62f42763e0e834d327b0c0c4106d
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4ed218fdc1c6580e9b92364d123b081a1f34b441
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66755104"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69656227"
 ---
 # <a name="connect-to-and-index-azure-sql-database-content-using-azure-search-indexers"></a>Conecte-se ao conteúdo do Banco de Dados SQL do Azure e indexe-o usando indexadores do Azure Search
 
@@ -158,7 +158,7 @@ Você também pode organizar o indexador para que execute periodicamente com bas
 
 O parâmetro **interval** é necessário. O intervalo refere-se ao tempo entre o início de duas execuções consecutivas do indexador. O menor intervalo permitido é de cinco minutos, e o maior é de um dia. Ele deve ser formatado como um valor XSD de "dayTimeDuration" (um subconjunto restrito de um [valor de duração ISO 8601](https://www.w3.org/TR/xmlschema11-2/#dayTimeDuration) ). O padrão para isso é: `P(nD)(T(nH)(nM))`. Exemplos: `PT15M` para cada 15 minutos, `PT2H` para cada 2 horas.
 
-Para obter mais informações sobre como definir agendas do indexador, consulte [como programar indexadores para o Azure Search](search-howto-schedule-indexers.md).
+Para obter mais informações sobre como definir agendas do indexador, consulte [como agendar indexadores para Azure Search](search-howto-schedule-indexers.md).
 
 <a name="CaptureChangedRows"></a>
 
@@ -290,7 +290,7 @@ O indexador do SQL expõe várias definições de configuração:
 | Configuração | Tipo de dados | Finalidade | Valor padrão |
 | --- | --- | --- | --- |
 | queryTimeout |cadeia de caracteres |Define o tempo limite de execução da consulta SQL |5 minutos ("00:05:00") |
-| disableOrderByHighWaterMarkColumn |bool |Faz com que a consulta SQL usada pela política de marca d'água alta omita a cláusula ORDER BY. Consulte [Política de marca d'água alta](#HighWaterMarkPolicy) |falso |
+| disableOrderByHighWaterMarkColumn |bool |Faz com que a consulta SQL usada pela política de marca d'água alta omita a cláusula ORDER BY. Consulte [Política de marca d'água alta](#HighWaterMarkPolicy) |false |
 
 Essas configurações são usadas no objeto `parameters.configuration` na definição do indexador. Por exemplo, para definir o tempo limite da consulta para 10 minutos, crie ou atualize o indexador com a seguinte configuração:
 
@@ -300,7 +300,7 @@ Essas configurações são usadas no objeto `parameters.configuration` na defini
             "configuration" : { "queryTimeout" : "00:10:00" } }
     }
 
-## <a name="faq"></a>Perguntas frequentes
+## <a name="faq"></a>Perguntas Frequentes
 
 **P: Posso usar o indexador SQL do Azure com bancos de dados SQL executados em VMs IaaS no Azure?**
 
@@ -312,7 +312,7 @@ Não diretamente. Não recomendamos nem damos suporte a uma conexão direta, poi
 
 **P: Posso usar o indexador SQL do Azure com outros bancos de dados que não sejam o SQL Server executados no IaaS do Azure?**
 
-Não. Não damos suporte a esse cenário, pois não testamos o indexador com nenhum outro banco de dados que não o SQL Server.  
+Nº Não damos suporte a esse cenário, pois não testamos o indexador com nenhum outro banco de dados que não o SQL Server.  
 
 **P: Posso criar vários indexadores executados com base em um agendamento?**
 
