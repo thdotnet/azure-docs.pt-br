@@ -9,14 +9,16 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: philmea
-ms.openlocfilehash: 54884728533aeff0472ed99660be00478227fbcd
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: fd3ec276fdc95ad326d14a5b21e8ab793b154080
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67056771"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69875772"
 ---
 # <a name="tutorial-define-a-new-device-type-in-your-azure-iot-central-application"></a>Tutorial: Definir um novo tipo de dispositivo em seu aplicativo do Azure IoT Central
+
+[!INCLUDE [iot-central-original-pnp](../../includes/iot-central-original-pnp-note.md)]
 
 Este tutorial mostra a você, como um construtor, como usar um modelo de dispositivo para definir um novo tipo de dispositivo no seu aplicativo Microsoft Azure IoT Central. Um modelo de dispositivo define a telemetria, estado, propriedades e configurações para o seu tipo de dispositivo.
 
@@ -287,7 +289,7 @@ Você usa *propriedades do aplicativo* para registrar informações sobre seu di
 
     | Campo                | Valor                |
     | -------------------- | -------------------- |
-    | Nome de exibição         | Local padrão             |
+    | Nome de exibição         | Location             |
     | Nome do campo           | location             |
     | Valor inicial        | Seattle, WA          |
     | DESCRIÇÃO          | Localização do dispositivo      |

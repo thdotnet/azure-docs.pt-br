@@ -7,12 +7,12 @@ ms.date: 07/29/2019
 ms.topic: tutorial
 ms.service: backup
 manager: carmonm
-ms.openlocfilehash: 03b65c71201ba125cb3924a52e8760a088374aa6
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: d5702576b3353bbc779601c7a5fe91417d73c7a1
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68954730"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624346"
 ---
 # <a name="back-up-and-restore-azure-file-shares"></a>Fazer backup e restaurar compartilhamentos de arquivos do Azure
 Este artigo explica como usar o Portal do Azure para fazer backup e restaurar [compartilhamentos de arquivos do Azure](../storage/files/storage-files-introduction.md) no Azure.
@@ -32,7 +32,6 @@ Antes de fazer backup de um compartilhamento de arquivos do Azure, verifique se 
 ## <a name="limitations-for-azure-file-share-backup-during-preview"></a>Limitações do backup do compartilhamento de arquivos do Azure durante a versão prévia
 O backup para compartilhamentos de arquivos do Azure está em versão prévia. Há suporte para compartilhamentos de arquivos do Azure em contas de armazenamento de uso geral v1 e de uso geral v2. Não há suporte para os cenários de backup a seguir para compartilhamentos de arquivos do Azure:
 - O suporte para Backup de Compartilhamentos de Arquivos do Azure em Contas de Armazenamento com replicação de ZRS ([armazenamento com redundância de zona](../storage/common/storage-redundancy-zrs.md)) está limitado no momento a [estas regiões](backup-azure-files-faq.md#in-which-geos-can-i-back-up-azure-file-shares-).
-- Não é possível proteger compartilhamentos de arquivos no Azure em contas de armazenamento que têm redes virtuais ou firewall habilitados.
 - Não há nenhuma CLI disponível para a proteção de Arquivos do Azure usando o Backup do Azure.
 - No momento, o Backup do Azure é compatível com a configuração de backups agendados uma vez por dia do Compartilhamento de Arquivos do Azure.
 - A quantidade máxima de backups agendados por dia é de um.

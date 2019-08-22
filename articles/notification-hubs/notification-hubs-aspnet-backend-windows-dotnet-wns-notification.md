@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 03/22/2019
 ms.author: jowargo
-ms.openlocfilehash: 32714b3e5a5ed859716faef2ca660f8b2c90b089
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: a4949b12076ea7cdbbf882d199279410da95e005
+ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58402501"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69558656"
 ---
 # <a name="tutorial-send-notifications-to-specific-users-by-using-azure-notification-hubs"></a>Tutorial: Enviar notificações para usuários específicos usando o Hubs de Notificação do Microsoft Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "58402501"
 Este tutorial mostra como usar os Hubs de Notificação do Azure para enviar notificações por push a um usuário específico do aplicativo em um dispositivo específico. Um back-end de WebAPI do ASP.NET é usado para autenticar clientes. Quando o back-end autentica um usuário de aplicativo do cliente, ele adiciona automaticamente uma marca para o registro de notificação. O back-end usa essa marca para enviar notificações para o usuário específico.
 
 > [!NOTE]
-> O código completo deste tutorial pode ser encontrado no [GitHub](https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet/NotifyUsers).
+> O código completo deste tutorial pode ser encontrado no [GitHub](https://github.com/Azure/azure-notificationhubs-dotnet/tree/master/Samples/NotifyUsers).
 
 Neste tutorial, você deve executar as seguintes etapas:
 
@@ -116,7 +116,7 @@ Nesta seção, você atualizará o código no projeto concluído no [Tutorial: E
         </StackPanel>
     </Grid>
     ```
-9. No Gerenciador de Soluções, abra o arquivo `MainPage.xaml.cs` para os projetos **(Windows 8.1)** e **(Windows Phone 8.1)**. Adicione as seguintes instruções `using` na parte superior dos dois arquivos:
+9. No Gerenciador de Soluções, abra o arquivo `MainPage.xaml.cs` para os projetos **(Windows 8.1)** e **(Windows Phone 8.1)** . Adicione as seguintes instruções `using` na parte superior dos dois arquivos:
 
     ```csharp
     using System.Net.Http;
@@ -131,7 +131,7 @@ Nesta seção, você atualizará o código no projeto concluído no [Tutorial: E
     ```csharp
     private static string BACKEND_ENDPOINT = "<Enter Your Backend Endpoint>";
     ```
-11. Adicione o código a seguir à classe MainPage em `MainPage.xaml.cs` para os projetos **(Windows 8.1)** e **(Windows Phone 8.1)**.
+11. Adicione o código a seguir à classe MainPage em `MainPage.xaml.cs` para os projetos **(Windows 8.1)** e **(Windows Phone 8.1)** .
 
     O método `PushClick` é o manipulador de cliques para o botão **Enviar por Push** . Ele chama o back-end para disparar uma notificação para todos os dispositivos com uma marca de nome de usuário que corresponde ao parâmetro `to_tag` . A mensagem de notificação é enviada como conteúdo JSON no corpo da solicitação.
 

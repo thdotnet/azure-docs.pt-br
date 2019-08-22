@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: abnarain
-ms.openlocfilehash: 49d9be9f10f0e840cfa3d027901a297de8cbf750
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3f49bed0253a380dbcb0a526364c85c2031b0116
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60328026"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640310"
 ---
 # <a name="tutorial-copy-data-from-an-on-premises-sql-server-database-to-azure-blob-storage"></a>Tutorial: Copie os dados de um banco de dados do SQL Server local para um Armazenamento de Blobs do Azure
 Neste tutorial, você usa o Azure PowerShell para criar um pipeline de data factory que copia dados de um banco de dados do SQL Server local para o Armazenamento de Blobs do Azure. Você cria e usa um tempo de execução de integração auto-hospedado, o qual movimenta os dados entre armazenamentos de dados locais e da nuvem. 
@@ -76,13 +76,11 @@ Você usa o nome e a chave da sua conta de armazenamento do Azure neste tutorial
 
 1. No painel esquerdo, selecione **Mais serviços**, filtre usando a palavra-chave **Armazenamento** e selecione **Contas de armazenamento**.
 
-    ![Pesquisar conta de armazenamento](media/tutorial-hybrid-copy-powershell/search-storage-account.png)
+    ![Pesquisar conta de armazenamento](media/doc-common-process/search-storage-account.png)
 
 1. Na lista de contas de armazenamento, filtre pela sua conta de armazenamento (se necessário) e, em seguida, selecione a sua conta de armazenamento. 
 
 1. Na janela **Conta de armazenamento**, selecione **Chaves de acesso**.
-
-    ![Obter nome e chave da conta de armazenamento](media/tutorial-hybrid-copy-powershell/storage-account-name-key.png)
 
 1. Nas caixas **Nome da conta de armazenamento** e **key1**, copie os valores e depois cole-os no Bloco de Notas ou outro editor para uso posterior neste tutorial. 
 
@@ -107,7 +105,6 @@ Nesta seção, você cria um contêiner de blob chamado **adftutorial** no armaz
 
 1. Mantenha aberta a janela **contêiner** para **adftutorial**. Use-a para verificar a saída no final do tutorial. O Data Factory cria automaticamente a pasta de saída nesse contêiner, portanto você não precisa criar uma.
 
-    ![Janela Contêiner](media/tutorial-hybrid-copy-powershell/container-page.png)
 
 ### <a name="windows-powershell"></a>Windows PowerShell
 
@@ -266,7 +263,7 @@ Nesta seção, você cria um Integration Runtime auto-hospedado e o associa a um
 
 1. No assistente **Instalação do Microsoft Integration Runtime concluída**, selecione **Concluir**.
 
-1. Na janela **Registrar Integration Runtime (auto-hospedado)**, cole a chave que você salvou na seção anterior e selecione **Registrar**. 
+1. Na janela **Registrar Integration Runtime (auto-hospedado)** , cole a chave que você salvou na seção anterior e selecione **Registrar**. 
 
     ![Registrar Integration Runtime](media/tutorial-hybrid-copy-powershell/register-integration-runtime.png)
 
@@ -274,7 +271,7 @@ Nesta seção, você cria um Integration Runtime auto-hospedado e o associa a um
 
     ![Registrado com êxito](media/tutorial-hybrid-copy-powershell/registered-successfully.png)
 
-1. Na janela **Novo Nó do Integration Runtime (auto-hospedado)**, selecione **Avançar**. 
+1. Na janela **Novo Nó do Integration Runtime (auto-hospedado)** , selecione **Avançar**. 
 
     ![Janela Novo Nó do Integration Runtime](media/tutorial-hybrid-copy-powershell/new-integration-runtime-node-page.png)
 
@@ -283,7 +280,7 @@ Nesta seção, você cria um Integration Runtime auto-hospedado e o associa a um
 
     ![Janela Canal de comunicação da intranet](media/tutorial-hybrid-copy-powershell/intranet-communication-channel-page.png)
 
-1. Na janela **Registrar Integration Runtime (auto-hospedado)**, selecione **Iniciar o Gerenciador de Configurações**. 
+1. Na janela **Registrar Integration Runtime (auto-hospedado)** , selecione **Iniciar o Gerenciador de Configurações**. 
 
 1. Quando o nó estiver conectado ao serviço de nuvem, a mensagem a seguir será exibida:
 
@@ -415,7 +412,7 @@ Nesta etapa, você vincula sua instância do SQL Server local ao data factory.
     > [!IMPORTANT]
     > - Selecione a seção que está baseada na autenticação usada para se conectar à sua instância do SQL Server.
     > - Substitua o **\<nome do Integration Runtime>** pelo nome do seu Integration Runtime.
-    > - Antes de salvar o arquivo, substitua **\<servername>**, **\<databasename>**, **\<username>** e **\<password>** por valores da sua instância do SQL Server.
+    > - Antes de salvar o arquivo, substitua **\<servername>** , **\<databasename>** , **\<username>** e **\<password>** por valores da sua instância do SQL Server.
     > - Se precisar usar um caractere de barra invertida (\\) em sua conta de usuário e nome de servidor, use o caractere de escape à frente (\\). Por exemplo, use *mydomain\\\\myuser*. 
 
 1. Para criptografar os dados confidenciais (nome de usuário, senha e assim por diante), execute o cmdlet `New-AzDataFactoryV2LinkedServiceEncryptedCredential`.  

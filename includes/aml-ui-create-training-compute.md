@@ -9,18 +9,16 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 05/06/2019
-ms.openlocfilehash: cf35651f7dd839e8792029851b9bfe278036624c
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: eb84dc1b5bf3f756e484ef27aaa998ab6b94cc51
+ms.sourcegitcommit: a3a40ad60b8ecd8dbaf7f756091a419b1fe3208e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67172539"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69891697"
 ---
 Um experimento é executado em um destino de computação, um recurso de computação anexado ao workspace.  Depois de criar um destino de computação, você poderá reutilizá-lo para execuções futuras.
 
 1. Selecione **Executar** na parte inferior para executar o teste.
-
-     ![Executar o experimento](./media/aml-ui-create-training-compute/run-experiment.png)
 
 1. Quando a caixa de diálogo **Configurar Destinos de Computação** for exibida, se o workspace já tiver um recurso de computação, você poderá selecioná-lo agora.  Caso contrário, selecione **Criar**.
 

@@ -9,12 +9,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 3/12/2018
-ms.openlocfilehash: a1a980e1f8b004c4a3dba53e4f83367022074c7c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: e3aaf943b5eecd9ec1853c09ea36156b98560d3d
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58007971"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69648715"
 ---
 # <a name="use-an-azure-marketplace-image-to-create-a-terraform-linux-virtual-machine-with-managed-identities-for-azure-resources"></a>Utilizar uma imagem do Azure Marketplace para criar uma máquina virtual do Terraform do Linux com identidades gerenciadas para recursos do Azure
 
@@ -85,7 +85,7 @@ A permissão de colaborador ajuda a MSI na VM a usar o Terraform para criar recu
 
 `. ~/tfEnv.sh`
 
-O script anterior usa o mecanismo [Logon interativo AZ CLI v 2.0](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest) para autenticar com o Azure e atribuir a permissão de colaborador da Identidade Gerenciada da máquina virtual em toda a assinatura. 
+O script anterior usa o mecanismo [Logon interativo AZ CLI v 2.0](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest#sign-in-interactively) para autenticar com o Azure e atribuir a permissão de colaborador da Identidade Gerenciada da máquina virtual em toda a assinatura. 
 
  A VM tem um back-end de estado remoto do Terraform. Para habilitá-lo na implantação do Terraform, copie o arquivo remoteState.tf do diretório tfTemplate para a raiz dos scripts do Terraform.  
 

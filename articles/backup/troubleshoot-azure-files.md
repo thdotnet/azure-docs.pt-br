@@ -4,22 +4,21 @@ description: Este artigo tem informações sobre a solução de problemas que oc
 ms.service: backup
 author: dcurwin
 ms.author: dacurwin
-ms.date: 07/22/2019
+ms.date: 08/20/2019
 ms.topic: tutorial
 manager: carmonm
-ms.openlocfilehash: 486c0ae674f1549206b7aa3110faf31132c22f2a
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.openlocfilehash: 1182c7d4ac9a103e752a8cd0c392c5e57f1eebd0
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68639403"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69637575"
 ---
 # <a name="troubleshoot-problems-backing-up-azure-file-shares"></a>Solucionar problemas do backup de Compartilhamentos de Arquivos do Azure
 É possível solucionar os problemas e os erros encontrados durante a utilização do backup de Compartilhamentos de Arquivos do Azure com as informações listadas nas tabelas a seguir.
 
 ## <a name="limitations-for-azure-file-share-backup-during-preview"></a>Limitações do backup do compartilhamento de arquivos do Azure durante a versão prévia
 O backup para compartilhamentos de Arquivos do Azure está em versão prévia. Há suporte para Compartilhamentos de Arquivos do Azure em contas de armazenamento de uso geral v2 e de uso geral v1. Não há suporte para os cenários de backup a seguir para compartilhamentos de arquivos do Azure:
-- Não é possível proteger compartilhamentos de arquivos no Azure em contas de armazenamento que têm redes virtuais ou firewall habilitados.
 - Não há nenhuma CLI disponível para a proteção de Arquivos do Azure usando o Backup do Azure.
 - A quantidade máxima de backups agendados por dia é de um.
 - A quantidade máxima de backups sob demanda por dia é de quatro.
@@ -51,7 +50,6 @@ A tabela abaixo serve para configurar o backup:
 | Você atingiu o limite máximo de instantâneos para este compartilhamento de arquivos e poderá tirar outros depois que os antigos expirarem. | <ul><li> Este erro pode ocorrer ao criar vários backups sob demanda para um arquivo. <li> Há um limite de 200 instantâneos por compartilhamento de arquivos, incluindo aqueles tirados pelo Backup do Azure. Os backups (ou instantâneos) agendados mais antigos são limpos automaticamente. Os backups (ou instantâneos) sob demanda devem ser excluídos se o limite máximo for atingido.<li> Exclua os backups sob demanda (instantâneos de compartilhamento de arquivo do Azure) no portal de Arquivos do Azure. **Observação**: os pontos de recuperação são perdidos quando você exclui os instantâneos criados pelo Backup do Azure. |
 | O backup de compartilhamento de arquivos ou a restauração falhou devido à limitação do serviço de armazenamento. Isso pode ser devido ao serviço de armazenamento estar ocupado processando outras solicitações para determinada conta de armazenamento.| Repita a operação após algum tempo. |
 | Falha na restauração com o compartilhamento de arquivos de destino não encontrado. | <ul><li>Verifique se a Conta de Armazenamento selecionada existe e se o compartilhamento de Arquivos de Destino não foi excluído. <li> Verifique se a Conta de Armazenamento tem suporte para backup de compartilhamento de arquivos. |
-| Atualmente, o backup do Azure não tem suporte para Contas de Armazenamento dos Compartilhamentos de Arquivos do Azure com Redes Virtuais habilitadas. | Desabilite as Redes Virtuais na sua Conta de Armazenamento para garantir o êxito dos backups ou operações de restauração. |
 | Os trabalhos de backup ou restauração falharam porque a conta de armazenamento estava no estado Bloqueado. | Remova o bloqueio da Conta de Armazenamento ou use o bloqueio de exclusão em vez do bloqueio de leitura e repita a operação. |
 | A recuperação falhou porque o número de arquivos com falha é maior do que o limite. | <ul><li> As razões da falha de recuperação são listadas em um arquivo (caminho fornecido nos detalhes do trabalho). Aborde as falhas e repita a operação de restauração apenas para os arquivos com falha. <li> Motivos comuns para falhas na restauração de arquivo: <br/> – verifique se os arquivos que falharam não estão em uso no momento; <br/> – existe um diretório com o mesmo nome que o arquivo com falha no diretório pai. |
 | A recuperação falhou porque nenhum arquivo pôde ser recuperado. | <ul><li> As razões da falha de recuperação são listadas em um arquivo (caminho fornecido nos detalhes do trabalho). Aborde as falhas e repita as operações de restauração apenas para os arquivos com falha. <li> Motivos comuns para falhas na restauração de arquivo: <br/> – verifique se os arquivos que falharam não estão em uso no momento; <br/> – existe um diretório com o mesmo nome que o arquivo com falha no diretório pai. |

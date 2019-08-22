@@ -16,12 +16,12 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 08/23/2018
 ms.author: kumud
-ms.openlocfilehash: 4d3fd152782c65c7f63e459a1c35dee6ae764361
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 34cb2b6c5a770aa9ec38ce02a97d976fe28251ac
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64708850"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69638749"
 ---
 # <a name="tutorial-restrict-network-access-to-paas-resources-with-virtual-network-service-endpoints-using-the-azure-portal"></a>Tutorial: Restringir o acesso à rede a recursos de PaaS com pontos de extremidade de serviço de rede virtual usando o portal do Azure
 
@@ -53,12 +53,14 @@ Faça logon no Portal do Azure em https://portal.azure.com.
    |----|----|
    |NOME| myVirtualNetwork |
    |Espaço de endereço| 10.0.0.0/16|
-   |Assinatura| Selecione sua assinatura|
-   |Grupo de recursos | Selecione **Criar novo** e insira *myResourceGroup*.|
-   |Local padrão| Selecione **Leste dos EUA** |
+   |Subscription| Selecione sua assinatura|
+   |Resource group | Selecione **Criar novo** e insira *myResourceGroup*.|
+   |Location| Selecione **Leste dos EUA** |
    |Nome da sub-rede| Público|
    |Intervalo de endereços da sub-rede| 10.0.0.0/24|
+   |Proteção contra DDOS| Basic|
    |Pontos de extremidade de serviço| Desabilitado|
+   |Firewall| Desabilitado|
 
    ![Insira s informações básicas sobre sua rede virtual](./media/tutorial-restrict-network-access-to-resources/create-virtual-network.png)
 
@@ -93,9 +95,9 @@ Por padrão, todas as VMs em uma sub-rede podem se comunicar com todos os recurs
     |Configuração|Valor|
     |----|----|
     |NOME| myNsgPrivate |
-    |Assinatura| Selecione sua assinatura|
-    |Grupo de recursos | Selecione **Usar existente** e, em seguida, *myResourceGroup*.|
-    |Local padrão| Selecione **Leste dos EUA** |
+    |Subscription| Selecione sua assinatura|
+    |Resource group | Selecione **Usar existente** e, em seguida, *myResourceGroup*.|
+    |Location| Selecione **Leste dos EUA** |
 
 4. Depois que o grupo de segurança de rede for criado, digite *myNsgPrivate*, na caixa **Pesquisar recursos, serviços e documentos** na parte superior do portal. Quando **myNsgPrivate** for exibido nos resultados da pesquisa, selecione-o.
 5. Em **CONFIGURAÇÕES**, selecione **Regras de segurança de saída**.
@@ -162,10 +164,10 @@ As etapas necessárias para restringir o acesso de rede a recursos criados por m
     |----|----|
     |NOME| Insira um nome que seja exclusivo em todos os locais do Azure, com 3 a 24 caracteres de comprimento, usando apenas números e letras minúsculas.|
     |Tipo de conta|StorageV2 (v2 de uso geral)|
-    |Local padrão| Selecione **Leste dos EUA** |
+    |Location| Selecione **Leste dos EUA** |
     |Replicação| Armazenamento com redundância local (LRS)|
-    |Assinatura| Selecione sua assinatura|
-    |Grupo de recursos | Selecione **Usar existente** e, em seguida, *myResourceGroup*.|
+    |Subscription| Selecione sua assinatura|
+    |Resource group | Selecione **Usar existente** e, em seguida, *myResourceGroup*.|
 
 ### <a name="create-a-file-share-in-the-storage-account"></a>Criar um compartilhamento de arquivos na conta de armazenamento
 
@@ -189,7 +191,7 @@ Por padrão, as contas de armazenamento aceitam conexões de clientes em qualque
 
     |Configuração|Valor|
     |----|----|
-    |Assinatura| Selecione sua assinatura.|
+    |Subscription| Selecione sua assinatura.|
     |Redes virtuais|Selecione **myVirtualNetwork**, em **Redes virtuais**|
     |Sub-redes| Selecione **Privada**, em **Sub-redes**|
 
@@ -218,9 +220,9 @@ Para testar o acesso à rede para uma conta de armazenamento, implante uma VM pa
    |NOME| myVmPublic|
    |Nome de usuário|Insira um nome de usuário de sua escolha.|
    |Senha| Insira uma senha de sua escolha. A senha deve ter no mínimo 12 caracteres e atender a [requisitos de complexidade definidos](../virtual-machines/windows/faq.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-the-password-requirements-when-creating-a-vm).|
-   |Assinatura| Selecione sua assinatura.|
-   |Grupo de recursos| Selecione **Usar existente** e, em seguida, **myResourceGroup**.|
-   |Local padrão| Selecione **Leste dos EUA**.|
+   |Subscription| Selecione sua assinatura.|
+   |Resource group| Selecione **Usar existente** e, em seguida, **myResourceGroup**.|
+   |Location| Selecione **Leste dos EUA**.|
 
    ![Digite informações básicas sobre uma máquina virtual](./media/tutorial-restrict-network-access-to-resources/virtual-machine-basics.png)
 4. Selecione um tamanho para a máquina virtual e selecione **Selecionar**.
