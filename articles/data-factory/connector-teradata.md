@@ -143,7 +143,7 @@ Para copiar dados do Teradata, há suporte para as seguintes propriedades:
 |:--- |:--- |:--- |
 | type | A propriedade Type do conjunto de conjuntos deve ser definida `TeradataTable`como. | Sim |
 | database | O nome do banco de dados Teradata. | Não (se "query" na fonte da atividade for especificada) |
-| table | O nome da tabela no banco de dados Teradata. | Não (se "query" na fonte da atividade for especificada) |
+| table | Nome da table no banco de dados Teradata. | Não (se "query" na fonte da atividade for especificada) |
 
 **Exemplo:**
 
