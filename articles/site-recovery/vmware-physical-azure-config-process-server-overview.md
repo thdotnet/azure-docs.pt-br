@@ -1,45 +1,45 @@
 ---
-title: Sobre a configuração, processo e servidores de destino mestre do Azure Site Recovery | Microsoft Docs
-description: Este artigo fornece uma visão geral do processo, configuração e servidores de destino mestre usando durante a configuração de recuperação de desastre de VMs do VMware locais no Azure com o Azure Site Recovery
+title: Sobre o Azure Site Recovery configuração, processo e servidores de destino mestre | Microsoft Docs
+description: Este artigo fornece uma visão geral dos servidores de destino de configuração, processo e mestre usando ao configurar a recuperação de desastre de VMs VMware locais para o Azure com Azure Site Recovery
 author: rayne-wiselman
 ms.service: site-recovery
 services: site-recovery
 ms.topic: conceptual
-ms.date: 05/30/2019
+ms.date: 08/22/2019
 ms.author: raynew
-ms.openlocfilehash: 8b3815fc9dc44484779a70b51ebff4802265d53a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d835eda044c2a6d1e0e7c678073711e45fde7395
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66417749"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972138"
 ---
-# <a name="about-site-recovery-components-configuration-process-master-target"></a>Sobre componentes do Site Recovery (configuração, processo, destino mestre)
+# <a name="about-site-recovery-components-configuration-process-master-target"></a>Sobre componentes de Site Recovery (configuração, processo, destino mestre)
 
-Este artigo descreve a configuração, processo e os servidores de destino mestre usados ao replicar VMs VMware e servidores físicos para o Azure com o [recuperação de Site](site-recovery-overview.md) service.
+Este artigo descreve a configuração, o processo e os servidores de destino mestre usados ao replicar VMs VMware e servidores físicos para o Azure com o serviço [site Recovery](site-recovery-overview.md) .
 
 ## <a name="configuration-server"></a>Servidor de configuração
 
-Recuperação de desastres de VMs do VMware locais e servidores físicos, você precisa de uma recuperação de Site local do servidor de configuração implantado.
+Para a recuperação de desastre de VMs VMware locais e servidores físicos, você precisa de um servidor de configuração Site Recovery implantado localmente.
 
 **Configuração** | **Detalhes** | **Links**
 --- | --- | ---
-**Componentes**  | O computador do servidor de configuração é executado em todos os componentes do Site Recovery no local, que incluem o servidor de configuração, o servidor de processo e o servidor de destino mestre.<br/><br/> Quando você configura o servidor de configuração, todos os componentes são instalados automaticamente. | [Leitura](vmware-azure-common-questions.md#configuration-server) perguntas Frequentes do servidor de configuração.
-**Função** | O servidor de configuração coordena a comunicação entre o ambiente local e o Azure e gerencia a replicação de dados. | Saiba mais sobre a arquitetura para a [VMware](vmware-azure-architecture.md) e [servidor físico](physical-azure-architecture.md) recuperação de desastres para o Azure.
-**Requisitos da VMware** | Para recuperação de desastre de VMs do VMware local, você deve instalar e executar o servidor de configuração como um local, VM VMware altamente disponível. | [Saiba mais sobre](vmware-azure-deploy-configuration-server.md#prerequisites) os pré-requisitos.
-**Implantação de VMware** | É recomendável que você implante o servidor de configuração usando um modelo OVA baixado. Esse método fornece uma simplesmente maneira de configurar um servidor de configuração que está em conformidade com todos os requisitos e pré-requisitos.<br/><br/> Se por alguma razão você não puder implantar uma VM do VMware usando um modelo OVA, você pode configurar as máquinas de servidor de configuração manualmente, conforme descrito abaixo para recuperação de desastres de máquina física. | [Implantar](vmware-azure-deploy-configuration-server.md#deployment-of-configuration-server-through-ova-template) com um modelo OVA.
-**Requisitos de servidor físico** | Recuperação de desastres em servidores físicos do local, implante o servidor de configuração manualmente. | [Saiba mais sobre](physical-azure-set-up-source.md#prerequisites) os pré-requisitos.
-**Implantação de servidor físico** | Se ele não pode ser instalado como uma VM VMware, você pode instalá-lo em um servidor físico. | [Implantar](physical-azure-set-up-source.md#set-up-the-source-environment) o servidor de configuração manualmente.
+**Componentes**  | O computador do servidor de configuração executa todos os componentes de Site Recovery locais, que incluem o servidor de configuração, o servidor de processo e o servidor de destino mestre.<br/><br/> Quando você configura o servidor de configuração, todos os componentes são instalados automaticamente. | [Leia](vmware-azure-common-questions.md#configuration-server) as perguntas frequentes do servidor de configuração.
+**Função** | O servidor de configuração coordena a comunicação entre o ambiente local e o Azure e gerencia a replicação de dados. | Saiba mais sobre a arquitetura de recuperação de desastre do [VMware](vmware-azure-architecture.md) e do [servidor físico](physical-azure-architecture.md) para o Azure.
+**Requisitos da VMware** | Para a recuperação de desastre de VMs VMware locais, você deve instalar e executar o servidor de configuração como uma VM VMware de alta disponibilidade e local. | [Saiba mais sobre](vmware-azure-deploy-configuration-server.md#prerequisites) os pré-requisitos.
+**Implantação do VMware** | Recomendamos que você implante o servidor de configuração usando um modelo OVA baixado. Esse método fornece uma maneira simples de configurar um servidor de configuração que esteja de acordo com todos os requisitos e pré-requisitos.<br/><br/> Se, por alguma razão, você não conseguir implantar uma VM VMware usando um modelo OVA, poderá configurar manualmente os computadores do servidor de configuração, conforme descrito abaixo para recuperação de desastres do computador físico. | [Implante](vmware-azure-deploy-configuration-server.md#deployment-of-configuration-server-through-ova-template) com um modelo ova.
+**Requisitos de servidor físico** | Para a recuperação de desastres em servidores físicos locais, você implanta o servidor de configuração manualmente. | [Saiba mais sobre](physical-azure-set-up-source.md#prerequisites) os pré-requisitos.
+**Implantação de servidor físico** | Se ele não puder ser instalado como uma VM VMware, você poderá instalá-lo em um servidor físico. | [Implante](physical-azure-set-up-source.md#set-up-the-source-environment) o servidor de configuração manualmente.
 
 
 ## <a name="process-server"></a>Servidor de processo
 
 **Configuração** | **Detalhes** | **Links**
 --- | --- | ---
-**Implantação**  | Para recuperação de desastres e replicação de VMs do VMware locais e servidores físicos, você precisa de um servidor de processo local. Por padrão, o servidor de processo é instalado no servidor de configuração quando você implantá-lo. | [Saiba mais](vmware-azure-architecture.md?#architectural-components).
-**Função (no local** | -Recebe dados de replicação de máquinas habilitadas para replicação.<br/> -Otimiza os dados de replicação com caching, compactação e criptografia e envia para o armazenamento do Azure.<br/> -Executa uma instalação por push do serviço de mobilidade do Site Recovery em VMs do VMware locais e servidores físicos que você deseja replicar.<br/> -Executa a descoberta automática de máquinas locais. | [Saiba mais](vmware-physical-azure-config-process-server-overview.md#process-server). 
-**Função (failback do Azure)** | Após o failover de seu site local, você configurar um servidor de processo no Azure, como uma VM do Azure para lidar com o failback para seu local.<br/><br/> O servidor de processo no Azure é temporário. A VM do Azure pode ser excluída após a conclusão do failback. | [Saiba mais](vmware-azure-set-up-process-server-azure.md).
-**Dimensionamento** | Para implantações maiores, local você pode configurar servidores de processo adicional, escalabilidade horizontal. Servidores adicionais expandir a capacidade, manipulando números maiores de replicação de máquinas e maiores volumes de tráfego de replicação.<br/><br/> Você pode mover as máquinas entre dois servidores de processo, a fim de balancear o tráfego de replicação. | [Saiba mais](vmware-azure-set-up-process-server-scale.md),
+**Implantação**  | Para a recuperação de desastre e a replicação de VMs VMware locais e servidores físicos, você precisa de um servidor de processo local. Por padrão, o servidor de processo é instalado no servidor de configuração quando você o implanta. | [Saiba mais](vmware-azure-architecture.md?#architectural-components).
+**Função (local** | -Recebe dados de replicação de computadores habilitados para replicação.<br/> -Otimiza os dados de replicação com caching, compactação e criptografia e os envia para o armazenamento do Azure.<br/> -Executa uma instalação por push do serviço de mobilidade de Site Recovery em VMs VMware locais e servidores físicos que você deseja replicar.<br/> -Executa a descoberta automática de computadores locais. | [Saiba mais](vmware-physical-azure-config-process-server-overview.md#process-server). 
+**Função (failback do Azure)** | Após o failover do site local, você configura um servidor de processo no Azure, como uma VM do Azure, para lidar com o failback para seu local.<br/><br/> O servidor de processo no Azure é temporário. A VM do Azure pode ser excluída após a conclusão do failback. | [Saiba mais](vmware-azure-set-up-process-server-azure.md).
+**Dimensionamento** | Para implantações maiores, no local, você pode configurar servidores de processo adicionais e de expansão. Os servidores adicionais ampliam a capacidade, tratando de números maiores de máquinas de replicação e volumes maiores de tráfego de replicação.<br/><br/> Você pode mover máquinas entre dois servidores de processo para balancear a carga do tráfego de replicação. | [Saiba mais](vmware-azure-set-up-process-server-scale.md),
 
 
 ## <a name="master-target-server"></a>Servidor de destino mestre
@@ -51,5 +51,5 @@ O servidor de destino mestre lida com os dados de replicação durante o failbac
 
 
 ## <a name="next-steps"></a>Próximas etapas
-- Examine os [arquitetura](vmware-azure-architecture.md) para recuperação de desastre de VMs VMware e servidores físicos.
-- Examine os [requisitos e pré-requisitos](vmware-physical-azure-support-matrix.md) para recuperação de desastre de VMs VMware e servidores físicos no Azure. 
+- Examine a [arquitetura](vmware-azure-architecture.md) para recuperação de desastres de VMs VMware e servidores físicos.
+- Examine os [requisitos e os pré-requisitos](vmware-physical-azure-support-matrix.md) para a recuperação de desastre de VMs VMware e servidores físicos no Azure. 

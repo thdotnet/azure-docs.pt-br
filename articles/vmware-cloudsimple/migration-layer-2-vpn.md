@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: aa7117fd7b5c8fa92f9d9cff1d7b1cbc18555840
-ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
+ms.openlocfilehash: 55401ca498f06aa0b959c3926f2a07f40e7fb638
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69881197"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972628"
 ---
 # <a name="migrate-workloads-using-layer-2-stretched-networks"></a>Migrar cargas de trabalho usando redes ampliadas de camada 2
 
@@ -24,7 +24,7 @@ O alargamento baseado em L2VPN das redes de camada 2 pode trabalhar com ou sem r
 > [!NOTE]
 > Este guia aborda o cenário em que o local e os data centers de nuvem privada estão conectados via VPN site a site.
 
-## <a name="deployment-scenario"></a>Cenário de Implantação
+## <a name="deployment-scenario"></a>Cenário de implantação
 
 Para ampliar sua rede local usando o L2VPN, você deve configurar um servidor L2VPN (destino NSX-T tier0 router) e um cliente L2VPN (cliente autônomo de origem).  
 
@@ -276,7 +276,7 @@ POST https://192.168.110.201/api/v1/vpn/ipsec/local-endpoints
 "trust_crl_ids": []
 }
 ```
- 
+
 ### <a name="create-a-peer-endpoint"></a>Criar um ponto de extremidade de par
 
 ```

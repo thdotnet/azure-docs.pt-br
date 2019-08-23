@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/30/2018
 ms.author: v-mohabe
-ms.openlocfilehash: 73480c6e24ab13b7764c5b72280c19971eb3d039
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 1ef4d8e76b54b995a09decdfaf9974f0929c8ed9
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68296487"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69905334"
 ---
 # <a name="monitor-identity-and-access-in-azure-security-center-preview"></a>Monitore a identidade e o acesso na Central de Segurança do Azure (Visualizar)
 Este artigo ajuda você a usar a Central de Segurança do Azure para monitorar a identidade e a atividade de acesso do usuário.
@@ -108,17 +108,17 @@ Em **Assinaturas**, há uma lista de assinaturas. A primeira coluna lista as ass
 ## <a name="recommendations"></a>Recomendações
 Use a tabela abaixo como referência para ajudá-lo a entender as recomendações de identidade e acesso disponíveis e o que cada uma delas se você aplicá-lo.
 
-|Tipo de recurso|Classificação de segurança|Recomendações|DESCRIÇÃO|
+|Tipo de recurso|Classificação de segurança|Recomendação|Descrição|
 |----|----|----|----|
-|Assinatura|50|A MFA deve ser habilitada em contas com permissões de proprietário em sua assinatura|Habilite a MFA (Autenticação Multifator) para todas as contas de assinatura com privilégios de administrador para evitar uma violação de conta ou recursos.|
+|Assinatura|50|O MFA deve ser habilitado em contas com permissões de proprietário em sua assinatura|Habilite a MFA (Autenticação Multifator) para todas as contas de assinatura com privilégios de administrador para evitar uma violação de conta ou recursos.|
 |Assinatura|40|A MFA deve ser habilitada em suas contas de assinatura com permissões de gravação|Habilite a MFA (Autenticação Multifator) para todas as contas de assinatura com privilégios de gravação para evitar uma violação de conta ou recursos.|
-|Assinatura|30|Contas externas com permissões de proprietário devem ser removidas da sua assinatura|Remova contas externas com permissões de proprietário da sua assinatura para impedir o acesso não monitorado.|
+|Assinatura|30|As contas externas com permissões de proprietário devem ser removidas de sua assinatura|Remova contas externas com permissões de proprietário da sua assinatura para impedir o acesso não monitorado.|
 |Assinatura|30|A MFA deve ser habilitada em suas contas de assinatura com permissões de leitura|Habilite a MFA (Autenticação Multifator) para todas as contas de assinatura com privilégios de leitura para evitar uma violação de conta ou recursos.|
-|Assinatura|25|As contas externas com permissões de gravação do proprietário devem ser removidas da sua assinatura|Remova contas externas com permissões de gravação da sua assinatura para impedir o acesso não monitorado. |
-|Assinatura|20|Contas preteridas com permissões de proprietário devem ser removidas da sua assinatura|Remova contas preteridas com permissões de proprietário das suas assinaturas.|
-|Assinatura|5|As contas preteridas devem ser removidas da sua assinatura|Remova contas preteridas de suas assinaturas para habilitar o acesso a apenas usuários atuais. |
+|Assinatura|25|As contas externas com permissões de gravação devem ser removidas de sua assinatura|Remova contas externas com permissões de gravação da sua assinatura para impedir o acesso não monitorado. |
+|Assinatura|20|As contas preteridas com permissões de proprietário devem ser removidas de sua assinatura|Remova contas preteridas com permissões de proprietário das suas assinaturas.|
+|Assinatura|5|As contas preteridas devem ser removidas de sua assinatura|Remova contas preteridas de suas assinaturas para habilitar o acesso a apenas usuários atuais. |
 |Assinatura|5|Deve haver mais de um proprietário atribuído à sua assinatura|Designe mais de um proprietário da assinatura para poder ter redundância de acesso de administrador.|
-|Assinatura|5|Um máximo de 3 proprietários deve ser designado para sua assinatura|Designe menos de três proprietários de assinaturas para reduzir o potencial de violação por um proprietário comprometido.|
+|Assinatura|5|Um máximo de três proprietários deve ser designado para sua assinatura|Designe menos de três proprietários de assinaturas para reduzir o potencial de violação por um proprietário comprometido.|
 |Cofre de chaves|5|Os logs de diagnóstico no Key Vault devem ser habilitados|Ativar os logs e mantenha-os por até um ano. Isso permite recriar trilhas de atividades para fins de investigação quando ocorre um incidente de segurança ou quando sua rede é comprometida. |
 |Assinatura|15|Contas externas com permissões de leitura devem ser removidas da sua assinatura|Remova contas externas com privilégios de leitura da sua assinatura para impedir o acesso não monitorado.| 
 
@@ -128,7 +128,7 @@ Use a tabela abaixo como referência para ajudá-lo a entender as recomendaçõe
 ## <a name="next-steps"></a>Próximas etapas
 Para saber mais sobre as recomendações que se aplicam aos outros tipos de recursos do Azure, consulte o seguinte:
 
-- [Protegendo suas máquinas e aplicativos na Central de segurança do Azure](security-center-virtual-machine-recommendations.md)
+- [Protegendo suas máquinas e aplicativos na Central de segurança do Azure](security-center-virtual-machine-protection.md)
 - [Protegendo sua rede na Central de Segurança do Azure](security-center-network-recommendations.md)
 - [Proteger seus dados na Central de segurança do Azure e o serviço do SQL Azure](security-center-sql-service-recommendations.md)
 

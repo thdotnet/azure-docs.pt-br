@@ -17,12 +17,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: vijetaj
-ms.openlocfilehash: ee63f7aae70e93dfbe857b8680d2b4a477600d72
-ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
-ms.translationtype: MT
+ms.openlocfilehash: cd4acdd4009a94b51807a536c28b138b86d2aced
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69575100"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69971925"
 ---
 # <a name="ten-things-you-can-do-on-the-windows-data-science-virtual-machine"></a>Dez coisas que você pode fazer na Máquina Virtual de Ciência de Dados do Windows
 
@@ -64,10 +64,6 @@ Para Python, você pode usar um IDE como o Visual Studio Community Edition, que 
 * Criar ambientes personalizados para cada versão navegando para **Ferramentas** -> **Ferramentas Python** -> **Ambientes Python** e clicando em “ **+ Personalizado**” no Visual Studio Community Edition
 * Forneça uma descrição e defina o caminho de prefixo do ambiente como *c:\anaconda\envs\python2* para o Anaconda Python 2.7
 * Clique em **Detecção Automática** e em **Aplicar** para salvar o ambiente.
-
-Veja a aparência do ambiente personalizado configurado no Visual Studio.
-
-![Captura de tela do Visual Studio com Ferramentas Python para Visual Studio selecionado](./media/vm-do-ten-things/PTVSSetup.png)
 
 Confira a [documentação do PTVS](https://aka.ms/ptvsdocs) para obter mais detalhes sobre como criar os Ambientes Python.
 
@@ -219,7 +215,7 @@ Para administrar seus recursos de nuvem e sua assinatura do Azure, você tem dua
 + **Azure PowerShell**: usar scripts do Windows PowerShell. Execute o Azure PowerShell por meio de um atalho na área de trabalho ou no menu iniciar intitulado "Microsoft Azure PowerShell". Consulte a [documentação do Microsoft Azure PowerShell](../../powershell-azure-resource-manager.md) para obter detalhes completos. 
 
 ## <a name="5-extend-storage-with-shared-file-systems"></a>5. Estenda o armazenamento com sistemas de arquivos compartilhados
-Os cientistas de dados podem compartilhar grandes conjuntos de dados, códigos ou outros recursos dentro da equipe. O DSVM em si tem cerca de 45 GB de espaço disponível. Para estender o armazenamento, você pode usar o Serviço de Arquivos do Azure e montá-lo em uma ou mais instâncias do DSVM ou acessá-lo por meio da API REST.  Você também pode usar [Portal do Azure](../../virtual-machines/windows/attach-managed-disk-portal.md) ou usar o [Azure Powershell](../../virtual-machines/windows/attach-disk-ps.md) para adicionar discos de dados extras dedicados. 
+Os cientistas de dados podem compartilhar grandes conjuntos de dados, códigos ou outros recursos dentro da equipe. O DSVM em si tem cerca de 45 GB de espaço disponível. Para estender o armazenamento, você pode usar o Serviço de Arquivos do Azure e montá-lo em uma ou mais instâncias do DSVM ou acessá-lo por meio da API REST.  Você também pode usar [portal do Azure](../../virtual-machines/windows/attach-managed-disk-portal.md) ou usar o [Azure PowerShell](../../virtual-machines/windows/attach-disk-ps.md) para adicionar discos de dados dedicados extras. 
 
 > [!NOTE]
 > O espaço máximo do compartilhamento do Serviço de Arquivos do Azure é de 5 TB e o limite do tamanho de arquivo individual é 1 TB. 
@@ -295,8 +291,6 @@ Para mover dados entre seus arquivos locais e o armazenamento de blobs, você po
     AzCopy /Source:C:\myfolder /Dest:https://<mystorageaccount>.blob.core.windows.net/<mycontainer> /DestKey:<storage account key> /Pattern:abc.txt
 
 Substitua **C:\minhapasta** pelo caminho em que seu arquivo está armazenado, **minhacontadearmazenamento** pelo nome da conta do armazenamento de blobs, **meucontêiner** pelo nome do contêiner, **chave da conta de armazenamento** pela sua chave de acesso de armazenamento de blobs. Você pode encontrar as credenciais da conta de armazenamento no [portal do Azure](https://portal.azure.com).
-
-![Captura de tela das chaves da conta de Armazenamento e informações de contêiner no portal do Azure](./media/vm-do-ten-things/StorageAccountCredential_v2.png)
 
 Execute o comando AzCopy no PowerShell ou em um prompt de comando. Veja um exemplo de uso do comando AzCopy:
 
@@ -393,9 +387,7 @@ O Armazenamento do Azure Data Lake é um repositório de grande escala para carg
 
 **Mover dados da VM para o Data Lake: Azure Data Lake Explorer**
 
-Você pode usar o **Gerenciador do Azure Data Lake** para carregar dados dos arquivos locais em sua Máquina Virtual para o armazenamento do Data Lake.
-
-![Captura de tela de como usar o Gerenciador do Data Lake para carregar arquivos](./media/vm-do-ten-things/Azure_Data_Lake_UploadData.PNG)
+Você pode usar **Azure data Lake Explorer** para [carregar dados dos arquivos locais em sua máquina virtual para data Lake armazenamento](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-get-started-portal).
 
 Compile também um pipeline de dados para operacionalizar a movimentação de dados, entre o Azure Data Lake, usando o [Azure Data Factory(ADF)](https://azure.microsoft.com/services/data-factory/). Veja este [artigo](https://azure.microsoft.com/blog/creating-big-data-pipelines-using-azure-data-lake-and-azure-data-factory/) que vai orientá-lo pelas etapas de criação dos pipelines de dados.
 
@@ -406,8 +398,6 @@ Se os dados residirem no Armazenamento de Blobs, você poderá lê-los diretamen
 ![Captura de tela da caixa de diálogo Adicionar Fonte de Dados](./media/vm-do-ten-things/Link_Blob_to_ADLA_v2.PNG)
 
 No Visual Studio, você pode ler dados no armazenamento de blobs, manipular alguns dados, realizar engenharia de recursos, bem como gerar os dados resultantes para o Azure Data Lake ou Armazenamento de Blobs do Azure. Quando fizer referência aos dados no Armazenamento de Blobs, use **wasb://** ; quando fizer referência aos dados no Azure Data Lake, use **swbhdfs://**
-
-![Captura da tela da consulta com a entrada WASB realçada](./media/vm-do-ten-things/USQL_Read_Blob_v2.PNG)
 
 Você pode usar as seguintes consultas U-SQL no Visual Studio:
 
@@ -486,7 +476,7 @@ O Azure HDInsight é um serviço gerenciado do Apache Hadoop, Spark, HBase e Sto
 
 ![Habilitar o acesso remoto ao cluster HDInsight](./media/vm-do-ten-things/Create_HDI_dashboard_v3.PNG)
 
-* Criar um Workspace de Azure Machine Learning. Seus Testes de Machine Learning são armazenados neste workspace do Machine Learning. Selecione as opções destacadas no Portal, conforme mostra a captura de tela a seguir:
+* Criar um Workspace de Azure Machine Learning. Seus Testes de Machine Learning são armazenados neste workspace do Machine Learning. Selecione as opções realçadas no portal, conforme mostrado na seguinte captura de tela:
 
 ![Criar um workspace do Azure Machine Learning](./media/vm-do-ten-things/Create_ML_Space.PNG)
 
@@ -880,9 +870,7 @@ Agora você tem os dados no modelo de dados do Power BI. A área de trabalho do 
 
 ![Power BI Desktop](./media/vm-do-ten-things/PowerBIVolcanoData.png)
 
-É possível iniciar a criação de relatórios e as visualizações usando o modelo de dados. Você pode executar as etapas deste [artigo sobre o Power BI](../../cosmos-db/powerbi-visualize.md#build-the-reports) para criar um relatório. O resultado final é um relatório semelhante ao seguinte.
-
-![Exibição de relatório do Power BI Desktop — conector do Power BI](./media/vm-do-ten-things/power_bi_connector_pbireportview2.png)
+É possível iniciar a criação de relatórios e as visualizações usando o modelo de dados. Você pode executar as etapas deste [artigo sobre o Power BI](../../cosmos-db/powerbi-visualize.md#build-the-reports) para criar um relatório.
 
 ## <a name="9-dynamic-dsvm-scaling"></a>9. Dimensionamento dinâmico de DSVM 
 Você pode escalar verticalmente a DSVM para atender às necessidades do seu projeto. Se você não precisar usar a VM à noite ou nos fins de semana, basta desligá-la no [portal do Azure](https://portal.azure.com).
@@ -894,9 +882,7 @@ Você pode escalar verticalmente a DSVM para atender às necessidades do seu pro
 
 Se precisar lidar com análise em grande escala e precisar de maior capacidade de CPU, memória ou disco, você encontrará mais opções de tamanhos de VM em termos de núcleos de CPU, instâncias baseadas em GPU para aprendizado profundo, capacidade de memória e tipos de disco (incluindo unidades de estado sólido) que atendam às suas necessidades de computação e orçamento. A lista completa de VMs e seus preços de computação por hora estão disponíveis na página [Preço de Máquinas Virtuais do Azure](https://azure.microsoft.com/pricing/details/virtual-machines/) .
 
-Da mesma forma, se sua necessidade de capacidade de processamento de VM for reduzida (por exemplo: você moveu uma grande carga de trabalho para um cluster Hadoop ou um Spark), você poderá reduzir verticalmente o cluster no [portal do Azure](https://portal.azure.com) e acessar as configurações da sua instância VM. Veja uma captura de tela.
-
-![Configurações da instância VM](./media/vm-do-ten-things/VMScaling.PNG)
+Da mesma forma, se sua necessidade de capacidade de processamento de VM for reduzida (por exemplo: você moveu uma grande carga de trabalho para um cluster Hadoop ou um Spark), você poderá reduzir verticalmente o cluster no [portal do Azure](https://portal.azure.com) e acessar as configurações da sua instância VM. 
 
 ## <a name="10-add-more-tools"></a>10. Adicionar mais ferramentas
 Há várias ferramentas internas previamente compiladas no DSVM que podem resolver muitas das necessidades comuns de análise de dados. Isso economiza tempo ao evitar ter que instalar e configurar seus ambientes um por um e economiza dinheiro porque você paga apenas os recursos que usar.

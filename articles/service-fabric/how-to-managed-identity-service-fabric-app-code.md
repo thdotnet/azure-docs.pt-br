@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 7/25/2019
 ms.author: atsenthi
-ms.openlocfilehash: 5095e680eb7fd33d28acb2d187f83d86db1b46bf
-ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
-ms.translationtype: HT
+ms.openlocfilehash: 8e535fc581e186abd032206c2bbf78623d95967f
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69656618"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69899762"
 ---
 # <a name="how-to-leverage-a-service-fabric-applications-managed-identity-to-access-azure-services-preview"></a>Como aproveitar a identidade gerenciada de um aplicativo Service Fabric para acessar os serviços do Azure (versão prévia)
 
@@ -23,7 +23,7 @@ Service Fabric aplicativos podem aproveitar identidades gerenciadas para acessar
 > Uma identidade gerenciada representa a associação entre um recurso do Azure e uma entidade de serviço no locatário do Azure AD correspondente associado à assinatura que contém o recurso. Como tal, no contexto de Service Fabric, identidades gerenciadas têm suporte apenas para aplicativos implantados como recursos do Azure. 
 
 > [!IMPORTANT]
-> Antes de usar a identidade gerenciada de um aplicativo Service Fabric, o aplicativo cliente deve receber acesso ao recurso protegido. Consulte a lista de [Serviços do Azure que dão suporte à autenticação do Azure ad](/active-directory/managed-identities-azure-resources/services-support-managed-identities#azure-services-that-support-managed-identities-for-azure-resources) para verificar o suporte e, em seguida, para a documentação do respectivo serviço para obter as etapas específicas para conceder um acesso de identidade aos recursos de interesse. 
+> Antes de usar a identidade gerenciada de um aplicativo Service Fabric, o aplicativo cliente deve receber acesso ao recurso protegido. Consulte a lista de [Serviços do Azure que dão suporte à autenticação do Azure ad](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-managed-identities-for-azure-resources) para verificar o suporte e, em seguida, para a documentação do respectivo serviço para obter as etapas específicas para conceder um acesso de identidade aos recursos de interesse. 
 
 ## <a name="acquiring-an-access-token-using-rest-api"></a>Adquirindo um token de acesso usando a API REST
 Em clusters habilitados para identidade gerenciada, o tempo de execução de Service Fabric expõe um ponto de extremidade de localhost que os aplicativos podem usar para obter tokens de acesso. O ponto de extremidade está disponível em todos os nós do cluster e está acessível a todas as entidades nesse nó. Chamadores autorizados podem obter tokens de acesso chamando esse ponto de extremidade e apresentando um código de autenticação; o código é gerado pelo tempo de execução de Service Fabric para cada ativação de pacote de código de serviço distinto e está associado ao tempo de vida do processo que hospeda esse pacote de código de serviço.

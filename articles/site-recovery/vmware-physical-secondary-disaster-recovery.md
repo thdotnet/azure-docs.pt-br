@@ -6,14 +6,14 @@ manager: carmonm
 ms.service: site-recovery
 services: site-recovery
 ms.topic: conceptual
-ms.date: 05/30/2019
+ms.date: 08/22/2019
 ms.author: raynew
-ms.openlocfilehash: 9a1cb63bd2a209c72af608d23515723a63b180e1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a87abfdd70db07e4310dc6a39a280e12f664d03b
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66417719"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972088"
 ---
 # <a name="set-up-disaster-recovery-of-on-premises-vmware-virtual-machines-or-physical-servers-to-a-secondary-site"></a>Configurar a recuperação de desastre de máquinas virtuais VMware locais ou de servidores físicos para um site secundário
 
@@ -51,7 +51,7 @@ o  Para máquinas físicas, siga este [tutorial](./physical-azure-disaster-recov
 **Componentes necessários** |Serviço de mobilidade em máquinas replicadas. Servidor de configuração no local, servidor de processo, servidor de destino master. Servidor no processo temporário no Azure para failback.|Servidor de mobilidade, Servidor de Processo, Servidor de Configuração e Destino Master
 **Configuração e orquestração** |Cofre de Serviços de Recuperação no portal do Azure | Usando o vContinuum 
 **Replicado** |Disco (Windows e Linux) |Volume – Windows<br> Disco-Linux
-**Cluster de disco compartilhado** |Sem suporte|Com suporte
+**Cluster de disco compartilhado** |Sem suporte|Suportado
 **Limites de variação de dados (em média)** |Dados de 10 MB/s por disco<br> Dados de 25MB/s por VM<br> [Saiba mais](./site-recovery-vmware-deployment-planner-analyze-report.md#azure-site-recovery-limits) | > Dados de 10 MB/s por disco  <br> > Dados de 25MB/s por VM
 **Monitoramento** |Do portal do Azure|Do CX (Servidor de Configuração)
 **Matriz de suporte** | [Clique aqui para obter detalhes](./vmware-physical-azure-support-matrix.md)|[Baixar a matriz compatível do ASR Scout](https://aka.ms/asr-scout-cm)
@@ -128,7 +128,7 @@ Baixe o arquivo .zip de [atualização](https://aka.ms/asr-scout-update7) e os a
   8. **Servidor de origem Linux**: Para atualizar o agente unificado, copie a versão correspondente do arquivo do agente unificado no servidor Linux e extraia-o. Na pasta extraída, execute **/Install**.  Exemplo: Para o servidor RHEL 6.7 de 64 bits, copie **InMage_UA_8.0.7.0_RHEL6-64_GA_03Dec2018_release.tar.gz** para o servidor e o extraia. Na pasta extraída, execute **/Install**.
   9. Depois de atualizar o Servidor de Configuração, o Servidor de Processo e o servidor RX com os instaladores mencionados acima, as bibliotecas PHP e MySQL precisarão ser atualizadas manualmente com as etapas mencionadas na seção 7.4 do [guia de instalação rápida](https://aka.ms/asr-scout-quick-install-guide).
 
-## <a name="enable-replication"></a>Habilitar a replicação
+## <a name="enable-replication"></a>Habilitar replicação
 
 1. Configure a replicação entre os sites do VMware de origem e de destino.
 2. Consulte os documentos a seguir para saber mais sobre a instalação, proteção e recuperação:
@@ -159,7 +159,7 @@ O Scout Atualização 7 é um instalador completo que pode ser usado para uma no
 #### <a name="manual-upgrade-for-php-and-mysql-on-csps-and-rx"></a>Atualização manual do PHP e do MySQL no CS, no PS e no RX
 A plataforma de script PHP deve ser atualizada para a versão 7.2.10 no Servidor de Configuração, no Servidor de Processo e no Servidor RX.
 O sistema de gerenciamento de banco de dados MySQL deve ser atualizado para a versão 5.7.23 no Servidor de Configuração, no Servidor de Processo e no Servidor RX.
-Siga as etapas manuais fornecidas na [guia de instalação rápida](https://aka.ms/asr-scout-quick-install-guide) atualizar versões do PHP e MySQL.
+Siga as etapas manuais fornecidas no guia de [instalação rápida](https://aka.ms/asr-scout-quick-install-guide) para atualizar as versões do PHP e do MySQL.
 
 ### <a name="site-recovery-scout-801-update-6"></a>Site Recovery Scout 8.0.1 Atualização 6 
 Atualizado: 12 de outubro de 2017

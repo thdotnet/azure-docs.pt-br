@@ -10,25 +10,25 @@ services: logic-apps
 ms.reviewer: klam, divswa, LADocs
 ms.suite: integration
 tags: connectors
-ms.openlocfilehash: d677c0eae9c92f90783ed4ebd95a528b34c872ec
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 31f6a3fc281b8dc309ddcd237246c870c85ae20b
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60847292"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69971637"
 ---
 # <a name="connect-to-sap-systems-from-azure-logic-apps"></a>Conectar aos sistemas SAP a partir do Aplicativos Lógicos do Azure
 
 > [!NOTE]
-> Este conector SAP está agendada para substituição. Por favor, usar ou migrar para o [conector do SAP mais recente e mais avançado](./logic-apps-using-sap-connector.md). 
+> Este conector SAP está agendado para substituição. Use ou migre para o [conector SAP mais recente e avançado](./logic-apps-using-sap-connector.md). 
 
 Este artigo mostra como é possível acessar os recursos SAP de dentro de um aplicativo lógico usando os conectores do Servidor de Aplicativos SAP e do Servidor de Mensagens SAP. Dessa forma, você pode automatizar tarefas, processos e fluxos de trabalho que gerenciam dados e recursos SAP com a criação de aplicativos lógicos.
 
 Este exemplo usa um aplicativo lógico que pode ser disparado com uma solicitação HTTP. O aplicativo lógico envia um documento intermediário (IDoc) para um servidor SAP e retorna uma resposta ao solicitante que chamou o aplicativo lógico.
 Os conectores SAP atuais têm ações, mas não gatilhos, portanto, este exemplo usa o [gatilho da solicitação HTTP](../connectors/connectors-native-reqres.md) como a primeira etapa no fluxo de trabalho da lógica do aplicativo. Para obter informações técnicas específicas sobre o conector SAP, consulte estes artigos de referência: 
 
-* <a href="https://docs.microsoft.com/connectors/sapapplicationserver/" target="blank">Conector do servidor de aplicativos SAP</a>
-* <a href="https://docs.microsoft.com/connectors/sapmessageserver/" target="blank">Conector do servidor de mensagens SAP</a>
+* <a href="https://docs.microsoft.com/connectors/sap" target="blank">Conector do servidor de aplicativos SAP</a>
+* <a href="https://docs.microsoft.com/connectors/sap/#send-message-to-sap" target="blank">Conector do servidor de mensagens SAP</a>
 
 Caso você ainda não tenha uma assinatura do Azure, <a href="https://azure.microsoft.com/free/" target="_blank">inscreva-se em uma conta gratuita do Azure</a>.
 
@@ -91,7 +91,7 @@ Em Aplicativos Lógicos do Azure, uma [ação](../logic-apps/logic-apps-overview
    * **Servidor de aplicativos SAP – Enviar para a SAP**
    * **Servidor de mensagens SAP – Enviar para a SAP**
 
-   Este exemplo usa essa ação: **Servidor de aplicativos SAP – Enviar para a SAP**
+   Este exemplo usa esta ação: **Servidor de aplicativos SAP – Enviar para a SAP**
 
    ![Selecionar “Servidor de Aplicativos SAP” ou “Servidor de Mensagens SAP”](media/logic-apps-using-sap-connector-old/select-sap-action.png)
 
@@ -190,8 +190,8 @@ Parabéns, você criou um aplicativo lógico que pode se comunicar com o servido
 
 Para obter detalhes técnicos sobre o conector conforme descrito pelos arquivos do Swagger dos conectores, consulte estes artigos de referência: 
 
-* [Servidor de Aplicativos SAP](/connectors/sapapplicationserver/)
-* [Servidor de Mensagens SAP](/connectors/sapmessageserver/)
+* [Servidor de Aplicativos SAP](/connectors/sap)
+* [Servidor de Mensagens SAP](/connectors/sap/#send-message-to-sap)
 
 ## <a name="get-support"></a>Obter suporte
 

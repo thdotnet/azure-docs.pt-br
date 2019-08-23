@@ -1,21 +1,21 @@
 ---
-title: Store consulta no banco de dados do Azure para PostgreSQL – servidor único
-description: Este artigo descreve o recurso de Store de consulta no banco de dados do Azure para PostgreSQL – servidor único.
+title: Repositório de Consultas no banco de dados do Azure para PostgreSQL-servidor único
+description: Este artigo descreve o recurso Repositório de Consultas no banco de dados do Azure para PostgreSQL-servidor único.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 5/6/2019
-ms.openlocfilehash: b622de3e21d26676bb11d81a6facf8fea18cabc1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/21/2019
+ms.openlocfilehash: 5ddbff62421d97b1105a997bd084e1fe5b44cf12
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65067195"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69907410"
 ---
 # <a name="monitor-performance-with-the-query-store"></a>Monitorar o desempenho com o Repositório de Consultas
 
-**Aplica-se a:** Banco de dados do Azure para PostgreSQL – servidor único 9.6 e 10
+**Aplica-se a:** Banco de dados do Azure para PostgreSQL-servidor único 9,6 e 10
 
 O recurso de Repositório de Consultas no Banco de Dados do Azure para PostgreSQL fornece uma maneira de acompanhar o desempenho de consultas ao longo do tempo. O Repositório de Consultas simplifica a solução de problemas ajudando você a rapidamente localizar as consultas de execução mais longa e que consomem mais recursos. O Repositório de Consultas captura automaticamente um histórico das estatísticas de tempo de execução e consultas e o retém para sua análise. Ele separa os dados por janelas de tempo para que você possa ver padrões de uso do banco de dados. Os dados de todos os usuários, bancos de dados e consultas são armazenados em um banco de dados chamado **azure_sys** na instância do Banco de Dados do Azure para PostgreSQL.
 
@@ -29,14 +29,14 @@ O Repositório de Consultas é um recurso que requer aceitação, portanto, ele 
 1. Entre no portal do Azure e selecione seu servidor do Banco de Dados do Azure para PostgreSQL.
 2. Selecione **Parâmetros de Servidor** na seção **Configurações** do menu.
 3. Pesquise o parâmetro `pg_qs.query_capture_mode`.
-4. Defina o valor como `TOP` e **salvar**.
+4. Defina o valor como `TOP` e **salve**.
 
-Para habilitar as estatísticas de espera em sua consulta Store: 
+Para habilitar as estatísticas de espera no seu Repositório de Consultas: 
 1. Pesquise o parâmetro `pgms_wait_sampling.query_capture_mode`.
-1. Defina o valor como `ALL` e **salvar**.
+1. Defina o valor como `ALL` e **salve**.
 
 
-Como alternativa, você pode definir esses parâmetros usando a CLI do Azure.
+Como alternativa, você pode definir esses parâmetros usando o CLI do Azure.
 ```azurecli-interactive
 az postgres server configuration set --name pg_qs.query_capture_mode --resource-group myresourcegroup --server mydemoserver --value TOP
 az postgres server configuration set --name pgms_wait_sampling.query_capture_mode --resource-group myresourcegroup --server mydemoserver --value ALL
@@ -86,7 +86,7 @@ As opções a seguir estão disponíveis para configurar os parâmetros do Repos
 
 | **Parâmetro** | **Descrição** | **Padrão** | **Range**|
 |---|---|---|---|
-| pg_qs.query_capture_mode | Define quais instruções são rastreadas. | Nenhum | none, top, all |
+| pg_qs.query_capture_mode | Define quais instruções são rastreadas. | nenhum | none, top, all |
 | pg_qs.max_query_text_length | Define o comprimento máximo de consulta que pode ser salvo. Consultas mais longas serão truncadas. | 6000 | 100 a 10 mil |
 | pg_qs.retention_period_in_days | Define o período de retenção. | 7 | 1 a 30 |
 | pg_qs.track_utility | Define se os comandos do utilitário são rastreados | em | on, off |
@@ -95,7 +95,7 @@ As opções a seguir se aplicam especificamente às estatísticas de espera.
 
 | **Parâmetro** | **Descrição** | **Padrão** | **Range**|
 |---|---|---|---|
-| pgms_wait_sampling.query_capture_mode | Define quais instruções são rastreadas para as estatísticas de espera. | Nenhum | none, all|
+| pgms_wait_sampling.query_capture_mode | Define quais instruções são rastreadas para as estatísticas de espera. | nenhum | none, all|
 | Pgms_wait_sampling.history_period | Define a frequência, em milissegundos, com a qual são realizadas amostras dos eventos de espera. | 100 | 1 a 600000 |
 
 > [!NOTE] 
@@ -109,7 +109,7 @@ Exiba e gerencie o Repositório de Consultas usando as seguintes exibições e f
 
 Consultas são normalizadas examinando sua estrutura após a remoção de literais e constantes. Se duas consultas forem idênticas, exceto por valores literais, elas terão o mesmo hash.
 
-### <a name="querystoreqsview"></a>query_store.qs_view
+### <a name="query_storeqs_view"></a>query_store.qs_view
 Essa exibição retorna todos os dados no Repositório de Consultas. Há uma linha para cada ID de banco de dados, ID de usuário e ID de consulta distinta. 
 
 |**Nome**   |**Tipo** | **Referências**  | **Descrição**|
@@ -128,7 +128,7 @@ Essa exibição retorna todos os dados no Repositório de Consultas. Há uma lin
 |max_time   |double precision   ||  Tempo máximo de execução da consulta em milissegundos|
 |mean_time  |double precision   ||  Tempo médio de execução da consulta em milissegundos|
 |stddev_time|   double precision    ||  Desvio padrão de tempo de execução da consulta em milissegundos |
-|rows   |bigint ||  Número total de linhas recuperadas ou afetadas pela instrução|
+|linhas   |bigint ||  Número total de linhas recuperadas ou afetadas pela instrução|
 |shared_blks_hit|   bigint  ||  Número total de ocorrências no cache do bloco compartilhado pela instrução|
 |shared_blks_read|  bigint  ||  Número total de blocos compartilhados lidos pela instrução|
 |shared_blks_dirtied|   bigint   || Número total de blocos compartilhados sujos pela instrução |
@@ -142,7 +142,7 @@ Essa exibição retorna todos os dados no Repositório de Consultas. Há uma lin
 |blk_read_time  |double precision    || Tempo total que a instrução passou lendo blocos em milissegundos (se track_io_timing estiver habilitado, caso contrário, zero)|
 |blk_write_time |double precision    || Tempo total que a instrução passou gravando blocos em milissegundos (se track_io_timing estiver habilitado, caso contrário, zero)|
     
-### <a name="querystorequerytextsview"></a>query_store.query_texts_view
+### <a name="query_storequery_texts_view"></a>query_store.query_texts_view
 Essa exibição retorna os dados de texto da consulta no Repositório de Consultas. Há uma linha para cada query_text distinto.
 
 |**Nome**|  **Tipo**|   **Descrição**|
@@ -150,7 +150,7 @@ Essa exibição retorna os dados de texto da consulta no Repositório de Consult
 |query_text_id  |bigint     |ID da tabela query_texts|
 |query_sql_text |Varchar(10000)     |Texto de uma instrução representativa. Consultas diferentes com a mesma estrutura são agrupadas. Este texto é o da primeira das consultas no cluster.|
 
-### <a name="querystorepgmswaitsamplingview"></a>query_store.pgms_wait_sampling_view
+### <a name="query_storepgms_wait_sampling_view"></a>query_store.pgms_wait_sampling_view
 Essa exibição retorna os dados de eventos de espera no Repositório de Consultas. Há uma linha para cada ID de banco de dados, ID de usuário, ID de consulta e evento distinto.
 
 |**Nome**|  **Tipo**|   **Referências**| **Descrição**|
@@ -158,9 +158,9 @@ Essa exibição retorna os dados de eventos de espera no Repositório de Consult
 |user_id    |oid    |pg_authid.oid  |OID do usuário que executou a instrução|
 |db_id  |oid    |pg_database.oid    |OID do banco de dados no qual a instrução foi executada|
 |query_id   |bigint     ||Código hash interno, computado da árvore de análise da instrução|
-|event_type |text       ||O tipo de evento pelo qual o back-end está esperando|
-|evento  |text       ||O nome do evento de espera se o back-end estiver esperando no momento|
-|chamadas  |Número inteiro        ||Número do mesmo evento capturado|
+|event_type |texto       ||O tipo de evento pelo qual o back-end está esperando|
+|evento  |texto       ||O nome do evento de espera se o back-end estiver esperando no momento|
+|chamadas  |Inteiro        ||Número do mesmo evento capturado|
 
 
 ### <a name="functions"></a>Funções
@@ -175,6 +175,7 @@ Query_store.staging_data_reset() retorna void
 ## <a name="limitations-and-known-issues"></a>Limitações e problemas conhecidos
 - Se um servidor PostgreSQL tem o parâmetro default_transaction_read_only ativo, o Repositório de Consultas não é capaz de capturar dados.
 - A funcionalidade do Repositório de Consultas poderá ser interrompida se ele encontrar consultas Unicode longas (> = 6.000 bytes).
+- As réplicas de [leitura](concepts-read-replicas.md) replicam dados de repositório de consultas do servidor mestre. Isso significa que a Repositório de Consultas de uma réplica de leitura não fornece estatísticas sobre as consultas executadas na réplica de leitura.
 
 
 ## <a name="next-steps"></a>Próximas etapas

@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: article
 ms.date: 06/03/2019
 ms.author: alkohli
-ms.openlocfilehash: 56470c08f0ac940dae42821ae61846f1c86d52eb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 838d65da90ec0daef69375e5a75bcb497a0c3512
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66479520"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69900398"
 ---
 # <a name="choose-an-azure-solution-for-data-transfer"></a>Escolha uma solução do Azure para transferência de dados
 
@@ -67,7 +67,7 @@ Responda às seguintes perguntas para ajudar a selecionar uma solução de trans
 
 ## <a name="data-transfer-feature-in-azure-portal"></a>Recurso de transferência de dados no portal do Azure
 
-Você também pode ir para sua conta de armazenamento do Azure no portal do Azure e selecione o **transferência de dados** recurso. Forneça a largura de banda de rede em seu ambiente, o tamanho dos dados que você deseja transferir e a frequência de transferência de dados. Você verá os dados ideais transferência soluções correspondente às informações que você forneceu. 
+Você também pode acessar sua conta de armazenamento do Azure em portal do Azure e selecionar o recurso de **transferência de dados** . Forneça a largura de banda de rede em seu ambiente, o tamanho dos dados que você deseja transferir e a frequência de transferência de dados. Você verá as soluções de transferência de dados ideais correspondentes às informações fornecidas. 
 
 ## <a name="next-steps"></a>Próximas etapas
 
@@ -83,4 +83,4 @@ Você também pode ir para sua conta de armazenamento do Azure no portal do Azur
 - Use as APIs REST para transferir dados
 
     - [In .NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage)
-    - [In Java](https://docs.microsoft.com/java/api/overview/azure/storage/client)
+    - [In Java](https://docs.microsoft.com/java/api/overview/azure/storage)

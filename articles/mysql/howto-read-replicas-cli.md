@@ -5,20 +5,20 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 05/28/2019
-ms.openlocfilehash: ba8af55f7467e361136e4b0c57c97b4fa187cec0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.date: 08/21/2019
+ms.openlocfilehash: 1a799823a71fcbc4aebf4b869a3fd0dd9fc66de1
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66304950"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69907867"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-using-the-azure-cli"></a>Como criar e gerenciar réplicas de leitura no Banco de Dados do Azure para MySQL usando a CLI do Azure
 
 Neste artigo, você aprenderá como criar e gerenciar réplicas de leitura na mesma região do Azure que o mestre no serviço Banco de Dados do Azure para MySQL usando a CLI do Azure.
 
 > [!IMPORTANT]
-> Você pode criar uma réplica de leitura na mesma região do seu servidor mestre, ou em qualquer outra região do Azure de sua escolha. A replicação entre regiões está atualmente em visualização pública.
+> Você pode criar uma réplica de leitura na mesma região que o servidor mestre ou em qualquer outra região do Azure de sua escolha. A replicação entre regiões está atualmente em visualização pública.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -38,17 +38,20 @@ az mysql server replica create --name mydemoreplicaserver --source-server mydemo
 
 O comando `az mysql server replica create` exige os seguintes parâmetros:
 
-| Configuração | Valor de exemplo | DESCRIÇÃO  |
+| Configuração | Valor de exemplo | Descrição  |
 | --- | --- | --- |
 | resource-group |  myresourcegroup |  O grupo de recursos para o qual o servidor de réplica será criado.  |
 | name | mydemoreplicaserver | O nome do novo servidor de réplica criado. |
 | source-server | mydemoserver | O nome ou a ID do servidor mestre existente para replicar. |
 
-Para criar uma cruz região ler réplica, use o `--location` parâmetro. O exemplo CLI a seguir cria a réplica no Oeste dos EUA.
+Para criar uma réplica de leitura entre regiões, use `--location` o parâmetro. O exemplo de CLI abaixo cria a réplica no oeste dos EUA.
 
 ```azurecli-interactive
 az mysql server replica create --name mydemoreplicaserver --source-server mydemoserver --resource-group myresourcegroup --location westus
 ```
+
+> [!NOTE]
+> Para saber mais sobre em quais regiões você pode criar uma réplica, visite o [artigo conceitos de leitura de réplica](concepts-read-replicas.md). 
 
 > [!NOTE]
 > Réplicas de leitura são criadas com a mesma configuração de servidor que o mestre. A configuração do servidor de réplica pode ser alterada depois de criada. Recomenda-se que a configuração do servidor de réplica seja mantida em valores iguais ou maiores que o mestre para garantir que a réplica seja capaz de acompanhar o mestre.
@@ -66,7 +69,7 @@ az mysql server replica stop --name mydemoreplicaserver --resource-group myresou
 
 O comando `az mysql server replica stop` exige os seguintes parâmetros:
 
-| Configuração | Valor de exemplo | DESCRIÇÃO  |
+| Configuração | Valor de exemplo | Descrição  |
 | --- | --- | --- |
 | resource-group |  myresourcegroup |  O grupo de recursos em que há o servidor de réplica.  |
 | name | mydemoreplicaserver | O nome do servidor de réplica para interromper a replicação. |
@@ -100,7 +103,7 @@ az mysql server replica list --server-name mydemoserver --resource-group myresou
 
 O comando `az mysql server replica list` exige os seguintes parâmetros:
 
-| Configuração | Valor de exemplo | DESCRIÇÃO  |
+| Configuração | Valor de exemplo | Descrição  |
 | --- | --- | --- |
 | resource-group |  myresourcegroup |  O grupo de recursos para o qual o servidor de réplica será criado.  |
 | server-name | mydemoserver | O nome ou a ID do servidor mestre. |

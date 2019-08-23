@@ -11,12 +11,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 07/30/2019
 ms.author: dapine
-ms.openlocfilehash: ddbe586c03d9f722d844d06968aa25e4b4a5aac0
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: ff0be2e9dada758cce96ba7c5eebbf03b00f56c6
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68815300"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69971456"
 ---
 # <a name="install-and-run-text-analytics-containers"></a>Instalar e executar contêineres da Análise de Texto
 
@@ -139,7 +139,7 @@ Esse comando:
 
 O contêiner fornece APIs de ponto de extremidade de previsão de consulta com base em REST.
 
-Use o host, `https://localhost:5000`, para APIs de contêiner.
+Use o host, `http://localhost:5000`, para APIs de contêiner.
 
 <!--  ## Validate container is running -->
 

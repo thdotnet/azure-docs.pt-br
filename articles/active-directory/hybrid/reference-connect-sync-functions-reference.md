@@ -16,12 +16,12 @@ ms.date: 07/12/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b21c5f8630598a4b7117d23ad7c8da46de07d2fa
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 5c3102480e316c634930c356ae02f769767b7d08
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204492"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69900038"
 ---
 # <a name="azure-ad-connect-sync-functions-reference"></a>Sincronização do Azure AD Connect: Referência de funções
 No Azure Active Directory Sync, as funções são usadas para manipular um valor de atributo durante a sincronização.  
@@ -102,7 +102,7 @@ a função BitAnd define os bits especificados em um valor.
 **Comentários:**  
 esta função converte ambos os parâmetros na representação binária e define um bit para:
 
-* 0 - se um ou ambos os bits correspondentes na *máscara* e no *sinalizador* forem 0
+* 0-se um ou ambos os bits correspondentes em *value1* e *value2* forem 0
 * 1 - se ambos os bits correspondentes são 1.
 
 Em outras palavras, ele retorna 0 em todos os casos, exceto quando os bits correspondentes de ambos os parâmetros são 1.
@@ -133,7 +133,7 @@ a função CBool retorna um valor booliano com base na expressão avaliada
 `bool CBool(exp Expression)`
 
 **Comentários:**  
-se a expressão é avaliada como um valor diferente de zero, CBool retorna True; caso contrário, retorna False.
+Se a expressão for avaliada como um valor diferente de zero, CBool retornará true, caso contrário retornará false.
 
 **Exemplo:**  
 `CBool([attrib1] = [attrib2])`  
@@ -363,7 +363,7 @@ a função CGuid converte a representação da cadeia de caracteres de um GUID e
 * Uma cadeia de caracteres formatada nesse padrão: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ou {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}
 
 ---
-### <a name="contains"></a>Contém:
+### <a name="contains"></a>Contém
 **Descrição:**  
 a função Contains localiza uma cadeia de caracteres dentro de um atributo de valores múltiplos
 
@@ -810,7 +810,7 @@ o inverso dessa função é chamado de IsNullOrEmpty.
 `Switch(IsPresent([directManager]),[directManager], IsPresent([skiplevelManager]),[skiplevelManager], IsPresent([director]),[director])`
 
 ---
-### <a name="item"></a>item
+### <a name="item"></a>Item
 **Descrição:**  
 a função Item retorna um item de um atributo/cadeia de caracteres de valores múltiplos.
 
@@ -1072,7 +1072,7 @@ a função RemoveDuplicates obtém uma cadeia de caracteres de valores múltiplo
 retorna um atributo proxyAddress corrigido no qual todos os valores duplicados foram removidos.
 
 ---
-### <a name="replace"></a>Substitua
+### <a name="replace"></a>Substituir
 **Descrição:**  
 a função Replace substitui todas as ocorrências de uma cadeia de caracteres por outra cadeia de caracteres.
 
@@ -1273,7 +1273,7 @@ a função UCase converte todos os caracteres de uma cadeia de caracteres em let
 retorna "test".
 
 ---
-### <a name="where"></a>Where
+### <a name="where"></a>Onde
 
 **Descrição:**  
 Retorna um subconjunto de valores de um atributo de valores múltiplos (ou a saída de uma expressão) com base em uma condição específica.
@@ -1291,7 +1291,7 @@ Retorna um subconjunto de valores de um atributo de valores múltiplos (ou a sa�
 Retorna os valores do certificado no atributo de valores múltiplos userCertificate que não estão expirados.
 
 ---
-### <a name="with"></a>With
+### <a name="with"></a>Com
 **Descrição:**  
 A função With fornece uma maneira para simplificar uma expressão complexa, usando uma variável para representar uma subexpressão que aparece uma ou mais vezes na expressão complexa.
 

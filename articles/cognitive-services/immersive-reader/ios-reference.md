@@ -1,20 +1,20 @@
 ---
 title: Referência do SDK do iOS do leitor de imersão
-titlesuffix: Azure Cognitive Services
+titleSuffix: Azure Cognitive Services
 description: Referência para o SDK do iOS do leitor de imersão
 services: cognitive-services
-author: MeganRoach
+author: metanMSFT
 ms.service: cognitive-services
 ms.subservice: immersive-reader
 ms.topic: reference
 ms.date: 08/01/2019
-ms.author: t-meroa
-ms.openlocfilehash: acdaaf0bf08644053e86343ae4b002002fee6a84
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.author: metan
+ms.openlocfilehash: 615c09dd8a7287918bb009ce11854278b21554c1
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68966590"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69899407"
 ---
 # <a name="immersive-reader-sdk-reference"></a>Referência do SDK do leitor de imersão
 

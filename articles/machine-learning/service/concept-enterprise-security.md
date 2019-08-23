@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 08/07/2019
-ms.openlocfilehash: ebecb69e57c620b2eb84568757c8e3e6f1cb1663
-ms.sourcegitcommit: 124c3112b94c951535e0be20a751150b79289594
+ms.openlocfilehash: 510f58cc0b71fb75ac6f5e15fc883c3caf4a8f9a
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/10/2019
-ms.locfileid: "68946402"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69897956"
 ---
 # <a name="enterprise-security-for-azure-machine-learning-service"></a>Segurança da empresa para o serviço Azure Machine Learning
 
@@ -31,7 +31,7 @@ A autenticação multifator terá suporte se o Azure Active Directory (Azure AD)
 * O cliente apresenta um token para Azure Resource Manager & todos os serviços de Azure Machine Learning
 * Azure Machine Learning serviço fornece um token de Azure Machine Learning para a computação do usuário. Por exemplo, Computação do Machine Learning. Esse token é usado pela computação do usuário para chamar de volta para o serviço Azure Machine Learning (limita o escopo ao espaço de trabalho) após a execução ser concluída.
 
-![Captura de tela mostrando como funciona a autenticação no serviço Azure Machine Learning](./media/enterprise-readiness/authentication.png)
+[![Captura de tela mostrando como funciona a autenticação no serviço Azure Machine Learning](./media/enterprise-readiness/authentication.png)](./media/enterprise-readiness/authentication-expanded.png)
 
 ### <a name="authentication-for-web-service-deployment"></a>Autenticação para implantação de serviço Web
 
@@ -185,7 +185,7 @@ Cada espaço de trabalho tem uma identidade gerenciada atribuída pelo sistema a
 
 Azure Monitor métricas podem ser usadas para exibir e monitorar métricas para seu espaço de trabalho de serviço do Azure Machine Learning. No [portal do Azure](https://portal.azure.com), selecione seu espaço de trabalho e, em seguida, use o link __métricas__ .
 
-![Captura de tela mostrando métricas de exemplo para um espaço de trabalho](./media/enterprise-readiness/workspace-metrics.png)
+[![Captura de tela mostrando métricas de exemplo para um espaço de trabalho](./media/enterprise-readiness/workspace-metrics.png)](./media/enterprise-readiness/workspace-metrics-expanded.png)
 
 As métricas incluem informações sobre execuções, implantações e registros.
 
@@ -197,7 +197,7 @@ Você pode ver o log de atividades no espaço de trabalho para ver várias opera
 
 A captura de tela a seguir mostra o log de atividades para um espaço de trabalho:
 
-![Captura de tela mostrando o log de atividades em um espaço de trabalho](./media/enterprise-readiness/workspace-activity-log.png)
+[![Captura de tela mostrando o log de atividades em um espaço de trabalho](./media/enterprise-readiness/workspace-activity-log.png)](./media/enterprise-readiness/workspace-activity-log-expanded.png)
 
 Os detalhes da solicitação de pontuação são armazenados no Application insights, que é criado na assinatura do usuário durante a criação do espaço de trabalho. As informações registradas incluem campos como HTTPMethod, UserAgent, computable, RequestUrl, StatusCode, RequestId, Duration, etc.
 
@@ -220,14 +220,14 @@ O usuário faz logon no Azure AD de qualquer um dos clientes do serviço de Azur
 
 Outras computações anexadas a um espaço de trabalho (serviço kubernetes do Azure, VM etc.) também podem ser provisionadas pelos clientes conforme necessário.
 
-![Captura de tela mostrando criar fluxo de trabalho](./media/enterprise-readiness/create-workspace.png)
+[![Captura de tela mostrando criar fluxo de trabalho](./media/enterprise-readiness/create-workspace.png)](./media/enterprise-readiness/create-workspace-expanded.png)
 
 ### <a name="save-source-code-training-scripts"></a>Salvar código-fonte (scripts de treinamento)
 
 O diagrama a seguir mostra o fluxo de trabalho de instantâneo de código.
 Associado a um espaço de trabalho de serviço do Azure Machine Learning são diretórios (experimentos), que contém o código-fonte (scripts de treinamento).  Esses scripts são armazenados na máquina local do cliente e na nuvem (no armazenamento de BLOBs do Azure em assinatura do cliente). Os instantâneos de código são usados para execução ou inspeção para auditoria histórica.
 
-![Captura de tela mostrando criar fluxo de trabalho](./media/enterprise-readiness/code-snapshot.png)
+[![Captura de tela mostrando criar fluxo de trabalho](./media/enterprise-readiness/code-snapshot.png)](./media/enterprise-readiness/code-snapshot-expanded.png)
 
 ### <a name="training"></a>Treinamento
 
@@ -253,7 +253,7 @@ O diagrama a seguir mostra o fluxo de trabalho de treinamento.
 
 Essa etapa é mostrada no fluxo em que a computação de treinamento grava as métricas de *execução* de volta para o serviço de Azure Machine Learning de onde elas são armazenadas no cosmos DB. Os clientes podem chamar Azure Machine Learning serviço que, por sua vez, realizará métricas de pull do Cosmos DB e retornará ao cliente.
 
-![Captura de tela mostrando criar fluxo de trabalho](./media/enterprise-readiness/training-and-metrics.png)
+[![Captura de tela mostrando criar fluxo de trabalho](./media/enterprise-readiness/training-and-metrics.png)](./media/enterprise-readiness/training-and-metrics-expanded.png)
 
 ### <a name="creating-web-services"></a>Criando Serviços Web
 
@@ -267,7 +267,7 @@ Veja os detalhes abaixo:
 * Os detalhes da solicitação de pontuação são armazenados no Application insights, que está na assinatura do usuário
 * A telemetria também é enviada por push para a assinatura do Microsoft/Azure
 
-![Captura de tela mostrando criar fluxo de trabalho](./media/enterprise-readiness/inferencing.png)
+[![Captura de tela mostrando criar fluxo de trabalho](./media/enterprise-readiness/inferencing.png)](./media/enterprise-readiness/inferencing-expanded.png)
 
 ## <a name="next-steps"></a>Próximas etapas
 

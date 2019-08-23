@@ -16,12 +16,12 @@ ms.date: 02/27/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 176b8509892ef16b631697a686471e7fa52bb380
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: bc88640cdff4f716902a80bb149913b961d40ae3
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60381547"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69900052"
 ---
 # <a name="azure-ad-connect-staging-server-and-disaster-recovery"></a>Azure AD Connect: Servidor de preparo e recuperação de desastre
 Com um servidor no modo de preparo, você pode fazer alterações na configuração e visualizar as alterações antes de tornar o servidor ativo. Ele também permite executar sincronização e importação totais para verificar se todas as alterações são esperadas antes de você fazê-las em seu ambiente de produção.
@@ -42,7 +42,7 @@ Durante a instalação, você pode selecionar o servidor em **modo de preparo**.
 
 Você ainda pode forçar uma exportação usando o Synchronization Service Manager.
 
-Um servidor em modo de preparo continua a receber alterações do Active Directory e do Azure AD. Ele sempre tem uma cópia das alterações mais recentes e pode assumir as responsabilidades de outro servidor rapidamente. Se você fizer alterações de configuração no servidor primário, será sua responsabilidade fazer as mesmas alterações no servidor em modo de preparo.
+Um servidor no modo de preparo continua a receber alterações do Active Directory e do Azure AD e pode assumir rapidamente as responsabilidades de outro servidor em caso de falha. Se você fizer alterações de configuração no servidor primário, será sua responsabilidade fazer as mesmas alterações no servidor em modo de preparo.
 
 Para aqueles com conhecimento das tecnologias mais antigas de sincronização, o modo de preparo é diferente, pois o servidor tem seu próprio banco de dados SQL. Essa arquitetura permite que o servidor de modo de preparo esteja localizado em um datacenter diferente.
 
@@ -92,7 +92,7 @@ Você agora preparou a exportação das alterações para o Azure AD e AD local 
 2. Execute o assistente de instalação no servidor no **modo de preparo** e desabilite o **modo de preparo**.
    ![ReadyToConfigure](./media/how-to-connect-sync-staging-server/additionaltasks.png)
 
-## <a name="disaster-recovery"></a>Recuperação de desastre
+## <a name="disaster-recovery"></a>Recuperação de desastres
 Parte do design de implementação é planejar o que fazer em caso de desastre, quando você perde o servidor de sincronização. Há modelos diferentes para uso e qual deles usar depende de vários fatores, incluindo:
 
 * Quão tolerável é para você não poder fazer alterações em objetos no Azure AD durante o tempo de inatividade?

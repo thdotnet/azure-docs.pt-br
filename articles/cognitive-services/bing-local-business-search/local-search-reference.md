@@ -6,15 +6,16 @@ services: cognitive-services
 author: aahill
 manager: nitinme
 ms.service: cognitive-services
+ms.subservice: bing-local-business
 ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: rosh
-ms.openlocfilehash: 9030d85ff5bc83bb54f4a67a9f319a1670a6c2ad
-ms.sourcegitcommit: aa042d4341054f437f3190da7c8a718729eb675e
+ms.openlocfilehash: c9ebaeb66bc46132160c77c09f93fc2921dc8961
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68881859"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69906343"
 ---
 # <a name="bing-local-business-search-api-v7-reference"></a>Referência da API v7 da Pesquisa de empresa local do Bing
 
@@ -86,7 +87,7 @@ A solicitação pode incluir os parâmetros de consulta a seguir. Confira a colu
 A seguir estão os objetos de resposta JSON que a resposta pode incluir. Se a solicitação for bem-sucedida, o objeto de nível superior na resposta é o objeto [SearchResponse](#searchresponse). Se a solicitação falha, o objeto de nível superior é o objeto [ErrorResponse](#errorresponse).
 
 
-|Objeto|Descrição|  
+|Object|Descrição|  
 |------------|-----------------|  
 |[Local](#place)|Define informações sobre uma empresa local, como um restaurante ou hotel.|  
 
@@ -222,7 +223,7 @@ Veja a seguir os possíveis códigos de status HTTP retornados por uma solicita�
   
 |Código de Status|Descrição|  
 |-----------------|-----------------|  
-|200|Êxito.|  
+|200|Sucesso.|  
 |400|Um dos parâmetros de consulta está ausente ou é inválido.|  
 |401|A chave de assinatura está ausente ou é inválida.|  
 |403|O usuário foi autenticado (por exemplo, ele usou uma chave de assinatura válida), mas não tem permissão para acessar o recurso solicitado.<br /><br /> O Bing também pode retornar esse status se o chamador excedeu suas consultas em relação à cota do mês.|  

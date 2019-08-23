@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/23/2019
 ms.author: Zhchia
-ms.openlocfilehash: 7838fd30869629298c5b44cc4b3e5c1e5daa7051
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: ef5a605fb0190e67de8b2bb95bbccfd8fd3cf279
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69519991"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69906031"
 ---
 # <a name="tutorial-configure-signagelive--for-automatic-user-provisioning"></a>Tutorial: Configurar o Signagelive para provisionamento automático de usuário
 
@@ -56,8 +56,7 @@ Antes de configurar e habilitar o provisionamento automático de usuário, você
 
 Antes de configurar o Signagelive para o provisionamento automático de usuário com o Azure AD, será necessário habilitar o provisionamento do SCIM no Signagelive.
 
-1.  Entre em contato com o [Signagelive](mailto:development@signagelive.com) para obter o token secreto necessário para configurar o provisionamento do SCIM.
-
+  Entre em contato com o [Signagelive](mailto:development@signagelive.com) para obter o token secreto necessário para configurar o provisionamento do SCIM.
 
 ## <a name="add-signagelive-from-the-gallery"></a>Adicionar o Signagelive por meio da galeria
 
@@ -86,7 +85,7 @@ Para configurar o Signagelive para o provisionamento automático de usuário com
 Esta seção orienta você pelas etapas para configurar o serviço de provisionamento do Azure AD para criar, atualizar e desabilitar usuários e/ou grupos no Signagelive com base em atribuições de usuário e/ou grupo no Azure AD.
 
 > [!TIP]
->  Você também pode optar por habilitar o logon único baseado em SAML para o BitaBIZ, seguindo as instruções fornecidas no [tutorial de logon único do Signagelive](Signagelive-tutorial.md). O logon único pode ser configurado independentemente do provisionamento automático de usuário, embora esses dois recursos sejam complementares.
+>  Você também pode optar por habilitar o logon único baseado em SAML para o Signagelive, seguindo as instruções fornecidas no [tutorial de logon único do Signagelive](Signagelive-tutorial.md). O logon único pode ser configurado independentemente do provisionamento automático de usuário, embora esses dois recursos sejam complementares.
 
 ### <a name="to-configure-automatic-user-provisioning-for-signagelive--in-azure-ad"></a>Para configurar o provisionamento automático de usuário para Signagelive no Azure AD:
 
@@ -106,7 +105,8 @@ Esta seção orienta você pelas etapas para configurar o serviço de provisiona
 
     ![Guia provisionamento](common/provisioning-automatic.png)
 
-5. Na seção credenciais de administrador, insira ` https://samlapi.signagelive.com/scim/v2` a **URL de locatário**. No campo **token secreto** , insira o valor do **token** de portador fornecido pela equipe de desenvolvimento de engenharia. Clique em **testar conexão** para garantir que o Azure ad possa se conectar ao Signagelive. Se a conexão falhar, verifique se sua conta do Signagelive tem permissões de administrador ![e tente novamente URL de locatário + token](common/provisioning-testconnection-tenanturltoken.png)
+5. Na seção credenciais de administrador, insira ` https://samlapi.signagelive.com/scim/v2` a **URL de locatário**. No campo **token secreto** , insira o valor do **token** de portador fornecido pela equipe de desenvolvimento de engenharia. Clique em **testar conexão** para garantir que o Azure ad possa se conectar ao Signagelive. Se a conexão falhar, verifique se sua conta do Signagelive tem permissões de administrador e tente novamente.
+    ![URL do locatário + token](common/provisioning-testconnection-tenanturltoken.png)
 
 6. No campo **Notificação por Email**, insira o endereço de email de uma pessoa ou grupo que deverá receber as notificações de erro de provisionamento e selecione a caixa de seleção - **Enviar uma notificação por email quando ocorrer uma falha**.
 
@@ -144,9 +144,9 @@ Esta seção orienta você pelas etapas para configurar o serviço de provisiona
 
     ![Salvando configuração de provisionamento](common/provisioning-configuration-save.png)
 
-Essa operação inicia a sincronização inicial de todos os usuários e/ou grupos definidos no **Escopo** na seção **Configurações**. Observe que a sincronização inicial levará mais tempo do que as sincronizações subsequentes, que ocorrem aproximadamente a cada 40 minutos, desde que o serviço de provisionamento do Microsoft Azure Active Directory esteja em execução. Você pode usar a seção **detalhes de sincronização** para monitorar o progresso e seguir os links para o relatório de atividade de provisionamento, que descreve todas as ações executadas pelo serviço de provisionamento do Azure AD no Signagelive.
+Essa operação inicia a sincronização inicial de todos os usuários e/ou grupos definidos no **Escopo** na seção **Configurações**. A sincronização inicial demora mais para ser executada do que as sincronizações subsequentes. Para obter mais informações sobre quanto tempo levará para o provisionamento de usuários e/ou grupos, consulte [quanto tempo levará para provisionar usuários](../manage-apps/application-provisioning-when-will-provisioning-finish-specific-user.md#how-long-will-it-take-to-provision-users). 
 
-Para saber mais sobre como ler os logs de provisionamento do Azure AD, consulte [Relatórios sobre o provisionamento automático de contas de usuário](../manage-apps/check-status-user-account-provisioning.md).
+Você pode usar a seção **status atual** para monitorar o progresso e seguir os links para o relatório de atividade de provisionamento, que descreve todas as ações executadas pelo serviço de provisionamento do Azure AD no Signagelive. Para obter mais informações, consulte [verificar o status do provisionamento do usuário](../manage-apps/application-provisioning-when-will-provisioning-finish-specific-user.md). Para ler os logs de provisionamento do Azure AD, consulte [relatórios sobre o provisionamento automático de conta de usuário](../manage-apps/check-status-user-account-provisioning.md).
 
 ## <a name="additional-resources"></a>Recursos adicionais
 

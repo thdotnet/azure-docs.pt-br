@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 02/28/2019
 ms.author: mlearned
-ms.openlocfilehash: 459c11448280b63bafdfd54c13a6cad5983ef1b5
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 967ca233169e2a2a213534d5b60bef2e3f44b6a9
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "67615888"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69969643"
 ---
 # <a name="network-concepts-for-applications-in-azure-kubernetes-service-aks"></a>Conceitos de rede para aplicativos no Serviço de Kubernetes do Azure (AKS)
 
@@ -55,7 +55,7 @@ Para simplificar a configuração de rede para cargas de trabalho de aplicativos
 
 O endereço IP para balanceadores de carga e serviços pode ser atribuído dinamicamente ou você pode especificar um endereço IP estático existente para uso. Endereços IP estáticos internos e externos podem ser atribuídos. Esse endereço IP estático existente é geralmente vinculado a uma entrada DNS.
 
-Ambos *interno* e *externo* balanceadores de carga podem ser criados. Balanceadores de carga interno só são atribuídos a um endereço IP privado, portanto, não pode ser acessado da Internet.
+Ambos *interno* e *externo* balanceadores de carga podem ser criados. Os balanceadores de carga internos só recebem um endereço IP privado, portanto, eles não podem ser acessados pela Internet.
 
 ## <a name="azure-virtual-networks"></a>Redes virtuais do Azure
 
@@ -99,14 +99,14 @@ Existem as seguintes diferenças de comportamento entre kubenet e CNI do Azure:
 
 | Funcionalidade                                                                                   | Kubenet   | Azure CNI |
 |----------------------------------------------------------------------------------------------|-----------|-----------|
-| Implantar cluster em uma rede virtual nova ou existente                                            | Com suporte-UDRs aplicado manualmente | Com suporte |
-| Conectividade de pod de Pod                                                                         | Com suporte | Com suporte |
+| Implantar cluster em uma rede virtual nova ou existente                                            | Com suporte-UDRs aplicado manualmente | Suportado |
+| Conectividade de pod de Pod                                                                         | Suportado | Suportado |
 | Pod-conectividade da VM; VM na mesma rede virtual                                          | Funciona quando iniciado pelo Pod | Funciona de ambas as maneiras |
 | Pod-conectividade da VM; VM na rede virtual emparelhada                                            | Funciona quando iniciado pelo Pod | Funciona de ambas as maneiras |
 | Acesso local usando VPN ou rota expressa                                                | Funciona quando iniciado pelo Pod | Funciona de ambas as maneiras |
-| Acesso a recursos protegidos por pontos de extremidade de serviço                                             | Com suporte | Com suporte |
-| Expor serviços Kubernetess usando um serviço de balanceador de carga, um gateway de aplicativo ou um controlador de entrada | Com suporte | Com suporte |
-| Zonas privadas e DNS do Azure padrão                                                          | Com suporte | Com suporte |
+| Acesso a recursos protegidos por pontos de extremidade de serviço                                             | Suportado | Suportado |
+| Expor serviços Kubernetess usando um serviço de balanceador de carga, um gateway de aplicativo ou um controlador de entrada | Suportado | Suportado |
+| Zonas privadas e DNS do Azure padrão                                                          | Suportado | Suportado |
 
 ### <a name="support-scope-between-network-models"></a>Escopo de suporte entre modelos de rede
 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08e27052c3583ddea7a2fb6fe96fa6b48cd6c372
-ms.sourcegitcommit: e9c866e9dad4588f3a361ca6e2888aeef208fc35
+ms.openlocfilehash: 5d2247aab872a71f250bd0b4b52714e402d2102d
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68333872"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69905205"
 ---
 # <a name="azure-active-directory-identity-protection-risk-events-reference"></a>Referência a eventos de risco do Azure Active Directory Identity Protection
 
@@ -76,3 +76,8 @@ Também podemos executar essa detecção para a autenticação Básica (ou proto
 **Nome antigo:** Essa detecção será mostrada nos relatórios de Azure AD Identity Protection herdados (usuários sinalizados para risco, eventos de risco) como ' usuários com credenciais vazadas '
 
 Esse tipo de evento de risco indica a atividade do usuário que é incomum para o usuário determinado ou é consistente com padrões de ataque conhecidos com base nas fontes de inteligência contra ameaças internas e externas da Microsoft.
+
+## <a name="admin-confirmed-user-compromised"></a>Usuário comprometido confirmado pelo administrador
+
+**Tipo de Detecção:** Offline <br>
+Essa detecção indica que um administrador selecionou ' confirmar o usuário comprometido ' na interface do usuário de usuários arriscados ou usando a API riskyUsers. Para ver qual administrador confirmou que esse usuário está comprometido, verifique o histórico de risco do usuário (por meio da interface de usuário ou API).

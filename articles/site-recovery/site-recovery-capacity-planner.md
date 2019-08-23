@@ -6,19 +6,18 @@ manager: carmonm
 services: site-recovery
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 12/27/2018
+ms.date: 08/22/2019
 ms.author: raynew
-ms.openlocfilehash: eeadfd6a57ff8a26f3f124e2a807fcd66e77b85f
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7501982f90cd145e0fc918bf976a840323a31127
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61036582"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972564"
 ---
 # <a name="plan-capacity-for-hyper-v-vm-disaster-recovery"></a>Planejar a capacidade de recuperação de desastre de VM do Hyper-V 
 
-A nova versão aprimorada do [Planejador de Implantações do Azure Site Recovery do Hyper-V para implantação do Azure](site-recovery-hyper-v-deployment-planner.md) já está disponível. Ele substitui a ferramenta antiga. Use a nova ferramenta para o planejamento da implantação.
-A ferramenta oferece as seguintes orientações:
+O [Planejador de Implantações do Azure Site Recovery] (site-recovery-hyper-v-deployment-planner.md) para a implantação do Hyper-V para o Azure fornece o seguinte:
 
 * Avaliação de qualificação de VM com base em número de discos, tamanho de disco, IOPS, variações e algumas características da VM
 * Avaliação de largura de banda de rede necessária versus RPO

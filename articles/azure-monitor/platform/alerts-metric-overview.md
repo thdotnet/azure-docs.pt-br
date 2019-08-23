@@ -7,12 +7,12 @@ ms.date: 9/18/2018
 ms.topic: conceptual
 ms.service: azure-monitor
 ms.subservice: alerts
-ms.openlocfilehash: ce65d87142df64a9f0c27f3acdb4d6f25e86fb8a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 4dd95d32bad76a610b88a4362e7887efdfaf6af0
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67071624"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69972054"
 ---
 # <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Entender como funcionam os alertas de métrica no Azure Monitor
 
@@ -29,7 +29,7 @@ Digamos que você tenha criado uma regra de alerta de métrica simples com limit
 - Recurso de destino (o recurso do Azure que você deseja monitorar): myVM
 - Métrica: Porcentagem de CPU
 - Tipo de condição: Estático
-- Agregação de tempo (estatística que é executada sobre os valores brutos de métrica. As agregações de hora com suporte são Min, Max, Avg, Total, contagem): Média
+- Agregação de tempo (estatística que é executada sobre os valores brutos de métrica. As agregações de tempo com suporte são min, Max, AVG, total, Count): Average
 - Período (a janela de retrocesso na qual os valores de métrica são verificados): Nos últimos 5 minutos
 - Frequência (a frequência com que o alerta de métrica verifica se as condições foram atendidas): 1 minuto
 - Operador: Maior que
@@ -37,7 +37,7 @@ Digamos que você tenha criado uma regra de alerta de métrica simples com limit
 
 Desde o momento em que a regra de alerta é criada, o monitor é executado a cada minuto, examina valores de métrica para os últimos 5 minutos e verifica se a média desses valores excede 70. Se a condição for atendida, ou seja, a média de porcentagem de CPU nos últimos 5 minutos exceder 70, a regra de alerta disparará uma notificação de ativação. Se você configurou um email ou uma ação de web hook no grupo de ações associado à regra de alerta, receberá uma notificação de ativação em ambos.
 
-Quando você estiver usando várias condições em uma regra, a regra "ands" as condições em conjunto.  Ou seja, o alerta é acionado quando todas as condições no alerta de avaliar como true e resolver quando uma das condições não for verdadeira. E exemplo desse tipo de alerta seria Alertar quando "Maior que 90% de CPU" e "comprimento da fila é a mais de 300 itens". 
+Quando você está usando várias condições em uma regra, a regra "ands" as condições juntas.  Ou seja, o alerta é disparado quando todas as condições no alerta são avaliadas como true e são resolvidas quando uma das condições não é mais verdadeira. E um exemplo desse tipo de alerta seria Alert quando "CPU maior que 90%" e "o comprimento da fila for superior a 300 itens". 
 
 ### <a name="alert-rule-with-dynamic-condition-type"></a>Regra de alerta com o tipo de condição dinâmica
 
@@ -46,7 +46,7 @@ Digamos que você tenha criado uma regra de alerta de métrica simples com limit
 - Recurso de destino (o recurso do Azure que você deseja monitorar): myVM
 - Métrica: Porcentagem de CPU
 - Tipo de condição: Dinâmico
-- Agregação de tempo (estatística que é executada sobre os valores brutos de métrica. As agregações de hora com suporte são Min, Max, Avg, Total, contagem): Média
+- Agregação de tempo (estatística que é executada sobre os valores brutos de métrica. As agregações de tempo com suporte são min, Max, AVG, total, Count): Average
 - Período (a janela de retrocesso na qual os valores de métrica são verificados): Nos últimos 5 minutos
 - Frequência (a frequência com que o alerta de métrica verifica se as condições foram atendidas): 1 minuto
 - Operador: Maior que
@@ -64,7 +64,7 @@ Os exemplos acima de regras de alerta também podem ser exibidos no portal do Az
 
 Se o uso de "myVM" continuar acima do limite em verificações subsequentes, a regra de alerta não será acionada novamente até que as condições sejam resolvidas.
 
-Após algum tempo, o uso de "myVM" volta ao normal, ou seja, fica abaixo do limite. A regra de alerta monitora a condição mais duas vezes, para enviar uma notificação de resolução. A regra de alerta envia uma mensagem de resolução/desativação quando a condição de alerta não é atendida por três períodos consecutivos para reduzir o excesso em caso de condições intermitentes.
+Após algum tempo, o uso em "myVM" volta para o normal (fica abaixo do limite). A regra de alerta monitora a condição mais duas vezes, para enviar uma notificação de resolução. A regra de alerta envia uma mensagem de resolução/desativação quando a condição de alerta não é atendida por três períodos consecutivos para reduzir o excesso em caso de condições intermitentes.
 
 Como a notificação de resolução é enviada por email ou webhooks, o status da instância do alerta (chamado de estado do monitor) no portal do Azure também é definido como resolvido.
 
@@ -79,7 +79,7 @@ Digamos que você tem um Plano do Serviço de Aplicativo para seu site. Você de
 - Tipo de condição: Estático
 - Dimensões
   - Instance = InstanceName1, InstanceName2
-- Agregação de tempo: Média
+- Agregação de tempo: Average
 - Período: Nos últimos 5 minutos
 - Frequência: 1 minuto
 - Operador: GreaterThan
@@ -94,7 +94,7 @@ Digamos que você tenha um aplicativo Web que esteja sob grande demanda e é nec
 - Tipo de condição: Estático
 - Dimensões
   - Instância = *
-- Agregação de tempo: Média
+- Agregação de tempo: Average
 - Período: Nos últimos 5 minutos
 - Frequência: 1 minuto
 - Operador: GreaterThan
@@ -111,7 +111,7 @@ Digamos que você tenha um aplicativo Web com muitas instâncias e não sabe qua
 - Tipo de condição: Dinâmico
 - Dimensões
   - Instância = *
-- Agregação de tempo: Média
+- Agregação de tempo: Average
 - Período: Nos últimos 5 minutos
 - Frequência: 1 minuto
 - Operador: GreaterThan

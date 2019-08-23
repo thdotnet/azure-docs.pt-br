@@ -11,12 +11,12 @@ ms.date: 08/04/2017
 ms.author: marsma
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 216f5413ce3dae1f2d040643a30a4d7db4a879b8
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: d8cc67b8e243fb2b97cd1522a850adc63c84428e
+ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67835407"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69969621"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Acessando os logs de auditoria do Microsoft Azure Active Directory B2C
 
@@ -26,15 +26,15 @@ O Azure Active Directory B2C (Azure AD B2C) emite os logs de auditoria que cont�
 > Os logs de auditoria são retidos por sete dias. Planeje realizar o download e armazenar seus logs usando um dos métodos abaixo se precisar de um período de retenção mais longo.
 
 > [!NOTE]
-> Não é possível ver entradas de usuário para aplicativos individuais do Azure AD B2C na **os usuários** seção o **Azure Active Directory** ou **do Azure AD B2C** folhas. As entradas lá mostrarão a atividade do usuário, mas não podem ser correlacionadas às que o usuário conectado ao aplicativo B2C. Você deve usar os logs de auditoria para fazer isso, conforme explicado mais detalhadamente neste artigo.
+> Você não pode ver entradas de usuário para aplicativos de Azure AD B2C individuais na seção **usuários** das folhas de **Azure Active Directory** ou **Azure ad B2C** . As entradas exibirão a atividade do usuário, mas não poderão ser correlacionadas ao aplicativo B2C ao qual o usuário se conectou. Você deve usar os logs de auditoria para isso, conforme explicado mais adiante neste artigo.
 
 ## <a name="overview-of-activities-available-in-the-b2c-category-of-audit-logs"></a>Visão geral das atividades disponíveis na categoria B2C dos logs de auditoria
 A categoria **B2C** nos logs de auditoria contém os seguintes tipos de atividades:
 
-|Tipo de atividade |DESCRIÇÃO  |
+|Tipo de atividade |Descrição  |
 |---------|---------|
 |Autorização |Atividades relacionadas à autorização de um usuário para acessar os recursos B2C (por exemplo, um administrador ao acessar uma lista de políticas de B2C)         |
-|Diretório |Atividades relacionadas aos atributos de diretório recuperados quando um administrador faz logon no portal do Azure |
+|Diretório |Atividades relacionadas a atributos de diretório recuperados quando um administrador entra usando o portal do Azure |
 |Aplicativo | Operações CRUD nos aplicativos B2C |
 |Chave |Operações CRUD nas chaves armazenadas no contêiner de chave B2C |
 |Recurso |Operações CRUD nos recursos B2C (por exemplo, políticas e provedores de identidade)
@@ -44,34 +44,35 @@ A categoria **B2C** nos logs de auditoria contém os seguintes tipos de atividad
 > Para atividades CRUD do objeto de usuário, consulte a categoria **Diretório Principal**.
 
 ## <a name="example-activity"></a>Atividade de exemplo
-O exemplo a seguir mostra os dados capturados quando um usuário entra com um provedor de identidade externa: ![Exemplo de página de detalhes de atividade de Log de auditoria no portal do Azure](./media/active-directory-b2c-reference-audit-logs/audit-logs-example.png)
+O exemplo a seguir mostra os dados capturados quando um usuário entra com um provedor de identidade externa:  
+    ![Exemplo de página de detalhes da atividade de log de auditoria no portal do Azure](./media/active-directory-b2c-reference-audit-logs/audit-logs-example.png)
 
-O painel de detalhes de atividade contém as seguintes informações relevantes:
+O painel detalhes da atividade contém as seguintes informações relevantes:
 
-|Seção|Campo|DESCRIÇÃO|
+|Seção|Campo|Descrição|
 |-------|-----|-----------|
-| Atividade | Nome | Qual atividade ocorreu. Por exemplo, o "emitir um id_token para o aplicativo" (que conclui a entrada do usuário real). |
-| Iniciado por (ator) | ObjectId | O **ID do objeto** do que o usuário está entrando no aplicativo B2C (esse identificador não é visível no portal do Azure, mas ele é acessível por meio da API do Graph, por exemplo). |
-| Iniciado por (ator) | Spn | O **ID do aplicativo** do que o usuário está entrando no aplicativo B2C. |
-| Destino (s) | ObjectId | O **ID do objeto** do usuário que está se conectando. |
-| Detalhes adicionais | TenantId | O **ID do locatário** do locatário do Azure AD B2C. |
-| Detalhes adicionais | `PolicyId` | O **ID da política** do fluxo de usuário (política) que está sendo usado para conectar o usuário. |
-| Detalhes adicionais | ApplicationId | O **ID do aplicativo** do que o usuário está entrando no aplicativo B2C. |
+| Atividade | Nome | Qual atividade ocorreu. Por exemplo, "emitir um id_token para o aplicativo" (que conclui a entrada do usuário real). |
+| Iniciado por (ator) | ObjectId | A **ID de objeto** do aplicativo B2C ao qual o usuário está se conectando (esse identificador não é visível na portal do Azure, mas está acessível por meio do API do Graph, por exemplo). |
+| Iniciado por (ator) | SPN | A **ID do aplicativo** B2C para o qual o usuário está entrando. |
+| Destino (s) | ObjectId | A **ID de objeto** do usuário que está entrando. |
+| Detalhes Adicionais | TenantId | A **ID do locatário** do locatário do Azure ad B2C. |
+| Detalhes Adicionais | `PolicyId` | A **ID de política** do fluxo do usuário (política) que está sendo usada para conectar o usuário. |
+| Detalhes Adicionais | ApplicationId | A **ID do aplicativo** B2C para o qual o usuário está entrando. |
 
-## <a name="accessing-audit-logs-through-the-azure-portal"></a>Acessando os logs de auditoria por meio do portal do Azure
+## <a name="accessing-audit-logs-through-the-azure-portal"></a>Acessando logs de auditoria por meio do portal do Azure
 1. Vá para o [Portal do Azure](https://portal.azure.com). Verifique se você está no diretório do B2C.
 2. Clique no **Azure Active Directory** na barra de favoritas à esquerda
 
-    ![Botão de Active Directory do Azure realçada no menu à esquerda do portal](./media/active-directory-b2c-reference-audit-logs/audit-logs-portal-aad.png)
+    ![Botão de Azure Active Directory realçado no menu do portal esquerdo](./media/active-directory-b2c-reference-audit-logs/audit-logs-portal-aad.png)
 
 1. Em **Atividade**, clique em **Logs de Auditoria**
 
-    ![Botão de Logs de auditoria realçado na seção de atividade do menu](./media/active-directory-b2c-reference-audit-logs/audit-logs-portal-section.png)
+    ![Botão logs de auditoria realçado na seção atividade do menu](./media/active-directory-b2c-reference-audit-logs/audit-logs-portal-section.png)
 
 2. No dropox da **Categoria**, selecione **B2C**
 3. Clique em **Aplicar**
 
-    ![Categoria e botão Aplicar realçado no filtro de Log de auditoria](./media/active-directory-b2c-reference-audit-logs/audit-logs-portal-category.png)
+    ![Botão categoria e aplicar realçado no filtro log de auditoria](./media/active-directory-b2c-reference-audit-logs/audit-logs-portal-category.png)
 
 Você verá uma lista de atividades registradas nos últimos sete dias.
 - Use o menu suspenso **Tipo de Recurso de Atividade** para filtrar os tipos de atividade descritos acima
@@ -80,7 +81,7 @@ Você verá uma lista de atividades registradas nos últimos sete dias.
 - Clique em **Download** para baixar as atividades como um arquivo csv
 
 > [!NOTE]
-> Você também pode ver os logs de auditoria, navegando até **do Azure AD B2C** vez **Azure Active Directory** na barra de Favoritos à esquerda. Sob **atividades**, clique em **logs de auditoria**, onde você encontrará os mesmos logs com os recursos de filtragem semelhantes.
+> Você também pode ver os logs de auditoria navegando até **Azure ad B2C** em vez de **Azure Active Directory** na barra de favoritos à esquerda. Em **atividades**, clique em **logs de auditoria**, onde você encontrará os mesmos logs com recursos de filtragem semelhantes.
 
 ## <a name="accessing-audit-logs-through-the-azure-ad-reporting-api"></a>Acessar os logs de auditoria por meio da API de relatórios do Microsoft Azure Active Directory
 Os logs de auditoria são publicados para o mesmo pipeline como outras atividades do Azure Active Directory, para que possam ser acessados por meio da [API de relatórios do Microsoft Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-api-audit-reference).
