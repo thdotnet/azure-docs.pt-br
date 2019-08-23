@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: e87fc74b3fa989471f9074a33fc66d8cb8250aa0
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 2cc8f4f81ad95376dcbc10c2952c1b2ed95ffe42
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68927851"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69907905"
 ---
 # <a name="introduction-to-azure-security"></a>Introdução à Segurança do Azure
 ## <a name="overview"></a>Visão geral
@@ -270,6 +270,7 @@ O Firewall do aplicativo Web é um recurso do [Gateway de Aplicativo do Azure](.
 
 
 Um firewall do aplicativo Web para proteger contra ataques da Web simplifica muito o gerenciamento de segurança e oferece mais garantia para o aplicativo contra ameaças de invasões. Uma solução WAF também pode reagir a uma ameaça de segurança mais rapidamente ao aplicar um patch contra uma vulnerabilidade conhecida em um local central do que a proteção de cada um dos aplicativos Web individuais. Os gateways de aplicativos existentes podem ser facilmente convertidos em um gateway de aplicativo com o firewall do aplicativo Web.
+
 ### <a name="traffic-manager"></a>Gerenciador de Tráfego
 O [Gerenciador de Tráfego do Microsoft Azure](../../traffic-manager/traffic-manager-overview.md) permite controlar a distribuição do tráfego do usuário para pontos de extremidade do serviço em diferentes datacenters. Os pontos de extremidade de serviço com suporte no Gerenciador de Tráfego incluem VMs do Azure, Aplicativos Web e Serviços de Nuvem. Você também pode usar o Gerenciador de Tráfego com pontos de extremidade externos e não do Azure. O Gerenciador de Tráfego usa o DNS (Sistema de Nome de Domínio) para direcionar solicitações de cliente para o ponto de extremidade mais apropriado com base em um [método de roteamento de tráfego](../../traffic-manager/traffic-manager-routing-methods.md) e a integridade dos pontos de extremidade.
 
@@ -295,18 +296,8 @@ Você pode habilitar as seguintes categorias de log de diagnóstico para NSGs:
 -   Contador de regras: Contém entradas de quantas vezes cada regra de NSG é aplicada para negar ou permitir tráfego.
 
 ### <a name="azure-security-center"></a>Central de Segurança do Azure
-A Central de Segurança ajuda a prevenir, detectar e responder a ameaças e oferece maior visibilidade e controle sobre a segurança de seus recursos do Azure. Ela permite o gerenciamento de políticas e o monitoramento da segurança integrada entre suas assinaturas do Azure, ajuda a detectar ameaças que poderiam passar despercebidas e funciona com uma enorme variedade de soluções de segurança. As recomendações da rede giram em torno de firewalls, Grupos de Segurança da Rede, configuração das regras do tráfego de entrada e muito mais.
 
-As recomendações de rede disponíveis são as seguintes:
-
--   [Adicionar um firewall de próxima geração](../../security-center/security-center-add-next-generation-firewall.md) Recomenda que você adicione um Firewall de Última Geração (NGFW) de um parceiro da Microsoft para aumentar suas proteções de segurança
-
--   [Encaminhar o tráfego somente por NGFW](../../security-center/security-center-add-next-generation-firewall.md#route-traffic-through-ngfw-only) Recomenda que você configure regras para o grupo de segurança de rede (NSG) que forcem o tráfego de entrada em sua VM a passar pelo NGFW.
-
--   [Habilitar Grupos de Segurança de Rede em máquinas virtuais ou sub-redes](../../security-center/security-center-enable-network-security-groups.md) Recomenda que você habilite NSGs em sub-redes ou VMs.
-
--   [Restringir o acesso por meio do ponto de extremidade voltado para a Internet](../../security-center/security-center-restrict-access-through-internet-facing-endpoints.md) Recomenda que você configure regras de tráfego de entrada para NSGs.
-
+A [central de segurança do Azure](../../security-center/security-center-intro.md) analisa continuamente o estado de segurança de seus recursos do Azure para práticas recomendadas de segurança de rede. Quando a central de segurança identifica possíveis vulnerabilidades de segurança, ele cria [recomendações](../../security-center/security-center-recommendations.md) que orientam você pelo processo de configuração dos controles necessários para proteger e proteger seus recursos.
 
 ## <a name="compute"></a>Computação
 
@@ -387,7 +378,7 @@ O [Azure Active Directory](https://azure.microsoft.com/services/active-directory
 - [Proxy de Aplicativo do Azure Active Directory](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/) fornece SSO e acesso remoto seguro para aplicativos da Web hospedados no local.
 
 ## <a name="next-steps"></a>Próximas etapas
-- [Introdução à Segurança do Microsoft Azure](./https://docs.microsoft.com/azure/security)
+- [Introdução à Segurança do Microsoft Azure](https://docs.microsoft.com/azure/security)
 
 Os serviços do Azure e os recursos que você pode usar para ajudar a proteger seus serviços e seus dados no Azure
 

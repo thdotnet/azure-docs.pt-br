@@ -13,14 +13,15 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/24/2019
 ms.author: magoedte
-ms.openlocfilehash: 1f06345995e30f4d7f165230f4292c560c89e2e8
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: 98bf38a6c293f6d339413b5395bb32d74bcb30c0
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68489764"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69905711"
 ---
 # <a name="using-service-map-solution-in-azure"></a>Usando a solução Mapa do Serviço no Azure
+
 O Mapa do Serviço detecta automaticamente os componentes de aplicativos em sistemas Windows e Linux e mapeia a comunicação entre os serviços. Com o Mapa do Serviço é possível exibir seus servidores da maneira desejada: como sistemas interconectados que fornecem serviços críticos. O Mapa do Serviço mostra conexões entre servidores, processos, latência de conexão de entrada e saída e portas em qualquer arquitetura conectada a TCP, sem a necessidade de configuração diferente da instalação de um agente.
 
 Este artigo descreve os detalhes de integração e como usar o Mapa do Serviço. Para obter informações sobre como configurar os pré-requisitos para essa solução, consulte [habilitar a Azure monitor para VMs visão geral](vminsights-enable-overview.md#prerequisites). Para resumir, você precisa do seguinte:
@@ -407,7 +408,7 @@ Todas as propriedades RemoteIp na tabela *VMConnection* são verificadas em um c
 | `ReportReferenceLink` |Links para relatórios relacionados a um dado observável. |
 | `AdditionalInformation` |Fornece informações adicionais, se aplicáveis, sobre a ameaça observada. |
 
-### <a name="servicemapcomputercl-records"></a>Registros ServiceMapComputer_CL
+### <a name="servicemapcomputer_cl-records"></a>Registros ServiceMapComputer_CL
 
 Registros com um tipo de *ServiceMapComputer_CL* têm dados de inventário para servidores com agentes do Mapa do Serviço. Esses registros têm as propriedades descritas na tabela a seguir:
 
@@ -433,7 +434,7 @@ Registros com um tipo de *ServiceMapComputer_CL* têm dados de inventário para 
 | `VirtualMachineName_s` | O nome da VM |
 | `BootTime_t` | O tempo de inicialização |
 
-### <a name="servicemapprocesscl-type-records"></a>Registros do tipo ServiceMapProcess_CL Type
+### <a name="servicemapprocess_cl-type-records"></a>Registros do tipo ServiceMapProcess_CL Type
 
 Registros com um tipo de *ServiceMapProcess_CL* têm dados de inventário para processos conectados com TCP em servidores com agentes do Mapa do Serviço. Esses registros têm as propriedades descritas na tabela a seguir:
 
@@ -554,16 +555,57 @@ A Microsoft coleta automaticamente dados de uso e de desempenho por meio do uso 
 
 Para obter mais informações sobre a coleta e uso de dados, consulte a [Política de privacidade do Microsoft Online Services](https://go.microsoft.com/fwlink/?LinkId=512132).
 
-
 ## <a name="next-steps"></a>Próximas etapas
 
 Saiba mais sobre [pesquisas de logs](../../azure-monitor/log-query/log-query-overview.md) no Log Analytics para recuperar dados coletados pelo Mapa do Serviço.
 
-
 ## <a name="troubleshooting"></a>Solução de problemas
 
-Consulte a [seção Solução de problemas do documento Configurando o mapa do serviço]( service-map-configure.md#troubleshooting).
+Se você enfrentar problemas ao instalar ou executar o Mapa do Serviço, esta seção poderá lhe ajudar. Se ainda não for possível resolver o problema, entre em contato com o Suporte da Microsoft.
 
+### <a name="dependency-agent-installation-problems"></a>Problemas de instalação do Agente de Dependência
+
+#### <a name="installer-prompts-for-a-reboot"></a>O instalador solicita uma reinicialização
+O agente de dependência *geralmente* não requer uma reinicialização após a instalação ou remoção. No entanto, em alguns casos raros, o Windows Server exige uma reinicialização para continuar com uma instalação. Isso acontece quando uma dependência, geralmente, a biblioteca C++ redistribuível do Microsoft Visual requer uma reinicialização devido a um arquivo bloqueado.
+
+#### <a name="message-unable-to-install-dependency-agent-visual-studio-runtime-libraries-failed-to-install-code--code_number-appears"></a>A mensagem "Não é possível instalar o Dependency Agent: as bibliotecas de tempo de execução do Visual Studio não foram instaladas (código = [número_de_código])" aparece
+
+O Microsoft Dependency Agent é compilado com base nas bibliotecas de tempo de execução do Microsoft Visual Studio. Você receberá uma mensagem se houver um problema durante a instalação das bibliotecas. 
+
+Os instaladores da biblioteca de tempo de execução criam logs na pasta %LOCALAPPDATA%\temp. O arquivo é `dd_vcredist_arch_yyyymmddhhmmss.log`, onde *Arch* é `x86` ou `amd64` e *AAAAMMDDHHMMSS* é a data e hora (relógio de 24 horas) quando o log foi criado. O log fornece detalhes sobre o problema que está bloqueando a instalação.
+
+Pode ser útil instalar primeiro as [bibliotecas de tempo de execução mais recentes](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads) .
+
+A tabela a seguir lista números de código e soluções sugeridas.
+
+| Código | Descrição | Resolução |
+|:--|:--|:--|
+| 0x17 | O instalador da biblioteca exige uma atualização do Windows que não foi instalada. | Procure no log do instalador de biblioteca mais recente.<br><br>Se uma referência a `Windows8.1-KB2999226-x64.msu` for seguida por uma linha `Error 0x80240017: Failed to execute MSU package,` , você não terá os pré-requisitos para instalar o KB2999226. Siga as instruções na seção pré-requisitos no artigo [tempo de execução universal C no Windows](https://support.microsoft.com/kb/2999226) . Talvez seja necessário executar o Windows Update e reiniciar várias vezes para instalar os pré-requisitos.<br><br>Execute novamente o instalador do Agente de Dependência da Microsoft. |
+
+### <a name="post-installation-issues"></a>Problemas pós-instalação
+
+#### <a name="server-doesnt-appear-in-service-map"></a>O servidor não aparece no Mapa do Serviço
+
+Se a instalação do agente de dependência for bem-sucedida, mas você não vir seu computador na solução Mapa do Serviço:
+* O Agente de Dependência foi instalado com êxito? Confirme isso verificando se o serviço está instalado e em execução.<br><br>
+**Windows**: Procure o serviço chamado **Microsoft Dependency Agent**.
+**Linux**: Procure o processo em execução **Microsoft-Dependency-Agent**.
+
+* Você está na [camada gratuita log Analytics](https://azure.microsoft.com/pricing/details/monitor/)? O plano gratuito permite até cinco máquinas Mapa do Serviço exclusivas. Quaisquer computadores subsequentes não aparecerão no Mapa do Serviço, mesmo que os cinco anteriores não estejam mais enviando dados.
+
+* O servidor está enviando dados de log e desempenho para Azure Monitor logs? Vá para o Azure Monitor\Logs e execute a seguinte consulta para o seu computador: 
+
+    ```kusto
+    Usage | where Computer == "admdemo-appsvr" | summarize sum(Quantity), any(QuantityUnit) by DataType
+    ```
+
+Você obteve uma variedade de eventos nos resultados? Os dados são recentes? Nesse caso, seu agente de Log Analytics está operando corretamente e se comunicando com o espaço de trabalho. Caso contrário, verifique o agente em seu computador: [Solução de problemas do agente do Log Analytics para Windows](../platform/agent-windows-troubleshoot.md) ou [Solução de problemas do agente do Log Analytics para Linux](../platform/agent-linux-troubleshoot.md).
+
+#### <a name="server-appears-in-service-map-but-has-no-processes"></a>O servidor aparece no Mapa do Serviço, mas sem processos
+
+Se você vir seu computador no Mapa do Serviço, mas ele não tem nenhum processo ou dados de conexão, isso indica que o agente de dependência está instalado e em execução, mas o driver do kernel não foi carregado. 
+
+Verifique o `C:\Program Files\Microsoft Dependency Agent\logs\wrapper.log file` (Windows) ou `/var/opt/microsoft/dependency-agent/log/service.log file` (Linux). As últimas linhas do arquivo devem indicar por que o kernel não foi carregado. Por exemplo, se o kernel tiver sido atualizado por você, talvez o Linux não dê suporte a ele.
 
 ## <a name="feedback"></a>Comentários
 

@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/06/2019
 ms.author: mayg
-ms.openlocfilehash: 062ed5e408317e95b36d6d0dfa395311ed4afe7f
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 5b4b3f5025edef242b87215665fd65f131157943
+ms.sourcegitcommit: beb34addde46583b6d30c2872478872552af30a1
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68261427"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69904409"
 ---
 # <a name="install-a-linux-master-target-server-for-failback"></a>Instalar um servidor de destino mestre Linux para failback
 Após o failover de suas máquinas virtuais para o Azure, você poderá executar failback das máquinas virtuais para o site local. Para realizar failback, você precisa proteger novamente a máquina virtual do Azure para o site local. Para este processo, é necessário um servidor de destino mestre para receber o tráfego. 
@@ -67,7 +67,7 @@ Mantenha um ISO do Ubuntu 16.04.2 Minimal de 64 bits na unidade de DVD e inicie 
 
 1.  Selecione **Inglês** como o idioma de preferência e selecione **Enter**.
     
-    ![Selecionar um idioma](./media/vmware-azure-install-linux-master-target/image1.png)
+    ![Selecione um idioma](./media/vmware-azure-install-linux-master-target/image1.png)
 1. Selecione **Instalar Servidor Ubuntu** e pressione **Enter**.
 
     ![Selecionar Instalar Ubuntu Server](./media/vmware-azure-install-linux-master-target/image2.png)
@@ -91,7 +91,7 @@ Mantenha um ISO do Ubuntu 16.04.2 Minimal de 64 bits na unidade de DVD e inicie 
 
 1. Para criar uma conta de usuário, digite o nome de usuário e selecione **Continuar**.
 
-      ![Criar uma conta do usuário](./media/vmware-azure-install-linux-master-target/image9.png)
+      ![Criar uma conta de usuário](./media/vmware-azure-install-linux-master-target/image9.png)
 
 1. Digite a senha para a nova conta de usuário e selecione **Continuar**.
 
@@ -214,12 +214,11 @@ Para baixá-los usando o Linux, digite:
 
 ### <a name="apply-custom-configuration-changes"></a>Aplicar alterações de configuração personalizadas
 
-Para aplicar alterações de configuração personalizada, use as seguintes etapas:
-
+Para aplicar alterações de configuração personalizadas, use as seguintes etapas como um usuário raiz:
 
 1. Execute o comando a seguir para descompactar o binário.
 
-    `tar -zxvf latestlinuxmobsvc.tar.gz`
+    `tar -xvf latestlinuxmobsvc.tar.gz`
 
     ![Captura de tela da execução do comando](./media/vmware-azure-install-linux-master-target/image16.png)
 

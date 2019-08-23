@@ -5,13 +5,13 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 author: hrasheed-msft
 ms.author: hrasheed
-ms.date: 07/29/2019
-ms.openlocfilehash: 78dff1b9d9db4e54ab1a8f7203088753e206c610
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.date: 08/21/2019
+ms.openlocfilehash: 635b7adb8753b7e9490e8f14a0699c09297fdbbb
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68641949"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69899090"
 ---
 # <a name="scenario-apache-spark-job-run-slowly-when-the-azure-storage-container-contains-many-files-in-azure-hdinsight"></a>Cenário: Apache Spark execução de trabalho lentamente quando o contêiner de armazenamento do Azure contém muitos arquivos no Azure HDInsight
 
@@ -26,8 +26,6 @@ Ao executar um cluster HDInsight, o trabalho de Apache Spark que grava no contê
 Esse é um problema conhecido do Spark. O lentidão vem das operações `ListBlob` e `GetBlobProperties` durante a execução do trabalho do Spark.
 
 Para rastrear partições, o Spark precisa manter um `FileStatusCache` que contém informações sobre a estrutura do diretório. Usando esse cache, o Spark pode analisar os caminhos e estar atento às partições disponíveis. O benefício do acompanhamento de partições é que o Spark só toca os arquivos necessários quando você lê os dados. Para manter essas informações atualizadas, quando você grava novos dados, o Spark precisa listar todos os arquivos no diretório e atualizar esse cache.
-
-No Spark 1,6, toda vez que você atualiza o diretório, você (1) limpar o cache (2) listar todos os arquivos recursivamente e (3) atualizar todo o cache. Isso resultará em muitas operações de listagem.
 
 No Spark 2,1, embora não seja necessário atualizar o cache após cada gravação, o Spark verificará se uma coluna de partição existente corresponde ao proposto na solicitação de gravação atual, de modo que também levará à lista de operações no início de cada gravação.
 
