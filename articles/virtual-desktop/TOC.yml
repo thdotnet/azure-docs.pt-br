@@ -34,8 +34,10 @@
       href: create-host-pools-powershell.md
     - name: Aplicar licença do Windows a hosts da sessão da Área de Trabalho Virtual do Windows
       href: apply-windows-license.md
-    - name: Configurar um compartilhamento de perfil do usuário para um pool de host
+    - name: Criar um contêiner de perfil para um pool de hosts usando um compartilhamento de arquivo
       href: create-host-pools-user-profile.md
+    - name: Criar um contêiner de perfil para um pool de hosts usando o Azure NetApp Files
+      href: create-fslogix-profile-container.md
     - name: Configurar o método de balanceamento de carga da Área de Trabalho Virtual do Windows
       href: configure-host-pool-load-balancing.md
     - name: Preparar e personalizar uma imagem de VHD mestre

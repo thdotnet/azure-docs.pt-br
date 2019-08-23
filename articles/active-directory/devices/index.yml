@@ -1,35 +1,59 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Documentação de Identidades do Dispositivo do Azure AD
+### YamlMime:Landing
+title: Documentação de identidade do dispositivo do Azure AD
+summary: Saiba como configurar e gerenciar identidades de dispositivo no Azure AD.
 metadata:
-  document_id: null
-  title: 'Documentação do Gerenciamento de Identidades do Dispositivo do Azure Active Directory – Tutoriais, conceitos, referências | Microsoft Docs'
+  title: Documentação de identidade do dispositivo do Azure AD
   description: Saiba como configurar e gerenciar identidades de dispositivo no Azure AD.
   services: active-directory
-  ms.subservice: devices
-  author: MicrosoftGuyJFlo
-  manager: daveba
   ms.service: active-directory
-  ms.tgt_pltfrm: na
-  ms.devlang: na
+  ms.subservice: devices
   ms.topic: landing-page
-  ms.date: 08/14/2018
+  author: MicrosoftGuyJFlo
   ms.author: joflore
-abstract:
-  description: 'Por meio de dispositivos no Azure AD, os usuários têm acesso aos ativos corporativos. Para proteger os ativos corporativos, como um administrador de TI, você quer gerenciar essas identidades de dispositivo no Azure AD. Desse modo, você tem a certeza de que os usuários estão acessando os recursos de dispositivos que atendem aos padrões de segurança e conformidade.<br>O gerenciamento de identidade do dispositivo também é a base para o acesso condicional com base no dispositivo. Com o acesso condicional com base no dispositivo, você pode garantir que o acesso a recursos em seu ambiente somente seja possível com dispositivos gerenciados.'
-sections:
-  - title: Tutoriais passo a passo
-    items:
-      - type: paragraph
-        text: Saiba como integrar seus dispositivos ingressados no AD local ao Azure AD.
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: ./media/index/i_security-management.png
-            text: Domínios gerenciados
-            href: hybrid-azuread-join-managed-domains.md
-          - image:
-              src: ./media/index/i_security-management.png
-            text: Domínios federados
-            href: hybrid-azuread-join-federated-domains.md
+  ms.date: 08/20/2019
+  ms.collection: M365-identity-device-management
+  ms.openlocfilehash: e26be2206ba63fa4721ced7ed1a2f35ddc63a5fd
+  ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
+  ms.translationtype: HT
+  ms.contentlocale: pt-BR
+  ms.lasthandoff: 08/20/2019
+  ms.locfileid: "69648933"
+landingContent:
+- title: Sobre a identidade do dispositivo
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que é uma identidade do dispositivo?
+      url: overview.md
+    - text: O que é Enterprise State Roaming?
+      url: enterprise-state-roaming-overview.md
+  - linkListType: concept
+    links:
+    - text: Dispositivos registrados no Azure AD
+      url: concept-azure-ad-register.md
+    - text: Dispositivos adicionados ao Azure AD
+      url: concept-azure-ad-join.md
+    - text: Dispositivos adicionados ao Azure AD híbrido
+      url: concept-azure-ad-join-hybrid.md
+    - text: Recursos de SSO a locais
+      url: azuread-join-sso.md
+    - text: Tokens de atualização principais
+      url: concept-primary-refresh-token.md
+- title: Configurar e gerenciar dispositivos adicionados ao Azure AD
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Planejar sua implementação de ingresso no Azure AD
+      url: azureadjoin-plan.md
+    - text: Gerenciar o grupo de administradores locais nos dispositivos adicionados do Azure AD
+      url: assign-local-admin.md
+    - text: Localizar e gerenciar dispositivos obsoletos no Azure AD
+      url: manage-stale-devices.md
+- title: Configurar e gerenciar dispositivos adicionados ao Azure AD híbrido
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Planejar sua implementação de ingresso no Azure AD híbrido
+      url: hybrid-azuread-join-plan.md
+    - text: Como solucionar problemas de dispositivos adicionados do Azure AD híbrido
+      url: troubleshoot-hybrid-join-windows-current.md

@@ -356,6 +356,8 @@
       href: service-fabric-concept-resource-model.md
     - name: Identidade Gerenciada (versão prévia)
       href: concepts-managed-identity.md
+    - name: Configurar credenciais do repositório de contêiner
+      href: configure-container-repository-credentials.md
 - name: Guias de instruções
   items:
     - name: Configurar seu ambiente de desenvolvimento

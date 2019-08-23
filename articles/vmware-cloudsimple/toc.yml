@@ -105,7 +105,7 @@
             - name: Exibir a lista de usuários
               href: users.md
             - name: Configurar uma conexão de rede virtual com a nuvem privada
-              href: 'https://docs.azure.cloudsimple.com/virtual-network-connection/'
+              href: virtual-network-connection.md
             - name: Editar seu perfil do usuário
               href: 'https://docs.azure.cloudsimple.com/editprofile/'
         - name: Configurar máquinas virtuais do VMware para a nuvem privada
@@ -124,11 +124,11 @@
               href: escalate-privileges.md
             - name: DNS de carga de trabalho e configuração de DHCP
               href: dns-dhcp-setup.md
-            - name: VPN de Camada 2 do NSX para migração
-              href: 'https://docs.azure.cloudsimple.com/migrate-workloads/#migrating-vms-using-nsx-layer-2-vpn'
+            - name: Migrar cargas de trabalho usando redes ampliadas da camada 2
+              href: migration-layer-2-vpn.md
         - name: Rede de nuvem privada
           items:
-            - name: Conexão VPN entre a nuvem local e privada
+            - name: Conexão VPN entre ambiente local e nuvem privada
               href: set-up-vpn.md
             - name: Conexão de rede local com ExpressRoute
               href: on-premises-connection.md
@@ -136,33 +136,37 @@
               href: azure-expressroute-connection.md
         - name: Plataforma do VMware
           items:
-            - name: Conheça o modelo de permissão de nuvem privada
+            - name: Conhecer o modelo de permissão de nuvem privada
               href: learn-private-cloud-permissions.md
             - name: Fontes de identidade do vCenter
               href: set-vcenter-identity.md
             - name: Gateway de Aplicativo do Azure com VMs do VMware
               href: azure-application-gateway.md
-            - name: Configurar vCenter Server de nuvem privada como ponto de extremidade de automação do vRealize
+            - name: Configurar o vCenter Server de nuvem privada como o ponto de extremidade de automação do vRealize
               href: configure-server-vrealize-automation-endpoint.md
             - name: Como migrar VMs de carga de trabalho para uma nuvem privada
-              href: 'https://docs.azure.cloudsimple.com/migrate-workloads/'
+              href: migrate-workloads.md
             - name: Como garantir alta disponibilidade do aplicativo no VMware no Azure
               href: 'https://docs.azure.cloudsimple.com/ensuring-high-availability/'
+            - name: Escolher uma solução de balanceamento de carga
+              href: load-balancers.md
         - name: Ecossistema do VMware
           items:
             - name: Fazer backup de máquinas virtuais de carga de trabalho
               href: backup-workloads-veeam.md
+            - name: Configurar a nuvem privada como um site de recuperação de desastre usando o Zerto
+              href: disaster-recovery-zerto.md
             - name: Guia de solução do VMware Horizon
               href: 'https://docs.azure.cloudsimple.com/horizon-guide/'
             - name: Configurar criptografia vSAN para sua nuvem privada
               href: vsan-encryption.md
-            - name: Implantação do Oracle RAC na nuvem privada CloudSimple
-              href: 'https://docs.azure.cloudsimple.com/oracle-rac/'
+            - name: Otimizar sua nuvem privada para o Oracle RAC
+              href: oracle-real-application-clusters.md
         - name: Integração do Core do Azure
           items:
             - name: Fonte de identidade do Azure AD no vCenter de nuvem privada
               href: azure-ad.md
             - name: Conexão de rede local com ExpressRoute
-              href: 'https://docs.azure.cloudsimple.com/on-premises-connection/'
+              href: on-premises-connection.md
             - name: Conexão de rede virtual do Azure com ExpressRoute
-              href: 'https://docs.azure.cloudsimple.com/azure-expressroute-connection/'
+              href: azure-expressroute-connection.md

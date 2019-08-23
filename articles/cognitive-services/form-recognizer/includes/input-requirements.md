@@ -5,19 +5,19 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 06/27/2019
 ms.author: pafarley
-ms.openlocfilehash: 17dc32f8948387b90229d3c4c07102cff98e3018
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 4079b0cab0126a9750bbb91ca7046aa18dbe9ece
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68562697"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69657724"
 ---
 O Reconhecimento de Formulários funciona em documentos de entrada que atendem aos seguintes requisitos:
 
 * O formato deve ser JPG, PNG ou PDF (texto ou digitalizado). PDFs com texto inserido são o melhor porque não há nenhuma possibilidade de erro na extração e na localização de caracteres.
 * Se os PDFs estiverem com bloqueio de senha, você deverá remover o bloqueio antes de enviá-los.
 * O tamanho do arquivo deve ser inferior a 4 MB.
-* Para imagens, as dimensões devem estar entre 50 x 50 pixels e 4.200 x 4.200 pixels.
+* Para imagens, as dimensões devem estar entre 600 x 100 pixels e 4200 x 4200 pixels.
 * Se documentos em papel forem digitalizados, os formulários deverão ser digitalizações de alta qualidade.
 * O texto precisa usar o alfabeto latino (caracteres em português).
 * Os dados precisam conter chaves e valores.

@@ -97,9 +97,6 @@
         - name: Modularizar modelos
           displayName: 'linked templates, nested templates'
           href: resource-group-linked-templates.md
-        - name: Gerenciar segredos
-          displayname: key vault
-          href: resource-manager-keyvault-parameter.md
         - name: Criar múltiplas instâncias
           href: resource-group-create-multiple.md
         - name: Usar extensões de modelo
@@ -124,6 +121,13 @@
           href: secure-template-with-sas-token.md
         - name: Implantar vários grupos de recursos ou assinaturas
           href: resource-manager-cross-resource-group-deployment.md
+    - name: Fornece parâmetros
+      items:
+        - name: Criar arquivo de parâmetros
+          href: resource-manager-parameter-files.md
+        - name: Passar valores confidenciais
+          displayname: key vault
+          href: resource-manager-keyvault-parameter.md
     - name: CI/CD
       items:
         - name: Projeto do VS com pipelines
