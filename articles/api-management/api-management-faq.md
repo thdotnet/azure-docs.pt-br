@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: f4140754afa8de994b227dc187cd73c9ccfa86f9
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 55a340f2ee2dceb31a8457f6f2201160e573e8a2
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67666026"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70012355"
 ---
 # <a name="azure-api-management-faqs"></a>Perguntas frequentes sobre Gerenciamento de API do Azure
 Obtenha as respostas a perguntas comuns, padrões e práticas recomendadas do Gerenciamento de API do Azure.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="contact-us"></a>Fale conosco
+## <a name="contact-us"></a>Contate-nos
 * [Como fazer uma pergunta à equipe de Gerenciamento de API do Microsoft Azure?](#how-can-i-ask-the-microsoft-azure-api-management-team-a-question)
 
 ## <a name="frequently-asked-questions"></a>Perguntas frequentes
@@ -38,7 +38,6 @@ Obtenha as respostas a perguntas comuns, padrões e práticas recomendadas do Ge
 * [Por que a política que desejo adicionar não está disponível no editor de política?](#why-is-the-policy-that-i-want-to-add-unavailable-in-the-policy-editor)
 * [Como configurar vários ambientes em uma única API?](#how-do-i-set-up-multiple-environments-in-a-single-api)
 * [Pode usar o SOAP com Gerenciamento de API?](#can-i-use-soap-with-api-management)
-* [O endereço IP do gateway do Gerenciamento de API é constante? Posso usá-lo nas regras de firewall?](#is-the-api-management-gateway-ip-address-constant-can-i-use-it-in-firewall-rules)
 * [Posso configurar um servidor de autorização OAUth 2.0 com segurança ADFS?](#can-i-configure-an-oauth-20-authorization-server-with-ad-fs-security)
 * [Que método de roteamento o Gerenciamento de API usa em implantações em vários locais geográficos?](#what-routing-method-does-api-management-use-in-deployments-to-multiple-geographic-locations)
 * [Pode usar um modelo do Azure Resource Manager para criar uma instância do serviço de Gerenciamento de API?](#can-i-use-an-azure-resource-manager-template-to-create-an-api-management-service-instance)
@@ -65,7 +64,7 @@ Você tem várias opções para proteger a conexão entre o gateway de Gerenciam
 
 * Use a autenticação básica HTTP. Para obter mais informações, consulte [Importar e publicar sua primeira API](import-and-publish.md).
 * Use a autenticação mútua de SSL conforme descrito em [Saiba como garantir serviços de back-end usando a autenticação de certificado do cliente no Gerenciamento de API do Azure](api-management-howto-mutual-certificates.md).
-* Use a lista de permissões de IPs em seu serviço de back-end. Em todas as camadas do gerenciamento de API com exceção da camada de consumo, o endereço IP do gateway permanece constante, com poucas [advertências](#is-the-api-management-gateway-ip-address-constant-can-i-use-it-in-firewall-rules). Você pode definir sua lista de permissões para permitir esse endereço IP. Você pode obter o endereço IP de sua instância de Gerenciamento de API no painel no portal do Azure.
+* Use a lista de permissões de IPs em seu serviço de back-end. Em todas as camadas do gerenciamento de API com exceção da camada de consumo, o endereço IP do gateway permanece constante, com algumas limitações descritas no [artigo de documentação de IP](api-management-howto-ip-addresses.md).
 * Conecte sua instância de Gerenciamento de API a uma Rede Virtual do Azure.
 
 ### <a name="how-do-i-copy-my-api-management-service-instance-to-a-new-instance"></a>Como copiar minha instância do serviço de Gerenciamento de API para uma nova instância?
@@ -87,7 +86,7 @@ Veja como você pode adicionar um usuário ao grupo Administradores:
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
 2. Vá para o grupo de recursos que tem a instância de Gerenciamento de API que você deseja atualizar.
-3. No gerenciamento de API, atribua o **Colaborador do serviço de gerenciamento de Api** função ao usuário.
+3. No gerenciamento de API, atribua a função **colaborador do serviço de gerenciamento de API** ao usuário.
 
 Agora o colaborador recém-adicionado pode usar [cmdlets](https://docs.microsoft.com/powershell/azure/overview) do Azure PowerShell. Veja como conectar-se como um administrador:
 
@@ -108,19 +107,6 @@ Para configurar vários ambientes, por exemplo, um ambiente de teste e um ambien
 ### <a name="can-i-use-soap-with-api-management"></a>Pode usar SOAP com Gerenciamento de API?
 O suporte a [Passagem SOAP](https://blogs.msdn.microsoft.com/apimanagement/2016/10/13/soap-pass-through/) agora está disponível. Os administradores podem importar o WSDL do serviço SOAP e o Gerenciamento de API do Azure criará um front-end SOAP. Documentação do portal de desenvolvedor, console de teste, políticas e análise estão disponíveis para serviços SOAP.
 
-### <a name="is-the-api-management-gateway-ip-address-constant-can-i-use-it-in-firewall-rules"></a>O endereço IP do gateway do Gerenciamento de API é constante? Posso usá-lo nas regras de firewall?
-Em todas as camadas do Gerenciamento de API, o endereço IP público (VIP) do locatário do Gerenciamento de API é estático para o tempo de vida do locatário, com algumas exceções. O endereço IP é alterado nestas circunstâncias:
-
-* O serviço é excluído e recriado.
-* A assinatura do serviço é [suspensa](https://github.com/Azure/azure-resource-manager-rpc/blob/master/v1.0/subscription-lifecycle-api-reference.md#subscription-states) ou [avisada](https://github.com/Azure/azure-resource-manager-rpc/blob/master/v1.0/subscription-lifecycle-api-reference.md#subscription-states) (por exemplo, por não pagamento) e, depois, reintegrada.
-* Adicionar ou remover a Rede Virtual do Azure (você pode usar a Rede Virtual somente na camada Developer e Premium).
-
-Para implantações de várias regiões, o endereço regional é alterado se a região é desocupada e é restabelecido (você pode usar a implantação de várias regiões apenas na camada Premium).
-
-Locatários da camada Premium configurados para implantação em várias regiões recebem um endereço IP público por região.
-
-Você pode obter seu endereço IP (ou endereços, em uma implantação de várias regiões) na página de locatário no portal do Azure.
-
 ### <a name="can-i-configure-an-oauth-20-authorization-server-with-ad-fs-security"></a>Posso configurar um servidor de autorização OAUth 2.0 com segurança ADFS?
 Para saber como configurar um servidor de autorização OAuth 2.0 com a segurança do AD FS (Serviços de Federação do Active Directory), confira [Usar ADFS no Gerenciamento de API](https://phvbaars.wordpress.com/2016/02/06/using-adfs-in-api-management/).
 
@@ -128,7 +114,7 @@ Para saber como configurar um servidor de autorização OAuth 2.0 com a seguran�
 O Gerenciamento de API usa o [método de roteamento de tráfego de desempenho](../traffic-manager/traffic-manager-routing-methods.md#performance) em implantações em vários locais geográficos. O tráfego é roteado para o gateway de API mais próximo. Se uma região ficar offline, o tráfego de entrada será automaticamente roteado para o gateway mais próximo. Saiba mais sobre os métodos de roteamentos em [Métodos de roteamento do Gerenciador de Tráfego](../traffic-manager/traffic-manager-routing-methods.md).
 
 ### <a name="can-i-use-an-azure-resource-manager-template-to-create-an-api-management-service-instance"></a>Pode usar um modelo do Azure Resource Manager para criar uma instância do serviço de Gerenciamento de API?
-Sim. Confira os modelos de Início Rápido do [Serviço de Gerenciamento de API do Azure](https://aka.ms/apimtemplate) .
+Sim. Consulte os modelos de início rápido do [serviço de gerenciamento de API do Azure](https://aka.ms/apimtemplate) .
 
 ### <a name="can-i-use-a-self-signed-ssl-certificate-for-a-back-end"></a>Posso usar um certificado SSL autoassinado para um back-end?
 Sim. Isso pode ser feito usando o PowerShell ou enviando diretamente à API. Isso desabilitará a validação da cadeia de certificados e permitirá que você use certificados autoassinados ou assinados de forma privada ao se comunicar do Gerenciamento de API com os serviços de back-end.

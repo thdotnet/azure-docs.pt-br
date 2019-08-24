@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 12/05/2018
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: da5a71c75485f929ba9c4f510066df84d7a31996
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
-ms.translationtype: HT
+ms.openlocfilehash: 23c5b7aab73ec6335238abede57f01ec7a30ef5f
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.translationtype: MT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/23/2019
-ms.locfileid: "69992162"
+ms.locfileid: "70012517"
 ---
 # <a name="batch-metrics-alerts-and-logs-for-diagnostic-evaluation-and-monitoring"></a>Logs, alertas e métricas do Lote para avaliação e monitoramento de diagnóstico
 
@@ -120,7 +120,7 @@ Se você arquivar logs de diagnóstico do Lote em uma conta de armazenamento, um
 ```
 insights-{log category name}/resourceId=/SUBSCRIPTIONS/{subscription ID}/
 RESOURCEGROUPS/{resource group name}/PROVIDERS/MICROSOFT.BATCH/
-BATCHACCOUNTS/{batch account name}/y={four-digit numeric year}/
+BATCHACCOUNTS/{Batch account name}/y={four-digit numeric year}/
 m={two-digit numeric month}/d={two-digit numeric day}/
 h={two-digit 24-hour clock hour}/m=00/PT1H.json
 ```
@@ -131,12 +131,15 @@ insights-metrics-pt1m/resourceId=/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXX
 RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.BATCH/
 BATCHACCOUNTS/MYBATCHACCOUNT/y=2018/m=03/d=05/h=22/m=00/PT1H.json
 ```
-Cada arquivo blob PT1H.json contém eventos formatados em JSON que ocorreram na hora especificada na URL do blob (por exemplo, h = 12). Durante a hora presente, os eventos são acrescentados ao arquivo PT1H.json conforme eles ocorrem. O valor de minuto (m=00) é sempre 00, como eventos de logs de diagnóstico são divididos em blobs individuais por hora. (Todas as horas estão em UTC.)
+Cada `PT1H.json` arquivo de BLOB contém eventos formatados em JSON que ocorreram dentro da hora especificada na URL do blob ( `h=12`por exemplo,). Durante a hora atual, os eventos são anexados ao `PT1H.json` arquivo conforme eles ocorrem. O valor de minuto`m=00`() é `00`sempre, pois os eventos de log de diagnóstico são divididos em BLOBs individuais por hora. (Todas as horas estão em UTC.)
 
+Abaixo está um exemplo de uma `PoolResizeCompleteEvent` entrada em um `PT1H.json` arquivo de log. Ele inclui informações sobre o número atual e o destino de nós dedicados e de baixa prioridade, bem como a hora de início e de término da operação:
 
-Para obter mais informações sobre o esquema de logs de diagnóstico na conta de armazenamento, consulte [Arquivar logs de diagnóstico do Azure](../azure-monitor/platform/archive-diagnostic-logs.md#schema-of-diagnostic-logs-in-the-storage-account).
+```
+{ "Tenant": "65298bc2729a4c93b11c00ad7e660501", "time": "2019-08-22T20:59:13.5698778Z", "resourceId": "/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.BATCH/BATCHACCOUNTS/MYBATCHACCOUNT/", "category": "ServiceLog", "operationName": "PoolResizeCompleteEvent", "operationVersion": "2017-06-01", "properties": {"id":"MYPOOLID","nodeDeallocationOption":"Requeue","currentDedicatedNodes":10,"targetDedicatedNodes":100,"currentLowPriorityNodes":0,"targetLowPriorityNodes":0,"enableAutoScale":false,"isAutoPool":false,"startTime":"2019-08-22 20:50:59.522","endTime":"2019-08-22 20:59:12.489","resultCode":"Success","resultMessage":"The operation succeeded"}}
+```
 
-Para acessar os logs na conta de armazenamento programaticamente, use as APIs de Armazenamento. 
+Para obter mais informações sobre o esquema de logs de diagnóstico na conta de armazenamento, consulte [Arquivar logs de diagnóstico do Azure](../azure-monitor/platform/archive-diagnostic-logs.md#schema-of-diagnostic-logs-in-the-storage-account). Para acessar os logs na conta de armazenamento programaticamente, use as APIs de Armazenamento. 
 
 ### <a name="service-log-events"></a>Eventos do Log de Serviço
 Logs de Serviço do Lote do Azure, se coletados, contêm eventos emitidos pelo serviço do Lote do Azure durante o tempo de vida de um recurso individual do Lote, como um pool ou uma tarefa. Cada evento emitido pelo Lote é registrado em formato JSON. Por exemplo, este é o corpo de um exemplo de **evento de criação de pool**:

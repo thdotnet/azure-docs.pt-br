@@ -14,20 +14,20 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/28/2018
 ms.author: b-juche
-ms.openlocfilehash: 25cae58663f6fa7ef27995c10509eb33e49dd4c7
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 8e60f5251f911ffe2b917dcc30e433e0a960823e
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65522826"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70012580"
 ---
 # <a name="create-a-netapp-account"></a>Criar uma conta do NetApp
 Criar uma conta do NetApp permite que você configure um pool de capacidade e, subsequentemente, crie um volume. Você pode usar a folha de Azure NetApp Files para criar uma nova conta do NetApp.
 
 ## <a name="before-you-begin"></a>Antes de começar
-Você deve ter recebido um email da equipe do Azure NetApp arquivos confirmando que você recebeu acesso ao serviço. Ver [enviar uma solicitação de uma lista de espera para acessar o serviço](azure-netapp-files-register.md#waitlist).
+Você deve ter recebido um email da equipe de Azure NetApp Files confirmando que recebeu acesso ao serviço. Consulte [Enviar uma solicitação Waitlist para acessar o serviço](azure-netapp-files-register.md#waitlist).
 
-Você também deve ter registrado sua assinatura para usar o provedor de recursos do NetApp. Ver [registrar o provedor de recursos do NetApp](azure-netapp-files-register.md#resource-provider).
+Você também deve ter registrado sua assinatura para usar o provedor de recursos da NetApp. Consulte [registrar o provedor de recursos do NetApp](azure-netapp-files-register.md#resource-provider).
 
 ## <a name="steps"></a>Etapas 
 
@@ -58,11 +58,12 @@ Você também deve ter registrado sua assinatura para usar o provedor de recurso
    A conta do NetApp que você criou agora aparece na folha Azure NetApp Files. 
 
 > [!NOTE] 
-> Se você não recebeu acesso ao serviço de arquivos do Azure NetApp, você receberá o seguinte erro ao tentar criar a primeira conta NetApp:  
+> Se você não tiver recebido acesso ao serviço de Azure NetApp Files, receberá o seguinte erro ao tentar criar a primeira conta da NetApp:  
 >
 > `{"code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.","details":[{"code":"NotFound","message":"{\r\n \"error\": {\r\n \"code\": \"InvalidResourceType\",\r\n \"message\": \"The resource type could not be found in the namespace 'Microsoft.NetApp' for api version '2017-08-15'.\"\r\n }\r\n}"}]}`
 
 ## <a name="next-steps"></a>Próximas etapas  
 
-[Configurar um pool de capacidade](azure-netapp-files-set-up-capacity-pool.md)
+* [Configurar um pool de capacidade](azure-netapp-files-set-up-capacity-pool.md)
+* [Gerenciar Azure NetApp Files recursos usando CLI do Azure](https://docs.microsoft.com/cli/azure/netappfiles?view=azure-cli-latest)
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 0ebf18fe2dc6906bc2c06d94388d126fb55c6024
-ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
-ms.translationtype: HT
+ms.openlocfilehash: bf2b83725f8ce8e712974c182c9a11e8ed0d04f0
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69981409"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70013233"
 ---
 # <a name="storage-queues-and-service-bus-queues---compared-and-contrasted"></a>Filas do Armazenamento e filas do Barramento de Serviço — comparações e contrastes
 Este artigo analisa as diferenças e semelhanças entre os dois tipos de filas oferecidos pelo Microsoft Azure atualmente: filas de Armazenamento e filas de Barramento de Serviço. Usando essas informações, é possível comparar e contrastar as respectivas tecnologias e tomar uma decisão mais informada sobre qual solução atende melhor às suas necessidades.
@@ -52,7 +52,9 @@ Como arquiteto/desenvolvedor de soluções, **você deve considerar o uso das fi
 * Você desejar que seu aplicativo processe mensagens como fluxos paralelos de longa execução (mensagens associadas a um fluxo usando a propriedade [SessionId](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.sessionid) na mensagem). Nesse modelo, cada nó no aplicativo de consumo compete por fluxos, em oposição às mensagens. Quando um fluxo é fornecido a um nó de consumo, o nó pode examinar o estado do fluxo do aplicativo usando transações.
 * Sua solução exigir comportamento transacional e atomicidade ao enviar ou receber várias mensagens de uma fila.
 * Seu aplicativo tratar mensagens que podem exceder 64 KB, mas provavelmente não se aproximarão do limite de 256 KB.
-* Você tiver que lidar com a necessidade de fornecer um modelo de acesso baseado em função às filas e diferentes direitos/permissões para remetentes e destinatários. Para obter mais informações, consulte [Active Directory controle de acesso baseado em função (versão prévia)](service-bus-role-based-access-control.md)
+* Você tiver que lidar com a necessidade de fornecer um modelo de acesso baseado em função às filas e diferentes direitos/permissões para remetentes e destinatários. Para obter mais informações, confira os seguintes artigos:
+    - [Autenticar com identidades gerenciadas](service-bus-managed-service-identity.md)
+    - [Autenticar de um aplicativo](authenticate-application.md)
 * O tamanho da fila não for exceder 80 GB.
 * Você desejar usar o protocolo do sistema de mensagens baseado em padrões AMQP 1.0. Para obter mais informações sobre AMQP, confira [Visão geral do AMQP do Barramento de Serviço](service-bus-amqp-overview.md).
 * Você puder prever uma migração final da comunicação ponto a ponto baseada em fila para um padrão de troca de mensagens que permita a integração perfeita de receptores (assinantes) adicionais, cada um dos quais recebe cópias independentes de algumas ou todas as mensagens enviadas à fila. O último se refere ao recurso de publicação/assinatura fornecido originalmente pelo Barramento de Serviço.

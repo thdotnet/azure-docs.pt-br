@@ -7,12 +7,12 @@ ms.author: v-qiwe
 ms.service: marketplace
 ms.topic: conceptual
 ms.date: 08/14/2019
-ms.openlocfilehash: 584b9fdde33d14650c36c44b9b457a25f8a1d6f9
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.openlocfilehash: 7dd57e41144ec33aec6eb716716d0794d92071f5
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69900126"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70013083"
 ---
 # <a name="create-a-new-saas-offer"></a>Criar uma nova oferta de SaaS
 
@@ -79,25 +79,29 @@ Para listar ofertas de SaaS (software como serviço) com o Marketplace comercial
 - Sua oferta deve usar [APIs de preenchimento de SaaS](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-fulfillment-api-v2) para integrar com o Azure Marketplace.
 - Para obter requisitos mais amplos, consulte o [Guia de publicação da oferta de SaaS](https://docs.microsoft.com/azure/marketplace/marketplace-saas-applications-technical-publishing-guide).
 
-#### <a name="saas-on-azure-billing-infrastructure-costs"></a>Custos de infraestrutura de cobrança do SaaS no Azure
-Se a oferta de SaaS estiver hospedada no Azure, você, como o Publicador, deverá considerar as tarifas de uso da infraestrutura do Azure e as taxas de licenciamento de software como um único item de custo. Esse custo é representado como uma taxa mensal simples para o cliente. O uso de infraestrutura do Azure é gerenciado e cobrado para você, o parceiro, diretamente. Os valores reais de uso da infraestrutura não são vistos pelo cliente. Em geral, os editores optam por incluir os valores de uso da infraestrutura do Azure em seus preços de licença de software. 
+#### <a name="saas-pricing-and-billing-options"></a>Opções de preços e cobrança de SaaS
+Com as soluções de SaaS em execução na assinatura do Azure do Publicador, as taxas de licença pagas pelos clientes incluem o custo da infraestrutura na qual o software é implantado. O uso de infraestrutura do Azure é gerenciado e cobrado para você, o parceiro, diretamente. Os valores reais de uso da infraestrutura não são vistos pelo cliente. Os editores devem agrupar as taxas de uso de infraestrutura do Azure em seus preços de licença de software. 
 
-As taxas de licenciamento de software são apresentadas como uma taxa de taxa fixa de assinatura simples e mensal e não são limitadas ou com base no consumo.
+O SaaS oferece suporte à cobrança mensal ou anual com base em taxas fixas, por usuário ou cobranças de consumo usando o serviço de cobrança limitado. O Marketplace comercial da Microsoft opera em um modelo de agência, no qual os editores definem preços, a Microsoft Bills Customers e a Microsoft paga receita para o Publicador durante a retenção de uma tarifa de agência.
+
+A tabela a seguir mostra um exemplo de quebra de custos e pagamentos para demonstrar o modelo de agência.
 
 |**Seu custo de licença**|**$100 por mês**|
 |:---|:---|
 |Custo de uso do Azure (D1/1-Núcleo)|Cobrados diretamente para o publicador, não o cliente|
 |O cliente é cobrado pela Microsoft|$100 por mês (o Publicador deve considerar os custos incorridos ou da infraestrutura de passagem na taxa de licença)|
 
-- Nesse cenário, a Microsoft cobra US $ 100,00 pela sua licença de software e paga US $ 80,00 ao editor.
+|**Faturas da Microsoft**|**$100 por mês**|
+|:---|:---|
+|A Microsoft paga para você 80% do seu custo de licença <br>**Para aplicativos SaaS qualificados, a Microsoft paga 90% do seu custo de licença*|US $80,00 por mês <br>*$* 90, 0 por mês *|
+
+- Neste exemplo, a Microsoft fatura $100 para o cliente para sua licença de software e paga $80 para o Publicador.
 - Os parceiros qualificados para a **taxa reduzida de serviço do Marketplace** verão uma taxa de transação reduzida nas ofertas de SaaS de maio de 2019 até junho de 2020. Nesse cenário, a Microsoft cobra $100 pela sua licença de software e paga $90 para o Publicador.
 
 > [!NOTE]
 > **Taxa reduzida de serviço do Marketplace**: Para determinadas ofertas de SaaS que você publicou em nosso mercado comercial, a Microsoft reduzirá sua taxa de serviço do Marketplace de 20% (conforme descrito no contrato do Microsoft Publisher) para 10%. Para que sua oferta seja qualificada, pelo menos uma de suas ofertas deve ter sido designada pela Microsoft como sendo de revenda de IP coexistente ou em uma venda de IP.  A qualificação deve ser atendida pelo menos cinco (5) dias úteis antes do final de cada mês do calendário para receber essa taxa de serviço do Marketplace reduzida para o mês.  A taxa reduzida de serviço do Marketplace não se aplica a VMs, aplicativos gerenciados ou quaisquer outros produtos disponibilizados por meio de nosso mercado comercial.  A taxa reduzida de serviço do Marketplace só estará disponível para ofertas qualificadas para encargos de licença coletados pela Microsoft entre 1º de maio de 2019 e 30 de junho de 2020.  Após esse período, a taxa de serviço do Marketplace voltará ao seu valor normal. 
 
-|**Faturas da Microsoft**|**$100 por mês**|
-|:---|:---|
-|A Microsoft paga para você 80% do seu custo de licença <br>**Para aplicativos SaaS qualificados, a Microsoft paga 90% do seu custo de licença*|US $80,00 por mês <br>*$* 90, 0 por mês *|
+
 
 
 #### <a name="csp-program-opt-in"></a>Aceitação do programa CSP
@@ -153,9 +157,23 @@ Ao habilitar o test drive, você será solicitado a configurar um ambiente de de
 
 ## <a name="connect-lead-management"></a>Conectar gerenciamento de leads
 
-[!INCLUDE [Test drive content](./includes/connect-lead-management.md)]
+Conecte-se com os clientes diretamente, listando sua oferta nos Marketplaces e conectando seu sistema de CRM (gerenciamento de relacionamento com o cliente) para que você possa receber informações de contato do cliente imediatamente depois que um cliente expressar o interesse ou implantar seu remessa.
 
-Consulte [visão geral do gerenciamento de Lead](./commercial-marketplace-get-customer-leads.md) para obter mais informações.
+- **Escolher um destino de cliente potencial** (menu suspenso): Forneça detalhes de conexão para o sistema CRM, em que você deseja que possamos enviar leads do cliente. 
+
+O Partner Center dá suporte aos seguintes sistemas CRM para gerenciamento de leads. Selecione o link para obter instruções de instalação.
+
+- Blob do Azure – forneça o email de contato, o nome do contêiner e a cadeia de conexão da conta de armazenamento. 
+- [Tabela do Azure](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-azure-table) – forneça o email de contato e a cadeia de conexão da conta de armazenamento. 
+- [Dynamics CRM Online](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics) – forneça o email de contato, a URL e o modo de autenticação (Office 365 ou Azure Active Directory).
+- [Ponto de extremidade https](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-https) – forneça o email de contato e a URL do ponto de extremidade HTTPS. 
+- [Marketo](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-marketo) – forneça o email de contato, a ID do formulário, a ID da conta do Munchkin e a ID do servidor.
+- [Salesforce](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-salesforce) -forneça o email de contato e a ID da organização. 
+
+#### <a name="additional-lead-management-resources"></a>Recursos adicionais de gerenciamento de leads
+- [Perguntas frequentes sobre gerenciamento de Lead](https://docs.microsoft.com/azure/marketplace/lead-management-for-cloud-marketplace#frequently-asked-questions)
+- [Erros comuns de configuração de Lead](https://docs.microsoft.com/azure/marketplace/lead-management-for-cloud-marketplace#common-lead-configuration-errors-during-publishing-on-cloud-partner-portal)
+- [Visão geral do gerenciamento de leads um pager](https://assetsprod.microsoft.com/mpn/cloud-marketplace-lead-management.pdf)
 
 Lembre-se de **salvar** antes de passar para a próxima seção!
 

@@ -1,5 +1,5 @@
 ---
-title: Implantar um aplicativo de pilha dupla IPv6 com o Standard Load Balancer na rede virtual do Azure-PowerShell
+title: Implantar um aplicativo IPv6 dual stack na rede virtual do Azure-PowerShell
 titlesuffix: Azure Virtual Network
 description: Este artigo mostra como implantar um aplicativo IPv6 dual stack com o Standard Load Balancer na rede virtual do Azure usando o Azure PowerShell.
 services: virtual-network
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/08/2019
 ms.author: kumud
-ms.openlocfilehash: 99e01aa611eea3d6379e2a250cc99d121e41aa82
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 05794cfaf6a550d32acdfb731a5f477111e65606
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68269670"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70011414"
 ---
-# <a name="deploy-an-ipv6-dual-stack-application-with-standard-load-balancer-in-azure---powershell-preview"></a>Implantar um aplicativo de pilha dupla IPv6 com Standard Load Balancer no Azure-PowerShell (versão prévia)
+# <a name="deploy-an-ipv6-dual-stack-application-in-azure---powershell-preview"></a>Implantar um aplicativo IPv6 dual stack no Azure-PowerShell (visualização)
 
-Este artigo mostra como implantar um aplicativo de pilha dupla (IPv4 + IPv6) no Azure que inclui uma rede virtual de pilha dupla e uma sub-rede, um balanceador de carga com configurações de front-end dual (IPv4 + IPv6), VMs com NICs que têm uma configuração de IP dupla, rede grupo de segurança e IPs públicos.
+Este artigo mostra como implantar um aplicativo de pilha dupla (IPv4 + IPv6) usando Standard Load Balancer no Azure que inclui uma rede virtual de pilha dupla e uma sub-rede, um Standard Load Balancer com configurações de front-end (IPv4 + IPv6) duplas, VMs com NICs que têm um configuração de IP duplo, grupo de segurança de rede e IPs públicos.
 
 > [!Important]
 > O suporte a IPv6 para a rede virtual do Azure está atualmente em visualização pública. Essa versão prévia é fornecida sem um contrato de nível de serviço e não é recomendada para cargas de trabalho de produção. Alguns recursos podem não ter suporte ou podem ter restrição de recursos. Veja os [Termos de Uso Adicionais para Visualizações do Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) para obter detalhes.
@@ -155,7 +155,7 @@ $lbrule_v6 = New-AzLoadBalancerRuleConfig `
   -BackendPort 80
 ```
 
-### <a name="create-load-balancer"></a>Criar um balanceador de carga
+### <a name="create-load-balancer"></a>Criar balanceador de carga
 
 Crie um Standard Load Balancer com [New-AzLoadBalancer](/powershell/module/az.network/new-azloadbalancer). O exemplo a seguir cria um Standard Load Balancer público chamado *myLoadBalancer* usando as configurações de IP de front-end IPv4 e IPv6, os pools de back-ends e as regras de balanceamento de carga que você criou nas etapas anteriores:
 
@@ -188,7 +188,7 @@ $avset = New-AzAvailabilitySet `
   -Sku aligned
 ```
 
-### <a name="create-network-security-group"></a>Criar um grupo de segurança de rede
+### <a name="create-network-security-group"></a>Criar grupo de segurança de rede
 
 Crie um grupo de segurança de rede para as regras que irão controlar a comunicação de entrada e saída em sua VNET.
 

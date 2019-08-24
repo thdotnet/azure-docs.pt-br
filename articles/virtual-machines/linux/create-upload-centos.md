@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2018
 ms.author: szark
-ms.openlocfilehash: 72ed518af579bb6b95d3b13400f2fbf6679cd036
-ms.sourcegitcommit: a6873b710ca07eb956d45596d4ec2c1d5dc57353
+ms.openlocfilehash: 6f7175e24f4eb85229847470bc37a6224ac6dd6e
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68248184"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70013678"
 ---
 # <a name="prepare-a-centos-based-virtual-machine-for-azure"></a>Preparar uma máquina virtual baseada em CentOS para o Azure
 
@@ -174,11 +174,14 @@ Este artigo pressupõe que você já instalou um sistema operacional Linux CentO
 
     Como alternativa, você pode seguir as instruções de instalação manual [página de download do LIS](https://go.microsoft.com/fwlink/?linkid=403033) para instalar o RPM para sua VM.
 
-12. Instale o agente Linux do Azure e as dependências:
+12. Instale o agente Linux do Azure e as dependências. Iniciar e habilitar o serviço waagent:
 
     ```bash
     sudo yum install python-pyasn1 WALinuxAgent
+    sudo service waagent start
+    sudo chkconfig waagent on
     ```
+
 
     A instalação do pacote WALinuxAgent removerá o NetworkManager e os pacotes NetworkManager-gnome se eles já não tiverem sido removidos conforme descrito na etapa 3.
 

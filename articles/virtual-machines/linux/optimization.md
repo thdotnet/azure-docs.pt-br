@@ -17,12 +17,12 @@ ms.topic: article
 ms.date: 09/06/2016
 ms.author: rclaus
 ms.subservice: disks
-ms.openlocfilehash: ea8f3f1860223e102aeccf81f72b5294283b83f6
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: ad512baad86133cc1aad80438a6b68d2a31a6cc6
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640753"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70013600"
 ---
 # <a name="optimize-your-linux-vm-on-azure"></a>Otimizar sua VM do Linux no Azure
 É fácil criar uma máquina virtual (VM) Linux desde a linha de comando ou do portal. Este tutorial mostra como garantir que você configurou uma VM para otimizar o desempenho na plataforma Microsoft Azure. Este tópico usa uma VM do Ubuntu Server, mas é possível também criar uma máquina virtual do Linux usando [suas próprias imagens como modelos](create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).  
@@ -53,7 +53,7 @@ Ao lidar com cargas de trabalho de IOps altas e se tiver escolhido o Armazenamen
 ## <a name="your-vm-temporary-drive"></a>Unidade temporária da VM
 Por padrão, quando você cria uma VM, o Azure fornece um disco de sistema operacional ( **/dev/sda**) e um disco temporário ( **/dev/sdb**).  Todos os discos extras que você adicionar aparecerão como **/dev/sdc**, **/dev/sdd**, **/dev/sde** e assim por diante. Todos os dados no disco temporário ( **/dev/sdb**) não são duráveis e poderão ser perdidos se eventos específicos, como redimensionamento de VM, reimplantação ou manutenção, forçarem uma reinicialização da VM.  O tamanho e tipo de disco temporário está relacionado ao tamanho da VM escolhida no momento da implantação. Todas as VMs de tamanho Premium (séries DS, G e DS_V2) e a unidade temporária contam com um SSD local para desempenho adicional de até 48k IOps. 
 
-## <a name="linux-swap-file"></a>Arquivo de permuta do Linux
+## <a name="linux-swap-partition"></a>Partição de permuta do Linux
 Se a sua VM do Azure for de uma imagem do Ubuntu ou CoreOS, você poderá usar o CustomData para enviar um cloud-config para cloud-init. Se você [carregou uma imagem do Linux personalizada](upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) que usa a inicialização de nuvem, configure também as partições de troca usando a inicialização de nuvem.
 
 Nas Imagens de nuvem do Ubuntu, use a inicialização de nuvem para configurar a partição de troca. Para obter mais informações, consulte [AzureSwapPartitions](https://wiki.ubuntu.com/AzureSwapPartitions).
@@ -127,6 +127,8 @@ echo 'echo noop >/sys/block/sda/queue/scheduler' >> /etc/rc.local
 
 ## <a name="using-software-raid-to-achieve-higher-iops"></a>Usando o RAID de software para alcançar I/Ops mais altos
 Se suas cargas de trabalho exigem mais IOps que um único disco pode fornecer, você precisa usar uma configuração RAID de software de vários discos. Como o Azure já executa a resiliência do disco na camada de malha local, você obterá o maior nível de desempenho de uma configuração de distribuição de RAID-0.  Provisione e crie discos no ambiente do Azure e anexe-os à sua VM Linux antes do particionamento, da formatação e da montagem das unidades.  Mais detalhes sobre como definir uma configuração de RAID de software em sua VM Linux no Azure podem ser encontrados no documento **[Configuração do RAID de software no Linux](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)** .
+
+Como alternativa a uma configuração de RAID tradicional, você também pode optar por instalar o LVM (Gerenciador de volumes lógicos) para configurar um número de discos físicos em um único volume de armazenamento lógico distribuído. Nessa configuração, leituras e gravações são distribuídas para vários discos contidos no grupo de volumes (semelhante a RAID0). Por motivos de desempenho, é provável que você queira distribuir seus volumes lógicos para que as leituras e gravações utilizem todos os seus discos de dados conectados.  Mais detalhes sobre como configurar um volume lógico distribuído em sua VM do Linux no Azure podem ser encontrados no documento **[Configurar o LVM em uma VM do Linux no Azure](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)** .
 
 ## <a name="next-steps"></a>Próximas etapas
 Lembre-se de que, como com todas as discussões de otimização, você precisará executar testes antes e após cada alteração para medir o impacto que elas causarão.  A otimização é um processo passo a passo que tem resultados distintos em computadores diferentes no seu ambiente.  O que funciona para uma configuração pode não funcionar para outras.

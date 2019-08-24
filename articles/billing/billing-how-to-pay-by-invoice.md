@@ -9,22 +9,23 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/01/2019
+ms.date: 08/23/2019
 ms.author: banders
-ms.openlocfilehash: 90c7014e3c22ac7186854d5c01b911aa630d20dd
-ms.sourcegitcommit: 4b5dcdcd80860764e291f18de081a41753946ec9
+ms.openlocfilehash: 9e4e05acd88e9b0f0c17d4dd4caf5eb5a883d63d
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/03/2019
-ms.locfileid: "68774669"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70012589"
 ---
 # <a name="pay-for-your-azure-subscription-by-invoice"></a>Pague sua assinatura do Azure por fatura
 
-Se você alternar para pagar por fatura, isso significa que você paga sua fatura dentro de 30 dias da data da fatura por transferência de cheque/transmissão. Para se tornar qualificado para pagar sua assinatura do Azure por fatura, envie uma solicitação para o suporte do Azure. Depois que sua solicitação for aprovada, você poderá alternar para pagamento de fatura (transferência de cheque/transmissão) no [portal do Azure](https://portal.azure.com).
+Se você alternar para pagar por fatura, isso significa que você paga sua fatura dentro de 30 dias da data da fatura por transferência de cheque/transmissão. Para se tornar qualificado para pagar sua assinatura do Azure por fatura, envie uma solicitação para o Suporte do Azure. Depois que sua solicitação for aprovada, você poderá alternar para pagamento de fatura (transferência de cheque/transmissão) no [portal do Azure](https://portal.azure.com).
 
 > [!IMPORTANT]
 > * Pagamento de nota fiscal (transferência de cheque/transmissão) só está disponível para contas comerciais.
-> * Você deve pagar todos os encargos pendentes antes de alternar para pagamento de fatura.
+> * Pague todos os encargos pendentes antes de alternar para o pagamento da fatura.
+> * Atualmente, o pagamento da fatura não é compatível com o Azure global na China.
 
 ## <a name="request-to-pay-by-invoice"></a>Solicitação para pagar por fatura
 
@@ -64,7 +65,7 @@ Se você alternar para pagar por fatura, isso significa que você paga sua fatur
          Specific region & series of Subscription:
 
     - O **nome da empresa** e o **endereço da empresa** devem corresponder às informações fornecidas para a conta do Azure. Para exibir ou atualizar as informações, consulte [alterar suas informações de perfil de conta do Azure](billing-how-to-change-azure-account-profile.md).
-    - Você deve adicionar suas informações de contato de cobrança no portal do Azure antes que o limite de crédito possa ser aprovado. Os detalhes de contato devem estar relacionados ao departamento de contas a pagar ou Finanças da empresa. Para atualizar as informações de contato de cobrança, vá para [centro de contas do Azure](https://account.azure.com/Profile).
+    - Adicione suas informações de contato de cobrança no portal do Azure antes que o limite de crédito possa ser aprovado. Os detalhes de contato devem estar relacionados ao departamento de contas a pagar ou Finanças da empresa. Para atualizar as informações de contato de cobrança, vá para [centro de contas do Azure](https://account.azure.com/Profile).
 
 6. Verifique suas informações de contato e o método de contato preferencial e clique em **Criar**.
 
@@ -74,18 +75,18 @@ Se precisar executar uma verificação de crédito devido à quantidade de créd
 
 Quando você for aprovado para pagar por fatura, poderá alternar para pagamento de fatura (transferência de cheque/transmissão) no portal do Azure.
 
-Se você tiver uma conta de programa do Microsoft Online Services, poderá alternar sua assinatura do Azure para verificar/conectar a transferência. Se você tiver um contrato com o cliente da Microsoft, poderá alternar seu perfil de cobrança para verificação/transmissão. [Saiba como verificar seu tipo de conta](#check-access-to-a-microsoft-customer-agreement).
+Se tiver uma conta de programa do Microsoft Online Services, você poderá trocar sua assinatura do Azure para cheque/transferência bancária. Com um contrato de cliente da Microsoft, você pode alternar seu perfil de cobrança para verificação/transmissão. [Saiba como verificar seu tipo de conta](#check-access-to-a-microsoft-customer-agreement).
 
 ### <a name="switch-azure-subscription-to-checkwire-transfer"></a>Alternar assinatura do Azure para verificação/transferência de transmissão
 
-Siga as etapas abaixo para alternar sua assinatura do Azure para pagamento de fatura (transferência de cheque/transmissão). **Quando você alternar para pagamento de fatura (transferência de cheque/transmissão), não será possível alternar de volta para o cartão de crédito**.
+Siga as etapas abaixo para alternar sua assinatura do Azure para pagamento de fatura (transferência de cheque/transmissão). **Depois de alternar para pagamento de fatura (transferência de cheque/transmissão), você não pode alternar de volta para o cartão de crédito**.
 
 1. Entre no [Portal do Azure](https://portal.azure.com) como Administrador da Conta.
 1. Procure **Gerenciamento de custos + cobrança**.
 
     ![Captura de tela que mostra a pesquisa](./media/billing-how-to-pay-by-invoice/search.png)
 
-1. Selecione a assinatura que você gostaria de mudar para pagamento de fatura.
+1. Selecione a assinatura na qual você deseja alternar para o pagamento por fatura.
 1. Selecione **Formas de pagamento**.
 1. Na barra de comandos, clique no botão **pagar por fatura** .
 
@@ -93,7 +94,7 @@ Siga as etapas abaixo para alternar sua assinatura do Azure para pagamento de fa
 
 ### <a name="switch-billing-profile-to-checkwire-transfer"></a>Alternar perfil de cobrança para verificação/transferência de transmissão
 
-Siga as etapas abaixo para alternar um perfil de cobrança para verificação/transferência de transmissão. Observe que apenas a pessoa que se inscreveu no Azure pode alterar o método de pagamento padrão de um perfil de cobrança.
+Siga as etapas abaixo para alternar um perfil de cobrança para verificação/transferência de transmissão. Somente a pessoa que se inscreveu no Azure pode alterar o método de pagamento padrão de um perfil de cobrança.
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
 1. Pesquise **Gerenciamento de Custos do Azure + Cobrança**.

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 2/7/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: f89e7307d75b159886cb47bde3e1fceb5ed557f5
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: bd587bfed7fcfea8e8cd99ca155ee9d86222ae3d
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68699335"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70013531"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Planejando uma implantação da Sincronização de Arquivos do Azure
 Use a Sincronização de Arquivos do Azure para centralizar os compartilhamentos de arquivos da sua organização em Arquivos do Azure enquanto mantém a flexibilidade, o desempenho e a compatibilidade de um servidor de arquivos local. A Sincronização de arquivos do Azure transforma o Windows Server em um cache rápido do compartilhamento de arquivos do Azure. Use qualquer protocolo disponível no Windows Server para acessar seus dados localmente, incluindo SMB, NFS e FTPS. Você pode ter tantos caches quantos precisar em todo o mundo.
@@ -99,7 +99,7 @@ Para exibir os resultados em CSV:
 ### <a name="system-requirements"></a>Requisitos de sistema
 - Um servidor executando o Windows Server 2012 R2, o Windows Server 2016 ou o Windows Server 2019:
 
-    | Versão | SKUs com suporte | Opções de implantação com suporte |
+    | Version | SKUs com suporte | Opções de implantação com suporte |
     |---------|----------------|------------------------------|
     | Windows Server 2019 | Datacenter e Standard | Completo e central |
     | Windows Server 2016 | Datacenter e Standard | Completo e central |
@@ -254,12 +254,15 @@ A Sincronização de Arquivos do Azure está disponível apenas nas seguintes re
 | East US | Virgínia |
 | Leste dos EUA 2 | Virgínia |
 | Centro da França | Paris |
-| Coreia Central| Seul |
-| Sul da Coreia| Busan |
+| Sul da França * | Marselha |
+| Coreia Central | Seul |
+| Sul da Coreia | Busan |
 | Leste do Japão | Tóquio |
 | Oeste do Japão | Osaka |
 | Centro-Norte dos EUA | Illinois |
 | Europa Setentrional | Irlanda |
+| Norte da África do Sul | Joanesburgo |
+| Oeste da África do Sul * | Cidade do Cabo |
 | Centro-Sul dos EUA | Texas |
 | Sul da Índia | Chennai |
 | Sudeste da Ásia | Cingapura |
@@ -274,6 +277,8 @@ A Sincronização de Arquivos do Azure está disponível apenas nas seguintes re
 | Oeste dos EUA 2 | Washington |
 
 A Sincronização de Arquivos do Azure é compatível apenas com um compartilhamento de arquivo do Azure que esteja na mesma região que o Serviço de Sincronização de Armazenamento.
+
+Para as regiões marcadas com asteriscos, você deve contatar o suporte do Azure para solicitar acesso ao armazenamento do Azure nessas regiões. O processo é descrito neste [documento](https://azure.microsoft.com/global-infrastructure/geographies/).
 
 ### <a name="azure-disaster-recovery"></a>Recuperação de desastre do Azure
 Para proteger-se contra a perda de uma região do Azure, a Sincronização de Arquivos do Azure integra-se com a opção de GRS ([redundância de armazenamento com redundância geográfica](../common/storage-redundancy-grs.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)). O armazenamento GRS funciona usando a replicação de bloco assíncrono entre o armazenamento na região primária, com o qual você normalmente interage, e o armazenamento na região secundária emparelhada. Caso um desastre que faça uma região do Azure fique temporária ou permanentemente offline, a Microsoft fará failover do armazenamento para a região emparelhada. 
@@ -296,12 +301,15 @@ Para dar suporte à integração de failover entre o armazenamento com redundân
 | East US             | Oeste dos EUA            |
 | Leste dos EUA 2           | EUA Central         |
 | Centro da França      | Sul da França       |
+| Sul da França        | Centro da França     |
 | Leste do Japão          | Oeste do Japão         |
 | Oeste do Japão          | Leste do Japão         |
 | Coreia Central       | Sul da Coreia        |
 | Sul da Coreia         | Coreia Central      |
 | Europa Setentrional        | Europa Ocidental        |
 | Centro-Norte dos EUA    | Centro-Sul dos EUA   |
+| Norte da África do Sul  | Oeste da África do Sul  |
+| Oeste da África do Sul   | Norte da África do Sul |
 | Centro-Sul dos EUA    | Centro-Norte dos EUA   |
 | Sul da Índia         | Índia Central      |
 | Sudeste da Ásia      | Ásia Oriental          |

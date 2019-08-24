@@ -1,7 +1,7 @@
 ---
 title: O que são pipelines de ML
 titleSuffix: Azure Machine Learning service
-description: Neste artigo, aprenda sobre os pipelines de aprendizado de máquina que você pode criar com o SDK do Azure Machine Learning para Python e as vantagens de usar pipelines. Os pipelines de ML (Machine learning) são usados por cientistas de dados para criar, otimizar e gerenciar os fluxos de trabalho de aprendizado de máquina.
+description: Neste artigo, aprenda sobre os pipelines de aprendizado de máquina que você pode criar com o SDK do Azure Machine Learning para Python e as vantagens de usar pipelines. Pipelines de ML (aprendizado de máquina) são usados por cientistas de dados para criar, otimizar e gerenciar seus fluxos de trabalho de aprendizado de máquina.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,12 +11,12 @@ ms.author: sanpil
 author: sanpil
 ms.date: 08/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: 22d1da4c194b392993b37b16ab20673120c3362e
-ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
+ms.openlocfilehash: 160be4224e31793b5bb172f5b913c364ae2c8a59
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68951807"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70013037"
 ---
 # <a name="what-are-ml-pipelines-in-azure-machine-learning-service"></a>O que são pipelines de ML no serviço Azure Machine Learning?
 
@@ -69,7 +69,7 @@ As principais vantagens de usar pipelines para seus fluxos de trabalho de aprend
 
 ## <a name="the-python-sdk-for-pipelines"></a>O SDK do Python para pipelines
 
-[Use o SDK do Python](https://docs.microsoft.com/python/api/azureml-pipeline-core/?view=azure-ml-py) para criar seus pipelines de ml em seus notebooks JUPYTER ou IDE preferenciais. O SDK do Azure Machine Learning oferece constructos obrigatórios para o sequenciamento e a paralelização de etapas em seus pipelines quando nenhuma dependência de dados está presente. 
+[Use o SDK do Python](https://docs.microsoft.com/python/api/azureml-pipeline-core/?view=azure-ml-py) para criar seus pipelines de ml em seu ambiente de desenvolvimento integrado (IDE) ou notebooks Jupyter de preferência. O SDK do Azure Machine Learning oferece constructos obrigatórios para o sequenciamento e a paralelização de etapas em seus pipelines quando nenhuma dependência de dados está presente. 
 
 Usando dependências de dados declarativas, você pode otimizar suas tarefas. O SDK inclui uma estrutura de módulos predefinidos para tarefas comuns, como transferência de dados e publicação do modelo. Você pode estender a estrutura para modelar suas próprias convenções implementando etapas personalizadas reutilizáveis entre pipelines. Gerencie também os destinos de computação e os recursos de armazenamento diretamente no SDK.
 

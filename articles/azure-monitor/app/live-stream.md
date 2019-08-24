@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 04/22/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: f8203cade1d2e34a9852e945df03dc2fddc1fbe5
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 4e1d83d99f6df9407e24e2ae57af70f68858092d
+ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68359423"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70012746"
 ---
 # <a name="live-metrics-stream-monitor--diagnose-with-1-second-latency"></a>Live Metrics Stream: Monitorar e diagnosticar com latência de um segundo
 
@@ -107,7 +107,12 @@ Se você quiser monitorar uma instância de função de servidor específico, fi
 ![Amostra de falhas em tempo real](./media/live-stream/live-stream-filter.png)
 
 ## <a name="sdk-requirements"></a>Requisitos do SDK
+
+### <a name="net"></a>.NET
 O Fluxo de métricas em tempo real personalizado está disponível com a versão 2.4.0-beta2 ou mais recente do [SDK do Application Insights para Web](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Web/). Lembre-se de selecionar a opção "Incluir pré-lançamento" no gerenciador de pacotes do NuGet.
+
+### <a name="nodejs"></a>Node.js
+Live Metrics Stream está disponível com a versão 1.3.0 ou mais recente do [SDK do Application insights para node. js](https://npmjs.com/package/applicationinsights). Lembre-se `setSendLiveMetrics(true)` de usar ao configurar o SDK em seu código.
 
 ## <a name="secure-the-control-channel"></a>Proteger o canal de controle
 Os critérios de filtro personalizados especificados são enviados para o componente de Métricas em tempo real no SDK do Application Insights. Os filtros podem conter informações confidenciais, como customerIDs. Você pode proteger o canal com uma chave de API secreta além da chave de instrumentação.
