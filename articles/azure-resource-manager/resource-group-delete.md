@@ -1,24 +1,86 @@
 ---
 title: Excluir grupo de recursos e recursos - Azure Resource Manager
-description: Descreve como o Azure Resource Manager ordena a exclusão de recursos quando uma exclusão de um grupo de recursos. Descreve os códigos de resposta e como o Resource Manager os manipula para determinar se a exclusão teve êxito.
+description: Descreve como excluir recursos e grupos de recursos. Ele descreve como o Azure Resource Manager ordena a exclusão de recursos quando uma exclusão de um grupo de recursos. Descreve os códigos de resposta e como o Resource Manager os manipula para determinar se a exclusão teve êxito.
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
-ms.date: 12/09/2018
+ms.date: 08/22/2019
 ms.author: tomfitz
 ms.custom: seodec18
-ms.openlocfilehash: 18990b51b5ff2184197db48fd139d63750626663
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 75cdeb88a68dece59d6b037592f7212fa895e821
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204215"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69991668"
 ---
-# <a name="azure-resource-manager-resource-group-deletion"></a>Exclusão do grupo de recursos do Azure Resource Manager
+# <a name="azure-resource-manager-resource-group-and-resource-deletion"></a>Azure Resource Manager o grupo de recursos e a exclusão de recursos
 
-Este artigo descreve como o Gerenciador de Recursos do Azure ordena a exclusão de recursos quando você exclui um grupo de recursos.
+Este artigo mostra como excluir recursos e grupos de recursos. Ele descreve como o Azure Resource Manager ordena a exclusão de recursos quando você exclui um grupo de recursos.
 
-## <a name="determine-order-of-deletion"></a>Determinar a ordem de exclusão
+## <a name="delete-resource-group"></a>Excluir grupo de recursos
+
+Use um dos métodos a seguir para excluir o grupo de recursos.
+
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+
+```azurepowershell-interactive
+Remove-AzResourceGroup -Name <resource-group-name>
+```
+
+# <a name="azure-clitabazure-cli"></a>[CLI do Azure](#tab/azure-cli)
+
+```azurecli-interactive
+az group delete --name <resource-group-name>
+```
+
+# <a name="portaltabazure-portal"></a>[Portal](#tab/azure-portal)
+
+1. No [portal](https://portal.azure.com), selecione o grupo de recursos que você deseja excluir.
+
+1. Selecione **Excluir grupo de recursos**.
+
+   ![Excluir grupo de recursos](./media/resource-group-delete/delete-group.png)
+
+1. Para confirmar a exclusão, digite o nome do grupo de recursos
+
+---
+
+## <a name="delete-resource"></a>Excluir Recurso
+
+Use um dos métodos a seguir para excluir um recurso.
+
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
+
+```azurepowershell-interactive
+Remove-AzResource `
+  -ResourceGroupName ExampleResourceGroup `
+  -ResourceName ExampleVM `
+  -ResourceType Microsoft.Compute/virtualMachines
+```
+
+# <a name="azure-clitabazure-cli"></a>[CLI do Azure](#tab/azure-cli)
+
+```azurecli-interactive
+az resource delete \
+  --resource-group ExampleResourceGroup \
+  --name ExampleVM \
+  --resource-type "Microsoft.Compute/virtualMachines"
+```
+
+# <a name="portaltabazure-portal"></a>[Portal](#tab/azure-portal)
+
+1. No [portal](https://portal.azure.com), selecione o recurso que você deseja excluir.
+
+1. Selecione **Excluir**. A captura de tela a seguir mostra as opções de gerenciamento para uma máquina virtual.
+
+   ![Excluir Recurso](./media/resource-group-delete/delete-resource.png)
+
+1. Quando receber a solicitação, confirme a exclusão.
+
+---
+
+## <a name="how-order-of-deletion-is-determined"></a>Como a ordem de exclusão é determinada
 
 Quando você exclui um grupo de recursos, o Gerenciador de Recursos determina a ordem para excluir recursos. Ele usa a seguinte ordem:
 
@@ -27,8 +89,6 @@ Quando você exclui um grupo de recursos, o Gerenciador de Recursos determina a 
 2. Recursos que gerenciam outros recursos são excluídos a seguir. Um recurso pode ter a propriedade `managedBy` definida para indicar que um recurso diferente a gerencia. Quando essa propriedade é configurada, o recurso que gerencia o outro recurso é excluído antes dos outros recursos.
 
 3. Os recursos restantes são excluídos após as duas categorias anteriores.
-
-## <a name="resource-deletion"></a>Exclusão de recursos
 
 Depois que o pedido é determinado, o Gerenciador de recursos emite uma operação DELETE para cada recurso. Aguarda que quaisquer dependências terminem antes de prosseguir.
 
@@ -40,7 +100,7 @@ Para operações síncronas, os códigos de resposta bem-sucedidos esperados sã
 
 Para operações assíncronas, a resposta bem-sucedida esperada é 202. O Gerenciador de Recursos rastreia o cabeçalho do local ou o cabeçalho da operação azure-async para determinar o status da operação de exclusão assíncrona.
   
-### <a name="errors"></a>Errors
+### <a name="errors"></a>Erros
 
 Quando uma operação de exclusão retorna um erro, o Gerenciador de Recursos repete a chamada DELETE. As novas tentativas ocorrem para os códigos de status 5xx, 429 e 408. Por padrão, o período de repetição é de 15 minutos.
 
@@ -50,7 +110,7 @@ Gerenciador de recursos emite uma chamada GET em cada recurso que ele tentou exc
 
 No entanto, se a chamada GET no recurso retornar um 200 ou 201, o Gerenciador de recursos recria o recurso.
 
-### <a name="errors"></a>Errors
+### <a name="errors"></a>Erros
 
 Se a operação GET retornar um erro, o Gerenciador de Recursos tentará novamente o GET para o seguinte código de erro:
 

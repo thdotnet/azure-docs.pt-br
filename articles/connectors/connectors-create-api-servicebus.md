@@ -11,12 +11,12 @@ ms.assetid: d6d14f5f-2126-4e33-808e-41de08e6721f
 ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
-ms.openlocfilehash: 68378c87e18df874059579445352b8fd1b2b6c13
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 944bac44c1fc6504dfe1a93df5760ccf4ee46fa0
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62105573"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69982202"
 ---
 # <a name="exchange-messages-in-the-cloud-with-azure-service-bus-and-azure-logic-apps"></a>Trocar mensagens na nuvem com o Barramento de Serviço do Azure e os Aplicativos Lógicos do Azure
 
@@ -29,11 +29,11 @@ Com os Aplicativos Lógicos do Azure e o conector do Barramento de Serviço do A
 * Renovar bloqueios em mensagens e sessões nas filas e assinaturas de tópicos.
 * Fechar sessões em filas e tópicos.
 
-Você pode usar gatilhos para obter respostas do Barramento de Serviço e disponibilizar a saída para outras ações em seus aplicativos lógicos. Você também pode fazer com que outras ações usem a saída das ações do Barramento de Serviço. Se você for novo em Barramento de Serviço e Aplicativos Lógicos, veja [O que é o Barramento de Serviço do Azure?](../service-bus-messaging/service-bus-messaging-overview.md) e [O que são Aplicativos Lógicos do Azure?](../logic-apps/logic-apps-overview.md).
+Você pode usar gatilhos para obter respostas do Barramento de Serviço e disponibilizar a saída para outras ações em seus aplicativos lógicos. Você também pode fazer com que outras ações usem a saída das ações do Barramento de Serviço. Se você for novo em Barramento de Serviço e Aplicativos Lógicos, veja [O que é o Barramento de Serviço do Azure?](../service-bus-messaging/service-bus-messaging-overview.md) e [o que são os aplicativos lógicos do Azure?](../logic-apps/logic-apps-overview.md)
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, <a href="https://azure.microsoft.com/free/" target="_blank">inscreva-se em uma conta gratuita do Azure</a>. 
+* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, [inscreva-se em uma conta gratuita do Azure](https://azure.microsoft.com/free/). 
 
 * Um namespace de Barramento de Serviço e a entidade de mensagens, como uma fila. Se você não tiver esses itens, aprenda a [criar seu namespace do Barramento de Serviço e uma fila](../service-bus-messaging/service-bus-create-namespace-portal.md). 
 
@@ -74,7 +74,7 @@ Confirme se seu aplicativo lógico tem permissões para acessar o namespace do B
 
 1. Para adicionar um *gatilho* para um aplicativo lógico em branco, na caixa de pesquisa, insira "Barramento de Serviço do Azure" como filtro. Na lista de gatilhos, selecione o gatilho desejado. 
 
-   Por exemplo, para acionar o aplicativo lógico quando um novo item for enviado para uma fila do barramento de serviço, selecione este gatilho: **Quando uma mensagem é recebida em uma fila (conclusão automática)**
+   Por exemplo, para disparar seu aplicativo lógico quando um novo item é enviado para uma fila do barramento de serviço, selecione este gatilho: **Quando uma mensagem é recebida em uma fila (conclusão automática)**
 
    ![Selecionar um gatilho do Barramento de Serviço](./media/connectors-create-api-azure-service-bus/select-service-bus-trigger.png)
 
@@ -125,7 +125,7 @@ Confirme se seu aplicativo lógico tem permissões para acessar o namespace do B
      Quando terminar, continue compilando o fluxo de trabalho do aplicativo lógico, adicionando as ações que deseja. Por exemplo, pode adicionar uma ação que envia um email quando uma nova mensagem chega.
      Quando o gatilho verifica sua fila e localiza uma nova mensagem, seu aplicativo lógico executa as ações selecionadas para a mensagem encontrada.
 
-   * **Para a ação de exemplo**: Insira o conteúdo da mensagem e outros detalhes. 
+   * **Para a ação de exemplo**: Insira o conteúdo da mensagem e quaisquer outros detalhes. 
 
      ![Fornecer o conteúdo e os detalhes da mensagem](./media/connectors-create-api-azure-service-bus/service-bus-send-message-details.png)
 
@@ -135,12 +135,7 @@ Confirme se seu aplicativo lógico tem permissões para acessar o namespace do B
 
 ## <a name="connector-reference"></a>Referência de conector
 
-Para obter detalhes técnicos sobre gatilhos, ações e limites, que são explicados na descrição da OpenAPI do conector (anteriormente conhecido como Swagger), veja a [página de referência](/connectors/servicebus/) do conector.
-
-## <a name="get-support"></a>Obter suporte
-
-* Em caso de dúvidas, visite o [Fórum dos Aplicativos Lógicos do Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-* Para enviar ou votar em ideias de recurso, visite o [site de comentários do usuário de Aplicativos Lógicos](https://aka.ms/logicapps-wish).
+O conector do barramento de serviço pode economizar até 1.500 sessões exclusivas por vez de um barramento de serviço para o cache do conector. Se a contagem de sessões exceder esse limite, as sessões antigas serão removidas do cache. Para obter outros detalhes técnicos sobre gatilhos, ações e limites, que são descritos pela descrição de OpenAPI (anteriormente, Swagger) do conector, examine a [página de referência](/connectors/servicebus/)do conector.
 
 ## <a name="next-steps"></a>Próximas etapas
 

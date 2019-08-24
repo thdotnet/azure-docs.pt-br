@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 06/07/2019
-ms.openlocfilehash: 30eb922e17810ddd53166a702b5fc513684f2140
-ms.sourcegitcommit: d060947aae93728169b035fd54beef044dbe9480
+ms.openlocfilehash: b451769f5f98bf64ca340504c983f16d1db36647
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68742370"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69991545"
 ---
 # <a name="what-are-the-apache-hadoop-components-and-versions-available-with-hdinsight"></a>Quais são os componentes e versões do Apache Hadoop disponíveis com o HDInsight?
 
@@ -178,6 +178,9 @@ A seção fornece links para notas de versão para as distribuições do Hortonw
 ## <a name="default-node-configuration-and-virtual-machine-sizes-for-clusters"></a>Tamanhos de máquina virtual e configuração de nó de padrão para clusters
 
 As tabelas abaixo listam os tamanhos de VM (máquina virtual) padrão para clusters HDInsight.  Este gráfico é necessário para entender quais tamanhos de VM usar durante a criação de scripts do PowerShell ou da CLI do Azure para implantar clusters do HDInsight.
+
+> [!NOTE]
+> Os únicos tipos de cluster que têm discos de dados são Kafka e clusters HBase com o recurso de gravações aceleradas habilitado. O HDInsight dá suporte a tamanhos de disco p30 e S30 nesses cenários.
 
 > [!IMPORTANT]  
 > Se você precisa de mais de 32 nós de trabalho em um cluster, você precisa selecionar um tamanho de nó de cabeçalho com pelo menos 8 núcleos e 14 GB de RAM.

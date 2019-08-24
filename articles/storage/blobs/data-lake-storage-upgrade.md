@@ -8,12 +8,12 @@ ms.date: 02/07/2019
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: rugopala
-ms.openlocfilehash: 850d580d4eb1ca41932a28005d3375ced709db60
-ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
+ms.openlocfilehash: 7c018ad15ee653bcdc903492028ec5ed058dbd14
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69016383"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69992230"
 ---
 # <a name="upgrade-your-big-data-analytics-solutions-from-azure-data-lake-storage-gen1-to-azure-data-lake-storage-gen2"></a>Atualize suas soluções de análise de Big Data do Azure Data Lake Storage Gen1 para o Azure Data Lake Storage Gen2
 
@@ -235,7 +235,7 @@ Observe que há terceiros que podem manipular a atualização do Data Lake Stora
 
 * Se usar uma ferramenta que não copia as ACLs ou se não deseja copiar as ACLs, você precisará definir manualmente as ACLs no destino, no nível superior apropriado. Você pode fazer isso usando o Gerenciador de Armazenamento. Verifique se essas ACLs são as ACLs padrão, para que sejam herdadas pelos arquivos e pastas que você copiar.
 
-* Na Data Lake Storage Gen1, o nível mais alto no qual você pode definir ACLs é na raiz da conta. No Data Lake Storage Gen2, no entanto, o nível mais alto que você pode definir ACLs está na pasta raiz em um sistema de arquivos, não na conta inteira. Portanto, se você quiser definir ACLs padrão no nível da conta, você precisará duplicá-las em todos os sistemas de arquivos em sua conta do Data Lake Storage Gen2.
+* Na Data Lake Storage Gen1, o nível mais alto no qual você pode definir ACLs é na raiz da conta. No Data Lake Storage Gen2, no entanto, o nível mais alto que você pode definir ACLs está na pasta raiz em um contêiner, não na conta inteira. Portanto, se você quiser definir ACLs padrão no nível da conta, você precisará duplicá-las em todos os sistemas de arquivos em sua conta do Data Lake Storage Gen2.
 
 * As restrições de nomenclatura de arquivo são diferentes entre os dois sistemas de armazenamento. Essas diferenças são especialmente preocupantes ao copiar do Data Lake Storage Gen2 para o Gen1, já que esse último tem restrições mais estritas.
 

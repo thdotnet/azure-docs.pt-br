@@ -1,25 +1,25 @@
 ---
-title: Usar extensões de PostgreSQL no banco de dados do Azure para PostgreSQL – servidor único
-description: Descreve a capacidade de estender a funcionalidade do seu banco de dados usando as extensões no banco de dados do Azure para PostgreSQL – servidor único.
+title: Usar extensões do PostgreSQL no banco de dados do Azure para PostgreSQL-servidor único
+description: Descreve a capacidade de estender a funcionalidade do seu banco de dados usando extensões no banco de dados do Azure para PostgreSQL-servidor único.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 06/26/2019
-ms.openlocfilehash: 412ce3c5245f3f22bfb03740a0451670dc6a90a7
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
-ms.translationtype: MT
+ms.date: 08/23/2019
+ms.openlocfilehash: 93cc02fafcfa153c452f37c2bc69bb47e2629f1d
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67448117"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69998072"
 ---
-# <a name="postgresql-extensions-in-azure-database-for-postgresql---single-server"></a>Extensões de PostgreSQL no banco de dados do Azure para PostgreSQL – servidor único
-O PostgreSQL fornece a capacidade de estender a funcionalidade de seu banco de dados usando as extensões. As extensões permitem o agrupamento de vários objetos SQL relacionados em um único pacote que pode ser carregado ou removido de seu banco de dados com um único comando. Depois de ser carregada no banco de dados, as extensões podem funcionar como recursos internos. Para obter mais informações sobre extensões do PostgreSQL, consulte  [Empacotando Objetos Relacionados em uma Extensão](https://www.postgresql.org/docs/9.6/static/extend-extensions.html).
+# <a name="postgresql-extensions-in-azure-database-for-postgresql---single-server"></a>Extensões PostgreSQL no banco de dados do Azure para PostgreSQL-servidor único
+O PostgreSQL fornece a capacidade de estender a funcionalidade de seu banco de dados usando as extensões. As extensões agrupam vários objetos SQL relacionados em um único pacote que pode ser carregado ou removido do banco de dados com um único comando. Depois de ser carregado no banco de dados, as extensões funcionam como recursos internos.
 
 ## <a name="how-to-use-postgresql-extensions"></a>Como usar as extensões PostgreSQL
-As extensões PostgreSQL devem ser instaladas no banco de dados para que você possa usá-las. Para instalar uma extensão específica, execute as [CREATE EXTENSION](https://www.postgresql.org/docs/9.6/static/sql-createextension.html) comando na ferramenta psql para carregar os objetos empacotados em seu banco de dados.
+As extensões PostgreSQL devem ser instaladas no banco de dados para que você possa usá-las. Para instalar uma extensão específica, execute as [CREATE EXTENSION](https://www.postgresql.org/docs/current/static/sql-createextension.html) comando na ferramenta psql para carregar os objetos empacotados em seu banco de dados.
 
-No momento, o Banco de Dados do Azure para PostgreSQL dá suporte a um subconjunto de extensões de chave, como é listado abaixo. As extensões além das listadas não têm suporte, não é possível criar sua própria extensão com o serviço de Banco de Dados do Azure para PostgreSQL.
+O banco de dados do Azure para PostgreSQL dá suporte a um subconjunto de extensões de chave, conforme listado abaixo. Não há suporte para extensões além daquelas listadas. Você não pode criar sua própria extensão no banco de dados do Azure para PostgreSQL.
 
 ## <a name="extensions-supported-by-azure-database-for-postgresql"></a>Extensões com suporte do Banco de Dados do Azure para PostgreSQL
 As tabelas a seguir listam as extensões PostgreSQL padrão que têm suporte atualmente do Banco de Dados do Azure para PostgreSQL. Essas informações também estão disponíveis por meio da execução de `SELECT * FROM pg_available_extensions;`.
@@ -105,59 +105,102 @@ As tabelas a seguir listam as extensões PostgreSQL padrão que têm suporte atu
 > [!div class="mx-tableFixed"]
 > | **Extensão** | **Descrição** |
 > |---|---|
-> | [TimescaleDB](https://docs.timescale.com/latest) | Um série de tempo banco de dados SQL que dá suporte a automatizada com mais rapidez de particionamento para ingestão e consulta. Fornece orientados ao tempo funções analíticas, otimizações e dimensiona PostgreSQL para cargas de trabalho de série temporal. TimescaleDB é desenvolvida por e marca registrada da [escala de tempo, Inc.](https://www.timescale.com/) (Veja abaixo uma observação sobre essa extensão). |
+> | [TimescaleDB](https://docs.timescale.com/latest) | Um banco de dados SQL de série temporal que dá suporte ao particionamento automatizado para ingestão e consultas mais rápidas. Fornece funções analíticas orientadas a tempo, otimizações e escalas PostgreSQL para cargas de trabalho de série temporal. O TimescaleDB é desenvolvido pelo e uma marca registrada da [TIMESCALE, Inc.](https://www.timescale.com/) (Veja abaixo uma observação sobre essa extensão). |
+
+## <a name="postgres-11-extensions"></a>Extensões do postgres 11
+
+As extensões a seguir estão disponíveis no banco de dados do Azure para servidores PostgreSQL que têm a versão 11 do Postgres.
+
+> [!div class="mx-tableFixed"]
+> | **Extensão**| **Versão da extensão** | **Descrição** |
+> |---|---|---|
+> |[address_standardizer](http://postgis.net/docs/Address_Standardizer.html)         | 2.5.1           | Usado para analisar um endereço em elementos constituintes. |
+> |[address_standardizer_data_us](http://postgis.net/docs/Address_Standardizer.html) | 2.5.1           | Exemplo de conjunto de DataSet de endereço do padronizador dos EUA|
+> |[btree_gin](https://www.postgresql.org/docs/11/btree-gin.html)                    | 1,3             | suporte para indexação de tipos de texto comuns em iniciar|
+> |[btree_gist](https://www.postgresql.org/docs/11/btree-gist.html)                   | 1.5             | suporte para indexação de tipos de texto comuns no|
+> |[citext](https://www.postgresql.org/docs/11/static/citext.html)                       | 1.5             | tipo de dados para cadeias de caracteres não diferenciando maiúsculas de minúsculas|
+> |[cube](https://www.postgresql.org/docs/11/static/cube.html)                         | 1.4             | tipo de dados para cubos multidimensionais|
+> |[dblink](https://www.postgresql.org/docs/11/dblink.html)                       | 1.2             | conectar-se a outros bancos de dados PostgreSQL de dentro de um Database|
+> |[dict_int](https://www.postgresql.org/docs/11/static/dict-int.html)                     | 1.0             | modelo de dicionário de pesquisa de texto para inteiros|
+> |[earthdistance](https://www.postgresql.org/docs/11/static/earthdistance.html)                | 1.1             | calcular grandes distâncias de círculo na superfície da terra|
+> |[fuzzystrmatch](https://www.postgresql.org/docs/11/static/fuzzystrmatch.html)                | 1.1             | determinar semelhanças e distância entre cadeias de caracteres|
+> |[hstore](https://www.postgresql.org/docs/11/static/hstore.html)                       | 1.5             | tipo de dados para armazenar conjuntos de pares (chave, valor)|
+> |[hypopg](https://hypopg.readthedocs.io/en/latest/)                       | 1.1.2           | Índices hipotéticos para PostgreSQL|
+> |[intarray](https://www.postgresql.org/docs/11/static/intarray.html)                     | 1.2             | suporte a funções, operadores e índice para matrizes 1D de inteiros|
+> |[isn](https://www.postgresql.org/docs/11/static/isn.html)                          | 1.2             | tipos de dados para padrões de numeração de produtos internacionais|
+> |[ltree](https://www.postgresql.org/docs/11/static/ltree.html)                        | 1.1             | tipo de dados para estruturas hierárquicas como de árvore|
+> |[orafce](https://github.com/orafce/orafce)                       | 3.7             | Funções e operadores que emulam um subconjunto de funções e pacotes do RDBMS comercial|
+> |[pgcrypto](https://www.postgresql.org/docs/11/static/pgcrypto.html)                     | 1,3             | funções criptográficas|
+> |[pgrouting](https://pgrouting.org/)                    | 2.6.2           | Extensão pgRouting|
+> |[pgrowlocks](https://www.postgresql.org/docs/11/static/pgrowlocks.html)                   | 1.2             | Mostrar informações de bloqueio em nível de linha|
+> |[pgstattuple](https://www.postgresql.org/docs/11/static/pgstattuple.html)                  | 1.5             | Mostrar estatísticas de nível de tupla|
+> |[pg_buffercache](https://www.postgresql.org/docs/11/static/pgbuffercache.html)               | 1,3             | examinar o cache de buffer compartilhado|
+> |[pg_partman](https://github.com/pgpartman/pg_partman)                   | 4.0.0           | Extensão para gerenciar tabelas particionadas por hora ou ID|
+> |[pg_prewarm](https://www.postgresql.org/docs/11/pgprewarm.html)                   | 1.2             | dados de relações prequentes|
+> |[pg_stat_statements](https://www.postgresql.org/docs/11/static/pgstatstatements.html)           | 1.6             | acompanhar estatísticas de execução de todas as instruções SQL executadas|
+> |[pg_trgm](https://www.postgresql.org/docs/11/static/pgtrgm.html)                      | 1.4             | medição de similaridade de texto e pesquisa de índice com base em trigramas|
+> |[plpgsql](https://www.postgresql.org/docs/11/static/plpgsql.html)                      | 1.0             | Linguagem de procedimento PL/pgSQL|
+> |[plv8](https://plv8.github.io/)                         | 2.3.11          | Linguagem de procedimento confiável PL/JavaScript (V8)|
+> |[PostGIS](https://www.postgis.net/)                      | 2.5.1           | Funções e tipos espaciais de PostGIS, geography e rasterização|
+> |[postgis_sfcgal](https://www.postgis.net/)               | 2.5.1           | Funções PostGIS SFCGAL|
+> |[postgis_tiger_geocoder](https://www.postgis.net/)       | 2.5.1           | Geocodificador PostGIS Tiger e reverso geocodificador|
+> |[postgis_topology](https://postgis.net/docs/Topology.html)             | 2.5.1           | Tipos e funções espaciais de topologia PostGIS|
+> |[postgres_fdw](https://www.postgresql.org/docs/11/static/postgres-fdw.html)                 | 1.0             | wrapper de dados externos para servidores PostgreSQL remotos|
+> |[tablefunc](https://www.postgresql.org/docs/11/static/tablefunc.html)                    | 1.0             | funções que manipulam tabelas inteiras, incluindo a tabela de referência cruzada|
+> |[unaccent](https://www.postgresql.org/docs/11/static/unaccent.html)                     | 1.1             | dicionário de pesquisa de texto que remove acentos|
+> |[uuid-ossp](https://www.postgresql.org/docs/11/static/uuid-ossp.html)                    | 1.1             | gerar identificadores universais exclusivos (UUIDs)|
 
 
-## <a name="pgstatstatements"></a>pg_stat_statements
-A extensão [pg\_stat\_statements](https://www.postgresql.org/docs/9.6/static/pgstatstatements.html) é pré-carregada em cada servidor do Banco de Dados do Azure para PostgreSQL para fornecer a você uma maneira de acompanhar estatísticas de execução de instruções SQL.
+## <a name="pg_stat_statements"></a>pg_stat_statements
+A extensão pg_stat_statements é pré-carregado em cada servidor de banco de dados do Azure para PostgreSQL para fornecer a você um meio de controlar estatísticas de execução de instruções SQL.
 A configuração `pg_stat_statements.track`, que controla quais instruções são contadas por extensão, tem `top` como padrão, que significa que todas as instruções emitidas diretamente por clientes são rastreadas. Dois outros níveis de rastreamento são `none` e `all`. Essa definição é configurável como um parâmetro de servidor por meio de [portal do Azure](https://docs.microsoft.com/azure/postgresql/howto-configure-server-parameters-using-portal) ou da [CLI do Azure](https://docs.microsoft.com/azure/postgresql/howto-configure-server-parameters-using-cli).
 
 Há um equilíbrio entre as informações de execução de consulta fornecida por pg_stat_statements e o impacto no desempenho do servidor, que registra cada instrução SQL. Se você não está usando ativamente a extensão pg_stat_statements, recomendamos que você defina `pg_stat_statements.track` como `none`. Observe que alguns serviços de monitoramento de terceiros podem depender de pg_stat_statements para fornecer informações de desempenho de consulta, para confirmar se este é o caso para você ou não.
 
-## <a name="dblink-and-postgresfdw"></a>dblink e postgres_fdw
-dblink e postgres_fdw permitem que você se conecte de um servidor PostgreSQL a outro ou a outro banco de dados no mesmo servidor. O servidor de recebimento precisa permitir conexões do servidor de envio por meio de seu firewall. Ao usar essas extensões para conectar-se entre os servidores do Banco de Dados do Azure para PostgreSQL, isso pode ser feito definindo "Permitir acesso aos serviços do Azure" como LIGADO. Isso também será necessário se você quiser usar as extensões para executar um loop no mesmo servidor. A configuração "Permitir acesso aos serviços do Azure" pode ser encontrada na página do portal do Azure para o servidor Postgres em Segurança de Conexão. Ativar "Permitir acesso a serviços do Azure" coloca todos os IPs do Azure na lista de permissões.
+## <a name="dblink-and-postgres_fdw"></a>dblink e postgres_fdw
+dblink e postgres_fdw permitem que você se conecte de um servidor PostgreSQL a outro ou a outro banco de dados no mesmo servidor. O servidor de recebimento precisa permitir conexões do servidor de envio por meio de seu firewall. Ao usar essas extensões para conectar-se entre os servidores do Banco de Dados do Azure para PostgreSQL, isso pode ser feito definindo "Permitir acesso aos serviços do Azure" como LIGADO. Isso também será necessário se você quiser usar as extensões para executar um loop no mesmo servidor. A configuração "Permitir acesso aos serviços do Azure" pode ser encontrada na página do portal do Azure para o servidor Postgres em Segurança de Conexão. A ativação de "permitir acesso aos serviços do Azure" no coloca todos os IPs do Azure na lista de permissões.
 
-Atualmente, as conexões de saída do banco de dados do Azure para PostgreSQL não têm suporte, exceto para conexões de outro banco de dados do Azure para servidores PostgreSQL.
+Atualmente, não há suporte para conexões de saída do banco de dados do Azure para PostgreSQL, exceto para conexões com outros servidores do banco de dados do Azure para PostgreSQL.
 
 ## <a name="uuid"></a>uuid
-Se você estiver planejando usar `uuid_generate_v4()` da extensão de uuid ossp, considere comparando com `gen_random_uuid()` da extensão de pgcrypto para benefícios de desempenho.
+Se você estiver planejando usar `uuid_generate_v4()` a extensão UUID-OSSP, considere comparar com `gen_random_uuid()` a extensão pgcrypto para obter os benefícios de desempenho.
 
 
 ## <a name="timescaledb"></a>TimescaleDB
-TimescaleDB é um banco de dados de série temporal é empacotado como uma extensão para PostgreSQL. TimescaleDB fornece orientados ao tempo funções analíticas, otimizações e pode ser dimensionado Postgres para cargas de trabalho de série temporal.
+TimescaleDB é um banco de dados de série temporal que é empacotado como uma extensão para PostgreSQL. O TimescaleDB fornece funções analíticas orientadas a tempo, otimizações e escalas postgres para cargas de trabalho de série temporal.
 
-[Saiba mais sobre TimescaleDB](https://docs.timescale.com/latest), uma marca registrada da [escala de tempo, Inc.](https://www.timescale.com/)
+[Saiba mais sobre o TimescaleDB](https://docs.timescale.com/latest), uma marca registrada da TIMESCALE [, Inc.](https://www.timescale.com/)
 
-### <a name="installing-timescaledb"></a>Instalando TimescaleDB
-Para instalar o TimescaleDB, você precisará incluí-lo em bibliotecas compartilhadas de pré-carregamento do servidor. Uma alteração do Postgres `shared_preload_libraries` parâmetro requer um **reinicialização do servidor** entrem em vigor. Você pode alterar os parâmetros usando o [portal do Azure](howto-configure-server-parameters-using-portal.md) ou o [CLI do Azure](howto-configure-server-parameters-using-cli.md).
+### <a name="installing-timescaledb"></a>Instalando o TimescaleDB
+Para instalar o TimescaleDB, você precisa incluí-lo nas bibliotecas de pré-carregamento compartilhadas do servidor. Uma alteração no parâmetro de `shared_preload_libraries` postgres requer a reinicialização do **servidor** para entrar em vigor. Você pode alterar os parâmetros usando o [portal do Azure](howto-configure-server-parameters-using-portal.md) ou o [CLI do Azure](howto-configure-server-parameters-using-cli.md).
 
 > [!NOTE]
-> TimescaleDB pode ser habilitada no banco de dados do Azure para versões do PostgreSQL 9.6 e 10
+> O TimescaleDB pode ser habilitado no banco de dados do Azure para PostgreSQL versões 9,6 e 10
 
 Usando o [portal do Azure](https://portal.azure.com/):
 
 1. Selecione seu servidor de Banco de Dados do Azure para PostgreSQL.
 
-2. Na barra lateral, selecione **parâmetros de servidor**.
+2. Na barra lateral, selecione **parâmetros do servidor**.
 
 3. Pesquise o parâmetro `shared_preload_libraries`.
 
 4. Selecione **TimescaleDB**.
 
-5. Selecione **salvar** para preservar suas alterações. Você receberá uma notificação quando a alteração é salva. 
+5. Selecione **salvar** para preservar suas alterações. Você receberá uma notificação quando a alteração for salva. 
 
-6. Após a notificação **reiniciar** o servidor para aplicar essas alterações. Para saber como reiniciar um servidor, confira [Reiniciar um servidor de Banco de Dados do Azure para PostgreSQL](howto-restart-server-portal.md).
+6. Após a notificação, **reinicie** o servidor para aplicar essas alterações. Para saber como reiniciar um servidor, confira [Reiniciar um servidor de Banco de Dados do Azure para PostgreSQL](howto-restart-server-portal.md).
 
 
-Agora você pode habilitar TimescaleDB no banco de dados Postgres. Conectar-se ao banco de dados e emita o seguinte comando:
+Agora você pode habilitar TimescaleDB em seu banco de dados do Postgres. Conecte-se ao banco de dados e emita o seguinte comando:
 ```sql
 CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
 ```
 > [!TIP]
-> Se você vir um erro, confirme que você [reiniciou o servidor](howto-restart-server-portal.md) depois de salvar shared_preload_libraries. 
+> Se você vir um erro, confirme que você [reiniciou o servidor depois de salvar o](howto-restart-server-portal.md) shared_preload_libraries. 
 
-Agora você pode criar um hypertable TimescaleDB [do zero](https://docs.timescale.com/getting-started/creating-hypertables) ou migrar [dados de série temporal existentes no PostgreSQL](https://docs.timescale.com/getting-started/migrating-data).
+Agora você pode criar uma hipertabela TimescaleDB [do zero](https://docs.timescale.com/getting-started/creating-hypertables) ou migrar [dados existentes de série temporal no PostgreSQL](https://docs.timescale.com/getting-started/migrating-data).
 
 
 ## <a name="next-steps"></a>Próximas etapas
-Se você não vir uma extensão que gostaria de usar, fale conosco. Vote em solicitações existentes ou criar novas solicitações de comentários no nosso [Fórum de comentários](https://feedback.azure.com/forums/597976-azure-database-for-postgresql).
+Se você não vir uma extensão que gostaria de usar, fale conosco. Vote em solicitações existentes ou crie novas solicitações de comentários em nosso [Fórum de comentários](https://feedback.azure.com/forums/597976-azure-database-for-postgresql).

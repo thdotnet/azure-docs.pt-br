@@ -127,6 +127,8 @@
       href: how-to-event-domains.md
     - name: Implementar o failover do lado do cliente
       href: custom-disaster-recovery.md
+    - name: Solucionar problemas de erros
+      href: troubleshoot-errors.md
 - name: Referência
   items:
     - name: CLI do Azure

@@ -11,12 +11,12 @@ ms.assetid: 4cbffd85-fe8d-4dde-aa5b-24108a7caa7d
 ms.suite: integration
 ms.topic: article
 ms.date: 08/17/2018
-ms.openlocfilehash: 38bc1615c0849a33ddfa5790a66fc05d681ce339
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: be3dbc386b0ac89a85bc1719081df944523c28ce
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66167142"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69997832"
 ---
 # <a name="secure-b2b-messages-with-certificates"></a>Proteger as mensagens de B2B com certificados
 
@@ -47,7 +47,7 @@ Para usar um *certificado público* em aplicativos lógicos com recursos de B2B,
 
 3. Em **Certificados**, escolha **Adicionar**. Em **Adicionar Certificado**, forneça esses detalhes ao certificado. Quando terminar, escolha **OK**.
 
-   | Propriedade | Valor | DESCRIÇÃO | 
+   | Propriedade | Valor | Descrição | 
    |----------|-------|-------------|
    | **Nome** | <*certificate-name*> | O nome do certificado, que é "publicCert" neste exemplo | 
    | **Tipo de certificado** | Público | O tipo do certificado |
@@ -86,11 +86,11 @@ Depois de definir as propriedades nos [contratos](logic-apps-enterprise-integrat
 
 5. Em **Certificados**, escolha **Adicionar**. Em **Adicionar Certificado**, forneça esses detalhes ao certificado. Quando terminar, escolha **OK**.
 
-   | Propriedade | Valor | DESCRIÇÃO | 
+   | Propriedade | Valor | Descrição | 
    |----------|-------|-------------|
    | **Nome** | <*certificate-name*> | O nome do certificado, que é "privateCert" neste exemplo | 
    | **Tipo de certificado** | Privado | O tipo do certificado |
-   | **Certificate** | <*certificate-file-name*> | Para localizar e selecionar o arquivo de certificado que você quer enviar, escolha o ícone da pasta ao lado da caixa **Certificado**. | 
+   | **Certificate** | <*certificate-file-name*> | Para localizar e selecionar o arquivo de certificado que você quer enviar, escolha o ícone da pasta ao lado da caixa **Certificado**. Ao usar um cofre de chaves para a chave privada, o arquivo carregado será o certificado público. | 
    | **Grupo de recursos** | <*integration-account-resource-group*> | O grupo de recursos da conta de integração, que é "MyResourceGroup" neste exemplo | 
    | **Key Vault** | <*key-vault-name*> | O nome do cofre de chaves do Azure |
    | **Nome da chave** | <*key-name*> | O nome da chave |

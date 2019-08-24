@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 ms.date: 05/21/2019
-ms.openlocfilehash: a1475188d2e1ab0db3dfd9775fc37d3fc0a17158
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 1b35533eeb4c4a364588dbea11f74e8d6b76df3b
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567268"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69998216"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Métricas de banco de dados SQL do Azure e o log de diagnóstico
 
@@ -344,9 +344,12 @@ A maneira mais fácil de configurar o local em que os bancos de dados registram 
 
 Se você estiver usando pools elásticos ou instância gerenciada, também precisará definir as configurações de diagnóstico nestes recursos para habilitar a telemetria de diagnóstico para transmitir para o workspace.
 
-### <a name="use-the-sql-analytics-solution"></a>Use a solução Análise de SQL
+### <a name="use-the-sql-analytics-solution-for-monitoring-and-alerting"></a>Usar a solução de análise de SQL para monitoramento e alertas
 
-Você pode usar a Análise do SQL como um painel hierárquico para exibir os recursos de Banco de Dados SQL. Para saber como usar a solução de Análise de SQL, consulte [Monitorar o Banco de Dados SQL usando a solução de Análise de SQL](../log-analytics/log-analytics-azure-sql.md).
+Você pode usar a Análise do SQL como um painel hierárquico para exibir os recursos de Banco de Dados SQL.
+
+- Para saber como usar a solução de Análise de SQL, consulte [Monitorar o Banco de Dados SQL usando a solução de Análise de SQL](../log-analytics/log-analytics-azure-sql.md).
+- Para saber como configurar alertas para o banco de dados SQL e a instância gerenciada com base na análise de SQL, consulte [criando alertas para o banco de dados SQL e instância gerenciada](../azure-monitor/insights/azure-sql.md#analyze-data-and-create-alerts).
 
 ## <a name="stream-into-event-hubs"></a>Transmitir para os Hubs de Eventos
 
@@ -715,3 +718,7 @@ Para saber mais sobre os Hubs de Evento, leia:
 
 - [O que é Hub de Eventos do Azure?](../event-hubs/event-hubs-what-is-event-hubs.md)
 - [Introdução aos Hubs de Evento](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
+
+Para saber como configurar alertas com base na telemetria do log Analytics, consulte:
+
+- [Criando alertas para o banco de dados SQL e a instância gerenciada](../azure-monitor/insights/azure-sql.md#analyze-data-and-create-alerts)

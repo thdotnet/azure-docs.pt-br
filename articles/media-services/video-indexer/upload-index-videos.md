@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: juliako
-ms.openlocfilehash: 6e62eb862cf6d6760ca67b9e948a724b16303e89
-ms.sourcegitcommit: 770b060438122f090ab90d81e3ff2f023455213b
+ms.openlocfilehash: 8fffc74075abf6dcc4b5c293819f739a9725646b
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68305632"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69998169"
 ---
 # <a name="upload-and-index-your-videos"></a>Carregar e indexar seus vídeos  
 
@@ -60,7 +60,7 @@ Uma URL usada para notificar o cliente (usando uma solicitação POST) sobre os 
 - Alteração de estado de indexação: 
     - Propriedades:    
     
-        |Nome|DESCRIÇÃO|
+        |Nome|Descrição|
         |---|---|
         |id|A ID do vídeo|
         |state|O estado do vídeo|  
@@ -68,7 +68,7 @@ Uma URL usada para notificar o cliente (usando uma solicitação POST) sobre os 
 - Pessoa identificada no vídeo:
   - Propriedades
     
-      |Nome|DESCRIÇÃO|
+      |Nome|Descrição|
       |---|---|
       |id| A ID do vídeo|
       |faceId|A identificação de face que aparece no índice de vídeo|
@@ -159,9 +159,9 @@ public async Task Sample()
     // as an alternative to specifying video URL, you can upload a file.
     // remove the videoUrl parameter from the query params below and add the following lines:
     //FileStream video =File.OpenRead(Globals.VIDEOFILE_PATH);
-    //byte[] buffer =newbyte[video.Length];
+    //byte[] buffer =new byte[video.Length];
     //video.Read(buffer, 0, buffer.Length);
-    //content.Add(newByteArrayContent(buffer));
+    //content.Add(new ByteArrayContent(buffer));
 
     queryParams = CreateQueryString(
         new Dictionary<string, string>()
@@ -284,7 +284,7 @@ public class AccountContractSlim
 
 Os códigos de status listados na tabela a seguir podem ser retornados pela operação de Upload.
 
-|Código de status|ErrorType (no corpo da resposta)|DESCRIÇÃO|
+|Código de status|ErrorType (no corpo da resposta)|Descrição|
 |---|---|---|
 |400|VIDEO_ALREADY_IN_PROGRESS|O mesmo vídeo já está em curso de ser processado na conta especificada.|
 |400|VIDEO_ALREADY_FAILED|O mesmo vídeo falhou ao processar na conta informada há menos de duas horas. Os clientes da API devem aguardar pelo menos duas horas antes de carregar novamente um vídeo.|

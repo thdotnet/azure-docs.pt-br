@@ -13,12 +13,12 @@ ms.author: lizross
 ms.reviewer: dhanyahk
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b338ad90c01c109cc9b2e222f1d7bcaa09f20346
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: a978e2755818e88cad580753e041eacd50a9e6d2
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68812958"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69980476"
 ---
 # <a name="archive-for-whats-new-in-azure-active-directory"></a>Arquivar para Novidades no Active Directory do Azure
 
@@ -169,7 +169,7 @@ Os seguintes campos estão sendo alterados no esquema de Auditoria:
 |----------|------------|----------|----------|
 |Categoria|Esse era o campo **Nome do Serviço**. Agora ele passou a ser o campo **Categorias de Auditoria**. **Nome do Serviço** foi renomeado para o campo **loggedByService**.|<ul><li>Provisionamento de Conta</li><li>Diretório principal</li><li>Redefinição de senha de autoatendimento</li></ul>|<ul><li>Gerenciamento do Usuário</li><li>Gerenciamento de Grupo</li><li>Gerenciamento de aplicativos</li></ul>|
 |targetResources|Inclui **TargetResourceType** no nível superior.|&nbsp;|<ul><li>Política</li><li>Aplicativo</li><li>User</li><li>Grupo</li></ul>|
-|loggedByService|Fornece o nome do serviço que gerou o log de auditoria.|Nulo|<ul><li>Provisionamento de Conta</li><li>Diretório principal</li><li>Redefinição de senha por autoatendimento</li></ul>|
+|loggedByService|Fornece o nome do serviço que gerou o log de auditoria.|Nulo|<ul><li>Provisionamento de Conta</li><li>Diretório principal</li><li>Redefinição de senha de autoatendimento</li></ul>|
 |Resultado|Fornece o resultado dos logs de auditoria. Anteriormente, isso era enumerado, mas agora mostramos o valor real.|<ul><li>0</li><li>1</li></ul>|<ul><li>Êxito</li><li>Falha</li></ul>|
 
 #### <a name="changed-fields-in-the-sign-in-schema"></a>Campos alterados no esquema de Entrada
@@ -215,7 +215,7 @@ Os administradores do Azure AD agora podem redefinir suas próprias senhas usand
 
 - Mensagem de texto
 
-Para obter mais informações sobre como usar o aplicativo Microsoft Authenticator para redefinir senhas, confira [Redefinição de senha de autoatendimento do Azure AD – aplicativo móvel e SSPR (versão prévia)](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-howitworks#mobile-app-and-sspr-preview)
+Para obter mais informações sobre como usar o aplicativo Microsoft Authenticator para redefinir senhas, confira [Redefinição de senha de autoatendimento do Azure AD – aplicativo móvel e SSPR (versão prévia)](https://docs.microsoft.com/azure/active-directory/authentication/concept-sspr-howitworks#mobile-app-and-sspr)
 
 ---
 
@@ -280,7 +280,7 @@ Para obter mais informações, consulte a [seção adicionar termos de uso do re
  
 ---
 
-### <a name="new-azure-ad-privileged-identity-management-pim-emails-for-azure-active-directory-roles"></a>Novos emails do Azure AD PIM (Privileged Identity Management) para as funções do Azure Active Directory
+### <a name="new-azure-ad-privileged-identity-management-pim-emails-for-azure-active-directory-roles"></a>Novos emails do Azure AD PIM (Privileged Identity Management) para funções do Azure Active Directory
 
 **Tipo:** Novo recurso  
 **Categoria de serviço:** Privileged Identity Management  
@@ -330,7 +330,7 @@ Para obter mais informações sobre os aplicativos, consulte [integração de ap
 
 ## <a name="october-2018"></a>Outubro de 2018
 
-### <a name="azure-ad-logs-now-work-with-azure-log-analytics-public-preview"></a>Os Logs do Azure AD agora trabalham com o Azure Log Analytics (Versão prévia pública)
+### <a name="azure-ad-logs-now-work-with-azure-log-analytics-public-preview"></a>Os Logs do Azure AD agora funcionam com o Azure Log Analytics (visualização pública)
 
 **Tipo:** Novo recurso  
 **Categoria de serviço:** Relatório  
@@ -340,7 +340,7 @@ Temos o prazer de anunciar que agora você pode encaminhar seus logs do Azure AD
 
 ---
 
-### <a name="new-federated-apps-available-in-azure-ad-app-gallery---october-2018"></a>Novos Aplicativos Federados disponíveis na galeria de aplicativos do Azure AD – Outubro de 2018
+### <a name="new-federated-apps-available-in-azure-ad-app-gallery---october-2018"></a>Novos aplicativos federados disponíveis na galeria de aplicativos do Azure AD - outubro de 2018
 
 **Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
@@ -354,7 +354,7 @@ Para obter mais informações sobre os aplicativos, consulte [integração de ap
 
 ---
 
-### <a name="azure-ad-domain-services-email-notifications"></a>Notificações por Email do Azure AD Domain Services
+### <a name="azure-ad-domain-services-email-notifications"></a>Notificações por Email de serviços de domínio do AD do Azure
 
 **Tipo:** Novo recurso  
 **Categoria de serviço:** Azure AD Domain Services  
@@ -368,7 +368,7 @@ Para obter mais informações, consulte [Configurações de notificação nos Se
 
 ---
 
-### <a name="azure-ad-portal-supports-using-the-forcedelete-domain-api-to-delete-custom-domains"></a>O portal do Azure AD oferece suporte ao uso da API de domínio ForceDelete para excluir domínios personalizados 
+### <a name="azure-ad-portal-supports-using-the-forcedelete-domain-api-to-delete-custom-domains"></a>Azure AD portal dá suporte ao uso do domínio ForceDelete API para excluir os domínios personalizados 
 
 **Tipo:** Recurso alterado  
 **Categoria de serviço:** Gerenciamento de Diretório  
@@ -384,7 +384,7 @@ Para obter mais informações, consulte [Excluir um nome de domínio personaliza
 
 ## <a name="september-2018"></a>Setembro de 2018
  
-### <a name="updated-administrator-role-permissions-for-dynamic-groups"></a>Permissões da função de administrador atualizadas para grupos dinâmicos
+### <a name="updated-administrator-role-permissions-for-dynamic-groups"></a>Permissões de função de administrador atualizadas para grupos dinâmicos
 
 **Tipo:** Correção  
 **Categoria de serviço:** Gerenciamento de Grupo  
@@ -404,7 +404,7 @@ Para obter mais informações, consulte [Criar um grupo dinâmico e verificar o 
 
 ---
 
-### <a name="simplified-single-sign-on-sso-configuration-settings-for-some-third-party-apps"></a>Definições de configuração de logon único (SSO) para alguns aplicativos de terceiros
+### <a name="simplified-single-sign-on-sso-configuration-settings-for-some-third-party-apps"></a>Definições de configuração simplificada de SSO (logon único) para alguns aplicativos de terceiros
 
 **Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
@@ -422,7 +422,7 @@ Para começar a usar essa experiência de um único clique, acesse a página do 
 
 ---
 
-### <a name="azure-active-directory---where-is-your-data-located-page"></a>Página Azure Active Directory – Onde seus dados estão localizados?
+### <a name="azure-active-directory---where-is-your-data-located-page"></a>Página: Azure Active Directory – Onde seus dados estão localizados?
 
 **Tipo:** Novo recurso  
 **Categoria de serviço:** Outros  
@@ -434,7 +434,7 @@ Para acessar esse recurso e obter mais informações, consulte [Azure Active Dir
 
 ---
 
-### <a name="new-deployment-plan-available-for-the-my-apps-access-panel"></a>Novo plano de implantação disponível para o painel Acesso a meus aplicativos
+### <a name="new-deployment-plan-available-for-the-my-apps-access-panel"></a>Novo plano de implantação disponível para o painel de acesso Meus Aplicativos
 
 **Tipo:** Novo recurso  
 **Categoria de serviço:** Meus Aplicativos  
@@ -447,7 +447,7 @@ Para obter mais informações, consulte [O que é o portal Meus Aplicativos?](ht
 
 ---
 
-### <a name="new-troubleshooting-and-support-tab-on-the-sign-ins-logs-page-of-the-azure-portal"></a>Nova guia Solução de problemas e suporte na página logon único do portal do Azure
+### <a name="new-troubleshooting-and-support-tab-on-the-sign-ins-logs-page-of-the-azure-portal"></a>Nova guia de Solução de problemas e Suporte na página de entradas de Logs do portal do Azure
 
 **Tipo:** Novo recurso  
 **Categoria de serviço:** Relatório  
@@ -459,7 +459,7 @@ A nova guia **Solução de problemas e Suporte** na página **Entradas** do port
 
 ---
 
-### <a name="enhanced-support-for-custom-extension-properties-used-to-create-dynamic-membership-rules"></a>Suporte avançado para propriedades de extensão personalizadas usadas para criar regras de associação dinâmica
+### <a name="enhanced-support-for-custom-extension-properties-used-to-create-dynamic-membership-rules"></a>Suporte aprimorado para propriedades de extensão personalizadas usadas para criar regras de associação dinâmica
 
 **Tipo:** Recurso alterado  
 **Categoria de serviço:** Gerenciamento de Grupo  
@@ -489,7 +489,7 @@ Para obter mais informações, consulte:
 
 ---
 
-### <a name="new-support-for-self-service-password-reset-from-the-windows-7881-lock-screen"></a>Novo suporte para Redefinição de senha de autoatendimento na tela de bloqueio do Windows 7/8/8.1
+### <a name="new-support-for-self-service-password-reset-from-the-windows-7881-lock-screen"></a>Novo suporte para redefinição de senha de autoatendimento da tela de bloqueio do Windows 7/8/8.1
 
 **Tipo:** Novo recurso  
 **Categoria de serviço:** SSPR  
@@ -515,7 +515,7 @@ Para isso e outras alterações relacionadas a protocolos, consulte [a lista com
 
 ---
 
-### <a name="new-federated-apps-available-in-azure-ad-app-gallery---september-2018"></a>Novos Aplicativos Federados disponíveis na galeria de aplicativos do Azure AD – setembro de 2018
+### <a name="new-federated-apps-available-in-azure-ad-app-gallery---september-2018"></a>Novos Aplicativos Federados disponíveis na galeria de Aplicativos do Azure AD – setembro de 2018
 
 **Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
@@ -541,7 +541,7 @@ Para obter mais informações, consulte [Como personalizar declarações emitida
 
 ---
 
-### <a name="updated-saml-based-app-configuration-ui-preview"></a>UI de configuração de aplicativo baseado em SAML atualizada (versão prévia)
+### <a name="updated-saml-based-app-configuration-ui-preview"></a>Interface do usuário atualizada da configuração de aplicativo baseado em SAML (versão prévia)
 
 **Tipo:** Recurso alterado  
 **Categoria de serviço:** Aplicativos empresariais  
@@ -599,7 +599,7 @@ Para isso e outras alterações relacionadas a protocolos, consulte [a lista com
  
 ---
 
-### <a name="converged-security-info-management-for-self-service-password-sspr-and-multi-factor-authentication-mfa"></a>Gerenciamento de informações de segurança convergente para senha de autoatendimento (SSPR) e Autenticação Multifator (MFA)
+### <a name="converged-security-info-management-for-self-service-password-sspr-and-multi-factor-authentication-mfa"></a>Gerenciamento de informações de segurança convergida para SSPR (senha de autoatendimento) e MFA (Autenticação Multifator do Microsoft Azure)
 
 **Tipo:** Novo recurso  
 **Categoria de serviço:** SSPR  
@@ -613,7 +613,7 @@ Esta é uma visualização pública opt-in. Os administradores podem ativar a no
 
 ---
 
-### <a name="new-http-only-cookies-setting-in-azure-ad-application-proxy-apps"></a>Nova configuração de cookies somente HTTP em aplicativos de proxy de aplicativo do Azure AD
+### <a name="new-http-only-cookies-setting-in-azure-ad-application-proxy-apps"></a>Nova configuração de cookies somente HTTP em aplicativos do proxy de aplicativo do Azure AD
 
 **Tipo:** Novo recurso  
 **Categoria de serviço:** Proxy de Aplicativo  
@@ -627,7 +627,7 @@ Para obter mais informações sobre a configuração Cookies somente HTTP, consu
 
 ---
 
-### <a name="privileged-identity-management-pim-for-azure-resources-supports-management-group-resource-types"></a>O Privileged Identity Management (PIM) para recursos do Azure oferece suporte a tipos de recurso do Grupo de Gerenciamento
+### <a name="privileged-identity-management-pim-for-azure-resources-supports-management-group-resource-types"></a>O PIM (Privileged Identity Management) para recursos do Azure dá suporte aos tipos de recurso do grupo de gerenciamento
 
 **Tipo:** Novo recurso  
 **Categoria de serviço:** Privileged Identity Management  
@@ -639,7 +639,7 @@ Para obter mais informações sobre o PIM e os recursos do Azure, consulte [Desc
  
 ---
 
-### <a name="application-access-preview-provides-faster-access-to-the-azure-ad-portal"></a>O acesso ao aplicativo (versão prévia) fornece acesso rápido ao portal do Azure AD
+### <a name="application-access-preview-provides-faster-access-to-the-azure-ad-portal"></a>O acesso do aplicativo (versão prévia) fornece um acesso mais rápido ao portal do Azure AD
 
 **Tipo:** Novo recurso  
 **Categoria de serviço:** Privileged Identity Management  
@@ -651,7 +651,7 @@ Atualmente, o acesso do aplicativo dá suporte apenas à experiência do portal 
  
 ---
 
-### <a name="new-federated-apps-available-in-azure-ad-app-gallery---august-2018"></a>Novos Aplicativos Federados disponíveis na galeria de aplicativos do Azure AD – agosto de 2018
+### <a name="new-federated-apps-available-in-azure-ad-app-gallery---august-2018"></a>Novos Aplicativos Federados disponíveis na galeria de Aplicativos do Azure AD – agosto de 2018
 
 **Tipo:** Novo recurso  
 **Categoria de serviço:** Aplicativos empresariais  
@@ -665,7 +665,7 @@ Para obter mais informações sobre os aplicativos, consulte [integração de ap
 
 ---
 
-### <a name="native-tableau-support-is-now-available-in-azure-ad-application-proxy"></a>O suporte ao Tableau nativo agora está disponível no Proxy de aplicativos do Azure AD
+### <a name="native-tableau-support-is-now-available-in-azure-ad-application-proxy"></a>O suporte nativo ao Tableau já está disponível no Proxy de Aplicativo do Azure AD
 
 **Tipo:** Recurso alterado  
 **Categoria de serviço:** Proxy de Aplicativo  
@@ -677,7 +677,7 @@ Para obter mais informações sobre o suporte nativo para Tableau, consulte [Pro
 
 ---
 
-### <a name="new-support-to-add-google-as-an-identity-provider-for-b2b-guest-users-in-azure-active-directory-preview"></a>Novo suporte para adicionar o Google como um provedor de identidade para os usuários convidados de B2B no Azure Active Directory (versão prévia)
+### <a name="new-support-to-add-google-as-an-identity-provider-for-b2b-guest-users-in-azure-active-directory-preview"></a>Novo suporte para adicionar o Google como provedor de identidade para usuários convidados B2B no Azure Active Directory (versão prévia)
 
 **Tipo:** Novo recurso  
 **Categoria de serviço:** B2B  
@@ -2120,7 +2120,7 @@ Os administradores agora podem criar novos termos de uso que contêm vários doc
 ### <a name="real-time-password-writeback-client-status"></a>Status do cliente de write-back de senha em tempo real
 
 **Tipo:** Novo recurso  
-**Categoria de serviço:** Redefinição de senha por autoatendimento  
+**Categoria de serviço:** Redefinição de senha de autoatendimento  
 **Funcionalidade do produto:** Autenticação de usuário
 
 Agora você pode examinar o status do cliente de write-back de senha local. Essa opção está disponível na seção **Integração local** da página [Redefinição de senha](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/PasswordReset). 

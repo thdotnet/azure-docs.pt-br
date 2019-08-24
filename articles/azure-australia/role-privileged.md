@@ -6,12 +6,12 @@ ms.service: azure-australia
 ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: grgale
-ms.openlocfilehash: a9451b5dcd572eee27809cf66df889f06da960ed
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: e2a94f82e4830bd1e9c96039f5ef8fe6546b0d0b
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68571491"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69982669"
 ---
 # <a name="role-based-access-control-rbac-and-privileged-identity-management-pim"></a>Controle de acesso baseado em função (RBAC) e Privileged Identity Management (PIM)
 
@@ -27,7 +27,7 @@ Em um alto nível, implementar o RBAC requer três componentes:
 
 ![RBAC-visão geral](media/rbac-overview.png)
 
-* **Entidades de segurança**: Uma entidade de segurança pode ser qualquer uma das seguintes opções: um usuário, um grupo, [entidades de serviço ou uma [identidade gerenciada](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview). As entidades de segurança devem receber privilégios usando grupos de Azure Active Directory.
+* **Entidades de segurança**: Uma entidade de segurança pode ser qualquer uma das seguintes opções: um usuário, um grupo, [entidades de serviço](https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals)ou uma [identidade gerenciada](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview). As entidades de segurança devem receber privilégios usando grupos de Azure Active Directory.
 
 * **Definições de função**: Uma definição de função, também chamada de função, é uma coleção de permissões. Essas permissões definem as operações que podem ser executadas pelas entidades de segurança atribuídas à definição de função. Essa funcionalidade é fornecida pelas funções de recursos do Azure e Azure Active Directory funções de administrador. O Azure vem com um conjunto de funções internas (link) que podem ser aumentadas com funções personalizadas.
 
@@ -134,7 +134,7 @@ A Microsoft implementou JIT (just-in-time) e JEA (Just-suficiente-Access) por me
 
 O uso do PIM impede os problemas comuns de atribuição de privilégio que podem ocorrer em ambientes que não usam o acesso just-in-time ou que não realizam auditorias rotineiras de atribuição de privilégios. Um problema comum é a atribuição de privilégios elevados que estão sendo esquecidos e restam muito tempo depois que a tarefa que requer privilégios elevados tiver sido concluída. Outro problema é a proliferação de privilégios elevados em um ambiente por meio da clonagem do acesso atribuído a uma entidade de segurança ao configurar outras entidades de segurança semelhantes.
 
-## <a name="key-design-considerations"></a>Considerações de design-chave
+## <a name="key-design-considerations"></a>Principais considerações sobre design
 
 Ao criar uma estratégia de RBAC com a intenção de impor a segurança de privilégios mínimos, os seguintes requisitos de segurança devem ser considerados:
 

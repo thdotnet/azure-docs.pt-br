@@ -1,23 +1,23 @@
 ---
 title: Entender a ordem da sequência de implantação
-description: Saiba mais sobre o ciclo de vida que uma definição de planta percorre e os detalhes sobre cada fase.
+description: Saiba mais sobre o ciclo de vida que uma definição do plano gráfico passa e detalhes sobre cada estágio.
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 03/25/2019
+ms.date: 08/22/2019
 ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: b05a7ce260e8cc1da4ac8a0c186694ae097a3b1e
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 71584c9a69ebab6583973003aa51e94a1afe1b14
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64721295"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69991990"
 ---
 # <a name="understand-the-deployment-sequence-in-azure-blueprints"></a>Entenda a sequência de implantação nos Blueprints do Azure
 
-O Azure usa plantas uma **pedido de sequenciamento** para determinar a ordem de criação de recursos ao processar a atribuição de uma definição de planta. Este artigo o guiará pelos seguintes conceitos:
+Os planos gráficos do Azure usam uma **ordem** de sequenciamento para determinar a ordem de criação de recursos ao processar a atribuição de uma definição de plano gráfico. Este artigo o guiará pelos seguintes conceitos:
 
 - A ordem de sequenciamento padrão usada
 - Como personalizar o pedido
@@ -29,7 +29,7 @@ Existem variáveis nos exemplos JSON que você precisa substituir por seus próp
 
 ## <a name="default-sequencing-order"></a>Ordem de sequenciamento padrão
 
-Se a definição de planta não contém nenhuma diretiva para a ordem para implantar artefatos ou a diretiva for null, a ordem a seguir é usada:
+Se a definição de Blueprint não contiver nenhuma diretiva para a ordem de implantação de artefatos ou se a diretiva for nula, a seguinte ordem será usada:
 
 - Designação de função de **nível de assinatura** artefatos classificados por nome de artefato
 - Designação de política do **nível de assinatura** artefatos classificados pelo nome do artefato
@@ -43,17 +43,21 @@ Em cada artefato do **grupo de recursos**, a seguinte ordem de sequência é usa
 - Filho do grupo de recursos **Artefatos do modelo do Azure Resource Manager** classificados por nome de artefato
 
 > [!NOTE]
-> Uso de [artifacts()](../reference/blueprint-functions.md#artifacts) cria uma dependência implícita no artefato está sendo referenciado.
+> O uso de [artefatos ()](../reference/blueprint-functions.md#artifacts) cria uma dependência implícita no artefato que está sendo referenciado.
 
 ## <a name="customizing-the-sequencing-order"></a>Personalizando o pedido de sequenciamento
 
-Ao redigir definições de plantas grande, pode ser necessário para os recursos a serem criados em uma ordem específica. O padrão de uso mais comum desse cenário é quando uma definição de planta inclui vários modelos do Azure Resource Manager. Blueprints lida com esse padrão permitindo que a ordem de sequenciamento seja definida.
+Ao compor grandes definições de Blueprint, pode ser necessário que os recursos sejam criados em uma ordem específica. O padrão de uso mais comum desse cenário é quando uma definição de Blueprint inclui vários modelos de Azure Resource Manager. Blueprints lida com esse padrão permitindo que a ordem de sequenciamento seja definida.
 
-A ordenação é realizada definindo uma propriedade `dependsOn` no JSON. A definição de planta, para grupos de recursos e objetos de artefato suporte a essa propriedade. `dependsOn` é uma matriz de cadeia de caracteres de nomes de artefatos que o artefato específico precisa ser criado antes de ser criado.
+A ordenação é realizada definindo uma propriedade `dependsOn` no JSON. A definição do Blueprint, para grupos de recursos e objetos de artefato dão suporte a essa propriedade. `dependsOn` é uma matriz de cadeia de caracteres de nomes de artefatos que o artefato específico precisa ser criado antes de ser criado.
 
-### <a name="example---ordered-resource-group"></a>Exemplo - ordenados de grupo de recursos
+> [!NOTE]
+> Ao criar objetos BluePrints, cada recurso de artefato obtém seu nome do nome de arquivo, se estiver usando o [PowerShell](/powershell/module/az.blueprint/new-azblueprintartifact)ou o ponto de extremidade de URL, se estiver usando a [API REST](/rest/api/blueprints/artifacts/createorupdate).
+> as referências de _resourcegroup_ em artefatos devem corresponder àquelas definidas na definição do Blueprint.
 
-Essa definição de plano gráfico de exemplo tem um grupo de recursos que tenha definido uma ordem de sequenciamento personalizada, declarando um valor para `dependsOn`, juntamente com um grupo de recursos padrão. Nesse caso, o artefato denominado **assignPolicyTags** será processado antes do grupo de recursos **ordered-rg**.
+### <a name="example---ordered-resource-group"></a>Exemplo-grupo de recursos ordenados
+
+Este exemplo de definição de Blueprint tem um grupo de recursos que definiu uma ordem de sequenciamento personalizada declarando um valor para `dependsOn`, junto com um grupo de recursos padrão. Nesse caso, o artefato denominado **assignPolicyTags** será processado antes do grupo de recursos **ordered-rg**.
 **standard-rg** será processado de acordo com a ordem de sequenciamento padrão.
 
 ```json
@@ -77,9 +81,7 @@ Essa definição de plano gráfico de exemplo tem um grupo de recursos que tenha
         },
         "targetScope": "subscription"
     },
-    "id": "/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/mySequencedBlueprint",
-    "type": "Microsoft.Blueprint/blueprints",
-    "name": "mySequencedBlueprint"
+    "type": "Microsoft.Blueprint/blueprints"
 }
 ```
 
@@ -98,15 +100,13 @@ Este exemplo é um artefato de política que depende de um modelo do Azure Resou
         ]
     },
     "kind": "policyAssignment",
-    "id": "/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/mySequencedBlueprint/artifacts/assignPolicyTags",
-    "type": "Microsoft.Blueprint/artifacts",
-    "name": "assignPolicyTags"
+    "type": "Microsoft.Blueprint/artifacts"
 }
 ```
 
-### <a name="example---subscription-level-template-artifact-depending-on-a-resource-group"></a>Exemplo - artefato de modelo de nível de assinatura, dependendo de um grupo de recursos
+### <a name="example---subscription-level-template-artifact-depending-on-a-resource-group"></a>Exemplo-artefato de modelo de nível de assinatura dependendo de um grupo de recursos
 
-Este exemplo é para um modelo do Resource Manager implantado no nível da assinatura depende de um grupo de recursos. Ordenação padrão, os artefatos em nível de assinatura seriam criados antes de quaisquer grupos de recursos e os artefatos de filho desses grupos de recursos. O grupo de recursos é definido na definição de plano gráfico como este:
+Este exemplo é para um modelo do Resource Manager implantado no nível de assinatura para depender de um grupo de recursos. Na ordenação padrão, os artefatos de nível de assinatura seriam criados antes de qualquer grupo de recursos e artefatos filho nesses grupos de recursos. O grupo de recursos é definido na definição do Blueprint da seguinte maneira:
 
 ```json
 "resourceGroups": {
@@ -118,7 +118,7 @@ Este exemplo é para um modelo do Resource Manager implantado no nível da assin
 }
 ```
 
-O artefato de modelo de nível de assinatura, dependendo de **wait-para-me** grupo de recursos é definido como este:
+O artefato do modelo de nível de assinatura, dependendo do grupo de recursos **Wait-for-me,** é definido da seguinte maneira:
 
 ```json
 {
@@ -134,9 +134,7 @@ O artefato de modelo de nível de assinatura, dependendo de **wait-para-me** gru
         "description": ""
     },
     "kind": "template",
-    "id": "/providers/Microsoft.Management/managementGroups/{YourMG}/providers/Microsoft.Blueprint/blueprints/mySequencedBlueprint/artifacts/subtemplateWaitForRG",
-    "type": "Microsoft.Blueprint/blueprints/artifacts",
-    "name": "subtemplateWaitForRG"
+    "type": "Microsoft.Blueprint/blueprints/artifacts"
 }
 ```
 

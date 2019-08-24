@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 02/02/2017
 ms.author: rclaus
 ms.subservice: disks
-ms.openlocfilehash: a7e6c0b2f260976842a0b3ac1f7f69fa859e2283
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: d194f4d883063c27da05c9ddf63de2b225a8c10a
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67671677"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69980979"
 ---
 # <a name="configure-software-raid-on-linux"></a>Configurar RAID de software no Linux
 É um cenário comum usar o software RAID em máquinas virtuais Linux no Azure para apresentar vários discos de dados anexados como um único dispositivo RAID. Normalmente, isso pode ser usado para melhorar o desempenho e permitir uma taxa de transferência aprimorada em comparação com o uso de apenas um único disco.
@@ -122,19 +122,19 @@ Neste exemplo, criamos uma única partição de disco em /dev/sdc. A nova parti�
 
 1. Criar o sistema de arquivos no novo dispositivo RAID
    
-    a. **CentOS, Oracle Linux, SLES 12, openSUSE e Ubuntu**
+    **CentOS, Oracle Linux, SLES 12, openSUSE e Ubuntu**
 
     ```bash   
     sudo mkfs -t ext4 /dev/md127
     ```
    
-    b. **SLES 11**
+    **SLES 11**
 
     ```bash
     sudo mkfs -t ext3 /dev/md127
     ```
    
-    c. **SLES 11** – habilite boot.md e crie mdadm.conf
+    **SLES 11** – habilite boot.md e crie mdadm.conf
 
     ```bash
     sudo -i chkconfig --add boot.md
@@ -144,7 +144,7 @@ Neste exemplo, criamos uma única partição de disco em /dev/sdc. A nova parti�
    > [!NOTE]
    > Pode ser necessária uma reinicialização depois de fazer essas alterações em sistemas SUSE. Esta etapa *não* é necessária no SLES 12.
    > 
-   > 
+   
 
 ## <a name="add-the-new-file-system-to-etcfstab"></a>Adicionar o novo sistema de arquivos a /etc/fstab
 > [!IMPORTANT]

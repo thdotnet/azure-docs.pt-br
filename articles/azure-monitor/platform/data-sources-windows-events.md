@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/28/2018
 ms.author: bwren
-ms.openlocfilehash: 8fcab1ead4ab6135e715dc173829178e43f8af2a
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: cc81a8d8023d0724f4ecb71c157e8f575aa9edc8
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60236897"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69997469"
 ---
 # <a name="windows-event-log-data-sources-in-azure-monitor"></a>Fontes de dados do log de eventos do Windows no Azure Monitor
 Logs de eventos do Windows são uma das mais comuns [fontes de dados](agent-data-sources.md) para coletar dados usando agentes do Windows, pois muitos aplicativos escrevem o log de eventos do Windows.  Você pode coletar eventos de logs padrão como do sistema e aplicativo além de especificar todos os logs personalizados criados por aplicativos que você precisa monitorar.
@@ -34,6 +34,9 @@ Conforme você digita o nome de um log de eventos, o Azure Monitor fornece suges
 
 ![Configurar eventos do Windows](media/data-sources-windows-events/configure.png)
 
+> [!NOTE]
+> Os eventos críticos do log de eventos do Windows terão uma severidade de "erro" nos logs de Azure Monitor.
+
 ## <a name="data-collection"></a>Coleta de dados
 O Azure Monitor coleta cada evento que corresponde a uma severidade selecionada de um log de eventos monitorado, conforme o evento é criado.  O agente registra seu lugar em cada log de eventos do qual ele realiza a coleta.  Se o agente ficar offline por um período, ele coletará os eventos de onde ele parou, mesmo se os eventos foram criados enquanto o agente estava offline.  Há a probabilidade de que os eventos não sejam coletados se o log de eventos é encapsulado com eventos não coletados sendo substituídos enquanto o agente estiver offline.
 
@@ -44,9 +47,9 @@ O Azure Monitor coleta cada evento que corresponde a uma severidade selecionada 
 ## <a name="windows-event-records-properties"></a>Propriedades de registros de eventos do Windows
 Os registros de eventos do Windows têm um tipo de **Evento** e têm as propriedades na tabela a seguir:
 
-| Propriedade | DESCRIÇÃO |
+| Propriedade | Descrição |
 |:--- |:--- |
-| Computador |Nome do computador do qual o evento foi coletado. |
+| Computer |Nome do computador do qual o evento foi coletado. |
 | EventCategory |Categoria do evento. |
 | EventData |Todos os dados de evento em formato bruto. |
 | EventID |Número do evento. |
@@ -54,19 +57,19 @@ Os registros de eventos do Windows têm um tipo de **Evento** e têm as propried
 | EventLevelName |Severidade do evento em formato de texto. |
 | EventLog |Nome do log de eventos do qual o evento foi coletado. |
 | ParameterXml |Valores de parâmetro de evento em formato XML. |
-| ManagementGroupName |Nome do grupo de gerenciamento para agentes do System Center Operations Manager.  Para outros agentes, esse valor é `AOI-<workspace ID>` |
+| ManagementGroupName |Nome do grupo de gerenciamento para agentes do System Center Operations Manager.  Para outros agentes, esse valor é`AOI-<workspace ID>` |
 | RenderedDescription |Descrição do evento com valores de parâmetro |
-| source |Fonte do evento. |
+| Origem |Fonte do evento. |
 | SourceSystem |Tipo de agente do qual o evento foi coletado. <br> OpsManager - agente do Windows: conexão direta ou Operations Manager gerenciado <br> Linux: todos os agentes do Linux  <br> AzureStorage: Diagnóstico do Azure |
 | TimeGenerated |Data e hora em que o evento foi criado no Windows. |
-| UserName |Nome de usuário da conta que registrou o evento. |
+| Nome do Usuário |Nome de usuário da conta que registrou o evento. |
 
 ## <a name="log-queries-with-windows-events"></a>Consultas de log com Eventos do Windows
 A tabela a seguir fornece diferentes exemplos de consultas de log que recuperam registros de Eventos do Windows.
 
-| Consulta | DESCRIÇÃO |
+| Consulta | Descrição |
 |:---|:---|
-| Evento |Todos os eventos do Windows. |
+| evento |Todos os eventos do Windows. |
 | Event &#124; where EventLevelName == "error" |Todos os eventos do Windows com severidade de erro. |
 | Event &#124; summarize count() by Source |Contagem de eventos do Windows por fonte. |
 | Event &#124; where EventLevelName == "error" &#124; summarize count() by Source |Contagem de eventos de erro do Windows por fonte. |

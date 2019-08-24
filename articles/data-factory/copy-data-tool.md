@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 06/18/2018
 ms.author: yexu
-ms.openlocfilehash: 107687c785433f81870449d1445136b5148a4d2c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 144a991eb911fa6a337b6711515bd5760456fc10
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60787623"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69996380"
 ---
 # <a name="copy-data-tool-in-azure-data-factory"></a>Ferramenta Copiar Dados no Azure Data Factory
 A ferramenta Copiar Dados do Azure Data Factory facilita e otimiza o processo de ingerir dados em um data lake, que geralmente é a primeira etapa no cenário de integração completa de dados.  Ele poupa tempo, especialmente ao usar o Azure Data Factory para ingestão de dados de uma fonte de dados pela primeira vez. Estes são alguns dos benefícios de usar essa ferramenta:
@@ -95,7 +95,7 @@ Em seguida, substitua **2016** por **{ano}** , **03** por **{mês}** , **01** po
 
 ![Filtrar arquivo ou pasta](./media/copy-data-tool/filter-file-or-folder.png)
 
-A ferramenta Copiar Dados gera parâmetros com expressões, funções e variáveis de sistema que podem ser usados para representar {ano}, {mês}, {dia}, {hora} e {minuto} durante a criação do pipeline. Para saber mais, veja o artigo [Como ler e gravar dados de partição](how-to-read-write-partitioned-data.md).
+A ferramenta Copiar Dados gera parâmetros com expressões, funções e variáveis de sistema que podem ser usados para representar {ano}, {mês}, {dia}, {hora} e {minuto} durante a criação do pipeline.
 
 ## <a name="scheduling-options"></a>Opções de agendamento
 Você pode executar a operação de cópia uma vez ou segundo um agendamento (por hora, por dia e assim por diante). Essas opções podem ser usadas para os conectores em ambientes diferentes, incluindo área de trabalho local e na nuvem. 

@@ -7,12 +7,12 @@ ms.service: azure-cdn
 ms.topic: article
 ms.date: 05/31/2019
 ms.author: magattus
-ms.openlocfilehash: 5fc611af75a7f733576f9343a4375fb56cacc030
-ms.sourcegitcommit: 13d5eb9657adf1c69cc8df12486470e66361224e
+ms.openlocfilehash: aab93204c850223756f28a56ea550f912e28e0d2
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "67593156"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69996765"
 ---
 # <a name="azure-cdn-from-verizon-premium-rules-engine-reference"></a>Referência do mecanismo de regras da CDN do Azure da Verizon Premium
 
@@ -70,6 +70,8 @@ Caractere especial | Descrição
 \* | Um asterisco permite que o caractere precedente corresponda a zero ou mais vezes.
 Espaço | Normalmente, um caractere de espaço é tratado como um caractere literal.
 'valor' | Aspas simples são tratadas como caracteres literais. Um conjunto de aspas simples não tem significado especial.
+
+As condições de correspondência e os recursos que oferecem suporte a expressões regulares aceitam padrões definidos por PCRE (expressões regulares compatíveis com Perl).
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/28/2018
 ms.author: rkarlin
-ms.openlocfilehash: ba5ab7ce85933545a41f23e2ecd913acbb7e72d1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 40d888da214bad079c665c8d0e6095e8762a131e
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60703808"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69990611"
 ---
 # <a name="azure-security-center-threat-intelligence-report"></a>Relatório de Inteligência de Ameaças da Central de Segurança do Azure
 Este documento explica como os Relatórios Inteligentes de Ameças da Central de Segurança do Azure podem ajudá-lo a saber mais sobre uma ameaça que gerou um alerta de segurança.
@@ -48,7 +48,7 @@ A Central de Segurança tem três tipos de relatórios de ameaça, que podem var
 * **Relatório de Campanha**: concentra-se nos detalhes de campanhas de ataque específicas.
 * **Relatório de Resumo de Ameaças**: abrange todos os itens dos dois relatórios anteriores.
 
-Esse tipo de informação é muito útil durante o processo de [resposta a incidentes](security-center-incident-response.md), em que há uma investigação em andamento para compreender a origem do ataque, as motivações do invasor e o que fazer para atenuar esse problema no futuro.
+Esse tipo de informação é útil durante o processo de resposta a incidentes, em que há uma investigação contínua para entender a origem do ataque, as motivações do invasor e o que fazer para atenuar esse problema avançando.
 
 ## <a name="how-to-access-the-threat-intelligence-report"></a>Como acessar o relatório de inteligência de ameaças?
 Você pode examinar os alertas atuais observando o bloco **Alertas de segurança** . Abra o portal do Azure e siga as etapas abaixo para ver mais detalhes sobre cada alerta:
@@ -70,7 +70,6 @@ Aqui você pode baixar o PDF para esse relatório e ler mais sobre o problema de
 Neste documento, você aprendeu como os Relatórios de Inteligência de Ameaças da Central de Segurança do Azure podem ajudar durante uma investigação sobre alertas de segurança. Para saber mais sobre a Central de Segurança do Azure, veja o seguinte:
 
 * [Perguntas Frequentes sobre a Central de Segurança do Azure](security-center-faq.md). Encontre as perguntas frequentes sobre como usar o serviço.
-* [Aproveitando a Central de Segurança do Azure para a resposta a incidentes](security-center-incident-response.md)
 * [Recursos de detecção da Central de Segurança do Azure](security-center-detection-capabilities.md)
 * [Guia de planejamento e operações da Central de Segurança do Azure](security-center-planning-and-operations-guide.md). Saiba como planejar e entender as considerações de design para adotar a Central de Segurança do Azure.
 * [Gerenciando e respondendo aos alertas de segurança na Central de Segurança do Azure](security-center-managing-and-responding-alerts.md). Saiba como gerenciar e responder aos alertas de segurança.

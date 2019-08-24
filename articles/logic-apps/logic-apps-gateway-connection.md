@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 10/01/2018
-ms.openlocfilehash: 0580fe09c2cb6569724a9b4365233a3142645a47
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 029dc8daaf456c155d46eefa699772882bdabee5
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65546267"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69982881"
 ---
 # <a name="connect-to-on-premises-data-sources-from-azure-logic-apps"></a>Conectar-se a fontes de dados locais dos Aplicativos Lógicos do Azure
 
@@ -63,9 +63,9 @@ Após instalar o gateway em um computador local, será possível criar um recurs
 
 3. Na página **Criar gateway de conexão**, forneça estas informações para o recurso de gateway:
 
-   | Propriedade | DESCRIÇÃO | 
+   | Propriedade | Descrição | 
    |----------|-------------|
-   | **Nome** | O nome do recurso de gateway | 
+   | **Nome do recurso** | O nome do recurso de gateway, que pode conter apenas letras`-`, números, hifens (), sublinhados (`_`), parênteses `)`(`(`,) e pontos`.`(). | 
    | **Assinatura** | O nome da assinatura do Azure, que deve ser a mesma assinatura do aplicativo lógico. A assinatura padrão é baseada na conta do Azure que você usou para entrar. | 
    | **Grupo de recursos** | O nome do [Grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md) para organizar recursos relacionados | 
    | **Localidade** | O Azure restringe esse local à mesma região que foi selecionada para o serviço de nuvem do gateway durante a [instalação de gateway](../logic-apps/logic-apps-gateway-install.md). <p>**Observação**: certifique-se de que o local desse recurso do gateway corresponda ao local do serviço de nuvem do gateway. Caso contrário, a instalação do gateway poderá não aparecer na lista de gateways instalados para você selecionar na próxima etapa. Você pode usar diferentes regiões para o recurso de gateway e para seu aplicativo lógico. | 

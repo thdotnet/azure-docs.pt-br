@@ -14,12 +14,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.date: 4/27/2018
 ms.author: shhurst
-ms.openlocfilehash: 4a37345cf33cbb02a6bd9a70b0253a55ee4c9478
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: ed086c4c36711f92ba654a64856b43a5fdaadf5f
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69035595"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69989916"
 ---
 # <a name="handle-large-messages-with-chunking-in-azure-logic-apps"></a>Tratar mensagens grandes com agrupamentos nos Aplicativos Lógicos do Azure
 
@@ -128,7 +128,7 @@ Estas etapas descrevem o processo detalhado que os Aplicativos Lógicos usam par
    | Campo de cabeçalho de resposta do ponto de extremidade | Tipo | Necessário | Descrição |
    |--------------------------------|------|----------|-------------|
    | **x-ms-chunk-size** | Integer | Não | O tamanho da parte sugerido em bytes |
-   | **Localidade** | String | Não | O local da URL para a qual enviar as mensagens HTTP PATCH |
+   | **Localidade** | Cadeia | Sim | O local da URL para a qual enviar as mensagens HTTP PATCH |
    ||||
 
 3. Seu aplicativo lógico cria e envia mensagens HTTP PATCH de acompanhamento, cada uma com essas informações:

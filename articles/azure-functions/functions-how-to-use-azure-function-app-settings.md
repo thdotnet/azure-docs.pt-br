@@ -1,24 +1,22 @@
 ---
 title: Definir configurações de Aplicativo de funções do Azure | Microsoft Docs
 description: Saiba como definir configurações de aplicativos do Azure Functions.
-services: ''
-documentationcenter: .net
 author: ggailey777
-manager: jeconnoc
+manager: gwallace
 ms.assetid: 81eb04f8-9a27-45bb-bf24-9ab6c30d205c
 ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 03/28/2018
 ms.author: glenga
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 92ca09040836dfc55a9d709b12a0ee01192d6bac
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 27e56c3bcaa08fee25c362cdfed64c61b92873cb
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65957398"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69982652"
 ---
-# <a name="how-to-manage-a-function-app-in-the-azure-portal"></a>Como gerenciar um aplicativo de funções no portal do Azure 
+# <a name="how-to-manage-a-function-app"></a>Como gerenciar um aplicativo de funções
 
 No Azure Functions, um aplicativo de funções fornece o contexto de execução para suas funções individuais. Os comportamentos do aplicativo de funções se aplicam a todas as funções hospedadas por um aplicativo função de determinada. Este tópico descreve como configurar e gerenciar seus aplicativos de funções no portal do Azure.
 
@@ -26,21 +24,21 @@ Acesse o [portal do Azure](https://portal.azure.com) e entre usando sua conta do
 
 ![Visão geral do aplicativo de funções no portal do Azure](./media/functions-how-to-use-azure-function-app-settings/azure-function-app-main.png)
 
-Você pode navegar para tudo que você precisa para gerenciar seu aplicativo de funções na página de visão geral, em particular a **[configurações do aplicativo](#settings)** e **[recursosdeplataforma](#platform-features)** .
+Você pode navegar até tudo o que precisa para gerenciar seu aplicativo de funções na página Visão geral, em particular as **[configurações do aplicativo](#settings)** e os **[recursos da plataforma](#platform-features)** .
 
 ## <a name="settings"></a>Configurações do aplicativo
 
-O **configurações do aplicativo** guia mantém as configurações que são usadas pelo seu aplicativo de funções.
+A guia **configurações do aplicativo** mantém as configurações que são usadas pelo seu aplicativo de funções.
 
 ![Configurações do aplicativo de funções no portal do Azure.](./media/functions-how-to-use-azure-function-app-settings/azure-function-app-settings-tab.png)
 
-Essas configurações são armazenadas criptografadas, e você deve selecionar **Mostrar valores** para ver os valores no portal.
+Essas configurações são armazenadas criptografadas e você deve selecionar **Mostrar valores** para ver os valores no Portal.
 
 Para adicionar uma configuração, selecione **nova configuração de aplicativo** e adicione o novo par chave-valor.
 
 [!INCLUDE [functions-environment-variables](../../includes/functions-environment-variables.md)]
 
-Quando você desenvolve um aplicativo de funções localmente, esses valores são mantidos no arquivo de projeto Settings.
+Quando você desenvolve um aplicativo de funções localmente, esses valores são mantidos no arquivo de projeto local. Settings. JSON.
 
 ## <a name="platform-features"></a>Recursos da plataforma
 

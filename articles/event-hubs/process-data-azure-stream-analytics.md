@@ -8,18 +8,15 @@ ms.author: spelluru
 ms.date: 07/09/2019
 ms.topic: article
 ms.service: event-hubs
-ms.openlocfilehash: 003e68b36ff71fb2991cf087ef33f72aba73a8be
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: 531426656fe833752c9c4685688c00de3894895b
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68233969"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69991941"
 ---
-# <a name="process-data-from-your-event-hub-using-azure-stream-analytics-preview"></a>Processar dados do seu hub de eventos usando Azure Stream Analytics (versão prévia)
+# <a name="process-data-from-your-event-hub-using-azure-stream-analytics"></a>Processar dados do seu hub de eventos usando Azure Stream Analytics 
 O serviço de Azure Stream Analytics facilita a ingestão, o processamento e a análise de dados de streaming dos hubs de eventos do Azure, possibilitando ideias poderosas para impulsionar as ações em tempo real. Essa integração permite que você crie rapidamente um pipeline de análise de Hot-Path. Você pode usar o portal do Azure para visualizar dados de entrada e gravar uma consulta Stream Analytics. Quando a consulta estiver pronta, você poderá movê-la para a produção em apenas alguns cliques. 
-
-> [!NOTE]
-> Esse recurso está atualmente na visualização. 
 
 ## <a name="key-benefits"></a>Principais benefícios
 Aqui estão os principais benefícios dos hubs de eventos do Azure e da integração de Azure Stream Analytics: 
@@ -80,7 +77,7 @@ Aqui estão os principais benefícios dos hubs de eventos do Azure e da integra�
 ## <a name="known-limitations"></a>Limitações conhecidas
 Durante o teste da consulta, os resultados do teste demoram aproximadamente 6 segundos para serem carregados. Estamos trabalhando para melhorar o desempenho do teste. No entanto, quando implantado em produção, Azure Stream Analytics terá latência de subsegundo.
 
-## <a name="streaming-units"></a>Unidades de transmissão
+## <a name="streaming-units"></a>Unidades de streaming
 Seu trabalho de Azure Stream Analytics usa como padrão três unidades de streaming (SUs). Para ajustar essa configuração, selecione **escala** no menu à esquerda na página **Stream Analytics trabalho** no portal do Azure. Para saber mais sobre unidades de streaming, confira [entender e ajustar unidades de streaming](../stream-analytics/stream-analytics-streaming-unit-consumption.md).
 
 ![Dimensionar unidades de streaming](./media/process-data-azure-stream-analytics/scale.png)

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/19/2018
 ms.author: gwallace
-ms.openlocfilehash: 14bbbb6581d3e6d00db532e343f8362fc44d0044
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: c7251b24ccd15971a704b6b47288f49168b27039
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876349"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69980890"
 ---
 # <a name="install-and-configure-terraform-to-provision-vms-and-other-infrastructure-into-azure"></a>Instalar e configurar o Terraform para provisionar VMs e outra infraestrutura no Azure
  
@@ -47,10 +47,10 @@ Usage: terraform [--version] [--help] <command> [args]
 
 Para permitir que o Terraform provisione recursos para o Azure, crie uma [entidade de serviço do Azure AD](/cli/azure/create-an-azure-service-principal-azure-cli). A entidade de serviço concede seus scripts Terraform para provisionar recursos em sua assinatura do Azure.
 
-Se você tiver várias assinaturas do Azure, primeiro consulte sua conta com [az account show](/cli/azure/account#az-account-show) para obter uma lista de valores de ID de assinatura e ID de locatário:
+Se você tiver várias assinaturas do Azure, primeiro consulte sua conta com a [lista de contas AZ](/cli/azure/account#az-account-list) para obter uma lista de IDs de assinatura e valores de ID de locatário:
 
 ```azurecli-interactive
-az account show --query "{subscriptionId:id, tenantId:tenantId}"
+az account list --query "[].{name:name, subscriptionId:id, tenantId:tenantId}"
 ```
 
 Para usar uma assinatura selecionada, defina a assinatura para esta sessão com [az account set](/cli/azure/account#az-account-set). Configure a variável de ambiente `SUBSCRIPTION_ID`para conter o valor do campo`id` retornado da assinatura que você deseja usar:

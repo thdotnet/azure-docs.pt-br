@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 04/11/2019
+ms.date: 08/23/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 0ffbffc788baaffd4a0532c3918ed82cc3eaf5c3
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 40a5b68a12724f2574af19bb10c276c54c5afba0
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61023530"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69997596"
 ---
 # <a name="analysis-services-resource-and-object-limits"></a>Limites de recurso e objeto do Analysis Services
 
@@ -21,38 +21,7 @@ Este artigo descreve os limites de objeto de recurso e modelo.
 
 ## <a name="tier-limits"></a>Limites de camada
 
-### <a name="developer-tier"></a>Camada de Desenvolvedor
-
-Essa camada é recomendada para cenários de avaliação, desenvolvimento e teste. Um único plano inclui a mesma funcionalidade da camada Standard, mas é limitado em capacidade de processamento, QPUs e tamanho de memória. A expansão de réplica de consulta não está disponível para essa camada. Essa camada não oferece um SLA.
-
-|Plano  |QPUs  |Memória (GB)  |
-|---------|---------|---------|
-|D1    |    20     |    3     |
-
-
-### <a name="basic-tier"></a>Camada básica
-
-O nível é recomendado para soluções de produção com modelos tabulares menores, concorrência limitada do usuário e requisitos simples de atualização de dados. A expansão de réplica de consulta *não está disponível* para essa camada. Não há suporte para perspectivas, múltiplas partições e recursos de modelo tabular do DirectQuery nessa camada.  
-
-|Plano  |QPUs  |Memória (GB)  |
-|---------|---------|---------|
-|B1    |    40     |    10     |
-|B2    |    80     |    20     |
-
-### <a name="standard-tier"></a>Camada padrão
-
-Essa camada é para aplicativos de produção críticos, que exigem simultaneidade elástica do usuário e têm modelos de dados em crescimento acelerado. Ele dá suporte à atualização de dados avançada para atualizações de modelos de dados quase em tempo real e a todos os recursos de modelagem tabular.
-
-|Plano  |QPUs  |Memória (GB)  |
-|---------|---------|---------|
-|S1    |    40     |    10     |
-|S2    |    100     |    25     |
-|S3    |    200     |    50     |
-|S4    |    400     |    100     |
-|S8*    |    320     |    200     |
-|S9*    |    640    |    400     |
-
-\* Não disponível em todas as regiões.  
+Para obter limites de QPU e memória para as camadas de desenvolvedor, básica e Standard, consulte a [página de preços Azure Analysis Services](https://azure.microsoft.com/pricing/details/analysis-services/).
 
 ## <a name="object-limits"></a>Limites do objeto
 

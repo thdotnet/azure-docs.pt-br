@@ -11,20 +11,20 @@ author: nishankgu
 ms.author: nigup
 ms.date: 05/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: 8754eedc8284aab01006ea71bfd870064b91ea17
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 110040592474ec432912e7f545abad19ca3ae1ff
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65851132"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69991983"
 ---
 # <a name="manage-and-request-quotas-for-azure-resources"></a>Gerenciar e solicitar cotas para recursos do Azure
 
-Como acontece com outros serviços do Azure, há limites em determinados recursos associados ao serviço do Azure Machine Learning. Esses limites podem ser desde um limite no número de espaços de trabalho que você pode criar para os limites na computação subjacente real que é usado para treinamento de modelo ou inferência/pontuação. 
+Como acontece com outros serviços do Azure, há limites em determinados recursos associados ao serviço do Azure Machine Learning. Esses limites variam de um limite no número de espaços de trabalho que você pode criar para limites na computação subjacente real que é usada para treinamento de modelo ou inferência/Pontuação. 
 
 Este artigo fornece mais detalhes sobre os limites pré-configurados em vários recursos do Azure para sua assinatura e também contém links úteis para solicitar aprimoramentos de cota para cada tipo de recurso. Esses limites são estabelecidos para evitar estouros de orçamento devido a fraudes e respeitar as restrições de capacidade do Azure.
 
-Lembre-se dessas cotas enquanto cria e aumenta seus recursos do Serviço do Azure Machine Learning para cargas de trabalho de produção. Por exemplo, se o cluster não atinge o número alvo de nós que você especificou, em seguida, você talvez tenha atingido um limite de núcleos de computação do Azure Machine Learning para sua assinatura. Se você desejar aumentar o limite ou a cota acima do limite padrão, abra uma solicitação de suporte ao cliente online sem custo. Os limites não podem ser aumentados além do valor Limite Máximo mostrado nas tabelas a seguir devido a restrições de Capacidade do Azure. Se não houver nenhuma coluna Limite Máximo, o recurso não terá limites ajustáveis.
+Lembre-se dessas cotas enquanto cria e aumenta seus recursos do Serviço do Azure Machine Learning para cargas de trabalho de produção. Por exemplo, se o cluster não alcançar o número de destino de nós especificado, você poderá ter atingido um limite de núcleos de computação Azure Machine Learning para sua assinatura. Se você desejar aumentar o limite ou a cota acima do limite padrão, abra uma solicitação de suporte ao cliente online sem custo. Os limites não podem ser aumentados além do valor Limite Máximo mostrado nas tabelas a seguir devido a restrições de Capacidade do Azure. Se não houver nenhuma coluna Limite Máximo, o recurso não terá limites ajustáveis.
 
 ## <a name="special-considerations"></a>Considerações especiais
 
@@ -54,9 +54,9 @@ Para obter uma lista mais detalhada e atualizada de limites de cota, confira o s
 Para a Computação do Azure Machine Learning, há um limite de cota padrão para o número de núcleos e o número de recursos de computação exclusivos permitidos por região em uma assinatura. Essa cota é separada da cota do núcleo da VM acima e os limites de núcleo não são compartilhados no momento entre os dois tipos de recurso.
 
 Recursos disponíveis:
-+ Núcleos dedicados por região tem um limite padrão de 300 24 dependendo de seu tipo de oferta de assinatura.  O número de núcleos dedicados por assinatura pode ser aumentado. Entre em contato com o suporte do Azure para discutir opções de aumento.
++ Os núcleos dedicados por região têm um limite padrão de 24-300, dependendo do tipo de oferta de sua assinatura.  O número de núcleos dedicados por assinatura pode ser aumentado. Entre em contato com o suporte do Azure para discutir opções de aumento.
 
-+ Núcleos de baixa prioridade por região tem um limite padrão de 24-300, dependendo do seu tipo de oferta de assinatura.  O número de núcleos de baixa prioridade por assinatura pode ser aumentado. Entre em contato com o suporte do Azure para discutir opções de aumento.
++ Os núcleos de baixa prioridade por região têm um limite padrão de 24-300, dependendo do tipo de oferta da sua assinatura.  O número de núcleos de baixa prioridade por assinatura pode ser aumentado. Entre em contato com o suporte do Azure para discutir opções de aumento.
 
 + Os clusters por região têm um limite padrão de 100 e um limite máximo de 200. Contate o suporte do Azure se desejar solicitar um aumento além desse limite.
 
@@ -69,11 +69,19 @@ Recursos disponíveis:
 | Máximo de processos de MPI de GPU nó | 1-4 |
 | Máximo de trabalhos de GPU nó | 1-4 |
 | Tempo de vida máximo do trabalho | 90 dias<sup>1</sup> |
-| Tempo de vida máximo do trabalho em um nó de prioridade baixa | 1 dia<sup>2</sup> |
+| Tempo de vida máximo de trabalho em um nó de baixa prioridade | 1 dia<sup>2</sup> |
 | Máximo de servidores de parâmetro por nó | 1 |
 
 <sup>1</sup> O tempo de vida máximo se refere ao tempo desde que a execução começa até que seja concluída. Execuções concluídas persistem indefinidamente; dados de execuções não concluídas dentro do tempo de vida máximo não ficam acessíveis.
-<sup>2</sup> trabalhos em um nó de baixa prioridade podem ser evitados sempre que houver uma restrição de capacidade. É recomendável implementar pontos de verificação no seu trabalho.
+<sup>2</sup> os trabalhos em um nó de baixa prioridade podem ser substituídas sempre que houver uma restrição de capacidade. É recomendável implementar o ponto de verificação em seu trabalho.
+
+### <a name="azure-machine-learning-pipelines"></a>Pipelines do Azure Machine Learning
+Para Azure Machine Learning pipelines, há um limite de cota no número de etapas em um pipeline e no número de execuções baseadas em agendamento de pipelines publicados por região em uma assinatura.
+- O número máximo de etapas permitidas em um pipeline é de 30.000
+- O número máximo de execuções baseadas em agendamento de pipelines publicados por assinatura por mês é de 100.000
+
+> [!NOTE]
+> Se você quiser aumentar esse limite, entre em contato com o [Suporte da Microsoft](https://azure.microsoft.com/support/options/).
 
 ### <a name="container-instances"></a>Instâncias de contêiner
 
@@ -97,7 +105,7 @@ Por meio do portal do Azure, é fácil exibir sua cota para vários recursos, co
 
    **Há uma limitação**, especificamente para exibir a cota de Computação do Azure Machine Learning. Conforme mencionado acima, essa cota é separada da cota de computação em sua assinatura.
 
-1. No painel esquerdo, selecione **serviço de Machine Learning** e, em seguida, selecione qualquer espaço de trabalho na lista mostrada
+1. No painel esquerdo, selecione **Machine Learning serviço** e, em seguida, selecione qualquer espaço de trabalho na lista mostrada
 
 1. Na folha seguinte, na seção **Suporte + solução de problemas**, selecione **Uso + cotas** para exibir os limites de cota e o uso atual.
 

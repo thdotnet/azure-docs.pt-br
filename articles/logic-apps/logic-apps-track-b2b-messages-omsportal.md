@@ -1,5 +1,5 @@
 ---
-title: Acompanhar mensagens B2B com logs do Azure Monitor - aplicativos lógicos do Azure | Microsoft Docs
+title: Acompanhar mensagens B2B com logs de Azure Monitor-aplicativos lógicos do Azure | Microsoft Docs
 description: Rastrear comunicação B2B para sua conta de integração e os Aplicativos Lógicos do Azure com o Azure Log Analytics
 services: logic-apps
 ms.service: logic-apps
@@ -9,16 +9,16 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.date: 10/19/2018
-ms.openlocfilehash: 8cf5d9f3ee1503769a2ec199847175899bcd86bf
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 33c4efb2b783b5071513f069beac9cdf73c373a8
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62120119"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69997854"
 ---
 # <a name="track-b2b-messages-with-azure-monitor-logs"></a>Rastrear mensagens B2B com os logs do Azure Monitor
 
-Depois de configurar a comunicação B2B entre parceiros comerciais em sua conta de integração, esses parceiros podem trocar mensagens com protocolos como AS2, X12 e EDIFACT. Para verificar se essas mensagens são processadas corretamente, você pode controlar essas mensagens com [registra em log do Azure Monitor](../log-analytics/log-analytics-overview.md). Por exemplo, você pode usar essas funcionalidades de acompanhamento baseado na Web para o acompanhamento de mensagens:
+Depois de configurar a comunicação B2B entre parceiros comerciais em sua conta de integração, esses parceiros podem trocar mensagens com protocolos como AS2, X12 e EDIFACT. Para verificar se essas mensagens são processadas corretamente, você pode acompanhar essas mensagens com [logs de Azure monitor](../log-analytics/log-analytics-overview.md). Por exemplo, você pode usar essas funcionalidades de acompanhamento baseado na Web para o acompanhamento de mensagens:
 
 * Status e contagem de mensagens
 * Status de confirmações
@@ -37,13 +37,13 @@ Depois de configurar a comunicação B2B entre parceiros comerciais em sua conta
 
 * Uma conta de integração configurada com o monitoramento e log. Saiba [como criar uma conta de integração](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) e [como configurar o monitoramento e log para essa conta](../logic-apps/logic-apps-monitor-b2b-message.md).
 
-* Se você ainda não o fez [publicar dados de diagnóstico para os logs do Azure Monitor](../logic-apps/logic-apps-track-b2b-messages-omsportal.md).
+* Se você ainda não fez isso, [publique dados de diagnóstico em logs de Azure monitor](../logic-apps/logic-apps-track-b2b-messages-omsportal.md).
 
 * Após atender aos requisitos anteriores, você também precisa de um espaço de trabalho do Log Analytics, que você usa para rastrear comunicação B2B por meio do Log Analytics. Se você não tiver um espaço de trabalho do Log Analytics, saiba[como criar um espaço de trabalho do Log Analytics](../azure-monitor/learn/quick-create-workspace.md).
 
 ## <a name="install-logic-apps-b2b-solution"></a>Instalar a solução de B2B de aplicativos lógicos
 
-Antes de você pode ter os logs do Azure Monitor rastrear mensagens B2B para seu aplicativo lógico, adicione a **B2B de aplicativos lógicos** solução aos logs do Azure Monitor. Saiba mais sobre [adicionando soluções para os logs do Azure Monitor](../azure-monitor/learn/quick-create-workspace.md).
+Antes que você possa fazer com que os logs de Azure Monitor acompanhem mensagens B2B para seu aplicativo lógico, adicione a solução **aplicativos lógicos B2B** aos logs de Azure monitor. Saiba mais sobre como [Adicionar soluções a logs de Azure monitor](../azure-monitor/learn/quick-create-workspace.md).
 
 1. No [portal do Azure](https://portal.azure.com), selecione **Todos os serviços**. Na caixa de pesquisa, encontre "log analytics" e selecione **Log Analytics**.
 
@@ -130,7 +130,7 @@ Depois que as mensagens B2B são processadas, você pode visualizar o status e o
    * Para pesquisar resultados com consultas pré-criadas, escolha **Favoritos**.
 
    * Saiba [como criar consultas adicionando filtros](logic-apps-track-b2b-messages-omsportal-query-filter-control-number.md). 
-   Ou Saiba mais sobre [como encontrar dados com pesquisas de log nos logs do Azure Monitor](../log-analytics/log-analytics-log-searches.md).
+   Ou saiba mais sobre [como localizar dados com pesquisas de log em logs de Azure monitor](../log-analytics/log-analytics-log-searches.md).
 
    * Para alterar a consulta na caixa de pesquisa, atualize a consulta com as colunas e os valores que você deseja usar como filtros.
 
@@ -146,17 +146,17 @@ Para cada tipo de mensagem, estas são as descrições de propriedade e os forma
 
 Estas são as descrições das propriedades de cada mensagem AS2.
 
-| Propriedade | DESCRIÇÃO |
+| Propriedade | Descrição |
 | --- | --- |
 | Remetente | O parceiro convidado especificado em **Configurações de Recebimento** ou o parceiro host especificado em **Configurações de Envio** de um contrato do AS2 |
 | Receptor | O parceiro host especificado em **Configurações de Recebimento** ou o parceiro convidado em **Configurações de Envio** de um contrato do AS2 |
 | Aplicativo Lógico | O aplicativo lógico no qual as ações do AS2 são configuradas |
 | Status | O status da mensagem AS2 <br>Êxito = recebimento ou envio de uma mensagem AS2 válida. Nenhum MDN está configurado. <br>Êxito = recebimento ou envio de uma mensagem AS2 válida. O MDN está configurado e é recebido ou o MDN é enviado. <br>Com Falha = recebimento de uma mensagem AS2 inválida. Nenhum MDN está configurado. <br>Pendente = recebimento ou envio de uma mensagem AS2 válida. O MDN está configurado e o MDN é esperado. |
 | Ack | O status da mensagem MDN <br>Aceito = recebimento ou envio de um MDN positivo. <br>Pendente = aguardando recebimento ou envio de um MDN. <br>Rejeitado = recebimento ou envio de um MDN negativo. <br>Não Obrigatório = o MDN não está configurado no contrato. |
-| Direção | A direção da mensagem AS2 |
+| Direction | A direção da mensagem AS2 |
 | ID de Correlação | A ID que correlaciona todos os gatilhos e todas as ações em um aplicativo lógico |
 | ID da Mensagem | ID da mensagem AS2 dos cabeçalhos da mensagem AS2 |
-| Timestamp | A hora em que a ação do AS2 processou a mensagem |
+| Carimbo de data/hora | A hora em que a ação do AS2 processou a mensagem |
 |          |             |
 
 <a name="as2-folder-file-names"></a>
@@ -177,19 +177,19 @@ Estes são os formatos de nome de cada pasta de mensagens e arquivos AS2 baixado
 
 Estas são as descrições das propriedades de cada mensagem X12.
 
-| Propriedade | DESCRIÇÃO |
+| Propriedade | Descrição |
 | --- | --- |
 | Remetente | O parceiro convidado especificado em **Configurações de Recebimento** ou o parceiro host especificado em **Configurações de Envio** de um contrato do X12 |
 | Receptor | O parceiro host especificado em **Configurações de Recebimento** ou o parceiro convidado especificado em **Configurações de Envio** de um contrato do X12 |
 | Aplicativo Lógico | O aplicativo lógico no qual as ações do X12 são configuradas |
 | Status | O status da mensagem X12 <br>Êxito = recebimento ou envio de uma mensagem X12 válida. Nenhuma confirmação funcional está configurada. <br>Êxito = recebimento ou envio de uma mensagem X12 válida. Uma confirmação funcional está configurada e é recebida ou uma confirmação funcional é enviada. <br>Com Falha = recebimento ou envio de uma mensagem X12 inválida. <br>Pendente = recebimento ou envio de uma mensagem X12 válida. Uma confirmação funcional está configurada e uma confirmação funcional é esperada. |
 | Ack | Status da Confirmação Funcional (997) <br>Aceito = recebimento ou envio de uma confirmação funcional positiva. <br>Rejeitado = recebimento ou envio de uma confirmação funcional negativa. <br>Pendente = aguardando uma confirmação funcional, mas não recebida. <br>Pendente = geração de uma confirmação funcional, mas não foi possível enviá-la ao parceiro. <br>Não Obrigatório = uma confirmação funcional não está configurada. |
-| Direção | A direção da mensagem X12 |
+| Direction | A direção da mensagem X12 |
 | ID de Correlação | A ID que correlaciona todos os gatilhos e todas as ações em um aplicativo lógico |
 | Tipo de mensagem | O tipo de mensagem EDI X12 |
 | ICN | O Número de Controle de Intercâmbio da mensagem X12 |
 | TSCN | O Número de Controle do Conjunto de Transações da mensagem X12 |
-| Timestamp | A hora em que a ação do X12 processou a mensagem |
+| Carimbo de data/hora | A hora em que a ação do X12 processou a mensagem |
 |          |             |
 
 <a name="x12-folder-file-names"></a>
@@ -210,19 +210,19 @@ Estes são os formatos de nome de cada pasta de mensagens e arquivos X12 baixado
 
 Estas são as descrições das propriedades de cada mensagem EDIFACT.
 
-| Propriedade | DESCRIÇÃO |
+| Propriedade | Descrição |
 | --- | --- |
 | Remetente | O parceiro convidado especificado em **Configurações de Recebimento** ou o parceiro host especificado em **Configurações de Envio** de um contrato do EDIFACT |
 | Receptor | O parceiro host especificado em **Configurações de Recebimento** ou o parceiro convidado especificado em **Configurações de Envio** de um contrato do EDIFACT |
 | Aplicativo Lógico | O aplicativo lógico no qual as ações do EDIFACT são configuradas |
 | Status | O status da mensagem EDIFACT <br>Êxito = recebimento ou envio de uma mensagem EDIFACT válida. Nenhuma confirmação funcional está configurada. <br>Êxito = recebimento ou envio de uma mensagem EDIFACT válida. Uma confirmação funcional está configurada e é recebida ou uma confirmação funcional é enviada. <br>Com Falha = recebimento ou envio de uma mensagem EDIFACT inválida <br>Pendente = recebimento ou envio de uma mensagem EDIFACT válida. Uma confirmação funcional está configurada e uma confirmação funcional é esperada. |
-| Ack | Status da Confirmação Funcional (997) <br>Aceito = recebimento ou envio de uma confirmação funcional positiva. <br>Rejeitado = recebimento ou envio de uma confirmação funcional negativa. <br>Pendente = aguardando uma confirmação funcional, mas não recebida. <br>Pendente = geração de uma confirmação funcional, mas não foi possível enviá-la ao parceiro. <br>Não Obrigatório = uma confirmação funcional não está configurada. |
-| Direção | A direção da mensagem EDIFACT |
+| Ack | Status de ACK funcional (CONTRL) <br>Aceito = recebimento ou envio de uma confirmação funcional positiva. <br>Rejeitado = recebimento ou envio de uma confirmação funcional negativa. <br>Pendente = aguardando uma confirmação funcional, mas não recebida. <br>Pendente = geração de uma confirmação funcional, mas não foi possível enviá-la ao parceiro. <br>Não Obrigatório = uma confirmação funcional não está configurada. |
+| Direction | A direção da mensagem EDIFACT |
 | ID de Correlação | A ID que correlaciona todos os gatilhos e todas as ações em um aplicativo lógico |
 | Tipo de mensagem | O tipo da mensagem EDIFACT |
 | ICN | O Número de Controle de Intercâmbio da mensagem EDIFACT |
 | TSCN | O Número de Controle do Conjunto de Transações da mensagem EDIFACT |
-| Timestamp | A hora em que a ação do EDIFACT processou a mensagem |
+| Carimbo de data/hora | A hora em que a ação do EDIFACT processou a mensagem |
 |          |               |
 
 <a name="edifact-folder-file-names"></a>
@@ -239,7 +239,7 @@ Estes são os formatos de nome de cada pasta de mensagens e arquivos EDIFACT bai
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* [Consulta de mensagens de B2B nos logs do Azure Monitor](../logic-apps/logic-apps-track-b2b-messages-omsportal-query-filter-control-number.md)
+* [Consulta de mensagens B2B em logs de Azure Monitor](../logic-apps/logic-apps-track-b2b-messages-omsportal-query-filter-control-number.md)
 * [Esquemas de acompanhamento de AS2](../logic-apps/logic-apps-track-integration-account-as2-tracking-schemas.md)
 * [Esquemas de acompanhamento de X12](../logic-apps/logic-apps-track-integration-account-x12-tracking-schema.md)
 * [Esquemas de acompanhamento personalizado](../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md)

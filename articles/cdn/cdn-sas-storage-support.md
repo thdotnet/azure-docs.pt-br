@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/21/2018
 ms.author: magattus
-ms.openlocfilehash: 999bffe9650f3d2f2a04dba728a9aa41fa46a6b0
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: e7a170eaf74531cf4bd8c28aafaa5873f2459d0b
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67593402"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69982422"
 ---
 # <a name="using-azure-cdn-with-sas"></a>Usando a CDN do Azure com SAS
 
@@ -44,11 +44,11 @@ Por exemplo:
 https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-07-29&ss=b&srt=co&sp=r&se=2038-01-02T21:30:49Z&st=2018-01-02T13:30:49Z&spr=https&sig=QehoetQFWUEd1lhU5iOMGrHBmE727xYAbKJl5ohSiWI%3D
 ```
 
-Para obter mais informações sobre a configuração dos parâmetros, consulte [Considerações sobre parâmetros de SAS](#sas-parameter-considerations) e [Parâmetros de assinatura de acesso compartilhado](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1#shared-access-signature-parameters).
+Para obter mais informações sobre a configuração dos parâmetros, consulte [Considerações sobre parâmetros de SAS](#sas-parameter-considerations) e [Parâmetros de assinatura de acesso compartilhado](https://docs.microsoft.com/azure/storage/common/storage-sas-overview#how-a-shared-access-signature-works).
 
 ![Configurações de SAS da CDN](./media/cdn-sas-storage-support/cdn-sas-settings.png)
 
-### <a name="option-1-using-sas-with-pass-through-to-blob-storage-from-azure-cdn"></a>Opção 1: Usar a SAS com passagem para o armazenamento de BLOBs da CDN do Azure
+### <a name="option-1-using-sas-with-pass-through-to-blob-storage-from-azure-cdn"></a>Opção 1: Usando SAS com passagem para o armazenamento de BLOBs da CDN do Azure
 
 Esta opção é a mais simples e usa apenas um token de SAS, que é passado da CDN do Azure para o servidor de origem.
  
@@ -67,7 +67,7 @@ Esta opção é a mais simples e usa apenas um token de SAS, que é passado da C
    
 3. Ajuste a duração do cache usando regras de cache ou adicionando cabeçalhos `Cache-Control` no servidor de origem. Como a CDN do Azure trata o token de SAS como uma cadeia de caracteres de consulta simples, como uma prática recomendada, você deve definir a uma duração do cache que expira na mesma hora que a SAS ou antes. Caso contrário, se um arquivo for armazenado em cache por mais tempo que a SAS está ativa, o arquivo poderá ficar acessível no servidor de origem da CDN do Azure depois de decorrido o tempo de expiração da SAS. Se esta situação ocorrer e você desejar tornar o arquivo armazenado em cache inacessível, execute uma operação de limpeza no arquivo para limpá-lo do cache. Para obter informações sobre como definir a duração do cache na CDN do Azure, consulte [Controlar o comportamento de CDN do Azure com regras de cache](cdn-caching-rules.md).
 
-### <a name="option-2-hidden-cdn-sas-token-using-a-rewrite-rule"></a>Opção 2: Token de SAS CDN oculto usando uma regra de regravação
+### <a name="option-2-hidden-cdn-sas-token-using-a-rewrite-rule"></a>Opção 2: Token SAS da CDN oculta usando uma regra de regravação
  
 Essa opção só está disponível para perfis da **CDN Premium do Azure da Verizon**. Com essa opção, você pode proteger o armazenamento de blob no servidor de origem. Talvez você queira usar esta opção se não precisar de restrições de acesso específicas para o arquivo, mas desejar impedir que usuários acessem a origem do armazenamento diretamente para melhorar o tempo de descarregamento da CDN do Azure. O token SAS, que é desconhecido para o usuário, é necessário para que qualquer pessoa que acesse os arquivos no contêiner especificado do servidor de origem. No entanto, devido à regra de Regravação de URL, o token SAS não é necessário no ponto de extremidade de CDN.
  

@@ -11,14 +11,14 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.reviewer: mbullwin
-ms.date: 08/19/2019
+ms.date: 08/22/2019
 ms.author: dalek
-ms.openlocfilehash: c3da37d89da8c70f6acdfb1b5ab9c5b10edb86f0
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 45a8f8a7ee4d887503aeaf8e0e285c45a21c4bcc
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624385"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69982598"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Gerenciar o uso e os custos do Application Insights
 
@@ -65,30 +65,43 @@ Encargos do Application Insights são adicionados à sua conta do Azure. Você p
 
 ![No menu à esquerda, selecione Cobrança](./media/pricing/02-billing.png)
 
-## <a name="data-rate"></a>Taxa de dados
-O volume de dados enviados é limitado de três formas:
+## <a name="managing-your-data-volume"></a>Gerenciando o volume de dados 
 
-* **Amostragem**: Você pode usar a amostragem para reduzir o volume de telemetria enviado do seu servidor e de aplicativos cliente, com mínima distorção de métricas. Amostragem é a ferramenta principal que você pode usar para ajustar a quantidade de dados enviados. Saiba mais sobre [recursos de amostragem](../../azure-monitor/app/sampling.md). 
-* **Limite diário**: Quando você cria um recurso do Application Insights no portal do Microsoft Azure, o limite diário é definido como 100 GB/dia. Quando você cria um recurso do Application Insights no Visual Studio, o padrão é pequeno (somente 32,3 MB/dia). O padrão de limite diário é definido para facilitar o teste. O propósito dele é que o usuário irá gerar o limite diário antes de colocar o aplicativo em produção. 
-
-    O limite máximo é 1.000 GB/dia, a menos que você solicite um máximo maior para um aplicativo de alto tráfego. 
-
-    Tome cuidado ao definir o limite diário. A intenção deve ser *nunca atingir o limite diário*. Se atingir o limite diário, você perderá os dados para o restante do dia e não poderá monitorar seu aplicativo. Para alterar o limite diário, use a opção **Limite de volume diário**. Você pode acessar essa opção no painel **Uso e custos estimados** (isso está descrito em mais detalhes mais adiante neste artigo).
-    Removemos a restrição de alguns tipos de assinatura com crédito que não pôde ser usado no Application Insights. Anteriormente, se a assinatura tivesse um limite de gastos, a caixa de diálogo de limite diário teria instruções sobre como remover esse limite e permitir que ele fosse aumentado para mais de 32,3 MB/dia.
-* **Limitação**: Esta opção limita a taxa de dados para 32.000 eventos por segundo, com média de 1 minuto por chave de instrumentação.
-
-*O que acontece se o aplicativo exceder a taxa de limitação?*
-
-* O volume de dados que seu aplicativo envia é avaliado a cada minuto. Se ele exceder a taxa por segundo média por minuto, o servidor recusa algumas solicitações. O SDK armazena em buffer os dados e, em seguida, tenta enviá-los novamente. Ele espalha um surto por vários minutos. Se o seu aplicativo enviar dados acima da taxa de limitação constantemente, alguns dados serão descartados. (Os SDKs do ASP.NET, Java e JavaScript tentam reenviar dados dessa maneira; outros SDKs poderão simplesmente descartar dados limitados.) Caso ocorra uma limitação, um aviso de notificação o alertará de que isso ocorreu.
-
-*Como posso saber quantos dados meu aplicativo está enviando?*
-
-Você pode usar uma das opções a seguir para ver a quantidade de dados sendo enviada pelo seu aplicativo:
+Para entender a quantidade de dados que seu aplicativo está enviando, você pode:
 
 * Vá para o painel **Uso e custos estimados** para ver o gráfico de volume de dados diário. 
 * No Metrics Explorer, adicione um novo gráfico. Para a métrica do gráfico, selecione **Volume de ponto de dados**. Ative o **Agrupamento** e agrupe por **Tipo de dados**.
+* Use o `systemEvents` tipo de dados. Por exemplo, para ver o volume de dados ingerido no último dia, a consulta seria:
 
-## <a name="reduce-your-data-rate"></a>Reduza sua taxa de dados
+```kusto
+systemEvents 
+| where timestamp >= ago(1d)
+| where type == "Billing" 
+| extend BillingTelemetryType = tostring(dimensions["BillingTelemetryType"])
+| extend BillingTelemetrySizeInBytes = todouble(measurements["BillingTelemetrySize"])
+| summarize sum(BillingTelemetrySizeInBytes)
+```
+
+Essa consulta pode ser usada em um [alerta de log do Azure](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log) para configurar alertas em volumes de dados. 
+
+O volume de dados que você envia pode ser gerenciado de três maneiras:
+
+* **Amostragem**: Você pode usar a amostragem para reduzir o volume de telemetria enviado do seu servidor e de aplicativos cliente, com mínima distorção de métricas. Amostragem é a ferramenta principal que você pode usar para ajustar a quantidade de dados enviados. Saiba mais sobre [recursos de amostragem](../../azure-monitor/app/sampling.md).
+ 
+* **Limite diário**: Quando você cria um recurso do Application Insights no portal do Microsoft Azure, o limite diário é definido como 100 GB/dia. Quando você cria um recurso do Application Insights no Visual Studio, o padrão é pequeno (somente 32,3 MB/dia). O padrão de limite diário é definido para facilitar o teste. O propósito dele é que o usuário irá gerar o limite diário antes de colocar o aplicativo em produção. 
+
+    O limite máximo é 1.000 GB/dia, a menos que você solicite um máximo maior para um aplicativo de alto tráfego. 
+    
+    Os emails de aviso sobre o limite diário são enviados para a conta que são membros dessas funções para o recurso de Application Insights: "Administrador", "AccountAdmin", "coadministrador", "proprietário".
+
+    Tome cuidado ao definir o limite diário. A intenção deve ser *nunca atingir o limite diário*. Se atingir o limite diário, você perderá os dados para o restante do dia e não poderá monitorar seu aplicativo. Para alterar o limite diário, use a opção **Limite de volume diário**. Você pode acessar essa opção no painel **Uso e custos estimados** (isso está descrito em mais detalhes mais adiante neste artigo).
+    
+    Removemos a restrição de alguns tipos de assinatura com crédito que não pôde ser usado no Application Insights. Anteriormente, se a assinatura tivesse um limite de gastos, a caixa de diálogo de limite diário teria instruções sobre como remover esse limite e permitir que ele fosse aumentado para mais de 32,3 MB/dia.
+    
+* **Limitação**: Esta opção limita a taxa de dados para 32.000 eventos por segundo, com média de 1 minuto por chave de instrumentação. O volume de dados que seu aplicativo envia é avaliado a cada minuto. Se ele exceder a taxa por segundo média por minuto, o servidor recusa algumas solicitações. O SDK armazena em buffer os dados e, em seguida, tenta enviá-los novamente. Ele espalha um surto por vários minutos. Se o seu aplicativo enviar dados acima da taxa de limitação constantemente, alguns dados serão descartados. (Os SDKs do ASP.NET, Java e JavaScript tentam reenviar dados dessa maneira; outros SDKs poderão simplesmente descartar dados limitados.) Caso ocorra uma limitação, um aviso de notificação o alertará de que isso ocorreu.
+
+## <a name="reduce-your-data-volume"></a>Reduzir o volume de dados
+
 Veja abaixo o que é possível fazer para reduzir o volume de dados:
 
 * Use a [Amostragem](../../azure-monitor/app/sampling.md). Essa tecnologia reduz a taxa de dados sem distorcer sua métrica. Você não perderá a capacidade de navegar entre os itens relacionados em Pesquisar. Em aplicativos de servidor, a amostragem funciona automaticamente.

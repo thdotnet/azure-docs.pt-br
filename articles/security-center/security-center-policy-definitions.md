@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 5/19/2019
+ms.date: 8/22/2019
 ms.author: v-mohabe
-ms.openlocfilehash: db7811a925846337487801a63e0f0c4584179c06
-ms.sourcegitcommit: a8b638322d494739f7463db4f0ea465496c689c6
+ms.openlocfilehash: 56e6285501529f26e3622e2f773dbd373c169c10
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68295516"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69990500"
 ---
 # <a name="azure-security-policies-monitored-by-security-center"></a>Políticas de segurança do Azure monitoradas pela central de segurança
 Este artigo fornece uma lista de definições de Azure Policy que você pode monitorar na central de segurança do Azure. Para obter mais informações sobre políticas de segurança, confira [Trabalhando com políticas de segurança](tutorial-security-policy.md).
@@ -43,7 +43,7 @@ Para saber mais sobre as políticas internas que são monitoradas pela central d
 |A propriedade ClusterProtectionLevel para EncryptAndSign no Service Fabric deve ser definida|O Service Fabric fornece três níveis de proteção para a comunicação de nó para nó que usa um certificado de cluster primário: None, Sign e EncryptAndSign. Defina o nível de proteção para garantir que todas as mensagens de nó a nó sejam criptografadas e assinadas digitalmente.|
 |A autenticação do cliente deve usar Azure Active Directory|Auditar o uso de autenticação de cliente somente por meio do Azure AD no Service Fabric.|
 |Os logs de diagnóstico nos serviços de pesquisa devem ser habilitados|Auditar a habilitação de logs e mantê-los por até um ano. Isso cria trilhas de atividade para investigação quando ocorre um incidente de segurança ou sua rede é comprometida.|
-|Somente conexões seguras para o cache Redis devem ser habilitadas|Auditar a habilitação apenas de conexões via SSL para o cache do Azure para Redis. O uso de conexões seguras garante a autenticação entre o servidor e o serviço. Ele também protege os dados em trânsito de ataques de camada de rede, como Man-in-the-Middle, espionagem e seqüestro de sessão.|
+|Apenas conexões seguras com o Cache Redis devem ser habilitadas|Auditar a habilitação apenas de conexões via SSL para o cache do Azure para Redis. O uso de conexões seguras garante a autenticação entre o servidor e o serviço. Ele também protege os dados em trânsito de ataques de camada de rede, como Man-in-the-Middle, espionagem e seqüestro de sessão.|
 |Os logs de diagnóstico em aplicativos lógicos devem ser habilitados|Auditar a habilitação de logs e mantê-los por até um ano. Isso cria trilhas de atividade para investigação quando ocorre um incidente de segurança ou sua rede é comprometida.|
 |Os logs de diagnóstico no Key Vault devem ser habilitados|Auditar a habilitação de logs e mantê-los por até um ano. Isso cria trilhas de atividade para investigação quando ocorre um incidente de segurança ou sua rede é comprometida.|
 |Os logs de diagnóstico no Hub de eventos devem ser habilitados|Auditar a habilitação de logs e mantê-los por até um ano. Isso cria trilhas de atividade para investigação quando ocorre um incidente de segurança ou sua rede é comprometida.|
@@ -55,31 +55,31 @@ Para saber mais sobre as políticas internas que são monitoradas pela central d
 |Os logs de diagnóstico em contas do lote devem ser habilitados|Auditar a habilitação de logs e mantê-los por até um ano. Isso cria trilhas de atividade para investigação quando ocorre um incidente de segurança ou sua rede é comprometida.|
 |A criptografia deve ser habilitada em variáveis de conta de automação|É importante habilitar a criptografia de ativos de variável de conta de automação do Azure ao armazenar dados confidenciais.|
 |Os logs de diagnóstico nos serviços de aplicativos devem ser habilitados|Auditoria de ativação de logs de diagnóstico no aplicativo. Isso cria trilhas de atividade para investigação quando ocorre um incidente de segurança ou sua rede é comprometida.|
-|Transparent Data Encryption em bancos de dados SQL devem ser habilitadas|Auditoria de status de criptografia de dados transparente para bancos de dados SQL.|
+|A Transparent Data Encryption em bancos de dados SQL deve ser habilitada|Auditoria de status de criptografia de dados transparente para bancos de dados SQL.|
 |A auditoria do SQL Server deve ser habilitada|Auditar a existência de auditoria do SQL no nível do servidor.|
 |\[Visualização]: monitora o banco de dados SQL não criptografado na Central de Segurança do Azure|A central de segurança do Azure monitora servidores ou bancos de dados SQL não criptografados, conforme recomendado.|
 |\[Visualização]: monitora o banco de dados SQL não auditado na Central de Segurança do Azure|A central de segurança do Azure monitora os servidores SQL e os bancos de dados que não têm a auditoria do SQL ativada conforme recomendado.|
 |\[Visualização]: As atualizações do sistema devem ser instaladas em seus computadores|A central de segurança do Azure monitora atualizações de sistema de segurança ausentes em seus servidores, conforme recomendado.|
 |\[Visualização]: audita a criptografia de blob ausente para contas de armazenamento|Auditar contas de armazenamento que não usam criptografia de BLOB. Isso se aplica somente aos tipos de recursos de armazenamento da Microsoft, não ao armazenamento de outros provedores. A central de segurança do Azure monitora o possível acesso just-in-time de rede, conforme recomendado.|
 |\[Visualização]: O controle de acesso à rede just-in-time deve ser aplicado em máquinas virtuais|A central de segurança do Azure monitora o possível acesso just-in-time de rede, conforme recomendado.|
-|\[Visualização]: Os controles de aplicativo adaptáveis devem ser habilitados em máquinas virtuais|A central de segurança do Azure monitora a configuração da lista de permissões do aplicativo.|
+|\[Visualização]: Os controles de aplicativos adaptáveis devem ser habilitados em máquinas virtuais|A central de segurança do Azure monitora a configuração da lista de permissões do aplicativo.|
 |\[Visualização]: Grupos de segurança de rede ausentes para máquinas virtuais devem ser configurados|A central de segurança do Azure monitora os grupos de segurança de rede que têm regras muito permissivas, conforme recomendado.|
 |\[Visualização]: Vulnerabilidades na configuração de segurança em seus computadores devem ser corrigidas|A central de segurança do Azure monitora servidores que não atendem à linha de base configurada conforme recomendado.| 
 |\[Visualização]: O Endpoint Protection deve ser instalado em máquinas virtuais|A central de segurança do Azure monitora servidores que não têm um agente de Endpoint Protection do Microsoft System Center instalado, conforme recomendado.|
 |\[Visualização]: A criptografia de disco deve ser aplicada em máquinas virtuais|A central de segurança do Azure monitora as máquinas virtuais que não têm a criptografia de disco habilitada conforme recomendado.|
-|\[Visualização]: Vulnerabilidades devem ser corrigidas por uma solução de avaliação de vulnerabilidade|Monitore as vulnerabilidades detectadas pela solução de avaliação de vulnerabilidade e VMs que não têm uma solução de avaliação de vulnerabilidade na central de segurança do Azure, conforme recomendado.|
+|\[Visualização]: As vulnerabilidades devem ser corrigidas por uma solução de Avaliação de Vulnerabilidades|Monitore as vulnerabilidades detectadas pela solução de avaliação de vulnerabilidade e VMs que não têm uma solução de avaliação de vulnerabilidade na central de segurança do Azure, conforme recomendado.|
 |\[Visualização]: monitora o aplicativo Web desprotegido na Central de Segurança do Azure|A central de segurança do Azure monitora aplicativos Web que não têm proteção de firewall do aplicativo Web, conforme recomendado.|
 |\[Visualização]: A solução Endpoint Protection deve ser instalada em máquinas virtuais|A central de segurança do Azure monitora os pontos de extremidade de rede que não têm a proteção de firewall da próxima geração, conforme recomendado.|
-|\[Visualização]: Vulnerabilidades em seus bancos de dados SQL devem ser corrigidas|Monitore os resultados da verificação de avaliação de vulnerabilidade e recomende como corrigir vulnerabilidades de banco de dados.|
-|\[Visualização]: Um máximo de 3 proprietários deve ser designado para sua assinatura|Recomendamos que você designe até três proprietários de assinatura para reduzir o potencial de violação por um proprietário comprometido.|
+|\[Visualização]: As vulnerabilidades nos bancos de dados SQL devem ser corrigidas|Monitore os resultados da verificação de avaliação de vulnerabilidade e recomende como corrigir vulnerabilidades de banco de dados.|
+|\[Visualização]: Um máximo de três proprietários deve ser designado para sua assinatura|Recomendamos que você designe até três proprietários de assinatura para reduzir o potencial de violação por um proprietário comprometido.|
 |\[Visualização]: Deve haver mais de um proprietário atribuído à sua assinatura|Recomendamos que você designe mais de um proprietário de assinatura para garantir a redundância de acesso de administrador.|
-|\[Visualização]: A MFA deve ser habilitada em contas com permissões de proprietário em sua assinatura |A autenticação multifator (MFA) deve ser habilitada para todas as contas de assinatura que têm permissões de proprietário para evitar uma violação de contas ou recursos.|
+|\[Visualização]: O MFA deve ser habilitado em contas com permissões de proprietário em sua assinatura |A autenticação multifator (MFA) deve ser habilitada para todas as contas de assinatura que têm permissões de proprietário para evitar uma violação de contas ou recursos.|
 |\[Visualização]: A MFA deve ser habilitada em suas contas de assinatura com permissões de gravação|A autenticação multifator deve ser habilitada para todas as contas de assinatura que têm permissões de gravação para impedir a violação de contas ou recursos.|
 |\[Visualização]: A MFA deve ser habilitada em suas contas de assinatura com permissões de leitura|A autenticação multifator deve ser habilitada para todas as contas de assinatura que têm permissões de leitura para impedir a violação de contas ou recursos.|
-|\[Visualização]: Contas preteridas com permissões de proprietário devem ser removidas da sua assinatura|Contas preteridas com permissões de proprietário devem ser removidas da sua assinatura. As contas preteridas foram impedidas de entrar.|
-|\[Visualização]: As contas preteridas devem ser removidas da sua assinatura|Contas descontinuadas devem ser removidas de suas assinaturas. As contas preteridas foram impedidas de entrar.|
-|\[Visualização]: Contas externas com permissões de proprietário devem ser removidas da sua assinatura|As contas externas que têm permissões de proprietário devem ser removidas da sua assinatura para impedir o acesso às permissões.|
-|\[Visualização]: As contas externas com permissões de gravação do proprietário devem ser removidas da sua assinatura|Contas externas que têm permissões de gravação devem ser removidas da sua assinatura para evitar acesso não monitorado.|
+|\[Visualização]: As contas preteridas com permissões de proprietário devem ser removidas de sua assinatura|Contas preteridas com permissões de proprietário devem ser removidas da sua assinatura. As contas preteridas foram impedidas de entrar.|
+|\[Visualização]: As contas preteridas devem ser removidas de sua assinatura|Contas descontinuadas devem ser removidas de suas assinaturas. As contas preteridas foram impedidas de entrar.|
+|\[Visualização]: As contas externas com permissões de proprietário devem ser removidas de sua assinatura|As contas externas que têm permissões de proprietário devem ser removidas da sua assinatura para impedir o acesso às permissões.|
+|\[Visualização]: As contas externas com permissões de gravação devem ser removidas de sua assinatura|Contas externas que têm permissões de gravação devem ser removidas da sua assinatura para evitar acesso não monitorado.|
 |\[Visualização]: Contas externas com permissões de leitura devem ser removidas da sua assinatura|Contas externas que têm permissões de leitura devem ser removidas da sua assinatura para evitar acesso não monitorado.|
 
 

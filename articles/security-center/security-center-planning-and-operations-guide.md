@@ -12,14 +12,14 @@ ms.topic: conceptual
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/11/2019
+ms.date: 08/22/2019
 ms.author: v-mohabe
-ms.openlocfilehash: ca96ba4c6b0de8ad39866a0783e7091fb4755164
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: a8033448c2db2ca30ece54b3367ecb60ecf12c3d
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706248"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69990700"
 ---
 # <a name="azure-security-center-planning-and-operations-guide"></a>Guia de planejamento e operações da Central de Segurança do Azure
 Este guia destina-se a profissionais de TI (tecnologia da informação), arquitetos de TI, analistas de segurança da informação e administradores de nuvem cujas organizações planejam usar a Central de Segurança do Azure.
@@ -87,21 +87,21 @@ Usando as pessoas explicadas no diagrama anterior, o seguinte RBAC seria necess�
 
 **Matheus (proprietário da carga de trabalho)**
 
-* Proprietário/Colaborador do grupo de recursos
+* Proprietário/colaborador do grupo de recursos
 
 **David (segurança de TI)**
 
-* Proprietário/colaborador da assinatura ou administrador de segurança
+* Proprietário/colaborador ou administrador de segurança da assinatura
 
 **Judy (Operações de Segurança)**
 
 * Leitor de assinatura ou o Leitor de segurança para exibir alertas
-* Proprietário/colaborador da assinatura ou administrador de segurança necessário para descartar os alertas
+* Proprietário/colaborador ou administrador de segurança da assinatura necessário para ignorar alertas
 
 **Sam (Analista de Segurança)**
 
 * Leitor de assinatura para exibir alertas
-* Proprietário/colaborador da assinatura necessário para descartar os alertas
+* Proprietário/colaborador da assinatura necessário para ignorar alertas
 * O acesso ao workspace poderá ser exigido
 
 Algumas informações importantes a serem consideradas:
@@ -134,7 +134,7 @@ A Central de Segurança cria automaticamente uma política de segurança padrão
 Antes de configurar as políticas de segurança, examine cada uma das [recomendações de segurança](https://docs.microsoft.com/azure/security-center/security-center-recommendations)e determine se essas políticas são apropriadas para suas várias assinaturas e grupos de recursos. Também é importante entender que ação deve ser realizada para lidar com as recomendações de segurança e quem na sua organização será responsável por monitorar novas recomendações e tomar as medidas necessárias.
 
 ## <a name="data-collection-and-storage"></a>Coleta de dados e armazenamento
-Central de segurança do Azure usa o Microsoft Monitoring Agent – este é o mesmo agente usado pelo serviço do Azure Monitor – para coletar dados de segurança de suas máquinas virtuais. Os [dados coletados](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection) por esse agente são armazenados nos seus espaços de trabalho do Log Analytics existentes.
+A central de segurança do Azure usa o Microsoft Monitoring Agent – esse é o mesmo agente usado pelo serviço de Azure Monitor – para coletar dados de segurança de suas máquinas virtuais. Os [dados coletados](https://docs.microsoft.com/azure/security-center/security-center-enable-data-collection) por esse agente são armazenados nos seus espaços de trabalho do Log Analytics existentes.
 
 ### <a name="agent"></a>Agente
 
@@ -174,7 +174,7 @@ Após a configuração inicial e a aplicação das recomendações da Central de
 
 A Visão geral da Central de Segurança fornece um panorama unificado de segurança em todos os seus recursos do Azure e recursos não Azure conectados. O exemplo a seguir mostra um ambiente com muitos problemas a serem resolvidos:
 
-![painel Transações da Web](./media/security-center-planning-and-operations-guide/security-center-planning-and-operations-guide-fig11.png)
+![painel](./media/security-center-planning-and-operations-guide/security-center-planning-and-operations-guide-fig11.png)
 
 > [!NOTE]
 > A Central de Segurança não interferirá nos seus procedimentos normais de operação. Ela vai monitorar passivamente as implantações e fornecerá recomendações com base nas políticas de segurança habilitadas.
@@ -246,7 +246,7 @@ Depois de identificar o sistema comprometido, você pode executar [guias estrat�
 No vídeo [Como Utilizar a Central de Segurança do Azure e o Microsoft Operations Management Suite para obter uma Resposta a Incidentes](https://channel9.msdn.com/Blogs/Taste-of-Premier/ToP1703), você pode ver algumas demonstrações que podem ajudar a entender como a Central de Segurança pode ser usada em cada um desses estágios.
 
 > [!NOTE]
-> Leia [Aproveitando a Central de Segurança do Azure para a Resposta a Incidentes](security-center-incident-response.md) para saber mais sobre como usar os recursos da Central de Segurança como auxílio durante o processo de Resposta a incidentes.
+> Leia [Gerenciando e respondendo a alertas de segurança na central de segurança do Azure](security-center-managing-and-responding-alerts.md) para obter mais informações sobre como usar os recursos da central de segurança para ajudá-lo durante o processo de resposta a incidentes.
 >
 >
 

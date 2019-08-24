@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: iainfou
-ms.openlocfilehash: 0e3803edd47c3589652b3fedecd12125e3ff40b7
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: b59bd7c7196ceb87da087967498eca6dda7c212b
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69612804"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69990596"
 ---
 # <a name="join-a-red-hat-enterprise-linux-7-virtual-machine-to-a-managed-domain"></a>Ingressar uma máquina virtual do Red Hat Enterprise Linux 7 em um domínio gerenciado
 Este artigo mostra como ingressar em uma máquina virtual do RHEL (Red Hat Enterprise Linux) 7 em um domínio gerenciado dos Serviços de Domínio do Azure AD.
@@ -84,7 +84,7 @@ Agora que os pacotes necessários são instalados na máquina virtual do Linux, 
 1. Descubra o domínio gerenciado dos Serviços de Domínio do AAD. No terminal SSH, digite o seguinte comando:
 
     ```console
-    sudo realm discover contoso.COM
+    sudo realm discover CONTOSO.COM
     ```
 
    > [!NOTE]
@@ -100,7 +100,7 @@ Agora que os pacotes necessários são instalados na máquina virtual do Linux, 
     > * Especifique o nome de domínio em letras maiúsculas, caso contrário, o kinit falhará.
 
     ```console
-    kinit bob@contoso.COM
+    kinit bob@CONTOSO.COM
     ```
 
 3. Ingresse a máquina no domínio. No terminal SSH, digite o seguinte comando:
@@ -111,7 +111,7 @@ Agora que os pacotes necessários são instalados na máquina virtual do Linux, 
     > Se sua VM não puder ingressar no domínio, verifique se o grupo de segurança de rede da VM permite o tráfego de saída do Kerberos na porta TCP + UDP 464 para a sub-rede da rede virtual para o domínio gerenciado do Azure AD DS.
 
     ```console
-    sudo realm join --verbose contoso.COM -U 'bob@contoso.COM'
+    sudo realm join --verbose CONTOSO.COM -U 'bob@CONTOSO.COM'
     ```
 
 Você deverá receber uma mensagem ("Computador registrado com êxito no realm") quando a máquina for ingressada com êxito no domínio gerenciado.
@@ -120,10 +120,10 @@ Você deverá receber uma mensagem ("Computador registrado com êxito no realm")
 ## <a name="verify-domain-join"></a>Verificar o ingresso no domínio
 Verifique se o computador ingressou com êxito no domínio gerenciado. Conecte-se á VM RHEL ingressada no domínio usando uma conexão SSH diferente. Use uma conta de usuário de domínio e, em seguida, verifique se a conta de usuário é resolvida corretamente.
 
-1. No seu terminal SSH, digite o seguinte comando para se conectar à máquina virtual RHEL ingressada no domínio usando SSH. Use uma conta de domínio que pertença ao domínio gerenciado (por exemplo, 'bob@contoso.COM' neste caso).
+1. No seu terminal SSH, digite o seguinte comando para se conectar à máquina virtual RHEL ingressada no domínio usando SSH. Use uma conta de domínio que pertença ao domínio gerenciado (por exemplo, 'bob@CONTOSO.COM' neste caso).
     
     ```console
-    ssh -l bob@contoso.COM contoso-rhel.contoso.com
+    ssh -l bob@CONTOSO.COM contoso-rhel.contoso.com
     ```
 
 2. No terminal do SSH, digite o seguinte comando para ver se o diretório base foi inicializado corretamente.

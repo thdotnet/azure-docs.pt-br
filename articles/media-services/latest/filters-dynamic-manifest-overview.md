@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 07/11/2019
 ms.author: juliako
-ms.openlocfilehash: bbbb570cc042d5faa16b66c42aef9792b24fdb12
-ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
+ms.openlocfilehash: dc9f59894da071e956283591cf7206bc371650b7
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67854066"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69991439"
 ---
 # <a name="pre-filtering-manifests-by-using-dynamic-packager"></a>Pré-filtrando manifestos usando o Dynamic Packager
 
@@ -107,7 +107,7 @@ Este é o ativo filtrado:
 
 ## <a name="adjusting-the-presentation-window-dvr"></a>Ajustando a janela de apresentação (DVR)
 
-Atualmente, os serviços de mídia do Azure oferecem um arquivo circular em que a duração pode ser configurada entre 5 minutos e 25 horas. A filtragem de manifesto pode ser usada para criar uma janela DVR com rolagem que ultrapassa o arquivo, sem excluir a mídia. Há muitos cenários em que os difusores podem desejar fornecer uma janela DVR limitada que se move com a borda ao vivo e, ao mesmo tempo manter uma janela de arquivamento maior. Um transmissor pode querer usar os dados que estão fora da janela do DVR para destacar os clipes, ou eles podem querer fornecer diferentes janelas do DVR para diferentes dispositivos. Por exemplo, a maioria dos dispositivos móveis não lida com janelas DVR grandes (você pode ter uma janela DVR de 2 minutos para dispositivos móveis e uma hora para clientes de desktop).
+Atualmente, os serviços de mídia do Azure oferecem um arquivo circular em que a duração pode ser configurada entre 1 minuto e 25 horas. A filtragem de manifesto pode ser usada para criar uma janela DVR com rolagem que ultrapassa o arquivo, sem excluir a mídia. Há muitos cenários em que os difusores podem desejar fornecer uma janela DVR limitada que se move com a borda ao vivo e, ao mesmo tempo manter uma janela de arquivamento maior. Um transmissor pode querer usar os dados que estão fora da janela do DVR para destacar os clipes, ou eles podem querer fornecer diferentes janelas do DVR para diferentes dispositivos. Por exemplo, a maioria dos dispositivos móveis não suporta grandes janelas de DVR (você pode ter uma janela de DVR de 2 minutos para dispositivos móveis e uma hora para clientes de desktop).
 
 ![Janela DVR][dvr_filter]
 
@@ -134,7 +134,7 @@ Você também pode combinar vários filtros em uma única URL. O seguinte cenár
 1. Você deseja combinar esses dois filtros. Sem a combinação, você precisaria adicionar a filtragem de qualidade ao filtro de corte, o que dificultaria o uso do filtro.
 
 
-Para combinar filtros, você precisa definir os nomes de filtro para a URL de manifesto/playlist no formato delimitado por ponto e vírgula. Vamos supor que você tenha um filtro chamado *MyMobileDevice* que filtre qualidades, e que você tenha outro  chamado mystartime para definir uma hora de início específica. Você pode combinar até três filtros. 
+Para combinar filtros, você precisa definir os nomes de filtro para a URL de manifesto/playlist no formato delimitado por ponto e vírgula. Vamos supor que você tenha um filtro chamado *MyMobileDevice* que filtre qualidades, e que você tenha outro chamado mystartime para definir uma hora de início específica. Você pode combinar até três filtros. 
 
 Para saber mais, confira [esta postagem no blog](https://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support/).
 

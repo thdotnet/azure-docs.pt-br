@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: ril
 ms.reviewer: juliako
-ms.openlocfilehash: 3f40c69900b0d7f1c3bf446c1153e21dd7fd4d1b
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: a8db8de6ef062dcf757f3d264379677d6550ea3a
+ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "69014934"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69997687"
 ---
 # <a name="redact-faces-with-azure-media-analytics-walkthrough"></a>Passo a passo de edição facial com o Azure Media Analytics
 
@@ -40,7 +40,7 @@ A maneira mais fácil de começar a usar o Redactor é com a ferramenta de códi
 
 ### <a name="download-and-setup"></a>Download e configuração
 
-1. Baixe a ferramenta AMSE [aqui](https://github.com/Azure/Azure-Media-Services-Explorer).
+1. Baixe a ferramenta AMSE para AMS v2 [aqui](https://aka.ms/amseforv2).
 1. Faça logon em sua conta dos Serviços de Mídia usando sua chave de serviço.
 
     Para obter as informações de chave e nome da conta, vá para o [Portal do Azure](https://portal.azure.com/) e selecione sua conta do AMS. Em seguida, selecione Configurações > Chaves. A janela Gerenciar chaves mostra o nome da conta e as chaves primária e secundária são exibidas. Copie os valores do nome da conta e a chave primária.
