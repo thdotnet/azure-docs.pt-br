@@ -2,15 +2,14 @@
 documentType: LandingData
 title: Documentação do Reconhecimento de Formulários
 metadata:
-  title: Documentação da API – Reconhecimento de Formulários – Serviços Cognitivos do Azure | Microsoft Docs
+  title: Documentação de API – Reconhecimento de Formulários
+  titleSuffix: Azure Cognitive Services
   description: Saiba como usar o Reconhecimento de Formulários para extrair dados de chave-valor de forma inteligente de seus documentos de formulário.
   services: cognitive-services
   author: PatrickFarley
   manager: nitinme
   ms.service: cognitive-services
   ms.subservice: forms-recognizer
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
   ms.date: 04/16/2019
   ms.author: pafarley

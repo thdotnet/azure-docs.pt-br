@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/20/2018
 ms.author: magoedte
-ms.openlocfilehash: 6dd5872d5ec3e79e3c76b1807aea946015fb0eac
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 9fac349657340486674e4a899b21821b45cc0703
+ms.sourcegitcommit: 6d2a147a7e729f05d65ea4735b880c005f62530f
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60496244"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69982580"
 ---
 # <a name="gather-insights-about-your-dns-infrastructure-with-the-dns-analytics-preview-solution"></a>Coletar informações sobre a infraestrutura DNS com a solução Visualização da Análise de DNS
 
@@ -182,10 +182,7 @@ Na página Pesquisa de Logs, é possível criar uma consulta. Você pode filtrar
 
 ## <a name="feedback"></a>Comentários
 
-Há duas maneiras de enviar comentários:
-
-- **UserVoice**. Poste ideias para melhoria dos recursos da Análise de DNS. Visite a [página de UserVoice do Log Analytics](https://aka.ms/dnsanalyticsuservoice).
-- **Ingressar em nosso coorte**. Sempre estamos interessados em ter novos clientes em nossos coortes para que eles tenham acesso antecipado a novos recursos e nos ajudem a melhorar a Análise de DNS. Se estiver interessado em participar de nossos coortes, preencha esta [pesquisa rápida](https://aka.ms/dnsanalyticssurvey).
+Para fornecer comentários, visite a [página log Analytics UserVoice](https://aka.ms/dnsanalyticsuservoice) para postar ideias para análise de DNS recursos para trabalhar. 
 
 ## <a name="next-steps"></a>Próximas etapas
 

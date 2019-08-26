@@ -149,6 +149,8 @@
       items:
         - name: Arquitetura de OPC gêmeo
           href: overview-opc-twin-architecture.md
+        - name: Arquitetura de cofre OPC
+          href: overview-opc-vault-architecture.md
     - name: Guias de instruções
       items:
         - name: Fábrica conectada
@@ -169,14 +171,14 @@
               href: howto-opc-twin-deploy-dependencies.md
         - name: Cofre OPC
           items:
-            - name: Implantar o cofre OPC a um projeto existente
-              items:
-                - name: Proteger a comunicação do cliente OPC e PLC OPC
-                  href: howto-opc-vault-deploy-existing-client-plc-communication.md
-                - name: Proteger o cliente do agente do usuário OPC e os aplicativos para servidores de agente do usuário OPC
-                  href: howto-opc-vault-deploy-existing-client-server-communication.md
-            - name: Implantar o cofre OPC do zero
-              href: howto-opc-vault-deploy-scratch.md
+            - name: Implantar serviço de cofre OPC
+              href: howto-opc-vault-deploy.md
+            - name: Gerenciar serviço de cofre OPC
+              href: howto-opc-vault-manage.md
+            - name: Proteger a comunicação do dispositivo do agente do usuário OPC com o cofre OPC
+              href: howto-opc-vault-secure.md
+            - name: Operar o serviço de cofre OPC com segurança
+              href: howto-opc-vault-secure-ca.md
         - name: OPC Publisher
           items:
             - name: Configurar o OPC Publisher

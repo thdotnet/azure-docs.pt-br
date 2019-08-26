@@ -54,7 +54,7 @@
           href: cloudsimple-faq.md
     - name: Tutoriais
       items:
-        - name: Criar o serviço CloudSimple
+        - name: Criar o serviço da CloudSimple
           href: create-cloudsimple-service.md
         - name: Acessar o portal da CloudSimple
           href: access-cloudsimple-portal.md
@@ -106,8 +106,6 @@
               href: users.md
             - name: Configurar uma conexão de rede virtual com a nuvem privada
               href: virtual-network-connection.md
-            - name: Editar seu perfil do usuário
-              href: 'https://docs.azure.cloudsimple.com/editprofile/'
         - name: Configurar máquinas virtuais do VMware para a nuvem privada
           items:
             - name: Criar uma VM no Azure
@@ -147,7 +145,7 @@
             - name: Como migrar VMs de carga de trabalho para uma nuvem privada
               href: migrate-workloads.md
             - name: Como garantir alta disponibilidade do aplicativo no VMware no Azure
-              href: 'https://docs.azure.cloudsimple.com/ensuring-high-availability/'
+              href: ensuring-high-availability.md
             - name: Escolher uma solução de balanceamento de carga
               href: load-balancers.md
         - name: Ecossistema do VMware
@@ -156,8 +154,10 @@
               href: backup-workloads-veeam.md
             - name: Configurar a nuvem privada como um site de recuperação de desastre usando o Zerto
               href: disaster-recovery-zerto.md
+            - name: Configurar a nuvem privada como um site de recuperação de desastre usando o SRM do VMware
+              href: disaster-recovery-site-recovery-manager.md
             - name: Guia de solução do VMware Horizon
-              href: 'https://docs.azure.cloudsimple.com/horizon-guide/'
+              href: horizon-guide.md
             - name: Configurar criptografia vSAN para sua nuvem privada
               href: vsan-encryption.md
             - name: Otimizar sua nuvem privada para o Oracle RAC

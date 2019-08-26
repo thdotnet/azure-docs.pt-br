@@ -3,15 +3,14 @@ documentType: LandingData
 title: Documentação da API da Pesquisa Visual do Bing
 metadata:
   document_id: 230494A6-34F9-416D-A6C0-57E69E1C2590
-  title: 'Documentação da API da Pesquisa Visual do Bing – tutoriais, inícios rápidos, referências da API | Microsoft Docs'
+  title: 'Documentação da API da Pesquisa Visual do Bing – Tutoriais, guias de início rápido e referências da API'
+  titleSuffix: Azure Cognitive Services
   description: Saiba como usar a API da Pesquisa Visual do Bing para obter insights sobre uma imagem.
   services: cognitive-services
   author: swhite-msft
   manager: nitinme
   ms.service: cognitive-services
   ms.subservice: bing-visual-search
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
   ms.date: 01/16/2019
   ms.author: scottwhi

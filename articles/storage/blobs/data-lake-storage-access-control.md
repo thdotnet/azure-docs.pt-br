@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: aa2cfbee6feeacf46003fdc244f0aeea5df0f41a
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 51a51e63f1d45d67cda63d4491a3bac572434dc0
+ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68847354"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69991902"
 ---
 # <a name="access-control-in-azure-data-lake-storage-gen2"></a>Controle de acesso no Azure Data Lake Storage Gen2
 
@@ -31,7 +31,7 @@ Para saber como atribuir funções a entidades de segurança no escopo da sua co
 
 ### <a name="the-impact-of-role-assignments-on-file-and-directory-level-access-control-lists"></a>O impacto das atribuições de função em listas de controle de acesso de nível de arquivo e diretório
 
-Embora o uso de atribuições de função RBAC seja um mecanismo poderoso para controlar as permissões de acesso, trata-se de um mecanismo muito mais esparso em relação às ACLs. A granularidade menor para o RBAC está no nível de sistema de arquivos e isso será avaliado em uma prioridade mais alta que as ACLs. Portanto, se você atribuir uma função a uma entidade de segurança no escopo de um sistema de arquivos, essa entidade de segurança terá o nível de autorização associado a essa função para todos os diretórios e arquivos nesse sistema de arquivos, independentemente das atribuições de ACL.
+Embora o uso de atribuições de função RBAC seja um mecanismo poderoso para controlar as permissões de acesso, trata-se de um mecanismo muito mais esparso em relação às ACLs. A menor granularidade do RBAC está no nível de contêiner e isso será avaliado em uma prioridade mais alta do que as ACLs. Portanto, se você atribuir uma função a uma entidade de segurança no escopo de um contêiner, essa entidade de segurança terá o nível de autorização associado a essa função para todos os diretórios e arquivos nesse contêiner, independentemente das atribuições de ACL.
 
 Quando uma entidade de segurança recebe permissões de dados RBAC por meio de uma [função interna](https://docs.microsoft.com/azure/storage/common/storage-auth-aad?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#built-in-rbac-roles-for-blobs-and-queues)ou por meio de uma função personalizada, essas permissões são avaliadas primeiro após a autorização de uma solicitação. Se a operação solicitada for autorizada pelas atribuições de RBAC da entidade de segurança, a autorização será imediatamente resolvida e nenhuma verificação de ACL adicional será executada. Como alternativa, se a entidade de segurança não tiver uma atribuição de RBAC ou se a operação da solicitação não corresponder à permissão atribuída, as verificações de ACL serão executadas para determinar se a entidade de segurança está autorizada a executar a operação solicitada.
 
@@ -81,7 +81,7 @@ As ACLs de Acesso e as ACLs Padrão têm a mesma estrutura.
 
 ### <a name="levels-of-permission"></a>Níveis de permissão
 
-As permissões em um objeto do sistema de arquivos são **Ler**, **Gravar** e **Executar** e podem ser usadas em arquivos e em diretórios como mostrado na seguinte tabela:
+As permissões em um objeto de contêiner são de **leitura**, **gravação**e **execução**, e podem ser usadas em arquivos e diretórios, conforme mostrado na tabela a seguir:
 
 |            |    Arquivo     |   Diretório |
 |------------|-------------|----------|
@@ -90,7 +90,7 @@ As permissões em um objeto do sistema de arquivos são **Ler**, **Gravar** e **
 | **Executar (X)** | Não significa nada no contexto do Azure Data Lake Storage Gen2 | Necessário para percorrer os itens filhos de um diretório |
 
 > [!NOTE]
-> Se você estiver concedendo permissões usando somente ACLs (sem RBAC), para conceder a uma entidade de serviço acesso de leitura ou gravação a um arquivo, você precisará conceder permissões de **execução** da entidade de serviço ao sistema de arquivos e a cada pasta na hierarquia de pastas que levar ao arquivo.
+> Se você estiver concedendo permissões usando somente ACLs (sem RBAC), para conceder a uma entidade de serviço acesso de leitura ou gravação a um arquivo, você precisará conceder permissões de **execução** da entidade de serviço para o contêiner e para cada pasta na hierarquia de pastas que levar ao arquivo.
 
 #### <a name="short-forms-for-permissions"></a>Formatos abreviados para permissões
 
@@ -154,7 +154,7 @@ Nas ACLs do POSIX, cada usuário está associado a um *grupo primário*. Por exe
 
 ##### <a name="assigning-the-owning-group-for-a-new-file-or-directory"></a>Atribuindo o grupo proprietário de um novo arquivo ou diretório
 
-* **Caso 1**: Diretório Raiz "/". Esse diretório é criado quando um sistema de arquivos do Azure Data Lake Storage Gen2. Nesse caso, o grupo proprietário é definido para o usuário que criou o sistema de arquivo se tivesse sido feito usando o OAuth. Se o sistema de arquivos for criado usando chave compartilhada, uma SAS de conta ou uma SAS de serviço, o proprietário e o grupo proprietário serão definidos como **$superuser**.
+* **Caso 1**: Diretório Raiz "/". Esse diretório é criado quando um contêiner de Data Lake Storage Gen2 é criado. Nesse caso, o grupo proprietário é definido para o usuário que criou o contêiner se ele foi feito usando o OAuth. Se o contêiner for criado usando chave compartilhada, uma SAS de conta ou uma SAS de serviço, o proprietário e o grupo proprietário serão definidos como **$superuser**.
 * **Caso 2** (Todos os outros casos): Quando um novo item é criado, o grupo proprietário é copiado da pasta pai.
 
 ##### <a name="changing-the-owning-group"></a>Alterando o grupo proprietário
@@ -216,13 +216,13 @@ return ( (desired_perms & perms & mask ) == desired_perms)
 Conforme ilustrado no algoritmo de verificação de acesso, a máscara limita o acesso para usuários nomeados, o grupo proprietário e grupos nomeados.  
 
 > [!NOTE]
-> Para um novo sistema de arquivos do Azure Data Lake Storage Gen2, o padrão da máscara de acesso ACL do diretório raiz ("/") é 750 para diretórios e 640 para arquivos. Arquivos não recebem o bit X uma vez que é irrelevante para arquivos em um sistema de armazenamento somente.
+> Para um novo contêiner Data Lake Storage Gen2, a máscara para a ACL de acesso do diretório raiz ("/") usa como padrão 750 para diretórios e 640 para arquivos. Arquivos não recebem o bit X uma vez que é irrelevante para arquivos em um sistema de armazenamento somente.
 >
 > A máscara pode ser especificada em uma base por chamada. Isso permite que diferentes sistemas de consumo, como clusters, ter diferentes máscaras eficazes para suas operações de arquivo. Se uma máscara for especificada em uma determinada solicitação, ela substitui completamente a máscara padrão.
 
 #### <a name="the-sticky-bit"></a>O sticky bit
 
-O sticky bit é um recurso mais avançado de um sistema de arquivos POSIX. No contexto do Azure Data Lake Storage Gen2, é improvável que o sticky bit seja necessário. Em resumo, se o sticky bit estiver habilitado em um diretório, um item filho apenas poderá ser excluído ou renomeado pelo usuário proprietário do item filho.
+O bit adesivo é um recurso mais avançado de um contêiner POSIX. No contexto do Azure Data Lake Storage Gen2, é improvável que o sticky bit seja necessário. Em resumo, se o sticky bit estiver habilitado em um diretório, um item filho apenas poderá ser excluído ou renomeado pelo usuário proprietário do item filho.
 
 O bit adesivo não é mostrado na portal do Azure.
 
@@ -291,7 +291,7 @@ Ou
 
 ### <a name="who-is-the-owner-of-a-file-or-directory"></a>Quem é o proprietário de um arquivo ou diretório?
 
-O criador de um arquivo ou diretório se torna o proprietário. No caso do diretório raiz, esta é a identidade do usuário que criou o sistema de arquivos.
+O criador de um arquivo ou diretório se torna o proprietário. No caso do diretório raiz, essa é a identidade do usuário que criou o contêiner.
 
 ### <a name="which-group-is-set-as-the-owning-group-of-a-file-or-directory-at-creation"></a>Qual grupo é definido como grupo proprietário de um arquivo ou diretório na criação?
 
@@ -320,7 +320,7 @@ Quando você tiver o OID correto para a entidade de serviço, vá para a página
 
 ### <a name="does-data-lake-storage-gen2-support-inheritance-of-acls"></a>O Azure Data Lake Storage Gen2 dá suporte à herança de ACLs?
 
-Herda as atribuições de Azure RBAC. Atribuições de fluxo de assinatura, grupo de recursos e recursos da conta de armazenamento para baixo até o recurso do sistema de arquivos.
+Herda as atribuições de Azure RBAC. As atribuições fluem de assinatura, grupo de recursos e recursos da conta de armazenamento até o recurso de contêiner.
 
 ACLS não herdam. Porém, as ACLs padrão pode ser usadas para definir as ACLs de subdiretórios filho e arquivos criados no diretório pai. 
 

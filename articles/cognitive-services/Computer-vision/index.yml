@@ -2,15 +2,14 @@
 documentType: LandingData
 title: Documentação da API da Pesquisa Visual Computacional
 metadata:
-  title: Documentação da API - Pesquisa Visual Computacional - Serviços Cognitivos do Azure | Microsoft Docs
+  title: Documentação da API – Pesquisa Visual Computacional
+  titleSuffix: Azure Cognitive Services
   description: Saiba como usar a Pesquisa Visual Computacional para processar imagens e retornar informações. Tutoriais mostram como criar aplicativos que usam a API.
   services: cognitive-services
   author: nitinme
   manager: nitinme
   ms.service: cognitive-services
   ms.subservice: computer-vision
-  ms.tgt_pltfrm: na
-  ms.devlang: na
   ms.topic: landing-page
   ms.date: 02/26/2019
   ms.author: nitinme
