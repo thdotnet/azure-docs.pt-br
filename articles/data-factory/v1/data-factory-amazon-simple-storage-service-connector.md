@@ -65,7 +65,7 @@ Um serviço vinculado vincula um armazenamento de dados a um data factory. Crie 
 
 | Propriedade | Descrição | Valores permitidos | Obrigatório |
 | --- | --- | --- | --- |
-| accessKeyID |ID da chave de acesso secreta. |cadeia de caracteres |Sim |
+| accessKeyID |ID da chave de acesso secreta. |string |Sim |
 | secretAccessKey |A chave de acesso do secreta em si. |Cadeia de caracteres secreta criptografada |Sim |
 
 >[!NOTE]
