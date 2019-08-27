@@ -9,12 +9,12 @@ ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 06/07/2019
 ms.author: diberry
-ms.openlocfilehash: e55ccb508760c4473f71245c183948219f31985c
-ms.sourcegitcommit: e3b0fb00b27e6d2696acf0b73c6ba05b74efcd85
+ms.openlocfilehash: c258799b1305c4204d08d66aa36a0be7c71a4944
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68663905"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70034383"
 ---
 # <a name="how-personalizer-works"></a>Como funciona o Personalizador
 
@@ -163,7 +163,7 @@ Use o mecanismo de recomendação para filtrar um catálogo grande para alguns i
 
 ## <a name="adding-content-safeguards-to-your-application"></a>Adicionar garantias de conteúdo ao seu aplicativo
 
-Se o aplicativo permitir grandes variações no conteúdo mostrado aos usuários e uma parte desse conteúdo talvez não for segura ou for inadequada para alguns usuários, você deverá planejar com antecedência para verificar se as garantias corretas estão em vigor para evitar que seus usuários vejam conteúdo inaceitável. O melhor padrão para implementar garantias é: O melhor padrão para implementar garantias é:
+Se o aplicativo permitir grandes variações no conteúdo mostrado aos usuários e uma parte desse conteúdo talvez não for segura ou for inadequada para alguns usuários, você deverá planejar com antecedência para verificar se as garantias corretas estão em vigor para evitar que seus usuários vejam conteúdo inaceitável. O melhor padrão para implementar garantias é:
     * Obtenha a lista de ações a ser classificada.
     * Filtre aquelas que não são viáveis para o público-alvo.
     * Classifique apenas essas ações viáveis.
