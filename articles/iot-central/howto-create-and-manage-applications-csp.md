@@ -5,15 +5,15 @@ services: iot-central
 ms.service: iot-central
 author: dominicbetts
 ms.author: dobett
-ms.date: 04/03/2019
+ms.date: 08/23/2019
 ms.topic: conceptual
 manager: philmea
-ms.openlocfilehash: 43fe0047022173cc20f58688920fa95b95cc6c22
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 4d20256381eab155d4b7532591cea85e43080ec0
+ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65473530"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70019792"
 ---
 # <a name="as-a-csp-create-and-manage-an-azure-iot-central-application-on-behalf-of-your-customer"></a>Como um CSP, criar e gerenciar um aplicativo do Azure IoT Central em nome de seu cliente 
 
@@ -25,7 +25,7 @@ Para começar, entre em sua conta no Portal de parceiros da Microsoft e selecion
 
 ![Microsoft Partner Center, exibição do cliente](media/howto-create-application-csp/image1.png)
 
-O Azure IoT Central está listado como um serviço disponível para administrar. Selecione o link do Azure IoT Central da página para criar novos aplicativos ou gerenciar os aplicativos existentes para esse cliente.
+O Azure IoT Central está listado como um serviço disponível para administrar. Selecione o link IoT Central do Azure na página para criar novos aplicativos ou gerenciar aplicativos existentes para esse cliente.
 
 ![Azure IoT Central disponível para gerenciar](media/howto-create-application-csp/image2.png)
 
@@ -33,7 +33,7 @@ Você é direcionado para a página do Gerenciador de Aplicativos do Azure IoT C
 
 ![Gerenciador de Criação para CSPs](media/howto-create-application-csp/image3.png)
 
-Para criar um aplicativo do Azure IoT Central, selecione a **novo aplicativo** lado a lado. Isso carregará a página de Criação de Aplicativos. Você precisa preencher todos os campos dessa página e, em seguida, escolher **Criar**. Você encontrará mais informações sobre cada um desses campos abaixo.
+Para criar um aplicativo de IoT Central do Azure, selecione o bloco **novo aplicativo** . Isso carregará a página de Criação de Aplicativos. Você precisa preencher todos os campos dessa página e, em seguida, escolher **Criar**. Você encontrará mais informações sobre cada um desses campos abaixo.
 
 ![Página Criar Aplicativo para CSPs](media/howto-create-application-csp/image4.png)
 
@@ -43,7 +43,7 @@ Para criar um aplicativo do Azure IoT Central, selecione a **novo aplicativo** l
 
 Você só pode criar aplicativos Pay-As-You-Go como CSP. Para demonstrar o Azure IoT Central para o seu cliente, você pode criar um aplicativo de avaliação separadamente. Saiba mais sobre os aplicativos Trial e Pay-As-You-Go na [página de preços da Microsoft IoT Central do Azure](https://azure.microsoft.com/pricing/details/iot-central/).
 
-## <a name="application-name"></a>Nome do Aplicativo
+## <a name="application-name"></a>Nome do aplicativo
 
 O nome do aplicativo é exibido na página **Gerenciador de Aplicativos** e em cada aplicativo Azure IoT Central. É possível escolher qualquer nome para o aplicativo Azure IoT Central. Escolha um nome que faça sentido a você e às outras pessoas na organização.
 
@@ -84,7 +84,7 @@ Para saber mais, consulte [Regiões do Azure](https://docs.microsoft.com/azure/g
 
 Você pode escolher um dos modelos de aplicativo disponíveis para o novo aplicativo Azure IoT Central. Um modelo de aplicativo pode conter itens predefinidos, como modelos de dispositivo e dashboards, para ajudá-lo a começar.
 
-| Modelo de aplicativo | DESCRIÇÃO |
+| Modelo de aplicativo | Descrição |
 | -------------------- | ----------- |
 | Aplicativo personalizado   | Cria um aplicativo vazio para você preencher com seus próprios dispositivos e modelos de dispositivos. |
 | Exemplo Contoso       | Cria um aplicativo que inclui um modelo de dispositivo para um dispositivo conectado simples. Use esse modelo para começar a explorar o Azure IoT Central. |

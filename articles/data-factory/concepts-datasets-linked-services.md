@@ -1,6 +1,6 @@
 ---
-title: Conjuntos de dados no Azure Data Factory | Microsoft Docs
-description: Saiba mais sobre conjuntos de dados no Data Factory. Os conjuntos de dados representam os dados de entrada/saída.
+title: Conjuntos de valores em Azure Data Factory | Microsoft Docs
+description: Saiba mais sobre conjuntos de os Data Factory. Os conjuntos de dados representam os dados de entrada/saída.
 services: data-factory
 documentationcenter: ''
 author: sharonlo101
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: shlo
-ms.openlocfilehash: 6b74f217d296b5de8886f608b1bc92e908b5d8b4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bbf7159abf88ce70cc62d202a8375aad302a0552
+ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64866467"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70019966"
 ---
 # <a name="datasets-in-azure-data-factory"></a>Conjuntos de dados no Azure Data Factory
 > [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
@@ -31,7 +31,7 @@ Se estiver conhecendo o Azure Data Factory agora, consulte [Introdução ao Azur
 ## <a name="overview"></a>Visão geral
 Uma fábrica de dados pode ter um ou mais pipelines. Um **pipeline** é um agrupamento lógico de **atividades** que juntas executam uma tarefa. As atividades em um pipeline definem ações para executar em seus dados. Por outro lado, um **conjunto de dados** é uma exibição nomeada de dados que simplesmente aponta ou faz referência aos dados que você deseja usar em suas **atividades** como entradas e saídas. Conjuntos de dados identificam dados em armazenamentos de dados diferentes, como tabelas, arquivos, pastas e documentos. Por exemplo, um conjunto de dados de Blob do Azure especifica o contêiner de blobs e a pasta no armazenamento de Blobs dos quais a atividade deve ler os dados.
 
-Antes de criar um conjunto de dados, você deve criar uma [ **serviço vinculado** ](concepts-linked-services.md) para vincular seu armazenamento de dados para o data factory. Serviços vinculados são como cadeias de conexão, que definem as informações de conexão necessárias para o Data Factory para se conectar a recursos externos. Pense dessa maneira: o conjunto de dados representa a estrutura dos dados nos armazenamentos de dados vinculados e o serviço vinculado define a conexão à fonte de dados. Por exemplo, um serviço vinculado do Armazenamento do Azure vincula uma conta de armazenamento ao data factory. Um conjunto de dados de Blob do Azure representa o contêiner de blob e a pasta naquela conta de armazenamento do Azure que contém os blobs de entrada a serem processados.
+Antes de criar um conjunto de dados, você deve criar um [**serviço vinculado**](concepts-linked-services.md) para vincular seu armazenamento de data ao data Factory. Serviços vinculados são como cadeias de conexão, que definem as informações de conexão necessárias para o Data Factory para se conectar a recursos externos. Pense dessa maneira: o conjunto de dados representa a estrutura dos dados nos armazenamentos de dados vinculados e o serviço vinculado define a conexão à fonte de dados. Por exemplo, um serviço vinculado do Armazenamento do Azure vincula uma conta de armazenamento ao data factory. Um conjunto de dados de Blob do Azure representa o contêiner de blob e a pasta naquela conta de armazenamento do Azure que contém os blobs de entrada a serem processados.
 
 Veja abaixo um cenário de exemplo. Para copiar dados do armazenamento de Blobs para um banco de dados SQL, crie dois serviços vinculados: Armazenamento do Azure e Banco de Dados SQL do Azure. Em seguida, crie dois conjuntos de dados: O conjunto de dados de Blob do Azure (que se refere ao serviço vinculado do Armazenamento do Azure) e o conjunto de dados de Tabela do SQL do Azure (que se refere ao serviço vinculado do Banco de Dados SQL do Azure). Os serviços vinculados do Armazenamento do Azure e do Banco de Dados SQL do Azure contêm cadeias de conexão que o Data Factory usa em tempo de execução para se conectar ao Armazenamento do Azure e ao Banco de Dados SQL do Azure, respectivamente. O conjunto de dados de Blob do Azure especifica o contêiner de blobs e a pasta de blobs que contém os blobs de entrada no armazenamento de Blobs. O conjunto de dados de Tabela do SQL do Azure especifica a tabela do SQL no banco de dados SQL para o qual os dados serão copiados.
 
@@ -41,7 +41,7 @@ O seguinte diagrama mostra a relação entre pipeline, atividade, conjunto de da
 
 
 ## <a name="dataset-json"></a>Conjunto de dados do JSON
-Um conjunto de dados no Data Factory é definido no seguinte formato JSON:
+Um conjunto de Data Factory é definido no seguinte formato JSON:
 
 ```json
 {
@@ -67,24 +67,24 @@ Um conjunto de dados no Data Factory é definido no seguinte formato JSON:
 ```
 A tabela a seguir descreve as propriedades no JSON acima:
 
-Propriedade | DESCRIÇÃO | Obrigatório |
+Propriedade | Descrição | Obrigatório |
 -------- | ----------- | -------- |
 name | Nome do conjunto de dados. Consulte [Azure Data Factory – Regras de nomenclatura](naming-rules.md). |  Sim |
 type | Tipo de conjunto de dados. Especifique um dos tipos compatíveis com o Data Factory (por exemplo: AzureBlob, AzureSqlTable). <br/><br/>Para obter detalhes, consulte [Tipos de conjunto de dados](#dataset-type). | Sim |
-estrutura | Esquema do conjunto de dados. Para obter detalhes, consulte [esquema de conjunto de dados](#dataset-structure-or-schema). | Não |
+structure | Esquema do conjunto de dados. Para obter detalhes, consulte [esquema de conjunto](#dataset-structure-or-schema)de informações. | Não |
 typeProperties | As propriedades de tipo são diferentes para cada tipo (por exemplo: Blob do Azure, tabela do SQL Azure). Para obter detalhes sobre os tipos com suporte e suas propriedades, consulte [Tipo de conjunto de dados](#dataset-type). | Sim |
 
-### <a name="data-flow-compatible-dataset"></a>Conjunto de dados compatível de fluxo de dados
+### <a name="data-flow-compatible-dataset"></a>DataSet compatível com fluxo de dados
 
 [!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
 
-Ver [tipos de conjunto de dados com suporte](#dataset-type) para obter uma lista de tipos de conjunto de dados que são [fluxo de dados](concepts-data-flow-overview.md) compatível. Conjuntos de dados que são compatíveis para o fluxo de dados exigem definições de conjunto de dados refinada para transformações. Assim, a definição de JSON é ligeiramente diferente. Em vez de um _estrutura_ tem de conjuntos de dados de fluxo de dados compatível com a propriedade, um _esquema_ propriedade.
+Consulte [tipos de conjunto de dados com suporte](#dataset-type) para obter uma lista de tipos de conjuntos de [dados](concepts-data-flow-overview.md) compatíveis. Os conjuntos de dados que são compatíveis com o fluxo de data exigem definições de conjunto de dado refinadas para transformações. Portanto, a definição de JSON é ligeiramente diferente. Em vez de uma propriedade de _estrutura_ , os conjuntos de dados que são compatíveis com o data Flow têm uma propriedade de _esquema_ .
 
-No fluxo de dados, conjuntos de dados são usados nas transformações do código-fonte e coletor. Os conjuntos de dados definem os esquemas de dados básicos. Se seus dados sem esquema, você pode usar o descompasso do esquema para sua fonte e coletor. O esquema do conjunto de dados representa o tipo de dados físico e a forma.
+No fluxo de dados, DataSets são usados em transformações de origem e de coletor. Os conjuntos de dados definem os esquemas básicos. Se os dados não tiverem um esquema, você poderá usar descompasso de esquema para a origem e o coletor. O esquema no DataSet representa o tipo de dados físico e a forma.
 
-Ao definir o esquema do conjunto de dados, você obterá os tipos de dados relacionados, formatos de dados, local do arquivo e informações de conexão de serviço vinculado associado. Metadados de conjuntos de dados aparece na sua transformação de origem como a origem *projeção*. A projeção na transformação de origem representa os dados de fluxo de dados com tipos e nomes definidos.
+Ao definir o esquema a partir do conjunto de dados, você obterá os tipos, os formatos de dados, o local do arquivo e as informações de conexão relacionados do serviço vinculado associado. Os metadados dos conjuntos de valores são exibidos na transformação de origem comoa projeção de origem. A projeção na transformação origem representa os dados de fluxo de dados com nomes e tipos definidos.
 
-Quando você importa o esquema de um conjunto de dados de fluxo de dados, selecione a **Importar esquema** botão e escolha Importar da fonte ou de um arquivo local. Na maioria dos casos, você importará o esquema diretamente da fonte. Mas se você já tiver um arquivo de esquema local (um arquivo Parquet ou CSV com cabeçalhos), você pode direcionar o Data Factory para o esquema no arquivo de base.
+Quando você importa o esquema de um conjunto de dados de fluxo, seleciona o botão **importar esquema** e opta por importar da origem ou de um arquivo local. Na maioria dos casos, você importará o esquema diretamente da origem. Mas se você já tiver um arquivo de esquema local (um arquivo parquet ou CSV com cabeçalhos), poderá direcionar Data Factory para basear o esquema nesse arquivo.
 
 
 ```json
@@ -112,11 +112,11 @@ Quando você importa o esquema de um conjunto de dados de fluxo de dados, seleci
 
 A tabela a seguir descreve as propriedades no JSON acima:
 
-Propriedade | DESCRIÇÃO | Obrigatório |
+Propriedade | Descrição | Obrigatório |
 -------- | ----------- | -------- |
 name | Nome do conjunto de dados. Consulte [Azure Data Factory – Regras de nomenclatura](naming-rules.md). |  Sim |
 type | Tipo de conjunto de dados. Especifique um dos tipos compatíveis com o Data Factory (por exemplo: AzureBlob, AzureSqlTable). <br/><br/>Para obter detalhes, consulte [Tipos de conjunto de dados](#dataset-type). | Sim |
-schema | Esquema do conjunto de dados. Para obter detalhes, consulte [compatível com conjuntos de dados de fluxo de dados](#dataset-type). | Não |
+schema | Esquema do conjunto de dados. Para obter detalhes, consulte [conjuntos de dados compatíveis com o data Flow](#dataset-type). | Não |
 typeProperties | As propriedades de tipo são diferentes para cada tipo (por exemplo: Blob do Azure, tabela do SQL Azure). Para obter detalhes sobre os tipos com suporte e suas propriedades, consulte [Tipo de conjunto de dados](#dataset-type). | Sim |
 
 
@@ -149,7 +149,7 @@ Observe os seguintes pontos:
 ## <a name="dataset-type"></a>Tipo de conjunto de dados
 Há muitos tipos diferentes de conjuntos de dados, dependendo do armazenamento de dados que você usa. Consulte a tabela a seguir para obter uma lista de armazenamentos de dados com suporte pelo Data Factory. Clique em um armazenamento de dados para saber como criar um serviço vinculado e um conjunto de dados para esse armazenamento de dados.
 
-[!INCLUDE [data-factory-v2-supported-data-stores](../../includes/data-factory-v2-supported-data-stores-dataflow.md)]
+[!INCLUDE [data-factory-v2-supported-data-stores](../../includes/connector-activity-support-matrix.md)]
 
 No exemplo na seção anterior, o tipo do conjunto de dados é definido como **AzureSqlTable**. Da mesma forma, para um conjunto de dados de Blob do Azure, o tipo do conjunto de dados é definido como **AzureBlob**, conforme mostrado no seguinte JSON:
 
@@ -176,16 +176,16 @@ No exemplo na seção anterior, o tipo do conjunto de dados é definido como **A
 ```
 
 ## <a name="dataset-structure-or-schema"></a>Estrutura do conjunto de dados ou esquema
-O **estrutura** seção ou **esquema** (fluxo de dados compatível) seção de conjuntos de dados é opcional. Ela define o esquema do conjunto de dados contendo uma coleção de nomes e tipos de dados de colunas. Use a seção de estrutura para fornecer informações de tipo que são usadas para converter tipos e mapear colunas da origem para o destino.
+A seção de **estrutura** ou os conjuntos de dados da seção de **esquema** (compatível com o fluxo) são opcionais. Ela define o esquema do conjunto de dados contendo uma coleção de nomes e tipos de dados de colunas. Use a seção de estrutura para fornecer informações de tipo que são usadas para converter tipos e mapear colunas da origem para o destino.
 
 Cada coluna da seção Estrutura contém as seguintes propriedades:
 
-Propriedade | DESCRIÇÃO | Obrigatório
+Propriedade | Descrição | Obrigatório
 -------- | ----------- | --------
 name | Nome da coluna. | Sim
 type | Tipo de dados da coluna. O Data Factory dá suporte aos seguintes tipos de dados provisórios como valores permitidos: **Int16, Int32, Int64, Single, Double, Decimal, Byte[], Boolean, String, Guid, Datetime, Datetimeoffset e Timespan** | Não
 culture | Cultura baseada em .NET a ser usada quando o tipo é um tipo .NET `Datetime` ou `Datetimeoffset`. O padrão é `en-us`. | Não
-formato | O formato de cadeia de caracteres a ser usado quando o tipo é um tipo .NET `Datetime` ou `Datetimeoffset`. Consulte [Data personalizada e cadeias de caracteres de formato de hora](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings) sobre como formatar a data e hora. | Não
+format | O formato de cadeia de caracteres a ser usado quando o tipo é um tipo .NET `Datetime` ou `Datetimeoffset`. Consulte [Data personalizada e cadeias de caracteres de formato de hora](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings) sobre como formatar a data e hora. | Não
 
 ### <a name="example"></a>Exemplo
 No exemplo a seguir, suponha que os dados de Blob de origem estão em formato CSV e contém três colunas: ID do usuário, nome e data do último logon. Eles são do tipo Int64, cadeia de caracteres e data e hora com um formato de data e hora personalizado usando nomes abreviados em francês para o dia da semana.
@@ -225,4 +225,4 @@ Consulte os seguintes tutoriais para obter instruções passo a passo para criar
 - [Início rápido: criar um data factory usando o .NET](quickstart-create-data-factory-dot-net.md)
 - [Início rápido: criar um data factory usando o PowerShell](quickstart-create-data-factory-powershell.md)
 - [Início rápido: criar um data factory usando a API REST](quickstart-create-data-factory-rest-api.md)
-- [Início rápido: criar um data factory usando o portal do Azure](quickstart-create-data-factory-portal.md)
+- [Início rápido: criar um data factory usando portal do Azure](quickstart-create-data-factory-portal.md)

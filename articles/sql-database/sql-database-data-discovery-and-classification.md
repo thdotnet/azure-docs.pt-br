@@ -11,16 +11,16 @@ author: vainolo
 ms.author: arib
 ms.reviewer: vanto
 ms.date: 03/22/2019
-ms.openlocfilehash: a606364503172d5cb1ddcf00262eb81b9423b55b
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: f2b57aa517c1518929b857eff6aed2ef4e0d8ca1
+ms.sourcegitcommit: 3f78a6ffee0b83788d554959db7efc5d00130376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68569051"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70018962"
 ---
 # <a name="azure-sql-database-and-sql-data-warehouse-data-discovery--classification"></a>Classificação & do banco de dados SQL do Azure e SQL Data Warehouse data Discovery
 
-A descoberta e classificação de dados (atualmente em versão prévia) fornece recursos internos avançados no Banco de Dados SQL do Azure para **descobrir**, **classificar**, **rotular** & **proteger** os dados confidenciais em seus bancos de dados.
+A classificação de & da descoberta de dados fornece recursos avançados incorporados ao banco de dados SQL do Azure para **descobrir**, **classificar** & , rotular a**proteção** de informações confidenciais em seus bancos.
 Descobrir e classificar seus dados mais confidenciais (negócios, financeiros, atendimento à saúde, PII [informações de identificação pessoal] etc.) pode desempenhar uma função essencial para a estatura de proteção das informações organizacionais. Pode servir como infraestrutura para:
 
 - Ajudar a cumprir os padrões de privacidade de dados e os requisitos de conformidade a normas.
@@ -76,7 +76,7 @@ Depois que a política de todo o locatário tiver sido definida, você poderá c
 
 1. Vá para o [Portal do Azure](https://portal.azure.com).
 
-2. Navegue para **Segurança de Dados Avançada** no cabeçalho de segurança do painel do Banco de Dados SQL do Azure. Clique nessa opção para habilitar a segurança de dados avançada e, em seguida, clique no cartão **Descoberta e classificação de dados (versão prévia)** .
+2. Navegue para **Segurança de Dados Avançada** no cabeçalho de segurança do painel do Banco de Dados SQL do Azure. Clique para habilitar a segurança de dados avançada e clique no cartão de **classificação & de descoberta de dados** .
 
    ![Examinar um banco de dados](./media/sql-data-discovery-and-classification/data_classification.png)
 

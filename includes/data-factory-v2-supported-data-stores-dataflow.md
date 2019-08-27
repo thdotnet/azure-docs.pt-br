@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 08/06/2019
 ms.author: jingwang
 ms.openlocfilehash: a2815961f6afb0032aa6011cce5d59ab37f81303
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68843129"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020420"
 ---
 | Categoria | Repositório de dados | Com suporte como uma origem da [atividade de cópia](../articles/data-factory/copy-activity-overview.md) | Com suporte como um coletor de [atividade de cópia](../articles/data-factory/copy-activity-overview.md) | Suporte do [IR do Azure](../articles/data-factory/concepts-integration-runtime.md#azure-integration-runtime) | Suporte do [IR auto-hospedado](../articles/data-factory/concepts-integration-runtime.md#self-hosted-integration-runtime) | Com suporte do [fluxo de dados](../articles/data-factory/concepts-data-flow-overview.md)
 |:--- |:--- |:--- |:--- |:--- |:--- |

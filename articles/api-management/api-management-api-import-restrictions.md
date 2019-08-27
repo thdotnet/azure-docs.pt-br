@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/26/2019
 ms.author: apimpm
-ms.openlocfilehash: af550d3cdf359fc79b3cc2c799e531e5ec491c4e
-ms.sourcegitcommit: 6a42dd4b746f3e6de69f7ad0107cc7ad654e39ae
+ms.openlocfilehash: bf39e508b8e4c883934b51fdc99eaef96caf1235
+ms.sourcegitcommit: 3f78a6ffee0b83788d554959db7efc5d00130376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/07/2019
-ms.locfileid: "67613641"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70018220"
 ---
 # <a name="api-import-restrictions-and-known-issues"></a>Restrições de importação de API e problemas conhecidos
 
@@ -34,11 +34,12 @@ Caso esteja recebendo erros ao importar seu documento da OpenAPI, verifique se v
 ### <a name="open-api-general"> </a>Geral
 
 -   Os parâmetros obrigatórios para o caminho e a consulta precisam ter nomes exclusivos. (Na OpenAPI, um nome de parâmetro só precisa ser exclusivo em uma localização, por exemplo, caminho, consulta, cabeçalho. No entanto, no Gerenciamento de API, permitimos que as operações sejam discriminadas por parâmetros de caminho e de consulta [o que não é compatível com a OpenAPI]. Por isso é necessário que os nomes de parâmetro sejam exclusivos dentro de todo o modelo de URL.)
--   **\$REF** ponteiros não podem fazer referência a arquivos externos.
+-   ponteiros de referência não podem referenciar arquivos externos.  **\$**
 -   **x-ms-paths** e **x-servers** são as únicas extensões com suporte.
 -   As extensões personalizadas são ignoradas na importação e não são salvas ou preservadas para exportação.
 -   **Recursão** – o Gerenciamento de API não dá suporte a definições definidas recursivamente (por exemplo, esquemas fazendo referência a si mesmos).
 -   A URL do arquivo de origem (se disponível) é aplicada a URLs de servidor relativo.
+-   As definições de segurança são ignoradas.
 
 ### <a name="open-api-v2"> </a>OpenAPI versão 2
 
@@ -55,7 +56,7 @@ Caso esteja recebendo erros ao importar seu documento da OpenAPI, verifique se v
 
 ## <a name="wsdl"> </a>WSDL
 
-Arquivos WSDL são usados para criar Passagem SOAP e APIs SOAP para REST.
+Os arquivos WSDL são usados para criar APIs de passagem SOAP e SOAP para REST.
 
 -   **Associações SOAP** - Apenas as associações SOAP de estilo "documento" e codificação "literal" têm suporte. Não há suporte para estilo "rpc" ou SOAP-Encoding.
 -   **WSDL:Import** – não há suporte para esse atributo. Os clientes devem mesclar as importações em um documento.
@@ -64,7 +65,7 @@ Arquivos WSDL são usados para criar Passagem SOAP e APIs SOAP para REST.
 -   **MTOM** - Serviços usando MTOM <em>podem</em> funcionar. No momento, não oferecemos suporte oficial.
 -   **Recursão** - Tipos que são definidos recursivamente (por exemplo, referem-se a uma matriz deles) não têm suporte pelo APIM.
 -   **Vários Namespaces** – vários namespaces podem ser usados em um esquema, mas apenas o namespace de destino pode ser usado para definir partes da mensagem. Namespaces que não sejam o destino usados para definir outros elementos de entrada ou saída não são preservados. Embora um documento WSDL desse tipo possa ser importado, na exportação, todas as partes da mensagem terão o namespace de destino do WSDL.
--   **Matrizes** - SOAP para REST transformação dá suporte a apenas encapsulada matrizes mostrado no exemplo a seguir:
+-   **Matrizes** – a transformação SOAP-to-REST dá suporte apenas a matrizes encapsuladas mostradas no exemplo abaixo:
 
 ```xml
     <complexType name="arrayTypeName">

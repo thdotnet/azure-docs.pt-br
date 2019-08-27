@@ -12,14 +12,14 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/09/2018
+ms.date: 08/20/2019
 ms.author: shants
-ms.openlocfilehash: 2ba1bb914dfc2edbe17d12cc58df097b60d1f94c
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: 413301fd8b6b4b2a3b60501378cf6da23cc38d81
+ms.sourcegitcommit: 3f78a6ffee0b83788d554959db7efc5d00130376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67849740"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70018854"
 ---
 # <a name="planned-maintenance-notifications-for-virtual-machine-scale-sets"></a>Notificações de manutenção planejada para conjuntos de dimensionamento de máquinas virtuais
 
@@ -28,13 +28,13 @@ O Azure executa periodicamente atualizações para melhorar a confiabilidade, o 
 
 - Se a manutenção não exigir um reinício, o Azure usa a migração in-loco para pausar a VM enquanto o host é atualizado. As operações de manutenção que não exigem um reinício são aplicadas ao domínio de falha pelo domínio de falha. O andamento será interrompido se algum sinal de integridade de aviso for recebido.
 
-- Se a manutenção exigir um reinício, você receberá uma notificação que mostra quando a manutenção está planejada. Nesses casos, você receberá uma janela de tempo em que você mesmo poderá iniciar a manutenção quando lhe for mais oportuno.
+- Se a manutenção requer uma reinicialização, você receberá um aviso informando para quando a manutenção está planejada. Nesses casos, você recebe uma janela de tempo que normalmente é de 35 dias em que você pode iniciar a manutenção por conta própria, quando ela funciona para você.
 
 
 Uma manutenção planejada que requer uma reinicialização é agendada em ondas. Cada onda tem um escopo diferente (regiões):
 
 - Uma onda começa com uma notificação para os clientes. Por padrão, a notificação é enviada ao proprietário e aos coproprietários da assinatura. É possível adicionar destinatários e opções de mensagens como email, SMS e webhooks às notificações, usando [alertas do Log de Atividades](../azure-monitor/platform/activity-logs-overview.md) do Azure.  
-- Com a notificação, uma *janela de autoatendimento* é disponibilizada. Durante essa janela, é possível descobrir quais das VMs estão incluídas na onda. É possível iniciar a manutenção proativamente de acordo com suas próprias necessidades de agendamento.
+- Com a notificação, uma *janela de autoatendimento* é disponibilizada. Durante essa janela que normalmente é de 35 dias, você pode encontrar quais das suas VMs estão incluídas na onda. É possível iniciar a manutenção proativamente de acordo com suas próprias necessidades de agendamento.
 - Após a janela de autoatendimento, *janela de manutenção agendada* inicia. Em algum ponto durante essa janela, o Azure agenda e aplica a manutenção necessária à VM. 
 
 A meta de ter duas janelas é fornecer-lhe tempo suficiente para iniciar a manutenção e reiniciar a VM, sabendo quando o Azure iniciará a manutenção automaticamente.
@@ -86,7 +86,7 @@ Quando uma onda de manutenção planejada é agendada, é possível exibir a lis
 
 A **Manutenção de autoatendimento** agora aparece na lista de conjuntos de dimensionamento de máquinas virtuais. Cada conjunto de dimensionamento de máquina virtual pode ter um dos seguintes valores para a coluna de manutenção de autoatendimento:
 
-| Valor | DESCRIÇÃO |
+| Valor | Descrição |
 |-------|-------------|
 | Sim | Pelo menos uma VM no conjunto de dimensionamento de máquinas virtuais está em uma janela de autoatendimento. Você pode iniciar a manutenção a qualquer momento durante essa janela de autoatendimento. | 
 | Não | Nenhuma VM está em uma janela de autoatendimento no conjunto de dimensionamento de máquinas virtuais afetado. | 
@@ -127,7 +127,7 @@ Get-AzVmss -ResourceGroupName rgName -VMScaleSetName vmssName -InstanceId id -In
 
 As seguintes propriedades são retornadas em **MaintenanceRedeployStatus**: 
 
-| Valor | DESCRIÇÃO   |
+| Valor | Descrição   |
 |-------|---------------|
 | IsCustomerInitiatedMaintenanceAllowed | Indica se é possível iniciar a manutenção na VM neste momento. |
 | PreMaintenanceWindowStartTime         | O início da janela de autoatendimento de manutenção quando você pode iniciar a manutenção na VM. |
@@ -158,7 +158,7 @@ az vmss list-instances -g rgName -n vmssName --expand instanceView
 
 As propriedades a seguir são retornadas em **MaintenanceRedeployStatus** para cada instância de VM: 
 
-| Valor | DESCRIÇÃO   |
+| Valor | Descrição   |
 |-------|---------------|
 | IsCustomerInitiatedMaintenanceAllowed | Indica se é possível iniciar a manutenção na VM neste momento. |
 | PreMaintenanceWindowStartTime         | O início da janela de autoatendimento de manutenção quando você pode iniciar a manutenção na VM. |

@@ -4,16 +4,16 @@ description: Resume as configurações de suporte e as limitações de avaliaç�
 services: backup
 author: rayne-wiselman
 manager: carmonm
-ms.service: backup
+ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 08/05/2019
 ms.author: raynew
-ms.openlocfilehash: 70107311b189e1692b902812c4ccbbd91c3695a1
-ms.sourcegitcommit: acffa72239413c62662febd4e39ebcb6c6c0dd00
+ms.openlocfilehash: c351ee8290b60c81add173bb927b0c12e37f5c7c
+ms.sourcegitcommit: 3f78a6ffee0b83788d554959db7efc5d00130376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68952109"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70018138"
 ---
 # <a name="support-matrix-for-vmware-assessment-and-migration"></a>Matriz de suporte para avaliação e migração da VMware
 
@@ -294,7 +294,7 @@ Baixar e instalar em migrações para Azure | Quando você instalar o dispositiv
 **NFS** | Volumes NFS montados como volumes nas VMs não serão replicados.
 destinos iSCSI | Não há suporte para VMs com destinos iSCSI para migração sem agente.
 **E/s de vários caminhos** | Não compatível.
-**VMotion de armazenamento** | Com suporte
+**VMotion de armazenamento** | Suportado
 **NICs agrupadas** | Não compatível.
 **IPv6** | Não compatível.
 

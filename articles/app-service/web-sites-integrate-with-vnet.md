@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/25/2019
+ms.date: 08/21/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 8321a9dd779406b2d1de44bd4c9313e4d855548d
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 7246a0223e156abd866594c65542069944601b01
+ms.sourcegitcommit: 3f78a6ffee0b83788d554959db7efc5d00130376
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68740903"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70018247"
 ---
 # <a name="integrate-your-app-with-an-azure-virtual-network"></a>Integrar seu aplicativo Web a uma Rede Virtual do Azure
 Este documento descreve o recurso de integração de rede virtual do serviço Azure App e como configurá-lo com aplicativos no [serviço Azure app](https://go.microsoft.com/fwlink/?LinkId=529714). [Redes virtuais do Azure][VNETOverview] (VNets) permitem que você coloque muitos dos seus recursos do Azure em uma rede roteável que não é da Internet.  
@@ -84,8 +84,9 @@ Esse recurso está em versão prévia, mas há suporte para cargas de trabalho d
 * O aplicativo e a VNet devem estar na mesma região
 * Você não pode excluir uma VNet com um aplicativo integrado. Você deve remover a integração primeiro 
 * Você pode ter apenas uma integração VNet regional por plano do serviço de aplicativo. Vários aplicativos no mesmo plano do serviço de aplicativo podem usar a mesma VNet. 
+* Você não pode alterar a assinatura de um aplicativo ou um plano do serviço de aplicativo enquanto houver um aplicativo que está usando a integração VNet regional
 
-Um endereço é usado para cada instância de plano do serviço de aplicativo. Se você dimensionou seu aplicativo para 5 instâncias, esses são os cinco endereços usados. Como o tamanho da sub-rede não pode ser alterado após a atribuição, você deve usar uma sub-rede que seja grande o suficiente para acomodar qualquer escala que seu aplicativo possa atingir. A/27 com 32 endereços é o tamanho recomendado, pois isso acomodaria um plano do serviço de aplicativo Premium que é dimensionado para 20 instâncias.
+Um endereço é usado para cada instância de plano do serviço de aplicativo. Se você dimensionou seu aplicativo para 5 instâncias, 5 endereços são usados. Como o tamanho da sub-rede não pode ser alterado após a atribuição, você deve usar uma sub-rede que seja grande o suficiente para acomodar qualquer escala que seu aplicativo possa atingir. R/26 com 64 endereços é o tamanho recomendado. A/27 com 32 endereços acomodariam um plano do serviço de aplicativo Premium 20 instâncias se você não alterou o tamanho do plano do serviço de aplicativo. Ao dimensionar um plano do serviço de aplicativo para cima ou para baixo, você precisará de duas vezes mais endereços por um curto período de tempo. 
 
 Se você quiser que seus aplicativos em outro plano do serviço de aplicativo alcancem uma VNet que está conectada ao já por aplicativos em outro plano do serviço de aplicativo, será necessário selecionar uma sub-rede diferente daquela que está sendo usada pela integração VNet pré-existente.  
 
@@ -102,6 +103,8 @@ O recurso também está em versão prévia para Linux. Para usar o recurso de in
    ![Selecionar a VNet e a sub-rede][7]
 
 Depois que seu aplicativo estiver integrado à sua VNet, ele usará o mesmo servidor DNS com o qual sua VNet está configurada. 
+
+A integração VNet regional requer que sua sub-rede de integração seja delegada para Microsoft. Web.  A interface do usuário de integração VNet delegará a sub-rede ao Microsoft. Web automaticamente. Se sua conta não tiver permissões de rede suficientes para definir isso, você precisará de alguém que possa definir atributos em sua sub-rede de integração para delegar a sub-rede. Para delegar manualmente a sub-rede de integração, vá para a interface do usuário da sub-rede da rede virtual do Azure e defina delegação para Microsoft. Web.
 
 Para desconectar o aplicativo da VNet, selecione **Desconectar**. Isso reiniciará o aplicativo Web. 
 
@@ -249,7 +252,7 @@ Há três encargos relacionados ao uso do recurso de integração VNet exigido p
 
 
 ## <a name="troubleshooting"></a>Solução de problemas
-Embora o recurso seja fácil de configurar, isso não significa que sua experiência estará livre de problemas. Se você encontrar problemas ao acessar o ponto de extremidade desejado, há utilitários que você pode usar para testar a conectividade do console do aplicativo. Há dois consoles que você pode usar. Uma é o console do Kudu e a outra é o console no portal do Azure. Para acessar o console do Kudu do aplicativo, vá para Ferramentas -> Kudu. Isso é o mesmo que ir para [nomedosite].scm.azurewebsites.net. Depois de aberto, vá para a guia do console Depuração. Para obter a console hospedado no portal do Azure, em seu aplicativo, vá para Ferramentas -> Console. 
+Embora o recurso seja fácil de configurar, isso não significa que sua experiência estará livre de problemas. Se você encontrar problemas ao acessar o ponto de extremidade desejado, há utilitários que você pode usar para testar a conectividade do console do aplicativo. Há dois consoles que você pode usar. Uma é o console do Kudu e a outra é o console no portal do Azure. Para acessar o console do Kudu do aplicativo, vá para Ferramentas -> Kudu. Você também pode acessar o console do Kudo em [SiteName]. SCM. azurewebsites. net. Depois que o site for carregado, vá para a guia Console de depuração. Para obter a console hospedado no portal do Azure, em seu aplicativo, vá para Ferramentas -> Console. 
 
 #### <a name="tools"></a>Ferramentas
 As ferramentas **ping**, **nslookup** e **tracert** não funcionarão no console devido a restrições de segurança. Para compensar essa ausência, duas ferramentas separadas foram adicionadas. Para testar a funcionalidade do DNS, adicionamos uma ferramenta chamada nameresolver.exe. A sintaxe é:

@@ -4,14 +4,14 @@ description: Este artigo explica como otimizar os custos de taxa de transferênc
 author: rimman
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 05/21/2019
+ms.date: 08/26/2019
 ms.author: rimman
-ms.openlocfilehash: 8829c2534184bc14e82dfbf30d2170a7a1b8add0
-ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
+ms.openlocfilehash: d874f1ba8823ceddbef378decde127cef4ff8885
+ms.sourcegitcommit: 80dff35a6ded18fa15bba633bf5b768aa2284fa8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69614997"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70020100"
 ---
 # <a name="optimize-provisioned-throughput-cost-in-azure-cosmos-db"></a>Otimizar a taxa de transferência provisionada no Azure Cosmos DB
 
@@ -65,7 +65,7 @@ Ao provisionar a produtividade em níveis diferentes, você pode otimizar seus c
 
 ## <a name="optimize-with-rate-limiting-your-requests"></a>Otimizar suas solicitações com limitação de taxa
 
-Para cargas de trabalho que não são afetadas pela latência, você pode provisionar uma taxa de transferência menor e permitir que o aplicativo lide com a limitação de taxa quando a taxa de transferência real exceder a taxa de transferência provisionada. O servidor encerrará antecipadamente a solicitação com RequestRateTooLarge (código de status HTTP 429) e retornará o cabeçalho `x-ms-retry-after-ms` indicando a quantidade de tempo, em milissegundos, que o usuário deve aguardar antes de tentar novamente a solicitação. 
+Para cargas de trabalho que não são afetadas pela latência, você pode provisionar uma taxa de transferência menor e permitir que o aplicativo lide com a limitação de taxa quando a taxa de transferência real exceder a taxa de transferência provisionada. O servidor encerrará de forma preventiva a solicitação `RequestRateTooLarge` com (código de status http 429) e `x-ms-retry-after-ms` retornará o cabeçalho indicando o tempo, em milissegundos, que o usuário deve aguardar antes de repetir a solicitação. 
 
 ```html
 HTTP Status 429, 
@@ -77,15 +77,13 @@ HTTP Status 429,
 
 Os SDKs nativos (.NET/.NET Core, Java, Node.js e Python) capturam essa resposta implicitamente, respeitam o cabeçalho retry-after especificado para o servidor e repetem a solicitação. A menos que sua conta seja acessada simultaneamente por vários clientes, a tentativa seguinte será bem-sucedida.
 
-Se você tiver mais de um cliente operando cumulativamente e consistentemente acima da taxa de solicitação, a contagem de repetição padrão atualmente definida como 9 poderá não ser suficiente. Nesse caso, o cliente gerará um `DocumentClientException` com código de status 429 para o aplicativo. A contagem de repetição padrão pode ser alterada definindo `RetryOptions` na instância de ConnectionPolicy. Por padrão, a DocumentClientException com o código de status 429 será retornada após uma espera cumulativa de 30 segundos se a solicitação continuar a operar acima da taxa de solicitação. Isso ocorre mesmo quando a contagem de repetição atual é menor que a contagem de repetição máxima, seja o padrão 9 seja um valor definido pelo usuário. 
+Se você tiver mais de um cliente operando cumulativamente e consistentemente acima da taxa de solicitação, a contagem de repetição padrão atualmente definida como 9 poderá não ser suficiente. Nesse caso, o cliente gerará um `DocumentClientException` com código de status 429 para o aplicativo. A contagem de repetição padrão pode ser alterada definindo `RetryOptions` na instância de ConnectionPolicy. Por padrão, o `DocumentClientException` com código de status 429 é retornado após um tempo de espera cumulativo de 30 segundos se a solicitação continuar a operar acima da taxa de solicitação. Isso ocorre mesmo quando a contagem de repetição atual é menor que a contagem de repetição máxima, seja o padrão 9 seja um valor definido pelo usuário. 
 
-[MaxRetryAttemptsOnThrottledRequests](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.retryoptions.maxretryattemptsonthrottledrequests?view=azure-dotnet) é definido como 3, ou seja, nesse caso, se uma operação de solicitação tiver limitação de taxa ao exceder a taxa de transferência reservada para a coleção, a operação de solicitação tentará novamente três vezes antes de lançar a exceção para o aplicativo.  [MaxRetryWaitTimeInSeconds](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.retryoptions.maxretrywaittimeinseconds?view=azure-dotnet#Microsoft_Azure_Documents_Client_RetryOptions_MaxRetryWaitTimeInSeconds) é definido como 60, ou seja, nesse caso, se o tempo de espera para a repetição cumulativo desde a primeira solicitação exceder 60 segundos, a exceção será lançada.
+[MaxRetryAttemptsOnThrottledRequests](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.retryoptions.maxretryattemptsonthrottledrequests?view=azure-dotnet) é definido como 3, portanto, nesse caso, se uma operação de solicitação tiver uma taxa limitada excedendo a taxa de transferência reservada para o contêiner, a operação de solicitação tentará novamente três vezes antes de lançar a exceção para o aplicativo. [MaxRetryWaitTimeInSeconds](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.retryoptions.maxretrywaittimeinseconds?view=azure-dotnet#Microsoft_Azure_Documents_Client_RetryOptions_MaxRetryWaitTimeInSeconds) é definido como 60, portanto, nesse caso, se o tempo de espera de repetição cumulativo em segundos desde a primeira solicitação exceder 60 segundos, a exceção será lançada.
 
 ```csharp
 ConnectionPolicy connectionPolicy = new ConnectionPolicy(); 
-
 connectionPolicy.RetryOptions.MaxRetryAttemptsOnThrottledRequests = 3; 
-
 connectionPolicy.RetryOptions.MaxRetryWaitTimeInSeconds = 60;
 ```
 
