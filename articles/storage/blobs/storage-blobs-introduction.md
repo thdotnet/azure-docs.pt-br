@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 05/24/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: e216503cac2db55115bd4c1b5bf0e2f6e50355fc
-ms.sourcegitcommit: 156b313eec59ad1b5a820fabb4d0f16b602737fc
+ms.openlocfilehash: b54f69edfebca2786ec996b1ca71cea933179b58
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67190849"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69641020"
 ---
 # <a name="introduction-to-azure-blob-storage"></a>Introdução ao armazenamento de Blobs do Azure
 
@@ -66,7 +66,7 @@ Existem várias soluções para migrar dados existente para o Armazenamento de B
 
 - **AzCopy** é uma ferramenta de linha de comando fácil de usar para Windows e Linux que copia dados de e para o Armazenamento de Blobs entre contêineres ou entre contas de armazenamento. Para obter mais informações sobre o AzCopy, confira [Transferir dados com o AzCopy v10 (Versão Prévia)](../common/storage-use-azcopy-v10.md). 
 - A **biblioteca de Movimentação de Dados do Armazenamento do Azure** é uma biblioteca .NET para mover dados entre os serviços de Armazenamento do Azure. O utilitário AzCopy é criado com a biblioteca de Movimentação de Dados. Para obter mais informações, confira a [documentação de referência](/dotnet/api/microsoft.azure.storage.datamovement) para a biblioteca de Movimentação de Dados. 
-- O **Azure Data Factory** dá suporte à cópia de dados de e para o Armazenamento de Blobs usando a chave de conta, a assinatura de acesso compartilhado, a entidade de serviço ou as identidades gerenciadas para as autenticações de recursos do Azure. Para obter mais informações, confira [Copiar dados de ou para o Armazenamento de Blobs do Azure usando o Azure Data Factory](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage?toc=%2fazure%2fstorage%2fblobs%2ftoc.json). 
+- O **Azure Data Factory** dá suporte à cópia de dados bidirecionalmente no Armazenamento de Blobs usando a chave de conta, uma assinatura de acesso compartilhado, uma entidade de serviço ou as identidades gerenciadas para os recursos do Azure. Para obter mais informações, confira [Copiar dados de ou para o Armazenamento de Blobs do Azure usando o Azure Data Factory](https://docs.microsoft.com/azure/data-factory/connector-azure-blob-storage?toc=%2fazure%2fstorage%2fblobs%2ftoc.json). 
 - O **Blobfuse** é um driver de sistema de arquivos virtual para o Armazenamento de Blobs do Azure. Você pode usar o blobfuse para acessar seus dados de blob de blocos existentes em sua conta de armazenamento por meio do sistema de arquivos Linux. Para obter mais informações, confira [Como montar o Armazenamento de Blobs como um sistema de arquivos com blobfuse](storage-how-to-mount-container-linux.md).
 - O serviço do **Azure Data Box** está disponível para transferir dados locais para o armazenamento de blobs quando grandes conjuntos de dados ou restrições de rede inviabilizam o carregamento de dados com fio. Dependendo do tamanho dos dados, você pode solicitar dispositivos [Azure Data Box Disk](../../databox/data-box-disk-overview.md), [Azure Data Box](../../databox/data-box-overview.md) ou [Azure Data Box Heavy](../../databox/data-box-heavy-overview.md) da Microsoft. Você pode copiar seus dados para esses dispositivos e enviá-los à Microsoft para serem carregados no armazenamento de blobs.
 - O **serviço de Importação/Exportação do Azure** fornece uma maneira de exportar grandes quantidades de dados de sua conta de armazenamento para discos rígidos que você fornece. Para saber mais, confira [Usar o serviço de Importação/Exportação do Microsoft Azure para transferir dados ao Armazenamento de Blobs](../common/storage-import-export-service.md).

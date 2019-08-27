@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: tutorial
 ms.date: 07/16/2019
 ms.author: diberry
-ms.openlocfilehash: 786c5725046885a0321696e95703c53081e96979
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 1b731d8000e748813649ea32c91b9566a8bc245a
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68560337"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69648614"
 ---
 # <a name="tutorial-extract-names-with-simple-entity-and-a-phrase-list"></a>Tutorial: Extrair nomes com uma entidade simples e uma lista de frases
 
@@ -137,9 +137,9 @@ As entidades simples precisam de muitos exemplos para ter uma alta confiança de
 
 1. Rotular os trabalhos em enunciados de exemplo
 
-    Se houver mais enunciados de exemplo em uma intenção do que outra intenção, essa intenção terá uma alta probabilidade de ser a intenção mais alta prevista. 
+    Se houver mais enunciados de exemplo em uma intenção do que em outra intenção, essa intenção terá uma alta probabilidade de ser a intenção mais alta prevista. 
 
-## <a name="train-the-app-so-the-changes-to-the-intent-can-be-tested"></a>Treinar o aplicativo para que as alterações à intenção possam ser testadas 
+## <a name="train-the-app-so-the-changes-to-the-intent-can-be-tested"></a>Faça o treinamento do aplicativo para que as alterações na intenção possam ser testadas 
 
 [!INCLUDE [LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 

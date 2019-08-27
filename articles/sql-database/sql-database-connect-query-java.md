@@ -10,15 +10,15 @@ author: ajlam
 ms.author: andrela
 ms.reviewer: v-masebo
 ms.date: 03/25/2019
-ms.custom: seo-java-july2019
-ms.openlocfilehash: 273f8ad080b80a58b63e70ab2aa311c9c498d491
-ms.sourcegitcommit: 3877b77e7daae26a5b367a5097b19934eb136350
+ms.custom: seo-java-july2019. seo-java-august2019
+ms.openlocfilehash: 8940e13dcc6d6287984ba1cc7c7510768b4e232f
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68640070"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624075"
 ---
-# <a name="quickstart-use-java-to-query-an-azure-sql-database"></a>Início Rápido: Como usar o Java para consultar um banco de dados SQL do Azure
+# <a name="quickstart-use-java-to-connect-to-and-query-an-azure-sql-database"></a>Início Rápido: Usar o Java para se conectar a um banco de dados SQL do Azure e consultá-lo
 
 Este artigo demonstra como usar o [Java](/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server) para se conectar a um Banco de dados SQL do Azure. Depois você pode usar as instruções T-SQL para consultar dados.
 
@@ -55,7 +55,7 @@ Obtenha as informações de conexão necessárias para se conectar ao Banco de D
 
 1. Entre no [Portal do Azure](https://portal.azure.com/).
 
-2. Navegue até a página **bancos de dados SQL** ou **instâncias gerenciadas do SQL**.
+2. Selecione **bancos de dados SQL** ou abra a página **Instâncias gerenciadas do SQL**.
 
 3. Na página **Visão geral**, examine o nome do servidor totalmente qualificado próximo ao **Nome do servidor** para um banco de dados individual ou o nome do servidor totalmente qualificado próximo ao **Host** para instância gerenciada. Para copiar o nome do servidor ou o nome do host, passe o mouse sobre ele e selecione o ícone **Copiar**. 
 

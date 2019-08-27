@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: tutorial
 ms.date: 06/18/2019
 ms.author: dacurwin
-ms.openlocfilehash: 647ab76760d0c5ce5315a60d0a671163b902be0f
-ms.sourcegitcommit: 0f54f1b067f588d50f787fbfac50854a3a64fff7
+ms.openlocfilehash: 23c10fbed751e05fea2a95030c720f622e195f40
+ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68954549"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69534228"
 ---
 # <a name="about-sql-server-backup-in-azure-vms"></a>Sobre o Backup do SQL Server nas VMs do Azure
 
@@ -22,9 +22,9 @@ Os bancos de dados SQL Server são cargas de trabalho críticas que exigem um ba
 
 Essa solução aproveita as APIs nativas do SQL para fazer backups dos bancos de dados SQL.
 
-* Depois que você especificar a VM do SQL Server que você deseja proteger e na qual consultar os bancos de dados, o serviço de Backup do Azure instalará uma extensão de backup de carga de trabalho na VM pelo nome da extensão `AzureBackupWindowsWorkload` .
+* Depois que você especificar a VM do SQL Server que você deseja proteger e na qual consultar os bancos de dados, o serviço de Backup do Azure instalará uma extensão de backup de carga de trabalho na VM pelo nome da extensão `AzureBackupWindowsWorkload`.
 * Essa extensão consiste em um coordenador e um plugin do SQL. Ao passo que o coordenador é responsável por disparar fluxos de trabalho para várias operações, como configurar o backup, backup e restauração, o plugin é responsável por fluxo de dados real.
-* Para poder descobrir bancos de dados nesta VM, o Backup do Microsoft Azure cria a conta `NT SERVICE\AzureWLBackupPluginSvc`. Essa conta é usada para backup e restauração e exige permissões de sysadmin do SQL. O Backup do Microsoft Azure aproveita a conta  `NT AUTHORITY\SYSTEM`  para descoberta/consulta de banco de dados e, portanto, essa conta precisa ser um logon público no SQL. Se você não criou a VM do SQL Server no Azure Marketplace, talvez você receba um erro  **UserErrorSQLNoSysadminMembership**. Se isso ocorrer,  [siga essas instruções](backup-azure-sql-database.md).
+* Para poder descobrir bancos de dados nesta VM, o Backup do Azure cria a conta `NT SERVICE\AzureWLBackupPluginSvc`. Essa conta é usada para backup e restauração e exige permissões de sysadmin do SQL. O Backup do Azure aproveita a conta `NT AUTHORITY\SYSTEM` para descoberta/consulta de banco de dados e, portanto, essa conta precisa ser um logon público no SQL. Se você não criou a VM do SQL Server no Azure Marketplace, talvez você receba um erro **UserErrorSQLNoSysadminMembership**. Se isso ocorrer, [siga estas instruções](backup-azure-sql-database.md).
 * Depois que o gatilho configurar a proteção nos bancos de dados selecionados, o serviço de backup configura o coordenador com as agendas de backup e outros detalhes da política, que aumenta os caches localmente na VM.
 * No horário agendado, o coordenador se comunica com o plugin e ele começa a transmissão dos dados de backup do SQL Server usando o VDI.  
 * O plugin envia os dados diretamente para o cofre de serviços de recuperação, eliminando a necessidade de um local de preparo. Os dados são criptografados e armazenados pelo serviço de Backup do Microsoft Azure em contas de armazenamento.
@@ -45,7 +45,7 @@ Antes de começar, verifique o que está descrito abaixo:
 **Suporte** | **Detalhes**
 --- | ---
 **Implantações com suporte** | Há suporte para VMs do Azure no Marketplace do SQL e VMs que não são do Marketplace (do SQL Server instaladas manualmente).
-**Áreas geográficas com suporte** | Sudeste da Austrália (ASE), Leste da Austrália (AE) <br> Sul do Brasil (BRS)<br> Canadá Central (CNC), Leste do Canadá (CE)<br> Sudeste Asiático (SEA), Ásia Oriental (EA) <br> Leste dos EUA (EUS), Leste dos EUA 2 (EUS2), Centro-Oeste dos EUA (WCUS), Oeste dos EUA (WUS); Oeste dos EUA 2 (WUS 2) Centro-Norte dos EUA (NCUS) EUA Central (CUS) Centro-Sul dos EUA (SCUS) <br> Índia Central (INC), Sul da Índia (INS) <br> Oeste do Japão (JPE), Leste do Japão (JPW) <br> Coreia Central (KRC), Sul da Coreia (KRS) <br> Norte da Europa (NE), Oeste da Europa <br> Sul do Reino Unido (UKS), Oeste do Reino Unido (UKW) <br> US Gov – Arizona, US Gov – Virgínia, US Gov – Texas, US DoD Central, US DoD Leste
+**Áreas geográficas com suporte** | Sudeste da Austrália (ASE), Leste da Austrália (AE) <br> Sul do Brasil (BRS)<br> Canadá Central (CNC), Leste do Canadá (CE)<br> Sudeste Asiático (SEA), Ásia Oriental (EA) <br> Leste dos EUA (EUS), Leste dos EUA 2 (EUS2), Centro-Oeste dos EUA (WCUS), Oeste dos EUA (WUS); Oeste dos EUA 2 (WUS 2) Centro-Norte dos EUA (NCUS) EUA Central (CUS) Centro-Sul dos EUA (SCUS) <br> Índia Central (INC), Sul da Índia (INS) <br> Oeste do Japão (JPE), Leste do Japão (JPW) <br> Coreia Central (KRC), Sul da Coreia (KRS) <br> Norte da Europa (NE), Oeste da Europa <br> Sul do Reino Unido (UKS), Oeste do Reino Unido (UKW) <br> US Gov – Arizona, US Gov – Virgínia, US Gov – Texas, US DoD Central, US DoD Leste
 **Sistemas operacionais com suporte** | Windows Server 2016, Windows Server 2012 R2 e Windows Server 2012<br/><br/> Não há suporte para Linux no momento.
 **Versões do SQL Server com suporte** | SQL Server 2017, conforme detalhado [aqui](https://support.microsoft.com/lifecycle/search?alpha=SQL%20server%202017), SQL Server 2016 e SPs, conforme detalhado [aqui](https://support.microsoft.com/lifecycle/search?alpha=SQL%20server%202016%20service%20pack), SQL Server 2014 e SQL Server 2012.<br/><br/> Enterprise, Standard, Web, Developer e Express.
 **Versões do .NET com suporte** | .NET Framework 4.5.2 e superior instalado na VM
@@ -66,7 +66,7 @@ Os usuários não serão cobrados por esse recurso até a hora em que ele estive
 - O Backup do SQL Server pode ser configurado no portal do Azure ou **PowerShell**. Não oferecemos CLI de suporte.
 - A solução é compatível em ambos os tipos de [implantações](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-deployment-model) – VMs do Azure Resource Manager e VMs clássicas.
 - VM que executa o SQL Server exige conectividade com a Internet para acessar os endereços IP públicos do Azure.
-- Não há suporte para o SQL Server **FCI (Instância de Cluster de Failover)** e o SQL Server Always On na Instância de Cluster de Failover.
+- Não há suporte para o SQL Server **FCI (Instância do Cluster de Failover)** e o SQL Server Always On na Instância de Cluster de Failover.
 - Não há suporte para as operações de backup e de restauração para bancos de dados de espelho e instantâneos do banco de dados.
 - Usar mais de uma solução de backup para fazer backup de sua instância do SQL Server autônoma ou do grupo de disponibilidade SQL Always On pode levar à falha de backup. Evite fazer isso.
 - Fazer backup de dois nós de um grupo de disponibilidade individualmente com soluções iguais ou diferentes, também poderá levar à falha de backup.

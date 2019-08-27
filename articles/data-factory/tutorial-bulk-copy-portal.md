@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 06/22/2018
 ms.author: jingwang
-ms.openlocfilehash: 444269aa7ca2b0a82b78e8437b7884ef8833c665
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: d7f97eec4e0dc6e88d89e845e086b9e5242caa7b
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59279781"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616593"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory"></a>Copiar várias tabelas em massa usando o Azure Data Factory
 Este tutorial demonstra como **copiar uma série de tabelas do Banco de Dados SQL do Azure para o SQL Data Warehouse do Azure**. Você também pode aplicar o mesmo padrão em outros cenários de cópia. Por exemplo, copiando tabelas do SQL Server/Oracle para o Banco de Dados SQL do Azure/Data Warehouse/Blob do Azure, copiando diferentes caminhos do Blob para tabelas do Banco de Dados SQL do Azure.
@@ -45,7 +45,7 @@ Nesse cenário, você tem um número de tabelas no Banco de Dados SQL do Azure q
 * O primeiro pipeline verifica a lista de tabelas que precisam ser copiadas nos armazenamentos de dados do coletor.  Alternativamente, você pode manter uma tabela de metadados que lista todas as tabelas a serem copiadas para o armazenamento de dados de coletor. Em seguida, o pipeline dispara outro pipeline, que faz iteração por cada tabela no banco de dados e executa a operação de cópia de dados.
 * O segundo pipeline realiza a cópia propriamente dita. Ele usa a lista de tabelas como um parâmetro. Para cada tabela na lista, copie a tabela específica no Banco de Dados SQL do Azure para a tabela correspondente no SQL Data Warehouse usando a [cópia preparada via Armazenamento de Blobs e PolyBase](connector-azure-sql-data-warehouse.md#use-polybase-to-load-data-into-azure-sql-data-warehouse) para obter o melhor desempenho. Neste exemplo, o primeiro pipeline envia a lista de tabelas como um valor para o parâmetro. 
 
-Se você não tiver uma assinatura do Azure, crie uma conta [gratuita](https://azure.microsoft.com/free/) antes de começar.
+Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/) antes de começar.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 * **Conta de Armazenamento do Azure**. A conta de Armazenamento do Azure é usada como Armazenamento de Blobs de preparo na operação de cópia em massa. 
@@ -66,21 +66,15 @@ Crie um Banco de Dados SQL do Azure contendo dados de exemplo do Adventure Works
 
 ## <a name="azure-services-to-access-sql-server"></a>Permitir que os serviços do Azure acessem o SQL Server
 
-Para o Banco de Dados SQL e o SQL Data Warehouse, permita que os serviços do Azure acessem o SQL Server. Verifique se a configuração **Permitir acesso aos serviços do Azure** está **ATIVADA** para o Azure SQL Server. Essa configuração permite que o serviço Data Factory leia dados do Banco de Dados SQL do Azure e grave dados no SQL Data Warehouse do Azure. Para verificar e ativar essa configuração, faça as seguintes etapas:
+Para o Banco de Dados SQL e o SQL Data Warehouse, permita que os serviços do Azure acessem o SQL Server. Verifique se a configuração **Permitir acesso aos serviços do Azure** está **ATIVADA** para o Azure SQL Server. Essa configuração permite que o serviço Data Factory leia dados do Banco de Dados SQL do Azure e grave dados no SQL Data Warehouse do Azure. 
 
-1. Clique no hub **Mais serviços** à esquerda e clique em **Servidores SQL**.
-1. Selecione seu servidor e clique em **Firewall** em **CONFIGURAÇÕES**.
-1. Na página **Configurações de Firewall**, clique em **ATIVADO** para **Permitir acesso aos serviços do Azure**.
+Para verificar e ativar essa configuração, vá até seu servidor SQL do Azure > Segurança > Firewalls e redes virtuais > defina a opção **Permitir acesso aos serviços do Azure** como **ATIVADA**.
 
 ## <a name="create-a-data-factory"></a>Criar uma data factory
 1. Iniciar o navegador da Web **Microsoft Edge** ou **Google Chrome**. Atualmente, a interface do usuário do Data Factory tem suporte apenas nos navegadores da Web Microsoft Edge e Google Chrome.
-1. No menu à esquerda, selecione **Criar um recurso** > **Dados + Análise** > **Data Factory**: 
-   
-   ![Seleção de Data Factory no painel "Novo"](./media/quickstart-create-data-factory-portal/new-azure-data-factory-menu.png)
+1. No menu à esquerda, selecione **Criar um recurso** > **Analytics** > **Data Factory**: ![Seleção de Data Factory no painel "Novo"](./media/doc-common-process/new-azure-data-factory-menu.png)
 
 1. Na página **Novo data factory**, insira **ADFTutorialBulkCopyDF** como o **nome**. 
-      
-     ![Página de novo data factory](./media/tutorial-bulk-copy-portal/new-azure-data-factory.png)
  
    O nome do Azure Data Factory deve ser **globalmente exclusivo**. Se você se deparar com o seguinte erro para o campo nome, altere o nome do data factory (por exemplo, seunomeADFTutorialBulkCopyDF). Confira o artigo [Data Factory - regras de nomenclatura](naming-rules.md) para ver as regras de nomenclatura para artefatos do Data Factory.
   
@@ -94,18 +88,13 @@ Para o Banco de Dados SQL e o SQL Data Warehouse, permita que os serviços do Az
      Para saber mais sobre grupos de recursos, consulte [Usando grupos de recursos para gerenciar recursos do Azure](../azure-resource-manager/resource-group-overview.md).  
 1. Selecione **V2** para a **versão**.
 1. Selecione o **local** do data factory. Para obter uma lista de regiões do Azure no qual o Data Factory está disponível no momento, selecione as regiões que relevantes para você na página a seguir e, em seguida, expanda **Análise** para localizar **Data Factory**: [Produtos disponíveis por região](https://azure.microsoft.com/global-infrastructure/services/). Os armazenamentos de dados (Armazenamento do Azure, Banco de Dados SQL do Azure, etc.) e serviços de computação (HDInsight, etc.) usados pelo data factory podem estar em outras regiões.
-1. Selecione **Fixar no painel**.     
 1. Clique em **Criar**.
-1. No painel, você deve ver o seguinte bloco com status: **Implantando data factory**. 
-
-     ![implantando bloco data factory](media//tutorial-bulk-copy-portal/deploying-data-factory.png)
-1. Após a criação, a página do **Data Factory** será exibida conforme mostrado na imagem.
+1. Após a criação, a página do **Data Factory** será exibida.
    
-     ![Página inicial do data factory](./media/tutorial-bulk-copy-portal/data-factory-home-page.png)
 1. Clique no bloco **Autor & Monitor** para iniciar o aplicativo IU do Data Factory em uma guia separada.
-1. Na página de **introdução**, alterne para a guia **Editar** no painel esquerdo, conforme mostrado na imagem a seguir:  
+1. Na página de **introdução**, alterne para a guia **Criar** no painel esquerdo, conforme mostrado na imagem a seguir:  
 
-     ![Página Introdução](./media/tutorial-bulk-copy-portal/get-started-page.png)
+     ![Página Introdução](./media/doc-common-process/get-started-page-author-button.png)
 
 ## <a name="create-linked-services"></a>Criar serviços vinculados
 Você cria os serviços vinculados para vincular seus armazenamentos de dados e serviços de computação ao data factory. Um serviço vinculado possui as informações de conexão que o serviço do Data Factory usa para conectar-se ao armazenamento de dados no tempo de execução. 
@@ -119,44 +108,55 @@ Nesta etapa, você criará um serviço vinculado para vincular seu banco de dado
 
     ![Botão Novo serviço vinculado](./media/tutorial-bulk-copy-portal/new-linked-service-button.png)
 1. Na janela **Novo Serviço Vinculado**, selecione **Banco de Dados SQL do Azure** e clique em **Continuar**. 
+1. Na janela **Novo serviço vinculado (Banco de Dados SQL do Azure)** , execute as etapas a seguir: 
 
-    ![Selecione um Banco de Dados SQL do Azure](./media/tutorial-bulk-copy-portal/select-azure-sql-database.png)
-1. Na janela **Novo Serviço Vinculado**, execute estas etapas: 
+    a. Insira **AzureSqlDatabaseLinkedService** para o **Nome**.
+    
+    b. Selecione o seu SQL Server do Azure para o **Nome do servidor**
+    
+    c. Selecione o seu banco de dados SQL do Azure para o **Nome do banco de dados**. 
+    
+    d. Digite **nome do usuário** para se conectar ao banco de dados SQL do Azure. 
+    
+    e. Insira a **senha** do usuário. 
 
-    1. Insira **AzureSqlDatabaseLinkedService** para o **Nome**. 
-    1. Selecione o seu SQL Server do Azure para o **Nome do servidor**
-    1. Selecione o seu banco de dados SQL do Azure para o **Nome do banco de dados**. 
-    1. Digite **nome do usuário** para se conectar ao banco de dados SQL do Azure. 
-    1. Insira a **senha** do usuário. 
-    1. Para testar a conexão ao banco de dados SQL do Azure usando as informações especificadas, clique em **Testar conectividade**.
-    1. Clique em **Salvar**.
+    f. Para testar a conexão ao banco de dados SQL do Azure usando as informações especificadas, clique em **Testar conectividade**.
+  
+    g. Clique em **Continuar**.
 
-        ![Configurações do Banco de Dados SQL do Azure](./media/tutorial-bulk-copy-portal/azure-sql-database-settings.png)
 
 ### <a name="create-the-sink-azure-sql-data-warehouse-linked-service"></a>Criar o serviço vinculado do SQL Data Warehouse do Azure de coletor
 
 1. Na guia **Conexões**, clique em **+ Novo** na barra de ferramentas novamente. 
 1. Na janela **Novo serviço vinculado**, selecione **SQL Data Warehouse do Azure** e clique em **Continuar**. 
-1. Na janela **Novo Serviço Vinculado**, execute estas etapas: 
-
-    1. Insira **AzureSqlDWLinkedService** para o **Nome**. 
-    1. Selecione o seu SQL Server do Azure para o **Nome do servidor**
-    1. Selecione o seu banco de dados SQL do Azure para o **Nome do banco de dados**. 
-    1. Digite **nome do usuário** para se conectar ao banco de dados SQL do Azure. 
-    1. Insira a **senha** do usuário. 
-    1. Para testar a conexão ao banco de dados SQL do Azure usando as informações especificadas, clique em **Testar conectividade**.
-    1. Clique em **Salvar**.
+1. Na janela **Novo serviço vinculado (SQL Data Warehouse do Azure)** , execute as etapas a seguir: 
+   
+    a. Insira **AzureSqlDWLinkedService** para o **Nome**.
+     
+    b. Selecione o seu SQL Server do Azure para o **Nome do servidor**
+     
+    c. Selecione o seu banco de dados SQL do Azure para o **Nome do banco de dados**. 
+     
+    d. Digite **nome do usuário** para se conectar ao banco de dados SQL do Azure. 
+     
+    e. Insira a **senha** do usuário. 
+     
+    f. Para testar a conexão ao banco de dados SQL do Azure usando as informações especificadas, clique em **Testar conectividade**.
+     
+    g. Clique em **Continuar**.
 
 ### <a name="create-the-staging-azure-storage-linked-service"></a>Criar o serviço vinculado do Armazenamento do Azure de preparo
 Neste tutorial, você usa o Armazenamento de Blobs do Azure como uma área de preparação intermediária para habilitar o PolyBase para um melhor desempenho de cópia.
 
 1. Na guia **Conexões**, clique em **+ Novo** na barra de ferramentas novamente. 
 1. Na janela **Novo Serviço Vinculado**, selecione **Armazenamento de Blobs do Azure** e clique em **Continuar**. 
-1. Na janela **Novo Serviço Vinculado**, execute estas etapas: 
+1. Na janela **Novo serviço vinculado (Armazenamento de Blobs do Azure)** , execute as etapas a seguir: 
 
-    1. Insira **AzureStorageLinkedService** como o **Nome**. 
-    1. Selecione sua **conta de Armazenamento do Azure** como o **Nome da conta de armazenamento**.
-    1. Clique em **Salvar**.
+    a. Insira **AzureStorageLinkedService** como o **Nome**.                                                     
+    
+    b. Selecione sua **conta de Armazenamento do Azure** como o **Nome da conta de armazenamento**.
+    
+    c. Clique em **Continuar**.
 
 
 ## <a name="create-datasets"></a>Criar conjuntos de dados
@@ -173,49 +173,35 @@ Neste tutorial, as tabelas SQL de origem e de destino não são embutidas nas de
 1. Clique em **+ (adição)** no painel esquerdo e clique em **Conjunto de dados**. 
 
     ![Menu Novo conjunto de dados](./media/tutorial-bulk-copy-portal/new-dataset-menu.png)
-1. Na janela **Novo Conjunto de dados**, selecione **Banco de Dados SQL do Azure** e clique em **Concluir**. Você deve ver uma nova guia chamada **AzureSqlTable1**. 
+1. Na janela **Novo Conjunto de dados**, selecione **Banco de Dados SQL do Azure** e clique em **Continuar**. 
     
-    ![Selecione um Banco de Dados SQL do Azure](./media/tutorial-bulk-copy-portal/select-azure-sql-database-dataset.png)
-1. Na janela Propriedades, na parte inferior, digite **AzureSqlDatabaseDataset** para o **Nome**.
-
-1. Alterne para a guia **Conexão** e siga estas etapas: 
-
-   1. Selecione **AzureSqlDatabaseLinkedService** para **Serviço vinculado**.
-   1. Selecione qualquer tabela para **Tabela**. Esta é uma tabela fictícia. Você pode especificar uma consulta no conjunto de dados de origem ao criar um pipeline. A consulta é usada para extrair dados do Banco de Dados SQL do Azure. Como alternativa, você pode clicar na caixa de seleção **Editar** e inserir **dummyName** como o nome da tabela. 
-
-      ![Página de conexão do conjunto de dados de origem](./media/tutorial-bulk-copy-portal/source-dataset-connection-page.png)
+1. Na janela **Definir propriedades**, em **Nome**, insira **AzureSqlDatabaseDataset**. Em **Serviço vinculado**, selecione **AzureSqlDatabaseLinkedService**. Clique em **Continuar**.
+1. Alterne para a guia **Conexão** e selecione qualquer tabela para **Tabela**. Esta é uma tabela fictícia. Você pode especificar uma consulta no conjunto de dados de origem ao criar um pipeline. A consulta é usada para extrair dados do Banco de Dados SQL do Azure. Como alternativa, você pode clicar na caixa de seleção **Editar** e inserir **dummyName** como o nome da tabela. 
  
 
 ### <a name="create-a-dataset-for-sink-sql-data-warehouse"></a>Criar um conjunto de dados para o SQL Data Warehouse do Azure de coletor
 
 1. Clique em **+ (adição)** no painel esquerdo e clique em **Conjunto de dados**. 
-1. Na janela **Novo Conjunto de dados**, selecione **SQL Data Warehouse do Azure** e clique em **Concluir**. Você deve ver uma nova guia chamada **AzureSqlDWTable1**. 
-1. Na janela Propriedades, na parte inferior, digite **AzureSqlDWDataset** para o **Nome**.
-1. Alterne para a guia **Parâmetros**, clique em **+ Novo** e digite **DWTableName** para o nome do parâmetro. Se você copiar/colar esse nome da página, verifique se não há algum **caractere de espaço à direita** no final de **DWTableName**. 
-
-    ![Página de conexão do conjunto de dados de origem](./media/tutorial-bulk-copy-portal/sink-dataset-new-parameter.png)
-
+1. Na janela **Novo Conjunto de Dados**, selecione **SQL Data Warehouse do Azure** e clique em **Continuar**.
+1. Na janela **Definir propriedades**, em **Nome**, insira **AzureSqlDWDataset**. Em **Serviço vinculado**, selecione **AzureSqlDatabaseLinkedService**. Clique em **Continuar**.
+1. Alterne para a guia **Parâmetros**, clique em **+ Novo** e digite **DWTableName** para o nome do parâmetro. Se você copiar/colar esse nome da página, verifique se não há algum **caractere de espaço à direita** no final de **DWTableName**.
 1. Alterne para a guia **Conexão**, 
 
-    a. Selecione **AzureSqlDatabaseLinkedService** para **Serviço vinculado**.
+    a. Para **Tabela**, verifique a opção **Editar**, clique na caixa de entrada de nome de tabela e, em seguida, clique no link **Adicionar conteúdo dinâmico** abaixo. 
 
-    b. Para **Tabela**, verifique a opção **Editar**, clique na caixa de entrada de nome de tabela e, em seguida, clique no link **Adicionar conteúdo dinâmico** abaixo. 
-    
-    ![Nome do parâmetro](./media/tutorial-bulk-copy-portal/table-name-parameter.png)
-
-    c. Na página **Adicionar conteúdo dinâmico**, clique em **DWTAbleName** em **Parâmetros** que preencherá automaticamente a caixa de texto de expressão na parte superior `@dataset().DWTableName`, em seguida, clique em **Concluir**. A propriedade **tableName** do conjunto de dados é definida como o valor que é passado como um argumento para o parâmetro **DWTableName**. A atividade ForEach itera por meio de uma lista de tabelas e passa uma por uma para a atividade de Cópia. 
+    b. Na página **Adicionar conteúdo dinâmico**, clique em **DWTAbleName** em **Parâmetros** que preencherá automaticamente a caixa de texto de expressão na parte superior `@dataset().DWTableName`, em seguida, clique em **Concluir**. A propriedade **tableName** do conjunto de dados é definida como o valor que é passado como um argumento para o parâmetro **DWTableName**. A atividade ForEach itera por meio de uma lista de tabelas e passa uma por uma para a atividade de Cópia. 
 
     ![Construtor do parâmetro dataset](./media/tutorial-bulk-copy-portal/dataset-parameter-builder.png)
-
+ 
 ## <a name="create-pipelines"></a>Criar pipelines
 Neste tutorial, você cria dois pipelines: **IterateAndCopySQLTables** e **GetTableListAndTriggerCopyData**. 
 
-O pipeline **GetTableListAndTriggerCopyData** pipeline executa duas etapas:
+O pipeline **GetTableListAndTriggerCopyData** pipeline executa duas ações:
 
 * Pesquisa a tabela do sistema do Banco de Dados SQL do Azure para obter a lista de tabelas a serem copiadas.
 * Dispara o pipeline **IterateAndCopySQLTables** para fazer a cópia de dados propriamente dita.
 
-O **IterateAndCopySQLTables** usa uma lista de tabelas como um parâmetro. Para cada tabela na lista, ele copia dados da tabela no Banco de Dados SQL do Azure para o SQL Data Warehouse do Azure usando cópia preparada e o PolyBase.
+O pipeline **IterateAndCopySQLTables** usa uma lista de tabelas como um parâmetro. Para cada tabela na lista, ele copia dados da tabela no Banco de Dados SQL do Azure para o SQL Data Warehouse do Azure usando cópia preparada e o PolyBase.
 
 ### <a name="create-the-pipeline-iterateandcopysqltables"></a>Criar o pipeline IterateAndCopySQLTables
 
@@ -226,44 +212,44 @@ O **IterateAndCopySQLTables** usa uma lista de tabelas como um parâmetro. Para 
 
 1. Alterne para a guia **Parâmetros** e faça o seguinte: 
 
-    1. Clique em **+ Novo**. 
-    1. Digite **tableList** para o parâmetro **nome**.
-    1. Selecione **Matriz** para **Tipo**.
+    a. Clique em **+ Novo**. 
+    
+    b. Digite **tableList** para o parâmetro **nome**.
+    
+    c. Selecione **Matriz** para **Tipo**.
 
-        ![Parâmetro do pipeline](./media/tutorial-bulk-copy-portal/first-pipeline-parameter.png)
 1. Na caixa de ferramentas **Atividades**, expanda **Iteração e condições** e arraste e solte a atividade **ForEach** para a superfície de designer do pipeline. Você também pode pesquisar atividades na caixa de ferramentas **Atividades**. 
 
     a. Na guia **Geral**, na parte inferior, digite **IterateSQLTables** para o **Nome**. 
 
     b. Alterne para a guia **Configurações**, clique na caixa de entrada para **Itens**, em seguida, clique no link **Adicionar conteúdo dinâmico** abaixo. 
 
-    ![Configurações da atividade ForEach](./media/tutorial-bulk-copy-portal/for-each-activity-settings.png)
-
-    c. Na página **Adicionar conteúdo dinâmico**, recolha a seção de Variáveis e Funções do Sistema, clique em **tableList** em **Parâmetros** que preencherá automaticamente a caixa de texto de expressão na parte superior `@pipeline().parameter.tableList`, em seguida, clique em **Concluir**. 
+    c. Na página **Adicionar Conteúdo Dinâmico**, recolha as seções **Variáveis do Sistema** e **Funções**, clique em **tableList** em **Parâmetros**, que preencherá automaticamente a caixa de texto de expressão superior para `@pipeline().parameter.tableList`. Em seguida, clique em **Concluir**. 
 
     ![Construtor do parâmetro foreach](./media/tutorial-bulk-copy-portal/for-each-parameter-builder.png)
     
     d. Alterne para a guia **Atividades**, clique em **Adicionar atividade** para adicionar uma atividade filho para a atividade **ForEach**.
 
-1. Na caixa de ferramentas **Atividades**, expanda **DataFlow** e arraste e solte a atividade **Copiar** para a superfície do designer de pipeline. Observe o menu de navegação estrutural na parte superior. IterateAndCopySQLTable é o nome do pipeline e IterateSQLTables é o nome da atividade ForEach. O designer está no escopo da atividade. Para voltar ao editor do pipeline a partir do editor de ForEach, clique no link no menu de navegação estrutural. 
+1. Na caixa de ferramentas **Atividades**, expanda **Mover e Transferir** e arraste e solte a atividade **Copiar Dados** para a superfície do designer de pipeline. Observe o menu de navegação estrutural na parte superior. **IterateAndCopySQLTable** é o nome do pipeline e **IterateSQLTables** é o nome da atividade ForEach. O designer está no escopo da atividade. Para voltar ao editor do pipeline do editor de ForEach, você pode clicar no link no menu de navegação estrutural. 
 
     ![Cópia no ForEach](./media/tutorial-bulk-copy-portal/copy-in-for-each.png)
+
 1. Alterne para a guia **Origem** e siga estas etapas:
 
     1. Selecione **AzureSqlDatabaseDataset** para **Conjunto de dados de origem**. 
-    1. Selecione a opção de **Consulta** para **Consulta do usuário**. 
+    1. Selecione a opção de **Consulta** para **Consulta do Usuário**. 
     1. Clique na caixa de entrada **Consulta** -> selecione **Adicionar conteúdo dinâmico** abaixo -> insira a seguinte expressão para **Consulta** -> selecione **Concluir**.
 
         ```sql
         SELECT * FROM [@{item().TABLE_SCHEMA}].[@{item().TABLE_NAME}]
         ``` 
 
-        ![Configurações de Origem da cópia](./media/tutorial-bulk-copy-portal/copy-source-settings.png)
+
 1. Alterne para a guia **Coletor** e siga estas etapas: 
 
     1. Selecione **AzureSqlDWDataset** para **Conjunto de dados do coletor**.
-    1. Clique em caixa de entrada para o VALOR do parâmetro DWTableName -> selecione **Adicionar conteúdo dinâmico** abaixo, insira a expressão `[@{item().TABLE_SCHEMA}].[@{item().TABLE_NAME}]` como script -> selecione **Concluir**.
-    1. Expanda **Configurações do Polybase** e selecione **Permitir Polybase**. 
+    1. Clique na caixa de entrada para o VALUE do parâmetro DWTableName -> selecione **Adicionar conteúdo dinâmico** abaixo, insira a expressão `[@{item().TABLE_SCHEMA}].[@{item().TABLE_NAME}]` como script -> selecione **Concluir**.
+    1. Marque a caixa de seleção para **Permitir PolyBase**. 
     1. Apague a opção **Usar Tipo padrão**. 
     1. Clique na caixa de entrada **Pré-copiar Script** -> selecione **Adicionar conteúdo dinâmico** abaixo -> insira a seguinte expressão como script -> selecione **Concluir**. 
 
@@ -272,35 +258,29 @@ O **IterateAndCopySQLTables** usa uma lista de tabelas como um parâmetro. Para 
         ```
 
         ![Copiar as configurações do coletor](./media/tutorial-bulk-copy-portal/copy-sink-settings.png)
-
 1. Alterne para a guia **Configurações** e siga estas etapas: 
 
-    1. Selecione **True** para **Habilitar preparo**.
+    1. Marque a caixa de seleção para **Habilitar Preparo**.
     1. Selecione **AzureStorageLinkedService** como **Armazenar serviço vinculado da conta**.
 
-        ![Habilitar preparo](./media/tutorial-bulk-copy-portal/copy-sink-staging-settings.png)
-
-1. Para validar as configurações de pipeline, clique em **Validar** na barra de ferramentas para o pipeline na parte superior. Confirme se não houver nenhum erro de validação. Para fechar o **Relatório de validação do pipeline** clique em **>>**.
+1. Para validar as configurações de pipeline, clique em **Validar** na barra de ferramentas para o pipeline na parte superior. Verifique se não houve nenhum erro de validação. Para fechar o **Relatório de validação do pipeline** clique em **>>** .
 
 ### <a name="create-the-pipeline-gettablelistandtriggercopydata"></a>Criar o pipeline GetTableListAndTriggerCopyData
 
-Esse pipeline realiza duas etapas:
+Esse pipeline executa duas ações:
 
 * Pesquisa a tabela do sistema do Banco de Dados SQL do Azure para obter a lista de tabelas a serem copiadas.
 * Dispara o pipeline "IterateAndCopySQLTables" para fazer a cópia de dados propriamente dita.
 
 1. No painel esquerdo, clique em **+ (adição)** e clique em **Pipeline**.
-
-    ![Menu do novo pipeline](./media/tutorial-bulk-copy-portal/new-pipeline-menu.png)
-1. Na janela Propriedades, altere o nome do pipeline para **GetTableListAndTriggerCopyData**. 
+1. Na guia **Geral**, altere o nome do pipeline para **GetTableListAndTriggerCopyData**. 
 
 1. Na caixa de ferramentas **Atividades**, expanda **Geral** e arraste e solte a atividade de **Pesquisa** para a superfície do designer de pipeline e execute as seguintes etapas:
 
     1. Digite **LookupTableList** para **Nome**. 
     1. Digite **Recuperar a lista de tabelas do banco de dados SQL do Azure** para **Descrição**.
 
-        ![Atividade de pesquisa - página geral](./media/tutorial-bulk-copy-portal/lookup-general-page.png)
-1. Alterne para a página **Configurações** e siga estas etapas:
+1. Alterne para a guia **Configurações** e siga estas etapas:
 
     1. Selecione **AzureSqlDatabaseDataset** para **Conjunto de dados de origem**. 
     1. Selecione **Consulta** para **Usar consulta**. 
@@ -314,8 +294,7 @@ Esse pipeline realiza duas etapas:
         ![Atividade de pesquisa - página configurações](./media/tutorial-bulk-copy-portal/lookup-settings-page.png)
 1. Arraste e solte a atividade **Executar pipeline** da caixa de ferramentas Atividades para a superfície do designer do pipeline e defina o nome como **TriggerCopy**.
 
-    ![Atividade Executar pipeline - página geral](./media/tutorial-bulk-copy-portal/execute-pipeline-general-page.png)    
-1. Alterne para a página **Configurações** e siga estas etapas: 
+1. Alterne para a guia **Configurações** e siga estas etapas: 
 
     1. Selecione **IterateAndCopySQLTables** para **Pipeline invocado**. 
     1. Expanda a seção **Avançado**. 
@@ -324,27 +303,23 @@ Esse pipeline realiza duas etapas:
     1. Clique na caixa de texto VALOR -> selecione **Adicionar conteúdo dinâmico** abaixo -> insira `@activity('LookupTableList').output.value` como o valor do nome da tabela -> selecione **Concluir**. Você está configurando a lista de resultados da atividade de Pesquisa como uma entrada para o segundo pipeline. A lista de resultados contém a lista de tabelas cujos dados precisam ser copiados para o destino. 
 
         ![Atividade Executar pipeline - página de configurações](./media/tutorial-bulk-copy-portal/execute-pipeline-settings-page.png)
-1. **Conecte** a atividade de **Pesquisa** à atividade **Executar pipeline** arrastando a **caixa verde** associada à atividade de Pesquisa à esquerda da atividade Executar pipeline.
+1. Para **Conectar** a atividade de **Pesquisa** à atividade **Executar Pipeline**, arraste a **caixa verde** associada à atividade de Pesquisa à esquerda da atividade Executar Pipeline.
 
     ![Conecte as atividades de Pesquisa e Executar pipeline](./media/tutorial-bulk-copy-portal/connect-lookup-execute-pipeline.png)
-1. Para validar o pipeline, clique em **Validar** na barra de ferramentas. Confirme se não houver nenhum erro de validação. Para fechar o **Relatório de validação do pipeline** clique em **>>**.
+1. Para validar o pipeline, clique em **Validar** na barra de ferramentas. Confirme se não houver nenhum erro de validação. Para fechar o **Relatório de validação do pipeline** clique em **>>** .
 
 1. Para publicar as entidades (conjuntos de dados, pipelines, etc.) no serviço Data Factory, clique em **Publicar tudo** na parte superior da janela. Aguarde até que a publicação seja bem-sucedida. 
 
 ## <a name="trigger-a-pipeline-run"></a>Disparar uma execução de pipeline
 
-Vá até o pipeline **GetTableListAndTriggerCopyData**, clique em **Disparar** e clique em **Disparar agora**. 
-
-![Disparar agora](./media/tutorial-bulk-copy-portal/trigger-now.png)
+Vá até o pipeline **GetTableListAndTriggerCopyData**, clique em **Disparar** e então clique em **Disparar Agora**. 
 
 ## <a name="monitor-the-pipeline-run"></a>Monitorar a execução de pipeline
 
 1. Alterne para a guia **Monitorar**. Clique em **Atualizar** até que você veja as execuções para ambos os pipelines em sua solução. Continue atualizando a lista até que você veja o status **Bem-sucedido**. 
 
-    ![Execuções de pipeline](./media/tutorial-bulk-copy-portal/pipeline-runs.png)
-1. Para exibir execuções de atividade associadas ao pipeline de GetTableListAndTriggerCopyData, clique no primeiro link no link de Ações para esse pipeline. Você deve ver duas execuções de atividade para essa execução de pipeline. 
+1. Para exibir execuções de atividade associadas ao pipeline de **GetTableListAndTriggerCopyData**, clique no primeiro link no link de Ações para esse pipeline. Você deve ver duas execuções de atividade para essa execução de pipeline. 
 
-    ![Execuções de atividade](./media/tutorial-bulk-copy-portal/activity-runs-1.png)    
 1. Para exibir a saída da atividade de **Pesquisa**, clique no link da coluna **Saída** para essa atividade. Você pode maximizar e restaurar a janela **Saída**. Depois de revisar, clique em **X** para fechar a janela **Saída**.
 
     ```json
@@ -400,9 +375,8 @@ Vá até o pipeline **GetTableListAndTriggerCopyData**, clique em **Disparar** e
         ]
     }
     ```    
-1. Para alternar novamente para a exibição de **Execuções de pipeline**, clique no link **Pipelines** na parte superior. Clique no link **Visualizar execuções de atividade** (primeiro link na coluna **Ações**) para o pipeline **IterateAndCopySQLTables**. Você deverá ver uma saída, conforme mostrado na seguinte imagem: Observe que há uma atividade de **Cópia** executada para cada tabela na saída da atividade **Pesquisa**. 
+1. Para alternar novamente para a exibição de **Execuções de pipeline**, clique no link **Pipelines** na parte superior. Clique no link **Visualizar execuções de atividade** (primeiro link na coluna **Ações**) para o pipeline **IterateAndCopySQLTables**. Observe que há uma execução de atividade de **Cópia** para cada tabela na saída da atividade **Pesquisa**. 
 
-    ![Execuções de atividade](./media/tutorial-bulk-copy-portal/activity-runs-2.png)
 1. Confirme que os dados foram copiados para o SQL Data Warehouse de destino usado neste tutorial. 
 
 ## <a name="next-steps"></a>Próximas etapas

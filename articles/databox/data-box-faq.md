@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: overview
-ms.date: 07/03/2019
+ms.date: 08/21/2019
 ms.author: alkohli
-ms.openlocfilehash: 8f090a3f07eba529fd39976545eb654083e637eb
-ms.sourcegitcommit: d3b1f89edceb9bff1870f562bc2c2fd52636fc21
+ms.openlocfilehash: f1a1a8a6b32567a1571c70e76a4ae6c570d27ca5
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/04/2019
-ms.locfileid: "67561404"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69900562"
 ---
 # <a name="azure-data-box-frequently-asked-questions"></a>Azure Data Box: Perguntas frequentes
 
@@ -185,6 +185,9 @@ a. Para o serviço Data Box, a Microsoft cuida do envio entre o datacenter do Az
 
 ### <a name="q-will-my-data-box-devices-cross-country-borders-during-shipping"></a>P. Meus dispositivos Data Box atravessarão fronteiras de países durante o envio?
 a. Todos os dispositivos Data Box são enviados do mesmo país de destino e não cruzarão fronteiras internacionais. A única exceção é para pedidos na União Europeia (UE), onde os dispositivos podem ser enviados de e para qualquer país da UE. Isso se aplica aos dispositivos Data Box e Data Box Heavy.
+
+### <a name="q-i-ordered-a-data-box-in-us-east-but-i-received-a-device-that-was-shipped-from-a-location-in-us-west-where-should-i-return-the-device-to"></a>P. Eu solicitei um Data Box no Leste dos EUA, mas recebi um dispositivo que foi enviado de um local no Oeste dos EUA. Para onde devo retornar o dispositivo?
+a. Tentamos entregar um dispositivo Data Box para você o mais rápido possível. Nós priorizamos a remessa de um datacenter mais próximo ao local da conta de armazenamento, mas enviaremos um dispositivo de qualquer datacenter do Azure que tenha estoque disponível. Seu Data Box deve ser retornado para o mesmo local de que foi enviado, conforme exibido na etiqueta de remessa.
 
 ### <a name="q-e-ink-display-is-not-showing-the-return-shipment-label-what-should-i-do"></a>P. A tela de papel eletrônico não está mostrando a etiqueta de remessa de devolução. O que devo fazer?
 a. Se a tela de papel eletrônico não mostrar a etiqueta de remessa de devolução, execute as seguintes etapas:

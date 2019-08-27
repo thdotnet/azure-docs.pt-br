@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 03/26/2019
 ms.author: lbosq
 ms.custom: seo-java-july2019
-ms.openlocfilehash: 58356db2fbdf53bbd16e6fd20de54e022afb38b3
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: cea53aefae2e559b7874b1235e4f952fe46ea642
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68736656"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69509619"
 ---
 # <a name="quickstart-create-a-graph-database-in-azure-cosmos-db-using-the-java-sdk"></a>Início Rápido: Criar um banco de dados de grafo no Azure Cosmos DB usando o SDK do Java 
 
@@ -106,7 +106,7 @@ Os snippets de código a seguir são todos obtidos do arquivo C:\git-samples\azu
 
 Agora, volte ao Portal do Azure para obter as informações de conexão e copiá-las para o aplicativo. Essas configurações permitem que seu aplicativo se comunique com o banco de dados hospedado.
 
-1. No [Portal do Azure](https://portal.azure.com/), clique em **Chaves**. 
+1. No [portal do Azure](https://portal.azure.com/), selecione **Chaves**. 
 
     Copie a primeira parte do valor do URI.
 
@@ -165,14 +165,14 @@ Agora, volte ao Portal do Azure para obter as informações de conexão e copiá
     
     Se ocorrerem erros de tempo limite, verifique se você atualizou as informações de conexão corretamente em [Atualizar suas informações de conexão](#update-your-connection-information) e também tente executar o último comando novamente. 
     
-    Após o programa parar, pressione Enter e volte para o Portal do Azure no seu navegador da Internet. 
+    Depois que o programa for interrompido, selecione Enter e, em seguida, alterne novamente para o portal do Azure no navegador da Internet. 
 
 <a id="add-sample-data"></a>
 ## <a name="review-and-add-sample-data"></a>Revisar e adicionar dados de exemplo
 
 Agora, você pode voltar para o Data Explorer, ver os vértices adicionados ao grafo e acrescentar pontos de dados adicionais.
 
-1. Clique em **Data Explorer**, expanda **grafo de exemplo**, clique em **Grafo** e em **Aplicar Filtro**. 
+1. Selecione **Data Explorer**, expanda **sample-graph**, selecione **Grafo** e, em seguida, selecione **Aplicar Filtro**. 
 
    ![Criar novos documentos no Data Explorer no portal do Azure](./media/create-graph-java/azure-cosmosdb-data-explorer-expanded.png)
 
@@ -180,13 +180,13 @@ Agora, você pode voltar para o Data Explorer, ver os vértices adicionados ao g
 
    ![Novos vértices no grafo no Data Explorer no portal do Azure](./media/create-graph-java/azure-cosmosdb-graph-explorer-new.png)
 
-3. Vamos adicionar alguns novos usuários. Clique no botão **Novo Vértice** para adicionar dados ao grafo.
+3. Vamos adicionar alguns novos usuários. Selecione **Novo Vértice** para adicionar dados ao grafo.
 
    ![Criar novos documentos no Data Explorer no portal do Azure](./media/create-graph-java/azure-cosmosdb-data-explorer-new-vertex.png)
 
 4. Na caixa de diálogo, insira *person*.
 
-5. Clique em **Adicionar propriedade** para adicionar cada uma das propriedades a seguir. Observe que você pode criar propriedades exclusivas para cada pessoa no grafo. Somente a chave da id é necessária.
+5. Selecione **Adicionar propriedade** para adicionar cada uma das propriedades a seguir. Observe que você pode criar propriedades exclusivas para cada pessoa no grafo. Somente a chave da id é necessária.
 
     chave|value|Observações
     ----|----|----
@@ -197,13 +197,13 @@ Agora, você pode voltar para o Data Explorer, ver os vértices adicionados ao g
     > [!NOTE]
     > Neste início rápido, você criou uma coleção não particionada. No entanto, se você criar uma coleção particionada especificando uma chave de partição durante a criação da coleção, então, precisará incluir a chave de partição como uma chave em cada novo vértice. 
 
-6. Clique em **OK**. Talvez seja necessário expandir a tela para ver **OK** na parte inferior da tela.
+6. Selecione **OK**. Talvez seja necessário expandir a tela para ver **OK** na parte inferior da tela.
 
-7. Clique em **Novo Vértice** novamente e acrescente um novo usuário. 
+7. Selecione **Novo Vértice** novamente e adicione um novo usuário. 
 
 8. Digite um rótulo de *pessoa*.
 
-9. Clique em **Adicionar propriedade** para adicionar cada uma das propriedades a seguir:
+9. Selecione **Adicionar propriedade** para adicionar cada uma das seguintes propriedades:
 
     chave|value|Observações
     ----|----|----
@@ -211,17 +211,17 @@ Agora, você pode voltar para o Data Explorer, ver os vértices adicionados ao g
     gender|masculino| 
     escola|MIT| 
 
-10. Clique em **OK**. 
+10. Selecione **OK**. 
 
-11. Clique no botão **Aplicar Filtro** com o filtro `g.V()` padrão para exibir todos os valores no gráfico. Todos os usuários agora aparecem na lista **Resultados**. 
+11. Selecione o botão **Aplicar Filtro** com o filtro `g.V()` padrão para exibir todos os valores no grafo. Todos os usuários agora aparecem na lista **Resultados**. 
 
-    Conforme você adiciona mais dados, pode usar os filtros para limitar os resultados. Por padrão, o Data Explorer usa `g.V()` para recuperar todos os vértices em um grafo. Você pode alterá-lo para outra [consulta de grafo](tutorial-query-graph.md), como `g.V().count()`, para retornar uma contagem de todos os vértices no grafo no formato JSON. Se você tiver alterado o filtro, altere o filtro de volta para `g.V()` e clique em **Aplicar Filtro** para exibir todos os resultados novamente.
+    Conforme você adiciona mais dados, pode usar os filtros para limitar os resultados. Por padrão, o Data Explorer usa `g.V()` para recuperar todos os vértices em um grafo. Você pode alterá-lo para outra [consulta de grafo](tutorial-query-graph.md), como `g.V().count()`, para retornar uma contagem de todos os vértices no grafo no formato JSON. Se você alterou o filtro, altere o filtro novamente para `g.V()` e selecione **Aplicar Filtro** para exibir todos os resultados novamente.
 
-12. Agora, você pode conectar rakesh e ashley. Verifique se **ashley** está selecionada na lista **Resultados**, em seguida, clique em ![Alterar o destino de um vértice em um gráfico](./media/create-graph-java/edit-pencil-button.png) ao lado de **Destinos**, no lado inferior direito. Talvez seja necessário ampliar a janela para ver o botão.
+12. Agora, você pode conectar rakesh e ashley. Verifique se **ashley** está selecionada na lista **Resultados** e, em seguida, selecione ![Alterar o destino de um vértice em um grafo](./media/create-graph-java/edit-pencil-button.png) ao lado de **Destinos**, no lado inferior direito. Talvez seja necessário ampliar a janela para ver o botão.
 
     ![Alterar o destino de um vértice em um grafo](./media/create-graph-java/azure-cosmosdb-data-explorer-edit-target.png)
 
-13. Na caixa **Destino**, digite *rakesh* e na caixa **Rótulo da aresta**, digite *conhece*, em seguida, clique na caixa de seleção.
+13. Na caixa **Destino**, insira *rakesh*. Na caixa **Rótulo de borda**, insira *knows* e, em seguida, marque a caixa de seleção.
 
     ![Adicionar uma conexão entre ashley e rakesh no Data Explorer](./media/create-graph-java/azure-cosmosdb-data-explorer-set-target.png)
 

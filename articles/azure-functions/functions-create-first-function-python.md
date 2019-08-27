@@ -11,16 +11,14 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: python
 manager: jeconnoc
-ms.openlocfilehash: 58f5cfd3718720cafc922bbd7b974a353e0d9d02
-ms.sourcegitcommit: 85b3973b104111f536dc5eccf8026749084d8789
+ms.openlocfilehash: 5b90702f89af260a67b69bf96c2e079a45298723
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68722792"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69575449"
 ---
 # <a name="create-an-http-triggered-function-in-azure"></a>Criar uma função disparada por HTTP no Azure
-
-[!INCLUDE [functions-python-preview-note](../../includes/functions-python-preview-note.md)]
 
 Este artigo mostra como usar ferramentas de linha de comando para criar um projeto do Python executado no Azure Functions. A função que será criada é disparada por solicitações HTTP. Por fim, você publicará seu projeto para ser executado como uma [função sem servidor](functions-scale.md#consumption-plan) no Azure.
 
@@ -32,7 +30,7 @@ Antes de começar, é necessário ter o seguinte:
 
 + Instale o [Python 3.6](https://www.python.org/downloads/).
 
-+ Instale o [Azure Functions Core Tools](./functions-run-local.md#v2) versão 2.6.1071 ou posterior.
++ Instale o [Azure Functions Core Tools](./functions-run-local.md#v2) versão 2.7.1575 ou posterior.
 
 + Instalar a [CLI do Azure](/cli/azure/install-azure-cli) versão 2.x ou posterior.
 
@@ -40,9 +38,9 @@ Antes de começar, é necessário ter o seguinte:
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="create-and-activate-a-virtual-environment"></a>Criar e ativar um ambiente virtual
+## <a name="create-and-activate-a-virtual-environment-optional"></a>Criar e ativar um ambiente virtual (opcional)
 
-Para desenvolver e testar as funções do Python localmente, é necessário trabalhar em um ambiente do Python 3.6. Execute os seguintes comandos para criar e ativar um ambiente virtual chamado `.venv`.
+Para desenvolver e testar as funções do Python localmente, é recomendável usar um ambiente do Python 3.6. Execute os seguintes comandos para criar e ativar um ambiente virtual chamado `.venv`.
 
 ### <a name="bash"></a>Bash:
 
@@ -81,8 +79,6 @@ Navegue até a nova pasta MyFunctionProj:
 ```console
 cd MyFunctionProj
 ```
-
-Em seguida, você atualizará o arquivo host.json para habilitar pacotes de extensão.  
 
 ## <a name="create-a-function"></a>Criar uma função
 
@@ -165,15 +161,19 @@ az functionapp create --resource-group myResourceGroup --os-type Linux \
 --consumption-plan-location westeurope  --runtime python \
 --name <APP_NAME> --storage-account  <STORAGE_NAME>
 ```
-
 > [!NOTE]
-> O Azure Functions, plano de Consumo para Linux, está atualmente em versão prévia e disponível apenas nas seguintes regiões: Oeste dos EUA, Leste dos EUA, Oeste da Europa, Asia Oriental. Além disso, os aplicativos do Linux e do Windows não podem ser hospedados no mesmo grupo de recursos. Se você tiver um grupo de recursos chamado `myResourceGroup` com um aplicativo de funções ou um aplicativo Web do Windows, você precisará usar um grupo de recursos diferente.
+> Os aplicativos do Linux e do Windows não podem ser hospedados no mesmo grupo de recursos. Se você tiver um grupo de recursos chamado `myResourceGroup` com um aplicativo de funções ou um aplicativo Web do Windows, você precisará usar um grupo de recursos diferente.
+
+Esse comando também provisionará uma instância do Azure Application Insights associada no mesmo grupo de recursos que pode ser usado para monitorar e exibir logs.
 
 Agora você está pronto para publicar seu projeto de funções local no aplicativo de funções no Azure.
 
 [!INCLUDE [functions-publish-project](../../includes/functions-publish-project.md)]
 
 [!INCLUDE [functions-test-function-code](../../includes/functions-test-function-code.md)]
+
+> [!NOTE]
+> Para exibir logs quase em tempo real para um aplicativo do Python publicado, é recomendável usar o [Application Insights Live Metrics Stream](functions-monitoring.md#streaming-logs)
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -11,16 +11,16 @@ ms.service: media-services
 ms.workload: media
 ms.topic: tutorial
 ms.custom: ''
-ms.date: 02/19/2019
+ms.date: 08/19/2019
 ms.author: juliako
-ms.openlocfilehash: cce424b11cc4cd587c6e7c50bc8bdf988004a43a
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.openlocfilehash: 58193a94d09dee5df611acf5d98c8661dd18abbb
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65550194"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69639978"
 ---
-# <a name="tutorial-stream-video-files---cli"></a>Tutorial: Transmitir arquivos de vídeo – CLI
+# <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---cli"></a>Tutorial: Codificar um arquivo remoto baseado em URL e transmitir o vídeo – CLI
 
 Este tutorial mostra como é fácil codificar e iniciar a transmissão de vídeos por streaming em vários navegadores e dispositivos usando os Serviços de Mídia do Azure e a CLI do Azure. Um conteúdo de entrada pode ser especificado usando HTTPS, URLs SAS ou caminhos para arquivos localizados no armazenamento de Blobs do Azure.
 

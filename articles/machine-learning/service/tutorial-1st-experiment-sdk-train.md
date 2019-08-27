@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Treinar seu primeiro modelo.'
+title: 'Tutorial: Treinar seu primeiro modelo de ML'
 titleSuffix: Azure Machine Learning service
 description: Neste tutorial, você aprende os padrões de design básicos no Serviço do Azure Machine Learning e treina um modelo scikit-learn com base no conjunto de dados de diabetes.
 services: machine-learning
@@ -10,14 +10,14 @@ author: trevorbye
 ms.author: trbye
 ms.reviewer: trbye
 ms.date: 07/20/2019
-ms.openlocfilehash: a3db70925d59f9d0e2793b04824b2e8606719dd4
-ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
+ms.openlocfilehash: 17fee1f01bf883aa2a9845fe4f2817fb806056dd
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68934229"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69516230"
 ---
-# <a name="tutorial-train-your-first-model"></a>Tutorial: Treinar seu primeiro modelo
+# <a name="tutorial-train-your-first-ml-model"></a>Tutorial: Treinar seu primeiro modelo de ML
 
 Este tutorial é **parte dois de uma série de tutoriais de duas partes**. No tutorial anterior, você [criou um workspace e escolheu um ambiente de desenvolvimento](tutorial-1st-experiment-sdk-setup.md). Neste tutorial, você aprende os padrões de design básicos no Serviço do Azure Machine Learning e treina um modelo scikit-learn com base no conjunto de dados de diabetes. Depois de concluir este tutorial, você terá o conhecimento prático do SDK para escalar verticalmente para o desenvolvimento de experimentos e fluxos de trabalho mais complexos.
 

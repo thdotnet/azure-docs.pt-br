@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/11/2019
-ms.openlocfilehash: dd28fb51a4fc3fbf3dfc893f2f5f159ccafdb4b3
-ms.sourcegitcommit: 64798b4f722623ea2bb53b374fb95e8d2b679318
+ms.openlocfilehash: 1e30650f932d15d23d7ffe7bd9b9fe07e9872511
+ms.sourcegitcommit: a3a40ad60b8ecd8dbaf7f756091a419b1fe3208e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67839299"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69891611"
 ---
 # <a name="tutorial-deploy-a-machine-learning-model-with-the-visual-interface"></a>Tutorial: Implantar um modelo de machine learning com a interface visual
 
@@ -83,11 +83,9 @@ Você pode testar e gerenciar seus serviços Web da interface visual navegando a
 
 1. Selecione o nome do serviço Web para exibir detalhes adicionais.
 
-     ![Captura de tela mostrando os detalhes adicionais disponíveis na exibição do serviço Web](./media/ui-tutorial-automobile-price-deploy/web-service-details.png)
-
 1. Selecione **Testar**.
 
-    ![Captura de tela mostrando a página de teste do serviço Web](./media/ui-tutorial-automobile-price-deploy/web-service-test.png)
+    [![Captura de tela mostrando a página de teste do serviço Web](./media/ui-tutorial-automobile-price-deploy/web-service-test.png)](./media/ui-tutorial-automobile-price-deploy/web-service-test.png#lightbox)
 
 1. Insira os dados de teste ou use os dados de exemplo preenchidos automaticamente e selecione **Testar**.
 
@@ -105,8 +103,6 @@ Encontre as chamadas REST de exemplo na guia **Consumir** da página de detalhes
 
 Navegue até a guia **Documentação da API** para encontrar mais detalhes sobre a API.
 
-  ![Captura de tela mostrando mais detalhes da API que os usuários podem encontrar na guia Documentação da API](./media/ui-tutorial-automobile-price-deploy/web-service-api.png)
-
 ## <a name="manage-models-and-deployments"></a>Gerenciar modelos e implantações
 
 Os modelos e as implantações de serviço Web criados na interface visual também podem ser gerenciados no workspace do Serviço do Azure Machine Learning.
@@ -119,11 +115,9 @@ Os modelos e as implantações de serviço Web criados na interface visual tamb�
 
     Nessa página, você verá mais detalhes sobre o modelo.
 
-    ![Captura de tela mostrando uma visão geral das estatísticas do teste no portal do Azure](./media/ui-tutorial-automobile-price-deploy/model-details.png)
-
 1. Selecione **Implantações**, e serão listados todos os serviços Web que usam o modelo. Selecione o nome do serviço Web, e ele acessará a página de detalhes do serviço Web. Nessa página, você pode obter informações mais detalhadas do serviço Web.
 
-    ![Captura de tela do relatório de execução detalhado](./media/ui-tutorial-automobile-price-deploy/deployment-details.png)
+    [![Captura de tela do relatório de execução detalhado](./media/ui-tutorial-automobile-price-deploy/deployment-details.png)](./media/ui-tutorial-automobile-price-deploy/deployment-details.png#lightbox)
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 

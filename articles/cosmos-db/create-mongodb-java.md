@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 12/26/2018
 ms.author: rimman
 ms.custom: seo-java-august2019
-ms.openlocfilehash: 701e6f0e93fe853a3703f9923af4dffd16090c80
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 693e58cf578b5b2374a1d8fc63da8bb1a77faf1b
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: HT
 ms.contentlocale: pt-BR
 ms.lasthandoff: 08/15/2019
-ms.locfileid: "69036803"
+ms.locfileid: "69515835"
 ---
 # <a name="quickstart-build-a-web-app-using-azure-cosmos-dbs-api-for-mongodb-and-java-sdk"></a>Início Rápido: Criar um aplicativo Web usando a API do Azure Cosmos DB para MongoDB e o SDK do Java
 
@@ -114,7 +114,7 @@ Todos os snippets de código a seguir são retirados do arquivo Program.java.
 
 Agora, volte ao portal do Azure para obter informações sobre a cadeia de conexão e copiá-las para o aplicativo.
 
-1. Da conta, selecione **Início Rápido**, selecione Java e copie a cadeia de conexão para a área de transferência
+1. Da conta, selecione **Início Rápido**, selecione **Java** e, em seguida, copie a cadeia de conexão para a área de transferência.
 
 2. Abra o arquivo `Program.java`, substitua o argumento para o construtor MongoClientURI pela cadeia de conexão. Agora, você atualizou o aplicativo com todas as informações necessárias para se comunicar com o Azure Cosmos DB. 
     

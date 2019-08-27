@@ -6,17 +6,17 @@ manager: timlt
 ms.service: iot-hub
 services: iot-hub
 ms.topic: tutorial
-ms.date: 07/11/2018
+ms.date: 07/24/2019
 ms.author: robinsh
 ms.custom: mvc
-ms.openlocfilehash: 40a7bba99068ebc2368e413199cf966bd2e4f25c
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 308e452f33ded9be3b88ff370ed34326de54895c
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60002894"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876971"
 ---
-# <a name="tutorial-perform-manual-failover-for-an-iot-hub-public-preview"></a>Tutorial: Executar failover manual para um hub IoT (versão prévia pública)
+# <a name="tutorial-perform-manual-failover-for-an-iot-hub"></a>Tutorial: Executar failover manual para um Hub IoT
 
 Failover manual é um recurso do serviço Hub IoT que permite que os clientes façam [failover](https://en.wikipedia.org/wiki/Failover) das operações de seu hub de uma região primária para a região do Azure com emparelhamento geográfico correspondente. O failover manual pode ser feito em caso de um desastre regional ou uma interrupção de serviço estendida. Você também pode executar um failover planejado para testar recursos de recuperação de desastre, embora seja recomendável usar um hub IoT de teste em vez de um na produção. O recurso de failover manual é oferecido aos clientes sem custo adicional.
 
@@ -47,7 +47,7 @@ Neste tutorial, você executa as seguintes tarefas:
 
     **Grupo de Recursos**: clique em **Criar novo** e especifique **ManlFailRG** como o nome do grupo de recursos.
 
-    **Região**: selecione uma região perto de você que seja parte da versão prévia. Este tutorial usa `westus2`. Um failover só pode ser executado entre regiões do Azure emparelhadas geograficamente. A região geográfica emparelhada com westus2 é WestCentralUS.
+    Em **Região**, selecione uma região próxima de você. Este tutorial usa `West US 2`. Um failover só pode ser executado entre regiões do Azure emparelhadas geograficamente. A região geográfica emparelhada com Oeste dos EUA 2 é a Centro-oeste dos EUA.
     
    **Nome do Hub IoT**: especifique um nome para o hub IoT. O nome do hub deve ser globalmente exclusivo. 
 
@@ -65,33 +65,38 @@ Observe que há um limite de dois failovers e dois failbacks por dia para um hub
 
 1. Clique em **Grupos de recursos** e selecione o grupo de recursos **ManlFailRG**. Clique no hub na lista de recursos. 
 
-2. Em **Resiliência** no painel do Hub IoT, clique em **Failover manual (versão prévia)**. Observe que se seu hub não estiver definido em uma região válida, a opção de failover manual será desabilitada.
+1. Em **Configurações** no painel de Hub IoT, clique em **Failover**.
 
    ![Captura de tela mostrando o painel de propriedades do Hub IoT](./media/tutorial-manual-failover/trigger-failover-01.png)
 
-3. No painel Failover manual, você vê a **localização primária** e a **localização secundária** do Hub IoT. A localização primária é inicialmente definida como o local em que você especificou quando criou o hub IoT e sempre indica o local em que o hub está ativo no momento. A localização secundária é a [região do Azure emparelhada geograficamente ](../best-practices-availability-paired-regions.md) padrão que está emparelhada com o local principal. Você não pode alterar os valores de localização. Para este tutorial, a localização primária é `westus2` e a localização secundária é `WestCentralUS`.
+1. No painel Failover manual, você vê o **Local atual** e o **Local de failover**. O local atual sempre indica o local no qual o hub está ativo no momento. A localização de failover é a [região do Azure emparelhada geograficamente](../best-practices-availability-paired-regions.md) padrão que está emparelhada com o local atual. Você não pode alterar os valores de localização. Para este tutorial, a localização atual é `West US 2` e a localização de failover é `West Central US`.
 
    ![Captura de tela mostrando o painel Failover Manual](./media/tutorial-manual-failover/trigger-failover-02.png)
 
-3. Na parte superior do painel Failover Manual, clique em **Iniciar failover**. Você verá o painel **Confirmar failover manual**. Preencha o nome do hub IoT para confirmar que ele será o objeto do failover. Para iniciar o failover, clique em **OK**.
+1. Na parte superior do painel Failover Manual, clique em **Iniciar failover**. 
+
+1. No painel de confirmação, preencha o nome do Hub IoT para confirmar que ele será o objeto do failover. Em seguida, para iniciar o failover, clique em **Failover**.
 
    O tempo que leva para realizar o failover manual é proporcional ao número de dispositivos que estão registrados no hub. Por exemplo, se você tiver 100 mil dispositivos, pode levar 15 minutos, mas se tiver cinco milhões de dispositivos, pode levar uma hora ou mais.
 
-4. No painel **Confirmar failover manual**, preencha o nome do hub IoT para confirmar que ele será o objeto do failover. Em seguida, para iniciar o failover, clique em OK. 
-
    ![Captura de tela mostrando o painel Failover Manual](./media/tutorial-manual-failover/trigger-failover-03-confirm.png)
 
-   Enquanto o processo de failover manual está em execução, há uma faixa no painel Failover Manual que informa que um failover manual está em andamento. 
+   Enquanto o processo de failover manual está em execução, uma faixa é exibida para informar que um failover manual está em andamento. 
 
    ![Captura de tela mostrando Failover Manual em andamento](./media/tutorial-manual-failover/trigger-failover-04-in-progress.png)
 
-   Se você fechar o painel do Hub IoT e abri-lo novamente clicando no painel Grupo de Recursos, verá uma faixa informando que o hub não está ativo. 
+   Se você fechar o painel do Hub IoT e abri-lo novamente clicando no painel Grupo de Recursos, verá uma faixa informando que o hub está no meio de um failover manual. 
 
-   ![Captura de tela mostrando o Hub IoT inativo](./media/tutorial-manual-failover/trigger-failover-05-hub-inactive.png)
+   ![Captura de tela mostrando o failover do Hub IoT em andamento](./media/tutorial-manual-failover/trigger-failover-05-hub-inactive.png)
 
-   Depois de concluído, as regiões primária e secundária na página Failover Manual são invertidas e o hub fica ativo novamente. Neste exemplo, a localização primária é agora `WestCentralUS` e a localização secundária, `westus2`. 
+   Depois de concluído, as regiões atual e de failover na página Failover Manual são invertidas e o hub fica ativo novamente. Neste exemplo, a localização atual é agora `WestCentralUS` e a localização de failover, `West US 2`. 
 
    ![Captura de tela mostrando que o failover foi concluído](./media/tutorial-manual-failover/trigger-failover-06-finished.png)
+
+   A página de visão geral também mostra uma faixa indicando que o failover foi concluído e que o Hub IoT está sendo executado em `West Central US`.
+
+   ![Captura de tela mostrando que o failover foi concluído na página de visão geral](./media/tutorial-manual-failover/trigger-failover-06-finished-overview.png)
+
 
 ## <a name="perform-a-failback"></a>Executar um failback 
 
@@ -101,15 +106,15 @@ Um failback é executado da mesma forma que um failover manual. Estas são as et
 
 1. Para executar um failback, volte para o painel Hub Iot Hub de seu hub Iot.
 
-2. Em **Resiliência** no painel do Hub IoT, clique em **Failover manual (versão prévia)**. 
+2. Em **Configurações** no painel de Hub IoT, clique em **Failover**. 
 
-3. Na parte superior do painel Failover Manual, clique em **Iniciar failover**. Você verá o painel **Confirmar failover manual**. 
+3. Na parte superior do painel Failover Manual, clique em **Iniciar failover**. 
 
-4. No painel **Confirmar failover manual**, preencha o nome do hub IoT para confirmar que ele será o objeto do failback. Em seguida, para iniciar o failback, clique em OK. 
+4. No painel de confirmação, preencha o nome do Hub IoT para confirmar que ele será o objeto do failback. Em seguida, para iniciar o failback, clique em OK. 
 
-   ![Captura de tela da solicitação de failback manual](./media/tutorial-manual-failover/trigger-failback-01-regions.png)
+   ![Captura de tela da solicitação de failback manual](./media/tutorial-manual-failover/trigger-failover-03-confirm.png)
 
-   As faixas são exibidas conforme explicado na seção Executar um failover. Após concluir o failback, ele mostra novamente `westus2` como a localização principal e `WestCentralUS` como a localização secundária, conforme definido originalmente.
+   As faixas são exibidas conforme explicado na seção Executar um failover. Após concluir o failback, ele mostra novamente `West US 2` como a localização atual e `West Central US` como a localização de failover, conforme definido originalmente.
 
 ## <a name="clean-up-resources"></a>Limpar recursos 
 

@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 05/23/2019
 ms.author: mjbrown
-ms.openlocfilehash: f465ac91936b766d2c19ea8efd67b3acc8df6d75
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 20a9ca8e28961a6dc49947a22f745424961b4a3f
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66243938"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69615272"
 ---
 # <a name="how-to-write-stored-procedures-and-triggers-in-azure-cosmos-db-by-using-the-javascript-query-api"></a>Como escrever procedimentos armazenados e gatilhos no Azure Cosmos DB usando a API de consulta do JavaScript
 
@@ -19,10 +19,10 @@ O Azure Cosmos DB permite que você execute consultas otimizadas usando uma inte
 
 ## <a id="stored-procedures"></a>Procedimento armazenado usando a API de consulta do JavaScript
 
-O exemplo de código a seguir mostra como a API de consulta JavaScript é usada no contexto de um procedimento armazenado. O procedimento armazenado insere um item do Azure Cosmos DB especificado por um parâmetro de entrada e atualiza um documento de metadados usando o método `__.filter()`, com minSize, maxSize e totalSize com base na propriedade de tamanho do item de entrada.
+O exemplo de código a seguir mostra como a API de consulta JavaScript é usada no contexto de um procedimento armazenado. O procedimento armazenado insere um item do Azure Cosmos especificado por um parâmetro de entrada e atualiza um documento de metadados usando o método `__.filter()`, com minSize, maxSize e totalSize com base na propriedade de tamanho do item de entrada.
 
 > [!NOTE]
-> `__` (double-underscore) é um alias para `getContext().getCollection()` ao usar a API de consulta do JavaScript.
+> `__` (sublinhado duplo) é um alias para `getContext().getCollection()` ao usar a API de consulta do JavaScript.
 
 ```javascript
 /**

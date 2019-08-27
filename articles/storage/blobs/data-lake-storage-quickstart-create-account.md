@@ -5,15 +5,15 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: quickstart
-ms.date: 07/19/2019
+ms.date: 08/19/2019
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: f7c83e67c2162561aa579d38116f8ce01fceda9a
-ms.sourcegitcommit: fe50db9c686d14eec75819f52a8e8d30d8ea725b
+ms.openlocfilehash: e820ed25cae23a2dad37c807eb3e188161eaecbf
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69014374"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69617688"
 ---
 # <a name="create-an-azure-data-lake-storage-gen2-storage-account"></a>Criar uma conta de armazenamento do Azure Data Lake Storage Gen2
 
@@ -28,7 +28,7 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 |           | Pré-requisito |
 |-----------|--------------|
 |Portal     | Nenhum         |
-|PowerShell | Este início rápido requer o módulo PowerShell Az.Storage versão **0.7** ou posterior. Para localizar a versão atual, execute o comando `Get-Module -ListAvailable Az.Storage`. Se, após executar esse comando, nenhum resultado for exibido ou se uma versão diferente da **0.7** for exibida, será necessário atualizar seu módulo PowerShell. Confira a seção [Atualizar seu módulo PowerShell](#upgrade-your-powershell-module) deste guia.
+|PowerShell | Este início rápido requer o módulo PowerShell Az.Storage versão **0.7** ou posterior. Para localizar a versão atual, execute o comando `Get-Module -ListAvailable Az.Storage`. Se, após a execução desse comando, nenhum resultado for exibido ou se uma versão inferior a **0.7** for exibida, você precisará atualizar o módulo do PowerShell. Confira a seção [Atualizar seu módulo PowerShell](#upgrade-your-powershell-module) deste guia.
 |CLI        | Você pode entrar no Azure e executar comandos da CLI do Azure de uma das duas formas a seguir: <ul><li>Você pode executar comandos da CLI de dentro do portal do Azure, no Azure Cloud Shell </li><li>Você pode instalar a CLI e executar comandos da CLI localmente</li></ul>|
 
 Ao trabalhar na linha de comando, você tem a opção de executar o Azure Cloud Shell ou instalar a CLI localmente.

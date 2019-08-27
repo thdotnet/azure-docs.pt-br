@@ -4,23 +4,23 @@ description: Este tutorial explica como configurar os recursos de nuvem e de com
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 06/06/2019
+ms.date: 08/15/2019
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 94a287cd996bd18b757620254540f8dc0df499e8
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 66fa7c2f61af250e4b63b67f6941bed768bd94c4
+ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67051853"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69541913"
 ---
 # <a name="tutorial-develop-iot-edge-modules-for-windows-devices"></a>Tutorial: Desenvolver módulos do IoT Edge para dispositivos Windows
 
 Use o Visual Studio para desenvolver e implantar código em dispositivos Windows que executam o IoT Edge.
 
-No início rápido, você criou um dispositivo IoT Edge usando uma máquina virtual do Windows e implantou um módulo predefinido com base no Azure Marketplace. Este tutorial explica o que é necessário para desenvolver e implantar seu próprio código em um dispositivo IoT Edge. Este tutorial é um pré-requisito útil para todos os outros tutoriais, que se aprofundarão nas linguagens de programação específicas ou nos serviços do Azure. 
+No início rápido, você criou um dispositivo IoT Edge usando uma máquina virtual do Windows e implantou um módulo predefinido com base no Azure Marketplace. Este tutorial explica o que é necessário para desenvolver e implantar seu próprio código em um dispositivo IoT Edge. Este tutorial é um pré-requisito útil para os outros tutoriais, que se aprofundam nas linguagens de programação específicas ou nos serviços do Azure. 
 
 Este tutorial usa o exemplo de como implantar um **módulo do C# em um dispositivo Windows**. Este exemplo foi escolhido porque é o cenário de desenvolvimento mais comum. Se você está interessado em desenvolver em um idioma diferente ou se planeja implantar os serviços do Azure como módulos, este tutorial ainda será útil para saber mais sobre as ferramentas de desenvolvimento. Após entender os conceitos de desenvolvimento, será possível escolher a linguagem de sua preferência ou o serviço do Azure nos quais se aprofundar. 
 
@@ -126,26 +126,25 @@ A extensão Ferramentas do Azure IoT Edge oferece modelos de projeto para todas 
 3. Na janela Configurar o novo projeto, renomeie o projeto e a solução para algo descritivo como **CSharpTutorialApp**. Clique em **Criar** para criar o projeto.
 
    ![Configurar um novo projeto do Azure IoT Edge](./media/tutorial-develop-for-windows/configure-project.png)
- 
 
-4. No aplicativo IoT Edge e na janela do módulo, configure seu projeto com os seguintes valores: 
+4. Na janela Adicionar Módulo, configure o projeto com os seguintes valores: 
 
    | Campo | Valor |
    | ----- | ----- |
-   | Selecione um modelo | Selecione **Módulo em C#** . | 
-   | Nome do projeto de módulo | Aceite o **IoTEdgeModule1** padrão. | 
-   | Repositório de imagens do Docker | Um repositório de imagem inclui o nome do registro de contêiner e o nome da imagem de contêiner. Sua imagem de contêiner é populada previamente com base no valor de nome do projeto de módulo. Substitua **localhost:5000** pelo valor do servidor de logon do seu registro de contêiner do Azure. Você pode recuperar o servidor de logon da página Visão Geral do seu registro de contêiner no portal do Azure. <br><br> O repositório de imagem final se parece com \<nome do registro\>.azurecr.io/iotedgemodule1. |
+   | Modelo do Visual Studio | Selecione **Módulo em C#** . | 
+   | Nome do Módulo | Aceite o **IotEdgeModule1** padrão. | 
+   | URL do repositório | Um repositório de imagem inclui o nome do registro de contêiner e o nome da imagem de contêiner. Sua imagem de contêiner é populada previamente com base no valor de nome do projeto de módulo. Substitua **localhost:5000** pelo valor do servidor de logon do seu registro de contêiner do Azure. Você pode recuperar o servidor de logon da página Visão Geral do seu registro de contêiner no portal do Azure. <br><br> O repositório de imagem final se parece com \<nome do registro\>.azurecr.io/iotedgemodule1. |
 
-   ![Configure seu projeto para o dispositivo de destino, tipo de módulo e registro de contêiner](./media/tutorial-develop-for-windows/add-module-to-solution.png)
+      ![Configure seu projeto para o dispositivo de destino, tipo de módulo e registro de contêiner](./media/tutorial-develop-for-windows/add-module-to-solution.png)
 
-5. Selecione **Sim** para aplicar suas alterações. 
+5. Selecione **Adicionar** para criar o módulo. 
 
 Depois que o novo projeto for carregado na janela do Visual Studio, aguarde um pouco para se familiarizar com os arquivos criados: 
 
 * Um projeto de IoT Edge chamado **CSharpTutorialApp**.
-    * A pasta **módulos** contém ponteiros para os módulos inclusos no projeto. Nesse caso, ela deve ser apenas IoTEdgeModule1. 
+    * A pasta **módulos** contém ponteiros para os módulos inclusos no projeto. Nesse caso, ela deve ser apenas IotEdgeModule1. 
     * O arquivo **deployment.template.json** é o modelo para ajudar você a criar um manifesto de implantação. Um *manifesto de implantação* é um arquivo que define exatamente quais módulos você deseja implantar em um dispositivo, como eles devem ser configurados e como eles podem se comunicar entre si e com a nuvem. 
-* Um projeto de módulo do IoT Edge chamado **IoTEdgeModule1**.
+* Um projeto de módulo do IoT Edge chamado **IotEdgeModule1**.
     * O arquivo **program.cs** contém o código do módulo C# padrão que vem com o modelo de projeto. O módulo padrão obtém a entrada de uma fonte e a passa para o Hub IoT. 
     * O arquivo **module.json** apresenta detalhes sobre o módulo, incluindo o repositório de imagem completo, a versão da imagem e qual Dockerfile usar para cada plataforma compatível.
 
@@ -201,7 +200,7 @@ O código de exemplo C# que vem com o modelo de projeto usa a [classe ModuleClie
 
 7. Localize a propriedade **routes** das propriedades desejadas de $edgeHub. 
 
-   Uma das funções do módulo do hub do IoT Edge é rotear as mensagens entre todos os módulos em uma implantação. Examine os valores na propriedade routes. A primeira rota, **IotEdgeModule1ToIoTHub**, usa um caractere curinga ( **\*** ) para incluir qualquer mensagem recebida de qualquer fila de saída no módulo IoTEdgeModule1. Essas mensagens entram em *$upstream*, que é um nome reservado que indica o Hub IoT. A segunda rota, **sensorToIotEdgeModule1**, usa mensagens provenientes do módulo tempSensor e roteia-as para a fila de entrada *input1* do módulo IotEdgeModule1. 
+   Uma das funções do módulo do hub do IoT Edge é rotear as mensagens entre todos os módulos em uma implantação. Examine os valores na propriedade routes. A primeira rota, **IotEdgeModule1ToIoTHub**, usa um caractere curinga ( **\*** ) para incluir qualquer mensagem recebida de qualquer fila de saída no módulo IotEdgeModule1. Essas mensagens entram em *$upstream*, que é um nome reservado que indica o Hub IoT. A segunda rota, **sensorToIotEdgeModule1**, usa mensagens provenientes do módulo tempSensor e roteia-as para a fila de entrada *input1* do módulo IotEdgeModule1. 
 
    ![Examinar rotas em deployment.template.json](./media/tutorial-develop-for-windows/deployment-routes.png)
 

@@ -7,12 +7,12 @@ ms.date: 05/06/2019
 ms.topic: overview
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: d78c640f4269c799d3d371e6dd9db477faf96694
-ms.sourcegitcommit: 47ce9ac1eb1561810b8e4242c45127f7b4a4aa1a
+ms.openlocfilehash: faad0a0166c1b11f51f814bb6ce3351d7a017239
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67807407"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69900020"
 ---
 # <a name="overview-of-the-azure-resource-graph-service"></a>Visão geral do serviço Azure Resource Graph
 
@@ -62,6 +62,9 @@ Para usar o Resource Graph, você deve ter os direitos apropriados no RBAC ([con
 
 > [!NOTE]
 > O Resource Graph usa as assinaturas disponíveis para uma entidade de segurança durante o logon. Para ver os recursos de uma nova assinatura adicionada durante uma sessão ativa, a entidade de segurança deve atualizar o contexto. Essa ação ocorre automaticamente ao fazer logoff e logon.
+
+A CLI do Azure e o Azure PowerShell usam assinaturas às quais o usuário tem acesso. Ao usar a API REST diretamente, a lista de assinaturas é fornecida pelo usuário. Se o usuário tiver acesso a uma das assinaturas na lista, os resultados da consulta serão retornados para as assinaturas às quais o usuário tem acesso. Esse comportamento é o mesmo que a chamada de [Grupos de Recursos – Lista](/rest/api/resources/resourcegroups/list) \- você obtém os grupos de recursos aos quais tem acesso sem nenhuma indicação de que o resultado pode ser parcial.
+Se não houver nenhuma assinatura na lista de assinaturas à qual o usuário tenha direitos apropriados, a resposta será um _403_ (Proibido).
 
 ## <a name="throttling"></a>Limitação
 

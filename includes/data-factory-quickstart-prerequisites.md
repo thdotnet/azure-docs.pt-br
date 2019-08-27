@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/27/2019
 ms.author: jingwang
 ms.custom: include file
-ms.openlocfilehash: dc12d77e9a57938051300277940b6e5107e45496
-ms.sourcegitcommit: b2db98f55785ff920140f117bfc01f1177c7f7e2
+ms.openlocfilehash: 0a2bf306ccfa3a4a4fc80d0d55493f284185bba9
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68234520"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69648562"
 ---
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -38,21 +38,17 @@ Para obter mais informações, confira os seguintes artigos:
 ### <a name="azure-storage-account"></a>Conta de Armazenamento do Azure
 Use uma Conta de Armazenamento do Azure de uso geral (especificamente o Armazenamento de Blobs) como armazenamento de dados de *origem* e *destino* neste guia de início rápido. Se você não tiver uma conta de fins gerais de armazenamento do Azure, consulte [Criar uma conta de armazenamento](../articles/storage/common/storage-quickstart-create-account.md) para criar uma. 
 
-#### <a name="get-the-storage-account-name-and-account-key"></a>Obter o nome da conta de armazenamento e a chave da conta
-Você precisará do nome e da chave de sua conta de armazenamento do Azure neste início rápido. O procedimento a seguir fornece as etapas para obter o nome e a chave da sua conta de armazenamento: 
+#### <a name="get-the-storage-account-name"></a>Obter o nome da conta de armazenamento
+Você precisará do nome da sua conta de armazenamento do Azure neste início rápido. O procedimento a seguir fornece as etapas para obter o nome da sua conta de armazenamento: 
 
 1. Em um navegador da Web, vá para o [portal do Azure](https://portal.azure.com) e entre usando seu nome de usuário e senha do Azure.
 2. Selecione **Todos os serviços** > **Armazenamento** > **Contas de armazenamento**.
 3. Na página **Contas de armazenamento**, filtre pela sua conta de armazenamento (se necessário) e selecione a sua conta de armazenamento. 
-4. Na barra lateral da página *\<Nome da conta>*  - **Conta de armazenamento**, vá para o rótulo **Configurações** e selecione **Chaves de acesso**. O *\<Nome da conta>*  - **Chaves de acesso** é exibido.
-
-   ![Obter nome e chave da conta de armazenamento](media/data-factory-quickstart-prerequisites/storage-account-name-key.png)
-5. Copie os valores para as caixas **Nome da conta de armazenamento** e **chave1** para a área de transferência. Cole-os em um Bloco de notas ou qualquer outro editor e salve-os. Você pode usá-los mais tarde neste guia de início rápido.   
 
 #### <a name="create-a-blob-container"></a>Criar um contêiner de blob
 Nesta seção, você cria um contêiner de blobs chamado **adftutorial** no armazenamento de Blobs do Azure.
 
-1. Na barra lateral da página *\<Nome da conta>*  - **Chaves de acesso**, selecione **Visão geral** > **Blobs**.
+1. Na página Conta de armazenamento, selecione **Visão geral** > **Blobs**.
 2. Na barra de ferramentas da página *\<Nome da conta>*  - **Blobs**, selecione **Contêiner**.
 3. Na caixa de diálogo **Novo contêiner**, insira **adftutorial** como o nome e selecione **OK**. A página *\<Nome da conta>*  - **Blobs** é atualizada para incluir **adftutorial** na lista de contêineres.
 

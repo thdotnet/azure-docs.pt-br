@@ -8,13 +8,13 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
-ms.date: 07/21/2019
-ms.openlocfilehash: b0d227b71677db1d6b4ce8386b02cf957ca259f7
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.date: 08/16/2019
+ms.openlocfilehash: a2134853c48ca09faa150f038be2d9327af75eee
+ms.sourcegitcommit: a3a40ad60b8ecd8dbaf7f756091a419b1fe3208e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68668417"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69891690"
 ---
 # <a name="tutorial-predict-automobile-price-with-the-visual-interface"></a>Tutorial: Prever o preço de automóveis com a interface visual
 
@@ -27,9 +27,11 @@ Na parte um, você configura o ambiente, arrasta e solta conjuntos de dados e m�
 Na primeira parte do tutorial, você aprenderá a:
 
 > [!div class="checklist"]
-> * Importar e limpar dados
+> * Criar um novo experimento
+> * Importar dados
+> * Preparar dados
 > * Treinar um modelo de machine learning
-> * Pontuar e avaliar um modelo
+> * Avaliar um modelo de machine learning
 
 Na [parte dois](ui-tutorial-automobile-price-deploy.md) do tutorial, você aprende a implantar seu modelo preditivo como um serviço Web do Azure, para que seja possível usá-lo para prever o preço de qualquer carro com base nas especificações técnicas enviadas. 
 
@@ -37,13 +39,17 @@ Uma versão concluída deste tutorial está disponível como um teste de exemplo
 
 Para encontrá-la, na **página Experimentos**, selecione **Adicionar Novo** e, em seguida, selecione o experimento **Amostra 1 – Regressão: Previsão de Preços de Automóveis (Básica)** .
 
-## <a name="create-a-workspace"></a>Criar um workspace
+## <a name="create-a-new-experiment"></a>Criar um novo experimento
+
+Para criar um experimento de interface visual, primeiro você precisa de um workspace de serviço do Azure Machine Learning. Nesta seção, você aprenderá a criar esses dois recursos.
+
+### <a name="create-a-new-workspace"></a>Criar um novo workspace
 
 Se você tiver um workspace do Serviço do Azure Machine Learning, passe para a próxima seção.
 
 [!INCLUDE [aml-create-portal](../../../includes/aml-create-in-portal.md)]
 
-## <a name="create-new-experiment"></a>Criar experimento
+### <a name="create-an-experiment"></a>Criar uma experiência
 
 1. Abra seu workspace na [portal do Azure](https://portal.azure.com/).
 
@@ -57,7 +63,7 @@ Se você tiver um workspace do Serviço do Azure Machine Learning, passe para a 
 
 1. Selecione o nome de experimento padrão **"Experimento criado em ...** " na parte superior da tela e renomeie-o para algo significativo. Por exemplo, **"Previsão de preços de automóveis"** . O nome não precisa ser exclusivo.
 
-## <a name="specify-data"></a>Especificar dados
+## <a name="import-data"></a>Importar dados
 
 O aprendizado de máquina depende dos dados. Felizmente, há várias amostras de conjuntos de exemplo incluídas nessa interface, disponíveis para você fazer experimentos. Neste tutorial, use o conjunto de dados de exemplo **Dados de preços de automóveis (brutos)** . 
 
@@ -65,7 +71,7 @@ O aprendizado de máquina depende dos dados. Felizmente, há várias amostras de
 
 1. Selecione o conjunto de dados, **Dados de preço de automóvel (brutos)** e arraste-o para a tela.
 
-   ![Arraste os dados para a tela](./media/ui-tutorial-automobile-price-train-score/drag-data.png)
+   ![Arraste os dados para a tela](./media/ui-tutorial-automobile-price-train-score/drag-data.gif)
 
 1. Selecione com quais colunas de dados você deseja trabalhar. Digite **Selecionar** na caixa de Pesquisa, na parte superior da paleta, para encontrar o módulo **Selecionar colunas no conjunto de dados**.
 
@@ -87,11 +93,11 @@ O aprendizado de máquina depende dos dados. Felizmente, há várias amostras de
 
     Na caixa de diálogo **Selecionar colunas**, selecione **TODAS AS COLUNAS** e inclua **todos os recursos**. A caixa de diálogo deve ter esta aparência:
 
-     ![column-selector](./media/ui-tutorial-automobile-price-train-score/select-all.png)
+     ![column-selector](./media/ui-tutorial-automobile-price-train-score/select-all.gif)
 
 1. No canto inferior direito, selecione **Ok** para fechar o seletor de coluna.
 
-## <a name="run-the-experiment"></a>Execute o experimento
+### <a name="run-the-experiment"></a>Execute o experimento
 
 A qualquer momento, clique na porta de saída de um conjunto de dados ou de um módulo para ver qual é a aparência dos dados nesse momento no fluxo de dados. Se a opção **Visualizar** estiver desabilitada, primeiro será necessário executar o teste.
 
@@ -100,7 +106,7 @@ A qualquer momento, clique na porta de saída de um conjunto de dados ou de um m
 Depois que o destino de computação estiver disponível, o teste será executado. Quando a execução for concluída, uma marca de seleção verde será exibida em cada módulo.
 
 
-## <a name="visualize-the-data"></a>Visualizar os dados
+### <a name="visualize-the-data"></a>Visualizar os dados
 
 Agora que já executou o experimento inicial, visualize os dados para entender mais sobre o conjunto de dados que você tem.
 
@@ -110,9 +116,9 @@ Agora que já executou o experimento inicial, visualize os dados para entender m
 
     No conjunto de dados de exemplo, cada linha representa uma instância de um automóvel e as variáveis associadas a cada automóvel aparecem como colunas. Há 205 linhas e 26 colunas nesse conjunto de dados.
 
-     Cada vez que você clica em uma coluna de dados, as informações de **Estatísticas** e a imagem de **Visualização** dessa coluna são exibidas à esquerda. Por exemplo, ao clicar em **num-of-doors**, você verá que ela tem dois valores exclusivos e dois valores ignorados. Role para baixo para ver os valores: duas e quatro portas.
+    Cada vez que você clica em uma coluna de dados, as informações de **Estatísticas** e a imagem de **Visualização** dessa coluna são exibidas à esquerda.
 
-     ![Visualizar os dados](./media/ui-tutorial-automobile-price-train-score/preview-data.gif)
+    [![Visualizar os dados](./media/ui-tutorial-automobile-price-train-score/preview-data.gif)](./media/ui-tutorial-automobile-price-train-score/preview-data.gif#lightbox)
 
 1. Clique em cada coluna para entender mais sobre o conjunto de dados e pense se essas colunas serão úteis para prever o preço de um automóvel.
 
@@ -137,15 +143,11 @@ Primeiro, remova a coluna **normalized-losses** por completo.
 
     * No canto inferior direito, selecione **Ok** para fechar o seletor de coluna.
 
-    ![Excluir uma coluna](./media/ui-tutorial-automobile-price-train-score/exclude-column.png)
+    ![Excluir uma coluna](./media/ui-tutorial-automobile-price-train-score/exclude-column.gif)
         
     Agora o painel de propriedades para Selecionar colunas no Conjunto de dados indica que ele passará todas as colunas do conjunto de dados, exceto **normalized-losses**.
         
     O painel de propriedades mostra que a coluna **normalized-losses** foi excluída.
-        
-    ![Painel de propriedade](./media/ui-tutorial-automobile-price-train-score/property-pane.png)
-        
-    É possível adicionar um comentário em um módulo ao clicar duas vezes nele e inserir o texto. Isso pode ajudar a ver rapidamente o que o módulo está fazendo em seu experimento. 
 
 1. Clique duas vezes no módulo **Selecionar Colunas no Conjunto de Dados** e digite o comentário "Excluir perdas normalizadas." 
     
@@ -168,22 +170,22 @@ Quando você treina um modelo, precisa fazer algo sobre os dados que estão falt
 1. No painel Propriedades, selecione **Remover linha inteira** em **Modo de limpeza**.
 
 1. Clique duas vezes no módulo e digite o comentário “Remover linhas de valor ausente".
- 
-    ![Remover linhas](./media/ui-tutorial-automobile-price-train-score/remove-rows.png)
 
     Agora seu teste deve ter a seguinte aparência:
     
     ![select-column](./media/ui-tutorial-automobile-price-train-score/experiment-clean.png)
 
-## <a name="train-the-model"></a>Treinar o modelo
+## <a name="train-a-machine-learning-model"></a>Treinar um modelo de machine learning
 
 Agora que os dados estão prontos, é possível construir um modelo preditivo. Você usará seus dados para treinar o modelo. Em seguida, você testará o modelo para ver o nível de precisão com o qual ele prevê os preços.
+
+### <a name="select-an-algorithm"></a>Selecionar um algoritmo
 
 **Classificação** e **regressão** são dois tipos de técnicas de algoritmo de machine learning supervisionado. A **classificação** prevê uma resposta com base em um conjunto definido de categorias, como uma cor (vermelho, azul ou verde). A **regressão** é usada para prever um número.
 
 Como você deseja prever o preço, que é um número, use um algoritmo de regressão. Para este exemplo, você usará um modelo de regressão linear.
 
-Treine o modelo fornecendo a ele um conjunto de dados que inclua o preço. O modelo examina os dados e procura correlações entre os recursos de um carro e seu preço.
+### <a name="split-the-data"></a>Dividir os dados
 
 Use seus dados para treinar o modelo e testá-lo, dividindo os dados em conjuntos de dados separados de treinamento e teste.
 
@@ -191,17 +193,17 @@ Use seus dados para treinar o modelo e testá-lo, dividindo os dados em conjunto
 
 1. Selecione o módulo **Dividir dados**. No painel Propriedades, defina a Fração de linhas no primeiro conjunto de dados de saída como 0,7. Dessa forma, usaremos 70% dos dados para treinar o modelo e manteremos 30% para o teste.
 
-    ![Captura de tela mostrando a configuração correta do painel Propriedades. Os valores de "Dividir Dados" devem ser "Dividir Linhas", 0,7, Divisão aleatória, 0 e Falso.](./media/ui-tutorial-automobile-price-train-score/split-data.png)
-
 1. Clique duas vezes no módulo **Dividir Dados** e digite o comentário "Dividir o conjunto de dados em um conjunto de treinamento(0,7) e um conjunto de teste(0,3)"
+
+### <a name="train-the-model"></a>Treinar o modelo
+
+Treine o modelo fornecendo a ele um conjunto de dados que inclua o preço. O modelo examina os dados e procura correlações entre os recursos de um carro e seu preço.
 
 1. Para selecionar o algoritmo de aprendizado, limpe a caixa de pesquisa da paleta de módulos.
 
 1. Expanda o **Aprendizado de Máquina** e, em seguida, expanda **Inicializar Modelo**. Isso exibe várias categorias de módulos que podem ser usados para inicializar os algoritmos de Aprendizado de Máquina.
 
 1. Para este teste, selecione **Regressão** > **Regressão Linear** e arraste-a para a tela do teste.
-
-    ![Captura de tela mostrando a configuração correta do painel Propriedades. Os valores de "Dividir Dados" devem ser "Dividir Linhas", 0,7, Divisão aleatória, 0 e Falso.](./media/ui-tutorial-automobile-price-train-score/linear-regression-module.png)
 
 1. Encontre e arraste o módulo **Treinar Modelo** para a tela do teste. Conecte a saída do módulo Regressão Linear à entrada esquerda do módulo Treinar Modelo e conecte a saída de dados de treinamento (porta esquerda) do módulo **Dividir Dados** à entrada direita do módulo **Treinar Modelo**.
 
@@ -215,7 +217,7 @@ Use seus dados para treinar o modelo e testá-lo, dividindo os dados em conjunto
 
     ![Captura de tela mostrando a configuração correta do experimento após a adição do módulo Treinar Modelo.](./media/ui-tutorial-automobile-price-train-score/train-graph.png)
 
-## <a name="score-and-evaluate-the-model"></a>Pontuar e avaliar o modelo
+## <a name="evaluate-a-machine-learning-model"></a>Avaliar um modelo de machine learning
 
 Agora que você treinou o modelo usando 70% de seus dados, use-o para pontuar os outros 30% dos dados e ver se o modelo funciona bem.
 
@@ -244,26 +246,6 @@ As seguintes estatísticas são mostradas para o modelo:
 * **Coeficiente de determinação**: Também conhecido como o valor de R-quadrado, essa é uma métrica estatística que indica se o modelo se encaixa bem nos dados.
 
 Para cada estatística de erro, menos é melhor. Um valor menor indica que as previsões se aproximam mais dos valores reais. Para Coeficiente de Determinação, quanto mais próximo o valor estiver de um (1,0), melhores as previsões.
-
-## <a name="manage-experiments-in-azure-machine-learning-service-workspace"></a>Gerenciar testes no workspace do Serviço do Azure Machine Learning
-
-Os testes criados na interface visual podem ser gerenciados no workspace do Serviço do Azure Machine Learning. Use o workspace para ver informações mais detalhadas, como execuções de teste de indivíduos, logs de diagnóstico, grafos de execução, entre outros.
-
-1. Abra seu workspace na [portal do Azure](https://portal.azure.com/).  
-
-1. No workspace, selecione **Testes**. Em seguida, selecione o teste que você criou.
-
-    ![Captura de tela mostrando como navegar para os testes no portal do Azure](./media/ui-tutorial-automobile-price-train-score/portal-experiments.png)
-
-    Nessa página, você terá uma visão geral do teste e de suas execuções mais recentes.
-
-    ![Captura de tela mostrando uma visão geral das estatísticas do teste no portal do Azure](./media/ui-tutorial-automobile-price-train-score/experiment-overview.png)
-
-1. Selecione um número de execução para ver mais detalhes sobre uma execução específica.
-
-    ![Captura de tela do relatório de execução detalhado](./media/ui-tutorial-automobile-price-train-score/run-details.png)
-
-    O relatório de execução é atualizado em tempo real. Se você tiver usado o módulo **Executar script do Python** ou **Executar script R** no experimento, será possível especificar os logs de script a serem gerados na guia **Logs**.
 
 ## <a name="clean-up-resources"></a>Limpar recursos
 

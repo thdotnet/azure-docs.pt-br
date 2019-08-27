@@ -8,14 +8,14 @@ services: digital-twins
 ms.devlang: csharp
 ms.topic: quickstart
 ms.custom: mvc seodec18
-ms.date: 06/26/2019
+ms.date: 08/16/2019
 ms.author: alinast
-ms.openlocfilehash: 9f88eccf1e488d52fbbbd064cc5d7f54c2eec32b
-ms.sourcegitcommit: aa66898338a8f8c2eb7c952a8629e6d5c99d1468
+ms.openlocfilehash: 40a98f915bc11ad17eae27596519cc78539fb2bb
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67459189"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640296"
 ---
 # <a name="quickstart-find-available-rooms-by-using-azure-digital-twins"></a>Início Rápido: Encontrar salas disponíveis usando os Gêmeos Digitais do Azure
 
@@ -72,6 +72,7 @@ Esta etapa provisiona o grafo espacial dos Gêmeos Digitais com:
 O grafo espacial é provisionado usando o arquivo [provisionSample.yaml](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/actions/provisionSample.yaml).
 
 1. Execute `dotnet run ProvisionSample`.
+
     >[!NOTE]
     >A ferramenta de Logon do Dispositivo da CLI do Azure é usada para autenticar o usuário no Azure AD. O usuário precisa inserir um código especificado para fazer a autenticação usando a página de [logon da Microsoft](https://microsoft.com/devicelogin). Depois que o código for inserido, siga as etapas para se autenticar. O usuário deve fazer a autenticação quando a ferramenta estiver em execução.
 
@@ -80,11 +81,11 @@ O grafo espacial é provisionado usando o arquivo [provisionSample.yaml](https:/
 
 1. A etapa de provisionamento pode levar alguns minutos. Ela também provisiona um Hub IoT em sua instância dos Gêmeos Digitais. Ela será repetida até que o Hub IoT exiba o Status=`Running`.
 
-    ![Exemplo de provisionamento][4]
+    [![Exemplo de provisionamento](media/quickstart-view-occupancy-dotnet/digital-twins-provision-sample1.png)](media/quickstart-view-occupancy-dotnet/digital-twins-provision-sample1.png#lightbox)
 
 1. No final da execução, copie a `ConnectionString` do dispositivo para usar no exemplo do simulador de dispositivo. Copie apenas a cadeia de caracteres descrita nesta imagem.
 
-    ![Exemplo de provisionamento][1]
+    [![Copiar a cadeia de conexão](media/quickstart-view-occupancy-dotnet/digital-twins-provision-sample.png)](media/quickstart-view-occupancy-dotnet/digital-twins-provision-sample.png#lightbox)
 
     >[!TIP]
     > É possível exibir e modificar seu grafo espacial usando o [Visualizador de Grafos dos Gêmeos Digitais do Azure](https://github.com/Azure/azure-digital-twins-graph-viewer).
@@ -99,7 +100,7 @@ Compile e execute o aplicativo do simulador de sensor seguindo estas etapas.
 1. Edite [appsettings.json](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/device-connectivity/appsettings.json) para atualizar **DeviceConnectionString** com a `ConnectionString` anterior.
 1. Execute `dotnet run` para começar a enviar dados de sensor. Você verá que eles são enviados para os Gêmeos Digitais, conforme mostrado na imagem a seguir.
 
-     ![Conectividade do dispositivo][2]
+     [![Conectividade do dispositivo](media/quickstart-view-occupancy-dotnet/digital-twins-device-connectivity.png)](media/quickstart-view-occupancy-dotnet/digital-twins-device-connectivity.png#lightbox)
 
 1. Deixe que esse simulador seja executado para que você possa exibir os resultados lado a lado com a ação da próxima etapa. A janela mostra os dados de sensor simulado enviados para os Gêmeos Digitais. A próxima etapa faz consultas em tempo real para encontrar salas disponíveis com ar fresco.
 
@@ -118,7 +119,7 @@ O exemplo de sensor simula os valores de dados aleatórios para dois sensores. E
    - Salas disponíveis com ar fresco.
    - Sala ocupada ou ar de baixa qualidade.
 
-     ![Obter espaços disponíveis com ar fresco][3]
+     [![Obter espaços disponíveis com ar fresco](media/quickstart-view-occupancy-dotnet/digital-twins-get-available.png)](media/quickstart-view-occupancy-dotnet/digital-twins-get-available.png#lightbox)
 
 Para entender o que aconteceu neste início rápido e quais APIs foram chamadas, abra o [Visual Studio Code](https://code.visualstudio.com/Download) com o projeto de espaço de trabalho do código encontrado em digital-twins-samples-csharp. Use o seguinte comando:
 
@@ -160,9 +161,3 @@ Este início rápido usou um cenário simples para mostrar como encontrar salas 
 
 >[!div class="nextstepaction"]
 >[Tutorial: Implantar os Gêmeos Digitais do Azure e configurar um grafo espacial](tutorial-facilities-setup.md)
-
-<!-- Images -->
-[1]: media/quickstart-view-occupancy-dotnet/digital-twins-provision-sample.png
-[2]: media/quickstart-view-occupancy-dotnet/digital-twins-device-connectivity.png
-[3]: media/quickstart-view-occupancy-dotnet/digital-twins-get-available.png
-[4]: media/quickstart-view-occupancy-dotnet/digital-twins-provision-sample1.png

@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: overview
 ms.date: 08/07/2019
 ms.author: helohr
-ms.openlocfilehash: 7c331a4a7395069dc4dc3ab1dcfc89415be0898c
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 8827aa660d348ef9e42c617067c2837b8697ba6e
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68854448"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69876773"
 ---
 # <a name="what-is-windows-virtual-desktop-preview"></a>O que é a Versão Prévia da Área de Trabalho Virtual do Windows? 
 
@@ -81,7 +81,7 @@ A infraestrutura precisa dos seguintes itens para dar suporte à Área de Trabal
 As máquinas virtuais do Azure criadas para a Área de Trabalho Virtual do Windows precisam ser:
 
 * [Ingressadas no domínio padrão](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-comparison) ou [Ingressadas no AD híbridas](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan). As máquinas virtuais não podem ser ingressadas no Azure AD.
-* A execução de uma das seguintes [imagens do sistema operacional compatíveis](#supported-virtual-machine-os-image).
+* A execução de uma das seguintes [imagens do sistema operacional compatíveis](#supported-virtual-machine-os-images).
 
 >[!NOTE]
 >Caso precise de uma assinatura do Azure, [inscreva-se em uma avaliação gratuita de um mês](https://azure.microsoft.com/free/). Se estiver usando a versão de avaliação gratuita do Azure, use o Azure AD Domain Services para manter o Windows Server Active Directory em sincronia com o Azure Active Directory.
@@ -101,7 +101,7 @@ Os seguintes clientes da Área de Trabalho Remota são compatíveis com a Área 
 * [Windows](https://docs.microsoft.com/azure/virtual-desktop/connect-windows-7-and-10)
 * [HTML5](https://docs.microsoft.com/azure/virtual-desktop/connect-web)
 
-## <a name="supported-virtual-machine-os-image"></a>Imagem compatível de sistema operacional da máquina virtual
+## <a name="supported-virtual-machine-os-images"></a>Imagens compatíveis do sistema operacional da máquina virtual
 
 A Área de Trabalho Virtual do Windows dá suporte às seguintes imagens de sistema operacional:
 

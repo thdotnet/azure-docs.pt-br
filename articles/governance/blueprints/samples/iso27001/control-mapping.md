@@ -7,12 +7,12 @@ ms.date: 07/22/2019
 ms.topic: sample
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: d49ef19d763ea3ae643a9c7bbbbb620ae414c664
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: 7be9a208f82dd9a487c1794a7996f9bb11bb09d8
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68816778"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69515444"
 ---
 # <a name="control-mapping-of-the-iso-27001-blueprint-sample"></a>Mapeamento de controles da amostra de blueprint ISO 27001
 
@@ -118,13 +118,13 @@ Entender em que local os recursos do Azure podem ter configurações de criptogr
 - \[Versão Prévia\]: audita a criptografia de blob ausente para contas de armazenamento
 - \[Versão Prévia\]: Implantar a extensão de VM para auditar que a VM do Windows não armazene senhas usando criptografia reversível
 - \[Versão Prévia\]: Auditar que a VM do Windows não armazene senhas usando criptografia reversível
-- \[Versão Prévia\]: monitora o banco de dados SQL não criptografado na Central de Segurança do Azure
 - \[Versão Prévia\]: monitora discos não criptografados da VM na Central de Segurança do Azure
 - Auditar a habilitação de criptografia de variáveis de conta de automação do Azure
 - Auditoria de habilitação de somente conexões seguras ao seu Cache Redis
 - Auditar transferência segura para contas de armazenamento
 - Auditar a configuração da propriedade ClusterProtectionLevel para EncryptAndSign no Service Fabric
 - Auditar o status da Transparent Data Encryption
+- A Transparent Data Encryption em bancos de dados SQL deve ser habilitada
 
 ## <a name="a1241-event-logging"></a>A.12.4.1 Log de eventos
 
@@ -135,9 +135,9 @@ Os logs de diagnóstico fornecem insights sobre operações realizadas em recurs
 - \[Versão Prévia\]: Auditar a implantação do Dependency Agent no VMSS – imagem de VM (sistema operacional) não listada
 - \[Versão Prévia\]: Auditar a implantação do Agente do Log Analytics – imagem de VM (sistema operacional) não listada
 - \[Versão Prévia\]: Auditar a implantação do Agente do Log Analytics no VMSS – imagem de VM (sistema operacional) não listada
-- \[Versão Prévia\]: monitora o banco de dados SQL não auditado na Central de Segurança do Azure
 - Configuração de diagnóstico de auditoria
 - Auditar configurações de Auditoria de nível do servidor SQL
+- A auditoria deve ser habilitada nas configurações de segurança de dados avançada no SQL Server
 
 ## <a name="a1243-administrator-and-operator-logs"></a>A.12.4.3 Logs de administrador e de operador
 
@@ -147,9 +147,9 @@ Esse blueprint ajuda você a garantir que os eventos do sistema sejam registrado
 - \[Versão Prévia\]: Auditar a implantação do Dependency Agent no VMSS – imagem de VM (sistema operacional) não listada
 - \[Versão Prévia\]: Auditar a implantação do Agente do Log Analytics – imagem de VM (sistema operacional) não listada
 - \[Versão Prévia\]: Auditar a implantação do Agente do Log Analytics no VMSS – imagem de VM (sistema operacional) não listada
-- \[Versão Prévia\]: monitora o banco de dados SQL não auditado na Central de Segurança do Azure
 - Configuração de diagnóstico de auditoria
 - Auditar configurações de Auditoria de nível do servidor SQL
+- A auditoria deve ser habilitada nas configurações de segurança de dados avançada no SQL Server
 
 ## <a name="a1244-clock-synchronization"></a>A.12.4.4 Sincronização do relógio
 
@@ -159,9 +159,9 @@ Esse blueprint ajuda você a garantir que os eventos do sistema sejam registrado
 - \[Versão Prévia\]: Auditar a implantação do Dependency Agent no VMSS – imagem de VM (sistema operacional) não listada
 - \[Versão Prévia\]: Auditar a implantação do Agente do Log Analytics – imagem de VM (sistema operacional) não listada
 - \[Versão Prévia\]: Auditar a implantação do Agente do Log Analytics no VMSS – imagem de VM (sistema operacional) não listada
-- \[Versão Prévia\]: monitora o banco de dados SQL não auditado na Central de Segurança do Azure
 - Configuração de diagnóstico de auditoria
 - Auditar configurações de Auditoria de nível do servidor SQL
+- A auditoria deve ser habilitada nas configurações de segurança de dados avançada no SQL Server
 
 ## <a name="a1251-installation-of-software-on-operational-systems"></a>A.12.5.1 Instalação do software de sistemas operacionais
 

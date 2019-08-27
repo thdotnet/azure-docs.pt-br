@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 6884cb7b10da3996977f2aea7693625bc45c3139
-ms.sourcegitcommit: c71306fb197b433f7b7d23662d013eaae269dc9c
+ms.openlocfilehash: 8683169e0f8464cdcf52600968f67f3622e61445
+ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/22/2019
-ms.locfileid: "68369566"
+ms.lasthandoff: 08/15/2019
+ms.locfileid: "69509578"
 ---
 # <a name="tutorial-enable-authentication-in-a-single-page-application-using-azure-active-directory-b2c"></a>Tutorial: Habilitar autenticação em um aplicativo de página única usando o Azure Active Directory B2C
 
@@ -49,8 +49,8 @@ Além disso, você precisará do seguinte no ambiente de desenvolvimento local:
 No segundo tutorial concluído como parte dos pré-requisitos, você registrou um aplicativo Web no Azure AD B2C. Para habilitar a comunicação com o exemplo no tutorial, é necessário adicionar um URI de redirecionamento ao aplicativo no Azure AD B2C.
 
 1. Entre no [Portal do Azure](https://portal.azure.com).
-1. Verifique se você está usando o diretório que contém o locatário do Azure AD B2C clicando no **filtro Diretório e assinatura** no menu superior e escolhendo o diretório que contém seu locatário.
-1. Escolha **Todos os serviços** no canto superior esquerdo do Portal do Azure, pesquise **Azure AD B2C** e selecione-o.
+1. Verifique se você está usando o diretório que contém o locatário do Azure AD B2C selecionando o **filtro Diretório e assinatura** no menu superior e escolhendo o diretório que contém seu locatário.
+1. Selecione **Todos os serviços** no canto superior esquerdo do portal do Azure, pesquise pelo **Azure AD B2C** e selecione-o.
 1. Selecione **Aplicativos** e, em seguida, selecione o aplicativo *webapp1*.
 1. Em **URL de resposta**, adicione `http://localhost:6420`.
 1. Clique em **Salvar**.
@@ -109,23 +109,23 @@ Agora que você já obteve a amostra, atualize o código com o nome do locatári
     Listening on port 6420...
     ```
 
-1. Navegue até `http://localhost:6420` no navegador para exibir o aplicativo.
+1. Acesse `http://localhost:6420` no navegador para exibir o aplicativo.
 
 O exemplo dá suporte à inscrição, conexão, edição de perfil e redefinição de senha. Este tutorial destaca como um usuário se inscreve usando um endereço de email.
 
 ### <a name="sign-up-using-an-email-address"></a>Criar conta usando um endereço de email
 
-1. Clique em **Logon** para iniciar o fluxo de usuário *B2C_1_signupsignin1* especificado em uma etapa anterior.
-1. O Azure AD B2C apresenta uma página de entrada com um link de inscrição. Como você ainda não tem uma conta, clique no link **Inscrever-se agora**.
+1. Selecione **Logon** para iniciar o fluxo de usuário *B2C_1_signupsignin1* especificado em uma etapa anterior.
+1. O Azure AD B2C apresenta uma página de entrada com um link de inscrição. Como você ainda não tem uma conta, selecione o link **Inscrever-se agora**.
 1. O fluxo de trabalho de inscrição apresenta uma página para coletar e verificar a identidade do usuário usando um endereço de email. O fluxo de trabalho de inscrição também coleta a senha do usuário e os atributos solicitados definidos no fluxo de usuário.
 
     Use um endereço de email válido e valide-o usando o código de verificação. Defina uma senha. Insira valores para os atributos necessários.
 
     ![Página de inscrição apresentada pelo fluxo de usuário para entrada/inscrição](./media/active-directory-b2c-tutorials-desktop-app/sign-up-workflow.PNG)
 
-1. Clique em **Criar** para criar uma conta local no diretório do Azure AD B2C.
+1. Selecione **Criar** para criar uma conta local no diretório do Azure AD B2C.
 
-Quando você clica em **Criar**, a página de inscrição é fechada e a página de entrada é exibida novamente.
+Quando você seleciona **Criar**, a página de inscrição é fechada e a página de entrada é exibida novamente.
 
 Agora você pode usar seu endereço de email e sua senha para entrar no aplicativo.
 

@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 01/29/2019
 ms.author: spelluru
 ms.custom: mvc
-ms.openlocfilehash: 652fe182663d37c389658c8fe3b172826168e51f
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.openlocfilehash: c09e2cd812dd34976218ff71036734466943e8cd
+ms.sourcegitcommit: 13a289ba57cfae728831e6d38b7f82dae165e59d
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59617981"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "69623864"
 ---
 # <a name="tutorial-automate-resizing-uploaded-images-using-event-grid"></a>Tutorial: Automatizar o redimensionamento de imagens carregadas usando a Grade de Eventos
 
@@ -54,7 +54,7 @@ Neste tutorial, você aprenderá como:
 
 Para concluir este tutorial:
 
-É necessário concluir o tutorial de Armazenamento de Blobs anterior: [Carregar dados de imagem na nuvem com o Armazenamento do Azure][previous-tutorial].
+É necessário concluir o tutorial de Armazenamento de Blobs anterior: [Carregue os dados de imagem na nuvem com o Armazenamento do Azure][previous-tutorial].
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -109,7 +109,7 @@ No comando a seguir, forneça seu próprio nome exclusivo do aplicativo de funç
     --resource-group $resourceGroupName --consumption-plan-location southeastasia
     ```
 
-Agora você deve configurar o aplicativo de função para se conectar à conta de armazenamento de Blob criada no [tutorial anterior][previous-tutorial].
+Agora você deve configurar o aplicativo de função para se conectar à conta de armazenamento de Blobs criada no [tutorial anterior][previous-tutorial].
 
 ## <a name="configure-the-function-app"></a>Configurar o aplicativo de funções
 
@@ -245,7 +245,7 @@ Uma assinatura de evento indica quais eventos gerados pelo provedor você deseja
     | **Ponto de extremidade do assinante** | gerado automaticamente | Use a URL de ponto de extremidade gerada para você. | 
 4. Alterne para a guia **Filtro** e execute as seguintes ações:     
     1. Selecione a opção **Habilitar filtragem por assunto**.
-    2. Em **O assunto começa com**, insira o seguinte valor: **/blobServices/default/containers/images/blobs/**.
+    2. Em **O assunto começa com**, insira o seguinte valor: **/blobServices/default/containers/images/blobs/** .
 
         ![Especificar o filtro para a assinatura de evento](./media/resize-images-on-storage-blob-upload-event/event-subscription-filter.png) 
 2. Selecione **Criar** para adicionar a assinatura de evento. Isso criará uma assinatura de evento que dispara a função `Thumbnail` quando um blob é adicionado ao contêiner `images`. A função redimensiona as imagens e as adiciona ao contêiner `thumbnails`.
@@ -275,6 +275,8 @@ Clique em **Escolher Arquivo** para selecionar um arquivo e, em seguida, clique 
 Clique em **Escolher Arquivo** para selecionar um arquivo e, em seguida, clique em **Carregar Imagem**. Quando o upload for bem-sucedido, o navegador direcionará você para uma página de êxito. Clique no link para retornar à home page. Uma cópia da imagem carregada será exibida na área **Miniaturas geradas**. (Se a imagem não for exibida no início, tente recarregar a página.) Essa imagem foi redimensionada pela função, adicionada ao contêiner de *miniaturas* e baixada pelo cliente Web.
 
 ![Aplicativo Web publicado no navegador](./media/resize-images-on-storage-blob-upload-event/upload-app-nodejs-thumb.png)
+
+---
 
 ## <a name="next-steps"></a>Próximas etapas
 

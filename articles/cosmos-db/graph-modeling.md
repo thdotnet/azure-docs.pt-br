@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-graph
 ms.topic: overview
 ms.date: 06/24/2019
 ms.author: lbosq
-ms.openlocfilehash: c6ae23efa90874bbefc2aff35f8798aa6c0da791
-ms.sourcegitcommit: 837dfd2c84a810c75b009d5813ecb67237aaf6b8
+ms.openlocfilehash: 94df90db4a715d2540dfc5ec0aa521d76d22f757
+ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67503732"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69624223"
 ---
 # <a name="graph-data-modeling-for-azure-cosmos-db-gremlin-api"></a>Modelagem de dados de grafo da API do Gremlin do Azure Cosmos DB
 
@@ -47,12 +47,12 @@ Estas são as melhores práticas para as propriedades nos objetos de grafo:
 
 | Objeto | Propriedade | Type | Observações |
 | --- | --- | --- |  --- |
-| Vértice | ID | string | Imposto com exclusividade por partição. Se um valor não for fornecido após a inserção, um GUID gerado automaticamente será armazenado. |
-| Vértice | label | string | Essa propriedade é usada para definir o tipo de entidade representado pelo vértice. Se um valor não for fornecido, um valor padrão "vértice" será usado. |
+| Vértice | ID | Cadeia de caracteres | Imposto com exclusividade por partição. Se um valor não for fornecido após a inserção, um GUID gerado automaticamente será armazenado. |
+| Vértice | label | Cadeia de caracteres | Essa propriedade é usada para definir o tipo de entidade representado pelo vértice. Se um valor não for fornecido, um valor padrão "vértice" será usado. |
 | Vértice | properties | Cadeia de caracteres, booliano, numérico | Uma lista de propriedades separadas armazenadas como pares chave-valor em cada vértice. |
 | Vértice | partition key | Cadeia de caracteres, booliano, numérico | Essa propriedade define em que local o vértice e suas bordas de saída serão armazenados. Leia mais sobre o [particionamento de grafo](graph-partitioning.md). |
-| Microsoft Edge | ID | string | Imposto com exclusividade por partição. Gerado automaticamente por padrão. Geralmente, as bordas não precisam ser recuperadas exclusivamente por uma ID. |
-| Microsoft Edge | label | string | Essa propriedade é usada para definir o tipo de relação existente entre dois vértices. |
+| Microsoft Edge | ID | Cadeia de caracteres | Imposto com exclusividade por partição. Gerado automaticamente por padrão. Geralmente, as bordas não precisam ser recuperadas exclusivamente por uma ID. |
+| Microsoft Edge | label | Cadeia de caracteres | Essa propriedade é usada para definir o tipo de relação existente entre dois vértices. |
 | Microsoft Edge | properties | Cadeia de caracteres, booliano, numérico | Uma lista de propriedades separadas armazenadas como pares chave-valor em cada borda. |
 
 > [!NOTE]
@@ -94,7 +94,7 @@ Os objetos de borda têm uma direção padrão que é seguida por uma travessia 
 
 No entanto, a travessia na direção oposta de uma borda, usando a função `in()`, sempre resultará em uma consulta entre partições. Saiba mais sobre o [particionamento de grafo](graph-partitioning.md). Se uma travessia constante é necessária usando a função `in()`, recomendamos adicionar bordas em ambos os sentidos.
 
-Você pode determinar a direção da borda usando os predicados `.to()` ou `.from()` para a etapa `.addE()` do Gremlin. Ou usando a [biblioteca BulkExecutor para a API do Gremlin](bulk-executor-graph-dotnet.md).
+Você pode determinar a direção da borda usando os predicados `.to()` ou `.from()` para a etapa `.addE()` do Gremlin. Ou usando a [biblioteca bulk executor para a API do Gremlin](bulk-executor-graph-dotnet.md).
 
 > [!NOTE]
 > Os objetos de borda têm uma direção por padrão.

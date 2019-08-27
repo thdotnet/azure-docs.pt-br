@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 11/27/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: f7170fbb4a258e9d8290ad9d207028087b22003a
-ms.sourcegitcommit: 4b431e86e47b6feb8ac6b61487f910c17a55d121
+ms.openlocfilehash: a2420f98bb07686b548dc6641df77dd0fdf7028b
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68322308"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69562799"
 ---
 # <a name="quickstart-run-your-first-batch-job-with-the-python-api"></a>Início Rápido: Executar seu primeiro trabalho em Lotes com a API do Python
 
@@ -174,7 +174,7 @@ batch_service_client.pool.add(new_pool)
 
 ### <a name="create-a-batch-job"></a>Criar um trabalho do Lote
 
-Um trabalho do Lote é um agrupamento lógico de uma ou mais tarefas. Um trabalho inclui configurações comuns às tarefas, como prioridade e o pool onde elas devem ser executadas. O aplicativo usa a classe [JobAddParameter](/python/api/azure.batch.models.jobaddparameter) para criar um trabalho em seu pool. O método [job.add](/python/api/azure.batch.operations.joboperations) envia o pool ao serviço do Lote. Inicialmente, o trabalho não tem nenhuma tarefa.
+Um trabalho do Lote é um agrupamento lógico de uma ou mais tarefas. Um trabalho inclui configurações comuns às tarefas, como prioridade e o pool onde elas devem ser executadas. O aplicativo usa a classe [JobAddParameter](/python/api/azure.batch.models.jobaddparameter) para criar um trabalho em seu pool. O método [job.add](/python/api/azure.batch.operations.joboperations) adiciona um trabalho à conta do Lote especificada. Inicialmente, o trabalho não tem nenhuma tarefa.
 
 ```python
 job = batch.models.JobAddParameter(

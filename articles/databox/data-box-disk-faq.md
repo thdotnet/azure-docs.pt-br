@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: overview
-ms.date: 05/23/2019
+ms.date: 08/15/2019
 ms.author: alkohli
-ms.openlocfilehash: 69068304a6bc72f503ed85edf05229f10e4a8bc0
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 1361224fb59a32ca227c5ea1e6cc92a4b0fdff6e
+ms.sourcegitcommit: 0c906f8624ff1434eb3d3a8c5e9e358fcbc1d13b
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66236362"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69541803"
 ---
-# <a name="what-is-azure-data-box-disk"></a>O que é o Azure Data Box Disk?
+# <a name="azure-data-box-disk-frequently-asked-questions"></a>Azure Data Box Disk: Perguntas frequentes
 
 A solução de nuvem do Microsoft Azure Data Box Disk permite que você envie terabytes de dados do Azure de maneira rápida, barata e confiável. Estas Perguntas frequentes contêm respostas para perguntas que podem surgir durante o uso dos Discos do Data Box no portal do Azure. 
 

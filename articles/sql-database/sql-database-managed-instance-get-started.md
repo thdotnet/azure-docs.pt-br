@@ -11,12 +11,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein, carlrab
 ms.date: 05/07/2019
-ms.openlocfilehash: 646a602d7e6c47454f039a5f4f1981a60b56fa56
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: cacd67e26b13df8ef456ac8f1391e4396f5bdd96
+ms.sourcegitcommit: b3bad696c2b776d018d9f06b6e27bffaa3c0d9c3
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567523"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69873887"
 ---
 # <a name="quickstart-create-an-azure-sql-database-managed-instance"></a>Início Rápido: Criar uma instância gerenciada do Banco de Dados SQL do Azure
 
@@ -35,11 +35,11 @@ Entre no [Portal do Azure](https://portal.azure.com/).
 
 As etapas a seguir mostram como criar uma instância gerenciada.
 
-1. Selecione **Criar um recurso** no canto superior esquerdo do portal do Azure.
-2. Localize **instância gerenciada** e, em seguida, selecione **Instância Gerenciada do SQL do Azure**.
-3. Selecione **Criar**.
+1. Selecione **SQL do Azure** no menu à esquerda do portal do Azure. Se o SQL do Azure não estiver na lista, selecione **Todos os serviços** e, em seguida, digite *SQL do Azure* na caixa de pesquisa.
+2. Selecione **+Adicionar** para abrir a página **Selecionar opção de implantação do SQL**. Exiba informações adicionais sobre a instância gerenciada do Banco de Dados SQL do Azure selecionando **Mostrar detalhes** no bloco **Instâncias gerenciadas**.
+3. Selecione **Criar**:
 
-   ![Criar uma instância gerenciada](./media/sql-database-managed-instance-get-started/managed-instance-create.png)
+   ![Criar uma instância gerenciada](./media/sql-database-managed-instance-get-started/create-managed-instance.png)
 
 4. Preencha o formulário da **instância gerenciada do SQL** com as informações solicitadas usando as informações da tabela a seguir.
 

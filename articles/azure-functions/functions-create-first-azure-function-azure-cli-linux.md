@@ -11,20 +11,20 @@ ms.service: azure-functions
 ms.custom: mvc, fasttrack-edit
 ms.devlang: javascript
 manager: jeconnoc
-ms.openlocfilehash: 84e05b7afa2746587f2ea5008d493730ccbfad7e
-ms.sourcegitcommit: 78ebf29ee6be84b415c558f43d34cbe1bcc0b38a
+ms.openlocfilehash: 40a2d3ab4ec358b5b2d0105703cdc25cdb777c29
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68950033"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69562976"
 ---
-# <a name="create-your-first-function-hosted-on-linux-using-core-tools-and-the-azure-cli-preview"></a>Criar sua primeira função hospedada no Linux usando o Core Tools e a CLI do Azure (versão prévia)
+# <a name="create-your-first-function-hosted-on-linux-using-core-tools-and-the-azure-cli"></a>Criar sua primeira função hospedada no Linux usando o Core Tools e a CLI do Azure
 
-O Azure Functions permite executar seu código em um ambiente Linux [sem servidor](https://azure.com/serverless) sem que seja preciso primeiro criar uma VM ou publicar um aplicativo Web. A hospedagem no Linux exige [o tempo de execução do Functions 2.0](functions-versions.md). O suporte para executar um aplicativo de funções no Linux no [plano de consumo](functions-scale.md#consumption-plan) sem servidor está atualmente em versão prévia. Para obter mais informações, confira [este artigo de considerações sobre a versão prévia](https://aka.ms/funclinux).
+O Azure Functions permite executar seu código em um ambiente Linux [sem servidor](https://azure.com/serverless) sem que seja preciso primeiro criar uma VM ou publicar um aplicativo Web. A hospedagem no Linux exige [o Functions 2.x Runtime](functions-versions.md). As funções sem servidor são executadas no [plano de Consumo](functions-scale.md#consumption-plan).
 
 Este artigo de início rápido explica como usar a CLI do Azure para criar seu primeiro aplicativo de funções em execução no Linux. O código da função é criado localmente e implantado no Azure usando o [Azure Functions Core Tools](functions-run-local.md).
 
-As etapas a seguir têm suporte em um computador Mac, Windows ou Linux. Este artigo mostra como criar funções em JavaScript ou C#. Para saber como criar funções de Python, consulte [Criar sua primeira função de Python usando as Ferramentas do Core e a CLI do Azure (versão prévia)](functions-create-first-function-python.md).
+As etapas a seguir têm suporte em um computador Mac, Windows ou Linux. Este artigo mostra como criar funções em JavaScript ou C#. Para saber como criar funções do Python, confira [Criar sua primeira função do Python usando o Core Tools e a CLI do Azure](functions-create-first-function-python.md).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 

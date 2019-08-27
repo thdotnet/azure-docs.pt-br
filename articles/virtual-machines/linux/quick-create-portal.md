@@ -13,19 +13,19 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 10/12/2018
+ms.date: 8/20/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: f491a160e0f4f72f072dc43c46571f96dd19a297
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: feaefef23b433a296d25cc11b5cd89d86acd280f
+ms.sourcegitcommit: bb8e9f22db4b6f848c7db0ebdfc10e547779cccc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67671035"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69650209"
 ---
 # <a name="quickstart-create-a-linux-virtual-machine-in-the-azure-portal"></a>Início Rápido: Criar uma máquina virtual do Linux no portal do Azure
 
-As máquinas virtuais (VM) do Azure podem ser criadas por meio do Portal do Azure. O portal do Azure é uma interface de usuário baseada em navegador para criar as VMS e seus recursos relacionados. Este início rápido mostra como usar o Portal do Azure para implantar uma máquina virtual (VM) Linux que executa o Ubuntu 16.04 LTS. Para ver a VM em ação, você também habilita o SSH na VM e instala o servidor Web do NGINX.
+As máquinas virtuais (VM) do Azure podem ser criadas por meio do Portal do Azure. O portal do Azure é uma interface de usuário baseada em navegador para criar recursos do Azure. Este início rápido mostra como usar o portal do Azure para implantar uma máquina virtual (VM) Linux que executa o Ubuntu 18.04 LTS. Para ver a VM em ação, você também habilita o SSH na VM e instala o servidor Web do NGINX.
 
 Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 
@@ -33,35 +33,29 @@ Se você não tiver uma assinatura do Azure, crie uma [conta gratuita](https://a
 
 Você precisa de um par de chaves SSH para concluir este início rápido. Se você já tiver um par de chaves SSH, você pode ignorar esta etapa.
 
-Abra um shell bash e use [ssh-keygen](https://www.ssh.com/ssh/keygen/) para criar um par de chaves SSH. Se você não tiver um shell bash no seu computador local, você pode usar o [Azure Cloud Shell](https://shell.azure.com/bash).  
+Abra um shell bash e use [ssh-keygen](https://www.ssh.com/ssh/keygen/) para criar um par de chaves SSH. Se você não tiver um shell bash no seu computador local, você pode usar o [Azure Cloud Shell](https://shell.azure.com/bash).
 
-```bash
-ssh-keygen -t rsa -b 2048
-```
 
-O comando acima gera as chaves públicas e privadas com o nome padrão do `id_rsa` no `~/.ssh directory`. O comando retorna o caminho completo para a chave pública. Use o caminho para a chave pública para exibir seu conteúdo com `cat`.
-
-```bash 
-cat ~/.ssh/id_rsa.pub
-```
-
-Salve a saída desse comando. Você precisará dele ao configurar sua conta de administrador para fazer logon em sua VM.
-
-Para obter mais informações sobre como criar pares de chave SSH, incluindo o uso de PuTTy, consulte [Como usar chaves SSH com o Windows](ssh-from-windows.md).
-
-Se você criar o par de chaves SSH usando o Cloud Shell, ele será armazenado em um compartilhamento de arquivos do Azure que é [montado automaticamente pelo Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/persisting-shell-storage). Não exclua essa conta de armazenamento ou compartilhamento de arquivo até depois de recuperar suas chaves ou você perderá o acesso à VM. 
+1. Entre no [Portal do Azure](https://portal.azure.com).
+1. No menu na parte superior da página, escolha o ícone `>_` para abrir o Cloud Shell.
+1. Verifique se o CloudShell diz **Bash** no canto superior esquerdo. Se ele disser PowerShell, use a lista suspensa para selecionar **Bash** e selecione **Confirmar** para alternar para o shell Bash.
+1. Digite `ssh-keygen -t rsa -b 2048` para criar a chave SSH. 
+1. Será solicitado que você insira um arquivo no qual salvar o par de chaves. Basta pressionar **Enter** para salvar no local padrão, listado entre colchetes. 
+1. Será solicitado que você insira uma frase secreta. Você pode digitar uma frase secreta para a chave SSH ou pressionar **Enter** para continuar sem uma frase secreta.
+1. O comando `ssh-keygen` gera as chaves públicas e privadas com o nome padrão do `id_rsa` no `~/.ssh directory`. O comando retorna o caminho completo para a chave pública. Use o caminho para a chave pública para exibir seu conteúdo com `cat` digitando `cat ~/.ssh/id_rsa.pub`.
+1. Copie a saída desse comando e salve-a em algum lugar para usá-la posteriormente neste artigo. Essa é sua chave pública e você precisará dela ao configurar sua conta de administrador para fazer logon em sua VM.
 
 ## <a name="sign-in-to-azure"></a>Entrar no Azure
 
-Entre no [Portal do Azure](https://portal.azure.com).
+Entre no [portal do Azure](https://portal.azure.com), se você ainda não fez isso.
 
 ## <a name="create-virtual-machine"></a>Criar máquina virtual
 
 1. Escolha **Criar um recurso** no canto superior esquerdo do portal do Azure.
 
-1. Na caixa de pesquisa acima da lista de recursos do Azure Marketplace, procure e selecione **Ubuntu Server 16.04 LTS** por Canonical, escolha **Criar**.
+1. Em **Popular**, selecione **Ubuntu Server 18.04 LTS**.
 
-1. Na guia **Básico**, em **Detalhes do projeto**, verifique se a assinatura correta está selecionada e, em seguida, escolha **Criar** em **Grupo de recursos**. Na janela pop-up, digite *myResourceGroup* no nome do grupo de recursos e, em seguida, escolha **OK**. 
+1. Na guia **Básico**, em **Detalhes do projeto**, verifique se a assinatura correta está selecionada e, em seguida, escolha **Criar** em **Grupo de recursos**. Digite *myResourceGroup* no nome do grupo de recursos e, em seguida, escolha **OK**. 
 
     ![Criar um grupo de recursos para sua VM](./media/quick-create-portal/project-details.png)
 
@@ -69,7 +63,7 @@ Entre no [Portal do Azure](https://portal.azure.com).
 
     ![Seção de detalhes da instância](./media/quick-create-portal/instance-details.png)
 
-1. Em **Conta de administrador**, selecione **Chave pública SSH**, digite seu nome de usuário e, em seguida, cole sua chave pública na caixa de texto. Remova os espaços em branco à esquerda ou à direita em sua chave pública.
+1. Em **Conta de administrador**, selecione **Chave pública SSH**, digite seu nome de usuário e, em seguida, cole a chave pública. Remova os espaços em branco à esquerda ou à direita em sua chave pública.
 
     ![Conta de administrador](./media/quick-create-portal/administrator-account.png)
 
@@ -92,13 +86,13 @@ Crie uma conexão SSH com a VM.
 
     ![Portal 9](./media/quick-create-portal/portal-quick-start-9.png)
 
-2. Na página **Conectar à máquina virtual**, mantenha as opções padrão para conectar-se com o endereço IP na porta 22. Em **Logon usando a conta local de VM** um comando de conexão é mostrado. Clique no botão para copiar o comando. O exemplo a seguir mostra a aparência do comando de conexão SSH:
+2. Na página **Conectar à máquina virtual**, mantenha as opções padrão para conectar-se com o endereço IP na porta 22. Em **Logon usando a conta local de VM** um comando de conexão é mostrado. Selecione o botão para copiar o comando. O exemplo a seguir mostra a aparência do comando de conexão SSH:
 
     ```bash
     ssh azureuser@10.111.12.123
     ```
 
-3. Usando o mesmo shell bash que você usou para criar seu par de chaves SSH (como o [Azure Cloud Shell](https://shell.azure.com/bash) ou o shell bash local) cole o comando de conexão SSH no shell para criar uma sessão SSH. 
+3. Usando o mesmo shell bash que você usou para criar seu par de chaves SSH (você pode reabrir o Cloud Shell selecionando `>_` novamente ou indo para https://shell.azure.com/bash) ), cole o comando de conexão SSH no shell para criar uma sessão SSH.
 
 ## <a name="install-web-server"></a>Instalar servidor Web
 
@@ -114,7 +108,7 @@ Quando terminar, digite `exit` para sair da sessão SSH.
 
 ## <a name="view-the-web-server-in-action"></a>Ver o servidor Web em ação
 
-Use um navegador da Web de sua escolha para exibir a página inicial padrão do NGINX. Insira o endereço IP público da VM como o endereço Web. O endereço IP público pode ser encontrado na página de visão geral de VM ou como parte da cadeia de conexão SSH usada anteriormente.
+Use um navegador da Web de sua escolha para exibir a página inicial padrão do NGINX. Digite o endereço IP público da VM como o endereço Web. O endereço IP público pode ser encontrado na página de visão geral de VM ou como parte da cadeia de conexão SSH usada anteriormente.
 
 ![Site padrão NGINX](./media/quick-create-cli/nginx.png)
 

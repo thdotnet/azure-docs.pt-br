@@ -17,12 +17,12 @@ ms.date: 04/11/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ed57f581db593a288e62d25a2f0b8ee42c28114
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 10911e5100add2dca84475857a6909fb20d452c4
+ms.sourcegitcommit: a3a40ad60b8ecd8dbaf7f756091a419b1fe3208e
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68852966"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69891555"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-web-app"></a>Início Rápido: Adicionar a opção Entrar com uma Conta da Microsoft a um aplicativo Web ASP.NET
 
@@ -55,8 +55,10 @@ Neste início rápido, você aprenderá como um aplicativo Web ASP.NET pode entr
 > 1. Selecione **Novo registro**.
 > 1. Quando a página **Registrar um aplicativo** for exibida, insira as informações de registro do aplicativo:
 >      - Na seção **Nome**, insira um nome de aplicativo relevante que será exibido aos usuários do aplicativo, por exemplo, `ASPNET-Quickstart`.
->      - Adicione `https://localhost:44368/` na **URI de redirecionamento** e clique em **Registrar**.
-Selecione o menu **Autenticação** menu, defina **Tokens de ID** em **Concessão Implícita**e selecione **Salvar**.
+>      - Adicione `http://localhost:44368/` na **URI de redirecionamento** e clique em **Registrar**.
+>      - No painel de navegação à esquerda, na seção Gerenciar, selecione **Autenticação**
+>          - Na subseção **Concessão Implícita**, selecione **Tokens de ID**.
+>          - Em seguida, selecione **Salvar**.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-your-application-in-azure-portal"></a>Etapa 1: Configurar seu aplicativo no portal do Azure
@@ -91,12 +93,13 @@ Selecione o menu **Autenticação** menu, defina **Tokens de ID** em **Concessã
 > Em que:
 > - `Enter_the_Application_Id_here`: é a ID do aplicativo que você registrou.
 > - `Enter_the_Tenant_Info_Here`: é uma das opções abaixo:
->   - Se seu aplicativo dá suporte a **Somente minha organização**, substitua esse valor pela **ID do Locatário** ou pelo **Nome do locatário** (por exemplo, contoso.microsoft.com)
+>   - Se seu aplicativo dá suporte a **Somente minha organização**, substitua esse valor pela **ID do Locatário** ou pelo **Nome do locatário** (por exemplo, contoso.onmicrosoft.com)
 >   - Se seu aplicativo dá suporte a **Contas em qualquer diretório organizacional**, substitua esse valor por `organizations`
 >   - Se seu aplicativo dá suporte a **Todos os usuários de contas da Microsoft**, substitua esse valor por `common`
 >
 > > [!TIP]
-> > Para encontrar os valores de *ID do aplicativo*, *ID de diretório (locatário)* e *Tipos de conta com suporte*, vá para a página **Visão Geral**
+> > - Para encontrar os valores de *ID do aplicativo*, *ID de diretório (locatário)* e *Tipos de conta com suporte*, vá para a página **Visão Geral**
+> > - Verifique se o valor de `redirectUri` no **Web.config** corresponde ao **URI de Redirecionamento** definido para o Registro do Aplicativo no Azure AD (caso contrário, navegue até o menu **Autenticação** do Registro do Aplicativo e atualize o **URI DE REDIRECIONAMENTO** para que ele seja correspondente)
 
 ## <a name="more-information"></a>Mais informações
 

@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 07/11/2019
+ms.date: 08/11/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 60e1db913336cc9f9e355c2e8f8466854de20389
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: b93d9ee65850749e79714b632584f1977ca88c81
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68828334"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69639994"
 ---
 # <a name="assess-hyper-v-vms-with-azure-migrate-server-assessment"></a>Avaliar VMs do Hyper-V usando a avaliação de servidor das Migrações para Azure
 
@@ -128,13 +128,17 @@ Verifique se o arquivo compactado é seguro antes de implantá-lo.
 
 Importe o arquivo baixado e crie a VM.
 
-1. Extraia o arquivo VHD compactado para uma pasta no host Hyper-V que hospedará a VM do dispositivo. Três pastas são extraídas.
+1. Depois de baixar o arquivo VHD compactado para o host Hyper-V no qual a VM do dispositivo será colocada, extraia o arquivo compactado.
+    - No local extraído, o arquivo é descompactado em uma pasta chamada **AzureMigrateAppliance_NúmeroDaVersão**.
+    - Essa pasta contém uma subpasta, também chamada de **AzureMigrateAppliance_NúmeroDaVersão**.
+    - Essa subpasta contém três subpastas adicionais – **Instantâneos**, **Discos Rígidos Virtuais** e **Máquinas Virtuais**.
+
 2. Abra o Gerenciador do Hyper-V. Em **Ações**, clique em **Importar Máquina Virtual**.
 
     ![Implantar o VHD](./media/tutorial-assess-hyper-v/deploy-vhd.png)
 
 2. No Assistente para Importar Máquina Virtual > **Antes de começar**, clique em **Avançar**.
-3. Em **Localizar Pasta**, especifique a pasta que contém o VHD extraído. Em seguida, clique em **Próximo**.
+3. Em **Localizar Pasta**, selecione a pasta **Máquinas Virtuais**. Em seguida, clique em **Próximo**.
 1. Em **Selecionar Máquina Virtual**, clique em **Avançar**.
 2. Em **Escolher Tipo de Importação**, clique em **Copiar a máquina virtual (criar uma nova ID exclusiva)** . Em seguida, clique em **Próximo**.
 3. Em **Escolher Destino**, mantenha a configuração padrão. Clique em **Próximo**.

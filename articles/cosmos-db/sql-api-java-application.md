@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: tutorial
 ms.date: 12/22/2018
 ms.author: ramkris
-ms.openlocfilehash: dfb4e40aeed797a55a7b2cabad32d33920547c06
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: bd2894c23e206ed5f49fec8aa169d6ed852df4c6
+ms.sourcegitcommit: e42c778d38fd623f2ff8850bb6b1718cdb37309f
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66479497"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69616665"
 ---
 # <a name="build-a-java-web-application-using-azure-cosmos-db-and-the-sql-api"></a>Compilar um aplicativo Web Java usando o Azure Cosmos DB e a API de SQL
 
@@ -250,7 +250,7 @@ Para fazer isso, você precisará converter o projeto para um projeto Maven conc
    
             return gson.fromJson(todoItemDocument.toString(), TodoItem.class);
         }
-5. Assim como os bancos de dados e coleções do Azure Cosmos DB, os documentos também são referenciados por self-links. A função de auxiliar a seguir nos permite recuperar documentos por outro atributo (por exemplo, "id") em vez de self-links:
+5. Assim como os bancos de dados e as coleções do Azure Cosmos, os documentos também são referenciados por self-links. A função de auxiliar a seguir nos permite recuperar documentos por outro atributo (por exemplo, "id") em vez de self-links:
    
         private Document getDocumentById(String id) {
             // Retrieve the document using the DocumentClient.
@@ -737,12 +737,12 @@ Todos os exemplos neste tutorial foram incluídos no projeto [tarefas](https://g
 3. No Eclipse, no menu **Arquivo**, clique em **Importar**.
 4. Na janela **Importar**, clique em **Git**, **Projetos do Git** e clique em **Avançar**.
 5. Na tela **Selecionar origem de repositório**, clique em **Clonar URI**.
-6. Na tela **Repositório Git de Origem**, na caixa **URI**, digite https://github.com/Azure-Samples/documentdb-java-todo-app.gite, em seguida, clique em **Avançar**.
+6. Na tela **Repositório Git de Origem**, na caixa **URI**, digite https://github.com/Azure-Samples/documentdb-java-todo-app.git e, em seguida, clique em **Avançar**.
 7. Na tela **Seleção de Ramificação**, verifique se **master** está selecionado e clique em **Avançar**.
 8. Na tela **Destino Local**, clique em **Procurar** para selecionar uma pasta onde o repositório possa ser copiado e clique em **Avançar**.
 9. Na tela **Selecionar um assistente a ser usado para importar projetos**, verifique se **Importar projetos existentes** está selecionado e clique em **Avançar**.
 10. Na tela **Importar projetos**, desmarque o projeto do **DocumentDB** e clique em **Concluir**. O projeto DocumentDB contém o SDK Java do Azure Cosmos DB, que adicionaremos como uma dependência em seu lugar.
-11. No **Gerenciador de Projetos**, navegue para azure-documentdb-java-sample\src\com.microsoft.azure.documentdb.sample.dao\DocumentClientFactory.java e substitua os valores HOST e MASTER_KEY pela URI e a CHAVE PRIMÁRIA de sua conta BD Cosmos do Azure, então, salve o arquivo. Para obter mais informações, consulte a [Etapa 1. Crie uma conta do banco de dados BD Cosmos do Azure](#CreateDB).
+11. No **Gerenciador de Projetos**, navegue para azure-documentdb-java-sample\src\com.microsoft.azure.documentdb.sample.dao\DocumentClientFactory.java e substitua os valores HOST e MASTER_KEY pela URI e a CHAVE PRIMÁRIA de sua conta BD Cosmos do Azure, então, salve o arquivo. Para obter mais informações, consulte a [Etapa 1. Criar uma conta de banco de dados do Azure Cosmos](#CreateDB).
 12. Em **Explorador de Projeto**, clique com o botão direito do mouse em **azure-documentdb-java-sample**, clique em **Caminho de Build** e clique em **Configurar Caminho de Build**.
 13. Na tela **Caminho de Build Java**, no painel direito, selecione a guia **Bibliotecas** e clique em **Adicionar JARs Externos**. Navegue até o local do arquivo lombok.jar e clique em **Abrir** e clique em **OK**.
 14. Use a Etapa 12 para abrir a janela **Propriedades** novamente e, no painel esquerdo, clique em **Tempos de Execução Direcionados**.

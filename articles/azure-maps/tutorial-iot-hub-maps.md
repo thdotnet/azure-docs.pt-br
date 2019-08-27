@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 853d7f7bf9950640a824eee4ae3e044265b518f7
-ms.sourcegitcommit: df7942ba1f28903ff7bef640ecef894e95f7f335
+ms.openlocfilehash: 5345bbf2514c8b06ab80d4563227725a398f9407
+ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69017220"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69898336"
 ---
 # <a name="implement-iot-spatial-analytics-using-azure-maps"></a>Implementar análise espacial de IoT usando o Azure Mapas
 
@@ -290,6 +290,10 @@ Para explorar as APIs do Azure Mapas usadas neste tutorial, confira:
 Para obter uma lista completa das APIs REST do Azure Mapas, confira:
 
 * [APIs REST do Azure Mapas](https://docs.microsoft.com/rest/api/maps/spatial/getgeofence)
+
+Para saber mais sobre o IoT Plug and Play, confira:
+
+* [IoT Plug and Play](https://docs.microsoft.com/azure/iot-pnp)
 
 Para obter uma lista de dispositivos certificados pelo Azure para IoT, visite:
 

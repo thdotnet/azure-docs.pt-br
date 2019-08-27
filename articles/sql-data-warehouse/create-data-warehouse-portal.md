@@ -11,12 +11,12 @@ ms.date: 05/28/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: sqlfreshmay19
-ms.openlocfilehash: 2864acca443e3135ea0023070da95accf97fe2e9
-ms.sourcegitcommit: 75a56915dce1c538dc7a921beb4a5305e79d3c7a
+ms.openlocfilehash: b7b7d4cfe699ffdef3a8f736f5656d0b0067453a
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68479443"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69575182"
 ---
 # <a name="quickstart-create-and-query-an-azure-sql-data-warehouse-in-the-azure-portal"></a>Início Rápido: Criar e consultar um SQL Data Warehouse do Azure no portal do Azure
 
@@ -39,7 +39,7 @@ Entre no [Portal do Azure](https://portal.azure.com/).
 
 Um SQL Data Warehouse do Azure é criado com um conjunto definido de [recursos de computação](memory-and-concurrency-limits.md). O banco de dados é criado dentro de um [grupo de recursos do Azure](../azure-resource-manager/resource-group-overview.md) e em um [servidor lógico SQL do Azure](../sql-database/sql-database-logical-servers.md). 
 
-Siga estas etapas para criar um SQL data warehouse com os dados de exemplo de AdventureWorksDW. 
+Siga estas etapas para criar um SQL Data Warehouse com os dados de exemplo de AdventureWorksDW. 
 
 1. Clique em **Criar um recurso** no canto superior esquerdo do Portal do Azure.
 
@@ -207,4 +207,4 @@ Execute estas etapas para limpar os recursos desnecessários.
 Agora você criou um data warehouse, criou uma regra de firewall, conectou-se ao data warehouse e executou algumas consultas. Para saber mais sobre o SQL Data Warehouse do Azure, prossiga para o tutorial de carregamento de dados.
 
 > [!div class="nextstepaction"]
-> [Carregar dados no SQL Data Warehouse](load-data-from-azure-blob-storage-using-polybase.md)
+> [Carregar dados em um SQL Data Warehouse](load-data-from-azure-blob-storage-using-polybase.md)

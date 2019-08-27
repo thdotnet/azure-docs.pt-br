@@ -5,24 +5,24 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: tutorial
-ms.date: 07/11/2018
+ms.date: 08/16/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a6e1095cc2c5937fa5de762f91a9830161b8d2a5
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 685c928a20e9bfb47365b5ffa769f1a223d2c563
+ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59362131"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69561509"
 ---
 # <a name="tutorial-complete-an-azure-ad-self-service-password-reset-pilot-roll-out"></a>Tutorial: Concluir uma distribuição piloto de redefinição de senha self-service do Azure AD
 
 Neste tutorial, você habilitará uma distribuição piloto de SSPR (redefinição de senha de autoatendimento) do Azure AD em sua organização e testá-la usando uma conta que não seja de administrador.
 
-É importante que todos os testes de redefinição de senha de autoatendimento sejam feitos com contas que não sejam de administrador. A Microsoft gerencia a política de redefinição de senha das contas de administrador e exige o uso de métodos de autenticação mais fortes. Essa política não permite o uso de perguntas e respostas de segurança e requer o uso de dois métodos para redefinição.
+É importante que todos os testes de redefinição de senha self-service sejam feitos com contas que não sejam de administrador. A Microsoft gerencia a política de redefinição de senha das contas de administrador e exige o uso de métodos de autenticação mais fortes. Essa política não permite o uso de perguntas e respostas de segurança e requer o uso de dois métodos para redefinição.
 
 > [!div class="checklist"]
 > * Habilitar a redefinição de senha por autoatendimento
@@ -37,13 +37,13 @@ Neste tutorial, você habilitará uma distribuição piloto de SSPR (redefiniç�
 1. Entre no [portal do Azure](https://portal.azure.com) usando uma conta de Administrador Global.
 1. Navegue até o **Azure Active Directory** e selecione **Redefinição de senha**.
 1. Comece com um grupo piloto habilitando a senha de autoatendimento para um subconjunto de usuários de sua organização.
-   * Na página **Propriedades**, na opção **Redefinição da Senha de Autoatendimento Habilitada**, escolha **Selecionado** e selecione um grupo piloto.
+   * Na página **Propriedades**, na opção **Redefinição de Senha Self-Service Habilitada**, escolha **Selecionado** e selecione um grupo piloto.
       * Somente os membros de um grupo específico do Azure AD escolhido podem usar a funcionalidade de SSPR. É recomendável definir um grupo de usuários e usar essa configuração ao implantar essa funcionalidade para uma prova de conceito. Há suporte para o aninhamento de grupos de segurança.
       * Verifique se os usuários do grupo que você escolheu foram licenciados adequadamente.
    * Clique em **Salvar**
 1. Na página **Métodos de autenticação**
    * Defina o **Número de métodos necessários para a redefinição** como **1**
-   * Escolha quais **métodos disponíveis para os usuários** sua organização deseja habilitar. Para este tutorial, marque as caixas para habilitar **Email**, **Celular**, **Telefone comercial**, **Notificação de aplicativo móvel (versão prévia)** e **Código de aplicativo móvel (versão prévia)**.
+   * Escolha quais **métodos disponíveis para os usuários** sua organização deseja habilitar. Para este tutorial, marque as caixas para habilitar **Email**, **Celular**, **Telefone do escritório**, **Notificação de aplicativo móvel** e **Código de aplicativo móvel**.
    * Clique em **Salvar**
 1. Na página **Registro**
    * Selecione **Sim** em **Exigir que os usuários se registrem ao entrar**.
@@ -54,13 +54,13 @@ Neste tutorial, você habilitará uma distribuição piloto de SSPR (redefiniç�
    * Defina **Notificar todos os administradores quando outros administradores redefinirem suas próprias senhas** como **Sim**.
 1. Na página **Personalização**
    * A Microsoft recomenda que você defina **Personalizar link de assistência técnica** como **Sim** e forneça um endereço de email ou URL da página da Web onde os usuários possam obter mais ajuda de sua organização no campo **URL ou email de assistência técnica personalizados**.
-   * Neste tutorial vamos deixar **Personalizar link de assistência técnica** definido como **Não**.
+   * Neste tutorial, manteremos **Personalizar link de assistência técnica** definido como **Não**.
 
 A redefinição de senha de autoatendimento agora está configurada para usuários de nuvem em seu grupo piloto.
 
 ## <a name="test-sspr-as-a-user"></a>Testar SSPR como usuário
 
-Teste a redefinição de senha de autoatendimento usando um usuário de teste que não seja administrador e seja membro do grupo piloto. **Lembre-se de que se você usar uma conta que tenha função de administrador atribuída, a quantidade e os métodos de autenticação poderão ser diferentes dos selecionados, já que a Microsoft gerencia a política de administrador.**
+Teste a redefinição de senha de autoatendimento usando um usuário de teste que não seja administrador e seja membro do grupo piloto. **Se você usar uma conta que tenha uma função Administrador atribuída, a quantidade e os métodos de autenticação poderão ser diferentes dos selecionados, pois a Microsoft gerencia a política de administrador.**
 
 1. Abra uma nova janela do navegador no modo InPrivate ou anônimo.
 1. Usando um registro de usuário de teste para redefinição de senha de autoatendimento usando o portal de registro localizado em [ https://aka.ms/ssprsetup](https://aka.ms/ssprsetup).

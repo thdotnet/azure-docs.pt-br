@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 01/17/2019
+ms.date: 08/19/2019
 ms.author: spelluru
-ms.openlocfilehash: 3be1da54b16a24ce3c4431dfe26eb778cea5c83d
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 769cb2c6a3ae0e5b94ffd65425634ac9dd0221d0
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59545256"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640043"
 ---
 # <a name="tutorial-access-a-classroom-lab-in-azure-lab-services"></a>Tutorial: Acessar um laboratório de sala de aula no Azure Lab Services
 Neste tutorial, você, como aluno, conecta-se a uma máquina virtual (VM) em um laboratório de sala de aula. 
@@ -27,21 +27,37 @@ Neste tutorial, você, como aluno, conecta-se a uma máquina virtual (VM) em um 
 Neste tutorial, você executa as seguintes ações:
 
 > [!div class="checklist"]
-> * Usar o link de registro 
-> * Conectar-se à máquina virtual
+> * Registrar-se no laboratório
+> * Iniciar a VM
+> * Conectar-se à VM
 
-## <a name="use-the-registration-link"></a>Usar o link de registro
+## <a name="register-to-the-lab"></a>Registrar-se no laboratório
 
-1. Navegue até a **URL de registro** que você recebeu do professor/educador. Não é necessário usar a URL de registro após concluir o registro. Em vez disso, use a URL: [https://labs.azure.com](https://labs.azure.com). Observe que ainda não há suporte para o Internet Explorer 11. 
+1. Navegue até a **URL de registro** que você recebeu do professor/educador. Não é necessário usar a URL de registro após concluir o registro. Em vez disso, use a URL: [https://labs.azure.com](https://labs.azure.com). Ainda não há suporte para o Internet Explorer 11. 
 1. Entre no serviço usando sua conta da escola para concluir o registro. 
 2. Depois de registrado, confirme que consegue ver a máquina virtual do laboratório ao qual você tem acesso. 
-3. Aguarde até que a máquina virtual fique pronta e **inicie** a VM. Esse processo demora um pouco.  
+3. Aguarde até a máquina virtual ficar pronta. No bloco da VM, observe os seguintes campos:
+    1. Na parte superior do bloco, você verá o **nome do laboratório**.
+    1. À direita, você verá o ícone que representa o **SO (sistema operacional)** da VM. Neste exemplo, é o sistema operacional Windows. 
+    1. A barra de progresso no bloco mostra o número de horas usadas em relação ao número de [horas de cota](how-to-configure-student-usage.md#set-quotas-for-users) atribuídas a você. Esse tempo é o tempo adicional alocado para você, além do horário agendado para o laboratório. 
+    1. Você verá os ícones/os botões na parte inferior do bloco para iniciar/interromper a VM e se conectar a ela. 
+    1. À direita dos botões, você verá o status da VM. Confirme se o status da VM mostrado está **Interrompida**. 
+
+        ![VM no estado Interrompido](../media/tutorial-connect-vm-in-classroom-lab/vm-in-stopped-state.png)
+
+## <a name="start-the-vm"></a>Iniciar a VM
+1. **Inicie** a VM selecionando o primeiro botão, conforme mostrado na imagem a seguir. Esse processo demora um pouco.  
 
     ![Iniciar a VM](../media/tutorial-connect-vm-in-classroom-lab/start-vm.png)
+4. Confirme se o status da VM está definido como **Em execução**. 
 
-## <a name="connect-to-the-virtual-machine"></a>Conectar-se à máquina virtual
+    ![VM no estado de execução](../media/tutorial-connect-vm-in-classroom-lab/vm-running.png)
 
-1. Selecione **Conectar** no bloco da máquina virtual do laboratório que você deseja acessar. 
+    Observe que o ícone do primeiro botão foi alterado para representar uma operação de **interrupção**. Selecione esse botão para interromper a VM. 
+
+## <a name="connect-to-the-vm"></a>Conectar-se à VM
+
+1. Selecione o segundo botão, conforme mostrado na imagem a seguir, para se **conectar** à VM do laboratório. 
 
     ![Conectar-se a uma VM](../media/tutorial-connect-vm-in-classroom-lab/connect-vm.png)
 2. Siga uma das etapas a seguir: 

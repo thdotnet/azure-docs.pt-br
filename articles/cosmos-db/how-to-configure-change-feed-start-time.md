@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 08/13/2019
 ms.author: maquaran
-ms.openlocfilehash: 7db14f6406223486ea0efb80d3d1cfcd0351f414
-ms.sourcegitcommit: 18061d0ea18ce2c2ac10652685323c6728fe8d5f
+ms.openlocfilehash: 3ad9aff10b3bae36a173f776f55a434fd8b38b98
+ms.sourcegitcommit: 5ded08785546f4a687c2f76b2b871bbe802e7dae
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69037223"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69574274"
 ---
 # <a name="how-to-configure-the-change-feed-processor-start-time"></a>Como configurar a hora de início do processador do feed de alterações
 
@@ -51,8 +51,7 @@ O processador do feed de alterações será inicializado e começará a ler as a
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Agora, você pode prosseguir para saber mais sobre o feed de alterações nos seguintes artigos:
+Agora continue para saber mais sobre o processador do feed de alterações nos seguintes artigos:
 
-* [Visão geral do feed de alterações](change-feed.md)
-* [Maneiras de ler o feed de alterações](read-change-feed.md)
-* [Usando o processador de feed de alterações](change-feed-processor.md)
+* [Visão geral do processador do feed de alterações](change-feed-processor.md)
+* [Como usar o avaliador do feed de alterações](how-to-use-change-feed-estimator.md)

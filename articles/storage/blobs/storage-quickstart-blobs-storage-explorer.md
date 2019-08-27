@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 11/15/2018
 ms.author: tamram
-ms.openlocfilehash: 929ba7e28bca608359e76f9eeb130c61ba3235a0
-ms.sourcegitcommit: f56b267b11f23ac8f6284bb662b38c7a8336e99b
+ms.openlocfilehash: cd31d1c40f30ebc8341c2126da22f8a74cb05438
+ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
 ms.translationtype: HT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67435797"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69640513"
 ---
 # <a name="quickstart-use-azure-storage-explorer-to-create-a-blob-in-object-storage"></a>Início Rápido: Usar o Gerenciador de Armazenamento do Azure para criar um blob no armazenamento de objetos
 
@@ -31,7 +31,7 @@ Na primeira inicialização, é exibida a janela **Gerenciador de Armazenamento 
 
 |Tarefa|Finalidade|
 |---|---|
-|Adicionar uma conta do Azure | Redireciona você para a página de logon das suas organizações para autenticação no Azure. |
+|Adicionar uma conta do Azure | Redireciona você para a página de entrada de sua organização para autenticá-lo no Azure. |
 |Usar uma cadeia de conexão ou um URI de assinatura de acesso compartilhado | Podem ser usados para acessar diretamente um contêiner ou uma conta de armazenamento com um token SAS ou uma cadeia de conexão compartilhada. |
 |Usar um nome e uma chave da conta de armazenamento| Use o nome e a chave da sua conta de armazenamento para se conectar ao armazenamento do Azure.|
 
