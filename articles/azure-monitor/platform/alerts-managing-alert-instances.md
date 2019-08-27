@@ -8,15 +8,18 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: anantr
 ms.subservice: alerts
-ms.openlocfilehash: cb93f38c05156d7ab5acb89ffff810949583e507
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: dbc7d37ce311d203ee051b5a23632d2bf401e27a
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60551769"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70034838"
 ---
 # <a name="manage-alert-instances"></a>Gerenciar instâncias de alerta
 Com a [experiência de alertas unificada](https://aka.ms/azure-alerts-overview) no Azure Monitor, agora você pode ver todos os tipos de alertas no Azure, que abrangem várias assinaturas, em um único painel de vidro. Este artigo orienta você por meio de como exibir suas instâncias de alerta e como fazer uma análise aprofundada sobre o portal para localizar instâncias de alerta específicas para a solução de problemas.
+
+> [!NOTE]
+   >  Somente os alertas gerados nos últimos 30 dias podem ser acessados na UX ou por meio das APIs REST.
 
 1. Há três maneiras de acessar a página de alertas
 
@@ -25,11 +28,11 @@ Com a [experiência de alertas unificada](https://aka.ms/azure-alerts-overview) 
   
    + Você pode navegar até Alertas de dentro do contexto de um determinado **recurso**. Depois que um recurso é aberto, navegue pelo sumário até a seção Monitoramento e escolha **Alertas**, com a página de aterrissagem pré-filtrada para alertas no recurso específico.
    
-     ![Monitoramento](media/alerts-managing-alert-instances/alert-resource.JPG)
+     ![Monitorando](media/alerts-managing-alert-instances/alert-resource.JPG)
     
    + Você pode navegar até Alertas de dentro do contexto de um determinado **grupo de recursos**. Depois que um grupo de recursos é aberto, navegue pelo sumário até a seção Monitoramento e escolha **Alertas**, com a página de aterrissagem pré-filtrada para alertas no grupo de recursos específico.    
    
-     ![Monitoramento](media/alerts-managing-alert-instances/alert-rg.JPG)
+     ![Monitorando](media/alerts-managing-alert-instances/alert-rg.JPG)
 
 1. Você será levado até a página **Resumo de alertas**, que lhe dá uma visão geral de todas as instâncias de alerta no Azure. Você pode modificar a exibição de resumo selecionando **várias assinaturas** (um máximo de cinco) ou filtrando nos **grupos de recursos**, **recursos** específicos ou **intervalos de tempo**. Clique em Alertas totais ou em qualquer uma das faixas de gravidade para ir para a exibição de lista de alertas.     
    ![Resumo de alertas](media/alerts-managing-alert-instances/alerts-summary.jpg)

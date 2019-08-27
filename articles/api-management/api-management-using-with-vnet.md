@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/01/2019
 ms.author: apimpm
-ms.openlocfilehash: 338ceef8ce94e97f7569f85b0079f75aed033612
-ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
+ms.openlocfilehash: 18bbeb2b4936b1c8a03ffdc7eade8dc92d094fde
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69558628"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050601"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Como usar o Gerenciamento de API do Azure com redes virtuais
 As redes virtuais do Azure (VNETs) permitem que você coloque qualquer um dos recursos do Azure em uma rede roteável que não seja da Internet para a qual você controla o acesso. Essas redes podem ser conectadas às redes locais usando várias tecnologias VPN. Para saber mais sobre Redes Virtuais do Azure comece com as informações aqui: [Visão geral da Rede Virtual do Azure](../virtual-network/virtual-networks-overview.md).
@@ -140,7 +140,7 @@ Veja a seguir uma lista de problemas comuns de erro de configuração que podem 
 
 + **Retransmissão de SMTP**: Conectividade de rede de saída para a retransmissão de SMTP, que resolve sob `smtpi-co1.msn.com`o `smtpi-ch1.msn.com`host `smtpi-db3.msn.com`, `smtpi-sin.msn.com` ,, e`ies.global.microsoft.com`
 
-+ **CAPTCHA do portal do desenvolvedor**: Conectividade de rede de saída para o CAPTCHA do portal do desenvolvedor, que é resolvido sob o host `client.hip.live.com`.
++ **CAPTCHA do portal do desenvolvedor**: Conectividade de rede de saída para o captcha do portal do desenvolvedor, que resolve nos `client.hip.live.com` hosts `partner.hip.live.com`e.
 
 + **Diagnósticos do portal do Azure**: Para habilitar o fluxo de log de diagnóstico do portal do Azure ao usar a extensão de Gerenciamento de API de dentro de uma Rede Virtual, é necessário ter acesso de saída a `dc.services.visualstudio.com` na porta 443. Isso ajuda na solução de problemas que você pode enfrentar ao usar a extensão.
 

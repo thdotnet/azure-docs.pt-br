@@ -3,17 +3,17 @@ title: Recursos de solicitação de dados do cliente no Azure IoT Central | Micr
 description: Recursos de solicitação de dados do cliente no Azure IoT Central
 author: dominicbetts
 ms.author: dobett
-ms.date: 04/24/2019
+ms.date: 08/23/2019
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: timlt
-ms.openlocfilehash: 4c63ac8d6b16b2a0476600f67c66b2ccc8dc2aab
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: a1775c8680b2e0d931c623d2e8ced2224205a767
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64685565"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050495"
 ---
 # <a name="summary-of-customer-data-request-features"></a>Resumo dos recursos de solicitação de dados do cliente
 
@@ -33,7 +33,7 @@ Quando você usa os serviços corporativos da Microsoft, a Microsoft gera alguma
 
 ## <a name="deleting-customer-data"></a>Excluindo os dados do cliente
 
-A capacidade de excluir os dados do usuário só é fornecida por meio da página de administração do IoT Central. Os administradores de aplicativos podem selecionar o usuário a ser excluída e selecione **excluir** no canto superior direito do aplicativo para excluir o registro. Os administradores de aplicativos também podem remover contas individuais que não estão mais associadas ao aplicativo em questão.
+A capacidade de excluir os dados do usuário só é fornecida por meio da página de administração do IoT Central. Os administradores de aplicativos podem selecionar o usuário a ser excluído e selecionar **excluir** no canto superior direito do aplicativo para excluir o registro. Os administradores de aplicativos também podem remover contas individuais que não estão mais associadas ao aplicativo em questão.
 
 Depois que um usuário é excluído, nenhum alerta adicional é enviado por email a ele. No entanto, seu endereço de email precisa ser removido individualmente de cada alerta configurado.
 

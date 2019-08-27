@@ -11,12 +11,12 @@ ms.assetid: 8bce2183-544d-4668-a2dc-9a62c152d9fa
 ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
-ms.openlocfilehash: 0fbd89202796cb4543dbecbeee605c9b87cc9d05
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 22b75b2d2b47dbd496eda06c09b418ae66f6403a
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62104979"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050695"
 ---
 # <a name="monitor-and-manage-twitter-by-using-azure-logic-apps"></a>Monitore e gerencie o Twitter usando os Aplicativos Lógicos do Azure
 
@@ -29,7 +29,7 @@ Você pode usar gatilhos que obtêm respostas de sua conta do Twitter e disponib
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, <a href="https://azure.microsoft.com/free/" target="_blank">inscreva-se em uma conta gratuita do Azure</a>. 
+* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, [inscreva-se em uma conta gratuita do Azure](https://azure.microsoft.com/free/). 
 
 * Suas credenciais de usuário e conta do Twitter
 
@@ -50,13 +50,13 @@ Você pode usar gatilhos que obtêm respostas de sua conta do Twitter e disponib
    * Para aplicativos lógicos em branco, na caixa de pesquisa, insira "twitter" como filtro. 
    Na lista de gatilhos, selecione o gatilho desejado. 
 
-     -ou-
+     - ou -
 
    * Para aplicativos lógicos existentes: 
    
      * Na última etapa em que você deseja adicionar uma ação, escolha **Nova etapa**. 
 
-       -ou-
+       - ou -
 
      * Entre as etapas em que você deseja adicionar uma ação, mova o ponteiro sobre a seta entre as etapas. 
      Escolha o sinal de adição ( **+** ) que aparece e, em seguida, selecione **Adicionar uma ação**.
@@ -76,9 +76,9 @@ Esse gatilho inicia um fluxo de trabalho do aplicativo lógico quando detecta um
 
 Opcionalmente, você pode incluir uma condição segundo a qual tweets qualificados devem vir de usuários com um número mínimo de seguidores especificado.
 
-**Exemplo corporativo**: Você pode usar esse gatilho monitore tweets sobre sua empresa e carregar o conteúdo dos tweets para um banco de dados SQL.
+**Exemplo corporativo**: Você pode usar esse gatilho para monitorar tweets sobre sua empresa e carregar o conteúdo dos tweets em um banco de dados SQL.
 
-### <a name="twitter-action-post-a-tweet"></a>Ação do Twitter: Publicar um tweet
+### <a name="twitter-action-post-a-tweet"></a>Ação do Twitter: Postar um Tweet
 
 Essa ação posta um tweet, mas você pode configurá-la para que o tweet tenha o conteúdo dos tweets encontrados pelo gatilho descrito anteriormente. 
 

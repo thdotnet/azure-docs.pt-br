@@ -1,21 +1,22 @@
 ---
-title: Conectar-se a pesquisa do Bing - aplicativos lógicos do Azure
+title: Conectar-se a Pesquisa do Bing-aplicativos lógicos do Azure
 description: Encontre notícias com APIs REST de Pesquisa do Bing e Aplicativos Lógicos do Azure
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
 author: ecfan
 ms.author: estfan
+manager: carmonm
 ms.reviewer: klam, LADocs
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/21/2018
 tags: connectors
-ms.openlocfilehash: 7146e59eabf9e30fa263f957f1c546414ad0fe26
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 61004ed75a1935ada21b5c620a909fb5289aebb8
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60952495"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70051005"
 ---
 # <a name="find-news-with-bing-search-and-azure-logic-apps"></a>Encontre notícias com a Pesquisa do Bing e os Aplicativos Lógicos do Azure
 
@@ -23,8 +24,8 @@ Este artigo mostra como é possível encontrar notícias, vídeos e outros itens
 
 Por exemplo, é possível encontrar itens de notícias com base em critérios de pesquisa e fazer com que o Twitter publique esses itens como tweets no feed do Twitter.
 
-Se você não tiver uma assinatura do Azure, <a href="https://azure.microsoft.com/free/" target="_blank">inscreva-se em uma conta gratuita do Azure</a>. Se ainda não estiver familiarizado com aplicativo lógicos, consulte [O que são os Aplicativos Lógicos do Azure](../logic-apps/logic-apps-overview.md) e [Início Rápido: criar seu primeiro aplicativo lógico](../logic-apps/quickstart-create-first-logic-app-workflow.md).
-Para obter informações técnicas específicas do conector, consulte a <a href="https://docs.microsoft.com/connectors/bingsearch/" target="blank">referência do conector da Pesquisa do Bing</a>.
+Se você não tiver uma assinatura do Azure, [inscreva-se em uma conta gratuita do Azure](https://azure.microsoft.com/free/). Se ainda não estiver familiarizado com aplicativo lógicos, consulte [O que são os Aplicativos Lógicos do Azure](../logic-apps/logic-apps-overview.md) e [Início Rápido: criar seu primeiro aplicativo lógico](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+Para obter informações técnicas específicas do conector, consulte a [referência do conector da Pesquisa do Bing](https://docs.microsoft.com/connectors/bingsearch/).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -44,7 +45,7 @@ Nos Aplicativos Lógicos do Azure, cada aplicativo lógico deve começar com um 
 
 2. Na caixa de pesquisa, insira "Pesquisa do Bing" como seu filtro. Na lista de gatilhos, selecione o gatilho desejado.
 
-   Este exemplo usa esse gatilho: **Pesquisa do Bing - no novo artigo de notícias**
+   Este exemplo usa este gatilho: **Pesquisa do Bing-no novo artigo de notícias**
 
    ![Localizar gatilho de Pesquisa do Bing](./media/connectors-create-api-bing-search/add-trigger.png)
 
@@ -68,7 +69,7 @@ Ou, se a conexão já existir, forneça as informações necessárias para o gat
 
 4. Selecione o intervalo e a frequência de quantas vezes você quer que o gatilho verifique os resultados.
 
-5. Quando terminar, selecione **Salvar** na barra de ferramentas do designer.
+5. Quando terminar, na barra de ferramentas do designer, selecione **salvar**.
 
 6. Agora, continue a adicionar uma ou mais ações ao aplicativo lógico para as tarefas que você deseja executar com os resultados do gatilho.
 
@@ -80,23 +81,23 @@ Em Aplicativos Lógicos do Azure, uma [ação](../logic-apps/logic-apps-overview
 
 1. No portal do Azure ou no Visual Studio, abra o aplicativo lógico no Designer do Aplicativo Lógico. Este exemplo usa o portal do Azure.
 
-2. No gatilho ou ação, escolha **Nova etapa** > **Adicionar uma ação**.
+2. No gatilho ou ação, selecione **nova etapa** > **Adicionar uma ação**.
 
-   Este exemplo usa esse gatilho:
+   Este exemplo usa este gatilho:
 
-   **Pesquisa do Bing - no novo artigo de notícias**
+   **Pesquisa do Bing-no novo artigo de notícias**
 
    ![Adicionar ação](./media/connectors-create-api-bing-search/add-action.png)
 
    Para adicionar uma ação entre etapas existentes, mova o mouse sobre a seta de conexão. 
-   Escolha o sinal de adição ( **+** ) que aparece e, em seguida, escolha **Adicionar uma ação**.
+   Selecione o sinal de adição **+** () que aparece e, em seguida, selecione **Adicionar uma ação**.
 
 3. Na caixa de pesquisa, insira "Pesquisa do Bing" como seu filtro.
 Na lista de ações, selecione a ação desejada.
 
-   Este exemplo usa essa ação:
+   Este exemplo usa esta ação:
 
-   **Pesquisa do Bing - notícias de lista por consulta**
+   **Pesquisa do Bing-listar notícias por consulta**
 
    ![Localize a ação da Pesquisa do Bing](./media/connectors-create-api-bing-search/bing-search-select-action.png)
 
@@ -116,7 +117,7 @@ Na lista de ações, selecione a ação desejada.
    Por exemplo, suponha que você queira aqueles resultados cuja categoria inclua a palavra "tech".
 
    1. Clique na caixa **Consulta de Pesquisa** para que a lista de conteúdo dinâmico seja exibida. 
-   Na lista, escolha **Expressão** para que o construtor de expressões seja exibido. 
+   Nessa lista, selecione **expressão** para que o construtor de expressões seja exibido. 
 
       ![Gatilho de Pesquisa do Bing](./media/connectors-create-api-bing-search/bing-search-action.png)
 
@@ -131,7 +132,7 @@ Na lista de ações, selecione a ação desejada.
 
       ![Selecionar um campo](./media/connectors-create-api-bing-search/expression-select-field.png)
 
-   4. Quando terminar, escolha **OK**.
+   4. Quando terminar, selecione **OK**.
 
       A expressão agora aparece na caixa **Consulta de Pesquisa** neste formato:
 
@@ -141,7 +142,7 @@ Na lista de ações, selecione a ação desejada.
 
       `"@{contains(triggerBody()?['category'],'tech')}"`
 
-5. Quando terminar, selecione **Salvar** na barra de ferramentas do designer.
+5. Quando terminar, na barra de ferramentas do designer, selecione **salvar**.
 
 <a name="create-connection"></a>
 
@@ -162,16 +163,11 @@ Na lista de ações, selecione a ação desejada.
 
    ![Criar conexão](./media/connectors-create-api-bing-search/bing-search-create-connection.png)
 
-2. Quando terminar, escolha **Criar**.
+2. Quando terminar, selecione **Criar**.
 
 ## <a name="connector-reference"></a>Referência de conector
 
-Para obter detalhes técnicos, como gatilhos, ações e limites, conforme descrito pelo OpenAPI do conector (anteriormente conhecido como Swagger) de arquivos, consulte o [página de referência do conector](/connectors/bingsearch/).
-
-## <a name="get-support"></a>Obter suporte
-
-* Em caso de dúvidas, visite o [Fórum dos Aplicativos Lógicos do Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-* Para enviar ou votar em ideias de recurso, visite o [site de comentários do usuário de Aplicativos Lógicos](https://aka.ms/logicapps-wish).
+Para obter detalhes técnicos, como gatilhos, ações e limites, conforme descrito pelo arquivo OpenAPI (anteriormente Swagger) do conector, consulte a [página de referência do conector](/connectors/bingsearch/).
 
 ## <a name="next-steps"></a>Próximas etapas
 

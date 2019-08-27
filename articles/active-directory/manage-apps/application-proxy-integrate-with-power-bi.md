@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ca2b7f2b0e20e85e1e62f8efabb81eddd5f901f2
-ms.sourcegitcommit: 007ee4ac1c64810632754d9db2277663a138f9c4
+ms.openlocfilehash: eb4486c889dec29f81b57605c3ccee510242f832
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69991108"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70035135"
 ---
 # <a name="enable-remote-access-to-power-bi-mobile-with-azure-ad-application-proxy"></a>Habilitar o acesso remoto para Power BI Mobile com o Azure Proxy de Aplicativo do AD
 
@@ -103,28 +103,27 @@ Agora você está pronto para configurar o Azure Proxy de Aplicativo do AD.
 
 Para concluir a configuração do aplicativo, vá para **a seção usuários e grupos** e atribua usuários para acessar este aplicativo.
 
-## <a name="step-3-grant-power-bi-mobile-access-to-report-services"></a>Etapa 3: Conceder Power BI Mobile acesso aos serviços de relatório
+## <a name="step-3-modify-the-reply-uris-for-the-application"></a>Etapa 3: Modificar o URI de resposta do aplicativo
 
-Antes que o aplicativo móvel Power BI possa se conectar e acessar os serviços de relatório, você deve registrá-lo corretamente no Azure AD.  
+Antes que o aplicativo móvel Power BI possa se conectar e acessar os serviços de relatório, você deve configurar o registro do aplicativo que foi criado automaticamente para você na etapa 2. 
 
 1. Na página **visão geral** do Azure Active Directory, selecione **registros de aplicativo**.
 2. Na guia **todos os aplicativos** , pesquise o aplicativo criado na etapa 2.
 3. Selecione o aplicativo e, em seguida, selecione **autenticação**.
 4. Adicione os seguintes URIs de redirecionamento com base em qual plataforma você está usando.
 
-   Ao registrar o aplicativo para Power BI Mobile **Ios**, adicione os seguintes URIs de redirecionamento do tipo cliente público (Mobile & Desktop):
+   Ao configurar o aplicativo para Power BI Mobile **Ios**, adicione os seguintes URIs de redirecionamento do tipo cliente público (Mobile & Desktop):
    - `msauth://code/mspbi-adal%3a%2f%2fcom.microsoft.powerbimobile`
    - `msauth://code/mspbi-adalms%3a%2f%2fcom.microsoft.powerbimobilems`
    - `mspbi-adal://com.microsoft.powerbimobile`
    - `mspbi-adalms://com.microsoft.powerbimobilems`
    
-   Ao registrar o aplicativo para Power BI Mobile **Android**, adicione os seguintes URIs de redirecionamento do tipo cliente público (Mobile & Desktop):
+   Ao configurar o aplicativo para Power BI Mobile **Android**, adicione os seguintes URIs de redirecionamento do tipo cliente público (Mobile & Desktop):
    - `urn:ietf:wg:oauth:2.0:oob`
+   - `mspbi-adal://com.microsoft.powerbimobile`
 
    > [!IMPORTANT]
-   > Os URIs de redirecionamento devem ser adicionados para que o aplicativo funcione corretamente. Se você estiver configurando isso para iOS e Android, você só precisará registrar um **único** aplicativo e adicionar os URIs de redirecionamento para IOS e Android. Se você precisar de aplicativos separados para cada plataforma, será necessário incluir o URI de redirecionamento: `mspbi-adal://com.microsoft.powerbimobile` para ambos os aplicativos.
-
-2. Agora que você registrou seu aplicativo nativo, você pode conceder a ele acesso a outros aplicativos em seu diretório, nesse caso, para acessar os serviços de relatório publicados por meio do proxy de aplicativo. Siga as etapas na [etapa 3: Conceda acesso ao seu aplicativo](application-proxy-configure-native-client-application.md#step-3-grant-access-to-your-proxy-application)proxy.
+   > Os URIs de redirecionamento devem ser adicionados para que o aplicativo funcione corretamente. Se você estiver configurando o aplicativo para o Power BI Mobile iOS e Android, adicione o seguinte URI de redirecionamento do tipo cliente público (Mobile & Desktop) à lista de URIs de `urn:ietf:wg:oauth:2.0:oob`redirecionamento configurados para IOS:.
 
 ## <a name="step-4-connect-from-the-power-bi-mobile-app"></a>Etapa 4: Conectar-se do aplicativo Power BI Mobile
 

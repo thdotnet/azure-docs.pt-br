@@ -12,19 +12,20 @@ manager: cgronlun
 ms.reviewer: jmartens
 ms.date: 07/16/2019
 ms.custom: seodec18
-ms.openlocfilehash: add5584ccf3d9d6837e328bbf70d71598e5c0839
-ms.sourcegitcommit: 800f961318021ce920ecd423ff427e69cbe43a54
+ms.openlocfilehash: 339a4f93d45b3d3b3e242aa735ce4b737a9292f0
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68694300"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70035950"
 ---
 # <a name="transform-data-with-the-azure-machine-learning-data-prep-sdk"></a>Transformar dados com o SDK de preparação de dados do Azure Machine Learning
 
 Neste artigo, você aprenderá métodos diferentes para transformar dados usando o `azureml-dataprep` pacote. O pacote oferece funções que tornam simples a adição de colunas, o filtro de linhas ou colunas indesejadas e a imputar de valores ausentes. Consulte a documentação de referência completa para o [pacote azureml-dataprep](https://aka.ms/data-prep-sdk).
 
 > [!Important]
-> Se você estiver criando uma nova solução, experimente os [conjuntos](how-to-explore-prepare-data.md) de dados Azure Machine Learning (versão prévia) para transformar seus dados, fazer instantâneos e armazenar as definições de conjunto de dados com controle de versão. Conjuntos de dados é a próxima versão do data Prep SDK, oferecendo funcionalidade expandida para o gerenciamento de conjuntos de dados em soluções de ia. Se você usar o `azureml-dataprep` pacote para criar um fluxo de os com suas transformações em vez `azureml-datasets` de usar o pacote para criar um conjunto de um, não será possível usar instantâneos ou conjuntos de valores com controle de versão mais tarde.
+> Se você estiver criando uma nova solução, experimente os [conjuntos](how-to-explore-prepare-data.md) de dados Azure Machine Learning (versão prévia) para transformar seus dados, fazer instantâneos e armazenar as definições de conjunto de dados com controle de versão. Conjuntos de dados é a próxima versão do data Prep SDK, oferecendo funcionalidade expandida para o gerenciamento de conjuntos de dados em soluções de ia.
+> Se você usar o `azureml-dataprep` pacote para criar um fluxo de os com suas transformações em vez `azureml-datasets` de usar o pacote para criar um conjunto de um, não será possível usar instantâneos ou conjuntos de valores com controle de versão mais tarde.
 
 Este "como" mostra exemplos para as seguintes tarefas:
 
@@ -46,7 +47,7 @@ dflow = dprep.read_csv(path=r'data\crime0-10.csv')
 dflow.head(3)
 ```
 
-||ID|Número do Caso|Date|Bloquear|IUCR|Texto Primário|Descrição|Descrição do Local|Detenção|Nacional|...|Ward|Área da Comunidade|Código do FBI|Coordenada X|Coordenada Y|Ano|Atualizado Em|Latitude|Longitude|Location|
+||id|Número do Caso|Date|Bloquear|IUCR|Texto Primário|Descrição|Descrição do Local|Detenção|Nacional|...|Ward|Área da Comunidade|Código do FBI|Coordenada X|Coordenada Y|Year|Atualizado Em|Latitude|Longitude|Location|
 |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
 |0|10140490|HY329907|05/07/2015 11:50:00 pm|050XX N NEWLAND AVE|0820|ROUBO|US $500 E ABAIXO DE|RUA|false|false|...|41|10|06|1129230|1933315|2015|12/07/2015 12:42:46 pm|41,973309466|-87,800174996|(41,973309466, -87,800174996)|
 |1|10139776|HY329265|05/07/2015 11:30:00 pm|011XX W MORSE AVE|0460|BATERIA|SIMPLES|RUA|false|true|...|49|1|08B|1167370|1946271|2015|12/07/2015 12:42:46 pm|42,008124017|-87,65955018|(42,008124017, -87,65955018)|
@@ -63,7 +64,7 @@ case_category = dflow.add_column(new_column_name='Case Category',
 case_category.head(3)
 ```
 
-||ID|Número do Caso|Categoria do Caso|Date|Bloquear|IUCR|Texto Primário|Descrição|Descrição do Local|Detenção|Nacional|...|Ward|Área da Comunidade|Código do FBI|Coordenada X|Coordenada Y|Ano|Atualizado Em|Latitude|Longitude|Location|
+||id|Número do Caso|Categoria do Caso|Date|Bloquear|IUCR|Texto Primário|Descrição|Descrição do Local|Detenção|Nacional|...|Ward|Área da Comunidade|Código do FBI|Coordenada X|Coordenada Y|Year|Atualizado Em|Latitude|Longitude|Location|
 |-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|-------|------|
 |0|10140490|HY329907|HY|05/07/2015 11:50:00 pm|050XX N NEWLAND AVE|0820|ROUBO|US $500 E ABAIXO DE|RUA|false|false|...|41|10|06|1129230|1933315|2015|12/07/2015 12:42:46 pm|41,973309466|-87,800174996|(41,973309466, -87,800174996)|
 |1|10139776|HY329265|HY|05/07/2015 11:30:00 pm|011XX W MORSE AVE|0460|BATERIA|SIMPLES|RUA|false|true|...|49|1|08B|1167370|1946271|2015|12/07/2015 12:42:46 pm|42,008124017|-87,65955018|(42,008124017, -87,65955018)|
@@ -94,7 +95,7 @@ dflow = dflow.to_number(['Latitude', 'Longitude'])
 dflow.head(3)
 ```
 
-||ID|Detenção|Latitude|Longitude|
+||id|Detenção|Latitude|Longitude|
 |-----|------|-----|------|-----|
 |0|10140490|false|41,973309|-87,800175|
 |1|10139776|false|42,008124|-87,659550|
@@ -137,7 +138,7 @@ dflow_imputed = impute_builder.to_dataflow()
 dflow_imputed.head(3)
 ```
 
-||ID|Detenção|Latitude|Longitude|
+||id|Detenção|Latitude|Longitude|
 |-----|------|-----|------|-----|
 |0|10140490|false|41,973309|-87,800175|
 |1|10139776|false|42,008124|-87,659550|
@@ -161,7 +162,7 @@ dflow = dprep.read_csv(
 dflow.head(4)
 ```
 
-||DATA|REPORTTPYE|HOURLYDRYBULBTEMPF|HOURLYRelativeHumidity|HOURLYWindSpeed|
+||DATE|REPORTTPYE|HOURLYDRYBULBTEMPF|HOURLYRelativeHumidity|HOURLYWindSpeed|
 |----|----|----|----|----|----|
 |0|1/1/2015 0:54|FM-15|22|50|10|
 |1|1/1/2015 1:00|FM-12|22|50|10|
@@ -178,7 +179,7 @@ builder.add_example(
 builder.preview(count=5)
 ```
 
-||DATA|date_timerange|
+||DATE|date_timerange|
 |----|----|----|
 |0|1/1/2015 0:54|1 de janeiro de 2015 0:00 - 2:00|
 |1|1/1/2015 1:00|1 de janeiro de 2015 0:00 - 2:00|
@@ -199,7 +200,7 @@ Agora, passe o número de linhas que você deseja `skip` da parte superior para 
 builder.preview(skip=30, count=5)
 ```
 
-||DATA|date_timerange|
+||DATE|date_timerange|
 |-----|-----|-----|
 |0|1/1/2015 22:54|1 de janeiro de 2015 22:00 - 00:00|
 |1|1/1/2015 23:54|1 de janeiro de 2015 22:00 - 00:00|
@@ -215,7 +216,7 @@ builder.add_example(
 builder.preview(skip=30, count=5)
 ```
 
-||DATA|date_timerange|
+||DATE|date_timerange|
 |-----|-----|-----|
 |0|1/1/2015 22:54|1 de janeiro de 2015 22:00 - 00:00|
 |1|1/1/2015 23:54|1 de janeiro de 2015 22:00 - 00:00|
@@ -230,7 +231,7 @@ builder.preview(skip=75, count=5)
 ```
 
 
-||DATA|date_timerange|
+||DATE|date_timerange|
 |-----|-----|-----|
 |0|1/3/2015 7:00|3 de janeiro de 2015 6h – 8:00|
 |1|1/3/2015 7:54|3 de janeiro de 2015 6h – 8:00|
@@ -244,7 +245,7 @@ builder.add_example(
 builder.preview(skip=75, count=5)
 ```
 
-||DATA|date_timerange|
+||DATE|date_timerange|
 |-----|-----|-----|
 |0|1/3/2015 7:00|3 de janeiro de 2015 6h – 8:00|
 |1|1/3/2015 7:54|3 de janeiro de 2015 6h – 8:00|
@@ -258,7 +259,7 @@ builder.preview(skip=75, count=5)
 examples = builder.list_examples()
 ```
 
-| |DATA|exemplo|example_id|
+| |DATE|exemplo|example_id|
 | -------- | -------- | -------- | -------- |
 |0|1/1/2015 1:00|1 de janeiro de 2015 0:00 - 2:00|-1|
 |1|2/1/2015 0:54|2 de janeiro de 2015 0:00 - 2:00|-2|
@@ -345,7 +346,7 @@ Use o construtor de expressões `col`, especifique o nome da coluna como um argu
 
 Neste exemplo, `dflow.filter(col('Tip_amount') > 0)` retorna um novo fluxo de dados com as linhas em que o valor de `Tip_amount` é maior que 0.
 
-> [!NOTE] 
+> [!NOTE]
 > `Tip_amount` é primeiro convertido em números, o que nos permite criar uma expressão comparando-o a outros valores numéricos.
 
 ```python
@@ -401,7 +402,7 @@ dflow.head(2)
 ||lpep_pickup_datetime|Lpep_dropoff_datetime|Passenger_count|Trip_distance|Tip_amount|Tolls_amount|Total_amount|
 |-----|-----|-----|-----|-----|-----|-----|-----|
 |0|13-08-2013 06:11:06+00:00|13-08-2013 06:30:28+00:00|1.0|9.57|7.47|5.33|44.80|
-|1|23-08-2013 06:30:28+00:00|23-08-2013 12:50:28+00:00|2.0|8.22|8.08|5.33|40.41|
+|1|23-08-2013 06:30:28+00:00|23-08-2013 12:50:28+00:00|2,0|8.22|8.08|5.33|40.41|
 
 ## <a name="custom-python-transforms"></a>Transformações personalizadas de Python
 
@@ -475,8 +476,8 @@ df.head(2)
 
 ||stnam|leanm10|ncessch|MAM_MTH00numvalid_1011|
 |-----|-------|---------| -------|------|
-|0|ALABAMA|Condado de Hale|1.017100e+10|0,0|
-|1|ALABAMA|Condado de Hale|1.017100e+10|0,0|
+|0|ALABAMA|Condado de Hale|1.017100e+10|0.0|
+|1|ALABAMA|Condado de Hale|1.017100e+10|0.0|
 
 ### <a name="new-script-column"></a>Nova coluna de script
 
@@ -494,8 +495,8 @@ dflow.head(2)
 
 ||stnam|leanm10|county_state|ncessch|MAM_MTH00numvalid_1011|
 |-----|-------|---------| -------|------|-----|
-|0|ALABAMA|Condado de Hale|Hale County, Alabama|1.017100e+10|0,0|
-|1|ALABAMA|Condado de Hale|Hale County, Alabama|1.017100e+10|0,0|
+|0|ALABAMA|Condado de Hale|Hale County, Alabama|1.017100e+10|0.0|
+|1|ALABAMA|Condado de Hale|Hale County, Alabama|1.017100e+10|0.0|
 
 ### <a name="new-script-filter"></a>Novo Filtro de Script
 
@@ -513,8 +514,8 @@ dflow.head(2)
 ||stnam|leanm10|county_state|ncessch|MAM_MTH00numvalid_1011|
 |-----|-------|---------| -------|------|-----|
 |0|ALABAMA|Jefferson County|Jefferson County, Alabama|1.019200e+10|1.0|
-|1|ALABAMA|Jefferson County|Jefferson County, Alabama|1.019200e+10|0,0|
+|1|ALABAMA|Jefferson County|Jefferson County, Alabama|1.019200e+10|0.0|
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* Consulte o [tutorial](tutorial-data-prep.md) Azure Machine Learning data Prep SDK para obter um exemplo de como resolver um cenário específico
+* Consulte a [documentação de referência](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py#dataprep) do SDK do Azure Machine Learning data Prep para obter mais detalhes.

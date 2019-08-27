@@ -5,14 +5,14 @@ author: shizn
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 01/07/2019
+ms.date: 08/20/2019
 ms.author: xshi
-ms.openlocfilehash: 87a0847f5d42e014f3b2691c96446892176b481b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e05ba421a4535e6e424e65a1f2271d19f9d9abf4
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60399501"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70048712"
 ---
 # <a name="use-cloud-explorer-for-visual-studio-for-azure-iot-hub-device-management"></a>Usar o Cloud Explorer para Visual Studio para gerenciamento de dispositivo do Hub IoT do Azure
 
@@ -31,64 +31,81 @@ O [Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuret
 
 Para obter explicações mais detalhadas sobre as diferenças e diretrizes sobre como usar essas opções, consulte [Diretrizes de comunicação do dispositivo para a nuvem](iot-hub-devguide-d2c-guidance.md) e [Diretrizes de comunicação da nuvem para o dispositivo](iot-hub-devguide-c2d-guidance.md).
 
-Dispositivos gêmeos são documentos JSON que armazenam informações do estado do dispositivo (metadados, configurações e condições). O Hub IoT persiste um dispositivo gêmeo para cada dispositivo que você conecta a ele. Para obter mais informações sobre dispositivos gêmeos, consulte [Introdução aos dispositivos gêmeos](iot-hub-node-node-twin-getstarted.md).
+Dispositivos gêmeos são documentos JSON que armazenam informações de estado do dispositivo, incluindo metadados, configurações e condições. O Hub IoT persiste um dispositivo gêmeo para cada dispositivo que você conecta a ele. Para obter mais informações sobre dispositivos gêmeos, consulte [Introdução aos dispositivos gêmeos](iot-hub-node-node-twin-getstarted.md).
 
 ## <a name="what-you-learn"></a>O que você aprenderá
 
-Você aprenderá a usar o Cloud Explorer para Visual Studio com várias opções de gerenciamento em seu computador de desenvolvimento.
+Neste artigo, você aprenderá a usar o Cloud Explorer para Visual Studio com várias opções de gerenciamento em seu computador de desenvolvimento.
 
 ## <a name="what-you-do"></a>O que fazer
 
-Execute o Cloud Explorer para Visual Studio com várias opções de gerenciamento.
+Neste artigo, execute o Cloud Explorer para Visual Studio com várias opções de gerenciamento.
 
 ## <a name="what-you-need"></a>O que você precisa
 
-- Uma assinatura ativa do Azure
-- Um Hub de IoT do Azure em sua assinatura
-- Microsoft Visual Studio 2017 Atualização 8 ou posterior
-- Componente de Cloud Explorer do Instalador do Visual Studio (selecionado por padrão com a Carga de Trabalho do Azure)
+Você precisa dos seguintes pré-requisitos:
+
+- Uma assinatura ativa do Azure.
+
+- Um Hub IoT do Azure em sua assinatura.
+
+- Microsoft Visual Studio 2017 atualização 9 ou posterior. Este artigo usa o [visual studio 2017 ou o visual studio 2019](https://www.visualstudio.com/vs/).
+
+- Componente do Cloud Explorer de Instalador do Visual Studio, que é selecionado por padrão com a carga de trabalho do Azure.
 
 ## <a name="update-cloud-explorer-to-latest-version"></a>Atualize o Cloud Explorer para a versão mais recente
 
-O componente Cloud Explorer do Instalador do Visual Studio é compatível apenas com monitoramento de mensagens do dispositivo para a nuvem e da nuvem para o dispositivo. Você precisará baixar e instalar o [Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS) mais recente para acessar as opções de gerenciamento.
+O componente Cloud Explorer da Instalador do Visual Studio para Visual Studio 2017 dá suporte apenas ao monitoramento de mensagens do dispositivo para a nuvem e da nuvem para o dispositivo. Para usar o Visual Studio 2017, baixe e instale o [Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS)mais recente.
 
-## <a name="sign-in-to-access-your-iot-hub"></a>Entre para acessar o Hub IoT
+## <a name="sign-in-to-access-your-hub"></a>Entre para acessar seu hub
 
-1. Na janela **Cloud Explorer** do Visual Studio, clique no ícone de Gerenciamento de Conta. Você pode abrir a janela do Cloud Explorer usando o menu **Exibir** > **Cloud Explorer**.
+1. No Visual Studio, selecione **Exibir** > **Cloud Explorer** para abrir o Cloud Explorer.
 
-    ![Clique em Gerenciamento de Conta](media/iot-hub-visual-studio-cloud-device-messaging/click-account-management.png)
+1. Selecione o ícone gerenciamento de contas para mostrar suas assinaturas.
 
-1. Clique em **Gerenciar Contas** no Cloud Explorer.
-1. Clique em **Adicionar uma conta…** na nova janela para entrar no Azure pela primeira vez.
-1. Depois de entrar, sua lista de assinaturas do Azure será mostrada. Selecione as assinaturas do Azure que você deseja exibir e clique em **Aplicar**.
-1. Expanda **Sua assinatura** > **Hubs IoT** > **Seu Hub IoT**; a lista de dispositivos será mostrada sob o nó do seu Hub IoT. Clique com o botão direito do mouse em um dispositivo para acessar as opções de gerenciamento.
+    ![Ícone de gerenciamento de conta](media/iot-hub-visual-studio-cloud-device-messaging/account-management-icon.png)
 
-    ![Opções de gerenciamento](media/iot-hub-device-management-visual-studio/management-options.png)
+1. Se você estiver conectado ao Azure, suas contas serão exibidas. Para entrar no Azure pela primeira vez, escolha **Adicionar uma conta**.
+
+1. Selecione as assinaturas do Azure que você deseja usar e escolha **aplicar**.
+
+1. Expanda sua assinatura e expanda os **hubs IOT**.  Em cada Hub, você pode ver seus dispositivos para esse Hub. Clique com o botão direito do mouse em um dispositivo para acessar as opções de gerenciamento.
+
+    ![Opções de gerenciamento](media/iot-hub-device-management-visual-studio/management-options-vs2019.png)
 
 ## <a name="direct-methods"></a>Métodos diretos
 
+Para usar métodos diretos, execute as seguintes etapas:
+
 1. Clique com o botão direito do mouse no seu dispositivo e selecione **Invocar Método Direto de Dispositivo**.
-1. Insira o nome do método e a carga na caixa de entrada.
-1. Os resultados serão mostrados no painel de saída do **Hub IoT**.
 
-## <a name="read-device-twin"></a>Leitura de dispositivo gêmeo
+1. Insira o nome do método e a carga em invocar o **método direto**e, em seguida, selecione **OK**.
 
-1. Clique com o botão direito e selecione **Editar Gêmeo de Dispositivo**.
-1. Um arquivo **azure-iot-dispositivo-twin.json** será aberto com o conteúdo do dispositivo gêmeo.
+    Os resultados aparecem na **saída**.
 
 ## <a name="update-device-twin"></a>Atualizar dispositivo gêmeo
 
-1. Faça algumas edições das **marcas** ou do campo **properties.desired** para o arquivo **azure-iot-dispositivo-twin.json**.
+Para editar um dispositivo, execute as seguintes etapas:
+
+1. Clique com o botão direito e selecione **Editar Gêmeo de Dispositivo**.
+
+   Um arquivo **Azure-IOT-Device-entrelaça. JSON** é aberto com o conteúdo do dispositivo.
+
+1. Faça algumas edições de **marcas** ou **Propriedades.** os campos desejados para o arquivo **Azure-IOT-Device-entrelaça. JSON** .
+
 1. Pressione **Ctrl+S** para atualizar o dispositivo gêmeo.
-1. Os resultados serão mostrados no painel de saída do **Hub IoT**.
+
+   Os resultados aparecem na **saída**.
 
 ## <a name="send-cloud-to-device-messages"></a>Envie mensagens da nuvem para o dispositivo
 
 Para enviar uma mensagem do Hub IoT para o dispositivo, siga estas etapas:
 
 1. Clique com o botão direito do mouse no seu dispositivo e selecione **Enviar Mensagem de C2D**.
-1. Insira a mensagem na caixa de entrada.
-1. Os resultados serão mostrados no painel de saída do **Hub IoT**.
+
+1. Insira a mensagem na **mensagem enviar C2D** e selecione **OK**.
+
+   Os resultados aparecem na **saída**.
 
 ## <a name="next-steps"></a>Próximas etapas
 

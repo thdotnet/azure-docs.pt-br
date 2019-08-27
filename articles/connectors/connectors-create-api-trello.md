@@ -11,12 +11,12 @@ ms.assetid: fe7a4377-5c24-4f72-ab1a-6d9d23e8d895
 ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
-ms.openlocfilehash: 31357fa313cfa31c0f8a90c0f7722f627e4394d1
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ae77488df6ce58d8cab61933f50d24edec35b1ab
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62106160"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050732"
 ---
 # <a name="monitor-and-manage-trello-with-azure-logic-apps"></a>Monitorar e gerenciar o Trello com os Aplicativos Lógicos do Azure
 
@@ -32,7 +32,7 @@ Você pode usar gatilhos para obter respostas da sua conta do Trello e disponibi
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, <a href="https://azure.microsoft.com/free/" target="_blank">inscreva-se em uma conta gratuita do Azure</a>. 
+* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, [inscreva-se em uma conta gratuita do Azure](https://azure.microsoft.com/free/). 
 
 * Suas credenciais de usuário e conta do Trello
 
@@ -50,7 +50,7 @@ Você pode usar gatilhos para obter respostas da sua conta do Trello e disponibi
 
 1. Para aplicativos lógicos em branco, na caixa de pesquisa, insira "trello" como o filtro. Na lista de gatilhos, selecione o gatilho desejado. 
 
-   -ou-
+   - ou -
 
    Para aplicativos lógicos existentes, na última etapa em que deseja adicionar uma ação, escolha **Nova etapa**. 
    Na caixa de pesquisa, insira "trello" como o filtro. 

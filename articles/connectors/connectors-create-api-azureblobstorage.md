@@ -1,21 +1,22 @@
 ---
-title: Conectar-se ao armazenamento de BLOBs do Azure – aplicativos lógicos do Azure
+title: Conectar-se ao armazenamento de BLOBs do Azure-aplicativo lógico do Azure
 description: Criar e gerenciar blobs no armazenamento do Azure com os Aplicativos Lógicos do Azure
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
 author: ecfan
 ms.author: estfan
+manager: carmonm
 ms.reviewer: klam, LADocs
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/20/2019
 tags: connectors
-ms.openlocfilehash: d9c29837e99d327112e6a9d648a5c56cc35e8555
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: d57ea1a881980203b1c8f216239b27b64f0d71cd
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67296644"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70051048"
 ---
 # <a name="create-and-manage-blobs-in-azure-blob-storage-with-azure-logic-apps"></a>Criar e gerenciar blobs no armazenamento de blobs do Azure com os Aplicativos Lógicos do Azure
 
@@ -32,15 +33,15 @@ Suponha que você tem uma ferramenta que é atualizada em um site do Azure. que 
 
 Se ainda não estiver familiarizado com aplicativo lógicos, consulte [O que são os Aplicativos Lógicos do Azure](../logic-apps/logic-apps-overview.md) e [Início Rápido: criar seu primeiro aplicativo lógico](../logic-apps/quickstart-create-first-logic-app-workflow.md). Para obter informações técnicas específicas do conector, confira a [Referência do conector do Armazenamento de Blobs do Azure](/connectors/azureblobconnector/).
 
-## <a name="limits"></a>limites
+## <a name="limits"></a>Limites
 
-* Por padrão, as ações de armazenamento de BLOBs do Azure podem ler ou gravar arquivos que são *50 MB ou menos*. Para lidar com arquivos maiores que 50 MB, mas até 1024 MB, dar suporte a ações de armazenamento de BLOBs do Azure [agrupamento de mensagem](../logic-apps/logic-apps-handle-large-messages.md). O **conteúdo do blob Get** ação usa implicitamente o agrupamento.
+* Por padrão, as ações do armazenamento de BLOBs do Azure podem ler ou gravar arquivos que são *50 MB ou menores*. Para lidar com arquivos com mais de 50 MB, mas até 1024 MB, as ações do armazenamento de BLOBs do Azure dão suporte ao [agrupamento de mensagens](../logic-apps/logic-apps-handle-large-messages.md). A ação **obter conteúdo do blob** usa implicitamente o agrupamento.
 
-* Gatilhos de armazenamento de BLOBs do Azure não dão suporte a agrupamento. Ao solicitar o conteúdo do arquivo, disparadores selecione somente os arquivos que são 50 MB ou menos. Para obter arquivos maiores que 50 MB, siga este padrão:
+* Os gatilhos do armazenamento de BLOBs do Azure não dão suporte ao agrupamento. Ao solicitar o conteúdo do arquivo, os gatilhos selecionam apenas os arquivos que são 50 MB ou menores. Para obter arquivos maiores que 50 MB, siga este padrão:
 
-  * Usar um gatilho de armazenamento de BLOBs do Azure que retorna propriedades de arquivo, como **quando um blob é adicionado ou modificado (somente propriedades)** .
+  * Use um gatilho de armazenamento de BLOBs do Azure que retorne Propriedades de arquivo, como **quando um blob é adicionado ou modificado (somente Propriedades)** .
 
-  * Siga o gatilho com o armazenamento de BLOBs do Azure **conteúdo do blob Get** ação, que lê o arquivo completo e usa implicitamente o agrupamento.
+  * Siga o gatilho com a ação **obter conteúdo de blob** do armazenamento de BLOBs do Azure, que lê o arquivo completo e usa implicitamente o agrupamento.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -56,13 +57,13 @@ Se ainda não estiver familiarizado com aplicativo lógicos, consulte [O que sã
 
 Nos Aplicativos Lógicos do Azure, cada aplicativo lógico deve começar com um [gatilho](../logic-apps/logic-apps-overview.md#logic-app-concepts), que é disparado quando um evento específico ocorre ou quando uma condição específica é atendida. Cada vez que o gatilho é acionado, o mecanismo de Aplicativos Lógicos cria uma instância de aplicativo lógico e inicia a execução do fluxo de trabalho do aplicativo.
 
-Este exemplo mostra como você pode iniciar um fluxo de trabalho de aplicativo lógico com o **quando um blob é adicionado ou modificado (somente propriedades)** gatilho quando propriedades de um blob é adicionado ou atualizado no contêiner de armazenamento.
+Este exemplo mostra como você pode iniciar um fluxo de trabalho de aplicativo lógico com o gatilho **quando um blob é adicionado ou modificado (somente Propriedades)** quando as propriedades de um blob são adicionadas ou atualizadas no seu contêiner de armazenamento.
 
-1. No [portal do Azure](https://portal.azure.com) ou o Visual Studio, crie um aplicativo lógico em branco, que abre o Designer de aplicativo lógico. Este exemplo usa o portal do Azure.
+1. No [portal do Azure](https://portal.azure.com) ou no Visual Studio, crie um aplicativo lógico em branco, que abre o designer de aplicativo lógico. Este exemplo usa o portal do Azure.
 
 2. Na caixa de pesquisa, digite "blob do azure" como filtro. Na lista de gatilhos, selecione o gatilho desejado.
 
-   Este exemplo usa esse gatilho: **Quando um blob é adicionado ou modificado (somente propriedades)**
+   Este exemplo usa este gatilho: **Quando um blob é adicionado ou modificado (somente Propriedades)**
 
    ![Selecionar gatilho](./media/connectors-create-api-azureblobstorage/azure-blob-trigger.png)
 
@@ -90,15 +91,15 @@ Em Aplicativos Lógicos do Azure, uma [ação](../logic-apps/logic-apps-overview
 
 1. No [Portal do Azure](https://portal.azure.com) ou no Visual Studio, abra seu aplicativo lógico no Designer do Aplicativo Lógico. Este exemplo usa o portal do Azure.
 
-2. No Designer do aplicativo lógico, sob o gatilho ou ação, escolha **nova etapa**.
+2. No designer do aplicativo lógico, no gatilho ou na ação, escolha **nova etapa**.
 
    ![Adicionar uma ação](./media/connectors-create-api-azureblobstorage/add-action.png) 
 
-   Para adicionar uma ação entre etapas existentes, mova o mouse sobre a seta de conexão. Escolha o sinal de adição ( **+** ) que aparece e selecione **adicionar uma ação**.
+   Para adicionar uma ação entre etapas existentes, mova o mouse sobre a seta de conexão. Escolha o sinal de adição **+** () que aparece e selecione **Adicionar uma ação**.
 
 3. Na caixa de pesquisa, digite "blob do azure" como filtro. Na lista de ações, selecione a ação desejada.
 
-   Este exemplo usa essa ação: **Obter conteúdo do blob**
+   Este exemplo usa esta ação: **Obter conteúdo do blob**
 
    ![Ação selecionar](./media/connectors-create-api-azureblobstorage/azure-blob-action.png)
 
@@ -128,7 +129,7 @@ Este exemplo obtém apenas o conteúdo de um blob. Para exibir o conteúdo, adic
 
 ## <a name="connector-reference"></a>Referência de conector
 
-Para obter detalhes técnicos, como gatilhos, ações e limites, conforme descrito de API do conector aberta (anteriormente conhecido como Swagger) de arquivos, consulte o [página de referência do conector](/connectors/azureblobconnector/).
+Para obter detalhes técnicos, como gatilhos, ações e limites, conforme descrito pelo arquivo de API aberta do conector (anteriormente, Swagger), consulte a [página de referência do conector](/connectors/azureblobconnector/).
 
 ## <a name="next-steps"></a>Próximas etapas
 

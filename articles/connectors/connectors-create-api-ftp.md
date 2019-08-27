@@ -1,21 +1,22 @@
 ---
-title: Conectar ao servidor FTP - aplicativos lógicos do Azure
+title: Conectar-se ao servidor FTP-aplicativo lógico do Azure
 description: Crie, monitore e gerencie arquivos em um servidor FTP com os Aplicativos Lógicos do Azure
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
 author: ecfan
 ms.author: estfan
+manager: carmonm
 ms.reviewer: divswa, klam, LADocs
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/19/2019
 tags: connectors
-ms.openlocfilehash: 66f1d726dcfa1a077abbff0d9f028036db43cc25
-ms.sourcegitcommit: 2d3b1d7653c6c585e9423cf41658de0c68d883fa
+ms.openlocfilehash: a73fad3097be73e01a7a2a6652129cd7c9db9555
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67293087"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050972"
 ---
 # <a name="create-monitor-and-manage-ftp-files-by-using-azure-logic-apps"></a>Criar, monitorar e gerenciar arquivos FTP usando Aplicativos Lógicos do Azure
 
@@ -28,23 +29,23 @@ Com o conector FTP e dos Aplicativos Lógicos do Azure, você pode criar tarefas
 
 Você pode usar gatilhos que obtêm respostas de seu servidor FTP e disponibilizar a saída para outras ações. Use ações de execução nos aplicativos lógicos para gerenciar arquivos no servidor FTP. Você também pode ter outro uso de ações para usar a saída das ações do FTP. Por exemplo, se você obter arquivos regularmente do servidor FTP, poderá enviar um email sobre esses arquivos e seu conteúdo usando o conector do Outlook do Office 365 ou do Outlook.com. Se ainda não estiver familiarizado com os aplicativos lógicos, veja [O que é o Aplicativo Lógico do Azure?](../logic-apps/logic-apps-overview.md)
 
-## <a name="limits"></a>limites
+## <a name="limits"></a>Limites
 
-* O conector de FTP dá suporte a apenas explícita FTP sobre SSL (FTPS) e não é compatível com FTPS implícito.
+* O conector de FTP dá suporte apenas a FTPS (FTP explícito sobre SSL) e não é compatível com FTPS implícita.
 
-* Por padrão, as ações de FTP podem ler ou gravar arquivos que são *50 MB ou menos*. Para lidar com arquivos maiores que 50 MB, o suporte a ações de FTP [agrupamento de mensagem](../logic-apps/logic-apps-handle-large-messages.md). O **obter conteúdo do arquivo** ação usa implicitamente o agrupamento.
+* Por padrão, as ações de FTP podem ler ou gravar arquivos que são *50 MB ou menores*. Para lidar com arquivos com mais de 50 MB, as ações de FTP dão suporte a [agrupamento de mensagens](../logic-apps/logic-apps-handle-large-messages.md). A ação **obter conteúdo do arquivo** usa implicitamente o agrupamento.
 
-* Gatilhos FTP não oferecem suporte a agrupamento. Ao solicitar o conteúdo do arquivo, disparadores selecione somente os arquivos que são 50 MB ou menos. Para obter arquivos maiores que 50 MB, siga este padrão:
+* Os gatilhos de FTP não dão suporte a agrupamentos. Ao solicitar o conteúdo do arquivo, os gatilhos selecionam apenas os arquivos que são 50 MB ou menores. Para obter arquivos maiores que 50 MB, siga este padrão:
 
-  * Usar um gatilho FTP que retorna propriedades de arquivo, como **quando um arquivo é adicionado ou modificado (somente propriedades)** .
+  * Use um gatilho de FTP que retorne Propriedades de arquivo, como **quando um arquivo é adicionado ou modificado (somente Propriedades)** .
 
-  * Siga o gatilho com o FTP **obter conteúdo do arquivo** ação, que lê o arquivo completo e usa implicitamente o agrupamento.
+  * Siga o gatilho com a ação FTP **Get file Content** , que lê o arquivo completo e usa o agrupamento implicitamente.
 
-## <a name="how-ftp-triggers-work"></a>Como o FTP dispara o trabalho
+## <a name="how-ftp-triggers-work"></a>Como funcionam os gatilhos de FTP
 
-FTP dispara um trabalho de sondagem no sistema de arquivos do FTP e procurando por qualquer arquivo que foi alterado desde a última sondagem. Algumas ferramentas permitem preservar o registro de data e hora quando os arquivos são alterados. Nesses casos, você precisa desativar esse recurso para que seu gatilho funcione. Aqui estão algumas configurações comuns:
+Os gatilhos de FTP funcionam sondando o sistema de arquivos FTP e procurando qualquer arquivo que tenha sido alterado desde a última sondagem. Algumas ferramentas permitem preservar o registro de data e hora quando os arquivos são alterados. Nesses casos, você precisa desativar esse recurso para que seu gatilho funcione. Aqui estão algumas configurações comuns:
 
-| Cliente SFTP | Ação |
+| Cliente SFTP | Action |
 |-------------|--------|
 | WinSCP | Vá para **opções** > **preferências** > **transferir** > **editar**  >  **Preservar o carimbo de hora** > **desabilitar** |
 | FileZilla | Ir para **Transferir** > **Preservar registros de data e hora de arquivos transferidos** > **Desativar** |
@@ -72,11 +73,11 @@ Quando um gatilho encontra um novo arquivo, o gatilho verifica se ele está conc
 
 1. Para aplicativos lógicos em branco, na caixa de pesquisa, insira "ftp" como filtro. Na lista de gatilhos, selecione o gatilho desejado.
 
-   -ou-
+   - ou -
 
    Para aplicativos lógicos existentes, na última etapa em que você deseja adicionar uma ação, escolha **Nova etapa**e, em seguida, selecione **Adicionar uma ação**. Na caixa de pesquisa, insira “ftp” como filtro. Na lista de ações, selecione a ação desejada.
 
-   Para adicionar uma ação entre as etapas, mova o ponteiro sobre a seta entre as etapas. Escolha o sinal de adição ( **+** ) que aparece e selecione **adicionar uma ação**.
+   Para adicionar uma ação entre as etapas, mova o ponteiro sobre a seta entre as etapas. Escolha o sinal de adição **+** () que aparece e selecione **Adicionar uma ação**.
 
 1. Forneça os detalhes necessários para sua conexão e, em seguida, escolha **Criar**.
 
@@ -102,7 +103,7 @@ Este é um exemplo que mostra esse gatilho: **Quando um arquivo é adicionado ou
 
 1. Forneça os detalhes necessários para sua conexão e, em seguida, escolha **Criar**.
 
-   Por padrão, esse conector transfere arquivos no formato de texto. A transferência de arquivos no binário de formato, por exemplo, onde e quando a codificação é usada, selecione **transporte binário**.
+   Por padrão, esse conector transfere arquivos no formato de texto. Para transferir arquivos em formato binário, por exemplo, onde e quando a codificação é usada, selecione **transporte binário**.
 
    ![Criar conexão do FTP](./media/connectors-create-api-ftp/create-ftp-connection-trigger.png)  
 
@@ -146,7 +147,7 @@ Este é um exemplo que mostra essa ação: **Obter conteúdo**
 
 ## <a name="connector-reference"></a>Referência de conector
 
-Para obter detalhes técnicos sobre limites, ações e gatilhos, que são descritos por OpenAPI do conector (anteriormente conhecido como Swagger) descrição, examine os [página de referência do conector](/connectors/ftpconnector/).
+Para obter detalhes técnicos sobre gatilhos, ações e limites, que são descritos pela descrição de OpenAPI (anteriormente, Swagger) do conector, examine a [página de referência do conector](/connectors/ftpconnector/).
 
 ## <a name="next-steps"></a>Próximas etapas
 

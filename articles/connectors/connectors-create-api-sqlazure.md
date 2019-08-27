@@ -11,12 +11,12 @@ services: logic-apps
 ms.reviewer: klam, LADocs
 ms.suite: integration
 tags: connectors
-ms.openlocfilehash: 998fcba50636cd92b14bdbe1633c2548e84a6bfc
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 804a913d17c3151d07a1ecf229e2db148dc45558
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64696411"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050760"
 ---
 # <a name="connect-to-sql-server-or-azure-sql-database-from-azure-logic-apps"></a>Conectar-se ao SQL Server ou ao Banco de Dados SQL do Azure dos Aplicativos Lógicos do Azure
 
@@ -24,7 +24,7 @@ Este artigo mostra como você pode acessar dados no banco de dados SQL de dentro
 
 Você pode criar Aplicativos Lógicos que são executados quando disparados por eventos no Banco de Dados SQL ou em outros sistemas, como Dynamics CRM Online. Seus aplicativos lógicos também podem obter, inserir e excluir dados, além de executar consultas SQL e procedimentos armazenados. Por exemplo, você pode criar um aplicativo lógico que verifica automaticamente se há novos registros Dynamics CRM Online, adiciona itens ao banco de dados SQL para quaisquer novos registros e envia alertas de email.
 
-Se você não tiver uma assinatura do Azure, <a href="https://azure.microsoft.com/free/" target="_blank">inscreva-se em uma conta gratuita do Azure</a>. Se ainda não estiver familiarizado com aplicativo lógicos, consulte [O que são os Aplicativos Lógicos do Azure](../logic-apps/logic-apps-overview.md) e [Início Rápido: criar seu primeiro aplicativo lógico](../logic-apps/quickstart-create-first-logic-app-workflow.md). Para obter informações técnicas específicas do conector, consulte a <a href="https://docs.microsoft.com/connectors/sql/" target="blank">Referência do conector do SQL Server</a>.
+Se você não tiver uma assinatura do Azure, [inscreva-se em uma conta gratuita do Azure](https://azure.microsoft.com/free/). Se ainda não estiver familiarizado com aplicativo lógicos, consulte [O que são os Aplicativos Lógicos do Azure](../logic-apps/logic-apps-overview.md) e [Início Rápido: criar seu primeiro aplicativo lógico](../logic-apps/quickstart-create-first-logic-app-workflow.md). Para obter informações técnicas específicas do conector, consulte a [Referência do conector do SQL Server](https://docs.microsoft.com/connectors/sql/).
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -56,7 +56,7 @@ Nos Aplicativos Lógicos do Azure, cada aplicativo lógico deve começar com um 
 
 2. Na caixa de pesquisa, insira "sql server" como filtro. Na lista de gatilhos, selecione o gatilho SQL desejado. 
 
-   Neste exemplo, selecione este gatilho: **SQL Server - quando um item é criado.**
+   Para este exemplo, selecione este gatilho: **SQL Server-quando um item é criado**
 
    ![Selecione o gatilho “SQL Server – Quando um item é criado”](./media/connectors-create-api-sqlazure/sql-server-trigger.png)
 
@@ -73,7 +73,7 @@ Nos Aplicativos Lógicos do Azure, cada aplicativo lógico deve começar com um 
    Por exemplo, para exibir o novo item na tabela, você pode adicionar outras ações, como criar um arquivo que tem campos da tabela e, em seguida, enviar alertas por email. 
    Para saber mais sobre outras ações para esse conector ou outros conectores, consulte [Conectores de Aplicativos Lógicos](../connectors/apis-list.md).
 
-5. Quando terminar, selecione **Salvar** na barra de ferramentas do designer. 
+5. Quando terminar, na barra de ferramentas do designer, selecione **salvar**. 
 
    Esta etapa automaticamente habilita e publica o aplicativo lógico ativo no Azure. 
 
@@ -85,16 +85,16 @@ Em Aplicativos Lógicos do Azure, uma [ação](../logic-apps/logic-apps-overview
 
 1. No portal do Azure ou no Visual Studio, abra o aplicativo lógico no Designer de Aplicativos Lógicos. Este exemplo usa o portal do Azure.
 
-2. No Designer de Aplicativo Lógico, no gatilho ou ação, escolha **Nova etapa** > **Adicionar uma ação**.
+2. No designer do aplicativo lógico, no gatilho ou na ação, selecione **nova etapa** > **Adicionar uma ação**.
 
-   ![Escolha “Nova etapa”, “Adicionar uma ação”](./media/connectors-create-api-sqlazure/add-action.png)
+   ![Selecione "nova etapa", "adicionar uma ação"](./media/connectors-create-api-sqlazure/add-action.png)
    
    Para adicionar uma ação entre etapas existentes, mova o mouse sobre a seta de conexão. 
-   Escolha o sinal de adição ( **+** ) que aparece e, em seguida, escolha **Adicionar uma ação**.
+   Selecione o sinal de adição **+** () que aparece e, em seguida, selecione **Adicionar uma ação**.
 
 2. Na caixa de pesquisa, insira "sql server" como filtro. Na lista de ações, selecione qualquer ação SQL que desejar. 
 
-   Neste exemplo, selecione esta ação, que obtém um único registro: **SQL Server - obter linha**
+   Para este exemplo, selecione esta ação, que obtém um único registro: **SQL Server-obter linha**
 
    ![Insira "sql server", selecione "SQL Server – Obter linha"](./media/connectors-create-api-sqlazure/select-sql-get-row.png) 
 
@@ -106,28 +106,28 @@ Em Aplicativos Lógicos do Azure, uma [ação](../logic-apps/logic-apps-overview
    Este exemplo retorna apenas uma linha da tabela selecionada, nada mais. 
    Para exibir os dados nessa linha, você pode adicionar outras ações que criam um arquivo com campos da linha para revisão posterior e armazenar o arquivo em uma conta de armazenamento em nuvem. Para saber mais sobre outras ações nesse conector ou outros conectores, consulte [Conectores de Aplicativos Lógicos](../connectors/apis-list.md).
 
-4. Quando terminar, selecione **Salvar** na barra de ferramentas do designer. 
+4. Quando terminar, na barra de ferramentas do designer, selecione **salvar**. 
 
 <a name="create-connection"></a>
 
-## <a name="connect-to-your-database"></a>Conectar-se ao seu banco de dados
+## <a name="connect-to-your-database"></a>Conectar ao banco de dados
 
 [!INCLUDE [Create connection general intro](../../includes/connectors-create-connection-general-intro.md)]
 
 [!INCLUDE [Create a connection to SQL Server or Azure SQL Database](../../includes/connectors-create-api-sqlazure.md)]
 
-## <a name="handle-bulk-data"></a>Manipulação de dados em massa
+## <a name="handle-bulk-data"></a>Lidar com dados em massa
 
-Às vezes, você talvez precise trabalhar com conjuntos de resultados muito grandes, o que o conector não retorna todos os resultados ao mesmo tempo, ou você deseja maior controle sobre o tamanho e a estrutura para seus conjuntos de resultados. Eis algumas maneiras que você pode lidar com esses grandes conjuntos de resultados:
+Às vezes, talvez você precise trabalhar com conjuntos de resultados tão grandes que o conector não retorne todos os resultados ao mesmo tempo, ou você queira um melhor controle sobre o tamanho e a estrutura de seus conjuntos de resultados. Aqui estão algumas maneiras que você pode lidar com esses grandes conjuntos de resultados:
 
-* Para ajudá-lo a gerenciar os resultados como conjuntos menores, ative *paginação*. Para obter mais informações, consulte [obter dados em massa, registros e itens usando a paginação](../logic-apps/logic-apps-exceed-default-page-size-with-pagination.md).
+* Para ajudá-lo a gerenciar os resultados como conjuntos menores, ative a paginação. Para obter mais informações, consulte [obter dados em massa, registros e itens usando a](../logic-apps/logic-apps-exceed-default-page-size-with-pagination.md)paginação.
 
-* Crie um procedimento armazenado que organiza os resultados da maneira desejada.
+* Crie um procedimento armazenado que organize os resultados da maneira desejada.
 
-  Ao obter ou inserindo várias linhas, seu aplicativo lógico pode iterar por meio dessas linhas usando um [ *loop until* ](../logic-apps/logic-apps-control-flow-loops.md#until-loop) nesses [limites](../logic-apps/logic-apps-limits-and-config.md). 
-  No entanto, quando seu aplicativo lógico tem que trabalhar com conjuntos de registros tão grandes, por exemplo, milhares ou milhões de linhas, que você deseja minimizar os custos resultantes de chamadas para o banco de dados.
+  Ao obter ou inserir várias linhas, seu aplicativo lógico pode iterar por meio dessas linhas usando um [*loop Until*](../logic-apps/logic-apps-control-flow-loops.md#until-loop) dentro desses [limites](../logic-apps/logic-apps-limits-and-config.md). 
+  No entanto, quando seu aplicativo lógico tem que trabalhar com conjuntos de registros tão grandes, por exemplo, milhares ou milhões de linhas, você deseja minimizar os custos resultantes de chamadas para o banco de dados.
 
-  Para organizar os resultados da maneira que desejar, você pode criar uma [ *procedimento armazenado* ](https://docs.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine) que é executado em sua instância do SQL e usa o **SELECT – ORDER BY** instrução. 
+  Para organizar os resultados da maneira desejada, você pode criar um [*procedimento armazenado*](https://docs.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine) que é executado em sua instância do SQL e usa a instrução **Select-order by** . 
   Essa solução fornece a você mais controle sobre o tamanho e a estrutura de seus resultados. 
   Seu aplicativo lógico chama o procedimento armazenado usando a ação **Executar procedimento armazenado** do conector do SQL Server.
 

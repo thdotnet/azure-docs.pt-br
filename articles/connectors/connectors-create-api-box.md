@@ -1,21 +1,21 @@
 ---
-title: Conectar à Caixa - Aplicativos Lógicos do Azure | Microsoft Docs
+title: Conectar ao box-aplicativos lógicos do Azure
 description: Criar e gerenciar arquivos com APIs REST de caixa e Aplicativos Lógicos do Azure
+services: logic-apps
+ms.service: logic-apps
+ms.suite: integration
 author: ecfan
 ms.author: estfan
-ms.date: 11/07/2016
-ms.topic: article
-ms.service: logic-apps
-services: logic-apps
 ms.reviewer: klam, LADocs
-ms.suite: integration
+ms.topic: conceptual
+ms.date: 11/07/2016
 tags: connectors
-ms.openlocfilehash: 971d38fa0fbd47f0deb815577033bbe684aac32f
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 5fbc64194182c41a70eb27a4049234973c39fffe
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60312569"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050935"
 ---
 # <a name="create-and-manage-files-in-box-with-azure-logic-apps"></a>Criar e gerenciar arquivos no Box com os Aplicativos Lógicos do Azure
 
@@ -25,7 +25,7 @@ Este artigo mostra como você pode criar e gerenciar seus arquivos no Box de den
 
 * Dispare o fluxo de trabalho e tarefas automatizadas quando um arquivo é criado ou atualizado.
 
-* Execute ações para copiar um arquivo, excluir um arquivo e muito mais.
+* Executar uma ação que copia um arquivo ou exclui um arquivo.
 
   Quando essas ações obtêm uma resposta, elas disponibilizam a saída para outras ações. 
   Por exemplo, quando um arquivo é alterado no Box, você pode enviar esse arquivo em email usando o Office 365.
@@ -34,7 +34,7 @@ Este artigo mostra como você pode criar e gerenciar seus arquivos no Box de den
 
 * Uma [conta do Box](https://www.box.com/home)
 
-* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, <a href="https://azure.microsoft.com/free/" target="_blank">inscreva-se em uma conta gratuita do Azure</a>. 
+* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, [inscreva-se em uma conta gratuita do Azure](https://azure.microsoft.com/free/). 
 
 * O aplicativo lógico no qual você deseja acessar a conta do Box. Para iniciar seu aplicativo lógico com um gatilho do Box, é necessário um [aplicativo lógico em branco](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
@@ -43,12 +43,7 @@ Se ainda não estiver familiarizado com o Aplicativo Lógico, veja [O que são o
 
 ## <a name="connector-reference"></a>Referência de conector
 
-Para obter detalhes técnicos, como gatilhos, ações e limites, conforme descrito pelo OpenAPI do conector (anteriormente conhecido como Swagger) de arquivos, consulte o [página de referência do conector](/connectors/box/).
-
-## <a name="get-support"></a>Obter suporte
-
-* Em caso de dúvidas, visite o [Fórum dos Aplicativos Lógicos do Azure](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-* Para enviar ou votar em ideias de recurso, visite o [site de comentários do usuário de Aplicativos Lógicos](https://aka.ms/logicapps-wish).
+Para obter detalhes técnicos, como gatilhos, ações e limites, conforme descrito pelo arquivo OpenAPI (anteriormente Swagger) do conector, consulte a [página de referência do conector](/connectors/box/).
 
 ## <a name="next-steps"></a>Próximas etapas
 
