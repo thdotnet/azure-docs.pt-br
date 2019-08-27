@@ -253,14 +253,20 @@
           href: sql-data-warehouse-connect-overview.md
         - name: Cadeias de conexão
           href: sql-data-warehouse-connection-strings.md
-        - name: Instalar o SSDT do Visual Studio
-          href: sql-data-warehouse-install-visual-studio.md
-        - name: Consultar com o SSDT do Visual Studio
-          href: sql-data-warehouse-query-visual-studio.md
-        - name: Consultar com SSMS
-          href: sql-data-warehouse-query-ssms.md
-        - name: Conectar e consultar com o sqlcmd
-          href: sql-data-warehouse-get-started-connect-sqlcmd.md
+        - name: Alterar gerenciamento e implantação
+          items:
+            - name: Instalar o SSDT do Visual Studio
+              href: sql-data-warehouse-install-visual-studio.md
+            - name: Integração de controle do código-fonte
+              href: sql-data-warehouse-source-control-integration.md
+        - name: Conexão e consulta
+          items:
+            - name: SSDT do Visual Studio
+              href: sql-data-warehouse-query-visual-studio.md
+            - name: SSMS
+              href: sql-data-warehouse-query-ssms.md
+            - name: sqlcmd
+              href: sql-data-warehouse-get-started-connect-sqlcmd.md
     - name: Gerenciamento de carga de trabalho
       items:
         - name: Analisar sua carga de trabalho

@@ -3,8 +3,14 @@
 - name: Aplicativos de exemplo
   expanded: true
   items:
-    - name: Aplicativo Web em um contêiner do Linux
-      href: secure-web-app.md
+    - name: Novo no desenvolvimento seguro
+      items:
+        - name: Aplicativo Web em um contêiner do Linux
+          href: secure-web-app.md
+    - name: Soluções em conformidade com o setor
+      items:
+        - name: Setor de cartões de pagamento
+          href: secure-pci-web-app.md
 - name: Conceitos
   expanded: true
   items:

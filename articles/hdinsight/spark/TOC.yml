@@ -311,8 +311,6 @@
           href: ./apache-spark-troubleshoot-job-fails-noclassdeffounderror.md
         - name: Falha no trabalho do Apache Spark – InvalidClassException
           href: ./apache-spark-troubleshoot-job-fails-invalidclassexception.md
-        - name: Trabalhos do Apache Spark lentos – listStatus
-          href: ./apache-spark-troubleshoot-job-slowness-liststatus.md
         - name: Trabalhos do Apache Spark lentos – contêiner de armazenamento
           href: ./apache-spark-troubleshoot-job-slowness-container.md
         - name: Exceção IllegalArgumentException
