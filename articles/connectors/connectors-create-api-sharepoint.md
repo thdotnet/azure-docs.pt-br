@@ -11,12 +11,12 @@ ms.assetid: e0ec3149-507a-409d-8e7b-d5fbded006ce
 ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
-ms.openlocfilehash: e636b2bb08477e6c56c6ae41f08983fc5bfa2a9b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 8a34ee4e90b551da35aff8802c8badc0d74ff539
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60450736"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050778"
 ---
 # <a name="monitor-and-manage-sharepoint-resources-with-azure-logic-apps"></a>Monitorar e gerenciar recursos do SharePoint com os Aplicativos Lógicos do Azure
 
@@ -39,7 +39,7 @@ Se ainda não estiver familiarizado com os aplicativos lógicos, veja [O que é 
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, <a href="https://azure.microsoft.com/free/" target="_blank">inscreva-se em uma conta gratuita do Azure</a>. 
+* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, [inscreva-se em uma conta gratuita do Azure](https://azure.microsoft.com/free/). 
 
 * Suas credenciais de usuário e endereço de site do SharePoint
 
@@ -63,7 +63,7 @@ Se ainda não estiver familiarizado com os aplicativos lógicos, veja [O que é 
 
 1. Para aplicativos lógicos em branco, na caixa de pesquisa, insira "sharepoint" como o filtro. Na lista de gatilhos, selecione o gatilho desejado. 
 
-   -ou-
+   - ou -
 
    Para aplicativos lógicos existentes, na última etapa em que deseja adicionar uma ação do SharePoint, escolha **Nova etapa**. 
    Na caixa de pesquisa, insira “sharepoint” como filtro. 
@@ -72,7 +72,7 @@ Se ainda não estiver familiarizado com os aplicativos lógicos, veja [O que é 
    Para adicionar uma ação entre as etapas, mova o ponteiro sobre a seta entre as etapas. 
    Escolha o sinal de adição ( **+** ) que aparece e, em seguida, selecione **Adicionar uma ação**.
 
-1. Quando for solicitado que você entre, forneça as informações de conexão necessárias. Se você estiver usando o SharePoint Server, verifique se você selecionou **conectar por meio do gateway de dados locais**. Quando terminar, escolha **Criar**.
+1. Quando for solicitado que você entre, forneça as informações de conexão necessárias. Se você estiver usando o SharePoint Server, certifique-se de selecionar **conectar por meio do gateway de dados local**. Quando terminar, escolha **Criar**.
 
 1. Forneça os detalhes necessários para o gatilho ou a ação selecionada e continue criando o fluxo de trabalho do aplicativo lógico.
 

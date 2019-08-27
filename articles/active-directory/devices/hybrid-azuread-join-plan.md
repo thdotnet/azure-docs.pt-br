@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 62496aceb1454283449e952c0ed86623597e9e66
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: 1431a46bf0981ee7ca3ecd06be9d7ebc35f05982
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70011679"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70032737"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Como: Planejar a sua implementação do ingresso do Azure Active Directory híbrido
 
@@ -35,7 +35,7 @@ Se você tiver um ambiente de Active Directory local (AD) e desejar ingressar se
 Este artigo pressupõe que você esteja familiarizado com a [introdução ao gerenciamento de identidade do dispositivo no Azure Active Directory](../device-management-introduction.md).
 
 > [!NOTE]
-> Os níveis mínimos funcionais e funcionais de floresta necessários do domínio para o ingresso no Azure AD híbrido do Windows 10 é o Windows Server 2008 R2.
+> A versão mínima necessária do controlador de domínio para o ingresso no Azure AD híbrido do Windows 10 é o Windows Server 2008 R2.
 
 ## <a name="plan-your-implementation"></a>Planejar sua implementação
 
@@ -124,7 +124,7 @@ Um ambiente federado deve ter um provedor de identidade que dá suporte aos requ
   `/adfs/services/trust/13/certificatemixed` 
 
 > [!WARNING] 
-> O **adfs/services/trust/2005/windowstransport** e também o **adfs/services/trust/13/windowstransport** devem ser habilitados como pontos de extremidade voltados para a intranet e NÃO devem ser expostos como pontos de extremidade voltados a uma extranet por meio do proxy de aplicativo Web. Para saber mais sobre como desabilitar os pontos de extremidade do Windows do WS-Trust, confira [desabilitar pontos de extremidade do Windows do WS-Trust no proxy](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet). Veja quais pontos de extremidade estão habilitados por meio do console de gerenciamento do AD FS em **Serviço** > **Pontos de extremidade**.
+> O **adfs/services/trust/2005/windowstransport** e também o **adfs/services/trust/13/windowstransport** devem ser habilitados como pontos de extremidade voltados para a intranet e NÃO devem ser expostos como pontos de extremidade voltados a uma extranet por meio do proxy de aplicativo Web. Para saber mais sobre como desabilitar os pontos de extremidade do Windows do WS-Trust, confira [Desabilitar pontos de extremidade do Windows do WS-Trust no proxy](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/deployment/best-practices-securing-ad-fs#disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet). Veja quais pontos de extremidade estão habilitados por meio do console de gerenciamento do AD FS em **Serviço** > **Pontos de extremidade**.
 
 > [!NOTE]
 > O Azure AD não dá suporte a cartões inteligentes ou certificados em domínios gerenciados.

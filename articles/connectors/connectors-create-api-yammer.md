@@ -11,12 +11,12 @@ ms.assetid: b5ae0827-fbb3-45ec-8f45-ad1cc2e7eccc
 ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
-ms.openlocfilehash: ca2d28f3438fd166fa282488206662c95777bf3b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 9228a94dcf27d8987b16e2caa2681cf973db0657
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62104724"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050645"
 ---
 # <a name="monitor-and-manage-your-yammer-account-by-using-azure-logic-apps"></a>Monitore e gerencie sua conta do Yammer usando os Aplicativos Lógicos do Azure
 
@@ -30,7 +30,7 @@ Você pode usar gatilhos que obtêm respostas de sua conta do Yammer e disponibi
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, <a href="https://azure.microsoft.com/free/" target="_blank">inscreva-se em uma conta gratuita do Azure</a>. 
+* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, [inscreva-se em uma conta gratuita do Azure](https://azure.microsoft.com/free/). 
 
 * Suas credenciais de usuário e conta do Yammer
 
@@ -51,13 +51,13 @@ Você pode usar gatilhos que obtêm respostas de sua conta do Yammer e disponibi
    * Para aplicativos lógicos em branco, na caixa de pesquisa, insira "yammer" como filtro. 
    Na lista de gatilhos, selecione o gatilho desejado. 
 
-     -ou-
+     - ou -
 
    * Para aplicativos lógicos existentes: 
    
      * Na última etapa em que você deseja adicionar uma ação, escolha **Nova etapa**. 
 
-       -ou-
+       - ou -
 
      * Entre as etapas em que você deseja adicionar uma ação, mova o ponteiro sobre a seta entre as etapas. 
      Escolha o sinal de adição ( **+** ) que aparece e, em seguida, selecione **Adicionar uma ação**.
@@ -65,7 +65,7 @@ Você pode usar gatilhos que obtêm respostas de sua conta do Yammer e disponibi
        Na caixa de pesquisa, insira "yammer" como filtro. 
        Na lista de ações, selecione a ação desejada.
 
-1. Se for solicitado que você entre no Yammer, entre agora para que possa permitir o acesso.
+1. Se você for solicitado a entrar no Yammer, entre agora para que possa permitir o acesso.
 
 1. Forneça os detalhes necessários para o gatilho ou a ação selecionada e continue criando o fluxo de trabalho do aplicativo lógico.
 

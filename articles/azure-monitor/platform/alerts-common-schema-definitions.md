@@ -1,6 +1,6 @@
 ---
-title: Definições de alerta de esquema comuns para Runbooks de automação de funções/aplicativos/Azure Webhooks/lógica
-description: Noções básicas sobre as definições de alerta de esquema comuns para Runbooks de automação de funções/aplicativos/Azure Webhooks/lógica
+title: Definições comuns de esquema de alerta para WebHooks/aplicativos lógicos/Azure Functions/Runbooks de automação
+description: Compreendendo as definições comuns de esquema de alerta para os Runbooks de aplicativos/Azure Functions/automação de WebHooks/lógicas
 author: anantr
 services: azure-monitor
 ms.service: azure-monitor
@@ -8,22 +8,22 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: anantr
 ms.subservice: alerts
-ms.openlocfilehash: c37ecfbadd7345fea347ff488895f16ba505c818
-ms.sourcegitcommit: ccb9a7b7da48473362266f20950af190ae88c09b
+ms.openlocfilehash: 94938358bc4e4782e91401e24a01a3688c6a51ba
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/05/2019
-ms.locfileid: "67594372"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70034796"
 ---
 # <a name="common-alert-schema-definitions"></a>Definições comuns do esquema de alertas
 
-Este artigo descreve o [definições de alerta de esquema comuns](https://aka.ms/commonAlertSchemaDocs) para Runbooks de automação de funções/aplicativos/Azure Webhooks/lógica. 
+Este artigo descreve as [definições de esquema de alerta comuns](https://aka.ms/commonAlertSchemaDocs) para os Runbooks de aplicativos/Azure Functions/automação. 
 
 ## <a name="overview"></a>Visão geral
 
 Qualquer instância de alerta descreve **o recurso que foi afetado** e **a causa do alerta**, e essas instâncias são descritas no esquema comum nas seções a seguir:
-* **Essentials**: Um conjunto de **padronizado campos**, comuns em todos os tipos de alerta, que descrevem **quais recursos** o alerta está nos juntamente com metadados adicionais de comuns alerta (por exemplo, severidade ou descrição). 
-* **Contexto de alerta**: Um conjunto de campos que descrevem os **causar do alerta**, com campos que variam de acordo **com base no tipo de alerta**. Por exemplo, um alerta de métrica teria os campos como o nome da métrica e o valor da métrica no contexto de alerta, enquanto que um alerta do log de atividades teria informações sobre o evento que gerou o alerta. 
+* **Conceitos básicos**: Um conjunto de **campos padronizados**, comum em todos os tipos de alertas, que descrevem em **qual recurso** o alerta está junto com os metadados de alerta comuns adicionais (por exemplo, severidade ou descrição). 
+* **Contexto do alerta**: Um conjunto de campos que descrevem a **causa do alerta**, com campos que variam de acordo **com o tipo de alerta**. Por exemplo, um alerta de métrica teria campos como o nome da métrica e o valor da métrica no contexto do alerta, enquanto um alerta do log de atividades teria informações sobre o evento que gerou o alerta. 
 
 ##### <a name="sample-alert-payload"></a>Conteúdo de alerta de exemplo
 ```json
@@ -74,23 +74,23 @@ Qualquer instância de alerta descreve **o recurso que foi afetado** e **a causa
 }
 ```
 
-## <a name="essentials-fields"></a>Campos de 'Essentials'
+## <a name="essentials-fields"></a>Campos ' Essentials '
 
-| Campo | DESCRIÇÃO|
+| Campo | Descrição|
 |:---|:---|
-| alertId | GUID identificando exclusivamente a instância de alerta. |
+| alertId | GUID que identifica exclusivamente a instância de alerta. |
 | alertRule | Nome da regra de alerta que gerou a instância de alerta. |
 | Severidade | Severidade do alerta. Valores possíveis: Sev0, Sev1, Sev2, Sev3, Sev4 |
-| signalType | Identifica o sinal na qual a regra de alerta foi definida. Valores possíveis: Métrica, Log, Log de atividades |
-| monitorCondition | Quando um alerta é acionado, a condição do monitor do alerta é definida como 'Disparado'. Quando a condição subjacente que causou o alerta seja acionado limpa, a condição do monitor é definida como 'Resolvido'.   |
+| sinaltype | Identifica o sinal no qual a regra de alerta foi definida. Valores possíveis: Métrica, log, log de atividades |
+| monitorCondition | Quando um alerta é disparado, a condição do monitor do alerta é definida como ' disparado '. Quando a condição subjacente que fez com que o alerta fosse limpo, a condição do monitor é definida como ' resolvida '.   |
 | monitoringService | O serviço de monitoramento ou a solução que gerou o alerta. Os campos para o contexto de alerta são determinados pelo serviço de monitoramento. |
-| alertTargetIds | Lista de destinos de IDs de ARM todos os afetados de um alerta. Para um alerta de log definido em um espaço de trabalho do Log Analytics ou a instância do Application Insights, é o respectivo espaço de trabalho/aplicativo. |
-| originAlertId | ID da instância do alerta como gerado pelo serviço de monitoramento gerá-lo. |
-| firedDateTime | Data hora de quando a instância de alerta foi disparada em UTC |
-| resolvedDateTime | Data hora de quando a condição do monitor para a instância de alerta é definida como resolvido em UTC. No momento, só é aplicável para alertas de métrica.|
-| description | Descrição, conforme definido na regra de alerta |
-|essentialsVersion| Número de versão para a seção essentials.|
-|alertContextVersion | Número de versão para a seção alertContext |
+| alertTargetIds | Lista de IDs de ARM todos os destinos afetados de um alerta. Para um alerta de log definido em um espaço de trabalho Log Analytics ou Application Insights instância, ele é o respectivo espaço de trabalho/aplicativo. |
+| originAlertId | ID da instância de alerta, conforme gerado pelo serviço de monitoramento que a gera. |
+| firedDateTime | Data e hora de quando a instância de alerta foi acionada em UTC |
+| resolvedDateTime | Data e hora de quando a condição do monitor para a instância de alerta é definida como ' resolvida ' em UTC. Atualmente aplicável somente a alertas de métricas.|
+| description | Descrição conforme definido na regra de alerta |
+|essentialsVersion| Número de versão da seção Essentials.|
+|alertContextVersion | Número de versão da seção alertContext |
 
 ##### <a name="sample-values"></a>Valores de exemplo
 ```json
@@ -114,9 +114,9 @@ Qualquer instância de alerta descreve **o recurso que foi afetado** e **a causa
 }
 ```
 
-## <a name="alert-context-fields"></a>Campos de contexto de alerta
+## <a name="alert-context-fields"></a>Campos de ' contexto de alerta '
 
-### <a name="metric-alerts"></a>Alertas de Métricas
+### <a name="metric-alerts"></a>Alertas de Métrica
 
 #### <a name="monitoringservice--platform"></a>monitoringService = 'Platform'
 
@@ -154,10 +154,10 @@ Qualquer instância de alerta descreve **o recurso que foi afetado** e **a causa
 ### <a name="log-alerts"></a>Alertas de log
 
 > [!NOTE]
-> + Para alertas de log em que uma carga JSON personalizada tenha sido definida, permitindo que o esquema comum reverterá o esquema de conteúdo ao descrito abaixo.
-> + Alertas com o esquema comum habilitados têm um limite de 256KB de tamanho superior por alerta. **Os resultados da pesquisa não são incorporados na carga de alertas do log se eles fizerem com que o tamanho do alerta para ultrapassar esse limite.** Isso pode ser determinado, verificando o sinalizador 'IncludedSearchResults'. Em cenários onde os resultados da pesquisa não são incluídos, é aconselhável usar a consulta de pesquisa em conjunto com o [API do Log Analytics](https://docs.microsoft.com/rest/api/loganalytics/query/get). 
+> + Para alertas de log em que um conteúdo JSON personalizado foi definido, habilitar o esquema comum reverterá o esquema de carga para o descrito abaixo.
+> + Os alertas com o esquema comum habilitado têm um limite de tamanho superior de 256KB por alerta. **Os resultados da pesquisa não serão inseridos na carga de alertas de log se fizerem com que o tamanho do alerta cruze esse limite.** Isso pode ser determinado verificando o sinalizador ' IncludedSearchResults '. Em cenários em que os resultados da pesquisa não são incluídos, é aconselhável usar a consulta de pesquisa em conjunto com a [API do log Analytics](https://docs.microsoft.com/rest/api/loganalytics/query/get). 
 
-#### <a name="monitoringservice--log-analytics"></a>monitoringService = 'Log Analytics'
+#### <a name="monitoringservice--log-analytics"></a>monitoringService = ' Log Analytics '
 
 ##### <a name="sample-values"></a>Valores de exemplo
 ```json
@@ -287,9 +287,9 @@ Qualquer instância de alerta descreve **o recurso que foi afetado** e **a causa
 }
 ```
 
-### <a name="activity-log-alerts"></a>Alertas do log de atividades
+### <a name="activity-log-alerts"></a>Alertas do Log de Atividades
 
-#### <a name="monitoringservice--activity-log---administrative"></a>monitoringService = 'Activity Log - Administrative'
+#### <a name="monitoringservice--activity-log---administrative"></a>monitoringService = ' log de atividades-administrativo '
 
 ##### <a name="sample-values"></a>Valores de exemplo
 ```json
@@ -316,6 +316,102 @@ Qualquer instância de alerta descreve **o recurso que foi afetado** e **a causa
 }
 ```
 
+#### <a name="monitoringservice--activity-log---policy"></a>monitoringService = ' log de atividades-política '
+
+##### <a name="sample-values"></a>Valores de exemplo
+```json
+{
+  "alertContext": {
+    "authorization": {
+      "action": "Microsoft.Resources/checkPolicyCompliance/read",
+      "scope": "/subscriptions/<GUID>"
+    },
+    "channels": "Operation",
+    "claims": "{\"aud\":\"https://management.azure.com/\",\"iss\":\"https://sts.windows.net/<GUID>/\",\"iat\":\"1566711059\",\"nbf\":\"1566711059\",\"exp\":\"1566740159\",\"aio\":\"42FgYOhynHNw0scy3T/bL71+xLyqEwA=\",\"appid\":\"<GUID>\",\"appidacr\":\"2\",\"http://schemas.microsoft.com/identity/claims/identityprovider\":\"https://sts.windows.net/<GUID>/\",\"http://schemas.microsoft.com/identity/claims/objectidentifier\":\"<GUID>\",\"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier\":\"<GUID>\",\"http://schemas.microsoft.com/identity/claims/tenantid\":\"<GUID>\",\"uti\":\"Miy1GzoAG0Scu_l3m1aIAA\",\"ver\":\"1.0\"}",
+    "caller": "<GUID>",
+    "correlationId": "<GUID>",
+    "eventSource": "Policy",
+    "eventTimestamp": "2019-08-25T11:11:34.2269098+00:00",
+    "eventDataId": "<GUID>",
+    "level": "Warning",
+    "operationName": "Microsoft.Authorization/policies/audit/action",
+    "operationId": "<GUID>",
+    "properties": {
+      "isComplianceCheck": "True",
+      "resourceLocation": "eastus2",
+      "ancestors": "<GUID>",
+      "policies": "[{\"policyDefinitionId\":\"/providers/Microsoft.Authorization/policyDefinitions/<GUID>/\",\"policySetDefinitionId\":\"/providers/Microsoft.Authorization/policySetDefinitions/<GUID>/\",\"policyDefinitionReferenceId\":\"vulnerabilityAssessmentMonitoring\",\"policySetDefinitionName\":\"<GUID>\",\"policyDefinitionName\":\"<GUID>\",\"policyDefinitionEffect\":\"AuditIfNotExists\",\"policyAssignmentId\":\"/subscriptions/<GUID>/providers/Microsoft.Authorization/policyAssignments/SecurityCenterBuiltIn/\",\"policyAssignmentName\":\"SecurityCenterBuiltIn\",\"policyAssignmentScope\":\"/subscriptions/<GUID>\",\"policyAssignmentSku\":{\"name\":\"A1\",\"tier\":\"Standard\"},\"policyAssignmentParameters\":{}}]"
+    },
+    "status": "Succeeded",
+    "subStatus": "",
+    "submissionTimestamp": "2019-08-25T11:12:46.1557298+00:00"
+  }
+}
+```
+
+#### <a name="monitoringservice--activity-log---autoscale"></a>monitoringService = ' log de atividades-dimensionamento automático '
+
+##### <a name="sample-values"></a>Valores de exemplo
+```json
+{
+  "alertContext": {
+    "channels": "Admin, Operation",
+    "claims": "{\"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/spn\":\"Microsoft.Insights/autoscaleSettings\"}",
+    "caller": "Microsoft.Insights/autoscaleSettings",
+    "correlationId": "<GUID>",
+    "eventSource": "Autoscale",
+    "eventTimestamp": "2019-08-21T16:17:47.1551167+00:00",
+    "eventDataId": "<GUID>",
+    "level": "Informational",
+    "operationName": "Microsoft.Insights/AutoscaleSettings/Scaleup/Action",
+    "operationId": "<GUID>",
+    "properties": {
+      "description": "The autoscale engine attempting to scale resource '/subscriptions/d<GUID>/resourceGroups/testRG/providers/Microsoft.Compute/virtualMachineScaleSets/testVMSS' from 9 instances count to 10 instances count.",
+      "resourceName": "/subscriptions/<GUID>/resourceGroups/voiceassistancedemo/providers/Microsoft.Compute/virtualMachineScaleSets/alexademo",
+      "oldInstancesCount": "9",
+      "newInstancesCount": "10",
+      "activeAutoscaleProfile": "{\r\n  \"Name\": \"Auto created scale condition\",\r\n  \"Capacity\": {\r\n    \"Minimum\": \"1\",\r\n    \"Maximum\": \"10\",\r\n    \"Default\": \"1\"\r\n  },\r\n  \"Rules\": [\r\n    {\r\n      \"MetricTrigger\": {\r\n        \"Name\": \"Percentage CPU\",\r\n        \"Namespace\": \"microsoft.compute/virtualmachinescalesets\",\r\n        \"Resource\": \"/subscriptions/<GUID>/resourceGroups/testRG/providers/Microsoft.Compute/virtualMachineScaleSets/testVMSS\",\r\n        \"ResourceLocation\": \"eastus\",\r\n        \"TimeGrain\": \"PT1M\",\r\n        \"Statistic\": \"Average\",\r\n        \"TimeWindow\": \"PT5M\",\r\n        \"TimeAggregation\": \"Average\",\r\n        \"Operator\": \"GreaterThan\",\r\n        \"Threshold\": 0.0,\r\n        \"Source\": \"/subscriptions/<GUID>/resourceGroups/testRG/providers/Microsoft.Compute/virtualMachineScaleSets/testVMSS\",\r\n        \"MetricType\": \"MDM\",\r\n        \"Dimensions\": [],\r\n        \"DividePerInstance\": false\r\n      },\r\n      \"ScaleAction\": {\r\n        \"Direction\": \"Increase\",\r\n        \"Type\": \"ChangeCount\",\r\n        \"Value\": \"1\",\r\n        \"Cooldown\": \"PT1M\"\r\n      }\r\n    }\r\n  ]\r\n}",
+      "lastScaleActionTime": "Wed, 21 Aug 2019 16:17:47 GMT"
+    },
+    "status": "Succeeded",
+    "submissionTimestamp": "2019-08-21T16:17:47.2410185+00:00"
+  }
+}
+```
+
+#### <a name="monitoringservice--activity-log---security"></a>monitoringService = ' log de atividades-segurança '
+
+##### <a name="sample-values"></a>Valores de exemplo
+```json
+{
+  "alertContext": {
+    "channels": "Operation",
+    "correlationId": "<GUID>",
+    "eventSource": "Security",
+    "eventTimestamp": "2019-08-26T08:34:14+00:00",
+    "eventDataId": "<GUID>",
+    "level": "Informational",
+    "operationName": "Microsoft.Security/locations/alerts/activate/action",
+    "operationId": "<GUID>",
+    "properties": {
+      "threatStatus": "Quarantined",
+      "category": "Virus",
+      "threatID": "2147519003",
+      "filePath": "C:\\AlertGeneration\\test.eicar",
+      "protectionType": "Windows Defender",
+      "actionTaken": "Blocked",
+      "resourceType": "Virtual Machine",
+      "severity": "Low",
+      "compromisedEntity": "testVM",
+      "remediationSteps": "[\"No user action is necessary\"]",
+      "attackedResourceType": "Virtual Machine"
+    },
+    "status": "Active",
+    "submissionTimestamp": "2019-08-26T09:28:58.3019107+00:00"
+  }
+}
+```
+
 #### <a name="monitoringservice--servicehealth"></a>monitoringService = 'ServiceHealth'
 
 ##### <a name="sample-values"></a>Valores de exemplo
@@ -323,15 +419,15 @@ Qualquer instância de alerta descreve **o recurso que foi afetado** e **a causa
 {
   "alertContext": {
     "authorization": null,
-    "channels": "Admin",
+    "channels": 1,
     "claims": null,
     "caller": null,
     "correlationId": "f3cf2430-1ee3-4158-8e35-7a1d615acfc7",
-    "eventSource": "ServiceHealth",
+    "eventSource": 2,
     "eventTimestamp": "2019-06-24T11:31:19.0312699+00:00",
     "httpRequest": null,
     "eventDataId": "<GUID>",
-    "level": "Informational",
+    "level": 3,
     "operationName": "Microsoft.ServiceHealth/maintenance/action",
     "operationId": "<GUID>",
     "properties": {
@@ -355,11 +451,12 @@ Qualquer instância de alerta descreve **o recurso que foi afetado** e **a causa
     },
     "status": "Active",
     "subStatus": null,
-    "submissionTimestamp": "2019-06-24T11:31:31.7147357+00:00"
+    "submissionTimestamp": "2019-06-24T11:31:31.7147357+00:00",
+    "ResourceType": null
   }
 }
 ```
-#### <a name="monitoringservice--resource-health"></a>monitoringService = 'Resource Health'
+#### <a name="monitoringservice--resource-health"></a>monitoringService = ' Resource Health '
 
 ##### <a name="sample-values"></a>Valores de exemplo
 ```json
@@ -390,6 +487,6 @@ Qualquer instância de alerta descreve **o recurso que foi afetado** e **a causa
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Saiba mais sobre o esquema de alerta comuns](https://aka.ms/commonAlertSchemaDocs)
-- [Saiba como criar um aplicativo lógico que utiliza o esquema de alerta comum para lidar com todos os alertas.](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-integrations) 
+- [Saiba mais sobre o esquema de alerta comum](https://aka.ms/commonAlertSchemaDocs)
+- [Saiba como criar um aplicativo lógico que aproveita o esquema de alerta comum para lidar com todos os seus alertas.](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-integrations) 
 

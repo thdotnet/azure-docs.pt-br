@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 08/18/2017
+ms.date: 08/26/2019
 ms.author: masnider
-ms.openlocfilehash: 14a7389fe562b5f3206b81411d2224257051c636
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: f44a44c0923374b2f6024903213305f1defb3b94
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60781098"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70035932"
 ---
 # <a name="scaling-in-service-fabric"></a>Dimensionamento no Service Fabric
 O Azure Service Fabric facilita o build de aplicativos escalonáveis gerenciando os serviços, as partições e as réplicas em todos os nós em um cluster. Executar várias cargas de trabalho no mesmo hardware permite a utilização máxima dos recursos, mas também fornece flexibilidade em termos de como você opta por dimensionar suas cargas de trabalho. Este vídeo do Channel 9 descreve como você pode criar aplicativos de microsserviço escalonáveis:
@@ -122,10 +122,14 @@ Outra opção para dimensionar com o Service Fabric é alterar o tamanho do clus
 
 Para obter mais informações, consulte [dimensionamento do cluster](service-fabric-cluster-scaling.md).
 
+## <a name="choosing-a-platform"></a>Escolhendo uma plataforma
+
+Devido a diferenças de implementação entre sistemas operacionais, optar por usar Service Fabric com Windows ou Linux pode ser uma parte vital do dimensionamento de seu aplicativo. Uma barreira potencial é o modo como o log de preparação é executado. Service Fabric no Windows usa um driver de kernel para um log um por computador, compartilhado entre réplicas de serviço com estado. Esse log pesa em aproximadamente 8 GB. O Linux, por outro lado, usa um log de preparo de 256 MB para cada réplica, tornando-o menos ideal para aplicativos que desejam maximizar o número de réplicas de serviço leves em execução em um determinado nó. Essas diferenças em requisitos de armazenamento temporários podem informar a plataforma desejada para Service Fabric implantação de cluster.
+
 ## <a name="putting-it-all-together"></a>Juntando as peças
 Vamos reunir tudo o que discutimos aqui e aplicar a um exemplo. Considere o seguinte serviço: você está tentando criar um serviço que atue como um catálogo de endereços, mantendo nomes e informações de contato. 
 
-À direita com antecedência você tem um monte de perguntas relacionadas à escala: Quantos usuários você pretende ter? Quantos contatos cada usuário armazenará? Tentar descobrir isso enquanto você está tentando fazer o serviço funcionar pela primeira vez é difícil. Digamos que você optasse por um único serviço estático com uma contagem de partições específica. As consequências de escolher a contagem de partições errada poderia causar problemas de escala mais tarde. Da mesma forma, mesmo se escolher a contagem correta, talvez você não tenha todas as informações necessárias. Por exemplo, você também precisa decidir o tamanho do cluster logo no início, tanto em termos do número de nós quanto de seus tamanhos. Geralmente, é difícil prever quantos recursos um serviço consumirá durante seu tempo de vida. Também pode ser difícil saber antecipadamente o padrão de tráfego que realmente passa pelo serviço. Por exemplo, talvez as pessoas adicionem e removam contatos somente de manhã ou talvez isso seja distribuído uniformemente ao longo do dia. Com base nisso, talvez seja necessário reduzir e escalar horizontalmente de forma dinâmica. Talvez você possa aprender a prever quando precisará reduzir e escalar horizontalmente, mas, de qualquer forma, você provavelmente precisará reagir a alterações no consumo de recursos por seu serviço. Isso pode envolver alterar o tamanho do cluster para fornecer mais recursos quando reorganizar o uso de recursos existentes não for suficiente. 
+À frente você tem várias perguntas relacionadas à escala: Quantos usuários você pretende ter? Quantos contatos cada usuário armazenará? Tentar descobrir isso enquanto você está tentando fazer o serviço funcionar pela primeira vez é difícil. Digamos que você optasse por um único serviço estático com uma contagem de partições específica. As consequências de escolher a contagem de partições errada poderia causar problemas de escala mais tarde. Da mesma forma, mesmo se escolher a contagem correta, talvez você não tenha todas as informações necessárias. Por exemplo, você também precisa decidir o tamanho do cluster logo no início, tanto em termos do número de nós quanto de seus tamanhos. Geralmente, é difícil prever quantos recursos um serviço consumirá durante seu tempo de vida. Também pode ser difícil saber antecipadamente o padrão de tráfego que realmente passa pelo serviço. Por exemplo, talvez as pessoas adicionem e removam contatos somente de manhã ou talvez isso seja distribuído uniformemente ao longo do dia. Com base nisso, talvez seja necessário reduzir e escalar horizontalmente de forma dinâmica. Talvez você possa aprender a prever quando precisará reduzir e escalar horizontalmente, mas, de qualquer forma, você provavelmente precisará reagir a alterações no consumo de recursos por seu serviço. Isso pode envolver alterar o tamanho do cluster para fornecer mais recursos quando reorganizar o uso de recursos existentes não for suficiente. 
 
 Mas por que mesmo tentar escolher um único esquema de partição para todos os usuários? Por que limitar-se a um serviço e um cluster estático? A situação real costuma ser mais dinâmica. 
 

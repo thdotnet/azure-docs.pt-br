@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/18/2019
 ms.author: manayar
-ms.openlocfilehash: 3846815dabdc9e351f3d8449feb88affb9c6efdb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d12fde33ec9d55c891c801f1b89143b4db6f8ae7
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60803481"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70035746"
 ---
 # <a name="vertical-autoscale-with-virtual-machine-scale-sets"></a>Dimensionamento automático vertical com conjuntos de dimensionamento de máquinas virtuais
 
@@ -43,7 +43,7 @@ Você pode definir o dimensionamento vertical para ser disparado com base em ale
 4. Adicione um alerta em seu conjunto de dimensionamento de máquinas virtuais usando uma notificação de webhook.
 
 > [!NOTE]
-> Devido ao tamanho da primeira máquina virtual, os tamanhos para expansão podem ser limitados devido à disponibilidade de outros tamanhos no cluster em que a máquina virtual atual está implantada. Nos Runbooks de automação publicados usados neste artigo, levamos isso em conta e dimensionamos apenas dentro dos pares de tamanhos da VM abaixo. Isso significa que uma máquina virtual Standard_D1v2 não será expandida repentinamente para Standard_G5 ou reduzida para Basic_A0. Também não há suporte para a máquina de Virtual restrita tamanhos reduzir/escalar verticalmente. Você pode optar por dimensionar entre os seguintes pares de tamanhos:
+> Devido ao tamanho da primeira máquina virtual, os tamanhos para expansão podem ser limitados devido à disponibilidade de outros tamanhos no cluster em que a máquina virtual atual está implantada. Nos Runbooks de automação publicados usados neste artigo, levamos isso em conta e dimensionamos apenas dentro dos pares de tamanhos da VM abaixo. Isso significa que uma máquina virtual Standard_D1v2 não será expandida repentinamente para Standard_G5 ou reduzida para Basic_A0. Também não há suporte para expansão/redução de tamanhos de máquina virtual restritos. Você pode optar por dimensionar entre os seguintes pares de tamanhos:
 > 
 > | Par de dimensionamento de tamanhos de VM |  |
 > | --- | --- |
@@ -89,7 +89,7 @@ Você pode definir o dimensionamento vertical para ser disparado com base em ale
 > | Standard_ND6s |Standard_ND24s |
 > | Standard_NV6 |Standard_NV24 |
 > | Standard_NV6s_v2 |Standard_NV24s_v2 |
-> 
+> | Standard_NV12s_v3 |Standard_NV48s_v3 |
 > 
 
 ## <a name="create-an-azure-automation-account-with-run-as-capability"></a>Criar uma Conta de Automação do Azure com a funcionalidade executar como

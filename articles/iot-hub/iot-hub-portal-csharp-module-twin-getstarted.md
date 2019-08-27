@@ -8,156 +8,180 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: csharp
 ms.topic: conceptual
-ms.date: 04/26/2018
-ms.openlocfilehash: cb7b60de3bfcd31b523b9be0fc49a3c621c8446f
-ms.sourcegitcommit: fecb6bae3f29633c222f0b2680475f8f7d7a8885
+ms.date: 08/20/2019
+ms.openlocfilehash: 9a22de93dfa45d16f289871bc548a998f9c91c68
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68668120"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050347"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-using-the-portal-and-net-device"></a>Introdução à identidade do módulo e ao módulo gêmeo do Hub IoT usando o portal e o dispositivo .NET
 
 [!INCLUDE [iot-hub-selector-module-twin-getstarted](../../includes/iot-hub-selector-module-twin-getstarted.md)]
 
 > [!NOTE]
-> [As identidades do módulo e os módulos gêmeos](iot-hub-devguide-module-twins.md) são semelhantes à identidade do dispositivo e ao dispositivo gêmeo do Hub IoT do Azure, mas fornecem melhor granularidade. Enquanto a identidade do dispositivo e o dispositivo gêmeo do Hub IoT do Azure permitem que o aplicativo de back-end configure um dispositivo e forneça visibilidade às condições do dispositivo, uma identidade de módulo e módulo gêmeo fornecem esses recursos para componentes individuais de um dispositivo. Em dispositivos habilitados com vários componentes, como dispositivos baseados em sistema operacional ou dispositivos de firmware, permite condições e configuração isolada para cada componente.
+> [As identidades do módulo e os módulos gêmeos](iot-hub-devguide-module-twins.md) são semelhantes à identidade do dispositivo e ao dispositivo gêmeo do Hub IoT do Azure, mas fornecem melhor granularidade. Embora a identidade do dispositivo do Hub IoT do Azure e o dispositivo de dispositivos de apoio habilitem o aplicativo de back-end para configurar um dispositivo e fornecer visibilidade sobre as condições do dispositivo, uma identidade de módulo e um módulo inserir fornecem esses recursos para componentes individuais de um dispositivo. Em dispositivos compatíveis com vários componentes, como dispositivos baseados no sistema operacional ou dispositivos de firmware, as identidades de módulo e o módulo gêmeos permitem a configuração isolada e as condições para cada componente.
 >
 
 Neste tutorial, você irá aprender:
 
-1. Como criar uma identidade de módulo no portal.
+* Como criar uma identidade de módulo no portal.
 
-2. Como usar um SDK de dispositivo .NET atualize o módulo de atualização do seu dispositivo.
+* Como usar um SDK de dispositivo .NET para atualizar o módulo de atualização do seu dispositivo.
 
 > [!NOTE]
-> Para obter informações sobre os SDKs de IoT do Azure que você pode usar para criar aplicativos executados em dispositivos e no back-end da solução, veja [SDKs de IoT do Azure](iot-hub-devguide-sdks.md).
+> Para obter informações sobre os SDKs de IoT do Azure que você pode usar para criar ambos os aplicativos para execução em dispositivos e o back-end da solução, consulte [SDKs do IOT do Azure](iot-hub-devguide-sdks.md).
 >
 
-Para concluir este tutorial, você precisará do seguinte:
+Para concluir este tutorial, você precisará dos seguintes pré-requisitos:
 
 * Visual Studio.
-* Uma conta ativa do Azure. (Se você não tiver uma conta, poderá criar uma [conta gratuita](https://azure.microsoft.com/pricing/free-trial/) em apenas alguns minutos.)
 
-## <a name="create-an-iot-hub"></a>Crie um hub IoT
+* Uma conta ativa do Azure. Se você não tem uma conta, pode criar uma [conta gratuita](https://azure.microsoft.com/pricing/free-trial/) em apenas alguns minutos.
+
+## <a name="create-a-hub"></a>Criar um hub
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
 
-## <a name="register-a-new-device-in-the-iot-hub"></a>Registrar um novo dispositivo no hub IoT
+## <a name="register-a-new-device-in-the-hub"></a>Registrar um novo dispositivo no Hub
 
 [!INCLUDE [iot-hub-include-create-device](../../includes/iot-hub-include-create-device.md)]
 
 ## <a name="create-a-module-identity-in-the-portal"></a>Criar uma identidade de módulo no portal
 
-Em uma identidade de dispositivo, você pode criar até 20 identidades de módulo. Clique no botão **Adicionar Identidade de Módulo** na parte superior para criar sua primeira identidade de módulo chamada **myFirstModule**.
+Em uma identidade de dispositivo, você pode criar até 20 identidades de módulo. Para adicionar uma identidade, siga estas etapas:
 
-  ![Detalhes do dispositivo](./media/iot-hub-portal-csharp-module-twin-getstarted/create-module-id.png)
+1. Para o dispositivo que você criou na seção anterior, escolha **Adicionar identidade do módulo** para criar sua primeira identidade do módulo.
 
-Salve e clique na identidade do módulo que você acabou de criar. Você pode ver os detalhes de identidade do módulo. Salve a cadeia de conexão - chave primária. Ele será usado na próxima seção, na qual você configurará seu módulo no dispositivo.
+1. Insira o nome *myFirstModule*. Salve a identidade do módulo.
 
-  ![Detalhes do dispositivo](./media/iot-hub-portal-csharp-module-twin-getstarted/module-details.png)
+    ![Adicionar identidade do módulo](./media/iot-hub-portal-csharp-module-twin-getstarted/add-module-identity.png)
+
+    A nova identidade do módulo aparece na parte inferior da tela. Selecione-o para ver os detalhes de identidade do módulo.
+
+    ![Consulte os detalhes de identidade do módulo](./media/iot-hub-portal-csharp-module-twin-getstarted/module-identity-details.png)
+
+Salve a **cadeia de conexão-chave primária**. Você o usará na próxima seção para configurar seu módulo no dispositivo.
 
 ## <a name="update-the-module-twin-using-net-device-sdk"></a>Atualizar o módulo gêmeo usando o SDK do dispositivo .NET
 
 Você criou com êxito a identidade do módulo em seu Hub IoT. Vamos tentar se comunicar com a nuvem pelo dispositivo simulado. Depois de criar uma identidade de módulo, um módulo gêmeo é implicitamente criado no Hub IoT. Nesta seção, você criará um aplicativo de console .NET em seu dispositivo simulado que atualiza as propriedades relatadas do módulo gêmeo.
 
-## <a name="create-a-visual-studio-project"></a>Criar um projeto do Visual Studio
+### <a name="create-a-visual-studio-project"></a>Criar um projeto do Visual Studio
 
-No Visual Studio, adicione um projeto da Área de Trabalho Clássica do Windows no Visual C# à solução existente usando o modelo de projeto **Aplicativo do Console (.NET Framework)** . Verifique se a versão do .NET Framework é 4.6.1 ou posterior. Nomeie o projeto **UpdateModuleTwinReportedProperties**.
+Para criar um aplicativo que atualiza as propriedades relatadas do módulo de atualização, siga estas etapas:
 
-  ![Criar um projeto do Visual Studio](./media/iot-hub-csharp-csharp-module-twin-getstarted/update-twins-csharp1.png)
+1. No Visual Studio, selecione **criar um novo projeto**, escolha **aplicativo de console (.NET Framework)** e selecione **Avançar**.
 
-## <a name="install-the-latest-azure-iot-hub-net-device-sdk"></a>Instalar o SDK do dispositivo .NET do Hub IoT do Azure
+1. Em **configurar seu novo projeto**, insira *UpdateModuleTwinReportedProperties* como o **nome do projeto**. Selecione **Criar** para continuar.
 
-A identidade do módulo e o módulo gêmeo estão em versão prévia pública. Ele só está disponível nos SDKs do dispositivo de pré-lançamento do Hub IoT. No Visual Studio, abra ferramentas > gerenciamento de pacotes Nuget > gerenciar pacotes Nuget para solução. Pesquise Microsoft.Azure.Devices.Client. Verifique se você marcou a caixa de seleção incluir pré-lançamento. Selecione a versão mais recente e instale. Agora você tem acesso a todos os recursos do módulo.
+    ![Configurar você é um projeto do Visual Studio](./media/iot-hub-portal-csharp-module-twin-getstarted/configure-twins-project.png)
 
-  ![Instalar o SDK V1.16.0-preview-005 do serviço .NET do Hub IoT](./media/iot-hub-csharp-csharp-module-twin-getstarted/install-sdk.png)
+### <a name="install-the-latest-azure-iot-hub-net-device-sdk"></a>Instalar o SDK do dispositivo .NET do Hub IoT do Azure
 
-## <a name="get-your-module-connection-string"></a>Obter a cadeia de conexão do módulo
+A identidade do módulo e o módulo gêmeo estão em versão prévia pública. Ele só está disponível nos SDKs do dispositivo de pré-lançamento do Hub IoT. Para instalá-lo, siga estas etapas:
 
-Entre no [Portal do Azure](https://portal.azure.com/). Navegue até seu Hub IoT e clique em Dispositivos IoT. Localize myFirstDevice e abra-o. Você verá que myFirstModule foi criado com êxito. Copie a cadeia de conexão do módulo. Ela será necessária na próxima etapa.
+1. No Visual Studio, abra **ferramentas** > **Gerenciador** > de pacotes NuGet**gerenciar pacotes NuGet para solução**.
 
-  ![Detalhes do módulo do Portal do Azure](./media/iot-hub-csharp-csharp-module-twin-getstarted/module-detail.png)
+1. Selecione **procurar**e, em seguida, selecione **incluir pré-lançamento**. Procure *Microsoft. Azure. Devices. Client*. Selecione a versão mais recente e instale.
 
-## <a name="create-updatemoduletwinreportedproperties-console-app"></a>Criar um aplicativo de console UpdateModuleTwinReportedProperties
+    ![Instalar a versão prévia do SDK do serviço .NET do Hub IoT do Azure](./media/iot-hub-csharp-csharp-module-twin-getstarted/install-sdk.png)
 
-Adicione as instruções `using` abaixo na parte superior do arquivo **Program.cs** :
+    Agora você tem acesso a todos os recursos do módulo.
 
-```csharp
-using Microsoft.Azure.Devices.Client;
-using Microsoft.Azure.Devices.Shared;
-```
+### <a name="get-your-module-connection-string"></a>Obter a cadeia de conexão do módulo
 
-Adicione os seguintes campos à classe **Program** . Substitua o valor de espaço reservado pela cadeia de conexão do módulo.
+Você precisa da cadeia de conexão do módulo para seu aplicativo de console. Siga estas etapas:
 
-```csharp
-private const string ModuleConnectionString = "<Your module connection string>";
-private static ModuleClient Client = null;
-```
+1. Entre no [Portal do Azure](https://portal.azure.com/).
 
-Adicione o seguinte método **OnDesiredPropertyChanged** à classe de **Programa**:
+1. Navegue até o Hub IoT e selecione **dispositivos IOT**. Abra **myFirstDevice** e você verá que o **myFirstModule** foi criado com êxito.
 
-```csharp
-private static async Task OnDesiredPropertyChanged(TwinCollection desiredProperties, object userContext)
-    {
-        Console.WriteLine("desired property change:");
-        Console.WriteLine(JsonConvert.SerializeObject(desiredProperties));
-        Console.WriteLine("Sending current time as reported property");
-        TwinCollection reportedProperties = new TwinCollection
-        {
-            ["DateTimeLastDesiredPropertyChangeReceived"] = DateTime.Now
-        };
+1. Selecione **myFirstModule** em **identidades de módulo**. Em **detalhes de identidade do módulo**, copie a **cadeia de conexão (chave primária)** .
 
-        await Client.UpdateReportedPropertiesAsync(reportedProperties).ConfigureAwait(false);
-    }
-```
+    ![Detalhes do módulo do Portal do Azure](./media/iot-hub-portal-csharp-module-twin-getstarted/module-identity-details.png)
 
-Por fim, adicione as seguintes linhas ao método **Principal** :
+### <a name="create-updatemoduletwinreportedproperties-console-app"></a>Criar um aplicativo de console UpdateModuleTwinReportedProperties
 
-```csharp
-static void Main(string[] args)
-{
-    Microsoft.Azure.Devices.Client.TransportType transport = Microsoft.Azure.Devices.Client.TransportType.Amqp;
+Para criar seu aplicativo, siga estas etapas:
 
-    try
-    {
-        Client = ModuleClient.CreateFromConnectionString(ModuleConnectionString, transport);
-        Client.SetConnectionStatusChangesHandler(ConnectionStatusChangeHandler);
-        Client.SetDesiredPropertyUpdateCallbackAsync(OnDesiredPropertyChanged, null).Wait();
+1. Adicione as instruções `using` abaixo na parte superior do arquivo **Program.cs** :
 
-        Console.WriteLine("Retrieving twin");
-        var twinTask = Client.GetTwinAsync();
-        twinTask.Wait();
-        var twin = twinTask.Result;
-        Console.WriteLine(JsonConvert.SerializeObject(twin));
+  ```csharp
+  using Microsoft.Azure.Devices.Client;
+  using Microsoft.Azure.Devices.Shared;
+  using Newtonsoft.Json;
+  ```
 
-        Console.WriteLine("Sending app start time as reported property");
-        TwinCollection reportedProperties = new TwinCollection();
-        reportedProperties["DateTimeLastAppLaunch"] = DateTime.Now;
+2. Adicione os seguintes campos à classe **Program** . Substitua o valor de espaço reservado pela cadeia de conexão do módulo.
 
-        Client.UpdateReportedPropertiesAsync(reportedProperties);
-    }
-    catch (AggregateException ex)
-    {
-        Console.WriteLine("Error in sample: {0}", ex);
-    }
+  ```csharp
+  private const string ModuleConnectionString = "<Your module connection string>";
+  private static ModuleClient Client = null;
+  ```
 
-    Console.WriteLine("Waiting for Events.  Press enter to exit...");
-    Console.ReadKey();
-    Client.CloseAsync().Wait();
-}
+3. Adicione o seguinte método **OnDesiredPropertyChanged** à classe de **Programa**:
 
-private static void ConnectionStatusChangeHandler(ConnectionStatus status, ConnectionStatusChangeReason reason)
-{
-    Console.WriteLine($"Status {status} changed: {reason}");
-}
-```
+  ```csharp
+  private static async Task OnDesiredPropertyChanged(TwinCollection desiredProperties, object userContext)
+      {
+          Console.WriteLine("desired property change:");
+          Console.WriteLine(JsonConvert.SerializeObject(desiredProperties));
+          Console.WriteLine("Sending current time as reported property");
+          TwinCollection reportedProperties = new TwinCollection
+          {
+              ["DateTimeLastDesiredPropertyChangeReceived"] = DateTime.Now
+          };
+  
+          await Client.UpdateReportedPropertiesAsync(reportedProperties).ConfigureAwait(false);
+      }
+  ```
+
+4. Por fim, substitua o método **Main** pelo código a seguir:
+
+  ```csharp
+  static void Main(string[] args)
+  {
+      Microsoft.Azure.Devices.Client.TransportType transport = Microsoft.Azure.Devices.Client.TransportType.Amqp;
+  
+      try
+      {
+          Client = ModuleClient.CreateFromConnectionString(ModuleConnectionString, transport);
+          Client.SetConnectionStatusChangesHandler(ConnectionStatusChangeHandler);
+          Client.SetDesiredPropertyUpdateCallbackAsync(OnDesiredPropertyChanged, null).Wait();
+  
+          Console.WriteLine("Retrieving twin");
+          var twinTask = Client.GetTwinAsync();
+          twinTask.Wait();
+          var twin = twinTask.Result;
+          Console.WriteLine(JsonConvert.SerializeObject(twin));
+  
+          Console.WriteLine("Sending app start time as reported property");
+          TwinCollection reportedProperties = new TwinCollection();
+          reportedProperties["DateTimeLastAppLaunch"] = DateTime.Now;
+  
+          Client.UpdateReportedPropertiesAsync(reportedProperties);
+      }
+      catch (AggregateException ex)
+      {
+          Console.WriteLine("Error in sample: {0}", ex);
+      }
+  
+      Console.WriteLine("Waiting for Events.  Press enter to exit...");
+      Console.ReadKey();
+      Client.CloseAsync().Wait();
+  }
+  
+  private static void ConnectionStatusChangeHandler(ConnectionStatus status, ConnectionStatusChangeReason reason)
+  {
+      Console.WriteLine($"Status {status} changed: {reason}");
+  }
+  ```
+  
+  Você pode criar e executar esse aplicativo usando **F5**.
 
 Este exemplo de código mostra como recuperar o módulo gêmeo e atualizar as propriedades relatadas com o protocolo AMQP. Na versão prévia pública, só há suporte a AMQP para operações de módulo gêmeo.
-
-## <a name="run-the-apps"></a>Executar os aplicativos
-
-Agora você está pronto para executar os aplicativos. No Visual Studio, no Gerenciador de Soluções, clique com o botão direito na solução e clique em **Definir Projetos de Inicialização**. Selecione **Vários projetos de inicialização**e, em seguida, selecione **Iniciar** como ação para o aplicativo do console. Em seguida, pressione F5 para iniciar a execução de ambos os aplicativos.
 
 ## <a name="next-steps"></a>Próximas etapas
 

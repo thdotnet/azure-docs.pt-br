@@ -4,12 +4,12 @@ ms.service: container-service
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: danlep
-ms.openlocfilehash: f903828285b0d4fdc8fbd932fa7c85056e937481
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: 3e1e1266122ebcccc0149ca8e0421577becd6708
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67172479"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70036656"
 ---
 # <a name="deprecated-container-service-frequently-asked-questions"></a>(PRETERIDO) Perguntas frequentes sobre o Serviço de Contêiner
 
@@ -37,7 +37,7 @@ Dependendo do cenário, você também pode criar e gerenciar soluções de cont�
 ### <a name="what-is-the-difference-between-azure-container-service-and-acs-engine"></a>Qual é a diferença entre o Serviço de Contêiner do Azure e o Mecanismo ACS? 
 Serviço de Contêiner do Azure é um serviço do Azure com suporte de SLA com recursos no portal do Azure, ferramentas de linha de comando do Azure e APIs do Azure. O serviço o habilita a implementar rapidamente e gerenciar clusters que executam ferramentas de orquestração do contêiner padrão com um número relativamente pequeno de opções de configuração. 
 
-O [Mecanismo ACS](http://github.com/Azure/acs-engine) é um projeto de software livre que habilita usuários avançados a personalizar a configuração de cluster em todos os níveis. Essa capacidade de alterar a configuração de infraestrutura e software significa que não oferecemos um SLA para o Mecanismo ACS. O suporte é tratado por meio do projeto de software livre no GitHub, em vez de canais oficiais da Microsoft. 
+O [Mecanismo ACS](https://github.com/Azure/acs-engine) é um projeto de software livre que habilita usuários avançados a personalizar a configuração de cluster em todos os níveis. Essa capacidade de alterar a configuração de infraestrutura e software significa que não oferecemos um SLA para o Mecanismo ACS. O suporte é tratado por meio do projeto de software livre no GitHub, em vez de canais oficiais da Microsoft. 
 
 Para obter mais detalhes, consulte nossa [política de suporte para contêineres](https://support.microsoft.com/en-us/help/4035670/support-policy-for-containers).
 

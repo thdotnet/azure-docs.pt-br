@@ -11,12 +11,12 @@ ms.topic: article
 ms.assetid: a10a6277-ed29-4e68-a881-ccdad6fd0ad8
 tags: connectors
 ms.date: 08/24/2018
-ms.openlocfilehash: 01573871700bbeeb653ce3efdbf6c6aca88fd454
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 70b250074395977f70ac1b3eb0ce3ffdc96fced1
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67204854"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050851"
 ---
 # <a name="manage-rss-feeds-by-using-azure-logic-apps"></a>Gerencie RSS feeds usando os Aplicativos Lógicos do Azure
 
@@ -31,7 +31,7 @@ RSS (Rich Site Summary), também chamado de Really Simple Syndication, é um for
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, <a href="https://azure.microsoft.com/free/" target="_blank">inscreva-se em uma conta gratuita do Azure</a>. 
+* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, [inscreva-se em uma conta gratuita do Azure](https://azure.microsoft.com/free/). 
 
 * A URL de um RSS feed
 
@@ -47,7 +47,7 @@ RSS (Rich Site Summary), também chamado de Really Simple Syndication, é um for
 
    * Para aplicativos lógicos em branco, na caixa de pesquisa, insira "rss" como o filtro. Na lista de gatilhos, selecione o gatilho desejado. 
 
-     -ou-
+     - ou -
 
    * Para aplicativos lógicos existentes, na etapa em que deseja adicionar uma ação, escolha **Nova etapa**. Na caixa de pesquisa, insira "rss" como o seu filtro. Na lista de ações, selecione a ação desejada.
 

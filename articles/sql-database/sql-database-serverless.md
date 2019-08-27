@@ -7,16 +7,16 @@ ms.subservice: service
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: oslake
+author: moslake
 ms.author: moslake
 ms.reviewer: sstein, carlrab
-ms.date: 07/05/2019
-ms.openlocfilehash: 67e877609eec98e7100b34ab477dbab7c5577772
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.date: 08/26/2019
+ms.openlocfilehash: 418ca6f8d6258b826bb126252d7cf7b1c5fee299
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69515291"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70035715"
 ---
 # <a name="azure-sql-database-serverless-preview"></a>Banco de dados SQL do Azure sem servidor (visualização)
 
@@ -136,7 +136,7 @@ A retomada será disparada se qualquer uma das seguintes condições for verdade
 |Cópia de banco de dados|Criar banco de dados como cópia.<br>Exportar para um arquivo BACPAC.|
 |Sincronização de dados SQL|Sincronização entre bancos de dados membro e hub que são executados em um cronograma configurável ou são executados manualmente|
 |Modificar alguns metadados do banco de dados|Adicionando novas marcas de banco de dados.<br>Alterando Max vCores, min vCores ou atraso de autopausa.|
-|SQL Server Management Studio (SSMS)|Usar o SSMS versão 18 e abrir uma nova janela de consulta para qualquer banco de dados no servidor retomará qualquer banco de dados em pausa automática no mesmo servidor. Esse comportamento não ocorre ao usar o SSMS versão 17.9.1 com o IntelliSense desativado.|
+|SQL Server Management Studio (SSMS)|O uso de versões do SSMS anteriores a 18,1 e a abertura de uma nova janela de consulta para qualquer banco de dados no servidor retomará qualquer banco de dados pausado automaticamente no mesmo servidor. Esse comportamento não ocorrerá se você estiver usando o SSMS versão 18,1 ou posterior.|
 
 O reinício retomado também é disparado durante a implantação de algumas atualizações de serviço que exigem que o banco de dados esteja online.
 
@@ -165,7 +165,7 @@ A criação de um novo banco de dados ou a movimentação de um banco de dados e
    |Parâmetro|Opções de valor|Valor padrão|
    |---|---|---|---|
    |VCores mín.|{0,5, 1, 2, 4} sem exceder o máximo de vCores|vCores de 0,5|
-   |Atraso de pausa automática|Mínimo: 60 minutos (1 hora)<br>Máximo: 10.080 minutos (7 dias)<br>Incrementos: 60 minutos<br>Desabilitar pausa automática: -1|60 minutos|
+   |Atraso de pausa automática|Mínimo: 60 minutos (1 hora)<br>Maior 10.080 minutos (7 dias)<br>Incrementos: 60 minutos<br>Desabilitar pausa automática: -1|60 minutos|
 
 > [!NOTE]
 > Não há suporte para usar o T-SQL para mover um banco de dados existente para uma camada sem servidor ou alterar seu tamanho da computação, mas isso pode ser feito por meio do portal do Azure ou do PowerShell.

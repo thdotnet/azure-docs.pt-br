@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 6f51d2907738f49ace559f1b127458eda71de287
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: 18a85fae7d2d241bd8d582db73c71e1d1472f04d
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69624095"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70036311"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Entender a Configuração de Convidado do Azure Policy
 
@@ -28,11 +28,16 @@ Ainda não é possível aplicar as configurações.
 
 Para auditar as configurações dentro de uma máquina virtual, uma [extensão de máquina virtual](../../../virtual-machines/extensions/overview.md) é habilitada. A extensão baixa a atribuição de política aplicável e a definição de configuração correspondente.
 
-### <a name="register-guest-configuration-resource-provider"></a>Registrar o provedor de recursos de Configuração de Convidado
+### <a name="limits-set-on-the-exension"></a>Limites definidos no exension
+
+Para limitar a extensão de afetar os aplicativos em execução dentro da máquina, a configuração de convidado não tem permissão para exceder mais de 5% da utilização da CPU.
+Isso é verdadeiro Boh para as configurações fornecidas pela Microsoft como "internas" e para configurações personalizadas criadas por clientes.
+
+## <a name="register-guest-configuration-resource-provider"></a>Registrar o provedor de recursos de Configuração de Convidado
 
 Antes de usar a Configuração de Convidado, você precisa registrar o provedor de recursos. Registre-se por meio do portal ou do PowerShell. O provedor de recursos será registrado automaticamente se a atribuição de uma política de configuração de convidado for feita por meio do Portal.
 
-#### <a name="registration---portal"></a>Registro – Portal
+### <a name="registration---portal"></a>Registro – Portal
 
 Para registrar o provedor de recursos da Configuração de Convidado por meio do portal do Azure, siga estas etapas:
 
@@ -44,7 +49,7 @@ Para registrar o provedor de recursos da Configuração de Convidado por meio do
 
 1. Filtre ou role até localizar **Microsoft.GuestConfiguration** e, em seguida, clique em **Registrar** na mesma linha.
 
-#### <a name="registration---powershell"></a>Registro – PowerShell
+### <a name="registration---powershell"></a>Registro – PowerShell
 
 Para registrar o provedor de recursos da Configuração de Convidado por meio do PowerShell, execute o seguinte comando:
 
@@ -53,7 +58,7 @@ Para registrar o provedor de recursos da Configuração de Convidado por meio do
 Register-AzResourceProvider -ProviderNamespace 'Microsoft.GuestConfiguration'
 ```
 
-### <a name="validation-tools"></a>Ferramentas de validação
+## <a name="validation-tools"></a>Ferramentas de validação
 
 Na máquina virtual, o cliente de Configuração de Convidado usa ferramentas locais para executar a auditoria.
 
@@ -68,7 +73,7 @@ A tabela a seguir mostra uma lista das ferramentas locais usadas em cada sistema
 
 O cliente de Configuração Convidado verifica o novo conteúdo a cada 5 minutos. Depois que uma atribuição de convidado for recebida, as configurações serão verificadas em um intervalo de 15 minutos. Os resultados são enviados ao provedor de recursos de configuração do convidado assim que a auditoria é concluída. Quando ocorre um [gatilho de avaliação](../how-to/get-compliance-data.md#evaluation-triggers) de política, o estado do computador é gravado no provedor de recursos de Configuração do Convidado. Isso faz com que a Política do Azure avalie as propriedades do Azure Resource Manager. Uma avaliação de Azure Policy sob demanda recupera o valor mais recente do provedor de recursos de configuração de convidado. No entanto, ele não dispara uma nova auditoria da configuração dentro da máquina virtual.
 
-### <a name="supported-client-types"></a>Tipos de clientes com suporte
+## <a name="supported-client-types"></a>Tipos de clientes com suporte
 
 A tabela a seguir mostra uma lista de sistemas operacionais com suporte em imagens do Azure:
 
@@ -89,7 +94,7 @@ A tabela a seguir mostra uma lista de sistemas operacionais com suporte em image
 
 O Windows Server nano Server não tem suporte em nenhuma versão.
 
-### <a name="guest-configuration-extension-network-requirements"></a>Requisitos de rede da extensão de configuração do convidado
+## <a name="guest-configuration-extension-network-requirements"></a>Requisitos de rede da extensão de configuração do convidado
 
 Para se comunicar com o provedor de recursos de configuração de convidado no Azure, as máquinas virtuais exigem acesso de saída aos datacenters do Azure na porta **443**. Se você estiver usando uma rede virtual privada no Azure e não permitir o tráfego de saída, as exceções deverão ser configuradas usando regras de [grupo de segurança de rede](../../../virtual-network/manage-network-security-group.md#create-a-security-rule) . Neste momento, uma marca de serviço não existe para Azure Policy configuração de convidado.
 
@@ -100,7 +105,7 @@ Para listas de endereços IP, você pode baixar [Microsoft Azure intervalos de I
 
 ## <a name="guest-configuration-definition-requirements"></a>Requisitos de definição da Configuração de Convidado
 
-Cada execução de auditoria pela configuração de convidado requer duas definições de política, uma definição de **DeployIfNotExists** e uma definição de **auditoria** . A definição **DeployIfNotExists** é usada para preparar a máquina virtual com o agente de configuração convidado e outros componentes para dar suporte às [ferramentas de validação](#validation-tools).
+Cada execução de auditoria pela configuração de convidado requer duas definições de política, uma definição de **DeployIfNotExists** e uma definição de **AuditIfNotExists** . A definição **DeployIfNotExists** é usada para preparar a máquina virtual com o agente de configuração convidado e outros componentes para dar suporte às [ferramentas de validação](#validation-tools).
 
 A definição de política **DeployIfNotExists** valida e corrige os seguintes itens:
 
@@ -111,18 +116,18 @@ A definição de política **DeployIfNotExists** valida e corrige os seguintes i
 
 Se a atribuição de **DeployIfNotExists** não for compatível, uma [tarefa de correção](../how-to/remediate-resources.md#create-a-remediation-task) poderá ser usada.
 
-Depois que a atribuição de **DeployIfNotExists** for compatível, a atribuição de política de **auditoria** usará as ferramentas de validação locais para determinar se a atribuição de configuração está em conformidade ou sem conformidade.
+Depois que a atribuição de **DeployIfNotExists** é compatível, a atribuição de política **AuditIfNotExists** usa as ferramentas de validação locais para determinar se a atribuição de configuração é compatível ou não compatível.
 A ferramenta de validação fornece os resultados para o cliente de Configuração de Convidado. O cliente encaminha os resultados para a Extensão de Convidado, o que os disponibiliza por meio do provedor de recursos da Configuração de Convidado.
 
 O Azure Policy usa a propriedade **complianceStatus** dos provedores de recursos da Configuração de Convidado para relatar a conformidade no nó **Conformidade**. Para obter mais informações, confira [Obtendo dados de conformidade](../how-to/getting-compliance-data.md).
 
 > [!NOTE]
-> A política **DeployIfNotExists** é necessária para que a política de **auditoria** retorne os resultados.
-> Sem o **DeployIfNotExists**, a política de **auditoria** mostra "0 de 0" recursos como status.
+> A política **DeployIfNotExists** é necessária para que a política **AuditIfNotExists** retorne os resultados.
+> Sem o **DeployIfNotExists**, a política **AuditIfNotExists** mostra "0 de 0" recursos como status.
 
-Todas as políticas internas da Configuração de Convidado são incluídas em uma iniciativa para agrupar as definições a serem usadas em atribuições. A iniciativa interna chamada *[Versão Prévia]: Auditar as configurações de segurança de Senha em máquinas virtuais do Linux e do Windows* contém 18 políticas. Há seis pares de **DeployIfNotExists** e **Audit** para o Windows e três para o Linux. Em cada caso, a lógica dentro da definição valida somente se o sistema operacional de destino é avaliado com base na definição da [regra de política](definition-structure.md#policy-rule).
+Todas as políticas internas da Configuração de Convidado são incluídas em uma iniciativa para agrupar as definições a serem usadas em atribuições. A iniciativa interna chamada *[Versão Prévia]: Auditar as configurações de segurança de Senha em máquinas virtuais do Linux e do Windows* contém 18 políticas. Há seis pares de **DeployIfNotExists** e **AuditIfNotExists** para o Windows e três para o Linux. Em cada caso, a lógica dentro da definição valida somente se o sistema operacional de destino é avaliado com base na definição da [regra de política](definition-structure.md#policy-rule).
 
-## <a name="multiple-assignments"></a>Várias atribuições
+### <a name="multiple-assignments"></a>Várias atribuições
 
 Atualmente, as políticas de configuração de convidado só dão suporte à atribuição da mesma entrada de convidado uma vez por máquina virtual, mesmo que a atribuição de política use parâmetros diferentes.
 

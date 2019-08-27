@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/04/2018
 ms.author: kraigb
-ms.openlocfilehash: 2ef327721fd42e5274381834721fd987ec7e9d75
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: c99f815bd58b03dbc43ba742577259be5638fef9
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60240526"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70035744"
 ---
 # <a name="use-azure-machine-learning-service-in-a-notebook"></a>Usar o Serviço do Azure Machine Learning em um notebook
 
@@ -27,8 +27,8 @@ O Azure Notebooks vem pré-configurado com o ambiente necessário para trabalhar
 ## <a name="clone-the-sample-into-your-account"></a>Clonar o exemplo em sua conta
 
 1. Entre no [Azure Notebooks](https://notebooks.azure.com/).
-1. Selecione **Meus Projetos** para navegar até o painel de projetos.
-1. Selecione o botão **Carregar repositório do GitHub** (a seta para cima) para abrir o pop-up **Carregar repositório do GitHub**.
+1. Selecione **meus projetos** para ir para o painel projetos.
+1. Selecione o botão Carregar repositório do **GitHub** (seta para cima) para abrir o pop-up de **upload do depósito** do github.
 1. Na janela pop-up, insira `Azure/MachineLearningNotebooks` no **Repositório do GitHub**, forneça um nome para o projeto em **Nome do Projeto**, como "Serviço do Azure Machine Learning", forneça um identificador em **ID do Projeto**, desmarque **Público** se desejar e, em seguida, selecione **Importar**.
 
     ![Importar exemplo de Notebook do Azure Machine Learning para a conta do Notebooks](media/azureml-import-project.png)
@@ -41,7 +41,7 @@ O Azure Notebooks vem pré-configurado com o ambiente necessário para trabalhar
 
     - Como o Azure Notebooks já contém os pacotes Python necessários, basta executar o snippet de código na etapa 2 dos Pré-requisitos para verificar a versão do SDK do Azure ML.
 
-1. Depois que a configuração estiver concluída, selecione **01.getting-started** para navegar até a pasta que contém treze notebooks de amostra diferentes. Cada um deles é autoexplicativo.
+1. Quando a configuração estiver concluída, selecione **01. Getting-Started** para abrir a pasta que contém treze blocos de anotações de amostra diferentes, cada um deles é auto-explicativo.
 
 ## <a name="next-steps"></a>Próximas etapas
 

@@ -12,12 +12,12 @@ manager: cgronlun
 ms.reviewer: jmartens
 ms.date: 07/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: bd60d9f9bee55ef1342fe344e8b4f2f64e313331
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
+ms.openlocfilehash: 4bd6605a6a217d6bcdd243ff1d4f7bb6017ca0ef
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68360980"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70036059"
 ---
 # <a name="load-and-read-data-with-the-azure-machine-learning-data-prep-sdk"></a>Carregar e ler dados com o SDK de preparação de dados Azure Machine Learning
 Neste artigo, você aprende diferentes métodos de carregamento de dados usando o SDK do Azure Machine Learning data Prep.  O SDK suporta vários recursos de ingestão de dados, incluindo:
@@ -162,7 +162,7 @@ dflow.head(5)
 |0|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum| |
 |1|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum| |
 |2|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum|Nenhum| |
-|3|Classificar|Título|Estúdio|Worldwide|Domestic / %|Coluna1|Overseas / %|Coluna2|Year^| |
+|3|Classificar|Título|Estúdio|Mundial|Domestic / %|Coluna1|Overseas / %|Coluna2|Year^| |
 |4|1|Avatar|Fox|2788|760.5|0.273|2027.5|0.727|2009^|5|
 
 A saída mostra que os dados na segunda folha tinham três linhas vazias antes dos cabeçalhos. A função `read_excel()` contém parâmetros opcionais para pular linhas e usar cabeçalhos. Execute o seguinte código para pular as três primeiras linhas e use a quarta linha como os cabeçalhos.
@@ -172,7 +172,7 @@ dflow = dprep.read_excel(path='./data/excel.xlsx',
                          sheet_name='Sheet2', use_column_headers=True, skip_rows=3)
 ```
 
-||Classificar|Título|Estúdio|Worldwide|Domestic / %|Coluna1|Overseas / %|Coluna2|Year^|
+||Classificar|Título|Estúdio|Mundial|Domestic / %|Coluna1|Overseas / %|Coluna2|Year^|
 |------|------|------|-----|------|-----|-------|----|-----|-----|
 |0|1|Avatar|Fox|2788|760.5|0.273|2027.5|0.727|2009^|
 |1|2|Titanic|Par.|2186,8|658. 7|0,301|1528,1|0. 699|1997^|
@@ -230,7 +230,7 @@ dflow = dprep.read_sql(ds, "SELECT top 100 * FROM [SalesLT].[Product]")
 dflow.head(5)
 ```
 
-| |ProductID|Nome|ProductNumber|Cor|StandardCost|ListPrice|Tamanho|Peso|ProductCategoryID|ProductModelID|SellStartDate|SellEndDate|DiscontinuedDate|ThumbNailPhoto|ThumbnailPhotoFileName|rowguid|ModifiedDate| |
+| |ProductID|Nome|ProductNumber|Cor|StandardCost|ListPrice|Size|Peso|ProductCategoryID|ProductModelID|SellStartDate|SellEndDate|DiscontinuedDate|ThumbNailPhoto|ThumbnailPhotoFileName|rowguid|ModifiedDate| |
 |-|---------|----|-------------|-----|------------|---------|----|------|-----------------|--------------|-------------|-----------|----------------|--------------|----------------------|-------|------------|-|
 |0|680|HL Road Frame - Black, 58|FR-R92B-58|Preto|1059.3100|1431.50|58|1016.04|18|6|2002-06-01 00:00:00+00:00|Nenhum|Nenhum|b'GIF89aP\x001\x00\xf7\x00\x00\x00\x00\x00\x80...|no_image_available_small.gif|43dd68d6-14a4-461f-9069-55309d90ea7e|2008-03-11 |0:01:36.827000+00:00|
 |1|706|HL Road Frame - Red, 58|FR-R92R-58|Vermelho|1059.3100|1431.50|58|1016.04|18|6|2002-06-01 00:00:00+00:00|Nenhum|Nenhum|b'GIF89aP\x001\x00\xf7\x00\x00\x00\x00\x00\x80...|no_image_available_small.gif|9540ff17-2712-4c90-a3d1-8ce5568b2462|2008-03-11 |10:01:36.827000+00:00|
@@ -311,7 +311,7 @@ dflow = dprep.read_csv(path=DataLakeDataSource(
 dflow.to_pandas_dataframe().head()
 ```
 
-||FMID|MarketName|Site|street|city|Município|
+||FMID|MarketName|Site|street|city|Condado|
 |----|------|-----|----|----|----|----|
 |0|1012063|Associação do mercado dos fazendeiros de Caledonia - Danville|https://sites.google.com/site/caledoniafarmers... ||Danville|Caledonia|
 |1|1011871|Stearns Homestead Fazendeiros ' mercado|http://Stearnshomestead.com |6975 Ridge Road|Parma|Cuyahoga|
@@ -321,4 +321,4 @@ dflow.to_pandas_dataframe().head()
 
 ## <a name="next-steps"></a>Próximas etapas
 
-* Consulte o [tutorial](tutorial-data-prep.md) Azure Machine Learning data Prep SDK para obter um exemplo de como resolver um cenário específico
+* Consulte a [documentação de referência](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py#dataprep) do SDK do Azure Machine Learning data Prep para obter mais detalhes.

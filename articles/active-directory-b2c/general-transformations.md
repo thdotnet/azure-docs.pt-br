@@ -1,35 +1,35 @@
 ---
-title: Exemplos de transformação de declarações gerais do esquema do Identity Experience Framework do Azure Active Directory B2C | Microsoft Docs
-description: Exemplos de transformação de declarações gerais do esquema do Identity Experience Framework do Azure Active Directory B2C.
+title: Exemplos de transformação de declarações gerais para o esquema de estrutura de experiência de identidade de Azure Active Directory B2C
+description: Exemplos de transformação de declarações gerais para o esquema de estrutura de experiência de identidade de Azure Active Directory B2C.
 services: active-directory-b2c
 author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
-ms.date: 09/10/2018
+ms.date: 08/27/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a5f8068ea7e97343749c719d2d0800e20701079c
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 7cea33cb61f8f8d0fe305a757f11c80bc5da24ca
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66510994"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70032892"
 ---
 # <a name="general-claims-transformations"></a>Transformações de declarações gerais
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-Este artigo fornece exemplos para usar as transformações de declarações gerais do esquema do Identity Experience Framework no Azure AD (Azure Active Directory) B2C. Para obter mais informações, confira [ClaimsTransformations](claimstransformations.md).
+Este artigo fornece exemplos de como usar as transformações de declarações gerais do esquema de estrutura de experiência de identidade em Azure Active Directory B2C (Azure AD B2C). Para obter mais informações, confira [ClaimsTransformations](claimstransformations.md).
 
 ## <a name="doesclaimexist"></a>DoesClaimExist
 
 Verifica se a **inputClaim** existe ou não e define **outputClaim** como true ou false adequadamente.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | InputClaim |Qualquer | A declaração de entrada cuja existência deve ser verificada. |
+| InputClaim | InputClaim |Any | A declaração de entrada cuja existência deve ser verificada. |
 | OutputClaim | outputClaim | boolean | O ClaimType produzido depois de invocar esta ClaimsTransformation. |
 
 Use essa transformação de declarações para verificar se uma declaração existe ou se contém algum valor. O valor retornado é um valor booliano que indica se a declaração existe. O exemplo a seguir verifica se o endereço de email existe.
@@ -38,7 +38,7 @@ Use essa transformação de declarações para verificar se uma declaração exi
 <ClaimsTransformation Id="CheckIfEmailPresent" TransformationMethod="DoesClaimExist">
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="email" TransformationClaimType="inputClaim" />
-  </InputClaims>                    
+  </InputClaims>
   <OutputClaims>
     <OutputClaim ClaimTypeReferenceId="isEmailPresent" TransformationClaimType="outputClaim" />
   </OutputClaims>
@@ -49,18 +49,18 @@ Use essa transformação de declarações para verificar se uma declaração exi
 
 - Declarações de entrada:
   - **inputClaim**: someone@contoso.com
-- Declarações de saída: 
-    - **outputClaim**: true
+- Declarações de saída:
+  - **outputClaim**: true
 
 ## <a name="hash"></a>Hash
 
-Transforme o texto sem formatação fornecido em hash usando o sal e um segredo.
+Transforme o texto sem formatação fornecido em hash usando o sal e um segredo. O algoritmo de hash usado é SHA-256.
 
-| item | TransformationClaimType | Tipo de Dados | Observações |
+| Item | TransformationClaimType | Tipo de dados | Observações |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | texto não criptografado | cadeia de caracteres | A declaração de entrada a ser criptografada |
 | InputClaim | sal | cadeia de caracteres | O parâmetro sal. Você pode criar um valor aleatório, usando a transformação de declarações `CreateRandomString`. |
-| InputParameter | randomizerSecret | cadeia de caracteres | Aponta para **chaves de política** existentes do Azure AD B2C. Para criar um novo segredo: No seu locatário do Azure AD B2C, selecione **Configurações de B2C > Identity Experience Framework**. Selecione **Chaves de Política** para exibir as chaves disponíveis no seu locatário. Selecione **Adicionar**. Em **Opções** selecione **Manual**. Forneça um nome (o prefixo B2C_1A_ pode ser adicionado automaticamente). Na caixa Segredo, insira qualquer segredo que você quiser, como 1234567890. Em Uso da chave, selecione **Segredo**. Selecione **Criar**. |
+| InputParameter | randomizerSecret | cadeia de caracteres | Aponta para uma chave de **política**de Azure ad B2C existente. Para criar uma nova chave de política: No locatário do Azure AD B2C, em **gerenciar**, selecione **estrutura de experiência de identidade**. Selecione **chaves de política** para exibir as chaves que estão disponíveis em seu locatário. Selecione **Adicionar**. Em **Opções** selecione **Manual**. Forneça um nome (o prefixo *B2C_1A_* pode ser adicionado automaticamente.). Na caixa de texto **segredo** , insira qualquer segredo que você queira usar, como 1234567890. Para **Uso de chave**, selecione **Assinatura**. Selecione **Criar**. |
 | OutputClaim | hash | cadeia de caracteres | O ClaimType que é produzido depois de invocar esta transformação de declarações. A declaração configurada na inputClaim `plaintext`. |
 
 ```XML
@@ -81,11 +81,8 @@ Transforme o texto sem formatação fornecido em hash usando o sal e um segredo.
 ### <a name="example"></a>Exemplo
 
 - Declarações de entrada:
-    - **texto não criptografado**: MyPass@word1
-    - **salt**: 487624568
-    - **randomizerSecret**: B2C_1A_AccountTransformSecret
-- Declarações de saída: 
-    - **outputClaim**: CdMNb/KTEfsWzh9MR1kQGRZCKjuxGMWhA5YQNihzV6U=
-
-
-
+  - **texto não criptografado**: MyPass@word1
+  - **salt**: 487624568
+  - **randomizerSecret**: B2C_1A_AccountTransformSecret
+- Declarações de saída:
+  - **outputClaim**: CdMNb/KTEfsWzh9MR1kQGRZCKjuxGMWhA5YQNihzV6U=

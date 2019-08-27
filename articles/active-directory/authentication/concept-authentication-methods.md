@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry, michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d18c74e908f6d5c4c3d2eefb0518add380fa1324
-ms.sourcegitcommit: 39d95a11d5937364ca0b01d8ba099752c4128827
+ms.openlocfilehash: 3b0c91357e5ab15b88c92b04fd0896b989e83953
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69561309"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70051436"
 ---
 # <a name="what-are-authentication-methods"></a>Quais são os métodos de autenticação?
 
@@ -60,15 +60,15 @@ Se você usar perguntas de segurança, é recomendável usá-las em conjunto com
 
 ### <a name="predefined-questions"></a>Perguntas predefinidas
 
-* Em que cidade você conheceu seu primeiro cônjuge?
+* Em qual cidade você conheceu seu primeiro cônjuge/parceiro?
 * Em qual cidade seus pais se conheceram?
 * Em qual cidade seu irmão mais próximo mora?
 * Em qual cidade seu pai nasceu?
 * Em qual cidade você teve seu primeiro emprego?
 * Em qual cidade sua mãe nasceu?
-* Em qual cidade você estava no Ano Novo de 2000?
-* Qual o sobrenome de seu professor favorito no ensino médio?
-* Diga o nome de uma faculdade à qual você se candidatou, mas que não frequentou?
+* Em qual cidade você estava no ano de 2000?
+* Qual era o sobrenome de seu professor favorito no ensino médio?
+* Qual é o nome de uma faculdade que você tentou entrar, mas que não frequentou?
 * Qual é o nome do lugar em que você realizou sua primeira festa de casamento?
 * Qual é o segundo nome de seu pai?
 * Qual é sua comida favorita?
@@ -94,7 +94,7 @@ Se você usar perguntas de segurança, é recomendável usá-las em conjunto com
 * Qual foi seu primeiro emprego?
 * Quais eram os últimos quatro dígitos de seu primeiro número de telefone?
 * Quando criança, o que você queria ser quando crescesse?
-* Qual a pessoa mais famosa que você já conheceu?
+* Quem é a pessoa mais famosa que você já conheceu?
 
 Todas as questões de segurança predefinidas são traduzidas e localizadas no conjunto completo de idiomas do Office 365 com base na localidade do navegador do usuário.
 
@@ -194,6 +194,8 @@ Para funcionarem adequadamente, os números de telefone devem estar no formato *
 > Precisa haver um espaço entre o código do país e o número de telefone.
 >
 > A redefinição de senha não dá suporte a ramais telefônicos. Mesmo no formato +1 4255551234X12345, as extensões são removidas antes que a chamada seja completada.
+
+A Microsoft não garante a entrega de prompt consistente de Autenticação multifator com base em voz ou SMS pelo mesmo número. Pensando no melhor para nossos usuários, a Microsoft pode adicionar ou remover códigos curtos a qualquer momento, pois fazemos ajustes de rota para melhorar a capacidade de entrega de SMS. A Microsoft não oferece suporte a códigos curtos para países/regiões além do Estados Unidos e do Canadá.
 
 #### <a name="text-message"></a>Mensagem de texto
 

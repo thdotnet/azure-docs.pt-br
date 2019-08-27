@@ -6,13 +6,13 @@ manager: evansma
 ms.author: jenhayes
 ms.service: marketplace
 ms.topic: conceptual
-ms.date: 08/14/2019
-ms.openlocfilehash: 7cda51870a98b2606a0133a61ad6f786e7e9324a
-ms.sourcegitcommit: d3dced0ff3ba8e78d003060d9dafb56763184d69
+ms.date: 08/26/2019
+ms.openlocfilehash: 58dd9ade749458facd6f11682af0b730258a7584
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69900148"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70033243"
 ---
 # <a name="create-a-new-dynamics-365-for-customer-engagement--powerapps-offer"></a>Criar um novo Dynamics 365 for Customer Engagement & a oferta do PowerApps
 
@@ -353,7 +353,7 @@ A opção de **listagem do Marketplace** encontrada na guia **Test Drive** exibe
 
 ## <a name="supplemental-content"></a>Conteúdo complementar
 
-Esta página permite que você forneça informações adicionais necessárias sobre sua oferta.
+Esta página permite que você forneça informações adicionais sobre sua oferta para nos ajudar a validar sua oferta. Essas informações não são mostradas aos clientes ou publicadas no Marketplace.
 
 ### <a name="key-usage-scenario"></a>Cenário de uso de chave
 

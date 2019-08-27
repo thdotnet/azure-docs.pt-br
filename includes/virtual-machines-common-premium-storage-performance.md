@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/08/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 8aeb32ecddc0ef368b615a201179f17178ececad
-ms.sourcegitcommit: c8a102b9f76f355556b03b62f3c79dc5e3bae305
+ms.openlocfilehash: abee645f8929c10856f662b1504b163b58d953a5
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68817196"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70036029"
 ---
 ## <a name="application-performance-indicators"></a>Indicadores de desempenho de aplicativo
 
@@ -111,7 +111,7 @@ Saiba mais sobre o [iostat](https://linux.die.net/man/1/iostat) e [PerfMon](http
 
 Os principais fatores que influenciam o desempenho de um aplicativo em execução no armazenamento Premium são a natureza das solicitações de e/s, tamanho da VM, tamanho do disco, número de discos, cache de disco, multithread e profundidade da fila. Você pode controlar alguns desses fatores com botões fornecidos pelo sistema. A maioria dos aplicativos talvez não apresente uma opção para alterar o tamanho de E/S e a profundidade da fila diretamente. Por exemplo, se você estiver usando o SQL Server, não será possível escolher a profundidade de fila e o tamanho de E/S. O SQL Server escolhe os valores ideais do tamanho de E/S e da profundidade da fila para obter o melhor desempenho. É importante compreender os efeitos de ambos os tipos de fator no desempenho do aplicativo para que você possa provisionar recursos apropriados que atendam às necessidades de desempenho.
 
-Ao longo desta seção, consulte a lista de verificação de requisitos de aplicativo que você criou para identificar quanto você precisa para otimizar o desempenho do aplicativo. Com base nisso, você poderá determinar quais fatores dessa seção será preciso ajustar. Para ver os efeitos de cada fator no desempenho do aplicativo, execute os parâmetros de comparação na configuração do aplicativo. Consulte a seção de parâmetros de comparação no final deste artigo para obter as etapas para executar ferramentas comuns de benchmark em VMs Windows e Linux.
+Ao longo desta seção, consulte a lista de verificação de requisitos de aplicativo que você criou para identificar quanto você precisa para otimizar o desempenho do aplicativo. Com base nisso, você poderá determinar quais fatores dessa seção será preciso ajustar. Para ver os efeitos de cada fator no desempenho do aplicativo, execute os parâmetros de comparação na configuração do aplicativo. Consulte o artigo de benchmarking, vinculado ao final, para obter as etapas para executar ferramentas comuns de benchmark em VMs Windows e Linux.
 
 ### <a name="optimize-iops-throughput-and-latency-at-a-glance"></a>Otimizar o IOPS, a taxa de transferência e a latência em um relance
 
@@ -166,7 +166,7 @@ Para obter IOPS e Largura de Banda mais altas do que o valor máximo de um únic
 > [!NOTE]
 > À medida que você aumenta a IOPS ou a Taxa de Transferência, a outra também aumenta. Fique dentro dos limites de Taxa de Transferência ou de IOPS do disco ou da VM ao aumentar uma das duas.
 
-Para ver os efeitos do tamanho de E/S no desempenho do aplicativo, você pode executar ferramentas de parâmetros comparação na VM e nos discos. Crie várias execuções de teste e use diferentes tamanhos de E/S para cada execução a fim de ver o impacto. Consulte a seção de parâmetros de comparação no final deste artigo para obter mais detalhes.
+Para ver os efeitos do tamanho de E/S no desempenho do aplicativo, você pode executar ferramentas de parâmetros comparação na VM e nos discos. Crie várias execuções de teste e use diferentes tamanhos de E/S para cada execução a fim de ver o impacto. Consulte o artigo de benchmarking, vinculado ao final, para obter mais detalhes.
 
 ## <a name="high-scale-vm-sizes"></a>Tamanhos de VM de alta escala
 
@@ -294,7 +294,7 @@ As seguintes distribuições Linux foram validadas para SSDs Premium. Para obter
 
 Algumas das versões exigem um LIS (Serviços de Integração do Linux) v4.0 para Azure mais recente. Para baixar e instalar uma distribuição, siga o link listado na tabela a seguir. Podemos adicionar imagens à lista à medida que concluímos a validação. Nossas validações mostram que o desempenho varia para cada imagem. O desempenho depende da carga de trabalho e das configurações de imagem. Imagens diferentes são ajustadas para tipos diferentes de carga de trabalho.
 
-| Distribuição | Versão | Kernel com suporte | Detalhes |
+| Distribuição | Version | Kernel com suporte | Detalhes |
 | --- | --- | --- | --- |
 | Ubuntu | 12.04 | 3.2.0-75.110+ | Ubuntu-12_04_5-LTS-amd64-server-20150119-en-us-30GB |
 | Ubuntu | 14.04 | 3.13.0-44.73+ | Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB |
@@ -387,11 +387,3 @@ O Armazenamento Premium do Azure provisiona um número especificado de IOPS e Ta
 
 ## <a name="next-steps"></a>Próximas etapas
 
-Saiba mais sobre os tipos de disco disponíveis:
-
-* [Selecione um tipo de disco](../articles/virtual-machines/windows/disks-types.md)  
-
-Para usuários do SQL Server, leia os artigos sobre Práticas recomendadas de desempenho para o SQL Server:
-
-* [Práticas recomendadas para o SQL Server em Máquinas Virtuais do Azure](../articles/virtual-machines/windows/sql/virtual-machines-windows-sql-performance.md)
-* [Armazenamento Premium do Azure fornece desempenho mais alto para SQL Server na VM do Azure](https://blogs.technet.com/b/dataplatforminsider/archive/2015/04/23/azure-premium-storage-provides-highest-performance-for-sql-server-in-azure-vm.aspx)

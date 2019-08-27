@@ -9,18 +9,18 @@ ms.topic: article
 ms.date: 12/21/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 82fe80e098ee95c09c4a1400068ab813910e0e1a
-ms.sourcegitcommit: f5075cffb60128360a9e2e0a538a29652b409af9
+ms.openlocfilehash: a55cba27c676b283a4da490f05dd6fc672e10d49
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68309827"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70032382"
 ---
 # <a name="authenticate-with-a-private-docker-container-registry"></a>Autenticar com um Registro de contêiner privado do Docker
 
 Há várias maneiras de autenticar com um Registro de Contêiner do Azure, cada uma das quais é aplicável a um ou mais cenários de uso do registro.
 
-Você pode fazer logon em um registro diretamente por meio de [logon individual](#individual-login-with-azure-ad) ou seus aplicativos e orquestradores de contêiner podem realizar a autenticação autônoma ou "remota" usando uma [entidade de serviço](#service-principal) do Azure AD (Azure Active Directory).
+As maneiras recomendadas incluem a autenticação em um registro diretamente por meio de [logon individual](#individual-login-with-azure-ad)ou seus aplicativos e orquestradores de contêiner podem executar a autenticação autônoma ou "sem periféricos" usando um serviço Azure Active Directory (AD do Azure) [ entidade de segurança](#service-principal).
 
 ## <a name="individual-login-with-azure-ad"></a>Logon individual com o Azure AD
 
@@ -50,32 +50,14 @@ As funções disponíveis para um registro de contêiner incluem:
 
 Para obter uma lista completa de funções, confira [Funções e permissões do Registro de Contêiner do Azure](container-registry-roles.md).
 
-Para que os scripts da CLI criem uma senha e uma ID do aplicativo de entidade de serviço para autenticar com um registro de contêiner do Azure ou para usar uma entidade de serviço existente, confira [Autenticação do Registro de Contêiner do Azure com entidades de serviço](container-registry-auth-service-principal.md).
-
-As entidades de serviço permitem conectividade remota a um registro tanto em cenários de push quanto nos de pull, tais como os seguintes:
-
-  * *Pull*: implanta contêineres de um registro para sistemas de orquestração, incluindo DC/SO, Docker Swarm e Kubernetes. Também é possível efetuar pull de registros de contêiner para serviços do Azure relacionados, como [AKS](container-registry-auth-aks.md), [Instâncias de Contêiner do Azure](container-registry-auth-aci.md), [Serviço de Aplicativo](../app-service/index.yml), [Lote](../batch/index.yml), [Service Fabric](/azure/service-fabric/), entre outros.
-
-  * *Push*: crie imagens de contêiner e envie-as por push para um registro usando soluções de integração e implantação contínuas, como o Azure Pipelines ou o Jenkins.
-
-Você também pode fazer logon diretamente com uma entidade de serviço. Quando você executa o comando a seguir, forneça interativamente o appID (nome de usuário) e a senha da entidade de serviço quando solicitado. Para obter práticas recomendadas gerenciar credenciais de logon, confira a referência do comando [docker login](https://docs.docker.com/engine/reference/commandline/login/):
-
-```
-docker login myregistry.azurecr.io
-```
-
-Depois de conectado, o Docker armazena em cache as credenciais, portanto, você não precisa se lembrar da ID do aplicativo.
-
-> [!TIP]
-> Você pode regenerar a senha de uma entidade de serviço executando o comando [az ad sp reset-credentials](/cli/azure/ad/sp?view=azure-cli-latest).
->
+Para que os scripts da CLI criem uma entidade de serviço para autenticação com um registro de contêiner do Azure e orientações sobre como usar uma entidade de serviço, consulte [autenticação do registro de contêiner do Azure com entidades de serviço](container-registry-auth-service-principal.md).
 
 ## <a name="admin-account"></a>Conta de administrador
 
 Cada registro de contêiner inclui uma conta de usuário administrador, que fica desabilitada por padrão. Você pode habilitar o usuário administrador e gerenciar as credenciais dele no portal do Azure ou usando a CLI do Azure ou outras ferramentas do Azure.
 
 > [!IMPORTANT]
-> A conta do administrador destina-se para um único usuário acessar o registro, principalmente para fins de teste. Não é recomendável compartilhar as credenciais da conta do administrador com vários usuários. Todos os usuários que se autenticam com a conta do administrador aparecem como um único usuário com acesso de push e de pull ao registro. Alterar ou desabilitar essa conta desabilita o acesso ao registro para todos os usuários que usam as credenciais dela. Para cenários remotos, recomenda-se identidade individual para usuários e entidades de serviço.
+> A conta do administrador destina-se para um único usuário acessar o registro, principalmente para fins de teste. Não recomendamos o compartilhamento das credenciais da conta de administrador entre vários usuários. Todos os usuários que se autenticam com a conta do administrador aparecem como um único usuário com acesso de push e de pull ao registro. Alterar ou desabilitar essa conta desabilita o acesso ao registro para todos os usuários que usam as credenciais dela. Para cenários remotos, recomenda-se identidade individual para usuários e entidades de serviço.
 >
 
 A conta do administrador é fornecida com duas senhas, que podem ser regeneradas. As duas senhas permitem manter conexões com o registro usando uma senha enquanto a outra é regenerada. Se a conta do administrador estiver habilitada, você poderá passar o nome de usuário e a senha para o comando `docker login` quando solicitado a informar a autenticação Básica no Registro. Por exemplo:
@@ -84,6 +66,7 @@ A conta do administrador é fornecida com duas senhas, que podem ser regeneradas
 docker login myregistry.azurecr.io 
 ```
 
+Para obter as práticas recomendadas para gerenciar as credenciais de logon, consulte a referência do comando [Docker login](https://docs.docker.com/engine/reference/commandline/login/) .
 
 Para habilitar o usuário administrador para um registro existente, você pode usar o parâmetro `--admin-enabled` do comando [az acr update](/cli/azure/acr?view=azure-cli-latest#az-acr-update) na CLI do Azure:
 

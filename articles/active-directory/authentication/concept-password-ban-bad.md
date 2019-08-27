@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fe2b4ed91969248bc0818f98306a108555eac424
-ms.sourcegitcommit: 470041c681719df2d4ee9b81c9be6104befffcea
+ms.openlocfilehash: 77309a73f3c5641aa8a7667015ed02808e376348
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67853048"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70032888"
 ---
 # <a name="eliminate-bad-passwords-in-your-organization"></a>Eliminar senhas incorretas na organização
 
@@ -39,7 +39,7 @@ Sempre que uma nova senha for alterada ou redefinida para qualquer usuário em q
 > [!NOTE]
 > Os criminosos virtuais também usam estratégias semelhantes em seus ataques. Portanto, a Microsoft não publica o conteúdo dessa lista publicamente.
 
-## <a name="custom-banned-password-list"></a>Lista personalizada de senhas banidas
+## <a name="custom-banned-password-list"></a>Lista de senhas proibidas personalizadas
 
 Algumas organizações talvez queiram melhorar ainda mais a segurança adicionando suas próprias personalizações sobre a lista de senhas globais banidas, em que a Microsoft chama a lista personalizada de senhas banidas. A Microsoft recomenda que os termos adicionados a essa lista se concentram principalmente em termos específicos da organização, como:
 
@@ -121,7 +121,7 @@ Correspondência difusa é usada na senha normalizada para identificar se ela co
 
 Exemplo: suponha que a senha “abcdef” seja proibida e um usuário tente alterar a senha para uma dos seguintes:
 
-‘abcdeg’    *(último caractere foi alterado de ‘f’ para ‘g’)* ‘abcdefg’   *’(g’ acrescentado ao final)* ‘abcde’     *(‘f’ à direita excluído do fim)*
+' abcdeg ' *(último caractere alterado de ' f ' para ' g ')* ' abcdefg ' *' (g ' acrescentado ao final)* ' abcde ' *(' f ' à direita foi excluído do final)*
 
 Cada uma das senhas acima não corresponde especificamente à senha banida "abcdef". No entanto, como cada exemplo está dentro de uma distância de edição de 1 do termo banido ' abcdef ', eles são considerados como uma correspondência para "abcdef".
 
@@ -160,7 +160,7 @@ Após a normalização, essa senha se torna “contosoblankf9!”. O processo de
 
 |   | Proteção por senha do AD do Azure com a lista de senhas banidas global | Proteção por senha do AD do Azure com a lista de senhas banidas personalizado|
 | --- | --- | --- |
-| Usuários somente na nuvem | AD do Azure Gratuito | O Azure AD Premium P1 ou P2 |
+| Usuários somente na nuvem | Azure AD Gratuito | O Azure AD Premium P1 ou P2 |
 | Os usuários sincronizados no local Windows Server Active Directory | O Azure AD Premium P1 ou P2 | O Azure AD Premium P1 ou P2 |
 
 > [!NOTE]

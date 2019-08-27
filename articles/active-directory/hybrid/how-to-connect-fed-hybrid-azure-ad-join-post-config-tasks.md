@@ -16,19 +16,19 @@ ms.date: 08/10/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9af969700f4f2dfbedc4833badd7e7349696302
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 39e76abcac94a877e6bc7ea5c417c77c8c2febff
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60244586"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70032687"
 ---
 # <a name="post-configuration-tasks-for-hybrid-azure-ad-join"></a>Tarefas de configuração de postagem para junção do Microsoft Azure Active Directory Híbrido
 
 Depois que você executou a conexão do Azure AD Connect para configurar sua organização para junção do o Microsoft Azure Active Directory Híbrido há algumas etapas adicionais que você deve concluir para finalizar a instalação.  Execute apenas as etapas que se aplicam a seus dispositivos.
 
 ## <a name="1-configure-controlled-rollout-optional"></a>1. Configurar distribuição controlada (opcional)
-Todos os dispositivos associados ao domínio executando o Windows 10 e o Windows Server 2016 serão registrados automaticamente no Azure AD uma vez que todas as etapas de configuração foram concluídas. Se você preferir um desenvolvimento controlado em vez do registro automático, você pode usar a diretiva de grupo para seletivamente habilitar ou desabilitar a distribuição automática.  Essa política de grupo deve ser definida antes de iniciar outras etapas de configuração: Azure AD
+Todos os dispositivos associados ao domínio executando o Windows 10 e o Windows Server 2016 serão registrados automaticamente no Azure AD uma vez que todas as etapas de configuração foram concluídas. Se você preferir um desenvolvimento controlado em vez do registro automático, você pode usar a diretiva de grupo para seletivamente habilitar ou desabilitar a distribuição automática.  Essa política de grupo deve ser definida antes de iniciar as outras etapas de configuração:
 * Crie um objeto de diretiva de grupo no seu Active Directory.
 * Coloque um nome (por exemplo, junção do Azure AD Híbrido).
 * Editar e Ir para:  Configuração do Computador > Políticas > Modelos Administrativos > Componentes do Windows > Registro de Dispositivos.

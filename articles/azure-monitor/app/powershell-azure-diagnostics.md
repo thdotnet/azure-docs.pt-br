@@ -11,16 +11,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 08/06/2019
 ms.author: mbullwin
-ms.openlocfilehash: 89ed75e4ae3363c2cb25020e6074aa17baf94eda
-ms.sourcegitcommit: 3073581d81253558f89ef560ffdf71db7e0b592b
+ms.openlocfilehash: 0c963e4cd7befffe69fef159542eabd29059e3d9
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68827112"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70035198"
 ---
 # <a name="using-powershell-to-set-up-application-insights-for-azure-cloud-services"></a>Usando o PowerShell para configurar o Application Insights para serviços de nuvem do Azure
-
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 O [Microsoft Azure](https://azure.com) pode ser [configurado para enviar o Diagnóstico do Azure](../../azure-monitor/platform/diagnostics-extension-to-application-insights.md) para o [Application Insights do Azure](../../azure-monitor/app/app-insights-overview.md). O diagnóstico está relacionado aos Serviços de Nuvem do Azure e às VMs do Azure. Eles complementam a telemetria que você envia de um aplicativo usando o SDK do Application Insights. Como parte do processo de automatização da criação de novos recursos no Azure, você poderá configurar o diagnóstico usando o PowerShell.
 

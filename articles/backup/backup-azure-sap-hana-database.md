@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: dacurwin
-ms.openlocfilehash: f5a76ef44ebef0689ec0587434996f28ba7b7025
-ms.sourcegitcommit: c662440cf854139b72c998f854a0b9adcd7158bb
+ms.openlocfilehash: a11d454feb965907f3bd4e994c0916eeb7236fa7
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68735532"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70034560"
 ---
 # <a name="back-up-an-sap-hana-database-to-azure"></a>Fazer backup de um banco de dados SAP HANA no Azure
 
@@ -106,9 +106,9 @@ Agora, habilite o backup.
 
 1. Na etapa 2, clique em **Configurar backup**.
 2. Em **selecionar itens para fazer backup**, selecione todos os bancos de dados que você deseja proteger > **OK**.
-3. Em **política** > de backup,**escolha política de backup**, crie uma nova política de backup para os bancos de dados, de acordo com as instruções abaixo.
+3. Em **política** > de backup,**escolha política de backup**, crie uma nova política de backup para os bancos de dados, de acordo com as instruções abaixo.
 4. Depois de criar a política, no menu **backup** , clique em **habilitar backup**.
-5. Acompanhe o progresso da configuração de backup na área de **notificações** do Portal.
+5. Acompanhe o progresso da configuração de backup na área de **notificações** do Portal.
 
 ### <a name="create-a-backup-policy"></a>Criar uma política de backup
 

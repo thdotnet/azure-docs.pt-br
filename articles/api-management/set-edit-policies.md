@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/01/2018
 ms.author: apimpm
-ms.openlocfilehash: 3d1847b6001ef8e32f00a4e1cd9728d5ca0662f8
-ms.sourcegitcommit: b7a44709a0f82974578126f25abee27399f0887f
+ms.openlocfilehash: 052bf619cd6f41aad139db45a8f3ecd9f4a0a62f
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67205291"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70034927"
 ---
 # <a name="how-to-set-or-edit-azure-api-management-policies"></a>Como definir ou editar políticas de Gerenciamento de API do Azure
 
@@ -41,21 +41,23 @@ Para definir ou editar uma política, siga as etapas a seguir:
 6. Selecione uma operação à qual você deseja aplicar a política. Se você deseja aplicar a política a todas as operações, selecione **Todas as operações**.
 7. Selecione o **</>** ícone (editor de código) na **processamento de entrada** ou **processamento de saída da seção**.
 8. Cole o código de política desejado em um dos blocos adequados.
-         
-        <policies>
-             <inbound>
-                 <base />
-             </inbound>
-             <backend>
-                 <base />
-             </backend>
-             <outbound>
-                 <base />
-             </outbound>
-             <on-error>
-                 <base />
-             </on-error>
-         </policies>
+
+    ```XML
+    <policies>
+        <inbound>
+            <base />
+        </inbound>
+        <backend>
+            <base />
+        </backend>
+        <outbound>
+            <base />
+        </outbound>
+        <on-error>
+            <base />
+        </on-error>
+    </policies>
+    ```
  
 ## <a name="configure-scope"></a>Configurar o escopo
 

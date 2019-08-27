@@ -11,12 +11,12 @@ ms.assetid: 54fe5af8-7d2a-4da8-94e7-15d029e029bf
 ms.topic: article
 tags: connectors
 ms.date: 08/24/2018
-ms.openlocfilehash: 292d517f2c99974f4674a4c94472a0a320320ce4
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e3e9f7c841d25fa988ae7e0c97adf64a51d8ef87
+ms.sourcegitcommit: bba811bd615077dc0610c7435e4513b184fbed19
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62106008"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70050835"
 ---
 # <a name="monitor-create-and-manage-salesforce-resources-by-using-azure-logic-apps"></a>Monitorar, criar e gerenciar recursos do Salesforce usando os Aplicativos Lógicos do Azure
 
@@ -29,7 +29,7 @@ Você pode usar gatilhos do Salesforce para obter respostas do Salesforce e disp
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
-* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, <a href="https://azure.microsoft.com/free/" target="_blank">inscreva-se em uma conta gratuita do Azure</a>. 
+* Uma assinatura do Azure. Se você não tiver uma assinatura do Azure, [inscreva-se em uma conta gratuita do Azure](https://azure.microsoft.com/free/). 
 
 * Uma [conta do Salesforce](https://salesforce.com/)
 
@@ -48,7 +48,7 @@ Você pode usar gatilhos do Salesforce para obter respostas do Salesforce e disp
    * Para aplicativos lógicos em branco, na caixa de pesquisa, insira "salesforce" como o filtro. 
    Na lista de gatilhos, selecione o gatilho desejado. 
 
-     -ou-
+     - ou -
 
    * Para aplicativos lógicos existentes, na etapa em que deseja adicionar uma ação, escolha **Nova etapa**. Na caixa de pesquisa, insira "salesforce" como seu filtro. Na lista de ações, selecione a ação desejada.
 

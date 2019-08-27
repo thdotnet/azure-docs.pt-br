@@ -1,33 +1,33 @@
 ---
-title: Mover máquinas virtuais do Azure para nova assinatura ou grupo de recursos | Microsoft Docs
-description: Use o Azure Resource Manager para mover máquinas virtuais para um novo grupo de recursos ou assinatura.
+title: Mover as máquinas virtuais do Azure para uma nova assinatura ou grupo de recursos | Microsoft Docs
+description: Use Azure Resource Manager para mover máquinas virtuais para um novo grupo de recursos ou assinatura.
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 07/09/2019
 ms.author: tomfitz
-ms.openlocfilehash: 095ed1c8d2328b1eb391042125526696ba8cda49
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 7b9cce7ac367f42329e3198c75a7640a205d01fe
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67723539"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70035535"
 ---
-# <a name="move-guidance-for-virtual-machines"></a>Diretrizes de movimentação para máquinas virtuais
+# <a name="move-guidance-for-virtual-machines"></a>Mover diretrizes para máquinas virtuais
 
-Este artigo descreve os cenários que atualmente não têm suporte e as etapas para mover máquinas virtuais com backup.
+Este artigo descreve os cenários que atualmente não têm suporte e as etapas para mover as máquinas virtuais com o backup.
 
 ## <a name="scenarios-not-supported"></a>Cenários sem suporte
 
 Ainda não há suporte para os cenários a seguir:
 
-* Discos gerenciados em zonas de disponibilidade não podem ser movidos para uma assinatura diferente.
-* Máquinas Virtuais com certificado armazenado no Key Vault podem ser movidas para um novo grupo de recursos na mesma assinatura, mas não entre assinaturas.
-* Conjuntos de dimensionamento de máquina virtual com o balanceador de carga de SKU Standard ou IP público do SKU Standard não pode ser movidos.
-* As máquinas virtuais criadas a partir dos recursos do Marketplace com os planos anexados não podem ser movidas entre grupos de recursos ou assinaturas. Desprovisione a máquina virtual na assinatura atual e implante-a novamente na nova assinatura.
-* Máquinas virtuais em uma rede virtual existente, mas você não estiver movendo todos os recursos na rede virtual.
+* Managed Disks no Zonas de Disponibilidade não podem ser movidos para uma assinatura diferente.
+* Conjuntos de dimensionamento de máquinas virtuais com Load Balancer SKU padrão ou IP público SKU Standard não podem ser movidos.
+* As máquinas virtuais criadas a partir dos recursos do Marketplace com os planos anexados não podem ser movidas entre grupos de recursos ou assinaturas. Desprovisionar a máquina virtual na assinatura atual e implantá-la novamente na nova assinatura.
+* Máquinas virtuais em uma rede virtual existente, mas você não está movendo todos os recursos na rede virtual.
+* As máquinas virtuais de baixa prioridade e os conjuntos de dimensionamento de máquinas virtuais de baixa prioridade não podem ser movidos entre grupos de recursos ou assinaturas.
 
-## <a name="virtual-machines-with-azure-backup"></a>Máquinas virtuais com o Backup do Azure
+## <a name="virtual-machines-with-azure-backup"></a>Máquinas virtuais com o backup do Azure
 
 Para mover máquinas virtuais configuradas com o Backup do Azure, use a seguinte solução alternativa:
 

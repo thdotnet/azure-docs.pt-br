@@ -4,12 +4,12 @@ ms.service: container-service
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: danlep
-ms.openlocfilehash: 39bb75a6f834789f91cb590ffebb72f45624eb25
-ms.sourcegitcommit: 3e98da33c41a7bbd724f644ce7dedee169eb5028
+ms.openlocfilehash: c7b9e3a9eb5c906fa598da9c8c547cb542ecb719
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67172475"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70036655"
 ---
 # <a name="deprecated-securing-docker-containers-in-azure-container-service"></a>(PRETERIDO) Proteger contêineres do Docker no Serviço de Contêiner do Azure
 
@@ -34,7 +34,7 @@ As empresas preocupam-se profundamente com segurança e, para se protegerem cont
 
 Mesmo ao usar um registro privado, é uma boa ideia usar soluções de verificação de imagem para obter validação de segurança adicional. Cada camada de software em uma imagem de contêiner é potencialmente propensa a vulnerabilidades independentes de outras camadas na imagem de contêiner. À medida que cada vez mais empresas começam a implantar cargas de trabalho de produção com base nas tecnologias de contêiner, a verificação de imagem torna-se importante para garantir a prevenção de ameaças à segurança em suas organizações. 
 
-As soluções de verificação e monitoramento de segurança, como [Twistlock](https://www.twistlock.com/2016/11/07/twistlock-supports-azure-container-registry) e [Aqua Security](http://blog.aquasec.com/image-vulnerability-scanning-in-azure-container-registry), dentre outros, podem ser usadas para verificar as imagens de contêiner em um registro privado e identificar possíveis vulnerabilidades. É importante compreender a profundidade da verificação fornecida pelas diferentes soluções. Por exemplo, algumas soluções podem apenas realizar a verificação cruzada entre as camadas de imagem em relação a vulnerabilidades conhecidas. Essas soluções podem não ser capazes de verificar o software de camada de imagem criada por meio de determinados softwares de gerenciadores de pacote. Outras soluções têm integração de verificação mais profunda e podem encontrar vulnerabilidades em qualquer software de pacote.
+As soluções de verificação e monitoramento de segurança, como [Twistlock](https://www.twistlock.com/2016/11/07/twistlock-supports-azure-container-registry) e [Aqua Security](https://blog.aquasec.com/image-vulnerability-scanning-in-azure-container-registry), dentre outros, podem ser usadas para verificar as imagens de contêiner em um registro privado e identificar possíveis vulnerabilidades. É importante compreender a profundidade da verificação fornecida pelas diferentes soluções. Por exemplo, algumas soluções podem apenas realizar a verificação cruzada entre as camadas de imagem em relação a vulnerabilidades conhecidas. Essas soluções podem não ser capazes de verificar o software de camada de imagem criada por meio de determinados softwares de gerenciadores de pacote. Outras soluções têm integração de verificação mais profunda e podem encontrar vulnerabilidades em qualquer software de pacote.
 
 ### <a name="production-deployment-rules-and-audit"></a>Regras de implantação de produção e auditoria
 Quando um aplicativo é implantado em produção, é essencial estabelecer algumas regras para garantir que as imagens usadas em ambientes de produção sejam seguras e não contenham vulnerabilidades.

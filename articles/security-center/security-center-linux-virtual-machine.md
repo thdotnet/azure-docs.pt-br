@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/03/2017
 ms.author: yurid
-ms.openlocfilehash: 725ac79414a9f94a40675bffe28a6972120c0cbf
-ms.sourcegitcommit: 0e59368513a495af0a93a5b8855fd65ef1c44aac
+ms.openlocfilehash: 402406f8aa677348d30551937cfca1e2726efba1
+ms.sourcegitcommit: 94ee81a728f1d55d71827ea356ed9847943f7397
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69515500"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70033957"
 ---
 # <a name="azure-security-center-and-azure-virtual-machines-with-linux"></a>Central de Segurança do Azure e Máquinas Virtuais do Azure com Linux
 A [Central de Segurança do Azure](https://azure.microsoft.com/services/security-center/) ajuda você a evitar, detectar e responder a ameaças. Ela permite o gerenciamento de políticas e o monitoramento da segurança integrada entre suas assinaturas do Azure, ajuda a detectar ameaças que poderiam passar despercebidas e funciona com uma enorme variedade de soluções de segurança.
@@ -84,8 +84,8 @@ Depois de habilitar as [políticas de segurança](tutorial-security-policy.md) p
 
 ![Integridade da segurança](./media/security-center-virtual-machine/security-center-virtual-machine-fig2.png)
 
-## <a name="manage-and-respond-to-security-alerts"></a>Gerenciar e responder a alertas de segurança
-A Central de Segurança coleta, analisa e integra automaticamente os dados de registro de seus recursos do Azure, da rede e das soluções de parceiros conectados, como firewall e soluções de proteção de ponto de extremidade, a fim de detectar ameaças reais e reduzir os falsos positivos. Utilizando uma agregação diversificada de [recursos de detecção](security-center-detection-capabilities.md), a Central de Segurança é capaz de gerar alertas de segurança priorizados para ajudá-lo a investigar rapidamente o problema e fornecer recomendações para remediar possíveis ataques.
+## <a name="manage-and-respond-to-security-alerts"></a>Gerenciar e responder aos alertas de segurança
+A Central de Segurança coleta, analisa e integra automaticamente os dados de registro de seus recursos do Azure, da rede e das soluções de parceiros conectados, como firewall e soluções de proteção de ponto de extremidade, a fim de detectar ameaças reais e reduzir os falsos positivos. Utilizando uma agregação diversificada de [recursos de detecção](security-center-alerts-overview.md#detect-threats), a Central de Segurança é capaz de gerar alertas de segurança priorizados para ajudá-lo a investigar rapidamente o problema e fornecer recomendações para remediar possíveis ataques.
 
 ![Alertas de segurança](./media/security-center-virtual-machine/security-center-virtual-machine-fig3.png)
 
