@@ -1,6 +1,6 @@
 ---
 title: Ferramentas de ingestão de dados da Máquina Virtual de Ciência de Dados – Azure | Microsoft Docs
-description: Saiba mais sobre ferramentas de ingestão de dados e utilitários instalados previamente na Máquina Virtual de Ciência de Dados.
+description: Saiba mais sobre as ferramentas e os utilitários de ingestão de dados pré-instalados no Máquina Virtual de Ciência de Dados.
 keywords: ferramentas de ciência de dados, máquina virtual de ciência de dados, ferramentas para ciência de dados, ciência de dados do linux
 services: machine-learning
 documentationcenter: ''
@@ -16,96 +16,96 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/11/2017
 ms.author: vijetaj
-ms.openlocfilehash: ffc6071206236bc25d3c02576225c1de935f722a
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 58bfab43d39f050e19687c30a61e05892fffc3f2
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68557711"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060598"
 ---
 # <a name="data-science-virtual-machine-data-ingestion-tools"></a>Ferramentas de ingestão de dados de Máquina Virtual de Ciência de Dados
 
-Uma das primeiras etapas técnicas em um projeto de AI ou ciência de dados é identificar os conjuntos de dados a serem usados e colocá-los em seu ambiente de análise. O Máquina Virtual de Ciência de Dados (DSVM) fornece ferramentas e bibliotecas para trazer dados de diferentes fontes para um armazenamento de dados analíticos localmente no DSVM ou em uma plataforma de dados na nuvem ou local. 
+Como uma das primeiras etapas técnicas em um projeto de ciência de dados ou de ia, você deve identificar os conjuntos de dados a serem usados e colocá-los em seu ambiente de análise. O Máquina Virtual de Ciência de Dados (DSVM) fornece ferramentas e bibliotecas para trazer dados de diferentes fontes para o armazenamento de dados analíticos localmente no DSVM ou em uma plataforma de dados na nuvem ou no local.
 
-Aqui estão algumas ferramentas de movimentação de dados que fornecemos na DSVM. 
+Aqui estão algumas ferramentas de movimentação de dados que estão disponíveis no DSVM.
 
 ## <a name="adlcopy"></a>AdlCopy
 
 |    |           |
 | ------------- | ------------- |
-| O que é isto?   | Uma ferramenta para copiar dados dos blobs de armazenamento do Azure para o Azure Data Lake Store. Você também pode copiar dados entre contas do Azure Data Lake Store.      |
+| O que é?   | Uma ferramenta para copiar dados do armazenamento de BLOBs do Azure para Azure Data Lake Store. Você também pode copiar dados entre contas do Azure Data Lake Store.      |
 | Versões do DSVM com suporte      | Windows      |
-| Usos típicos      | Importar de vários blobs do armazenamento do Azure para o Azure Data Lake Store.      |
-|  Como usar/executar?    |   Abra um prompt de comando e digite `adlcopy` para obter ajuda.    |
+| Usos típicos      | Importando vários BLOBs do armazenamento de BLOBs do Azure para o Azure Data Lake Store.      |
+|  Como usar/executar?    |   Abra um prompt de comando e `adlcopy` digite para obter ajuda.    |
 | Links para exemplos      | [Como usar AdlCopy](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-copy-data-azure-storage-blob)      |
-| Ferramentas relacionadas ao DSVM      | AzCopy, Linha de Comando do Azure     |
+| Ferramentas relacionadas no DSVM      | AzCopy, CLI do Azure     |
 
-## <a name="azure-command-line"></a>Linha de comando do Azure
+## <a name="azure-cli"></a>CLI do Azure
 
 |    |           |
 | ------------- | ------------- |
-| O que é isto?   | Uma ferramenta de gerenciamento para o Azure. Também contém verbos de comando para mover dados de plataformas de dados do Azure, como blobs de armazenamento do Azure, Armazenamento do Azure Data Lake     |
+| O que é?   | Uma ferramenta de gerenciamento para o Azure. Ele também contém verbos de comando para mover dados de plataformas de dados do Azure, como armazenamento de BLOBs do Azure e Azure Data Lake Store.     |
 | Versões do DSVM com suporte      | Windows, Linux     |
-| Usos típicos      | Importar e exportar dados para e do armazenamento do Azure, Azure Data Lake Store      |
-|  Como usar/executar?    |   Abra um prompt de comando e digite `az` para obter ajuda.    |
+| Usos típicos      | Importando e exportando dados de e para o armazenamento do Azure e Azure Data Lake Store.      |
+|  Como usar/executar?    |   Abra um prompt de comando e `az` digite para obter ajuda.    |
 | Links para exemplos      | [Usar a CLI do Azure](https://docs.microsoft.com/cli/azure)     |
-| Ferramentas relacionadas ao DSVM      | AzCopy, AdlCopy      |
+| Ferramentas relacionadas no DSVM      | AzCopy, AdlCopy      |
 
 
 ## <a name="azcopy"></a>AzCopy
 
 |    |           |
 | ------------- | ------------- |
-| O que é isto?   | Uma ferramenta para copiar dados de e para arquivos locais, blobs de armazenamento do Azure, arquivos e tabelas.      |
+| O que é?   | Uma ferramenta para copiar dados de e para arquivos locais, armazenamento de BLOBs do Azure, arquivos e tabelas.      |
 | Versões do DSVM com suporte      | Windows      |
-| Usos típicos      | Copiar arquivos para o armazenamento de blobs, copiar blobs entre contas.      |
-|  Como usar/executar?    |   Abra um prompt de comando e digite `azcopy` para obter ajuda.    |
+| Usos típicos      | Copiar arquivos para o armazenamento de BLOBs do Azure e copiar BLOBs entre contas.      |
+|  Como usar/executar?    |   Abra um prompt de comando e `azcopy` digite para obter ajuda.    |
 | Links para exemplos      | [AzCopy no Windows](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy)      |
-| Ferramentas relacionadas ao DSVM      | AdlCopy     |
+| Ferramentas relacionadas no DSVM      | AdlCopy     |
 
 
 ## <a name="azure-cosmos-db-data-migration-tool"></a>Ferramenta de migração de dados do Azure Cosmos DB
 
 |    |           |
 | ------------- | ------------- |
-| O que é isto?   | Ferramenta para importar dados de várias fontes, incluindo arquivos JSON, arquivos CSV, SQL, MongoDB, armazenamento de Tabela do Azure, Amazon DynamoDB e coleções de API de SQL do Azure Cosmos DB no Azure Cosmos DB.      |
+| O que é?   | Ferramenta para importar dados de várias fontes para Azure Cosmos DB. Essas fontes incluem arquivos JSON, arquivos CSV, SQL, MongoDB, armazenamento de tabelas do Azure, Amazon DynamoDB e coleções de API do SQL Azure Cosmos DB.      |
 | Versões do DSVM com suporte      | Windows      |
-| Usos típicos      | Importar arquivos de uma VM para CosmosDB, importar dados do armazenamento de tabela do Azure para CosmosDB ou importar dados de um banco de dados SQL Server para CosmosDB.     |
-|  Como usar/executar?    |   Para usar a versão de linha de comando, abra um prompt de comando e digite `dt`. Para usar a ferramenta de GUI, abra um prompt de comando e digite `dtui`.    |
-| Links para exemplos      | [Dados de importação do CosmosDB](https://docs.microsoft.com/azure/cosmos-db/import-data)      |
-| Ferramentas relacionadas ao DSVM      | AzCopy, AdlCopy      |
+| Usos típicos      | Importando arquivos de uma VM para o CosmosDB, importando dados do armazenamento de tabelas do Azure para CosmosDB e importando dados de um banco de dado Microsoft SQL Server para o CosmosDB.     |
+|  Como usar/executar?    |   Para usar a versão de linha de comando, abra um prompt de comando `dt`e digite. Para usar a ferramenta GUI, abra um prompt de comando e `dtui`digite.    |
+| Links para exemplos      | [CosmosDB importar dados](https://docs.microsoft.com/azure/cosmos-db/import-data)      |
+| Ferramentas relacionadas no DSVM      | AzCopy, AdlCopy      |
 
 
 ## <a name="bcp"></a>bcp
 
 |    |           |
 | ------------- | ------------- |
-| O que é isto?   | Ferramenta SQL Server para copiar dados entre o SQL Server e um arquivo de dados.      |
+| O que é?   | Ferramenta SQL Server para copiar dados entre o SQL Server e um arquivo de dados.      |
 | Versões do DSVM com suporte      | Windows      |
-| Usos típicos      | Importar um arquivo CSV para uma tabela do SQL Server, exportar uma tabela do SQL Server para um arquivo.      |
-|  Como usar/executar?    |   Abra um prompt de comando e digite `bcp` para obter ajuda.    |
-| Links para exemplos      | [Utilitário de Cópia em Massa](https://docs.microsoft.com/sql/tools/bcp-utility)      |
-| Ferramentas relacionadas ao DSVM      | SQL Server, sqlcmd      |
+| Usos típicos      | Importar um arquivo CSV para uma tabela SQL Server e exportar uma tabela SQL Server para um arquivo.      |
+|  Como usar/executar?    |   Abra um prompt de comando e `bcp` digite para obter ajuda.    |
+| Links para exemplos      | [utilitário bcp](https://docs.microsoft.com/sql/tools/bcp-utility)      |
+| Ferramentas relacionadas no DSVM      | SQL Server, sqlcmd      |
 
 ## <a name="blobfuse"></a>blobfuse
 
 |    |           |
 | ------------- | ------------- |
-| O que é isto?   | Uma ferramenta para montar um contêiner de blobs do Azure no sistema de arquivos Linux.      |
+| O que é?   | Uma ferramenta para montar um contêiner de armazenamento de BLOBs do Azure no sistema de arquivos do Linux.      |
 | Versões do DSVM com suporte      | Linux      |
-| Usos típicos      | Leitura e gravação para blobs em um contêiner      |
-|  Como usar/executar?    |   Execute _blobfuse_ em um terminal.    |
+| Usos típicos      | Leitura e gravação em BLOBs em um contêiner.      |
+|  Como usá-lo e executá-lo?    |   Execute _blobfuse_ em um terminal.    |
 | Links para exemplos      | [blobfuse no GitHub](https://github.com/Azure/azure-storage-fuse)      |
-| Ferramentas relacionadas ao DSVM      | Linha de comando do Azure      |
+| Ferramentas relacionadas no DSVM      | CLI do Azure      |
 
 
 ## <a name="microsoft-data-management-gateway"></a>Gateway de Gerenciamento de Dados da Microsoft
 
 |    |           |
 | ------------- | ------------- |
-| O que é isto?   | Uma ferramenta para conectar fontes de dados locais a serviços de nuvem para consumo.      |
+| O que é?   | Uma ferramenta para conectar fontes de dados locais a serviços de nuvem para consumo.      |
 | Versões do DSVM com suporte      | Windows      |
 | Usos típicos      | Conectar uma VM a uma fonte de dados local.      |
-|  Como usar/executar?    |   Inicie "Gateway de Gerenciamento de Dados Microsoft" no Menu Iniciar.    |
+|  Como usar/executar?    |   Abra o gateway do Microsoft Gerenciamento de Dados no menu iniciar.    |
 | Links para exemplos      | [Gateway de gerenciamento de dados](https://msdn.microsoft.com/library/dn879362.aspx)      |
-| Ferramentas relacionadas ao DSVM      | AzCopy, AdlCopy, bcp    |
+| Ferramentas relacionadas no DSVM      | AzCopy, AdlCopy, bcp    |

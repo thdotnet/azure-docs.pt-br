@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 2/7/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: bd587bfed7fcfea8e8cd99ca155ee9d86222ae3d
-ms.sourcegitcommit: dcf3e03ef228fcbdaf0c83ae1ec2ba996a4b1892
+ms.openlocfilehash: 9c46181d5ab449d28c2e2e93cc583a3551f114bc
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70013531"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061749"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Planejando uma implantação da Sincronização de Arquivos do Azure
 Use a Sincronização de Arquivos do Azure para centralizar os compartilhamentos de arquivos da sua organização em Arquivos do Azure enquanto mantém a flexibilidade, o desempenho e a compatibilidade de um servidor de arquivos local. A Sincronização de arquivos do Azure transforma o Windows Server em um cache rápido do compartilhamento de arquivos do Azure. Use qualquer protocolo disponível no Windows Server para acessar seus dados localmente, incluindo SMB, NFS e FTPS. Você pode ter tantos caches quantos precisar em todo o mundo.
@@ -245,7 +245,7 @@ A Sincronização de Arquivos do Azure está disponível apenas nas seguintes re
 |--------|---------------------|
 | Leste da Austrália | Nova Gales do Sul |
 | Sudeste da Austrália | Victoria |
-| Sul do Brasil | Estado de são Paolo |
+| Sul do Brasil | Estado de São Paulo |
 | Canadá Central | Toronto |
 | Leste do Canadá | Cidade de Quebec |
 | Índia Central | Pune |

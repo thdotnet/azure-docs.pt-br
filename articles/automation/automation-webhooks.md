@@ -9,22 +9,22 @@ ms.author: robreed
 ms.date: 03/19/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 6e0e0cdfd5bdda125ed38173df56e0fb7a84f71a
-ms.sourcegitcommit: f811238c0d732deb1f0892fe7a20a26c993bc4fc
+ms.openlocfilehash: 153e910ea85ae843c6d4db51e709b58e441f6761
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67477938"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061443"
 ---
 # <a name="starting-an-azure-automation-runbook-with-a-webhook"></a>Iniciar um runbook de Automação do Azure com um webhook
 
-O *webhook* permite que você inicie um runbook específico na Automação do Azure por meio de uma única solicitação HTTP. Isso permite que os serviços externos, como serviços de DevOps do Azure, GitHub, logs do Azure Monitor ou aplicativos personalizados iniciem runbooks sem implementar uma solução completa usando a API de automação do Azure.  
+O *webhook* permite que você inicie um runbook específico na Automação do Azure por meio de uma única solicitação HTTP. Isso permite que serviços externos, como Azure DevOps Services, GitHub, logs de Azure Monitor ou aplicativos personalizados iniciem runbooks sem implementar uma solução completa usando a API de automação do Azure.
 ![WebhooksOverview](media/automation-webhooks/webhook-overview-image.png)
 
 Você pode comparar os webhooks a outros métodos para iniciar um runbook em [Como iniciar um Runbook na Automação do Azure](automation-starting-a-runbook.md)
 
 > [!NOTE]
-> Não há suporte para usar um webhook para iniciar um runbook Python.
+> Não há suporte para o uso de um webhook para iniciar um runbook do Python.
 
 ## <a name="details-of-a-webhook"></a>Detalhes de um webhook
 
@@ -32,12 +32,12 @@ A tabela a seguir descreve as propriedades que devem ser configuradas para um we
 
 | Propriedade | Descrição |
 |:--- |:--- |
-| NOME |Você pode fornecer qualquer nome que desejar para um webhook já que ele não aparece para o cliente. Ele é usado apenas por você para identificar o runbook na Automação do Azure. <br> Como melhor prática, você deve atribuir ao webhook um nome relacionado ao cliente que o utiliza. |
+| Nome |Você pode fornecer qualquer nome que desejar para um webhook já que ele não aparece para o cliente. Ele é usado apenas por você para identificar o runbook na Automação do Azure. <br> Como melhor prática, você deve atribuir ao webhook um nome relacionado ao cliente que o utiliza. |
 | URL |A URL do webhook é o endereço exclusivo que um cliente chama um HTTP POST para iniciar o runbook vinculado ao webhook. Ele é gerado automaticamente quando você cria o webhook. Você não pode especificar uma URL personalizada. <br> <br> A URL contém um token de segurança que permite que o runbook seja invocado por um sistema de terceiros sem autenticação adicional. Por esse motivo, ele deve ser tratado como uma senha. Por motivos de segurança, você pode exibir apenas a URL no Portal do Azure no momento em que o webhook é criado. Anote a URL em um local seguro para uso futuro. |
 | Data de validade |Como um certificado, cada webhook tem uma data de validade após a qual ele não pode mais ser usado. A data de expiração pode ser modificada após a criação do webhook, contanto que ele não esteja expirado. |
 | Enabled |Um webhook é habilitado por padrão quando ele é criado. Se você defini-lo como Desabilitado, nenhum cliente poderá usá-lo. Você pode definir a propriedade **Habilitado** quando você cria o webhook ou a qualquer momento quando ele é criado. |
 
-### <a name="parameters"></a>parâmetros
+### <a name="parameters"></a>Parâmetros
 
 Um webhook pode definir valores para parâmetros de runbook que são usados quando o runbook é iniciado por esse webhook. O webhook deve incluir valores de quaisquer parâmetros obrigatórios do runbook e pode incluir valores de parâmetros opcionais. Um valor de parâmetro configurado para um webhook pode ser modificado até mesmo depois da criação do webhoook. Vários webhooks vinculados a um único runbook podem usar valores de parâmetros diferentes.
 
@@ -54,6 +54,9 @@ O objeto **$WebhookData** tem as seguintes propriedades:
 | RequestBody |O corpo da solicitação de POST de entrada. Isso mantém qualquer formatação, como a cadeia de caracteres, JSON, XML ou dados codificados de formulário. O runbook deve ser escrito para trabalhar com o formato de dados esperado. O runbook deve ser escrito para trabalhar com o formato de dados esperado. |
 
 Nenhuma configuração do webhook é necessária para suporte ao parâmetro **$WebhookData**, e o runbook não é necessário para aceitá-lo. Se o runbook não definir o parâmetro, os detalhes da solicitação enviada pelo cliente serão ignorados.
+
+> [!NOTE]
+> Ao chamar um webhook, você sempre deve armazenar qualquer valor de parâmetro em caso de falha da chamada. Se houver uma interrupção de rede ou um problema de conexão, você não poderá recuperar chamadas de webhook com falha.
 
 Se você especificar um valor para $WebhookData quando criar o webhook, esse valor será substituído quando o webhook iniciar o runbook com os dados da solicitação POST do cliente, mesmo que o cliente não inclua todos os dados no corpo da solicitação. Se você iniciar um runbook que tenha $WebhookData usando um método que não seja um webhook, você poderá fornecer um valor para $Webhookdata que será reconhecido pelo runbook. Esse valor deve ser um objeto com as mesmas [propriedades](#details-of-a-webhook) que $Webhookdata, para que o runbook possa trabalhar corretamente com ele como se estivesse trabalhando com o WebhookData real transmitido por um webhook.
 
@@ -171,7 +174,7 @@ if ($WebhookData) {
             {
                 throw "Could not retrieve connection asset: $ConnectionAssetName. Check that this asset exists in the Automation account."
             }
-            Write-Output "Authenticating to Azure with service principal." 
+            Write-Output "Authenticating to Azure with service principal."
             Add-AzureRmAccount -ServicePrincipal -Tenant $Conn.TenantID -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint | Write-Output
 
         # Start each virtual machine

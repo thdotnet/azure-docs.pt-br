@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 05/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: b9fcf06caf2abf116a2f2b99f26ead6277f7ad50
-ms.sourcegitcommit: 47b00a15ef112c8b513046c668a33e20fd3b3119
+ms.openlocfilehash: 6f23a1f8e60567e1c2ed89b27f0eb2bab4ca5912
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69970542"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061820"
 ---
 # <a name="update-management-solution-in-azure"></a>Solução Gerenciamento de Atualizações no Azure
 
@@ -377,9 +377,11 @@ Para computadores Red Hat Linux, consulte [os IPs para os servidores de distribu
 
 Para obter mais informações sobre as portas que exige o Hybrid Runbook Worker, consulte [portas de função do Hybrid Worker](automation-hybrid-runbook-worker.md#hybrid-worker-role).
 
-É recomendável usar os endereços listados ao definir exceções. Para endereços IP, baixe os [Intervalos de IP do Datacenter do Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653). Este arquivo é atualizado semanalmente e reflete os intervalos atualmente implantados e quaisquer alterações futuras para os intervalos de IP, é postado semanalmente.
+É recomendável usar os endereços listados ao definir exceções. Para endereços IP, baixe os [Intervalos de IP do Datacenter do Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653). Esse arquivo é atualizado semanalmente e reflete os intervalos atualmente implantados e as alterações futuras nos intervalos de IP.
 
-## <a name="search-logs"></a>Pesquisa da logs
+Siga as instruções em [conectar computadores sem acesso à Internet](../azure-monitor/platform/gateway.md) para configurar computadores que não têm acesso à Internet.
+
+## <a name="search-logs"></a>Pesquisar logs
 
 Além dos detalhes fornecidos no portal do Azure, você pode fazer as pesquisas nos logs. Nas páginas de solução, selecione **Log Analytics**. O painel **Pesquisa de Log** é aberto.
 

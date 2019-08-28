@@ -9,12 +9,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 08/12/2019
 ms.author: jingwang
-ms.openlocfilehash: 2770a15211e24c9b79c906287295554b2cb94db8
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 56d332ca00cbd47448b7e3fb8d3ab2d141380b70
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68986132"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061519"
 ---
 # <a name="copy-data-to-or-from-azure-blob-storage-by-using-azure-data-factory"></a>Copiar dados de ou para o Armazenamento de Blobs do Azure usando o Azure Data Factory
 > [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
@@ -413,10 +413,10 @@ Para obter uma lista completa das seções e propriedades disponíveis para defi
 
 ### <a name="blob-storage-as-a-source-type"></a>Armazenamento de blob como um tipo de fonte
 
-- Para **parquet, texto delimitado e formato binário**, consulte a seção [parquet, texto delimitado e o conjunto de DataSet de formato binário](#format-based-dataset) .
-- Para outros formatos, como o **formato Orc/Avro/JSON**, consulte outra seção do [conjunto](#other-format-dataset) de exemplo.
+- Para copiar de **parquet, texto delimitado e formato binário**, consulte a seção [parquet, texto delimitado e fonte de formato binário](#format-based-source) .
+- Para copiar de outros formatos, como o **formato Orc/Avro/JSON**, consulte [outra seção fonte de formato](#other-format-source) .
 
-### <a name="format-based-dataset"></a>Parquet, texto delimitado e conjunto de DataSet de formato binário
+#### <a name="format-based-source"></a>Parquet, texto delimitado e fonte de formato binário
 
 Para copiar dados de e para o armazenamento de BLOBs em **parquet, texto delimitado ou formato binário**, consulte [formato de parquet](format-parquet.md), [formato de texto delimitado](format-delimited-text.md) e artigo de [formato binário](format-binary.md) em conjunto de dados com base em formato e configurações com suporte. As propriedades a seguir têm suporte para o blob `storeSettings` do Azure em configurações em fonte de cópia baseada em formato:
 

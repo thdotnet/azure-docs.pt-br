@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/08/2019
 ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: c84f68a9af855f61523919069e1947e051b130b4
-ms.sourcegitcommit: 55e0c33b84f2579b7aad48a420a21141854bc9e3
+ms.openlocfilehash: e5ceb53cb0fcce40d779bd516fa4cebac6d11209
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69622259"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061365"
 ---
 # <a name="azure-ad-b2c-frequently-asked-questions-faq"></a>Azure Active Directory B2C: Perguntas frequentes (FAQ)
 
@@ -43,15 +43,13 @@ Contas de usuário para aplicativos sempre devem ser criadas por meio de um flux
 
 ### <a name="which-social-identity-providers-do-you-support-now-which-ones-do-you-plan-to-support-in-the-future"></a>A quais provedores de identidade social você oferece suporte? A quais você planeja oferecer suporte no futuro?
 
-Atualmente, há suporte para Facebook, Google+, LinkedIn, Amazon, Twitter (versão prévia), WeChat (versão prévia), Weibo (versão prévia) e QQ (versão prévia). Vamos adicionar suporte para outros provedores de identidade social populares com base na demanda do cliente.
+Atualmente, damos suporte a vários provedores de identidade social, incluindo Amazon, Facebook, GitHub (versão prévia), Google, LinkedIn, Microsoft (MSA), QQ (versão prévia), Twitter, WeChat (versão prévia) e Weibo (versão prévia). Avaliamos a adição de suporte para outros provedores de identidade social populares com base na demanda do cliente.
 
-O Azure AD B2C também adicionou suporte para [políticas personalizadas](active-directory-b2c-overview-custom.md). Essas políticas personalizadas permitem que um desenvolvedor crie sua própria política com qualquer provedor de identidade que ofereça suporte a [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) ou SAML.
-
-Comece a usar políticas personalizadas verificando nosso [pacote de políticas personalizadas para iniciantes](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack).
+O Azure AD B2C também dá suporte a [políticas personalizadas](active-directory-b2c-overview-custom.md). As políticas personalizadas permitem que você crie sua própria política para qualquer provedor de identidade que ofereça suporte a [OpenID Connect](https://openid.net/specs/openid-connect-core-1_0.html) ou SAML. Comece a usar políticas personalizadas verificando nosso [pacote de políticas personalizadas para iniciantes](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack).
 
 ### <a name="can-i-configure-scopes-to-gather-more-information-about-consumers-from-various-social-identity-providers"></a>Posso configurar escopos para saber mais sobre os consumidores de vários provedores de identidade sociais?
 
-Não. Os escopos de padrão usados para nosso conjunto com suporte de provedores de identidade social são:
+Nº Os escopos de padrão usados para nosso conjunto com suporte de provedores de identidade social são:
 
 * Facebook: email
 * Google +: email

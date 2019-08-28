@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/26/2017
 ms.author: victorh
-ms.openlocfilehash: 90d576fd00a39f7e871cbe0922ce131dfbe38ff0
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: b92b9d953b6dd941b8b5f445ad64059f557c2980
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62122380"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061801"
 ---
 # <a name="create-a-custom-probe-for-application-gateway-by-using-the-portal"></a>Criar uma investigação personalizada para o Gateway de Aplicativo usando o portal
 
@@ -54,10 +54,10 @@ As investigações são configuradas em um processo de duas etapas pelo portal. 
    |**Nome**|customProbe|Este valor é um nome amigável para a investigação que está acessível no portal.|
    |**Protocolo**|HTTP ou HTTPS | O protocolo que a investigação de integridade usa.|
    |**Host**|ou seja contoso.com|Este valor é o nome do host usado para a investigação. Aplicável somente quando vários sites são configurados no Gateway de Aplicativo; do contrário, use '127.0.0.1'. Este valor é diferente do nome do host de VM.|
-   |**Caminho**|/ ou outro caminho|O restante da URL completa para a investigação personalizada. Um caminho válido começa com "/". Para o caminho padrão de http:\//contoso.com usar apenas '/' |
+   |**Caminho**|/ ou outro caminho|O restante da URL completa para a investigação personalizada. Um caminho válido começa com "/". Para o caminho padrão de http:\//contoso.com, basta usar '/' |
    |**Intervalo (segundos)**|30|Frequência com que a investigação é executada para verificar a integridade. Não é recomendável defini-la abaixo de 30 segundos.|
    |**Tempo limite (segundos)**|30|A quantidade de tempo que a investigação espera antes de atingir o tempo limite. O intervalo de tempo limite deve ser alto o suficiente para que uma chamada http possa ser feita a fim de garantir que a página de integridade do back-end estará disponível.|
-   |**Limite não íntegro**|3|Número de tentativas com falha para ser considerado não íntegro. Um limite de 0 significa que, em caso de falha de verificação de integridade, o back-end é considerado não íntegro imediatamente.|
+   |**Limite não íntegro**|3|Número de tentativas com falha para ser considerado não íntegro. O limite pode ser definido como 1 ou mais.|
 
    > [!IMPORTANT]
    > O nome do host não é o mesmo que o nome do servidor. Esse valor é o nome do host virtual em execução no servidor de aplicativos. A investigação é enviada para http://(nome do host):(porta de httpsetting)/urlPath

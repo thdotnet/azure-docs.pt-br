@@ -9,16 +9,16 @@ ms.devlang: ''
 ms.topic: conceptual
 author: srdan-bozovic-msft
 ms.author: srbozovi
-ms.reviewer: sstein, bonova, carlrab
+ms.reviewer: sstein, bonova, carlrab, vanto
 ms.date: 11/09/2018
-ms.openlocfilehash: 5a09b8e589b0d4ae9daa3bbd32c38f4946d16d0e
-ms.sourcegitcommit: 7c4de3e22b8e9d71c579f31cbfcea9f22d43721a
+ms.openlocfilehash: 133110d015ac7a26f18f14f6ff957729a4f079b5
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68567618"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060663"
 ---
-# <a name="connect-your-application-to-azure-sql-database-managed-instance"></a>Conectar seu aplicativo à Instância Gerenciada do Banco de Dados SQL do Azure
+# <a name="connect-your-application-to-azure-sql-database-managed-instance"></a>Conectar seu aplicativo à instância gerenciada do banco de dados SQL do Azure
 
 Atualmente, você tem várias opções ao decidir como e onde hospedar seu aplicativo.
 
@@ -137,7 +137,7 @@ Para solucionar problemas de conectividade, examine o seguinte:
 
 As seguintes versões mínimas das ferramentas e drivers são recomendadas se você deseja se conectar à Instância Gerenciada:
 
-| Driver/ferramenta | Versão |
+| Driver/ferramenta | Version |
 | --- | --- |
 |.NET Framework | 4.6.1 (ou .NET Core) |
 |Driver ODBC| v17 |

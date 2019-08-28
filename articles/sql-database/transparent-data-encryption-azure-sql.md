@@ -10,19 +10,20 @@ ms.topic: conceptual
 author: aliceku
 ms.author: aliceku
 ms.reviewer: vanto
-ms.date: 08/12/2019
-ms.openlocfilehash: 07fcd0f1ec33aa9a7520e35eb7e53a76295009ba
-ms.sourcegitcommit: 5d6c8231eba03b78277328619b027d6852d57520
+ms.date: 08/27/2019
+ms.openlocfilehash: 9261bae0d2bee990a5048cb87a863d96e1854d00
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68967910"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061925"
 ---
 # <a name="transparent-data-encryption-for-sql-database-and-data-warehouse"></a>Transparent Data Encryption para Data Warehouse e Banco de Dados SQL do Azure
 
 A TDE (Transparent Data Encryption) ajuda a proteger o banco de dados SQL do Azure, o SQL Instância Gerenciada do Azure e o Azure data warehouse contra a ameaça de atividades offline mal-intencionadas, criptografando os dados em repouso. Ela realiza a criptografia e a descriptografia em tempo real do banco de dados, de backups associados e de arquivos de log de transações em repouso, sem a necessidade de alterações no aplicativo. Por padrão, a TDE está habilitada para todos os bancos de dados SQL do Azure recém-implantados. A TDE não pode ser utilizada para criptografar o banco de dados **mestre** lógico no Banco de Dados SQL.  O banco de dados **mestre** contém os objetos necessários para executar as operações de TDE nos bancos de dados do usuário.
 
-A TDE precisa ser habilitada manualmente para a instância gerenciada do SQL, bancos de dados antigos do Banco de Dados SQL do Azure ou SQL Data Warehouse do Azure.  
+O TDE precisa ser habilitado manualmente para bancos de dados mais antigos do banco de dados SQL do Azure, Azure SQL Instância Gerenciada ou SQL Data Warehouse do Azure.
+Instância Gerenciada bancos de dados criados por meio da restauração herdam o status de criptografia do banco de dados de origem.
 
 A Transparent Data Encryption criptografa o armazenamento de um banco de dados inteiro usando uma chave simétrica chamada de chave de criptografia de banco de dados. Esta chave de criptografia de banco de dados é protegida pelo protetor de Transparent Data Encryption. O protetor é um certificado de serviço gerenciado (Transparent Data Encryption de serviço gerenciado) ou uma chave assimétrica armazenada no Azure Key Vault (Bring Your Own Key). Você pode definir o protetor de criptografia de dados transparente no nível de servidor do banco de dados SQL do Azure e o Data Warehouse e no nível de instância para a Instância Gerenciada do SQL. O termo *servidor* refere-se ao servidor e instância ao longo deste documento, a menos que indicado de forma diferente.
 

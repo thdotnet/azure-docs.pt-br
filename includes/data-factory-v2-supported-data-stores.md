@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 08/06/2019
 ms.author: jingwang
 ms.custom: include file
-ms.openlocfilehash: d1a33cba99ef1e35aadd5f9e338ba11fc87830f5
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 49aaa40b4a50d2170ee6c8745ae35b16341e29f0
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68843128"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060670"
 ---
-| Categoria | Repositório de dados | Tem suporte como origem | Tem suporte como coletor | Suporte do [IR do Azure](../articles/data-factory/concepts-integration-runtime.md#azure-integration-runtime) | Suporte do [IR auto-hospedado](../articles/data-factory/concepts-integration-runtime.md#self-hosted-integration-runtime) |
+| Categoria | Repositório de dados | Tem suporte como origem | Tem suporte como coletor | Suporte do [IR do Azure](../articles/data-factory/concepts-integration-runtime.md#azure-integration-runtime) | Com suporte do [ir auto-hospedado](../articles/data-factory/concepts-integration-runtime.md#self-hosted-integration-runtime) |
 |:--- |:--- |:--- |:--- |:--- |:--- |
 | **As tabelas** |[Armazenamento de Blobs do Azure](../articles/data-factory/connector-azure-blob-storage.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[Azure Cosmos DB (API do SQL)](../articles/data-factory/connector-azure-cosmos-db.md) |✓ |✓ |✓ |✓  |
@@ -30,7 +30,7 @@ ms.locfileid: "68843128"
 | &nbsp; |[Banco de Dados SQL do Azure](../articles/data-factory/connector-azure-sql-database.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[Instância Gerenciada do Banco de Dados SQL do Azure](../articles/data-factory/connector-azure-sql-database-managed-instance.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[SQL Data Warehouse do Azure](../articles/data-factory/connector-azure-sql-data-warehouse.md) |✓ |✓ |✓ |✓  |
-| &nbsp; |[Índice do Azure Search](../articles/data-factory/connector-azure-search.md) | |✓ |✓ |✓  |
+| &nbsp; |[Azure Search índice](../articles/data-factory/connector-azure-search.md) | |✓ |✓ |✓  |
 | &nbsp; |[Armazenamento de Tabelas do Azure](../articles/data-factory/connector-azure-table-storage.md) |✓ |✓ |✓ |✓  |
 | **Banco de dados** |[Amazon Redshift](../articles/data-factory/connector-amazon-redshift.md) |✓ | |✓ |✓  |
 | &nbsp; |[DB2](../articles/data-factory/connector-db2.md) |✓ | |✓ |✓  |
@@ -49,7 +49,7 @@ ms.locfileid: "68843128"
 | &nbsp; |[Phoenix](../articles/data-factory/connector-phoenix.md) |✓ | |✓ |✓  |
 | &nbsp; |[PostgreSQL](../articles/data-factory/connector-postgresql.md) |✓ | |✓ |✓  |
 | &nbsp; |[Presto (versão prévia)](../articles/data-factory/connector-presto.md) |✓ | |✓ |✓  |
-| &nbsp; |[SAP Business Warehouse Open Hub](../articles/data-factory/connector-sap-business-warehouse-open-hub.md) |✓ | | |✓  |
+| &nbsp; |[SAP Business Warehouse via hub aberto](../articles/data-factory/connector-sap-business-warehouse-open-hub.md) |✓ | | |✓  |
 | &nbsp; |[SAP Business Warehouse via MDX](../articles/data-factory/connector-sap-business-warehouse.md) |✓ | | |✓  |
 | &nbsp; |[SAP HANA](../articles/data-factory/connector-sap-hana.md) |✓ |✓ | |✓  |
 | &nbsp; |[Tabela SAP](../articles/data-factory/connector-sap-table.md) |✓ | | |✓  |
@@ -72,7 +72,7 @@ ms.locfileid: "68843128"
 | &nbsp; |[ODBC Genérico](../articles/data-factory/connector-odbc.md) |✓ |✓ | |✓  |
 | &nbsp; |[REST Genérico](../articles/data-factory/connector-rest.md) |✓ | |✓ |✓  |
 | **Serviços e aplicativos** |[Serviço Web do Amazon Marketplace (versão prévia)](../articles/data-factory/connector-amazon-marketplace-web-service.md) |✓ | |✓ |✓  |
-| &nbsp; |[Common Data Service para aplicativos](../articles/data-factory/connector-dynamics-crm-office-365.md) |✓ |✓ |✓ |✓  |
+| &nbsp; |[Common Data Service](../articles/data-factory/connector-dynamics-crm-office-365.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[Concorrente (versão prévia)](../articles/data-factory/connector-concur.md) |✓ | |✓ |✓  |
 | &nbsp; |[Dynamics 365](../articles/data-factory/connector-dynamics-crm-office-365.md) |✓ |✓ |✓ |✓  |
 | &nbsp; |[Dynamics AX (versão prévia)](../articles/data-factory/connector-dynamics-ax.md) |✓ | |✓ |✓  |
@@ -101,4 +101,4 @@ ms.locfileid: "68843128"
 | &nbsp; |[Zoho (versão prévia)](../articles/data-factory/connector-zoho.md) |✓ | |✓ |✓  |
 
 > [!NOTE]
-> Um conector marcado como *versão prévia* significa que você pode experimentá-lo e nos enviar comentários.  Se você quiser uma dependência de conectores em versão prévia em sua solução, entre em contato com [suporte do Azure](https://azure.microsoft.com/support/).
+> Se um conector estiver marcado como *Preview*, você poderá experimentá-lo e nos enviar comentários. Se você quiser obter uma dependência dos conectores de visualização em sua solução, entre em contato com o [suporte do Azure](https://azure.microsoft.com/support/).

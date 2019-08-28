@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/06/2019
+ms.date: 08/27/2019
 ms.author: jingwang
-ms.openlocfilehash: 2010799dd590808a2c5be7d9e2330bd60e2c7913
-ms.sourcegitcommit: bc3a153d79b7e398581d3bcfadbb7403551aa536
+ms.openlocfilehash: 79a960b106cc9de4116e8e59b2fa17f48c896221
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68842485"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061458"
 ---
 # <a name="copy-data-from-and-to-microsoft-access-data-stores-using-azure-data-factory"></a>Copiar dados de e para armazenamentos de dados do Microsoft Access usando o Azure Data Factory
 
@@ -33,6 +33,9 @@ Para usar esse conector de acesso da Microsoft, você precisa:
 
 - Configurar um Integration Runtime auto-hospedado. Consulte o artigo [Self-hosted integration runtime](create-self-hosted-integration-runtime.md) (Integration Runtime auto-hospedado) para obter detalhes.
 - Instale o driver ODBC do Microsoft Access para o armazenamento de dados no computador Integration Runtime.
+
+>[!NOTE]
+>A versão 2016 do Microsoft Access do driver ODBC não funciona com este conector. Use o driver versão 2013 ou 2010 em vez disso.
 
 ## <a name="getting-started"></a>Introdução
 
@@ -121,7 +124,7 @@ Para copiar dados do armazenamento de dados compatível com o Microsoft Access, 
 | Propriedade | Descrição | Necessário |
 |:--- |:--- |:--- |
 | type | A propriedade type da fonte da atividade de cópia deve ser definida como: **MicrosoftAccessSource** | Sim |
-| consultar | Utiliza a consulta personalizada para ler os dados. Por exemplo: `"SELECT * FROM MyTable"`. | Não (se "tableName" no conjunto de dados for especificado) |
+| query | Utiliza a consulta personalizada para ler os dados. Por exemplo: `"SELECT * FROM MyTable"`. | Não (se "tableName" no conjunto de dados for especificado) |
 
 **Exemplo:**
 

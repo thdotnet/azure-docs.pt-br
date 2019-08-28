@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/27/2018
+ms.date: 08/21/2019
 ms.author: v-mohabe
-ms.openlocfilehash: 597670803514fa59faaafdad73786cdb745a0976
-ms.sourcegitcommit: 36e9cbd767b3f12d3524fadc2b50b281458122dc
+ms.openlocfilehash: 5342ec14e32b87c5cccdb36206122ce1168aeb56
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69640913"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061426"
 ---
 # <a name="windows-defender-advanced-threat-protection-with-azure-security-center"></a>Proteção Avançada contra Ameaças do Windows Defender com a Central de Segurança do Azure
 
@@ -117,6 +117,7 @@ Para gerar um alerta de teste benigno do Windows Defender ATP:
 
 ## <a name="next-steps"></a>Próximas etapas
 
+- [Plataformas e recursos compatíveis com a Central de Segurança do Azure](security-center-os-coverage.md)
 - [Configurando políticas de segurança na Central de Segurança do Azure](tutorial-security-policy.md): Saiba como configurar políticas de segurança para suas assinaturas e grupos de recursos do Azure.
 - [Gerenciando recomendações de segurança na Central de Segurança do Azure](security-center-recommendations.md): saiba como as recomendações ajudam a proteger seus recursos do Azure.
 - [Monitoramento da integridade de segurança na Central de Segurança do Azure](security-center-monitoring.md): Saiba como monitorar a integridade dos recursos do Azure.

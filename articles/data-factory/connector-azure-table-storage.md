@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 08/01/2019
+ms.date: 08/27/2019
 ms.author: jingwang
-ms.openlocfilehash: bf28fb69d35256d65fdfd2c092ad48d0ad1281f9
-ms.sourcegitcommit: 5b76581fa8b5eaebcb06d7604a40672e7b557348
+ms.openlocfilehash: 5920fe4a1addd2188f53a15c1d2232f505009087
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68985993"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061485"
 ---
 # <a name="copy-data-to-and-from-azure-table-storage-by-using-azure-data-factory"></a>Copiar dados para e do Armazenamento de Tabelas do Azure usando o Azure Data Factory
 > [!div class="op_single_selector" title1="Selecione a versão do serviço Data Factory que você está usando:"]
@@ -221,10 +221,8 @@ Para copiar dados para e da Tabela do Azure, defina a propriedade type do conjun
 
 Para armazenamentos de dados sem esquema, como a Tabela do Azure, o Data Factory infere o esquema usando uma das seguintes maneiras:
 
-* Se você especificar a estrutura dos dados usando a propriedade **structure** na definição de conjunto de dados, o Data Factory respeitará essa estrutura do esquema. Nesse caso, se uma linha não contiver um valor de uma coluna, um valor nulo será fornecido para ele.
-* Se você não especificar a estrutura dos dados usando a propriedade **structure** na definição de conjunto de dados, o Data Factory inferirá o esquema usando a primeira linha dos dados. Nesse caso, se a primeira linha não contém o esquema completo, algumas colunas não estão presentes no resultado da operação de cópia.
-
-Para fontes de dados sem esquema, a melhor prática é especificar a estrutura de dados usando a propriedade **structure**.
+* Se você especificar o mapeamento de coluna na atividade de cópia, Data Factory usar a lista de colunas do lado de origem para recuperar dados. Nesse caso, se uma linha não contiver um valor de uma coluna, um valor nulo será fornecido para ele.
+* Se você não especificar o mapeamento de coluna na atividade de cópia, Data Factory inferirá o esquema usando a primeira linha nos dados. Nesse caso, se a primeira linha não contiver o esquema completo (por exemplo, algumas colunas têm um valor nulo), algumas colunas serão perdidas no resultado da operação de cópia.
 
 ## <a name="copy-activity-properties"></a>Propriedades da atividade de cópia
 
@@ -336,7 +334,7 @@ Quando dados forem movidos para e da Tabela do Azure, os seguintes [mapeamentos 
 | Edm.Binary |byte[] |Uma matriz de bytes de até 64 KB. |
 | Edm.Boolean |bool |Um valor booliano. |
 | Edm.DateTime |DateTime |Um valor de 64 bits expressado como Tempo Universal Coordenado (UTC). O intervalo de data e hora com suporte começa à meia-noite de 1º de janeiro de 1601 D.C. (C.E.), UTC. O intervalo termina em 31 de dezembro de 9999. |
-| Edm.Double |duplo |Um valor de ponto flutuante de 64 bits. |
+| Edm.Double |double |Um valor de ponto flutuante de 64 bits. |
 | Edm.Guid |Guid |Um identificador global exclusivo de 128 bits. |
 | Edm.Int32 |Int32 |Um inteiro de 32 bits. |
 | Edm.Int64 |Int64 |Um inteiro de 64 bits. |

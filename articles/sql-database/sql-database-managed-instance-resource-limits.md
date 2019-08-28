@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: bonova
 ms.author: bonova
 ms.reviewer: carlrab, jovanpop, sachinp, sstein
-ms.date: 06/26/2019
-ms.openlocfilehash: 776a27ca0babfd7557bf4d16c449a8dfa5bceaf7
-ms.sourcegitcommit: 4b8a69b920ade815d095236c16175124a6a34996
+ms.date: 08/27/2019
+ms.openlocfilehash: 921a14243bc50651358f0df42b88857ab227916d
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69998209"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70060640"
 ---
 # <a name="overview-azure-sql-database-managed-instance-resource-limits"></a>Visão geral dos limites de recursos de instância gerenciada do banco de dados SQL
 
@@ -51,7 +51,7 @@ A instância gerenciada tem duas camadas de serviço: Uso Geral e Comercialmente
 
 | **Recurso** | **Uso geral** | **Comercialmente Crítico** |
 | --- | --- | --- |
-| Número de vCores\* | Gen4: 8, 16, 24<br/>Gen5: 4, 8, 16, 24, 32, 40, 64, 80 | Gen4: 8, 16, 24, 32 <br/> Gen5: 4, 8, 16, 24, 32, 40, 64, 80 |
+| Número de vCores\* | Gen4: 8, 16, 24<br/>Gen5: 4, 8, 16, 24, 32, 40, 64, 80 | Gen4: 8, 16, 24 <br/> Gen5: 4, 8, 16, 24, 32, 40, 64, 80 |
 | Memória máxima | Gen4: 56 GB-168 GB (7 GB/vCore)<br/>Gen5: 40,8 GB-408 GB (5.1 GB/vCore)<br/>Adicione mais vCores para obter mais memória. | Gen4: 56 GB-168 GB (7 GB/vCore)<br/>Gen5: 40,8 GB-408 GB (5.1 GB/vCore)<br/>Adicione mais vCores para obter mais memória. |
 | Tamanho máximo de armazenamento reservado de instância | -2 TB para 4 vCores (somente Gen5)<br/>-8 TB para outros tamanhos | Gen4: 1 TB <br/> Gen5: <br/>-1 TB para 4, 8, 16 vCores<br/>- 2 TB para 24 vCores<br/>- 4 TB para 32, 40, 64, 80 vCores |
 | Tamanho máximo do banco de dados | Determinado pelo tamanho de armazenamento máximo por instância | Determinado pelo tamanho de armazenamento máximo por instância |
@@ -65,10 +65,12 @@ A instância gerenciada tem duas camadas de serviço: Uso Geral e Comercialmente
 | Tamanho máximo de TempDB | 192 – 1.920 GB (24 GB por vCore)<br/>Adicione mais vCores para obter mais espaço de TempDB. | Limitado pelo tamanho máximo de armazenamento da instância. O tamanho do arquivo de log de TempDB está limitado atualmente a 24 GB/vCore. |
 | OLTP na memória | Sem suporte | Disponível |
 | Máx. de sessões | 30000 | 30000 |
+| Réplicas legíveis | 0 | 1 |
 
 > [!NOTE]
 > - O tamanho do arquivo de log e de dados nos bancos de dados de sistema e de usuário são incluídos no tamanho de armazenamento de instância que é comparado ao limite de tamanho de armazenamento máximo. Usar a exibição do sistema <a href="https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-master-files-transact-sql">sys. master_files</a> para determinar o total o espaço usado pelos bancos de dados. Logs de erros não são persistentes e não são incluídos no tamanho. Backups não são incluídos no tamanho de armazenamento.
 > - A taxa de transferência e o IOPS também dependem do tamanho da página que não é explicitamente limitado pela instância gerenciada.
+> Você pode criar outra réplica legível em uma região do Azure diferente usando grupos de failover automático.
 
 ## <a name="supported-regions"></a>Regiões com suporte
 

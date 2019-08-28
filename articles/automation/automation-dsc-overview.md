@@ -10,12 +10,12 @@ ms.author: robreed
 ms.date: 11/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: dd898397b4aaec2e62558d12a3547f7b61d6d3fd
-ms.sourcegitcommit: 040abc24f031ac9d4d44dbdd832e5d99b34a8c61
+ms.openlocfilehash: a3a52fbda91d19905bd6add631f536010197c4dd
+ms.sourcegitcommit: 388c8f24434cc96c990f3819d2f38f46ee72c4d8
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69533458"
+ms.lasthandoff: 08/27/2019
+ms.locfileid: "70061395"
 ---
 # <a name="azure-automation-state-configuration-overview"></a>Visão geral da Configuração de Estado da Automação do Azure
 
@@ -62,12 +62,7 @@ O SKU do produto autônomo do [Microsoft Hyper-V Server](/windows-server/virtual
 
 Para nós que executam o Linux, há suporte para as seguintes distribuições/versões:
 
-A extensão do Linux do DSC dá suporte a todas as distribuições do Linux [endossadas no Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros) , exceto:
-
-Distribuição | Versão
--|-
-Debian  | todas as versões
-Ubuntu  | 18.04
+A extensão do Linux do DSC dá suporte a todas as distribuições do Linux listadas em distribuições do [Linux com suporte](https://github.com/Azure/azure-linux-extensions/tree/master/DSC#4-supported-linux-distributions).
 
 ### <a name="dsc-requirements"></a>Requisitos de DSC
 
