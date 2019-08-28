@@ -7,19 +7,19 @@ author: jeffhollan
 manager: jpconnock
 keywords: azure functions, funções, processamento de eventos, computação, arquitetura sem servidor, java
 ms.service: azure-functions
-ms.devlang: java
 ms.topic: conceptual
+ms.devlang: java
 ms.date: 07/01/2018
 ms.author: jehollan
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 9dcc959e51aa42fd6ef3173dba2aec8d9970deb1
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: b2f5567e037c65d7650b3f95a2ee81b93ac987b7
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67154588"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70085881"
 ---
-# <a name="create-your-first-function-with-java-and-eclipse"></a>Criar sua primeira função com Java e o Eclipse 
+# <a name="create-your-first-function-with-java-and-eclipse"></a>Criar sua primeira função com Java e Eclipse 
 
 Este artigo mostra como criar um projeto de função [sem servidor](https://azure.microsoft.com/solutions/serverless/) com o Eclipse IDE e o Apache Maven, testá-lo e depurá-lo e implantá-lo nas Funções do Azure. 
 
@@ -43,15 +43,15 @@ Para desenvolver um aplicativo de funções com Java e Eclipse, você deve ter o
 
 ## <a name="create-a-functions-project"></a>Criar um projeto do Functions
 
-1. No Eclipse, selecione a **arquivo** menu, em seguida, selecione **New -&gt; projeto Maven**. 
+1. No Eclipse, selecione o menu **arquivo** e, em seguida, selecione **novo&gt; -Maven projeto**. 
 1. Aceite os padrões de **novo projeto Maven** de caixa de diálogo e selecione **próxima**.
 1. Selecione **adicionar arquétipo** e adicione as entradas para o [azure-functions-arquétipo](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype).
     - ID do grupo arquétipo: com.microsoft.azure
     - Archetype Artifact ID: azure-functions-archetype
-    - Versão: Use a versão mais recente **1.22** partir [o repositório central](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype)
-    ![criar Eclipse Maven](media/functions-create-first-java-eclipse/functions-create-eclipse.png)  
-1. Clique em **Okey** e, em seguida, clique em **próxima** inserir valores, como o instantâneo a seguir (use um appName diferente diferente de **fabrikam-função-20170920120101928**), e eventualmente **concluir**.
-    ![Eclipse Maven create2](media/functions-create-first-java-eclipse/functions-create-eclipse2.png)  
+    - Versão: Use a versão mais recente **1,22** do [repositório](https://mvnrepository.com/artifact/com.microsoft.azure/azure-functions-archetype)
+    ![central Eclipse Maven criar](media/functions-create-first-java-eclipse/functions-create-eclipse.png)  
+1. Clique em **OK** e em **Avançar** para inserir valores como o instantâneo a seguir (use um AppName diferente de **Fabrikam-function-20170920120101928**) e, eventualmente, **concluir**.
+    ![Create2 do eclipse Maven](media/functions-create-first-java-eclipse/functions-create-eclipse2.png)  
 
 O Maven cria os arquivos de projeto em uma nova pasta com um nome de _artifactId_. O código gerado no projeto é uma função [disparada por HTTP](/azure/azure-functions/functions-bindings-http-webhook) simples que ecoa o corpo da solicitação HTTP disparando.
 

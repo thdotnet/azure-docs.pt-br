@@ -11,16 +11,15 @@ ms.assetid: 51ef4f51-0942-4249-afea-4a3f87ce1ff8
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
-ms.devlang: na
 ms.topic: article
 ms.date: 11/17/2017
 ms.author: cynthn
-ms.openlocfilehash: b001f8b3fd9c7be19431304b4106d0912181c07e
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 37e833e5ba2fcbc9fcfe0a27d5b607a5c6cdd55b
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67718656"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70079526"
 ---
 # <a name="download-the-template-for-a-vm"></a>Baixar o modelo para uma VM
 Quando você cria uma VM no Azure usando o portal ou o PowerShell, um modelo do Resource Manager é criado automaticamente para você. Você pode usar este modelo para duplicar rapidamente uma implantação. O modelo contém informações sobre todos os recursos em um grupo de recursos. Para uma máquina virtual, isso significa que o modelo contém tudo o que é criado para dar suporte à VM desse grupo de recursos, incluindo os recursos de rede.
@@ -29,7 +28,7 @@ Quando você cria uma VM no Azure usando o portal ou o PowerShell, um modelo do 
 1. Faça logon no [Portal do Azure](https://portal.azure.com/).
 2. No menu à esquerda, selecione **Máquinas Virtuais**.
 3. Selecione a máquina virtual na lista.
-4. Selecione **exportar modelo**.
+4. Selecione **Exportar modelo**.
 5. Selecione **Baixar** no menu na parte superior e salve o arquivo .zip em seu computador local.
 6. Abra o arquivo zip e extraia os arquivos para uma pasta. O arquivo .zip contém:
    

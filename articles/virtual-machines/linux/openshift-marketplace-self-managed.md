@@ -1,6 +1,6 @@
 ---
-title: Implantar o OpenShift Container Platform Marketplace autogerenciada oferta no Azure | Microsoft Docs
-description: Implante o OpenShift Container Platform Marketplace autogerenciada oferta no Azure.
+title: Implantar a oferta do Marketplace autogerenciado da plataforma de contêiner do OpenShift no Azure | Microsoft Docs
+description: Implantar a oferta do Marketplace autogerenciado da plataforma de contêiner do OpenShift no Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: haroldwongms
@@ -9,180 +9,179 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 05/7/2019
 ms.author: haroldw
-ms.openlocfilehash: 9b981924dcaf715dd1d05d452b756a40b63f8dac
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 87b5c4ab006d9129d7530b06d8b31df35e288c75
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65233088"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70091919"
 ---
 # <a name="configure-prerequisites"></a>Configurar pré-requisitos
 
-Antes de usar a oferta do Marketplace para implantar um cluster autogerenciado do OpenShift Container Platform no Azure, alguns pré-requisitos que devem ser configurados.  Leia as [pré-requisitos do OpenShift](https://docs.microsoft.com/azure/virtual-machines/linux/openshift-prerequisites) artigo para obter instruções para criar um ssh chave (sem uma frase secreta), do Azure key vault, segredo do Cofre de chaves e uma entidade de serviço.
+Antes de usar a oferta do Marketplace para implantar um cluster da plataforma de contêiner do OpenShift autogerenciado no Azure, alguns pré-requisitos devem ser configurados.  Leia o artigo [pré-requisitos do OpenShift](https://docs.microsoft.com/azure/virtual-machines/linux/openshift-prerequisites) para obter instruções para criar uma chave SSH (sem uma frase secreta), cofre de chaves do Azure, segredo do cofre de chaves e uma entidade de serviço.
 
  
 ## <a name="deploy-using-the-marketplace-offer"></a>Implantar usando a oferta do Marketplace
 
-A maneira mais simples para implantar um cluster do OpenShift Container Platform gerenciado automaticamente para o Azure é usar o [oferta do Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/redhat.openshift-container-platform?tab=Overview).
+A maneira mais simples de implantar um cluster da plataforma de contêiner do OpenShift autogerenciado no Azure é usar a [oferta do Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/redhat.openshift-container-platform?tab=Overview).
 
-Essa opção é a mais simples, mas ele também tem recursos de personalização limitados. A oferta do Marketplace implanta o OpenShift Container Platform 3.11.82 e inclui as seguintes opções de configuração:
+Essa opção é a mais simples, mas também tem recursos de personalização limitados. A oferta do Marketplace implanta a plataforma de contêiner OpenShift 3.11.82 e inclui as seguintes opções de configuração:
 
 - **Nós mestres**: três (3) nós mestres com tipo de instância configurável.
 - **Nós de infraestrutura**: três (3) nós de infraestrutura com tipo de instância configurável.
-- **Nós**: O número de nós (entre 1 e 9) e o tipo de instância é configurável.
+- **Nós**: O número de nós (entre 1 e 9) e o tipo de instância são configuráveis.
 - **Tipo de disco**: são usados os Managed Disks.
-- **Rede**: Suporte para rede nova ou existente e o intervalo CIDR personalizado.
+- **Rede**: Suporte para rede nova ou existente e intervalo CIDR personalizado.
 - **CNS**: o CNS pode ser habilitado.
-- **Métrica**: Métricas hawkular podem ser habilitadas.
-- **Registro em log**: O registro em log EFK pode ser habilitado.
+- **Métrica**: As métricas de Hawkular podem ser habilitadas.
+- **Registro em log**: O log de EFK pode ser habilitado.
 - **Azure Cloud Provider**: Habilitado por padrão, pode ser desabilitado.
 
-No canto superior esquerdo do portal do Azure, clique em **criar um recurso**, insira 'openshift container platform' na caixa de pesquisa e pressione Enter.
+No canto superior esquerdo do portal do Azure, clique em **criar um recurso**, insira ' plataforma de contêiner openshift ' na caixa de pesquisa e pressione Enter.
 
    ![Nova pesquisa de recursos](media/openshift-marketplace-self-managed/ocp-search.png)  
 <br>
 
-A página de resultados será aberto com **Red Hat OpenShift Container Platform Self-Managed** na lista. 
+A página de resultados será aberta com a **plataforma de contêiner do Red Hat OpenShift** na lista. 
 
-   ![Novo resultado de pesquisa de recursos](media/openshift-marketplace-self-managed/ocp-searchresult.png)  
+   ![Novo resultado da pesquisa de recursos](media/openshift-marketplace-self-managed/ocp-searchresult.png)  
 <br>
 
-Clique na oferta para exibir detalhes da oferta. Para implantar essa oferta, clique em **criar**. Será exibida a interface do usuário para inserir os parâmetros necessários. A primeira tela é o **Noções básicas de** folha.
+Clique na oferta para exibir os detalhes da oferta. Para implantar essa oferta, clique em **criar**. A interface do usuário para inserir os parâmetros necessários será exibida. A primeira tela é a folha **noções básicas** .
 
    ![Página de título da oferta](media/openshift-marketplace-self-managed/ocp-titlepage.png)  
 <br>
 
 **Noções básicas**
 
-Para obter ajuda sobre qualquer um dos parâmetros de entrada, passe o mouse sobre o ***eu*** próximo ao nome do parâmetro.
+Para obter ajuda sobre qualquer um dos parâmetros de entrada, passe o mouse sobre o ***i*** ao lado do nome do parâmetro.
 
-Insira valores para os parâmetros de entrada e clique em **Okey**.
+Insira valores para os parâmetros de entrada e clique em **OK**.
 
 | Parâmetro de entrada | Descrição do parâmetro |
 |-----------------------|-----------------|
-| Nome de usuário administrador VM | O usuário de administrador a ser criado em todas as instâncias VM |
-| SSH chave pública para o usuário administrador | Chave pública do SSH usada para fazer logon na VM – não deve ter uma frase secreta |
-| Assinatura | Assinatura do Azure para implantar o cluster em |
-| Grupo de recursos | Criar um novo grupo de recursos ou selecione um grupo de recursos vazio existente para recursos de cluster |
-| Local padrão | Região do Azure para implantar o cluster em |
+| Nome de usuário do administrador da VM | O usuário administrador a ser criado em todas as instâncias de VM |
+| Chave pública SSH para usuário administrador | Chave pública SSH usada para fazer logon na VM-não deve ter uma frase secreta |
+| Assinatura | Assinatura do Azure na qual implantar o cluster |
+| Grupo de Recursos | Criar um novo grupo de recursos ou selecionar um grupo de recursos vazio existente para recursos de cluster |
+| Location | Região do Azure na qual implantar o cluster |
 
-   ![Folha de Noções básicas de oferta](media/openshift-marketplace-self-managed/ocp-basics.png)  
+   ![Folha noções básicas da oferta](media/openshift-marketplace-self-managed/ocp-basics.png)  
 <br>
 
 **Configurações de infraestrutura**
 
-Insira valores para os parâmetros de entrada e clique em **Okey**.
+Insira valores para os parâmetros de entrada e clique em **OK**.
 
 | Parâmetro de entrada | Descrição do parâmetro |
 |-----------------------|-----------------|
-| Prefixo do nome do Cluster OCP | Prefixo usado para configurar nomes de host para todos os nós do cluster. Entre 1 e 20 caracteres |
-| Tamanho do nó mestre | Aceite o tamanho da VM padrão ou clique em **alterar o tamanho** para selecionar um tamanho VM diferente.  Selecione o tamanho da VM apropriado para sua carga de trabalho |
-| Tamanho do nó de infraestrutura | Aceite o tamanho da VM padrão ou clique em **alterar o tamanho** para selecionar um tamanho VM diferente.  Selecione o tamanho da VM apropriado para sua carga de trabalho |
-| Número de nós de aplicativo | Aceite o tamanho da VM padrão ou clique em **alterar o tamanho** para selecionar um tamanho VM diferente.  Selecione o tamanho da VM apropriado para sua carga de trabalho |
-| Tamanho do nó do aplicativo | Aceite o tamanho da VM padrão ou clique em **alterar o tamanho** para selecionar um tamanho VM diferente.  Selecione o tamanho da VM apropriado para sua carga de trabalho |
-| Tamanho do Host de bastiões | Aceite o tamanho da VM padrão ou clique em **alterar o tamanho** para selecionar um tamanho VM diferente.  Selecione o tamanho da VM apropriado para sua carga de trabalho |
-| Rede Virtual nova ou existente | Criar uma nova rede virtual (padrão) ou usar uma rede virtual existente |
-| Escolha as configurações padrão de CIDR ou personalizar o intervalo de IP (CIDR) | Aceite os intervalos de CIDR padrão ou selecione **intervalo de IP personalizado** e insira as informações personalizadas de CIDR.  As configurações padrão serão criar uma rede virtual com o CIDR de 10.0.0.0/14, sub-rede mestre com 10.1.0.0/16 infraestrutura sub-rede com 10.2.0.0/16 e a sub-rede de computação e cns com 10.3.0.0/16 |
-| Nome do grupo de recursos do Cofre de chave | O nome do grupo de recursos que contém o Cofre de chaves |
-| Nome do cofre de chaves | O nome do Cofre de chaves que contém o segredo com o ssh chave privada.  Somente caracteres alfanuméricos e traços são permitidos e ter entre 3 e 24 caracteres |
-| Nome do segredo | O nome do segredo que contém o ssh chave privada.  Somente caracteres alfanuméricos e traços são permitidos |
+| Prefixo do nome do cluster OCP | Prefixo de cluster usado para configurar os nomes de host para todos os nós. Entre 1 e 20 caracteres |
+| Tamanho do nó mestre | Aceite o tamanho da VM padrão ou clique em **alterar tamanho** para selecionar um tamanho de VM diferente.  Selecione o tamanho apropriado da VM para sua carga de trabalho |
+| Tamanho do nó de infraestrutura | Aceite o tamanho da VM padrão ou clique em **alterar tamanho** para selecionar um tamanho de VM diferente.  Selecione o tamanho apropriado da VM para sua carga de trabalho |
+| Número de nós de aplicativo | Aceite o tamanho da VM padrão ou clique em **alterar tamanho** para selecionar um tamanho de VM diferente.  Selecione o tamanho apropriado da VM para sua carga de trabalho |
+| Tamanho do nó do aplicativo | Aceite o tamanho da VM padrão ou clique em **alterar tamanho** para selecionar um tamanho de VM diferente.  Selecione o tamanho apropriado da VM para sua carga de trabalho |
+| Tamanho do host bastião | Aceite o tamanho da VM padrão ou clique em **alterar tamanho** para selecionar um tamanho de VM diferente.  Selecione o tamanho apropriado da VM para sua carga de trabalho |
+| Rede virtual nova ou existente | Criar uma nova vNet (padrão) ou usar uma vNet existente |
+| Escolha as configurações de CIDR padrão ou personalize o intervalo de IP (CIDR) | Aceite intervalos CIDR padrão ou selecione **intervalo de IP personalizado** e insira informações de CIDR personalizadas.  As configurações padrão criarão vNet com CIDR/14, sub-rede mestre com 10.1.0.0/16, rede de infraestrutura com 10.2.0.0/16 e sub-rede de computação e CNS com 10.3.0.0/16 |
+| Nome do grupo de recursos Key Vault | O nome do grupo de recursos que contém o Key Vault |
+| Nome do Cofre de Chaves | O nome do Key Vault que contém o segredo com a chave privada SSH.  Somente caracteres alfanuméricos e traços são permitidos e têm entre 3 e 24 caracteres |
+| Nome do segredo | O nome do segredo que contém a chave privada SSH.  Somente caracteres alfanuméricos e traços são permitidos |
 
-   ![Folha de infraestrutura de oferta](media/openshift-marketplace-self-managed/ocp-inframain.png)  
+   ![Folha de infraestrutura da oferta](media/openshift-marketplace-self-managed/ocp-inframain.png)  
 <br>
 
 **Alterar tamanho**
 
-Para selecionar um tamanho VM diferente, clique em ***alterar o tamanho***.  A janela de seleção da VM será aberta.  Selecione o tamanho VM desejado e clique em **selecionar**.
+Para selecionar um tamanho de VM diferente, clique em ***alterar tamanho***.  A janela seleção de VM será aberta.  Selecione o tamanho da VM desejado e clique em **selecionar**.
 
-   ![Selecione o tamanho da VM](media/openshift-marketplace-self-managed/ocp-selectvmsize.png)  
+   ![Selecionar tamanho da VM](media/openshift-marketplace-self-managed/ocp-selectvmsize.png)  
 <br>
 
-**Rede Virtual existente**
+**Rede virtual existente**
 
 | Parâmetro de entrada | Descrição do parâmetro |
 |-----------------------|-----------------|
-| Nome de rede Virtual existente | Nome da rede virtual existente |
-| Nome da sub-rede para nós mestres | Nome da sub-rede existente para nós mestres.  Deve conter pelo menos 16 endereços IP e seguem o RFC 1918 |
-| Nome da sub-rede de infraestrutura nós | Nome do existente subrede de infraestrutura de nós.  Deve conter pelo menos 32 endereços IP e seguem o RFC 1918 |
-| Nome da sub-rede para nós de computação e cns | Nome da sub-rede existente para nós de computação e cns.  Deve conter pelo menos 32 endereços IP e seguem o RFC 1918 |
-| Grupo de recursos para a rede Virtual existente | Nome do grupo de recursos que contém a rede virtual existente |
+| Nome da rede virtual existente | Nome da vNet existente |
+| Nome da sub-rede para nós mestres | Nome da sub-rede existente para nós mestres.  Precisa conter pelo menos 16 endereços IP e seguir o RFC 1918 |
+| Nome da sub-rede para nós de infraestrutura | Nome da sub-rede existente para nós de infraestrutura.  Precisa conter pelo menos 32 endereços IP e seguir a RFC 1918 |
+| Nome da sub-rede para nós de computação e CNS | Nome da sub-rede existente para nós de computação e CNS.  Precisa conter pelo menos 32 endereços IP e seguir a RFC 1918 |
+| Grupo de recursos para a rede virtual existente | Nome do grupo de recursos que contém a vNet existente |
 
-   ![Rede virtual existente da infraestrutura da oferta](media/openshift-marketplace-self-managed/ocp-existingvnet.png)  
+   ![Oferecer vnet existente de infraestrutura](media/openshift-marketplace-self-managed/ocp-existingvnet.png)  
 <br>
 
-**Intervalo IP personalizados**
+**Intervalo de IP personalizado**
 
 | Parâmetro de entrada | Descrição do parâmetro |
 |-----------------------|-----------------|
-| Intervalo de endereços para a rede Virtual | Personalizado CIDR para a rede virtual |
-| Intervalo de endereços da sub-rede que contém os nós mestres | Personalizado CIDR para a sub-rede mestre |
-| Intervalo de endereços da sub-rede que contém os nós de infraestrutura | Personalizado CIDR para a sub-rede de infraestrutura |
-| Intervalo de endereços de sub-rede que contém os nós de computação e cns | CIDR personalizado para os nós de computação e cns |
+| Intervalo de endereços para a rede virtual | CIDR personalizado para a vNet |
+| Intervalo de endereços da sub-rede que contém os nós mestres | CIDR personalizado para sub-rede mestre |
+| Intervalo de endereços da sub-rede que contém os nós de infraestrutura | CIDR personalizado para sub-rede de infraestrutura |
+| Intervalo de endereços para a sub-rede que contém os nós de computação e CNS | CIDR personalizado para os nós de computação e CNS |
 
-   ![Intervalo IP personalizado da infraestrutura da oferta](media/openshift-marketplace-self-managed/ocp-customiprange.png)  
+   ![Intervalo de IP personalizado de infraestrutura de oferta](media/openshift-marketplace-self-managed/ocp-customiprange.png)  
 <br>
 
 **OpenShift Container Platform**
 
-Insira valores para os parâmetros de entrada e clique em **Okey**
+Insira valores para os parâmetros de entrada e clique em **OK**
 
 | Parâmetro de entrada | Descrição do parâmetro |
 |-----------------------|-----------------|
-| Senha do usuário administrador do OpenShift | Senha do usuário inicial do OpenShift.  Esse usuário também será o administrador de cluster |
-| Confirme a senha do usuário administrador do OpenShift | Digite novamente a senha do administrador do OpenShift |
-| Nome de usuário do Red Hat assinatura Manager | Nome de usuário para acessar sua assinatura do Red Hat ou ID da organização.  Essa credencial é usada para registrar a instância RHEL à sua assinatura e não será armazenada pela Microsoft ou Red Hat |
-| Senha de usuário do Red Hat assinatura Manager | Senha para acessar sua assinatura do Red Hat ou a chave de ativação.  Essa credencial é usada para registrar a instância RHEL à sua assinatura e não será armazenada pela Microsoft ou Red Hat |
-| ID do Pool de OpenShift do Red Hat assinatura Manager | ID do pool que contém o direito de OpenShift Container Platform. Verifique se que você tem suficiente direitos de OpenShift Container Platform para a instalação do cluster |
-| ID do Pool de OpenShift do Red Hat assinatura Manager para Broker / mestre nós | Que contém os direitos de OpenShift Container Platform para o agente de ID do pool / nós mestres. Verifique se que você tem suficiente direitos de OpenShift Container Platform para a instalação do cluster. Se não usando o broker / ID do pool do mestre, insira a ID do pool de nós de aplicativo |
-| Configurar provedor de nuvem do Azure | Configure o OpenShift para usar o provedor de nuvem do Azure. Necessário se conectar-se usar o disco do Azure para volumes persistentes.  O padrão é Sim |
-| GUID da ID de cliente de entidade de serviço do AD do Azure | GUID do Azure AD entidade de serviço cliente ID - também conhecido como AppID. Necessário somente se configurar o provedor de nuvem do Azure definido como **Sim** |
-| Segredo de ID do cliente de entidade de serviço do AD do Azure | Segredo da ID do cliente de entidade de serviço do AD do Azure. Necessário somente se configurar o provedor de nuvem do Azure definido como **Sim** |
+| Senha de usuário do administrador do OpenShift | Senha para o usuário OpenShift inicial.  Esse usuário também será o administrador do cluster |
+| Confirmar senha de usuário do administrador do OpenShift | Digite novamente a senha de usuário do administrador do OpenShift |
+| Nome de usuário do Gerenciador de assinaturas do Red Hat | Nome de usuário para acessar sua assinatura do Red Hat ou ID da organização.  Essa credencial é usada para registrar a instância de RHEL em sua assinatura e não será armazenada pela Microsoft ou Red Hat |
+| Senha de usuário do Gerenciador de assinaturas do Red Hat | Senha para acessar sua assinatura do Red Hat ou chave de ativação.  Essa credencial é usada para registrar a instância de RHEL em sua assinatura e não será armazenada pela Microsoft ou Red Hat |
+| ID do pool OpenShift do Gerenciador de assinaturas do Red Hat | ID do pool que contém a qualificação da plataforma de contêiner OpenShift. Verifique se você tem direitos suficientes da plataforma de contêiner do OpenShift para a instalação do cluster |
+| ID do pool OpenShift do Gerenciador de assinaturas do Red Hat para nós de agente/mestre | ID do pool que contém direitos de plataforma de contêiner OpenShift para nós de agente/mestre. Verifique se você tem direitos suficientes da plataforma de contêiner do OpenShift para a instalação do cluster. Se não estiver usando a ID do pool do agente/mestre, insira a ID do pool para nós de aplicativo |
+| Configurar o provedor de nuvem do Azure | Configure o OpenShift para usar o provedor de nuvem do Azure. Necessário se estiver usando a anexação de disco do Azure para volumes persistentes.  O padrão é sim |
+| GUID de ID do cliente da entidade de serviço do Azure AD | GUID de ID do cliente da entidade de serviço do Azure AD – também conhecido como AppID. Necessário somente se configurar o provedor de nuvem do Azure definido como **Sim** |
+| Segredo da ID do cliente da entidade de serviço do Azure AD | Segredo da ID do cliente da entidade de serviço do Azure AD. Necessário somente se configurar o provedor de nuvem do Azure definido como **Sim** |
  
-   ![Folha de OpenShift de oferta](media/openshift-marketplace-self-managed/ocp-ocpmain.png)  
+   ![Folha de OpenShift da oferta](media/openshift-marketplace-self-managed/ocp-ocpmain.png)  
 <br>
 
 **Configurações adicionais**
 
-A folha de configurações adicional permite a configuração dos CNS para o armazenamento de glusterfs, registro em log, métricas e Sub do roteador de domínio.  O padrão não será instalado qualquer uma dessas opções e usará nip.io como o subdomínio do roteador para fins de teste. Habilitar CNS, você instalará três nós de computação adicionais com três discos adicionais anexados que hospedarão os pods glusterfs.  
+A folha configurações adicionais permite a configuração do CNS para armazenamento GlusterFS, registro em log, métricas e subdomínio do roteador.  O padrão não instalará nenhuma dessas opções e usará nip.io como o subdomínio do roteador para fins de teste. A habilitação do CNS instalará três nós de computação adicionais com três discos anexados adicionais que hospedarão o GlusterFS pods.  
 
-Insira valores para os parâmetros de entrada e clique em **Okey**
+Insira valores para os parâmetros de entrada e clique em **OK**
 
 | Parâmetro de entrada | Descrição do parâmetro |
 |-----------------------|-----------------|
-| Configurar o contêiner de armazenamento nativo (CNS) | Instala CNS in o OpenShift do cluster e habilitá-lo como o armazenamento. Será o padrão se o provedor do Azure está desabilitado |
-| Configurar o log de Cluster | Instala a funcionalidade de registro em log EFK no cluster.  Infraestrutura dimensionar nós adequadamente com os pods EFK do host |
-| Configurar as métricas para o Cluster | Instala Hawkular métricas para o cluster do OpenShift.  Infraestrutura dimensionar nós adequadamente para os pods Hawkular métricas de host |
-| Subdomínio roteador padrão | Selecione nipio para teste ou personalizado para inserir seu próprio domínio sub para produção |
+| Configurar o armazenamento nativo do contêiner (CNS) | Instala o CNS no cluster OpenShift e o habilita como armazenamento. Será padrão se o provedor do Azure estiver desabilitado |
+| Configurar o log de cluster | Instala a funcionalidade de log de EFK no cluster.  Dimensionar nós de infraestrutura apropriadamente para hospedar pods de EFK |
+| Configurar métricas para o cluster | Instala as métricas de Hawkular no cluster OpenShift.  Dimensionar nós de infraestrutura apropriadamente para hospedar pods de métricas de Hawkular |
+| Subdomínio do roteador padrão | Selecione nipio para teste ou personalizado para inserir seu próprio subdomínio para produção |
  
-   ![Folha adicional da oferta](media/openshift-marketplace-self-managed/ocp-additionalmain.png)  
+   ![Oferecer folha adicional](media/openshift-marketplace-self-managed/ocp-additionalmain.png)  
 <br>
 
-**Configurações adicionais - parâmetros extras**
+**Configurações adicionais-parâmetros extras**
 
 | Parâmetro de entrada | Descrição do parâmetro |
 |-----------------------|-----------------|
-| (CNS) Tamanho do nó | Aceite o tamanho de nó padrão ou selecione **alterar o tamanho** para selecionar um novo tamanho VM |
-| Insira o subdomínio personalizado | O domínio de roteamento personalizado a ser usado para expor aplicativos por meio do roteador no cluster do OpenShift.  Certifique-se de criar a entrada DNS curinga apropriado] |
+| CNS Tamanho do nó | Aceite o tamanho do nó padrão ou selecione **alterar tamanho** para selecionar um novo tamanho de VM |
+| Insira seu subdomínio personalizado | O domínio de roteamento personalizado a ser usado para expor aplicativos por meio do roteador no cluster OpenShift.  Certifique-se de criar a entrada DNS de curinga apropriada] |
  
-   ![Oferecer cns adicionais instalar](media/openshift-marketplace-self-managed/ocp-additionalcnsall.png)  
+   ![Oferecer instalação adicional do CNS](media/openshift-marketplace-self-managed/ocp-additionalcnsall.png)  
 <br>
 
 **Resumo**
 
-A validação ocorre neste estágio para verificar a cota de núcleo é suficiente para implantar o número total de VMs selecionadas para o cluster.  Examine todos os parâmetros que foram inseridos.  Se as entradas forem aceitáveis, clique em **Okey** para continuar.
+A validação ocorre neste estágio para verificar se a cota de núcleo é suficiente para implantar o número total de VMs selecionadas para o cluster.  Examine todos os parâmetros que foram inseridos.  Se as entradas forem aceitáveis, clique em **OK** para continuar.
 
    ![Folha de resumo da oferta](media/openshift-marketplace-self-managed/ocp-summary.png)  
 <br>
 
 **Comprar**
 
-Confirme as informações de contato na página de comprar e clique em **compra** para aceitar os termos de uso e iniciar a implantação do cluster do OpenShift Container Platform.
+Confirme as informações de contato na página comprar e clique em **comprar** para aceitar os termos de uso e iniciar a implantação do cluster da plataforma de contêiner do OpenShift.
 
    ![Folha de compra da oferta](media/openshift-marketplace-self-managed/ocp-purchase.png)  
 <br>
@@ -190,7 +189,7 @@ Confirme as informações de contato na página de comprar e clique em **compra*
 
 ## <a name="connect-to-the-openshift-cluster"></a>Conectar-se ao cluster OpenShift
 
-Quando a implantação for concluída, recupere a conexão da seção de saída da implantação. Conectar-se ao console do OpenShift com o navegador usando o **URL do Console OpenShift**. Você também pode SSH para o host de bastiões. A seguir está um exemplo em que o nome de usuário do administrador é clusteradmin e o IP público de bastiões FQDN do DNS é bastiondns4hawllzaavu6g.eastus.cloudapp.azure.com:
+Quando a implantação for concluída, recupere a conexão da seção de saída da implantação. Conecte-se ao console do OpenShift com seu navegador usando a **URL do console do OpenShift**. Você também pode SSH para o host bastião. A seguir está um exemplo em que o nome de usuário do administrador é clusteradmin e o IP público de bastiões FQDN do DNS é bastiondns4hawllzaavu6g.eastus.cloudapp.azure.com:
 
 ```bash
 $ ssh clusteradmin@bastiondns4hawllzaavu6g.eastus.cloudapp.azure.com

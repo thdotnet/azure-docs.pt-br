@@ -10,16 +10,15 @@ ms.assetid: 364cd53e-88fb-4301-a093-f132fa1f88f5
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: apimpm
-ms.openlocfilehash: 2e53b0d582a69e10de22e85720833800d44058e3
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: e33d981429f0e79accbe47ea0edea5f3c7a2157b
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66141480"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072205"
 ---
 # <a name="how-to-use-role-based-access-control-in-azure-api-management"></a>Como usar o Controle de Acesso Baseado em Função no Gerenciamento de API do Azure
 
@@ -33,7 +32,7 @@ No momento, o Gerenciamento de API oferece três funções internas e adicionar�
 
 A tabela a seguir fornece breves descrições das funções internas. Atribua essas funções usando o portal do Azure ou outras ferramentas, incluindo o Azure [PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell), [CLI do Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli) e [API REST](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-rest). Para obter detalhes sobre como atribuir funções internas, confira [Usar atribuições de função para gerenciar o acesso aos recursos de sua assinatura do Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal).
 
-| Função          | Acesso de leitura<sup>[1]</sup> | Acesso de gravação<sup>[2]</sup> | Criação de serviço, exclusão, colocação em escala, VPN e configuração de domínio personalizado | Acesso ao portal do editor herdado | DESCRIÇÃO
+| Role          | Acesso de leitura<sup>[1]</sup> | Acesso de gravação<sup>[2]</sup> | Criação de serviço, exclusão, colocação em escala, VPN e configuração de domínio personalizado | Acesso ao portal do editor herdado | Descrição
 | ------------- | ---- | ---- | ---- | ---- | ---- 
 | Colaborador do serviço de Gerenciamento de API do Azure | ✓ | ✓ | ✓ | ✓ | Superusuário. Tem acesso total de CRUD aos serviços e entidades do Gerenciamento de API (por exemplo, APIs e políticas). Tem acesso ao portal do publicador herdado. |
 | Leitor do serviço de Gerenciamento de API do Azure | ✓ | | || Tem acesso somente leitura aos serviços e entidades do Gerenciamento de API. |
@@ -52,7 +51,7 @@ A tabela a seguir fornece breves descrições das funções internas. Atribua es
 Se nenhuma das funções internas atender às suas necessidades específicas, será possível criar funções personalizadas para fornecer um gerenciamento de acesso mais refinado às entidades do Gerenciamento de API. Por exemplo, você pode criar uma função personalizada que tem acesso somente leitura a um serviço do Gerenciamento de API, mas que somente tem acesso de gravação a uma API específica. Para saber mais sobre funções personalizadas, consulte [Funções personalizadas no Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/custom-roles). 
 
 > [!NOTE]
-> Para ser capaz de ver uma instância de gerenciamento de API no portal do Azure, uma função personalizada deve incluir o ```Microsoft.ApiManagement/service/read``` ação.
+> Para poder ver uma instância de gerenciamento de API no portal do Azure, uma função personalizada deve incluir a ```Microsoft.ApiManagement/service/read``` ação.
 
 Ao criar uma função personalizada, é mais fácil começar com uma das funções internas. Edite os atributos para adicionar **Actions**, **NotActions** ou **AssignableScopes**, então salve as alterações como uma nova função. O exemplo a seguir começa com a função "Leitor de Serviço do Gerenciamento de API do Azure" e cria uma função personalizada chamada "Editor de API da Calculadora". Você pode atribuir a função personalizada a uma API específica. Consequentemente, essa função só tem acesso a aquela API. 
 

@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 04/18/2019
 ms.author: haroldw
-ms.openlocfilehash: 296bc42313ef80425004d3c9b43c6792cbaf97f4
-ms.sourcegitcommit: 1289f956f897786090166982a8b66f708c9deea1
+ms.openlocfilehash: 48c462edf6c7b17c3a538b6ce0cb28609628d75f
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "65411554"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70091772"
 ---
 # <a name="deploy-openshift-container-platform-in-azure"></a>Implantar o OpenShift Container Platform no Azure
 
@@ -36,17 +35,17 @@ Certifique-se de que você tenha uma senha, uma ID do Pool e um Nome de usuário
 
 ## <a name="deploy-using-the-openshift-container-platform-resource-manager-template"></a>Implantar usando o modelo do Resource Manager de OpenShift Container Platform
 
-### <a name="private-clusters"></a>Clusters particulares
+### <a name="private-clusters"></a>Clusters privados
 
-A implantação de clusters particulares de OpenShift requer mais do que simplesmente não ter um IP público associado ao balanceador de carga mestre (console web) ou como a infraestrutura (roteador) do balanceador de carga.  Um cluster privado geralmente usa um servidor DNS personalizado (não o padrão DNS do Azure), um nome de domínio personalizado (por exemplo, contoso.com) e redes virtuais predefinidos.  Para clusters particulares, você precisa configurar sua rede virtual com todas as sub-redes apropriadas e as configurações do servidor DNS com antecedência.  Em seguida, use **existingMasterSubnetReference**, **existingInfraSubnetReference**, **existingCnsSubnetReference**, e  **existingNodeSubnetReference** para especificar a sub-rede existente para uso pelo cluster.
+Implantar clusters OpenShift privados requer mais do que simplesmente não ter um IP público associado ao balanceador de carga mestre (console Web) ou ao balanceador de carga (roteador).  Um cluster privado geralmente usa um servidor DNS personalizado (não o DNS padrão do Azure), um nome de domínio personalizado (como contoso.com) e redes virtuais predefinidas.  Para clusters privados, você precisa configurar sua rede virtual com todas as sub-redes apropriadas e as configurações do servidor DNS com antecedência.  Em seguida, use **existingMasterSubnetReference**, **existingInfraSubnetReference**, **existingCnsSubnetReference**e **existingNodeSubnetReference** para especificar a sub-rede existente a ser usada pelo cluster.
 
-Se privada mestre está selecionado (**masterClusterType**= privada), um endereço IP privado estático deve ser especificado para **masterPrivateClusterIp**.  Esse IP será atribuído para o front-end do balanceador de carga mestre.  O IP deve estar dentro de CIDR para a sub-rede mestre e não está em uso.  **masterClusterDnsType** deve ser definido como "custom" e o mestre de nome DNS deve ser fornecido para **masterClusterDns**.  O nome DNS deve ser mapeado para o IP privado estático e será usado para acessar o console em nós mestres.
+Se o mestre privado estiver selecionado (**masterClusterType**= Private), um IP privado estático precisará ser especificado para **masterPrivateClusterIp**.  Esse IP será atribuído ao front-end do balanceador de carga mestre.  O IP deve estar dentro do CIDR para a sub-rede mestre e não em uso.  **masterClusterDnsType** deve ser definido como "Custom" e o nome DNS mestre deve ser fornecido para **masterClusterDns**.  O nome DNS deve mapear para o IP privado estático e será usado para acessar o console do nos nós mestres.
 
-Se o roteador privado é selecionado (**routerClusterType**= privada), um endereço IP privado estático deve ser especificado para **routerPrivateClusterIp**.  Esse IP será atribuído para o front-end do balanceador de carga de infraestrutura.  O IP deve estar dentro de CIDR para a infraestrutura sub-rede e não em uso.  **routingSubDomainType** deve ser definido como "custom" e o nome DNS curinga para o roteamento deve ser fornecido por **routingSubDomain**.  
+Se o roteador privado for selecionado (**routerClusterType**= Private), um IP privado estático precisará ser especificado para **routerPrivateClusterIp**.  Esse IP será atribuído ao front-end do balanceador de carga de infraestrutura.  O IP deve estar dentro do CIDR para a sub-rede de infraestrutura e não em uso.  **routingSubDomainType** deve ser definido como "Custom" e o nome DNS do curinga para roteamento deve ser fornecido para **routingSubDomain**.  
 
-Se forem selecionados privadas mestres e roteador privado, o nome de domínio personalizado também deve ser inserido para **domainName**
+Se os mestres privados e o roteador privado forem selecionados, o nome de domínio personalizado também deverá ser inserido para DomainName
 
-Após a implantação bem-sucedida, o nó de bastião é o único nó com um IP público que é possível executar ssh no.  Mesmo se os nós mestres estiverem configurados para acesso público, eles não são expostos para o ssh acesso.
+Após a implantação bem-sucedida, o nó de bastiões é o único nó com um IP público no qual você pode SSH.  Mesmo que os nós mestres estejam configurados para acesso público, eles não são expostos para acesso SSH.
 
 Para implantar usando o modelo do Resource Manager, você usa um arquivo de parâmetros para fornecer os parâmetros de entrada. Para personalizar ainda mais a implantação, bifurque o repositório do GitHub e altere os itens apropriados.
 
@@ -66,7 +65,7 @@ O exemplo a seguir mostra um arquivo de parâmetros chamado azuredeploy.paramete
 
 ```json
 {
-    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "_artifactsLocation": {
@@ -249,64 +248,64 @@ Versões diferentes podem ter parâmetros diferentes. Portanto, verifique os par
 
 ### <a name="azuredeployparametersjson-file-explained"></a>azuredeploy. Arquivo Parameters. JSON explicado
 
-| Propriedade | DESCRIÇÃO | Opções válidas | Valor Padrão |
+| Propriedade | Descrição | Opções válidas | Valor padrão |
 |----------|-------------|---------------|---------------|
-| `_artifactsLocation`  | URL para artefatos (json, scripts, etc.) |  |  https:\//raw.githubusercontent.com/Microsoft/openshift-container-platform/master  |
-| `location` | Região do Azure para implantar recursos para |  |  |
-| `masterVmSize` | Tamanho da VM mestra. Selecione um dos tamanhos de VM permitidos listados no arquivo azuredeploy. JSON |  | Standard_E2s_v3 |
-| `infraVmSize` | Tamanho da infraestrutura VM. Selecione um dos tamanhos de VM permitidos listados no arquivo azuredeploy. JSON |  | Standard_D4s_v3 |
-| `nodeVmSize` | Tamanho da VM do nó de aplicativo. Selecione um dos tamanhos de VM permitidos listados no arquivo azuredeploy. JSON |  | Standard_D4s_v3 |
-| `cnsVmSize` | Tamanho da VM do nó de armazenamento nativo (CNS) recipiente. Selecione um dos tamanhos de VM permitidos listados no arquivo azuredeploy. JSON |  | Standard_E4s_v3 |
-| `osImageType` | A imagem do RHEL para usar. defaultgallery: Sob demanda; Marketplace: imagem de terceiros | defaultgallery <br> marketplace | defaultgallery |
-| `marketplaceOsImage` | Se `osImageType` é marketplace, em seguida, insira os valores apropriados para 'publisher', 'oferecem', 'sku', 'version' da oferta do marketplace. Esse parâmetro é um tipo de objeto |  |  |
-| `storageKind` | O tipo de armazenamento a ser usado  | gerenciado<br> não gerenciado | gerenciado |
-| `openshiftClusterPrefix` | Prefixo usado para configurar nomes de host para todos os nós do cluster.  Entre 1 e 20 caracteres |  | MyCluster |
-| `minoVersion` | A versão secundária do OpenShift Container Platform 3.11 para implantar |  | 69 |
-| `masterInstanceCount` | Número de nós mestres para implantar | 1, 3, 5 | 3 |
-| `infraInstanceCount` | Número de infraestrutura nós a serem implantados | 1, 2, 3 | 3 |
+| `_artifactsLocation`  | URL para artefatos (JSON, scripts, etc.) |  |  https:\//RAW.githubusercontent.com/Microsoft/openshift-container-Platform/Master  |
+| `location` | Região do Azure para implantar recursos |  |  |
+| `masterVmSize` | Tamanho da VM mestre. Selecione um dos tamanhos de VM permitidos listados no arquivo azuredeploy. JSON |  | Standard_E2s_v3 |
+| `infraVmSize` | Tamanho da VM de infraestrutura. Selecione um dos tamanhos de VM permitidos listados no arquivo azuredeploy. JSON |  | Standard_D4s_v3 |
+| `nodeVmSize` | Tamanho da VM do nó do aplicativo. Selecione um dos tamanhos de VM permitidos listados no arquivo azuredeploy. JSON |  | Standard_D4s_v3 |
+| `cnsVmSize` | Tamanho da VM do nó do armazenamento nativo do contêiner (CNS). Selecione um dos tamanhos de VM permitidos listados no arquivo azuredeploy. JSON |  | Standard_E4s_v3 |
+| `osImageType` | A imagem RHEL a ser usada. defaultgallery: Sob demanda; Marketplace: imagem de terceiros | defaultgallery <br> marketplace | defaultgallery |
+| `marketplaceOsImage` | Se `osImageType` for Marketplace, insira os valores apropriados para ' publicador ', ' oferta ', ' SKU ', ' versão ' da oferta do Marketplace. Este parâmetro é um tipo de objeto |  |  |
+| `storageKind` | O tipo de armazenamento a ser usado  | gerenciado<br> não gerenciados | gerenciado |
+| `openshiftClusterPrefix` | Prefixo de cluster usado para configurar os nomes de host para todos os nós.  Entre 1 e 20 caracteres |  | mycluster |
+| `minoVersion` | A versão secundária da plataforma de contêiner do OpenShift 3,11 a ser implantada |  | 69 |
+| `masterInstanceCount` | Número de nós mestres a serem implantados | 1, 3, 5 | 3 |
+| `infraInstanceCount` | Número de nós de infraestrutura a serem implantados | 1, 2, 3 | 3 |
 | `nodeInstanceCount` | Número de nós a serem implantados | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30 | 2 |
-| `cnsInstanceCount` | Número de nós CNS para implantar | 3, 4 | 3 |
-| `osDiskSize` | Tamanho do disco do SO da VM (em GB) | 64, 128, 256, 512, 1024, 2048 | 64 |
-| `dataDiskSize` | Tamanho do disco de dados a ser anexado a nós para o volume do Docker (em GB) | 32, 64, 128, 256, 512, 1024, 2048 | 64 |
-| `cnsGlusterDiskSize` | Tamanho do disco de dados a ser anexado a nós CNS para uso por glusterfs (em GB | 32, 64, 128, 256, 512, 1024, 2048 | 128 |
-| `adminUsername` | Nome de usuário de administrador para logon de sistema operacional (VM) e o usuário inicial do OpenShift |  | ocpadmin |
-| `enableMetrics` | Habilite as métricas. As métricas que exigem que mais recursos portanto, selecione o tamanho adequado de infraestrutura de VM | verdadeiro <br> falso | falso |
-| `enableLogging` | Habilite registro em log. requer o pod de elasticsearch 8 GB de RAM portanto, selecione o tamanho adequado de infraestrutura de VM | verdadeiro <br> falso | falso |
-| `enableCNS` | Habilitar o contêiner de armazenamento nativo | verdadeiro <br> falso | falso |
-| `rhsmUsernameOrOrgId` | ID de nome de usuário do Gerenciador de assinaturas Hat ou organização vermelho |  |  |
-| `rhsmPoolId` | A ID do Pool Red Hat assinatura Manager que contém seus direitos de OpenShift para nós de computação |  |  |
-| `rhsmBrokerPoolId` | ID do Pool de Gerenciador de assinaturas Hat vermelho que contém seus direitos de OpenShift para mestres e infraestrutura de nós. Se você não tiver um pool diferente IDs, insira a mesma ID de pool de 'rhsmPoolId' |  |
-| `sshPublicKey` | Copie a chave pública SSH aqui |  |  |
-| `keyVaultSubscriptionId` | A ID da assinatura da assinatura que contém o Cofre de chaves |  |  |
-| `keyVaultResourceGroup` | O nome do grupo de recursos que contém o Cofre de chaves |  |  |
-| `keyVaultName` | O nome do Cofre de chaves que você criou |  |  |
-| `enableAzure` | Habilitar provedor de nuvem do Azure | verdadeiro <br> falso | verdadeiro |
-| `aadClientId` | Azure ID de cliente do Active Directory também conhecida como ID do aplicativo para entidade de serviço |  |  |
-| `domainName` | Nome do nome de domínio personalizado para usar (se aplicável). Definido como "none" se não for implantar totalmente privada de cluster |  | Nenhum |
-| `masterClusterDnsType` | Tipo de domínio para o console de web do OpenShift. 'default' usará o rótulo DNS do mestre de infraestrutura IP público. 'custom' permite que você defina seu próprio nome | padrão <br> Personalizado | padrão |
-| `masterClusterDns` | O nome DNS personalizado para usar para acessar o console do OpenShift web se você selecionou 'custom' para `masterClusterDnsType` |  | console.contoso.com |
-| `routingSubDomainType` | Se definido como 'nipio' `routingSubDomain` usará nip.io.  Use 'custom' se você tiver seu próprio domínio que você deseja usar para roteamento | nipio <br> Personalizado | nipio |
-| `routingSubDomain` | O nome DNS de curinga que você deseja usar para se você selecionou 'custom' para o roteamento `routingSubDomainType` |  | apps.contoso.com |
-| `virtualNetworkNewOrExisting` | Selecione se deseja usar uma rede Virtual existente ou criar uma nova rede Virtual | Existente <br> novo | novo |
-| `virtualNetworkResourceGroupName` | Nome do grupo de recursos para a nova rede Virtual se você selecionou 'new' para `virtualNetworkNewOrExisting` |  | resourceGroup().name |
-| `virtualNetworkName` | O nome da nova rede Virtual para criar, se você selecionou 'new' para `virtualNetworkNewOrExisting` |  | openshiftvnet |
+| `cnsInstanceCount` | Número de nós do CNS a serem implantados | 3, 4 | 3 |
+| `osDiskSize` | Tamanho do disco do sistema operacional para a VM (em GB) | 64, 128, 256, 512, 1024, 2048 | 64 |
+| `dataDiskSize` | Tamanho do disco de dados a ser anexado aos nós para o volume do Docker (em GB) | 32, 64, 128, 256, 512, 1024, 2048 | 64 |
+| `cnsGlusterDiskSize` | Tamanho do disco de dados a ser anexado aos nós do CNS para uso pelo GlusterFS (em GB | 32, 64, 128, 256, 512, 1024, 2048 | 128 |
+| `adminUsername` | Nome de usuário do administrador para o logon do sistema operacional (VM) e o usuário OpenShift inicial |  | ocpadmin |
+| `enableMetrics` | Habilitar métricas. As métricas exigem mais recursos, portanto, selecione o tamanho adequado para a máquina virtual de infraestrutura | true <br> false | false |
+| `enableLogging` | Habilite o registro em log. o Pod elasticsearch requer 8 GB de RAM, portanto, selecione o tamanho adequado para a VM de infraestrutura | true <br> false | false |
+| `enableCNS` | Habilitar o armazenamento nativo do contêiner | true <br> false | false |
+| `rhsmUsernameOrOrgId` | Nome de usuário ou ID da organização do Red Hat Subscription Manager |  |  |
+| `rhsmPoolId` | A ID do pool do Gerenciador de assinaturas do Red Hat que contém seus direitos de OpenShift para nós de computação |  |  |
+| `rhsmBrokerPoolId` | A ID do pool do Gerenciador de assinaturas do Red Hat que contém seus direitos de OpenShift para nós mestres e de infra-estrutura. Se você não tiver IDs de pool diferentes, insira a mesma ID de pool que ' rhsmPoolId ' |  |
+| `sshPublicKey` | Copie sua chave pública SSH aqui |  |  |
+| `keyVaultSubscriptionId` | A ID da assinatura que contém o Key Vault |  |  |
+| `keyVaultResourceGroup` | O nome do grupo de recursos que contém o Key Vault |  |  |
+| `keyVaultName` | O nome da Key Vault que você criou |  |  |
+| `enableAzure` | Habilitar o provedor de nuvem do Azure | true <br> false | true |
+| `aadClientId` | Azure Active Directory ID do cliente também conhecida como ID do aplicativo para a entidade de serviço |  |  |
+| `domainName` | Nome do nome de domínio personalizado a ser usado (se aplicável). Defina como "nenhum" se não estiver implantando um cluster totalmente privado |  | nenhum |
+| `masterClusterDnsType` | Tipo de domínio do console Web do OpenShift. ' default ' usará o rótulo DNS do IP de infraestrutura principal. ' Custom ' permite que você defina seu próprio nome | default <br> personalizado | default |
+| `masterClusterDns` | O nome DNS personalizado a ser usado para acessar o console Web OpenShift se você selecionou ' Custom ' para`masterClusterDnsType` |  | console.contoso.com |
+| `routingSubDomainType` | Se definido como ' nipio ', `routingSubDomain` usará Nip.IO.  Use ' Custom ' se você tiver seu próprio domínio que deseja usar para roteamento | nipio <br> personalizado | nipio |
+| `routingSubDomain` | O nome DNS do curinga que você deseja usar para roteamento se você selecionou ' personalizado ' para`routingSubDomainType` |  | apps.contoso.com |
+| `virtualNetworkNewOrExisting` | Selecione se deseja usar uma rede virtual existente ou criar uma nova rede virtual | pré-existente <br> novo | novo |
+| `virtualNetworkResourceGroupName` | Nome do grupo de recursos para a nova rede virtual se você selecionou ' novo ' para`virtualNetworkNewOrExisting` |  | resourceGroup().name |
+| `virtualNetworkName` | O nome da nova rede virtual a ser criada se você selecionou ' novo ' para`virtualNetworkNewOrExisting` |  | openshiftvnet |
 | `addressPrefixes` | Prefixo de endereço da nova rede virtual |  | 10.0.0.0/14 |
 | `masterSubnetName` | O nome da sub-rede mestre |  | mastersubnet |
-| `masterSubnetPrefix` | CIDR usado para a sub-rede mestre - precisa ser um subconjunto do addressPrefix |  | 10.1.0.0/16 |
-| `infraSubnetName` | O nome da infraestrutura subrede |  | infrasubnet |
-| `infraSubnetPrefix` | CIDR usado para a infraestrutura subnet - precisa ser um subconjunto do addressPrefix |  | 10.2.0.0/16 |
-| `nodeSubnetName` | O nome da sub-rede de nó |  | nodesubnet |
-| `nodeSubnetPrefix` | CIDR usado para a sub-rede de nó - precisa ser um subconjunto do addressPrefix |  | 10.3.0.0/16 |
-| `existingMasterSubnetReference` | Referência completa a sub-rede existente para nós mestres. Não é necessária se a criação de nova rede virtual / sub-rede |  |  |
-| `existingInfraSubnetReference` | Referência completa a sub-rede existente de infraestrutura nós. Não é necessária se a criação de nova rede virtual / sub-rede |  |  |
-| `existingCnsSubnetReference` | Referência completa a sub-rede existente para nós CNS. Não é necessária se a criação de nova rede virtual / sub-rede |  |  |
-| `existingNodeSubnetReference` | Referência completa a sub-rede existente para nós de computação. Não é necessária se a criação de nova rede virtual / sub-rede |  |  |
-| `masterClusterType` | Especifique se o cluster usa nós mestres públicos ou privados. Se for escolhida a privada, os nós mestres não sejam expostos à Internet através de um IP público. Em vez disso, ele usará IP privado, especificado no `masterPrivateClusterIp` | público <br> privado | público |
-| `masterPrivateClusterIp` | Se nós mestres privadas forem selecionadas, em seguida, um endereço IP privado deve ser especificado para uso pelo Balanceador de carga interno para nós mestres. Esse endereço IP estático deve ser dentro do bloco CIDR da sub-rede mestre e ainda não estiver em uso. Se nós mestres públicos são selecionados, esse valor não será usado, mas ainda deve ser especificado |  | 10.1.0.200 |
-| `routerClusterType` | Especifique se o cluster usa privado ou público infraestrutura nós. Se private for escolhido, a infraestrutura, nós não sejam expostos à Internet através de um IP público. Em vez disso, ele usará IP privado, especificado no `routerPrivateClusterIp` | público <br> privado | público |
-| `routerPrivateClusterIp` | Se privada infraestrutura nós forem selecionados, em seguida, um endereço IP privado deve ser especificado para usar, o balanceador de carga interno para infraestrutura nós. Esse endereço IP estático deve ser dentro do bloco CIDR da sub-rede mestre e ainda não estiver em uso. Se público infraestrutura nós forem selecionados, esse valor não será usado, mas ainda deve ser especificado |  | 10.2.0.200 |
-| `routingCertType` | Usar o certificado personalizado para o certificado autoassinado do padrão ou de domínio de roteamento – siga as instruções em **certificados personalizados** seção | selfsigned <br> Personalizado | selfsigned |
-| `masterCertType` | Usar o certificado personalizado para o domínio do mestre ou o certificado autoassinado do padrão – siga as instruções em **certificados personalizados** seção | selfsigned <br> Personalizado | selfsigned |
+| `masterSubnetPrefix` | CIDR usado para a sub-rede mestre-precisa ser um subconjunto do addressPrefix |  | 10.1.0.0/16 |
+| `infraSubnetName` | O nome da sub-rede de infraestrutura |  | infrasubnet |
+| `infraSubnetPrefix` | CIDR usado para a sub-rede de infraestrutura – precisa ser um subconjunto do addressPrefix |  | 10.2.0.0/16 |
+| `nodeSubnetName` | O nome da sub-rede do nó |  | nodesubnet |
+| `nodeSubnetPrefix` | CIDR usado para a sub-rede do nó-precisa ser um subconjunto do addressPrefix |  | 10.3.0.0/16 |
+| `existingMasterSubnetReference` | Referência completa à sub-rede existente para nós mestres. Não é necessário se estiver criando uma nova vNet/sub-rede |  |  |
+| `existingInfraSubnetReference` | Referência completa à sub-rede existente para nós de infraestrutura. Não é necessário se estiver criando uma nova vNet/sub-rede |  |  |
+| `existingCnsSubnetReference` | Referência completa para a sub-rede existente para nós do CNS. Não é necessário se estiver criando uma nova vNet/sub-rede |  |  |
+| `existingNodeSubnetReference` | Referência completa para a sub-rede existente para nós de computação. Não é necessário se estiver criando uma nova vNet/sub-rede |  |  |
+| `masterClusterType` | Especifique se o cluster usa nós mestres privados ou públicos. Se privado for escolhido, os nós mestres não serão expostos à Internet por meio de um IP público. Em vez disso, ele usará o IP privado especificado no`masterPrivateClusterIp` | públicos <br> particulares | públicos |
+| `masterPrivateClusterIp` | Se nós mestres privados forem selecionados, um endereço IP privado deverá ser especificado para ser usado pelo balanceador de carga interno para nós mestres. Esse IP estático deve estar dentro do bloco CIDR para a sub-rede mestre e ainda não está em uso. Se os nós mestres públicos forem selecionados, esse valor não será usado, mas ainda deverá ser especificado |  | 10.1.0.200 |
+| `routerClusterType` | Especifique se o cluster usa nós de infraestrutura privada ou pública. Se privado for escolhido, os nós de infra-estrutura não serão expostos à Internet por meio de um IP público. Em vez disso, ele usará o IP privado especificado no`routerPrivateClusterIp` | públicos <br> particulares | públicos |
+| `routerPrivateClusterIp` | Se os nós de infraestrutura privada forem selecionados, um endereço IP privado deverá ser especificado para ser usado pelo balanceador de carga interno para os nós de infraestrutura. Esse IP estático deve estar dentro do bloco CIDR para a sub-rede mestre e ainda não está em uso. Se os nós de infraestrutura pública forem selecionados, esse valor não será usado, mas ainda deverá ser especificado |  | 10.2.0.200 |
+| `routingCertType` | Usar certificado personalizado para o domínio de roteamento ou o certificado autoassinado padrão-siga as instruções na seção de **certificados personalizados** | selfsigned <br> personalizado | selfsigned |
+| `masterCertType` | Usar certificado personalizado para o domínio mestre ou o certificado autoassinado padrão-siga as instruções na seção de **certificados personalizados** | selfsigned <br> personalizado | selfsigned |
 
 <br>
 
@@ -323,7 +322,7 @@ az group deployment create -g openshiftrg --name myOpenShiftCluster \
       --parameters @./azuredeploy.parameters.json
 ```
 
-A implantação leva pelo menos 60 minutos para ser concluída, com base no número total de nós implantados e as opções configuradas. O FQDN do DNS de bastiões e a URL do console do OpenShift imprime no terminal quando a implantação for concluída.
+A implantação leva pelo menos 60 minutos para ser concluída, com base no número total de nós implantados e nas opções configuradas. O FQDN do DNS de bastiões e a URL do console do OpenShift imprime no terminal quando a implantação for concluída.
 
 ```json
 {
@@ -336,7 +335,7 @@ Se você não deseja obstruir a linha de comando, aguardando a implantação sej
 
 ## <a name="connect-to-the-openshift-cluster"></a>Conectar-se ao cluster OpenShift
 
-Quando a implantação for concluída, recupere a conexão da seção de saída da implantação. Conectar-se ao console do OpenShift com o navegador usando o **URL do Console OpenShift**. Você também pode SSH para o host de bastiões. A seguir está um exemplo em que o nome de usuário do administrador é clusteradmin e o IP público de bastiões FQDN do DNS é bastiondns4hawllzaavu6g.eastus.cloudapp.azure.com:
+Quando a implantação for concluída, recupere a conexão da seção de saída da implantação. Conecte-se ao console do OpenShift com seu navegador usando a **URL do console do OpenShift**. Você também pode SSH para o host bastião. A seguir está um exemplo em que o nome de usuário do administrador é clusteradmin e o IP público de bastiões FQDN do DNS é bastiondns4hawllzaavu6g.eastus.cloudapp.azure.com:
 
 ```bash
 $ ssh clusteradmin@bastiondns4hawllzaavu6g.eastus.cloudapp.azure.com

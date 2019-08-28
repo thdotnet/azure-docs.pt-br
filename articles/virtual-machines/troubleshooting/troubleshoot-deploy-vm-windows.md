@@ -1,6 +1,6 @@
 ---
 title: Solução de problemas de implantação de máquina virtual do Windows no Azure | Microsoft Docs
-description: Solucione problemas de máquina virtual implantação do Windows no modelo de implantação do Azure Resource Manager.
+description: Solucionar problemas de implantação de máquina virtual do Windows no modelo de implantação Azure Resource Manager.
 services: virtual-machines-windows
 documentationcenter: ''
 author: genlin
@@ -11,16 +11,15 @@ ms.assetid: 4e383427-4aff-4bf3-a0f4-dbff5c6f0c81
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 11/01/2018
 ms.author: genli
-ms.openlocfilehash: 76841484595b0a8809b8ab10db3199fc8cd28b04
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: d963556a657f4367acca14d5d8340f384ef555a9
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67710445"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70080215"
 ---
 # <a name="troubleshoot-deploying-windows-virtual-machine-issues-in-azure"></a>Solução de problemas de implantação de máquina virtual do Windows no Azure
 
@@ -32,7 +31,7 @@ Caso precise de mais ajuda a qualquer momento neste artigo, entre em contato com
 [!INCLUDE [virtual-machines-windows-troubleshoot-deploy-vm-top](../../../includes/virtual-machines-windows-troubleshoot-deploy-vm-top.md)]
 
 ## <a name="the-cluster-cannot-support-the-requested-vm-size"></a>O cluster não dá suporte ao tamanho de VM solicitado
-\<properties supportTopicIds="123456789" resourceTags="windows" productPesIds="1234, 5678" />
+\<Properties supportTopicIds = "123456789" resourceTags = "Windows" productPesIds = "1234, 5678"/>
 - Repita a solicitação com um tamanho de VM menor.
 - Se o tamanho da VM solicitada não puder ser alterado:
     - Pare todas as VMs no conjunto de disponibilidade. Clique em **Grupos de recursos** > seu grupo de recursos > **Recursos** > seu conjunto de disponibilidade > **Máquinas Virtuais** > sua máquina virtual > **Parar**.
@@ -41,7 +40,7 @@ Caso precise de mais ajuda a qualquer momento neste artigo, entre em contato com
 
 
 ## <a name="the-cluster-does-not-have-free-resources"></a>O cluster não tem recursos livres
-\<properties supportTopicIds="123456789" resourceTags="windows" productPesIds="1234, 5678" />
+\<Properties supportTopicIds = "123456789" resourceTags = "Windows" productPesIds = "1234, 5678"/>
 - Tente fazer novamente a solicitação.
 - Se a nova VM puder ser parte de um conjunto de disponibilidade diferente
     - Crie uma nova VM em um conjunto de disponibilidade diferente (na mesma região).

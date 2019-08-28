@@ -6,20 +6,19 @@ author: ggailey777
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 10/19/2018
 ms.author: glenga
-ms.openlocfilehash: 44bc5a245d1bcbc8ff53991af4193ef86f7cd704
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: c169d9cc774a2c6264ba1520240005f13ba9d2da
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "62107067"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70096449"
 ---
 # <a name="hostjson-reference-for-azure-functions-1x"></a>Referência de host.json para as funções do Azure 1.x
 
-> [!div class="op_single_selector" title1="Selecione a versão do tempo de execução do Azure Functions que você está usando: "]
+> [!div class="op_single_selector" title1="Selecione a versão do Azure Functions tempo de execução que você está usando: "]
 > * [Versão 1](functions-host-json-v1.md)
 > * [Versão 2](functions-host-json.md)
 
@@ -163,7 +162,7 @@ Definições de configuração para [monitor de integridade de Host](https://git
 }
 ```
 
-|Propriedade  |Padrão | DESCRIÇÃO |
+|Propriedade  |Padrão | Descrição |
 |---------|---------|---------| 
 |enabled|true|Especifica se o recurso está habilitado. | 
 |healthCheckInterval|10 segundos|O intervalo de tempo entre as verificações de integridade em segundo plano. | 
@@ -210,11 +209,11 @@ Controles de filtragem de logs gravados por um [objeto ILogger](functions-monito
 }
 ```
 
-|Propriedade  |Padrão | DESCRIÇÃO |
+|Propriedade  |Padrão | Descrição |
 |---------|---------|---------| 
-|categoryFilter|n/d|Especifica a filtragem por categoria| 
+|categoryFilter|N/D|Especifica a filtragem por categoria| 
 |defaultLevel|Information|Para as categorias não especificadas na matriz `categoryLevels`, envie logs nesse nível e acima para o Application Insights.| 
-|categoryLevels|n/d|Uma matriz de categorias que especifica o nível mínimo de logs que será enviado ao Application Insights para cada categoria. A categoria especificada aqui controla todas as categorias que começam com o mesmo valor, com precedência para os valores maiores. No arquivo de exemplo *host.json* anterior, todas as categorias que começam com o log "Host.Aggregator" no nível `Information`. Todas as outras categorias que começam com o log "Host", como "Host.Executor", no nível `Error`.| 
+|categoryLevels|N/D|Uma matriz de categorias que especifica o nível mínimo de logs que será enviado ao Application Insights para cada categoria. A categoria especificada aqui controla todas as categorias que começam com o mesmo valor, com precedência para os valores maiores. No arquivo de exemplo *host.json* anterior, todas as categorias que começam com o log "Host.Aggregator" no nível `Information`. Todas as outras categorias que começam com o log "Host", como "Host.Executor", no nível `Error`.| 
 
 ## <a name="queues"></a>filas
 
@@ -232,7 +231,7 @@ Parâmetros de configuração para [gatilhos e associações de Armazenamento](f
 }
 ```
 
-|Propriedade  |Padrão | DESCRIÇÃO |
+|Propriedade  |Padrão | Descrição |
 |---------|---------|---------| 
 |maxPollingInterval|60000|O intervalo máximo em milissegundos entre as votações da fila.| 
 |visibilityTimeout|0|O intervalo de tempo entre as repetições quando o processamento de uma mensagem falha.| 
@@ -254,10 +253,10 @@ Parâmetro de configuração para [gatilhos e associações do Barramento de Ser
 }
 ```
 
-|Propriedade  |Padrão | DESCRIÇÃO |
+|Propriedade  |Padrão | Descrição |
 |---------|---------|---------| 
 |maxConcurrentCalls|16|O número máximo de chamadas simultâneas para o retorno de chamada que a bomba de mensagens deve iniciar. Por padrão, o tempo de execução do Functions processa várias mensagens simultaneamente. Para direcionar o tempo de execução para processar uma única fila ou mensagem de tópico de cada vez, defina `maxConcurrentCalls` como 1. | 
-|prefetchCount|n/d|O PrefetchCount padrão que será usado pelo MessageReceiver subjacente.| 
+|prefetchCount|N/D|O PrefetchCount padrão que será usado pelo MessageReceiver subjacente.| 
 |autoRenewTimeout|00:05:00|A duração máxima na qual o bloqueio de mensagem será renovado automaticamente.| 
 
 ## <a name="singleton"></a>singleton
@@ -276,13 +275,13 @@ Parâmetro de configuração para o comportamento de bloqueio de Singleton. Para
 }
 ```
 
-|Propriedade  |Padrão | DESCRIÇÃO |
+|Propriedade  |Padrão | Descrição |
 |---------|---------|---------| 
 |lockPeriod|00:00:15|O período em que ocorrem os bloqueios de nível de função. Os bloqueios têm renovação automática.| 
 |listenerLockPeriod|00:01:00|O período em que ocorrem os bloqueios de ouvinte.| 
 |listenerLockRecoveryPollingInterval|00:01:00|O intervalo de tempo usado para a recuperação do bloqueio de ouvinte caso não tenha sido possível adquirir um bloqueio de ouvinte durante a inicialização.| 
 |lockAcquisitionTimeout|00:01:00|A quantidade máxima de tempo em que o tempo de execução tenta adquirir um bloqueio.| 
-|lockAcquisitionPollingInterval|n/d|O intervalo entre as tentativas de aquisição de bloqueio.| 
+|lockAcquisitionPollingInterval|N/D|O intervalo entre as tentativas de aquisição de bloqueio.| 
 
 ## <a name="tracing"></a>rastreamento
 
@@ -299,7 +298,7 @@ Parâmetros de configuração para logs que você cria usando um objeto `TraceWr
 }
 ```
 
-|Propriedade  |Padrão | DESCRIÇÃO |
+|Propriedade  |Padrão | Descrição |
 |---------|---------|---------| 
 |consoleLevel|info|O nível de rastreamento para o registro em log no console. As opções são: `off`, `error`, `warning`, `info` e `verbose`.|
 |fileLoggingMode|debugOnly|O nível de rastreamento para registros em log de arquivo. As opções são: `never`, `always` e `debugOnly`.| 

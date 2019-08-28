@@ -10,16 +10,15 @@ tags: azure-resource-manager
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
-ms.devlang: na
 ms.topic: article
 ms.date: 09/21/2018
 ms.author: roiyz
-ms.openlocfilehash: e72536cc6f9ec3b94016d16de8502e70bc7107aa
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 0ed042b3b004fd43bc03304c3042c2ac3e1a6482
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706095"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70092562"
 ---
 # <a name="chef-vm-extension-for-linux-and-windows"></a>Extensão para VM do Chef para Linux e Windows
 
@@ -105,7 +104,7 @@ O JSON a seguir mostra o esquema para a extensão para VM do Chef. A extensão e
 
 Extensões de VM do Azure podem ser implantadas com modelos do Azure Resource Manager. Modelos podem ser usados para implantar uma ou mais máquinas virtuais, instalar o cliente do Chef, conectar-se ao servidor do Chef e executar a configuração inicial no servidor, conforme definido pela [lista de execução](https://docs.chef.io/run_lists.html)
 
-Um modelo do Resource Manager que inclui a extensão de VM do Chef pode ser encontrado na [Galeria de início rápido do Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/chef-json-parameters-linux-vm).
+Um modelo do Resource Manager de exemplo que inclui a extensão de VM chefe pode ser encontrado na [Galeria de início rápido do Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/chef-json-parameters-linux-vm).
 
 A configuração do JSON para uma extensão da máquina virtual pode ser aninhado dentro do recurso de máquina virtual ou localizado no nível de raiz ou superior de um modelo JSON do Resource Manager. O posicionamento da configuração do JSON afeta o valor do tipo e nome do recurso. Para obter mais informações, consulte [Definir o nome e o tipo de recursos filho](../../azure-resource-manager/resource-manager-template-child-resource.md).
 
@@ -147,7 +146,7 @@ C:\Packages\Plugins\Chef.Bootstrap.WindowsAzure.ChefClient\
 
 ### <a name="error-codes-and-their-meanings"></a>Códigos de erro e seus significados
 
-| Código do Erro | Significado | Ação possível |
+| Código de Erro | Significado | Ação possível |
 | :---: | --- | --- |
 | 51 | Não há suporte para essa extensão no sistema operacional da VM | |
 

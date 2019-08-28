@@ -11,16 +11,15 @@ ms.assetid: 0b82ca70-89ed-496d-bb49-c04ae59b4523
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-multiple
-ms.devlang: na
 ms.topic: article
 ms.date: 07/09/2019
 ms.author: diviso
-ms.openlocfilehash: 74b92c277b1d6eaa0984e55a70459bad59c2bf84
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 5cbf53da5a0af0a511350b9f30153e2fefe72dcf
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67719282"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70080057"
 ---
 # <a name="automating-azure-virtual-machine-deployment-with-chef"></a>Automatizando a implantação de máquina virtual do Azure com o Chef
 
@@ -54,13 +53,13 @@ O Chef também usa os conceitos de "Guias" e "Receitas", que são efetivamente a
 
 Primeiro, prepare sua estação de trabalho criando um diretório para armazenar os arquivos de configuração e guias do Chef.
 
-Crie um diretório chamado c:\chef.
+Crie um diretório chamado C:\Chef.
 
-Baixe e instale a versão mais recente [CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) versão logon em sua estação de trabalho.
+Baixe e instale a versão mais recente do [CLI do Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) em na sua estação de trabalho.
 
 ## <a name="configure-azure-service-principal"></a>Configurar uma entidade de serviço do Azure
 
-No mais simples de termos e entidade de serviço do Azure é uma conta de serviço.   Vamos usar uma entidade de serviço para nos ajudar a criar recursos do Azure em nossa estação de trabalho do Chef.  Para criar a entidade de serviço relevantes com as permissões necessárias, precisamos executar os seguintes comandos do PowerShell:
+Em termos mais simples, e a entidade de serviço do Azure é uma conta de serviço.   Usaremos uma entidade de serviço para nos ajudar a criar recursos do Azure de nossa estação de trabalho chefe.  Para criar a entidade de serviço relevante com as permissões necessárias, precisamos executar os seguintes comandos no PowerShell:
  
 ```powershell
 Login-AzureRmAccount
@@ -71,7 +70,7 @@ New-AzureRmADServicePrincipal -ApplicationId $myApplication.ApplicationId
 New-AzureRmRoleAssignment -RoleDefinitionName Contributor -ServicePrincipalName $myApplication.ApplicationId
 ```
 
-Reserve uma anotação de SubscriptionID, TenantID, ClientID e o segredo do cliente (a senha definida acima), você precisará dele mais tarde. 
+Anote suas assinaturas, Tenantid, ClientID e segredo do cliente (a senha que você definiu acima). você precisará dela mais tarde. 
 
 ## <a name="setup-chef-server"></a>Configurar o Chef Server
 
@@ -100,7 +99,7 @@ Depois de criar sua organização, baixe o kit inicial.
 
 Este arquivo zip do kit de início contém os arquivos de configuração da organização e a chave do usuário no diretório `.chef`.
 
-O `organization-validator.pem` precisa ser baixado separadamente, pois como é uma chave privada não deve ser armazenado no Chef Server. Partir [Chef gerenciar](https://manage.chef.io/), vá para a seção de administração e selecione "Redefinir chave de validação", que fornece um arquivo para download separadamente. Salve o arquivo em C:\chef.
+O `organization-validator.pem` precisa ser baixado separadamente, pois como é uma chave privada não deve ser armazenado no Chef Server. No [chefe gerenciar](https://manage.chef.io/), vá para a seção Administração e selecione "redefinir chave de validação", que fornece um arquivo para download separado. Salve o arquivo em C:\chef.
 
 ### <a name="configuring-your-chef-workstation"></a>Configurando sua estação de trabalho do Chef
 
@@ -148,7 +147,7 @@ cookbook_path       ["#{current_dir}/cookbooks"]
 
 Adicione as seguintes informações ao seu knife.rb:
 
-validation_client_name   "myorg-validator"
+validation_client_name "MyOrg-Validator"
 
 validation_key           "#{current_dir}/myorg.pem"
 
@@ -161,7 +160,7 @@ knife[:azure_client_id] =         "11111111-bbbbb-cccc-1111-2222222222222"
 knife[:azure_client_secret] =     "#1234p$wdchef19"
 
 
-Essas linhas garantirão que faca faz referência a diretório de guias em c:\chef\cookbooks e também usa a entidade de serviço do Azure que você criou durante as operações do Azure.
+Essas linhas garantirão que a faca faça referência ao diretório do Cookbooks em c:\chef\cookbooks e também use a entidade de serviço do Azure que você criou durante as operações do Azure.
 
 O arquivo knife.rb agora deve estar semelhante ao exemplo a seguir:
 
@@ -194,7 +193,7 @@ knife[:azure_client_secret] = "#1234p$wdchef19"
 Em seguida, [baixe e instale](https://downloads.chef.io/chef-workstation/) o Chef Workstation.
 Instale o Chef Workstation na localização padrão. Essa instalação poderá levar alguns minutos.
 
-Na área de trabalho, você verá um "CW PowerShell", que é um ambiente carregado com a ferramenta que você precisará para interagir com os produtos do Chef. O PowerShell CW disponibiliza novos comandos ad-hoc, como `chef-run` comandos de CLI tradicionais, bem como do Chef, como `chef`. Confira sua versão instalada do Chef Workstation e das ferramentas do Chef com `chef -v`. Você também pode verificar a versão do Workstation selecionando "Sobre o Chef Workstation" no aplicativo Chef Workstation.
+Na área de trabalho, você verá um "CW PowerShell", que é um ambiente carregado com a ferramenta que você precisará para interagir com os produtos do Chef. O PowerShell em PV disponibiliza novos comandos ad hoc, `chef-run` como também comandos tradicionais da CLI do chefe, `chef`como. Confira sua versão instalada do Chef Workstation e das ferramentas do Chef com `chef -v`. Você também pode verificar a versão do Workstation selecionando "Sobre o Chef Workstation" no aplicativo Chef Workstation.
 
 `chef --version` deve retornar algo como:
 
@@ -290,7 +289,7 @@ Nesta etapa, você faz uma cópia do guia criado no computador local e carrega-a
 ## <a name="deploy-a-virtual-machine-with-knife-azure"></a>Implantar uma máquina virtual com o Knife Azure
 Implante uma máquina virtual do Azure e aplique o guia "Webserver", que instala o serviço Web IIS e a página da Web padrão.
 
-Para fazer isso, use o **knife azurerm server criar** comando.
+Para fazer isso, use o comando **faca azurerm Server CREATE** .
 
 Um exemplo do comando aparece a seguir.
 
@@ -310,10 +309,10 @@ Um exemplo do comando aparece a seguir.
     -r "recipe[webserver]"
 
 
-O exemplo acima criará uma máquina virtual de Standard_DS2_v2 com Windows Server 2016 instalado na região Oeste dos EUA. Substitua variáveis específicas e executar.
+O exemplo acima criará uma máquina virtual Standard_DS2_v2 com o Windows Server 2016 instalado na região oeste dos EUA. Substitua variáveis específicas e executar.
 
 > [!NOTE]
-> Por meio da linha de comando, também estou automatizando minhas regras de filtro de rede do ponto de extremidade usando o parâmetro –tcp-endpoints. Eu abri as portas 80 e 3389 para fornecer acesso à página da web e sessão RDP.
+> Por meio da linha de comando, também estou automatizando minhas regras de filtro de rede do ponto de extremidade usando o parâmetro –tcp-endpoints. Abri as portas 80 e 3389 para fornecer acesso à página da Web e à sessão RDP.
 >
 >
 
@@ -325,13 +324,13 @@ O prompt de comando aparecem a seguir.
 
 ![][16]
 
-Depois que a implantação for concluída, o endereço IP público da nova máquina virtual será ser exibido após a conclusão da implantação, você pode copiar isto e colá-lo em um navegador da web e exibir o site que você implantou. Quando implantamos a máquina virtual abrimos a porta 80 para que ele deve estar disponível externamente.   
+Depois que a implantação for concluída, o endereço IP público da nova máquina virtual será exibido na conclusão da implantação, você poderá copiá-la e colá-la em um navegador da Web e exibir o site que você implantou. Quando implantamos a máquina virtual, abrimos a porta 80, portanto, ela deve estar disponível externamente.   
 
 ![][11]
 
 Este exemplo usa o código HTML criativo.
 
-Você também pode exibir o status do nó [Chef gerenciar](https://manage.chef.io/). 
+Você também pode exibir o status do nó [chefe gerenciar](https://manage.chef.io/). 
 
 ![][17]
 

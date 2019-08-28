@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 08/14/2018
 ms.author: danis
-ms.openlocfilehash: f4920cde64ae951fa5f234f6ad6d7423429bb907
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: e5ef1bde9420104b596c22837048b054f918b3cc
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706044"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70092620"
 ---
 # <a name="use-the-azure-custom-script-extension-version-1-with-linux-virtual-machines"></a>Usar a Versão 1 da Extensão de Script Personalizado do Azure com máquinas virtuais do Linux
 
@@ -119,7 +118,7 @@ Esses itens devem ser tratados como dados confidenciais e especificados na confi
 
 ### <a name="property-values"></a>Valores de propriedade
 
-| NOME | Valor/Exemplo | Tipo de dados |
+| Nome | Valor/Exemplo | Tipo de dados |
 | ---- | ---- | ---- |
 | apiVersion | 2015-06-15 | date |
 | publisher | Microsoft.OSTCExtensions | string |
@@ -296,7 +295,7 @@ Alguns pontos a serem observados:
 
 1. Habilitar é quando o comando é iniciado.
 1. O download está relacionado ao download do pacote de extensão CustomScript do Azure, não aos arquivos de script especificados no fileUris.
-1. Você também pode ver qual arquivo de log estiver gravando no `/var/log/azure/Microsoft.OSTCExtensions.CustomScriptForLinux/1.5.2.2/extension.log`
+1. Você também pode ver em qual arquivo de log ele está gravando`/var/log/azure/Microsoft.OSTCExtensions.CustomScriptForLinux/1.5.2.2/extension.log`
 
 A próxima etapa é fazer uma verificação do arquivo de log, este é o formato:
 
@@ -304,7 +303,7 @@ A próxima etapa é fazer uma verificação do arquivo de log, este é o formato
 /var/log/azure/<extension-name>/<version>/extension.log file.
 ```
 
-Você deve procurar a execução individual, ele será algo parecido com:
+Você deve procurar a execução individual; ela terá uma aparência semelhante a:
 
 ```text
 2018/04/26 15:29:46 [Microsoft.OSTCExtensions.CustomScriptForLinux-1.5.2.2] Enable,transitioning,0,Launching the script...

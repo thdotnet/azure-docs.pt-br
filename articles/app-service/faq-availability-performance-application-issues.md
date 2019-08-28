@@ -11,22 +11,21 @@ ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
 ms.service: app-service-web
 ms.workload: web
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
 ms.custom: seodec18
-ms.openlocfilehash: f455985d2a7d05f45100d4a88b43c688fe1a7767
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2b9689eeecb0549fae9f7131dd424e15c040b042
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65955760"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073172"
 ---
 # <a name="application-performance-faqs-for-web-apps-in-azure"></a>Perguntas frequentes do desempenho do aplicativo para Aplicativos Web no Azure
 
 > [!NOTE]
-> Alguns das diretrizes abaixo podem funcionar apenas no Windows ou Linux App Services. Por exemplo, Linux App Services executado no modo de 64 bits por padrão.
+> Algumas das diretrizes a seguir podem funcionar apenas nos serviços de aplicativos do Windows ou do Linux. Por exemplo, os serviços de aplicativos do Linux são executados no modo de 64 bits por padrão.
 >
 
 Este artigo apresenta respostas para perguntas frequentes (FAQs) sobre problemas de desempenho de aplicativo da [funcionalidade Aplicativos Web do Serviço de Aplicativo do Azure](https://azure.microsoft.com/services/app-service/web/).

@@ -7,18 +7,17 @@ author: genlin
 manager: cshepard
 editor: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/15/2018
 ms.author: genli
-ms.openlocfilehash: 1c97b1da094b759ccf85f310ceec4c7abfd91b9b
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: e4715225e56e50502348040fa501cbfd76bd5c9f
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "65472287"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70103378"
 ---
 # <a name="windows-reboot-loop-on-an-azure-vm"></a>Loop de reinicialização do Windows em uma VM do Azure
 Este artigo descreve o loop de reinicialização pode ocorrer em uma VM (Máquina Virtual) do Windows no Microsoft Azure.
@@ -41,7 +40,7 @@ Há um serviço de terceiros sinalizado como crítico e não é possível inici�
 
 Algumas alterações foram feitas ao sistema operacional. Geralmente, elas estão relacionadas a uma instalação de atualização, à instalação de aplicativo ou a uma nova política. Talvez você precise verificar os seguintes logs para obter detalhes adicionais:
 
-- Logs de eventos
+- Logs de Eventos
 - CBS.logWindows
 - Update.log
 

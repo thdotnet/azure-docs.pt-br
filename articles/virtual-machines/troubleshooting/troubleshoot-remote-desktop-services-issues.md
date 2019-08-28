@@ -7,18 +7,17 @@ author: genlin
 manager: cshepard
 editor: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/23/2018
 ms.author: genli
-ms.openlocfilehash: 5458a02c09a3600875c7300b27c5a87a735b2f1b
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 845e9c17d6f7facb4e24f3069b3622b6449295ca
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60318862"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70103332"
 ---
 # <a name="remote-desktop-services-isnt-starting-on-an-azure-vm"></a>Serviços de área de trabalho remota não estiver iniciando uma VM do Azure
 
@@ -57,8 +56,8 @@ Ao tentar conectar uma VM, você enfrenta os seguintes cenários:
 Esse problema ocorre porque os Serviços de Área de Trabalho Remota não estão sendo executados na VM. A causa pode depender de cenários a seguir: 
 
 - O serviço TermService é definido como **desabilitado**. 
-- O serviço de TermService está falhando ou não está respondendo. 
-- O serviço de terminal não está iniciando devido a uma configuração incorreta.
+- O serviço do TermService está falhando ou não respondendo. 
+- O TermService não está iniciando devido a uma configuração incorreta.
 
 ## <a name="solution"></a>Solução
 
@@ -146,7 +145,7 @@ Para solucionar esse problema, use o Console Serial. Ou então, [repare a VM off
 
     1. [Anexar um disco de dados à VM](../windows/attach-managed-disk-portal.md
 ).
-    2. Use o Console Serial, você pode copiar o arquivo para a nova unidade. Por exemplo: `copy C:\temp\ProcMonTrace.PML F:\`. Nesse comando, F é a letra do driver do disco de dados anexado.
+    2. Use o Console Serial, você pode copiar o arquivo para a nova unidade. Por exemplo, `copy C:\temp\ProcMonTrace.PML F:\`. Nesse comando, F é a letra do driver do disco de dados anexado.
     3. Desanexe a unidade de dados e conecte-a em uma VM funcional que tenha o ubstakke do Process Monitor instalado.
 
 6. Abra **ProcMonTrace.PML** usando o Process Monitor na VM funcional. Em seguida, filtre por  **O resultado é ACCESS DENIED**, conforme mostrado na seguinte imagem:
@@ -222,6 +221,6 @@ Para solucionar esse problema, use o Console Serial. Ou então, [repare a VM off
 
 4. [Desanexe o disco do SO e recrie a VM](../windows/troubleshoot-recovery-disks-portal.md). Em seguida, verifique se o problema for resolvido.
 
-## <a name="need-help-contact-support"></a>Precisa de ajuda? Contate o suporte
+## <a name="need-help-contact-support"></a>Precisa de ajuda? Contatar o suporte
 
 Se você ainda precisar de ajuda, [entre em contato com o suporte](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) para resolver o problema.

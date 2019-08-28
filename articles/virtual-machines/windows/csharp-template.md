@@ -11,16 +11,15 @@ ms.assetid: bfba66e8-c923-4df2-900a-0c2643b81240
 ms.service: virtual-machines-windows
 ms.workload: na
 ms.tgt_pltfrm: vm-windows
-ms.devlang: na
 ms.topic: article
 ms.date: 07/14/2017
 ms.author: cynthn
-ms.openlocfilehash: a798f4b90057cd4220467cec4756ddda10fe456e
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 65ce7711786e15a5455d91ce829a3bc0bdf4317d
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67718713"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70103238"
 ---
 # <a name="deploy-an-azure-virtual-machine-using-c-and-a-resource-manager-template"></a>Implantar uma Máquina Virtual do Azure usando C# e um modelo do Resource Manager
 
@@ -166,7 +165,7 @@ Nesta etapa, você cria um arquivo de modelo que implanta os recursos e um arqui
 
 ### <a name="create-the-parameters-file"></a>Criar o arquivo de parâmetros
 
-Para especificar valores para os parâmetros de recursos no modelo, você deve criar um arquivo de parâmetros que contém os valores.
+Para especificar valores para os parâmetros de recurso no modelo, você cria um arquivo de parâmetros que contém os valores.
 
 1. No Gerenciador de Soluções, clique com o botão direito do mouse em *myDotnetProject* > **Adicionar** > **Novo Item** e, em seguida, selecione **Arquivo de Texto** em *Itens do Visual C#* . Nomeie o arquivo *Parameters.json* e, em seguida, clique em **Adicionar**.
 2. Adicione este código JSON ao arquivo que você criou:
@@ -205,7 +204,7 @@ Antes de poder implantar um modelo, verifique se você tem acesso a uma [entidad
     Substitua **&lt;subscription-id&gt;** pelo identificador da assinatura, **&lt;application-id&gt;** pelo identificador de aplicativo do Active Directory, **&lt;authentication-key&gt;** pela chave do aplicativo e **&lt;tenant-id&gt;** pelo identificador do locatário.
 
 3. Salve o arquivo azureauth.properties.
-4. Conjunto de que uma variável de ambiente no Windows chamada AZURE_AUTH_LOCATION com o caminho completo para o arquivo de autorização que você criou, por exemplo você pode usar o seguinte comando do PowerShell:
+4. Defina uma variável de ambiente no Windows chamada AZURE_AUTH_LOCATION com o caminho completo para o arquivo de autorização que você criou, por exemplo, você pode usar o seguinte comando do PowerShell:
 
     ```powershell
     [Environment]::SetEnvironmentVariable("AZURE_AUTH_LOCATION", "C:\Visual Studio 2019\Projects\myDotnetProject\myDotnetProject\azureauth.properties", "User")
@@ -215,7 +214,7 @@ Antes de poder implantar um modelo, verifique se você tem acesso a uma [entidad
 
 ## <a name="create-the-management-client"></a>Criar o cliente de gerenciamento
 
-1. Abra o arquivo Program.cs para o projeto que você criou. Em seguida, adicione o seguinte usando instruções para as instruções existentes na parte superior do arquivo:
+1. Abra o arquivo Program.cs para o projeto que você criou. Em seguida, adicione essas instruções using às instruções existentes na parte superior do arquivo:
 
     ```csharp
     using Microsoft.Azure.Management.Compute.Fluent;

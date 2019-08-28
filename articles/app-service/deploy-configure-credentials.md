@@ -8,18 +8,17 @@ manager: jpconnoc
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: multiple
 ms.topic: article
 ms.date: 08/14/2019
 ms.author: cephalin
 ms.reviewer: byvinyal
 ms.custom: seodec18
-ms.openlocfilehash: 52bbc907d91dd4bf9066daf14d0d5de1b759b92f
-ms.sourcegitcommit: a6888fba33fc20cc6a850e436f8f1d300d03771f
+ms.openlocfilehash: fc9445b64baae0e625b62356fee381329b01e8fd
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69558529"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70098492"
 ---
 # <a name="configure-deployment-credentials-for-azure-app-service"></a>Configurar as credenciais de implantação do Serviço de Aplicativo do Azure
 O [Serviço de Aplicativo do Azure](https://go.microsoft.com/fwlink/?LinkId=529714) oferece suporte a dois tipos de credenciais para a [implantação local do Git](deploy-local-git.md) e a [implantação de FTP/S](deploy-ftp.md). Essas credenciais não são as mesmas que suas credenciais de assinatura do Azure.

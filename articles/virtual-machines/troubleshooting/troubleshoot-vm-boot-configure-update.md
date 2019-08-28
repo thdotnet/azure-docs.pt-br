@@ -10,16 +10,15 @@ tags: azure-resource-manager
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
-ms.devlang: na
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: delhan
-ms.openlocfilehash: c3592529d20680c6920e569887effee4ffe38344
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 2f3c18ea1887ea5b05bb89f85371139ac83dfe49
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "64684001"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70080156"
 ---
 # <a name="vm-startup-is-stuck-on-getting-windows-ready-dont-turn-off-your-computer-in-azure"></a>A inicialização da VM está parada em “Preparando o Windows. Não desligue o computador” no Azure
 
@@ -121,7 +120,7 @@ Para criar um instantâneo, siga as etapas em [Criar instantâneo de um disco](.
 
 Siga as etapas na seção [Coletar despejo do sistema operacional](troubleshoot-common-blue-screen-error.md#collect-memory-dump-file) para coletar um despejo do sistema operacional quando a VM está paralisada na configuração.
 
-## <a name="contact-microsoft-support"></a>Contatar Suporte da Microsoft
+## <a name="contact-microsoft-support"></a>Entrar em contato com o suporte da Microsoft
 
 Depois de coletar o arquivo de despejo, entre em contato com o [suporte da Microsoft](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) para executar a análise da causa raiz.
 

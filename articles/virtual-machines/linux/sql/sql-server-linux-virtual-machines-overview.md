@@ -7,18 +7,17 @@ author: MashaMSFT
 manager: craigg
 tags: azure-service-management
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.topic: conceptual
 ms.workload: iaas-sql-server
 ms.date: 04/10/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: c97793dc28b4ef097d8baa34678aeb92bf123809
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: d376672336845958fb6434a78177f42aca938229
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61473462"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70081962"
 ---
 # <a name="overview-of-sql-server-on-azure-virtual-machines-linux"></a>Visão geral do SQL Server nas Máquinas Virtuais do Azure (Linux)
 
@@ -52,9 +51,9 @@ Quando você configura o SQL Server no Linux, você instala o pacote do mecanism
 
 | Distribuição | [Mecanismo de Banco de Dados](https://docs.microsoft.com/sql/linux/sql-server-linux-setup) | [Ferramentas](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-tools) | [SQL Server Agent](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-sql-agent) | [Pesquisa de texto completo](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-full-text-search) | [SSIS](https://docs.microsoft.com/sql/linux/sql-server-linux-setup-ssis) | [Complemento HA](https://docs.microsoft.com/sql/linux/sql-server-linux-business-continuity-dr) |
 |---|---|---|---|---|---|---|
-| RHEL | ![Sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![não](./media/sql-server-linux-virtual-machines-overview/no.png) |
-| SLES | ![Sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![não](./media/sql-server-linux-virtual-machines-overview/no.png) | ![não](./media/sql-server-linux-virtual-machines-overview/no.png) |
-| Ubuntu | ![Sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![Sim](./media/sql-server-linux-virtual-machines-overview/yes.png) |
+| RHEL | ![sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![não](./media/sql-server-linux-virtual-machines-overview/no.png) |
+| SLES | ![sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![não](./media/sql-server-linux-virtual-machines-overview/no.png) | ![não](./media/sql-server-linux-virtual-machines-overview/no.png) |
+| Ubuntu | ![sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![sim](./media/sql-server-linux-virtual-machines-overview/yes.png) | ![sim](./media/sql-server-linux-virtual-machines-overview/yes.png) |
 
 ## <a name="related-products-and-services"></a>Produtos e serviços relacionados
 

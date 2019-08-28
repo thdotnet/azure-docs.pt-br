@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager,azure-service-management
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 01/15/2019
 ms.author: jonbeck
-ms.openlocfilehash: 9390267c2dda5e375e2cc4f601fd60fbbba7fccf
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 7320acc3a00702b66800af5bfd9a240f4b146670
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67708779"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100842"
 ---
 # <a name="storage-optimized-virtual-machine-sizes"></a>Tamanhos de máquinas virtuais otimizados para armazenamento
 
@@ -39,4 +38,4 @@ ms.locfileid: "67708779"
 
 Saiba mais sobre como as [ACUs (unidade de computação do Azure)](acu.md) podem ajudar você a comparar o desempenho de computação entre SKUs do Azure.
 
-Saiba como [otimizar o desempenho em máquinas virtuais série Lsv2](storage-performance.md).
+Saiba como [otimizar o desempenho nas máquinas virtuais da série Lsv2](storage-performance.md).

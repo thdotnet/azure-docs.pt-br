@@ -11,17 +11,16 @@ ms.assetid: e41de979-6d56-40b0-8916-895bf215ded6
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
-ms.devlang: na
 ms.topic: article
 ms.date: 10/17/2016
 ms.author: roiyz
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 59a0cdd29e50501f023faf323948a400f325df0b
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: acb6e14845beb4c947992e63f1984c072ba9f59f
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706150"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70084814"
 ---
 # <a name="understanding-and-using-the-azure-linux-agent"></a>Noções básicas e uso do Agente Linux do Azure
 
@@ -108,12 +107,12 @@ Consulte a documentação do [repositório do agente Linux do Azure no GitHub](h
 
 ## <a name="command-line-options"></a>Opções de Linha de Comando
 ### <a name="flags"></a>Sinalizadores
-* verbose: Aumentar o nível de detalhes do comando especificado
-* força: Ignorar confirmação interativa para alguns comandos
+* extensa Aumentar o detalhamento do comando especificado
+* aplicação Ignorar a confirmação interativa para alguns comandos
 
 ### <a name="commands"></a>Comandos
-* help: Lista os comandos com suporte e sinalizadores.
-* Cancelar o provisionamento: Tentativa de limpar o sistema e torná-lo adequado para reprovisionamento. A operação a seguir deleta:
+* Ajuda: Lista os comandos e sinalizadores com suporte.
+* desprovisionar Tente limpar o sistema e torná-lo adequado para reprovisionamento. A operação a seguir deleta:
   
   * Todas as chaves de host SSH (se Provisioning.RegenerateSshHostKeyPair for 'y' no arquivo de configuração)
   * Configuração de servidor de nomes em /etc/resolv.conf
@@ -126,11 +125,11 @@ Consulte a documentação do [repositório do agente Linux do Azure no GitHub](h
 > 
 > 
 
-* deprovision + user: Executa tudo em - deprovision (acima) e também exclui a última conta de usuário provisionado (obtida em /var/lib/waagent) e dados associados. Este parâmetro é quando a desconfiguração de uma imagem que foi anteriormente provisionamento no Azure para podem ser capturada e usada novamente.
+* desprovisionar + usuário: Executa tudo em-desprovision (acima) e também exclui a última conta de usuário provisionada (Obtida de/var/lib/waagent) e dados associados. Este parâmetro é quando a desconfiguração de uma imagem que foi anteriormente provisionamento no Azure para podem ser capturada e usada novamente.
 * Versão: Exibe a versão do waagent
-* serialconsole: Configura GRUB para marcar ttyS0 (a primeira porta serial) como o console de inicialização. Isso garante que os logs de inicialização do kernel são enviados para a porta serial e disponibilizados para depuração.
-* daemon: Execute waagent como um daemon para gerenciar a interação com a plataforma. Esse argumento é especificado para waagent no script de inicialização de waagent.
-* Início: Executar waagent como um processo em segundo plano
+* serialconsole: Configura o GRUB para marcar ttyS0 (a primeira porta serial) como o console de inicialização. Isso garante que os logs de inicialização do kernel são enviados para a porta serial e disponibilizados para depuração.
+* demonstração Execute waagent como um daemon para gerenciar a interação com a plataforma. Esse argumento é especificado para waagent no script de inicialização de waagent.
+* Comece Executar waagent como um processo em segundo plano
 
 ## <a name="configuration"></a>Configuração
 Um arquivo de configuração (/ etc/waagent.conf) controla as ações de waagent. A seguir mostra um arquivo de configuração de exemplo:
@@ -344,6 +343,6 @@ As Imagens de Nuvem do Ubuntu utilizam [cloud-init](https://launchpad.net/ubuntu
 
 * Para mais informações, consulte os seguintes recursos para configurar o ponto de montagem do disco de recurso e o espaço de troca nas Imagens de Nuvem do Ubuntu durante o provisionamento:
   
-  * [Ubuntu Wiki: Configurar partições de troca](https://go.microsoft.com/fwlink/?LinkID=532955&clcid=0x409)
+  * [Ubuntu Wiki: Configurar partições de permuta](https://go.microsoft.com/fwlink/?LinkID=532955&clcid=0x409)
   * [Injetando dados personalizados em uma Máquina Virtual do Azure](../windows/classic/inject-custom-data.md)
 

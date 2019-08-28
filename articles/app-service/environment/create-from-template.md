@@ -9,17 +9,16 @@ ms.assetid: 6eb7d43d-e820-4a47-818c-80ff7d3b6f8e
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/13/2017
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: bdf722ffa7a7c499ff256392886e0f229f27c7a5
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: bf66a9e9aeee859953b4e1e2021a385491c6298e
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66137088"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70069652"
 ---
 # <a name="create-an-ase-by-using-an-azure-resource-manager-template"></a>Criar um ASE usando um modelo do Azure Resource Manager
 
@@ -29,7 +28,7 @@ ms.locfileid: "66137088"
 
 Ambientes do Serviço de Aplicativo do Azure (ASEs) podem ser criados com um ponto de extremidade acessível pela Internet ou um ponto de extremidade em um endereço interno na rede virtual (VNet) do Azure. Quando criado com um ponto de extremidade interno, esse ponto de extremidade é fornecido por um componente do Azure chamado ILB (balanceador de carga interno). O ASE em um endereço IP interno é chamado de um ASE ILB. O ASE com um ponto de extremidade público é chamado de um ASE externo. 
 
-Um ASE pode ser criado usando o portal do Azure ou um modelo do Azure Resource Manager. Este artigo explica as etapas e a sintaxe que você precisa para criar um ASE Externo ou um ASE ILB com modelos do Resource Manager. Para saber como criar uma ASE no portal do Azure, consulte [Fazer um ASE externo][MakeExternalASE] ou [Fazer um ASE ILB][MakeILBASE].
+Um ASE pode ser criado usando o portal do Azure ou um modelo do Azure Resource Manager. Este artigo explica as etapas e a sintaxe que você precisa para criar um ASE Externo ou um ASE ILB com modelos do Resource Manager. Para saber como criar um ASE no portal do Azure, consulte [fazer um ase externo][MakeExternalASE] ou [fazer um ase ILB][MakeILBASE].
 
 Ao criar um ASE no portal do Azure, você pode criar sua VNet ao mesmo tempo ou escolher uma VNet pré-existente na qual implantar. Ao criar um ASE com base em um modelo, você deve começar com: 
 
@@ -49,9 +48,9 @@ Para automatizar a criação do ASE:
 
 
 ## <a name="create-the-ase"></a>Criar o ASE
-Um modelo do Resource Manager que cria um ASE e seu arquivo de parâmetros associado está disponível [no exemplo][quickstartasev2create] no GitHub.
+Um modelo do Resource Manager que cria um ASE e seu arquivo de parâmetros associado está disponível [em um exemplo][quickstartasev2create] no github.
 
-Se você quiser fazer uma ASE ILB, use esses [exemplos][quickstartilbasecreate] do modelo do Resource Manager. Eles atendem a esse caso de uso. A maioria dos parâmetros no arquivo *azuredeploy.parameters.json* é comum à criação de ASEs ILB e ASEs Externos. A lista a seguir chama parâmetros de anotação especial ou que são exclusivos, quando você cria um ASE ILB:
+Se você quiser fazer um ASE ILB, use estes [exemplos][quickstartilbasecreate]de modelo do Resource Manager. Eles atendem a esse caso de uso. A maioria dos parâmetros no arquivo *azuredeploy.parameters.json* é comum à criação de ASEs ILB e ASEs Externos. A lista a seguir chama parâmetros de anotação especial ou que são exclusivos, quando você cria um ASE ILB:
 
 * *internalLoadBalancingMode*: Na maioria dos casos, define para 3, o que significa que o tráfego HTTP/HTTPS nas portas 80/443 e as portas do canal de dados/controle atendidas pelo serviço FTP no ASE serão associados a um endereço interno da rede virtual alocada do ILB. Se essa propriedade é definida como 2, somente as portas relacionadas de serviço FTP (canais de controle e de dados) estão associadas a um endereço ILB. O tráfego HTTP/HTTPS permanece no VIP público.
 * *dnsSuffix*: Esse parâmetro define o domínio raiz padrão atribuído ao ASE. A variação pública do Serviço de Aplicativo do Azure, o domínio de raiz padrão para todos os aplicativos Web, é *azurewebsites.net*. Como um ASE ILB é interno na rede virtual do cliente, não faz sentido usar o domínio-raiz padrão do serviço público. Em vez disso, um ASE ILB deve ter um domínio de raiz padrão que faça sentido para uso dentro da rede virtual interna da empresa. Por exemplo, a Contoso Corporation pode usar um domínio raiz padrão *internal-contoso.com* para aplicativos que se destinam a serem resolvidos e acessados apenas na rede virtual da Contoso. 
@@ -87,7 +86,7 @@ Use o seguinte snippet de código do PowerShell para:
 * Converter o arquivo. pfx em uma cadeia de caracteres codificada em base64.
 * Salvar a cadeia de caracteres codificada em base64 em um arquivo separado. 
 
-Este código do PowerShell para a codificação de base64 foi adaptado do [Blog de Scripts do PowerShell][examplebase64encoding]:
+Este código do PowerShell para codificação Base64 foi adaptado do [blog scripts do PowerShell][examplebase64encoding]:
 
 ```powershell
 $certificate = New-SelfSignedCertificate -certstorelocation cert:\localmachine\my -dnsname "*.internal-contoso.com","*.scm.internal-contoso.com"
@@ -103,12 +102,12 @@ $fileContentEncoded = [System.Convert]::ToBase64String($fileContentBytes)
 $fileContentEncoded | set-content ($fileName + ".b64")
 ```
 
-Depois que o certificado SSL for gerado com êxito e convertido em uma cadeia de caracteres codificada em base64, use o modelo do Resource Manager de exemplo para [Configurar o certificado SSL padrão][quickstartconfiguressl] no GitHub. 
+Depois que o certificado SSL for gerado e convertido com êxito em uma cadeia de caracteres codificada em base64, use o modelo do Resource Manager de exemplo [Configurar o certificado SSL padrão][quickstartconfiguressl] no github. 
 
 Os parâmetros no arquivo *azuredeploy.parameters.json* estão listados abaixo:
 
 * *appServiceEnvironmentName*: o nome do ASE ILB que está sendo configurado.
-* *existingAseLocation*: cadeia de caracteres de texto que contém a região do Azure em que o ASE ILB foi implantado.  Por exemplo:  "Centro-Sul dos EUA".
+* *existingAseLocation*: cadeia de caracteres de texto que contém a região do Azure em que o ASE ILB foi implantado.  Por exemplo: "Centro-Sul dos EUA".
 * *pfxBlobString*: A representação de cadeia de caracteres codificada em base 64 do arquivo .pfx. Use o snippet de código mostrado anteriormente e copie a cadeia de caracteres contida em "exportedcert.pfx.b64". Cole-o como o valor de atributo *pfxBlobString*.
 * *password*: a senha usada para proteger o arquivo .pfx.
 * *certificateThumbprint*: A impressão digital do certificado. Se você recuperar esse valor do PowerShell (por exemplo, *$certificate.Thumbprint* do snippet de código anterior), poderá usar o valor como estiver. Se você copiar o valor da caixa de diálogo Certificado Windows, lembre-se de retirar os espaços estranhos. O *certificateThumbprint* deve ser semelhante a: AF3143EB61D43F6727842115BB7F17BBCECAECAE.
@@ -163,9 +162,9 @@ O Ambiente do Serviço de Aplicativo tem duas versões: ASEv1 e ASEv2. As inform
 
 No ASEv1, você gerencia todos os recursos manualmente. Isso inclui os front-ends, as funções de trabalho e os endereços IP usados para o SSL baseado em IP. Antes de poder escalar horizontalmente o plano do Serviço de Aplicativo, primeiro você deve escalar horizontalmente o pool de trabalho que você deseja hospedar.
 
-O ASEv1 usa um modelo de preço diferente do ASEv2. No ASEv1, você paga por cada vCPU alocado. Isso inclui os vCPUs que são usados para front-ends ou funções de trabalho que não hospedam nenhuma carga de trabalho. No ASEv1, o tamanho máximo de escala padrão de um ASE é de 55 hosts no total. Isso inclui funções de trabalho e front-ends. Uma vantagem do ASEv1 é que ele pode ser implantado em uma rede virtual clássica, bem como em uma rede virtual do Resource Manager. Para saber mais sobre o ASEv1, consulte [Introdução ao Ambiente do Serviço de Aplicativo v1][ASEv1Intro].
+O ASEv1 usa um modelo de preço diferente do ASEv2. No ASEv1, você paga por cada vCPU alocado. Isso inclui os vCPUs que são usados para front-ends ou funções de trabalho que não hospedam nenhuma carga de trabalho. No ASEv1, o tamanho máximo de escala padrão de um ASE é de 55 hosts no total. Isso inclui funções de trabalho e front-ends. Uma vantagem do ASEv1 é que ele pode ser implantado em uma rede virtual clássica, bem como em uma rede virtual do Resource Manager. Para saber mais sobre o ASEv1, consulte [introdução ao ambiente do serviço de aplicativo v1][ASEv1Intro].
 
-Para criar um ASEv1 usando um modelo do Resource Manager, consulte [Criar um ASE v1 ILB com um modelo do Resource Manager][ILBASEv1Template].
+Para criar um ASEv1 usando um modelo do Resource Manager, confira [criar um ase do ILB v1 com um modelo do Resource Manager][ILBASEv1Template].
 
 
 <!--Links-->

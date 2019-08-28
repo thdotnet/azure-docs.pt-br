@@ -11,16 +11,15 @@ ms.assetid: 228b697b-3950-49f5-84bb-283bb56621b1
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
-ms.devlang: na
 ms.topic: article
 ms.date: 03/30/2017
 ms.author: kasing
-ms.openlocfilehash: 63e1ad044204bf7695d274fa46f06523fd9d460f
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 2b5d218812878db6fb110c043afffd2f9a2d344d
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67720270"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70102669"
 ---
 # <a name="community-tools-to-migrate-iaas-resources-from-classic-to-azure-resource-manager"></a>Ferramentas da comunidade para migrar recursos de IaaS do clássico para o Azure Resource Manager
 Este artigo cataloga as ferramentas que foram fornecidas pela comunidade para auxiliar com a migração dos recursos de IaaS do modelo de implantação clássico para o modelo de implantação do Azure Resource Manager.
@@ -42,7 +41,7 @@ Trata-se de uma coleção de ferramentas auxiliares criadas como parte de migra�
 [Link para a documentação da ferramenta](https://github.com/Azure/classic-iaas-resourcemanager-migration/tree/master/AsmToArmMigrationApiToolset)
 
 ## <a name="migaz"></a>migAz
-migAz é uma opção adicional para migrar um conjunto completo de recursos de IaaS clássicos para recursos de IaaS do Azure Resource Manager. A migração pode ocorrer dentro da mesma assinatura ou entre assinaturas diferentes e tipos de assinatura (ex: Assinaturas de CSP).
+migAz é uma opção adicional para migrar um conjunto completo de recursos de IaaS clássicos para recursos de IaaS do Azure Resource Manager. A migração pode ocorrer na mesma assinatura ou entre diferentes assinaturas e tipos de assinatura (por exemplo: Assinaturas do CSP).
 
 [Link para a documentação da ferramenta](https://github.com/Azure/migAz)
 

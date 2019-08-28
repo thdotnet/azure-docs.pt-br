@@ -9,12 +9,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 12/13/2018
 ms.author: gwallace
-ms.openlocfilehash: 0627361fdd4f94a329b08b184dbd542e1927af39
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 19aa0877c7c37083a6206e094aced40542d0ef72
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67871920"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70092678"
 ---
 # <a name="use-linux-diagnostic-extension-to-monitor-metrics-and-logs"></a>Use a Extensão de Diagnóstico Linux para monitorar as métricas e os logs
 
@@ -135,9 +135,7 @@ storageAccountSasToken | Um [Token de SAS de conta](https://azure.microsoft.com/
 mdsdHttpProxy | (opcional) As informações de proxy de HTTP necessárias para habilitar a extensão para se conectar ao ponto de extremidade e à conta de armazenamento especificados.
 sinksConfig | (opcional) Detalhes de destinos alternativos para os quais as métricas e os eventos podem ser entregues. Os detalhes específicos de cada coletor de dados compatível com a extensão são abordados nas seções a seguir.
 
-
-> [!NOTE]
-> Ao implantar a extensão com um modelo de implantação do Azure, a conta de armazenamento e o token SAS devem ser criados com antecedência e, em seguida, passados para o modelo. Você não pode implantar uma VM, uma conta de armazenamento e configurar a extensão em um único modelo. Atualmente não há suporte para a criação de um token SAS dentro de um modelo.
+Para obter um token SAS em um modelo do Resource Manager, use a função **listAccountSas** . Para obter um modelo de exemplo, consulte [exemplo de função de lista](../../azure-resource-manager/resource-group-template-functions-resource.md#list-example).
 
 Você pode facilmente construir o token de SAS necessário por meio do Portal do Azure.
 
@@ -316,9 +314,9 @@ type | Identifica o provedor real da métrica.
 class | Junto com "counter", identifica a métrica específica dentro do namespace do provedor.
 contador | Junto com "class", identifica a métrica específica dentro do namespace do provedor.
 counterSpecifier | Identifica a métrica específica dentro do namespace de Métricas do Azure.
-condition | (opcional) Seleciona uma instância específica do objeto ao qual a métrica se aplica ou seleciona a agregação em todas as instâncias desse objeto. Para saber mais, confira as definições de métricas `builtin`.
+condição | (opcional) Seleciona uma instância específica do objeto ao qual a métrica se aplica ou seleciona a agregação em todas as instâncias desse objeto. Para saber mais, confira as definições de métricas `builtin`.
 sampleRate | O intervalo IS 8601 que define a taxa na qual as amostras brutas para esta métrica são coletados. Se não estiver definido, o intervalo de coleta será definido pelo valor de [sampleRateInSeconds](#ladcfg). A menor taxa de amostra com suporte é de 15 segundos (PT15S).
-unit | Deve ser uma destas cadeias de caracteres: "Count", "Bytes", "Seconds", "Percent", "CountPerSecond", "BytesPerSecond", "Millisecond". Define a unidade para a métrica. Os consumidores dos dados coletados esperam que os valores de dados coletados correspondam a essa unidade. O LAD ignora esse campo.
+unidade | Deve ser uma destas cadeias de caracteres: "Count", "Bytes", "Seconds", "Percent", "CountPerSecond", "BytesPerSecond", "Millisecond". Define a unidade para a métrica. Os consumidores dos dados coletados esperam que os valores de dados coletados correspondam a essa unidade. O LAD ignora esse campo.
 displayName | O rótulo (no idioma especificado pela configuração da localidade associada) a ser anexado a esses dados nas Métricas do Azure. O LAD ignora esse campo.
 
 O counterSpecifier é um identificador arbitrário. Os consumidores de métricas, como o gráfico do Portal do Azure e o recurso de alerta, usam o counterSpecifier como a "chave" que identifica uma métrica ou instância de uma métrica. Para as métricas `builtin`, é recomendável usar valores counterSpecifier que começam com `/builtin/`. Se você estiver coletando a instância específica de uma métrica, recomendamos anexar o identificador da instância para o valor de counterSpecifier. Alguns exemplos:

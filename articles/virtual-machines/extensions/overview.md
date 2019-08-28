@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: roiyz
-ms.openlocfilehash: 3a8c571d3c6bb55fdd8b2d097b71b83afab5ca00
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 8c63df2d9a7e398fb9b67edd3b57a3ba06cbe7a1
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67705913"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70084319"
 ---
 # <a name="azure-virtual-machine-extensions-and-features"></a>Extensões e recursos da máquina virtual do Azure
 Extensões de máquina virtual do Azure (VM) são pequenos aplicativos que fornecem as tarefas de configuração e automação de pós-implantação em VMs do Azure, você pode usar imagens existentes e personalizá-las como parte de suas implantações, você saindo da empresa de criação de imagem personalizada.
@@ -54,6 +53,6 @@ As extensões instalam aplicativos, como os aplicativos, há alguns requisitos, 
 ## <a name="next-steps"></a>Próximas etapas
 * Para obter mais informações sobre como as extensões e agente do Linux funcionam, consulte [extensões de VM do Azure e recursos para Linux](features-linux.md).
 * Para obter mais informações sobre como as extensões e agente do Windows funcionam, consulte [extensões de VM do Azure e recursos para Windows](features-windows.md).  
-* Para instalar o agente convidado do Windows, consulte [visão geral do agente de máquina Virtual do Azure Windows](agent-windows.md).  
-* Para instalar o agente do Linux, consulte [visão geral do agente de máquina Virtual Linux do Azure](agent-linux.md).  
+* Para instalar o agente convidado do Windows, consulte [visão geral do agente de máquina virtual do Windows do Azure](agent-windows.md).  
+* Para instalar o agente do Linux, consulte [visão geral do agente de máquina virtual Linux do Azure](agent-linux.md).  
 

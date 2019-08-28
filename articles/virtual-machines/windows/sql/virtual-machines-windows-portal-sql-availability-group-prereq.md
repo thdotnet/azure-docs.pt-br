@@ -9,19 +9,18 @@ editor: monicar
 tags: azure-service-management
 ms.assetid: c492db4c-3faa-4645-849f-5a1a663be55a
 ms.service: virtual-machines-sql
-ms.devlang: na
 ms.custom: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 03/29/2018
 ms.author: mikeray
-ms.openlocfilehash: 1d0f3bfa03eb4bafdd10222e28782c318848b7f7
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 62232283fb0b2f499601615702fef3292bb88317
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60592168"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100730"
 ---
 # <a name="complete-the-prerequisites-for-creating-always-on-availability-groups-on-azure-virtual-machines"></a>Conclua os pré-requisitos para a criação de grupos de disponibilidade AlwaysOn em máquinas virtuais do Azure
 
@@ -81,11 +80,11 @@ Para criar a rede virtual:
 
     A tabela a seguir mostra as configurações para a rede virtual:
 
-   | **Campo** | Value |
+   | **Campo** | Valor |
    | --- | --- |
    | **Nome** |autoHAVNET |
    | **Espaço de endereço** |10.33.0.0/24 |
-   | **Nome da sub-rede** |Administrador |
+   | **Nome da sub-rede** |Admin |
    | **Intervalo de endereços da sub-rede** |10.33.0.0/29 |
    | **Assinatura** |Especifique a assinatura que você pretende usar. **Assinatura** estará em branco se você tiver apenas uma assinatura. |
    | **Grupo de recursos** |Escolha **Usar existente** e escolha o nome do grupo de recursos. |
@@ -121,7 +120,7 @@ A nova rede virtual tem uma sub-rede, chamada **Admin**. Os controladores de dom
 
 A tabela a seguir resume as definições de configuração de rede:
 
-| **Campo** | Value |
+| **Campo** | Valor |
 | --- | --- |
 | **Nome** |**autoHAVNET** |
 | **Espaço de endereço** |Este valor depende dos espaços de endereço disponíveis em sua assinatura. Um valor típico é 10.0.0.0/16. |
@@ -158,7 +157,7 @@ Depois de criar a rede, sub-redes, conjuntos de disponibilidade e um balanceador
 ### <a name="create-virtual-machines-for-the-domain-controllers"></a>Criar máquinas virtuais para os controladores de domínio
 Para criar e configurar os controladores de domínio, retorne para o grupo de recursos **SQL-HA-RG** .
 
-1. Clique em **Adicionar**. 
+1. Clique em **Adicionar** . 
 2. Digite **Windows Server 2016 Datacenter**.
 3. Clique em **Windows Server 2016 Datacenter**. Em **Windows Server 2016 Datacenter**, verifique se o modelo de implantação está definido como **Gerenciador de Recursos** e, em seguida, clique em **Criar**. 
 
@@ -174,7 +173,7 @@ Repita as etapas anteriores para criar duas máquinas virtuais. Nomeie as duas m
 
 A tabela a seguir mostra as configurações para esses dois computadores:
 
-| **Campo** | Value |
+| **Campo** | Valor |
 | --- | --- |
 | **Nome** |Primeiro controlador de domínio: *ad-primary-dc*.</br>Segundo controlador de domínio *ad-secondary-dc*. |
 | **Tipo de disco da VM** |SSD |
@@ -464,7 +463,7 @@ Para adicionar os Recursos de Clustering de Failover, realize as etapas a seguir
 Repita essas etapas na outra VM do SQL Server.
 
   >[!NOTE]
-  > Nesta etapa, junto com, na verdade, ingressar em VMs do SQL Server ao cluster de failover, agora pode ser automatizada com [da CLI de VM do Azure SQL](virtual-machines-windows-sql-availability-group-cli.md) e [modelos de início rápido do Azure](virtual-machines-windows-sql-availability-group-quickstart-template.md).
+  > Essa etapa, juntamente com a junção das VMs de SQL Server para o cluster de failover, agora pode ser automatizada com a [CLI de VM do SQL do Azure](virtual-machines-windows-sql-availability-group-cli.md) e os [modelos de início rápido do Azure](virtual-machines-windows-sql-availability-group-quickstart-template.md).
 
 
 ## <a name="a-nameendpoint-firewall-configure-the-firewall-on-each-sql-server-vm"></a><a name="endpoint-firewall"> Configurar o firewall em cada VM do SQL Server

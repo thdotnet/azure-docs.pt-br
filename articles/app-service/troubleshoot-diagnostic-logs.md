@@ -10,17 +10,16 @@ ms.assetid: c9da27b2-47d4-4c33-a3cb-1819955ee43b
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/06/2016
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: c21a923f06a768c0a9a0f2843a24583df7a7821d
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: af6d8b61c5d49ae219e90513abb93185f957222e
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67059654"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70074067"
 ---
 # <a name="enable-diagnostics-logging-for-apps-in-azure-app-service"></a>Habilitar log de diagnósticos para aplicativos no Serviço de Aplicativo do Azure
 ## <a name="overview"></a>Visão geral
@@ -34,11 +33,11 @@ O Serviço de Aplicativo oferece funcionalidade de diagnóstico para informaçõ
 ### <a name="web-server-diagnostics"></a>Diagnóstico de servidor Web
 Você pode habilitar ou desabilitar os seguintes tipos de logs:
 
-* **Detalhadas no log de erros** -informações detalhadas para qualquer solicitação que resulte em código de status HTTP 400 ou superior. Pode conter informações que podem ajudar a determinar por que o servidor retornou o código de erro. Um arquivo HTML é gerado para cada erro no sistema de arquivos do aplicativo e até 50 erros (arquivos) são mantidos. Quando o número de arquivos HTML exceder 50, os arquivos de 26 mais antigos são excluídos automaticamente.
-* **Falha no Rastreamento de Solicitação** - informações detalhadas sobre solicitações com falha, incluindo um rastreamento dos componentes IIS usados para processar a solicitação e o tempo levado em cada componente. Isso é útil se você quiser melhorar o desempenho do site ou isolar um erro HTTP específico. Uma pasta é gerada para cada erro no sistema de arquivos do aplicativo. Políticas de retenção de arquivo são o mesmo que o erro detalhado log acima.
+* **Log de erros detalhado** -informações detalhadas para qualquer solicitação que resulte no código de status HTTP 400 ou superior. Pode conter informações que podem ajudar a determinar por que o servidor retornou o código de erro. Um arquivo HTML é gerado para cada erro no sistema de arquivos do aplicativo e até 50 erros (arquivos) são mantidos. Quando o número de arquivos HTML exceder 50, os 26 arquivos mais antigos são excluídos automaticamente.
+* **Falha no Rastreamento de Solicitação** - informações detalhadas sobre solicitações com falha, incluindo um rastreamento dos componentes IIS usados para processar a solicitação e o tempo levado em cada componente. Isso é útil se você quiser melhorar o desempenho do site ou isolar um erro HTTP específico. Uma pasta é gerada para cada erro no sistema de arquivos do aplicativo. As políticas de retenção de arquivo são as mesmas do log de erros detalhado acima.
 * **Registro em Log de Servidor Web** - informações sobre transações HTTP usando o [formato de arquivo de log estendido W3C](/windows/desktop/Http/w3c-logging). É útil para determinar as métricas gerais do site, como o número de solicitações manipuladas e quantas solicitações existem vindas de um endereço IP específico.
 
-### <a name="application-diagnostics"></a>Diagnóstico de aplicativo
+### <a name="application-diagnostics"></a>Diagnóstico de aplicativos
 O diagnóstico de aplicativo permite que você capture informações produzidas por um aplicativo da Web. Os aplicativos ASP.NET podem usar a classe [Rastreamento.de.Diagnóstico.de.Sistema](/dotnet/api/system.diagnostics.trace) para registrar informações no log de diagnóstico do aplicativo. Por exemplo:
 
     System.Diagnostics.Trace.TraceError("If you're seeing this, something bad happened");
@@ -93,7 +92,7 @@ Enquanto ambos os locais de armazenamento fornecem as mesmas informações bási
 > As informações armazenadas no **armazenamento de blobs** só podem ser acessadas usando um cliente de armazenamento ou um aplicativo que possa trabalhar diretamente com esses sistemas de armazenamento. Por exemplo, o Visual Studio 2013 contém um Gerenciador de Armazenamento que pode ser usado para explorar o armazenamento de blobs, e o HDInsight pode acessar os dados armazenados no armazenamento de blobs. Você também pode gravar um aplicativo que acesse o Armazenamento do Azure usando um dos [SDKs do Azure](https://azure.microsoft.com/downloads/).
 >
 
-## <a name="download"></a> Como baixar logs
+## <a name="download"></a> Como Logs de downloads
 Informações de diagnóstico armazenadas no sistema de arquivos do aplicativo podem ser diretamente acessadas usando FTP. Além disso, pode ser baixado como um arquivo Zip usando a CLI do Azure.
 
 A estrutura de diretórios onde os logs estão armazenados é a seguinte:
@@ -115,7 +114,7 @@ Para baixar os arquivos de log usando a Interface da Linha de Comando do Azure, 
 
     az webapp log download --resource-group resourcegroupname --name appname
 
-Este comando salva os logs para o aplicativo chamado 'appname' em um arquivo chamado **webapp_logs.zip** no diretório atual.
+Esse comando salva os logs do aplicativo denominado ' AppName ' em um arquivo chamado **webapp_logs. zip** no diretório atual.
 
 > [!NOTE]
 > Se você não instalou a CLI do Azure ou não a configurou para usar sua Assinatura do Azure, consulte [Como usar a CLI do Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest).
@@ -189,15 +188,15 @@ Ao registrar o log no armazenamento de blob, os dados serão armazenados em um f
 
 | Nome da propriedade | Valor/formato |
 | --- | --- |
-| Data |A data e hora em que o evento ocorreu |
+| Date |A data e hora em que o evento ocorreu |
 | Nível |Nível de evento (por exemplo, erro, aviso, informação) |
 | ApplicationName |O nome do aplicativo |
-| InstanceId |Instância do aplicativo em que o evento ocorreu |
+| Id da Instância |Instância do aplicativo em que o evento ocorreu |
 | EventTickCount |A data e hora em que o evento ocorreu, em formato de escala (maior precisão) |
 | EventId |A ID deste evento<p><p>terá como padrão 0 caso nenhuma seja especificada |
 | Pid |ID do Processo |
 | Tid |A ID do thread que produziu o evento |
-| Message |A mensagem com detalhes do evento |
+| Mensagem |A mensagem com detalhes do evento |
 
 Os dados armazenados em um blob deverão ser semelhantes ao seguinte exemplo:
 
@@ -215,7 +214,7 @@ Os rastreamentos de solicitações com falha são armazenados em arquivos XML ch
 ![solicitação falha visualizada no navegador](./media/web-sites-enable-diagnostic-log/tws-failedrequestinbrowser.png)
 
 > [!NOTE]
-> É uma maneira fácil de exibir os rastreamentos de solicitação com falha formatada navegar até a página do seu aplicativo no portal. No menu à esquerda, selecione **diagnosticar e solucionar problemas**, em seguida, procure **falha os Logs de rastreamento de solicitação**, em seguida, clique no ícone para procurar e exibir o rastreamento que você deseja.
+> Uma maneira fácil de exibir os rastreamentos de solicitação com falha formatado é navegar até a página do aplicativo no Portal. No menu à esquerda, selecione **diagnosticar e resolver problemas**, em seguida, procure **logs de rastreamento de solicitação com falha**, clique no ícone para procurar e exibir o rastreamento desejado.
 >
 
 ### <a name="detailed-error-logs"></a>Logs de erro do aplicativo

@@ -9,22 +9,21 @@ editor: ''
 ms.service: app-service
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: multiple
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: mahender
-ms.openlocfilehash: 87bdfcc827155e5dd0a02ffb1640bf7e9cd4e479
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 1d40f1992a5c68872de6e0fa2fc04a1a25abe674
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60859117"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70098600"
 ---
 # <a name="authentication-and-authorization-in-azure-app-service-for-mobile-apps"></a>Autenticação e autorização no Serviço de Aplicativo do Azure para aplicativos móveis
 
 Este artigo descreve como a autenticação e a autorização funcionam ao desenvolver aplicativos móveis nativos com um back-end do Serviço de Aplicativo. O Serviço de Aplicativo fornece autenticação e autorização integradas para que os aplicativos móveis possam conectar usuários sem alterar nenhum código no Serviço de Aplicativo. Ele fornece uma maneira fácil de proteger o aplicativo e trabalhar com dados por usuário. 
 
-Este artigo concentra-se no desenvolvimento de aplicativos para dispositivos móveis. Para início rápido com autenticação e autorização do Serviço de Aplicativo para o aplicativo móvel, consulte um dos seguintes tutoriais [Adicionar autenticação ao aplicativo iOS][iOS] (ou [Android], [Windows], [Xamarin.iOS], [Xamarin.Android], [Xamarin.Forms] ou [Cordova]). 
+Este artigo concentra-se no desenvolvimento de aplicativos para dispositivos móveis. Para começar rapidamente com a autenticação e autorização do serviço de aplicativo para seu aplicativo móvel, consulte um dos tutoriais a seguir [Adicionar autenticação ao seu aplicativo IOS][iOS] (ou [Android], [Windows], [Xamarin.iOS], [Xamarin.Android], [Xamarin.Forms]ou [Cordova]). 
 
 Para obter informações sobre como a autenticação e a autorização funcionam no Serviço de Aplicativo, consulte [Autenticação e autorização no Serviço de Aplicativo do Azure](../app-service/overview-authentication-authorization.md).
 
@@ -57,19 +56,19 @@ Para obter mais informações sobre o fluxo de autenticação, consulte [Fluxo d
 
 Os tutoriais a seguir mostram como adicionar autenticação aos clientes móveis usando o [fluxo direcionado ao servidor](../app-service/overview-authentication-authorization.md#authentication-flow):
 
-* [Adicionar autenticação ao seu aplicativo iOS][iOS]
-* [Adicionar autenticação ao aplicativo do Android][Android]
+* [Adicione autenticação ao seu aplicativo do iOS][iOS]
+* [Adicionar autenticação ao seu aplicativo Android][Android]
 * [Adicionar autenticação ao seu aplicativo do Windows][Windows]
 * [Adicionar autenticação ao aplicativo Xamarin.iOS][Xamarin.iOS]
-* [Adicionar autenticação ao aplicativo Xamarin.Android][Xamarin.Android]
-* [Adicionar autenticação ao aplicativo Xamarin.Forms][Xamarin.Forms]
-* [Adicionar a Autenticação ao aplicativo Cordova][Cordova]
+* [Adicione autenticação ao aplicativo Xamarin.Android][Xamarin.Android]
+* [Adicionar autenticação ao aplicativo xamarin. Forms][Xamarin.Forms]
+* [Adicionar autenticação ao seu aplicativo Cordova][Cordova]
 
 Use os recursos a seguir se quiser usar o [fluxo direcionado ao cliente](../app-service/overview-authentication-authorization.md#authentication-flow) para o Azure Active Directory:
 
-* [Use a Biblioteca de Autenticação do Active Directory para iOS][ADAL-iOS]
-* [Use a Biblioteca de Autenticação do Active Directory para Android][ADAL-Android]
-* [Use a Biblioteca de Autenticação do Active Directory para Windows e Xamarin][ADAL-dotnet]
+* [Usar o Biblioteca de Autenticação do Active Directory para iOS][ADAL-iOS]
+* [Usar o Biblioteca de Autenticação do Active Directory para Android][ADAL-Android]
+* [Usar o Biblioteca de Autenticação do Active Directory para Windows e Xamarin][ADAL-dotnet]
 
 Use os recursos a seguir se quiser usar o [fluxo direcionado ao cliente](../app-service/overview-authentication-authorization.md#authentication-flow) para o Facebook:
 

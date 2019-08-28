@@ -9,18 +9,17 @@ editor: ''
 tags: azure-resource-manager,azure-service-management
 ms.assetid: 1a747363-0cc5-4ba3-9be7-084dfeb04651
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/01/2016
 ms.author: cynthn
-ms.openlocfilehash: 086b36b347f214e1e9cdf44e4fb5a29fe501fa8b
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 7fc8cb7c07dd27cd42dc4c6a7e0a576f0efe04e0
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67667115"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70091715"
 ---
 # <a name="install-and-configure-postgresql-on-azure"></a>Instalar e configurar o PostgreSQL no Azure
 PostgreSQL é um banco de dados avançado de código aberto semelhante ao Oracle e DB2. Ele inclui recursos corporativos como conformidade total com ACID, processamento transacional confiável e controle de simultaneidade de várias versões. Também oferece suporte a padrões como ANSI SQL e SQL/MED (inclusive wrappers de dados externos para Oracle, MySQL, MongoDB e muitos outros). Ele é altamente extensível com suporte para mais de 12 idiomas de procedimento, índices GIN e GiST, dados espaciais e vários recursos como NoSQL para aplicativos JSON ou de chave-valor.
@@ -232,7 +231,7 @@ Isso exclui todas as informações na linha "John". A saída é:
 ![imagem](./media/postgresql-install/no8.png)
 
 ### <a name="update-data-in-a-table"></a>Atualizar dados em uma tabela
-Use o seguinte comando para atualizar dados em uma tabela. Por esse motivo, Sandy confirmou que eles são participar, portanto, vamos alterar o RSVP de "N" para "Y":
+Use o seguinte comando para atualizar dados em uma tabela. Para isso, arenoso confirmou que eles estão participando, portanto, alteraremos o RSVP de "N" para "Y":
 
      UPDATE potluck set confirmed = 'Y' WHERE name = 'Sandy';
 

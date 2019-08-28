@@ -6,16 +6,15 @@ author: apwestgarth
 manager: stefsch
 ms.assetid: ''
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 11/28/2017
 ms.author: anwestg
-ms.openlocfilehash: aae6bc41f3c2fc2c5f8cf63d07f6b4d79bb3564a
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 0fbc76f3cb3fea84347ef55e40e1b2bed9b98152
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "61022689"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70085505"
 ---
 # <a name="install-the-azure-functions-runtime-preview-2"></a>Instale a versão prévia 2 do Azure Functions Runtime
 
@@ -104,13 +103,13 @@ Para concluir a instalação do Azure Functions Runtime, você deverá concluir 
 
 Para criar sua primeira função na versão prévia do Azure Functions Runtime
 
-1. Navegue até a **Portal do Azure Functions Runtime** como `https://<machinename>.<domain>` por exemplo `https://mycomputer.mydomain.com`.
+1. Navegue até o **portal** de Azure Functions Runtime `https://<machinename>.<domain>` como por `https://mycomputer.mydomain.com`exemplo.
 
 1. Você será solicitado a **Entrar**; se implantado em um domínio, use seu nome de usuário da conta do domínio e a senha. Caso contrário, use seu nome de usuário de conta local e a senha para fazer logon no portal.
 
     ![Logon do portal da versão prévia do Azure Functions Runtime][14]
 
-1. Para criar aplicativos de funções, você deve criar uma assinatura.  No canto superior esquerdo do portal, clique no **+** opção ao lado das assinaturas.
+1. Para criar aplicativos de funções, você deve criar uma assinatura.  No canto superior esquerdo do portal, clique na **+** opção ao lado das assinaturas.
 
     ![Assinaturas do portal de versão prévia do Azure Functions Runtime][15]
 

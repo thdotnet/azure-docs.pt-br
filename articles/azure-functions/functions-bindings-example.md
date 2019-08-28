@@ -1,25 +1,24 @@
 ---
-title: Exemplo de gatilho e associação de funções do Azure
+title: Exemplo de gatilho e Associação de Azure Functions
 description: Saiba como configurar associações de função do Azure
 services: functions
 documentationcenter: na
 author: craigshoemaker
 manager: gwallace
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: reference
 ms.date: 02/18/2019
 ms.author: cshoe
-ms.openlocfilehash: bced6dc71063b6be68d739ef67fb5ec46c3d1be6
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: d1959792823e04cf34d65ab775ae8c51e741e293
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480429"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70097477"
 ---
-# <a name="azure-functions-trigger-and-binding-example"></a>Exemplo de gatilho e associação de funções do Azure
+# <a name="azure-functions-trigger-and-binding-example"></a>Exemplo de gatilho e Associação de Azure Functions
 
-Este artigo demonstra como configurar uma [gatilho e associações](./functions-triggers-bindings.md) em uma função do Azure.
+Este artigo demonstra como configurar um [gatilho e associações](./functions-triggers-bindings.md) em uma função do Azure.
 
 Suponha que você deseja gravar uma nova linha no Armazenamento de Tabelas do Azure sempre que uma nova mensagem aparece no Armazenamento de Filas do Azure. Esse cenário pode ser implementado usando um gatilho do Armazenamento de Filas do Azure e uma associação de saída do Armazenamento de Tabelas do Azure. 
 
@@ -87,7 +86,7 @@ public class Person
 
 ## <a name="javascript-example"></a>Exemplo de JavaScript
 
-O mesmo *Function. JSON* arquivo pode ser usado com uma função JavaScript:
+O mesmo arquivo *Function. JSON* pode ser usado com uma função JavaScript:
 
 ```javascript
 // From an incoming queue message that is a JSON object, add fields and write to Table Storage
@@ -105,9 +104,9 @@ function generateRandomId() {
 }
 ```
 
-## <a name="class-library-example"></a>Exemplo da biblioteca de classe
+## <a name="class-library-example"></a>Exemplo de biblioteca de classes
 
-Em uma biblioteca de classes, o mesmo gatilho e informações de associação &mdash; nomes de fila e tabela, contas de armazenamento, parâmetros de função para entrada e saída &mdash; é fornecido por atributos em vez de um arquivo function.json. Aqui está um exemplo:
+Em uma biblioteca de classes, o mesmo gatilho e informações de associação &mdash; nomes de fila e tabela, contas de armazenamento, parâmetros de função para entrada e saída &mdash; é fornecido por atributos em vez de um arquivo function.json. Veja um exemplo:
 
 ```csharp
 public static class QueueTriggerTableOutput
@@ -135,9 +134,9 @@ public class Person
 }
 ```
 
-Agora você tem uma função de trabalho que é disparada por uma fila do Azure e envia dados para o armazenamento de tabelas do Azure.
+Agora você tem uma função funcional que é disparada por uma fila do Azure e gera dados para o armazenamento de tabelas do Azure.
 
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
-> [Padrões de expressões de associação de funções do Azure](./functions-bindings-expressions-patterns.md)
+> [Padrões de expressão de associação de Azure Functions](./functions-bindings-expressions-patterns.md)

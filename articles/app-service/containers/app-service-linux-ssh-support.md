@@ -11,17 +11,16 @@ ms.assetid: 66f9988f-8ffa-414a-9137-3a9b15a5573c
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 02/25/2019
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: b54d5003f67a1bd79e1e52eef87df858bc68ade1
-ms.sourcegitcommit: 978e1b8cac3da254f9d6309e0195c45b38c24eb5
+ms.openlocfilehash: fef8a17de4539a1427c269cdc512063d07df195c
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67551906"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70066873"
 ---
 # <a name="ssh-support-for-azure-app-service-on-linux"></a>Suporte de SSH para o Serviço de Aplicativo do Azure no Linux
 
@@ -39,7 +38,7 @@ Você também pode se conectar ao contêiner diretamente do seu computador de de
 
 ## <a name="use-ssh-support-with-custom-docker-images"></a>Use o suporte de SSH com imagens personalizadas do Docker
 
-Ver [Configurar SSH em um contêiner personalizado](configure-custom-container.md#enable-ssh).
+Consulte [Configurar o ssh em um contêiner personalizado](configure-custom-container.md#enable-ssh).
 
 ## <a name="open-ssh-session-from-remote-shell"></a>Abrir sessão SSH de shell remoto
 
@@ -51,7 +50,7 @@ Usando o túnel TCP, você pode criar uma conexão de rede entre o computador de
 
 Para começar, você precisa instalar a [CLI do Azure](/cli/azure/install-azure-cli?view=azure-cli-latest). Para ver como funciona sem instalar a CLI do Azure, abra [Azure Cloud Shell](../../cloud-shell/overview.md). 
 
-Abra uma conexão remota para seu aplicativo usando o comando [criar az webapp remoto-conexão](/cli/azure/ext/webapp/webapp/remote-connection?view=azure-cli-latest#ext-webapp-az-webapp-remote-connection-create). Especificar  _\<id da assinatura >_ ,  _\<nome do grupo >_ e \_ \<app-name > _ para seu aplicativo.
+Abra uma conexão remota para seu aplicativo usando o comando [criar az webapp remoto-conexão](/cli/azure/ext/webapp/webapp/remote-connection?view=azure-cli-latest#ext-webapp-az-webapp-remote-connection-create). \<Especifique \_  _\<a ID da assinatura >_ ,  _\<o nome do grupo >_ e o nome do aplicativo > _ para seu aplicativo.
 
 ```azurecli-interactive
 az webapp create-remote-connection --subscription <subscription-id> --resource-group <resource-group-name> -n <app-name> &

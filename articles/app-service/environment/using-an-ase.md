@@ -9,17 +9,16 @@ ms.assetid: a22450c4-9b8b-41d4-9568-c4646f4cf66b
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/28/2019
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: e9c34d3cfd5ce9bb3a8f9a9072f2843331065100
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: cabefcc53106a53459975fc26513dc59ae7d3372
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66496513"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073204"
 ---
 # <a name="use-an-app-service-environment"></a>Usar um ambiente do Serviço de Aplicativo #
 
@@ -31,11 +30,11 @@ O Ambiente do Serviço de Aplicativo do Azure é uma implantação do Serviço d
 - **Armazenamento**: O armazenamento é usado para hospedar os aplicativos publicados pelo cliente.
 
 > [!NOTE]
-> Há duas versões do Ambiente do Serviço de Aplicativo: ASEv1 e ASEv2. No ASEv1, é necessário gerenciar os recursos antes de usá-los. Para saber como configurar e gerenciar o ASEv1, veja [Configurar um ambiente do Serviço de Aplicativo v1][ConfigureASEv1]. O restante deste artigo concentra-se em ASEv2.
+> Há duas versões do Ambiente do Serviço de Aplicativo: ASEv1 e ASEv2. No ASEv1, é necessário gerenciar os recursos antes de usá-los. Para saber como configurar e gerenciar o ASEv1, consulte [configurar um ambiente do serviço de aplicativo v1][ConfigureASEv1]. O restante deste artigo concentra-se em ASEv2.
 >
 >
 
-Implante um ASE (ASEv1 e ASEv2) com um VIP externo ou interno para o acesso ao aplicativo. A implantação com um VIP externo é geralmente chamada de ASE externo. A versão interna é chamada de ILB ASE, porque ele usa um balanceador de carga interno (ILB). Para saber mais sobre o ASE ILB, veja [Criar e usar um ASE ILB][MakeILBASE].
+Implante um ASE (ASEv1 e ASEv2) com um VIP externo ou interno para o acesso ao aplicativo. A implantação com um VIP externo é geralmente chamada de ASE externo. A versão interna é chamada de ILB ASE, porque ele usa um balanceador de carga interno (ILB). Para saber mais sobre o ASE ILB, confira [criar e usar um ase ILB][MakeILBASE].
 
 ## <a name="create-an-app-in-an-ase"></a>Criar um aplicativo em um ASE ##
 
@@ -44,7 +43,7 @@ Para criar um aplicativo em um ASE, use o mesmo processo usado ao criá-lo norma
 - Em vez de escolher uma localização geográfica na qual implantar o aplicativo, escolha um ASE como a localização.
 - Todos os planos do Serviço de Aplicativo criados em um ASE devem estar em um tipo de preço Isolado.
 
-Se você não tiver um ASE, crie um seguindo as instruções em [Criar um ambiente do Serviço de Aplicativo][MakeExternalASE].
+Se você não tiver um ASE, poderá criar um seguindo as instruções em [criar um ambiente de serviço de aplicativo][MakeExternalASE].
 
 Para criar um aplicativo em um ASE:
 
@@ -92,7 +91,7 @@ Em um ASE, é possível escalar verticalmente até 100 instâncias. Essas 100 in
 
 ## <a name="ip-addresses"></a>Endereços IP ##
 
-O Serviço de Aplicativo tem a capacidade de alocar um endereço IP dedicado a um aplicativo. Essa funcionalidade fica disponível depois de configurar um SSL baseado em IP, conforme descrito em [Associar um certificado SSL personalizado existente Serviço de Aplicativo do Azure][ConfigureSSL]. No entanto, em um ASE, há uma exceção notável. Não é possível adicionar outros endereços IP a serem usados para um SSL baseado em IP em um ILB ASE.
+O Serviço de Aplicativo tem a capacidade de alocar um endereço IP dedicado a um aplicativo. Esse recurso está disponível depois de configurar um SSL baseado em IP, conforme descrito em [associar um certificado SSL personalizado existente ao serviço de Azure app][ConfigureSSL]. No entanto, em um ASE, há uma exceção notável. Não é possível adicionar outros endereços IP a serem usados para um SSL baseado em IP em um ILB ASE.
 
 No ASEv1, você precisa alocar os endereços IP como recursos antes de poder usá-los. No ASEv2, use-o em seu aplicativo assim como faria no Serviço de Aplicativo multilocatário. Sempre há um endereço extra no ASEv2, com até 30 endereços IP. Sempre que você usar um, outro será adicionado, de forma que sempre haja um endereço imediatamente disponível para uso. Um atraso de tempo é necessário para alocar outro endereço IP, o que impede a adição de endereços IP em sucessão rápida.
 
@@ -100,20 +99,20 @@ No ASEv1, você precisa alocar os endereços IP como recursos antes de poder us�
 
 No ASEv2, ao escalar horizontalmente os planos do Serviço de Aplicativo, as funções de trabalho são adicionadas automaticamente para dar suporte a eles. Cada ASE é criado com dois front-ends. Além disso, o front-ends automaticamente dimensionam a uma taxa de um front-end para cada 15 instâncias nos planos do Serviço de Aplicativo. Por exemplo, se você tiver 15 instâncias, terá três front-ends. Se você dimensionar para 30 instâncias, terá quatro front-ends e assim por diante.
 
-Esse número de front-ends deve ser mais do que o suficiente para a maioria dos cenários. No entanto, você pode dimensionar a uma taxa mais rápida. Você pode diminuir a taxa para um front-end para cada cinco instâncias. Há um custo para alterar a taxa. Para saber mais, veja [Preços do Serviço de Aplicativo do Azure][Pricing].
+Esse número de front-ends deve ser mais do que o suficiente para a maioria dos cenários. No entanto, você pode dimensionar a uma taxa mais rápida. Você pode diminuir a taxa para um front-end para cada cinco instâncias. Há um custo para alterar a taxa. Para obter mais informações, consulte [Azure app preço do serviço][Pricing].
 
 Os recursos do front-end são o ponto de extremidade HTTP/HTTPS do ASE. Com a configuração de front-end padrão, o uso de memória por front-end é consistentemente cerca de 60%. Cargas de trabalho de cliente não são executadas em um front-end. O fator chave para um front-end com relação à escala é a CPU, que é controlada principalmente pelo tráfego HTTPS.
 
 ## <a name="app-access"></a>Acesso ao aplicativo ##
 
-Em um ASE externo, o domínio que é usado quando você cria aplicativos é diferente do Serviço de Aplicativo multilocatário. Isso inclui o nome do ASE. Para saber mais sobre como criar um ASE Externo, veja [Criar um ambiente do Serviço de Aplicativo][MakeExternalASE]. O nome de domínio em um ASE Externo é semelhante a *.&lt;asename&gt;.p.azurewebsites.net*. Por exemplo, se o ASE for chamado _external-ase_ e você hospedar um aplicativo chamado _contoso_ nesse ASE, você o acessaria nas seguintes URLs:
+Em um ASE externo, o domínio que é usado quando você cria aplicativos é diferente do Serviço de Aplicativo multilocatário. Isso inclui o nome do ASE. Para obter mais informações sobre como criar um ASE externo, consulte [criar um ambiente do serviço de aplicativo][MakeExternalASE]. O nome de domínio em um ASE Externo é semelhante a *.&lt;asename&gt;.p.azurewebsites.net*. Por exemplo, se o ASE for chamado _external-ase_ e você hospedar um aplicativo chamado _contoso_ nesse ASE, você o acessaria nas seguintes URLs:
 
 - contoso.external-ase.p.azurewebsites.net
 - contoso.scm.external-ase.p.azurewebsites.net
 
-A URL contoso.scm.external-ase.p.azurewebsites.net é usada para acessar o console do Kudu ou para publicar o aplicativo usando a implantação da Web. Para obter informações sobre o console do Kudu, consulte [Console do Kudu para o Serviço de Aplicativo do Azure][Kudu]. O console do Kudu fornece uma interface do usuário da Web para depuração, upload de arquivos, edição de arquivos e muito mais.
+A URL contoso.scm.external-ase.p.azurewebsites.net é usada para acessar o console do Kudu ou para publicar o aplicativo usando a implantação da Web. Para obter informações sobre o console do kudu, consulte [console do kudu para Azure app Service][Kudu]. O console do Kudu fornece uma interface do usuário da Web para depuração, upload de arquivos, edição de arquivos e muito mais.
 
-Em um ASE ILB, você determina o domínio no momento da implantação. Para saber mais sobre como criar um ASE ILB, veja [Criar e usar um ASE ILB][MakeILBASE]. Se você especificar o nome de domínio _ilb-ase.info_, os aplicativos nesse ASE usarão esse domínio durante a criação do aplicativo. Para o aplicativo chamado _contoso_, as URLs são:
+Em um ASE ILB, você determina o domínio no momento da implantação. Para obter mais informações sobre como criar um ASE ILB, consulte [criar e usar um ase ILB][MakeILBASE]. Se você especificar o nome de domínio _ilb-ase.info_, os aplicativos nesse ASE usarão esse domínio durante a criação do aplicativo. Para o aplicativo chamado _contoso_, as URLs são:
 
 - contoso.ilb-ase.info
 - contoso.scm.ilb-ase.info
@@ -128,11 +127,11 @@ Assim como ocorre com o Serviço de Aplicativo multilocatário, em um ASE, é po
 - Operação de arrastar e soltar no console do Kudu.
 - Um IDE como o Visual Studio, Eclipse ou IntelliJ IDEA.
 
-Com um ASE externo, todas essas opções de publicação comportam-se da mesma maneira. Para saber mais, veja [Implantação no Serviço de Aplicativo do Azure][AppDeploy]. 
+Com um ASE externo, todas essas opções de publicação comportam-se da mesma maneira. Para obter mais informações, consulte [Deployment in Azure app Service][AppDeploy]. 
 
-A principal diferença na publicação é em relação a um ASE ILB. Com um ASE ILB, os pontos de extremidade de publicação estão disponíveis apenas por meio do ILB. O ILB está em um IP privado na sub-rede do ASE, na rede virtual. Se você não tiver acesso à rede ao ILB, não poderá publicar nenhum aplicativo nesse ASE. Conforme observado em [Criar e usar um ASE ILB][MakeILBASE], você precisa configurar o DNS para os aplicativos no sistema. Isso inclui o ponto de extremidade SCM. Se eles não estiverem definidos corretamente, você não poderá publicar. Os IDEs também precisam ter acesso à rede ao ILB para publicar diretamente nele.
+A principal diferença na publicação é em relação a um ASE ILB. Com um ASE ILB, os pontos de extremidade de publicação estão disponíveis apenas por meio do ILB. O ILB está em um IP privado na sub-rede do ASE, na rede virtual. Se você não tiver acesso à rede ao ILB, não poderá publicar nenhum aplicativo nesse ASE. Conforme observado em [criar e usar um ase ILB][MakeILBASE], você precisa configurar o DNS para os aplicativos no sistema. Isso inclui o ponto de extremidade SCM. Se eles não estiverem definidos corretamente, você não poderá publicar. Os IDEs também precisam ter acesso à rede ao ILB para publicar diretamente nele.
 
-Uso imediato, sistemas de CI baseados na Internet, como GitHub e DevOps do Azure, não funcionam com um ASE ILB porque o ponto de extremidade de publicação não está acessível pela Internet. Para operações de desenvolvimento do Azure, você pode contornar isso, instalando um agente de liberação auto-hospedado na sua rede interna em que ele pode acessar o ILB. Como alternativa, você também pode usar um sistema de CI que usa um modelo de pull, como o Dropbox.
+Os sistemas de CI baseados na Internet, como GitHub e Azure DevOps, não funcionam com um ASE ILB porque o ponto de extremidade de publicação não é acessível pela Internet. Para o Azure DevOps, você pode contornar isso instalando um agente de liberação auto-hospedado em sua rede interna, onde ele pode alcançar o ILB. Como alternativa, você também pode usar um sistema de CI que usa um modelo de pull, como o dropbox.
 
 Os pontos de extremidade de publicação para aplicativos em um ASE ILB usam o domínio com o qual o ASE ILB foi criado. Você pode ver isso no perfil de publicação do aplicativo e na folha do portal do aplicativo (em **Visão Geral** > **Informações Básicas** e também em **Propriedades**). 
 
@@ -148,7 +147,7 @@ Por exemplo, se você ajustar a taxa de escala para 10, um front-end será adici
 
 Se você ajustar o tamanho dos front-ends para dois núcleos, mas não ajustar a taxa, você pagará pelos núcleos extras.  Um ASE é criado com dois front-ends, então, até mesmo abaixo do limite de dimensionamento automático você pagaria por dois núcleos adicionais se aumentasse o tamanho para front-ends com dois núcleos.
 
-Para saber mais, veja [Preços do Serviço de Aplicativo do Azure][Pricing].
+Para obter mais informações, consulte [Azure app preço do serviço][Pricing].
 
 ## <a name="delete-an-ase"></a>Excluir um ASE ##
 

@@ -7,18 +7,17 @@ author: genlin
 manager: cshepard
 editor: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/23/2018
 ms.author: genli
-ms.openlocfilehash: 550b971602d1736e0ba3981a5b7ca546862ea034
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: 2c5eb25ae536a6cdb0eb12f1233307215fe2d7d1
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60318945"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70080000"
 ---
 # <a name="remote-desktop-license-server-isnt-available-when-you-connect-to-an-azure-vm"></a>O servidor de licenças da Área de Trabalho Remota não está disponível quando você se conecta a uma VM do Azure
 
@@ -127,6 +126,6 @@ Para resolver esse problema, [faça backup do disco de SO](../windows/snapshot-c
 
 4. Se um servidor de licenças de Área de Trabalho Remota estiver configurado e íntegro, certifique-se de que o servidor de licenças de Área de Trabalho Remota está ativado com CALs.
 
-## <a name="need-help-contact-support"></a>Precisa de ajuda? Contate o suporte
+## <a name="need-help-contact-support"></a>Precisa de ajuda? Contatar o suporte
 
 Se você ainda precisar de ajuda, [entre em contato com o suporte](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) para resolver o problema.

@@ -3,15 +3,15 @@ title: Saiba como gerenciar a consistência no Azure Cosmos DB
 description: Saiba como gerenciar a consistência no Azure Cosmos DB
 author: markjbrown
 ms.service: cosmos-db
-ms.topic: sample
+ms.topic: conceptual
 ms.date: 07/08/2019
 ms.author: mjbrown
-ms.openlocfilehash: 2617aba0d790209d83f410ee632ffad43c952d55
-ms.sourcegitcommit: 4b647be06d677151eb9db7dccc2bd7a8379e5871
-ms.translationtype: HT
+ms.openlocfilehash: bc5554e2d56987e969894ba57052d548e1499938
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
+ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68356430"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70093313"
 ---
 # <a name="manage-consistency-levels-in-azure-cosmos-db"></a>Gerenciar os níveis de coerência no Azure Cosmos DB
 

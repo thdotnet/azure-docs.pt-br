@@ -9,17 +9,16 @@ ms.assetid: 9e21a7e4-2436-4e81-bb05-4a6ba70eeaf7
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 08/29/2018
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: ba34638bbdb838adc6f1e61b1f8b07a6915815c0
-ms.sourcegitcommit: 5bdd50e769a4d50ccb89e135cfd38b788ade594d
+ms.openlocfilehash: f40043b920fab4cb38f935618c7aaecc6bf40a87
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67540773"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70069704"
 ---
 # <a name="certificates-and-the-app-service-environment"></a>Certificados e o Ambiente do Serviço de Aplicativo 
 
@@ -55,7 +54,7 @@ Se desejar criar um certificado autoassinado rapidamente para testar, você pode
 
     $fileName = "exportedcert.pfx"
     Export-PfxCertificate -cert $certThumbprint -FilePath $fileName -Password $password     
-Quando criar um self assinado cert, você precisará garantir que o nome da entidade tem o formato de CN = {ASE_NAME_HERE} _InternalLoadBalancingASE.
+Ao criar um certificado autoassinado, você precisará garantir que o nome da entidade tenha o formato CN = {ASE_NAME_HERE} _InternalLoadBalancingASE.
 
 ## <a name="application-certificates"></a>Certificados de aplicativo 
 

@@ -8,18 +8,17 @@ manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/12/2018
 ms.author: roiyz
-ms.openlocfilehash: ca3232dc3862cffb67d396b3ec2333fdc28dbb65
-ms.sourcegitcommit: c105ccb7cfae6ee87f50f099a1c035623a2e239b
+ms.openlocfilehash: 6db152394a8e57689b34436b48dbcb4ecdc58b5a
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67706633"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70084304"
 ---
 # <a name="stackify-retrace-linux-agent-extension"></a>Extensão do Agente Linux de Stackify Retrace
 
@@ -44,7 +43,7 @@ Esta extensão fornece um caminho de instalação para o agente Linux para Retra
 
 O agente do Retrace pode ser executada com essas distribuições Linux
 
-| Distribuição | Versão |
+| Distribuição | Version |
 |---|---|
 | Ubuntu | 16.04 LTS, 14.04 LTS, 16.10 e 17.04 |
 | Debian | 7.9+ e 8.2+, 9 |
@@ -184,7 +183,7 @@ az vm extension set --publisher 'Stackify.LinuxAgent.Extension' --version 1.0 --
 
 ### <a name="error-codes"></a>Códigos de erro
 
-| Código do erro | Significado | Ação possível |
+| Código de erro | Significado | Ação possível |
 | :---: | --- | --- |
 | 10 | Erro de instalação | wget é obrigatório |
 | 20 | Erro de instalação | phython é obrigatório. |

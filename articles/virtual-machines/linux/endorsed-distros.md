@@ -11,58 +11,57 @@ ms.assetid: 2777a526-c260-4cb9-a31a-bdfe1a55fffc
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
-ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2019
 ms.author: szark
-ms.openlocfilehash: 172267af394885d0c5ac0a0717de87e968182d37
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: 4b254b508e5fac5721e579620e207c2a8612352d
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67667859"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70083415"
 ---
-# <a name="endorsed-linux-distributions-on-azure"></a>Distribuições do Linux no Azure endossadas
+# <a name="endorsed-linux-distributions-on-azure"></a>Distribuições do Linux endossadas no Azure
 Parceiros fornecem imagens do Linux no Azure Marketplace. Trabalhamos com várias comunidades do Linux para adicionar ainda mais opções à lista de Distribuição endossadas. Enquanto isso, para as distribuições que não estão disponíveis no Marketplace, você pode sempre colocar seu próprio Linux seguindo as orientações em [Criar e carregar um disco rígido virtual que contém o sistema operacional Linux](https://docs.microsoft.com/azure/virtual-machines/linux/create-upload-generic).
 
 ## <a name="supported-distributions-and-versions"></a>Distribuições e versões com suporte
-A tabela a seguir lista as distribuições e versões do Linux com suporte no Azure. Consulte a [suporte para imagens do Linux no Microsoft Azure](https://support.microsoft.com/help/2941892/support-for-linux-and-open-source-technology-in-azure) para obter mais informações sobre o suporte para Linux e tecnologia de software livre no Azure.
+A tabela a seguir lista as distribuições e versões do Linux com suporte no Azure. Consulte [suporte para imagens do Linux no Microsoft Azure](https://support.microsoft.com/help/2941892/support-for-linux-and-open-source-technology-in-azure) para obter informações mais detalhadas sobre o suporte para Linux e tecnologia de software livre no Azure.
 
 Os drivers LIS (Serviços de Integração do Linux) para Hyper-V e Azure são módulos de kernel que a Microsoft contribui diretamente para o kernel upstream do Linux.  Alguns drivers LIS são incorporados no kernel de distribuição por padrão. Distribuições mais antigas que se baseiam no Red Hat Enterprise (RHEL)/CentOS estão disponíveis como um download separado em [Serviços de integração do Linux versão 4.2 para o Hyper-V e Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=55106). Consulte [Requisitos de kernel do Linux](create-upload-generic.md#linux-kernel-requirements) para obter mais informações sobre os drivers LIS.
 
 O Agente Linux do Azure já vem pré-instalado nas imagens do Azure Marketplace e normalmente está disponível no repositório de pacotes de distribuição. O código-fonte pode ser encontrado no [GitHub](https://github.com/azure/walinuxagent).
 
 
-| Distribuição | Versão | Drivers | Agente |
+| Distribuição | Version | Drivers | Agente |
 | --- | --- | --- | --- |
 | CentOS |CentOS 6.3+, 7.0+ |CentOS 6.3: [Fazer download de LIS](https://www.microsoft.com/download/details.aspx?id=55106)<p>CentOS 6.4+: No kernel |Pacote: Em [repo](http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/) em "WALinuxAgent" <br/>Código-fonte: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | [CoreOS](https://coreos.com/docs/running-coreos/cloud-providers/azure/) |494.4.0+ |No kernel |Código-fonte: [GitHub](https://github.com/coreos/coreos-overlay/tree/master/app-emulation/wa-linux-agent) |
 | Debian |Debian 7.9+, 8.2+ |No kernel |Pacote: Em repo em "waagent" <br/>Código-fonte: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | Oracle Linux |6.4+, 7.0+ |No kernel |Pacote: Em repo em "WALinuxAgent" <br/>Código-fonte: [GitHub](https://go.microsoft.com/fwlink/p/?LinkID=250998) |
-| Red Hat Enterprise Linux |RHEL 6.7+, 7.1+, 8.0+ |No kernel |Pacote: Em repo em "WALinuxAgent" <br/>Código-fonte: [GitHub](https://github.com/Azure/WALinuxAgent) |
+| Red Hat Enterprise Linux |RHEL 6.7 +, 7.1 +, 8.0 + |No kernel |Pacote: Em repo em "WALinuxAgent" <br/>Código-fonte: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | SUSE Linux Enterprise |SLES/SLES para SAP<br>11 SP4<br>12 SP1+<br>15|No kernel |Pacote:<p> para 11, no repositório [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools)<br>para 12, incluído no módulo "Public Cloud" em "python-azure-agent"<br/>Código-fonte: [GitHub](https://go.microsoft.com/fwlink/p/?LinkID=250998) |
 | openSUSE |openSUSE Leap 42.2+ |No kernel |Pacote: No repositório [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools) em "python-azure-agent" <br/>Código-fonte: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | Ubuntu |Ubuntu 12.04+ **<sup>1</sup>** |No kernel |Pacote: Em rep em "walinuxagent" <br/>Código-fonte: [GitHub](https://github.com/Azure/WALinuxAgent) |
 
-  - **<sup>1</sup>**  informações sobre o suporte estendido para Ubuntu 12.04 e 14.04 podem ser encontradas aqui: [Ubuntu estendido a manutenção da segurança](https://www.ubuntu.com/esm).
+  - **<sup>1</sup>** informações sobre o suporte estendido para Ubuntu 12, 4 e 14, 4 podem ser encontradas aqui: [Manutenção de segurança estendida do Ubuntu](https://www.ubuntu.com/esm).
 
 
-## <a name="image-update-cadence"></a>Cadência de atualização de imagem
-O Azure requer que os editores de distribuições Linux endossadas regularmente atualizam suas imagens no Azure Marketplace com os últimos patches e correções de segurança, em uma cadência trimestral ou mais rápida. Imagens atualizadas no Azure Marketplace estão disponíveis automaticamente para clientes como novas versões de uma imagem de SKU. Mais informações sobre como localizar imagens do Linux: [Localizar imagens de VM do Linux no Azure Marketplace](https://docs.microsoft.com/azure/virtual-machines/linux/cli-ps-findimage).
+## <a name="image-update-cadence"></a>Cadência da atualização da imagem
+O Azure exige que os editores das distribuições do Linux endossadas atualizem regularmente suas imagens no Azure Marketplace com os patches e correções de segurança mais recentes, a uma cadência trimestral ou mais rápida. As imagens atualizadas no Azure Marketplace estão disponíveis automaticamente para clientes como novas versões de uma SKU de imagem. Mais informações sobre como encontrar imagens do Linux: [Encontre imagens de VM do Linux no Azure Marketplace](https://docs.microsoft.com/azure/virtual-machines/linux/cli-ps-findimage).
 
 ### <a name="additional-links"></a>Links adicionais
- - [Ciclo de vida de imagem do SUSE de nuvem pública](https://www.suse.com/c/suse-public-cloud-image-life-cycle/)
+ - [Ciclo de vida da imagem de nuvem pública SUSE](https://www.suse.com/c/suse-public-cloud-image-life-cycle/)
 
-## <a name="azure-tuned-kernels"></a>Kernels ajustado pelo Azure
+## <a name="azure-tuned-kernels"></a>Kernels ajustados para o Azure
 
-Azure trabalha em conjunto com várias distribuições endossadas do Linux para otimizar as imagens que eles publicadas no Azure Marketplace. Um aspecto dessa colaboração é o desenvolvimento de "ligados" kernels do Linux que são otimizados para a plataforma do Azure e entregues como componentes com suporte total da distribuição do Linux. Os kernels ajustados Azure incorporam novos recursos e melhorias de desempenho e em uma cadência (normalmente trimestral) mais rápida em comparação com o padrão ou genéricos kernels disponíveis da distribuição.
+O Azure trabalha em conjunto com várias distribuições do Linux endossadas para otimizar as imagens publicadas no Azure Marketplace. Um aspecto dessa colaboração é o desenvolvimento de kernels do Linux "ajustados" que são otimizados para a plataforma Azure e fornecidos como componentes totalmente suportados da distribuição do Linux. Os kernels ajustados para o Azure incorporam novos recursos e melhorias de desempenho e em uma cadência mais rápida (normalmente trimestral) em comparação com os kernels padrão ou genéricos que estão disponíveis na distribuição.
 
-Na maioria dos casos, você encontrará esses kernels pré-instalado nas imagens padrão no Azure Marketplace e os clientes do Azure então serão imediatamente se beneficiem desses kernels otimizados. Para obter mais informações sobre esses kernels ajustado pelo Azure podem ser encontradas nos links a seguir:
+Na maioria dos casos, você encontrará esses kernels pré-instalados nas imagens padrão no Azure Marketplace e, portanto, os clientes do Azure obterão imediatamente os benefícios desses kernels otimizados. Mais informações sobre esses kernels ajustados para o Azure podem ser encontradas nos links a seguir:
 
- - CentOS ajustados Azure Kernel - disponível por meio da virtualização do CentOS SIG - [obter mais informações](https://wiki.centos.org/SpecialInterestGroup/Virtualization)
- - Nuvem Kernel Debian - disponível com a imagem de Debian 9 "backports" no Azure – e 10 Debian [de mais informações](https://wiki.debian.org/Cloud/MicrosoftAzure)
- - SLES ajustados Azure Kernel - [obter mais informações](https://www.suse.com/c/a-different-builtin-kernel-for-azure-on-demand-images/)
- - Ajustados pelo Azure no Kernel do Ubuntu - [obter mais informações](https://blog.ubuntu.com/2017/09/21/microsoft-and-canonical-increase-velocity-with-azure-tailored-kernel)
+ - CentOS kernel para o Azure ajustado – disponível por meio do CentOS Virtualization SIG- [mais informações](https://wiki.centos.org/SpecialInterestGroup/Virtualization)
+ - Kernel de nuvem Debian-disponível com a imagem "backports" do Debian 10 e Debian 9 no Azure- [mais informações](https://wiki.debian.org/Cloud/MicrosoftAzure)
+ - Kernel ajustado do SLES Azure- [mais informações](https://www.suse.com/c/a-different-builtin-kernel-for-azure-on-demand-images/)
+ - Kernel do Ubuntu ajustado pelo Azure- [mais informações](https://blog.ubuntu.com/2017/09/21/microsoft-and-canonical-increase-velocity-with-azure-tailored-kernel)
 
 
 ## <a name="partners"></a>Parceiros

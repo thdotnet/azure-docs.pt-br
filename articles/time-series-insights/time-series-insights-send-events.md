@@ -10,53 +10,53 @@ ms.reviewer: v-mamcge, jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 05/06/2019
+ms.date: 08/26/2019
 ms.custom: seodec18
-ms.openlocfilehash: ae59e8115ca2d1ba69c8a3a099216eb3d98e2658
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 84eb0e230875b999218b67d47a66a3c92b494253
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66237702"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70072786"
 ---
 # <a name="send-events-to-a-time-series-insights-environment-by-using-an-event-hub"></a>Enviar eventos para um ambiente do Time Series Insights usando um hub de eventos
 
-Este artigo explica como criar e configurar um hub de eventos em Hubs de eventos do Azure. Ele também descreve como executar um aplicativo de exemplo para enviar eventos para o Azure Time Series Insights dos Hubs de eventos. Se você tiver um hub de eventos existente com eventos no formato JSON, ignore este tutorial e exibir seu ambiente no [Azure Time Series Insights](./time-series-insights-update-create-environment.md).
+Este artigo explica como criar e configurar um hub de eventos nos hubs de eventos do Azure. Ele também descreve como executar um aplicativo de exemplo para enviar eventos por push a Azure Time Series Insights dos hubs de eventos. Se você tiver um hub de eventos existente com eventos no formato JSON, pule este tutorial e exiba seu ambiente em [Azure Time Series insights](./time-series-insights-update-create-environment.md).
 
 ## <a name="configure-an-event-hub"></a>Configurar um hub de eventos
 
 1. Para saber como criar um hub de eventos, confira a [documentação dos Hubs de Eventos](https://docs.microsoft.com/azure/event-hubs/).
 1. Na caixa de pesquisa, pesquise **Hubs de Eventos**. Na lista retornada, selecione **Hubs de Eventos**.
 1. Selecione seu hub de eventos.
-1. Quando você cria um hub de eventos, você está criando um namespace de hub de eventos. Se você ainda não criou um hub de eventos dentro do namespace, no menu, em **entidades**, criar um hub de eventos.  
+1. Ao criar um hub de eventos, você está criando um namespace de Hub de eventos. Se você ainda não criou um hub de eventos dentro do namespace, no menu, em **entidades**, crie um hub de eventos.  
 
     [![Lista de hubs de eventos](media/send-events/updated.png)](media/send-events/updated.png#lightbox)
 
 1. Depois de criar um hub de eventos, selecione-o na lista de hubs de eventos.
-1. No menu, sob **entidades**, selecione **Hubs de eventos**.
+1. No menu, em **entidades**, selecione **hubs de eventos**.
 1. Selecione o nome do hub de eventos para configurá-lo.
-1. Em **Entidades**, selecione **Grupos de consumidores** e selecione **Grupo de Consumidores**.
+1. Em **visão geral**, selecione **grupos de consumidores**e, em seguida, selecione grupo de **consumidores**.
 
     [![Criar um grupo de consumidores](media/send-events/consumer-group.png)](media/send-events/consumer-group.png#lightbox)
 
-1. Verifique se que você criar um grupo de consumidores é usado exclusivamente pela sua fonte de evento do Time Series Insights.
+1. Certifique-se de criar um grupo de consumidores que é usado exclusivamente pelo seu Time Series Insights origem do evento.
 
     > [!IMPORTANT]
-    > Verifique se que esse grupo de consumidores não é usado por qualquer outro serviço, como um trabalho do Azure Stream Analytics ou outro ambiente do Time Series Insights. Se o grupo de consumidores é usado por outros serviços, as operações de leitura são prejudicadas em relação a esse ambiente e a outros serviços. Se você usar **$Default** como o grupo de consumidores, outros leitores poderão vir a reutilizar seu grupo de consumidores.
+    > Verifique se esse grupo de consumidores não é usado por nenhum outro serviço, como um trabalho Azure Stream Analytics ou outro ambiente de Time Series Insights. Se o grupo de consumidores é usado por outros serviços, as operações de leitura são prejudicadas em relação a esse ambiente e a outros serviços. Se você usar **$Default** como o grupo de consumidores, outros leitores poderão vir a reutilizar seu grupo de consumidores.
 
-1. No menu, sob **as configurações**, selecione **políticas de acesso compartilhado**e, em seguida, selecione **adicionar**.
+1. No menu, em **configurações**, selecione **políticas de acesso compartilhado**e, em seguida, selecione **Adicionar**.
 
     [![Selecione políticas de acesso compartilhado e, em seguida, selecione o botão Adicionar](media/send-events/shared-access-policy.png)](media/send-events/shared-access-policy.png#lightbox)
 
-1. No painel **Adicionar nova política de acesso compartilhado**, crie um acesso compartilhado denominado **MySendPolicy**. Use essa política de acesso compartilhado para enviar eventos no C# exemplos mais adiante neste artigo.
+1. No painel **Adicionar nova política de acesso compartilhado**, crie um acesso compartilhado denominado **MySendPolicy**. Você usa essa política de acesso compartilhado para enviar eventos nos C# exemplos mais adiante neste artigo.
 
-    [![Na caixa de nome de política, insira MySendPolicy](media/send-events/shared-access-policy-2.png)](media/send-events/shared-access-policy-2.png#lightbox)
+    [![Na caixa nome da política, digite MySendPolicy](media/send-events/shared-access-policy-2.png)](media/send-events/shared-access-policy-2.png#lightbox)
 
-1. Sob **declaração**, selecione o **enviar** caixa de seleção.
+1. Em **declaração**, marque a caixa de seleção **Enviar** .
 
 ## <a name="add-a-time-series-insights-instance"></a>Adicionar uma instância do Time Series Insights
 
-A atualização do Time Series Insights usa instâncias para adicionar dados contextuais aos dados de telemetria recebidos. Os dados são unidos no momento da consulta usando uma **ID da série temporal**. O **ID da série de tempo** project que usamos neste artigo é para os windmills exemplo `id`. Para saber mais sobre instâncias do Time Series Insight e **ID da série temporal**, consulte [Modelos do Time Series](./time-series-insights-update-tsm.md).
+A atualização do Time Series Insights usa instâncias para adicionar dados contextuais aos dados de telemetria recebidos. Os dados são unidos no momento da consulta usando uma **ID da série temporal**. A **ID da série temporal** para o projeto Windmills de exemplo que usamos mais adiante neste artigo `id`é. Para saber mais sobre instâncias do Time Series Insight e **ID da série temporal**, consulte [Modelos do Time Series](./time-series-insights-update-tsm.md).
 
 ### <a name="create-a-time-series-insights-event-source"></a>Criar uma origem de evento do Time Series Insights
 
@@ -68,26 +68,26 @@ A atualização do Time Series Insights usa instâncias para adicionar dados con
 
 1. Na barra de pesquisa, procure **Hubs de Eventos**. Na lista retornada, selecione **Hubs de Eventos**.
 
-1. Selecione seu hub de eventos.
+1. Selecione sua instância do hub de eventos.
 
-1. Vá para **Políticas de Acesso Compartilhado** > **RootManageSharedAccessKey**. Copie o valor de **chave primária da cadeia de Conexão**.
+1. Vá para **políticas** > de acesso compartilhado**MySendPolicy**. Copie o valor da **cadeia de conexão-chave primária**.
 
-    [![Copie o valor de cadeia de caracteres de conexão de chave primária](media/send-events/sample-code-connection-string.png)](media/send-events/sample-code-connection-string.png#lightbox)
+    [![Copie o valor da cadeia de conexão de chave primária](media/send-events/sample-code-connection-string.png)](media/send-events/sample-code-connection-string.png#lightbox)
 
 1. Vá para https://tsiclientsample.azurewebsites.net/windFarmGen.html. A URL executa dispositivos de moinho simulados.
 1. Na caixa **Cadeia de Conexão do Hub de Eventos** na página da Web, cole a cadeia de conexão que você copiou em [Efetuar push de eventos](#push-events).
   
-    [![Cole a cadeia de conexão de chave primária na caixa de cadeia de Conexão do Hub de eventos](media/send-events/updated_two.png)](media/send-events/updated_two.png#lightbox)
+    [![Cole a cadeia de conexão de chave primária na caixa Cadeia de conexão do hub de eventos](media/send-events/updated_two.png)](media/send-events/updated_two.png#lightbox)
 
 1. Selecione **Clique para iniciar**. O simulador gera uma instância JSON que você pode usar diretamente.
 
-1. Volte ao seu hub de eventos no portal do Azure. Sobre o **visão geral** página, você ver os novos eventos que são recebidos pelo hub de eventos.
+1. Volte ao seu hub de eventos no portal do Azure. Na página **visão geral** , você verá os novos eventos que são recebidos pelo hub de eventos.
 
-    [![Uma página de visão geral do hub de evento que mostra as métricas para o hub de eventos](media/send-events/telemetry.png)](media/send-events/telemetry.png#lightbox)
+    [![Uma página de visão geral do hub de eventos que mostra as métricas para o Hub de eventos](media/send-events/telemetry.png)](media/send-events/telemetry.png#lightbox)
 
 ## <a name="json"></a>Formas JSON com suporte
 
-### <a name="example-one"></a>Exemplo de um
+### <a name="example-one"></a>Exemplo um
 
 * **Entrada**: Um objeto JSON simples.
 
@@ -150,12 +150,12 @@ A atualização do Time Series Insights usa instâncias para adicionar dados con
 
 * **Saída**: Dois eventos. A propriedade **location** é copiada para cada evento.
 
-    |location|events.id|events.timestamp|
+    |localização|events.id|events.timestamp|
     |--------|---------------|----------------------|
     |Oeste dos EUA|device1|2016-01-08T01:08:00Z|
     |Oeste dos EUA|device2|2016-01-08T01:17:00Z|
 
-### <a name="example-four"></a>Exemplo de quatro
+### <a name="example-four"></a>Exemplo quatro
 
 * **Entrada**: Um objeto JSON com uma matriz JSON aninhada que contém dois objetos JSON. Essa entrada demonstra que as propriedades globais podem ser representadas pelo objeto JSON complexo.
 
@@ -191,11 +191,11 @@ A atualização do Time Series Insights usa instâncias para adicionar dados con
 
 * **Saída**: Dois eventos.
 
-    |location|manufacturer.name|manufacturer.location|events.id|events.timestamp|events.data.type|events.data.units|events.data.value|
+    |localização|manufacturer.name|manufacturer.location|events.id|events.timestamp|events.data.type|events.data.units|events.data.value|
     |---|---|---|---|---|---|---|---|
     |Oeste dos EUA|manufacturer1|Leste dos EUA|device1|2016-01-08T01:08:00Z|pressure|psi|108.09|
     |Oeste dos EUA|manufacturer1|Leste dos EUA|device2|2016-01-08T01:17:00Z|vibration|abs G|217.09|
 
 ## <a name="next-steps"></a>Próximas etapas
 
-- [Exibir seu ambiente](https://insights.timeseries.azure.com) no Explorador do Time Series Insights.
+- [Exiba seu ambiente](https://insights.timeseries.azure.com) no time Series insights Explorer.

@@ -11,34 +11,33 @@ ms.assetid: 757da816-a050-4889-a010-6f75d7978eb7
 ms.service: virtual-machines-windows
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
-ms.devlang: na
 ms.topic: article
 ms.date: 05/08/2019
 ms.author: cynthn
-ms.openlocfilehash: 69c79db937d70bcc8ae834bf0bdf8f1930bed3c9
-ms.sourcegitcommit: dad277fbcfe0ed532b555298c9d6bc01fcaa94e2
+ms.openlocfilehash: 0b1af2052e8aa916bf5fd6a40bea3502ff81a02d
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67722750"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70079474"
 ---
 # <a name="frequently-asked-question-about-windows-virtual-machines"></a>Perguntas frequentes sobre as Máquinas Virtuais do Windows
-Este artigo trata de algumas das perguntas mais comuns sobre as máquinas virtuais do Windows criadas no Azure com o modelo de implantação do Gerenciador de Recursos. Para a versão do Linux deste tópico, consulte [perguntas frequentes sobre máquinas virtuais do Linux](../linux/faq.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Este artigo trata de algumas das perguntas mais comuns sobre as máquinas virtuais do Windows criadas no Azure com o modelo de implantação do Gerenciador de Recursos. Para a versão do Linux deste tópico, consulte perguntas frequentes [sobre máquinas virtuais do Linux](../linux/faq.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 ## <a name="what-can-i-run-on-an-azure-vm"></a>O que eu posso executar em uma VM do Azure?
-Todos os assinantes podem executar software para servidores em uma máquina virtual do Azure. Para obter informações sobre a política de suporte para software de servidor Microsoft em execução no Azure, consulte [suporte de software de servidor Microsoft para máquinas virtuais do Azure](https://support.microsoft.com/kb/2721672).
+Todos os assinantes podem executar software para servidores em uma máquina virtual do Azure. Para obter informações sobre a política de suporte para executar o software de servidor Microsoft no Azure, consulte [suporte de software de servidor da Microsoft para máquinas virtuais do Azure](https://support.microsoft.com/kb/2721672).
 
 Algumas versões do Windows 7, Windows 8.1 e Windows 10 estão disponíveis para assinantes dos benefícios do Azure no MSDN e para assinantes do modelo “pré-pago” de Desenvolvimento e Teste no MSDN, para tarefas de desenvolvimento e teste. Para obter detalhes, incluindo instruções e limitações, veja [Imagens do Windows Client para assinantes do MSDN](https://azure.microsoft.com/blog/2014/05/29/windows-client-images-on-azure/). 
 
 ## <a name="how-much-storage-can-i-use-with-a-virtual-machine"></a>Quanto armazenamento eu posso usar com uma máquina virtual?
-Cada disco de dados pode ser até 32.767 GiB. O número de discos de dados que você pode usar depende do tamanho da máquina virtual. Para obter detalhes, consulte [Tamanhos das máquinas virtuais](sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+Cada disco de dados pode ter até 32.767 GiB. O número de discos de dados que você pode usar depende do tamanho da máquina virtual. Para obter detalhes, consulte [Tamanhos das máquinas virtuais](sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 Os Azure Managed Disks são as ofertas de armazenamento em disco recomendadas para uso com Máquinas Virtuais do Azure para armazenamento persistente de dados. Em cada Máquina Virtual, é possível usar vários Managed Disks. Os Managed Disks oferecem dois tipos de opções de armazenamento durável: Discos Gerenciados Premium e Standard. Para obter informações sobre preço, consulte [Preços do Managed Disks](https://azure.microsoft.com/pricing/details/managed-disks).
 
 As contas de armazenamento do Azure também podem fornecer o armazenamento para o disco do sistema operacional e quaisquer discos de dados. Cada disco é um arquivo .vhd armazenado como um blob de páginas. Para obter detalhes sobre preços, veja [Detalhes de preços de armazenamento](https://azure.microsoft.com/pricing/details/storage/).
 
 ## <a name="how-can-i-access-my-virtual-machine"></a>Como posso acessar minha máquina virtual?
-Estabeleça uma conexão remota usando o protocolo RDP (Conexão de Área de Trabalho Remota) para uma VM do Windows. Para obter instruções, consulte [como conectar-se e entrar uma máquina virtual do Azure executando Windows](connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Há suporte para o máximo de duas conexões simultâneas, a menos que o servidor esteja configurado como um host de sessão dos Serviços de Área de Trabalho Remota.  
+Estabeleça uma conexão remota usando o protocolo RDP (Conexão de Área de Trabalho Remota) para uma VM do Windows. Para obter instruções, consulte [como se conectar e entrar em uma máquina virtual do Azure que executa o Windows](connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Há suporte para o máximo de duas conexões simultâneas, a menos que o servidor esteja configurado como um host de sessão dos Serviços de Área de Trabalho Remota.  
 
 Se você estiver tendo problemas com a Área de Trabalho Remota, veja [Solucionar problemas de conexões da Área de Trabalho Remota para uma Máquina Virtual Azure baseada no Windows](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
 
@@ -101,10 +100,10 @@ Os seguintes nomes de usuário não são permitidos:
 
 ## <a name="what-are-the-password-requirements-when-creating-a-vm"></a>Quais são os requisitos de senha ao criar uma VM?
 
-Há senha diferentes requisitos de comprimento, dependendo da ferramenta que você está usando:
- - Portal – entre 12 a 72 caracteres
- - PowerShell - entre 8 e 123 caracteres
- - CLI - entre 12 e 123
+Há requisitos de comprimento de senha variados, dependendo da ferramenta que você está usando:
+ - Portal-entre 12-72 caracteres
+ - PowerShell-entre 8-123 caracteres
+ - CLI-entre 12-123
 
 * Ter caracteres minúsculos
 * Tem caracteres maiúsculos

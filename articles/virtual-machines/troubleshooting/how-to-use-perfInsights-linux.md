@@ -10,16 +10,15 @@ tags: ''
 ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
-ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 7/10/2019
 ms.author: genli
-ms.openlocfilehash: f618066f19a5cbbf25bc1fcc872cc654ce96dae3
-ms.sourcegitcommit: 670c38d85ef97bf236b45850fd4750e3b98c8899
+ms.openlocfilehash: 19b2fcaed2c80d4ca52ada9f9f0898479e73bcf2
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 08/08/2019
-ms.locfileid: "68857216"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70080524"
 ---
 # <a name="how-to-use-perfinsights"></a>Como usar o PerfInsights
 
@@ -126,7 +125,7 @@ Informações sobre a máquina virtual Linux, sistema operacional, dispositivos 
 
 - Atualmente, há suporte para as seguintes distribuições:
 
-    | Distribuição               | Versão                                         |
+    | Distribuição               | Version                                         |
     |----------------------------|-------------------------------------------------|
     | Servidor de Oracle Linux        | 6,10 [`*`], 7,3, 7,6, 7,5 (imagem do Marketplace do Oracle-Database-13,8 EE)|
     | CentOS                     | 6,5 [`*`], 7,6                                    |

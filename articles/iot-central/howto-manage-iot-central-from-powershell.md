@@ -8,18 +8,18 @@ ms.author: dobett
 ms.date: 07/11/2019
 ms.topic: conceptual
 manager: philmea
-ms.openlocfilehash: 23243324c64519094432ee0c80d3e0cad447ef8b
-ms.sourcegitcommit: fa45c2bcd1b32bc8dd54a5dc8bc206d2fe23d5fb
+ms.openlocfilehash: bfda4f4ebe8990a16853bdfe40065a7501de5275
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67849049"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70086899"
 ---
 # <a name="manage-iot-central-from-azure-powershell"></a>Gerenciar o IoT Central do Azure PowerShell
 
 [!INCLUDE [iot-central-selector-manage](../../includes/iot-central-selector-manage.md)]
 
-Em vez de criar e gerenciar aplicativos do IoT Central da página [Gerenciador de Aplicativos](https://aka.ms/iotcentral) do IoT Central, você pode usar o [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) para gerenciá-los.
+Em vez de criar e gerenciar IoT Central aplicativos no site [do Azure IOT central Application Manager](https://aka.ms/iotcentral) , você pode usar [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) para gerenciar seus aplicativos.
 
 ## <a name="prerequisites"></a>Pré-requisitos
 
@@ -75,7 +75,7 @@ Primeiro, o script cria um grupo de recursos na região Leste dos EUA para o apl
 
 **Modelos de aplicativo**
 
-|Nome do modelo  |DESCRIÇÃO |
+|Nome do modelo  |Descrição |
 |---------------|------------|
 |iotc-default@1.0.0 |Cria um aplicativo vazio para você preencher com seus próprios dispositivos e modelos de dispositivos. |
 |iotc-demo@1.0.0    |Cria um aplicativo que inclui um modelo de dispositivo já criado para uma Máquina de Vendas Refrigerada. Use esse modelo para começar a explorar o Azure IoT Central. |

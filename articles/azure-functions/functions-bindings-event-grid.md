@@ -7,16 +7,15 @@ author: craigshoemaker
 manager: gwallace
 keywords: ''
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: reference
 ms.date: 09/04/2018
 ms.author: cshoe
-ms.openlocfilehash: f48eced2ebcc4ad92c5124194ed2e2df92f64f11
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: d2e15c63ac6d93824aeab3f251c2860b7ea114d6
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480655"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70086821"
 ---
 # <a name="event-grid-trigger-for-azure-functions"></a>Gatilho de Grade de Eventos para o Azure Functions
 
@@ -321,7 +320,7 @@ Para ver um exemplo completo, confira o exemplo de C#.
 
 A tabela a seguir explica as propriedades de configuração de associação que você define no arquivo *function.json*. Não há parâmetros ou propriedades do construtor para definir o atributo `EventGridTrigger`.
 
-|Propriedade function.json |DESCRIÇÃO|
+|Propriedade function.json |Descrição|
 |---------|---------|
 | **type** | Obrigatório – deve ser definido como `eventGridTrigger`. |
 | **direction** | Obrigatório – deve ser definido como `in`. |
@@ -529,14 +528,14 @@ Use uma ferramenta como [Postman](https://www.getpostman.com/) ou [curl](https:/
 * Defina um cabeçalho `Content-Type: application/json`.
 * Defina um cabeçalho `aeg-event-type: Notification`.
 * Cole os dados RequestBin no corpo da solicitação.
-* Poste na URL da sua função de gatilho de grade de eventos.
-  * Para o 2.x, use o seguinte padrão:
+* Poste para a URL da sua função de gatilho de grade de eventos.
+  * Para 2. x, use o seguinte padrão:
 
     ```
     http://localhost:7071/runtime/webhooks/eventgrid?functionName={FUNCTION_NAME}
     ```
 
-  * Para 1.x, use:
+  * Para uso de 1. x:
 
     ```
     http://localhost:7071/admin/extensions/EventGridExtensionConfig?functionName={FUNCTION_NAME}
@@ -556,7 +555,7 @@ A função de gatilho da Grade de Eventos executa e mostra logs semelhantes ao e
 
 ## <a name="local-testing-with-ngrok"></a>Teste local com ngrok
 
-Outra maneira de testar um gatilho de Grade de Eventos localmente é automatizar a conexão HTTP entre a Internet e o computador de desenvolvimento. Você pode fazer isso com uma ferramenta como o [ngrok](https://ngrok.com/):
+Outra maneira de testar um gatilho de Grade de Eventos localmente é automatizar a conexão HTTP entre a Internet e o computador de desenvolvimento. Você pode fazer isso com uma ferramenta como [ngrok](https://ngrok.com/):
 
 1. [Criar um ponto de extremidade ngrok](#create-an-ngrok-endpoint).
 1. [Executar a função de gatilho de Grade de Eventos ](#run-the-event-grid-trigger-function).

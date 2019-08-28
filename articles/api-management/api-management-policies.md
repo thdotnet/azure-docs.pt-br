@@ -9,16 +9,15 @@ editor: ''
 ms.service: api-management
 ms.workload: mobile
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: e27829fe5ebf57552ef4e97a2bfc7b6aefd81dc8
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: ed20ef023a884ac79150cd31f25fde86b715c752
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "66254393"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073402"
 ---
 # <a name="api-management-policies"></a>Políticas de Gerenciamento de API
 Esta seção fornece uma referência para as políticas de Gerenciamento de API a seguir. Para obter mais informações sobre como adicionar e configurar políticas, consulte [Políticas de Gerenciamento de API](api-management-howto-policies.md).  
@@ -56,7 +55,7 @@ Esta seção fornece uma referência para as políticas de Gerenciamento de API 
 -   [Políticas de autenticação](api-management-authentication-policies.md#AuthenticationPolicies)  
     -   [Autenticar com o Basic](api-management-authentication-policies.md#Basic) - Autenticar com um serviço de back-end usando a autenticação Básica.  
     -   [Autenticar com o certificado de cliente](api-management-authentication-policies.md#ClientCertificate) - Autenticar com um serviço de back-end usando certificados de cliente.  
-    -   [Autenticar com identidade gerenciada](api-management-authentication-policies.md#ManagedIdentity) -autenticar com um serviço de back-end usando um [identidade gerenciada](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).  
+    -   [Autenticar com a identidade gerenciada](api-management-authentication-policies.md#ManagedIdentity) – autentique com um serviço de back-end usando uma [identidade gerenciada](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).  
 -   [Políticas de cache](api-management-caching-policies.md#CachingPolicies)  
     -   [Obter do cache](api-management-caching-policies.md#GetFromCache) - Executa a pesquisa em cache e retorna uma resposta válida armazenada em cache quando uma estiver disponível.  
     -   [Armazenar em cache](api-management-caching-policies.md#StoreToCache) - Armazena a resposta em cache de acordo com a configuração de controle de cache especificada.  

@@ -8,18 +8,17 @@ manager: gwallace
 editor: ''
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/28/2018
 ms.author: cynthn
-ms.openlocfilehash: 9ca58bbc6f7b983ff545eb2dca6240359637e214
-ms.sourcegitcommit: 2e4b99023ecaf2ea3d6d3604da068d04682a8c2d
+ms.openlocfilehash: c394b013b057a78e99cafc0adde9727d0a75a87c
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67671219"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70091823"
 ---
 # <a name="mount-azure-file-storage-on-linux-vms-using-smb"></a>Montar o Armazenamento de Arquivos do Azure em VMs Linux usando SMB
 
@@ -42,7 +41,7 @@ az group create --name myResourceGroup --location eastus
 
 ## <a name="create-a-storage-account"></a>Criar uma conta de armazenamento
 
-Crie uma nova conta de armazenamento no grupo de recursos que você criou ao utilizar o [az storage account create](/cli/azure/storage/account). Este exemplo cria uma conta de armazenamento denominada *mySTORAGEACCT\<número aleatório >* e coloca o nome da conta de armazenamento na variável **STORAGEACCT**. Os nomes de conta de armazenamento devem ser exclusivo e, portanto, use `$RANDOM` para acrescentar um número ao final e torná-lo exclusivo.
+Crie uma nova conta de armazenamento no grupo de recursos que você criou ao utilizar o [az storage account create](/cli/azure/storage/account). Este exemplo cria uma conta de armazenamento denominada *mySTORAGEACCT\<número aleatório >* e coloca o nome dessa conta de armazenamento na variável **STORAGEACCT**. Os nomes de conta de armazenamento devem ser exclusivo e, portanto, use `$RANDOM` para acrescentar um número ao final e torná-lo exclusivo.
 
 ```bash
 STORAGEACCT=$(az storage account create \

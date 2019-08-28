@@ -9,18 +9,17 @@ editor: na
 tags: azure-resource-manager
 ms.assetid: ''
 ms.service: virtual-machines-linux
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/14/2017
 ms.author: gwallace
-ms.openlocfilehash: be8bfd8b6a0ba8afa43869366b4482e1b202727f
-ms.sourcegitcommit: de47a27defce58b10ef998e8991a2294175d2098
+ms.openlocfilehash: 83fba1ae29c2912e440f8983ded844414443a1a7
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "67876324"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70100796"
 ---
 # <a name="create-a-complete-linux-virtual-machine-infrastructure-in-azure-with-terraform"></a>Criar uma infraestrutura completa de máquina virtual do Linux no Azure usando o Terraform
 
@@ -88,7 +87,7 @@ resource "azurerm_subnet" "myterraformsubnet" {
 ```
 
 
-## <a name="create-public-ip-address"></a>Criar um endereço IP público
+## <a name="create-public-ip-address"></a>Criar endereço IP público
 Para acessar os recursos na Internet, crie e atribua um endereço IP público para a sua VM. A seção a seguir cria um endereço IP público denominado *myPublicIP*:
 
 ```tf

@@ -7,19 +7,18 @@ author: RicksterCDN
 manager: gwallace
 editor: ''
 ms.service: virtual-machines-linux
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 07/12/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7961578a1daf67176312d4257a4e86a7091082f0
-ms.sourcegitcommit: 10251d2a134c37c00f0ec10e0da4a3dffa436fb3
+ms.openlocfilehash: 987f84301608129075b55769f886912ec2354cbb
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/13/2019
-ms.locfileid: "67869245"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70099897"
 ---
 # <a name="available-skus-for-hli"></a>SKUs disponíveis para HLI
 
@@ -30,7 +29,7 @@ SAP HANA no serviço do Azure (instâncias grandes) com base em carimbos de revi
 - Leste da Austrália
 - Sudeste da Austrália
 - Europa Ocidental
-- Norte da Europa
+- Europa Setentrional
 - Leste do Japão
 - Oeste do Japão
 
@@ -39,7 +38,7 @@ SAP HANA no serviço do Azure (instâncias grandes) com base na revisão 4 carim
 - Oeste dos EUA 2
 - East US
 - Europa Ocidental
-- Norte da Europa
+- Europa Setentrional
 
 
 

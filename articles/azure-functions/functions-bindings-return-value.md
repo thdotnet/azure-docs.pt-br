@@ -1,27 +1,26 @@
 ---
 title: Usando o valor de retorno de uma função do Azure
-description: Saiba como gerenciar os valores de retorno para o Azure Functions
+description: Saiba como gerenciar valores de retorno para Azure Functions
 services: functions
 documentationcenter: na
 author: craigshoemaker
 manager: gwallace
 ms.service: azure-functions
-ms.devlang: multiple
 ms.topic: reference
 ms.date: 01/14/2019
 ms.author: cshoe
-ms.openlocfilehash: 03cf85ab12a8f64d639c09db5ea75002b258aa84
-ms.sourcegitcommit: 9b80d1e560b02f74d2237489fa1c6eb7eca5ee10
+ms.openlocfilehash: 1ea7ec0444ba80d3494afba77ad9d7fdabd5f982
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67480279"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70086418"
 ---
-# <a name="using-the-azure-function-return-value"></a>Usando o valor de retorno de função do Azure
+# <a name="using-the-azure-function-return-value"></a>Usando o valor de retorno da função do Azure
 
-Este artigo explica como os valores de retorno de trabalho dentro de uma função.
+Este artigo explica como os valores de retorno funcionam dentro de uma função.
 
-Em linguagens que têm um valor de retorno, você pode associar uma função [associação de saída](./functions-triggers-bindings.md#binding-direction) para o valor de retorno:
+Em idiomas que têm um valor de retorno, você pode associar uma [Associação de saída](./functions-triggers-bindings.md#binding-direction) de função ao valor de retorno:
 
 * Em uma biblioteca de classe C#, aplique o atributo de associação de saída para o valor de retorno do método.
 * Em outras linguagens, defina a propriedade `name` em *function.json* para `$return`.
@@ -168,4 +167,4 @@ def main(input: azure.functions.InputStream) -> str:
 ## <a name="next-steps"></a>Próximas etapas
 
 > [!div class="nextstepaction"]
-> [Tratar erros de associação de funções do Azure](./functions-bindings-errors.md)
+> [Manipular erros de associação de Azure Functions](./functions-bindings-errors.md)

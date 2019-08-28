@@ -7,18 +7,17 @@ author: genlin
 manager: cshepard
 editor: ''
 ms.service: virtual-machines-windows
-ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: f290a7e16938c66d45fab9b78086f77bfdfe4839
-ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.openlocfilehash: abff12e1a304c51cb0df394534c7da0a35518008
+ms.sourcegitcommit: 44e85b95baf7dfb9e92fb38f03c2a1bc31765415
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60319506"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70089808"
 ---
 # <a name="troubleshoot-an-rdp-general-error-in-azure-vm"></a>Solucionar um problema de erro geral de protocolo RDP em uma VM do Azure
 
@@ -65,7 +64,7 @@ Para resolver esse problema, [faça backup do disco do sistema operacional](../w
 
 ### <a name="serial-console"></a>Console Serial
 
-#### <a name="step-1-open-cmd-instance-in-serial-console"></a>Etapa 1: Instância CMD aberta no console Serial
+#### <a name="step-1-open-cmd-instance-in-serial-console"></a>Etapa 1: Abra a instância CMD no Console serial
 
 1. Acesso ao [Console Serial](serial-console-windows.md) selecionando **Suporte e solução de problemas** > **Console serial (visualização)** . Se o recurso estiver habilitado na VM, você poderá conectar a VM com êxito.
 
@@ -77,7 +76,7 @@ Para resolver esse problema, [faça backup do disco do sistema operacional](../w
    ch -si 1
    ```
 
-#### <a name="step-2-check-the-values-of-rdp-registry-keys"></a>Etapa 2: Verifique os valores das chaves de registro RDP:
+#### <a name="step-2-check-the-values-of-rdp-registry-keys"></a>Etapa 2: Verifique os valores das chaves do registro do RDP:
 
 1. Verifique se o RDP está desabilitado por políticas.
 
@@ -164,17 +163,17 @@ Para resolver esse problema, [faça backup do disco do sistema operacional](../w
 
 Se o problema ainda ocorrer, passe para a etapa 2.
 
-#### <a name="step-2-enable-remote-desktop-services"></a>Etapa 2: Habilite os serviços de área de trabalho remota
+#### <a name="step-2-enable-remote-desktop-services"></a>Etapa 2: Habilitar serviços de área de trabalho remota
 
 Para obter mais informações, confira [Os Serviços de Área de Trabalho Remota não estão iniciando em uma VM do Azure](troubleshoot-remote-desktop-services-issues.md).
 
-#### <a name="step-3-reset-rdp-listener"></a>Etapa 3: Redefinir o ouvinte do RDP
+#### <a name="step-3-reset-rdp-listener"></a>Etapa 3: Redefinir ouvinte RDP
 
 Para obter mais informações, confira [A Área de Trabalho Remota se desconecta com frequência na VM do Azure](troubleshoot-rdp-intermittent-connectivity.md).
 
 ### <a name="offline-repair"></a>Reparo offline
 
-#### <a name="step-1-turn-on-remote-desktop"></a>Etapa 1: Ativar área de trabalho remota
+#### <a name="step-1-turn-on-remote-desktop"></a>Etapa 1: Ativar Área de Trabalho Remota
 
 1. [Anexar o disco de SO a uma VM de recuperação](../windows/troubleshoot-recovery-disks-portal.md).
 2. Inicie uma conexão de área de trabalho remota para a VM de recuperação.
@@ -234,14 +233,14 @@ Para obter mais informações, confira [A Área de Trabalho Remota se desconecta
 
 Se o problema ainda ocorrer, passe para a etapa 2.
 
-#### <a name="step-2-enable-remote-desktop-services"></a>Etapa 2: Habilite os serviços de área de trabalho remota
+#### <a name="step-2-enable-remote-desktop-services"></a>Etapa 2: Habilitar serviços de área de trabalho remota
 
 Para obter mais informações, confira [Os Serviços de Área de Trabalho Remota não estão iniciando em uma VM do Azure](troubleshoot-remote-desktop-services-issues.md).
 
-#### <a name="step-3-reset-rdp-listener"></a>Etapa 3: Redefinir o ouvinte do RDP
+#### <a name="step-3-reset-rdp-listener"></a>Etapa 3: Redefinir ouvinte RDP
 
 Para obter mais informações, confira [A Área de Trabalho Remota se desconecta com frequência na VM do Azure](troubleshoot-rdp-intermittent-connectivity.md).
 
-## <a name="need-help-contact-support"></a>Precisa de ajuda? Contate o suporte
+## <a name="need-help-contact-support"></a>Precisa de ajuda? Contatar o suporte
 
 Se ainda tiver dúvidas, [entre em contato com o suporte](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) para resolver seu problema rapidamente.

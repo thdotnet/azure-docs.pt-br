@@ -9,23 +9,22 @@ ms.assetid: a6a74f17-bb57-40dd-8113-a20b50ba3050
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/03/2018
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: ea46b5e57e4e508a3311de8633ae61d346b574eb
-ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.openlocfilehash: 090952a065b8c3b2b25ad737992b68b9bc9aa9ec
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "60764778"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70069479"
 ---
 # <a name="integrate-your-ilb-app-service-environment-with-the-azure-application-gateway"></a>Integrar o Ambiente do Serviço de Aplicativo do ILB com o Gateway de Aplicativo do Azure #
 
 O [Ambiente do Serviço de Aplicativo](./intro.md) é uma implantação do Serviço de Aplicativo do Azure na sub-rede da rede virtual do Azure de um cliente. Ele pode ser implantado com um ponto de extremidade público ou privado para acesso ao aplicativo. A implantação do Ambiente do Serviço de Aplicativo com um ponto de extremidade privado (ou seja, um balanceador de carga interno) é chamada de um Ambiente do Serviço de Aplicativo do ILB.  
 
-Firewalls do aplicativo Web ajudam na segurança do aplicativos Web ao inspecionar o tráfego de entrada da Web para bloquear injeções de SQL, script entre sites, uploads de malware, DDoS de aplicativo e outros ataques. Ele também inspeciona as respostas dos servidores Web back-end para DLP (Prevenção contra Perda de Dados). Você pode obter um dispositivo WAF no Microsoft Azure Marketplace ou usar o [Gateway de Aplicativo do Azure][appgw].
+Firewalls do aplicativo Web ajudam na segurança do aplicativos Web ao inspecionar o tráfego de entrada da Web para bloquear injeções de SQL, script entre sites, uploads de malware, DDoS de aplicativo e outros ataques. Ele também inspeciona as respostas dos servidores Web back-end para DLP (Prevenção contra Perda de Dados). Você pode obter um dispositivo WAF do Azure Marketplace ou pode usar o gateway de [aplicativo Azure][appgw].
 
 O Gateway de Aplicativo do Azure é uma solução de virtualização que fornece proteção de balanceamento de carga de camada 7, descarregamento de SSL e WAF (firewall do aplicativo Web). Ele pode escutar em um endereço IP público e rotear tráfego para o ponto de extremidade do aplicativo. As informações a seguir descrevem como integrar um Gateway de Aplicativo com WAF configurado a um aplicativo em um ILB ASE.  
 
@@ -53,7 +52,7 @@ Para integrar o Gateway de Aplicativo ao Ambiente do Ambiente do Serviço de Apl
     
 * Um nome DNS público que é usado posteriormente para apontar para o Gateway de Aplicativo. 
 
-Para saber mais como criar um Ambiente do Serviço de Aplicativo do ILB, veja [Como criar e usar um Ambiente do Serviço de Aplicativo do ILB][ilbase].
+Para obter detalhes sobre como criar um Ambiente do Serviço de Aplicativo ILB, consulte [criando e usando um ambiente do serviço de aplicativo de ILB][ilbase].
 
 Este artigo pressupõe que você deseja um Gateway de Aplicativo na mesma rede virtual do Azure em que o Ambiente do Serviço de Aplicativo está implantado. Antes de iniciar a criação do Gateway de Aplicativo, escolha ou crie uma sub-rede que você usará para hospedar o Gateway de Aplicativo. 
 
@@ -117,7 +116,7 @@ Você também consegue colocar o gateway na sub-rede que usa o Ambiente do Servi
 
    ![Definir o nome de domínio personalizado no aplicativo][8]
 
-Há informações sobre como definir nomes de domínio personalizados para seus aplicativos Web no artigo [Configurando nomes de domínio personalizados para seu aplicativo Web][custom-domain]. Mas, para um aplicativo em um Ambiente do Serviço de Aplicativo do ILB, não há nenhuma validação no nome de domínio. Como você é proprietário do DNS que gerencia os pontos de extremidade do aplicativo, você pode colocar tudo que quiser lá. O nome de domínio personalizado que você adicionar nesse caso não precisará ser no DNS, mas ainda precisará ser configurado com o aplicativo. 
+Há informações sobre como configurar nomes de domínio personalizados para seus aplicativos Web no artigo [Configurando nomes de domínio personalizados para seu aplicativo Web][custom-domain]. Mas, para um aplicativo em um Ambiente do Serviço de Aplicativo do ILB, não há nenhuma validação no nome de domínio. Como você é proprietário do DNS que gerencia os pontos de extremidade do aplicativo, você pode colocar tudo que quiser lá. O nome de domínio personalizado que você adicionar nesse caso não precisará ser no DNS, mas ainda precisará ser configurado com o aplicativo. 
 
 Depois da instalação ser concluída e você permitir um curto período de tempo para que as alterações ao DNS serem propagadas, você poderá acessar o aplicativo usando o nome de domínio personalizado que você criou. 
 

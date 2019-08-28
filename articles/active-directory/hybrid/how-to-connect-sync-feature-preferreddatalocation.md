@@ -16,12 +16,12 @@ ms.date: 05/31/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff74db14a1621cdcea1b1ae082d351ce6a3a52f6
-ms.sourcegitcommit: 920ad23613a9504212aac2bfbd24a7c3de15d549
+ms.openlocfilehash: 13beafe9a6937b0404a58d3508a9aba9892ac04d
+ms.sourcegitcommit: 82499878a3d2a33a02a751d6e6e3800adbfa8c13
 ms.translationtype: MT
 ms.contentlocale: pt-BR
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68227401"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70073869"
 ---
 # <a name="azure-active-directory-connect-sync-configure-preferred-data-location-for-office-365-resources"></a>Sincronização do Azure AD Connect: configurar o local de dados preferencial para recursos do Office 365
 O objetivo deste tópico é orientá-lo como configurar o atributo para o local de dados preferencial na sincronização do Azure Active Directory (Azure AD) Connect. Quando alguém usa recursos de Multi-Geo no Office 365, este atributo é usado para designar a localização geográfica de dados do Office 365 do usuário. (Os termos *região* e *área geográfica* são usados de maneira intercambiável.)
@@ -32,7 +32,7 @@ Por padrão, os recursos do Office 365 para seus usuários estão localizados na
 Com a configuração do atributo **preferredDataLocation**, a área geográfica do usuário poderá ser definida. Você pode ter os recursos do Office 365 do usuário, como o OneDrive e a caixa de correio, na mesma área geográfica que o usuário e ainda ter um locatário para toda a organização.
 
 > [!IMPORTANT]
-> Várias regiões geográficas estão disponíveis no momento para clientes com um mínimo de 500 assinaturas de serviços do Office 365. Converse com seu representante Microsoft para obter detalhes.
+> Várias regiões geográficas estão disponíveis atualmente para clientes com um Enterprise Agreement ativo e um mínimo de 500 assinaturas de serviços do Office 365. Converse com seu representante Microsoft para obter detalhes.
 >
 >
 
@@ -128,8 +128,8 @@ A regra de sincronização de entrada permite que o valor do atributo flua do at
 
     | Atributo | Valor | Detalhes |
     | --- | --- | --- |
-    | NOME | *Fornecer um nome* | Por exemplo, "Entrada do AD – PreferredDataLocation do usuário" |
-    | DESCRIÇÃO | *Forneça uma descrição personalizada* |  |
+    | Nome | *Fornecer um nome* | Por exemplo, "Entrada do AD – PreferredDataLocation do usuário" |
+    | Descrição | *Forneça uma descrição personalizada* |  |
     | Sistema Conectado | *Selecione o Active Directory Connector local* |  |
     | Tipo de Objeto do Sistema Conectado | **Usuário** |  |
     | Tipo de Objeto de Metaverso | **Pessoa** |  |
@@ -141,7 +141,7 @@ A regra de sincronização de entrada permite que o valor do atributo flua do at
 
     | Tipo de fluxo | Atributo de destino | Origem | Aplicar uma vez | Tipo de mesclagem |
     | --- | --- | --- | --- | --- |
-    |Direta | preferredDataLocation | Selecione o atributo de origem | Desmarcado | Atualização |
+    |Direto | preferredDataLocation | Selecione o atributo de origem | Desmarcado | Atualização |
 
 7. Para criar a regra de entrada, selecione **Adicionar**.
 
@@ -158,7 +158,7 @@ A regra de sincronização de saída permite que o valor do atributo flua do met
     | Atributo | Valor | Detalhes |
     | ----- | ------ | --- |
     | Nome | *Fornecer um nome* | Por exemplo, "Saída para Microsoft Azure AD – PreferredDataLocation do usuário" |
-    | DESCRIÇÃO | *Fornecer uma descrição* ||
+    | Descrição | *Fornecer uma descrição* ||
     | Sistema Conectado | *Selecionar o Azure AD Connector* ||
     | Tipo de Objeto do Sistema Conectado | **Usuário** ||
     | Tipo de Objeto de Metaverso | **Pessoa** ||
@@ -178,7 +178,7 @@ A regra de sincronização de saída permite que o valor do atributo flua do met
 
     | Tipo de fluxo | Atributo de destino | Origem | Aplicar uma vez | Tipo de mesclagem |
     | --- | --- | --- | --- | --- |
-    | Direta | preferredDataLocation | preferredDataLocation | Desmarcado | Atualização |
+    | Direto | preferredDataLocation | preferredDataLocation | Desmarcado | Atualização |
 
 7. Feche **Adicionar** para criar a regra de saída.
 
